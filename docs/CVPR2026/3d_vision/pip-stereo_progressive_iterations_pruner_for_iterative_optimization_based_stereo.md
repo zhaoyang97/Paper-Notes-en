@@ -28,7 +28,7 @@ This paper reveals the spatial sparsity and temporal redundancy of disparity upd
 
 ## Background & Motivation
 
-**State of the Field**: Iterative optimization stereo matching methods (RAFT-Stereo, IGEV, MonSter) consistently dominate accuracy benchmarks through iterative refinement with GRU (Gated Recurrent Units).
+**Background**: Iterative optimization stereo matching methods (RAFT-Stereo, IGEV, MonSter) consistently dominate accuracy benchmarks through iterative refinement with GRU (Gated Recurrent Units).
 
 **Limitations of Prior Work**:
    - The recurrent structure of GRUs creates severe deployment bottlenecks on edge devices: iterative loops in static computation graphs hinder operator fusion and are sensitive to quantization noise; memory bandwidth requirements are extremely high at high resolutions.
@@ -36,7 +36,7 @@ This paper reveals the spatial sparsity and temporal redundancy of disparity upd
    - Recent methods such as MonSter require approximately 7.6s/frame (384×1344) on Orin NX, far from satisfying real-time requirements.
    - Existing real-time methods accelerate inference by entirely removing the RNN, but at a significant cost to generalization and accuracy.
 
-**Root Cause**: High accuracy and strong generalization from iterative refinement vs. the deployment-unfriendly nature of RNNs on edge hardware.
+**Key Challenge**: High accuracy and strong generalization from iterative refinement vs. the deployment-unfriendly nature of RNNs on edge hardware.
 
 **Key Observation**: Analysis of the iterative behavior of RAFT-Stereo and IGEV on Middlebury reveals that disparity updates are **highly sparse** (fewer than 1% of pixels continue updating by iteration 32) and **highly redundant** (overlap ratio of update locations between adjacent iterations >0.99).
 

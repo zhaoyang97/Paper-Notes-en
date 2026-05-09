@@ -31,7 +31,7 @@ Visual perception tasks can be categorized along two dimensions: prediction type
 
 Specifically: traditional detectors (e.g., GLIP, Grounding DINO) excel at word-level + box prediction but do not produce masks; segmentation methods (e.g., X-Decoder, OpenSeeD) handle word-level + mask but lack sentence-level understanding; VLMs (e.g., QwenVL, InternVL) understand sentence-level instructions and output box coordinates but cannot perform pixel-level prediction; recent works such as LISA and PixelLM support sentence-level + mask but neglect word-level perception.
 
-**Root Cause**: While joint training of certain combinations has been studied, the synergistic training of all four combinations remains largely unexplored. Key open questions include: (1) How can a VLLM simultaneously output both boxes and masks? (2) How can word-level and sentence-level instructions be handled in a unified manner? (3) How can the decoding and generation capabilities of LLMs be leveraged to enhance perception?
+**Key Challenge**: While joint training of certain combinations has been studied, the synergistic training of all four combinations remains largely unexplored. Key open questions include: (1) How can a VLLM simultaneously output both boxes and masks? (2) How can word-level and sentence-level instructions be handled in a unified manner? (3) How can the decoding and generation capabilities of LLMs be leveraged to enhance perception?
 
 **Core Idea of MVP-LM**: The framework exploits the language understanding and generation capabilities of VLLMs, designs a multi-granular decoder for joint box and mask output, and unifies heterogeneous datasets into a "think-before-perceive" format via CoT-inspired data curation.
 

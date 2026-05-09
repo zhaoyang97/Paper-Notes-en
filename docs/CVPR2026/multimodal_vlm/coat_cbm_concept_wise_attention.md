@@ -29,15 +29,15 @@ CoAt-CBM achieves adaptive fine-grained image–concept alignment via learnable 
 
 ## Background & Motivation
 
-**State of the Field**: Concept Bottleneck Models (CBMs) provide transparent decision paths by first predicting a set of human-understandable concepts and then performing final classification based on those concepts. Recent work has leveraged pretrained vision-language models such as CLIP to enhance CBM performance.
+**Background**: Concept Bottleneck Models (CBMs) provide transparent decision paths by first predicting a set of human-understandable concepts and then performing final classification based on those concepts. Recent work has leveraged pretrained vision-language models such as CLIP to enhance CBM performance.
 
 **Limitations of Prior Work**: Existing VLM-based CBMs face two critical limitations. First, when computing concept scores, they either rely on frozen coarse-grained global features (ResCBM, HybridCBM), resulting in a coarse-to-fine granularity mismatch, or employ optimal transport (DOT-CBM) to assign patch tokens, which depends on pretrained structural priors and incurs high computational cost. Second, the commonly used BCE loss treats each concept independently, ignoring mutual exclusivity among concepts and failing to exploit negative concepts as references to improve discrimination of positive concepts.
 
-**Root Cause**: Pretraining bias leads to inaccurate fine-grained alignment between visual features and textual concepts, while independently optimized loss functions prevent the model from learning the relative importance among concepts.
+**Key Challenge**: Pretraining bias leads to inaccurate fine-grained alignment between visual features and textual concepts, while independently optimized loss functions prevent the model from learning the relative importance among concepts.
 
-**Paper Goals**: To achieve adaptive fine-grained image–concept alignment while simultaneously improving classification performance and interpretability.
+**Goal**: To achieve adaptive fine-grained image–concept alignment while simultaneously improving classification performance and interpretability.
 
-**Starting Point**: Introducing learnable concept-wise visual queries to adaptively disentangle visual features, and replacing BCE with contrastive constraints to model inter-concept relationships.
+**Key Insight**: Introducing learnable concept-wise visual queries to adaptively disentangle visual features, and replacing BCE with contrastive constraints to model inter-concept relationships.
 
 **Core Idea**: Each concept is assigned a learnable query that extracts concept-specific representations from visual features via an attention mechanism; a multi-positive contrastive loss then optimizes the relative ranking of concept scores.
 

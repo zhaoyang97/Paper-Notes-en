@@ -29,15 +29,15 @@ This paper proposes the Cross-Space Synergy (CSS) framework, which simultaneousl
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal Emotion Recognition in Conversation (MERC) requires integrating textual, acoustic, and visual signals to infer a speaker's emotional state. Existing approaches include attention-based models (DialogueRNN, Ada2I, SDT), multi-stage fusion frameworks (LMF, MulT), and graph-based methods (DialogueGCN).
+**Background**: Multimodal Emotion Recognition in Conversation (MERC) requires integrating textual, acoustic, and visual signals to infer a speaker's emotional state. Existing approaches include attention-based models (DialogueRNN, Ada2I, SDT), multi-stage fusion frameworks (LMF, MulT), and graph-based methods (DialogueGCN).
 
 **Limitations of Prior Work**: Shallow fusion strategies (e.g., concatenation, bilinear pooling) fail to capture nonlinear, high-order cross-modal interactions, while deeper networks or more complex interaction mechanisms introduce gradient conflicts and training instability.
 
-**Root Cause**: A fundamental trade-off exists between expressiveness and training stability—shallow interactions lead to insufficient modeling, whereas deep fusion introduces chaotic optimization dynamics.
+**Key Challenge**: A fundamental trade-off exists between expressiveness and training stability—shallow interactions lead to insufficient modeling, whereas deep fusion introduces chaotic optimization dynamics.
 
-**Paper Goals**: To simultaneously enhance the expressiveness of cross-modal representations and the stability of multi-objective training within a unified framework.
+**Goal**: To simultaneously enhance the expressiveness of cross-modal representations and the stability of multi-objective training within a unified framework.
 
-**Starting Point**: MERC is reconceptualized as a cross-space synergy problem: the representation space requires stronger nonlinear modeling capacity, while the gradient space requires coordination among conflicting learning objectives.
+**Key Insight**: MERC is reconceptualized as a cross-space synergy problem: the representation space requires stronger nonlinear modeling capacity, while the gradient space requires coordination among conflicting learning objectives.
 
 **Core Idea**: High-order cross-modal fusion is achieved via low-rank tensor decomposition in the representation space, while Pareto-optimal gradient directions are used to balance multi-objective conflicts in the gradient space; the two components work synergistically.
 

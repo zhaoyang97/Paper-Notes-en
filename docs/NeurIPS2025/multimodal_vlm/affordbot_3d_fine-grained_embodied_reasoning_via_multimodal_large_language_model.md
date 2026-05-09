@@ -27,18 +27,18 @@ content_hash: ec9a8426f07e1dbe
 This paper introduces a fine-grained 3D embodied reasoning task—jointly predicting the spatial location, motion type, and motion axis of actionable elements—and proposes rendering 3D point clouds into panoramic views with projected affordance candidates, guided by a customized Chain-of-Thought (CoT) reasoning paradigm for MLLMs, achieving state-of-the-art performance with AP25 of 23.3%.
 
 ## Background & Motivation
-**State of the Field**: MLLMs have made progress in 3D scene understanding, but existing methods remain at the object-level recognition and localization stage.
+**Background**: MLLMs have made progress in 3D scene understanding, but existing methods remain at the object-level recognition and localization stage.
 
 **Limitations of Prior Work**:
    - Existing 3D understanding methods perform only object-level grounding, neglecting fine-grained affordance reasoning at the part level.
    - SceneFun3D introduces affordance grounding but treats grounding and motion estimation as separate tasks.
    - Video-based methods suffer from information redundancy, limited viewpoints, and slow processing.
 
-**Root Cause**: MLLMs natively support 2D inputs, yet affordance reasoning requires 3D spatial understanding and physical grounding.
+**Key Challenge**: MLLMs natively support 2D inputs, yet affordance reasoning requires 3D spatial understanding and physical grounding.
 
-**Paper Goals**: Given a 3D scene and a language instruction, jointly predict the mask, motion type, and motion axis direction of affordance elements.
+**Goal**: Given a 3D scene and a language instruction, jointly predict the mask, motion type, and motion axis direction of affordance elements.
 
-**Starting Point**: 3D-to-2D projection + active viewpoint selection + multi-step CoT reasoning.
+**Key Insight**: 3D-to-2D projection + active viewpoint selection + multi-step CoT reasoning.
 
 **Core Idea**: Project 3D affordance candidates onto panoramic views, then use CoT to guide the MLLM to sequentially select a viewpoint, localize the target, and reason about motion.
 

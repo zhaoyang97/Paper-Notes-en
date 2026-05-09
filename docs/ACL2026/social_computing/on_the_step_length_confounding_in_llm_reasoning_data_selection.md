@@ -29,15 +29,15 @@ This paper discovers that naturalness-based LLM reasoning data selection methods
 
 ## Background & Motivation
 
-**State of the Field**: Building high-quality SFT data is core to training large reasoning models (e.g., DeepSeek-R1). Existing data selection methods split into heuristic rules (answer correctness, diversity, difficulty) and naturalness-based methods (scoring with LLM log-probabilities/perplexity, selecting samples with highest model fitness).
+**Background**: Building high-quality SFT data is core to training large reasoning models (e.g., DeepSeek-R1). Existing data selection methods split into heuristic rules (answer correctness, diversity, difficulty) and naturalness-based methods (scoring with LLM log-probabilities/perplexity, selecting samples with highest model fitness).
 
 **Limitations of Prior Work**: Naturalness-based methods (e.g., GRACE, Local LP) exhibit severe bias on long CoT datasets—they systematically prefer samples with more tokens per step rather than genuinely high-quality samples. The step length distribution of selected data significantly differs from unselected data.
 
-**Root Cause**: The first token of reasoning steps typically branches into different reasoning paths, thus having higher entropy and lower log-probability. In longer steps, the first token's proportion is smaller, and its low probability is diluted by more non-first tokens, causing longer steps to have higher average log-probability and thus be preferentially selected.
+**Key Challenge**: The first token of reasoning steps typically branches into different reasoning paths, thus having higher entropy and lower log-probability. In longer steps, the first token's proportion is smaller, and its low probability is diluted by more non-first tokens, causing longer steps to have higher average log-probability and thus be preferentially selected.
 
-**Paper Goals**: Quantify and eliminate this step length confounding effect, making data selection unaffected by step length bias.
+**Goal**: Quantify and eliminate this step length confounding effect, making data selection unaffected by step length bias.
 
-**Starting Point**: Start from first-token probability—since the root cause is that first-token low probability has different effects across step lengths, directly intervene on first-token contribution.
+**Key Insight**: Start from first-token probability—since the root cause is that first-token low probability has different effects across step lengths, directly intervene on first-token contribution.
 
 **Core Idea**: Two methods—Aslec-drop directly drops first-token probability from scoring computation; Aslec-casl treats first-token proportion as a confounder and removes its influence via causal debiasing regression.
 

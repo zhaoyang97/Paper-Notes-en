@@ -31,11 +31,11 @@ VITA-1.5 proposes a carefully designed three-stage progressive training strategy
 
 Multimodal large language models (MLLMs) have achieved significant progress in vision-language integration (e.g., LLaVA, InternVL, Qwen-VL), yet the integration of the speech modality remains comparatively underdeveloped. In practical human-computer interaction systems, speech serves as a critical medium for information transmission and substantially enhances the naturalness and convenience of interaction.
 
-**Root Cause**: The modality gap between vision and speech is fundamentally distinct—visual data encodes spatial information whereas speech data encodes temporal information. Simultaneously optimizing both modalities frequently induces training conflicts: incorporating speech data may degrade visual task performance, and vice versa.
+**Key Challenge**: The modality gap between vision and speech is fundamentally distinct—visual data encodes spatial information whereas speech data encodes temporal information. Simultaneously optimizing both modalities frequently induces training conflicts: incorporating speech data may degrade visual task performance, and vice versa.
 
 Conventional speech-to-speech systems rely on cascaded ASR + LLM + TTS pipelines, suffering from high latency, loss of paralinguistic information such as prosody and emotion, and poor real-time performance. GPT-4o has demonstrated the feasibility of end-to-end multimodal interaction, yet the open-source community still exhibits a considerable gap in models that simultaneously possess strong visual and speech capabilities. VITA-1.0 made an initial attempt, but introducing speech data caused interference with visual performance, and speech generation still depended on an external TTS system.
 
-**Starting Point**: Through a carefully designed three-stage training strategy, the paper **progressively** introduces different modalities, enabling the model to acquire new modality capabilities while preserving the performance of existing ones. The final system achieves end-to-end speech output, eliminating dependence on external TTS modules.
+**Key Insight**: Through a carefully designed three-stage training strategy, the paper **progressively** introduces different modalities, enabling the model to acquire new modality capabilities while preserving the performance of existing ones. The final system achieves end-to-end speech output, eliminating dependence on external TTS modules.
 
 ## Method
 

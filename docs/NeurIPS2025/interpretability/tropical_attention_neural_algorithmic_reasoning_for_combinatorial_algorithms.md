@@ -27,15 +27,15 @@ Tropical Attention replaces softmax dot-product attention with tropical algebrai
 
 ## Background & Motivation
 
-**State of the Field** Neural algorithmic reasoning (NAR) aims to enable neural networks to internalize algorithms, yet existing softmax-based Transformers exhibit severe OOD generalization deficiencies on combinatorial optimization tasks.
+**Background** Neural algorithmic reasoning (NAR) aims to enable neural networks to internalize algorithms, yet existing softmax-based Transformers exhibit severe OOD generalization deficiencies on combinatorial optimization tasks.
 
 **Limitations of Prior Work** Softmax attention suffers from four fundamental flaws: (1) the exponential map produces smooth quadratic decision boundaries that are misaligned with the polyhedral, piecewise-linear structure of combinatorial algorithms; (2) attention disperses as sequence length grows, preventing precise argmax selection; (3) it is exponentially sensitive to small $\ell_\infty$ perturbations, lacking robustness; (4) there is an inherent conflict between temperature and gradients—low temperature approximates hard selection but causes gradient explosion.
 
-**Root Cause** The core operations of combinatorial algorithms are max/min/argmax—naturally piecewise-linear—whereas softmax attention performs smooth weighted aggregation in Euclidean space, creating a fundamental geometric misalignment.
+**Key Challenge** The core operations of combinatorial algorithms are max/min/argmax—naturally piecewise-linear—whereas softmax attention performs smooth weighted aggregation in Euclidean space, creating a fundamental geometric misalignment.
 
-**Paper Goals** To design an attention mechanism intrinsically aligned with the decision structures of combinatorial algorithms, achieving strong OOD generalization across the dimensions of length, magnitude, and noise.
+**Goal** To design an attention mechanism intrinsically aligned with the decision structures of combinatorial algorithms, achieving strong OOD generalization across the dimensions of length, magnitude, and noise.
 
-**Starting Point** The tropical semiring $\mathbb{T} = (\mathbb{R} \cup \{-\infty\}, \max, +)$ is the natural mathematical language of combinatorial algorithms—dynamic programming can be expressed as tropical matrix multiplication and transitive closure.
+**Key Insight** The tropical semiring $\mathbb{T} = (\mathbb{R} \cup \{-\infty\}, \max, +)$ is the natural mathematical language of combinatorial algorithms—dynamic programming can be expressed as tropical matrix multiplication and transitive closure.
 
 **Core Idea** Lift the attention kernel into tropical projective space, replacing dot products with the Hilbert projective metric and softmax normalization with max-plus aggregation.
 

@@ -28,15 +28,15 @@ This paper proposes PAM — the first engine capable of generating realistic han
 
 ## Background & Motivation
 
-1. **State of the Field**: Reconstruction and synthesis of hand-object interactions (HOI) are increasingly important for embodied AI and AR/VR. Data-driven approaches require large-scale annotated HOI datasets, but the high cost of manual annotation severely limits scalability.
+1. **Background**: Reconstruction and synthesis of hand-object interactions (HOI) are increasingly important for embodied AI and AR/VR. Data-driven approaches require large-scale annotated HOI datasets, but the high cost of manual annotation severely limits scalability.
 
 2. **Limitations of Prior Work**: Existing HOI generation methods fall into three disconnected directions: (1) pose synthesis methods (e.g., GraspXL) predict MANO trajectories without generating pixels; (2) single-image generation methods (e.g., affordance-based approaches) synthesize appearance from masks or 2D cues but lack dynamics; (3) video generation methods (e.g., InterDyn, ManiVideo) require **complete pose sequences and a real reference frame** as input, precluding true sim-to-real deployment since simulators cannot provide realistic initial frames.
 
-3. **Root Cause**: No unified framework simultaneously handles pose, appearance, and motion. In particular, video generation methods depend on real reference frames — a critical bottleneck in the sim-to-real pipeline, as simulators can only produce geometric and pose data without photorealistic initial frames.
+3. **Key Challenge**: No unified framework simultaneously handles pose, appearance, and motion. In particular, video generation methods depend on real reference frames — a critical bottleneck in the sim-to-real pipeline, as simulators can only produce geometric and pose data without photorealistic initial frames.
 
-4. **Paper Goals**: Design a minimally conditioned HOI video generation engine that requires only initial and target hand poses plus object geometry to produce temporally consistent, photorealistic HOI videos, thereby completing the sim-to-real pipeline.
+4. **Goal**: Design a minimally conditioned HOI video generation engine that requires only initial and target hand poses plus object geometry to produce temporally consistent, photorealistic HOI videos, thereby completing the sim-to-real pipeline.
 
-5. **Starting Point**: Decompose the problem into three independently optimizable stages: (1) generate pose sequences via RL-based policy; (2) synthesize the initial-frame appearance using a controllable image diffusion model; (3) generate the full video using a controllable video diffusion model. Multi-modal conditions (depth maps, segmentation masks, hand keypoints) serve as triple constraints encoding geometry, semantics, and fine-grained detail.
+5. **Key Insight**: Decompose the problem into three independently optimizable stages: (1) generate pose sequences via RL-based policy; (2) synthesize the initial-frame appearance using a controllable image diffusion model; (3) generate the full video using a controllable video diffusion model. Multi-modal conditions (depth maps, segmentation masks, hand keypoints) serve as triple constraints encoding geometry, semantics, and fine-grained detail.
 
 6. **Core Idea**: Construct a sim-to-real HOI video generation engine that requires no real reference frame, via a three-stage decoupled architecture (pose → appearance → motion) with multi-modal conditional control.
 

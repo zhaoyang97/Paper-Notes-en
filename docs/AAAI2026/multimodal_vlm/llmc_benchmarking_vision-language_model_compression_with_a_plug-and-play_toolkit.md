@@ -29,15 +29,15 @@ This paper presents LLMC+, a comprehensive benchmark and plug-and-play toolkit f
 
 ## Background & Motivation
 
-**State of the Field**: Large vision-language models (VLMs, e.g., LLaVA, InternVL, Qwen-VL) demonstrate strong multimodal understanding capabilities, yet their computational and memory demands are substantial—excessively long visual token sequences and massive parameter counts are the two primary bottlenecks. A variety of training-free compression methods have recently emerged, including token pruning (reducing the number of visual tokens) and model quantization (reducing parameter precision).
+**Background**: Large vision-language models (VLMs, e.g., LLaVA, InternVL, Qwen-VL) demonstrate strong multimodal understanding capabilities, yet their computational and memory demands are substantial—excessively long visual token sequences and massive parameter counts are the two primary bottlenecks. A variety of training-free compression methods have recently emerged, including token pruning (reducing the number of visual tokens) and model quantization (reducing parameter precision).
 
 **Limitations of Prior Work**: (1) Existing methods do not decouple techniques into comparable modules, preventing fair comparison between spatial-redundancy and temporal-redundancy approaches; (2) evaluation is limited to simple single-turn tasks and fails to reflect real-world scenarios such as multi-turn dialogue; (3) compression techniques are applied in isolation, leaving the potential of joint compression unexplored.
 
-**Root Cause**: The absence of a unified evaluation framework leads to "apples-to-oranges" comparisons among compression methods, making reliable method selection guidance infeasible.
+**Key Challenge**: The absence of a unified evaluation framework leads to "apples-to-oranges" comparisons among compression methods, making reliable method selection guidance infeasible.
 
-**Paper Goals**: Construct a unified VLM compression benchmark that supports fair evaluation and systematic study.
+**Goal**: Construct a unified VLM compression benchmark that supports fair evaluation and systematic study.
 
-**Starting Point**: Develop a modular toolkit that decouples various compression methods into composable modules.
+**Key Insight**: Develop a modular toolkit that decouples various compression methods into composable modules.
 
 **Core Idea**: Enable fair comparison and joint optimization of VLM compression methods through a unified benchmark and toolkit.
 

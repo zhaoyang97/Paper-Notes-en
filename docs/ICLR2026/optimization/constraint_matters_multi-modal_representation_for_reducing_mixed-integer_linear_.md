@@ -29,7 +29,7 @@ This paper proposes a constraint-reduction framework for simplifying MILP models
 
 ## Background & Motivation
 
-**State of the Field**: Large-scale MILP problems are prevalent in industrial settings such as production scheduling, supply chain management, and energy systems. Exact solvers like Gurobi and SCIP incur prohibitive computational costs on large instances, making ML-based model reduction (predicting and fixing subsets of variables) the dominant acceleration strategy.
+**Background**: Large-scale MILP problems are prevalent in industrial settings such as production scheduling, supply chain management, and energy systems. Exact solvers like Gurobi and SCIP incur prohibitive computational costs on large instances, making ML-based model reduction (predicting and fixing subsets of variables) the dominant acceleration strategy.
 
 **Limitations of Prior Work**:
 
@@ -37,9 +37,9 @@ This paper proposes a constraint-reduction framework for simplifying MILP models
 - Constraint reduction (converting inequality constraints to equality) has received virtually no systematic study.
 - Naively fixing all tight constraints yields highly unstable results: on the CA_easy task, the best fixing requires only 1.85s vs. 465.74s for the worst case (vs. 378.23s for the original).
 
-**Root Cause**: Different tight constraints contribute vastly different amounts to solver acceleration — random fixing may actually slow down solving, necessitating a principled selection strategy.
+**Key Challenge**: Different tight constraints contribute vastly different amounts to solver acceleration — random fixing may actually slow down solving, necessitating a principled selection strategy.
 
-**Starting Point**: From the perspective of duality theory, constraints and variables are naturally coupled; fixing a tight constraint is equivalent to reducing the feasible region. The key question becomes: which constraints are most worth fixing, and how can this be predicted efficiently?
+**Key Insight**: From the perspective of duality theory, constraints and variables are naturally coupled; fixing a tight constraint is equivalent to reducing the feasible region. The key question becomes: which constraints are most worth fixing, and how can this be predicted efficiently?
 
 ## Method
 

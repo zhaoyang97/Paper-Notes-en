@@ -28,15 +28,15 @@ DP-LLM identifies that per-layer quantization sensitivity varies dynamically acr
 
 ## Background & Motivation
 
-**State of the Field**: On-device LLM inference operates under strict computation, latency, and memory constraints. Multi-scale quantization approaches (e.g., Any-Precision LLM) enable memory-efficient runtime model adaptation by overlapping stored model variants of different bit-widths.
+**Background**: On-device LLM inference operates under strict computation, latency, and memory constraints. Multi-scale quantization approaches (e.g., Any-Precision LLM) enable memory-efficient runtime model adaptation by overlapping stored model variants of different bit-widths.
 
 **Limitations of Prior Work**: (a) Uniform precision assignment (same bit-width across all layers) cannot support non-integer average precision (e.g., 3.5-bit), missing efficiency optimization opportunities; (b) Existing layer-wise mixed-precision methods (LLM-MQ, HAWQ-V2) adopt static assignment—once per-layer bit-widths are determined, they remain fixed throughout the entire decoding process.
 
-**Root Cause**: Per-layer quantization sensitivity is not a static property; it changes dynamically across decoding steps (token-by-token). Layers that require high precision at certain steps may need only low precision at others—static assignment cannot capture this dynamic behavior.
+**Key Challenge**: Per-layer quantization sensitivity is not a static property; it changes dynamically across decoding steps (token-by-token). Layers that require high precision at certain steps may need only low precision at others—static assignment cannot capture this dynamic behavior.
 
-**Paper Goals**: Dynamically assign precision to each layer at runtime (with an independent decision per decoding step) while incurring minimal inference latency overhead.
+**Goal**: Dynamically assign precision to each layer at runtime (with an independent decision per decoding step) while incurring minimal inference latency overhead.
 
-**Starting Point**: Use the difference between GEMV outputs computed with h-bit and l-bit weights (relative error $\|\Delta W x\|$) as a runtime-estimable proxy for quantization sensitivity.
+**Key Insight**: Use the difference between GEMV outputs computed with h-bit and l-bit weights (relative error $\|\Delta W x\|$) as a runtime-estimable proxy for quantization sensitivity.
 
 **Core Idea**: At each decoding step, dynamically estimate the relative error of each layer conditioned on the current input; use high precision if the estimate exceeds a threshold, and low precision otherwise.
 

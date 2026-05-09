@@ -29,18 +29,18 @@ This paper proposes LoReTTA, a two-stage adversarial poisoning attack framework 
 
 ## Background & Motivation
 
-**State of the Field**: Temporal Graph Neural Networks (TGNNs) are widely deployed in high-stakes scenarios such as financial fraud detection, recommender systems, and social network analysis. Continuous-Time Dynamic Graphs (CTDGs) model fine-grained temporal relationships through timestamped edge streams.
+**Background**: Temporal Graph Neural Networks (TGNNs) are widely deployed in high-stakes scenarios such as financial fraud detection, recommender systems, and social network analysis. Continuous-Time Dynamic Graphs (CTDGs) model fine-grained temporal relationships through timestamped edge streams.
 
 **Limitations of Prior Work**:
 - Static graph adversarial attack methods do not transfer directly to CTDGs: past perturbations are diluted by new edges, and future edges are unobservable.
 - Attacks on Discrete-Time Dynamic Graphs (DTDGs) affect only a single snapshot and lack temporal propagation.
 - The existing SotA method T-SPEAR requires training a surrogate model (computationally expensive) and assumes the attacker has access to the complete dataset (training + validation + test), which is unrealistic.
 
-**Root Cause**: CTDG poisoning attacks require precise temporal coordination (when and where to perturb), yet surrogate-model-based approaches are prohibitively costly, and the assumption of full dataset access does not hold in practice.
+**Key Challenge**: CTDG poisoning attacks require precise temporal coordination (when and where to perturb), yet surrogate-model-based approaches are prohibitively costly, and the assumption of full dataset access does not hold in practice.
 
-**Paper Goals**: Design an efficient CTDG poisoning attack framework that requires no surrogate model, accesses only the training set, and satisfies imperceptibility constraints.
+**Goal**: Design an efficient CTDG poisoning attack framework that requires no surrogate model, accesses only the training set, and satisfies imperceptibility constraints.
 
-**Starting Point**: Directly assess temporal edge importance using graph-theoretic heuristics, then carefully *remove and replace* edges rather than only adding them.
+**Key Insight**: Directly assess temporal edge importance using graph-theoretic heuristics, then carefully *remove and replace* edges rather than only adding them.
 
 **Core Idea**: Sparsify high-influence edges and fill the gap with constraint-aware negative sampling — requiring no gradients — leveraging Temporal PageRank-driven quantification of temporal edge influence.
 

@@ -30,11 +30,11 @@ Through LAT analysis, this paper reveals that the low-frequency CoT directional 
 
 ### Limitations of Prior Work
 
-**State of the Field**: CoT reasoning has significantly enhanced LLM capabilities, yet VLMs continue to struggle with multi-step reasoning tasks, primarily due to the scarcity of multimodal reasoning data. Existing transfer methods fall into three categories: (1) approaches such as Virgo fine-tune VLMs on textual CoT data, but incur high training costs; (2) model merging integrates LLM parameters into VLMs, but requires architectural compatibility (the LLM backbone of the VLM must match the source LLM); (3) activation engineering methods (e.g., RoT) activate reasoning neurons within the VLM itself, but are bounded by the VLM's inherent reasoning capacity. **Root Cause**: How can the reasoning capabilities of a stronger LLM be transferred to a VLM across different architectures?
+**Background**: CoT reasoning has significantly enhanced LLM capabilities, yet VLMs continue to struggle with multi-step reasoning tasks, primarily due to the scarcity of multimodal reasoning data. Existing transfer methods fall into three categories: (1) approaches such as Virgo fine-tune VLMs on textual CoT data, but incur high training costs; (2) model merging integrates LLM parameters into VLMs, but requires architectural compatibility (the LLM backbone of the VLM must match the source LLM); (3) activation engineering methods (e.g., RoT) activate reasoning neurons within the VLM itself, but are bounded by the VLM's inherent reasoning capacity. **Key Challenge**: How can the reasoning capabilities of a stronger LLM be transferred to a VLM across different architectures?
 
 ### Starting Point
 
-**Paper Goals**: Although LLMs and VLMs differ in architecture and even in hidden dimension size, do they share transferable reasoning representations? If so, how can cross-modal, cross-architecture reasoning transfer be achieved without any training?
+**Goal**: Although LLMs and VLMs differ in architecture and even in hidden dimension size, do they share transferable reasoning representations? If so, how can cross-modal, cross-architecture reasoning transfer be achieved without any training?
 
 ## Method
 

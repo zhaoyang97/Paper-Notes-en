@@ -27,15 +27,15 @@ content_hash: 756728e7c18a531a
 This paper establishes the first $\Omega(\sqrt{K})$ regret lower bound for the Decentralized Multi-Agent Stochastic Shortest Path (Dec-MASSP) problem under linear function approximation. By constructing a family of hard-to-learn instances and employing a symmetry argument to identify the structure of optimal policies, the paper demonstrates that this lower bound matches existing upper bounds in terms of the number of episodes $K$.
 
 ## Background & Motivation
-**State of the Field**: The Stochastic Shortest Path (SSP) problem is a foundational model for goal-oriented decision-making. Single-agent SSP learning has been thoroughly studied in both tabular and linear function approximation settings, with matching upper and lower bounds (tabular: $\Omega(B^*\sqrt{SAK})$; linear: $\Omega(dB^*\sqrt{K})$).
+**Background**: The Stochastic Shortest Path (SSP) problem is a foundational model for goal-oriented decision-making. Single-agent SSP learning has been thoroughly studied in both tabular and linear function approximation settings, with matching upper and lower bounds (tabular: $\Omega(B^*\sqrt{SAK})$; linear: $\Omega(dB^*\sqrt{K})$).
 
 **Limitations of Prior Work**: Multi-agent systems (robot swarms, traffic routing, distributed control) inherently require decentralized coordination, yet the learning theory for Dec-MASSP remains nearly absent. The only prior work (trivedi2023massp) provides an upper bound of $\widetilde{O}(B^{*1.5}d\sqrt{nK/c_{\min}})$ without establishing any lower bound.
 
-**Root Cause**: The absence of regret lower bounds makes it impossible to assess the optimality of existing algorithms or to quantify the intrinsic difficulty of decentralized multi-agent learning.
+**Key Challenge**: The absence of regret lower bounds makes it impossible to assess the optimality of existing algorithms or to quantify the intrinsic difficulty of decentralized multi-agent learning.
 
-**Paper Goals**: To answer the core open question: "What are the fundamental limits of decentralized MASSP learning?"
+**Goal**: To answer the core open question: "What are the fundamental limits of decentralized MASSP learning?"
 
-**Starting Point**: Constructing a provably hard family of LM-MASSP (Linearly-Mixed MASSP) instances and deriving regret lower bounds via information-theoretic tools.
+**Key Insight**: Constructing a provably hard family of LM-MASSP (Linearly-Mixed MASSP) instances and deriving regret lower bounds via information-theoretic tools.
 
 **Core Idea**: Through a carefully designed two-node $n$-agent instance and a novel symmetry argument, the paper establishes for the first time that $\Omega(\sqrt{K})$ regret is unavoidable in Dec-MASSP.
 

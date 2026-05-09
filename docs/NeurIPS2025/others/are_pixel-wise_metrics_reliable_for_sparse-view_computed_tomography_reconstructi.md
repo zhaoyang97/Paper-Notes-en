@@ -26,15 +26,15 @@ This paper reveals that pixel-level metrics such as PSNR and SSIM fail to captur
 
 ## Background & Motivation
 
-**State of the Field**: Sparse-view CT substantially reduces radiation dose by limiting the number of projection views (<50 views). In recent years, neural rendering methods such as NeRF and Gaussian splatting have achieved steady improvements in PSNR/SSIM.
+**Background**: Sparse-view CT substantially reduces radiation dose by limiting the number of projection views (<50 views). In recent years, neural rendering methods such as NeRF and Gaussian splatting have achieved steady improvements in PSNR/SSIM.
 
 **Limitations of Prior Work**: PSNR/SSIM compute global voxel-wise average differences and are highly insensitive to small yet clinically critical anatomical structures (e.g., gallbladder, adrenal glands, abdominal aorta)—structures that occupy <0.01% of the volume, whose absence alters PSNR/SSIM only at the third or fourth decimal place. A radiologist evaluation involving 21 Johns Hopkins radiologists found that state-of-the-art methods exhibit missing structures, hallucinated anatomy, and severe artifacts.
 
-**Root Cause**: High pixel-level scores ≠ clinical utility—reconstructions with high PSNR may be missing critical vessels or organs.
+**Key Challenge**: High pixel-level scores ≠ clinical utility—reconstructions with high PSNR may be missing critical vessels or organs.
 
-**Paper Goals**: How can anatomical integrity in CT reconstruction be reliably evaluated and preserved?
+**Goal**: How can anatomical integrity in CT reconstruction be reliably evaluated and preserved?
 
-**Starting Point**: Leveraging an nnU-Net segmentor trained on 3,151 CT scans to perform automated assessment—NSD evaluates surface fidelity of compact organs, while clDice evaluates topological continuity of tubular structures.
+**Key Insight**: Leveraging an nnU-Net segmentor trained on 3,151 CT scans to perform automated assessment—NSD evaluates surface fidelity of compact organs, while clDice evaluates topological continuity of tubular structures.
 
 **Core Idea**: Replace pixel-level metrics with a segmentor for CT reconstruction evaluation, and backpropagate segmentation loss into diffusion model training to preserve anatomical structures.
 

@@ -27,15 +27,15 @@ This paper proposes ASAG (Adversarial Sinkhorn Attention Guidance), which reinte
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models improve generation quality through guidance methods such as Classifier-Free Guidance (CFG). The core idea of CFG is to "enhance the conditional output by deliberately degrading the unconditional output"—constructing a "worse" reference point so that the conditional path becomes more prominent by contrast. Subsequent methods (e.g., PAG, SAG) follow this paradigm but rely on heuristic perturbation functions (e.g., identity mixing, blurred conditioning) to construct degraded outputs.
+**Background**: Diffusion models improve generation quality through guidance methods such as Classifier-Free Guidance (CFG). The core idea of CFG is to "enhance the conditional output by deliberately degrading the unconditional output"—constructing a "worse" reference point so that the conditional path becomes more prominent by contrast. Subsequent methods (e.g., PAG, SAG) follow this paradigm but rely on heuristic perturbation functions (e.g., identity mixing, blurred conditioning) to construct degraded outputs.
 
 **Limitations of Prior Work**: Existing guidance methods lack theoretical grounding for their perturbation functions. Why does identity mixing work? Why is blurring a good degradation strategy? These design choices are manually crafted, lacking interpretability and optimality guarantees. Different tasks may also require different perturbation strategies, making manual design inefficient.
 
-**Root Cause**: There is a need for a principled, theory-driven approach to constructing optimal attention degradation strategies, rather than relying on heuristic design.
+**Key Challenge**: There is a need for a principled, theory-driven approach to constructing optimal attention degradation strategies, rather than relying on heuristic design.
 
-**Paper Goals**: To provide a theoretical foundation for attention guidance from the perspective of Optimal Transport (OT), and to design a principled degradation strategy accordingly.
+**Goal**: To provide a theoretical foundation for attention guidance from the perspective of Optimal Transport (OT), and to design a principled degradation strategy accordingly.
 
-**Starting Point**: The authors observe that the self-attention mechanism in diffusion models can be understood as an OT problem—attention scores between queries and keys correspond to the coupling matrix in a transport plan, and softmax normalization corresponds to marginal constraints.
+**Key Insight**: The authors observe that the self-attention mechanism in diffusion models can be understood as an OT problem—attention scores between queries and keys correspond to the coupling matrix in a transport plan, and softmax normalization corresponds to marginal constraints.
 
 **Core Idea**: The Sinkhorn algorithm (the standard algorithm for solving entropy-regularized OT) is used to inject adversarial transport costs into attention layers—deliberately increasing the transport cost between queries and keys to systematically disrupt attention alignment and construct theoretically grounded degraded outputs.
 

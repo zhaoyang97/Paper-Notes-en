@@ -29,13 +29,13 @@ This paper proposes the NegoCollab framework, which introduces a Negotiator modu
 
 ## Background & Motivation
 
-**State of the Field**: Multi-agent collaborative perception expands perception range and overcomes blind spots through feature sharing, making it a key direction for V2X communication.
+**Background**: Multi-agent collaborative perception expands perception range and overcomes blind spots through feature sharing, making it a key direction for V2X communication.
 
 **Limitations of Prior Work**: Agents may be equipped with different or fixed perception models, leading to domain gaps between intermediate features. Pairwise adaptation methods (MPDA/PnPDA) require training a large number of adapters, with training cost scaling quadratically with the number of agent types.
 
-**Root Cause**: Designating a single agent's representation as the common representation introduces bias, making alignment difficult for modalities that differ significantly from that agent.
+**Key Challenge**: Designating a single agent's representation as the common representation introduces bias, making alignment difficult for modalities that differ significantly from that agent.
 
-**Starting Point**: The common representation should not be fixed to any single agent's representation; instead, it should be **negotiated** from the local representations of agents across modalities.
+**Key Insight**: The common representation should not be fixed to any single agent's representation; instead, it should be **negotiated** from the local representations of agents across modalities.
 
 **Core Idea**: Multi-dimensional alignment (distributional + structural + pragmatic) combined with cyclic consistency to negotiate a neutral common representation from multimodal features.
 

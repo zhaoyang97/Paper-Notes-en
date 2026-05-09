@@ -29,15 +29,15 @@ This paper proposes CURE — an error-aware curriculum learning framework for mu
 
 ## Background & Motivation
 
-**State of the Field**: Medical vision-language models (VLMs) such as MAIRA-2 and MedGemma can automatically generate radiology reports from medical images and have achieved strong performance on multiple benchmarks.
+**Background**: Medical vision-language models (VLMs) such as MAIRA-2 and MedGemma can automatically generate radiology reports from medical images and have achieved strong performance on multiple benchmarks.
 
 **Limitations of Prior Work**: Existing models lack reliable visual grounding capability — described lesions cannot be accurately mapped to their corresponding image regions, leading to frequent hallucinations (e.g., as shown in Figure 1, MAIRA-2 falsely reports fractures in normal clavicle regions).
 
-**Root Cause**: Conventional phrase grounding training data is naturally skewed toward abnormal findings, causing models to over-associate normal anatomical regions with abnormal labels and yield high false-positive rates. Additionally, severe scale imbalances across datasets (Chest ImaGenome: 12.9M vs. MS-CXR: only 815 samples) cause small datasets to be overwhelmed under standard proportional sampling.
+**Key Challenge**: Conventional phrase grounding training data is naturally skewed toward abnormal findings, causing models to over-associate normal anatomical regions with abnormal labels and yield high false-positive rates. Additionally, severe scale imbalances across datasets (Chest ImaGenome: 12.9M vs. MS-CXR: only 815 samples) cause small datasets to be overwhelmed under standard proportional sampling.
 
-**Paper Goals**: To simultaneously improve visual grounding accuracy and factual consistency of generated reports without introducing additional private data.
+**Goal**: To simultaneously improve visual grounding accuracy and factual consistency of generated reports without introducing additional private data.
 
-**Starting Point**: Drawing inspiration from Curriculum Learning — rather than fixing sampling ratios, CURE dynamically adjusts sampling weights based on the model's current performance, directing more attention toward data sources and anatomical categories that are not yet well learned.
+**Key Insight**: Drawing inspiration from Curriculum Learning — rather than fixing sampling ratios, CURE dynamically adjusts sampling weights based on the model's current performance, directing more attention toward data sources and anatomical categories that are not yet well learned.
 
 **Core Idea**: A two-level error-aware curriculum learning approach — dynamically reweighting sampling probabilities at both inter-dataset and intra-dataset (category-level) granularities based on model evaluation errors, combined with anatomy-level fine-grained task decomposition (AGRG) that generates multiple training instances from a single image, enabling efficient utilization of existing public data.
 

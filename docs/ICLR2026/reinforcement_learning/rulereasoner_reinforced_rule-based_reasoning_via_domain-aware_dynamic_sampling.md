@@ -23,15 +23,15 @@ RuleReasoner constructs a diverse rule reasoning dataset, RuleCollection-32K, an
 
 ## Background & Motivation
 
-**State of the Field**: Rule-based reasoning is a foundational capability in AI, spanning domains such as law, mathematics, and medical diagnosis. Large reasoning models (LRMs) have acquired long-chain thinking abilities through reinforcement learning (RL), yet they continue to face challenges from diverse rule formats, complex rule types, and combinatorial explosion in real-world scenarios.
+**Background**: Rule-based reasoning is a foundational capability in AI, spanning domains such as law, mathematics, and medical diagnosis. Large reasoning models (LRMs) have acquired long-chain thinking abilities through reinforcement learning (RL), yet they continue to face challenges from diverse rule formats, complex rule types, and combinatorial explosion in real-world scenarios.
 
 **Limitations of Prior Work**: (1) Traditional approaches rely on model scaling or distillation from stronger models, which is costly and unsustainable. (2) As context windows expand, models exhibit the "lost in the middle" phenomenon, struggling to attend to relevant rules and facts. (3) Existing RLVR methods adopt coarse sampling strategies for multi-domain training data—static mixing leads to inter-domain imbalance, over-optimizing easy domains while under-optimizing difficult ones.
 
-**Root Cause**: The success of RLVR in mathematical and code reasoning has not transferred to rule reasoning—high-quality diverse training data is lacking, and the data scheduling problem for multi-domain training remains insufficiently studied.
+**Key Challenge**: The success of RLVR in mathematical and code reasoning has not transferred to rule reasoning—high-quality diverse training data is lacking, and the data scheduling problem for multi-domain training remains insufficiently studied.
 
-**Paper Goals**: To train a compact (4B/8B) specialized reasoning model that surpasses frontier LRMs (o1, R1) on rule reasoning tasks while improving training efficiency.
+**Goal**: To train a compact (4B/8B) specialized reasoning model that surpasses frontier LRMs (o1, R1) on rule reasoning tasks while improving training efficiency.
 
-**Starting Point**: Improving RLVR along two dimensions simultaneously—**data** and **sampling strategy**: (1) constructing RuleCollection-32K, covering 8 categories of rule reasoning tasks; (2) designing Dads, a history-reward-based dynamic domain sampling algorithm that automatically schedules the proportion of each domain in training batches.
+**Key Insight**: Improving RLVR along two dimensions simultaneously—**data** and **sampling strategy**: (1) constructing RuleCollection-32K, covering 8 categories of rule reasoning tasks; (2) designing Dads, a history-reward-based dynamic domain sampling algorithm that automatically schedules the proportion of each domain in training batches.
 
 **Core Idea**: Replace static data mixing with domain-aware dynamic sampling (Dads)—at each training step, compute the "under-optimization degree" of each domain based on its historical rewards, dynamically increase the sampling weight of under-optimized domains, and realize adaptive online data scheduling.
 

@@ -27,15 +27,15 @@ content_hash: c9d36c34ba33cf09
 This work constructs E-comIQ-ZH, the first multi-dimensional quality assessment framework for Chinese e-commerce posters, comprising an 18K expert-annotated dataset with CoT reasoning chains, a dedicated evaluation model E-comIQ-M (trained via SFT+GRPO), and a standardized benchmark E-comIQ-Bench.
 
 ## Background & Motivation
-**State of the Field**: Generative AI is widely adopted for e-commerce poster production, yet automated quality assessment lags far behind generative capability. Existing IQA methods focus on generic aesthetics or low-level distortions and cannot measure the functional criteria required in e-commerce contexts.
+**Background**: Generative AI is widely adopted for e-commerce poster production, yet automated quality assessment lags far behind generative capability. Existing IQA methods focus on generic aesthetics or low-level distortions and cannot measure the functional criteria required in e-commerce contexts.
 
 **Limitations of Prior Work**: Chinese e-commerce content is particularly challenging—complex Chinese character strokes frequently produce subtle yet critical text rendering errors, which existing methods, including strong models such as GPT-4o and Gemini 2.5 Pro, fail to detect. As shown in Fig. 1, both Gemini 2.5 Pro and Q-Insight fail to identify stroke-level character corruption.
 
-**Root Cause**: The absence of formal multi-dimensional quality standards prevents systematic evaluation, which in turn prevents the construction of training data and the training of dedicated evaluators—forming a vicious cycle. Current workflows still rely on slow and unscalable human review.
+**Key Challenge**: The absence of formal multi-dimensional quality standards prevents systematic evaluation, which in turn prevents the construction of training data and the training of dedicated evaluators—forming a vicious cycle. Current workflows still rely on slow and unscalable human review.
 
-**Paper Goals**: To establish multi-dimensional quality assessment standards for e-commerce posters and an automated evaluation toolchain.
+**Goal**: To establish multi-dimensional quality assessment standards for e-commerce posters and an automated evaluation toolchain.
 
-**Starting Point**: In collaboration with senior e-commerce art directors, quality is decomposed into four dimensions—Object, Background, Text, and Layout—to build a large-scale expert-annotated dataset and a dedicated evaluation model.
+**Key Insight**: In collaboration with senior e-commerce art directors, quality is decomposed into four dimensions—Object, Background, Text, and Layout—to build a large-scale expert-annotated dataset and a dedicated evaluation model.
 
 **Core Idea**: Train a domain-specific evaluation model using expert annotations and CoT reasoning chains to align automatic evaluation with human expert judgment.
 

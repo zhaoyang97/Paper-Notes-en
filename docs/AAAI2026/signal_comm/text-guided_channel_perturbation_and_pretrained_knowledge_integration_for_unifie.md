@@ -28,15 +28,15 @@ This paper proposes UP-Fusion, a unified multi-modality image fusion framework c
 
 ## Background & Motivation
 
-**State of the Field**: Multi-modality image fusion encompasses two major categories: infrared-visible image fusion (IVIF) and medical image fusion (MEIF). Existing methods typically design task-specific models for each category, lacking a unified framework.
+**Background**: Multi-modality image fusion encompasses two major categories: infrared-visible image fusion (IVIF) and medical image fusion (MEIF). Existing methods typically design task-specific models for each category, lacking a unified framework.
 
 **Limitations of Prior Work**: (1) Task-specific models fail to generalize across modalities — IVIF models perform poorly on medical fusion and vice versa; (2) unified methods either sacrifice fusion quality or require multi-task training data; (3) direct injection of modality features tends to cause modality overfitting.
 
-**Root Cause**: How can a single model with a single set of weights simultaneously handle multiple modality combinations while maintaining quality across different fusion tasks?
+**Key Challenge**: How can a single model with a single set of weights simultaneously handle multiple modality combinations while maintaining quality across different fusion tasks?
 
-**Paper Goals**: To build a unified framework that, trained on only a single task (IVIF), generalizes to other modality fusion tasks.
+**Goal**: To build a unified framework that, trained on only a single task (IVIF), generalizes to other modality fusion tasks.
 
-**Starting Point**: Reducing modality dependence through channel perturbation (rather than direct feature injection), and leveraging pretrained knowledge (ConvNeXt + CLIP) to provide cross-task generalization capability.
+**Key Insight**: Reducing modality dependence through channel perturbation (rather than direct feature injection), and leveraging pretrained knowledge (ConvNeXt + CLIP) to provide cross-task generalization capability.
 
 **Core Idea**: Channel perturbation combined with pretrained knowledge enables "modality-agnostic" unified fusion.
 

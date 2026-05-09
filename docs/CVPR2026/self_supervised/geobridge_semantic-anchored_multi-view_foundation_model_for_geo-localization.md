@@ -27,11 +27,11 @@ content_hash: 054e5bfccd029afd
 GeoBridge proposes a semantic-anchored multi-view foundation model for geo-localization that bridges UAV, street-view, and satellite imagery through textual descriptions as cross-modal semantic anchors, enabling bidirectional cross-view matching and language-to-image localization. The authors also introduce the GeoLoc dataset (50K+ location tuples across 36 countries).
 
 ## Background & Motivation
-1. **State of the Field**: Cross-view geo-localization infers the location of a query image by retrieving geo-tagged reference images. Most existing methods adopt a satellite-centric strategy.
+1. **Background**: Cross-view geo-localization infers the location of a query image by retrieving geo-tagged reference images. Most existing methods adopt a satellite-centric strategy.
 2. **Limitations of Prior Work**: (i) Satellite-centric strategies are fragile when high-resolution or up-to-date satellite imagery is unavailable; (ii) complementary cues across different viewpoints are underutilized; (iii) the complementarity between language and vision is overlooked.
-3. **Root Cause**: A unified framework supporting bidirectional multi-view matching is absent — UAV↔street-view matching in particular has been neglected.
-4. **Paper Goals**: To move beyond the satellite-centric paradigm and build a unified geo-localization model that supports arbitrary view-pair matching as well as text-based retrieval.
-5. **Starting Point**: Using textual descriptions as semantic anchors to bridge multi-view features.
+3. **Key Challenge**: A unified framework supporting bidirectional multi-view matching is absent — UAV↔street-view matching in particular has been neglected.
+4. **Goal**: To move beyond the satellite-centric paradigm and build a unified geo-localization model that supports arbitrary view-pair matching as well as text-based retrieval.
+5. **Key Insight**: Using textual descriptions as semantic anchors to bridge multi-view features.
 6. **Core Idea**: During training, multi-view imagery is distilled into location- and viewpoint-aware textual descriptions that serve as cross-modal semantic bridges; at inference time the text branch is optional — arbitrary view pairs can be matched directly.
 
 ## Method

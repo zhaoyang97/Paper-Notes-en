@@ -27,14 +27,14 @@ content_hash: 1889a4c3c738cdad
 SG-NLF proposes a pose-free LiDAR NeRF framework that integrates spectral information with geometric consistency. It leverages a hybrid spectral-geometric representation for continuous smooth geometry reconstruction, a confidence-aware pose graph for global pose optimization, and an adversarial learning strategy to enforce cross-frame consistency, achieving improvements of 35.8% in reconstruction quality and 68.8% in pose accuracy over the previous state of the art.
 
 ## Background & Motivation
-1. **State of the Field**: Novel view synthesis (NVS) is a critical task in 3D perception, with broad applications in scene understanding and autonomous driving. NeRF-based methods have recently been successfully extended to LiDAR NVS, surpassing conventional simulation approaches.
+1. **Background**: Novel view synthesis (NVS) is a critical task in 3D perception, with broad applications in scene understanding and autonomous driving. NeRF-based methods have recently been successfully extended to LiDAR NVS, surpassing conventional simulation approaches.
 2. **Limitations of Prior Work**:
     - Most LiDAR NVS methods rely on accurate camera poses, which are often unavailable in real-world scenarios.
     - Both pose-dependent and pose-free methods employ geometric interpolation (e.g., multi-resolution hash encoding) for neural field rendering. Due to the sparsity and irregularity of LiDAR data, interpolated features fail to reconstruct continuous surfaces, leading to geometric inconsistencies (geometric holes) in textureless regions.
     - The only existing pose-free method, GeoNLF, relies on pairwise alignment and cannot guarantee global pose accuracy.
-3. **Root Cause**: The inherent sparsity and lack of texture in LiDAR data prevent interpolation-based representations from reconstructing smooth, continuous surfaces. Larger inter-frame motion and reduced overlap in low-frequency LiDAR sequences further degrade multi-view consistency.
-4. **Paper Goals**: Simultaneously achieve high-quality LiDAR novel view synthesis and accurate pose estimation, particularly in challenging low-frequency scenarios.
-5. **Starting Point**: Introduce spectral embedding to provide global structural priors that compensate for the limitations of local geometric interpolation.
+3. **Key Challenge**: The inherent sparsity and lack of texture in LiDAR data prevent interpolation-based representations from reconstructing smooth, continuous surfaces. Larger inter-frame motion and reduced overlap in low-frequency LiDAR sequences further degrade multi-view consistency.
+4. **Goal**: Simultaneously achieve high-quality LiDAR novel view synthesis and accurate pose estimation, particularly in challenging low-frequency scenarios.
+5. **Key Insight**: Introduce spectral embedding to provide global structural priors that compensate for the limitations of local geometric interpolation.
 6. **Core Idea**: Learn the eigenfunctions of the Laplace-Beltrami operator in a differentiable manner and fuse them as spectral embeddings combined with geometric encodings to form a hybrid representation; construct a confidence-aware pose graph based on feature compatibility for global pose optimization.
 
 ## Method

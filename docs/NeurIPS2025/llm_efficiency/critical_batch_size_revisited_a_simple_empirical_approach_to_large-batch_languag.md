@@ -30,15 +30,15 @@ This paper proposes a branched training method to directly measure the critical 
 
 ## Background & Motivation
 
-**State of the Field**: Large-batch training improves LLM training throughput by increasing data parallelism and is a core requirement for large-scale pretraining. The critical batch size (CBS), defined as the largest batch size that does not significantly degrade token efficiency, is a key concept for balancing efficiency and performance.
+**Background**: Large-batch training improves LLM training throughput by increasing data parallelism and is a core requirement for large-scale pretraining. The critical batch size (CBS), defined as the largest batch size that does not significantly degrade token efficiency, is a key concept for balancing efficiency and performance.
 
 **Limitations of Prior Work**: McCandlish et al. (2018) proposed the gradient noise scale as a proxy for CBS, which was adopted by GPT-3 and subsequent works. However, this approach relies on two strong assumptions: (a) the use of SGD, and (b) well-conditioned gradients.
 
-**Root Cause**: Practical LLM training uses the Adam optimizer, and theoretical analysis suggests Adam should follow a square-root scaling rule rather than a linear one. Furthermore, the simplified gradient noise scale $\mathcal{B}_{\text{simple}}$ is only equivalent to the true CBS under the assumption that the Hessian is an identity matrix.
+**Key Challenge**: Practical LLM training uses the Adam optimizer, and theoretical analysis suggests Adam should follow a square-root scaling rule rather than a linear one. Furthermore, the simplified gradient noise scale $\mathcal{B}_{\text{simple}}$ is only equivalent to the true CBS under the assumption that the Hessian is an identity matrix.
 
-**Paper Goals**: How can CBS be measured directly without relying on strong assumptions? How does CBS evolve during training? How can CBS information be leveraged to formulate practical large-batch training strategies?
+**Goal**: How can CBS be measured directly without relying on strong assumptions? How does CBS evolve during training? How can CBS information be leveraged to formulate practical large-batch training strategies?
 
-**Starting Point**: Branched training is used to empirically approximate CBS directly, avoiding the unreliability introduced by indirect proxies.
+**Key Insight**: Branched training is used to empirically approximate CBS directly, avoiding the unreliability introduced by indirect proxies.
 
 **Core Idea**: CBS is a dynamic quantity that grows from near zero to a plateau value during training, an insight that naturally motivates a batch size warmup strategy.
 

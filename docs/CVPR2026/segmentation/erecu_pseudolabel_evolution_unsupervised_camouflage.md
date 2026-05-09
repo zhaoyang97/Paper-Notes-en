@@ -29,7 +29,7 @@ EReCu is a unified framework built upon a DINO teacher-student architecture that
 
 ## Background & Motivation
 
-**State of the Field**: Camouflaged Object Detection (COD) is highly challenging due to the visual similarity between targets and backgrounds. Fully supervised methods rely on expensive pixel-level annotations, limiting dataset scale and ecological diversity. Unsupervised COD (UCOD) currently comprises two paradigms: pseudo-label guidance and feature learning.
+**Background**: Camouflaged Object Detection (COD) is highly challenging due to the visual similarity between targets and backgrounds. Fully supervised methods rely on expensive pixel-level annotations, limiting dataset scale and ecological diversity. Unsupervised COD (UCOD) currently comprises two paradigms: pseudo-label guidance and feature learning.
 
 **Limitations of Prior Work**:
 
@@ -37,11 +37,11 @@ EReCu is a unified framework built upon a DINO teacher-student architecture that
 2. Feature learning methods (e.g., SdalsNet, EASE) lack explicit pseudo-label supervision, resulting in blurry boundaries and loss of fine details.
 3. Both paradigms suffer from critical shortcomings and have not been unified—semantic reliability and texture fidelity are optimized in isolation.
 
-**Root Cause**: Pseudo-label guidance addresses "where" but yields imprecise boundaries; feature learning addresses "what it looks like" but suffers from localization ambiguity. The two are complementary, yet no existing method exploits both simultaneously.
+**Key Challenge**: Pseudo-label guidance addresses "where" but yields imprecise boundaries; feature learning addresses "what it looks like" but suffers from localization ambiguity. The two are complementary, yet no existing method exploits both simultaneously.
 
-**Paper Goals**: To construct a unified UCOD framework in which pseudo-label reliability and feature fidelity co-evolve through a mutual feedback loop.
+**Goal**: To construct a unified UCOD framework in which pseudo-label reliability and feature fidelity co-evolve through a mutual feedback loop.
 
-**Starting Point**: Extract Multi-cue Native Perception (texture + semantics) from raw images to jointly constrain both the semantic evolution and local detail refinement of pseudo-labels.
+**Key Insight**: Extract Multi-cue Native Perception (texture + semantics) from raw images to jointly constrain both the semantic evolution and local detail refinement of pseudo-labels.
 
 **Core Idea**: Drive both global pseudo-label evolution and local refinement using native image cues, achieving semantic–perceptual co-evolution.
 

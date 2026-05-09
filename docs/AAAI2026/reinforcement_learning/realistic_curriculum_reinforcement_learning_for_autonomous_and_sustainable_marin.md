@@ -39,7 +39,7 @@ Maritime shipping carries approximately 90% of global trade, yet faces mounting 
 3. Simulation environments diverge significantly from real-world conditions, with a lack of high-fidelity simulators grounded in real data.
 4. The absence of accurate fuel consumption feedback hinders emission-aware navigation decisions.
 
-**Paper Goals**: This paper proposes integrating Curriculum Learning (CL) into DRL within a real-data-driven simulation environment to achieve multi-objective autonomous navigation balancing safety, emission reduction, timeliness, and goal completion.
+**Goal**: This paper proposes integrating Curriculum Learning (CL) into DRL within a real-data-driven simulation environment to achieve multi-objective autonomous navigation balancing safety, emission reduction, timeliness, and goal completion.
 
 ## Method
 

@@ -28,21 +28,21 @@ SimpleToM exposes a critical gap in LLMs' Theory of Mind capabilities: frontier 
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are widely deployed as conversational agents, and understanding others' beliefs (Theory of Mind) is essential for avoiding catastrophic responses—such as ignoring emotional distress, taking sarcasm literally, or providing inappropriate advice in sensitive situations.
+**Background**: LLMs are widely deployed as conversational agents, and understanding others' beliefs (Theory of Mind) is essential for avoiding catastrophic responses—such as ignoring emotional distress, taking sarcasm literally, or providing inappropriate advice in sensitive situations.
 
 **Limitations of Prior Work**:
 - Existing ToM evaluations are largely limited to Sally-Anne tasks or templated variants—scenarios are narrow and cover only a restricted range of information asymmetry types.
 - Explicit perception/mentalization verbs such as "sees" and "thinks" are used as trigger words, allowing models to answer without genuine commonsense reasoning.
 - Nearly all evaluations measure only "explicit ToM" (inferring mental states), without testing whether models can apply that knowledge to behavior prediction or judgment.
 
-**Root Cause**: LLMs can correctly answer "Does Mary know the chips are moldy?" (explicit ToM), yet fail to correctly infer "Will Mary pay or report the mold?" (applied ToM)—suggesting that LLMs' ToM knowledge is "decoupled" and cannot be reliably applied.
+**Key Challenge**: LLMs can correctly answer "Does Mary know the chips are moldy?" (explicit ToM), yet fail to correctly infer "Will Mary pay or report the mold?" (applied ToM)—suggesting that LLMs' ToM knowledge is "decoupled" and cannot be reliably applied.
 
-**Paper Goals**:
+**Goal**:
 - Construct a benchmark covering multiple levels of ToM reasoning (mental state → behavior prediction → behavior judgment).
 - Evaluate across diverse everyday scenarios rather than restricting assessment to classic toy tasks.
 - Reveal and quantify the capability gap between explicit ToM and applied ToM.
 
-**Starting Point**: Ten naturalistic information-asymmetry scenarios (supermarket, hospital, second-hand market, etc.); each story consists of only two sentences yet requires implicit commonsense reasoning; three question tiers progressively increase reasoning depth.
+**Key Insight**: Ten naturalistic information-asymmetry scenarios (supermarket, hospital, second-hand market, etc.); each story consists of only two sentences yet requires implicit commonsense reasoning; three question tiers progressively increase reasoning depth.
 
 **Core Idea**: LLMs exhibit a "knowing–doing split" in ToM—they can identify what another agent does not know (explicit), but cannot leverage that knowledge to predict and judge behavior (applied), even in simple everyday scenarios.
 

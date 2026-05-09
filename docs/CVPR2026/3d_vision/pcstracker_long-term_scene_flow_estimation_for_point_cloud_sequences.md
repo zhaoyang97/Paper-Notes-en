@@ -29,18 +29,18 @@ PCSTracker is the first end-to-end framework for long-term scene flow estimation
 
 ## Background & Motivation
 
-1. **State of the Field**: Understanding fine-grained long-term 3D motion from point cloud sequences is critical for autonomous driving, robotic navigation, and AR/VR. Existing approaches fall into two lines: object tracking (focusing on object-level motion, unable to recover fine-grained motion) and scene flow estimation (limited to adjacent frame pairs, unable to maintain temporal consistency over long sequences).
+1. **Background**: Understanding fine-grained long-term 3D motion from point cloud sequences is critical for autonomous driving, robotic navigation, and AR/VR. Existing approaches fall into two lines: object tracking (focusing on object-level motion, unable to recover fine-grained motion) and scene flow estimation (limited to adjacent frame pairs, unable to maintain temporal consistency over long sequences).
 
 2. **Limitations of Prior Work**: Naively chaining short-term methods over long sequences (tens to hundreds of frames) leads to catastrophic errors:
     - Viewpoint changes and object deformations cause temporal drift in point features, breaking point correspondence consistency.
     - Frequent occlusions and out-of-bound motion interrupt point correspondences.
     - Small errors inevitably accumulate over time, ultimately causing severe drift.
 
-3. **Root Cause**: Per-frame scene flow methods lack the ability to model geometric evolution, handle occlusions, and suppress error accumulation over long time spans, while object tracking methods cannot provide point-level fine-grained motion.
+3. **Key Challenge**: Per-frame scene flow methods lack the ability to model geometric evolution, handle occlusions, and suppress error accumulation over long time spans, while object tracking methods cannot provide point-level fine-grained motion.
 
-4. **Paper Goals**: How to robustly and efficiently predict long-term scene flow (a complete $T \times 3$ 3D trajectory matrix) directly from raw point cloud sequences, while addressing the three key challenges of geometric change, occlusion, and error accumulation.
+4. **Goal**: How to robustly and efficiently predict long-term scene flow (a complete $T \times 3$ 3D trajectory matrix) directly from raw point cloud sequences, while addressing the three key challenges of geometric change, occlusion, and error accumulation.
 
-5. **Starting Point**: Extending scene flow estimation from two frames to long sequences can be viewed as a point-level refinement of object tracking—combining the fine-grained motion estimation of scene flow with the long-term temporal modeling of object tracking.
+5. **Key Insight**: Extending scene flow estimation from two frames to long sequences can be viewed as a point-level refinement of object tracking—combining the fine-grained motion estimation of scene flow with the long-term temporal modeling of object tracking.
 
 6. **Core Idea**: End-to-end long-term point cloud scene flow estimation is achieved through three dedicated designs: iterative joint geometry-motion optimization to handle geometric variation, a spatiotemporal Transformer to infer occluded point positions, and an overlapping sliding window strategy to suppress error accumulation.
 

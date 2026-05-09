@@ -29,13 +29,13 @@ This paper proposes CoRAG, a framework that automatically generates intermediate
 
 ## Background & Motivation
 
-**State of the Field**: Conventional RAG pipelines follow a single-step retrieve-then-generate paradigm. Bi-encoder retrievers sacrifice expressiveness for efficiency, making retrieval quality a bottleneck for complex multi-hop queries.
+**Background**: Conventional RAG pipelines follow a single-step retrieve-then-generate paradigm. Bi-encoder retrievers sacrifice expressiveness for efficiency, making retrieval quality a bottleneck for complex multi-hop queries.
 
 **Limitations of Prior Work**: (a) Single-pass retrieval often fails to gather all information required to answer complex questions; (b) in multi-hop reasoning, what to retrieve depends on the current inference state and cannot be determined in advance; (c) existing multi-step retrieval methods (FLARE, IRCoT, Self-RAG) rely primarily on few-shot prompting or closed-source model distillation and lack end-to-end training.
 
-**Root Cause**: How can an open-source LLM automatically learn an iterative retrieval strategy from QA datasets that contain only final answers, while enabling flexible compute–performance trade-offs at inference time?
+**Key Challenge**: How can an open-source LLM automatically learn an iterative retrieval strategy from QA datasets that contain only final answers, while enabling flexible compute–performance trade-offs at inference time?
 
-**Starting Point**: Drawing on the success of Chain-of-Thought reasoning, the retrieval process is unrolled into a retrieval chain composed of sub-query–sub-answer pairs, where each step dynamically determines the next query based on the current reasoning state.
+**Key Insight**: Drawing on the success of Chain-of-Thought reasoning, the retrieval process is unrolled into a retrieval chain composed of sub-query–sub-answer pairs, where each step dynamically determines the next query based on the current reasoning state.
 
 **Core Idea**: Rejection sampling is used to automatically generate retrieval chains as training signals from QA datasets. The LLM is fine-tuned to learn iterative retrieval, and Best-of-N sampling together with tree search enables flexible test-time compute scaling.
 

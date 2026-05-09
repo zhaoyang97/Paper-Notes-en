@@ -28,13 +28,13 @@ FAC is the first method to jointly leverage a continuous normalizing flow model 
 
 ## Background & Motivation
 
-**State of the Field**: Offline RL datasets typically exhibit complex multimodal behavioral distributions. Simple Gaussian policies lack sufficient expressiveness; while diffusion-based policies are highly expressive, their multi-step sampling renders policy optimization unstable.
+**Background**: Offline RL datasets typically exhibit complex multimodal behavioral distributions. Simple Gaussian policies lack sufficient expressiveness; while diffusion-based policies are highly expressive, their multi-step sampling renders policy optimization unstable.
 
 **Limitations of Prior Work**: (a) CQL applies a global conservative penalty uniformly to all OOD actions, leading to excessive conservatism; (b) SVR identifies OOD actions via importance sampling ratios, but these ratios can explode when the behavioral policy is poorly approximated by a Gaussian model; (c) existing methods treat actor design and critic penalty independently, lacking co-design between the two components.
 
-**Root Cause**: How can strong policy expressiveness be maintained while precisely identifying OOD regions for conservative estimation?
+**Key Challenge**: How can strong policy expressiveness be maintained while precisely identifying OOD regions for conservative estimation?
 
-**Starting Point**: Flow models offer both a highly expressive policy (actor) and exact density estimation (critic OOD penalty), addressing both challenges simultaneously.
+**Key Insight**: Flow models offer both a highly expressive policy (actor) and exact density estimation (critic OOD penalty), addressing both challenges simultaneously.
 
 **Core Idea**: A single flow model resolves both actor expressiveness and critic OOD detection.
 

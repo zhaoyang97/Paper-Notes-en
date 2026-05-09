@@ -29,15 +29,15 @@ This paper proposes GOLD, a framework for Continual Test-Time Adaptation (CTTA).
 
 ## Background & Motivation
 
-**State of the Field**: Continual Test-Time Adaptation (CTTA) requires a model to continuously adapt online to an evolving stream of unlabeled target data during deployment, without access to source data. Representative methods include CoTTA (teacher-student framework with stochastic weight restoration), PETAL (parameter restoration regularization), RMT/SANTA (feature-level consistency), and DSS (pseudo-label filtering).
+**Background**: Continual Test-Time Adaptation (CTTA) requires a model to continuously adapt online to an evolving stream of unlabeled target data during deployment, without access to source data. Representative methods include CoTTA (teacher-student framework with stochastic weight restoration), PETAL (parameter restoration regularization), RMT/SANTA (feature-level consistency), and DSS (pseudo-label filtering).
 
 **Limitations of Prior Work**: CTTA faces a fundamental efficiency-generalization trade-off—updating more parameters improves adaptability but severely reduces online inference efficiency while amplifying pseudo-label noise and parameter drift. As shown in Figure 1(b), existing methods exhibit sharp performance drops upon encountering new domains ("golden-shaded intervals"), failing to achieve rapid adaptation while maintaining generalization.
 
-**Root Cause**: The ideal objective is to achieve the required output changes within a feature subspace (ensuring generalization) while minimizing the magnitude of updates (ensuring efficiency). The key question is: does this "minimal subspace" exist, and how can it be defined and maintained?
+**Key Challenge**: The ideal objective is to achieve the required output changes within a feature subspace (ensuring generalization) while minimizing the magnitude of updates (ensuring efficiency). The key question is: does this "minimal subspace" exist, and how can it be defined and maintained?
 
-**Paper Goals**: (1) Prove the existence of the "golden subspace"—i.e., that the minimal feature update subspace coincides with the classifier weight row space and is low-rank; (2) identify a method to estimate this subspace online without retraining the classifier; (3) design a practical lightweight adaptation framework.
+**Goal**: (1) Prove the existence of the "golden subspace"—i.e., that the minimal feature update subspace coincides with the classifier weight row space and is low-rank; (2) identify a method to estimate this subspace online without retraining the classifier; (3) design a practical lightweight adaptation framework.
 
-**Starting Point**: The authors begin from an algebraic analysis of the optimal solution for single-step adaptation. For a frozen classifier $W$ and a desired output correction $\Delta Y$, the minimum-norm feature update is $\Delta F^* = \Delta Y (W^\top)^\dagger$, whose rank is bounded by $\text{rank}(W^\top W)$—equal to the number of classes in classification tasks, far less than the feature dimension $L$. This implies that only a small number of directions defined by the classifier suffice to modify the predictions of an entire batch.
+**Key Insight**: The authors begin from an algebraic analysis of the optimal solution for single-step adaptation. For a frozen classifier $W$ and a desired output correction $\Delta Y$, the minimum-norm feature update is $\Delta F^* = \Delta Y (W^\top)^\dagger$, whose rank is bounded by $\text{rank}(W^\top W)$—equal to the number of classes in classification tasks, far less than the feature dimension $L$. This implies that only a small number of directions defined by the classifier suffice to modify the predictions of an entire batch.
 
 **Core Idea**: The low-rank row space defined by the classifier weights constitutes the minimal effective adaptation subspace (the golden subspace), which can be efficiently estimated and maintained online via AGOP.
 

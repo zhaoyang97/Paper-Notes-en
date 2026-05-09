@@ -30,11 +30,11 @@ This paper proposes Deco-Mamba, a decoder-centric segmentation network that empl
 
 ### State of the Field
 
-**State of the Field**: Two unresolved bottlenecks persist in medical image segmentation: (1) most methods are optimized for a single dataset or modality, resulting in poor cross-modal generalization; (2) research attention has been disproportionately focused on the encoder (leveraging large pretrained backbones), leaving decoder design largely neglected. Existing Mamba-based methods (Mamba-UNet, U-Mamba, Swin-UMamba, etc.) primarily apply Mamba to enhance the encoder, without fully exploiting its long-range modeling capability in the decoding stage. Conventional deep supervision resizes intermediate outputs to full resolution, incurring information loss.
+**Background**: Two unresolved bottlenecks persist in medical image segmentation: (1) most methods are optimized for a single dataset or modality, resulting in poor cross-modal generalization; (2) research attention has been disproportionately focused on the encoder (leveraging large pretrained backbones), leaving decoder design largely neglected. Existing Mamba-based methods (Mamba-UNet, U-Mamba, Swin-UMamba, etc.) primarily apply Mamba to enhance the encoder, without fully exploiting its long-range modeling capability in the decoding stage. Conventional deep supervision resizes intermediate outputs to full resolution, incurring information loss.
 
 ### Approach
 
-**Paper Goals**: How to design a computationally efficient and cross-modal generalizable decoder that achieves fine-grained multi-scale feature reconstruction and boundary recovery with low parameter count?
+**Goal**: How to design a computationally efficient and cross-modal generalizable decoder that achieves fine-grained multi-scale feature reconstruction and boundary recovery with low parameter count?
 
 ## Method
 

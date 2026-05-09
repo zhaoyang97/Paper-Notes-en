@@ -26,11 +26,11 @@ content_hash: 6c1049508eb5e272
 This paper proposes EAMamba, a framework that introduces a Multi-Head Selective Scan Module (MHSSM) and an all-around scanning strategy to achieve multi-directional scanning without increasing computational complexity or parameter count. EAMamba addresses the computational overhead and local pixel forgetting issues of Vision Mamba in image restoration, achieving 31–89% FLOPs reduction while maintaining competitive performance across super-resolution, denoising, deblurring, and dehazing tasks.
 
 ## Background & Motivation
-- **State of the Field**: Image restoration has evolved from CNN → Vision Transformer → Vision Mamba, with Mamba emerging as a promising direction for modeling long-range dependencies at linear complexity.
+- **Background**: Image restoration has evolved from CNN → Vision Transformer → Vision Mamba, with Mamba emerging as a promising direction for modeling long-range dependencies at linear complexity.
 - **Limitations of Prior Work**: Existing Vision Mamba methods (e.g., MambaIR) adopt 2D Selective Scan (2DSS), where each additional scanning direction incurs proportional increases in computation and parameters, limiting the scalability of scanning patterns.
-- **Root Cause**: (1) The computational complexity of 2DSS scales linearly with the number of scan sequences; (2) 2D scanning causes "local pixel forgetting"—spatially adjacent pixels may be far apart after flattening into a 1D sequence, losing local spatial relationships.
-- **Paper Goals**: Increase the number of scanning directions to capture more comprehensive spatial information while maintaining or reducing computational complexity.
-- **Starting Point**: Drawing inspiration from multi-head attention, channels are grouped and scanned independently in different directions.
+- **Key Challenge**: (1) The computational complexity of 2DSS scales linearly with the number of scan sequences; (2) 2D scanning causes "local pixel forgetting"—spatially adjacent pixels may be far apart after flattening into a 1D sequence, losing local spatial relationships.
+- **Goal**: Increase the number of scanning directions to capture more comprehensive spatial information while maintaining or reducing computational complexity.
+- **Key Insight**: Drawing inspiration from multi-head attention, channels are grouped and scanned independently in different directions.
 - **Core Idea**: Multi-Head Selective Scan (MHSS) via channel grouping eliminates the computational overhead of multi-directional scanning, making all-around scanning feasible.
 
 ## Method

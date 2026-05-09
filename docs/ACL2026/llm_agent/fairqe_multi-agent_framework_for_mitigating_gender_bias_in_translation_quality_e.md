@@ -29,15 +29,15 @@ This paper proposes FairQE, a multi-agent framework that mitigates systematic ge
 
 ## Background & Motivation
 
-**State of the Field**: Translation Quality Estimation (QE) aims to automatically evaluate machine translation quality without reference translations. Models such as COMETKiwi and MetricX have achieved strong performance in WMT evaluations and have become important tools for translation assessment.
+**Background**: Translation Quality Estimation (QE) aims to automatically evaluate machine translation quality without reference translations. Models such as COMETKiwi and MetricX have achieved strong performance in WMT evaluations and have become important tools for translation assessment.
 
 **Limitations of Prior Work**: Existing QE models exhibit systematic gender bias — they tend to assign higher scores to masculine translations in gender-ambiguous contexts, and may still prefer masculine forms even when feminine translations are explicitly required (preference reversal). Such bias can cascade into downstream decisions, including model selection and data filtering.
 
-**Root Cause**: The core tension lies in mitigating gender bias while preserving QE model accuracy. Naive debiasing may impair the model's ability to judge translation quality.
+**Key Challenge**: The core tension lies in mitigating gender bias while preserving QE model accuracy. Naive debiasing may impair the model's ability to judge translation quality.
 
-**Paper Goals**: To design a model-agnostic framework that calibrates gender bias in existing QE models in a plug-and-play manner while maintaining or improving overall evaluation performance.
+**Goal**: To design a model-agnostic framework that calibrates gender bias in existing QE models in a plug-and-play manner while maintaining or improving overall evaluation performance.
 
-**Starting Point**: A multi-agent collaborative architecture is adopted, decomposing bias detection, variant generation, and debiased inference into independent modules, combining LLM reasoning capabilities with the quantitative scoring of traditional QE models.
+**Key Insight**: A multi-agent collaborative architecture is adopted, decomposing bias detection, variant generation, and debiased inference into independent modules, combining LLM reasoning capabilities with the quantitative scoring of traditional QE models.
 
 **Core Idea**: Gender-flipped variants are generated to quantify the degree of bias, and dynamic weights are used to softly switch between traditional QE scores and LLM-based debiased reasoning scores — the greater the bias, the more the framework relies on LLM reasoning.
 

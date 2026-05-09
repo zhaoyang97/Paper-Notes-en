@@ -28,15 +28,15 @@ This paper proposes an optimistic online-to-batch (O2B) conversion framework tha
 
 ## Background & Motivation
 
-**State of the Field**: In convex smooth optimization, Nesterov's accelerated gradient method (NAG) serves as the benchmark with an optimal $O(T^{-2})$ convergence rate. Interpreting accelerated convergence through the lens of online learning—by applying O2B conversions to transform online algorithms into offline optimizers—has become an active research direction.
+**Background**: In convex smooth optimization, Nesterov's accelerated gradient method (NAG) serves as the benchmark with an optimal $O(T^{-2})$ convergence rate. Interpreting accelerated convergence through the lens of online learning—by applying O2B conversions to transform online algorithms into offline optimizers—has become an active research direction.
 
 **Limitations of Prior Work**: The stabilized O2B conversion of Cutkosky (2019) requires optimistic online algorithms (e.g., Optimistic Mirror Descent) to achieve accelerated convergence, resulting in complex algorithm design. Moreover, this framework cannot attain the optimal exponential convergence rate for strongly convex smooth objectives. Existing universal methods (applicable to both smooth and non-smooth settings) require two gradient queries per round, making them less efficient than NAG.
 
-**Root Cause**: In existing O2B frameworks, optimism is tightly coupled to the online algorithm, leading to high algorithmic complexity. The optimal convergence rate $O(\exp(-T/\sqrt{\kappa}))$ for the strongly convex case has never been achieved via O2B conversion.
+**Key Challenge**: In existing O2B frameworks, optimism is tightly coupled to the online algorithm, leading to high algorithmic complexity. The optimal convergence rate $O(\exp(-T/\sqrt{\kappa}))$ for the strongly convex case has never been achieved via O2B conversion.
 
-**Paper Goals**: (a) Simplify algorithm design so that non-optimistic online algorithms can also achieve acceleration; (b) achieve optimal O2B convergence for strongly convex smooth objectives for the first time; (c) attain universality while maintaining a single gradient query per round.
+**Goal**: (a) Simplify algorithm design so that non-optimistic online algorithms can also achieve acceleration; (b) achieve optimal O2B convergence for strongly convex smooth objectives for the first time; (c) attain universality while maintaining a single gradient query per round.
 
-**Starting Point**: Optimism need not be provided by the online algorithm; the conversion mechanism itself can implement a "look-ahead" by evaluating gradients at an advanced point $\tilde{x}_t$ rather than the current iterate $\bar{x}_t$.
+**Key Insight**: Optimism need not be provided by the online algorithm; the conversion mechanism itself can implement a "look-ahead" by evaluating gradients at an advanced point $\tilde{x}_t$ rather than the current iterate $\bar{x}_t$.
 
 **Core Idea**: Transfer optimism from the online algorithm to the O2B conversion mechanism (via look-ahead regret), enabling simple OGD to achieve accelerated convergence and providing a unified treatment of strongly convex and universal settings.
 

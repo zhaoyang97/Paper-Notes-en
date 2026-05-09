@@ -29,15 +29,15 @@ This paper proposes the iManip framework, which enables robots to continually ac
 
 ## Background & Motivation
 
-**State of the Field**: Mainstream methods in robotic manipulation focus on improving performance on single or multi-task manipulation (e.g., PerAct, ManiGaussian), or on transferring knowledge from pretrained large language/vision models to robotic tasks. Few works have investigated how robots can incrementally learn new skills.
+**Background**: Mainstream methods in robotic manipulation focus on improving performance on single or multi-task manipulation (e.g., PerAct, ManiGaussian), or on transferring knowledge from pretrained large language/vision models to robotic tasks. Few works have investigated how robots can incrementally learn new skills.
 
 **Limitations of Prior Work**: Existing incremental learning benchmarks (e.g., LIBERO) have begun exploring lifelong learning, but the tasks therein share the same underlying manipulation skills (e.g., "place the bowl on the plate" vs. "place the bowl on the stove"), differing only in object or spatial location. These benchmarks do not involve genuinely new skill acquisition. Directly applying conventional incremental learning methods (e.g., iCaRL, EEIL) to robotic manipulation still leads to severe catastrophic forgetting.
 
-**Root Cause**: Traditional incremental learning methods are primarily designed for image classification and overlook two unique complexities in robotic manipulation tasks: (1) **Temporal complexity**: the environment and robot state change dynamically over time, and each action influences subsequent actions; (2) **Action complexity**: robots must learn new action primitives (e.g., translation, rotation, grasping) whose representations in 3D space are highly complex.
+**Key Challenge**: Traditional incremental learning methods are primarily designed for image classification and overlook two unique complexities in robotic manipulation tasks: (1) **Temporal complexity**: the environment and robot state change dynamically over time, and each action influences subsequent actions; (2) **Action complexity**: robots must learn new action primitives (e.g., translation, rotation, grasping) whose representations in 3D space are highly complex.
 
-**Paper Goals**: Design a skill-incremental learning framework that allows robots to retain knowledge of prior skills when learning new manipulation skills, without retraining from scratch.
+**Goal**: Design a skill-incremental learning framework that allows robots to retain knowledge of prior skills when learning new manipulation skills, without retraining from scratch.
 
-**Starting Point**: The authors observe that classical exemplar replay methods (e.g., herding, hard-exemplar sampling) select representative samples without accounting for the temporal structure of trajectory data, resulting in temporal imbalance. Moreover, classical methods focus exclusively on visual features while neglecting the need to expand the action space for new skills.
+**Key Insight**: The authors observe that classical exemplar replay methods (e.g., herding, hard-exemplar sampling) select representative samples without accounting for the temporal structure of trajectory data, resulting in temporal imbalance. Moreover, classical methods focus exclusively on visual features while neglecting the need to expand the action space for new skills.
 
 **Core Idea**: Maintain temporal data integrity through keyframe-based farthest-distance entropy sampling, while adapting action primitives for new skills using expandable weight matrices and skill-specific action prompts.
 

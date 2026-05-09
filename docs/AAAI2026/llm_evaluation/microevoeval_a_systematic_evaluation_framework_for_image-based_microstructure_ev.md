@@ -28,7 +28,7 @@ This paper introduces MicroEvoEval, the first standardized benchmark for image-l
 
 ## Background & Motivation
 
-**State of the Field**: Microstructure evolution (MicroEvo) simulation is critical for materials design. Traditional methods rely on PDE numerical solvers such as phase-field simulations, which are accurate but computationally prohibitive. Deep learning surrogate models have advanced rapidly in recent years, with methods such as E3D-LSTM, ConvGRU, and VMamba being applied to this task.
+**Background**: Microstructure evolution (MicroEvo) simulation is critical for materials design. Traditional methods rely on PDE numerical solvers such as phase-field simulations, which are accurate but computationally prohibitive. Deep learning surrogate models have advanced rapidly in recent years, with methods such as E3D-LSTM, ConvGRU, and VMamba being applied to this task.
 
 **Limitations of Prior Work**: (a) **Absence of standardized benchmarks** — existing methods are developed and evaluated independently on heterogeneous tasks and datasets, precluding systematic comparison; (b) **Overemphasis on numerical accuracy at the expense of physical fidelity** — standard image metrics (MSE, SSIM) fail to assess whether predicted microstructures conform to physical laws (e.g., phase area fractions, mean region areas); (c) **Lack of long-term stability analysis** — existing evaluations typically focus on short-term prediction, neglecting error accumulation in autoregressive long-term forecasting.
 

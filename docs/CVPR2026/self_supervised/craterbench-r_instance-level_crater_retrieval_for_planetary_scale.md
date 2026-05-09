@@ -28,7 +28,7 @@ This work is the first to formalize crater analysis as an instance-level image r
 
 ## Background & Motivation
 
-**State of the Field**: Mars orbital imagery contains millions of crater structures. Deep learning efforts have focused on detection—predicting locations and diameters—without providing visual representations suitable for association.
+**Background**: Mars orbital imagery contains millions of crater structures. Deep learning efforts have focused on detection—predicting locations and diameters—without providing visual representations suitable for association.
 
 **Practical Need**: Scientific workflows depend on **association**—deduplication of the same crater across images, cross-observation matching, and morphological analogy discovery. These tasks are fundamentally **retrieval** problems, not detection problems.
 

@@ -28,15 +28,15 @@ This paper proposes a self-reflective agent framework that automatically detects
 
 ## Background & Motivation
 
-**State of the Field**: Visual models may rely on non-robust visual attributes (e.g., color, background, facial features) for prediction. Existing interpretability methods are primarily saliency maps, feature visualizations, and concept-based attribution.
+**Background**: Visual models may rely on non-robust visual attributes (e.g., color, background, facial features) for prediction. Existing interpretability methods are primarily saliency maps, feature visualizations, and concept-based attribution.
 
 **Limitations of Prior Work**: (1) Saliency methods can only highlight regions without providing semantic descriptions; (2) Concept attribution methods require predefined concept sets, limiting the ability to discover novel attributes; (3) These methods are largely correlational and lack causal verification.
 
-**Root Cause**: There is a need for automatic, scalable methods that can discover arbitrary visual attributes a model may rely on, without depending on predefined concept sets.
+**Key Challenge**: There is a need for automatic, scalable methods that can discover arbitrary visual attributes a model may rely on, without depending on predefined concept sets.
 
-**Paper Goals**: Given a pretrained visual model and a target concept, automatically identify the visual attributes that influence model predictions.
+**Goal**: Given a pretrained visual model and a target concept, automatically identify the visual attributes that influence model predictions.
 
-**Starting Point**: Attribute discovery is framed as a scientific discovery process—the agent autonomously proposes hypotheses, designs experiments (by generating test images), observes results, reflects, and revises hypotheses accordingly.
+**Key Insight**: Attribute discovery is framed as a scientific discovery process—the agent autonomously proposes hypotheses, designs experiments (by generating test images), observes results, reflects, and revises hypotheses accordingly.
 
 **Core Idea**: A self-reflective agent implemented via a multimodal LLM iteratively follows a hypothesis–experiment–verification–reflection cycle, analogous to a scientist, to automatically discover attribute reliance in visual models.
 

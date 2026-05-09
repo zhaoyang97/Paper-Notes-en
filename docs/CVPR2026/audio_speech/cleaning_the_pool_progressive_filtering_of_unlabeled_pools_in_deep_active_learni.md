@@ -29,15 +29,15 @@ This paper proposes Refine, an ensemble active learning method that employs a tw
 
 ## Background & Motivation
 
-**State of the Field**: Pre-trained foundation models (DINOv2, CLIP) still require labeled data for downstream task adaptation. Active learning reduces annotation costs through intelligent sample selection, yet recent benchmarks indicate that no single strategy is consistently optimal.
+**Background**: Pre-trained foundation models (DINOv2, CLIP) still require labeled data for downstream task adaptation. Active learning reduces annotation costs through intelligent sample selection, yet recent benchmarks indicate that no single strategy is consistently optimal.
 
 **Limitations of Prior Work**: (a) Different AL strategies capture distinct notions of "data value"—uncertainty vs. representativeness—with no strategy universally dominant; (b) selecting the wrong strategy can perform worse than random sampling; (c) existing ensemble methods (TCM/TAILOR/SelectAL) rely on heuristic switching or learned scheduling, leading to unstable performance.
 
-**Root Cause**: AL is a one-shot problem (no opportunity for trial and error), requiring decisions without knowing the optimal strategy in advance.
+**Key Challenge**: AL is a one-shot problem (no opportunity for trial and error), requiring decisions without knowing the optimal strategy in advance.
 
-**Paper Goals**: Design a learning-free ensemble method that automatically integrates the complementary advantages of multiple strategies.
+**Goal**: Design a learning-free ensemble method that automatically integrates the complementary advantages of multiple strategies.
 
-**Starting Point**: Shift the focus from "which samples to select" to "cleaning the pool by removing uninformative samples first."
+**Key Insight**: Shift the focus from "which samples to select" to "cleaning the pool by removing uninformative samples first."
 
 **Core Idea**: Allow multiple strategies to iteratively vote for sample retention—samples surviving multiple rounds must have been deemed valuable by at least one strategy, while samples never selected by any strategy are necessarily uninformative.
 

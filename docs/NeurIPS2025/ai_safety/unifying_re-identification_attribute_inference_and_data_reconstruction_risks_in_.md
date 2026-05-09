@@ -31,7 +31,7 @@ Under the f-DP framework grounded in hypothesis testing, this paper provides a u
 
 ### Limitations of Prior Work
 
-**State of the Field**: Differential privacy (DP) mechanisms are difficult to interpret and calibrate because:
+**Background**: Differential privacy (DP) mechanisms are difficult to interpret and calibrate because:
 
 **Fragmented risk types**: Re-identification, attribute inference, and data reconstruction represent three distinct privacy risks, and existing methods provide bounds in incompatible forms for each.
 
@@ -39,7 +39,7 @@ Under the f-DP framework grounded in hypothesis testing, this paper provides a u
 
 **Inconsistency**: Risk assessments produced by different DP variants are mutually contradictory, making it difficult for practitioners to select an appropriate framework.
 
-**Paper Goals**: The central contribution of this paper is to demonstrate, within the f-DP (hypothesis testing DP) framework, that the success-rate upper bounds for all three classes of attacks admit a single unified mathematical form.
+**Goal**: The central contribution of this paper is to demonstrate, within the f-DP (hypothesis testing DP) framework, that the success-rate upper bounds for all three classes of attacks admit a single unified mathematical form.
 
 ## Method
 

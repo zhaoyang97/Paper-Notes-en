@@ -30,11 +30,11 @@ This paper investigates the conjecture that Simple Stable Voting (SSV)—a recur
 
 ### Limitations of Prior Work
 
-**State of the Field**: When there are more than two candidates, majority voting may produce cycles (A>B>C>A), which has been a central problem in social choice theory since Condorcet (1785). Split Cycle resolves such cycles by discarding the weakest majority victory in each cycle. Simple Stable Voting (SSV) is a concise recursive rule that has been used in hundreds of real elections on stablevoting.org.
+**Background**: When there are more than two candidates, majority voting may produce cycles (A>B>C>A), which has been a central problem in social choice theory since Condorcet (1785). Split Cycle resolves such cycles by discarding the weakest majority victory in each cycle. Simple Stable Voting (SSV) is a concise recursive rule that has been used in hundreds of real elections on stablevoting.org.
 
 **Core Problem**: Are SSV winners always a subset of SC winners? This conjecture (Holliday & Pacuit 2023a) had resisted both extensive computational search and pen-and-paper proof attempts.
 
-**Starting Point**: The conjecture is encoded as a SAT satisfiability problem, and the CaDiCal SAT solver is employed to systematically search for counterexamples.
+**Key Insight**: The conjecture is encoded as a SAT satisfiability problem, and the CaDiCal SAT solver is employed to systematically search for counterexamples.
 
 **Core Idea**: A combination of mathematical proof and SAT solving establishes the precise boundary of the SSV–SC relationship conjecture: it holds for ≤6 candidates and is refuted for ≥7.
 

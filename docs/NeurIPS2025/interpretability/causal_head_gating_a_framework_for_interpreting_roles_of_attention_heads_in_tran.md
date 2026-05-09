@@ -27,15 +27,15 @@ This paper proposes Causal Head Gating (CHG), which learns a differentiable gati
 
 ## Background & Motivation
 
-**State of the Field**: Mechanistic interpretability aims to understand the internal computations of LLMs. Existing approaches fall into two categories: (a) training probes to decode hidden states into interpretable concepts (correlational, not causal); and (b) causal mediation analysis (CMA), which uses carefully designed prompts to localize heads responsible for specific behaviors (causally rigorous but limited in scale).
+**Background**: Mechanistic interpretability aims to understand the internal computations of LLMs. Existing approaches fall into two categories: (a) training probes to decode hidden states into interpretable concepts (correlational, not causal); and (b) causal mediation analysis (CMA), which uses carefully designed prompts to localize heads responsible for specific behaviors (causally rigorous but limited in scale).
 
 **Limitations of Prior Work**: (1) Probe-based methods are correlational and cannot demonstrate that the model actually uses the detected features. (2) CMA requires manually designed prompt templates and explicit mechanistic hypotheses, making it difficult to scale to complex tasks such as mathematical reasoning, where problem structures vary widely. (3) Existing head pruning work is primarily conducted on small models or BERT, with limited applicability to modern LLMs. (4) Gumbel-based hard gating methods assume head independence, failing to capture inter-head interactions.
 
-**Root Cause**: How can one discover causally effective attention heads in LLMs at scale, without relying on manually crafted templates or labels?
+**Key Challenge**: How can one discover causally effective attention heads in LLMs at scale, without relying on manually crafted templates or labels?
 
-**Paper Goals**: Design a scalable method to identify and classify the causal roles of attention heads, applicable to arbitrary tasks and datasets.
+**Goal**: Design a scalable method to identify and classify the causal roles of attention heads, applicable to arbitrary tasks and datasets.
 
-**Starting Point**: Gate parameters (one scalar per head) are trained using the next-token prediction objective. Positive and negative regularization induce variation in the gating values, enabling distinction among facilitating, interfering, and irrelevant heads.
+**Key Insight**: Gate parameters (one scalar per head) are trained using the next-token prediction objective. Positive and negative regularization induce variation in the gating values, enabling distinction among facilitating, interfering, and irrelevant heads.
 
 **Core Idea**: Two separate fits are performed using positive and negative L1 regularization respectively. Facilitating heads maintain high gate values in both fits; interfering heads are suppressed in both; irrelevant heads diverge between the two fits—thereby establishing a ternary causal taxonomy.
 

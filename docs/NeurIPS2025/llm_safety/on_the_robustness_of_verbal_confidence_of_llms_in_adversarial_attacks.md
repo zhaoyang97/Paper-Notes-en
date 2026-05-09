@@ -28,15 +28,15 @@ This paper presents the first systematic study on the robustness of LLM verbal c
 
 ## Background & Motivation
 
-**State of the Field**: As LLMs are widely deployed, obtaining confidence estimates for model predictions has become increasingly critical. Since most SOTA LLMs do not expose logit access, verbal confidence—prompting the model to output a numerical confidence score in natural language—has become the most practical approach and has been adopted by several industrial systems (e.g., TLM, cloud failure root-cause analysis, customer dialogue scoring).
+**Background**: As LLMs are widely deployed, obtaining confidence estimates for model predictions has become increasingly critical. Since most SOTA LLMs do not expose logit access, verbal confidence—prompting the model to output a numerical confidence score in natural language—has become the most practical approach and has been adopted by several industrial systems (e.g., TLM, cloud failure root-cause analysis, customer dialogue scoring).
 
 **Limitations of Prior Work**: While extensive prior work has studied the calibration and mechanisms of verbal confidence, virtually no work has examined its robustness under adversarial attacks—specifically, whether an attacker can manipulate the confidence scores output by a model through minor input modifications.
 
-**Root Cause**: The accessibility of verbal confidence (obtainable by any black-box user) simultaneously makes it exploitable: attackers can use these scores as an optimization signal to craft adversarial examples without requiring any internal model information, in stark contrast to traditional adversarial attacks that require logit access.
+**Key Challenge**: The accessibility of verbal confidence (obtainable by any black-box user) simultaneously makes it exploitable: attackers can use these scores as an optimization signal to craft adversarial examples without requiring any internal model information, in stark contrast to traditional adversarial attacks that require logit access.
 
-**Paper Goals**: (i) How vulnerable is verbal confidence to various adversarial attacks? (ii) How can confidence-targeted attacks be effectively constructed? (iii) Can existing defenses mitigate such attacks?
+**Goal**: (i) How vulnerable is verbal confidence to various adversarial attacks? (ii) How can confidence-targeted attacks be effectively constructed? (iii) Can existing defenses mitigate such attacks?
 
-**Starting Point**: The authors observe that even semantically-preserving perturbations (e.g., typos, synonym substitution) can substantially alter the numerical confidence scores output by a model, suggesting that LLM verbal confidence lacks robustness.
+**Key Insight**: The authors observe that even semantically-preserving perturbations (e.g., typos, synonym substitution) can substantially alter the numerical confidence scores output by a model, suggesting that LLM verbal confidence lacks robustness.
 
 **Core Idea**: Design an attack framework (VCA) that uses verbal confidence as the optimization objective, encompassing both perturbation-based and jailbreak-based attack families, to comprehensively evaluate the security risks of LLM confidence expression.
 

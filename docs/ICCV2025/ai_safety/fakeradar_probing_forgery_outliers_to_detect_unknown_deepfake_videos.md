@@ -27,10 +27,10 @@ content_hash: 33643035c3ef9687
 This paper proposes FakeRadar, a deepfake video detection framework that actively generates outlier samples simulating unknown forgeries in the feature space via Forgery Outlier Probing, and designs an Outlier-Guided Tri-Training strategy with three-class optimization (Real/Fake/Outlier). FakeRadar significantly outperforms existing methods on cross-dataset and cross-manipulation evaluations.
 
 ## Background & Motivation
-- **State of the Field**: Deepfake technology has advanced rapidly, producing highly realistic face-manipulated videos, prompting a large body of detection work at both image and video levels.
+- **Background**: Deepfake technology has advanced rapidly, producing highly realistic face-manipulated videos, prompting a large body of detection work at both image and video levels.
 - **Limitations of Prior Work**: Existing methods rely on specific forgery artifacts (boundary inconsistencies, blinking anomalies, texture irregularities, etc.) and are effective only against known forgery types, with severely degraded generalization when facing novel generative techniques (e.g., diffusion models).
-- **Root Cause**: Real faces form compact, dense distributions in feature space, while forged faces form sparse, scattered clusters due to diverse manipulation types — classifiers trained on known forgery patterns cannot cover the space of unknown ones.
-- **Starting Point**: The paradigm shifts from "passively learning known forgery patterns" to "actively probing unknown forgery regions," analogous to a radar system scanning for unknown targets via spectrum analysis.
+- **Key Challenge**: Real faces form compact, dense distributions in feature space, while forged faces form sparse, scattered clusters due to diverse manipulation types — classifiers trained on known forgery patterns cannot cover the space of unknown ones.
+- **Key Insight**: The paradigm shifts from "passively learning known forgery patterns" to "actively probing unknown forgery regions," analogous to a radar system scanning for unknown targets via spectrum analysis.
 - **Core Idea**: Leveraging the deep feature priors of CLIP pre-trained models, the method "pre-explores" regions in feature space where unknown forgeries may emerge through dynamic sub-cluster modeling and cluster-conditioned outlier generation.
 
 ## Method

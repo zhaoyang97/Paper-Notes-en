@@ -28,7 +28,7 @@ This paper proposes VIM, the first multimodal large language model capable of si
 
 ## Background & Motivation
 
-**State of the Field**: Existing motion-language models primarily focus on unidirectional tasks for single-person motion (e.g., text-to-motion) and lack the ability to model dyadic interactive motion.
+**Background**: Existing motion-language models primarily focus on unidirectional tasks for single-person motion (e.g., text-to-motion) and lack the ability to model dyadic interactive motion.
 
 **Limitations of Prior Work**: (1) Training data for multi-turn interactive motion is scarce; (2) existing models cannot simultaneously handle both motion and text as inputs and outputs; (3) dyadic interaction requires explicit modeling of spatial coordination between two persons.
 

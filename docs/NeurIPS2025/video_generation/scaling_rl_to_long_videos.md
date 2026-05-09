@@ -29,15 +29,15 @@ This paper proposes LongVILA-R1, a full-stack framework that extends VLM reasoni
 
 ## Background & Motivation
 
-1. **State of the Field**: Long video understanding demands temporal, spatial, goal-oriented, and narrative reasoning capabilities. Closed-source models such as GPT-4o and Gemini-1.5-Pro have demonstrated strong performance, while open-source VLMs have also made progress on short videos.
+1. **Background**: Long video understanding demands temporal, spatial, goal-oriented, and narrative reasoning capabilities. Closed-source models such as GPT-4o and Gemini-1.5-Pro have demonstrated strong performance, while open-source VLMs have also made progress on short videos.
 
 2. **Limitations of Prior Work**: (1) High-quality long-video reasoning datasets are lacking — unlike math or code reasoning with structured annotations, long-video reasoning requires labeling complex temporal dynamics and narrative elements. (2) RL training frameworks for long videos are difficult to construct — processing hundreds to thousands of frames incurs enormous memory overhead and extremely long rollout times.
 
-3. **Root Cause**: Existing RL frameworks (e.g., R1-V, EasyR1) are not designed for long videos; GRPO's group sampling is computationally prohibitive under long contexts, and visual encoding requires redundant computation.
+3. **Key Challenge**: Existing RL frameworks (e.g., R1-V, EasyR1) are not designed for long videos; GRPO's group sampling is computationally prohibitive under long contexts, and visual encoding requires redundant computation.
 
-4. **Paper Goals**: To holistically address the three core challenges of long-video reasoning: data, training methodology, and training systems.
+4. **Goal**: To holistically address the three core challenges of long-video reasoning: data, training methodology, and training systems.
 
-5. **Starting Point**: On the data side, NVILA-8B and DeepSeek-R1-671B are used to automatically generate long-video CoT annotations; on the system side, sequence parallelism and video embedding caching are employed to accelerate RL training.
+5. **Key Insight**: On the data side, NVILA-8B and DeepSeek-R1-671B are used to automatically generate long-video CoT annotations; on the system side, sequence parallelism and video embedding caching are employed to accelerate RL training.
 
 6. **Core Idea**: Caching video embeddings combined with sequence parallelism makes long-video RL training feasible, while high-quality CoT data and difficulty filtering are critical to the emergence of reasoning capabilities.
 

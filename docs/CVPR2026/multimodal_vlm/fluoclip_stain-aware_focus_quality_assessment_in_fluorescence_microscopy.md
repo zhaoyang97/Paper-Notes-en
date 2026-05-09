@@ -27,15 +27,15 @@ content_hash: 58b8f0e254b42207
 This paper proposes FluoCLIP, a two-stage vision-language framework that first performs stain-grounding to enable CLIP to learn the semantics of fluorescence stains, then conducts stain-guided ranking for stain-aware focus quality assessment. The paper also introduces FluoMix, the first multi-stain tissue-level fluorescence microscopy dataset for FQA.
 
 ## Background & Motivation
-**State of the Field**: Focus quality assessment (FQA) is critical in microscopy imaging. Existing FQA methods are primarily designed for brightfield microscopy and rely on low-level features such as edges and gradients.
+**Background**: Focus quality assessment (FQA) is critical in microscopy imaging. Existing FQA methods are primarily designed for brightfield microscopy and rely on low-level features such as edges and gradients.
 
 **Limitations of Prior Work**: In fluorescence microscopy, different fluorescent dyes exhibit distinct emission characteristics, signal-to-noise ratios, and background fluorescence, causing defocus degradation to manifest in a strongly stain-dependent manner. Simple edge-detection models (e.g., FocusLiteNN) perform well on brightfield data but are unstable on fluorescence data.
 
-**Root Cause**: Existing datasets do not capture stain-dependent variation in fluorescence microscopy — FocusPath is brightfield-based, while BBBC006 contains only two stains from in vitro cell lines.
+**Key Challenge**: Existing datasets do not capture stain-dependent variation in fluorescence microscopy — FocusPath is brightfield-based, while BBBC006 contains only two stains from in vitro cell lines.
 
-**Paper Goals**: (a) Construct a fluorescence FQA dataset spanning multiple tissues and stains; (b) enable FQA models to be aware of stain type and adjust focus predictions accordingly.
+**Goal**: (a) Construct a fluorescence FQA dataset spanning multiple tissues and stains; (b) enable FQA models to be aware of stain type and adjust focus predictions accordingly.
 
-**Starting Point**: Focus quality in fluorescence images depends simultaneously on spatial sharpness and the spectral/semantic properties of stains. Visual features alone are insufficient; textual descriptions can provide complementary stain semantic information.
+**Key Insight**: Focus quality in fluorescence images depends simultaneously on spatial sharpness and the spectral/semantic properties of stains. Visual features alone are insufficient; textual descriptions can provide complementary stain semantic information.
 
 **Core Idea**: A two-stage CLIP adaptation strategy that first learns stain semantics and then performs stain-conditioned ordinal ranking.
 

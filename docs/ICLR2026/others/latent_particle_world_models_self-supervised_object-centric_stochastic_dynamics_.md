@@ -27,7 +27,7 @@ content_hash: ba26e10f44c99eac
 LPWM is the first self-supervised object-centric world model that scales to real-world multi-object datasets. Its core innovation is learning independent per-particle latent action distributions ($z_c^m$) for each particle, encoding all frames in parallel via a causal spatiotemporal Transformer, supporting diverse conditioning signals (actions, language, image goals, multi-view), achieving state-of-the-art video prediction, and demonstrating imitation learning capability (89% success rate on OGBench task3).
 
 ## Background & Motivation
-**State of the Field**: Object-centric world models decompose scenes into independent object representations (slots/patches/particles), making them naturally suited for modeling multi-object interactions. The DLP (Deep Latent Particles) framework represents objects via keypoints and extended attributes (position, scale, depth, transparency, visual features).
+**Background**: Object-centric world models decompose scenes into independent object representations (slots/patches/particles), making them naturally suited for modeling multi-object interactions. The DLP (Deep Latent Particles) framework represents objects via keypoints and extended attributes (position, scale, depth, transparency, visual features).
 
 **Limitations of Prior Work**:
 - **Slot-based methods** (SlotFormer, etc.): suffer from inconsistent decomposition, blurry predictions, and convergence difficulties, and require two-stage training.
@@ -35,7 +35,7 @@ LPWM is the first self-supervised object-centric world model that scales to real
 - **DDLP** (the current best particle-based method): depends on explicit particle tracking and sequential encoding → non-parallelizable and unable to model stochasticity.
 - All object-centric methods are **limited to simple simulated environments** and cannot handle real-world multi-object videos.
 
-**Root Cause**: Object-centric representations offer natural advantages (interpretability, compositional generalization, sparse interaction modeling), but the key bottleneck for scaling to real-world complex scenes is handling the independent stochastic motion of multiple objects. Global latent actions cannot capture independent behaviors such as "object A moves left while object B remains stationary."
+**Key Challenge**: Object-centric representations offer natural advantages (interpretability, compositional generalization, sparse interaction modeling), but the key bottleneck for scaling to real-world complex scenes is handling the independent stochastic motion of multiple objects. Global latent actions cannot capture independent behaviors such as "object A moves left while object B remains stationary."
 
 **Core Idea**: Learn independent latent action distributions $z_c^m$ for each latent particle — inferred from frame pairs via inverse dynamics during training, and sampled from a learned latent policy at inference time, conditioned into a causal spatiotemporal Transformer via AdaLN.
 

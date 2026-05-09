@@ -30,15 +30,15 @@ This work selectively replaces the classical skull stripping (BET2) and tissue s
 
 ## Background & Motivation
 
-**State of the Field**: SIENA is the most widely used tool for assessing longitudinal brain atrophy (PBVC, Percentage Brain Volume Change). It estimates atrophy rates by analyzing boundary displacements in registered brain images, has been validated across numerous clinical trials, and offers strong interpretability—each intermediate step can be individually inspected.
+**Background**: SIENA is the most widely used tool for assessing longitudinal brain atrophy (PBVC, Percentage Brain Volume Change). It estimates atrophy rates by analyzing boundary displacements in registered brain images, has been validated across numerous clinical trials, and offers strong interpretability—each intermediate step can be individually inspected.
 
 **Limitations of Prior Work**: SIENA relies on classical FSL algorithms: BET2 for skull stripping (based on intensity heuristics and deformable surface models) and FAST for tissue segmentation (based on similar principles). These algorithms are parameter-sensitive—minor adjustments to BET2's fractional intensity threshold can cause substantial variation in estimated atrophy rates—and are prone to failure under severe neurodegeneration, signal inhomogeneity, or motion artifacts. Skull stripping errors propagate downstream into registration and segmentation steps.
 
-**Root Cause**: End-to-end deep learning methods (e.g., DeepBVC, EAM) can directly predict PBVC but sacrifice the interpretability and clinical trustworthiness of SIENA; fully retaining SIENA leaves it vulnerable to the fragility of classical image processing steps.
+**Key Challenge**: End-to-end deep learning methods (e.g., DeepBVC, EAM) can directly predict PBVC but sacrifice the interpretability and clinical trustworthiness of SIENA; fully retaining SIENA leaves it vulnerable to the fragility of classical image processing steps.
 
-**Paper Goals**: To improve robustness and clinical sensitivity by selectively replacing the weakest image processing steps, while preserving SIENA's validated and interpretable core framework.
+**Goal**: To improve robustness and clinical sensitivity by selectively replacing the weakest image processing steps, while preserving SIENA's validated and interpretable core framework.
 
-**Starting Point**: Rather than replacing the entire pipeline, this work follows a "reinforce the weakest links" philosophy—identifying skull stripping and tissue segmentation as the two bottlenecks and replacing them with domain-randomization-trained deep learning solutions (SynthStrip/SynthSeg).
+**Key Insight**: Rather than replacing the entire pipeline, this work follows a "reinforce the weakest links" philosophy—identifying skull stripping and tissue segmentation as the two bottlenecks and replacing them with domain-randomization-trained deep learning solutions (SynthStrip/SynthSeg).
 
 **Core Idea**: Replace BET2 with SynthStrip and FAST with SynthSeg to achieve maximum robustness gains in SIENA with minimal architectural changes.
 

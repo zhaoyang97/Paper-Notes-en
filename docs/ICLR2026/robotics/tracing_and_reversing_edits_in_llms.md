@@ -28,15 +28,15 @@ Addressing the dual-use risks of Knowledge Editing (KE), this paper proposes Edi
 
 ## Background & Motivation
 
-**State of the Field**: KE methods such as ROME and MEMIT enable low-cost updates of factual knowledge in LLMs, formalized as $(s, r, o \to o')$, e.g., changing "the German Chancellor is Scholz" to "Merz."
+**Background**: KE methods such as ROME and MEMIT enable low-cost updates of factual knowledge in LLMs, formalized as $(s, r, o \to o')$, e.g., changing "the German Chancellor is Scholz" to "Merz."
 
 **Limitations of Prior Work**: KE carries dual-use risks—it can be exploited maliciously to inject misinformation, bias, or backdoors. Existing defenses assume access to a candidate set of potentially edited facts for verification, which is impractical in real-world settings.
 
-**Root Cause**: How can malicious edits be detected and reversed using only the post-edit weights, with no knowledge of the editing prompt, original weights, or the edited facts?
+**Key Challenge**: How can malicious edits be detected and reversed using only the post-edit weights, with no knowledge of the editing prompt, original weights, or the edited facts?
 
-**Paper Goals**: Two tasks are formally defined: (1) *edit tracing*—inferring the edited target entity $o'$ from post-edit weights; (2) *edit reversal*—restoring the model's original output without any additional information.
+**Goal**: Two tasks are formally defined: (1) *edit tracing*—inferring the edited target entity $o'$ from post-edit weights; (2) *edit reversal*—restoring the model's original output without any additional information.
 
-**Starting Point**: The structural properties of KE methods are exploited—methods such as ROME produce rank-1 updates $W'_V = W_V + W_N$, concentrating edit information in the component corresponding to the largest singular value.
+**Key Insight**: The structural properties of KE methods are exploited—methods such as ROME produce rank-1 updates $W'_V = W_V + W_N$, concentrating edit information in the component corresponding to the largest singular value.
 
 **Core Idea**: In post-edit weight matrices, edit information is concentrated in the top singular value components; this property enables high-accuracy tracing and training-free reversal of malicious knowledge edits.
 

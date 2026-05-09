@@ -41,9 +41,9 @@ Model quantization reduces computation and memory overhead by representing weigh
 - **MatQuant**: Employs co-training and co-distillation regularization but does not account for inter-bit-width competition
 - **QAT-based methods** (RobustQuant, EQ-Net, etc.): Training overhead is prohibitive for large-scale Transformers
 
-**Root Cause**: In joint multi-bit-width optimization, aggressive quantization at low bit-widths degrades the representational quality of medium- and high-bit-width settings, causing overall performance to be bottlenecked by the lowest precision configuration—a phenomenon of **competitive conflict** among bit-widths.
+**Key Challenge**: In joint multi-bit-width optimization, aggressive quantization at low bit-widths degrades the representational quality of medium- and high-bit-width settings, causing overall performance to be bottlenecked by the lowest precision configuration—a phenomenon of **competitive conflict** among bit-widths.
 
-**Starting Point**: Design a PTQ framework that maintains balanced cross-bit-width performance via a token merging strategy, and establishes hierarchical parameter sharing across bit-widths via a cascaded LoRA structure, converting conflict into synergy.
+**Key Insight**: Design a PTQ framework that maintains balanced cross-bit-width performance via a token merging strategy, and establishes hierarchical parameter sharing across bit-widths via a cascaded LoRA structure, converting conflict into synergy.
 
 ## Method
 

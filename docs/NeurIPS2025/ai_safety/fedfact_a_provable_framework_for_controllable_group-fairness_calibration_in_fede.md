@@ -29,18 +29,18 @@ This paper proposes FedFACT, a framework that characterizes the structure of the
 
 ## Background & Motivation
 
-**State of the Field**: Federated learning is increasingly deployed in high-stakes domains such as healthcare and finance, where ensuring group fairness across sensitive attributes (e.g., gender, race) is essential. Two notions of fairness arise in FL: **global fairness** (aggregate model disparity across all clients) and **local fairness** (disparity within each individual client).
+**Background**: Federated learning is increasingly deployed in high-stakes domains such as healthcare and finance, where ensuring group fairness across sensitive attributes (e.g., gender, race) is essential. Two notions of fairness arise in FL: **global fairness** (aggregate model disparity across all clients) and **local fairness** (disparity within each individual client).
 
 **Limitations of Prior Work**:
    - **Inherent tension between global and local fairness**: Statistical heterogeneity across client data distributions causes the two fairness objectives to conflict.
    - **Uncontrollable accuracy–fairness trade-off**: The **non-decomposability** and **non-differentiability** of fairness metrics make optimization extremely challenging.
    - Existing methods largely rely on surrogate fairness losses, whose inevitable approximation gap leads to suboptimal performance.
 
-**Root Cause**: Existing methods either focus exclusively on global fairness (sacrificing local) or local fairness (sacrificing global), and most are limited to binary classification. The core challenge is: under multi-class × multi-sensitive-attribute × joint global/local fairness constraints, how can one find an optimal classifier with minimal accuracy degradation?
+**Key Challenge**: Existing methods either focus exclusively on global fairness (sacrificing local) or local fairness (sacrificing global), and most are limited to binary classification. The core challenge is: under multi-class × multi-sensitive-attribute × joint global/local fairness constraints, how can one find an optimal classifier with minimal accuracy degradation?
 
-**Paper Goals**: To design a theoretically optimal and controllable framework for group-fairness calibration in federated learning that simultaneously guarantees global and local fairness for multi-class classification.
+**Goal**: To design a theoretically optimal and controllable framework for group-fairness calibration in federated learning that simultaneously guarantees global and local fairness for multi-class classification.
 
-**Starting Point**: The paper adopts a **Bayes-optimal** perspective—first characterizing the structure of the optimal classifier under fairness constraints in the federated setting, then deriving practical algorithms from this characterization.
+**Key Insight**: The paper adopts a **Bayes-optimal** perspective—first characterizing the structure of the optimal classifier under fairness constraints in the federated setting, then deriving practical algorithms from this characterization.
 
 **Core Idea**: The federated Bayes-optimal fair classifier can be accurately approximated via per-client cost-sensitive classification or plug-in-based bi-level optimization, where the cost matrix $\mathbf{M}^{\lambda,\mu}(a,k)$ controls the degree of global/local fairness through dual variables.
 

@@ -29,18 +29,18 @@ Drawing on cognitive science methodology for studying mental models, this work e
 
 ## Background & Motivation
 
-**State of the Field**: Whether large language models (LLMs) construct and manipulate internal "world models" is a fundamental question in AI. One camp holds that LLMs exhibit emergent reasoning capabilities; another argues they rely solely on statistical pattern matching.
+**Background**: Whether large language models (LLMs) construct and manipulate internal "world models" is a fundamental question in AI. One camp holds that LLMs exhibit emergent reasoning capabilities; another argues they rely solely on statistical pattern matching.
 
 **Limitations of Prior Work**:
    - Existing evaluation methods struggle to distinguish "genuine world model reasoning" from "statistical associations based on training distributions"
    - When tasks are modified to be out-of-distribution (OOD), LLM performance drops sharply (e.g., superhuman Go AIs being defeated by simple strategies)
    - A systematic methodology for probing potential world models inside LLMs is lacking
 
-**Root Cause**: Is LLM success attributable to flexible, generalizable reasoning or to brittle surface-level pattern matching? How can the two be distinguished?
+**Key Challenge**: Is LLM success attributable to flexible, generalizable reasoning or to brittle surface-level pattern matching? How can the two be distinguished?
 
-**Paper Goals**: To systematically test, via cognitive science methodology, whether LLMs construct internal world models of mechanical systems.
+**Goal**: To systematically test, via cognitive science methodology, whether LLMs construct internal world models of mechanical systems.
 
-**Starting Point**: Pulley systems — a classic paradigm in cognitive science for studying human mental models — are presented in TikZ code form to ensure the task is out-of-distribution.
+**Key Insight**: Pulley systems — a classic paradigm in cognitive science for studying human mental models — are presented in TikZ code form to ensure the task is out-of-distribution.
 
 **Core Idea**: LLMs can leverage a "count-the-pulleys" heuristic to approximately reason about mechanical advantage and can distinguish organized from disordered systems, but cannot reason about how force propagates through connections — the world model exists but is as brittle as a "mental model."
 

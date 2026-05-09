@@ -30,7 +30,7 @@ Inspired by the metacognitive regulation mechanism of the prefrontal cortex, thi
 
 ### State of the Field
 
-**State of the Field**: Understanding long narratives (novels, stories) differs from general multi-hop QA in that it requires dynamically constructing and revising a global mental model of plot, characters, and motivational development. Consider the question "Why did Snape kill Dumbledore?"—answering it requires weaving a complete evidence network from scattered clues spanning multiple books: Dumbledore's terminal illness, the Unbreakable Vow, and Snape's deeply concealed loyalty. The true significance of these clues can only be fully reconciled in retrospect.
+**Background**: Understanding long narratives (novels, stories) differs from general multi-hop QA in that it requires dynamically constructing and revising a global mental model of plot, characters, and motivational development. Consider the question "Why did Snape kill Dumbledore?"—answering it requires weaving a complete evidence network from scattered clues spanning multiple books: Dumbledore's terminal illness, the Unbreakable Vow, and Snape's deeply concealed loyalty. The true significance of these clues can only be fully reconciled in retrospect.
 
 Shortcomings of existing methods:
 
@@ -40,15 +40,15 @@ Shortcomings of existing methods:
 
 ### Root Cause
 
-**Root Cause**: Single-step retrieval RAG methods (e.g., RAPTOR, HippoRAGv2, GraphRAG) rely on static indices, leading to shallow understanding and an inability to capture the dynamic evolution of evidence.
+**Key Challenge**: Single-step retrieval RAG methods (e.g., RAPTOR, HippoRAGv2, GraphRAG) rely on static indices, leading to shallow understanding and an inability to capture the dynamic evolution of evidence.
 
 ### Starting Point
 
-**Starting Point**: Multi-step retrieval RAG methods (e.g., IRCoT, Self-RAG, MemoRAG) treat each retrieval step independently, lacking coherent narrative reasoning and resulting in fragmented, stateless understanding.
+**Key Insight**: Multi-step retrieval RAG methods (e.g., IRCoT, Self-RAG, MemoRAG) treat each retrieval step independently, lacking coherent narrative reasoning and resulting in fragmented, stateless understanding.
 
 ### Starting Point
 
-**Paper Goals**: How can **stateful reasoning** be realized in a RAG setting—i.e., maintaining a dynamically updated memory throughout the retrieval process so that the system can, like a human reader, continuously construct and revise a global understanding of the narrative as new evidence emerges?
+**Goal**: How can **stateful reasoning** be realized in a RAG setting—i.e., maintaining a dynamically updated memory throughout the retrieval process so that the system can, like a human reader, continuously construct and revise a global understanding of the narrative as new evidence emerges?
 
 ## Method
 

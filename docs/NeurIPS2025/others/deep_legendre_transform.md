@@ -28,16 +28,16 @@ DLT exploits the implicit Fenchel representation of convex conjugates, $f^*(\nab
 
 ## Background & Motivation
 
-**State of the Field**: The convex conjugate (Legendre–Fenchel transform) is a fundamental operation in convex analysis, optimization, physics, and economics, defined as $f^*(y) = \sup_{x \in C}\{\langle x,y\rangle - f(x)\}$.
+**Background**: The convex conjugate (Legendre–Fenchel transform) is a fundamental operation in convex analysis, optimization, physics, and economics, defined as $f^*(y) = \sup_{x \in C}\{\langle x,y\rangle - f(x)\}$.
 
 **Limitations of Prior Work**:
    - Classical grid-based methods have complexity $O(N^d)$ and suffer from the curse of dimensionality, being practical only for $d \leq 4$.
    - Neural network-based approaches (used in optimal transport) require solving complex max-min problems.
    - Learning the inverse map of $\nabla f$ (Korotin et al.) demands additional optimization design.
 
-**Root Cause**: High-dimensional convex conjugate computation lacks efficient, scalable numerical methods with error guarantees.
+**Key Challenge**: High-dimensional convex conjugate computation lacks efficient, scalable numerical methods with error guarantees.
 
-**Starting Point**: For differentiable convex functions, the implicit identity $f^*(\nabla f(x)) = \langle x, \nabla f(x)\rangle - f(x)$ holds—directly providing a training objective that requires no optimization problem to be solved.
+**Key Insight**: For differentiable convex functions, the implicit identity $f^*(\nabla f(x)) = \langle x, \nabla f(x)\rangle - f(x)$ holds—directly providing a training objective that requires no optimization problem to be solved.
 
 ## Method
 

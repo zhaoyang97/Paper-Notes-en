@@ -32,7 +32,7 @@ This paper proposes Jumbo: a method that expands the ViT CLS token to $J$ times 
 
 Vision Transformers offer simplicity, flexibility, and efficiency: they support token dropping (critical for SOTA self-supervised learning algorithms), readily accommodate multimodal data, and directly benefit from kernel optimizations such as FlashAttention. However, in high-throughput inference settings (tiny/nano model sizes), plain ViT lags far behind dedicated efficient architectures such as EfficientViT and SHViT.
 
-**Root Cause**: Under the standard setting (224×224 images, 16×16 patches), 196 patch tokens and 1 CLS token imply that only 1/197 of the model capacity is devoted to global information aggregation—clearly insufficient. Darcet et al. (2024) found that ViT tends to "hijack" certain patch tokens as pseudo-CLS tokens and proposed Registers as additional global tokens to alleviate this issue.
+**Key Challenge**: Under the standard setting (224×224 images, 16×16 patches), 196 patch tokens and 1 CLS token imply that only 1/197 of the model capacity is devoted to global information aggregation—clearly insufficient. Darcet et al. (2024) found that ViT tends to "hijack" certain patch tokens as pseudo-CLS tokens and proposed Registers as additional global tokens to alleviate this issue.
 
 However, Registers have a fundamental limitation: global tokens interact with each other only through attention, which is essentially an information-routing mechanism (weighted linear combination) with limited expressive power. What is missing is the nonlinear function modeling capability provided by FFNs.
 

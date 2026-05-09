@@ -44,7 +44,7 @@ PDEs from different physics domains (fluid dynamics, radiation, elasticity, astr
 
 ### Paper Goals
 
-The paper aims to design a unified foundation model architecture that, after pretraining on heterogeneous PDE systems, can transfer to new physics domains without architectural modification. **Starting Point**: spatial tokens capture local structure, spectral tokens encode global constraints, and FiLM modulation injects physical conditions. **Core Idea**: a modular design—comprising replaceable tokenizers, backbones, decoders, and condition injection mechanisms—where systematic ablation identifies the optimal combination.
+The paper aims to design a unified foundation model architecture that, after pretraining on heterogeneous PDE systems, can transfer to new physics domains without architectural modification. **Key Insight**: spatial tokens capture local structure, spectral tokens encode global constraints, and FiLM modulation injects physical conditions. **Core Idea**: a modular design—comprising replaceable tokenizers, backbones, decoders, and condition injection mechanisms—where systematic ablation identifies the optimal combination.
 
 ## Method
 

@@ -31,11 +31,11 @@ This paper proposes the Residual SODAP framework, which jointly addresses repres
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: Existing prompt-based continual learning (PCL) methods suffer from two critical limitations: (1) suboptimal prompt selection — top-$k$ hard selection is non-differentiable with limited expressiveness, while softmax soft selection, though differentiable, accumulates noise by assigning non-zero weights to irrelevant prompts; (2) neglect of classifier-level forgetting — existing PCL methods focus primarily on prompt/prompt-pool design for improved representation adaptation, yet cross-composition diagnostic experiments reveal that unstable classifier decision boundaries are the dominant source of forgetting in domain-incremental learning.
+**Key Challenge**: **Background**: Existing prompt-based continual learning (PCL) methods suffer from two critical limitations: (1) suboptimal prompt selection — top-$k$ hard selection is non-differentiable with limited expressiveness, while softmax soft selection, though differentiable, accumulates noise by assigning non-zero weights to irrelevant prompts; (2) neglect of classifier-level forgetting — existing PCL methods focus primarily on prompt/prompt-pool design for improved representation adaptation, yet cross-composition diagnostic experiments reveal that unstable classifier decision boundaries are the dominant source of forgetting in domain-incremental learning.
 
 ### Starting Point
 
-**Paper Goals**: How can a prompt-based CL framework simultaneously achieve high-quality representation adaptation and classifier-level knowledge preservation under strict constraints — no task IDs and no past data storage — to mitigate catastrophic forgetting?
+**Goal**: How can a prompt-based CL framework simultaneously achieve high-quality representation adaptation and classifier-level knowledge preservation under strict constraints — no task IDs and no past data storage — to mitigate catastrophic forgetting?
 
 ## Method
 

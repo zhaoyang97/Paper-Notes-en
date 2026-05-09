@@ -28,15 +28,15 @@ This paper proposes SafeDrive, an end-to-end planning framework that employs a t
 
 ## Background & Motivation
 
-**State of the Field**: End-to-end autonomous driving (E2E) unifies perception, prediction, and planning into a single model, reducing inter-module error propagation. Recent methods enhance safety via trajectory evaluation (e.g., Hydra-MDP) or world models (e.g., OccWorld, WoTE).
+**Background**: End-to-end autonomous driving (E2E) unifies perception, prediction, and planning into a single model, reducing inter-module error propagation. Recent methods enhance safety via trajectory evaluation (e.g., Hydra-MDP) or world models (e.g., OccWorld, WoTE).
 
 **Limitations of Prior Work**:
 - Trajectory evaluation methods produce only scene-level holistic safety scores, lacking explicit reasoning about *why* a trajectory is safe or unsafe, and failing to discriminate between subtly different trajectories.
 - Dense world models (BEV/occupancy) are grid-centric, lacking explicit modeling of inter-object interactions and thus struggling to capture dynamic interaction risks.
 
-**Root Cause**: Safety assessment requires **instance-level, temporally-resolved** fine-grained reasoning, whereas existing methods only provide coarse-grained holistic scores.
+**Key Challenge**: Safety assessment requires **instance-level, temporally-resolved** fine-grained reasoning, whereas existing methods only provide coarse-grained holistic scores.
 
-**Starting Point**: Drawing inspiration from how human drivers reason about risk—first identifying potentially colliding objects, then evaluating collision risk for each object at future timesteps.
+**Key Insight**: Drawing inspiration from how human drivers reason about risk—first identifying potentially colliding objects, then evaluating collision risk for each object at future timesteps.
 
 **Core Idea**: Construct a **sparse world model** focused on critical dynamic entities to enable per-object, per-timestep fine-grained safety reasoning.
 

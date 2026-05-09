@@ -31,7 +31,7 @@ This paper proposes the Multiplayer Federated Learning (MpFL) framework, which m
 
 ### Root Cause
 
-**State of the Field**: Conventional federated learning assumes all clients share a collaborative objective and jointly optimize a single global model. In practice, however, participants in many scenarios are rational agents with individual objective functions that may conflict (e.g., Cournot competition, electricity markets, mobile robot control). Existing FL frameworks cannot handle such non-cooperative environments.
+**Background**: Conventional federated learning assumes all clients share a collaborative objective and jointly optimize a single global model. In practice, however, participants in many scenarios are rational agents with individual objective functions that may conflict (e.g., Cournot competition, electricity markets, mobile robot control). Existing FL frameworks cannot handle such non-cooperative environments.
 
 The authors identify three key observations: (1) classical FL's Local SGD cannot be directly applied to multiplayer games, since each player optimizes only its own objective; (2) federated minimax optimization involves a game but requires all clients to jointly adjust both sets of variables, rather than each client managing only its own; (3) personalized FL is a special case of MpFL, but MpFL is strictly more general.
 

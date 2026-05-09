@@ -27,15 +27,15 @@ The first systematic case study demonstrating that demographically grounded pers
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are transitioning from chatbots to autonomous agents capable of executing real-world operations (code deployment, OS automation, medical decision-making, etc.). Personas are widely employed to shape agent behavior and role identity.
+**Background**: LLMs are transitioning from chatbots to autonomous agents capable of executing real-world operations (code deployment, OS automation, medical decision-making, etc.). Personas are widely employed to shape agent behavior and role identity.
 
 **Limitations of Prior Work**: Persona-induced bias in pure text generation has been extensively studied—covering both explicit bias (triggering harmful outputs) and implicit bias (differential outputs for identical tasks under different personas). However, the effect of persona on **actual actions and decisions** in agent task execution remains almost entirely uninvestigated.
 
-**Root Cause**: Agent behavior directly affects the real world (executing commands, manipulating databases, trading decisions). If persona can alter agent decision quality, the harm is more immediate than textual bias—an agent assigned a particular demographic identity may perform worse on entirely unrelated tasks.
+**Key Challenge**: Agent behavior directly affects the real world (executing commands, manipulating databases, trading decisions). If persona can alter agent decision quality, the harm is more immediate than textual bias—an agent assigned a particular demographic identity may perform worse on entirely unrelated tasks.
 
-**Paper Goals**: Systematically verify whether demographically grounded personas (gender, race/region, religion, occupation) affect LLM agent performance in multi-step task execution.
+**Goal**: Systematically verify whether demographically grounded personas (gender, race/region, religion, occupation) affect LLM agent performance in multi-step task execution.
 
-**Starting Point**: 23 personas spanning 4 demographic dimensions are used to evaluate 3 mainstream LLMs across 5 operational benchmark domains, quantifying the impact of persona on agent performance.
+**Key Insight**: 23 personas spanning 4 demographic dimensions are used to evaluate 3 mainstream LLMs across 5 operational benchmark domains, quantifying the impact of persona on agent performance.
 
 **Core Idea**: Persona cues entirely irrelevant to the task can cause performance drops of up to 26.2%, and this effect is pervasive across different models and task types.
 

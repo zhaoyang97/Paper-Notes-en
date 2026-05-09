@@ -29,13 +29,13 @@ This paper proposes a BPE tokenizer expansion algorithm that guarantees monotoni
 
 ## Background & Motivation
 
-**State of the Field**: When deploying LLMs in specialized domains, general-purpose tokenizers often fail to encode domain-specific terminology efficiently. In e-commerce, for instance, brand names, SKU identifiers, and multilingual product descriptions are frequently split into multiple subword tokens, resulting in high token fertility that directly increases inference latency and cost.
+**Background**: When deploying LLMs in specialized domains, general-purpose tokenizers often fail to encode domain-specific terminology efficiently. In e-commerce, for instance, brand names, SKU identifiers, and multilingual product descriptions are frequently split into multiple subword tokens, resulting in high token fertility that directly increases inference latency and cost.
 
 **Limitations of Prior Work**: Existing tokenizer expansion work primarily targets new-language adaptation (e.g., Chinese, Thai), while systematic study of domain adaptation remains scarce. Yamaguchi et al. prepend new merge operations to the head of the merge list, which alters the priority of existing merges and can degrade encoding efficiency on general text. AdaptiVocab replaces existing tokens with n-gram tokens, providing no guarantee of monotonically non-increasing encoding length.
 
-**Root Cause**: Vocabulary expansion involves an efficiency–compatibility trade-off: adding too many new tokens enlarges the embedding and projection matrices, slowing each forward pass; adding too few limits compression gains. More critically, whether an autoregressive LLM will actively use new tokens during generation is a question that has never been systematically studied.
+**Key Challenge**: Vocabulary expansion involves an efficiency–compatibility trade-off: adding too many new tokens enlarges the embedding and projection matrices, slowing each forward pass; adding too few limits compression gains. More critically, whether an autoregressive LLM will actively use new tokens during generation is a question that has never been systematically studied.
 
-**Starting Point**: New merge operations are appended to the end of the merge list rather than prepended. By leveraging the sequential execution semantics of BPE, the original tokenization behavior is fully preserved, and the token count for any input can only decrease or remain the same.
+**Key Insight**: New merge operations are appended to the end of the merge list rather than prepended. By leveraging the sequential execution semantics of BPE, the original tokenization behavior is fully preserved, and the token count for any input can only decrease or remain the same.
 
 **Core Idea**: Append-based vocabulary expansion + joint optimization of encoding efficiency and forward-pass speed + analysis of new-token adoption rate — a unified solution to domain-specific LLM inference efficiency.
 

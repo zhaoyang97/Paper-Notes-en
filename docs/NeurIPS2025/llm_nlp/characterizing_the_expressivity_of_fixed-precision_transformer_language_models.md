@@ -27,18 +27,18 @@ content_hash: 1519bcb312444675
 This work precisely characterizes the expressive power of fixed-precision, strictly causal, soft-attention, NoPE Transformers — showing it is exactly equivalent to linear temporal logic restricted to past operators, LTL[P] — and unifies this characterization with partially ordered deterministic finite automata (PODFA) and $\mathcal{R}$-trivial monoids.
 
 ## Background & Motivation
-**State of the Field**: The theoretical expressivity of Transformers is an important open problem. Existing work analyzes Transformers by relating them to formal languages, logic, and circuit complexity. Yang et al. (2024) show that fixed-precision Transformers with unique hard attention (UHA) are equivalent to full LTL[P,F,S,U] (with four temporal operators). Yang & Chiang (2024) analyze soft-attention variants and establish an upper bound of C-RASP, but a precise characterization remains open.
+**Background**: The theoretical expressivity of Transformers is an important open problem. Existing work analyzes Transformers by relating them to formal languages, logic, and circuit complexity. Yang et al. (2024) show that fixed-precision Transformers with unique hard attention (UHA) are equivalent to full LTL[P,F,S,U] (with four temporal operators). Yang & Chiang (2024) analyze soft-attention variants and establish an upper bound of C-RASP, but a precise characterization remains open.
 
 **Limitations of Prior Work**:
 - Many theoretical results assume arbitrary or length-dependent precision, overestimating the capabilities of practical Transformers.
 - UHA (unique hard attention) diverges substantially from the softmax attention used in practice.
 - A precise expressivity characterization for soft-attention, fixed-precision Transformers is still missing.
 
-**Root Cause**: Practically deployed Transformers use fixed precision (16/32-bit) and soft attention, yet theoretical results either assume stronger models (arbitrary precision) or simpler attention mechanisms (hard attention), providing limited guidance for understanding the capabilities of real models.
+**Key Challenge**: Practically deployed Transformers use fixed precision (16/32-bit) and soft attention, yet theoretical results either assume stronger models (arbitrary precision) or simpler attention mechanisms (hard attention), providing limited guidance for understanding the capabilities of real models.
 
-**Paper Goals**: To provide a precise expressivity characterization of fixed-precision, soft-attention, strictly causal, NoPE Transformers.
+**Goal**: To provide a precise expressivity characterization of fixed-precision, soft-attention, strictly causal, NoPE Transformers.
 
-**Starting Point**: A two-way reduction — proving that such Transformers can be translated into $\text{PFO}^2[<]$ (two-variable past first-order logic), while every LTL[P] formula can be simulated by a Transformer.
+**Key Insight**: A two-way reduction — proving that such Transformers can be translated into $\text{PFO}^2[<]$ (two-variable past first-order logic), while every LTL[P] formula can be simulated by a Transformer.
 
 **Core Idea**: The expressive power of fixed-precision soft-attention NoPE Transformers is exactly LTL[P] — a logic that can only look into the past and perform bounded counting.
 

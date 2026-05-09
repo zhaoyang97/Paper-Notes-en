@@ -27,15 +27,15 @@ By constructing a verifiable intermediate reasoning trace dataset via rule-based
 
 ## Background & Motivation
 
-**State of the Field**: Reasoning-oriented LLMs (e.g., DeepSeek R1) generate CoT reasoning traces to improve performance. These traces serve not only as inference-time guidance but also as supervision signals in knowledge distillation (KD) for training smaller models.
+**Background**: Reasoning-oriented LLMs (e.g., DeepSeek R1) generate CoT reasoning traces to improve performance. These traces serve not only as inference-time guidance but also as supervision signals in knowledge distillation (KD) for training smaller models.
 
 **Limitations of Prior Work**: A prevalent yet unexamined implicit assumption is that CoT traces are both semantically correct at inference time and interpretable to end users. However, SFT training objectives require only that the final answer be correct, not that the reasoning trace be semantically valid or interpretable. The verbose and unstructured nature of reasoning traces makes it extremely difficult to verify their validity and interpretability.
 
-**Root Cause**: Reasoning traces are simultaneously assigned two roles—(1) as training/inference signals for LLMs to improve performance, and (2) as interpretability tools for explaining the reasoning process to users—yet these two objectives may be fundamentally at odds.
+**Key Challenge**: Reasoning traces are simultaneously assigned two roles—(1) as training/inference signals for LLMs to improve performance, and (2) as interpretability tools for explaining the reasoning process to users—yet these two objectives may be fundamentally at odds.
 
-**Paper Goals**: To independently evaluate (1) whether the semantic correctness of CoT traces correlates with task performance, and (2) whether the interpretability of CoT traces correlates with task performance.
+**Goal**: To independently evaluate (1) whether the semantic correctness of CoT traces correlates with task performance, and (2) whether the interpretability of CoT traces correlates with task performance.
 
-**Starting Point**: A rule-based question decomposition approach (comprising classification steps and information retrieval steps) is used to construct SFT datasets with verifiable intermediate reasoning traces, enabling correctness and answer accuracy to be assessed independently.
+**Key Insight**: A rule-based question decomposition approach (comprising classification steps and information retrieval steps) is used to construct SFT datasets with verifiable intermediate reasoning traces, enabling correctness and answer accuracy to be assessed independently.
 
 **Core Idea**: Through a verifiable experimental design, this paper demonstrates that researchers should decouple "model supervision objectives" from "user-facing reasoning trace design"—the two should not be conflated.
 

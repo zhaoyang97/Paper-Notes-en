@@ -28,13 +28,13 @@ This work employs the causal-reasoning XAI tool rex to extract Minimal Pixel Set
 
 ## Background & Motivation
 
-**State of the Field**: Despite the proliferation of visual classification model families (CNNs, ViTs, hybrid architectures) and scales, understanding of *how* these models reach decisions remains limited. Prior comparisons have focused primarily on accuracy and robustness, leaving a systematic study of *which pixels* models rely upon largely unaddressed.
+**Background**: Despite the proliferation of visual classification model families (CNNs, ViTs, hybrid architectures) and scales, understanding of *how* these models reach decisions remains limited. Prior comparisons have focused primarily on accuracy and robustness, leaving a systematic study of *which pixels* models rely upon largely unaddressed.
 
 **Limitations of Prior Work**: Jiang et al. used the SAG tool to extract patch-level "minimal sufficient explanations," but two critical issues exist:
 1. SAG's notion of sufficiency is too permissive—it uses a confidence threshold rather than enforcing reproduction of the original classification.
 2. SAG operates on fixed-size patches, precluding pixel-level precision.
 
-**Paper Goals**: This paper proposes extracting **Minimal Pixel Sets (MPS)** via the rex tool, offering two key advantages:
+**Goal**: This paper proposes extracting **Minimal Pixel Sets (MPS)** via the rex tool, offering two key advantages:
 - Pixel-level minimality, unconstrained by patch size.
 - Strict sufficiency: an MPS must cause the model to reproduce the original top-1 classification.
 

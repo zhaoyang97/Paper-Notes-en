@@ -28,10 +28,10 @@ ConTextTab integrates semantic embeddings (text encodings of column names and ca
 
 ## Background & Motivation
 
-- **State of the Field**: Table-native ICL methods such as TabPFN and TabICL perform well on small-to-medium scale tabular prediction tasks, but rely entirely on synthetic data for training and cannot leverage semantic information such as column names or categorical labels present in real-world data.
+- **Background**: Table-native ICL methods such as TabPFN and TabICL perform well on small-to-medium scale tabular prediction tasks, but rely entirely on synthetic data for training and cannot leverage semantic information such as column names or categorical labels present in real-world data.
 - **Limitations of Prior Work**: LLM-based approaches like TabuLa-8B possess deep semantic understanding, but text serialization leads to poor token efficiency (at most 32 rows of context) and loses the 2D structure of tabular data.
-- **Root Cause**: Table-native methods are efficient but semantics-free, whereas LLM-based methods are semantics-aware but inefficient.
-- **Paper Goals**: To combine the advantages of both paradigms — injecting semantic understanding into a table-native ICL framework while training on real-world data.
+- **Key Challenge**: Table-native methods are efficient but semantics-free, whereas LLM-based methods are semantics-aware but inefficient.
+- **Goal**: To combine the advantages of both paradigms — injecting semantic understanding into a table-native ICL framework while training on real-world data.
 
 ## Method
 

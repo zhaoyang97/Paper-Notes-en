@@ -28,7 +28,7 @@ This paper proposes GvU, a self-supervised RL framework (based on GRPO) that lev
 
 ## Background & Motivation
 
-**State of the Field**: UMMs integrate visual understanding and generation through a shared backbone, theoretically enabling T2I generation with complex instruction following. Representative models include Chameleon, Emu3, Janus, BAGEL, Show-o, and BLIP3-o.
+**Background**: UMMs integrate visual understanding and generation through a shared backbone, theoretically enabling T2I generation with complex instruction following. Representative models include Chameleon, Emu3, Janus, BAGEL, Show-o, and BLIP3-o.
 
 **Core Problem**: UMMs suffer from a severe **understanding-generation capability asymmetry**—the understanding branch typically far outperforms the generation branch. Joint training of both tasks further leads to negative transfer, where optimizing one task degrades the other.
 

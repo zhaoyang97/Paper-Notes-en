@@ -28,15 +28,15 @@ This paper proposes OccSAM-Bench, a benchmark that systematically evaluates the 
 
 ## Background & Motivation
 
-**State of the Field**: SAM and its successors (SAM 2, SAM 3, MedSAM, etc.) have demonstrated strong zero-shot generalization in medical image segmentation; however, existing evaluations are almost exclusively conducted on clean, curated medical images.
+**Background**: SAM and its successors (SAM 2, SAM 3, MedSAM, etc.) have demonstrated strong zero-shot generalization in medical image segmentation; however, existing evaluations are almost exclusively conducted on clean, curated medical images.
 
 **Limitations of Prior Work**: In clinical endoscopy, target tissues are frequently occluded by surgical instruments, yet no benchmark systematically quantifies the robustness of foundation segmentation models under such occlusions. More critically, standard full-mask evaluation is fundamentally flawed in surgical contexts — a model that erroneously "hallucinates" tissue beneath an instrument may receive a high score simply by overlapping with the hidden ground truth.
 
-**Root Cause**: Full-mask (amodal) evaluation metrics cannot distinguish between two clinically distinct behaviors: correctly rejecting the occluder versus incorrectly predicting through it.
+**Key Challenge**: Full-mask (amodal) evaluation metrics cannot distinguish between two clinically distinct behaviors: correctly rejecting the occluder versus incorrectly predicting through it.
 
-**Paper Goals**: (1) Establish a controlled surgical occlusion generation framework; (2) propose an evaluation protocol capable of differentiating model behaviors; (3) systematically assess the occlusion robustness of SAM-family models.
+**Goal**: (1) Establish a controlled surgical occlusion generation framework; (2) propose an evaluation protocol capable of differentiating model behaviors; (3) systematically assess the occlusion robustness of SAM-family models.
 
-**Starting Point**: Occlusions are synthesized under known ground-truth conditions, enabling precise computation of segmentation performance over visible, invisible, and complete regions separately.
+**Key Insight**: Occlusions are synthesized under known ground-truth conditions, enabling precise computation of segmentation performance over visible, invisible, and complete regions separately.
 
 **Core Idea**: A three-region evaluation protocol (visible, invisible, complete) is designed to replace conventional single full-mask evaluation, thereby revealing the true behavior of models under occlusion.
 

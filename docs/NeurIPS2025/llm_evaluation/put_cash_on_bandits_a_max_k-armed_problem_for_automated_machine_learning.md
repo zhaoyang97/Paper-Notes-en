@@ -37,9 +37,9 @@ CASH (Combined Algorithm Selection and Hyperparameter Optimization) is a core pr
 
 **Two-level CASH**: Uses a bandit at the upper level to select a model class, and runs HPO on the selected model at the lower level. Limitation: the objective function and distributional assumptions for the upper-level bandit remain unclear.
 
-**Root Cause**: Existing Max K-Armed Bandit (MKB) algorithms assume heavy-tailed reward distributions (e.g., Pareto), whereas HPO reward distributions in CASH are in fact **bounded, left-skewed, and light-tailed**. This distributional mismatch leads to poor performance of existing extreme bandit algorithms on CASH.
+**Key Challenge**: Existing Max K-Armed Bandit (MKB) algorithms assume heavy-tailed reward distributions (e.g., Pareto), whereas HPO reward distributions in CASH are in fact **bounded, left-skewed, and light-tailed**. This distributional mismatch leads to poor performance of existing extreme bandit algorithms on CASH.
 
-**Starting Point**: The paper first conducts a systematic empirical analysis to characterize the true properties of HPO reward distributions, then designs a new bandit algorithm grounded in the correct distributional assumptions, with proven regret upper bounds.
+**Key Insight**: The paper first conducts a systematic empirical analysis to characterize the true properties of HPO reward distributions, then designs a new bandit algorithm grounded in the correct distributional assumptions, with proven regret upper bounds.
 
 ## Method
 

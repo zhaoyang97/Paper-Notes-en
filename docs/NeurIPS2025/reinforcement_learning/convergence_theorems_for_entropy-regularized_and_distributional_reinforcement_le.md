@@ -32,15 +32,15 @@ This paper proposes the **temperature decoupling gambit**, proving that in entro
 
 ## Background & Motivation
 
-**State of the Field**: Standard RL admits multiple optimal policies. Policy optimization methods can converge to some optimal policy, but which one is learned cannot be controlled—different optimal policies may visit different states, execute different actions, and yield different return distributions.
+**Background**: Standard RL admits multiple optimal policies. Policy optimization methods can converge to some optimal policy, but which one is learned cannot be controlled—different optimal policies may visit different states, execute different actions, and yield different return distributions.
 
 **Limitations of Prior Work**: Entropy-regularized RL (ERL) induces uniqueness by penalizing policies with a KL divergence term, yielding a unique optimal policy $\pi^{\tau,\star}$ for each positive temperature $\tau$. However, when $\tau \to 0$ (to recover RL optimality), the convergence of the policy in non-tabular (continuous) MDPs remains unknown.
 
-**Root Cause**: ERL yields a unique policy for each $\tau > 0$, yet that policy is suboptimal for RL; when $\tau \to 0$ to recover RL optimality, one is again confronted with the indeterminacy of optimal policies.
+**Key Challenge**: ERL yields a unique policy for each $\tau > 0$, yet that policy is suboptimal for RL; when $\tau \to 0$ to recover RL optimality, one is again confronted with the indeterminacy of optimal policies.
 
-**Paper Goals**: (1) Provide a scheme that guarantees policy convergence in the $\tau \to 0$ limit; (2) characterize the limiting policy; (3) establish the first convergent algorithm for estimating the optimal return distribution in distributional RL.
+**Goal**: (1) Provide a scheme that guarantees policy convergence in the $\tau \to 0$ limit; (2) characterize the limiting policy; (3) establish the first convergent algorithm for estimating the optimal return distribution in distributional RL.
 
-**Starting Point**: Inspired by the chess concept of a gambit—accepting a short-term sacrifice of $\tau$-ERL optimality in exchange for long-term convergence guarantees.
+**Key Insight**: Inspired by the chess concept of a gambit—accepting a short-term sacrifice of $\tau$-ERL optimality in exchange for long-term convergence guarantees.
 
 **Core Idea**: Construct a Boltzmann–Gibbs policy using a behavioral temperature $\tau$ strictly larger than the evaluation temperature $\sigma$ (requiring $\sigma/\tau \to 0$), guaranteeing convergence to the "optimality-filtered reference policy."
 

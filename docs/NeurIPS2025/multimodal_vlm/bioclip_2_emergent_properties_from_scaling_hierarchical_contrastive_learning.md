@@ -28,15 +28,15 @@ BioCLIP 2 trains a ViT-L on TreeOfLife-200M (214M images across 952K species) us
 
 ## Background & Motivation
 
-**State of the Field**: BioCLIP was trained on TREEOFLIFE-10M and significantly outperformed CLIP on species classification. However, its data scale (10M images) and species coverage (400K) remain limited, and it focuses exclusively on taxonomic tasks.
+**Background**: BioCLIP was trained on TREEOFLIFE-10M and significantly outperformed CLIP on species classification. However, its data scale (10M images) and species coverage (400K) remain limited, and it focuses exclusively on taxonomic tasks.
 
 **Limitations of Prior Work**: Biological vision requires not only species recognition but also understanding of ecological relationships, trait prediction, and life-history stage identification. Whether models trained on taxonomic classification can automatically acquire such "beyond-classification" capabilities remains unclear.
 
-**Root Cause**: Taxonomic classification training supervises only category labels; ecological and phenotypic information never appears in the training signal. Whether scaling enables models to develop ecological understanding from purely classificatory supervision is an open question.
+**Key Challenge**: Taxonomic classification training supervises only category labels; ecological and phenotypic information never appears in the training signal. Whether scaling enables models to develop ecological understanding from purely classificatory supervision is an open question.
 
-**Paper Goals**: (a) Construct the largest biological image dataset and validate scaling effects; (b) Investigate whether hierarchical contrastive learning gives rise to emergent properties.
+**Goal**: (a) Construct the largest biological image dataset and validate scaling effects; (b) Investigate whether hierarchical contrastive learning gives rise to emergent properties.
 
-**Starting Point**: The inherent hierarchical structure of taxonomy (kingdom / phylum / class / order / family / genus / species) is exploited as a training signal. Large-scale data combined with hierarchical supervision may encode information beyond the explicit training objective.
+**Key Insight**: The inherent hierarchical structure of taxonomy (kingdom / phylum / class / order / family / genus / species) is exploited as a training signal. Large-scale data combined with hierarchical supervision may encode information beyond the explicit training objective.
 
 **Core Idea**: Train on 214M biological images via hierarchical contrastive learning and empirically verify that scale produces emergent properties—specifically, that the embedding space automatically encodes ecological relationships and that intra-species variation becomes orthogonal to inter-species variation.
 

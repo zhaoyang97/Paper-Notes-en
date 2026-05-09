@@ -29,15 +29,15 @@ SymphoMotion is a unified motion control framework that simultaneously and preci
 
 ## Background & Motivation
 
-**State of the Field**: Precise control of motion dynamics in video generation is receiving increasing attention. Camera control methods (CameraCtrl, Uni3C, etc.) regulate viewpoint changes by injecting camera parameters, but are limited to static or quasi-static scenes. Object control methods (TrackGo, MagicMotion, etc.) rely on 2D motion cues (bounding boxes, optical flow, keypoints), yet these image-plane representations cannot distinguish true object motion from camera-induced parallax.
+**Background**: Precise control of motion dynamics in video generation is receiving increasing attention. Camera control methods (CameraCtrl, Uni3C, etc.) regulate viewpoint changes by injecting camera parameters, but are limited to static or quasi-static scenes. Object control methods (TrackGo, MagicMotion, etc.) rely on 2D motion cues (bounding boxes, optical flow, keypoints), yet these image-plane representations cannot distinguish true object motion from camera-induced parallax.
 
 **Limitations of Prior Work**: (1) Single-modality motion control methods are mutually incompatible — camera control methods degrade under significant foreground dynamics, while object control methods become unreliable under camera motion. (2) Recent joint control methods (e.g., MotionPrompting, ATI) mix camera parallax and object motion within the same 2D motion field, leading to supervisory ambiguity — different 3D motions can produce similar image-plane projections, especially in scenes with large depth variation. (3) Although MotionCtrl separates the two motion branches, object control remains confined to 2D image space. (4) FMC uses a 6D pose representation but relies on synthetic data and requires full 6-DoF input, limiting its practicality.
 
-**Root Cause**: Camera motion produces global parallax and viewpoint changes, while objects follow independent 3D paths — both are highly coupled in the 2D image plane, making disentanglement difficult.
+**Key Challenge**: Camera motion produces global parallax and viewpoint changes, while objects follow independent 3D paths — both are highly coupled in the 2D image plane, making disentanglement difficult.
 
-**Paper Goals**: How can a single model unify and decouple the control of camera trajectories and object 3D dynamics such that the two are spatially consistent and non-interfering?
+**Goal**: How can a single model unify and decouple the control of camera trajectories and object 3D dynamics such that the two are spatially consistent and non-interfering?
 
-**Starting Point**: The authors argue that the key lies in introducing 3D awareness: augmenting camera control with structural awareness via Plücker embeddings and point-cloud geometry priors, and endowing object control with depth awareness via 2D visual guidance combined with 3D trajectory embeddings. Concurrently, the paper constructs the first large-scale real-world dataset with joint annotations of camera poses and object 3D trajectories.
+**Key Insight**: The authors argue that the key lies in introducing 3D awareness: augmenting camera control with structural awareness via Plücker embeddings and point-cloud geometry priors, and endowing object control with depth awareness via 2D visual guidance combined with 3D trajectory embeddings. Concurrently, the paper constructs the first large-scale real-world dataset with joint annotations of camera poses and object 3D trajectories.
 
 **Core Idea**: 2D visual guidance provides image-plane anchors, and 3D trajectory embeddings provide depth-aware motion supervision — together enabling decoupled joint control of camera and object motion within a unified framework.
 

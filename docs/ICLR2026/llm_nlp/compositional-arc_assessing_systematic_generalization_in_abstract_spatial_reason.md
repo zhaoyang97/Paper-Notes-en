@@ -28,15 +28,15 @@ This paper introduces the Compositional-ARC dataset to evaluate systematic gener
 
 ## Background & Motivation
 
-**State of the Field**: Systematic generalization—the ability to automatically extend understanding of known components to novel combinations—is a hallmark of human cognition. Despite broad progress, LLMs consistently underperform on compositional generalization benchmarks.
+**Background**: Systematic generalization—the ability to automatically extend understanding of known components to novel combinations—is a hallmark of human cognition. Despite broad progress, LLMs consistently underperform on compositional generalization benchmarks.
 
 **Limitations of Prior Work**: Lake & Baroni (2023) demonstrated human-level systematic generalization via Meta-Learning for Compositionality (MLC) on pseudo-linguistic tasks, yet whether MLC generalizes to non-linguistic domains such as spatial reasoning remains unexplored.
 
-**Root Cause**: State-of-the-art LLMs (including o3-mini and GPT-4o) excel at standard reasoning tasks but fail systematically when required to recombine primitive components into novel compositions—not due to insufficient capacity, but due to the absence of a training paradigm that enforces compositional generalization.
+**Key Challenge**: State-of-the-art LLMs (including o3-mini and GPT-4o) excel at standard reasoning tasks but fail systematically when required to recombine primitive components into novel compositions—not due to insufficient capacity, but due to the absence of a training paradigm that enforces compositional generalization.
 
-**Paper Goals**: (1) Design a benchmark for evaluating systematic generalization in spatial reasoning; (2) Validate that MLC can be extended beyond the linguistic domain.
+**Goal**: (1) Design a benchmark for evaluating systematic generalization in spatial reasoning; (2) Validate that MLC can be extended beyond the linguistic domain.
 
-**Starting Point**: Leveraging the closure property of geometric transformations (the composition of two valid transformations remains a valid transformation), the paper constructs ARC-style 2D grid tasks to test whether models can infer unseen level-2 combinations from primitive transformations and level-1 combinations.
+**Key Insight**: Leveraging the closure property of geometric transformations (the composition of two valid transformations remains a valid transformation), the paper constructs ARC-style 2D grid tasks to test whether models can infer unseen level-2 combinations from primitive transformations and level-1 combinations.
 
 **Core Idea**: Extend MLC from language to visual-spatial reasoning, demonstrating that a small model with the right training paradigm can substantially outperform LLMs with ~1,400× more parameters on compositional generalization.
 

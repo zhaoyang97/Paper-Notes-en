@@ -29,15 +29,15 @@ This paper presents a systematic computational complexity analysis of multiple e
 
 ## Background & Motivation
 
-**State of the Field**: Generalized Additive Models (GAMs) $f(\mathbf{x}) = \beta_0 + \sum_i \beta_i f_i(\mathbf{x}_i)$ are widely regarded by the ML community as an "interpretable" model class, whose additive structure makes the relationship between inputs and outputs relatively transparent. This perception has motivated many explanation techniques (e.g., LIME) to approximate model behavior as additive, and metrics such as infidelity evaluate explanation quality via the fidelity of additive approximations.
+**Background**: Generalized Additive Models (GAMs) $f(\mathbf{x}) = \beta_0 + \sum_i \beta_i f_i(\mathbf{x}_i)$ are widely regarded by the ML community as an "interpretable" model class, whose additive structure makes the relationship between inputs and outputs relatively transparent. This perception has motivated many explanation techniques (e.g., LIME) to approximate model behavior as additive, and metrics such as infidelity evaluate explanation quality via the fidelity of additive approximations.
 
 **Limitations of Prior Work**: Although GAMs are considered interpretable, "interpretable" does not imply "efficiently computable explanations." Prior complexity-theoretic studies have focused primarily on neural networks (NP-Hard) and decision trees (polynomial time), leaving this important model class without systematic analysis. GAMs admit numerous variants — components may be splines (Smooth GAMs), neural networks (NAMs), or boosted tree ensembles (EBMs), and input domains may be discrete or continuous — and explanation complexity may vary drastically across these combinations.
 
-**Root Cause**: The additive decomposition structure of GAMs intuitively suggests that explanations should be easy to compute, as each feature's contribution can be analyzed independently. However, it remains unclear whether this intuition holds across all combinations. If counterexamples exist, the foundational assumption that "additive = interpretable" requires revision.
+**Key Challenge**: The additive decomposition structure of GAMs intuitively suggests that explanations should be easy to compute, as each feature's contribution can be analyzed independently. However, it remains unclear whether this intuition holds across all combinations. If counterexamples exist, the foundational assumption that "additive = interpretable" requires revision.
 
-**Paper Goals**: To comprehensively answer the following question: for different GAM types (Smooth/NAM/EBM), different input domains (enumerable discrete / general discrete / continuous), and different explanation methods (sufficient reasons, contrastive explanations, Shapley values, feature redundancy), what is the precise complexity class of computing each explanation type?
+**Goal**: To comprehensively answer the following question: for different GAM types (Smooth/NAM/EBM), different input domains (enumerable discrete / general discrete / continuous), and different explanation methods (sufficient reasons, contrastive explanations, Shapley values, feature redundancy), what is the precise complexity class of computing each explanation type?
 
-**Starting Point**: Each of the 54 "component × domain × explanation" combinations is formalized as a precise computational problem, and a complete complexity landscape is established through reductions and algorithmic constructions.
+**Key Insight**: Each of the 54 "component × domain × explanation" combinations is formalized as a precise computational problem, and a complete complexity landscape is established through reductions and algorithmic constructions.
 
 **Core Idea**: The explanation complexity of GAMs is far more varied than commonly assumed — the type of input domain is the decisive factor, a phenomenon that has never been observed in any other ML model class studied previously.
 

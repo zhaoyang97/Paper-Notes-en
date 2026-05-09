@@ -40,7 +40,7 @@ Acquiring high-quality annotated data in medical imaging is constrained by scann
 
 **Distribution Matching (GANs, Contrastive Learning, Diffusion Models)**: Makes synthetic images "look like" real images but introduces objectives unrelated to the segmentation task and may disrupt label–image alignment.
 
-**Root Cause**: How can one simultaneously achieve high in-domain accuracy (the advantage of supervised learning) and strong out-of-domain generalization (the advantage of domain randomization)?
+**Key Challenge**: How can one simultaneously achieve high in-domain accuracy (the advantage of supervised learning) and strong out-of-domain generalization (the advantage of domain randomization)?
 
 **Core Idea**: Rather than exposing the segmentation network directly to real data, Learn2Synth trains a learnable augmentation network to "calibrate" synthetic data such that the segmentation network trained on the calibrated data achieves optimal performance on real data. The key is transmitting the loss signal from real data to the augmentation network via **hypergradients** (differentiating through the update step).
 

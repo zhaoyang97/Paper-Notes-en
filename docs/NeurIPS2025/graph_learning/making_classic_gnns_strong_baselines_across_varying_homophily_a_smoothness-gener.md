@@ -28,15 +28,15 @@ This paper theoretically reveals the smoothness-generalization dilemma inherent 
 
 ## Background & Motivation
 
-**State of the Field**: GNNs are broadly categorized into homophilic GNNs (suited for graphs where connected nodes share similar labels) and heterophilic GNNs (suited for graphs where connected nodes differ in labels). In practice, graph homophily lies on a continuous spectrum rather than a binary distinction — homophily varies substantially across different hops and different nodes within the same graph.
+**Background**: GNNs are broadly categorized into homophilic GNNs (suited for graphs where connected nodes share similar labels) and heterophilic GNNs (suited for graphs where connected nodes differ in labels). In practice, graph homophily lies on a continuous spectrum rather than a binary distinction — homophily varies substantially across different hops and different nodes within the same graph.
 
 **Limitations of Prior Work**: (a) Empirical observations suggest that homophilic GNNs can perform competitively on heterophilic graphs with tuning, yet no theoretical explanation exists; (b) existing heterophilic GNN designs employ complex modules to handle homophilic and heterophilic components separately, but separating the two inherently requires label information — creating a paradox; (c) the relationships among oversmoothing, heterophily, and generalization have been studied pairwise, but a unified theoretical framework is lacking.
 
-**Root Cause**: As the number of message-passing layers increases, smoothness (representation convergence) inevitably strengthens while generalization (ability to handle distributional shift) correspondingly degrades. This is particularly detrimental in high-order homophilic neighborhoods and all heterophilic neighborhoods.
+**Key Challenge**: As the number of message-passing layers increases, smoothness (representation convergence) inevitably strengthens while generalization (ability to handle distributional shift) correspondingly degrades. This is particularly detrimental in high-order homophilic neighborhoods and all heterophilic neighborhoods.
 
-**Paper Goals**: (1) Provide a unified theoretical understanding of the common root cause underlying oversmoothing, poor generalization, and heterophily failure; (2) design minimal modifications that elevate classic GCN to a universal strong baseline.
+**Goal**: (1) Provide a unified theoretical understanding of the common root cause underlying oversmoothing, poor generalization, and heterophily failure; (2) design minimal modifications that elevate classic GCN to a universal strong baseline.
 
-**Starting Point**: The smoothness-generalization dilemma is formalized via Lipschitz constants and the distance to a subspace $\mathcal{M}$, from which principled design guidelines are derived.
+**Key Insight**: The smoothness-generalization dilemma is formalized via Lipschitz constants and the distance to a subspace $\mathcal{M}$, from which principled design guidelines are derived.
 
 **Core Idea**: Smoothness and generalization represent an inevitable trade-off in GNN message passing; this trade-off can be systematically alleviated through separative hop-wise transformation, inceptive aggregation, and neighborhood relationship learning.
 

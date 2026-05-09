@@ -27,7 +27,7 @@ This paper proposes TSRating, a framework that leverages LLMs to perform pairwis
 
 **Core scientific questions**: Do LLMs genuinely understand the key characteristics of TS quality? How can LLMs be effectively guided to distinguish high- from low-quality TS data? How can LLM judgment be efficiently distilled into a lightweight model for large-scale deployment?
 
-**Paper Goals**: To construct a unified cross-domain TS data quality assessment framework that simultaneously addresses accuracy, efficiency, and generalization.
+**Goal**: To construct a unified cross-domain TS data quality assessment framework that simultaneously addresses accuracy, efficiency, and generalization.
 
 ## Method
 

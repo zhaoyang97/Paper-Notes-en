@@ -29,19 +29,19 @@ This paper derives a Bayesian dual structure for ADMM from a variational Bayes (
 
 ### State of the Field
 
-**State of the Field**: ADMM has served as a core algorithmic backbone for federated learning since its introduction in the 1970s, with its form remaining largely unchanged. Its robust structure naturally raises the question of whether a more general formulation exists.
+**Background**: ADMM has served as a core algorithmic backbone for federated learning since its introduction in the 1970s, with its form remaining largely unchanged. Its robust structure naturally raises the question of whether a more general formulation exists.
 
 **Limitations of Prior Work**: Accelerated variants of ADMM (over-relaxation, momentum, scaled norms, etc.) introduce additional variables without altering the algorithmic form. Swaroop et al. observed line-by-line similarities between VB and ADMM but could not establish an exact correspondence.
 
-**Root Cause**: The deterministic optimization framework underlying ADMM does not extend naturally to heterogeneous deep learning scenarios. A more general framework is needed to unify and generalize ADMM.
+**Key Challenge**: The deterministic optimization framework underlying ADMM does not extend naturally to heterogeneous deep learning scenarios. A more general framework is needed to unify and generalize ADMM.
 
-**Starting Point**: The key insight is that solutions to the VB objective exhibit a dual structure that not only resembles the fixed-point structure of ADMM but also naturally generalizes it. The critical missing link is the **natural gradient**.
+**Key Insight**: The key insight is that solutions to the VB objective exhibit a dual structure that not only resembles the fixed-point structure of ADMM but also naturally generalizes it. The critical missing link is the **natural gradient**.
 
 **Core Idea**: The duality between natural parameters and expectation parameters in exponential family distributions establishes a "Bayesian duality" structure, of which ADMM is a special case under isotropic Gaussians.
 
 ### Mechanism
 
-**Paper Goals**: ### Overall Architecture
+**Goal**: ### Overall Architecture
 Classical ADMM: primal-dual structure over $(\theta_g^*, \theta_k^*, \mathbf{v}_k^*, \mathbf{v}_g^*)$; Bayesian ADMM: expectation-natural parameter dual structure over $(\mu_g^*, \mu_k^*, \eta_k^*, \lambda_g^*)$.
 
 ## Method

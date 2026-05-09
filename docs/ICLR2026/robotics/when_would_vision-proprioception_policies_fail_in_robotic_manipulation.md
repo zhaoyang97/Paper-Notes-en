@@ -32,7 +32,7 @@ Proprioception provides real-time joint state information and is considered esse
 - HPT demonstrates that vision + proprioception significantly outperforms vision-only policies.
 - Octo finds that adding proprioception actually degrades performance.
 
-**Root Cause**: Although proprioception should theoretically be a beneficial complement, vision-proprioception policies in practice often generalize worse than vision-only policies. **What is the root cause of this contradiction, and under what conditions does it occur?**
+**Key Challenge**: Although proprioception should theoretically be a beneficial complement, vision-proprioception policies in practice often generalize worse than vision-only policies. **What is the root cause of this contradiction, and under what conditions does it occur?**
 
 **Key Findings**: Through temporally controlled experiments, the authors identify the problem as occurring specifically during **motion-transition phases**. Robot motion in manipulation tasks can be decomposed into *motion-consistent phases* (e.g., continuous forward movement) and *motion-transition phases* (e.g., reorienting toward a new target and changing movement direction).
 

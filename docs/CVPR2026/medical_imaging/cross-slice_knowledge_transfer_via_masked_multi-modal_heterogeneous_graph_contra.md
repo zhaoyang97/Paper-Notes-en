@@ -28,15 +28,15 @@ This paper proposes SpaHGC, a multimodal heterogeneous graph framework that cons
 
 ## Background & Motivation
 
-**State of the Field**: Spatial transcriptomics (ST) technology enables precise quantification of the spatial distribution of gene expression in tissues, but its high experimental cost limits large-scale application. Predicting ST gene expression from H&E histopathology images has emerged as a promising alternative.
+**Background**: Spatial transcriptomics (ST) technology enables precise quantification of the spatial distribution of gene expression in tissues, but its high experimental cost limits large-scale application. Predicting ST gene expression from H&E histopathology images has emerged as a promising alternative.
 
 **Limitations of Prior Work**: (1) ST data are sparse and noisy—gene expression at certain spots may be missing or near zero; (2) existing methods model spatial structure within a single slice only, ignoring expression patterns shared across slices; (3) inter-individual variability and disease progression introduce cross-sample heterogeneity that single-slice models struggle to capture in a generalizable manner.
 
-**Root Cause**: Tissues of the same type or disease typically share common expression patterns, yet individual differences make direct cross-slice alignment difficult—how can shared information be effectively integrated while accommodating individual heterogeneity?
+**Key Challenge**: Tissues of the same type or disease typically share common expression patterns, yet individual differences make direct cross-slice alignment difficult—how can shared information be effectively integrated while accommodating individual heterogeneity?
 
-**Paper Goals**: To model cross-slice spatial relationships and transfer prior knowledge from multiple reference slices to improve gene expression prediction on a target slice.
+**Goal**: To model cross-slice spatial relationships and transfer prior knowledge from multiple reference slices to improve gene expression prediction on a target slice.
 
-**Starting Point**: Constructing a multimodal heterogeneous graph that connects cross-slice spots via image embeddings from a pathology foundation model (UNI), and leveraging contrastive learning to enhance the robustness of learned representations.
+**Key Insight**: Constructing a multimodal heterogeneous graph that connects cross-slice spots via image embeddings from a pathology foundation model (UNI), and leveraging contrastive learning to enhance the robustness of learned representations.
 
 **Core Idea**: Heterogeneous graph + cross-slice knowledge transfer + masked contrastive learning = more accurate gene expression prediction.
 

@@ -31,8 +31,8 @@ The rapid development of AIGC technology has led to a proliferation of image gen
 
 Existing attribution methods fall into two categories: (1) **Generative watermarking**—embedding invisible watermarks during image generation (e.g., Tree-Ring, Gaussian Shading), which achieves high accuracy but requires full access to and modification of the generative model and cannot generalize across different generators; (2) **AI-generated image attribution**—operating independently of the generation process, but nearly all existing methods treat attribution as a classification problem. Closed-set methods assume all generators are known at training time and cannot adapt to newly emerging models; open-set methods attempt to handle unknown generators but still rely on large amounts of labeled or unlabeled AI-generated images for training, limiting their flexibility.
 
-- **State of the Field**: Rapid iteration of generative models vs. the heavy retraining required by attribution methods.
-- **Root Cause**: A general framework is needed that is **independent of generative models and can adapt to new generators with only a handful of registration samples**. The key insight of this paper is to redefine attribution as a retrieval problem: only a strong feature encoder needs to be trained, and a new generator can be registered by simply adding a few exemplar images to the database.
+- **Background**: Rapid iteration of generative models vs. the heavy retraining required by attribution methods.
+- **Key Challenge**: A general framework is needed that is **independent of generative models and can adapt to new generators with only a handful of registration samples**. The key insight of this paper is to redefine attribution as a retrieval problem: only a strong feature encoder needs to be trained, and a new generator can be registered by simply adding a few exemplar images to the database.
 
 ## Method
 

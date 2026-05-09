@@ -28,13 +28,13 @@ content_hash: ea3aac6d0c9f6215
 TempSamp-R1 is a reinforcement fine-tuning framework that addresses the inefficiency of on-policy sampling in GRPO for video temporal grounding—caused by the vast search space—by introducing ground-truth annotations as off-policy supervision signals, non-linear soft advantage estimation, and a hybrid CoT training paradigm, achieving new state-of-the-art results on Charades-STA, ActivityNet, and QVHighlights.
 
 ## Background & Motivation
-**State of the Field**: MLLMs perform well on general video question answering but struggle with tasks requiring precise temporal understanding, such as temporal grounding and highlight detection. SFT-based approaches tend to overfit deterministic timestamp annotations and lack temporal reasoning capacity. GRPO (DeepSeek-R1-style) is effective for mathematical reasoning but yields limited gains in video temporal grounding.
+**Background**: MLLMs perform well on general video question answering but struggle with tasks requiring precise temporal understanding, such as temporal grounding and highlight detection. SFT-based approaches tend to overfit deterministic timestamp annotations and lack temporal reasoning capacity. GRPO (DeepSeek-R1-style) is effective for mathematical reasoning but yields limited gains in video temporal grounding.
 
 **Limitations of Prior Work**: (1) The search space for video temporal grounding is enormous—locating (start, end) pairs on a continuous time axis is substantially harder than selecting from discrete mathematical answers; (2) pure on-policy GRPO sampling rarely produces high-IoU solutions in such a large search space, resulting in sparse and unstable rewards (top-1 IoU reward on ActivityNet remains persistently low and oscillates); (3) introducing high-reward off-policy solutions (e.g., ground truth) biases advantage estimation—the high reward from GT inflates the group mean, causing all on-policy advantages to become negative.
 
-**Root Cause**: How can a policy be effectively guided to learn precise temporal grounding in a large search space while avoiding the distributional shift introduced by off-policy samples?
+**Key Challenge**: How can a policy be effectively guided to learn precise temporal grounding in a large search space while avoiding the distributional shift introduced by off-policy samples?
 
-**Starting Point**: GT annotations are mixed into the GRPO sampling group as off-policy solutions, while non-linear reward shaping is applied to eliminate the negative impact of distributional shift on advantage estimation.
+**Key Insight**: GT annotations are mixed into the GRPO sampling group as off-policy solutions, while non-linear reward shaping is applied to eliminate the negative impact of distributional shift on advantage estimation.
 
 ## Method
 

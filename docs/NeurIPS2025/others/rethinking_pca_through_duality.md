@@ -34,7 +34,7 @@ This paper revisits PCA through the Difference-of-Convex (DC) framework, establi
 
 ### Root Cause
 
-**State of the Field**: Principal Component Analysis (PCA) is one of the most fundamental tools in data science. Recent discoveries of deep connections between self-attention mechanisms and (kernel) PCA have reinvigorated foundational research interest in PCA.
+**Background**: Principal Component Analysis (PCA) is one of the most fundamental tools in data science. Recent discoveries of deep connections between self-attention mechanisms and (kernel) PCA have reinvigorated foundational research interest in PCA.
 
 Motivations for revisiting PCA:
 

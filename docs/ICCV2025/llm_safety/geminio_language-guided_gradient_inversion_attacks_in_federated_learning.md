@@ -36,7 +36,7 @@ Federated learning (FL) allows clients to collaboratively train models by sharin
 - **SEER/LOKI/Abandon**: Introduce special neural architectures to preserve gradients of specific samples, but can only target semantically irrelevant conditions such as brightness, offering very limited control.
 - No existing method supports **semantic-level, cross-category, instance-level** targeted reconstruction.
 
-**Root Cause**: Attackers are fundamentally interested in data with specific semantic content (e.g., "any weapon," "human faces") rather than random samples or specific classes, yet existing methods lack flexible semantic specification capability.
+**Key Challenge**: Attackers are fundamentally interested in data with specific semantic content (e.g., "any weapon," "human faces") rather than random samples or specific classes, yet existing methods lack flexible semantic specification capability.
 
 **Core Idea**: Leverage the text-image alignment capability of pretrained VLMs (e.g., CLIP) to translate attacker natural language queries into a reshaping of the malicious global model's loss surface, such that samples matching the query produce high gradients while non-matching samples have their gradients suppressed.
 

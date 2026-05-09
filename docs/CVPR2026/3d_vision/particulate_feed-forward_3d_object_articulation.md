@@ -28,15 +28,15 @@ Particulate proposes a feed-forward model that infers complete articulation stru
 
 ## Background & Motivation
 
-1. **State of the Field**: Most real-world objects possess not only shape but also motion capabilities (e.g., cabinet door rotation, drawer sliding). Understanding articulation structure is critical for robotic manipulation, game simulation, and digital twins. Existing methods either rely on rule-based procedural generation that struggles to cover long-tail objects, or require per-object multi-view optimization with prohibitively long runtimes (10–20+ minutes).
+1. **Background**: Most real-world objects possess not only shape but also motion capabilities (e.g., cabinet door rotation, drawer sliding). Understanding articulation structure is critical for robotic manipulation, game simulation, and digital twins. Existing methods either rely on rule-based procedural generation that struggles to cover long-tail objects, or require per-object multi-view optimization with prohibitively long runtimes (10–20+ minutes).
 
 2. **Limitations of Prior Work**: Learning-based methods fall into three categories: (a) 3D part segmentation methods predict semantic segmentation without modeling articulation relationships; (b) 3D articulated object generation methods cover only a few categories and assume known kinematic structures; (c) VLM-based methods (e.g., Articulate AnyMesh) offer good generalization but require per-object optimization lasting tens of minutes and cannot handle internal or occluded parts.
 
-3. **Root Cause**: How to achieve fast feed-forward inference while maintaining generalization, and handling internally invisible parts?
+3. **Key Challenge**: How to achieve fast feed-forward inference while maintaining generalization, and handling internally invisible parts?
 
-4. **Paper Goals**: Directly predict complete articulation structures (part segmentation + kinematic tree + motion parameters) from static 3D meshes in a feed-forward manner, supporting multi-joint, multi-category, and AI-generated 3D assets.
+4. **Goal**: Directly predict complete articulation structures (part segmentation + kinematic tree + motion parameters) from static 3D meshes in a feed-forward manner, supporting multi-joint, multi-category, and AI-generated 3D assets.
 
-5. **Starting Point**: Leverage the flexibility and scalability of Transformers by training end-to-end on large-scale multi-category articulation datasets, using learnable part queries and multi-head decoders to predict each articulation attribute independently.
+5. **Key Insight**: Leverage the flexibility and scalability of Transformers by training end-to-end on large-scale multi-category articulation datasets, using learnable part queries and multi-head decoders to predict each articulation attribute independently.
 
 6. **Core Idea**: Employ a standard Transformer with learnable part queries for end-to-end training on point clouds, enabling single-pass feed-forward inference to predict all articulation attributes, including part segmentation, kinematic tree, and motion constraints.
 

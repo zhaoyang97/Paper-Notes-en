@@ -29,15 +29,15 @@ PerformRecast presents a GAN-based portrait video editing method built upon a co
 
 ## Background & Motivation
 
-**State of the Field**: The portrait animation field has seen extensive development, encompassing GAN-based warping methods (LivePortrait, Face Vid2Vid, etc.) and diffusion-based methods (SkyReels, Hunyuan-Portrait, Wan-Animate, etc.). These methods typically generate animations from static portrait images guided by a driving video.
+**Background**: The portrait animation field has seen extensive development, encompassing GAN-based warping methods (LivePortrait, Face Vid2Vid, etc.) and diffusion-based methods (SkyReels, Hunyuan-Portrait, Wan-Animate, etc.). These methods typically generate animations from static portrait images guided by a driving video.
 
 **Limitations of Prior Work**: The central challenge lies in **expression and head pose disentanglement**. Portrait video expression editing requires modifying only facial expressions while strictly preserving the subject's facial identity, head pose, camera motion, and background — any unintended change is considered a failure. Existing methods suffer from: (1) diffusion-based methods are inherently ill-suited for disentangling expression from head rotation, exhibit slow inference, and suffer from temporal inconsistency; (2) GAN-based warping methods (e.g., LivePortrait) offer better controllability but rely on implicit keypoints that lack explicit physical meaning and direct supervision, resulting in incomplete disentanglement.
 
-**Root Cause**: LivePortrait's keypoint transformation formula is $x = s \cdot (x_c R + \delta) + t$, which applies head rotation $R$ to the canonical keypoints before adding expression deformation $\delta$. This ordering is inconsistent with the 3DMM forward process — in FLAME, expression blendshapes are added to the template mesh before joint rotation is applied. This incorrect ordering forces the learned $\delta$ to absorb residual head pose information, preventing true disentanglement.
+**Key Challenge**: LivePortrait's keypoint transformation formula is $x = s \cdot (x_c R + \delta) + t$, which applies head rotation $R$ to the canonical keypoints before adding expression deformation $\delta$. This ordering is inconsistent with the 3DMM forward process — in FLAME, expression blendshapes are added to the template mesh before joint rotation is applied. This incorrect ordering forces the learned $\delta$ to absorb residual head pose information, preventing true disentanglement.
 
-**Paper Goals**: (1) Correct the keypoint transformation formula to align with the FLAME forward process; (2) directly supervise the motion extractor using explicit 3D keypoints; (3) resolve boundary misalignment between facial and non-facial regions during expression editing.
+**Goal**: (1) Correct the keypoint transformation formula to align with the FLAME forward process; (2) directly supervise the motion extractor using explicit 3D keypoints; (3) resolve boundary misalignment between facial and non-facial regions during expression editing.
 
-**Starting Point**: 3DMMs inherently represent identity, expression, and head pose with independent parameters. The authors leverage the physically grounded ordering of the FLAME forward process — expression first, then rotation — to improve upon LivePortrait.
+**Key Insight**: 3DMMs inherently represent identity, expression, and head pose with independent parameters. The authors leverage the physically grounded ordering of the FLAME forward process — expression first, then rotation — to improve upon LivePortrait.
 
 **Core Idea**: Revise the keypoint transformation to apply expression deformation before rotation, matching the FLAME forward process, and directly supervise the motion extractor with explicit keypoints derived from 3D face tracking.
 

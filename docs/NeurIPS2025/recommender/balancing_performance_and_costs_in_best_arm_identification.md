@@ -28,15 +28,15 @@ This paper proposes to reformulate Best Arm Identification (BAI) from the fixed-
 
 ## Background & Motivation
 
-**State of the Field**: Classical BAI operates under two paradigms — fixed-budget (minimize error rate given $T$ samples) and fixed-confidence (minimize sample count given $\delta$). Practical settings such as A/B testing require simultaneous tradeoffs between accuracy and sampling cost.
+**Background**: Classical BAI operates under two paradigms — fixed-budget (minimize error rate given $T$ samples) and fixed-confidence (minimize sample count given $\delta$). Practical settings such as A/B testing require simultaneous tradeoffs between accuracy and sampling cost.
 
 **Limitations of Prior Work**: Both paradigms require pre-specifying a constraint ($T$ or $\delta$), yet in practice neither is known a priori and they are mutually coupled. Choosing the wrong $T$ wastes resources; choosing the wrong $\delta$ yields bounds that are either too loose or too tight.
 
-**Root Cause**: More sampling improves accuracy but increases cost — a unified framework is needed to find the optimal balance along a continuous tradeoff.
+**Key Challenge**: More sampling improves accuracy but increases cost — a unified framework is needed to find the optimal balance along a continuous tradeoff.
 
-**Paper Goals**: Define a new risk functional $\mathcal{R} = \text{performance loss} + c \cdot E[\tau]$, derive optimal lower bounds, and design matching algorithms.
+**Goal**: Define a new risk functional $\mathcal{R} = \text{performance loss} + c \cdot E[\tau]$, derive optimal lower bounds, and design matching algorithms.
 
-**Starting Point**: Two risk functionals are considered — $\mathcal{R}_{MI}$ (misidentification probability + cost) and $\mathcal{R}_{SR}$ (simple regret + cost) — each admitting distinct optimal strategies and phase transition behavior.
+**Key Insight**: Two risk functionals are considered — $\mathcal{R}_{MI}$ (misidentification probability + cost) and $\mathcal{R}_{SR}$ (simple regret + cost) — each admitting distinct optimal strategies and phase transition behavior.
 
 **Core Idea**: Unify BAI as risk functional minimization → derive lower bounds with phase transitions → DBCARE dynamic-budget elimination algorithm matches the lower bounds to logarithmic factors.
 

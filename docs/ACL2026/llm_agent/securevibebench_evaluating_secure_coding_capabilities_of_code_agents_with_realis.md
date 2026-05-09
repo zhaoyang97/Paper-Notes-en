@@ -29,15 +29,15 @@ This paper presents SecureVibeBench, the first repository-level, multi-file-edit
 
 ## Background & Motivation
 
-**State of the Field**: LLM-driven code agents (e.g., SWE-agent, Claude Code) are rapidly transforming software engineering, yet the security of generated code remains a serious concern—approximately 40% of GitHub Copilot completions contain exploitable vulnerabilities.
+**Background**: LLM-driven code agents (e.g., SWE-agent, Claude Code) are rapidly transforming software engineering, yet the security of generated code remains a serious concern—approximately 40% of GitHub Copilot completions contain exploitable vulnerabilities.
 
 **Limitations of Prior Work**: Existing secure coding benchmarks suffer from three critical shortcomings: (1) *Task format*: most tasks are function-level code completions that do not reflect real-world repository-level, multi-file editing scenarios; (2) *Context alignment*: tasks are often synthesized from CWE catalogs and thus fail to align with the actual code versions and requirements under which human developers introduced vulnerabilities; (3) *Evaluation*: some benchmarks disregard functional correctness, and nearly all overlook the possibility that agents may introduce entirely new security risks.
 
-**Root Cause**: A fair comparison of human and agent secure coding capabilities requires placing agents in the exact same scenarios where humans historically introduced vulnerabilities—yet no such benchmark previously existed.
+**Key Challenge**: A fair comparison of human and agent secure coding capabilities requires placing agents in the exact same scenarios where humans historically introduced vulnerabilities—yet no such benchmark previously existed.
 
-**Paper Goals**: To construct a repository-level secure coding benchmark grounded in realistic vulnerability introduction scenarios, enabling comprehensive evaluation of both functional correctness and security.
+**Goal**: To construct a repository-level secure coding benchmark grounded in realistic vulnerability introduction scenarios, enabling comprehensive evaluation of both functional correctness and security.
 
-**Starting Point**: Cascaded static and dynamic analysis is employed to precisely trace back to the commit at which a vulnerability was first introduced into the codebase, thereby reconstructing the requirements and code state at that point in time.
+**Key Insight**: Cascaded static and dynamic analysis is employed to precisely trace back to the commit at which a vulnerability was first introduced into the codebase, thereby reconstructing the requirements and code state at that point in time.
 
 **Core Idea**: Shift the secure coding evaluation paradigm from "can the agent avoid known vulnerability patterns?" to "when placed in the same scenario where a human introduced a vulnerability, does the agent repeat the mistake or introduce new risks?"
 

@@ -28,15 +28,15 @@ This paper proposes BLM-Guard, an explainable multimodal moderation framework fo
 
 ## Background & Motivation
 
-**State of the Field**: Commercial ad content moderation on short-video platforms (TikTok, Kuaishou, etc.) is in high demand, yet existing content safety models (e.g., LlamaGuard, LlavaGuard) primarily target coarse-grained risks such as violence and pornography, and do not support the fine-grained, policy-driven moderation required for advertising compliance.
+**Background**: Commercial ad content moderation on short-video platforms (TikTok, Kuaishou, etc.) is in high demand, yet existing content safety models (e.g., LlamaGuard, LlavaGuard) primarily target coarse-grained risks such as violence and pornography, and do not support the fine-grained, policy-driven moderation required for advertising compliance.
 
 **Limitations of Prior Work**: Ad violations are often subtle—visually legitimate content may contain exaggerated claims in audio, captions and speech may be inconsistent, or seemingly normal visuals may carry misleading implications. Existing methods suffer from three problems: (a) lack of cross-modal causal reasoning; (b) inability to adapt to policy drift as rules are frequently updated; (c) insufficient domain-specific reasoning for commercial risk scenarios.
 
-**Root Cause**: Ad moderation requires not only accurate violation detection, but also interpretable reasoning chains (why a violation occurred and which rule was violated), while simultaneously detecting intra-modal manipulation (e.g., exaggerated visuals) and inter-modal mismatches (e.g., caption–speech inconsistency).
+**Key Challenge**: Ad moderation requires not only accurate violation detection, but also interpretable reasoning chains (why a violation occurred and which rule was violated), while simultaneously detecting intra-modal manipulation (e.g., exaggerated visuals) and inter-modal mismatches (e.g., caption–speech inconsistency).
 
-**Paper Goals**: To build a multimodal ad moderation system that is both accurate and explainable, requiring structured reasoning, policy alignment, and cross-modal consistency detection.
+**Goal**: To build a multimodal ad moderation system that is both accurate and explainable, requiring structured reasoning, policy alignment, and cross-modal consistency detection.
 
-**Starting Point**: Ad moderation is formulated as a policy-aligned multi-step reasoning task—observation (modality content description) → risk screening → causal analysis → final verdict—with CoT structuring this process and RL ensuring dynamic policy alignment.
+**Key Insight**: Ad moderation is formulated as a policy-aligned multi-step reasoning task—observation (modality content description) → risk screening → causal analysis → final verdict—with CoT structuring this process and RL ensuring dynamic policy alignment.
 
 **Core Idea**: Interleaved CoT for structured reasoning cold-start combined with self-adaptive GRPO for policy-aligned reinforcement learning, handling both intra-modal and inter-modal violations simultaneously.
 

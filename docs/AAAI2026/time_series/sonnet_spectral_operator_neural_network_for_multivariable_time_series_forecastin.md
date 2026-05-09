@@ -29,7 +29,7 @@ This paper proposes Sonnet, which maps inputs to the time-frequency domain via l
 
 ## Background & Motivation
 
-**State of the Field**: Multivariate time series (MTS) forecasting leverages exogenous variables to predict a single target variable, with broad applications in meteorology, influenza forecasting, and electricity consumption. While Transformer architectures can capture long-range dependencies, they fall short in modeling complex inter-variable relationships.
+**Background**: Multivariate time series (MTS) forecasting leverages exogenous variables to predict a single target variable, with broad applications in meteorology, influenza forecasting, and electricity consumption. While Transformer architectures can capture long-range dependencies, they fall short in modeling complex inter-variable relationships.
 
 **Limitations of Prior Work**:  
    - Methods such as iTransformer and Samformer embed sequences along the temporal dimension before applying inter-variable attention, thereby destroying temporal information;  
@@ -37,11 +37,11 @@ This paper proposes Sonnet, which maps inputs to the time-frequency domain via l
    - TimeXer and DeformTime capture inter-variable dependencies only within the receptive field of convolutional kernels, limiting their scope;  
    - Frequency-domain methods (FEDformer, FiLM) focus on intra-variable seasonality modeling, neglecting spectral correlations across variables.
 
-**Root Cause**: Existing attention mechanisms are not consistently effective for MTS tasks — experiments reveal that removing attention modules from certain models does not significantly degrade performance, indicating that vanilla attention fails to capture inter-variable information.
+**Key Challenge**: Existing attention mechanisms are not consistently effective for MTS tasks — experiments reveal that removing attention modules from certain models does not significantly degrade performance, indicating that vanilla attention fails to capture inter-variable information.
 
-**Paper Goals**: To design a novel architecture that models inter-variable dependencies in the spectral domain, while simultaneously preserving temporal information and capturing cross-variable correlations.
+**Goal**: To design a novel architecture that models inter-variable dependencies in the spectral domain, while simultaneously preserving temporal information and capturing cross-variable correlations.
 
-**Starting Point**: Spectral coherence is a classical signal-processing tool for measuring the frequency-wise correlation between two signals. Incorporating it into attention mechanisms enables quantification of inter-variable frequency-domain dependencies.
+**Key Insight**: Spectral coherence is a classical signal-processing tool for measuring the frequency-wise correlation between two signals. Incorporating it into attention mechanisms enables quantification of inter-variable frequency-domain dependencies.
 
 **Core Idea**: Learnable wavelets for time-frequency decomposition → spectral coherence attention for inter-variable frequency-domain dependency modeling → Koopman operator for linearized temporal evolution → inverse wavelet transform for reconstruction.
 

@@ -28,9 +28,9 @@ This paper proposes the Shape Generalized Tree (SGT), which replaces the convent
 
 ## Background & Motivation
 
-- **State of the Field**: Conventional axis-aligned linear decision trees perform simple $x_d \leq \theta$ splits at each node; when faced with nonlinear feature–target relationships, repeated splits on the same feature lead to deep, large trees.
+- **Background**: Conventional axis-aligned linear decision trees perform simple $x_d \leq \theta$ splits at each node; when faced with nonlinear feature–target relationships, repeated splits on the same feature lead to deep, large trees.
 - **Limitations of Prior Work**: Tree comprehensibility is highly sensitive to path depth and the number of leaf nodes; deep trees directly undermine interpretability. Generalized Additive Models (GAMs) model single-feature contributions via nonlinear shape functions with good interpretability, but lack the hierarchical structure of decision trees. Oblique trees allow splits based on linear combinations of multiple features, but high-dimensional cuts are difficult for humans to interpret.
-- **Root Cause**: There is a need for a method that captures nonlinear decision boundaries within a single node while maintaining axis-aligned interpretability.
+- **Key Challenge**: There is a need for a method that captures nonlinear decision boundaries within a single node while maintaining axis-aligned interpretability.
 
 ## Core Problem
 

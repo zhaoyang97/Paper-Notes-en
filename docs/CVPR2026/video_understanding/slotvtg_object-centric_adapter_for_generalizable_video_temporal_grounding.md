@@ -29,11 +29,11 @@ This paper proposes SlotVTG, a framework that inserts a lightweight Slot Adapter
 
 ## Background & Motivation
 
-1. **State of the Field**: Multimodal large language models (MLLMs) have become the dominant paradigm for video temporal grounding (VTG), yet fine-tuning on specific datasets is required to acquire fine-grained temporal understanding.
+1. **Background**: Multimodal large language models (MLLMs) have become the dominant paradigm for video temporal grounding (VTG), yet fine-tuning on specific datasets is required to acquire fine-grained temporal understanding.
 2. **Limitations of Prior Work**: VTG annotation demands precise start/end timestamps, making large-scale data collection extremely costly and limiting training data availability. Fine-tuning on limited data causes models to memorize dataset-specific shortcuts (temporal position bias, query text bias, appearance bias, etc.), leading to severe performance degradation on OOD test sets.
-3. **Root Cause**: Models perform well in-domain (ID) but degrade substantially OOD—after training on Charades-STA, ID R1@0.5 reaches 63.4 but OOD drops to 43.6 (−31.2%). Noise perturbation experiments confirm that models no longer attend to target visual content under OOD conditions.
-4. **Paper Goals**: Enable fine-tuned MLLMs to perform grounding based on actual visual content rather than domain-specific patterns, thereby improving OOD generalization.
-5. **Starting Point**: Object-centric learning decomposes scenes into entity-level representations that inherently extract domain-invariant visual features. Measurements show that the inter-domain MMD distance of slot representations is reduced by 49.6% compared to the baseline.
+3. **Key Challenge**: Models perform well in-domain (ID) but degrade substantially OOD—after training on Charades-STA, ID R1@0.5 reaches 63.4 but OOD drops to 43.6 (−31.2%). Noise perturbation experiments confirm that models no longer attend to target visual content under OOD conditions.
+4. **Goal**: Enable fine-tuned MLLMs to perform grounding based on actual visual content rather than domain-specific patterns, thereby improving OOD generalization.
+5. **Key Insight**: Object-centric learning decomposes scenes into entity-level representations that inherently extract domain-invariant visual features. Measurements show that the inter-domain MMD distance of slot representations is reduced by 49.6% compared to the baseline.
 6. **Core Idea**: A Slot Attention bottleneck forces visual information to pass through object-level decomposition before entering the LLM, suppressing domain-specific associations.
 
 ## Method

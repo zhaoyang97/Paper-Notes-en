@@ -32,7 +32,7 @@ This paper systematically analyzes four structural tensions in applying large fo
 
 ### State of the Field
 
-**State of the Field**: LFMs have been widely adopted in healthcare — spanning electronic health records (EHR), medical imaging, genomics, and wearable devices — and have demonstrated strong capabilities in disease risk prediction, diagnosis, and treatment recommendation.
+**Background**: LFMs have been widely adopted in healthcare — spanning electronic health records (EHR), medical imaging, genomics, and wearable devices — and have demonstrated strong capabilities in disease risk prediction, diagnosis, and treatment recommendation.
 
 ### Limitations of Prior Work
 
@@ -40,7 +40,7 @@ This paper systematically analyzes four structural tensions in applying large fo
 
 ### Root Cause
 
-**Root Cause**: LFMs excel at identifying population-level statistical patterns but lack counterfactual evidence regarding individual-level causal treatment effects.
+**Key Challenge**: LFMs excel at identifying population-level statistical patterns but lack counterfactual evidence regarding individual-level causal treatment effects.
 
 ### Solution Direction
 

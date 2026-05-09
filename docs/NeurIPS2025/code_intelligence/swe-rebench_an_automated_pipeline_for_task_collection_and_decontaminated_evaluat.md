@@ -28,7 +28,7 @@ A fully automated pipeline is developed to continuously mine real-world software
 
 ## Background & Motivation
 
-**State of the Field**: LLM-based software engineering agents have shown progress on benchmarks such as SWE-bench, yet training data—particularly for interactive tasks—remains scarce and largely manually curated (e.g., SWE-Gym provides only ~2,400 tasks). On the evaluation side, SWE-bench has faced data contamination risks since its public release in late 2023.
+**Background**: LLM-based software engineering agents have shown progress on benchmarks such as SWE-bench, yet training data—particularly for interactive tasks—remains scarce and largely manually curated (e.g., SWE-Gym provides only ~2,400 tasks). On the evaluation side, SWE-bench has faced data contamination risks since its public release in late 2023.
 
 **Limitations of Prior Work**:
    - **Training data**: RL training requires interactive and verifiable tasks, but the complexity of environment configuration in software engineering makes large-scale automated collection difficult.
@@ -36,11 +36,11 @@ A fully automated pipeline is developed to continuously mine real-world software
    - **Incomparable evaluations**: Different teams employ different scaffolds, retry mechanisms, and best-of-N strategies, making fair comparison of raw model capabilities difficult.
    - **High variance**: Stochasticity in agent trajectories renders single-run results unrepresentative.
 
-**Root Cause**: The SWE domain lacks large-scale verifiable interactive datasets analogous to those in mathematics, and contamination in existing benchmarks undermines the reliability of evaluation results.
+**Key Challenge**: The SWE domain lacks large-scale verifiable interactive datasets analogous to those in mathematics, and contamination in existing benchmarks undermines the reliability of evaluation results.
 
-**Paper Goals**: To construct a fully automated and sustainable pipeline for mining SWE tasks, alongside a continuously updated decontaminated evaluation benchmark.
+**Goal**: To construct a fully automated and sustainable pipeline for mining SWE tasks, alongside a continuously updated decontaminated evaluation benchmark.
 
-**Starting Point**: A four-stage automated pipeline—collecting PRs from GitHub Archive → LLM-based automatic environment configuration → execution validation → quality assessment. Continuous updates maintain benchmark freshness.
+**Key Insight**: A four-stage automated pipeline—collecting PRs from GitHub Archive → LLM-based automatic environment configuration → execution validation → quality assessment. Continuous updates maintain benchmark freshness.
 
 **Core Idea**: Fully automated mining of executable SWE tasks from GitHub, continuous updates to avoid contamination, and standardized scaffolding for fair evaluation of genuine model capabilities.
 

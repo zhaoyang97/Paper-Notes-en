@@ -28,15 +28,15 @@ This paper proposes a block-based diffusion method leveraging LLMs and diffusion
 
 ## Background & Motivation
 
-**State of the Field**: Vision-language models such as CLIP achieve cross-modal understanding through large-scale contrastive learning on image-text pairs, yet perform poorly on compositional reasoning (understanding attributes, spatial positions, and relations). They fundamentally behave as "bag-of-words" models—capable of aligning entities but unable to understand relationships among them.
+**Background**: Vision-language models such as CLIP achieve cross-modal understanding through large-scale contrastive learning on image-text pairs, yet perform poorly on compositional reasoning (understanding attributes, spatial positions, and relations). They fundamentally behave as "bag-of-words" models—capable of aligning entities but unable to understand relationships among them.
 
 **Limitations of Prior Work**: Previous data augmentation methods (e.g., ARO's word-order permutation, SVLC's word substitution) generate negative samples that are too simplistic, allowing the text encoder to discriminate positive from negative samples without consulting the image. Urbanek et al. further demonstrated that models fine-tuned on such data perform poorly on genuinely challenging relational datasets (Winoground, sDCI), indicating that apparent gains stem from overlapping construction patterns between training and test sets rather than genuine compositional understanding.
 
-**Root Cause**: Precise compositional variations along both the image and text modalities (modifying attributes, positions, and relations) are simultaneously required, yet generative models struggle to capture complex object relationships without accurate guidance. Simple text-only negative samples fail to provide sufficiently challenging training signals.
+**Key Challenge**: Precise compositional variations along both the image and text modalities (modifying attributes, positions, and relations) are simultaneously required, yet generative models struggle to capture complex object relationships without accurate guidance. Simple text-only negative samples fail to provide sufficiently challenging training signals.
 
-**Paper Goals**: How to automatically generate high-quality, high-fidelity counterfactual image-text pairs in which images accurately reflect complex compositional relationship descriptions?
+**Goal**: How to automatically generate high-quality, high-fidelity counterfactual image-text pairs in which images accurately reflect complex compositional relationship descriptions?
 
-**Starting Point**: The image generation process is analogized to assembling a jigsaw puzzle—an LLM parses text to extract entities and spatial relations, individual "puzzle piece" images are generated for each entity, and these pieces are then assembled according to compositional rules.
+**Key Insight**: The image generation process is analogized to assembling a jigsaw puzzle—an LLM parses text to extract entities and spatial relations, individual "puzzle piece" images are generated for each entity, and these pieces are then assembled according to compositional rules.
 
 **Core Idea**: LLM extracts entities and spatial relations → block-based diffusion generates each region independently and fuses them globally → a structured set-aware loss efficiently fine-tunes CLIP.
 

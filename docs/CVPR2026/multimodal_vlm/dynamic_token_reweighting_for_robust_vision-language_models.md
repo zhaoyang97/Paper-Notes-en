@@ -28,15 +28,15 @@ This paper proposes DTR (Dynamic Token Reweighting), the first inference-time de
 
 ## Background & Motivation
 
-**State of the Field**: Large vision-language models (VLMs) achieve powerful multimodal reasoning by integrating visual and linguistic capabilities, yet the introduction of the visual modality creates new security vulnerabilities — multimodal jailbreak attacks exploit vision-text interactions to bypass safety guardrails.
+**Background**: Large vision-language models (VLMs) achieve powerful multimodal reasoning by integrating visual and linguistic capabilities, yet the introduction of the visual modality creates new security vulnerabilities — multimodal jailbreak attacks exploit vision-text interactions to bypass safety guardrails.
 
 **Limitations of Prior Work**: Fine-tuning-stage approaches (e.g., RLHF-based safety alignment) are computationally expensive and require annotated data. Inference-stage approaches either rely on iterative prompting (high overhead) or image-to-text conversion (severe information loss). Recent distribution-shift correction methods (ShiftDC, CoCA) require safety references, which are typically obtained via lossy image-to-text translation.
 
-**Root Cause**: Accurately quantifying the "safety shift" induced by the visual modality requires comparing states with and without an image, but obtaining an accurate text-only counterpart inherently involves information loss.
+**Key Challenge**: Accurately quantifying the "safety shift" induced by the visual modality requires comparing states with and without an image, but obtaining an accurate text-only counterpart inherently involves information loss.
 
-**Paper Goals**: Design an inference-time jailbreak defense that requires no safety reference data, no image-to-text conversion, and incurs minimal computational overhead.
+**Goal**: Design an inference-time jailbreak defense that requires no safety reference data, no image-to-text conversion, and incurs minimal computational overhead.
 
-**Starting Point**: Rather than measuring "how much shift the image introduces," DTR measures "how much of the shift can be reversed by adjusting visual token weights" — this RSS directly distinguishes jailbreak queries from benign ones.
+**Key Insight**: Rather than measuring "how much shift the image introduces," DTR measures "how much of the shift can be reversed by adjusting visual token weights" — this RSS directly distinguishes jailbreak queries from benign ones.
 
 **Core Idea**: Jailbreak attacks optimize a query from "refused" to "accepted," and therefore the shift can be reversed — whereas benign queries lack this reversibility.
 

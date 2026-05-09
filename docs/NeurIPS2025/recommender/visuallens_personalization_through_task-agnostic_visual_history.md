@@ -27,15 +27,15 @@ content_hash: d8e960290040419f
 This paper proposes VisualLens, a framework that leverages users' task-agnostic visual history (everyday photos) to enable cross-domain personalized recommendation via spectrum user profiles and multimodal large language models. On the newly constructed Google Review-V and Yelp-V datasets, VisualLens surpasses GPT-4o by 2–5% in Hit@3.
 
 ## Background & Motivation
-**State of the Field**: Existing recommender systems primarily rely on users' item interaction histories (e.g., purchase records, click logs) or textual signals. While multimodal recommendation has advanced (e.g., UniMP), it remains confined to domain-specific item-level histories and cannot support cross-domain general-purpose personalized recommendation.
+**Background**: Existing recommender systems primarily rely on users' item interaction histories (e.g., purchase records, click logs) or textual signals. While multimodal recommendation has advanced (e.g., UniMP), it remains confined to domain-specific item-level histories and cannot support cross-domain general-purpose personalized recommendation.
 
 **Limitations of Prior Work**: Item-level interaction histories are not always available (cold-start problem) and do not generalize across tasks — an e-commerce platform may know a user's shopping preferences while remaining uninformed about their restaurant preferences. Existing multimodal recommendation methods rely heavily on structured item features and cannot handle unstructured visual signals.
 
-**Root Cause**: Everyday photos taken by users contain rich preference signals (e.g., preferences for architectural styles or food types), yet a large semantic gap exists between these photos and the recommendation task — photos may be entirely irrelevant to the current query and tend to be noisy with low information density.
+**Key Challenge**: Everyday photos taken by users contain rich preference signals (e.g., preferences for architectural styles or food types), yet a large semantic gap exists between these photos and the recommendation task — photos may be entirely irrelevant to the current query and tend to be noisy with low information density.
 
-**Paper Goals**: (1) How to extract user preferences from task-agnostic everyday photos? (2) How to process large volumes of visual history within limited model context windows? (3) The lack of datasets for evaluating such systems.
+**Goal**: (1) How to extract user preferences from task-agnostic everyday photos? (2) How to process large volumes of visual history within limited model context windows? (3) The lack of datasets for evaluating such systems.
 
-**Starting Point**: Inspired by Vannevar Bush's Memex concept, the authors hypothesize that users' visual history (everyday photos) encodes cross-domain preference signals usable for general-purpose personalized recommendation. The key insight is to represent each image as a "spectrum triplet" (raw image → caption → aspect words), balancing information richness with semantic clarity.
+**Key Insight**: Inspired by Vannevar Bush's Memex concept, the authors hypothesize that users' visual history (everyday photos) encodes cross-domain preference signals usable for general-purpose personalized recommendation. The key insight is to represent each image as a "spectrum triplet" (raw image → caption → aspect words), balancing information richness with semantic clarity.
 
 **Core Idea**: Compress everyday photos into (image, caption, aspect words) triplets via spectrum user profiles, and achieve cross-domain recommendation from visual history through image gridification and joint training.
 

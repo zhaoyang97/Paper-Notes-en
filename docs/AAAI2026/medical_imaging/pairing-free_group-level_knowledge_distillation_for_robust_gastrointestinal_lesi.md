@@ -31,7 +31,7 @@ This paper proposes PaGKD, a pairing-free group-level knowledge distillation fra
 
 ## Background & Motivation
 
-**State of the Field**: Endoscopy is a critical tool for early detection of gastrointestinal (GI) cancers. White-light imaging (WLI) is the standard clinical modality, while narrow-band imaging (NBI) enhances vascular and mucosal details through spectral filtering, providing superior lesion visibility and classification performance. However, NBI is often unavailable or underutilized in routine clinical deployment.
+**Background**: Endoscopy is a critical tool for early detection of gastrointestinal (GI) cancers. White-light imaging (WLI) is the standard clinical modality, while narrow-band imaging (NBI) enhances vascular and mucosal details through spectral filtering, providing superior lesion visibility and classification performance. However, NBI is often unavailable or underutilized in routine clinical deployment.
 
 **Limitations of Prior Work**:
 - **Poor WLI classification performance**: WLI images lack the fine-grained vascular and mucosal information present in NBI, limiting standalone classification performance.
@@ -39,11 +39,11 @@ This paper proposes PaGKD, a pairing-free group-level knowledge distillation fra
 - **Underutilization of abundant unpaired data**: Large quantities of NBI and WLI images are independently collected from different lesions and patients, yet existing methods cannot leverage them.
 - **Semantic mismatch in instance-level distillation**: When instance-level alignment is applied to unpaired images, individual lesion images capture only partial disease characteristics, resulting in cross-modal feature incompatibility.
 
-**Root Cause**: NBI knowledge benefits WLI classification, yet existing distillation methods require paired data, leaving vast amounts of unpaired data unused and limiting WLI classification performance.
+**Key Challenge**: NBI knowledge benefits WLI classification, yet existing distillation methods require paired data, leaving vast amounts of unpaired data unused and limiting WLI classification performance.
 
-**Paper Goals**: To leverage abundant unpaired NBI and WLI data for effective cross-modal knowledge distillation, thereby improving WLI-only lesion classification performance.
+**Goal**: To leverage abundant unpaired NBI and WLI data for effective cross-modal knowledge distillation, thereby improving WLI-only lesion classification performance.
 
-**Starting Point**: Rather than aligning individual images, same-class lesion images are organized into "groups" for group-level distillation — multiple images within a group provide a more complete disease representation, mitigating bias and noise from individual samples.
+**Key Insight**: Rather than aligning individual images, same-class lesion images are organized into "groups" for group-level distillation — multiple images within a group provide a more complete disease representation, mitigating bias and noise from individual samples.
 
 **Core Idea**: Group-level distillation = prototype-level global semantic alignment (GKD-Pro) + dense-level local spatial alignment (GKD-Den), without requiring image-level pairing.
 

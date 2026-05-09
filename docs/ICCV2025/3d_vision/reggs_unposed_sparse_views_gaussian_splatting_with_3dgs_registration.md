@@ -37,7 +37,7 @@ Reconstructing 3D scenes from sparse, pose-free images is a highly challenging p
 
 **Traditional methods** (COLMAP + 3DGS): SfM pipelines frequently fail under sparse views.
 
-**Root Cause**: Feed-forward methods possess strong 3D priors but are limited in the number of input views; optimization-based methods handle arbitrary numbers of views but lack priors. The key question is whether the local Gaussian representations from feed-forward models can be merged into a globally consistent representation via registration.
+**Key Challenge**: Feed-forward methods possess strong 3D priors but are limited in the number of input views; optimization-based methods handle arbitrary numbers of views but lack priors. The key question is whether the local Gaussian representations from feed-forward models can be merged into a globally consistent representation via registration.
 
 The proposed solution is **3DGS Registration**: the problem is reformulated as generating local 3D Gaussians for each image (or image pair) using a feed-forward model, then incrementally aligning them into a unified coordinate system through registration.
 

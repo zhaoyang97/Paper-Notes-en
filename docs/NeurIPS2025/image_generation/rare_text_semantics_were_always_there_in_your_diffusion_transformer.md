@@ -35,7 +35,7 @@ This paper discovers that scaling up the variance of text token embeddings befor
 
 ### Limitations of Prior Work
 
-**State of the Field**: Flow- and diffusion-based multimodal diffusion Transformers (MM-DiT) have become the dominant architecture for text-to-visual generation. Users increasingly probe model capabilities with imaginative and rare prompts, yet state-of-the-art models still struggle to faithfully generate such concepts.
+**Background**: Flow- and diffusion-based multimodal diffusion Transformers (MM-DiT) have become the dominant architecture for text-to-visual generation. Users increasingly probe model capabilities with imaginative and rare prompts, yet state-of-the-art models still struggle to faithfully generate such concepts.
 
 Core problems:
 

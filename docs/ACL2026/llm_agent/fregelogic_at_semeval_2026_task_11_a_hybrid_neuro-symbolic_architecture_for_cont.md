@@ -29,15 +29,15 @@ FregeLogic is a hybrid neuro-symbolic system that combines a five-member LLM ens
 
 ## Background & Motivation
 
-**State of the Field**: Syllogistic reasoning is a fundamental form of deductive inference. SemEval-2026 Task 11 requires systems to judge the logical validity of syllogisms while also measuring the degree to which predictions are influenced by the believability of the content (belief bias). The scoring formula $\text{Score} = \text{Accuracy} / (1 + \ln(1 + \text{CE}))$ simultaneously rewards high accuracy and low belief bias.
+**Background**: Syllogistic reasoning is a fundamental form of deductive inference. SemEval-2026 Task 11 requires systems to judge the logical validity of syllogisms while also measuring the degree to which predictions are influenced by the believability of the content (belief bias). The scoring formula $\text{Score} = \text{Accuracy} / (1 + \ln(1 + \text{CE}))$ simultaneously rewards high accuracy and low belief bias.
 
 **Limitations of Prior Work**: LLMs exhibit human-like belief bias — they tend to judge syllogisms as valid when the content is believable in the real world, and invalid otherwise. Mechanistic analyses suggest that reasoning circuits developed during LLM pretraining are susceptible to contamination by world knowledge.
 
-**Root Cause**: How can the powerful reasoning capabilities of LLMs be leveraged while overcoming their systematic sensitivity to content believability?
+**Key Challenge**: How can the powerful reasoning capabilities of LLMs be leveraged while overcoming their systematic sensitivity to content believability?
 
-**Paper Goals**: To design a reasoning system that minimizes belief bias while maintaining high accuracy.
+**Goal**: To design a reasoning system that minimizes belief bias while maintaining high accuracy.
 
-**Starting Point**: The degree of disagreement within an LLM ensemble vote is used as a signal for belief-biased cases, which are then delegated to a content-agnostic formal logic solver.
+**Key Insight**: The degree of disagreement within an LLM ensemble vote is used as a signal for belief-biased cases, which are then delegated to a content-agnostic formal logic solver.
 
 **Core Idea**: Narrow margins in ensemble voting (3–2 splits) disproportionately correspond to belief-biased errors — precisely the cases where a formal verifier can add value.
 

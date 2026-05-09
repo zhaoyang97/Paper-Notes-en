@@ -28,15 +28,15 @@ This paper proposes HAM, a training-free style transfer method that achieves hig
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion model-based style transfer methods fall into two main categories: fine-tuning methods (training style control modules via LoRA/ControlNet) and training-free methods (manipulating attention features at inference time). Fine-tuning methods are computationally expensive and lack robustness; training-free methods such as StyleID and DiffArtist achieve stylization by injecting the style image's keys and values into self-attention layers.
+**Background**: Diffusion model-based style transfer methods fall into two main categories: fine-tuning methods (training style control modules via LoRA/ControlNet) and training-free methods (manipulating attention features at inference time). Fine-tuning methods are computationally expensive and lack robustness; training-free methods such as StyleID and DiffArtist achieve stylization by injecting the style image's keys and values into self-attention layers.
 
 **Limitations of Prior Work**: Existing training-free methods rely solely on self-attention manipulation to simultaneously inject style and preserve content. However, the Q/K/V projections in self-attention jointly encode spatial positional relationships and semantic representations, making it difficult to balance style expression and content preservation through a single channel, often leading to insufficient stylization or content distortion.
 
-**Root Cause**: Injecting style through self-attention inevitably corrupts content identity, as Q/K/V inherently couples spatial structure with semantic content. Existing methods are therefore trapped in a style–content trade-off.
+**Key Challenge**: Injecting style through self-attention inevitably corrupts content identity, as Q/K/V inherently couples spatial structure with semantic content. Existing methods are therefore trapped in a style–content trade-off.
 
-**Paper Goals**: To simultaneously capture complex style references and preserve content identity (structure, texture, text, etc.) under a training-free setting.
+**Goal**: To simultaneously capture complex style references and preserve content identity (structure, texture, text, etc.) under a training-free setting.
 
-**Starting Point**: Decouple style injection and content protection across different attention mechanisms—using self-attention for global style–content fusion control, and cross-attention for precise local style transplantation and content preservation, thereby realizing heterogeneous modulation.
+**Key Insight**: Decouple style injection and content protection across different attention mechanisms—using self-attention for global style–content fusion control, and cross-attention for precise local style transplantation and content preservation, thereby realizing heterogeneous modulation.
 
 **Core Idea**: By applying heterogeneous attention modulation strategies to self-attention (GAR for global fusion) and cross-attention (LAT for local transplantation), HAM decouples style injection and content protection into distinct attention channels.
 

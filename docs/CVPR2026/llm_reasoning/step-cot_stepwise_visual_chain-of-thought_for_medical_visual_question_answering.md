@@ -28,15 +28,15 @@ This work constructs Step-CoT, the first structured multi-step CoT medical reaso
 
 ## Background & Motivation
 
-**State of the Field**: Med-VQA addresses clinical questions grounded in medical images via multimodal deep learning; CoT reasoning has been applied to improve accuracy and interpretability (e.g., ReasonMed, MedCoT, HVCR).
+**Background**: Med-VQA addresses clinical questions grounded in medical images via multimodal deep learning; CoT reasoning has been applied to improve accuracy and interpretability (e.g., ReasonMed, MedCoT, HVCR).
 
 **Limitations of Prior Work**: (i) Existing CoT datasets lack structured, stepwise diagnostic protocols — they provide either free-form reasoning chains or GPT-4.1-synthesized chains that are misaligned with real clinical workflows and omit the intermediate states of radiologists' sequential decision-making; (ii) most CoT datasets rely heavily on GPT-4.1-synthesized reasoning chains, introducing potential factual inconsistencies.
 
-**Root Cause**: The prevailing CoT training paradigm is non-interactive and perceptually static — models operate solely on fixed image-question inputs and cannot dynamically gather new information or refine perception during inference. Even models such as LLaVA-Med and MedVLM-R1, which demonstrate domain adaptation and RL-incentivized reasoning, maintain a fixed perceptual input throughout.
+**Key Challenge**: The prevailing CoT training paradigm is non-interactive and perceptually static — models operate solely on fixed image-question inputs and cannot dynamically gather new information or refine perception during inference. Even models such as LLaVA-Med and MedVLM-R1, which demonstrate domain adaptation and RL-incentivized reasoning, maintain a fixed perceptual input throughout.
 
-**Paper Goals**: Can traceable multi-step reasoning supervision simultaneously improve both reasoning accuracy and interpretability in Med-VQA?
+**Goal**: Can traceable multi-step reasoning supervision simultaneously improve both reasoning accuracy and interpretability in Med-VQA?
 
-**Starting Point**: Formalize reasoning as a seven-step cascaded process aligned with clinical diagnostic workflows, and provide complete supervision over the entire diagnostic pipeline (ground-truth answers plus intermediate reasoning annotations at each step).
+**Key Insight**: Formalize reasoning as a seven-step cascaded process aligned with clinical diagnostic workflows, and provide complete supervision over the entire diagnostic pipeline (ground-truth answers plus intermediate reasoning annotations at each step).
 
 **Core Idea**: Encode the seven-step cascaded reasoning process from radiological diagnostic practice (anomaly detection → appearance investigation → feature analysis → diagnostic synthesis) into a structured CoT dataset, and realize stepwise reasoning learning via graph attention networks combined with knowledge distillation.
 

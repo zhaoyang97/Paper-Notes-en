@@ -28,15 +28,15 @@ DCA (Deep Cluster Atlas) proposes a graph-guided deep embedding clustering frame
 
 ## Background & Motivation
 
-**State of the Field**: Brain atlases are fundamental tools for dimensionality reduction and interpretable analysis of neuroimaging data. Hundreds of atlases (Yeo, Schaefer, AAL, MMP, etc.) have been proposed over the decades, based on anatomical, functional, or cytoarchitectural criteria, with resolutions ranging from fewer than 10 to over 1,000 regions.
+**Background**: Brain atlases are fundamental tools for dimensionality reduction and interpretable analysis of neuroimaging data. Hundreds of atlases (Yeo, Schaefer, AAL, MMP, etc.) have been proposed over the decades, based on anatomical, functional, or cytoarchitectural criteria, with resolutions ranging from fewer than 10 to over 1,000 regions.
 
 **Limitations of Prior Work**: (a) Most atlases are defined on the cortical surface, ignoring subcortical and white matter structures; (b) resolutions are fixed and predefined, offering no flexibility to the user; (c) group-level templates are derived from averaged data, ignoring substantial inter-individual variability; (d) traditional clustering methods (K-Means, hierarchical clustering, spectral clustering) do not account for spatial continuity, resulting in fragmented and anatomically implausible parcellations.
 
-**Root Cause**: fMRI data suffer from low signal-to-noise ratio and extremely high dimensionality (gray matter masks contain tens of thousands of voxels), making it difficult to simultaneously optimize functional similarity and spatial continuity. Distance penalty strategies require careful tuning; otherwise, functional homogeneity is compromised.
+**Key Challenge**: fMRI data suffer from low signal-to-noise ratio and extremely high dimensionality (gray matter masks contain tens of thousands of voxels), making it difficult to simultaneously optimize functional similarity and spatial continuity. Distance penalty strategies require careful tuning; otherwise, functional homogeneity is compromised.
 
-**Paper Goals**: To design a scalable deep clustering framework capable of generating voxel-level, individualized brain atlases while jointly ensuring functional homogeneity and spatial continuity.
+**Goal**: To design a scalable deep clustering framework capable of generating voxel-level, individualized brain atlases while jointly ensuring functional homogeneity and spatial continuity.
 
-**Starting Point**: A pretrained Swin-UNETR is employed to learn voxel-level spatiotemporal embeddings via masked reconstruction, after which spatial priors from a KNN graph constrain the clustering process—encouraging voxels that are functionally similar and spatially adjacent to be assigned to the same region.
+**Key Insight**: A pretrained Swin-UNETR is employed to learn voxel-level spatiotemporal embeddings via masked reconstruction, after which spatial priors from a KNN graph constrain the clustering process—encouraging voxels that are functionally similar and spatially adjacent to be assigned to the same region.
 
 **Core Idea**: Pretrained Swin-UNETR for voxel embedding extraction + 26-neighborhood graph regularization + KL divergence joint optimization = functionally homogeneous and spatially contiguous individualized brain atlases.
 

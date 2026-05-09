@@ -29,10 +29,10 @@ This paper introduces ConViS, a concept-based video similarity estimation task, 
 
 ## Background & Motivation
 
-- **State of the Field**: Traditional video similarity methods compute a single global score (e.g., cosine similarity in embedding space), which cannot explain "which aspects are similar and which differ," offering limited interpretability for downstream applications such as retrieval and anomaly detection.
+- **Background**: Traditional video similarity methods compute a single global score (e.g., cosine similarity in embedding space), which cannot explain "which aspects are similar and which differ," offering limited interpretability for downstream applications such as retrieval and anomaly detection.
 - **Limitations of Prior Work**: Cognitive science research shows that humans naturally compare events along semantic dimensions (actions, subjects, locations, etc.), meaning video similarity depends on which concept is attended to rather than a fixed quantity. Existing video difference description methods (e.g., VidDiffBench) are confined to a single concept (action differences) and only cover 5 domains; StepDiff is limited to cooking videos; both provide only free-text descriptions without quantitative scores. Existing benchmarks (Video-MME, MVBench, etc.) evaluate primarily through QA and lack systematic testing of concept-level comparative reasoning.
-- **Root Cause**: There exists a gap between global similarity methods (quantitative but not interpretable) and video differencing methods (interpretable but not quantitative). Real-world applications often require concept-conditioned retrieval (e.g., "same action, different subject"), which existing methods cannot support.
-- **Paper Goals**: ConViS aims to simultaneously provide structured quantitative scores and interpretability by conditioning similarity estimation on user-specified semantic concepts.
+- **Key Challenge**: There exists a gap between global similarity methods (quantitative but not interpretable) and video differencing methods (interpretable but not quantitative). Real-world applications often require concept-conditioned retrieval (e.g., "same action, different subject"), which existing methods cannot support.
+- **Goal**: ConViS aims to simultaneously provide structured quantitative scores and interpretability by conditioning similarity estimation on user-specified semantic concepts.
 
 ## Method
 

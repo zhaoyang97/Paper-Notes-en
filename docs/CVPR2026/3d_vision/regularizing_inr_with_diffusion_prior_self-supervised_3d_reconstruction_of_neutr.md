@@ -29,15 +29,15 @@ This paper proposes DINR (Diffusive INR), which replaces the conventional invers
 
 ## Background & Motivation
 
-**State of the Field**: Neutron CT is an important imaging modality that characterizes volumetric internal structures through hydrogen distribution, with broad applications in hydrogen fuel cell manufacturing, lithium-ion battery research, plant/soil moisture transport monitoring, and concrete radiation shielding safety inspection.
+**Background**: Neutron CT is an important imaging modality that characterizes volumetric internal structures through hydrogen distribution, with broad applications in hydrogen fuel cell manufacturing, lithium-ion battery research, plant/soil moisture transport monitoring, and concrete radiation shielding safety inspection.
 
 **Limitations of Prior Work**: Neutron beam flux is extremely low, requiring long exposure times per view, resulting in far fewer projections than Nyquist sampling demands. Conventional FBP produces severe artifacts under sparse views (only 19.31 dB PSNR at 4 views). MBIR methods using handcrafted priors (TV, qGGMRF) offer improvements but require time-consuming parameter searches for each sparsity level and exhibit limited fidelity to microstructural details.
 
-**Root Cause**: INRs (e.g., SIREN) offer advantages such as resolution independence, memory efficiency, and easy integration with physical forward models, but suffer from severe low-frequency spectral bias, leading to poor high-frequency structure recovery under sparse supervision (only 14.76 dB PSNR at 4 views). Diffusion models (e.g., DD3IP/SCD) can provide powerful generative priors and adapt to out-of-distribution (OOD) data, but their inversion steps typically rely on CG solvers, failing to exploit the continuous representation advantages of INRs.
+**Key Challenge**: INRs (e.g., SIREN) offer advantages such as resolution independence, memory efficiency, and easy integration with physical forward models, but suffer from severe low-frequency spectral bias, leading to poor high-frequency structure recovery under sparse supervision (only 14.76 dB PSNR at 4 views). Diffusion models (e.g., DD3IP/SCD) can provide powerful generative priors and adapt to out-of-distribution (OOD) data, but their inversion steps typically rely on CG solvers, failing to exploit the continuous representation advantages of INRs.
 
-**Paper Goals**: The paper seeks to effectively inject the strong generative prior of diffusion models into the INR framework without modifying the diffusion model architecture, enabling high-fidelity 3D CT reconstruction under extremely sparse-view conditions.
+**Goal**: The paper seeks to effectively inject the strong generative prior of diffusion models into the INR framework without modifying the diffusion model architecture, enabling high-fidelity 3D CT reconstruction under extremely sparse-view conditions.
 
-**Starting Point**: A key insight from the DD3IP framework is that the posterior mean estimation method can be freely substituted. This paper exploits this modularity by replacing the CG solver with an INR as the posterior mean estimator in the diffusion inversion step, feeding diffusion denoising outputs back to the INR via a proximal loss.
+**Key Insight**: A key insight from the DD3IP framework is that the posterior mean estimation method can be freely substituted. This paper exploits this modularity by replacing the CG solver with an INR as the posterior mean estimator in the diffusion inversion step, feeding diffusion denoising outputs back to the INR via a proximal loss.
 
 **Core Idea**: At each timestep of the diffusion reverse process, the INR weights are optimized using a loss that includes a proximal term anchored to the diffusion denoising estimate, enabling the INR to simultaneously satisfy measurement data consistency and diffusion prior constraints.
 

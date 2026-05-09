@@ -29,13 +29,13 @@ This paper proposes EcoCast, a Transformer-based spatio-temporal sequence model 
 
 ## Background & Motivation
 
-**State of the Field**: Species Distribution Modeling (SDM) is a core tool in conservation biology. However, traditional SDMs are inherently static—they fit present-day environment–species relationships and rely on future climate scenario projections (e.g., RCP4.5/8.5) for decadal-scale predictions, making them incapable of providing operational forecasts at monthly to seasonal timescales.
+**Background**: Species Distribution Modeling (SDM) is a core tool in conservation biology. However, traditional SDMs are inherently static—they fit present-day environment–species relationships and rely on future climate scenario projections (e.g., RCP4.5/8.5) for decadal-scale predictions, making them incapable of providing operational forecasts at monthly to seasonal timescales.
 
 **Limitations of Prior Work**: (1) Traditional SDMs cannot track rapidly changing environmental conditions, limiting their timeliness for conservation decision-making. (2) Methods such as Random Forest treat each (location, month) observation as an independent sample, failing to capture temporal autocorrelation, lagged environmental responses, and seasonal periodicity. (3) Monitoring data in biodiversity hotspots such as Africa are updated infrequently, causing deployed models to become outdated rapidly.
 
-**Root Cause**: Conservation managers require timely biodiversity risk forecasts analogous to weather predictions, yet existing tools can only provide long-term static estimates dependent on climate projections.
+**Key Challenge**: Conservation managers require timely biodiversity risk forecasts analogous to weather predictions, yet existing tools can only provide long-term static estimates dependent on climate projections.
 
-**Starting Point**: The paper draws on the paradigm of operational short-range forecasting in meteorology—directly predicting the near future from observational history—and applies Transformer-based modeling to environmental time series. ERA5 climate data become available in a preliminary version within five days of observation, making monthly forecast updates feasible.
+**Key Insight**: The paper draws on the paradigm of operational short-range forecasting in meteorology—directly predicting the near future from observational history—and applies Transformer-based modeling to environmental time series. ERA5 climate data become available in a preliminary version within five days of observation, making monthly forecast updates feasible.
 
 **Core Idea**: A Transformer is applied to model multi-source environmental feature sequences spanning 12 months to predict next-month species occurrence probabilities, thereby eliminating dependence on future climate scenario assumptions.
 

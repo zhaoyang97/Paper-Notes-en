@@ -28,13 +28,13 @@ This paper proposes MAPS, a five-agent collaborative reasoning framework that as
 
 ## Background & Motivation
 
-**State of the Field**: Complex scientific reasoning (mathematics, physics, chemistry) demands multi-step inference, cross-modal understanding, and domain knowledge integration. Existing approaches predominantly rely on single-agent or simple dual-agent collaboration (e.g., debating), both of which suffer from two fundamental problems.
+**Background**: Complex scientific reasoning (mathematics, physics, chemistry) demands multi-step inference, cross-modal understanding, and domain knowledge integration. Existing approaches predominantly rely on single-agent or simple dual-agent collaboration (e.g., debating), both of which suffer from two fundamental problems.
 
 **Limitations of Prior Work**: (a) **Behavioral homogeneity**: Multiple agents sharing identical prompts produce repetitive reasoning patterns, lacking the diversity needed for multi-perspective exploration; (b) **Absence of reflection**: Agent interactions are linear and feedback-free, making it impossible to correct errors once an early step goes wrong, leading to cascading failures.
 
-**Root Cause**: There is an inherent tension between requiring agents to maintain distinctive reasoning styles (diversity) while enabling effective collaboration (coherence), alongside the need for reflective self-correction mechanisms.
+**Key Challenge**: There is an inherent tension between requiring agents to maintain distinctive reasoning styles (diversity) while enabling effective collaboration (coherence), alongside the need for reflective self-correction mechanisms.
 
-**Starting Point**: The work draws inspiration from the Big Five personality theory in psychology — the effectiveness of human team collaboration largely stems from the complementarity of members' personalities. This theory is mapped onto agent design, where each agent's "personality" determines its reasoning focus.
+**Key Insight**: The work draws inspiration from the Big Five personality theory in psychology — the effectiveness of human team collaboration largely stems from the complementarity of members' personalities. This theory is mapped onto agent design, where each agent's "personality" determines its reasoning focus.
 
 **Core Idea**: The Big Five personality theory is used to shape the reasoning styles of four functional agents (achieving heterogeneity), while a Socratic Critic agent performs reflective correction (achieving iterative refinement).
 

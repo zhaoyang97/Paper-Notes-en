@@ -29,15 +29,15 @@ This paper proposes a unified constrained optimization framework that formalizes
 
 ## Background & Motivation
 
-1. **State of the Field**: Alignment (adapting to rewards/preferences) and composition (combining multiple pretrained models) are two widely used adaptation strategies for diffusion models, yet both face trade-offs arising from multi-objective conflicts.
+1. **Background**: Alignment (adapting to rewards/preferences) and composition (combining multiple pretrained models) are two widely used adaptation strategies for diffusion models, yet both face trade-offs arising from multi-objective conflicts.
 
 2. **Limitations of Prior Work**: Alignment via weighted combinations of KL divergence and rewards requires manual weight tuning; improper weights lead to overfitting a single reward or excessive deviation from the pretrained model. Equal-weight composition may favor certain similar models while neglecting others.
 
-3. **Root Cause**: The search space of weighting methods is unintuitive—weights themselves carry no semantic meaning, whereas constraint-based specifications (e.g., "reward must reach at least $b$") are more natural and interpretable.
+3. **Key Challenge**: The search space of weighting methods is unintuitive—weights themselves carry no semantic meaning, whereas constraint-based specifications (e.g., "reward must reach at least $b$") are more natural and interpretable.
 
-4. **Paper Goals**: Provide a unified framework that automatically balances multiple objectives, eliminating the need for manual weight tuning.
+4. **Goal**: Provide a unified framework that automatically balances multiple objectives, eliminating the need for manual weight tuning.
 
-5. **Starting Point**: Replace weighted optimization with constrained optimization: the alignment problem is reformulated as "minimize KL divergence from the pretrained model subject to reward constraints"; the composition problem is reformulated as "minimize the maximum KL divergence to all constituent models."
+5. **Key Insight**: Replace weighted optimization with constrained optimization: the alignment problem is reformulated as "minimize KL divergence from the pretrained model subject to reward constraints"; the composition problem is reformulated as "minimize the maximum KL divergence to all constituent models."
 
 6. **Core Idea**: A constrained optimization framework unifies alignment and composition. Lagrangian duality automatically learns optimal weights, making the constraint threshold the only intuitive hyperparameter to specify.
 

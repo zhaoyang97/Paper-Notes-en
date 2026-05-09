@@ -29,15 +29,15 @@ This paper proposes the BMTM/HBMTM Bayesian mixture model framework. In scenario
 
 ## Background & Motivation
 
-**State of the Field**: Marketing strategies such as credit card incentive programs and loyalty programs commonly set spending thresholds to incentivize incremental consumption. Regression Discontinuity Design (RDD) is the standard method for causal inference in such settings and is widely accepted due to its relatively weak and credible identification assumptions.
+**Background**: Marketing strategies such as credit card incentive programs and loyalty programs commonly set spending thresholds to incentivize incremental consumption. Regression Discontinuity Design (RDD) is the standard method for causal inference in such settings and is widely accepted due to its relatively weak and credible identification assumptions.
 
 **Limitations of Prior Work**: When consumers are aware of the threshold and strategically adjust their spending to obtain rewards, the core assumption of RDD—the local randomization (continuity) condition—is violated. Bunching estimation methods in the economics literature assume a "sharp bunching" region of zero density below the threshold, but this rarely holds in marketing contexts where consumers have imprecise control over their spending and bunching is diffuse.
 
-**Root Cause**: Standard RDD fails in the presence of manipulation; existing bunching methods require an overly strong sharp bunching assumption. Neither approach is applicable to fuzzy manipulation behavior in real marketing settings. Furthermore, practical marketing decisions require subgroup-level heterogeneous causal effects rather than global average effects.
+**Key Challenge**: Standard RDD fails in the presence of manipulation; existing bunching methods require an overly strong sharp bunching assumption. Neither approach is applicable to fuzzy manipulation behavior in real marketing settings. Furthermore, practical marketing decisions require subgroup-level heterogeneous causal effects rather than global average effects.
 
-**Paper Goals**: To estimate causal effects under threshold manipulation while stably estimating heterogeneous causal effects across consumer subgroups, even when subgroup sample sizes are small.
+**Goal**: To estimate causal effects under threshold manipulation while stably estimating heterogeneous causal effects across consumer subgroups, even when subgroup sample sizes are small.
 
-**Starting Point**: The problem is reformulated as a density mixture decomposition—observed spending distribution = $\pi \times$ bunching distribution $+ (1-\pi) \times$ non-bunching distribution—using Bayesian inference to distinguish between the two types of consumers.
+**Key Insight**: The problem is reformulated as a density mixture decomposition—observed spending distribution = $\pi \times$ bunching distribution $+ (1-\pi) \times$ non-bunching distribution—using Bayesian inference to distinguish between the two types of consumers.
 
 **Core Idea**: By decomposing the consumer spending distribution into threshold-influenced and uninfluenced components via a Bayesian mixture model, causal effects can be identified even in the presence of manipulation.
 

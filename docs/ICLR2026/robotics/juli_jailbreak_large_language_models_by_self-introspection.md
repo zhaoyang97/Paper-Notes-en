@@ -27,15 +27,15 @@ content_hash: 5488ebf755c85f8e
 This paper reveals that top-k token log probabilities returned by aligned LLM APIs still contain harmful knowledge leakage, and proposes JULI—a BiasNet plugin with fewer than 1% of the target model's parameters—that manipulates logit bias to successfully jailbreak Gemini-2.5-Pro (Harmful Info Score 4.19/5) under API settings restricted to top-5 token probabilities, achieving approximately 140× speedup over LINT while doubling harmfulness scores.
 
 ## Background & Motivation
-**State of the Field**: LLM jailbreak attacks are broadly categorized into white-box attacks requiring model weights and black-box attacks operating solely through APIs. API-based attacks are particularly challenging due to the absence of gradient access, full logits, and control over the generation process.
+**Background**: LLM jailbreak attacks are broadly categorized into white-box attacks requiring model weights and black-box attacks operating solely through APIs. API-based attacks are particularly challenging due to the absence of gradient access, full logits, and control over the generation process.
 
 **Limitations of Prior Work**: (a) White-box methods such as GCG require full gradient access and are inapplicable to commercial APIs; (b) LINT, the current API-based attack, requires access to top-500 tokens (whereas most APIs expose only top-5/20), incurs 99.7 seconds of inference time, and achieves a harmfulness score of only 2.25/5; (c) Weak-to-Strong and Emulated Disalignment require access to model weights from both pre- and post-alignment versions.
 
-**Root Cause**: Although alignment training is intended to suppress the expression of harmful knowledge, it remains an open question whether top-k token probabilities returned by LLM APIs still leak harmful information.
+**Key Challenge**: Although alignment training is intended to suppress the expression of harmful knowledge, it remains an open question whether top-k token probabilities returned by LLM APIs still leak harmful information.
 
-**Paper Goals**: Can mainstream commercial LLMs be efficiently jailbroken using only a small number of token probabilities (e.g., top-5) available through standard APIs?
+**Goal**: Can mainstream commercial LLMs be efficiently jailbroken using only a small number of token probabilities (e.g., top-5) available through standard APIs?
 
-**Starting Point**: Statistical analysis reveals that >85% of harmful response tokens appear within the top-5 probability candidates—indicating that alignment suppresses their sampling probability rather than erasing the underlying knowledge.
+**Key Insight**: Statistical analysis reveals that >85% of harmful response tokens appear within the top-5 probability candidates—indicating that alignment suppresses their sampling probability rather than erasing the underlying knowledge.
 
 **Core Idea**: A lightweight BiasNet (<1% of the target model's parameters) is trained on only 100 harmful examples to learn logit biases that elevate the sampling probability of harmful tokens.
 

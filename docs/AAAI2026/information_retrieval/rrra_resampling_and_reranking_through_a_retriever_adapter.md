@@ -43,7 +43,7 @@ Dense Retrieval is a core technique for open-domain question answering and docum
 
 **Geometric constraints** (TriSampler): Imposes geometric constraints among query, positive, and negative samples to improve informativeness, but still lacks explicit false-negative estimation.
 
-**Starting Point**: Design a **learnable adapter** that estimates the false-negative probability of each candidate from the intermediate representations of the Bi-Encoder, enabling instance-level fine-grained judgment. The adapter serves both negative resampling during training and reranking during inference, constituting a unified solution.
+**Key Insight**: Design a **learnable adapter** that estimates the false-negative probability of each candidate from the intermediate representations of the Bi-Encoder, enabling instance-level fine-grained judgment. The adapter serves both negative resampling during training and reranking during inference, constituting a unified solution.
 
 ## Method
 

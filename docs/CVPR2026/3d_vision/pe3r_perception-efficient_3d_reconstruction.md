@@ -28,15 +28,15 @@ PE3R proposes a tuning-free, feed-forward 3D semantic reconstruction framework t
 
 ## Background & Motivation
 
-**State of the Field**: 2D-to-3D perception has made significant progress, with methods such as NeRF and 3DGS enabling multi-view 3D scene reconstruction and semantic extraction. The emergence of 2D foundation models including CLIP and SAM has further advanced open-vocabulary 3D segmentation.
+**Background**: 2D-to-3D perception has made significant progress, with methods such as NeRF and 3DGS enabling multi-view 3D scene reconstruction and semantic extraction. The emergence of 2D foundation models including CLIP and SAM has further advanced open-vocabulary 3D segmentation.
 
 **Limitations of Prior Work**: Existing methods suffer from three compounding challenges — poor scene generalization (requiring per-scene training), cross-view semantic inconsistency (mismatched semantic labels across viewpoints), and high computational cost (typically ranging from tens of minutes to several hours). For instance, LangSplat requires 149 minutes and Feature-3DGS requires 648 minutes.
 
-**Root Cause**: There is a fundamental tension between semantic consistency and inference efficiency — ensuring cross-view semantic coherence demands complex optimization, whereas efficient feed-forward methods struggle to guarantee semantic coherence. Moreover, most methods rely on additional inputs such as known camera parameters and depth maps.
+**Key Challenge**: There is a fundamental tension between semantic consistency and inference efficiency — ensuring cross-view semantic coherence demands complex optimization, whereas efficient feed-forward methods struggle to guarantee semantic coherence. Moreover, most methods rely on additional inputs such as known camera parameters and depth maps.
 
-**Paper Goals**: (1) How to achieve efficient 3D semantic reconstruction without pose or depth supervision? (2) How to maintain semantic consistency across views and across object hierarchies? (3) How to support open-vocabulary natural language interaction?
+**Goal**: (1) How to achieve efficient 3D semantic reconstruction without pose or depth supervision? (2) How to maintain semantic consistency across views and across object hierarchies? (3) How to support open-vocabulary natural language interaction?
 
-**Starting Point**: The authors observe that SAM/SAM2 can provide hierarchical object mask decompositions, CLIP can encode semantics, and feed-forward geometry estimators such as DUSt3R can directly predict 3D point clouds from pose-free images. Integrating these three components into a cohesive pipeline simultaneously addresses both semantic consistency and efficiency.
+**Key Insight**: The authors observe that SAM/SAM2 can provide hierarchical object mask decompositions, CLIP can encode semantics, and feed-forward geometry estimators such as DUSt3R can directly predict 3D point clouds from pose-free images. Integrating these three components into a cohesive pipeline simultaneously addresses both semantic consistency and efficiency.
 
 **Core Idea**: Cross-view semantic ambiguity is resolved via area-weighted spherical interpolation, combined with feed-forward geometry prediction and global similarity normalization, enabling zero-shot generalization for 3D semantic reconstruction.
 

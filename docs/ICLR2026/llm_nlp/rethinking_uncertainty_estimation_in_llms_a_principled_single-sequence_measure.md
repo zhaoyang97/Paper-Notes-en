@@ -28,15 +28,15 @@ Starting from the proper scoring rules framework, this paper proves that the neg
 
 ## Background & Motivation
 
-**State of the Field**: LLM uncertainty estimation primarily relies on the logarithmic scoring rule, yielding measures such as predictive entropy (PE) and semantic entropy (SE) that require sampling multiple output sequences for approximation, incurring substantial computational cost.
+**Background**: LLM uncertainty estimation primarily relies on the logarithmic scoring rule, yielding measures such as predictive entropy (PE) and semantic entropy (SE) that require sampling multiple output sequences for approximation, incurring substantial computational cost.
 
 **Limitations of Prior Work**: Multi-sequence sampling methods are impractical for real-world deployment — sampling 10 sequences implies a 10× inference overhead. Furthermore, differences among sampled sequences may reflect mere lexical variation rather than genuine uncertainty, necessitating additional natural language inference models for semantic clustering, further increasing complexity.
 
-**Root Cause**: The logarithmic scoring rule inherently requires computing an expectation over the entire output distribution (Shannon entropy), which grows exponentially with sequence length and is fundamentally intractable to compute exactly. The question arises: is there a proper scoring rule that does not require exhaustive enumeration of the distribution?
+**Key Challenge**: The logarithmic scoring rule inherently requires computing an expectation over the entire output distribution (Shannon entropy), which grows exponentially with sequence length and is fundamentally intractable to compute exactly. The question arises: is there a proper scoring rule that does not require exhaustive enumeration of the distribution?
 
-**Paper Goals**: (a) Provide a theoretical foundation for single-sequence uncertainty measures; (b) analyze the sampling complexity advantages of the proposed approximation; (c) deliver the most efficient practical implementation.
+**Goal**: (a) Provide a theoretical foundation for single-sequence uncertainty measures; (b) analyze the sampling complexity advantages of the proposed approximation; (c) deliver the most efficient practical implementation.
 
-**Starting Point**: Explore the zero-one score as an alternative proper scoring rule. Under this rule, aleatoric uncertainty depends solely on the likelihood of the highest-probability sequence, eliminating the need for full-distribution sampling.
+**Key Insight**: Explore the zero-one score as an alternative proper scoring rule. Under this rule, aleatoric uncertainty depends solely on the likelihood of the highest-probability sequence, eliminating the need for full-distribution sampling.
 
 **Core Idea**: Replace the logarithmic scoring rule with the zero-one scoring rule to derive an uncertainty measure, revealing that only the negative log-likelihood of the greedily decoded sequence is required.
 

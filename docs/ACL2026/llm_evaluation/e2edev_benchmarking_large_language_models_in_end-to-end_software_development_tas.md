@@ -29,15 +29,15 @@ This paper proposes E2EDev, an end-to-end software development benchmark grounde
 
 ## Background & Motivation
 
-**State of the Field**: LLM-driven end-to-end software development (E2ESD) is evolving from function-level code generation toward full-project automation. Existing frameworks span multi-agent approaches (ChatDev, MetaGPT) and single-agent approaches (GPT-Engineer), yet evaluation methodology lags significantly behind framework development.
+**Background**: LLM-driven end-to-end software development (E2ESD) is evolving from function-level code generation toward full-project automation. Existing frameworks span multi-agent approaches (ChatDev, MetaGPT) and single-agent approaches (GPT-Engineer), yet evaluation methodology lags significantly behind framework development.
 
 **Limitations of Prior Work**: (1) Existing benchmarks (SoftwareDev, SRDD) rely on coarse-grained requirement descriptions as input — vague phrasings such as "manage words" fail to specify whether users need editing, bookmarking, or deletion functionality; (2) Evaluation depends on subjective human judgment or heuristic metrics, lacking a systematic methodology grounded in software engineering standards, rendering cross-framework comparisons inconsistent and unreliable.
 
-**Root Cause**: E2ESD tasks require simultaneously performing high-level planning (deciding what to build) and fine-grained functional implementation (precisely satisfying requirement details). Ambiguous requirements and unreliable evaluation in existing benchmarks prevent a genuine understanding of where framework capabilities break down.
+**Key Challenge**: E2ESD tasks require simultaneously performing high-level planning (deciding what to build) and fine-grained functional implementation (precisely satisfying requirement details). Ambiguous requirements and unreliable evaluation in existing benchmarks prevent a genuine understanding of where framework capabilities break down.
 
-**Paper Goals**: (1) Construct an E2ESD benchmark with fine-grained requirement specifications; (2) Design an automated BDD-based evaluation pipeline; (3) Systematically analyze the actual capabilities and failure modes of various frameworks and LLMs on E2ESD tasks.
+**Goal**: (1) Construct an E2ESD benchmark with fine-grained requirement specifications; (2) Design an automated BDD-based evaluation pipeline; (3) Systematically analyze the actual capabilities and failure modes of various frameworks and LLMs on E2ESD tasks.
 
-**Starting Point**: Drawing on Behavior-Driven Development (BDD) principles from software engineering, this work employs Given-When-Then Gherkin scenarios to simulate real user interactions, enabling requirement verification from a user perspective.
+**Key Insight**: Drawing on Behavior-Driven Development (BDD) principles from software engineering, this work employs Given-When-Then Gherkin scenarios to simulate real user interactions, enabling requirement verification from a user perspective.
 
 **Core Idea**: Transform E2ESD evaluation from subjective human scoring to executable BDD tests grounded in fine-grained requirements, deterministically verifying the requirement conformance of generated code by simulating authentic user interactions.
 

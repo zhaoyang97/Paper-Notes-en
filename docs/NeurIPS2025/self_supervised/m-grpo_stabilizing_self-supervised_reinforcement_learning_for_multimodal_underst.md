@@ -30,14 +30,14 @@ To address the pervasive "policy collapse" problem in self-supervised reinforcem
 
 ## Background & Motivation
 
-1. **State of the Field**: Reinforcement learning from verifiable rewards (RLVR) is a central paradigm for LLM post-training, but it relies on costly human-annotated data and reward model infrastructure. Recent SS-RLVR methods (e.g., SRT, Intuitor, TTRL, CoReward) attempt to construct pseudo-rewards from the model's own consistency signals (e.g., majority voting), eliminating the need for ground-truth labels.
+1. **Background**: Reinforcement learning from verifiable rewards (RLVR) is a central paradigm for LLM post-training, but it relies on costly human-annotated data and reward model infrastructure. Recent SS-RLVR methods (e.g., SRT, Intuitor, TTRL, CoReward) attempt to construct pseudo-rewards from the model's own consistency signals (e.g., majority voting), eliminating the need for ground-truth labels.
 2. **Limitations of Prior Work**:
    - **Policy collapse**: Reproducing SRT and Intuitor on self-supervised training with the MATH dataset, the authors observe that training reward first rises then sharply or gradually drops, with validation accuracy degrading in tandem—a common failure mode across all SS-RLVR methods.
    - **Increasing rollout count only delays collapse**: Scaling rollouts from 16 to 128 improves peak performance but does not prevent collapse; it merely postpones it.
    - **Entropy collapse**: Policy entropy drops sharply in early training, causing the model to become overconfident prematurely and lock into suboptimal strategies.
-3. **Root Cause**: In self-supervised RL, pseudo-labels are derived from the current policy itself—rapid policy changes destabilize pseudo-labels, which in turn exacerbate policy drift, forming a vicious cycle.
-4. **Paper Goals**: Break the vicious cycle of "rapidly changing policy → unstable pseudo-labels → policy collapse" while simultaneously preventing the accompanying entropy collapse.
-5. **Starting Point**: Inspired by momentum-based contrastive self-supervised visual representation learning (MoCo)—a slowly evolving momentum model serves as a stable anchor.
+3. **Key Challenge**: In self-supervised RL, pseudo-labels are derived from the current policy itself—rapid policy changes destabilize pseudo-labels, which in turn exacerbate policy drift, forming a vicious cycle.
+4. **Goal**: Break the vicious cycle of "rapidly changing policy → unstable pseudo-labels → policy collapse" while simultaneously preventing the accompanying entropy collapse.
+5. **Key Insight**: Inspired by momentum-based contrastive self-supervised visual representation learning (MoCo)—a slowly evolving momentum model serves as a stable anchor.
 6. **Core Idea**: A dual-model framework in which the current policy $\pi_{\theta_q}$ is updated via training while the momentum model $\pi_{\theta_k}$ (EMA parameters) provides stable rollouts; outputs from both models are jointly used for majority voting to generate pseudo-labels. IQR-based adaptive filtering of low-entropy trajectories is applied to maintain exploration diversity.
 
 ## Method

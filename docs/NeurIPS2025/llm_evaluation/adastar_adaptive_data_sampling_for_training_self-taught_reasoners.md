@@ -28,13 +28,13 @@ This work identifies that random data sampling in STaR (Self-Taught Reasoner) le
 
 ## Background & Motivation
 
-**State of the Field**: STaR (Self-Taught Reasoner) / RFT (Rejection sampling Fine-Tuning) is the core training paradigm for LLM self-improvement in reasoning—models generate chain-of-thought (CoT), verify correct answers, and fine-tune accordingly. It is adopted by frontier models such as DeepSeek-R1 and Kimi k1.5.
+**Background**: STaR (Self-Taught Reasoner) / RFT (Rejection sampling Fine-Tuning) is the core training paradigm for LLM self-improvement in reasoning—models generate chain-of-thought (CoT), verify correct answers, and fine-tune accordingly. It is adopted by frontier models such as DeepSeek-R1 and Kimi k1.5.
 
 **Limitations of Prior Work**: STaR uses random observation sampling, resulting in: (a) easy problems being trained repeatedly (10–13 times) while hard problems are trained rarely (1–2 times) → wasted computation; (b) 72% of under-trained and 91% of over-trained observations remain unchanged after 3 iterations → a persistent, self-non-correcting problem.
 
-**Root Cause**: Directly prioritizing hard problems increases false positives (correct answers but incorrect CoT) → a balance between training diversity and CoT quality is required.
+**Key Challenge**: Directly prioritizing hard problems increases false positives (correct answers but incorrect CoT) → a balance between training diversity and CoT quality is required.
 
-**Starting Point**: Two adaptive principles—diversity (prioritize under-trained samples) and curriculum (sample more easy problems when the model is weak).
+**Key Insight**: Two adaptive principles—diversity (prioritize under-trained samples) and curriculum (sample more easy problems when the model is weak).
 
 **Core Idea**: A hierarchical min-heap sorts observations by (last sampling time + difficulty), while training accuracy $\alpha$ serves as a curriculum regulator to automatically balance difficulty.
 

@@ -39,7 +39,7 @@ Aligning flow matching models with human preferences (RLHF) poses unique challen
 
 **Adjoint Matching**, while theoretically principled, requires converting the flow matching ODE into an equivalent SDE and solving an adjoint ODE, incurring substantial computational overhead.
 
-**Root Cause**: How can flow matching models be aligned efficiently and robustly while maintaining probabilistic correctness?
+**Key Challenge**: How can flow matching models be aligned efficiently and robustly while maintaining probabilistic correctness?
 
 This paper addresses this question from the perspective of deterministic optimal control and proposes a more efficient alternative.
 

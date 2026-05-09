@@ -30,7 +30,7 @@ This work establishes a learning-observation framework based on PIV wind tunnel 
 
 ## Background & Motivation
 
-**State of the Field**: Rooftop spaces increasingly host UAV/UAM landing pads, solar panels, HVAC systems, and other functions, making real-time full-field wind information critical for safe operation. Rooftop flow fields are highly complex—dominated by building geometry effects, they exhibit flow separation, conical vortices, and cross-directional variability. Traditional CFD is computationally expensive and lacks real-time capability, while practical sensor deployments remain extremely sparse.
+**Background**: Rooftop spaces increasingly host UAV/UAM landing pads, solar panels, HVAC systems, and other functions, making real-time full-field wind information critical for safe operation. Rooftop flow fields are highly complex—dominated by building geometry effects, they exhibit flow separation, conical vortices, and cross-directional variability. Traditional CFD is computationally expensive and lacks real-time capability, while practical sensor deployments remain extremely sparse.
 
 **Limitations of Prior Work**:
 - Existing studies predominantly rely on CFD simulation data for training, failing to capture real measurement noise and turbulence characteristics → models may fail in real-world deployment
@@ -38,7 +38,7 @@ This work establishes a learning-observation framework based on PIV wind tunnel 
 - Direction-specific training (training and testing on a single wind direction) limits cross-directional generalization
 - Sensor layouts typically follow uniform grids, lacking data-driven optimization
 
-**Starting Point**: This paper is the first to use real PIV wind tunnel experimental data for a comprehensive benchmark, systematically comparing traditional Kriging with three representative DL architectures (deterministic UNet, hybrid ViTAE, generative CWGAN) across two training strategies (single-direction SDT / multi-direction MDT), six sensor densities (5–30), sensor position perturbations, and QR-optimized layouts.
+**Key Insight**: This paper is the first to use real PIV wind tunnel experimental data for a comprehensive benchmark, systematically comparing traditional Kriging with three representative DL architectures (deterministic UNet, hybrid ViTAE, generative CWGAN) across two training strategies (single-direction SDT / multi-direction MDT), six sensor densities (5–30), sensor position perturbations, and QR-optimized layouts.
 
 ## Method
 

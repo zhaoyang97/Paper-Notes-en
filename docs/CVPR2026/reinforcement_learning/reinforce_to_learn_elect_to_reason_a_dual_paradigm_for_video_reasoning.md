@@ -28,14 +28,14 @@ This paper proposes RLER, a dual-paradigm framework in which the training stage 
 
 ## Background & Motivation
 
-1. **State of the Field**: Large multimodal models (LMMs) have achieved remarkable progress in video understanding, yet reasoning remains a "single-pass" process — answers are generated without verifying whether the underlying reasoning is grounded in valid evidence. Even SOTA models are susceptible to minor perturbations (video changes or paraphrase variations).
+1. **Background**: Large multimodal models (LMMs) have achieved remarkable progress in video understanding, yet reasoning remains a "single-pass" process — answers are generated without verifying whether the underlying reasoning is grounded in valid evidence. Even SOTA models are susceptible to minor perturbations (video changes or paraphrase variations).
 2. **Limitations of Prior Work**:
     - Existing RL-based training methods (e.g., Video-R1, VideoChat-R1) improve reasoning capability but rarely cross-check evidence consistency across multiple reasoning trajectories.
     - Test-time scaling methods (best-of-N, beam search) provide diverse candidates but lack systematic evidence-based arbitration.
     - Chain-of-thought (CoT) reasoning is seldom systematically grounded against key frames and relations.
-3. **Root Cause**: Existing methods can demonstrate that a model "can reason," but cannot verify that it "reasoned with correct evidence."
-4. **Paper Goals**: To shift video reasoning from "answer-driven" to "evidence-driven" — training the model to emit structured, machine-checkable evidence signals, and at inference time electing reliable answers via evidence consistency.
-5. **Starting Point**: Decouple "being able to think" from "thinking correctly" — training is responsible for shaping and enhancing reasoning capability (potentiation), while inference is responsible for guaranteeing reliability through evidence-based election.
+3. **Key Challenge**: Existing methods can demonstrate that a model "can reason," but cannot verify that it "reasoned with correct evidence."
+4. **Goal**: To shift video reasoning from "answer-driven" to "evidence-driven" — training the model to emit structured, machine-checkable evidence signals, and at inference time electing reliable answers via evidence consistency.
+5. **Key Insight**: Decouple "being able to think" from "thinking correctly" — training is responsible for shaping and enhancing reasoning capability (potentiation), while inference is responsible for guaranteeing reliability through evidence-based election.
 6. **Core Idea**: During training, reward shaping encourages the model to generate outputs containing key-frame references and structured reasoning; during inference, evidence-weighted election selects the most reliable answer from multiple candidates.
 
 ## Method

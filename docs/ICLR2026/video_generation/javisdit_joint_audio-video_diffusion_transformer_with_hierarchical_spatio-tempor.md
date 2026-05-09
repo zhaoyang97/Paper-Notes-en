@@ -29,13 +29,13 @@ This paper proposes JavisDiT, a joint audio-video generation model built on the 
 
 ## Background & Motivation
 
-**State of the Field**: Audio and video are naturally coupled in real-world scenarios, making joint audio-video generation (JAVG) valuable for film production and short-video creation.
+**Background**: Audio and video are naturally coupled in real-world scenarios, making joint audio-video generation (JAVG) valuable for film production and short-video creation.
 
 **Limitations of Prior Work**: Cascaded asynchronous approaches—generating audio first and then synthesizing video, or vice versa—accumulate noise; end-to-end methods are more promising. Existing DiT backbones such as AV-DiT and MM-LDM rely on image-based DiTs and struggle to model fine-grained spatio-temporal relationships. Current synchronization strategies achieve only coarse temporal alignment (parameter sharing) or semantic alignment (embedding alignment), lacking fine-grained spatial synchronization. Existing benchmarks such as AIST++ and Landscape contain overly simple scenes that fail to capture complex, multi-event real-world scenarios. The AV-Align metric relies on optical flow and audio onset detection, which are unreliable in complex scenes.
 
-**Root Cause**: Prior JAVG methods lack a mechanism to jointly model the *spatial* and *temporal* dimensions of audio-video synchronization at a fine granularity.
+**Key Challenge**: Prior JAVG methods lack a mechanism to jointly model the *spatial* and *temporal* dimensions of audio-video synchronization at a fine granularity.
 
-**Paper Goals**: To develop an end-to-end JAVG framework with hierarchical spatio-temporal prior estimation, alongside a more challenging benchmark and a more robust evaluation metric.
+**Goal**: To develop an end-to-end JAVG framework with hierarchical spatio-temporal prior estimation, alongside a more challenging benchmark and a more robust evaluation metric.
 
 ## Method
 

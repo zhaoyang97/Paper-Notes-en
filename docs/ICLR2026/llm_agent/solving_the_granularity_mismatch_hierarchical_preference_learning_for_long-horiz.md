@@ -27,15 +27,15 @@ content_hash: 9abb4a4b3afcb249
 This paper proposes the HPL framework to address the granularity mismatch in preference learning for long-horizon LLM agents. Through three-level DPO (trajectory-level + step-level + action-group-level) and two-dimensional curriculum learning (subtask complexity × sample difficulty), HPL significantly outperforms baselines such as ETO and IPR on ALFWorld/WebShop/InterCode-SQL (average 59.44 vs. 55.43/55.49).
 
 ## Background & Motivation
-**State of the Field**: Direct Preference Optimization (DPO) has become the dominant approach for LLM alignment, yet it suffers from granularity mismatch in long-horizon agent tasks — trajectory-level DPO signals are too coarse (unable to identify critical decision points), while step-level signals exhibit excessive variance.
+**Background**: Direct Preference Optimization (DPO) has become the dominant approach for LLM alignment, yet it suffers from granularity mismatch in long-horizon agent tasks — trajectory-level DPO signals are too coarse (unable to identify critical decision points), while step-level signals exhibit excessive variance.
 
 **Limitations of Prior Work**: Existing agent preference learning methods either rely on outcome-level rewards (trajectory success/failure) or use step-level signals that require extensive rollouts to reduce variance. Each granularity has its own trade-offs, and no unified framework has been established.
 
-**Root Cause**: Coarse granularity prevents precise credit assignment; fine granularity yields high variance and low sample efficiency. An "appropriately sized" granularity is needed.
+**Key Challenge**: Coarse granularity prevents precise credit assignment; fine granularity yields high variance and low sample efficiency. An "appropriately sized" granularity is needed.
 
-**Paper Goals**: Design a multi-granularity preference learning framework that simultaneously leverages trajectory-level, step-level, and action-group-level preference signals.
+**Goal**: Design a multi-granularity preference learning framework that simultaneously leverages trajectory-level, step-level, and action-group-level preference signals.
 
-**Starting Point**: Group action sequences by semantic coherence (e.g., "navigate to the kitchen" as one group, "open the refrigerator and retrieve an item" as another), and perform preference comparison at the group level.
+**Key Insight**: Group action sequences by semantic coherence (e.g., "navigate to the kitchen" as one group, "open the refrigerator and retrieve an item" as another), and perform preference comparison at the group level.
 
 **Core Idea**: Three-level DPO provides complementary credit assignment signals, coupled with two-dimensional curriculum learning that guides training from easy to hard.
 

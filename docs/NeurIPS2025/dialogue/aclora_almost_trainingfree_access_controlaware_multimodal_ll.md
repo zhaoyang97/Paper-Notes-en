@@ -29,15 +29,15 @@ AC-LoRA is an end-to-end system that trains independent LoRA adapters for datase
 
 ## Background & Motivation
 
-**State of the Field**: Enterprise-level LLMs are increasingly deployed for internal knowledge management, handling sensitive information such as email records, meeting minutes, and project documents. Such information typically follows organizational hierarchical access control policies, where different employees can only access data within their authorized scope.
+**Background**: Enterprise-level LLMs are increasingly deployed for internal knowledge management, handling sensitive information such as email records, meeting minutes, and project documents. Such information typically follows organizational hierarchical access control policies, where different employees can only access data within their authorized scope.
 
 **Limitations of Prior Work**: Current LLMs are prone to leaking sensitive information seen during training through memorization, making deployment in scenarios requiring strict access control difficult. The naive solution of training a separate model for each permission group is impractical, as an organization with $n$ permission domains can have up to $2^n$ permission combinations, leading to exponentially growing maintenance costs. Existing LoRA mixture methods (e.g., LoRA Router) require additional training of routing networks and provide no information isolation guarantees.
 
-**Root Cause**: How can strict information isolation (preventing any user from accessing information beyond their authorization through the LLM) be guaranteed while still leveraging knowledge from multiple permission domains to provide high-quality responses?
+**Key Challenge**: How can strict information isolation (preventing any user from accessing information beyond their authorization through the LLM) be guaranteed while still leveraging knowledge from multiple permission domains to provide high-quality responses?
 
-**Paper Goals**: (1) A training-free LoRA selection and merging mechanism; (2) An architecture that guarantees information isolation—a LoRA is loaded only when the user has the corresponding permission; (3) Generalizability to multi-modal settings (text + image).
+**Goal**: (1) A training-free LoRA selection and merging mechanism; (2) An architecture that guarantees information isolation—a LoRA is loaded only when the user has the corresponding permission; (3) Generalizability to multi-modal settings (text + image).
 
-**Starting Point**: Each permission dataset is used to independently train a LoRA adapter and a corresponding document embedding vector store. At query time, relevant LoRAs are retrieved within the user's permission scope via vector similarity, and the similarity scores are directly used as merging weights—serving simultaneously as retrieval criteria and routing weights, eliminating the need to train an additional router.
+**Key Insight**: Each permission dataset is used to independently train a LoRA adapter and a corresponding document embedding vector store. At query time, relevant LoRAs are retrieved within the user's permission scope via vector similarity, and the similarity scores are directly used as merging weights—serving simultaneously as retrieval criteria and routing weights, eliminating the need to train an additional router.
 
 **Core Idea**: Combine independent LoRAs, permission-filtered retrieval, and similarity-weighted merging to realize a zero-extra-training access control-aware LLM.
 

@@ -28,15 +28,15 @@ This paper systematically evaluates three categories of metadata (URLs, quality 
 
 ## Background & Motivation
 
-**State of the Field**: LLM pretraining is typically context-free—models are trained on raw text with all metadata (e.g., source URLs, quality scores, topic labels, timestamps) discarded. Recent work such as MeCo demonstrated that prepending URL domain names as conditioning signals can accelerate training by approximately 33%, attracting widespread attention.
+**Background**: LLM pretraining is typically context-free—models are trained on raw text with all metadata (e.g., source URLs, quality scores, topic labels, timestamps) discarded. Recent work such as MeCo demonstrated that prepending URL domain names as conditioning signals can accelerate training by approximately 33%, attracting widespread attention.
 
 **Limitations of Prior Work**: (a) Existing studies have only validated the effect of URL metadata; whether other metadata types (quality scores, topic classifications, etc.) are equally effective remains unclear. (b) The conditions under which the acceleration effect holds (zero-shot vs. few-shot? different type combinations?) have not been systematically studied. (c) Higuchi et al. recently noted that metadata conditioning is not always effective, which contradicts the conclusions of MeCo.
 
-**Root Cause**: Metadata theoretically encodes useful semantic and structural cues, yet in practice different metadata types yield dramatically different outcomes. Why do URLs help while quality scores do not? The questions of "which metadata are truly useful" and "under what conditions" remain open.
+**Key Challenge**: Metadata theoretically encodes useful semantic and structural cues, yet in practice different metadata types yield dramatically different outcomes. Why do URLs help while quality scores do not? The questions of "which metadata are truly useful" and "under what conditions" remain open.
 
-**Paper Goals**: (1) Systematically evaluate the impact of different metadata types on pretraining; (2) understand under what inference conditions metadata conditioning is effective; (3) explore the potential of context-aware pretraining for controllable generation.
+**Goal**: (1) Systematically evaluate the impact of different metadata types on pretraining; (2) understand under what inference conditions metadata conditioning is effective; (3) explore the potential of context-aware pretraining for controllable generation.
 
-**Starting Point**: The authors train a 1.5B Llama model on the FineWeb-Edu dataset and compare the individual and combined effects of three metadata categories—URLs, Quality Scores, and Domain Information (Topic + Format)—by analyzing training perplexity, 0-shot/5-shot downstream performance, and controllability via classifier-free guidance.
+**Key Insight**: The authors train a 1.5B Llama model on the FineWeb-Edu dataset and compare the individual and combined effects of three metadata categories—URLs, Quality Scores, and Domain Information (Topic + Format)—by analyzing training perplexity, 0-shot/5-shot downstream performance, and controllability via classifier-free guidance.
 
 **Core Idea**: Not all metadata are useful—URLs help training, topic/format information helps control generation, and quality scores serve neither purpose.
 

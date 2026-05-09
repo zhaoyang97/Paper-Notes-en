@@ -27,11 +27,11 @@ content_hash: 52a856e18beec2fb
 By decomposing weight changes during distillation into norm and direction components, this work finds that directional change is the primary driver of distillation (with a magnitude 22× larger than norm change). It proposes LoRaD (Low-Rank Weight Direction Rotation) adapters, integrated into the VSD framework to form WaDi, achieving state-of-the-art one-step FID on COCO with only ~10% trainable parameters.
 
 ## Background & Motivation
-**State of the Field**: Diffusion distillation methods compress multi-step diffusion into one-step generators. Mainstream approaches are divided into full fine-tuning (FT) and LoRA-based fine-tuning, both built upon the VSD (Variational Score Distillation) framework.
+**Background**: Diffusion distillation methods compress multi-step diffusion into one-step generators. Mainstream approaches are divided into full fine-tuning (FT) and LoRA-based fine-tuning, both built upon the VSD (Variational Score Distillation) framework.
 
 **Limitations of Prior Work**: Both FT and LoRA directly update parameters, jointly optimizing weight norm and direction — yet these two quantities change at vastly different scales: the mean and standard deviation of directional change are 22× and 10× larger than those of norm change, respectively. This coupling increases optimization difficulty.
 
-**Root Cause**: Distillation signals are primarily conveyed through directional adjustments, yet existing adapters (LoRA/DoRA) are not specifically designed for direction optimization, leading to slow convergence, instability, and susceptibility to overfitting.
+**Key Challenge**: Distillation signals are primarily conveyed through directional adjustments, yet existing adapters (LoRA/DoRA) are not specifically designed for direction optimization, leading to slow convergence, instability, and susceptibility to overfitting.
 
 **Key Validation**: Replacing the one-step model's directions with teacher directions degrades FID by 241; replacing the norms changes FID by only 0.7. The direction residual matrix recovers 93% of the information with 30% of its rank — indicating a low-rank structure.
 

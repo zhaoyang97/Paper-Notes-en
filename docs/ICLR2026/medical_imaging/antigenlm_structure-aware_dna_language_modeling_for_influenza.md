@@ -27,18 +27,18 @@ content_hash: c56ea60a7f74e610
 AntigenLM is a GPT-2-style DNA language model that preserves the integrity of genomic functional units. Pretrained on complete influenza virus whole genomes and subsequently fine-tuned, it autoregressively predicts antigenic sequences of future circulating strains, achieving significantly lower amino acid mismatch rates than the evolutionary model beth-1 and general-purpose genomic models.
 
 ## Background & Motivation
-**State of the Field**: Influenza viruses evolve rapidly to escape host immunity, necessitating frequent vaccine strain updates. Current WHO vaccine recommendations rely on phylodynamic indicators (e.g., LBI) and site-level evolutionary prediction models (e.g., beth-1).
+**Background**: Influenza viruses evolve rapidly to escape host immunity, necessitating frequent vaccine strain updates. Current WHO vaccine recommendations rely on phylodynamic indicators (e.g., LBI) and site-level evolutionary prediction models (e.g., beth-1).
 
 **Limitations of Prior Work**:
    - Site-level models (beth-1) treat mutations as independent events and cannot capture co-evolution across genomic segments.
    - General-purpose genomic foundation models (DNABERT, HyenaDNA) are trained on multi-species heterogeneous corpora, losing species-specific structural information.
    - Protein-level models (ESM, ProtGPT2) entirely ignore nucleotide-level evolutionary mechanisms such as synonymous mutations, non-coding regulatory elements, and codon adaptation.
 
-**Root Cause**: Viral evolution is driven by coordinated multi-segment genome-wide interactions (RNA–RNA interactions, segment reassortment constraints, polymerase–antigen co-adaptation); fragmented modeling discards critical signals.
+**Key Challenge**: Viral evolution is driven by coordinated multi-segment genome-wide interactions (RNA–RNA interactions, segment reassortment constraints, polymerase–antigen co-adaptation); fragmented modeling discards critical signals.
 
-**Paper Goals**: To construct a DNA language model that preserves functional unit integrity and captures whole-genome dependencies at the nucleotide level for accurate influenza antigen sequence prediction.
+**Goal**: To construct a DNA language model that preserves functional unit integrity and captures whole-genome dependencies at the nucleotide level for accurate influenza antigen sequence prediction.
 
-**Starting Point**: The influenza genome is compact (~13k nucleotides), making it suitable for single-Transformer whole-genome modeling. By maintaining a fixed ordering and complete boundaries of the 8 gene segments, the model can learn cross-segment co-evolutionary patterns.
+**Key Insight**: The influenza genome is compact (~13k nucleotides), making it suitable for single-Transformer whole-genome modeling. By maintaining a fixed ordering and complete boundaries of the 8 gene segments, the model can learn cross-segment co-evolutionary patterns.
 
 **Core Idea**: Maintaining the integrity and correct arrangement of genomic functional units during pretraining enables the DNA language model to capture high-order evolutionary constraints across segments.
 

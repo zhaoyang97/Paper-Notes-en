@@ -29,11 +29,11 @@ This paper proposes UniRain, a unified image deraining framework that employs RA
 
 ## Background & Motivation
 
-1. **State of the Field**: Existing deraining methods are typically designed for specific degradation types (rain streaks, raindrops, nighttime rain, etc.) and suffer significant performance degradation on other types.
+1. **Background**: Existing deraining methods are typically designed for specific degradation types (rain streaks, raindrops, nighttime rain, etc.) and suffer significant performance degradation on other types.
 2. **Limitations of Prior Work**: Naively merging all publicly available datasets (>2 million pairs) introduces data quality imbalance — some datasets contain poor-quality backgrounds or unrealistic synthesis artifacts that interfere with model training. Training on heterogeneous degradation types under a unified objective leads to learning imbalance.
-3. **Root Cause**: Simply scaling up data volume does not guarantee better generalization. Different degradation types vary in difficulty, causing the model to overfit easier types (e.g., nighttime rain streaks) while neglecting harder ones (e.g., daytime raindrops) during joint training.
-4. **Paper Goals**: To build a high-quality deraining model capable of handling all four rain degradation types in a unified manner.
-5. **Starting Point**: On the data side, RAG-based distillation is used to select reliable samples; on the model side, asymmetric MoE and multi-objective optimization are employed to balance across degradation types.
+3. **Key Challenge**: Simply scaling up data volume does not guarantee better generalization. Different degradation types vary in difficulty, causing the model to overfit easier types (e.g., nighttime rain streaks) while neglecting harder ones (e.g., daytime raindrops) during joint training.
+4. **Goal**: To build a high-quality deraining model capable of handling all four rain degradation types in a unified manner.
+5. **Key Insight**: On the data side, RAG-based distillation is used to select reliable samples; on the model side, asymmetric MoE and multi-objective optimization are employed to balance across degradation types.
 6. **Core Idea**: Data quality matters more than data quantity; different degradation types require a dynamically balanced optimization strategy.
 
 ## Method

@@ -28,15 +28,15 @@ DRAGON proposes a systematic LLM unlearning framework that requires no fine-tuni
 
 ## Background & Motivation
 
-**State of the Field**: LLM unlearning aims to remove the influence of private data or harmful knowledge, ensuring GDPR compliance and safe deployment. Mainstream approaches fall into two categories: training-based (gradient ascent / preference optimization / negative-sample fine-tuning) and training-free (prompt engineering / in-context example guidance).
+**Background**: LLM unlearning aims to remove the influence of private data or harmful knowledge, ensuring GDPR compliance and safe deployment. Mainstream approaches fall into two categories: training-based (gradient ascent / preference optimization / negative-sample fine-tuning) and training-free (prompt engineering / in-context example guidance).
 
 **Limitations of Prior Work**: (a) Training-based methods require retain data, which is often unavailable in practice; (b) gradient optimization over billions of parameters is costly and infeasible for closed-source models (GPT-4/Claude); (c) most methods support only one-time unlearning and cannot handle continual unlearning requests; (d) training-based methods frequently degrade general model capabilities.
 
-**Root Cause**: The trade-off between unlearning effectiveness and general model utility—existing training-based methods either fail to achieve thorough unlearning (GA/KL/DPO nearly collapse under TOFU-5%) or severely impair general capabilities.
+**Key Challenge**: The trade-off between unlearning effectiveness and general model utility—existing training-based methods either fail to achieve thorough unlearning (GA/KL/DPO nearly collapse under TOFU-5%) or severely impair general capabilities.
 
-**Paper Goals**: Design a lightweight, systematic framework that modifies no model weights, requires no retain data, is applicable to black-box LLMs, and supports continual unlearning.
+**Goal**: Design a lightweight, systematic framework that modifies no model weights, requires no retain data, is applicable to black-box LLMs, and supports continual unlearning.
 
-**Starting Point**: Reframe unlearning as an inference-time intervention—detect at inference time whether a prompt triggers unlearning, and if so, guide the model to refuse or redirect via CoT reasoning.
+**Key Insight**: Reframe unlearning as an inference-time intervention—detect at inference time whether a prompt triggers unlearning, and if so, guide the model to refuse or redirect via CoT reasoning.
 
 **Core Idea**: In-context unlearning intervention via detection + CoT reasoning guidance, without modifying model parameters.
 

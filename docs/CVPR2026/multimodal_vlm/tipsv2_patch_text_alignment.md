@@ -29,15 +29,15 @@ TIPSv2 is proposed by discovering that distillation substantially improves patch
 
 ## Background & Motivation
 
-**State of the Field**: Vision-language pretraining encompasses two major directions: contrastive/sigmoid methods (CLIP, SigLIP, PE) that provide image-text alignment and zero-shot capabilities, and self-supervised methods (DINO, iBOT) that excel at spatial understanding for dense tasks.
+**Background**: Vision-language pretraining encompasses two major directions: contrastive/sigmoid methods (CLIP, SigLIP, PE) that provide image-text alignment and zero-shot capabilities, and self-supervised methods (DINO, iBOT) that excel at spatial understanding for dense tasks.
 
 **Limitations of Prior Work**: Achieving unified representations that excel at both global (image-level) and dense (patch-level) understanding simultaneously remains a significant challenge. Unified approaches such as TIPS and SigLIP2 still struggle to maintain precise patch-level text alignment. A surprising trend is that the largest flagship models exhibit worse patch-text alignment than their smaller counterparts.
 
-**Root Cause**: The final Transformer layers tend to function as global contrastive "decoders" rather than preserving local semantics, leading to degraded patch-level alignment.
+**Key Challenge**: The final Transformer layers tend to function as global contrastive "decoders" rather than preserving local semantics, leading to degraded patch-level alignment.
 
-**Paper Goals**: To address patch-text alignment directly during the pretraining stage.
+**Goal**: To address patch-text alignment directly during the pretraining stage.
 
-**Starting Point**: The paper discovers that the distillation process substantially improves spatial alignment by imposing effective supervision on all patch tokens — the distilled student model's patch-text alignment far surpasses that of the teacher model.
+**Key Insight**: The paper discovers that the distillation process substantially improves spatial alignment by imposing effective supervision on all patch tokens — the distilled student model's patch-text alignment far surpasses that of the teacher model.
 
 **Core Idea**: Translate the insight from distillation into the pretraining objective iBOT++, enabling visible tokens to directly participate in the MIM loss.
 

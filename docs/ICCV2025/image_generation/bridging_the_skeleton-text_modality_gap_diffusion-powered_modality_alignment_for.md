@@ -29,15 +29,15 @@ This paper proposes TDSM (Triplet Diffusion for Skeleton-Text Matching), the fir
 
 ## Background & Motivation
 
-- **State of the Field**: The core challenge in ZSAR lies in the **modality gap between skeleton and text**. Skeleton data captures spatiotemporal motion patterns, while text descriptions encode high-level semantic information. The divergence between their feature spaces makes alignment difficult, severely limiting generalization to unseen actions.
+- **Background**: The core challenge in ZSAR lies in the **modality gap between skeleton and text**. Skeleton data captures spatiotemporal motion patterns, while text descriptions encode high-level semantic information. The divergence between their feature spaces makes alignment difficult, severely limiting generalization to unseen actions.
 
 - **Limitations of Prior Work**: Prior methods fall into two categories: (1) VAE-based methods (CADA-VAE, SynSE, etc.) that align skeleton and text latent spaces via VAEs; and (2) contrastive learning methods (SMIE, PURLS, STAR, etc.) that perform alignment through positive/negative sample pairs. However, all these approaches attempt to **directly align** skeleton and text features within their respective independent latent spaces, and the modality gap constrains generalization.
 
-- **Root Cause**: The modality gap between skeleton and text feature spaces limits the effectiveness of direct alignment strategies used by prior methods.
+- **Key Challenge**: The modality gap between skeleton and text feature spaces limits the effectiveness of direct alignment strategies used by prior methods.
 
-- **Paper Goals**: To leverage the conditional denoising mechanism of diffusion models—rather than their generative capacity—to achieve cross-modal alignment between skeleton and text representations.
+- **Goal**: To leverage the conditional denoising mechanism of diffusion models—rather than their generative capacity—to achieve cross-modal alignment between skeleton and text representations.
 
-- **Starting Point**: Diffusion models have demonstrated powerful cross-modal alignment capabilities in image-text generation, realizing precise cross-modal correspondence by incorporating text conditions into the reverse denoising process. The key insight is whether this **condition-guided denoising alignment mechanism** can be repurposed to address the skeleton-text alignment problem.
+- **Key Insight**: Diffusion models have demonstrated powerful cross-modal alignment capabilities in image-text generation, realizing precise cross-modal correspondence by incorporating text conditions into the reverse denoising process. The key insight is whether this **condition-guided denoising alignment mechanism** can be repurposed to address the skeleton-text alignment problem.
 
 ## Method
 

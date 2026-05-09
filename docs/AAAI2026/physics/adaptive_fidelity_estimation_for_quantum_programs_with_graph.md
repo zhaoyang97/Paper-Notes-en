@@ -30,11 +30,11 @@ This paper proposes QuFid, a framework that models quantum circuits as directed 
 
 ### Root Cause
 
-**State of the Field**: In the NISQ (Noisy Intermediate-Scale Quantum) era, quantum devices are constrained by decoherence, gate errors, and limited qubit counts. Fidelity estimation is a critical step for verifying the correctness of quantum programs. However, each fidelity estimation requires a large number of repeated measurements (shots), and the required shot count is difficult to determine in advance — too few leads to inaccurate estimates, while too many wastes scarce quantum resources. Existing methods either use a fixed shot count (heuristic) or rely on pre-trained noise models (e.g., QuCT, QuEst). Since quantum hardware noise is time-varying and device-heterogeneous, pre-trained approaches exhibit poor adaptability in dynamic environments.
+**Background**: In the NISQ (Noisy Intermediate-Scale Quantum) era, quantum devices are constrained by decoherence, gate errors, and limited qubit counts. Fidelity estimation is a critical step for verifying the correctness of quantum programs. However, each fidelity estimation requires a large number of repeated measurements (shots), and the required shot count is difficult to determine in advance — too few leads to inaccurate estimates, while too many wastes scarce quantum resources. Existing methods either use a fixed shot count (heuristic) or rely on pre-trained noise models (e.g., QuCT, QuEst). Since quantum hardware noise is time-varying and device-heterogeneous, pre-trained approaches exhibit poor adaptability in dynamic environments.
 
 ### Limitations of Prior Work
 
-**Paper Goals**: How can one adaptively determine the minimum number of measurements needed to achieve a target fidelity accuracy — without relying on pre-trained noise models — based on quantum circuit structure and runtime statistical feedback? Specific challenges include:
+**Goal**: How can one adaptively determine the minimum number of measurements needed to achieve a target fidelity accuracy — without relying on pre-trained noise models — based on quantum circuit structure and runtime statistical feedback? Specific challenges include:
 1. **Noise heterogeneity**: Noise manifests differently across devices and time points, making static strategies unreliable.
 2. **Circuit–hardware mismatch**: Transpilation alters the circuit's dependency structure and noise exposure patterns.
 3. **Accuracy–latency trade-off**: A balance must be struck between statistical precision and rapid feedback.

@@ -28,15 +28,15 @@ This work proposes the AutoSciDACT pipeline, which first employs supervised cont
 
 ## Background & Motivation
 
-**State of the Field**: Modern scientific datasets are large in scale and extremely high-dimensional. Genuine novel phenomena are often obscured by statistical noise or random fluctuations, making exhaustive manual inspection infeasible.
+**Background**: Modern scientific datasets are large in scale and extremely high-dimensional. Genuine novel phenomena are often obscured by statistical noise or random fluctuations, making exhaustive manual inspection infeasible.
 
 **Limitations of Prior Work**: Existing anomaly detection methods (autoencoders, OOD detectors) largely only "flag" anomalous samples and report an AUROC score, without providing statistical significance statements such as p-values or Z-scores, which are insufficient for the rigorous standards of scientific discovery.
 
-**Root Cause**: Classical goodness-of-fit (GOF) tests suffer a dramatic loss of sensitivity in high-dimensional spaces and require unrealistically large sample sizes. Even powerful tools such as NPLM require low-dimensional inputs to remain effective. Traditional approaches also rely on domain experts for manual feature engineering, lacking automation and cross-domain generalizability.
+**Key Challenge**: Classical goodness-of-fit (GOF) tests suffer a dramatic loss of sensitivity in high-dimensional spaces and require unrealistically large sample sizes. Even powerful tools such as NPLM require low-dimensional inputs to remain effective. Traditional approaches also rely on domain experts for manual feature engineering, lacking automation and cross-domain generalizability.
 
-**Starting Point**: Labeled simulation data are abundant in many scientific domains (particle physics simulations, gravitational wave templates, annotated pathology tissue), providing natural positive pairs for supervised contrastive learning.
+**Key Insight**: Labeled simulation data are abundant in many scientific domains (particle physics simulations, gravitational wave templates, annotated pathology tissue), providing natural positive pairs for supervised contrastive learning.
 
-**Paper Goals**: This paper is the first to combine contrastive learning (for dimensionality reduction) with NPLM (for statistical testing) into an end-to-end pipeline, bridging the systematic gap between learned low-dimensional representations and rigorous hypothesis testing.
+**Goal**: This paper is the first to combine contrastive learning (for dimensionality reduction) with NPLM (for statistical testing) into an end-to-end pipeline, bridging the systematic gap between learned low-dimensional representations and rigorous hypothesis testing.
 
 ## Method
 

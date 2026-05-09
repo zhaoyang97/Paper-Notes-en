@@ -29,15 +29,15 @@ This paper proposes PAR (Perturb and Recover), a simple yet effective backdoor c
 
 ## Background & Motivation
 
-1. **State of the Field**: Vision-language models such as CLIP are widely used for zero-shot classification, retrieval, and as visual encoders in large VLMs such as LLaVA. Because training data is scraped from the web (e.g., LAION-400M), these models are highly vulnerable to backdoor attacks—a poisoning rate as low as 0.01% is sufficient to successfully inject a backdoor.
+1. **Background**: Vision-language models such as CLIP are widely used for zero-shot classification, retrieval, and as visual encoders in large VLMs such as LLaVA. Because training data is scraped from the web (e.g., LAION-400M), these models are highly vulnerable to backdoor attacks—a poisoning rate as low as 0.01% is sufficient to successfully inject a backdoor.
 
 2. **Limitations of Prior Work**: Existing cleansing methods such as CleanCLIP and RoCLIP rely heavily on **strong data augmentation** (e.g., AutoAugment) to break backdoor associations. This strategy carries an implicit assumption—the augmentation operations must overlap with the trigger distribution to be effective. For image-text pairs, strong augmentation also destroys annotation semantics (e.g., horizontal flipping alters positional descriptions, and color jitter invalidates color descriptions).
 
-3. **Root Cause**: Augmentation-based cleansing is essentially "guessing" what the trigger might look like. If the trigger is random noise, noise-based augmentation is indeed effective; however, if the trigger is **structured** (stripes, triangles, watermark text, etc.), these structures survive augmentation intact, causing cleansing to fail entirely. In practice, defenders have no knowledge of the trigger type.
+3. **Key Challenge**: Augmentation-based cleansing is essentially "guessing" what the trigger might look like. If the trigger is random noise, noise-based augmentation is indeed effective; however, if the trigger is **structured** (stripes, triangles, watermark text, etc.), these structures survive augmentation intact, causing cleansing to fail entirely. In practice, defenders have no knowledge of the trigger type.
 
-4. **Paper Goals**: To design a universal backdoor cleansing method that is **agnostic to trigger type** and operates via fine-tuning rather than retraining from scratch, keeping computational cost manageable.
+4. **Goal**: To design a universal backdoor cleansing method that is **agnostic to trigger type** and operates via fine-tuning rather than retraining from scratch, keeping computational cost manageable.
 
-5. **Starting Point**: The key insight is that instead of guessing and covering all possible trigger patterns, it is more effective to directly "push the model away" from the poisoned state. Once the model's embedding space diverges sufficiently from the poisoned model, the spurious associations introduced by the backdoor are naturally disrupted.
+5. **Key Insight**: The key insight is that instead of guessing and covering all possible trigger patterns, it is more effective to directly "push the model away" from the poisoned state. Once the model's embedding space diverges sufficiently from the poisoned model, the spurious associations introduced by the backdoor are naturally disrupted.
 
 6. **Core Idea**: Apply an $\ell_2$ distance loss to actively push the poisoned embeddings away (Perturb), while simultaneously using the CLIP contrastive loss to maintain clean performance (Recover). The two objectives compete to achieve "forget the backdoor, retain the knowledge."
 

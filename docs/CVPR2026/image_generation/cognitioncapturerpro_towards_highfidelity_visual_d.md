@@ -29,15 +29,15 @@ CognitionCapturerPro addresses Fidelity Loss via uncertainty-weighted masking an
 
 ## Background & Motivation
 
-**State of the Field**: Decoding visual stimuli from EEG signals is a critical direction in Brain-Computer Interfaces (BCI). Prevailing methods align EEG embeddings with CLIP space to achieve retrieval and reconstruction. EEG has become the most promising practical modality due to its portability and millisecond-level temporal resolution.
+**Background**: Decoding visual stimuli from EEG signals is a critical direction in Brain-Computer Interfaces (BCI). Prevailing methods align EEG embeddings with CLIP space to achieve retrieval and reconstruction. EEG has become the most promising practical modality due to its portability and millisecond-level temporal resolution.
 
 **Limitations of Prior Work**: Neuroscience research reveals two core bottlenecks—(1) **Fidelity Loss**: As the visual system converts stimuli into neural signals, attention mechanisms lead to incomplete information (e.g., focusing on bicycle wheels rather than the whole bike); (2) **Representational Shift**: Brain association mechanisms introduce non-visual semantics (e.g., seeing a penguin and thinking of Antarctica), causing neural signals to deviate from visual features. Existing methods either handle semantic alignment while ignoring fidelity loss, or model uncertainty only within a visual framework while ignoring semantic associations.
 
-**Root Cause**: A systematic mismatch exists between EEG signals and visual stimuli, arising from two independent mechanisms (information loss + subjective bias), which must be addressed simultaneously for high-fidelity decoding.
+**Key Challenge**: A systematic mismatch exists between EEG signals and visual stimuli, arising from two independent mechanisms (information loss + subjective bias), which must be addressed simultaneously for high-fidelity decoding.
 
-**Paper Goals**: To realize accurate brain-to-image retrieval and reconstruction under limited neural data conditions by simultaneously overcoming fidelity loss and representational shift.
+**Goal**: To realize accurate brain-to-image retrieval and reconstruction under limited neural data conditions by simultaneously overcoming fidelity loss and representational shift.
 
-**Starting Point**: The authors build upon the multi-modal expansion strategy of the conference version (CognitionCapturer), adding an uncertainty-weighted mechanism to solve fidelity loss and replacing the diffusion prior with a lightweight MLP alignment to reduce overfitting risks.
+**Key Insight**: The authors build upon the multi-modal expansion strategy of the conference version (CognitionCapturer), adding an uncertainty-weighted mechanism to solve fidelity loss and replacing the diffusion prior with a lightweight MLP alignment to reduce overfitting risks.
 
 **Core Idea**: Use uncertainty-driven dynamic masking to simulate human foveal vision for solving fidelity loss, and use multi-modal fusion + shared backbone alignment to solve representational shift.
 

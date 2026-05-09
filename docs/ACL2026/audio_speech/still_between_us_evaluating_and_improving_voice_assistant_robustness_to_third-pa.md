@@ -29,15 +29,15 @@ To address the inability of voice assistants to distinguish third-party interrup
 
 ## Background & Motivation
 
-**State of the Field**: Spoken Language Models (SLMs) have been widely deployed in real-world voice assistant scenarios, supporting human-like natural conversation, but are primarily designed for one-on-one interactions.
+**Background**: Spoken Language Models (SLMs) have been widely deployed in real-world voice assistant scenarios, supporting human-like natural conversation, but are primarily designed for one-on-one interactions.
 
 **Limitations of Prior Work**: In everyday settings, third parties frequently interject during a user's conversation with a voice assistant (e.g., bystander comments or background dialogue). Current SLMs cannot distinguish such third-party interruptions and blindly concatenate multi-speaker utterances as a single continuous stream, resulting in incorrect or nonsensical responses.
 
-**Root Cause**: "Semantic shortcut learning" emerges during multimodal speech training—models tend to exploit textual semantic patterns (e.g., contradictions, topic shifts) to detect interruptions while ignoring acoustic signals (e.g., speaker voice changes), making them extremely fragile in semantically ambiguous scenarios.
+**Key Challenge**: "Semantic shortcut learning" emerges during multimodal speech training—models tend to exploit textual semantic patterns (e.g., contradictions, topic shifts) to detect interruptions while ignoring acoustic signals (e.g., speaker voice changes), making them extremely fragile in semantically ambiguous scenarios.
 
-**Paper Goals**: Construct a comprehensive TPI-aware framework encompassing training data, evaluation benchmarks, and training strategies that enable voice assistants to correctly identify and handle third-party interruptions.
+**Goal**: Construct a comprehensive TPI-aware framework encompassing training data, evaluation benchmarks, and training strategies that enable voice assistants to correctly identify and handle third-party interruptions.
 
-**Starting Point**: Drawing on a linguistically grounded interruption taxonomy, the work defines 26 real-world interruption scenarios and systematically constructs training and evaluation data.
+**Key Insight**: Drawing on a linguistically grounded interruption taxonomy, the work defines 26 real-world interruption scenarios and systematically constructs training and evaluation data.
 
 **Core Idea**: By applying speaker-aware hard negative mining—re-synthesizing two-speaker interruption transcripts with a single speaker's voice—the model is forced to abandon semantic shortcuts and genuinely learn acoustic cues.
 

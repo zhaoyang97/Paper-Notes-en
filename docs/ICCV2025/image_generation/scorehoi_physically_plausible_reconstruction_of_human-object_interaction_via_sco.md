@@ -28,15 +28,15 @@ ScoreHOI employs a score-based diffusion model as an optimizer, integrating DDIM
 
 ## Background & Motivation
 
-**State of the Field**: Jointly reconstructing 3D meshes of humans and interacting objects from monocular images is an important yet challenging task. Existing methods fall into two categories: (a) optimization-based methods (e.g., CHORE) that iteratively optimize physical constraints using Adam, but over-emphasize physics while neglecting image features, resulting in large reconstruction errors and slow inference; (b) regression-based methods (e.g., CONTHO) that predict outputs in a single forward pass, but suffer from poor robustness in single-step refinement, especially under heavy occlusion or depth ambiguity.
+**Background**: Jointly reconstructing 3D meshes of humans and interacting objects from monocular images is an important yet challenging task. Existing methods fall into two categories: (a) optimization-based methods (e.g., CHORE) that iteratively optimize physical constraints using Adam, but over-emphasize physics while neglecting image features, resulting in large reconstruction errors and slow inference; (b) regression-based methods (e.g., CONTHO) that predict outputs in a single forward pass, but suffer from poor robustness in single-step refinement, especially under heavy occlusion or depth ambiguity.
 
 **Limitations of Prior Work**: Optimization-based methods lack prior knowledge of human-object interactions and are prone to local optima; regression-based methods are fast but lack iterative refinement capability, leading to instability in challenging scenarios.
 
-**Root Cause**: How can one simultaneously leverage data-driven priors and satisfy physical constraints? Traditional optimizers lack distributional priors over data, while regression networks lack controllable iterative optimization mechanisms.
+**Key Challenge**: How can one simultaneously leverage data-driven priors and satisfy physical constraints? Traditional optimizers lack distributional priors over data, while regression networks lack controllable iterative optimization mechanisms.
 
-**Paper Goals**: (1) Incorporate prior knowledge of human-object interactions into the optimization process; (2) supervise the generation direction with physical constraints during sampling.
+**Goal**: (1) Incorporate prior knowledge of human-object interactions into the optimization process; (2) supervise the generation direction with physical constraints during sampling.
 
-**Starting Point**: Diffusion models characterize the gradient field of the data distribution via score functions and support conditional guided sampling. This enables treating the diffusion model as an "optimizer with rich priors," injecting physical constraints into the denoising process to achieve guided refinement.
+**Key Insight**: Diffusion models characterize the gradient field of the data distribution via score functions and support conditional guided sampling. This enables treating the diffusion model as an "optimizer with rich priors," injecting physical constraints into the denoising process to achieve guided refinement.
 
 **Core Idea**: Replace the traditional optimizer with a score-based diffusion model; inject contact, penetration, and ground constraints as physical guidance during DDIM sampling; and iteratively update contact masks to improve physical plausibility.
 

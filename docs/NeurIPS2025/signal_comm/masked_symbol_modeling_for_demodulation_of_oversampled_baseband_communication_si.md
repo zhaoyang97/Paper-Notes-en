@@ -29,15 +29,15 @@ This paper proposes Masked Symbol Modeling (MSM), transplanting BERT's masked pr
 
 ## Background & Motivation
 
-**State of the Field**: Transformer architectures are increasingly applied to communication systems, primarily for channel estimation, equalization, and other classical signal processing tasks. However, most existing work treats Transformers as black-box tools without deeply exploring what "context" means within physical waveforms.
+**Background**: Transformer architectures are increasingly applied to communication systems, primarily for channel estimation, equalization, and other classical signal processing tasks. However, most existing work treats Transformers as black-box tools without deeply exploring what "context" means within physical waveforms.
 
 **Limitations of Prior Work**: In pulse-shaped oversampled systems, pulses from adjacent symbols overlap in the time domain, producing inter-symbol contributions. Conventional methods treat this overlap as interference to be eliminated (e.g., via equalizers) rather than as an exploitable information source. Meanwhile, impulsive noise (e.g., Middleton Class-A noise) poses severe challenges to traditional detectors due to its bursty, high-amplitude nature—detectors designed under the Gaussian noise assumption degrade drastically in impulsive noise environments.
 
-**Root Cause**: The inter-symbol overlap induced by pulse shaping actually encodes rich deterministic structural information—each sample contains contributions from multiple neighboring symbols. Nevertheless, existing methods do not systematically exploit this structure for more robust signal recovery.
+**Key Challenge**: The inter-symbol overlap induced by pulse shaping actually encodes rich deterministic structural information—each sample contains contributions from multiple neighboring symbols. Nevertheless, existing methods do not systematically exploit this structure for more robust signal recovery.
 
-**Paper Goals**: How can the "contextual understanding" capability from NLP be transferred to the communication physical layer? Specifically, can a model be trained to understand the "grammar" of a pulse-shaped waveform and use context to recover noise-corrupted symbols?
+**Goal**: How can the "contextual understanding" capability from NLP be transferred to the communication physical layer? Specifically, can a model be trained to understand the "grammar" of a pulse-shaped waveform and use context to recover noise-corrupted symbols?
 
-**Starting Point**: The authors draw an analogy between "inter-symbol contributions from pulse shaping" and "word context in natural language"—just as the meaning of a word can be inferred from its surrounding words, the identity of a masked symbol can be inferred from surrounding unmasked samples.
+**Key Insight**: The authors draw an analogy between "inter-symbol contributions from pulse shaping" and "word context in natural language"—just as the meaning of a word can be inferred from its surrounding words, the identity of a masked symbol can be inferred from surrounding unmasked samples.
 
 **Core Idea**: Transplant BERT's masked prediction paradigm to the communication physical layer, treating pulse-shaping inter-symbol overlap as contextual information rather than interference, and self-supervisedly learning the "latent grammar" of the waveform.
 

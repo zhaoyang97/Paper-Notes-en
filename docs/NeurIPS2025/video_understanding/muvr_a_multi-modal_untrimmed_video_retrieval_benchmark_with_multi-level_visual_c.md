@@ -29,15 +29,15 @@ This paper introduces MUVR, a benchmark for multi-modal untrimmed video retrieva
 
 ## Background & Motivation
 
-**State of the Field**: Video retrieval is a core technology in recommendation systems and content search. Existing tasks include text-to-video retrieval (TVR), composed video retrieval (CVR), and fine-grained video retrieval (FVR), each with distinct limitations.
+**Background**: Video retrieval is a core technology in recommendation systems and content search. Existing tasks include text-to-video retrieval (TVR), composed video retrieval (CVR), and fine-grained video retrieval (FVR), each with distinct limitations.
 
 **Limitations of Prior Work**: (1) Pure text queries fail to capture fine-grained visual details; (2) pure video queries introduce irrelevant visual information; (3) existing benchmarks support only a single matching criterion (e.g., near-duplicate or event-level), failing to cover diverse video categories; (4) most benchmarks are built on trimmed videos with one-to-one retrieval, which does not reflect real-world platform scenarios.
 
-**Root Cause**: Real-world video platforms require one-to-many retrieval over untrimmed videos with multi-modal queries and broad category coverage, yet no existing benchmark satisfies all these requirements simultaneously.
+**Key Challenge**: Real-world video platforms require one-to-many retrieval over untrimmed videos with multi-modal queries and broad category coverage, yet no existing benchmark satisfies all these requirements simultaneously.
 
-**Paper Goals**: To construct a comprehensive video retrieval benchmark aligned with the demands of real-world video platforms.
+**Goal**: To construct a comprehensive video retrieval benchmark aligned with the demands of real-world video platforms.
 
-**Starting Point**: The proposed approach uses video as the primary query modality supplemented by textual descriptions, combined with tag and mask prompts, for one-to-many retrieval over an untrimmed video corpus.
+**Key Insight**: The proposed approach uses video as the primary query modality supplemented by textual descriptions, combined with tag and mask prompts, for one-to-many retrieval over an untrimmed video corpus.
 
 **Core Idea**: Multi-level visual correspondence (copy, event, scene, instance, action, others) is proposed as a general retrieval matching criterion, and five partitions are designed to cover diverse video categories.
 

@@ -28,13 +28,13 @@ This paper proposes the Augmented Radiance Field (ARF) framework, which explicit
 
 ## Background & Motivation
 
-**State of the Field**: 3D Gaussian Splatting (3DGS) has become the dominant approach for radiance field reconstruction due to its real-time rendering capability, but it encodes appearance using third-order spherical harmonics (SH), which fundamentally prevents the separation of diffuse and specular components.
+**Background**: 3D Gaussian Splatting (3DGS) has become the dominant approach for radiance field reconstruction due to its real-time rendering capability, but it encodes appearance using third-order spherical harmonics (SH), which fundamentally prevents the separation of diffuse and specular components.
 
 **Limitations of Prior Work**: Low-order SH can only capture smooth color variations and fails to reproduce sharp specular highlights on glossy surfaces. Increasing SH order leads to exponential memory growth, training instability, and diminishing returns (fourth-order SH improves PSNR by only 0.08 dB over third-order). Furthermore, SH is defined globally over the entire sphere, while surface Gaussians are only visible from the outward-facing hemisphere, resulting in substantial representational waste.
 
-**Root Cause**: Specular reflections are sparsely distributed and highly view-dependent. Allocating additional parameters to all Gaussian primitives for specular modeling introduces significant redundancy, and existing methods cannot selectively augment specular modeling capacity without disrupting the already-optimized scene.
+**Key Challenge**: Specular reflections are sparsely distributed and highly view-dependent. Allocating additional parameters to all Gaussian primitives for specular modeling introduces significant redundancy, and existing methods cannot selectively augment specular modeling capacity without disrupting the already-optimized scene.
 
-**Starting Point**: Inspired by the Phong shading model, the paper designs novel Gaussian kernels with view-dependent opacity specifically for specular modeling. An error-driven compensation strategy adaptively inserts augmented Gaussians only in regions with large reconstruction errors, enabling explicit decoupling of diffuse and specular components.
+**Key Insight**: Inspired by the Phong shading model, the paper designs novel Gaussian kernels with view-dependent opacity specifically for specular modeling. An error-driven compensation strategy adaptively inserts augmented Gaussians only in regions with large reconstruction errors, enabling explicit decoupling of diffuse and specular components.
 
 **Core Idea**: Augmented Gaussian kernels with cosine-weighted opacity lobes are superimposed to reconstruct complex specular effects, combined with a 2D-to-3D inverse projection initialization strategy to precisely localize regions requiring augmentation.
 

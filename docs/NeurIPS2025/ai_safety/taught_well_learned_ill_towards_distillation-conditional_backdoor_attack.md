@@ -31,9 +31,9 @@ Knowledge distillation (KD) is a core technique for transferring knowledge from 
 
 **Limitations of Prior Work**: The prevailing security assumption holds that "a teacher model passing backdoor detection plus a clean distillation dataset guarantees a safe student model." However, whether this assumption truly holds remains an open question.
 
-**Root Cause**: Existing distillation-resistant backdoor attacks (e.g., ADBA) aim to preserve the backdoor through distillation, but the backdoor remains active in the teacher model and is thus susceptible to detection. Simply fine-tuning to conceal the backdoor (ADBA-FT) causes the attack to fail, as it lacks dynamic guidance from the distillation process.
+**Key Challenge**: Existing distillation-resistant backdoor attacks (e.g., ADBA) aim to preserve the backdoor through distillation, but the backdoor remains active in the teacher model and is thus susceptible to detection. Simply fine-tuning to conceal the backdoor (ADBA-FT) causes the attack to fail, as it lacks dynamic guidance from the distillation process.
 
-**Starting Point**: The authors introduce a fundamentally new paradigm—Distillation-Conditional Backdoor Attack (DCBA)—in which the backdoor lies dormant and undetectable in the teacher model, yet is automatically activated during distillation. The attack is formulated as a bi-level optimization problem, using a surrogate student model to simulate the distillation process and guide the teacher model's optimization.
+**Key Insight**: The authors introduce a fundamentally new paradigm—Distillation-Conditional Backdoor Attack (DCBA)—in which the backdoor lies dormant and undetectable in the teacher model, yet is automatically activated during distillation. The attack is formulated as a bi-level optimization problem, using a surrogate student model to simulate the distillation process and guide the teacher model's optimization.
 
 ## Method
 

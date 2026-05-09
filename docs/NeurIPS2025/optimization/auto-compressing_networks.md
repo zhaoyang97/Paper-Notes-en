@@ -28,15 +28,15 @@ Auto-Compressing Networks (ACN) replace short residual connections with long-ran
 
 ## Background & Motivation
 
-**State of the Field**: Many layers in deep residual networks are redundant and can be removed without performance degradation. Short residual connections create an exponential number of implicit paths, yet many paths remain underutilized.
+**Background**: Many layers in deep residual networks are redundant and can be removed without performance degradation. Short residual connections create an exponential number of implicit paths, yet many paths remain underutilized.
 
 **Limitations of Prior Work**: (a) Residual networks do not actively compress—deep layers are still allocated computation even when performing identity mappings; (b) LayerDrop/LayerSkip require explicit pruning strategies; (c) no architecture can automatically determine the required number of layers.
 
-**Root Cause**: Although residual connections resolve the vanishing gradient problem, they also make deep layers "lazy"—the shortcut paths provide gradient escape routes, relieving deep layers of the need to learn meaningful transformations.
+**Key Challenge**: Although residual connections resolve the vanishing gradient problem, they also make deep layers "lazy"—the shortcut paths provide gradient escape routes, relieving deep layers of the need to learn meaningful transformations.
 
-**Paper Goals**: Design an architecture that automatically compresses information into the minimum necessary number of layers.
+**Goal**: Design an architecture that automatically compresses information into the minimum necessary number of layers.
 
-**Starting Point**: Connect all layer outputs directly to the final output (rather than accumulating layer by layer), making the Direct Gradient (DG) substantially stronger than the Forward Gradient (FG), thereby implicitly realizing layer-wise training—information is automatically pushed toward earlier layers.
+**Key Insight**: Connect all layer outputs directly to the final output (rather than accumulating layer by layer), making the Direct Gradient (DG) substantially stronger than the Forward Gradient (FG), thereby implicitly realizing layer-wise training—information is automatically pushed toward earlier layers.
 
 **Core Idea**: Long-range forward connections → high DG/FG ratio → information compressed into early layers → deep layers automatically degrade to identity mappings → optimal depth determined automatically.
 

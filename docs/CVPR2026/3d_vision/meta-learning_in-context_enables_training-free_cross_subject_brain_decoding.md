@@ -29,15 +29,15 @@ This paper proposes BrainCoDec, a framework that performs fMRI-based visual deco
 
 ## Background & Motivation
 
-1. **State of the Field**: fMRI-based visual decoding has achieved significant progress — by learning mappings from brain activity to visual semantic spaces, conditional generative models can reconstruct viewed images from neural signals. Methods such as MindEye2 have achieved high-fidelity reconstruction in single-subject settings.
+1. **Background**: fMRI-based visual decoding has achieved significant progress — by learning mappings from brain activity to visual semantic spaces, conditional generative models can reconstruct viewed images from neural signals. Methods such as MindEye2 have achieved high-fidelity reconstruction in single-subject settings.
 
 2. **Limitations of Prior Work**: Existing models cannot generalize across subjects. Due to large inter-individual differences in neural signals (anatomical structure, functional organization, neural plasticity, etc.), training or fine-tuning a dedicated model for each new subject requires substantial data collection and computational resources.
 
-3. **Root Cause**: Cross-subject differences in neural representations render mapping functions learned for one individual invalid for another. Existing approaches either rely on anatomical alignment (flatmaps) or employ 1D pooling or surface-based learning, all of which implicitly or explicitly require anatomical registration.
+3. **Key Challenge**: Cross-subject differences in neural representations render mapping functions learned for one individual invalid for another. Existing approaches either rely on anatomical alignment (flatmaps) or employ 1D pooling or surface-based learning, all of which implicitly or explicitly require anatomical registration.
 
-4. **Paper Goals**: Achieve zero-shot cross-subject visual decoding — adapting to a new subject using only a small number of examples (e.g., 200 image–brain pairs), without requiring anatomical alignment or stimulus overlap.
+4. **Goal**: Achieve zero-shot cross-subject visual decoding — adapting to a new subject using only a small number of examples (e.g., 200 image–brain pairs), without requiring anatomical alignment or stimulus overlap.
 
-5. **Starting Point**: Brain decoding is reformulated as the functional inversion of an encoding model — first estimating per-voxel forward model parameters (image → brain activity) via in-context learning, then inverting this forward model to decode images.
+5. **Key Insight**: Brain decoding is reformulated as the functional inversion of an encoding model — first estimating per-voxel forward model parameters (image → brain activity) via in-context learning, then inverting this forward model to decode images.
 
 6. **Core Idea**: A meta-optimized Transformer learns the voxel-level encoding function of a new subject in-context, followed by cross-voxel contextual aggregation for functional inversion decoding — all without any gradient updates.
 

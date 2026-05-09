@@ -28,18 +28,18 @@ This paper proposes LGGFN (Loss-Guided GFlowNets), in which the exploration of a
 
 ## Background & Motivation
 
-**State of the Field**: GFlowNets are designed to sample from multimodal distributions proportional to a reward function—rather than merely finding the optimum—theoretically avoiding mode collapse. In practice, however, on-policy training still suffers from mode collapse, as the model is attracted to high-reward modes discovered early in training.
+**Background**: GFlowNets are designed to sample from multimodal distributions proportional to a reward function—rather than merely finding the optimum—theoretically avoiding mode collapse. In practice, however, on-policy training still suffers from mode collapse, as the model is attracted to high-reward modes discovered early in training.
 
 **Limitations of Prior Work**:
    - Existing exploration techniques rely on heuristic novelty signals (e.g., state counting, RND), which are decoupled from the model's actual learning state.
    - Novelty signals may direct exploration toward irrelevant regions (novel but unimportant).
    - There is no mechanism that leverages the model's own training signal to guide exploration.
 
-**Root Cause**: GFlowNets require broad exploration to learn the complete distribution, yet on-policy sampling is dominated by high-reward regions—a mechanism is needed to redirect sampling toward regions the model has not yet learned well.
+**Key Challenge**: GFlowNets require broad exploration to learn the complete distribution, yet on-policy sampling is dominated by high-reward regions—a mechanism is needed to redirect sampling toward regions the model has not yet learned well.
 
-**Paper Goals**: Use the primary model's training loss as the exploration signal for an auxiliary agent, realizing a strategy of "explore where you understand least."
+**Goal**: Use the primary model's training loss as the exploration signal for an auxiliary agent, realizing a strategy of "explore where you understand least."
 
-**Starting Point**: High training loss regions = regions poorly understood by the primary model → the auxiliary agent prioritizes exploration there → the collected samples are fed back to train the primary model.
+**Key Insight**: High training loss regions = regions poorly understood by the primary model → the auxiliary agent prioritizes exploration there → the collected samples are fed back to train the primary model.
 
 **Core Idea**: Auxiliary GFlowNet reward = primary model reward + primary model loss → directed exploration of weak regions.
 

@@ -27,15 +27,15 @@ ARC-JSD proposes a RAG context attribution method based on Jensen-Shannon Diverg
 
 ## Background & Motivation
 
-**State of the Field**: RAG systems inject retrieved context into LLMs to reduce hallucinations, but reliable attribution methods for identifying which part of the context a generated response depends on remain lacking.
+**Background**: RAG systems inject retrieved context into LLMs to reduce hallucinations, but reliable attribution methods for identifying which part of the context a generated response depends on remain lacking.
 
 **Limitations of Prior Work**: ContextCite requires multiple perturbation samples; ALTI-Logit requires layer-wise gradient computation; MIRAGE requires a surrogate model — all are computationally expensive. More critically, mechanistic understanding of how RAG models internally utilize context is absent.
 
-**Root Cause**: Attribution requires evaluating the influence of each context sentence, yet per-sentence full re-inference is prohibitively slow; a training-free, gradient-free, and efficient attribution method is needed.
+**Key Challenge**: Attribution requires evaluating the influence of each context sentence, yet per-sentence full re-inference is prohibitively slow; a training-free, gradient-free, and efficient attribution method is needed.
 
-**Paper Goals**: (a) Provide a computationally efficient and accurate context attribution method; (b) reveal which internal components (attention heads / MLP layers) are responsible for context attribution.
+**Goal**: (a) Provide a computationally efficient and accurate context attribution method; (b) reveal which internal components (attention heads / MLP layers) are responsible for context attribution.
 
-**Starting Point**: JSD is a bounded, symmetric distribution distance measure computable directly from logits. The contribution of each sentence is quantified by comparing output distributions between the full context and the context with that sentence removed.
+**Key Insight**: JSD is a bounded, symmetric distribution distance measure computable directly from logits. The contribution of each sentence is quantified by comparing output distributions between the full context and the context with that sentence removed.
 
 **Core Idea**: Ablate context sentence-by-sentence → compute JSD change in output distributions → the sentence with the highest JSD is the most relied-upon context + apply Logit Lens to reveal the attribution mechanism.
 

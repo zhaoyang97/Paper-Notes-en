@@ -28,15 +28,15 @@ This paper proposes Tucker Adaptation (TuKA), which represents multi-level navig
 
 ## Background & Motivation
 
-**State of the Field**: VLN agents have evolved from discrete graph-based navigation to continuous low-level action navigation, yet real-world deployment requires agents to adapt to diverse scenes (bedroom, living room, etc.) and varying environmental conditions (normal, low-light, overexposed, hazy), necessitating continual learning.
+**Background**: VLN agents have evolved from discrete graph-based navigation to continuous low-level action navigation, yet real-world deployment requires agents to adapt to diverse scenes (bedroom, living room, etc.) and varying environmental conditions (normal, low-light, overexposed, hazy), necessitating continual learning.
 
 **Limitations of Prior Work**: VLN agents fine-tuned on specific scenes suffer catastrophic forgetting when switched to new scenes. Existing LoRA/MoE-LoRA methods can only represent a two-level knowledge structure ("shared matrix + task-specific matrix"), and cannot decouple the orthogonal dimensions of "scene knowledge" and "environment knowledge."
 
-**Root Cause**: Navigation knowledge exhibits a multi-level structure — core navigation skills (shared across all scenes), scene-specific knowledge (e.g., indoor layouts), and environment-specific knowledge (e.g., visual adaptation under low light) — all three levels must be learned independently while being shared across tasks simultaneously.
+**Key Challenge**: Navigation knowledge exhibits a multi-level structure — core navigation skills (shared across all scenes), scene-specific knowledge (e.g., indoor layouts), and environment-specific knowledge (e.g., visual adaptation under low light) — all three levels must be learned independently while being shared across tasks simultaneously.
 
-**Paper Goals**: Formalize the All-day Multi-scene Lifelong VLN (AML-VLN) problem and design a parameter-efficient adaptation method capable of decoupling multi-level knowledge.
+**Goal**: Formalize the All-day Multi-scene Lifelong VLN (AML-VLN) problem and design a parameter-efficient adaptation method capable of decoupling multi-level knowledge.
 
-**Starting Point**: Leverage the natural multi-modal factorization capability of Tucker tensor decomposition — the core tensor captures shared knowledge, while rows of the factor matrices encode scene/environment experts respectively.
+**Key Insight**: Leverage the natural multi-modal factorization capability of Tucker tensor decomposition — the core tensor captures shared knowledge, while rows of the factor matrices encode scene/environment experts respectively.
 
 **Core Idea**: A fourth-order Tucker tensor decomposition simultaneously encodes shared core navigation skills, scene experts, and environment experts; decoupled incremental learning achieves forgetting-free lifelong navigation.
 

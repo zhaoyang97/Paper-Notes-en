@@ -32,13 +32,13 @@ This paper proposes SGPC (Sheaf GNNs with PAC-Bayes Calibration), which integrat
 
 ### Limitations of Prior Work
 
-**State of the Field**: Classic GNNs (GCN, GAT) are essentially low-pass filters that perform well on homophilic graphs (where neighboring nodes share the same label) but suffer severe performance degradation on heterophilic graphs—a manifestation of the over-smoothing problem. Cellular sheaf theory reinterprets edges as linear restriction maps between local feature spaces; the spectrum of the sheaf Laplacian captures edge directionality and class dispersion.
+**Background**: Classic GNNs (GCN, GAT) are essentially low-pass filters that perform well on homophilic graphs (where neighboring nodes share the same label) but suffer severe performance degradation on heterophilic graphs—a manifestation of the over-smoothing problem. Cellular sheaf theory reinterprets edges as linear restriction maps between local feature spaces; the spectrum of the sheaf Laplacian captures edge directionality and class dispersion.
 
 Existing sheaf GNNs exhibit three key limitations: (1) restriction maps are typically fixed or controlled by simple gating; (2) they lack heterophily-aware uncertainty calibration; and (3) they offer no generalization guarantees beyond empirical test accuracy. PAC-Bayes analysis can provide principled generalization bounds, yet existing PAC-Bayes bounds for GNNs remain loose because they neglect the spectrum of the underlying operator.
 
 ### Root Cause
 
-**Paper Goals**: How can one simultaneously learn sheaf restriction maps and tighten PAC-Bayes generalization bounds through spectral gap optimization, thereby achieving provably strong performance on heterophilic graphs?
+**Goal**: How can one simultaneously learn sheaf restriction maps and tighten PAC-Bayes generalization bounds through spectral gap optimization, thereby achieving provably strong performance on heterophilic graphs?
 
 ## Method
 

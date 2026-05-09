@@ -28,15 +28,15 @@ This paper presents CodeWiki, an open-source framework based on hierarchical dec
 
 ## Background & Motivation
 
-**State of the Field**: As codebases continue to grow in scale and complexity, maintaining comprehensive and up-to-date documentation has become a critical bottleneck in software development. Approximately 31% of developers already rely heavily on AI for code documentation, reflecting the urgent demand for automated documentation generation.
+**Background**: As codebases continue to grow in scale and complexity, maintaining comprehensive and up-to-date documentation has become a critical bottleneck in software development. Approximately 31% of developers already rely heavily on AI for code documentation, reflecting the urgent demand for automated documentation generation.
 
 **Limitations of Prior Work**: Existing approaches primarily focus on function-level and file-level documentation generation (e.g., CodeBERT, DocAgent), and struggle to scale to the repository level. Repository-level documentation must capture architectural patterns, cross-module interactions, data flows, and system-level design decisions — capabilities that current tools lack due to their inability to model semantic dependencies and hierarchical structures. Evaluation methodology is also inadequate: traditional BLEU/ROUGE metrics fail to capture the multidimensional nature of documentation quality, and no systematic benchmark exists for repository-level documentation.
 
-**Root Cause**: Repository-level documentation generation requires simultaneous understanding of both local implementation details and global architectural relationships, yet LLMs are constrained by limited context windows and cannot process large codebases in a single pass. Most existing approaches also suffer from severely insufficient multilingual support, focusing primarily on Python.
+**Key Challenge**: Repository-level documentation generation requires simultaneous understanding of both local implementation details and global architectural relationships, yet LLMs are constrained by limited context windows and cannot process large codebases in a single pass. Most existing approaches also suffer from severely insufficient multilingual support, focusing primarily on Python.
 
-**Paper Goals**: To construct a scalable, multilingual framework for automated repository-level documentation generation, accompanied by a reliable evaluation methodology.
+**Goal**: To construct a scalable, multilingual framework for automated repository-level documentation generation, accompanied by a reliable evaluation methodology.
 
-**Starting Point**: Drawing inspiration from dynamic programming, the framework decomposes large repositories into manageable modules via hierarchical partitioning, then recursively generates and synthesizes documentation in a bottom-up manner.
+**Key Insight**: Drawing inspiration from dynamic programming, the framework decomposes large repositories into manageable modules via hierarchical partitioning, then recursively generates and synthesizes documentation in a bottom-up manner.
 
 **Core Idea**: Repository-level documentation generation is decomposed into three stages — static analysis and module decomposition, recursive agent-based documentation generation, and hierarchical assembly and synthesis — with a dynamic delegation mechanism enabling adaptive processing of repositories at arbitrary scale.
 

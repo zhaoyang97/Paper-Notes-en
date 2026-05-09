@@ -28,18 +28,18 @@ GAP leverages a pretrained 3D geometric foundation model (π³) to extract 3D fe
 
 ## Background & Motivation
 
-**State of the Field**: Bimanual manipulation requires a policy to simultaneously generate coordinated actions for two robot arms, involving precision assembly, deformable object handling, and interaction in cluttered environments. Dominant approaches include 2D-based ACT (action chunking + DETR Transformer), diffusion policy (DP), and 3D-aware DP3 (point cloud input).
+**Background**: Bimanual manipulation requires a policy to simultaneously generate coordinated actions for two robot arms, involving precision assembly, deformable object handling, and interaction in cluttered environments. Dominant approaches include 2D-based ACT (action chunking + DETR Transformer), diffusion policy (DP), and 3D-aware DP3 (point cloud input).
 
 **Limitations of Prior Work**:
 - **2D methods lack spatial awareness**: ACT and DP rely on 2D features and cannot explicitly reason about 3D spatial relationships, occlusions, or contacts, leading to poor performance on bimanual tasks requiring precise spatial reasoning.
 - **3D methods depend on explicit point clouds**: DP3 and similar approaches require depth cameras and point cloud pipelines, which are sensitive to calibration errors, noise, and occlusion in real-world settings. 2D-to-3D lifting methods (e.g., back-projection) suffer from low resolution and significant engineering overhead.
 - **No predictive 3D reasoning**: Existing methods only perceive the current 3D state without predicting how 3D geometry evolves after action execution, limiting long-horizon planning.
 
-**Root Cause**: Bimanual manipulation requires 3D spatial reasoning, yet reliably acquiring explicit 3D information (point clouds) in real-world settings remains challenging. Furthermore, perceiving only the current state is insufficient for complex manipulation tasks that demand anticipation of future geometric changes.
+**Key Challenge**: Bimanual manipulation requires 3D spatial reasoning, yet reliably acquiring explicit 3D information (point clouds) in real-world settings remains challenging. Furthermore, perceiving only the current state is insufficient for complex manipulation tasks that demand anticipation of future geometric changes.
 
-**Paper Goals**: Can a 3D geometric foundation model be used to obtain implicit 3D features directly from RGB images, bypassing explicit point cloud pipelines? Can jointly predicting future 3D structure enhance the policy's spatial understanding and long-horizon planning?
+**Goal**: Can a 3D geometric foundation model be used to obtain implicit 3D features directly from RGB images, bypassing explicit point cloud pipelines? Can jointly predicting future 3D structure enhance the policy's spatial understanding and long-horizon planning?
 
-**Starting Point**: Recent 3D geometric foundation models (e.g., DUSt3R, VGGT, π³) can robustly reconstruct dense 3D structures from RGB images in a feed-forward manner. The authors adopt π³ as the perception backbone, whose latent features inherently encode rich 3D geometric information—eliminating the need for explicit point cloud generation and directly conditioning the policy on these latents. Furthermore, predicting "future 3D latents" encourages the model to learn 3D-aware anticipatory reasoning.
+**Key Insight**: Recent 3D geometric foundation models (e.g., DUSt3R, VGGT, π³) can robustly reconstruct dense 3D structures from RGB images in a feed-forward manner. The authors adopt π³ as the perception backbone, whose latent features inherently encode rich 3D geometric information—eliminating the need for explicit point cloud generation and directly conditioning the policy on these latents. Furthermore, predicting "future 3D latents" encourages the model to learn 3D-aware anticipatory reasoning.
 
 **Core Idea**: Use the latents of a pretrained 3D geometric foundation model as 3D priors, and jointly denoise future actions and future 3D point maps to realize an RGB-only, 3D-aware bimanual manipulation policy.
 

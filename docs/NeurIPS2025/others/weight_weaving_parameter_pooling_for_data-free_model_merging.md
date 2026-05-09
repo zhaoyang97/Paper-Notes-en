@@ -28,7 +28,7 @@ This paper proposes Weight Weaving, a plug-and-play data-free model merging enha
 ## Background & Motivation
 Model merging integrates multiple expert models into a unified model through parameter-level operations, without requiring retraining. Classical methods such as Task Arithmetic scale task vectors (the difference between fine-tuned and pre-trained weights) by a scaling factor $\lambda$ and add them back to the pre-trained model. However, the choice of $\lambda$ has a substantial impact on performance:
 
-**Root Cause**: Nearly all existing methods rely on the scaling factor $\lambda$, and correctly setting $\lambda$ typically requires access to evaluation data ("privileged data"), which is often unavailable in real-world deployment. Researchers commonly tune $\lambda$ on the evaluation set in an impractical manner. The only existing data-free alternative (MetaGPT) is restricted to Task Arithmetic and is not generalizable.
+**Key Challenge**: Nearly all existing methods rely on the scaling factor $\lambda$, and correctly setting $\lambda$ typically requires access to evaluation data ("privileged data"), which is often unavailable in real-world deployment. Researchers commonly tune $\lambda$ on the evaluation set in an impractical manner. The only existing data-free alternative (MetaGPT) is restricted to Task Arithmetic and is not generalizable.
 
 **Core Idea**: Rather than searching for a single optimal $\lambda$, the paper proposes pooling all candidate parameters over the $\lambda$ search space — an idea analogous to ensemble methods. This approach avoids the need for data to select $\lambda$ while aggregating information across multiple $\lambda$ values.
 

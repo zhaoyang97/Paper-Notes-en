@@ -29,13 +29,13 @@ This paper introduces DanmakuTPPBench, the first multimodal temporal point proce
 
 ## Background & Motivation
 
-**State of the Field**: Temporal point processes (TPPs) are a classical framework for modeling continuous-time event sequences, with broad applications in social media forecasting, medical monitoring, and financial analysis. Recent advances in LLM/MLLM multimodal reasoning have made it promising to incorporate TPP modeling into multimodal language models.
+**Background**: Temporal point processes (TPPs) are a classical framework for modeling continuous-time event sequences, with broad applications in social media forecasting, medical monitoring, and financial analysis. Recent advances in LLM/MLLM multimodal reasoning have made it promising to incorporate TPP modeling into multimodal language models.
 
 **Limitations of Prior Work**: Existing TPP datasets (Retweet, StackOverflow, Taobao, etc.) contain only timestamps and event categories, entirely lacking textual semantics and visual context. RNCNIX and Amazon Review include text but no visual information. No existing TPP dataset simultaneously covers temporal, textual, and visual modalities, and no QA evaluation benchmark exists for TPP understanding.
 
-**Root Cause**: Strong multimodal capability (e.g., MLLMs performing well on VQA) does not imply strong multimodal temporal event modeling ability. No benchmark currently exists to evaluate whether models can jointly understand the interactions among temporal dynamics, textual semantics, and visual content.
+**Key Challenge**: Strong multimodal capability (e.g., MLLMs performing well on VQA) does not imply strong multimodal temporal event modeling ability. No benchmark currently exists to evaluate whether models can jointly understand the interactions among temporal dynamics, textual semantics, and visual content.
 
-**Starting Point**: The Danmaku system on Bilibili serves as an ideal multimodal TPP data source — each Danmaku comment naturally carries a precise timestamp (aligned to a video frame), textual content (users' real-time reactions), and the corresponding video frame, forming perfect three-modal alignment. Based on this, DanmakuTPP-Events is constructed for classical TPP modeling evaluation, and DanmakuTPP-QA is automatically built via a multi-agent pipeline for deeper temporal reasoning evaluation.
+**Key Insight**: The Danmaku system on Bilibili serves as an ideal multimodal TPP data source — each Danmaku comment naturally carries a precise timestamp (aligned to a video frame), textual content (users' real-time reactions), and the corresponding video frame, forming perfect three-modal alignment. Based on this, DanmakuTPP-Events is constructed for classical TPP modeling evaluation, and DanmakuTPP-QA is automatically built via a multi-agent pipeline for deeper temporal reasoning evaluation.
 
 ## Method
 

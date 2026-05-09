@@ -30,9 +30,9 @@ RAR deeply integrates image quality assessment (IQA) with image restoration (IR)
 
 Real-world image degradation is complex and unknown, potentially involving simultaneous blur, noise, rain, haze, and other artifacts. Existing approaches fall into two categories: all-in-one models (unified models handling multiple degradation types, but with limited performance) and agentic models (agents that iteratively select specialized tools, achieving better results but at extremely high latency).
 
-**Root Cause**: All-in-one models lack precise degradation recognition, while agentic models maintain a complete separation between IQA and IR modules—requiring repeated image encoding/decoding and LLM-based planning, resulting in bloated pipelines with significant information loss.
+**Key Challenge**: All-in-one models lack precise degradation recognition, while agentic models maintain a complete separation between IQA and IR modules—requiring repeated image encoding/decoding and LLM-based planning, resulting in bloated pipelines with significant information loss.
 
-**Starting Point**: RAR combines the strengths of both paradigms—employing VLM-based free-text IQA (not restricted to predefined degradation categories) while deeply integrating IQA and IR within a shared latent space, enabling end-to-end trainable iterative restoration.
+**Key Insight**: RAR combines the strengths of both paradigms—employing VLM-based free-text IQA (not restricted to predefined degradation categories) while deeply integrating IQA and IR within a shared latent space, enabling end-to-end trainable iterative restoration.
 
 ## Method
 

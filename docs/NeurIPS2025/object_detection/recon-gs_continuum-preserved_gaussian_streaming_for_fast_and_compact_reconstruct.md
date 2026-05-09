@@ -31,13 +31,13 @@ This paper proposes ReCon-GS, which achieves incremental 3D reconstruction via c
 
 ### State of the Field
 
-**State of the Field**: 3D Gaussian Splatting (3DGS) has achieved revolutionary progress in static scene reconstruction, yet standard methods require processing all input images at once.
+**Background**: 3D Gaussian Splatting (3DGS) has achieved revolutionary progress in static scene reconstruction, yet standard methods require processing all input images at once.
 
 **Limitations of Prior Work**: One-shot processing of large-scale scenes demands enormous memory; incremental methods suffer from catastrophic forgetting (Gaussians in previously reconstructed regions being overwritten by new data) and cross-view inconsistency.
 
-**Root Cause**: Incremental efficiency vs. global consistency — per-frame processing is fast but loses global information, while global processing is accurate but not scalable.
+**Key Challenge**: Incremental efficiency vs. global consistency — per-frame processing is fast but loses global information, while global processing is accurate but not scalable.
 
-**Starting Point**: Preserving the continuity of Gaussians between old and new data so that incremental updates do not corrupt existing reconstructions.
+**Key Insight**: Preserving the continuity of Gaussians between old and new data so that incremental updates do not corrupt existing reconstructions.
 
 ## Method
 

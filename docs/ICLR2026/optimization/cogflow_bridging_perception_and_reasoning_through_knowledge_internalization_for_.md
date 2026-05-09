@@ -28,20 +28,20 @@ CogFlow proposes a cognition-inspired three-stage visual mathematical reasoning 
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs perform poorly on visual mathematical problems. Early "one-step reasoning" frameworks conflated perception and reasoning; later "decoupled reasoning" pipelines separated the two but optimized each independently.
+**Background**: MLLMs perform poorly on visual mathematical problems. Early "one-step reasoning" frameworks conflated perception and reasoning; later "decoupled reasoning" pipelines separated the two but optimized each independently.
 
 **Limitations of Prior Work**:
 - One-step frameworks (VLM-R1) produce unstructured reasoning with intertwined perception and reasoning errors.
 - Decoupled pipelines (MathFlow) improve perception but the reasoning stage frequently ignores perceptual results, leading to *reasoning drift*.
 - A critical question overlooked by all prior work: **Are the extracted visual cues faithfully integrated into subsequent reasoning?**
 
-**Root Cause**: Accurate perception does not guarantee correct reasoning — a model may correctly interpret a figure yet take shortcuts during reasoning, producing seemingly plausible but visually ungrounded reasoning chains.
+**Key Challenge**: Accurate perception does not guarantee correct reasoning — a model may correctly interpret a figure yet take shortcuts during reasoning, producing seemingly plausible but visually ungrounded reasoning chains.
 
-**Paper Goals**:
+**Goal**:
 - How to ensure that perceptual outputs are faithfully converted into reasoning-ready knowledge representations?
 - How to explicitly anchor reasoning to perceptual outputs during RL training?
 
-**Starting Point**: The cognitive science concept of "knowledge internalization" — human reasoning does not jump directly from perception to conclusions; instead, it first transforms perceptual information into structured knowledge (e.g., "AB is a diameter + C lies on the circle → ∠ACB = 90°") and then reasons from it.
+**Key Insight**: The cognitive science concept of "knowledge internalization" — human reasoning does not jump directly from perception to conclusions; instead, it first transforms perceptual information into structured knowledge (e.g., "AB is a diameter + C lies on the circle → ∠ACB = 90°") and then reasons from it.
 
 **Core Idea**: Insert a "knowledge internalization" stage between perception and reasoning, employ a dedicated reward model to detect whether reasoning is faithful to perception, and use a visual gate to filter low-quality perceptions before reasoning.
 

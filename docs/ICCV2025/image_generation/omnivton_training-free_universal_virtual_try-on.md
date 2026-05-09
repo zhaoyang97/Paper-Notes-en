@@ -34,10 +34,10 @@ OmniVTON proposes the first training-free universal virtual try-on framework. By
     - Supervised in-shop methods (GP-VTON, IDM-VTON, etc.) rely on paired training data and generalize poorly across domains.
     - Unsupervised in-the-wild methods (StreetTryOn) are constrained by data distribution bias and lack general applicability.
     - Both paradigms require training dedicated models for specific conditions; constructing large-scale datasets spanning diverse categories and poses is impractical.
-- **Root Cause**:
+- **Key Challenge**:
   1. **Fine-grained texture consistency**: Without a training phase, establishing garment–body alignment while preserving texture details is inherently difficult.
   2. **Human pose alignment**: Existing methods rely on keypoint or DensePose conditioning and require retraining for cross-modal feature fusion.
-- **Paper Goals**: To develop a unified, training-free VTON framework capable of generalizing across different domains and scenarios.
+- **Goal**: To develop a unified, training-free VTON framework capable of generalizing across different domains and scenarios.
 
 ## Method
 

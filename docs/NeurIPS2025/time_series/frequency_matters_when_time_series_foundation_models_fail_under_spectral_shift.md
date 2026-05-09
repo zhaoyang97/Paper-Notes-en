@@ -28,15 +28,15 @@ This paper identifies spectral shift—a mismatch between the dominant frequenci
 
 ## Background & Motivation
 
-**State of the Field**: Time series foundation models (e.g., MOMENT, Chronos, TimesFM) achieve strong performance on public benchmarks and have been likened to the "BERT moment" for time series. These models are pretrained via self-supervised learning on large-scale heterogeneous time series corpora.
+**Background**: Time series foundation models (e.g., MOMENT, Chronos, TimesFM) achieve strong performance on public benchmarks and have been likened to the "BERT moment" for time series. These models are pretrained via self-supervised learning on large-scale heterogeneous time series corpora.
 
 **Limitations of Prior Work**: In real-world industrial applications (e.g., mobile game player behavior prediction), TSFMs fall far short of domain-adapted fully supervised baselines (PatchTST) and even traditional methods (XGBoost). Success on public benchmarks does not imply industrial transferability.
 
-**Root Cause**: Unlike NLP, where linguistic structure and semantics exhibit strong cross-domain sharing patterns, time series data vary greatly across domains in sampling rate, periodicity, and non-stationarity. Even small shifts in dominant frequency can produce entirely different signal characteristics.
+**Key Challenge**: Unlike NLP, where linguistic structure and semantics exhibit strong cross-domain sharing patterns, time series data vary greatly across domains in sampling rate, periodicity, and non-stationarity. Even small shifts in dominant frequency can produce entirely different signal characteristics.
 
-**Paper Goals**: Why do TSFMs fail in industrial settings? Is spectral misalignment the core reason?
+**Goal**: Why do TSFMs fail in industrial settings? Is spectral misalignment the core reason?
 
-**Starting Point**: The paper conducts frequency-domain analysis to compare dominant frequency distributions between pretraining and downstream data, proposes the "spectral shift" hypothesis, and validates it through controlled experiments.
+**Key Insight**: The paper conducts frequency-domain analysis to compare dominant frequency distributions between pretraining and downstream data, proposes the "spectral shift" hypothesis, and validates it through controlled experiments.
 
 **Core Idea**: The primary cause of TSFM generalization failure is that the dominant frequencies of downstream data fall outside the spectral coverage of pretraining data—models memorize specific frequency bands rather than learning general temporal representations.
 

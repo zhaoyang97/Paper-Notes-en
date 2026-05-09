@@ -29,18 +29,18 @@ This paper proposes the TabStruct evaluation framework and a global utility metr
 
 ## Background & Motivation
 
-**State of the Field**: Tabular data generation underlies tasks such as training data augmentation and missing value imputation. Existing evaluations focus on three dimensions: density estimation (distributional similarity), ML utility (downstream predictive performance), and privacy protection (distance between synthetic and real data).
+**Background**: Tabular data generation underlies tasks such as training data augmentation and missing value imputation. Existing evaluations focus on three dimensions: density estimation (distributional similarity), ML utility (downstream predictive performance), and privacy protection (distance between synthetic and real data).
 
 **Limitations of Prior Work**: These three dimensions are adapted from homogeneous modalities (text/images) and do not account for the heterogeneous characteristics of tabular data. A representative failure case is SMOTE, which scores well on density estimation and ML utility yet produces data that severely violates inter-variable causal relationships—for instance, breaking conditional independencies implied by physical laws.
 
-**Root Cause**: The fundamental prior for tabular data is the structural causal model (SCM), in which variables exhibit causal dependencies. Conventional metrics evaluate only marginal distributions or predictive performance for a single target, failing to capture global causal interactions among features. The only existing benchmark addressing structural fidelity, CauTabBench, is restricted to toy SCM datasets, because quantifying structural fidelity requires ground-truth causal graphs that are virtually unavailable for real-world datasets.
+**Key Challenge**: The fundamental prior for tabular data is the structural causal model (SCM), in which variables exhibit causal dependencies. Conventional metrics evaluate only marginal distributions or predictive performance for a single target, failing to capture global causal interactions among features. The only existing benchmark addressing structural fidelity, CauTabBench, is restricted to toy SCM datasets, because quantifying structural fidelity requires ground-truth causal graphs that are virtually unavailable for real-world datasets.
 
-**Paper Goals**
+**Goal**
 - How can structural fidelity be evaluated without ground-truth causal graphs?
 - How do existing generators perform in terms of structural fidelity?
 - What is the relationship between structural fidelity and conventional evaluation dimensions?
 
-**Starting Point**: The authors observe that if a generator truly learns the causal structure of the data, a model trained on synthetic data should be able to predict each variable from all others with performance close to that achieved on real data. This "all-variable predictability" property is closely related to the Markov blanket concept in SCMs.
+**Key Insight**: The authors observe that if a generator truly learns the causal structure of the data, a model trained on synthetic data should be able to predict each variable from all others with performance close to that achieved on real data. This "all-variable predictability" property is closely related to the Markov blanket concept in SCMs.
 
 **Core Idea**: By rotating each variable as the prediction target and aggregating the ratio of predictive performance across all variables, global utility is defined as a proxy for the global structural fidelity of tabular data generators—without requiring a causal graph.
 

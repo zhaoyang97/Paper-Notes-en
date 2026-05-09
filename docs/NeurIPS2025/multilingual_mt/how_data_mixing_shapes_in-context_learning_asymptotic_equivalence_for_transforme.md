@@ -27,18 +27,18 @@ Under a high-dimensional asymptotic framework, this paper proves that Transforme
 
 ## Background & Motivation
 
-**State of the Field**: Theoretical studies on ICL (in-context learning) have been extensive, but most rely on simplifying assumptions: (a) omitting MLPs and using attention only, (b) considering only linear regression tasks with isotropic inputs, and (c) single-source training. These limitations create a substantial gap between theoretical results and actual Transformer behavior.
+**Background**: Theoretical studies on ICL (in-context learning) have been extensive, but most rely on simplifying assumptions: (a) omitting MLPs and using attention only, (b) considering only linear regression tasks with isotropic inputs, and (c) single-source training. These limitations create a substantial gap between theoretical results and actual Transformer behavior.
 
 **Limitations of Prior Work**:
    - The role of MLPs in Transformers has not been adequately characterized theoretically. The few works that study MLPs either adopt non-standard architectures (MLP before attention) or are restricted to specific activation functions or classification tasks.
    - In practice, Transformers are pretrained on multiple heterogeneous data sources, and the quality and mixing ratios of these sources significantly affect ICL performance, yet a theoretical analysis framework is lacking.
    - When feature learning emerges in ICL and how it relates to data structure remain theoretically unclear.
 
-**Root Cause**: Empirical evidence shows that nonlinear MLPs are critical to Transformer performance, yet theoretical analysis is difficult due to MLP nonlinearity. The mixing effects of multi-source training further complicate theoretical analysis.
+**Key Challenge**: Empirical evidence shows that nonlinear MLPs are critical to Transformer performance, yet theoretical analysis is difficult due to MLP nonlinearity. The mixing effects of multi-source training further complicate theoretical analysis.
 
-**Paper Goals**: (1) How does a nonlinear MLP improve ICL in the high-dimensional asymptotic limit? (2) How do the mixing ratios and data quality of multiple sources affect ICL performance and feature learning?
+**Goal**: (1) How does a nonlinear MLP improve ICL in the high-dimensional asymptotic limit? (2) How do the mixing ratios and data quality of multiple sources affect ICL performance and feature learning?
 
-**Starting Point**: By leveraging Gaussian Universality theory and orthogonal polynomial analysis, the ICL error of Transformer+MLP is precisely equated to that of a finite-degree polynomial model, making theoretical analysis tractable.
+**Key Insight**: By leveraging Gaussian Universality theory and orthogonal polynomial analysis, the ICL error of Transformer+MLP is precisely equated to that of a finite-degree polynomial model, making theoretical analysis tractable.
 
 **Core Idea**: Under a high-dimensional proportional limit, a Transformer with a two-layer MLP head is equivalent to a structured polynomial predictor for ICL, and this equivalence reveals the gain mechanism of the MLP and the role of data mixing.
 

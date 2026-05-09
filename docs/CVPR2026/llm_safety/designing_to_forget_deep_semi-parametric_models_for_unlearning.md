@@ -27,15 +27,15 @@ content_hash: 18dee15fbdb79659
 This paper proposes the "Designing to Forget" paradigm and introduces a family of deep semi-parametric models (SPMs) that achieve unlearning at inference time by simply removing training samples—without modifying model parameters. On ImageNet classification, SPMs reduce the prediction gap relative to the retrain baseline by 11% and achieve over 10× faster unlearning.
 
 ## Background & Motivation
-**State of the Field**: Machine unlearning (MU) is driven by privacy regulations such as GDPR, which require removing the influence of specific samples from trained models. Existing methods primarily approximate the effect of "never having trained on that data" by fine-tuning model parameters.
+**Background**: Machine unlearning (MU) is driven by privacy regulations such as GDPR, which require removing the influence of specific samples from trained models. Existing methods primarily approximate the effect of "never having trained on that data" by fine-tuning model parameters.
 
 **Limitations of Prior Work**: The black-box nature of deep learning makes it difficult to disentangle the contribution of individual training samples to model parameters; existing MU algorithms require additional fine-tuning steps, incurring significant overhead in frequent-unlearning scenarios.
 
-**Root Cause**: Parametric models compress all training data into parameters, making unlearning necessarily parameter-modifying; non-parametric models (e.g., KNN) support deletion natively but lack sufficient performance.
+**Key Challenge**: Parametric models compress all training data into parameters, making unlearning necessarily parameter-modifying; non-parametric models (e.g., KNN) support deletion natively but lack sufficient performance.
 
-**Paper Goals**: To design a neural network architecture that is inherently suited for unlearning, rather than designing unlearning algorithms for existing architectures.
+**Goal**: To design a neural network architecture that is inherently suited for unlearning, rather than designing unlearning algorithms for existing architectures.
 
-**Starting Point**: Drawing from the "delete-to-forget" property of KNN, the paper designs semi-parametric models that simultaneously achieve the performance of parametric models and the unlearning convenience of non-parametric models.
+**Key Insight**: Drawing from the "delete-to-forget" property of KNN, the paper designs semi-parametric models that simultaneously achieve the performance of parametric models and the unlearning convenience of non-parametric models.
 
 **Core Idea**: A semi-parametric model $\hat{y} = G_{\theta^*}(x, \mathcal{T})$ explicitly depends on the training set $\mathcal{T}$ at inference time; unlearning reduces to $G_{\theta^*}(x, \mathcal{T} \setminus \mathcal{U})$—removing data without modifying parameters.
 

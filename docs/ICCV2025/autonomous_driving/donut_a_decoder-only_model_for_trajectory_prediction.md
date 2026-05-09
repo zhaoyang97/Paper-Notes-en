@@ -35,7 +35,7 @@ Motion prediction is a core task in autonomous driving—by forecasting the futu
 3. Recurrent decoders can only access the "stale" historical information provided by the encoder; at distant time steps, the states of other agents are already significantly out of sync.
 4. Encoder and decoder employ different modules, creating a structural disconnect in how historical and future trajectories are processed.
 
-**Starting Point**: Analogous to the successful decoder-only paradigm in LLMs, the paper unifies the processing of historical and future trajectory sequences within a single autoregressive model to ensure consistency and up-to-date information. Inspired by multi-token prediction in LLMs, an overprediction strategy is introduced to help the model anticipate further into the future.
+**Key Insight**: Analogous to the successful decoder-only paradigm in LLMs, the paper unifies the processing of historical and future trajectory sequences within a single autoregressive model to ensure consistency and up-to-date information. Inspired by multi-token prediction in LLMs, an overprediction strategy is introduced to help the model anticipate further into the future.
 
 ## Method
 

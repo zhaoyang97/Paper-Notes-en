@@ -29,15 +29,15 @@ By revealing the distributional mismatch caused by clipping operations in diffus
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion Policy has achieved state-of-the-art results in robotic manipulation by modeling the full distribution of expert actions, avoiding mode collapse, and demonstrating strong performance across various manipulation benchmarks.
+**Background**: Diffusion Policy has achieved state-of-the-art results in robotic manipulation by modeling the full distribution of expert actions, avoiding mode collapse, and demonstrating strong performance across various manipulation benchmarks.
 
 **Limitations of Prior Work**: The inference process of diffusion models is **sequential and computationally expensive**, requiring tens to hundreds of denoising steps to generate high-quality actions—a critical bottleneck for robotic applications demanding **real-time responsiveness**. Existing acceleration approaches (distillation, consistency models, shortcut flow matching) all require training new models or modifying architectures, increasing engineering complexity.
 
-**Root Cause**: Inference strategies developed for image generation are **directly transferred** to robotic control, yet the two domains differ fundamentally in distribution dimensionality, real-time requirements, and memory constraints. Image distributions are high-dimensional (extrinsic dimension $2^{16}$, intrinsic ${\sim}25$) and latency-insensitive, whereas robot action distributions are **low-dimensional** (extrinsic 24–30, intrinsic ${\sim}11$) but require extremely fast responses.
+**Key Challenge**: Inference strategies developed for image generation are **directly transferred** to robotic control, yet the two domains differ fundamentally in distribution dimensionality, real-time requirements, and memory constraints. Image distributions are high-dimensional (extrinsic dimension $2^{16}$, intrinsic ${\sim}25$) and latency-insensitive, whereas robot action distributions are **low-dimensional** (extrinsic 24–30, intrinsic ${\sim}11$) but require extremely fast responses.
 
-**Paper Goals**: How can the inference steps of off-the-shelf diffusion policies be drastically reduced (from 100 to 2 steps) **without retraining**, while maintaining or improving performance?
+**Goal**: How can the inference steps of off-the-shelf diffusion policies be drastically reduced (from 100 to 2 steps) **without retraining**, while maintaining or improving performance?
 
-**Starting Point**: The analysis begins with the out-of-distribution (OoD) problem induced by clipping operations. It is found that reducing denoising steps and noise injection is beneficial in robotics—contrary to image generation—and a genetic algorithm is proposed to further optimize the selection of denoising trajectories.
+**Key Insight**: The analysis begins with the out-of-distribution (OoD) problem induced by clipping operations. It is found that reducing denoising steps and noise injection is beneficial in robotics—contrary to image generation—and a genetic algorithm is proposed to further optimize the selection of denoising trajectories.
 
 **Core Idea**: Exploiting the low-dimensional nature of robot action spaces, GDP uses the population selection mechanism of genetic algorithms to filter denoising trajectories with low OoD risk, combined with schedule optimization and noise reduction, to achieve high-quality 2-step sampling.
 

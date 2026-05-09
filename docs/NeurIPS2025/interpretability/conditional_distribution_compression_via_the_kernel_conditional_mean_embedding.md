@@ -28,15 +28,15 @@ This work presents the first compression algorithm targeting **conditional distr
 
 ## Background & Motivation
 
-**State of the Field**: Existing distribution compression methods (e.g., Kernel Herding, Kernel Thinning) focus on unlabeled data and construct compressed sets by minimizing MMD to approximate the marginal distribution $\mathbb{P}_X$. These methods have achieved notable success in reducing data volume while maintaining statistical fidelity.
+**Background**: Existing distribution compression methods (e.g., Kernel Herding, Kernel Thinning) focus on unlabeled data and construct compressed sets by minimizing MMD to approximate the marginal distribution $\mathbb{P}_X$. These methods have achieved notable success in reducing data volume while maintaining statistical fidelity.
 
 **Limitations of Prior Work**: For labeled data $\{(\mathbf{x}_i, \mathbf{y}_i)\}_{i=1}^n$, no existing method directly targets compression of the conditional distribution family $\mathbb{P}_{Y|X}$. Prior approaches either ignore label information or can only indirectly approximate the conditional distribution by compressing the joint distribution $\mathbb{P}_{X,Y}$.
 
-**Root Cause**: Estimating the kernel conditional mean embedding (KCME) incurs $\mathcal{O}(n^3)$ cost (due to matrix inversion), rendering conditional distribution compression computationally infeasible at scale. While directly compressing the conditional distribution should intuitively outperform indirect compression via the joint distribution, the prohibitive computational cost has hindered practical adoption.
+**Key Challenge**: Estimating the kernel conditional mean embedding (KCME) incurs $\mathcal{O}(n^3)$ cost (due to matrix inversion), rendering conditional distribution compression computationally infeasible at scale. While directly compressing the conditional distribution should intuitively outperform indirect compression via the joint distribution, the prohibitive computational cost has hindered practical adoption.
 
-**Paper Goals**: To construct a compressed set $\mathcal{C}$ in linear time $\mathcal{O}(n)$ such that the compressed conditional distribution satisfies $\tilde{\mathbb{P}}_{Y|X=\mathbf{x}} \approx \mathbb{P}_{Y|X=\mathbf{x}}$ for almost all $\mathbf{x}$.
+**Goal**: To construct a compressed set $\mathcal{C}$ in linear time $\mathcal{O}(n)$ such that the compressed conditional distribution satisfies $\tilde{\mathbb{P}}_{Y|X=\mathbf{x}} \approx \mathbb{P}_{Y|X=\mathbf{x}}$ for almost all $\mathbf{x}$.
 
-**Starting Point**: A key observation based on the tower property — the objective of conditional distribution compression satisfies $\mathbb{E}_{\mathbf{x} \sim \mathbb{P}_X}[\langle \mu_{Y|X=\mathbf{x}}, h(\mathbf{x}) \rangle] = \mathbb{E}_{(\mathbf{x},\mathbf{y}) \sim \mathbb{P}_{X,Y}}[h(\mathbf{x})(\mathbf{y})]$, thereby avoiding explicit KCME estimation and reducing complexity from $\mathcal{O}(n^3)$ to $\mathcal{O}(n)$.
+**Key Insight**: A key observation based on the tower property — the objective of conditional distribution compression satisfies $\mathbb{E}_{\mathbf{x} \sim \mathbb{P}_X}[\langle \mu_{Y|X=\mathbf{x}}, h(\mathbf{x}) \rangle] = \mathbb{E}_{(\mathbf{x},\mathbf{y}) \sim \mathbb{P}_{X,Y}}[h(\mathbf{x})(\mathbf{y})]$, thereby avoiding explicit KCME estimation and reducing complexity from $\mathcal{O}(n^3)$ to $\mathcal{O}(n)$.
 
 **Core Idea**: By defining the AMCMD metric for conditional distributions and leveraging the tower property to simplify estimation, the paper designs the first linear-time conditional distribution compression algorithm.
 

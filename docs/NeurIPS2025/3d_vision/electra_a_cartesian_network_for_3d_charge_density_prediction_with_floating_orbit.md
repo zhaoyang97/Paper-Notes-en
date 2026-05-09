@@ -29,15 +29,15 @@ This paper proposes ELECTRA (Electronic Tensor Reconstruction Algorithm), an equ
 
 ## Background & Motivation
 
-**State of the Field**: Density Functional Theory (DFT) is the dominant method for atomic-scale simulation of materials and molecules, but its $O(n^3)$ complexity limits the scale of tractable systems. ML surrogate models can directly predict electron density from atomic structure — by the Hohenberg–Kohn theorem, knowledge of the ground-state electron density suffices to compute all ground-state properties. Existing approaches fall into two categories: orbital-based methods that expand density in atom-centered basis functions (efficient but limited in expressiveness), and probe-based methods that query density at grid points (accurate but extremely slow).
+**Background**: Density Functional Theory (DFT) is the dominant method for atomic-scale simulation of materials and molecules, but its $O(n^3)$ complexity limits the scale of tractable systems. ML surrogate models can directly predict electron density from atomic structure — by the Hohenberg–Kohn theorem, knowledge of the ground-state electron density suffices to compute all ground-state properties. Existing approaches fall into two categories: orbital-based methods that expand density in atom-centered basis functions (efficient but limited in expressiveness), and probe-based methods that query density at grid points (accurate but extremely slow).
 
 **Limitations of Prior Work**: The accuracy of atom-centered orbital methods is constrained by the fixed basis set — high angular momentum $L$ and large numbers of basis functions are required to accurately describe diffuse electron clouds far from atomic centers, but computational cost grows sharply with $L$. Probe-based methods (e.g., DeepDFT) require message passing at every grid point during inference, amounting to hundreds of thousands of points even for small molecules. Placing additional orbitals at bond midpoints improves expressiveness but requires prior identification of chemical bonds, which is difficult for systems with non-classical bonding.
 
-**Root Cause**: High accuracy demands flexible placement of basis functions — particularly in interstitial regions, π electron clouds, and similar areas — but manually designing floating orbital positions requires deep domain expertise in quantum chemistry, which has impeded their widespread adoption.
+**Key Challenge**: High accuracy demands flexible placement of basis functions — particularly in interstitial regions, π electron clouds, and similar areas — but manually designing floating orbital positions requires deep domain expertise in quantum chemistry, which has impeded their widespread adoption.
 
-**Paper Goals**: To automatically learn optimal positions and parameters of floating orbitals in a data-driven manner, eliminating the need for manual basis set design.
+**Goal**: To automatically learn optimal positions and parameters of floating orbitals in a data-driven manner, eliminating the need for manual basis set design.
 
-**Starting Point**: Inspired by 3D Gaussian Splatting, the electron density is represented as a mixture of Gaussians, each parameterized by a weight, position, and covariance matrix, with an equivariant network predicting these parameters from the molecular graph.
+**Key Insight**: Inspired by 3D Gaussian Splatting, the electron density is represented as a mixture of Gaussians, each parameterized by a weight, position, and covariance matrix, with an equivariant network predicting these parameters from the molecular graph.
 
 **Core Idea**: An equivariant network predicts the positions and shapes of floating Gaussian orbitals, replacing manual basis set design with a fully data-driven approach.
 

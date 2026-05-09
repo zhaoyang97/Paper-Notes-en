@@ -27,15 +27,15 @@ content_hash: caf746c33591f7bc
 This paper systematically investigates the entropy calibration of language models — whether the entropy of generated text matches the log loss on human text — and finds that due to the power-law nature of data distributions ($\alpha \approx 1$), error accumulation improves extremely slowly with model scale (scaling exponent $\approx -0.05$). The paper further provides a theoretical proof that entropy can be calibrated in polynomial time without sacrificing diversity.
 
 ## Background & Motivation
-**State of the Field**: Autoregressive language models suffer from "error accumulation" during generation — the model feeds its own (slightly biased) outputs as subsequent inputs, causing per-step entropy of generated text to increase with length, whereas per-step entropy of human text remains approximately constant.
+**Background**: Autoregressive language models suffer from "error accumulation" during generation — the model feeds its own (slightly biased) outputs as subsequent inputs, causing per-step entropy of generated text to increase with length, whereas per-step entropy of human text remains approximately constant.
 
 **Limitations of Prior Work**: In practice, distribution truncation (top-k/top-p/min-p sampling) is used to reduce entropy and improve quality, but at the cost of diversity (higher log loss). This is particularly limiting in settings that require aggregating multiple answers or generating synthetic training data.
 
-**Root Cause**: Truncation improves quality but hurts diversity. It remains unclear whether scaling model size can automatically resolve miscalibration, and whether it is theoretically possible to preserve both quality and diversity simultaneously.
+**Key Challenge**: Truncation improves quality but hurts diversity. It remains unclear whether scaling model size can automatically resolve miscalibration, and whether it is theoretically possible to preserve both quality and diversity simultaneously.
 
-**Paper Goals**: (1) Quantify the rate at which miscalibration improves with model scale; (2) establish a theoretical framework explaining why improvement is slow; (3) demonstrate the theoretical feasibility of lossless calibration.
+**Goal**: (1) Quantify the rate at which miscalibration improves with model scale; (2) establish a theoretical framework explaining why improvement is slow; (3) demonstrate the theoretical feasibility of lossless calibration.
 
-**Starting Point**: The relationship between the scaling exponent and the data distribution parameter $\alpha$ is established by analyzing the probability of generating singleton tokens under power-law distributions.
+**Key Insight**: The relationship between the scaling exponent and the data distribution parameter $\alpha$ is established by analyzing the probability of generating singleton tokens under power-law distributions.
 
 **Core Idea**: The power-law exponent $\alpha \approx 1$ in data distributions causes the probability of generating rare tokens to decay as $m^{1/\alpha - 1} \approx m^0$ with increasing data volume, resulting in extremely slow improvement of miscalibration.
 

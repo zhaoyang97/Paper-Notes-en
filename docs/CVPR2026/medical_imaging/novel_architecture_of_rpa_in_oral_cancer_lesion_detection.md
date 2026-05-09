@@ -29,15 +29,15 @@ This work integrates software design patterns (Singleton + Batch Processing) int
 
 ## Background & Motivation
 
-**State of the Field**: Early detection of oral cancer is critical to patient survival. Robotic Process Automation (RPA) has been introduced into healthcare to automate repetitive workflows such as image processing, laboratory data management, and patient data analysis. Low-code RPA platforms such as UiPath and Automation Anywhere provide accessible workflow orchestration capabilities.
+**Background**: Early detection of oral cancer is critical to patient survival. Robotic Process Automation (RPA) has been introduced into healthcare to automate repetitive workflows such as image processing, laboratory data management, and patient data analysis. Low-code RPA platforms such as UiPath and Automation Anywhere provide accessible workflow orchestration capabilities.
 
 **Limitations of Prior Work**: (1) Conventional RPA platforms are highly inefficient for computationally intensive AI inference — approximately 78% of processing time is consumed by repeated model loading, activity switching, and data serialization, with only 22% devoted to actual inference. (2) Low-code environments inherently lack support for GPU batch processing and model caching, and serial image processing creates severe throughput bottlenecks. (3) Poor computational resource utilization renders such systems unacceptable in terms of cost and latency for high-throughput clinical scenarios.
 
-**Root Cause**: A fundamental tension exists between the workflow orchestration strengths of RPA platforms and their computational inefficiency — automated process management must be preserved while substantially improving inference throughput.
+**Key Challenge**: A fundamental tension exists between the workflow orchestration strengths of RPA platforms and their computational inefficiency — automated process management must be preserved while substantially improving inference throughput.
 
-**Paper Goals**: To optimize a Python inference pipeline through software engineering design patterns, achieving high-efficiency inference while retaining the workflow orchestration advantages of RPA.
+**Goal**: To optimize a Python inference pipeline through software engineering design patterns, achieving high-efficiency inference while retaining the workflow orchestration advantages of RPA.
 
-**Starting Point**: Introducing the Singleton (single model load) and Batch Processing (batched inference) design patterns into AI clinical deployment pipelines.
+**Key Insight**: Introducing the Singleton (single model load) and Batch Processing (batched inference) design patterns into AI clinical deployment pipelines.
 
 **Core Idea**: Singleton eliminates repeated model-loading overhead + Batch Processing exploits GPU parallelism = 60–100× speedup.
 

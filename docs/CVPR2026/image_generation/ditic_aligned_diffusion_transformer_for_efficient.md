@@ -30,7 +30,7 @@ This work adapts a pretrained text-to-image DiT (SANA) into an efficient single-
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion-based image compression achieves strong perceptual fidelity (PerCo, DiffEIC, ResULIC, StableCodec), but is constrained by multi-step sampling overhead and high memory consumption. Existing methods predominantly use U-Net architectures, whose hierarchical downsampling forces diffusion to operate in shallow latent spaces (8× downsampling), whereas conventional VAE codecs can operate in much deeper latent spaces (16×–64×).
+**Background**: Diffusion-based image compression achieves strong perceptual fidelity (PerCo, DiffEIC, ResULIC, StableCodec), but is constrained by multi-step sampling overhead and high memory consumption. Existing methods predominantly use U-Net architectures, whose hierarchical downsampling forces diffusion to operate in shallow latent spaces (8× downsampling), whereas conventional VAE codecs can operate in much deeper latent spaces (16×–64×).
 
 **Limitations of Prior Work**:
 
@@ -38,11 +38,11 @@ This work adapts a pretrained text-to-image DiT (SANA) into an efficient single-
 2. Single-step methods (StableCodec, OSCAR) still rely on U-Net and cannot natively perform diffusion in deep latent spaces.
 3. Directly transplanting generative DiTs into compression latent spaces causes severe degradation—the generative objective (denoising from pure noise) fundamentally misaligns with the reconstruction objective (single-step recovery from structured quantized latents).
 
-**Root Cause**: The generative prior of diffusion models benefits perceptual reconstruction, yet the paradigm of iterative denoising from pure noise is fundamentally incompatible with the compression requirement of single-step reconstruction from known structured latents.
+**Key Challenge**: The generative prior of diffusion models benefits perceptual reconstruction, yet the paradigm of iterative denoising from pure noise is fundamentally incompatible with the compression requirement of single-step reconstruction from known structured latents.
 
-**Paper Goals**: Enable efficient diffusion in an extremely compact deep latent space (32×) by collapsing multi-step iteration into a deterministic single-step transformation.
+**Goal**: Enable efficient diffusion in an extremely compact deep latent space (32×) by collapsing multi-step iteration into a deterministic single-step transformation.
 
-**Starting Point**: Three "alignment" mechanisms bridge the gap between generation and compression—aligning denoising intensity (variance → timestep), aligning multi-step to single-step (self-distillation), and aligning the conditioning modality (text → latent).
+**Key Insight**: Three "alignment" mechanisms bridge the gap between generation and compression—aligning denoising intensity (variance → timestep), aligning multi-step to single-step (self-distillation), and aligning the conditioning modality (text → latent).
 
 **Core Idea**: Compressed quantized latents already lie close to the data manifold; their spatial variance naturally encodes local "denoising demand." Mapping variance to pseudo-timesteps collapses iterative denoising into a single-step adaptive reconstruction.
 

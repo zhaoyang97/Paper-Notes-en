@@ -29,14 +29,14 @@ This paper proposes the first semi-supervised matrix completion learning paradig
 
 ## Background & Motivation
 
-**State of the Field**: Matrix completion is a core technique in recommender systems, aiming to recover a complete user–item rating matrix from limited observed entries. Classical theory (Candes & Recht et al.) proves that nuclear norm minimization can exactly recover a rank-$r$ matrix under uniform sampling, requiring $\tilde{O}(nr)$ observations. Inductive Matrix Completion (IMC) further reduces sample complexity by incorporating side information matrices $X, Y$.
+**Background**: Matrix completion is a core technique in recommender systems, aiming to recover a complete user–item rating matrix from limited observed entries. Classical theory (Candes & Recht et al.) proves that nuclear norm minimization can exactly recover a rank-$r$ matrix under uniform sampling, requiring $\tilde{O}(nr)$ observations. Inductive Matrix Completion (IMC) further reduces sample complexity by incorporating side information matrices $X, Y$.
 
 **Limitations of Prior Work**:
 (1) **All existing theoretical results assume fully labeled observations** — every observed entry $(i,j)$ is associated with a rating label, whereas in practice a large volume of interactions (browsing/clicking/purchasing, i.e., "implicit feedback") carry no ratings;
 (2) **IMC assumes side information is given** — in practice, side information matrices must be estimated from auxiliary data (social graphs, molecular structures, etc.) rather than being directly available;
 (3) **The relationship between implicit and explicit feedback lacks theoretical characterization** — while extensive empirical evidence shows that implicit feedback contains useful information for rating prediction, a formal learning-theoretic account is absent.
 
-**Starting Point**: The paper assumes that the sampling distribution $P$ (the source of implicit feedback) and the ground-truth matrix $G$ (explicit ratings) share a low-rank subspace, uses a large number of unlabeled samples to estimate the shared subspace, and then performs matrix recovery within this subspace using a small number of labeled samples.
+**Key Insight**: The paper assumes that the sampling distribution $P$ (the source of implicit feedback) and the ground-truth matrix $G$ (explicit ratings) share a low-rank subspace, uses a large number of unlabeled samples to estimate the shared subspace, and then performs matrix recovery within this subspace using a small number of labeled samples.
 
 ## Method
 

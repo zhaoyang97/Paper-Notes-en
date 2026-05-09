@@ -30,16 +30,16 @@ This paper proposes a formal PAC learning framework for Chain-of-Thought verifie
 
 ## Background & Motivation
 
-**State of the Field**: CoT reasoning has become the dominant paradigm for LLMs to solve complex mathematical and logical problems, yet reasoning chains frequently contain erroneous or unjustified inference steps. Formal proof systems (e.g., Lean) can verify rigorously, but current LLMs struggle to generate formal proofs directly—formalizing even an informal problem statement is itself challenging.
+**Background**: CoT reasoning has become the dominant paradigm for LLMs to solve complex mathematical and logical problems, yet reasoning chains frequently contain erroneous or unjustified inference steps. Formal proof systems (e.g., Lean) can verify rigorously, but current LLMs struggle to generate formal proofs directly—formalizing even an informal problem statement is itself challenging.
 
 **Limitations of Prior Work**:
 - CoT reasoning suffers from "error accumulation"—subtle mistakes in long reasoning chains are difficult to detect.
 - Existing LLM verifiers lack theoretical guarantees; it is unknown how much training data suffices to learn a reliable verifier.
 - More critically, once a verifier provides feedback and the reasoning model revises its chain, the new chain is out-of-distribution (OOD), and the original verifier no longer offers any guarantee.
 
-**Root Cause**: The simplest verification objective (correctness under the same distribution) cannot handle adaptive use scenarios—the verifier's own feedback induces distributional shift. A stronger verification guarantee is needed: for a given problem, reject *all* incorrect reasoning chains, not merely the in-distribution ones.
+**Key Challenge**: The simplest verification objective (correctness under the same distribution) cannot handle adaptive use scenarios—the verifier's own feedback induces distributional shift. A stronger verification guarantee is needed: for a given problem, reject *all* incorrect reasoning chains, not merely the in-distribution ones.
 
-**Paper Goals**: To establish a rigorous PAC learning framework for CoT verifiers, answer the fundamental question of how much data is required to learn a reliable verifier, and reveal the intrinsic sample complexity differences across verification objectives of varying strength.
+**Goal**: To establish a rigorous PAC learning framework for CoT verifiers, answer the fundamental question of how much data is required to learn a reliable verifier, and reveal the intrinsic sample complexity differences across verification objectives of varying strength.
 
 **Core Idea**: The learnability of a verifier depends on how "trustable" one requires it to be. Moving from "correct on the training distribution" to "rejecting all incorrect proofs" increases the required sample size from logarithmic to linear; however, an intersection-closed structure can break through this barrier.
 

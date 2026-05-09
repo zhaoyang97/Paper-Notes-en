@@ -28,9 +28,9 @@ The LoViF 2026 inaugural challenge on human-oriented semantic image quality asse
 
 ## Background & Motivation
 
-- **State of the Field**: Traditional image quality assessment (IQA) focuses primarily on perceptual fidelity—whether an image is sharp, natural, and visually pleasing. In the era of generative models and intelligent visual systems, this is no longer sufficient: users may care more about whether degraded images preserve critical semantic information (objects, attributes, relations, scene meaning) rather than all low-level details. Existing semantic quality assessment still relies indirectly on downstream task performance as a proxy metric, lacking evaluation methods directly oriented toward human semantic understanding. This challenge aims to establish the first benchmark for human-oriented semantic quality assessment.
+- **Background**: Traditional image quality assessment (IQA) focuses primarily on perceptual fidelity—whether an image is sharp, natural, and visually pleasing. In the era of generative models and intelligent visual systems, this is no longer sufficient: users may care more about whether degraded images preserve critical semantic information (objects, attributes, relations, scene meaning) rather than all low-level details. Existing semantic quality assessment still relies indirectly on downstream task performance as a proxy metric, lacking evaluation methods directly oriented toward human semantic understanding. This challenge aims to establish the first benchmark for human-oriented semantic quality assessment.
 - **Limitations of Prior Work**: This direction is significant for applications such as semantic coding, transmission, enhancement, and AI-generated content analysis. In practical scenarios, users may prioritize preserving the semantic information they care about over maintaining all low-level details.
-- **Paper Goals**: Training annotations are generated with the assistance of professional annotators and the DouBao intelligent application; validation and test sets are precisely annotated by 30 human reviewers.
+- **Goal**: Training annotations are generated with the assistance of professional annotators and the DouBao intelligent application; validation and test sets are precisely annotated by 30 human reviewers.
 
 ## Method
 

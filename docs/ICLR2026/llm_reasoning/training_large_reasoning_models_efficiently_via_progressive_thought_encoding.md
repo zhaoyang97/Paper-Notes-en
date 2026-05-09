@@ -29,11 +29,11 @@ This paper proposes Progressive Thought Encoding, which encodes evicted thought 
 
 ## Background & Motivation
 
-**State of the Field**: Large reasoning models (LRMs) undergo RL-based post-training (e.g., GRPO), requiring long rollout sequences to obtain outcome-based rewards. Autoregressive decoding makes the rollout phase the primary bottleneck in both time and memory—harder tasks demand longer chains of thought, further exacerbating resource consumption.
+**Background**: Large reasoning models (LRMs) undergo RL-based post-training (e.g., GRPO), requiring long rollout sequences to obtain outcome-based rewards. Autoregressive decoding makes the rollout phase the primary bottleneck in both time and memory—harder tasks demand longer chains of thought, further exacerbating resource consumption.
 
 **Limitations of Prior Work**: A natural remedy is to apply a sliding window to limit KV cache size and reduce memory. However, experiments show this severely degrades reasoning quality—discarding intermediate thought tokens disrupts long-range context understanding, lowers rollout sample quality, and consequently impairs training. For example, Qwen2.5-3B suffers an average accuracy drop from 28.2% to 25.6% under a sliding window.
 
-**Root Cause**: Can LRMs be trained under strict memory budgets without sacrificing reasoning accuracy? That is, can a model effectively "see" all historical tokens within a limited cache window?
+**Key Challenge**: Can LRMs be trained under strict memory budgets without sacrificing reasoning accuracy? That is, can a model effectively "see" all historical tokens within a limited cache window?
 
 ## Method
 

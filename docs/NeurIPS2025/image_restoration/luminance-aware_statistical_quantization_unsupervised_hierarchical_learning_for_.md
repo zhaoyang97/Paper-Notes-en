@@ -29,18 +29,18 @@ This paper proposes the LASQ framework, which reformulates low-light image enhan
 
 ## Background & Motivation
 
-**State of the Field**: LLIE methods are broadly divided into supervised (requiring paired data) and unsupervised approaches; recent integration of diffusion models has improved flexibility.
+**Background**: LLIE methods are broadly divided into supervised (requiring paired data) and unsupervised approaches; recent integration of diffusion models has improved flexibility.
 
 **Limitations of Prior Work**:
 - Supervised methods overfit to pixel-level correspondences, neglecting the continuous physical process underlying luminance transitions.
 - Unsupervised methods rely on pseudo-references (e.g., empirical gamma correction), inheriting their prior biases.
 - Both paradigms oversimplify the fundamentally continuous and context-dependent luminance dynamics, leading to limited generalization.
 
-**Root Cause**: A tension exists between reconstruction fidelity and cross-scene generalization — optimizing for in-domain accuracy degrades generalization, while prioritizing generalization weakens in-domain performance.
+**Key Challenge**: A tension exists between reconstruction fidelity and cross-scene generalization — optimizing for in-domain accuracy degrades generalization, while prioritizing generalization weakens in-domain performance.
 
-**Paper Goals**: To establish a statistical model for LLIE grounded in the physical laws of natural illumination, without requiring paired data.
+**Goal**: To establish a statistical model for LLIE grounded in the physical laws of natural illumination, without requiring paired data.
 
-**Starting Point**: An empirical observation that natural luminance transitions follow a power-law density distribution, which can be approximated by hierarchical power functions.
+**Key Insight**: An empirical observation that natural luminance transitions follow a power-law density distribution, which can be approximated by hierarchical power functions.
 
 **Core Idea**: Reformulate LLIE from deterministic pixel mapping to a statistical sampling process over hierarchical luminance distributions.
 

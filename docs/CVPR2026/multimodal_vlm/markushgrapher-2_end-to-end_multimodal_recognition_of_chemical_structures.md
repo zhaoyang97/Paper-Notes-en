@@ -29,15 +29,15 @@ MarkushGrapher-2 proposes an end-to-end multimodal chemical structure recognitio
 
 ## Background & Motivation
 
-1. **State of the Field**: Automated extraction of chemical structures from documents is fundamental to large-scale chemical literature analysis. Existing methods handle molecular structures in images (OCSR) or chemical named entities in text separately, but remain inadequate for Markush structures — multimodal descriptions that combine both image and text.
+1. **Background**: Automated extraction of chemical structures from documents is fundamental to large-scale chemical literature analysis. Existing methods handle molecular structures in images (OCSR) or chemical named entities in text separately, but remain inadequate for Markush structures — multimodal descriptions that combine both image and text.
 
 2. **Limitations of Prior Work**: Markush structures are critical in patent analysis (for prior art search, freedom-to-operate evaluation, etc.), yet are currently indexed only by two manually annotated proprietary databases: MARPAT and DWPIM. The predecessor MarkushGrapher-1 requires pre-annotated OCR output as input (precluding end-to-end processing), and its visual recognition accuracy leaves room for improvement. General-purpose VLMs (GPT-5, DeepSeek-OCR) perform poorly on Markush recognition (GPT-5 achieves only 3% on M2S).
 
-3. **Root Cause**: The visual style of Markush structures varies enormously across patent offices and publication years; textual descriptions lack standardization and include conditional/recursive specifications; and large-scale real-world training data are scarce.
+3. **Key Challenge**: The visual style of Markush structures varies enormously across patent offices and publication years; textual descriptions lack standardization and include conditional/recursive specifications; and large-scale real-world training data are scarce.
 
-4. **Paper Goals**: Build a unified end-to-end model capable of recognizing both standard molecules and multimodal Markush structures.
+4. **Goal**: Build a unified end-to-end model capable of recognizing both standard molecules and multimodal Markush structures.
 
-5. **Starting Point**: Exploit complementary dual encoders — an OCSR visual encoder and a VTL multimodal encoder — together with a dedicated chemical OCR module and a two-stage training strategy.
+5. **Key Insight**: Exploit complementary dual encoders — an OCSR visual encoder and a VTL multimodal encoder — together with a dedicated chemical OCR module and a two-stage training strategy.
 
 6. **Core Idea**: A dual-encoder pipeline fuses visual structural features with multimodal text-layout features to enable end-to-end recognition of chemical Markush structures.
 

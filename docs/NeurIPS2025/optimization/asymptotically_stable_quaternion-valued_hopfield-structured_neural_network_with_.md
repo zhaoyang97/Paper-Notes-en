@@ -27,14 +27,14 @@ content_hash: 0681dfb74a0909a8
 This paper proposes a Quaternion-valued Supervised Hopfield-structured Neural Network (QSHNN) that employs a periodic projection strategy to maintain the quaternionic structural consistency of the weight matrix. The existence and uniqueness of fixed points and their asymptotic stability are established via Lyapunov theory, while bounded trajectory curvature guarantees path smoothness for robotic path planning.
 
 ## Background & Motivation
-**State of the Field**: Hopfield Neural Networks (HNNs) are classical attractor models with symmetric topology and recurrent connections, whose states converge to discrete equilibria. The quaternion algebra $\mathbb{H}$ naturally encodes 3D rotations, offering inherent advantages for parameterizing robotic joint orientations.
+**Background**: Hopfield Neural Networks (HNNs) are classical attractor models with symmetric topology and recurrent connections, whose states converge to discrete equilibria. The quaternion algebra $\mathbb{H}$ naturally encodes 3D rotations, offering inherent advantages for parameterizing robotic joint orientations.
 
 **Limitations of Prior Work**:
    - Existing quaternionic Hopfield networks operate primarily in discrete-time or unsupervised paradigms, relying on Hebbian or outer-product formulas for direct weight encoding. These approaches suffer from limited storage capacity (spurious attractors emerge after a small number of target states) and do not support dynamic reconfiguration.
    - Direct encoding lacks an error-driven optimization mechanism, preventing task-adaptive behavioral adjustment.
    - Modern continuous-time HNNs (e.g., Ramsauer et al. 2021) remain confined to energy-minimization-driven unsupervised paradigms, lacking explicit target tracking and structural control.
 
-**Root Cause**: When applying supervised learning in the quaternionic domain, standard gradient descent disrupts the quaternion block structure of the weight matrix (each $4\times4$ block should correspond to a quaternion left-multiplication matrix), causing the network to lose the geometric advantages of quaternion algebra.
+**Key Challenge**: When applying supervised learning in the quaternionic domain, standard gradient descent disrupts the quaternion block structure of the weight matrix (each $4\times4$ block should correspond to a quaternion left-multiplication matrix), causing the network to lose the geometric advantages of quaternion algebra.
 
 **Core Idea**: A periodic projection learning strategy is designed: during standard gradient descent, every $\mathcal{P}$ steps, each $4\times4$ block of the weight matrix is projected onto the nearest quaternion structure in the least-squares sense, while maintaining both convergence and quaternionic consistency.
 

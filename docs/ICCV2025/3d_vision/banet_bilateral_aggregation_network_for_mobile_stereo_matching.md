@@ -35,7 +35,7 @@ Stereo matching is critical for drone navigation, mobile photography, robotic su
 - **Complex 2D alternative operations**: AANet uses deformable convolutions and HITNet uses iterative warping to replace 3D convolutions and alleviate edge blurring, but these operations incur high deployment costs on mobile hardware.
 - **Pure 2D convolutions**: MobileStereoNet-2D adopts purely 2D convolutions and is mobile-friendly, yet suffers significant accuracy degradation—edge blurring, loss of fine detail, and mismatching in textureless regions.
 
-**Root Cause**: How can high accuracy be maintained using only mobile-friendly operations? The authors observe that a scene simultaneously contains high-frequency detail regions and low-frequency smooth/textureless regions, and that a single 2D aggregation network struggles to handle both. This motivates a divide-and-conquer bilateral aggregation strategy.
+**Key Challenge**: How can high accuracy be maintained using only mobile-friendly operations? The authors observe that a scene simultaneously contains high-frequency detail regions and low-frequency smooth/textureless regions, and that a single 2D aggregation network struggles to handle both. This motivates a divide-and-conquer bilateral aggregation strategy.
 
 ## Method
 

@@ -28,7 +28,7 @@ A 7B Qwen2.5 model is trained via GRPO as a "Conductor" that outputs complete ag
 
 ## Background & Motivation
 
-**State of the Field**: Different LLMs have complementary strengths across domains (e.g., GPT-5 excels at coding, Gemini at scientific reasoning), and commercial AI products rely on manually designed agent workflows to exploit the advantages of model ensembles.
+**Background**: Different LLMs have complementary strengths across domains (e.g., GPT-5 excels at coding, Gemini at scientific reasoning), and commercial AI products rely on manually designed agent workflows to exploit the advantages of model ensembles.
 
 **Limitations of Prior Work**:
 - Handcrafted agent scaffolding demands extensive prompt engineering and lacks adaptability.
@@ -36,11 +36,11 @@ A 7B Qwen2.5 model is trained via GRPO as a "Conductor" that outputs complete ag
 - Self-reflection strategies exhibit diminishing returns beyond five rounds, limiting intra-model improvement.
 - No end-to-end approach exists for learning coordination strategies—one that lets RL automatically discover "who does what and how they collaborate."
 
-**Root Cause**: Flexible agent coordination strategies are needed to fully exploit heterogeneous model ensembles, yet manual design is costly and non-generalizable, while routing classifiers are restricted to predefined topologies.
+**Key Challenge**: Flexible agent coordination strategies are needed to fully exploit heterogeneous model ensembles, yet manual design is costly and non-generalizable, while routing classifiers are restricted to predefined topologies.
 
-**Paper Goals**: Enable a small model to automatically learn, via RL, to design optimal multi-model coordination workflows for arbitrary problems.
+**Goal**: Enable a small model to automatically learn, via RL, to design optimal multi-model coordination workflows for arbitrary problems.
 
-**Starting Point**: Natural language is adopted as the workflow specification language—the Conductor directly outputs three Python lists (subtask descriptions, model IDs, and access lists), placing any coordination strategy expressible in natural language within the search space.
+**Key Insight**: Natural language is adopted as the workflow specification language—the Conductor directly outputs three Python lists (subtask descriptions, model IDs, and access lists), placing any coordination strategy expressible in natural language within the search space.
 
 **Core Idea**: Model the task of "designing an agent workflow" as a sequence generation problem amenable to end-to-end RL optimization.
 

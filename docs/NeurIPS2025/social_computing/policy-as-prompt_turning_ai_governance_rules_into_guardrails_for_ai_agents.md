@@ -29,15 +29,15 @@ This paper proposes the Policy-as-Prompt framework, a two-stage end-to-end pipel
 
 ## Background & Motivation
 
-**State of the Field**: Autonomous AI agents are rapidly entering regulated and safety-critical enterprise settings (HR assistants, security operations, etc.), and regulations such as the EU AI Act require AI systems to be auditable, traceable, and transparent.
+**Background**: Autonomous AI agents are rapidly entering regulated and safety-critical enterprise settings (HR assistants, security operations, etc.), and regulations such as the EU AI Act require AI systems to be auditable, traceable, and transparent.
 
 **Limitations of Prior Work**: Organizations face a severe policy-to-practice gap—humans can readily articulate safety rules in design documents, yet translating these natural-language rules into reliably machine-enforceable constraints is extremely difficult. Static safety principles are either too rigid, causing excessive false rejections, or too vague to capture contextual variation. Meanwhile, AI agents face diverse security threats: an HR agent may leak salary information, and a chatbot may be manipulated via prompt injection to execute malicious commands.
 
-**Root Cause**: Security must be just-in-time and context-aware, yet manually authoring and maintaining rules for every scenario is prohibitively costly and error-prone. Existing approaches either rely on generic safety principles (e.g., TrustAgent) or require extensive manual rule authoring.
+**Key Challenge**: Security must be just-in-time and context-aware, yet manually authoring and maintaining rules for every scenario is prohibitively costly and error-prone. Existing approaches either rely on generic safety principles (e.g., TrustAgent) or require extensive manual rule authoring.
 
-**Paper Goals**: How can safety constraints be automatically extracted from a team's existing design documents and compiled into real-time-enforceable guardrails, enabling secure-by-design AI agent deployment?
+**Goal**: How can safety constraints be automatically extracted from a team's existing design documents and compiled into real-time-enforceable guardrails, enabling secure-by-design AI agent deployment?
 
-**Starting Point**: Treating policy as executable prompts (policy-as-code for agents), drawing on the least privilege principle from software security, so that agents are only permitted to perform actions explicitly authorized by design documents.
+**Key Insight**: Treating policy as executable prompts (policy-as-code for agents), drawing on the least privilege principle from software security, so that agents are only permitted to perform actions explicitly authorized by design documents.
 
 **Core Idea**: An LLM reads design documents to extract safety rules and construct a policy tree, which is then compiled into a few-shot prompt-driven lightweight classifier, realizing automated policy enforcement.
 

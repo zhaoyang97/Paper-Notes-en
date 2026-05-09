@@ -28,15 +28,15 @@ NeSyPr proposes a neurosymbolic proceduralization framework that transforms task
 
 ## Background & Motivation
 
-**State of the Field**: Large language models have demonstrated strong reasoning capabilities in embodied tasks, but typically require online access to large-scale inference engines or symbolic planners. Existing methods such as SayCan and Inner Monologue either require API access to large models or depend on online symbolic planning.
+**Background**: Large language models have demonstrated strong reasoning capabilities in embodied tasks, but typically require online access to large-scale inference engines or symbolic planners. Existing methods such as SayCan and Inner Monologue either require API access to large models or depend on online symbolic planning.
 
 **Limitations of Prior Work**: (1) In dynamic physical environments, latency, connectivity, and resource constraints make online access to large models or symbolic planners infeasible; (2) small models lack the capacity for direct multi-step reasoning; (3) symbolic planners, while precise in reasoning, lack generalization ability and natural language understanding.
 
-**Root Cause**: High-quality reasoning currently depends on large models or symbolic planners, yet deployment environments demand low latency and lightweight solutions.
+**Key Challenge**: High-quality reasoning currently depends on large models or symbolic planners, yet deployment environments demand low latency and lightweight solutions.
 
-**Paper Goals**: To equip compact language models with structured, adaptive, and timely reasoning capabilities without online dependence on external systems.
+**Goal**: To equip compact language models with structured, adaptive, and timely reasoning capabilities without online dependence on external systems.
 
-**Starting Point**: Drawing an analogy to human proceduralization — the cognitive process by which declarative knowledge is converted into automated procedural knowledge through practice. Similarly, the declarative knowledge of symbolic planners is compiled into procedural knowledge executable by a language model.
+**Key Insight**: Drawing an analogy to human proceduralization — the cognitive process by which declarative knowledge is converted into automated procedural knowledge through practice. Similarly, the declarative knowledge of symbolic planners is compiled into procedural knowledge executable by a language model.
 
 **Core Idea**: Symbolic tools are used to generate task-specific plans, which are then converted into composable procedural representations and embedded into the LM's reasoning process, compressing multi-step symbolic reasoning into single-step LM inference.
 

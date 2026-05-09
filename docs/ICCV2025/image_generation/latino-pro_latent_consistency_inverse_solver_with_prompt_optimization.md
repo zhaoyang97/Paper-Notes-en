@@ -29,15 +29,15 @@ LATINO-PRO is the first work to embed Latent Consistency Models (LCMs) as genera
 
 ## Background & Motivation
 
-**State of the Field**: Text-guided latent diffusion models (LDMs) have demonstrated remarkable image generation capabilities and have naturally been adopted as generative priors for imaging inverse problems (e.g., super-resolution, denoising, inpainting). The dominant paradigm employs Plug & Play (PnP) methods, using pretrained diffusion models as implicit priors to solve diverse inverse problems in a zero-shot manner.
+**Background**: Text-guided latent diffusion models (LDMs) have demonstrated remarkable image generation capabilities and have naturally been adopted as generative priors for imaging inverse problems (e.g., super-resolution, denoising, inpainting). The dominant paradigm employs Plug & Play (PnP) methods, using pretrained diffusion models as implicit priors to solve diverse inverse problems in a zero-shot manner.
 
 **Limitations of Prior Work**: Existing text-to-image PnP methods face two major challenges. First, they require specifying an appropriate text prompt for the unknown target image—a non-trivial task in inverse problem settings where the target is unobserved. Second, these methods incur substantial computational overhead, typically requiring tens to hundreds of NFEs, largely due to the need for automatic differentiation to compute data fidelity gradients.
 
-**Root Cause**: A fundamental tension exists between the strong representational capacity of diffusion models as inverse problem priors and their prohibitive computational cost. Standard diffusion models require many sampling steps, and embedding data consistency constraints at each step further necessitates backpropagation, rendering the overall inference cost impractical.
+**Key Challenge**: A fundamental tension exists between the strong representational capacity of diffusion models as inverse problem priors and their prohibitive computational cost. Standard diffusion models require many sampling steps, and embedding data consistency constraints at each step further necessitates backpropagation, rendering the overall inference cost impractical.
 
-**Paper Goals**: (1) Design an efficient PnP inference paradigm that incorporates fast generative models as priors for inverse problems; (2) Automate text prompt selection to eliminate manual intervention.
+**Goal**: (1) Design an efficient PnP inference paradigm that incorporates fast generative models as priors for inverse problems; (2) Automate text prompt selection to eliminate manual intervention.
 
-**Starting Point**: Latent Consistency Models (LCMs) are a recent class of distilled LDMs capable of generating high-quality images in very few steps. The authors identify an opportunity to translate LCMs' efficient generation capability into an efficient inverse problem prior.
+**Key Insight**: Latent Consistency Models (LCMs) are a recent class of distilled LDMs capable of generating high-quality images in very few steps. The authors identify an opportunity to translate LCMs' efficient generation capability into an efficient inverse problem prior.
 
 **Core Idea**: Design a conditioning mechanism tailored specifically to LCMs that avoids automatic differentiation, achieving SOTA reconstruction quality with only 8 NFEs; additionally, automatically calibrate optimal text prompts from observed data via marginal likelihood maximization under an empirical Bayes framework.
 

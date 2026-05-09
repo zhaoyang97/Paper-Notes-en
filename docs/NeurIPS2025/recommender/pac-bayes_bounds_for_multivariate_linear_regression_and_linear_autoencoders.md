@@ -28,18 +28,18 @@ This paper extends PAC-Bayes generalization bounds from single-output linear reg
 
 ## Background & Motivation
 
-**State of the Field**: Linear autoencoders (LAEs) such as EASE and EDLAE achieve strong performance in recommender systems, often matching or surpassing deep learning models. However, this empirical success lacks theoretical explanation. Recommender systems research has long relied excessively on empirical comparisons, and biased evaluation persists due to weak baselines and unreliable sampling metrics.
+**Background**: Linear autoencoders (LAEs) such as EASE and EDLAE achieve strong performance in recommender systems, often matching or surpassing deep learning models. However, this empirical success lacks theoretical explanation. Recommender systems research has long relied excessively on empirical comparisons, and biased evaluation persists due to weak baselines and unreliable sampling metrics.
 
 **Limitations of Prior Work**:
    - **Lack of theoretical understanding of LAEs**: Despite their widespread use, LAEs lack theoretical guarantees on generalization performance.
    - **Limitations of existing PAC-Bayes bounds**: Existing PAC-Bayes bounds for linear regression are restricted to the single-output case ($p=1$) and cannot directly handle multi-output settings.
    - **Computational efficiency**: Optimizing PAC-Bayes bounds in high-dimensional spaces is typically expensive, and LAE models can have hundreds of millions of parameters.
 
-**Root Cause**: LAEs demonstrate strong practical performance (surpassing classical methods such as ALS), yet statistical learning theory has not provided rigorous generalization guarantees for them. Classical VC-dimension PAC bounds are typically vacuous for large models, while PAC-Bayes theory offers the potential for tighter, non-vacuous bounds—but requires extending from single-output to multi-output settings and from Gaussian data assumptions to bounded data assumptions.
+**Key Challenge**: LAEs demonstrate strong practical performance (surpassing classical methods such as ALS), yet statistical learning theory has not provided rigorous generalization guarantees for them. Classical VC-dimension PAC bounds are typically vacuous for large models, while PAC-Bayes theory offers the potential for tighter, non-vacuous bounds—but requires extending from single-output to multi-output settings and from Gaussian data assumptions to bounded data assumptions.
 
-**Paper Goals**: To establish rigorous PAC-Bayes generalization bounds for LAE models, with both theoretical significance (explaining why LAEs generalize well) and practical value (connecting bounds to real ranking metrics).
+**Goal**: To establish rigorous PAC-Bayes generalization bounds for LAE models, with both theoretical significance (explaining why LAEs generalize well) and practical value (connecting bounds to real ranking metrics).
 
-**Starting Point**: Starting from the single-output linear regression PAC-Bayes bounds of Shalaeva et al., the paper proceeds incrementally: (1) single-output → multi-output; (2) Gaussian assumption → bounded data assumption; (3) incorporating LAE-specific constraints (zero diagonal, hold-out), and developing efficient computation methods.
+**Key Insight**: Starting from the single-output linear regression PAC-Bayes bounds of Shalaeva et al., the paper proceeds incrementally: (1) single-output → multi-output; (2) Gaussian assumption → bounded data assumption; (3) incorporating LAE-specific constraints (zero diagonal, hold-out), and developing efficient computation methods.
 
 **Core Idea**: By interpreting LAEs as constrained multivariate linear regression models over bounded data, tight and computable PAC-Bayes generalization bounds can be established.
 

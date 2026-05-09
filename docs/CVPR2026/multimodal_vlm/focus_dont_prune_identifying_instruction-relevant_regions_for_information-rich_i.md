@@ -29,18 +29,18 @@ This paper proposes PinPoint, a two-stage framework that first localizes instruc
 
 ## Background & Motivation
 
-**State of the Field**: LVLMs (e.g., LLaVA-NeXT, Qwen2-VL) have achieved significant progress on multimodal tasks through high-resolution inputs, but processing information-rich images (e.g., infographics, document layouts) requires a large number of visual tokens, incurring substantial computational overhead.
+**Background**: LVLMs (e.g., LLaVA-NeXT, Qwen2-VL) have achieved significant progress on multimodal tasks through high-resolution inputs, but processing information-rich images (e.g., infographics, document layouts) requires a large number of visual tokens, incurring substantial computational overhead.
 
 **Limitations of Prior Work**: Token pruning methods (FastV, PyramidDrop, SparseVLM) prune unimportant tokens based on attention weights from LLM decoding layers, suffering from three key issues:
    - Attention maps are unreliable and may induce hallucinations
    - Semantic fragmentation — visual elements (e.g., text) span multiple tokens, and token-level pruning disrupts semantic integrity
    - Context entanglement — global self-attention entangles tokens from relevant and irrelevant regions
 
-**Root Cause**: High resolution is needed to capture fine-grained information, yet computational efficiency is required; token-level pruning is too coarse to preserve semantic integrity.
+**Key Challenge**: High resolution is needed to capture fine-grained information, yet computational efficiency is required; token-level pruning is too coarse to preserve semantic integrity.
 
-**Paper Goals**: How to substantially reduce the number of visual tokens while maintaining accuracy?
+**Goal**: How to substantially reduce the number of visual tokens while maintaining accuracy?
 
-**Starting Point**: The approach simulates human visual strategy — first scanning globally to locate relevant regions, then focusing on details. Region-level selection better respects semantic structure compared to token-level selection.
+**Key Insight**: The approach simulates human visual strategy — first scanning globally to locate relevant regions, then focusing on details. Region-level selection better respects semantic structure compared to token-level selection.
 
 **Core Idea**: Learnable guidance queries are used to align visual regions and textual instructions in a shared feature space; after selecting instruction-relevant regions, they are re-encoded to remove irrelevant context.
 

@@ -29,7 +29,7 @@ This paper proposes ARC-JSD, a method that computes the Jensen-Shannon Divergenc
 
 ## Background & Motivation
 
-**State of the Field**: RAG improves LLM generation accuracy by incorporating external context, yet reliably attributing generated content to specific context passages (context attribution) remains an open challenge.
+**Background**: RAG improves LLM generation accuracy by incorporating external context, yet reliably attributing generated content to specific context passages (context attribution) remains an open challenge.
 
 **Limitations of Prior Work**:
    - Manual annotation is prohibitively expensive (Zeng et al., 2021; Slobodkin et al., 2024)
@@ -37,9 +37,9 @@ This paper proposes ARC-JSD, a method that computes the Jensen-Shannon Divergenc
    - ContextCite requires hundreds of forward passes to train a linear surrogate model
    - DPO-based fine-tuning approaches (SelfCite) require additional training
 
-**Root Cause**: Existing methods struggle to balance attribution accuracy and computational efficiency—they are either accurate but expensive, or fast but imprecise.
+**Key Challenge**: Existing methods struggle to balance attribution accuracy and computational efficiency—they are either accurate but expensive, or fast but imprecise.
 
-**Starting Point**: Leveraging the mathematical properties of JSD—symmetry, boundedness ($[0, \log 2]$), and scale-invariance—to directly measure the change in response distribution upon ablating individual context sentences, bypassing surrogate model training.
+**Key Insight**: Leveraging the mathematical properties of JSD—symmetry, boundedness ($[0, \log 2]$), and scale-invariance—to directly measure the change in response distribution upon ablating individual context sentences, bypassing surrogate model training.
 
 **Core Idea**: If removing a context sentence induces the largest shift in the model's output distribution (highest JSD), that sentence is most critical to the generated response.
 

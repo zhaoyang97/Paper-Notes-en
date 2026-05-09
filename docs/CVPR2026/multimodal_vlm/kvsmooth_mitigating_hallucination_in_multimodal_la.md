@@ -29,15 +29,15 @@ KVSmooth proposes a training-free, plug-and-play method that applies attention r
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs (LLaVA, MiniGPT-4, InstructBLIP) have achieved notable progress on vision-language tasks such as image captioning, yet frequently generate hallucinations — content inconsistent with the input image.
+**Background**: MLLMs (LLaVA, MiniGPT-4, InstructBLIP) have achieved notable progress on vision-language tasks such as image captioning, yet frequently generate hallucinations — content inconsistent with the input image.
 
 **Limitations of Prior Work**: (1) Retraining/fine-tuning approaches (e.g., POVID) incur prohibitive costs; (2) contrastive decoding methods (e.g., VCD) reduce hallucinations at the expense of recall (F1 drops from 77.5 to 71.1); (3) attention redistribution methods (PAI, MiddleLayer) similarly suppress correctly grounded objects.
 
-**Root Cause**: As the decoding sequence grows, the influence of early visual tokens gradually diminishes in the hidden states (semantic drift), causing the model to rely increasingly on linguistic priors. Existing methods only address symptoms: they either trade recall for precision or trade efficiency for quality.
+**Key Challenge**: As the decoding sequence grows, the influence of early visual tokens gradually diminishes in the hidden states (semantic drift), causing the model to rely increasingly on linguistic priors. Existing methods only address symptoms: they either trade recall for precision or trade efficiency for quality.
 
-**Paper Goals**: Suppress semantic drift and hallucination during decoding without retraining, without sacrificing recall, and with virtually zero additional overhead.
+**Goal**: Suppress semantic drift and hallucination during decoding without retraining, without sacrificing recall, and with virtually zero additional overhead.
 
-**Starting Point**: From the perspective of hidden-state dynamics, the paper identifies attention sink as the direct cause of hallucination and proposes adaptive smoothing of the KV-Cache.
+**Key Insight**: From the perspective of hidden-state dynamics, the paper identifies attention sink as the direct cause of hallucination and proposes adaptive smoothing of the KV-Cache.
 
 **Core Idea**: Row entropy quantifies the degree of sink → high-sink tokens receive stronger EMA smoothing → semantic drift is suppressed → hallucinations are eliminated.
 

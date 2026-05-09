@@ -29,15 +29,15 @@ This paper systematically investigates whether multimodal in-context learning (M
 
 ## Background & Motivation
 
-**State of the Field**: Of the 7,000+ languages worldwide, current ASR systems cover only a tiny fraction, with the primary bottleneck being the scarcity of annotated data. Speech LLMs (e.g., Phi4, Qwen3-Omni) possess strong multi-task capabilities, yet their performance remains largely confined to high-resource languages seen during training.
+**Background**: Of the 7,000+ languages worldwide, current ASR systems cover only a tiny fraction, with the primary bottleneck being the scarcity of annotated data. Speech LLMs (e.g., Phi4, Qwen3-Omni) possess strong multi-task capabilities, yet their performance remains largely confined to high-resource languages seen during training.
 
 **Limitations of Prior Work**: (1) Existing ICL research focuses predominantly on the text modality and high-resource languages; (2) the effectiveness of multimodal ICL (MICL) for speech LLMs on unseen languages has not been thoroughly studied; (3) directly applying speech LLMs to prompt-based ASR on unseen languages yields extremely poor results (WER > 100%).
 
-**Root Cause**: Although speech LLMs possess powerful in-context learning capabilities, how to leverage these capabilities effectively under data-scarce conditions for endangered languages remains unclear.
+**Key Challenge**: Although speech LLMs possess powerful in-context learning capabilities, how to leverage these capabilities effectively under data-scarce conditions for endangered languages remains unclear.
 
-**Paper Goals**: To validate the effectiveness of MICL for unseen languages, analyze its internal mechanisms, and construct a practical ASR system.
+**Goal**: To validate the effectiveness of MICL for unseen languages, analyze its internal mechanisms, and construct a practical ASR system.
 
-**Starting Point**: A systematic experimental design is adopted—comparing three modality configurations (text-only ICL, audio+text ICL, and multimodal ICL) and evaluating two speech LLMs on three endangered languages from distinct language families.
+**Key Insight**: A systematic experimental design is adopted—comparing three modality configurations (text-only ICL, audio+text ICL, and multimodal ICL) and evaluating two speech LLMs on three endangered languages from distinct language families.
 
 **Core Idea**: Although MICL cannot directly enable speech LLMs to produce accurate transcriptions, it can be integrated with acoustic models via hypothesis selection, leveraging MICL's language understanding capability to rerank candidate transcriptions.
 

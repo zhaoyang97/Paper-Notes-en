@@ -28,7 +28,7 @@ This paper proposes DialTree, which frames multi-turn red-teaming as a goal-orie
 
 ## Background & Motivation
 
-**State of the Field**: Red-teaming is a critical technique for discovering safety vulnerabilities in LLMs. Existing methods fall into single-turn attacks (GCG/PAIR/TAP) and multi-turn attacks (MTSA/ActorAttack/X-Teaming). Research has shown that multi-turn attacks are far more effective than single-turn ones, as they can gradually erode safety boundaries.
+**Background**: Red-teaming is a critical technique for discovering safety vulnerabilities in LLMs. Existing methods fall into single-turn attacks (GCG/PAIR/TAP) and multi-turn attacks (MTSA/ActorAttack/X-Teaming). Research has shown that multi-turn attacks are far more effective than single-turn ones, as they can gradually erode safety boundaries.
 
 **Limitations of Prior Work**:
    - Existing multi-turn methods rely on hand-crafted heuristics or templates and cannot learn long-horizon adaptive strategies.
@@ -36,11 +36,11 @@ This paper proposes DialTree, which frames multi-turn red-teaming as a goal-orie
    - Jailbreak rewards come from imperfect proxy models (non-verifiable rewards), leading to unstable guidance signals.
    - Format-following capability undergoes catastrophic forgetting during RL training.
 
-**Root Cause**: The dialogue space for multi-turn attacks is enormous, while effective attack strategies are sparse and difficult to discover.
+**Key Challenge**: The dialogue space for multi-turn attacks is enormous, while effective attack strategies are sparse and difficult to discover.
 
-**Paper Goals**: How to efficiently explore the multi-turn attack space, learn long-horizon dialogue strategies, and stabilize RL training.
+**Goal**: How to efficiently explore the multi-turn attack space, learn long-horizon dialogue strategies, and stabilize RL training.
 
-**Starting Point**: Framing red-teaming as goal-oriented strategic dialogue, using tree search for structured exploration and adaptive masking for training stabilization.
+**Key Insight**: Framing red-teaming as goal-oriented strategic dialogue, using tree search for structured exploration and adaptive masking for training stabilization.
 
 **Core Idea**: Tree rollout + pruning = structured exploration of the multi-turn attack space; adaptive mask = protecting format tokens from being negatively updated by RL gradients.
 

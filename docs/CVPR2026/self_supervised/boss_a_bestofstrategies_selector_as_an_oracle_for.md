@@ -29,16 +29,16 @@ This paper proposes BoSS (Best-of-Strategies Selector), which generates 100 cand
 
 ## Background & Motivation
 
-**State of the Field**: Active learning (AL) aims to iteratively select the most informative samples for annotation, achieving optimal model performance with minimal labeling effort. Although the foundation model era has enabled more powerful feature extraction, selection strategies—determining which samples to annotate—still lack robustness across models and datasets. Several recent studies (Munjal 2022; Lüth 2024; Werner 2024) have shown that no single strategy is consistently optimal: BADGE leads in some evaluations while Margin leads in others.
+**Background**: Active learning (AL) aims to iteratively select the most informative samples for annotation, achieving optimal model performance with minimal labeling effort. Although the foundation model era has enabled more powerful feature extraction, selection strategies—determining which samples to annotate—still lack robustness across models and datasets. Several recent studies (Munjal 2022; Lüth 2024; Werner 2024) have shown that no single strategy is consistently optimal: BADGE leads in some evaluations while Margin leads in others.
 
 **Limitations of Prior Work**:
 - AL strategies rely on heuristics such as uncertainty or representativeness rather than directly optimizing model performance, leading to inconsistent behavior across settings.
 - Once a strategy is chosen, it remains fixed throughout the entire AL process, making it unable to adapt to distributional shifts introduced by iterative labeling.
 - Existing Oracle methods (SAS: simulated annealing with 25,000 steps; CDO: greedy sample-by-sample selection with quadratic complexity in batch size) do not scale to large settings, making ImageNet-scale evaluation entirely infeasible.
 
-**Root Cause**: A quantifiable "optimal selection" reference point is needed to assess the true gap of state-of-the-art strategies, yet constructing such an Oracle is computationally prohibitive—the $\binom{1000}{10} = 2.63 \times 10^{23}$ possible batch combinations make exhaustive search infeasible.
+**Key Challenge**: A quantifiable "optimal selection" reference point is needed to assess the true gap of state-of-the-art strategies, yet constructing such an Oracle is computationally prohibitive—the $\binom{1000}{10} = 2.63 \times 10^{23}$ possible batch combinations make exhaustive search infeasible.
 
-**Starting Point**: Leveraging strategy ensembles to generate high-quality candidate batches, combined with a frozen-backbone proxy evaluation that retrains only the linear layer, compresses the combinatorial search to a linear evaluation over only 100 candidate batches.
+**Key Insight**: Leveraging strategy ensembles to generate high-quality candidate batches, combined with a frozen-backbone proxy evaluation that retrains only the linear layer, compresses the combinatorial search to a linear evaluation over only 100 candidate batches.
 
 ## Method
 

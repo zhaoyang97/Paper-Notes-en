@@ -28,15 +28,15 @@ BookAgent is a safety-aware multi-agent framework that generates high-quality, c
 
 ## Background & Motivation
 
-**State of the Field**: Large generative models have achieved remarkable progress in text and image generation, but automatic picture book generation remains an open challenge. Existing methods decompose story visualization into independent stages (first fixing the storyline, then generating images page by page), lacking holistic multimodal alignment.
+**Background**: Large generative models have achieved remarkable progress in text and image generation, but automatic picture book generation remains an open challenge. Existing methods decompose story visualization into independent stages (first fixing the storyline, then generating images page by page), lacking holistic multimodal alignment.
 
 **Limitations of Prior Work**: (1) Weak cross-modal alignment—visual content rarely provides structured feedback to correct scripts, resulting in insufficient bidirectional alignment; (2) Poor global consistency—character appearance drift, missing props, and broken causal relationships in long sequence generation; (3) Children's safety not integrated—existing safety methods are mostly post-hoc filtering, not embedded in narrative planning and global consistency checking.
 
-**Root Cause**: A unified system is needed to simultaneously address cross-modal alignment, long-range consistency, and domain safety, but existing methods can only handle one of these problems separately.
+**Key Challenge**: A unified system is needed to simultaneously address cross-modal alignment, long-range consistency, and domain safety, but existing methods can only handle one of these problems separately.
 
-**Paper Goals**: Build an end-to-end picture book synthesis system that generates both scripts and illustrations from user drafts, ensuring page-level alignment, global character consistency, and child safety compliance.
+**Goal**: Build an end-to-end picture book synthesis system that generates both scripts and illustrations from user drafts, ensuring page-level alignment, global character consistency, and child safety compliance.
 
-**Starting Point**: Treat picture book generation as a **collaborative cognitive process** rather than a pipeline—multiple specialized agents (reviewers, directors, safety auditors, etc.) collaborate through closed-loop feedback.
+**Key Insight**: Treat picture book generation as a **collaborative cognitive process** rather than a pipeline—multiple specialized agents (reviewers, directors, safety auditors, etc.) collaborate through closed-loop feedback.
 
 **Core Idea**: Three-stage hierarchical workflow—VAS ensures a safe narrative blueprint, ICR ensures single-page quality, and TCC ensures cross-page global consistency.
 

@@ -27,15 +27,15 @@ content_hash: 9c97bd94db047312
 This paper proposes the CAGE framework, which decouples the adversarial structure of red-teaming prompts from their cultural content via a construct termed the Semantic Mold. CAGE systematically adapts English red-teaming benchmarks to diverse cultural contexts, yielding culturally grounded prompts that achieve substantially higher attack success rates (ASR) than direct translation.
 
 ## Background & Motivation
-**State of the Field**: LLM safety evaluation predominantly relies on English red-teaming benchmarks (e.g., AdvBench, HarmBench), with cross-lingual evaluation typically achieved through direct translation. However, stereotypes, social norms, and legal frameworks vary considerably across cultures.
+**Background**: LLM safety evaluation predominantly relies on English red-teaming benchmarks (e.g., AdvBench, HarmBench), with cross-lingual evaluation typically achieved through direct translation. However, stereotypes, social norms, and legal frameworks vary considerably across cultures.
 
 **Limitations of Prior Work**: Direct translation fails to capture cultural specificity—flag burning is protected speech in the United States but constitutes a criminal offense in South Korea; certain racial slurs carry meaning in English contexts but have no equivalent in Korean. Template-based generation approaches (e.g., KoBBQ) offer limited semantic diversity, while constructing native datasets from scratch (e.g., KorNAT) incurs prohibitive costs.
 
-**Root Cause**: A fundamental trade-off exists between cultural fidelity and scalability—high-fidelity datasets require manual authoring at small scale, while machine translation enables scale but sacrifices fidelity. No prior work achieves both simultaneously.
+**Key Challenge**: A fundamental trade-off exists between cultural fidelity and scalability—high-fidelity datasets require manual authoring at small scale, while machine translation enables scale but sacrifices fidelity. No prior work achieves both simultaneously.
 
-**Paper Goals**: How can one preserve the adversarial structure of English red-teaming prompts while injecting culture-specific content from the target culture?
+**Goal**: How can one preserve the adversarial structure of English red-teaming prompts while injecting culture-specific content from the target culture?
 
-**Starting Point**: The paper treats a prompt's "adversarial intent" (what harmful act to elicit) and its "cultural content" (which specific entities or scenarios are invoked) as two separable dimensions.
+**Key Insight**: The paper treats a prompt's "adversarial intent" (what harmful act to elicit) and its "cultural content" (which specific entities or scenarios are invoked) as two separable dimensions.
 
 **Core Idea**: The Semantic Mold decomposes a prompt into a slot-tagged structure that preserves the attack framework, which is then filled with culturally legitimate content from the target culture to achieve cultural grounding.
 

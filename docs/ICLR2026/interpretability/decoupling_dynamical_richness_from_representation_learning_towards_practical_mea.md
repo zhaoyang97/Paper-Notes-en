@@ -27,15 +27,15 @@ This paper proposes a computationally efficient, performance-agnostic measure of
 
 ## Background & Motivation
 
-**State of the Field**: Feature learning in deep learning can be viewed from two perspectives — representation quality (how useful features are for downstream tasks) and a dynamics perspective (rich vs. lazy training). Rich training refers to features undergoing nonlinear dynamic transformations, whereas lazy training approximates linear model behavior.
+**Background**: Feature learning in deep learning can be viewed from two perspectives — representation quality (how useful features are for downstream tasks) and a dynamics perspective (rich vs. lazy training). Rich training refers to features undergoing nonlinear dynamic transformations, whereas lazy training approximates linear model behavior.
 
 **Limitations of Prior Work**: Existing richness measures each suffer from distinct drawbacks. NTK-based change metrics are computationally prohibitive (scaling quadratically with the number of parameters); the initial kernel similarity $\mathcal{S}_{init}$ depends on the initial kernel and sometimes produces incorrect judgments (e.g., weight decay causes kernel changes without constituting genuinely rich training); the parameter norm $\|\theta\|_F^2$ is merely correlational rather than causal; and the NC1 metric from neural collapse is unbounded and sensitive to output scaling.
 
-**Root Cause**: Rich dynamics and better representations are frequently conflated, with accuracy used as a proxy for richness. In practice, rich dynamics do not always imply better generalization — the authors demonstrate on MNIST that a richly trained model achieves only 10% test accuracy, while a lazily trained model reaches 74.4%.
+**Key Challenge**: Rich dynamics and better representations are frequently conflated, with accuracy used as a proxy for richness. In practice, rich dynamics do not always imply better generalization — the authors demonstrate on MNIST that a richly trained model achieves only 10% test accuracy, while a lazily trained model reaches 74.4%.
 
-**Paper Goals**: (1) A richness measure independent of model performance; (2) high computational efficiency; (3) a unified account of known phenomena such as neural collapse.
+**Goal**: (1) A richness measure independent of model performance; (2) high computational efficiency; (3) a unified account of known phenomena such as neural collapse.
 
-**Starting Point**: The low-rank bias of rich training — under rich dynamics, features prior to the last layer should span only the minimal number of dimensions required to express the learned function (low-rank structure).
+**Key Insight**: The low-rank bias of rich training — under rich dynamics, features prior to the last layer should span only the minimal number of dimensions required to express the learned function (low-rank structure).
 
 **Core Idea**: Define a minimal projection operator $\mathcal{T}_{MP}$, and use CKA to measure the distance between the actual feature kernel and this ideal low-rank projection; smaller values indicate richer training.
 

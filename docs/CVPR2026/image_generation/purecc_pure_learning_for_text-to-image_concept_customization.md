@@ -28,15 +28,15 @@ PureCC introduces a decoupled learning objective that separates "target concept 
 
 ## Background & Motivation
 
-**State of the Field**: Concept Customization uses 3–5 reference images to teach T2I models personalized concepts (subjects, styles, etc.). Mainstream approaches fall into tuning-free methods (e.g., DreamO, UNO, which encode reference image features for injection) and tuning-based methods (e.g., DreamBooth full-parameter fine-tuning, LoRA low-rank fine-tuning).
+**Background**: Concept Customization uses 3–5 reference images to teach T2I models personalized concepts (subjects, styles, etc.). Mainstream approaches fall into tuning-free methods (e.g., DreamO, UNO, which encode reference image features for injection) and tuning-based methods (e.g., DreamBooth full-parameter fine-tuning, LoRA low-rank fine-tuning).
 
 **Limitations of Prior Work**: Existing methods focus on high fidelity and multi-concept customization while overlooking two critical issues:
    - **Original behavior corruption**: After learning [V] dog, non-target elements (background, style, lighting) are unintentionally altered, because redundant information in limited reference images cannot be disentangled from the target concept.
    - **Original capability degradation**: Text-following ability and image quality decline after fine-tuning; KL divergence visualization reveals significant distribution drift.
 
-**Root Cause**: Existing methods treat all language–visual knowledge in the customization set as the learning source. However, with only 3–5 reference images, the model cannot distinguish the target concept from redundant background information. Furthermore, the learning objective lacks explicit consideration of the original model, causing distribution drift during concept learning.
+**Key Challenge**: Existing methods treat all language–visual knowledge in the customization set as the learning source. However, with only 3–5 reference images, the model cannot distinguish the target concept from redundant background information. Furthermore, the learning objective lacks explicit consideration of the original model, causing distribution drift during concept learning.
 
-**Starting Point**: Inspired by the implicit guidance formulation of Classifier-Free Guidance (CFG)—which treats conditional generation as "unconditional prediction + implicit conditional guidance"—concept customization can analogously be viewed as "original conditional prediction + implicit target concept guidance." This decoupled formulation naturally supports learning new concepts while preserving the original model.
+**Key Insight**: Inspired by the implicit guidance formulation of Classifier-Free Guidance (CFG)—which treats conditional generation as "unconditional prediction + implicit conditional guidance"—concept customization can analogously be viewed as "original conditional prediction + implicit target concept guidance." This decoupled formulation naturally supports learning new concepts while preserving the original model.
 
 **Core Idea**: $v_t^{PureCC} = v_t^{original} + \lambda^{\star} \cdot v_t^{target}$, where the original prediction is provided by the trainable model (preserving original capabilities), the target guidance is provided by the frozen extractor (clean concept representation), and $\lambda^{\star}$ adaptively balances the two via projection error.
 

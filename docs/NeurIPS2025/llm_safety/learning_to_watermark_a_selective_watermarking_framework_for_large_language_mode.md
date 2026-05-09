@@ -28,15 +28,15 @@ This paper proposes LTW (Learning to Watermark), a framework that employs a ligh
 
 ## Background & Motivation
 
-**State of the Field**: The rapid development of LLMs has introduced risks related to copyright infringement and misuse, making watermarking techniques (e.g., KGW, Unigram) essential tools for detecting AI-generated text. KGW embeds detectable signals by partitioning the vocabulary into "green lists" and "red lists" and biasing token selection toward green-list tokens.
+**Background**: The rapid development of LLMs has introduced risks related to copyright infringement and misuse, making watermarking techniques (e.g., KGW, Unigram) essential tools for detecting AI-generated text. KGW embeds detectable signals by partitioning the vocabulary into "green lists" and "red lists" and biasing token selection toward green-list tokens.
 
 **Limitations of Prior Work**: Existing watermarking methods face a fundamental trade-off between detectability and text quality—systematically shifting token selection degrades semantic coherence. TS-watermark restricts user flexibility in parameter tuning; NS-watermark significantly slows generation speed and yields fragile detectability; EXP-edit incurs prohibitively slow detection.
 
-**Root Cause**: Selective watermarking—applying watermarks only to a subset of tokens—is a promising direction for resolving the quality–detectability trade-off. However, the existing method SWEET relies solely on an entropy threshold as the selection criterion, requiring extensive grid search for manual tuning and ignoring important information such as semantic context.
+**Key Challenge**: Selective watermarking—applying watermarks only to a subset of tokens—is a promising direction for resolving the quality–detectability trade-off. However, the existing method SWEET relies solely on an entropy threshold as the selection criterion, requiring extensive grid search for manual tuning and ignoring important information such as semantic context.
 
-**Paper Goals**: To automatically learn optimal watermark-application decisions—determining when to watermark a token and when not to.
+**Goal**: To automatically learn optimal watermark-application decisions—determining when to watermark a token and when not to.
 
-**Starting Point**: The selective watermarking decision is modeled as the output of a learnable network, with multi-objective optimization simultaneously targeting the two conflicting objectives of detectability and text quality.
+**Key Insight**: The selective watermarking decision is modeled as the output of a learnable network, with multi-objective optimization simultaneously targeting the two conflicting objectives of detectability and text quality.
 
 **Core Idea**: A lightweight MLP is trained as a "selector" that integrates semantic embeddings, token entropy, and the watermarking ratio, using MGDA to find the Pareto-optimal solution between detectability and quality.
 

@@ -28,15 +28,15 @@ This work presents the first application of Conformal Prediction to document sum
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have substantially improved summarization quality; however, in high-stakes domains such as healthcare, law, and finance, the omission of critical information from summaries can have severe consequences. Existing summarization approaches—whether extractive or abstractive—offer no guarantees on the coverage of key content.
+**Background**: LLMs have substantially improved summarization quality; however, in high-stakes domains such as healthcare, law, and finance, the omission of critical information from summaries can have severe consequences. Existing summarization approaches—whether extractive or abstractive—offer no guarantees on the coverage of key content.
 
 **Limitations of Prior Work**: (a) Abstractive LLM summarization is prone to hallucination and provides no control over information coverage; (b) extractive methods are more faithful but lack theoretical guarantees; (c) users cannot express requirements such as "I want at least 80% of important information to be retained."
 
-**Root Cause**: Summarization inherently demands compression (shorter is better), whereas safety-critical scenarios require completeness (important information must not be omitted)—a controllable trade-off between conciseness and completeness is needed.
+**Key Challenge**: Summarization inherently demands compression (shorter is better), whereas safety-critical scenarios require completeness (important information must not be omitted)—a controllable trade-off between conciseness and completeness is needed.
 
-**Paper Goals**: To provide formal statistical guarantees for summarization—retaining $\geq \beta$ proportion of important sentences with probability $\geq 1-\alpha$.
+**Goal**: To provide formal statistical guarantees for summarization—retaining $\geq \beta$ proportion of important sentences with probability $\geq 1-\alpha$.
 
-**Starting Point**: Conformal Prediction has delivered distribution-free guarantees in classification, regression, and QA. This paper extends it from a *precision guarantee* (conformal factuality ensuring retained claims are factual) to a *recall guarantee* (ensuring important sentences are retained).
+**Key Insight**: Conformal Prediction has delivered distribution-free guarantees in classification, regression, and QA. This paper extends it from a *precision guarantee* (conformal factuality ensuring retained claims are factual) to a *recall guarantee* (ensuring important sentences are retained).
 
 **Core Idea**: Find an importance score threshold $\hat{q}$ on a calibration set such that summaries filtered by this threshold retain $\geq \beta$ of important sentences with probability $\geq 1-\alpha$.
 

@@ -29,15 +29,15 @@ PF-RPN replaces text/image prompts with learnable visual embeddings and introduc
 
 ## Background & Motivation
 
-**State of the Field**: Region Proposal Networks (RPNs) are a core component of object detection, responsible for generating candidate bounding boxes. Open-vocabulary detection (OVD) models such as Grounding DINO and YOLO-World leverage textual category names or exemplar images as prompts to localize objects, demonstrating cross-domain generalization capability.
+**Background**: Region Proposal Networks (RPNs) are a core component of object detection, responsible for generating candidate bounding boxes. Open-vocabulary detection (OVD) models such as Grounding DINO and YOLO-World leverage textual category names or exemplar images as prompts to localize objects, demonstrating cross-domain generalization capability.
 
 **Limitations of Prior Work**: OVD methods rely on external prompts (category names or reference images), which are often unavailable in real-world scenarios—such as industrial defect inspection and underwater object detection, where neither category labels nor reference images can be obtained in advance. Although some prompt-free OVD methods (e.g., GenerateU, DetCLIPv3) utilize large vision-language models (VLMs) to generate textual descriptions and eliminate manual prompts, they introduce substantial memory and latency overhead.
 
-**Root Cause**: Achieving prompt-free universal object localization requires avoiding both external text/image inputs and computationally expensive generative VLMs. A lightweight and efficient substitute for text embeddings must be identified.
+**Key Challenge**: Achieving prompt-free universal object localization requires avoiding both external text/image inputs and computationally expensive generative VLMs. A lightweight and efficient substitute for text embeddings must be identified.
 
-**Paper Goals**: To design a lightweight region proposal network that localizes arbitrary objects in unseen domains using only visual features, without requiring any external prompt.
+**Goal**: To design a lightweight region proposal network that localizes arbitrary objects in unseen domains using only visual features, without requiring any external prompt.
 
-**Starting Point**: The authors observe that text embeddings in OVD models essentially serve as query signals for matching visual features; therefore, a **learnable visual embedding** can replace text embeddings and be dynamically updated using the visual features of the input image itself. Two further observations are made: (1) intra-object features exhibit stronger localization capability than learnable embeddings, and (2) queries near object centers produce more accurate proposals than those near object boundaries.
+**Key Insight**: The authors observe that text embeddings in OVD models essentially serve as query signals for matching visual features; therefore, a **learnable visual embedding** can replace text embeddings and be dynamically updated using the visual features of the input image itself. Two further observations are made: (1) intra-object features exhibit stronger localization capability than learnable embeddings, and (2) queries near object centers produce more accurate proposals than those near object boundaries.
 
 **Core Idea**: Replace text prompts with learnable visual embeddings, and achieve prompt-free universal object localization through adaptive aggregation of multi-scale visual features and iterative refinement via cascaded self-prompting.
 

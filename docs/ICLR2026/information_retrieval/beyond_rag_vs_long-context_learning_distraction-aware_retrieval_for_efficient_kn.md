@@ -27,15 +27,15 @@ This paper proposes LDAR (Learning Distraction-Aware Retrieval), a lightweight a
 
 ## Background & Motivation
 
-**State of the Field**: RAG augments LLM generation by retrieving external passages and remains the dominant approach for mitigating factual errors and knowledge staleness in LLMs. The recent expansion of LLM context windows to 128K+ tokens has given rise to "long-context" (LC) alternatives that feed complete documents directly to the model.
+**Background**: RAG augments LLM generation by retrieving external passages and remains the dominant approach for mitigating factual errors and knowledge staleness in LLMs. The recent expansion of LLM context windows to 128K+ tokens has given rise to "long-context" (LC) alternatives that feed complete documents directly to the model.
 
 **Limitations of Prior Work**: Long-context methods suffer from three issues: (i) poor token efficiency, as processing large amounts of redundant context wastes compute; (ii) the "lost-in-the-middle" phenomenon, where models struggle to recall information at intermediate positions; and (iii) severe distraction for capacity-limited models, ultimately degrading output quality. Although conventional RAG with top-$k$ retrieval is efficient, a fixed $k$ cannot adapt to the varying processing capacities of different LLMs.
 
-**Root Cause**: Retrieving more passages increases information coverage but simultaneously introduces more distracting passages, yielding an inverted-U performance curve. More critically, the optimal retrieval strategy depends on LLM capacity (stronger models tolerate more distraction) as well as combinatorial interaction effects among passages—passages that each individually support a correct answer may collectively lead to an incorrect one.
+**Key Challenge**: Retrieving more passages increases information coverage but simultaneously introduces more distracting passages, yielding an inverted-U performance curve. More critically, the optimal retrieval strategy depends on LLM capacity (stronger models tolerate more distraction) as well as combinatorial interaction effects among passages—passages that each individually support a correct answer may collectively lead to an incorrect one.
 
-**Paper Goals**: How can one adaptively select a passage set that minimizes the influence of distracting passages for a given LLM capacity while ensuring sufficient information coverage?
+**Goal**: How can one adaptively select a passage set that minimizes the influence of distracting passages for a given LLM capacity while ensuring sufficient information coverage?
 
-**Starting Point**: The authors observe that distraction effects depend not only on individual passage relevance but also on the combination of retrieved passages—even when each passage individually yields a correct answer, their joint retrieval may produce an incorrect one. Simple text-based reranking is therefore insufficient; retrieval strategy must be learned from the perspective of the similarity distribution.
+**Key Insight**: The authors observe that distraction effects depend not only on individual passage relevance but also on the combination of retrieved passages—even when each passage individually yields a correct answer, their joint retrieval may produce an incorrect one. Simple text-based reranking is therefore insufficient; retrieval strategy must be learned from the perspective of the similarity distribution.
 
 **Core Idea**: Train a lightweight neural network that operates solely on the query-passage cosine similarity distribution, selecting passages by sampling a continuous quantile band via Beta distribution, thereby minimizing distraction to the LLM.
 

@@ -28,15 +28,15 @@ This paper extends Stochastic Parameter Decomposition (SPD) to Transformers by d
 
 ## Background & Motivation
 
-**State of the Field**: Mechanistic interpretability has proceeded in two waves — the first focused on individual neurons but was limited by polysemanticity; the second shifted to activation space, where sparse autoencoders (SAEs) have uncovered large numbers of interpretable concepts. However, SAEs suffer from feature absorption and splitting.
+**Background**: Mechanistic interpretability has proceeded in two waves — the first focused on individual neurons but was limited by polysemanticity; the second shifted to activation space, where sparse autoencoders (SAEs) have uncovered large numbers of interpretable concepts. However, SAEs suffer from feature absorption and splitting.
 
 **Limitations of Prior Work**: Activation-space methods only answer "what is activated given an input" and cannot decompose the model itself into a small set of reusable mechanisms. Parameter-space methods are theoretically more fundamental, as gradient descent directly writes mechanisms into weights.
 
-**Root Cause**: SPD had previously been validated only on toy models and could not handle sequential data (Transformers), leaving a gap between toy settings and real models unaddressed.
+**Key Challenge**: SPD had previously been validated only on toy models and could not handle sequential data (Transformers), leaving a gap between toy settings and real models unaddressed.
 
-**Paper Goals**: Extend SPD to Transformers and verify whether parameter-space decomposition can recover known circuits and discover interpretable subcomponents.
+**Goal**: Extend SPD to Transformers and verify whether parameter-space decomposition can recover known circuits and discover interpretable subcomponents.
 
-**Starting Point**: SPD decomposes weights into sparse rank-1 matrices $W_c^l = \vec{U_c^l} \otimes \vec{V_c^l}$ and learns a causal importance function. A new causal importance formulation is designed to account for sequence position dependence.
+**Key Insight**: SPD decomposes weights into sparse rank-1 matrices $W_c^l = \vec{U_c^l} \otimes \vec{V_c^l}$ and learns a causal importance function. A new causal importance formulation is designed to account for sequence position dependence.
 
 **Core Idea**: Introduce a position-aware attention-based causal importance function and a partial reconstruction loss, enabling SPD to decompose Transformers and extract interpretable parameter-space mechanisms.
 

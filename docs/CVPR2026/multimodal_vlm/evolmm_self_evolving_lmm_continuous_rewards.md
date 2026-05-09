@@ -28,15 +28,15 @@ This paper proposes EvoLMM, a fully unsupervised self-evolving framework that de
 
 ## Background & Motivation
 
-**State of the Field**: Large multimodal models (LMMs) have made substantial progress in visual reasoning, yet their training pipelines still depend on (a) human-annotated data and (b) external reward models or evaluators, limiting autonomy and scalability.
+**Background**: Large multimodal models (LMMs) have made substantial progress in visual reasoning, yet their training pipelines still depend on (a) human-annotated data and (b) external reward models or evaluators, limiting autonomy and scalability.
 
 **Limitations of Prior Work**: Self-evolving methods exist in the LLM domain (e.g., SQLM, Proposer-Solver-Judge), but applying them directly to multimodal settings introduces problems: discrete majority-voting rewards produce a large proportion of zero-reward updates during early-stage visual reasoning training, leading to instability. Existing multimodal self-improvement methods (ViPER, Vision-Zero) still rely on structured intermediate signals.
 
-**Root Cause**: Self-evolution requires effective internal training signals; however, discrete rewards cannot provide meaningful gradient feedback during the early phase when model outputs are highly variable, causing optimization stagnation.
+**Key Challenge**: Self-evolution requires effective internal training signals; however, discrete rewards cannot provide meaningful gradient feedback during the early phase when model outputs are highly variable, causing optimization stagnation.
 
-**Paper Goals**: Enable LMMs to self-improve multimodal reasoning capabilities through internal consistency, under fully unsupervised conditions.
+**Goal**: Enable LMMs to self-improve multimodal reasoning capabilities through internal consistency, under fully unsupervised conditions.
 
-**Starting Point**: Replace discrete majority voting with a continuous self-consistency reward to supply smooth gradient signals; use entropy-guided Proposer rewards to realize adaptive curriculum learning.
+**Key Insight**: Replace discrete majority voting with a continuous self-consistency reward to supply smooth gradient signals; use entropy-guided Proposer rewards to realize adaptive curriculum learning.
 
 **Core Idea**: Continuous self-consistency rewards enable the Proposer and Solver to co-evolve smoothly, continuously improving visual reasoning using only raw images.
 

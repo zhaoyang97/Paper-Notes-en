@@ -29,15 +29,15 @@ A fully convolutional architecture that unifies hierarchical hyperprior, Masked 
 
 ## Background & Motivation
 
-**State of the Field**: End-to-end learned image compression has surpassed traditional codecs (JPEG/JPEG2000) by jointly optimizing analysis transforms, quantization, and entropy models for superior rate-distortion trade-offs. Transformer/attention architectures and hybrid entropy models have continually pushed the performance frontier.
+**Background**: End-to-end learned image compression has surpassed traditional codecs (JPEG/JPEG2000) by jointly optimizing analysis transforms, quantization, and entropy models for superior rate-distortion trade-offs. Transformer/attention architectures and hybrid entropy models have continually pushed the performance frontier.
 
 **Limitations of Prior Work**: (1) Transformer/attention-based compression models incur heavy computation and slow inference, making deployment difficult; (2) ConvLSTM context models require maintaining hidden states across large regions and suffer from high latency due to strict serial decoding; (3) pure channel autoregression (Minnen & Singh) discards spatial local correlations, while pure spatial autoregression introduces decoding bottlenecks.
 
-**Root Cause**: The trade-off between modeling precision and computational efficiency — more expressive models better estimate the probability distribution of latent representations, but at the cost of escalating inference overhead and parameter counts.
+**Key Challenge**: The trade-off between modeling precision and computational efficiency — more expressive models better estimate the probability distribution of latent representations, but at the cost of escalating inference overhead and parameter counts.
 
-**Paper Goals**: Achieve state-of-the-art rate-distortion efficiency using a purely convolutional architecture, without relying on Transformers or recurrent components, while maintaining manageable parameter counts and inference speed.
+**Goal**: Achieve state-of-the-art rate-distortion efficiency using a purely convolutional architecture, without relying on Transformers or recurrent components, while maintaining manageable parameter counts and inference speed.
 
-**Starting Point**: Unify four complementary probabilistic modeling components — hierarchical hyperprior, masked spatial autoregression, channel-conditional modeling, and SE excitation — into a single VAE framework, where each component serves a distinct role rather than replacing the others.
+**Key Insight**: Unify four complementary probabilistic modeling components — hierarchical hyperprior, masked spatial autoregression, channel-conditional modeling, and SE excitation — into a single VAE framework, where each component serves a distinct role rather than replacing the others.
 
 **Core Idea**: Rather than pursuing larger and deeper models, the paper proposes more refined modeling of global, spatial, and channel-wise dependencies within a convolutional framework.
 

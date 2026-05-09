@@ -29,15 +29,15 @@ This paper proposes UnionCut — a foreground union detection method based on mi
 
 ## Background & Motivation
 
-**State of the Field**: Unsupervised object discovery (UOD) aims to detect and segment objects in images without manual annotations. Recent UOD methods based on self-supervised representation learning (especially DINO) have achieved notable progress, including LOST, TokenCut, FOUND, and CutLER, which leverage object location information encoded in the last-layer attention maps of ViTs.
+**Background**: Unsupervised object discovery (UOD) aims to detect and segment objects in images without manual annotations. Recent UOD methods based on self-supervised representation learning (especially DINO) have achieved notable progress, including LOST, TokenCut, FOUND, and CutLER, which leverage object location information encoded in the last-layer attention maps of ViTs.
 
 **Limitations of Prior Work**: Without ground-truth annotations, existing UOD methods face two core challenges: (1) they cannot reliably determine whether a discovered region is foreground or background — potentially returning background regions as objects; and (2) they do not know when to stop discovery — the number of objects in an image is unknown, and a fixed number of iterations often leads to under- or over-segmentation.
 
-**Root Cause**: Existing methods rely on heuristic foreground priors to address these issues (e.g., "foreground area is smaller than background," "foreground does not occupy all four image corners"), but such priors rest on simplistic assumptions and frequently fail in complex scenes. For instance, MaskCut may return background regions as discoveries or miss some objects in an image.
+**Key Challenge**: Existing methods rely on heuristic foreground priors to address these issues (e.g., "foreground area is smaller than background," "foreground does not occupy all four image corners"), but such priors rest on simplistic assumptions and frequently fail in complex scenes. For instance, MaskCut may return background regions as discoveries or miss some objects in an image.
 
-**Paper Goals**: To design a mathematically guaranteed and robust foreground prior method capable of detecting the union of all foreground regions in an image, enabling UOD algorithms to accurately identify foreground and control termination of exploration.
+**Goal**: To design a mathematically guaranteed and robust foreground prior method capable of detecting the union of all foreground regions in an image, enabling UOD algorithms to accurately identify foreground and control termination of exploration.
 
-**Starting Point**: The authors observe that foreground detection can be framed as an ensemble learning problem — a large number of weak classifiers (one per patch) vote on whether each location is foreground or background, with ensemble theory providing robustness guarantees.
+**Key Insight**: The authors observe that foreground detection can be framed as an ensemble learning problem — a large number of weak classifiers (one per patch) vote on whether each location is foreground or background, with ensemble theory providing robustness guarantees.
 
 **Core Idea**: Create 784 Unit Voters (UVs), each seeded by a single patch, which use minimum cut to identify regions similar to the seed; aggregating all UV outputs yields a foreground union heatmap with mathematically guaranteed robustness.
 

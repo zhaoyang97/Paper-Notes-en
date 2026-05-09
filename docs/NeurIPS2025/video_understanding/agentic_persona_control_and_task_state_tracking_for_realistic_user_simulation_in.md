@@ -28,15 +28,15 @@ A three-agent collaborative framework for realistic user simulation is proposed,
 
 ## Background & Motivation
 
-**State of the Field**: Conversational AI systems require large-scale testing. LLM-driven user simulation is a viable alternative to human testing, yet single-model approaches struggle to balance persona consistency, task accuracy, and behavioral naturalness simultaneously.
+**Background**: Conversational AI systems require large-scale testing. LLM-driven user simulation is a viable alternative to human testing, yet single-model approaches struggle to balance persona consistency, task accuracy, and behavioral naturalness simultaneously.
 
 **Limitations of Prior Work**: (a) A single LLM bears the concurrent responsibilities of state tracking, behavior modeling, and response generation, causing persona drift due to role overload; (b) static test sets fail to capture the dynamics of multi-turn dialogue; (c) decision traces lack interpretability.
 
-**Root Cause**: Simulation must simultaneously satisfy three mutually constraining objectives — strict persona adherence (consistency), accurate task completion (state tracking), and natural behavioral variation (diversity).
+**Key Challenge**: Simulation must simultaneously satisfy three mutually constraining objectives — strict persona adherence (consistency), accurate task completion (state tracking), and natural behavioral variation (diversity).
 
-**Paper Goals**: By decomposing responsibilities across specialized agents, each agent is made responsible for one core dimension, enabling high-quality user simulation through collaboration.
+**Goal**: By decomposing responsibilities across specialized agents, each agent is made responsible for one core dimension, enabling high-quality user simulation through collaboration.
 
-**Starting Point**: An analogy to human cognition — working memory (State Tracking Agent monitors progress), behavioral planning (MAG Agent determines *how* to respond based on persona and state), and language generation (User Agent synthesizes the final response).
+**Key Insight**: An analogy to human cognition — working memory (State Tracking Agent monitors progress), behavioral planning (MAG Agent determines *how* to respond based on persona and state), and language generation (User Agent synthesizes the final response).
 
 **Core Idea**: Three specialized agents are each responsible for "progress tracking / behavior decision / response generation," collaborating through structured protocols to realize interpretable, controllable, and realistic user simulation.
 

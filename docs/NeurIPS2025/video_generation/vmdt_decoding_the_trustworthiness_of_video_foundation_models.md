@@ -27,15 +27,15 @@ content_hash: f4d3d5ee83326313
 This paper introduces VMDT (Video-Modal DecodingTrust), the first unified benchmark platform for evaluating the trustworthiness of T2V and V2T video foundation models across five dimensions—safety, hallucination, fairness, privacy, and adversarial robustness—covering large-scale assessments of 7 T2V and 19 V2T models, and revealing the complex relationship between model scale and trustworthiness.
 
 ## Background & Motivation
-**State of the Field**: AI trustworthiness evaluation has predominantly focused on LLMs and image models (e.g., DecodingTrust, MMDT), leaving the video modality without a systematic trustworthiness benchmark. Video foundation models (VFMs) are rapidly advancing, yet their trustworthiness evaluation lags significantly behind.
+**Background**: AI trustworthiness evaluation has predominantly focused on LLMs and image models (e.g., DecodingTrust, MMDT), leaving the video modality without a systematic trustworthiness benchmark. Video foundation models (VFMs) are rapidly advancing, yet their trustworthiness evaluation lags significantly behind.
 
 **Limitations of Prior Work**: The video modality presents unique challenges—such as temporal risks (harmful content only manifesting during continuous playback) and photosensitive epilepsy triggers (flickering effects undetectable in static frames)—that are overlooked in image-based evaluation.
 
-**Root Cause**: While VFM capabilities are rapidly improving, safety alignment, fairness control, and privacy protection mechanisms remain severely insufficient, and no unified platform exists to measure and track progress.
+**Key Challenge**: While VFM capabilities are rapidly improving, safety alignment, fairness control, and privacy protection mechanisms remain severely insufficient, and no unified platform exists to measure and track progress.
 
-**Paper Goals**: To construct the first trustworthiness evaluation platform for video models covering both T2V and V2T directions across five key dimensions.
+**Goal**: To construct the first trustworthiness evaluation platform for video models covering both T2V and V2T directions across five key dimensions.
 
-**Starting Point**: Drawing on the evaluation frameworks of DecodingTrust (text) and MMDT (image), the authors design dedicated datasets and metrics tailored to the specific characteristics of the video modality.
+**Key Insight**: Drawing on the evaluation frameworks of DecodingTrust (text) and MMDT (image), the authors design dedicated datasets and metrics tailored to the specific characteristics of the video modality.
 
 **Core Idea**: Decompose video model trustworthiness into five orthogonal dimensions—safety, hallucination, fairness, privacy, and adversarial robustness—and construct dedicated datasets and evaluation methods for each, forming a unified benchmark platform.
 

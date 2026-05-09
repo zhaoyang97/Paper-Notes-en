@@ -28,15 +28,15 @@ This paper reformulates dynamic regret minimization as a static regret problem i
 
 ## Background & Motivation
 
-**State of the Field**: In online convex optimization (OCO), a learner selects $w_t \in \mathcal{W}$ at each round, and the environment reveals a convex loss $\ell_t$. The classical objective is to minimize **static regret** relative to a fixed comparator. Under non-stationary environments, the goal shifts to minimizing **dynamic regret** relative to a time-varying comparator sequence $u_1,\dots,u_T$.
+**Background**: In online convex optimization (OCO), a learner selects $w_t \in \mathcal{W}$ at each round, and the environment reveals a convex loss $\ell_t$. The classical objective is to minimize **static regret** relative to a fixed comparator. Under non-stationary environments, the goal shifts to minimizing **dynamic regret** relative to a time-varying comparator sequence $u_1,\dots,u_T$.
 
 **Limitations of Prior Work**: Existing dynamic regret algorithms face three challenges: (a) achieving the optimal $\sqrt{P_T}$ dependence requires prior knowledge of the time horizon $T$, or relies on the doubling trick, which performs poorly in practice; (b) existing dynamic-to-static reductions apply only to linear losses; (c) the curvature of the loss function cannot be exploited to obtain tighter bounds.
 
-**Root Cause**: The approach of stacking comparator sequences into high-dimensional vectors (Jacobsen & Orabona 2024) is limited by finite-dimensional feature spaces and the linear loss assumption, making it ill-suited for infinite-dimensional designs and nonlinear losses.
+**Key Challenge**: The approach of stacking comparator sequences into high-dimensional vectors (Jacobsen & Orabona 2024) is limited by finite-dimensional feature spaces and the linear loss assumption, making it ill-suited for infinite-dimensional designs and nonlinear losses.
 
-**Paper Goals**: (a) Achieve optimal $\sqrt{P_T}$ dependence without prior knowledge of $T$; (b) generalize the reduction to arbitrary convex losses; (c) exploit loss curvature to obtain bounds of the form $\mathcal{O}(\|u\|_{\mathcal{H}}^2 + d_{\text{eff}}(\lambda)\ln T)$.
+**Goal**: (a) Achieve optimal $\sqrt{P_T}$ dependence without prior knowledge of $T$; (b) generalize the reduction to arbitrary convex losses; (c) exploit loss curvature to obtain bounds of the form $\mathcal{O}(\|u\|_{\mathcal{H}}^2 + d_{\text{eff}}(\lambda)\ln T)$.
 
-**Starting Point**: The key observation is that competing against an arbitrary comparator sequence is equivalent to competing against a fixed function $u(\cdot)$ satisfying $u(t) = u_t$. Embedding this function into an RKHS reduces dynamic regret to static regret in function space.
+**Key Insight**: The key observation is that competing against an arbitrary comparator sequence is equivalent to competing against a fixed function $u(\cdot)$ satisfying $u(t) = u_t$. Embedding this function into an RKHS reduces dynamic regret to static regret in function space.
 
 **Core Idea**: Dynamic regret equals kernelized static regret in an RKHS; the relationship between the RKHS norm and path length is controlled by designing an appropriate kernel function.
 

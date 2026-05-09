@@ -29,15 +29,15 @@ This paper introduces Finch (FinWorkBench), a finance and accounting workflow be
 
 ## Background & Motivation
 
-**State of the Field**: Frontier AI systems (Claude, ChatGPT, Gemini, Copilot) are increasingly embedded in enterprise daily workflows. Finance & Accounting (F&A) is a high-stakes, knowledge-intensive domain critical to every organization. AI-assisted tools are having a growing impact on document drafting, data exploration, and spreadsheet manipulation.
+**Background**: Frontier AI systems (Claude, ChatGPT, Gemini, Copilot) are increasingly embedded in enterprise daily workflows. Finance & Accounting (F&A) is a high-stakes, knowledge-intensive domain critical to every organization. AI-assisted tools are having a growing impact on document drafting, data exploration, and spreadsheet manipulation.
 
 **Limitations of Prior Work**: (1) Real-world F&A tasks are inherently messy — artifacts are interconnected across heterogeneous spreadsheets, PDFs, and other documents, and undergo multi-version collaborative editing; (2) Spreadsheets contain complex structures — cross-sheet references, irregular layouts, merged cells, implicit formula chains, and charts; (3) Workflows are long-horizon — requiring multi-step reasoning spanning data entry, editing, retrieval, computation, modeling, validation, and report generation; (4) Existing benchmarks typically use clean, single-table inputs that fail to reflect real-world complexity.
 
-**Root Cause**: Can today's frontier AI agents genuinely handle the messy, long-horizon, knowledge-intensive workflows that domain professionals face daily?
+**Key Challenge**: Can today's frontier AI agents genuinely handle the messy, long-horizon, knowledge-intensive workflows that domain professionals face daily?
 
-**Paper Goals**: To construct the first truly enterprise-grade F&A workflow benchmark, sourced from real enterprise environments and preserving their original multimodal complexity.
+**Goal**: To construct the first truly enterprise-grade F&A workflow benchmark, sourced from real enterprise environments and preserving their original multimodal complexity.
 
-**Starting Point**: Mining real workflows from collaborative threads and spreadsheet version histories in the Enron email corpus — "existence precedes essence."
+**Key Insight**: Mining real workflows from collaborative threads and spreadsheet version histories in the Enron email corpus — "existence precedes essence."
 
 **Core Idea**: Workflows should be observed from real enterprise environments and then formally defined, rather than artificially designed. The benchmark is constructed via three pathways: email thread extraction, version diff analysis, and expert annotation.
 

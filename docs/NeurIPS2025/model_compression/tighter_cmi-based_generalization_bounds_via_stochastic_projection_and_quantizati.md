@@ -29,15 +29,15 @@ By incorporating **stochastic projection** and **lossy compression** into the CM
 
 ## Background & Motivation
 
-**State of the Field**: Information-theoretic methods are important tools for analyzing the generalization error of learning algorithms. Mutual information (MI) bounds [Xu & Raginsky 2017] and conditional mutual information (CMI) bounds [Steinke & Zakynthinou 2020] provide intuitive generalization guarantees—the less information the algorithm's output reveals about the training data, the better the generalization. CMI avoids the divergence of MI bounds in continuous/deterministic settings via a "super-sample" construction.
+**Background**: Information-theoretic methods are important tools for analyzing the generalization error of learning algorithms. Mutual information (MI) bounds [Xu & Raginsky 2017] and conditional mutual information (CMI) bounds [Steinke & Zakynthinou 2020] provide intuitive generalization guarantees—the less information the algorithm's output reveals about the training data, the better the generalization. CMI avoids the divergence of MI bounds in continuous/deterministic settings via a "super-sample" construction.
 
 **Limitations of Prior Work**: Recent work by Attias et al. [2024] and Livni [2023] constructs elegant counterexamples showing that classical CMI bounds become vacuous on certain stochastic convex optimization (SCO) problems—the generalization bound does not decay with training set size $n$, remaining at $\Theta(LR)$. This finding has even raised fundamental doubts about the practical utility of information-theoretic generalization bounds.
 
-**Root Cause**: The key insight of the counterexamples is that the hypothesis space dimension $D$ grows as $\Omega(n^4 \log n)$ with $n$ (overparameterization), causing the CMI term to explode. In practice, however, learning algorithms may only be meaningful in low-dimensional subspaces. Classical CMI bounds fail to exploit the structural property that the effective dimension of the model is far lower than its nominal dimension.
+**Key Challenge**: The key insight of the counterexamples is that the hypothesis space dimension $D$ grows as $\Omega(n^4 \log n)$ with $n$ (overparameterization), causing the CMI term to explode. In practice, however, learning algorithms may only be meaningful in low-dimensional subspaces. Classical CMI bounds fail to exploit the structural property that the effective dimension of the model is far lower than its nominal dimension.
 
-**Paper Goals**: (1) Fix the failure of CMI bounds on SCO counterexamples; (2) show that the new CMI bounds incorporating projection and compression still yield the correct $\mathcal{O}(1/\sqrt{n})$ generalization behavior; (3) prove that memorization is not necessary for good generalization.
+**Goal**: (1) Fix the failure of CMI bounds on SCO counterexamples; (2) show that the new CMI bounds incorporating projection and compression still yield the correct $\mathcal{O}(1/\sqrt{n})$ generalization behavior; (3) prove that memorization is not necessary for good generalization.
 
-**Starting Point**: Since the counterexamples rely on high-dimensional hypothesis spaces, compressing the model via random projection to a low-dimensional subspace plus quantization—while controlling the distortion introduced by the projection—can keep the CMI term bounded.
+**Key Insight**: Since the counterexamples rely on high-dimensional hypothesis spaces, compressing the model via random projection to a low-dimensional subspace plus quantization—while controlling the distortion introduced by the projection—can keep the CMI term bounded.
 
 **Core Idea**: Use a random projection $\Theta^\top W$ to compress the $D$-dimensional model to $d$ dimensions (where $d$ can be chosen as 1), then quantize to $\hat{W}$, so that the CMI bound depends on the low-dimensional $d$ rather than the potentially explosive $D$.
 

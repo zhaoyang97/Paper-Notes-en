@@ -26,15 +26,15 @@ content_hash: 33a8bdb47436a2a6
 To address the SFT performance plateau in chart-to-code generation, this paper proposes Multimodal Structured Reinforcement Learning (MSRL), which employs a dual-layer textual and visual reward function along with a two-stage RL strategy, achieving improvements of 6.2% and 9.9% on high-level metrics on ChartMimic and ReachQA respectively, establishing open-source SOTA and matching GPT-4o.
 
 ## Background & Motivation
-**State of the Field**: Multimodal large language models (MLLMs) have demonstrated strong performance on tasks such as visual question answering, yet remain limited in processing information-dense images (e.g., charts) and generating structured outputs (e.g., code). The chart-to-code generation task requires models to deeply understand visualizations and produce accurate plotting code, carrying significant practical value.
+**Background**: Multimodal large language models (MLLMs) have demonstrated strong performance on tasks such as visual question answering, yet remain limited in processing information-dense images (e.g., charts) and generating structured outputs (e.g., code). The chart-to-code generation task requires models to deeply understand visualizations and produce accurate plotting code, carrying significant practical value.
 
 **Limitations of Prior Work**: Existing approaches rely on SFT or DPO trained on synthetic data, which suffers from limited pattern diversity (synthetic data lacks real-world complexity) and poor generalization. Moreover, SFT has an inherent limitation—it assigns equal importance to every token in the target sequence, whereas plotting code is dominated by boilerplate (e.g., `plt.plot`) while critical information (data values, style parameters) appears infrequently.
 
-**Root Cause**: Scaling SFT data beyond a certain threshold yields diminishing returns, resulting in a **performance plateau effect**. Experiments demonstrate that scaling from 200k to 2.8M samples brings no further improvement beyond 2M, indicating that stacking more data cannot break this ceiling.
+**Key Challenge**: Scaling SFT data beyond a certain threshold yields diminishing returns, resulting in a **performance plateau effect**. Experiments demonstrate that scaling from 200k to 2.8M samples brings no further improvement beyond 2M, indicating that stacking more data cannot break this ceiling.
 
-**Paper Goals**: (1) Systematically verify the SFT performance ceiling; (2) Design effective RL strategies to surpass it; (3) Construct a large-scale, real-world chart-to-code training corpus.
+**Goal**: (1) Systematically verify the SFT performance ceiling; (2) Design effective RL strategies to surpass it; (3) Construct a large-scale, real-world chart-to-code training corpus.
 
-**Starting Point**: The authors observe that the uniform token-weighting mechanism of SFT is unable to prioritize critical tokens, whereas RL can target key content accuracy through customized reward functions. Additionally, purely text-based rewards ignore overall visual structure, motivating the introduction of visual feedback to form multi-granularity rewards.
+**Key Insight**: The authors observe that the uniform token-weighting mechanism of SFT is unable to prioritize critical tokens, whereas RL can target key content accuracy through customized reward functions. Additionally, purely text-based rewards ignore overall visual structure, motivating the introduction of visual feedback to form multi-granularity rewards.
 
 **Core Idea**: Drive a two-stage GRPO reinforcement learning pipeline with multi-granularity (textual + visual) reward functions to break the SFT performance plateau in chart-to-code generation.
 

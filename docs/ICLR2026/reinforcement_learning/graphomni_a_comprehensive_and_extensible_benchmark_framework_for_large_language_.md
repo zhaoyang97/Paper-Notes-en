@@ -28,15 +28,15 @@ This paper proposes GraphOmni, a benchmark framework that systematically evaluat
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have demonstrated remarkable performance on natural language tasks, and using LLMs to reason over graph-structured data serialized as text has emerged as a new research direction. Several benchmarks (NLGraph, GraphQA, GraphInstruct, etc.) have attempted to evaluate LLM graph reasoning, yet they exhibit significant blind spots in dimensional coverage.
+**Background**: LLMs have demonstrated remarkable performance on natural language tasks, and using LLMs to reason over graph-structured data serialized as text has emerged as a new research direction. Several benchmarks (NLGraph, GraphQA, GraphInstruct, etc.) have attempted to evaluate LLM graph reasoning, yet they exhibit significant blind spots in dimensional coverage.
 
 **Limitations of Prior Work**: As shown in Table 1, existing benchmarks typically focus on only one dimension at a time—NLGraph covers 5 prompting strategies but only 1 graph type and 1 serialization format; GraphQA includes 7 graph types but relies solely on plain-text serialization; GraphInstruct supports 3 serialization formats but only 1 prompting strategy. This "single-dimension tuning" evaluation paradigm cannot reveal interaction effects across dimensions, nor can it attribute performance gains to model capability, text representation, or instruction design. Moreover, most works lack random baselines, which may lead to inflated capability claims on class-imbalanced tasks (e.g., cycle detection with a 50% random baseline).
 
-**Root Cause**: Graph reasoning performance is highly sensitive to how graphs are presented to LLMs—for the same model and task, different serialization–prompt combinations can cause accuracy fluctuations of up to 40%. Existing work cannot quantify these interaction effects, let alone guide optimal configuration selection in practice.
+**Key Challenge**: Graph reasoning performance is highly sensitive to how graphs are presented to LLMs—for the same model and task, different serialization–prompt combinations can cause accuracy fluctuations of up to 40%. Existing work cannot quantify these interaction effects, let alone guide optimal configuration selection in practice.
 
-**Paper Goals**: (1) Construct a large-scale benchmark covering the full Cartesian product of three dimensions; (2) systematically quantify interaction effects among graph type, serialization format, and prompting strategy; (3) provide an automated mechanism for searching optimal configurations.
+**Goal**: (1) Construct a large-scale benchmark covering the full Cartesian product of three dimensions; (2) systematically quantify interaction effects among graph type, serialization format, and prompting strategy; (3) provide an automated mechanism for searching optimal configurations.
 
-**Starting Point**: The authors' core observation is that "the three dimensions are not independent—a serialization format effective for open-source models may in fact hurt closed-source models." Consequently, a full factorial evaluation is necessary to draw reliable conclusions.
+**Key Insight**: The authors' core observation is that "the three dimensions are not independent—a serialization format effective for open-source models may in fact hurt closed-source models." Consequently, a full factorial evaluation is necessary to draw reliable conclusions.
 
 **Core Idea**: Through a 7×7×9 full factorial evaluation combined with RL-guided combinatorial search, this work provides the first systematic characterization of the complete three-dimensional interaction landscape of "graph structure × text representation × prompting strategy" in LLM graph reasoning.
 

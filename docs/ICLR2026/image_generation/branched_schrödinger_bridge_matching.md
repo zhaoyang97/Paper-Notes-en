@@ -29,14 +29,14 @@ This paper proposes BranchSBM, a framework that extends Schrödinger Bridge Matc
 ## Background & Motivation
 Predicting intermediate trajectories between an initial and a target distribution is a central problem in generative modeling. Existing methods such as Flow Matching and Schrödinger Bridge Matching (SBM) effectively learn mappings between two distributions, but they model a **single stochastic path** and are inherently limited to unimodal transitions.
 
-**Root Cause**: Many real-world systems exhibit **branching dynamics**—i.e., evolution from a common origin into multiple distinct terminal distributions. Examples include:
+**Key Challenge**: Many real-world systems exhibit **branching dynamics**—i.e., evolution from a common origin into multiple distinct terminal distributions. Examples include:
 - **Cell fate differentiation**: A homogeneous progenitor population diverges into distinct cell types during development.
 - **Drug perturbation responses**: The same cell line may produce multiple different phenotypic outcomes following drug treatment.
 - **Path planning**: Multi-route navigation from a single origin to different destinations.
 
 Existing single-path SBM methods cannot model such branching behavior. When the target distribution is multimodal, single-branch approaches either suffer from mode collapse (converging only to the lowest-energy mode) or fail to accurately reach each terminal state.
 
-**Starting Point**: This work generalizes SBM to the branching setting—learning a set of branched Schrödinger bridges, each with an independent drift field and growth rate, to jointly describe population-level bifurcating dynamics from a single origin to multiple endpoints.
+**Key Insight**: This work generalizes SBM to the branching setting—learning a set of branched Schrödinger bridges, each with an independent drift field and growth rate, to jointly describe population-level bifurcating dynamics from a single origin to multiple endpoints.
 
 ## Method
 

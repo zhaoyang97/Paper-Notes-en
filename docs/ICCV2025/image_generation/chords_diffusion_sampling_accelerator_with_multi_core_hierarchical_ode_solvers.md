@@ -31,9 +31,9 @@ This paper proposes CHORDS, a training-free and model-agnostic diffusion samplin
 
 Diffusion models have become the dominant approach for high-fidelity image and video generation, yet their iterative sampling process incurs substantial computational overhead, severely limiting deployment in latency-sensitive scenarios such as real-time editing and streaming applications. Existing acceleration methods fall into two main categories: (1) distillation-based methods require additional training and may compromise quality; (2) efficient ODE solver-based methods offer limited further speedup under single-core settings.
 
-**Root Cause**: How can multi-GPU parallel resources be leveraged for significant acceleration without retraining or restricting model architecture? Existing multi-core methods either depend on specific architectures, require additional training, or lack flexible resource allocation.
+**Key Challenge**: How can multi-GPU parallel resources be leveraged for significant acceleration without retraining or restricting model architecture? Existing multi-core methods either depend on specific architectures, require additional training, or lack flexible resource allocation.
 
-**Starting Point**: Inspired by classical multigrid ODE acceleration algorithms, CHORDS treats multi-core diffusion sampling as an ODE solving pipeline, where fast but imprecise solvers can be hierarchically corrected using information from slow, accurate solvers—theoretically guaranteeing acceleration without degrading precision.
+**Key Insight**: Inspired by classical multigrid ODE acceleration algorithms, CHORDS treats multi-core diffusion sampling as an ODE solving pipeline, where fast but imprecise solvers can be hierarchically corrected using information from slow, accurate solvers—theoretically guaranteeing acceleration without degrading precision.
 
 ## Method
 

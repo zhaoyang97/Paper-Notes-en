@@ -30,13 +30,13 @@ This paper demonstrates that the training loss curves (TLCs) of LLM families "co
 
 ### State of the Field
 
-**State of the Field**: Scaling laws can predict final loss and μP enables learning rate transfer, but the predictability of complete TLCs has not been validated at practical LLM scales.
+**Background**: Scaling laws can predict final loss and μP enables learning rate transfer, but the predictability of complete TLCs has not been validated at practical LLM scales.
 
 **Limitations of Prior Work**:
 
 ### Root Cause
 
-**Root Cause**: Qiu et al. discovered the loss curve collapse phenomenon but validated it only at small scale, without testing on practical LLM training recipes.
+**Key Challenge**: Qiu et al. discovered the loss curve collapse phenomenon but validated it only at small scale, without testing on practical LLM training recipes.
 
 ### Limitations of Prior Work
 
@@ -48,7 +48,7 @@ This paper demonstrates that the training loss curves (TLCs) of LLM families "co
 
 **Core Finding**: The necessary and sufficient condition for loss curve collapse is that the optimization hyperparameters are optimal for a given data budget — collapse is a "fingerprint" of compute-optimal training.
 
-**Starting Point**: When all models are trained with the same tokens-per-parameter ($\text{TPP} = D/N$) and the AdamW timescale $\tau$ is set optimally, TLCs of models of different sizes fall onto the same universal curve after simple normalization.
+**Key Insight**: When all models are trained with the same tokens-per-parameter ($\text{TPP} = D/N$) and the AdamW timescale $\tau$ is set optimally, TLCs of models of different sizes fall onto the same universal curve after simple normalization.
 
 ## Method
 

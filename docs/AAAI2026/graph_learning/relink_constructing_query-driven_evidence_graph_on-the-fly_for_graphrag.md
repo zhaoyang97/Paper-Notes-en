@@ -28,17 +28,17 @@ This paper proposes a paradigm shift in GraphRAG from "build-then-reason" to "re
 
 ## Background & Motivation
 
-**State of the Field**: GraphRAG has emerged as a key approach to mitigate hallucination by leveraging knowledge graph (KG) structure to enhance LLM multi-hop reasoning. All existing GraphRAG methods follow a "build-then-reason" paradigm—first constructing a static KG, then performing reasoning over it.
+**Background**: GraphRAG has emerged as a key approach to mitigate hallucination by leveraging knowledge graph (KG) structure to enhance LLM multi-hop reasoning. All existing GraphRAG methods follow a "build-then-reason" paradigm—first constructing a static KG, then performing reasoning over it.
 
 **Limitations of Prior Work**:
 - **Inherent KG incompleteness**: Static KGs are naturally incomplete due to knowledge evolution and extraction errors, leading to broken reasoning chains. Existing KG completion methods perform "global completion," which often fails to provide the "local" facts required by specific queries.
 - **Low signal-to-noise ratio / distractor facts**: General-purpose KGs contain numerous facts that are topically related to a query but unhelpful for answering it (distractor facts). For example, when asking "where was someone buried," the relation "died in" is highly relevant but not the required "buried in."
 
-**Root Cause**: A static KG designed to serve all possible queries inevitably suffers from both incompleteness and noise.
+**Key Challenge**: A static KG designed to serve all possible queries inevitably suffers from both incompleteness and noise.
 
-**Paper Goals**: Achieve query-driven dynamic evidence graph construction that simultaneously addresses KG incompleteness and distractor facts.
+**Goal**: Achieve query-driven dynamic evidence graph construction that simultaneously addresses KG incompleteness and distractor facts.
 
-**Starting Point**: Transform the paradigm from "build-then-reason" to "reason-and-construct"—rather than navigating a static graph, construct a compact evidence graph in real time according to query demands.
+**Key Insight**: Transform the paradigm from "build-then-reason" to "reason-and-construct"—rather than navigating a static graph, construct a compact evidence graph in real time according to query demands.
 
 **Core Idea**: Dynamically construct query-specific evidence graphs via heterogeneous knowledge sources (high-precision KG + high-recall latent relation pool) unified by a query-driven ranker.
 

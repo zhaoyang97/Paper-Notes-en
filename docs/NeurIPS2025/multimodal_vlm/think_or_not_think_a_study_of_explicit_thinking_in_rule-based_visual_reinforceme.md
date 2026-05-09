@@ -33,7 +33,7 @@ Since DeepSeek-R1, rule-based RFT has achieved remarkable success in LLMs, with 
 
 However, a critical and overlooked question remains: **Is explicit thinking always necessary and beneficial in RFT?** Prior work has shown that reasoning yields limited gains on commonsense tasks and that overthinking can even degrade performance. Yet these findings focus exclusively on the inference stage; the effect of explicit thinking during training has not been systematically explored. Furthermore, since RFT requires generating multiple lengthy responses, its fine-tuning time and GPU memory consumption far exceed those of SFT, making the efficiency of the thinking process an increasingly pressing concern.
 
-The paper's **Starting Point** is the observation that, in classification tasks, response length drops sharply at a specific training step (rather than gradually increasing) while accuracy improves significantly—suggesting that thinking is unnecessary for certain visual tasks. Motivated by this insight, the authors propose No-Thinking-RFT and systematically compare four thinking strategies.
+The paper's **Key Insight** is the observation that, in classification tasks, response length drops sharply at a specific training step (rather than gradually increasing) while accuracy improves significantly—suggesting that thinking is unnecessary for certain visual tasks. Motivated by this insight, the authors propose No-Thinking-RFT and systematically compare four thinking strategies.
 
 ## Method
 

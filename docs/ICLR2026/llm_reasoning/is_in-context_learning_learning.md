@@ -30,7 +30,7 @@ This paper systematically investigates whether ICL constitutes genuine "learning
 
 ## Background & Motivation
 
-**State of the Field**: In-context learning (ICL) enables autoregressive language models to solve downstream tasks via next-token prediction without parameter updates, requiring only a small number of exemplars in the prompt. This capability has sparked extensive debate on whether LLMs can "learn" unseen tasks from a handful of demonstrations.
+**Background**: In-context learning (ICL) enables autoregressive language models to solve downstream tasks via next-token prediction without parameter updates, requiring only a small number of exemplars in the prompt. This capability has sparked extensive debate on whether LLMs can "learn" unseen tasks from a handful of demonstrations.
 
 **Limitations of Prior Work**:
 
@@ -39,9 +39,9 @@ This paper systematically investigates whether ICL constitutes genuine "learning
 - Prior studies lack systematic control over confounding factors such as memorisation, pretraining data leakage, and distributional shift
 - It remains unclear whether strong ICL performance stems from genuinely learning from demonstrations or from prior knowledge retrieval combined with pattern matching
 
-**Root Cause**: Although ICL formally resembles learning (inferring task rules from in-prompt exemplars), it is uncertain whether the autoregressive encoding mechanism provides sufficient inductive bias to support robust generalization and genuine knowledge acquisition — a question with direct implications for how LLMs should be understood and deployed.
+**Key Challenge**: Although ICL formally resembles learning (inferring task rules from in-prompt exemplars), it is uncertain whether the autoregressive encoding mechanism provides sufficient inductive bias to support robust generalization and genuine knowledge acquisition — a question with direct implications for how LLMs should be understood and deployed.
 
-**Paper Goals**: The paper addresses the question "Is ICL learning?" at both theoretical and empirical levels. It first formally proves that ICL satisfies the mathematical definition of learning, then conducts large-scale controlled ablation studies to characterize the practical boundaries of ICL's learning capacity, systematically eliminating confounds including memorisation, pretraining leakage, distributional shift, and prompt style.
+**Goal**: The paper addresses the question "Is ICL learning?" at both theoretical and empirical levels. It first formally proves that ICL satisfies the mathematical definition of learning, then conducts large-scale controlled ablation studies to characterize the practical boundaries of ICL's learning capacity, systematically eliminating confounds including memorisation, pretraining leakage, distributional shift, and prompt style.
 
 ## Method
 

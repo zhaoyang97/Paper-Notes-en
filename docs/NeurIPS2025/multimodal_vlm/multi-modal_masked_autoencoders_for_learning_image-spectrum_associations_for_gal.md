@@ -29,15 +29,15 @@ This work constructs GalaxiesML-Spectra, a large-scale multi-modal dataset of 13
 
 ## Background & Motivation
 
-**State of the Field**: Next-generation astronomical surveys (LSST, Euclid, etc.) will image billions of galaxies, yet acquiring spectra requires roughly 100× more observing time than imaging. Redshift $z$—quantifying spectral shifts due to cosmic expansion—is a fundamental cosmological observable, but precise redshifts require spectroscopy. Existing ML approaches include CNN/MLP-based photometric redshift estimation, AstroMAE (single-modal image MAE), and AstroCLIP (contrastive learning for joint image–spectrum embeddings).
+**Background**: Next-generation astronomical surveys (LSST, Euclid, etc.) will image billions of galaxies, yet acquiring spectra requires roughly 100× more observing time than imaging. Redshift $z$—quantifying spectral shifts due to cosmic expansion—is a fundamental cosmological observable, but precise redshifts require spectroscopy. Existing ML approaches include CNN/MLP-based photometric redshift estimation, AstroMAE (single-modal image MAE), and AstroCLIP (contrastive learning for joint image–spectrum embeddings).
 
 **Limitations of Prior Work**: (1) Most methods model only a single modality and cannot learn cross-modal associations. (2) AstroCLIP performs contrastive alignment without reconstruction and is validated only at low redshift $z < 0.5$. (3) MAE has not been explored in astronomical multi-modal settings.
 
-**Root Cause**: Upcoming surveys will generate vast numbers of images but almost no spectra. A method is needed that can learn physically meaningful spectral representations from images alone. The MAE training objective of "recovering the whole from partial observations" naturally simulates spectral absence scenarios.
+**Key Challenge**: Upcoming surveys will generate vast numbers of images but almost no spectra. A method is needed that can learn physically meaningful spectral representations from images alone. The MAE training objective of "recovering the whole from partial observations" naturally simulates spectral absence scenarios.
 
-**Paper Goals**: (1) Construct a large-scale astronomical dataset with images, spectra, and redshifts; (2) validate the feasibility of MMAE for multi-modal astronomical reconstruction and redshift regression; (3) evaluate model performance under complete spectral absence.
+**Goal**: (1) Construct a large-scale astronomical dataset with images, spectra, and redshifts; (2) validate the feasibility of MMAE for multi-modal astronomical reconstruction and redshift regression; (3) evaluate model performance under complete spectral absence.
 
-**Starting Point**: The MultiMAE framework is adopted to unify 5-band galaxy images and 1D spectra as patch tokens, trained with 75% masking for joint reconstruction, with an integrated redshift regression head. During training, spectra are fully masked for 50% of samples to simulate real survey conditions.
+**Key Insight**: The MultiMAE framework is adopted to unify 5-band galaxy images and 1D spectra as patch tokens, trained with 75% masking for joint reconstruction, with an integrated redshift regression head. During training, spectra are fully masked for 50% of samples to simulate real survey conditions.
 
 **Core Idea**: A multi-modal masked autoencoder learns shared representations of galaxy images and spectra, enabling redshift prediction at test time without any spectral input.
 

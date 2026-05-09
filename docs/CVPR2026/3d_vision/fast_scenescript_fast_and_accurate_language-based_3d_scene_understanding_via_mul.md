@@ -29,14 +29,14 @@ This paper proposes Fast SceneScript, which introduces multi-token prediction (M
 
 ## Background & Motivation
 
-1. **State of the Field**: Structured language model-based 3D perception methods such as SceneScript represent 3D scenes as token sequences (e.g., `[make_wall, x1, y1, z1, x2, y2, z2, height, thickness]`), enabling a single model architecture to handle multiple tasks including layout estimation, 3D object detection, and coarse-grained reconstruction.
+1. **Background**: Structured language model-based 3D perception methods such as SceneScript represent 3D scenes as token sequences (e.g., `[make_wall, x1, y1, z1, x2, y2, z2, height, thickness]`), enabling a single model architecture to handle multiple tasks including layout estimation, 3D object detection, and coarse-grained reconstruction.
 2. **Limitations of Prior Work**:
     - Autoregressive next-token prediction (NTP) is slow; inference latency grows with sequence length (e.g., 1176ms on Structured3D);
     - Directly applying MTP reduces inference steps but severely degrades accuracy (F1-Score drops from 0.913 to 0.840 with 8 heads);
     - MTP introduces $(n-1)$ additional token heads, substantially increasing parameter count (14M→23.67M).
-3. **Root Cause**: The trade-off between MTP speedup and token prediction accuracy, compounded by the overhead of additional parameters.
-4. **Paper Goals**: How to achieve multi-fold inference acceleration of structured language models while preserving accuracy with minimal parameter overhead?
-5. **Starting Point**: Structured language (vs. natural language) exhibits stronger determinism and weak inter-token coupling, making MTP more feasible; the key challenge is designing reliable token filtering strategies to reject inaccurate predictions.
+3. **Key Challenge**: The trade-off between MTP speedup and token prediction accuracy, compounded by the overhead of additional parameters.
+4. **Goal**: How to achieve multi-fold inference acceleration of structured language models while preserving accuracy with minimal parameter overhead?
+5. **Key Insight**: Structured language (vs. natural language) exhibits stronger determinism and weak inter-token coupling, making MTP more feasible; the key challenge is designing reliable token filtering strategies to reject inaccurate predictions.
 6. **Core Idea**: Predict multiple tokens via MTP, then filter unreliable tokens through SSD/CGD, retaining only the longest reliable prefix — a "predict aggressively, accept selectively" acceleration paradigm.
 
 ## Method

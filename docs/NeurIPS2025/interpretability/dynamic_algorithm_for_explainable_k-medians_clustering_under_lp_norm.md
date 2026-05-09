@@ -27,15 +27,15 @@ This paper presents the first explainable k-medians clustering algorithm for gen
 
 ## Background & Motivation
 
-**State of the Field**: Explainable clustering was introduced by Dasgupta et al. (2020), where clustering partitions are represented by threshold decision trees—each internal node applies a threshold comparison on a single feature, making cluster assignments transparent and traceable. The central question is the price of explainability: how well can the cost of a decision-tree clustering approximate the optimal unconstrained cost?
+**Background**: Explainable clustering was introduced by Dasgupta et al. (2020), where clustering partitions are represented by threshold decision trees—each internal node applies a threshold comparison on a single feature, making cluster assignments transparent and traceable. The central question is the price of explainability: how well can the cost of a decision-tree clustering approximate the optimal unconstrained cost?
 
 **Limitations of Prior Work**: The competitive ratio under the $\ell_1$ norm has been tightly characterized as $1 + H_{k-1}$; under $\ell_2$, the best known bound is $\tilde{O}(\log^{3/2} k)$, leaving room for improvement; no algorithm existed for general $\ell_p$ ($p > 2$); and all prior algorithms are static.
 
-**Root Cause**: General $\ell_p$ norms require more carefully designed random cut distributions—uniform random cuts yield a competitive ratio of $\Theta(k^{1-1/p})$. In the dynamic setting, the hierarchical structure of decision trees makes local updates more challenging.
+**Key Challenge**: General $\ell_p$ norms require more carefully designed random cut distributions—uniform random cuts yield a competitive ratio of $\Theta(k^{1-1/p})$. In the dynamic setting, the hierarchical structure of decision trees makes local updates more challenging.
 
-**Paper Goals**: (a) Design explainable k-medians algorithms for all finite $p \geq 1$ and improve the bound for $p=2$; (b) provide the first dynamic version.
+**Goal**: (a) Design explainable k-medians algorithms for all finite $p \geq 1$ and improve the bound for $p=2$; (b) provide the first dynamic version.
 
-**Starting Point**: Non-uniform random cuts with CDF $x^p/R_t^p$, combined with Poisson process timestamps to enable dynamic updates.
+**Key Insight**: Non-uniform random cuts with CDF $x^p/R_t^p$, combined with Poisson process timestamps to enable dynamic updates.
 
 **Core Idea**: Through $\ell_p$-adapted non-uniform random cuts and Poisson-timestamp-driven dynamic maintenance, the paper achieves near-optimal explainable clustering for all $\ell_p$ norms along with efficient dynamic updates for the first time.
 

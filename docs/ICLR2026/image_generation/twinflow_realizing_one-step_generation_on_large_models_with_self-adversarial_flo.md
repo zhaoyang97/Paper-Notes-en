@@ -41,9 +41,9 @@ Diffusion and flow matching models achieve excellent generation quality, but inf
 | Consistency Models (LCM/PCM) | 0 | 0–1 | Quality degrades sharply at NFE < 4 |
 | **TwinFlow (Ours)** | **0** | **0** | **No extra components; trainable at 20B** |
 
-**Root Cause**: One-step acceleration of large models requires an extremely simple and memory-efficient framework, yet all high-quality few-step methods rely on auxiliary components (discriminators/teachers), which directly cause OOM at the 20B scale.
+**Key Challenge**: One-step acceleration of large models requires an extremely simple and memory-efficient framework, yet all high-quality few-step methods rely on auxiliary components (discriminators/teachers), which directly cause OOM at the 20B scale.
 
-**Starting Point**: Can a model teach itself? The multi-step output of a model is of higher quality than its single-step output — this quality gap itself constitutes a usable self-supervised signal, requiring no external teacher.
+**Key Insight**: Can a model teach itself? The multi-step output of a model is of higher quality than its single-step output — this quality gap itself constitutes a usable self-supervised signal, requiring no external teacher.
 
 ## Method
 

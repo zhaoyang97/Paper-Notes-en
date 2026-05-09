@@ -28,15 +28,15 @@ DreamOn introduces two special states, [expand] and [delete], to overcome the fi
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion language models (DLMs, e.g., LLaDA, Dream, DiffuCoder) realize flexible, arbitrary-order generation through iterative denoising, making them naturally suited for code infilling—generating missing code between a given prefix and suffix. Autoregressive models require the cumbersome Fill-in-the-Middle (FIM) hack for infilling, which disrupts the natural context structure.
+**Background**: Diffusion language models (DLMs, e.g., LLaDA, Dream, DiffuCoder) realize flexible, arbitrary-order generation through iterative denoising, making them naturally suited for code infilling—generating missing code between a given prefix and suffix. Autoregressive models require the cumbersome Fill-in-the-Middle (FIM) hack for infilling, which disrupts the natural context structure.
 
 **Limitations of Prior Work**: The critical bottleneck of DLMs is that **the length of the masked sequence must be specified in advance**. Inputs and outputs must share the same length, preventing the model from dynamically determining generation length. When the preset mask length does not match the true completion length: too few masks lead to incomplete completions; too many masks produce spurious erroneous code. Empirically, average performance degrades by 38%.
 
-**Root Cause**: The bidirectional attention of DLMs is inherently well-suited for infilling, yet the fixed-length constraint completely negates this advantage. The key question is how to enable DLMs to dynamically adjust output length while keeping the architecture unchanged.
+**Key Challenge**: The bidirectional attention of DLMs is inherently well-suited for infilling, yet the fixed-length constraint completely negates this advantage. The key question is how to enable DLMs to dynamically adjust output length while keeping the architecture unchanged.
 
-**Paper Goals**: Enable DLMs to autonomously decide whether to expand or contract the sequence length during generation.
+**Goal**: Enable DLMs to autonomously decide whether to expand or contract the sequence length during generation.
 
-**Starting Point**: Introduce two special states into the diffusion process as length-control signals—predicting [expand] indicates "more space is needed here," while predicting [delete] indicates "this position is redundant."
+**Key Insight**: Introduce two special states into the diffusion process as length-control signals—predicting [expand] indicates "more space is needed here," while predicting [delete] indicates "this position is redundant."
 
 **Core Idea**: Encode length control as two special tokens in the diffusion vocabulary ([expand] → split into two [mask] tokens; [delete] → remove the position). The model is trained to predict these states via data augmentation, achieving variable-length generation with zero architectural changes.
 

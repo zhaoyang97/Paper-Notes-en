@@ -30,15 +30,15 @@ This paper proposes an unsupervised conformal inference framework (BB-UCP) that 
 
 ### State of the Field
 
-**State of the Field**: Uncertainty quantification (UQ) for LLMs is critical for trustworthy AI. In black-box API settings, gradients, logits, and hidden states are inaccessible, requiring decisions based solely on sampled outputs. Existing methods include semantic entropy, self-consistency, and embedding-geometry-based approaches.
+**Background**: Uncertainty quantification (UQ) for LLMs is critical for trustworthy AI. In black-box API settings, gradients, logits, and hidden states are inaccessible, requiring decisions based solely on sampled outputs. Existing methods include semantic entropy, self-consistency, and embedding-geometry-based approaches.
 
 **Limitations of Prior Work**: (1) Conformal prediction (CP) provides distribution-free finite-sample guarantees, but generative tasks break the classical supervised setup — text prompts are not quantifiable covariates; (2) Full-UCP requires recomputation for each candidate (computationally intensive), while Split-UCP is data-inefficient (high splitting cost); (3) Existing methods fail to align low-cost signals with high-cost quality metrics through calibration.
 
-**Root Cause**: A label-free, API-compatible, theoretically grounded test-time filtering mechanism is needed, yet existing CP methods are ill-suited for unsupervised generative settings.
+**Key Challenge**: A label-free, API-compatible, theoretically grounded test-time filtering mechanism is needed, yet existing CP methods are ill-suited for unsupervised generative settings.
 
-**Paper Goals**: How to provide theoretically guaranteed quality control for LLM generation under a label-free, black-box-API-only setting?
+**Goal**: How to provide theoretically guaranteed quality control for LLM generation under a label-free, black-box-API-only setting?
 
-**Starting Point**: Leveraging the geometric signal of the Gram matrix of response embeddings as a consistency score, and designing batched, bootstrap-enhanced unsupervised conformal prediction, with conformal alignment to calibrate cheap signals against quality predicates.
+**Key Insight**: Leveraging the geometric signal of the Gram matrix of response embeddings as a consistency score, and designing batched, bootstrap-enhanced unsupervised conformal prediction, with conformal alignment to calibrate cheap signals against quality predicates.
 
 **Core Idea**: Gram matrix interaction energy quantifies response typicality; bootstrap calibration stabilizes thresholds; conformal alignment binds geometric signals to factuality objectives.
 

@@ -28,18 +28,18 @@ This paper proposes the LessonL framework, enabling multiple small LLM agents to
 
 ## Background & Motivation
 
-**State of the Field**: Code optimization is a critical component of software development, yet it has been largely overlooked in AI research. Existing work either focuses on code generation or relies on specialized HPC models.
+**Background**: Code optimization is a critical component of software development, yet it has been largely overlooked in AI research. Existing work either focuses on code generation or relies on specialized HPC models.
 
 **Limitations of Prior Work**:
 - LLMs exhibit complementary strengths on fine-grained tasks (e.g., Qwen7B outperforms GPT-4o by 2.5× on geometry tasks), but these advantages remain unexploited.
 - Multi-agent collaboration either adopts role-based division (planner/coder/debugger) or independent proposal aggregation.
 - There is a lack of interpretable knowledge-sharing mechanisms.
 
-**Root Cause**: How to leverage the complementary strengths of multiple small LLMs for code optimization while maintaining interpretability and cost efficiency.
+**Key Challenge**: How to leverage the complementary strengths of multiple small LLMs for code optimization while maintaining interpretability and cost efficiency.
 
-**Paper Goals**: Design a multi-agent learning framework that allows agents to learn from each other's successes and failures.
+**Goal**: Design a multi-agent learning framework that allows agents to learn from each other's successes and failures.
 
-**Starting Point**: An analogy to peer-assisted learning — learning from textbooks plus learning from classmates.
+**Key Insight**: An analogy to peer-assisted learning — learning from textbooks plus learning from classmates.
 
 **Core Idea**: A three-phase iterative process — lesson solicitation, lesson banking, and lesson selection — enabling interpretable optimization experience sharing among agents.
 

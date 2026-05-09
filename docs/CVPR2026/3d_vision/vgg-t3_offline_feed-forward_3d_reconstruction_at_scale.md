@@ -29,15 +29,15 @@ This paper proposes VGG-T3, which compresses the variable-length KV representati
 
 ## Background & Motivation
 
-**State of the Field**: Feed-forward multi-view 3D reconstruction methods (e.g., VGGT, Fast3R) leverage Transformer global self-attention for multi-view reasoning, achieving accuracy comparable to the classical COLMAP pipeline with greater robustness under challenging conditions.
+**Background**: Feed-forward multi-view 3D reconstruction methods (e.g., VGGT, Fast3R) leverage Transformer global self-attention for multi-view reasoning, achieving accuracy comparable to the classical COLMAP pipeline with greater robustness under challenging conditions.
 
 **Limitations of Prior Work**: The computational complexity and memory requirements of these methods scale **quadratically** with the number of input images $n$, with the core bottleneck being that global softmax attention must query a variable-length KV space spanning all image tokens. VGGT requires over 11 minutes to process 1k images.
 
-**Root Cause**: Existing acceleration methods (e.g., token merging in FastVGGT, sparse attention in SparseVGGT) reduce constant factors but leave the **asymptotic complexity quadratic**: $O(n^2) \to O(n/r)^2$. Online methods (e.g., CUT3R, Must3R) use fixed-size implicit memories but suffer from limited accuracy and drift.
+**Key Challenge**: Existing acceleration methods (e.g., token merging in FastVGGT, sparse attention in SparseVGGT) reduce constant factors but leave the **asymptotic complexity quadratic**: $O(n^2) \to O(n/r)^2$. Online methods (e.g., CUT3R, Must3R) use fixed-size implicit memories but suffer from limited accuracy and drift.
 
-**Paper Goals**: Reduce complexity to linear $O(n)$ while preserving the accuracy advantage of global offline reconstruction, supporting reconstruction from arbitrarily large image collections.
+**Goal**: Reduce complexity to linear $O(n)$ while preserving the accuracy advantage of global offline reconstruction, supporting reconstruction from arbitrarily large image collections.
 
-**Starting Point**: Inspired by DeepSDF — compressing variable-length representations into fixed-size optimizable parameters. The variable-length KV space of VGGT's global attention layers is distilled into the weights of a fixed-size MLP via TTT.
+**Key Insight**: Inspired by DeepSDF — compressing variable-length representations into fixed-size optimizable parameters. The variable-length KV space of VGGT's global attention layers is distilled into the weights of a fixed-size MLP via TTT.
 
 **Core Idea**: TTT is used to learn an MLP $T_\theta$ that captures the Key-to-Value mapping ($\arg\min_\theta \sum_i L_t(T_\theta(k_i) - v_i)$); at inference time, querying this MLP yields the output with complexity linear in sequence length.
 

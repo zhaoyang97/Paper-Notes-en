@@ -28,15 +28,15 @@ This paper employs the Gradiend gradient-based interpretability method to invest
 
 ## Background & Motivation
 
-**State of the Field**: Modern language models achieve near-perfect performance on grammatical agreement tasks, yet whether their internal mechanisms encode abstract grammatical rules (e.g., systematic relations among gender, number, and case) or merely memorize high-frequency token–context associations remains a central question in interpretability research.
+**Background**: Modern language models achieve near-perfect performance on grammatical agreement tasks, yet whether their internal mechanisms encode abstract grammatical rules (e.g., systematic relations among gender, number, and case) or merely memorize high-frequency token–context associations remains a central question in interpretability research.
 
 **Limitations of Prior Work**: Existing probing studies can only demonstrate that grammatical features are "recoverable from model representations," but cannot establish that these features "causally drive" model predictions. Consequently, high probing accuracy does not imply that a model genuinely understands grammatical rules.
 
-**Root Cause**: The German definite article system provides an ideal testbed — the same article can correspond to multiple gender–case combinations (e.g., *der* serves as both masculine nominative and feminine dative/genitive), and this syncretism allows researchers to distinguish rule-based from memory-based behavior: if the model encodes rules, an intervention targeting a specific gender–case transformation should affect only that grammatical dimension; if it relies on memorization, the intervention will spill over to unrelated grammatical settings that share the same surface article form.
+**Key Challenge**: The German definite article system provides an ideal testbed — the same article can correspond to multiple gender–case combinations (e.g., *der* serves as both masculine nominative and feminine dative/genitive), and this syncretism allows researchers to distinguish rule-based from memory-based behavior: if the model encodes rules, an intervention targeting a specific gender–case transformation should affect only that grammatical dimension; if it relies on memorization, the intervention will spill over to unrelated grammatical settings that share the same surface article form.
 
-**Paper Goals**: To empirically determine, via gradient intervention experiments, whether German definite article prediction is rule-driven or memory-driven.
+**Goal**: To empirically determine, via gradient intervention experiments, whether German definite article prediction is rule-driven or memory-driven.
 
-**Starting Point**: The Gradiend method — a gradient-based encoder–decoder interpretability framework — is used to learn parameter update directions for specific gender–case article transformations, and these directions are then tested for generalization to unrelated grammatical settings.
+**Key Insight**: The Gradiend method — a gradient-based encoder–decoder interpretability framework — is used to learn parameter update directions for specific gender–case article transformations, and these directions are then tested for generalization to unrelated grammatical settings.
 
 **Core Idea**: If the update direction learned for "masculine nominative *der* → feminine nominative *die*" simultaneously affects unrelated grammatical settings such as "feminine dative *der* → feminine dative *die*," this indicates that the model relies on surface-level memorization rather than abstract rules at these positions.
 

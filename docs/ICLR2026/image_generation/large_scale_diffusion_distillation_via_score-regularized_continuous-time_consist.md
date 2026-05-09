@@ -27,10 +27,10 @@ content_hash: 8ef3e70d71dfad61
 This paper proposes rCM (score-regularized continuous-time consistency model), which for the first time scales continuous-time consistency distillation to 14B-parameter text-to-image/video models. By combining forward KL divergence (consistency) with reverse KL divergence (score distillation), rCM matches DMD2 in quality while preserving diversity, achieving 15–50× inference speedup.
 
 ## Background & Motivation
-- **State of the Field**: sCM (continuous-time consistency models) is theoretically elegant, but its applicability to large-scale text-to-image/video models remains unclear — JVP computation is incompatible with FlashAttention and distributed training.
+- **Background**: sCM (continuous-time consistency models) is theoretically elegant, but its applicability to large-scale text-to-image/video models remains unclear — JVP computation is incompatible with FlashAttention and distributed training.
 - **Limitations of Prior Work**: sCM suffers from quality degradation in fine-grained generation (error accumulation and quality diffusion caused by the mode-covering nature of forward KL divergence). Score/adversarial distillation methods (e.g., DMD2) achieve superior quality but are prone to mode collapse and lack diversity.
-- **Root Cause**: Forward KL divergence (consistency models) and reverse KL divergence (score distillation) have complementary characteristics.
-- **Paper Goals**: Combine the two divergence types to achieve both high quality and high diversity at large scale.
+- **Key Challenge**: Forward KL divergence (consistency models) and reverse KL divergence (score distillation) have complementary characteristics.
+- **Goal**: Combine the two divergence types to achieve both high quality and high diversity at large scale.
 
 ## Method
 

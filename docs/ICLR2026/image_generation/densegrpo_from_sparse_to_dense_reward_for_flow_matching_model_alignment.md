@@ -28,15 +28,15 @@ This paper addresses the sparse reward problem in Flow Matching + GRPO alignment
 
 ## Background & Motivation
 
-**State of the Field**: GRPO has become the dominant method for human preference alignment of flow matching models (Flow-GRPO, DanceGRPO), converting deterministic ODE samplers into SDE samplers to enable stochastic exploration and optimizing the policy with group-normalized reward signals.
+**Background**: GRPO has become the dominant method for human preference alignment of flow matching models (Flow-GRPO, DanceGRPO), converting deterministic ODE samplers into SDE samplers to enable stochastic exploration and optimizing the policy with group-normalized reward signals.
 
 **Limitations of Prior Work**: Existing GRPO methods compute a single sparse reward $R^i$ only at the end of the trajectory (the final generated image) and apply it uniformly to all intermediate denoising steps. Since $R^i$ reflects the cumulative contribution of all $T$ denoising steps, assigning it to individual steps introduces a feedback–contribution mismatch.
 
-**Root Cause**: Mismatch between global trajectory-level rewards and local step-level contributions. Additionally, the uniform noise level in the SDE sampler cannot adapt to the time-varying nature of the denoising process — some timesteps may suffer from excessive exploration (all samples receiving negative rewards), while others are insufficiently explored.
+**Key Challenge**: Mismatch between global trajectory-level rewards and local step-level contributions. Additionally, the uniform noise level in the SDE sampler cannot adapt to the time-varying nature of the denoising process — some timesteps may suffer from excessive exploration (all samples receiving negative rewards), while others are insufficiently explored.
 
-**Paper Goals**: (a) Estimate dense rewards (step-wise contributions) for each denoising step; (b) Calibrate the exploration space at each timestep based on dense rewards.
+**Goal**: (a) Estimate dense rewards (step-wise contributions) for each denoising step; (b) Calibrate the exploration space at each timestep based on dense rewards.
 
-**Starting Point**: Leveraging the determinism of ODEs — given an intermediate latent $x_t$, the ODE denoising trajectory is uniquely determined, enabling ODE rollout from intermediate latents to obtain clean images that can be scored by a reward model, yielding per-step reward gains.
+**Key Insight**: Leveraging the determinism of ODEs — given an intermediate latent $x_t$, the ODE denoising trajectory is uniquely determined, enabling ODE rollout from intermediate latents to obtain clean images that can be scored by a reward model, yielding per-step reward gains.
 
 **Core Idea**: The contribution of each step = expected reward after that step − expected reward before that step (reward gain), estimated via ODE rollout.
 

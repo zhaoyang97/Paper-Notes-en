@@ -31,9 +31,9 @@ This paper proposes LEMMA, a lightweight marine semantic segmentation model base
 
 Semantic segmentation of marine scenes is critical for autonomous navigation of unmanned surface vehicles (USVs) and coastal earth observation tasks such as oil spill detection. However, existing segmentation methods (e.g., WaSR-T, DeepLabv3) typically rely on deep CNN or Transformer architectures with tens to hundreds of millions of parameters and prohibitive computational costs, making real-time deployment on resource-constrained edge devices such as UAVs and USVs infeasible.
 
-- **Root Cause**: Marine scenes demand high-precision segmentation (e.g., low-contrast regions such as water surface reflections and thin oil films), yet deployment platforms (UAVs/USVs) offer extremely limited computational resources. Existing methods fail to reconcile accuracy and efficiency—WaSR-T achieves 99.80% mIoU but requires 71.4M parameters and 133.8 GFLOPs.
+- **Key Challenge**: Marine scenes demand high-precision segmentation (e.g., low-contrast regions such as water surface reflections and thin oil films), yet deployment platforms (UAVs/USVs) offer extremely limited computational resources. Existing methods fail to reconcile accuracy and efficiency—WaSR-T achieves 99.80% mIoU but requires 71.4M parameters and 133.8 GFLOPs.
 
-- **Starting Point**: The paper exploits the edge information naturally provided by Laplacian pyramid decomposition. Each pyramid level encodes edge details at a specific resolution, which can be injected at early stages of feature extraction, thereby avoiding expensive feature map computation in deep layers. **Core Idea**: Replace deep feature extraction with edge priors from the Laplacian pyramid to simultaneously achieve lightweight design and high accuracy.
+- **Key Insight**: The paper exploits the edge information naturally provided by Laplacian pyramid decomposition. Each pyramid level encodes edge details at a specific resolution, which can be injected at early stages of feature extraction, thereby avoiding expensive feature map computation in deep layers. **Core Idea**: Replace deep feature extraction with edge priors from the Laplacian pyramid to simultaneously achieve lightweight design and high accuracy.
 
 ## Method
 

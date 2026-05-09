@@ -29,15 +29,15 @@ This paper systematically compares four self-supervised/physics-modeling methods
 
 ## Background & Motivation
 
-**State of the Field**: The dominant paradigm for machine learning on spatiotemporal physical systems is surrogate modeling via next-frame prediction, with the goal of learning an accurate simulator of system evolution. Representative works include physics foundation models such as MPP and Poseidon, as well as operator learning methods such as DISCO.
+**Background**: The dominant paradigm for machine learning on spatiotemporal physical systems is surrogate modeling via next-frame prediction, with the goal of learning an accurate simulator of system evolution. Representative works include physics foundation models such as MPP and Poseidon, as well as operator learning methods such as DISCO.
 
 **Limitations of Prior Work**: Autoregressive surrogate models are expensive to train and suffer from accumulated prediction errors. More importantly, the practical needs of scientific research often center not on frame-by-frame prediction but on estimating physical parameters (e.g., Reynolds number, Prandtl number) that govern qualitative system behavior (laminar vs. turbulent flow). Which learning paradigm best preserves physically meaningful information has not been systematically studied.
 
-**Root Cause**: Pixel-level prediction objectives (MAE / autoregressive models) pursue precise reconstruction of visual detail, yet such low-level details may be irrelevant to high-level physical semantics. Physics-specific methods incorporate physical inductive biases, but whether they truly outperform general-purpose methods on downstream scientific tasks remains an open question.
+**Key Challenge**: Pixel-level prediction objectives (MAE / autoregressive models) pursue precise reconstruction of visual detail, yet such low-level details may be irrelevant to high-level physical semantics. Physics-specific methods incorporate physical inductive biases, but whether they truly outperform general-purpose methods on downstream scientific tasks remains an open question.
 
-**Paper Goals**: To compare general-purpose self-supervised methods (JEPA vs. VideoMAE) and physics-modeling methods (MPP vs. DISCO) in terms of their effectiveness at learning physically meaningful representations, using physical parameter estimation as a quantitative evaluation criterion.
+**Goal**: To compare general-purpose self-supervised methods (JEPA vs. VideoMAE) and physics-modeling methods (MPP vs. DISCO) in terms of their effectiveness at learning physically meaningful representations, using physical parameter estimation as a quantitative evaluation criterion.
 
-**Starting Point**: Physical parameters govern the temporal evolution of a system; therefore, parameter estimation error directly quantifies how much physical information is captured in a representation. This is a more faithful measure of "physical understanding" than next-frame prediction error.
+**Key Insight**: Physical parameters govern the temporal evolution of a system; therefore, parameter estimation error directly quantifies how much physical information is captured in a representation. This is a more faithful measure of "physical understanding" than next-frame prediction error.
 
 **Core Idea**: JEPA's latent-space prediction objective naturally filters out low-level visual details while preserving high-level dynamical structure, enabling it to learn better physical representations than pixel-level prediction methods.
 

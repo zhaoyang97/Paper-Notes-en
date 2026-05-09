@@ -33,7 +33,7 @@ This paper proposes a 3D Gaussian Map based on 3D Gaussian Splatting for scene r
 
 ### State of the Field
 
-**State of the Field**: VLN requires an agent to navigate through complex 3D environments following natural language instructions, with comprehensive scene understanding as the core challenge. Limitations of existing methods:
+**Background**: VLN requires an agent to navigate through complex 3D environments following natural language instructions, with comprehensive scene understanding as the core challenge. Limitations of existing methods:
 
 1. **Limitations of 2D perspectives**: Most VLN methods rely on monocular RGB images to extract 2D features, making it difficult to capture complete 3D geometry and spatial relationships.
 2. **Insufficient semantic information**: Conventional representations (e.g., topological graphs, 2D semantic maps) neglect the rich semantic information in scenes, limiting cross-scene generalization.
@@ -43,7 +43,7 @@ This paper proposes a 3D Gaussian Map based on 3D Gaussian Splatting for scene r
 
 ### Starting Point
 
-**Paper Goals**:
+**Goal**:
 1. How to leverage 3D Gaussian Splatting to construct scene maps that encode both fine-grained geometric structure and rich semantic information?
 2. How to perform open-vocabulary semantic grouping of 3D Gaussians to generalize to unseen object categories?
 3. How to design effective navigation decision strategies based on the 3D Gaussian map?

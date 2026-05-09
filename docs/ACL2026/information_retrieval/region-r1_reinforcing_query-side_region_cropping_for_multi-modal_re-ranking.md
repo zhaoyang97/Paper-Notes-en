@@ -27,15 +27,15 @@ This paper proposes Region-R1, which formulates query-side region cropping in mu
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal retrieval-augmented generation (MM-RAG) systems typically follow a retriever–re-ranker–generator pipeline, where the re-ranking stage is critical for selecting the most relevant evidence from a candidate pool. Prior work has primarily focused on improving retrievers or designing more sophisticated re-ranking models (e.g., EchoSight, OMGM).
+**Background**: Multimodal retrieval-augmented generation (MM-RAG) systems typically follow a retriever–re-ranker–generator pipeline, where the re-ranking stage is critical for selecting the most relevant evidence from a candidate pool. Prior work has primarily focused on improving retrievers or designing more sophisticated re-ranking models (e.g., EchoSight, OMGM).
 
 **Limitations of Prior Work**: Standard re-rankers process the query image as a global embedding, implicitly assuming that all regions of the image are relevant to the user's question. In practice, however, query images often contain significant distractors (e.g., cluttered backgrounds, irrelevant objects). When such irrelevant regions dominate the global visual representation, similarity estimation becomes distorted and re-ranking performance degrades.
 
-**Root Cause**: There is an inherent tension between global image representations and question-focused information needs—global representations retain all visual information but introduce noise, while naive heuristic cropping risks discarding useful context. This is a multimodal-specific problem with no direct counterpart in text-only RAG.
+**Key Challenge**: There is an inherent tension between global image representations and question-focused information needs—global representations retain all visual information but introduce noise, while naive heuristic cropping risks discarding useful context. This is a multimodal-specific problem with no direct counterpart in text-only RAG.
 
-**Paper Goals**: To design a query-side visual information selection mechanism that adaptively decides, at the re-ranking stage, whether to crop the query image and which region to crop, thereby reliably improving re-ranking performance.
+**Goal**: To design a query-side visual information selection mechanism that adaptively decides, at the re-ranking stage, whether to crop the query image and which region to crop, thereby reliably improving re-ranking performance.
 
-**Starting Point**: Modern vision-language models already possess strong localization capabilities. Preliminary analysis shows that replacing the full image with an appropriately selected region—under a fixed candidate pool and scoring model—can substantially improve re-ranking. However, a learning framework is needed to determine "when to crop" and "where to crop."
+**Key Insight**: Modern vision-language models already possess strong localization capabilities. Preliminary analysis shows that replacing the full image with an appropriately selected region—under a fixed candidate pool and scoring model—can substantially improve re-ranking. However, a learning framework is needed to determine "when to crop" and "where to crop."
 
 **Core Idea**: Query-side region cropping is formulated as a reinforcement learning decision problem. An improved GRPO variant (r-GRPO) directly optimizes re-ranking metrics, learning a policy that dynamically decides whether to retain the full image or crop a specific region.
 

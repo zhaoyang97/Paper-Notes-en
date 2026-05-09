@@ -28,15 +28,15 @@ ForensicHub introduces the first unified benchmark platform spanning all domains
 
 ## Background & Motivation
 
-**State of the Field**: Fake image detection and localization (FIDL) has diverged into four relatively independent subfields: Deepfake detection (face manipulation), IMDL (natural image manipulation detection/localization), AIGC detection (AI-generated image detection), and document image forgery localization (Doc).
+**Background**: Fake image detection and localization (FIDL) has diverged into four relatively independent subfields: Deepfake detection (face manipulation), IMDL (natural image manipulation detection/localization), AIGC detection (AI-generated image detection), and document image forgery localization (Doc).
 
 **Limitations of Prior Work**: Each domain independently constructs its own datasets, models, and evaluation protocols, resulting in severe "domain silos." Although single-domain benchmarks such as DeepfakeBench and IMDLBenCo exist, a unified cross-domain benchmark is absent. Existing benchmarks are mutually incompatible — DeepfakeBench is coupled to face preprocessing, IMDLBenCo requires pixel-level masks, and AIGCDetectBenchmark does not support multi-GPU evaluation.
 
-**Root Cause**: The four domains differ substantially in data formats, model outputs, and evaluation standards, yet share many underlying techniques (e.g., pretrained backbones, low-level visual features, contrastive learning). This fragmentation leads to redundancy and impedes progress.
+**Key Challenge**: The four domains differ substantially in data formats, model outputs, and evaluation standards, yet share many underlying techniques (e.g., pretrained backbones, low-level visual features, contrastive learning). This fragmentation leads to redundancy and impedes progress.
 
-**Paper Goals**: To construct a sufficiently flexible and extensible unified benchmark that is compatible with existing benchmarks, fills the gap left by the absence of benchmarks for AIGC and Doc domains, and provides a cross-domain evaluation protocol.
+**Goal**: To construct a sufficiently flexible and extensible unified benchmark that is compatible with existing benchmarks, fills the gap left by the absence of benchmarks for AIGC and Doc domains, and provides a cross-domain evaluation protocol.
 
-**Starting Point**: Modular, configuration-driven architecture with an adapter pattern for compatibility with existing benchmarks.
+**Key Insight**: Modular, configuration-driven architecture with an adapter pattern for compatibility with existing benchmarks.
 
 **Core Idea**: Through a composable Dataset–Transform–Model–Evaluator four-module architecture and adapter design, ForensicHub achieves, for the first time, unified training, testing, and cross-domain evaluation across all four FIDL domains.
 

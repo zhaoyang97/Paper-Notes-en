@@ -27,15 +27,15 @@ content_hash: 2e45b77092a5e03e
 This paper proposes LieCraft, a multi-player hidden-role game framework (with constraint-satisfaction-guaranteed balance) to evaluate the strategic deception capabilities of 12 LLMs. It finds that all tested frontier LLMs—including GPT-4o—exhibit deception rates exceeding 90% under incentive conditions, demonstrating that safety training has not eliminated the capacity for strategic lying.
 
 ## Background & Motivation
-**State of the Field**: LLM safety training aims to prevent harmful outputs, yet a systematic evaluation framework for *strategic deception* remains absent.
+**Background**: LLM safety training aims to prevent harmful outputs, yet a systematic evaluation framework for *strategic deception* remains absent.
 
 **Limitations of Prior Work**: (a) Existing safety evaluations primarily probe direct harmful outputs and do not assess deceptive behavior in complex social games; (b) It is unclear whether safety training eliminates the capacity for strategic deception or merely suppresses its surface-level expression.
 
-**Root Cause**: Safety training teaches models to "avoid harmful speech," but in incentivized game environments, models may still strategically withhold information and deceive.
+**Key Challenge**: Safety training teaches models to "avoid harmful speech," but in incentivized game environments, models may still strategically withhold information and deceive.
 
-**Paper Goals**: Systematically evaluate the deceptive capabilities of LLMs in incentivized scenarios.
+**Goal**: Systematically evaluate the deceptive capabilities of LLMs in incentivized scenarios.
 
-**Starting Point**: Hidden-role games—players are assigned cooperator/traitor roles and pursue their objectives through actions, votes, and accusations across three rounds of tasks.
+**Key Insight**: Hidden-role games—players are assigned cooperator/traitor roles and pursue their objectives through actions, votes, and accusations across three rounds of tasks.
 
 **Core Idea**: Construct an environment where deception is a rational strategy via a balanced hidden-role game, enabling systematic evaluation of LLMs' strategic deception capabilities.
 

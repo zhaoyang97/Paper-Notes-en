@@ -28,15 +28,15 @@ This paper proposes a Local Optimization + Representation Continuity (ReCo) trai
 
 ## Background & Motivation
 
-**State of the Field**: Autoregressive models have demonstrated superior inference speed and performance over diffusion models in image generation, but in video generation, the extremely long video token sequences make training costs prohibitively high (requiring full-sequence autoregressive modeling across complete video frame sequences).
+**Background**: Autoregressive models have demonstrated superior inference speed and performance over diffusion models in image generation, but in video generation, the extremely long video token sequences make training costs prohibitively high (requiring full-sequence autoregressive modeling across complete video frame sequences).
 
 **Limitations of Prior Work**: Intuitively, training can be accelerated by reducing the number of training frames (Fewer-Frames method) — training on short sequences then iteratively generating during inference. However, experiments reveal this causes severe error accumulation and temporal inconsistency, as each block at inference is generated based only on the previous (potentially erroneous) block without global context information, leading to exponential error amplification.
 
-**Root Cause**: A trade-off exists between training efficiency and generation consistency. Reducing training frames decreases computation but disrupts temporal coherence between video frames, causing severe FVD degradation (e.g., FFS from 73.65 to 229.32).
+**Key Challenge**: A trade-off exists between training efficiency and generation consistency. Reducing training frames decreases computation but disrupts temporal coherence between video frames, causing severe FVD degradation (e.g., FFS from 73.65 to 229.32).
 
-**Paper Goals**: Halve training cost while maintaining baseline-level video quality and temporal consistency.
+**Goal**: Halve training cost while maintaining baseline-level video quality and temporal consistency.
 
-**Starting Point**: The authors approach from two levels: (1) Training strategy: replace full-sequence optimization with local window optimization, using out-of-window context as frozen conditional input; (2) Representation space: constrain hidden state variation magnitude between adjacent timesteps based on Lipschitz continuity to suppress error propagation.
+**Key Insight**: The authors approach from two levels: (1) Training strategy: replace full-sequence optimization with local window optimization, using out-of-window context as frozen conditional input; (2) Representation space: constrain hidden state variation magnitude between adjacent timesteps based on Lipschitz continuity to suppress error propagation.
 
 **Core Idea**: Optimize autoregressive loss within randomly sampled local windows (Local Opt.) while using representation continuity loss (ReCo) to constrain smooth hidden state transitions, thereby substantially reducing computation during training while maintaining full-sequence generation consistency during inference.
 

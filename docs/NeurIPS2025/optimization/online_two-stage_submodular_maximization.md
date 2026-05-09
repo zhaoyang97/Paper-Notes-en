@@ -27,13 +27,13 @@ content_hash: 5f6c935e1df6dda8
 This paper introduces the Online Two-Stage Submodular Maximization (O2SSM) problem for the first time, and proposes the RAOCO algorithm for Weighted Threshold Potential (WTP) functions. By combining fractional relaxation with randomized pipage rounding, RAOCO achieves sublinear $(1-1/e)^2$-regret in polynomial time, while also improving the approximation ratio for the offline problem.
 
 ## Background & Motivation
-**State of the Field**: Two-Stage Submodular Maximization (2SSM) is a classical problem introduced by Balkanski et al. (2016), in which the first stage selects a constrained ground set $S$ and the second stage maximizes a randomly drawn submodular objective over $S$. Applications include recommendation systems (prefetching $\ell$ items so that $k$ can be recommended upon user arrival), data summarization, and dictionary learning.
+**Background**: Two-Stage Submodular Maximization (2SSM) is a classical problem introduced by Balkanski et al. (2016), in which the first stage selects a constrained ground set $S$ and the second stage maximizes a randomly drawn submodular objective over $S$. Applications include recommendation systems (prefetching $\ell$ items so that $k$ can be recommended upon user arrival), data summarization, and dictionary learning.
 
 **Limitations of Prior Work**: Existing work assumes the function family $\mathcal{F}$ is known in advance (offline setting). When $\mathcal{F}$ is unknown and objective functions arrive in an online sequence, the problem becomes significantly more challenging.
 
-**Root Cause**: O2SSM faces two compounding difficulties: (1) the first-stage objective $F(\cdot)$ is non-submodular, precluding direct application of existing online submodular maximization techniques; and (2) even when the function is known, computing $F(\cdot)$ is NP-hard, so oracle access cannot be assumed.
+**Key Challenge**: O2SSM faces two compounding difficulties: (1) the first-stage objective $F(\cdot)$ is non-submodular, precluding direct application of existing online submodular maximization techniques; and (2) even when the function is known, computing $F(\cdot)$ is NP-hard, so oracle access cannot be assumed.
 
-**Starting Point**: The paper restricts attention to the WTP function subclass and constructs a concave continuous relaxation that enables the problem to be solved via Online Convex Optimization (OCO).
+**Key Insight**: The paper restricts attention to the WTP function subclass and constructs a concave continuous relaxation that enables the problem to be solved via Online Convex Optimization (OCO).
 
 **Core Idea**: Construct an efficiently computable concave relaxation for the WTP objective, combined with randomized pipage rounding, to reduce O2SSM to an OCO problem.
 

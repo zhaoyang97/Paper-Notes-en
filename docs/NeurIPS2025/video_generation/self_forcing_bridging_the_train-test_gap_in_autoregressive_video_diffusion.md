@@ -29,7 +29,7 @@ This paper proposes the Self Forcing training paradigm, which eliminates the exp
 
 ## Background & Motivation
 
-- **State of the Field**: Video diffusion models have advanced substantially in recent years, but dominant approaches (e.g., Wan2.1, Sora) employ bidirectional attention to jointly denoise all frames, imposing two fundamental limitations: (1) future frames can influence past frames, violating causal structure; and (2) the entire video must be generated at once, precluding real-time streaming applications.
+- **Background**: Video diffusion models have advanced substantially in recent years, but dominant approaches (e.g., Wan2.1, Sora) employ bidirectional attention to jointly denoise all frames, imposing two fundamental limitations: (1) future frames can influence past frames, violating causal structure; and (2) the entire video must be generated at once, precluding real-time streaming applications.
 
 Autoregressive (AR) models generate video frame-by-frame and are naturally suited for real-time interactive scenarios (game simulation, robotics, live streaming, etc.), but face the core challenge of **Exposure Bias**. Specifically, both dominant training paradigms exhibit a train-inference distribution mismatch:
 
@@ -39,11 +39,11 @@ Autoregressive (AR) models generate video frame-by-frame and are naturally suite
 
 - **Limitations of Prior Work**: CausVid also attempts distribution matching via DMD, but since it uses DF outputs during training (rather than the model's actual inference distribution), it effectively matches the wrong distribution.
 
-- **Root Cause**: The fundamental mismatch between what the model sees during training and what it encounters at inference.
+- **Key Challenge**: The fundamental mismatch between what the model sees during training and what it encounters at inference.
 
-- **Paper Goals**: Eliminate exposure bias in autoregressive video diffusion by ensuring training and inference follow identical processes.
+- **Goal**: Eliminate exposure bias in autoregressive video diffusion by ensuring training and inference follow identical processes.
 
-- **Starting Point**: The core insight is inspired by GANs — **a GAN generator undergoes exactly the same process during training and inference, inherently avoiding exposure bias.** Applied to autoregressive video diffusion, the model must also "consume its own outputs" during training.
+- **Key Insight**: The core insight is inspired by GANs — **a GAN generator undergoes exactly the same process during training and inference, inherently avoiding exposure bias.** Applied to autoregressive video diffusion, the model must also "consume its own outputs" during training.
 
 ## Method
 

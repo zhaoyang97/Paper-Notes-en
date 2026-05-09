@@ -30,7 +30,7 @@ Flux extracts compact distribution descriptors on the client side (marginal $P(X
 
 ## Background & Motivation
 
-**State of the Field**: Federated learning (FL) enables privacy-preserving collaborative training across multiple parties, but conventional approaches assume IID client data. Clustered federated learning (CFL) addresses non-IID heterogeneity by grouping clients with similar distributions and training independently per group, while personalized federated learning (PFL) tailors a model for each client.
+**Background**: Federated learning (FL) enables privacy-preserving collaborative training across multiple parties, but conventional approaches assume IID client data. Clustered federated learning (CFL) addresses non-IID heterogeneity by grouping clients with similar distributions and training independently per group, while personalized federated learning (PFL) tailors a model for each client.
 
 **Limitations of Prior Work**:
 - Existing CFL methods (IFCA, FedRC, etc.) require **the number of clusters $M$ to be specified in advance**, which is infeasible in real-world deployments.
@@ -38,11 +38,11 @@ Flux extracts compact distribution descriptors on the client side (marginal $P(X
 - At test time, **new clients that did not participate in training cannot be assigned a model** — PFL methods suffer severe performance degradation on unseen clients.
 - Methods such as FedDrift incur computational overhead **more than 300× that of FedAvg**, making them unscalable.
 
-**Root Cause**: Real-world FL deployments involve unknown shift types, an unknown number of clusters, and unlabeled clients at test time — yet existing methods assume at least one of these conditions is known.
+**Key Challenge**: Real-world FL deployments involve unknown shift types, an unknown number of clusters, and unlabeled clients at test time — yet existing methods assume at least one of these conditions is known.
 
-**Paper Goals**: Design a CFL framework that requires no prior knowledge during either training or testing, uniformly handling four types of distribution shifts ($P(X)$ feature shift, $P(Y)$ label shift, $P(Y|X)$ concept shift, $P(X|Y)$ concept shift), while maintaining computational and communication efficiency comparable to FedAvg.
+**Goal**: Design a CFL framework that requires no prior knowledge during either training or testing, uniformly handling four types of distribution shifts ($P(X)$ feature shift, $P(Y)$ label shift, $P(Y|X)$ concept shift, $P(X|Y)$ concept shift), while maintaining computational and communication efficiency comparable to FedAvg.
 
-**Starting Point**: Rather than clustering on model parameters or loss values — signals with limited discriminative power for distribution shifts — the method operates directly on statistical characteristics of data distributions, extracting compact distribution descriptors as the basis for clustering.
+**Key Insight**: Rather than clustering on model parameters or loss values — signals with limited discriminative power for distribution shifts — the method operates directly on statistical characteristics of data distributions, extracting compact distribution descriptors as the basis for clustering.
 
 **Core Idea**: Approximate the 2-Wasserstein distance using moment statistics (mean + covariance) of client data to construct descriptors, apply adaptive DBSCAN for automatic clustering, and decompose the CFL problem into three independently optimizable subproblems: descriptor extraction, unsupervised clustering, and local classification.
 

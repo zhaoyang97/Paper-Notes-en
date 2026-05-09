@@ -28,18 +28,18 @@ This paper proposes the Resonance (Re) model, which decomposes pedestrian trajec
 
 ## Background & Motivation
 
-1. **State of the Field**: Pedestrian trajectory prediction is a core task in autonomous driving and social robotics. Mainstream approaches include LSTM-based social force models (Social LSTM), GAN-based multimodal prediction (Social GAN), GCN-based graph network methods (STGCNN), Transformer-based attention mechanisms (AgentFormer), and diffusion-based methods (LED, BCDiff).
+1. **Background**: Pedestrian trajectory prediction is a core task in autonomous driving and social robotics. Mainstream approaches include LSTM-based social force models (Social LSTM), GAN-based multimodal prediction (Social GAN), GCN-based graph network methods (STGCNN), Transformer-based attention mechanisms (AgentFormer), and diffusion-based methods (LED, BCDiff).
 
 2. **Limitations of Prior Work**: (a) Existing methods struggle to accurately disentangle trajectory variations and stochasticity arising from different causes when jointly modeling pedestrian intent and social behavior; (b) Social interaction modeling typically relies on attention mechanisms or graph networks, lacking interpretability—models cannot clearly articulate how a specific neighbor concretely influences the predicted trajectory; (c) The sources of trajectory stochasticity are diverse (personal intent, social influence, environmental constraints, etc.), yet most existing methods model them in a coupled manner.
 
-3. **Root Cause**: Trajectory variation is the result of multiple superimposed factors, but existing methods typically model them jointly within a single latent space or attention mechanism, resulting in poor interpretability and an inability to precisely characterize the independent contribution of each factor.
+3. **Key Challenge**: Trajectory variation is the result of multiple superimposed factors, but existing methods typically model them jointly within a single latent space or attention mechanism, resulting in poor interpretability and an inability to precisely characterize the independent contribution of each factor.
 
-4. **Paper Goals**:
+4. **Goal**:
     - Design an interpretable trajectory decomposition strategy that separates trajectory corrections and stochasticity into multiple independent "vibration" components
     - Propose a spectral-property-based social interaction representation that simulates "resonance" phenomena
     - Achieve competitive prediction accuracy across multiple benchmark datasets
 
-5. **Starting Point**: Inspired by vibration systems and resonance phenomena in physics. In a vibration system, complex motion can be decomposed into a superposition of independent vibrations (Fourier decomposition); "resonance" occurs when two oscillators have similar natural frequencies. By analogy to pedestrian trajectories—trajectory variation can be decomposed into independent vibration components, and social interaction can be modeled via spectral similarity.
+5. **Key Insight**: Inspired by vibration systems and resonance phenomena in physics. In a vibration system, complex motion can be decomposed into a superposition of independent vibrations (Fourier decomposition); "resonance" occurs when two oscillators have similar natural frequencies. By analogy to pedestrian trajectories—trajectory variation can be decomposed into independent vibration components, and social interaction can be modeled via spectral similarity.
 
 6. **Core Idea**: Trajectory prediction is formulated as the superposition $y = \text{linear\_base} + \text{self\_bias} + \text{resonance\_bias}$ (linear base + self-bias + resonance-bias), where social interaction is learned through "resonance" features derived from trajectory spectra, enabling interpretable and disentangled prediction.
 

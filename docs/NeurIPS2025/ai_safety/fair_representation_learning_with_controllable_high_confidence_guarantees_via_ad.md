@@ -28,15 +28,15 @@ This paper proposes FRG (Fair Representation learning with high-confidence Guara
 
 ## Background & Motivation
 
-**State of the Field**: Fair representation learning (FRL) aims to learn representations at the data producer side that remove sensitive attribute information, ensuring that any downstream consumer using such representations will not produce unfair predictions. Methods such as LAFTR, ICVAE, LMIFR, CFAIR, and FCRL estimate upper bounds on $\Delta_{DP}$ from training data, but these estimates do not carry guarantees that hold on unseen test sets.
+**Background**: Fair representation learning (FRL) aims to learn representations at the data producer side that remove sensitive attribute information, ensuring that any downstream consumer using such representations will not produce unfair predictions. Methods such as LAFTR, ICVAE, LMIFR, CFAIR, and FCRL estimate upper bounds on $\Delta_{DP}$ from training data, but these estimates do not carry guarantees that hold on unseen test sets.
 
 **Limitations of Prior Work**: (a) Existing methods' fairness guarantees are based on training/validation set estimates, which may fail on test sets due to overfitting — at least 10% of trials across 6 baseline methods violate fairness constraints; (b) FARE provides high-confidence certificates but does not support user-specified $\varepsilon$ and $\delta$, and the certificates are often very loose (typically several times the expected $\varepsilon$); (c) No existing framework allows users to explicitly control both the fairness threshold and the confidence level.
 
-**Root Cause**: In representation learning, the data producer does not know the downstream model — including potentially adversarial downstream models. Fairness must be guaranteed even under worst-case downstream usage.
+**Key Challenge**: In representation learning, the data producer does not know the downstream model — including potentially adversarial downstream models. Fairness must be guaranteed even under worst-case downstream usage.
 
-**Paper Goals**: To construct a "data-producer-side insurance" — a framework that provides $1-\delta$ confidence guarantees at representation learning time, ensuring $\Delta_{DP} \leq \varepsilon$ for any downstream task and model.
+**Goal**: To construct a "data-producer-side insurance" — a framework that provides $1-\delta$ confidence guarantees at representation learning time, ensuring $\Delta_{DP} \leq \varepsilon$ for any downstream task and model.
 
-**Starting Point**: Establish an equivalence between $\Delta_{DP}$ and $|\text{Cov}(\hat{Y}, S)|$ (Theorem 5.2), thereby transforming fairness verification into a statistical hypothesis testing problem.
+**Key Insight**: Establish an equivalence between $\Delta_{DP}$ and $|\text{Cov}(\hat{Y}, S)|$ (Theorem 5.2), thereby transforming fairness verification into a statistical hypothesis testing problem.
 
 **Core Idea**: Train an adversarial model to find the worst-case downstream model that maximizes covariance; construct a $1-\delta$ upper bound on $g_\varepsilon(\phi)$ via a t-test on held-out data; certify fairness if the upper bound $\leq 0$, otherwise honestly return "No Solution Found."
 

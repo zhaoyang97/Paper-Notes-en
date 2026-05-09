@@ -29,15 +29,15 @@ Proposes ChangeBridge, which achieves conditional spatiotemporal image generatio
 
 ## Background & Motivation
 
-**State of the Field**: Remote sensing generation methods have progressed in sectors like layout-to-image and modality conversion, but conditional spatiotemporal generation (synthesizing future scenes based on historical observations and multimodal conditions) remains largely unexplored.
+**Background**: Remote sensing generation methods have progressed in sectors like layout-to-image and modality conversion, but conditional spatiotemporal generation (synthesizing future scenes based on historical observations and multimodal conditions) remains largely unexplored.
 
 **Limitations of Prior Work**: Existing change generation methods start from pure noise and can only handle event-driven changes (e.g., new buildings). They fail to model cross-temporal dynamics (e.g., seasonal lighting changes, vegetation growth) and lack a direct correlation between pre- and post-temporal phases.
 
-**Root Cause**: Spatiotemporal generation must simultaneously handle heterogeneous evolution—drastic foreground event changes + subtle background temporal dynamics—where the evolution speed and magnitude differ significantly.
+**Key Challenge**: Spatiotemporal generation must simultaneously handle heterogeneous evolution—drastic foreground event changes + subtle background temporal dynamics—where the evolution speed and magnitude differ significantly.
 
-**Paper Goals**: Design a generative model capable of discriminatively processing foreground event changes and background temporal evolution.
+**Goal**: Design a generative model capable of discriminatively processing foreground event changes and background temporal evolution.
 
-**Starting Point**: Diffusion bridge models to replace pure noise initialization + pixel-level drift magnitude maps to achieve asynchronous evolution.
+**Key Insight**: Diffusion bridge models to replace pure noise initialization + pixel-level drift magnitude maps to achieve asynchronous evolution.
 
 **Core Idea**: Drift-asynchronous diffusion bridge—starting from a composite state of the pre-event, using different drift magnitudes to control differentiated generation of foreground and background.
 

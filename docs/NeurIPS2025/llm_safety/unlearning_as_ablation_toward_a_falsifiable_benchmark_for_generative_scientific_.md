@@ -39,15 +39,15 @@ Existing unlearning research has been driven by three motivations:
 
 ### State of the Field
 
-**State of the Field**: Privacy compliance — the GDPR "right to be forgotten."
+**Background**: Privacy compliance — the GDPR "right to be forgotten."
 
 ### Root Cause
 
-**Root Cause**: Copyright protection — preventing models from memorizing copyrighted content.
+**Key Challenge**: Copyright protection — preventing models from memorizing copyrighted content.
 
 ### Starting Point
 
-**Starting Point**: Safety — removing dangerous knowledge (e.g., weapon synthesis instructions).
+**Key Insight**: Safety — removing dangerous knowledge (e.g., weapon synthesis instructions).
 
 However, the unlearning framework has never been applied to **scientific epistemology** — testing whether a model possesses constructive knowledge generation capabilities. This paper fills exactly that gap.
 

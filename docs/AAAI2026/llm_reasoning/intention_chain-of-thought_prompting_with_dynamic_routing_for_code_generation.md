@@ -28,18 +28,18 @@ This paper proposes RoutingGen — a difficulty-aware code generation framework 
 
 ## Background & Motivation
 
-**State of the Field**: Chain-of-Thought (CoT) prompting is effective for code generation — it guides LLMs to reason about algorithmic design before writing code. However, applying CoT uniformly to all tasks introduces an "overthinking" problem.
+**Background**: Chain-of-Thought (CoT) prompting is effective for code generation — it guides LLMs to reason about algorithmic design before writing code. However, applying CoT uniformly to all tasks introduces an "overthinking" problem.
 
 **Limitations of Prior Work**:
 - Applying CoT to simple tasks (e.g., string reversal) reduces efficiency and may introduce erroneous reasoning.
 - Existing CoT methods lack "intent abstraction" — they focus on syntactic correctness while neglecting core algorithm design and efficiency.
 - Treating all tasks identically violates the principle of cognitive economy (only difficult tasks warrant deep reasoning).
 
-**Root Cause**: CoT is beneficial for hard tasks but wasteful for easy ones — an adaptive mechanism is needed to determine when to activate structured reasoning.
+**Key Challenge**: CoT is beneficial for hard tasks but wasteful for easy ones — an adaptive mechanism is needed to determine when to activate structured reasoning.
 
-**Paper Goals**: Dynamically select a generation strategy based on problem difficulty: simple problems → direct generation; complex problems → intent-level CoT reasoning followed by generation.
+**Goal**: Dynamically select a generation strategy based on problem difficulty: simple problems → direct generation; complex problems → intent-level CoT reasoning followed by generation.
 
-**Starting Point**: The cognitive economy principle — activate structured reasoning only when necessary, so as to conserve cognitive resources.
+**Key Insight**: The cognitive economy principle — activate structured reasoning only when necessary, so as to conserve cognitive resources.
 
 **Core Idea**: Difficulty-classifier routing + Intention CoT (Specification + Algorithmic Intent + Complexity) = efficient and high-quality code generation.
 

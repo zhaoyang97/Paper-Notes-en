@@ -29,14 +29,14 @@ This paper proposes MovSemCL, a framework that transforms GPS trajectories into 
 
 ## Background & Motivation
 
-**State of the Field**: Trajectory similarity computation is a fundamental function for ride-sharing, logistics optimization, and urban analytics. Traditional methods (Hausdorff, Fréchet distance) are computationally expensive and semantics-agnostic; learning-based methods (RNN/CNN/Transformer) embed trajectories into vector spaces for efficient cosine-similarity retrieval.
+**Background**: Trajectory similarity computation is a fundamental function for ride-sharing, logistics optimization, and urban analytics. Traditional methods (Hausdorff, Fréchet distance) are computationally expensive and semantics-agnostic; learning-based methods (RNN/CNN/Transformer) embed trajectories into vector spaces for efficient cosine-similarity retrieval.
 
 **Three Core Limitations**:
 - **(L1) Insufficient semantic and hierarchical modeling**: Existing methods treat trajectories as flat coordinate sequences, neither extracting movement dynamics (velocity changes, direction shifts) nor modeling the hierarchical structure of points → maneuvers → trips.
 - **(L2) Poor computational efficiency**: Real-world trajectories often contain hundreds of points. RNNs cannot be parallelized, and the $O(L^2)$ attention of Transformers forces lossy downsampling, degrading motion fidelity.
 - **(L3) Semantics-agnostic augmentation**: Random masking in contrastive learning causes spatial discontinuities, while uniform sampling discards turn/intersection information, producing physically implausible trajectory views.
 
-**Starting Point**: The three limitations are addressed by dedicated designs—movement-semantics encoding (L1), patch-based hierarchical encoding (L1+L2), and curvature-guided augmentation (L3)—which together constitute a unified framework.
+**Key Insight**: The three limitations are addressed by dedicated designs—movement-semantics encoding (L1), patch-based hierarchical encoding (L1+L2), and curvature-guided augmentation (L3)—which together constitute a unified framework.
 
 ## Method
 

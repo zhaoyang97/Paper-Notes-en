@@ -28,15 +28,15 @@ This work presents the first theoretical framework for detecting time series lar
 
 ## Background & Motivation
 
-**State of the Field**: Time series large models (e.g., Chronos, Timer, TimeMoE) are now capable of zero-shot long-horizon forecasting on unseen domains. This capability may be maliciously exploited to fabricate financial transaction records, scientific experiment data, and environmental monitoring indicators, posing serious threats to data authenticity.
+**Background**: Time series large models (e.g., Chronos, Timer, TimeMoE) are now capable of zero-shot long-horizon forecasting on unseen domains. This capability may be maliciously exploited to fabricate financial transaction records, scientific experiment data, and environmental monitoring indicators, posing serious threats to data authenticity.
 
 **Limitations of Prior Work**: LLM text detection methods (DetectGPT, Fast-DetectGPT, etc.) rely on token-level probability or rank differences to distinguish human-written from AI-generated text. However, time series exhibit fundamental modal differences: low information density (adjacent values such as 25.1°C and 25.2°C are nearly identical) and smooth probability distributions (high entropy), rendering token-level probability differences non-discriminative. Experiments confirm that 10 text-detection baselines achieve an average AUROC of only 0.670 on time series.
 
-**Root Cause**: Point-wise probabilities lack discriminative power in time series, yet the dynamic distributional evolution at the sequence level encodes essential differences between real and generated sequences—the challenge lies in characterizing and exploiting this distinction.
+**Key Challenge**: Point-wise probabilities lack discriminative power in time series, yet the dynamic distributional evolution at the sequence level encodes essential differences between real and generated sequences—the challenge lies in characterizing and exploiting this distinction.
 
-**Paper Goals**: (1) Why do text detection methods fail on time series? (2) What unique properties of the time series modality can be leveraged for detection? (3) Design a theoretically grounded detection method for TSLM-generated time series.
+**Goal**: (1) Why do text detection methods fail on time series? (2) What unique properties of the time series modality can be leveraged for detection? (3) Design a theoretically grounded detection method for TSLM-generated time series.
 
-**Starting Point**: Rather than examining point-wise probabilities, this work analyzes the dynamics of TSLM internal predictive distributions during recursive forecasting. The authors find that, due to sampling strategies, each step of a TSLM-generated sequence yields a more concentrated distribution than the true distribution, and this effect accumulates and amplifies through recursive prediction.
+**Key Insight**: Rather than examining point-wise probabilities, this work analyzes the dynamics of TSLM internal predictive distributions during recursive forecasting. The authors find that, due to sampling strategies, each step of a TSLM-generated sequence yields a more concentrated distribution than the true distribution, and this effect accumulates and amplifies through recursive prediction.
 
 **Core Idea**: TSLM-generated time series exhibit exponentially decaying uncertainty (distributional contraction) under recursive forecasting, while real sequences maintain stable uncertainty. Detecting AI-generated sequences is achieved by quantifying this dynamic uncertainty discrepancy.
 

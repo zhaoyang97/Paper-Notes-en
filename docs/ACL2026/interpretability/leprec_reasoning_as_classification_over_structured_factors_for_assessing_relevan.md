@@ -28,15 +28,15 @@ This paper proposes LePREC, a neuro-symbolic framework inspired by legal profess
 
 ## Background & Motivation
 
-**State of the Field**: More than half of the global population struggles to meet their civil justice needs. Within the IRAC (Issue-Rule-Application-Conclusion) framework, legal issue identification is a critical first step, encompassing both the generation of candidate legal issues and the assessment of their relevance. Although LLMs have demonstrated strong language capabilities, their precision in real-world legal settings remains insufficient.
+**Background**: More than half of the global population struggles to meet their civil justice needs. Within the IRAC (Issue-Rule-Application-Conclusion) framework, legal issue identification is a critical first step, encompassing both the generation of candidate legal issues and the assessment of their relevance. Although LLMs have demonstrated strong language capabilities, their precision in real-world legal settings remains insufficient.
 
 **Limitations of Prior Work**: Existing legal AI benchmarks are largely confined to simplified or synthetic scenarios (e.g., textbook cases) and lack expert-annotated datasets grounded in real court decisions. Directly applying GPT-4o to legal issue relevance assessment yields only 62% precision, as LLMs fail to distinguish between issues that are "factually related" and those that "genuinely concern the core dispute of the case."
 
-**Root Cause**: When assessing relevance, legal professionals must consider multiple layers of context—jurisdictional constraints, procedural background, and case-specific factors—whereas LLMs tend to perform superficial fact matching and lack deep legal reasoning capacity. End-to-end "black-box" approaches cannot produce such fine-grained judgments.
+**Key Challenge**: When assessing relevance, legal professionals must consider multiple layers of context—jurisdictional constraints, procedural background, and case-specific factors—whereas LLMs tend to perform superficial fact matching and lack deep legal reasoning capacity. End-to-end "black-box" approaches cannot produce such fine-grained judgments.
 
-**Paper Goals**: (1) Construct LIC, the first legal issue relevance assessment dataset grounded in real court cases; (2) Propose LePREC, a data-efficient and interpretable neuro-symbolic framework that reformulates legal reasoning as statistical classification over structured factors.
+**Goal**: (1) Construct LIC, the first legal issue relevance assessment dataset grounded in real court cases; (2) Propose LePREC, a data-efficient and interpretable neuro-symbolic framework that reformulates legal reasoning as statistical classification over structured factors.
 
-**Starting Point**: The authors observe that legal professionals follow a two-stage analytical process—first identifying key analytical factors (brainstorming), then weighing those factors to reach a judgment. This decomposition naturally maps onto the neuro-symbolic paradigm: the neural component extracts factors, while the symbolic component performs the weighing and reasoning.
+**Key Insight**: The authors observe that legal professionals follow a two-stage analytical process—first identifying key analytical factors (brainstorming), then weighing those factors to reach a judgment. This decomposition naturally maps onto the neuro-symbolic paradigm: the neural component extracts factors, while the symbolic component performs the weighing and reasoning.
 
 **Core Idea**: Legal issue relevance assessment is reformulated from "evaluating the fact–issue relationship" to "classifying factor–issue relevance." LLMs generate binary reasoning questions as structured features, and a sparse linear model learns explicit algebraic weights, enabling interpretable and data-efficient relevance judgments.
 

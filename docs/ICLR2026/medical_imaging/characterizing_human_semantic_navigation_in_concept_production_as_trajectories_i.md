@@ -28,15 +28,15 @@ This paper proposes modeling the human concept production process as cumulative 
 
 ## Background & Motivation
 
-**State of the Field**: Human semantic retrieval is modeled in cognitive science as a "foraging" process in semantic space, balancing exploitation (clustering) and exploration (switching). Traditional methods analyze verbal fluency task data using a binary clustering/switching framework.
+**Background**: Human semantic retrieval is modeled in cognitive science as a "foraging" process in semantic space, balancing exploitation (clustering) and exploration (switching). Traditional methods analyze verbal fluency task data using a binary clustering/switching framework.
 
 **Limitations of Prior Work**: (a) Clustering/switching analysis relies on time-consuming manual annotation and heterogeneous pipelines, rendering cross-study comparisons infeasible; (b) static word embeddings (e.g., fastText) ignore the cumulative nature of semantic retrieval—the semantics of each word is influenced by preceding words; (c) traditional analysis yields only coarse-grained categories (clustering vs. switching), lacking step-wise quantitative dynamics.
 
-**Root Cause**: Semantic retrieval is a history-dependent dynamic process (requiring working memory to suppress previously produced words), yet existing NLP methods embed each word independently, discarding sequential dependencies.
+**Key Challenge**: Semantic retrieval is a history-dependent dynamic process (requiring working memory to suppress previously produced words), yet existing NLP methods embed each word independently, discarding sequential dependencies.
 
-**Paper Goals**: To establish a trajectory analysis framework based on cumulative embeddings, quantifying the step-wise dynamics of human semantic navigation using physical kinematic metrics.
+**Goal**: To establish a trajectory analysis framework based on cumulative embeddings, quantifying the step-wise dynamics of human semantic navigation using physical kinematic metrics.
 
-**Starting Point**: Concept production sequences are treated as trajectories in embedding space—where each step's embedding is a cumulative encoding of all words produced so far. Concepts from physics such as distance, velocity, and acceleration are borrowed to characterize trajectory properties.
+**Key Insight**: Concept production sequences are treated as trajectories in embedding space—where each step's embedding is a cumulative encoding of all words produced so far. Concepts from physics such as distance, velocity, and acceleration are borrowed to characterize trajectory properties.
 
 **Core Idea**: Model semantic retrieval as motion trajectories in high-dimensional space using cumulative Transformer embeddings, and use kinematic metrics to enable automated, cross-lingual analysis of semantic navigation.
 

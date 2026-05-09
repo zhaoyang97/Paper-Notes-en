@@ -28,15 +28,15 @@ This paper proposes the DMVR framework and the α-DPG algorithm. By explicitly d
 
 ## Background & Motivation
 
-**State of the Field**: Reinforcement learning with verifiable rewards (RLVR, e.g., GRPO/PPO) has become the standard approach for tuning LLM reasoning capabilities. However, growing evidence shows that RLVR-trained models suffer from **severe diversity loss** (mode collapse)—while pass@1 improves, the diversity of the generation policy drops substantially, causing pass@k (for large k) to fall below that of the base model.
+**Background**: Reinforcement learning with verifiable rewards (RLVR, e.g., GRPO/PPO) has become the standard approach for tuning LLM reasoning capabilities. However, growing evidence shows that RLVR-trained models suffer from **severe diversity loss** (mode collapse)—while pass@1 improves, the diversity of the generation policy drops substantially, causing pass@k (for large k) to fall below that of the base model.
 
 **Limitations of Prior Work**: RLVR methods (GRPO/PPO, etc.) implicitly optimize the Reverse KL divergence to the target distribution, a mode-seeking divergence that concentrates the model on a few high-reward regions while ignoring other valid solutions. When $\beta=0$, the objective degenerates to pure REINFORCE with no diversity protection whatsoever. Existing mitigation strategies (KL penalties, Rw-Ulkly, etc.) treat symptoms rather than causes.
 
-**Root Cause**: There is a fundamental trade-off between accuracy (pass@1) and coverage (pass@k). Existing RL methods can only favor the accuracy end, and lack a systematic mechanism to control this trade-off.
+**Key Challenge**: There is a fundamental trade-off between accuracy (pass@1) and coverage (pass@k). Existing RL methods can only favor the accuracy end, and lack a systematic mechanism to control this trade-off.
 
-**Paper Goals**: How can one preserve the solution diversity already present in the base model while maintaining correctness? How can a continuously controllable mechanism for the accuracy–coverage trade-off be provided?
+**Goal**: How can one preserve the solution diversity already present in the base model while maintaining correctness? How can a continuously controllable mechanism for the accuracy–coverage trade-off be provided?
 
-**Starting Point**: The paper re-examines RLVR from a **distributional matching** perspective—explicitly defining the target distribution as one that filters out incorrect answers while preserving the relative probability of correct answers: $p_x(y) \propto \pi_{\text{base}}(y|x) \cdot v(y,x)$. The α-divergence family is then used to approximate this target distribution, with different values of α corresponding to different accuracy–diversity trade-offs.
+**Key Insight**: The paper re-examines RLVR from a **distributional matching** perspective—explicitly defining the target distribution as one that filters out incorrect answers while preserving the relative probability of correct answers: $p_x(y) \propto \pi_{\text{base}}(y|x) \cdot v(y,x)$. The α-divergence family is then used to approximate this target distribution, with different values of α corresponding to different accuracy–diversity trade-offs.
 
 **Core Idea**: The root cause of diversity loss lies not in the target distribution (filtering itself), but in the choice of divergence used to approximate it—replacing Reverse KL with α-divergences enables systematic control over the accuracy–diversity balance.
 

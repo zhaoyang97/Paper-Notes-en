@@ -28,15 +28,15 @@ This paper proposes RMFlow, which appends a noise-injection refinement step afte
 
 ## Background & Motivation
 
-**State of the Field**: MeanFlow learns a mean velocity field to enable few-step generation without pretraining or distillation. However, performance degrades significantly at 1-NFE — single-step transport is insufficiently precise, causing generated samples to deviate from the target distribution.
+**Background**: MeanFlow learns a mean velocity field to enable few-step generation without pretraining or distillation. However, performance degrades significantly at 1-NFE — single-step transport is insufficiently precise, causing generated samples to deviate from the target distribution.
 
 **Limitations of Prior Work**: 1-NFE MeanFlow exhibits large bias on Gaussian mixture distributions and produces invalid molecular structures (broken molecules) in molecular generation. Multi-step inference (8/32 NFE) performs well but sacrifices efficiency.
 
-**Root Cause**: The deterministic output of 1-NFE transport deviates from the true distribution due to approximation errors in the mean velocity field, yet increasing NFE is not an option.
+**Key Challenge**: The deterministic output of 1-NFE transport deviates from the true distribution due to approximation errors in the mean velocity field, yet increasing NFE is not an option.
 
-**Paper Goals**: Improve MeanFlow generation quality while maintaining 1-NFE inference.
+**Goal**: Improve MeanFlow generation quality while maintaining 1-NFE inference.
 
-**Starting Point**: The 1-NFE transport is treated as a "coarse transport," followed by a noise-injection step for "refinement" — essentially converting the deterministic output of MeanFlow into a stochastic output, using noise to compensate for transport errors. An additional maximum likelihood objective is incorporated during training to minimize KL divergence.
+**Key Insight**: The 1-NFE transport is treated as a "coarse transport," followed by a noise-injection step for "refinement" — essentially converting the deterministic output of MeanFlow into a stochastic output, using noise to compensate for transport errors. An additional maximum likelihood objective is incorporated during training to minimize KL divergence.
 
 **Core Idea**: Deterministic 1-NFE MeanFlow output + Gaussian noise injection ≈ improved approximation of the target distribution.
 

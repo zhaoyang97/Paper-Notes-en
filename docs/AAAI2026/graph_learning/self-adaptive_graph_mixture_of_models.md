@@ -29,11 +29,11 @@ This paper proposes SAGMM (Self-Adaptive Graph Mixture of Models), a graph MoE f
 
 ## Background & Motivation
 
-**State of the Field**: GNN architectures have achieved substantial progress, yet performance improvements are approaching saturation. Recent studies show that well-tuned classical models (GCN, GAT, GraphSAGE) can match or even surpass state-of-the-art Graph Transformers on node classification tasks, suggesting that different models capture distinct subregions of the representation space while each individually offering limited coverage.
+**Background**: GNN architectures have achieved substantial progress, yet performance improvements are approaching saturation. Recent studies show that well-tuned classical models (GCN, GAT, GraphSAGE) can match or even surpass state-of-the-art Graph Transformers on node classification tasks, suggesting that different models capture distinct subregions of the representation space while each individually offering limited coverage.
 
 **Limitations of Prior Work**: (1) Selecting the optimal GNN for a specific dataset requires extensive trial-and-error and hyperparameter tuning, with many trained models ultimately discarded. (2) Existing graph MoE methods (e.g., GMoE, DA-MoE) employ variants of the same base model as experts, resulting in limited architectural diversity. (3) Gating mechanisms rely on simple linear projections, neglecting graph topology information. (4) Top-$k$ routing forces all nodes to activate the same number of experts, which is misaligned with the actual needs of individual nodes.
 
-**Root Cause**: A single GNN cannot cover all graph structural patterns (No Free Lunch theorem), yet naive expert mixing lacks topology-aware adaptive selection capability.
+**Key Challenge**: A single GNN cannot cover all graph structural patterns (No Free Lunch theorem), yet naive expert mixing lacks topology-aware adaptive selection capability.
 
 **Core Idea**: A pool of architecturally heterogeneous GNNs (GCN, GAT, GraphSAGE, GIN, etc.) serves as experts, with a topology-aware sparse attention gating mechanism enabling each node to adaptively determine the number and combination of relevant experts.
 

@@ -29,11 +29,11 @@ This paper is the first to systematically elevate camera pose trajectories (6DoF
 
 ## Background & Motivation
 
-1. **State of the Field**: Video understanding has explored a broad range of modalities—visual, audio, IMU, thermal, depth, and tactile—aligned with text via contrastive learning. Yet camera pose trajectories have consistently been overlooked as a semantic perception signal, confined to geometric tasks such as 3D reconstruction and visual odometry.
+1. **Background**: Video understanding has explored a broad range of modalities—visual, audio, IMU, thermal, depth, and tactile—aligned with text via contrastive learning. Yet camera pose trajectories have consistently been overlooked as a semantic perception signal, confined to geometric tasks such as 3D reconstruction and visual odometry.
 2. **Limitations of Prior Work**: Visual encoders are computationally intensive (e.g., EgoVLPv2 requires approximately 89.5 GMACs) and are limited in scenarios involving visual occlusion or out-of-view actions. Sensors such as IMUs require dedicated hardware and cannot be retrospectively obtained from existing videos.
-3. **Root Cause**: Camera trajectories are an intrinsic property of any video and can be estimated directly from it, yet they have long been considered too low in information density (only a 9D vector per frame) and too semantically ambiguous to support video content understanding.
-4. **Paper Goals**: To validate a seemingly counterintuitive hypothesis—that video content can be understood from camera motion trajectories alone, without any pixel information.
-5. **Starting Point**: Human perception is active—we move in order to see, and camera trajectories serve as physical fingerprints of the cameraperson's intent. A basketball layup is accompanied by an upward tilt; lifting a tire involves a top-down sweep; walking produces rhythmic forward-and-backward oscillation—these are semantic motion signatures.
+3. **Key Challenge**: Camera trajectories are an intrinsic property of any video and can be estimated directly from it, yet they have long been considered too low in information density (only a 9D vector per frame) and too semantically ambiguous to support video content understanding.
+4. **Goal**: To validate a seemingly counterintuitive hypothesis—that video content can be understood from camera motion trajectories alone, without any pixel information.
+5. **Key Insight**: Human perception is active—we move in order to see, and camera trajectories serve as physical fingerprints of the cameraperson's intent. A basketball layup is accompanied by an upward tilt; lifting a tire involves a top-down sweep; walking produces rhythmic forward-and-backward oscillation—these are semantic motion signatures.
 6. **Core Idea**: Contrastive learning is used to map low-dimensional camera trajectories into a textual semantic space, demonstrating that *how the camera moves* genuinely reveals *what is happening*.
 
 ## Method

@@ -29,11 +29,11 @@ This paper proposes LEON (LLM-based Entropy-guided Optimization with kNowledgeab
 
 ## Background & Motivation
 
-- **State of the Field**: Personalized medicine aims to discover optimal treatment strategies based on a patient's genetic and environmental factors. Recent work has demonstrated the potential of LLMs as black-box optimizers in domains such as mathematics and code.
+- **Background**: Personalized medicine aims to discover optimal treatment strategies based on a patient's genetic and environmental factors. Recent work has demonstrated the potential of LLMs as black-box optimizers in domains such as mathematics and code.
 - **Limitations of Prior Work**: (1) Evaluating real treatment outcomes is extremely costly, and surrogate models (digital twins, ML models) are typically used as proxies; (2) surrogate models yield unreliable predictions under distribution shift (e.g., patients from a new hospital), producing "spurious" plans that appear promising but perform poorly in practice; (3) certain patient subpopulations are systematically underrepresented in clinical studies.
-- **Root Cause**: Naively substituting a surrogate $\hat{f}$ for the true objective $f$ leads to out-of-distribution extrapolation and poor real-world treatment outcomes. Improving the surrogate is further constrained by data availability and privacy concerns.
-- **Paper Goals**: To design personalized treatment plans for patients under distribution shift when the surrogate model is unreliable and the true objective function is inaccessible.
-- **Starting Point**: Leveraging the domain prior knowledge internalized by LLMs (medical textbooks, knowledge graphs) as a complementary signal, and using constrained optimization to simultaneously control surrogate extrapolation and the entropy of LLM proposals.
+- **Key Challenge**: Naively substituting a surrogate $\hat{f}$ for the true objective $f$ leads to out-of-distribution extrapolation and poor real-world treatment outcomes. Improving the surrogate is further constrained by data availability and privacy concerns.
+- **Goal**: To design personalized treatment plans for patients under distribution shift when the surrogate model is unreliable and the true objective function is inaccessible.
+- **Key Insight**: Leveraging the domain prior knowledge internalized by LLMs (medical textbooks, knowledge graphs) as a complementary signal, and using constrained optimization to simultaneously control surrogate extrapolation and the entropy of LLM proposals.
 - **Core Idea**: Two constraints—a Wasserstein distance constraint to limit distribution shift and an entropy constraint to promote LLM certainty—regularize LLM-driven conditional black-box optimization, with prior knowledge improving the quality of the LLM as a stochastic treatment recommendation engine.
 
 ## Method

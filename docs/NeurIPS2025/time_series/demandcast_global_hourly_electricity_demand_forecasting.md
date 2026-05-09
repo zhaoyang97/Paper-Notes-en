@@ -31,11 +31,11 @@ DemandCast is an open-source machine learning framework that leverages XGBoost t
 
 ### Limitations of Prior Work
 
-**Limitations of Prior Work**: **State of the Field**: The global energy transition (decarbonization) requires accurate spatiotemporal forecasting of electricity demand to support renewable energy integration and grid management. Future electricity consumption patterns, however, are subject to substantial uncertainty driven by population growth, economic development, urbanization, and technological change. This uncertainty is particularly pronounced in Global South countries, which face the dual challenge of expanding electricity access while reducing carbon emissions.
+**Limitations of Prior Work**: **Background**: The global energy transition (decarbonization) requires accurate spatiotemporal forecasting of electricity demand to support renewable energy integration and grid management. Future electricity consumption patterns, however, are subject to substantial uncertainty driven by population growth, economic development, urbanization, and technological change. This uncertainty is particularly pronounced in Global South countries, which face the dual challenge of expanding electricity access while reducing carbon emissions.
 
 Shortcomings of existing methods: (1) most are limited to a single country or a small number of regions; (2) data coverage is temporally narrow (e.g., using only 2015 data); (3) end-to-end open-source reproducible pipelines are lacking.
 
-**Starting Point**: DemandCast constructs a large-scale forecasting framework covering 56 countries/regions over the period 2000–2025, employing a normalization design that enables the model to generalize across countries with heterogeneous data.
+**Key Insight**: DemandCast constructs a large-scale forecasting framework covering 56 countries/regions over the period 2000–2025, employing a normalization design that enables the model to generalize across countries with heterogeneous data.
 
 ## Method
 

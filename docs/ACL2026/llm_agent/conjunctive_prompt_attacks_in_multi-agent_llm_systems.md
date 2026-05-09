@@ -28,15 +28,15 @@ This paper investigates conjunctive prompt attacks in multi-agent LLM systems: a
 
 ## Background & Motivation
 
-**State of the Field**: LLM security research has focused predominantly on single-agent scenarios, whereas real-world deployments involve multiple specialized agents collaborating through task decomposition, routing, and tool invocation. In multi-agent pipelines, remote agents are typically black boxes—their weights, prompts, and system templates may be hosted by third parties.
+**Background**: LLM security research has focused predominantly on single-agent scenarios, whereas real-world deployments involve multiple specialized agents collaborating through task decomposition, routing, and tool invocation. In multi-agent pipelines, remote agents are typically black boxes—their weights, prompts, and system templates may be hosted by third parties.
 
 **Limitations of Prior Work**: Single-agent security evaluations fail to capture the novel attack surface introduced by multi-agent systems—prompt segmentation, inter-agent routing, and hidden wrappers create vulnerabilities that point-wise inspection cannot detect. Existing defenses such as PromptGuard and Llama-Guard examine messages in isolation and cannot detect malicious behavior that emerges only after cross-agent composition.
 
-**Root Cause**: Modular design enhances system capability but also introduces supply chain risks—an adversary need not modify any model weights or client-side agents; injecting a seemingly benign template into a single remote agent suffices to compromise the end-to-end pipeline.
+**Key Challenge**: Modular design enhances system capability but also introduces supply chain risks—an adversary need not modify any model weights or client-side agents; injecting a seemingly benign template into a single remote agent suffices to compromise the end-to-end pipeline.
 
-**Paper Goals**: To formalize the threat model for conjunctive prompt attacks, develop a topology-aware attack optimization framework, and evaluate the effectiveness of existing defenses.
+**Goal**: To formalize the threat model for conjunctive prompt attacks, develop a topology-aware attack optimization framework, and evaluate the effectiveness of existing defenses.
 
-**Starting Point**: Attack success is modeled as the conjunction of three conditions: the trigger key is present in a query segment, that segment is routed to the compromised agent, and the compromised agent's template is activated.
+**Key Insight**: Attack success is modeled as the conjunction of three conditions: the trigger key is present in a query segment, that segment is routed to the compromised agent, and the compromised agent's template is activated.
 
 **Core Idea**: Conjunctive activation—the two constituent components of the attack are individually benign and activate only when routing brings them together, which renders defenses based on point-wise inspection inherently ineffective.
 

@@ -29,15 +29,15 @@ LLaVA-CoT proposes a method enabling vision-language models to perform autonomou
 
 ## Background & Motivation
 
-**State of the Field**: Large language models have demonstrated strong reasoning capabilities through inference-time scaling (e.g., OpenAI o1). However, current vision-language models (VLMs) still struggle to perform systematic and structured reasoning on complex visual question answering tasks. Most VLMs jump directly from question to answer, lacking explicit structure in intermediate reasoning steps.
+**Background**: Large language models have demonstrated strong reasoning capabilities through inference-time scaling (e.g., OpenAI o1). However, current vision-language models (VLMs) still struggle to perform systematic and structured reasoning on complex visual question answering tasks. Most VLMs jump directly from question to answer, lacking explicit structure in intermediate reasoning steps.
 
 **Limitations of Prior Work**: While Chain-of-Thought (CoT) prompting can guide models to "think step by step," this approach relies on external prompt engineering and does not internalize systematic reasoning into the model itself. Specifically: (1) standard CoT reasoning steps are unstructured free text without explicit stage delineation; (2) models cannot autonomously decide when to extract visual information versus when to perform logical inference; (3) existing inference-time scaling methods (e.g., beam search) operate at the token level, whose fine granularity makes them inefficient for long-chain reasoning.
 
-**Root Cause**: VLMs must balance between "fast intuitive answering" and "deep structured reasoning." Simple questions require no deep reasoning, but complex problems demand distinct cognitive stages—first understanding the question, then interpreting the image, followed by reasoning, and finally arriving at a conclusion. Teaching models to autonomously command this structured reasoning process is the core challenge.
+**Key Challenge**: VLMs must balance between "fast intuitive answering" and "deep structured reasoning." Simple questions require no deep reasoning, but complex problems demand distinct cognitive stages—first understanding the question, then interpreting the image, followed by reasoning, and finally arriving at a conclusion. Teaching models to autonomously command this structured reasoning process is the core challenge.
 
-**Paper Goals**: (1) Train VLMs to perform autonomous multi-stage structured reasoning without relying on external prompts; (2) Design an efficient inference-time scaling method that exploits the multi-stage structure.
+**Goal**: (1) Train VLMs to perform autonomous multi-stage structured reasoning without relying on external prompts; (2) Design an efficient inference-time scaling method that exploits the multi-stage structure.
 
-**Starting Point**: The authors observe that humans naturally undergo a "read the question → examine the image → reason → conclude" cognitive process when solving complex visual reasoning problems. Rather than eliciting free-format chains of thought, explicitly encoding this process with structural labels and teaching the model this reasoning paradigm through annotated data is the key motivation.
+**Key Insight**: The authors observe that humans naturally undergo a "read the question → examine the image → reason → conclude" cognitive process when solving complex visual reasoning problems. Rather than eliciting free-format chains of thought, explicitly encoding this process with structural labels and teaching the model this reasoning paradigm through annotated data is the key motivation.
 
 **Core Idea**: Construct a 100k structured reasoning annotation dataset so that VLMs learn to autonomously reason in stages (using `<SUMMARY>`, `<CAPTION>`, `<REASONING>`, and `<CONCLUSION>` tags), combined with stage-level retracing search for efficient test-time scaling.
 

@@ -28,15 +28,15 @@ This paper introduces SCRIPTS, a benchmark comprising 1.1K English and Korean mo
 
 ## Background & Motivation
 
-**State of the Field**: As LLM agents become increasingly prevalent in multi-party interaction scenarios (e.g., ChatGPT group chats), LLMs must correctly identify social relationships among dialogue participants (e.g., lovers, friends, parent–child). Incorrect relationship inference may lead to inappropriate responses and privacy-related safety risks.
+**Background**: As LLM agents become increasingly prevalent in multi-party interaction scenarios (e.g., ChatGPT group chats), LLMs must correctly identify social relationships among dialogue participants (e.g., lovers, friends, parent–child). Incorrect relationship inference may lead to inappropriate responses and privacy-related safety risks.
 
 **Limitations of Prior Work**: Prior studies evaluating LLMs' social relationship reasoning suffer from oversimplified settings: (1) most rely on multiple-choice classification, limiting reasoning granularity; (2) relationship taxonomies are restricted; (3) most focus on simple two-party dialogues; (4) single correct labels fail to capture the inherent ambiguity of social relationships.
 
-**Root Cause**: Social relationship reasoning is inherently ambiguous and context-dependent — the same utterance "You never listen to me" may be a serious complaint between lovers or a playful remark between friends — yet existing evaluation frameworks cannot capture this ambiguity.
+**Key Challenge**: Social relationship reasoning is inherently ambiguous and context-dependent — the same utterance "You never listen to me" may be a serious complaint between lovers or a playful remark between friends — yet existing evaluation frameworks cannot capture this ambiguity.
 
-**Paper Goals**: To construct a cross-lingual social relationship reasoning benchmark that supports uncertainty-aware evaluation, and to comprehensively assess the social reasoning capabilities and failure modes of current LLMs in both English and Korean.
+**Goal**: To construct a cross-lingual social relationship reasoning benchmark that supports uncertainty-aware evaluation, and to comprehensively assess the social reasoning capabilities and failure modes of current LLMs in both English and Korean.
 
-**Starting Point**: Movie scripts are used as a data source approximating authentic dialogue. A three-tier probabilistic labeling scheme is introduced, three-party dialogue scenarios are included, and cultural specificity is analyzed from a cross-lingual perspective.
+**Key Insight**: Movie scripts are used as a data source approximating authentic dialogue. A three-tier probabilistic labeling scheme is introduced, three-party dialogue scenarios are included, and cultural specificity is analyzed from a cross-lingual perspective.
 
 **Core Idea**: Social relationship reasoning cannot be evaluated with a single correct label; instead, it requires distinguishing "highly likely," "less likely," and "unlikely" relationship inferences to measure models' social intelligence at a fine-grained level.
 

@@ -30,7 +30,7 @@ ACE-G decomposes a scene coordinate regressor into a scene-agnostic Transformer 
 
 ### State of the Field
 
-**State of the Field**: Scene Coordinate Regression (SCR) is a learning-based visual relocalization approach whose core mechanism is to train a network that maps image patch features to corresponding 3D coordinates, followed by a PnP solver for camera pose estimation. The representative work ACE achieves high accuracy with only a few minutes of scene-specific training.
+**Background**: Scene Coordinate Regression (SCR) is a learning-based visual relocalization approach whose core mechanism is to train a network that maps image patch features to corresponding 3D coordinates, followed by a PnP solver for camera pose estimation. The representative work ACE achieves high accuracy with only a few minutes of scene-specific training.
 
 ### Limitations of Prior Work
 
@@ -38,15 +38,15 @@ ACE-G decomposes a scene coordinate regressor into a scene-agnostic Transformer 
 
 ### Root Cause
 
-**Root Cause**: The fundamental issue lies in the training mechanism itself: prior SCR methods encode training views of a scene into the regressor's network weights, such that the regressor essentially overfits to the training views—by design rather than as a defect. As a result, the network lacks generalization to unseen query conditions.
+**Key Challenge**: The fundamental issue lies in the training mechanism itself: prior SCR methods encode training views of a scene into the regressor's network weights, such that the regressor essentially overfits to the training views—by design rather than as a defect. As a result, the network lacks generalization to unseen query conditions.
 
 ### Root Cause
 
-**Root Cause**: Classical feature matching methods are inherently robust to appearance changes by virtue of feature extractors pre-trained on large-scale data, whereas SCR methods lack this cross-scene pre-training capability.
+**Key Challenge**: Classical feature matching methods are inherently robust to appearance changes by virtue of feature extractors pre-trained on large-scale data, whereas SCR methods lack this cross-scene pre-training capability.
 
 ### Paper Goals
 
-**Paper Goals**: How can SCR methods acquire generalization to illumination changes, large viewpoint differences, and seasonal/weather variation, while retaining the advantages of rapid scene adaptation (a few minutes of training) and lightweight computation?
+**Goal**: How can SCR methods acquire generalization to illumination changes, large viewpoint differences, and seasonal/weather variation, while retaining the advantages of rapid scene adaptation (a few minutes of training) and lightweight computation?
 
 The central challenge is that conventional SCR couples "scene understanding" and "coordinate regression" within a single network, forcing the network to be trained from scratch for each scene and preventing the accumulation of cross-scene generalizable knowledge.
 

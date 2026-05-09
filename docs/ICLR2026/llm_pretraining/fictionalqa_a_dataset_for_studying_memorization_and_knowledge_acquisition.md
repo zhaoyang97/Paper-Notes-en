@@ -28,15 +28,15 @@ This work introduces the FictionalQA dataset and generation pipeline, which synt
 
 ## Background & Motivation
 
-**State of the Field**: Two distinct memorization phenomena occur during LLM training: verbatim memorization (exact reproduction of training sequences) and factual memorization (generalization of facts encountered during training to novel tasks). Verbatim memorization has been extensively studied by Carlini et al., whereas understanding of factual memorization remains limited.
+**Background**: Two distinct memorization phenomena occur during LLM training: verbatim memorization (exact reproduction of training sequences) and factual memorization (generalization of facts encountered during training to novel tasks). Verbatim memorization has been extensively studied by Carlini et al., whereas understanding of factual memorization remains limited.
 
 **Limitations of Prior Work**: Studying factual memorization is challenging because it is difficult to quantify how frequently a given fact appears in training data. Existing datasets are either overly templated (TOFU uses fill-in-the-blank), too small (New News contains only 75 articles), or involve science-fiction content that entangles fictional facts with real-world knowledge (Fictional Knowledge includes Star Trek-style topics).
 
-**Root Cause**: There is a need to simultaneously satisfy two conditions — surface-form realism and complete factual fabrication. Realism is necessary to simulate authentic training scenarios, while fabrication ensures that the introduced facts do not interact with genuine knowledge present in pre-training corpora, thereby enabling controlled experimentation.
+**Key Challenge**: There is a need to simultaneously satisfy two conditions — surface-form realism and complete factual fabrication. Realism is necessary to simulate authentic training scenarios, while fabrication ensures that the introduced facts do not interact with genuine knowledge present in pre-training corpora, thereby enabling controlled experimentation.
 
-**Paper Goals**: To construct a "clean-room" synthetic dataset that allows researchers to isolate and study different forms of memorization under strictly controlled conditions, with particular focus on the training dynamics of factual memorization.
+**Goal**: To construct a "clean-room" synthetic dataset that allows researchers to isolate and study different forms of memorization under strictly controlled conditions, with particular focus on the training dynamics of factual memorization.
 
-**Starting Point**: GPT-4o is used to generate hierarchically structured fictional data through a pipeline of seed events → detail sheets → multi-style documents → QA pairs, along with multiple train/validation split strategies designed to disentangle different experimental variables.
+**Key Insight**: GPT-4o is used to generate hierarchically structured fictional data through a pipeline of seed events → detail sheets → multi-style documents → QA pairs, along with multiple train/validation split strategies designed to disentangle different experimental variables.
 
 **Core Idea**: By leveraging controllable fictional synthetic data in a laboratory setting, the work demonstrates that factual memorization and verbatim memorization arise under different conditions, and that diverse surface forms promote knowledge acquisition while the most concise factual representations are least conducive to generalization.
 

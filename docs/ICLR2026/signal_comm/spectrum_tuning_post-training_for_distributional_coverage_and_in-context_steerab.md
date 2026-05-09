@@ -29,15 +29,15 @@ This paper proposes Spectrum Tuning, a post-training method that trains language
 
 ## Background & Motivation
 
-1. **State of the Field**: LLM post-training (instruction tuning, RLHF, etc.) has significantly improved instruction following and performance on single-correct-answer tasks, but its effects on tasks requiring diverse outputs (creative writing, synthetic data generation, pluralistic preference modeling) remain understudied.
+1. **Background**: LLM post-training (instruction tuning, RLHF, etc.) has significantly improved instruction following and performance on single-correct-answer tasks, but its effects on tasks requiring diverse outputs (creative writing, synthetic data generation, pluralistic preference modeling) remain understudied.
 
 2. **Limitations of Prior Work**: Current post-training methods may negatively affect tasks requiring distributional modeling—models exhibit degraded performance along three dimensions of conditional distribution modeling: in-context steerability (adjusting output distributions given new information), output coverage (generating diverse valid outputs), and distributional alignment (matching target distributions).
 
-3. **Root Cause**: Instruction tuning instills strong priors in models, making them adept at producing a single "best" answer, which precisely undermines the ability to flexibly adjust output distributions based on in-context demonstrations. A distinction must be drawn between two forms of in-context learning: ICL for capability elicitation and in-context steerability.
+3. **Key Challenge**: Instruction tuning instills strong priors in models, making them adept at producing a single "best" answer, which precisely undermines the ability to flexibly adjust output distributions based on in-context demonstrations. A distinction must be drawn between two forms of in-context learning: ICL for capability elicitation and in-context steerability.
 
-4. **Paper Goals**: To quantify the impact of current post-training on distributional modeling capabilities and propose methods to address it.
+4. **Goal**: To quantify the impact of current post-training on distributional modeling capabilities and propose methods to address it.
 
-5. **Starting Point**: The authors compile the Spectrum Suite, a dataset covering 40+ data sources and 90+ tasks—including personal preference modeling and numerical distribution estimation—that require distribution matching, serving as both an evaluation and training resource.
+5. **Key Insight**: The authors compile the Spectrum Suite, a dataset covering 40+ data sources and 90+ tasks—including personal preference modeling and numerical distribution estimation—that require distribution matching, serving as both an evaluation and training resource.
 
 6. **Core Idea**: Apply meta-learning-style fine-tuning on distributional fitting tasks, enabling models to acquire flexible in-context steerability while retaining existing capabilities.
 

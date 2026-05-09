@@ -28,15 +28,15 @@ AutoOpt introduces the first end-to-end framework for converting optimization pr
 
 ## Background & Motivation
 
-**State of the Field**: Mathematical optimization formulas frequently appear as images — on whiteboards, in scanned papers, or in handwritten notes. While OCR and LLMs perform well on general documents, recognition of mathematical formulas remains challenging.
+**Background**: Mathematical optimization formulas frequently appear as images — on whiteboards, in scanned papers, or in handwritten notes. While OCR and LLMs perform well on general documents, recognition of mathematical formulas remains challenging.
 
 **Limitations of Prior Work**: (a) No dedicated dataset exists for optimization problem images — existing OCR datasets do not cover the specific structure of objective functions and constraints; (b) The pipeline from LaTeX recognition to executable code is broken — translating to PYOMO requires understanding optimization semantics; (c) No unified automated solving method exists for complex non-convex or multi-level optimization.
 
-**Root Cause**: Transforming an optimization problem from image to solution requires three distinct capabilities — visual recognition, semantic understanding, and solving algorithms — yet no prior system addresses all three simultaneously.
+**Key Challenge**: Transforming an optimization problem from image to solution requires three distinct capabilities — visual recognition, semantic understanding, and solving algorithms — yet no prior system addresses all three simultaneously.
 
-**Paper Goals**: Construct a complete automated pipeline: image → LaTeX → PYOMO → solution.
+**Goal**: Construct a complete automated pipeline: image → LaTeX → PYOMO → solution.
 
-**Starting Point**: Address the problem through three dedicated modules — M1 uses a CNN+Transformer hybrid encoder for image→LaTeX; M2 uses fine-tuned DeepSeek-Coder for LaTeX→PYOMO; M3 uses bilevel decomposition for complex optimization.
+**Key Insight**: Address the problem through three dedicated modules — M1 uses a CNN+Transformer hybrid encoder for image→LaTeX; M2 uses fine-tuned DeepSeek-Coder for LaTeX→PYOMO; M3 uses bilevel decomposition for complex optimization.
 
 **Core Idea**: AutoOpt-11k dataset + ResNet-Swin-mBART image→LaTeX + DeepSeek-Coder LaTeX→PYOMO + bilevel optimization decomposition = a fully automated pipeline from image to optimization solution.
 

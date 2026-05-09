@@ -29,16 +29,16 @@ This paper proposes GP-MoLFormer-Sim, a training-free test-time molecular genera
 
 ## Background & Motivation
 
-**State of the Field**: Molecular optimization is a central problem in drug discovery and materials design, requiring the search for molecules satisfying specific property constraints within an enormous chemical space. Existing approaches include reinforcement learning, deep generative models (VAEs, diffusion models), GFlowNets, and genetic algorithms. Recent work has demonstrated that classical genetic algorithms remain highly competitive in molecular optimization.
+**Background**: Molecular optimization is a central problem in drug discovery and materials design, requiring the search for molecules satisfying specific property constraints within an enormous chemical space. Existing approaches include reinforcement learning, deep generative models (VAEs, diffusion models), GFlowNets, and genetic algorithms. Recent work has demonstrated that classical genetic algorithms remain highly competitive in molecular optimization.
 
 **Limitations of Prior Work**:
 - Methods that integrate GA with deep learning typically require **retraining** the generative model for each specific optimization task.
 - Methods such as MOLLEO rely on GPT-4 to generate candidate molecules; however, GPT-4 prompts contain oracle task information (e.g., target molecule names), which compromises black-box oracle fairness and incurs high API costs.
 - Reinforcement learning methods require training reward models or policy networks.
 
-**Root Cause**: How can a pretrained chemical language model be leveraged for targeted molecular generation without retraining?
+**Key Challenge**: How can a pretrained chemical language model be leveraged for targeted molecular generation without retraining?
 
-**Starting Point**: The method tilts decoding probabilities at test time by using the model's **own** embedding space to estimate the similarity between generated molecules and target molecules, requiring no additional training.
+**Key Insight**: The method tilts decoding probabilities at test time by using the model's **own** embedding space to estimate the similarity between generated molecules and target molecules, requiring no additional training.
 
 ## Method
 

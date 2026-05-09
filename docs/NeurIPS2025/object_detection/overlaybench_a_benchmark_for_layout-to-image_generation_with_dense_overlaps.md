@@ -30,15 +30,15 @@ OverLayBench introduces the first Layout-to-Image benchmark focused on dense ove
 
 ### State of the Field
 
-**State of the Field**: L2I methods (GLIGEN, InstanceDiffusion, CreatiLayout) perform well on simple layouts, but over 80% of existing benchmarks focus on low-overlap scenarios.
+**Background**: L2I methods (GLIGEN, InstanceDiffusion, CreatiLayout) perform well on simple layouts, but over 80% of existing benchmarks focus on low-overlap scenarios.
 
 **Limitations of Prior Work**: When multiple objects overlap extensively with similar semantics (e.g., two cats of the same color), models tend to merge or lose instances, yet systematic evaluation of this phenomenon is lacking.
 
-**Root Cause**: Dense overlap is commonplace in real-world scenes, yet existing methods and benchmarks consistently avoid this challenging setting.
+**Key Challenge**: Dense overlap is commonplace in real-world scenes, yet existing methods and benchmarks consistently avoid this challenging setting.
 
-**Paper Goals**: Quantify overlap difficulty + construct a stratified evaluation benchmark + explore methods to improve generation under overlapping conditions.
+**Goal**: Quantify overlap difficulty + construct a stratified evaluation benchmark + explore methods to improve generation under overlapping conditions.
 
-**Starting Point**: $\text{OverLayScore} = \sum \text{IoU}(B_i,B_j) \cdot \cos(p_i,p_j)$ (spatial overlap × semantic similarity), using Amodal Masks to provide complete object contour supervision.
+**Key Insight**: $\text{OverLayScore} = \sum \text{IoU}(B_i,B_j) \cdot \cos(p_i,p_j)$ (spatial overlap × semantic similarity), using Amodal Masks to provide complete object contour supervision.
 
 **Core Idea**: OverLayScore quantifies overlap difficulty + stratified benchmark + Amodal Mask supervision improves generation quality under overlapping conditions.
 

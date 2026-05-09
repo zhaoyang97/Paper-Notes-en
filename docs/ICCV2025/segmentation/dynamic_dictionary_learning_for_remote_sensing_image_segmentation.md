@@ -29,15 +29,15 @@ This paper proposes D2LS, a dynamic dictionary learning framework that iterative
 
 ## Background & Motivation
 
-**State of the Field**: Semantic segmentation of remote sensing imagery is a core task in the remote sensing community, requiring per-pixel category assignment (e.g., buildings, roads, vegetation, water bodies) in satellite or aerial images. Existing methods predominantly rely on implicit representation learning paradigms, directly predicting segmentation results from image features through end-to-end encoder–decoder architectures.
+**Background**: Semantic segmentation of remote sensing imagery is a core task in the remote sensing community, requiring per-pixel category assignment (e.g., buildings, roads, vegetation, water bodies) in satellite or aerial images. Existing methods predominantly rely on implicit representation learning paradigms, directly predicting segmentation results from image features through end-to-end encoder–decoder architectures.
 
 **Limitations of Prior Work**: Remote sensing images exhibit severe intra-class heterogeneity (large appearance variation within the same category across different scenes, e.g., clouds of varying thickness) and inter-class homogeneity (visually similar appearance across different categories, e.g., low-rise buildings and roads). Existing methods employ fixed semantic embeddings that cannot dynamically adjust category representations based on the contextual features of the input image, leading to suboptimal performance in fine-grained classification scenarios.
 
-**Root Cause**: In conventional semantic segmentation methods, category representations are "one-size-fits-all"—all images share the same category prototypes. However, the same category in remote sensing imagery can vary enormously across geographic regions, lighting conditions, and seasons, necessitating input-adaptive dynamic category representations.
+**Key Challenge**: In conventional semantic segmentation methods, category representations are "one-size-fits-all"—all images share the same category prototypes. However, the same category in remote sensing imagery can vary enormously across geographic regions, lighting conditions, and seasons, necessitating input-adaptive dynamic category representations.
 
-**Paper Goals**: To design a framework that explicitly models category semantic embeddings and can dynamically adjust category representations conditioned on the input image, thereby resolving fine-grained category confusion in remote sensing segmentation.
+**Goal**: To design a framework that explicitly models category semantic embeddings and can dynamically adjust category representations conditioned on the input image, thereby resolving fine-grained category confusion in remote sensing segmentation.
 
-**Starting Point**: The authors draw inspiration from dictionary learning—treating each category as an "entry" in a dictionary and iteratively updating these entries through interaction with image features so that they adapt to the current input.
+**Key Insight**: The authors draw inspiration from dictionary learning—treating each category as an "entry" in a dictionary and iteratively updating these entries through interaction with image features so that they adapt to the current input.
 
 **Core Idea**: Replace static category prototypes with a dynamic dictionary. Multi-stage alternating cross-attention is employed to iteratively query between image features and dictionary embeddings, progressively updating category representations to achieve input-adaptive semantic segmentation.
 

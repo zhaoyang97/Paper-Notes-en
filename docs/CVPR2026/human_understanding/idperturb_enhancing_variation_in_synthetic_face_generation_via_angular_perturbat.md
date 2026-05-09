@@ -29,10 +29,10 @@ This paper proposes IDperturb, a geometry-driven sampling strategy that applies 
 
 ## Background & Motivation
 
-- **State of the Field**: Synthetic face data has emerged as a privacy-friendly alternative for training face recognition (FR) systems. Identity-conditioned diffusion models (e.g., IDiff-Face, DCFace) can generate realistic and identity-consistent face images.
+- **Background**: Synthetic face data has emerged as a privacy-friendly alternative for training face recognition (FR) systems. Identity-conditioned diffusion models (e.g., IDiff-Face, DCFace) can generate realistic and identity-consistent face images.
 - **Limitations of Prior Work**: These models commonly suffer from **insufficient intra-class variation**—images generated for the same identity tend to be overly similar in age, expression, and pose, leading to FR models with limited generalization. Existing methods introduce diversity via additional label conditioning (ID3), learned style modules (DCFace), or iterative embedding optimization (HyperFace), but these approaches require architectural modifications, auxiliary labels, or substantial computational cost.
-- **Root Cause**: The geometric structure of the identity embedding space itself has not been exploited for diversity enhancement.
-- **Paper Goals**: To introduce controlled intra-class variation through a purely geometric sampling strategy, requiring no modification to the generative model.
+- **Key Challenge**: The geometric structure of the identity embedding space itself has not been exploited for diversity enhancement.
+- **Goal**: To introduce controlled intra-class variation through a purely geometric sampling strategy, requiring no modification to the generative model.
 
 ## Method
 

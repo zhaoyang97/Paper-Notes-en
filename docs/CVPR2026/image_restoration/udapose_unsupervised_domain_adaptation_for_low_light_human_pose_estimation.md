@@ -29,15 +29,15 @@ UDAPose achieves a 56.4% AP improvement on the low-light hard set by combining s
 
 ## Background & Motivation
 
-**State of the Field**: Human pose estimation performs well under normal lighting but degrades significantly in low-light conditions. Annotating low-light datasets is extremely costly, making domain adaptation an appealing alternative.
+**Background**: Human pose estimation performs well under normal lighting but degrades significantly in low-light conditions. Annotating low-light datasets is extremely costly, making domain adaptation an appealing alternative.
 
 **Limitations of Prior Work**: (1) Manual augmentations (e.g., Gaussian noise) oversimplify real low-light noise, which comprises complex components such as photon noise, thermal noise, and quantization noise; (2) Learning-based image translation methods (CycleGAN/StyleID) fail to preserve high-frequency low-light characteristics; (3) Modern one-stage pose estimators query image features via cross-attention but continue to over-rely on image features even when visual cues are unreliable under low-light conditions.
 
-**Root Cause**: The effectiveness of domain adaptation depends on the fidelity of synthesized low-light images, yet existing methods are either overly simplistic or discard critical high-frequency low-light features. Furthermore, pose models themselves lack the ability to fall back on pose priors when visual information degrades.
+**Key Challenge**: The effectiveness of domain adaptation depends on the fidelity of synthesized low-light images, yet existing methods are either overly simplistic or discard critical high-frequency low-light features. Furthermore, pose models themselves lack the ability to fall back on pose priors when visual information degrades.
 
-**Paper Goals**: (1) Synthesize training data that preserves high-frequency low-light characteristics; (2) Enable pose models to adaptively balance visual cues and pose priors.
+**Goal**: (1) Synthesize training data that preserves high-frequency low-light characteristics; (2) Enable pose models to adaptively balance visual cues and pose priors.
 
-**Starting Point**: Use stable diffusion as the generative backbone to extract and inject high-frequency features from unannotated low-light reference images; modify the fusion mechanism of DETR-like pose estimators.
+**Key Insight**: Use stable diffusion as the generative backbone to extract and inject high-frequency features from unannotated low-light reference images; modify the fusion mechanism of DETR-like pose estimators.
 
 **Core Idea**: DHF preserves high-frequency low-light features → LCIM injects them at multiple scales → DCA adaptively controls the balance between visual cues and pose priors.
 

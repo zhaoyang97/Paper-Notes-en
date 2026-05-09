@@ -27,15 +27,15 @@ content_hash: c97d0424ffad101b
 This paper reformulates reward-guided image editing as a trajectory optimal control problem, treating the reverse process of diffusion/flow models as a controllable trajectory. By iteratively optimizing the entire trajectory via Pontryagin's Maximum Principle (PMP) with adjoint state methods, it achieves effective reward-guided editing without training and without reward hacking.
 
 ## Background & Motivation
-**State of the Field**: Reward-guided sampling has proven successful in T2I generation (DPS, FreeDoM, TFG) by leveraging differentiable reward functions to guide the generation process at inference time. However, these methods are designed for sampling, not specifically for editing.
+**Background**: Reward-guided sampling has proven successful in T2I generation (DPS, FreeDoM, TFG) by leveraging differentiable reward functions to guide the generation process at inference time. However, these methods are designed for sampling, not specifically for editing.
 
 **Limitations of Prior Work**: Reward-guided editing is more challenging than generation — it must simultaneously maximize rewards and preserve the core identity of the source image. Naïve approaches (inversion + guided sampling) perform poorly: for complex nonlinear reward functions, guidance based on intermediate noisy images or single-step approximations degrades structural fidelity. Direct gradient ascent, while directionally correct, ignores image priors and produces adversarial samples.
 
-**Root Cause**: Existing guidance methods face a dilemma in editing scenarios — overly strong guidance destroys structure, while overly weak guidance yields insufficient reward improvement. Moreover, they lack theoretical justification for guidance scale selection, requiring extensive hyperparameter tuning.
+**Key Challenge**: Existing guidance methods face a dilemma in editing scenarios — overly strong guidance destroys structure, while overly weak guidance yields insufficient reward improvement. Moreover, they lack theoretical justification for guidance scale selection, requiring extensive hyperparameter tuning.
 
-**Paper Goals**: How can arbitrary differentiable reward functions guide editing without model training, while maintaining structural consistency with the source image?
+**Goal**: How can arbitrary differentiable reward functions guide editing without model training, while maintaining structural consistency with the source image?
 
-**Starting Point**: Optimal control theory — elevating the problem from "single-step guidance" to "full-trajectory optimization."
+**Key Insight**: Optimal control theory — elevating the problem from "single-step guidance" to "full-trajectory optimization."
 
 **Core Idea**: Optimize the entire generation trajectory (rather than guiding intermediate states at each step) to simultaneously maximize terminal reward and preserve consistency with the source image.
 

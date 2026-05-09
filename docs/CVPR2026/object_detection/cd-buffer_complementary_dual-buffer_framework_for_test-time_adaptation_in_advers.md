@@ -28,15 +28,15 @@ This paper proposes the CD-Buffer framework, which drives complementary collabor
 
 ## Background & Motivation
 
-**State of the Field**: Test-time adaptation (TTA) addresses domain shift by updating source-pretrained models online, without offline retraining or target labels. Existing TTA methods fall into two paradigms: additive methods (introducing lightweight modules to learn target-specific adjustments) and subtractive methods (removing domain-sensitive channels).
+**Background**: Test-time adaptation (TTA) addresses domain shift by updating source-pretrained models online, without offline retraining or target labels. Existing TTA methods fall into two paradigms: additive methods (introducing lightweight modules to learn target-specific adjustments) and subtractive methods (removing domain-sensitive channels).
 
 **Limitations of Prior Work**: Additive methods (e.g., BufferTTA) perform well under moderate domain shift but struggle to recover under severe degradation; subtractive methods (e.g., PruningTTA) excel under severe shift but over-prune recoverable useful information under moderate shift. Each paradigm is effective only within a limited range of conditions.
 
-**Root Cause**: In real-world scenarios, different feature channels within the same image may experience varying degrees of domain shift — some channels are severely degraded and require suppression, while others need only minor adjustment. Existing methods apply uniform treatment to all channels, failing to accommodate this heterogeneity.
+**Key Challenge**: In real-world scenarios, different feature channels within the same image may experience varying degrees of domain shift — some channels are severely degraded and require suppression, while others need only minor adjustment. Existing methods apply uniform treatment to all channels, failing to accommodate this heterogeneity.
 
-**Paper Goals**: Design an adaptive mechanism that automatically balances "removal" and "compensation" strategies according to the degree of domain shift in each channel.
+**Goal**: Design an adaptive mechanism that automatically balances "removal" and "compensation" strategies according to the degree of domain shift in each channel.
 
-**Starting Point**: Measure channel-level domain discrepancy and use a unified metric to simultaneously drive two complementary operations.
+**Key Insight**: Measure channel-level domain discrepancy and use a unified metric to simultaneously drive two complementary operations.
 
 **Core Idea**: Discrepancy-driven dual-buffer coupling — severely shifted channels are suppressed and receive strong compensation, moderately shifted channels are finely adjusted, and stable channels are largely left unchanged.
 

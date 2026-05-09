@@ -28,16 +28,16 @@ ReplaceMe is a training-free depth pruning method that uses a small calibration 
 
 ## Background & Motivation
 
-**State of the Field**: Structured pruning is one of the primary approaches for LLM compression, but most methods require post-pruning retraining (a "healing" phase) that incurs substantial computational overhead.
+**Background**: Structured pruning is one of the primary approaches for LLM compression, but most methods require post-pruning retraining (a "healing" phase) that incurs substantial computational overhead.
 
 **Limitations of Prior Work**:
 - Directly removing Transformer blocks causes irrecoverable information loss, since deletion implicitly assumes the layer acts as an identity mapping, which does not hold in practice.
 - Existing training-free methods (e.g., LaCo, SliceGPT) yield insufficient performance.
 - Methods requiring healing (e.g., UIDL, LLMPruner) achieve better results but demand several hours of training and tens of GPU-hours.
 
-**Root Cause**: Removing a layer is equivalent to assuming it performs an identity mapping, whereas in practice layers perform non-trivial transformations.
+**Key Challenge**: Removing a layer is equivalent to assuming it performs an identity mapping, whereas in practice layers perform non-trivial transformations.
 
-**Starting Point**: Approximating the transformation of removed layers with a linear mapping, which is substantially more accurate than the identity assumption.
+**Key Insight**: Approximating the transformation of removed layers with a linear mapping, which is substantially more accurate than the identity assumption.
 
 **Core Idea**: Identify the group of consecutive Transformer blocks with minimal impact, approximate their input–output mapping with a linear transformation $\mathbf{T}$, and fuse $\mathbf{T}$ into the down-projection weights of the adjacent MLP. The resulting model retains the original architecture and introduces no additional parameters.
 

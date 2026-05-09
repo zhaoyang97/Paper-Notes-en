@@ -29,15 +29,15 @@ This paper proposes ZipVoice-Dialog, the first non-autoregressive zero-shot spok
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-speech (TTS) technology has achieved impressive results in single-speaker monologue scenarios. However, synthesizing natural multi-speaker conversations remains a significant challenge, as dialogue requires accurate and natural speaker turn transitions while maintaining distinct timbre for different speakers.
+**Background**: Text-to-speech (TTS) technology has achieved impressive results in single-speaker monologue scenarios. However, synthesizing natural multi-speaker conversations remains a significant challenge, as dialogue requires accurate and natural speaker turn transitions while maintaining distinct timbre for different speakers.
 
 **Limitations of Prior Work**: Current state-of-the-art dialogue speech generation methods primarily rely on autoregressive (AR) architectures (e.g., MoonCast, Dia), which suffer from two inherent drawbacks: (1) high inference latency due to sequential token-by-token generation; and (2) serious robustness issues, where exposure bias leads to instability such as word repetition or word skipping.
 
-**Root Cause**: Flow matching, as a non-autoregressive approach, has demonstrated strong performance in monologue TTS. However, preliminary experiments reveal that directly applying a flow matching architecture to dialogue generation results in completely unintelligible speech—the model can imitate the style and timbre of the prompt audio but fails entirely to reflect the input text content. This occurs because the presence of two distinct speaker timbres makes speech-text alignment learning extremely difficult.
+**Key Challenge**: Flow matching, as a non-autoregressive approach, has demonstrated strong performance in monologue TTS. However, preliminary experiments reveal that directly applying a flow matching architecture to dialogue generation results in completely unintelligible speech—the model can imitate the style and timbre of the prompt audio but fails entirely to reflect the input text content. This occurs because the presence of two distinct speaker timbres makes speech-text alignment learning extremely difficult.
 
-**Paper Goals**: Design effective methods to adapt the flow matching architecture for multi-speaker dialogue generation while addressing the scarcity of training data.
+**Goal**: Design effective methods to adapt the flow matching architecture for multi-speaker dialogue generation while addressing the scarcity of training data.
 
-**Starting Point**: The authors identify that the root cause lies in the difficulty of alignment learning under multiple speaker timbres. They thus approach the problem from a curriculum learning perspective—"learn alignment first, then learn dialogue"—and provide explicit speaker cues via speaker-turn embeddings.
+**Key Insight**: The authors identify that the root cause lies in the difficulty of alignment learning under multiple speaker timbres. They thus approach the problem from a curriculum learning perspective—"learn alignment first, then learn dialogue"—and provide explicit speaker cues via speaker-turn embeddings.
 
 **Core Idea**: Use curriculum learning (monologue pre-training followed by dialogue fine-tuning) to resolve alignment issues, and use learnable speaker-turn embeddings to handle turn switching, enabling the flow matching NAR architecture to achieve both high speed and high robustness in dialogue generation.
 

@@ -28,15 +28,15 @@ By jointly optimizing an orthogonality loss (reducing projection overlap among e
 
 ## Background & Motivation
 
-**State of the Field**: MoE models rely on an auxiliary load-balancing loss $\mathcal{L}_{aux}$ to ensure uniform token distribution across experts and prevent expert collapse. However, this mechanism introduces severe side effects during fine-tuning, where data distributions are narrow and domain-specific.
+**Background**: MoE models rely on an auxiliary load-balancing loss $\mathcal{L}_{aux}$ to ensure uniform token distribution across experts and prevent expert collapse. However, this mechanism introduces severe side effects during fine-tuning, where data distributions are narrow and domain-specific.
 
 **Limitations of Prior Work**: $\mathcal{L}_{aux}$ is independent of the expert parameters $\theta_{E_j}$—tokens may be assigned to semantically misaligned experts, inducing spurious gradient flows that cause expert representations to converge toward each other (Observation I: expert overlap).
 
-**Root Cause**: As training progresses, routing outputs become increasingly uniform, reducing inter-expert differences → the router loses discriminative signal → more uniform assignments → greater functional overlap, forming a self-reinforcing negative cycle (Observation III).
+**Key Challenge**: As training progresses, routing outputs become increasingly uniform, reducing inter-expert differences → the router loses discriminative signal → more uniform assignments → greater functional overlap, forming a self-reinforcing negative cycle (Observation III).
 
-**Paper Goals**: Achieve genuine expert specialization while maintaining load balance—enabling each expert to learn distinct feature subspaces and endowing the router with clear assignment preferences.
+**Goal**: Achieve genuine expert specialization while maintaining load balance—enabling each expert to learn distinct feature subspaces and endowing the router with clear assignment preferences.
 
-**Starting Point**: Two complementary losses are designed from a gradient-compatibility perspective, acting on the expert side and the routing side respectively, without conflicting with the existing $\mathcal{L}_{aux}$.
+**Key Insight**: Two complementary losses are designed from a gradient-compatibility perspective, acting on the expert side and the routing side respectively, without conflicting with the existing $\mathcal{L}_{aux}$.
 
 **Core Idea**: An orthogonality loss enforces orthogonal expert outputs, while a variance loss promotes routing diversity—together breaking the uniformization cycle to achieve true specialization.
 

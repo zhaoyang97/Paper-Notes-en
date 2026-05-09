@@ -29,15 +29,15 @@ Perception Programs (P2) is a training-free, model-agnostic method that converts
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs are increasingly used in conjunction with visual tools (depth estimation, optical flow, visual correspondences, etc.) to enhance visual reasoning.
+**Background**: MLLMs are increasingly used in conjunction with visual tools (depth estimation, optical flow, visual correspondences, etc.) to enhance visual reasoning.
 
 **Limitations of Prior Work**: Despite visual tools providing accurate perceptual signals, MLLMs often fail to fully leverage them. Raw tool outputs are dense pixel-level representations that are mismatched with LLMs' language-native reasoning capabilities. Experiments show that GPT-5 Mini cannot even recover correct depth ordering from depth maps (Kendall τ rapidly approaches zero).
 
-**Root Cause**: The bottleneck is not more tool calls or larger MLLMs, but the representation format of visual tool outputs. Dense numerical tokens are fundamentally mismatched with the language reasoning substrate.
+**Key Challenge**: The bottleneck is not more tool calls or larger MLLMs, but the representation format of visual tool outputs. Dense numerical tokens are fundamentally mismatched with the language reasoning substrate.
 
-**Paper Goals**: Convert tool outputs from dense pixel-level representations to language-native structured summaries.
+**Goal**: Convert tool outputs from dense pixel-level representations to language-native structured summaries.
 
-**Starting Point**: Humans extract cues from visual information differently depending on data type (depth focuses on near/far, optical flow focuses on direction, etc.). Converting key information to text relieves the model from processing pixel details.
+**Key Insight**: Humans extract cues from visual information differently depending on data type (depth focuses on near/far, optical flow focuses on direction, etc.). Converting key information to text relieves the model from processing pixel details.
 
 **Core Idea**: P2 standardizes what tools convey (what), spatial locations (where), and inter-part relationships (how), enabling any MLLM to directly parse and reason.
 

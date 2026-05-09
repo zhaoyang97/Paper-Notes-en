@@ -29,15 +29,15 @@ This paper identifies a fundamental flaw in RGB-only spatial reasoning MLLMs—t
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs are increasingly applied to spatial reasoning tasks (3D localization, depth estimation, navigation). The dominant paradigm trains end-to-end on RGB images/videos without explicit 3D data, achieving competitive performance.
+**Background**: MLLMs are increasingly applied to spatial reasoning tasks (3D localization, depth estimation, navigation). The dominant paradigm trains end-to-end on RGB images/videos without explicit 3D data, achieving competitive performance.
 
 **Limitations of Prior Work**: RGB-only MLLMs ignore camera intrinsics, making them unable to disambiguate "small nearby objects" from "large distant objects" (size–depth ambiguity) or "wide-angle close-up views" from "telephoto distant views" (focal-length–depth ambiguity). As a result, these models overfit to the camera distribution seen during training.
 
-**Root Cause**: In the projection equation $h_{\text{proj}} = fH/Z$, the triplet $(f, H, Z)$ forms an equivalence class $(f, H, Z) \sim (\lambda f, H, \lambda Z)$. Without camera intrinsics, this entanglement cannot be resolved—this is not a problem of model scale or architecture, but a fundamental information deficiency.
+**Key Challenge**: In the projection equation $h_{\text{proj}} = fH/Z$, the triplet $(f, H, Z)$ forms an equivalence class $(f, H, Z) \sim (\lambda f, H, \lambda Z)$. Without camera intrinsics, this entanglement cannot be resolved—this is not a problem of model scale or architecture, but a fundamental information deficiency.
 
-**Paper Goals**: Enable MLLMs to perform accurate spatial reasoning across diverse camera configurations, rather than only on cameras seen during training.
+**Goal**: Enable MLLMs to perform accurate spatial reasoning across diverse camera configurations, rather than only on cameras seen during training.
 
-**Starting Point**: Drawing lessons from camera-aware monocular metric depth estimation (Metric3D, UniDepth) and generalizing them to universal spatial reasoning at the MLLM level.
+**Key Insight**: Drawing lessons from camera-aware monocular metric depth estimation (Metric3D, UniDepth) and generalizing them to universal spatial reasoning at the MLLM level.
 
 **Core Idea**: Inject camera intrinsics as per-token conditioning information into the MLLM, enabling the model to disentangle camera properties from scene content and achieve cross-camera generalization.
 

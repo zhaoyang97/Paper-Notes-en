@@ -28,18 +28,18 @@ This paper proposes PCDF (Pre-Consultation Dialogue Framework), which simulates 
 
 ## Background & Motivation
 
-**State of the Field**: AI-assisted medical diagnosis has been a long-standing research direction. Early approaches relied on CNNs for image classification; subsequently, CLIP and its medical adaptations (MedCLIP, BioMedCLIP) introduced vision-text alignment; more recently, VLMs (e.g., LLaVA-Med, MedPaLM2, MedGemma) have demonstrated strong zero-shot generalization.
+**Background**: AI-assisted medical diagnosis has been a long-standing research direction. Early approaches relied on CNNs for image classification; subsequently, CLIP and its medical adaptations (MedCLIP, BioMedCLIP) introduced vision-text alignment; more recently, VLMs (e.g., LLaVA-Med, MedPaLM2, MedGemma) have demonstrated strong zero-shot generalization.
 
 **Limitations of Prior Work**: Existing methods reduce diagnosis to a direct "image → diagnosis" mapping, overlooking the importance of clinical context. In real clinical practice, physicians rarely diagnose from images alone — they conduct multi-turn dialogues with patients to inquire about symptoms and medical history, progressively narrowing down possibilities. This dialogue-driven diagnostic reasoning is central to accurate diagnosis, yet current models are entirely disconnected from this process.
 
-**Root Cause**: How can VLMs acquire dialogue-aware diagnostic capabilities? The ideal solution is to collect real doctor-patient dialogue data for training, but this faces substantial barriers:
+**Key Challenge**: How can VLMs acquire dialogue-aware diagnostic capabilities? The ideal solution is to collect real doctor-patient dialogue data for training, but this faces substantial barriers:
 - Real medical dialogues involve sensitive privacy, requiring IRB approval and informed patient consent
 - Clinicians are reluctant to participate due to concerns about workflow disruption, medicolegal risks, and patient trust
 - Large-scale data collection is practically infeasible
 
 **Limitations of Prior Work**: Previous work used a single LLM to simultaneously play both doctor and patient roles to generate synthetic dialogues, but suffered from two fundamental flaws: (i) operation was limited to text-only settings without incorporating medical images; (ii) a single model playing dual roles resulted in dialogues lacking genuine role separation and authenticity.
 
-**Starting Point**: Two independent VLMs are assigned to play the doctor and patient roles respectively, conducting natural multi-turn interactions conditioned on images and dialogue history to generate visual-dialogue-diagnosis triplets for training. The key innovation is that PatientVLM generates symptom responses based on ground-truth diagnoses while being explicitly instructed not to reveal the diagnosis itself, thereby preserving the information asymmetry characteristic of real clinical consultations.
+**Key Insight**: Two independent VLMs are assigned to play the doctor and patient roles respectively, conducting natural multi-turn interactions conditioned on images and dialogue history to generate visual-dialogue-diagnosis triplets for training. The key innovation is that PatientVLM generates symptom responses based on ground-truth diagnoses while being explicitly instructed not to reveal the diagnosis itself, thereby preserving the information asymmetry characteristic of real clinical consultations.
 
 ## Method
 

@@ -28,13 +28,13 @@ This paper proposes HDD, the first method to incorporate hyperbolic space into d
 
 ## Background & Motivation
 
-**State of the Field**: Dataset Distillation (DD) aims to compress a large training set into a minimal synthetic set such that models trained on the synthetic set retain the performance of those trained on the original. Existing methods fall into three categories: gradient matching, trajectory matching, and distribution matching. Distribution matching (DM) is computationally more efficient as it avoids bi-level optimization, but tends to yield lower accuracy.
+**Background**: Dataset Distillation (DD) aims to compress a large training set into a minimal synthetic set such that models trained on the synthetic set retain the performance of those trained on the original. Existing methods fall into three categories: gradient matching, trajectory matching, and distribution matching. Distribution matching (DM) is computationally more efficient as it avoids bi-level optimization, but tends to yield lower accuracy.
 
 **Limitations of Prior Work**: DM methods (including MSE- and MMD-based variants) measure distributional discrepancy in Euclidean space and treat all samples as i.i.d. points, ignoring the inherent hierarchical or tree-like structure within datasets—samples closer to a "class prototype" should carry more weight than noisy or marginal samples.
 
-**Root Cause**: Euclidean space assigns uniform weight to all samples and cannot differentiate the varying contributions of samples at different hierarchical levels to the class representation.
+**Key Challenge**: Euclidean space assigns uniform weight to all samples and cannot differentiate the varying contributions of samples at different hierarchical levels to the class representation.
 
-**Starting Point**: Hyperbolic space, by virtue of its negative curvature and exponentially growing volume, naturally encodes tree-like hierarchical structures. When computing centroids in hyperbolic space, samples near the origin (low-level, more representative) exert greater influence on the centroid, while peripheral samples (high-level, noisier) contribute less.
+**Key Insight**: Hyperbolic space, by virtue of its negative curvature and exponentially growing volume, naturally encodes tree-like hierarchical structures. When computing centroids in hyperbolic space, samples near the origin (low-level, more representative) exert greater influence on the centroid, while peripheral samples (high-level, noisier) contribute less.
 
 **Core Idea**: Map features into the Lorentz hyperbolic space and optimize the synthetic dataset by minimizing the geodesic distance between the hyperbolic centroids of the real and synthetic data.
 

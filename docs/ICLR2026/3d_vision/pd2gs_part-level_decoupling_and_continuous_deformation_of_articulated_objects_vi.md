@@ -28,15 +28,15 @@ PD²GS is proposed as a framework that learns a shared canonical Gaussian field 
 
 ## Background & Motivation
 
-**State of the Field**: 3D modeling of articulated objects (doors, drawers, laptops) is critical for robotics, AR/VR, and digital twins. Recent works such as PARIS and GAPartNet employ NeRF/3DGS for self-supervised modeling, yet are largely limited to single-joint, two-state settings.
+**Background**: 3D modeling of articulated objects (doors, drawers, laptops) is critical for robotics, AR/VR, and digital twins. Recent works such as PARIS and GAPartNet employ NeRF/3DGS for self-supervised modeling, yet are largely limited to single-joint, two-state settings.
 
 **Limitations of Prior Work**: (1) Two-state methods support only discrete pairwise comparisons and cannot model continuous motion; (2) they require prior knowledge of the number of parts or strict geometric constraints; (3) multi-part decoupling relies on Marching Cubes explicit meshes, leading to severe error accumulation.
 
-**Root Cause**: How can a continuous part-level motion model be learned from limited discrete interaction-state observations?
+**Key Challenge**: How can a continuous part-level motion model be learned from limited discrete interaction-state observations?
 
-**Paper Goals**: Self-supervised learning from multi-view, multi-state images to achieve (1) part-aware reconstruction, (2) part-level continuous control, and (3) accurate kinematic modeling.
+**Goal**: Self-supervised learning from multi-view, multi-state images to achieve (1) part-aware reconstruction, (2) part-level continuous control, and (3) accurate kinematic modeling.
 
-**Starting Point**: The key insight is that each interaction state can be modeled as a continuous deformation of a shared canonical Gaussian field, where motion within a part is consistent while motion across parts differs.
+**Key Insight**: The key insight is that each interaction state can be modeled as a continuous deformation of a shared canonical Gaussian field, where motion within a part is consistent while motion across parts differs.
 
 **Core Idea**: A latent-code-conditioned deformation network drives continuous deformation of the canonical Gaussian field; automatic part decoupling is achieved through motion trajectory clustering followed by SAM-guided boundary refinement.
 

@@ -28,14 +28,14 @@ A closed-loop MPC framework is proposed for conflict-free multi-aircraft routing
 
 ## Background & Motivation
 
-**State of the Field**: Flight delays impose substantial costs on passengers, airlines, and the environment. Air Traffic Flow Management (ATFM) is typically modeled as a dynamic multi-commodity network flow problem; however, optimization of the Terminal Maneuvering Area (TMA)—the high-density airspace surrounding airports—remains underexplored in the literature. Existing research focuses primarily on runway scheduling (Airport Scheduling Problem), with insufficient attention to holistic TMA airspace optimization.
+**Background**: Flight delays impose substantial costs on passengers, airlines, and the environment. Air Traffic Flow Management (ATFM) is typically modeled as a dynamic multi-commodity network flow problem; however, optimization of the Terminal Maneuvering Area (TMA)—the high-density airspace surrounding airports—remains underexplored in the literature. Existing research focuses primarily on runway scheduling (Airport Scheduling Problem), with insufficient attention to holistic TMA airspace optimization.
 
 **Limitations of Prior Work**:
 (1) **Oversimplified TMA network models**—existing methods employ simplified maps with limited waypoints, incapable of representing the complex structure of real-world STARs (Standard Terminal Arrival Routes);
 (2) **Lack of closed-loop real-time control**—most approaches rely on one-shot optimization and cannot adapt to dynamic changes in real-time systems;
 (3) **Travel time uncertainty is ignored**—holding patterns and radar vectoring occur frequently in the TMA, resulting in high flight time variance (TMA internal variance: 204s vs. en-route segment: 81s), yet existing methods disregard the impact of this uncertainty on scheduling.
 
-**Starting Point**: This paper integrates prediction, optimization, and simulation into a closed-loop MPC framework—replacing unreliable runway ETA prediction with data-driven TMA boundary arrival time prediction, substituting simplified models with MILP optimization over a full STAR network, and employing a receding-horizon strategy to enable real-time computation and robust control.
+**Key Insight**: This paper integrates prediction, optimization, and simulation into a closed-loop MPC framework—replacing unreliable runway ETA prediction with data-driven TMA boundary arrival time prediction, substituting simplified models with MILP optimization over a full STAR network, and employing a receding-horizon strategy to enable real-time computation and robust control.
 
 ## Method
 

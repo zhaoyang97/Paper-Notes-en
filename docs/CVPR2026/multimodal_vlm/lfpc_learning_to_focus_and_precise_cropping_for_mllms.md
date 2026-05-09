@@ -33,7 +33,7 @@ Fine-grained perception in complex visual scenes remains a challenge for MLLMs. 
 
 **Core Finding**: The authors analyze RL-based models such as DeepEyes and identify a concerning behavioral pattern — the model forms its answer *before* executing a crop, using the cropping action merely to *confirm* a pre-existing conclusion. A dedicated evaluation protocol is constructed to verify this hypothesis, revealing that the model exhibits weak dependence on the content within cropped regions.
 
-**Root Cause**: SFT+RL methods are bounded by the capability of the teacher model and incur high trajectory generation costs. Pure RL methods do not require a teacher, yet models learn to perform perfunctory cropping rather than genuinely exploiting the information contained in cropped regions.
+**Key Challenge**: SFT+RL methods are bounded by the capability of the teacher model and incur high trajectory generation costs. Pure RL methods do not require a teacher, yet models learn to perform perfunctory cropping rather than genuinely exploiting the information contained in cropped regions.
 
 ## Method
 

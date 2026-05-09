@@ -28,15 +28,15 @@ This work constructs the Braingle Brainteaser benchmark (242 math + 236 logic pu
 
 ## Background & Motivation
 
-**State of the Field**: LLM reasoning evaluation primarily relies on final-answer accuracy (MATH, GSM8K, AIME, etc.), which offers no insight into how models arrive at their answers. Recent reasoning-enhancement techniques (CoT, RLVR, etc.) likewise optimize for final-answer correctness rather than reasoning quality.
+**Background**: LLM reasoning evaluation primarily relies on final-answer accuracy (MATH, GSM8K, AIME, etc.), which offers no insight into how models arrive at their answers. Recent reasoning-enhancement techniques (CoT, RLVR, etc.) likewise optimize for final-answer correctness rather than reasoning quality.
 
 **Limitations of Prior Work**: (a) High accuracy may stem from brute-force enumeration rather than genuine understanding; (b) brute-force search strategies do not scale when the search space is large, making it important to quantify their prevalence; (c) no benchmark systematically assesses whether models employ creative insight versus brute-force search.
 
-**Root Cause**: Whether model reasoning constitutes genuine "creative problem-solving" or "computationally accelerated exhaustive search" is a fundamental open question bearing on the nature of generalization ability.
+**Key Challenge**: Whether model reasoning constitutes genuine "creative problem-solving" or "computationally accelerated exhaustive search" is a fundamental open question bearing on the nature of generalization ability.
 
-**Paper Goals**: To use brainteasers as a diagnostic tool for systematically analyzing the types of reasoning strategies and multi-dimensional capabilities of LLMs.
+**Goal**: To use brainteasers as a diagnostic tool for systematically analyzing the types of reasoning strategies and multi-dimensional capabilities of LLMs.
 
-**Starting Point**: Brainteasers are particularly well-suited for this purpose — the same problem can be solved quickly via a clever insight or slowly via brute-force enumeration, enabling direct comparison of which strategy a model adopts.
+**Key Insight**: Brainteasers are particularly well-suited for this purpose — the same problem can be solved quickly via a clever insight or slowly via brute-force enumeration, enabling direct comparison of which strategy a model adopts.
 
 **Core Idea**: A multi-dimensional analysis framework (brute-force vs. creative, self-correction, narrative-to-math translation, hint utilization, solution-step decomposition) is used to comprehensively evaluate LLM reasoning processes rather than outcomes alone.
 

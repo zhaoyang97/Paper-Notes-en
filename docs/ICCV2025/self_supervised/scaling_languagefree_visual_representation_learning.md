@@ -30,11 +30,11 @@ By training DINOv2/MAE-series models (1B–7B parameters) on MetaCLIP's 2 billio
 
 ### Core Problem
 
-**Core Problem**: **State of the Field**: Visual representation learning has evolved along two tracks: CLIP trained on image-text pairs, and SSL methods (e.g., DINOv2, MAE) trained on images alone. Although SSL achieves strong performance on traditional vision tasks such as classification and segmentation, it falls far short of CLIP in multimodal LLM settings (e.g., VQA), especially on OCR and chart understanding. The community widely attributes this gap to the absence of semantic information provided by language supervision. However, an overlooked confound is that CLIP is trained on billions of web images, whereas SSL methods typically rely on millions of ImageNet images. The fundamental question therefore is: does SSL lag behind CLIP because of the *absence of language*, or because of *differences in training data*?
+**Core Problem**: **Background**: Visual representation learning has evolved along two tracks: CLIP trained on image-text pairs, and SSL methods (e.g., DINOv2, MAE) trained on images alone. Although SSL achieves strong performance on traditional vision tasks such as classification and segmentation, it falls far short of CLIP in multimodal LLM settings (e.g., VQA), especially on OCR and chart understanding. The community widely attributes this gap to the absence of semantic information provided by language supervision. However, an overlooked confound is that CLIP is trained on billions of web images, whereas SSL methods typically rely on millions of ImageNet images. The fundamental question therefore is: does SSL lag behind CLIP because of the *absence of language*, or because of *differences in training data*?
 
 ### Starting Point
 
-**Paper Goals**: Is the underperformance of visual SSL methods in multimodal settings caused by the lack of language supervision, or by disparities in training data scale and distribution? If trained on identical data, can SSL match or even surpass CLIP?
+**Goal**: Is the underperformance of visual SSL methods in multimodal settings caused by the lack of language supervision, or by disparities in training data scale and distribution? If trained on identical data, can SSL match or even surpass CLIP?
 
 ## Method
 

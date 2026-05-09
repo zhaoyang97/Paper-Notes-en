@@ -30,15 +30,15 @@ STEPH proposes a model merging framework based on Task Vector Mixup (TVM) and hy
 
 ## Background & Motivation
 
-**State of the Field**: Pathology whole-slide images (WSIs) are gigapixel-scale and serve as a primary data source for cancer prognosis (survival analysis). Multiple instance learning (MIL)-based cancer-type-specific models are the dominant paradigm; however, each cancer type typically has only ~1,000 training samples, and high tumor heterogeneity limits generalization.
+**Background**: Pathology whole-slide images (WSIs) are gigapixel-scale and serve as a primary data source for cancer prognosis (survival analysis). Multiple instance learning (MIL)-based cancer-type-specific models are the dominant paradigm; however, each cancer type typically has only ~1,000 training samples, and high tumor heterogeneity limits generalization.
 
 **Limitations of Prior Work**: (1) **Cancer-type-specific learning**—limited data and high heterogeneity lead to poor generalization of single-cancer models; (2) **Multi-cancer joint training**—the sheer volume of WSIs incurs prohibitive computational costs and introduces privacy risks; (3) **Representation transfer (ROUPKT)**—routes and aggregates WSI representations from multiple source models, but inference requires running all source models, with cost scaling linearly with the number of sources.
 
-**Root Cause**: How can a single model efficiently absorb cross-cancer knowledge without resorting to joint training (high computation) or multi-model inference (high inference cost)?
+**Key Challenge**: How can a single model efficiently absorb cross-cancer knowledge without resorting to joint training (high computation) or multi-model inference (high inference cost)?
 
-**Paper Goals**: Transfer prognosis knowledge from multiple cancer types into a target model via model merging, enabling lightweight and efficient cross-cancer knowledge transfer.
+**Goal**: Transfer prognosis knowledge from multiple cancer types into a target model via model merging, enabling lightweight and efficient cross-cancer knowledge transfer.
 
-**Starting Point**: The task vector $\tau_t = \mathcal{M}_t - \mathcal{M}_0$ encodes cancer-type-specific prognosis knowledge. Unlike model merging in MTL—which aims to preserve multi-task capability (requiring resolution of task interference)—the goal in WSI prognosis is to enhance generalization on the target task, achieved by interpolating source and target task vectors via mixup to obtain better optimization directions.
+**Key Insight**: The task vector $\tau_t = \mathcal{M}_t - \mathcal{M}_0$ encodes cancer-type-specific prognosis knowledge. Unlike model merging in MTL—which aims to preserve multi-task capability (requiring resolution of task interference)—the goal in WSI prognosis is to enhance generalization on the target task, achieved by interpolating source and target task vectors via mixup to obtain better optimization directions.
 
 **Core Idea**: Apply mixup interpolation to each source–target task vector pair to absorb beneficial knowledge, then use a hypernetwork to learn input-adaptive sparse aggregation weights, and finally merge into a single enhanced model.
 

@@ -35,9 +35,9 @@ The development of remote sensing foundation models (RSFMs) relies on large-scal
 
 **Low MIM training efficiency**: Conventional MAE reconstructs all masked patches (typically 75%), yet a distinctive characteristic of remote sensing imagery is sparse foreground and redundant background. Encoding and reconstructing large numbers of semantically uninformative background patches introduces unnecessary computational overhead. For instance, pre-training ViT-B on 1M remote sensing images requires 107 hours on 8×A100 GPUs; scaling to tens of millions of images is prohibitively expensive.
 
-**Root Cause**: How can one simultaneously scale data to improve representation quality and reduce the computational cost of MIM in remote sensing scenarios?
+**Key Challenge**: How can one simultaneously scale data to improve representation quality and reduce the computational cost of MIM in remote sensing scenarios?
 
-**Starting Point**: The authors address two questions: (1) Is it necessary to reconstruct all redundant background patches? (2) Can the visible patch ratio in the encoder be further reduced (e.g., from ≤25% to ≤15%)? Based on these questions, they propose a selective encoding and reconstruction strategy.
+**Key Insight**: The authors address two questions: (1) Is it necessary to reconstruct all redundant background patches? (2) Can the visible patch ratio in the encoder be further reduced (e.g., from ≤25% to ≤15%)? Based on these questions, they propose a selective encoding and reconstruction strategy.
 
 ## Method
 

@@ -29,15 +29,15 @@ AdaRank is proposed to adaptively select singular components of task vectors via
 
 ## Background & Motivation
 
-**State of the Field**: Model merging integrates multiple independently fine-tuned models into a unified framework, avoiding the high computational overhead of multi-model deployment. Task Arithmetic realizes merging by weighted summation of task vectors (the difference between fine-tuned and pre-trained weights), but suffers from severe inter-task interference.
+**Background**: Model merging integrates multiple independently fine-tuned models into a unified framework, avoiding the high computational overhead of multi-model deployment. Task Arithmetic realizes merging by weighted summation of task vectors (the difference between fine-tuned and pre-trained weights), but suffers from severe inter-task interference.
 
 **Limitations of Prior Work**: Recent SVD-based methods have advanced by truncating task vectors using low-rank structure, yet they rely on heuristic fixed top-k selection, which introduces two fundamental problems:
 - **Counter-intuitive phenomenon**: Although top singular components reduce the loss most for the target task, they may impose greater net loss increases on other tasks. Experiments on ViT-B/32 show that incorporating the top singular components of MNIST benefits the semantically similar SVHN, but substantially increases the loss of the dissimilar DTD (texture classification).
 - **Large variance in rank requirements**: The intrinsic rank varies widely across tasks and layers — SUN397 (397 classes) requires higher rank, while MNIST/SVHN require lower rank; early layers (task-agnostic features) have high rank with low variance, whereas later layers (task-specific representations) have low rank with high variance.
 
-**Root Cause**: Fixed top-k truncation may simultaneously discard critical components for certain tasks and retain components that introduce interference.
+**Key Challenge**: Fixed top-k truncation may simultaneously discard critical components for certain tasks and retain components that introduce interference.
 
-**Paper Goals**: Adaptively select the optimal subset of singular components independently for each task and each layer.
+**Goal**: Adaptively select the optimal subset of singular components independently for each task and each layer.
 
 ## Method
 

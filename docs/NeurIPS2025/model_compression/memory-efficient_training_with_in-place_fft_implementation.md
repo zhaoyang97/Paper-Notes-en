@@ -29,15 +29,15 @@ This paper proposes rdFFT—the first truly in-place real-domain Fast Fourier Tr
 
 ## Background & Motivation
 
-**State of the Field**: FFT is widely employed in deep learning to reduce computational and memory overhead. Frequency-domain fine-tuning methods such as FourierFT and Block Circulant Adapter (BCA) rely on FFT for frequency-domain parameter transformation.
+**Background**: FFT is widely employed in deep learning to reduce computational and memory overhead. Frequency-domain fine-tuning methods such as FourierFT and Block Circulant Adapter (BCA) rely on FFT for frequency-domain parameter transformation.
 
 **Limitations of Prior Work**: Standard FFT maps $N$ real inputs to $N$ complex outputs (occupying $2N$ real-valued storage); rFFT reduces this to $N+2$ real values, which still does not match the input size of $N$ reals, precluding truly in-place computation.
 
-**Root Cause**: The dimensional and memory mismatch between input and output necessitates the allocation of additional memory buffers, introducing significant memory overhead in large-scale model training. Moreover, existing libraries (FFTW, cuFFT) do not support the bfloat16 data type.
+**Key Challenge**: The dimensional and memory mismatch between input and output necessitates the allocation of additional memory buffers, introducing significant memory overhead in large-scale model training. Moreover, existing libraries (FFTW, cuFFT) do not support the bfloat16 data type.
 
-**Paper Goals**: Design a real-domain FFT whose input and output occupy identical memory, enabling both forward and backward passes to be executed within the original real-valued buffer, thereby eliminating intermediate tensor allocations.
+**Goal**: Design a real-domain FFT whose input and output occupy identical memory, enabling both forward and backward passes to be executed within the original real-valued buffer, thereby eliminating intermediate tensor allocations.
 
-**Starting Point**: Exploiting the symmetry of butterfly operations and the conjugate symmetry of the spectrum of real-valued signals to compress $N+2$ storage into $N$ real-valued slots.
+**Key Insight**: Exploiting the symmetry of butterfly operations and the conjugate symmetry of the spectrum of real-valued signals to compress $N+2$ storage into $N$ real-valued slots.
 
 **Core Idea**: Through a carefully designed memory layout—storing the real part of $y_k$ at index $k$ and its imaginary part at the conjugate-symmetric index $r-k$—the entire FFT computation is performed fully in-place within $N$ real-valued slots.
 

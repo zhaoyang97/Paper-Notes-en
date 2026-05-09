@@ -29,15 +29,15 @@ This paper establishes the first theoretical guarantees for active learning with
 
 ### State of the Field
 
-**State of the Field**: Active learning reduces labeling costs by strategically selecting the most informative data points for annotation. Decision trees are widely used due to their interpretability and feature selection capabilities, forming the basis of Random Forests and XGBoost.
+**Background**: Active learning reduces labeling costs by strategically selecting the most informative data points for annotation. Decision trees are widely used due to their interpretability and feature selection capabilities, forming the basis of Random Forests and XGBoost.
 
 **Limitations of Prior Work**: Active learning with decision trees lacks rigorous theoretical foundations — no explicit computation of the disagreement coefficient existed, and no multiplicative-error active learning algorithm had been proposed for classification. Additive-error algorithms cannot be directly adapted to the multiplicative-error setting, since adaptively estimating the optimal error $\eta$ requires $O(1/\eta)$ label queries, negating any efficiency advantage.
 
-**Root Cause**: Bounding the disagreement coefficient is theoretically necessary to guarantee label efficiency, yet for the decision tree hypothesis class this bound was previously known only to be finite, without a quantitative characterization. The multiplicative-error model is strictly stronger than the additive-error model (guaranteeing perfect classification in the realizable setting), but requires fundamentally new algorithmic design.
+**Key Challenge**: Bounding the disagreement coefficient is theoretically necessary to guarantee label efficiency, yet for the decision tree hypothesis class this bound was previously known only to be finite, without a quantitative characterization. The multiplicative-error model is strictly stronger than the additive-error model (guaranteeing perfect classification in the realizable setting), but requires fundamentally new algorithmic design.
 
-**Paper Goals**: Establish a theory of label complexity for active learning with decision trees.
+**Goal**: Establish a theory of label complexity for active learning with decision trees.
 
-**Starting Point**: Analyze the disagreement regions of decision trees via a LineTree decomposition, and design a novel algorithm that uses "version-space shrinkage stagnation" as a signal to lower-bound the optimal error.
+**Key Insight**: Analyze the disagreement regions of decision trees via a LineTree decomposition, and design a novel algorithm that uses "version-space shrinkage stagnation" as a signal to lower-bound the optimal error.
 
 **Core Idea**: Under two natural assumptions (each root-to-leaf path queries distinct feature dimensions, and grid-structured data), the disagreement coefficient of decision trees is polylogarithmic. Combined with the new multiplicative-error algorithm, this yields polylogarithmic label complexity.
 

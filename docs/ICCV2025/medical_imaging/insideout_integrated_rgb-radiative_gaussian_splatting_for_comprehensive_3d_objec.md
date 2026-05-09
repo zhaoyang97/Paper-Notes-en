@@ -29,15 +29,15 @@ InsideOut extends 3D Gaussian Splatting (3DGS) beyond RGB surface modeling to si
 
 ## Background & Motivation
 
-**State of the Field**: 3D Gaussian Splatting (3DGS) has become the dominant approach for high-fidelity 3D scene representation, enabling rapid, high-quality reconstruction of surface appearance from multi-view RGB images. However, existing 3DGS methods focus exclusively on object surfaces and cannot capture internal structures.
+**Background**: 3D Gaussian Splatting (3DGS) has become the dominant approach for high-fidelity 3D scene representation, enabling rapid, high-quality reconstruction of surface appearance from multi-view RGB images. However, existing 3DGS methods focus exclusively on object surfaces and cannot capture internal structures.
 
 **Limitations of Prior Work**: In critical applications such as medical diagnosis, cultural heritage restoration, and industrial quality inspection, surface appearance alone is insufficient — clinicians need to visualize internal organs and lesions, archaeologists need to examine internal structures without damaging artifacts, and engineers need to detect internal defects in manufactured components. All of these scenarios demand a unified 3D representation that integrates surface appearance with internal structural information.
 
-**Root Cause**: RGB images and X-ray images have fundamentally different data representations — RGB images encode surface reflectance properties, whereas X-ray images reflect internal density distributions based on radiative transmission principles. This modality heterogeneity makes naive fusion of the two modalities challenging. Furthermore, paired RGB–X-ray datasets are extremely scarce.
+**Key Challenge**: RGB images and X-ray images have fundamentally different data representations — RGB images encode surface reflectance properties, whereas X-ray images reflect internal density distributions based on radiative transmission principles. This modality heterogeneity makes naive fusion of the two modalities challenging. Furthermore, paired RGB–X-ray datasets are extremely scarce.
 
-**Paper Goals**: To design a unified 3DGS framework capable of simultaneously representing RGB surface detail and X-ray-derived internal structure, while addressing the data inconsistency between the two modalities.
+**Goal**: To design a unified 3DGS framework capable of simultaneously representing RGB surface detail and X-ray-derived internal structure, while addressing the data inconsistency between the two modalities.
 
-**Starting Point**: The authors observe that 3D Gaussian primitives are inherently volumetric spatial distributions that can be simultaneously endowed with surface appearance attributes and radiative transmission attributes. The central challenge is enabling the same set of Gaussians to accurately render both RGB appearance and physically correct X-ray transmission images.
+**Key Insight**: The authors observe that 3D Gaussian primitives are inherently volumetric spatial distributions that can be simultaneously endowed with surface appearance attributes and radiative transmission attributes. The central challenge is enabling the same set of Gaussians to accurately render both RGB appearance and physically correct X-ray transmission images.
 
 **Core Idea**: Through a hierarchical fitting strategy that progressively aligns RGB and radiative Gaussian splatting, combined with an X-ray reference loss to enforce physical consistency of internal structures, the approach extends 3DGS into a comprehensive 3D representation that models both exterior appearance and interior structure.
 

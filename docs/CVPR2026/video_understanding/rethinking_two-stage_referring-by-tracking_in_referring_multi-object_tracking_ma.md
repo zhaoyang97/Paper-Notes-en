@@ -35,7 +35,7 @@ Referring Multi-Object Tracking (RMOT) aims to track multiple targets in video b
 
 **Two-Stage RBT**: Proposed by iKUN, fully decouples tracking from referring, offering low training cost and support for incremental deployment.
 
-**Root Cause**: Although two-stage RBT holds irreplaceable advantages in training efficiency and incremental deployment, its performance lags far behind one-stage methods (iKUN achieves only 10.32 HOTA on Refer-KITTI-v2). The authors identify two fundamental limitations:
+**Key Challenge**: Although two-stage RBT holds irreplaceable advantages in training efficiency and incremental deployment, its performance lags far behind one-stage methods (iKUN achieves only 10.32 HOTA on Refer-KITTI-v2). The authors identify two fundamental limitations:
 
 - **Over-heuristic feature construction**: Existing methods apply dual encoding of full images and cropped patches using a shared encoder, ignoring the spatial gradient flow and context aggregation capabilities already present in modern visual backbones. Furthermore, feature construction is language-agnostic, preventing adaptive focus based on different semantic cues (e.g., position, direction).
 - **Fragile correspondence modeling**: Reliance on cosine similarity in CLIP's pre-trained alignment space causes alignment collapse whenever additional modules are introduced or the backbone is replaced, effectively imposing a performance ceiling.

@@ -30,15 +30,15 @@ This paper demonstrates that principled, device-specific degradation modeling �
 
 ## Background & Motivation
 
-**State of the Field**: Smartphone digital zoom relies on learning-based super-resolution (SR) models that operate directly on RAW sensor images. However, acquiring sensor-specific training data is extremely challenging — genuine ground-truth high-resolution images are unavailable due to field-of-view misalignment and registration errors across different focal lengths and sensors.
+**Background**: Smartphone digital zoom relies on learning-based super-resolution (SR) models that operate directly on RAW sensor images. However, acquiring sensor-specific training data is extremely challenging — genuine ground-truth high-resolution images are unavailable due to field-of-view misalignment and registration errors across different focal lengths and sensors.
 
 **Limitations of Prior Work**: (1) Synthesizing training data via "unprocessing" pipelines — reversing the ISP to simulate degradation in the RAW domain — is a viable approach, but existing pipelines rely on generic blur and noise priors that introduce a domain gap with respect to the target device's true degradation characteristics. (2) Randomly sampling large combinations of degradation parameters ("brute-force" strategies) covers a broader degradation space but introduces unrealistic training samples, causing the learned degradation distribution to mismatch that of the real device. (3) Optical characteristics (lens PSF), read noise, and shot noise vary considerably across smartphone sensors, making device-agnostic models ill-suited for any specific device.
 
-**Root Cause**: The quality of synthetic training data is fundamentally determined by the accuracy of degradation modeling, yet accurate modeling requires device-specific calibration — creating an inherent tension between data acquisition cost and modeling fidelity.
+**Key Challenge**: The quality of synthetic training data is fundamentally determined by the accuracy of degradation modeling, yet accurate modeling requires device-specific calibration — creating an inherent tension between data acquisition cost and modeling fidelity.
 
-**Paper Goals**: To validate that "principled, carefully designed degradation modeling" is more effective than "large collections of arbitrary degradation combinations," by physically calibrating device-specific blur and noise to generate more realistic synthetic training data.
+**Goal**: To validate that "principled, carefully designed degradation modeling" is more effective than "large collections of arbitrary degradation combinations," by physically calibrating device-specific blur and noise to generate more realistic synthetic training data.
 
-**Starting Point**: Rather than pursuing generic degradation priors, the paper proposes performing a one-time optical and noise calibration per target device, then using the calibrated parameters to precisely unprocess publicly available high-resolution rendered images into the target device's RAW domain.
+**Key Insight**: Rather than pursuing generic degradation priors, the paper proposes performing a one-time optical and noise calibration per target device, then using the calibrated parameters to precisely unprocess publicly available high-resolution rendered images into the target device's RAW domain.
 
 **Core Idea**: Replace generic priors with physical calibration — device-specific degradation modeling outperforms device-agnostic random degradation augmentation.
 

@@ -28,13 +28,13 @@ This paper proposes GraphAgent-Reasoner (GAR), inspired by distributed graph com
 
 ## Background & Motivation
 
-**State of the Field**: Using LLMs for graph reasoning is an emerging direction; however, existing methods can only handle small-scale graphs (<20 nodes), with accuracy on tasks such as connectivity and shortest path ranging from only 20% to 60%.
+**Background**: Using LLMs for graph reasoning is an emerging direction; however, existing methods can only handle small-scale graphs (<20 nodes), with accuracy on tasks such as connectivity and shortest path ranging from only 20% to 60%.
 
 **Limitations of Prior Work**: (a) Describing graph structures in natural language leads to extremely long inputs that exceed LLM context capacity; (b) a single LLM cannot accurately memorize and understand complex graph structures — one-hop neighbor recall accuracy degrades rapidly as node count increases; (c) fine-tuning-based methods (e.g., GraphWiz) suffer from severe overfitting and fail to generalize to new tasks.
 
-**Root Cause**: The number of edges can grow quadratically with the number of nodes, yet LLMs have limited capacity to process long texts, and graph reasoning requires precise inference that tolerates no semantic deviation.
+**Key Challenge**: The number of edges can grow quadratically with the number of nodes, yet LLMs have limited capacity to process long texts, and graph reasoning requires precise inference that tolerates no semantic deviation.
 
-**Starting Point**: Simulate distributed graph computation — assign one agent per node, each processing only its local information and neighbor messages.
+**Key Insight**: Simulate distributed graph computation — assign one agent per node, each processing only its local information and neighbor messages.
 
 **Core Idea**: A master LLM decomposes the graph problem into a distributed algorithm consisting of six components (State / Message / Init / Send / Update / Terminate). Each node agent processes only local state and neighbor messages, collaboratively solving the problem through multi-round message passing.
 

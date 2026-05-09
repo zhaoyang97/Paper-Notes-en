@@ -27,15 +27,15 @@ content_hash: 1db14d7797ec10b3
 This paper presents the first high-fidelity multi-person multimodal egocentric EMS dataset, comprising 233 trials with 20 hours of video, annotations covering 9 interventions and 67 critical steps, and three benchmark tasks (step classification / online segmentation / CPR quality estimation) to advance the development of cognitive assistance systems for EMS.
 
 ## Background & Motivation
-**State of the Field**: First responders in emergency medical services (EMS) face substantial cognitive load. Advances in AI and LLMs have created opportunities for virtual cognitive assistance systems. Most existing egocentric datasets focus on everyday activities, lacking coverage of high-stakes medical domains.
+**Background**: First responders in emergency medical services (EMS) face substantial cognitive load. Advances in AI and LLMs have created opportunities for virtual cognitive assistance systems. Most existing egocentric datasets focus on everyday activities, lacking coverage of high-stakes medical domains.
 
 **Limitations of Prior Work**: (a) Large-scale, high-fidelity annotated datasets are absent in the medical domain; (b) existing EMS data are predominantly unimodal (audio only); (c) emergency scenarios involve team collaboration, yet existing datasets are mostly single-viewpoint; (d) medical annotation is prohibitively costly.
 
-**Root Cause**: Authentic data are needed to train effective systems, yet real emergency care raises ethical barriers; multimodal data further multiply annotation costs.
+**Key Challenge**: Authentic data are needed to train effective systems, yet real emergency care raises ethical barriers; multimodal data further multiply annotation costs.
 
-**Paper Goals**: Construct the first multimodal multi-person egocentric EMS dataset, establish a taxonomy aligned with national standards, and provide benchmark tasks with baselines.
+**Goal**: Construct the first multimodal multi-person egocentric EMS dataset, establish a taxonomy aligned with national standards, and provide benchmark tasks with baselines.
 
-**Starting Point**: Simulated scenarios are used to satisfy ethical requirements; real EMS professionals are recruited to ensure ecological validity; a hybrid manual and semi-automatic annotation pipeline is adopted to reduce cost.
+**Key Insight**: Simulated scenarios are used to satisfy ethical requirements; real EMS professionals are recruited to ensure ecological validity; a hybrid manual and semi-automatic annotation pipeline is adopted to reduce cost.
 
 **Core Idea**: Through collaboration with EMS experts, a standardized taxonomy is established, and multimodal egocentric data from 62 participants in simulated scenarios are collected to provide a solid foundation for AI-based cognitive assistance.
 

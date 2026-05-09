@@ -28,18 +28,18 @@ This paper proposes ARCANE, a framework that formulates alignment as a multi-age
 
 ## Background & Motivation
 
-**State of the Field**: RLHF is the dominant paradigm for LLM alignment, but it encodes preferences statically at training time and cannot adapt to shifting stakeholder preferences. Test-time reward models (e.g., GenRM, GRAM) enable dynamic evaluation but lack transparency—users cannot inspect what criteria are used or how they are weighted.
+**Background**: RLHF is the dominant paradigm for LLM alignment, but it encodes preferences statically at training time and cannot adapt to shifting stakeholder preferences. Test-time reward models (e.g., GenRM, GRAM) enable dynamic evaluation but lack transparency—users cannot inspect what criteria are used or how they are weighted.
 
 **Limitations of Prior Work**:
    - **Rigidity of RLHF**: Optimizes fixed training-time preferences; retraining is required when preferences drift. In multi-agent deployments, distributed preferences are even harder to capture statically.
    - **Opacity of test-time methods**: GenRM/GRAM output scalar or textual judgments without revealing which criteria drive the evaluation.
    - **Static nature of existing rubric methods**: Auto-Rubric, RaR, and similar approaches assume rubrics are given a priori rather than learned, and cannot adapt to evolving preferences.
 
-**Root Cause**: Alignment must simultaneously satisfy interpretability (auditable by stakeholders), configurability (adjustable at test time), and effectiveness (genuinely improving output quality), yet existing methods satisfy at most two of these properties.
+**Key Challenge**: Alignment must simultaneously satisfy interpretability (auditable by stakeholders), configurability (adjustable at test time), and effectiveness (genuinely improving output quality), yet existing methods satisfy at most two of these properties.
 
-**Paper Goals**: Treat rubric generation itself as a policy optimization problem, enabling the manager agent to learn to distill interpretable, verifiable, weighted criterion sets from stakeholder dialogues.
+**Goal**: Treat rubric generation itself as a policy optimization problem, enabling the manager agent to learn to distill interpretable, verifiable, weighted criterion sets from stakeholder dialogues.
 
-**Starting Point**: Drawing on utility theory, the paper decomposes a stakeholder's latent utility function into a linear combination of weighted verifiable criteria, and interactively "reconstructs" the utility function through manager–stakeholder dialogue.
+**Key Insight**: Drawing on utility theory, the paper decomposes a stakeholder's latent utility function into a linear combination of weighted verifiable criteria, and interactively "reconstructs" the utility function through manager–stakeholder dialogue.
 
 **Core Idea**: Alignment = manager learning to generate natural-language rubrics + worker executing tasks according to rubrics + stakeholder adjusting weights at test time.
 

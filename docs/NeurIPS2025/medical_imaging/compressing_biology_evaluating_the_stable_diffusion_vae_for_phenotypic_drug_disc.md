@@ -28,15 +28,15 @@ This work presents the first systematic evaluation of the Stable Diffusion VAE (
 
 ## Background & Motivation
 
-**State of the Field**: Phenotypic drug discovery leverages Cell Painting high-content microscopy to observe cell morphology changes for screening drug candidates. Generative models—particularly latent diffusion models—are increasingly used to simulate Cell Painting images and reduce experimental costs. SD-VAE serves as the core compression component in latent diffusion models and has been widely adopted.
+**Background**: Phenotypic drug discovery leverages Cell Painting high-content microscopy to observe cell morphology changes for screening drug candidates. Generative models—particularly latent diffusion models—are increasingly used to simulate Cell Painting images and reduce experimental costs. SD-VAE serves as the core compression component in latent diffusion models and has been widely adopted.
 
 **Limitations of Prior Work**: SD-VAE is pretrained on natural images (LAION-2B). Whether directly applying it to out-of-distribution multi-channel fluorescence microscopy images leads to loss of critical biological information has not been quantitatively validated. Prior works such as MorphoDiff employ SD-VAE without isolating and evaluating its reconstruction quality.
 
-**Root Cause**: The downstream biological interpretability of generative models depends on the reconstruction fidelity of the VAE. If the encode–decode process discards subtle phenotypic differences, the biological value of the entire generative pipeline is questionable.
+**Key Challenge**: The downstream biological interpretability of generative models depends on the reconstruction fidelity of the VAE. If the encode–decode process discards subtle phenotypic differences, the biological value of the entire generative pipeline is questionable.
 
-**Paper Goals**: To systematically quantify SD-VAE reconstruction quality on Cell Painting images, with a particular focus on whether biological signals are preserved.
+**Goal**: To systematically quantify SD-VAE reconstruction quality on Cell Painting images, with a particular focus on whether biological signals are preserved.
 
-**Starting Point**: Evaluation goes beyond pixel-level metrics (MAE, SSIM, EMD) to include feature-space metrics (FID), latent-space metrics (KLD), and retrieval-based biological metrics (Fraction Retrieved, FR) for a multi-level assessment.
+**Key Insight**: Evaluation goes beyond pixel-level metrics (MAE, SSIM, EMD) to include feature-space metrics (FID), latent-space metrics (KLD), and retrieval-based biological metrics (Fraction Retrieved, FR) for a multi-level assessment.
 
 **Core Idea**: SD-VAE reconstruction preserves sufficient phenotypic signal; InceptionV3 can substitute domain-specific models on retrieval tasks; and the work provides a general evaluation framework for generative models on microscopy data.
 

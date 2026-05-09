@@ -27,15 +27,15 @@ This paper proposes SER (Soft Equivariance Regularization), a layer-decoupled de
 
 ## Background & Motivation
 
-**State of the Field**: The dominant paradigm in self-supervised learning (SSL) learns representations that are invariant to semantics-preserving augmentations (e.g., random cropping, color jittering) via contrastive learning or redundancy-reduction objectives. Representative methods include MoCo-v3, DINO, and Barlow Twins.
+**Background**: The dominant paradigm in self-supervised learning (SSL) learns representations that are invariant to semantics-preserving augmentations (e.g., random cropping, color jittering) via contrastive learning or redundancy-reduction objectives. Representative methods include MoCo-v3, DINO, and Barlow Twins.
 
 **Limitations of Prior Work**: Strong invariance learning suppresses transformation-related structural information (e.g., rotation, flip, and scale cues), which is useful for geometric robustness and spatially sensitive downstream tasks such as object detection. Prior works have attempted to incorporate equivariance objectives into invariant SSL, but typically apply both objectives to the **same final representation**.
 
-**Root Cause**: The final representation is typically spatially collapsed (e.g., the [CLS] token or global average pooling in ViT), making it ill-suited for defining spatial group actions. Enforcing equivariance at this layer conflicts with the invariance objective — the authors empirically find that pushing equivariance regularization to deeper layers increases equivariance scores but decreases linear evaluation accuracy on ImageNet-1k.
+**Key Challenge**: The final representation is typically spatially collapsed (e.g., the [CLS] token or global average pooling in ViT), making it ill-suited for defining spatial group actions. Enforcing equivariance at this layer conflicts with the invariance objective — the authors empirically find that pushing equivariance regularization to deeper layers increases equivariance scores but decreases linear evaluation accuracy on ImageNet-1k.
 
-**Paper Goals**: How can equivariance be elegantly incorporated into invariant SSL without modifying the baseline architecture or objective, while avoiding the invariance–equivariance trade-off?
+**Goal**: How can equivariance be elegantly incorporated into invariant SSL without modifying the baseline architecture or objective, while avoiding the invariance–equivariance trade-off?
 
-**Starting Point**: The authors observe that invariance and equivariance should be enforced at different layers — a *layer decoupling* design. The spatial token maps at intermediate layers preserve the grid structure, making them naturally amenable to analytically defined group operations.
+**Key Insight**: The authors observe that invariance and equivariance should be enforced at different layers — a *layer decoupling* design. The spatial token maps at intermediate layers preserve the grid structure, making them naturally amenable to analytically defined group operations.
 
 **Core Idea**: Apply soft equivariance regularization via analytical group operations on the spatial token maps of intermediate ViT layers, while keeping the original invariant SSL objective unchanged at the final layer.
 

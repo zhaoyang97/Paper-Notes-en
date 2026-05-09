@@ -28,11 +28,11 @@ Pano360 proposes a Transformer-based panoramic stitching framework that extends 
 
 ## Background & Motivation
 
-1. **State of the Field**: Panoramic stitching is increasingly demanded in autonomous driving, VR, and related domains. Traditional methods rely on hand-crafted features (SIFT, SURF, ORB) for pairwise matching to estimate homography matrices, while learning-based methods such as UDIS/UDIS2 employ CNN-based end-to-end learning yet remain constrained to pairwise stitching.
+1. **Background**: Panoramic stitching is increasingly demanded in autonomous driving, VR, and related domains. Traditional methods rely on hand-crafted features (SIFT, SURF, ORB) for pairwise matching to estimate homography matrices, while learning-based methods such as UDIS/UDIS2 employ CNN-based end-to-end learning yet remain constrained to pairwise stitching.
 2. **Limitations of Prior Work**: Pairwise methods accumulate projection errors, causing severe distortion when aligning multiple images. Feature matching is unreliable or fails entirely under weak texture, large parallax, and repetitive texture conditions. CNN-based methods handle only image pairs, requiring complex post-processing for multi-image stitching and thus offering limited practical applicability.
-3. **Root Cause**: Nearly all existing methods establish pairwise correspondences in 2D space, neglecting the global consistency demanded by the underlying 3D projective geometry. This fundamentally limits alignment accuracy and robustness.
-4. **Paper Goals**: To achieve globally consistent panoramic stitching directly in 3D space from as few as a handful to hundreds of input images.
-5. **Starting Point**: Motivated by the inherent 3D-awareness of large vision models such as VGGT, the paper elevates feature matching and alignment from 2D to 3D measurement space, leveraging pretrained Transformers to aggregate global multi-view information.
+3. **Key Challenge**: Nearly all existing methods establish pairwise correspondences in 2D space, neglecting the global consistency demanded by the underlying 3D projective geometry. This fundamentally limits alignment accuracy and robustness.
+4. **Goal**: To achieve globally consistent panoramic stitching directly in 3D space from as few as a handful to hundreds of input images.
+5. **Key Insight**: Motivated by the inherent 3D-awareness of large vision models such as VGGT, the paper elevates feature matching and alignment from 2D to 3D measurement space, leveraging pretrained Transformers to aggregate global multi-view information.
 6. **Core Idea**: A Transformer directly predicts camera parameters to guide global multi-image alignment in 3D space, bypassing the 2D paradigm of pairwise feature matching.
 
 ## Method

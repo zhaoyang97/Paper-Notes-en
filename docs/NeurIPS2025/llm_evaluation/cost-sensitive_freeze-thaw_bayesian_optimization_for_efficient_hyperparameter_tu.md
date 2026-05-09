@@ -29,13 +29,13 @@ CFBO incorporates user-defined utility functions (cost–performance trade-offs)
 
 ## Background & Motivation
 
-**State of the Field**: Hyperparameter optimization (HPO) for deep learning is computationally expensive. Multi-fidelity methods (Hyperband, DyHPO, ifBO) significantly improve efficiency by pruning configurations early via learning curve extrapolation.
+**Background**: Hyperparameter optimization (HPO) for deep learning is computationally expensive. Multi-fidelity methods (Hyperband, DyHPO, ifBO) significantly improve efficiency by pruning configurations early via learning curve extrapolation.
 
 **Limitations of Prior Work**: Traditional multi-fidelity methods assume sufficient budgets and target final performance maximization, without accounting for user preferences regarding cost–performance trade-offs — for instance, cloud computing users may prefer early stopping when credits are limited rather than running configurations to completion.
 
-**Root Cause**: How can the HPO process automatically terminate near the optimal utility point according to user preferences?
+**Key Challenge**: How can the HPO process automatically terminate near the optimal utility point according to user preferences?
 
-**Starting Point**: Define a utility function $U(b, \tilde{y}_b)$ to characterize the cost–performance trade-off, and design a matching acquisition function and stopping criterion.
+**Key Insight**: Define a utility function $U(b, \tilde{y}_b)$ to characterize the cost–performance trade-off, and design a matching acquisition function and stopping criterion.
 
 **Core Idea**: Maximize user utility rather than asymptotic performance within the freeze-thaw BO framework, while using LC mixup transfer learning to improve early extrapolation accuracy.
 

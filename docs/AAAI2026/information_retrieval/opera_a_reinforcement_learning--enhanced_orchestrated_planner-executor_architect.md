@@ -29,7 +29,7 @@ This paper proposes OPERA, a hierarchical framework comprising a Goal Planning M
 
 ### State of the Field
 
-**State of the Field**: Existing RAG systems perform poorly on complex multi-hop questions, with the primary bottleneck being the weak coupling between retrieval and reasoning.
+**Background**: Existing RAG systems perform poorly on complex multi-hop questions, with the primary bottleneck being the weak coupling between retrieval and reasoning.
 
 ### Limitations of Prior Work
 
@@ -37,7 +37,7 @@ This paper proposes OPERA, a hierarchical framework comprising a Goal Planning M
 
 ### Root Cause
 
-**Root Cause**: Assigning both planning and execution responsibilities to a single LLM limits overall reliability.
+**Key Challenge**: Assigning both planning and execution responsibilities to a single LLM limits overall reliability.
 
 ### Solution Direction
 
@@ -45,7 +45,7 @@ This paper proposes OPERA, a hierarchical framework comprising a Goal Planning M
 
 ### Paper Goals
 
-**Paper Goals**: How can retrieval and reasoning be deeply coupled within a RAG framework, enabling effective plan decomposition, adaptive retrieval, and precise filtering for complex multi-hop questions?
+**Goal**: How can retrieval and reasoning be deeply coupled within a RAG framework, enabling effective plan decomposition, adaptive retrieval, and precise filtering for complex multi-hop questions?
 
 ## Method
 

@@ -29,15 +29,15 @@ CiteGuard proposes a retrieval-augmented agent framework with extended retrieval
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly used for scientific writing assistance, but citation hallucination is a severe problem (LLMs can generate up to 78-90% fabricated citations). Over 50 citation hallucinations were found among 300 ICLR 2026 submissions.
+**Background**: LLMs are increasingly used for scientific writing assistance, but citation hallucination is a severe problem (LLMs can generate up to 78-90% fabricated citations). Over 50 citation hallucinations were found among 300 ICLR 2026 submissions.
 
 **Limitations of Prior Work**: (1) LLM-as-a-Judge has extremely low recall in citation verification (only 16-17%), as LLMs are overly sensitive to minor terminology changes; (2) existing methods like CiteAgent still fall far below human accuracy; (3) existing methods lack the ability to search full-text content of papers.
 
-**Root Cause**: Retrieval based solely on titles and abstracts is insufficient to confirm citation relationships; it often requires delving into the full text for cross-validation.
+**Key Challenge**: Retrieval based solely on titles and abstracts is insufficient to confirm citation relationships; it often requires delving into the full text for cross-validation.
 
-**Paper Goals**: Design a more faithful and generalizable citation attribution agent.
+**Goal**: Design a more faithful and generalizable citation attribution agent.
 
-**Starting Point**: Extend the set of retrieval actions, particularly by adding full-text search and context retrieval capabilities.
+**Key Insight**: Extend the set of retrieval actions, particularly by adding full-text search and context retrieval capabilities.
 
 **Core Idea**: Citation verification requires information beyond the title/abstract level; full-text search and context retrieval provide a stronger evidence base.
 

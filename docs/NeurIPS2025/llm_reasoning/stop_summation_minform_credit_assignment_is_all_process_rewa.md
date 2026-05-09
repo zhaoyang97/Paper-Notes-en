@@ -28,15 +28,15 @@ PURE identifies the root cause of reward hacking induced by PRMs as the standard
 
 ## Background & Motivation
 
-**State of the Field**: PRMs have proven effective for test-time scaling (e.g., Best-of-N), yet applying PRMs to RL fine-tuning frequently leads to reward hacking—the model learns to exploit high-scoring steps as rated by the PRM rather than genuinely improving reasoning quality.
+**Background**: PRMs have proven effective for test-time scaling (e.g., Best-of-N), yet applying PRMs to RL fine-tuning frequently leads to reward hacking—the model learns to exploit high-scoring steps as rated by the PRM rather than genuinely improving reasoning quality.
 
 **Limitations of Prior Work**: Standard RL credit assignment defines $V(s_t) = \sum_{t'=t}^T \gamma^{t'-t} r_{t'}$. When the PRM assigns inaccurately high scores to certain steps, cumulative summation amplifies these errors, causing the model to favor sequences that trigger high-reward steps regardless of reasoning correctness → training collapse.
 
-**Root Cause**: Sum-form accumulation allows a single high-reward step to inflate the value of an entire trajectory, yet no PRM can assign perfect rewards at every step → reward hacking is nearly inevitable.
+**Key Challenge**: Sum-form accumulation allows a single high-reward step to inflate the value of an entire trajectory, yet no PRM can assign perfect rewards at every step → reward hacking is nearly inevitable.
 
-**Paper Goals**: How to design credit assignment so that PRMs can be safely used for RL fine-tuning?
+**Goal**: How to design credit assignment so that PRMs can be safely used for RL fine-tuning?
 
-**Starting Point**: Define the value function as the **minimum** of future rewards rather than their **cumulative sum**—requiring the model to ensure no individual step is too poor in order to achieve high value, rather than succeeding on only a few steps.
+**Key Insight**: Define the value function as the **minimum** of future rewards rather than their **cumulative sum**—requiring the model to ensure no individual step is too poor in order to achieve high value, rather than succeeding on only a few steps.
 
 **Core Idea**: Replace $V(s_t) = \sum \gamma^{t'-t} r_{t'}$ with $V(s_t) = \min_{t' \geq t} r_{t'}$, eliminating the disproportionate inflation of overall value caused by any single high-reward step.
 

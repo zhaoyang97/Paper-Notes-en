@@ -29,7 +29,7 @@ This paper proposes MosaicDiff, a training-free structural pruning method for di
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models offer strong generative capabilities but incur substantial computational cost. The community has primarily addressed inference acceleration through reduced sampling steps (DDIM, DPM-Solver), knowledge distillation, structural pruning, quantization, and feature caching. However, existing methods universally overlook the inherent variation in learning speed during diffusion model pretraining.
+**Background**: Diffusion models offer strong generative capabilities but incur substantial computational cost. The community has primarily addressed inference acceleration through reduced sampling steps (DDIM, DPM-Solver), knowledge distillation, structural pruning, quantization, and feature caching. However, existing methods universally overlook the inherent variation in learning speed during diffusion model pretraining.
 
 **Core Observation**: Diffusion model pretraining exhibits a "slow–fast–slow" three-phase learning pattern—early stages involve slow learning (dominated by high-noise inputs), the middle stage shows a sharp increase in learning speed (rapid capture of coarse-grained features), and the late stage slows again (refinement of fine-grained details). This critical insight has been entirely ignored by prior work.
 

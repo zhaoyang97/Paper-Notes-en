@@ -31,9 +31,9 @@ Large vision-language models (LVLMs, e.g., LLaVA, InternVL) have achieved strong
 
 Existing LVLMs already employ delimiter tokens (e.g., `<image_start>` and `<image_end>`) to demarcate the boundaries of each image, yet these delimiters fail in practice to prevent cross-image information leakage. During self-attention computation, visual tokens from different images continue to interact, diluting image-specific information.
 
-**Root Cause**: While delimiter tokens encode boundary information, their hidden-state magnitudes are insufficient to form effective "information barriers" in attention computation.
+**Key Challenge**: While delimiter tokens encode boundary information, their hidden-state magnitudes are insufficient to form effective "information barriers" in attention computation.
 
-**Starting Point**: Remarkably straightforward—directly scale the hidden states of delimiter tokens by a scalar factor $\alpha > 1$, thereby amplifying their isolation effect within the attention mechanism. This intervention is applied at inference time without any model retraining.
+**Key Insight**: Remarkably straightforward—directly scale the hidden states of delimiter tokens by a scalar factor $\alpha > 1$, thereby amplifying their isolation effect within the attention mechanism. This intervention is applied at inference time without any model retraining.
 
 ## Method
 

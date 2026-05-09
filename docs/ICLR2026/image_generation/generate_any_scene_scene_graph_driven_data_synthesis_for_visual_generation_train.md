@@ -29,15 +29,15 @@ This paper proposes the Generate Any Scene data engine, which systematically enu
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-image generation models (e.g., DALL-E 3, SD, Flux) have achieved high levels of visual fidelity, yet remain severely deficient in compositional generalization and semantic alignment. A typical failure case: given the prompt "a black dog chasing a rabbit in Van Gogh style," a model may generate the dog while omitting the rabbit or rendering the wrong style.
+**Background**: Text-to-image generation models (e.g., DALL-E 3, SD, Flux) have achieved high levels of visual fidelity, yet remain severely deficient in compositional generalization and semantic alignment. A typical failure case: given the prompt "a black dog chasing a rabbit in Van Gogh style," a model may generate the dog while omitting the rabbit or rendering the wrong style.
 
 **Limitations of Prior Work**: The root of the problem lies in training data. Mainstream datasets such as LAION and CC3M consist of web-crawled image–caption pairs that are inherently noisy, compositionally impoverished, and biased toward coarse single-object descriptions. These datasets lack explicit annotations of object–attribute relations and multi-object interactions, limiting models' ability to generalize to complex scenes. Dense compositional annotation by humans is not scalable, while automated VLM-based annotation introduces hallucinations and semantic noise.
 
-**Root Cause**: Large-scale, high-quality, compositionally rich training data are required, yet no systematic method exists for producing data that covers the visual compositional space. Existing evaluation tools (DSG, DPG) already employ scene graphs to assess generation quality, but scene graphs have never been systematically applied on the data production side.
+**Key Challenge**: Large-scale, high-quality, compositionally rich training data are required, yet no systematic method exists for producing data that covers the visual compositional space. Existing evaluation tools (DSG, DPG) already employ scene graphs to assess generation quality, but scene graphs have never been systematically applied on the data production side.
 
-**Paper Goals**: How to construct a scalable data engine that systematically generates compositionally rich training data (captions + evaluation signals + reward signals) to improve the compositional generalization and semantic alignment of generative models?
+**Goal**: How to construct a scalable data engine that systematically generates compositionally rich training data (captions + evaluation signals + reward signals) to improve the compositional generalization and semantic alignment of generative models?
 
-**Starting Point**: Scene graphs—grounded in cognitive science as a structured representation of visual space, with objects as nodes, attributes as node properties, and relations as edges—enable near-infinite compositional scene descriptions through systematic enumeration of graph topologies populated with metadata. VQA pairs for evaluation and reward modeling are automatically derived as a byproduct.
+**Key Insight**: Scene graphs—grounded in cognitive science as a structured representation of visual space, with objects as nodes, attributes as node properties, and relations as edges—enable near-infinite compositional scene descriptions through systematic enumeration of graph topologies populated with metadata. VQA pairs for evaluation and reward modeling are automatically derived as a byproduct.
 
 **Core Idea**: Scene graphs serve as an intermediate representation for systematically enumerating the visual compositional space. A data engine is constructed to simultaneously produce training captions and fine-grained evaluation signals, driving self-improvement, distillation, and RLHF training for generative models.
 

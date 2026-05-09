@@ -29,7 +29,7 @@ M²-Occ addresses real-world scenarios where camera failures cause missing views
 
 ## Background & Motivation
 
-**State of the Field**: 3D semantic occupancy prediction (SOP) is a critical task in autonomous driving, describing the geometric structure and semantic information around a vehicle at the voxel level. Camera-based approaches (SurroundOcc, TPVFormer, VoxFormer) have achieved notable progress, typically assuming all six surround-view cameras operate normally.
+**Background**: 3D semantic occupancy prediction (SOP) is a critical task in autonomous driving, describing the geometric structure and semantic information around a vehicle at the voxel level. Camera-based approaches (SurroundOcc, TPVFormer, VoxFormer) have achieved notable progress, typically assuming all six surround-view cameras operate normally.
 
 **A Neglected Yet Critical Problem**: In practice, cameras frequently fail due to lens occlusion, hardware damage, or communication interruption. Even a single camera failure causes catastrophic performance degradation—e.g., losing the rear camera drops SurroundOcc's IoU from 32.38% to 23.94% (−26%), which is unacceptable for safety-critical systems.
 

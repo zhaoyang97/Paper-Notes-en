@@ -28,13 +28,13 @@ This paper proposes the A3 framework, comprising a theory-driven three-stage adv
 
 ## Background & Motivation
 
-**State of the Field**: Advertising images are critical to commercial conversion rates, yet current evaluation methods rely primarily on subjective human scoring, lacking scalability, standardized criteria, and interpretability. Automated systems mostly employ simple threshold-based filtering and cannot provide diagnostic feedback.
+**Background**: Advertising images are critical to commercial conversion rates, yet current evaluation methods rely primarily on subjective human scoring, lacking scalability, standardized criteria, and interpretability. Automated systems mostly employ simple threshold-based filtering and cannot provide diagnostic feedback.
 
 **Limitations of Prior Work**: Although MLLMs possess strong vision-language understanding capabilities, they exhibit three shortcomings in advertising aesthetic assessment: (1) they produce only a single holistic score, ignoring the progressive nature of human cognition; (2) their outputs are unstable and sensitive to prompt phrasing; and (3) their reasoning processes frequently contradict their final judgments.
 
-**Root Cause**: Advertising aesthetic assessment requires multi-level judgment spanning from low-level perception (image quality) to high-level cognition (emotional arousal and persuasiveness), yet existing methods lack a methodology for translating abstract theory into an executable evaluation framework.
+**Key Challenge**: Advertising aesthetic assessment requires multi-level judgment spanning from low-level perception (image quality) to high-level cognition (emotional arousal and persuasiveness), yet existing methods lack a methodology for translating abstract theory into an executable evaluation framework.
 
-**Starting Point**: The classical AIDA marketing model (Attention → Interest → Desire → Action) is leveraged to construct a staged advertising aesthetic assessment framework.
+**Key Insight**: The classical AIDA marketing model (Attention → Interest → Desire → Action) is leveraged to construct a staged advertising aesthetic assessment framework.
 
 **Core Idea**: Advertising aesthetic assessment is decomposed into three hierarchical levels (Perceptual Attention → Formal Interest → Desire Impact), each with explicit theoretical grounding and actionable evaluation rules, complemented by CoT-guided dataset construction and GRPO alignment training.
 

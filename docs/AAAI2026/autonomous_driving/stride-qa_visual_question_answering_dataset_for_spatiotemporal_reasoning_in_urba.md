@@ -28,13 +28,13 @@ This paper constructs STRIDE-QA, the largest spatiotemporal reasoning VQA datase
 
 ## Background & Motivation
 
-**State of the Field**: VLMs (e.g., GPT-4o, Qwen2.5-VL) have been applied to autonomous driving scene understanding and decision support. Existing driving VQA datasets include nuScenes-QA (460K QA pairs) and nuPlanQA (1M QA pairs), among others.
+**Background**: VLMs (e.g., GPT-4o, Qwen2.5-VL) have been applied to autonomous driving scene understanding and decision support. Existing driving VQA datasets include nuScenes-QA (460K QA pairs) and nuPlanQA (1M QA pairs), among others.
 
 **Limitations of Prior Work**: Existing VLMs are trained on static web image–text pairs and lack precise spatiotemporal reasoning capabilities. Prior driving VQA datasets either support only object-centric perspectives, lack temporally aligned 3D annotations, or are limited in scale.
 
-**Root Cause**: No existing dataset simultaneously supports all three task types—object-centric spatial reasoning, ego-centric spatial reasoning, and ego-centric spatiotemporal reasoning (including future prediction). Existing methods score near zero on spatiotemporal prediction consistency.
+**Key Challenge**: No existing dataset simultaneously supports all three task types—object-centric spatial reasoning, ego-centric spatial reasoning, and ego-centric spatiotemporal reasoning (including future prediction). Existing methods score near zero on spatiotemporal prediction consistency.
 
-**Starting Point**: The authors leverage 100 hours of driving data collected in Tokyo and construct a large-scale spatiotemporal reasoning VQA dataset of 16M QA pairs via a fully automated annotation pipeline (BEVFusion 3D detection + PubTracker tracking + SAM 2.1 segmentation + visibility filtering).
+**Key Insight**: The authors leverage 100 hours of driving data collected in Tokyo and construct a large-scale spatiotemporal reasoning VQA dataset of 16M QA pairs via a fully automated annotation pipeline (BEVFusion 3D detection + PubTracker tracking + SAM 2.1 segmentation + visibility filtering).
 
 **Core Idea**: Provide VLMs with large-scale, physically grounded spatiotemporal supervision signals, enabling a capability leap from passive scene description to future motion prediction.
 

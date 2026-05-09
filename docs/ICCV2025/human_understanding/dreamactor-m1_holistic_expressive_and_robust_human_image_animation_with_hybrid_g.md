@@ -37,7 +37,7 @@ Human image animation is a prominent research direction in video generation, wit
 
 **Single control signal dilemma**: Skeleton-based control is insufficiently fine-grained for facial regions, while 3DMM parameters cannot govern body motion.
 
-**Starting Point**: Design hybrid control signals to decouple facial expression from body motion, introduce complementary appearance guidance to fill the information gap for unseen regions, and adopt a progressive training strategy to accommodate multi-scale inputs.
+**Key Insight**: Design hybrid control signals to decouple facial expression from body motion, introduce complementary appearance guidance to fill the information gap for unseen regions, and adopt a progressive training strategy to accommodate multi-scale inputs.
 
 ## Method
 

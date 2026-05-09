@@ -37,7 +37,7 @@ This paper proposes the **Truth Co-occurrence Hypothesis (TCH)**—that true sta
 - The Persona hypothesis (Joshi et al., 2024) associates truth values with lexical style (e.g., Wikipedia vs. social media), but this is a surface-level cue rather than a fundamental mechanism.
 - A mechanistic explanation grounded in training dynamics that does not rely on lexical cues is lacking.
 
-**Starting Point**: If true and false statements within the same passage are correlated (TCH), then inferring "truth value" reduces language model loss—providing an optimization-level motivation for models to learn truth representations.
+**Key Insight**: If true and false statements within the same passage are correlated (TCH), then inferring "truth value" reduces language model loss—providing an optimization-level motivation for models to learn truth representations.
 
 ## Method
 

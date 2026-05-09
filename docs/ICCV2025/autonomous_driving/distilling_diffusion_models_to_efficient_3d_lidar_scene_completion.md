@@ -29,15 +29,15 @@ This paper proposes ScoreLiDAR, a diffusion model distillation framework for 3D 
 
 ## Background & Motivation
 
-**State of the Field**: 3D LiDAR scene completion aims to recover a complete 3D scene from sparse LiDAR scans. Diffusion models have been successfully applied to this task (e.g., LiDiff) owing to their training stability and high completion quality. Specifically, diffusion models perform denoising in the latent space of 3D point clouds, progressively recovering a complete scene from random noise.
+**Background**: 3D LiDAR scene completion aims to recover a complete 3D scene from sparse LiDAR scans. Diffusion models have been successfully applied to this task (e.g., LiDiff) owing to their training stability and high completion quality. Specifically, diffusion models perform denoising in the latent space of 3D point clouds, progressively recovering a complete scene from random noise.
 
 **Limitations of Prior Work**: Diffusion models require a large number of sampling steps (typically 50–1000) to generate high-quality results, leading to per-frame completion times exceeding 30 seconds. For real-time applications such as autonomous driving—where the vehicle must perceive its surroundings within milliseconds—this latency is entirely unacceptable.
 
-**Root Cause**: The quality of diffusion models stems from their multi-step iterative denoising process, yet the computational cost scales proportionally with the number of steps. Naively reducing the step count severely degrades completion quality; in particular, the geometric structure of 3D scenes (e.g., building contours, road surfaces) tends to deform under few-step sampling.
+**Key Challenge**: The quality of diffusion models stems from their multi-step iterative denoising process, yet the computational cost scales proportionally with the number of steps. Naively reducing the step count severely degrades completion quality; in particular, the geometric structure of 3D scenes (e.g., building contours, road surfaces) tends to deform under few-step sampling.
 
-**Paper Goals**: The paper aims to design a distillation method that enables a student model to match or exceed the completion quality of the teacher model (50+ steps) within very few sampling steps (e.g., 2–8 steps), while preserving the geometric integrity of the 3D scene.
+**Goal**: The paper aims to design a distillation method that enables a student model to match or exceed the completion quality of the teacher model (50+ steps) within very few sampling steps (e.g., 2–8 steps), while preserving the geometric integrity of the 3D scene.
 
-**Starting Point**: The authors observe that 3D LiDAR scenes exhibit strong structural priors—buildings form planar surfaces, roads are approximately horizontal, and trees have characteristic shapes. By explicitly constraining the student model to preserve these structural characteristics during distillation, geometric quality can be maintained under few-step sampling.
+**Key Insight**: The authors observe that 3D LiDAR scenes exhibit strong structural priors—buildings form planar surfaces, roads are approximately horizontal, and trees have characteristic shapes. By explicitly constraining the student model to preserve these structural characteristics during distillation, geometric quality can be maintained under few-step sampling.
 
 **Core Idea**: Score distillation is combined with specially designed structural losses. The structural losses constrain the output geometry of the student model at both the global scene level and the local landmark level, enabling the distilled model to accurately reconstruct 3D structures even under few-step sampling.
 

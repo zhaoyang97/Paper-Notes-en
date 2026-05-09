@@ -27,15 +27,15 @@ content_hash: 9a13f2ca95007e7d
 This paper proposes the HAMMER framework, which extracts contact-aware intention embeddings from an MLLM, enhances point cloud features via hierarchical cross-modal fusion, and injects 3D spatial information into the intention embeddings through a multi-granular geometry lifting module. The framework achieves interaction-image-based 3D affordance grounding and comprehensively outperforms existing methods on the PIAD benchmark.
 
 ## Background & Motivation
-**State of the Field**: Intention-driven 3D affordance grounding—predicting operable regions on point clouds from interaction images—is a critical task bridging visual understanding and physical interaction, with applications in robotic manipulation and imitation learning.
+**Background**: Intention-driven 3D affordance grounding—predicting operable regions on point clouds from interaction images—is a critical task bridging visual understanding and physical interaction, with applications in robotic manipulation and imitation learning.
 
 **Limitations of Prior Work**: GREAT relies on hand-crafted templates and two-stage training, using MLLMs only to generate textual descriptions as intermediate representations. InteractVLM renders point clouds as multi-view images, applies a 2D segmentor to predict contact maps, and back-projects them to 3D, introducing geometric inconsistencies and detail loss.
 
-**Root Cause**: Existing methods either fail to fully exploit the powerful understanding capabilities of MLLMs (using them only for text generation) or introduce unavoidable information loss through intermediate representations.
+**Key Challenge**: Existing methods either fail to fully exploit the powerful understanding capabilities of MLLMs (using them only for text generation) or introduce unavoidable information loss through intermediate representations.
 
-**Paper Goals**: To fully leverage the multimodal understanding capabilities of MLLMs for 3D affordance grounding, avoiding the information loss associated with intermediate text or 2D mask representations.
+**Goal**: To fully leverage the multimodal understanding capabilities of MLLMs for 3D affordance grounding, avoiding the information loss associated with intermediate text or 2D mask representations.
 
-**Starting Point**: Directly extract embeddings encoding interaction intent from the hidden layers of an MLLM, and inject MLLM knowledge into point cloud features via cross-modal attention.
+**Key Insight**: Directly extract embeddings encoding interaction intent from the hidden layers of an MLLM, and inject MLLM knowledge into point cloud features via cross-modal attention.
 
 **Core Idea**: A special `[CONT]` token aggregates the MLLM's interaction intent; hierarchical cross-modal fusion and multi-granular geometry lifting then enable 3D affordance grounding.
 

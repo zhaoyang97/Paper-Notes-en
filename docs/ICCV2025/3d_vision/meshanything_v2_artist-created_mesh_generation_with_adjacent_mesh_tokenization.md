@@ -28,15 +28,15 @@ MeshAnything V2 proposes Adjacent Mesh Tokenization (AMT), which represents adja
 
 ## Background & Motivation
 
-**State of the Field**: Autoregressive mesh generation has emerged as a prominent research direction, treating 3D meshes as sequences of faces and generating them vertex-by-vertex using LLM-style Transformers. Representative methods include PolyGen, MeshGPT, MeshXL, and MeshAnything. These methods learn from distributions of artist-created meshes (AMs) to produce efficient, aesthetically coherent, and production-ready geometry.
+**Background**: Autoregressive mesh generation has emerged as a prominent research direction, treating 3D meshes as sequences of faces and generating them vertex-by-vertex using LLM-style Transformers. Representative methods include PolyGen, MeshGPT, MeshXL, and MeshAnything. These methods learn from distributions of artist-created meshes (AMs) to produce efficient, aesthetically coherent, and production-ready geometry.
 
 **Limitations of Prior Work**: Existing methods cannot generate complex meshes with large face counts. The fundamental bottleneck lies in **tokenization inefficiency**: each face is represented by three vertices, and each vertex requires three tokens (x/y/z coordinates), resulting in a token sequence length nine times the number of faces. This incurs substantial computational and memory overhead, and the high redundancy in the sequence degrades sequence learning performance.
 
-**Root Cause**: Meshes are graph-structured data admitting infinitely many serialization schemes. Effective tokenization must simultaneously satisfy two objectives: (a) **compactness**—shorter sequences reduce computational complexity; and (b) **regularity**—well-structured sequences are easier for Transformers to learn.
+**Key Challenge**: Meshes are graph-structured data admitting infinitely many serialization schemes. Effective tokenization must simultaneously satisfy two objectives: (a) **compactness**—shorter sequences reduce computational complexity; and (b) **regularity**—well-structured sequences are easier for Transformers to learn.
 
-**Paper Goals**: Design a more efficient mesh tokenization scheme that shortens the sequence while preserving its regularity and learnability.
+**Goal**: Design a more efficient mesh tokenization scheme that shortens the sequence while preserving its regularity and learnability.
 
-**Starting Point**: The NLP community has extensively demonstrated the importance of tokenization for sequence learning (e.g., BPE vs. WordPiece). For graph-structured data such as meshes, the impact of tokenization is even more profound. A key observation is that redundancy in current methods stems primarily from repeatedly encoding already-visited vertices—if adjacent faces share an edge, only one new vertex is needed to represent the next face.
+**Key Insight**: The NLP community has extensively demonstrated the importance of tokenization for sequence learning (e.g., BPE vs. WordPiece). For graph-structured data such as meshes, the impact of tokenization is even more profound. A key observation is that redundancy in current methods stems primarily from repeatedly encoding already-visited vertices—if adjacent faces share an edge, only one new vertex is needed to represent the next face.
 
 **Core Idea**: Adjacent faces share two vertices; therefore, only one new vertex is required to represent the next adjacent face. When no adjacent face is found, a special token "&" is inserted to restart the sequence.
 

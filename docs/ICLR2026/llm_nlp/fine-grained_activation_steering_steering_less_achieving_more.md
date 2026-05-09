@@ -28,16 +28,16 @@ AUSteer reveals that block-level activation steering is inherently heterogeneous
 
 ## Background & Motivation
 
-**State of the Field**: Activation steering is a low-cost approach to modifying LLM behavior—steering vectors are extracted and injected into intermediate activations at inference time. Methods such as ITI, CAA, and SADI operate at the **block level** on attention heads, FFN layers, or the residual stream.
+**Background**: Activation steering is a low-cost approach to modifying LLM behavior—steering vectors are extracted and injected into intermediate activations at inference time. Methods such as ITI, CAA, and SADI operate at the **block level** on attention heads, FFN layers, or the residual stream.
 
 **Limitations of Prior Work**:
    - Block-level activations contain hundreds to thousands of dimensions, mixing beneficial, irrelevant, and harmful features.
    - Block-level steering inevitably shifts both useful and harmful token directions simultaneously—resulting in coarse-grained, inefficient, and overly intrusive interventions.
    - Steering a single dimension can **surpass** steering the entire block—indicating that block-level operation is suboptimal.
 
-**Root Cause**: Block-level steering couples all dimensions together, yet different dimensions govern the probability distributions of different output tokens—a fundamental heterogeneity problem.
+**Key Challenge**: Block-level steering couples all dimensions together, yet different dimensions govern the probability distributions of different output tokens—a fundamental heterogeneity problem.
 
-**Starting Point**: Each column of a weight matrix is defined as an "Atomic Unit" (AU), corresponding to a single dimension of the activation. By decomposing $\mathbf{y} = \mathbf{W}\mathbf{x} = \sum_i x_i \mathbf{W}_{:,i}$, block-level intervention is factored into AU-level scalar interventions.
+**Key Insight**: Each column of a weight matrix is defined as an "Atomic Unit" (AU), corresponding to a single dimension of the activation. By decomposing $\mathbf{y} = \mathbf{W}\mathbf{x} = \sum_i x_i \mathbf{W}_{:,i}$, block-level intervention is factored into AU-level scalar interventions.
 
 **Core Idea**: Steering fewer dimensions yields better results—because steering only beneficial AUs avoids the side effects introduced by harmful AUs.
 

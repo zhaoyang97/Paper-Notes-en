@@ -29,15 +29,15 @@ This work systematically ablates the design space of MLLM embedding learning, re
 
 ## Background & Motivation
 
-**State of the Field**: Universal Multimodal Retrieval (UMR) requires a single retriever to handle complex retrieval scenarios where both queries and candidates span text, images, and their combinations. Recent methods such as LamRA, MM-Embed, GME, and UniME all adopt MLLM + contrastive learning, but differ substantially in architectural choices (embedding extraction, training hyperparameters, negative sampling strategies), with no unified study addressing which design decisions truly matter.
+**Background**: Universal Multimodal Retrieval (UMR) requires a single retriever to handle complex retrieval scenarios where both queries and candidates span text, images, and their combinations. Recent methods such as LamRA, MM-Embed, GME, and UniME all adopt MLLM + contrastive learning, but differ substantially in architectural choices (embedding extraction, training hyperparameters, negative sampling strategies), with no unified study addressing which design decisions truly matter.
 
 **Limitations of Prior Work**: Decoder-only MLLMs are inherently designed for autoregressive generation; adapting them into embedding models involves numerous unexplored design choices. Existing methods almost universally follow the paradigm of last-token extraction + causal attention + compressed prompt (e.g., "Summarize in one word: emb"), yet whether this is optimal has never been systematically validated. Furthermore, while recall-then-rerank improves accuracy, it doubles inference cost, and no efficient single-model alternative has been established.
 
-**Root Cause**: Several seemingly minor details—attention directionality, pooling strategy, temperature parameterization—may have decisive effects on performance, yet the community lacks systematic understanding of their impact.
+**Key Challenge**: Several seemingly minor details—attention directionality, pooling strategy, temperature parameterization—may have decisive effects on performance, yet the community lacks systematic understanding of their impact.
 
-**Paper Goals**: (1) Embedding extraction: what is the optimal way to adapt a decoder-only model into an embedder? (2) Training strategy: how do batch size, learning rate, and temperature interact in InfoNCE? How can hard negatives avoid training collapse? (3) Efficiency: can recall + rerank be distilled into a single model while preserving accuracy?
+**Goal**: (1) Embedding extraction: what is the optimal way to adapt a decoder-only model into an embedder? (2) Training strategy: how do batch size, learning rate, and temperature interact in InfoNCE? How can hard negatives avoid training collapse? (3) Efficiency: can recall + rerank be distilled into a single model while preserving accuracy?
 
-**Starting Point**: Rather than directly proposing a method, the authors first implement a general pipeline, then systematically ablate along three axes, deriving optimal designs from empirical evidence at each step, and finally assembling them into a unified framework. This "understand before build" paradigm ensures every design decision is data-driven.
+**Key Insight**: Rather than directly proposing a method, the authors first implement a general pipeline, then systematically ablate along three axes, deriving optimal designs from empirical evidence at each step, and finally assembling them into a unified framework. This "understand before build" paradigm ensures every design decision is data-driven.
 
 **Core Idea**: Through systematic ablation, the paper identifies overlooked critical factors (bidirectional attention + mean pooling, learnable temperature, filtered hard negatives) and integrates them into a three-stage progressive training framework with efficient distillation, achieving single-model SOTA.
 

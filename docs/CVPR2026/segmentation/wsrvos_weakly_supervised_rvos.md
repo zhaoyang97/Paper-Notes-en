@@ -29,15 +29,15 @@ This paper proposes WSRVOS, the first weakly supervised referring video object s
 
 ## Background & Motivation
 
-**State of the Field**: Referring video object segmentation (RVOS) segments target instances in video according to text expressions. Mainstream methods (e.g., ReferFormer, SAMWISE) rely on pixel-level mask annotations, achieving strong performance at the cost of prohibitively expensive annotation.
+**Background**: Referring video object segmentation (RVOS) segments target instances in video according to text expressions. Mainstream methods (e.g., ReferFormer, SAMWISE) rely on pixel-level mask annotations, achieving strong performance at the cost of prohibitively expensive annotation.
 
 **Limitations of Prior Work**: Exploration of weakly supervised RVOS is still in its early stages. Existing works such as WRVOS use the first-frame mask with bounding boxes for subsequent frames, while OCPG generates pseudo-masks from bbox/point annotations. However, bbox and point annotations still require substantial per-frame manual effort, particularly costly for long videos.
 
-**Root Cause**: How can a model learn to localize and segment target instances in video using only text expressions, without any spatial annotations (mask, bbox, or point)? The key challenges are: (1) heterogeneity between visual and language features makes semantic alignment difficult; (2) temporal dynamics and occlusions in video further complicate the alignment process.
+**Key Challenge**: How can a model learn to localize and segment target instances in video using only text expressions, without any spatial annotations (mask, bbox, or point)? The key challenges are: (1) heterogeneity between visual and language features makes semantic alignment difficult; (2) temporal dynamics and occlusions in video further complicate the alignment process.
 
-**Paper Goals**: Design an end-to-end weakly supervised RVOS framework that uses only text expressions as supervision during training, requiring no spatial annotations of any kind.
+**Goal**: Design an end-to-end weakly supervised RVOS framework that uses only text expressions as supervision during training, requiring no spatial annotations of any kind.
 
-**Starting Point**: The captioning capability of multimodal large language models (MLLMs) such as Qwen3-VL can generate rich positive and negative textual descriptions for video, providing supervision signals far richer than the original brief expressions. Contrastive learning between correct and incorrect descriptions enables the model to indirectly acquire localization ability.
+**Key Insight**: The captioning capability of multimodal large language models (MLLMs) such as Qwen3-VL can generate rich positive and negative textual descriptions for video, providing supervision signals far richer than the original brief expressions. Contrastive learning between correct and incorrect descriptions enables the model to indirectly acquire localization ability.
 
 **Core Idea**: Use MLLMs to generate contrastive expression augmentation data (richly detailed positive expressions and hard negative expressions), then train the segmentation model through instance-aware classification and pseudo-mask fusion, without using any spatial annotations throughout.
 

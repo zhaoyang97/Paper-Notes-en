@@ -27,15 +27,15 @@ This paper proposes CarO (Chain-of-Analogy Reasoning Optimization), a two-stage 
 
 ## Background & Motivation
 
-**State of the Field**: Content moderation is a core task for maintaining digital ecosystem safety. Traditional discriminative models (e.g., BERT) suffer from poor OOD generalization and limited interpretability. Recent LLMs have demonstrated the ability to generate reasoning chains via prompting, ICL, and post-training, enabling more interpretable moderation decisions.
+**Background**: Content moderation is a core task for maintaining digital ecosystem safety. Traditional discriminative models (e.g., BERT) suffer from poor OOD generalization and limited interpretability. Recent LLMs have demonstrated the ability to generate reasoning chains via prompting, ICL, and post-training, enabling more interpretable moderation decisions.
 
 **Limitations of Prior Work**: Even state-of-the-art reasoning models such as DeepSeek R1 frequently fail on ambiguous moderation cases. Analysis reveals that these errors stem from "decision shortcuts" embedded in the context—surface-level cues that mislead the reasoning process. For instance, the statement "Every Indian person I know dances upon hearing music" is a benign observation, yet DeepSeek R1 incorrectly classifies it as discriminatory upon detecting the mention of a specific ethnic group.
 
-**Root Cause**: LLMs are easily misled by superficial semantic cues in boundary cases, lacking the analogical reasoning capability characteristic of human moderation experts—who first recall similar precedents and then integrate those precedents with guidelines to reach a judgment.
+**Key Challenge**: LLMs are easily misled by superficial semantic cues in boundary cases, lacking the analogical reasoning capability characteristic of human moderation experts—who first recall similar precedents and then integrate those precedents with guidelines to reach a judgment.
 
-**Paper Goals**: To enable LLMs to learn analogical reasoning, such that during inference they autonomously generate relevant analogical cases and make more robust moderation decisions grounded in analogy.
+**Goal**: To enable LLMs to learn analogical reasoning, such that during inference they autonomously generate relevant analogical cases and make more robust moderation decisions grounded in analogy.
 
-**Starting Point**: The work is motivated by the cognitive workflow of human domain experts—when handling ambiguous cases, experts first retrieve similar precedents (analogical retrieval) and then synthesize insights from those precedents alongside moderation guidelines (analogical reasoning).
+**Key Insight**: The work is motivated by the cognitive workflow of human domain experts—when handling ambiguous cases, experts first retrieve similar precedents (analogical retrieval) and then synthesize insights from those precedents alongside moderation guidelines (analogical reasoning).
 
 **Core Idea**: A two-stage training procedure internalizes analogical reasoning into LLMs: Stage 1 uses RAG + SFT to guide the generation of analogical reasoning chains; Stage 2 applies customized DPO to reinforce analogical reasoning via preference pairs contrasting chains with and without analogies.
 

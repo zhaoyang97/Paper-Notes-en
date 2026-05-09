@@ -36,7 +36,7 @@ The first end-to-end LLM-driven cooperative driving system. Through an Actor-Cri
 
 **Difficulties of Applying LLMs Directly to Driving**: Although LLMs possess general reasoning capabilities, two obstacles remain: (a) insufficient spatial planning ability — LLMs cannot directly output precise trajectory coordinates; (b) unstable inference latency — real-time driving demands extremely tight latency bounds, and variable LLM inference times cause control instability.
 
-**Starting Point**: Rather than forcing LLMs to perform spatial planning, the paper leverages LLMs for what they excel at — language-based negotiation. The driving system is decomposed into two parallel pipelines: an LLM negotiates cooperative intentions via natural language (e.g., "I will pass first; you slow down and yield"), and a dedicated trajectory generator then translates the negotiation outcome into executable waypoints.
+**Key Insight**: Rather than forcing LLMs to perform spatial planning, the paper leverages LLMs for what they excel at — language-based negotiation. The driving system is decomposed into two parallel pipelines: an LLM negotiates cooperative intentions via natural language (e.g., "I will pass first; you slow down and yield"), and a dedicated trajectory generator then translates the negotiation outcome into executable waypoints.
 
 ## Method
 

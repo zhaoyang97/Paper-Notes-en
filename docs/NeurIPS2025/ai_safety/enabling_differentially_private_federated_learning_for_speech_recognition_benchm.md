@@ -29,15 +29,15 @@ This work establishes the first practical benchmark for FL+DP in end-to-end ASR,
 
 ## Background & Motivation
 
-**State of the Field**: Federated learning (FL) and differential privacy (DP) have been extensively studied in NLP and CV tasks, yet remain largely unexplored for end-to-end automatic speech recognition (ASR). Existing ASR systems rely on large Transformer models (e.g., 250M-parameter CTC models), making training inherently challenging.
+**Background**: Federated learning (FL) and differential privacy (DP) have been extensively studied in NLP and CV tasks, yet remain largely unexplored for end-to-end automatic speech recognition (ASR). Existing ASR systems rely on large Transformer models (e.g., 250M-parameter CTC models), making training inherently challenging.
 
 **Limitations of Prior Work**: Large Transformer models exhibit severe **cross-layer gradient heterogeneity**—gradient magnitudes differ substantially between deep and shallow layers—and the divergence accumulation phenomenon in FL further exacerbates this issue. Existing methods often fail to converge even without DP.
 
-**Root Cause**: DP requires adding calibrated noise to model updates to protect privacy; however, the noise magnitude is proportional to the clipping constant $C$, while reducing $C$ introduces clipping bias. In deep models, gradient magnitudes vary drastically across layers, making **global uniform clipping** ill-suited: small-gradient layers are over-clipped, while large-gradient layers receive insufficient noise regularization.
+**Key Challenge**: DP requires adding calibrated noise to model updates to protect privacy; however, the noise magnitude is proportional to the clipping constant $C$, while reducing $C$ introduces clipping bias. In deep models, gradient magnitudes vary drastically across layers, making **global uniform clipping** ill-suited: small-gradient layers are over-clipped, while large-gradient layers receive insufficient noise regularization.
 
-**Paper Goals**: To establish the first competitive benchmark and practical training recipe for FL+DP in end-to-end ASR, achieving a viable privacy–utility trade-off especially at large-scale user populations (millions).
+**Goal**: To establish the first competitive benchmark and practical training recipe for FL+DP in end-to-end ASR, achieving a viable privacy–utility trade-off especially at large-scale user populations (millions).
 
-**Starting Point**: Through both theoretical and empirical analysis, the paper systematically examines per-layer clipping and layer-wise adaptive gradient normalization (the trust ratio in LAMB), demonstrating that their combination effectively mitigates clipping bias and cross-layer gradient heterogeneity.
+**Key Insight**: Through both theoretical and empirical analysis, the paper systematically examines per-layer clipping and layer-wise adaptive gradient normalization (the trust ratio in LAMB), demonstrating that their combination effectively mitigates clipping bias and cross-layer gradient heterogeneity.
 
 **Core Idea**: Redistribute the global clipping budget $C$ across layers ($C_h = C/\sqrt{H}$ or dimension-proportional allocation), combined with LAMB's per-layer trust ratio, so that total DP noise remains unchanged while the per-layer signal-to-noise ratio is optimized.
 

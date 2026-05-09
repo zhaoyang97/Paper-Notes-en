@@ -29,13 +29,13 @@ This paper proposes RGTN, a framework that introduces Renormalization Group (RG)
 
 ## Background & Motivation
 
-**State of the Field**: Tensor Network Structure Search (TN-SS) aims to automatically discover optimal tensor network topologies and rank configurations for efficient decomposition of high-dimensional data. Existing approaches include genetic algorithms (TNGA), greedy construction (TNGreedy), local search (TNLS), and the more recent unified optimization method SVDinsTN.
+**Background**: Tensor Network Structure Search (TN-SS) aims to automatically discover optimal tensor network topologies and rank configurations for efficient decomposition of high-dimensional data. Existing approaches include genetic algorithms (TNGA), greedy construction (TNGreedy), local search (TNLS), and the more recent unified optimization method SVDinsTN.
 
 **Limitations of Prior Work**: (1) **Single-scale optimization**—existing methods search at a fixed resolution, ignoring the inherent multi-scale correlation structure of tensor data; (2) **Discrete search spaces**—genetic, greedy, and local search methods all operate in combinatorially explosive discrete spaces, making smooth evolution difficult; (3) **Decoupled structure–parameter optimization**—the sample-and-evaluate paradigm requires full optimization of each candidate structure, incurring prohibitive computational cost.
 
-**Root Cause**: The population size of genetic methods grows exponentially with tensor order; greedy algorithms make irreversible local decisions leading to suboptimal solutions; local search is prone to local minima. Although SVDinsTN achieves 100–1000× acceleration via unified optimization, single-scale search remains susceptible to local optima.
+**Key Challenge**: The population size of genetic methods grows exponentially with tensor order; greedy algorithms make irreversible local decisions leading to suboptimal solutions; local search is prone to local minima. Although SVDinsTN achieves 100–1000× acceleration via unified optimization, single-scale search remains susceptible to local optima.
 
-**Starting Point**: The work draws inspiration from RG theory in condensed matter physics—RG reveals the behavioral regularities of physical systems across different scales. Tensor networks naturally possess three properties that correspond to RG: scale-invariant correlations, hierarchical entanglement, and information flow, making it possible to directly adopt the multi-scale analysis framework of RG.
+**Key Insight**: The work draws inspiration from RG theory in condensed matter physics—RG reveals the behavioral regularities of physical systems across different scales. Tensor networks naturally possess three properties that correspond to RG: scale-invariant correlations, hierarchical entanglement, and information flow, making it possible to directly adopt the multi-scale analysis framework of RG.
 
 **Core Idea**: TN-SS is reformulated as a continuous optimization problem over a multi-scale RG flow, progressively refining network structure from coarse to fine, while using node tension and edge information flow as physical indicators to guide structural modifications, thereby unifying structure search and parameter optimization.
 

@@ -28,15 +28,15 @@ This paper proposes General Policy Composition (GPC), which at test time convexl
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion Policy has emerged as a powerful policy parameterization in robot learning, capable of representing complex multimodal action distributions. However, its progress is constrained by the high cost of acquiring large-scale interaction datasets.
+**Background**: Diffusion Policy has emerged as a powerful policy parameterization in robot learning, capable of representing complex multimodal action distributions. However, its progress is constrained by the high cost of acquiring large-scale interaction datasets.
 
 **Limitations of Prior Work**: (a) Scaling model capacity requires more data; (b) supervised fine-tuning demands expensive data collection; (c) reinforcement learning requires reward engineering and extensive online interaction; (d) existing policy composition methods (e.g., PoCo) use fixed weights without exploring task-dependent weight search.
 
-**Root Cause**: The performance of a single policy is bounded by its training data and model capacity, yet combining multiple policies requires theoretical guarantees—naïve averaging does not necessarily yield improvement.
+**Key Challenge**: The performance of a single policy is bounded by its training data and model capacity, yet combining multiple policies requires theoretical guarantees—naïve averaging does not necessarily yield improvement.
 
-**Paper Goals**: Obtain stronger policies by composing existing ones without any additional training.
+**Goal**: Obtain stronger policies by composing existing ones without any additional training.
 
-**Starting Point**: Drawing an analogy to compositional generative modeling—in diffusion models, the convex combination of multiple score functions is equivalent to a product of probability density functions, biasing sampling toward regions of consensus.
+**Key Insight**: Drawing an analogy to compositional generative modeling—in diffusion models, the convex combination of multiple score functions is equivalent to a product of probability density functions, biasing sampling toward regions of consensus.
 
 **Core Idea**: Convex combination of score functions from multiple diffusion policies + test-time weight search = training-free policy enhancement.
 

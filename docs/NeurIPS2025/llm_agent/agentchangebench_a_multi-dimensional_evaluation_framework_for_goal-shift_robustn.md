@@ -28,15 +28,15 @@ AgentChangeBench is the first benchmark that systematically evaluates the adapta
 
 ## Background & Motivation
 
-**State of the Field**: Existing agent benchmarks (τ-bench, τ²-bench, AgentBench) assume user goals remain fixed throughout a conversation and rely primarily on pass@k as the evaluation metric.
+**Background**: Existing agent benchmarks (τ-bench, τ²-bench, AgentBench) assume user goals remain fixed throughout a conversation and rely primarily on pass@k as the evaluation metric.
 
 **Limitations of Prior Work**: (a) In real-world scenarios, users frequently change their goals—a banking customer may shift from checking account balances to disputing fraud, while an airline customer may switch from flight lookup to rebooking—yet no benchmark systematically tests this "goal-shift" capability; (b) pass@k is a binary metric that cannot distinguish between "immediately adapting to the new goal" and "eventually adapting after 10 turns"; (c) high tool-call accuracy does not imply efficiency—agents may issue large numbers of redundant calls.
 
-**Root Cause**: pass@k compresses all success/failure signals into a single number, obscuring substantial variation in recovery speed, tool efficiency, and redundancy—dimensions that are critical for enterprise deployment in terms of both cost and user experience.
+**Key Challenge**: pass@k compresses all success/failure signals into a single number, obscuring substantial variation in recovery speed, tool efficiency, and redundancy—dimensions that are critical for enterprise deployment in terms of both cost and user experience.
 
-**Paper Goals**: To construct a benchmark with explicit "goal-shift sequences" and multi-dimensional evaluation metrics that quantify agent adaptability under dynamic user goals.
+**Goal**: To construct a benchmark with explicit "goal-shift sequences" and multi-dimensional evaluation metrics that quantify agent adaptability under dynamic user goals.
 
-**Starting Point**: Each task is defined as an ordered goal sequence (e.g., `["authentication","transactions","dispute"]`); a persona-conditioned user simulator naturally triggers goal shifts during dialogue, and the multi-stage GSRT metric quantifies the recovery process.
+**Key Insight**: Each task is defined as an ordered goal sequence (e.g., `["authentication","transactions","dispute"]`); a persona-conditioned user simulator naturally triggers goal shifts during dialogue, and the multi-stage GSRT metric quantifies the recovery process.
 
 **Core Idea**: Replace pass@k with explicit goal sequences and four-dimensional metrics (success rate / efficiency / redundancy rate / recovery time) to reveal the true robustness of agents under dynamic goals.
 

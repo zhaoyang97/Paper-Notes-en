@@ -29,15 +29,15 @@ By training RNNs to emulate the emission statistics of HMMs, then reverse-engine
 
 ## Background & Motivation
 
-1. **State of the Field**: RNNs are powerful tools in neuroscience for inferring latent dynamics of neural populations, but prior work has focused primarily on relatively simple, input-driven, deterministic behaviors. HMMs, by contrast, can segment naturalistic behavior into discrete latent states with stochastic transitions.
+1. **Background**: RNNs are powerful tools in neuroscience for inferring latent dynamics of neural populations, but prior work has focused primarily on relatively simple, input-driven, deterministic behaviors. HMMs, by contrast, can segment naturalistic behavior into discrete latent states with stochastic transitions.
 
 2. **Limitations of Prior Work**: RNNs operate in continuous state spaces, whereas HMMs rely on discrete states and stochastic transitions — an apparent incompatibility. It remains unclear whether, and how, RNNs can produce stochastic transitions between discrete states through continuous dynamics.
 
-3. **Root Cause**: How can a continuous state space give rise to discrete stochastic behavior? Intuitively, RNNs should learn one fixed point per HMM state (a multi-well landscape), yet the actual solution turns out to be considerably more subtle.
+3. **Key Challenge**: How can a continuous state space give rise to discrete stochastic behavior? Intuitively, RNNs should learn one fixed point per HMM state (a multi-well landscape), yet the actual solution turns out to be considerably more subtle.
 
-4. **Paper Goals**: To determine how RNNs emulate the discrete probabilistic behavior of HMMs using continuous internal dynamics, and to uncover the underlying computational mechanism.
+4. **Goal**: To determine how RNNs emulate the discrete probabilistic behavior of HMMs using continuous internal dynamics, and to uncover the underlying computational mechanism.
 
-5. **Starting Point**: Develop a training methodology (noise-driven RNN + Sinkhorn divergence) that fits RNNs to HMM emission statistics, followed by multi-level reverse engineering: global dynamics → local dynamics → connectivity structure → computational principles.
+5. **Key Insight**: Develop a training methodology (noise-driven RNN + Sinkhorn divergence) that fits RNNs to HMM emission statistics, followed by multi-level reverse engineering: global dynamics → local dynamics → connectivity structure → computational principles.
 
 6. **Core Idea**: RNNs implement stochastic state transitions via a self-induced stochastic resonance (SISR) mechanism — slow noise integration combined with fast kick triggering — realizing composable dynamical primitives that emulate HMM behavior.
 

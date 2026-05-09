@@ -29,15 +29,15 @@ This paper proposes TCD, a training-free inference-time decoding method that con
 
 ## Background & Motivation
 
-**State of the Field**: Large audio-language models (LALMs) such as Qwen2-Audio and Qwen2.5-Omni adopt unified architectures that represent audio as temporally aligned token sequences sharing a causal decoder with text.
+**Background**: Large audio-language models (LALMs) such as Qwen2-Audio and Qwen2.5-Omni adopt unified architectures that represent audio as temporally aligned token sequences sharing a causal decoder with text.
 
 **Limitations of Prior Work**: Unified decoders exhibit a *temporal smoothing bias* — transient acoustic cues (e.g., the number of telephone rings, brief sound effect changes) tend to be suppressed by temporally smooth context and language priors, making generated content insensitive to critical transient events.
 
-**Root Cause**: The autoregressive nature of language models inherently favors temporally smooth predictions, whereas critical information in audio is often transient.
+**Key Challenge**: The autoregressive nature of language models inherently favors temporally smooth predictions, whereas critical information in audio is often transient.
 
-**Paper Goals**: Design a training-free decoding-time intervention that enables models to better leverage transient acoustic cues.
+**Goal**: Design a training-free decoding-time intervention that enables models to better leverage transient acoustic cues.
 
-**Starting Point**: Drawing an analogy to visual contrastive decoding — construct a temporally blurred "slow path" audio view and contrast the logit difference between the two views to identify the contribution of transient cues.
+**Key Insight**: Drawing an analogy to visual contrastive decoding — construct a temporally blurred "slow path" audio view and contrast the logit difference between the two views to identify the contribution of transient cues.
 
 **Core Idea**: Generate the slow path by applying Hann-window temporal blurring to the original audio; use the positive component of the logit difference as the transient cue signal; constrain updates via stability-adaptive window selection and uncertainty- plus audio-dependency-based gating.
 

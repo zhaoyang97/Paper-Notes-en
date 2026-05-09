@@ -27,17 +27,17 @@ This paper models multi-objective optimization in iterative LLM interactions as 
 
 ## Background & Motivation
 
-**State of the Field**: LLMs operating on complex tasks must simultaneously optimize multiple competing objectives (e.g., security vs. efficiency vs. functionality in code, or creativity vs. accuracy vs. engagement in content generation). Existing multi-objective optimization methods (e.g., NSGA-II) assume deterministic objective functions and are therefore ill-suited to the inherent stochasticity of LLM responses.
+**Background**: LLMs operating on complex tasks must simultaneously optimize multiple competing objectives (e.g., security vs. efficiency vs. functionality in code, or creativity vs. accuracy vs. engagement in content generation). Existing multi-objective optimization methods (e.g., NSGA-II) assume deterministic objective functions and are therefore ill-suited to the inherent stochasticity of LLM responses.
 
 **Limitations of Prior Work**: There is no mathematical framework for rigorously analyzing the dynamic evolution, convergence properties, and interference patterns of multiple objectives in iterative LLM interactions. Existing LLM optimization approaches (LEO, LLM cascades, etc.) lack the mathematical rigor of dynamical systems analysis.
 
-**Root Cause**: LLM responses are stochastic, and multiple objectives exhibit systematic interference (e.g., improving functionality may degrade security), necessitating simultaneous modeling of stochasticity and objective coupling.
+**Key Challenge**: LLM responses are stochastic, and multiple objectives exhibit systematic interference (e.g., improving functionality may degrade security), necessitating simultaneous modeling of stochasticity and objective coupling.
 
-**Paper Goals**:
+**Goal**:
 - How can a mathematical framework characterize the dynamic evolution of multi-objective LLM interactions?
 - How do different interaction strategies affect convergence behavior?
 
-**Starting Point**: Model the iterative evolution of the objective vector as an SDE, where the drift term encodes strategy-induced systematic changes, the diffusion term encodes stochasticity in LLM responses, and the eigenvalue spectrum determines convergence patterns.
+**Key Insight**: Model the iterative evolution of the objective vector as an SDE, where the drift term encodes strategy-induced systematic changes, the diffusion term encodes stochasticity in LLM responses, and the eigenvalue spectrum determines convergence patterns.
 
 **Core Idea**: Employ a drift-diffusion-eigenvalue analysis framework based on SDEs to provide a unified characterization of convergence, stability, and objective interference patterns in multi-objective LLM interactions.
 

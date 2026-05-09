@@ -28,15 +28,15 @@ This paper introduces SteelDefectX, the first vision-language dataset for steel 
 
 ## Background & Motivation
 
-**State of the Field**: Steel surface defect detection is a critical component of quality assurance in industrial manufacturing. Existing methods primarily rely on fundamental image classification or object detection models (ResNet, ViT, etc.), achieving satisfactory classification accuracy on specific datasets. Public datasets such as NEU (6 classes, 1,800 images), GC10 (10 classes, 2,312 images), X-SDD (7 classes, 1,360 images), and S3D (5 classes, 880 images) have driven progress in this field.
+**Background**: Steel surface defect detection is a critical component of quality assurance in industrial manufacturing. Existing methods primarily rely on fundamental image classification or object detection models (ResNet, ViT, etc.), achieving satisfactory classification accuracy on specific datasets. Public datasets such as NEU (6 classes, 1,800 images), GC10 (10 classes, 2,312 images), X-SDD (7 classes, 1,360 images), and S3D (5 classes, 880 images) have driven progress in this field.
 
 **Limitations of Prior Work**: (1) Existing datasets provide only category labels or numerical annotations, lacking descriptive textual information, which limits the application of vision-language models in industrial domains; (2) Simple class-name template descriptions (e.g., "A photo of scratches") fail to capture the rich visual variation of steel defects—the same manufacturing process can produce drastically different visual patterns across different materials; (3) There is no standardized benchmark for evaluating cross-material and cross-dataset generalization.
 
-**Root Cause**: Vision-language models (e.g., CLIP) exhibit strong zero-shot capabilities on natural images, but perform poorly when directly applied to industrial defect data (maximum zero-shot accuracy of only 14.8%), fundamentally due to the absence of professional industrial image-text paired data.
+**Key Challenge**: Vision-language models (e.g., CLIP) exhibit strong zero-shot capabilities on natural images, but perform poorly when directly applied to industrial defect data (maximum zero-shot accuracy of only 14.8%), fundamentally due to the absence of professional industrial image-text paired data.
 
-**Paper Goals**: (1) Construct the first steel defect vision-language dataset with professional coarse-to-fine textual annotations; (2) Establish a standardized benchmark covering diverse scenarios to evaluate vision-language models in industrial inspection; (3) Validate the improvement in generalization and transfer capability brought by high-quality textual annotations.
+**Goal**: (1) Construct the first steel defect vision-language dataset with professional coarse-to-fine textual annotations; (2) Establish a standardized benchmark covering diverse scenarios to evaluate vision-language models in industrial inspection; (3) Validate the improvement in generalization and transfer capability brought by high-quality textual annotations.
 
-**Starting Point**: Industrial defect detection requires not only category labels but also semantic understanding of defect types, visual attributes, and root causes—precisely where vision-language models excel, provided high-quality image-text paired data is available.
+**Key Insight**: Industrial defect detection requires not only category labels but also semantic understanding of defect types, visual attributes, and root causes—precisely where vision-language models excel, provided high-quality image-text paired data is available.
 
 **Core Idea**: By constructing coarse-to-fine vision-language annotations (class-level: defect type + visual attributes + causes; sample-level: shape + size + depth + location + contrast), industrial defect detection is elevated from pure-vision classification to a vision-language semantic understanding task.
 

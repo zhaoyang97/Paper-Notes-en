@@ -28,11 +28,11 @@ This paper proposes GUIDE, a benchmark comprising 67.5 hours of screen recording
 
 ## Background & Motivation
 
-1. **State of the Field**: Existing GUI agents primarily focus on full automation—given a goal, automatically executing clicks and keyboard actions to complete a task. Academic efforts such as VideoGUI and AssistGUI, as well as industry products like Microsoft Copilot and Figma Make, all follow this paradigm.
+1. **Background**: Existing GUI agents primarily focus on full automation—given a goal, automatically executing clicks and keyboard actions to complete a task. Academic efforts such as VideoGUI and AssistGUI, as well as industry products like Microsoft Copilot and Figma Make, all follow this paradigm.
 2. **Limitations of Prior Work**: Full automation overlooks how users actually work. In open-ended creative or analytical tasks, users need to explore, iterate, experiment, and revise their ideas. Repeated undo actions may not indicate redundant operations, but rather a process of preference formation—something automated agents treat as equivalent behavior and skip over.
-3. **Root Cause**: Existing benchmarks are built on expert demonstrations of closed tasks and evaluate whether a model can replicate the same sequence of actions. Yet the users who genuinely need assistance are novices engaged in open-ended exploration. Superficially similar action sequences can stem from entirely different intentions—repeated undos may signal confusion or deliberate refinement.
-4. **Paper Goals**: (1) Collect real behavioral data from novice users performing open-ended tasks; (2) Evaluate whether models can understand what users are doing, why they are doing it, and whether they need help.
-5. **Starting Point**: Decompose GUI assistance into three progressive levels—understanding (behavior) → reasoning (intent) → acting (assistance)—aligned with Norman's Seven Stages of Action and Bloom's Taxonomy of cognitive levels.
+3. **Key Challenge**: Existing benchmarks are built on expert demonstrations of closed tasks and evaluate whether a model can replicate the same sequence of actions. Yet the users who genuinely need assistance are novices engaged in open-ended exploration. Superficially similar action sequences can stem from entirely different intentions—repeated undos may signal confusion or deliberate refinement.
+4. **Goal**: (1) Collect real behavioral data from novice users performing open-ended tasks; (2) Evaluate whether models can understand what users are doing, why they are doing it, and whether they need help.
+5. **Key Insight**: Decompose GUI assistance into three progressive levels—understanding (behavior) → reasoning (intent) → acting (assistance)—aligned with Norman's Seven Stages of Action and Bloom's Taxonomy of cognitive levels.
 6. **Core Idea**: Construct a three-tier progressive evaluation benchmark centered on novice users' open-ended GUI interactions, and reveal the critical role of structured user context in enabling effective assistance.
 
 ## Method

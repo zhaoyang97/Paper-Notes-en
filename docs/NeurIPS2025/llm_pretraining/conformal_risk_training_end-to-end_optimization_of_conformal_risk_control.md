@@ -29,21 +29,21 @@ This paper extends Conformal Risk Control (CRC) from expected loss to the genera
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning models exhibit strong predictive accuracy, yet their predictions typically carry no provable guarantees regarding risk or reliability. Conformal Risk Control (CRC) provides a distribution-free, finite-sample framework capable of controlling the expected value of any bounded monotone loss function, and can be conveniently applied post hoc to any pretrained model.
+**Background**: Deep learning models exhibit strong predictive accuracy, yet their predictions typically carry no provable guarantees regarding risk or reliability. Conformal Risk Control (CRC) provides a distribution-free, finite-sample framework capable of controlling the expected value of any bounded monotone loss function, and can be conveniently applied post hoc to any pretrained model.
 
 **Limitations of Prior Work**:
    - **Expected loss only**: The original CRC method controls only the expectation of the loss, whereas many practical applications are more sensitive to tail risk (i.e., worst-case loss). For instance, in medical diagnosis an average false-negative rate of 5% may be acceptable, yet a false-negative rate of 30% in certain subgroups is not.
    - **Performance degradation under post hoc application**: Applying standard CRC post hoc to a pretrained model degrades average-case performance, because the model receives no feedback about the downstream risk constraint and its predictions are not optimized for CRC.
    - **Tail risk not covered**: Expected loss fails to capture the tail behavior of a distribution. Although risk measures such as CVaR are more appropriate, they have not been addressed within the CRC framework.
 
-**Root Cause**: A fundamental trade-off exists between safety guarantees and performance—post hoc CRC provides guarantees at the cost of performance, while end-to-end optimization may improve performance but must preserve the guarantees.
+**Key Challenge**: A fundamental trade-off exists between safety guarantees and performance—post hoc CRC provides guarantees at the cost of performance, while end-to-end optimization may improve performance but must preserve the guarantees.
 
-**Paper Goals**:
+**Goal**:
    - Extend CRC from expected loss to the generalized OCE risk measure.
    - Eliminate the performance degradation associated with post hoc CRC.
    - Incorporate conformal risk control into model optimization at training time.
 
-**Starting Point**: The paper identifies that the threshold selection process in CRC is differentiable—the entire CRC pipeline, including the threshold search over the calibration set, can be embedded in the training loop and optimized via backpropagation.
+**Key Insight**: The paper identifies that the threshold selection process in CRC is differentiable—the entire CRC pipeline, including the threshold search over the calibration set, can be embedded in the training loop and optimized via backpropagation.
 
 **Core Idea**: Embed the conformal OCE risk control procedure into the forward pass of model training so that end-to-end gradients flow through the threshold selection step of CRC, enabling the model to learn to maximize average performance while preserving risk guarantees.
 

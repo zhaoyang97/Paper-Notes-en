@@ -27,15 +27,15 @@ This paper proposes EZPC, which learns a linear projection matrix $A$ to jointly
 
 ## Background & Motivation
 
-1. **State of the Field**: Vision-language models (VLMs) such as CLIP have achieved remarkable success in zero-shot image recognition by aligning images and text in a shared semantic space, enabling recognition of arbitrary categories without task-specific training. Concept Bottleneck Models (CBMs), meanwhile, provide interpretable reasoning through a human-defined concept layer, but require concept annotations and cannot generalize to unseen categories.
+1. **Background**: Vision-language models (VLMs) such as CLIP have achieved remarkable success in zero-shot image recognition by aligning images and text in a shared semantic space, enabling recognition of arbitrary categories without task-specific training. Concept Bottleneck Models (CBMs), meanwhile, provide interpretable reasoning through a human-defined concept layer, but require concept annotations and cannot generalize to unseen categories.
 
 2. **Limitations of Prior Work**: CLIP's high-dimensional embeddings are entangled black boxes—users cannot understand why the model associates a given image with a particular label. Although CBMs are interpretable, they require concept supervision and are limited to a closed-world setting. SpLiCE decomposes CLIP embeddings into concept combinations but requires per-image optimization (59× slower than CLIP), while Z-CBM demands a large concept vocabulary and expensive regression.
 
-3. **Root Cause**: Interpretability and open-world generalization appear to be mutually exclusive—CBMs offer interpretability but lack generalization, while CLIP generalizes but is not interpretable.
+3. **Key Challenge**: Interpretability and open-world generalization appear to be mutually exclusive—CBMs offer interpretability but lack generalization, while CLIP generalizes but is not interpretable.
 
-4. **Paper Goals**: How can CLIP's zero-shot capability be preserved while making its predictions explainable through human-understandable concepts?
+4. **Goal**: How can CLIP's zero-shot capability be preserved while making its predictions explainable through human-understandable concepts?
 
-5. **Starting Point**: CLIP's internal representations may already implicitly encode human-understandable semantic structure, requiring only an appropriate projection to "decode" it.
+5. **Key Insight**: CLIP's internal representations may already implicitly encode human-understandable semantic structure, requiring only an appropriate projection to "decode" it.
 
 6. **Core Idea**: Learn a single linear projection matrix $A$ to jointly map CLIP image and text embeddings into a predefined concept space, using a matching loss to preserve interpretability and a reconstruction loss to maintain semantic fidelity.
 

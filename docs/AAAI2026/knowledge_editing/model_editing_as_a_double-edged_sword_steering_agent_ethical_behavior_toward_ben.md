@@ -30,11 +30,11 @@ This paper frames the steering of agent ethical behavior as a model editing task
 
 ### State of the Field
 
-**State of the Field**: LLM agents are increasingly deployed in high-stakes domains such as healthcare, finance, and education, yet unethical behavior can lead to physical harm and financial loss.
+**Background**: LLM agents are increasingly deployed in high-stakes domains such as healthcare, finance, and education, yet unethical behavior can lead to physical harm and financial loss.
 
 **Limitations of Prior Work**: (a) Ethical behavior is difficult to systematically quantify; (b) alignment methods such as RLHF are computationally expensive and coarse-grained, making them unsuitable for fine-grained behavioral control; (c) hard-coded rules cannot handle dynamic or context-dependent ethical scenarios.
 
-**Starting Point**: Model editing has been shown to precisely modify factual knowledge — can it be extended to steering ethical behavior?
+**Key Insight**: Model editing has been shown to precisely modify factual knowledge — can it be extended to steering ethical behavior?
 
 **Core Idea**: Behavioral steering is framed as a model editing task supporting two strategies — behavior-as-target editing (modifying actions in a scenario) and judgment-as-target editing (modifying moral evaluations) — with bidirectional control (toward benevolence or malice).
 

@@ -27,16 +27,16 @@ content_hash: e67f0e9fed7799ae
 AnomalyVFM proposes a general framework that transforms arbitrary Vision Foundation Models (VFMs) into strong zero-shot anomaly detectors via a three-stage synthetic data generation pipeline and parameter-efficient LoRA adaptation, achieving 94.1% image-level AUROC across 9 industrial datasets with RADIO as the backbone, surpassing the previous SOTA by 3.3 percentage points.
 
 ## Background & Motivation
-**State of the Field**: Zero-shot anomaly detection requires detecting anomalies on unseen object categories without any in-domain images. Current SOTA methods (AnomalyCLIP, AdaCLIP, etc.) rely on high-level conceptual knowledge from vision-language models such as CLIP.
+**Background**: Zero-shot anomaly detection requires detecting anomalies on unseen object categories without any in-domain images. Current SOTA methods (AnomalyCLIP, AdaCLIP, etc.) rely on high-level conceptual knowledge from vision-language models such as CLIP.
 
 **Limitations of Prior Work**:
    - Pure VFMs (e.g., DINOv2) possess stronger visual representations yet underperform VLM-based methods in zero-shot anomaly detection — a counterintuitive result, given that anomaly detection is inherently a visual task;
    - **Reason 1**: Existing auxiliary anomaly datasets lack sufficient diversity; VLMs compensate through reliable high-level conceptual knowledge, whereas VFMs cannot rely on such knowledge;
    - **Reason 2**: Existing VFM adaptation strategies are too shallow (training only the output head) and do not alter the internal visual representations.
 
-**Root Cause**: VFMs possess stronger visual representation capacity, but lack diverse training data and effective deep adaptation methods to unlock their potential.
+**Key Challenge**: VFMs possess stronger visual representation capacity, but lack diverse training data and effective deep adaptation methods to unlock their potential.
 
-**Starting Point**: Simultaneously addressing both bottlenecks — synthesizing large-scale diverse data and performing deep LoRA-based adaptation.
+**Key Insight**: Simultaneously addressing both bottlenecks — synthesizing large-scale diverse data and performing deep LoRA-based adaptation.
 
 **Core Idea**: Generative data + parameter-efficient backbone adaptation + confidence-weighted loss = unlocking VFMs' potential for zero-shot anomaly detection.
 

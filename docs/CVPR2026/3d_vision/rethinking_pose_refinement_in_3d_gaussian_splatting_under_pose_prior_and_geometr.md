@@ -30,10 +30,10 @@ This paper proposes UGS-Loc, a framework that jointly models pose prior uncertai
 
 ## Background & Motivation
 
-- **State of the Field**: 3D Gaussian Splatting has become a powerful scene representation for visual localization, with render-and-compare pose refinement methods achieving state-of-the-art accuracy.
+- **Background**: 3D Gaussian Splatting has become a powerful scene representation for visual localization, with render-and-compare pose refinement methods achieving state-of-the-art accuracy.
 - **Limitations of Prior Work**: Existing methods rely on a single deterministic pose estimate (from APR/SCR); when the initial pose has large errors or severe occlusion, the alignment quality between rendered views and query images degrades sharply. Additionally, the ellipsoidal primitives in 3DGS only approximate geometry, and depth rendered from sparse training viewpoints or regions contaminated by dynamic objects is unreliable — yet existing methods treat all depth values equally.
-- **Root Cause**: Unreliable depth is used to lift 2D–2D correspondences to 2D–3D correspondences, injecting erroneous geometric information directly into the PnP solver and causing unstable pose estimation. Methods such as GS-CPR are highly sensitive to the initial pose, as illustrated in Figure 2.
-- **Paper Goals**: To develop a training-free, plug-and-play, uncertainty-aware refinement scheme suitable for AR/VR, autonomous driving, and robotics applications that demand robust pose estimation.
+- **Key Challenge**: Unreliable depth is used to lift 2D–2D correspondences to 2D–3D correspondences, injecting erroneous geometric information directly into the PnP solver and causing unstable pose estimation. Methods such as GS-CPR are highly sensitive to the initial pose, as illustrated in Figure 2.
+- **Goal**: To develop a training-free, plug-and-play, uncertainty-aware refinement scheme suitable for AR/VR, autonomous driving, and robotics applications that demand robust pose estimation.
 
 ## Method
 

@@ -29,15 +29,15 @@ This paper constructs WCB, the most comprehensive central bank monetary policy c
 
 ## Background & Motivation
 
-**State of the Field**: Central banks worldwide convey monetary policy signals through policy statements, press conferences, and meeting minutes. The NLP community has produced sentiment and stance analysis work targeting specific central banks (e.g., the Federal Reserve, the European Central Bank), and the financial NLP field has developed specialized models such as FinBERT.
+**Background**: Central banks worldwide convey monetary policy signals through policy statements, press conferences, and meeting minutes. The NLP community has produced sentiment and stance analysis work targeting specific central banks (e.g., the Federal Reserve, the European Central Bank), and the financial NLP field has developed specialized models such as FinBERT.
 
 **Limitations of Prior Work**: (1) Existing central bank NLP datasets cover only a single institution or a small number of developed economies, with severe geographic underrepresentation; (2) different studies adopt different annotation schemes and task definitions, making cross-study comparisons impossible; (3) misinterpretation of central bank communications can impose disproportionate economic harm on vulnerable populations, yet systematic evaluation tools remain lacking.
 
-**Root Cause**: Central bank communications span diverse languages, cultures, and economic contexts. Data from any single bank is too narrow to capture the global diversity of monetary policy expression. Large-scale cross-regional coverage must be achieved while maintaining annotation consistency.
+**Key Challenge**: Central bank communications span diverse languages, cultures, and economic contexts. Data from any single bank is too narrow to capture the global diversity of monetary policy expression. Large-scale cross-regional coverage must be achieved while maintaining annotation consistency.
 
-**Paper Goals**: (1) Construct a unified dataset with broad global coverage, long temporal span, and high annotation quality; (2) establish a systematic, multi-model, multi-setting benchmark evaluation; (3) answer the practical question of whether cross-bank aggregated training outperforms single-bank training.
+**Goal**: (1) Construct a unified dataset with broad global coverage, long temporal span, and high annotation quality; (2) establish a systematic, multi-model, multi-setting benchmark evaluation; (3) answer the practical question of whether cross-bank aggregated training outperforms single-bank training.
 
-**Starting Point**: One thousand sentences per bank are sampled uniformly by year from 25 central banks (25,000 sentences total), with quality controlled through a three-tier pipeline of dual annotation, disagreement resolution, and expert review.
+**Key Insight**: One thousand sentences per bank are sampled uniformly by year from 25 central banks (25,000 sentences total), with quality controlled through a three-tier pipeline of dual annotation, disagreement resolution, and expert review.
 
 **Core Idea**: Construct a unified NLP benchmark spanning 25 central banks and 28 years of history, and through 15,075 experiments demonstrate that aggregated multi-bank training significantly outperforms single-bank models.
 

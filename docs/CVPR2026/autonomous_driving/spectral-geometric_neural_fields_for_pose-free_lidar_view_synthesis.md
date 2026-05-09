@@ -29,15 +29,15 @@ This paper proposes SG-NLF, a framework that achieves pose-free LiDAR novel view
 
 ## Background & Motivation
 
-**State of the Field**: NeRF has been successfully extended to LiDAR novel view synthesis (NVS), with methods such as LiDAR-NeRF and LiDAR4D implicitly reconstructing scenes via volume rendering. However, two critical bottlenecks remain: reliance on accurate poses and geometric discontinuities caused by LiDAR data sparsity.
+**Background**: NeRF has been successfully extended to LiDAR novel view synthesis (NVS), with methods such as LiDAR-NeRF and LiDAR4D implicitly reconstructing scenes via volume rendering. However, two critical bottlenecks remain: reliance on accurate poses and geometric discontinuities caused by LiDAR data sparsity.
 
 **Limitations of Prior Work**: (a) Nearly all existing methods (LiDAR-NeRF, NFL, LiDAR4D, STGC) require accurate camera pose inputs, which are difficult to obtain in practice. (b) Geometry interpolation based on multi-resolution hash encoding tends to produce geometric holes and discontinuous surfaces in textureless regions (as illustrated in Fig. 2).
 
-**Root Cause**: The only existing pose-free method, GeoNLF, employs pairwise alignment constraints that cannot guarantee global trajectory accuracy. Furthermore, purely geometric interpolation representations fail to reconstruct continuous surfaces in sparse LiDAR regions.
+**Key Challenge**: The only existing pose-free method, GeoNLF, employs pairwise alignment constraints that cannot guarantee global trajectory accuracy. Furthermore, purely geometric interpolation representations fail to reconstruct continuous surfaces in sparse LiDAR regions.
 
-**Paper Goals**: To simultaneously achieve high-quality LiDAR view synthesis and accurate pose estimation without requiring precise pose inputs.
+**Goal**: To simultaneously achieve high-quality LiDAR view synthesis and accurate pose estimation without requiring precise pose inputs.
 
-**Starting Point**: Spectral embeddings are introduced to provide global structural priors for geometric representation, and a confidence-aware pose graph based on feature compatibility is constructed for global pose optimization.
+**Key Insight**: Spectral embeddings are introduced to provide global structural priors for geometric representation, and a confidence-aware pose graph based on feature compatibility is constructed for global pose optimization.
 
 **Core Idea**: The isometry-invariant property of spectral embeddings is naturally suited to filling geometric holes in sparse LiDAR data. Combined with geometric encoding and a global pose graph, this approach simultaneously addresses the dual challenges of scene representation and pose estimation.
 

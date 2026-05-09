@@ -33,12 +33,12 @@ This paper proposes MaNGO (Meta Neural Graph Operator), which leverages meta-lea
 
 ## Background & Motivation
 
-- **State of the Field**: Mesh-based physical simulators are accurate but computationally expensive and require explicit knowledge of physical parameters (e.g., material properties).
+- **Background**: Mesh-based physical simulators are accurate but computationally expensive and require explicit knowledge of physical parameters (e.g., material properties).
 - **Limitations of Prior Work**: Graph network simulators (GNS) offer fast inference but suffer from two critical bottlenecks:
   1. **Parameter sensitivity**: Minor changes in physical parameters necessitate retraining from scratch.
   2. **Expensive data collection**: Each new parameter configuration requires laborious data acquisition.
-- **Root Cause**: Simulation tasks under different physical parameters share a common latent structure, yet existing methods fail to exploit this structure.
-- **Paper Goals**: Capture this shared structure via meta-learning to enable rapid adaptation to new parameters, achieving accuracy close to oracle models.
+- **Key Challenge**: Simulation tasks under different physical parameters share a common latent structure, yet existing methods fail to exploit this structure.
+- **Goal**: Capture this shared structure via meta-learning to enable rapid adaptation to new parameters, achieving accuracy close to oracle models.
 
 ## Method
 

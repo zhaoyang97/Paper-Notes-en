@@ -30,11 +30,11 @@ This paper proposes HiAP, a hierarchical Gumbel-Sigmoid gating framework that un
 
 ### Root Cause
 
-**State of the Field**: ViTs incur substantial computational and memory overhead, making structured pruning the dominant compression approach. **Limitations of Prior Work**: Existing methods suffer from two fundamental shortcomings: (1) They typically operate at a single granularity — purely micro-level pruning (e.g., ViT-Slim pruning intra-head dimensions) reduces FLOPs but still requires loading all weight matrices, leaving the memory bandwidth bottleneck unresolved; purely macro-level pruning (e.g., UPDP dropping entire blocks) leads to significant loss of representational capacity. (2) They rely on complex multi-stage pipelines: pruning masks are first determined via hand-crafted heuristics (e.g., Taylor importance scores, graph ranking), followed by separate fine-tuning to recover accuracy — a cumbersome process requiring expert knowledge for hyperparameter tuning.
+**Background**: ViTs incur substantial computational and memory overhead, making structured pruning the dominant compression approach. **Limitations of Prior Work**: Existing methods suffer from two fundamental shortcomings: (1) They typically operate at a single granularity — purely micro-level pruning (e.g., ViT-Slim pruning intra-head dimensions) reduces FLOPs but still requires loading all weight matrices, leaving the memory bandwidth bottleneck unresolved; purely macro-level pruning (e.g., UPDP dropping entire blocks) leads to significant loss of representational capacity. (2) They rely on complex multi-stage pipelines: pruning masks are first determined via hand-crafted heuristics (e.g., Taylor importance scores, graph ranking), followed by separate fine-tuning to recover accuracy — a cumbersome process requiring expert knowledge for hyperparameter tuning.
 
 ### Starting Point
 
-**Paper Goals**: Can a network learn, within a single training run, what to prune and what to retain across multiple granularities — without requiring manually specified per-layer pruning ratios or importance metrics?
+**Goal**: Can a network learn, within a single training run, what to prune and what to retain across multiple granularities — without requiring manually specified per-layer pruning ratios or importance metrics?
 
 ## Method
 

@@ -26,11 +26,11 @@ content_hash: 216dd2abc7681080
 This work constructs a domain adaptation pipeline from simulated galaxies (TNG50) to real survey observations (SDSS) via feature-level alignment using Euclidean distance, optimal transport, and a top-$k$ soft-matching loss with trainable weight scheduling, improving target-domain morphology classification accuracy from 46.8% (no adaptation) to 87.3%, and Macro F1 from 0.298 to 0.626.
 
 ## Background & Motivation
-**State of the Field**: Large-scale survey projects (Rubin, Roman, Euclid) will image billions of galaxies, requiring automated inference of morphology, stellar mass, star formation rate, and other physical properties. Simulation data (e.g., Illustris TNG50) provide galaxy images with ground-truth physical labels.
+**Background**: Large-scale survey projects (Rubin, Roman, Euclid) will image billions of galaxies, requiring automated inference of morphology, stellar mass, star formation rate, and other physical properties. Simulation data (e.g., Illustris TNG50) provide galaxy images with ground-truth physical labels.
 
 **Limitations of Prior Work**: Significant domain shift exists between simulations and real observations — differences in PSF, noise patterns, background, selection functions, and class priors. Direct model transfer severely biases physical inference (e.g., distorting galaxy type mixing ratios and the mass–SFR relation).
 
-**Root Cause**: Real survey data lack reliable physical labels (citizen science projects such as Galaxy Zoo provide morphological labels but at high cost and limited scale), while simulated data carry ground-truth labels but follow a different distribution.
+**Key Challenge**: Real survey data lack reliable physical labels (citizen science projects such as Galaxy Zoo provide morphological labels but at high cost and limited scale), while simulated data carry ground-truth labels but follow a different distribution.
 
 **Core Idea**: Align domains in feature space using multiple distance metrics — combining Sinkhorn OT, energy distance, and Gaussian MMD — and introducing a top-$k$ soft-matching loss to focus on the hardest-to-align samples.
 

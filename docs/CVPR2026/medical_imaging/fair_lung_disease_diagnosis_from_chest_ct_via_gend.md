@@ -29,15 +29,15 @@ An attention-based MIL model is built upon a ConvNeXt-Base backbone, employing a
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning has achieved remarkable progress in automated chest CT analysis, enabling large-scale screening for pulmonary malignancies and COVID-19. However, fairness research indicates that models tend to encode and amplify demographic biases present in training data, leading to systematically inferior diagnostic outcomes for disadvantaged groups.
+**Background**: Deep learning has achieved remarkable progress in automated chest CT analysis, enabling large-scale screening for pulmonary malignancies and COVID-19. However, fairness research indicates that models tend to encode and amplify demographic biases present in training data, leading to systematically inferior diagnostic outcomes for disadvantaged groups.
 
 **Limitations of Prior Work**: The CVPR 2026 PHAROS-AIF-MIH challenge dataset (889 CT scans: 734 training / 155 validation, four classes: Healthy / COVID-19 / Adenocarcinoma / Squamous Cell Carcinoma) exhibits severe cross-group imbalance—only 18 female squamous cell carcinoma cases versus 91 male cases—while CT depth varies widely from fewer than 20 to over 800 slices. The competition metric is the average male and female macro-F1: $P = \frac{1}{2}(\text{MacroF1}_\text{male} + \text{MacroF1}_\text{female})$, directly penalizing gender unfairness.
 
-**Root Cause**: Three intertwined challenges are identified: (1) sparse volumetric signals—only a few slices among hundreds contain lesions, causing mean pooling to be overwhelmed by healthy slices; (2) demographic imbalance—extreme scarcity of female squamous cell carcinoma cases leads to severe underrepresentation under standard training; (3) gender as an implicit shortcut—even without explicit gender input, models can encode gender information from body habitus and acquisition parameters, coupling it with disease co-occurrence statistics.
+**Key Challenge**: Three intertwined challenges are identified: (1) sparse volumetric signals—only a few slices among hundreds contain lesions, causing mean pooling to be overwhelmed by healthy slices; (2) demographic imbalance—extreme scarcity of female squamous cell carcinoma cases leads to severe underrepresentation under standard training; (3) gender as an implicit shortcut—even without explicit gender input, models can encode gender information from body habitus and acquisition parameters, coupling it with disease co-occurrence statistics.
 
-**Paper Goals**: To simultaneously address signal sparsity, subgroup imbalance, and gender encoding within an end-to-end framework, enabling gender-fair four-class lung disease diagnosis.
+**Goal**: To simultaneously address signal sparsity, subgroup imbalance, and gender encoding within an end-to-end framework, enabling gender-fair four-class lung disease diagnosis.
 
-**Starting Point**: CT volumes are treated as bags of slices under the MIL paradigm for automatic informative-slice selection; GRL is adopted for adversarial gender disentanglement; and a fairness-aware protocol is applied to balance subgroups.
+**Key Insight**: CT volumes are treated as bags of slices under the MIL paradigm for automatic informative-slice selection; GRL is adopted for adversarial gender disentanglement; and a fairness-aware protocol is applied to balance subgroups.
 
 **Core Idea**: Attention-based MIL aggregates informative slices; GRL eliminates gender shortcuts; subgroup oversampling closes the fairness gap.
 

@@ -30,15 +30,15 @@ This paper proposes Quant Experts (QE), a token-aware adaptive quantization erro
 
 ## Background & Motivation
 
-**State of the Field**: Post-Training Quantization (PTQ) is a key technique for reducing the computational and memory overhead of large vision-language models (VLMs). Existing approaches include channel smoothing (SmoothQuant, AWQ), mixed-precision quantization (SpQR), Hessian-based optimization (GPTQ), and low-rank reconstruction (LQER, ASER). In multimodal settings, MBQ reveals cross-modal channel sensitivity discrepancies and proposes modality-aware channel scaling.
+**Background**: Post-Training Quantization (PTQ) is a key technique for reducing the computational and memory overhead of large vision-language models (VLMs). Existing approaches include channel smoothing (SmoothQuant, AWQ), mixed-precision quantization (SpQR), Hessian-based optimization (GPTQ), and low-rank reconstruction (LQER, ASER). In multimodal settings, MBQ reveals cross-modal channel sensitivity discrepancies and proposes modality-aware channel scaling.
 
 **Limitations of Prior Work**: (1) Channel smoothing methods (SmoothQuant/AWQ) apply fixed scaling factors estimated from calibration data uniformly to all tokens, failing to capture token-level variations in channel importance. (2) Static low-rank reconstruction methods (LQER/ASER) employ a single global adapter for all important channels, ignoring the dynamic nature of channel importance. (3) Although MBQ differentiates cross-modal discrepancies, it still relies on static channel scaling without accounting for intra-modal channel importance fluctuations across different tokens.
 
-**Root Cause**: The locations of important channels are not static — they shift not only across modalities but, more critically, across different tokens within the same modality due to changes in activation distributions driven by token semantics and contextual information. Globally fixed channel identification and compensation strategies are fundamentally incapable of capturing this token-level dynamics.
+**Key Challenge**: The locations of important channels are not static — they shift not only across modalities but, more critically, across different tokens within the same modality due to changes in activation distributions driven by token semantics and contextual information. Globally fixed channel identification and compensation strategies are fundamentally incapable of capturing this token-level dynamics.
 
-**Paper Goals**: To design a framework that simultaneously handles globally consistent (token-independent) and locally dynamic (token-dependent) quantization errors, precisely compensating for the distinct quantization losses faced by different tokens.
+**Goal**: To design a framework that simultaneously handles globally consistent (token-independent) and locally dynamic (token-dependent) quantization errors, precisely compensating for the distinct quantization losses faced by different tokens.
 
-**Starting Point**: Important channels are partitioned by occurrence frequency into two groups — high-frequency token-independent channels are globally compensated via a shared expert, while low-frequency token-dependent channels are clustered by co-occurrence patterns and dynamically compensated via routed experts.
+**Key Insight**: Important channels are partitioned by occurrence frequency into two groups — high-frequency token-independent channels are globally compensated via a shared expert, while low-frequency token-dependent channels are clustered by co-occurrence patterns and dynamically compensated via routed experts.
 
 **Core Idea**: Drawing inspiration from MoE, a two-level "shared expert + routed experts" architecture is employed to compensate for global quantization errors and token-dependent local errors separately.
 

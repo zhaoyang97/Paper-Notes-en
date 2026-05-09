@@ -28,15 +28,15 @@ This paper proposes One2Scene, which decomposes the ill-posed problem of generat
 
 ## Background & Motivation
 
-**State of the Field**: Generating explorable 3D scenes from a single image is a core challenge in 3D vision. Reconstruction-based methods (NeRF/3DGS) require dense multi-view images, while sparse-view methods cannot extrapolate beyond the observed region. Generative approaches include video diffusion models (ReconX/ViewCrafter), panoramic pipelines (DreamScene360/DreamCube), and navigation-with-inpainting methods (WonderJourney/Pano2Room).
+**Background**: Generating explorable 3D scenes from a single image is a core challenge in 3D vision. Reconstruction-based methods (NeRF/3DGS) require dense multi-view images, while sparse-view methods cannot extrapolate beyond the observed region. Generative approaches include video diffusion models (ReconX/ViewCrafter), panoramic pipelines (DreamScene360/DreamCube), and navigation-with-inpainting methods (WonderJourney/Pano2Room).
 
 **Limitations of Prior Work**: (1) Video diffusion methods lack a persistent 3D representation, leading to geometric collapse due to accumulated errors over long sequences; (2) panoramic methods observe the scene from a single point and lack explicit 3D information, causing severe distortion under large viewpoint changes; (3) iterative navigation methods suffer from accumulated errors that cause global semantic drift and stretched geometry.
 
-**Root Cause**: The extreme scarcity of information in a single image stands in fundamental conflict with the requirement for a globally consistent 3D scene. Existing methods either lack global coverage (single-viewpoint methods), geometric constraints (generative methods), or suffer from error accumulation (iterative methods).
+**Key Challenge**: The extreme scarcity of information in a single image stands in fundamental conflict with the requirement for a globally consistent 3D scene. Existing methods either lack global coverage (single-viewpoint methods), geometric constraints (generative methods), or suffer from error accumulation (iterative methods).
 
-**Paper Goals**: (a) How to obtain global visual coverage from a single image? (b) How to establish explicit 3D geometric constraints? (c) How to maintain geometric consistency and visual quality under large viewpoint changes?
+**Goal**: (a) How to obtain global visual coverage from a single image? (b) How to establish explicit 3D geometric constraints? (c) How to maintain geometric consistency and visual quality under large viewpoint changes?
 
-**Starting Point**: The problem is decomposed into three more tractable sub-problems — first expanding 2D coverage via panorama generation, then establishing a 3D scaffold via multi-view stereo matching, and finally constraining novel view synthesis with scaffold priors. A key insight is reformulating monocular panoramic depth estimation as a multi-view stereo matching problem, thereby leveraging strong geometric priors learned from large-scale multi-view datasets.
+**Key Insight**: The problem is decomposed into three more tractable sub-problems — first expanding 2D coverage via panorama generation, then establishing a 3D scaffold via multi-view stereo matching, and finally constraining novel view synthesis with scaffold priors. A key insight is reformulating monocular panoramic depth estimation as a multi-view stereo matching problem, thereby leveraging strong geometric priors learned from large-scale multi-view datasets.
 
 **Core Idea**: By providing an explicit 3D geometric scaffold as a stable global geometric and appearance prior for single-image scene generation, the method fundamentally avoids error accumulation and scale ambiguity.
 

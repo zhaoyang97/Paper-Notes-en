@@ -28,16 +28,16 @@ This paper presents the first systematic study of the security of Vision-Languag
 
 ## Background & Motivation
 
-**State of the Field**: VLA models map multimodal sensor inputs (vision and audio) to robot actions via end-to-end pipelines and are being rapidly deployed in factory, medical, and domestic settings (e.g., Fourier Robotics, Tesla, AgiBot). Their core advantage lies in multimodal integration—acquiring visual signals via cameras and voice commands via microphones to execute complex tasks.
+**Background**: VLA models map multimodal sensor inputs (vision and audio) to robot actions via end-to-end pipelines and are being rapidly deployed in factory, medical, and domestic settings (e.g., Fourier Robotics, Tesla, AgiBot). Their core advantage lies in multimodal integration—acquiring visual signals via cameras and voice commands via microphones to execute complex tasks.
 
-**Root Cause**: VLA systems are highly dependent on sensor inputs, yet their security against physical-world sensor attacks remains largely unexplored. Physical sensor attacks are well-established in the security community (published at top security venues); attackers can inject laser, electromagnetic interference, or ultrasonic signals to disrupt sensors, but the impact of such attacks on VLA systems has never been quantified.
+**Key Challenge**: VLA systems are highly dependent on sensor inputs, yet their security against physical-world sensor attacks remains largely unexplored. Physical sensor attacks are well-established in the security community (published at top security venues); attackers can inject laser, electromagnetic interference, or ultrasonic signals to disrupt sensors, but the impact of such attacks on VLA systems has never been quantified.
 
 **Limitations of Prior Work**:
 - **Digital-domain attacks** (RoboticAttack, RobotGCG, BadVLA): directly modify image or text inputs and do not reflect the realistic characteristics of physical-world interactions.
 - **VLA robustness evaluation** (PVEP, VLATest): focuses on in-distribution robustness such as blur and illumination, neglecting out-of-distribution threats such as sensor attacks.
 - **Sensor attack research**: typically evaluates individual sensing modules in isolation without considering complete AI systems, and relies heavily on physical experiments that are difficult to scale.
 
-**Starting Point**: Three core research questions are posed: (1) Can existing sensor attacks successfully compromise VLA systems? (2) How can the impact of sensor attacks on VLA models be quantified? (3) How can these physical sensor attacks be defended against? To address these, an automated "Real-Sim-Real" framework is designed for large-scale simulation evaluation followed by validation on a real robotic arm.
+**Key Insight**: Three core research questions are posed: (1) Can existing sensor attacks successfully compromise VLA systems? (2) How can the impact of sensor attacks on VLA models be quantified? (3) How can these physical sensor attacks be defended against? To address these, an automated "Real-Sim-Real" framework is designed for large-scale simulation evaluation followed by validation on a real robotic arm.
 
 ## Method
 

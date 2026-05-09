@@ -27,15 +27,15 @@ content_hash: 749f68ddadeb67c5
 FlexAC identifies that associative reasoning in MLLMs is primarily encoded in intermediate layers. By extracting steering vectors from hallucinated responses and injecting them into intermediate-layer representations at inference time, it enables flexible control over faithfulness and creativity—reducing hallucination rate by 29% (CHAIR) and improving creativity by 5.8× (Creation-MMBench), all without any training.
 
 ## Background & Motivation
-**State of the Field**: Multimodal LLMs face an inherent tension between faithfulness (low association) and creativity (high association)—factual tasks require suppressing associative reasoning, while creative tasks require amplifying it.
+**Background**: Multimodal LLMs face an inherent tension between faithfulness (low association) and creativity (high association)—factual tasks require suppressing associative reasoning, while creative tasks require amplifying it.
 
 **Limitations of Prior Work**: (1) Hallucination mitigation methods (e.g., contrastive decoding in VCD, preference optimization in Ha-DPO) broadly suppress associative capacity while reducing hallucinations, leading to degraded creativity (VDAT drops by 1.78); (2) No tunable mechanism exists—methods either fully suppress association or leave it unaddressed.
 
-**Root Cause**: Hallucination and creativity likely share the same associative mechanism, manifesting as either "harmful" or "beneficial" depending on the task, yet existing methods cannot distinguish between the two.
+**Key Challenge**: Hallucination and creativity likely share the same associative mechanism, manifesting as either "harmful" or "beneficial" depending on the task, yet existing methods cannot distinguish between the two.
 
-**Paper Goals**: (1) Localize the layer at which associative behavior emerges in MLLMs; (2) Design a controllable mechanism for adjusting associative strength.
+**Goal**: (1) Localize the layer at which associative behavior emerges in MLLMs; (2) Design a controllable mechanism for adjusting associative strength.
 
-**Starting Point**: Drawing from cognitive science concepts of convergent thinking (fact-grounded association) and divergent thinking (atypical association), the paper hypothesizes that hallucination and creativity stem from a shared associative mechanism that can be regulated via directional interventions in intermediate-layer representations.
+**Key Insight**: Drawing from cognitive science concepts of convergent thinking (fact-grounded association) and divergent thinking (atypical association), the paper hypothesizes that hallucination and creativity stem from a shared associative mechanism that can be regulated via directional interventions in intermediate-layer representations.
 
 **Core Idea**: Hallucinated responses encode directional information about association. Extracting the representation difference between hallucinated and faithful outputs as a steering vector allows positive injection to enhance creativity and negative injection to suppress hallucination.
 

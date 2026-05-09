@@ -28,15 +28,15 @@ This paper systematically investigates nation-level bias of LLMs in internationa
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly explored for simulation, decision support, and policy analysis in international relations (IR). However, existing bias research almost exclusively focuses on demographic biases (gender, race, etc.), with little attention to nation-level bias.
+**Background**: LLMs are increasingly explored for simulation, decision support, and policy analysis in international relations (IR). However, existing bias research almost exclusively focuses on demographic biases (gender, race, etc.), with little attention to nation-level bias.
 
 **Limitations of Prior Work**: Whether LLMs exhibit systematic biases toward different nations in IR scenarios (e.g., diplomatic simulation, vote prediction) remains unclear. If such biases exist, model outputs could mislead policy analysis with serious consequences.
 
-**Root Cause**: Nations in IR inherently differ in objective behavior (e.g., distinct voting records), so "bias" cannot be trivially defined as deviation from a uniform distribution. Instead, bias must be defined as the discrepancy between model behavior and a nation's actual historical behavior.
+**Key Challenge**: Nations in IR inherently differ in objective behavior (e.g., distinct voting records), so "bias" cannot be trivially defined as deviation from a uniform distribution. Instead, bias must be defined as the discrepancy between model behavior and a nation's actual historical behavior.
 
-**Paper Goals**: Systematically evaluate nation-level bias toward the P5 nations in the UN Security Council across multiple LLMs, reveal its multi-dimensional nature, and explore mitigation strategies.
+**Goal**: Systematically evaluate nation-level bias toward the P5 nations in the UN Security Council across multiple LLMs, reveal its multi-dimensional nature, and explore mitigation strategies.
 
-**Starting Point**: Real UNSC data from 2013–2024—including resolutions, voting records, and meeting statements—are used to design both explicit (DirectQA, Association Test) and implicit (Vote Simulation) bias evaluations.
+**Key Insight**: Real UNSC data from 2013–2024—including resolutions, voting records, and meeting statements—are used to design both explicit (DirectQA, Association Test) and implicit (Vote Simulation) bias evaluations.
 
 **Core Idea**: Nation-level bias in LLMs is multi-dimensional—its direction and magnitude depend on the model and evaluation context—and enhancing reasoning capability can effectively mitigate bias.
 

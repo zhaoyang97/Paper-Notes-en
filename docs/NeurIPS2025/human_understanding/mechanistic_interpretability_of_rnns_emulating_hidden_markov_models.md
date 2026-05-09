@@ -29,15 +29,15 @@ A vanilla RNN is trained to reproduce the emission statistics of a Hidden Markov
 
 ## Background & Motivation
 
-**State of the Field**: RNNs are widely used in computational neuroscience to model neural population dynamics and generate hypotheses about neural computation. Prior work has focused primarily on deterministic, input-driven tasks such as motion discrimination and reaching movements.
+**Background**: RNNs are widely used in computational neuroscience to model neural population dynamics and generate hypotheses about neural computation. Prior work has focused primarily on deterministic, input-driven tasks such as motion discrimination and reaching movements.
 
 **Limitations of Prior Work**: Natural behavior often manifests as stochastic transitions between discrete latent states—as described by HMMs—whereas RNNs operate over continuous state spaces. These two frameworks appear fundamentally incompatible, and little is known about how RNNs can generate spontaneous, stochastic, discrete-like behavior.
 
-**Root Cause**: HMMs model behavior with discrete states and stochastic transitions, while RNNs model dynamics with continuous trajectories—bridging these two paradigms remains an open challenge.
+**Key Challenge**: HMMs model behavior with discrete states and stochastic transitions, while RNNs model dynamics with continuous trajectories—bridging these two paradigms remains an open challenge.
 
-**Paper Goals**: Can an RNN implement discrete stochastic state transitions using continuous dynamics? If so, what are the underlying internal mechanisms?
+**Goal**: Can an RNN implement discrete stochastic state transitions using continuous dynamics? If so, what are the underlying internal mechanisms?
 
-**Starting Point**: Train an RNN directly to fit the output distribution of an HMM, then perform multi-level reverse engineering.
+**Key Insight**: Train an RNN directly to fit the output distribution of an HMM, then perform multi-level reverse engineering.
 
 **Core Idea**: The RNN implements discrete states via noise-sustained closed-orbit dynamics; slow noise accumulation combined with fast kick-neuron triggering forms "dynamical primitives," and multiple primitives can be composed to emulate complex HMM structures.
 

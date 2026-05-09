@@ -29,15 +29,15 @@ This paper proposes MODIX, a training-free framework that dynamically adjusts th
 
 ## Background & Motivation
 
-**State of the Field**: VLMs commonly adopt RoPE positional encoding, assigning uniform positional indices $p_i = i$ to all tokens regardless of their information content or cross-modal importance.
+**Background**: VLMs commonly adopt RoPE positional encoding, assigning uniform positional indices $p_i = i$ to all tokens regardless of their information content or cross-modal importance.
 
 **Limitations of Prior Work**: Textual tokens are semantically dense (each word contributes unique information), whereas visual tokens (fixed-size image patches) frequently exhibit substantial spatial redundancy in uniform backgrounds or repetitive textures. Uniform positional encoding wastes representational capacity on redundant content while underrepresenting information-rich regions. Moreover, modality contributions vary drastically across tasks.
 
-**Root Cause**: The information density within and across modalities is asymmetric, yet existing RoPE schemes treat all tokens with a uniform step size.
+**Key Challenge**: The information density within and across modalities is asymmetric, yet existing RoPE schemes treat all tokens with a uniform step size.
 
-**Paper Goals**: To treat positional granularity as an implicit resource and dynamically allocate it according to information contribution — modalities with higher information density receive finer positional resolution.
+**Goal**: To treat positional granularity as an implicit resource and dynamically allocate it according to information contribution — modalities with higher information density receive finer positional resolution.
 
-**Starting Point**: Information-theoretic analysis: covariance entropy measures intra-modal information density, while cross-modal alignment measures inter-modal interaction strength.
+**Key Insight**: Information-theoretic analysis: covariance entropy measures intra-modal information density, while cross-modal alignment measures inter-modal interaction strength.
 
 **Core Idea**: Adaptive step size $\Delta_m \propto 1/\tilde{C}_m$ — modalities with greater information contribution receive finer positional spacing.
 

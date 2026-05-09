@@ -27,10 +27,10 @@ content_hash: e3a1a2bef7c88f32
 Targeting the redundancy caused by uniform subspace allocation across heads in standard Multi-Head Attention (MHA), this paper proposes HINT, which introduces Hierarchical Multi-Head Attention (HMHA) and Query-Key Cache Updating (QKCU) to enhance inter-head diversity and interaction, achieving state-of-the-art results on 12 benchmarks across 5 image restoration tasks.
 
 ## Background & Motivation
-- **State of the Field**: Transformers have achieved remarkable success in image restoration, with MHA as the core component, enabling parallel attention computation across multiple heads to capture diverse features.
+- **Background**: Transformers have achieved remarkable success in image restoration, with MHA as the core component, enabling parallel attention computation across multiple heads to capture diverse features.
 - **Limitations of Prior Work**: Standard MHA allocates equal-sized ($C/h$) subspaces to each head, causing different heads to attend to the same regions and produce redundant representations — NLP research has shown that only a few heads are critical to final decisions, while the rest can be pruned.
-- **Root Cause**: Uniform subspace partitioning leads to similar information across heads, and the absence of inter-head collaboration further aggravates redundancy from two complementary dimensions.
-- **Starting Point**: MHA is improved along two axes — (1) enabling heads to learn diverse features from subspaces of varying sizes; (2) introducing intra-layer and cross-layer head interaction mechanisms.
+- **Key Challenge**: Uniform subspace partitioning leads to similar information across heads, and the absence of inter-head collaboration further aggravates redundancy from two complementary dimensions.
+- **Key Insight**: MHA is improved along two axes — (1) enabling heads to learn diverse features from subspaces of varying sizes; (2) introducing intra-layer and cross-layer head interaction mechanisms.
 - **Core Idea**: Diverse learning is achieved via channel similarity reranking combined with hierarchical subspace partitioning, while head collaboration is enhanced through Query-Key caching that propagates information both within and across layers.
 
 ## Method

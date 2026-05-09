@@ -28,15 +28,15 @@ This paper proposes SMoPE, a framework that organizes a single shared prompt int
 
 ## Background & Motivation
 
-**State of the Field**: Prompt-based continual learning (CL) methods adapt frozen pre-trained ViTs by prepending learnable prompts, and have become the dominant paradigm for mitigating catastrophic forgetting. Representative methods include DualPrompt, HiDe-Prompt, and NoRGa.
+**Background**: Prompt-based continual learning (CL) methods adapt frozen pre-trained ViTs by prepending learnable prompts, and have become the dominant paradigm for mitigating catastrophic forgetting. Representative methods include DualPrompt, HiDe-Prompt, and NoRGa.
 
 **Limitations of Prior Work**: Mainstream methods assign independent prompt subsets to each task (task-specific prompting), which introduces two issues: (a) inference requires a full forward pass through the pre-trained model for prompt selection, incurring high computational overhead; (b) prompt parameters grow linearly with the number of tasks, limiting scalability and hindering cross-task knowledge sharing.
 
-**Root Cause**: Methods such as OVOR address efficiency by using a single shared prompt, but because all prompt parameters are continuously updated, severe knowledge interference occurs, yielding inferior performance compared to task-specific approaches. There exists a fundamental conflict between efficiency and performance.
+**Key Challenge**: Methods such as OVOR address efficiency by using a single shared prompt, but because all prompt parameters are continuously updated, severe knowledge interference occurs, yielding inferior performance compared to task-specific approaches. There exists a fundamental conflict between efficiency and performance.
 
-**Paper Goals**: How can the parameter efficiency of a single prompt be retained while avoiding the knowledge interference inherent to shared prompts? Specifically: (a) how to perform sparse selection across attention heads in a multi-gate MoE; (b) how to balance expert utilization; and (c) how to maintain expert specialization without access to previous task data.
+**Goal**: How can the parameter efficiency of a single prompt be retained while avoiding the knowledge interference inherent to shared prompts? Specifically: (a) how to perform sparse selection across attention heads in a multi-gate MoE; (b) how to balance expert utilization; and (c) how to maintain expert specialization without access to previous task data.
 
-**Starting Point**: Building on the insight from Le et al. (2024a) that each attention head can be viewed as a composition of multiple MoE models, and that prefix tuning essentially adds new prompt experts to these MoEs. Since the structure is already MoE-like, sparse selection follows naturally.
+**Key Insight**: Building on the insight from Le et al. (2024a) that each attention head can be viewed as a composition of multiple MoE models, and that prefix tuning essentially adds new prompt experts to these MoEs. Since the structure is already MoE-like, sparse selection follows naturally.
 
 **Core Idea**: Each prefix token in the shared prompt is treated as an independent expert. A unified surrogate score is computed via prompt-attention score aggregation to enable Top-K sparse activation, thereby achieving implicit parameter partitioning over a single prompt.
 

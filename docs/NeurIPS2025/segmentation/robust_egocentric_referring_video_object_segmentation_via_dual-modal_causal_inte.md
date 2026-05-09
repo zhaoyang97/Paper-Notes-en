@@ -29,15 +29,15 @@ This paper proposes CERES, a framework that addresses language bias and visual c
 
 ## Background & Motivation
 
-**State of the Field**: Egocentric referring video object segmentation (Ego-RVOS) requires segmenting objects participating in specific actions based on natural language descriptions (e.g., "knife used to cut carrot") in egocentric video. Existing methods such as ActionVOS fine-tune pre-trained RVOS models with action descriptions to distinguish positive from negative objects.
+**Background**: Egocentric referring video object segmentation (Ego-RVOS) requires segmenting objects participating in specific actions based on natural language descriptions (e.g., "knife used to cut carrot") in egocentric video. Existing methods such as ActionVOS fine-tune pre-trained RVOS models with action descriptions to distinguish positive from negative objects.
 
 **Limitations of Prior Work**: Existing methods tend to learn spurious correlations rather than causal relationships, resulting in poor robustness. This manifests at two levels: (1) **Language bias** — frequent co-occurrence of object-action pairs (e.g., "knife-cut") in datasets leads models to rely on statistical shortcuts rather than genuinely understanding instructions; (2) **Visual confusion** — the inherent rapid motion, frequent occlusion, and perspective distortion in egocentric video mislead models, especially given the domain shift from third-person pre-training data.
 
-**Root Cause**: Language bias stems from observable dataset-level statistical confounders (amenable to backdoor adjustment), while visual confusion arises from unobservable intrinsic factors (requiring frontdoor adjustment). Existing causal learning frameworks address either backdoor or frontdoor adjustment, but not both in a unified manner.
+**Key Challenge**: Language bias stems from observable dataset-level statistical confounders (amenable to backdoor adjustment), while visual confusion arises from unobservable intrinsic factors (requiring frontdoor adjustment). Existing causal learning frameworks address either backdoor or frontdoor adjustment, but not both in a unified manner.
 
-**Paper Goals**: To simultaneously address two qualitatively different confounders — observable language bias and unobservable visual bias — within a unified framework.
+**Goal**: To simultaneously address two qualitatively different confounders — observable language bias and unobservable visual bias — within a unified framework.
 
-**Starting Point**: The authors formulate Ego-RVOS as a causal graph with two classes of confounders via structural causal models (SCMs), applying distinct causal interventions to the textual and visual pathways. The key insight is leveraging depth information to construct mediating variables that are more robust to egocentric visual distortions.
+**Key Insight**: The authors formulate Ego-RVOS as a causal graph with two classes of confounders via structural causal models (SCMs), applying distinct causal interventions to the textual and visual pathways. The key insight is leveraging depth information to construct mediating variables that are more robust to egocentric visual distortions.
 
 **Core Idea**: Apply backdoor adjustment to eliminate linguistic statistical bias, and depth-guided frontdoor adjustment to bypass unobservable visual confounders, jointly achieving robust egocentric video segmentation.
 

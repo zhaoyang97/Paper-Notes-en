@@ -27,15 +27,15 @@ content_hash: 5c883613f2a07eba
 This paper proposes ASIDE, an architectural modification that distinguishes instructions from data at the token embedding level via orthogonal rotation. Requiring only changes to the forward pass and training on standard instruction fine-tuning data, ASIDE significantly improves instruction-data separation and robustness against prompt injection without any dedicated safety training.
 
 ## Background & Motivation
-**State of the Field**: LLMs are widely integrated into software systems such as email clients and agent pipelines, where inputs naturally fall into two categories—instructions (to be executed) and data (to be processed but not executed). However, current LLM architectures apply identical embeddings to both, making it impossible for the model to distinguish them internally.
+**Background**: LLMs are widely integrated into software systems such as email clients and agent pipelines, where inputs naturally fall into two categories—instructions (to be executed) and data (to be processed but not executed). However, current LLM architectures apply identical embeddings to both, making it impossible for the model to distinguish them internally.
 
 **Limitations of Prior Work**: The absence of instruction-data separation is the root cause of successful prompt injection attacks (both indirect and direct). Existing defenses either rely on prompt engineering or special delimiters (which are easily bypassed) or on adversarial training (which targets only specific attack patterns), and neither addresses the problem fundamentally.
 
-**Root Cause**: In conventional LLMs, a token carries identical embeddings regardless of whether it appears in an instruction or in data. The model must infer the functional role of each token from context alone—a task that is extremely difficult to perform reliably in deep networks.
+**Key Challenge**: In conventional LLMs, a token carries identical embeddings regardless of whether it appears in an instruction or in data. The model must infer the functional role of each token from context alone—a task that is extremely difficult to perform reliably in deep networks.
 
-**Paper Goals**: How can a model distinguish instruction tokens from data tokens from the very first layer, without adding parameters or repretraining?
+**Goal**: How can a model distinguish instruction tokens from data tokens from the very first layer, without adding parameters or repretraining?
 
-**Starting Point**: Token embeddings typically exhibit low-rank structure; instructions and data can share the same high-dimensional space while residing in different linear subspaces. Orthogonal rotation can create this separation without altering embedding norms or inner-product structure.
+**Key Insight**: Token embeddings typically exhibit low-rank structure; instructions and data can share the same high-dimensional space while residing in different linear subspaces. Orthogonal rotation can create this separation without altering embedding norms or inner-product structure.
 
 **Core Idea**: Apply a fixed $\frac{\pi}{2}$ orthogonal rotation to the embeddings of data tokens, enabling the model to distinguish instructions from data via embeddings from the first layer onward.
 

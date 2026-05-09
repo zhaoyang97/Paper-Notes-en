@@ -28,15 +28,15 @@ AutoJudge automates the annotation of "critical tokens" in Judge Decoding — by
 
 ## Background & Motivation
 
-**State of the Field**: Speculative decoding uses a small draft model to generate token sequences that are then verified by a large target model. Standard approaches strictly verify every token, accepting only ~20 tokens per round. Judge Decoding relaxes verification by allowing deviations in non-critical tokens, but requires manual annotation of which tokens are "critical."
+**Background**: Speculative decoding uses a small draft model to generate token sequences that are then verified by a large target model. Standard approaches strictly verify every token, accepting only ~20 tokens per round. Judge Decoding relaxes verification by allowing deviations in non-critical tokens, but requires manual annotation of which tokens are "critical."
 
 **Limitations of Prior Work**: (a) Manual annotation of critical tokens demands domain expertise and does not scale; (b) strict verification of all tokens is overly conservative — deviations in many tokens (e.g., formatting, newlines) do not affect the final answer; (c) the speedup of speculative decoding is bottlenecked by low acceptance rates.
 
-**Root Cause**: Relaxing verification can substantially increase acceptance rates, but requires knowing which tokens can be relaxed — a determination that previously required human annotation.
+**Key Challenge**: Relaxing verification can substantially increase acceptance rates, but requires knowing which tokens can be relaxed — a determination that previously required human annotation.
 
-**Paper Goals**: Automatically annotate token importance and train a classifier for real-time prediction.
+**Goal**: Automatically annotate token importance and train a classifier for real-time prediction.
 
-**Starting Point**: If replacing a token does not change the final answer, it is "non-critical." A semi-greedy search algorithm automatically identifies such tokens.
+**Key Insight**: If replacing a token does not change the final answer, it is "non-critical." A semi-greedy search algorithm automatically identifies such tokens.
 
 **Core Idea**: Semi-greedy search replaces tokens → checks whether the answer changes → automatically labels tokens as critical/non-critical → logistic regression predicts importance → non-critical tokens bypass verification → 40+ tokens per round.
 

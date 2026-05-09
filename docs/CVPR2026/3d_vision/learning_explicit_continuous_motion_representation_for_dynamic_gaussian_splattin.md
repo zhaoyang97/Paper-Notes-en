@@ -35,7 +35,7 @@ Reconstructing dynamic scenes from monocular video is a core problem in computer
 2. **Explicit methods (e.g., SplineGS)** use cubic Hermite splines to model continuous positional deformation trajectories, but neglect the continuous variation of Gaussian orientations.
 3. **Motion-basis-based methods (e.g., SoM, MoSca)** model deformation through learned affine transformations or motion scaffolds, but do not handle the continuity of both position and orientation in a unified manner.
 
-**Root Cause**: When the orientation of dynamic Gaussians changes discontinuously, severe artifacts appear in rendered images, particularly in regions with complex motion. The authors' **Starting Point** is to leverage SE(3) cumulative B-spline functions, which mathematically guarantee simultaneous continuity of both position and orientation, providing a unified solution to this problem.
+**Key Challenge**: When the orientation of dynamic Gaussians changes discontinuously, severe artifacts appear in rendered images, particularly in regions with complex motion. The authors' **Key Insight** is to leverage SE(3) cumulative B-spline functions, which mathematically guarantee simultaneous continuity of both position and orientation, providing a unified solution to this problem.
 
 ## Method
 

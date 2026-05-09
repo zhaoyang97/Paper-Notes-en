@@ -28,15 +28,15 @@ content_hash: e97da4b7782dae21
 This paper proposes a unified framework based on hidden state geometry (separability + alignment) that bridges the two major explanatory lines of ICL — attention heads (PTH/IH) and task vectors — revealing a two-phase mechanism in classification tasks: early layers establish separability via PTH, while later layers improve alignment with label unembedding directions via IH.
 
 ## Background & Motivation
-**State of the Field**: ICL is among the most distinctive capabilities of LLMs. Existing research explains its mechanism from two independent perspectives: (1) the attention head view — key circuits such as PTH and IH; (2) the task vector view — task representations extracted from demonstrations that guide predictions.
+**Background**: ICL is among the most distinctive capabilities of LLMs. Existing research explains its mechanism from two independent perspectives: (1) the attention head view — key circuits such as PTH and IH; (2) the task vector view — task representations extracted from demonstrations that guide predictions.
 
 **Limitations of Prior Work**: The two research lines remain disconnected. The former analyzes component effects on final outputs (black-box), while the latter focuses on manipulating intermediate-layer representations. A unified framework explaining how both lines jointly shape hidden states layer by layer to produce correct outputs is lacking.
 
-**Root Cause**: Attention heads transform hidden states layer by layer, and hidden states ultimately determine outputs — these are two perspectives on the same process and should not be analyzed in isolation.
+**Key Challenge**: Attention heads transform hidden states layer by layer, and hidden states ultimately determine outputs — these are two perspectives on the same process and should not be analyzed in isolation.
 
-**Paper Goals**: Construct a unified framework that attributes the roles of attention heads and task vectors to their effects on the geometric properties of query hidden states.
+**Goal**: Construct a unified framework that attributes the roles of attention heads and task vectors to their effects on the geometric properties of query hidden states.
 
-**Starting Point**: LLM classification is essentially a mapping of hidden states through the unembedding matrix into label space. Classification accuracy depends on two geometric factors: whether hidden states are separable, and whether the separating direction is aligned with the label unembedding vectors.
+**Key Insight**: LLM classification is essentially a mapping of hidden states through the unembedding matrix into label space. Classification accuracy depends on two geometric factors: whether hidden states are separable, and whether the separating direction is aligned with the label unembedding vectors.
 
 **Core Idea**: ICL accuracy ≤ maximum separability $S^*$, with equality achieved when the separating direction aligns with the label unembedding difference direction.
 

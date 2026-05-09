@@ -26,15 +26,15 @@ content_hash: c127249104916fa2
 This paper proposes the Deep Value Benchmark (DVB), which employs a confound-then-deconfound experimental design to measure whether LLMs learn deep human values or merely memorize shallow preference patterns. Results show that the Deep Value Generalization Rate (DVGR) of all evaluated models averages only 0.30, far below chance level.
 
 ## Background & Motivation
-**State of the Field**: LLMs are increasingly deployed as AI agents acting on behalf of users (e.g., financial planning, medical advice), and such systems are trained on human preference data to align with human intent.
+**Background**: LLMs are increasingly deployed as AI agents acting on behalf of users (e.g., financial planning, medical advice), and such systems are trained on human preference data to align with human intent.
 
 **Limitations of Prior Work**: There is no systematic method to measure whether LLMs learn deep values (e.g., moral principles) or merely shallow statistical patterns in preference data. Existing alignment benchmarks do not directly distinguish between the two.
 
-**Root Cause**: If AI systems learn only surface-level correlations rather than deep values, they may exhibit unpredictable or harmful behavior in novel scenarios — yet no quantitative framework currently exists to assess this risk.
+**Key Challenge**: If AI systems learn only surface-level correlations rather than deep values, they may exhibit unpredictable or harmful behavior in novel scenarios — yet no quantitative framework currently exists to assess this risk.
 
-**Paper Goals**: To establish an interpretable, quantitative metric for measuring whether models genuinely understand and generalize deep human values.
+**Goal**: To establish an interpretable, quantitative metric for measuring whether models genuinely understand and generalize deep human values.
 
-**Starting Point**: Drawing on confound-control methodology from experimental psychology — first creating a perfect correlation between deep values and surface features, then breaking that correlation to observe model choices.
+**Key Insight**: Drawing on confound-control methodology from experimental psychology — first creating a perfect correlation between deep values and surface features, then breaking that correlation to observe model choices.
 
 **Core Idea**: A confound-then-deconfound experimental paradigm that precisely separates whether models learn "values" or "patterns."
 

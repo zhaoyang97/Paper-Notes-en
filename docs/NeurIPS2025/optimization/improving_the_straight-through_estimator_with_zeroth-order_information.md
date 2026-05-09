@@ -27,11 +27,11 @@ content_hash: 37a3ce0ad8390809
 This paper proposes FOGZO (First-Order-Guided Zeroth-Order Gradient Descent), which injects STE gradients as a bias source into zeroth-order gradient estimation. By retaining the computational efficiency of STE while leveraging zeroth-order information to correct occasional erroneous gradient directions, FOGZO achieves 1–22 point improvements in accuracy/perplexity on DeiT, ResNet, and LLaMA with only 2 additional forward passes.
 
 ## Background & Motivation
-**State of the Field**: Quantization-aware training (QAT) is an effective approach to obtaining low-bit models, with the core challenge being that round/sign functions have near-zero gradients almost everywhere. The Straight-Through Estimator (STE), which substitutes the Jacobian of a smooth function for that of the non-differentiable operator, is the de facto standard method in QAT.
+**Background**: Quantization-aware training (QAT) is an effective approach to obtaining low-bit models, with the core challenge being that round/sign functions have near-zero gradients almost everywhere. The Straight-Through Estimator (STE), which substitutes the Jacobian of a smooth function for that of the non-differentiable operator, is the de facto standard method in QAT.
 
 **Limitations of Prior Work**: STE performs well at high precision but introduces parameter oscillations at low precision (1–2 bits), occasionally producing gradients in erroneous directions. Despite its weak theoretical foundations, STE has remained the dominant approach for 13 years.
 
-**Root Cause**: Zeroth-order methods such as n-SPSA are theoretically sounder (based on stochastic smoothing), but require $2n$ forward passes, making them highly impractical for deep networks. With small $n$, gradient variance explodes, leading to slow convergence.
+**Key Challenge**: Zeroth-order methods such as n-SPSA are theoretically sounder (based on stochastic smoothing), but require $2n$ forward passes, making them highly impractical for deep networks. With small $n$, gradient variance explodes, leading to slow convergence.
 
 **Core Idea**: STE is a "good-enough but occasionally erroneous" gradient estimator. If zeroth-order information can be used to correct these errors, it becomes possible to surpass STE's accuracy at near-STE computational cost.
 

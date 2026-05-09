@@ -31,7 +31,7 @@ This paper presents the first systematic study of privacy leakage in SMOTE, prop
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: SMOTE (Synthetic Minority Over-sampling Technique) is one of the most widely used methods for handling class imbalance and generating synthetic data (the original paper has nearly 40,000 citations and is natively supported in Azure). It generates synthetic samples via linear interpolation between minority-class instances and is applied in:
+**Key Challenge**: **Background**: SMOTE (Synthetic Minority Over-sampling Technique) is one of the most widely used methods for handling class imbalance and generating synthetic data (the original paper has nearly 40,000 citations and is natively supported in Azure). It generates synthetic samples via linear interpolation between minority-class instances and is applied in:
 
 **Data augmentation**: Improving classifier performance (medical diagnosis, fraud detection, etc.)
 

@@ -28,15 +28,15 @@ This paper establishes a mathematical theory revealing that RNNs exhibit fundame
 
 ## Background & Motivation
 
-**State of the Field**: RNNs are widely used in neuroscience modeling and sequence tasks. Existing theoretical work primarily analyzes RNN learning dynamics and solution properties in open-loop (supervised learning) settings.
+**Background**: RNNs are widely used in neuroscience modeling and sequence tasks. Existing theoretical work primarily analyzes RNN learning dynamics and solution properties in open-loop (supervised learning) settings.
 
 **Limitations of Prior Work**: Biological learning occurs in closed-loop environments—where an agent's actions influence subsequent inputs—yet a theoretical account of closed-loop RNN learning dynamics is largely absent.
 
-**Root Cause**: Open-loop analyses assume i.i.d. inputs and ignore feedback loops. In closed-loop environments, outputs affect subsequent inputs, making the learning dynamics fundamentally different.
+**Key Challenge**: Open-loop analyses assume i.i.d. inputs and ignore feedback loops. In closed-loop environments, outputs affect subsequent inputs, making the learning dynamics fundamentally different.
 
-**Paper Goals**: To establish a mathematical theory of closed-loop RNN learning dynamics and reveal why and how closed-loop learning differs from its open-loop counterpart.
+**Goal**: To establish a mathematical theory of closed-loop RNN learning dynamics and reveal why and how closed-loop learning differs from its open-loop counterpart.
 
-**Starting Point**: The authors adopt the classical double integrator control task and obtain an analytically tractable theoretical framework via linearized RNNs and a rank-1 connectivity weight assumption.
+**Key Insight**: The authors adopt the classical double integrator control task and obtain an analytically tractable theoretical framework via linearized RNNs and a rank-1 connectivity weight assumption.
 
 **Core Idea**: Closed-loop RNN learning is governed by the eigenvalue evolution of the joint agent–environment system. The learning process unfolds in three stages, fundamentally driven by the competition between short-term policy improvement and long-term system stability.
 

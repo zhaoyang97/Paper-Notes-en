@@ -28,15 +28,15 @@ Through closed-form gradient analysis, this paper identifies the root causes of 
 
 ## Background & Motivation
 
-**State of the Field**: Sequential decision-making naturally gives rise to hierarchical data—each state branches into exponentially many successors, forming a tree-like structure. Euclidean space grows only polynomially in volume ($V_d(r) \propto r^d$), creating a fundamental geometric mismatch with the exponential growth of hierarchical structures. Hyperbolic space, whose volume grows exponentially, has already demonstrated success in classification, metric learning, and image-text alignment.
+**Background**: Sequential decision-making naturally gives rise to hierarchical data—each state branches into exponentially many successors, forming a tree-like structure. Euclidean space grows only polynomially in volume ($V_d(r) \propto r^d$), creating a fundamental geometric mismatch with the exponential growth of hierarchical structures. Hyperbolic space, whose volume grows exponentially, has already demonstrated success in classification, metric learning, and image-text alignment.
 
 **Limitations of Prior Work**: Hyperbolic deep RL suffers from severe optimization difficulties. Cetin et al. (2023) first introduced hyperbolic geometry into RL, but training remained unstable, requiring SpectralNorm combined with S-RYM ($\mathbf{x}_E \mapsto \mathbf{x}_E / \sqrt{d}$) to mitigate instability—at the cost of limiting the expressive capacity of the entire encoder.
 
-**Root Cause**: A fundamental conflict exists between the geometric advantages of hyperbolic space (low-distortion hierarchical embeddings) and training stability (conformal factor explosion and ill-conditioned gradients).
+**Key Challenge**: A fundamental conflict exists between the geometric advantages of hyperbolic space (low-distortion hierarchical embeddings) and training stability (conformal factor explosion and ill-conditioned gradients).
 
-**Paper Goals**: (1) Formally analyze the sources of gradient ill-conditioning in hyperbolic PPO; (2) design a hyperbolic RL agent that achieves both training stability and expressive power.
+**Goal**: (1) Formally analyze the sources of gradient ill-conditioning in hyperbolic PPO; (2) design a hyperbolic RL agent that achieves both training stability and expressive power.
 
-**Starting Point**: Closed-form gradient derivations for both the Poincaré Ball and Hyperboloid models are used to precisely locate the sources of instability, after which corresponding components are designed to address each issue individually.
+**Key Insight**: Closed-form gradient derivations for both the Poincaré Ball and Hyperboloid models are used to precisely locate the sources of instability, after which corresponding components are designed to address each issue individually.
 
 **Core Idea**: Large-norm embeddings are the root cause of hyperbolic PPO collapse. The instability can be fundamentally resolved by constraining the norm via RMSNorm, avoiding the conformal factor via the Hyperboloid model, and aligning the loss function with the geometry via categorical losses.
 

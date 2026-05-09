@@ -29,17 +29,17 @@ This paper analyzes the bottleneck of severely skewed acceptance-length distribu
 
 ## Background & Motivation
 
-**State of the Field**: Autoregressive (AR) text-to-image models (e.g., Lumina-mGPT, Emu3) have achieved generation quality competitive with diffusion models, but suffer from severe inference latency due to the need to serialize the generation of thousands of tokens. Speculative Decoding (SD) is the dominant approach to accelerating LLM inference, yet it performs poorly in the T2I setting.
+**Background**: Autoregressive (AR) text-to-image models (e.g., Lumina-mGPT, Emu3) have achieved generation quality competitive with diffusion models, but suffer from severe inference latency due to the need to serialize the generation of thousands of tokens. Speculative Decoding (SD) is the dominant approach to accelerating LLM inference, yet it performs poorly in the T2I setting.
 
 **Limitations of Prior Work**: Standard SD methods (e.g., EAGLE) provide almost no speedup on T2I models, because the high-entropy nature of image generation leads to extremely low acceptance rates for draft tokens—even at standard sampling temperatures, many candidate image tokens are nearly equiprobable. Existing SJD methods are training-free and lossless, but deliver only a moderate ~2× speedup.
 
-**Root Cause**: A detailed analysis reveals that the acceptance-length distribution of SJD is highly skewed—approximately 50% of forward passes accept only a single token (i.e., yield zero acceleration), and the average 2× speedup is driven primarily by a small fraction of steps that successfully accept many tokens. This "long-tail distribution" is the fundamental performance bottleneck.
+**Key Challenge**: A detailed analysis reveals that the acceptance-length distribution of SJD is highly skewed—approximately 50% of forward passes accept only a single token (i.e., yield zero acceleration), and the average 2× speedup is driven primarily by a small fraction of steps that successfully accept many tokens. This "long-tail distribution" is the fundamental performance bottleneck.
 
-**Paper Goals**
+**Goal**
 - How to reduce the frequency of single-token acceptance (inefficient steps)?
 - How to increase the number of tokens successfully verified per step?
 
-**Starting Point**: The root cause of single-token acceptance is the "cascading effect of context mismatch"—when position $i$ is rejected, the contexts of all subsequent proposals become invalid. Two complementary directions of optimization are thus needed: (1) providing diverse candidates at the rejection point to reduce subsequent cascading rejections (PD), and (2) continuing verification of subsequent tokens rather than terminating immediately upon rejection (AC).
+**Key Insight**: The root cause of single-token acceptance is the "cascading effect of context mismatch"—when position $i$ is rejected, the contexts of all subsequent proposals become invalid. Two complementary directions of optimization are thus needed: (1) providing diverse candidates at the rejection point to reduce subsequent cascading rejections (PD), and (2) continuing verification of subsequent tokens rather than terminating immediately upon rejection (AC).
 
 **Core Idea**: Instead of stopping after a rejection, continue verification and simultaneously draft multiple candidate paths—a two-pronged approach to maximizing per-step acceptance length.
 

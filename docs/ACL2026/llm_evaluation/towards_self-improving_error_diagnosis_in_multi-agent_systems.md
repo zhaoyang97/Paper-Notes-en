@@ -25,15 +25,15 @@ This paper proposes ErrorProbe, a framework that achieves self-improving semanti
 
 ## Background & Motivation
 
-**State of the Field**: LLM-based multi-agent systems (MAS) have demonstrated strong capabilities in software engineering, web navigation, and scientific reasoning, yet their debugging challenges are increasingly prominent. When multiple agents (architect, engineer, tester, etc.) collaborate on a task and the system fails, one must answer: "Which agent caused the error, and at which step did it originate?"
+**Background**: LLM-based multi-agent systems (MAS) have demonstrated strong capabilities in software engineering, web navigation, and scientific reasoning, yet their debugging challenges are increasingly prominent. When multiple agents (architect, engineer, tester, etc.) collaborate on a task and the system fails, one must answer: "Which agent caused the error, and at which step did it originate?"
 
 **Limitations of Prior Work**: Existing diagnostic approaches suffer from three categories of deficiencies: (1) taxonomy-based manual annotation methods (e.g., MAST) require substantial expert effort and do not scale; (2) training-data-driven specialized trackers rely on expensive data generation pipelines and require continuous retraining; (3) the LLM-as-a-Judge paradigm performs poorly at step-level localization over long contexts, especially in scenarios where errors manifest with delay.
 
-**Root Cause**: Fault attribution in MAS faces multiple compounding challenges — interaction trajectories are extremely long (tens to hundreds of turns), errors manifest with delay (early-stage errors surface only later), causal dependency chains across agents are complex, and failure modes are highly diverse. These factors render single-pass LLM judgment ineffective at penetrating long contexts to identify root causes.
+**Key Challenge**: Fault attribution in MAS faces multiple compounding challenges — interaction trajectories are extremely long (tens to hundreds of turns), errors manifest with delay (early-stage errors surface only later), causal dependency chains across agents are complex, and failure modes are highly diverse. These factors render single-pass LLM judgment ineffective at penetrating long contexts to identify root causes.
 
-**Paper Goals**: Design a multi-agent fault attribution framework that requires no manual annotation and is capable of self-improvement, accurately identifying the responsible agent and the originating error step.
+**Goal**: Design a multi-agent fault attribution framework that requires no manual annotation and is capable of self-improvement, accurately identifying the responsible agent and the originating error step.
 
-**Starting Point**: The approach simulates the debugging process of a human expert — decomposing the problem into specialized roles (hypothesis generation, verification execution, arbitration decision), pruning irrelevant context via backward tracing, and enabling cross-domain pattern reuse through a verified memory repository.
+**Key Insight**: The approach simulates the debugging process of a human expert — decomposing the problem into specialized roles (hypothesis generation, verification execution, arbitration decision), pruning irrelevant context via backward tracing, and enabling cross-domain pattern reuse through a verified memory repository.
 
 **Core Idea**: The MAST taxonomy is operationalized as lightweight detectors that provide local anomaly signals. These are combined with symptom-driven backward tracing for context compression. A "Strategist–Investigator–Arbitrator" trio then validates hypotheses through tool-assisted execution, and self-improvement is achieved by updating the memory repository through a verification-gated mechanism.
 

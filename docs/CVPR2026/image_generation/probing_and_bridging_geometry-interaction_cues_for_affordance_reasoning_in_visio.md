@@ -28,13 +28,13 @@ This work systematically probes affordance capabilities in vision foundation mod
 
 ## Background & Motivation
 
-**State of the Field**: Visual affordance describes how objects can be manipulated, serving as a bridge between visual perception and embodied action. Current methods fall into three paradigms: fully supervised (learning geometric patterns from pixel-level annotations), weakly supervised (inferring affordances from human-object interactions), and open-vocabulary (generalizing via text-image alignment).
+**Background**: Visual affordance describes how objects can be manipulated, serving as a bridge between visual perception and embodied action. Current methods fall into three paradigms: fully supervised (learning geometric patterns from pixel-level annotations), weakly supervised (inferring affordances from human-object interactions), and open-vocabulary (generalizing via text-image alignment).
 
 **Limitations of Prior Work**: Fully supervised methods rely on dense annotations and generalize poorly; weakly supervised methods are spatially imprecise; open-vocabulary methods depend on semantic associations rather than genuine interaction understanding. Each paradigm emphasizes different evidence, lacking a unified perspective to answer the core question: "What are the fundamental capabilities a visual system needs to understand affordance?"
 
-**Root Cause**: Affordance is not an intrinsic property of objects but rather the possibility of interaction between an agent and its environment. Existing methods treat geometry (object structure) and interaction (how actions operate on structure) in isolation, lacking systematic study of the complementarity between these two dimensions.
+**Key Challenge**: Affordance is not an intrinsic property of objects but rather the possibility of interaction between an agent and its environment. Existing methods treat geometry (object structure) and interaction (how actions operate on structure) in isolation, lacking systematic study of the complementarity between these two dimensions.
 
-**Starting Point**: VFMs, through large-scale pretraining, have internalized rich visual knowledge and can serve as a unified lens to directly probe affordance capabilities—testing the hypothesis that geometry perception + interaction perception = the fundamental components of affordance understanding.
+**Key Insight**: VFMs, through large-scale pretraining, have internalized rich visual knowledge and can serve as a unified lens to directly probe affordance capabilities—testing the hypothesis that geometry perception + interaction perception = the fundamental components of affordance understanding.
 
 **Core Idea**: A dual-dimension framework is proposed that extracts priors from DINO (geometric part prototypes) and Flux (verb-conditioned cross-attention) respectively, achieving zero-shot affordance estimation via training-free fusion, and demonstrating that these two dimensions are composable foundational capabilities.
 

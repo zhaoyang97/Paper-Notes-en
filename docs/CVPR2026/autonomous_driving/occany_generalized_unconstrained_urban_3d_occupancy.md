@@ -29,15 +29,15 @@ OccAny proposes the first generalized unconstrained urban 3D occupancy predictio
 
 ## Background & Motivation
 
-**State of the Field**: 3D Occupancy Prediction is a core perception task in autonomous driving, aiming to jointly estimate the occupancy state and semantic labels of dense voxels. Existing methods such as SurroundOcc and OccFormer have achieved strong results on nuScenes-Occ and SemanticKITTI.
+**Background**: 3D Occupancy Prediction is a core perception task in autonomous driving, aiming to jointly estimate the occupancy state and semantic labels of dense voxels. Existing methods such as SurroundOcc and OccFormer have achieved strong results on nuScenes-Occ and SemanticKITTI.
 
 **Limitations of Prior Work**: (1) Existing methods rely heavily on in-domain annotated data and precise sensor calibration parameters (intrinsics and extrinsics), preventing generalization to new scenes; (2) Visual geometry foundation models (e.g., DUSt3R, Depth Anything) exhibit strong generalization but lack geometry completion capability for occluded regions in urban scenes and metric-scale prediction accuracy; (3) No unified framework supports all three input modes—sequential, monocular, and surround-view—simultaneously.
 
-**Root Cause**: High-accuracy occupancy prediction requires proprietary data and calibration, which are often unavailable in practice. A gap exists between the generality of visual foundation models and the urban-scene specialization required for occupancy prediction.
+**Key Challenge**: High-accuracy occupancy prediction requires proprietary data and calibration, which are often unavailable in practice. A gap exists between the generality of visual foundation models and the urban-scene specialization required for occupancy prediction.
 
-**Paper Goals**: To construct the first "unconstrained" 3D occupancy prediction framework that generates metric-scale occupancy predictions and segmentation features from arbitrarily configured camera inputs in fully uncalibrated, out-of-domain scenes.
+**Goal**: To construct the first "unconstrained" 3D occupancy prediction framework that generates metric-scale occupancy predictions and segmentation features from arbitrarily configured camera inputs in fully uncalibrated, out-of-domain scenes.
 
-**Starting Point**: The authors observe that the strong generalizable reconstruction capability of visual geometry foundation models (MUSt3R / Depth Anything 3) can be combined with the semantic capability of large-scale segmentation models (SAM2 / SAM3), with dedicated training strategies bridging the gap for urban scenes.
+**Key Insight**: The authors observe that the strong generalizable reconstruction capability of visual geometry foundation models (MUSt3R / Depth Anything 3) can be combined with the semantic capability of large-scale segmentation models (SAM2 / SAM3), with dedicated training strategies bridging the gap for urban scenes.
 
 **Core Idea**: The paper proposes Segmentation Forcing to compel the model to learn occupancy representations consistent with segmentation outputs, and Novel View Rendering to achieve geometry completion via virtual viewpoint synthesis, thereby constructing a unified framework that retains generalization ability while adapting to urban scenes.
 

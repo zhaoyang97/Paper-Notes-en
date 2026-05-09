@@ -29,11 +29,11 @@ This paper proposes TruthfulRAG, a framework that, for the first time, leverages
 
 ## Background & Motivation
 
-1. **State of the Field**: Retrieval-Augmented Generation (RAG) has become the dominant paradigm for enhancing LLM capabilities by incorporating external knowledge to compensate for limitations in parametric knowledge, such as staleness and incompleteness.
+1. **Background**: Retrieval-Augmented Generation (RAG) has become the dominant paradigm for enhancing LLM capabilities by incorporating external knowledge to compensate for limitations in parametric knowledge, such as staleness and incompleteness.
 2. **Limitations of Prior Work**: As external knowledge bases continue to expand and parametric knowledge grows increasingly outdated, conflicts between retrieved external information and the LLM's internal knowledge become unavoidable, seriously degrading generation quality.
-3. **Root Cause**: Existing conflict resolution methods operate either at the token level (by adjusting output probability distributions) or at the semantic level (through semantic alignment and integration). These coarse-grained strategies rely on fragmented data representations, making it difficult to accurately capture complex factual dependencies and fine-grained factual inconsistencies.
-4. **Paper Goals**: To precisely identify and resolve knowledge conflicts in RAG at the factual level.
-5. **Starting Point**: Leveraging the structured triple representations of knowledge graphs to construct reliable reasoning paths and enhance LLM confidence in external knowledge.
+3. **Key Challenge**: Existing conflict resolution methods operate either at the token level (by adjusting output probability distributions) or at the semantic level (through semantic alignment and integration). These coarse-grained strategies rely on fragmented data representations, making it difficult to accurately capture complex factual dependencies and fine-grained factual inconsistencies.
+4. **Goal**: To precisely identify and resolve knowledge conflicts in RAG at the factual level.
+5. **Key Insight**: Leveraging the structured triple representations of knowledge graphs to construct reliable reasoning paths and enhance LLM confidence in external knowledge.
 6. **Core Idea**: Construct a knowledge graph to extract structured triples, perform query-aware graph traversal to obtain relevant reasoning paths, detect and filter conflicting paths via entropy-change signals, and guide the LLM to prioritize accurate external knowledge.
 
 ## Method

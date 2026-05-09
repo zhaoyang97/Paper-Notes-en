@@ -29,15 +29,15 @@ This paper presents LLMThinkBench, a benchmark for systematically evaluating the
 
 ## Background & Motivation
 
-**State of the Field**: LLMs achieve strong performance on complex math benchmarks (GSM8K, MATH), and reasoning models further boost performance through inference-time scaling (chain-of-thought). However, the performance and efficiency of these models on basic mathematical operations have not been systematically evaluated.
+**Background**: LLMs achieve strong performance on complex math benchmarks (GSM8K, MATH), and reasoning models further boost performance through inference-time scaling (chain-of-thought). However, the performance and efficiency of these models on basic mathematical operations have not been systematically evaluated.
 
 **Limitations of Prior Work**: (1) Models scoring 90%+ on complex benchmarks may fall below 40% on basic addition — strong performance on complex benchmarks does not transfer to elementary operations. (2) Reasoning models generate excessively long reasoning chains for simple problems (e.g., generating hundreds of tokens to explain the carry principle for 234+567), wasting compute and sometimes reducing accuracy. (3) Existing evaluations focus solely on accuracy while ignoring computational waste. (4) Static benchmarks are susceptible to data contamination. (5) No metric jointly captures accuracy and efficiency.
 
-**Root Cause**: Reasoning models are trained to "think more" to improve performance, but on basic tasks, more thinking is counterproductive — models conflate explanation with understanding, producing lengthy outputs that superficially resemble reasoning yet lack genuine problem-solving capability.
+**Key Challenge**: Reasoning models are trained to "think more" to improve performance, but on basic tasks, more thinking is counterproductive — models conflate explanation with understanding, producing lengthy outputs that superficially resemble reasoning yet lack genuine problem-solving capability.
 
-**Paper Goals**: (1) Formalize the accuracy-verbosity tradeoff; (2) propose the Overthinking Score metric; (3) establish a dynamically generated evaluation protocol; (4) conduct large-scale empirical study of reasoning efficiency across 53 LLMs.
+**Goal**: (1) Formalize the accuracy-verbosity tradeoff; (2) propose the Overthinking Score metric; (3) establish a dynamically generated evaluation protocol; (4) conduct large-scale empirical study of reasoning efficiency across 53 LLMs.
 
-**Starting Point**: The work focuses on 14 deterministic basic math tasks (sorting, summation, multiplication, argmax, etc.) with unique correct answers and known computational complexity, enabling precise measurement of the accuracy-verbosity relationship.
+**Key Insight**: The work focuses on 14 deterministic basic math tasks (sorting, summation, multiplication, argmax, etc.) with unique correct answers and known computational complexity, enabling precise measurement of the accuracy-verbosity relationship.
 
 **Core Idea**: More reasoning tokens ≠ better mathematical reasoning — on basic tasks, the verbose generation of reasoning models not only wastes compute but can reduce accuracy through error accumulation and self-contradiction.
 

@@ -28,15 +28,15 @@ This paper proposes EvoEdit, which achieves large-scale sequential knowledge edi
 
 ## Background & Motivation
 
-**State of the Field**: Large language models require frequent updates to maintain factual accuracy. Mainstream knowledge editing methods adopt the "locate-then-edit" paradigm (e.g., ROME and MEMIT), first locating parameters storing specific facts, then applying perturbations to inject new knowledge.
+**Background**: Large language models require frequent updates to maintain factual accuracy. Mainstream knowledge editing methods adopt the "locate-then-edit" paradigm (e.g., ROME and MEMIT), first locating parameters storing specific facts, then applying perturbations to inject new knowledge.
 
 **Limitations of Prior Work**: Existing methods perform reasonably in single edits, but in sequential editing scenarios, accumulated updates cause "catastrophic interference" — subsequent edits destroy previously integrated knowledge, with performance sharply declining or model collapse after just a few hundred edits.
 
-**Root Cause**: A fundamental contradiction exists between new knowledge injection and old knowledge preservation — parameter updates must modify weights to encode new facts, but these modifications inevitably interfere with encoding of existing facts. AlphaEdit uses a fixed null-space projector to mitigate this problem but ignores null-space drift caused by sequential editing; LangEdit recomputes the null-space each time but faces numerically unstable SVD on the covariance matrix.
+**Key Challenge**: A fundamental contradiction exists between new knowledge injection and old knowledge preservation — parameter updates must modify weights to encode new facts, but these modifications inevitably interfere with encoding of existing facts. AlphaEdit uses a fixed null-space projector to mitigate this problem but ignores null-space drift caused by sequential editing; LangEdit recomputes the null-space each time but faces numerically unstable SVD on the covariance matrix.
 
-**Paper Goals**: Design a sequential editing framework scalable to tens of thousands of edits, ensuring editing effectiveness without destroying existing knowledge or model capabilities.
+**Goal**: Design a sequential editing framework scalable to tens of thousands of edits, ensuring editing effectiveness without destroying existing knowledge or model capabilities.
 
-**Starting Point**: The authors observe that AlphaEdit's fixed projector produces null-space drift during sequential editing, manifested as $\|PK_p\|_F$ increasing dramatically with edit count, forcing the model to compromise between new knowledge acquisition and interference suppression.
+**Key Insight**: The authors observe that AlphaEdit's fixed projector produces null-space drift during sequential editing, manifested as $\|PK_p\|_F$ increasing dramatically with edit count, forcing the model to compromise between new knowledge acquisition and interference suppression.
 
 **Core Idea**: Dynamically evolve the null-space projector — incrementally update the projector after each edit by performing SVD on the incremental key matrix rather than recomputing the full covariance matrix, achieving optimal balance between numerical stability and computational efficiency.
 

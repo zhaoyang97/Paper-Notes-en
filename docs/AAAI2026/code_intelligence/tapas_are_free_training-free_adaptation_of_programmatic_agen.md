@@ -26,15 +26,15 @@ content_hash: f42435bb1a58a910
 TAPA positions LLMs as "intelligent modulators" of the symbolic action space rather than direct decision-makers. Through LLM-guided program synthesis, it dynamically adapts the symbolic actions of programmatic agents without retraining, achieving strong performance in cybersecurity DDoS defense (77.7% network uptime) and swarm intelligence formation control.
 
 ## Background & Motivation
-**State of the Field**: Autonomous agents in safety-critical applications (network defense, swarm intelligence, autonomous driving) typically adopt neuro-symbolic hybrid architectures—RL/neural networks for policy learning and symbolic programs/rules for concrete execution. Such "programmatic agents" offer interpretability and formal guarantees.
+**Background**: Autonomous agents in safety-critical applications (network defense, swarm intelligence, autonomous driving) typically adopt neuro-symbolic hybrid architectures—RL/neural networks for policy learning and symbolic programs/rules for concrete execution. Such "programmatic agents" offer interpretability and formal guarantees.
 
 **Limitations of Prior Work**: Three core deficiencies: (1) the symbolic action space is static and cannot adapt to environmental changes (e.g., novel attack patterns); (2) policy retraining is costly (requiring hours of relearning); (3) applying outdated symbolic actions to new environments lacks safety guarantees.
 
-**Root Cause**: LLMs possess powerful reasoning and generalization capabilities but suffer from high inference latency and hallucination, making them unsuitable for real-time safety-critical decisions; traditional RL agents are fast but lack adaptability. Both are individually insufficient and require complementary integration.
+**Key Challenge**: LLMs possess powerful reasoning and generalization capabilities but suffer from high inference latency and hallucination, making them unsuitable for real-time safety-critical decisions; traditional RL agents are fast but lack adaptability. Both are individually insufficient and require complementary integration.
 
-**Paper Goals**: How can programmatic agents continuously adapt to dynamic environments without retraining?
+**Goal**: How can programmatic agents continuously adapt to dynamic environments without retraining?
 
-**Starting Point**: A key paradigm shift—from "policy-level retraining" to "action-level adaptation." Rather than modifying the decision policy (the meta-policy remains fixed), the paper proposes dynamically modifying/synthesizing the concrete symbolic program corresponding to each logical primitive, with LLMs performing program synthesis rather than real-time decision-making.
+**Key Insight**: A key paradigm shift—from "policy-level retraining" to "action-level adaptation." Rather than modifying the decision policy (the meta-policy remains fixed), the paper proposes dynamically modifying/synthesizing the concrete symbolic program corresponding to each logical primitive, with LLMs performing program synthesis rather than real-time decision-making.
 
 **Core Idea**: Use LLMs as modulators of the symbolic action space, dynamically synthesizing and adapting concrete programs to match abstract logical primitives, enabling training-free environmental adaptation.
 

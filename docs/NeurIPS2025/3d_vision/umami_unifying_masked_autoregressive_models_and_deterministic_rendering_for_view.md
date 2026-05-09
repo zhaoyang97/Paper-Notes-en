@@ -28,13 +28,13 @@ This paper proposes UMAMI, a hybrid framework that unifies Masked Autoregressive
 
 ## Background & Motivation
 
-**State of the Field**: Two dominant paradigms exist for novel view synthesis (NVS)—deterministic methods (PixelSplat, MVSplat, LVSM) are fast but produce blurry results in occluded regions; generative methods (CAT3D, Stable Video 3D) can hallucinate occluded content but incur high training and inference costs.
+**Background**: Two dominant paradigms exist for novel view synthesis (NVS)—deterministic methods (PixelSplat, MVSplat, LVSM) are fast but produce blurry results in occluded regions; generative methods (CAT3D, Stable Video 3D) can hallucinate occluded content but incur high training and inference costs.
 
 **Limitations of Prior Work**: Fully diffusion-based methods apply large UNet/Transformer architectures to iteratively denoise **entire images**, even when most of the target view is already covered by context views—representing substantial computational waste.
 
-**Root Cause**: Deterministic methods cannot synthesize unseen regions, while generative methods are highly inefficient for regions that are already visible.
+**Key Challenge**: Deterministic methods cannot synthesize unseen regions, while generative methods are highly inefficient for regions that are already visible.
 
-**Starting Point**: Decompose the target image into "deterministically renderable" regions (well-constrained by geometry) and "regions requiring generation" (occluded/unseen areas), and process each with a dedicated head.
+**Key Insight**: Decompose the target image into "deterministically renderable" regions (well-constrained by geometry) and "regions requiring generation" (occluded/unseen areas), and process each with a dedicated head.
 
 **Core Idea**: A bidirectional Transformer produces a shared representation → a feed-forward regression head directly renders visible pixels → a MAR diffusion head generates occluded pixels. The model is trained end-to-end with no hand-crafted 3D inductive biases.
 

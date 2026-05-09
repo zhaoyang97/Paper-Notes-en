@@ -31,7 +31,7 @@ This paper proposes CAPT, a confusion-aware prompt tuning framework that explici
 
 ### Starting Point
 
-**Paper Goals**: **State of the Field**: 1. Vision-language models such as CLIP exhibit systematic misalignment: confusion between specific class pairs is not random but occurs as persistent, fixed patterns.
+**Goal**: **Background**: 1. Vision-language models such as CLIP exhibit systematic misalignment: confusion between specific class pairs is not random but occurs as persistent, fixed patterns.
 2. For example, in the OxfordPets dataset, *terrier* is misclassified as *bulldog* 30 times yet is almost never confused with other classes.
 3. Existing prompt tuning methods (MaPLe, PromptSRC) optimize global image-text feature alignment while ignoring such fixed confusion patterns.
 4. Model misalignment arises from ambiguous semantic boundaries and locally similar representations among visually and semantically similar classes.

@@ -28,15 +28,15 @@ The final layer of Phi-4 family small models (3.8B/14B) is replaced with a regre
 
 ## Background & Motivation
 
-**State of the Field**: Reasoning models (o1, R1) improve reasoning capability through long-chain CoT, with training relying on reward models to distinguish good from bad reasoning trajectories. Reward models fall into two categories: ORM (scoring only the final outcome) and PRM (scoring intermediate steps progressively).
+**Background**: Reasoning models (o1, R1) improve reasoning capability through long-chain CoT, with training relying on reward models to distinguish good from bad reasoning trajectories. Reward models fall into two categories: ORM (scoring only the final outcome) and PRM (scoring intermediate steps progressively).
 
 **Limitations of Prior Work**: ORM signals are sparse and suffer from delayed credit assignment—providing only a single terminal score with no guidance for intermediate search steps. PRM requires expensive annotation of intermediate steps (typically manual). Furthermore, existing reward models are generally based on large models (tens of billions of parameters), incurring high deployment costs.
 
-**Root Cause**: Can a small model (<15B) simultaneously fulfill the roles of both ORM and PRM—evaluating the correctness of complete rollouts while also estimating the success probability of intermediate states during generation?
+**Key Challenge**: Can a small model (<15B) simultaneously fulfill the roles of both ORM and PRM—evaluating the correctness of complete rollouts while also estimating the success probability of intermediate states during generation?
 
-**Paper Goals**: To verify whether small LMs from the Phi-4 family can become effective reward models through simple architectural modifications (regression head replacement + SFT), serving both ORM and PRM roles simultaneously.
+**Goal**: To verify whether small LMs from the Phi-4 family can become effective reward models through simple architectural modifications (regression head replacement + SFT), serving both ORM and PRM roles simultaneously.
 
-**Starting Point**: A forking tokens strategy is employed to construct training data—identifying the lowest-probability "forking point" tokens during generation, branching from these positions to produce multiple rollouts, and using test cases to determine correctness, thereby obtaining token-level state-value labels.
+**Key Insight**: A forking tokens strategy is employed to construct training data—identifying the lowest-probability "forking point" tokens during generation, branching from these positions to produce multiple rollouts, and using test cases to determine correctness, thereby obtaining token-level state-value labels.
 
 **Core Idea**: A Phi-4 decoder architecture combined with a regression head and sigmoid activation is trained on forking-point code generation data, enabling the small model to estimate success probability at each token position.
 

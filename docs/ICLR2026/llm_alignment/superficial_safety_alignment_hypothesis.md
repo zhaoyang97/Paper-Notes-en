@@ -28,18 +28,18 @@ This paper proposes the **Superficial Safety Alignment Hypothesis (SSAH)**: safe
 
 ## Background & Motivation
 
-**State of the Field**: LLM safety alignment primarily relies on SFT, RLHF, and DPO, but these methods typically treat safety alignment as a subset of general alignment, overlooking its unique properties.
+**Background**: LLM safety alignment primarily relies on SFT, RLHF, and DPO, but these methods typically treat safety alignment as a subset of general alignment, overlooking its unique properties.
 
 **Limitations of Prior Work**:
 - Safety mechanisms are extremely fragile — even fine-tuning on benign data can collapse safety guardrails (Qi et al., 2023).
 - An "alignment tax" exists — improving safety sacrifices general model capability.
 - Current approaches require full-parameter fine-tuning, incurring high computational costs.
 
-**Root Cause**: There is insufficient understanding of how safety alignment affects model behavior and why safety mechanisms are so fragile.
+**Key Challenge**: There is insufficient understanding of how safety alignment affects model behavior and why safety mechanisms are so fragile.
 
-**Paper Goals**: Three questions are addressed: How does safety alignment affect model behavior? Why is safety so fragile? How can these issues be mitigated?
+**Goal**: Three questions are addressed: How does safety alignment affect model behavior? Why is safety so fragile? How can these issues be mitigated?
 
-**Starting Point**: A key observation — a model capable of fulfilling malicious requests already possesses the relevant knowledge and reasoning ability; thus, safety alignment only needs to teach the model to select the correct reasoning direction (execute vs. refuse), rather than injecting new knowledge.
+**Key Insight**: A key observation — a model capable of fulfilling malicious requests already possesses the relevant knowledge and reasoning ability; thus, safety alignment only needs to teach the model to select the correct reasoning direction (execute vs. refuse), rather than injecting new knowledge.
 
 **Core Idea**: Safety alignment ≈ implicit binary classification task, achievable with a very small fraction (~1.3%) of safety-critical neurons.
 

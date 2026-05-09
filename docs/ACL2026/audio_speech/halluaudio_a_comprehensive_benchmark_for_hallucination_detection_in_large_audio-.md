@@ -29,15 +29,15 @@ This paper presents HalluAudio, the first large-scale cross-domain (speech/envir
 
 ## Background & Motivation
 
-**State of the Field**: LALMs have demonstrated strong capabilities in speech recognition, audio question answering, and music understanding. Hallucination has been extensively studied in the text and vision domains, but remains critically underexplored in the audio domain.
+**Background**: LALMs have demonstrated strong capabilities in speech recognition, audio question answering, and music understanding. Hallucination has been extensively studied in the text and vision domains, but remains critically underexplored in the audio domain.
 
 **Limitations of Prior Work**: (1) Existing audio benchmarks primarily target capability evaluation rather than reliability assessment; (2) the few audio hallucination studies (e.g., AHa-Bench) are small-scale, limited to binary classification, and lack diagnostic depth; (3) there is no systematic adversarial prompting or mixed-audio condition to elicit hallucinations.
 
-**Root Cause**: Models that perform well on standard benchmarks are not necessarily robust to hallucinations — a fundamental gap exists between capability evaluation and reliability evaluation.
+**Key Challenge**: Models that perform well on standard benchmarks are not necessarily robust to hallucinations — a fundamental gap exists between capability evaluation and reliability evaluation.
 
-**Paper Goals**: To construct the first large-scale, cross-domain, multi-dimensional benchmark for audio hallucination detection, enabling systematic analysis of LALM failure modes.
+**Goal**: To construct the first large-scale, cross-domain, multi-dimensional benchmark for audio hallucination detection, enabling systematic analysis of LALM failure modes.
 
-**Starting Point**: Three domains (speech / environmental sound / music) × multiple task types (binary judgment / multi-choice reasoning / attribute verification / open-ended QA) × adversarial designs (adversarial prompts / mixed audio), paired with a multi-dimensional evaluation protocol.
+**Key Insight**: Three domains (speech / environmental sound / music) × multiple task types (binary judgment / multi-choice reasoning / attribute verification / open-ended QA) × adversarial designs (adversarial prompts / mixed audio), paired with a multi-dimensional evaluation protocol.
 
 **Core Idea**: Audio hallucination is defined as model-generated claims that are not supported by the input acoustic evidence, encompassing three subtypes: fabrication (asserting non-existent events), evidence contradiction, and ungrounded affirmation bias.
 

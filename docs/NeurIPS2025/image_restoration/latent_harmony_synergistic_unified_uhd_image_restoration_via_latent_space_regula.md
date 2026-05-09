@@ -29,7 +29,7 @@ This paper proposes Latent Harmony, a two-stage framework that constructs a gene
 
 ## Background & Motivation
 
-**State of the Field**: Ultra-high-definition (UHD/4K) image restoration must handle large data volumes and preserve fine details. All-in-One methods aim to process multiple degradation types with a single model. VAE-based latent space approaches can substantially improve efficiency, but they suffer from fundamental limitations.
+**Background**: Ultra-high-definition (UHD/4K) image restoration must handle large data volumes and preserve fine details. All-in-One methods aim to process multiple degradation types with a single model. VAE-based latent space approaches can substantially improve efficiency, but they suffer from fundamental limitations.
 
 **Limitations of Prior Work**:
    - Gaussian variational inference in VAEs favors semantic preservation at the cost of high-frequency detail, degrading reconstruction fidelity
@@ -37,11 +37,11 @@ This paper proposes Latent Harmony, a two-stage framework that constructs a gene
    - Existing methods exhibit a fundamental tension between generalizability (across degradation types) and reconstruction capability
    - Jointly optimizing VAE and downstream restoration networks directly disrupts the structure of the pretrained latent space
 
-**Root Cause**: A triple trade-off: (1) latent space generalizability vs. reconstruction fidelity, (2) VAE joint optimization vs. structural preservation, and (3) perceptual quality vs. fidelity in the output.
+**Key Challenge**: A triple trade-off: (1) latent space generalizability vs. reconstruction fidelity, (2) VAE joint optimization vs. structural preservation, and (3) perceptual quality vs. fidelity in the output.
 
-**Paper Goals**: To systematically address the multiple trade-off challenges posed by VAEs in UHD All-in-One restoration.
+**Goal**: To systematically address the multiple trade-off challenges posed by VAEs in UHD All-in-One restoration.
 
-**Starting Point**: Frequency-domain analysis reveals that high-frequency information is central to the generalizability–reconstruction tension, motivating targeted regularization and LoRA fine-tuning strategies.
+**Key Insight**: Frequency-domain analysis reveals that high-frequency information is central to the generalizability–reconstruction tension, motivating targeted regularization and LoRA fine-tuning strategies.
 
 **Core Idea**: Build degradation-invariant generalizable representations through latent space regularization, and separately optimize encoder fidelity and decoder perceptual quality via differentiated high-frequency LoRA modules.
 

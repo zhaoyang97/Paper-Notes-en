@@ -28,14 +28,14 @@ content_hash: b0381222b0a66cf4
 This work transfers SIGReg regularization from LeJEPA's self-supervised learning setting to supervised learning and proposes a computationally efficient variant called Weak-SIGReg—constraining the covariance matrix toward the identity (rather than matching all moments). Random projections reduce memory from $O(C^2)$ to $O(CK)$. On a ViT without BN or residual connections, this approach recovers CIFAR-100 accuracy from 20.73% (collapsed) to 72.02%, matching or surpassing carefully tuned baselines.
 
 ## Background & Motivation
-**State of the Field**: Modern neural network training relies on architectural priors such as Batch Normalization and residual connections for optimization stability. In self-supervised learning, methods like VICReg and Barlow Twins have demonstrated that covariance regularization can prevent representation collapse.
+**Background**: Modern neural network training relies on architectural priors such as Batch Normalization and residual connections for optimization stability. In self-supervised learning, methods like VICReg and Barlow Twins have demonstrated that covariance regularization can prevent representation collapse.
 
 **Limitations of Prior Work**:
 - Removing BN/residual connections, or training low-inductive-bias architectures (ViT) on small datasets with strong augmentation, frequently causes training collapse (accuracy ~20%, degenerating to random guessing).
 - Existing solutions depend on delicate hyperparameter tuning (specific weight decay, initialization schemes, positional embedding types, learning rate schedules), making them brittle and non-generalizable.
 - Covariance regularization from self-supervised learning (VICReg, SIGReg) has not been systematically applied to supervised learning.
 
-**Root Cause**: Optimization stability relies on architectural tricks rather than principled methods—can regularization replace architectural priors?
+**Key Challenge**: Optimization stability relies on architectural tricks rather than principled methods—can regularization replace architectural priors?
 
 **Core Idea**: Adopting an interacting particle system perspective, hidden-layer representations are treated as particles evolving under stochastic dynamics. The "stochastic flux" (finite batch size, high learning rate, data augmentation) drives the representation density toward degenerate states (dimensional collapse). Constraining the representation distribution toward an isotropic Gaussian prevents this degeneracy.
 

@@ -29,7 +29,7 @@ This paper finds that while modern LLM agents are robust to direct adversarial p
 
 ## Background & Motivation
 
-**State of the Field**: LLM agents are increasingly deployed in autonomous decision-making scenarios (stock trading, medical triage, scientific research, etc.), where goal drift — the gradual deviation of an agent from its original objective — represents a core safety risk.
+**Background**: LLM agents are increasingly deployed in autonomous decision-making scenarios (stock trading, medical triage, scientific research, etc.), where goal drift — the gradual deviation of an agent from its original objective — represents a core safety risk.
 
 **Limitations of Prior Work**:
 - Arike et al. (2025) identified goal drift in older models (GPT-3.5) in a stock trading simulation and attributed it primarily to pattern-matching

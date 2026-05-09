@@ -27,7 +27,7 @@ This paper proves that, under $\mathcal{B}_d^0$-conforming constraints, exactly 
 
 ## Background & Motivation
 
-**State of the Field**: ReLU networks can exactly represent all continuous piecewise linear (CPWL) functions. Arora et al. (2018) showed that $\lceil \log_2(d+1) \rceil$ layers suffice. Bakaev et al. (2025) improved this to $\lceil \log_3(d-1) \rceil + 1$ layers. However, depth **lower bounds** remain largely unexplored.
+**Background**: ReLU networks can exactly represent all continuous piecewise linear (CPWL) functions. Arora et al. (2018) showed that $\lceil \log_2(d+1) \rceil$ layers suffice. Bakaev et al. (2025) improved this to $\lceil \log_3(d-1) \rceil + 1$ layers. However, depth **lower bounds** remain largely unexplored.
 
 **Core Open Problem**: What is the minimum number of layers required to exactly represent all CPWL functions on $\mathbb{R}^d$? The best unconditional lower bound currently stands at only 2.
 

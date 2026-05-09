@@ -34,7 +34,7 @@ In practice, however, real-world data typically follow a **long-tailed distribut
 
 The key question is: **Can balanced knowledge be distilled from a biased teacher?**
 
-- **Starting Point**: The KL divergence loss is mathematically decomposed into cross-group and within-group components. Each component is shown to be affected differently by teacher bias — the cross-group term inflates head-class probabilities, while the weighting mechanism of the within-group term allows head groups to dominate the gradients.
+- **Key Insight**: The KL divergence loss is mathematically decomposed into cross-group and within-group components. Each component is shown to be affected differently by teacher bias — the cross-group term inflates head-class probabilities, while the weighting mechanism of the within-group term allows head groups to dominate the gradients.
 - **Core Idea**: **Rather than modifying the teacher model, the bias introduced by the teacher is corrected directly within the distillation objective.**
 
 ## Method

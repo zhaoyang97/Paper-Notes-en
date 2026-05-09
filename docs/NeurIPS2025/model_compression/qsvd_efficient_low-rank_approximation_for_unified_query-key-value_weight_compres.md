@@ -39,9 +39,9 @@ Vision-language models (VLMs) have demonstrated strong performance on tasks such
 
 **Poor compatibility between quantization and SVD**: The intermediate representation $C_{qkv}$ produced by SVD decomposition exhibits severe channel-wise outliers, hindering low-precision quantization.
 
-**Root Cause**: How can weight parameter count, KV cache size, and FLOPs all be reduced simultaneously while preserving VLM accuracy?
+**Key Challenge**: How can weight parameter count, KV cache size, and FLOPs all be reduced simultaneously while preserving VLM accuracy?
 
-**Starting Point**: Inspired by DeepSeek-v3's Multi-Head Latent Attention, QSVD applies SVD to the **joint QKV weight matrix**, allowing Q, K, and V to share a single down-projection matrix. Only one low-dimensional intermediate representation needs to be cached to reconstruct K and V. This is further combined with adaptive rank allocation and an SVD-compatible quantization scheme.
+**Key Insight**: Inspired by DeepSeek-v3's Multi-Head Latent Attention, QSVD applies SVD to the **joint QKV weight matrix**, allowing Q, K, and V to share a single down-projection matrix. Only one low-dimensional intermediate representation needs to be cached to reconstruct K and V. This is further combined with adaptive rank allocation and an SVD-compatible quantization scheme.
 
 ## Method
 

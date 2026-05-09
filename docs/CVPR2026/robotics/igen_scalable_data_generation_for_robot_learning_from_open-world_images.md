@@ -27,11 +27,11 @@ content_hash: d21acb2b4859fd5a
 IGen starts from a single open-world image and automatically generates large-scale vision-action training data through a pipeline of 3D scene reconstruction → VLM task planning → SE(3) action generation → point cloud synthesis → frame rendering. Policies trained exclusively on the generated data can successfully perform real-world manipulation tasks.
 
 ## Background & Motivation
-1. **State of the Field**: Generalizable robot policies require large-scale vision-action paired data, yet real-world data collection is costly and constrained to specific environments.
+1. **Background**: Generalizable robot policies require large-scale vision-action paired data, yet real-world data collection is costly and constrained to specific environments.
 2. **Limitations of Prior Work**: Real-to-Sim approaches require explicit reconstruction of physical workspaces; video generation methods cannot provide explicit actions and perform poorly on complex long-horizon tasks.
-3. **Root Cause**: Open-world images are abundantly diverse but lack robot-relevant action information, making them unsuitable for direct policy learning.
-4. **Paper Goals**: Automatically generate grounded vision-action data from unstructured open-world images.
-5. **Starting Point**: Convert 2D pixels into structured 3D representations, then leverage VLMs for task planning and action generation.
+3. **Key Challenge**: Open-world images are abundantly diverse but lack robot-relevant action information, making them unsuitable for direct policy learning.
+4. **Goal**: Automatically generate grounded vision-action data from unstructured open-world images.
+5. **Key Insight**: Convert 2D pixels into structured 3D representations, then leverage VLMs for task planning and action generation.
 6. **Core Idea**: Image → 3D point cloud + keypoints → VLM high-level planning + low-level control → SE(3) trajectory → point cloud sequence synthesis → frame rendering.
 
 ## Method

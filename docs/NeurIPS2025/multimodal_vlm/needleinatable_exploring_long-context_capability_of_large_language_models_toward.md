@@ -29,15 +29,15 @@ This paper proposes NeedleInATable (NIAT), a benchmark that treats each table ce
 
 ## Background & Motivation
 
-**State of the Field**: Long-context LLMs have advanced rapidly, and benchmarks such as Needle-in-a-Haystack have been used to assess long-context processing over unstructured text; however, structured table scenarios remain largely overlooked.
+**Background**: Long-context LLMs have advanced rapidly, and benchmarks such as Needle-in-a-Haystack have been used to assess long-context processing over unstructured text; however, structured table scenarios remain largely overlooked.
 
 **Limitations of Prior Work**: Existing table benchmarks (e.g., WTQ, TabFact) primarily target high-level reasoning, neglecting models' fundamental fine-grained perception of individual table cells—which is precisely the cornerstone of reliable table applications.
 
-**Root Cause**: Models achieve reasonable performance on complex table reasoning tasks, yet this may result from dataset-specific correlations or shortcuts rather than a genuine understanding of the two-dimensional table structure.
+**Key Challenge**: Models achieve reasonable performance on complex table reasoning tasks, yet this may result from dataset-specific correlations or shortcuts rather than a genuine understanding of the two-dimensional table structure.
 
-**Paper Goals**: Construct a benchmark to evaluate LLMs' ability to perceive every individual cell in long tables, and verify whether improving this capability can transfer to downstream table tasks.
+**Goal**: Construct a benchmark to evaluate LLMs' ability to perceive every individual cell in long tables, and verify whether improving this capability can transfer to downstream table tasks.
 
-**Starting Point**: Analogizing tables to "haystacks" and individual cells to "needles," the paper designs two atomic task types: Cell-Locating and Cell-Lookup.
+**Key Insight**: Analogizing tables to "haystacks" and individual cells to "needles," the paper designs two atomic task types: Cell-Locating and Cell-Lookup.
 
 **Core Idea**: If a model fails at the most basic cell localization, its strong results on complex tasks become suspect; enhancing NIAT capability can improve table understanding at a fundamental level.
 

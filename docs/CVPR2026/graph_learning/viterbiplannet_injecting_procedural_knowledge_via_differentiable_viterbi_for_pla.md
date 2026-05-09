@@ -29,15 +29,15 @@ This work embeds a Procedural Knowledge Graph (PKG) into a planning model end-to
 
 ## Background & Motivation
 
-**State of the Field**: Video procedural planning is the task of predicting intermediate action sequences given initial and goal visual states, and is a core capability for applications such as wearable AI assistants. Current SOTA methods include diffusion-based models (PDPP, KEPP, MTID, ~42M–1B parameters), LLM-based models (PlanLLM, ~385M parameters), and Transformer-based architectures (SCHEMA, ~6M parameters).
+**Background**: Video procedural planning is the task of predicting intermediate action sequences given initial and goal visual states, and is a core capability for applications such as wearable AI assistants. Current SOTA methods include diffusion-based models (PDPP, KEPP, MTID, ~42M–1B parameters), LLM-based models (PlanLLM, ~385M parameters), and Transformer-based architectures (SCHEMA, ~6M parameters).
 
 **Limitations of Prior Work**: All existing methods implicitly encode procedural knowledge in network parameters, requiring models to learn complex procedural structures (e.g., the canonical ordering "place bottom bun → add turkey → add lettuce → place top bun") from large amounts of data. This leads to: (1) low data efficiency—large numbers of training samples are needed to memorize procedural rules; (2) high computational cost—increasingly complex and large models are required; (3) limited generalization—performance degrades sharply at planning horizons shorter than those seen during training.
 
-**Root Cause**: Human procedural planning does not reason from scratch; rather, intrinsic procedural knowledge (action priors, preconditions, canonical orderings, etc.) is naturally integrated into the planning process. Yet even existing methods that employ PKGs use them only as post-processing decoders at inference time, leaving the model unaware of procedural structure during training.
+**Key Challenge**: Human procedural planning does not reason from scratch; rather, intrinsic procedural knowledge (action priors, preconditions, canonical orderings, etc.) is naturally integrated into the planning process. Yet even existing methods that employ PKGs use them only as post-processing decoders at inference time, leaving the model unaware of procedural structure during training.
 
-**Paper Goals**: To elevate the PKG from an inference-time post-processor to a training-time supervisory signal, so that structured priors participate directly in end-to-end optimization.
+**Goal**: To elevate the PKG from an inference-time post-processor to a training-time supervisory signal, so that structured priors participate directly in end-to-end optimization.
 
-**Starting Point**: Procedural planning is formulated as optimal state-sequence decoding in a Hidden Markov Model (HMM), solved via the Viterbi algorithm. The key innovation is replacing the non-differentiable max and argmax operations in Viterbi with differentiable log-sum-exp and softmax relaxations, enabling gradients to flow from the planning loss back to the visual encoder.
+**Key Insight**: Procedural planning is formulated as optimal state-sequence decoding in a Hidden Markov Model (HMM), solved via the Viterbi algorithm. The key innovation is replacing the non-differentiable max and argmax operations in Viterbi with differentiable log-sum-exp and softmax relaxations, enabling gradients to flow from the planning loss back to the visual encoder.
 
 **Core Idea**: Rather than having the network memorize procedures, it is trained only to learn "how well the current visual state matches each action" (emission probabilities), while the plausibility of action orderings is guaranteed by the knowledge graph. The differentiable Viterbi layer makes this division of labor trainable end-to-end.
 

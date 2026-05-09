@@ -30,11 +30,11 @@ The first multi-agent RL framework that performs contact-rich human-human assist
 
 ### Starting Point
 
-**Paper Goals**: **State of the Field**: **Single-person motion tracking methods (PHC, DeepMimic) can already imitate a wide range of human motions**, but are largely limited to non-contact social or isolated movements. Assistive scenarios—such as helping a fallen person rise or caring for a bedridden individual—require continuously perceiving a partner and adapting to their dynamic state, involving close physical contact and force exchange, which is substantially more challenging than non-contact social interactions like high-fives.
+**Goal**: **Background**: **Single-person motion tracking methods (PHC, DeepMimic) can already imitate a wide range of human motions**, but are largely limited to non-contact social or isolated movements. Assistive scenarios—such as helping a fallen person rise or caring for a bedridden individual—require continuously perceiving a partner and adapting to their dynamic state, involving close physical contact and force exchange, which is substantially more challenging than non-contact social interactions like high-fives.
 
 **Limitations of Prior Work**: Prior methods adopt a *kinematic replay* strategy—generating the recipient's motion independently and then training the supporter to react. However, in assistive scenarios, **the recipient is physically incapable of completing the motion independently** (e.g., a person with muscle weakness cannot stand up alone), making this paradigm fundamentally inapplicable. Decoupling the learning of two agents breaks physical consistency.
 
-**Root Cause**: RL training for contact-rich assistive motion is highly unstable—small errors in contact location and force can cause the recipient to lose balance, and severe occlusion in motion capture data introduces significant noise into reference trajectories. A comprehensive set of technical components is therefore required to make MARL viable in physically coupled settings.
+**Key Challenge**: RL training for contact-rich assistive motion is highly unstable—small errors in contact location and force can cause the recipient to lose balance, and severe occlusion in motion capture data introduces significant noise into reference trajectories. A comprehensive set of technical components is therefore required to make MARL viable in physically coupled settings.
 
 ## Method
 

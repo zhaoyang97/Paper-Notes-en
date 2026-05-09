@@ -31,15 +31,15 @@ This paper proposes ACQL (Automaton Constrained Q-Learning), which translates Li
 
 ### Starting Point
 
-**Starting Point**: Real-world robotic tasks require achieving **sequential sub-goals** while adhering to **dynamic safety constraints** (e.g., a warehouse robot must restock shelves in order while avoiding obstacles and remaining within battery range).
+**Key Insight**: Real-world robotic tasks require achieving **sequential sub-goals** while adhering to **dynamic safety constraints** (e.g., a warehouse robot must restock shelves in order while avoiding obstacles and remaining within battery range).
 
 ### Root Cause
 
-**Root Cause**: Goal-conditioned RL (GCRL) can reach individual goals but cannot reason over goal sequences or enforce safety; safe RL can only handle **static** safety constraints.
+**Key Challenge**: Goal-conditioned RL (GCRL) can reach individual goals but cannot reason over goal sequences or enforce safety; safe RL can only handle **static** safety constraints.
 
 ### State of the Field
 
-**State of the Field**: LTL can express complex temporal tasks, but existing LTL+RL methods rely on sparse binary rewards and perform poorly in complex continuous environments.
+**Background**: LTL can express complex temporal tasks, but existing LTL+RL methods rely on sparse binary rewards and perform poorly in complex continuous environments.
 
 ### Limitations of Prior Work
 

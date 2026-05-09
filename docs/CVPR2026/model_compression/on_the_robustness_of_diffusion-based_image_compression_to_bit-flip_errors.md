@@ -29,15 +29,15 @@ This paper presents the first systematic study of bit-flip robustness in diffusi
 
 ## Background & Motivation
 
-1. **State of the Field**: Neural image compression has advanced significantly in recent years, achieving strong perceptual quality at very low bitrates. Diffusion models have emerged as a powerful paradigm for image compression, enabling state-of-the-art rate-distortion-perception trade-offs through end-to-end training, pretrained model reuse, or zero-shot approaches. Representative methods include DDCM, Turbo-DDCM, and DiffC, all RCC-based zero-shot diffusion compression frameworks.
+1. **Background**: Neural image compression has advanced significantly in recent years, achieving strong perceptual quality at very low bitrates. Diffusion models have emerged as a powerful paradigm for image compression, enabling state-of-the-art rate-distortion-perception trade-offs through end-to-end training, pretrained model reuse, or zero-shot approaches. Representative methods include DDCM, Turbo-DDCM, and DiffC, all RCC-based zero-shot diffusion compression frameworks.
 
 2. **Limitations of Prior Work**: Real-world systems are susceptible to bit-flip errors (BFE) caused by transmission noise, hardware degradation, or even adversarial attacks (e.g., rowhammer). Even a small number of bit flips can severely degrade reconstruction quality or render files undecodable. Current practice relies on error-correcting codes (ECC), which increase the size of the compressed representation and worsen rate-distortion performance.
 
-3. **Root Cause**: Optimization of image compression methods has focused almost exclusively on the rate-distortion-perception trade-off, with robustness largely overlooked. Traditional codecs rely on variable-length entropy coding (e.g., Huffman, arithmetic coding), where a single bit error can cause decoding desynchronization and cascading error propagation across all subsequent symbols.
+3. **Key Challenge**: Optimization of image compression methods has focused almost exclusively on the rate-distortion-perception trade-off, with robustness largely overlooked. Traditional codecs rely on variable-length entropy coding (e.g., Huffman, arithmetic coding), where a single bit error can cause decoding desynchronization and cascading error propagation across all subsequent symbols.
 
-4. **Paper Goals**: Can diffusion-based compression simultaneously offer higher compression ratios and stronger robustness? How can bit-flip robustness be further enhanced?
+4. **Goal**: Can diffusion-based compression simultaneously offer higher compression ratios and stronger robustness? How can bit-flip robustness be further enhanced?
 
-5. **Starting Point**: In RCC-based methods, the compressed representation encodes control signals that guide the denoising trajectory rather than pixel values or transform coefficients directly. This indirect representation may inherently tolerate small perturbations—a few bit flips may still produce similar guidance signals and reconstruction trajectories.
+5. **Key Insight**: In RCC-based methods, the compressed representation encodes control signals that guide the denoising trajectory rather than pixel values or transform coefficients directly. This indirect representation may inherently tolerate small perturbations—a few bit flips may still produce similar guidance signals and reconstruction trajectories.
 
 6. **Core Idea**: Replace the joint combinatorial (lexicographic) encoding in Turbo-DDCM with independent encoding of each atom index, so that a single bit flip affects at most one atom rather than the entire subset selection. This trades a marginal increase in BPP for a substantial gain in robustness.
 

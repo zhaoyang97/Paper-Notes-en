@@ -29,15 +29,15 @@ This paper proposes AudioLBM, which compresses audio waveforms into a continuous
 
 ## Background & Motivation
 
-**State of the Field**: Audio super-resolution (SR) aims to upsample low-resolution waveforms to high resolution. Existing approaches include mapping-based methods, GANs, diffusion models, and bridge models. AudioSR is currently the most representative cross-domain any-to-48kHz method, based on a diffusion model operating in a mel-spectrogram latent space. A2SB applies a Schrödinger Bridge in the STFT domain for music bandwidth extension.
+**Background**: Audio super-resolution (SR) aims to upsample low-resolution waveforms to high resolution. Existing approaches include mapping-based methods, GANs, diffusion models, and bridge models. AudioSR is currently the most representative cross-domain any-to-48kHz method, based on a diffusion model operating in a mel-spectrogram latent space. A2SB applies a Schrödinger Bridge in the STFT domain for music bandwidth extension.
 
 **Limitations of Prior Work**: The generation quality of existing methods is constrained by the mismatch between generative priors and the super-resolution task: (1) AudioSR generates high-resolution content from Gaussian noise (noise-to-latent), neglecting the rich prior information in the LR waveform; (2) A2SB treats the high-frequency region in the STFT domain as missing and fills it with Gaussian noise, yielding an equally uninformative prior. Furthermore, all existing methods are bounded by the 48kHz ceiling, whereas professional audio production requires 96kHz or even 192kHz.
 
-**Root Cause**: The LR waveform itself is a highly informative prior for the HR target, yet existing frameworks fail to exploit it effectively. The generation process should be a conditional transformation from LR to HR rather than a generation from noise. Scarcity of high-sampling-rate training data further limits scalability.
+**Key Challenge**: The LR waveform itself is a highly informative prior for the HR target, yet existing frameworks fail to exploit it effectively. The generation process should be a conditional transformation from LR to HR rather than a generation from noise. Scarcity of high-sampling-rate training data further limits scalability.
 
-**Paper Goals**: (1) Design a generative framework that fully leverages LR prior information; (2) Address the scarcity of high-sampling-rate training data; (3) Break through the 48kHz super-resolution ceiling to reach 96kHz and 192kHz.
+**Goal**: (1) Design a generative framework that fully leverages LR prior information; (2) Address the scarcity of high-sampling-rate training data; (3) Break through the 48kHz super-resolution ceiling to reach 96kHz and 192kHz.
 
-**Starting Point**: Directly compress audio waveforms into a continuous latent space (preserving LR prior information) and connect LR and HR latent representations via a bridge model. Frequency-aware training is introduced to enable any-to-any upsampling, and a cascaded design with prior augmentation is employed to surpass the sampling-rate ceiling.
+**Key Insight**: Directly compress audio waveforms into a continuous latent space (preserving LR prior information) and connect LR and HR latent representations via a bridge model. Frequency-aware training is introduced to enable any-to-any upsampling, and a cascaded design with prior augmentation is employed to surpass the sampling-rate ceiling.
 
 **Core Idea**: Replace the noise-to-data diffusion paradigm with a bridge model operating in waveform latent space, complemented by frequency-aware training and a cascaded design for high-quality audio super-resolution.
 

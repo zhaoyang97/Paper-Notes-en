@@ -28,16 +28,16 @@ This paper proposes CogNVS, which decomposes dynamic scene novel-view synthesis 
 
 ## Background & Motivation
 
-**State of the Field**: Dynamic novel-view synthesis from monocular video is an extremely challenging problem. Two main directions exist: (i) test-time optimization of 4D representations (e.g., 4DGS, Shape-of-Motion) — geometrically accurate but requiring hours of computation and failing when novel viewpoints deviate significantly from training views; (ii) large-scale feed-forward video models (GCD, TrajectoryCrafter) — fast but lacking 3D consistency.
+**Background**: Dynamic novel-view synthesis from monocular video is an extremely challenging problem. Two main directions exist: (i) test-time optimization of 4D representations (e.g., 4DGS, Shape-of-Motion) — geometrically accurate but requiring hours of computation and failing when novel viewpoints deviate significantly from training views; (ii) large-scale feed-forward video models (GCD, TrajectoryCrafter) — fast but lacking 3D consistency.
 
 **Limitations of Prior Work**:
    - 4D optimization methods cannot handle occluded regions — they can only synthesize "co-visible" pixels
    - Data-driven methods suffer from over-hallucination — objects appear or disappear abruptly
    - **Multi-view** training data for dynamic scenes is scarce — the best available data source is monocular 2D video
 
-**Root Cause**: 3D reconstruction yields geometrically precise but incomplete renderings; diffusion-based generation yields complete but geometrically inconsistent results.
+**Key Challenge**: 3D reconstruction yields geometrically precise but incomplete renderings; diffusion-based generation yields complete but geometrically inconsistent results.
 
-**Starting Point**: Disentanglement — co-visible pixels are rendered via 3D reconstruction (accurate), while occluded pixels are generated via video diffusion inpainting (creative).
+**Key Insight**: Disentanglement — co-visible pixels are rendered via 3D reconstruction (accurate), while occluded pixels are generated via video diffusion inpainting (creative).
 
 **Core Idea**: CogNVS is a conditional video inpainting diffusion model that generates only occluded regions while preserving known regions. During training, 2D video self-supervision is used (randomly sampled camera trajectories construct co-visibility masks as training pairs); at test time, test-time finetuning (TTF) adapts the model to the target video.
 

@@ -27,15 +27,15 @@ content_hash: f34aaa93aa9a0ef1
 This paper proposes AutoFly, an end-to-end VLA model for UAV autonomous navigation in the wild. It infers spatial information from RGB inputs via a pseudo-depth encoder, and is trained on a newly constructed autonomous navigation dataset (13K+ trajectories including 1K real flights). AutoFly achieves 3.9% higher success rate and 2.6% lower collision rate than OpenVLA in both simulated and real environments.
 
 ## Background & Motivation
-**State of the Field**: UAV Vision-Language Navigation (VLN) primarily relies on detailed step-by-step instructions to fly along predefined routes, performing well in controlled environments.
+**Background**: UAV Vision-Language Navigation (VLN) primarily relies on detailed step-by-step instructions to fly along predefined routes, performing well in controlled environments.
 
 **Limitations of Prior Work**: Real-world outdoor exploration takes place in unknown environments where detailed navigation instructions are unavailable; only coarse-grained directional or positional guidance can be provided. Existing methods assume complete environmental knowledge and detailed instructions, which does not hold in practice. Furthermore, existing datasets overemphasize instruction following rather than autonomous decision-making and lack real-world data.
 
-**Root Cause**: VLA approaches designed for 2D ground robots are ill-suited for UAV navigation in 3D space—UAVs require accurate depth estimation, omnidirectional obstacle avoidance, and altitude control, capabilities that RGB-only spatial reasoning cannot adequately support.
+**Key Challenge**: VLA approaches designed for 2D ground robots are ill-suited for UAV navigation in 3D space—UAVs require accurate depth estimation, omnidirectional obstacle avoidance, and altitude control, capabilities that RGB-only spatial reasoning cannot adequately support.
 
-**Paper Goals**: Enable UAVs to perform autonomous navigation, obstacle avoidance, and target recognition given only coarse-grained guidance (e.g., "fly toward that tree").
+**Goal**: Enable UAVs to perform autonomous navigation, obstacle avoidance, and target recognition given only coarse-grained guidance (e.g., "fly toward that tree").
 
-**Starting Point**: Introduce a pseudo-depth encoder to enhance spatial understanding without additional depth sensors, and construct a navigation dataset that emphasizes autonomous behavior modeling.
+**Key Insight**: Introduce a pseudo-depth encoder to enhance spatial understanding without additional depth sensors, and construct a navigation dataset that emphasizes autonomous behavior modeling.
 
 **Core Idea**: Augment a VLA model with pseudo-depth and a dedicated autonomous navigation dataset to elevate UAVs from instruction following to autonomous navigation.
 

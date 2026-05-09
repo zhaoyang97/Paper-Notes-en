@@ -29,15 +29,15 @@ This paper identifies and addresses the motion bias problem in video DPO — by 
 
 ## Background & Motivation
 
-**State of the Field**: Direct Preference Optimization (DPO) has been successfully applied to post-training alignment of image diffusion models and is beginning to be transferred to video diffusion models. The standard pipeline generates two videos from independent noise, collects human preference annotations, and optimizes the model with a DPO loss.
+**Background**: Direct Preference Optimization (DPO) has been successfully applied to post-training alignment of image diffusion models and is beginning to be transferred to video diffusion models. The standard pipeline generates two videos from independent noise, collects human preference annotations, and optimizes the model with a DPO loss.
 
 **Limitations of Prior Work**: Directly transferring image DPO to video exposes a fundamental and previously overlooked flaw — **motion bias**. Since current video models excel at generating high-quality slow-motion videos but frequently produce artifacts in dynamic scenes, annotators systematically prefer static yet clean videos over dynamic but artifact-prone ones when the two are sampled from independent noise. After DPO training, the model further learns that "less motion = better," resulting in a significant drop in motion intensity. This phenomenon has been repeatedly observed at Snap and in multiple prior works.
 
-**Root Cause**: Video quality is multi-dimensional — visual quality and motion intensity are often negatively correlated. When annotators are asked to assign a single binary preference to an entire video, these dimensions become inevitably entangled. Moreover, human preference judgments over long videos (e.g., 5 seconds) are imprecise — artifacts may only appear in certain temporal segments, but a global label cannot capture such fine-grained distinctions.
+**Key Challenge**: Video quality is multi-dimensional — visual quality and motion intensity are often negatively correlated. When annotators are asked to assign a single binary preference to an entire video, these dimensions become inevitably entangled. Moreover, human preference judgments over long videos (e.g., 5 seconds) are imprecise — artifacts may only appear in certain temporal segments, but a global label cannot capture such fine-grained distinctions.
 
-**Paper Goals**: (1) Eliminate motion bias in video DPO; (2) Obtain more precise temporally fine-grained preference signals; (3) Reduce the cost of video preference annotation.
+**Goal**: (1) Eliminate motion bias in video DPO; (2) Obtain more precise temporally fine-grained preference signals; (3) Reduce the cost of video preference annotation.
 
-**Starting Point**: Drawing on Pareto optimization — to optimize across multiple objectives, one should fix certain attributes and vary others. Specifically, inspired by SDEdit, the method generates video pairs with similar structure (motion-aligned) but differing local details by adding noise to GT videos and then denoising.
+**Key Insight**: Drawing on Pareto optimization — to optimize across multiple objectives, one should fix certain attributes and vary others. Specifically, inspired by SDEdit, the method generates video pairs with similar structure (motion-aligned) but differing local details by adding noise to GT videos and then denoising.
 
 **Core Idea**: Use guided sampling to hold motion invariant, annotate dense preferences at the temporal segment level, and allow DPO to optimize only visual quality without harming motion.
 

@@ -27,15 +27,15 @@ content_hash: 9044469f2daad3ab
 TongUI proposes a framework that automatically converts multimodal web tutorials (videos and illustrated articles) into GUI operation trajectories, constructing the million-scale GUI-Net-1M dataset for fine-tuning Qwen2.5-VL. The resulting models surpass or approach state-of-the-art methods such as UI-TARS across multiple grounding and navigation benchmarks.
 
 ## Background & Motivation
-**State of the Field**: GUI agents are a trending research direction that leverages LLMs/VLMs to simulate human interaction with computers and mobile devices, executing operations such as clicking, form filling, and scrolling to complete tasks.
+**Background**: GUI agents are a trending research direction that leverages LLMs/VLMs to simulate human interaction with computers and mobile devices, executing operations such as clicking, form filling, and scrolling to complete tasks.
 
 **Limitations of Prior Work**: Training high-quality GUI agents requires large-scale operation trajectory data. Existing data acquisition approaches either rely on costly human annotation (high quality but limited scale) or large-model synthesis (insufficient quality and diversity).
 
-**Root Cause**: An ideal GUI agent must generalize across diverse operating systems and applications, yet existing datasets suffer from bottlenecks in scale, platform coverage, and application diversity. Even the largest open-source dataset, AITW, contains only 715K trajectories and covers Android exclusively.
+**Key Challenge**: An ideal GUI agent must generalize across diverse operating systems and applications, yet existing datasets suffer from bottlenecks in scale, platform coverage, and application diversity. Even the largest open-source dataset, AITW, contains only 715K trajectories and covers Android exclusively.
 
-**Paper Goals**: To obtain large-scale, high-quality, cross-platform GUI operation trajectory data at low cost.
+**Goal**: To obtain large-scale, high-quality, cross-platform GUI operation trajectory data at low cost.
 
-**Starting Point**: The authors observe that the internet hosts an abundance of multimodal GUI tutorials (YouTube videos, WikiHow illustrated articles) that naturally contain step-by-step GUI operation guidance, requiring only a well-designed conversion pipeline to transform them into training data.
+**Key Insight**: The authors observe that the internet hosts an abundance of multimodal GUI tutorials (YouTube videos, WikiHow illustrated articles) that naturally contain step-by-step GUI operation guidance, requiring only a well-designed conversion pipeline to transform them into training data.
 
 **Core Idea**: Automatically convert multimodal web tutorials into GUI operation trajectories to construct a million-scale, cross-platform training dataset.
 

@@ -29,7 +29,7 @@ This paper proposes a likelihood estimation framework that generalizes the class
 
 ## Background & Motivation
 
-**State of the Field**: Negative log-likelihood (NLL) is a fundamental metric for evaluating density estimation and generative models, with applications in data compression, anomaly detection, and adversarial purification. Diffusion models represent one of the current state-of-the-art likelihood models: variance-preserving (VP) models are trained via the ELBO, while variance-exploding (VE) models directly estimate likelihood using information-theoretic tools.
+**Background**: Negative log-likelihood (NLL) is a fundamental metric for evaluating density estimation and generative models, with applications in data compression, anomaly detection, and adversarial purification. Diffusion models represent one of the current state-of-the-art likelihood models: variance-preserving (VP) models are trained via the ELBO, while variance-exploding (VE) models directly estimate likelihood using information-theoretic tools.
 
 **Limitations of Prior Work**:
    - The ELBO for VP models achieves strong performance but converges slowly (requiring millions of iterations).
@@ -37,11 +37,11 @@ This paper proposes a likelihood estimation framework that generalizes the class
    - As $\sigma_t^2 \to 0$, the diverging SNR causes numerical instability in diffusion models; in practice, training starts from $t = \epsilon > 0$, introducing a train-test mismatch.
    - Discrete data (e.g., images) requires dequantization (uniform or variational), which introduces additional training stages and noise mismatch.
 
-**Root Cause**: Score matching (Fisher divergence) is exactly equivalent to MLE only when $\sigma_t^2 \to 0$; under finite noise, a bias exists. Meanwhile, numerical instability arises near $t = 0$.
+**Key Challenge**: Score matching (Fisher divergence) is exactly equivalent to MLE only when $\sigma_t^2 \to 0$; under finite noise, a bias exists. Meanwhile, numerical instability arises near $t = 0$.
 
-**Paper Goals**: Obtain tighter likelihood bounds without increasing training cost, eliminate the train-test gap, and support non-Gaussian noise.
+**Goal**: Obtain tighter likelihood bounds without increasing training cost, eliminate the train-test gap, and support non-Gaussian noise.
 
-**Starting Point**: The diffusion process is viewed as a Gaussian channel; mismatched entropy is introduced to characterize the model-data discrepancy, and a low-variance non-Gaussian warm-start noise interval is incorporated.
+**Key Insight**: The diffusion process is viewed as a Gaussian channel; mismatched entropy is introduced to characterize the model-data discrepancy, and a low-variance non-Gaussian warm-start noise interval is incorporated.
 
 **Core Idea**: The relationship between score matching and KL divergence is generalized from Gaussian to arbitrary isotropic noise (Theorem 1), combined with warm-start noise injection to unify training and evaluation.
 

@@ -29,15 +29,15 @@ L2GTX is proposed as a fully model-agnostic local-to-global explanation method f
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning achieves high accuracy in time series classification (finance, sensors, medical ECG), yet operates as a black box, undermining trust and regulatory compliance.
+**Background**: Deep learning achieves high accuracy in time series classification (finance, sensors, medical ECG), yet operates as a black box, undermining trust and regulatory compliance.
 
 **Limitations of Prior Work**: (1) Image/tabular XAI methods such as LIME/SHAP treat each time step as an independent feature, ignoring temporal dependencies; (2) global explanation synthesis for time series remains largely unexplored; (3) the few existing global methods (CAM/LRP-based) are architecture-specific and lack generality.
 
-**Root Cause**: The temporal position, duration, and amplitude of time series events vary substantially across instances, so directly aggregating local explanations introduces heavy redundancy and loses temporal structural information.
+**Key Challenge**: The temporal position, duration, and amplitude of time series events vary substantially across instances, so directly aggregating local explanations introduces heavy redundancy and loses temporal structural information.
 
-**Paper Goals**: Generate class-level global explanations for arbitrary black-box time series classifiers while preserving faithfulness and compactness.
+**Goal**: Generate class-level global explanations for arbitrary black-box time series classifiers while preserving faithfulness and compactness.
 
-**Starting Point**: Parameterized event primitives (PEPs) serve as semantic units, enabling structured local-to-global aggregation via hierarchical clustering merging, greedy selection, and attribute statistics.
+**Key Insight**: Parameterized event primitives (PEPs) serve as semantic units, enabling structured local-to-global aggregation via hierarchical clustering merging, greedy selection, and attribute statistics.
 
 **Core Idea**: Replace time-step attributions with event primitives such as "increasing trend / decreasing trend / local extrema," endowing time series explanations with behavioral semantics.
 

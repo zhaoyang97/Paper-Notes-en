@@ -24,15 +24,15 @@ HeLa-Mem proposes a neuroscience-inspired memory architecture for LLM agents tha
 
 ## Background & Motivation
 
-**State of the Field**: Long-term memory for LLM agents is a critical challenge — fixed context windows cannot maintain coherence across extended interactions. Existing memory systems represent conversation history as unstructured embedding vectors and retrieve information via semantic similarity.
+**Background**: Long-term memory for LLM agents is a critical challenge — fixed context windows cannot maintain coherence across extended interactions. Existing memory systems represent conversation history as unstructured embedding vectors and retrieve information via semantic similarity.
 
 **Limitations of Prior Work**: (1) Embedding-based retrieval fails to capture the associative structure found in human memory, where related experiences gradually strengthen connections through repeated co-activation; (2) Existing methods independently optimize a single dimension (structure/retrieval/update), neglecting their interactions; (3) More fundamentally, the dynamic evolution of memory is ignored — current systems treat storage and retrieval as separate static processes, unable to capture continuously reorganizing inter-memory connectivity.
 
-**Root Cause**: Semantic similarity captures only surface-level associations, whereas associations in human memory run deeper — a topic discussed today may trigger a memory from a month ago not because of superficial keyword overlap, but because both belong to the same evolving narrative.
+**Key Challenge**: Semantic similarity captures only surface-level associations, whereas associations in human memory run deeper — a topic discussed today may trigger a memory from a month ago not because of superficial keyword overlap, but because both belong to the same evolving narrative.
 
-**Paper Goals**: To construct an LLM agent memory architecture that emulates three mechanisms found in biological memory: association, consolidation, and spreading activation.
+**Goal**: To construct an LLM agent memory architecture that emulates three mechanisms found in biological memory: association, consolidation, and spreading activation.
 
-**Starting Point**: Drawing on the Hebbian learning principle ("neurons that fire together, wire together") and the dual-system theory of episodic-semantic memory.
+**Key Insight**: Drawing on the Hebbian learning principle ("neurons that fire together, wire together") and the dual-system theory of episodic-semantic memory.
 
 **Core Idea**: Dynamic graph representation of episodic memory driven by Hebbian learning dynamics + semantic memory generated through reflective distillation + dual-pathway spreading activation retrieval.
 

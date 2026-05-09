@@ -27,15 +27,15 @@ content_hash: b28014ed11bacd57
 This paper introduces RealMath, a **continuously refreshable** benchmark that automatically extracts verifiable mathematics problems from arXiv papers and Math StackExchange, designed to evaluate LLMs on real-world research-level mathematical tasks.
 
 ## Background & Motivation
-**State of the Field**: Existing mathematical reasoning benchmarks primarily draw from three categories: (1) curriculum/competition problems (GSM8K, MATH, AIME, IMO); (2) formal theorem proving (LeanDojo, MiniF2F); (3) expert-curated extremely difficult problems (FrontierMath, HLE).
+**Background**: Existing mathematical reasoning benchmarks primarily draw from three categories: (1) curriculum/competition problems (GSM8K, MATH, AIME, IMO); (2) formal theorem proving (LeanDojo, MiniF2F); (3) expert-curated extremely difficult problems (FrontierMath, HLE).
 
 **Limitations of Prior Work**: These benchmarks cover only a narrow slice of mathematical practice — competition mathematics ≠ research mathematics; formal proofs ≠ day-to-day mathematical research; extremely hard problems address only the frontier capabilities of human experts.
 
-**Root Cause**: Problems encountered in real mathematical research differ fundamentally from competition problems in structure, topic, and difficulty, yet existing benchmarks fail to reflect the practical value of LLMs as assistants in authentic research settings.
+**Key Challenge**: Problems encountered in real mathematical research differ fundamentally from competition problems in structure, topic, and difficulty, yet existing benchmarks fail to reflect the practical value of LLMs as assistants in authentic research settings.
 
-**Paper Goals**: Construct a mathematical reasoning benchmark that reflects real research practice, supports automatic evaluation, and can be continuously refreshed to resist data contamination.
+**Goal**: Construct a mathematical reasoning benchmark that reflects real research practice, supports automatic evaluation, and can be continuously refreshed to resist data contamination.
 
-**Starting Point**: Automatically extract mathematical theorems with definitive answers from arXiv papers and StackExchange, and convert them into QA pairs.
+**Key Insight**: Automatically extract mathematical theorems with definitive answers from arXiv papers and StackExchange, and convert them into QA pairs.
 
 **Core Idea**: An automated pipeline extracts "constructive theorems" (those with unique, exact answers) from academic papers, serving as a continuously refreshable benchmark for evaluating LLMs on research-level mathematics.
 

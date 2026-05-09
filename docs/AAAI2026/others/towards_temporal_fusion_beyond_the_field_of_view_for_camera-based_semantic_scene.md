@@ -28,15 +28,15 @@ This paper proposes C3DFusion, a module that explicitly aligns point features fr
 
 ## Background & Motivation
 
-**State of the Field**: 3D Semantic Scene Completion (SSC) is a core perception task in autonomous driving, requiring simultaneous reconstruction of 3D geometry and semantic label prediction for each voxel. Compared to expensive LiDAR-based approaches, camera-based methods have advanced rapidly in recent years, progressively closing the performance gap. Most recent methods have begun leveraging temporal information to enhance current-frame features.
+**Background**: 3D Semantic Scene Completion (SSC) is a core perception task in autonomous driving, requiring simultaneous reconstruction of 3D geometry and semantic label prediction for each voxel. Compared to expensive LiDAR-based approaches, camera-based methods have advanced rapidly in recent years, progressively closing the performance gap. Most recent methods have begun leveraging temporal information to enhance current-frame features.
 
 **Limitations of Prior Work**: Existing temporal fusion methods (e.g., HTCL-S, Hi-SOP, CVT-Occ) primarily focus on enhancing regions within the current camera field of view, while neglecting blind spots outside the field of view—areas typically located near the sides of the ego vehicle that are critical for safe driving. Historical frames contain rich contextual information about these regions, yet existing methods fail to exploit it effectively.
 
-**Root Cause**: The potential of temporal fusion lies in providing spatial information beyond the current field of view; however, most methods perform fusion in 2D feature space or BEV space, making it difficult to naturally transfer out-of-view information from historical frames into the current frame's 3D space. Meanwhile, direct fusion in 3D space faces geometric inconsistency caused by depth estimation errors.
+**Key Challenge**: The potential of temporal fusion lies in providing spatial information beyond the current field of view; however, most methods perform fusion in 2D feature space or BEV space, making it difficult to naturally transfer out-of-view information from historical frames into the current frame's 3D space. Meanwhile, direct fusion in 3D space faces geometric inconsistency caused by depth estimation errors.
 
-**Paper Goals**: (1) How to effectively leverage historical frame information to complete out-of-view regions in the current frame; (2) How to mitigate noise from depth estimation errors during temporal fusion in 3D space.
+**Goal**: (1) How to effectively leverage historical frame information to complete out-of-view regions in the current frame; (2) How to mitigate noise from depth estimation errors during temporal fusion in 3D space.
 
-**Starting Point**: The authors observe that depth estimation errors are larger for distant points in historical frames, and that current-frame points may be "diluted" by historical-frame points during temporal aggregation. Two complementary techniques are thus proposed to address these issues.
+**Key Insight**: The authors observe that depth estimation errors are larger for distant points in historical frames, and that current-frame points may be "diluted" by historical-frame points during temporal aggregation. Two complementary techniques are thus proposed to address these issues.
 
 **Core Idea**: Directly align historical and current frame features in 3D point feature space, achieving high-quality out-of-view temporal fusion through depth-aware feature attenuation and current-frame point cloud densification.
 

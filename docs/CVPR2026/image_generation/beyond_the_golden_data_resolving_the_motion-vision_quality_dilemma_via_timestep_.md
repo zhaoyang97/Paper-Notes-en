@@ -27,13 +27,13 @@ content_hash: feada004f288b567
 This paper identifies a "Motion-Vision Quality Dilemma" where motion quality (MQ) and visual quality (VQ) are negatively correlated in video data. Through gradient analysis, it reveals that imbalanced data can produce equivalent learning signals at appropriate timesteps. The proposed TQD framework enables training on imbalanced data to surpass training on "golden data."
 
 ## Background & Motivation
-**State of the Field**: Video generation models (e.g., CogVideoX, Wan-T2V) rely on "golden data" that possesses both high visual quality (VQ) and high motion quality (MQ). However, such data is **statistically scarce**.
+**Background**: Video generation models (e.g., CogVideoX, Wan-T2V) rely on "golden data" that possesses both high visual quality (VQ) and high motion quality (MQ). However, such data is **statistically scarce**.
 
-**Root Cause**—Motion-Vision Quality Dilemma: Analysis on Koala36M reveals a **negative correlation** between MQ and VQ ($r=-0.2419$). High-VQ data tends to be static (low MQ), while high-MQ data tends to have artifacts (low VQ). Only 21.9% of data satisfies both high standards simultaneously.
+**Key Challenge**—Motion-Vision Quality Dilemma: Analysis on Koala36M reveals a **negative correlation** between MQ and VQ ($r=-0.2419$). High-VQ data tends to be static (low MQ), while high-MQ data tends to have artifacts (low VQ). Only 21.9% of data satisfies both high standards simultaneously.
 
 **Limitations of Prior Work**: Existing practices use strict filtering to retain only golden data—discarding a vast amount of videos that excel in only one dimension, leading to severe data waste.
 
-**Starting Point**: Shifting the perspective from "which data to keep" to "how to use imperfect data more effectively."
+**Key Insight**: Shifting the perspective from "which data to keep" to "how to use imperfect data more effectively."
 
 **Core Idea**: The denoising process of diffusion models is **hierarchical**—high-noise timesteps establish motion and composition, while low-noise timesteps refine detailed textures. Gradient analysis confirms: VQ-degraded data produces gradients close to golden data at high timesteps, and MQ-degraded data produces gradients close to golden data at low timesteps.
 

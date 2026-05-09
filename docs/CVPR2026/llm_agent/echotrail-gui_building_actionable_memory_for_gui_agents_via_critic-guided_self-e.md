@@ -29,9 +29,9 @@ EchoTrail-GUI proposes a three-stage closed-loop framework: an exploration agent
 
 ## Background & Motivation
 
-**State of the Field**: VLM-driven GUI agents can already parse GUI screenshots and execute multi-step operations such as tapping, scrolling, and typing. However, current agents universally suffer from "digital amnesia"—each task is processed independently, with no ability to accumulate or reuse operational experience, leading to repeated mistakes and poor generalization.
+**Background**: VLM-driven GUI agents can already parse GUI screenshots and execute multi-step operations such as tapping, scrolling, and typing. However, current agents universally suffer from "digital amnesia"—each task is processed independently, with no ability to accumulate or reuse operational experience, leading to repeated mistakes and poor generalization.
 
-**Root Cause**: (1) **Experience acquisition bottleneck**—high-quality interaction trajectories are foundational to GUI agents, yet manual annotation is costly and unscalable, while unguided autonomous exploration produces large quantities of noisy and incoherent trajectories; (2) **Knowledge application gap**—even when a trajectory repository exists, most agents still rely on static prompts or hand-crafted examples, unable to dynamically retrieve and leverage historical experience for the current task.
+**Key Challenge**: (1) **Experience acquisition bottleneck**—high-quality interaction trajectories are foundational to GUI agents, yet manual annotation is costly and unscalable, while unguided autonomous exploration produces large quantities of noisy and incoherent trajectories; (2) **Knowledge application gap**—even when a trajectory repository exists, most agents still rely on static prompts or hand-crafted examples, unable to dynamically retrieve and leverage historical experience for the current task.
 
 **Limitations of Prior Work**: Synthesizing trajectories from videos or tutorials (AgentTrek) is constrained by data source coverage; autonomous exploration (GUI-explorer) lacks trajectory quality control; RAG-GUI relies on external knowledge bases but lacks high-quality self-built experience.
 

@@ -27,16 +27,16 @@ content_hash: 456c2372604d18cc
 This paper proposes ANQ (Adaptive Neighborhood-constrained Q learning), which introduces advantage-function-based adaptive neighborhood constraints for offline RL. ANQ offers a flexible middle ground between density constraints (overly conservative) and support constraints (requiring precise behavior policy modeling), and realizes efficient Q learning via a bilevel optimization framework, achieving state-of-the-art performance on the D4RL benchmark.
 
 ## Background & Motivation
-**State of the Field**: Offline RL learns policies from static datasets. The central challenge is extrapolation error and Q-value overestimation caused by out-of-distribution (OOD) actions. Existing methods mitigate this by constraining action selection, but each approach has its own limitations.
+**Background**: Offline RL learns policies from static datasets. The central challenge is extrapolation error and Q-value overestimation caused by out-of-distribution (OOD) actions. Existing methods mitigate this by constraining action selection, but each approach has its own limitations.
 
 **Systematic Analysis of Three Constraint Categories**:
 - **Density constraints** (BRAC/TD3BC/CQL): Require the learned policy's probability density to be close to the behavior policy. Direct but overly conservative—even when the dataset contains near-optimal behaviors, if the overall quality of the behavior policy is poor, the learned policy remains highly suboptimal. Theoretically, policy performance is bounded by the overall quality of the behavior policy $\eta(\pi_\beta)$.
 - **Support constraints** (BCQ/BEAR/SPOT): Only require actions to lie within the support of the behavior policy distribution. Theoretically the most permissive, but require precise modeling of the behavior policy via CVAEs, diffusion models, etc., which is computationally expensive and difficult on high-dimensional, multimodal real-world data.
 - **Sample constraints** (IQL/XQL/SQL): Bellman targets use only actions already present in the dataset. Simple to implement but unable to generalize beyond the dataset; overly conservative when near-optimal actions are absent.
 
-**Root Cause**: Density and sample constraints are too conservative and limit policy improvement; support constraints are the most flexible but incur high modeling costs. A gap between flexibility and implementation complexity remains unfilled.
+**Key Challenge**: Density and sample constraints are too conservative and limit policy improvement; support constraints are the most flexible but incur high modeling costs. A gap between flexibility and implementation complexity remains unfilled.
 
-**Starting Point**: Using the union of neighborhoods around dataset actions as the constraint set allows exploration of better actions near data points (more flexible than sample constraints) without requiring explicit behavior policy modeling (simpler than support constraints), and can theoretically approximate support constraints.
+**Key Insight**: Using the union of neighborhoods around dataset actions as the constraint set allows exploration of better actions near data points (more flexible than sample constraints) without requiring explicit behavior policy modeling (simpler than support constraints), and can theoretically approximate support constraints.
 
 **Core Idea**: Replace behavior policy modeling with adaptive neighborhoods around data points, enabling per-point conservatism adjustment in offline Q learning.
 

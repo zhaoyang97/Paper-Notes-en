@@ -29,15 +29,15 @@ This paper proposes a dual-objective training framework combining Logit-Adjusted
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning has achieved strong aggregate performance on CT diagnosis, yet aggregate metrics obscure uneven model behavior across patient subgroups.
+**Background**: Deep learning has achieved strong aggregate performance on CT diagnosis, yet aggregate metrics obscure uneven model behavior across patient subgroups.
 
 **Limitations of Prior Work**: Class imbalance and demographic underrepresentation frequently co-occur in clinical data. For example, squamous cell carcinoma has only 84 training samples, of which only 5 are female. Standard training causes the model to learn disease features almost entirely from male samples.
 
-**Root Cause**: Logit adjustment corrects for class-frequency bias but is agnostic to group labels, while CVaR balances group-level losses but is agnostic to class structure. Neither alone can address the true risk intersection (female + squamous cell carcinoma).
+**Key Challenge**: Logit adjustment corrects for class-frequency bias but is agnostic to group labels, while CVaR balances group-level losses but is agnostic to class structure. Neither alone can address the true risk intersection (female + squamous cell carcinoma).
 
-**Paper Goals**: Design a unified training objective that simultaneously addresses class imbalance and demographic unfairness.
+**Goal**: Design a unified training objective that simultaneously addresses class imbalance and demographic unfairness.
 
-**Starting Point**: The two mechanisms operate along orthogonal axes — logit adjustment governs sample-level gradient direction (class axis), while CVaR governs group-level gradient magnitude (demographic axis).
+**Key Insight**: The two mechanisms operate along orthogonal axes — logit adjustment governs sample-level gradient direction (class axis), while CVaR governs group-level gradient magnitude (demographic axis).
 
 **Core Idea**: The combination of Logit Adjustment and CVaR constitutes the minimal objective that is simultaneously sensitive to both the class axis and the demographic axis.
 

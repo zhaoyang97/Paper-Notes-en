@@ -36,11 +36,11 @@ This paper proposes WISER, a training-free zero-shot composed image retrieval (Z
    - **T2I Paradigm** (Text-to-Image retrieval): Converts the reference image into a text caption, combines it with the modification text to generate an edited description, and retrieves using text embeddings. Excels at complex semantic modifications but loses fine-grained visual details.
    - **I2I Paradigm** (Image-to-Image retrieval): Directly edits the reference image using an image editing model and retrieves using image embeddings. Better preserves visual details but struggles with complex compositional edits or ambiguous intent.
 
-**Root Cause**: Real-world query intents are diverse; a single paradigm is insufficient. Existing fusion methods (e.g., CIG, IP-CIR) suffer from two critical deficiencies:
+**Key Challenge**: Real-world query intents are diverse; a single paradigm is insufficient. Existing fusion methods (e.g., CIG, IP-CIR) suffer from two critical deficiencies:
    - **Lack of intent-awareness**: Static fixed-weight fusion cannot adapt to varying query intents.
    - **Lack of uncertainty-awareness**: The reliability differences among candidate results from each branch are ignored.
 
-**Paper Goals**: Design an iterative "retrieve→verify→refine" closed loop that uses a VLM verifier to assess candidate quality, triggering structured self-reflective refinement for uncertain results and adaptive multi-level fusion for reliable results. The entire pipeline is training-free and modular.
+**Goal**: Design an iterative "retrieve→verify→refine" closed loop that uses a VLM verifier to assess candidate quality, triggering structured self-reflective refinement for uncertain results and adaptive multi-level fusion for reliable results. The entire pipeline is training-free and modular.
 
 ## Method
 

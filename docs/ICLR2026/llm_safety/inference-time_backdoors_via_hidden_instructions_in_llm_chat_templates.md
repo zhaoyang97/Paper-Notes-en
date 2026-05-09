@@ -28,13 +28,13 @@ This paper exposes LLM chat templates (Jinja2) as a novel inference-time backdoo
 
 ## Background & Motivation
 
-**State of the Field**: Existing backdoor research on open-source LLMs focuses on training-time attacks (data poisoning / weight modification) and infrastructure attacks (system prompt manipulation). Chat templates are Jinja2 programs executed at every inference step, formatting user inputs into the token sequences expected by the model.
+**Background**: Existing backdoor research on open-source LLMs focuses on training-time attacks (data poisoning / weight modification) and infrastructure attacks (system prompt manipulation). Chat templates are Jinja2 programs executed at every inference step, formatting user inputs into the token sequences expected by the model.
 
 **Limitations of Prior Work**: (1) Training-time attacks require access to the training pipeline; (2) infrastructure attacks require deployment-level control; (3) chat templates are treated as configuration files rather than security-sensitive code — no tooling exists to analyze their content; (4) over 180,000 quantized models are hosted on HuggingFace, most packaged by third parties.
 
-**Root Cause**: Templates occupy a privileged position in the inference pipeline (between user input and model processing) yet are entirely exempt from security auditing. An attacker need only modify the template and redistribute the GGUF file.
+**Key Challenge**: Templates occupy a privileged position in the inference pipeline (between user input and model processing) yet are entirely exempt from security auditing. An attacker need only modify the template and redistribute the GGUF file.
 
-**Starting Point**: Exploit Jinja2's conditional branching to embed trigger detection and instruction injection within the template — injecting hidden instructions into the system context when a trigger phrase is present, and behaving identically to the clean template otherwise.
+**Key Insight**: Exploit Jinja2's conditional branching to embed trigger detection and instruction injection within the template — injecting hidden instructions into the system context when a trigger phrase is present, and behaving identically to the clean template otherwise.
 
 ## Method
 

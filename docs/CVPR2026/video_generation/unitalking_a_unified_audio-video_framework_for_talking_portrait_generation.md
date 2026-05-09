@@ -29,7 +29,7 @@ UniTalking is proposed as an end-to-end talking portrait generation framework bu
 ## Background & Motivation
 Talking portrait generation requires simultaneously producing visually realistic video with precisely synchronized lip movements and natural speech — in the real world, audio and video constitute a synchronous, inseparable perceptual whole.
 
-**Root Cause**:
+**Key Challenge**:
 
 **Closed-source vs. Open-source**: Closed-source models such as Veo3 and Sora2 have demonstrated remarkable audio-video consistency, yet their architectures and training procedures remain entirely inaccessible, precluding academic reproduction.
 
@@ -40,7 +40,7 @@ Talking portrait generation requires simultaneously producing visually realistic
 - Universe-1: concatenates pretrained unimodal models, but inter-model alignment remains insufficiently fine-grained.
 - OVI/OmniTalker: dual-stream with dedicated fusion blocks, but not optimized for the talking portrait scenario.
 
-**Starting Point**: The paper designs a symmetric dual-stream architecture (video stream inheriting Wan2.2 pretrained weights; audio stream as an "identical twin"), with the core innovation being joint attention within the Multi-Modal Transformer Block to directly model temporal correspondences between audio and video tokens. A multi-task training strategy (T2AV + TV2A + TI2AV + TR2AV) further constrains audio-video alignment from multiple perspectives.
+**Key Insight**: The paper designs a symmetric dual-stream architecture (video stream inheriting Wan2.2 pretrained weights; audio stream as an "identical twin"), with the core innovation being joint attention within the Multi-Modal Transformer Block to directly model temporal correspondences between audio and video tokens. A multi-task training strategy (T2AV + TV2A + TI2AV + TR2AV) further constrains audio-video alignment from multiple perspectives.
 
 ## Method
 

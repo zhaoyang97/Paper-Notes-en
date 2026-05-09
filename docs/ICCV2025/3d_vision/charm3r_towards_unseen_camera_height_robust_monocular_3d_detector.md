@@ -31,7 +31,7 @@ Through mathematical proof that regression-based depth and ground-plane depth ex
 
 ### Limitations of Prior Work
 
-**State of the Field**: Monocular 3D detection is critical for autonomous driving, yet existing models suffer severe performance degradation when training and inference are conducted at different camera heights:
+**Background**: Monocular 3D detection is critical for autonomous driving, yet existing models suffer severe performance degradation when training and inference are conducted at different camera heights:
 
 **Practical urgency**: Camera heights vary substantially across autonomous driving platforms (small robots, sedans, trucks), but nearly all training data is collected at a specific height (e.g., sedan level), making re-collection and annotation for each height infeasible.
 

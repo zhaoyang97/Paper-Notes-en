@@ -33,9 +33,9 @@ The Optimal Power Flow (OPF) problem is one of the most fundamental optimization
 
 **Limitations of Prior Work**: Traditional OPF solvers (e.g., Newton-Raphson, IPOPT interior-point methods) face significant challenges in scalability and computational efficiency. As grid size grows (more buses and transmission lines) and renewable energy penetration introduces increased variability, computational complexity escalates dramatically, making real-time dispatch infeasible. AC OPF is further complicated by the nonlinearity of power flow equations, rendering it a non-convex optimization problem that is considerably harder to solve than the linearized DC OPF.
 
-**Root Cause**: Real-time grid management requires millisecond-level response, whereas traditional AC OPF solvers may take seconds or even minutes on large-scale networks. Early MLP-based approaches improved speed but failed to exploit the graph topology of the grid, limiting their accuracy and generalization.
+**Key Challenge**: Real-time grid management requires millisecond-level response, whereas traditional AC OPF solvers may take seconds or even minutes on large-scale networks. Early MLP-based approaches improved speed but failed to exploit the graph topology of the grid, limiting their accuracy and generalization.
 
-**Starting Point**: Power networks are inherently graph-structured — buses are nodes, transmission lines are edges, and the admittance matrix encodes the electrical coupling between nodes. This structure aligns naturally with the message-passing mechanism of GNNs, which aggregate neighborhood information to model inter-node electrical interactions.
+**Key Insight**: Power networks are inherently graph-structured — buses are nodes, transmission lines are edges, and the admittance matrix encodes the electrical coupling between nodes. This structure aligns naturally with the message-passing mechanism of GNNs, which aggregate neighborhood information to model inter-node electrical interactions.
 
 **Core Idea**: Train GNNs to learn the mapping from load conditions to power flow solutions (voltage magnitudes and phase angles) over large amounts of simulation data, thereby replacing the iterative solving process and enabling real-time prediction.
 

@@ -28,15 +28,15 @@ Through 82,620 large-scale experiments, this work systematically investigates ro
 
 ## Background & Motivation
 
-**State of the Field**: Cooperative MARL algorithms (MADDPG, MAPPO, HAPPO) have achieved remarkable success in simulators by maximizing cooperative performance through hyperparameter tuning. Real-world deployment introduces challenges such as observation noise, action perturbations, and environmental uncertainty.
+**Background**: Cooperative MARL algorithms (MADDPG, MAPPO, HAPPO) have achieved remarkable success in simulators by maximizing cooperative performance through hyperparameter tuning. Real-world deployment introduces challenges such as observation noise, action perturbations, and environmental uncertainty.
 
 **Limitations of Prior Work**: (a) Robustness and resilience are frequently conflated in the MARL literature—the former refers to maintaining performance under sustained uncertainty, while the latter refers to the ability to recover from perturbations. (b) The impact of hyperparameters on robustness and resilience has received little attention. (c) Existing robust MARL studies are confined to simple simulated environments and lack real-world validation.
 
-**Root Cause**: Hyperparameters tuned for cooperative performance may severely degrade robustness and resilience (as illustrated in Figure 1), yet researchers generally do not know which hyperparameters are harmful.
+**Key Challenge**: Hyperparameters tuned for cooperative performance may severely degrade robustness and resilience (as illustrated in Figure 1), yet researchers generally do not know which hyperparameters are harmful.
 
-**Paper Goals**: (a) Formally distinguish robustness from resilience in MARL; (b) systematically evaluate the relationships among cooperation, robustness, and resilience; (c) assess the effects of 15 hyperparameters on all three objectives and provide practical recommendations.
+**Goal**: (a) Formally distinguish robustness from resilience in MARL; (b) systematically evaluate the relationships among cooperation, robustness, and resilience; (c) assess the effects of 15 hyperparameters on all three objectives and provide practical recommendations.
 
-**Starting Point**: A large-scale controlled empirical study—4 real-world environments, 13 uncertainty types, 15 hyperparameters, 3 algorithms, 18 tasks, and 5 random seeds.
+**Key Insight**: A large-scale controlled empirical study—4 real-world environments, 13 uncertainty types, 15 hyperparameters, 3 algorithms, 18 tasks, and 5 random seeds.
 
 **Core Idea**: Through the largest empirical study on MARL robustness to date, this work demonstrates that hyperparameter tuning is more consequential than algorithm selection and uncovers several counterintuitive findings.
 

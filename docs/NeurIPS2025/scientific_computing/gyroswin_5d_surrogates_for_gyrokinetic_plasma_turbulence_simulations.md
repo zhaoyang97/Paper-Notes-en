@@ -39,7 +39,7 @@ This work presents GyroSwin, the first scalable 5D neural surrogate model for gy
 
 **Shortcomings of Existing ML Approaches**: Prior neural surrogate models have targeted low-dimensional (2D/3D) PDEs or single physical fields; no prior work directly operates on the 5D phase space. Standard 3D Transformers face quadratic memory and computational scaling that is prohibitive for 5D data.
 
-**Paper Goals**: The authors propose GyroSwin, the first natively 5D neural surrogate model, which retains the full 5D physical information while controlling computational complexity via local window attention, and introduces dedicated 3D↔5D interaction mechanisms and a zonal-flow separation strategy to fill the gap in 5D gyrokinetic surrogate modeling.
+**Goal**: The authors propose GyroSwin, the first natively 5D neural surrogate model, which retains the full 5D physical information while controlling computational complexity via local window attention, and introduces dedicated 3D↔5D interaction mechanisms and a zonal-flow separation strategy to fill the gap in 5D gyrokinetic surrogate modeling.
 
 ## Method
 

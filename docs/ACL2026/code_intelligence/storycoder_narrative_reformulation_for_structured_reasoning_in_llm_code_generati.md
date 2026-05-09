@@ -28,15 +28,15 @@ This paper proposes StoryCoder, a prompting framework that reformulates code gen
 
 ## Background & Motivation
 
-**State of the Field**: Code generation performance depends not only on model capability but also on problem representation. Existing methods primarily improve performance by adding reasoning steps (CoT, SCoT) or through repeated sampling, without altering the problem description itself—fragmented, instruction-style problem conditions remain unchanged.
+**Background**: Code generation performance depends not only on model capability but also on problem representation. Existing methods primarily improve performance by adding reasoning steps (CoT, SCoT) or through repeated sampling, without altering the problem description itself—fragmented, instruction-style problem conditions remain unchanged.
 
 **Limitations of Prior Work**: Programming task descriptions are often incomplete or ambiguous, requiring solvers to infer missing details from context. CoT introduces reasoning steps but does not change input representation; repeated sampling expands outputs but does not improve comprehension; SCoT introduces program structure, yet none of these approaches address the fundamental fragmentation of problem formulation.
 
-**Root Cause**: Cognitive science research shows that humans reason and comprehend more effectively when fragmented conditions are organized into coherent mental models. LLMs facing fragmented problem descriptions struggle to form a unified problem representation, leading to disordered reasoning paths.
+**Key Challenge**: Cognitive science research shows that humans reason and comprehend more effectively when fragmented conditions are organized into coherent mental models. LLMs facing fragmented problem descriptions struggle to form a unified problem representation, leading to disordered reasoning paths.
 
-**Paper Goals**: Design a narrative reformulation framework that transforms coding problems into coherent natural language descriptions, providing richer contextual structure than simple paraphrasing.
+**Goal**: Design a narrative reformulation framework that transforms coding problems into coherent natural language descriptions, providing richer contextual structure than simple paraphrasing.
 
-**Starting Point**: Inspired by analogical reasoning and mental model theory in cognitive science—humans reason better by organizing information into coherent structures. Programming problems are reformulated as "stories," enabling the model to understand and solve them within a more natural linguistic structure.
+**Key Insight**: Inspired by analogical reasoning and mental model theory in cognitive science—humans reason better by organizing information into coherent structures. Programming problems are reformulated as "stories," enabling the model to understand and solve them within a more natural linguistic structure.
 
 **Core Idea**: The model first selects an appropriate algorithm category and narrative genre, then reformulates the programming problem into a three-part narrative comprising a task overview, constraints, and examples. This structured natural language representation replaces the original fragmented description to guide code generation.
 

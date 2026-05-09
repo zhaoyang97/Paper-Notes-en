@@ -30,15 +30,15 @@ This paper reveals that short-task benchmarks create an illusion of diminishing 
 
 ### State of the Field
 
-**State of the Field**: LLMs continue to improve on complex reasoning benchmarks, yet consistently fail when simple tasks are extended over longer horizons. This has been interpreted as a "fundamental deficiency in reasoning ability" or evidence that "thinking is merely an illusion."
+**Background**: LLMs continue to improve on complex reasoning benchmarks, yet consistently fail when simple tasks are extended over longer horizons. This has been interpreted as a "fundamental deficiency in reasoning ability" or evidence that "thinking is merely an illusion."
 
 **Limitations of Prior Work**: The causes of long-horizon failure are conflated — is the failure due to planning or execution? Existing analyses do not isolate execution capability.
 
-**Root Cause**: Marginal improvements on short-task benchmarks appear to be diminishing, yet this may systematically underestimate actual capability gains — a per-step accuracy improvement from 95% to 99% translates to a task success rate increase from 0.6% to 36.6% on a 100-step task.
+**Key Challenge**: Marginal improvements on short-task benchmarks appear to be diminishing, yet this may systematically underestimate actual capability gains — a per-step accuracy improvement from 95% to 99% translates to a task success rate increase from 0.6% to 36.6% on a 100-step task.
 
-**Paper Goals**: (a) Quantify the long-horizon execution capability of LLMs; (b) identify the root causes of execution failure; (c) analyze the effect of scale and inference-time computation on long-horizon execution.
+**Goal**: (a) Quantify the long-horizon execution capability of LLMs; (b) identify the root causes of execution failure; (c) analyze the effect of scale and inference-time computation on long-horizon execution.
 
-**Starting Point**: By explicitly providing knowledge and plans to models, the paper isolates and measures "execution" capability itself.
+**Key Insight**: By explicitly providing knowledge and plans to models, the paper isolates and measures "execution" capability itself.
 
 **Core Idea**: Long-horizon task failures in LLMs are primarily attributable to execution errors rather than insufficient reasoning. Furthermore, a "self-conditioning" phenomenon exists, whereby errors in the context increase the probability of subsequent errors.
 

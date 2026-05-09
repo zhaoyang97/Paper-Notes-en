@@ -31,7 +31,7 @@ This paper proposes ORBIT, a unified benchmark for recommender systems comprisin
 
 ### Limitations of Prior Work
 
-**State of the Field**: Recommender systems are among the most impactful AI applications today, yet their research evaluation is hindered by two core problems:
+**Background**: Recommender systems are among the most impactful AI applications today, yet their research evaluation is hindered by two core problems:
 
 **Dataset Issues**: Existing public datasets (e.g., Amazon Reviews, Yelp) primarily capture review/rating behaviors rather than more authentic browsing behaviors—review actions account for only 1–2% of user interactions, introducing severe popularity bias. Some newer datasets (e.g., PixelRec, Tenrec) were collected without user consent, raising privacy and ethical concerns.
 

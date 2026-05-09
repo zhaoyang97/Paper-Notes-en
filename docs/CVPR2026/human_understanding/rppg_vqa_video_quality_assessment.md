@@ -28,11 +28,11 @@ rPPG-VQA proposes the first video quality assessment framework tailored for remo
 
 ## Background & Motivation
 
-**State of the Field**: Unsupervised rPPG aims to learn contactless heart rate detection from unannotated video data, but existing research focuses primarily on methodological innovation while neglecting data quality issues.
+**Background**: Unsupervised rPPG aims to learn contactless heart rate detection from unannotated video data, but existing research focuses primarily on methodological innovation while neglecting data quality issues.
 
 **Limitations of Prior Work**: (1) Motion, illumination, and other noise in in-the-wild videos may overwhelm weak physiological signals; (2) AI-generated videos lack any real physiological basis; (3) conventional VQA evaluates human perceptual quality, which is misaligned with rPPG requirements; (4) a single SNR metric is easily fooled by periodic non-physiological signals (e.g., strobe lights).
 
-**Root Cause**: Videos with high visual quality may contain no extractable physiological signal, while visually degraded videos may still carry valid signals — a distinction that conventional VQA cannot make.
+**Key Challenge**: Videos with high visual quality may contain no extractable physiological signal, while visually degraded videos may still carry valid signals — a distinction that conventional VQA cannot make.
 
 **Core Idea**: A dual-branch assessment — the signal-level branch applies multi-method consensus SNR to eliminate algorithmic bias, while the scene-level branch employs an MLLM to identify disturbances such as motion and illumination variation.
 

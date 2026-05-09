@@ -29,15 +29,15 @@ This paper proposes VitalDiagnosis, an LLM-driven chronic disease management eco
 
 ## Background & Motivation
 
-1. **State of the Field**: Chronic diseases (cardiovascular disease, diabetes, stroke, etc.) have become leading causes of death worldwide. Managing chronic conditions is a long-term, complex process requiring sustained medical engagement and substantial resource investment. While LLMs have demonstrated considerable potential in healthcare, their integration with wearable devices remains nascent.
+1. **Background**: Chronic diseases (cardiovascular disease, diabetes, stroke, etc.) have become leading causes of death worldwide. Managing chronic conditions is a long-term, complex process requiring sustained medical engagement and substantial resource investment. While LLMs have demonstrated considerable potential in healthcare, their integration with wearable devices remains nascent.
 
 2. **Limitations of Prior Work**: (a) Population aging intensifies pressure on healthcare systems, causing delays in timely care and limiting early intervention opportunities; (b) patients generally lack self-management capabilities and struggle to recognize early warning signs of deterioration; (c) existing wearable health systems are largely confined to passive, threshold-triggered simple alerts, lacking nuanced interactive anomaly investigation and continuous personalized adherence support.
 
-3. **Root Cause**: Chronic disease management requires a system capable of both real-time response to acute health events and continuous support for daily care adherence, yet current systems only perform passive monitoring and simple alerting, unable to deliver proactive, interactive, and personalized interventions.
+3. **Key Challenge**: Chronic disease management requires a system capable of both real-time response to acute health events and continuous support for daily care adherence, yet current systems only perform passive monitoring and simple alerting, unable to deliver proactive, interactive, and personalized interventions.
 
-4. **Paper Goals**: To construct an AI system capable of 24/7 proactive chronic disease management—one that can interactively triage health anomalies, actively monitor daily adherence, and operate within a collaborative patient–clinician workflow.
+4. **Goal**: To construct an AI system capable of 24/7 proactive chronic disease management—one that can interactively triage health anomalies, actively monitor daily adherence, and operate within a collaborative patient–clinician workflow.
 
-5. **Starting Point**: Leveraging division of labor across LLMs of varying scales (small models for monitoring, medium models for memory management, large models for clinical reasoning), combined with LoRA-based parametric memory for personalized adaptation.
+5. **Key Insight**: Leveraging division of labor across LLMs of varying scales (small models for monitoring, medium models for memory management, large models for clinical reasoning), combined with LoRA-based parametric memory for personalized adaptation.
 
 6. **Core Idea**: Connect multi-scale LLMs via a Unified Memory Core to establish a dual-track framework of anomaly triage and adherence monitoring, transforming wearable data into actionable clinical insights.
 

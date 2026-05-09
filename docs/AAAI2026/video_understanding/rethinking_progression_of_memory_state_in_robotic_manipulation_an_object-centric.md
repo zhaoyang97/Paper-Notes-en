@@ -29,7 +29,7 @@ This paper proposes LIBERO-Mem, a benchmark comprising 10 non-Markovian robotic 
 
 ## Background & Motivation
 
-**State of the Field**: Humans can effortlessly recall past interactions with specific objects (e.g., where a salt shaker was placed, or whether salt has already been added to a dish), enabling precise execution of multi-step, long-horizon tasks. Current robotic visuomotor policies (e.g., OpenVLA, Octo, RT-1/2), however, typically rely solely on recent sensory inputs for decision-making and lack mechanisms for encoding and recalling **object-level history**.
+**Background**: Humans can effortlessly recall past interactions with specific objects (e.g., where a salt shaker was placed, or whether salt has already been added to a dish), enabling precise execution of multi-step, long-horizon tasks. Current robotic visuomotor policies (e.g., OpenVLA, Octo, RT-1/2), however, typically rely solely on recent sensory inputs for decision-making and lack mechanisms for encoding and recalling **object-level history**.
 
 **Limitations of Prior Work**:
 
@@ -39,9 +39,9 @@ This paper proposes LIBERO-Mem, a benchmark comprising 10 non-Markovian robotic 
 
 **Token Scalability Problem**: OpenVLA encodes video sequences with 256 dense tokens, and object-centric VLAs use 16 slot tokens, but token counts grow **linearly** with both slot and sequence dimensions, becoming infeasible for long-horizon tasks spanning hundreds of frames.
 
-**Root Cause**: When visual observations at two time steps $t_1$ and $t_2$ satisfy $\mathbf{v}_{t_1} \approx \mathbf{v}_{t_2}$ but require different actions (i.e., $P(\mathbf{a}_{t_1}|\mathbf{v}_{1:t_1},l) \neq P(\mathbf{a}_{t_2}|\mathbf{v}_{1:t_2},l)$), purely reactive policies will inevitably fail. This constitutes an **object-level Partially Observable Markov Decision Process (POMDP)**.
+**Key Challenge**: When visual observations at two time steps $t_1$ and $t_2$ satisfy $\mathbf{v}_{t_1} \approx \mathbf{v}_{t_2}$ but require different actions (i.e., $P(\mathbf{a}_{t_1}|\mathbf{v}_{1:t_1},l) \neq P(\mathbf{a}_{t_2}|\mathbf{v}_{1:t_2},l)$), purely reactive policies will inevitably fail. This constitutes an **object-level Partially Observable Markov Decision Process (POMDP)**.
 
-**Starting Point**: Drawing from object-centric learning and state space models, this work designs structured, persistent memory representations that support long-horizon non-Markovian reasoning while remaining computationally tractable.
+**Key Insight**: Drawing from object-centric learning and state space models, this work designs structured, persistent memory representations that support long-horizon non-Markovian reasoning while remaining computationally tractable.
 
 ## Method
 

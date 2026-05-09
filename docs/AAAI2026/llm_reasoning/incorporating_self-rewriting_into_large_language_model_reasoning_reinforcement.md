@@ -28,7 +28,7 @@ This paper proposes a Self-Rewriting framework that enables large reasoning mode
 
 ## Background & Motivation
 
-**State of the Field**: RL-based large reasoning models (e.g., DeepSeek-R1, o1) have achieved strong performance on complex reasoning tasks by scaling test-time computation, but training relies solely on outcome correctness rewards, lacking supervision over the quality of internal reasoning processes.
+**Background**: RL-based large reasoning models (e.g., DeepSeek-R1, o1) have achieved strong performance on complex reasoning tasks by scaling test-time computation, but training relies solely on outcome correctness rewards, lacking supervision over the quality of internal reasoning processes.
 
 **Limitations of Prior Work**:
    - **Over-thinking**: The model reasons extensively over irrelevant or trivial parts.
@@ -37,11 +37,11 @@ This paper proposes a Self-Rewriting framework that enables large reasoning mode
    - **Disordered thinking**: Multiple reasoning threads are interleaved incoherently.
    - Existing length-control methods focus on being "short" rather than being "good."
 
-**Root Cause**: Outcome correctness rewards are coarse-grained—any response that reaches the correct final answer receives a positive reward, regardless of how verbose or disorganized the reasoning process is.
+**Key Challenge**: Outcome correctness rewards are coarse-grained—any response that reaches the correct final answer receives a positive reward, regardless of how verbose or disorganized the reasoning process is.
 
-**Paper Goals**: To introduce a fine-grained reasoning quality improvement mechanism while preserving the standard RL training framework (GRPO).
+**Goal**: To introduce a fine-grained reasoning quality improvement mechanism while preserving the standard RL training framework (GRPO).
 
-**Starting Point**: Drawing on the idea of LLM self-rewarding, but adopting a generative approach (self-rewriting) rather than a discriminative one (self-scoring)—the model rewrites its own reasoning traces and then learns from the rewritten versions.
+**Key Insight**: Drawing on the idea of LLM self-rewarding, but adopting a generative approach (self-rewriting) rather than a discriminative one (self-scoring)—the model rewrites its own reasoning traces and then learns from the rewritten versions.
 
 **Core Idea**: Enable LRMs to rewrite their own reasoning and learn from the rewritten outputs, rather than learning solely from correct/incorrect feedback signals.
 

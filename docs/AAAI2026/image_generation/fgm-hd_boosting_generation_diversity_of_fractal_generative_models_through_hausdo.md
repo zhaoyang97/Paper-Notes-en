@@ -31,9 +31,9 @@ Generative models (GANs, VAEs, diffusion models, etc.) can produce high-fidelity
 
 **Limitations of Prior Work**: The recursive self-similar structure of FGMs, while ensuring global consistency, also leads to repetitive patterns in generated outputs and insufficient diversity. This inherent self-similarity limits FGMs' ability to capture complex data distributions.
 
-**Root Cause**: The core advantage of FGMs—recursive self-similarity—is precisely the source of their diversity deficiency; diversity must be enhanced without disrupting structural consistency.
+**Key Challenge**: The core advantage of FGMs—recursive self-similarity—is precisely the source of their diversity deficiency; diversity must be enhanced without disrupting structural consistency.
 
-**Starting Point**: Hausdorff Dimension (HD) is borrowed from fractal geometry as a geometric indicator of structural complexity. HD quantifies the variation of spatial detail across scales, with higher HD values generally reflecting greater structural richness.
+**Key Insight**: Hausdorff Dimension (HD) is borrowed from fractal geometry as a geometric indicator of structural complexity. HD quantifies the variation of spatial detail across scales, with higher HD values generally reflecting greater structural richness.
 
 **Core Idea**: HD is used as a training signal and sampling criterion to guide FGMs toward generating structurally more complex and diverse outputs.
 

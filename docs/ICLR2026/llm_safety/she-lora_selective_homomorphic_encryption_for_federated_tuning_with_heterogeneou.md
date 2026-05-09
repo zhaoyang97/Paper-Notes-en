@@ -28,13 +28,13 @@ This paper proposes SHE-LoRA, which integrates Selective Homomorphic Encryption 
 
 ## Background & Motivation
 
-**State of the Field**: Federated fine-tuning of LLMs requires improving domain-specific performance while preserving data privacy. LoRA has become the mainstream choice for federated PEFT due to its efficiency; however, research has shown that transmitted parameters and gradients are vulnerable to gradient inversion attacks (DAGER) that can reconstruct private data.
+**Background**: Federated fine-tuning of LLMs requires improving domain-specific performance while preserving data privacy. LoRA has become the mainstream choice for federated PEFT due to its efficiency; however, research has shown that transmitted parameters and gradients are vulnerable to gradient inversion attacks (DAGER) that can reconstruct private data.
 
 **Limitations of Prior Work**: (1) DP amplifies noise through LoRA matrix multiplication, degrading model performance; (2) MPC requires complex synchronization protocols ill-suited for heterogeneous devices; (3) Existing SHE methods suffer from two issues — LoRA matrix multiplication causes encrypted position expansion, and merging encrypted subsets from heterogeneous clients leads to ciphertext bloat.
 
-**Root Cause**: In cross-device scenarios, clients differ in hardware capability, data distribution, and encryption budget. Naively applying FedAvg to aggregate A and B matrices separately is mathematically inequivalent to aggregating the BA product, and the union of different encrypted positions across heterogeneous devices during aggregation causes ciphertext bloat.
+**Key Challenge**: In cross-device scenarios, clients differ in hardware capability, data distribution, and encryption budget. Naively applying FedAvg to aggregate A and B matrices separately is mathematically inequivalent to aggregating the BA product, and the union of different encrypted positions across heterogeneous devices during aggregation causes ciphertext bloat.
 
-**Starting Point**: (a) Encrypt only matrix A, which acts directly on user data and is more prone to leakage; (b) Evaluate parameter importance at the column level, where column-wise encryption prevents expansion from matrix multiplication; (c) The server negotiates a global encrypted subset to control ciphertext bloat; (d) Column swapping clusters encrypted and unencrypted parameters to improve efficiency.
+**Key Insight**: (a) Encrypt only matrix A, which acts directly on user data and is more prone to leakage; (b) Evaluate parameter importance at the column level, where column-wise encryption prevents expansion from matrix multiplication; (c) The server negotiates a global encrypted subset to control ciphertext bloat; (d) Column swapping clusters encrypted and unencrypted parameters to improve efficiency.
 
 **Core Idea**: By combining column-level parameter sensitivity evaluation, global subset negotiation, column-swap obfuscation, and column-aware aggregation, SHE-LoRA achieves strong privacy protection with minimal overhead in heterogeneous federated LoRA fine-tuning.
 

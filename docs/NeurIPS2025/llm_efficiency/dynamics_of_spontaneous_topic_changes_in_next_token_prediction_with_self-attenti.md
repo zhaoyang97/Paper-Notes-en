@@ -27,15 +27,15 @@ content_hash: 7c98f03cc84df6f3
 This paper investigates, both theoretically and empirically, the dynamics of spontaneous topic changes in self-attention models. For a single-layer self-attention model, it establishes three results: (1) training on mixed topics preserves the token priority ordering of the original topic; (2) topic changes occur only when the number of low-priority tokens exceeds that of high-priority tokens; and (3) longer inputs and more ambiguous topics do not increase the probability of topic change — contrary to human cognition.
 
 ## Background & Motivation
-**State of the Field**: Spontaneous thought is a well-studied phenomenon in human cognition, referring to abrupt, unstructured transitions to a different topic during conversation or reasoning. LLMs, by contrast, predict the next token based on statistical patterns in context and lack genuine spontaneity.
+**Background**: Spontaneous thought is a well-studied phenomenon in human cognition, referring to abrupt, unstructured transitions to a different topic during conversation or reasoning. LLMs, by contrast, predict the next token based on statistical patterns in context and lack genuine spontaneity.
 
 **Limitations of Prior Work**: Although the self-attention mechanism has been extensively analyzed theoretically — including its connections to SVMs and token priority via TPGs — the phenomenon of topic change, which is directly relevant to human cognition, has not been formally studied.
 
-**Root Cause**: Topic changes in LLMs are driven by contextual cues in the input, whereas human spontaneous thought can arise without any apparent trigger. A formal characterization of this distinction is lacking.
+**Key Challenge**: Topic changes in LLMs are driven by contextual cues in the input, whereas human spontaneous thought can arise without any apparent trigger. A formal characterization of this distinction is lacking.
 
-**Paper Goals**: To formally define "topic" and "topic change" in the self-attention framework, derive the conditions governing their dynamics, and contrast the results with human cognition.
+**Goal**: To formally define "topic" and "topic change" in the self-attention framework, derive the conditions governing their dynamics, and contrast the results with human cognition.
 
-**Starting Point**: The Token Priority Graph (TPG) is adopted as the mathematical definition of a topic, and the self-attention → SVM convergence theory of Li et al. (2024) is used as the analytical framework.
+**Key Insight**: The Token Priority Graph (TPG) is adopted as the mathematical definition of a topic, and the self-attention → SVM convergence theory of Li et al. (2024) is used as the analytical framework.
 
 **Core Idea**: Topics are defined via TPGs. It is shown that self-attention preserves topic priority after mixed-topic training, and that topic change requires low-priority tokens to appear more frequently in the input than high-priority tokens.
 

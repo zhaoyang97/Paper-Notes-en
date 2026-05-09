@@ -28,15 +28,15 @@ This paper proposes Default MoE, a method that maintains exponential moving aver
 
 ## Background & Motivation
 
-**State of the Field**: Sparse MoE architectures have been widely adopted in models such as DeepSeek-V2/V3, Mixtral, and DBRX. TopK routing activates only $K$ experts per token, enabling large parameter scaling without increasing computational cost.
+**Background**: Sparse MoE architectures have been widely adopted in models such as DeepSeek-V2/V3, Mixtral, and DBRX. TopK routing activates only $K$ experts per token, enabling large parameter scaling without increasing computational cost.
 
 **Limitations of Prior Work**: TopK routing restricts the router to receiving gradient feedback only from activated experts—non-activated experts contribute zero gradient to the router. This prevents the router from obtaining a "global view" for optimal routing decisions, slowing learning and potentially leading to suboptimal convergence.
 
-**Root Cause**: Providing the router with complete (dense) gradients requires activating all experts (i.e., reverting to a dense model), which negates the sparse computational advantage of MoE. There is a fundamental tension between dense gradients and sparse computation.
+**Key Challenge**: Providing the router with complete (dense) gradients requires activating all experts (i.e., reverting to a dense model), which negates the sparse computational advantage of MoE. There is a fundamental tension between dense gradients and sparse computation.
 
-**Paper Goals**: Enable approximate dense gradient updates for the router while preserving the efficiency of sparse forward passes.
+**Goal**: Enable approximate dense gradient updates for the router while preserving the efficiency of sparse forward passes.
 
-**Starting Point**: Straight-through estimators can bypass the non-differentiable TopK operation to provide dense gradients, but require the outputs of all experts. The key insight is that the outputs of non-activated experts can be approximated by their historical mean—a quantity already computed for free during standard forward passes.
+**Key Insight**: Straight-through estimators can bypass the non-differentiable TopK operation to provide dense gradients, but require the outputs of all experts. The key insight is that the outputs of non-activated experts can be approximated by their historical mean—a quantity already computed for free during standard forward passes.
 
 **Core Idea**: Maintain a "default output vector" per expert via EMA, substituting these vectors for non-activated expert outputs during backpropagation to achieve dense router gradients with $O(1)$ additional memory.
 

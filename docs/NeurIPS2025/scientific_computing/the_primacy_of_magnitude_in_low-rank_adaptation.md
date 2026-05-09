@@ -29,17 +29,17 @@ This paper reveals that weight update magnitude is the fundamental driver of per
 
 ## Background & Motivation
 
-**State of the Field**: LoRA is the most widely adopted parameter-efficient fine-tuning method, injecting trainable low-rank matrices $B \in \mathbb{R}^{n \times r}$ and $A \in \mathbb{R}^{r \times m}$ to fine-tune large models while updating fewer than 1% of parameters. Recent SVD-based initialization methods such as PiSSA, MiLoRA, and OLoRA have substantially improved convergence speed and downstream performance.
+**Background**: LoRA is the most widely adopted parameter-efficient fine-tuning method, injecting trainable low-rank matrices $B \in \mathbb{R}^{n \times r}$ and $A \in \mathbb{R}^{r \times m}$ to fine-tune large models while updating fewer than 1% of parameters. Recent SVD-based initialization methods such as PiSSA, MiLoRA, and OLoRA have substantially improved convergence speed and downstream performance.
 
 **Limitations of Prior Work**:
    - **Efficiency overhead**: Spectral initialization requires SVD decomposition of pretrained weights, incurring additional computational and memory costs that are impractical in resource-constrained settings (e.g., quantized LoRA, federated learning).
    - **Insufficient understanding**: The success of spectral initialization is commonly attributed to "preserving knowledge in principal components," yet this intuition lacks theoretical grounding—the non-convex optimization of LoRA renders training dynamics difficult to predict.
 
-**Root Cause**: Spectral initialization methods are effective but costly, and their success mechanism remains unclear. The key question is whether equivalent performance can be achieved without SVD.
+**Key Challenge**: Spectral initialization methods are effective but costly, and their success mechanism remains unclear. The key question is whether equivalent performance can be achieved without SVD.
 
-**Paper Goals**: (a) Identify the true mechanism underlying spectral initialization; (b) Design an efficient alternative that does not require SVD.
+**Goal**: (a) Identify the true mechanism underlying spectral initialization; (b) Design an efficient alternative that does not require SVD.
 
-**Starting Point**: The analysis proceeds from the perspective of **weight update magnitude**, $\nu[W_{\text{LoRA}}] = \frac{1}{mn}\|W_{\text{LoRA}}\|_F^2$, examining how various hyperparameters influence performance through their effect on magnitude during LoRA training dynamics.
+**Key Insight**: The analysis proceeds from the perspective of **weight update magnitude**, $\nu[W_{\text{LoRA}}] = \frac{1}{mn}\|W_{\text{LoRA}}\|_F^2$, examining how various hyperparameters influence performance through their effect on magnitude during LoRA training dynamics.
 
 **Core Idea**: The essence of spectral initialization is not "knowledge preservation" but "magnitude amplification." Its effect can be reproduced using a deterministic orthogonal basis combined with a scaling factor derived from the statistics of pretrained weights.
 

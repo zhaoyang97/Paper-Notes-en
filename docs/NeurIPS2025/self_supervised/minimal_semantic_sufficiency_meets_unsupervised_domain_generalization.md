@@ -28,15 +28,15 @@ MS-UDG operates without class or domain labels, decomposing representations into
 
 ## Background & Motivation
 
-**State of the Field**: Self-supervised learning (SSL) representations entangle semantic content with variation factors such as style and texture. Unsupervised domain generalization (UDG) requires learning robust cross-domain representations without any labels.
+**Background**: Self-supervised learning (SSL) representations entangle semantic content with variation factors such as style and texture. Unsupervised domain generalization (UDG) requires learning robust cross-domain representations without any labels.
 
 **Limitations of Prior Work**: Existing methods either require domain labels (impractical) or fail to explicitly separate semantics from variation (e.g., MAE performs reconstruction without explicit disentanglement), leading to performance degradation under domain shift.
 
-**Root Cause**: Without class labels, "what constitutes semantics" cannot be directly supervised; without domain labels, cross-domain alignment cannot be performed explicitly. Defining and optimizing a *minimally sufficient semantic representation* must therefore be grounded in an information-theoretic framework.
+**Key Challenge**: Without class labels, "what constitutes semantics" cannot be directly supervised; without domain labels, cross-domain alignment cannot be performed explicitly. Defining and optimizing a *minimally sufficient semantic representation* must therefore be grounded in an information-theoretic framework.
 
-**Paper Goals**: Learn representations that retain only task-relevant semantics while discarding domain-related variation, in a fully self-supervised setting with neither class nor domain labels.
+**Goal**: Learn representations that retain only task-relevant semantics while discarding domain-related variation, in a fully self-supervised setting with neither class nor domain labels.
 
-**Starting Point**: An information-theoretic framework — *sufficiency* requires the semantic representation $s$ to preserve all prediction-relevant information, i.e., $I(s;T) = I(x;T)$; *minimality* requires $s$ to exclude variation information irrelevant to prediction, i.e., $I(s;v) \to 0$.
+**Key Insight**: An information-theoretic framework — *sufficiency* requires the semantic representation $s$ to preserve all prediction-relevant information, i.e., $I(s;T) = I(x;T)$; *minimality* requires $s$ to exclude variation information irrelevant to prediction, i.e., $I(s;v) \to 0$.
 
 **Core Idea**: IDM decomposes representations into semantic component $s$ and variation component $v$; SROM achieves minimally sufficient semantic representations via mutual information minimization/maximization, with theoretical guarantees on minimizing the Bayes error rate.
 

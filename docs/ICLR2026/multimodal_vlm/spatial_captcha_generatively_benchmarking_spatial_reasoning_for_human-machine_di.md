@@ -35,7 +35,7 @@ CAPTCHA (Completely Automated Public Turing test to tell Computers and Humans Ap
 
 **2D image-understanding CAPTCHAs are also under threat**: Tasks such as "select all traffic lights" in Google reCAPTCHA can now be completed by MLLMs with high accuracy.
 
-**Root Cause**: Traditional CAPTCHAs rely on low-level perception tasks, precisely the category in which current AI systems have approached or surpassed human performance.
+**Key Challenge**: Traditional CAPTCHAs rely on low-level perception tasks, precisely the category in which current AI systems have approached or surpassed human performance.
 
 The core insight of this paper is that **spatial reasoning represents a cognitive domain where AI systems still lag far behind humans**. Tasks such as geometric reasoning, perspective understanding, occlusion judgment, and mental rotation are intuitive and natural for humans, yet remain extremely challenging for state-of-the-art AI systems. This gap provides a natural foundation for designing the next generation of secure CAPTCHAs.
 

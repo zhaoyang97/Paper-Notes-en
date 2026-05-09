@@ -28,15 +28,15 @@ By constructing paired citation graphs (human vs. GPT-4o-generated vs. random ba
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly used to synthesize scientific knowledge, draft literature reviews, and suggest references. Prior studies have found that LLM-generated references resemble human ones on coarse-grained metrics (title length, team size, citation count), but exhibit systematic biases at finer granularity (amplified Matthew effect, preference for recent papers, reduced self-citations).
+**Background**: LLMs are increasingly used to synthesize scientific knowledge, draft literature reviews, and suggest references. Prior studies have found that LLM-generated references resemble human ones on coarse-grained metrics (title length, team size, citation count), but exhibit systematic biases at finer granularity (amplified Matthew effect, preference for recent papers, reduced self-citations).
 
 **Limitations of Prior Work**: It remains unclear whether LLM-generated and human-generated reference lists can be reliably distinguished. Single-reference auditing approaches (e.g., LLM-Check) are insufficient to capture list-level patterns.
 
-**Root Cause**: Do LLMs genuinely understand citation structure, or merely imitate it superficially? If topological structure is similar, where do the differences lie?
+**Key Challenge**: Do LLMs genuinely understand citation structure, or merely imitate it superficially? If topological structure is similar, where do the differences lie?
 
-**Paper Goals**: To systematically evaluate the structural and semantic differences between LLM-generated and human citation graphs, and to develop corresponding detection methods.
+**Goal**: To systematically evaluate the structural and semantic differences between LLM-generated and human citation graphs, and to develop corresponding detection methods.
 
-**Starting Point**: A progressive modeling strategy—from interpretable graph structural features to semantic embeddings to GNNs—that incrementally isolates the contributions of topology vs. semantics.
+**Key Insight**: A progressive modeling strategy—from interpretable graph structural features to semantic embeddings to GNNs—that incrementally isolates the contributions of topology vs. semantics.
 
 **Core Idea**: LLM references are "structurally human, semantically biased"—detection should target content signals rather than graph structure.
 

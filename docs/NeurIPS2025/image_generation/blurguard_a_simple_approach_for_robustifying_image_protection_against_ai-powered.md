@@ -28,18 +28,18 @@ This paper proposes BlurGuard—a method that applies mild blurring to an image 
 
 ## Background & Motivation
 
-**State of the Field**: AI image editing tools (e.g., Stable Diffusion inpainting, Instruct-Pix2Pix) allow anyone to easily manipulate others' photos, raising concerns about portrait rights and misinformation. Adversarial perturbation is the primary defense mechanism—adding imperceptible noise to images to cause AI editing to fail.
+**Background**: AI image editing tools (e.g., Stable Diffusion inpainting, Instruct-Pix2Pix) allow anyone to easily manipulate others' photos, raising concerns about portrait rights and misinformation. Adversarial perturbation is the primary defense mechanism—adding imperceptible noise to images to cause AI editing to fail.
 
 **Limitations of Prior Work**:
 - Adversarial perturbations are inherently high-frequency signals and are easily eliminated by simple post-processing operations (JPEG compression, Gaussian filtering, denoising).
 - Social media platforms routinely compress uploaded images, rendering perturbations ineffective after upload.
 - Existing robustness-enhancing methods (e.g., DiffPure, adversarial training) incur high computational costs or require modifications to the defense framework.
 
-**Root Cause**: Adversarial perturbations must remain "imperceptible" (small magnitude, high frequency), yet it is precisely these properties—small magnitude and high frequency—that make them susceptible to compression and filtering. Increasing perturbation magnitude improves robustness but degrades image quality.
+**Key Challenge**: Adversarial perturbations must remain "imperceptible" (small magnitude, high frequency), yet it is precisely these properties—small magnitude and high frequency—that make them susceptible to compression and filtering. Increasing perturbation magnitude improves robustness but degrades image quality.
 
-**Paper Goals**: To make adversarial perturbations more resistant to post-processing without increasing perturbation magnitude.
+**Goal**: To make adversarial perturbations more resistant to post-processing without increasing perturbation magnitude.
 
-**Starting Point**: If an image is mildly blurred before perturbation generation, the perturbation is optimized to couple with the low-frequency structure of the blurred image, making it harder for high-frequency filtering to eliminate.
+**Key Insight**: If an image is mildly blurred before perturbation generation, the perturbation is optimized to couple with the low-frequency structure of the blurred image, making it harder for high-frequency filtering to eliminate.
 
 **Core Idea**: Apply blur first (shifting the image into the low-frequency domain) → generate perturbation (coupling it with low-frequency structure) → the perturbation becomes more resistant to post-processing.
 

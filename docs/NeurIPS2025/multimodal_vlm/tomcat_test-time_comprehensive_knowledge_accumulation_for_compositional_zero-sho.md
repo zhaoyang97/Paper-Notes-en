@@ -28,13 +28,13 @@ This paper proposes TOMCAT, which dynamically updates compositional prototypes b
 
 ## Background & Motivation
 
-**State of the Field**: Compositional Zero-Shot Learning (CZSL) requires models to recognize unseen attribute-object compositions (e.g., "brown cheese") formed by recombining known attributes and objects. CLIP-based methods such as CSP, Troika, and CDS-CZSL have achieved notable progress by fine-tuning VLMs via prompt tuning.
+**Background**: Compositional Zero-Shot Learning (CZSL) requires models to recognize unseen attribute-object compositions (e.g., "brown cheese") formed by recombining known attributes and objects. CLIP-based methods such as CSP, Troika, and CDS-CZSL have achieved notable progress by fine-tuning VLMs via prompt tuning.
 
 **Limitations of Prior Work**: At test time, the label space includes compositions unseen during training, causing label distribution shift. Model parameters and class prototypes are frozen after training and cannot adapt to the new distribution using test data.
 
-**Root Cause**: Training covers only a subset of compositions, yet inference requires discrimination over the full compositional space—a fundamental distribution shift problem.
+**Key Challenge**: Training covers only a subset of compositions, yet inference requires discrimination over the full compositional space—a fundamental distribution shift problem.
 
-**Starting Point**: Stream-wise knowledge accumulation from unlabeled test data at test time, updating prototypes in both textual and visual modalities simultaneously.
+**Key Insight**: Stream-wise knowledge accumulation from unlabeled test data at test time, updating prototypes in both textual and visual modalities simultaneously.
 
 **Core Idea**: Design a learnable Knowledge Accumulation Module (KAM) to adjust prototype offsets, coupled with a priority queue that stores high-confidence historical image features to construct visual prototypes.
 

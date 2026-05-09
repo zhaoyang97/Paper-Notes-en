@@ -27,18 +27,18 @@ content_hash: cbed54a82759b9d1
 The LSP scheduler atomically commits the longest contiguous stable prefix at each denoising step—rather than accepting scattered discrete tokens—achieving up to 3.4× speedup in DLM inference while maintaining or slightly improving output quality.
 
 ## Background & Motivation
-**State of the Field**: Diffusion language models (DLMs) such as LLaDA and Dream offer parallel text generation capabilities, yet their practical inference speed falls far short of the theoretical parallelism they afford.
+**Background**: Diffusion language models (DLMs) such as LLaDA and Dream offer parallel text generation capabilities, yet their practical inference speed falls far short of the theoretical parallelism they afford.
 
 **Limitations of Prior Work**:
    - **Scattered acceptance** is the dominant strategy: tokens are committed independently based on local confidence, resulting in alternating "frozen" and "active" tokens throughout the sequence.
    - **Algorithmic level**: frozen–active boundaries are unstable, forcing the model to repeatedly perform local repairs and slowing global convergence.
    - **System level**: the KV cache is fragmented into discontinuous segments, destroying memory locality; attention computation over long fragmented active sequences incurs substantial overhead.
 
-**Root Cause**: Models designed for parallelism are bottlenecked by the sequential nature of the commitment strategy—scattered acceptance dissipates the parallel advantage in fragment repair.
+**Key Challenge**: Models designed for parallelism are bottlenecked by the sequential nature of the commitment strategy—scattered acceptance dissipates the parallel advantage in fragment repair.
 
-**Paper Goals**: Design a new commitment topology that maximizes KV cache reuse and accelerates active-sequence shrinkage.
+**Goal**: Design a new commitment topology that maximizes KV cache reuse and accelerates active-sequence shrinkage.
 
-**Starting Point**: DLMs exhibit an empirical property whereby correct answers often emerge in intermediate steps; this "early convergence" can be exploited for prefix commitment.
+**Key Insight**: DLMs exhibit an empirical property whereby correct answers often emerge in intermediate steps; this "early convergence" can be exploited for prefix commitment.
 
 **Core Idea**: Replace scattered acceptance with holistic prefix absorption—committing the longest contiguous stable prefix at each step so that the frozen prefix grows monotonically and the active suffix decays geometrically.
 

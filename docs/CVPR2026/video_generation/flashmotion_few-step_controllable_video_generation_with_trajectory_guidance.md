@@ -31,11 +31,11 @@ FlashMotion proposes a three-stage training framework that distills a multi-step
 ## Background & Motivation
 Trajectory-controllable video generation has achieved remarkable progress in recent years, enabling users to precisely control object motion paths via predefined trajectories. Existing methods primarily adopt adapter architectures (e.g., ControlNet-style) injected into video diffusion models to achieve precise motion control.
 
-**Root Cause**: All such methods rely on multi-step denoising processes (typically 20–50 steps), resulting in long inference times and substantial computational overhead. Although video distillation methods (e.g., consistency distillation, adversarial distillation) can compress multi-step generators into few-step versions, **directly applying these distillation methods to trajectory-controllable video generation leads to significant degradation in both video quality and trajectory accuracy**.
+**Key Challenge**: All such methods rely on multi-step denoising processes (typically 20–50 steps), resulting in long inference times and substantial computational overhead. Although video distillation methods (e.g., consistency distillation, adversarial distillation) can compress multi-step generators into few-step versions, **directly applying these distillation methods to trajectory-controllable video generation leads to significant degradation in both video quality and trajectory accuracy**.
 
-**Root Cause**: Distillation alters the latent space distribution of the model, introducing a distribution mismatch between the trajectory adapter trained on the multi-step model and the distilled few-step model, causing the adapter's control signals to be misinterpreted.
+**Key Challenge**: Distillation alters the latent space distribution of the model, introducing a distribution mismatch between the trajectory adapter trained on the multi-step model and the distilled few-step model, causing the adapter's control signals to be misinterpreted.
 
-**Starting Point**: The paper designs a three-stage training framework — first training the adapter, then distilling the base model, and finally re-aligning the adapter with the few-step model using a hybrid objective — to fundamentally resolve the distribution mismatch problem.
+**Key Insight**: The paper designs a three-stage training framework — first training the adapter, then distilling the base model, and finally re-aligning the adapter with the few-step model using a hybrid objective — to fundamentally resolve the distribution mismatch problem.
 
 ## Method
 

@@ -27,15 +27,15 @@ content_hash: ddadd598eeb0c85b
 To address the limitation of MoE-LoRA methods where all experts share identical structures (uniform rank) and thus cannot adapt to tasks of varying complexity, this paper proposes EPT: a parameter pyramid constructed via a shared meta-knowledge subspace and deconvolution experts with varying kernel sizes, coupled with an Adaptive LoRA Pruner and contrastive learning-based Task Embedding. EPT achieves an average score of 87.0% on GLUE with only 0.41M parameters per task, outperforming all MoE-LoRA variants.
 
 ## Background & Motivation
-**State of the Field**: PEFT, and LoRA in particular, has become the dominant paradigm for deploying LLMs to multi-task scenarios. To mitigate negative transfer caused by gradient conflicts across tasks, MoE-LoRA methods (e.g., MOELoRA, HydraLoRA, MoRE) route tokens to different low-rank experts via gating mechanisms.
+**Background**: PEFT, and LoRA in particular, has become the dominant paradigm for deploying LLMs to multi-task scenarios. To mitigate negative transfer caused by gradient conflicts across tasks, MoE-LoRA methods (e.g., MOELoRA, HydraLoRA, MoRE) route tokens to different low-rank experts via gating mechanisms.
 
 **Limitations of Prior Work**: Nearly all existing MoE-LoRA methods employ structurally identical experts—same rank, same capacity. However, task complexity varies substantially: simple tasks (e.g., sentiment classification SST-2) require only high-level semantic abstraction, while complex tasks (e.g., linguistic acceptability judgment CoLA) demand fine-grained syntactic analysis. The authors validate this observation empirically: on different GLUE tasks with T5-base, the optimal rank varies significantly (e.g., MRPC: rank=1, RTE: rank=4, CoLA: rank=8).
 
-**Root Cause**: Uniform-architecture experts cannot capture feature granularity diversity. Low-rank experts lack expressiveness for complex tasks, while high-rank experts over-parameterize simple tasks and generalize poorly. Furthermore, each expert independently learns its own LoRA matrices, with no knowledge sharing across experts, leading to parameter redundancy.
+**Key Challenge**: Uniform-architecture experts cannot capture feature granularity diversity. Low-rank experts lack expressiveness for complex tasks, while high-rank experts over-parameterize simple tasks and generalize poorly. Furthermore, each expert independently learns its own LoRA matrices, with no knowledge sharing across experts, leading to parameter redundancy.
 
-**Paper Goals**: (a) How to enable different experts to capture features at different granularities? (b) How to share common linguistic knowledge across experts while preserving task-specific adaptations? (c) How to accurately route tokens to appropriate experts?
+**Goal**: (a) How to enable different experts to capture features at different granularities? (b) How to share common linguistic knowledge across experts while preserving task-specific adaptations? (c) How to accurately route tokens to appropriate experts?
 
-**Starting Point**: Drawing inspiration from the multi-scale philosophy of Feature Pyramid Networks (FPN) in computer vision—detecting objects of different sizes requires features at different resolutions—analogously, handling NLP tasks of varying complexity requires parameter adaptations at different granularities.
+**Key Insight**: Drawing inspiration from the multi-scale philosophy of Feature Pyramid Networks (FPN) in computer vision—detecting objects of different sizes requires features at different resolutions—analogously, handling NLP tasks of varying complexity requires parameter adaptations at different granularities.
 
 **Core Idea**: Replace the uniform independent experts in MoE-LoRA with a parameter pyramid: deconvolution experts with different kernel sizes project from a shared low-dimensional meta-knowledge subspace to produce multi-scale weight increments.
 

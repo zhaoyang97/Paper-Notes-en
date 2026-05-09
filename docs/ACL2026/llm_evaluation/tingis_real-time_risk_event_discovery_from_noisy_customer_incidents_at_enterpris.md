@@ -29,15 +29,15 @@ TingIS is an end-to-end risk event discovery system deployed on a fintech platfo
 
 ## Background & Motivation
 
-**State of the Field**: Large-scale online platforms rely on complex microservices and cloud-native architectures, where even minor failures can rapidly propagate into large-scale incidents. Internal observability systems (metrics/logs/traces) serve as the first line of defense, yet they are not infallible.
+**Background**: Large-scale online platforms rely on complex microservices and cloud-native architectures, where even minor failures can rapidly propagate into large-scale incidents. Internal observability systems (metrics/logs/traces) serve as the first line of defense, yet they are not infallible.
 
 **Limitations of Prior Work**: Customer complaint data represents a critical signal for uncovering monitoring blind spots, but poses extreme challenges due to high noise, high throughput, and semantic complexity. Detecting a systemic failure from only 3 complaints out of a 2,000-per-minute stream presents a severe signal-to-noise ratio (SNR) problem. Low-SNR systems generate excessive false positives, leading to alert fatigue in operations teams.
 
-**Root Cause**: A fundamental tension exists among achieving high noise tolerance, minimal latency, and near-zero missed detections simultaneously—satisfying real-time requirements (minute-level), high discovery rate (>95%), and low false-positive rate all at once.
+**Key Challenge**: A fundamental tension exists among achieving high noise tolerance, minimal latency, and near-zero missed detections simultaneously—satisfying real-time requirements (minute-level), high discovery rate (>95%), and low false-positive rate all at once.
 
-**Paper Goals**: To build an enterprise-scale system capable of discovering risk events in real time from 300,000+ customer complaints per day.
+**Goal**: To build an enterprise-scale system capable of discovering risk events in real time from 300,000+ customer complaints per day.
 
-**Starting Point**: The problem is decomposed into five orthogonal modules, each addressing a core sub-problem. A hybrid intelligence strategy of "lightweight rule pre-filtering + LLM deep judgment" balances precision and cost.
+**Key Insight**: The problem is decomposed into five orthogonal modules, each addressing a core sub-problem. A hybrid intelligence strategy of "lightweight rule pre-filtering + LLM deep judgment" balances precision and cost.
 
 **Core Idea**: A multi-stage event linking engine (LSH high-speed clustering → LLM purity checking → cross-batch historical association → time-decay weighted scoring) achieves semantic convergence and identity persistence, complemented by cascaded routing and multi-dimensional denoising to maintain overall system SNR.
 

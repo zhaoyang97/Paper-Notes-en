@@ -29,13 +29,13 @@ This paper proposes Do-PFN, which extends Prior-data Fitted Networks (PFN) to ca
 
 ## Background & Motivation
 
-**State of the Field**: Causal effect estimation is a core task in science. Randomized controlled trials (RCTs) are the gold standard but are often infeasible. Estimating causal effects from observational data typically requires the unconfoundedness assumption, which is difficult to verify. TabPFN has demonstrated remarkable in-context learning performance in tabular machine learning.
+**Background**: Causal effect estimation is a core task in science. Randomized controlled trials (RCTs) are the gold standard but are often infeasible. Estimating causal effects from observational data typically requires the unconfoundedness assumption, which is difficult to verify. TabPFN has demonstrated remarkable in-context learning performance in tabular machine learning.
 
 **Limitations of Prior Work**: (a) Existing methods rely on causal graph knowledge or the unconfoundedness assumption; (b) meta-learners (T-/S-/X-learner) fail when unconfoundedness is violated; (c) deep learning methods (DragonNet/TARNet) similarly depend on this assumption.
 
-**Root Cause**: Can large-scale pre-training enable a model to meta-learn causal reasoning capabilities, thereby eliminating the need for an explicit causal graph or unconfoundedness assumption?
+**Key Challenge**: Can large-scale pre-training enable a model to meta-learn causal reasoning capabilities, thereby eliminating the need for an explicit causal graph or unconfoundedness assumption?
 
-**Starting Point**: Inspired by TabPFN—if a model is pre-trained on synthetic causal data that includes interventions, it can learn to predict interventional outcomes from observational data.
+**Key Insight**: Inspired by TabPFN—if a model is pre-trained on synthetic causal data that includes interventions, it can learn to predict interventional outcomes from observational data.
 
 **Core Idea**: Pre-train a Transformer on millions of SCMs; given a full observational dataset and an intervention query, the model outputs the conditional intervention distribution $p(y|do(t),\mathbf{x})$.
 

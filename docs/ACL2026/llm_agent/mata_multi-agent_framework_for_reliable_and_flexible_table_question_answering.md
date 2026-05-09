@@ -28,15 +28,15 @@ This paper proposes MATA, a multi-agent framework for table question answering t
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have significantly advanced table question answering (TableQA), enabling natural language interaction with structured tables. Existing methods typically leverage reasoning strategies such as CoT, PoT (Program-of-Thought), or text2SQL to generate answers.
+**Background**: LLMs have significantly advanced table question answering (TableQA), enabling natural language interaction with structured tables. Existing methods typically leverage reasoning strategies such as CoT, PoT (Program-of-Thought), or text2SQL to generate answers.
 
 **Limitations of Prior Work**: (1) Most high-performing methods rely on closed-source LLMs (e.g., GPT-4o), making them unsuitable for privacy-sensitive or cost-constrained scenarios, with their reliability on small open-source models insufficiently validated; (2) To improve answer reliability, existing frameworks frequently invoke LLM inference (e.g., Self-Consistency), resulting in high computational costs and even accuracy degradation due to over-prompting; (3) Most frameworks only exploit CoT and PoT, failing to fully leverage the complementary diversity of CoT, PoT, and text2SQL.
 
-**Root Cause**: A fundamental trade-off exists between reasoning diversity and efficiency—adding more reasoning paths improves accuracy but incurs additional LLM inference overhead, while blindly executing all paths wastes resources and may introduce noise.
+**Key Challenge**: A fundamental trade-off exists between reasoning diversity and efficiency—adding more reasoning paths improves accuracy but incurs additional LLM inference overhead, while blindly executing all paths wastes resources and may introduce noise.
 
-**Paper Goals**: To build a model-agnostic TableQA framework that maintains high accuracy across diverse open-source and closed-source LLMs, while minimizing LLM invocations through intelligent scheduling.
+**Goal**: To build a model-agnostic TableQA framework that maintains high accuracy across diverse open-source and closed-source LLMs, while minimizing LLM invocations through intelligent scheduling.
 
-**Starting Point**: Reasoning diversity does not require a fixed inference budget—lightweight controllers can determine which reasoning branches are necessary and when validation can be terminated early.
+**Key Insight**: Reasoning diversity does not require a fixed inference budget—lightweight controllers can determine which reasoning branches are necessary and when validation can be terminated early.
 
 **Core Idea**: Lightweight tool models (Scheduler, Confidence Checker, Format Matcher) coordinate reasoning path selection and answer verification across multiple LLM agents, achieving an optimal balance between reasoning diversity and efficiency.
 

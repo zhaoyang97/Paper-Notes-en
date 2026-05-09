@@ -29,15 +29,15 @@ TRIANGLE proposes using the area of the triangle formed by three modal embedding
 
 ## Background & Motivation
 
-**State of the Field**: Since CLIP, the paradigm for multimodal alignment has been built on pairwise cosine similarity — selecting an anchor modality and aligning all other modalities to it one by one. For example, ImageBind uses images as the anchor, and LanguageBind uses text. This approach performs well in two-modality tasks and has since been extended to three-modality scenarios (e.g., video + audio + text).
+**Background**: Since CLIP, the paradigm for multimodal alignment has been built on pairwise cosine similarity — selecting an anchor modality and aligning all other modalities to it one by one. For example, ImageBind uses images as the anchor, and LanguageBind uses text. This approach performs well in two-modality tasks and has since been extended to three-modality scenarios (e.g., video + audio + text).
 
 **Limitations of Prior Work**: Pairwise cosine similarity has a fundamental limitation — it only guarantees that each modality aligns with the anchor, but provides no alignment guarantee between non-anchor modalities. For instance, while video and audio may each align with text, whether video and audio align with each other remains unknown. In practice, this causes models to underperform on tasks requiring the integration of multiple modalities. For example, in video-text retrieval, visual frames alone cannot distinguish "a dog barking" from "a dog howling" — audio is the key discriminative cue, yet existing models cannot effectively leverage this third modality.
 
-**Root Cause**: Cosine similarity is intrinsically a two-dimensional metric and cannot naturally extend to the joint space of three or more vectors. Existing workarounds — such as MLP fusion, auxiliary loss functions, or anchor selection strategies — either introduce additional parameters or still lack geometric interpretability.
+**Key Challenge**: Cosine similarity is intrinsically a two-dimensional metric and cannot naturally extend to the joint space of three or more vectors. Existing workarounds — such as MLP fusion, auxiliary loss functions, or anchor selection strategies — either introduce additional parameters or still lack geometric interpretability.
 
-**Paper Goals**: To directly compute a joint similarity measure in the natural high-dimensional space of three modal embeddings, without resorting to pairwise comparisons or additional fusion layers.
+**Goal**: To directly compute a joint similarity measure in the natural high-dimensional space of three modal embeddings, without resorting to pairwise comparisons or additional fusion layers.
 
-**Starting Point**: Three embedding vectors on the unit hypersphere naturally form a triangle — the area of this triangle directly reflects the degree of tri-modal alignment (smaller area = better alignment), requiring only three dot-product operations.
+**Key Insight**: Three embedding vectors on the unit hypersphere naturally form a triangle — the area of this triangle directly reflects the degree of tri-modal alignment (smaller area = better alignment), requiring only three dot-product operations.
 
 **Core Idea**: Replace pairwise cosine similarity with the area of the triangle formed by three modal embedding vectors, enabling direct measurement of joint tri-modal alignment in high-dimensional space.
 

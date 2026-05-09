@@ -29,17 +29,17 @@ The PERSIST framework systematically evaluates personality measurement stability
 ## Background & Motivation
 
 ### State of the Field
-**State of the Field**: As LLMs are deployed in high-stakes domains such as healthcare, education, and decision support, behavioral predictability has become a core requirement for trustworthy AI. Both the EU AI Act and the U.S. NIST AI Risk Management Framework list "performance consistency" as a necessary condition for high-risk AI applications. Existing research measures LLM behavioral traits using psychological scales (e.g., the Big Five BFI-44, the Dark Triad SD3); Safdari et al. (2023) have demonstrated that LLMs can produce personality measurement reliability comparable to that of humans.
+**Background**: As LLMs are deployed in high-stakes domains such as healthcare, education, and decision support, behavioral predictability has become a core requirement for trustworthy AI. Both the EU AI Act and the U.S. NIST AI Risk Management Framework list "performance consistency" as a necessary condition for high-risk AI applications. Existing research measures LLM behavioral traits using psychological scales (e.g., the Big Five BFI-44, the Dark Triad SD3); Safdari et al. (2023) have demonstrated that LLMs can produce personality measurement reliability comparable to that of humans.
 
 ### Limitations of Prior Work
 **Limitations of Prior Work**: (1) Prior studies rely on single-point measurements, entirely overlooking response variability across deployment conditions—Sclar et al. (2023) found that performance fluctuations between semantically equivalent prompts can reach 76 accuracy points; (2) prompt sensitivity is pervasive, with Salinas and Morstatter (2024) documenting a "butterfly effect" in prompting whereby a single-character modification can cascade into completely different model behavior; (3) no comprehensive evaluation framework exists for systematically quantifying the sources and magnitude of variability.
 
-**Root Cause**: LLM alignment and safety evaluation assumes that behavioral traits can be reliably measured, yet the instability of the measurement instruments themselves undermines this assumption. The inability to reliably measure LLM behavioral traits renders alignment evaluation unreliable—a structural problem in the current LLM safety paradigm that has not received sufficient attention.
+**Key Challenge**: LLM alignment and safety evaluation assumes that behavioral traits can be reliably measured, yet the instability of the measurement instruments themselves undermines this assumption. The inability to reliably measure LLM behavioral traits renders alignment evaluation unreliable—a structural problem in the current LLM safety paradigm that has not received sufficient attention.
 
 ### Paper Goals & Starting Point
-**Paper Goals**: Through a full-factorial experimental design, comprehensively quantify the sources (model scale, reasoning mode, persona instructions, question wording, conversational history) and magnitude of LLM personality measurement instability, and reveal the structural and persistent nature of this instability.
+**Goal**: Through a full-factorial experimental design, comprehensively quantify the sources (model scale, reasoning mode, persona instructions, question wording, conversational history) and magnitude of LLM personality measurement instability, and reveal the structural and persistent nature of this instability.
 
-**Starting Point**: Construct the PERSIST framework covering 29 models × 5 personas × 4 questionnaires × 250 permutations × 100 paraphrases × reasoning/non-reasoning modes × with/without conversational history, generating over 2 million independent measurements.
+**Key Insight**: Construct the PERSIST framework covering 29 models × 5 personas × 4 questionnaires × 250 permutations × 100 paraphrases × reasoning/non-reasoning modes × with/without conversational history, generating over 2 million independent measurements.
 
 **Core Idea**: Instability in LLM personality measurement is persistent and structural; it cannot be resolved simply by scaling up model size, and many interventions expected to improve stability (reasoning, conversational history) paradoxically exacerbate it.
 

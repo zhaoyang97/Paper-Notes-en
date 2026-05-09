@@ -28,15 +28,15 @@ This paper proposes CodePromptZip, the first code-specific prompt compression fr
 
 ## Background & Motivation
 
-**State of the Field**: RAG enhances LLM performance on coding tasks by retrieving relevant code examples, but retrieved code often spans tens of thousands of tokens, constrained by LLM context windows and API costs.
+**Background**: RAG enhances LLM performance on coding tasks by retrieving relevant code examples, but retrieved code often spans tens of thousands of tokens, constrained by LLM context windows and API costs.
 
 **Limitations of Prior Work**: Existing prompt compression techniques (LLMLingua, RECOMP, etc.) are designed for natural language and overlook the distinctive characteristics of code—different token types (e.g., Identifier, Symbol, Invocation) have vastly different impacts on generation quality.
 
-**Root Cause**: Natural language compression methods rely on heuristic information entropy or knowledge distillation to assess token importance, but these metrics do not account for the type-structural information inherent in code, leading to suboptimal compression.
+**Key Challenge**: Natural language compression methods rely on heuristic information entropy or knowledge distillation to assess token importance, but these metrics do not account for the type-structural information inherent in code, leading to suboptimal compression.
 
-**Paper Goals**: Design the first code-specific prompt compression framework capable of maximally preserving task-relevant code information at a specified compression ratio.
+**Goal**: Design the first code-specific prompt compression framework capable of maximally preserving task-relevant code information at a specified compression ratio.
 
-**Starting Point**: Leveraging program analysis to categorize code tokens by type, establishing type-level removal priorities through ablation analysis, and using these priorities to guide training data construction and compressor learning.
+**Key Insight**: Leveraging program analysis to categorize code tokens by type, establishing type-level removal priorities through ablation analysis, and using these priorities to guide training data construction and compressor learning.
 
 **Core Idea**: Different types of code tokens have different impacts on downstream tasks. Tokens are removed in order of increasing impact (i.e., lowest-priority first), and a CodeT5 model augmented with a copy mechanism is trained to learn this compression strategy.
 

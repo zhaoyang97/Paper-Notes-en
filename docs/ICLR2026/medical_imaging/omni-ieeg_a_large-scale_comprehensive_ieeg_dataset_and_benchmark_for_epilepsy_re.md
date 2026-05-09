@@ -29,13 +29,13 @@ This paper introduces the Omni-iEEG dataset (302 patients, 178 hours of high-res
 
 ## Background & Motivation
 
-**State of the Field**: Epilepsy affects more than 50 million people worldwide, and approximately 30% of patients have drug-resistant epilepsy. Surgical resection of the Epileptogenic Zone (EZ) represents the most effective strategy for achieving seizure freedom. Intracranial EEG (iEEG) is the gold standard for EZ localization.
+**Background**: Epilepsy affects more than 50 million people worldwide, and approximately 30% of patients have drug-resistant epilepsy. Surgical resection of the Epileptogenic Zone (EZ) represents the most effective strategy for achieving seizure freedom. Intracranial EEG (iEEG) is the gold standard for EZ localization.
 
 **Limitations of Prior Work**: Existing public iEEG datasets (Open iEEG, Zurich, HUP, SourceSink) suffer from three major issues: (1) format heterogeneity—inconsistent sampling rates, channel naming conventions, and metadata; (2) lack of standardized benchmarks—different studies adopt different evaluation protocols, rendering results incomparable; (3) scarce annotations of pathological events—expert annotations of key biomarkers such as HFOs are rarely made publicly available.
 
-**Root Cause**: Machine learning methods are typically validated on single-center, small-scale datasets, raising concerns about generalizability. Meanwhile, the neuroscience community lacks a unified evaluation platform to fairly assess the clinical value of different methods.
+**Key Challenge**: Machine learning methods are typically validated on single-center, small-scale datasets, raising concerns about generalizability. Meanwhile, the neuroscience community lacks a unified evaluation platform to fairly assess the clinical value of different methods.
 
-**Paper Goals**: The paper integrates data from eight epilepsy centers, harmonizes metadata under board-certified epileptologist supervision, and constructs the Omni-iEEG dataset and benchmark. It releases 36K+ expert-annotated pathological events, defines two primary tasks and three exploratory tasks, and provides comprehensive baselines spanning biomarker-driven to fully end-to-end data-driven pipelines.
+**Goal**: The paper integrates data from eight epilepsy centers, harmonizes metadata under board-certified epileptologist supervision, and constructs the Omni-iEEG dataset and benchmark. It releases 36K+ expert-annotated pathological events, defines two primary tasks and three exploratory tasks, and provides comprehensive baselines spanning biomarker-driven to fully end-to-end data-driven pipelines.
 
 ## Method
 

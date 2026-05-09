@@ -28,15 +28,15 @@ This paper introduces JurisCQAD—a large-scale dataset of 43,000+ real Chinese 
 
 ## Background & Motivation
 
-**State of the Field**: Legal consultation question answering (Legal CQA) is a core task in legal AI, requiring the generation of well-grounded and actionable legal advice from personalized legal predicaments. Existing approaches primarily rely on continued pretraining on legal corpora or retrieval-augmented generation with statutory provisions.
+**Background**: Legal consultation question answering (Legal CQA) is a core task in legal AI, requiring the generation of well-grounded and actionable legal advice from personalized legal predicaments. Existing approaches primarily rely on continued pretraining on legal corpora or retrieval-augmented generation with statutory provisions.
 
 **Limitations of Prior Work**: (1) Lack of high-quality training data—existing legal LLMs (e.g., LawGPT) are mainly trained on synthetic data, creating a domain shift from real consultation scenarios; (2) Legal CQA involves complex task combinations—requiring identification of legal relationships, causal reasoning, core issue localization, and statutory matching, which end-to-end models struggle to fully cover; (3) High context dependency—precise interpretation of legal entities, relationships, and user intent is required.
 
-**Root Cause**: Real legal consultations are typically ambiguous and multifaceted, requiring dynamic interpretation of facts, parties, and legal implications. Existing methods either rely on coarse continued pretraining (with low-quality supervision signals) or sentence-level statutory retrieval (which easily conflates legally distinct but linguistically similar concepts).
+**Key Challenge**: Real legal consultations are typically ambiguous and multifaceted, requiring dynamic interpretation of facts, parties, and legal implications. Existing methods either rely on coarse continued pretraining (with low-quality supervision signals) or sentence-level statutory retrieval (which easily conflates legally distinct but linguistically similar concepts).
 
-**Paper Goals**: Construct a large-scale real-world legal consultation dataset and design an interpretable task decomposition and multi-agent collaboration framework.
+**Goal**: Construct a large-scale real-world legal consultation dataset and design an interpretable task decomposition and multi-agent collaboration framework.
 
-**Starting Point**: Decompose legal consultations into a structured legal element graph—extracting entities, events, relationships, user intent, and legal issues—then iteratively refine legal opinions through multi-agent collaboration.
+**Key Insight**: Decompose legal consultations into a structured legal element graph—extracting entities, events, relationships, user intent, and legal issues—then iteratively refine legal opinions through multi-agent collaboration.
 
 **Core Idea**: The element graph provides a semantic foundation → the Manager Agent dynamically coordinates sub-tasks → the Format Check Agent and Law Search Agent iteratively refine outputs → the Content Check Agent performs final polishing.
 

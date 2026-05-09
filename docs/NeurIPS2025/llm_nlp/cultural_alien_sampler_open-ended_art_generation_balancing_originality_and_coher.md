@@ -28,15 +28,15 @@ This paper proposes the Cultural Alien Sampler (CAS), which employs two GPT-2 mo
 
 ## Background & Motivation
 
-**State of the Field**: LLMs can generate fluent, culturally relevant content, but in open-ended creative tasks (e.g., art generation) they tend to reproduce dominant cultural patterns from training data, lacking genuine originality. Generative art systems must balance originality and coherence.
+**Background**: LLMs can generate fluent, culturally relevant content, but in open-ended creative tasks (e.g., art generation) they tend to reproduce dominant cultural patterns from training data, lacking genuine originality. Generative art systems must balance originality and coherence.
 
 **Limitations of Prior Work**: (a) LLMs exhibit strong "cultural anchoring" bias when generating creative content directly—GPT-4o's concept repetition rate reaches 59%–74% across different inputs; (b) simply pushing toward novelty (e.g., random sampling) causes concept combinations to lose internal coherence; (c) no mechanism exists to explicitly distinguish "whether concepts fit together" from "whether a combination is culturally common."
 
-**Root Cause**: Originality requires deviation from known patterns, while coherence requires that concept combinations be "reasonable." An artistically valid concept combination must be simultaneously highly coherent yet culturally uncommon.
+**Key Challenge**: Originality requires deviation from known patterns, while coherence requires that concept combinations be "reasonable." An artistically valid concept combination must be simultaneously highly coherent yet culturally uncommon.
 
-**Paper Goals**: Construct a sampling method that explicitly separates "concept coherence" from "cultural typicality," achieving high coherence + low typicality.
+**Goal**: Construct a sampling method that explicitly separates "concept coherence" from "cultural typicality," achieving high coherence + low typicality.
 
-**Starting Point**: Art creation is reduced to a combinatorial search problem over a discrete concept space (inspired by conceptual art theory). Two lightweight models separately score concept combinations along these two dimensions.
+**Key Insight**: Art creation is reduced to a combinatorial search problem over a discrete concept space (inspired by conceptual art theory). Two lightweight models separately score concept combinations along these two dimensions.
 
 **Core Idea**: Fine-tune two GPT-2 models to separately capture concept coherence and cultural typicality, then select concepts whose combinations are well-matched yet culturally rare to drive creative generation.
 

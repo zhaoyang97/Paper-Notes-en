@@ -28,15 +28,15 @@ Ghost-FWL introduces the first large-scale mobile full-waveform LiDAR dataset (2
 
 ## Background & Motivation
 
-**State of the Field**: LiDAR is a core sensor for autonomous driving, robotics, and large-scale terrain mapping. It reconstructs 3D geometry by measuring the time-of-flight of laser pulses. Conventional LiDAR outputs only processed point clouds (range + intensity), discarding the rich physical information embedded in raw waveforms.
+**Background**: LiDAR is a core sensor for autonomous driving, robotics, and large-scale terrain mapping. It reconstructs 3D geometry by measuring the time-of-flight of laser pulses. Conventional LiDAR outputs only processed point clouds (range + intensity), discarding the rich physical information embedded in raw waveforms.
 
 **Limitations of Prior Work**: LiDAR systems widely suffer from "ghost points" — laser pulses undergo multipath reflections off glass and specular surfaces, generating spurious 3D points that do not correspond to real objects. As sensor sensitivity increases, ghost artifacts become more severe. These phantom points cause: (1) false positives in 3D object detection (e.g., detecting "ghost pedestrians" behind glass); (2) localization drift and map errors in SLAM.
 
-**Root Cause**: Existing ghost removal methods rely on geometric consistency of point clouds (e.g., spatial symmetry), which requires dense, static scanning environments. In mobile LiDAR scenarios (autonomous driving, robotics), point clouds are sparse and dynamic, leaving geometric cues insufficient to distinguish ghosts from real reflections. Full-waveform LiDAR (FWL) records the complete temporal intensity profile of each pulse, containing temporal and amplitude cues that can distinguish ghosts — yet no FWL ghost detection dataset exists.
+**Key Challenge**: Existing ghost removal methods rely on geometric consistency of point clouds (e.g., spatial symmetry), which requires dense, static scanning environments. In mobile LiDAR scenarios (autonomous driving, robotics), point clouds are sparse and dynamic, leaving geometric cues insufficient to distinguish ghosts from real reflections. Full-waveform LiDAR (FWL) records the complete temporal intensity profile of each pulse, containing temporal and amplitude cues that can distinguish ghosts — yet no FWL ghost detection dataset exists.
 
-**Paper Goals**: (1) Construct the first FWL ghost detection dataset targeting mobile scenarios; (2) propose a baseline framework for ghost detection and removal from FWL data; (3) design a self-supervised pretraining method suited to FWL data to address the high cost of annotation.
+**Goal**: (1) Construct the first FWL ghost detection dataset targeting mobile scenarios; (2) propose a baseline framework for ghost detection and removal from FWL data; (3) design a self-supervised pretraining method suited to FWL data to address the high cost of annotation.
 
-**Starting Point**: FWL data naturally encodes multipath reflection information — ghost reflections exhibit distinguishable patterns in peak temporal position, amplitude, and width compared to true object reflections. The proposed approach learns these physical signatures to detect ghosts.
+**Key Insight**: FWL data naturally encodes multipath reflection information — ghost reflections exhibit distinguishable patterns in peak temporal position, amplitude, and width compared to true object reflections. The proposed approach learns these physical signatures to detect ghosts.
 
 **Core Idea**: Leverage the temporal-intensity information of full-waveform LiDAR — rather than point cloud geometry alone — to detect and remove ghost reflections.
 

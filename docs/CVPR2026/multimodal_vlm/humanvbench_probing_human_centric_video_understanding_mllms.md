@@ -29,11 +29,11 @@ This paper presents HumanVBench, a video benchmark comprising 16 fine-grained ta
 
 ## Background & Motivation
 
-1. **State of the Field**: Video MLLMs are advancing rapidly, yet existing benchmarks primarily assess general content understanding and lack fine-grained evaluation of human-centric capabilities such as emotion, behavior, and cross-modal alignment.
+1. **Background**: Video MLLMs are advancing rapidly, yet existing benchmarks primarily assess general content understanding and lack fine-grained evaluation of human-centric capabilities such as emotion, behavior, and cross-modal alignment.
 2. **Limitations of Prior Work**: Emotion benchmarks are limited to discrete classification; action benchmarks overlook emotional states and speaker identification; speech-visual synchronization has rarely been systematically evaluated.
-3. **Root Cause**: Humans can readily detect audio-visual mismatches, yet models exhibit severe deficiencies in speaker identification and lip-speech alignment.
-4. **Paper Goals**: To construct a benchmark that systematically evaluates the fundamental human-centric perceptual capabilities of MLLMs.
-5. **Starting Point**: Two automated pipelines substantially reduce the need for manual annotation while leveraging model errors to generate high-quality distractors.
+3. **Key Challenge**: Humans can readily detect audio-visual mismatches, yet models exhibit severe deficiencies in speaker identification and lip-speech alignment.
+4. **Goal**: To construct a benchmark that systematically evaluates the fundamental human-centric perceptual capabilities of MLLMs.
+5. **Key Insight**: Two automated pipelines substantially reduce the need for manual annotation while leveraging model errors to generate high-quality distractors.
 6. **Core Idea**: Model-induced errors are repurposed as semantically plausible distractors, simultaneously ensuring question difficulty and reducing human effort.
 
 ## Method

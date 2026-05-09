@@ -28,15 +28,15 @@ This paper presents RedTeamCUA, the first red-teaming framework for computer-use
 
 ## Background & Motivation
 
-**State of the Field**: CUAs (e.g., OpenAI Operator, Claude Computer Use) can manipulate desktops and browsers to perform complex tasks, yet safety research has lagged far behind capability development. Existing red-teaming work largely focuses on pure web or pure text settings, lacking evaluation in hybrid Web-OS environments.
+**Background**: CUAs (e.g., OpenAI Operator, Claude Computer Use) can manipulate desktops and browsers to perform complex tasks, yet safety research has lagged far behind capability development. Existing red-teaming work largely focuses on pure web or pure text settings, lacking evaluation in hybrid Web-OS environments.
 
 **Limitations of Prior Work**: (a) Existing safety benchmarks do not cover hybrid Web-OS attack paths (e.g., injecting malicious instructions via a webpage to manipulate the local file system); (b) there is no systematic attack taxonomy mapping the CIA triad to CUA scenarios; (c) the effectiveness of existing defenses (LlamaFirewall, PromptArmor) in CUA settings remains unknown.
 
-**Root Cause**: The core value proposition of CUAs — "doing more" — directly conflicts with security. Greater capability enlarges the attack surface, and higher attempt rates will convert into higher success rates as model capability improves.
+**Key Challenge**: The core value proposition of CUAs — "doing more" — directly conflicts with security. Greater capability enlarges the attack surface, and higher attempt rates will convert into higher success rates as model capability improves.
 
-**Paper Goals**: To establish a comprehensive and reproducible CUA security evaluation framework, quantify the vulnerability of frontier CUAs, and assess the effectiveness of existing defenses.
+**Goal**: To establish a comprehensive and reproducible CUA security evaluation framework, quantify the vulnerability of frontier CUAs, and assess the effectiveness of existing defenses.
 
-**Starting Point**: Attack objectives are designed along the CIA triad (Confidentiality → data exfiltration, Integrity → file tampering, Availability → service disruption), with sandboxed hybrid environments ensuring safety and reproducibility.
+**Key Insight**: Attack objectives are designed along the CIA triad (Confidentiality → data exfiltration, Integrity → file tampering, Availability → service disruption), with sandboxed hybrid environments ensuring safety and reproducibility.
 
 **Core Idea**: The hybrid Web-OS environment of CUAs creates a novel attack surface; indirect prompt injection can execute high-risk operations across platforms (Web → OS), and all frontier CUAs are found to be severely vulnerable.
 

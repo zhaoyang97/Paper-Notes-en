@@ -30,15 +30,15 @@ By embedding rotation-equivariant (P4 group) and scale-equivariant convolutional
 
 ## Background & Motivation
 
-**State of the Field**: Adversarial examples expose the vulnerability of DNNs to small input perturbations. Adversarial training (AT) is the dominant defense strategy, guiding models toward more robust features by injecting adversarial examples during training.
+**Background**: Adversarial examples expose the vulnerability of DNNs to small input perturbations. Adversarial training (AT) is the dominant defense strategy, guiding models toward more robust features by injecting adversarial examples during training.
 
 **Limitations of Prior Work**: AT suffers from three key drawbacks: (a) high computational cost due to continuous adversarial example generation; (b) degradation of clean accuracy; and (c) limited generalization — defenses typically apply only to attack types seen during training.
 
-**Root Cause**: AT is a *reactive* defense — it counters attacks by modifying data rather than proactively encoding robustness at the architectural level. Model fragility stems fundamentally from overfitting to non-semantic, spurious statistical patterns.
+**Key Challenge**: AT is a *reactive* defense — it counters attacks by modifying data rather than proactively encoding robustness at the architectural level. Model fragility stems fundamentally from overfitting to non-semantic, spurious statistical patterns.
 
-**Paper Goals**: Can architectural priors alone improve adversarial robustness? Specifically: (a) Can equivariant architectures theoretically guarantee tighter certified robustness bounds? (b) How do equivariant convolutions smooth gradient behavior? (c) Without adversarial training, can equivariant CNNs outperform standard CNNs?
+**Goal**: Can architectural priors alone improve adversarial robustness? Specifically: (a) Can equivariant architectures theoretically guarantee tighter certified robustness bounds? (b) How do equivariant convolutions smooth gradient behavior? (c) Without adversarial training, can equivariant CNNs outperform standard CNNs?
 
-**Starting Point**: Standard CNNs are only translation-equivariant, lacking equivariance to rotations and scaling. Adversarial perturbations often violate the intrinsic symmetries of data; constraining models to respond consistently along group orbits can naturally suppress off-orbit perturbations.
+**Key Insight**: Standard CNNs are only translation-equivariant, lacking equivariance to rotations and scaling. Adversarial perturbations often violate the intrinsic symmetries of data; constraining models to respond consistently along group orbits can naturally suppress off-orbit perturbations.
 
 **Core Idea**: Incorporate group-equivariant convolutions as architectural priors into CNNs, aligning decision boundaries with the geometric structure of the data, thereby providing architecture-level adversarial defense.
 

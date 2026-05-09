@@ -30,7 +30,7 @@ This paper proposes the LCO-Emb framework and demonstrates that Multimodal Large
 
 ### Limitations of Prior Work
 
-**State of the Field**: Cross-modal representation alignment is a central problem in multimodal AI. Traditional methods such as CLIP rely on contrastive learning over large-scale paired data to achieve vision-language alignment, yet they exhibit performance saturation on complex tasks including multilingual retrieval, visual text understanding, and interleaved multimodal encoding.
+**Background**: Cross-modal representation alignment is a central problem in multimodal AI. Traditional methods such as CLIP rely on contrastive learning over large-scale paired data to achieve vision-language alignment, yet they exhibit performance saturation on complex tasks including multilingual retrieval, visual text understanding, and interleaved multimodal encoding.
 
 **Core Limitations**:
 

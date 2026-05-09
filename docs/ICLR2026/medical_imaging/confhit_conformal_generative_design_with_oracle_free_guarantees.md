@@ -29,15 +29,15 @@ This paper proposes ConfHit, a framework that employs density-ratio-weighted con
 
 ## Background & Motivation
 
-**State of the Field**: Deep generative models (VAEs, diffusion models, autoregressive Transformers) have demonstrated strong performance in molecular discovery. However, practical deployment requires guarantees that generated molecules satisfy target properties—something that can only be verified through costly wet-lab or in vivo experiments. Conformal Prediction (CP) offers a model-agnostic statistical guarantee framework and has recently been extended to generative tasks (Quach et al., 2023; Shahrokhi et al., 2025).
+**Background**: Deep generative models (VAEs, diffusion models, autoregressive Transformers) have demonstrated strong performance in molecular discovery. However, practical deployment requires guarantees that generated molecules satisfy target properties—something that can only be verified through costly wet-lab or in vivo experiments. Conformal Prediction (CP) offers a model-agnostic statistical guarantee framework and has recently been extended to generative tasks (Quach et al., 2023; Shahrokhi et al., 2025).
 
 **Limitations of Prior Work**: (a) **Oracle access requirement**—existing CP-based generative methods require experimental validation (synthesis + testing) of newly generated samples, which is prohibitively expensive and impractical in drug discovery; (b) **Distributional shift**—the distribution $Q$ of generated samples may differ from the distribution $P$ of historically labeled data, violating the exchangeability assumption; (c) **Budget constraints**—under a limited generation budget, it is not always possible to guarantee the presence of a valid molecule, and one must honestly declare "insufficient confidence" rather than blindly claiming success.
 
-**Root Cause**: The fundamental challenge is providing statistical guarantees without validating new samples while simultaneously handling distributional shift—a core difficulty for classical CP frameworks.
+**Key Challenge**: The fundamental challenge is providing statistical guarantees without validating new samples while simultaneously handling distributional shift—a core difficulty for classical CP frameworks.
 
-**Paper Goals**: Two central problems: (i) **Certification**—given a generated batch, can one guarantee with probability $1-\alpha$ that it contains at least one hit? (ii) **Design**—can the candidate set be pruned to a minimal subset while preserving the guarantee?
+**Goal**: Two central problems: (i) **Certification**—given a generated batch, can one guarantee with probability $1-\alpha$ that it contains at least one hit? (ii) **Design**—can the candidate set be pruned to a minimal subset while preserving the guarantee?
 
-**Starting Point**: Exploit weighted exchangeability (corrected via density ratios) between "inactive" samples in the historically labeled data (with known $Y_i$) and generated samples, eliminating the need for an oracle.
+**Key Insight**: Exploit weighted exchangeability (corrected via density ratios) between "inactive" samples in the historically labeled data (with known $Y_i$) and generated samples, eliminating the need for an oracle.
 
 **Core Idea**: Density-ratio-weighted permutation p-values + nested testing = oracle-free finite-sample guarantees.
 

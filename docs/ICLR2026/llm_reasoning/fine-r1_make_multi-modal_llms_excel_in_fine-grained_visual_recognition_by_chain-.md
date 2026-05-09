@@ -28,16 +28,16 @@ Fine-R1 combines CoT supervised fine-tuning (structured reasoning chains followi
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs perform well on coarse-grained visual tasks but lag significantly behind contrastive CLIP models on fine-grained visual recognition (FGVR), such as distinguishing different bird species.
+**Background**: MLLMs perform well on coarse-grained visual tasks but lag significantly behind contrastive CLIP models on fine-grained visual recognition (FGVR), such as distinguishing different bird species.
 
 **Limitations of Prior Work**:
    - Adapting general-purpose MLLMs to FGVR requires large amounts of labeled data, with high annotation costs (e.g., domain experts labeling thousands of bird subspecies).
    - MLLMs tend to overfit to seen sub-classes and generalize poorly to unseen ones.
    - Even frontier models such as GPT-4V underperform specialized CLIP models on FGVR.
 
-**Root Cause**: The "high intra-class variance + low inter-class variance" problem inherent to FGVR—the same bird species can look vastly different from different angles, while distinct species may appear nearly identical.
+**Key Challenge**: The "high intra-class variance + low inter-class variance" problem inherent to FGVR—the same bird species can look vastly different from different angles, while distinct species may appear nearly identical.
 
-**Starting Point**: MLLMs have already internalized rich fine-grained knowledge; the bottleneck is not a lack of knowledge but an inability to effectively **retrieve** it. CoT reasoning is used to guide knowledge retrieval, while RL optimizes how that knowledge is utilized.
+**Key Insight**: MLLMs have already internalized rich fine-grained knowledge; the bottleneck is not a lack of knowledge but an inability to effectively **retrieve** it. CoT reasoning is used to guide knowledge retrieval, while RL optimizes how that knowledge is utilized.
 
 **Core Idea**: Rather than teaching the model to "learn more knowledge," Fine-R1 teaches it to "better use existing knowledge"—by activating the MLLM's inherent fine-grained recognition capability through structured CoT and triplet-contrastive RL.
 

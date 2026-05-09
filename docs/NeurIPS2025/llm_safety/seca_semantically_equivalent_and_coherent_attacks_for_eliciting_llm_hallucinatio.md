@@ -27,13 +27,13 @@ content_hash: ab0eeea39e653992
 This paper proposes SECA (Semantically Equivalent and Coherent Attacks), a realistic prompt perturbation framework that elicits LLM hallucinations while preserving semantic equivalence and coherence, achieving higher attack success rates on multiple-choice QA tasks with near-zero semantic errors.
 
 ## Background & Motivation
-**State of the Field**: LLMs are increasingly deployed in high-stakes domains, yet hallucination remains a critical threat to their reliability.
+**Background**: LLMs are increasingly deployed in high-stakes domains, yet hallucination remains a critical threat to their reliability.
 
 **Limitations of Prior Work**: Existing adversarial attack methods rely on unrealistic prompts—inserting meaningless tokens or altering the original semantic intent—and thus fail to reveal how hallucinations arise in real-world scenarios.
 
-**Root Cause**: While adversarial attacks in computer vision typically involve realistic input modifications, a corresponding study of realistic adversarial prompts in NLP is largely absent.
+**Key Challenge**: While adversarial attacks in computer vision typically involve realistic input modifications, a corresponding study of realistic adversarial prompts in NLP is largely absent.
 
-**Starting Point**: The paper formalizes the search for realistic adversarial prompts as a constrained optimization problem incorporating semantic equivalence and coherence constraints.
+**Key Insight**: The paper formalizes the search for realistic adversarial prompts as a constrained optimization problem incorporating semantic equivalence and coherence constraints.
 
 ## Method
 

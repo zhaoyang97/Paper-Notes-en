@@ -30,15 +30,15 @@ BEDLAM2.0 is a comprehensive upgrade over BEDLAM, introducing diverse camera mot
 
 ## Background & Motivation
 
-**State of the Field**: BEDLAM was the first synthetic dataset capable of training competitive 3D human pose regressors without any real images, and has since become a standard training resource for HPS (Human Pose and Shape) methods. However, world-coordinate human motion estimation—which must account for camera motion and zoom—has emerged as an active research direction, and BEDLAM's diversity in camera motion and focal length remains severely limited.
+**Background**: BEDLAM was the first synthetic dataset capable of training competitive 3D human pose regressors without any real images, and has since become a standard training resource for HPS (Human Pose and Shape) methods. However, world-coordinate human motion estimation—which must account for camera motion and zoom—has emerged as an active research direction, and BEDLAM's diversity in camera motion and focal length remains severely limited.
 
 **Limitations of Prior Work**: (1) The majority of BEDLAM sequences use a static camera, with only a negligible number of moving-camera clips, resulting in insufficient camera motion diversity. (2) Focal length coverage is narrow (HFOV concentrated at 52° or 65°), inconsistent with the wide focal length distribution observed in real-world videos. (3) Body shape diversity is inadequate, with a notable absence of high-BMI bodies. (4) All characters are barefoot, hairstyles are unrealistic, and clothing is available only in a single size unsuitable for varied body shapes.
 
-**Root Cause**: World-coordinate human motion estimation requires large quantities of training data with ground-truth camera motion and 3D body parameters. Such data are difficult to obtain from real captures, making synthetic data a critical path—yet BEDLAM's synthetic diversity falls short of what is needed.
+**Key Challenge**: World-coordinate human motion estimation requires large quantities of training data with ground-truth camera motion and 3D body parameters. Such data are difficult to obtain from real captures, making synthetic data a critical path—yet BEDLAM's synthetic diversity falls short of what is needed.
 
-**Paper Goals**: To construct a synthetic dataset that substantially surpasses BEDLAM across camera motion, body shape, clothing, hair, and scene dimensions, with explicit support for end-to-end training of world-coordinate human pose estimation methods.
+**Goal**: To construct a synthetic dataset that substantially surpasses BEDLAM across camera motion, body shape, clothing, hair, and scene dimensions, with explicit support for end-to-end training of world-coordinate human pose estimation methods.
 
-**Starting Point**: A dataset-engineering perspective that systematically improves every dimension of BEDLAM—camera (focal length + motion), body (shape + motion + hands), appearance (hair + shoes + clothing), and scene/rendering.
+**Key Insight**: A dataset-engineering perspective that systematically improves every dimension of BEDLAM—camera (focal length + motion), body (shape + motion + hands), appearance (hair + shoes + clothing), and scene/rendering.
 
 **Core Idea**: Through systematic improvements including synthetic-and-captured diverse camera motions, size-graded clothing, strand-based hair, and SMPL-X shoes, synthetic data alone can match or exceed the state of the art previously achievable only with real data.
 

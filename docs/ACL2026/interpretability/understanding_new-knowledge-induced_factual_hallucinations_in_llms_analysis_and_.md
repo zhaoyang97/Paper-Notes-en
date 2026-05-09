@@ -28,15 +28,15 @@ This paper systematically analyzes factual hallucinations induced by new-knowled
 
 ## Background & Motivation
 
-**State of the Field**: LLMs acquire rich world knowledge during pre-training and learn to follow instructions during SFT. Prior work has shown that introducing knowledge not covered during pre-training into SFT increases the risk of factual hallucinations—models erroneously generate newly learned information in irrelevant contexts.
+**Background**: LLMs acquire rich world knowledge during pre-training and learn to follow instructions during SFT. Prior work has shown that introducing knowledge not covered during pre-training into SFT increases the risk of factual hallucinations—models erroneously generate newly learned information in irrelevant contexts.
 
 **Limitations of Prior Work**: Prior work has focused primarily on closed-form QA settings with mixed knowledge types, leaving the specific manifestations and underlying mechanisms of hallucinations poorly understood. In particular: (1) the propagation patterns of hallucinations across different knowledge and task types are unclear; (2) the attention-level causes of hallucinations have not been identified; (3) lightweight mitigation methods are lacking.
 
-**Root Cause**: When a particular knowledge type is composed entirely of new knowledge, severe hallucinations arise even when the total volume of new knowledge is small. This diverges from the prior simplistic understanding that hallucination severity scales monotonically with the proportion of new knowledge—the critical factor is the degree of unfamiliarity within a specific knowledge type, not the global ratio of new knowledge.
+**Key Challenge**: When a particular knowledge type is composed entirely of new knowledge, severe hallucinations arise even when the total volume of new knowledge is small. This diverges from the prior simplistic understanding that hallucination severity scales monotonically with the proportion of new knowledge—the critical factor is the degree of unfamiliarity within a specific knowledge type, not the global ratio of new knowledge.
 
-**Paper Goals**: (1) Construct a controlled dataset for fine-grained analysis of hallucination manifestations; (2) reveal the attention mechanism underlying hallucinations; (3) propose a lightweight mitigation method.
+**Goal**: (1) Construct a controlled dataset for fine-grained analysis of hallucination manifestations; (2) reveal the attention mechanism underlying hallucinations; (3) propose a lightweight mitigation method.
 
-**Starting Point**: A synthetic biographical dataset is constructed to precisely control the proportion and type of known/unknown knowledge, and attention analysis is used to trace the generation and propagation mechanisms of hallucinations.
+**Key Insight**: A synthetic biographical dataset is constructed to precisely control the proportion and type of known/unknown knowledge, and attention analysis is used to trace the generation and propagation mechanisms of hallucinations.
 
 **Core Idea**: Learning new knowledge weakens the model's attention to key entities in the input, causing over-reliance on other tokens in context and thereby inducing hallucinations. Injecting known knowledge at the end of training restores attention patterns.
 

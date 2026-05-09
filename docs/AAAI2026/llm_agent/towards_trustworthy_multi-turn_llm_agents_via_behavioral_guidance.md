@@ -30,13 +30,13 @@ This paper proposes a task completion framework in which a Task Profiler, a Reas
 
 ## Background & Motivation
 
-**State of the Field**: LLM agents have made progress on task completion through mechanisms such as memory, tool use, and reflection (e.g., ReAct, Reflexion, ToolFormer), but these mechanisms are largely implicit and difficult to inspect or steer.
+**Background**: LLM agents have made progress on task completion through mechanisms such as memory, tool use, and reflection (e.g., ReAct, Reflexion, ToolFormer), but these mechanisms are largely implicit and difficult to inspect or steer.
 
 **Limitations of Prior Work**: In multi-turn tasks, agents lack reliability and verifiability — their reasoning processes cannot be audited, and the generated behaviors cannot be guaranteed to consistently satisfy task constraints. Different tasks demand different styles of behavioral guidance (rapid local responses vs. long-horizon cumulative constraints), and LLM agents tend to drift across inconsistent reasoning patterns.
 
-**Root Cause**: Agents must flexibly handle diverse task structures while simultaneously maintaining verifiable reasoning consistency and reliable constraint adherence — a fundamental tension between flexibility and controllability.
+**Key Challenge**: Agents must flexibly handle diverse task structures while simultaneously maintaining verifiable reasoning consistency and reliable constraint adherence — a fundamental tension between flexibility and controllability.
 
-**Starting Point**: Tasks are modeled in a reinforcement learning formulation (observation–action–reward loop), and a three-tier architecture is designed: a Task Profiler meta-learns structural task features and selects strategies; a Reasoning Module extracts reusable condition–action rules from historical trajectories; and a Generation Module ensures that outputs always satisfy all constraints. All three components co-evolve across multiple execution epochs.
+**Key Insight**: Tasks are modeled in a reinforcement learning formulation (observation–action–reward loop), and a three-tier architecture is designed: a Task Profiler meta-learns structural task features and selects strategies; a Reasoning Module extracts reusable condition–action rules from historical trajectories; and a Generation Module ensures that outputs always satisfy all constraints. All three components co-evolve across multiple execution epochs.
 
 ## Method
 

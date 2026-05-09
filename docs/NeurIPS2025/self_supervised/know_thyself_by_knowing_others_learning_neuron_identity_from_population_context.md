@@ -29,8 +29,8 @@ This paper proposes NuCLR, a self-supervised framework that learns neuron-level 
 
 ### Limitations of Prior Work
 
-1. **State of the Field**: Understanding neuron identity (cell type, brain region, connectivity) is fundamental to neuroscience, yet traditional approaches (molecular markers, morphology) are costly and of limited coverage.
-2. **Root Cause**: Inferring identity from neural activity is challenging—existing methods rely solely on single-neuron features (waveforms, ISI) and ignore population context, and require retraining for each new animal.
+1. **Background**: Understanding neuron identity (cell type, brain region, connectivity) is fundamental to neuroscience, yet traditional approaches (molecular markers, morphology) are costly and of limited coverage.
+2. **Key Challenge**: Inferring identity from neural activity is challenging—existing methods rely solely on single-neuron features (waveforms, ISI) and ignore population context, and require retraining for each new animal.
 3. **Core Idea**: Neuron identity is temporally stable, and population activity encodes rich contextual information. Contrastive learning can be applied to pull representations of the same neuron at different times closer together while pushing apart representations of different neurons.
 
 ## Method

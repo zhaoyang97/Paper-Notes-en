@@ -29,15 +29,15 @@ This paper identifies the root cause of identity (ID) shift in T2I models as *sc
 
 ## Background & Motivation
 
-**State of the Field**: Consistent T2I generation requires that a given subject maintains a consistent identity across different scenes. Existing methods (e.g., ConsiStory, 1P1S) typically require all target scenes to be known in advance, or require model training/fine-tuning.
+**Background**: Consistent T2I generation requires that a given subject maintains a consistent identity across different scenes. Existing methods (e.g., ConsiStory, 1P1S) typically require all target scenes to be known in advance, or require model training/fine-tuning.
 
 **Limitations of Prior Work**: (a) The assumption that all target scenes are available upfront is unrealistic in practice (e.g., scenes in film/game production are determined iteratively); (b) training-based methods require model retraining, leading to low efficiency; (c) the root cause of ID shift has not been systematically investigated.
 
-**Root Cause**: T2I models trained on large-scale natural images naturally learn co-occurrence priors between subjects and scenes (e.g., cows are typically found in grasslands rather than oceans), causing the model to alter subject appearance under different scene prompts. The attention mechanism allows information from scene tokens to inevitably leak into ID tokens.
+**Key Challenge**: T2I models trained on large-scale natural images naturally learn co-occurrence priors between subjects and scenes (e.g., cows are typically found in grasslands rather than oceans), causing the model to alter subject appearance under different scene prompts. The attention mechanism allows information from scene tokens to inevitably leak into ID tokens.
 
-**Paper Goals**: (a) Provide a theoretical explanation for the source of ID shift; (b) propose a training-free, per-scene solution that does not require knowledge of all scenes in advance.
+**Goal**: (a) Provide a theoretical explanation for the source of ID shift; (b) propose a training-free, per-scene solution that does not require knowledge of all scenes in advance.
 
-**Starting Point**: Starting from the attention mechanism, the paper proves that scene contextualization (scene-to-ID information leakage) is nearly unavoidable (it can only be prevented if $W_V$ is exactly block-diagonal — a measure-zero event), and then identifies and suppresses this association in the prompt embedding space via SVD analysis.
+**Key Insight**: Starting from the attention mechanism, the paper proves that scene contextualization (scene-to-ID information leakage) is nearly unavoidable (it can only be prevented if $W_V$ is exactly block-diagonal — a measure-zero event), and then identifies and suppresses this association in the prompt embedding space via SVD analysis.
 
 **Core Idea**: Scene contextualization is the root cause of ID shift and is nearly unavoidable; however, it can be inversely decoupled at the prompt embedding level through SVD directional stability analysis.
 

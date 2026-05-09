@@ -37,7 +37,7 @@ Aggregates serve as a fundamental structural material in construction and transp
 - **3D scanning methods**: Employ 3D laser scanners or X-ray CT systems with high accuracy, but equipment costs are prohibitive (hundreds of thousands of dollars) and deployment at quarries or construction sites is impractical.
 - **Conventional photogrammetry**: Although relatively inexpensive, it suffers from background interference, difficulty in multi-view point cloud registration, and the absence of scale references.
 
-**Root Cause**: The need to develop a flexible, low-cost 3D reconstruction solution that makes 3D characterization of aggregate morphology feasible in engineering practice, while quantifying the degree of deviation introduced by 2D analysis relative to true 3D morphology.
+**Key Challenge**: The need to develop a flexible, low-cost 3D reconstruction solution that makes 3D characterization of aggregate morphology feasible in engineering practice, while quantifying the degree of deviation introduced by 2D analysis relative to true 3D morphology.
 
 ## Method
 

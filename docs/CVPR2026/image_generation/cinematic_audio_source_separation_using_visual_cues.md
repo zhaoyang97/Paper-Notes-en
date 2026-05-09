@@ -29,15 +29,15 @@ This paper proposes the first audio-visual cinematic audio source separation (AV
 
 ## Background & Motivation
 
-**State of the Field**: Cinematic audio source separation (CASS) was formalized as a three-way separation problem (dialogue/effects/music) with the introduction of the DnR dataset. Methods such as BandIt have advanced audio-only performance, yet all existing approaches overlook the multimodal nature of cinema.
+**Background**: Cinematic audio source separation (CASS) was formalized as a three-way separation problem (dialogue/effects/music) with the introduction of the DnR dataset. Methods such as BandIt have advanced audio-only performance, yet all existing approaches overlook the multimodal nature of cinema.
 
 **Limitations of Prior Work**: (a) All CASS methods are purely audio-based, ignoring visual cues (lip motion corresponding to speech, scene actions corresponding to sound effects); (b) no dataset exists that simultaneously provides source-separated audio tracks and temporally aligned video; (c) predictive separation models are prone to spectral hole artifacts.
 
-**Root Cause**: Visual information clearly benefits audio separation, yet obtaining isolated tracks from real films is practically infeasible.
+**Key Challenge**: Visual information clearly benefits audio separation, yet obtaining isolated tracks from real films is practically infeasible.
 
-**Paper Goals**: To train an effective AV-CASS model using independently obtainable in-the-wild audio-visual data, without access to real isolated tracks.
+**Goal**: To train an effective AV-CASS model using independently obtainable in-the-wild audio-visual data, without access to real isolated tracks.
 
-**Starting Point**: A synthetic training data pipeline (face video → speech, scene video → sound effects, music only) combined with a generative flow matching separation model.
+**Key Insight**: A synthetic training data pipeline (face video → speech, scene video → sound effects, music only) combined with a generative flow matching separation model.
 
 **Core Idea**: Training with dual video streams (face + scene) from independent sources; at inference, both streams are extracted from a single real film, enabling zero-shot generalization.
 

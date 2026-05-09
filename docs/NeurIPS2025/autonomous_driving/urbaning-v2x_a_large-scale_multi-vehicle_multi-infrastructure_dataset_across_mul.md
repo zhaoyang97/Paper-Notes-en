@@ -29,15 +29,15 @@ UrbanIng-V2X is the first real-world cooperative perception dataset spanning mul
 
 ## Background & Motivation
 
-**State of the Field**: Cooperative Perception leverages V2X communication to enable vehicles and infrastructure to share sensor data, mitigating single-vehicle occlusion and limited field of view. Several real-world datasets have advanced the field: V2V4Real (V2V only), DAIR-V2X-C (V2I, 28 intersections but single vehicle), TUMTraf-V2X (V2I, single intersection), and V2X-Real (V2V+V2I, single intersection).
+**Background**: Cooperative Perception leverages V2X communication to enable vehicles and infrastructure to share sensor data, mitigating single-vehicle occlusion and limited field of view. Several real-world datasets have advanced the field: V2V4Real (V2V only), DAIR-V2X-C (V2I, 28 intersections but single vehicle), TUMTraf-V2X (V2I, single intersection), and V2X-Real (V2V+V2I, single intersection).
 
 **Limitations of Prior Work**: (1) No existing dataset simultaneously combines multi-vehicle, multi-infrastructure, and multi-intersection coverage—a combination critical for evaluating the scalability of cooperative perception systems in realistic urban environments. (2) Training and testing on a single intersection may yield inflated performance—models may learn intersection-specific geometric patterns and traffic behaviors rather than generalizable cooperative perception capabilities.
 
-**Root Cause**: Evaluating generalization requires cross-intersection testing, yet collecting cross-intersection data poses substantial engineering challenges in hardware deployment, spatiotemporal synchronization, and annotation consistency across heterogeneous sources.
+**Key Challenge**: Evaluating generalization requires cross-intersection testing, yet collecting cross-intersection data poses substantial engineering challenges in hardware deployment, spatiotemporal synchronization, and annotation consistency across heterogeneous sources.
 
-**Paper Goals**: (1) Construct the first real-world V2X dataset with multi-vehicle, multi-infrastructure, and multi-intersection coverage; (2) Design an evaluation strategy to quantify the generalization gap of models on unseen intersections; (3) Provide a complete toolchain (development kit, HD maps, digital twin) to empower community research.
+**Goal**: (1) Construct the first real-world V2X dataset with multi-vehicle, multi-infrastructure, and multi-intersection coverage; (2) Design an evaluation strategy to quantify the generalization gap of models on unseen intersections; (3) Provide a complete toolchain (development kit, HD maps, digital twin) to empower community research.
 
-**Starting Point**: Three urban intersections with distinct geometric layouts are selected at a high-definition test site in Ingolstadt, Germany. Two connected vehicles and seven sensor poles are deployed, a rigorous spatiotemporal synchronization scheme is designed, approximately 8 hours of data are recorded, and 34 representative scenes are carefully curated.
+**Key Insight**: Three urban intersections with distinct geometric layouts are selected at a high-definition test site in Ingolstadt, Germany. Two connected vehicles and seven sensor poles are deployed, a rigorous spatiotemporal synchronization scheme is designed, approximately 8 hours of data are recorded, and 34 representative scenes are carefully curated.
 
 **Core Idea**: The first real-world V2X dataset covering multiple intersections, multiple vehicles, and multiple infrastructure nodes; a Separate Intersection Split (SIS) is introduced to expose the generalization bottleneck of cooperative perception methods.
 

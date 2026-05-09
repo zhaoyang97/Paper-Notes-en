@@ -29,15 +29,15 @@ MMGait constructs the most comprehensive multi-modal gait recognition benchmark 
 
 ## Background & Motivation
 
-**State of the Field**: Gait recognition, as a long-range, contactless biometric technology, has achieved remarkable progress in recent years. Mainstream methods focus on RGB-derived modalities (silhouettes, pose sequences) and perform well in both indoor and outdoor settings.
+**Background**: Gait recognition, as a long-range, contactless biometric technology, has achieved remarkable progress in recent years. Mainstream methods focus on RGB-derived modalities (silhouettes, pose sequences) and perform well in both indoor and outdoor settings.
 
 **Limitations of Prior Work**: RGB-derived modalities lack 3D perception and suffer severe performance degradation under adverse conditions such as occlusion, rain, fog, and low illumination. Existing multi-modal datasets (e.g., LidarGait, FreeGait) include only RGB and LiDAR sensors, which is insufficient for studying heterogeneous modality interaction and unified cross-sensor retrieval.
 
-**Root Cause**: Real-world deployments typically involve multiple sensor types (RGB, infrared, depth, LiDAR, 4D radar), yet the absence of a multi-sensor gait benchmark hinders research on unified multi-modal systems. Each modality exhibits unique strengths and weaknesses—RGB is information-rich but sensitive to illumination; LiDAR is precise but sparse; infrared adapts to low light but lacks texture; and 4D radar offers strong penetration but limited resolution.
+**Key Challenge**: Real-world deployments typically involve multiple sensor types (RGB, infrared, depth, LiDAR, 4D radar), yet the absence of a multi-sensor gait benchmark hinders research on unified multi-modal systems. Each modality exhibits unique strengths and weaknesses—RGB is information-rich but sensitive to illumination; LiDAR is precise but sparse; infrared adapts to low light but lacks texture; and 4D radar offers strong penetration but limited resolution.
 
-**Paper Goals**: To construct a multi-modal gait benchmark covering 5 sensor types, systematically investigate the characteristics of each modality, and propose a unified omni-modal recognition framework.
+**Goal**: To construct a multi-modal gait benchmark covering 5 sensor types, systematically investigate the characteristics of each modality, and propose a unified omni-modal recognition framework.
 
-**Starting Point**: A comprehensive evaluation of each modality's recognition capability, transferability, and complementarity across three dimensions: single-modal, cross-modal, and multi-modal.
+**Key Insight**: A comprehensive evaluation of each modality's recognition capability, transferability, and complementarity across three dimensions: single-modal, cross-modal, and multi-modal.
 
 **Core Idea**: Establish a large-scale multi-sensor gait dataset and introduce the Omni Multi-Modal Gait Recognition task—enabling a single model to accept arbitrary modality inputs and retrieve targets across arbitrary modalities.
 

@@ -28,15 +28,15 @@ This paper proposes PolicyBench (a 21K-question cross-system policy understandin
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly deployed in high-stakes decision domains such as education, law, and healthcare, with public policy being one of the most socially impactful application scenarios. Policy analysis requires comprehensive capabilities in factual knowledge, contextual reasoning, and value-sensitive judgment.
+**Background**: LLMs are increasingly deployed in high-stakes decision domains such as education, law, and healthcare, with public policy being one of the most socially impactful application scenarios. Policy analysis requires comprehensive capabilities in factual knowledge, contextual reasoning, and value-sensitive judgment.
 
 **Limitations of Prior Work**: (1) Evaluation gap — no systematic benchmark exists for measuring LLM policy comprehension, preventing objective comparison and diagnosis of model weaknesses; (2) Diagnostic gap — aggregate metrics obscure specific performance differences across cognitive levels, policy domains, and languages; (3) Adaptation difficulty — general-purpose LLMs struggle to meet the diverse demands of policy tasks, requiring domain specialization.
 
-**Root Cause**: Policy understanding is a multi-level cognitive task — from factual memory to conceptual understanding to scenario application — but existing LLM training primarily optimizes for general reasoning, lacking structured evaluation and adaptation for the policy domain.
+**Key Challenge**: Policy understanding is a multi-level cognitive task — from factual memory to conceptual understanding to scenario application — but existing LLM training primarily optimizes for general reasoning, lacking structured evaluation and adaptation for the policy domain.
 
-**Paper Goals**: (1) Build a large-scale policy benchmark covering two governance systems (China and US); (2) Diagnose LLM strengths and weaknesses across three cognitive levels; (3) Propose a domain-adapted MoE approach to validate specialization potential.
+**Goal**: (1) Build a large-scale policy benchmark covering two governance systems (China and US); (2) Diagnose LLM strengths and weaknesses across three cognitive levels; (3) Propose a domain-adapted MoE approach to validate specialization potential.
 
-**Starting Point**: Design a three-tier evaluation system based on Bloom's cognitive taxonomy (memory → understanding → application), incorporating the 3I framework (Ideas/Interests/Institutions) from policy studies to refine understanding-level task design.
+**Key Insight**: Design a three-tier evaluation system based on Bloom's cognitive taxonomy (memory → understanding → application), incorporating the 3I framework (Ideas/Interests/Institutions) from policy studies to refine understanding-level task design.
 
 **Core Idea**: Three-tier cognitive benchmark + cross-system comparison + cognitive-level-aligned MoE specialization.
 

@@ -29,15 +29,15 @@ This paper introduces CRAFT (a continuously updated Chinese financial knowledge 
 
 ## Background & Motivation
 
-**State of the Field**: Knowledge editing aims to efficiently modify outdated knowledge in language models without full retraining. However, mainstream evaluation datasets (ZsRE, MQuAKE, RippleEdits) are static and cannot be updated once published.
+**Background**: Knowledge editing aims to efficiently modify outdated knowledge in language models without full retraining. However, mainstream evaluation datasets (ZsRE, MQuAKE, RippleEdits) are static and cannot be updated once published.
 
 **Limitations of Prior Work**: (1) Static datasets suffer from serious data leakage — most knowledge has already been seen by LMs during pre-training, leading to unfair evaluation; (2) WikiBigEdit is real-time but requires processing hundreds of GB of Wiki data with severe sparsity; (3) Existing methods struggle to balance editing success rate, locality, and portability.
 
-**Root Cause**: Parameter modification methods (e.g., ROME, WISE) suffer severe model degradation during sequential editing; retrieval methods (e.g., IKE, EREN) exhibit unstable performance due to lack of alignment; alignment methods (e.g., LTE) have poor locality due to overfitting.
+**Key Challenge**: Parameter modification methods (e.g., ROME, WISE) suffer severe model degradation during sequential editing; retrieval methods (e.g., IKE, EREN) exhibit unstable performance due to lack of alignment; alignment methods (e.g., LTE) have poor locality due to overfitting.
 
-**Paper Goals**: Build a continuously updated, contamination-free real-time knowledge editing dataset, and propose a knowledge editing method that performs well across all metrics.
+**Goal**: Build a continuously updated, contamination-free real-time knowledge editing dataset, and propose a knowledge editing method that performs well across all metrics.
 
-**Starting Point**: Leverage publicly available Chinese official financial statistics (continuously updated and unseen by LMs) for dataset construction, and redefine knowledge editing as an LM alignment problem.
+**Key Insight**: Leverage publicly available Chinese official financial statistics (continuously updated and unseen by LMs) for dataset construction, and redefine knowledge editing as an LM alignment problem.
 
 **Core Idea**: Through one-time offline alignment (LoRA fine-tuning) to endow the LM with knowledge editing capability, then at inference time use self-adaptive routing to decide whether to use the original model or the aligned model, fundamentally solving the locality problem.
 
@@ -158,15 +158,15 @@ This paper introduces CRAFT (a continuously updated Chinese financial knowledge 
 
 ## Background & Motivation
 
-**State of the Field**: Knowledge editing aims to efficiently modify outdated knowledge in language models without full retraining. However, mainstream evaluation datasets (ZsRE, MQuAKE, RippleEdits) are static and cannot be updated once published.
+**Background**: Knowledge editing aims to efficiently modify outdated knowledge in language models without full retraining. However, mainstream evaluation datasets (ZsRE, MQuAKE, RippleEdits) are static and cannot be updated once published.
 
 **Limitations of Prior Work**: (1) Static datasets suffer from severe data leakage — most knowledge has already been seen by LMs during pre-training, leading to unfair evaluation; (2) WikiBigEdit, while real-time, requires processing hundreds of GB of Wiki data with severe sparsity; (3) Existing methods struggle to balance edit success rate, locality, and portability.
 
-**Root Cause**: Parameter modification methods (e.g., ROME, WISE) suffer severe model degradation during continuous editing; retrieval methods (e.g., IKE, EREN) exhibit unstable performance due to lack of alignment; alignment methods (e.g., LTE) show poor locality due to overfitting.
+**Key Challenge**: Parameter modification methods (e.g., ROME, WISE) suffer severe model degradation during continuous editing; retrieval methods (e.g., IKE, EREN) exhibit unstable performance due to lack of alignment; alignment methods (e.g., LTE) show poor locality due to overfitting.
 
-**Paper Goals**: Build a continuously updated, contamination-free real-time knowledge editing dataset and propose a knowledge editing method that performs uniformly well across all metrics.
+**Goal**: Build a continuously updated, contamination-free real-time knowledge editing dataset and propose a knowledge editing method that performs uniformly well across all metrics.
 
-**Starting Point**: Leverage publicly available Chinese official financial statistical data (continuously updated and unseen by LMs) to construct the dataset, and redefine knowledge editing as an LM alignment problem.
+**Key Insight**: Leverage publicly available Chinese official financial statistical data (continuously updated and unseen by LMs) to construct the dataset, and redefine knowledge editing as an LM alignment problem.
 
 **Core Idea**: Through one-time offline alignment (LoRA fine-tuning) to endow the LM with knowledge editing capabilities, then use self-adaptive routing during inference to decide whether to use the original or aligned model, fundamentally solving the locality problem.
 

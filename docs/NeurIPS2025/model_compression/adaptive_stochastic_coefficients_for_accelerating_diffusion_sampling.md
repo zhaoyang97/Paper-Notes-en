@@ -28,17 +28,17 @@ By theoretically analyzing the complementary weaknesses of ODE and SDE solvers (
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion model sampling requires solving reverse differential equations. Mainstream approaches fall into two categories: ODE solvers (DDIM, DPM-Solver, etc.) provide efficient deterministic sampling but accumulate irreducible gradient errors; SDE solvers inject stochasticity to correct gradient errors but require a large number of function evaluations (100–1000 NFE).
+**Background**: Diffusion model sampling requires solving reverse differential equations. Mainstream approaches fall into two categories: ODE solvers (DDIM, DPM-Solver, etc.) provide efficient deterministic sampling but accumulate irreducible gradient errors; SDE solvers inject stochasticity to correct gradient errors but require a large number of function evaluations (100–1000 NFE).
 
 **Limitations of Prior Work**: (a) ODE solvers in few-step settings (<10 NFE) irreversibly accumulate discrepancies between the learned score function and the true score (gradient errors) along deterministic trajectories, leading to a performance ceiling; (b) SDE solvers, while capable of correcting gradient errors via stochasticity, suffer from discretization errors that grow with step size, making them worse than ODE solvers in few-step regimes; (c) hybrid methods such as Restart Sampling still require 50+ steps.
 
-**Root Cause**: In the few-step regime, both the gradient error of ODE solvers and the discretization error of SDE solvers are problematic—a method is needed that simultaneously exploits the efficiency of ODE solvers and the error-correction capability of SDE solvers.
+**Key Challenge**: In the few-step regime, both the gradient error of ODE solvers and the discretization error of SDE solvers are problematic—a method is needed that simultaneously exploits the efficiency of ODE solvers and the error-correction capability of SDE solvers.
 
-**Paper Goals**:
+**Goal**:
 - Can SDE solvers achieve efficient sampling with very few steps (<10 NFE)?
 - How can stochasticity intensity be adaptively controlled to find the optimal trade-off between gradient error correction and discretization error?
 
-**Starting Point**: Theoretical analysis shows that the gradient error bound of AdaSDE includes a contraction factor $(1-\lambda(\gamma))$, which is strictly smaller than the gradient error bound of ODE solvers (Theorem 3). Crucially, $\gamma$ must be adaptively tuned—each step requires a different optimal noise intensity.
+**Key Insight**: Theoretical analysis shows that the gradient error bound of AdaSDE includes a contraction factor $(1-\lambda(\gamma))$, which is strictly smaller than the gradient error bound of ODE solvers (Theorem 3). Crucially, $\gamma$ must be adaptively tuned—each step requires a different optimal noise intensity.
 
 **Core Idea**: At each denoising step, a learnable scalar $\gamma_i$ controls the magnitude of "forward noise addition + backward denoising." Optimizing $\gamma_i$ via lightweight distillation enables few-step SDE sampling to surpass ODE solvers.
 

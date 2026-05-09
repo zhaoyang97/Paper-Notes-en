@@ -29,15 +29,15 @@ This paper proposes GRAIL (Graph Reasoning Agent Informed through Language), a h
 
 ## Background & Motivation
 
-**State of the Field**: LLMs excel at general reasoning but remain challenged by social reasoning in multi-agent hidden-information settings—inferring others' beliefs, intentions, and deception. Social deduction games such as Avalon provide a structured environment for evaluating this capability.
+**Background**: LLMs excel at general reasoning but remain challenged by social reasoning in multi-agent hidden-information settings—inferring others' beliefs, intentions, and deception. Social deduction games such as Avalon provide a structured environment for evaluating this capability.
 
 **Limitations of Prior Work**: (1) The largest reasoning models (e.g., DeepSeek-R1 671B) can solve simple reasoning tasks but require enormous token budgets and compute; (2) performance degrades sharply when distilled into smaller models; (3) pure LLM approaches struggle with constrained probabilistic reasoning over long time horizons; (4) large models have high latency that precludes real-time interaction with humans.
 
-**Root Cause**: Social reasoning demands constrained probabilistic inference (e.g., the hard constraint that exactly two players are evil) and long-range belief tracking, yet LLMs reason at the token level and are ill-suited for such structured inference.
+**Key Challenge**: Social reasoning demands constrained probabilistic inference (e.g., the hard constraint that exactly two players are evil) and long-range belief tracking, yet LLMs reason at the token level and are ill-suited for such structured inference.
 
-**Paper Goals**: Build a social reasoning agent capable of competing against humans in real time, achieving performance on par with or superior to large reasoning models even when instantiated with small models.
+**Goal**: Build a social reasoning agent capable of competing against humans in real time, achieving performance on par with or superior to large reasoning models even when instantiated with small models.
 
-**Starting Point**: A hybrid architecture that externalizes belief reasoning to a probabilistic graphical model (factor graph + belief propagation) while the LLM focuses on language understanding and dialogue generation.
+**Key Insight**: A hybrid architecture that externalizes belief reasoning to a probabilistic graphical model (factor graph + belief propagation) while the LLM focuses on language understanding and dialogue generation.
 
 **Core Idea**: Decouple structured reasoning from language capability—the factor graph tracks role beliefs in an interpretable and efficient manner, while the LLM supplies language priors and generates conversational utterances.
 

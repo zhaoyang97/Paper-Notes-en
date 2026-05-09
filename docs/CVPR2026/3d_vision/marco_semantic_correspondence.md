@@ -29,15 +29,15 @@ This paper proposes MARCO, a semantic correspondence model built on a single DIN
 
 ## Background & Motivation
 
-**State of the Field**: Semantic correspondence aims to establish pixel-level matches between semantically equivalent regions. Recent dominant methods adopt dual-encoder architectures combining DINOv2 (for robust semantic alignment) with Stable Diffusion (for rich spatial detail), such as Geo-SC and SD+DINO. These methods perform well on benchmarks but have parameter counts approaching one billion.
+**Background**: Semantic correspondence aims to establish pixel-level matches between semantically equivalent regions. Recent dominant methods adopt dual-encoder architectures combining DINOv2 (for robust semantic alignment) with Stable Diffusion (for rich spatial detail), such as Geo-SC and SD+DINO. These methods perform well on benchmarks but have parameter counts approaching one billion.
 
 **Limitations of Prior Work**: (1) Dual-encoder designs incur substantial computational cost, requiring feature extraction from two separate encoders. (2) More critically, models trained on sparse keypoints generalize poorly to unseen keypoints and unseen categories at test time, since query points rarely coincide with annotated positions in practice. This exposes a fundamental gap between benchmark performance and real-world applicability.
 
-**Root Cause**: Sparse keypoint supervision causes models to overfit to annotated locations. Fine-tuned DINOv2 achieves higher accuracy near annotated keypoints, but the broader surface-level consistency that originally spanned the entire object is degraded—representations collapse toward keypoint neighborhoods.
+**Key Challenge**: Sparse keypoint supervision causes models to overfit to annotated locations. Fine-tuned DINOv2 achieves higher accuracy near annotated keypoints, but the broader surface-level consistency that originally spanned the entire object is degraded—representations collapse toward keypoint neighborhoods.
 
-**Paper Goals**: (1) Improve precision on standard benchmarks, particularly at fine-grained localization thresholds. (2) Substantially enhance generalization to unseen keypoints and unseen categories. (3) Preserve the efficiency advantage of a single-backbone design.
+**Goal**: (1) Improve precision on standard benchmarks, particularly at fine-grained localization thresholds. (2) Substantially enhance generalization to unseen keypoints and unseen categories. (3) Preserve the efficiency advantage of a single-backbone design.
 
-**Starting Point**: Although frozen DINOv2 features exhibit limited spatial consistency, they already encode sparse but reliable correspondence cues. These cues can be exploited during training to automatically discover and propagate dense correspondences, extending supervision from a handful of keypoints to the full object surface.
+**Key Insight**: Although frozen DINOv2 features exhibit limited spatial consistency, they already encode sparse but reliable correspondence cues. These cues can be exploited during training to automatically discover and propagate dense correspondences, extending supervision from a handful of keypoints to the full object surface.
 
 **Core Idea**: A coarse-to-fine supervision objective improves spatial precision, while a self-distillation framework combined with flow anchoring expands sparse keypoints into dense pseudo-labels covering the entire object surface, encouraging features to remain smooth across the whole object rather than collapsing near annotated points.
 

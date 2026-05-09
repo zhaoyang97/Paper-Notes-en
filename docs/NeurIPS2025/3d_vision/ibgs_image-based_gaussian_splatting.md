@@ -29,15 +29,15 @@ This paper proposes Image-Based Gaussian Splatting (IBGS), which enhances standa
 
 ## Background & Motivation
 
-**State of the Field**: 3D Gaussian Splatting (3DGS) has become the dominant approach for novel view synthesis (NVS), attracting widespread attention for its high-quality rendering and fast optimization. However, each Gaussian can only represent a single color per viewpoint, and low-order spherical harmonics (SH) struggle to capture complex view-dependent effects.
+**Background**: 3D Gaussian Splatting (3DGS) has become the dominant approach for novel view synthesis (NVS), attracting widespread attention for its high-quality rendering and fast optimization. However, each Gaussian can only represent a single color per viewpoint, and low-order spherical harmonics (SH) struggle to capture complex view-dependent effects.
 
 **Limitations of Prior Work**: Existing improvements either employ global texture mapping (which fails in complex scenes) or per-Gaussian texture mapping (where storage cost grows quadratically with texture resolution), and neither adequately handles view-dependent effects.
 
-**Root Cause**: How can one simultaneously model high-frequency details and view-dependent effects without significantly increasing storage?
+**Key Challenge**: How can one simultaneously model high-frequency details and view-dependent effects without significantly increasing storage?
 
-**Paper Goals**: Leverage the high-frequency detail and viewpoint information already present in training images to enhance rendering.
+**Goal**: Leverage the high-frequency detail and viewpoint information already present in training images to enhance rendering.
 
-**Starting Point**: Inspired by traditional image-based rendering (IBR) techniques, this work integrates 3DGS with image-based rendering.
+**Key Insight**: Inspired by traditional image-based rendering (IBR) techniques, this work integrates 3DGS with image-based rendering.
 
 **Core Idea**: Pixel color = base color from standard 3DGS + color residual learned from neighboring viewpoint images.
 

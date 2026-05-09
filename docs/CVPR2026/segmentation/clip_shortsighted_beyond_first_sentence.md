@@ -29,15 +29,15 @@ The paper shows that CLIP and Long-CLIP suffer from a serious early-token bias a
 
 ## Background & Motivation
 
-**State of the Field**: CLIP builds a multimodal joint representation space via image–text contrastive learning and is widely used for zero-shot classification, multimodal retrieval, and text-to-image generation. Long-CLIP and similar works extend CLIP's text-understanding length by stretching positional encodings and fine-tuning on long-caption data.
+**Background**: CLIP builds a multimodal joint representation space via image–text contrastive learning and is widely used for zero-shot classification, multimodal retrieval, and text-to-image generation. Long-CLIP and similar works extend CLIP's text-understanding length by stretching positional encodings and fine-tuning on long-caption data.
 
 **Limitations of Prior Work**: CLIP's pre-training data is dominated by short captions, leading to a strong bias toward early tokens. More importantly, existing long-caption datasets (e.g. ShareGPT4V) almost universally follow a "summary first sentence + detailed description" format, where the first sentence carries the bulk of the caption's information and looks very similar to a short caption.
 
-**Root Cause**: When training Long-CLIP on such captions, the model can minimize the contrastive loss by attending only to the first summary sentence — forming a shortcut that lets it produce a low training loss without truly extending its effective context window. After deleting or moving the first sentence, retrieval performance drops sharply (-17.1% and -9.7%).
+**Key Challenge**: When training Long-CLIP on such captions, the model can minimize the contrastive loss by attending only to the first summary sentence — forming a shortcut that lets it produce a low training loss without truly extending its effective context window. After deleting or moving the first sentence, retrieval performance drops sharply (-17.1% and -9.7%).
 
-**Paper Goals**: (1) How can the early-token bias of CLIP's text encoder be quantitatively analyzed? (2) How can the first-sentence summary shortcut in the Long-CLIP training framework be eliminated? (3) How can long-text retrieval be improved without adding any extra parameters?
+**Goal**: (1) How can the early-token bias of CLIP's text encoder be quantitatively analyzed? (2) How can the first-sentence summary shortcut in the Long-CLIP training framework be eliminated? (3) How can long-text retrieval be improved without adding any extra parameters?
 
-**Starting Point**: The authors start from data augmentation, observing that the summary first sentence is the training-time shortcut — since it is the source of the bias, simply remove it during training, and use sentence sampling and prefix padding to spread attention.
+**Key Insight**: The authors start from data augmentation, observing that the summary first sentence is the training-time shortcut — since it is the source of the bias, simply remove it during training, and use sentence sampling and prefix padding to spread attention.
 
 **Core Idea**: Break CLIP's early-token bias shortcut by removing the summary first sentence from training captions, randomly sub-sampling the remaining sentences, and adding prefix padding.
 

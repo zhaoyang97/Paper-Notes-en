@@ -31,7 +31,7 @@ Diffusion Policy generates action trajectories via iterative multi-step denoisin
 
 However, 1-step FM inference faces a fundamental contradiction: when training data contains multiple feasible action modes, the velocity field of conditional Flow Matching is a weighted average of all modes — multiple ODE trajectories originating from the same noise point are averaged into a single "intermediate" path. This averaged path often does not correspond to any real feasible solution, manifesting in 3D manipulation as trajectories that pass through obstacles or collide with the environment.
 
-**Root Cause**: **How can multimodal action distributions be preserved under the computational constraint of single-step inference (1 NFE)?** This paper exploits the asymmetry in computational budgets between offline training and online inference — training can be "expensive" while inference must be "frugal" — by shifting all computational overhead for multimodality preservation entirely to the training phase.
+**Key Challenge**: **How can multimodal action distributions be preserved under the computational constraint of single-step inference (1 NFE)?** This paper exploits the asymmetry in computational budgets between offline training and online inference — training can be "expensive" while inference must be "frugal" — by shifting all computational overhead for multimodality preservation entirely to the training phase.
 
 ## Method
 

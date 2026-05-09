@@ -28,15 +28,15 @@ UniAVGen proposes a joint audio-video generation framework built on a symmetric 
 
 ## Background & Motivation
 
-1. **State of the Field**: Joint audio-video generation is an important direction in generative AI. Commercial systems (Veo3, Sora2, Wan2.5) have demonstrated impressive results, but open-source methods still predominantly rely on decoupled two-stage pipelines—generating silent video first and then dubbing, or generating audio first and then driving video synthesis.
+1. **Background**: Joint audio-video generation is an important direction in generative AI. Commercial systems (Veo3, Sora2, Wan2.5) have demonstrated impressive results, but open-source methods still predominantly rely on decoupled two-stage pipelines—generating silent video first and then dubbing, or generating audio first and then driving video synthesis.
 
 2. **Limitations of Prior Work**: The fundamental problem with two-stage methods lies in **modal decoupling**—audio and video cannot interact during generation, resulting in poor semantic consistency, weak emotional alignment, and imprecise lip-audio synchronization. Existing end-to-end joint generation methods (JavisDiT, UniVerse-1, Ovi) attempt to address this issue but either support only ambient sound without human speech, or achieve limited cross-modal alignment.
 
-3. **Root Cause**: Audio and video exhibit a natural **asymmetry** in temporal granularity and semantic space—each video latent frame corresponds to multiple audio tokens, and vice versa. Existing methods ignore this asymmetry, resorting either to global interaction (slow convergence) or symmetric temporal alignment interaction (insufficient context utilization).
+3. **Key Challenge**: Audio and video exhibit a natural **asymmetry** in temporal granularity and semantic space—each video latent frame corresponds to multiple audio tokens, and vice versa. Existing methods ignore this asymmetry, resorting either to global interaction (slow convergence) or symmetric temporal alignment interaction (insufficient context utilization).
 
-4. **Paper Goals**: (a) How to design cross-modal interactions that converge quickly while maintaining strong performance; (b) how to focus interactions on key regions such as the face; (c) how to enhance cross-modal correlation signals at inference time.
+4. **Goal**: (a) How to design cross-modal interactions that converge quickly while maintaining strong performance; (b) how to focus interactions on key regions such as the face; (c) how to enhance cross-modal correlation signals at inference time.
 
-5. **Starting Point**: Lip movements in video are influenced by surrounding phonemes, while audio needs to perceive more precise temporal position information from video—the requirements in each direction differ fundamentally, motivating an asymmetric design.
+5. **Key Insight**: Lip movements in video are influenced by surrounding phonemes, while audio needs to perceive more precise temporal position information from video—the requirements in each direction differ fundamentally, motivating an asymmetric design.
 
 6. **Core Idea**: Employ modality-aware asymmetric cross-modal attention, face-aware soft masking, and modality-aware CFG to achieve state-of-the-art audio-video synchronized generation with far less training data than competing methods.
 

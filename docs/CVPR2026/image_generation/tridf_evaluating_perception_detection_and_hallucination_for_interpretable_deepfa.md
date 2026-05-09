@@ -28,7 +28,7 @@ This paper proposes TriDF — the first benchmark that comprehensively evaluates
 
 ## Background & Motivation
 
-1. **State of the Field**: With the rapid advancement of generative models, DeepFake detection has evolved from a simple binary classification task toward requiring interpretability — not only determining whether content is fake, but also explaining why. Multimodal large language models (MLLMs) are increasingly employed for interpretable DeepFake detection.
+1. **Background**: With the rapid advancement of generative models, DeepFake detection has evolved from a simple binary classification task toward requiring interpretability — not only determining whether content is fake, but also explaining why. Multimodal large language models (MLLMs) are increasingly employed for interpretable DeepFake detection.
 
 2. **Limitations of Prior Work**:
     - **Coarse-grained annotations in existing datasets**: Datasets such as FF++ and DFDC provide only binary labels, making it impossible to evaluate interpretability.
@@ -36,11 +36,11 @@ This paper proposes TriDF — the first benchmark that comprehensively evaluates
     - **Absence of hallucination evaluation**: MLLMs may produce "hallucinations" when generating explanations — providing rationales for artifacts that do not exist. This is particularly dangerous in DeepFake detection, as fabricated explanations can mislead judgments. No existing benchmark addresses this aspect.
     - **Using MLLMs to judge MLLMs**: Many benchmarks rely on GPT-4o to evaluate the outputs of other models, introducing self-preference bias.
 
-3. **Root Cause**: Interpretable DeepFake detection requires models to simultaneously possess three capabilities — perceiving artifacts, correctly detecting fakes, and generating reliable explanations — yet no unified framework exists to evaluate these three capabilities and their interdependencies.
+3. **Key Challenge**: Interpretable DeepFake detection requires models to simultaneously possess three capabilities — perceiving artifacts, correctly detecting fakes, and generating reliable explanations — yet no unified framework exists to evaluate these three capabilities and their interdependencies.
 
-4. **Paper Goals**: To construct a comprehensive benchmark for interpretable DeepFake detection that jointly evaluates perception, detection, and hallucination, and to reveal the coupling relationships among them.
+4. **Goal**: To construct a comprehensive benchmark for interpretable DeepFake detection that jointly evaluates perception, detection, and hallucination, and to reveal the coupling relationships among them.
 
-5. **Starting Point**: Starting from a human-annotated fine-grained artifact taxonomy, the paper establishes quantifiable perception evaluation; pairs real and fake samples to support hallucination detection; and covers three modalities (image/video/audio) and 16 DeepFake types.
+5. **Key Insight**: Starting from a human-annotated fine-grained artifact taxonomy, the paper establishes quantifiable perception evaluation; pairs real and fake samples to support hallucination detection; and covers three modalities (image/video/audio) and 16 DeepFake types.
 
 6. **Core Idea**: Perception, Detection, and Hallucination form an inseparable triad for interpretable DeepFake detection. TriDF is the first unified benchmark to evaluate all three simultaneously.
 

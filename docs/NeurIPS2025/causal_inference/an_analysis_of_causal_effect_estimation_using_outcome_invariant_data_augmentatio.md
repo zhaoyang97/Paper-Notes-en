@@ -31,14 +31,14 @@ This paper presents the first systematic analysis of outcome invariant data augm
 
 ### Limitations of Prior Work
 
-**State of the Field**: The central challenge in causal effect estimation is unobserved confounding: the statistical association between treatment $X$ and outcome $Y$ may arise from common causes (confounders $C$) rather than causal relationships. Classical solutions include:
+**Background**: The central challenge in causal effect estimation is unobserved confounding: the statistical association between treatment $X$ and outcome $Y$ may arise from common causes (confounders $C$) rather than causal relationships. Classical solutions include:
 
 1. **Intervention**: directly manipulating $X$ to break confounding paths — but often infeasible in practice.
 2. **Instrumental Variables (IV)**: using auxiliary variables $Z$ satisfying specific conditions to identify causal effects indirectly — but valid IVs are difficult to find.
 
 **Data augmentation** (DA) is a ubiquitous regularization technique in machine learning, traditionally aimed at expanding training data to improve i.i.d. generalization. However, whether DA can go beyond regularization and reduce confounding bias in causal estimation remains an open question.
 
-**Root Cause**: The paper's core insight is that when DA operations (e.g., image rotation) do not alter the outcome value — i.e., $f(gx) = f(x)$, termed "outcome invariance" — such DA is mathematically **equivalent to a soft intervention on the treatment variable**. DA can thus be "repurposed": not for i.i.d. generalization, but for reducing confounding bias.
+**Key Challenge**: The paper's core insight is that when DA operations (e.g., image rotation) do not alter the outcome value — i.e., $f(gx) = f(x)$, termed "outcome invariance" — such DA is mathematically **equivalent to a soft intervention on the treatment variable**. DA can thus be "repurposed": not for i.i.d. generalization, but for reducing confounding bias.
 
 ## Method
 

@@ -23,15 +23,15 @@ AnyUp proposes the first **encoder-agnostic** learnable feature upsampling metho
 
 ## Background & Motivation
 
-**State of the Field**: Feature maps produced by pretrained visual encoders (DINO, CLIP, SigLIP, etc.) are resolution-constrained by the number of Transformer tokens, typically $h \times w \ll H \times W$. Recent methods such as FeatUp, LoftUp, and JAFAR propose learnable feature upsampling to obtain high-resolution features.
+**Background**: Feature maps produced by pretrained visual encoders (DINO, CLIP, SigLIP, etc.) are resolution-constrained by the number of Transformer tokens, typically $h \times w \ll H \times W$. Recent methods such as FeatUp, LoftUp, and JAFAR propose learnable feature upsampling to obtain high-resolution features.
 
 **Limitations of Prior Work**: Existing learnable upsamplers **do not generalize across encoders** — an upsampler trained on DINOv2 cannot be directly applied to CLIP or SigLIP, and retraining is required whenever the encoder changes. For large-scale vision models (e.g., DINOv2-G), retraining is computationally prohibitive or entirely infeasible.
 
-**Root Cause**: The layers in an upsampling network that process low-resolution features are coupled to the specific dimensionality and distribution of a particular encoder, preventing transfer to new feature types at inference time.
+**Key Challenge**: The layers in an upsampling network that process low-resolution features are coupled to the specific dimensionality and distribution of a particular encoder, preventing transfer to new feature types at inference time.
 
-**Paper Goals**: Design a **train-once, use-anywhere** feature upsampler capable of upsampling features of arbitrary dimensionality from arbitrary encoders across arbitrary resolutions.
+**Goal**: Design a **train-once, use-anywhere** feature upsampler capable of upsampling features of arbitrary dimensionality from arbitrary encoders across arbitrary resolutions.
 
-**Starting Point**: The fundamental bottleneck in existing attention-based upsamplers lies in the dimensional coupling of feature processing layers. If a processing layer can be designed to be invariant to the number of input channels, encoder-agnostic upsampling becomes feasible.
+**Key Insight**: The fundamental bottleneck in existing attention-based upsamplers lies in the dimensional coupling of feature processing layers. If a processing layer can be designed to be invariant to the number of input channels, encoder-agnostic upsampling becomes feasible.
 
 **Core Idea**: Design **feature-agnostic convolutional layers** — each input channel is independently convolved with a set of learned filter bases, normalized via softmax, and then averaged across all channels, yielding an output whose dimensionality is independent of the number of input channels.
 

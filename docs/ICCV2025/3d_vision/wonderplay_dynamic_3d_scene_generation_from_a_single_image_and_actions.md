@@ -29,17 +29,17 @@ WonderPlay introduces a Hybrid Generative Simulator that combines coarse 3D dyna
 
 ## Background & Motivation
 
-**State of the Field**: Dynamic 3D scene generation is a core requirement for AR/VR and embodied AI. Existing approaches fall into two main categories: physics-based simulation methods and conditional video generation methods.
+**Background**: Dynamic 3D scene generation is a core requirement for AR/VR and embodied AI. Existing approaches fall into two main categories: physics-based simulation methods and conditional video generation methods.
 
 **Limitations of Prior Work**:
 - Physics simulation methods (e.g., PhysGaussian, PhysDreamer) require accurate physics solvers and complete 3D physical state reconstruction. However, reconstructing the full physical state of snow, sand, cloth, or fluid from a single image is practically infeasible, limiting these methods to rigid bodies and simple elastic objects.
 - Video generation methods (e.g., CogVideoX, Sora) can produce visually realistic videos of physical phenomena but cannot accept precise 3D actions as input and thus lack controllability.
 
-**Root Cause**: Physics simulation offers accurate action response but suffers from poor visual quality and limited material coverage; video generation achieves high visual fidelity but lacks action controllability.
+**Key Challenge**: Physics simulation offers accurate action response but suffers from poor visual quality and limited material coverage; video generation achieves high visual fidelity but lacks action controllability.
 
-**Paper Goals**: Starting from a single image and accepting 3D physical action inputs (gravity, wind fields, point forces), how can one generate realistic dynamic 3D scenes spanning diverse material types?
+**Goal**: Starting from a single image and accepting 3D physical action inputs (gravity, wind fields, point forces), how can one generate realistic dynamic 3D scenes spanning diverse material types?
 
-**Starting Point**: Redefine the roles of the physics simulator and the video generator — the physics simulator provides coarse but controllable motion guidance, while the video generator is responsible for refining motion and visual quality.
+**Key Insight**: Redefine the roles of the physics simulator and the video generator — the physics simulator provides coarse but controllable motion guidance, while the video generator is responsible for refining motion and visual quality.
 
 **Core Idea**: Use the physics simulator to produce coarse 3D dynamics as conditioning signals to drive a video diffusion model toward realistic video generation, then inversely update the 3D scene from the generated video, forming a closed loop.
 

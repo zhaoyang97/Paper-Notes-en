@@ -28,13 +28,13 @@ To address the difficulty of thoroughly erasing broad concepts (e.g., violence, 
 
 ## Background & Motivation
 
-**State of the Field**: T2I models (e.g., Stable Diffusion) are trained on large-scale web data and inevitably learn unsafe concepts (nudity, violence, copyright-protected content, etc.). Concept erasure methods are broadly divided into training-based approaches (modifying model weights, e.g., ESD, RECE, MACE) and training-free approaches (inference-time intervention, e.g., SLD, Safree, AdaVD).
+**Background**: T2I models (e.g., Stable Diffusion) are trained on large-scale web data and inevitably learn unsafe concepts (nudity, violence, copyright-protected content, etc.). Concept erasure methods are broadly divided into training-based approaches (modifying model weights, e.g., ESD, RECE, MACE) and training-free approaches (inference-time intervention, e.g., SLD, Safree, AdaVD).
 
 **Limitations of Prior Work**: Existing methods perform well on **narrow concepts** (e.g., specific entities such as Pikachu or Elon Musk), but degrade on **broad concepts** (e.g., "violence," "nudity"). Broad concepts encompass diverse visual manifestations — violence may involve bloodshed, gunfights, or riots — and a single unified signal cannot cover all modes.
 
-**Root Cause**: Prior methods implicitly assume that broad and narrow concepts share equivalent distributional properties and model them with a single or unified signal. This is viable for low-variance narrow concepts, but fails for high-variance, multi-faceted broad concepts — suppressing only the most salient instantiation (e.g., bloodshed in violence) while missing other semantic patterns (e.g., gunfights, riots).
+**Key Challenge**: Prior methods implicitly assume that broad and narrow concepts share equivalent distributional properties and model them with a single or unified signal. This is viable for low-variance narrow concepts, but fails for high-variance, multi-faceted broad concepts — suppressing only the most salient instantiation (e.g., bloodshed in violence) while missing other semantic patterns (e.g., gunfights, riots).
 
-**Starting Point**: Motivated by the observation that generative models organize semantics into structured low-dimensional neighborhoods rather than randomly scattered distributions, instances of a target concept in the embedding space should cluster into several compact regions. Cluster centroids can thus serve as "concept prototypes," each capturing a distinct salient mode of the concept.
+**Key Insight**: Motivated by the observation that generative models organize semantics into structured low-dimensional neighborhoods rather than randomly scattered distributions, instances of a target concept in the embedding space should cluster into several compact regions. Cluster centroids can thus serve as "concept prototypes," each capturing a distinct salient mode of the concept.
 
 **Core Idea**: Contrastive CLIP embeddings of generated images with and without the target concept are computed, clustered to obtain image-space concept prototypes, and then transferred to the text embedding space via cosine similarity optimization. At inference time, the best-matching prototype is selected as a negative guidance signal to precisely suppress each semantic sub-mode of the concept.
 

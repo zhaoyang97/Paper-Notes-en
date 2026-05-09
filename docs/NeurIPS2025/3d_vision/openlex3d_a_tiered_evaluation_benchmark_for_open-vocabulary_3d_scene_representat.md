@@ -27,13 +27,13 @@ content_hash: 8e0933eabb9de39b
 This paper proposes OpenLex3D, a tiered evaluation benchmark for open-vocabulary 3D scene representations. Built upon Replica, ScanNet++, and HM3D, it provides language annotations 13× richer than the original labels, supporting evaluation on two tasks: open-set 3D semantic segmentation and object retrieval.
 
 ## Background & Motivation
-**State of the Field**: Open-vocabulary language models have greatly advanced 3D scene understanding, enabling natural language interaction with 3D environments. Existing methods such as LERF, OpenScene, and ConceptFusion have demonstrated impressive demonstrations.
+**Background**: Open-vocabulary language models have greatly advanced 3D scene understanding, enabling natural language interaction with 3D environments. Existing methods such as LERF, OpenScene, and ConceptFusion have demonstrated impressive demonstrations.
 
 **Limitations of Prior Work**: Existing evaluations still rely on closed-set semantic annotations (e.g., 20 categories in ScanNet, 88 in Replica), which fail to capture the richness and ambiguity of real-world natural language queries.
 
-**Root Cause**: Methods claim to be "open-vocabulary" yet are evaluated under closed-set protocols, leading to an overestimation of their true capabilities. For instance, a method may correctly respond to the query "chair" but fail on "office swivel chair" or "armchair."
+**Key Challenge**: Methods claim to be "open-vocabulary" yet are evaluated under closed-set protocols, leading to an overestimation of their true capabilities. For instance, a method may correctly respond to the query "chair" but fail on "office swivel chair" or "armchair."
 
-**Starting Point**: Constructing an annotation dataset that genuinely captures linguistic diversity by introducing synonym categories and fine-grained descriptions.
+**Key Insight**: Constructing an annotation dataset that genuinely captures linguistic diversity by introducing synonym categories and fine-grained descriptions.
 
 **Core Idea**: Re-evaluate open-vocabulary 3D methods using annotations 13× richer in linguistic variety, thereby exposing the true limitations of existing approaches.
 

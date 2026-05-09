@@ -34,7 +34,7 @@ Multi-modal remote sensing foundation models (MM-RSFMs) play a critical role in 
 
 **Ill-suited SSL for remote sensing**: SkySense primarily relies on DINOv2 for self-supervised pre-training. However, remote sensing images differ fundamentally from natural images: natural images typically focus on a single subject (e.g., a cat or dog), whereas remote sensing images contain diverse semantic objects across different regions (buildings, forests, ponds, land, etc.). Applying conventional SSL by directly contrasting different cropped views can lead to **semantic misalignment**, as two views may capture entirely different subjects.
 
-**Root Cause**: *How can a single unified backbone handle multi-modal remote sensing data of varying resolutions, while adopting an SSL strategy that accounts for the distributional characteristics of remote sensing imagery?*
+**Key Challenge**: *How can a single unified backbone handle multi-modal remote sensing data of varying resolutions, while adopting an SSL strategy that accounts for the distributional characteristics of remote sensing imagery?*
 
 The paper addresses this through: (1) a unified Transformer backbone with adaptive resolution handling; and (2) QSACL to resolve the multi-semantic challenge in remote sensing contrastive learning.
 

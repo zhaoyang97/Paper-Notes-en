@@ -28,13 +28,13 @@ This work is the first to reveal the adversarial membership manipulation vulnera
 
 ## Background & Motivation
 
-**State of the Field**: Membership inference attacks (MIA) determine whether a data sample belongs to a model's training set, serving as a core tool for privacy auditing. Existing MIAs (e.g., LiRA, RMIA) exhibit strong detection capability.
+**Background**: Membership inference attacks (MIA) determine whether a data sample belongs to a model's training set, serving as a core tool for privacy auditing. Existing MIAs (e.g., LiRA, RMIA) exhibit strong detection capability.
 
 **Limitations of Prior Work**: All MIAs implicitly assume that query inputs are honest (unmodified). However, the adversarial machine learning literature shows that imperceptible perturbations can drastically alter model behavior. **Whether MIA itself is robust has never been studied.**
 
-**Root Cause**: MIAs rely on model confidence over the ground-truth label (loss, likelihood ratio) to infer membership. Adversarial perturbations can manipulate confidence → MIA decisions become manipulable → privacy auditing fails.
+**Key Challenge**: MIAs rely on model confidence over the ground-truth label (loss, likelihood ratio) to infer membership. Adversarial perturbations can manipulate confidence → MIA decisions become manipulable → privacy auditing fails.
 
-**Starting Point**: Unlike conventional adversarial attacks (which push inputs toward misclassification regions), membership forgery attacks push inputs toward high-confidence regions — aligned with the "member" decision boundary of MIAs.
+**Key Insight**: Unlike conventional adversarial attacks (which push inputs toward misclassification regions), membership forgery attacks push inputs toward high-confidence regions — aligned with the "member" decision boundary of MIAs.
 
 **Core Idea**: (1) Formalize the Membership Forgery Attack (MFA); (2) Discover the gradient norm collapse signature of forged members; (3) Propose gradient-norm-based detection (MFD) and robust inference (AR-MIA).
 

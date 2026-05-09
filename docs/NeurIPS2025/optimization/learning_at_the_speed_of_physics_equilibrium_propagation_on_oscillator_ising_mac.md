@@ -27,13 +27,13 @@ content_hash: dc0d58282e63a362
 This work presents the first complete mapping of Equilibrium Propagation (EP) onto Oscillator Ising Machine (OIM) hardware, leveraging GHz-scale physical dynamics to enable backpropagation-free local learning. The approach achieves 97.2%/88.0% accuracy on MNIST/Fashion-MNIST and demonstrates robustness under parameter quantization and noise.
 
 ## Background & Motivation
-**State of the Field**: Physical systems naturally perform energy descent, which can directly accelerate optimization in energy-based models (EBMs). OIMs consist of coupled nonlinear oscillator networks whose GHz-frequency dynamics inherently correspond to gradient descent.
+**Background**: Physical systems naturally perform energy descent, which can directly accelerate optimization in energy-based models (EBMs). OIMs consist of coupled nonlinear oscillator networks whose GHz-frequency dynamics inherently correspond to gradient descent.
 
 **Limitations of Prior Work**: (a) EP on conventional processors is constrained by long relaxation and sampling times; (b) prior attempts to implement EP on oscillator systems suffer from initialization or synchronization issues; (c) discrete Ising solvers do not support the continuous phase dynamics required by EP.
 
-**Root Cause**: Although OIMs were originally designed for combinatorial optimization, their continuous phase dynamics and energy descent properties naturally satisfy the requirements of EP—raising the question of whether OIMs can be repurposed as neuromorphic learning processors without any hardware modification.
+**Key Challenge**: Although OIMs were originally designed for combinatorial optimization, their continuous phase dynamics and energy descent properties naturally satisfy the requirements of EP—raising the question of whether OIMs can be repurposed as neuromorphic learning processors without any hardware modification.
 
-**Starting Point**: The paper demonstrates that the OIM energy function can exactly encode the total energy of an MLP (including MSE loss), and that EP update rules reduce to local phase measurements on the OIM.
+**Key Insight**: The paper demonstrates that the OIM energy function can exactly encode the total energy of an MLP (including MSE loss), and that EP update rules reduce to local phase measurements on the OIM.
 
 ## Method
 

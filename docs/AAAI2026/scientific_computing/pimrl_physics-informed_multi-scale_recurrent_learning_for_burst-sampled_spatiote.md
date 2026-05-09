@@ -28,15 +28,15 @@ This paper proposes PIMRL, a framework for learning from burst-sampled (short hi
 
 ## Background & Motivation
 
-**State of the Field**: Mainstream approaches for learning spatiotemporal PDE dynamics (FNO, DeepONet, PeRCNN, etc.) predominantly rely on densely and uniformly sampled data. However, data in practical settings (mobile sensing, physical experiments) is often burst-sampled — short high-frequency segments followed by long idle intervals.
+**Background**: Mainstream approaches for learning spatiotemporal PDE dynamics (FNO, DeepONet, PeRCNN, etc.) predominantly rely on densely and uniformly sampled data. However, data in practical settings (mobile sensing, physical experiments) is often burst-sampled — short high-frequency segments followed by long idle intervals.
 
 **Limitations of Prior Work**: (a) Pure data-driven methods (FNO) require large amounts of high-quality data; (b) physics-informed methods (PeRCNN, PINN) depend on small time steps for local updates, leading to error accumulation in long-term prediction; (c) existing methods assume uniform temporal sampling and handle burst-sampled, multi-scale irregular data poorly.
 
-**Root Cause**: In burst-sampled data, the micro-scale captures high-frequency physical details over short, sparse segments, while the macro-scale spans long continuous intervals but loses transient dynamics. The challenge is to simultaneously exploit the complementary information from both scales.
+**Key Challenge**: In burst-sampled data, the micro-scale captures high-frequency physical details over short, sparse segments, while the macro-scale spans long continuous intervals but loses transient dynamics. The challenge is to simultaneously exploit the complementary information from both scales.
 
-**Paper Goals**: Accurately learn long-term spatiotemporal dynamics from multi-scale, sparsely burst-sampled data.
+**Goal**: Accurately learn long-term spatiotemporal dynamics from multi-scale, sparsely burst-sampled data.
 
-**Starting Point**: Design a dual-module framework — a micro-scale module that extracts fine-grained dynamics from high-frequency bursts using physical priors, and a macro-scale module that performs efficient large-step inference in latent space — fused via message passing.
+**Key Insight**: Design a dual-module framework — a micro-scale module that extracts fine-grained dynamics from high-frequency bursts using physical priors, and a macro-scale module that performs efficient large-step inference in latent space — fused via message passing.
 
 **Core Idea**: Micro-scale physics correction + macro-scale latent-space reasoning + cross-scale message passing, working in concert to enable accurate long-term prediction from burst-sparse data.
 

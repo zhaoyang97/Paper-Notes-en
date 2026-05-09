@@ -28,15 +28,15 @@ DCR mixes teacher and student module outputs via a deterministic annealing weigh
 
 ## Background & Motivation
 
-**State of the Field**: As training costs continue to rise, model adaptation has become a critical research direction. Predominant approaches include replacing original blocks with smaller proxy modules (compression) and substituting standard self-attention with efficient variants (Linformer/Performer, etc., with $O(n)$ complexity).
+**Background**: As training costs continue to rise, model adaptation has become a critical research direction. Predominant approaches include replacing original blocks with smaller proxy modules (compression) and substituting standard self-attention with efficient variants (Linformer/Performer, etc., with $O(n)$ complexity).
 
 **Limitations of Prior Work**: When replacing modules within a frozen pretrained backbone, randomly initialized modules under cold-start conditions produce out-of-distribution features, causing downstream layers to receive anomalous inputs, leading to optimization instability, ineffective gradient updates, and slow recovery.
 
-**Root Cause**: Knowledge distillation requires expensive full teacher forward passes and enforces rigid feature matching; stochastic replacement methods such as BERT-of-Theseus employ Bernoulli gating $z_\ell(t) \sim \text{Bernoulli}(p(t))$, which introduces substantial gradient variance when $p(t)$ takes intermediate values.
+**Key Challenge**: Knowledge distillation requires expensive full teacher forward passes and enforces rigid feature matching; stochastic replacement methods such as BERT-of-Theseus employ Bernoulli gating $z_\ell(t) \sim \text{Bernoulli}(p(t))$, which introduces substantial gradient variance when $p(t)$ takes intermediate values.
 
-**Paper Goals**: The core problem is "how to stably integrate a randomly initialized new module into a frozen backbone"—i.e., the stability problem of module replacement.
+**Goal**: The core problem is "how to stably integrate a randomly initialized new module into a frozen backbone"—i.e., the stability problem of module replacement.
 
-**Starting Point**: Replace stochastic gating with a deterministic mixing weight, theoretically eliminating the gradient variance term induced by gating.
+**Key Insight**: Replace stochastic gating with a deterministic mixing weight, theoretically eliminating the gradient variance term induced by gating.
 
 **Core Idea**: Substitute stochastic Bernoulli gating with a deterministic annealing schedule $\alpha(t)$, theoretically eliminating gate-induced gradient variance and achieving faster convergence in practice.
 

@@ -30,7 +30,7 @@ This paper proposes Dr.Occ, a unified camera-only 3D occupancy prediction framew
 
 ## Background & Motivation
 
-**State of the Field**: 3D semantic occupancy prediction is a core perception task in autonomous driving, aiming to produce dense voxel-level scene representations that provide geometric and semantic information for motion planning and obstacle avoidance. Camera-only approaches (LSS, BEVFormer, COTR, etc.) that perform 2D-to-3D view transformation represent the dominant paradigm.
+**Background**: 3D semantic occupancy prediction is a core perception task in autonomous driving, aiming to produce dense voxel-level scene representations that provide geometric and semantic information for motion planning and obstacle avoidance. Camera-only approaches (LSS, BEVFormer, COTR, etc.) that perform 2D-to-3D view transformation represent the dominant paradigm.
 
 **Limitations of Prior Work**:
 1. **Geometric misalignment**: Existing forward-projection methods (LSS, BEVDepth) rely on low-resolution, noisy depth estimates for 2D→3D feature transformation, limiting projection accuracy.
@@ -38,11 +38,11 @@ This paper proposes Dr.Occ, a unified camera-only 3D occupancy prediction framew
 3. Approximately 90% of voxels are empty, making direct fitting over all voxels inefficient.
 4. Naively concatenating MoGe depth maps with images or converting them to pseudo point clouds for forward projection actually degrades performance.
 
-**Root Cause**: How to exploit high-quality geometric priors from advanced depth estimation models to improve occupancy prediction, while simultaneously addressing the severe spatial imbalance in semantic category distributions.
+**Key Challenge**: How to exploit high-quality geometric priors from advanced depth estimation models to improve occupancy prediction, while simultaneously addressing the severe spatial imbalance in semantic category distributions.
 
-**Paper Goals**: Jointly address the two core challenges in camera-only occupancy prediction: inaccurate geometric reconstruction and imbalanced semantic learning.
+**Goal**: Jointly address the two core challenges in camera-only occupancy prediction: inaccurate geometric reconstruction and imbalanced semantic learning.
 
-**Starting Point**: Depth guidance ensures geometric alignment; region-guided experts enhance semantic learning — the two are complementary by design.
+**Key Insight**: Depth guidance ensures geometric alignment; region-guided experts enhance semantic learning — the two are complementary by design.
 
 **Core Idea**: Use MoGe-2 depth to generate occupancy masks that guide non-empty voxel refinement, and apply MoE-style spatial region routing to handle semantic heterogeneity.
 

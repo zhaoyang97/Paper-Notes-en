@@ -26,17 +26,17 @@ content_hash: 6304f7af75f0f4a6
 Through unsupervised SAE clustering, this work discovers a taxonomy of reasoning mechanisms in thinking models, then activates the corresponding latent capabilities in base models via steering vectors. The resulting hybrid model recovers up to 91% of the performance gap between thinking and base models—without any weight updates—demonstrating that base models already possess reasoning capabilities, and that thinking models merely learn *when* to deploy them.
 
 ## Background & Motivation
-**State of the Field**: Thinking models such as DeepSeek R1 and QwQ substantially outperform base models via long-chain reasoning, yet the source of this advantage remains unclear.
+**Background**: Thinking models such as DeepSeek R1 and QwQ substantially outperform base models via long-chain reasoning, yet the source of this advantage remains unclear.
 
 **Limitations of Prior Work**:
 - Multiple competing hypotheses exist regarding why thinking models are effective: acquiring new capabilities vs. better structuring vs. reusing existing capabilities vs. simply leveraging more computation.
 - Existing analyses rely on manual inspection of reasoning traces, which is subjective and may overlook systematic patterns.
 
-**Root Cause**: Do thinking models *learn new reasoning methods*, or do they *learn to invoke existing methods at the right moment*?
+**Key Challenge**: Do thinking models *learn new reasoning methods*, or do they *learn to invoke existing methods at the right moment*?
 
-**Paper Goals**: Provide causal evidence that base models already possess reasoning capabilities.
+**Goal**: Provide causal evidence that base models already possess reasoning capabilities.
 
-**Starting Point**: Use unsupervised SAE clustering to discover reasoning categories, then activate the corresponding capabilities in base models via steering vectors.
+**Key Insight**: Use unsupervised SAE clustering to discover reasoning categories, then activate the corresponding capabilities in base models via steering vectors.
 
 **Core Idea**: Pre-training teaches models *how* to reason; post-training (RLVR) teaches models *when* to reason.
 

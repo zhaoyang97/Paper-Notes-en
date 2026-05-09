@@ -29,18 +29,18 @@ This paper reveals the severely underappreciated capability of vision models (Re
 
 ## Background & Motivation
 
-**State of the Field**: GNNs, which aggregate local neighborhood information bottom-up via message passing, constitute the dominant paradigm in graph learning. Although architectures such as graph Transformers alleviate long-range dependency issues, they remain fundamentally local-to-global in nature.
+**Background**: GNNs, which aggregate local neighborhood information bottom-up via message passing, constitute the dominant paradigm in graph learning. Although architectures such as graph Transformers alleviate long-range dependency issues, they remain fundamentally local-to-global in nature.
 
 **Limitations of Prior Work**:
 - The message-passing mechanism of GNNs operates inversely to human visual cognition—humans perceive global structure first via Gestalt principles before analyzing local details.
 - Existing benchmarks (e.g., molecular property prediction) conflate domain features with topological understanding; replacing real molecular structures with random topologies (expander graphs) yields comparable performance [Bechler et al.].
 - GNNs still struggle with basic topological understanding tasks such as cycle structure recognition, symmetry detection, and identification of critical bridge edges.
 
-**Root Cause**: Humans can intuitively recognize global structural patterns in graphs (communities, symmetries, bottlenecks, etc.), yet existing graph learning models and evaluation protocols fail to capture this "global-first" cognitive ability.
+**Key Challenge**: Humans can intuitively recognize global structural patterns in graphs (communities, symmetries, bottlenecks, etc.), yet existing graph learning models and evaluation protocols fail to capture this "global-first" cognitive ability.
 
-**Paper Goals**: (1) Validate the potential of vision models for graph structural understanding; (2) construct a benchmark specifically designed to evaluate topological perception; (3) demonstrate the advantages of a "global-first" strategy.
+**Goal**: (1) Validate the potential of vision models for graph structural understanding; (2) construct a benchmark specifically designed to evaluate topological perception; (3) demonstrate the advantages of a "global-first" strategy.
 
-**Starting Point**: Graphs are rendered as images using standard layout algorithms and directly processed by visual encoders, requiring no graph-specific architectural modifications.
+**Key Insight**: Graphs are rendered as images using standard layout algorithms and directly processed by visual encoders, requiring no graph-specific architectural modifications.
 
 **Core Idea**: Vision models, operating over visual representations of graphs, achieve human-like "global-first" graph understanding.
 

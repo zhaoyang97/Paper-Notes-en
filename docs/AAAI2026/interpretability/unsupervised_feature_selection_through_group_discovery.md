@@ -28,11 +28,11 @@ This paper proposes GroupFS, the first end-to-end differentiable unsupervised fe
 
 ## Background & Motivation
 
-1. **State of the Field**: In high-dimensional data, feature selection (FS) is a critical technique for reducing noise and improving generalization and interpretability. Unsupervised FS is particularly important yet challenging in label-free settings, as no supervision is available to guide the selection process.
+1. **Background**: In high-dimensional data, feature selection (FS) is a critical technique for reducing noise and improving generalization and interpretability. Unsupervised FS is particularly important yet challenging in label-free settings, as no supervision is available to guide the selection process.
 2. **Limitations of Prior Work**: Most unsupervised FS methods evaluate features independently, ignoring inter-feature relationships. In practice, features frequently exhibit synergistic behavior—neighboring pixels, functionally connected brain regions, correlated financial indicators, etc. Some methods attempt to capture group structure but rely on predefined groupings or label supervision.
-3. **Root Cause**: Feature grouping and feature selection are inherently coupled problems—group-level selection cannot be performed without knowledge of the group structure, yet discovering meaningful groups is difficult without a selection signal.
-4. **Paper Goals**: To simultaneously discover latent feature group structures and select the most informative feature groups in a fully unsupervised setting.
-5. **Starting Point**: Two graph structures are constructed—a sample graph and a feature graph—with Gumbel-Softmax enabling differentiable group assignment, STG (stochastic gates) performing group-level selection, and Laplacian smoothness constraints ensuring semantic coherence within groups.
+3. **Key Challenge**: Feature grouping and feature selection are inherently coupled problems—group-level selection cannot be performed without knowledge of the group structure, yet discovering meaningful groups is difficult without a selection signal.
+4. **Goal**: To simultaneously discover latent feature group structures and select the most informative feature groups in a fully unsupervised setting.
+5. **Key Insight**: Two graph structures are constructed—a sample graph and a feature graph—with Gumbel-Softmax enabling differentiable group assignment, STG (stochastic gates) performing group-level selection, and Laplacian smoothness constraints ensuring semantic coherence within groups.
 6. **Core Idea**: Feature groups are discovered and selected end-to-end by imposing Laplacian smoothness constraints on both the sample graph and the feature graph, combined with group-sparse regularization.
 
 ## Method

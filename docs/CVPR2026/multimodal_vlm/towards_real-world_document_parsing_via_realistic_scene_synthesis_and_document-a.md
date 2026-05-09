@@ -29,15 +29,15 @@ This paper proposes DocHumming, a data-training co-design framework that constru
 
 ## Background & Motivation
 
-**State of the Field**: Document parsing has evolved from traditional modular pipelines (layout analysis → OCR → element parsing) to end-to-end MLLMs that directly map images to structured outputs. Modular methods perform well on digital/scanned documents (e.g., MinerU2.5 achieves 90.67 on OmniDocBench), but end-to-end methods still face significant challenges in real-world scenarios.
+**Background**: Document parsing has evolved from traditional modular pipelines (layout analysis → OCR → element parsing) to end-to-end MLLMs that directly map images to structured outputs. Modular methods perform well on digital/scanned documents (e.g., MinerU2.5 achieves 90.67 on OmniDocBench), but end-to-end methods still face significant challenges in real-world scenarios.
 
 **Limitations of Prior Work**: (1) Modular methods rely on accurate layout analysis; under casual capture conditions, layout errors propagate downstream (18–20 point degradation). (2) End-to-end methods produce repetitive content, hallucinations, and structural inconsistencies under real-world capture. (3) Large-scale, high-quality page-level end-to-end training data is lacking (SynthDog has simple layouts; GOT's PDF-to-LaTeX lacks visual diversity).
 
-**Root Cause**: The end-to-end paradigm is inherently more robust as it requires no explicit layout segmentation, yet its potential is constrained by data scarcity and the absence of structure-aware training strategies.
+**Key Challenge**: The end-to-end paradigm is inherently more robust as it requires no explicit layout segmentation, yet its potential is constrained by data scarcity and the absence of structure-aware training strategies.
 
-**Paper Goals**: To unlock the potential of end-to-end document parsing in real-world scenarios through data-training co-design.
+**Goal**: To unlock the potential of end-to-end document parsing in real-world scenarios through data-training co-design.
 
-**Starting Point**: Simultaneously address both the data bottleneck (large-scale synthesis) and the training bottleneck (structure-aware optimization), rather than targeting either in isolation.
+**Key Insight**: Simultaneously address both the data bottleneck (large-scale synthesis) and the training bottleneck (structure-aware optimization), rather than targeting either in isolation.
 
 **Core Idea**: Synthesize 3M page-level samples from 576K layout templates and 9M atomic elements, combined with short-to-long progressive training and structure token weighting loss, enabling a 1B model to match the performance of a 235B model.
 

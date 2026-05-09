@@ -29,17 +29,17 @@ This paper proposes a two-stage framework for generating regular time series fro
 
 ## Background & Motivation
 
-**State of the Field**: Synthetic time series generation has important applications in healthcare, finance, and science. Real-world time series are often irregularly sampled (non-uniform intervals, missing values). Recent work ImagenTime achieves state-of-the-art performance on regular time series generation by mapping sequences to images and applying visual diffusion models, but it cannot handle irregular data.
+**Background**: Synthetic time series generation has important applications in healthcare, finance, and science. Real-world time series are often irregularly sampled (non-uniform intervals, missing values). Recent work ImagenTime achieves state-of-the-art performance on regular time series generation by mapping sequences to images and applying visual diffusion models, but it cannot handle irregular data.
 
 **Limitations of Prior Work**: (a) Existing irregular time series generation methods (GT-GAN, KoVAE) are based on GAN/VAE architectures, which have been surpassed by diffusion models; (b) they rely on computationally expensive NCDE preprocessing and fail to scale to long sequences (KoVAE training is 6.5× slower than the proposed method); (c) these methods fully trust NCDE-completed data as samples from the true distribution—an overly strong assumption—resulting in performance far inferior to models trained on regular data (on average 540% worse).
 
-**Root Cause**: Naively extending ImagenTime to irregular data (with simple masking and zero-filling of missing values) produces "unnatural neighborhoods"—zero values mixed with valid values—causing convolutional kernels to learn incorrect local patterns. However, fully trusting completed values without masking introduces completion errors.
+**Key Challenge**: Naively extending ImagenTime to irregular data (with simple masking and zero-filling of missing values) produces "unnatural neighborhoods"—zero values mixed with valid values—causing convolutional kernels to learn incorrect local patterns. However, fully trusting completed values without masking introduces completion errors.
 
-**Paper Goals**
+**Goal**
 - How can visual diffusion models (ImagenTime) efficiently handle irregular time series?
 - How can the framework balance exploiting completion information (to construct natural neighborhoods) against avoiding completion errors (via masking)?
 
-**Starting Point**: Through carefully designed toy experiments, the authors find that zero-padding creates unnatural neighborhoods that distract convolutional kernels toward invalid pixels, degrading score estimation. The solution is to first complete (constructing natural neighborhoods) and then apply masking (preventing over-reliance on completed values), with the combination yielding optimal performance.
+**Key Insight**: Through carefully designed toy experiments, the authors find that zero-padding creates unnatural neighborhoods that distract convolutional kernels toward invalid pixels, degrading score estimation. The solution is to first complete (constructing natural neighborhoods) and then apply masking (preventing over-reliance on completed values), with the combination yielding optimal performance.
 
 **Core Idea**: Completion creates natural neighborhoods so that convolutional kernels learn correctly; masking prevents over-reliance on completed values. The two mechanisms are complementary.
 

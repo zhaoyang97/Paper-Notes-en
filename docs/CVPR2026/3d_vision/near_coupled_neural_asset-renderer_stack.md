@@ -28,15 +28,15 @@ NeAR proposes jointly designing neural asset creation and neural rendering as a 
 
 ## Background & Motivation
 
-1. **State of the Field**: Neural graphics currently follows two independent tracks—neural asset creation (synthesizing 3D assets via generative models) and neural rendering (mapping assets to images). These are typically developed in isolation: asset generation assumes a fixed renderer, while renderers are trained for static asset distributions.
+1. **Background**: Neural graphics currently follows two independent tracks—neural asset creation (synthesizing 3D assets via generative models) and neural rendering (mapping assets to images). These are typically developed in isolation: asset generation assumes a fixed renderer, while renderers are trained for static asset distributions.
 
 2. **Limitations of Prior Work**: (a) PBR decomposition-based methods (e.g., Hunyuan3D) are prone to material misclassification (e.g., identifying wood as metal); decomposition errors are amplified through nonlinear rendering pipelines, leading to baked shadows and illumination inconsistencies. (b) Diffusion-based 2D relighting methods (e.g., DiLightNet, IC-Light) lack 3D consistency and incur high computational cost. (c) Existing SLAT representations blindly encode appearance including shadows and specular highlights, making them unsuitable for relighting.
 
-3. **Root Cause**: Shadows, highlights, and inter-reflections are inherently entangled with geometry and material in 3D assets. Explicit PBR inverse decomposition is fragile in real-world scenarios, while fully black-box neural generation lacks controllability.
+3. **Key Challenge**: Shadows, highlights, and inter-reflections are inherently entangled with geometry and material in 3D assets. Explicit PBR inverse decomposition is fragile in real-world scenarios, while fully black-box neural generation lacks controllability.
 
-4. **Paper Goals**: How to achieve high-quality, controllable single-image relightable 3D generation without relying on unstable PBR inversion?
+4. **Goal**: How to achieve high-quality, controllable single-image relightable 3D generation without relying on unstable PBR inversion?
 
-5. **Starting Point**: The authors propose a *homogenize-then-synthesize* strategy—co-designing the asset representation and rendering process so that they form a robust "contract" through a shared illumination-homogenized latent space.
+5. **Key Insight**: The authors propose a *homogenize-then-synthesize* strategy—co-designing the asset representation and rendering process so that they form a robust "contract" through a shared illumination-homogenized latent space.
 
 6. **Core Idea**: Jointly design illumination-homogenized 3D latent representations and an illumination-aware neural renderer, forming a coupled asset–renderer stack that replaces the conventional paradigm of decoupled asset generation and independent rendering.
 

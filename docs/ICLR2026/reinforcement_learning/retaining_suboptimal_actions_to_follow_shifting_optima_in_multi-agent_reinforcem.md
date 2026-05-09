@@ -30,7 +30,7 @@ This paper proposes S2Q (Successive Sub-value Q-learning), which explicitly reta
 
 ## Background & Motivation
 
-**State of the Field**: Under the Centralized Training with Decentralized Execution (CTDE) paradigm, value decomposition methods such as QMIX represent the dominant framework for cooperative MARL. QMIX satisfies the Individual-Global-Max (IGM) condition via a monotonicity constraint, ensuring that maximizing individual utilities does not reduce the joint value function. WQMIX introduces an unconstrained target $Q^*$ to alleviate the monotonicity restriction, yet still focuses on a single optimal action.
+**Background**: Under the Centralized Training with Decentralized Execution (CTDE) paradigm, value decomposition methods such as QMIX represent the dominant framework for cooperative MARL. QMIX satisfies the Individual-Global-Max (IGM) condition via a monotonicity constraint, ensuring that maximizing individual utilities does not reduce the joint value function. WQMIX introduces an unconstrained target $Q^*$ to alleviate the monotonicity restriction, yet still focuses on a single optimal action.
 
 **Limitations of Prior Work**:
 - The monotonicity constraint in QMIX limits the expressiveness of $Q^{\text{tot}}$, preventing it from representing non-monotonic value structures.
@@ -38,9 +38,9 @@ This paper proposes S2Q (Successive Sub-value Q-learning), which explicitly reta
 - When exploration-driven value updates cause **optimal action drift**, information about discarded high-value alternative actions cannot be recovered.
 - $\epsilon$-greedy suffers from exponential decay of joint exploration probability in large joint action spaces: for $N$ agents each with $|\mathcal{A}|$ actions, the joint exploration probability scales as $\propto \epsilon^N$.
 
-**Root Cause**: Existing methods discard suboptimal action information once it is no longer needed. When the value landscape shifts such that a previously suboptimal action becomes optimal, the learner cannot adapt quickly. This is clearly demonstrated in a payoff matrix experiment—after the optimum shifts from $(A,A)$ to $(C,C)$, both QMIX and WQMIX fail to track the new optimum.
+**Key Challenge**: Existing methods discard suboptimal action information once it is no longer needed. When the value landscape shifts such that a previously suboptimal action becomes optimal, the learner cannot adapt quickly. This is clearly demonstrated in a payoff matrix experiment—after the optimum shifts from $(A,A)$ to $(C,C)$, both QMIX and WQMIX fail to track the new optimum.
 
-**Paper Goals**: Explicitly retain value functions for $K$ suboptimal actions so that when the optimum changes, the corresponding sub-value functions can immediately guide $Q^{\text{tot}}$ to adapt; replace $\epsilon$-greedy with a Softmax behavior policy for more efficient directed exploration.
+**Goal**: Explicitly retain value functions for $K$ suboptimal actions so that when the optimum changes, the corresponding sub-value functions can immediately guide $Q^{\text{tot}}$ to adapt; replace $\epsilon$-greedy with a Softmax behavior policy for more efficient directed exploration.
 
 ## Method
 

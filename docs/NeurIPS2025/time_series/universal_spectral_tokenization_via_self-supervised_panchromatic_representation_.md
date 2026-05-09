@@ -30,11 +30,11 @@ This paper proposes the first universal spectral tokenizer that jointly trains o
 
 ### Root Cause
 
-**Root Cause**: Large astronomical surveys (SDSS, DESI, etc.) have collected millions of spectra, yet these cover different wavelength ranges and spectral resolutions.
+**Key Challenge**: Large astronomical surveys (SDSS, DESI, etc.) have collected millions of spectra, yet these cover different wavelength ranges and spectral resolutions.
 
 ### State of the Field
 
-**State of the Field**: Existing analysis pipelines are fragmented: each survey requires independent preprocessing and task-specific models, precluding cross-survey knowledge sharing.
+**Background**: Existing analysis pipelines are fragmented: each survey requires independent preprocessing and task-specific models, precluding cross-survey knowledge sharing.
 
 ### Limitations of Prior Work
 
@@ -42,7 +42,7 @@ This paper proposes the first universal spectral tokenizer that jointly trains o
 
 ### Starting Point
 
-**Starting Point**: The central challenge for scientific foundation models is learning universal representations from irregular, multi-resolution sequential data.
+**Key Insight**: The central challenge for scientific foundation models is learning universal representations from irregular, multi-resolution sequential data.
 
 ## Method
 

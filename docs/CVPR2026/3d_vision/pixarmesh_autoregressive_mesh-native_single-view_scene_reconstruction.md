@@ -28,7 +28,7 @@ This paper proposes PixARMesh, the first autoregressive framework for single-vie
 
 ## Background & Motivation
 
-**State of the Field**: Single-view 3D scene reconstruction is a long-standing ill-posed problem. The compositional generation paradigm has attracted growing attention, driven by advances in large-scale object-level reconstruction models (TRELLIS, CLAY, etc.).
+**Background**: Single-view 3D scene reconstruction is a long-standing ill-posed problem. The compositional generation paradigm has attracted growing attention, driven by advances in large-scale object-level reconstruction models (TRELLIS, CLAY, etc.).
 
 **Limitations of Prior Work**:
 - Holistic methods (Panoptic3D, Uni-3D) are constrained by voxel resolution and the limited expressiveness of feed-forward decoders.
@@ -36,9 +36,9 @@ This paper proposes PixARMesh, the first autoregressive framework for single-vie
 - MIDI avoids layout optimization but still generates in normalized scene coordinates using SDF.
 - **All existing methods rely on SDF representations**, requiring Marching Cubes for surface extraction, which produces over-triangulated, overly smooth, high-polygon meshes unsuitable for editing.
 
-**Root Cause**: Mesh generation models (MeshGPT, EdgeRunner, BPT) are limited to single-object outputs; no prior work has extended them to scene-level reconstruction.
+**Key Challenge**: Mesh generation models (MeshGPT, EdgeRunner, BPT) are limited to single-object outputs; no prior work has extended them to scene-level reconstruction.
 
-**Starting Point**: Leverage a pretrained object-level autoregressive mesh generator (EdgeRunner/BPT), augment its point cloud encoder to incorporate appearance and global context, and jointly predict poses and meshes within a unified token sequence.
+**Key Insight**: Leverage a pretrained object-level autoregressive mesh generator (EdgeRunner/BPT), augment its point cloud encoder to incorporate appearance and global context, and jointly predict poses and meshes within a unified token sequence.
 
 **Core Idea**: Jointly predict object poses (tokenized as bounding box corners) and native meshes (tokenized as vertices/faces) within a single autoregressive sequence, eliminating SDF extraction and post-hoc layout optimization.
 

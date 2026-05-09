@@ -28,15 +28,15 @@ This paper proposes the Δ-LFM framework, which employs an ArcRank loss to const
 
 ## Background & Motivation
 
-**State of the Field**: Disease progression modeling is critical for early diagnosis and personalized treatment. The evolution from GANs to diffusion models has enabled higher-fidelity longitudinal medical image generation, yet most approaches capture only population-level trends.
+**Background**: Disease progression modeling is critical for early diagnosis and personalized treatment. The evolution from GANs to diffusion models has enabled higher-fidelity longitudinal medical image generation, yet most approaches capture only population-level trends.
 
 **Limitations of Prior Work**: (1) Most models neglect individual heterogeneity—progression rates vary substantially across patients with the same disease; (2) the stochastic denoising process of diffusion models disrupts temporal continuity; (3) autoencoder latent spaces are misaligned across patients and uncorrelated with clinical severity indices; (4) conventional image quality metrics (PSNR/SSIM) are inflated in longitudinal settings—scans from the same patient are naturally highly similar, causing subtle disease-related changes to be masked by normal anatomy.
 
-**Root Cause**: Longitudinal image generation must simultaneously satisfy high fidelity (image quality) and high accuracy (correct progression direction); existing methods prioritize the former at the expense of the latter.
+**Key Challenge**: Longitudinal image generation must simultaneously satisfy high fidelity (image quality) and high accuracy (correct progression direction); existing methods prioritize the former at the expense of the latter.
 
-**Paper Goals**: To construct a patient-specific generative framework in which the latent space is semantically meaningful, predictions at arbitrary time points are supported, and the direction of progression is correctly captured.
+**Goal**: To construct a patient-specific generative framework in which the latent space is semantically meaningful, predictions at arbitrary time points are supported, and the direction of progression is correctly captured.
 
-**Starting Point**: Disease progression in latent space can be modeled as a velocity field—flow matching naturally learns velocity fields from source to target, making it conceptually aligned with disease dynamics.
+**Key Insight**: Disease progression in latent space can be modeled as a velocity field—flow matching naturally learns velocity fields from source to target, making it conceptually aligned with disease dynamics.
 
 **Core Idea**: ArcRank constraints enforce a "straight-line" latent trajectory per patient (constant direction, increasing magnitude), and Δ-LFM advances along this line using real-valued time steps.
 

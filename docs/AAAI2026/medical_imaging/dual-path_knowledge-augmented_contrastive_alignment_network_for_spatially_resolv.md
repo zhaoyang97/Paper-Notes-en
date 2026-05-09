@@ -30,18 +30,18 @@ This paper proposes DKAN, a Dual-path Knowledge-Augmented contrastive Alignment 
 
 ## Background & Motivation
 
-**State of the Field**: Spatial Transcriptomics (ST) enables measurement of gene expression profiles in tissue sections while preserving spatial context, which is critical for understanding disease etiology and tissue heterogeneity. However, ST technologies are costly and resolution-limited, motivating researchers to explore predicting spatial gene expression from low-cost H&E-stained WSIs.
+**Background**: Spatial Transcriptomics (ST) enables measurement of gene expression profiles in tissue sections while preserving spatial context, which is critical for understanding disease etiology and tissue heterogeneity. However, ST technologies are costly and resolution-limited, motivating researchers to explore predicting spatial gene expression from low-cost H&E-stained WSIs.
 
 **Limitations of Prior Work**:
 - **Reliance on low-level visual features**: Most methods exploit only low-level features such as pixel intensity (color distribution) and cellular structure (shape and texture), failing to capture high-level semantic information such as gene function, biological pathways, and disease associations.
 - **Over-dependence on exemplar retrieval**: Contrastive learning and exemplar-guided pipelines require constructing additional reference datasets and retrieving similar patches, introducing unnecessary complexity.
 - **Insufficient heterogeneous modality alignment**: Existing fusion strategies directly enforce alignment between heterogeneous modalities such as images and gene expression, failing to preserve biologically relevant interaction information.
 
-**Root Cause**: Image features and gene expression features belong to entirely heterogeneous modalities, making direct alignment difficult and prone to losing biological meaning; existing contrastive learning methods require additional retrieval steps that introduce pipeline redundancy.
+**Key Challenge**: Image features and gene expression features belong to entirely heterogeneous modalities, making direct alignment difficult and prone to losing biological meaning; existing contrastive learning methods require additional retrieval steps that introduce pipeline redundancy.
 
-**Paper Goals**: Achieve effective multimodal alignment between images and gene expression without relying on exemplar retrieval, while incorporating high-level biological semantics to improve prediction accuracy.
+**Goal**: Achieve effective multimodal alignment between images and gene expression without relying on exemplar retrieval, while incorporating high-level biological semantics to improve prediction accuracy.
 
-**Starting Point**: External gene database knowledge is introduced as a "bridge" to indirectly align the two heterogeneous modalities of image and expression—rather than directly comparing apples and oranges, a shared knowledge intermediary is used to establish their relationship.
+**Key Insight**: External gene database knowledge is introduced as a "bridge" to indirectly align the two heterogeneous modalities of image and expression—rather than directly comparing apples and oranges, a shared knowledge intermediary is used to establish their relationship.
 
 **Core Idea**: Gene semantic features serve as dynamic cross-modal coordinators, interacting with image and expression features along dual paths respectively, to achieve knowledge-guided implicit modality alignment.
 

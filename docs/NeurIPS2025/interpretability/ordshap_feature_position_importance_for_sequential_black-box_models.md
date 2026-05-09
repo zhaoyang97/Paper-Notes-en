@@ -32,9 +32,9 @@ Deep learning sequential models (Transformers, RNNs) excel on time-series and na
 
 Consider a medical scenario: when predicting length of hospital stay, whether a blood glucose measurement appears early or late in the sequence can substantially affect the prediction, even when the measurement value itself remains unchanged. Existing methods cannot distinguish whether a feature is important because of its value or because of its position in the sequence.
 
-**Root Cause**: Sequential model predictions depend jointly on feature values and feature positions, yet existing attribution methods cannot separate these two effects.
+**Key Challenge**: Sequential model predictions depend jointly on feature values and feature positions, yet existing attribution methods cannot separate these two effects.
 
-**Starting Point**: A new game-theoretic framework is defined that augments Shapley values with a permutation dimension, attributing marginal contributions to each feature at each position independently, then deriving separate Value Importance and Position Importance through aggregation.
+**Key Insight**: A new game-theoretic framework is defined that augments Shapley values with a permutation dimension, attributing marginal contributions to each feature at each position independently, then deriving separate Value Importance and Position Importance through aggregation.
 
 ## Method
 

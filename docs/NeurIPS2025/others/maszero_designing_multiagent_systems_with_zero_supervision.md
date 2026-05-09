@@ -27,15 +27,15 @@ MAS-ZERO is the first inference-time automatic MAS design framework. Through a m
 
 ## Background & Motivation
 
-**State of the Field**: LLM multi-agent systems (MAS) leverage collaboration among multiple agents (debate, division of labor, verification) to tackle complex tasks that single models cannot handle effectively. Current MAS designs fall into two categories: manual design (Debate, Self-Refine, etc.) and automatic design (ADAS, AFlow, which search for optimal configurations using validation sets).
+**Background**: LLM multi-agent systems (MAS) leverage collaboration among multiple agents (debate, division of labor, verification) to tackle complex tasks that single models cannot handle effectively. Current MAS designs fall into two categories: manual design (Debate, Self-Refine, etc.) and automatic design (ADAS, AFlow, which search for optimal configurations using validation sets).
 
 **Limitations of Prior Work**: (1) Manual MAS relies on human-defined roles and communication protocols, making it difficult to align with underlying LLM capabilities and adapt to new tasks. (2) Automatic MAS requires annotated validation sets for tuning and yields fixed architectures (one configuration for all problems), lacking per-instance adaptability. (3) Existing automatic methods cannot dynamically degrade to simpler MAS or a single agent (e.g., CoT) when a complex MAS is unhelpful, causing multiple baselines to underperform CoT on difficult tasks.
 
-**Root Cause**: Effective automatic MAS must simultaneously satisfy three conditions — (a) decompose complex problems and degrade to simpler systems when unnecessary, (b) autonomously learn LLM agent capabilities and design matching architectures, and (c) adapt per-problem at inference time rather than relying on a validation set. No existing method satisfies all three simultaneously.
+**Key Challenge**: Effective automatic MAS must simultaneously satisfy three conditions — (a) decompose complex problems and degrade to simpler systems when unnecessary, (b) autonomously learn LLM agent capabilities and design matching architectures, and (c) adapt per-problem at inference time rather than relying on a validation set. No existing method satisfies all three simultaneously.
 
-**Paper Goals**: Design a framework that requires no validation set and automatically tailors MAS configurations to each problem instance at inference time.
+**Goal**: Design a framework that requires no validation set and automatically tailors MAS configurations to each problem instance at inference time.
 
-**Starting Point**: Introduce a meta-agent operating at the MAS level (rather than the agent level) to self-evolve through iterative meta-design (problem decomposition + sub-MAS assignment) and meta-feedback (solvability and completeness evaluation), with a final stage that selects the best answer from all candidate outputs (including those from simple building blocks).
+**Key Insight**: Introduce a meta-agent operating at the MAS level (rather than the agent level) to self-evolve through iterative meta-design (problem decomposition + sub-MAS assignment) and meta-feedback (solvability and completeness evaluation), with a final stage that selects the best answer from all candidate outputs (including those from simple building blocks).
 
 **Core Idea**: The meta-agent transforms MAS design into an iterative inference-time optimization process — at each step it designs a MAS (in code form), executes it, refines based on solvability and completeness feedback, and ultimately selects the best answer from building block outputs and multi-round evolved candidates.
 

@@ -28,15 +28,15 @@ This paper constructs an integrated NLP–econometrics framework that first uses
 
 ## Background & Motivation
 
-**State of the Field**: Global climate policy assessment is shifting from academic research toward stakeholder-driven operational approaches. The Paris Agreement requires countries to implement and report adaptation progress, and the number of national climate laws and policies is growing rapidly. However, most existing policy-tracking efforts remain at the level of qualitative description.
+**Background**: Global climate policy assessment is shifting from academic research toward stakeholder-driven operational approaches. The Paris Agreement requires countries to implement and report adaptation progress, and the number of national climate laws and policies is growing rapidly. However, most existing policy-tracking efforts remain at the level of qualitative description.
 
 **Limitations of Prior Work**: Traditional assessment methods rely on qualitative analysis or composite indices, obscuring critical distinctions among Mitigation, Adaptation, Disaster Risk Management (DRM), and Loss & Damage (L&D). A quantitative, thematically disaggregated framework for cross-national comparison of policy priorities—and for linking policy orientation to measurable development outcomes—is lacking.
 
-**Root Cause**: Policy texts are unstructured, and consistent cross-lingual, cross-national analysis requires automated methods. At the same time, classifying policy topics alone is insufficient; it is also necessary to understand how different policy orientations affect actual economic and social development.
+**Key Challenge**: Policy texts are unstructured, and consistent cross-lingual, cross-national analysis requires automated methods. At the same time, classifying policy topics alone is insufficient; it is also necessary to understand how different policy orientations affect actual economic and social development.
 
-**Paper Goals**: (1) How can topic-level policy indicators be automatically extracted from unstructured policy texts? (2) What statistical associations exist between climate policies of different topics and economic development indicators?
+**Goal**: (1) How can topic-level policy indicators be automatically extracted from unstructured policy texts? (2) What statistical associations exist between climate policies of different topics and economic development indicators?
 
-**Starting Point**: Combining NLP text classification with macroeconomic econometric analysis—using Transformer models to quantify policy orientation and panel regression to analyze policy–development associations.
+**Key Insight**: Combining NLP text classification with macroeconomic econometric analysis—using Transformer models to quantify policy orientation and panel regression to analyze policy–development associations.
 
 **Core Idea**: Use DistilBERT to transform climate policy texts into quantifiable topic indicators, then apply econometric methods to investigate "which types of climate policy are associated with which development outcomes."
 

@@ -30,7 +30,7 @@ This work embeds a Normalizing Flow (NF) into an autoencoder architecture to ena
 
 ### State of the Field
 
-**State of the Field**: Spectral fitting of black hole X-ray binaries (BHBs) is a critical tool for studying accretion processes in extreme gravitational environments.
+**Background**: Spectral fitting of black hole X-ray binaries (BHBs) is a critical tool for studying accretion processes in extreme gravitational environments.
 
 ### Limitations of Prior Work
 
@@ -38,11 +38,11 @@ This work embeds a Normalizing Flow (NF) into an autoencoder architecture to ena
 
 ### Root Cause
 
-**Root Cause**: Prior deterministic autoencoder approaches, while offering ~2700× speedup, provide no uncertainty estimates for inferred parameters.
+**Key Challenge**: Prior deterministic autoencoder approaches, while offering ~2700× speedup, provide no uncertainty estimates for inferred parameters.
 
 ### Starting Point
 
-**Starting Point**: Uncertainty quantification is essential for scientific interpretability, motivating the need for a method that combines both speed and probabilistic inference.
+**Key Insight**: Uncertainty quantification is essential for scientific interpretability, motivating the need for a method that combines both speed and probabilistic inference.
 
 ## Method
 

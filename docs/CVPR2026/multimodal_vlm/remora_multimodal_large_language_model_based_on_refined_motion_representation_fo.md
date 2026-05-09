@@ -27,18 +27,18 @@ content_hash: c6dbb41a6860c2c4
 This paper proposes ReMoRa, which operates directly on compressed video representations (I-frames + motion vectors). A Refined Motion Representation (RMR) module refines coarse block-level motion vectors into fine-grained motion representations approximating optical flow, while a Hierarchical Motion State Space (HMSS) module performs linear-time long-range temporal modeling. ReMoRa surpasses baselines on LongVideoBench, NExT-QA, MLVU, and other benchmarks.
 
 ## Background & Motivation
-**State of the Field**: Video MLLMs have achieved notable progress on short videos, but long-video understanding (minute- to hour-scale) remains a significant challenge.
+**Background**: Video MLLMs have achieved notable progress on short videos, but long-video understanding (minute- to hour-scale) remains a significant challenge.
 
 **Limitations of Prior Work**:
    - Uniform frame sampling involves an inherent trade-off: sparse sampling misses critical events, while dense sampling is computationally infeasible due to quadratic attention complexity.
    - Frame-based methods repeatedly encode redundant content (e.g., static backgrounds), resulting in extremely low efficiency.
    - Token compression (pooling/reduction) applied after dense sampling blurs fine-grained details and motion cues.
 
-**Root Cause**: Long videos require dense temporal coverage to capture transient but important events, yet dense frame processing incurs prohibitive computational cost.
+**Key Challenge**: Long videos require dense temporal coverage to capture transient but important events, yet dense frame processing incurs prohibitive computational cost.
 
-**Paper Goals**: To exploit the inherent appearance–motion decomposition present in compressed video formats (H.264), achieving dense temporal coverage at minimal cost.
+**Goal**: To exploit the inherent appearance–motion decomposition present in compressed video formats (H.264), achieving dense temporal coverage at minimal cost.
 
-**Starting Point**: Modern video codecs already perform keyframe selection and motion compensation. Motion vectors serve as a cheap approximation of optical flow and can be utilized directly without decoding all frames.
+**Key Insight**: Modern video codecs already perform keyframe selection and motion compensation. Motion vectors serve as a cheap approximation of optical flow and can be utilized directly without decoding all frames.
 
 **Core Idea**: Retain a small number of I-frames for appearance, replace intermediate frames with motion vectors for temporal dynamics, and use the RMR module to compensate for the noise and coarseness of motion vectors.
 

@@ -28,15 +28,15 @@ RFAE is the first principled encode-decode framework for random forests. It expl
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning dominates representation learning (AE, VAE), yet random forests frequently outperform deep models on tabular data. Tabular datasets contain mixed continuous/categorical features, which tree models handle more naturally than neural networks.
+**Background**: Deep learning dominates representation learning (AE, VAE), yet random forests frequently outperform deep models on tabular data. Tabular datasets contain mixed continuous/categorical features, which tree models handle more naturally than neural networks.
 
 **Limitations of Prior Work**: Random forests lack a principled encode-decode pipeline—there is no established way to project RF-learned representations into a low-dimensional space and decode them back. Existing approaches (e.g., applying MDS directly to the RF similarity matrix) offer no theoretical guarantees and provide no decoding capability.
 
-**Root Cause**: RFs implicitly learn rich data similarity structure through leaf-node co-occurrence frequencies, but this structure is locked inside the trees and cannot be exploited for compression, visualization, denoising, or other tasks that require encoding and decoding.
+**Key Challenge**: RFs implicitly learn rich data similarity structure through leaf-node co-occurrence frequencies, but this structure is locked inside the trees and cannot be exploited for compression, visualization, denoising, or other tasks that require encoding and decoding.
 
-**Paper Goals**: To construct a theoretically grounded encoder (low-dimensional embedding) and decoder (recovery of original features from the embedding) for random forests.
+**Goal**: To construct a theoretically grounded encoder (low-dimensional embedding) and decoder (recovery of original features from the embedding) for random forests.
 
-**Starting Point**: The RF kernel $k_n^{RF}(\mathbf{x}, \mathbf{x}')$ (the fraction of trees in which two samples share a leaf node) is shown to be positive-definite, asymptotically universal, and characteristic (Theorem 3.4), making it directly amenable to spectral decomposition via diffusion maps.
+**Key Insight**: The RF kernel $k_n^{RF}(\mathbf{x}, \mathbf{x}')$ (the fraction of trees in which two samples share a leaf node) is shown to be positive-definite, asymptotically universal, and characteristic (Theorem 3.4), making it directly amenable to spectral decomposition via diffusion maps.
 
 **Core Idea**: Positive-definiteness of the RF kernel → diffusion-map spectral decomposition = encoder; k-NN regression in leaf-node space = decoder; theoretical guarantees of universal consistency.
 

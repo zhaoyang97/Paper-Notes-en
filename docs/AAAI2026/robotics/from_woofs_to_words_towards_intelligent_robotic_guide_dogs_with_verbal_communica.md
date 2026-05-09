@@ -37,7 +37,7 @@ Guide dogs are critical for the independent mobility of visually impaired indivi
 
 - **Unidirectional communication systems**: Communicate solely via leash tension; the human fully follows the robot, assuming both parties know the destination in advance.
 - **Limited bidirectional communication**: Interaction is restricted to buttons, predefined voice commands, or leash tugging.
-- **Root Cause**: No existing system supports natural multi-turn language dialogue—yet in real scenarios, guide dogs and their handlers must collaboratively decide on routes as a team.
+- **Key Challenge**: No existing system supports natural multi-turn language dialogue—yet in real scenarios, guide dogs and their handlers must collaboratively decide on routes as a team.
 
 ### Two Novel Challenges
 

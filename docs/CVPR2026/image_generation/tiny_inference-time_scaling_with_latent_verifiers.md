@@ -28,15 +28,15 @@ This paper proposes VHS (Verifier on Hidden States), a verifier that operates di
 
 ## Background & Motivation
 
-1. **State of the Field**: Inference-time scaling has emerged as an effective strategy for improving generative model quality by generating multiple candidate samples and selecting the best via a verifier. Best-of-N strategies are widely adopted in text-to-image generation.
+1. **Background**: Inference-time scaling has emerged as an effective strategy for improving generative model quality by generating multiple candidate samples and selecting the best via a verifier. Best-of-N strategies are widely adopted in text-to-image generation.
 
 2. **Limitations of Prior Work**: Existing verifiers are typically built on MLLMs (multimodal large language models), following the pipeline: generator produces output in latent space → decode to pixel space → re-encode with a visual encoder (e.g., CLIP) → score with an LLM. This introduces two issues: (a) the decode–re-encode step is redundant, as the latent space already implicitly encodes semantic information, yet it is decoded only to be re-encoded; (b) the literature typically counts only generation steps (function evaluations) while neglecting verifier overhead, which is non-trivial for **single-step generators** (e.g., SANA-Sprint), where the decoder and verifier costs are comparable to generation itself.
 
-3. **Root Cause**: Practical deployment scenarios (e.g., commercial image generation services) typically return only 2–4 candidate images, constituting a "tiny budget" setting. Under such tight budgets, the overhead of MLLM-based verifiers is non-negligible. Diffusion models operate in a compressed latent space to reduce computation, yet verification reverts to pixel space, creating a computational contradiction.
+3. **Key Challenge**: Practical deployment scenarios (e.g., commercial image generation services) typically return only 2–4 candidate images, constituting a "tiny budget" setting. Under such tight budgets, the overhead of MLLM-based verifiers is non-negligible. Diffusion models operate in a compressed latent space to reduce computation, yet verification reverts to pixel space, creating a computational contradiction.
 
-4. **Paper Goals**: Design a more efficient verifier that can assess generation quality directly in the generator's latent space, eliminating the decode–re-encode overhead.
+4. **Goal**: Design a more efficient verifier that can assess generation quality directly in the generator's latent space, eliminating the decode–re-encode overhead.
 
-5. **Starting Point**: The intermediate hidden layers of a DiT generator already encode rich semantic information (interpretable by an LLM), making the decode–re-encode step unnecessary. Intermediate layer features can directly replace CLIP visual encoder outputs as visual inputs to the LLM.
+5. **Key Insight**: The intermediate hidden layers of a DiT generator already encode rich semantic information (interpretable by an LLM), making the decode–re-encode step unnecessary. Intermediate layer features can directly replace CLIP visual encoder outputs as visual inputs to the LLM.
 
 6. **Core Idea**: The verifier directly consumes the intermediate hidden states of the DiT generator as visual input, skipping the remaining DiT layers, autoencoder decoding, and CLIP re-encoding, thereby enabling efficient verification within the latent space.
 

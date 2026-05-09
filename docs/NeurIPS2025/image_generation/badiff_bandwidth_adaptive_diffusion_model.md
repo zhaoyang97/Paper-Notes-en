@@ -30,16 +30,16 @@ This paper proposes BADiff—the first bandwidth-adaptive diffusion model—whic
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models (DDPM, LDM, etc.) are capable of generating highly faithful images, yet face transmission bandwidth bottlenecks in practical cloud-to-device deployments. The prevailing approach is to generate high-quality images with a diffusion model and then apply lossy compression via BPG or learned image codecs (LIC) before transmission.
+**Background**: Diffusion models (DDPM, LDM, etc.) are capable of generating highly faithful images, yet face transmission bandwidth bottlenecks in practical cloud-to-device deployments. The prevailing approach is to generate high-quality images with a diffusion model and then apply lossy compression via BPG or learned image codecs (LIC) before transmission.
 
 **Limitations of Prior Work**:
    - **Cascaded pipelines are wasteful**: Fine-grained textural details painstakingly constructed by the diffusion model are erased by subsequent compression, incurring both computational and quality losses.
    - **Naïve early stopping performs poorly**: Simply reducing the number of diffusion steps introduces visual artifacts and perceptual incoherence, as the model is not trained with early termination in mind.
    - **Generation is bandwidth-agnostic**: Standard diffusion models are entirely unaware of downstream transmission constraints.
 
-**Root Cause**: The generation process and transmission constraints are completely decoupled—the model is oblivious to available bandwidth, producing unnecessarily high-quality outputs that cannot be transmitted as-is, or losing all detail after compression.
+**Key Challenge**: The generation process and transmission constraints are completely decoupled—the model is oblivious to available bandwidth, producing unnecessarily high-quality outputs that cannot be transmitted as-is, or losing all detail after compression.
 
-**Starting Point**: Diffusion models inherently refine images from coarse to fine—early steps construct global structure while later steps add fine-grained texture. Different bandwidth requirements can thus correspond to different stopping points. The key is to train the model such that it produces perceptually high-quality outputs at any given stopping point.
+**Key Insight**: Diffusion models inherently refine images from coarse to fine—early steps construct global structure while later steps add fine-grained texture. Different bandwidth requirements can thus correspond to different stopping points. The key is to train the model such that it produces perceptually high-quality outputs at any given stopping point.
 
 ## Method
 

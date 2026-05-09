@@ -35,9 +35,9 @@ Existing CXR lesion segmentation faces two major bottlenecks:
 1. **Limited annotation scale**: Existing datasets (VinDr-CXR with 15K images, SIIM-ACR with 13K images) rely on expert manual annotation, restricting scale, and most provide only bounding boxes or masks for a single lesion type.
 2. **High barrier for user input**: Existing text-guided segmentation methods require users to provide expert-level detailed descriptions (e.g., "bilateral pulmonary infection with two infected regions…"), rendering them inaccessible to non-expert users.
 
-**Root Cause**: How to generate high-quality lesion masks and instruction-answer pairs at scale without manual annotation, while supporting simple and accessible user instructions?
+**Key Challenge**: How to generate high-quality lesion masks and instruction-answer pairs at scale without manual annotation, while supporting simple and accessible user instructions?
 
-**Starting Point**: The paper leverages existing image-report paired data in MIMIC-CXR, extracting spatial and textual information from images and reports through a multimodal automated pipeline to produce a fully automatically annotated large-scale ILS dataset.
+**Key Insight**: The paper leverages existing image-report paired data in MIMIC-CXR, extracting spatial and textual information from images and reports through a multimodal automated pipeline to produce a fully automatically annotated large-scale ILS dataset.
 
 ## Method
 

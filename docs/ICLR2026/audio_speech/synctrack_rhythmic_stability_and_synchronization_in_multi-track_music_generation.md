@@ -28,11 +28,11 @@ SyncTrack is proposed with a unified architecture comprising track-shared module
 
 ## Background & Motivation
 
-**State of the Field**: Multi-track music generation enables independent control over individual instrument tracks (mixing, re-arrangement); methods such as MSDM and MSG-LD employ diffusion models to learn the joint distribution of multiple tracks.
+**Background**: Multi-track music generation enables independent control over individual instrument tracks (mixing, re-arrangement); methods such as MSDM and MSG-LD employ diffusion models to learn the joint distribution of multiple tracks.
 
 **Limitations of Prior Work**: Existing methods treat multi-track generation as multivariate time-series or video generation, over-emphasizing inter-track differences while neglecting shared rhythmic structure—resulting in rhythmic instability and inter-track desynchronization. MSDM achieves an FAD of 6.55 and a subjective score of only 1.57/5.0.
 
-**Root Cause**: Rhythmic information is shared across tracks (all instruments follow the same beat), whereas timbre information is track-independent (bass is low-pitched, piano is bright)—these two types of information must be handled separately.
+**Key Challenge**: Rhythmic information is shared across tracks (all instruments follow the same beat), whereas timbre information is track-independent (bass is low-pitched, piano is bright)—these two types of information must be handled separately.
 
 **Core Idea**: Track-shared modules (shared rhythm) + track-specific modules (independent timbre) + novel evaluation metrics.
 

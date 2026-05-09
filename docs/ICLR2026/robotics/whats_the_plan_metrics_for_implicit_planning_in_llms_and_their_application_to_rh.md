@@ -28,15 +28,15 @@ This paper proposes a mean activation difference steering method along with acco
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are trained via next-token prediction yet produce coherent text. Lindsey et al. (2025) qualitatively demonstrated rhyme-planning behavior in Claude 3.5 Haiku using a cross-layer transcoder (CLT)—the model already encodes a representation of the future rhyme at the end of the first line, and this representation influences the generation of intermediate words in the second line.
+**Background**: LLMs are trained via next-token prediction yet produce coherent text. Lindsey et al. (2025) qualitatively demonstrated rhyme-planning behavior in Claude 3.5 Haiku using a cross-layer transcoder (CLT)—the model already encodes a representation of the future rhyme at the end of the first line, and this representation influences the generation of intermediate words in the second line.
 
 **Limitations of Prior Work**: (1) The CLT approach is complex and expensive (training on a single model requires days on H100s) and does not scale to multi-model comparisons; (2) Lindsey's findings are limited to a few qualitative examples on a single closed-source model and are not reproducible; (3) quantitative metrics for implicit planning are lacking—no standardized method exists for assessing the "degree of planning."
 
-**Root Cause**: The importance of implicit planning (for understanding LLM capabilities and safety) conflicts with the complexity and non-scalability of existing research methods.
+**Key Challenge**: The importance of implicit planning (for understanding LLM capabilities and safety) conflicts with the complexity and non-scalability of existing research methods.
 
-**Paper Goals**: To quantitatively study implicit planning using a simple, scalable method, and to systematically validate findings across multiple models and tasks.
+**Goal**: To quantitatively study implicit planning using a simple, scalable method, and to systematically validate findings across multiple models and tasks.
 
-**Starting Point**: Rhyming poetry and question answering serve as ideal probes for implicit planning—the nature and position of target tokens can be predicted from general principles but are not determined solely by the immediately preceding context.
+**Key Insight**: Rhyming poetry and question answering serve as ideal probes for implicit planning—the nature and position of target tokens can be predicted from general principles but are not determined solely by the immediately preceding context.
 
 **Core Idea**: Mean activation difference steering, applied at the correct position, is sufficient to manipulate both forward and backward planning without training a CLT or SAE.
 

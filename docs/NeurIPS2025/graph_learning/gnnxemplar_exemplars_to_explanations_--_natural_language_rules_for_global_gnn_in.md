@@ -29,7 +29,7 @@ This paper proposes GnnXemplar, a framework grounded in the cognitive-science Ex
 
 ## Background & Motivation
 
-**State of the Field**: GNNs are widely applied to node classification tasks, yet their decision processes remain opaque. Existing local explanation methods (GNNExplainer, PGExplainer) explain only individual predictions, while global explanation methods are still underdeveloped.
+**Background**: GNNs are widely applied to node classification tasks, yet their decision processes remain opaque. Existing local explanation methods (GNNExplainer, PGExplainer) explain only individual predictions, while global explanation methods are still underdeveloped.
 
 **Limitations of Prior Work**:
 - Existing global explainers (GNNInterpreter, GLGExplainer) primarily target motif discovery in small-scale graph classification tasks.
@@ -37,11 +37,11 @@ This paper proposes GnnXemplar, a framework grounded in the cognitive-science Ex
 - High-dimensional continuous node attributes invalidate classical motif definitions.
 - Subgraph visualization on large graphs exceeds human cognitive capacity.
 
-**Root Cause**: How can one provide global explanations on large-scale, high-dimensional attributed graphs that are simultaneously faithful to model decisions (high fidelity) and comprehensible to humans?
+**Key Challenge**: How can one provide global explanations on large-scale, high-dimensional attributed graphs that are simultaneously faithful to model decisions (high fidelity) and comprehensible to humans?
 
-**Paper Goals**: To deliver global explanations for node-classification GNNs on large-scale graphs, requiring scalability, high fidelity, and human interpretability.
+**Goal**: To deliver global explanations for node-classification GNNs on large-scale graphs, requiring scalability, high fidelity, and human interpretability.
 
-**Starting Point**: The framework draws on the Exemplar Theory from cognitive science — humans categorize new objects by comparing them against representative exemplars stored in memory.
+**Key Insight**: The framework draws on the Exemplar Theory from cognitive science — humans categorize new objects by comparing them against representative exemplars stored in memory.
 
 **Core Idea**: Identify representative exemplars in the GNN embedding space, then leverage an LLM with iterative self-refinement to generate natural-language Boolean rules as explanations for each exemplar.
 

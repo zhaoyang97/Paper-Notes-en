@@ -29,15 +29,15 @@ This paper proposes MaskAdapt, a two-stage residual learning framework that firs
 
 ## Background & Motivation
 
-**State of the Field**: Physics-based humanoid character control is a central problem in computer graphics and robotics. Deep reinforcement learning (DRL)-driven physical character control has achieved remarkable progress in recent years, enabling reference motion imitation and physically plausible motion synthesis. However, flexibly modifying specific body-part behaviors while preserving the overall motion quality (e.g., having a walking character perform a different upper-body action) remains a significant challenge.
+**Background**: Physics-based humanoid character control is a central problem in computer graphics and robotics. Deep reinforcement learning (DRL)-driven physical character control has achieved remarkable progress in recent years, enabling reference motion imitation and physically plausible motion synthesis. However, flexibly modifying specific body-part behaviors while preserving the overall motion quality (e.g., having a walking character perform a different upper-body action) remains a significant challenge.
 
 **Limitations of Prior Work**: Existing motion control methods typically learn a unified whole-body policy, making independent adaptation of individual body parts difficult. (1) Direct fine-tuning of an existing policy leads to catastrophic forgetting—modifying upper-body motion disrupts lower-body behavior; (2) training composite motions from scratch requires substantial engineering effort and computational cost; (3) existing methods lack flexibility in selecting target body parts—different applications require modifying different parts, necessitating separate training for each combination.
 
-**Root Cause**: Motion adaptation must simultaneously satisfy two conflicting objectives: (1) precisely modifying the behavior of target body parts to match new motion goals, and (2) preserving the stability and naturalness of non-target parts. The coupled nature of whole-body policies makes it difficult to satisfy both simultaneously.
+**Key Challenge**: Motion adaptation must simultaneously satisfy two conflicting objectives: (1) precisely modifying the behavior of target body parts to match new motion goals, and (2) preserving the stability and naturalness of non-target parts. The coupled nature of whole-body policies makes it difficult to satisfy both simultaneously.
 
-**Paper Goals**: Design a framework that (1) trains a base motion prior robust to missing observations of body parts, and (2) enables flexible adaptation of target parts via lightweight residual learning on top of this prior without disturbing other parts.
+**Goal**: Design a framework that (1) trains a base motion prior robust to missing observations of body parts, and (2) enables flexible adaptation of target parts via lightweight residual learning on top of this prior without disturbing other parts.
 
-**Starting Point**: Drawing inspiration from masked pretraining—if a base policy is trained with observations of certain body parts masked, it can naturally transition when those parts are "taken over" during adaptation without causing system instability.
+**Key Insight**: Drawing inspiration from masked pretraining—if a base policy is trained with observations of certain body parts masked, it can naturally transition when those parts are "taken over" during adaptation without causing system instability.
 
 **Core Idea**: A two-stage paradigm—Stage 1 trains a base policy with random masking to make it robust to missing observations (anticipating future adaptation regions); Stage 2 trains a residual policy on top of the frozen base policy to modify only the target body parts.
 

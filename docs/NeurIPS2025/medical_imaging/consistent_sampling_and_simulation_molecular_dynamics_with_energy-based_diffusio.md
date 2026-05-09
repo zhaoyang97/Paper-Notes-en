@@ -29,7 +29,7 @@ This paper identifies an inconsistency between sampling and simulation in diffus
 
 ## Background & Motivation
 
-**State of the Field**: Molecular dynamics (MD) simulation is a fundamental tool for studying biomolecular behavior, but reaching biologically relevant timescales (μs–ms) is computationally prohibitive. Coarse-graining (CG) methods accelerate simulation by reducing system dimensionality, but require learning CG force fields. Diffusion models have recently demonstrated strong performance in molecular generation and sampling, enabling the generation of new conformations by training on equilibrium molecular distributions.
+**Background**: Molecular dynamics (MD) simulation is a fundamental tool for studying biomolecular behavior, but reaching biologically relevant timescales (μs–ms) is computationally prohibitive. Coarse-graining (CG) methods accelerate simulation by reducing system dimensionality, but require learning CG force fields. Diffusion models have recently demonstrated strong performance in molecular generation and sampling, enabling the generation of new conformations by training on equilibrium molecular distributions.
 
 **Limitations of Prior Work**:
 - The score $\nabla_x \log p_t(x)$ learned by diffusion models is theoretically equivalent to the force ($-\nabla U / k_BT$) at $t=0$, making it directly applicable to MD simulation.
@@ -37,14 +37,14 @@ This paper identifies an inconsistency between sampling and simulation in diffus
 - This inconsistency is observable even on simple 2D toy systems (e.g., a bimodal Gaussian mixture): i.i.d. sampling recovers both modes, yet the model energy at $t=0$ learns a spurious third mode.
 - The prior work Two For One mitigates inconsistency by evaluating the model at $t>0$, but introduces additional noise that degrades structural accuracy.
 
-**Root Cause**: The score of a diffusion model exhibits numerical instability near the data distribution ($t \to 0$), causing the Fokker-Planck equation to be violated and rendering energy estimates and forces inaccurate.
+**Key Challenge**: The score of a diffusion model exhibits numerical instability near the data distribution ($t \to 0$), causing the Fokker-Planck equation to be violated and rendering energy estimates and forces inaccurate.
 
 **Core Problem**:
 - How can i.i.d. sampling and Langevin simulation from a diffusion model be made to produce consistent distributions?
 - How can simulation accuracy be improved while preserving sampling quality?
 - How can an energy-consistent diffusion model be trained efficiently?
 
-**Starting Point**: The Fokker-Planck equation, which governs how the score should evolve with diffusion time, is used as the theoretical starting point. If the model violates this equation, its energy estimates are necessarily inconsistent. Training is regularized by minimizing the Fokker-Planck residual.
+**Key Insight**: The Fokker-Planck equation, which governs how the score should evolve with diffusion time, is used as the theoretical starting point. If the model violates this equation, its energy estimates are necessarily inconsistent. Training is regularized by minimizing the Fokker-Planck residual.
 
 **Core Idea**: Constrain an energy-parameterized diffusion model with a regularization term derived from the Fokker-Planck equation, so that the score is more self-consistent at small $t$, thereby unifying sampling and simulation capabilities.
 

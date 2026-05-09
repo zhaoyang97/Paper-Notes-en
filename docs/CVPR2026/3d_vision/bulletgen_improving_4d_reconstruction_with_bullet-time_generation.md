@@ -27,15 +27,15 @@ content_hash: 111e351aa4967d72
 BulletGen is proposed to generate novel views at selected "bullet-time" frozen frames using a static video diffusion model. The generated views are precisely localized and used to supervise 4D Gaussian scene optimization, achieving state-of-the-art performance in extreme novel view synthesis and 2D/3D tracking from monocular video input only.
 
 ## Background & Motivation
-**State of the Field**: Reconstructing dynamic 4D scenes from monocular video is a highly under-constrained problem. Methods such as Shape-of-Motion achieve reasonable reconstruction quality by leveraging depth priors and 2D tracking trajectories, but still fail under extreme novel viewpoints.
+**Background**: Reconstructing dynamic 4D scenes from monocular video is a highly under-constrained problem. Methods such as Shape-of-Motion achieve reasonable reconstruction quality by leveraging depth priors and 2D tracking trajectories, but still fail under extreme novel viewpoints.
 
 **Limitations of Prior Work**: Monocular video provides only a single viewpoint per timestep, leaving 4D reconstruction severely under-constrained and causing methods to converge to local optima. Existing generative approaches (CAT4D, Vivid4D) generate multi-view videos and then perform decoupled optimization, lacking precise camera control and spatiotemporal consistency.
 
-**Root Cause**: Pure optimization methods lack information about unseen regions, while pure generative methods lack global consistency constraints. The central challenge is how to robustly integrate inconsistent 2D generated results into a coherent 4D representation.
+**Key Challenge**: Pure optimization methods lack information about unseen regions, while pure generative methods lack global consistency constraints. The central challenge is how to robustly integrate inconsistent 2D generated results into a coherent 4D representation.
 
-**Paper Goals**: To combine the generative capability of video diffusion models with the global consistency advantages of per-scene optimization.
+**Goal**: To combine the generative capability of video diffusion models with the global consistency advantages of per-scene optimization.
 
-**Starting Point**: "Bullet-time"—freezing the scene at selected moments and generating novel views of the frozen instant (equivalent to novel view synthesis of a static scene), then integrating the generated results into 4D reconstruction.
+**Key Insight**: "Bullet-time"—freezing the scene at selected moments and generating novel views of the frozen instant (equivalent to novel view synthesis of a static scene), then integrating the generated results into 4D reconstruction.
 
 **Core Idea**: Train the diffusion model on abundant static scene data (rather than scarce dynamic video data) to generate novel views at frozen moments, and iteratively integrate 2D generated results into a globally consistent 3D representation.
 

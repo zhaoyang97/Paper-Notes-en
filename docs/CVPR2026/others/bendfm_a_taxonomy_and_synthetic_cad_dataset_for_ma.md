@@ -28,15 +28,15 @@ This paper proposes a two-dimensional taxonomy of manufacturability metrics (con
 
 ## Background & Motivation
 
-**State of the Field**: Design for Manufacturability (DFM) requires predicting production feasibility and difficulty during the design phase. While deep learning has made notable progress in manufacturing process selection, advances in Intra-Process Manufacturability Assessment (IPMA) have been limited.
+**Background**: Design for Manufacturability (DFM) requires predicting production feasibility and difficulty during the design phase. While deep learning has made notable progress in manufacturing process selection, advances in Intra-Process Manufacturability Assessment (IPMA) have been limited.
 
 **Limitations of Prior Work**: (1) The definition of "manufacturability" is inconsistent in the literature—some metrics depend on specific equipment configurations (e.g., available punch sizes), while others represent universal geometric constraints (e.g., unfolding self-intersection); some involve discrete judgments while others are continuous measures. This semantic confusion hinders method comparison and knowledge transfer. (2) Industrial datasets suffer from severe survivorship bias—only optimized, manufacturable designs are retained, while failed non-manufacturable cases are discarded, preventing models from learning the geometric features associated with production failures. (3) Existing synthetic datasets primarily serve subtractive processes (drilling, milling), rely on simple cuboid geometries, and have been shown to generalize poorly.
 
-**Root Cause**: Sheet metal bending requires simulating sequential bending operations and complex part–tool interactions (collision detection), making it far more intricate than simple aperture-ratio judgments. Yet no dedicated dataset or unified definitional framework exists.
+**Key Challenge**: Sheet metal bending requires simulating sequential bending operations and complex part–tool interactions (collision detection), making it far more intricate than simple aperture-ratio judgments. Yet no dedicated dataset or unified definitional framework exists.
 
-**Paper Goals**: To systematically define the conceptual space of manufacturability and to create the first synthetic CAD dataset for sheet metal bending that includes both manufacturable and non-manufacturable designs.
+**Goal**: To systematically define the conceptual space of manufacturability and to create the first synthetic CAD dataset for sheet metal bending that includes both manufacturable and non-manufacturable designs.
 
-**Starting Point**: Establish a taxonomy to unify terminology, then generate richly annotated data via parametric modeling combined with physical bending simulation.
+**Key Insight**: Establish a taxonomy to unify terminology, then generate richly annotated data via parametric modeling combined with physical bending simulation.
 
 **Core Idea**: A two-dimensional taxonomy (configuration dependence × feasibility/complexity) combined with a process-aware synthesis pipeline (bending trajectories + collision detection) yields the first sheet metal bending dataset capable of supporting learning-based DFM.
 

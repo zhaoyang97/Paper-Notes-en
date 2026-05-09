@@ -36,9 +36,9 @@ Gravitational waves—stretching and compressing the fabric of spacetime—were 
 2. Computing individual matrix elements is extremely time-consuming, particularly when thermal lensing and finite-aperture scattering are included;
 3. Interferometers must be "locked"—cavity mirror positions must be finely tuned to achieve resonance—and each adjustment requires rerunning the simulation.
 
-**Root Cause**: Training data collection is itself prohibitively expensive, and limited generalization severely reduces practical utility. Nevertheless, even coarse simulation surrogates are valuable: they enable optimization routines to rapidly prune unfavorable regions of the design parameter space.
+**Key Challenge**: Training data collection is itself prohibitively expensive, and limited generalization severely reduces practical utility. Nevertheless, even coarse simulation surrogates are valuable: they enable optimization routines to rapidly prune unfavorable regions of the design parameter space.
 
-**Starting Point**: The interaction of electromagnetic fields with a sequence of optical components in an interferometer is naturally suited to a graph representation. Each optical component can be decomposed into incident/outgoing field nodes, with edges representing spatial connections between fields. GNN message passing effectively captures both local interactions and long-range dependencies.
+**Key Insight**: The interaction of electromagnetic fields with a sequence of optical components in an interferometer is naturally suited to a graph representation. Each optical component can be decomposed into incident/outgoing field nodes, with edges representing spatial connections between fields. GNN message passing effectively captures both local interactions and long-range dependencies.
 
 **Core Idea**: Train a GNN to learn the steady-state electromagnetic fields (power and intensity distributions) of an interferometer as a surrogate model for FINESSE simulations, achieving substantial inference acceleration while preserving physical accuracy.
 

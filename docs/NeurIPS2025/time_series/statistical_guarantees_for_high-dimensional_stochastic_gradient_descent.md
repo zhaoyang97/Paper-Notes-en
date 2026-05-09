@@ -29,7 +29,7 @@ This work introduces coupling techniques from high-dimensional nonlinear time se
 
 ## Background & Motivation
 
-**State of the Field**: SGD is a cornerstone of large-scale machine learning, widely used in high-dimensional and overparameterized settings. In practice, **constant (large) learning rates** are commonly adopted to accelerate convergence, yet the theoretical understanding remains severely lagging.
+**Background**: SGD is a cornerstone of large-scale machine learning, widely used in high-dimensional and overparameterized settings. In practice, **constant (large) learning rates** are commonly adopted to accelerate convergence, yet the theoretical understanding remains severely lagging.
 
 **Limitations of Prior Work**:
    - Classical SGD theory primarily targets **decaying learning rates** and cannot characterize the behavior under constant learning rates.
@@ -37,11 +37,11 @@ This work introduces coupling techniques from high-dimensional nonlinear time se
    - Constant learning rate SGD iterates do not converge to a single point; instead, they oscillate around a stationary distribution with an irreducible $O(\alpha)$ bias.
    - High-dimensional sparse/structured models typically require $\ell^\infty$ norm control, yet this norm is non-differentiable, making gradient-based tools difficult to apply.
 
-**Root Cause**: Constant learning rate SGD works well in practice, yet rigorous high-dimensional guarantees—particularly for higher-order moments and general norms—are absent from the theory.
+**Key Challenge**: Constant learning rate SGD works well in practice, yet rigorous high-dimensional guarantees—particularly for higher-order moments and general norms—are absent from the theory.
 
-**Paper Goals**: To establish rigorous statistical guarantees for high-dimensional constant learning rate SGD/ASGD: moment convergence bounds, high-probability concentration inequalities, and computational complexity bounds.
+**Goal**: To establish rigorous statistical guarantees for high-dimensional constant learning rate SGD/ASGD: moment convergence bounds, high-probability concentration inequalities, and computational complexity bounds.
 
-**Starting Point**: The SGD iterates are viewed as a **nonlinear autoregressive process**, and coupling techniques (functional dependence measures) from high-dimensional nonlinear time series analysis are imported into online learning.
+**Key Insight**: The SGD iterates are viewed as a **nonlinear autoregressive process**, and coupling techniques (functional dependence measures) from high-dimensional nonlinear time series analysis are imported into online learning.
 
 **Core Idea**: By establishing geometric moment contraction of SGD under the $\ell^s$ norm (with $s \approx \log d$), the non-differentiability of $\ell^\infty$ is circumvented, yielding a complete theoretical framework for high-dimensional SGD.
 

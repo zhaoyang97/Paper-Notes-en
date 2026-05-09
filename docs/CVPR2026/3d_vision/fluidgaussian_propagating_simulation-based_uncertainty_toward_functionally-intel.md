@@ -29,15 +29,15 @@ This paper proposes FluidGaussian, which guides active view selection in 3D reco
 
 ## Background & Motivation
 
-**State of the Field**: Current 3D reconstruction methods (NeRF, 3DGS) primarily optimize visual fidelity via photometric losses, achieving photorealistic rendering. Active next-best-view (NBV) methods such as ActiveNeRF and FisherRF select optimal viewpoints through variance reduction or Fisher information.
+**Background**: Current 3D reconstruction methods (NeRF, 3DGS) primarily optimize visual fidelity via photometric losses, achieving photorealistic rendering. Active next-best-view (NBV) methods such as ActiveNeRF and FisherRF select optimal viewpoints through variance reduction or Fisher information.
 
 **Limitations of Prior Work**: These methods focus solely on appearance and neglect physical interaction plausibility. A reconstructed 3D model may be visually perfect yet perform poorly under physical simulation—for example, exhibiting excessive velocity field divergence in fluid simulation, indicating that the underlying geometry is physically unreliable.
 
-**Root Cause**: A fundamental gap exists between visual fidelity in pixel space (PSNR) and physical interaction fidelity. A model with high PSNR may fail as a digital twin when subjected to forces, fluid coupling, or other physical interactions.
+**Key Challenge**: A fundamental gap exists between visual fidelity in pixel space (PSNR) and physical interaction fidelity. A model with high PSNR may fail as a digital twin when subjected to forces, fluid coupling, or other physical interactions.
 
-**Paper Goals**: To enable 3D reconstruction to go beyond purely visual cues and capture the physical interactions and functional properties of real-world objects.
+**Goal**: To enable 3D reconstruction to go beyond purely visual cues and capture the physical interactions and functional properties of real-world objects.
 
-**Starting Point**: Fluid simulation is used as a "probe" to expose deficiencies in reconstructed geometry. Fluid–object surface coupling provides dense, surface-wide quality feedback signals.
+**Key Insight**: Fluid simulation is used as a "probe" to expose deficiencies in reconstructed geometry. Fluid–object surface coupling provides dense, surface-wide quality feedback signals.
 
 **Core Idea**: Define a fluid simulation–based uncertainty metric, couple it with existing visual-driven NBV strategies, and select viewpoints that jointly improve visual and physical fidelity.
 

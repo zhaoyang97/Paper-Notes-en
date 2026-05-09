@@ -27,15 +27,15 @@ content_hash: 356310698327c931
 This paper proposes LIDA, which reformulates AI-generated image attribution from a classification problem into a retrieval problem. By leveraging low-bit-plane fingerprints to capture generator-specific artifacts, combined with unsupervised pre-training and few-shot adaptation, LIDA achieves state-of-the-art Deepfake detection and image attribution under zero-shot and few-shot settings.
 
 ## Background & Motivation
-**State of the Field**: With the rapid advancement of AIGC technologies, Deepfake detection has seen considerable progress; however, attribution of AI-generated images to specific generative models remains an open problem. Existing approaches fall into two categories: generative watermarking (requiring access to the generative model) and classification-based attribution.
+**Background**: With the rapid advancement of AIGC technologies, Deepfake detection has seen considerable progress; however, attribution of AI-generated images to specific generative models remains an open problem. Existing approaches fall into two categories: generative watermarking (requiring access to the generative model) and classification-based attribution.
 
 **Limitations of Prior Work**: (1) Generative watermarking requires full access to the generative model and modification of its architecture, lacking flexibility and generality; (2) closed-set attribution assumes all generators are known at training time, making it unable to handle emerging models; (3) open-set attribution, while accounting for unknown generators, still follows a classification paradigm and requires large amounts of unlabeled generated images for retraining, resulting in slow adaptation to new models.
 
-**Root Cause**: New generative models continue to emerge (e.g., Midjourney, DALL-E, Stable Diffusion), and the classification paradigm requires retraining each time to extend categories and collecting large amounts of data from new models—which is impractical in real-world scenarios.
+**Key Challenge**: New generative models continue to emerge (e.g., Midjourney, DALL-E, Stable Diffusion), and the classification paradigm requires retraining each time to extend categories and collecting large amounts of data from new models—which is impractical in real-world scenarios.
 
-**Paper Goals**: To design a model-agnostic, scalable attribution framework that generalizes to unseen generators and requires only a small number of examples to rapidly adapt to new models.
+**Goal**: To design a model-agnostic, scalable attribution framework that generalizes to unseen generators and requires only a small number of examples to rapidly adapt to new models.
 
-**Starting Point**: Attribution is redefined as an instance retrieval problem (rather than classification). A registration database is maintained, and new models can be added with just a few example images without retraining. Low-bit-plane fingerprints are used in place of raw RGB as input to explicitly capture generator-specific noise.
+**Key Insight**: Attribution is redefined as an instance retrieval problem (rather than classification). A registration database is maintained, and new models can be added with just a few example images without retraining. Low-bit-plane fingerprints are used in place of raw RGB as input to explicitly capture generator-specific noise.
 
 **Core Idea**: Low-bit-plane fingerprints + retrieval paradigm = model-agnostic, scalable, few-shot-friendly AI image attribution.
 

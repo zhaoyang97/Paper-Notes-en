@@ -30,15 +30,15 @@ This paper applies Peaks-Over-Threshold Extreme Value Theory (POT EVT) to provid
 
 ## Background & Motivation
 
-**State of the Field**: MCTS combined with multi-armed bandits (MAB) has achieved success in game-playing and reinforcement learning, yet has long underperformed in classical planning. Prior work (Wissow & Asai 2024) identified that UCB1's bounded support assumption $[0, c]$ is incompatible with planning heuristic values, and proposed a Gaussian bandit (UCB1-Normal2) to address this.
+**Background**: MCTS combined with multi-armed bandits (MAB) has achieved success in game-playing and reinforcement learning, yet has long underperformed in classical planning. Prior work (Wissow & Asai 2024) identified that UCB1's bounded support assumption $[0, c]$ is incompatible with planning heuristic values, and proposed a Gaussian bandit (UCB1-Normal2) to address this.
 
 **Limitations of Prior Work**: Although UCB1-Normal2 no longer violates the support assumption, the Gaussian support $(-\infty, +\infty)$ constitutes an **under-specification** of heuristic value distributions, which are in fact semi-bounded: $h \in [h^+, \infty)$ (e.g., $h^{FF}$) or $h \in [0, h^+]$ (e.g., $h^{max}$), suggesting a tighter support is warranted.
 
-**Root Cause**: Full Bellman Backup—propagating the minimum/maximum value among child nodes—works well in practice, yet lacks statistical justification within the theoretical frameworks of UCB1 and UCB1-Normal2, whose regret bounds are derived around the **mean** rather than **extreme values**, creating a theory–practice disconnect.
+**Key Challenge**: Full Bellman Backup—propagating the minimum/maximum value among child nodes—works well in practice, yet lacks statistical justification within the theoretical frameworks of UCB1 and UCB1-Normal2, whose regret bounds are derived around the **mean** rather than **extreme values**, creating a theory–practice disconnect.
 
-**Paper Goals**: (a) Identify a theoretically accurate distributional model for heuristic values that is neither over- nor under-specified; (b) provide a rigorous statistical foundation for Full Bellman Backup; (c) address the destructive effect of dead-end nodes ($h = \infty$) on mean estimation.
+**Goal**: (a) Identify a theoretically accurate distributional model for heuristic values that is neither over- nor under-specified; (b) provide a rigorous statistical foundation for Full Bellman Backup; (c) address the destructive effect of dead-end nodes ($h = \infty$) on mean estimation.
 
-**Starting Point**: The paper draws on Extreme Value Theory (EVT), leveraging the POT limit theorem—which states that exceedances over a high threshold converge to a Generalized Pareto (GP) distribution—to unify the focus on extreme values (minimum $h$) in planning and to justify discarding dead-end samples.
+**Key Insight**: The paper draws on Extreme Value Theory (EVT), leveraging the POT limit theorem—which states that exceedances over a high threshold converge to a Generalized Pareto (GP) distribution—to unify the focus on extreme values (minimum $h$) in planning and to justify discarding dead-end samples.
 
 **Core Idea**: The GP distribution is specialized to the uniform distribution $U(l, u)$ (corresponding to the short-tailed GP with $\xi = -1$), whose MLE is naturally the sample min/max, directly corresponding to Full Bellman Backup. This motivates the UCB1-Uniform bandit, which admits a polynomial–constant regret bound.
 

@@ -27,15 +27,15 @@ content_hash: caf57ec59b41331d
 MUG reframes Multi-Agent Debate (MAD) as a "Who's Undercover" social reasoning game — by introducing information asymmetry through counterfactual image editing (modifying the reference image), one agent is assigned the edited image $I^-$ as the "undercover," while other agents hold the original image $I^+$ and identify the undercover (i.e., the hallucination source) via reasoning and voting. On HallusionBench, Qwen2.5VL-7B improves from 46.4% to 53.8%.
 
 ## Background & Motivation
-**State of the Field**: Multi-Agent Debate (MAD) enhances reasoning quality through structured discussion among multiple LLM agents and is a promising direction for hallucination mitigation.
+**Background**: Multi-Agent Debate (MAD) enhances reasoning quality through structured discussion among multiple LLM agents and is a promising direction for hallucination mitigation.
 
 **Limitations of Prior Work**: MAD suffers from three fundamental limitations — (1) it relies on the unrealistic assumption that all debaters are rational: when agents themselves are prone to hallucination, consensus may converge to a shared error; (2) it depends on statistical consensus (e.g., majority voting) without a genuine fact-checking mechanism; (3) agents passively answer questions rather than actively investigating and verifying claims.
 
-**Root Cause**: The consensus mechanism in MAD is fundamentally a "group statistics" approach — if the majority of agents share the same hallucination, consensus converges to an incorrect answer. A mechanism is needed that identifies "who is hallucinating" rather than "who is in the minority."
+**Key Challenge**: The consensus mechanism in MAD is fundamentally a "group statistics" approach — if the majority of agents share the same hallucination, consensus converges to an incorrect answer. A mechanism is needed that identifies "who is hallucinating" rather than "who is in the minority."
 
-**Paper Goals**: How can hallucinating agents be detected and excluded without assuming agent rationality?
+**Goal**: How can hallucinating agents be detected and excluded without assuming agent rationality?
 
-**Starting Point**: Inspired by the "Who's Undercover" social reasoning game — by providing one agent with a modified image (counterfactual evidence), verifiable information asymmetry is introduced. Since the edit is known, a ground truth is available to determine who is the undercover (the hallucinator).
+**Key Insight**: Inspired by the "Who's Undercover" social reasoning game — by providing one agent with a modified image (counterfactual evidence), verifiable information asymmetry is introduced. Since the edit is known, a ground truth is available to determine who is the undercover (the hallucinator).
 
 **Core Idea**: Use counterfactual image editing to create information asymmetry, combined with an undercover game mechanism to detect hallucinating agents, replacing statistical consensus with fact-checking.
 

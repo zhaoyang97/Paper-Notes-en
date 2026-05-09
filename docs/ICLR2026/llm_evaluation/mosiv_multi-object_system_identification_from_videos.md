@@ -29,7 +29,7 @@ This paper proposes MOSIV—the first complete framework for multi-object system
 
 ## Background & Motivation
 
-**State of the Field**: Learning object physical properties from video is central to constructing "digital twins." Existing methods (GIC, PAC-NeRF, etc.) are largely restricted to single-object, isolated-motion scenarios, whereas the real world is filled with multi-object collisions, sliding contacts, and occlusions.
+**Background**: Learning object physical properties from video is central to constructing "digital twins." Existing methods (GIC, PAC-NeRF, etc.) are largely restricted to single-object, isolated-motion scenarios, whereas the real world is filled with multi-object collisions, sliding contacts, and occlusions.
 
 **Limitations of Prior Work**:
 - (1) Single-object methods cannot handle multi-object interactions—coupled motion during collisions and occlusion-induced tracking difficulties.
@@ -37,13 +37,13 @@ This paper proposes MOSIV—the first complete framework for multi-object system
 - (3) CoupNeRF employs a NeRF+MPM hybrid, resulting in heavy computation, poor temporal consistency, and unsuitability for contact-intensive scenarios.
 - (4) The absence of a standardized multi-object system identification benchmark prevents fair evaluation.
 
-**Root Cause**: Multi-object contact and collision present a double-edged sword: they provide rich signals (revealing hidden physical quantities such as friction and stiffness) while also introducing association ambiguity (scene-level losses can produce misleading gradients through cross-object matching).
+**Key Challenge**: Multi-object contact and collision present a double-edged sword: they provide rich signals (revealing hidden physical quantities such as friction and stiffness) while also introducing association ambiguity (scene-level losses can produce misleading gradients through cross-object matching).
 
-**Starting Point**: Continuous parameter identification (rather than category selection) + differentiable physical simulator + object-level geometry-alignment supervision, jointly addressing multi-object system identification.
+**Key Insight**: Continuous parameter identification (rather than category selection) + differentiable physical simulator + object-level geometry-alignment supervision, jointly addressing multi-object system identification.
 
 **Application Prospects**: Accurate multi-object physical parameters enable robot manipulation in cluttered scenes, physically plausible scene editing, and long-horizon behavior prediction.
 
-**Paper Goals**: Formalize the multi-object system identification task, propose the MOSIV framework, and release a synthetic benchmark dataset of 45 multi-view video sequences.
+**Goal**: Formalize the multi-object system identification task, propose the MOSIV framework, and release a synthetic benchmark dataset of 45 multi-view video sequences.
 
 ## Method
 

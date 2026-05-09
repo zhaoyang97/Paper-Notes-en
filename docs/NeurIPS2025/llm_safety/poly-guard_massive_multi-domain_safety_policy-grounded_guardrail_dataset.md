@@ -32,7 +32,7 @@ This paper introduces Poly-Guard, the first **large-scale, multi-domain, policy-
 
 ## Background & Motivation
 
-- **State of the Field**: The widespread deployment of LLMs in high-stakes domains such as finance, law, and healthcare has driven the development of numerous guardrail models (LlamaGuard series, ShieldGemma, WildGuard, Granite Guardian, etc.) and evaluation benchmarks (ToxicChat, HarmBench, SALAD-Bench, etc.). However, existing benchmarks suffer from serious deficiencies in systematicity and real-world alignment.
+- **Background**: The widespread deployment of LLMs in high-stakes domains such as finance, law, and healthcare has driven the development of numerous guardrail models (LlamaGuard series, ShieldGemma, WildGuard, Granite Guardian, etc.) and evaluation benchmarks (ToxicChat, HarmBench, SALAD-Bench, etc.). However, existing benchmarks suffer from serious deficiencies in systematicity and real-world alignment.
 
 - **Limitations of Prior Work**:
     1. **Ad hoc risk taxonomies**: Existing benchmarks rely on risk classification schemes designed independently by individual organizations, lacking principled alignment with standardized safety policies (government regulations, platform codes of conduct, industry ethical standards).
@@ -40,11 +40,11 @@ This paper introduces Poly-Guard, the first **large-scale, multi-domain, policy-
     3. **Scarcity of benign data**: High-quality "hard safe" samples—content that superficially involves sensitive topics but is actually compliant—are lacking, making it impossible to detect over-refusal in guardrail models.
     4. **Insufficient adversarial coverage**: Existing attack-augmented datasets (e.g., JailbreakBench) primarily test jailbreak vulnerabilities in LLMs themselves, rather than the adversarial robustness of guardrail models specifically.
 
-- **Root Cause**: Guardrail models can only be evaluated in a manner reflective of real deployment conditions when assessed under authentic, cross-domain safety policy frameworks. Yet no such unified benchmark currently exists—one that simultaneously covers a sufficient breadth of domains and policies while maintaining sufficient granularity (at the rule level rather than the category level) to precisely localize model failure points.
+- **Key Challenge**: Guardrail models can only be evaluated in a manner reflective of real deployment conditions when assessed under authentic, cross-domain safety policy frameworks. Yet no such unified benchmark currently exists—one that simultaneously covers a sufficient breadth of domains and policies while maintaining sufficient granularity (at the rule level rather than the category level) to precisely localize model failure points.
 
-- **Paper Goals**: To construct the first large-scale, multi-domain guardrail evaluation benchmark aligned with real-world industry safety policies, and to conduct systematic benchmarking of 19 state-of-the-art guardrail models, revealing their strengths and blind spots.
+- **Goal**: To construct the first large-scale, multi-domain guardrail evaluation benchmark aligned with real-world industry safety policies, and to conduct systematic benchmarking of 19 state-of-the-art guardrail models, revealing their strengths and blind spots.
 
-- **Starting Point**: The pipeline begins from real safety policy documents and proceeds through automated extraction and structuring (policy crawling → two-level risk category/safety rule extraction → rule-conditioned data generation → detoxification pairing → interaction format augmentation → adversarial attack augmentation), forming an end-to-end data construction pipeline.
+- **Key Insight**: The pipeline begins from real safety policy documents and proceeds through automated extraction and structuring (policy crawling → two-level risk category/safety rule extraction → rule-conditioned data generation → detoxification pairing → interaction format augmentation → adversarial attack augmentation), forming an end-to-end data construction pipeline.
 
 - **Core Idea**: Using 150+ real-world safety policies as the foundation, Poly-Guard constructs the first policy-grounded cross-domain guardrail benchmark through two-level risk hierarchy extraction, rule-conditioned safe/unsafe paired generation, and adversarial augmentation.
 

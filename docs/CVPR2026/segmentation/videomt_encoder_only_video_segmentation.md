@@ -31,11 +31,11 @@ This paper proposes VidEoMT, an encoder-only video segmentation model that unifi
 
 ### Limitations of Prior Work
 
-**State of the Field**: Existing online video segmentation methods (CAVIS, DVIS++, DVIS-DAQ) follow a decoupled "segmenter + tracker" paradigm: the segmenter consists of ViT + ViT-Adapter + Mask2Former pixel decoder + Transformer decoder, while the tracker comprises context-aware features + re-identification layers + Transformer tracking blocks. Although accurate, this architecture is extremely complex and slow (CAVIS achieves only 15 FPS). The EoMT paper demonstrated that image segmentation can be performed in an encoder-only fashion (without decoder or pixel decoder). The question is whether video segmentation can follow suit — with temporal tracking being the key additional challenge.
+**Background**: Existing online video segmentation methods (CAVIS, DVIS++, DVIS-DAQ) follow a decoupled "segmenter + tracker" paradigm: the segmenter consists of ViT + ViT-Adapter + Mask2Former pixel decoder + Transformer decoder, while the tracker comprises context-aware features + re-identification layers + Transformer tracking blocks. Although accurate, this architecture is extremely complex and slow (CAVIS achieves only 15 FPS). The EoMT paper demonstrated that image segmentation can be performed in an encoder-only fashion (without decoder or pixel decoder). The question is whether video segmentation can follow suit — with temporal tracking being the key additional challenge.
 
 ### Root Cause
 
-**Paper Goals**: Can a single, simple encoder-only ViT simultaneously perform video segmentation and temporal association, achieving near-SOTA accuracy at an order-of-magnitude speed improvement?
+**Goal**: Can a single, simple encoder-only ViT simultaneously perform video segmentation and temporal association, achieving near-SOTA accuracy at an order-of-magnitude speed improvement?
 
 ## Method
 

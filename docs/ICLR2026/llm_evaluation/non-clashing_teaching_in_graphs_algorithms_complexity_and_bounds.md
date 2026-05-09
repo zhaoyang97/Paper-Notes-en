@@ -30,14 +30,14 @@ This paper studies non-clashing teaching of closed-neighborhood concept classes 
 
 ## Background & Motivation
 
-**State of the Field**: Non-Clashing Teaching is currently the most efficient batch machine teaching model known to satisfy the Goldman–Mathias collusion-avoidance benchmark. Given a concept class $\mathcal{C}$, a teacher assigns a teaching set $T(C)$ to each concept $C \in \mathcal{C}$, subject to the requirement that for any two distinct concepts $C, C'$, at least one example in $T(C) \cup T(C')$ is consistent with exactly one of the two concepts (i.e., it "separates" them). The non-clashing teaching dimension $\text{NCTD}(\mathcal{C})$ is the minimum teaching set size satisfying this condition.
+**Background**: Non-Clashing Teaching is currently the most efficient batch machine teaching model known to satisfy the Goldman–Mathias collusion-avoidance benchmark. Given a concept class $\mathcal{C}$, a teacher assigns a teaching set $T(C)$ to each concept $C \in \mathcal{C}$, subject to the requirement that for any two distinct concepts $C, C'$, at least one example in $T(C) \cup T(C')$ is consistent with exactly one of the two concepts (i.e., it "separates" them). The non-clashing teaching dimension $\text{NCTD}(\mathcal{C})$ is the minimum teaching set size satisfying this condition.
 
 **Limitations of Prior Work**:
    - Prior FPT algorithms for "balls in graphs" concept classes were only established under the vertex integrity parameterization; tractability under more general parameters such as treedepth remained unknown.
    - When negative labels (negative examples) are permitted in teaching, **no FPT result existed**—a significant theoretical gap.
    - The best known algorithmic lower bound for NCTD was only $2^{o(\sqrt{|V|})}$ (derived from [KSZ19]'s reduction for open neighborhoods), far from the known upper bound of $2^{\mathcal{O}(|V| \cdot k \cdot \log|V|)}$.
 
-**Starting Point**: The paper focuses on closed neighborhoods (radius-1 balls) as the concept class. Since any finite binary concept class $\mathcal{C} \subseteq 2^V$ can be equivalently represented as a collection of closed neighborhoods $\{N[x_C] \mid C \in \mathcal{C}\}$ in some graph $G$ (constructed by setting $V(G) = V \cup \{x_C\}$, making concept vertices a clique, and connecting $x_C$ to $v \in C$), the results achieve **maximum generality**.
+**Key Insight**: The paper focuses on closed neighborhoods (radius-1 balls) as the concept class. Since any finite binary concept class $\mathcal{C} \subseteq 2^V$ can be equivalently represented as a collection of closed neighborhoods $\{N[x_C] \mid C \in \mathcal{C}\}$ in some graph $G$ (constructed by setting $V(G) = V \cup \{x_C\}$, making concept vertices a clique, and connecting $x_C$ to $v \in C$), the results achieve **maximum generality**.
 
 **Key Problem Definitions**:
    - **N-NCTD**: Given a graph $G$, a closed-neighborhood collection $\mathcal{B}$, and an integer $k$, decide whether $\text{NCTD}(\mathcal{B}) \leq k$.

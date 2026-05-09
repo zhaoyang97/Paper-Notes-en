@@ -35,7 +35,7 @@ The native 3DGS parameters $\boldsymbol{\theta}=\{\mu,\mathbf{q},\mathbf{s},\mat
 2. **Numerical Heterogeneity**: Position $\mu\in\mathbb{R}^3$ can span a large range, quaternions are unit-normalized, pre-activation scales range from $-15$ to $3$, and SH coefficients decay exponentially. Concatenating these into a single vector violates the identical-distribution assumption of standard modules such as BatchNorm.
 3. **Manifold Mismatch**: Position lies in $\mathbb{R}^3$, rotation in $\text{SO}(3)$, and scale in $(\mathbb{R}^+)^3$—variables from different manifolds are forced into Euclidean space, destroying intrinsic geometric structure.
 
-In downstream generative tasks, these issues manifest as geometric "jitter" during latent space interpolation, high noise sensitivity, and poor cross-domain (indoor ↔ outdoor) generalization. The paper's **Starting Point**: rather than learning the parameters themselves, learn a geometric-photometric representation with a provably unique mapping.
+In downstream generative tasks, these issues manifest as geometric "jitter" during latent space interpolation, high noise sensitivity, and poor cross-domain (indoor ↔ outdoor) generalization. The paper's **Key Insight**: rather than learning the parameters themselves, learn a geometric-photometric representation with a provably unique mapping.
 
 ## Method
 

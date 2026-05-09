@@ -29,7 +29,7 @@ FlashU conducts the first systematic redundancy analysis of native unified multi
 
 ## Background & Motivation
 
-**State of the Field**: Native unified multimodal models (e.g., Show-o2) integrate understanding and generation into a single architecture, incurring substantial computational overhead. Existing acceleration methods adopt static, unified strategies.
+**Background**: Native unified multimodal models (e.g., Show-o2) integrate understanding and generation into a single architecture, incurring substantial computational overhead. Existing acceleration methods adopt static, unified strategies.
 
 **Core Problem**:
 - Generation tasks (iterative denoising, multi-step ODE) and understanding tasks (single forward pass, layer-wise feature abstraction) differ fundamentally in computational characteristics.

@@ -28,18 +28,18 @@ This paper proposes the GSAC framework, which integrates causal representation l
 
 ## Background & Motivation
 
-**State of the Field**: Large-scale networked systems (traffic networks, power grids, wireless communication) face two fundamental challenges in MARL: scalability (joint state-action space grows exponentially with the number of agents) and generalizability (training and deployment environments differ). Existing networked MARL work (Qu 2022, etc.) exploits local interactions for scalability but assumes fixed environments.
+**Background**: Large-scale networked systems (traffic networks, power grids, wireless communication) face two fundamental challenges in MARL: scalability (joint state-action space grows exponentially with the number of agents) and generalizability (training and deployment environments differ). Existing networked MARL work (Qu 2022, etc.) exploits local interactions for scalability but assumes fixed environments.
 
 **Limitations of Prior Work**:
    - Scalability: Even with $\kappa$-hop truncation, input dimensionality remains high when node degree or $\kappa$ is large.
    - Generalizability: While single-agent domain generalization RL has been studied, simultaneously achieving scalability and generalizability in multi-agent networked systems remains an open problem.
    - No prior work provides sample complexity guarantees for structural identifiability in networked MARL.
 
-**Root Cause**: Networked systems must simultaneously address scale ($n$ agents, exponential state space) and generalization (environment parameters $\omega$ shift between training and testing) — no existing framework provides provable guarantees for both.
+**Key Challenge**: Networked systems must simultaneously address scale ($n$ agents, exponential state space) and generalization (environment parameters $\omega$ shift between training and testing) — no existing framework provides provable guarantees for both.
 
-**Paper Goals**: Design the first networked MARL algorithm that is provably both scalable and generalizable.
+**Goal**: Design the first networked MARL algorithm that is provably both scalable and generalizable.
 
-**Starting Point**: Causal structure is invariant across domains; only the domain factor $\omega$ varies. By identifying the minimal set of variables that each agent's state transition depends on via causal masks, compact representations are constructed that simultaneously reduce dimensionality (scalability) and isolate domain factors (generalizability).
+**Key Insight**: Causal structure is invariant across domains; only the domain factor $\omega$ varies. By identifying the minimal set of variables that each agent's state transition depends on via causal masks, compact representations are constructed that simultaneously reduce dimensionality (scalability) and isolate domain factors (generalizability).
 
 **Core Idea**: Use causal masks to identify minimal neighborhood dependencies, construct Approximate Compact Representations (ACR), and build upon this foundation a meta Actor-Critic that trains policies across domains and rapidly adapts to new environments.
 

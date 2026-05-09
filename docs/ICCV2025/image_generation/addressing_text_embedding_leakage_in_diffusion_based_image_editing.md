@@ -29,10 +29,10 @@ This paper proposes the ALE framework, which systematically addresses attribute 
 
 ## Background & Motivation
 
-- **State of the Field**: Diffusion-based text-guided image editing has advanced substantially, yet attribute leakage—where editing a target object unintentionally affects unrelated regions—remains a critical unsolved problem.
+- **Background**: Diffusion-based text-guided image editing has advanced substantially, yet attribute leakage—where editing a target object unintentionally affects unrelated regions—remains a critical unsolved problem.
 - **Limitations of Prior Work**: Existing methods attempt to constrain editing effects by manipulating attention maps but fail to address the root cause of EOS embedding entanglement. Two types of leakage are identified: (1) Target-External Leakage (TEL), where attributes of a target object spread to non-target regions; and (2) Target-Internal Leakage (TIL), where attributes of one target object affect another.
-- **Root Cause**: The EOS (End-of-Sequence) token in autoregressive text encoders (e.g., CLIP) indiscriminately aggregates information from all tokens in the prompt, causing attributes to diffuse spatially without discrimination through cross-attention layers.
-- **Paper Goals**: To systematically eliminate both TEL and TIL, preserve background integrity, and establish a dedicated evaluation benchmark for multi-object editing.
+- **Key Challenge**: The EOS (End-of-Sequence) token in autoregressive text encoders (e.g., CLIP) indiscriminately aggregates information from all tokens in the prompt, causing attributes to diffuse spatially without discrimination through cross-attention layers.
+- **Goal**: To systematically eliminate both TEL and TIL, preserve background integrity, and establish a dedicated evaluation benchmark for multi-object editing.
 
 ## Method
 

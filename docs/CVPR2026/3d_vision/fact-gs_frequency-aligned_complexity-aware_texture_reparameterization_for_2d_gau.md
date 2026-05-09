@@ -29,18 +29,18 @@ FACT-GS reframes texture parameterization as a sampling density allocation probl
 
 ## Background & Motivation
 
-**State of the Field**: 3DGS/2DGS models appearance via spherical harmonics, which lacks spatial color variation within each primitive. Texture extension methods attach learnable texture maps to each Gaussian but rely on uniform sampling grids.
+**Background**: 3DGS/2DGS models appearance via spherical harmonics, which lacks spatial color variation within each primitive. Texture extension methods attach learnable texture maps to each Gaussian but rely on uniform sampling grids.
 
 **Limitations of Prior Work**: Uniform texture parameterization leads to a **sampling–complexity mismatch**:
    - High-frequency regions (sharp edges, fine textures) are allocated insufficient texture capacity, causing detail loss.
    - Large smooth regions waste parameters to represent nearly uniform color.
    - Each Gaussian stores only low-resolution textures (e.g., $4\times4\times4$), further exacerbating the representational limitations of uniform sampling.
 
-**Root Cause**: Increasing texture resolution incurs quadratic growth in memory and bandwidth with minimal benefit, since the sampling pattern remains uniform; neural texture fields can resolve this but at the cost of real-time rendering performance.
+**Key Challenge**: Increasing texture resolution incurs quadratic growth in memory and bandwidth with minimal benefit, since the sampling pattern remains uniform; neural texture fields can resolve this but at the cost of real-time rendering performance.
 
-**Paper Goals**: Under a fixed texture resolution, allocate more sampling capacity to high-frequency regions.
+**Goal**: Under a fixed texture resolution, allocate more sampling capacity to high-frequency regions.
 
-**Starting Point**: Drawing from adaptive sampling theory, texture parameterization is treated as a sampling density allocation problem.
+**Key Insight**: Drawing from adaptive sampling theory, texture parameterization is treated as a sampling density allocation problem.
 
 **Core Idea**: A learnable deformation field is introduced to modulate local sampling density via the Jacobian determinant, naturally directing texture capacity toward regions of high visual detail.
 

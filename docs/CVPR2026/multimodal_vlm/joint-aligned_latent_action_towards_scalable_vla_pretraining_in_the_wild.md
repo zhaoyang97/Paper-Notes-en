@@ -27,15 +27,15 @@ content_hash: 0b19ccdeff5a0eb8
 This paper proposes the JALA framework, which constructs a unified latent action space via joint alignment between predictive embeddings and latent actions inferred by an inverse dynamics model, enabling VLAs to learn simultaneously from labeled data and unlabeled in-the-wild human videos. Combined with the 7.5M-sample UniHand-Mix dataset, JALA significantly improves the generalization of robot manipulation policies.
 
 ## Background & Motivation
-**State of the Field**: Vision-Language-Action (VLA) models adapt vision-language models to robotic data to learn manipulation policies, yet the scale and diversity of robot data remain far behind those of vision and language domains.
+**Background**: Vision-Language-Action (VLA) models adapt vision-language models to robotic data to learn manipulation policies, yet the scale and diversity of robot data remain far behind those of vision and language domains.
 
 **Limitations of Prior Work**: Exploiting human video data involves a quality–diversity trade-off—laboratory data provides accurate hand tracking but limited scene diversity, while in-the-wild videos offer rich diversity but lack action annotations.
 
-**Root Cause**: Prior latent action methods (e.g., LAPA) rely on an inverse dynamics model (IDM) to infer latent actions and a forward dynamics model (FDM) to reconstruct future frames. However, reconstructing fine-grained hand manipulation in video is extremely difficult, and the quality bottleneck of the FDM in turn degrades the quality of the inferred latent actions.
+**Key Challenge**: Prior latent action methods (e.g., LAPA) rely on an inverse dynamics model (IDM) to infer latent actions and a forward dynamics model (FDM) to reconstruct future frames. However, reconstructing fine-grained hand manipulation in video is extremely difficult, and the quality bottleneck of the FDM in turn degrades the quality of the inferred latent actions.
 
-**Paper Goals**: To extract useful action signals from heterogeneous annotated and unannotated human videos for VLA pretraining, without relying on visual reconstruction.
+**Goal**: To extract useful action signals from heterogeneous annotated and unannotated human videos for VLA pretraining, without relying on visual reconstruction.
 
-**Starting Point**: Humans learn manipulation through transferable action patterns rather than by memorizing visual details. Latent actions should be predictable from context and consistent with inverse dynamics, but need not reconstruct pixels.
+**Key Insight**: Humans learn manipulation through transferable action patterns rather than by memorizing visual details. Latent actions should be predictable from context and consistent with inverse dynamics, but need not reconstruct pixels.
 
 **Core Idea**: Replace reconstruction with joint alignment—the intermediate hidden states (predictive embeddings) of the VLA are simultaneously aligned with both action labels and IDM-inferred latent actions.
 

@@ -28,15 +28,15 @@ ARM enables models to adaptively select among four reasoning formats (Direct Ans
 
 ## Background & Motivation
 
-**State of the Field**: Large reasoning models (LRMs) such as OpenAI-o1 and DeepSeek-R1 achieve significant breakthroughs on complex tasks via Long Chain-of-Thought (Long CoT). These models improve reasoning capability through test-time scaling—generating more tokens.
+**Background**: Large reasoning models (LRMs) such as OpenAI-o1 and DeepSeek-R1 achieve significant breakthroughs on complex tasks via Long Chain-of-Thought (Long CoT). These models improve reasoning capability through test-time scaling—generating more tokens.
 
 **Limitations of Prior Work**: LRMs apply Long CoT uniformly across all tasks, leading to severe overthinking. Even trivial commonsense questions (e.g., "Where does a maid dump the garbage?") trigger hundreds of reasoning tokens, wasting computational resources; verbose outputs can also introduce noise and cause incorrect answers. Experiments show that DeepSeek-R1 consumes nearly 4× more tokens on simple tasks without performance gains, and sometimes even suffers degradation.
 
-**Root Cause**: Long CoT is not universally optimal—simple tasks require no elaborate reasoning, yet standard GRPO training optimizes only for accuracy, causing the model to collapse onto Long CoT as a single dominant format (format collapse) and abandon all more efficient alternatives. Existing mitigation strategies (e.g., length penalties) rely on manually estimated token budgets, and inaccurate estimates lead to substantial performance drops.
+**Key Challenge**: Long CoT is not universally optimal—simple tasks require no elaborate reasoning, yet standard GRPO training optimizes only for accuracy, causing the model to collapse onto Long CoT as a single dominant format (format collapse) and abandon all more efficient alternatives. Existing mitigation strategies (e.g., length penalties) rely on manually estimated token budgets, and inaccurate estimates lead to substantial performance drops.
 
-**Paper Goals**: Train a model that autonomously selects the appropriate reasoning format based on task difficulty, without manual token budget specification.
+**Goal**: Train a model that autonomously selects the appropriate reasoning format based on task difficulty, without manual token budget specification.
 
-**Starting Point**: The problem of reasoning efficiency is reformulated as a *reasoning format selection* problem—rather than shortening Long CoT, the model learns to use Direct Answer for simple tasks, Short CoT or Code for medium tasks, and Long CoT for complex tasks.
+**Key Insight**: The problem of reasoning efficiency is reformulated as a *reasoning format selection* problem—rather than shortening Long CoT, the model learns to use Direct Answer for simple tasks, Short CoT or Code for medium tasks, and Long CoT for complex tasks.
 
 **Core Idea**: A format diversity reward scaling factor in Ada-GRPO prevents format collapse during GRPO training, enabling the model to adaptively switch among four reasoning formats according to task difficulty.
 

@@ -28,15 +28,15 @@ This paper proposes the AFMRL framework, which formulates fine-grained product u
 
 ## Background & Motivation
 
-**State of the Field**: Multi-modal representation learning is evolving from discriminative matching frameworks such as CLIP toward generative large model-based approaches. E-commerce scenarios require distinguishing highly similar products (e.g., "V-neck red dress" vs. "round-neck red dress"), imposing stringent demands on fine-grained understanding.
+**Background**: Multi-modal representation learning is evolving from discriminative matching frameworks such as CLIP toward generative large model-based approaches. E-commerce scenarios require distinguishing highly similar products (e.g., "V-neck red dress" vs. "round-neck red dress"), imposing stringent demands on fine-grained understanding.
 
 **Limitations of Prior Work**: Models such as CLIP are fundamentally "bag-of-words" systems that struggle to distinguish compositional semantic differences (e.g., "white T-shirt with blue logo" vs. "blue T-shirt with white logo"). Large model representation methods such as VLM2Vec possess strong reasoning capabilities but are constrained by causal attention mechanisms, allowing embeddings to be obtained only via global average pooling or the last token, which is incompatible with fine-grained alignment techniques such as RoI.
 
-**Root Cause**: The generative capabilities of MLLMs can extract fine-grained attributes, but existing architectural constraints prevent their direct application to fine-grained representation learning. The central challenge is how to translate the understanding capacity of MLLMs into improvements in discriminative representations.
+**Key Challenge**: The generative capabilities of MLLMs can extract fine-grained attributes, but existing architectural constraints prevent their direct application to fine-grained representation learning. The central challenge is how to translate the understanding capacity of MLLMs into improvements in discriminative representations.
 
-**Paper Goals**: To leverage the generative capabilities of MLLMs for extracting key product attributes, integrate these attributes into the representation learning process, and ensure that attribute generation is aligned with the ultimate retrieval objective.
+**Goal**: To leverage the generative capabilities of MLLMs for extracting key product attributes, integrate these attributes into the representation learning process, and ensure that attribute generation is aligned with the ultimate retrieval objective.
 
-**Starting Point**: Fine-grained understanding is "delegated" to an attribute generator, which serves as an intermediate bridge to indirectly enhance the fine-grained discriminative capability of the representation model.
+**Key Insight**: Fine-grained understanding is "delegated" to an attribute generator, which serves as an intermediate bridge to indirectly enhance the fine-grained discriminative capability of the representation model.
 
 **Core Idea**: A two-stage training pipeline — first, attribute-guided contrastive learning is used to mine hard negatives; then, retrieval results serve as reward signals to optimize the attribute generator via RL, forming a self-improving closed loop.
 

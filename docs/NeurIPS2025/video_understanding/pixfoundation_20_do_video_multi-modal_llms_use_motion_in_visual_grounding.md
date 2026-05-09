@@ -29,13 +29,13 @@ By introducing four motion-centric probing techniques and the MoCentric-Bench be
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal large language models perform well on high-level video tasks (QA, captioning), but their pixel-level visual grounding capabilities have not been thoroughly investigated.
+**Background**: Multimodal large language models perform well on high-level video tasks (QA, captioning), but their pixel-level visual grounding capabilities have not been thoroughly investigated.
 
 **Limitations of Prior Work**: Existing benchmarks assume motion is necessary, yet in practice a single static frame is often sufficient to resolve motion-referring expressions. Video MLLMs claim to leverage temporal information but may rely solely on powerful visual encoders and LLMs.
 
-**Root Cause**: There is no means to distinguish "true motion" (temporal dynamics) from "pseudo-motion" (simulatable by static keyframes), and no benchmark exists for evaluating motion-order understanding.
+**Key Challenge**: There is no means to distinguish "true motion" (temporal dynamics) from "pseudo-motion" (simulatable by static keyframes), and no benchmark exists for evaluating motion-order understanding.
 
-**Starting Point**: The paper designs two categories of probing techniques—motion existence and motion order—and constructs MoCentric-Bench to compel models to utilize genuine motion.
+**Key Insight**: The paper designs two categories of probing techniques—motion existence and motion order—and constructs MoCentric-Bench to compel models to utilize genuine motion.
 
 ## Method
 

@@ -29,15 +29,15 @@ This paper presents Chatsparent, an interactive system that monitors three token
 
 ## Background & Motivation
 
-**State of the Field**: Large language models are widely deployed as chatbots, allowing users to interact through seamless conversational interfaces. Current chatbot interface design prioritizes fluency and naturalness, conveying virtually no information about the model's internal state to users.
+**Background**: Large language models are widely deployed as chatbots, allowing users to interact through seamless conversational interfaces. Current chatbot interface design prioritizes fluency and naturalness, conveying virtually no information about the model's internal state to users.
 
 **Limitations of Prior Work**: This frictionless interface design conceals a fundamental risk—users are encouraged to blindly trust model outputs even when the model is drifting, hallucinating, or failing. Current chatbot interfaces offer almost no transparency regarding when performance degradation occurs, leaving users unable to notice why responses have become repetitive, incoherent, or overconfident.
 
-**Root Cause**: The autoregressive generation nature of LLMs inherently accumulates errors over time. As generation progresses, attention to the original prompt gradually decays, hidden states drift, and the entropy of the output distribution may collapse—a phenomenon the authors define as "cognitive fatigue." Crucially, fatigue can be detected online at inference time and mitigated without retraining, yet existing systems do not exploit this.
+**Key Challenge**: The autoregressive generation nature of LLMs inherently accumulates errors over time. As generation progresses, attention to the original prompt gradually decays, hidden states drift, and the entropy of the output distribution may collapse—a phenomenon the authors define as "cognitive fatigue." Crucially, fatigue can be detected online at inference time and mitigated without retraining, yet existing systems do not exploit this.
 
-**Paper Goals**: (1) Formalize and measure the cognitive fatigue state of LLMs; (2) design lightweight interventions applicable at inference time; (3) build an interactive demonstration system enabling users to visualize fatigue and intervene proactively.
+**Goal**: (1) Formalize and measure the cognitive fatigue state of LLMs; (2) design lightweight interventions applicable at inference time; (3) build an interactive demonstration system enabling users to visualize fatigue and intervene proactively.
 
-**Starting Point**: The authors adopt a cybernetic perspective on autoregressive decoding—treating it as a controlled process with a latent reliability state—and design a Sense–Decide–Intervene control loop.
+**Key Insight**: The authors adopt a cybernetic perspective on autoregressive decoding—treating it as a controlled process with a latent reliability state—and design a Sense–Decide–Intervene control loop.
 
 **Core Idea**: Transform LLM autoregressive decoding from a passive risk process into an active control problem, improving the reliability of long-form generation through real-time monitoring of token-level fatigue signals and threshold-triggered interventions.
 

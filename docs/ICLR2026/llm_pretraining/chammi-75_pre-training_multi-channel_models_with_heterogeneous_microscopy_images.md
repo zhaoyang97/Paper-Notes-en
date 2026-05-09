@@ -28,15 +28,15 @@ This work introduces CHAMMI-75—the largest heterogeneous multi-channel microsc
 
 ## Background & Motivation
 
-**State of the Field**: Microscopy imaging is a foundational tool in biological research. Unlike RGB natural images, microscopy images have a variable number of channels (1 to tens), each encoding distinct fluorescence signals. Deep learning is widely used for microscopy image analysis, but typically requires models with a fixed number of input channels—different experiments use different channel configurations, making models non-transferable across experiments.
+**Background**: Microscopy imaging is a foundational tool in biological research. Unlike RGB natural images, microscopy images have a variable number of channels (1 to tens), each encoding distinct fluorescence signals. Deep learning is widely used for microscopy image analysis, but typically requires models with a fixed number of input channels—different experiments use different channel configurations, making models non-transferable across experiments.
 
 **Limitations of Prior Work**: (a) **Fixed channels**—existing models adapt RGB architectures to a specific channel count and cannot handle new channel combinations; (b) **Data fragmentation**—multi-channel microscopy images are scattered across various public platforms with inconsistent formats and metadata, making unified use difficult; (c) **Insufficient scale**—existing datasets such as IDRCell100k contain only 100K images.
 
-**Root Cause**: Training a generalizable cell morphology foundation model requires large-scale data covering diverse imaging modalities, species, and channel combinations—yet no such dataset exists.
+**Key Challenge**: Training a generalizable cell morphology foundation model requires large-scale data covering diverse imaging modalities, species, and channel combinations—yet no such dataset exists.
 
-**Paper Goals**: Construct the first large-scale heterogeneous multi-channel microscopy image dataset and systematically evaluate its effectiveness as a pre-training resource.
+**Goal**: Construct the first large-scale heterogeneous multi-channel microscopy image dataset and systematically evaluate its effectiveness as a pre-training resource.
 
-**Starting Point**: Images from 75 biological studies are collected across 18 public data-hosting platforms, unified with metadata annotations, and carefully curated with deduplication to construct a high-quality pre-training dataset.
+**Key Insight**: Images from 75 biological studies are collected across 18 public data-hosting platforms, unified with metadata annotations, and carefully curated with deduplication to construct a high-quality pre-training dataset.
 
 **Core Idea**: Data diversity—especially imaging modality diversity—is the critical factor for training channel-adaptive cell morphology models, and CHAMMI-75 provides precisely this diversity.
 

@@ -28,15 +28,15 @@ The paper proposes USE, a unified framework that employs an EDA network to infer
 
 ## Background & Motivation
 
-**State of the Field**: Sound separation (SS) decomposes mixed audio into independent sources, while target sound extraction (TSE) extracts a user-specified target from a mixture. The two tasks are typically studied independently.
+**Background**: Sound separation (SS) decomposes mixed audio into independent sources, while target sound extraction (TSE) extracts a user-specified target from a mixture. The two tasks are typically studied independently.
 
 **Limitations of Prior Work**: (1) SS requires the number of sources to be known in advance, and performance degrades significantly when this number is unknown; (2) TSE is constrained to single-modality cues (text or video only), and fails when cue quality is poor; (3) the absence of a unified framework prevents acoustic separation knowledge from benefiting target extraction.
 
-**Root Cause**: The attractors learned by SS and the query cues provided by users in TSE semantically correspond to the same targets, yet independent training of the two tasks precludes establishing this bridge.
+**Key Challenge**: The attractors learned by SS and the query cues provided by users in TSE semantically correspond to the same targets, yet independent training of the two tasks precludes establishing this bridge.
 
-**Paper Goals**: Unify SS and TSE into a single framework with a shared semantic space, enabling mutual enhancement.
+**Goal**: Unify SS and TSE into a single framework with a shared semantic space, enabling mutual enhancement.
 
-**Starting Point**: Use EDA network attractors as a semantic bridge aligned with user-provided cues.
+**Key Insight**: Use EDA network attractors as a semantic bridge aligned with user-provided cues.
 
 **Core Idea**: EDA attractors and multimodal cues are aligned in a shared semantic space, unifying separation and extraction.
 

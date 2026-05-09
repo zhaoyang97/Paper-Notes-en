@@ -29,9 +29,9 @@ This paper proposes Ensemble++, which achieves regret bounds comparable to exact
 ## Background & Motivation
 Thompson Sampling (TS) is a classical Bayesian method for balancing exploration and exploitation in sequential decision-making. However, exact posterior sampling is computationally prohibitive in high-dimensional or non-conjugate settings (e.g., neural networks). Ensemble Sampling approximates TS by maintaining $M$ model replicas, but achieving optimal regret bounds theoretically requires ensemble size $M = \Omega(T \cdot |\mathcal{X}|)$ (Qin et al., 2022), which is entirely infeasible at long time horizons or with large action spaces.
 
-**Root Cause**: How can a practically small ensemble size approximate the posterior sampling of TS while retaining near-optimal regret bounds?
+**Key Challenge**: How can a practically small ensemble size approximate the posterior sampling of TS while retaining near-optimal regret bounds?
 
-**Starting Point**: The paper designs a novel "shared-factor ensemble" architecture that compresses $M$ ensemble directions into an approximate representation of the posterior covariance matrix via a random linear combination mechanism, fundamentally reducing the ensemble size requirement.
+**Key Insight**: The paper designs a novel "shared-factor ensemble" architecture that compresses $M$ ensemble directions into an approximate representation of the posterior covariance matrix via a random linear combination mechanism, fundamentally reducing the ensemble size requirement.
 
 ## Method
 

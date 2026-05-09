@@ -28,18 +28,18 @@ This paper proposes a VLM-augmented temporal groupness graph for detecting dynam
 
 ## Background & Motivation
 
-**State of the Field**: Group detection aims to partition all observed individuals in a video into distinct groups, with broad applications in collective activity recognition, trajectory prediction, and anomaly detection. Traditional methods rely on handcrafted features such as spatial positions, facial orientations, and body poses, while recent approaches have begun leveraging deep learning to jointly learn these representations.
+**Background**: Group detection aims to partition all observed individuals in a video into distinct groups, with broad applications in collective activity recognition, trajectory prediction, and anomaly detection. Traditional methods rely on handcrafted features such as spatial positions, facial orientations, and body poses, while recent approaches have begun leveraging deep learning to jointly learn these representations.
 
 **Limitations of Prior Work**:
    - **Insufficient local features**: Existing methods independently extract per-person features and then compare or merge them, ignoring **spatial scene context** — two people may not face each other yet be jointly browsing the same background object (e.g., a shop window), in which case they constitute a group.
    - **Static group detection only**: Prior methods assume that group structure remains constant throughout a video and output a single fixed set of groups. In reality, individuals transition between groups over time (e.g., as shown in Fig. 1b, a group of three splits into two groups from $t_1$ to $t_2$).
    - **Chicken-and-egg problem**: Segmenting a video into clips with stable group structure requires prior knowledge of when group changes occur — precisely what needs to be detected.
 
-**Root Cause**: Effective group detection requires simultaneously exploiting spatial scene context (for understanding complex interactions) and temporal context (for detecting dynamic changes), yet prior methods address at most one of these aspects.
+**Key Challenge**: Effective group detection requires simultaneously exploiting spatial scene context (for understanding complex interactions) and temporal context (for detecting dynamic changes), yet prior methods address at most one of these aspects.
 
-**Paper Goals**: Design a method that jointly leverages spatial and temporal scene context to detect dynamically changing groups in video.
+**Goal**: Design a method that jointly leverages spatial and temporal scene context to detect dynamically changing groups in video.
 
-**Starting Point**: (a) Use a VLM (CLIP) to directly estimate grouping probability from bounding boxes containing person pairs together with background, naturally incorporating spatial scene context; (b) Aggregate per-frame grouping probabilities into a temporal graph and apply Louvain clustering for globally optimal dynamic group detection.
+**Key Insight**: (a) Use a VLM (CLIP) to directly estimate grouping probability from bounding boxes containing person pairs together with background, naturally incorporating spatial scene context; (b) Aggregate per-frame grouping probabilities into a temporal graph and apply Louvain clustering for globally optimal dynamic group detection.
 
 **Core Idea**: Estimate pairwise grouping probabilities via CLIP-augmented image features that capture spatial scene context, construct a full-sequence temporal groupness graph, and apply Louvain clustering to enable dynamic group detection.
 

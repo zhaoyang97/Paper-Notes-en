@@ -27,15 +27,15 @@ This paper proposes the Estimand-Agnostic (EA) approach and the Frontier-Reducib
 
 ## Background & Motivation
 
-**State of the Field**: do-SHAP integrates Shapley values with causal inference by replacing conditional expectations with causal intervention values $\nu(S) = E[Y|\text{do}(X_S = x_S)]$, thereby eliminating spurious correlations inherent in conventional SHAP. However, computing do-SV requires evaluating $2^{|X|}$ distinct causal queries.
+**Background**: do-SHAP integrates Shapley values with causal inference by replacing conditional expectations with causal intervention values $\nu(S) = E[Y|\text{do}(X_S = x_S)]$, thereby eliminating spurious correlations inherent in conventional SHAP. However, computing do-SV requires evaluating $2^{|X|}$ distinct causal queries.
 
 **Limitations of Prior Work**: Existing Estimand-Based (EB) methods require manually specifying a causal estimand (e.g., backdoor/frontdoor criterion) for each coalition $S$ and fitting separate models accordingly—a highly impractical requirement. For $K=10$ features, one must handle 1,024 distinct causal queries, each potentially requiring a different estimand.
 
-**Root Cause**: A fundamental tension exists between the theoretical superiority of do-SV (freedom from spurious correlations) and its computational intractability—the number of coalitions grows exponentially, and each coalition demands independent causal inference.
+**Key Challenge**: A fundamental tension exists between the theoretical superiority of do-SV (freedom from spurious correlations) and its computational intractability—the number of coalitions grows exponentially, and each coalition demands independent causal inference.
 
-**Paper Goals**: (a) Eliminate the need to manually specify estimands for each coalition; (b) reduce the number of coalitions requiring explicit computation.
+**Goal**: (a) Eliminate the need to manually specify estimands for each coalition; (b) reduce the number of coalitions requiring explicit computation.
 
-**Starting Point**: Directly learn the data-generating process via an SCM. Once the SCM is fitted, any identifiable causal query can be answered by simulating the do-operator, without deriving estimands in advance. The causal graph structure is further exploited to identify redundant coalitions.
+**Key Insight**: Directly learn the data-generating process via an SCM. Once the SCM is fitted, any identifiable causal query can be answered by simulating the do-operator, without deriving estimands in advance. The causal graph structure is further exploited to identify redundant coalitions.
 
 **Core Idea**: Fit a single SCM to the observational distribution for estimand-agnostic causal inference, combined with the Frontier-Reducibility Algorithm for coalition reduction, to make do-SHAP practically viable.
 

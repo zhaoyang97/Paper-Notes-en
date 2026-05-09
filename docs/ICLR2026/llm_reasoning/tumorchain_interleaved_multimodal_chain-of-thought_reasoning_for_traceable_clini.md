@@ -29,10 +29,10 @@ This paper proposes TumorChain, an interleaved multimodal chain-of-thought reaso
 
 ## Background & Motivation
 
-- **State of the Field**: Medical VLMs have made progress in general report generation, but remain critically insufficient for the high-stakes domain of clinical oncology. Tumor analysis requires a complete reasoning chain connecting imaging findings, clinical impressions, and pathological endpoints (TNM staging).
+- **Background**: Medical VLMs have made progress in general report generation, but remain critically insufficient for the high-stakes domain of clinical oncology. Tumor analysis requires a complete reasoning chain connecting imaging findings, clinical impressions, and pathological endpoints (TNM staging).
 - **Three Key Limitations**: (1) Existing Med-VLMs lack tumor-specific capabilities and cannot reliably map radiological findings to pathology-level endpoints; (2) Large-scale, multi-granularity tumor-specific datasets are absent — existing benchmarks such as CT-RATE focus on multiple-choice or short-text QA and do not support CoT reasoning; (3) Most Med-VLMs are restricted to 2D images and single-step reasoning, whereas the structural complexity of 3D CT demands multi-step clinical reasoning.
-- **Root Cause**: Clinical tumor diagnosis is an inherently multi-step reasoning process (detecting anomalies → synthesizing judgments → pathological staging), yet existing models cannot produce traceable reasoning chains, leaving the internal reasoning process opaque.
-- **Starting Point**: This work constructs a complete findings → impressions → pathology reasoning pipeline and introduces a dedicated CoT evaluation protocol (TumorChain-Eval) to assess the quality of each step in the reasoning chain.
+- **Key Challenge**: Clinical tumor diagnosis is an inherently multi-step reasoning process (detecting anomalies → synthesizing judgments → pathological staging), yet existing models cannot produce traceable reasoning chains, leaving the internal reasoning process opaque.
+- **Key Insight**: This work constructs a complete findings → impressions → pathology reasoning pipeline and introduces a dedicated CoT evaluation protocol (TumorChain-Eval) to assess the quality of each step in the reasoning chain.
 
 ## Method
 

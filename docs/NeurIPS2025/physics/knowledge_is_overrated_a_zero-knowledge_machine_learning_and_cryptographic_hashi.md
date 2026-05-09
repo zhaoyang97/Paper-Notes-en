@@ -27,15 +27,15 @@ This paper proposes PHAZE, a framework that combines cryptographic hashing (Rabi
 
 ## Background & Motivation
 
-**State of the Field**: The Large Hadron Collider (LHC) produces collision events at 40 MHz, making low-latency event selection (trigger) algorithms central to its operation. Existing approaches such as AXOL1TL and CICADA implement O(ns)-latency anomaly detection on FPGAs via frameworks like hls4ml.
+**Background**: The Large Hadron Collider (LHC) produces collision events at 40 MHz, making low-latency event selection (trigger) algorithms central to its operation. Existing approaches such as AXOL1TL and CICADA implement O(ns)-latency anomaly detection on FPGAs via frameworks like hls4ml.
 
 **Limitations of Prior Work**: Modern high-accuracy ML models (e.g., large DNNs and foundation models) cannot satisfy the 40 MHz online latency constraint. Current acceleration schemes rely on case-by-case accuracy–speed trade-offs and lack a general framework. The verifiability and reproducibility of trigger decisions, which are critical for downstream physics analyses, are not systematically guaranteed.
 
-**Root Cause**: High accuracy demands large models, while online inference allows only nanosecond-level latency — these two requirements appear fundamentally incompatible.
+**Key Challenge**: High accuracy demands large models, while online inference allows only nanosecond-level latency — these two requirements appear fundamentally incompatible.
 
-**Paper Goals**: Design a framework that enables trigger decisions produced by an arbitrarily large baseline model to be executed at nanosecond-level latency online, while guaranteeing cryptographic verifiability of each decision.
+**Goal**: Design a framework that enables trigger decisions produced by an arbitrarily large baseline model to be executed at nanosecond-level latency online, while guaranteeing cryptographic verifiability of each decision.
 
-**Starting Point**: Decouple inference into an offline build phase (unconstrained in latency) and an online lookup phase (extremely low latency), using cryptographic hashing to map early-layer activations to a precomputed decision table.
+**Key Insight**: Decouple inference into an offline build phase (unconstrained in latency) and an online lookup phase (extremely low latency), using cryptographic hashing to map early-layer activations to a precomputed decision table.
 
 **Core Idea**: Rabin fingerprinting compresses early-layer model activations into fixed-length hashes, which are used to query a prebuilt Verifiable Decision Map (VDM) for O(ns) inference; zkML proofs guarantee the integrity of each decision.
 

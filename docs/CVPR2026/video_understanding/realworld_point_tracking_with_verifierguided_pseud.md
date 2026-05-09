@@ -29,7 +29,7 @@ This paper proposes a learnable Verifier meta-model trained on synthetic data to
 
 ## Background & Motivation
 
-**State of the Field**: Long-range point tracking models (CoTracker, TAPIR, Track-On, etc.) are typically trained on synthetic data (TAP-Vid Kubric). Recent self-training methods (BootsTAPIR, CoTracker3) fine-tune on real videos using pseudo-labels to bridge the sim-to-real gap.
+**Background**: Long-range point tracking models (CoTracker, TAPIR, Track-On, etc.) are typically trained on synthetic data (TAP-Vid Kubric). Recent self-training methods (BootsTAPIR, CoTracker3) fine-tune on real videos using pseudo-labels to bridge the sim-to-real gap.
 
 **Limitations of Prior Work**:
 
@@ -37,11 +37,11 @@ This paper proposes a learnable Verifier meta-model trained on synthetic data to
 2. Naive self-training (randomly selecting a single teacher for pseudo-labels) or fixed fusion strategies cannot handle this heterogeneity and propagate systematic errors.
 3. Methods such as BootsTAPIR require millions of real videos for large-scale distillation, resulting in low data efficiency.
 
-**Root Cause**: Oracle experiments show that selecting the best tracker per frame could yield substantial performance gains (with a large gap over existing methods), yet no automated method achieves such per-frame adaptive selection.
+**Key Challenge**: Oracle experiments show that selecting the best tracker per frame could yield substantial performance gains (with a large gap over existing methods), yet no automated method achieves such per-frame adaptive selection.
 
-**Paper Goals**: Learn to automatically assess the per-frame reliability of multiple trackers and select the most accurate predictions as pseudo-labels.
+**Goal**: Learn to automatically assess the per-frame reliability of multiple trackers and select the most accurate predictions as pseudo-labels.
 
-**Starting Point**: Train a "Verifier" meta-model — one that does not perform tracking itself, but learns to judge "who tracks well." Reliability estimation is learned on synthetic data via a "corrupt-then-detect" paradigm (applying random perturbations to GT trajectories to simulate tracker errors).
+**Key Insight**: Train a "Verifier" meta-model — one that does not perform tracking itself, but learns to judge "who tracks well." Reliability estimation is learned on synthetic data via a "corrupt-then-detect" paradigm (applying random perturbations to GT trajectories to simulate tracker errors).
 
 **Core Idea**: Rather than tracking points, the Verifier scores tracker predictions, converting multi-model complementarity into high-quality pseudo-labels.
 

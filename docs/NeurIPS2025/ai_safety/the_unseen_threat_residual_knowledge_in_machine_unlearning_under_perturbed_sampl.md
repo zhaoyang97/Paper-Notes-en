@@ -28,15 +28,15 @@ This paper identifies a critical security vulnerability in machine unlearning: e
 
 ## Background & Motivation
 
-**State of the Field**: Machine unlearning aims to efficiently remove the influence of specific training data from a trained model, serving as an alternative to full retraining. Existing methods (CR/Fisher/NTK/GA/SCRUB/SSD, etc.) are standardly validated by demonstrating $(\epsilon, \delta)$-indistinguishability between the unlearned model and a retrained reference.
+**Background**: Machine unlearning aims to efficiently remove the influence of specific training data from a trained model, serving as an alternative to full retraining. Existing methods (CR/Fisher/NTK/GA/SCRUB/SSD, etc.) are standardly validated by demonstrating $(\epsilon, \delta)$-indistinguishability between the unlearned model and a retrained reference.
 
 **Limitations of Prior Work**: $(\epsilon, \delta)$-indistinguishability only guarantees behavioral consistency on **original samples**, not within their local neighborhoods. Consequently, an unlearned model and a retrained model may produce identical predictions on a given forgotten sample yet diverge on its small perturbations.
 
-**Root Cause**: A particularly dangerous scenario arises when small perturbations of a forgotten sample are still correctly classified by the unlearned model but not by the retrained model (which has never seen that data). This indicates that the unlearned model retains informational traces near the decision boundary of forgotten samples.
+**Key Challenge**: A particularly dangerous scenario arises when small perturbations of a forgotten sample are still correctly classified by the unlearned model but not by the retrained model (which has never seen that data). This indicates that the unlearned model retains informational traces near the decision boundary of forgotten samples.
 
-**Paper Goals**: (a) Formally define "residual knowledge" as a novel privacy risk; (b) theoretically prove that such divergence is inevitable in high-dimensional spaces; (c) propose a mitigation strategy.
+**Goal**: (a) Formally define "residual knowledge" as a novel privacy risk; (b) theoretically prove that such divergence is inevitable in high-dimensional spaces; (c) propose a mitigation strategy.
 
-**Starting Point**: Combining adversarial robustness with machine unlearning — using adversarial examples as probes to detect whether unlearning is thorough.
+**Key Insight**: Combining adversarial robustness with machine unlearning — using adversarial examples as probes to detect whether unlearning is thorough.
 
 **Core Idea**: The security criterion for unlearning should not only assess statistical indistinguishability on original samples, but also indistinguishability within their local neighborhoods. Residual knowledge is eliminated by penalizing the unlearned model's correct predictions on perturbed forgotten samples.
 

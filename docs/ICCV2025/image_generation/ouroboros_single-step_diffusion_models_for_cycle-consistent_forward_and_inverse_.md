@@ -29,7 +29,7 @@ This paper presents Ouroboros, a unified framework comprising two single-step di
 
 ## Background & Motivation
 
-**State of the Field**: Inverse rendering (estimating intrinsic properties such as geometry, material, and lighting from images) and forward rendering (synthesizing images from intrinsic properties) are fundamental problems in computer graphics and vision. Diffusion models have made recent advances in both directions: RGB↔X first proposed a unified diffusion framework supporting bidirectional rendering, and DiffusionRenderer extended this to the video domain.
+**Background**: Inverse rendering (estimating intrinsic properties such as geometry, material, and lighting from images) and forward rendering (synthesizing images from intrinsic properties) are fundamental problems in computer graphics and vision. Diffusion models have made recent advances in both directions: RGB↔X first proposed a unified diffusion framework supporting bidirectional rendering, and DiffusionRenderer extended this to the video domain.
 
 **Limitations of Prior Work**:
 - **Computational inefficiency**: Existing diffusion-based methods require multi-step denoising (e.g., 50-step DDIM), resulting in slow inference.
@@ -37,11 +37,11 @@ This paper presents Ouroboros, a unified framework comprising two single-step di
 - **Domain limitation**: RGB↔X is trained exclusively on indoor datasets and generalizes poorly to outdoor scenes.
 - **Scarce training data**: Large-scale datasets with complete RGB-X pairs are limited, and the available intrinsic property channels vary across datasets.
 
-**Root Cause**: How can diffusion-based rendering be substantially accelerated without sacrificing quality, while simultaneously ensuring cycle consistency between the two rendering directions?
+**Key Challenge**: How can diffusion-based rendering be substantially accelerated without sacrificing quality, while simultaneously ensuring cycle consistency between the two rendering directions?
 
-**Paper Goals**: (a) Accelerate multi-step diffusion rendering to single-step inference; (b) establish cycle consistency between inverse and forward rendering; (c) extend coverage to both indoor and outdoor multi-domain scenes; (d) enable training-free video decomposition.
+**Goal**: (a) Accelerate multi-step diffusion rendering to single-step inference; (b) establish cycle consistency between inverse and forward rendering; (c) extend coverage to both indoor and outdoor multi-domain scenes; (d) enable training-free video decomposition.
 
-**Starting Point**: Inspired by E2E (End-to-End Fine-tuning), the method fixes the timestep at $t = T$ for single-step prediction fine-tuning. The key innovation is extending single-step fine-tuning from perceptual tasks (e.g., geometry estimation) to synthesis tasks (forward rendering), and introducing CycleGAN-style cycle-consistency training to allow inverse and forward rendering to mutually reinforce each other.
+**Key Insight**: Inspired by E2E (End-to-End Fine-tuning), the method fixes the timestep at $t = T$ for single-step prediction fine-tuning. The key innovation is extending single-step fine-tuning from perceptual tasks (e.g., geometry estimation) to synthesis tasks (forward rendering), and introducing CycleGAN-style cycle-consistency training to allow inverse and forward rendering to mutually reinforce each other.
 
 **Core Idea**: Fine-tune RGB↔X into two single-step diffusion models (achieving 50× speedup), jointly train them with a cycle-consistency loss to mutually regularize bidirectional rendering, and leverage the cyclic structure to incorporate unannotated real-world images for cross-domain generalization.
 

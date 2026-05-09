@@ -31,7 +31,7 @@ One2Scene proposes a three-stage framework that decomposes single-image explorab
 
 ### Limitations of Prior Work
 
-**State of the Field**: 1. **Single-image 3D scene generation is a severely ill-posed problem**: Generating freely explorable 3D scenes from a single image lacks 3D geometric information, causing existing methods to produce severe geometric distortions and artifacts under large viewpoint changes.
+**Background**: 1. **Single-image 3D scene generation is a severely ill-posed problem**: Generating freely explorable 3D scenes from a single image lacks 3D geometric information, causing existing methods to produce severe geometric distortions and artifacts under large viewpoint changes.
 2. **Reconstruction methods require dense inputs**: NeRF and 3DGS typically require hundreds of input images; sparse-view reconstruction methods struggle to extrapolate to unobserved regions.
 3. **Video diffusion methods are geometrically inconsistent**: 3D scene methods based on video generation (ReconX, ViewCrafter, etc.) suffer from accumulating geometric errors in long sequences and closed-loop scenes, leading to collapse.
 4. **Panorama-based methods have limited exploration range**: DreamScene360, DreamCube, and similar methods convert panoramas to 3D scenes but support only limited viewpoint exploration, with rendering quality degrading sharply at distant viewpoints.

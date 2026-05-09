@@ -28,13 +28,13 @@ NVIDIA proposes the PostNAS pipeline — starting from a pretrained full-attenti
 
 ## Background & Motivation
 
-**State of the Field**: LLM inference efficiency is a critical deployment bottleneck. Full-attention's $O(n^2)$ complexity causes severe KV cache bloat in long-context generation. A large body of work has explored linear attention ($O(n)$) designs (Mamba2, RWKV7, GLA, etc.) as well as hybrid architectures that retain a small number of full-attention layers alongside linear attention layers.
+**Background**: LLM inference efficiency is a critical deployment bottleneck. Full-attention's $O(n^2)$ complexity causes severe KV cache bloat in long-context generation. A large body of work has explored linear attention ($O(n)$) designs (Mamba2, RWKV7, GLA, etc.) as well as hybrid architectures that retain a small number of full-attention layers alongside linear attention layers.
 
 **Limitations of Prior Work**: Existing efficient models trained from scratch incur high costs and exhibit noticeable accuracy gaps relative to full-attention SOTAs — particularly on MMLU-Pro, mathematical reasoning, and retrieval tasks. From-scratch training also carries high architectural design risk and long development cycles.
 
-**Root Cause**: Architecture exploration requires pretraining for validation, yet pretraining is prohibitively expensive, making LLM architectural innovation inaccessible to most academic groups and small organizations.
+**Key Challenge**: Architecture exploration requires pretraining for validation, yet pretraining is prohibitively expensive, making LLM architectural innovation inaccessible to most academic groups and small organizations.
 
-**Starting Point**: Rather than training from scratch, the paper starts from an existing full-attention model, freezes the MLP weights (which encode the bulk of learned knowledge), and explores only the attention block design. This substantially reduces cost while remaining competitive with SOTA.
+**Key Insight**: Rather than training from scratch, the paper starts from an existing full-attention model, freezes the MLP weights (which encode the bulk of learned knowledge), and explores only the attention block design. This substantially reduces cost while remaining competitive with SOTA.
 
 **Core Idea**: Post Neural Architecture Search (PostNAS) — a coarse-to-fine four-step architecture search pipeline that inherits MLP knowledge from a pretrained full-attention model and systematically searches for the optimal attention block configuration.
 

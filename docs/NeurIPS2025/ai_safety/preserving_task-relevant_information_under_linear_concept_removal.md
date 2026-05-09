@@ -28,11 +28,11 @@ SPLINCE constructs an oblique projection that simultaneously guarantees linear g
 
 ## Background & Motivation
 
-- **State of the Field**: Deep neural network (DNN) embeddings encode not only task-relevant information but also undesired concepts (e.g., gender, race), leading to biased model predictions. For instance, a classifier for screening job applications may exhibit gender bias due to encoded gender information.
+- **Background**: Deep neural network (DNN) embeddings encode not only task-relevant information but also undesired concepts (e.g., gender, race), leading to biased model predictions. For instance, a classifier for screening job applications may exhibit gender bias due to encoded gender information.
 
 - **Limitations of Prior Work**: Existing post-hoc concept erasure methods (INLP, RLACE, LEACE, SAL, etc.) apply linear projections to render sensitive concepts unpredictable by linear classifiers—a property known as *linear guardedness*. However, their critical limitation is that **removing sensitive concepts simultaneously damages task-relevant information**.
 
-- **Root Cause**: When sensitive attributes correlate with the target task (e.g., uneven gender distribution across occupations), removing sensitive signals inevitably degrades task performance. Existing methods either preserve linear guardedness at the cost of task information (LEACE), or protect task information at the cost of guardedness.
+- **Key Challenge**: When sensitive attributes correlate with the target task (e.g., uneven gender distribution across occupations), removing sensitive signals inevitably degrades task performance. Existing methods either preserve linear guardedness at the cost of task information (LEACE), or protect task information at the cost of guardedness.
 
 - **Core Idea**: Can one simultaneously erase sensitive concepts and **exactly preserve** the covariance between representations and task labels? The answer is affirmative—via oblique projection, which places the covariance directions of sensitive concepts in the projection kernel while retaining the covariance directions of the target task in the projection range.
 

@@ -28,16 +28,16 @@ This paper proposes DogFit, which internalizes Domain Guidance (DoG) into the fi
 
 ## Background & Motivation
 
-**State of the Field**: Transferring diffusion models to small-scale target domains is prone to overfitting. Guidance methods such as CFG and DoG can improve generation quality, but require double forward passes at inference time (2× computational overhead). MG internalizes guidance during training but inherits the limitations of CFG in transfer learning settings.
+**Background**: Transferring diffusion models to small-scale target domains is prone to overfitting. Guidance methods such as CFG and DoG can improve generation quality, but require double forward passes at inference time (2× computational overhead). MG internalizes guidance during training but inherits the limitations of CFG in transfer learning settings.
 
 **Limitations of Prior Work**:
 - The unconditional noise estimator of CFG underfits on small target domains, resulting in inaccurate guidance directions.
 - DoG employs the source model for marginal estimation, which is more effective, but doubles inference cost.
 - MG incurs no inference overhead but hard-codes the guidance strength, precluding runtime control.
 
-**Root Cause**: Can a guidance mechanism be designed that leverages the source model's strong marginal estimation, incurs no inference overhead, and still supports controllable guidance strength at inference time?
+**Key Challenge**: Can a guidance mechanism be designed that leverages the source model's strong marginal estimation, incurs no inference overhead, and still supports controllable guidance strength at inference time?
 
-**Starting Point**: Inject the domain guidance offset from DoG into the training loss, using the source model (rather than the unconditional branch of the target model) to supply the guidance direction, while encoding the guidance strength $w$ as an additional model input.
+**Key Insight**: Inject the domain guidance offset from DoG into the training loss, using the source model (rather than the unconditional branch of the target model) to supply the guidance direction, while encoding the guidance strength $w$ as an additional model input.
 
 **Core Idea**: Internalize domain guidance direction from the source model into the training loss + encode guidance strength as a model input for inference-time controllability + late-start/cut-off scheduling to improve training stability.
 

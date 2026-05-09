@@ -28,15 +28,15 @@ This paper establishes a novel connection between PAC learning of high-dimension
 
 ## Background & Motivation
 
-**State of the Field**: Probabilistic graphical models—particularly Bayesian networks—are central tools for modeling high-dimensional distributions, with broad applications in gene regulatory networks, protein signaling networks, and brain connectivity networks. Learning a Bayesian network involves two steps: structure learning (identifying the dependency graph) and parameter learning (estimating conditional probability tables).
+**Background**: Probabilistic graphical models—particularly Bayesian networks—are central tools for modeling high-dimensional distributions, with broad applications in gene regulatory networks, protein signaling networks, and brain connectivity networks. Learning a Bayesian network involves two steps: structure learning (identifying the dependency graph) and parameter learning (estimating conditional probability tables).
 
 **Limitations of Prior Work**: Existing efficient learning algorithms are limited to tree-structured distributions (the classical Chow-Liu algorithm handles $d=1$ with tree skeletons) and polytree distributions with known skeletons (restricted to the realizable setting). No efficient agnostic learning algorithm exists for more general graph structures such as chordal graphs.
 
-**Root Cause**: Online learning frameworks (EWA/RWM) can reduce distribution learning to prediction over an expert pool, but standard prediction algorithms run in time at least linear in the number of experts—while the number of candidate DAG structures for Bayesian networks is exponential, making direct enumeration infeasible.
+**Key Challenge**: Online learning frameworks (EWA/RWM) can reduce distribution learning to prediction over an expert pool, but standard prediction algorithms run in time at least linear in the number of experts—while the number of candidate DAG structures for Bayesian networks is exponential, making direct enumeration infeasible.
 
-**Paper Goals**: (1) Design the first efficient agnostic PAC learning algorithm for Bayesian networks with chordal graph skeletons; (2) improve the dependence of sample complexity on alphabet size $k$ from $k^3$ to the optimal $k^2$ for tree-structured distribution learning; (3) resolve the open problem posed by Choo et al. [2023] on efficient agnostic learning of polytrees.
+**Goal**: (1) Design the first efficient agnostic PAC learning algorithm for Bayesian networks with chordal graph skeletons; (2) improve the dependence of sample complexity on alphabet size $k$ from $k^3$ to the optimal $k^2$ for tree-structured distribution learning; (3) resolve the open problem posed by Choo et al. [2023] on efficient agnostic learning of polytrees.
 
-**Starting Point**: The key observation is that the weighted expert sampling performed at each round by RWM/EWA is essentially equivalent to weighted sampling over DAG structures according to specific weights. If this weighted sampling can be performed efficiently—by exploiting the combinatorial properties of graph structures—the exponential expert pool bottleneck can be bypassed.
+**Key Insight**: The key observation is that the weighted expert sampling performed at each round by RWM/EWA is essentially equivalent to weighted sampling over DAG structures according to specific weights. If this weighted sampling can be performed efficiently—by exploiting the combinatorial properties of graph structures—the exponential expert pool bottleneck can be bypassed.
 
 **Core Idea**: Reduce the problem of maintaining an exponentially large expert pool in online learning to a weighted counting/sampling problem over DAG structures, leveraging the clique tree decomposition of chordal graphs and the matrix-tree theorem for efficient sampling.
 

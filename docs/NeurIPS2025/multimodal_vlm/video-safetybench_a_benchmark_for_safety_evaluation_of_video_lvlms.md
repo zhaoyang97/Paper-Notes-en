@@ -37,9 +37,9 @@ As large vision-language models (LVLMs) are increasingly deployed in real-world 
 
 **Evaluation metrics are insufficient for boundary cases**: Existing automated judges have limited capability in handling uncertain or borderline harmful outputs, lacking calibration mechanisms aligned with human judgment.
 
-**Root Cause**: The safety risks of video LVLMs are increasingly prominent, yet no systematic video-text attack benchmark or reliable safety evaluation methodology exists.
+**Key Challenge**: The safety risks of video LVLMs are increasingly prominent, yet no systematic video-text attack benchmark or reliable safety evaluation methodology exists.
 
-**Starting Point**: (1) Construct compositional video-text attack tasks encompassing both harmful queries with explicit malicious intent and benign queries that implicitly convey malice through video context; (2) Design a controllable video generation pipeline to ensure semantic alignment between video content and harmful intent; (3) Propose RJScore, an LLM confidence-based evaluation metric with calibrated decision thresholds.
+**Key Insight**: (1) Construct compositional video-text attack tasks encompassing both harmful queries with explicit malicious intent and benign queries that implicitly convey malice through video context; (2) Design a controllable video generation pipeline to ensure semantic alignment between video content and harmful intent; (3) Propose RJScore, an LLM confidence-based evaluation metric with calibrated decision thresholds.
 
 ## Method
 

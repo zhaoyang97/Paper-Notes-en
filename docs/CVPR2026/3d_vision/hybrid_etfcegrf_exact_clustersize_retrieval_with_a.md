@@ -29,13 +29,13 @@ This work combines the union-find data structure of eTFCE (for exact cluster-siz
 
 ## Background & Motivation
 
-**State of the Field**: TFCE enhances sensitivity of voxel-level statistical inference by integrating cluster spatial extent across all thresholds and has become a standard method in neuroimaging analysis. However, the inference stage relies on permutation testing (thousands of relabelings), requiring hours to days at whole-brain scale (~2 million voxels).
+**Background**: TFCE enhances sensitivity of voxel-level statistical inference by integrating cluster spatial extent across all thresholds and has become a standard method in neuroimaging analysis. However, the inference stage relies on permutation testing (thousands of relabelings), requiring hours to days at whole-brain scale (~2 million voxels).
 
 **Limitations of Prior Work**: Two existing improvements each solve only half of the problem. pTFCE replaces permutation testing with GRF theory for fast inference, but queries cluster sizes via connected-component labeling (CCL) on a fixed 100-level threshold grid, introducing discretization error. eTFCE eliminates discretization by computing the TFCE integral exactly via union-find, but still requires permutation testing to obtain $p$-values.
 
-**Root Cause**: pTFCE is fast but approximate; eTFCE is exact but slow — the two approaches are algorithmically complementary yet have not been combined in 15 years. Additionally, FSL's TFCE implementation contains a confirmed scaling bug (present through version 6.0.7.19) where the step size $\Delta\tau$ is omitted from the discrete approximation.
+**Key Challenge**: pTFCE is fast but approximate; eTFCE is exact but slow — the two approaches are algorithmically complementary yet have not been combined in 15 years. Additionally, FSL's TFCE implementation contains a confirmed scaling bug (present through version 6.0.7.19) where the step size $\Delta\tau$ is omitted from the discrete approximation.
 
-**Starting Point**: The union-find structure is agnostic to how its cluster sizes are consumed downstream — they can feed a permutation null distribution (as in eTFCE) or a GRF survival function (as proposed here), with no modification to the data structure required.
+**Key Insight**: The union-find structure is agnostic to how its cluster sizes are consumed downstream — they can feed a permutation null distribution (as in eTFCE) or a GRF survival function (as proposed here), with no modification to the data structure required.
 
 **Core Idea**: Replace pTFCE's CCL with eTFCE's union-find for exact cluster-size retrieval, while retaining GRF analytical inference to avoid permutation testing.
 

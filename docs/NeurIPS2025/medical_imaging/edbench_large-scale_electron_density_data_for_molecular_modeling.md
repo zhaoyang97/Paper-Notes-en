@@ -28,15 +28,15 @@ This work constructs EDBench, the largest electron density (ED) dataset to date 
 
 ## Background & Motivation
 
-**State of the Field**: Machine learning force fields (MLFFs) have become essential tools for molecular dynamics simulation. However, mainstream approaches focus on atomic-level many-body interaction modeling (atom types, coordinates, distances, angles, torsions, etc.), with limited attention to microscopic electronic distributions.
+**Background**: Machine learning force fields (MLFFs) have become essential tools for molecular dynamics simulation. However, mainstream approaches focus on atomic-level many-body interaction modeling (atom types, coordinates, distances, angles, torsions, etc.), with limited attention to microscopic electronic distributions.
 
 **Limitations of Prior Work**: According to the Hohenberg–Kohn theorem, the electron density $\rho(\mathbf{r})$ uniquely determines all ground-state properties (energy, molecular structure, etc.) of a many-particle system, providing a finer-grained and more physically grounded molecular description than atomic-level representations. However, computing ED requires expensive DFT calculations, resulting in a lack of large-scale ED datasets.
 
-**Root Cause**: Existing QC datasets (QM7, QM9, MD17, etc.) primarily provide energy and force data. Datasets that include ED are extremely scarce (MP: ~122K at PBE accuracy; ECD: ~140K), and most are focused on materials science. For drug-like molecules, large-scale ED data and associated benchmarks are absent.
+**Key Challenge**: Existing QC datasets (QM7, QM9, MD17, etc.) primarily provide energy and force data. Datasets that include ED are extremely scarce (MP: ~122K at PBE accuracy; ECD: ~140K), and most are focused on materials science. For drug-like molecules, large-scale ED data and associated benchmarks are absent.
 
-**Paper Goals**: (1) Construct a large-scale, high-quality molecular ED dataset; (2) Design an ED-centric benchmark task suite to systematically evaluate models' ability to understand and utilize electronic information.
+**Goal**: (1) Construct a large-scale, high-quality molecular ED dataset; (2) Design an ED-centric benchmark task suite to systematically evaluate models' ability to understand and utilize electronic information.
 
-**Starting Point**: Using 3.3 million drug-like molecules from the PCQM4Mv2 dataset, high-quality ED data in CUBE file format are generated with the B3LYP hybrid functional (higher rung of Jacob's ladder) and the Psi4 computational engine, at a total cost of 205,000 core-hours (~23.4 single-core years).
+**Key Insight**: Using 3.3 million drug-like molecules from the PCQM4Mv2 dataset, high-quality ED data in CUBE file format are generated with the B3LYP hybrid functional (higher rung of Jacob's ladder) and the Psi4 computational engine, at a total cost of 205,000 core-hours (~23.4 single-core years).
 
 **Core Idea**: Construct the first million-scale molecular electron density dataset and design prediction/retrieval/generation benchmark tasks to advance MLFFs from atomic-level to electron-level modeling.
 

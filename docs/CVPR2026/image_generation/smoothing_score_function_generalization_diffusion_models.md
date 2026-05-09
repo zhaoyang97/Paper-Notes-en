@@ -29,11 +29,11 @@ This paper theoretically demonstrates that memorization in diffusion models stem
 
 ## Background & Motivation
 
-1. **State of the Field**: Diffusion models achieve state-of-the-art generation quality, yet research has revealed that some generated samples are identical to training data (memorization), raising privacy and copyright concerns.
+1. **Background**: Diffusion models achieve state-of-the-art generation quality, yet research has revealed that some generated samples are identical to training data (memorization), raising privacy and copyright concerns.
 2. **Limitations of Prior Work**: In theory, a neural network that perfectly learns the empirical score function would only reproduce training samples. In practice, however, models do generate novel samples — this theory–practice discrepancy lacks a principled explanation.
-3. **Root Cause**: Why do neural networks partially mitigate memorization? And how can generalization be further improved?
-4. **Paper Goals**: To establish a theoretical framework explaining the causes of memorization and the mechanisms of generalization, and to propose corresponding improvements.
-5. **Starting Point**: Analysis of the mathematical structure of empirical score function weights $w_{ij}(x)$, which take the form of a softmax function.
+3. **Key Challenge**: Why do neural networks partially mitigate memorization? And how can generalization be further improved?
+4. **Goal**: To establish a theoretical framework explaining the causes of memorization and the mechanisms of generalization, and to propose corresponding improvements.
+5. **Key Insight**: Analysis of the mathematical structure of empirical score function weights $w_{ij}(x)$, which take the form of a softmax function.
 6. **Core Idea**: In high-dimensional spaces, empirical score function weights become extremely concentrated (sharp) at low noise levels, causing a single training point to dominate the sampling process. Neural networks achieve generalization by implicitly smoothing these weights.
 
 ## Method

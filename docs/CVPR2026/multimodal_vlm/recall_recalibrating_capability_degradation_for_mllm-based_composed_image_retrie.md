@@ -28,15 +28,15 @@ This paper reveals a **Capability Degradation** phenomenon that occurs when adap
 
 ## Background & Motivation
 
-**State of the Field**: Composed Image Retrieval (CIR) retrieves target images given a hybrid query consisting of a reference image and a modification text. Early dual-encoder VLM methods suffer from shallow cross-modal alignment and struggle with fine-grained compositional reasoning. Recent works have begun adapting MLLMs as retrievers, leveraging their deep fusion and instruction-following capabilities, and obtaining discriminative retrieval ability through contrastive fine-tuning.
+**Background**: Composed Image Retrieval (CIR) retrieves target images given a hybrid query consisting of a reference image and a modification text. Early dual-encoder VLM methods suffer from shallow cross-modal alignment and struggle with fine-grained compositional reasoning. Recent works have begun adapting MLLMs as retrievers, leveraging their deep fusion and instruction-following capabilities, and obtaining discriminative retrieval ability through contrastive fine-tuning.
 
 **Limitations of Prior Work**: Compressing a generative MLLM (focused on step-by-step reasoning) into a single-embedding discriminative retriever (focused on vector similarity) introduces a **paradigm conflict** — fine-tuning degrades the model's native fine-grained reasoning capabilities (fine-grained localization, relational understanding). Experiments demonstrate that on 1k samples that the base MLLM can correctly answer via VQA, the fine-tuned retriever achieves only R@1 of 62.33% (CIRR) and 55.80% (FashionIQ), confirming that substantial existing capabilities are lost during adaptation.
 
-**Root Cause**: A fundamental conflict between the generative paradigm (emphasizing sequential reasoning with attention distributed across every token) and the discriminative paradigm (compressing all semantics into a single embedding vector). A single embedding cannot carry the fine-grained distinctions that MLLMs originally accomplish through multi-step reasoning.
+**Key Challenge**: A fundamental conflict between the generative paradigm (emphasizing sequential reasoning with attention distributed across every token) and the discriminative paradigm (compressing all semantics into a single embedding vector). A single embedding cannot carry the fine-grained distinctions that MLLMs originally accomplish through multi-step reasoning.
 
-**Paper Goals**: How can the compositional reasoning capabilities degraded during fine-tuning be recovered while preserving the retrieval form (single embedding is mandatory)?
+**Goal**: How can the compositional reasoning capabilities degraded during fine-tuning be recovered while preserving the retrieval form (single embedding is mandatory)?
 
-**Starting Point**: Rather than altering the retrieval paradigm itself, the paper uses the base MLLM's native reasoning signals to supervise the retriever's embedding space in reverse — "distilling reasoning capabilities from the MLLM into the retrieval space."
+**Key Insight**: Rather than altering the retrieval paradigm itself, the paper uses the base MLLM's native reasoning signals to supervise the retriever's embedding space in reverse — "distilling reasoning capabilities from the MLLM into the retrieval space."
 
 **Core Idea**: Diagnose failure cases of the retriever, use the base MLLM to generate minimally-edited corrective instructions for those failure cases to form new triplets, and then internalize fine-grained discriminative capabilities into the retriever via grouped contrastive learning.
 

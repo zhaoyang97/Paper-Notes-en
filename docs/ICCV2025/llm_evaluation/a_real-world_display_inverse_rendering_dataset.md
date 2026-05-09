@@ -27,10 +27,10 @@ content_hash: 6303c90313b44d66
 This paper presents the first real-world inverse rendering dataset built upon an LCD display-camera system, comprising stereo polarization images of 16 objects with diverse materials captured under OLAT illumination patterns alongside high-precision geometric ground truth. A simple yet effective display inverse rendering baseline is proposed, outperforming existing inverse rendering methods.
 
 ## Background & Motivation
-- **State of the Field**: Inverse rendering aims to recover geometry and reflectance from images. Existing methods rely on different imaging systems — light stages offer high-quality multi-light samples but are costly and bulky; flash photography requires repeated camera movement; displays, by contrast, are programmable, high-resolution, and compact.
+- **Background**: Inverse rendering aims to recover geometry and reflectance from images. Existing methods rely on different imaging systems — light stages offer high-quality multi-light samples but are costly and bulky; flash photography requires repeated camera movement; displays, by contrast, are programmable, high-resolution, and compact.
 - **Unique Advantages of Display-Camera Systems**: Each pixel can serve as a programmable point light source; LCD panels emit polarized light, naturally enabling diffuse/specular separation.
-- **Root Cause**: Despite their clear advantages, no publicly available real-world dataset exists for display-based systems. All existing inverse rendering datasets are collected using light stages, robotic rigs, or natural illumination, making it impossible to evaluate challenges unique to display systems (near-field lighting, low SNR, limited light-view angle sampling, etc.).
-- **Paper Goals**: To fill this gap by constructing the system, collecting data, providing benchmarks, and validating methods.
+- **Key Challenge**: Despite their clear advantages, no publicly available real-world dataset exists for display-based systems. All existing inverse rendering datasets are collected using light stages, robotic rigs, or natural illumination, making it impossible to evaluate challenges unique to display systems (near-field lighting, low SNR, limited light-view angle sampling, etc.).
+- **Goal**: To fill this gap by constructing the system, collecting data, providing benchmarks, and validating methods.
 
 ## Method
 

@@ -29,18 +29,18 @@ This paper proposes LightStab, an unsupervised online video stabilization framew
 
 ## Background & Motivation
 
-**State of the Field**: Video stabilization aims to suppress camera shake and improve visual quality. Classical approaches follow a three-stage pipeline of motion estimation → motion smoothing → frame compensation, and are categorized by motion model dimensionality into 2D (affine/homography/optical flow), 2.5D (limited 3D cues), and 3D (depth + point cloud) methods. Deep learning methods (DUT, NNDVS, RStab, etc.) generate stabilized frames directly via end-to-end learning.
+**Background**: Video stabilization aims to suppress camera shake and improve visual quality. Classical approaches follow a three-stage pipeline of motion estimation → motion smoothing → frame compensation, and are categorized by motion model dimensionality into 2D (affine/homography/optical flow), 2.5D (limited 3D cues), and 3D (depth + point cloud) methods. Deep learning methods (DUT, NNDVS, RStab, etc.) generate stabilized frames directly via end-to-end learning.
 
 **Limitations of Prior Work**:
 - **Perception limitations**: Classical methods rely on hand-crafted feature detectors (SIFT, ORB, etc.), which are not robust under weak texture, occlusion, and large motion, and non-uniform keypoint distributions introduce bias in motion estimation.
 - **Smoothing limitations**: Fixed smoothing strategies fail to generalize, resulting in residual jitter; learned smoothing lacks geometric interpretability and may over-smooth or introduce distortion.
 - **Online processing limitations**: Most high-quality stabilizers (classical and learned) rely on offline batch processing or future frames, introducing latency. Learned methods also require large amounts of paired labeled data and substantial computational resources.
 
-**Root Cause**: It is inherently difficult to simultaneously achieve unsupervised training, online (causal) processing, and high stabilization quality. The best existing online method (NNDVS) still shows notable gaps in certain scenarios, and existing benchmarks primarily consist of handheld visible-light videos, failing to cover practical settings such as nighttime UAV remote sensing.
+**Key Challenge**: It is inherently difficult to simultaneously achieve unsupervised training, online (causal) processing, and high stabilization quality. The best existing online method (NNDVS) still shows notable gaps in certain scenarios, and existing benchmarks primarily consist of handheld visible-light videos, failing to cover practical settings such as nighttime UAV remote sensing.
 
-**Paper Goals**: Design a fully unsupervised, strictly causal (no future frames) online video stabilization framework that achieves quality comparable to or exceeding offline SOTA, and generalizes to multimodal UAV scenarios.
+**Goal**: Design a fully unsupervised, strictly causal (no future frames) online video stabilization framework that achieves quality comparable to or exceeding offline SOTA, and generalizes to multimodal UAV scenarios.
 
-**Starting Point**: Rather than pursuing an end-to-end approach, the authors return to the classical three-stage pipeline while equipping each stage with modern components—replacing single hand-crafted detectors with multi-detector collaboration and optical flow, replacing fixed filtering with a lightweight self-supervised network, and eliminating serial latency bottlenecks via multi-threaded parallelism.
+**Key Insight**: Rather than pursuing an end-to-end approach, the authors return to the classical three-stage pipeline while equipping each stage with modern components—replacing single hand-crafted detectors with multi-detector collaboration and optical flow, replacing fixed filtering with a lightweight self-supervised network, and eliminating serial latency bottlenecks via multi-threaded parallelism.
 
 **Core Idea**: Classical three-stage pipeline + modern components (multi-detector collaboration, causal optical flow fusion, self-supervised motion propagation network, dynamic-kernel online smoothing) + system-level multi-threading optimization = unsupervised, online, high-quality stabilization.
 

@@ -29,10 +29,10 @@ L-MTP introduces a leap mechanism into multi-token prediction (MTP) by predictin
 
 ## Background & Motivation
 
-- **State of the Field**: Standard next-token prediction (NTP) generates tokens autoregressively one at a time, resulting in low inference efficiency; the model is also confined to a myopic adjacent context, making it prone to overlooking "hard decisions."
+- **Background**: Standard next-token prediction (NTP) generates tokens autoregressively one at a time, resulting in low inference efficiency; the model is also confined to a myopic adjacent context, making it prone to overlooking "hard decisions."
 - **Limitations of Prior Work**: MTP extends training signals and accelerates inference by predicting $n$ adjacent tokens in parallel via multiple output heads (e.g., positions $t+1$ to $t+n$), but the prediction scope remains restricted to adjacent positions.
-- **Root Cause**: Human reasoning rarely proceeds strictly in order; people commonly skip intermediate steps to reason efficiently (fuzzy-trace theory), motivating leap-style token prediction. Recent work (Rho, TokenSkip, etc.) further shows that many intermediate reasoning steps can be compressed or abstracted without sacrificing correctness.
-- **Paper Goals**: L-MTP achieves a similar effect by altering the prediction pattern rather than explicitly modeling token importance.
+- **Key Challenge**: Human reasoning rarely proceeds strictly in order; people commonly skip intermediate steps to reason efficiently (fuzzy-trace theory), motivating leap-style token prediction. Recent work (Rho, TokenSkip, etc.) further shows that many intermediate reasoning steps can be compressed or abstracted without sacrificing correctness.
+- **Goal**: L-MTP achieves a similar effect by altering the prediction pattern rather than explicitly modeling token importance.
 
 ## Method
 

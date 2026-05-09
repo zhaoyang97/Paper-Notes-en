@@ -28,9 +28,9 @@ This paper proposes EM-KD, a distillation framework that leverages the Hungarian
 
 ## Background & Motivation
 
-- **State of the Field**: Efficient MLLMs reduce computational overhead by compressing or pruning redundant vision tokens, but this inevitably causes visual information loss, particularly on fine-grained understanding tasks. Knowledge distillation can enhance student model capability during training without affecting inference efficiency.
+- **Background**: Efficient MLLMs reduce computational overhead by compressing or pruning redundant vision tokens, but this inevitably causes visual information loss, particularly on fine-grained understanding tasks. Knowledge distillation can enhance student model capability during training without affecting inference efficiency.
 - **Limitations of Prior Work**: Existing MLLM distillation methods (e.g., LLaVA-KD, Align-KD) require a one-to-one spatial correspondence between teacher and student vision tokens, making them unable to handle token count imbalances arising from heterogeneous visual encoders and projectors.
-- **Root Cause**: Different resolutions, visual encoders, and projectors all lead to misaligned vision token counts between teacher and student, a pervasive yet previously overlooked problem in practice.
+- **Key Challenge**: Different resolutions, visual encoders, and projectors all lead to misaligned vision token counts between teacher and student, a pervasive yet previously overlooked problem in practice.
 
 ## Core Problem
 When the teacher retains a large number of tokens (e.g., 576) via a powerful visual encoder, while the student retains only a small subset (e.g., 144) through a compression projector, how can effective token-level correspondences be established for knowledge distillation?

@@ -29,15 +29,15 @@ This paper introduces DeepFund — the first live fund investment benchmark for 
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have demonstrated strong capabilities on financial tasks such as report summarization, earnings call analysis, and asset classification. There is growing interest in leveraging LLMs for trading strategy generation and fund investment management. Existing benchmarks (e.g., TAT-QA, FinanceBench, InvestorBench) evaluate LLM financial understanding and trading performance.
+**Background**: LLMs have demonstrated strong capabilities on financial tasks such as report summarization, earnings call analysis, and asset classification. There is growing interest in leveraging LLMs for trading strategy generation and fund investment management. Existing benchmarks (e.g., TAT-QA, FinanceBench, InvestorBench) evaluate LLM financial understanding and trading performance.
 
 **Limitations of Prior Work**: Existing benchmarks rely on historical backtesting to evaluate LLM trading strategies; however, LLM pretraining data very likely includes historical market data from the backtesting period. This leads to severe **information leakage** — LLMs can effectively "time travel," exploiting future information to achieve inflated performance on historical data. The varying knowledge cutoff dates across LLMs (e.g., GPT-4o at 2023.10, DeepSeek-V3 at 2024.7) further exacerbates evaluation unfairness.
 
-**Root Cause**: Under a backtesting setup, it is impossible to distinguish whether an LLM genuinely "predicts" market movements or merely "recalls" historical data, rendering backtesting results fundamentally unreliable.
+**Key Challenge**: Under a backtesting setup, it is impossible to distinguish whether an LLM genuinely "predicts" market movements or merely "recalls" historical data, rendering backtesting results fundamentally unreliable.
 
-**Paper Goals**: To construct an LLM fund investment evaluation framework grounded entirely in live market data, ensuring zero information leakage.
+**Goal**: To construct an LLM fund investment evaluation framework grounded entirely in live market data, ensuring zero information leakage.
 
-**Starting Point**: Forward testing using live data strictly after each model's pretraining cutoff date, rather than backtesting.
+**Key Insight**: Forward testing using live data strictly after each model's pretraining cutoff date, rather than backtesting.
 
 **Core Idea**: Transform LLM fund investment evaluation from "historical backtesting" to "live forward testing," completely eliminating time-travel cheating.
 

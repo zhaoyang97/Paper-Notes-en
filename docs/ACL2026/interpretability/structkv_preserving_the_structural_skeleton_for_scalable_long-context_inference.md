@@ -28,15 +28,15 @@ This paper proposes StructKV, a structure-aware KV Cache compression framework t
 
 ## Background & Motivation
 
-**State of the Field**: LLM context windows have been extended to over one million tokens, yet inference efficiency faces a dual bottleneck: $O(N^2)$ attention complexity during prefill and linear KV cache memory growth during decoding. Existing methods typically address only one of these stages.
+**Background**: LLM context windows have been extended to over one million tokens, yet inference efficiency faces a dual bottleneck: $O(N^2)$ attention complexity during prefill and linear KV cache memory growth during decoding. Existing methods typically address only one of these stages.
 
 **Limitations of Prior Work**: (1) Decoding-only methods (StreamingLLM, SnapKV) compress KV cache without reducing prefill computation. (2) Prefill-aware methods (GemFilter, FastKV) rely on single-layer attention snapshots for local saliency-based token selection; however, some tokens may be temporarily "dormant" at the selected layer while playing a globally critical structural role. (3) FastKV uses a fixed pruning layer (e.g., Layer 15), a hyperparameter that does not generalize across model architectures and depths.
 
-**Root Cause**: Local saliency (single-layer snapshot) $\neq$ structural importance (cross-layer semantic role). A token may receive low attention at a specific layer yet serve as an information hub across the full network depth. Once discarded by a local-snapshot method, such information is permanently lost.
+**Key Challenge**: Local saliency (single-layer snapshot) $\neq$ structural importance (cross-layer semantic role). A token may receive low attention at a specific layer yet serve as an information hub across the full network depth. Once discarded by a local-snapshot method, such information is permanently lost.
 
-**Paper Goals**: Design a structure-aware compression framework that identifies the "structural skeleton" of the context, retaining tokens that are globally important even when locally inconspicuous.
+**Goal**: Design a structure-aware compression framework that identifies the "structural skeleton" of the context, retaining tokens that are globally important even when locally inconspicuous.
 
-**Starting Point**: The true importance of a token is defined by its cumulative contribution across network depth, which can be formalized using in-degree centrality from graph theory.
+**Key Insight**: The true importance of a token is defined by its cumulative contribution across network depth, which can be formalized using in-degree centrality from graph theory.
 
 **Core Idea**: Cross-layer accumulated attention scores form a global in-degree centrality measure; an information-theoretic metric adaptively detects the "phase transition" layer at which attention stabilizes as the compression point; and computation retention rate and storage retention rate are decoupled to independently optimize prefill speed and decoding memory.
 

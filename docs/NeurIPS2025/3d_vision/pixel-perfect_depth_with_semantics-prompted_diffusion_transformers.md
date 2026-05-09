@@ -29,13 +29,13 @@ This paper proposes Pixel-Perfect Depth, a monocular depth estimation model that
 
 ## Background & Motivation
 
-- **State of the Field**: Monocular depth estimation (MDE) is a foundational task for 3D reconstruction, novel view synthesis, and robotic manipulation. Depth maps produced by current models suffer from pervasive **flying pixels** at object boundaries when converted to point clouds—spurious floating points that severely limit practical applications such as free-viewpoint broadcasting and immersive content creation.
+- **Background**: Monocular depth estimation (MDE) is a foundational task for 3D reconstruction, novel view synthesis, and robotic manipulation. Depth maps produced by current models suffer from pervasive **flying pixels** at object boundaries when converted to point clouds—spurious floating points that severely limit practical applications such as free-viewpoint broadcasting and immersive content creation.
 
 - **Limitations of Prior Work**: The root cause of flying pixels differs by model type:
   - **Discriminative models** (e.g., Depth Anything v2): tend to output **intermediate depth values** (mean bias) between foreground and background at depth-discontinuous edges to minimize regression loss.
   - **Generative models** (e.g., Marigold): can theoretically capture the multimodal distribution at edges, but fine-tuning Stable Diffusion requires a VAE to compress depth maps into latent space—VAE compression **inevitably loses edge sharpness**.
 
-- **Root Cause**: An intuitive fix is to perform diffusion directly in pixel space. However, the authors find this **extremely challenging**—the core difficulty lies in simultaneously modeling **global semantic coherence** and **fine-grained visual detail** in high-resolution pixel-space generation. SNR analysis confirms that the primary challenge of high-resolution pixel-space diffusion is perceiving and modeling global image structure.
+- **Key Challenge**: An intuitive fix is to perform diffusion directly in pixel space. However, the authors find this **extremely challenging**—the core difficulty lies in simultaneously modeling **global semantic coherence** and **fine-grained visual detail** in high-resolution pixel-space generation. SNR analysis confirms that the primary challenge of high-resolution pixel-space diffusion is perceiving and modeling global image structure.
 
 - **Core Idea**: Introduce **high-level semantic representations** from pretrained visual foundation models as prompts (Semantics-Prompted), providing global semantic "anchors" during diffusion so that high-quality depth maps can be stably generated directly in pixel space.
 

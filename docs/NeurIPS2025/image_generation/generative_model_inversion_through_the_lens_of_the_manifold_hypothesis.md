@@ -31,9 +31,9 @@ This paper reveals, from a manifold-geometric perspective, that the essence of g
 
 ## Background & Motivation
 
-- **State of the Field**: Model inversion attacks (MIA) reconstruct class-representative samples of private training data from a trained classifier, threatening the privacy of machine learning models.
+- **Background**: Model inversion attacks (MIA) reconstruct class-representative samples of private training data from a trained classifier, threatening the privacy of machine learning models.
 - **Limitations of Prior Work**: Fredrikson et al. (2015) perform gradient optimization directly in the input space $\mathcal{X} = \mathbb{R}^d$, which completely fails on high-dimensional DNNs — natural images concentrate on low-dimensional submanifolds of $\mathbb{R}^d$ (the manifold hypothesis), and optimizing in the ambient space easily diverges from the manifold. While Zhang et al. (2020) introduced a GAN prior, optimizing in the latent space $\mathcal{Z} = \mathbb{R}^k$ to constrain the search to the generator manifold $\mathcal{M}_{\text{aux}}$, subsequent methods (PPA, KEDMI, PLG-MI, LOMMA) have continued to advance without a geometric theoretical explanation of **why** they work.
-- **Root Cause**: Three open questions remain: (1) Why are the loss gradients during inversion so noisy? (2) How does the generator handle these noisy signals? (3) What factors determine a model's MIA vulnerability?
+- **Key Challenge**: Three open questions remain: (1) Why are the loss gradients during inversion so noisy? (2) How does the generator handle these noisy signals? (3) What factors determine a model's MIA vulnerability?
 
 ## Method
 

@@ -27,15 +27,15 @@ This paper generalizes the conventional discrete-time Poisson GLM to a continuou
 
 ## Background & Motivation
 
-**State of the Field**: The Poisson generalized linear model (GLM) is a foundational tool for analyzing neural spike train data and inferring functional connectivity. Coupling filters estimated between neurons serve as proxies for synaptic connections.
+**Background**: The Poisson generalized linear model (GLM) is a foundational tool for analyzing neural spike train data and inferring functional connectivity. Coupling filters estimated between neurons serve as proxies for synaptic connections.
 
 **Limitations of Prior Work**: Conventional GLMs require discretizing continuous spike times into bin-count data, resulting in massive design matrices $\mathbf{X}$. Synaptic dynamics operate on submillisecond timescales (rapid rise and decay within 1–5 ms), yet commonly used bin sizes of 1–10 ms are far too coarse. Reducing the bin size to 0.1 ms inflates the design matrix to $10^{10}$–$10^{12}$ bits—far beyond memory capacity. Even with batched strategies, the sparsity of neural spikes induces prohibitively large gradient variance across batches, causing unstable optimization and poor model fit.
 
-**Root Cause**: There is a fundamental tension between temporal resolution and computational feasibility. Resolving individual synaptic connections requires submillisecond precision, yet discrete-time methods become computationally intractable at such resolution.
+**Key Challenge**: There is a fundamental tension between temporal resolution and computational feasibility. Resolving individual synaptic connections requires submillisecond precision, yet discrete-time methods become computationally intractable at such resolution.
 
-**Paper Goals**: (1) How can a Poisson GLM be fit without discretization? (2) How can the intractable integral in the continuous-time likelihood be efficiently approximated? (3) How can scalable inference be achieved on large-scale neural recordings?
+**Goal**: (1) How can a Poisson GLM be fit without discretization? (2) How can the intractable integral in the continuous-time likelihood be efficiently approximated? (3) How can scalable inference be achieved on large-scale neural recordings?
 
-**Starting Point**: Taking the bin size to zero in the limit transforms the model into a continuous-time Poisson point process. The input shifts from a massive design matrix to a compact spike time sequence, fundamentally resolving the memory bottleneck.
+**Key Insight**: Taking the bin size to zero in the limit transforms the model into a continuous-time Poisson point process. The input shifts from a massive design matrix to a compact spike time sequence, fundamentally resolving the memory bottleneck.
 
 **Core Idea**: Replace the discrete-time GLM with a continuous-time Poisson point process, and handle the intractable integral in the likelihood via MC sampling or polynomial approximation, enabling large-scale neural connectivity inference at submillisecond precision.
 

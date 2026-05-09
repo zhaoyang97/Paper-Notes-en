@@ -29,11 +29,11 @@ Through systematic data-centric experiments, this paper demonstrates that audio 
 
 ## Background & Motivation
 
-1. **State of the Field**: Audio pre-training is dominated by two paradigms: (1) label classification pre-training (with AudioSet-527 as the standard); and (2) audio-language alignment pre-training (e.g., CLAP, audio captioning). The former relies on AudioSet's manually defined label taxonomy; the latter depends on the quality of text descriptions.
+1. **Background**: Audio pre-training is dominated by two paradigms: (1) label classification pre-training (with AudioSet-527 as the standard); and (2) audio-language alignment pre-training (e.g., CLAP, audio captioning). The former relies on AudioSet's manually defined label taxonomy; the latter depends on the quality of text descriptions.
 2. **Limitations of Prior Work**: (1) AudioSet's 527 tags primarily cover environmental sounds, with severely insufficient coverage of speech and music labels, leading to poor generalization of pre-trained models on speech/music downstream tasks; (2) gains from scaling data size and model architecture are approaching saturation, yet the role of label quality remains substantially underestimated.
-3. **Root Cause**: The field pursues ever-larger datasets and models while potentially overlooking a more fundamental question—whether the label system itself is adequate. Without sufficiently fine-grained labels, additional data cannot support learning of fine-grained semantic distinctions.
-4. **Paper Goals**: Design a unified, high-quality label system and systematically compare different pre-training objectives (classification, captioning, contrastive, multi-task) under this label system.
-5. **Starting Point**: Leverage powerful audio LLMs such as Qwen3-Omni to generate high-fidelity audio descriptions (averaging 388 words), then use an LLM to extract semantic tags and construct a cross-domain unified tag vocabulary.
+3. **Key Challenge**: The field pursues ever-larger datasets and models while potentially overlooking a more fundamental question—whether the label system itself is adequate. Without sufficiently fine-grained labels, additional data cannot support learning of fine-grained semantic distinctions.
+4. **Goal**: Design a unified, high-quality label system and systematically compare different pre-training objectives (classification, captioning, contrastive, multi-task) under this label system.
+5. **Key Insight**: Leverage powerful audio LLMs such as Qwen3-Omni to generate high-fidelity audio descriptions (averaging 388 words), then use an LLM to extract semantic tags and construct a cross-domain unified tag vocabulary.
 6. **Core Idea**: Automatically extract tags from high-quality audio descriptions using an LLM, construct the UTS vocabulary via TF-IDF filtering, and systematically compare classification, generative, contrastive, and multi-task pre-training objectives under this tag system.
 
 ## Method

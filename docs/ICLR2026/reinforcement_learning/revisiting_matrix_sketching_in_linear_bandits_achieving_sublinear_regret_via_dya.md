@@ -31,13 +31,13 @@ This paper identifies a fundamental flaw in existing sketch-based linear bandit 
 
 ## Background & Motivation
 
-**State of the Field**: Stochastic Linear Bandits (SLB) constitute a core framework in online learning. The classical OFUL algorithm achieves $\widetilde{O}(d\sqrt{T})$ regret via regularized least squares with upper confidence bounds, but incurs $\Omega(d^2)$ per-round update cost. In high-dimensional settings this is computationally prohibitive, motivating the use of matrix sketching to reduce per-round complexity to $O(dl + l^2)$, where $l < d$ denotes the sketch size.
+**Background**: Stochastic Linear Bandits (SLB) constitute a core framework in online learning. The classical OFUL algorithm achieves $\widetilde{O}(d\sqrt{T})$ regret via regularized least squares with upper confidence bounds, but incurs $\Omega(d^2)$ per-round update cost. In high-dimensional settings this is computationally prohibitive, motivating the use of matrix sketching to reduce per-round complexity to $O(dl + l^2)$, where $l < d$ denotes the sketch size.
 
 **Limitations of Prior Work**: The regret bounds of sketch-based methods such as SOFUL and CBSCFD depend on the spectral error $\Delta_T$. When the streaming matrix has a heavy-tailed spectrum, a fixed small sketch cannot retain sufficient spectral information, causing $\Delta_T$ to grow rapidly and the regret to degenerate to **linear**—fundamentally undermining the goal of online learning.
 
-**Root Cause**: The optimal sketch size depends on the spectral structure of the streaming matrix, which is unknown a priori. A sketch that is too small leads to linear regret, while one that is too large sacrifices efficiency. The authors prove that in locally convex arm spaces with geometric constant $q \geq 1/3$, **any** fixed-$l$ SOFUL with $l < d$ must incur linear regret (Observation 1).
+**Key Challenge**: The optimal sketch size depends on the spectral structure of the streaming matrix, which is unknown a priori. A sketch that is too small leads to linear regret, while one that is too large sacrifices efficiency. The authors prove that in locally convex arm spaces with geometric constant $q \geq 1/3$, **any** fixed-$l$ SOFUL with $l < d$ must incur linear regret (Observation 1).
 
-**Starting Point**: Drawing on the dyadic decomposition framework from streaming algorithms, the paper approximates the streaming matrix using multiple sketch blocks whose sizes grow geometrically, bounding the global error by a user-specified parameter $\epsilon$ and thereby decoupling performance from unknown spectral properties.
+**Key Insight**: Drawing on the dyadic decomposition framework from streaming algorithms, the paper approximates the streaming matrix using multiple sketch blocks whose sizes grow geometrically, bounding the global error by a user-specified parameter $\epsilon$ and thereby decoupling performance from unknown spectral properties.
 
 ## Method
 

@@ -27,15 +27,15 @@ content_hash: 94bf686d4a12604c
 This paper mathematically proves that inference-time alignment methods (e.g., BoN) inevitably exhibit reward hacking (true reward first increases then decreases) when optimizing a proxy reward. It proposes Best-of-Poisson (BoP) sampling to approximate the optimal KL-reward trade-off distribution, and designs the HedgeTune algorithm to locate the optimal inference-time parameter via one-dimensional root-finding, effectively mitigating reward hacking in both mathematical reasoning and human preference settings.
 
 ## Background & Motivation
-**State of the Field**: The core paradigm of current LLM alignment methods (RLHF, DPO, BoN, etc.) is to maximize a reward function while minimizing KL divergence from a reference model. Among these, Best-of-N (BoN) is widely adopted for its simplicity and efficiency—generating N candidate responses and selecting the one with the highest reward.
+**Background**: The core paradigm of current LLM alignment methods (RLHF, DPO, BoN, etc.) is to maximize a reward function while minimizing KL divergence from a reference model. Among these, Best-of-N (BoN) is widely adopted for its simplicity and efficiency—generating N candidate responses and selecting the one with the highest reward.
 
 **Limitations of Prior Work**: All proxy reward models are imperfect; they cannot precisely capture complex objectives such as correctness, helpfulness, and safety. Optimizing a biased proxy reward leads to reward hacking, where true performance first improves and then degrades.
 
-**Root Cause**: Methods such as BoN are inherently susceptible to the winner's curse—as the number of candidates N increases, the selected response tends to be one whose true quality is overestimated by the proxy reward, resulting in over-optimization.
+**Key Challenge**: Methods such as BoN are inherently susceptible to the winner's curse—as the number of candidates N increases, the selected response tends to be one whose true quality is overestimated by the proxy reward, resulting in over-optimization.
 
-**Paper Goals**: To characterize the inevitability of inference-time reward hacking and provide practical mitigation mechanisms.
+**Goal**: To characterize the inevitability of inference-time reward hacking and provide practical mitigation mechanisms.
 
-**Starting Point**: Drawing on the winner's curse from information theory and auction theory, the paper reformulates the parameter tuning problem for inference-time alignment as a one-dimensional root-finding problem.
+**Key Insight**: Drawing on the winner's curse from information theory and auction theory, the paper reformulates the parameter tuning problem for inference-time alignment as a one-dimensional root-finding problem.
 
 **Core Idea**: Poisson-randomized sampling approximates the optimal tilted distribution via a single parameter $\mu$; HedgeTune then identifies the hacking threshold to achieve optimal "hedging" against the proxy reward.
 

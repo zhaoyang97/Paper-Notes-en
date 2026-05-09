@@ -31,7 +31,7 @@ This paper proposes RICL (Retrospective In-Context Learning), which leverages th
 
 ### State of the Field
 
-**State of the Field**: Online learning for LLM agents faces the challenge of **sparse rewards** — in multi-step tasks, consecutive correct actions are required before any reward signal is received.
+**Background**: Online learning for LLM agents faces the challenge of **sparse rewards** — in multi-step tasks, consecutive correct actions are required before any reward signal is received.
 
 ### Limitations of Prior Work
 
@@ -39,7 +39,7 @@ This paper proposes RICL (Retrospective In-Context Learning), which leverages th
 
 ### Root Cause
 
-**Root Cause**: Traditional RL approaches must learn task-specific value functions for credit assignment, resulting in low sample efficiency and poor generalization.
+**Key Challenge**: Traditional RL approaches must learn task-specific value functions for credit assignment, resulting in low sample efficiency and poor generalization.
 
 ### Resolution Direction
 

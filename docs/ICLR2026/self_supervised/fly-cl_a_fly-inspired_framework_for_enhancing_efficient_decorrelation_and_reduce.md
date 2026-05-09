@@ -28,15 +28,15 @@ Inspired by the Drosophila olfactory circuit, Fly-CL is proposed as a framework 
 
 ## Background & Motivation
 
-**State of the Field**: Continual learning (CL) methods based on frozen pre-trained models reformulate parameter updates as similarity matching problems, performing classification via cosine similarity between class prototypes. Three main paradigms exist: prompt/adapter-based, mixture-of-models, and representation-based approaches.
+**Background**: Continual learning (CL) methods based on frozen pre-trained models reformulate parameter updates as similarity matching problems, performing classification via cosine similarity between class prototypes. Three main paradigms exist: prompt/adapter-based, mixture-of-models, and representation-based approaches.
 
 **Limitations of Prior Work**: Representation-based methods directly compute class prototypes from frozen pre-trained features; however, severe **multicollinearity** among features (high inter-prototype correlation) degrades the discriminability of cosine similarity. Existing solutions (e.g., matrix inversion in RanPAC) incur high computational cost ($\mathcal{O}(lm^3)$), making them unsuitable for low-latency scenarios.
 
-**Root Cause**: Decorrelation is critical for classification accuracy, yet efficient decorrelation methods are lacking.
+**Key Challenge**: Decorrelation is critical for classification accuracy, yet efficient decorrelation methods are lacking.
 
-**Paper Goals**: Design a computationally efficient and effective decorrelation framework.
+**Goal**: Design a computationally efficient and effective decorrelation framework.
 
-**Starting Point**: Inspiration is drawn from the Drosophila olfactory circuit — the sparse expansive projection from projection neurons (PN) to Kenyon cells (KC), followed by dimensionality reduction from KC to mushroom body output neurons (MBON), constitutes an efficient decorrelation mechanism.
+**Key Insight**: Inspiration is drawn from the Drosophila olfactory circuit — the sparse expansive projection from projection neurons (PN) to Kenyon cells (KC), followed by dimensionality reduction from KC to mushroom body output neurons (MBON), constitutes an efficient decorrelation mechanism.
 
 **Core Idea**: Emulate the three stages of the Drosophila olfactory system — sparse random expansive projection, top-$k$ activation sparsification, and streaming ridge regression classification — to achieve progressive decorrelation.
 

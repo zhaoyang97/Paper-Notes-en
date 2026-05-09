@@ -37,9 +37,9 @@ Communicating LLM uncertainty is central to building trustworthy AI. A common ap
 2. Hedging language ("approximately," "possibly") is too coarse to express precise uncertainty.
 3. There is no **standardized metric** to measure how faithfully an LLM's self-described uncertainty matches its true internal distribution.
 
-**Root Cause**: We want LLMs to faithfully communicate their uncertainty, yet we lack tools to evaluate such faithfulness, and it remains unknown whether LLMs possess this self-reflective capability at all.
+**Key Challenge**: We want LLMs to faithfully communicate their uncertainty, yet we lack tools to evaluate such faithfulness, and it remains unknown whether LLMs possess this self-reflective capability at all.
 
-**Starting Point**: Design an information-theoretic metric (the SelfReflect score) that measures the distance between a natural-language uncertainty summary (e.g., "60% answer A, 30% answer B, 10% other") and the LLM's internal answer distribution, then systematically evaluate modern LLMs under this metric.
+**Key Insight**: Design an information-theoretic metric (the SelfReflect score) that measures the distance between a natural-language uncertainty summary (e.g., "60% answer A, 30% answer B, 10% other") and the LLM's internal answer distribution, then systematically evaluate modern LLMs under this metric.
 
 ## Method
 

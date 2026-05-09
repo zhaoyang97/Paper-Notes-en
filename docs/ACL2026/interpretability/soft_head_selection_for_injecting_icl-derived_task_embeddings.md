@@ -28,15 +28,15 @@ SITE proposes a gradient-based soft attention head selection method that identif
 
 ## Background & Motivation
 
-**State of the Field**: Task adaptation for LLMs has three main paradigms: parameter-efficient fine-tuning (PEFT, e.g., LoRA) yields strong performance but requires training; in-context learning (ICL) requires no training but increases inference cost; embedding injection methods extract task embeddings from ICL activations and inject them at inference time.
+**Background**: Task adaptation for LLMs has three main paradigms: parameter-efficient fine-tuning (PEFT, e.g., LoRA) yields strong performance but requires training; in-context learning (ICL) requires no training but increases inference cost; embedding injection methods extract task embeddings from ICL activations and inject them at inference time.
 
 **Limitations of Prior Work**: ICL-driven embedding injection is conceptually appealing but in practice fails to demonstrate consistent advantages over PEFT or ICL. Existing methods (e.g., FV, TV, MTV, I2CL) rely on heuristic rules or restricted search spaces to determine extraction and injection locations, and are mostly evaluated only on simple classification tasks.
 
-**Root Cause**: Task-relevant information is distributed unevenly across attention heads and varies across tasks — randomly patching heads leads to severe performance fluctuations, yet existing methods lack an efficient head selection mechanism.
+**Key Challenge**: Task-relevant information is distributed unevenly across attention heads and varies across tasks — randomly patching heads leads to severe performance fluctuations, yet existing methods lack an efficient head selection mechanism.
 
-**Paper Goals**: To develop an ICL-driven embedding injection method that approaches PEFT performance with far fewer parameters while substantially surpassing ICL.
+**Goal**: To develop an ICL-driven embedding injection method that approaches PEFT performance with far fewer parameters while substantially surpassing ICL.
 
-**Starting Point**: Formalize attention head selection as a continuous optimization problem, learning per-head importance parameters via gradient descent (soft selection) to efficiently identify injection locations for task embeddings.
+**Key Insight**: Formalize attention head selection as a continuous optimization problem, learning per-head importance parameters via gradient descent (soft selection) to efficiently identify injection locations for task embeddings.
 
 **Core Idea**: Learnable soft selection parameters linearly interpolate between original activations and task embeddings, optimizing only $L \times H$ scalar parameters (~1K) to precisely identify task-relevant heads and perform efficient injection.
 

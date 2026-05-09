@@ -27,15 +27,15 @@ content_hash: f526b4269ed3ab27
 This paper proposes EPO (Energy Preference Optimization), which combines reverse SDE sampling with listwise energy-ranked preference optimization to align a pretrained protein generator with the target Boltzmann distribution using only energy signals. EPO achieves state-of-the-art performance across 9 metrics on three benchmarks (Tetrapeptides, ATLAS, and Fast-Folding), entirely eliminating the need for expensive molecular dynamics (MD) simulations.
 
 ## Background & Motivation
-**State of the Field**: Protein function depends on conformational ensembles rather than single static structures, and understanding these ensembles is critical for drug design. Traditional approaches rely on computationally expensive MD simulations to generate conformations.
+**Background**: Protein function depends on conformational ensembles rather than single static structures, and understanding these ensembles is critical for drug design. Traditional approaches rely on computationally expensive MD simulations to generate conformations.
 
 **Limitations of Prior Work**: (a) MD simulations are prohibitively costly, requiring days to weeks per protein; (b) pretrained generative models can produce conformations but do not follow the Boltzmann distribution; (c) pairwise DPO-based preference optimization tends to neglect high-energy yet functionally important metastable states.
 
-**Root Cause**: Generating diverse and physically realistic conformational ensembles is hampered by (a) the prohibitive cost of MD, (b) the thermodynamic inconsistency of generative models, and (c) the diversity-degrading effect of pairwise optimization.
+**Key Challenge**: Generating diverse and physically realistic conformational ensembles is hampered by (a) the prohibitive cost of MD, (b) the thermodynamic inconsistency of generative models, and (c) the diversity-degrading effect of pairwise optimization.
 
-**Paper Goals**: Align a generative model to produce physically realistic and diverse protein conformational ensembles using only energy signals, without any MD trajectories.
+**Goal**: Align a generative model to produce physically realistic and diverse protein conformational ensembles using only energy signals, without any MD trajectories.
 
-**Starting Point**: (1) Converting ODE to SDE sampling introduces stochasticity to escape local minima; (2) listwise ranking replaces pairwise comparison to preserve ensemble diversity; (3) Jensen's inequality enables derivation of a tractable upper bound.
+**Key Insight**: (1) Converting ODE to SDE sampling introduces stochasticity to escape local minima; (2) listwise ranking replaces pairwise comparison to preserve ensemble diversity; (3) Jensen's inequality enables derivation of a tractable upper bound.
 
 **Core Idea**: Listwise energy-ranked preference optimization combined with SDE stochasticity yields diverse and physically realistic conformational ensembles without MD simulations.
 

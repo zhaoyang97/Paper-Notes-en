@@ -28,11 +28,11 @@ By combining perturbation theory with PINNs, this work decomposes nonlinear PDEs
 
 ## Background & Motivation
 
-**State of the Field**: PINNs solve PDEs by embedding physical laws into neural networks, but each new instance typically requires retraining from scratch.
+**Background**: PINNs solve PDEs by embedding physical laws into neural networks, but each new instance typically requires retraining from scratch.
 
 **Limitations of Prior Work**: Although strategies such as Multi-Head PINNs enable shared computation across multiple instances, their generalization to nonlinear PDEs remains limited, and cross-instance transfer still requires iterative optimization.
 
-**Paper Goals**: Extend one-shot transfer learning for nonlinear PDEs from ODEs to PDEs.
+**Goal**: Extend one-shot transfer learning for nonlinear PDEs from ODEs to PDEs.
 
 **Core Idea**: Treat the nonlinear term $\epsilon P(u)$ as a perturbation, expand in powers of $\epsilon$ to obtain a sequence of linear subproblems, and exploit a shared latent-space representation to enable closed-form transfer.
 

@@ -29,16 +29,16 @@ This paper proposes RetinexEVSR, the first event-driven low-light video super-re
 
 ## Background & Motivation
 
-**State of the Field**: Video super-resolution (VSR) has achieved strong results under normal lighting conditions. However, VSR under low-light conditions (e.g., nighttime surveillance, night photography) faces severe challenges, including high noise, low contrast, and significant loss of texture detail in input frames.
+**Background**: Video super-resolution (VSR) has achieved strong results under normal lighting conditions. However, VSR under low-light conditions (e.g., nighttime surveillance, night photography) faces severe challenges, including high noise, low contrast, and significant loss of texture detail in input frames.
 
 **Limitations of Prior Work**:
 (1) **Cascaded strategies fail**—enhance-then-super-resolve propagates and amplifies pixel errors; super-resolve-then-enhance amplifies noise and weakens textures;
 (2) **Single-stage methods are insufficient**—directly learning a mapping from low-light LR to normal-light HR (e.g., DP3DF) still produces severe artifacts, structural distortion, and inaccurate illumination;
 (3) **Event signal fusion is difficult**—under low light, both RGB frames and event data are severely degraded (noise, temporal trailing, spatially non-stationary distributions), and direct fusion introduces artifacts.
 
-**Root Cause**: Event cameras provide high dynamic range (120 dB) and high-frequency edge information, making them an ideal complementary source under low-light conditions. However, effectively extracting and fusing useful information when both modalities are degraded remains a core challenge.
+**Key Challenge**: Event cameras provide high dynamic range (120 dB) and high-frequency edge information, making them an ideal complementary source under low-light conditions. However, effectively extracting and fusing useful information when both modalities are degraded remains a core challenge.
 
-**Starting Point**: By leveraging Retinex decomposition (illumination + reflectance), the method uses the smooth, low-noise illumination map to guide event denoising, and then uses the enhanced event features to recover reflectance details, forming a mutually beneficial bidirectional fusion strategy.
+**Key Insight**: By leveraging Retinex decomposition (illumination + reflectance), the method uses the smooth, low-noise illumination map to guide event denoising, and then uses the enhanced event features to recover reflectance details, forming a mutually beneficial bidirectional fusion strategy.
 
 ## Method
 

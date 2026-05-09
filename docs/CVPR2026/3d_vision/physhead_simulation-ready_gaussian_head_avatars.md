@@ -28,15 +28,15 @@ This paper proposes PhysHead—the first method to integrate physics-driven hair
 
 ## Background & Motivation
 
-**State of the Field**: Existing data-driven animatable head avatar methods (e.g., GA, GHA) achieve high-quality rendering but universally treat hair as a rigid shell attached to the head—hair does not move naturally when the head turns. Recent work has begun to separate hair from the head (DELTA, MeGA), yet hair remains static. A concurrent work (HairCUP) supports compositional decomposition but uses unstructured Gaussians that are incompatible with physics simulation.
+**Background**: Existing data-driven animatable head avatar methods (e.g., GA, GHA) achieve high-quality rendering but universally treat hair as a rigid shell attached to the head—hair does not move naturally when the head turns. Recent work has begun to separate hair from the head (DELTA, MeGA), yet hair remains static. A concurrent work (HairCUP) supports compositional decomposition but uses unstructured Gaussians that are incompatible with physics simulation.
 
 **Limitations of Prior Work**: (1) In most avatar methods, hair behaves as a rigid body, precluding simulation of dynamic effects such as wind or head shaking. (2) Data-driven hair dynamics methods that learn dynamics from observations cannot generalize to unseen dynamic scenarios—capturing all possible hair motions is infeasible. (3) Strand-level representations used in film and games support physics engine simulation but typically focus only on geometry, with appearance crafted manually by artists and lacking photorealistic expressions.
 
-**Root Cause**: Two requirements must be satisfied simultaneously—(1) photorealistic facial avatars driven by a 3DMM, and (2) strand-level hair representations compatible with physics engines for dynamic hair. No existing method satisfies both.
+**Key Challenge**: Two requirements must be satisfied simultaneously—(1) photorealistic facial avatars driven by a 3DMM, and (2) strand-level hair representations compatible with physics engines for dynamic hair. No existing method satisfies both.
 
-**Paper Goals**: Construct a head avatar with parametric facial control (expression + head pose) and photorealistic hair animation driven by a physics engine.
+**Goal**: Construct a head avatar with parametric facial control (expression + head pose) and photorealistic hair animation driven by a physics engine.
 
-**Starting Point**: A layered representation—FLAME + 3DGS for the face and strands + 3DGS for the hair—where the two layers are modeled separately and coupled dynamically through a physics engine.
+**Key Insight**: A layered representation—FLAME + 3DGS for the face and strands + 3DGS for the hair—where the two layers are modeled separately and coupled dynamically through a physics engine.
 
 **Core Idea**: Build a simulatable head avatar using a layered 3DGS representation (FLAME facial layer + strand-based hair layer), and propose VLM-assisted bald image generation along with a color consistency regularization to address occlusion challenges in layered optimization.
 

@@ -30,21 +30,21 @@ Caches long token sequences via suffix trees and achieves 5.3× speedup through 
 
 ### State of the Field
 
-**State of the Field**: Speculative decoding has become a standard technique for reducing LLM inference latency, with draft model + verifier pipelines widely adopted.
+**Background**: Speculative decoding has become a standard technique for reducing LLM inference latency, with draft model + verifier pipelines widely adopted.
 
 **Limitations of Prior Work**:
 
 ### Root Cause
 
-**Root Cause**: Conventional speculative decoding is optimized for diverse requests, whereas agent workloads involve **repetitive inference** (multi-agent pipelines, self-refinement loops).
+**Key Challenge**: Conventional speculative decoding is optimized for diverse requests, whereas agent workloads involve **repetitive inference** (multi-agent pipelines, self-refinement loops).
 
 ### Mechanism
 
 **Mechanism**: Draft models must learn diverse task distributions and struggle to capture the repetitive nature of agent scenarios.
 
-**Root Cause**: Agent inference contains abundant long token sequences amenable to caching, which existing methods fail to exploit sufficiently.
+**Key Challenge**: Agent inference contains abundant long token sequences amenable to caching, which existing methods fail to exploit sufficiently.
 
-**Starting Point**: Rather than training a draft model, use suffix trees to exactly match historical sequences and adaptively determine speculation length.
+**Key Insight**: Rather than training a draft model, use suffix trees to exactly match historical sequences and adaptively determine speculation length.
 
 **Core Idea**: A suffix tree caches long token sequences from prompts and prior outputs, enabling training-free, extreme speculation.
 

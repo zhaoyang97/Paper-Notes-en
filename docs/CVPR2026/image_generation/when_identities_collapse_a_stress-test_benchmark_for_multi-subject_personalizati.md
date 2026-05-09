@@ -29,11 +29,11 @@ This paper exposes the "identity collapse" bottleneck in multi-subject personali
 
 ## Background & Motivation
 
-1. **State of the Field**: Multi-subject personalization requires diffusion models to simultaneously generate multiple user-specified individuals (persons/animals) in a single image. SOTA methods such as MOSAIC, XVerse, and PSR claim to support multi-subject generation.
+1. **Background**: Multi-subject personalization requires diffusion models to simultaneously generate multiple user-specified individuals (persons/animals) in a single image. SOTA methods such as MOSAIC, XVerse, and PSR claim to support multi-subject generation.
 2. **Limitations of Prior Work**: (1) As the number of subjects increases, generated individuals "collapse" into a shared appearance, losing their distinct identity features; (2) the standard metric CLIP-I is insensitive to identity collapse—it maintains high values even when all subjects converge to the same person; (3) there is no systematic stress-test benchmark for multi-subject generation.
-3. **Root Cause**: A substantial gap exists between models' claimed capabilities ("supports multi-subject") and their actual performance, a gap concealed by the lack of appropriate metrics.
-4. **Paper Goals**: (1) Design a metric that accurately quantifies identity collapse; (2) construct a systematic multi-subject stress-test benchmark; (3) quantify the true capability boundaries of existing SOTA methods.
-5. **Starting Point**: CLIP is a language–vision alignment model that excels at semantic matching but is insensitive to fine-grained structural differences (e.g., facial distinctions between two individuals); DINOv2 is a self-supervised visual model that captures finer structural correspondences.
+3. **Key Challenge**: A substantial gap exists between models' claimed capabilities ("supports multi-subject") and their actual performance, a gap concealed by the lack of appropriate metrics.
+4. **Goal**: (1) Design a metric that accurately quantifies identity collapse; (2) construct a systematic multi-subject stress-test benchmark; (3) quantify the true capability boundaries of existing SOTA methods.
+5. **Key Insight**: CLIP is a language–vision alignment model that excels at semantic matching but is insensitive to fine-grained structural differences (e.g., facial distinctions between two individuals); DINOv2 is a self-supervised visual model that captures finer structural correspondences.
 6. **Core Idea**: Replace CLIP with DINOv2 for identity similarity measurement and define a thresholded SCR metric to quantify per-subject collapse rate.
 
 ## Method

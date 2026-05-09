@@ -27,16 +27,16 @@ content_hash: 4448b06b7114ed7e
 This paper proves that, under KL-regularized RLHF, directly applying greedy sampling based on empirical estimates—without constructing optimistic or pessimistic confidence sets—achieves $O(\log T)$ regret in the online setting and $O(\varepsilon^{-1})$ sample complexity in the offline setting. These are the first results of such order under general preference models.
 
 ## Background & Motivation
-**State of the Field**: RLHF is a critical technique for post-training of LLMs. Theoretical analysis focuses on two core questions: regret bounds in the online setting and sample complexity in the offline setting. Prior work has established $O(\log T)$ regret and $O(\varepsilon^{-1})$ sample complexity under KL-regularized objectives, but these results either assume direct reward observations or are restricted to the Bradley-Terry preference model.
+**Background**: RLHF is a critical technique for post-training of LLMs. Theoretical analysis focuses on two core questions: regret bounds in the online setting and sample complexity in the offline setting. Prior work has established $O(\log T)$ regret and $O(\varepsilon^{-1})$ sample complexity under KL-regularized objectives, but these results either assume direct reward observations or are restricted to the Bradley-Terry preference model.
 
 **Limitations of Prior Work**:
    - Theoretical guarantees for general preference models (without assuming an underlying reward function) remain at $O(\sqrt{T})$ regret and $O(\varepsilon^{-2})$ sample complexity.
    - Existing algorithms follow the optimism or pessimism principle—requiring construction of confidence bounds, which is computationally expensive and difficult in general settings.
    - The structural properties induced by KL regularization have not been adequately exploited in algorithm design.
 
-**Root Cause**: In classical RL and contextual bandits (CB), using empirical estimates directly without optimistic or pessimistic corrections is known to fail—greedy policies lead to insufficient exploration and suboptimal convergence. The key question is whether KL regularization in RLHF fundamentally changes this picture.
+**Key Challenge**: In classical RL and contextual bandits (CB), using empirical estimates directly without optimistic or pessimistic corrections is known to fail—greedy policies lead to insufficient exploration and suboptimal convergence. The key question is whether KL regularization in RLHF fundamentally changes this picture.
 
-**Starting Point**: The paper identifies a previously overlooked structural property of the optimal policy class under KL-regularized objectives: the likelihood ratio between any candidate optimal policy and the reference policy is bounded, i.e., $\pi_f(a|x)/\pi_0(a|x) \in [\exp(-\eta), \exp(\eta)]$. This implies that the optimal policy must be stochastic and cannot deviate too far from the reference policy, thereby naturally providing sufficient exploration.
+**Key Insight**: The paper identifies a previously overlooked structural property of the optimal policy class under KL-regularized objectives: the likelihood ratio between any candidate optimal policy and the reference policy is bounded, i.e., $\pi_f(a|x)/\pi_0(a|x) \in [\exp(-\eta), \exp(\eta)]$. This implies that the optimal policy must be stochastic and cannot deviate too far from the reference policy, thereby naturally providing sufficient exploration.
 
 **Core Idea**: KL regularization endows the optimal policy with built-in exploration—no deliberate optimistic or pessimistic corrections are needed; greedy sampling alone suffices.
 

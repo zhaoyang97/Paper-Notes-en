@@ -29,15 +29,15 @@ This paper proposes leveraging the latent features of a 3D foundation generative
 
 ## Background & Motivation
 
-**State of the Field**: Orbital video generation—synthesizing videos from an object image and a camera trajectory—has attracted considerable attention. Existing methods primarily rely on pixel-level attention to ensure multi-view consistency.
+**Background**: Orbital video generation—synthesizing videos from an object image and a camera trajectory—has attracted considerable attention. Existing methods primarily rely on pixel-level attention to ensure multi-view consistency.
 
 **Limitations of Prior Work**: Pixel-level attention fails to establish effective pixel correspondences under large viewpoint changes (e.g., front-to-back views), leading to distortions and unnatural structures. Some methods introduce 2D foundation models (e.g., monocular depth maps) as geometric conditions, but such 2.5D priors cannot model complete object geometry and remain insufficient for unobserved or occluded regions.
 
-**Root Cause**: Video diffusion models lack 3D world knowledge; pixel-level attention or 2.5D priors alone cannot guarantee geometric realism under large viewpoint variations.
+**Key Challenge**: Video diffusion models lack 3D world knowledge; pixel-level attention or 2.5D priors alone cannot guarantee geometric realism under large viewpoint variations.
 
-**Paper Goals**: To exploit the ability of 3D foundation models to encode complete object geometry, providing effective 3D shape constraints for video generation.
+**Goal**: To exploit the ability of 3D foundation models to encode complete object geometry, providing effective 3D shape constraints for video generation.
 
-**Starting Point**: The latent features of a 3D foundation model can serve as effective 3D shape priors, simultaneously offering auxiliary constraints and enhancing view consistency.
+**Key Insight**: The latent features of a 3D foundation model can serve as effective 3D shape priors, simultaneously offering auxiliary constraints and enhancing view consistency.
 
 **Core Idea**: Extract two-scale latent features from the 3D foundation model—a global shape vector and view-dependent latent images—and inject them into the video diffusion model via a multi-scale adapter.
 

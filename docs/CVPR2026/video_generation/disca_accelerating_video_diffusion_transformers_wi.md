@@ -29,15 +29,15 @@ DisCa is the first framework to unify learnable feature caching with step distil
 
 ## Background & Motivation
 
-**State of the Field**: Video diffusion models (e.g., HunyuanVideo) have reached state-of-the-art generation quality, but inference is extremely slow — generating a 5-second 704×704 video with HunyuanVideo requires 1,155 seconds under 50-step CFG inference. Two main acceleration paradigms exist: **step distillation** (e.g., MeanFlow), which reduces the number of sampling steps, and **feature caching** (e.g., TaylorSeer, TeaCache), which skips redundant computations.
+**Background**: Video diffusion models (e.g., HunyuanVideo) have reached state-of-the-art generation quality, but inference is extremely slow — generating a 5-second 704×704 video with HunyuanVideo requires 1,155 seconds under 50-step CFG inference. Two main acceleration paradigms exist: **step distillation** (e.g., MeanFlow), which reduces the number of sampling steps, and **feature caching** (e.g., TaylorSeer, TeaCache), which skips redundant computations.
 
 **Limitations of Prior Work**: For step distillation, MeanFlow performs well on image generation but fails when directly applied to large-scale video DiTs — numerical errors in JVP computation, compounded by its aggressive one-step generation objective, cause training divergence and severe artifacts, with semantic scores dropping by 17.1% at 10-step MeanFlow. For feature caching, conventional methods exploit inter-step feature similarity via reuse or Taylor expansion, but distilled sparse sampling trajectories drastically increase inter-step feature discrepancy, rendering naive hand-crafted strategies ineffective — TaylorSeer suffers a 13.3% semantic score drop at high speedup ratios.
 
-**Root Cause**: The two acceleration paradigms are inherently incompatible — the sparse trajectories produced by distillation violate the inter-step redundancy assumptions that caching methods rely upon, making naive combination worse than either approach alone.
+**Key Challenge**: The two acceleration paradigms are inherently incompatible — the sparse trajectories produced by distillation violate the inter-step redundancy assumptions that caching methods rely upon, making naive combination worse than either approach alone.
 
-**Paper Goals**: To make step distillation and feature caching genuinely compatible and complementary, achieving extreme acceleration on large-scale video DiTs without sacrificing quality.
+**Goal**: To make step distillation and feature caching genuinely compatible and complementary, achieving extreme acceleration on large-scale video DiTs without sacrificing quality.
 
-**Starting Point**: Replace hand-crafted caching formulas with learnable neural predictors to capture high-dimensional feature dynamics; simultaneously stabilize distillation by restricting the compression range of MeanFlow.
+**Key Insight**: Replace hand-crafted caching formulas with learnable neural predictors to capture high-dimensional feature dynamics; simultaneously stabilize distillation by restricting the compression range of MeanFlow.
 
 **Core Idea**: Although feature dynamics on distilled trajectories exceed the modeling capacity of hand-crafted methods such as Taylor expansion, lightweight neural networks can still accurately learn these high-dimensional evolution patterns.
 

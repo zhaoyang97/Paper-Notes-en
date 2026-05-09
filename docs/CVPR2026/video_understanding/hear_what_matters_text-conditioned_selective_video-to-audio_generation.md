@@ -29,15 +29,15 @@ SelVA introduces the text-conditioned selective video-to-audio (V2A) generation 
 
 ## Background & Motivation
 
-1. **State of the Field**: V2A generation has achieved notable progress; models such as MMAudio and ReWaS can generate temporally synchronized audio from video content. Existing methods typically produce a holistic audio track containing all sound sources simultaneously.
+1. **Background**: V2A generation has achieved notable progress; models such as MMAudio and ReWaS can generate temporally synchronized audio from video content. Existing methods typically produce a holistic audio track containing all sound sources simultaneously.
 
 2. **Limitations of Prior Work**: In professional audio production (Foley), sound designers need to record each sound source independently and mix them separately. However, existing V2A models can only generate a single mixed audio track; even minor adjustments to one sound require re-synthesizing the entire audio, severely limiting practical usability.
 
-3. **Root Cause**: Existing methods rely on frozen visual encoders that extract features encompassing all objects in the video, including information irrelevant to the target sound. Consequently, the generator cannot selectively produce only the target sound. Text is used merely as auxiliary semantic context rather than as an explicit sound-source selector.
+3. **Key Challenge**: Existing methods rely on frozen visual encoders that extract features encompassing all objects in the video, including information irrelevant to the target sound. Consequently, the generator cannot selectively produce only the target sound. Text is used merely as auxiliary semantic context rather than as an explicit sound-source selector.
 
-4. **Paper Goals**: (1) How can text serve as an explicit selector to extract visual features relevant solely to the target sound from multi-source videos? (2) How can selective generation capability be trained without single-source annotated data? (3) How can an efficient video encoder fine-tuning strategy be designed to avoid spurious correlations in the attention mechanism?
+4. **Goal**: (1) How can text serve as an explicit selector to extract visual features relevant solely to the target sound from multi-source videos? (2) How can selective generation capability be trained without single-source annotated data? (3) How can an efficient video encoder fine-tuning strategy be designed to avoid spurious correlations in the attention mechanism?
 
-5. **Starting Point**: Inspired by the human auditory selective attention mechanism—humans can focus on a specific sound source in noisy environments—the model should similarly focus on specific sound sources in video guided by text. The authors also observe the high-norm artifact problem in ViT (attention concentrating on irrelevant tokens) and propose absorbing these spurious attention weights with additional tokens.
+5. **Key Insight**: Inspired by the human auditory selective attention mechanism—humans can focus on a specific sound source in noisy environments—the model should similarly focus on specific sound sources in video guided by text. The authors also observe the high-norm artifact problem in ViT (attention concentrating on irrelevant tokens) and propose absorbing these spurious attention weights with additional tokens.
 
 6. **Core Idea**: Reposition text prompts as explicit modulators of video features; suppress irrelevant visual activations via learnable [SUP] tokens; and achieve annotation-free selective audio generation through a self-supervised video mixing strategy.
 

@@ -29,15 +29,15 @@ This paper proposes Q3C (Q-learning for Continuous Control with Control-points),
 
 ## Background & Motivation
 
-**State of the Field**: Continuous-action RL conventionally relies on actor-critic methods (e.g., DDPG, TD3, SAC), in which a critic estimates Q-values and an actor searches for the optimal action via gradient ascent over the Q landscape. Pure value-based methods (e.g., DQN) excel in discrete spaces but are generally considered inapplicable to continuous control because exhaustive enumeration of actions is infeasible.
+**Background**: Continuous-action RL conventionally relies on actor-critic methods (e.g., DDPG, TD3, SAC), in which a critic estimates Q-values and an actor searches for the optimal action via gradient ascent over the Q landscape. Pure value-based methods (e.g., DQN) excel in discrete spaces but are generally considered inapplicable to continuous control because exhaustive enumeration of actions is infeasible.
 
 **Limitations of Prior Work**: Actor-critic methods suffer from fundamental issues: (1) coupled training of the actor and critic leads to instability; (2) gradient ascent only finds locally optimal actions and fails when the Q-function is non-convex (e.g., in constrained action spaces); (3) the additional actor network introduces extra hyperparameters and computational overhead. Earlier actor-free attempts—such as NAF, which restricts Q to a quadratic form, and RBF-DQN, which uses radial basis functions—either lack expressive power or cannot guarantee that the maximum is attained at the basis points.
 
-**Root Cause**: The fundamental difficulty in continuous Q-learning is the $\max_a Q(s,a)$ operation in the Bellman equation, which admits no exact solution in continuous spaces. The actor is an approximation scheme that introduces its own pathologies. What is needed is a Q-function representation for which the maximization can be performed exactly and efficiently.
+**Key Challenge**: The fundamental difficulty in continuous Q-learning is the $\max_a Q(s,a)$ operation in the Bellman equation, which admits no exact solution in continuous spaces. The actor is an approximation scheme that introduces its own pathologies. What is needed is a Q-function representation for which the maximization can be performed exactly and efficiently.
 
-**Paper Goals**: Design a structurally maximizable Q-function representation that enables exact identification of the optimal action in continuous spaces without an actor.
+**Goal**: Design a structurally maximizable Q-function representation that enables exact identification of the optimal action in continuous spaces without an actor.
 
-**Starting Point**: The paper revisits the wire-fitting framework—anchoring the Q-function approximation with a set of control points so that the global maximum structurally coincides with one of them. This direction was largely abandoned after yielding poor results in early deep RL, but the authors show that combining it with modern deep RL techniques revitalizes its performance.
+**Key Insight**: The paper revisits the wire-fitting framework—anchoring the Q-function approximation with a set of control points so that the global maximum structurally coincides with one of them. This direction was largely abandoned after yielding poor results in early deep RL, but the authors show that combining it with modern deep RL techniques revitalizes its performance.
 
 **Core Idea**: Construct a structurally maximizable Q-function via control-point interpolation, augmented with a series of architectural and algorithmic innovations that bring it to state-of-the-art performance in deep RL.
 

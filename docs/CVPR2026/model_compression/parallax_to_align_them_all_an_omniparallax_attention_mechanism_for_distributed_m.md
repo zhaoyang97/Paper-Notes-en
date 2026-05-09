@@ -29,15 +29,15 @@ This paper proposes the OmniParallax Attention Mechanism (OPAM) for Distributed 
 
 ## Background & Motivation
 
-**State of the Field**: Multi-view image compression (MIC) exploits inter-view redundancy to improve compression efficiency and is widely used in autonomous driving, VR, and related domains. Distributed MIC (DMIC) follows distributed source coding theory, where each view is encoded independently and decoded jointly, without requiring cross-view information at the encoder.
+**Background**: Multi-view image compression (MIC) exploits inter-view redundancy to improve compression efficiency and is widely used in autonomous driving, VR, and related domains. Distributed MIC (DMIC) follows distributed source coding theory, where each view is encoded independently and decoded jointly, without requiring cross-view information at the encoder.
 
 **Limitations of Prior Work**: LDMIC, the first end-to-end DMIC framework, fuses multi-view features via average pooling, treating all views equally. This ignores the varying degrees of correlation among views—when reconstructing a floor region, views where the floor is visible and unoccluded should be prioritized over views where it is blocked by pedestrians.
 
-**Root Cause**: How to accurately measure and exploit semantic correlations among multiple information sources to achieve adaptive feature fusion rather than naive averaging.
+**Key Challenge**: How to accurately measure and exploit semantic correlations among multiple information sources to achieve adaptive feature fusion rather than naive averaging.
 
-**Paper Goals**: (1) Efficiently capture inter-view correlations over the full 2D spatial context; (2) adaptively fuse multi-view features according to their correlations; (3) jointly leverage cross-view information in both the joint decoder and the entropy model.
+**Goal**: (1) Efficiently capture inter-view correlations over the full 2D spatial context; (2) adaptively fuse multi-view features according to their correlations; (3) jointly leverage cross-view information in both the joint decoder and the entropy model.
 
-**Starting Point**: Drawing from parallax attention in stereo matching (PAM), which computes attention only along horizontal epipolar lines, the authors generalize it to the full 2D spatial domain via a two-stage horizontal-then-vertical process for complete 2D context modeling.
+**Key Insight**: Drawing from parallax attention in stereo matching (PAM), which computes attention only along horizontal epipolar lines, the authors generalize it to the full 2D spatial domain via a two-stage horizontal-then-vertical process for complete 2D context modeling.
 
 **Core Idea**: A two-stage horizontal + vertical parallax attention achieves full 2D cross-view feature alignment and correlation measurement at $O(N^3)$ complexity, serving both joint decoding and entropy modeling.
 

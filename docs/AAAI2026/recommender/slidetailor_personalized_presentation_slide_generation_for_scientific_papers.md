@@ -29,14 +29,14 @@ This paper defines a new task of preference-guided paper-to-slide generation and
 
 ## Background & Motivation
 
-**State of the Field**: Automatic presentation generation is an active research area. Existing methods (DOC2PPT, PPTAgent) have begun integrating textual and visual elements for multimodal presentation generation with notable progress.
+**Background**: Automatic presentation generation is an active research area. Existing methods (DOC2PPT, PPTAgent) have begun integrating textual and visual elements for multimodal presentation generation with notable progress.
 
 **Limitations of Prior Work**:
 (1) **Neglect of user subjectivity** — existing methods treat slide generation as a straightforward document-to-slide conversion, failing to accommodate individual users' preferences regarding narrative structure, content emphasis, and visual style;
 (2) **Difficulty in expressing preferences** — requiring users to describe preferences in detail is unnatural and burdensome; Persona-Aware-D2S supports only four fixed preference categories, which cannot cover the diversity of real-world needs;
 (3) **Disconnect between content and delivery** — existing methods do not consider alignment between slide content and spoken narration, making generated slides difficult to use directly in presentations.
 
-**Starting Point**: Users need only provide one paper–slide example pair (encoding content preferences) and one .pptx template (encoding aesthetic preferences); the system automatically distills implicit preferences and generates personalized slides.
+**Key Insight**: Users need only provide one paper–slide example pair (encoding content preferences) and one .pptx template (encoding aesthetic preferences); the system automatically distills implicit preferences and generates personalized slides.
 
 ## Method
 

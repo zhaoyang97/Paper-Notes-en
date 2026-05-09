@@ -26,15 +26,15 @@ content_hash: 88a7f02a3929b141
 This paper proposes the Probabilistic Scenarios paradigm, in which a model directly outputs a finite set of {scenario, probability} pairs in place of sampling, and introduces TimePrism — a model consisting of only three parallel linear layers — that achieves 9/10 SOTA results across 5 benchmark datasets.
 
 ## Background & Motivation
-**State of the Field**: Probabilistic time series forecasting is fundamental to decision-making under uncertainty. Mainstream approaches include parametric distribution models, generative models (e.g., diffusion), and structured probabilistic models (flows/copulas), all of which rely on sampling to represent the predictive distribution.
+**Background**: Probabilistic time series forecasting is fundamental to decision-making under uncertainty. Mainstream approaches include parametric distribution models, generative models (e.g., diffusion), and structured probabilistic models (flows/copulas), all of which rely on sampling to represent the predictive distribution.
 
 **Limitations of Prior Work**: The sampling paradigm suffers from three inherent drawbacks: (i) **absence of probabilities** — generated trajectories carry no associated probability values; (ii) **insufficient coverage** — a limited number of samples fails to capture low-probability, high-impact tail events; (iii) **inference overhead** — the computational cost of generating multiple samples grows linearly with sample count.
 
-**Root Cause**: High-quality probabilistic forecasting requires a large number of samples to adequately approximate the distribution, yet large-scale sampling is computationally prohibitive and does not provide explicit probabilities.
+**Key Challenge**: High-quality probabilistic forecasting requires a large number of samples to adequately approximate the distribution, yet large-scale sampling is computationally prohibitive and does not provide explicit probabilities.
 
-**Paper Goals**: To design a probabilistic forecasting paradigm that does not rely on sampling and can output a complete discrete probability distribution in a single forward pass.
+**Goal**: To design a probabilistic forecasting paradigm that does not rely on sampling and can output a complete discrete probability distribution in a single forward pass.
 
-**Starting Point**: Reformulate the learning objective from "approximating a continuous probability space" to "learning a probability distribution over a finite set of scenarios" — conceptually analogous to VQ-VAE but applied directly to the output trajectory space.
+**Key Insight**: Reformulate the learning objective from "approximating a continuous probability space" to "learning a probability distribution over a finite set of scenarios" — conceptually analogous to VQ-VAE but applied directly to the output trajectory space.
 
 **Core Idea**: A simple linear model directly generates $N$ future scenarios together with their associated probabilities, entirely bypassing sampling.
 

@@ -29,15 +29,15 @@ This paper proposes MAMAMemeia, a multi-agent multi-aspect collaborative discuss
 
 ## Background & Motivation
 
-**State of the Field**: Memes have evolved from purely humorous media into a vehicle through which users express a wide range of emotions, including depressive affect. The growing prevalence of depression-themed memes on social media presents a novel data source for mental health monitoring.
+**Background**: Memes have evolved from purely humorous media into a vehicle through which users express a wide range of emotions, including depressive affect. The growing prevalence of depression-themed memes on social media presents a novel data source for mental health monitoring.
 
 **Limitations of Prior Work**: (1) Memes are multimodal (image + text) and frequently employ rhetorical devices such as metaphor and irony, making it difficult for single models to grasp their deeper meaning. (2) Identifying depressive symptoms requires specialized psychological knowledge, as different memes may imply distinct symptoms (e.g., hopelessness, social withdrawal, self-deprecation). (3) Existing methods lack interpretability—black-box classification cannot inform clinicians *why* a meme is deemed to express depression.
 
-**Root Cause**: A fundamental gap exists between the implicit expressive nature of memes and the professional precision required for depressive symptom identification.
+**Key Challenge**: A fundamental gap exists between the implicit expressive nature of memes and the professional precision required for depressive symptom identification.
 
-**Paper Goals**: (1) Construct an interpretable depressive symptom detection framework; (2) integrate clinical psychology knowledge to guide analysis; (3) provide an annotated rationale resource for the community.
+**Goal**: (1) Construct an interpretable depressive symptom detection framework; (2) integrate clinical psychology knowledge to guide analysis; (3) provide an annotated rationale resource for the community.
 
-**Starting Point**: Drawing on the clinical methodology of Cognitive Analytic Therapy (CAT), different psychological analysis dimensions are assigned to distinct LLM agents, which reach a comprehensive judgment through multi-agent discussion.
+**Key Insight**: Drawing on the clinical methodology of Cognitive Analytic Therapy (CAT), different psychological analysis dimensions are assigned to distinct LLM agents, which reach a comprehensive judgment through multi-agent discussion.
 
 **Core Idea**: Multiple LLM agents each assume a distinct CAT competency role (e.g., affective analyst, cognitive assessor, behavioral observer) and collaboratively identify depressive symptoms in memes through structured discussion.
 

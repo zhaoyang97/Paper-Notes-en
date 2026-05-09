@@ -28,15 +28,15 @@ content_hash: b1defcc1392b0a9c
 By combining cluster analysis of infant rodent locomotor development with a shallow RNN predictive learning model, this work provides the first computational demonstration that developmental changes in movement statistics (crawling → walking → running → adult) drive the sequential emergence of spatially tuned hippocampal neurons (place cells, head direction cells, and conjunctive coding cells). The model quantitatively reproduces the developmental timeline observed in rat hippocampal recordings and predicts a progressive increase in conjunctive place-HD coding cells during development — a prediction subsequently validated in experimental data.
 
 ## Background & Motivation
-**State of the Field**: The hippocampus contains spatially tuned neurons including place cells, head direction (HD) cells, border cells, and grid cells. These emerge sequentially during ontogeny along a specific developmental timeline (HD cells earliest at ~P12, place cells at ~P16, grid cells at ~P20), yet the computational mechanisms driving their emergence remain unknown.
+**Background**: The hippocampus contains spatially tuned neurons including place cells, head direction (HD) cells, border cells, and grid cells. These emerge sequentially during ontogeny along a specific developmental timeline (HD cells earliest at ~P12, place cells at ~P16, grid cells at ~P20), yet the computational mechanisms driving their emergence remain unknown.
 
 **Limitations of Prior Work**: Existing models (e.g., Cueva & Wei 2018, TEM) can produce spatial representations during training, but they use constant locomotor patterns and provide spatial coordinates directly as supervisory signals, without considering the influence of real locomotor developmental statistics. Two competing hypotheses — "intrinsic circuit maturation" vs. "experience-dependent development" — have not been directly tested by any computational model.
 
-**Root Cause**: Locomotor experience is hypothesized to be critical for spatial cognition, yet no computational model has explained why the movement statistics at different developmental stages (speed, acceleration, turning frequency, etc.) cause different types of spatial neurons to emerge at specific time points.
+**Key Challenge**: Locomotor experience is hypothesized to be critical for spatial cognition, yet no computational model has explained why the movement statistics at different developmental stages (speed, acceleration, turning frequency, etc.) cause different types of spatial neurons to emerge at specific time points.
 
-**Paper Goals**: To establish a causal computational link between locomotor developmental statistics and the emergence of hippocampal spatial coding.
+**Goal**: To establish a causal computational link between locomotor developmental statistics and the emergence of hippocampal spatial coding.
 
-**Starting Point**: A data-driven approach is used to extract developmental stage statistics from real infant rodent locomotion, which then drive a predictive learning RNN, to test whether it spontaneously produces a spatial coding developmental timeline matching biological data.
+**Key Insight**: A data-driven approach is used to extract developmental stage statistics from real infant rodent locomotion, which then drive a predictive learning RNN, to test whether it spontaneously produces a spatial coding developmental timeline matching biological data.
 
 **Core Idea**: Developmental changes in the statistics of embodied sensorimotor experience are sufficient to drive the ontogeny of hippocampal spatial coding.
 

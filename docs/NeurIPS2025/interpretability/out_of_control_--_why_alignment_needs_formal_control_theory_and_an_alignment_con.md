@@ -27,19 +27,19 @@ This position paper argues for formal optimal control theory as a foundational t
 
 ## Background & Motivation
 
-**State of the Field**: Current AI alignment research encompasses methods such as RLHF, Constitutional AI, red-teaming, and mechanistic interpretability, yet most rely on empirical observation and lack mathematically formal guarantees.
+**Background**: Current AI alignment research encompasses methods such as RLHF, Constitutional AI, red-teaming, and mechanistic interpretability, yet most rely on empirical observation and lack mathematically formal guarantees.
 
 **Limitations of Prior Work**:
    - **Formalisation problem**: Alignment research—including technically oriented work—tends to be limited to empirical observations on specific models, lacking the formal proofs common in the control literature, making generalization and rigorous comparison across techniques difficult.
    - **Coordination problem**: Different alignment approaches (spanning theory, engineering, and governance) lack a clear hierarchical control taxonomy, precluding systematic analysis of interoperability and potential conflicts among control mechanisms.
 
-**Root Cause**: Alignment methods are fragmented and empirical, with no unified formal framework for organizing and proving safety properties; control measures across different layers lack systematic integration.
+**Key Challenge**: Alignment methods are fragmented and empirical, with no unified formal framework for organizing and proving safety properties; control measures across different layers lack systematic integration.
 
-**Paper Goals**:
+**Goal**:
    - Provide a hierarchical taxonomy (the Alignment Control Stack) to systematize alignment research.
    - Demonstrate how formal control theory can supplement the shortcomings of existing alignment methods.
 
-**Starting Point**: Examining AI alignment through the lens of classical control theory—a discipline with a century of success in aerospace, chemical engineering, and related fields. AI systems can likewise be treated as dynamical systems requiring measurement, estimation, and control.
+**Key Insight**: Examining AI alignment through the lens of classical control theory—a discipline with a century of success in aerospace, chemical engineering, and related fields. AI systems can likewise be treated as dynamical systems requiring measurement, estimation, and control.
 
 **Core Idea**: Organize alignment research via a layered control stack, and fill the formalization gap in alignment methods using formal optimal control theory.
 

@@ -29,15 +29,15 @@ LottieGPT is the first autoregressive vector animation generation framework, des
 
 ## Background & Motivation
 
-**State of the Field**: Video generation (Sora, Kling, etc.) can now produce high-quality raster video, but all existing generative models operate in pixel space and cannot generate vector animations—a resolution-independent, editable, and compact mainstream multimedia format.
+**Background**: Video generation (Sora, Kling, etc.) can now produce high-quality raster video, but all existing generative models operate in pixel space and cannot generate vector animations—a resolution-independent, editable, and compact mainstream multimedia format.
 
 **Limitations of Prior Work**: Vector animations (e.g., UI motion effects, brand animations, After Effects motion graphics) offer key properties unavailable in pixel video: infinite resolution, semantic manipulability, parameterized motion, and small file sizes. Existing SVG generation methods are limited to static output and lack temporal modeling capability.
 
-**Root Cause**: Vector animations contain both hierarchical structure and time-dependent transformation logic; encoding them into token sequences suitable for autoregressive modeling is the core challenge. Additionally, the absence of large-scale vector animation datasets is a major bottleneck.
+**Key Challenge**: Vector animations contain both hierarchical structure and time-dependent transformation logic; encoding them into token sequences suitable for autoregressive modeling is the core challenge. Additionally, the absence of large-scale vector animation datasets is a major bottleneck.
 
-**Paper Goals**: (1) Design a tokenizer that unifies hierarchical geometry and temporal motion encoding; (2) build a large-scale vector animation dataset; (3) train the first multimodal model for vector animation generation.
+**Goal**: (1) Design a tokenizer that unifies hierarchical geometry and temporal motion encoding; (2) build a large-scale vector animation dataset; (3) train the first multimodal model for vector animation generation.
 
-**Starting Point**: Adopt the Lottie format (a widely deployed JSON animation standard), leveraging its keyframe + easing function parameterized representation for compact encoding.
+**Key Insight**: Adopt the Lottie format (a widely deployed JSON animation standard), leveraging its keyframe + easing function parameterized representation for compact encoding.
 
 **Core Idea**: Tokenize vector animations using keyframes and interpolation functions instead of per-frame data, drastically reducing sequence length while preserving structural fidelity.
 

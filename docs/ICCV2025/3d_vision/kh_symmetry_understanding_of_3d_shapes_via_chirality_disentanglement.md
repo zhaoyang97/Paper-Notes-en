@@ -31,7 +31,7 @@ This paper proposes an unsupervised chirality feature extraction pipeline that d
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: **Symmetry and chirality are two sides of the same coin**: symmetry focuses on the similarity between two parts, while chirality focuses on their differences. In shape analysis, many vertex descriptors (e.g., Diff3F) exhibit semantic and geometric robustness but **cannot distinguish left-right symmetric parts**, leading to:
+**Key Challenge**: **Background**: **Symmetry and chirality are two sides of the same coin**: symmetry focuses on the similarity between two parts, while chirality focuses on their differences. In shape analysis, many vertex descriptors (e.g., Diff3F) exhibit semantic and geometric robustness but **cannot distinguish left-right symmetric parts**, leading to:
 
 **Left-right ambiguity in shape matching** — the left eye may be matched to the right eye
 

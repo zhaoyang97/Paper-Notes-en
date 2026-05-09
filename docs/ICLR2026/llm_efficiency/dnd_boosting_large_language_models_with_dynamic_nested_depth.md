@@ -33,9 +33,9 @@ This motivates two related research directions:
 - **Token Pruning**: Filtering out unimportant tokens to reduce computation — but this only avoids processing easy tokens.
 - **Test-Time Compute Scaling (implicit strategies)**: Applying iterative computation over hidden states to enhance reasoning — but uniformly across all tokens.
 
-**Root Cause**: Easy tokens require no additional computation, whereas critical tokens demand deeper processing. Existing methods either perform pure subtraction (pruning) or apply uniform addition (global recurrence), lacking **targeted depth gains**.
+**Key Challenge**: Easy tokens require no additional computation, whereas critical tokens demand deeper processing. Existing methods either perform pure subtraction (pruning) or apply uniform addition (global recurrence), lacking **targeted depth gains**.
 
-DND's **Starting Point** is to combine both directions: first identify difficult tokens, then allocate additional computational depth to them — a form of "review" mechanism. This represents the first effective fusion of token-level selection and implicit depth augmentation.
+DND's **Key Insight** is to combine both directions: first identify difficult tokens, then allocate additional computational depth to them — a form of "review" mechanism. This represents the first effective fusion of token-level selection and implicit depth augmentation.
 
 ## Method
 

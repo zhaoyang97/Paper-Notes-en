@@ -29,7 +29,7 @@ This paper proposes InstantHDR, the first feed-forward HDR novel view synthesis 
 
 ## Background & Motivation
 
-**State of the Field**: HDR novel view synthesis (HDR-NVS) aims to reconstruct HDR scenes from multi-exposure LDR images and render novel views at arbitrary exposures. Existing optimization-based methods (HDR-GS, GaussianHDR) already produce high-quality results.
+**Background**: HDR novel view synthesis (HDR-NVS) aims to reconstruct HDR scenes from multi-exposure LDR images and render novel views at arbitrary exposures. Existing optimization-based methods (HDR-GS, GaussianHDR) already produce high-quality results.
 
 **Limitations of Prior Work**:
 
@@ -39,11 +39,11 @@ This paper proposes InstantHDR, the first feed-forward HDR novel view synthesis 
 4. Different cameras apply different tone curves (AgX/Filmic/Standard), making it difficult to learn a unified tone mapping.
 5. Publicly available HDR datasets are extremely scarce (HDR-NeRF contains only 12 scenes), insufficient to support feed-forward model pretraining.
 
-**Root Cause**: The speed advantage of the feed-forward paradigm vs. the exposure inconsistency, CRF diversity, and data scarcity inherent to HDR scenes.
+**Key Challenge**: The speed advantage of the feed-forward paradigm vs. the exposure inconsistency, CRF diversity, and data scarcity inherent to HDR scenes.
 
-**Paper Goals**: How to rapidly reconstruct high-quality HDR 3D scenes from uncalibrated, exposure-inconsistent multi-view LDR images without per-scene optimization?
+**Goal**: How to rapidly reconstruct high-quality HDR 3D scenes from uncalibrated, exposure-inconsistent multi-view LDR images without per-scene optimization?
 
-**Starting Point**: Decouple geometry and appearance via a frozen geometry backbone and a trainable appearance branch; reuse intermediate-layer attention maps from the geometry encoder to guide cross-view fusion; employ a meta-network to predict CRF parameters for single-forward adaptation to diverse cameras.
+**Key Insight**: Decouple geometry and appearance via a frozen geometry backbone and a trainable appearance branch; reuse intermediate-layer attention maps from the geometry encoder to guide cross-view fusion; employ a meta-network to predict CRF parameters for single-forward adaptation to diverse cameras.
 
 **Core Idea**: Geometry-guided appearance modeling addresses exposure-inconsistent fusion; meta-network-predicted tone mapping enables generalization → single-forward HDR reconstruction.
 

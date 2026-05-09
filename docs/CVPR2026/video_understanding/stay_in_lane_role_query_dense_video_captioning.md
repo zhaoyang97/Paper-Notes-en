@@ -29,15 +29,15 @@ ROS-DVC introduces three complementary components for DETR-based dense video cap
 
 ## Background & Motivation
 
-**State of the Field**: Dense video captioning (DVC) requires simultaneously localizing multiple temporal event segments in a video and generating natural language descriptions for each. PDVC pioneered the use of DETR architecture in DVC, enabling end-to-end joint optimization. Subsequent methods (CM2, MCCL, E2DVC, DDVC) have built upon this foundation.
+**Background**: Dense video captioning (DVC) requires simultaneously localizing multiple temporal event segments in a video and generating natural language descriptions for each. PDVC pioneered the use of DETR architecture in DVC, enabling end-to-end joint optimization. Subsequent methods (CM2, MCCL, E2DVC, DDVC) have built upon this foundation.
 
 **Limitations of Prior Work**: DETR-based DVC employs shared learnable queries to jointly drive both localization and captioning, leading to two critical issues: (1) **Multi-task interference** — localization requires broad temporal context to predict precise boundaries, while captioning demands dense attention to semantic details of key frames; the attention distribution of shared queries becomes ambiguous (Figure 1b, top); (2) **Prediction overlap** — multiple queries capture highly overlapping temporal segments, producing redundant descriptions (Figure 1a).
 
-**Root Cause**: A fundamental conflict between the unified nature of queries and the divergent requirements of sub-tasks — a single query cannot simultaneously optimize temporal localization and semantic captioning.
+**Key Challenge**: A fundamental conflict between the unified nature of queries and the divergent requirements of sub-tasks — a single query cannot simultaneously optimize temporal localization and semantic captioning.
 
-**Paper Goals**: Enable queries to "stay in their lane" — localization queries focus on temporal boundaries while captioning queries focus on semantic content — while reducing temporal overlap among predictions.
+**Goal**: Enable queries to "stay in their lane" — localization queries focus on temporal boundaries while captioning queries focus on semantic content — while reducing temporal overlap among predictions.
 
-**Starting Point**: Intervene at both query initialization and loss function levels — physically separating query spaces, maintaining consistency via contrastive alignment, and penalizing redundancy via overlap suppression.
+**Key Insight**: Intervene at both query initialization and loss function levels — physically separating query spaces, maintaining consistency via contrastive alignment, and penalizing redundancy via overlap suppression.
 
 **Core Idea**: Split DETR queries into two independently initialized groups for localization and captioning; bridge semantic consistency between the two groups via a contrastive loss; suppress prediction overlap via IoU-based penalties.
 

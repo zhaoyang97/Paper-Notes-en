@@ -29,15 +29,15 @@ AutoVLA integrates physical action tokens directly into a pretrained VLM (Qwen2.
 
 ## Background & Motivation
 
-**State of the Field**: End-to-end autonomous driving uses a unified model to map directly from sensors to actions, avoiding the error accumulation inherent in modular pipelines. The world knowledge and reasoning capabilities of recent VLMs have made VLA models a prominent research direction; however, existing approaches face fundamental challenges in the physical feasibility of action generation and reasoning efficiency.
+**Background**: End-to-end autonomous driving uses a unified model to map directly from sensors to actions, avoiding the error accumulation inherent in modular pipelines. The world knowledge and reasoning capabilities of recent VLMs have made VLA models a prominent research direction; however, existing approaches face fundamental challenges in the physical feasibility of action generation and reasoning efficiency.
 
 **Limitations of Prior Work**: (1) **Infeasible action generation**: Some methods (EMMA, OpenEMMA) generate waypoint coordinates in text format directly from VLMs, but language models have inherent limitations in precise numerical reasoning, leading to physically infeasible trajectories or mode collapse. Intermediate representations such as meta-actions (AlphaDrive, SENNA) or latent tokens (CarLLaVa, Orion) have been introduced to address this, but at the cost of disrupting end-to-end optimization or increasing architectural complexity. (2) **Rigid reasoning strategies**: Most methods adopt a fixed reasoning depth—either always generating lengthy CoT (wasteful for straight-road scenarios, requiring 10+ seconds) or skipping reasoning entirely (poor performance in complex scenarios). DriveVLM supports dual modes but relies on two separate models.
 
-**Root Cause**: How to simultaneously achieve high-quality semantic reasoning and physically feasible trajectory planning within a single autoregressive model, while adaptively adjusting reasoning depth according to scene complexity.
+**Key Challenge**: How to simultaneously achieve high-quality semantic reasoning and physically feasible trajectory planning within a single autoregressive model, while adaptively adjusting reasoning depth according to scene complexity.
 
-**Paper Goals**: (1) Embed physically constrained trajectory planning directly into the LM token space; (2) Enable the model to automatically switch between fast thinking (~1s) and slow thinking (~10s); (3) Further align planning performance via RL in the post-training stage.
+**Goal**: (1) Embed physically constrained trajectory planning directly into the LM token space; (2) Enable the model to automatically switch between fast thinking (~1s) and slow thinking (~10s); (3) Further align planning performance via RL in the post-training stage.
 
-**Starting Point**: A codebook of 2,048 physical action tokens is constructed via K-disk clustering from real Waymo driving data, where each token corresponds to a 0.5-second feasible vehicle motion $(\Delta x, \Delta y, \Delta\theta)$, casting planning as next-token prediction.
+**Key Insight**: A codebook of 2,048 physical action tokens is constructed via K-disk clustering from real Waymo driving data, where each token corresponds to a 0.5-second feasible vehicle motion $(\Delta x, \Delta y, \Delta\theta)$, casting planning as next-token prediction.
 
 **Core Idea**: Introduce a K-disk clustering-based physical action codebook into the VLM to enable token-level generation of feasible trajectories, combined with GRPO and CoT length penalty to achieve adaptive fast/slow reasoning switching.
 

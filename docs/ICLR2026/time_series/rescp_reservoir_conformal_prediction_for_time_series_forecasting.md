@@ -28,7 +28,7 @@ This work is the first to integrate Reservoir Computing (Echo State Network) int
 
 ## Background & Motivation
 
-**State of the Field**: Conformal Prediction (CP) is a powerful framework for constructing distribution-free prediction intervals, but it requires data exchangeability—a property that is inherently violated by the temporal dependencies in time series.
+**Background**: Conformal Prediction (CP) is a powerful framework for constructing distribution-free prediction intervals, but it requires data exchangeability—a property that is inherently violated by the temporal dependencies in time series.
 
 **Limitations of Prior Work**:
 - Fixed-decay methods such as NexCP cannot adapt to local dynamics, resulting in overly conservative (wide) intervals.
@@ -36,11 +36,11 @@ This work is the first to integrate Reservoir Computing (Echo State Network) int
 - SPCI fits a quantile random forest at each step, limiting practical scalability.
 - Training-based methods (CP-QRNN, ResCQR) suffer from severe undercoverage (>10%) on small datasets such as ACEA and Exchange.
 
-**Root Cause**: Data-dependent adaptive reweighting is needed to capture local dynamics, yet training a model for this purpose is costly and fragile under distribution shift.
+**Key Challenge**: Data-dependent adaptive reweighting is needed to capture local dynamics, yet training a model for this purpose is costly and fragile under distribution shift.
 
-**Paper Goals**: Achieve local adaptivity in time series conformal prediction without introducing any training.
+**Goal**: Achieve local adaptivity in time series conformal prediction without introducing any training.
 
-**Starting Point**: Reservoir Computing (RC) with Echo State Networks (ESNs)—randomly initialized RNNs that require no training yet map input sequences into a high-dimensional state space, producing meaningful dynamic representations.
+**Key Insight**: Reservoir Computing (RC) with Echo State Networks (ESNs)—randomly initialized RNNs that require no training yet map input sequences into a high-dimensional state space, producing meaningful dynamic representations.
 
 **Core Idea**: Use similarity between ESN states as data-dependent weights for residual reweighting, effectively realizing locally adaptive conformal prediction via a "free" dynamic encoder.
 

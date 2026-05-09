@@ -28,15 +28,15 @@ A GAN-based dense bottleneck residual autoencoder (DRAE) improved upon GRD-Net a
 
 ## Background & Motivation
 
-**State of the Field**: The pharmaceutical industry requires non-destructive visual inspection of plastic vial strips in BFS (Blow-Fill-Seal) production lines, where manual visual inspection remains prevalent. Deep learning anomaly detection methods fall into two major families: reconstruction-based (AE/VAE/GAN) and embedding similarity-based (PaDiM/PatchCore/FastFlow).
+**Background**: The pharmaceutical industry requires non-destructive visual inspection of plastic vial strips in BFS (Blow-Fill-Seal) production lines, where manual visual inspection remains prevalent. Deep learning anomaly detection methods fall into two major families: reconstruction-based (AE/VAE/GAN) and embedding similarity-based (PaDiM/PatchCore/FastFlow).
 
 **Limitations of Prior Work**: (1) Manual inspection suffers from operator fatigue and attention fluctuation, making consistent throughput unattainable; (2) classical rule-based algorithms rely on hand-crafted thresholds and exhibit poor adaptability to product variability (liquid sloshing, difficulty distinguishing bubbles from defects); (3) anomalous samples are scarce and highly variable, rendering supervised learning infeasible; (4) embedding similarity methods have low inference overhead but exhibit memory requirements that scale with dataset size, along with poor interpretability.
 
-**Root Cause**: Three simultaneous industrial deployment constraints — accuracy (GMP regulations and patient safety), hardware (embedded GPU rather than data center), and timing (500 ms acquisition interval) — are difficult to satisfy concurrently.
+**Key Challenge**: Three simultaneous industrial deployment constraints — accuracy (GMP regulations and patient safety), hardware (embedded GPU rather than data center), and timing (500 ms acquisition interval) — are difficult to satisfy concurrently.
 
-**Paper Goals**: To accurately detect visual anomalies in pharmaceutical vials on embedded hardware (A4500 GPU, 32 GB RAM) within 500 ms on a high-speed production line.
+**Goal**: To accurately detect visual anomalies in pharmaceutical vials on embedded hardware (A4500 GPU, 32 GB RAM) within 500 ms on a high-speed production line.
 
-**Starting Point**: Building upon GRD-Net, the fully convolutional residual autoencoder is redesigned as a dense bottleneck architecture (DRAE), combined with Perlin noise augmentation and a multi-level aggregation strategy tailored to industrial deployment constraints.
+**Key Insight**: Building upon GRD-Net, the fully convolutional residual autoencoder is redesigned as a dense bottleneck architecture (DRAE), combined with Perlin noise augmentation and a multi-level aggregation strategy tailored to industrial deployment constraints.
 
 **Core Idea**: Extreme information compression is enforced via a 64-dimensional fully connected bottleneck, combined with Perlin noise augmentation during training, ensuring that anomalous regions cannot be faithfully reconstructed; 1-SSIM serves as the anomaly score for rapid classification.
 

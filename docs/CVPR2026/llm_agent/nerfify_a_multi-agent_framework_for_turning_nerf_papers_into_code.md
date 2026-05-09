@@ -28,15 +28,15 @@ Nerfify is proposed as a four-stage pipeline—CFG formalization with in-context
 
 ## Background & Motivation
 
-**State of the Field**: Since its publication in 2020, NeRF has spawned 1,000+ follow-up works, yet the majority lack public code or standardized implementations. General paper-to-code systems (e.g., Paper2Code, AutoP2C) achieve only 26.6% accuracy on complex papers, far below human experts (41.4%).
+**Background**: Since its publication in 2020, NeRF has spawned 1,000+ follow-up works, yet the majority lack public code or standardized implementations. General paper-to-code systems (e.g., Paper2Code, AutoP2C) achieve only 26.6% accuracy on complex papers, far below human experts (41.4%).
 
 **Limitations of Prior Work**: NeRF implementation spans volumetric rendering, computer vision, and neural optimization, where a single incorrect activation function or ray–sphere intersection calculation can cause NaN gradients or degenerate solutions. Modern NeRF papers also carry heavy citation dependencies—K-Planes, for instance, relies on components from 7 direct and 12 transitive references. General-purpose systems are unable to resolve such implicit dependencies.
 
-**Root Cause**: General paper-to-code systems lack NeRF domain knowledge (the tight coupling of rendering mathematics and neural architecture), making it nearly impossible for them to produce trainable code. Yet manually implementing a NeRF paper requires 1–2 weeks of expert-level effort.
+**Key Challenge**: General paper-to-code systems lack NeRF domain knowledge (the tight coupling of rendering mathematics and neural architecture), making it nearly impossible for them to produce trainable code. Yet manually implementing a NeRF paper requires 1–2 weeks of expert-level effort.
 
-**Paper Goals**: Automatically convert NeRF papers into trainable, convergent Nerfstudio plugins whose visual quality matches expert implementations.
+**Goal**: Automatically convert NeRF papers into trainable, convergent Nerfstudio plugins whose visual quality matches expert implementations.
 
-**Starting Point**: Encode the architectural patterns of the Nerfstudio framework as a context-free grammar to constrain code generation, and achieve domain specialization through multi-agent collaboration.
+**Key Insight**: Encode the architectural patterns of the Nerfstudio framework as a context-free grammar to constrain code generation, and achieve domain specialization through multi-agent collaboration.
 
 **Core Idea**: A domain-aware multi-agent design (CFG constraints + citation-graph traversal + visual feedback) makes code translation of complex vision papers tractable.
 

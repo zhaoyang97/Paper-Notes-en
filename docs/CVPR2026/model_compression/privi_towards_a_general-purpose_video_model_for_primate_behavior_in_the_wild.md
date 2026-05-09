@@ -28,15 +28,15 @@ PriVi constructs a large-scale primate video pretraining dataset of 424 hours an
 
 ## Background & Motivation
 
-1. **State of the Field**: Primate behavior analysis is critical for cognitive science, evolutionary biology, and conservation ecology. Computer vision methods hold promise for assisting behavioral analysis, but existing approaches primarily rely on human-centric pretrained models (e.g., Kinetics) and train specialized models on individual datasets, resulting in limited generalization.
+1. **Background**: Primate behavior analysis is critical for cognitive science, evolutionary biology, and conservation ecology. Computer vision methods hold promise for assisting behavioral analysis, but existing approaches primarily rely on human-centric pretrained models (e.g., Kinetics) and train specialized models on individual datasets, resulting in limited generalization.
 
 2. **Limitations of Prior Work**: (a) Pretraining data is human-centric, making it out-of-domain for non-human animals such as primates; (b) existing methods typically train separate models for each target dataset (dataset-level pretraining), precluding cross-dataset knowledge sharing; (c) annotations are scarce due to the high cost and expertise required for labeling, necessitating methods that work with few labels.
 
-3. **Root Cause**: Language models have demonstrated that domain-level pretraining—pretraining on data similar but not identical to the target—improves downstream performance, yet no analogous results exist for video models. The core challenge is the lack of large-scale, diverse primate video datasets and scalable curation methods.
+3. **Key Challenge**: Language models have demonstrated that domain-level pretraining—pretraining on data similar but not identical to the target—improves downstream performance, yet no analogous results exist for video models. The core challenge is the lack of large-scale, diverse primate video datasets and scalable curation methods.
 
-4. **Paper Goals**: (a) How to curate a large-scale primate video dataset without seed datasets or text annotations; (b) whether domain-level pretraining is effective for video models; (c) how to design a lightweight classifier for efficient behavior recognition on frozen features.
+4. **Goal**: (a) How to curate a large-scale primate video dataset without seed datasets or text annotations; (b) whether domain-level pretraining is effective for video models; (c) how to design a lightweight classifier for efficient behavior recognition on frozen features.
 
-5. **Starting Point**: The work shifts from a model-centric to a data-centric perspective. The core hypothesis is that pretraining on sufficiently diverse in-domain data provides cross-dataset general representations that are more effective than separately pretraining on each small dataset.
+5. **Key Insight**: The work shifts from a model-centric to a data-centric perspective. The core hypothesis is that pretraining on sufficiently diverse in-domain data provides cross-dataset general representations that are more effective than separately pretraining on each small dataset.
 
 6. **Core Idea**: A scalable data curation pipeline is used to construct PriVi, a large primate video dataset. Domain-level pretraining via V-JEPA yields general primate representations, achieving state-of-the-art performance on four behavior benchmarks under frozen evaluation.
 

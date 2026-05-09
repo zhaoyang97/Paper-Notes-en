@@ -28,15 +28,15 @@ This paper introduces MMPB, the first VLM personalization evaluation benchmark, 
 
 ## Background & Motivation
 
-**State of the Field**: VLMs (e.g., GPT-4o, LLaVA) are widely used for general visual question answering, but follow a one-size-fits-all paradigm—responding identically to all users without adapting to individual identity, preferences, or history.
+**Background**: VLMs (e.g., GPT-4o, LLaVA) are widely used for general visual question answering, but follow a one-size-fits-all paradigm—responding identically to all users without adapting to individual identity, preferences, or history.
 
 **Limitations of Prior Work**: (a) Existing VQA benchmarks focus solely on general knowledge (commonsense, science, etc.) and do not evaluate personalization capabilities; (b) Prior personalization works (e.g., MyVLM, Yo'LLaVA) are small-scale (29–95 concepts), unsystematic, and exclude preference reasoning; (c) A unified evaluation framework and cold-start setting are absent.
 
-**Root Cause**: Strong performance on general tasks does not imply effectiveness in personalized scenarios. Personalization requires models to understand user-specific visual concepts and preferences—capabilities not covered by general-purpose training.
+**Key Challenge**: Strong performance on general tasks does not imply effectiveness in personalized scenarios. Personalization requires models to understand user-specific visual concepts and preferences—capabilities not covered by general-purpose training.
 
-**Paper Goals**: To establish a comprehensive and systematic evaluation benchmark for VLM personalization.
+**Goal**: To establish a comprehensive and systematic evaluation benchmark for VLM personalization.
 
-**Starting Point**: Defining four core attributes of personalization (Awareness, Appropriateness, Coherency, Persistency) and designing corresponding task types and evaluation protocols.
+**Key Insight**: Defining four core attributes of personalization (Awareness, Appropriateness, Coherency, Persistency) and designing corresponding task types and evaluation protocols.
 
 **Core Idea**: To reveal the true state and primary bottlenecks of VLM personalization capabilities through systematic benchmarking.
 

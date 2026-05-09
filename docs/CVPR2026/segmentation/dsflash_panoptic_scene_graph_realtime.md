@@ -29,15 +29,15 @@ DSFlash combines a unified segmentation/relation backbone, a gated bidirectional
 
 ## Background & Motivation
 
-**State of the Field**: Scene graph generation (SGG) structures an image into nodes (instances) and edges (relations), forming (subject, predicate, object) triplets that have proven valuable for downstream tasks such as VQA, image captioning and embodied reasoning. Panoptic scene graph generation (PSGG) further replaces bounding boxes with segmentation masks for more precise spatial localization.
+**Background**: Scene graph generation (SGG) structures an image into nodes (instances) and edges (relations), forming (subject, predicate, object) triplets that have proven valuable for downstream tasks such as VQA, image captioning and embodied reasoning. Panoptic scene graph generation (PSGG) further replaces bounding boxes with segmentation masks for more precise spatial localization.
 
 **Limitations of Prior Work**: Existing PSGG methods almost entirely ignore inference efficiency. DSFormer reaches SOTA accuracy (mR@50=30.7) but takes 458 ms per frame and uses two independent backbones (MaskDINO for segmentation and ResNet for relation prediction), wasting compute. One-stage methods such as HiLo claim to be more efficient but still incur 427 ms latency with poor accuracy. The only speed-oriented work, REACT, reduces latency to 19 ms but performs bbox detection with YOLOv8 instead of panoptic segmentation, achieving only mR@50=19.0 — a large quality gap.
 
-**Root Cause**: There is a sharp tension between high-quality panoptic scene graph generation and real-time inference: existing methods are either accurate but extremely slow, or fast but solve a simplified task (bbox detection rather than segmentation, or only salient-relation prediction rather than a comprehensive scene graph).
+**Key Challenge**: There is a sharp tension between high-quality panoptic scene graph generation and real-time inference: existing methods are either accurate but extremely slow, or fast but solve a simplified task (bbox detection rather than segmentation, or only salient-relation prediction rather than a comprehensive scene graph).
 
-**Paper Goals**: Make panoptic scene graph generation real-time without sacrificing graph quality, and compute a comprehensive scene graph (all relations between all instances) rather than only a few salient ones.
+**Goal**: Make panoptic scene graph generation real-time without sacrificing graph quality, and compute a comprehensive scene graph (all relations between all instances) rather than only a few salient ones.
 
-**Starting Point**: Build on top of the two-stage paradigm and exploit a modern efficient segmentation backbone (EoMT) that simultaneously yields segmentation masks and feature representations, eliminating the redundant backbone forward pass; halve the number of relation-classification forwards via a gating mechanism for bidirectional prediction; and prune irrelevant patch tokens using mask-coverage as a task prior.
+**Key Insight**: Build on top of the two-stage paradigm and exploit a modern efficient segmentation backbone (EoMT) that simultaneously yields segmentation masks and feature representations, eliminating the redundant backbone forward pass; halve the number of relation-classification forwards via a gating mechanism for bidirectional prediction; and prune irrelevant patch tokens using mask-coverage as a task prior.
 
 **Core Idea**: Reuse a frozen efficient segmentation backbone's features + gated bidirectional relation head + task-prior-driven token pruning = real-time comprehensive panoptic scene graph generation.
 

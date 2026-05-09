@@ -30,17 +30,17 @@ Motivated by the statistical finding that nighttime rain exhibits far greater co
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning methods for image deraining (PReNet, Restormer, DRSformer, etc.) are abundant, yet the vast majority focus on daytime scenes. Nighttime scenarios are considerably more challenging due to low ambient light, spatially non-uniform artificial light sources, and the coupled degradation of rain and illumination.
+**Background**: Deep learning methods for image deraining (PReNet, Restormer, DRSformer, etc.) are abundant, yet the vast majority focus on daytime scenes. Nighttime scenarios are considerably more challenging due to low ambient light, spatially non-uniform artificial light sources, and the coupled degradation of rain and illumination.
 
 **Limitations of Prior Work**:
 1. **Unrealistic datasets**: Existing nighttime rain datasets (GTAV-NightRain, RoadScene, etc.) linearly superimpose globally uniform rain masks onto background images, completely ignoring the physical property that nighttime rain is visible only near light sources, resulting in a significant domain gap between synthetic and real images.
 2. **Lack of task-specific design**: Existing nighttime deraining methods still operate in RGB space and do not exploit the intrinsic properties of nighttime rain in specific color channels.
 
-**Root Cause**: A fundamental mismatch between the physical formation mechanism of nighttime rain degradation (visible near light sources, non-uniformly distributed, with pronounced luminance-channel contrast) and the "daytime assumption" embedded in existing methods and datasets (uniform rain distribution, RGB-space processing).
+**Key Challenge**: A fundamental mismatch between the physical formation mechanism of nighttime rain degradation (visible near light sources, non-uniformly distributed, with pronounced luminance-channel contrast) and the "daytime assumption" embedded in existing methods and datasets (uniform rain distribution, RGB-space processing).
 
-**Paper Goals**: To leverage the physical characteristics of nighttime rain—luminance-channel saliency and illumination-dependent non-uniform distribution—in order to design more effective deraining methods and datasets.
+**Goal**: To leverage the physical characteristics of nighttime rain—luminance-channel saliency and illumination-dependent non-uniform distribution—in order to design more effective deraining methods and datasets.
 
-**Starting Point**: Statistical analysis of pixel values—comparing per-channel histograms across color spaces reveals that the Y channel of YCbCr exhibits the largest discrepancy between rainy and rain-free images (because rain reflects artificial light sources under low-light conditions, producing high-contrast luminance patterns). This observation motivates the design of performing deraining specifically in the Y channel.
+**Key Insight**: Statistical analysis of pixel values—comparing per-channel histograms across color spaces reveals that the Y channel of YCbCr exhibits the largest discrepancy between rainy and rain-free images (because rain reflects artificial light sources under low-light conditions, producing high-contrast luminance patterns). This observation motivates the design of performing deraining specifically in the Y channel.
 
 **Core Idea**: A learnable color space transformation converts images from RGB to YCbCr; rain degradation is removed in the Y channel where the luminance contrast is greatest; implicit neural representations encode spatially non-uniform illumination information to guide the deraining process.
 

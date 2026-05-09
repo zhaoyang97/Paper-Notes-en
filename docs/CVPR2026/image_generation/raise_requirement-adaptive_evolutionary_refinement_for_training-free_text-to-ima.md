@@ -28,16 +28,16 @@ This paper proposes RAISE, a framework that models T2I generation as a requireme
 
 ## Background & Motivation
 
-**State of the Field**: Although T2I diffusion models can generate photorealistic images, their faithfulness to complex prompts (multi-object, spatial relations, attribute binding) remains insufficient. Inference-time scaling—allocating additional computation at inference to improve alignment—has emerged as a promising direction, including noise-level scaling (e.g., searching for optimal initial noise) and prompt-level scaling (rewriting prompts with VLMs).
+**Background**: Although T2I diffusion models can generate photorealistic images, their faithfulness to complex prompts (multi-object, spatial relations, attribute binding) remains insufficient. Inference-time scaling—allocating additional computation at inference to improve alignment—has emerged as a promising direction, including noise-level scaling (e.g., searching for optimal initial noise) and prompt-level scaling (rewriting prompts with VLMs).
 
 **Limitations of Prior Work**:
 - **Training-free methods** (TIR, T2I-Copilot): rely on fixed iteration budgets or thresholds, failing to adapt to prompt difficulty; multi-round refinement often stagnates or degrades; T2I-Copilot selects only a single action per round, limiting exploration.
 - **Training-based methods** (Reflect-DiT, ReflectionFlow): require large-scale reflection datasets and joint fine-tuning of diffusion models and VLMs, incurring high cost, overfitting to reflection trajectories, and poor transferability to new base models.
 - All existing methods lack the ability to analyze which specific requirements in a prompt remain unmet.
 
-**Root Cause**: Existing approaches either allocate computation uniformly (wasteful for simple prompts, insufficient for complex ones) or depend on training (model-bound and costly), and none use requirement satisfaction as a signal to drive compute allocation.
+**Key Challenge**: Existing approaches either allocate computation uniformly (wasteful for simple prompts, insufficient for complex ones) or depend on training (model-bound and costly), and none use requirement satisfaction as a signal to drive compute allocation.
 
-**Starting Point**: T2I generation is analogized to the software engineering workflow of "requirements analysis → implementation → verification"—decomposing user prompts into a verifiable requirement checklist, identifying unmet items each round, targeting computation accordingly, and stopping once all requirements are satisfied.
+**Key Insight**: T2I generation is analogized to the software engineering workflow of "requirements analysis → implementation → verification"—decomposing user prompts into a verifiable requirement checklist, identifying unmet items each round, targeting computation accordingly, and stopping once all requirements are satisfied.
 
 **Core Idea**: A requirement-driven adaptive evolutionary framework in which multiple agents (analyzer, rewriter, verifier) collaborate, multi-action mutations generate candidate populations in parallel, tool-augmented structured verification provides fine-grained feedback, and compute scales adaptively to semantic complexity.
 

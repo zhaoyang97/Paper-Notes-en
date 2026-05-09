@@ -28,16 +28,16 @@ This paper proposes the CIRF framework, which abstracts transferable reasoning p
 
 ## Background & Motivation
 
-**State of the Field**: Zero-shot stance detection (ZSSD) requires inferring the stance of text toward targets unseen during training, which is critical for analyzing rapidly emerging polarized social media topics.
+**Background**: Zero-shot stance detection (ZSSD) requires inferring the stance of text toward targets unseen during training, which is critical for analyzing rapidly emerging polarized social media topics.
 
 **Limitations of Prior Work**:
 - LLM zero-shot prompting underperforms on complex reasoning with limited generalization (GPT-3.5 achieves only 69.8 F1 on SEM16)
 - LLM-augmented fine-tuning methods (KAI, FOLAR, etc.) still require substantial labeled data and remain at instance-level pattern matching
 - Both paradigms lack explainability and cross-target reasoning generalization
 
-**Root Cause**: Stance detection requires abstract reasoning beyond surface-level lexical matching (e.g., "increasing health risks" and "undermining economic stability" both instantiate the reasoning pattern "negative consequence → opposition"), yet existing methods either perform surface-level matching or rely heavily on annotations.
+**Key Challenge**: Stance detection requires abstract reasoning beyond surface-level lexical matching (e.g., "increasing health risks" and "undermining economic stability" both instantiate the reasoning pattern "negative consequence → opposition"), yet existing methods either perform surface-level matching or rely heavily on annotations.
 
-**Starting Point**: Schema theory in cognitive science — humans induce generalizable reasoning patterns (schemas) from concrete experiences and apply them to new contexts. This cognitive capability is formalized as unsupervised induction of first-order logic patterns with graph kernel alignment.
+**Key Insight**: Schema theory in cognitive science — humans induce generalizable reasoning patterns (schemas) from concrete experiences and apply them to new contexts. This cognitive capability is formalized as unsupervised induction of first-order logic patterns with graph kernel alignment.
 
 ## Method
 

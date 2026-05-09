@@ -29,10 +29,10 @@ This paper proposes FuXi-RTM, the first hybrid physics-guided weather forecastin
 
 ## Background & Motivation
 
-- **State of the Field**: Deep learning weather forecasting models (e.g., FuXi, Pangu-Weather) have surpassed ECMWF HRES in forecast accuracy.
+- **Background**: Deep learning weather forecasting models (e.g., FuXi, Pangu-Weather) have surpassed ECMWF HRES in forecast accuracy.
 - **Limitations of Prior Work**: These models **lack explicit physical constraints** and may produce non-physical outputs (e.g., negative humidity), a problem particularly pronounced in radiative process modeling.
-- **Root Cause**: Radiative transfer is the primary energy driver of Earth's weather and climate system, governing temperature gradients, atmospheric pressure patterns, and wind circulation. Traditional NWP models simulate this via parameterization schemes at prohibitive computational cost.
-- **Paper Goals**: Embed radiative transfer capability into a weather forecasting framework by using a pretrained DLRTM as a frozen differentiable regularizer, providing physical constraint signals during training without additional training overhead.
+- **Key Challenge**: Radiative transfer is the primary energy driver of Earth's weather and climate system, governing temperature gradients, atmospheric pressure patterns, and wind circulation. Traditional NWP models simulate this via parameterization schemes at prohibitive computational cost.
+- **Goal**: Embed radiative transfer capability into a weather forecasting framework by using a pretrained DLRTM as a frozen differentiable regularizer, providing physical constraint signals during training without additional training overhead.
 
 ## Method
 

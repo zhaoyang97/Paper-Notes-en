@@ -28,15 +28,15 @@ DyG-Mamba introduces continuous state space models (SSMs) into dynamic graph lea
 
 ## Background & Motivation
 
-**State of the Field**: Dynamic graph methods are dominated by RNN-based approaches (GRU/LSTM, capable of capturing long-term dependencies but prone to gradient issues) and Transformer-based approaches (DyGFormer, with $O(N^2)$ attention and a poor efficiency–accuracy trade-off). Mamba/SSM has demonstrated advantages in sequence modeling, offering linear complexity with long-range dependency capture.
+**Background**: Dynamic graph methods are dominated by RNN-based approaches (GRU/LSTM, capable of capturing long-term dependencies but prone to gradient issues) and Transformer-based approaches (DyGFormer, with $O(N^2)$ attention and a poor efficiency–accuracy trade-off). Mamba/SSM has demonstrated advantages in sequence modeling, offering linear complexity with long-range dependency capture.
 
 **Limitations of Prior Work**: (a) Real-world dynamic graph interaction intervals are highly irregular — fixed-step discretization loses temporal information; (b) graph data is heavily noisy, requiring robust parameterization; (c) MLP/GNN methods are fast but discard long-term temporal patterns.
 
-**Root Cause**: Standard Mamba assumes fixed step sizes, whereas interaction time intervals in dynamic graphs span from seconds to days. The SSM time step must adapt to actual temporal intervals.
+**Key Challenge**: Standard Mamba assumes fixed step sizes, whereas interaction time intervals in dynamic graphs span from seconds to days. The SSM time step must adapt to actual temporal intervals.
 
-**Paper Goals**: Design a temporal span-aware continuous SSM that handles dynamic graphs with irregular time intervals under linear complexity.
+**Goal**: Design a temporal span-aware continuous SSM that handles dynamic graphs with irregular time intervals under linear complexity.
 
-**Starting Point**: The Ebbinghaus memory forgetting curve $R = \exp(-t/S)$ describes exponential decay of memory over time — it serves as the temporal step adaptation function for the SSM.
+**Key Insight**: The Ebbinghaus memory forgetting curve $R = \exp(-t/S)$ describes exponential decay of memory over time — it serves as the temporal step adaptation function for the SSM.
 
 **Core Idea**: Forgetting-curve-inspired time step $\Delta t$ + diagonal negative-eigenvalue matrix $A$ for stability + spectral-norm-constrained input-dependent $B, C$ for robustness = temporal-aware continuous SSM for dynamic graphs.
 

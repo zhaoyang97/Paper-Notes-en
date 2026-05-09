@@ -29,15 +29,15 @@ This paper proposes SCOPE, a training-free federated coreset selection framework
 
 ## Background & Motivation
 
-**State of the Field**: Scientific federated datasets originate from distributed high-precision instruments (microscopes, spectrometers), exhibiting extreme class imbalance (long-tail distributions) and non-IID partitioning by nature. Federated learning mitigates privacy concerns but introduces data efficiency challenges. Coreset selection and data pruning are effective strategies for reducing communication and computational costs.
+**Background**: Scientific federated datasets originate from distributed high-precision instruments (microscopes, spectrometers), exhibiting extreme class imbalance (long-tail distributions) and non-IID partitioning by nature. Federated learning mitigates privacy concerns but introduces data efficiency challenges. Coreset selection and data pruning are effective strategies for reducing communication and computational costs.
 
 **Limitations of Prior Work**: (1) Local heuristic methods (FedCS, Herding) lack awareness of the global data distribution and may discard locally redundant but globally rare samples; (2) proxy-dataset-based methods (GCFL) require server-side data, violating privacy constraints; (3) gradient/loss-based methods (EL2N, GraND) amplify sensor noise and artifacts in scientific data; (4) methods requiring local warm-up training (FedCS, FedCore) themselves incur high computational overhead.
 
-**Root Cause**: In the federated setting, each client has only a local view yet requires global information to perform principled pruning; transmitting embedding vectors enables a global view but violates privacy and incurs high communication cost.
+**Key Challenge**: In the federated setting, each client has only a local view yet requires global information to perform principled pruning; transmitting embedding vectors enables a global view but violates privacy and incurs high communication cost.
 
-**Paper Goals**: To achieve within the federated setting: (1) training-free coreset selection, (2) globally-aware cross-client class distribution estimation while transmitting only scalars rather than embeddings, and (3) robustness to extreme non-IID and long-tail imbalance.
+**Goal**: To achieve within the federated setting: (1) training-free coreset selection, (2) globally-aware cross-client class distribution estimation while transmitting only scalars rather than embeddings, and (3) robustness to extreme non-IID and long-tail imbalance.
 
-**Starting Point**: A frozen vision–language model (MobileCLIP-S2) is used locally in a zero-shot manner to extract three scalar metrics per sample; only scalar statistics (mean/variance) are shared with the server to construct a global profile, which in turn guides local two-stage pruning.
+**Key Insight**: A frozen vision–language model (MobileCLIP-S2) is used locally in a zero-shot manner to extract three scalar metrics per sample; only scalar statistics (mean/variance) are shared with the server to construct a global profile, which in turn guides local two-stage pruning.
 
 **Core Idea**: The frozen VLM's orthogonal projection compresses each sample into three scalar semantic metrics; transmitting only scalar statistics enables global awareness; a two-stage pruning strategy first removes anomalies and then redundancies while protecting long-tail classes.
 

@@ -28,13 +28,13 @@ LWAIL leverages ICVF to learn a dynamics-aware latent representation from a smal
 
 ## Background & Motivation
 
-**State of the Field**: Imitation learning aims to learn a policy from expert demonstrations. Adversarial imitation learning (AIL) achieves this by matching the state distributions of the agent and the expert, with $f$-divergences and the Wasserstein distance being the two predominant distribution metrics.
+**Background**: Imitation learning aims to learn a policy from expert demonstrations. Adversarial imitation learning (AIL) achieves this by matching the state distributions of the agent and the expert, with $f$-divergences and the Wasserstein distance being the two predominant distribution metrics.
 
 **Limitations of Prior Work**: (1) $f$-divergence-based methods require overlapping distribution supports, which is difficult to satisfy when low-quality, non-expert data is used. (2) Wasserstein methods based on the Kantorovich–Rubinstein (KR) dual are more robust, but the 1-Lipschitz constraint implicitly assumes Euclidean distance as the ground metric—an assumption that fails to capture environment dynamics. For instance, although state $B$ may be closer to expert state $C$ in Euclidean space, if $B$ cannot reach $C$, it is less valuable than a more distant state $A$ that can.
 
-**Root Cause**: The Wasserstein distance requires a meaningful ground metric over states, yet Euclidean distance ignores transition dynamics—states that are geometrically close may be entirely unreachable from one another in the environment.
+**Key Challenge**: The Wasserstein distance requires a meaningful ground metric over states, yet Euclidean distance ignores transition dynamics—states that are geometrically close may be entirely unreachable from one another in the environment.
 
-**Starting Point**: ICVF (Intent-Conditioned Value Function) is used to learn a dynamics-aware embedding $\phi(s)$ from a small amount of random state data, such that Euclidean distances in the embedding space naturally reflect reachability relationships.
+**Key Insight**: ICVF (Intent-Conditioned Value Function) is used to learn a dynamics-aware embedding $\phi(s)$ from a small amount of random state data, such that Euclidean distances in the embedding space naturally reflect reachability relationships.
 
 **Core Idea**: Replace the Euclidean space in Wasserstein AIL with a dynamics-aware latent space learned via ICVF.
 

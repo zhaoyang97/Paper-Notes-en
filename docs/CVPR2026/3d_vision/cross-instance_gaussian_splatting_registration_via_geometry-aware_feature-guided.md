@@ -28,15 +28,15 @@ This paper proposes GSA (Gaussian Splatting Alignment), the first method for cat
 
 ## Background & Motivation
 
-**State of the Field**: 3D Gaussian Splatting (3DGS) has become a powerful representation for high-fidelity novel view synthesis. However, aligning two independently reconstructed 3DGS models remains an open challenge; existing methods such as GaussReg rely on ICP and can only handle registration between models of the same object instance.
+**Background**: 3D Gaussian Splatting (3DGS) has become a powerful representation for high-fidelity novel view synthesis. However, aligning two independently reconstructed 3DGS models remains an open challenge; existing methods such as GaussReg rely on ICP and can only handle registration between models of the same object instance.
 
 **Limitations of Prior Work**: (1) ICP fails under poor initialization (e.g., 180° rotation); (2) ICP cannot handle unknown scale and requires ground-truth scale as input; (3) in cross-instance (different object) registration, geometric discrepancies cause nearest-point matching to converge to incorrect correspondences.
 
-**Root Cause**: 3DGS models reconstructed via SfM inherently exhibit arbitrary differences in scale, position, and orientation; cross-instance objects further introduce shape and appearance variation, rendering traditional geometric methods entirely ineffective.
+**Key Challenge**: 3DGS models reconstructed via SfM inherently exhibit arbitrary differences in scale, position, and orientation; cross-instance objects further introduce shape and appearance variation, rendering traditional geometric methods entirely ineffective.
 
-**Paper Goals**: To align two 3DGS models—potentially representing different objects of the same category—via a similarity transformation (rotation + translation + scale) under unknown scale conditions.
+**Goal**: To align two 3DGS models—potentially representing different objects of the same category—via a similarity transformation (rotation + translation + scale) under unknown scale conditions.
 
-**Starting Point**: (1) Replace pure geometric signals with geometry-aware viewpoint-guided features for correspondence establishment; (2) generalize the inverse radiance field framework from single-view camera pose estimation to multi-view field-to-field registration.
+**Key Insight**: (1) Replace pure geometric signals with geometry-aware viewpoint-guided features for correspondence establishment; (2) generalize the inverse radiance field framework from single-view camera pose estimation to multi-view field-to-field registration.
 
 **Core Idea**: Geometry-aware semantic feature-guided extended ICP + multi-view feature field consistency optimization = robust cross-instance 3DGS registration.
 

@@ -29,15 +29,15 @@ This paper proposes learning beneficial "mixture of noise" to suppress parameter
 
 ## Background & Motivation
 
-**State of the Field**: Pre-trained models (PTMs) exhibit strong performance when fine-tuned on downstream tasks; however, continual fine-tuning induces **parameter drift**, which corrupts discriminative features of previous tasks and allows new-task features to interfere with existing decision boundaries.
+**Background**: Pre-trained models (PTMs) exhibit strong performance when fine-tuned on downstream tasks; however, continual fine-tuning induces **parameter drift**, which corrupts discriminative features of previous tasks and allows new-task features to interfere with existing decision boundaries.
 
 **Limitations of Prior Work**: Conventional class-incremental learning methods focus on improving feature utilization efficiency (e.g., prompt learning, prototype networks), while overlooking inter-task feature interference. Parameter drift has been uniformly treated as a purely negative phenomenon.
 
 **Core Idea**: Noise is not inherently harmful — positive-incentive noise (Pi-Noise) can improve classification by masking inter-class confusion and highlighting discriminative features. Parameter drift constitutes "destructive noise," yet "beneficial noise" can be learned to counteract it.
 
-**Paper Goals**: Rather than pursuing efficient feature utilization, this work actively learns beneficial noise to suppress inter-task confusion patterns.
+**Goal**: Rather than pursuing efficient feature utilization, this work actively learns beneficial noise to suppress inter-task confusion patterns.
 
-**Starting Point**: From an information-theoretic perspective, noise is modeled as a latent variable, and efficient inference is achieved via the reparameterization trick and dynamic mixing.
+**Key Insight**: From an information-theoretic perspective, noise is modeled as a latent variable, and efficient inference is achieved via the reparameterization trick and dynamic mixing.
 
 **Core Idea**: Through noise expansion (learning task-specific noise modules) combined with noise mixture (dynamic weight-based fusion), parameter drift is transformed from "catastrophic forgetting" into a "controllable positive signal."
 

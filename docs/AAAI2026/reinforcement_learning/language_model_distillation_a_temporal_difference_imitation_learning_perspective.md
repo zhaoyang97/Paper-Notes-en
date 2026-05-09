@@ -29,15 +29,15 @@ This paper revisits language model distillation from an imitation learning / inv
 
 ## Background & Motivation
 
-- **State of the Field**: LLM distillation has become standard practice for compressing large-capacity teacher models into efficient student models. Most existing distillation methods can be viewed as Behavior Cloning (BC) — directly imitating the teacher's output distribution at each step.
+- **Background**: LLM distillation has become standard practice for compressing large-capacity teacher models into efficient student models. Most existing distillation methods can be viewed as Behavior Cloning (BC) — directly imitating the teacher's output distribution at each step.
 
 - **Limitations of Prior Work**: BC suffers from **compounding errors**, also known as **exposure bias** in autoregressive models — during training the student observes teacher-generated contexts, whereas at inference it operates on its own (potentially erroneous) contexts, causing errors to accumulate exponentially with sequence length.
 
-- **Root Cause**: The imitation learning literature offers rich tools to address BC's shortcomings, particularly TD learning, which mitigates compounding errors by estimating the long-term impact of actions given a state. However, **directly applying TD learning to LLMs faces the challenge of an enormous action space** — vocabulary size $|\mathcal{V}|$ typically ranges from tens of thousands to over a hundred thousand tokens.
+- **Key Challenge**: The imitation learning literature offers rich tools to address BC's shortcomings, particularly TD learning, which mitigates compounding errors by estimating the long-term impact of actions given a state. However, **directly applying TD learning to LLMs faces the challenge of an enormous action space** — vocabulary size $|\mathcal{V}|$ typically ranges from tens of thousands to over a hundred thousand tokens.
 
-- **Paper Goals**: To identify and exploit structure specific to the distillation setting. The key observation is that LLM output distributions are highly sparse — **the top-50 tokens account for 96% of probability mass, and the top-7 tokens contribute ≥90%** — motivating the idea that only a small set of high-probability candidate actions needs to be considered in TD learning.
+- **Goal**: To identify and exploit structure specific to the distillation setting. The key observation is that LLM output distributions are highly sparse — **the top-50 tokens account for 96% of probability mass, and the top-7 tokens contribute ≥90%** — motivating the idea that only a small set of high-probability candidate actions needs to be considered in TD learning.
 
-- **Starting Point**: Does a distillation-specific exploitable structure exist? The answer is the sparsity of the teacher distribution — a property absent in pure IL settings, where access to the full expert policy distribution is generally unavailable.
+- **Key Insight**: Does a distillation-specific exploitable structure exist? The answer is the sparsity of the teacher distribution — a property absent in pure IL settings, where access to the full expert policy distribution is generally unavailable.
 
 ## Method
 

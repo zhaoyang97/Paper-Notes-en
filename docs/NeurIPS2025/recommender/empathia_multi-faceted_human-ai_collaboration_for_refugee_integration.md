@@ -30,15 +30,15 @@ This paper proposes EMPATHIA, a multi-agent framework grounded in Kegan's constr
 
 ### State of the Field
 
-**State of the Field**: 123 million displaced persons worldwide require resettlement support. Existing AI approaches frame refugee integration as a single-objective optimization problem (e.g., employment rate), neglecting multidimensional factors such as cultural adaptation, psychological trauma recovery, and ethical safeguards.
+**Background**: 123 million displaced persons worldwide require resettlement support. Existing AI approaches frame refugee integration as a single-objective optimization problem (e.g., employment rate), neglecting multidimensional factors such as cultural adaptation, psychological trauma recovery, and ethical safeguards.
 
 **Limitations of Prior Work**: Pure optimization methods reduce individuals to feature vectors; black-box recommendations provide no justification; single-perspective approaches (economic or security only) fail to address complex needs.
 
-**Root Cause**: How can decision-making be scaled while preserving human dignity and multidimensional assessment?
+**Key Challenge**: How can decision-making be scaled while preserving human dignity and multidimensional assessment?
 
-**Paper Goals**: Construct a multi-perspective AI framework that simultaneously evaluates emotional, cultural, and ethical dimensions and provides interpretable reasoning for every decision.
+**Goal**: Construct a multi-perspective AI framework that simultaneously evaluates emotional, cultural, and ethical dimensions and provides interpretable reasoning for every decision.
 
-**Starting Point**: Drawing on Kegan's constructive-developmental theory—wherein a self-transforming mind sustains tension among contradictory viewpoints—the paper operationalizes multi-perspective deliberation via a multi-agent architecture.
+**Key Insight**: Drawing on Kegan's constructive-developmental theory—wherein a self-transforming mind sustains tension among contradictory viewpoints—the paper operationalizes multi-perspective deliberation via a multi-agent architecture.
 
 **Core Idea**: Three specialized agents iteratively evaluate and negotiate placement candidate countries through a selector-validator mechanism, producing recommendations accompanied by full reasoning chains.
 

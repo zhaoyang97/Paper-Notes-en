@@ -29,15 +29,15 @@ This work presents the first systematic application of GRPO-based reinforcement 
 
 ## Background & Motivation
 
-**State of the Field**: NL2SQL enables non-expert users to query databases directly in natural language. Current approaches primarily rely on SFT, while closed-source models (e.g., GPT-4) are costly and opaque.
+**Background**: NL2SQL enables non-expert users to query databases directly in natural language. Current approaches primarily rely on SFT, while closed-source models (e.g., GPT-4) are costly and opaque.
 
 **Limitations of Prior Work**: SFT methods underperform in complex database scenarios (multi-table joins, nested queries), and fixed generation strategies struggle with ambiguous semantics, resulting in poor generalization.
 
-**Root Cause**: The "data scale bottleneck" of SFT — large volumes of high-quality annotated data are required, yet annotation is expensive, and simply scaling data does not necessarily improve reasoning on complex queries.
+**Key Challenge**: The "data scale bottleneck" of SFT — large volumes of high-quality annotated data are required, yet annotation is expensive, and simply scaling data does not necessarily improve reasoning on complex queries.
 
-**Paper Goals**: ① Can RL replace SFT for NL2SQL? ② How should NL2SQL-specific rewards be designed? ③ What is the minimum data requirement?
+**Goal**: ① Can RL replace SFT for NL2SQL? ② How should NL2SQL-specific rewards be designed? ③ What is the minimum data requirement?
 
-**Starting Point**: Inspired by the R1 series, this paper transfers the GRPO algorithm to SQL generation and designs reward signals incorporating execution verification.
+**Key Insight**: Inspired by the R1 series, this paper transfers the GRPO algorithm to SQL generation and designs reward signals incorporating execution verification.
 
 **Core Idea**: Cold-start SFT to activate basic capabilities + GRPO training on 5K complex samples + four-level progressive rewards = high performance with minimal data.
 

@@ -28,15 +28,15 @@ This work formalizes fine-grained scientific hypothesis generation as a combinat
 
 ## Background & Motivation
 
-**State of the Field**: LLM-assisted hypothesis generation is an emerging area, but existing methods produce hypotheses that are too coarse-grained—lacking specific reaction conditions, reagent concentrations, and experimental parameters required for practical implementation.
+**Background**: LLM-assisted hypothesis generation is an emerging area, but existing methods produce hypotheses that are too coarse-grained—lacking specific reaction conditions, reagent concentrations, and experimental parameters required for practical implementation.
 
 **Limitations of Prior Work**: (a) Coarse-grained hypotheses such as "synthesize hierarchical 3D copper" are not directly implementable in chemistry—precise details such as "soaking in 0.5M ammonium persulfate" are required; (b) the hypothesis space is combinatorially explosive—selecting a coherent subset from a large pool of possible details; (c) the correctness of scientific hypotheses is unknowable at generation time (OOD problem).
 
-**Root Cause**: Finding the LLM-optimal hypothesis in an exponentially large hypothesis space is necessary, yet direct (greedy) search is prone to local optima. Hierarchical structure can smooth the search space but increases design complexity.
+**Key Challenge**: Finding the LLM-optimal hypothesis in an exponentially large hypothesis space is necessary, yet direct (greedy) search is prone to local optima. Hierarchical structure can smooth the search space but increases design complexity.
 
-**Paper Goals**: To explore the capability limits of LLMs in fine-grained hypothesis discovery—how to maximally leverage LLM internal heuristics to find optimal hypotheses.
+**Goal**: To explore the capability limits of LLMs in fine-grained hypothesis discovery—how to maximally leverage LLM internal heuristics to find optimal hypotheses.
 
-**Starting Point**: The hypothesis space is treated as a reward landscape defined by LLM scoring; hierarchical decomposition (concept → mechanism → material → parameter) smooths the landscape to facilitate optimization.
+**Key Insight**: The hypothesis space is treated as a reward landscape defined by LLM scoring; hierarchical decomposition (concept → mechanism → material → parameter) smooths the landscape to facilitate optimization.
 
 **Core Idea**: Hierarchical decomposition of the hypothesis space + LLM pairwise comparisons as gradient signals + recombination of multiple independent search results = finding superior fine-grained hypotheses in the LLM reward landscape.
 

@@ -38,7 +38,7 @@ Prefix adders are widely used in computation-intensive applications such as sign
 
 **Core Insight**: The design rules of prefix adders are more structured than natural language. GPT models have demonstrated the ability to master complex linguistic "grammar" and generate high-quality text satisfying structural and logical constraints. Can GPT similarly learn the "grammar" of prefix adders and directly generate legal, high-quality designs from scratch?
 
-**Starting Point**: Model prefix adder design as a 2D coordinate sequence generation problem. Train a GPT to generate optimized designs directly from scratch rather than modifying existing ones. A legality mask guarantees that every generation step satisfies design rules, completely eliminating repair steps.
+**Key Insight**: Model prefix adder design as a 2D coordinate sequence generation problem. Train a GPT to generate optimized designs directly from scratch rather than modifying existing ones. A legality mask guarantees that every generation step satisfies design rules, completely eliminating repair steps.
 
 ## Method
 

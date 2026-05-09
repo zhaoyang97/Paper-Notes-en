@@ -29,7 +29,7 @@ This paper proposes OnlinePG, the first online open-vocabulary panoptic mapping 
 
 ## Background & Motivation
 
-**State of the Field**: Open-vocabulary 3D scene understanding is foundational for embodied intelligence. Recent works lift 2D VLM features (CLIP, LSeg, SAM) into 3D space via NeRF/3DGS, achieving strong results in offline settings (LangSplat, OpenGaussian, PanoGS, etc.).
+**Background**: Open-vocabulary 3D scene understanding is foundational for embodied intelligence. Recent works lift 2D VLM features (CLIP, LSeg, SAM) into 3D space via NeRF/3DGS, achieving strong results in offline settings (LangSplat, OpenGaussian, PanoGS, etc.).
 
 **Limitations of Prior Work**:
    - **(a) Offline Constraint**: Most methods (PanoGS, LangSplat, OpenGaussian) require pre-collected complete data and global optimization, making them unsuitable for real-time robotic tasks.
@@ -37,11 +37,11 @@ This paper proposes OnlinePG, the first online open-vocabulary panoptic mapping 
    - **(c) 2D Segmentation Noise**: 2D segmentations from VLMs are inconsistent across views (over- and under-segmentation), and direct lifting to 3D leads to noise accumulation.
    - **(d) Slow Contrastive Learning Convergence**: Offline methods (InstanceGaussian, PanoGS) rely on slowly converging contrastive feature learning for instance clustering, which is unsuitable for online systems.
 
-**Root Cause**: 2D VLM segmentation results are inconsistent across views (over/under-segmentation), and direct 3D lifting produces noisy instances. The core challenge is obtaining 3D-consistent panoptic instances and semantics under online streaming input.
+**Key Challenge**: 2D VLM segmentation results are inconsistent across views (over/under-segmentation), and direct 3D lifting produces noisy instances. The core challenge is obtaining 3D-consistent panoptic instances and semantics under online streaming input.
 
-**Paper Goals**: (1) Online panoptic (instance + semantic) mapping; (2) deriving consistent 3D instances from noisy 2D segmentations; (3) open-vocabulary querying.
+**Goal**: (1) Online panoptic (instance + semantic) mapping; (2) deriving consistent 3D instances from noisy 2D segmentations; (3) open-vocabulary querying.
 
-**Starting Point**: Resolve 2D inconsistencies locally within a sliding window via multi-cue clustering, then incrementally merge into a global map.
+**Key Insight**: Resolve 2D inconsistencies locally within a sliding window via multi-cue clustering, then incrementally merge into a global map.
 
 **Core Idea**: A local-to-global paradigm — multi-cue segment clustering within a sliding window → locally consistent instances → bidirectional bipartite matching → globally consistent panoptic map.
 

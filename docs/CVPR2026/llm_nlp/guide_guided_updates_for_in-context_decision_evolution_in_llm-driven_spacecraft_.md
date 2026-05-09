@@ -29,13 +29,13 @@ The paper proposes the GUIDE framework, which leverages in-context learning capa
 
 ## Background & Motivation
 
-**State of the Field**: Spacecraft operations traditionally rely on ground station teams for manual command planning and transmission. Deep-space communication delays (20+ minute round-trip to Mars) and increasingly complex multi-constellation missions make real-time human control increasingly infeasible, creating a strong demand for autonomous decision-making capabilities.
+**Background**: Spacecraft operations traditionally rely on ground station teams for manual command planning and transmission. Deep-space communication delays (20+ minute round-trip to Mars) and increasingly complex multi-constellation missions make real-time human control increasingly infeasible, creating a strong demand for autonomous decision-making capabilities.
 
 **Limitations of Prior Work**: (1) Traditional rule-based autonomous systems lack flexibility in unforeseen scenarios; (2) specialized mission planners require extensive domain engineering and are difficult to generalize across tasks; (3) while LLMs possess powerful reasoning capabilities, direct application to space scenarios faces challenges in reliability, safety, and domain knowledge.
 
-**Root Cause**: Space missions require highly reliable autonomous decisions, but LLMs are prone to hallucinations and lack precise domain knowledge in aerospace. The key question is how to leverage LLMs' general reasoning capabilities while ensuring the safety and accuracy of space operations.
+**Key Challenge**: Space missions require highly reliable autonomous decisions, but LLMs are prone to hallucinations and lack precise domain knowledge in aerospace. The key question is how to leverage LLMs' general reasoning capabilities while ensuring the safety and accuracy of space operations.
 
-**Starting Point**: Rather than fine-tuning LLMs, the approach designs carefully structured prompts and in-context feedback loops that allow LLMs to progressively improve their space decision-making capabilities at runtime.
+**Key Insight**: Rather than fine-tuning LLMs, the approach designs carefully structured prompts and in-context feedback loops that allow LLMs to progressively improve their space decision-making capabilities at runtime.
 
 **Core Idea**: **Guided Updates** — providing LLMs with structured operational context for space operations (system states, constraints, historical decisions and their outcomes), enabling the model to evolve through in-context learning from past decision feedback without retraining.
 

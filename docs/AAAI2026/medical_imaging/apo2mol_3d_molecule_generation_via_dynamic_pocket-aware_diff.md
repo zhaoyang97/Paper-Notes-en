@@ -28,13 +28,13 @@ This paper proposes Apo2Mol, a diffusion-based all-atom framework that simultane
 
 ## Background & Motivation
 
-**State of the Field**: Existing deep generative models for structure-based drug design (SBDD), such as TargetDiff and DecompDiff, assume a rigid protein pocket and train/generate directly on holo conformations. However, proteins are inherently dynamic—ligand binding induces conformational rearrangements in the binding pocket. When only apo conformations are available (e.g., novel targets without co-crystal structures), the generation quality of these methods degrades substantially.
+**Background**: Existing deep generative models for structure-based drug design (SBDD), such as TargetDiff and DecompDiff, assume a rigid protein pocket and train/generate directly on holo conformations. However, proteins are inherently dynamic—ligand binding induces conformational rearrangements in the binding pocket. When only apo conformations are available (e.g., novel targets without co-crystal structures), the generation quality of these methods degrades substantially.
 
 **Limitations of Prior Work**: DynamicFlow attempts to model pocket dynamics using molecular dynamics (MD) simulation trajectories, but MD simulations are computationally expensive, constrained by force field parameterization, and may introduce simulation-specific artifacts.
 
-**Root Cause**: The rigid-pocket assumption in existing SBDD models fails to capture the conformational flexibility that is fundamental to ligand–protein recognition.
+**Key Challenge**: The rigid-pocket assumption in existing SBDD models fails to capture the conformational flexibility that is fundamental to ligand–protein recognition.
 
-**Paper Goals**: To enable simultaneous generation of high-affinity ligands and physically plausible holo pocket conformations from apo structures alone, without relying on MD simulation data.
+**Goal**: To enable simultaneous generation of high-affinity ligands and physically plausible holo pocket conformations from apo structures alone, without relying on MD simulation data.
 
 ## Core Problem
 **How can one simultaneously generate high-affinity ligands and plausible holo pocket conformations given only an apo protein conformation, without dependence on MD simulation data?**

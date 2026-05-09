@@ -27,7 +27,7 @@ This paper proposes PoSh, an evaluation metric that extracts scene graphs $G(d) 
 
 ## Background & Motivation
 
-**State of the Field**: VLMs are capable of generating detailed image descriptions (100–300 words), yet evaluation methods lag significantly behind. CIDEr/SPICE were designed for short texts; LLM-as-Judge approaches are non-reproducible and produce coarse-grained, uninterpretable scores.
+**Background**: VLMs are capable of generating detailed image descriptions (100–300 words), yet evaluation methods lag significantly behind. CIDEr/SPICE were designed for short texts; LLM-as-Judge approaches are non-reproducible and produce coarse-grained, uninterpretable scores.
 
 **Limitations of Prior Work**:
 - Attribute/relation misattachment in long descriptions is a core error type (e.g., "a man pouring water" described as "a man in the center"), yet existing metrics are insensitive to this
@@ -35,11 +35,11 @@ This paper proposes PoSh, an evaluation metric that extracts scene graphs $G(d) 
 - Closed-source LLM evaluation (GPT-4o) is costly and non-reproducible; open-source LLM-as-Judge (LLaVA-Critic) does not provide interpretable fine-grained scores
 - Benchmarks with fine-grained human judgments are lacking — most detailed description benchmarks have no human annotations
 
-**Root Cause**: There is a need for evaluation methods that are simultaneously cheap, reliable, and interpretable, yet these properties are typically in tension.
+**Key Challenge**: There is a need for evaluation methods that are simultaneously cheap, reliable, and interpretable, yet these properties are typically in tension.
 
-**Paper Goals**: To jointly achieve interpretability (fine-grained error localization to text spans), high correlation with human judgments, and full open-source reproducibility.
+**Goal**: To jointly achieve interpretability (fine-grained error localization to text spans), high correlation with human judgments, and full open-source reproducibility.
 
-**Starting Point**: Scene graphs reduce the surface-form diversity of descriptions to visual components (entities + attributes + relations), serving as a structured checklist for an LLM-Judge, where each component is independently verified for presence and scores are aggregated into coarse-grained metrics.
+**Key Insight**: Scene graphs reduce the surface-form diversity of descriptions to visual components (entities + attributes + relations), serving as a structured checklist for an LLM-Judge, where each component is independently verified for presence and scores are aggregated into coarse-grained metrics.
 
 **Core Idea**: Scene graphs structure *what* to evaluate (entities, attributes, relations), while LLM-QA flexibly handles *how* to compare (surface-form variation).
 

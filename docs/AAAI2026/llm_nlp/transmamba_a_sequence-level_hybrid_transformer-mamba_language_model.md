@@ -29,13 +29,13 @@ This paper proposes TransMamba, a sequence-level Transformer-Mamba hybrid archit
 
 ## Background & Motivation
 
-**State of the Field**: Transformer ($O(T^2)$ complexity) remains the dominant architecture for LLMs. Mamba (SSM, $O(T)$ linear complexity) is more efficient on long sequences but exhibits instability in in-context learning and multi-task generalization. Existing hybrid approaches (Jamba, Zamba, etc.) adopt layer-level interleaving (fixed ratios of Transformer and Mamba layers), but suffer from structural rigidity — they must adhere to specific layer ordering and ratio rules.
+**Background**: Transformer ($O(T^2)$ complexity) remains the dominant architecture for LLMs. Mamba (SSM, $O(T)$ linear complexity) is more efficient on long sequences but exhibits instability in in-context learning and multi-task generalization. Existing hybrid approaches (Jamba, Zamba, etc.) adopt layer-level interleaving (fixed ratios of Transformer and Mamba layers), but suffer from structural rigidity — they must adhere to specific layer ordering and ratio rules.
 
 **Limitations of Prior Work**: (a) Transformer trains faster on short contexts while Mamba is more efficient on long contexts — yet layer-level mixing cannot exploit the respective efficiency advantages of both within the same sequence; (b) layer-level mixing ratios are fixed (e.g., 4:1), and deviating from the prescribed rules degrades performance; (c) Mamba2 reveals a mathematical duality between Attention and SSM, and Wang et al. demonstrate via distillation that QKV and CBx parameters are mutually transferable — suggesting that a more principled unification of the two mechanisms is possible.
 
-**Root Cause**: A flexible framework is needed that can adaptively apply Attention or SSM at different positions within the same sequence without information loss during transitions.
+**Key Challenge**: A flexible framework is needed that can adaptively apply Attention or SSM at different positions within the same sequence without information loss during transitions.
 
-**Starting Point**: Exploiting the parameter correspondence between Attention and SSM (Q↔C, K↔B, V↔x) to enable a single set of parameters to support both computation modes.
+**Key Insight**: Exploiting the parameter correspondence between Attention and SSM (Q↔C, K↔B, V↔x) to enable a single set of parameters to support both computation modes.
 
 **Core Idea**: Shared QKV/CBx parameters + lossless Memory Converter + TransPoint scheduling = flexible sequence-level switching between Attention and SSM.
 

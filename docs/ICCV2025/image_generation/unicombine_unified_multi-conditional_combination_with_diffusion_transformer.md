@@ -28,15 +28,15 @@ UniCombine proposes a DiT-based multi-condition controllable generation framewor
 
 ## Background & Motivation
 
-**State of the Field**: Existing controllable generation frameworks (ControlNet, IP-Adapter, OminiControl) excel at single-condition control but are each designed for one condition type. Real user needs often involve joint multi-condition control, e.g., simultaneously specifying subject appearance, spatial layout, and text description.
+**Background**: Existing controllable generation frameworks (ControlNet, IP-Adapter, OminiControl) excel at single-condition control but are each designed for one condition type. Real user needs often involve joint multi-condition control, e.g., simultaneously specifying subject appearance, spatial layout, and text description.
 
 **Limitations of Prior Work**: (a) Multi-condition methods such as UniControl and UniControlNet only support combinations of spatial conditions (Canny + Depth) and cannot incorporate subject conditions; (b) Ctrl-X supports simultaneous structure and appearance control but delivers suboptimal performance and is incompatible with DiT architectures; (c) No publicly available training/evaluation dataset for multi-condition generation exists.
 
-**Root Cause**: Naively concatenating multiple condition embeddings in attention leads to: (1) computational complexity scaling quadratically with the number of conditions, $O(N^2)$; (2) mutual interference among condition signals during attention computation, making it difficult to reuse pretrained single-condition LoRA weights.
+**Key Challenge**: Naively concatenating multiple condition embeddings in attention leads to: (1) computational complexity scaling quadratically with the number of conditions, $O(N^2)$; (2) mutual interference among condition signals during attention computation, making it difficult to reuse pretrained single-condition LoRA weights.
 
-**Paper Goals**: (1) Design a unified framework for handling arbitrary condition combinations; (2) Develop an efficient and scalable multi-condition attention mechanism; (3) Construct a multi-condition generation dataset.
+**Goal**: (1) Design a unified framework for handling arbitrary condition combinations; (2) Develop an efficient and scalable multi-condition attention mechanism; (3) Construct a multi-condition generation dataset.
 
-**Starting Point**: OminiControl has demonstrated that Condition-LoRA within MMDiT can handle single-condition control. A key observation is that OminiControl is a special case of UniCombine under the single-condition setting — extending it to multi-condition requires only appropriate multi-condition attention and LoRA management mechanisms.
+**Key Insight**: OminiControl has demonstrated that Condition-LoRA within MMDiT can handle single-condition control. A key observation is that OminiControl is a special case of UniCombine under the single-condition setting — extending it to multi-condition requires only appropriate multi-condition attention and LoRA management mechanisms.
 
 **Core Idea**: Dynamically activate the pretrained LoRA weights corresponding to each condition via a LoRA Switching module, and use Conditional MMDiT Attention to restrict information exchange between condition branches (allowing only the denoising/text branch to attend to all conditions), thereby enabling efficient and decoupled multi-condition fusion.
 

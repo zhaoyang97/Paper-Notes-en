@@ -36,7 +36,7 @@ Two core challenges:
 
 **Search guidance problem**: The search space for mathematical exploration suffers from combinatorial explosion, with most paths leading to trivial or uninteresting mathematics. Human mathematicians rely on intuition to judge "what is worth studying"—i.e., **interestingness**—but prior systems (e.g., HR) rely on hard-coded interestingness metrics.
 
-**Starting Point**: This paper frames the discovery of interestingness metrics as a **learning problem**—using evolutionary program synthesis to automatically search for optimal interestingness functions that guide an agent toward meaningful mathematical theories.
+**Key Insight**: This paper frames the discovery of interestingness metrics as a **learning problem**—using evolutionary program synthesis to automatically search for optimal interestingness functions that guide an agent toward meaningful mathematical theories.
 
 ## Method
 

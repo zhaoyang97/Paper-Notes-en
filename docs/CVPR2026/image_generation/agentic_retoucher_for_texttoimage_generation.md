@@ -29,15 +29,15 @@ Agentic Retoucher reframes the local defect restoration of T2I generated images 
 
 ## Background & Motivation
 
-**State of the Field**: T2I diffusion models (SDXL, FLUX, Qwen-Image, etc.) can generate highly realistic images for design, film, and entertainment industries. However, even state-of-the-art models frequently produce local small-scale distortions—malformed fingers, facial asymmetry, unreadable text, limb misplacement, and irrational object interactions. These defects typically occur within otherwise high-quality images, making them difficult to detect and expensive to fix.
+**Background**: T2I diffusion models (SDXL, FLUX, Qwen-Image, etc.) can generate highly realistic images for design, film, and entertainment industries. However, even state-of-the-art models frequently produce local small-scale distortions—malformed fingers, facial asymmetry, unreadable text, limb misplacement, and irrational object interactions. These defects typically occur within otherwise high-quality images, making them difficult to detect and expensive to fix.
 
 **Limitations of Prior Work**: Current routes for improving generation quality mainly include prompt enhancement, RL-based optimization, and latent space alignment. They improve global realism but lack explicit spatial reasoning capability, failing to explain or repair local failures. Post-processing editing schemes (e.g., Imagic, Step1x-Edit) support local restoration but rely on manual masks or heuristic text instructions and cannot autonomously identify regions requiring repair.
 
-**Root Cause**: VLMs seemingly serve as automated critics, but experiments show even GPT-5 cannot reliably locate distortions in AI-generated images—six-fingered portraits are judged normal, and obvious facial distortions are ignored. The fundamental reason is that VLMs are optimized for high-level semantic alignment rather than pixel-level validation; their strong knowledge priors override visual evidence, leading to hallucinatory judgments.
+**Key Challenge**: VLMs seemingly serve as automated critics, but experiments show even GPT-5 cannot reliably locate distortions in AI-generated images—six-fingered portraits are judged normal, and obvious facial distortions are ignored. The fundamental reason is that VLMs are optimized for high-level semantic alignment rather than pixel-level validation; their strong knowledge priors override visual evidence, leading to hallucinatory judgments.
 
-**Paper Goals**: How to equip T2I systems with the ability to autonomously perceive, diagnose, and repair local generation defects while avoiding the unreliability of VLMs in fine-grained spatial localization.
+**Goal**: How to equip T2I systems with the ability to autonomously perceive, diagnose, and repair local generation defects while avoiding the unreliability of VLMs in fine-grained spatial localization.
 
-**Starting Point**: Modeling post-processing restoration as a human retoucher's perception-reasoning-action decision loop rather than a one-time feed-forward edit. Three specialized agents perform their duties to form an iteratively converging closed-loop system.
+**Key Insight**: Modeling post-processing restoration as a human retoucher's perception-reasoning-action decision loop rather than a one-time feed-forward edit. Three specialized agents perform their duties to form an iteratively converging closed-loop system.
 
 **Core Idea**: Reconstructing T2I post-processing into a self-correcting loop of Perceiving Distortions $\to$ Reasoning Diagnosis $\to$ Precise Restoration using a hierarchical multi-agent decision framework.
 

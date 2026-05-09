@@ -28,15 +28,15 @@ This paper proposes Distilled Decoding 2 (DD2), which reinterprets auto-regressi
 
 ## Background & Motivation
 
-**State of the Field**: Image auto-regressive (AR) models such as VAR and LlamaGen have achieved state-of-the-art image generation quality, surpassing VAEs, GANs, and diffusion models. These models generate images by predicting discrete tokens sequentially while preserving favorable likelihood modeling properties.
+**Background**: Image auto-regressive (AR) models such as VAR and LlamaGen have achieved state-of-the-art image generation quality, surpassing VAEs, GANs, and diffusion models. These models generate images by predicting discrete tokens sequentially while preserving favorable likelihood modeling properties.
 
 **Limitations of Prior Work**: The fundamental bottleneck of AR models lies in their sequential sampling procedure — VAR requires 10 steps and LlamaGen requires 256 steps, each involving a full model forward pass, making generation far slower than one-step methods such as GANs. Set prediction approaches (e.g., MaskGIT-style parallel token prediction) completely lose inter-token correlations in the extreme one-step case. Speculative decoding achieves only limited compression of less than 3× on image AR models. DD1 is the first method to achieve one-step sampling but relies on a predefined noise-to-data mapping that is difficult to learn, resulting in notable FID degradation (VAR-d20: 3.40 → 9.55) and slower training.
 
-**Root Cause**: DD1 converts each AR sampling step into ODE solving under flow matching to construct a deterministic mapping, essentially exploiting score signals only for building the mapping. This predefined mapping (1) is difficult for the model to learn, and (2) limits flexibility — models such as GANs and VAEs that do not rely on explicit mappings are in fact more broadly applicable in downstream tasks.
+**Key Challenge**: DD1 converts each AR sampling step into ODE solving under flow matching to construct a deterministic mapping, essentially exploiting score signals only for building the mapping. This predefined mapping (1) is difficult for the model to learn, and (2) limits flexibility — models such as GANs and VAEs that do not rely on explicit mappings are in fact more broadly applicable in downstream tasks.
 
-**Paper Goals**: Can a one-step generator be trained such that its output distribution matches a given AR model, without relying on any predefined mapping?
+**Goal**: Can a one-step generator be trained such that its output distribution matches a given AR model, without relying on any predefined mapping?
 
-**Starting Point**: The paper reinterprets AR models as conditional score models — given all preceding tokens, the next-token probability vector output by an AR model enables analytic computation of the conditional score in the codebook embedding space. Drawing on score distillation from diffusion models, the conditional scores of the generator and the teacher AR model are aligned at every token position.
+**Key Insight**: The paper reinterprets AR models as conditional score models — given all preceding tokens, the next-token probability vector output by an AR model enables analytic computation of the conditional score in the codebook embedding space. Drawing on score distillation from diffusion models, the conditional scores of the generator and the teacher AR model are aligned at every token position.
 
 **Core Idea**: The next-token probability vector of an AR model is treated as the source of conditional scores. Through Conditional Score Distillation (CSD), the generator is aligned with the teacher's conditional distribution at all token positions simultaneously, enabling one-step AR image generation without any predefined mapping.
 

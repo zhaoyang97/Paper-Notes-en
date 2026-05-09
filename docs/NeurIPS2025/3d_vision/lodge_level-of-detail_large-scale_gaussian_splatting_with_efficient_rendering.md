@@ -31,19 +31,19 @@ This paper proposes LODGE, which manages 3D Gaussian Splatting at multiple scale
 
 ### State of the Field
 
-**State of the Field**: 3DGS performs well on small scenes but faces an explosion in the number of Gaussians when scaled to large scenes at the city level.
+**Background**: 3DGS performs well on small scenes but faces an explosion in the number of Gaussians when scaled to large scenes at the city level.
 
 **Limitations of Prior Work**: Millions of Gaussians lead to (1) GPU memory overflow; (2) enormous rasterization overhead; (3) wasteful computation on distant fine details.
 
-**Root Cause**: High quality requires dense Gaussians, whereas efficiency demands sparse representations.
+**Key Challenge**: High quality requires dense Gaussians, whereas efficiency demands sparse representations.
 
-**Starting Point**: LOD techniques from traditional computer graphics — distant objects are represented at low resolution, and nearby objects at high resolution.
+**Key Insight**: LOD techniques from traditional computer graphics — distant objects are represented at low resolution, and nearby objects at high resolution.
 
 **Core Idea**: Construct a multi-level LOD pyramid of Gaussians and select the appropriate level based on distance at render time.
 
 ### Mechanism
 
-**Paper Goals**: ### Overall Architecture
+**Goal**: ### Overall Architecture
 
 Scene partitioning → LOD pyramid construction per block (fine to coarse) → distance-based level selection at render time → hybrid rasterization.
 

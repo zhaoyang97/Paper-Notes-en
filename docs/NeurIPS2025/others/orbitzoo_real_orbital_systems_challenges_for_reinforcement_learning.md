@@ -28,15 +28,15 @@ This paper presents OrbitZoo, a multi-agent RL environment built on the industri
 
 ## Background & Motivation
 
-**State of the Field**: The rapid growth in satellite and debris populations has made low Earth orbit (LEO) increasingly congested. Tasks such as collision avoidance, formation keeping, and orbital transfer demand autonomous decision-making systems. Reinforcement learning has shown promise in these domains by enabling adaptive policy learning in dynamic and uncertain environments.
+**Background**: The rapid growth in satellite and debris populations has made low Earth orbit (LEO) increasingly congested. Tasks such as collision avoidance, formation keeping, and orbital transfer demand autonomous decision-making systems. Reinforcement learning has shown promise in these domains by enabling adaptive policy learning in dynamic and uncertain environments.
 
 **Limitations of Prior Work**: Most existing RL frameworks are built from scratch using simplified dynamical models (e.g., the circular restricted three-body problem, CR3BP), neglecting critical real-world perturbations such as atmospheric drag, solar radiation pressure (SRP), and multi-body gravitational effects. This results in large sim-to-real gaps. Furthermore, the majority of existing environments support only single-agent, fully observable, and impulsive-thrust settings, lacking standardization and reproducibility.
 
-**Root Cause**: There exists a fundamental tension between high-fidelity simulation and RL training efficiency. Accurate numerical integrators and full perturbation models incur high computational costs, yet policies trained on simplified models generalize poorly to real scenarios. At the same time, existing environments lack unified multi-agent support and validation standards.
+**Key Challenge**: There exists a fundamental tension between high-fidelity simulation and RL training efficiency. Accurate numerical integrators and full perturbation models incur high computational costs, yet policies trained on simplified models generalize poorly to real scenarios. At the same time, existing environments lack unified multi-agent support and validation standards.
 
-**Paper Goals**: (1) The absence of standardized multi-agent RL environments integrating industrial-grade dynamics libraries; (2) the difficulty of quantifying the sim-to-real gap; (3) insufficient scalability and reproducibility in existing environments.
+**Goal**: (1) The absence of standardized multi-agent RL environments integrating industrial-grade dynamics libraries; (2) the difficulty of quantifying the sim-to-real gap; (3) insufficient scalability and reproducibility in existing environments.
 
-**Starting Point**: The paper leverages the Python wrapper of Orekit—a mature Java astrodynamics library—as the dynamics engine, combined with the PettingZoo multi-agent RL framework, to construct a modular, high-fidelity, and open-source orbital RL platform.
+**Key Insight**: The paper leverages the Python wrapper of Orekit—a mature Java astrodynamics library—as the dynamics engine, combined with the PettingZoo multi-agent RL framework, to construct a modular, high-fidelity, and open-source orbital RL platform.
 
 **Core Idea**: Build a standardized MARL environment on top of an industrial-grade orbital simulation library, validate fidelity using real ephemeris data, and fill the gap in standardized platforms for orbital maneuvering RL research.
 

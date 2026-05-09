@@ -29,18 +29,18 @@ This paper proposes RoLoRA, which alternately optimizes the down-projection ($\m
 
 ## Background & Motivation
 
-**State of the Field**: Using LoRA for parameter-efficient fine-tuning in federated learning is a mainstream approach. LoRA decomposes weight updates as $\Delta \mathbf{W} = \alpha \mathbf{A}\mathbf{B}$, where $\mathbf{A} \in \mathbb{R}^{d \times r}$, $\mathbf{B} \in \mathbb{R}^{r \times d}$, $r \ll d$.
+**Background**: Using LoRA for parameter-efficient fine-tuning in federated learning is a mainstream approach. LoRA decomposes weight updates as $\Delta \mathbf{W} = \alpha \mathbf{A}\mathbf{B}$, where $\mathbf{A} \in \mathbb{R}^{d \times r}$, $\mathbf{B} \in \mathbb{R}^{r \times d}$, $r \ll d$.
 
 **Limitations of Prior Work**:
 - **FedAVG of LoRA**: Directly averaging client matrices $\mathbf{A}_i$ and $\mathbf{B}_i$ introduces aggregation interference — $\frac{1}{N}\sum_i \mathbf{A}_i \mathbf{B}_i \neq \frac{1}{N}\sum_i \mathbf{A}_i \cdot \frac{1}{N}\sum_i \mathbf{B}_i$
 - **FFA-LoRA**: Freezing $\mathbf{A}$ (down-projection) and only updating $\mathbf{B}$ avoids interference but sacrifices model expressiveness, leading to significant performance degradation with fewer parameters or more clients
 - **FlexLoRA/FLoRA**: Recover exact updates via matrix multiplication and truncated SVD, but at substantial computational cost
 
-**Root Cause**: A three-way tension among exact aggregation, model expressiveness, and computational/communication efficiency.
+**Key Challenge**: A three-way tension among exact aggregation, model expressiveness, and computational/communication efficiency.
 
-**Paper Goals**: Design a federated LoRA fine-tuning framework that simultaneously ensures exact aggregation, sufficient expressiveness, and low communication/computation overhead.
+**Goal**: Design a federated LoRA fine-tuning framework that simultaneously ensures exact aggregation, sufficient expressiveness, and low communication/computation overhead.
 
-**Starting Point**: Inspired by multi-task linear representation learning (MLRL), the paper alternately freezes $\mathbf{A}$ and $\mathbf{B}$ — only one matrix is trained and aggregated per round, naturally guaranteeing exact aggregation.
+**Key Insight**: Inspired by multi-task linear representation learning (MLRL), the paper alternately freezes $\mathbf{A}$ and $\mathbf{B}$ — only one matrix is trained and aggregated per round, naturally guaranteeing exact aggregation.
 
 **Core Idea**: In odd rounds, freeze $\mathbf{A}$ and update $\mathbf{B}$; in even rounds, freeze $\mathbf{B}$ and update $\mathbf{A}$. This alternation achieves both exact aggregation and full expressiveness.
 

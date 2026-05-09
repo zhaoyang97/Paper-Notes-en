@@ -29,11 +29,11 @@ This paper proposes ReBalance, a training-free framework that simultaneously mit
 
 ## Background & Motivation
 
-- **State of the Field**: Large reasoning models (e.g., DeepSeek-R1, QwQ) have acquired powerful reasoning capabilities through SFT and RL training, yet face significant computational efficiency challenges in practical deployment.
+- **Background**: Large reasoning models (e.g., DeepSeek-R1, QwQ) have acquired powerful reasoning capabilities through SFT and RL training, yet face significant computational efficiency challenges in practical deployment.
 - **Limitations of Prior Work**: LRMs exhibit two opposing failure modes — **overthinking**: expending redundant reasoning steps on simple problems; and **underthinking**: prematurely converging on complex problems without sufficiently exploring the reasoning path.
-- **Root Cause**: Existing methods for mitigating overthinking (e.g., suppressing reflective keywords, adjusting reasoning length) tend to induce underthinking, forming an inherent trade-off between the two. As shown in Fig. 2(a), prior methods reduce the reasoning length of both correctly and incorrectly solved samples simultaneously, indicating the introduction of underthinking.
-- **Paper Goals**: To alleviate overthinking without inducing underthinking, thereby achieving balanced reasoning.
-- **Starting Point**: The paper observes that stepwise confidence and confidence variance can serve as continuous indicators of reasoning state — high variance reflects hesitation and path-switching (overthinking), while persistently high confidence reflects premature commitment (underthinking).
+- **Key Challenge**: Existing methods for mitigating overthinking (e.g., suppressing reflective keywords, adjusting reasoning length) tend to induce underthinking, forming an inherent trade-off between the two. As shown in Fig. 2(a), prior methods reduce the reasoning length of both correctly and incorrectly solved samples simultaneously, indicating the introduction of underthinking.
+- **Goal**: To alleviate overthinking without inducing underthinking, thereby achieving balanced reasoning.
+- **Key Insight**: The paper observes that stepwise confidence and confidence variance can serve as continuous indicators of reasoning state — high variance reflects hesitation and path-switching (overthinking), while persistently high confidence reflects premature commitment (underthinking).
 - **Core Idea**: Confidence signals are used to identify reasoning states; a hidden-state steering vector is constructed from overthinking to underthinking representations; a dynamic control function then modulates the steering direction and magnitude based on real-time confidence.
 
 ## Method

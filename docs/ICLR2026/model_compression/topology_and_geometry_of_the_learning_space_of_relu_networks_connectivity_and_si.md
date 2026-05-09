@@ -32,7 +32,7 @@ From the perspectives of algebraic geometry and algebraic topology, this paper s
 
 ### State of the Field
 
-**State of the Field**: Understanding the geometric and topological properties of the parameter space of ReLU networks is essential for analyzing and guiding training dynamics. During gradient-flow training, the homogeneity of the ReLU activation function constrains the parameter space to an algebraic variety. The structure of this variety directly affects:
+**Background**: Understanding the geometric and topological properties of the parameter space of ReLU networks is essential for analyzing and guiding training dynamics. During gradient-flow training, the homogeneity of the ReLU activation function constrains the parameter space to an algebraic variety. The structure of this variety directly affects:
 
 ### Limitations of Prior Work
 
@@ -40,11 +40,11 @@ From the perspectives of algebraic geometry and algebraic topology, this paper s
 
 ### Root Cause
 
-**Root Cause**: Model equivalence: which parameter configurations represent the same function.
+**Key Challenge**: Model equivalence: which parameter configurations represent the same function.
 
 ### Starting Point
 
-**Starting Point**: Network compression: when certain parameters can be safely removed.
+**Key Insight**: Network compression: when certain parameters can be safely removed.
 
 Prior work has focused primarily on simple sequential architectures (i.e., standard multilayer perceptrons), leaving general DAG architectures largely unanalyzed. Understanding the parameter space topology of general DAG architectures is particularly important, as modern networks (e.g., skip connections in ResNets, dense connections in DenseNets) are inherently DAG-structured.
 

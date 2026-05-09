@@ -30,7 +30,7 @@ This paper proposes the Muscle loss — an N-tuple-level multi-model contrastive
 
 ## Background & Motivation
 
-**State of the Field**: Federated multi-task learning (FMTL) enables users with different tasks and models to collaboratively train without sharing private data. With the proliferation of foundation models (FMs), users may fine-tune different pretrained models subject to their resource constraints, making model and task heterogeneity the norm.
+**Background**: Federated multi-task learning (FMTL) enables users with different tasks and models to collaboratively train without sharing private data. With the proliferation of foundation models (FMs), users may fine-tune different pretrained models subject to their resource constraints, making model and task heterogeneity the norm.
 
 **Limitations of Prior Work**: Existing FMTL methods (FeSTA, FedBone, FedHCA2, FedLPS, etc.) assume fully or partially homogeneous model architectures (e.g., shared encoders), restricting users' freedom to select their own models.
 

@@ -29,7 +29,7 @@ This paper proposes the Diffusion Router (DR), which employs a single noise pred
 
 ## Background & Motivation
 
-**State of the Field**: Multi-Domain Translation (MDT) aims to learn mappings among multiple domains and has broad applications in image-to-image translation, image captioning, text-to-speech synthesis, and related areas. Existing MDT methods fall into two paradigms: (1) training on fully aligned multi-tuples, which does not scale with the number of domains; and (2) training on paired data sharing a center domain, which supports only translations between the center domain and non-center domains.
+**Background**: Multi-Domain Translation (MDT) aims to learn mappings among multiple domains and has broad applications in image-to-image translation, image captioning, text-to-speech synthesis, and related areas. Existing MDT methods fall into two paradigms: (1) training on fully aligned multi-tuples, which does not scale with the number of domains; and (2) training on paired data sharing a center domain, which supports only translations between the center domain and non-center domains.
 
 **Limitations of Prior Work**:
 1. **Fully aligned tuple paradigm**: $K$ domains require $K$-tuple aligned data, and collection costs grow exponentially with the number of domains.
@@ -37,9 +37,9 @@ This paper proposes the Diffusion Router (DR), which employs a single noise pred
 3. **Model scalability**: Training independent models for each domain pair requires $2(K-1)$ models, which becomes infeasible as the number of domains grows.
 4. **Quality degradation in indirect translation**: Two-stage sampling via the center domain is computationally expensive and sensitive to the quality of intermediate samples.
 
-**Root Cause**: Fully aligned multi-domain data is scarce in practice, whereas paired data with a center domain is relatively abundant (e.g., large-scale image–text and text–audio paired datasets each exist independently). The central challenge is how to achieve translation between arbitrary domain pairs given only $K-1$ paired datasets with the center domain.
+**Key Challenge**: Fully aligned multi-domain data is scarce in practice, whereas paired data with a center domain is relatively abundant (e.g., large-scale image–text and text–audio paired datasets each exist independently). The central challenge is how to achieve translation between arbitrary domain pairs given only $K-1$ paired datasets with the center domain.
 
-**Paper Goals**: This paper formalizes the Universal Multi-Domain Translation (UMDT) problem—achieving arbitrary translation among $K$ domains using only $K-1$ datasets paired with a center domain. It proposes the Diffusion Router (DR), inspired by the source/destination addressing concept in network routers, employing a single noise prediction network $\epsilon_\theta(x_t^{tgt}, t, x^{src}, tgt, src)$ to handle all translation directions.
+**Goal**: This paper formalizes the Universal Multi-Domain Translation (UMDT) problem—achieving arbitrary translation among $K$ domains using only $K-1$ datasets paired with a center domain. It proposes the Diffusion Router (DR), inspired by the source/destination addressing concept in network routers, employing a single noise prediction network $\epsilon_\theta(x_t^{tgt}, t, x^{src}, tgt, src)$ to handle all translation directions.
 
 ## Method
 

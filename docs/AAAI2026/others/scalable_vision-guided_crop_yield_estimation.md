@@ -28,11 +28,11 @@ This paper proposes a crop yield estimation method based on **Prediction-Powered
 
 ## Background & Motivation
 
-1. **State of the Field**: Accurate regional average crop yield estimation is critical for agricultural monitoring and insurance decision-making. Current approaches primarily rely on field crop cuts, which are time-consuming and expensive.
+1. **Background**: Accurate regional average crop yield estimation is critical for agricultural monitoring and insurance decision-making. Current approaches primarily rely on field crop cuts, which are time-consuming and expensive.
 2. **Limitations of Prior Work**: Field photographs and aerial imagery have been widely studied as cheaper alternatives for yield estimation, but their explanatory power is limited in complex smallholder farming environments (R² ≈ 0.5 only), and they may introduce bias, making them insufficient to directly replace ground measurements for insurance and reinsurance purposes.
-3. **Root Cause**: Photographs are cheap but insufficiently accurate, while crop cuts are accurate but expensive — the central challenge is how to use photographs to supplement crop cuts without introducing bias.
-4. **Paper Goals**: To improve estimation precision by incorporating additional photographic data while guaranteeing that regional average yield estimates remain asymptotically unbiased.
-5. **Starting Point**: The paper adopts the Prediction-Powered Inference (PPI++) framework, using CV model predictions recalibrated through a "control function" as auxiliary information rather than as direct substitutes for ground measurements.
+3. **Key Challenge**: Photographs are cheap but insufficiently accurate, while crop cuts are accurate but expensive — the central challenge is how to use photographs to supplement crop cuts without introducing bias.
+4. **Goal**: To improve estimation precision by incorporating additional photographic data while guaranteeing that regional average yield estimates remain asymptotically unbiased.
+5. **Key Insight**: The paper adopts the Prediction-Powered Inference (PPI++) framework, using CV model predictions recalibrated through a "control function" as auxiliary information rather than as direct substitutes for ground measurements.
 6. **Core Idea**: PPI++ employs a tuning coefficient $\hat{\lambda}$ to adaptively balance photographic predictions and ground-truth measurements, guaranteeing no increase in variance regardless of CV model quality.
 
 ## Method

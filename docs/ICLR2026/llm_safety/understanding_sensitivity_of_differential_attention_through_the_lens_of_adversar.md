@@ -28,15 +28,15 @@ This work is the first to analyze the Differential Attention (DA) mechanism from
 
 ## Background & Motivation
 
-**State of the Field**: The DA mechanism introduced in Differential Transformer suppresses redundant or noisy information via the subtraction of two attention maps, $A_1 - \lambda A_2$, effectively reducing contextual hallucinations. This mechanism has since been adopted by several follow-up works. Its "noise cancellation" property makes DA particularly attractive for safety-critical applications such as autonomous driving, medical diagnosis, and legal document analysis.
+**Background**: The DA mechanism introduced in Differential Transformer suppresses redundant or noisy information via the subtraction of two attention maps, $A_1 - \lambda A_2$, effectively reducing contextual hallucinations. This mechanism has since been adopted by several follow-up works. Its "noise cancellation" property makes DA particularly attractive for safety-critical applications such as autonomous driving, medical diagnosis, and legal document analysis.
 
 **Limitations of Prior Work**: Intuitively, the subtraction structure in DA should improve robustness to perturbations by attenuating noise signals. However, this intuition has never been rigorously verified. Existing studies on attention robustness focus on standard attention, leaving the robustness of DA entirely unexplored.
 
-**Root Cause**: For the subtraction $A_1 - \lambda A_2$ to be effective, the two branches must have opposing gradient directions in the same regions (one enhancing, one suppressing). This "negative gradient alignment," however, is precisely what amplifies sensitivity to input perturbations—the very mechanism that suppresses noise becomes the source of adversarial vulnerability.
+**Key Challenge**: For the subtraction $A_1 - \lambda A_2$ to be effective, the two branches must have opposing gradient directions in the same regions (one enhancing, one suppressing). This "negative gradient alignment," however, is precisely what amplifies sensitivity to input perturbations—the very mechanism that suppresses noise becomes the source of adversarial vulnerability.
 
-**Paper Goals**: What is the behavior of DA's subtraction structure under adversarial perturbations? Is it more or less robust than standard attention? How does depth stacking affect robustness?
+**Goal**: What is the behavior of DA's subtraction structure under adversarial perturbations? Is it more or less robust than standard attention? How does depth stacking affect robustness?
 
-**Starting Point**: The analysis proceeds from a theoretical framework of gradient analysis and Lipschitz constants to establish mathematical proofs of sensitivity amplification in DA, followed by systematic empirical validation on ViT/DiffViT and CLIP/DiffCLIP.
+**Key Insight**: The analysis proceeds from a theoretical framework of gradient analysis and Lipschitz constants to establish mathematical proofs of sensitivity amplification in DA, followed by systematic empirical validation on ViT/DiffViT and CLIP/DiffCLIP.
 
 **Core Idea**: DA's noise cancellation mechanism is a double-edged sword—while suppressing redundant attention via negative gradient alignment, it structurally amplifies sensitivity to adversarial perturbations.
 

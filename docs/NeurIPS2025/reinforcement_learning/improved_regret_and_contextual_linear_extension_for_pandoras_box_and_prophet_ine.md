@@ -28,15 +28,15 @@ This paper proposes new algorithms for the online Pandora's Box problem, improvi
 
 ## Background & Motivation
 
-**State of the Field**: Pandora's Box — $n$ boxes each with a cost and an unknown reward distribution, requiring decisions on the order of opening and when to stop. Weitzman (1978) provides the optimal policy under known distributions.
+**Background**: Pandora's Box — $n$ boxes each with a cost and an unknown reward distribution, requiring decisions on the order of opening and when to stop. Weitzman (1978) provides the optimal policy under known distributions.
 
 **Limitations of Prior Work**: In the online setting, Agarwal et al. (2024) achieve $\widetilde{O}(Un\sqrt{T})$ (where $U$ can be as large as $n$), while the lower bound is $\Omega(\sqrt{nT})$, leaving an $n$-factor gap.
 
-**Root Cause**: Prior methods shift probability mass by a fixed amount, yielding a loose TV-distance bound; $\text{Term}_{t,i}$ is coarsely bounded by $U \cdot \text{TV}$.
+**Key Challenge**: Prior methods shift probability mass by a fixed amount, yielding a loose TV-distance bound; $\text{Term}_{t,i}$ is coarsely bounded by $U \cdot \text{TV}$.
 
-**Paper Goals**: Close the $n$-factor gap in the non-contextual setting; establish a contextual linear model achieving $\sqrt{T}$-type regret.
+**Goal**: Close the $n$-factor gap in the non-contextual setting; establish a contextual linear model achieving $\sqrt{T}$-type regret.
 
-**Starting Point**: Bernstein-type DKW inequalities for adaptive probability mass adjustment, combined with fine-grained analysis of the utility function's derivative.
+**Key Insight**: Bernstein-type DKW inequalities for adaptive probability mass adjustment, combined with fine-grained analysis of the utility function's derivative.
 
 **Core Idea**: Adaptive optimistic distributions + two-region derivative analysis = minimax-optimal regret.
 

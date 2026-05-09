@@ -160,11 +160,11 @@ BarcodeMamba+ is a foundation model for fungal DNA barcode classification—buil
 
 ## Background & Motivation
 
-**State of the Field**: DNA barcoding is foundational to automated biodiversity monitoring, but fungal classification is highly challenging (93% of specimens lack species-level annotations; severe long-tail distribution).
+**Background**: DNA barcoding is foundational to automated biodiversity monitoring, but fungal classification is highly challenging (93% of specimens lack species-level annotations; severe long-tail distribution).
 
 **Limitations of Prior Work**: Traditional methods such as BLAST are slow and generalize poorly; supervised learning struggles with extremely sparse annotations.
 
-**Starting Point**: Pretraining a Mamba-based (efficient SSM) foundation model to exploit unlabeled data.
+**Key Insight**: Pretraining a Mamba-based (efficient SSM) foundation model to exploit unlabeled data.
 
 **Core Idea**: SSM pretraining + hierarchical classification enhancements = a powerful tool for fungal classification under data-sparse conditions.
 

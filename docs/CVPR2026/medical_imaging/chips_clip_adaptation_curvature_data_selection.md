@@ -28,15 +28,15 @@ This paper revisits CLIP domain adaptation from a data-centric perspective and p
 
 ## Background & Motivation
 
-**State of the Field**: Vision-language models such as CLIP perform well in general domains but suffer significant performance degradation in specialized domains such as medical imaging. Adaptation methods fall into two categories: model-centric approaches (modifying fine-tuning strategies or parameterization, e.g., PEFT, LoRA) and data-centric approaches (continual pre-training (CPT) on large-scale domain data, e.g., PubMedCLIP, BioMedCLIP).
+**Background**: Vision-language models such as CLIP perform well in general domains but suffer significant performance degradation in specialized domains such as medical imaging. Adaptation methods fall into two categories: model-centric approaches (modifying fine-tuning strategies or parameterization, e.g., PEFT, LoRA) and data-centric approaches (continual pre-training (CPT) on large-scale domain data, e.g., PubMedCLIP, BioMedCLIP).
 
 **Limitations of Prior Work**: The CPT paradigm relies on massive domain-specific data (millions to hundreds of millions of pairs), incurring high data collection costs. Moreover, indiscriminate use of all available data introduces redundant or low-quality samples, which can actually degrade learning. Data itself, as a central factor in CPT effectiveness, has been largely overlooked.
 
-**Root Cause**: Existing data attribution methods (influence functions, TracIn, TRAK, etc.) are designed for single-encoder supervised classification models and systematically misrank samples when applied to CLIP, for three reasons: (A) CLIP's dual-encoder architecture produces a non-block-diagonal second-order curvature; block-diagonal approximations ignore cross-modal coupling. (B) In InfoNCE, each sample's gradient depends on the softmax normalization over the entire batch, so influence is not per-example additive. (C) Projection heads and the temperature parameter dominate early changes in similarity distributions, making full-parameter influence computation largely wasteful.
+**Key Challenge**: Existing data attribution methods (influence functions, TracIn, TRAK, etc.) are designed for single-encoder supervised classification models and systematically misrank samples when applied to CLIP, for three reasons: (A) CLIP's dual-encoder architecture produces a non-block-diagonal second-order curvature; block-diagonal approximations ignore cross-modal coupling. (B) In InfoNCE, each sample's gradient depends on the softmax normalization over the entire batch, so influence is not per-example additive. (C) Projection heads and the temperature parameter dominate early changes in similarity distributions, making full-parameter influence computation largely wasteful.
 
-**Paper Goals**: Design a CLIP-specific data selector that accurately evaluates each training sample's contribution to target-domain adaptation, achieving optimal CPT performance with minimal data.
+**Goal**: Design a CLIP-specific data selector that accurately evaluates each training sample's contribution to target-domain adaptation, achieving optimal CPT performance with minimal data.
 
-**Starting Point**: Adopt a "one-step descent" perspective to compute Newton-direction alignment scores within CLIP's endpoint subspace (projection heads + temperature parameter), while ensuring scalability via InfoNCE-aware curvature estimation and JL sketching.
+**Key Insight**: Adopt a "one-step descent" perspective to compute Newton-direction alignment scores within CLIP's endpoint subspace (projection heads + temperature parameter), while ensuring scalability via InfoNCE-aware curvature estimation and JL sketching.
 
 **Core Idea**: Perform curvature-aware Newton-direction alignment scoring within CLIP's projection-head subspace, combined with learnability and domain-relevance weights, to select high-value samples as a substitute for large-scale blind CPT.
 

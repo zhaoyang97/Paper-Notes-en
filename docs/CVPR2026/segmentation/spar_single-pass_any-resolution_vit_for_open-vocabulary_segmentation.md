@@ -29,15 +29,15 @@ This paper proposes SPAR, which distills the spatial reasoning capability of a f
 
 ## Background & Motivation
 
-**State of the Field**: Foundation ViTs (CLIP, SigLIP2, DINOv3) excel at image-level understanding via contrastive/self-supervised learning, but are limited in dense prediction tasks (e.g., segmentation) that require fine-grained spatial understanding, due to fixed-resolution pretraining and coarse patch-level representations. Open-vocabulary segmentation (OVS) requires models to segment arbitrary categories from text alone, placing even higher demands on fine-grained pixel-level reasoning at high resolution.
+**Background**: Foundation ViTs (CLIP, SigLIP2, DINOv3) excel at image-level understanding via contrastive/self-supervised learning, but are limited in dense prediction tasks (e.g., segmentation) that require fine-grained spatial understanding, due to fixed-resolution pretraining and coarse patch-level representations. Open-vocabulary segmentation (OVS) requires models to segment arbitrary categories from text alone, placing even higher demands on fine-grained pixel-level reasoning at high resolution.
 
 **Limitations of Prior Work**: Two strategies exist for handling high-resolution images: (1) single-pass inference with interpolated positional encodings — efficient but inaccurate, as the train-inference resolution mismatch distorts positional information; (2) sliding window inference — significantly improves accuracy via small-stride overlapping windows (each patch appears in multiple contexts), but at extremely high computational cost. For example, sliding window with stride 24 is ~52× slower than single-pass inference.
 
-**Root Cause**: There is a severe accuracy–efficiency trade-off — single-pass inference is fast but weak; sliding window inference is strong but slow. Existing resolution adaptation methods (e.g., NaFlex) work well for image-level tasks but underperform on dense prediction.
+**Key Challenge**: There is a severe accuracy–efficiency trade-off — single-pass inference is fast but weak; sliding window inference is strong but slow. Existing resolution adaptation methods (e.g., NaFlex) work well for image-level tasks but underperform on dense prediction.
 
-**Paper Goals**: Achieve segmentation accuracy comparable to or exceeding fine-stride sliding window inference while retaining the efficiency of single-pass forward inference.
+**Goal**: Achieve segmentation accuracy comparable to or exceeding fine-stride sliding window inference while retaining the efficiency of single-pass forward inference.
 
-**Starting Point**: The advantage of sliding window inference fundamentally stems from sub-patch regions being exposed to diverse contexts and robustness gained through averaging — a form of spatial reasoning that can be transferred to a single-pass model via distillation.
+**Key Insight**: The advantage of sliding window inference fundamentally stems from sub-patch regions being exposed to diverse contexts and robustness gained through averaging — a form of spatial reasoning that can be transferred to a single-pass model via distillation.
 
 **Core Idea**: Distill the spatial features of a fine-stride sliding window teacher into a single-pass student of identical architecture using a feature regression loss, requiring no architectural modification or pixel-level annotation.
 

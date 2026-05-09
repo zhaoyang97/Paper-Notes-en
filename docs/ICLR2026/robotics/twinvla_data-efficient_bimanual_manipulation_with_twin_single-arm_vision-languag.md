@@ -29,7 +29,7 @@ TwinVLA is proposed as a modular framework that composes two pretrained single-a
 
 ## Background & Motivation
 
-**State of the Field**: Vision-Language-Action (VLA) models have achieved remarkable success in single-arm robotic manipulation, generalizing effectively across tasks, objects, and environments. However, bimanual manipulation—essential for complex tasks such as folding clothes and assembling parts—has seen limited progress due to the scarcity of publicly available bimanual data.
+**Background**: Vision-Language-Action (VLA) models have achieved remarkable success in single-arm robotic manipulation, generalizing effectively across tasks, objects, and environments. However, bimanual manipulation—essential for complex tasks such as folding clothes and assembling parts—has seen limited progress due to the scarcity of publicly available bimanual data.
 
 **Limitations of Prior Work**:
 
@@ -38,9 +38,9 @@ TwinVLA is proposed as a modular framework that composes two pretrained single-a
 3. **Limitations of monolithic architectures**: Existing methods mix both arms' actions within a single model, failing to exploit the naturally modular structure of bimanual manipulation.
 4. **Difficulty of cross-embodiment transfer**: The observation and action spaces of single-arm and bimanual systems differ substantially, requiring monolithic models to train jointly on heterogeneous data.
 
-**Root Cause**: Publicly available bimanual data is extremely scarce, yet existing methods all demand large-scale bimanual pretraining. The central question is how to build high-performance bimanual policies from abundant single-arm data.
+**Key Challenge**: Publicly available bimanual data is extremely scarce, yet existing methods all demand large-scale bimanual pretraining. The central question is how to build high-performance bimanual policies from abundant single-arm data.
 
-**Paper Goals**: Inspired by neuroscience—human bimanual control is coordinated by the SMA and corpus callosum across two independent motor systems, rather than a single controller—TwinVLA adopts a modular approach: duplicate a pretrained single-arm VLA → fuse information across arms via joint attention → route shared inputs efficiently with MoE → fine-tune on a small amount of bimanual data.
+**Goal**: Inspired by neuroscience—human bimanual control is coordinated by the SMA and corpus callosum across two independent motor systems, rather than a single controller—TwinVLA adopts a modular approach: duplicate a pretrained single-arm VLA → fuse information across arms via joint attention → route shared inputs efficiently with MoE → fine-tune on a small amount of bimanual data.
 
 ## Method
 

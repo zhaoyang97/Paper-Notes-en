@@ -29,11 +29,11 @@ content_hash: d08b9d5ae4f5d035
 This paper proposes BehaveSim, an algorithm similarity metric based on Problem-Solving Trajectories (PSTrajs) and Dynamic Time Warping (DTW). BehaveSim measures algorithmic differences at the level of execution behavior rather than syntax or output, and when integrated into LLM-AAD frameworks such as FunSearch and EoH, yields significant performance improvements.
 
 ## Background & Motivation
-**State of the Field**: LLM-driven automated algorithm design (LLM-AAD) has emerged as a new paradigm for algorithm development. Frameworks such as FunSearch and EoH can autonomously generate code implementations of expert-level algorithms, achieving remarkable results on classical problems including Online Bin Packing, Cap Set, and TSP.
+**Background**: LLM-driven automated algorithm design (LLM-AAD) has emerged as a new paradigm for algorithm development. Frameworks such as FunSearch and EoH can autonomously generate code implementations of expert-level algorithms, achieving remarkable results on classical problems including Online Bin Packing, Cap Set, and TSP.
 
 **Limitations of Prior Work**: In LLM-AAD, the core design principles of algorithms are implicit in the generated code rather than expressed as explicit mathematical formulations or pseudocode. Existing code similarity metrics—such as syntax-tree edit distance, BLEU, and cosine similarity of code embeddings—capture only surface-level syntactic differences and cannot determine whether two code snippets implement fundamentally distinct algorithmic logic.
 
-**Root Cause**: Two syntactically dissimilar code snippets may realize the same algorithmic idea (differing only in variable names or loop structure), while syntactically similar code may embody entirely different solving strategies. Existing metrics cannot distinguish genuine algorithmic innovation from superficial code variation.
+**Key Challenge**: Two syntactically dissimilar code snippets may realize the same algorithmic idea (differing only in variable names or loop structure), while syntactically similar code may embody entirely different solving strategies. Existing metrics cannot distinguish genuine algorithmic innovation from superficial code variation.
 
 **Key Gap**: LLM-AAD frameworks rely on similarity measures for deduplication and diversity management in population maintenance. Inaccurate similarity metrics cause frameworks to retain redundant pseudo-innovations while crowding out genuinely diverse algorithms, reducing search efficiency.
 

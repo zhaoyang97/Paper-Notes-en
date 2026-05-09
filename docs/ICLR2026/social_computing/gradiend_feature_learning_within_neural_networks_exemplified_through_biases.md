@@ -35,9 +35,9 @@ Existing Transformer debiasing methods include:
 - **INLP**: Iterative Nullspace Projection, repeatedly training linear classifiers and projecting to the nullspace
 - **SentDebias / SelfDebias**: post-hoc methods adjusting embeddings or output distributions
 
-**Root Cause**: Existing unsupervised sparse autoencoder methods (e.g., Bricken et al., 2023) can extract interpretable features but require learning a large number of latent features before searching for meaningful explanations, with no guarantee that a desired feature (e.g., "gender") will emerge. Meanwhile, most debiasing methods are post-hoc and do not genuinely modify the internal representations of already-trained models.
+**Key Challenge**: Existing unsupervised sparse autoencoder methods (e.g., Bricken et al., 2023) can extract interpretable features but require learning a large number of latent features before searching for meaningful explanations, with no guarantee that a desired feature (e.g., "gender") will emerge. Meanwhile, most debiasing methods are post-hoc and do not genuinely modify the internal representations of already-trained models.
 
-**Starting Point**: The paper exploits the feature information encoded in model gradients — gradients naturally indicate which parameters need to be updated to change a given feature. By designing a minimal encoder-decoder structure, a monosemantic feature neuron with **desired semantics** can be learned from the difference between factual and counterfactual gradients.
+**Key Insight**: The paper exploits the feature information encoded in model gradients — gradients naturally indicate which parameters need to be updated to change a given feature. By designing a minimal encoder-decoder structure, a monosemantic feature neuron with **desired semantics** can be learned from the difference between factual and counterfactual gradients.
 
 ## Method
 

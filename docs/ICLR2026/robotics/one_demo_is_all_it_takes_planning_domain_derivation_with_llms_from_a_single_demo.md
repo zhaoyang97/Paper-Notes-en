@@ -30,7 +30,7 @@ This paper proposes the PDDLLM framework, which derives a complete PDDL planning
 
 ## Background & Motivation
 
-**State of the Field**: Task and Motion Planning (TAMP) combines high-level symbolic reasoning with low-level motion planning and represents the dominant paradigm for long-horizon robot manipulation tasks. It fundamentally relies on planning domains defined in PDDL, $\mathcal{D} = (\mathcal{P}, \mathcal{A})$, comprising a predicate set $\mathcal{P}$ and an action set $\mathcal{A}$.
+**Background**: Task and Motion Planning (TAMP) combines high-level symbolic reasoning with low-level motion planning and represents the dominant paradigm for long-horizon robot manipulation tasks. It fundamentally relies on planning domains defined in PDDL, $\mathcal{D} = (\mathcal{P}, \mathcal{A})$, comprising a predicate set $\mathcal{P}$ and an action set $\mathcal{A}$.
 
 **Limitations of Prior Work**: Constructing PDDL planning domains is highly labor-intensive: defining predicates (e.g., `(on ?o1 ?o2)`), action preconditions $\mathcal{P}_{pre}$, and effects $\mathcal{P}_{eff}$ all require careful design by domain experts, incurring substantial engineering effort and poor transferability to new environments.
 
@@ -38,7 +38,7 @@ This paper proposes the PDDLLM framework, which derives a complete PDDL planning
 
 **Limitations of Prior Work on Domain Generation**: (1) Methods requiring predefined predicates or actions as prior knowledge (Silver et al., 2023; Kumar et al., 2023) still demand significant human involvement; (2) LLM-based approaches require detailed natural-language domain descriptions and careful prompt engineering (Guan et al., 2023); (3) many methods assume that symbolic actions already have corresponding motion skills, leaving the action-to-motion-planner interface to be completed manually.
 
-**Starting Point**: The paper combines LLMs' semantic understanding with the verification capability of physical simulation—simulation provides physical feasibility checks (which LLMs alone cannot guarantee), while LLMs contribute semantic abstraction and pattern recognition. Only a single demonstration is required to fully automate planning domain construction.
+**Key Insight**: The paper combines LLMs' semantic understanding with the verification capability of physical simulation—simulation provides physical feasibility checks (which LLMs alone cannot guarantee), while LLMs contribute semantic abstraction and pattern recognition. Only a single demonstration is required to fully automate planning domain construction.
 
 **Core Contributions**: (1) The first fully automated pipeline from a one-shot demonstration to a complete PDDL domain; (2) LoCA, which automatically interfaces symbolic actions with motion planners; (3) validation of the approach across 1,200+ tasks with successful deployment on real robot platforms.
 

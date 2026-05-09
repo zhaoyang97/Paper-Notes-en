@@ -28,15 +28,15 @@ By decomposing training gradient signals into three components — direct, pre-c
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are trained with the next-token prediction (NTP) objective, i.e., learning $p(x_{t+1}|x_1 \cdots x_t)$. Intuitively, models should only learn features useful for predicting the next token. Studies on synthetic tasks have confirmed this — NTP training does appear to learn only immediately useful features.
+**Background**: LLMs are trained with the next-token prediction (NTP) objective, i.e., learning $p(x_{t+1}|x_1 \cdots x_t)$. Intuitively, models should only learn features useful for predicting the next token. Studies on synthetic tasks have confirmed this — NTP training does appear to learn only immediately useful features.
 
 **Limitations of Prior Work**: However, extensive empirical evidence shows that LLMs acquire features far beyond what immediate NTP requires — including abstract input feature reconstruction, "world models" (e.g., board states encoded by OthelloGPT), and multi-step lookahead capabilities. Why does the NTP objective drive the emergence of these "seemingly useless" features? Existing interpretability work has primarily adopted a teleological perspective (analyzing the algorithmic role of features in the trained model), without investigating the gradient signal sources during training.
 
-**Root Cause**: The NTP objective provides supervision only over the "next token," yet models learn features pertaining to "global state" and "future tokens." How does the gradient signal, optimizing only immediate prediction, drive the learning of these cross-positional features?
+**Key Challenge**: The NTP objective provides supervision only over the "next token," yet models learn features pertaining to "global state" and "future tokens." How does the gradient signal, optimizing only immediate prediction, drive the learning of these cross-positional features?
 
-**Paper Goals**: To explain the emergence mechanism of NTP-useless features from the perspective of gradient signal information flow. Specifically: (a) through what pathways do gradient signals reach parameters? (b) which pathways are responsible for learning "useless" features? (c) can the contribution of each mechanism be quantified?
+**Goal**: To explain the emergence mechanism of NTP-useless features from the perspective of gradient signal information flow. Specifically: (a) through what pathways do gradient signals reach parameters? (b) which pathways are responsible for learning "useless" features? (c) can the contribution of each mechanism be quantified?
 
-**Starting Point**: Leveraging the computational graph structure of causally masked Transformers, gradient signals are decomposed into three independent pathways, with intervention (ablating mechanisms to observe their effects) and attribution (quantifying the influence of each mechanism) serving as the two analytical methods.
+**Key Insight**: Leveraging the computational graph structure of causally masked Transformers, gradient signals are decomposed into three independent pathways, with intervention (ablating mechanisms to observe their effects) and attribution (quantifying the influence of each mechanism) serving as the two analytical methods.
 
 **Core Idea**: NTP-useless features emerge from the NTP objective via two mechanisms: pre-caching (loss signals from future positions back-propagate through attention) and circuit sharing (parameter sharing induces cross-positional feature transfer).
 

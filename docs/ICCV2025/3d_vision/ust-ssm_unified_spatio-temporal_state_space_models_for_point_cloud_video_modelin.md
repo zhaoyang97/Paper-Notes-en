@@ -43,15 +43,15 @@ Shortcomings of existing approaches:
 
 ### State of the Field
 
-**State of the Field**: Mamba4D employs sequential temporal scanning, restricting each query point to accessing information from only the immediately preceding frame.
+**Background**: Mamba4D employs sequential temporal scanning, restricting each query point to accessing information from only the immediately preceding frame.
 
 ### Root Cause
 
-**Root Cause**: SSMs suffer from attenuation in long-range token interactions.
+**Key Challenge**: SSMs suffer from attenuation in long-range token interactions.
 
 ### Starting Point
 
-**Starting Point**: Points that are semantically similar but spatially and temporally distant are placed far apart in the sequence.
+**Key Insight**: Points that are semantically similar but spatially and temporally distant are placed far apart in the sequence.
 
 ## Method
 

@@ -27,11 +27,11 @@ content_hash: 5b41f3481eb802cc
 This paper proposes a Beta distribution-based framework for modelling affective annotation consensus. The model predicts only the mean and standard deviation of the annotation distribution, from which higher-order descriptors—including skewness, kurtosis, and quantiles—are derived in closed form via moment matching. Experiments on SEWA and RECOLA demonstrate that Beta distributions effectively capture the full distributional characteristics of annotator disagreement.
 
 ## Background & Motivation
-**State of the Field**: In continuous affect prediction (valence-arousal), multiple annotators frequently disagree in their perception of the same behaviour. Such disagreement reflects the **intrinsic subjectivity** of affective signals rather than simple annotation noise.
+**Background**: In continuous affect prediction (valence-arousal), multiple annotators frequently disagree in their perception of the same behaviour. Such disagreement reflects the **intrinsic subjectivity** of affective signals rather than simple annotation noise.
 
 **Limitations of Prior Work**: Mainstream methods collapse annotations into **point estimates** (mean or median), discarding rich information about annotator disagreement, uncertainty, and distributional shape. This implicitly treats disagreement as noise rather than as a meaningful signal.
 
-**Root Cause**: Ignoring annotation variability may impair model generalisation and calibration, particularly in high-stakes applications such as healthcare and education.
+**Key Challenge**: Ignoring annotation variability may impair model generalisation and calibration, particularly in high-stakes applications such as healthcare and education.
 
 **Core Idea**: Model the annotation distribution using a Beta distribution, which (1) is defined on $[0,1]$, naturally suiting normalised affective dimensions; (2) offers flexible parameterisation (capable of representing symmetric, skewed, and concentrated distributions); and (3) permits closed-form derivation of all higher-order statistics from $(μ, σ)$.
 

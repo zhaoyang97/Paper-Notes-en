@@ -28,7 +28,7 @@ content_hash: 4c21e7cb30c30be8
 This paper proposes EAPrivacy — the first 4-tier benchmark for evaluating LLM physical-world privacy awareness (400+ procedurally generated scenarios, 60+ physical scenes). It finds that all frontier models exhibit "asymmetric conservatism" (over-cautious on task execution yet insufficient on privacy protection), that enabling reasoning/thinking mode actually degrades privacy performance, and that the best model (Gemini 2.5 Pro) achieves only 59% accuracy in dynamic environments.
 
 ## Background & Motivation
-**State of the Field**: LLMs are increasingly deployed as embodied agents (home robots, medical assistants, office robots) operating in physical spaces. Existing privacy benchmarks (e.g., Mireshghallah 2023) only evaluate text-level privacy leakage.
+**Background**: LLMs are increasingly deployed as embodied agents (home robots, medical assistants, office robots) operating in physical spaces. Existing privacy benchmarks (e.g., Mireshghallah 2023) only evaluate text-level privacy leakage.
 
 **Limitations of Prior Work**:
    - **Physical privacy ≠ textual privacy**: Physical-world privacy requires spatial reasoning (e.g., "a diary is on the desk"), contextual integrity judgment (e.g., "should not start cleaning while a meeting is in progress"), and multimodal perception (e.g., "hearing faint conversation")
@@ -36,7 +36,7 @@ This paper proposes EAPrivacy — the first 4-tier benchmark for evaluating LLM 
    - **Social norms vs. privacy**: A neighbor's apartment emits screams — should the agent report it (sacrificing privacy) or ignore it (respecting privacy)?
    - Aligned LLMs perform well on textual privacy benchmarks (Gemini/GPT-4's secret disclosure rate can reach 0%), yet physical privacy poses an entirely different challenge
 
-**Root Cause**: In the physical world, privacy is not a static rule but a dynamic social contract that depends on context and requires reasoning — the question is whether LLMs possess this reasoning capacity.
+**Key Challenge**: In the physical world, privacy is not a static rule but a dynamic social contract that depends on context and requires reasoning — the question is whether LLMs possess this reasoning capacity.
 
 **Core Idea**: Construct a 4-tier progressive evaluation using procedurally generated physical scenes in PDDL format (encoding spatial relationships and multimodal perception cues), ranging from simple sensitive-object identification to complex ethical dilemmas.
 

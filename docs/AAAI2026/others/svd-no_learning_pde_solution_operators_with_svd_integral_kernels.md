@@ -28,14 +28,14 @@ This paper proposes SVD-NO, a neural operator that explicitly parameterizes the 
 
 ## Background & Motivation
 
-1. **State of the Field**: Neural operators learn mappings between infinite-dimensional function spaces, i.e., operators from PDE specifications (initial conditions, boundary conditions, etc.) to solutions. Four major families exist: DeepONet, Fourier-based (FNO), Graph-based (GNO), and Physics-informed (PINO). FNO and its variants currently lead in accuracy.
+1. **Background**: Neural operators learn mappings between infinite-dimensional function spaces, i.e., operators from PDE specifications (initial conditions, boundary conditions, etc.) to solutions. Four major families exist: DeepONet, Fourier-based (FNO), Graph-based (GNO), and Physics-informed (PINO). FNO and its variants currently lead in accuracy.
 2. **Limitations of Prior Work**:
    - **Fourier methods**: Assume the kernel is stationary (depending only on coordinate differences $\kappa(x-x')$) and independent of the input function, limiting expressiveness.
    - **Graph methods**: Kernels are local ($\kappa$ is nonzero only for neighbors $x' \in \mathcal{N}(x)$), precluding direct modeling of long-range effects; stacking multiple layers leads to over-smoothing.
    - **DeepONet**: Fully connected architectures are limited for high-dimensional inputs.
-3. **Root Cause**: A fundamental trade-off between expressiveness and computational efficiency — the full kernel $\kappa(x, a(x), x', a(x'))$ permits arbitrary complex dependencies but incurs $O(n^2 d^2)$ cost, while existing methods reduce complexity through strong assumptions at the expense of expressiveness.
-4. **Paper Goals**: To design a neural operator that retains the full kernel dependency (input-function dependence and long-range effects) while remaining computationally efficient.
-5. **Starting Point**: Leveraging the SVD decomposition theory of Hilbert-Schmidt operators from functional analysis to represent the kernel in a low-rank factored form.
+3. **Key Challenge**: A fundamental trade-off between expressiveness and computational efficiency — the full kernel $\kappa(x, a(x), x', a(x'))$ permits arbitrary complex dependencies but incurs $O(n^2 d^2)$ cost, while existing methods reduce complexity through strong assumptions at the expense of expressiveness.
+4. **Goal**: To design a neural operator that retains the full kernel dependency (input-function dependence and long-range effects) while remaining computationally efficient.
+5. **Key Insight**: Leveraging the SVD decomposition theory of Hilbert-Schmidt operators from functional analysis to represent the kernel in a low-rank factored form.
 6. **Core Idea**: Directly parameterize the integral kernel as its SVD factorization $\kappa(z,z') = \Phi(z) \Sigma \Psi(z')^\top$, where two lightweight networks learn the left and right singular functions, a diagonal matrix learns the singular values, and a Gram matrix regularization enforces orthonormality.
 
 ## Method

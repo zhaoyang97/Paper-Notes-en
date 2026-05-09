@@ -32,7 +32,7 @@ This paper proposes Progressive Thought Encoding, which encodes evicted token in
 - Large Reasoning Models (LRMs) require long rollouts during RL training to obtain outcome rewards, with autoregressive decoding dominating both time and memory overhead.
 - Sliding window cache strategies can bound memory usage, but discarding intermediate reasoning tokens disrupts long-range context comprehension and degrades reasoning quality.
 - Experiments confirm that applying sliding window caching during RL training of Qwen models yields noticeably lower performance than full-cache training.
-- **Root Cause**: How to allow reasoning models to effectively "attend" to all preceding tokens under a fixed cache capacity.
+- **Key Challenge**: How to allow reasoning models to effectively "attend" to all preceding tokens under a fixed cache capacity.
 
 ## Core Problem
 

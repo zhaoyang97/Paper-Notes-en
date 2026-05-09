@@ -27,15 +27,15 @@ This paper proposes NOSE, a tri-modal olfactory representation learning framewor
 
 ## Background & Motivation
 
-**State of the Field**: Olfaction is the most difficult sense to digitize—vision has pixels, hearing has spectrograms, but olfaction lacks a stable mapping from physical quantities to perception. The olfactory perception chain is: molecular structure → receptor binding → neural signals → linguistic description.
+**Background**: Olfaction is the most difficult sense to digitize—vision has pixels, hearing has spectrograms, but olfaction lacks a stable mapping from physical quantities to perception. The olfactory perception chain is: molecular structure → receptor binding → neural signals → linguistic description.
 
 **Limitations of Prior Work**: (1) Existing methods model only fragments of the olfactory pathway (molecular structure alone, or molecule–description/receptor pairs in isolation), without capturing the complete molecule → receptor → semantics chain in a unified framework. (2) Mainstream methods cast odor prediction as a classification problem ("floral" or "fruity"), which disrupts the continuity of odor space—"mint" and "cool" are highly related yet treated as independent labels under a classification paradigm. (3) Classification objectives force the model to fit label boundaries, discarding information that is structurally important but classification-irrelevant.
 
-**Root Cause**: Complete tri-modal data (molecule–receptor–description triplets) is extremely scarce, whereas bimodal data (molecule–receptor and molecule–description pairs) can be obtained separately. The key challenge is achieving tri-modal alignment without triplet-level annotations.
+**Key Challenge**: Complete tri-modal data (molecule–receptor–description triplets) is extremely scarce, whereas bimodal data (molecule–receptor and molecule–description pairs) can be obtained separately. The key challenge is achieving tri-modal alignment without triplet-level annotations.
 
-**Paper Goals**: Construct a continuous representation space covering the complete olfactory perception pathway, such that molecular representations jointly encode receptor and semantic information without mutual interference.
+**Goal**: Construct a continuous representation space covering the complete olfactory perception pathway, such that molecular representations jointly encode receptor and semantic information without mutual interference.
 
-**Starting Point**: Molecules are the sole intersection of the two bimodal datasets and can serve as a pivot to bridge receptor and semantic information. The critical challenge is preventing the two signals from overwriting each other during injection—addressed by orthogonal injection.
+**Key Insight**: Molecules are the sole intersection of the two bimodal datasets and can serve as a pivot to bridge receptor and semantic information. The critical challenge is preventing the two signals from overwriting each other during injection—addressed by orthogonal injection.
 
 **Core Idea**: Receptor features and semantic features are added as orthogonal increments to the molecular representation. Gram-Schmidt orthogonalization ensures modality independence, while an LLM is used to mine semantic neighborhood relationships among odor descriptors to expand sparse labels.
 

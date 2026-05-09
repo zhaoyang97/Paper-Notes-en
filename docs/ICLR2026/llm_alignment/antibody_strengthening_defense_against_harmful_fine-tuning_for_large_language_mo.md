@@ -28,15 +28,15 @@ This paper proposes Antibody, a two-stage defense framework that (1) during alig
 
 ## Background & Motivation
 
-**State of the Field**: FTaaS platforms (e.g., OpenAI/Mistral fine-tuning services) allow users to upload data to fine-tune LLMs; however, user-submitted data may contain harmful samples (intentionally or unintentionally), causing safety alignment to be compromised.
+**Background**: FTaaS platforms (e.g., OpenAI/Mistral fine-tuning services) allow users to upload data to fine-tune LLMs; however, user-submitted data may contain harmful samples (intentionally or unintentionally), causing safety alignment to be compromised.
 
 **Limitations of Prior Work**: (a) Alignment-stage defenses (e.g., Vaccine/Booster) are static and cannot adapt to varying attack configurations (high step counts, large learning rates); (b) fine-tuning-stage defenses (e.g., Lisa/SafeInstr) either provide insufficient protection or degrade task performance; (c) most methods exhibit a severe trade-off between safety and task performance.
 
-**Root Cause**: Standard SFT does not distinguish between benign and harmful samples — all gradients are aggregated for updates, so even a small number of harmful sample gradients can poison the model.
+**Key Challenge**: Standard SFT does not distinguish between benign and harmful samples — all gradients are aggregated for updates, so even a small number of harmful sample gradients can poison the model.
 
-**Paper Goals**: Design a defense that operates cooperatively across both alignment and fine-tuning stages, thoroughly suppressing harmful gradient influence without degrading benign task learning.
+**Goal**: Design a defense that operates cooperatively across both alignment and fine-tuning stages, thoroughly suppressing harmful gradient influence without degrading benign task learning.
 
-**Starting Point**: From the perspective of gradient influence — if harmful sample gradients are already small after alignment (flat region) and are further down-weighted during fine-tuning, their influence can be effectively eliminated.
+**Key Insight**: From the perspective of gradient influence — if harmful sample gradients are already small after alignment (flat region) and are further down-weighted during fine-tuning, their influence can be effectively eliminated.
 
 **Core Idea**: Flatten the harmful loss during alignment (small gradients) + likelihood-ratio-based weighting during fine-tuning (low weight for harmful samples) → harmful gradients are doubly suppressed.
 

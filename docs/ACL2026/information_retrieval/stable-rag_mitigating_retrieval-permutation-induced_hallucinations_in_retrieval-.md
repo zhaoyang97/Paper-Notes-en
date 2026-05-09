@@ -28,15 +28,15 @@ This paper identifies a critical yet previously overlooked vulnerability in RAG 
 
 ## Background & Motivation
 
-**State of the Field**: RAG is a key paradigm for mitigating factual hallucinations in LLMs, providing evidence for generation by retrieving external documents. Current RAG research primarily focuses on retrieval quality (finding better documents) and positional bias (uneven attention in long contexts).
+**Background**: RAG is a key paradigm for mitigating factual hallucinations in LLMs, providing evidence for generation by retrieving external documents. Current RAG research primarily focuses on retrieval quality (finding better documents) and positional bias (uneven attention in long contexts).
 
 **Limitations of Prior Work**: The authors identify a previously neglected vulnerability—*permutation sensitivity*: even when the retrieved document set is identical (including the gold document), merely changing the document order can drive the model into entirely different reasoning paths, yielding inconsistent answers. On the NQ dataset, even with the gold document fixed in the first position, the permutation success rate (PSR) of LLMs remains high.
 
-**Root Cause**: Permutation sensitivity is neither a retrieval quality issue (the document set is identical) nor a long-context positional bias problem (Top-5 retrieval stays within ~1,000 tokens), but rather a structural instability in the LLM's internal reasoning dynamics—as network depth increases, document permutations induce an increasing number of divergent reasoning trajectories.
+**Key Challenge**: Permutation sensitivity is neither a retrieval quality issue (the document set is identical) nor a long-context positional bias problem (Top-5 retrieval stays within ~1,000 tokens), but rather a structural instability in the LLM's internal reasoning dynamics—as network depth increases, document permutations induce an increasing number of divergent reasoning trajectories.
 
-**Paper Goals**: (1) Quantify and understand the underlying mechanism of permutation sensitivity; (2) Design a model-agnostic method that enables RAG to produce consistent and accurate outputs under arbitrary document orderings.
+**Goal**: (1) Quantify and understand the underlying mechanism of permutation sensitivity; (2) Design a model-agnostic method that enables RAG to produce consistent and accurate outputs under arbitrary document orderings.
 
-**Starting Point**: Through layer-by-layer visualization of spectral clustering behavior in hidden states, the authors find that shallow-layer hidden states are mixed, while deep-layer hidden states cluster cleanly by final answer. Sensitive samples exhibit far more clusters than insensitive ones, indicating that permutation effects are progressively amplified in higher layers.
+**Key Insight**: Through layer-by-layer visualization of spectral clustering behavior in hidden states, the authors find that shallow-layer hidden states are mixed, while deep-layer hidden states cluster cleanly by final answer. Sensitive samples exhibit far more clusters than insensitive ones, indicating that permutation effects are progressively amplified in higher layers.
 
 **Core Idea**: Leverage permutation sensitivity estimation itself to eliminate permutation-induced hallucinations—apply spectral clustering to final-layer hidden states across all permutations, decode representative answers from each cluster centroid, construct preference data, and align the model via DPO.
 

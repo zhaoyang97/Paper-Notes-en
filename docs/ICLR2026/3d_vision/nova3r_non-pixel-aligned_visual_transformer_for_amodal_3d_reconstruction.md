@@ -28,15 +28,15 @@ This paper proposes NOVA3R — a non-pixel-aligned amodal 3D reconstruction fram
 
 ## Background & Motivation
 
-**State of the Field**: DUSt3R pioneered the pixel-aligned feed-forward 3D reconstruction paradigm, where each pixel predicts a 3D point along its ray. Subsequent methods (MASt3R, CUT3R, VGGT) extend this to multi-view settings while remaining pixel-aligned. A separate line of work pursues latent 3D generation (TripoSG/TRELLIS), but is largely limited to object-level tasks and requires high-quality mesh supervision.
+**Background**: DUSt3R pioneered the pixel-aligned feed-forward 3D reconstruction paradigm, where each pixel predicts a 3D point along its ray. Subsequent methods (MASt3R, CUT3R, VGGT) extend this to multi-view settings while remaining pixel-aligned. A separate line of work pursues latent 3D generation (TripoSG/TRELLIS), but is largely limited to object-level tasks and requires high-quality mesh supervision.
 
 **Limitations of Prior Work**: Pixel-aligned methods suffer from two fundamental deficiencies: (1) they can only reconstruct visible surfaces, leaving occluded regions geometrically empty; (2) in multi-view overlapping regions, the same physical 3D point is independently predicted by multiple rays, producing physically implausible redundant overlapping point layers.
 
-**Root Cause**: In the real world, a scene consists of a fixed number of physical points regardless of the number of viewpoints. When a 3D point is observed from multiple images, the correct representation should contain only a single point rather than one per observation. The pixel-aligned paradigm fundamentally violates this physical fact.
+**Key Challenge**: In the real world, a scene consists of a fixed number of physical points regardless of the number of viewpoints. When a 3D point is observed from multiple images, the correct representation should contain only a single point rather than one per observation. The pixel-aligned paradigm fundamentally violates this physical fact.
 
-**Paper Goals**: (a) How to learn a global, view-independent scene representation from pose-free images? (b) How to decode it into a complete (visible + occluded) non-pixel-aligned point cloud? (c) How to supervise an unordered point set (L2 loss is not directly applicable to unordered points)?
+**Goal**: (a) How to learn a global, view-independent scene representation from pose-free images? (b) How to decode it into a complete (visible + occluded) non-pixel-aligned point cloud? (c) How to supervise an unordered point set (L2 loss is not directly applicable to unordered points)?
 
-**Starting Point**: The problem is decomposed into two stages — first, a 3D point cloud autoencoder is trained to compress complete point clouds into latent tokens and decode them back via flow-matching; second, an image encoder is trained to map images into the same latent space. This decoupled two-stage design avoids the instability of end-to-end training.
+**Key Insight**: The problem is decomposed into two stages — first, a 3D point cloud autoencoder is trained to compress complete point clouds into latent tokens and decode them back via flow-matching; second, an image encoder is trained to map images into the same latent space. This decoupled two-stage design avoids the instability of end-to-end training.
 
 **Core Idea**: Replace per-ray pixel-aligned prediction with learnable scene tokens, and combine them with a flow-matching decoder to enable feed-forward reconstruction of complete, non-pixel-aligned 3D point clouds from pose-free images.
 

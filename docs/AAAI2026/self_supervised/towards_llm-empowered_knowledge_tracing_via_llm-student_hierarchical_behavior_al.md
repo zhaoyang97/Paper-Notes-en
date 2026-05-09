@@ -29,16 +29,16 @@ This paper proposes L-HAKT, a framework that for the first time integrates LLM d
 
 ## Background & Motivation
 
-**State of the Field**: Knowledge Tracing (KT) is a core technique in educational intelligence, dynamically inferring students' knowledge states by analyzing historical interaction data. Existing approaches fall into two paradigms: sequential modeling (DKT, SAKT, SAINT, etc., based on RNN/Transformer) and graph-based modeling (GKT, SKT, etc., based on GNN).
+**Background**: Knowledge Tracing (KT) is a core technique in educational intelligence, dynamically inferring students' knowledge states by analyzing historical interaction data. Existing approaches fall into two paradigms: sequential modeling (DKT, SAKT, SAINT, etc., based on RNN/Transformer) and graph-based modeling (GKT, SKT, etc., based on GNN).
 
 **Limitations of Prior Work**:
 (1) **Lack of hierarchical concept representation** — conventional methods operate in Euclidean space, where flat geometry cannot capture the tree-structured hierarchy of knowledge systems (e.g., basic definitions → derivations → synthesis);
 (2) **Insufficient utilization of exercise semantics** — existing methods rely on simple IDs or shallow textual features, failing to exploit the topological relationships among knowledge concepts latent in exercise text;
 (3) **Neglect of individual cognitive bias** — the population-level distribution in training data distorts individual difficulty perception (e.g., a model trained on low-ability populations may incorrectly label medium-difficulty exercises as highly difficult).
 
-**Root Cause**: The hierarchical dependencies among knowledge concepts exhibit a naturally tree-structured topology, yet the exponential volume growth in Euclidean space prevents efficient representation of such structures (as shown in Figure 1, the hyperbolic metric of the student–exercise–concept relational graph approaches 0, indicating strong tree-like properties).
+**Key Challenge**: The hierarchical dependencies among knowledge concepts exhibit a naturally tree-structured topology, yet the exponential volume growth in Euclidean space prevents efficient representation of such structures (as shown in Figure 1, the hyperbolic metric of the student–exercise–concept relational graph approaches 0, indicating strong tree-like properties).
 
-**Starting Point**: The paper leverages LLM dual agents to extract hierarchical knowledge structures from exercise semantics and simulate learning behaviors, explicitly models hierarchical dependencies in hyperbolic space, and applies contrastive learning to align synthetic and real data for cognitive bias calibration.
+**Key Insight**: The paper leverages LLM dual agents to extract hierarchical knowledge structures from exercise semantics and simulate learning behaviors, explicitly models hierarchical dependencies in hyperbolic space, and applies contrastive learning to align synthetic and real data for cognitive bias calibration.
 
 ## Method
 

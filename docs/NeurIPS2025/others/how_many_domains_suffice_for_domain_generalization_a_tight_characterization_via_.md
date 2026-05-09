@@ -30,7 +30,7 @@ This paper introduces the *Domain Shattering Dimension* (Gdim), a novel combinat
 
 ### State of the Field
 
-**State of the Field**: The central question in domain generalization is: given a family of data distributions (domains), how many randomly sampled domains suffice to learn a model that performs well on all unseen domains? This is a high-level analogue of the "sample complexity" question in PAC learning, but now asking how many **domains** are needed to generalize to new ones.
+**Background**: The central question in domain generalization is: given a family of data distributions (domains), how many randomly sampled domains suffice to learn a model that performs well on all unseen domains? This is a high-level analogue of the "sample complexity" question in PAC learning, but now asking how many **domains** are needed to generalize to new ones.
 
 Limitations of existing theoretical work:
 
@@ -40,13 +40,13 @@ Limitations of existing theoretical work:
 
 ### Starting Point
 
-**Starting Point**: Few works directly focus on the domain sample complexity as the central quantity of interest; existing approaches based on the fat-shattering dimension significantly overestimate this quantity.
+**Key Insight**: Few works directly focus on the domain sample complexity as the central quantity of interest; existing approaches based on the fat-shattering dimension significantly overestimate this quantity.
 
 ### Root Cause
 
-**Root Cause**: Most works optimize average error across domains rather than guaranteeing low error simultaneously on almost all domains.
+**Key Challenge**: Most works optimize average error across domains rather than guaranteeing low error simultaneously on almost all domains.
 
-**Paper Goals**: To provide a tight characterization of domain sample complexity under minimal assumptions — only assuming the existence of a globally good hypothesis.
+**Goal**: To provide a tight characterization of domain sample complexity under minimal assumptions — only assuming the existence of a globally good hypothesis.
 
 ## Method
 

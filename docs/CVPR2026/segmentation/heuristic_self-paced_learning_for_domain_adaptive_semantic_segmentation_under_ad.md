@@ -29,15 +29,15 @@ This paper reformulates class-level curriculum learning in unsupervised domain a
 
 ## Background & Motivation
 
-**State of the Field**: Unsupervised domain adaptive semantic segmentation (UDA-SS) is a core technique for autonomous driving perception, transferring models trained under clear weather to adverse conditions (fog, rain, nighttime). Mainstream approaches apply style transfer to mitigate domain gaps, while curriculum learning (CL) or hard category mining (HCM) is employed to address class imbalance.
+**Background**: Unsupervised domain adaptive semantic segmentation (UDA-SS) is a core technique for autonomous driving perception, transferring models trained under clear weather to adverse conditions (fog, rain, nighttime). Mainstream approaches apply style transfer to mitigate domain gaps, while curriculum learning (CL) or hard category mining (HCM) is employed to address class imbalance.
 
 **Limitations of Prior Work**: Existing CL and HCM methods suffer from fundamental paradigm flaws: (1) difficulty assessment relies on **fixed, hand-crafted metrics** (e.g., prediction uncertainty, confidence), using a one-dimensional scalar to characterize the high-dimensional, dynamic cognitive state of the model; (2) learning schedules are driven by **manually designed rules** (e.g., "easy-to-hard" or "focus entirely on hard classes"), which cannot adapt to the model's continuously evolving internal state. This "prescriptive paradigm" leads to category bias in compound problems such as adverse weather—some categories are over-attended while others are insufficiently learned.
 
-**Root Cause**: The model training process is a high-dimensional, dynamic, and non-monotonic evolutionary process. Attempting to statically schedule this learning trajectory using fixed, one-dimensional, manually defined scalars is fundamentally unsound. The CL "easy-to-hard" strategy overlooks categories that the model currently needs most, while the HCM "all hard classes" strategy lacks inter-class balance.
+**Key Challenge**: The model training process is a high-dimensional, dynamic, and non-monotonic evolutionary process. Attempting to statically schedule this learning trajectory using fixed, one-dimensional, manually defined scalars is fundamentally unsound. The CL "easy-to-hard" strategy overlooks categories that the model currently needs most, while the HCM "all hard classes" strategy lacks inter-class balance.
 
-**Paper Goals**: Shift from "designing a curriculum" to "learning a curriculum"—enabling an agent to autonomously discover the optimal learning trajectory based on the model's current state, rather than relying on human prior assumptions.
+**Goal**: Shift from "designing a curriculum" to "learning a curriculum"—enabling an agent to autonomously discover the optimal learning trajectory based on the model's current state, rather than relying on human prior assumptions.
 
-**Starting Point**: Inspired by reinforcement learning, curriculum learning is modeled as a sequential decision-making problem—at each training step, an agent observes the model state and autonomously determines which categories are most informative, then performs cross-domain mixed sampling centered on those categories.
+**Key Insight**: Inspired by reinforcement learning, curriculum learning is modeled as a sequential decision-making problem—at each training step, an agent observes the model state and autonomously determines which categories are most informative, then performs cross-domain mixed sampling centered on those categories.
 
 **Core Idea**: An autonomous curriculum scheduler is proposed, comprising a high-dimensional state encoder for perceiving the model's learning state and a category-fair policy gradient for ensuring balanced improvement, realizing truly adaptive class-level curriculum learning.
 

@@ -27,7 +27,7 @@ content_hash: ae346eb081f819d7
 This paper proposes to enhance the perceptual quality of suboptimal ground-truth images in existing datasets via super-resolution combined with frequency-domain adaptive mixing, and trains a lightweight Output Refinement Network (ORNet) that improves the perceptual quality of restoration outputs without modifying any pretrained restoration model.
 
 ## Background & Motivation
-**State of the Field**: Deep learning-based image restoration has achieved remarkable success under supervised training paradigms, yet model performance is fundamentally bounded by the quality of ground-truth (GT) images.
+**Background**: Deep learning-based image restoration has achieved remarkable success under supervised training paradigms, yet model performance is fundamentally bounded by the quality of ground-truth (GT) images.
 
 **Limitations of Prior Work**: GT images in real-world datasets are often **far from ideal** due to acquisition constraints:
    - Deblurring datasets (e.g., GoPro): GT frames are selected from video sequences and still contain residual camera shake.

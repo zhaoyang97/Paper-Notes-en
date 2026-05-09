@@ -27,15 +27,15 @@ content_hash: 1f35c2187923ec94
 This paper proposes MAT-Agent, a multi-agent framework consisting of four autonomous agents responsible for data augmentation, optimizer selection, learning rate scheduling, and loss function selection, respectively. The framework dynamically adjusts training configurations during the training process, employing DQN to learn policies as a replacement for conventional static hyperparameter configurations, and achieves state-of-the-art performance on multi-label image classification tasks.
 
 ## Background & Motivation
-**State of the Field**: Multi-label image classification (MLIC) training typically fixes hyperparameter configurations—including data augmentation, optimizer, learning rate schedule, and loss function—prior to training, or applies heuristic adjustments only at predefined milestones.
+**Background**: Multi-label image classification (MLIC) training typically fixes hyperparameter configurations—including data augmentation, optimizer, learning rate schedule, and loss function—prior to training, or applies heuristic adjustments only at predefined milestones.
 
 **Limitations of Prior Work**: Static configurations are incapable of adapting to the evolving label co-occurrence patterns, class difficulty, and feature-label mappings that emerge during training, resulting in training instability, premature convergence, and limited performance.
 
-**Root Cause**: The training process is inherently non-stationary—different stages require different strategy combinations (more exploration in early stages, fine-grained tuning in later stages, and specialized handling for long-tail classes)—yet conventional methods treat configuration search as a one-shot static decision. Furthermore, nonlinear interactions exist among components, and independent tuning neglects synergistic effects.
+**Key Challenge**: The training process is inherently non-stationary—different stages require different strategy combinations (more exploration in early stages, fine-grained tuning in later stages, and specialized handling for long-tail classes)—yet conventional methods treat configuration search as a one-shot static decision. Furthermore, nonlinear interactions exist among components, and independent tuning neglects synergistic effects.
 
-**Paper Goals**: (1) How to adaptively adjust multiple training components in real time during training; (2) How to capture synergistic effects among components for joint optimization; (3) How to strike a balance between exploring new strategies and exploiting known effective ones.
+**Goal**: (1) How to adaptively adjust multiple training components in real time during training; (2) How to capture synergistic effects among components for joint optimization; (3) How to strike a balance between exploring new strategies and exploiting known effective ones.
 
-**Starting Point**: The training optimization problem is reformulated as a multi-agent sequential decision-making problem, where each agent is responsible for one training component and learns optimal policies online through interaction with the training process.
+**Key Insight**: The training optimization problem is reformulated as a multi-agent sequential decision-making problem, where each agent is responsible for one training component and learns optimal policies online through interaction with the training process.
 
 **Core Idea**: Four DQN agents collaboratively select data augmentation, optimizer, learning rate, and loss function combinations in real time during training, transforming static hyperparameter search into dynamic policy learning.
 

@@ -29,15 +29,15 @@ This paper presents Thucy, the first multi-agent claim verification system suppo
 
 ## Background & Motivation
 
-**State of the Field**: Everyday discourse is filled with claims verifiable against structured data (e.g., declining crime rates, economic growth), yet most people lack the technical means to check them. Advances in LLMs and agentic AI make automated verification increasingly feasible.
+**Background**: Everyday discourse is filled with claims verifiable against structured data (e.g., declining crime rates, economic growth), yet most people lack the technical means to check them. Advances in LLMs and agentic AI make automated verification increasingly feasible.
 
 **Limitations of Prior Work**: Existing fact verification systems suffer from three major limitations: (a) support only single-table queries (no cross-table or cross-database reasoning); (b) typically handle only small tables (hundreds of rows) that fit within an LLM context window; (c) provide no traceable evidence, leaving users unable to audit the system's reasoning.
 
-**Root Cause**: Real-world claim verification often requires multi-table joins across multiple databases and autonomous exploration of previously unknown data sources—assumptions that existing methods do not support.
+**Key Challenge**: Real-world claim verification often requires multi-table joins across multiple databases and autonomous exploration of previously unknown data sources—assumptions that existing methods do not support.
 
-**Paper Goals**: To build a multi-agent system with zero prior knowledge of the data environment, capable of cross-database and cross-table verification, and able to provide concrete SQL evidence.
+**Goal**: To build a multi-agent system with zero prior knowledge of the data environment, capable of cross-database and cross-table verification, and able to provide concrete SQL evidence.
 
-**Starting Point**: Drawing on the rigorous evidentiary standards of the ancient Greek historian Thucydides, the system is designed to produce not only a verdict but also evidence in the form of SQL queries and their execution results.
+**Key Insight**: Drawing on the rigorous evidentiary standards of the ancient Greek historian Thucydides, the system is designed to produce not only a verdict but also evidence in the form of SQL queries and their execution results.
 
 **Core Idea**: The verification task is decomposed into four stages—data exploration → schema understanding → SQL querying → verdict synthesis—each handled by a specialized agent, coordinated by the Verifier. The key design principles are **expert decoupling** and **Verifier context protection**: experts handle low-level, noisy database interactions, while the Verifier receives only concise, high-quality information.
 

@@ -28,7 +28,7 @@ This paper investigates the use of LLMs (Claude series) for solving constrained 
 
 ## Background & Motivation
 
-**State of the Field**: 5G network slicing creates isolated virtual networks over shared infrastructure to support diverse service requirements, including eMBB (high bandwidth), URLLC (low latency), and mMTC (massive IoT connectivity).
+**Background**: 5G network slicing creates isolated virtual networks over shared infrastructure to support diverse service requirements, including eMBB (high bandwidth), URLLC (low latency), and mMTC (massive IoT connectivity).
 
 **Limitations of Prior Work**: Traditional approaches rely on large-scale optimization or heuristic algorithms that are computationally intensive and require expert-level parameter tuning. ILP faces combinatorial explosion as problem size grows.
 

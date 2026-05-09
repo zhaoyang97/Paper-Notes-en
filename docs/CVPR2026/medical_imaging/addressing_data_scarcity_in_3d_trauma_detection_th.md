@@ -29,15 +29,15 @@ Under extreme annotation scarcity—only 206 labeled cases (144 for training)—
 
 ## Background & Motivation
 
-**State of the Field**: Abdominal CT trauma detection is critical in emergency radiology, requiring rapid and accurate identification and localization of internal injuries. The RSNA 2023 challenge advanced the field; the winning solution achieved 98% AUC via multi-stage pipelines and ensemble strategies, but relied on large-scale annotated data.
+**Background**: Abdominal CT trauma detection is critical in emergency radiology, requiring rapid and accurate identification and localization of internal injuries. The RSNA 2023 challenge advanced the field; the winning solution achieved 98% AUC via multi-stage pipelines and ensemble strategies, but relied on large-scale annotated data.
 
 **Limitations of Prior Work**: Annotation is prohibitively expensive—only 206 of 4,711 sequences in the RSNA dataset carry segmentation labels (4.4%). Conventional 2D slice analysis discards 3D spatial relationships; direct 3D convolution over full-resolution volumes (512×336×336) is computationally intractable; and centroid-based detection methods cannot represent the complex geometry of irregular organs and lesions.
 
-**Root Cause**: 3D deep learning detection demands large annotated datasets, yet medical image annotation costs are extremely high (only 4.4% labeled). General-purpose 3D pretraining (natural video or synthetic data) transfers poorly to medical imaging due to fundamentally different HU distributions and anatomical patterns.
+**Key Challenge**: 3D deep learning detection demands large annotated datasets, yet medical image annotation costs are extremely high (only 4.4% labeled). General-purpose 3D pretraining (natural video or synthetic data) transfers poorly to medical imaging due to fundamentally different HU distributions and anatomical patterns.
 
-**Paper Goals**: To achieve reliable abdominal trauma detection and localization under extreme annotation scarcity with only hundreds of labeled 3D CT volumes.
+**Goal**: To achieve reliable abdominal trauma detection and localization under extreme annotation scarcity with only hundreds of labeled 3D CT volumes.
 
-**Starting Point**: A two-stage learning scheme—first, self-supervised pretraining on all available unlabeled CTs to acquire anatomical priors; then semi-supervised detection fine-tuning combining the small labeled set with large unlabeled data.
+**Key Insight**: A two-stage learning scheme—first, self-supervised pretraining on all available unlabeled CTs to acquire anatomical priors; then semi-supervised detection fine-tuning combining the small labeled set with large unlabeled data.
 
 **Core Idea**: MIM pretraining provides anatomical priors; 3D vertex RPE models complex geometry; Mean Teacher semi-supervised learning exploits unlabeled data. The three components act synergistically to address extreme annotation scarcity.
 

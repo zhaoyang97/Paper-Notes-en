@@ -28,15 +28,15 @@ This paper proposes Topographic Deep Spiking Neural Networks (TDSNNs), which int
 
 ## Background & Motivation
 
-**State of the Field**: The primate visual cortex exhibits topographic organization—neurons with similar functional tuning cluster spatially, ranging from orientation/spatial-frequency/color selectivity in V1 to category selectivity (e.g., spatial clustering of face and body regions) in IT. Deep learning models such as TopoNet and TDANN have been applied to model this topographic structure by incorporating wiring-cost auxiliary losses to induce topographic features.
+**Background**: The primate visual cortex exhibits topographic organization—neurons with similar functional tuning cluster spatially, ranging from orientation/spatial-frequency/color selectivity in V1 to category selectivity (e.g., spatial clustering of face and body regions) in IT. Deep learning models such as TopoNet and TDANN have been applied to model this topographic structure by incorporating wiring-cost auxiliary losses to induce topographic features.
 
 **Limitations of Prior Work**: Existing topographic ANN models suffer from two critical issues: (1) significant performance degradation on classification tasks (TopoNet drops 3% on ImageNet; LLCNN-G drops up to 16.57%); and (2) complete neglect of the temporal dimension—temporal dynamics are a fundamental characteristic of biological visual processing, yet ANNs cannot inherently capture temporal information.
 
-**Root Cause**: Temporal dynamics are central to biological neural systems, yet existing topographic models are either ANNs that ignore time, or SNNs limited to shallow architectures (e.g., the two-layer SESNN), making it impossible to simultaneously achieve hierarchical topographic organization and high task performance in deep networks.
+**Key Challenge**: Temporal dynamics are central to biological neural systems, yet existing topographic models are either ANNs that ignore time, or SNNs limited to shallow architectures (e.g., the two-layer SESNN), making it impossible to simultaneously achieve hierarchical topographic organization and high task performance in deep networks.
 
-**Paper Goals**: (1) How to induce hierarchical topographic organization from V1 to IT in deep SNNs? (2) How to leverage the temporal dynamics of SNNs to mitigate performance degradation caused by topographic constraints? (3) How does topographic organization alter the temporal information processing mechanisms of SNNs?
+**Goal**: (1) How to induce hierarchical topographic organization from V1 to IT in deep SNNs? (2) How to leverage the temporal dynamics of SNNs to mitigate performance degradation caused by topographic constraints? (3) How does topographic organization alter the temporal information processing mechanisms of SNNs?
 
-**Starting Point**: SNNs inherently possess spike-based temporal dynamics. The authors design the STC loss to constrain both long-timescale (firing rate) and short-timescale (spike synchrony) responses, exploiting the temporal coding advantages of SNNs to compensate for the performance cost of topographic constraints.
+**Key Insight**: SNNs inherently possess spike-based temporal dynamics. The authors design the STC loss to constrain both long-timescale (firing rate) and short-timescale (spike synchrony) responses, exploiting the temporal coding advantages of SNNs to compensate for the performance cost of topographic constraints.
 
 **Core Idea**: Apply a Spatiotemporal Constraint (STC) loss to jointly optimize spatial topology and temporal synchrony in deep SNNs, achieving visual cortex topographic modeling with zero performance degradation.
 

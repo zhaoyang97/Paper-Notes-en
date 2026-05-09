@@ -29,7 +29,7 @@ This paper proposes Expert Pyramid Tuning (EPT), which transplants the multi-sca
 
 ## Background & Motivation
 
-**State of the Field**: LoRA achieves strong performance in single-task fine-tuning, and MoE-LoRA variants (MoELoRA, MoRE, MixLoRA) mitigate multi-task negative transfer by using gated routing to assign tokens to different low-rank experts.
+**Background**: LoRA achieves strong performance in single-task fine-tuning, and MoE-LoRA variants (MoELoRA, MoRE, MixLoRA) mitigate multi-task negative transfer by using gated routing to assign tokens to different low-rank experts.
 
 **Limitations of Prior Work**:
 
@@ -37,11 +37,11 @@ This paper proposes Expert Pyramid Tuning (EPT), which transplants the multi-sca
 2. Empirical validation shows that the optimal LoRA rank varies drastically across tasks as rank scales from 1 to 32 (e.g., RTE: rank=16, CoLA: rank=8), confirming the limitation of a uniform rank assignment.
 3. Each expert independently learning a full LoRA matrix introduces parameter redundancy, as shared general knowledge is repeatedly encoded.
 
-**Root Cause**: Tasks of varying complexity require feature representations at different granularities, yet the one-size-fits-all expert design of existing MoE-LoRA frameworks cannot accommodate this requirement.
+**Key Challenge**: Tasks of varying complexity require feature representations at different granularities, yet the one-size-fits-all expert design of existing MoE-LoRA frameworks cannot accommodate this requirement.
 
-**Paper Goals**: To enable a multi-task PEFT framework to adaptively allocate experts of different granularities according to task complexity, while eliminating parameter redundancy across independent experts, all without sacrificing parameter efficiency.
+**Goal**: To enable a multi-task PEFT framework to adaptively allocate experts of different granularities according to task complexity, while eliminating parameter redundancy across independent experts, all without sacrificing parameter efficiency.
 
-**Starting Point**: Drawing inspiration from FPN's multi-scale philosophy—using a shared low-dimensional meta-knowledge seed and constructing a "parameter pyramid" via deconvolution projections with kernels of varying scales.
+**Key Insight**: Drawing inspiration from FPN's multi-scale philosophy—using a shared low-dimensional meta-knowledge seed and constructing a "parameter pyramid" via deconvolution projections with kernels of varying scales.
 
 **Core Idea**: All experts share a single low-dimensional linguistic prior seed, which is projected to different granularities through deconvolution kernels of varying sizes, forming a parameter pyramid ranging from fine-grained to coarse-grained representations.
 

@@ -27,11 +27,11 @@ content_hash: bf1827765e1c0af5
 This paper proposes HulluEdit, a single-pass, reference-model-free hallucination mitigation framework that orthogonally decomposes hidden states into a visual evidence subspace, a conflicting prior subspace, and a residual uncertainty subspace, selectively suppressing hallucination patterns without interfering with visual grounding, achieving state-of-the-art performance on POPE and CHAIR.
 
 ## Background & Motivation
-1. **State of the Field**: Large Vision-Language Models (LVLMs) excel at image captioning, VQA, and related tasks, yet suffer from severe object hallucination—generating non-existent objects, attributes, or quantities.
+1. **Background**: Large Vision-Language Models (LVLMs) excel at image captioning, VQA, and related tasks, yet suffer from severe object hallucination—generating non-existent objects, attributes, or quantities.
 2. **Limitations of Prior Work**: Contrastive decoding methods (VCD/DoLa) require reference models or multiple forward passes, increasing latency and engineering complexity. Static subspace editing methods (Nullu) construct hallucination subspaces offline at the dataset level, lacking token-level adaptivity and risking suppression of genuine visual evidence.
-3. **Root Cause**: Hallucinations arise when strong language priors override weak or ambiguous visual evidence, yet existing methods cannot reliably **decouple** prior suppression from visual evidence preservation—suppressing priors tends to also impair visual grounding.
-4. **Paper Goals**: How can harmful language priors be precisely suppressed while fully preserving visual evidence, all within a single forward pass?
-5. **Starting Point**: Inspired by the DeCo observation that intermediate-layer representations can serve as reliable references for calibrating output layers, this work exploits intermediate layers to construct sample-level subspace structure, achieving mathematically guaranteed decoupling of priors and visual evidence via orthogonal decomposition.
+3. **Key Challenge**: Hallucinations arise when strong language priors override weak or ambiguous visual evidence, yet existing methods cannot reliably **decouple** prior suppression from visual evidence preservation—suppressing priors tends to also impair visual grounding.
+4. **Goal**: How can harmful language priors be precisely suppressed while fully preserving visual evidence, all within a single forward pass?
+5. **Key Insight**: Inspired by the DeCo observation that intermediate-layer representations can serve as reliable references for calibrating output layers, this work exploits intermediate layers to construct sample-level subspace structure, achieving mathematically guaranteed decoupling of priors and visual evidence via orthogonal decomposition.
 6. **Core Idea**: Orthogonally decompose the hidden state into three subspaces (visual / prior / residual), and selectively shrink the prior and residual components via a closed-form minimum-norm edit while leaving the visual component entirely unchanged.
 
 ## Method

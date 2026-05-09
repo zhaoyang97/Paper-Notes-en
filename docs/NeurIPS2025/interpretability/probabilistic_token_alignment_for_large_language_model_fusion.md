@@ -28,13 +28,13 @@ This work reformulates the token alignment problem in LLM fusion as an Optimal T
 
 ## Background & Motivation
 
-**State of the Field**: Training LLMs from scratch is prohibitively expensive, making model fusion an efficient alternative for building stronger baselines. Mainstream approaches fall into three categories: model ensembling, weight merging, and knowledge fusion.
+**Background**: Training LLMs from scratch is prohibitively expensive, making model fusion an efficient alternative for building stronger baselines. Mainstream approaches fall into three categories: model ensembling, weight merging, and knowledge fusion.
 
 **Limitations of Prior Work**: Knowledge fusion methods such as FuseLLM rely on manually defined hard token mappings (based on minimum edit distance), which suffer from two critical flaws: ❶ hard mappings oversimplify alignment and fail to capture diverse token correspondence patterns across different contexts, introducing bias and reducing learning capacity; ❷ the top-$k$ token sets of source and target models are aligned independently without considering probability values or the overall distribution, yielding only locally optimal solutions.
 
-**Root Cause**: Model ensembling incurs high inference overhead from running multiple models simultaneously; weight merging requires identical architectures and thus lacks generality; knowledge fusion is flexible but its coarse token alignment degrades performance on certain tasks.
+**Key Challenge**: Model ensembling incurs high inference overhead from running multiple models simultaneously; weight merging requires identical architectures and thus lacks generality; knowledge fusion is flexible but its coarse token alignment degrades performance on certain tasks.
 
-**Starting Point**: Although different LLMs may have distinct vocabularies and token IDs, their logit probability distributions encode semantically similar knowledge—aligning at the distribution level rather than through string-level hard matching enables more coherent fusion.
+**Key Insight**: Although different LLMs may have distinct vocabularies and token IDs, their logit probability distributions encode semantically similar knowledge—aligning at the distribution level rather than through string-level hard matching enables more coherent fusion.
 
 **Core Idea**: Token alignment is reformulated as an optimal transport problem, solved via the Sinkhorn algorithm to obtain a global transport plan that enables soft probabilistic alignment of logit distributions.
 

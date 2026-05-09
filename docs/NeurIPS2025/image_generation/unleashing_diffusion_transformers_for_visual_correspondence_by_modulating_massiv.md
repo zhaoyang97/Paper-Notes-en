@@ -30,11 +30,11 @@ This paper identifies the massive activations phenomenon in Diffusion Transforme
 
 ### State of the Field
 
-**State of the Field**: Pretrained Stable Diffusion (SD) models have been demonstrated to serve as effective feature extractors for visual correspondence.
+**Background**: Pretrained Stable Diffusion (SD) models have been demonstrated to serve as effective feature extractors for visual correspondence.
 
 ### Root Cause
 
-**Root Cause**: Diffusion Transformers (DiTs) outperform SD in scalability and generation quality, yet directly extracting their features for perceptual tasks yields poor performance.
+**Key Challenge**: Diffusion Transformers (DiTs) outperform SD in scalability and generation quality, yet directly extracting their features for perceptual tasks yields poor performance.
 
 ### Limitations of Prior Work
 
@@ -42,7 +42,7 @@ This paper identifies the massive activations phenomenon in Diffusion Transforme
 
 ### Starting Point
 
-**Starting Point**: These massive activations cause the feature vectors of all spatial tokens to become highly similar in direction, rendering cosine similarity unable to distinguish different spatial locations.
+**Key Insight**: These massive activations cause the feature vectors of all spatial tokens to become highly similar in direction, rendering cosine similarity unable to distinguish different spatial locations.
 
 ## Method
 

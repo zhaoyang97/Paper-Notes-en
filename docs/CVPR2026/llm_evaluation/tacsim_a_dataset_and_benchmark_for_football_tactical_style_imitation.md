@@ -29,15 +29,15 @@ This paper presents TacSIm, the first large-scale dataset and benchmark that rec
 
 ## Background & Motivation
 
-**State of the Field**: Imitation learning research in football is predominantly reward-optimization-driven (e.g., proxy metrics such as goal count and win rate), focusing on behavioral cloning of individual actions or reinforcement learning policy optimization, rather than accurately replicating the tactical organization of real teams.
+**Background**: Imitation learning research in football is predominantly reward-optimization-driven (e.g., proxy metrics such as goal count and win rate), focusing on behavioral cloning of individual actions or reinforcement learning policy optimization, rather than accurately replicating the tactical organization of real teams.
 
 **Limitations of Prior Work**: Three major challenges constrain the development of tactical imitation. First, data acquisition is restricted — fine-grained tracking data from top leagues is locked behind commercial barriers, while broadcast footage suffers from multi-camera switching, occlusion, and inconsistent frame rates, making it difficult to obtain full 11v11 team trajectories. Second, there is an imbalance between individual behavioral cloning and team-level cooperative optimization during imitation, resulting in weak generalization under partial observability. Third, evaluation frameworks focus on individual error or segment-level rewards, lacking systematic assessment of team-level spatiotemporal consistency.
 
-**Root Cause**: Existing research lacks a unified closed-loop benchmark spanning real matches to virtual simulation, making fair evaluation of tactical imitation quality across different methods impossible.
+**Key Challenge**: Existing research lacks a unified closed-loop benchmark spanning real matches to virtual simulation, making fair evaluation of tactical imitation quality across different methods impossible.
 
-**Paper Goals**: (1) How to obtain standardized full-team trajectory data from broadcast footage; (2) How to define and quantify the quality of tactical style imitation; (3) How to fairly compare different imitation learning methods within a unified environment.
+**Goal**: (1) How to obtain standardized full-team trajectory data from broadcast footage; (2) How to define and quantify the quality of tactical style imitation; (3) How to fairly compare different imitation learning methods within a unified environment.
 
-**Starting Point**: The authors start from Premier League broadcast footage, recover full-team coordinates via camera calibration, trajectory reconstruction, and VAE-based completion, then map these to the Google Research Football (GRF) virtual environment for tactical replay and evaluation.
+**Key Insight**: The authors start from Premier League broadcast footage, recover full-team coordinates via camera calibration, trajectory reconstruction, and VAE-based completion, then map these to the Google Research Football (GRF) virtual environment for tactical replay and evaluation.
 
 **Core Idea**: Construct the first football tactical imitation benchmark spanning broadcast footage to virtual simulation, and systematically evaluate team-level tactical style reproduction capability using a dual-metric framework of spatial occupancy and motion vectors.
 

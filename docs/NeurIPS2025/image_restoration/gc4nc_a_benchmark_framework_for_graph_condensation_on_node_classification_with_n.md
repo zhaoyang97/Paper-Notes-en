@@ -28,18 +28,18 @@ This paper proposes GC4NC—the first systematic benchmark framework for graph c
 
 ## Background & Motivation
 
-**State of the Field**: Graph condensation compresses large-scale graphs into extremely small synthetic graphs (e.g., with 1000× node reduction) while preserving GNN training performance. It is a data compression technique inspired by dataset distillation in the image domain.
+**Background**: Graph condensation compresses large-scale graphs into extremely small synthetic graphs (e.g., with 1000× node reduction) while preserving GNN training performance. It is a data compression technique inspired by dataset distillation in the image domain.
 
 **Limitations of Prior Work**:
 - Lack of unified evaluation protocols: different methods use different validation models, some select models on the test set, and validation frequencies are inconsistent.
 - Incomplete evaluation dimensions: most methods only assess performance and transferability, neglecting privacy protection and denoising capability.
 - Unclear impact of design choices: the effects of condensation objectives (gradient matching / distribution matching / trajectory matching), initialization strategies, and whether to generate graph structure have not been systematically compared.
 
-**Root Cause**: Graph condensation methods are developing rapidly but lack a fair comparison benchmark, making it impossible to reliably determine which design choices truly matter.
+**Key Challenge**: Graph condensation methods are developing rapidly but lack a fair comparison benchmark, making it impossible to reliably determine which design choices truly matter.
 
-**Paper Goals**: Establish a unified evaluation benchmark, systematically compare existing methods, and reveal the impact of key design choices.
+**Goal**: Establish a unified evaluation benchmark, systematically compare existing methods, and reveal the impact of key design choices.
 
-**Starting Point**: Constructing a multi-dimensional evaluation framework + standardized experimental protocol + open-source codebase.
+**Key Insight**: Constructing a multi-dimensional evaluation framework + standardized experimental protocol + open-source codebase.
 
 **Core Idea**: 8-dimensional unified evaluation + in-depth design choice analysis = the first comprehensive benchmark for graph condensation.
 

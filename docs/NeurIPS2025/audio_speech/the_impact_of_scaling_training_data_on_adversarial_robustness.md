@@ -29,15 +29,15 @@ A systematic evaluation of 36 state-of-the-art vision models under 6 categories 
 
 ## Background & Motivation
 
-**State of the Field**: DNNs have achieved remarkable success on CV tasks, yet adversarial examples remain a fundamental challenge for deploying models in safety-critical applications. Recent years have seen the emergence of diverse training paradigms—ViT, DINOv2, CLIP, etc.—with training datasets ranging from 1.2 million to 22 billion images.
+**Background**: DNNs have achieved remarkable success on CV tasks, yet adversarial examples remain a fundamental challenge for deploying models in safety-critical applications. Recent years have seen the emergence of diverse training paradigms—ViT, DINOv2, CLIP, etc.—with training datasets ranging from 1.2 million to 22 billion images.
 
 **Limitations of Prior Work**: It has been commonly assumed that larger datasets and more sophisticated training objectives lead to stronger robustness; however, empirical observations show that some models trained on small, carefully curated datasets are more robust than those trained on orders-of-magnitude larger datasets.
 
-**Root Cause**: The independent contributions of data volume, data quality, model scale, and training paradigm to robustness have not been isolated or quantified.
+**Key Challenge**: The independent contributions of data volume, data quality, model scale, and training paradigm to robustness have not been isolated or quantified.
 
-**Paper Goals**: Establish quantitative relationships (scaling laws) between training data characteristics and adversarial robustness.
+**Goal**: Establish quantitative relationships (scaling laws) between training data characteristics and adversarial robustness.
 
-**Starting Point**: A large-scale systematic evaluation spanning 36 models and 6 categories of semantic attacks.
+**Key Insight**: A large-scale systematic evaluation spanning 36 models and 6 categories of semantic attacks.
 
 **Core Idea**: Adversarial robustness decreases logarithmically with data volume and model size; however, the effect of model scale far outweighs that of data volume, and models trained on high-quality curated data (e.g., DINOv2) can substantially outperform CLIP models trained on 100× more data.
 

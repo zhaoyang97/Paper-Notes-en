@@ -28,15 +28,15 @@ The paper proposes DiP, an efficient pixel-space diffusion framework. By utilizi
 
 ## Background & Motivation
 
-**State of the Field**: Latent Diffusion Models (LDMs) compressed into latent space via VAE have become the de facto standard, but VAEs introduce information loss and preclude end-to-end training. Pixel-space diffusion models preserve the full signal but suffer from high computational costs.
+**Background**: Latent Diffusion Models (LDMs) compressed into latent space via VAE have become the de facto standard, but VAEs introduce information loss and preclude end-to-end training. Pixel-space diffusion models preserve the full signal but suffer from high computational costs.
 
 **Limitations of Prior Work**: (a) The VAE in LDMs acts as an information bottleneck, introducing reconstruction artifacts and limiting the upper bound of image fidelity; (b) Existing pixel-space models (e.g., PixelFlow, SiD) use small patches (2×2 or 4×4), where sequence length grows quadratically with resolution, making training and inference infeasible.
 
-**Root Cause**: Pixel-space models face a quality-efficiency dilemma: small patches retain detail but cause sequence explosion; large patches are efficient but lose high-frequency information, as the self-attention mechanism of DiT compresses rich spatial information within a patch into a single token.
+**Key Challenge**: Pixel-space models face a quality-efficiency dilemma: small patches retain detail but cause sequence explosion; large patches are efficient but lose high-frequency information, as the self-attention mechanism of DiT compresses rich spatial information within a patch into a single token.
 
-**Paper Goals**: To achieve efficiency comparable to LDMs in pixel space while avoiding VAE information loss and retaining the advantages of end-to-end training.
+**Goal**: To achieve efficiency comparable to LDMs in pixel space while avoiding VAE information loss and retaining the advantages of end-to-end training.
 
-**Starting Point**: Decoupling global structure modeling from local detail recovery—using DiT with large patches (16×16) for efficient global modeling and a lightweight CNN head for local detail restoration.
+**Key Insight**: Decoupling global structure modeling from local detail recovery—using DiT with large patches (16×16) for efficient global modeling and a lightweight CNN head for local detail restoration.
 
 **Core Idea**: A DiT backbone operates on large patches to maintain efficiency, while a co-trained convolutional U-Net Patch Detailer Head injects local inductive biases, adding only 0.3% more parameters.
 

@@ -29,15 +29,15 @@ This paper compares three mainstream temporal output paradigms for video tempora
 
 ## Background & Motivation
 
-**State of the Field**: Video temporal grounding (VTG) is a core task bridging language queries and temporal video segments. Multimodal large language models (MLLMs) have become the dominant backbone for this task, yet existing methods diverge substantially in their temporal output design — some directly generate text-form timestamps, some introduce dedicated temporal tokens, and others predict temporal distributions via continuous decoding.
+**Background**: Video temporal grounding (VTG) is a core task bridging language queries and temporal video segments. Multimodal large language models (MLLMs) have become the dominant backbone for this task, yet existing methods diverge substantially in their temporal output design — some directly generate text-form timestamps, some introduce dedicated temporal tokens, and others predict temporal distributions via continuous decoding.
 
 **Limitations of Prior Work**: Each paradigm adopts its own backbone, dataset, and training protocol, making it impossible to attribute performance differences to the output design itself. Furthermore, as VTG systems are increasingly deployed on resource-constrained edge devices, a systematic efficiency–accuracy trade-off analysis is lacking.
 
-**Root Cause**: The impact of output paradigm selection on grounding accuracy and computational cost remains unclear, particularly for compact models (0.5B–8B).
+**Key Challenge**: The impact of output paradigm selection on grounding accuracy and computational cost remains unclear, particularly for compact models (0.5B–8B).
 
-**Paper Goals**: To fairly compare the accuracy and efficiency of three paradigms under identical backbone, data, and training protocols.
+**Goal**: To fairly compare the accuracy and efficiency of three paradigms under identical backbone, data, and training protocols.
 
-**Starting Point**: SmolVLM2 (0.5B/2.2B), FastVLM (1.5B), and Molmo2 (4B/8B) are selected as compact backbones, ensuring that the output paradigm is the sole varying factor.
+**Key Insight**: SmolVLM2 (0.5B/2.2B), FastVLM (1.5B), and Molmo2 (4B/8B) are selected as compact backbones, ensuring that the output paradigm is the sole varying factor.
 
 **Core Idea**: The continuous distribution paradigm achieves the optimal efficiency–accuracy trade-off on the Pareto frontier, with minimal latency overhead and robust grounding accuracy.
 

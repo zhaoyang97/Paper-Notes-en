@@ -29,15 +29,15 @@ This paper identifies a critical yet overlooked problem in visual in-context lea
 
 ## Background & Motivation
 
-**State of the Field**: Visual in-context learning (VICL) enables visual foundation models to handle diverse tasks via demonstrative prompts (image-label pairs). The representative MAE-VQGAN model formulates VICL as pixel inpainting using a 2×2 grid: top-left for the prompt image, top-right for the prompt label, bottom-left for the query image, and bottom-right to be predicted. Prompt selection significantly affects VICL performance, and prior works (SupPR, Partial2Global, RH-Partial2Global) have focused on image-similarity-based retrieval or re-ranking.
+**Background**: Visual in-context learning (VICL) enables visual foundation models to handle diverse tasks via demonstrative prompts (image-label pairs). The representative MAE-VQGAN model formulates VICL as pixel inpainting using a 2×2 grid: top-left for the prompt image, top-right for the prompt label, bottom-left for the query image, and bottom-right to be predicted. Prompt selection significantly affects VICL performance, and prior works (SupPR, Partial2Global, RH-Partial2Global) have focused on image-similarity-based retrieval or re-ranking.
 
 **Limitations of Prior Work**: Existing prompt retrieval methods focus exclusively on image similarity while ignoring label information. This leads to a typical failure case: retrieved prompt images may be visually similar to the query yet contain inconsistent labels. For instance, when the query depicts a cat, the retrieved prompt may contain a cat but with a label annotating a flower, causing erroneous VICL inference.
 
-**Root Cause**: Through empirical analysis, the authors demonstrate that among visually similar prompts, query-prompt label consistency is positively correlated with VICL performance, establishing labels as a critical yet neglected signal in prompt selection. The key challenge is that query labels are unknown at inference time, precluding direct label comparison.
+**Key Challenge**: Through empirical analysis, the authors demonstrate that among visually similar prompts, query-prompt label consistency is positively correlated with VICL performance, establishing labels as a critical yet neglected signal in prompt selection. The key challenge is that query labels are unknown at inference time, precluding direct label comparison.
 
-**Paper Goals**: (1) How to explicitly incorporate label information into prompt representations? (2) How to infer and match label semantics when query labels are unavailable?
+**Goal**: (1) How to explicitly incorporate label information into prompt representations? (2) How to infer and match label semantics when query labels are unavailable?
 
-**Starting Point**: Labels are treated as an integral part of prompt representation—joint image-label encoding constructs label-aware embeddings for prompts; on the query side, an MoE mechanism enables different experts to capture distinct label patterns (e.g., elongated shapes, pointed contours), with a router adaptively inferring the implicit label of each query.
+**Key Insight**: Labels are treated as an integral part of prompt representation—joint image-label encoding constructs label-aware embeddings for prompts; on the query side, an MoE mechanism enables different experts to capture distinct label patterns (e.g., elongated shapes, pointed contours), with a router adaptively inferring the implicit label of each query.
 
 **Core Idea**: Labels are incorporated as auxiliary signals in prompt retrieval; an MoE mechanism estimates implicit label patterns for unlabeled queries at inference time, enabling label-consistent prompt selection.
 

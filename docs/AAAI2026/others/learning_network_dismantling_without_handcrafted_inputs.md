@@ -38,13 +38,13 @@ This paper proposes MIND (Message Iteration Network Dismantler), which eliminate
 
 **Machine learning methods** (FINDER, GDM): employ GNNs to learn node representations, but **heavily rely on handcrafted input features** (degree, neighborhood degree statistics, k-core number, clustering coefficient, etc.).
 
-**Root Cause**: Although existing ML methods (FINDER, GDM) leverage GNNs to achieve learnable dismantling strategies, they require precomputed handcrafted node features as GNN inputs. This introduces two problems:
+**Key Challenge**: Although existing ML methods (FINDER, GDM) leverage GNNs to achieve learnable dismantling strategies, they require precomputed handcrafted node features as GNN inputs. This introduces two problems:
 
 **High computational overhead**: Computing features such as betweenness centrality on networks with millions of nodes is prohibitively expensive.
 
 **Introduced bias**: Handcrafted features constrain the model's "field of view." Experiments demonstrate that GDM's dismantling sequences are highly correlated (significant Spearman $R$) with the PCA ranking of its input features, indicating that the model is bound by the input features and cannot discover superior structural information.
 
-**Starting Point**: This work completely eliminates handcrafted features and initializes GNN node embeddings with all-ones vectors. Two novel mechanisms enable the GNN to learn sufficiently rich structural representations from pure adjacency information: (1) an All-to-One attention mechanism replacing softmax normalization, and (2) Message Iteration Profiles that aggregate embeddings across all layers. Combined with structurally diverse synthetic training networks, this achieves generalization from small networks to large real-world networks.
+**Key Insight**: This work completely eliminates handcrafted features and initializes GNN node embeddings with all-ones vectors. Two novel mechanisms enable the GNN to learn sufficiently rich structural representations from pure adjacency information: (1) an All-to-One attention mechanism replacing softmax normalization, and (2) Message Iteration Profiles that aggregate embeddings across all layers. Combined with structurally diverse synthetic training networks, this achieves generalization from small networks to large real-world networks.
 
 ## Method
 

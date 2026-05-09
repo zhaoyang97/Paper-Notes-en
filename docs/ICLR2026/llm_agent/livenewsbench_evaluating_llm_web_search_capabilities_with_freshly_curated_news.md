@@ -27,15 +27,15 @@ content_hash: fd23e0ab1b4863b4
 This paper proposes LiveNewsBench, an automatically generated and periodically refreshed benchmark derived from recent news articles. It evaluates LLMs' agentic web search capabilities through multi-hop, factual question answering, effectively decoupling models' parametric knowledge from their retrieval ability. Model performance ranges from 11% to 90%, demonstrating strong discriminative power.
 
 ## Background & Motivation
-**State of the Field**: LLMs equipped with agentic web search (e.g., GPT-5.2, DeepSeek V3.2) excel at tasks requiring real-time information, yet evaluating such systems poses fundamental challenges.
+**Background**: LLMs equipped with agentic web search (e.g., GPT-5.2, DeepSeek V3.2) excel at tasks requiring real-time information, yet evaluating such systems poses fundamental challenges.
 
 **Limitations of Prior Work**: Existing benchmarks fall into three categories: (a) academic reasoning benchmarks (e.g., HLE) that effectively measure domain knowledge rather than search ability; (b) factual QA benchmarks (e.g., SimpleQA, BrowseComp) that use static question–answer pairs, allowing models to answer from memorization (GPT-5.2 achieves 62.5% on SimpleQA without web access); and (c) Deep Research benchmarks that rely on subjective evaluation metrics (completeness, insight), which cannot verify factual correctness.
 
-**Root Cause**: As LLM training data grows increasingly comprehensive, static benchmarks struggle to distinguish whether a model answers correctly from memorization or from genuine retrieval. Time-sensitive benchmarks (FreshQA, SealQA) update answers over time but keep questions fixed and simple; frontier models still achieve 74.3% on FreshQA without internet access.
+**Key Challenge**: As LLM training data grows increasingly comprehensive, static benchmarks struggle to distinguish whether a model answers correctly from memorization or from genuine retrieval. Time-sensitive benchmarks (FreshQA, SealQA) update answers over time but keep questions fixed and simple; frontier models still achieve 74.3% on FreshQA without internet access.
 
-**Paper Goals**: To design a continuously updatable, memorization-resistant evaluation benchmark for LLM web search that requires multi-hop retrieval and provides objectively verifiable factual answers.
+**Goal**: To design a continuously updatable, memorization-resistant evaluation benchmark for LLM web search that requires multi-hop retrieval and provides objectively verifiable factual answers.
 
-**Starting Point**: The pipeline seeds data collection from Wikipedia's Current Events Archive, automatically crawls recent news articles, and uses an LLM to generate multi-hop QA pairs spanning multiple articles. Answers emerge only after models' training cutoff dates, fundamentally limiting memorization.
+**Key Insight**: The pipeline seeds data collection from Wikipedia's Current Events Archive, automatically crawls recent news articles, and uses an LLM to generate multi-hop QA pairs spanning multiple articles. Answers emerge only after models' training cutoff dates, fundamentally limiting memorization.
 
 **Core Idea**: A fully automated, periodically refreshed, multi-hop news QA pipeline combined with a human-verified subset yields a sustainably effective benchmark for agentic search evaluation.
 

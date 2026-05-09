@@ -28,11 +28,11 @@ This paper proposes an adaptive multimodal semantic satellite transmission syste
 
 ## Background & Motivation
 
-1. **State of the Field**: Satellite communications are indispensable in maritime, aviation, and disaster relief scenarios, yet face severe physical-layer challenges including free-space path loss (FSPL), Doppler shift, and long propagation delays. Conventional adaptive modulation and beamforming techniques struggle to support data-intensive multimodal streaming.
+1. **Background**: Satellite communications are indispensable in maritime, aviation, and disaster relief scenarios, yet face severe physical-layer challenges including free-space path loss (FSPL), Doppler shift, and long propagation delays. Conventional adaptive modulation and beamforming techniques struggle to support data-intensive multimodal streaming.
 2. **Limitations of Prior Work**: Semantic communications have made progress in text and image transmission, but video transmission remains a bottleneck due to its large data volume and temporal complexity. Existing methods are largely limited to unimodal video transmission and cannot satisfy practical audiovisual synchronization requirements. Existing cross-modal semantic transmission schemes (e.g., transmitting 3DMM parameters for video conferencing) adopt fixed modality priorities and cannot dynamically adjust to task requirements.
-3. **Root Cause**: Three core challenges: ① decoupled semantic-layer and physical-layer design, ② rigid cross-modal dependencies (unidirectional generation only), and ③ passive channel adaptation strategies that perform poorly over high-latency satellite links.
-4. **Paper Goals**: Under bandwidth-constrained satellite scenarios, how to achieve flexible modality-priority switching, efficient knowledge base maintenance, and environment-aware proactive decision-making.
-5. **Starting Point**: Incorporating the reasoning and planning capabilities of LLMs into satellite semantic communications, enabling an LLM agent to understand task intent and physical constraints and dynamically adjust transmission strategies.
+3. **Key Challenge**: Three core challenges: ① decoupled semantic-layer and physical-layer design, ② rigid cross-modal dependencies (unidirectional generation only), and ③ passive channel adaptation strategies that perform poorly over high-latency satellite links.
+4. **Goal**: Under bandwidth-constrained satellite scenarios, how to achieve flexible modality-priority switching, efficient knowledge base maintenance, and environment-aware proactive decision-making.
+5. **Key Insight**: Incorporating the reasoning and planning capabilities of LLMs into satellite semantic communications, enabling an LLM agent to understand task intent and physical constraints and dynamically adjust transmission strategies.
 6. **Core Idea**: Replace fixed-rule transmission with an LLM-driven dual-stream cross-modal generative architecture to realize adaptive audiovisual synchronized semantic communications in satellite scenarios.
 
 ## Method

@@ -28,15 +28,15 @@ This paper proposes PonderLM, which introduces a "pondering" mechanism at pretra
 
 ## Background & Motivation
 
-**State of the Field**: The dominant approach to improving model capability is scaling parameters and data, but this faces bottlenecks including data exhaustion, scaling saturation, and communication overhead. Inference-time scaling via Chain-of-Thought (CoT) also has limitations: it requires labeled data and reinforcement learning, and smaller models struggle to benefit.
+**Background**: The dominant approach to improving model capability is scaling parameters and data, but this faces bottlenecks including data exhaustion, scaling saturation, and communication overhead. Inference-time scaling via Chain-of-Thought (CoT) also has limitations: it requires labeled data and reinforcement learning, and smaller models struggle to benefit.
 
 **Limitations of Prior Work**: CoT operates in discrete token space, constrained by a fixed vocabulary, and its performance ceiling is bounded by the quality of the base pretrained model.
 
-**Root Cause**: More computation is needed to improve performance, yet naively increasing parameter count is prohibitively expensive.
+**Key Challenge**: More computation is needed to improve performance, yet naively increasing parameter count is prohibitively expensive.
 
-**Paper Goals**: Improve performance without increasing parameter count by performing multiple forward passes within a single token generation step.
+**Goal**: Improve performance without increasing parameter count by performing multiple forward passes within a single token generation step.
 
-**Starting Point**: Drawing an analogy to how humans repeatedly deliberate when facing complex problems, the paper enables models to "think" in continuous space.
+**Key Insight**: Drawing an analogy to how humans repeatedly deliberate when facing complex problems, the paper enables models to "think" in continuous space.
 
 **Core Idea**: A pondering embedding is formed by taking a weighted sum of token embeddings using the predicted probability distribution, added residually to the input for a subsequent forward pass, repeated for $s$ steps.
 

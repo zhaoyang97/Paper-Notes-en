@@ -28,15 +28,15 @@ This paper proposes an ECC CUDA kernel optimized for modern Ampere GPUs, achievi
 
 ## Background & Motivation
 
-**State of the Field**: Topological features such as Euler characteristic curves (ECC) and the Euler characteristic transform (ECT) capture global geometric structure in image data and are theoretically sufficient statistics for shape description. Recent work such as DECT has enabled differentiable topological feature learning on graphs and point clouds.
+**Background**: Topological features such as Euler characteristic curves (ECC) and the Euler characteristic transform (ECT) capture global geometric structure in image data and are theoretically sufficient statistics for shape description. Recent work such as DECT has enabled differentiable topological feature learning on graphs and point clouds.
 
 **Limitations of Prior Work**: (1) Existing GPU implementations (Wang et al., 2023) were designed for legacy hardware and employ a chunking strategy to cope with limited shared memory, incurring repeated kernel launches, inter-block synchronization, redundant boundary computations, and frequent global atomic operations. (2) DECT supports only graphs and point clouds, not dense 2D/3D image grids. (3) No existing implementation is simultaneously efficient and differentiable.
 
-**Root Cause**: While topological features are theoretically attractive, computational cost and non-differentiability are the two main obstacles to integration into deep learning pipelines. The absence of algorithm–hardware co-design (from a hardware lottery perspective) prevents theoretically promising topological invariants from becoming practical components.
+**Key Challenge**: While topological features are theoretically attractive, computational cost and non-differentiability are the two main obstacles to integration into deep learning pipelines. The absence of algorithm–hardware co-design (from a hardware lottery perspective) prevents theoretically promising topological invariants from becoming practical components.
 
-**Paper Goals**: (1) Eliminate the overhead of the chunking strategy by leveraging the large memory and high bandwidth of modern GPUs. (2) Provide a differentiable ECC implementation for dense cubical complexes (2D/3D image grids).
+**Goal**: (1) Eliminate the overhead of the chunking strategy by leveraging the large memory and high bandwidth of modern GPUs. (2) Provide a differentiable ECC implementation for dense cubical complexes (2D/3D image grids).
 
-**Starting Point**: Redesign the ECC computation kernel from the perspective of GPU architectural characteristics—replacing chunked iteration with a single full-grid scan, using 128-byte aligned memory access and hierarchical shared-memory accumulation.
+**Key Insight**: Redesign the ECC computation kernel from the perspective of GPU architectural characteristics—replacing chunked iteration with a single full-grid scan, using 128-byte aligned memory access and hierarchical shared-memory accumulation.
 
 **Core Idea**: Eliminate chunking overhead through a full-scan CUDA kernel design tailored to the Ampere GPU architecture, and achieve a differentiable ECC layer via sigmoid relaxation.
 

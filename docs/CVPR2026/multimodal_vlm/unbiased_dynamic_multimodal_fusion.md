@@ -29,11 +29,11 @@ UDML proposes an unbiased dynamic multimodal learning framework comprising two c
 
 ## Background & Motivation
 
-1. **State of the Field**: Dynamic multimodal learning adaptively adjusts the contribution weights of each modality based on input data quality, with two predominant paradigms: prior-based methods and uncertainty-based methods.
+1. **Background**: Dynamic multimodal learning adaptively adjusts the contribution weights of each modality based on input data quality, with two predominant paradigms: prior-based methods and uncertainty-based methods.
 2. **Limitations of Prior Work**: (1) *Uncertainty estimation bias*: existing empirical metrics (e.g., energy scores, probabilistic embeddings) are insensitive under low noise (failing to detect mild degradation) and still assign non-negligible weights to severely corrupted modalities under high noise; (2) *Dual suppression effect*: existing methods assume equal initial contributions across modalities, overlooking the modality-dependency bias induced during model optimization — modalities that are harder to learn are suppressed first by the optimization bias and then penalized again by high uncertainty.
-3. **Root Cause**: Dual suppression causes dynamic fusion to underperform static fusion, contradicting the very motivation for dynamic fusion.
-4. **Paper Goals**: Design an uncertainty estimator that is accurate across all noise levels, while simultaneously quantifying and compensating for modality-dependency bias.
-5. **Starting Point**: Actively inject known noise to establish a clear correspondence between feature corruption and noise intensity; quantify inherent dependency via modality Dropout.
+3. **Key Challenge**: Dual suppression causes dynamic fusion to underperform static fusion, contradicting the very motivation for dynamic fusion.
+4. **Goal**: Design an uncertainty estimator that is accurate across all noise levels, while simultaneously quantifying and compensating for modality-dependency bias.
+5. **Key Insight**: Actively inject known noise to establish a clear correspondence between feature corruption and noise intensity; quantify inherent dependency via modality Dropout.
 6. **Core Idea**: A dual strategy combining noise-aware estimation and bias compensation.
 
 ## Method

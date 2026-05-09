@@ -28,15 +28,15 @@ DynaAct frames action space construction in LLM reasoning as a subset selection 
 
 ## Background & Motivation
 
-**State of the Field**: Complex LLM reasoning is commonly formulated as an MDP: a state space and action space are defined, and search strategies such as MCTS are used to find optimal reasoning paths. RAP employs automatically generated sub-questions as actions, while rStar manually defines 5 action types.
+**Background**: Complex LLM reasoning is commonly formulated as an MDP: a state space and action space are defined, and search strategies such as MCTS are used to find optimal reasoning paths. RAP employs automatically generated sub-questions as actions, while rStar manually defines 5 action types.
 
 **Limitations of Prior Work**: (a) Manually defined action spaces (e.g., rStar's 5 actions) are overly domain-specific and lack scalability; (b) Automatically generated action spaces (e.g., RAP's on-the-fly sub-questions) exhibit high redundancy, making exhaustive search computationally expensive.
 
-**Root Cause**: A high-quality action space must simultaneously satisfy two conflicting properties—**scalability** (automatically learned from data, generalizable across domains) and **compactness** (retaining only a small number of high-value candidate actions at each step).
+**Key Challenge**: A high-quality action space must simultaneously satisfy two conflicting properties—**scalability** (automatically learned from data, generalizable across domains) and **compactness** (retaining only a small number of high-value candidate actions at each step).
 
-**Paper Goals**: To automatically construct an action space that is both general and compact for LLM reasoning.
+**Goal**: To automatically construct an action space that is both general and compact for LLM reasoning.
 
-**Starting Point**: Action space construction is recast as a subset selection problem, leveraging the diminishing marginal returns property of submodular functions to ensure that selected subsets balance utility and diversity.
+**Key Insight**: Action space construction is recast as a subset selection problem, leveraging the diminishing marginal returns property of submodular functions to ensure that selected subsets balance utility and diversity.
 
 **Core Idea**: A submodular function combined with a greedy algorithm dynamically selects the optimal 5 actions at each step from a large surrogate action space.
 

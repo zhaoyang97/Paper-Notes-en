@@ -28,15 +28,15 @@ This paper introduces a large-scale infographic element detection dataset (101,2
 
 ## Background & Motivation
 
-**State of the Field**: Chart understanding is an important application scenario for VLMs (e.g., ChartQA), yet existing approaches have VLMs reason directly from raw images, overlooking structured visual element information.
+**Background**: Chart understanding is an important application scenario for VLMs (e.g., ChartQA), yet existing approaches have VLMs reason directly from raw images, overlooking structured visual element information.
 
 **Limitations of Prior Work**: (a) No large-scale infographic detection dataset exists—state-of-the-art foundation models (DINO-X, Grounding DINO) achieve AP < 15% on infographic element detection, essentially failing entirely; (b) Infographics contain numerous non-natural-scene elements (e.g., icons, chart components) that exhibit a large domain gap from detectors trained on COCO/Objects365.
 
-**Root Cause**: Element detection in infographics is foundational to chart understanding, yet current detectors are practically unusable in this domain.
+**Key Challenge**: Element detection in infographics is foundational to chart understanding, yet current detectors are practically unusable in this domain.
 
-**Paper Goals**: (a) Construct a large-scale infographic detection dataset, and (b) validate how detection results can improve VLM chart reasoning.
+**Goal**: (a) Construct a large-scale infographic detection dataset, and (b) validate how detection results can improve VLM chart reasoning.
 
-**Starting Point**: Combining synthetic data (90,000 images, template-based generation) with real data (11,264 images, model-in-the-loop annotation) to cover 75 chart types.
+**Key Insight**: Combining synthetic data (90,000 images, template-based generation) with real data (11,264 images, model-in-the-loop annotation) to cover 75 chart types.
 
 **Core Idea**: Treat element detection as "visual grounding" for chart understanding—detect first, then reason (Thinking-with-Boxes).
 

@@ -29,13 +29,13 @@ This paper proposes SPIRE (Shared–Private Inter-Regional Encoder), a nonlinear
 
 ## Background & Motivation
 
-**State of the Field**: Movement disorders such as dystonia and Parkinson's disease involve dysfunction in the basal ganglia–thalamo–cortical circuit. Deep brain stimulation (DBS) targeting the globus pallidus internus (GPi) and subthalamic nucleus (STN) demonstrates substantial clinical efficacy, yet the network-level mechanisms by which it modulates cross-regional neural dynamics remain poorly understood.
+**Background**: Movement disorders such as dystonia and Parkinson's disease involve dysfunction in the basal ganglia–thalamo–cortical circuit. Deep brain stimulation (DBS) targeting the globus pallidus internus (GPi) and subthalamic nucleus (STN) demonstrates substantial clinical efficacy, yet the network-level mechanisms by which it modulates cross-regional neural dynamics remain poorly understood.
 
 **Limitations of Prior Work**: Most DBS analyses focus on local features (spectral power, evoked potentials), overlooking changes in cross-regional coordination patterns. Existing latent variable models suffer from critical limitations: (1) GPFA and CCA assume linearity and cannot capture the nonlinear structure of real neural data; (2) DLAG can decompose shared/private components but is constrained to a linear-Gaussian framework and is primarily designed for spike data; (3) multimodal models such as SharedAE and MMVAE align shared spaces but are not designed for intracranial stimulation recordings and lack explicit shared-private disentanglement mechanisms.
 
-**Root Cause**: No existing framework simultaneously satisfies three requirements: nonlinear modeling capacity, explicit shared vs. private decomposition, and applicability to human LFP data under external perturbation. Understanding how stimulation reorganizes intrinsic cross-regional coordination patterns is essential for elucidating the circuit-level mechanisms of DBS.
+**Key Challenge**: No existing framework simultaneously satisfies three requirements: nonlinear modeling capacity, explicit shared vs. private decomposition, and applicability to human LFP data under external perturbation. Understanding how stimulation reorganizes intrinsic cross-regional coordination patterns is essential for elucidating the circuit-level mechanisms of DBS.
 
-**Starting Point**: The authors design a dual-latent-space framework following a "train on baseline, infer under perturbation" paradigm—establishing a reference model of intrinsic coordination on stimulation-free data, then observing the reorganization of the shared latent space under DBS conditions to reveal stimulation's effects on network-level dynamics.
+**Key Insight**: The authors design a dual-latent-space framework following a "train on baseline, infer under perturbation" paradigm—establishing a reference model of intrinsic coordination on stimulation-free data, then observing the reorganization of the shared latent space under DBS conditions to reveal stimulation's effects on network-level dynamics.
 
 ## Method
 

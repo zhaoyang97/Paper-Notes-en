@@ -27,15 +27,15 @@ content_hash: 1007c7164d08dc74
 This paper identifies a role imbalance in existing unified multimodal models, where the understanding module merely acts as a translator while the generation module is forced to simultaneously serve as both "designer" and "painter." By constructing the DIM dataset (14M long-context text-image pairs + 233K CoT editing blueprints), design responsibilities are transferred to the understanding module. The resulting 4.6B-parameter model surpasses models five times its size.
 
 ## Background & Motivation
-**State of the Field**: Unified multimodal understanding and generation models (e.g., Show-o, BAGEL, UniWorld) achieve strong performance on text-to-image (T2I) generation, yet still lag significantly behind proprietary models such as GPT-4o-Image on instruction-guided image editing.
+**Background**: Unified multimodal understanding and generation models (e.g., Show-o, BAGEL, UniWorld) achieve strong performance on text-to-image (T2I) generation, yet still lag significantly behind proprietary models such as GPT-4o-Image on instruction-guided image editing.
 
 **Limitations of Prior Work**: In existing editing models, the understanding module encodes user instructions purely as semantic conditions (acting as a "translator"), while the generation module must simultaneously infer original layouts, localize edit regions, and render new content (acting as both "designer" and "painter"). This allocation of responsibilities is fundamentally unreasonable.
 
-**Root Cause**: The understanding module is typically trained on complex reasoning tasks with several times more data than the generation module, yet remains underutilized for design planning. Simply scaling parameters (e.g., Step1X-Edit's 12.5B generation parameters) is not an effective strategy.
+**Key Challenge**: The understanding module is typically trained on complex reasoning tasks with several times more data than the generation module, yet remains underutilized for design planning. Simply scaling parameters (e.g., Step1X-Edit's 12.5B generation parameters) is not an effective strategy.
 
-**Paper Goals**: How can the responsibilities of the understanding and generation modules be rebalanced to enable more effective editing?
+**Goal**: How can the responsibilities of the understanding and generation modules be rebalanced to enable more effective editing?
 
-**Starting Point**: A data-centric approach—constructing an editing dataset with CoT reasoning blueprints so that an external designer (MLLM) performs edit planning in text space, leaving the generation module only the task of "painting."
+**Key Insight**: A data-centric approach—constructing an editing dataset with CoT reasoning blueprints so that an external designer (MLLM) performs edit planning in text space, leaving the generation module only the task of "painting."
 
 **Core Idea**: Transfer "design" responsibilities from the generation module to the understanding module, explicitly reducing the cognitive burden on the generation module via CoT editing blueprints.
 

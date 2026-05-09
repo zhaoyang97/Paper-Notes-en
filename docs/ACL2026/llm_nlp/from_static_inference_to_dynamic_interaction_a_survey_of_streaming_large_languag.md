@@ -29,15 +29,15 @@ This paper presents the first systematic survey of Streaming Large Language Mode
 
 ## Background & Motivation
 
-**State of the Field**: Standard LLMs operate under a static inference paradigm that reads the entire input at once — encoding the complete input into a KV cache before performing autoregressive decoding. While effective on benchmarks, this paradigm fundamentally limits applicability in dynamic scenarios such as real-time translation, streaming video understanding, and interactive tool agents.
+**Background**: Standard LLMs operate under a static inference paradigm that reads the entire input at once — encoding the complete input into a KV cache before performing autoregressive decoding. While effective on benchmarks, this paradigm fundamentally limits applicability in dynamic scenarios such as real-time translation, streaming video understanding, and interactive tool agents.
 
 **Limitations of Prior Work**: (1) Real-world information arrives incrementally, accumulates over time, and may be unbounded in length — none of which the static paradigm can handle. (2) The definition of "Streaming LLM" in the literature is inconsistent: autoregressive decoding, incremental/chunked encoding, and full-duplex interaction are conflated under the same label. (3) Large-scale pretraining data that supports real-time interaction, partial-input supervision, and fine-grained temporal alignment is largely absent.
 
-**Root Cause**: There is a fundamental mismatch between the offline, full-context design of LLMs and the online, incremental, interactive data streams of the real world — models must dynamically decide when to respond, when to wait for more input, and when to stop.
+**Key Challenge**: There is a fundamental mismatch between the offline, full-context design of LLMs and the online, incremental, interactive data streams of the real world — models must dynamically decide when to respond, when to wait for more input, and when to stop.
 
-**Paper Goals**: To propose a unified definition and systematic taxonomy of Streaming LLMs, resolve terminological ambiguity, and provide a structured research roadmap for this emerging field.
+**Goal**: To propose a unified definition and systematic taxonomy of Streaming LLMs, resolve terminological ambiguity, and provide a structured research roadmap for this emerging field.
 
-**Starting Point**: Streaming LLMs are defined along two dimensions — data flow and interaction concurrency — rather than by modality or architecture.
+**Key Insight**: Streaming LLMs are defined along two dimensions — data flow and interaction concurrency — rather than by modality or architecture.
 
 **Core Idea**: Streaming LLMs form a three-level progressive hierarchy: (1) Output-streaming: static input + streaming output (standard autoregressive); (2) Sequential-streaming: streaming input + streaming output (generate after incremental encoding); (3) Concurrent-streaming: simultaneous streaming input and output (full-duplex interaction). Each level introduces new challenges on top of the previous one.
 

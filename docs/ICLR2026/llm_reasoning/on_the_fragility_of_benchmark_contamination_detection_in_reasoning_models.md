@@ -28,16 +28,16 @@ This systematic study reveals that benchmark contamination detection in large re
 
 ## Background & Motivation
 
-**State of the Field**: LLM leaderboards have become highly competitive, giving model developers an incentive to include evaluation benchmarks in training data to inflate scores. Numerous contamination detection methods have been proposed, including generation-based, perturbation-based, and reference-model-based approaches.
+**Background**: LLM leaderboards have become highly competitive, giving model developers an incentive to include evaluation benchmarks in training data to inflate scores. Numerous contamination detection methods have been proposed, including generation-based, perturbation-based, and reference-model-based approaches.
 
 **Limitations of Prior Work**:
 - Existing detection methods assume contamination equals memorization (i.e., higher likelihood on seen samples), but LRMs reach answers via CoT reasoning, and detectors typically cannot access the CoT data used during training.
 - LRMs acquire reasoning capabilities through a two-stage pipeline (SFT → RL), allowing developers to contaminate in the early stage (SFT) and "launder" evidence through later-stage (RL) training.
 - The detectability of direct CoT SFT contamination applied to advanced LRMs is entirely unknown.
 
-**Root Cause**: Evaluation fairness depends on contamination being detectable—but if RL training can inherently erase contamination evidence, and CoT SFT leaves almost no trace, the integrity of the entire leaderboard ecosystem is at risk.
+**Key Challenge**: Evaluation fairness depends on contamination being detectable—but if RL training can inherently erase contamination evidence, and CoT SFT leaves almost no trace, the integrity of the entire leaderboard ecosystem is at risk.
 
-**Starting Point**: Two realistic scenarios—Stage I: SFT contamination → RL "laundering" (base model → LRM); Stage II: direct CoT SFT contamination of an existing LRM (post-LRM).
+**Key Insight**: Two realistic scenarios—Stage I: SFT contamination → RL "laundering" (base model → LRM); Stage II: direct CoT SFT contamination of an existing LRM (post-LRM).
 
 **Core Idea**: The importance sampling and clipping objective in GRPO/PPO systematically eliminates the separability between members and non-members, making RL training a natural "sanitizer" of contamination evidence.
 

@@ -29,15 +29,15 @@ The paper proposes Masked Representation Modeling (MRM), which randomly masks an
 
 ## Background & Motivation
 
-**State of the Field**: Unsupervised domain adaptation (UDA) for semantic segmentation transfers knowledge from a labelled source domain (e.g. synthetic GTA) to an unlabelled target domain (e.g. real-world Cityscapes). Mainstream approaches include adversarial training, self-training, and efficient architecture design. Auxiliary self-supervised tasks (e.g. contrastive learning) have been shown to enhance feature discriminativeness, but another important paradigm — masked image modelling (MIM, e.g. MAE) — has barely been explored for UDA segmentation.
+**Background**: Unsupervised domain adaptation (UDA) for semantic segmentation transfers knowledge from a labelled source domain (e.g. synthetic GTA) to an unlabelled target domain (e.g. real-world Cityscapes). Mainstream approaches include adversarial training, self-training, and efficient architecture design. Auxiliary self-supervised tasks (e.g. contrastive learning) have been shown to enhance feature discriminativeness, but another important paradigm — masked image modelling (MIM, e.g. MAE) — has barely been explored for UDA segmentation.
 
 **Limitations of Prior Work**: There are two root reasons MIM has not been adopted. First, an input-structure constraint: MIM masks patches at the input and feeds only visible patches into the encoder, which directly conflicts with segmentation architectures such as DeepLab and DAFormer that need to process the full image. Second, an objective conflict: MIM's goal is to reconstruct pixel values inside masked regions element-wise, which is a low-level objective inconsistent with the high-level semantic classification objective required for segmentation, potentially introducing optimization interference.
 
-**Root Cause**: Masked modelling can bring global contextual reasoning and feature robustness, but its input-side operation and pixel reconstruction objective both block its use in UDA segmentation.
+**Key Challenge**: Masked modelling can bring global contextual reasoning and feature robustness, but its input-side operation and pixel reconstruction objective both block its use in UDA segmentation.
 
-**Paper Goals**: Retain the benefits of masked modelling (global reasoning, feature regularization) while removing both its architectural incompatibility and its objective mismatch with the segmentation task.
+**Goal**: Retain the benefits of masked modelling (global reasoning, feature regularization) while removing both its architectural incompatibility and its objective mismatch with the segmentation task.
 
-**Starting Point**: Move the masking from input space to latent feature space — the encoder still processes the full image, masking is performed on the encoder output, a lightweight module reconstructs the masked features, and the reconstructed features are sent to the original segmentation decoder for pixel classification. This avoids modifying the input pipeline and lets the auxiliary task share the same optimization objective as the main task.
+**Key Insight**: Move the masking from input space to latent feature space — the encoder still processes the full image, masking is performed on the encoder output, a lightweight module reconstructs the masked features, and the reconstructed features are sent to the original segmentation decoder for pixel classification. This avoids modifying the input pipeline and lets the auxiliary task share the same optimization objective as the main task.
 
 **Core Idea**: Do masked modelling in feature space, not input space; supervise reconstruction with a classification loss, not regression.
 

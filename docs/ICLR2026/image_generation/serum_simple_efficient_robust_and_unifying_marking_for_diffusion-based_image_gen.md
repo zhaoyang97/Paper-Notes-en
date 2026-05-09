@@ -30,17 +30,17 @@ SERUM is a watermarking method that injects unique watermark noise into the init
 
 ### State of the Field
 
-**State of the Field**: Diffusion models generate highly realistic images, necessitating watermarking to distinguish generated from real content. Existing approaches fall into two categories: fine-tuning-based methods (e.g., Stable Signature, which fine-tunes the decoder) and training-free methods (e.g., Tree-Ring/GaussMarker, which embed watermarks in the initial noise).
+**Background**: Diffusion models generate highly realistic images, necessitating watermarking to distinguish generated from real content. Existing approaches fall into two categories: fine-tuning-based methods (e.g., Stable Signature, which fine-tunes the decoder) and training-free methods (e.g., Tree-Ring/GaussMarker, which embed watermarks in the initial noise).
 
 **Limitations of Prior Work**: (1) Stable Signature requires extensive training and lacks robustness against advanced attacks; (2) training-free methods such as Tree-Ring/GaussMarker are robust but rely on expensive DDIM inversion ($O(T)$ steps) for detection; (3) the two desiderata appear mutually exclusive — methods are either fast but weak, or strong but slow.
 
-**Root Cause**: Watermark detection requires DDIM inversion to recover the initial noise, which is computationally prohibitive and unsuitable for large-scale deployment.
+**Key Challenge**: Watermark detection requires DDIM inversion to recover the initial noise, which is computationally prohibitive and unsuitable for large-scale deployment.
 
-**Starting Point**: Bypass DDIM inversion by training a lightweight external detector that directly identifies the signature of watermark noise from generated images, thereby combining the robustness of noise injection with near-instant detection.
+**Key Insight**: Bypass DDIM inversion by training a lightweight external detector that directly identifies the signature of watermark noise from generated images, thereby combining the robustness of noise injection with near-instant detection.
 
 ### Mechanism
 
-**Paper Goals**: ### Overall Architecture
+**Goal**: ### Overall Architecture
 Watermark injection: $\eta' = \sqrt{1-\alpha}\eta + \sqrt{\alpha}A'$ (weighted mixture of random noise and watermark noise) → standard diffusion generation.
 
 ## Method

@@ -27,7 +27,7 @@ DSFN proposes a seamless image stitching method with depth consistency constrain
 
 ## Background & Motivation
 
-**State of the Field**: Image stitching synthesizes multi-view images into wide field-of-view panoramas, with broad applications in panoramic photography, remote sensing, medical imaging, and VR.
+**Background**: Image stitching synthesizes multi-view images into wide field-of-view panoramas, with broad applications in panoramic photography, remote sensing, medical imaging, and VR.
 
 **Limitations of Prior Work**:
    - Feature-based methods (SIFT + RANSAC + homography) assume a planar scene model, producing ghosting and misalignment in scenes with multiple depth layers.

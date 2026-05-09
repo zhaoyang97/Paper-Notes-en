@@ -29,7 +29,7 @@ Olbedo introduces the first large-scale real-world aerial albedo–shading decom
 
 ## Background & Motivation
 
-**State of the Field**: Intrinsic image decomposition (IID) aims to separate an image into albedo $R$ and shading $S$ such that $I = R \cdot S$. This decomposition underpins relighting, material editing, and 3D content creation. Deep learning has significantly advanced IID, progressing from CNNs (NIID-Net) to diffusion models (Intrinsic Image Diffusion, RGB↔X, Marigold-IID); however, these advances have been almost entirely confined to **indoor or synthetic environments**.
+**Background**: Intrinsic image decomposition (IID) aims to separate an image into albedo $R$ and shading $S$ such that $I = R \cdot S$. This decomposition underpins relighting, material editing, and 3D content creation. Deep learning has significantly advanced IID, progressing from CNNs (NIID-Net) to diffusion models (Intrinsic Image Diffusion, RGB↔X, Marigold-IID); however, these advances have been almost entirely confined to **indoor or synthetic environments**.
 
 **Limitations of Prior Work**: The primary obstacle to real-world outdoor IID is the **absence of large-scale densely annotated ground-truth datasets**. Existing datasets fall into three categories:
    - **Synthetic datasets** (MPI Sintel, CGIntrinsics, InteriorVerse, Hypersim): provide perfect ground truth but suffer from a sim-to-real gap, and are predominantly indoor or object-level.
@@ -38,11 +38,11 @@ Olbedo introduces the first large-scale real-world aerial albedo–shading decom
 
    **Critical Gap**: No large-scale, real-world, densely annotated outdoor aerial IID dataset exists.
 
-**Root Cause**: Outdoor scenes are subject to dynamic and complex illumination (sun + sky), making it impossible to control lighting as in indoor settings to obtain ground truth. An alternative strategy is required to generate reliable outdoor albedo supervision signals.
+**Key Challenge**: Outdoor scenes are subject to dynamic and complex illumination (sun + sky), making it impossible to control lighting as in indoor settings to obtain ground truth. An alternative strategy is required to generate reliable outdoor albedo supervision signals.
 
-**Paper Goals**: Construct the first large-scale real-world aerial albedo–shading dataset providing dense pseudo-ground-truth supervision, enabling existing IID models to adapt to outdoor aerial scenes.
+**Goal**: Construct the first large-scale real-world aerial albedo–shading dataset providing dense pseudo-ground-truth supervision, enabling existing IID models to adapt to outdoor aerial scenes.
 
-**Starting Point**: Photogrammetric reconstruction provides accurate 3D geometry (normals, depth, shadow maps); combined with astronomical ephemeris for solar position and a physics-based sun–sky illumination model, albedo is estimated from lit–shadow pixel pairs near shadow boundaries—yielding physically consistent albedo annotations without controlled illumination.
+**Key Insight**: Photogrammetric reconstruction provides accurate 3D geometry (normals, depth, shadow maps); combined with astronomical ephemeris for solar position and a physics-based sun–sky illumination model, albedo is estimated from lit–shadow pixel pairs near shadow boundaries—yielding physically consistent albedo annotations without controlled illumination.
 
 **Core Idea**: A physics-based inverse rendering pipeline generates dense albedo pseudo-ground-truth from multi-view aerial RAW images, forming the first outdoor aerial IID dataset. Models pre-trained on synthetic data can then adapt to real outdoor scenes via lightweight fine-tuning.
 

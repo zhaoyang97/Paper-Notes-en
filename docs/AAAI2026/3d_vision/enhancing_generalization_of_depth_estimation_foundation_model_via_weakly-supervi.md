@@ -28,7 +28,7 @@ This paper proposes WeSTAR, a framework that synergistically combines semantics-
 
 ## Background & Motivation
 
-**State of the Field**: Foundation models such as the Depth Anything series have achieved strong zero-shot monocular depth estimation generalization through large-scale training. However, performance still has room for improvement when facing distribution shifts in downstream tasks (e.g., adverse weather, sensor noise, out-of-distribution scenes).
+**Background**: Foundation models such as the Depth Anything series have achieved strong zero-shot monocular depth estimation generalization through large-scale training. However, performance still has room for improvement when facing distribution shifts in downstream tasks (e.g., adverse weather, sensor noise, out-of-distribution scenes).
 
 **Limitations of Prior Work**:
 - Self-training on regression tasks suffers from confirmation bias—inaccurate pseudo-labels reinforce model errors.
@@ -36,11 +36,11 @@ This paper proposes WeSTAR, a framework that synergistically combines semantics-
 - Aggressive adaptation may cause catastrophic forgetting, degrading pretrained generalization knowledge.
 - Full fine-tuning is computationally expensive and prone to overfitting.
 
-**Root Cause**: How can downstream data be leveraged to improve performance while preserving the model's generalization capability?
+**Key Challenge**: How can downstream data be leveraged to improve performance while preserving the model's generalization capability?
 
-**Paper Goals**: Design a parameter-efficient and robust adaptation framework that enhances the generalization of depth foundation models under limited target-domain data (unlabeled or weakly labeled).
+**Goal**: Design a parameter-efficient and robust adaptation framework that enhances the generalization of depth foundation models under limited target-domain data (unlabeled or weakly labeled).
 
-**Starting Point**: A three-pronged approach—self-training provides dense structural supervision; weak supervision provides sparse but independent ordinal constraints to break confirmation bias; weight regularization anchors pretrained knowledge to prevent forgetting.
+**Key Insight**: A three-pronged approach—self-training provides dense structural supervision; weak supervision provides sparse but independent ordinal constraints to break confirmation bias; weight regularization anchors pretrained knowledge to prevent forgetting.
 
 **Core Idea**: Jointly employ semantics-aware hierarchical depth normalization self-training, low-cost pairwise ordinal weak supervision, and LoRA regularization to safely adapt depth foundation models to new domains.
 

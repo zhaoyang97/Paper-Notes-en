@@ -29,15 +29,15 @@ MoSketch is the first method to address multi-object sketch animation. It integr
 
 ## Background & Motivation
 
-**State of the Field**: Sketch animation converts static sketches into dynamic videos, with broad applications in GIF design, cartoon production, and everyday entertainment. Recent methods include Live-Sketch (CVPR 2024), which employs vector sketch representations and Score Distillation Sampling (SDS) for training-free animation, and FlipSketch (CVPR 2025), which generates rasterized sketch animations via DDIM inversion and fine-tuned T2V models. Both perform well on single-object sketch animation.
+**Background**: Sketch animation converts static sketches into dynamic videos, with broad applications in GIF design, cartoon production, and everyday entertainment. Recent methods include Live-Sketch (CVPR 2024), which employs vector sketch representations and Score Distillation Sampling (SDS) for training-free animation, and FlipSketch (CVPR 2025), which generates rasterized sketch animations via DDIM inversion and fine-tuned T2V models. Both perform well on single-object sketch animation.
 
 **Limitations of Prior Work**: Extending single-object methods to the multi-object setting introduces fundamental difficulties. (1) Live-Sketch lacks object-aware motion modeling, failing to capture inter-object relationships and interactions (e.g., water level should decrease when being poured), and T2V diffusion models are difficult to guide effectively via SDS for complex multi-object motions. (2) FlipSketch's DDIM inversion fails to faithfully capture the appearance of multi-object sketches, and its fine-tuning data — synthesized by Live-Sketch — contains very few and low-quality multi-object scenes.
 
-**Root Cause**: Multi-object sketch animation poses two fundamental challenges: **object-aware motion modeling** (requiring consideration of relative motions, interactions, and physical constraints among objects) and **complex motion optimization** (T2V diffusion models struggle to provide effective SDS guidance for complex multi-object motions). No existing method addresses both simultaneously.
+**Key Challenge**: Multi-object sketch animation poses two fundamental challenges: **object-aware motion modeling** (requiring consideration of relative motions, interactions, and physical constraints among objects) and **complex motion optimization** (T2V diffusion models struggle to provide effective SDS guidance for complex multi-object motions). No existing method addresses both simultaneously.
 
-**Paper Goals**: To propose a training-data-free method for multi-object sketch animation that simultaneously resolves both object-aware motion modeling and complex motion optimization.
+**Goal**: To propose a training-data-free method for multi-object sketch animation that simultaneously resolves both object-aware motion modeling and complex motion optimization.
 
-**Starting Point**: Leverage LLM prior knowledge for scene understanding and motion planning (addressing the motion modeling challenge), combined with compositional SDS that decomposes complex motions into simpler ones for sequential optimization (addressing the optimization challenge).
+**Key Insight**: Leverage LLM prior knowledge for scene understanding and motion planning (addressing the motion modeling challenge), combined with compositional SDS that decomposes complex motions into simpler ones for sequential optimization (addressing the optimization challenge).
 
 **Core Idea**: A divide-and-conquer strategy — LLMs handle high-level planning (scene decomposition and coarse-grained motion), neural networks handle low-level refinement (fine-grained motion), and compositional SDS handles divide-and-optimize (decomposing complex motions into simple ones for individual guidance).
 

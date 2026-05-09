@@ -28,15 +28,15 @@ This paper proposes MuGS, the first generalizable 3D Gaussian Splatting method d
 
 ## Background & Motivation
 
-**State of the Field**: 3D Gaussian Splatting (3D-GS) has become the dominant paradigm for novel view synthesis due to its efficient real-time rendering, but it requires per-scene optimization. Generalizable methods enable feed-forward inference on unseen scenes via data-driven learning; however, existing approaches are specialized either for small-baseline (high image overlap) or large-baseline (low image overlap) settings.
+**Background**: 3D Gaussian Splatting (3D-GS) has become the dominant paradigm for novel view synthesis due to its efficient real-time rendering, but it requires per-scene optimization. Generalizable methods enable feed-forward inference on unseen scenes via data-driven learning; however, existing approaches are specialized either for small-baseline (high image overlap) or large-baseline (low image overlap) settings.
 
 **Limitations of Prior Work**: Small-baseline methods suffer from large depth errors on large-baseline data due to occlusions and insufficient overlap; large-baseline methods produce inaccurate depth estimates on small-baseline data due to the lack of matching cues. The core bottleneck lies in the fact that the optimal depth estimation strategy varies with the baseline.
 
-**Root Cause**: Small-baseline settings rely on MVS matching, while large-baseline settings rely on monocular geometric priors. These two strategies are fundamentally different and difficult to unify within a single model.
+**Key Challenge**: Small-baseline settings rely on MVS matching, while large-baseline settings rely on monocular geometric priors. These two strategies are fundamentally different and difficult to unify within a single model.
 
-**Paper Goals**: Construct the first generalizable Gaussian Splatting method capable of handling multiple baseline configurations simultaneously.
+**Goal**: Construct the first generalizable Gaussian Splatting method capable of handling multiple baseline configurations simultaneously.
 
-**Starting Point**: Accurate depth guidance can unify the challenges posed by both baseline settings. MVS yields high accuracy when overlap is sufficient but fails in challenging regions, while MDE provides more robust and smooth depth maps but lacks multi-view consistency. The two are complementary.
+**Key Insight**: Accurate depth guidance can unify the challenges posed by both baseline settings. MVS yields high accuracy when overlap is sufficient but fails in challenging regions, while MDE provides more robust and smooth depth maps but lacks multi-view consistency. The two are complementary.
 
 **Core Idea**: Fuse the projected depth from MVS matching and the sampled depth from MDE predictions, and use a 3D U-Net to compute their consistency for constructing a refined probability volume that guides depth regression.
 

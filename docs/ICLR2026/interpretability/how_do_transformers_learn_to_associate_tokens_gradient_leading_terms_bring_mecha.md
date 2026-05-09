@@ -29,7 +29,7 @@ By analyzing the leading terms of training gradients, this paper derives closed-
 
 ### State of the Field
 
-**State of the Field**: Semantic associations between tokens such as "bird" and "flew" are fundamental to language modeling—models must generalize beyond memorization to produce coherent text. Understanding how these associations are learned and represented in language models is critical for bridging deep learning with linguistic theory and establishing a mechanistic foundation for large language models.
+**Background**: Semantic associations between tokens such as "bird" and "flew" are fundamental to language modeling—models must generalize beyond memorization to produce coherent text. Understanding how these associations are learned and represented in language models is critical for bridging deep learning with linguistic theory and establishing a mechanistic foundation for large language models.
 
 **Current Issues**:
 
@@ -39,13 +39,13 @@ By analyzing the leading terms of training gradients, this paper derives closed-
 
 ### Root Cause
 
-**Root Cause**: A critical gap exists in the mechanistic understanding of how Transformers progressively learn semantic associations **during training** from real natural language data.
+**Key Challenge**: A critical gap exists in the mechanistic understanding of how Transformers progressively learn semantic associations **during training** from real natural language data.
 
 ### Resolution
 
 **Resolution**: Existing theoretical analyses based on simplifying assumptions (e.g., linear attention, single-layer models) cannot directly explain multi-layer, multi-head Transformers trained on real data.
 
-**Starting Point**: This paper adopts a **training dynamics** perspective, using **leading-term approximations** of gradients to derive analytically tractable and empirically verifiable closed-form weight expressions. Rather than assuming a simplified architecture, the approach characterizes the formation of model weights during early training by mathematically identifying the dominant contributions to gradient updates.
+**Key Insight**: This paper adopts a **training dynamics** perspective, using **leading-term approximations** of gradients to derive analytically tractable and empirically verifiable closed-form weight expressions. Rather than assuming a simplified architecture, the approach characterizes the formation of model weights during early training by mathematically identifying the dominant contributions to gradient updates.
 
 **Core Idea**: Each group of Transformer weights can be expressed as a simple combination of three basis functions that reflect statistical properties of the text corpus, with each basis function corresponding to a distinct mechanism for learning semantic associations.
 

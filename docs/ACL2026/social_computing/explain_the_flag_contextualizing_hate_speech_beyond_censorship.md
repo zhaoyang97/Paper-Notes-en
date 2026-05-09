@@ -28,15 +28,15 @@ This paper proposes a hybrid approach combining LLMs with human-curated lexicons
 
 ## Background & Motivation
 
-**State of the Field**: Automated hate speech detection systems are widely used for online platform moderation, but most focus on censorship or removal, lacking transparency and explainability—users are flagged but do not know why they were flagged.
+**Background**: Automated hate speech detection systems are widely used for online platform moderation, but most focus on censorship or removal, lacking transparency and explainability—users are flagged but do not know why they were flagged.
 
 **Limitations of Prior Work**: (1) Pure deletion approaches lack transparency, limiting users' understanding of why their language is harmful; (2) Moderation decisions may appear arbitrary or biased; (3) Hate speech has two forms—inherently derogatory terms (e.g., slurs) and group-targeted content (which can be harmful even without slurs)—requiring different detection strategies; (4) Low-resource languages (e.g., Greek) lack relevant resources.
 
-**Root Cause**: Moderation needs to balance "blocking harmful content" and "explaining why it is harmful"—pure LLM approaches lack stable terminological knowledge, while pure lexicon approaches lack contextual understanding.
+**Key Challenge**: Moderation needs to balance "blocking harmful content" and "explaining why it is harmful"—pure LLM approaches lack stable terminological knowledge, while pure lexicon approaches lack contextual understanding.
 
-**Paper Goals**: Build a hybrid system that can detect and explain hate speech, covering English/French/Greek.
+**Goal**: Build a hybrid system that can detect and explain hate speech, covering English/French/Greek.
 
-**Starting Point**: Dual-pipeline design—the term-based pipeline uses curated lexicons for precise matching + LLM disambiguation, the term-free pipeline uses LLMs for context-aware group-targeting detection.
+**Key Insight**: Dual-pipeline design—the term-based pipeline uses curated lexicons for precise matching + LLM disambiguation, the term-free pipeline uses LLMs for context-aware group-targeting detection.
 
 **Core Idea**: Curated lexicon (with meaning explanations + identity feature annotations) + LLM contextual reasoning → evidence-based explanations.
 

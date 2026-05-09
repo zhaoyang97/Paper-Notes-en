@@ -30,13 +30,13 @@ This paper proposes PerTouch, a framework that integrates a semantic region-leve
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning-based image retouching has evolved from end-to-end FCN approaches to controllable methods such as 3D-LUT and curve manipulation, and further to diffusion-prior-based methods like DiffRetouch. More recently, VLM-based Agent systems (e.g., RestoreAgent, PhotoArtAgent) have been applied to low-level vision tasks.
+**Background**: Deep learning-based image retouching has evolved from end-to-end FCN approaches to controllable methods such as 3D-LUT and curve manipulation, and further to diffusion-prior-based methods like DiffRetouch. More recently, VLM-based Agent systems (e.g., RestoreAgent, PhotoArtAgent) have been applied to low-level vision tasks.
 
 **Limitations of Prior Work**: Existing methods suffer from three fundamental limitations: (1) *Lack of subjectivity modeling*: deterministic architectures produce fixed outputs for given inputs, failing to capture the diversity of user preferences; (2) *Lack of region-level control*: approaches that incorporate external segmentation maps are sensitive to segmentation quality and prone to unnatural artifacts; (3) *Lack of user interaction and personalization*: these methods cannot interpret ambiguous instructions (e.g., "make it a bit brighter") and do not retain long-term editing preferences.
 
-**Root Cause**: Semantic region-level retouching demands precise spatial control, yet over-reliance on segmentation information sacrifices global aesthetic coherence; personalization requires understanding user intent, but user instructions are typically vague and subjective.
+**Key Challenge**: Semantic region-level retouching demands precise spatial control, yet over-reliance on segmentation information sacrifices global aesthetic coherence; personalization requires understanding user intent, but user instructions are typically vague and subjective.
 
-**Starting Point**: The paper leverages diffusion priors to learn high-quality retouching distributions and injects semantic region control via parameter maps; it introduces two complementary training mechanisms—semantic replacement and parameter perturbation—to balance region awareness with global aesthetics; and it designs a VLM Agent with scene memory and feedback-driven rethinking to enable personalization.
+**Key Insight**: The paper leverages diffusion priors to learn high-quality retouching distributions and injects semantic region control via parameter maps; it introduces two complementary training mechanisms—semantic replacement and parameter perturbation—to balance region awareness with global aesthetics; and it designs a VLM Agent with scene memory and feedback-driven rethinking to enable personalization.
 
 ## Method
 

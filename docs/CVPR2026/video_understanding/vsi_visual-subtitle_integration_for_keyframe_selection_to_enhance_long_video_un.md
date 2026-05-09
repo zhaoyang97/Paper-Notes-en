@@ -27,11 +27,11 @@ content_hash: 7abe477d99a42490
 VSI proposes a dual-branch collaborative retrieval framework (Video Search + Subtitle Match) that fuses visual and textual information for precise keyframe localization. On text-dominant subtasks, it improves search accuracy from 29.48 to 45.00, representing the first cross-modal keyframe retrieval method.
 
 ## Background & Motivation
-1. **State of the Field**: Multimodal large language models achieve strong performance on vision-language tasks, but processing long videos is constrained by input context length and high computational cost, making sparse frame sampling a necessary preprocessing step.
+1. **Background**: Multimodal large language models achieve strong performance on vision-language tasks, but processing long videos is constrained by input context length and high computational cost, making sparse frame sampling a necessary preprocessing step.
 2. **Limitations of Prior Work**: (i) Existing keyframe search algorithms effectively improve performance only on visually dominant subtasks, with marginal gains on text-dominant subtasks; (ii) existing methods rely solely on visual-modal retrieval and lack targeted textual guidance, causing keyframes to over-focus on visually dense regions while deviating from core semantics.
-3. **Root Cause**: VideoQA is inherently multimodal (visual + textual), yet existing keyframe retrieval exploits only the visual modality, resulting in insufficient utilization of modal information.
-4. **Paper Goals**: Design a multimodal keyframe retrieval framework that works effectively on text-related tasks while preserving performance on visual tasks.
-5. **Starting Point**: Leverage video subtitles as complementary textual cues, integrating visual and textual information through a dual-branch design.
+3. **Key Challenge**: VideoQA is inherently multimodal (visual + textual), yet existing keyframe retrieval exploits only the visual modality, resulting in insufficient utilization of modal information.
+4. **Goal**: Design a multimodal keyframe retrieval framework that works effectively on text-related tasks while preserving performance on visual tasks.
+5. **Key Insight**: Leverage video subtitles as complementary textual cues, integrating visual and textual information through a dual-branch design.
 6. **Core Idea**: The Video Search branch processes visual features and object detection; the Subtitle Match branch performs semantic similarity computation; both branches update frame-level sampling probabilities through a dynamic fusion strategy.
 
 ## Method

@@ -26,7 +26,7 @@ content_hash: 1d5eb5a275b1a928
 This paper proposes A-Mem, a Zettelkasten-inspired agentic memory system for LLM agents. Each memory entry automatically generates a structured note (keywords/tags/contextual description), dynamically establishes inter-memory links, and triggers evolutionary updates to existing memories upon the insertion of new ones. A-Mem substantially outperforms baselines such as MemGPT on the LoCoMo long-conversation QA benchmark.
 
 ## Background & Motivation
-**State of the Field**: LLM agents require memory systems to support long-term interaction; existing systems (MemGPT, MemoryBank) provide basic storage and retrieval functionality.
+**Background**: LLM agents require memory systems to support long-term interaction; existing systems (MemGPT, MemoryBank) provide basic storage and retrieval functionality.
 
 **Limitations of Prior Work**:
    - Existing memory systems rely on predefined storage structures and fixed access operations, lacking adaptive capacity.
@@ -34,11 +34,11 @@ This paper proposes A-Mem, a Zettelkasten-inspired agentic memory system for LLM
    - Fixed workflows constrain generalization across diverse tasks.
    - Memories are read-only — once stored, they are never updated and cannot evolve over time.
 
-**Root Cause**: Static memory structures vs. the need for dynamically evolving knowledge organization.
+**Key Challenge**: Static memory structures vs. the need for dynamically evolving knowledge organization.
 
-**Paper Goals**: Design a flexible memory system capable of autonomous organization, dynamic linking, and continuous evolution.
+**Goal**: Design a flexible memory system capable of autonomous organization, dynamic linking, and continuous evolution.
 
-**Starting Point**: The Zettelkasten (slip-box) method — atomic notes + flexible links + knowledge networks.
+**Key Insight**: The Zettelkasten (slip-box) method — atomic notes + flexible links + knowledge networks.
 
 **Core Idea**: Enable the memory system to autonomously generate structured notes, establish links, and trigger the evolution of existing memories, analogous to the Zettelkasten approach.
 

@@ -29,15 +29,15 @@ To address the query efficiency bottleneck in hard-label black-box adversarial a
 
 ## Background & Motivation
 
-**State of the Field**: Adversarial attack research is a central component of AI security. Among black-box attacks, the hard-label setting—where only the top-1 predicted label is accessible—represents the most practically relevant and challenging scenario. Ray search-based methods, which identify the optimal direction to minimize the $\ell_2$ norm of adversarial perturbations, are representative approaches in this setting.
+**Background**: Adversarial attack research is a central component of AI security. Among black-box attacks, the hard-label setting—where only the top-1 predicted label is accessible—represents the most practically relevant and challenging scenario. Ray search-based methods, which identify the optimal direction to minimize the $\ell_2$ norm of adversarial perturbations, are representative approaches in this setting.
 
 **Limitations of Prior Work**: The fundamental obstacle in hard-label attacks is the extremely high query complexity. Because only discrete label information (rather than continuous gradients) is available, estimating gradients requires a large number of queries per step. Existing ray search optimization methods converge slowly, often requiring thousands to tens of thousands of queries to find sufficiently small adversarial perturbations.
 
-**Root Cause**: Minimal information (labels only) versus a vast search space (high-dimensional image space)—efficient navigation of a high-dimensional space is required under severely limited feedback.
+**Key Challenge**: Minimal information (labels only) versus a vast search space (high-dimensional image space)—efficient navigation of a high-dimensional space is required under severely limited feedback.
 
-**Paper Goals**: (1) Improve the convergence rate of ray search optimization; (2) reduce the number of queries required to achieve equivalent attack performance; (3) provide theoretical convergence guarantees.
+**Goal**: (1) Improve the convergence rate of ray search optimization; (2) reduce the number of queries required to achieve equivalent attack performance; (3) provide theoretical convergence guarantees.
 
-**Starting Point**: Drawing from optimization theory, the paper introduces the momentum concept of Nesterov Accelerated Gradient (NAG) into ray search—leveraging accumulated momentum to anticipate future gradient directions and accelerate convergence.
+**Key Insight**: Drawing from optimization theory, the paper introduces the momentum concept of Nesterov Accelerated Gradient (NAG) into ray search—leveraging accumulated momentum to anticipate future gradient directions and accelerate convergence.
 
 **Core Idea**: ARS-OPT performs lookahead gradient estimation along momentum-predicted future directions, while PARS-OPT further incorporates surrogate model priors, achieving faster convergence and reduced query counts.
 

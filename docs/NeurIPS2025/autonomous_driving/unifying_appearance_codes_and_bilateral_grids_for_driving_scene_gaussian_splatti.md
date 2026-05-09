@@ -28,15 +28,15 @@ A multi-scale bilateral grid pyramid is proposed to unify global appearance code
 
 ## Background & Motivation
 
-**State of the Field**: 3D Gaussian Splatting reconstruction of driving scenes suffers from cross-image photometric inconsistency caused by auto-exposure and white balance variation. Existing methods compensate via either global appearance codes (one vector per image) or pixel-level bilateral grids.
+**Background**: 3D Gaussian Splatting reconstruction of driving scenes suffers from cross-image photometric inconsistency caused by auto-exposure and white balance variation. Existing methods compensate via either global appearance codes (one vector per image) or pixel-level bilateral grids.
 
 **Limitations of Prior Work**: Global appearance codes have limited expressiveness, modeling only overall color tone shifts. Pixel-level bilateral grids have large parameter counts (27.8M) and are difficult to optimize—prone to overfitting on small-scale driving datasets. Each approach has distinct advantages but they are incompatible with one another.
 
-**Root Cause**: The model must simultaneously capture global tone shifts (where appearance codes excel) and local illumination variation (where bilateral grids excel), yet the two employ fundamentally different parameterizations.
+**Key Challenge**: The model must simultaneously capture global tone shifts (where appearance codes excel) and local illumination variation (where bilateral grids excel), yet the two employ fundamentally different parameterizations.
 
-**Paper Goals**: Design a unified framework that achieves both global and local photometric compensation with a controllable parameter budget.
+**Goal**: Design a unified framework that achieves both global and local photometric compensation with a controllable parameter budget.
 
-**Starting Point**: A multi-scale grid pyramid—coarse grid ≈ global appearance code, medium grid ≈ regional compensation, fine grid ≈ pixel-level adjustment. The three levels are progressively stacked and composed sequentially.
+**Key Insight**: A multi-scale grid pyramid—coarse grid ≈ global appearance code, medium grid ≈ regional compensation, fine grid ≈ pixel-level adjustment. The three levels are progressively stacked and composed sequentially.
 
 **Core Idea**: A 3-level bilateral grid pyramid ($2{\times}2{\times}1 \to 4{\times}4{\times}2 \to 8{\times}8{\times}4$) unifies global/regional/pixel-level photometric modeling, coupled with luminance-guided slicing and adaptive regularization.
 

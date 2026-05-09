@@ -28,15 +28,15 @@ This paper identifies a "smoothing misalignment" problem that arises when channe
 
 ## Background & Motivation
 
-**State of the Field**: Post-training quantization (PTQ) is a critical technique for deploying large models. Channel-wise smoothing methods based on mathematical invariance (SmoothQuant, AWQ, etc.) perform well on text-only LLMs by redistributing activation outliers through channel scaling factors.
+**Background**: Post-training quantization (PTQ) is a critical technique for deploying large models. Channel-wise smoothing methods based on mathematical invariance (SmoothQuant, AWQ, etc.) perform well on text-only LLMs by redistributing activation outliers through channel scaling factors.
 
 **Limitations of Prior Work**: When channel-wise smoothing is directly applied to MLLMs, visual token activations are typically 10–100× larger in magnitude than text token activations. A unified smoothing factor is dominated by the dominant modality (usually vision), causing non-dominant modalities (text, audio) to be over-smoothed, compressing their signals and introducing severe quantization errors—referred to as "Smoothing Misalignment."
 
-**Root Cause**: Learning independent smoothing factors per modality resolves the misalignment, but requires storing separate quantized weights for each modality, fundamentally defeating the purpose of quantization compression.
+**Key Challenge**: Learning independent smoothing factors per modality resolves the misalignment, but requires storing separate quantized weights for each modality, fundamentally defeating the purpose of quantization compression.
 
-**Paper Goals**: Can modality-aware smooth quantization be achieved while maintaining a single set of quantized weights?
+**Goal**: Can modality-aware smooth quantization be achieved while maintaining a single set of quantized weights?
 
-**Starting Point**: The authors observe that weight differences across modalities after smoothing are low-rank (provably so mathematically), enabling lightweight low-rank matrices to serve as compensation.
+**Key Insight**: The authors observe that weight differences across modalities after smoothing are low-rank (provably so mathematically), enabling lightweight low-rank matrices to serve as compensation.
 
 **Core Idea**: Learn modality-specific smoothing factors + store a single set of quantized weights anchored to the text modality + apply SVD whitening-based low-rank compensation for other modalities.
 

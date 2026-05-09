@@ -27,14 +27,14 @@ content_hash: 9b31b49c2e8f5829
 This paper proposes SIMECO, the first SIM(3)-equivariant shape completion network. Through a three-stage modular design — feature canonicalization → similarity-invariant geometric reasoning → transformation recovery — SIMECO outperforms all augmentation-based and equivariant baselines under an unbiased evaluation protocol, achieving a 17% MMD reduction on KITTI and a 14% CD-$\ell_1$ reduction on OmniObject3D. Notably, SIMECO under the stricter protocol still surpasses competing methods evaluated under their own biased settings.
 
 ## Background & Motivation
-**State of the Field**: 3D shape completion aims to reconstruct complete shapes from partial point cloud observations. Dominant methods (PoinTr, AdaPoinTr, SeedFormer, etc.) perform well on benchmarks such as PCN, but all training data are pre-aligned to a canonical coordinate frame with fixed pose and scale.
+**Background**: 3D shape completion aims to reconstruct complete shapes from partial point cloud observations. Dominant methods (PoinTr, AdaPoinTr, SeedFormer, etc.) perform well on benchmarks such as PCN, but all training data are pre-aligned to a canonical coordinate frame with fixed pose and scale.
 
 **Limitations of Prior Work**:
 - **Implicit bias leakage**: Pre-alignment allows networks to memorize absolute positions in the coordinate system rather than inferring intrinsic geometry; performance collapses once alignment is removed.
 - **SO(3)/SE(3) equivariant methods are insufficient**: Existing equivariant methods still rely on ground-truth centroids and scales for input normalization, which is essentially explicit canonicalization rather than true equivariance.
 - **Data augmentation is a symptomatic fix**: Random transformation augmentation approximates invariance but couples extrinsic transformations with intrinsic geometry, leaving ambiguity at test time.
 
-**Root Cause**: True generalization requires complete invariance to rotation, translation, and scale (the SIM(3) group), yet no existing shape completion architecture achieves full SIM(3) equivariance.
+**Key Challenge**: True generalization requires complete invariance to rotation, translation, and scale (the SIM(3) group), yet no existing shape completion architecture achieves full SIM(3) equivariance.
 
 **Core Idea**: Enforce SIM(3) equivariance at every layer via a three-stage module: canonicalize to remove translation and scale → perform geometric reasoning in the invariant space → recover the original transformation.
 

@@ -29,15 +29,15 @@ This paper proposes DEFT (Decompositional Efficient Fine-Tuning), which efficien
 
 ## Background & Motivation
 
-1. **State of the Field**: Fine-tuning text-to-image (T2I) models faces challenges related to computational resources and overfitting. LoRA achieves parameter-efficient fine-tuning via low-rank updates, while PaRa reduces rank through orthogonal subspace projection.
+1. **Background**: Fine-tuning text-to-image (T2I) models faces challenges related to computational resources and overfitting. LoRA achieves parameter-efficient fine-tuning via low-rank updates, while PaRa reduces rank through orthogonal subspace projection.
 
 2. **Limitations of Prior Work**: LoRA's low-rank updates lack structural constraints, making them prone to overfitting with limited control over pose and spatial layout. PaRa only reduces the rank of pretrained weights without introducing new directions. Concept interference and blending in multi-concept compositional generation remain challenging.
 
-3. **Root Cause**: Efficient fine-tuning requires balancing three objectives — learning the target distribution, preserving instruction-following capability, and maintaining editability (generation under diverse prompts or contexts) — which existing methods struggle to achieve simultaneously.
+3. **Key Challenge**: Efficient fine-tuning requires balancing three objectives — learning the target distribution, preserving instruction-following capability, and maintaining editability (generation under diverse prompts or contexts) — which existing methods struggle to achieve simultaneously.
 
-4. **Paper Goals**: To design a more flexible weight update scheme that efficiently adapts to new concepts or tasks while preserving the generalization capability of the pretrained model.
+4. **Goal**: To design a more flexible weight update scheme that efficiently adapts to new concepts or tasks while preserving the generalization capability of the pretrained model.
 
-5. **Starting Point**: Decompose weight updates into two complementary components — subspace projection (removing certain directions) and low-rank adjustment (injecting new directions) — jointly realized through two trainable matrices.
+5. **Key Insight**: Decompose weight updates into two complementary components — subspace projection (removing certain directions) and low-rank adjustment (injecting new directions) — jointly realized through two trainable matrices.
 
 6. **Core Idea**: $W_{total} = (I - PP^T)W_0 + PR$, where $P$ defines the subspace projection and $R$ enables flexible adjustment within that subspace, expanding the column space of the weights.
 

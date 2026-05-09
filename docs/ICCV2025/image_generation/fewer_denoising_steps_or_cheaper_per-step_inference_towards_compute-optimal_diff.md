@@ -29,21 +29,21 @@ This paper proposes PostDiff — a training-free diffusion model acceleration fr
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models have achieved remarkable success in image and video generation, but their iterative denoising nature and complex model architectures result in substantial computational cost, limiting deployment on resource-constrained platforms.
+**Background**: Diffusion models have achieved remarkable success in image and video generation, but their iterative denoising nature and complex model architectures result in substantial computational cost, limiting deployment on resource-constrained platforms.
 
 **Limitations of Prior Work**:
 - Reducing the number of denoising steps (e.g., DDIM, DPM-Solver, consistency models) and reducing per-step computation cost (e.g., token merging/pruning, module caching, quantization) represent two major acceleration paradigms.
 - However, a systematic study comparing the efficiency–quality trade-offs of these two strategies in the post-training setting has been lacking.
 - Reducing steps increases the variance of inter-step feature changes, potentially degrading compression compatibility; retaining more steps preserves inter-step redundancy, making compression more applicable.
 
-**Root Cause**: In post-training deployment scenarios without fine-tuning, it remains unclear whether fewer denoising steps or cheaper per-step inference is preferable — a question critical to both researchers and practitioners, yet without a definitive answer.
+**Key Challenge**: In post-training deployment scenarios without fine-tuning, it remains unclear whether fewer denoising steps or cheaper per-step inference is preferable — a question critical to both researchers and practitioners, yet without a definitive answer.
 
-**Paper Goals**:
+**Goal**:
 - Propose a unified framework, PostDiff, that simultaneously reduces redundancy at both the input and module levels.
 - Systematically compare the two acceleration strategies through controlled experiments.
 - Identify and explain the "low-resolution enhancement of low-frequency components → improved final quality" phenomenon in mixed-resolution denoising.
 
-**Starting Point**: Early denoising steps primarily generate low-frequency semantic layouts and do not require high resolution; later steps add high-frequency details and thus benefit from higher resolution. This stage-wise characteristic can be exploited.
+**Key Insight**: Early denoising steps primarily generate low-frequency semantic layouts and do not require high resolution; later steps add high-frequency details and thus benefit from higher resolution. This stage-wise characteristic can be exploited.
 
 **Core Idea**: Apply low-resolution denoising in early steps (enhancing low-frequency components while saving compute), switch to high resolution in later steps to refine details, and combine with module caching — demonstrating that reducing per-step cost is more effective than reducing the number of steps.
 

@@ -28,7 +28,7 @@ This paper reconstructs the theoretical foundations of provable copyright protec
 
 ## Background & Motivation
 
-**State of the Field**: Generative models may reproduce copyrighted content from training data in their outputs. Vyas et al. (2023) proposed Near Access-Freeness (NAF) as a formal definition of "provable copyright protection," requiring that a model's output distribution be close to its distribution when trained without access to copyrighted data.
+**Background**: Generative models may reproduce copyrighted content from training data in their outputs. Vyas et al. (2023) proposed Near Access-Freeness (NAF) as a formal definition of "provable copyright protection," requiring that a model's output distribution be close to its distribution when trained without access to copyrighted data.
 
 **Limitations of Prior Work**:
 - The NAF definition has a fundamental flaw — this paper proves that NAF-compliant models can still be used to reproduce training data verbatim ("tainted" models).
@@ -36,11 +36,11 @@ This paper reconstructs the theoretical foundations of provable copyright protec
 - There is no framework for copyright protection that is simultaneously legally and mathematically sound.
 - The intuition that "differential privacy implies copyright protection" is widespread but lacks rigorous proof.
 
-**Root Cause**: Generative model outputs sometimes reproduce copyrighted material, yet not all reproduction should be attributed to the user — the user may have no knowledge of what the training data contains. It is necessary to distinguish between reproduction actively induced by the user and reproduction that arises spontaneously from the model.
+**Key Challenge**: Generative model outputs sometimes reproduce copyrighted material, yet not all reproduction should be attributed to the user — the user may have no knowledge of what the training data contains. It is necessary to distinguish between reproduction actively induced by the user and reproduction that arises spontaneously from the model.
 
-**Paper Goals**: (a) Demonstrate the inadequacy of NAF; (b) propose a better formal definition; (c) formally connect differential privacy to copyright protection.
+**Goal**: (a) Demonstrate the inadequacy of NAF; (b) propose a better formal definition; (c) formally connect differential privacy to copyright protection.
 
-**Starting Point**: The paper draws on the software engineering concept of "clean-room design" — reimplementing functionality in an environment isolated from the original code to avoid copyright infringement. This principle is mathematized: if a user's behavior in a clean-room model (trained without copyrighted data) would not lead to reproduction, it should not lead to reproduction in the real model either.
+**Key Insight**: The paper draws on the software engineering concept of "clean-room design" — reimplementing functionality in an environment isolated from the original code to avoid copyright infringement. This principle is mathematized: if a user's behavior in a clean-room model (trained without copyrighted data) would not lead to reproduction, it should not lead to reproduction in the real model either.
 
 **Core Idea**: Protect "blameless users" — users who would not reproduce content in a counterfactual clean room should have an upper-bounded probability of reproduction in the real world.
 

@@ -42,7 +42,7 @@ LLM-based multi-agent systems (MAS) have demonstrated strong collaborative probl
 
 **Core gap**: No existing method unifies heuristic early-stage filtering with performance-aware dynamic adaptation — no complete "plan-then-refine" optimization pipeline exists.
 
-**Starting Point**: Drawing an analogy to human team organization — initial role assignments are made based on member capabilities and complementarity (heuristic), and collaboration relationships are progressively adjusted based on actual performance (experience-driven). 0-extension clustering replaces greedy Top-k pruning to maintain structural coherence.
+**Key Insight**: Drawing an analogy to human team organization — initial role assignments are made based on member capabilities and complementarity (heuristic), and collaboration relationships are progressively adjusted based on actual performance (experience-driven). 0-extension clustering replaces greedy Top-k pruning to maintain structural coherence.
 
 ## Method
 

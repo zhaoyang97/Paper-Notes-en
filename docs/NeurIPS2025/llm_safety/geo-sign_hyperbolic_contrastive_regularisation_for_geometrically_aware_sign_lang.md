@@ -28,15 +28,15 @@ Geo-Sign projects skeleton features into a Poincaré ball model of hyperbolic sp
 
 ## Background & Motivation
 
-**State of the Field**: Sign language translation (SLT) has recently shifted toward leveraging large language models (e.g., T5 variants) to process visual features. Most SOTA methods rely on RGB video input and large visual encoders (e.g., DINO-ViT), incurring high computational costs and raising privacy concerns.
+**Background**: Sign language translation (SLT) has recently shifted toward leveraging large language models (e.g., T5 variants) to process visual features. Most SOTA methods rely on RGB video input and large visual encoders (e.g., DINO-ViT), incurring high computational costs and raising privacy concerns.
 
 **Limitations of Prior Work**: Skeleton representations extracted via spatial-temporal graph convolution (ST-GCN) are projected into Euclidean space for processing by language models. However, in Euclidean space, large-scale arm movements dominate the embedding norm, compressing the discriminability of fine-grained motions such as finger joint articulations. For example, the ASL sign for "water" requires distinguishing a finger W-shape touching the chin (leaf-node motion) from arm abduction (branch-node motion), yet in flat space these embeddings become conflated.
 
-**Root Cause**: Sign language motion possesses a natural tree-like hierarchical structure (torso → arm → wrist → fingers), yet the polynomial volume growth of Euclidean space cannot effectively encode such hierarchies.
+**Key Challenge**: Sign language motion possesses a natural tree-like hierarchical structure (torso → arm → wrist → fingers), yet the polynomial volume growth of Euclidean space cannot effectively encode such hierarchies.
 
-**Paper Goals**: Enhance the geometric properties of skeleton representations so that they naturally respect the kinematic hierarchy of sign language.
+**Goal**: Enhance the geometric properties of skeleton representations so that they naturally respect the kinematic hierarchy of sign language.
 
-**Starting Point**: Hyperbolic space exhibits exponential volume growth $V_H(r) \propto e^{(d-1)r}$, making it naturally suited for encoding tree-like hierarchies — distances near the boundary amplify fine-grained distinctions, while the near-origin region approximates Euclidean space for semantic-level representations.
+**Key Insight**: Hyperbolic space exhibits exponential volume growth $V_H(r) \propto e^{(d-1)r}$, making it naturally suited for encoding tree-like hierarchies — distances near the boundary amplify fine-grained distinctions, while the near-origin region approximates Euclidean space for semantic-level representations.
 
 **Core Idea**: Project skeleton part features into a Poincaré ball with learnable curvature, align pose–text embeddings via a hyperbolic contrastive loss, and regularize the language model to perceive motion hierarchy.
 

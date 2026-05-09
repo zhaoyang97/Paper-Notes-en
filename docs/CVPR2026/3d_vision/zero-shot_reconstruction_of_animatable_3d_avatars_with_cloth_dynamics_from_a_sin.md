@@ -28,21 +28,21 @@ DynaAvatar presents the first zero-shot framework for reconstructing animatable 
 
 ## Background & Motivation
 
-**State of the Field**: Single-image animatable 3D human avatar reconstruction is a central goal in computer vision and graphics. Existing zero-shot methods (IDOL, LHM) primarily rely on skeleton-based rigid transformations (LBS) to drive animation, which enables body joint motion but is fundamentally incapable of modeling non-rigid cloth dynamics. Another category of personalized methods (ExAvatar, GaussianAvatar) can capture subject-specific garment deformations, but requires per-subject multi-view video capture and optimization, making generalization to arbitrary new subjects infeasible.
+**Background**: Single-image animatable 3D human avatar reconstruction is a central goal in computer vision and graphics. Existing zero-shot methods (IDOL, LHM) primarily rely on skeleton-based rigid transformations (LBS) to drive animation, which enables body joint motion but is fundamentally incapable of modeling non-rigid cloth dynamics. Another category of personalized methods (ExAvatar, GaussianAvatar) can capture subject-specific garment deformations, but requires per-subject multi-view video capture and optimization, making generalization to arbitrary new subjects infeasible.
 
 **Limitations of Prior Work**:
    - **Rigid animation**: Zero-shot methods produce overly stiff animations where garments such as skirts and jackets fail to naturally flutter during motion, severely degrading visual realism.
    - **Personalization dependency**: Methods capable of modeling cloth dynamics (PERSONA, SeqAvatar) require per-subject data capture and optimization, lacking scalability.
    - **Scarcity of dynamic data**: Large-scale dynamic capture data is prohibitively expensive to collect (multi-view synchronization, temporal calibration, garment diversity), and SMPL-X annotations in existing datasets are commonly missing or noisy.
 
-**Root Cause**: Learning motion-dependent cloth dynamics requires large-scale dynamic capture data, which is extremely scarce. Meanwhile, conventional image reconstruction losses fail to provide effective supervision under large-magnitude garment deformations due to limited receptive fields and color-geometry coupling.
+**Key Challenge**: Learning motion-dependent cloth dynamics requires large-scale dynamic capture data, which is extremely scarce. Meanwhile, conventional image reconstruction losses fail to provide effective supervision under large-magnitude garment deformations due to limited receptive fields and color-geometry coupling.
 
-**Paper Goals**:
+**Goal**:
    - How to achieve motion-dependent cloth dynamics in a zero-shot setting (without per-subject optimization)?
    - How to learn effective dynamic deformation priors under limited dynamic data?
    - How to provide reliable geometric supervision signals for large-scale cloth motion?
 
-**Starting Point**: The authors observe that large-scale static capture data, despite lacking temporal deformation information, contains rich priors on human geometry and appearance. Furthermore, optical flow can establish pixel-level correspondences between rendered and real images across large deformations, providing purely geometric displacement supervision.
+**Key Insight**: The authors observe that large-scale static capture data, despite lacking temporal deformation information, contains rich priors on human geometry and appearance. Furthermore, optical flow can establish pixel-level correspondences between rendered and real images across large deformations, providing purely geometric displacement supervision.
 
 **Core Idea**: Combine LoRA fine-tuning of a statically pre-trained Transformer for knowledge transfer with a flow-guided DynaFlow loss for geometry-level deformation supervision, enabling single-image avatars to exhibit realistic motion-dependent cloth dynamics in a zero-shot setting.
 

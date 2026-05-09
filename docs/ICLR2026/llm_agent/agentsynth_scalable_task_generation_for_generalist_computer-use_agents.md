@@ -28,15 +28,15 @@ This paper proposes AgentSynth, a pipeline that leverages information asymmetry 
 
 ## Background & Motivation
 
-**State of the Field**: LLM agents are advancing rapidly in computer-use tasks (web navigation, desktop operations), yet high-quality training and evaluation data remain heavily dependent on human annotation.
+**Background**: LLM agents are advancing rapidly in computer-use tasks (web navigation, desktop operations), yet high-quality training and evaluation data remain heavily dependent on human annotation.
 
 **Limitations of Prior Work**: (a) Human annotation is prohibitively expensive (e.g., TheAgentCompany requires 17 hours/\$34–425 per task); (b) Human-annotated data has limited diversity and struggles to cover the full complexity of real-world computer-use scenarios; (c) Synthetic data pipelines face two core challenges—current LLM agents cannot reliably generate trajectories for complex tasks, and naive generation strategies yield insufficient diversity.
 
-**Root Cause**: High-quality agent data requires tasks that are both complex and diverse, yet LLM agents can only reliably complete simple tasks. How can this tension be resolved?
+**Key Challenge**: High-quality agent data requires tasks that are both complex and diverse, yet LLM agents can only reliably complete simple tasks. How can this tension be resolved?
 
-**Paper Goals**: Design a low-cost, high-diversity, fully automated pipeline that generates realistic computer-use tasks of controllable difficulty along with corresponding trajectories.
+**Goal**: Design a low-cost, high-diversity, fully automated pipeline that generates realistic computer-use tasks of controllable difficulty along with corresponding trajectories.
 
-**Starting Point**: Exploit **information asymmetry**—solving tasks forward step by step (each step requiring only one simple subtask) is far easier than reasoning through the entire solution from scratch. The pipeline has an agent generate subtasks in the forward direction while collecting trajectories, then uses a summarizer to merge them into a single high-level composite task.
+**Key Insight**: Exploit **information asymmetry**—solving tasks forward step by step (each step requiring only one simple subtask) is far easier than reasoning through the entire solution from scratch. The pipeline has an agent generate subtasks in the forward direction while collecting trajectories, then uses a summarizer to merge them into a single high-level composite task.
 
 **Core Idea**: Decompose complex tasks into a sequence of simple subtasks for forward generation, then merge them backward into an apparently unified long-horizon task—easy to generate, hard to solve.
 

@@ -29,11 +29,11 @@ IsoCLIP provides a theoretical analysis of the CLIP projection head structure, r
 
 ## Background & Motivation
 
-1. **State of the Field**: Vision-language models such as CLIP are primarily designed for cross-modal tasks (e.g., zero-shot classification, image-text retrieval), yet their image encoders are widely employed for intra-modal tasks (e.g., image-to-image retrieval, image classification).
+1. **Background**: Vision-language models such as CLIP are primarily designed for cross-modal tasks (e.g., zero-shot classification, image-text retrieval), yet their image encoders are widely employed for intra-modal tasks (e.g., image-to-image retrieval, image classification).
 2. **Limitations of Prior Work**: CLIP suffers from intra-modal misalignment — contrastive training optimizes only cross-modal similarity while neglecting intra-modal similarity, leading to suboptimal performance on intra-modal tasks. Existing remedies such as OTI/OVI require expensive per-query optimization.
-3. **Root Cause**: The CLIP training objective exclusively enforces cross-modal alignment, leaving intra-modal alignment entirely unaddressed.
-4. **Paper Goals**: To understand the root cause of intra-modal misalignment and propose an efficient, training-free correction.
-5. **Starting Point**: Analyzing the mathematical structure of the CLIP projection head, specifically the operator roles in cosine similarity and contrastive loss.
+3. **Key Challenge**: The CLIP training objective exclusively enforces cross-modal alignment, leaving intra-modal alignment entirely unaddressed.
+4. **Goal**: To understand the root cause of intra-modal misalignment and propose an efficient, training-free correction.
+5. **Key Insight**: Analyzing the mathematical structure of the CLIP projection head, specifically the operator roles in cosine similarity and contrastive loss.
 6. **Core Idea**: Decompose the inter-modal operator via SVD to identify an isotropic subspace where both modalities are well aligned, then remove anisotropic directions.
 
 ## Method

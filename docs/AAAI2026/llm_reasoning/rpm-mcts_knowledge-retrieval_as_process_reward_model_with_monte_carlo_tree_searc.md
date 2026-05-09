@@ -28,18 +28,18 @@ This paper proposes RPM-MCTS, which replaces a trained Process Reward Model (PRM
 
 ## Background & Motivation
 
-**State of the Field**: Tree search (MCTS) has demonstrated effectiveness for code generation by enabling multi-step search to produce higher-quality algorithmic code. However, the central bottleneck lies in evaluating the quality of intermediate algorithm steps.
+**Background**: Tree search (MCTS) has demonstrated effectiveness for code generation by enabling multi-step search to produce higher-quality algorithmic code. However, the central bottleneck lies in evaluating the quality of intermediate algorithm steps.
 
 **Limitations of Prior Work**:
 - Training a PRM requires large quantities of step-level annotated data, incurring extremely high collection and labeling costs.
 - Existing methods cannot effectively localize and promptly correct erroneous steps—significant search budget may already be wasted by the time an error is detected.
 - Large numbers of redundant nodes arise during search, as different expansions yield semantically duplicate candidates.
 
-**Root Cause**: Evaluating intermediate algorithm step quality is necessary, yet training a PRM is prohibitively expensive—motivating a training-free alternative.
+**Key Challenge**: Evaluating intermediate algorithm step quality is necessary, yet training a PRM is prohibitively expensive—motivating a training-free alternative.
 
-**Paper Goals**: Replace trained PRMs with knowledge base retrieval while simultaneously addressing search redundancy and error localization.
+**Goal**: Replace trained PRMs with knowledge base retrieval while simultaneously addressing search redundancy and error localization.
 
-**Starting Point**: Correct implementations within the same algorithm family exhibit *homogeneity*—the correct steps of, say, sorting algorithms are structurally similar across different problem instances. A knowledge base of correct implementations can therefore serve as a reference for evaluating the quality of the current step.
+**Key Insight**: Correct implementations within the same algorithm family exhibit *homogeneity*—the correct steps of, say, sorting algorithms are structurally similar across different problem instances. A knowledge base of correct implementations can therefore serve as a reference for evaluating the quality of the current step.
 
 **Core Idea**: Correct algorithm steps in the knowledge base serve as training-free process reward signals, enabling more efficient MCTS search.
 

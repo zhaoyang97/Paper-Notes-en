@@ -29,11 +29,11 @@ This paper proposes Directo, the first directed graph generation model based on 
 
 ## Background & Motivation
 
-- **State of the Field**: Graph generative models have achieved notable progress in areas such as drug discovery and social network modeling, yet the vast majority of methods focus on undirected graph generation, leaving directed graph generation substantially underexplored.
+- **Background**: Graph generative models have achieved notable progress in areas such as drug discovery and social network modeling, yet the vast majority of methods focus on undirected graph generation, leaving directed graph generation substantially underexplored.
 - **Limitations of Prior Work**: Directed graphs (digraphs) face two major bottlenecks: (1) at the modeling level, edge directionality causes a combinatorial explosion in the learnable space (218 directed graphs vs. only 11 undirected graphs for $n=4$ nodes), making naive extensions of undirected graph architectures inadequate; (2) at the evaluation level, standardized benchmarks and metrics for directed graph generation are lacking.
-- **Root Cause**: The few existing DAG generation methods (D-VAE, LayerDAG) require topological sorting as preprocessing and are restricted to acyclic graphs, while general directed graph generation methods are nearly absent.
-- **Paper Goals**: To construct a general directed graph generation framework applicable to both DAGs and general directed graphs.
-- **Starting Point**: Jointly enhancing directed graph modeling capability along three dimensions: architecture (direction-aware attention), generative framework (discrete flow matching), and input features (asymmetric positional encoding).
+- **Key Challenge**: The few existing DAG generation methods (D-VAE, LayerDAG) require topological sorting as preprocessing and are restricted to acyclic graphs, while general directed graph generation methods are nearly absent.
+- **Goal**: To construct a general directed graph generation framework applicable to both DAGs and general directed graphs.
+- **Key Insight**: Jointly enhancing directed graph modeling capability along three dimensions: architecture (direction-aware attention), generative framework (discrete flow matching), and input features (asymmetric positional encoding).
 - **Core Idea**: By using dual attention to distinguish information flow along incoming and outgoing edges, combined with directed positional encodings and the DFM framework, the model achieves precise generation of directed graph structures.
 
 ## Method

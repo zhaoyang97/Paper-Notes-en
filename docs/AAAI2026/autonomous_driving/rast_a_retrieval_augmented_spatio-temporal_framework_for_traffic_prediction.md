@@ -42,7 +42,7 @@ Model parameter budgets are finite and cannot retain fine-grained information ab
 
 ### Solution
 
-**Paper Goals**: Compensate for the model's limited context capacity through external memory storage and retrieval, without increasing the number of model parameters. **Starting Point**: Inspired by RAG in NLP — where LLMs retrieve external knowledge bases to supplement parametric memory — this work draws an analogy to spatio-temporal forecasting by storing and retrieving historical fine-grained patterns. **Core Idea**: Maintain a dual-dimensional (temporal + spatial) memory bank, use FAISS for efficient similar-pattern retrieval, and fuse retrieved results via cross-attention to augment prediction.
+**Goal**: Compensate for the model's limited context capacity through external memory storage and retrieval, without increasing the number of model parameters. **Key Insight**: Inspired by RAG in NLP — where LLMs retrieve external knowledge bases to supplement parametric memory — this work draws an analogy to spatio-temporal forecasting by storing and retrieving historical fine-grained patterns. **Core Idea**: Maintain a dual-dimensional (temporal + spatial) memory bank, use FAISS for efficient similar-pattern retrieval, and fuse retrieved results via cross-attention to augment prediction.
 
 ## Method
 

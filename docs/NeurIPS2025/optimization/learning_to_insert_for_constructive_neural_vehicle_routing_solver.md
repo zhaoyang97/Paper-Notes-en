@@ -29,15 +29,15 @@ This paper proposes L2C-Insert, the first learning-based insertion construction 
 
 ## Background & Motivation
 
-**State of the Field**: Neural combinatorial optimization (NCO) methods leverage neural networks to automatically learn heuristic strategies for solving VRPs, with constructive approaches receiving the most attention. Existing methods almost universally adopt an appending paradigm—sequentially appending unvisited nodes to the end of the current solution.
+**Background**: Neural combinatorial optimization (NCO) methods leverage neural networks to automatically learn heuristic strategies for solving VRPs, with constructive approaches receiving the most attention. Existing methods almost universally adopt an appending paradigm—sequentially appending unvisited nodes to the end of the current solution.
 
 **Limitations of Prior Work**: The appending paradigm imposes strict operational constraints: new nodes can only be added to the tail of the solution, preventing more effective modifications. Early greedy decisions frequently lead to suboptimal outcomes such as route crossings.
 
-**Root Cause**: The appending paradigm works well in NLP seq2seq frameworks, but the solution space structure of VRP differs fundamentally from language sequences—solution quality depends heavily on the global positional relationships among nodes rather than local ordering.
+**Key Challenge**: The appending paradigm works well in NLP seq2seq frameworks, but the solution space structure of VRP differs fundamentally from language sequences—solution quality depends heavily on the global positional relationships among nodes rather than local ordering.
 
-**Paper Goals**: To explore the potential of an insertion-based paradigm in NCO, and to design learning-driven insertion strategies, training schemes, and inference techniques.
+**Goal**: To explore the potential of an insertion-based paradigm in NCO, and to design learning-driven insertion strategies, training schemes, and inference techniques.
 
-**Starting Point**: Building on well-established insertion heuristics from operations research, this work integrates them with neural network learning to overcome the limitations of traditional hand-crafted strategies.
+**Key Insight**: Building on well-established insertion heuristics from operations research, this work integrates them with neural network learning to overcome the limitations of traditional hand-crafted strategies.
 
 **Core Idea**: The construction process is reformulated from "selecting which node to append" to "selecting where to insert a node into the partial solution," with attention mechanisms used to learn optimal insertion positions.
 

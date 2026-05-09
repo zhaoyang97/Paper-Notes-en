@@ -28,15 +28,15 @@ This paper identifies the phenomenon of "logic inertia" in LLMs—whereby models
 
 ## Background & Motivation
 
-**State of the Field**: LLMs perform well on multi-step logical reasoning benchmarks (benchmark accuracy of 1.0), yet these benchmarks typically evaluate reasoning under normal conditions without examining robustness when the rule system is perturbed.
+**Background**: LLMs perform well on multi-step logical reasoning benchmarks (benchmark accuracy of 1.0), yet these benchmarks typically evaluate reasoning under normal conditions without examining robustness when the rule system is perturbed.
 
 **Limitations of Prior Work**: Existing evaluations conflate language competence with logical robustness. There is also a lack of diagnostic frameworks capable of isolating the individual effects of missing rules, redundant rules, and contradictory premises within a unified setting.
 
-**Root Cause**: Whether LLMs perform genuine logical reasoning or merely simulate it via pattern matching. When the structural integrity of a rule system is compromised—particularly through contradiction injection—the answer is the latter: all tested models collapse to 0.0 accuracy under contradictory conditions.
+**Key Challenge**: Whether LLMs perform genuine logical reasoning or merely simulate it via pattern matching. When the structural integrity of a rule system is compromised—particularly through contradiction injection—the answer is the latter: all tested models collapse to 0.0 accuracy under contradictory conditions.
 
-**Paper Goals**: (a) Establish a systematic structural robustness evaluation framework; (b) identify and formalize the phenomenon of "logic inertia"; (c) design a reasoning framework that eliminates logic inertia.
+**Goal**: (a) Establish a systematic structural robustness evaluation framework; (b) identify and formalize the phenomenon of "logic inertia"; (c) design a reasoning framework that eliminates logic inertia.
 
-**Starting Point**: The Cognitive Structure Hypothesis—reliable multi-step reasoning requires an explicit structural separation between premise verification and deductive execution, an inductive bias entirely absent from current end-to-end training paradigms.
+**Key Insight**: The Cognitive Structure Hypothesis—reliable multi-step reasoning requires an explicit structural separation between premise verification and deductive execution, an inductive bias entirely absent from current end-to-end training paradigms.
 
 **Core Idea**: Enforce a "verify-before-reason" structural constraint during inference—first applying System 2 to detect contradictions, then System 1 to execute reasoning, with a halt triggered upon contradiction detection.
 

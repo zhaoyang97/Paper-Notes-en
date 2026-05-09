@@ -29,15 +29,15 @@ This paper proposes Composer, a plug-and-play meta-generator framework that dyna
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models and visual autoregressive models have achieved remarkable success in image generation, yet they are fundamentally static — a fixed set of pretrained parameters must handle all input prompts, scenes, and modalities.
+**Background**: Diffusion models and visual autoregressive models have achieved remarkable success in image generation, yet they are fundamentally static — a fixed set of pretrained parameters must handle all input prompts, scenes, and modalities.
 
 **Limitations of Prior Work**: This rigidity limits model adaptability. When faced with complex or ambiguous generation conditions, static weights cannot specialize to the semantic characteristics of each input, frequently resulting in over-smoothed or inconsistent samples. Existing test-time training (TTT) methods can adapt parameters at inference time but require per-instance gradient optimization, incurring prohibitive computational costs (540%+ increase in time, 180%+ increase in memory). Mixture-of-Experts (MoE) architectures offer conditional computation but with coarse routing granularity, fixed expert pools, and requirements for architectural modifications and full retraining.
 
-**Root Cause**: How can pretrained generative models acquire per-instance adaptability without significant computational overhead?
+**Key Challenge**: How can pretrained generative models acquire per-instance adaptability without significant computational overhead?
 
-**Paper Goals**: (1) Enable per-input parameter specialization at inference time without fine-tuning or retraining; (2) remain compatible with arbitrary pretrained generative model backbones in a plug-and-play manner; (3) maintain minimal computational and memory overhead.
+**Goal**: (1) Enable per-input parameter specialization at inference time without fine-tuning or retraining; (2) remain compatible with arbitrary pretrained generative model backbones in a plug-and-play manner; (3) maintain minimal computational and memory overhead.
 
-**Starting Point**: Inspired by how humans flexibly adjust internal generative representations to accommodate different perceptual and imaginative contexts, the paper forgoes iterative optimization and instead synthesizes parameter updates directly from conditioning signals via a lightweight auxiliary network.
+**Key Insight**: Inspired by how humans flexibly adjust internal generative representations to accommodate different perceptual and imaginative contexts, the paper forgoes iterative optimization and instead synthesizes parameter updates directly from conditioning signals via a lightweight auxiliary network.
 
 **Core Idea**: A Transformer-based meta-generator maps input conditions to low-rank parameter updates $W' = W + AB$, completing parameter composition in a single pass before inference, thereby achieving per-instance adaptive generation at near-zero overhead.
 

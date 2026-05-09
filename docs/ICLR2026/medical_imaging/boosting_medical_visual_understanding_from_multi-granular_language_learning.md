@@ -28,15 +28,15 @@ This paper proposes Multi-Granular Language Learning (MGLL), a plug-and-play con
 
 ## Background & Motivation
 
-**State of the Field**: Contrastive learning approaches such as CLIP have achieved remarkable success in general vision by learning cross-modal aligned representations from image-text pairs. Many medical visual foundation models have adopted CLIP-style pre-training.
+**Background**: Contrastive learning approaches such as CLIP have achieved remarkable success in general vision by learning cross-modal aligned representations from image-text pairs. Many medical visual foundation models have adopted CLIP-style pre-training.
 
 **Limitations of Prior Work**: Standard CLIP relies on a single-label, single-granularity image-text pairing strategy; however, medical images are inherently **multi-label** and **multi-granular**. For example, a single fundus image may simultaneously present diabetic macular edema and diabetic retinopathy (multi-label), each of which can be further described at coarse granularity (disease category) and fine granularity (severity, clinical description). Existing multi-label contrastive methods focus on instance-label associations but neglect cross-granularity semantics.
 
-**Root Cause**: Medical images encode more complex and hierarchical information than natural images, yet data are scarcer due to privacy constraints and annotation costs. Single-granularity, single-label supervision wastes rich hierarchical annotation information, while naively mixing multi-granular information in a single encoding causes feature interference across semantic levels.
+**Key Challenge**: Medical images encode more complex and hierarchical information than natural images, yet data are scarcer due to privacy constraints and annotation costs. Single-granularity, single-label supervision wastes rich hierarchical annotation information, while naively mixing multi-granular information in a single encoding causes feature interference across semantic levels.
 
-**Paper Goals**: To achieve, within a unified framework, both multi-label alignment (one image corresponding to multiple labels) and cross-granularity alignment (consistency across annotations at different levels).
+**Goal**: To achieve, within a unified framework, both multi-label alignment (one image corresponding to multiple labels) and cross-granularity alignment (consistency across annotations at different levels).
 
-**Starting Point**: Construct a multi-granular text description dataset and design three complementary loss functions to separately optimize multi-label alignment and cross-granularity consistency.
+**Key Insight**: Construct a multi-granular text description dataset and design three complementary loss functions to separately optimize multi-label alignment and cross-granularity consistency.
 
 **Core Idea**: Jointly optimize a soft CLIP loss for multi-label soft alignment, a point-wise loss for fine-grained pairwise alignment, and a smooth KL divergence for cross-granularity feature consistency, achieving comprehensive vision-language alignment for medical images.
 

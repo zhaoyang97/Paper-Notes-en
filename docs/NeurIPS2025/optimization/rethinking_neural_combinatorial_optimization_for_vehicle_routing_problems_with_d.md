@@ -33,7 +33,7 @@ NCO methods for VRP are typically trained with fixed constraint values (e.g., CV
 
 **Limitations of Prior Work**: When constraint tightness deviates from the training setting, existing NCO models suffer severe performance degradation. POMO achieves a gap of only 3.66% at $C=50$, but this surges to 20.26% (5.5×) at $C=10$ (tight constraints) and 34.12% (9.3×) at $C=500$ (loose constraints). All mainstream NCO methods (AM, POMO, BQ, LEHD, etc.) exhibit this problem, with average gaps expanding by at least 1.7×.
 
-**Root Cause**: Varying constraint tightness fundamentally alters the structure of optimal solutions:
+**Key Challenge**: Varying constraint tightness fundamentally alters the structure of optimal solutions:
 - When $C$ is very small (e.g., $C=10$), each vehicle can serve only 2–3 customers, and the optimal solution structure resembles Open VRP (OVRP).
 - When $C$ is very large (e.g., $C=500$), a single vehicle can serve all customers, and the optimal solution structure resembles TSP.
 

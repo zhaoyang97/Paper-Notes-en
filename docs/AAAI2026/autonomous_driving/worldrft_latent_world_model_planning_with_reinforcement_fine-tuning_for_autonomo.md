@@ -29,7 +29,7 @@ WorldRFT is a planning-oriented latent world model framework that integrates VGG
 
 ## Background & Motivation
 
-**State of the Field**: End-to-end autonomous driving is shifting from multi-task perception architectures (UniAD, VAD, SparseDrive, etc., requiring 3D annotations) toward self-supervised latent world model paradigms (LAW, SSR, etc., requiring no perception labels).
+**Background**: End-to-end autonomous driving is shifting from multi-task perception architectures (UniAD, VAD, SparseDrive, etc., requiring 3D annotations) toward self-supervised latent world model paradigms (LAW, SSR, etc., requiring no perception labels).
 
 **Limitation 1 — Weak Spatial Awareness**: Existing reconstruction-oriented latent representations lack 3D spatial understanding. World4Drive's monocular depth estimation suffers from cross-view inconsistency.
 

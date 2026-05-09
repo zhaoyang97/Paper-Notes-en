@@ -31,7 +31,7 @@ Through causal graphical modeling, this paper demonstrates that performance disp
 
 ### State of the Field
 
-**State of the Field**: Disaggregated evaluation is the standard practice for assessing ML model fairness: model performance is broken down by subgroup (e.g., race, gender), and performance disparities are treated as evidence of fairness problems. However, this paper argues that such practice can be misleading:
+**Background**: Disaggregated evaluation is the standard practice for assessing ML model fairness: model performance is broken down by subgroup (e.g., race, gender), and performance disparities are treated as evidence of fairness problems. However, this paper argues that such practice can be misleading:
 
 ### Limitations of Prior Work
 
@@ -39,7 +39,7 @@ Through causal graphical modeling, this paper demonstrates that performance disp
 
 ### Root Cause
 
-**Root Cause**: Performance disparities may be a natural consequence of distributional differences across subgroups, rather than a model deficiency.
+**Key Challenge**: Performance disparities may be a natural consequence of distributional differences across subgroups, rather than a model deficiency.
 
 ### Solution Direction
 

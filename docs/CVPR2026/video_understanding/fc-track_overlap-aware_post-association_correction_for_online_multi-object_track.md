@@ -29,7 +29,7 @@ FC-Track is a lightweight post-association correction framework that explicitly 
 ## Background & Motivation
 Multi-object tracking (MOT) is a core component in robotic perception, autonomous driving, and video analysis. The dominant tracking-by-detection paradigm first detects then associates, but frequent occlusions and target overlaps in crowded scenes make association errors inevitable.
 
-**Root Cause**: Once an association error occurs (a detection being assigned to the wrong tracklet), the error propagates over time — subsequent frames use the incorrect tracklet's appearance features for matching, resulting in long-term ID switches that severely degrade tracking consistency.
+**Key Challenge**: Once an association error occurs (a detection being assigned to the wrong tracklet), the error propagates over time — subsequent frames use the incorrect tracklet's appearance features for matching, resulting in long-term ID switches that severely degrade tracking consistency.
 
 **Limitations of Prior Work**:
 1. Most methods treat association decisions as irreversible — no correction is made once matching is complete.

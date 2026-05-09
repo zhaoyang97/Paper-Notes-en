@@ -28,13 +28,13 @@ This paper proposes Ada-Minimax and Ada-BiO, two adaptive algorithms that combin
 
 ## Background & Motivation
 
-**State of the Field**: Hierarchical optimization (minimax and bilevel) is a central problem formulation in machine learning—adversarial learning and AUC maximization are modeled as minimax problems, while meta-learning and hyperparameter optimization are modeled as bilevel problems. A large number of algorithms have been proposed with established convergence guarantees.
+**Background**: Hierarchical optimization (minimax and bilevel) is a central problem formulation in machine learning—adversarial learning and AUC maximization are modeled as minimax problems, while meta-learning and hyperparameter optimization are modeled as bilevel problems. A large number of algorithms have been proposed with established convergence guarantees.
 
 **Limitations of Prior Work**: All existing methods require prior knowledge of the stochastic gradient noise magnitude $\bar{\sigma}$ to set hyperparameters such as step sizes. When the noise level is unknown or varies during training, these methods cannot adapt automatically—conservative step sizes in low-noise regimes lead to slow convergence, while excessively large step sizes in high-noise regimes cause divergence.
 
-**Root Cause**: Standard AdaGrad-style adaptive methods have already resolved the noise-adaptive problem in single-level optimization, but directly applying them to hierarchical optimization introduces complex stochastic dependency issues—the AdaGrad step sizes for upper- and lower-level variables are mutually coupled, making analysis intractable.
+**Key Challenge**: Standard AdaGrad-style adaptive methods have already resolved the noise-adaptive problem in single-level optimization, but directly applying them to hierarchical optimization introduces complex stochastic dependency issues—the AdaGrad step sizes for upper- and lower-level variables are mutually coupled, making analysis intractable.
 
-**Starting Point**: Instead of standard AdaGrad, the paper employs normalized SGD with momentum (NSGDM) for the upper-level variable and AdaGrad-Norm for the lower-level variable, with the key innovation being that the momentum parameter itself is also adaptively adjusted.
+**Key Insight**: Instead of standard AdaGrad, the paper employs normalized SGD with momentum (NSGDM) for the upper-level variable and AdaGrad-Norm for the lower-level variable, with the key innovation being that the momentum parameter itself is also adaptively adjusted.
 
 ## Method
 

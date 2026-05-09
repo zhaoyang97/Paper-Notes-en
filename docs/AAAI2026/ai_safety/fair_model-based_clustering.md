@@ -28,7 +28,7 @@ This paper proposes FMC, a fair clustering algorithm based on finite mixture mod
 
 ## Background & Motivation
 
-**State of the Field**: Fair clustering requires that the proportion of sensitive attributes (e.g., gender, race) within each cluster reflects that of the overall dataset. Most existing methods are built upon K-means clustering, jointly optimizing cluster centers and assignment mappings under fairness constraints.
+**Background**: Fair clustering requires that the proportion of sensitive attributes (e.g., gender, race) within each cluster reflects that of the overall dataset. Most existing methods are built upon K-means clustering, jointly optimizing cluster centers and assignment mappings under fairness constraints.
 
 **Limitations of Prior Work**:
    - Each sample's cluster assignment must be optimized jointly with cluster centers → the number of learnable parameters scales with $N$ → poor scalability on large datasets
@@ -36,11 +36,11 @@ This paper proposes FMC, a fair clustering algorithm based on finite mixture mod
    - K-means-based methods require a metric space → cannot handle non-metric data such as categorical features
    - After training, the assignment mapping is only defined on training data → fairly assigning new data is non-trivial
 
-**Root Cause**: How can the computational complexity of fair clustering be decoupled from the sample size while preserving fairness guarantees?
+**Key Challenge**: How can the computational complexity of fair clustering be decoupled from the sample size while preserving fairness guarantees?
 
-**Paper Goals**: To develop a scalable fair clustering algorithm whose parameter count is independent of the sample size.
+**Goal**: To develop a scalable fair clustering algorithm whose parameter count is independent of the sample size.
 
-**Starting Point**: Replace geometric distance with probabilistic mixture models, shifting fairness constraints from assignment mappings to model parameters — a parametric assignment mapping naturally supports mini-batch training and out-of-sample assignment.
+**Key Insight**: Replace geometric distance with probabilistic mixture models, shifting fairness constraints from assignment mappings to model parameters — a parametric assignment mapping naturally supports mini-batch training and out-of-sample assignment.
 
 **Core Idea**: Fair clustering based on finite mixture models, achieving scalability independent of $N$ by imposing Gap constraints on model parameters.
 

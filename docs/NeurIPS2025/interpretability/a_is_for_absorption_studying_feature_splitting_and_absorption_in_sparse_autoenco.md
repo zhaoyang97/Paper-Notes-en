@@ -26,18 +26,18 @@ content_hash: 9f96f1b0fad5fe7f
 This paper identifies and systematically studies the phenomenon of "feature absorption" in SAEs: apparently monosemantic SAE latents fail to activate on certain tokens because their feature directions are "absorbed" by more specific sub-latents. This is shown to be an inevitable consequence of hierarchical features combined with sparsity loss, posing a fundamental challenge to using SAEs for reliable LLM interpretation.
 
 ## Background & Motivation
-**State of the Field**: Sparse Autoencoders (SAEs) are a central tool in mechanistic interpretability, designed to decompose dense LLM activations into interpretable sparse feature directions.
+**Background**: Sparse Autoencoders (SAEs) are a central tool in mechanistic interpretability, designed to decompose dense LLM activations into interpretable sparse feature directions.
 
 **Limitations of Prior Work**:
 - SAE latent precision/recall is unstable; some latents that appear to track a concept fail to activate when they should.
 - Examining only max-activating examples can create a false illusion of interpretability.
 - Prior work on feature splitting focused only on "benign" splits (e.g., capitalization splits), overlooking problematic ones.
 
-**Root Cause**: SAE sparsity loss encourages minimizing the number of simultaneously active latents. However, when features form hierarchical relationships (e.g., "starts with S" is a parent feature of "short"), SAEs absorb the parent feature direction into child latents to improve sparsity, causing the parent latent to fail to activate on those tokens.
+**Key Challenge**: SAE sparsity loss encourages minimizing the number of simultaneously active latents. However, when features form hierarchical relationships (e.g., "starts with S" is a parent feature of "short"), SAEs absorb the parent feature direction into child latents to improve sparsity, causing the parent latent to fail to activate on those tokens.
 
-**Paper Goals**: To identify, define, quantify, and explain feature absorption in SAEs.
+**Goal**: To identify, define, quantify, and explain feature absorption in SAEs.
 
-**Starting Point**: The study uses a spelling task (first-letter prediction) as a test bed, employing linear probes as ground truth to systematically compare SAE latent precision and recall.
+**Key Insight**: The study uses a spelling task (first-letter prediction) as a test bed, employing linear probes as ground truth to systematically compare SAE latent precision and recall.
 
 **Core Idea**: Sparsity optimization over hierarchical features inevitably leads to feature absorption, rendering SAE latents unreliable classifiers.
 

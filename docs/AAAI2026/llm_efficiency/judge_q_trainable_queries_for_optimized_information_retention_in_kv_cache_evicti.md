@@ -28,18 +28,18 @@ This paper proposes Judge Q, which introduces trainable soft tokens into the mod
 
 ## Background & Motivation
 
-**State of the Field**: During LLM inference, the KV cache grows linearly with sequence length, becoming a memory bottleneck in long-context scenarios (>10K tokens). Existing KV cache pruning methods (H2O, SnapKV, PyramidKV, etc.) evaluate KV pair importance by computing attention scores during the prefill stage, retaining only the top-k most important KV pairs.
+**Background**: During LLM inference, the KV cache grows linearly with sequence length, becoming a memory bottleneck in long-context scenarios (>10K tokens). Existing KV cache pruning methods (H2O, SnapKV, PyramidKV, etc.) evaluate KV pair importance by computing attention scores during the prefill stage, retaining only the top-k most important KV pairs.
 
 **Limitations of Prior Work**:
 - **Over-reliance on local windows**: Existing methods use tokens from the last window as queries to compute KV importance scores, implicitly assuming that the query appears at the end of the input. Performance degrades significantly when this assumption is violated.
 - **Neglect of global information**: Local windows can only observe the tail of the sequence, making it difficult to adequately assess the importance of KV pairs at distant positions for generation.
 - **Theoretical upper bound not approached**: The authors find that using the attention of actual decoding tokens to select KV pairs yields the best results (theoretical upper bound), but decoding tokens are unknown during prefill.
 
-**Root Cause**: The ideal objective of KV cache pruning is to retain the KV pairs most important to future decoding, yet the decoding content is unknown at prefill time, and the local window serves as an inadequate proxy.
+**Key Challenge**: The ideal objective of KV cache pruning is to retain the KV pairs most important to future decoding, yet the decoding content is unknown at prefill time, and the local window serves as an inadequate proxy.
 
-**Paper Goals**: Design a method that approximates the theoretical upper bound of "selecting KV pairs using actual decoding tokens" during the prefill stage, while maintaining low training cost.
+**Goal**: Design a method that approximates the theoretical upper bound of "selecting KV pairs using actual decoding tokens" during the prefill stage, while maintaining low training cost.
 
-**Starting Point**: Since the theoretical upper bound relies on the attention maps of decoding tokens to select KV pairs, a set of soft tokens can be trained so that their attention maps approximate those of decoding tokens, serving as their proxy.
+**Key Insight**: Since the theoretical upper bound relies on the attention maps of decoding tokens to select KV pairs, a set of soft tokens can be trained so that their attention maps approximate those of decoding tokens, serving as their proxy.
 
 **Core Idea**: Train soft tokens to simulate the attention distribution of decoding tokens to guide KV cache pruning, with only the embedding layer parameters updated, incurring minimal overhead.
 

@@ -29,7 +29,7 @@ MergeVLA diagnoses two root causes of VLA model unmergeability—LoRA parameter 
 
 ## Background & Motivation
 
-**State of the Field**: VLA (Vision-Language-Action) models achieve strong single-task performance by fine-tuning VLMs for robotic manipulation, but fail to generalize across multiple tasks. Model merging has proven effective in the LLM/VLM literature.
+**Background**: VLA (Vision-Language-Action) models achieve strong single-task performance by fine-tuning VLMs for robotic manipulation, but fail to generalize across multiple tasks. Model merging has proven effective in the LLM/VLM literature.
 
 **Limitations of Prior Work**:
 
@@ -37,11 +37,11 @@ MergeVLA diagnoses two root causes of VLA model unmergeability—LoRA parameter 
 2. When merging four tasks, over 75% of LoRA parameters are "selfish" (retained by only one task), resulting in severe parameter conflicts.
 3. Self-attention layers in the action expert accumulate strong task-specific dependencies during training, causing explosive growth in parameter distances across deep blocks and undermining modular composability.
 
-**Root Cause**: LoRA parameters diverge drastically across tasks, and self-attention in the action expert propagates task-specific information throughout all layers—their combined effect renders existing merging methods completely ineffective.
+**Key Challenge**: LoRA parameters diverge drastically across tasks, and self-attention in the action expert propagates task-specific information throughout all layers—their combined effect renders existing merging methods completely ineffective.
 
-**Paper Goals**: Design a VLA architecture that is "merging-friendly" by construction, enabling efficient merging of single-task experts into a generalist model.
+**Goal**: Design a VLA architecture that is "merging-friendly" by construction, enabling efficient merging of single-task experts into a generalist model.
 
-**Starting Point**: Precisely diagnose the two root causes of failure before designing targeted solutions—task masks to resolve parameter conflicts, and self-attention removal to resolve architectural incompatibility.
+**Key Insight**: Precisely diagnose the two root causes of failure before designing targeted solutions—task masks to resolve parameter conflicts, and self-attention removal to resolve architectural incompatibility.
 
 **Core Idea**: Suppress conflicting LoRA parameters via sparsely activated task masks, and eliminate task-dependency propagation by removing self-attention from the action expert, making VLA models inherently mergeable.
 

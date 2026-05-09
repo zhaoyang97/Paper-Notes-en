@@ -29,15 +29,15 @@ This paper formalizes curriculum learning in RL as a geodesic optimization probl
 
 ## Background & Motivation
 
-**State of the Field**: Modern RL systems are rarely trained on a single, static task; instead, agents are exposed to a sequence of related tasks through curriculum learning, temperature annealing, reward shaping, and similar techniques. However, principled guidance on how to vary task parameters remains lacking.
+**Background**: Modern RL systems are rarely trained on a single, static task; instead, agents are exposed to a sequence of related tasks through curriculum learning, temperature annealing, reward shaping, and similar techniques. However, principled guidance on how to vary task parameters remains lacking.
 
 **Limitations of Prior Work**: The common practice of linearly interpolating task parameters implicitly assumes that task space is flat and isotropic. In reality, the learning difficulty induced by parameter changes varies greatly across directions—some directions impose high adaptation costs, others low.
 
-**Root Cause**: The absence of a principled framework for quantifying the "adaptation cost" of task parameter changes forces curriculum design to rely on heuristics (e.g., fixed decay schedules, manual tuning), which may vary parameters too rapidly in high-friction regions and destabilize the policy.
+**Key Challenge**: The absence of a principled framework for quantifying the "adaptation cost" of task parameter changes forces curriculum design to rely on heuristics (e.g., fixed decay schedules, manual tuning), which may vary parameters too rapidly in high-friction regions and destabilize the policy.
 
-**Paper Goals**: (1) How can a measure of "learning difficulty" over task space be defined and computed? (2) What constitutes an optimal curriculum path? (3) Can a practical temperature annealing algorithm be derived?
+**Goal**: (1) How can a measure of "learning difficulty" over task space be defined and computed? (2) What constitutes an optimal curriculum path? (3) Can a practical temperature annealing algorithm be derived?
 
-**Starting Point**: Drawing from statistical mechanics, the paper analogizes the policy's response to task parameter changes to the driving of a non-equilibrium physical system, and applies linear response theory to approximate excess work as a quadratic form, thereby constructing a pseudo-Riemannian metric over the task parameter space.
+**Key Insight**: Drawing from statistical mechanics, the paper analogizes the policy's response to task parameter changes to the driving of a non-equilibrium physical system, and applies linear response theory to approximate excess work as a quadratic form, thereby constructing a pseudo-Riemannian metric over the task parameter space.
 
 **Core Idea**: The optimal curriculum corresponds to a geodesic under the geometry induced by the friction tensor in task space—slowing down in directions where learning is difficult and accelerating where it is easy.
 

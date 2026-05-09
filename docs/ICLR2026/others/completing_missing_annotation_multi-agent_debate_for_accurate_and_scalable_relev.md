@@ -28,7 +28,7 @@ This paper proposes DREAM — a multi-agent, multi-round debate framework with o
 
 ## Background & Motivation
 
-**State of the Field**: Information retrieval (IR) evaluation relies heavily on manually annotated query-chunk relevance judgments. Due to the high cost of annotation, only a small number of documents are labeled in practice, leaving a large volume of unannotated relevant documents — so-called "holes" — treated as irrelevant by default. These holes introduce systematic bias into evaluation results, causing certain retrievers to be underestimated when they happen to retrieve relevant but unannotated documents.
+**Background**: Information retrieval (IR) evaluation relies heavily on manually annotated query-chunk relevance judgments. Due to the high cost of annotation, only a small number of documents are labeled in practice, leaving a large volume of unannotated relevant documents — so-called "holes" — treated as irrelevant by default. These holes introduce systematic bias into evaluation results, causing certain retrievers to be underestimated when they happen to retrieve relevant but unannotated documents.
 
 **Limitations of Prior Work**:
 
@@ -37,9 +37,9 @@ This paper proposes DREAM — a multi-agent, multi-round debate framework with o
 3. **Cascading effects of holes**: Holes in IR benchmarks not only distort retrieval system rankings but also cause retrieval-generation misalignment in RAG evaluation — strong retrievers are misidentified as poor ones, and good generated outputs are incorrectly attributed to the model's internal knowledge.
 4. **Fundamental limitations of single-agent judgment**: Regardless of how finely confidence is calibrated, a single model perspective cannot overcome systematic bias.
 
-**Root Cause**: A high-accuracy, low-human-cost annotation method is needed. Fully automatic approaches are insufficiently accurate (73.9%), while confidence-based hybrid methods suffer from unreliable calibration and still require substantial human effort.
+**Key Challenge**: A high-accuracy, low-human-cost annotation method is needed. Fully automatic approaches are insufficiently accurate (73.9%), while confidence-based hybrid methods suffer from unreliable calibration and still require substantial human effort.
 
-**Paper Goals**: Replace single-agent judgment with multi-agent debate. Two agents are initialized with opposing stances → engage in multi-round mutual critique → consensus yields a high-confidence automatic label (a more reliable signal than single-model confidence) → disagreement is escalated to human annotators (assisted by debate history).
+**Goal**: Replace single-agent judgment with multi-agent debate. Two agents are initialized with opposing stances → engage in multi-round mutual critique → consensus yields a high-confidence automatic label (a more reliable signal than single-model confidence) → disagreement is escalated to human annotators (assisted by debate history).
 
 ## Method
 

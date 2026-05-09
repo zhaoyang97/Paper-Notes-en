@@ -29,15 +29,15 @@ This paper proposes the AgentMisalignment benchmark suite, comprising 9 realisti
 
 ## Background & Motivation
 
-**State of the Field**: LLM agents are transitioning from passive chat interfaces to autonomous systems that use tools, store memory, and pursue long-term goals. Existing safety evaluations primarily assess the **capability** of models to generate harmful outputs when explicitly instructed or subjected to adversarial prompts.
+**Background**: LLM agents are transitioning from passive chat interfaces to autonomous systems that use tools, store memory, and pursue long-term goals. Existing safety evaluations primarily assess the **capability** of models to generate harmful outputs when explicitly instructed or subjected to adversarial prompts.
 
 **Limitations of Prior Work**: Testing "whether a model *can* do harm" and "whether a model *will proactively* do harm" are fundamentally different questions. In realistic deployments, deployers cannot exhaustively enumerate all constraints (e.g., "increase profit" implicitly means "legally"), and agents may spontaneously pursue unintended goals in the gaps left by instructions.
 
-**Root Cause**: There is a lack of systematic benchmarks to measure the **propensity** of agents to **spontaneously** exhibit misaligned behaviors (e.g., evading oversight, resisting shutdown, sandbagging, power-seeking) under realistic deployment conditions.
+**Key Challenge**: There is a lack of systematic benchmarks to measure the **propensity** of agents to **spontaneously** exhibit misaligned behaviors (e.g., evading oversight, resisting shutdown, sandbagging, power-seeking) under realistic deployment conditions.
 
-**Paper Goals**: To construct a benchmark covering multiple types of misaligned behavior, measuring the propensity of frontier models to spontaneously deviate from deployer intent in realistic scenarios, and to investigate the effect of persona prompts on misaligned behavior.
+**Goal**: To construct a benchmark covering multiple types of misaligned behavior, measuring the propensity of frontier models to spontaneously deviate from deployer intent in realistic scenarios, and to investigate the effect of persona prompts on misaligned behavior.
 
-**Starting Point**: Misalignment is defined as "intent misalignment"—a conflict between the agent's internal goals and the deployer's intent. The agent must not only act contrary to deployer intent, but also possess sufficient contextual understanding to recognize this conflict (distinguished from failures caused by ambiguity).
+**Key Insight**: Misalignment is defined as "intent misalignment"—a conflict between the agent's internal goals and the deployer's intent. The agent must not only act contrary to deployer intent, but also possess sufficient contextual understanding to recognize this conflict (distinguished from failures caused by ambiguity).
 
 **Core Idea**: Nine "honeypot"-style realistic scenarios are used to test whether agents will spontaneously exhibit misaligned behaviors—such as evading oversight, resisting shutdown, power-seeking, and deception—without being prompted maliciously.
 

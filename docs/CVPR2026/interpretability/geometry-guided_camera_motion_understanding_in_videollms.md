@@ -26,18 +26,18 @@ content_hash: 201bc386fa897744
 This paper reveals that VideoLLMs perform near random-chance on fine-grained camera motion primitives (pan/tilt/dolly, etc.), constructs CameraMotionDataset (12K clips × 15 atomic motions) and the CameraMotionVQA benchmark, and proposes a model-agnostic approach that injects geometric camera cues extracted by a frozen 3D foundation model (VGGT) via a lightweight temporal classifier and structured prompting — bridging this capability gap without any fine-tuning of the VideoLLM.
 
 ## Background & Motivation
-**State of the Field**: VideoLLMs (Qwen2.5-VL, InternVL, VideoLLaMA, etc.) have made substantial progress on high-level video semantic understanding — object recognition, action understanding, narrative reasoning, and so forth. However, these models are primarily optimized for semantic alignment and temporal reasoning, leaving the cinematographic grammar of *how a shot is captured* largely unmodeled.
+**Background**: VideoLLMs (Qwen2.5-VL, InternVL, VideoLLaMA, etc.) have made substantial progress on high-level video semantic understanding — object recognition, action understanding, narrative reasoning, and so forth. However, these models are primarily optimized for semantic alignment and temporal reasoning, leaving the cinematographic grammar of *how a shot is captured* largely unmodeled.
 
 **Limitations of Prior Work**:
 - **Camera motion is a spatiotemporal geometric signal**: it cannot be inferred from a single frame and is easily confounded by object motion, cuts, and motion blur. Models with strong frame-level perception still fail to model the camera as the *origin* of the visual stream.
 - **Deep ViT token compression discards motion cues**: visual tokens in the VideoLLM pipeline are progressively compressed with network depth, attenuating subtle temporal motion cues.
 - **Training data lacks camera motion supervision**: large-scale video captioning/VQA corpora contain almost no explicit camera motion annotations.
 
-**Root Cause**: The representation space of VideoLLMs is optimized for semantic alignment rather than precise 3D geometric change, causing camera motion information to be "squeezed out" of the representation.
+**Key Challenge**: The representation space of VideoLLMs is optimized for semantic alignment rather than precise 3D geometric change, causing camera motion information to be "squeezed out" of the representation.
 
-**Paper Goals**: (a) construct a reliable camera motion evaluation benchmark; (b) diagnose where motion cues are lost within VideoLLMs; (c) inject geometric camera cues without modifying VideoLLM weights.
+**Goal**: (a) construct a reliable camera motion evaluation benchmark; (b) diagnose where motion cues are lost within VideoLLMs; (c) inject geometric camera cues without modifying VideoLLM weights.
 
-**Starting Point**: The core hypothesis is that reliable camera motion cues can be extracted from a geometry-aware 3D foundation model (3DFM) and injected into VideoLLMs in a plug-and-play manner. Synthetic data (UE5 rendering with precise camera extrinsics) provides deterministic annotations.
+**Key Insight**: The core hypothesis is that reliable camera motion cues can be extracted from a geometry-aware 3D foundation model (3DFM) and injected into VideoLLMs in a plug-and-play manner. Synthetic data (UE5 rendering with precise camera extrinsics) provides deterministic annotations.
 
 **Core Idea**: A frozen 3DFM extracts camera geometry cues; a lightweight classifier predicts constraint-aware motion primitives; results are injected into a frozen VideoLLM via structured prompting — improving camera motion perception with zero fine-tuning.
 

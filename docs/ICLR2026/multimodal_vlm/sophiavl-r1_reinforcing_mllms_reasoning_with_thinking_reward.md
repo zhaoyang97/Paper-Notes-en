@@ -28,7 +28,7 @@ This paper proposes SophiaVL-R1, which introduces a holistic-level thinking proc
 
 ## Background & Motivation
 
-**State of the Field**: DeepSeek-R1-style rule-based RL (GRPO + outcome reward) has successfully elicited reasoning capabilities in LLMs and MLLMs, with representative works including R1-OneVision, OpenVLThinker, and Video-R1, all centered on using rule functions to produce accurate outcome reward signals.
+**Background**: DeepSeek-R1-style rule-based RL (GRPO + outcome reward) has successfully elicited reasoning capabilities in LLMs and MLLMs, with representative works including R1-OneVision, OpenVLThinker, and Video-R1, all centered on using rule functions to produce accurate outcome reward signals.
 
 **Core Problem**: Relying solely on outcome rewards cannot guarantee the quality of the reasoning process — models may arrive at correct answers via flawed reasoning paths ("right answer, wrong reasoning"), and GRPO equally encourages such responses, leading to suboptimal or erroneous reasoning strategies and poor generalization.
 
@@ -38,7 +38,7 @@ This paper proposes SophiaVL-R1, which introduces a holistic-level thinking proc
 
 **Temporal Issue of Thinking Rewards**: Maintaining a constant thinking reward intensity throughout training is not necessarily optimal — it aids strategy discovery in early stages but may accumulate errors from imperfect reward signals in later stages.
 
-**Paper Goals**: Design a reliable method to incorporate thinking process rewards into GRPO training, guiding the model to develop stronger and more generalizable reasoning capabilities without incurring additional computational overhead.
+**Goal**: Design a reliable method to incorporate thinking process rewards into GRPO training, guiding the model to develop stronger and more generalizable reasoning capabilities without incurring additional computational overhead.
 
 ## Method
 

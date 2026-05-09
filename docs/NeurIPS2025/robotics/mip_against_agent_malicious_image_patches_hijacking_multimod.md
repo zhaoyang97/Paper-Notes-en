@@ -29,15 +29,15 @@ This paper reveals a novel adversarial attack against multimodal OS Agents, term
 
 ## Background & Motivation
 
-**State of the Field**: OS Agents (e.g., Claude Computer Use, agents in Windows Agent Arena) elevate VLMs from passive text generators to active computer controllers capable of executing mouse clicks, keyboard inputs, file operations, and network requests. This shift escalates VLM security risks from "generating harmful text" to "executing harmful actions."
+**Background**: OS Agents (e.g., Claude Computer Use, agents in Windows Agent Arena) elevate VLMs from passive text generators to active computer controllers capable of executing mouse clicks, keyboard inputs, file operations, and network requests. This shift escalates VLM security risks from "generating harmful text" to "executing harmful actions."
 
 **Limitations of Prior Work**: Existing research has demonstrated that OS Agents can be compromised via prompt injection or pop-up attacks. However, these methods require direct access to the agent's text input pipeline and are susceptible to detection and blocking by existing filtering mechanisms. The reliance of OS Agents on **screenshots** for navigation introduces a novel visual-domain attack surface that remains largely unexplored.
 
-**Root Cause**: OS Agents must observe their environment through screenshots → security risk; an attacker needs only to control a small screen region (e.g., a social media image or desktop wallpaper) to potentially hijack the entire agent → difficult to detect.
+**Key Challenge**: OS Agents must observe their environment through screenshots → security risk; an attacker needs only to control a small screen region (e.g., a social media image or desktop wallpaper) to potentially hijack the entire agent → difficult to detect.
 
-**Paper Goals**: To systematically investigate visual-domain attacks against OS Agents: can manipulating a small image region on the screen hijack an agent into executing arbitrary malicious actions? Can such attacks generalize across scenarios?
+**Goal**: To systematically investigate visual-domain attacks against OS Agents: can manipulating a small image region on the screen hijack an agent into executing arbitrary malicious actions? Can such attacks generalize across scenarios?
 
-**Starting Point**: Extend conventional VLM adversarial attacks to the multi-component pipeline of OS Agents, addressing unique constraints such as the non-differentiability of the screen parser, image resizing, and discrete pixel values.
+**Key Insight**: Extend conventional VLM adversarial attacks to the multi-component pipeline of OS Agents, addressing unique constraints such as the non-differentiability of the screen parser, image resizing, and discrete pixel values.
 
 **Core Idea**: MIP encodes complete malicious program instructions into a visually imperceptible image patch; once the OS Agent processes the screenshot containing the MIP, it directly outputs and executes the malicious program—without relying on the agent's own reasoning to assemble the attack.
 

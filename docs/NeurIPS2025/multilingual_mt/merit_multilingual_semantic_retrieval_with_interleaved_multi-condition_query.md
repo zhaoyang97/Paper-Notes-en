@@ -27,11 +27,11 @@ This paper introduces MERIT, the first multilingual interleaved multi-condition 
 
 ## Background & Motivation
 
-**State of the Field**: Semantic retrieval is critical in product search, RAG, and related scenarios; however, existing datasets are limited to single-language, single-image, and single-condition settings, falling far short of real-world complexity.
+**Background**: Semantic retrieval is critical in product search, RAG, and related scenarios; however, existing datasets are limited to single-language, single-image, and single-condition settings, falling far short of real-world complexity.
 
 **Limitations of Prior Work**: A large body of prior work (Fashion-IQ, CIRR, Magiclens, etc.) shows no performance degradation when images are replaced by their captions, indicating that these datasets fail to genuinely exploit the expressive capacity of images (Vision Unnecessarity).
 
-**Root Cause**: Real-world product retrieval frequently involves interleaved multi-condition queries (e.g., a specific pattern combined with a specific material), where many attributes must be conveyed visually. Existing datasets cannot evaluate this capability.
+**Key Challenge**: Real-world product retrieval frequently involves interleaved multi-condition queries (e.g., a specific pattern combined with a specific material), where many attributes must be conveyed visually. Existing datasets cannot evaluate this capability.
 
 **Core Problem**: (1) How can the capability of existing models on interleaved multi-condition retrieval tasks be comprehensively measured? (2) What are the key factors limiting performance, and how can they be addressed?
 

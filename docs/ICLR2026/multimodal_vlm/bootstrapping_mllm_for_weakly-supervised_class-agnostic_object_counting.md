@@ -27,15 +27,15 @@ content_hash: ae0c63e4c19c188e
 This paper proposes WS-COC, the first MLLM-based weakly supervised class-agnostic object counting framework. Through three strategies — divide-and-discern dialogue tuning (progressively narrowing the counting range), comparative ranking optimization (learning relative counting relationships across images), and global-local counting enhancement — WS-COC achieves performance comparable to or surpassing fully supervised methods using only image-level count annotations.
 
 ## Background & Motivation
-**State of the Field**: Object counting has traditionally relied on fully supervised density map regression with point-level annotations, which is prohibitively costly. Weakly supervised methods use only image-level counts but remain limited to specific categories (e.g., crowd counting).
+**Background**: Object counting has traditionally relied on fully supervised density map regression with point-level annotations, which is prohibitively costly. Weakly supervised methods use only image-level counts but remain limited to specific categories (e.g., crowd counting).
 
 **Limitations of Prior Work**: (1) Fully supervised methods require annotating the location of every object instance, which is extremely time-consuming in dense scenes; (2) existing weakly supervised methods are CNN/ViT-based and category-specific; (3) MLLMs possess latent counting ability but severely underestimate counts in dense scenes, as directly predicting a single number is too difficult.
 
-**Root Cause**: MLLM pretraining data predominantly consists of sparse scenes, leaving the model with insufficient quantity perception for dense scenes. Directly fine-tuning MLLMs to regress count values faces a modality gap — the mapping from high-dimensional visual features to a discrete scalar is difficult to learn.
+**Key Challenge**: MLLM pretraining data predominantly consists of sparse scenes, leaving the model with insufficient quantity perception for dense scenes. Directly fine-tuning MLLMs to regress count values faces a modality gap — the mapping from high-dimensional visual features to a discrete scalar is difficult to learn.
 
-**Paper Goals**: How to leverage the reasoning capabilities of MLLMs to achieve class-agnostic object counting using only image-level count annotations?
+**Goal**: How to leverage the reasoning capabilities of MLLMs to achieve class-agnostic object counting using only image-level count annotations?
 
-**Starting Point**: Rather than directly predicting count values, the task is decomposed into more learnable sub-tasks — range estimation (binary-search-style narrowing) and relative comparison (cross-image ranking).
+**Key Insight**: Rather than directly predicting count values, the task is decomposed into more learnable sub-tasks — range estimation (binary-search-style narrowing) and relative comparison (cross-image ranking).
 
 **Core Idea**: Reformulate counting from "predict a number" into three sub-tasks more amenable to MLLMs: range judgment, relative ranking, and local aggregation.
 

@@ -28,15 +28,15 @@ This paper proposes EET, an experience-driven early termination method that iden
 
 ## Background & Motivation
 
-**State of the Field**: LLM-based software engineering (SE) agents have achieved remarkable progress in automated issue resolution, with systems such as Agentless, Mini-SWE-Agent, and Trae Agent demonstrating strong performance on SWE-bench.
+**Background**: LLM-based software engineering (SE) agents have achieved remarkable progress in automated issue resolution, with systems such as Agentless, Mini-SWE-Agent, and Trae Agent demonstrating strong performance on SWE-bench.
 
 **Limitations of Prior Work**: The high monetary cost of SE agents is a major barrier to practical deployment (53% of developers cite cost as a key obstacle). The "token snowball" effect causes costs to grow super-linearly as conversation histories accumulate; unproductive iterations on hard or unsolvable problems further amplify waste.
 
-**Root Cause**: Existing cost reduction methods (e.g., turn-control) can lower costs but significantly degrade task performance (an average drop of 10.7%). Achieving substantial cost savings while preserving performance remains the central challenge.
+**Key Challenge**: Existing cost reduction methods (e.g., turn-control) can lower costs but significantly degrade task performance (an average drop of 10.7%). Achieving substantial cost savings while preserving performance remains the central challenge.
 
-**Paper Goals**: To propose a general-purpose early termination optimization method that integrates seamlessly into diverse SE agents and significantly reduces cost without sacrificing task performance.
+**Goal**: To propose a general-purpose early termination optimization method that integrates seamlessly into diverse SE agents and significantly reduces cost without sacrificing task performance.
 
-**Starting Point**: Inspired by the intuition that experienced developers can directly locate solutions without extensive trial and error, the method uses structured historical experience to guide agents in skipping redundant iterations.
+**Key Insight**: Inspired by the intuition that experienced developers can directly locate solutions without extensive trial and error, the method uses structured historical experience to guide agents in skipping redundant iterations.
 
 **Core Idea**: Distill historical issue-resolution experience into structured knowledge objects (task abstraction + trajectory summary + confidence assessment), and use retrieved relevant experience at both the patch generation and patch selection stages to determine whether early termination is warranted.
 

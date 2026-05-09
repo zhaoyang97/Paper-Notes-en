@@ -28,15 +28,15 @@ GVPO is a more stable LLM post-training method than GRPO, derived by embedding t
 
 ## Background & Motivation
 
-**State of the Field**: Post-training methods such as GRPO have achieved strong performance through increased sampling and relative reward scoring, yet suffer from severe training instability and high sensitivity to hyperparameters (clipping threshold, KL coefficient).
+**Background**: Post-training methods such as GRPO have achieved strong performance through increased sampling and relative reward scoring, yet suffer from severe training instability and high sensitivity to hyperparameters (clipping threshold, KL coefficient).
 
 **Limitations of Prior Work**: GRPO's instability stems from two sources: ① minimizing the log of negative probabilities can be numerically unstable; ② importance sampling weights in off-policy training cause gradient explosion when the policy deviates significantly.
 
-**Root Cause**: DPO admits a closed-form solution but may have multiple minima and does not guarantee convergence to the true optimal policy; GRPO is flexible but training is unstable.
+**Key Challenge**: DPO admits a closed-form solution but may have multiple minima and does not guarantee convergence to the true optimal policy; GRPO is flexible but training is unstable.
 
-**Paper Goals**: Design a method that combines the theoretical advantages of DPO (closed-form optimal solution) while overcoming its weaknesses (convergence guarantees), and simultaneously supports flexible off-policy training.
+**Goal**: Design a method that combines the theoretical advantages of DPO (closed-form optimal solution) while overcoming its weaknesses (convergence guarantees), and simultaneously supports flexible off-policy training.
 
-**Starting Point**: A key observation — when the sum of gradient weights for all responses within a group is zero, the partition function $Z(x)$ becomes invariant across responses and is therefore eliminated.
+**Key Insight**: A key observation — when the sum of gradient weights for all responses within a group is zero, the partition function $Z(x)$ becomes invariant across responses and is therefore eliminated.
 
 **Core Idea**: Zero-sum weight design eliminates the partition function + variance/covariance regularization ensures stability = theoretically grounded, stable post-training.
 

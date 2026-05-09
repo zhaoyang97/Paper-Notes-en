@@ -28,15 +28,15 @@ This paper proposes DynaInfer, a framework that infers environment labels for un
 
 ## Background & Motivation
 
-**State of the Field**: Data-driven methods such as Neural ODE and FNO have achieved success in modeling complex dynamical systems, but typically assume i.i.d. training data. Recent works (LEADS, CoDA) introduce multi-environment settings—decomposing dynamics into globally shared and environment-specific components—to improve generalization.
+**Background**: Data-driven methods such as Neural ODE and FNO have achieved success in modeling complex dynamical systems, but typically assume i.i.d. training data. Recent works (LEADS, CoDA) introduce multi-environment settings—decomposing dynamics into globally shared and environment-specific components—to improve generalization.
 
 **Limitations of Prior Work**: These generalization methods **rely on environment labels**, i.e., they require knowledge of which environment each trajectory belongs to. In practice, such labels are often unavailable: data in scientific experiments may be collected under unknown conditions; labels are lost when aggregating data from multiple sources; and environment information is restricted in privacy-sensitive domains such as healthcare and finance.
 
-**Root Cause**: Multi-environment generalization methods require environment labels to disentangle shared and environment-specific dynamics, yet such labels are difficult to obtain during data collection. The key challenge is: how can meaningful environment partitions be inferred **without any labels**?
+**Key Challenge**: Multi-environment generalization methods require environment labels to disentangle shared and environment-specific dynamics, yet such labels are difficult to obtain during data collection. The key challenge is: how can meaningful environment partitions be inferred **without any labels**?
 
-**Paper Goals**: To infer environment assignments for mixed trajectories when environment labels are entirely absent during training—even when the number of environments $M$ is unknown—so that downstream generalization algorithms can function properly.
+**Goal**: To infer environment assignments for mixed trajectories when environment labels are entirely absent during training—even when the number of environments $M$ is unknown—so that downstream generalization algorithms can function properly.
 
-**Starting Point**: Trajectories from the same environment follow the same governing equation and should therefore produce similar prediction errors under the same neural network. The consistency of prediction errors can thus serve as a signal for inferring environment membership—analogous to minimizing the distance from data points to centroids in K-means clustering.
+**Key Insight**: Trajectories from the same environment follow the same governing equation and should therefore produce similar prediction errors under the same neural network. The consistency of prediction errors can thus serve as a signal for inferring environment membership—analogous to minimizing the distance from data points to centroids in K-means clustering.
 
 **Core Idea**: The neural network is treated as the analog of a K-means "centroid," and the trajectory prediction loss as the analog of "distance." Environment labels are inferred by alternately updating environment assignments and network parameters.
 

@@ -30,7 +30,7 @@ This paper proposes the Dataset Color Quantization (DCQ) framework, which reduce
 
 ### State of the Field
 
-**State of the Field**: The storage demands of large-scale image datasets pose significant challenges in resource-constrained environments. Existing dataset compression methods (dataset pruning, distillation) reduce data volume by discarding samples, yet overlook **intra-image color redundancy** — many pixels share nearly identical colors (e.g., smooth regions such as sky and walls). Existing color quantization (CQ) methods suffer from two major issues:
+**Background**: The storage demands of large-scale image datasets pose significant challenges in resource-constrained environments. Existing dataset compression methods (dataset pruning, distillation) reduce data volume by discarding samples, yet overlook **intra-image color redundancy** — many pixels share nearly identical colors (e.g., smooth regions such as sky and walls). Existing color quantization (CQ) methods suffer from two major issues:
 
 **Image-property-based CQ** (e.g., K-Means): lacks semantic guidance, leading to blurred semantic boundaries and uniform bit allocation between background and foreground.
 

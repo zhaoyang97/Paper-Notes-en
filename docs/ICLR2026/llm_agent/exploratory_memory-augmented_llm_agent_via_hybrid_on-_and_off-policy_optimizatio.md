@@ -27,15 +27,15 @@ This paper proposes EMPO2, an RL framework that combines an external memory modu
 
 ## Background & Motivation
 
-**State of the Field**: LLM agents learn decision-making in interactive environments via reinforcement learning (e.g., GRPO), but the core bottleneck is **insufficient exploration** — agents over-rely on pretrained knowledge and struggle to discover novel states that require active searching.
+**Background**: LLM agents learn decision-making in interactive environments via reinforcement learning (e.g., GRPO), but the core bottleneck is **insufficient exploration** — agents over-rely on pretrained knowledge and struggle to discover novel states that require active searching.
 
 **Limitations of Prior Work**: (a) Pure parameter-update RL methods (e.g., GRPO) converge prematurely to suboptimal solutions on tasks requiring long-horizon exploration; (b) non-parametric methods (e.g., Reflexion) improve decisions through reflective memory but saturate quickly with fixed parameters and cannot continue improving; (c) offline RL and SFT methods depend on large amounts of expert trajectories or external resources such as GPT-4.
 
-**Root Cause**: Parametric updates can internalize knowledge but lack exploration incentives; external memory can facilitate exploration but cannot expand intrinsic capabilities. Each approach has inherent limitations, and no unified framework exists.
+**Key Challenge**: Parametric updates can internalize knowledge but lack exploration incentives; external memory can facilitate exploration but cannot expand intrinsic capabilities. Each approach has inherent limitations, and no unified framework exists.
 
-**Paper Goals**: How can LLM agents autonomously explore novel environments during online RL while internalizing the experience gained through exploration into model parameters?
+**Goal**: How can LLM agents autonomously explore novel environments during online RL while internalizing the experience gained through exploration into model parameters?
 
-**Starting Point**: Non-parametric memory updates can bootstrap parametric updates — the agent first acquires high-quality trajectories via memory-guided exploration, then distills this knowledge into a memory-free policy through off-policy updates.
+**Key Insight**: Non-parametric memory updates can bootstrap parametric updates — the agent first acquires high-quality trajectories via memory-guided exploration, then distills this knowledge into a memory-free policy through off-policy updates.
 
 **Core Idea**: Self-generated memory tips serve as exploration scaffolding. Through hybrid on/off-policy updates, the exploration capability afforded by memory is progressively internalized into model weights.
 

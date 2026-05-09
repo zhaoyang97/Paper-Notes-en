@@ -27,15 +27,15 @@ content_hash: daad3f6930a6ae64
 CAPE learns the causal DAG structure among features from tabular data, embeds it into hyperbolic space to generate causality-aware rotary positional encodings (RoPE), enabling Transformers to process non-sequential yet causally structured feature data, with significant performance gains on downstream multi-omics tasks.
 
 ## Background & Motivation
-**State of the Field**: Positional encodings in Transformers (e.g., sinusoidal, RoPE) assume data with a natural sequential order (word order, spatial arrangement of image patches), achieving great success in NLP and CV.
+**Background**: Positional encodings in Transformers (e.g., sinusoidal, RoPE) assume data with a natural sequential order (word order, spatial arrangement of image patches), achieving great success in NLP and CV.
 
 **Limitations of Prior Work**: Many real-world datasets (e.g., gene expression, proteomics, economic indicators) have features without a predefined sequential order, yet exhibit complex causal relationships. Existing positional encoding methods cannot capture such non-sequential causal structures.
 
-**Root Cause**: Existing methods either ignore inter-feature causal relationships (e.g., sorting by expression level) or use static pre-trained embeddings as surrogate positional encodings, neither of which genuinely exploits causal structural information among features.
+**Key Challenge**: Existing methods either ignore inter-feature causal relationships (e.g., sorting by expression level) or use static pre-trained embeddings as surrogate positional encodings, neither of which genuinely exploits causal structural information among features.
 
-**Paper Goals**: How to generate positional encodings for non-sequential yet causally related features, such that the self-attention mechanism of Transformers becomes causality-aware?
+**Goal**: How to generate positional encodings for non-sequential yet causally related features, such that the self-attention mechanism of Transformers becomes causality-aware?
 
-**Starting Point**: Inspired by special relativity—causal connections correspond to relative positions in hyperbolic spacetime—the causal graph is embedded into hyperbolic space, naturally preserving two key properties: causal strength and causal specificity.
+**Key Insight**: Inspired by special relativity—causal connections correspond to relative positions in hyperbolic spacetime—the causal graph is embedded into hyperbolic space, naturally preserving two key properties: causal strength and causal specificity.
 
 **Core Idea**: Learn the causal DAG among features → embed into hyperbolic space → convert to rotary positional encodings, so that attention scores decay with causal distance.
 

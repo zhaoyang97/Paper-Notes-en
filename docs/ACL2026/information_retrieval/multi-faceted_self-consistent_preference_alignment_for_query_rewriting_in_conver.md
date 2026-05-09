@@ -28,15 +28,15 @@ This paper proposes MSPA-CQR, which constructs self-consistent preference data a
 
 ## Background & Motivation
 
-**State of the Field**: In conversational question answering (CQA), user queries are often ambiguous (e.g., unclear references, omitted keywords), necessitating conversational query rewriting (CQR) to convert underspecified queries into complete, self-contained ones for downstream retrieval. Early approaches relied on human-annotated rewrites as training targets, but manual annotation is costly and typically optimizes for readability rather than retrieval effectiveness.
+**Background**: In conversational question answering (CQA), user queries are often ambiguous (e.g., unclear references, omitted keywords), necessitating conversational query rewriting (CQR) to convert underspecified queries into complete, self-contained ones for downstream retrieval. Early approaches relied on human-annotated rewrites as training targets, but manual annotation is costly and typically optimizes for readability rather than retrieval effectiveness.
 
 **Limitations of Prior Work**: Recent studies have begun incorporating retrieval signals as feedback, yet two issues persist: (1) only the retrieval dimension is considered, while rewriting quality and response quality are neglected; (2) preference data construction depends on human-annotated gold passages, limiting applicability to unannotated data.
 
-**Root Cause**: A high-quality rewritten query must simultaneously satisfy three criteria—the rewrite itself should be self-contained and complete, it should capture key information to support effective retrieval without redundancy, and the corresponding response should be coherent and accurate. These three dimensions exhibit non-trivial divergence (Kendall-Tau correlations of only 0.36–0.58), making single-dimension alignment insufficient.
+**Key Challenge**: A high-quality rewritten query must simultaneously satisfy three criteria—the rewrite itself should be self-contained and complete, it should capture key information to support effective retrieval without redundancy, and the corresponding response should be coherent and accurate. These three dimensions exhibit non-trivial divergence (Kendall-Tau correlations of only 0.36–0.58), making single-dimension alignment insufficient.
 
-**Paper Goals**: (1) Construct multi-dimensional preference data without reliance on manual annotation; (2) design an optimization method that jointly learns preferences from the rewriting, retrieval, and response dimensions.
+**Goal**: (1) Construct multi-dimensional preference data without reliance on manual annotation; (2) design an optimization method that jointly learns preferences from the rewriting, retrieval, and response dimensions.
 
-**Starting Point**: Inspired by the self-consistency strategy, rewrites that are semantically highly consistent across multiple samples are considered more reliable. Based on this intuition, the authors design three distinct self-consistency scoring functions to assess rewriting quality.
+**Key Insight**: Inspired by the self-consistency strategy, rewrites that are semantically highly consistent across multiple samples are considered more reliable. Based on this intuition, the authors design three distinct self-consistency scoring functions to assess rewriting quality.
 
 **Core Idea**: Multiple candidate rewrites are sampled from an LLM and scored from three perspectives—semantic consistency of rewrites, overlap of retrieved passages, and semantic consistency of generated responses. These scores are used to construct multi-dimensional preference pairs, which are then used to train the model via prefix-guided MDPO to generate optimal rewrites under different preference conditions.
 

@@ -29,15 +29,15 @@ This paper provides the first convergence guarantees for zero-sum games paramete
 
 ## Background & Motivation
 
-**State of the Field**: The intersection of deep learning and game theory has given rise to numerous applications—GANs, robust RL, adversarial attacks, AI safety debates, etc. These systems are fundamentally zero-sum games parameterized by neural networks, with the goal of finding von Neumann minimax points or Nash equilibria.
+**Background**: The intersection of deep learning and game theory has given rise to numerous applications—GANs, robust RL, adversarial attacks, AI safety debates, etc. These systems are fundamentally zero-sum games parameterized by neural networks, with the goal of finding von Neumann minimax points or Nash equilibria.
 
 **Limitations of Prior Work**: (i) Once non-convex deep learning architectures are introduced, classical game-theoretic guarantees on existence and efficient computation no longer hold; (ii) even when equilibria exist, gradient methods may exhibit instability, cycling, or divergence; (iii) the "hidden convexity" paradigm relies on a global uniform well-conditioning assumption on the Jacobian, which frequently fails in practice due to rank collapse.
 
-**Root Cause**: The gap between the hidden convex-concave structure of the latent game and the non-convexity of the parameter space—the minimum singular value of the Jacobian may approach zero, causing the PL condition to degenerate and theoretical guarantees to break down.
+**Key Challenge**: The gap between the hidden convex-concave structure of the latent game and the non-convexity of the parameter space—the minimum singular value of the Jacobian may approach zero, causing the PL condition to degenerate and theoretical guarantees to break down.
 
-**Paper Goals**: To provide explicit, verifiable conditions—on architecture design, initialization, and training dynamics—that guarantee efficient convergence in large-scale neural min-max games.
+**Goal**: To provide explicit, verifiable conditions—on architecture design, initialization, and training dynamics—that guarantee efficient convergence in large-scale neural min-max games.
 
-**Starting Point**: Combining overparameterization theory with hidden-convex game theory to prove (a) that the AltGDA trajectory length is bounded, and (b) that under overparameterization, the singular values of the Jacobian remain well-conditioned with high probability.
+**Key Insight**: Combining overparameterization theory with hidden-convex game theory to prove (a) that the AltGDA trajectory length is bounded, and (b) that under overparameterization, the singular values of the Jacobian remain well-conditioned with high probability.
 
 **Core Idea**: Sufficiently wide two-layer networks + Gaussian random initialization + AltGDA training dynamics = convergence to an approximate Nash equilibrium with high probability.
 

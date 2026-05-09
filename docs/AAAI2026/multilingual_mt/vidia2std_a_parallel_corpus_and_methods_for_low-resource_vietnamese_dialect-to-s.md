@@ -28,15 +28,15 @@ ViDia2Std constructs the first manually annotated Vietnamese dialect-to-standard
 
 ## Background & Motivation
 
-**State of the Field**: Vietnamese encompasses three major dialect groups—Northern, Central, and Southern—with significant differences in phonology, vocabulary, and syntax. Standard Vietnamese is based on the Northern dialect, and nearly all mainstream Vietnamese NLP models (e.g., PhoBERT, BARTpho) are trained predominantly on Northern standard language data. As a result, these models suffer sharp performance degradation when processing Central and Southern dialect text.
+**Background**: Vietnamese encompasses three major dialect groups—Northern, Central, and Southern—with significant differences in phonology, vocabulary, and syntax. Standard Vietnamese is based on the Northern dialect, and nearly all mainstream Vietnamese NLP models (e.g., PhoBERT, BARTpho) are trained predominantly on Northern standard language data. As a result, these models suffer sharp performance degradation when processing Central and Southern dialect text.
 
 **Limitations of Prior Work**: Prior Vietnamese dialect normalization research (Le and Luu, 2023) only constructed a parallel corpus from Central dialect to Northern standard language, with data sourced exclusively from Hà Tĩnh province, resulting in severely insufficient diversity. The Central dialect itself exhibits substantial inter-provincial variation (e.g., Huế, Quảng Trị, and Thanh Hóa each have distinct vocabularies and syntactic patterns), while Southern dialect and non-standard Northern variants are entirely absent. Commercial translation systems (e.g., Google Translate, Claude, Gemini) also frequently produce significant misinterpretations when handling dialect input.
 
-**Root Cause**: Vietnamese dialects span a wide geographic range with high variability, yet annotated resources are extremely scarce. Existing datasets and models cover only a tiny subset of dialects and cannot represent real-world dialectal diversity.
+**Key Challenge**: Vietnamese dialects span a wide geographic range with high variability, yet annotated resources are extremely scarce. Existing datasets and models cover only a tiny subset of dialects and cannot represent real-world dialectal diversity.
 
-**Paper Goals**: (1) Construct a nationally representative, high-quality dialect-to-standard parallel corpus; (2) establish strong baseline models for dialect normalization; (3) validate the practical gains of dialect normalization on downstream NLP tasks.
+**Goal**: (1) Construct a nationally representative, high-quality dialect-to-standard parallel corpus; (2) establish strong baseline models for dialect normalization; (3) validate the practical gains of dialect normalization on downstream NLP tasks.
 
-**Starting Point**: The authors leverage social media (Facebook) as a data source—over 70% of Vietnam's social media population uses Facebook, and users extensively employ local dialects in comments on regional news pages, providing a natural, nationally scalable source for dialect data collection.
+**Key Insight**: The authors leverage social media (Facebook) as a data source—over 70% of Vietnam's social media population uses Facebook, and users extensively employ local dialects in comments on regional news pages, providing a natural, nationally scalable source for dialect data collection.
 
 **Core Idea**: Through large-scale social media collection and rigorous manual annotation, this work constructs the first dialect-to-standard parallel corpus covering all 63 Vietnamese provinces, demonstrating that dialect normalization is a critical preprocessing step for improving the robustness of Vietnamese NLP systems.
 

@@ -28,7 +28,7 @@ content_hash: e775b641f91e4bd5
 This paper introduces CLARC, the first compilable C/C++ code retrieval benchmark comprising 6,717 query–code pairs. An automated pipeline extracts code from GitHub and employs LLMs combined with hypothesis testing to generate and validate queries. The benchmark covers four retrieval scenarios—standard, anonymized, assembly, and WebAssembly—and reveals that existing code embedding models over-rely on lexical features (NDCG@10 drops from 0.89 to 0.67 after anonymization) and perform poorly on binary-level retrieval.
 
 ## Background & Motivation
-**State of the Field**: Code retrieval benchmarks predominantly target Python and Java (e.g., CodeSearchNet, CoSQA, COIR), with embedding-based retrieval models (Voyage-code-3, OpenAI embeddings, etc.) serving as the standard for large-scale retrieval.
+**Background**: Code retrieval benchmarks predominantly target Python and Java (e.g., CodeSearchNet, CoSQA, COIR), with embedding-based retrieval models (Voyage-code-3, OpenAI embeddings, etc.) serving as the standard for large-scale retrieval.
 
 **Limitations of Prior Work**:
    - **Language Coverage Bias**: C/C++ is central to systems programming, yet mainstream benchmarks neglect or underemphasize text-to-code retrieval for C/C++.
@@ -36,7 +36,7 @@ This paper introduces CLARC, the first compilable C/C++ code retrieval benchmark
    - **Unexposed Lexical Dependency**: Benchmarks rarely test robustness under identifier renaming or anonymization, meaning high scores may reflect variable-name matching rather than semantic understanding.
    - **Absence of Binary-Level Evaluation**: Security auditing and reverse engineering require searching code at the assembly or binary level, yet no benchmark assesses this capability.
 
-**Root Cause**: Code retrieval models claim to understand "code semantics," but if they rely on lexical features such as variable and function names, they will fail on obfuscated or assembly-level code.
+**Key Challenge**: Code retrieval models claim to understand "code semantics," but if they rely on lexical features such as variable and function names, they will fail on obfuscated or assembly-level code.
 
 **Core Idea**: Construct a full-stack code retrieval benchmark spanning source code to binary, and systematically probe semantic understanding versus lexical matching through anonymization and compilation to low-level representations.
 

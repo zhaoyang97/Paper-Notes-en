@@ -28,11 +28,11 @@ This paper proposes improved FPT approximation algorithms for the Travelling Sal
 
 ## Background & Motivation
 
-- **State of the Field**: TSP is a classical NP-hard problem in combinatorial optimization with broad applications in logistics, manufacturing, and telecommunications. For metric graphs satisfying the triangle inequality, the Christofides–Serdyukov algorithm achieves an approximation ratio of 1.5, further improved to $1.5 - 10^{-36}$ by Karlin et al. For general (non-metric) graphs, however, TSP cannot be approximated within any computable function $f(n)$ in polynomial time.
+- **Background**: TSP is a classical NP-hard problem in combinatorial optimization with broad applications in logistics, manufacturing, and telecommunications. For metric graphs satisfying the triangle inequality, the Christofides–Serdyukov algorithm achieves an approximation ratio of 1.5, further improved to $1.5 - 10^{-36}$ by Karlin et al. For general (non-metric) graphs, however, TSP cannot be approximated within any computable function $f(n)$ in polynomial time.
 - **Limitations of Prior Work**: A large gap in approximation performance exists between metric and general graphs, motivating the study of graphs that are "close" to metric. Two natural parameters have been introduced in the parameterized complexity literature to measure this distance: parameter $p$ (the number of vertices involved in triangle inequality violations) and parameter $q$ (the minimum number of vertices whose removal makes the graph metric). Under parameter $p$, Zhou et al. achieved a 3-approximation FPT algorithm, later improved to 2.5 by Bampis et al.; under parameter $q$, the best known FPT result by Zhou et al. was an 11-approximation.
-- **Root Cause**: Non-metric graphs lack the shortcutting property that underpins metric TSP algorithms, making direct extensions of Christofides-style methods non-trivial.
-- **Paper Goals**: To answer the open question posed by Bampis et al. on whether these approximation ratios can be further improved, and to provide tighter FPT approximation algorithms under both parameters.
-- **Starting Point**: The practical motivation comes from city tour bus route planning, where most landmarks satisfy the triangle inequality but a small number of high-profile direct routes violate it—implying that $p$ and $q$ are small in practice.
+- **Key Challenge**: Non-metric graphs lack the shortcutting property that underpins metric TSP algorithms, making direct extensions of Christofides-style methods non-trivial.
+- **Goal**: To answer the open question posed by Bampis et al. on whether these approximation ratios can be further improved, and to provide tighter FPT approximation algorithms under both parameters.
+- **Key Insight**: The practical motivation comes from city tour bus route planning, where most landmarks satisfy the triangle inequality but a small number of high-profile direct routes violate it—implying that $p$ and $q$ are small in practice.
 
 ## Method
 

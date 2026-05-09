@@ -29,13 +29,13 @@ This paper proposes HOMER, a framework that constructs a three-role LLM collabor
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal humor generation is an important task for exploring whether LLMs possess human-level linguistic cognitive complexity. The representative task of funny caption generation requires simultaneous visual understanding, humor reasoning, creative imagination, and linguistic style expression — challenging even for humans.
+**Background**: Multimodal humor generation is an important task for exploring whether LLMs possess human-level linguistic cognitive complexity. The representative task of funny caption generation requires simultaneous visual understanding, humor reasoning, creative imagination, and linguistic style expression — challenging even for humans.
 
 **Limitations of Prior Work**: Existing methods primarily rely on (a) general prompting (HumorousAI, Phunny), (b) multi-hop reasoning with self-refinement (CLoT), or (c) task-specific fine-tuning (LoL). These approaches depend solely on the LLM's inherent humor mechanisms, capturing only surface-level humor language patterns without enabling deep humor logic reasoning or creative imagination.
 
-**Root Cause**: (a) LLMs' intrinsic humor generation capability is weak, as validated by multiple studies; (b) existing methods lack creativity — generated "humorous" captions are often merely descriptive; (c) they are uninterpretable — it is unclear where the punchline lies or why the output is funny.
+**Key Challenge**: (a) LLMs' intrinsic humor generation capability is weak, as validated by multiple studies; (b) existing methods lack creativity — generated "humorous" captions are often merely descriptive; (c) they are uninterpretable — it is unclear where the punchline lies or why the output is funny.
 
-**Starting Point**: This work draws on the classical linguistic humor theory GTVH (General Theory of Verbal Humor), modeling humor creation as the interaction of multiple knowledge resources — with **script opposition** at its core, wherein the collision of two semantic frames generates the punchline (expectation established → expectation violated → surprise/absurdity).
+**Key Insight**: This work draws on the classical linguistic humor theory GTVH (General Theory of Verbal Humor), modeling humor creation as the interaction of multiple knowledge resources — with **script opposition** at its core, wherein the collision of two semantic frames generates the punchline (expectation established → expectation violated → surprise/absurdity).
 
 **Theoretical Foundation**: GTVH decomposes humor into five knowledge resources — Script Opposition, Situation, Target, Narrative Strategy, and Language — providing a natural structured guidance framework for humor caption generation.
 

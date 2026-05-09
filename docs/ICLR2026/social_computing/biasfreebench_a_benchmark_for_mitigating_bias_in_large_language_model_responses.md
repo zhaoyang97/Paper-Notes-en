@@ -28,15 +28,15 @@ This paper presents BiasFreeBench, the first unified framework to systematically
 
 ## Background & Motivation
 
-**State of the Field**: Modern LLMs (e.g., ChatGPT), despite RLHF alignment, continue to exhibit social biases (gender, race, age, disability, etc.) during interaction. A variety of debiasing techniques have emerged, including prompting-based methods (Self-Awareness, Self-Reflection, etc.) and training-based methods (DPO, SFT, Safe RLHF, Task Vector, etc.).
+**Background**: Modern LLMs (e.g., ChatGPT), despite RLHF alignment, continue to exhibit social biases (gender, race, age, disability, etc.) during interaction. A variety of debiasing techniques have emerged, including prompting-based methods (Self-Awareness, Self-Reflection, etc.) and training-based methods (DPO, SFT, Safe RLHF, Task Vector, etc.).
 
 **Limitations of Prior Work**: Existing debiasing methods rely on different baselines and evaluation metrics, making fair cross-method comparison infeasible (as shown in Table 1, DAMA, BiasDPO, FAST, etc. each use different baselines). More critically, **most evaluations are based on LLM internal probabilities** (comparing likelihoods of biased vs. unbiased contexts) rather than directly assessing bias in model responses—a disconnect from real-world usage, where users observe model outputs rather than probability distributions.
 
-**Root Cause**: The gap between probability-level evaluation and response-level evaluation. Classic benchmarks such as StereoSet and CrowS-Pairs measure token probability bias, whereas what users actually care about is whether model answers are fair and safe. A unified, response-oriented debiasing evaluation platform is absent from the literature.
+**Key Challenge**: The gap between probability-level evaluation and response-level evaluation. Classic benchmarks such as StereoSet and CrowS-Pairs measure token probability bias, whereas what users actually care about is whether model answers are fair and safe. A unified, response-oriented debiasing evaluation platform is absent from the literature.
 
-**Paper Goals**: (a) Establish a unified benchmark for fair comparison of prompting and training debiasing methods; (b) design response-level metrics to directly measure output bias; (c) analyze the effects of model size, bias type, and methodological paradigm.
+**Goal**: (a) Establish a unified benchmark for fair comparison of prompting and training debiasing methods; (b) design response-level metrics to directly measure output bias; (c) analyze the effects of model size, bias type, and methodological paradigm.
 
-**Starting Point**: Reformatting existing bias datasets into a query-response format aligned with real LLM usage, and standardizing test conditions across all methods.
+**Key Insight**: Reformatting existing bias datasets into a query-response format aligned with real LLM usage, and standardizing test conditions across all methods.
 
 **Core Idea**: Construct a unified query-response framework with the Bias-Free Score metric to systematically compare 8 debiasing techniques at the response level.
 

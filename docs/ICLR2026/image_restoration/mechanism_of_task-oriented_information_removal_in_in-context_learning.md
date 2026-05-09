@@ -28,18 +28,18 @@ This paper proposes a novel "information removal" perspective to explain the int
 
 ## Background & Motivation
 
-**State of the Field**: In-context Learning (ICL) is a hallmark capability of large language models—enabling them to perform new tasks by providing a few demonstrations in the prompt, without any fine-tuning. Despite its widespread adoption, the internal mechanism of "how ICL works" remains poorly understood.
+**Background**: In-context Learning (ICL) is a hallmark capability of large language models—enabling them to perform new tasks by providing a few demonstrations in the prompt, without any fine-tuning. Despite its widespread adoption, the internal mechanism of "how ICL works" remains poorly understood.
 
 **Limitations of Prior Work**:
    - **Limited theoretical perspectives**: Existing explanations include "ICL as implicit gradient descent," "ICL as Bayesian inference," and "induction heads performing copy-paste," but these are either validated on simplified models or cover only specific task types, lacking a unified and in-depth understanding.
    - **Unclear reasons for zero-shot failure**: Under zero-shot settings without demonstrations, LM accuracy on many tasks approaches zero. The model possesses the relevant knowledge yet produces random outputs—why?
    - **Unclear role of demonstrations**: How do few-shot demonstrations alter internal representations to steer the model from "trying to do everything" to "focusing on the target task"? The mechanism remains opaque.
 
-**Root Cause**: Pretraining equips LMs with the ability to handle diverse tasks, but these capabilities exist in an "entangled" form within hidden states. Under zero-shot settings, the hidden states of a query contain information about all possible tasks, causing incoherent outputs. What ICL demonstrations need to do is not "add information" but "remove interference."
+**Key Challenge**: Pretraining equips LMs with the ability to handle diverse tasks, but these capabilities exist in an "entangled" form within hidden states. Under zero-shot settings, the hidden states of a query contain information about all possible tasks, causing incoherent outputs. What ICL demonstrations need to do is not "add information" but "remove interference."
 
-**Paper Goals**: To explain the core mechanism of ICL from the novel perspective of "information removal"—how demonstrations help the model eliminate redundant task information from entangled representations and focus on the target task.
+**Goal**: To explain the core mechanism of ICL from the novel perspective of "information removal"—how demonstrations help the model eliminate redundant task information from entangled representations and focus on the target task.
 
-**Starting Point**:
+**Key Insight**:
    - First, demonstrate that zero-shot hidden states are "non-selective" (containing information about all tasks).
    - Then, use low-rank filters to artificially simulate information removal, verifying that removing redundant information indeed improves task accuracy.
    - Next, analyze few-shot ICL hidden states to show that their effect is equivalent to task-oriented information removal.

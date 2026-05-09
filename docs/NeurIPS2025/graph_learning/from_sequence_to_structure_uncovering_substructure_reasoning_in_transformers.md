@@ -28,15 +28,15 @@ This paper presents empirical and theoretical analyses revealing how decoder-onl
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have been shown to solve graph reasoning tasks—even when graph structure is embedded in textual descriptions, LLMs can identify node connectivity, detect patterns, and compare subgraphs. However, Transformers are fundamentally sequence models and do not possess native graph-structural understanding.
+**Background**: LLMs have been shown to solve graph reasoning tasks—even when graph structure is embedded in textual descriptions, LLMs can identify node connectivity, detect patterns, and compare subgraphs. However, Transformers are fundamentally sequence models and do not possess native graph-structural understanding.
 
 **Limitations of Prior Work**: Existing understanding of Transformer graph reasoning has focused on **shortest path** tasks (e.g., spectral navigation in SLN or path composition in ALPINE), which involve linear structures. Real-world graphs contain numerous nonlinear substructures (cycles, trees, motifs), and existing theory cannot explain how Transformers process these.
 
-**Root Cause**: Transformers are sequence-processing architectures, yet they must reason over non-Euclidean structures (graphs). A theoretical gap exists in generalizing from paths to arbitrary substructures.
+**Key Challenge**: Transformers are sequence-processing architectures, yet they must reason over non-Euclidean structures (graphs). A theoretical gap exists in generalizing from paths to arbitrary substructures.
 
-**Paper Goals**: (a) How do Transformers identify substructures layer by layer? (b) How do input formats (adjacency list vs. edge list) and query prompts affect identification? (c) Are these findings consistent in LLMs? (d) Can these findings be extended to more complex graph reasoning?
+**Goal**: (a) How do Transformers identify substructures layer by layer? (b) How do input formats (adjacency list vs. edge list) and query prompts affect identification? (c) Are these findings consistent in LLMs? (d) Can these findings be extended to more complex graph reasoning?
 
-**Starting Point**: The paper focuses on the substructure extraction task (more general than paths) and uses visualization combined with theoretical analysis to reveal the internal mechanisms of Transformers.
+**Key Insight**: The paper focuses on the substructure extraction task (more general than paths) and uses visualization combined with theoretical analysis to reveal the internal mechanisms of Transformers.
 
 **Core Idea**: Transformers progressively identify substructures through a layer-wise "Induced Substructure Filtration" (ISF) process, and this mechanism is consistently present in both from-scratch trained Transformers and LLMs.
 

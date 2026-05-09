@@ -28,15 +28,15 @@ This paper systematically introduces AND, OR, and ADDER gates to decompose langu
 
 ## Background & Motivation
 
-**State of the Field**: Circuit discovery is a core methodology in mechanistic interpretability, aiming to understand internal model mechanisms by extracting subgraphs (circuits) from the Transformer computation graph that implement specific tasks. Mainstream approaches include greedy search (ACDC), linear estimation (EAP), and differentiable masking (EdgePruning).
+**Background**: Circuit discovery is a core methodology in mechanistic interpretability, aiming to understand internal model mechanisms by extracting subgraphs (circuits) from the Transformer computation graph that implement specific tasks. Mainstream approaches include greedy search (ACDC), linear estimation (EAP), and differentiable masking (EdgePruning).
 
 **Limitations of Prior Work**: Existing circuit discovery methods lack completeness—discovered circuits vary significantly across random seeds, and key mechanisms are frequently missed. Theoretical analysis shows that incomplete circuits give rise to two failure modes: non-transitivity and preemption, which impede a genuine understanding of circuit mechanisms.
 
-**Root Cause**: Incompleteness primarily arises from the presence of OR gates. When two parallel paths can substitute for each other (OR relationship), noising-based methods need only discover one to ensure faithfulness, causing the other to be discarded. This "partial discovery" undermines completeness and makes results contingent on randomness.
+**Key Challenge**: Incompleteness primarily arises from the presence of OR gates. When two parallel paths can substitute for each other (OR relationship), noising-based methods need only discover one to ensure faithfulness, causing the other to be discarded. This "partial discovery" undermines completeness and makes results contingent on randomness.
 
-**Paper Goals**: (a) How to formally define logical relationships within circuits? (b) How to fully recover all logic gates? (c) How to simultaneously guarantee faithfulness and completeness?
+**Goal**: (a) How to formally define logical relationships within circuits? (b) How to fully recover all logic gates? (c) How to simultaneously guarantee faithfulness and completeness?
 
-**Starting Point**: The observation that noising methods recover AND and ADDER gates but miss OR gates, while denoising methods recover OR and ADDER gates but miss AND gates—making the two approaches complementary.
+**Key Insight**: The observation that noising methods recover AND and ADDER gates but miss OR gates, while denoising methods recover OR and ADDER gates but miss AND gates—making the two approaches complementary.
 
 **Core Idea**: Decompose circuits into AND/OR/ADDER gates and fully recover all gates via the set relationships $\mathcal{C}_{Ns} \cap \mathcal{C}_{Dn} = \text{ADDER}$, $\mathcal{C}_{Ns} \setminus \mathcal{C}_{Dn} = \text{AND}$, $\mathcal{C}_{Dn} \setminus \mathcal{C}_{Ns} = \text{OR}$.
 

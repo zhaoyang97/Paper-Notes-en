@@ -28,15 +28,15 @@ SAGE reformulates adversarial scenario generation for autonomous driving as a mu
 
 ## Background & Motivation
 
-**State of the Field**: Safety validation for autonomous driving requires large quantities of safety-critical scenarios to test and train driving policies. Adversarial scenario generation—which efficiently produces long-tail corner cases by perturbing real driving trajectories—has become the dominant paradigm.
+**Background**: Safety validation for autonomous driving requires large quantities of safety-critical scenarios to test and train driving policies. Adversarial scenario generation—which efficiently produces long-tail corner cases by perturbing real driving trajectories—has become the dominant paradigm.
 
 **Limitations of Prior Work**: Existing methods (RL-based, diffusion-based, direct optimization) all face a fundamental tension between adversariality and realism. Methods that optimize purely for adversariality tend to produce physically implausible trajectories (e.g., vehicles spinning in place to intercept the ego), while those that balance multiple objectives via linear weighting are highly sensitive to hyperparameter tuning.
 
-**Root Cause**: Each training run locks in a single fixed trade-off point on the Pareto frontier. Generating scenarios of varying intensity for different use cases (extreme stress testing vs. data augmentation) requires full retraining, which is highly inefficient.
+**Key Challenge**: Each training run locks in a single fixed trade-off point on the Pareto frontier. Generating scenarios of varying intensity for different use cases (extreme stress testing vs. data augmentation) requires full retraining, which is highly inefficient.
 
-**Paper Goals**: (a) How to efficiently learn the trade-off between adversariality and realism? (b) How to continuously control the attack intensity of generated scenarios at inference time without retraining? (c) How to ensure map compliance (a hard constraint) is not diluted by soft preferences?
+**Goal**: (a) How to efficiently learn the trade-off between adversariality and realism? (b) How to continuously control the attack intensity of generated scenarios at inference time without retraining? (c) How to ensure map compliance (a hard constraint) is not diluted by soft preferences?
 
-**Starting Point**: Inspired by multi-objective alignment in LLMs (e.g., the 3H principles) and model weight interpolation (linear mode connectivity), the authors reframe adversarial scenario optimization as a preference alignment problem. Two expert models biased toward opposite extremes are trained, and at inference time, linear weight interpolation traverses the entire Pareto frontier.
+**Key Insight**: Inspired by multi-objective alignment in LLMs (e.g., the 3H principles) and model weight interpolation (linear mode connectivity), the authors reframe adversarial scenario optimization as a preference alignment problem. Two expert models biased toward opposite extremes are trained, and at inference time, linear weight interpolation traverses the entire Pareto frontier.
 
 **Core Idea**: Transform adversarial scenario generation from "manually designing weighted objectives" to "learning a steerable preference landscape," achieving continuously adjustable test-time control via expert weight interpolation.
 

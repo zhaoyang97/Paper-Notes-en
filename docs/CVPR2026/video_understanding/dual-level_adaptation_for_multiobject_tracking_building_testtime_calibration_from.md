@@ -29,11 +29,11 @@ Inspired by Kahneman's dual-system theory of human decision-making, TCEI propose
 
 ## Background & Motivation
 
-1. **State of the Field**: Mainstream MOT methods include detection-based trackers (ByteTrack, OC-SORT) and Transformer-based end-to-end methods (MOTR, MOTIP). Test-time adaptation (TTA) has achieved success in image classification and semantic segmentation.
+1. **Background**: Mainstream MOT methods include detection-based trackers (ByteTrack, OC-SORT) and Transformer-based end-to-end methods (MOTR, MOTIP). Test-time adaptation (TTA) has achieved success in image classification and semantic segmentation.
 2. **Limitations of Prior Work**: Distribution shifts (appearance, motion patterns, categories) between training and test data degrade model performance. Existing TTA methods primarily handle static image tasks and lack temporal modeling capacity for multi-object scenarios—intra-frame information alone is insufficient to maintain ID consistency. Backpropagation-based TTA methods (e.g., TENT) are computationally expensive and prone to catastrophic forgetting.
-3. **Root Cause**: MOT requires both intra-frame cues to distinguish targets and inter-frame temporal cues to maintain ID consistency, yet existing TTA methods cannot satisfy both requirements simultaneously.
-4. **Paper Goals**: Design a forward-pass-only TTA method that leverages historical information from the test environment to improve MOT performance online.
-5. **Starting Point**: Drawing inspiration from Kahneman's dual-system theory—human decision-making first relies on rapid intuitive judgment, which is then reviewed and corrected by the experiential system.
+3. **Key Challenge**: MOT requires both intra-frame cues to distinguish targets and inter-frame temporal cues to maintain ID consistency, yet existing TTA methods cannot satisfy both requirements simultaneously.
+4. **Goal**: Design a forward-pass-only TTA method that leverages historical information from the test environment to improve MOT performance online.
+5. **Key Insight**: Drawing inspiration from Kahneman's dual-system theory—human decision-making first relies on rapid intuitive judgment, which is then reviewed and corrected by the experiential system.
 6. **Core Idea**: Construct dual-level adaptation: transient memory provides recent temporal priors (intuition), while historical experience provides long-range calibration (experience).
 
 ## Method

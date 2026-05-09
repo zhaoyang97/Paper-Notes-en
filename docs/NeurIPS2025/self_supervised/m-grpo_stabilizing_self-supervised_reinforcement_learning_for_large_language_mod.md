@@ -29,15 +29,15 @@ To address policy collapse and entropy collapse in self-supervised reinforcement
 
 ## Background & Motivation
 
-**State of the Field**: Reinforcement learning with verifiable rewards (RLVR) has become a core paradigm for post-training LLMs to enhance reasoning capabilities. However, it relies heavily on large-scale human-annotated data and reward model infrastructure, making it costly and domain-restricted. This has motivated exploration of self-supervised or label-free RL signals, such as self-consistency and self-certainty as reward signals (e.g., SRT, TTRL, Intuitor).
+**Background**: Reinforcement learning with verifiable rewards (RLVR) has become a core paradigm for post-training LLMs to enhance reasoning capabilities. However, it relies heavily on large-scale human-annotated data and reward model infrastructure, making it costly and domain-restricted. This has motivated exploration of self-supervised or label-free RL signals, such as self-consistency and self-certainty as reward signals (e.g., SRT, TTRL, Intuitor).
 
 **Limitations of Prior Work**: Self-supervised RLVR (SS-RLVR) suffers from a critical **policy collapse** phenomenon during extended training — training rewards first increase and then sharply decline, accompanied by simultaneous degradation in validation accuracy. This is further compounded by **entropy collapse**, where the model becomes overconfident prematurely.
 
-**Root Cause**: Increasing the number of rollouts can only delay, not prevent, collapse. The self-reward mechanism is inherently unstable, lacking a stable training objective.
+**Key Challenge**: Increasing the number of rollouts can only delay, not prevent, collapse. The self-reward mechanism is inherently unstable, lacking a stable training objective.
 
-**Paper Goals**: To stabilize the training process of SS-RLVR without relying on ground-truth labels, thereby preventing policy collapse and entropy collapse.
+**Goal**: To stabilize the training process of SS-RLVR without relying on ground-truth labels, thereby preventing policy collapse and entropy collapse.
 
-**Starting Point**: Drawing on the success of momentum encoders in contrastive learning (MoCo), this work introduces the momentum mechanism into policy optimization.
+**Key Insight**: Drawing on the success of momentum encoders in contrastive learning (MoCo), this work introduces the momentum mechanism into policy optimization.
 
 **Core Idea**: A slowly evolving momentum model provides stable pseudo-label training targets, while IQR-based filtering of low-entropy trajectories preserves policy diversity.
 

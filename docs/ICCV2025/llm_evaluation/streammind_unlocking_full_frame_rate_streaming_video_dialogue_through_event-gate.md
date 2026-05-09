@@ -30,19 +30,19 @@ StreamMind proposes an "event-gated LLM invocation" paradigm to replace the exis
 
 ## Background & Motivation
 
-**State of the Field**: Streaming Video Dialogue (StreamingVD) is a frontier direction in multimodal large models, requiring the model to continuously perceive an incoming video stream and **proactively** generate responses at appropriate moments based on user queries—rather than waiting for each user-triggered request. Representative applications include AI home assistants, human-robot collaboration, and game AI.
+**Background**: Streaming Video Dialogue (StreamingVD) is a frontier direction in multimodal large models, requiring the model to continuously perceive an incoming video stream and **proactively** generate responses at appropriate moments based on user queries—rather than waiting for each user-triggered request. Representative applications include AI home assistants, human-robot collaboration, and game AI.
 
 **Severe Efficiency Issues in Prior Work**:
 - **VideoLLM-Online / VideoLLM-MoD**: Pioneered the per-frame LLM invocation paradigm—at every timestep, all historical frames and the query are fed into the LLM, which decides whether to "respond or remain silent."
 - Problem: Video frames arrive at an $O(n)$ rate, but Transformer computation is $O(n^2)$; invoking the LLM $n$ times per-frame brings total complexity to $O(n^3)$, making real-time processing fundamentally infeasible.
 - Other methods (FreeVA, LLaMA-VID, etc.), while improving offline efficiency, require manual user triggers and do not support proactive dialogue.
 
-**Root Cause**:
+**Key Challenge**:
 - **Linear ingestion vs. quadratic computation**: The video stream is linear, but LLM attention computation is quadratic.
 - **Proactive response vs. real-time requirement**: Proactive response requires a decision at every frame ($O(n)$ decisions); if each decision requires an LLM call, computation explodes.
 - Existing methods are forced to choose between "proactive response capability" and "real-time processing speed."
 
-**Starting Point**: Inspired by the event-perception mechanism of the human brain—humans do not perform deep cognitive processing on every frame, but instead continuously perceive the environment and initiate deep cognition only upon detecting meaningful events. This is mapped onto video LLMs: perception is continuous and lightweight, while cognition (LLM invocation) is sparse and heavyweight.
+**Key Insight**: Inspired by the event-perception mechanism of the human brain—humans do not perform deep cognitive processing on every frame, but instead continuously perceive the environment and initiate deep cognition only upon detecting meaningful events. This is mapped onto video LLMs: perception is continuous and lightweight, while cognition (LLM invocation) is sparse and heavyweight.
 
 ## Method
 

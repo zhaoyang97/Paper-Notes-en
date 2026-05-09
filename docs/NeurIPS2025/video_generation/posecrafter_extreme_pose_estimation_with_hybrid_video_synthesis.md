@@ -28,16 +28,16 @@ This paper proposes PoseCrafter, a training-free framework for extreme pose esti
 
 ## Background & Motivation
 
-**State of the Field**: Relative pose estimation from image pairs is a fundamental problem in 3D vision. Existing methods based on feature matching + RANSAC + the five-point algorithm are well-established for sufficiently overlapping pairs, but fail entirely under minimal or zero overlap.
+**Background**: Relative pose estimation from image pairs is a fundamental problem in 3D vision. Existing methods based on feature matching + RANSAC + the five-point algorithm are well-established for sufficiently overlapping pairs, but fail entirely under minimal or zero overlap.
 
 **Limitations of Prior Work**:
 - InterPose bridges non-overlapping image pairs by generating intermediate frames via video interpolation, but the synthesized **intermediate frames are blurry** (especially central frames), and its statistical self-consistency score for frame selection is **slow** and misaligned with the pose estimation objective.
 - DynamiCrafter produces high-quality frames near the input endpoints but geometrically inconsistent intermediate frames, since the inputs themselves have little overlap.
 - Commercial models (Runway/Luma) yield sharper results but are costly and still exhibit drift.
 
-**Root Cause**: No single video model can simultaneously guarantee geometric consistency across all frames under minimal overlap.
+**Key Challenge**: No single video model can simultaneously guarantee geometric consistency across all frames under minimal overlap.
 
-**Starting Point**: Decompose the problem into two steps — first use video interpolation to obtain a small set of "reliable relay frames" (frames near the input endpoints are more trustworthy), then refine intermediate frames using a pose-conditioned ViewCrafter.
+**Key Insight**: Decompose the problem into two steps — first use video interpolation to obtain a small set of "reliable relay frames" (frames near the input endpoints are more trustworthy), then refine intermediate frames using a pose-conditioned ViewCrafter.
 
 **Core Idea**: Couple video interpolation with a pose-conditioned novel view synthesis model, leveraging the complementary strengths of each, combined with feature-correspondence-based frame selection.
 

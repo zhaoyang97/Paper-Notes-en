@@ -29,15 +29,15 @@ This paper proposes VoxSAMNet, a monocular semantic scene completion (SSC) frame
 
 ## Background & Motivation
 
-**State of the Field**: Monocular semantic scene completion (SSC) aims to reconstruct complete 3D semantic scenes from a single RGB image, serving as a critical perception task for autonomous driving and robotics. The field has evolved from the 3D U-Net of MonoScene to BEVFormer's deformable attention and VoxFormer's depth-guided voxel queries.
+**Background**: Monocular semantic scene completion (SSC) aims to reconstruct complete 3D semantic scenes from a single RGB image, serving as a critical perception task for autonomous driving and robotics. The field has evolved from the 3D U-Net of MonoScene to BEVFormer's deformable attention and VoxFormer's depth-guided voxel queries.
 
 **Limitations of Prior Work**: 3D scenes suffer from severe dual imbalance: (1) **Spatial imbalance** — over 93% of voxels in SemanticKITTI are empty, with only 7% occupied. Existing methods treat empty and occupied voxels uniformly, wasting significant computation on uninformative regions. (2) **Semantic imbalance** — among occupied voxels, foreground categories (e.g., pedestrians, cyclists) are extremely rare, forming a long-tail distribution that causes models to overfit to frequent classes. Additionally, methods such as BEVFormer suffer from feature ambiguity, as multiple voxels along the same ray project to identical image-plane locations.
 
-**Root Cause**: The prevailing uniform processing paradigm fails to distinguish informative from uninformative voxels. Redundant computation on empty voxels is not only inefficient but also dilutes the learning signal for occupied voxels, while the long-tail distribution leads to severe under-representation of rare foreground classes.
+**Key Challenge**: The prevailing uniform processing paradigm fails to distinguish informative from uninformative voxels. Redundant computation on empty voxels is not only inefficient but also dilutes the learning signal for occupied voxels, while the long-tail distribution leads to severe under-representation of rare foreground classes.
 
-**Paper Goals**: (1) How can computation be efficiently concentrated on occupied voxels? (2) How can long-tail overfitting for rare foreground categories be mitigated?
+**Goal**: (1) How can computation be efficiently concentrated on occupied voxels? (2) How can long-tail overfitting for rare foreground categories be mitigated?
 
-**Starting Point**: Explicitly differentiating empty and occupied voxels with distinct processing pathways, while leveraging text-visual cross-modal guidance to enhance the representation of foreground categories.
+**Key Insight**: Explicitly differentiating empty and occupied voxels with distinct processing pathways, while leveraging text-visual cross-modal guidance to enhance the representation of foreground categories.
 
 **Core Idea**: A shared dummy node skips empty voxels while deformable attention refines occupied voxels to address sparsity; Foreground Dropout combined with TGIF addresses long-tail imbalance.
 

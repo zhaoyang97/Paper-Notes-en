@@ -29,15 +29,15 @@ RoboCasa365 constructs a large-scale simulation benchmark comprising 365 everyda
 
 ## Background & Motivation
 
-**State of the Field**: Robot learning has advanced rapidly in recent years, with large-scale robot foundation models such as π₀, π₀.₅, and GR00T N1.5 demonstrating generalization to novel objects, environments, and tasks.
+**Background**: Robot learning has advanced rapidly in recent years, with large-scale robot foundation models such as π₀, π₀.₅, and GR00T N1.5 demonstrating generalization to novel objects, environments, and tasks.
 
 **Limitations of Prior Work**: Training generalist robots requires massive data, yet existing real-world datasets remain limited in diversity and task coverage. Real-world evaluation is costly, noisy, and difficult to reproduce for systematic comparison.
 
-**Root Cause**: Existing simulation frameworks (e.g., RLBench, LIBERO, robosuite) offer few tasks, low environment diversity, and lack large-scale accompanying datasets, making them insufficient to support systematic research on generalist robot policies. Most frameworks focus on simple tabletop manipulation or single-room settings and cannot answer the core question of how task diversity, environment variation, and data scale affect generalization.
+**Key Challenge**: Existing simulation frameworks (e.g., RLBench, LIBERO, robosuite) offer few tasks, low environment diversity, and lack large-scale accompanying datasets, making them insufficient to support systematic research on generalist robot policies. Most frameworks focus on simple tabletop manipulation or single-room settings and cannot answer the core question of how task diversity, environment variation, and data scale affect generalization.
 
-**Paper Goals**: (a) Construct a sufficiently large and diverse simulation benchmark; (b) provide systematic evaluation protocols covering multi-task learning, foundation model pretraining + fine-tuning, and lifelong learning; (c) analyze the key factors affecting generalist robot performance through extensive experiments.
+**Goal**: (a) Construct a sufficiently large and diverse simulation benchmark; (b) provide systematic evaluation protocols covering multi-task learning, foundation model pretraining + fine-tuning, and lifelong learning; (c) analyze the key factors affecting generalist robot performance through extensive experiments.
 
-**Starting Point**: Substantially extend the existing RoboCasa platform—from 100 to 2,500 scenes, from dozens to 365 tasks, and from 100K to 500K+ demonstrations—to create an ImageNet-scale benchmark for the household kitchen domain.
+**Key Insight**: Substantially extend the existing RoboCasa platform—from 100 to 2,500 scenes, from dozens to 365 tasks, and from 100K to 500K+ demonstrations—to create an ImageNet-scale benchmark for the household kitchen domain.
 
 **Core Idea**: Through extreme scaling along three dimensions—tasks, scenes, and data—construct the first robot simulation framework that simultaneously satisfies all four conditions: large-scale tasks, large-scale scenes, large-scale data, and systematic benchmarking.
 

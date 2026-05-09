@@ -28,11 +28,11 @@ This paper proposes M4-RAG, the first large-scale multilingual, multicultural, m
 
 ## Background & Motivation
 
-1. **State of the Field**: RAG has been widely adopted in LLMs and VLMs to enhance generation quality through external knowledge retrieval. Progress has been made in multilingual RAG and multimodal RAG separately, but their intersection—multilingual multimodal RAG—remains largely unexplored.
+1. **Background**: RAG has been widely adopted in LLMs and VLMs to enhance generation quality through external knowledge retrieval. Progress has been made in multilingual RAG and multimodal RAG separately, but their intersection—multilingual multimodal RAG—remains largely unexplored.
 2. **Limitations of Prior Work**: Existing RAG evaluation benchmarks either cover only the text modality or support only English, lacking a large-scale framework that simultaneously addresses multilingual and multimodal settings. Cultural knowledge is inherently long-tailed and region-specific, making it difficult for even large models to encode reliably.
-3. **Root Cause**: In the real world, knowledge access is inherently both multilingual and multimodal, yet existing RAG evaluations fail to reflect this complexity.
-4. **Paper Goals**: (1) Construct a multimodal RAG evaluation benchmark covering 42 languages and 56 dialects; (2) Systematically study the effect of different retrieval strategies on VLMs of varying scales; (3) Quantify RAG performance degradation under cross-lingual conditions.
-5. **Starting Point**: Cultural knowledge is selected as the test scenario—being naturally long-tailed and region-specific, it is well-suited for assessing RAG effectiveness.
+3. **Key Challenge**: In the real world, knowledge access is inherently both multilingual and multimodal, yet existing RAG evaluations fail to reflect this complexity.
+4. **Goal**: (1) Construct a multimodal RAG evaluation benchmark covering 42 languages and 56 dialects; (2) Systematically study the effect of different retrieval strategies on VLMs of varying scales; (3) Quantify RAG performance degradation under cross-lingual conditions.
+5. **Key Insight**: Cultural knowledge is selected as the test scenario—being naturally long-tailed and region-specific, it is well-suited for assessing RAG effectiveness.
 6. **Core Idea**: Construct the first multilingual multimodal RAG benchmark and reveal an inverse relationship between RAG utility and model scale.
 
 ## Method

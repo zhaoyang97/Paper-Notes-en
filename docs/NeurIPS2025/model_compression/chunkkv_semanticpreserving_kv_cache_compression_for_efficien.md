@@ -28,15 +28,15 @@ ChunkKV elevates the basic unit of KV cache compression from discrete tokens to 
 
 ## Background & Motivation
 
-**State of the Field**: In long-context LLM inference, the KV cache consumes up to 70% of GPU memory. For a 7B model, the KV cache for a single token occupies approximately 0.5 MB, meaning a 10K-token prompt alone requires roughly 5 GB of VRAM. Existing compression methods (H2O, SnapKV, PyramidKV) assess token importance based on token-level attention scores and selectively discard low-scoring tokens.
+**Background**: In long-context LLM inference, the KV cache consumes up to 70% of GPU memory. For a 7B model, the KV cache for a single token occupies approximately 0.5 MB, meaning a 10K-token prompt alone requires roughly 5 GB of VRAM. Existing compression methods (H2O, SnapKV, PyramidKV) assess token importance based on token-level attention scores and selectively discard low-scoring tokens.
 
 **Limitations of Prior Work**: Token-level importance estimation ignores semantic dependencies between tokens. The example in Figure 1 clearly illustrates the problem — for the query "what does a turaco eat?", token-level methods retain individually high-scoring words (e.g., "turaco", "eat", "bamboo") while discarding their subject/predicate/object context, resulting in semantic fragmentation.
 
-**Root Cause**: Complete semantic units in natural language typically manifest as contiguous sequences (subject-verb-object structures, clauses, phrases), and token-level compression disrupts this continuity.
+**Key Challenge**: Complete semantic units in natural language typically manifest as contiguous sequences (subject-verb-object structures, clauses, phrases), and token-level compression disrupts this continuity.
 
-**Paper Goals**: Preserve complete semantic information in KV cache compression without increasing — and ideally reducing — computational overhead.
+**Goal**: Preserve complete semantic information in KV cache compression without increasing — and ideally reducing — computational overhead.
 
-**Starting Point**: Contiguous tokens are grouped into chunks (default chunk size = 10), and importance is computed, retained, or discarded at the chunk granularity. Retained chunks contain complete subject-verb-object structures, eliminating semantic fragmentation. Further analysis reveals that the cross-layer Jaccard similarity of retained chunk indices is substantially higher than that of token-level indices (57.74% vs. 27.95%), naturally motivating layer-wise index reuse for acceleration.
+**Key Insight**: Contiguous tokens are grouped into chunks (default chunk size = 10), and importance is computed, retained, or discarded at the chunk granularity. Retained chunks contain complete subject-verb-object structures, eliminating semantic fragmentation. Further analysis reveals that the cross-layer Jaccard similarity of retained chunk indices is substantially higher than that of token-level indices (57.74% vs. 27.95%), naturally motivating layer-wise index reuse for acceleration.
 
 **Core Idea**: Replace discrete tokens with semantic chunks as the atomic unit of KV cache compression, preserving complete semantic structures and exploiting cross-layer index consistency for lossless acceleration.
 

@@ -29,10 +29,10 @@ This paper proposes InvAD, which shifts diffusion-based anomaly detection from a
 
 ## Background & Motivation
 
-- **State of the Field**: Diffusion-based anomaly detection (AD) methods have achieved strong results but suffer from a fundamental efficiency–accuracy trade-off.
+- **Background**: Diffusion-based anomaly detection (AD) methods have achieved strong results but suffer from a fundamental efficiency–accuracy trade-off.
 - **Limitations of Prior Work**: (1) *Noise sensitivity*—excessively strong noise corrupts normal regions causing false positives, while insufficient noise allows anomalous regions to be reconstructed faithfully, leading to missed detections; (2) *Expensive multi-step denoising*—satisfactory reconstruction requires iterative denoising, and most methods operate at roughly 1 FPS or below (e.g., DiAD at 0.1 FPS, GLAD at 0.2 FPS).
-- **Root Cause**: Since diffusion models are trained solely on normal data distributions, reconstruction is not necessary for anomaly detection. Inversion can directly map an image into the latent space: normal images map to high-density regions of the prior distribution, whereas anomalous images map to low-density regions, entirely bypassing reconstruction and eliminating the need to tune noise strength.
-- **Paper Goals**: Propose a reconstruction-free inference paradigm based on DDIM inversion that is both more accurate and significantly faster than existing diffusion-based AD methods.
+- **Key Challenge**: Since diffusion models are trained solely on normal data distributions, reconstruction is not necessary for anomaly detection. Inversion can directly map an image into the latent space: normal images map to high-density regions of the prior distribution, whereas anomalous images map to low-density regions, entirely bypassing reconstruction and eliminating the need to tune noise strength.
+- **Goal**: Propose a reconstruction-free inference paradigm based on DDIM inversion that is both more accurate and significantly faster than existing diffusion-based AD methods.
 
 ## Method
 

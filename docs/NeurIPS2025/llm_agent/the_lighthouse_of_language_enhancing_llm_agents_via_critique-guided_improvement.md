@@ -28,18 +28,18 @@ This paper proposes CGI (Critique-Guided Improvement), a dual-role framework tha
 
 ## Background & Motivation
 
-**State of the Field**: LLM agents in interactive environments require iterative exploration and improvement. Existing feedback mechanisms fall into two categories: numerical feedback (reward models/verifier scoring) and natural language feedback (self-correction/LLM-as-judge).
+**Background**: LLM agents in interactive environments require iterative exploration and improvement. Existing feedback mechanisms fall into two categories: numerical feedback (reward models/verifier scoring) and natural language feedback (self-correction/LLM-as-judge).
 
 **Limitations of Prior Work**:
    - **Limited informativeness of numerical feedback**: Methods such as Best-of-N can only select the best candidate action but cannot provide contextual information on "why it is wrong" or "how to improve"
    - **Poor quality of self-generated feedback**: Self-refinement heavily depends on the model's intrinsic capability, is prone to hallucinations and low-quality feedback, and can even degrade performance on complex tasks
    - **Difficulty in utilizing language feedback**: Even when high-quality natural language feedback is available, agents frequently fail to correctly interpret and act upon the suggestions—a problem that is particularly pronounced after SFT fine-tuning
 
-**Root Cause**: Natural language feedback carries richer information than numerical signals, yet the two challenges of "generating high-quality feedback" and "effectively utilizing feedback" coexist and are mutually coupled
+**Key Challenge**: Natural language feedback carries richer information than numerical signals, yet the two challenges of "generating high-quality feedback" and "effectively utilizing feedback" coexist and are mutually coupled
 
-**Paper Goals**: ① How to train a dedicated Critic to generate high-quality structured language feedback? ② How to enable the Actor to genuinely learn to leverage this feedback for behavioral improvement during iteration?
+**Goal**: ① How to train a dedicated Critic to generate high-quality structured language feedback? ② How to enable the Actor to genuinely learn to leverage this feedback for behavioral improvement during iteration?
 
-**Starting Point**: Decompose the problem into an Actor-Critic dual-role structure and train each separately—the Critic distills high-quality feedback from GPT-4, while the Actor learns to refine actions under feedback guidance via iterative SFT
+**Key Insight**: Decompose the problem into an Actor-Critic dual-role structure and train each separately—the Critic distills high-quality feedback from GPT-4, while the Actor learns to refine actions under feedback guidance via iterative SFT
 
 **Core Idea**: Train a dedicated Critic to generate structured "discrimination + correction" feedback, then enable the Actor to learn to translate language feedback into improved actions through iterative refinement.
 

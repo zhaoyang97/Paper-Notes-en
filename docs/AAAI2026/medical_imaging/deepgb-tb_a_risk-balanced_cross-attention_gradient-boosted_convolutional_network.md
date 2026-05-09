@@ -28,7 +28,7 @@ This paper proposes DeepGB-TB, a multimodal TB screening system combining a ligh
 
 ## Background & Motivation
 
-**State of the Field**: Tuberculosis remains one of the leading causes of infectious disease mortality worldwide. Conventional diagnostic methods (sputum smear microscopy, NAATs) suffer from either low sensitivity or high cost requiring laboratory infrastructure, making them impractical in resource-limited settings. AI-driven TB screening is a promising direction, yet most existing approaches rely solely on audio or fail to effectively fuse heterogeneous data modalities.
+**Background**: Tuberculosis remains one of the leading causes of infectious disease mortality worldwide. Conventional diagnostic methods (sputum smear microscopy, NAATs) suffer from either low sensitivity or high cost requiring laboratory infrastructure, making them impractical in resource-limited settings. AI-driven TB screening is a promising direction, yet most existing approaches rely solely on audio or fail to effectively fuse heterogeneous data modalities.
 
 **Limitations of Prior Work**:
 - Many models use only audio, ignoring critical demographic and clinical risk factors.
@@ -36,11 +36,11 @@ This paper proposes DeepGB-TB, a multimodal TB screening system combining a ligh
 - Google HeAR achieves strong performance but is closed-source and requires online inference.
 - Poor interpretability of deep learning models hinders clinical adoption.
 
-**Root Cause**: The cost of missing a true TB case (false negative) far exceeds that of a false alarm (false positive), yet standard loss functions treat both errors equally.
+**Key Challenge**: The cost of missing a true TB case (false negative) far exceeds that of a false alarm (false positive), yet standard loss functions treat both errors equally.
 
-**Paper Goals**: Design an interpretable, mobile-deployable, multimodal TB screening system tailored for low-resource settings.
+**Goal**: Design an interpretable, mobile-deployable, multimodal TB screening system tailored for low-resource settings.
 
-**Starting Point**: Emulate clinical reasoning by integrating "who the patient is" (demographics) and "what the cough sounds like" (audio), leveraging cross-attention to allow each modality to guide the other toward the most diagnostically informative signals.
+**Key Insight**: Emulate clinical reasoning by integrating "who the patient is" (demographics) and "what the cough sounds like" (audio), leveraging cross-attention to allow each modality to guide the other toward the most diagnostically informative signals.
 
 **Core Idea**: 1D-CNN for audio + CVPEM-enhanced LightGBM for tabular features + CM-BCA bidirectional cross-attention fusion + TRBL loss to penalize missed diagnoses.
 

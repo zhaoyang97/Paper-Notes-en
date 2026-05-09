@@ -29,15 +29,15 @@ This paper is the first to formally define the Continual Multimodal Contrastive 
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal contrastive learning (MCL) aligns different modalities (vision, audio, text, etc.) into a unified representation space via contrastive objectives. Representative methods such as CLIP, ImageBind, and LanguageBind have demonstrated strong cross-modal representation capabilities.
+**Background**: Multimodal contrastive learning (MCL) aligns different modalities (vision, audio, text, etc.) into a unified representation space via contrastive objectives. Representative methods such as CLIP, ImageBind, and LanguageBind have demonstrated strong cross-modal representation capabilities.
 
 **Limitations of Prior Work**: Existing MCL methods typically assume all modality data can be collected at once and trained jointly. In practice, multimodal data often arrives in batches—new modality-pair data continually emerges—making retraining from scratch prohibitively expensive. Continual fine-tuning on existing models, however, leads to catastrophic forgetting that disrupts previously learned cross-modal alignment.
 
-**Root Cause**: Conventional continual learning methods (e.g., EWC, GEM, DER++) are designed for class-incremental or task-incremental settings and cannot handle the unique cross-modal complexity of MCL, where the contrastive objective remains consistent while the involved modality pairs continuously change. These methods suffer from a severe stability–plasticity trade-off in CMCL scenarios.
+**Key Challenge**: Conventional continual learning methods (e.g., EWC, GEM, DER++) are designed for class-incremental or task-incremental settings and cannot handle the unique cross-modal complexity of MCL, where the contrastive objective remains consistent while the involved modality pairs continuously change. These methods suffer from a severe stability–plasticity trade-off in CMCL scenarios.
 
-**Paper Goals**: (1) Formally define continual multimodal contrastive learning with rigorous mathematical definitions of stability and plasticity; (2) Design a method that preserves previously learned cross-modal alignment while effectively acquiring new modality pairs.
+**Goal**: (1) Formally define continual multimodal contrastive learning with rigorous mathematical definitions of stability and plasticity; (2) Design a method that preserves previously learned cross-modal alignment while effectively acquiring new modality pairs.
 
-**Starting Point**: From a gradient update perspective, model parameter updates are essentially modifications to a global parameter matrix. If gradients can be projected into subspaces that do not affect old data representations, both objectives can be simultaneously satisfied. This draws inspiration from null-space projection in single-modal continual learning, but the multimodal setting requires simultaneous projection from two modality sides.
+**Key Insight**: From a gradient update perspective, model parameter updates are essentially modifications to a global parameter matrix. If gradients can be projected into subspaces that do not affect old data representations, both objectives can be simultaneously satisfied. This draws inspiration from null-space projection in single-modal continual learning, but the multimodal setting requires simultaneous projection from two modality sides.
 
 **Core Idea**: Project gradients from both modality sides simultaneously into the null space of old data features, ensuring that parameter updates do not interfere with previously learned cross-modal alignment.
 

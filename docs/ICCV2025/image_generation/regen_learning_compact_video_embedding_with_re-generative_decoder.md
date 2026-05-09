@@ -25,7 +25,7 @@ REGEN replaces the conventional VAE decoder with a Diffusion Transformer (DiT) a
 
 Current latent diffusion models (LDMs) for video generation rely heavily on video embedders to compress video into a latent space for modeling. State-of-the-art video embedders such as MAGVIT-v2 typically achieve 8× spatial compression but only 4× temporal compression. Higher temporal compression is critical for training and inference efficiency but faces a fundamental bottleneck.
 
-**Root Cause**: In traditional encoder-decoder architectures, increasing the compression ratio inevitably leads to information loss; the decoder cannot accurately reconstruct high-frequency details from sparse latents, creating a fundamental compression-reconstruction trade-off.
+**Key Challenge**: In traditional encoder-decoder architectures, increasing the compression ratio inevitably leads to information loss; the decoder cannot accurately reconstruct high-frequency details from sparse latents, creating a fundamental compression-reconstruction trade-off.
 
 **Key Insight**: In the context of latent diffusion modeling, the core property of the latent space should be to **generate visually plausible content** rather than faithfully reconstruct the input video. This relaxed criterion makes it possible to substantially increase the compression ratio.
 

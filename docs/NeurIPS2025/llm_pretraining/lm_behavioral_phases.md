@@ -27,11 +27,11 @@ content_hash: 8133cffc4856dcf8
 By analyzing over 1,400 model checkpoints on 110,000+ tokens, this paper demonstrates that autoregressive language models exhibit highly consistent behavioral phases during training — predicted probabilities successively overfit to n-gram distributions of increasing $n$ — and that three simple heuristics (word frequency, n-gram probability, and semantic similarity) explain up to 98% of the variance in model behavior. This pattern holds consistently across architectures (Transformer/Mamba/RWKV), datasets, and scales.
 
 ## Background & Motivation
-1. **State of the Field**: Language models trained via next-token prediction exhibit emergent capabilities such as grammatical generation and knowledge-based reasoning, yet the regularities underlying the learning process remain poorly understood.
+1. **Background**: Language models trained via next-token prediction exhibit emergent capabilities such as grammatical generation and knowledge-based reasoning, yet the regularities underlying the learning process remain poorly understood.
 2. **Limitations of Prior Work**: Existing analyses have largely focused on abrupt changes in specific behaviors or subnetworks, lacking a systematic characterization of overall model behavior across training.
-3. **Root Cause**: It remains unclear whether universal learning regularities exist that are independent of model-specific details such as architecture, scale, and data.
-4. **Paper Goals**: To quantitatively characterize the behavioral changes of language models throughout training using simple heuristics.
-5. **Starting Point**: The analysis focuses on three heuristics — word frequency (unigram), n-gram probability, and contextual semantic similarity.
+3. **Key Challenge**: It remains unclear whether universal learning regularities exist that are independent of model-specific details such as architecture, scale, and data.
+4. **Goal**: To quantitatively characterize the behavioral changes of language models throughout training using simple heuristics.
+5. **Key Insight**: The analysis focuses on three heuristics — word frequency (unigram), n-gram probability, and contextual semantic similarity.
 6. **Core Idea**: All models undergo the same behavioral phases: initial overfitting to low-order n-grams, progressive overfitting to higher-order n-grams, and early rapid establishment of correlation with semantic similarity.
 
 ## Method

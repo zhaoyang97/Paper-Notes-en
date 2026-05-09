@@ -27,15 +27,15 @@ Inspired by the fly olfactory circuit, FlyLoRA replaces the down-projection matr
 
 ## Background & Motivation
 
-**State of the Field**: LoRA is the most widely used PEFT method, yet it typically requires a high rank to achieve strong performance on complex tasks, and interactions among ranks introduce parameter interference. MoE-based LoRA variants decompose LoRA into multiple experts with sparse router activation, partially alleviating intra-task interference.
+**Background**: LoRA is the most widely used PEFT method, yet it typically requires a high rank to achieve strong performance on complex tasks, and interactions among ranks introduce parameter interference. MoE-based LoRA variants decompose LoRA into multiple experts with sparse router activation, partially alleviating intra-task interference.
 
 **Limitations of Prior Work**: (a) Pushing expert granularity to the extreme (rank-1 experts) yields the best results, but the router parameter matrix $W_g \in \mathbb{R}^{N \times n}$ grows linearly with the number of experts $N$, reducing efficiency. (b) Existing MoE-LoRA methods still suffer from inter-task interference during multi-task model merging (conflicts between different LoRA components).
 
-**Root Cause**: Finer-grained expert assignment improves decorrelation but introduces more router parameters, creating a performance–efficiency trade-off. Moreover, existing methods lack a natural mechanism for inter-task decoupling.
+**Key Challenge**: Finer-grained expert assignment improves decorrelation but introduces more router parameters, creating a performance–efficiency trade-off. Moreover, existing methods lack a natural mechanism for inter-task decoupling.
 
-**Paper Goals**: Simultaneously achieve (a) reduced parameter interference across ranks (intra-task); (b) reduced interference across different LoRA modules (inter-task); and (c) fewer trainable router parameters.
+**Goal**: Simultaneously achieve (a) reduced parameter interference across ranks (intra-task); (b) reduced interference across different LoRA modules (inter-task); and (c) fewer trainable router parameters.
 
-**Starting Point**: In the fly olfactory circuit, projection neurons (PNs) project to Kenyon cells (KCs) via sparse random connections, followed by lateral inhibition that implements winner-take-all sparse activation. This structure closely parallels the MoE-LoRA paradigm of "low-dimensional input → sparse activation → selective output."
+**Key Insight**: In the fly olfactory circuit, projection neurons (PNs) project to Kenyon cells (KCs) via sparse random connections, followed by lateral inhibition that implements winner-take-all sparse activation. This structure closely parallels the MoE-LoRA paradigm of "low-dimensional input → sparse activation → selective output."
 
 **Core Idea**: Replace the $A$ matrix with a frozen sparse random projection that jointly serves as the down-projection and the router, thereby eliminating the explicit router.
 

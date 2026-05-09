@@ -29,14 +29,14 @@ This paper proposes ReMoGen, a modular framework for real-time human interaction
 
 ## Background & Motivation
 
-1. **State of the Field**: Human motion generation has evolved from text-driven single-person synthesis to multi-agent interaction scenarios. Existing approaches include: text-to-motion methods (T2M, MotionDiffuse) that generate isolated motions only; human-scene interaction methods (TRUMANS, LINGO) that introduce spatial awareness but are limited to single agents; and human-human interaction methods (ReGenNet, FreeMotion) that attempt joint generation but operate predominantly in offline mode.
+1. **Background**: Human motion generation has evolved from text-driven single-person synthesis to multi-agent interaction scenarios. Existing approaches include: text-to-motion methods (T2M, MotionDiffuse) that generate isolated motions only; human-scene interaction methods (TRUMANS, LINGO) that introduce spatial awareness but are limited to single agents; and human-human interaction methods (ReGenNet, FreeMotion) that attempt joint generation but operate predominantly in offline mode.
 2. **Limitations of Prior Work**:
    - **Data scarcity and heterogeneity**: Single-person motion data is abundant (HumanML3D), whereas human-human interaction (Inter-X) and human-scene interaction (LINGO) datasets are scarce and exhibit large distributional discrepancies, causing end-to-end models trained on a single domain to overfit.
    - **Real-time responsiveness**: Diffusion models yield high quality but incur large latency incompatible with real-time use; autoregressive models are fast but suffer from error accumulation and drift.
    - Most existing methods assume full observation of the counterpart's complete trajectory, which is infeasible in practical online interaction settings.
-3. **Root Cause**: How to simultaneously achieve high-fidelity and low-latency interaction-to-reaction generation under data-scarce conditions.
-4. **Paper Goals**: (1) Efficient knowledge transfer across heterogeneous interaction domains; (2) Real-time responsiveness without sacrificing motion quality.
-5. **Starting Point**: Decouple general motion prior learning from interaction-specific adaptation — freeze a backbone pretrained on large-scale single-person data and inject interaction awareness via lightweight modules.
+3. **Key Challenge**: How to simultaneously achieve high-fidelity and low-latency interaction-to-reaction generation under data-scarce conditions.
+4. **Goal**: (1) Efficient knowledge transfer across heterogeneous interaction domains; (2) Real-time responsiveness without sacrificing motion quality.
+5. **Key Insight**: Decouple general motion prior learning from interaction-specific adaptation — freeze a backbone pretrained on large-scale single-person data and inject interaction awareness via lightweight modules.
 6. **Core Idea**: Prior-guided modular learning + frame-level intra-segment refinement; the former addresses data heterogeneity and the latter addresses real-time requirements.
 
 ## Method

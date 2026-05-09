@@ -35,7 +35,7 @@ Existing approaches and their limitations:
 - **Data-driven methods** (e.g., MeshGPT, SpaceMesh): Transformer-based connectivity prediction, but not robust to outliers and self-intersections.
 - **DMesh**: A probabilistic method proposed by Son et al. that assigns an existence probability to each face via WDT, avoiding self-intersections and outliers. However, WDT has $O(N)$ complexity and is difficult to parallelize on GPUs, requiring ~800 ms for $N=100\text{K}$ points in 3D.
 
-**Root Cause**: DMesh's probabilistic framework is theoretically elegant, but the computational bottleneck of WDT severely limits its applicability to complex shapes.
+**Key Challenge**: DMesh's probabilistic framework is theoretically elegant, but the computational bottleneck of WDT severely limits its applicability to complex shapes.
 
 **Core Idea**: Design a Minimum-Ball condition to replace WDT, preserving DMesh's advantages of no self-intersections and few degenerate triangles while reducing complexity to $O(\log N)$ for efficient GPU parallelization.
 

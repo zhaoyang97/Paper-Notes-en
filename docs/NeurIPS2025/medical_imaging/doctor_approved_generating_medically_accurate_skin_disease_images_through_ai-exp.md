@@ -28,15 +28,15 @@ This paper proposes MAGIC, a framework that encodes dermatologist-defined clinic
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning holds great promise for skin disease diagnosis, but privacy constraints and data scarcity—particularly for rare conditions and underrepresented skin tones—severely limit model generalization. Diffusion models (DMs) have been explored for synthesizing medical images to augment training data.
+**Background**: Deep learning holds great promise for skin disease diagnosis, but privacy constraints and data scarcity—particularly for rare conditions and underrepresented skin tones—severely limit model generalization. Diffusion models (DMs) have been explored for synthesizing medical images to augment training data.
 
 **Limitations of Prior Work**: Existing DM-based augmentation methods typically follow an end-to-end generation pipeline, where expert involvement is limited to post-hoc evaluation or filtering rather than actively guiding the generation process. As a result, synthetic images frequently lack clinical accuracy (e.g., incorrect lesion characteristics) and may even degrade diagnostic model performance.
 
-**Root Cause**: Reinforcement learning from human feedback (RLHF) requires extensive expert annotation and robust reward model training. While DPO bypasses the explicit reward model, it remains underexplored in the medical imaging domain. Moreover, having medical experts manually evaluate large volumes of synthetic images is prohibitively expensive.
+**Key Challenge**: Reinforcement learning from human feedback (RLHF) requires extensive expert annotation and robust reward model training. While DPO bypasses the explicit reward model, it remains underexplored in the medical imaging domain. Moreover, having medical experts manually evaluate large volumes of synthetic images is prohibitively expensive.
 
-**Paper Goals**: How can high-quality clinical feedback be obtained with minimal expert effort to guide diffusion model generation?
+**Goal**: How can high-quality clinical feedback be obtained with minimal expert effort to guide diffusion model generation?
 
-**Starting Point**: MLLMs (e.g., GPT-4o) are employed as automated evaluators. Experts only need to design structured clinical checklists (5 visual criteria per disease); the MLLM then evaluates synthetic images against the checklist and returns binary scores, substantially reducing manual workload. This constitutes a "task-centric" alignment paradigm: rather than adapting MLLMs to medical tasks, complex medical judgments are decomposed into simple visual verification subtasks that MLLMs can reliably perform.
+**Key Insight**: MLLMs (e.g., GPT-4o) are employed as automated evaluators. Experts only need to design structured clinical checklists (5 visual criteria per disease); the MLLM then evaluates synthetic images against the checklist and returns binary scores, substantially reducing manual workload. This constitutes a "task-centric" alignment paradigm: rather than adapting MLLMs to medical tasks, complex medical judgments are decomposed into simple visual verification subtasks that MLLMs can reliably perform.
 
 **Core Idea**: Clinical expert knowledge is encoded as attribute-level checklists, enabling general-purpose MLLMs to automatically evaluate synthetic images. DPO is then applied to guide diffusion models toward generating clinically accurate medical images.
 

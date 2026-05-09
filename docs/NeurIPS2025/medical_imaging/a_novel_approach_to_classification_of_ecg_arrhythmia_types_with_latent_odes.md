@@ -29,15 +29,15 @@ This work combines a path-minimized Latent ODE encoder with a gradient-boosted d
 
 ## Background & Motivation
 
-**State of the Field**: Cardiovascular disease is one of the leading causes of death worldwide, and arrhythmia detection relies on electrocardiography (ECG). The clinical standard is the 12-lead ECG, operated by trained professionals, providing high-frequency (>250 Hz) but short-duration "snapshot" monitoring. In recent years, wearable ECG devices (typically single-lead) have proliferated rapidly due to their ability to support long-term, continuous monitoring, making them particularly suitable for capturing intermittent or paroxysmal arrhythmias.
+**Background**: Cardiovascular disease is one of the leading causes of death worldwide, and arrhythmia detection relies on electrocardiography (ECG). The clinical standard is the 12-lead ECG, operated by trained professionals, providing high-frequency (>250 Hz) but short-duration "snapshot" monitoring. In recent years, wearable ECG devices (typically single-lead) have proliferated rapidly due to their ability to support long-term, continuous monitoring, making them particularly suitable for capturing intermittent or paroxysmal arrhythmias.
 
 **Limitations of Prior Work**: Wearable devices face a fundamental engineering trade-off — higher sampling rates yield more faithful signals but consume more power and reduce battery life; lower sampling rates extend battery life but lose morphological detail, degrading classification accuracy. Existing deep learning ECG classification models (e.g., the end-to-end CNN by Hannun et al.) are trained and evaluated on high-frequency data, and no systematic study has examined their performance when input is downsampled to 90 Hz or 45 Hz.
 
-**Root Cause**: A fundamental trade-off exists between signal fidelity (high sampling rate) and device usability (long battery life / small form factor). The central question is whether it is possible to build a classification system that is trained on high-frequency data yet remains effective at lower frequencies.
+**Key Challenge**: A fundamental trade-off exists between signal fidelity (high sampling rate) and device usability (long battery life / small form factor). The central question is whether it is possible to build a classification system that is trained on high-frequency data yet remains effective at lower frequencies.
 
-**Paper Goals**: To construct an end-to-end ECG arrhythmia classification pipeline that is robust to sampling rate variation.
+**Goal**: To construct an end-to-end ECG arrhythmia classification pipeline that is robust to sampling rate variation.
 
-**Starting Point**: Latent ODEs model time series as continuous differential equations in latent space, with an encoder that does not depend on fixed time intervals — inputs are $(x, t)$ pairs rather than uniformly sampled arrays. This means signals at different sampling rates can all be mapped into the same continuous latent space.
+**Key Insight**: Latent ODEs model time series as continuous differential equations in latent space, with an encoder that does not depend on fixed time intervals — inputs are $(x, t)$ pairs rather than uniformly sampled arrays. This means signals at different sampling rates can all be mapped into the same continuous latent space.
 
 **Core Idea**: A Latent ODE encoder maps each ECG beat into a sampling-rate-agnostic continuous latent representation, upon which a lightweight GBDT classifier is trained.
 

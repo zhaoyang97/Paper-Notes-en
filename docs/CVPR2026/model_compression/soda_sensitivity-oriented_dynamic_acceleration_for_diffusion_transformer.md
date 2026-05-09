@@ -30,13 +30,13 @@ SODA is proposed to achieve controllable-speedup high-fidelity generation for Di
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion Transformers excel at image and video generation, but repeated sampling steps and Transformer blocks result in low inference efficiency, severely hindering deployment.
+**Background**: Diffusion Transformers excel at image and video generation, but repeated sampling steps and Transformer blocks result in low inference efficiency, severely hindering deployment.
 
 **Limitations of Prior Work**: Training-based acceleration methods such as distillation and fine-tuning incur high computational costs and limited generalizability, motivating the pursuit of training-free acceleration. Caching offers high efficiency at the cost of fidelity, while pruning is flexible but less efficient; combining both is desirable. Existing methods such as ToCa and DuCa rely on fixed or heuristic configurations for cache intervals and pruning rates, capturing only coarse-grained sensitivity trends and failing to account for fine-grained variation across timesteps, layers, and module dimensions.
 
-**Root Cause**: Heuristic schemes inevitably skip computations that are highly sensitive to acceleration, leading to degraded generation fidelity and poor cross-model generalizability.
+**Key Challenge**: Heuristic schemes inevitably skip computations that are highly sensitive to acceleration, leading to degraded generation fidelity and poor cross-model generalizability.
 
-**Paper Goals**: To design a training-free acceleration framework that models sensitivity at fine granularity and optimizes caching and pruning decisions jointly and adaptively.
+**Goal**: To design a training-free acceleration framework that models sensitivity at fine granularity and optimizes caching and pruning decisions jointly and adaptively.
 
 ## Method
 

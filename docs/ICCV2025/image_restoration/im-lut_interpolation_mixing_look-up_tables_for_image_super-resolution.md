@@ -29,15 +29,15 @@ This paper proposes IM-LUT, which achieves arbitrary-scale image super-resolutio
 
 ## Background & Motivation
 
-**State of the Field**: Image super-resolution (SR) is a fundamental vision task for enhancing image resolution. Mainstream methods include CNN-based approaches such as EDSR and RCAN, and Transformer-based methods such as SwinIR, which achieve strong results at fixed upscaling factors but typically incur substantial computational overhead. In recent years, look-up table (LUT) methods have emerged—precomputing and storing the input-output mappings of trained networks as LUTs, so that inference requires only table lookups rather than network computation, achieving extremely fast inference speeds.
+**Background**: Image super-resolution (SR) is a fundamental vision task for enhancing image resolution. Mainstream methods include CNN-based approaches such as EDSR and RCAN, and Transformer-based methods such as SwinIR, which achieve strong results at fixed upscaling factors but typically incur substantial computational overhead. In recent years, look-up table (LUT) methods have emerged—precomputing and storing the input-output mappings of trained networks as LUTs, so that inference requires only table lookups rather than network computation, achieving extremely fast inference speeds.
 
 **Limitations of Prior Work**: LUT methods suffer from two key limitations. First, existing LUT-SR methods (e.g., SR-LUT, MuLUT) support only fixed upscaling factors (e.g., ×2, ×4), requiring a separate LUT for each scale and being incapable of handling arbitrary factors (e.g., ×2.5, ×3.7). Second, arbitrary-scale image super-resolution (ASISR) methods (e.g., LIIF, LTE, CiaoSR) are based on implicit neural representations (INR), which are flexible but computationally and memory intensive, making them unsuitable for resource-constrained devices.
 
-**Root Cause**: LUT methods are fast but inflexible (fixed scale), while INR methods are flexible but slow. The challenge lies in supporting arbitrary-scale super-resolution while retaining the inference efficiency of LUTs.
+**Key Challenge**: LUT methods are fast but inflexible (fixed scale), while INR methods are flexible but slow. The challenge lies in supporting arbitrary-scale super-resolution while retaining the inference efficiency of LUTs.
 
-**Paper Goals**: To design a framework capable of handling arbitrary scale factors in super-resolution while achieving lightweight, fast CPU inference similar to LUT-based methods.
+**Goal**: To design a framework capable of handling arbitrary scale factors in super-resolution while achieving lightweight, fast CPU inference similar to LUT-based methods.
 
-**Starting Point**: The key insight of this work is that standard interpolation functions (bilinear, bicubic, etc.) are inherently "arbitrary-scale," but any single interpolation function has limited expressive capacity. If the model can learn to adaptively mix multiple interpolation functions based on local image patterns and the target scale factor, high-quality arbitrary-scale super-resolution can be achieved without resorting to INR. Crucially, the mixing weight prediction network can be converted into a LUT.
+**Key Insight**: The key insight of this work is that standard interpolation functions (bilinear, bicubic, etc.) are inherently "arbitrary-scale," but any single interpolation function has limited expressive capacity. If the model can learn to adaptively mix multiple interpolation functions based on local image patterns and the target scale factor, high-quality arbitrary-scale super-resolution can be achieved without resorting to INR. Crucially, the mixing weight prediction network can be converted into a LUT.
 
 **Core Idea**: Train an IM-Net to predict mixing weights over multiple interpolation functions, then convert IM-Net into IM-LUT (look-up table form) to enable lightweight arbitrary-scale super-resolution.
 

@@ -29,7 +29,7 @@ TrinityDNA is a bio-inspired DNA foundation model integrating three innovations:
 
 ## Background & Motivation
 
-**State of the Field**: DNA sequence modeling in genomics faces unique challenges—sequences are extremely long (tens to hundreds of thousands of base pairs), information density is low (abundant repetitive and non-coding regions), and sequences exhibit complex biological structures (double-strand complementarity, groove structures, long-range regulatory dependencies). Existing DNA foundation models (e.g., HyenaDNA, Caduceus/MambaDNA, DNABERT2) each have notable limitations.
+**Background**: DNA sequence modeling in genomics faces unique challenges—sequences are extremely long (tens to hundreds of thousands of base pairs), information density is low (abundant repetitive and non-coding regions), and sequences exhibit complex biological structures (double-strand complementarity, groove structures, long-range regulatory dependencies). Existing DNA foundation models (e.g., HyenaDNA, Caduceus/MambaDNA, DNABERT2) each have notable limitations.
 
 **Limitations of Prior Work**:
    - **Locality bias in SSMs**: Although SSMs can theoretically handle long sequences, empirical analysis (Figure 2) shows that influence scores in Caduceus decay rapidly with distance, losing focus at long range.
@@ -37,9 +37,9 @@ TrinityDNA is a bio-inspired DNA foundation model integrating three innovations:
    - **Lack of biological structural awareness**: Existing models do not explicitly model major/minor groove structures of DNA, nor do they fully exploit reverse complement strand information.
    - **Poor cross-species generalization from single-species training**: Many models are trained on data from a single species, limiting cross-species generalization.
 
-**Root Cause**: How can a model maintain computational efficiency while capturing both biological structural features of DNA and multi-scale dependencies in ultra-long sequences?
+**Key Challenge**: How can a model maintain computational efficiency while capturing both biological structural features of DNA and multi-scale dependencies in ultra-long sequences?
 
-**Starting Point**: A trinity of "sequence + structure + strategy"—sequence modeling (multi-window attention), structure awareness (groove fusion + reverse complement), and training strategy (evolutionary learning from prokaryotes to eukaryotes).
+**Key Insight**: A trinity of "sequence + structure + strategy"—sequence modeling (multi-window attention), structure awareness (groove fusion + reverse complement), and training strategy (evolutionary learning from prokaryotes to eukaryotes).
 
 ## Method
 

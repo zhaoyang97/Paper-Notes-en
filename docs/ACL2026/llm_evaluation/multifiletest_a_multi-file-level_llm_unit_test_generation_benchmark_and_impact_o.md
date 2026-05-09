@@ -28,15 +28,15 @@ This paper introduces MultiFileTest, the first multi-file-level benchmark for LL
 
 ## Background & Motivation
 
-**State of the Field**: LLM-driven unit test generation has become an important use case for code assistance, significantly improving test readability and generation efficiency. Existing benchmarks primarily evaluate test generation for function-level or class-level (single-file) code.
+**Background**: LLM-driven unit test generation has become an important use case for code assistance, significantly improving test readability and generation efficiency. Existing benchmarks primarily evaluate test generation for function-level or class-level (single-file) code.
 
 **Limitations of Prior Work**: (1) Real-world projects involve cross-file function interactions and complex dependencies, yet existing benchmarks overlook the challenges of multi-file test generation. (2) DevBench, the only benchmark touching multi-file testing, contains only 16 projects and is designed for breadth rather than depth, lacking systematic analysis of cross-file dependencies and errors. (3) A large proportion of LLM-generated tests contain fundamental errors (non-executable tests, cascading failures) that impede evaluation of higher-level capabilities such as correctness and coverage.
 
-**Root Cause**: The core difficulty in multi-file test generation lies not in generating test logic per se, but in correctly understanding cross-file dependencies and properly setting up the test environment—precisely where LLM reasoning is weakest.
+**Key Challenge**: The core difficulty in multi-file test generation lies not in generating test logic per se, but in correctly understanding cross-file dependencies and properly setting up the test environment—precisely where LLM reasoning is weakest.
 
-**Paper Goals**: (1) Construct a high-quality multi-file test benchmark; (2) systematically evaluate state-of-the-art LLMs on this task; (3) analyze error types and assess the effectiveness of repair mechanisms.
+**Goal**: (1) Construct a high-quality multi-file test benchmark; (2) systematically evaluate state-of-the-art LLMs on this task; (3) analyze error types and assess the effectiveness of repair mechanisms.
 
-**Starting Point**: By re-evaluating after manually fixing basic errors, the paper distinguishes between "insufficient foundational capability" and "insufficient advanced capability," revealing the true potential differences among models.
+**Key Insight**: By re-evaluating after manually fixing basic errors, the paper distinguishes between "insufficient foundational capability" and "insufficient advanced capability," revealing the true potential differences among models.
 
 **Core Idea**: Evaluation is conducted under three scenarios—original generation (Scenario 1), after manual repair (Scenario 2), and after LLM self-repair (Scenario 3)—with ranking shifts before and after error fixing used to expose fundamental differences between models.
 

@@ -28,15 +28,15 @@ This work identifies that existing LVLMs effectively ignore intermediate rationa
 
 ## Background & Motivation
 
-**State of the Field**: Large vision-language models (LVLMs) adopt chain-of-thought (CoT) methods from LLMs, first generating intermediate reasoning (rationale), then producing the final answer conditioned on image, rationale, and question. CoT is widely believed to enhance grounding and accuracy in multimodal reasoning.
+**Background**: Large vision-language models (LVLMs) adopt chain-of-thought (CoT) methods from LLMs, first generating intermediate reasoning (rationale), then producing the final answer conditioned on image, rationale, and question. CoT is widely believed to enhance grounding and accuracy in multimodal reasoning.
 
 **Limitations of Prior Work**: The authors reveal a surprising finding through two key experiments—LVLMs **effectively ignore rationale content** during CoT reasoning. (1) Attention contribution analysis: when image and rationale are both provided, the attention contribution from rationale tokens drops significantly, with image tokens dominating prediction; (2) Rationale substitution experiment: replacing the correct rationale with a completely irrelevant one leaves model performance nearly unchanged, demonstrating that the model does not utilize the semantic content of the rationale at all.
 
-**Root Cause**: The joint conditional probability $p_\theta(y_i|\mathbf{y}_{<i}, x, r, q)$ fails in practice to leverage the information in $r$—image tokens exert far greater "attraction" than rationale tokens. Yet dropping the image and using only $p_\theta(y_i|\mathbf{y}_{<i}, r, q)$ discards visual information.
+**Key Challenge**: The joint conditional probability $p_\theta(y_i|\mathbf{y}_{<i}, x, r, q)$ fails in practice to leverage the information in $r$—image tokens exert far greater "attraction" than rationale tokens. Yet dropping the image and using only $p_\theta(y_i|\mathbf{y}_{<i}, r, q)$ discards visual information.
 
-**Paper Goals**: Design a training-free decoding strategy that enables LVLMs to **genuinely** exploit both image and rationale information during CoT reasoning.
+**Goal**: Design a training-free decoding strategy that enables LVLMs to **genuinely** exploit both image and rationale information during CoT reasoning.
 
-**Starting Point**: **Decouple** image conditioning and rationale conditioning into two independent distributions and compose them at the logit level, bypassing the problem of rationale being ignored under joint conditioning.
+**Key Insight**: **Decouple** image conditioning and rationale conditioning into two independent distributions and compose them at the logit level, bypassing the problem of rationale being ignored under joint conditioning.
 
 **Core Idea**: By reformulating CoT reasoning as KL-constrained maximization with rationale-conditioned log-likelihood as the reward, the optimal decoding strategy is derived as the image-conditioned probability multiplied by the $\lambda$-th power of the rationale-conditioned probability.
 

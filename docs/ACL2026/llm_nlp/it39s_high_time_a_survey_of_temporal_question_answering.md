@@ -29,15 +29,15 @@ This paper presents a comprehensive survey of Temporal Question Answering (TQA),
 
 ## Background & Motivation
 
-**State of the Field**: Time is a fundamental dimension in information generation, retrieval, and understanding. The explosive growth of timestamped content from news, social media, and knowledge bases has driven the need for QA systems capable of handling temporal constraints and context. TQA has evolved from rule-based pipelines to Transformer- and LLM-based systems.
+**Background**: Time is a fundamental dimension in information generation, retrieval, and understanding. The explosive growth of timestamped content from news, social media, and knowledge bases has driven the need for QA systems capable of handling temporal constraints and context. TQA has evolved from rule-based pipelines to Transformer- and LLM-based systems.
 
 **Limitations of Prior Work**: TQA faces unique challenges: (1) temporal ambiguity resolution—vague expressions such as "recently" and "post-war" require contextual anchoring; (2) cross-temporal reasoning—understanding causal and sequential relations among events; (3) knowledge mutability—facts evolve over time, and static corpora and pretrained models cannot answer time-sensitive queries; (4) temporal intent may be implicit, requiring systems to infer appropriate temporal scopes.
 
-**Root Cause**: Existing surveys either focus on general QA/IR or address only narrow aspects of temporal processing. The most recent TQA survey (Campos et al., 2014) predates modern temporal language models, RAG systems, and large-scale temporal benchmarks, leaving a significant knowledge gap.
+**Key Challenge**: Existing surveys either focus on general QA/IR or address only narrow aspects of temporal processing. The most recent TQA survey (Campos et al., 2014) predates modern temporal language models, RAG systems, and large-scale temporal benchmarks, leaving a significant knowledge gap.
 
-**Paper Goals**: To provide a comprehensive survey of TQA covering non-structured text, with a unified comparative framework for datasets, tasks, and methods.
+**Goal**: To provide a comprehensive survey of TQA covering non-structured text, with a unified comparative framework for datasets, tasks, and methods.
 
-**Starting Point**: A three-dimensional analytical framework is proposed—corpus temporality (synchronic vs. diachronic), question temporality (explicit/implicit intent, temporal direction, reasoning complexity), and model temporal capability (temporal language modeling, temporally-aware retrieval, temporal reasoning)—serving as the organizing principle throughout the survey.
+**Key Insight**: A three-dimensional analytical framework is proposed—corpus temporality (synchronic vs. diachronic), question temporality (explicit/implicit intent, temporal direction, reasoning complexity), and model temporal capability (temporal language modeling, temporally-aware retrieval, temporal reasoning)—serving as the organizing principle throughout the survey.
 
 **Core Idea**: The central challenge of TQA lies in the "misalignment" among the three dimensions—system failures arise when corpus temporality, question temporality, and model capability are not aligned.
 

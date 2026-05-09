@@ -28,15 +28,15 @@ This paper proposes the Episodic Spatial World Model (ESWM), which constructs sp
 
 ## Background & Motivation
 
-**State of the Field**: Existing world models typically require long sequences of continuous trajectories for training, encoding environmental knowledge into model weights. Representative approaches such as TEM and GTM-SM rely on continuous observation sequences and assume a fixed shared structure across environments.
+**Background**: Existing world models typically require long sequences of continuous trajectories for training, encoding environmental knowledge into model weights. Representative approaches such as TEM and GTM-SM rely on continuous observation sequences and assume a fixed shared structure across environments.
 
 **Limitations of Prior Work**: (1) In real-world scenarios, an agent's observations are often fragmentary—accessing different parts of an environment at different times without continuous long trajectories; (2) Environments may undergo structural changes (e.g., newly added obstacles), requiring weight-based models to be retrained for adaptation; (3) Sequence models incur prohibitive computational costs when scaling to large environments.
 
-**Root Cause**: Existing models encode structural knowledge of the environment into weights, making it (a) impossible to build maps rapidly from fragmented experience, and (b) infeasible to dynamically adapt to environmental changes.
+**Key Challenge**: Existing models encode structural knowledge of the environment into weights, making it (a) impossible to build maps rapidly from fragmented experience, and (b) infeasible to dynamically adapt to environmental changes.
 
-**Paper Goals**: Can a consistent spatial world model be efficiently constructed from only sparse, disconnected episodic memories?
+**Goal**: Can a consistent spatial world model be efficiently constructed from only sparse, disconnected episodic memories?
 
-**Starting Point**: Inspired by neuroscience—the medial temporal lobe (MTL) is responsible for both spatial representation and episodic memory, constructing relational networks by integrating overlapping episodic memories. The authors hypothesize that a model can infer complete spatial structure from a set of independent one-step transitions, without requiring continuous trajectories.
+**Key Insight**: Inspired by neuroscience—the medial temporal lobe (MTL) is responsible for both spatial representation and episodic memory, constructing relational networks by integrating overlapping episodic memories. The authors hypothesize that a model can infer complete spatial structure from a set of independent one-step transitions, without requiring continuous trajectories.
 
 **Core Idea**: Reformulating world modeling from sequential learning to set-based reasoning—using a Transformer to infer spatial relationships from a collection of disconnected episodic memories.
 

@@ -29,15 +29,15 @@ This paper proposes the Self-Braking Tuning (SBT) framework, which identifies ov
 
 ## Background & Motivation
 
-**State of the Field**: Large reasoning models (e.g., OpenAI o1, DeepSeek-R1) improve accuracy by generating detailed multi-step reasoning chains, achieving strong performance on mathematical and logical tasks.
+**Background**: Large reasoning models (e.g., OpenAI o1, DeepSeek-R1) improve accuracy by generating detailed multi-step reasoning chains, achieving strong performance on mathematical and logical tasks.
 
 **Limitations of Prior Work**: These models commonly exhibit "overthinking"—continuing to generate extensive redundant reasoning steps even after a correct answer has been reached. This leads to enormous computational overhead (thousands of tokens per problem), increased latency, and potential interference with the final answer from redundant reasoning.
 
-**Root Cause**: Most existing approaches to mitigating overthinking rely on external intervention mechanisms—RL reward constraints, token budget limits, inference-time truncation—without fully leveraging the model's own capacity to identify redundant reasoning. This external control paradigm increases system complexity and lacks flexibility.
+**Key Challenge**: Most existing approaches to mitigating overthinking rely on external intervention mechanisms—RL reward constraints, token budget limits, inference-time truncation—without fully leveraging the model's own capacity to identify redundant reasoning. This external control paradigm increases system complexity and lacks flexibility.
 
-**Paper Goals**: Can LRMs autonomously identify redundant reasoning and stop at the appropriate moment? That is, can a "braking mechanism" be internalized so that the model naturally terminates reasoning upon reaching sufficient confidence, analogous to human reasoning?
+**Goal**: Can LRMs autonomously identify redundant reasoning and stop at the appropriate moment? That is, can a "braking mechanism" be internalized so that the model naturally terminates reasoning upon reaching sufficient confidence, analogous to human reasoning?
 
-**Starting Point**: The authors observe that LRM reasoning traces exhibit a clear structure: a Foundation Solution (the first complete solution attempt) followed by multiple Evolution Solutions (reflections, verifications, and alternative approaches). Overthinking primarily occurs during the Evolution Solution phase. The paper quantifies the turning point of overthinking by combining structural efficiency metrics with linguistic marker metrics.
+**Key Insight**: The authors observe that LRM reasoning traces exhibit a clear structure: a Foundation Solution (the first complete solution attempt) followed by multiple Evolution Solutions (reflections, verifications, and alternative approaches). Overthinking primarily occurs during the Evolution Solution phase. The paper quantifies the turning point of overthinking by combining structural efficiency metrics with linguistic marker metrics.
 
 **Core Idea**: Quantitative metrics are used to locate the onset of redundant reasoning; adaptive-length training data is then constructed with braking prompts, enabling models to learn to autonomously terminate overthinking via SFT.
 

@@ -30,11 +30,11 @@ This work systematically investigates the optimal architecture and training stra
 
 ### Limitations of Prior Work
 
-**State of the Field**: Mainstream VLMs (e.g., LLaVA/InternVL) rely on pretrained visual encoders (e.g., CLIP-ViT), which introduce resolution/aspect-ratio biases, complex multi-component coordination, and difficulties in independent scaling. Encoder-free VLMs (e.g., Fuyu/EVEv1) let a unified decoder-only model learn visual perception from scratch, yielding a simpler architecture. However, two key challenges remain: (1) learning visual perception from scratch requires substantial data and computation; (2) visual and linguistic representations within the same model can interfere with each other — naive weight sharing or MoE-based decoupling proves insufficient.
+**Background**: Mainstream VLMs (e.g., LLaVA/InternVL) rely on pretrained visual encoders (e.g., CLIP-ViT), which introduce resolution/aspect-ratio biases, complex multi-component coordination, and difficulties in independent scaling. Encoder-free VLMs (e.g., Fuyu/EVEv1) let a unified decoder-only model learn visual perception from scratch, yielding a simpler architecture. However, two key challenges remain: (1) learning visual perception from scratch requires substantial data and computation; (2) visual and linguistic representations within the same model can interfere with each other — naive weight sharing or MoE-based decoupling proves insufficient.
 
 ### Mechanism
 
-**Paper Goals**: How can encoder-free VLMs efficiently learn visual perception from scratch while minimizing representational interference between visual and linguistic modalities?
+**Goal**: How can encoder-free VLMs efficiently learn visual perception from scratch while minimizing representational interference between visual and linguistic modalities?
 
 ## Method
 

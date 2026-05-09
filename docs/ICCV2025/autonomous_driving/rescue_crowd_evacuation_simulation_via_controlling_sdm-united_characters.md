@@ -26,7 +26,7 @@ This paper proposes RESCUE, the first online SDM (Sensing–Decision–Motion) u
 
 ### Limitations of Prior Work
 
-**Limitations of Prior Work**: **State of the Field**: Crowd evacuation simulation is critical for public safety, yet existing methods fail to simultaneously satisfy the following requirements:
+**Limitations of Prior Work**: **Background**: Crowd evacuation simulation is critical for public safety, yet existing methods fail to simultaneously satisfy the following requirements:
 
 **Simplified representations in traditional simulation**: Social Force Models (SFM) rely on simplified 2D representations, where force feedback can only be approximated by unrealistic substitutes, failing to capture real physical behaviors such as 3D collisions and falls.
 
@@ -36,7 +36,7 @@ This paper proposes RESCUE, the first online SDM (Sensing–Decision–Motion) u
 
 ### Paper Goals
 
-**Paper Goals**: ### SDM Unified Framework
+**Goal**: ### SDM Unified Framework
 
 Inspired by the human brain's perception–decision–action loop:
 

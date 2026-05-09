@@ -29,13 +29,13 @@ This paper proposes the UPA-RFAS framework, which learns a single physical adver
 
 ## Background & Motivation
 
-**State of the Field**: Vision-Language-Action (VLA) models couple visual encoders, language understanding, and action heads to parse natural language instructions and execute multi-step manipulation tasks in simulation and the real world. Representative models include OpenVLA and π₀.
+**Background**: Vision-Language-Action (VLA) models couple visual encoders, language understanding, and action heads to parse natural language instructions and execute multi-step manipulation tasks in simulation and the real world. Representative models include OpenVLA and π₀.
 
 **Limitations of Prior Work**: In robotic settings, visual adversarial attacks not only mislead perception but also cascade into unsafe actions—collisions, task constraint violations, etc.—with consequences far more severe than misclassification. Existing VLA adversarial patches (e.g., RoboticAttack) assume white-box access and are heavily overfit to a single model, dataset, or prompt template, causing attack effectiveness to degrade sharply under black-box settings (unknown architectures, fine-tuned variants).
 
-**Root Cause**: Universal transferable patch attacks across model families (OpenVLA, OpenVLA-oft, π₀) remain largely unexplored, meaning existing evaluations may overestimate security. The cross-modal alignment mechanism between vision and language in VLA models constitutes a structural vulnerability amenable to exploitation, yet has not been systematically studied.
+**Key Challenge**: Universal transferable patch attacks across model families (OpenVLA, OpenVLA-oft, π₀) remain largely unexplored, meaning existing evaluations may overestimate security. The cross-modal alignment mechanism between vision and language in VLA models constitutes a structural vulnerability amenable to exploitation, yet has not been systematically studied.
 
-**Paper Goals**: Since real-world attackers lack white-box access, there is a practical need to evaluate security baselines under black-box conditions, varying viewpoints, and sim-to-real transfer constraints.
+**Goal**: Since real-world attackers lack white-box access, there is a practical need to evaluate security baselines under black-box conditions, varying viewpoints, and sim-to-real transfer constraints.
 
 ## Method
 

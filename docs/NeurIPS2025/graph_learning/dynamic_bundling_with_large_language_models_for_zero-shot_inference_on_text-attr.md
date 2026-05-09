@@ -28,17 +28,17 @@ DENSE proposes a "text bundling" strategy that packages textually and topologica
 
 ## Background & Motivation
 
-**State of the Field**: In text-attributed graphs (TAGs), each node is associated with a textual description, and zero-shot inference requires predicting node categories without labeled data. Two main paradigms exist: (a) encoding graph topology into language models (requires large training data; converting topology to sequences incurs information loss); (b) using LLMs to generate pseudo-labels for individual nodes, which then supervise GNN training.
+**Background**: In text-attributed graphs (TAGs), each node is associated with a textual description, and zero-shot inference requires predicting node categories without labeled data. Two main paradigms exist: (a) encoding graph topology into language models (requires large training data; converting topology to sequences incurs information loss); (b) using LLMs to generate pseudo-labels for individual nodes, which then supervise GNN training.
 
 **Limitations of Prior Work**:
    - **Insufficient information**: LLMs only observe the isolated text of a single node, lacking graph-structural context, leading to weak decision bases.
    - **Unreliable responses**: Inherent LLM hallucinations, compounded by information scarcity, produce noisy pseudo-labels that degrade GNN training when used directly as supervision signals.
 
-**Root Cause**: Single-node queries leave LLMs both under-informed (graph structure is lost) and unreliable (single-point hallucinations cannot be corrected), with noise amplified in downstream operations.
+**Key Challenge**: Single-node queries leave LLMs both under-informed (graph structure is lost) and unreliable (single-point hallucinations cannot be corrected), with noise amplified in downstream operations.
 
-**Paper Goals**: How can LLMs be provided with richer information to make more reliable judgments? How can supervision mechanisms robust to noise be designed?
+**Goal**: How can LLMs be provided with richer information to make more reliable judgments? How can supervision mechanisms robust to noise be designed?
 
-**Starting Point**: Shift from "single-node queries" to "text bundle queries"—packing multiple similar nodes into a bundle and querying for the mode category of the bundle, using group-level information to suppress individual noise.
+**Key Insight**: Shift from "single-node queries" to "text bundle queries"—packing multiple similar nodes into a bundle and querying for the mode category of the bundle, using group-level information to suppress individual noise.
 
 **Core Idea**: Elevate LLMs' zero-shot capability from node-level to bundle-level through text bundling, and supervise GNN training with bundle labels for robust zero-shot graph inference.
 

@@ -28,15 +28,15 @@ VisRL is the first framework to apply reinforcement learning to intention-driven
 
 ## Background & Motivation
 
-**State of the Field**: LMMs (e.g., LLaVA, Qwen-VL) answer image-related questions via end-to-end inference. Recent Visual Chain-of-Thought (Visual CoT) methods introduce explicit reasoning steps—the model first predicts a focus region (bounding box), crops it, and then answers the question using both the original and cropped images.
+**Background**: LMMs (e.g., LLaVA, Qwen-VL) answer image-related questions via end-to-end inference. Recent Visual Chain-of-Thought (Visual CoT) methods introduce explicit reasoning steps—the model first predicts a focus region (bounding box), crops it, and then answers the question using both the original and cropped images.
 
 **Limitations of Prior Work**: Visual CoT relies heavily on supervised training, requiring bounding box annotations for intermediate reasoning steps for each query-image pair. Since the same image may correspond to vastly different focus regions depending on query intent, annotation complexity grows combinatorially and cannot cover all possible intent-region pairs.
 
-**Root Cause**: SFT requires dense $\langle\text{intent, focus region}\rangle$ pair annotations $\rightarrow$ high annotation cost and incomplete coverage $\rightarrow$ training on limited annotations $\rightarrow$ restricted generalization.
+**Key Challenge**: SFT requires dense $\langle\text{intent, focus region}\rangle$ pair annotations $\rightarrow$ high annotation cost and incomplete coverage $\rightarrow$ training on limited annotations $\rightarrow$ restricted generalization.
 
-**Paper Goals**: Enable models to learn intention-driven visual perception without bounding box annotations.
+**Goal**: Enable models to learn intention-driven visual perception without bounding box annotations.
 
-**Starting Point**: Analogous to human visual learning—humans do not learn "where to look" through dense annotations, but instead develop adaptive focus through trial-and-error interaction with the environment. Replacing SFT with RL is therefore more principled.
+**Key Insight**: Analogous to human visual learning—humans do not learn "where to look" through dense annotations, but instead develop adaptive focus through trial-and-error interaction with the environment. Replacing SFT with RL is therefore more principled.
 
 **Core Idea**: Apply reinforcement learning (iterative DPO) to optimize focus region selection during visual reasoning, using task reward signals in place of bounding box annotations for scalable intention-driven visual perception.
 

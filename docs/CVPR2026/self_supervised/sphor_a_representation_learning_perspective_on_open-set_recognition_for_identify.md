@@ -29,15 +29,15 @@ This paper proposes SpHOR, a two-stage decoupled training framework for open-set
 
 ## Background & Motivation
 
-**State of the Field**: Deep neural networks are widely deployed in safety-critical applications, yet conventional closed-set classifiers assume all test-time classes were seen during training. OSR requires models to correctly flag unknown-class samples as "unknown" while maintaining high accuracy on known classes.
+**Background**: Deep neural networks are widely deployed in safety-critical applications, yet conventional closed-set classifiers assume all test-time classes were seen during training. OSR requires models to correctly flag unknown-class samples as "unknown" while maintaining high accuracy on known classes.
 
 **Limitations of Prior Work**: Most OSR methods jointly train the feature extractor and classifier end-to-end, causing feature representations to adapt to unknown classes only implicitly. Vaze et al. showed that simple closed-set training strategies can outperform many dedicated OSR methods, indicating that classifier-level improvements are approaching a ceiling. Existing methods leveraging contrastive learning (e.g., SupCon) are also not specifically designed for OSR.
 
-**Root Cause**: Feature magnitudes in Euclidean space can grow without bound, leaving the open space unbounded and greatly increasing the risk of misclassifying unknown samples. Additionally, shared inter-class features (e.g., background textures) trap models in the *Familiarity Trap*, causing semantically related but unknown classes to be confidently misidentified as known ones.
+**Key Challenge**: Feature magnitudes in Euclidean space can grow without bound, leaving the open space unbounded and greatly increasing the risk of misclassifying unknown samples. Additionally, shared inter-class features (e.g., background textures) trap models in the *Familiarity Trap*, causing semantically related but unknown classes to be confidently misidentified as known ones.
 
-**Paper Goals**: Can OSR be improved by explicitly designing the feature representation itself—rather than relying on classifier-level improvements? How can class separation in feature space be made cleaner and open-space modeling more effective?
+**Goal**: Can OSR be improved by explicitly designing the feature representation itself—rather than relying on classifier-level improvements? How can class separation in feature space be made cleaner and open-space modeling more effective?
 
-**Starting Point**: A two-stage decoupled training strategy is adopted—first learning feature representations, then training the classifier—with spherical constraints, orthogonal label embeddings, and data augmentation strategies introduced during the representation learning stage.
+**Key Insight**: A two-stage decoupled training strategy is adopted—first learning feature representations, then training the classifier—with spherical constraints, orthogonal label embeddings, and data augmentation strategies introduced during the representation learning stage.
 
 **Core Idea**: Features are projected onto a hypersphere and modeled as a mixture of vMF distributions; orthogonal label embeddings enforce inter-class subspace orthogonality; Mixup simulates semantically ambiguous samples to improve open-space modeling.
 

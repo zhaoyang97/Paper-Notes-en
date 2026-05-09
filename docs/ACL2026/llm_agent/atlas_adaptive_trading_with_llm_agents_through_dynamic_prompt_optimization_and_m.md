@@ -29,15 +29,15 @@ This paper proposes ATLAS, a multi-agent financial trading framework, and Adapti
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have demonstrated potential in financial decision-making by processing multi-source data and reasoning over complex scenarios, yet translating this capability into reliable trading systems remains a major challenge.
+**Background**: LLMs have demonstrated potential in financial decision-making by processing multi-source data and reasoning over complex scenarios, yet translating this capability into reliable trading systems remains a major challenge.
 
 **Limitations of Prior Work**: (1) No unified framework exists for systematically integrating heterogeneous information sources (technical indicators, news, fundamentals); (2) static decision strategies are insufficient for adapting to dynamic market conditions under delayed and noisy reward signals; (3) existing methods typically rely on hand-crafted prompts that cannot adapt to varying market environments.
 
-**Root Cause**: Financial trading is inherently a sequential decision-making problem with temporal coupling between decisions and delayed reward signals—yet existing prompt optimization methods (e.g., OPRO) assume immediate feedback and independent instances.
+**Key Challenge**: Financial trading is inherently a sequential decision-making problem with temporal coupling between decisions and delayed reward signals—yet existing prompt optimization methods (e.g., OPRO) assume immediate feedback and independent instances.
 
-**Paper Goals**: To build a unified LLM trading agent framework that addresses two core challenges: information integration and behavioral adaptation.
+**Goal**: To build a unified LLM trading agent framework that addresses two core challenges: information integration and behavioral adaptation.
 
-**Starting Point**: Extending prompt optimization from single-turn immediate feedback to sequential decision-making with delayed and noisy feedback.
+**Key Insight**: Extending prompt optimization from single-turn immediate feedback to sequential decision-making with delayed and noisy feedback.
 
 **Core Idea**: Adaptive-OPRO—adapting the meta-optimization paradigm of OPRO to the trading setting, achieving stable iterative prompt optimization via rolling evaluation windows and template separation.
 

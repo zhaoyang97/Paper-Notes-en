@@ -29,15 +29,15 @@ This paper proposes Arnold, a scheduling system that aligns the communication pa
 
 ## Background & Motivation
 
-**State of the Field**: LLM pre-training requires thousands of GPUs operating in concert, with network communication accounting for 30%–50% of total training time. Modern data centers employ multi-tier fat-tree topologies (leaf→spine→core), where available bandwidth decreases at higher tiers.
+**Background**: LLM pre-training requires thousands of GPUs operating in concert, with network communication accounting for 30%–50% of total training time. Modern data centers employ multi-tier fat-tree topologies (leaf→spine→core), where available bandwidth decreases at higher tiers.
 
 **Limitations of Prior Work**: (a) Existing GPU schedulers (e.g., bin-packing) optimize only for GPU locality—packing GPUs as close together as possible—without any awareness of the communication structure of LLM training. This causes DP/PP communication groups to span multiple spine switches, degrading bandwidth. (b) DP and PP are orthogonal parallelism strategies, and each GPU participates in both simultaneously, making it impossible to perfectly align both communication patterns at once; a trade-off is necessary.
 
-**Root Cause**: LLM training communication is sparse yet high-throughput—99% of GPU pairs have no direct traffic, with data exchange occurring only within specific communication groups. However, schedulers are unaware of this sparse structure, and random or greedy GPU assignments cause communication groups to span multiple pods, severely degrading bandwidth (collective operations by up to 17%, P2P by up to 70%).
+**Key Challenge**: LLM training communication is sparse yet high-throughput—99% of GPU pairs have no direct traffic, with data exchange occurring only within specific communication groups. However, schedulers are unaware of this sparse structure, and random or greedy GPU assignments cause communication groups to span multiple pods, severely degrading bandwidth (collective operations by up to 17%, P2P by up to 70%).
 
-**Paper Goals**: Design a topology-aware scheduling algorithm for LLM pre-training jobs (LPJs) that maps communication groups onto the physical topology to minimize cross-pod communication.
+**Goal**: Design a topology-aware scheduling algorithm for LLM pre-training jobs (LPJs) that maps communication groups onto the physical topology to minimize cross-pod communication.
 
-**Starting Point**: The paper characterizes the performance degradation patterns of different communication operations under cross-pod placement, and formulates the scheduling problem as a Mixed Integer Program (MIP) that minimizes the weighted maximum span of communication groups.
+**Key Insight**: The paper characterizes the performance degradation patterns of different communication operations under cross-pod placement, and formulates the scheduling problem as a Mixed Integer Program (MIP) that minimizes the weighted maximum span of communication groups.
 
 **Core Idea**: Align the communication matrix of LLM hybrid parallelism with the data center topology structure via MIP-based optimization to minimize the physical span of communication groups.
 

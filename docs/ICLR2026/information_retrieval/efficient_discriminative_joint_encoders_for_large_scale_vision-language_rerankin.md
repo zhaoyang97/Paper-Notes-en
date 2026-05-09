@@ -28,7 +28,7 @@ This paper proposes EDJE (Efficient Discriminative Joint Encoder), which offline
 ## Background & Motivation
 In large-scale multimodal retrieval, embedding-based models (e.g., CLIP) enable efficient search via vector similarity, but independently encoding the two modalities limits fine-grained cross-modal interaction. Joint encoders (e.g., BLIP, BLIP-2) process both modalities jointly and achieve stronger retrieval performance. Cross-encoder re-ranking is already a standard paradigm in text retrieval.
 
-**Root Cause**: Visual feature extraction is a severe bottleneck in existing joint encoders—processing a batch of 64 images with BLIP using ViT-B takes ~400 ms and ~1,400 ms with ViT-L, accounting for 83%–93% of total inference time. By contrast, the widely used MiniLM re-ranker in text retrieval has only 22 M parameters and processes an equivalent batch in ~60 ms. This explains why multimodal re-rankers are nearly absent from practical retrieval systems.
+**Key Challenge**: Visual feature extraction is a severe bottleneck in existing joint encoders—processing a batch of 64 images with BLIP using ViT-B takes ~400 ms and ~1,400 ms with ViT-L, accounting for 83%–93% of total inference time. By contrast, the widely used MiniLM re-ranker in text retrieval has only 22 M parameters and processes an equivalent batch in ~60 ms. This explains why multimodal re-rankers are nearly absent from practical retrieval systems.
 
 **Core Idea**: Offline visual feature extraction—images are encoded once and cached to disk; at inference time, only a compact joint encoder processes a small number of visual tokens together with text tokens. A token compression adapter further reduces storage requirements substantially.
 

@@ -29,15 +29,15 @@ This paper proposes TensorAR, which upgrades standard AR image generation from n
 
 ## Background & Motivation
 
-**State of the Field**: Autoregressive (AR) models (LlamaGen, VAR, MAR, Open-MAGVIT2) have become one of the dominant paradigms for image generation, offering scalability, controllability, and the potential for unification with multimodal LLMs.
+**Background**: Autoregressive (AR) models (LlamaGen, VAR, MAR, Open-MAGVIT2) have become one of the dominant paradigms for image generation, offering scalability, controllability, and the potential for unification with multimodal LLMs.
 
 **Limitations of Prior Work**: Standard AR next-token prediction follows a strict left-to-right sequential generation; once a token is predicted, it cannot be corrected, causing early errors to accumulate and degrade final image quality. Existing improvements all require modifying the core paradigm: DART changes the classification objective to regression; MaskGIT/MAR requires bidirectional attention and is incompatible with KV cache; MAR requires additional VQ-VAE training—all of which hinder multimodal unification with standard GPT-style LLMs.
 
-**Root Cause**: AR models urgently need refinement capability to correct early prediction errors, but refinement mechanisms such as diffusion and masking are fundamentally at odds with the causal structure and classification training paradigm of AR models.
+**Key Challenge**: AR models urgently need refinement capability to correct early prediction errors, but refinement mechanisms such as diffusion and masking are fundamentally at odds with the causal structure and classification training paradigm of AR models.
 
-**Paper Goals**: To endow a standard decoder-only AR model with the ability to iteratively refine already-generated tokens, without modifying the underlying Transformer architecture or the classification training objective.
+**Goal**: To endow a standard decoder-only AR model with the ability to iteratively refine already-generated tokens, without modifying the underlying Transformer architecture or the classification training objective.
 
-**Starting Point**: If each step predicts not a single token but a group of overlapping consecutive tokens (a tensor), the overlapping region between adjacent tensors naturally provides an opportunity to correct preceding predictions—this "sliding-window refinement" achieves diffusion-like progressive improvement while preserving the causal structure.
+**Key Insight**: If each step predicts not a single token but a group of overlapping consecutive tokens (a tensor), the overlapping region between adjacent tensors naturally provides an opportunity to correct preceding predictions—this "sliding-window refinement" achieves diffusion-like progressive improvement while preserving the causal structure.
 
 **Core Idea**: By extending next-token to next-tensor (overlapping token group) prediction, the approach achieves sliding-window iterative refinement while maintaining causal attention and classification loss.
 

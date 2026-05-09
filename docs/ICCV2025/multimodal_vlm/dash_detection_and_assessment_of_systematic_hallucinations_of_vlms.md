@@ -33,7 +33,7 @@ VLMs (e.g., PaliGemma, LLaVA-NeXT) achieve strong performance on multimodal task
 
 **Lack of systematic evaluation**: They cannot distinguish between sporadic hallucinations and systematic model deficiencies. If a VLM consistently hallucinates on specific image types, this indicates a fundamental flaw requiring correction.
 
-- **Root Cause**: VLMs are deployed in open-world settings, yet evaluation benchmarks remain confined to closed datasets. Exhaustively testing all image–object combinations in ReLAION-5B is infeasible, necessitating an **effective search strategy** to surface systematic hallucinations.
+- **Key Challenge**: VLMs are deployed in open-world settings, yet evaluation benchmarks remain confined to closed datasets. Exhaustively testing all image–object combinations in ReLAION-5B is infeasible, necessitating an **effective search strategy** to surface systematic hallucinations.
 - **Core Idea**: Construct a fully automated pipeline, DASH, that generates targeted queries (textual or visual) to retrieve real images from large-scale datasets that trigger VLM hallucinations, and employs clustering to identify semantically coherent systematic error patterns.
 
 ## Method

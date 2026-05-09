@@ -27,13 +27,13 @@ content_hash: 9ca343ffee2ccff0
 Through a linear stability analysis framework, this paper demonstrates that "flat minima ⇒ better generalization" and "SGD prefers simple functions" are two sides of the same coin — data coherence simultaneously governs both phenomena, and SAM amplifies the simplicity bias further by imposing stricter stability conditions.
 
 ## Background & Motivation
-**State of the Field**: Two central generalization hypotheses in deep learning: (1) the *flat minima hypothesis* — SGD/SAM preferentially converges to wide, shallow loss basins, and flatness correlates positively with generalization; (2) the *simplicity bias hypothesis* — overparameterized networks tend to learn solutions that rely on a small number of shared features.
+**Background**: Two central generalization hypotheses in deep learning: (1) the *flat minima hypothesis* — SGD/SAM preferentially converges to wide, shallow loss basins, and flatness correlates positively with generalization; (2) the *simplicity bias hypothesis* — overparameterized networks tend to learn solutions that rely on a small number of shared features.
 
 **Limitations of Prior Work**: Both hypotheses are supported by extensive empirical evidence, yet a unified theoretical framework explaining their intrinsic connection is lacking. In particular: why does SGD prefer flat minima? Why does SAM select better solutions even among minima of equal flatness? How does data geometry influence optimization bias?
 
-**Root Cause**: SAM is designed to "seek flat minima," yet experiments show it exhibits selectivity beyond flatness — it still prefers certain solutions among minima of equal flatness. This suggests flatness alone is insufficient to explain generalization.
+**Key Challenge**: SAM is designed to "seek flat minima," yet experiments show it exhibits selectivity beyond flatness — it still prefers certain solutions among minima of equal flatness. This suggests flatness alone is insufficient to explain generalization.
 
-**Starting Point**: Linear stability analysis — linearizing the optimization dynamics near a minimum and characterizing stability via the spectral properties of the iteration matrix.
+**Key Insight**: Linear stability analysis — linearizing the optimization dynamics near a minimum and characterizing stability via the spectral properties of the iteration matrix.
 
 **Core Idea**: Data coherence (the degree of alignment among per-sample Hessians) simultaneously governs both the flatness preference and the simplicity bias; SAM amplifies this selectivity through an additional curvature penalty term.
 

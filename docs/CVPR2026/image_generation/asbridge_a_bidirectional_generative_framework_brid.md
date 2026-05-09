@@ -29,13 +29,13 @@ AS-Bridge is proposed to model the conditional probability distribution between 
 
 ## Background & Motivation
 
-**State of the Field**: Next-generation astronomical observations are dominated by LSST (ground-based, 6 optical bands, ~0.7" resolution, atmospheric interference) and Euclid (space-based, high-resolution near-infrared, VIS pixel 0.1"), with an overlapping sky area of approximately 7000–9000 square degrees.
+**Background**: Next-generation astronomical observations are dominated by LSST (ground-based, 6 optical bands, ~0.7" resolution, atmospheric interference) and Euclid (space-based, high-resolution near-infrared, VIS pixel 0.1"), with an overlapping sky area of approximately 7000–9000 square degrees.
 
 **Limitations of Prior Work**: Systematic distribution shifts in PSF, bands, and noise statistics make joint cross-survey analysis difficult. A single deterministic mapping cannot capture inherent ambiguities—LSST→Euclid requires recovering fine morphology from atmospheric blur (ill-posed), and Euclid→LSST requires inferring multi-band color from fewer bands (unidentifiable).
 
-**Root Cause**: Observations of the same celestial object by two surveys are two stochastic realizations $x = \mathcal{O}(\Phi) + \epsilon(\mathcal{O}(\Phi))$ sharing a latent astrophysical process $\Phi$. Since $\Phi$ is not directly observable, it is necessary to learn the conditional distribution $p(x_{Euclid}|x_{LSST})$ and its inverse through marginalization.
+**Key Challenge**: Observations of the same celestial object by two surveys are two stochastic realizations $x = \mathcal{O}(\Phi) + \epsilon(\mathcal{O}(\Phi))$ sharing a latent astrophysical process $\Phi$. Since $\Phi$ is not directly observable, it is necessary to learn the conditional distribution $p(x_{Euclid}|x_{LSST})$ and its inverse through marginalization.
 
-**Starting Point**: Brownian Bridge defines a stochastic interpolation process between two endpoints, naturally suited for modeling probabilistic relationships between two observation domains.
+**Key Insight**: Brownian Bridge defines a stochastic interpolation process between two endpoints, naturally suited for modeling probabilistic relationships between two observation domains.
 
 **Core Idea**: Use a bidirectional Brownian Bridge diffusion process to model the conditional distribution between surveys, and utilize reconstruction failure on OOD rare objects to achieve unsupervised anomaly detection.
 

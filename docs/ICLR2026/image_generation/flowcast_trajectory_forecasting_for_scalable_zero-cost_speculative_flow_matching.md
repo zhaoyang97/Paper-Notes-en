@@ -28,15 +28,15 @@ FlowCast is a framework that introduces speculative decoding into Flow Matching 
 
 ## Background & Motivation
 
-**State of the Field**: Flow Matching (FM) has become a mainstream approach for high-quality generative modeling (e.g., FLUX.1, Wan video generation), mapping noise to data by solving an ODE. However, ODE integration is inherently sequential—each step depends on the previous output—making inference slow.
+**Background**: Flow Matching (FM) has become a mainstream approach for high-quality generative modeling (e.g., FLUX.1, Wan video generation), mapping noise to data by solving an ODE. However, ODE integration is inherently sequential—each step depends on the previous output—making inference slow.
 
 **Limitations of Prior Work**: Existing acceleration methods (distillation, trajectory truncation, consistency training) either degrade quality (blurred textures, semantic drift), require expensive retraining, or lack generalizability. The problem is amplified in video generation, where the temporal dimension multiplies the inference burden.
 
-**Root Cause**: FM's high fidelity depends on a sufficient number of sampling steps, yet more steps mean slower inference. There is a need to intelligently skip "unnecessary" steps without retraining.
+**Key Challenge**: FM's high fidelity depends on a sufficient number of sampling steps, yet more steps mean slower inference. There is a need to intelligently skip "unnecessary" steps without retraining.
 
-**Paper Goals**: To adaptively accelerate FM inference without introducing auxiliary models or performing any training.
+**Goal**: To adaptively accelerate FM inference without introducing auxiliary models or performing any training.
 
-**Starting Point**: FM models are trained to maintain a nearly constant velocity, and empirically the velocity field changes slowly between adjacent steps. This implies that the velocity prediction at the current step can serve as a "free draft" for future steps.
+**Key Insight**: FM models are trained to maintain a nearly constant velocity, and empirically the velocity field changes slowly between adjacent steps. This implies that the velocity prediction at the current step can serve as a "free draft" for future steps.
 
 **Core Idea**: Use the FM model's own velocity prediction as a zero-cost draft for speculative extrapolation; accept the draft if MSE verification passes, otherwise roll back.
 

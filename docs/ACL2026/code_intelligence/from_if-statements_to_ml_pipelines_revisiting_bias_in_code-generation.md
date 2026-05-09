@@ -28,15 +28,15 @@ This work demonstrates that existing bias evaluations of LLM code generation sev
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly applied to code generation, and bias in this context has attracted growing research attention. However, existing evaluations (e.g., CodeGenBias, FairCoder) almost exclusively measure bias through simple conditional statements (if-else logic), such as `if race == 'XX': deny_loan()`.
+**Background**: LLMs are increasingly applied to code generation, and bias in this context has attracted growing research attention. However, existing evaluations (e.g., CodeGenBias, FairCoder) almost exclusively measure bias through simple conditional statements (if-else logic), such as `if race == 'XX': deny_loan()`.
 
 **Limitations of Prior Work**: Simple conditional statements can only capture explicit discrimination—code that directly maps protected attributes to outcomes. In practice, discrimination more commonly manifests through implicit mechanisms, particularly feature selection decisions in ML pipelines. Including race or nationality as predictive features violates the fundamental principle of "fairness through unawareness" in algorithmic fairness.
 
-**Root Cause**: If implicit discrimination in LLM-generated ML pipelines is far more prevalent than explicit discrimination in conditional statements, then existing evaluation frameworks fundamentally underestimate bias risk.
+**Key Challenge**: If implicit discrimination in LLM-generated ML pipelines is far more prevalent than explicit discrimination in conditional statements, then existing evaluation frameworks fundamentally underestimate bias risk.
 
-**Paper Goals**: (RQ1) Do LLMs exhibit systematic bias when generating ML pipelines? (RQ2) How does the extent of such bias compare to that observed in conditional statements?
+**Goal**: (RQ1) Do LLMs exhibit systematic bias when generating ML pipelines? (RQ2) How does the extent of such bias compare to that observed in conditional statements?
 
-**Starting Point**: Extending evaluation from explicit conditional statements to the more realistic task of feature selection in ML pipelines.
+**Key Insight**: Extending evaluation from explicit conditional statements to the more realistic task of feature selection in ML pipelines.
 
 **Core Idea**: Bias in LLM code generation is substantially more severe than previously recognized—implicit discrimination (ML pipeline feature selection) exceeds explicit discrimination (conditional statements) by approximately 30 percentage points.
 

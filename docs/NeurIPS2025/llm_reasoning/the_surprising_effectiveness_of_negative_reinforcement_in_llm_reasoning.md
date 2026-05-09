@@ -29,15 +29,15 @@ This paper decomposes Reinforcement Learning from Verifiable Rewards (RLVR) into
 
 ## Background & Motivation
 
-**State of the Field**: RLVR has become a core technique for training LLM reasoning capabilities. DeepSeek-R1 and Kimi K1.5 have demonstrated emergent long-chain reasoning and self-reflection via RLVR. RLVR employs binary rewards (correct: +1 / incorrect: −1), making it conceptually simple and independent of complex reward models.
+**Background**: RLVR has become a core technique for training LLM reasoning capabilities. DeepSeek-R1 and Kimi K1.5 have demonstrated emergent long-chain reasoning and self-reflection via RLVR. RLVR employs binary rewards (correct: +1 / incorrect: −1), making it conceptually simple and independent of complex reward models.
 
 **Limitations of Prior Work**: (1) The underlying learning mechanism of RLVR remains unclear—specifically, how the model learns separately from correct and incorrect samples. (2) Existing evaluations focus primarily on Pass@1 (greedy accuracy) and neglect Pass@k at large $k$, obscuring deeper changes in model behavior. Recent work (Yue et al., 2025) found that RL-trained models underperform base models on Pass@k at large $k$, suggesting a loss of diversity.
 
-**Root Cause**: RLVR simultaneously performs two operations—reinforcing correct outputs and penalizing incorrect ones—whose effects are entangled. Intuitively, positive reinforcement should be the dominant signal, yet it may overly narrow the output distribution; conversely, the contribution of negative reinforcement may be systematically underestimated.
+**Key Challenge**: RLVR simultaneously performs two operations—reinforcing correct outputs and penalizing incorrect ones—whose effects are entangled. Intuitively, positive reinforcement should be the dominant signal, yet it may overly narrow the output distribution; conversely, the contribution of negative reinforcement may be systematically underestimated.
 
-**Paper Goals**: To decouple RLVR into PSR and NSR, study their respective effects on Pass@k reasoning scaling, and design improved training objectives.
+**Goal**: To decouple RLVR into PSR and NSR, study their respective effects on Pass@k reasoning scaling, and design improved training objectives.
 
-**Starting Point**: The RLVR objective is decomposed exactly as $\mathcal{L}_{RLVR} = \mathcal{L}_{PSR} + \mathcal{L}_{NSR}$. By training each component independently and evaluating with the full Pass@k spectrum ($k = 1$ to $256$), the independent effects of each signal can be observed and explained via token-level gradient analysis.
+**Key Insight**: The RLVR objective is decomposed exactly as $\mathcal{L}_{RLVR} = \mathcal{L}_{PSR} + \mathcal{L}_{NSR}$. By training each component independently and evaluating with the full Pass@k spectrum ($k = 1$ to $256$), the independent effects of each signal can be observed and explained via token-level gradient analysis.
 
 **Core Idea**: Penalizing incorrect responses alone is sufficient to improve reasoning—NSR refines existing knowledge by suppressing errors and redistributing probability mass according to the model's prior.
 

@@ -29,15 +29,15 @@ This paper proposes a novel normal integration method that supports explicit dis
 
 ## Background & Motivation
 
-**State of the Field**: Normal integration is a core step in photometric shape recovery (e.g., Shape-from-Shading and Photometric Stereo), aiming to recover 3D depth/surfaces from surface normal maps. Existing methods predominantly assume orthographic projection or an ideal pinhole camera model, recovering depth by solving Poisson equations or variational optimization problems.
+**Background**: Normal integration is a core step in photometric shape recovery (e.g., Shape-from-Shading and Photometric Stereo), aiming to recover 3D depth/surfaces from surface normal maps. Existing methods predominantly assume orthographic projection or an ideal pinhole camera model, recovering depth by solving Poisson equations or variational optimization problems.
 
 **Limitations of Prior Work**: Two critical deficiencies exist in prior work. First, depth discontinuities (e.g., object boundaries, occlusion contours) are typically handled only implicitly—most methods approximate depth via global smoothness regularization, leading to over-smoothing or artifacts at boundaries. Second, nearly all methods are limited to orthographic or pinhole camera models and cannot directly handle wide-angle or non-standard central cameras such as fisheye or panoramic lenses.
 
-**Root Cause**: Traditional normal integration formulations express the normal-depth relationship as partial derivative equations of depth (i.e., $\nabla z = f(\mathbf{n})$), which inherently assume continuity and a specific projection model. Partial derivatives are undefined at discontinuities, and the normal-depth relationship must be re-derived for non-pinhole camera models.
+**Key Challenge**: Traditional normal integration formulations express the normal-depth relationship as partial derivative equations of depth (i.e., $\nabla z = f(\mathbf{n})$), which inherently assume continuity and a specific projection model. Partial derivatives are undefined at discontinuities, and the normal-depth relationship must be re-derived for non-pinhole camera models.
 
-**Paper Goals**: To design a unified normal integration framework that (1) explicitly models depth discontinuities and (2) supports arbitrary central camera models, including pinhole, fisheye, and panoramic cameras.
+**Goal**: To design a unified normal integration framework that (1) explicitly models depth discontinuities and (2) supports arbitrary central camera models, including pinhole, fisheye, and panoramic cameras.
 
-**Starting Point**: The authors observe that under a local planarity assumption, a concise geometric constraint exists between the surface normal at a point and the ray direction from the camera to that point. This constraint is independent of any specific projection model and can naturally be "broken" at discontinuities.
+**Key Insight**: The authors observe that under a local planarity assumption, a concise geometric constraint exists between the surface normal at a point and the ray direction from the camera to that point. This constraint is independent of any specific projection model and can naturally be "broken" at discontinuities.
 
 **Core Idea**: Replace the traditional partial derivative equation with a local planarity constraint (relating normals to ray directions), establish depth-difference constraints between neighboring pixel pairs, and control which constraints are activated or deactivated through explicit discontinuity variables.
 

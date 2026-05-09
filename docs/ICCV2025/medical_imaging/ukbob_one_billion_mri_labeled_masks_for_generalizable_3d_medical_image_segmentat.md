@@ -29,15 +29,15 @@ This paper introduces UKBOB—the largest annotated medical image segmentation d
 
 ## Background & Motivation
 
-**State of the Field**: Large-scale annotated datasets (e.g., ImageNet, LAION) are foundational to the success of computer vision foundation models. However, the medical imaging domain lacks large-scale annotated datasets due to privacy regulations, high annotation costs, and logistical complexity. Existing datasets such as BRATS (1,470 samples / 3 classes) and BTCV (50 samples / 12 classes) remain limited in scale.
+**Background**: Large-scale annotated datasets (e.g., ImageNet, LAION) are foundational to the success of computer vision foundation models. However, the medical imaging domain lacks large-scale annotated datasets due to privacy regulations, high annotation costs, and logistical complexity. Existing datasets such as BRATS (1,470 samples / 3 classes) and BTCV (50 samples / 12 classes) remain limited in scale.
 
 **Limitations of Prior Work**: (1) Existing medical datasets either lack diversity or are too small to train generalizable foundation models; (2) automated annotation can address the scale problem but introduces noisy labels; (3) train-test domain shift (across different scanners, acquisition protocols, and modalities) causes performance degradation.
 
-**Root Cause**: Medical imaging urgently requires large-scale annotated data to train foundation models, yet manually annotating 17.9 million images is infeasible, while automated annotation inevitably introduces noise.
+**Key Challenge**: Medical imaging urgently requires large-scale annotated data to train foundation models, yet manually annotating 17.9 million images is infeasible, while automated annotation inevitably introduces noise.
 
-**Paper Goals**: (a) Construct the largest-scale medical image segmentation annotation dataset; (b) design a label quality control mechanism; (c) address domain shift at test time for models trained on noisy labels.
+**Goal**: (a) Construct the largest-scale medical image segmentation annotation dataset; (b) design a label quality control mechanism; (c) address domain shift at test time for models trained on noisy labels.
 
-**Starting Point**: The UK Biobank's 51,761 whole-body MRI scans are leveraged as the data source, with TotalVibeSegmentator used for automated annotation, followed by a statistically-grounded geometric filter to clean the labels.
+**Key Insight**: The UK Biobank's 51,761 whole-body MRI scans are leveraged as the data source, with TotalVibeSegmentator used for automated annotation, followed by a statistically-grounded geometric filter to clean the labels.
 
 **Core Idea**: Construct an ultra-large-scale medical image dataset via automated annotation combined with statistical filtering, then apply entropy-driven test-time adaptation to handle residual noise, yielding a highly generalizable 3D medical segmentation foundation model.
 

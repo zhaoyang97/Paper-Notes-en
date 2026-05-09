@@ -28,11 +28,11 @@ This paper introduces VS-Bench, a multimodal benchmark comprising ten visual gam
 
 ## Background & Motivation
 
-1. **State of the Field**: VLM evaluation has evolved from static tasks (image captioning, VQA) to interactive agent benchmarks spanning software engineering, GUI operation, games, and embodied control. Nevertheless, existing VLM benchmarks almost exclusively focus on single-agent settings.
+1. **Background**: VLM evaluation has evolved from static tasks (image captioning, VQA) to interactive agent benchmarks spanning software engineering, GUI operation, games, and embodied control. Nevertheless, existing VLM benchmarks almost exclusively focus on single-agent settings.
 2. **Limitations of Prior Work**: The real world is inherently multi-agent, involving cooperative, competitive, and mixed-motive interactions. Existing multi-agent LLM evaluations (e.g., GT-Bench, MAgIC) are confined to text-only environments and cannot assess models' ability to process visual observations. Reducing visual information to textual descriptions discards critical cues such as spatial layouts and motion patterns.
-3. **Root Cause**: The three distinctive challenges of multi-agent environments—non-stationary dynamics, interdependent decision-making, and equilibrium selection—are entirely absent from single-agent benchmarks, while the additional complexity introduced by visual observations is ignored by text-only benchmarks.
-4. **Paper Goals**: To construct a comprehensive multimodal, multi-agent evaluation platform covering cooperative, competitive, and mixed-motive interaction types, and to thoroughly assess VLMs' strategic capabilities along three dimensions: perception, strategic reasoning, and decision-making.
-5. **Starting Point**: Adapting classical environments from game theory and multi-agent reinforcement learning into visual games, where VLMs receive multimodal observations (image + text) and produce actions.
+3. **Key Challenge**: The three distinctive challenges of multi-agent environments—non-stationary dynamics, interdependent decision-making, and equilibrium selection—are entirely absent from single-agent benchmarks, while the additional complexity introduced by visual observations is ignored by text-only benchmarks.
+4. **Goal**: To construct a comprehensive multimodal, multi-agent evaluation platform covering cooperative, competitive, and mixed-motive interaction types, and to thoroughly assess VLMs' strategic capabilities along three dimensions: perception, strategic reasoning, and decision-making.
+5. **Key Insight**: Adapting classical environments from game theory and multi-agent reinforcement learning into visual games, where VLMs receive multimodal observations (image + text) and produce actions.
 6. **Core Idea**: By carefully designing ten visual environments spanning three game types, paired with three hierarchical evaluation dimensions (perception → reasoning → decision-making), VS-Bench provides a comprehensive and standardized assessment of VLMs' strategic capabilities.
 
 ## Method

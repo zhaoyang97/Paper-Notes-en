@@ -27,7 +27,7 @@ content_hash: bd6d3d75e8d2f0f6
 This work constructs VideoSafetyEval (11.4k video-query pairs covering 19 risk categories), revealing that the video modality degrades safety performance by 34.2%, and proposes VideoSafety-R1, a three-stage framework (Alarm Token + SFT + Safety-guided GRPO) that improves defense success rate by 71.1% on VSE-HH.
 
 ## Background & Motivation
-**State of the Field**: Safety risks in image LLMs have been extensively studied (MMBench, SIUO, SafeVLM, etc.), but safety alignment in video LLMs remains severely underexplored. The temporal dynamics, visual cues, and evolving context in videos introduce subtler and more effective risks than static images.
+**Background**: Safety risks in image LLMs have been extensively studied (MMBench, SIUO, SafeVLM, etc.), but safety alignment in video LLMs remains severely underexplored. The temporal dynamics, visual cues, and evolving context in videos introduce subtler and more effective risks than static images.
 
 **Limitations of Prior Work**: Systematic evaluation of 21 mainstream video LLMs reveals that introducing the video modality causes an average drop of 34.2% in defense success rate (DSR), exposing systemic vulnerabilities in multimodal attack exploitation. VideoLLaMA3-2B suffers a DSR drop as large as 79.4%.
 

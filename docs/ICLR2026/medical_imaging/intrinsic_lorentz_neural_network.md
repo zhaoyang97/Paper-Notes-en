@@ -27,15 +27,15 @@ content_hash: ca00e658847476bf
 This paper proposes ILNN, a fully intrinsic hyperbolic neural network in which all operations are performed entirely within the Lorentz model, eliminating the geometric inconsistencies introduced by Euclidean operations in existing methods. ILNN achieves state-of-the-art performance on image classification, genomics, and graph classification tasks.
 
 ## Background & Motivation
-**State of the Field**: Hyperbolic neural networks exploit the exponentially growing volume of hyperbolic space to represent hierarchical data. The Lorentz model has become the preferred choice over the Poincaré model due to its superior numerical stability.
+**Background**: Hyperbolic neural networks exploit the exponentially growing volume of hyperbolic space to represent hierarchical data. The Lorentz model has become the preferred choice over the Poincaré model due to its superior numerical stability.
 
 **Limitations of Prior Work**: Existing hyperbolic networks "fall back" to Euclidean space for certain operations (e.g., tangent-space linear transformations, Euclidean batch normalization), resulting in geometric inconsistency.
 
-**Root Cause**: How can one design sufficiently expressive and numerically stable components while keeping all operations on the hyperbolic manifold?
+**Key Challenge**: How can one design sufficiently expressive and numerically stable components while keeping all operations on the hyperbolic manifold?
 
-**Paper Goals**: Construct a fully intrinsic set of operations for the Lorentz space.
+**Goal**: Construct a fully intrinsic set of operations for the Lorentz space.
 
-**Starting Point**: Replace affine transformations with signed distances to Lorentz hyperplanes, and realize intrinsic statistics via gyro-structures.
+**Key Insight**: Replace affine transformations with signed distances to Lorentz hyperplanes, and realize intrinsic statistics via gyro-structures.
 
 **Core Idea**: Point-to-hyperplane distance → fully connected layer; gyro-centering + gyro-scaling → BatchNorm.
 

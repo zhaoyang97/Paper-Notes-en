@@ -27,15 +27,15 @@ content_hash: cfa07d82157e0163
 This paper discovers that self-attention matrices in ViTs inherently learn Block Circulant with Circulant Blocks (BCCB) patterns, and proposes Circulant Attention, which achieves $O(N\log N)$ complexity via 2D FFT, yielding consistent improvements on ImageNet classification, COCO detection, and ADE20K segmentation.
 
 ## Background & Motivation
-**State of the Field**: While ViT self-attention is highly expressive, its $O(N^2)$ complexity is prohibitively expensive at high resolutions (N=H×W). PVT reduces cost via K/V downsampling, Swin via local windows, and BiFormer via sparse routing, but all sacrifice global modeling capacity.
+**Background**: While ViT self-attention is highly expressive, its $O(N^2)$ complexity is prohibitively expensive at high resolutions (N=H×W). PVT reduces cost via K/V downsampling, Swin via local windows, and BiFormer via sparse routing, but all sacrifice global modeling capacity.
 
 **Limitations of Prior Work**: Existing efficient attention methods impose efficiency through external constraints (locality/sparsity), suppressing the long-range modeling capability of self-attention. Such "external patch" efficiency optimizations are fundamentally at odds with the design goals of self-attention.
 
 **Key Observation (Core Contribution)**: Visualization of DeiT attention matrices reveals that they frequently approximate BCCB (Block Circulant matrix with Circulant Blocks) structure — i.e., 2D circulant matrices. Attention distributions of neighboring queries exhibit translation invariance (analogous to 2D global convolution). Moreover, BCCB matrix multiplication can be performed in $O(N\log N)$ via 2D FFT.
 
-**Root Cause**: Self-attention, at $O(N^2)$ cost, effectively learns patterns that can be computed in $O(N\log N)$ — indicating substantial computational redundancy in standard self-attention.
+**Key Challenge**: Self-attention, at $O(N^2)$ cost, effectively learns patterns that can be computed in $O(N\log N)$ — indicating substantial computational redundancy in standard self-attention.
 
-**Starting Point**: Since ViTs naturally learn BCCB structure, explicitly enforcing the attention matrix to be BCCB is more principled than imposing external constraints.
+**Key Insight**: Since ViTs naturally learn BCCB structure, explicitly enforcing the attention matrix to be BCCB is more principled than imposing external constraints.
 
 **Core Idea**: Orthogonally project the self-attention matrix onto the BCCB subspace and implement $O(N\log N)$ global attention via 2D FFT, substantially reducing computation while preserving expressiveness.
 

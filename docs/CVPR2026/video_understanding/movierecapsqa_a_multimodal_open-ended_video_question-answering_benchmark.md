@@ -29,15 +29,15 @@ This paper introduces MovieRecapsQA, a multimodal open-ended video QA benchmark 
 
 ## Background & Motivation
 
-1. **State of the Field**: Video Question Answering (VideoQA) is a core proxy task for evaluating models' video understanding capabilities. Existing benchmarks primarily focus on single-modality or short videos and rely heavily on multiple-choice formats to simplify evaluation complexity. Multimodal long-video QA benchmarks that genuinely require integrating both visual and dialogue cues remain scarce.
+1. **Background**: Video Question Answering (VideoQA) is a core proxy task for evaluating models' video understanding capabilities. Existing benchmarks primarily focus on single-modality or short videos and rely heavily on multiple-choice formats to simplify evaluation complexity. Multimodal long-video QA benchmarks that genuinely require integrating both visual and dialogue cues remain scarce.
 
 2. **Limitations of Prior Work**: (a) Multiple-choice questions provide a "shortcut" — models can answer by elimination without understanding the video; (b) Open-ended QA is extremely difficult to evaluate due to non-fixed answer formats; (c) Reference-based metrics (e.g., ROUGE, BERTScore) exhibit low correlation with human judgments; (d) Using LLMs as judges for VideoQA evaluation with full videos as context is both expensive and unreliable.
 
-3. **Root Cause**: The fundamental tension between open-ended evaluation and measurability — multiple-choice questions are easy to evaluate but lack authenticity, while open-ended questions are authentic but cannot be reliably assessed.
+3. **Key Challenge**: The fundamental tension between open-ended evaluation and measurability — multiple-choice questions are easy to evaluate but lack authenticity, while open-ended questions are authentic but cannot be reliably assessed.
 
-4. **Paper Goals**: (a) How to construct a high-quality multimodal long-video open-ended QA dataset? (b) How to reliably evaluate open-ended responses without relying on reference answers?
+4. **Goal**: (a) How to construct a high-quality multimodal long-video open-ended QA dataset? (b) How to reliably evaluate open-ended responses without relying on reference answers?
 
-5. **Starting Point**: Leveraging movie recap videos as the data source — narrations in recap videos naturally provide textual summaries of video content, enabling automatic extraction of atomic facts to support reference-free evaluation.
+5. **Key Insight**: Leveraging movie recap videos as the data source — narrations in recap videos naturally provide textual summaries of video content, enabling automatic extraction of atomic facts to support reference-free evaluation.
 
 6. **Core Idea**: Atomic facts extracted from recap video narrations serve as an intermediate annotation layer, simultaneously supporting the generation of questions requiring multimodal reasoning and enabling reference-free evaluation of response factuality and relevance.
 

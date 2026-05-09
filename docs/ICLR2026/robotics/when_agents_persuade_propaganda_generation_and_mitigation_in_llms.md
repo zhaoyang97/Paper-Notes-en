@@ -29,18 +29,18 @@ This paper systematically investigates propaganda generation behavior in LLMs, t
 
 ## Background & Motivation
 
-**State of the Field**: Goldstein et al. (2024) have demonstrated that GPT-3-generated propaganda can shift the attitudes of 43.5% of participants (vs. 24.4% in the control group), and Salvi et al. (2025) found that GPT-4 surpasses humans in persuasiveness. While the persuasive capability of LLMs is well established, mechanistic analysis of *how* they persuade remains absent.
+**Background**: Goldstein et al. (2024) have demonstrated that GPT-3-generated propaganda can shift the attitudes of 43.5% of participants (vs. 24.4% in the control group), and Salvi et al. (2025) found that GPT-4 surpasses humans in persuasiveness. While the persuasive capability of LLMs is well established, mechanistic analysis of *how* they persuade remains absent.
 
 **Limitations of Prior Work**:
 - Prior studies treat propaganda as a monolithic construct, measuring only overall effects or surface-level linguistic features.
 - Propaganda differs from misinformation—it cherry-picks facts and employs emotionally and psychologically manipulative rhetorical techniques (e.g., loaded language, appeal to fear)—making detection considerably harder.
 - In agentic systems, LLMs can autonomously plan, adjust messaging, and coordinate narratives, amplifying propaganda generation capabilities at scale.
 
-**Root Cause**: Although it is widely accepted that LLMs can persuade, the specific rhetorical techniques through which persuasion is achieved and systematic mitigation strategies remain unclear.
+**Key Challenge**: Although it is widely accepted that LLMs can persuade, the specific rhetorical techniques through which persuasion is achieved and systematic mitigation strategies remain unclear.
 
-**Paper Goals**: (1) Can LLMs generate propaganda? (2) Which rhetorical techniques do they employ? (3) Can fine-tuning reduce propagandistic behavior?
+**Goal**: (1) Can LLMs generate propaganda? (2) Which rhetorical techniques do they employ? (3) Can fine-tuning reduce propagandistic behavior?
 
-**Starting Point**: Propaganda is decomposed into specific rhetorical techniques (building blocks), each quantified in terms of frequency of use during LLM propaganda generation. Anti-propaganda constraints are then encoded into model weights via preference alignment.
+**Key Insight**: Propaganda is decomposed into specific rhetorical techniques (building blocks), each quantified in terms of frequency of use during LLM propaganda generation. Anti-propaganda constraints are then encoded into model weights via preference alignment.
 
 **Core Idea**: Rather than asking *whether* LLMs persuade, the paper asks *how* they persuade—deconstructing LLM propaganda strategies by training rhetorical technique detectors, then mitigating them at the weight level via ORPO.
 

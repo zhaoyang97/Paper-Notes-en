@@ -28,15 +28,15 @@ This paper proposes a Beta-Binomial Bayesian framework for evaluating LLM behavi
 
 ## Background & Motivation
 
-**State of the Field**: LLM evaluation typically involves a single generation per prompt using deterministic decoding (greedy) on fixed benchmarks, with metrics such as accuracy or refusal rate. In practice, however, LLMs are deployed with stochastic decoding (temperature > 0, top-p, etc.), and outputs for the same prompt may vary across generations.
+**Background**: LLM evaluation typically involves a single generation per prompt using deterministic decoding (greedy) on fixed benchmarks, with metrics such as accuracy or refusal rate. In practice, however, LLMs are deployed with stochastic decoding (temperature > 0, top-p, etc.), and outputs for the same prompt may vary across generations.
 
 **Limitations of Prior Work**: (a) Deterministic evaluation ignores the stochasticity of LLM outputs and cannot distinguish between a prompt that is refused with 99% probability and one refused with only 55% probability; (b) Evaluation metrics are typically reported without uncertainty quantification, making it impossible to determine whether performance differences between models are statistically significant; (c) Multi-sample evaluation is costly due to API charges, yet naively distributing samples uniformly is inefficient.
 
-**Root Cause**: Accurately evaluating the stochastic behavior of an LLM requires multiple samples per prompt, but API cost constraints limit the total sampling budget. The central challenge is how to maximize evaluation precision under a fixed budget.
+**Key Challenge**: Accurately evaluating the stochastic behavior of an LLM requires multiple samples per prompt, but API cost constraints limit the total sampling budget. The central challenge is how to maximize evaluation precision under a fixed budget.
 
-**Paper Goals**: (1) Provide a Bayesian framework with uncertainty quantification for binary LLM behavior evaluation; (2) Reduce evaluation cost through sequential sampling strategies.
+**Goal**: (1) Provide a Bayesian framework with uncertainty quantification for binary LLM behavior evaluation; (2) Reduce evaluation cost through sequential sampling strategies.
 
-**Starting Point**: The binary behavior of each prompt is modeled as a Bernoulli trial with unknown parameter $\theta_m$. Bayesian inference is performed using a Beta prior and Binomial likelihood, yielding a posterior distribution over $\theta_m$. Posterior distributions for aggregate metrics (mean, threshold counts, etc.) are then derived from these individual posteriors.
+**Key Insight**: The binary behavior of each prompt is modeled as a Bernoulli trial with unknown parameter $\theta_m$. Bayesian inference is performed using a Beta prior and Binomial likelihood, yielding a posterior distribution over $\theta_m$. Posterior distributions for aggregate metrics (mean, threshold counts, etc.) are then derived from these individual posteriors.
 
 **Core Idea**: A Beta-Binomial conjugate model is used to characterize the stochastic binary behavior of each prompt, and Thompson sampling is employed to allocate the sampling budget preferentially to prompts with the highest uncertainty.
 

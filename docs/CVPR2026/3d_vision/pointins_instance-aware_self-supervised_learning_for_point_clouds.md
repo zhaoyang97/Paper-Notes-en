@@ -31,7 +31,7 @@ PointINS proposes the first point cloud self-supervised learning framework that 
 
 Self-supervised learning (SSL) for point clouds has achieved notable progress in semantic segmentation. However, existing methods—whether contrastive learning or masked modeling—fundamentally reinforce semantic invariance, encouraging features of points from the same semantic category to be as similar as possible.
 
-**Root Cause**: Semantic invariance and instance discrimination are inherently in conflict. Distinguishing different instances of the same category (e.g., two adjacent chairs) requires preserving fine-grained geometric relationships, yet existing SSL methods suppress exactly this geometric sensitivity to prevent feature collapse onto low-level geometric cues such as normals or poses.
+**Key Challenge**: Semantic invariance and instance discrimination are inherently in conflict. Distinguishing different instances of the same category (e.g., two adjacent chairs) requires preserving fine-grained geometric relationships, yet existing SSL methods suppress exactly this geometric sensitivity to prevent feature collapse onto low-level geometric cues such as normals or poses.
 
 **Key Insight**: The authors argue that the "geometric proximity" required for instance awareness is a high-level relational property, distinct from the low-level geometric shortcuts to be avoided. This aligns with supervised instance/panoptic segmentation frameworks, where a semantic branch handles category recognition and an offset branch handles instance clustering—both branches jointly enhancing overall scene understanding.
 

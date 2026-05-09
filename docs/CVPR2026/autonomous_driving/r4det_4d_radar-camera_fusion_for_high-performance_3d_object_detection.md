@@ -29,7 +29,7 @@ This paper proposes R4Det, which systematically addresses three core challenges 
 
 ## Background & Motivation
 
-**State of the Field**: 4D millimeter-wave radar has emerged as a critical sensor for autonomous driving perception due to its all-weather operability, long range, and low cost. However, its point clouds are sparse and noisy, necessitating fusion with cameras. Existing methods (CRN, SGDet3D, CVFusion, etc.) have made preliminary progress in multimodal fusion within BEV space.
+**Background**: 4D millimeter-wave radar has emerged as a critical sensor for autonomous driving perception due to its all-weather operability, long range, and low cost. However, its point clouds are sparse and noisy, necessitating fusion with cameras. Existing methods (CRN, SGDet3D, CVFusion, etc.) have made preliminary progress in multimodal fusion within BEV space.
 
 **Challenge 1 — Inaccurate Depth Estimation**: Existing frameworks (SGDet3D, RCBEVDet) apply absolute depth supervision only to foreground points, resulting in sparse supervision, poor panoramic depth estimation quality, and inaccurate 3D localization. Although powerful relative depth models (Metric3D) offer strong generalization, how to effectively leverage their capabilities for accurate panoramic absolute depth remains unresolved.
 

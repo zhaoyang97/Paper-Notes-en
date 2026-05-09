@@ -27,15 +27,15 @@ This paper proposes ChunQiuTR, the first temporal retrieval benchmark built upon
 
 ## Background & Motivation
 
-**State of the Field**: Retrieval serves as the critical interface through which LLMs access and locate knowledge in RAG systems. In historical research, retrieval targets are not arbitrary relevant passages but precise records associated with specific regnal months — temporal consistency is as important as topical relevance.
+**Background**: Retrieval serves as the critical interface through which LLMs access and locate knowledge in RAG systems. In historical research, retrieval targets are not arbitrary relevant passages but precise records associated with specific regnal months — temporal consistency is as important as topical relevance.
 
 **Limitations of Prior Work**: Classical Chinese annalistic texts employ concise, implicit non-Gregorian reign-era expressions (e.g., "first year, spring" or "fifth month of summer"), where absolute year information is omitted and must be inferred from context. Semantically similar passages may be entirely misaligned in time — for instance, a query for "the twelfth month of Duke Zhuang's second year" may retrieve exegetical commentary sharing the same date phrase (repeating the date but not answering the event), or highly similar events from adjacent months.
 
-**Root Cause**: Semantic similarity does not imply temporal consistency. Existing neural retrieval methods model relevance as semantic similarity and cannot distinguish "temporal neighbor confounders" — records that are lexically near-identical but occur in different months.
+**Key Challenge**: Semantic similarity does not imply temporal consistency. Existing neural retrieval methods model relevance as semantic similarity and cannot distinguish "temporal neighbor confounders" — records that are lexically near-identical but occur in different months.
 
-**Paper Goals**: To achieve temporally consistent retrieval under a non-Gregorian, dynastic reign-era system, as an essential prerequisite for downstream historical RAG.
+**Goal**: To achieve temporally consistent retrieval under a non-Gregorian, dynastic reign-era system, as an essential prerequisite for downstream historical RAG.
 
-**Starting Point**: The multi-layered structure of the *Spring and Autumn Annals* and its three commentaries (*Zuozhuan*, *Gongyang*, *Guliang*) — all sharing the same annalistic timeline while describing the same events in different phrasing — naturally generates near-duplicate hard negatives.
+**Key Insight**: The multi-layered structure of the *Spring and Autumn Annals* and its three commentaries (*Zuozhuan*, *Gongyang*, *Guliang*) — all sharing the same annalistic timeline while describing the same events in different phrasing — naturally generates near-duplicate hard negatives.
 
 **Core Idea**: Introduce calendrical position awareness on top of semantic matching — learning a continuous calendrical axis, injecting absolute calendrical context, and adding relative temporal biases.
 

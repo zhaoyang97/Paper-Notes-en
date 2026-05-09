@@ -30,7 +30,7 @@ To address the hardware bottleneck of polarization cameras—low light efficienc
 
 ### Limitations of Prior Work
 
-**State of the Field**: Snapshot polarization cameras use a **dual-Bayer-pattern sensor** to simultaneously capture color and polarization information. Each pixel is covered by a micropolarizer (oriented at 0°/45°/90°/135°) overlaid with a Bayer color filter array, forming a 4×4 super-pixel structure. This design introduces two fundamental problems:
+**Background**: Snapshot polarization cameras use a **dual-Bayer-pattern sensor** to simultaneously capture color and polarization information. Each pixel is covered by a micropolarizer (oriented at 0°/45°/90°/135°) overlaid with a Bayer color filter array, forming a 4×4 super-pixel structure. This design introduces two fundamental problems:
 1. **Extremely low light efficiency**: Each pixel receives only light of a specific polarization direction and color, reducing actual photon flux to 1/4–1/16 of a conventional sensor, leading to severe noise.
 2. **Low spatial resolution**: Stokes parameters (s0, s1, s2) must be estimated from 4×4 super-pixel pools, substantially reducing effective resolution.
 
@@ -38,7 +38,7 @@ Burst super-resolution is an effective technique for jointly denoising and upsam
 
 ### Starting Point
 
-**Paper Goals**:
+**Goal**:
 1. What are the noise statistical characteristics of polarization cameras? How does noise propagate from raw sensor data to Stokes parameters and polarimetric quantities (DoLP, AoLP)?
 2. How can a reliable polarimetric burst super-resolution benchmark be constructed? How much does polarization-specific training improve over generic RGB training?
 

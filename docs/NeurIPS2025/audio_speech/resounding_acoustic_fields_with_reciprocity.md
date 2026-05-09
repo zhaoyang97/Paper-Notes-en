@@ -28,9 +28,9 @@ Leveraging the reciprocity principle of acoustic wave propagation, this paper pr
 
 ## Background & Motivation
 
-- **State of the Field**: Immersive AR/VR experiences require modeling acoustic fields at arbitrary emitter positions, yet data collection faces a fundamental asymmetry: microphones (receivers) can be deployed densely at low cost, while loudspeakers (emitters) are difficult to install in large numbers due to their size and power consumption. Existing neural acoustic field methods either require dense deployment across hundreds of emitter positions, or rely on differentiable ray tracing with simplified geometry.
+- **Background**: Immersive AR/VR experiences require modeling acoustic fields at arbitrary emitter positions, yet data collection faces a fundamental asymmetry: microphones (receivers) can be deployed densely at low cost, while loudspeakers (emitters) are difficult to install in large numbers due to their size and power consumption. Existing neural acoustic field methods either require dense deployment across hundreds of emitter positions, or rely on differentiable ray tracing with simplified geometry.
 - **Limitations of Prior Work**: The scarcity of emitter positions severely limits acoustic field estimation accuracy.
-- **Paper Goals**: This paper introduces the *resounding* task — analogous to relighting in vision — estimating the acoustic field at arbitrary emitter positions from sparse observations at fewer than 10 emitter locations.
+- **Goal**: This paper introduces the *resounding* task — analogous to relighting in vision — estimating the acoustic field at arbitrary emitter positions from sparse observations at fewer than 10 emitter locations.
 
 ## Method
 

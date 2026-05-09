@@ -28,7 +28,7 @@ This paper proposes Attention Smoothing Unlearning (ASU), which constructs a for
 
 ## Background & Motivation
 
-**State of the Field**: LLMs trained on large-scale data tend to memorize sensitive, copyrighted, or harmful content, posing privacy and legal risks. Retraining from scratch is prohibitively expensive, making LLM unlearning an efficient alternative.
+**Background**: LLMs trained on large-scale data tend to memorize sensitive, copyrighted, or harmful content, posing privacy and legal risks. Retraining from scratch is prohibitively expensive, making LLM unlearning an efficient alternative.
 
 **Taxonomy of Existing Methods**:
    - **Divergence-based unlearning**: Methods such as Gradient Ascent (GA) and NPO reverse the learning effect by pushing parameters away from the original converged solution. The difficulty lies in controlling the degree of forgetting — insufficient forgetting leaves residual knowledge, while excessive forgetting severely degrades overall model performance.
@@ -36,7 +36,7 @@ This paper proposes Attention Smoothing Unlearning (ASU), which constructs a for
 
 **Core Limitations of Prior Work**: Existing methods frequently produce gibberish outputs when prompted with forget-set-related inputs, thereby revealing traces of the unlearning operation. The root cause is that these methods fail to fully eliminate lexical- and semantic-level associations in the attention weights — associations that allow the model to still retrieve contextually relevant or factual information.
 
-**Starting Point**: This paper directly targets the attention mechanism, smoothing the attention distribution by raising the softmax temperature to disrupt the fact-recall pathway at its source, while preserving grammatical structure and linguistic coherence.
+**Key Insight**: This paper directly targets the attention mechanism, smoothing the attention distribution by raising the softmax temperature to disrupt the fact-recall pathway at its source, while preserving grammatical structure and linguistic coherence.
 
 ## Method
 

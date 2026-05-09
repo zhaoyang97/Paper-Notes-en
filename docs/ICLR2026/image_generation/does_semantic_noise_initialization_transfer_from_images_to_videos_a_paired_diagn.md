@@ -29,9 +29,9 @@ Through rigorous prompt-level paired statistical testing, this work finds that t
 
 ## Background & Motivation
 
-- **State of the Field**: Text-to-video (T2V) diffusion models are highly sensitive to random seeds: identical prompts with different initial Gaussian noise can produce videos that differ substantially in semantics and motion. Recent work in image generation has demonstrated that teacher-aligned semantic noise initialization (the "golden noise" strategy) improves generation robustness and controllability by shifting the initial noise distribution closer to regions that yield high-quality outputs.
+- **Background**: Text-to-video (T2V) diffusion models are highly sensitive to random seeds: identical prompts with different initial Gaussian noise can produce videos that differ substantially in semantics and motion. Recent work in image generation has demonstrated that teacher-aligned semantic noise initialization (the "golden noise" strategy) improves generation robustness and controllability by shifting the initial noise distribution closer to regions that yield high-quality outputs.
 - **Limitations of Prior Work**: A natural hypothesis is that video generation may benefit even more from this strategy, since temporal dynamics amplify seed-induced variance. However, the spatiotemporal coupling inherent to video introduces additional degrees of freedom and instability, making the success of such a transfer unclear.
-- **Paper Goals**: To conduct a systematic diagnostic study: can semantic noise initialization transfer successfully from images to video diffusion models, and if not, what are the underlying reasons?
+- **Goal**: To conduct a systematic diagnostic study: can semantic noise initialization transfer successfully from images to video diffusion models, and if not, what are the underlying reasons?
 
 ## Method
 

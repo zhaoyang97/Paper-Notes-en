@@ -28,13 +28,13 @@ MMR-AD constructs the largest multimodal reasoning-oriented industrial anomaly d
 
 ## Background & Motivation
 
-**State of the Field**: Industrial anomaly detection has progressively evolved from single-class to multi-class to cross-class settings, with General Anomaly Detection (GAD) as the ultimate goal: training a unified model to directly detect anomalies in novel categories without retraining. MLLMs, with their powerful visual understanding and language reasoning capabilities, are regarded as a promising vehicle for achieving GAD.
+**Background**: Industrial anomaly detection has progressively evolved from single-class to multi-class to cross-class settings, with General Anomaly Detection (GAD) as the ultimate goal: training a unified model to directly detect anomalies in novel categories without retraining. MLLMs, with their powerful visual understanding and language reasoning capabilities, are regarded as a promising vehicle for achieving GAD.
 
 **Limitations of Prior Work**: (1) MLLM pretraining data exhibits a significant domain gap with industrial AD scenarios; (2) existing AD datasets are image-only and ill-suited for MLLM post-training; (3) existing multimodal AD datasets (MMAD, Anomaly-Instruct-125K) either provide only multiple-choice questions without reasoning, or contain large amounts of non-industrial web data.
 
-**Root Cause**: General-purpose MLLMs fall far short of practical requirements for industrial AD, particularly in precise anomaly localization, and addressing this gap requires large-scale, high-quality multimodal AD training data.
+**Key Challenge**: General-purpose MLLMs fall far short of practical requirements for industrial AD, particularly in precise anomaly localization, and addressing this gap requires large-scale, high-quality multimodal AD training data.
 
-**Paper Goals**: Construct a large-scale reasoning-oriented multimodal AD dataset suitable for both training and evaluation, and validate a reinforcement learning-based AD baseline model.
+**Goal**: Construct a large-scale reasoning-oriented multimodal AD dataset suitable for both training and evaluation, and validate a reinforcement learning-based AD baseline model.
 
 **Core Idea**: Manually curate and filter samples from 14 public AD datasets, annotate bounding boxes, automatically generate reasoning-oriented text using a strong MLLM, and train a reasoning-capable AD model via GRPO reinforcement learning.
 

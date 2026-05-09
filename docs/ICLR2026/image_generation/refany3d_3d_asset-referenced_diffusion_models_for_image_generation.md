@@ -31,7 +31,7 @@ This paper proposes RefAny3D, a 3D asset-referenced image generation framework t
 
 ### Limitations of Prior Work
 
-**Limitations of Prior Work**: **State of the Field**: Existing reference-based image generation methods (e.g., IP-Adapter, OminiControl) rely on 2D reference images and cannot effectively leverage 3D assets. In practice, creators often need to use 3D assets such as meshes directly as references to visualize objects across different scenes.
+**Limitations of Prior Work**: **Background**: Existing reference-based image generation methods (e.g., IP-Adapter, OminiControl) rely on 2D reference images and cannot effectively leverage 3D assets. In practice, creators often need to use 3D assets such as meshes directly as references to visualize objects across different scenes.
 
 3D asset-referenced generation faces three major challenges:
 

@@ -29,15 +29,15 @@ This paper introduces MINERVA-Cultural, a benchmark comprising 2,400 manually an
 
 ## Background & Motivation
 
-1. **State of the Field**: Video understanding has advanced substantially, with long video comprehension emerging as a focal research area. Benchmarks such as EgoSchema, LongVideoBench, and MLVU have driven model progress, and frontier models including GPT-5 and Gemini-2.5 achieve strong performance on standard benchmarks.
+1. **Background**: Video understanding has advanced substantially, with long video comprehension emerging as a focal research area. Benchmarks such as EgoSchema, LongVideoBench, and MLVU have driven model progress, and frontier models including GPT-5 and Gemini-2.5 achieve strong performance on standard benchmarks.
 
 2. **Limitations of Prior Work**: (a) Existing video benchmarks are dominated by Western content and English, introducing significant evaluation bias; (b) cross-cultural benchmarks such as ViMUL-Bench rely on automatic translation while their visual content still centers on Western concepts; (c) evaluation focuses solely on final answer correctness, ignoring specific failure modes within the reasoning process.
 
-3. **Root Cause**: Training data for current models is dominated by Euro-American and English content, leading to severely inadequate understanding of low-resource languages and cultures (e.g., Tamil, Telugu). Moreover, simple accuracy metrics cannot reveal precisely where in the reasoning chain a model fails.
+3. **Key Challenge**: Training data for current models is dominated by Euro-American and English content, leading to severely inadequate understanding of low-resource languages and cultures (e.g., Tamil, Telugu). Moreover, simple accuracy metrics cannot reveal precisely where in the reasoning chain a model fails.
 
-4. **Paper Goals**: (a) Construct a genuinely multicultural, multilingual video reasoning benchmark annotated entirely by local experts; (b) provide human reasoning chains as diagnostic tools; (c) develop fine-grained error analysis methods to localize the root causes of model failures.
+4. **Goal**: (a) Construct a genuinely multicultural, multilingual video reasoning benchmark annotated entirely by local experts; (b) provide human reasoning chains as diagnostic tools; (c) develop fine-grained error analysis methods to localize the root causes of model failures.
 
-5. **Starting Point**: Every question is required to demand "visual-cultural understanding" as a skill, tightly coupling perception with cultural knowledge. Human reasoning processes are modeled as directed acyclic graphs (DAGs), enabling iterative isolation and classification of errors.
+5. **Key Insight**: Every question is required to demand "visual-cultural understanding" as a skill, tightly coupling perception with cultural knowledge. Human reasoning processes are modeled as directed acyclic graphs (DAGs), enabling iterative isolation and classification of errors.
 
 6. **Core Idea**: Expose and quantify systemic deficiencies of Video-LLMs in cultural visual perception through a long-video reasoning benchmark fully annotated by local experts from 18 regions (with no reliance on translation), combined with an evidence-graph-based iterative analysis methodology.
 

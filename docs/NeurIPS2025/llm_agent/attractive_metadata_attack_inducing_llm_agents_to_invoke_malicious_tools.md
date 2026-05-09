@@ -28,15 +28,15 @@ AMA (Attractive Metadata Attack) demonstrates that by carefully crafting malicio
 
 ## Background & Motivation
 
-**State of the Field**: LLM agents interact with external services via tool calling (function calling). Protocols such as MCP standardize tool registration and invocation workflows. Agents select which tool to invoke based on tool metadata (name, description, parameters).
+**Background**: LLM agents interact with external services via tool calling (function calling). Protocols such as MCP standardize tool registration and invocation workflows. Agents select which tool to invoke based on tool metadata (name, description, parameters).
 
 **Limitations of Prior Work**: (a) Prompt injection attacks require manipulating user inputs and can be filtered by agent-side defenses; (b) however, tool registration is open — anyone can publish a tool and control its metadata; (c) no prior work systematically studies "metadata manipulation" as a distinct attack surface.
 
-**Root Cause**: LLM agents trust tools' self-descriptions when making selection decisions — yet malicious tools can craft their descriptions to appear more "attractive."
+**Key Challenge**: LLM agents trust tools' self-descriptions when making selection decisions — yet malicious tools can craft their descriptions to appear more "attractive."
 
-**Paper Goals**: Systematically evaluate and demonstrate the threat of metadata manipulation to LLM agent tool selection.
+**Goal**: Systematically evaluate and demonstrate the threat of metadata manipulation to LLM agent tool selection.
 
-**Starting Point**: The attack is formalized as a state-action-value optimization problem — the state is the current malicious tool set, the action is generating new tool metadata, and the value is the invocation probability. An LLM iteratively optimizes metadata to maximize "attractiveness."
+**Key Insight**: The attack is formalized as a state-action-value optimization problem — the state is the current malicious tool set, the action is generating new tool metadata, and the value is the invocation probability. An LLM iteratively optimizes metadata to maximize "attractiveness."
 
 **Core Idea**: Iteratively optimize the name/description/parameter schema of a malicious tool via an LLM → maximize its selection probability in the agent's tool-choosing process → steal private data upon invocation.
 

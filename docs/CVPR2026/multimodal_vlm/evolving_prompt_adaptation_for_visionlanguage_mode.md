@@ -29,15 +29,15 @@ This paper proposes EvoPrompt, a framework that treats prompt training as a prog
 
 ## Background & Motivation
 
-**State of the Field**: Large-scale VLMs such as CLIP acquire strong zero-shot capabilities through contrastive pre-training. Prompt learning (CoOp/CoCoOp/MaPLe) enables efficient downstream adaptation with minimal trainable parameters and has become the mainstream parameter-efficient fine-tuning paradigm.
+**Background**: Large-scale VLMs such as CLIP acquire strong zero-shot capabilities through contrastive pre-training. Prompt learning (CoOp/CoCoOp/MaPLe) enables efficient downstream adaptation with minimal trainable parameters and has become the mainstream parameter-efficient fine-tuning paradigm.
 
 **Limitations of Prior Work**: (1) **Layer-wise isolation** — methods such as MaPLe parameterize prompts independently at each layer, disrupting the semantic hierarchical flow in deeper encoder layers and preventing information learned at lower layers from propagating upward; (2) **Modality bias** — existing approaches are text-centric and fail to exploit complementary visual–language information; (3) **Catastrophic forgetting** — under few-shot adaptation, prompts rapidly deviate from pre-trained semantic anchors, leading to overfitting on downstream data and loss of zero-shot generalization.
 
-**Root Cause**: Prompt learning must acquire task-specific features, yet unconstrained optimization overwrites pre-trained knowledge. This is fundamentally a trade-off between adaptation strength and knowledge retention.
+**Key Challenge**: Prompt learning must acquire task-specific features, yet unconstrained optimization overwrites pre-trained knowledge. This is fundamentally a trade-off between adaptation strength and knowledge retention.
 
-**Paper Goals**: To explicitly guide the evolution trajectory of prompts during few-shot prompt learning, enabling simultaneous acquisition of task-specific features and retention of pre-trained knowledge.
+**Goal**: To explicitly guide the evolution trajectory of prompts during few-shot prompt learning, enabling simultaneous acquisition of task-specific features and retention of pre-trained knowledge.
 
-**Starting Point**: Prompt training is recast as a progressive evolution from general semantic anchors to task-specific features. A key observation is that in low-rank adaptation, directions encode semantic knowledge (more critical), while magnitudes encode adaptation strength. Freezing learned directions and tuning only magnitudes enables continual learning without overwriting prior knowledge.
+**Key Insight**: Prompt training is recast as a progressive evolution from general semantic anchors to task-specific features. A key observation is that in low-rank adaptation, directions encode semantic knowledge (more critical), while magnitudes encode adaptation strength. Freezing learned directions and tuning only magnitudes enables continual learning without overwriting prior knowledge.
 
 **Core Idea**: Direction–magnitude decoupling freezes historical semantic directions and tunes only magnitude coefficients; combined with a shared projector and feature regularization, this achieves controllable prompt evolution.
 

@@ -28,15 +28,15 @@ This paper introduces DanmakuTPPBench, the first multi-modal Temporal Point Proc
 
 ## Background & Motivation
 
-1. **State of the Field**: TPP has broad applications in social media, healthcare, and finance, yet existing TPP datasets are nearly all unimodal (timestamps and event types only), impeding the development of multi-modal TPP models.
+1. **Background**: TPP has broad applications in social media, healthcare, and finance, yet existing TPP datasets are nearly all unimodal (timestamps and event types only), impeding the development of multi-modal TPP models.
 
 2. **Limitations of Prior Work**: Existing datasets lack textual and visual context. The TPP comprehension capabilities of LLMs/MLLMs remain largely unexplored. No dedicated TPP question-answering benchmark exists.
 
-3. **Root Cause**: Real-world event streams inherently contain multi-modal information, yet unimodal data cannot support the training and evaluation of models that exploit such information.
+3. **Key Challenge**: Real-world event streams inherently contain multi-modal information, yet unimodal data cannot support the training and evaluation of models that exploit such information.
 
-4. **Paper Goals**: Construct the first natively multi-modal TPP dataset and question-answering benchmark.
+4. **Goal**: Construct the first natively multi-modal TPP dataset and question-answering benchmark.
 
-5. **Starting Point**: The Bilibili danmaku system naturally constitutes a multi-modal TPP with precisely timestamped text content aligned to video frames.
+5. **Key Insight**: The Bilibili danmaku system naturally constitutes a multi-modal TPP with precisely timestamped text content aligned to video frames.
 
 6. **Core Idea**: Danmaku serves as a natural multi-modal TPP data source; a multi-agent pipeline is employed to automatically construct the QA benchmark.
 

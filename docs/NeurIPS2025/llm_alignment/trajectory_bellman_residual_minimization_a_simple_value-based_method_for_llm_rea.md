@@ -28,15 +28,15 @@ TBRM minimizes trajectory-level Bellman residuals by treating LLM output logits 
 
 ## Background & Motivation
 
-**State of the Field**: PPO and GRPO have achieved notable success in LLM alignment, yet they rely on complex components such as critic models, multiple rollouts, and importance sampling.
+**Background**: PPO and GRPO have achieved notable success in LLM alignment, yet they rely on complex components such as critic models, multiple rollouts, and importance sampling.
 
 **Limitations of Prior Work**: PPO requires 32 samples per prompt and GRPO requires 16, resulting in high computational cost, numerous hyperparameters, and training instability.
 
-**Root Cause**: Value-based methods in RL are generally more efficient and stable, but their application to the high-dimensional discrete action spaces of LLMs remains largely unexplored.
+**Key Challenge**: Value-based methods in RL are generally more efficient and stable, but their application to the high-dimensional discrete action spaces of LLMs remains largely unexplored.
 
-**Paper Goals**: Design a simple value-learning method that requires only a single sample per prompt.
+**Goal**: Design a simple value-learning method that requires only a single sample per prompt.
 
-**Starting Point**: Treat LLM logits directly as Q-value estimators and minimize the trajectory-level Bellman residual.
+**Key Insight**: Treat LLM logits directly as Q-value estimators and minimize the trajectory-level Bellman residual.
 
 **Core Idea**: $\mathcal{L}_{TBRM} = (\log \pi_m(y_w|x) - \log \pi_m(y_l|x) - R^*)^2$, driving the log-likelihood difference between correct and incorrect responses toward a target margin.
 

@@ -29,15 +29,15 @@ ChatHLS proposes a multi-agent HLS design framework featuring two core component
 
 ## Background & Motivation
 
-**State of the Field**: High-Level Synthesis (HLS) accelerates hardware design by abstracting C/C++ into hardware descriptions. The success of LLMs in code generation has stimulated research interest in applying them to HLS.
+**Background**: High-Level Synthesis (HLS) accelerates hardware design by abstracting C/C++ into hardware descriptions. The success of LLMs in code generation has stimulated research interest in applying them to HLS.
 
 **Limitations of Prior Work**: (1) HLS-specific data is scarce, and existing datasets rarely expose synthesizability constraints, pragma selection rationale, or QoR correlations; (2) the combinatorially explosive pragma tuning space makes manual optimization extremely time-consuming; (3) general-purpose LLMs struggle to identify and correct HLS-specific compatibility errors.
 
-**Root Cause**: HLS design requires simultaneously optimizing functional correctness and hardware efficiency, yet existing LLMs lack understanding of hardware constraints and pragma semantics.
+**Key Challenge**: HLS design requires simultaneously optimizing functional correctness and hardware efficiency, yet existing LLMs lack understanding of hardware constraints and pragma semantics.
 
-**Paper Goals**: Construct an automated framework for HLS design, optimization, and debugging.
+**Goal**: Construct an automated framework for HLS design, optimization, and debugging.
 
-**Starting Point**: Multi-agent collaboration + specialized fine-tuning + self-evolving data augmentation.
+**Key Insight**: Multi-agent collaboration + specialized fine-tuning + self-evolving data augmentation.
 
 **Core Idea**: Enable LLMs to understand the causal relationship between pragmas and hardware performance through QoR-aware reasoning, and accurately diagnose HLS errors via a reasoning-to-instruction approach.
 

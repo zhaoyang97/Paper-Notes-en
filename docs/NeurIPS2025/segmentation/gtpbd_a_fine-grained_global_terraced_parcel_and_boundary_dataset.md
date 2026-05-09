@@ -29,7 +29,7 @@ This paper introduces GTPBD, the first fine-grained global terraced parcel and b
 
 ## Background & Motivation
 
-**State of the Field**: Agricultural parcels are fundamental units for precision agriculture, food security assessment, and soil erosion monitoring. Approximately 120 million acres of terraced fields worldwide support 500 million mountain-dwelling people, reducing soil erosion by 23.7 billion tons annually, making them ecologically and economically invaluable.
+**Background**: Agricultural parcels are fundamental units for precision agriculture, food security assessment, and soil erosion monitoring. Approximately 120 million acres of terraced fields worldwide support 500 million mountain-dwelling people, reducing soil erosion by 23.7 billion tons annually, making them ecologically and economically invaluable.
 
 **Limitations of Prior Work**:
 - Existing agricultural parcel datasets (FHAPD, AI4Boundaries, PASTIS, etc.) primarily focus on **regular flatland fields**, with virtually no coverage of complex terraced terrain.
@@ -37,9 +37,9 @@ This paper introduces GTPBD, the first fine-grained global terraced parcel and b
 - Spatial resolution is insufficient (Sentinel-2 at 10 m, Landsat at 30 m) for fine-grained terraced parcel delineation.
 - Cross-domain UDA evaluation is absent, leaving model generalization largely unassessed.
 
-**Root Cause**: The lack of high-resolution imagery covering major global terraced regions, combined with the absence of multi-level label design and multi-domain partitioning, prevents unified multi-task benchmarking.
+**Key Challenge**: The lack of high-resolution imagery covering major global terraced regions, combined with the absence of multi-level label design and multi-domain partitioning, prevents unified multi-task benchmarking.
 
-**Paper Goals**: To collect high-resolution imagery over major global terraced areas, design a three-level label system with three-domain partitioning, and establish a unified multi-task benchmark evaluation platform.
+**Goal**: To collect high-resolution imagery over major global terraced areas, design a three-level label system with three-domain partitioning, and establish a unified multi-task benchmark evaluation platform.
 
 ## Method
 

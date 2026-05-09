@@ -30,15 +30,15 @@ This paper proposes CI-RL, a framework that combines Chain-of-Thought reasoning 
 
 ## Background & Motivation
 
-**State of the Field**: LLM agents are acquiring increasing autonomy (booking appointments, sending emails, managing files), requiring them to interact with the external world on behalf of users and inevitably access and process personal information.
+**Background**: LLM agents are acquiring increasing autonomy (booking appointments, sending emails, managing files), requiring them to interact with the external world on behalf of users and inevitably access and process personal information.
 
 **Limitations of Prior Work**: (a) LLMs lack understanding of contextual integrity (CI)—i.e., what information is appropriate to share within a given context and what is not; (b) even without adversarial attacks, models may inadvertently disclose irrelevant sensitive information; (c) restricting information access is often impractical (e.g., RAG systems require broad access to user files).
 
-**Root Cause**: LLMs possess knowledge about privacy and sensitive information, yet fail to consistently make correct information disclosure judgments under contextual nuance. This is fundamentally a reasoning problem—the model must reason about which information flows are appropriate within a given context.
+**Key Challenge**: LLMs possess knowledge about privacy and sensitive information, yet fail to consistently make correct information disclosure judgments under contextual nuance. This is fundamentally a reasoning problem—the model must reason about which information flows are appropriate within a given context.
 
-**Paper Goals**: (a) Can LLM reasoning capabilities be explicitly guided to judge the appropriateness of information disclosure? (b) Can such reasoning be further reinforced via reinforcement learning? (c) Can capabilities trained on small-scale synthetic data transfer to real-world benchmarks?
+**Goal**: (a) Can LLM reasoning capabilities be explicitly guided to judge the appropriateness of information disclosure? (b) Can such reasoning be further reinforced via reinforcement learning? (c) Can capabilities trained on small-scale synthetic data transfer to real-world benchmarks?
 
-**Starting Point**: CI is inherently a reasoning task, analogous to mathematical or code reasoning—the model must analyze the context, evaluate the relevance of each attribute, and make disclosure decisions. This makes the CoT reasoning + RL paradigm a natural fit.
+**Key Insight**: CI is inherently a reasoning task, analogous to mathematical or code reasoning—the model must analyze the context, evaluate the relevance of each attribute, and make disclosure decisions. This makes the CoT reasoning + RL paradigm a natural fit.
 
 **Core Idea**: Teach LLMs to respect information boundaries while completing tasks by combining explicit CoT reasoning over contextual norms with GRPO reinforcement learning optimized via rule-based reward signals.
 

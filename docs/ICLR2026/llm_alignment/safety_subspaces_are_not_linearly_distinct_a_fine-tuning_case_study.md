@@ -29,15 +29,15 @@ Through four systematic experiments (parallel projection, orthogonal projection,
 
 ## Background & Motivation
 
-**State of the Field**: LLMs aligned via safety training (e.g., RLHF) can refuse harmful prompts, yet this safety is fragile — even fine-tuning on benign data can degrade safety behavior. A small number of malicious samples mixed into the training set can subvert alignment, revealing an attack surface deeper than prompt injection: weight-level alignment degradation.
+**Background**: LLMs aligned via safety training (e.g., RLHF) can refuse harmful prompts, yet this safety is fragile — even fine-tuning on benign data can degrade safety behavior. A small number of malicious samples mixed into the training set can subvert alignment, revealing an attack surface deeper than prompt injection: weight-level alignment degradation.
 
 **Limitations of Prior Work**: A line of research (e.g., SafeLoRA, LDIFS) has attempted to defend against fine-tuning attacks by exploiting "safety subspaces" — the core assumption being that safety alignment information concentrates in specific linear directions in weight space and can be extracted via SVD and protected during subsequent fine-tuning. This assumption, however, has never been rigorously tested.
 
-**Root Cause**: If safety information truly resides in an independent linear subspace, harmful updates could be orthogonalized away from safety directions via simple projection, preserving safety while retaining task performance. However, if safety and general learning are highly entangled — i.e., the same directions simultaneously amplify both safe and harmful behavior — projection-based defenses cannot selectively suppress harmfulness without sacrificing utility.
+**Key Challenge**: If safety information truly resides in an independent linear subspace, harmful updates could be orthogonalized away from safety directions via simple projection, preserving safety while retaining task performance. However, if safety and general learning are highly entangled — i.e., the same directions simultaneously amplify both safe and harmful behavior — projection-based defenses cannot selectively suppress harmfulness without sacrificing utility.
 
-**Paper Goals**: To systematically examine the foundational assumption of whether LLM safety behavior concentrates in specific linear subspaces.
+**Goal**: To systematically examine the foundational assumption of whether LLM safety behavior concentrates in specific linear subspaces.
 
-**Starting Point**: Rather than proposing a new defense, the authors conduct rigorous empirical investigation. Two candidate safety subspaces are constructed — from the alignment update $\Delta_A$ (aligned − base) and the safety fine-tuning update $\Delta_S$ (safety-tuned − base) — and their specificity is then tested through projection experiments.
+**Key Insight**: Rather than proposing a new defense, the authors conduct rigorous empirical investigation. Two candidate safety subspaces are constructed — from the alignment update $\Delta_A$ (aligned − base) and the safety fine-tuning update $\Delta_S$ (safety-tuned − base) — and their specificity is then tested through projection experiments.
 
 **Core Idea**: Four carefully designed experiments demonstrate that safety-related weight updates and activation patterns are not linearly separable from general learning, exposing fundamental limitations of subspace-based defense strategies.
 

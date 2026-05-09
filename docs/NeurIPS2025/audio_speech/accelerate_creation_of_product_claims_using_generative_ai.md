@@ -28,17 +28,17 @@ This paper develops the Claim Advisor platform, leveraging LLM in-context learni
 
 ## Background & Motivation
 
-**State of the Field**: Product claims are a key driver of consumer purchasing behavior. Traditional claim creation workflows involve manually drafting candidate claims, testing preferences via MaxDiff consumer studies, and iterating across multiple rounds—a process that typically requires weeks to months and substantial financial investment.
+**Background**: Product claims are a key driver of consumer purchasing behavior. Traditional claim creation workflows involve manually drafting candidate claims, testing preferences via MaxDiff consumer studies, and iterating across multiple rounds—a process that typically requires weeks to months and substantial financial investment.
 
 **Limitations of Prior Work**: (a) Claims must be legally compliant and scientifically substantiated while resonating with consumer topic trends, imposing multiple constraints on the creative process; (b) significant time in traditional workflows is spent searching existing claims, crafting new ones manually, and conducting consumer testing; (c) consumer research via MaxDiff is costly, requiring real consumer participation in each round.
 
-**Root Cause**: High-quality claim creation demands domain expertise combined with consumer preference feedback, yet manual iteration is extremely slow.
+**Key Challenge**: High-quality claim creation demands domain expertise combined with consumer preference feedback, yet manual iteration is extremely slow.
 
-**Paper Goals**
+**Goal**
 - How can LLMs accelerate claim search, generation, and ranking?
 - How can LLMs simulate consumer preferences to partially replace real consumer studies?
 
-**Starting Point**: Integrating the MaxDiff consumer research methodology into LLM prompt design and fine-tuning—training LLMs to select the best and worst claims in the manner of consumers.
+**Key Insight**: Integrating the MaxDiff consumer research methodology into LLM prompt design and fine-tuning—training LLMs to select the best and worst claims in the manner of consumers.
 
 **Core Idea**: Emulating the MaxDiff experimental paradigm (selecting the best and worst from a set of 5) to fine-tune/prompt LLMs for claim ranking, which substantially outperforms asking LLMs to rank all claims simultaneously.
 

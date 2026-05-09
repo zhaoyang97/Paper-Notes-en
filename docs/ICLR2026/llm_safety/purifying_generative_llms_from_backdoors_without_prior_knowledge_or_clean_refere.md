@@ -29,7 +29,7 @@ A backdoor purification method for LLMs that requires neither prior knowledge no
 
 ## Background & Motivation
 
-**State of the Field**: Backdoor attacks pose a serious security threat to LLMs — poisoned models behave normally on clean inputs but produce malicious outputs (sentiment manipulation, targeted refusal, code injection) when a trigger is present.
+**Background**: Backdoor attacks pose a serious security threat to LLMs — poisoned models behave normally on clean inputs but produce malicious outputs (sentiment manipulation, targeted refusal, code injection) when a trigger is present.
 
 **Limitations of Prior Work**:
    - Require prior knowledge of the trigger (unrealistic in practice)
@@ -38,11 +38,11 @@ A backdoor purification method for LLMs that requires neither prior knowledge no
    - Mostly limited to classification tasks and cannot handle generative LLMs
    - Vulnerable to adaptive attackers who can obfuscate internal signals
 
-**Root Cause**: How can backdoors be purified without knowledge of the trigger and without relying on a clean model?
+**Key Challenge**: How can backdoors be purified without knowledge of the trigger and without relying on a clean model?
 
-**Paper Goals**: Backdoor purification for LLMs under conditions of no prior knowledge and no clean reference model.
+**Goal**: Backdoor purification for LLMs under conditions of no prior knowledge and no clean reference model.
 
-**Starting Point**: Rather than identifying the trigger itself, the method disrupts the trigger–behavior association by precisely localizing how backdoors are encoded in model parameters.
+**Key Insight**: Rather than identifying the trigger itself, the method disrupts the trigger–behavior association by precisely localizing how backdoors are encoded in model parameters.
 
 **Core Idea**: Construct multiple backdoor variants → extract a consistent "backdoor signature" across variants → suppress signature neurons + lightweight recovery fine-tuning.
 

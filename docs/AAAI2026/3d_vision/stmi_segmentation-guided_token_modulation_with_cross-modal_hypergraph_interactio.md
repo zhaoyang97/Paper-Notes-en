@@ -28,15 +28,15 @@ STMI proposes a three-component multi-modal object re-identification framework t
 
 ## Background & Motivation
 
-**State of the Field**: Multi-modal object re-identification (Multi-Modal ReID) leverages complementary information from different modalities (RGB, near-infrared NIR, thermal infrared TIR) to retrieve specific targets. Existing methods extract per-modality features using ViT and then perform fusion.
+**Background**: Multi-modal object re-identification (Multi-Modal ReID) leverages complementary information from different modalities (RGB, near-infrared NIR, thermal infrared TIR) to retrieve specific targets. Existing methods extract per-modality features using ViT and then perform fusion.
 
 **Limitations of Prior Work**: (1) Hard token filtering risks discarding discriminative information, and simple fusion strategies fail to effectively exploit cross-modal complementarity; (2) Background noise manifests differently across modalities, and effective foreground/background separation mechanisms are lacking.
 
-**Root Cause**: How to achieve compact representation while retaining all token information, and how to effectively model high-order cross-modal semantic relationships.
+**Key Challenge**: How to achieve compact representation while retaining all token information, and how to effectively model high-order cross-modal semantic relationships.
 
-**Paper Goals**: Design a unified multi-modal learning framework that simultaneously addresses background suppression, information compression, and cross-modal high-order interaction.
+**Goal**: Design a unified multi-modal learning framework that simultaneously addresses background suppression, information compression, and cross-modal high-order interaction.
 
-**Starting Point**: Employ SAM-generated masks for soft modulation rather than hard filtering; use learnable query tokens for adaptive reallocation; model high-order inter-modal relationships via hypergraphs.
+**Key Insight**: Employ SAM-generated masks for soft modulation rather than hard filtering; use learnable query tokens for adaptive reallocation; model high-order inter-modal relationships via hypergraphs.
 
 **Core Idea**: Three modules—SFM (foreground enhancement) + STR (representation compression) + CHI (multi-modal high-order interaction)—form a complete information processing pipeline.
 

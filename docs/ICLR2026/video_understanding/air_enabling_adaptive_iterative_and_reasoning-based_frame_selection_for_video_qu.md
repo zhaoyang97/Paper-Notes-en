@@ -27,15 +27,15 @@ content_hash: 9dcd9afe8d637e79
 This paper proposes A.I.R., a training-free adaptive-iterative-reasoning-driven frame selection framework that addresses two fundamental challenges in VideoQA—inaccurate similarity estimation by lightweight models (CLIP) and the prohibitive computational cost of VLM-based analysis—via a two-stage strategy: GMM-based adaptive initial sampling followed by iterative VLM-guided refinement. In the worst case, A.I.R. analyzes only 72 frames (vs. 128 for baselines), while consistently improving performance across multiple long-video benchmarks.
 
 ## Background & Motivation
-**State of the Field**: Frame selection is critical in VideoQA, as full videos are too long to process entirely. Existing approaches fall into two categories: (1) lightweight models (e.g., CLIP) that compute query-frame similarity for selection—fast but inaccurate for complex queries; and (2) VLMs that analyze frames individually—accurate but computationally prohibitive (128 frames ≈ 162 seconds).
+**Background**: Frame selection is critical in VideoQA, as full videos are too long to process entirely. Existing approaches fall into two categories: (1) lightweight models (e.g., CLIP) that compute query-frame similarity for selection—fast but inaccurate for complex queries; and (2) VLMs that analyze frames individually—accurate but computationally prohibitive (128 frames ≈ 162 seconds).
 
 **Limitations of Prior Work**: CLIP treats queries as bags of keywords, failing to capture temporal reasoning (e.g., "after introducing tofu") and complex semantics, resulting in similarity scores that do not reflect true relevance. Exhaustive VLM analysis of all frames is infeasible.
 
-**Root Cause**: Accurate frame selection requires deep semantic understanding (VLM), yet the per-frame cost of VLM analysis scales linearly with the number of frames. The core challenge is reducing VLM invocations without sacrificing selection quality.
+**Key Challenge**: Accurate frame selection requires deep semantic understanding (VLM), yet the per-frame cost of VLM analysis scales linearly with the number of frames. The core challenge is reducing VLM invocations without sacrificing selection quality.
 
-**Paper Goals**: To make deep VLM analysis computationally feasible by restricting it to a small set of high-potential frames rather than the entire video.
+**Goal**: To make deep VLM analysis computationally feasible by restricting it to a small set of high-potential frames rather than the entire video.
 
-**Starting Point**: A two-stage pipeline—coarse filtering via CLIP (fast but imprecise), followed by fine-grained VLM analysis on a small set of high-potential frames (precise but expensive), with iterative discovery of additional relevant frames.
+**Key Insight**: A two-stage pipeline—coarse filtering via CLIP (fast but imprecise), followed by fine-grained VLM analysis on a small set of high-potential frames (precise but expensive), with iterative discovery of additional relevant frames.
 
 **Core Idea**: An iterative loop in which the VLM analyzes only small batches of the most promising frames, complemented by localized dense sampling to discover temporally adjacent relevant frames.
 

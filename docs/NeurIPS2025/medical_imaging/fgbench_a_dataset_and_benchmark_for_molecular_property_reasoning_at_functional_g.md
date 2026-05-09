@@ -29,15 +29,15 @@ This paper presents FGBench, a dataset comprising 625K molecular property reason
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly applied in chemistry, including molecular property prediction, molecular description generation, and molecular generation. However, existing datasets (e.g., MoleculeNet) primarily focus on molecule-level property prediction, providing molecular-level labels without finer-grained structural information.
+**Background**: LLMs are increasingly applied in chemistry, including molecular property prediction, molecular description generation, and molecular generation. However, existing datasets (e.g., MoleculeNet) primarily focus on molecule-level property prediction, providing molecular-level labels without finer-grained structural information.
 
 **Limitations of Prior Work**: (1) Functional groups are the core structural units governing physicochemical properties (e.g., hydroxyl -OH confers polarity and hydrogen bonding capability; carboxyl -COOH participates in esterification), yet existing databases lack explicit associations between functional groups and molecular properties. (2) Existing functional group annotation methods (e.g., CheckMol) rely on direct pattern matching, which fails when two functional groups overlap and cannot directly identify functional group differences between two molecules. (3) No benchmark exists specifically for evaluating LLM reasoning at the functional group level.
 
-**Root Cause**: Chemists typically follow a "three-step reasoning" process when predicting molecular properties—identifying structurally similar molecules, observing functional group differences, and inferring property changes based on prior knowledge—yet LLMs lack this fine-grained reasoning capability, and no suitable training or evaluation resources are available.
+**Key Challenge**: Chemists typically follow a "three-step reasoning" process when predicting molecular properties—identifying structurally similar molecules, observing functional group differences, and inferring property changes based on prior knowledge—yet LLMs lack this fine-grained reasoning capability, and no suitable training or evaluation resources are available.
 
-**Paper Goals**: (1) How to construct a reliable functional group-level molecular pairing dataset? (2) How do LLMs perform on functional group reasoning tasks of varying granularity? (3) Can chemistry-specific fine-tuning improve functional group-level reasoning?
+**Goal**: (1) How to construct a reliable functional group-level molecular pairing dataset? (2) How do LLMs perform on functional group reasoning tasks of varying granularity? (3) Can chemistry-specific fine-tuning improve functional group-level reasoning?
 
-**Starting Point**: The chemist's reasoning process is emulated by constructing QA pairs through comparison of molecularly similar but functionally distinct molecule pairs. A validation-by-reconstruction strategy is adopted to ensure data quality.
+**Key Insight**: The chemist's reasoning process is emulated by constructing QA pairs through comparison of molecularly similar but functionally distinct molecule pairs. A validation-by-reconstruction strategy is adopted to ensure data quality.
 
 **Core Idea**: A validation-by-reconstruction strategy is employed to construct a functional group-level molecular pairing dataset, systematically evaluating LLM reasoning across three dimensions (single/multi-functional group effects and molecular comparison), thereby revealing critical deficiencies in current models.
 

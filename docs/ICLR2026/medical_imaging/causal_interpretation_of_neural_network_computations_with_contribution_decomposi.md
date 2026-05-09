@@ -28,15 +28,15 @@ This paper proposes CODEC (Contribution Decomposition), which applies Integrated
 
 ## Background & Motivation
 
-**State of the Field**: Understanding how neural networks transform inputs into outputs is a central problem in explainable AI. Existing methods primarily analyze activation patterns in hidden layers, seeking representations associated with human-interpretable concepts.
+**Background**: Understanding how neural networks transform inputs into outputs is a central problem in explainable AI. Existing methods primarily analyze activation patterns in hidden layers, seeking representations associated with human-interpretable concepts.
 
 **Limitations of Prior Work**: Activation analysis only reflects a neuron's receptive field—i.e., what inputs it responds to—but does not address how that neuron influences the output. A highly activated neuron may exert a positive, negative, or null effect on the output. Existing saliency map methods (Grad-CAM, SmoothGrad) analyze only the input→output mapping and offer limited insight into the causal mechanisms of intermediate layers.
 
-**Root Cause**: Activation $\neq$ contribution. Activation captures only half of the picture via the receptive field; understanding a neuron's causal role also requires its projective field—its influence on downstream computation. Yet existing tools rarely analyze the collaborative contributions of hidden-layer neuron populations.
+**Key Challenge**: Activation $\neq$ contribution. Activation captures only half of the picture via the receptive field; understanding a neuron's causal role also requires its projective field—its influence on downstream computation. Yet existing tools rarely analyze the collaborative contributions of hidden-layer neuron populations.
 
-**Paper Goals**: To establish a general framework for analyzing the collaborative contributions of hidden-layer neuron populations, revealing how they jointly construct network outputs.
+**Goal**: To establish a general framework for analyzing the collaborative contributions of hidden-layer neuron populations, revealing how they jointly construct network outputs.
 
-**Starting Point**: Inspired by neuroscience—specifically, how distinct neuron types in the retina cooperate to produce functional outputs—the paper extends attribution methods (Integrated Gradients) from the input→output direction to the hidden layer→output direction, computing each hidden neuron's contribution and subsequently decomposing these contributions into cooperative modes via a Sparse Autoencoder.
+**Key Insight**: Inspired by neuroscience—specifically, how distinct neuron types in the retina cooperate to produce functional outputs—the paper extends attribution methods (Integrated Gradients) from the input→output direction to the hidden layer→output direction, computing each hidden neuron's contribution and subsequently decomposing these contributions into cooperative modes via a Sparse Autoencoder.
 
 **Core Idea**: Analyze the *contributions* rather than the *activations* of hidden-layer neurons, and decompose contributions into sparse cooperative modes using a Sparse Autoencoder, yielding causal insights inaccessible to activation-based analysis.
 

@@ -28,15 +28,15 @@ This paper presents PARROT, a practical and realistic benchmark for cross-system
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have demonstrated increasingly strong performance on Text-to-SQL tasks (natural language to SQL), making it a popular research direction for database interaction. However, a closely related and practically significant problem—cross-system SQL translation (SQL-to-SQL), i.e., converting SQL queries written for one database system (e.g., MySQL) into equivalent queries for another (e.g., ClickHouse)—has been severely neglected.
+**Background**: LLMs have demonstrated increasingly strong performance on Text-to-SQL tasks (natural language to SQL), making it a popular research direction for database interaction. However, a closely related and practically significant problem—cross-system SQL translation (SQL-to-SQL), i.e., converting SQL queries written for one database system (e.g., MySQL) into equivalent queries for another (e.g., ClickHouse)—has been severely neglected.
 
 **Limitations of Prior Work**: (1) Existing SQL benchmarks (e.g., Spider, WikiSQL) focus on a very limited number of database systems (typically only SQLite) and fail to reflect the system diversity found in real production environments; (2) These benchmarks use highly standardized SQL syntax, making them unable to capture the extensive system-specific SQL dialect differences (e.g., custom functions, data types, syntactic rules) that constitute the core challenge of SQL-to-SQL translation; (3) The absence of dedicated SQL-to-SQL evaluation benchmarks has left this practically important task (e.g., database migration, multi-database system interoperability) without systematic study.
 
-**Root Cause**: While Text-to-SQL research flourishes, it remains confined to standardized SQL and a handful of systems. In contrast, real-world cross-system SQL migration is an essential need involving substantial dialect variation—a challenge that existing benchmarks are entirely unable to evaluate.
+**Key Challenge**: While Text-to-SQL research flourishes, it remains confined to standardized SQL and a handful of systems. In contrast, real-world cross-system SQL migration is an essential need involving substantial dialect variation—a challenge that existing benchmarks are entirely unable to evaluate.
 
-**Paper Goals**: (1) Construct a SQL-to-SQL translation benchmark covering multiple systems with authentic dialect differences; (2) Systematically evaluate the cross-system SQL translation capabilities of current LLMs; (3) Provide benchmark variants at different granularities to accommodate diverse evaluation needs.
+**Goal**: (1) Construct a SQL-to-SQL translation benchmark covering multiple systems with authentic dialect differences; (2) Systematically evaluate the cross-system SQL translation capabilities of current LLMs; (3) Provide benchmark variants at different granularities to accommodate diverse evaluation needs.
 
-**Starting Point**: Translation pairs are collected from 38 open-source SQL benchmarks and real-world business services, with data specifically designed to challenge system-specific SQL comprehension. Two evaluation metrics are proposed: dialect compatibility (AccEX, syntactic correctness) and result consistency (AccRES, execution result equivalence).
+**Key Insight**: Translation pairs are collected from 38 open-source SQL benchmarks and real-world business services, with data specifically designed to challenge system-specific SQL comprehension. Two evaluation metrics are proposed: dialect compatibility (AccEX, syntactic correctness) and result consistency (AccRES, execution result equivalence).
 
 **Core Idea**: Construct a practical SQL-to-SQL translation benchmark covering 22 production-grade database systems to expose critical deficiencies in LLMs' understanding of system-specific SQL dialects.
 

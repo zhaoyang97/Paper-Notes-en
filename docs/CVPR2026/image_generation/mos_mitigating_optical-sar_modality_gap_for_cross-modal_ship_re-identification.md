@@ -28,15 +28,15 @@ The paper proposes the MOS framework to address optical-SAR cross-modal ship re-
 
 ## Background & Motivation
 
-**State of the Field**: Ship ReID is critical for maritime surveillance and management. SAR sensors enable all-weather, all-day imaging but suffer from severe speckle noise. Optical-SAR cross-modal ReID is highly challenging due to the large modality gap, with only two pioneering works (TransOSS, SMART-Ship) existing in this area.
+**Background**: Ship ReID is critical for maritime surveillance and management. SAR sensors enable all-weather, all-day imaging but suffer from severe speckle noise. Optical-SAR cross-modal ReID is highly challenging due to the large modality gap, with only two pioneering works (TransOSS, SMART-Ship) existing in this area.
 
 **Limitations of Prior Work**: (a) The fundamentally different imaging mechanisms of optical and SAR sensors lead to severe feature misalignment; (b) inherent SAR speckle noise significantly disrupts feature extraction; (c) models tend to favor intra-modal matching over correct cross-modal matching, as modality discrepancy dominates identity discrepancy.
 
-**Root Cause**: A conflict between closing the modality gap and preserving identity discriminability — both objectives must be satisfied simultaneously.
+**Key Challenge**: A conflict between closing the modality gap and preserving identity discriminability — both objectives must be satisfied simultaneously.
 
-**Paper Goals**: Mitigate the optical-SAR modality gap from two complementary perspectives: the training stage and the inference stage.
+**Goal**: Mitigate the optical-SAR modality gap from two complementary perspectives: the training stage and the inference stage.
 
-**Starting Point**: The observation that SAR noise concentrates in low-pixel-value regions, and that modality distribution alignment can be decomposed into two independent components — mean and variance.
+**Key Insight**: The observation that SAR noise concentrates in low-pixel-value regions, and that modality distribution alignment can be decomposed into two independent components — mean and variance.
 
 **Core Idea**: Apply SAR denoising and category-level Wasserstein alignment during training, and perform diffusion-bridge-based cross-modal generation with feature fusion during inference.
 

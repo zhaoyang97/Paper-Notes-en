@@ -29,11 +29,11 @@ This paper proposes the first vision-only semantic occupancy prediction framewor
 
 ## Background & Motivation
 
-- **State of the Field**: Collaborative perception extends single-agent perception range via V2X communication. 3D semantic occupancy prediction provides finer-grained scene understanding than BEV or 3D object detection.
+- **Background**: Collaborative perception extends single-agent perception range via V2X communication. 3D semantic occupancy prediction provides finer-grained scene understanding than BEV or 3D object detection.
 - **Limitations of Prior Work**: Existing collaborative occupancy methods (e.g., CoHFF) rely on tri-plane features requiring depth supervision, multi-stage training, and complex cross-agent alignment; dense voxel feature transmission incurs high communication costs.
-- **Root Cause**: Fine-grained 3D representations demand large data transmission, which conflicts with limited V2X communication bandwidth.
-- **Paper Goals**: Design a communication-efficient, end-to-end trainable collaborative semantic occupancy prediction framework.
-- **Starting Point**: 3D Gaussians are sparse, rigidly transformable representations that simultaneously encode geometry and semantics.
+- **Key Challenge**: Fine-grained 3D representations demand large data transmission, which conflicts with limited V2X communication bandwidth.
+- **Goal**: Design a communication-efficient, end-to-end trainable collaborative semantic occupancy prediction framework.
+- **Key Insight**: 3D Gaussians are sparse, rigidly transformable representations that simultaneously encode geometry and semantics.
 - **Core Idea**: Replace voxel/plane features with 3D Gaussian primitives as the V2X communication medium, which naturally supports rigid alignment and sparse transmission.
 
 ## Method

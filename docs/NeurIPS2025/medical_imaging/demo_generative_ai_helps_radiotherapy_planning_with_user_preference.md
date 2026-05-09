@@ -28,16 +28,16 @@ This paper proposes the Flexible Dose Proposer (FDP), a two-stage training frame
 
 ## Background & Motivation
 
-**State of the Field**: Radiotherapy planning is a complex clinical workflow with significant variability across institutions and planners. Deep learning methods have made progress in dose prediction, fluence map generation, and MLC leaf sequencing.
+**Background**: Radiotherapy planning is a complex clinical workflow with significant variability across institutions and planners. Deep learning methods have made progress in dose prediction, fluence map generation, and MLC leaf sequencing.
 
 **Limitations of Prior Work**:
    - Knowledge-driven systems such as RapidPlan rely on DVH prediction and cannot capture spatial dose details; PCA regression-based pipelines are trained on only tens of plans with limited generalizability.
    - Existing deep learning dose prediction models neglect user preference interaction — different planners have varying requirements for the trade-off between OAR sparing and PTV coverage.
    - Dose prediction itself does not constitute a deliverable plan, and integration with clinical TPS systems remains insufficiently studied.
 
-**Root Cause**: A single model cannot accommodate diverse planning styles, and training is prone to bias toward the specific style of the reference plans.
+**Key Challenge**: A single model cannot accommodate diverse planning styles, and training is prone to bias toward the specific style of the reference plans.
 
-**Starting Point**: Drawing on the conditional control paradigm from generative AI, "preference flavors" sliders allow users to customize the OAR–PTV trade-off in real time.
+**Key Insight**: Drawing on the conditional control paradigm from generative AI, "preference flavors" sliders allow users to customize the OAR–PTV trade-off in real time.
 
 **Core Idea**: A VQ-VAE pretrained dose decoder provides a stable foundation, and user preference encodings serve as conditional inputs, enabling interactive and personalized dose prediction.
 

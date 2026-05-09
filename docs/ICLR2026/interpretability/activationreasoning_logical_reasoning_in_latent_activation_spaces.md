@@ -27,15 +27,15 @@ This paper proposes the ActivationReasoning (AR) framework, which embeds explici
 
 ## Background & Motivation
 
-**State of the Field**: SAEs have made the hidden activations of LLMs more interpretable, exposing latent features aligned with human-understandable concepts. Reasoning-oriented LLMs (e.g., o1, R1) improve performance by extending reasoning chains, but their reasoning processes remain opaque.
+**Background**: SAEs have made the hidden activations of LLMs more interpretable, exposing latent features aligned with human-understandable concepts. Reasoning-oriented LLMs (e.g., o1, R1) improve performance by extending reasoning chains, but their reasoning processes remain opaque.
 
 **Limitations of Prior Work**: SAE features are passive and brittle — they may be polysemous, context-unstable, or overly low-level. A critical deficiency is that SAEs lack mechanisms for compositional and higher-order reasoning. They cannot derive "Golden Gate Bridge" from "bridge" + "San Francisco" + "USA."
 
-**Root Cause**: Logical reasoning requires discrete propositional units and compositional rules, whereas LLMs rely on continuous, entangled representations. While SAEs provide approximately discrete features, they lack a formal framework for reasoning.
+**Key Challenge**: Logical reasoning requires discrete propositional units and compositional rules, whereas LLMs rely on continuous, entangled representations. While SAEs provide approximately discrete features, they lack a formal framework for reasoning.
 
-**Paper Goals**: To embed explicit logical reasoning capabilities into the latent space of LLMs, enabling interpretable and controllable structured reasoning.
+**Goal**: To embed explicit logical reasoning capabilities into the latent space of LLMs, enabling interpretable and controllable structured reasoning.
 
-**Starting Point**: Treating SAE features as logical propositions, defining and applying logical rules (conjunction, disjunction, implication, negation) over them, and deriving new higher-order propositions via forward-chaining inference.
+**Key Insight**: Treating SAE features as logical propositions, defining and applying logical rules (conjunction, disjunction, implication, negation) over them, and deriving new higher-order propositions via forward-chaining inference.
 
 **Core Idea**: Treat SAE features as propositions, use user-defined logical rules as an inference engine, perform forward-chaining reasoning in the activation space, and steer LLM generation via activation guidance.
 

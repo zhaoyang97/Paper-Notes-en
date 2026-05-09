@@ -29,18 +29,18 @@ This paper systematically revisits bilinear state transitions in RNNs—i.e., mu
 
 ## Background & Motivation
 
-**State of the Field**: State tracking is a fundamental requirement in sequential decision-making (multi-turn dialogue, robotic control, agent-LLM pipelines) and can be formalized as the simulation of finite automata or regular languages. However, many popular sequence models—including Transformers, Mamba, and mLSTM—fail to learn state-tracking tasks beyond their training length.
+**Background**: State tracking is a fundamental requirement in sequential decision-making (multi-turn dialogue, robotic control, agent-LLM pipelines) and can be formalized as the simulation of finite automata or regular languages. However, many popular sequence models—including Transformers, Mamba, and mLSTM—fail to learn state-tracking tasks beyond their training length.
 
 **Limitations of Prior Work**:
 - **Failure of Transformers**: Unable to learn state tracking beyond training lengths, even with large-scale pretrained models and chain-of-thought reasoning.
 - **Limitations of Linear RNNs**: Diagonal linear RNNs such as Mamba cannot learn state tracking at arbitrary lengths. Although it is known that state transition matrices must be input-dependent and permit negative eigenvalues, the set of learnable tasks remains highly restricted.
 - **Historical Neglect of Bilinear Models**: Despite early work (Sutskever 2011), bilinear RNNs have not been widely adopted due to instability and optimization difficulties arising from three-way multiplicative interactions.
 
-**Root Cause**: State tracking inherently requires the hidden state to participate in *computation* (rather than mere *memory*), necessitating that the input *route* information flow through the hidden state. The additive structure of existing linear RNNs is fundamentally ill-suited for this purpose.
+**Key Challenge**: State tracking inherently requires the hidden state to participate in *computation* (rather than mere *memory*), necessitating that the input *route* information flow through the hidden state. The additive structure of existing linear RNNs is fundamentally ill-suited for this purpose.
 
-**Paper Goals**: To characterize the state-tracking capacity of bilinear RNNs (with multiplicative interactions and no additive terms) and to determine what expressivity hierarchy different parameterizations induce.
+**Goal**: To characterize the state-tracking capacity of bilinear RNNs (with multiplicative interactions and no additive terms) and to determine what expressivity hierarchy different parameterizations induce.
 
-**Starting Point**: The authors adopt a purely multiplicative interaction (no bias, no additive input term) and exploit scale invariance to address training stability.
+**Key Insight**: The authors adopt a purely multiplicative interaction (no bias, no additive input term) and exploit scale invariance to address training stability.
 
 **Core Idea**: A pure bilinear RNN with all additive terms removed can simultaneously simulate arbitrary finite-state machines and maintain training stability via runtime normalization enabled by scale invariance, yielding a well-defined expressivity hierarchy.
 

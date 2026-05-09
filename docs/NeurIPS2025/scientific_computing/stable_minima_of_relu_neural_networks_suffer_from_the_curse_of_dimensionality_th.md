@@ -27,15 +27,15 @@ content_hash: 53b44455c1cf6485
 This paper investigates the generalization properties of stable minima (flat minima) in two-layer overparameterized ReLU networks. It proves that while flatness does imply generalization, the convergence rate deteriorates exponentially with input dimension (i.e., the curse of dimensionality applies), forming an exponential separation from low-norm solutions (weight decay) that are immune to this curse. The paper further identifies the "neural shattering" phenomenon as the geometric mechanism underlying failure in high dimensions.
 
 ## Background & Motivation
-**State of the Field**: Overparameterized models in deep learning admit infinitely many global minima, yet gradient descent (GD) appears to find well-generalizing solutions. A large body of work studies the implicit bias of GD through the lens of dynamical stability — stable minima are those to which GD can "stably converge," characterized by bounded loss curvature (i.e., the maximum eigenvalue of the Hessian $\leq 2/\eta$).
+**Background**: Overparameterized models in deep learning admit infinitely many global minima, yet gradient descent (GD) appears to find well-generalizing solutions. A large body of work studies the implicit bias of GD through the lens of dynamical stability — stable minima are those to which GD can "stably converge," characterized by bounded loss curvature (i.e., the maximum eigenvalue of the Hessian $\leq 2/\eta$).
 
 **Limitations of Prior Work**: Existing work (Mulayoff et al., 2021; Qiao et al., 2024) either assumes interpolation or restricts to univariate inputs. Qiao et al. (2024) derive favorable risk bounds in the univariate setting, but only for intervals strictly inside the data support and without addressing the multivariate or high-dimensional regime.
 
-**Root Cause**: Flat minima behave well in low dimensions ($d=1$), but their behavior in high dimensions is entirely unknown. Intuitively, stability/flatness should imply some regularity that aids generalization — but is this regularity sufficient in high dimensions?
+**Key Challenge**: Flat minima behave well in low dimensions ($d=1$), but their behavior in high dimensions is entirely unknown. Intuitively, stability/flatness should imply some regularity that aids generalization — but is this regularity sufficient in high dimensions?
 
-**Paper Goals**: To precisely answer the fundamental question of how stable minima of two-layer overparameterized ReLU networks generalize in the high-dimensional non-interpolation regime.
+**Goal**: To precisely answer the fundamental question of how stable minima of two-layer overparameterized ReLU networks generalize in the high-dimensional non-interpolation regime.
 
-**Starting Point**: Establish a function-space characterization of stable minima via a weighted variation norm, derive upper and lower bounds on both the generalization gap and MSE, and reveal the geometric mechanism through a novel minimax lower bound construction based on spherical coverings.
+**Key Insight**: Establish a function-space characterization of stable minima via a weighted variation norm, derive upper and lower bounds on both the generalization gap and MSE, and reveal the geometric mechanism through a novel minimax lower bound construction based on spherical coverings.
 
 **Core Idea**: Exponentially many "directional caps" (spherical caps) exist on the high-dimensional sphere, allowing ReLU neurons to activate on only a tiny fraction of data points while maintaining large weights, thereby "fooling" the flatness criterion — this is neural shattering, which causes stable minima to inevitably suffer from the curse of dimensionality in high dimensions.
 

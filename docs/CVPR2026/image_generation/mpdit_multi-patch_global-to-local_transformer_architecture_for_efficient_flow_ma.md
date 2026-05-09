@@ -28,15 +28,15 @@ This paper proposes MPDiT, a multi-scale patch global-to-local diffusion Transfo
 
 ## Background & Motivation
 
-1. **State of the Field**: Diffusion models and flow matching models have become the dominant paradigm for visual generation. Transformer architectures (DiT/SiT) are increasingly replacing UNet as the backbone due to their superior scalability. However, DiT's isotropic design processes the same number of patch tokens at every layer, resulting in high computational cost.
+1. **Background**: Diffusion models and flow matching models have become the dominant paradigm for visual generation. Transformer architectures (DiT/SiT) are increasingly replacing UNet as the backbone due to their superior scalability. However, DiT's isotropic design processes the same number of patch tokens at every layer, resulting in high computational cost.
 
 2. **Limitations of Prior Work**: Training efficiency remains a critical bottleneck. Linear attention methods (e.g., SANA, LIT) reduce computation but with significant performance degradation. Mamba/SSM approaches show limited advantage at the token counts typical of diffusion models (<1K). MaskDiT suffers severe performance collapse at high masking ratios (75% mask rate → FID ≈ 100).
 
-3. **Root Cause**: The failure of MaskDiT and the relative success of DiT-XL/4 provide a key observation: a small number of large-patch tokens, while lacking local detail, can effectively capture global structural information. In contrast, MaskDiT's random masking causes each training sample to learn relationships among only a subset of tokens, resulting in poor modeling of both global and local information.
+3. **Key Challenge**: The failure of MaskDiT and the relative success of DiT-XL/4 provide a key observation: a small number of large-patch tokens, while lacking local detail, can effectively capture global structural information. In contrast, MaskDiT's random masking causes each training sample to learn relationships among only a subset of tokens, resulting in poor modeling of both global and local information.
 
-4. **Paper Goals**: How to substantially reduce the computational cost and training overhead of diffusion Transformers while preserving generation quality?
+4. **Goal**: How to substantially reduce the computational cost and training overhead of diffusion Transformers while preserving generation quality?
 
-5. **Starting Point**: Inspired by global-local attention, but rather than implementing it at the attention layer level (which yields negligible gains), the paper implements this principle at the full architecture level — earlier layers perceive coarse-grained global structure, while later layers perceive fine-grained local detail.
+5. **Key Insight**: Inspired by global-local attention, but rather than implementing it at the attention layer level (which yields negligible gains), the paper implements this principle at the full architecture level — earlier layers perceive coarse-grained global structure, while later layers perceive fine-grained local detail.
 
 6. **Core Idea**: Transform the isotropic DiT into a coarse-to-fine hierarchical structure — the majority of Transformer blocks efficiently capture global semantics on large patches (64 tokens), while a small number of tail blocks refine local details on small patches (256 tokens).
 

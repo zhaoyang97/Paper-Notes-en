@@ -27,13 +27,13 @@ content_hash: b65e74e9dfbe0118
 This paper proposes the SUBSAMPLE-MFQ algorithm, which randomly samples $k$ agents from $n$ to perform mean-field Q-learning, reducing the sample complexity of multi-agent reinforcement learning from $\text{poly}(n)$ to $\text{poly}(k)$. The resulting optimality gap is only $\tilde{O}(1/\sqrt{k})$ (independent of $n$), achieving exponential speedup over standard mean-field MARL when $k = O(\log n)$.
 
 ## Background & Motivation
-**State of the Field**: MARL suffers from the curse of dimensionality — the joint state-action space for $n$ agents scales as $(|S||A|)^n$, requiring exponential computation for standard Q-learning. Mean-field MARL approximates agent interactions via empirical distributions, reducing complexity to $O(n^{|S||A|})$ (polynomial), yet this remains intractable for large $n$.
+**Background**: MARL suffers from the curse of dimensionality — the joint state-action space for $n$ agents scales as $(|S||A|)^n$, requiring exponential computation for standard Q-learning. Mean-field MARL approximates agent interactions via empirical distributions, reducing complexity to $O(n^{|S||A|})$ (polynomial), yet this remains intractable for large $n$.
 
 **Limitations of Prior Work**: The polynomial complexity of mean-field methods is still prohibitive when $n$ is very large (e.g., swarm coordination with thousands of robots). Sparse-network methods fail under dense interaction structures.
 
-**Root Cause**: How can subpolynomial (even logarithmic) computational complexity in the number of agents $n$ be achieved while preserving near-optimal performance guarantees?
+**Key Challenge**: How can subpolynomial (even logarithmic) computational complexity in the number of agents $n$ be achieved while preserving near-optimal performance guarantees?
 
-**Starting Point**: Exploit the structured reward decomposition in cooperative settings (global + sum of local rewards), and reduce the $n$-agent problem to a $k$-agent problem via subsampling combined with a randomized execution policy.
+**Key Insight**: Exploit the structured reward decomposition in cooperative settings (global + sum of local rewards), and reduce the $n$-agent problem to a $k$-agent problem via subsampling combined with a randomized execution policy.
 
 **Core Idea**: A policy is learned offline on $k$ sampled agents; at execution time, a different random $k$-subset is selected at each step. The performance gap of this randomized mixed policy depends only on $k$, not on $n$.
 

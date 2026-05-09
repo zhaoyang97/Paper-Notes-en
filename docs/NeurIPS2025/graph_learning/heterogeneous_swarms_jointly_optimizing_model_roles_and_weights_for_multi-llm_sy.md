@@ -34,9 +34,9 @@ Multi-LLM collaboration is an important direction for surpassing the capability 
 
 **Fixed-role systems** (e.g., AgentVerse and MetaGPT): These systems assign fixed roles to LLMs via hand-crafted prompts; extending them to new tasks or domains requires substantial prompt engineering, and role assignment relies heavily on prior knowledge.
 
-**Root Cause**: Role and weight are two orthogonal dimensions of a multi-LLM system, yet existing methods almost exclusively optimize only one of them. Dynamically and jointly optimizing both is the key to achieving task-adaptive systems.
+**Key Challenge**: Role and weight are two orthogonal dimensions of a multi-LLM system, yet existing methods almost exclusively optimize only one of them. Dynamically and jointly optimizing both is the key to achieving task-adaptive systems.
 
-**Starting Point**: Role optimization is reformulated as a graph structure learning problem (learning a DAG that governs the input–output flow among LLMs), while weight optimization is coupled with individual contribution quantification, with PSO unifying the search over both dimensions.
+**Key Insight**: Role optimization is reformulated as a graph structure learning problem (learning a DAG that governs the input–output flow among LLMs), while weight optimization is coupled with individual contribution quantification, with PSO unifying the search over both dimensions.
 
 **Core Idea**: A continuous adjacency matrix represents the discrete DAG; the optimal graph structure is searched via G-Decode decoding and PSO optimization; a JFK-score measures each LLM's contribution to the system and guides weight updates.
 

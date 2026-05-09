@@ -36,7 +36,7 @@ Two existing paradigms and their limitations:
 
 **Generative prior route** (video diffusion models): These can generate plausible RGB images for unseen viewpoints, but existing methods are either restricted to static scenes or require large amounts of data with camera poses for training — which are extremely difficult to obtain for dynamic scenes.
 
-**Root Cause**: Geometric priors cannot generate new content, while generative priors lack precise geometric constraints. How can the strengths of both be combined?
+**Key Challenge**: Geometric priors cannot generate new content, while generative priors lack precise geometric constraints. How can the strengths of both be combined?
 
 **Core Idea**: Vivid4D reframes view augmentation as a video inpainting task — leveraging geometric information from depth priors to warp existing views to novel viewpoints (preserving known regions), then using a video diffusion model to inpaint missing regions caused by occlusion (generating new content). Crucially, the training data requires only pose-free web videos.
 

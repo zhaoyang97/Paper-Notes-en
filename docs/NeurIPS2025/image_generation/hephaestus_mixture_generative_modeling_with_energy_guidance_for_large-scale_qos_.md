@@ -29,15 +29,15 @@ This paper proposes Hephaestus, a three-stage generative framework (Forge-Morph-
 
 ## Background & Motivation
 
-**State of the Field**: The QoS Degradation (QoSD) problem studies how to perturb edge weights at minimum cost such that the shortest path of critical source-destination pairs in a network exceeds a threshold $T$. This serves as a core vulnerability modeling problem in network security, transportation systems, blockchain, and GNN research.
+**Background**: The QoS Degradation (QoSD) problem studies how to perturb edge weights at minimum cost such that the shortest path of critical source-destination pairs in a network exceeds a threshold $T$. This serves as a core vulnerability modeling problem in network security, transportation systems, blockchain, and GNN research.
 
 **Limitations of Prior Work**: (a) QoSD is NP-complete, with a non-submodular objective and exponentially growing combinatorial search space; (b) classical approximation algorithms (AT/IG/SA) handle source-destination pairs independently, resulting in inefficient budget allocation; (c) ILP-based machine learning methods (DiffILO/Predict-and-Search) only handle linear edge weight functions and cannot scale to nonlinear settings.
 
-**Root Cause**: The problem simultaneously requires handling (a) nonlinear edge weight functions (e.g., quadratic convex, logarithmic concave); (b) large-scale graph structures (e.g., RoadCA: ~2M nodes, Skitter); and (c) globally coupled path constraints.
+**Key Challenge**: The problem simultaneously requires handling (a) nonlinear edge weight functions (e.g., quadratic convex, logarithmic concave); (b) large-scale graph structures (e.g., RoadCA: ~2M nodes, Skitter); and (c) globally coupled path constraints.
 
-**Paper Goals**: To design an end-to-end, scalable generative framework that efficiently solves large-scale QoSD problems under both linear and nonlinear edge weight functions.
+**Goal**: To design an end-to-end, scalable generative framework that efficiently solves large-scale QoSD problems under both linear and nonlinear edge weight functions.
 
-**Starting Point**: The problem is decomposed into three stages: (1) generating a set of feasible solutions; (2) learning the solution distribution via a generative model; (3) optimizing solution quality in latent space using RL with iterative self-enhancement.
+**Key Insight**: The problem is decomposed into three stages: (1) generating a set of feasible solutions; (2) learning the solution distribution via a generative model; (3) optimizing solution quality in latent space using RL with iterative self-enhancement.
 
 **Core Idea**: The combinatorial optimization problem is reformulated as a conditional generative modeling problem. An EBM-guided mixture CVAE captures the solution distribution, and RL efficiently searches for superior solutions in the continuous latent space.
 

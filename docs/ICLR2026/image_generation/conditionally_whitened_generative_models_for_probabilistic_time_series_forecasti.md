@@ -28,15 +28,15 @@ This paper proposes CW-Gen (Conditionally Whitened Generative Models), which rep
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models (TimeGrad, CSDI, SSSD, Diffusion-TS) and flow matching (FlowTS) have been applied to probabilistic forecasting of multivariate time series. CARD, TimeDiff, and TMDM introduce conditional mean regressors as priors to improve predictions, and NsDiff further incorporates conditional variance.
+**Background**: Diffusion models (TimeGrad, CSDI, SSSD, Diffusion-TS) and flow matching (FlowTS) have been applied to probabilistic forecasting of multivariate time series. CARD, TimeDiff, and TMDM introduce conditional mean regressors as priors to improve predictions, and NsDiff further incorporates conditional variance.
 
 **Limitations of Prior Work**: (a) The terminal distribution of standard diffusion models is $\mathcal{N}(0, I)$, which completely discards conditional mean and covariance prior information—forcing the denoising process to learn non-stationary trends and inter-variable dependencies from scratch; (b) existing methods that introduce priors (TMDM, NsDiff) are overly complex in design and neglect inter-variable covariance; (c) there is no theoretical guarantee addressing when and why incorporating priors improves generation quality.
 
-**Root Cause**: The forward process of diffusion models corrupts data into standard Gaussian noise, discarding conditional mean and covariance information. If the terminal distribution could be brought closer to $P_{X|C}$ (i.e., with smaller KL divergence), generation quality would necessarily improve—but how accurate must the estimator be to yield a benefit?
+**Key Challenge**: The forward process of diffusion models corrupts data into standard Gaussian noise, discarding conditional mean and covariance information. If the terminal distribution could be brought closer to $P_{X|C}$ (i.e., with smaller KL divergence), generation quality would necessarily improve—but how accurate must the estimator be to yield a benefit?
 
-**Paper Goals**: (a) Theoretically characterize the conditions under which replacing the terminal distribution improves generation; (b) design a joint mean-covariance estimator; (c) propose a unified framework applicable to both diffusion models and flow matching.
+**Goal**: (a) Theoretically characterize the conditions under which replacing the terminal distribution improves generation; (b) design a joint mean-covariance estimator; (c) propose a unified framework applicable to both diffusion models and flow matching.
 
-**Starting Point**: Conditional whitening—centering data using the estimated conditional mean and normalizing with the inverse square root of the estimated conditional covariance, which is equivalent to a linear transformation that brings the data closer to a standard Gaussian.
+**Key Insight**: Conditional whitening—centering data using the estimated conditional mean and normalizing with the inverse square root of the estimated conditional covariance, which is equivalent to a linear transformation that brings the data closer to a standard Gaussian.
 
 **Core Idea**: Replace the terminal distribution $\mathcal{N}(0,I)$ in diffusion/flow matching with $\mathcal{N}(\hat{\mu}_{X|C}, \hat{\Sigma}_{X|C})$, so that through the conditional whitening transformation, the denoising network only needs to learn the residual.
 

@@ -26,7 +26,7 @@ content_hash: 8aa8815e627c11a5
 This paper proposes "information scope" as a novel dimension for SAE feature interpretability. By introducing the Contextual Dependency Score (CDS), it partitions CLIP's SAE features into local features (low CDS) and global features (high CDS), revealing their differentiated functional roles in classification, segmentation, and depth estimation.
 
 ## Background & Motivation
-**State of the Field**: Sparse Autoencoders (SAEs) have become a core tool for interpreting internal representations of vision models such as CLIP, decomposing dense polysemantic representations into sparse monosemantic features.
+**Background**: Sparse Autoencoders (SAEs) have become a core tool for interpreting internal representations of vision models such as CLIP, decomposing dense polysemantic representations into sparse monosemantic features.
 
 **Limitations of Prior Work**: Existing SAE interpretability research focuses almost exclusively on the **semantic identity** of features ("what concept does this feature represent"). However, a feature labeled "dog" may encode the entire object globally or respond only to local texture (e.g., fur)—post-semantic analysis cannot distinguish between the two.
 

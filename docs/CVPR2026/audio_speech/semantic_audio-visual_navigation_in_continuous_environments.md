@@ -27,11 +27,11 @@ content_hash: d76456fde69fb9e2
 This paper introduces the SAVN-CE task, extending semantic audio-visual navigation to continuous 3D environments, and proposes MAGNet (Memory-Augmented Goal description Network). By fusing historical context and ego-motion cues, MAGNet achieves robust goal inference after target sounds cease, yielding absolute success rate improvements of up to 12.1%.
 
 ## Background & Motivation
-1. **State of the Field**: Audio-visual navigation (AVN) enables embodied agents to navigate toward sounding targets in unknown environments using auditory and visual cues. Semantic audio-visual navigation (SAVN) further requires the target to be a semantically meaningful object (e.g., "a squeaking chair") rather than an arbitrary location.
+1. **Background**: Audio-visual navigation (AVN) enables embodied agents to navigate toward sounding targets in unknown environments using auditory and visual cues. Semantic audio-visual navigation (SAVN) further requires the target to be a semantically meaningful object (e.g., "a squeaking chair") rather than an arbitrary location.
 2. **Limitations of Prior Work**: Existing methods rely on pre-computed room impulse responses (RIRs), requiring terabytes of storage, and restrict agents to discrete grid points (1-meter resolution, 4 fixed orientations), severely limiting task realism.
-3. **Root Cause**: Discrete environments produce spatially discontinuous observations, preventing free exploration; in continuous environments, target sounds may intermittently or completely cease, resulting in loss of goal information.
-4. **Paper Goals**: (a) How to achieve free-movement audio-visual navigation in continuous environments? (b) How to maintain a stable goal representation when target sounds disappear? (c) How to jointly infer the spatial location and semantic category of the target?
-5. **Starting Point**: The authors observe that ego-motion cues (previous action + current pose) can be used to infer dynamic changes in relative target position, while episodic memory preserves temporal continuity of goal representations after sounds cease.
+3. **Key Challenge**: Discrete environments produce spatially discontinuous observations, preventing free exploration; in continuous environments, target sounds may intermittently or completely cease, resulting in loss of goal information.
+4. **Goal**: (a) How to achieve free-movement audio-visual navigation in continuous environments? (b) How to maintain a stable goal representation when target sounds disappear? (c) How to jointly infer the spatial location and semantic category of the target?
+5. **Key Insight**: The authors observe that ego-motion cues (previous action + current pose) can be used to infer dynamic changes in relative target position, while episodic memory preserves temporal continuity of goal representations after sounds cease.
 6. **Core Idea**: A memory-augmented Transformer encoder fuses binaural audio, ego-motion cues, and episodic memory to enable persistent goal tracking after sounds disappear.
 
 ## Method

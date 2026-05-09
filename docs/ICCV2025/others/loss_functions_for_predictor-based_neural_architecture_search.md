@@ -30,11 +30,11 @@ This paper presents the first comprehensive and systematic study of 8 loss funct
 
 Performance predictors are widely adopted in NAS as an evaluation acceleration strategy, and their effectiveness is critically influenced by the choice of loss function:
 
-**State of the Field**: Although multiple loss functions such as MSE and ranking losses exist, the performance differences among them across various search spaces and training data sizes have not been systematically studied.
+**Background**: Although multiple loss functions such as MSE and ranking losses exist, the performance differences among them across various search spaces and training data sizes have not been systematically studied.
 
 **Limitations of Prior Work**: Each individual loss function has inherent limitations. Regression losses excel at predicting absolute accuracy but are weak at ranking; ranking losses achieve good global ordering but struggle to identify top-performing architectures; weighted losses focus on high-performing architectures but are prone to overfitting under small data regimes.
 
-**Root Cause**: Researchers lack empirical guidance for selecting appropriate loss functions in specific NAS tasks.
+**Key Challenge**: Researchers lack empirical guidance for selecting appropriate loss functions in specific NAS tasks.
 
 ## Method
 

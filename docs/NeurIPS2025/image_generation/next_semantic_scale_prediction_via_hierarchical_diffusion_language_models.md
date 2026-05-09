@@ -37,7 +37,7 @@ Autoregressive language models represent the current SOTA, yet the "next token p
 
 GIDD provides a unified framework combining masked and uniform noise, but noisy tokens still lack rich semantics, and self-correction ability stems only from uniform noise, which in practice degrades performance.
 
-**Root Cause**: Masked diffusion lacks self-correction and produces semantically impoverished intermediate states; uniform diffusion suffers from semantic inconsistency and poor performance.
+**Key Challenge**: Masked diffusion lacks self-correction and produces semantically impoverished intermediate states; uniform diffusion suffers from semantic inconsistency and poor performance.
 
 **Core Idea**: Inspired by the "next scale prediction" paradigm in visual VAR, HDLM introduces a semantic hierarchy into language tokens — cluster tokens (obtained by clustering pretrained embeddings) are inserted between word tokens and mask tokens. The forward process progressively maps tokens to more abstract ancestors, while the reverse process progressively predicts finer-grained semantics.
 

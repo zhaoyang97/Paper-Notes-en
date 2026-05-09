@@ -29,15 +29,15 @@ RS-SSM is proposed to extract channel-wise specific information distribution fea
 
 ## Background & Motivation
 
-1. **State of the Field**: Video semantic segmentation (VSS) requires assigning semantic labels to every pixel in each frame while maintaining temporal consistency. Early methods model inter-frame motion via optical flow, which is computationally expensive and noise-prone; Transformer-based methods aggregate spatiotemporal information through global attention but incur quadratic complexity. Recent SSM-based methods efficiently compress and propagate spatiotemporal semantic information with linear complexity.
+1. **Background**: Video semantic segmentation (VSS) requires assigning semantic labels to every pixel in each frame while maintaining temporal consistency. Early methods model inter-frame motion via optical flow, which is computationally expensive and noise-prone; Transformer-based methods aggregate spatiotemporal information through global attention but incur quadratic complexity. Recent SSM-based methods efficiently compress and propagate spatiotemporal semantic information with linear complexity.
 
 2. **Limitations of Prior Work**: SSMs compress sequence information via a fixed-size state space, which is effective for retaining common semantics (global structures, smooth regions) but inevitably discards specific information (boundaries, textures, local variations), resulting in segmentation outputs that only coarsely localize objects with blurred details.
 
-3. **Root Cause**: The essence of state space compression is representing an arbitrarily long sequence with a finite-dimensional hidden state. The forget gate $\bar{A}_d = \exp(\Delta_d A_d)$ governs the degree of decay applied to historical information. Smaller forget gate values lead to aggressive compression, while values close to 1 retain more information—for pixel-level VSS, the standard forget gate's decay strategy systematically discards high-frequency details.
+3. **Key Challenge**: The essence of state space compression is representing an arbitrarily long sequence with a finite-dimensional hidden state. The forget gate $\bar{A}_d = \exp(\Delta_d A_d)$ governs the degree of decay applied to historical information. Smaller forget gate values lead to aggressive compression, while values close to 1 retain more information—for pixel-level VSS, the standard forget gate's decay strategy systematically discards high-frequency details.
 
-4. **Paper Goals**: To compensate for the spatiotemporal specific information lost during SSM state space compression while preserving the linear complexity advantage of SSMs.
+4. **Goal**: To compensate for the spatiotemporal specific information lost during SSM state space compression while preserving the linear complexity advantage of SSMs.
 
-5. **Starting Point**: Different channels of the hidden state encode varying amounts of specific information. The proportion of high-frequency energy per channel can be quantified via frequency domain analysis, enabling targeted refinement of channels rich in high-frequency information by inverting the forget gate.
+5. **Key Insight**: Different channels of the hidden state encode varying amounts of specific information. The proportion of high-frequency energy per channel can be quantified via frequency domain analysis, enabling targeted refinement of channels rich in high-frequency information by inverting the forget gate.
 
 6. **Core Idea**: Identify channels that are "rich in specific information" via frequency domain analysis, and adaptively invert the forget gate to compensatorily recover spatiotemporal details suppressed by compression.
 

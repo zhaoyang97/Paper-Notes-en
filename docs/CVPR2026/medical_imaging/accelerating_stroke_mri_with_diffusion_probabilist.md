@@ -27,15 +27,15 @@ content_hash: 631d2db82528420b
 Inspired by the foundation model paradigm, this work proposes a data-efficient training strategy for diffusion probabilistic models (DPMs) in accelerated MRI reconstruction. A DPM is first pre-trained on large-scale multi-contrast brain MRI data (~4,000 subjects), then fine-tuned with as few as 20 target-domain subjects. The resulting model achieves reconstruction quality comparable to large-dataset training in clinical stroke MRI, with a clinical blind reader study confirming non-inferiority to standard-of-care at 2× acceleration.
 
 ## Background & Motivation
-**State of the Field**: Machine learning has achieved state-of-the-art performance in accelerated MRI reconstruction, but these methods typically require large amounts of fully-sampled, application-specific training data. Performance degrades substantially when target-domain data is scarce.
+**Background**: Machine learning has achieved state-of-the-art performance in accelerated MRI reconstruction, but these methods typically require large amounts of fully-sampled, application-specific training data. Performance degrades substantially when target-domain data is scarce.
 
 **Limitations of Prior Work**: (1) Stroke MRI represents a prototypical data-scarce scenario—while MRI is more sensitive than CT for detecting ischemic stroke, long scan times and motion sensitivity delay treatment; (2) existing self-supervised and few-data methods fall short of fully supervised baselines in reconstruction quality; (3) end-to-end reconstruction methods require the external training dataset and the target dataset to share the same acquisition model (sampling pattern, coil geometry, etc.), limiting cross-domain transferability.
 
-**Root Cause**: High-quality accelerated MRI reconstruction requires large amounts of target-domain fully-sampled data for training, yet clinically specific scenarios such as stroke imaging are precisely where such data are scarce.
+**Key Challenge**: High-quality accelerated MRI reconstruction requires large amounts of target-domain fully-sampled data for training, yet clinically specific scenarios such as stroke imaging are precisely where such data are scarce.
 
-**Paper Goals**: To train a high-quality DPM-based accelerated MRI reconstruction model when target-domain fully-sampled data is extremely limited (20–25 subjects).
+**Goal**: To train a high-quality DPM-based accelerated MRI reconstruction model when target-domain fully-sampled data is extremely limited (20–25 subjects).
 
-**Starting Point**: The acquisition-model-agnostic nature of DPMs is exploited—since DPMs learn an image prior distribution rather than an end-to-end mapping, pre-training data may originate from different sampling patterns and coil geometries than those used at inference.
+**Key Insight**: The acquisition-model-agnostic nature of DPMs is exploited—since DPMs learn an image prior distribution rather than an end-to-end mapping, pre-training data may originate from different sampling patterns and coil geometries than those used at inference.
 
 **Core Idea**: Large-scale multi-contrast pre-training + carefully controlled fine-tuning (learning rate reduced by one order of magnitude + very few epochs) = high-quality DPM reconstruction in data-limited clinical stroke MRI.
 

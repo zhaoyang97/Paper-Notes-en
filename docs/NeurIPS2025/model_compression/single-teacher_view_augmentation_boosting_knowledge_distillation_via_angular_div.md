@@ -35,7 +35,7 @@ Knowledge distillation (KD) transfers knowledge from a large teacher model to a 
 ### Limitations of Prior Work
 - **Multi-teacher distillation**: Requires training multiple independent teacher models, multiplying resource costs; diversity obtained via different random seeds under the same architecture is inherently limited by shared structural biases.
 - **TeKAP (prior knowledge augmentation method)**: Injects random noise perturbations into single-teacher features to simulate multi-view supervision, reducing computational cost, but diversity is entirely noise-driven with no control over semantic structure or informativeness.
-- **Root Cause**: Can a more structured and controllable knowledge augmentation approach be designed to generate semantically rich and diverse supervisory signals within a single-teacher framework?
+- **Key Challenge**: Can a more structured and controllable knowledge augmentation approach be designed to generate semantically rich and diverse supervisory signals within a single-teacher framework?
 
 ## Method
 

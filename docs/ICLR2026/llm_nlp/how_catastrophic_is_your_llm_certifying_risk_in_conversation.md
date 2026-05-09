@@ -29,13 +29,13 @@ This paper proposes C3LLM (Certification of Catastrophic risks in multi-turn Con
 
 ## Background & Motivation
 
-**State of the Field**: LLMs may produce catastrophic outputs in conversation (e.g., bomb-making instructions, bioweapon synthesis, cyberattack tutorials). Multi-turn attacks are harder to defend against than single-turn ones—adversaries can gradually steer models toward harmful content through seemingly benign conversation sequences.
+**Background**: LLMs may produce catastrophic outputs in conversation (e.g., bomb-making instructions, bioweapon synthesis, cyberattack tutorials). Multi-turn attacks are harder to defend against than single-turn ones—adversaries can gradually steer models toward harmful content through seemingly benign conversation sequences.
 
 **Two Fundamental Flaws of Fixed Benchmarks**:
 - **Reliance on fixed attack sequences**: Only specific attacks are tested, missing unseen successful sequences—20 attack sequences of length 5 cover at most 20 attack variants, yet the combinatorial space is $100^5 = 10^{10}$
 - **Lack of statistical guarantees**: Conclusions are non-generalizable; the extent of risk across the full conversation space remains unknown
 
-**Root Cause**: Exhaustive testing is infeasible (exponential space), and different sequences carry different levels of danger—risk must be quantified in terms of probability distributions.
+**Key Challenge**: Exhaustive testing is infeasible (exponential space), and different sequences carry different levels of danger—risk must be quantified in terms of probability distributions.
 
 **Why Statistical Certification over Benchmarking**: Benchmarking provides sample lower bounds ("N successful attacks found"), whereas statistical certification provides probability bounds ("a randomly sampled conversation has a [40%, 60%] probability of triggering catastrophic output")—the latter is far more meaningful.
 

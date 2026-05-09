@@ -28,13 +28,13 @@ This paper proposes CAPO (Curvature-Aware Policy Optimization), which models sec
 
 ## Background & Motivation
 
-**State of the Field**: Policy gradient methods such as GRPO and PPO are central to LLM reasoning post-training (e.g., DeepSeek-R1). Current practice requires highly conservative hyperparameters—learning rates as low as $3 \times 10^{-6}$ and batch sizes in the thousands—to ensure training stability.
+**Background**: Policy gradient methods such as GRPO and PPO are central to LLM reasoning post-training (e.g., DeepSeek-R1). Current practice requires highly conservative hyperparameters—learning rates as low as $3 \times 10^{-6}$ and batch sizes in the thousands—to ensure training stability.
 
 **Limitations of Prior Work**: Conservative settings imply enormous sample requirements and computational cost. However, increasing the learning rate or reducing batch size causes the variance of policy gradient estimates to surge dramatically, leading to catastrophic parameter updates and policy collapse—model performance drops below baseline and fails to recover.
 
-**Root Cause**: Policy gradients rely solely on first-order information and cannot sense curvature on non-convex RL objectives, potentially taking a large step along an apparently improving direction only to fall into a performance cliff. Meanwhile, the Hessian matrix is infeasible to compute or approximate directly at LLM scale (billions of parameters).
+**Key Challenge**: Policy gradients rely solely on first-order information and cannot sense curvature on non-convex RL objectives, potentially taking a large step along an apparently improving direction only to fall into a performance cliff. Meanwhile, the Hessian matrix is infeasible to compute or approximate directly at LLM scale (billions of parameters).
 
-**Starting Point**: The authors observe that LLM logit outputs are produced solely by a final linear transformation $W \in \mathbb{R}^{K \times d_i}$, and that top-k sampling renders gradients naturally sparse (only $k < 100$ tokens have non-zero probability). This enables efficient approximation of the Hessian and Fisher information matrix within the final layer.
+**Key Insight**: The authors observe that LLM logit outputs are produced solely by a final linear transformation $W \in \mathbb{R}^{K \times d_i}$, and that top-k sampling renders gradients naturally sparse (only $k < 100$ tokens have non-zero probability). This enables efficient approximation of the Hessian and Fisher information matrix within the final layer.
 
 **Core Idea**: A last-layer curvature model is constructed to track the effect of each token update on the objective function and policy distribution, filtering out samples that violate trust-region constraints.
 

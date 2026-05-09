@@ -27,15 +27,15 @@ content_hash: a28124262ba1dbc5
 This paper proposes EcoAgent, a closed-loop device-cloud collaborative multi-agent framework for mobile automation. By combining Dual-ReACT two-level reasoning and planning, lightweight on-device verification feedback, and a Pre-Understanding text compression module, EcoAgent achieves success rates comparable to fully cloud-based agents on AndroidWorld while substantially reducing latency (3.9s vs. 15.3s), cloud invocations (−89%), and upstream data volume (−48.6×).
 
 ## Background & Motivation
-**State of the Field**: MLLM-based mobile agents primarily adopt three architectures—fully cloud-based (e.g., M3A with dual GPT-4o), which offer strong reasoning but high latency and cost; fully on-device (e.g., ShowUI 2B), which offer low latency but struggle with complex task planning; and open-loop device-cloud collaborative (e.g., UGround), which combine cloud planning with on-device execution but lack a closed feedback loop.
+**Background**: MLLM-based mobile agents primarily adopt three architectures—fully cloud-based (e.g., M3A with dual GPT-4o), which offer strong reasoning but high latency and cost; fully on-device (e.g., ShowUI 2B), which offer low latency but struggle with complex task planning; and open-loop device-cloud collaborative (e.g., UGround), which combine cloud planning with on-device execution but lack a closed feedback loop.
 
 **Limitations of Prior Work**: (1) Open-loop collaboration requires frequent upload of device screenshots to the cloud for verification, exposing user privacy and increasing latency. (2) When execution errors occur, the on-device component cannot feed back to the cloud for replanning, forcing the system to continue executing incorrectly without recovery.
 
-**Root Cause**: Cloud-based MLLMs offer strong reasoning but incur high communication costs and privacy risks, whereas on-device MSLMs offer low latency and privacy preservation but weak reasoning. An optimal task allocation strategy between the two is needed.
+**Key Challenge**: Cloud-based MLLMs offer strong reasoning but incur high communication costs and privacy risks, whereas on-device MSLMs offer low latency and privacy preservation but weak reasoning. An optimal task allocation strategy between the two is needed.
 
-**Paper Goals**: To achieve closed-loop device-cloud collaboration—enabling the on-device component to autonomously verify execution results and provide lightweight feedback to the cloud when needed, allowing the cloud to reflect and replan accordingly.
+**Goal**: To achieve closed-loop device-cloud collaboration—enabling the on-device component to autonomously verify execution results and provide lightweight feedback to the cloud when needed, allowing the cloud to reflect and replan accordingly.
 
-**Starting Point**: On-device general-purpose MSLMs (not fine-tuned on large-scale GUI data), while not proficient at precise UI element grounding, are capable of understanding screen semantics and judging whether a description matches the current screen—making them suitable for lightweight execution verification.
+**Key Insight**: On-device general-purpose MSLMs (not fine-tuned on large-scale GUI data), while not proficient at precise UI element grounding, are capable of understanding screen semantics and judging whether a description matches the current screen—making them suitable for lightweight execution verification.
 
 **Core Idea**: Dual-ReACT enables the cloud to generate an execution plan with expected outcomes in one pass; the on-device lightweight model verifies each step and provides textual feedback upon failure, realizing privacy-preserving closed-loop collaboration.
 

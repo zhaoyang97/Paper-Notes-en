@@ -28,17 +28,17 @@ This paper proposes DWGF (Diffusion-regularized Wasserstein Gradient Flow), whic
 
 ## Background & Motivation
 
-**State of the Field**: Image inverse problems (inpainting, super-resolution, deblurring, etc.) require strong priors. Diffusion models have recently emerged as state-of-the-art priors, guiding posterior distributions by modifying the sampling process. Common approaches include DPS (gradient guidance), RED-Diff (variational inference), and SMC-based methods.
+**Background**: Image inverse problems (inpainting, super-resolution, deblurring, etc.) require strong priors. Diffusion models have recently emerged as state-of-the-art priors, guiding posterior distributions by modifying the sampling process. Common approaches include DPS (gradient guidance), RED-Diff (variational inference), and SMC-based methods.
 
 **Limitations of Prior Work**: Most methods are designed for pixel-space diffusion models, whereas computationally more efficient latent diffusion models (e.g., Stable Diffusion) define priors over latent variables $z_0$ rather than $x_0$. Adapting pixel-space methods to the latent space is non-trivial. Existing latent-space methods (PSLD, RLSD) either produce suboptimal image quality or lack rigorous theoretical foundations.
 
-**Root Cause**: The prior of a latent diffusion model (LDM) is defined over $z_0$, while the observation likelihood is defined over $x_0$; these two spaces are connected through a nonlinear encoder-decoder, making principled posterior sampling in the latent space nontrivial.
+**Key Challenge**: The prior of a latent diffusion model (LDM) is defined over $z_0$, while the observation likelihood is defined over $x_0$; these two spaces are connected through a nonlinear encoder-decoder, making principled posterior sampling in the latent space nontrivial.
 
-**Paper Goals**
+**Goal**
 - How can one rigorously derive, from first principles, a method for solving inverse problems using latent diffusion models?
 - How can both the data likelihood and the diffusion prior be jointly considered in the latent space?
 
-**Starting Point**: Posterior sampling is framed as an optimization problem over the space of probability measures — minimizing the KL divergence between the approximate and true posteriors in the Wasserstein-2 space, augmented with a diffusion-model-based regularization term.
+**Key Insight**: Posterior sampling is framed as an optimization problem over the space of probability measures — minimizing the KL divergence between the approximate and true posteriors in the Wasserstein-2 space, augmented with a diffusion-model-based regularization term.
 
 **Core Idea**: Posterior sampling in the latent space is formalized as a regularized Wasserstein gradient flow, from which a particle ODE system is derived and simulated using the Adam optimizer.
 

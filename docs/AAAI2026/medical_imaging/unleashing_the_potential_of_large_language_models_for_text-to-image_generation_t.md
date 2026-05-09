@@ -29,15 +29,15 @@ This paper proposes ARRA (Autoregressive Representation Alignment), a training f
 
 ## Background & Motivation
 
-1. **State of the Field**: Large language models (LLMs) based on the autoregressive (AR) next-token prediction paradigm have achieved remarkable success on language tasks. Researchers have attempted to extend this paradigm to text-to-image (T2I) generation, as exemplified by DALL·E and LlamaGen.
+1. **Background**: Large language models (LLMs) based on the autoregressive (AR) next-token prediction paradigm have achieved remarkable success on language tasks. Researchers have attempted to extend this paradigm to text-to-image (T2I) generation, as exemplified by DALL·E and LlamaGen.
 
 2. **Limitations of Prior Work**: While next-token prediction aligns naturally with the local sequential structure of language, applying it to image generation forces the model to focus on isolated token-level features, neglecting the global consistency required for spatially structured visual content. This leads to fragmented artifacts in generated images (e.g., misaligned ribs in chest X-rays) and semantic inconsistencies.
 
-3. **Root Cause**: Existing solutions such as Transfusion and Show-O inject global constraints by modifying the architecture (bidirectional attention, grafted diffusion modules), which deviates from the standard LLM framework, limits compatibility with pretrained LLMs, and forfeits the benefits of established scaling laws.
+3. **Key Challenge**: Existing solutions such as Transfusion and Show-O inject global constraints by modifying the architecture (bidirectional attention, grafted diffusion modules), which deviates from the standard LLM framework, limits compatibility with pretrained LLMs, and forfeits the benefits of established scaling laws.
 
-4. **Paper Goals**: Can the full potential of LLMs for T2I generation be unleashed without altering the original architecture or inference mechanism?
+4. **Goal**: Can the full potential of LLMs for T2I generation be unleashed without altering the original architecture or inference mechanism?
 
-5. **Starting Point**: Global consistency does not require architectural complexity; it can instead be achieved by redefining the training objective.
+5. **Key Insight**: Global consistency does not require architectural complexity; it can instead be achieved by redefining the training objective.
 
 6. **Core Idea**: A hybrid token \<HYBNEXT\> is designed so that each token is jointly constrained during training by a local autoregressive loss and a global visual alignment loss, distilling semantic information from an external foundation model into the autoregressive sequence.
 

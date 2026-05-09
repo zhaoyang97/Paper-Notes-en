@@ -28,15 +28,15 @@ This paper proposes RISE (Rotor-Invariant Shift Estimation), a method that lever
 
 ## Background & Motivation
 
-**State of the Field**: In the word2vec era, semantic relationships could be intuitively expressed through vector arithmetic ("king − man + woman = queen"), and semantic spaces exhibited clear linear interpretability. The Linear Representation Hypothesis (LRH) formalized this observation, positing that semantic concepts are encoded as linear structures in embedding space. However, the high-dimensional representations of modern Transformer models have lost this intuitive geometric correspondence, rendering internal mechanisms opaque.
+**Background**: In the word2vec era, semantic relationships could be intuitively expressed through vector arithmetic ("king − man + woman = queen"), and semantic spaces exhibited clear linear interpretability. The Linear Representation Hypothesis (LRH) formalized this observation, positing that semantic concepts are encoded as linear structures in embedding space. However, the high-dimensional representations of modern Transformer models have lost this intuitive geometric correspondence, rendering internal mechanisms opaque.
 
 **Limitations of Prior Work**: (1) Existing interpretability methods (probes, steering vectors) are largely task-specific and lack a systematic geometric framework for mapping semantic relationships. (2) Steering vectors exhibit inconsistent behavior across contexts and poor generalizability. (3) The LRH has been validated primarily at the monolingual word level, with virtually no verification at the cross-lingual or utterance level. (4) A critical geometric mismatch exists: modern embeddings reside on curved manifolds (hyperspheres), while conventional methods operate in Euclidean space—a mismatch that may be the fundamental cause of poor generalization in steering vectors.
 
-**Root Cause**: Embedding space is curved (spherical), yet the tools for manipulation and analysis assume it is flat (Euclidean). A method for representing semantic transformations that respects manifold geometry is needed.
+**Key Challenge**: Embedding space is curved (spherical), yet the tools for manipulation and analysis assume it is flat (Euclidean). A method for representing semantic transformations that respects manifold geometry is needed.
 
-**Paper Goals**: To develop a geometric framework for identifying utterance-level semantic–syntactic transformations, and to determine whether these transformations can be consistently mapped to geometric operations across languages and model architectures.
+**Goal**: To develop a geometric framework for identifying utterance-level semantic–syntactic transformations, and to determine whether these transformations can be consistently mapped to geometric operations across languages and model architectures.
 
-**Starting Point**: Normalized sentence embeddings reside on the unit hypersphere → semantic transformations = rotational displacements on the sphere → Clifford algebra rotors are used to canonicalize and align transformations across different sentences → a universal rotation prototype is learned to represent a given semantic transformation → this prototype is applied to new sentences for prediction.
+**Key Insight**: Normalized sentence embeddings reside on the unit hypersphere → semantic transformations = rotational displacements on the sphere → Clifford algebra rotors are used to canonicalize and align transformations across different sentences → a universal rotation prototype is learned to represent a given semantic transformation → this prototype is applied to new sentences for prediction.
 
 **Core Idea**: Semantic–syntactic transformations correspond to consistent rotation operations on the unit hypersphere; once canonicalized via rotors, these rotations transfer across languages and models.
 

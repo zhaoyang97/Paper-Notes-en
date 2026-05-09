@@ -31,7 +31,7 @@ This paper explores the connection between deep learning and information theory 
 
 ### Limitations of Prior Work
 
-**Limitations of Prior Work**: **State of the Field**: Diffusion models work by converting noise into structured data, with the core process being the "recovery" of information erased when data is diffused into noise. This information is stored in the neural network's parameters during training. However, a systematic theoretical framework for quantifying the amount of stored information has been lacking.
+**Limitations of Prior Work**: **Background**: Diffusion models work by converting noise into structured data, with the core process being the "recovery" of information erased when data is diffused into noise. This information is stored in the neural network's parameters during training. However, a systematic theoretical framework for quantifying the amount of stored information has been lacking.
 
 Key questions:
 1. How much information exists in diffusion models, and how can it be measured?

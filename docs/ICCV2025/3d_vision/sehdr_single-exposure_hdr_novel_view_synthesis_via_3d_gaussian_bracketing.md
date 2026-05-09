@@ -28,15 +28,15 @@ SeHDR is proposed as the first framework for synthesizing HDR novel views from s
 
 ## Background & Motivation
 
-**State of the Field**: HDR novel view synthesis (HDR-NVS) reconstructs HDR scenes from multi-view LDR images. Existing methods (HDR-NeRF, HDRGS) require multi-view and multi-exposure inputs — different views must provide images at different exposures to supply complementary information for over- and under-exposed regions.
+**Background**: HDR novel view synthesis (HDR-NVS) reconstructs HDR scenes from multi-view LDR images. Existing methods (HDR-NeRF, HDRGS) require multi-view and multi-exposure inputs — different views must provide images at different exposures to supply complementary information for over- and under-exposed regions.
 
 **Limitations of Prior Work**: (1) Multi-exposure capture is impractical — acquiring images at different exposures from the same viewpoint risks motion blur and misalignment, while calibrating cameras across different views and exposures is even more challenging. (2) Directly applying existing multi-exposure HDR-NVS methods to single-exposure inputs fails due to the absence of complementary exposure information. (3) Applying single-image HDR reconstruction frame-by-frame before 3DGS introduces multi-view inconsistency, producing floater artifacts and blurring.
 
-**Root Cause**: In single-exposure inputs, information in over- and under-exposed regions is lost due to quantization and saturation clipping — an inherently ill-posed problem — yet multi-exposure capture remains prohibitively difficult in practice.
+**Key Challenge**: In single-exposure inputs, information in over- and under-exposed regions is lost due to quantization and saturation clipping — an inherently ill-posed problem — yet multi-exposure capture remains prohibitively difficult in practice.
 
-**Paper Goals**: Learn an HDR scene representation from standard single-exposure multi-view LDR images for HDR novel view synthesis.
+**Goal**: Learn an HDR scene representation from standard single-exposure multi-view LDR images for HDR novel view synthesis.
 
-**Starting Point**: Drawing inspiration from exposure bracketing in computational photography — synthesizing Gaussians at different exposures in 3D Gaussian space and then fusing them into HDR, thereby avoiding the multi-view inconsistency introduced by 2D per-image HDR reconstruction.
+**Key Insight**: Drawing inspiration from exposure bracketing in computational photography — synthesizing Gaussians at different exposures in 3D Gaussian space and then fusing them into HDR, thereby avoiding the multi-view inconsistency introduced by 2D per-image HDR reconstruction.
 
 **Core Idea**: Learn base 3D Gaussians in linear color space → manipulate exposures to generate multiple sets of bracketed 3D Gaussians sharing the same geometry but at different exposures → fuse them into HDR Gaussians in spherical harmonics (SH) space via differentiable Neural Exposure Fusion (NeEF).
 

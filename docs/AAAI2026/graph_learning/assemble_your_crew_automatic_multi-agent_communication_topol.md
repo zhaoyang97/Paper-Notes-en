@@ -27,15 +27,15 @@ content_hash: a189082e252ac9b2
 This paper proposes ARG-Designer, which reformulates multi-agent system topology design as a conditional autoregressive graph generation task. Rather than pruning from template graphs, the model incrementally generates agent nodes and communication edges from scratch. ARG-Designer achieves state-of-the-art performance across 6 benchmarks (average 92.78%), reduces token consumption by approximately 50% compared to G-Designer, and supports role expansion without retraining.
 
 ## Background & Motivation
-**State of the Field**: The effectiveness of LLM-based multi-agent systems critically depends on the collaborative topology — how agents are organized and exchange information. Automated topology design has become a research focus, with representative works including AgentPrune (edge pruning), AgentDropout (stochastic dropping), and G-Designer (graph autoencoder learning).
+**Background**: The effectiveness of LLM-based multi-agent systems critically depends on the collaborative topology — how agents are organized and exchange information. Automated topology design has become a research focus, with representative works including AgentPrune (edge pruning), AgentDropout (stochastic dropping), and G-Designer (graph autoencoder learning).
 
 **Limitations of Prior Work**: Existing methods follow a "template graph modification" paradigm — starting from a predefined fully-connected or dense template and adapting it to the task via edge reweighting or pruning. Two key limitations arise: (1) **Redundant composition**: the template predefines all possible agent roles, so even after pruning, irrelevant agents or edges may remain; (2) **Limited scalability**: models are trained on fixed templates and cannot generalize to newly added agent roles or dynamically changing agent pools.
 
-**Root Cause**: The search space of the template modification paradigm is constrained by the predefined template, making truly task-tailored topologies unattainable; yet expanding the template to cover all possible roles is prohibitively expensive.
+**Key Challenge**: The search space of the template modification paradigm is constrained by the predefined template, making truly task-tailored topologies unattainable; yet expanding the template to cover all possible roles is prohibitively expensive.
 
-**Paper Goals**: How to construct, from scratch, a customized multi-agent topology containing only the necessary agents and optimal communication links?
+**Goal**: How to construct, from scratch, a customized multi-agent topology containing only the necessary agents and optimal communication links?
 
-**Starting Point**: Drawing an analogy to real-world team formation — rather than hiring all possible members and then downsizing, one incrementally recruits suitable members according to task requirements. This motivates the autoregressive graph generation paradigm: iteratively adding nodes and edges until the topology is complete.
+**Key Insight**: Drawing an analogy to real-world team formation — rather than hiring all possible members and then downsizing, one incrementally recruits suitable members according to task requirements. This motivates the autoregressive graph generation paradigm: iteratively adding nodes and edges until the topology is complete.
 
 **Core Idea**: Transform multi-agent topology design from "template modification" to "conditional autoregressive graph generation," constructing from scratch a collaboration graph that is optimal in terms of agent count, roles, and connectivity.
 

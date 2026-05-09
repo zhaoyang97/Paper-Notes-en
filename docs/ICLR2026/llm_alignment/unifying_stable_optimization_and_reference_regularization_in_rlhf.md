@@ -28,14 +28,14 @@ This paper proposes DAR (Dual-regularized Advantage Regression), identifying tha
 
 ## Background & Motivation
 
-**State of the Field**: Online RLHF methods (PPO/RLOO/GRPO) optimize LLM policies via reinforcement learning. Two core challenges exist: reward hacking (policies over-optimizing proxy rewards) and training instability (catastrophic policy shifts leading to collapse).
+**Background**: Online RLHF methods (PPO/RLOO/GRPO) optimize LLM policies via reinforcement learning. Two core challenges exist: reward hacking (policies over-optimizing proxy rewards) and training instability (catastrophic policy shifts leading to collapse).
 
 **Limitations of Prior Work**:
 - Reward hacking is mitigated via $\text{KL}(\pi_\theta \| \pi_0)$ to constrain the policy toward the initial model.
 - Training instability is mitigated via clipping or $\text{KL}(\pi_t \| \pi_\theta)$ to constrain the policy toward the current iterate.
 - **Key finding**: These two constraints progressively conflict — the policy must simultaneously remain close to both $\pi_0$ and $\pi_t$, but as training proceeds and $\pi_t$ drifts from $\pi_0$, their intersection shrinks and high-reward policies are excluded.
 
-**Root Cause**: The conflict between stability constraints and reference regularization leads to an overly restricted optimization space.
+**Key Challenge**: The conflict between stability constraints and reference regularization leads to an overly restricted optimization space.
 
 **Core Idea**: Unify both constraints via a dynamically interpolated reference policy $\pi_0^\alpha \cdot \pi_t^{1-\alpha}$ in log-space, combined with a regression transformation to eliminate policy-ratio instability.
 

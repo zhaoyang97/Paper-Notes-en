@@ -28,7 +28,7 @@ This paper proposes integrating Kolmogorov-Arnold Networks (KAN) into an adversa
 
 ## Background & Motivation
 
-**State of the Field**: Machine learning models are widely deployed in high-stakes decision-making scenarios such as college admissions and healthcare, yet historical biases embedded in training data frequently lead to discriminatory predictions against marginalized groups. In college admissions specifically, students from low-income families and first-generation college students systematically face resource inequalities.
+**Background**: Machine learning models are widely deployed in high-stakes decision-making scenarios such as college admissions and healthcare, yet historical biases embedded in training data frequently lead to discriminatory predictions against marginalized groups. In college admissions specifically, students from low-income families and first-generation college students systematically face resource inequalities.
 
 **Limitations of Prior Work**:
 
@@ -40,9 +40,9 @@ This paper proposes integrating Kolmogorov-Arnold Networks (KAN) into an adversa
    - **Instability in the fairness–accuracy trade-off**: Zhao et al. proved that the error lower bound of a classifier satisfying exact Demographic Parity (DP) is half the difference in base rates between the two groups, rendering the fairness–accuracy competition during training unstable.
    - **Black-box opacity**: Standard neural networks cannot explicitly express feature contributions, undermining trustworthiness in sensitive contexts such as admissions.
 
-**Root Cause**: In adversarial debiasing frameworks, the selection of the fairness penalty coefficient $\lambda$ is highly dependent on manual tuning, and a fixed $\lambda$ throughout training cannot adapt to the dynamically shifting fairness–accuracy trade-off.
+**Key Challenge**: In adversarial debiasing frameworks, the selection of the fairness penalty coefficient $\lambda$ is highly dependent on manual tuning, and a fixed $\lambda$ throughout training cannot adapt to the dynamically shifting fairness–accuracy trade-off.
 
-**Starting Point**: Replace MLP with KAN as both the classifier and adversary in the adversarial debiasing framework. KAN, grounded in the Kolmogorov-Arnold representation theorem, substitutes fixed activation functions with learnable B-spline functions, inherently providing Lipschitz continuity and $\beta$-smoothness to stabilize adversarial training. An adaptive $\lambda$ update strategy is further introduced to eliminate manual tuning.
+**Key Insight**: Replace MLP with KAN as both the classifier and adversary in the adversarial debiasing framework. KAN, grounded in the Kolmogorov-Arnold representation theorem, substitutes fixed activation functions with learnable B-spline functions, inherently providing Lipschitz continuity and $\beta$-smoothness to stabilize adversarial training. An adaptive $\lambda$ update strategy is further introduced to eliminate manual tuning.
 
 ## Method
 

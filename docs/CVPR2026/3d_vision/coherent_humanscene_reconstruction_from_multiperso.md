@@ -29,7 +29,7 @@ CHROMM is a unified framework that integrates the geometric prior of Pi3X and th
 
 ## Background & Motivation
 
-**State of the Field**: Joint 3D human-scene reconstruction is a core problem in computer vision, with applications in robotics, autonomous driving, and AR/VR. Recent 3D foundation models (DUSt3R, VGGT, Pi3X) have advanced scene reconstruction, while Multi-HMR has enabled multi-person human mesh recovery.
+**Background**: Joint 3D human-scene reconstruction is a core problem in computer vision, with applications in robotics, autonomous driving, and AR/VR. Recent 3D foundation models (DUSt3R, VGGT, Pi3X) have advanced scene reconstruction, while Multi-HMR has enabled multi-person human mesh recovery.
 
 **Limitations of Prior Work**:
 
@@ -38,11 +38,11 @@ CHROMM is a unified framework that integrates the geometric prior of Pi3X and th
 3. Appearance-based ReID methods fail in visually similar scenarios (e.g., uniformed subjects).
 4. The near-metric scale output by Pi3X is misaligned with the true metric scale of SMPL—causing human meshes to penetrate the ground or float above it.
 
-**Root Cause**: Simultaneous reconstruction of the scene and multiple humans is hindered by scale inconsistency between the two, difficulty in cross-view person association, and the desire to avoid reliance on external preprocessing.
+**Key Challenge**: Simultaneous reconstruction of the scene and multiple humans is hindered by scale inconsistency between the two, difficulty in cross-view person association, and the desire to avoid reliance on external preprocessing.
 
-**Paper Goals**: To build a unified feed-forward framework that requires no external modules or preprocessed data and performs joint multi-person multi-view human-scene reconstruction in a single pass.
+**Goal**: To build a unified feed-forward framework that requires no external modules or preprocessed data and performs joint multi-person multi-view human-scene reconstruction in a single pass.
 
-**Starting Point**: Fuse the scene prior of Pi3X with the human prior of Multi-HMR, design a scale adjustment module to bridge the two, and replace appearance-based matching with geometric cues for cross-view association.
+**Key Insight**: Fuse the scene prior of Pi3X with the human prior of Multi-HMR, design a scale adjustment module to bridge the two, and replace appearance-based matching with geometric cues for cross-view association.
 
 **Core Idea**: Dual-encoder late fusion + head-pelvis ratio scale adjustment + view-invariant/view-dependent decomposition fusion + geometry-driven multi-person association.
 

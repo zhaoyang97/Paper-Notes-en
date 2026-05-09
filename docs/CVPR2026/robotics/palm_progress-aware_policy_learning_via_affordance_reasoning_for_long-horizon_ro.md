@@ -29,15 +29,15 @@ This paper proposes PALM, a unified VLA framework that employs structured fine-g
 
 ## Background & Motivation
 
-1. **State of the Field**: VLA models have achieved notable progress in short-horizon manipulation tasks, with representative methods spanning autoregressive approaches (OpenVLA, RT series), diffusion-based approaches (Diffusion Policy, π0), and predictive approaches (Seer). However, these models continue to struggle with long-horizon, multi-step tasks.
+1. **Background**: VLA models have achieved notable progress in short-horizon manipulation tasks, with representative methods spanning autoregressive approaches (OpenVLA, RT series), diffusion-based approaches (Diffusion Policy, π0), and predictive approaches (Seer). However, these models continue to struggle with long-horizon, multi-step tasks.
 
 2. **Limitations of Prior Work**: (1) Lack of structured affordance cues — models have no explicit representation of which object to manipulate next, which part to contact, where to place it, or what motion to apply. (2) Lack of intra-subtask progress tracking — visually similar states may correspond to different action phases, leading to failure modes characteristic of long-horizon execution, including repeated actions, skipped steps, and premature termination.
 
-3. **Root Cause**: Standard behavior cloning trains on demonstrations from different task phases without distinguishing phase differences. States that are visually similar but belong to different task phases become indistinguishable, causing policy instability during long-horizon execution.
+3. **Key Challenge**: Standard behavior cloning trains on demonstrations from different task phases without distinguishing phase differences. States that are visually similar but belong to different task phases become indistinguishable, causing policy instability during long-horizon execution.
 
-4. **Paper Goals**: (1) Provide the policy with explicit, structured affordance representations as reasoning anchors. (2) Introduce continuous sub-task progress signals to resolve phase ambiguity and stabilize long-horizon execution.
+4. **Goal**: (1) Provide the policy with explicit, structured affordance representations as reasoning anchors. (2) Introduce continuous sub-task progress signals to resolve phase ambiguity and stabilize long-horizon execution.
 
-5. **Starting Point**: Construct a closed loop of perception–action–progress. Affordance prediction serves as an intermediate implicit reasoning step, while the progress signal functions as a temporal regularizer.
+5. **Key Insight**: Construct a closed loop of perception–action–progress. Affordance prediction serves as an intermediate implicit reasoning step, while the progress signal functions as a temporal regularizer.
 
 6. **Core Idea**: Perform structured prediction of future interaction scenes via four categories of affordance, then jointly generate action and progress sequences using a progress-aware inverse dynamics model.
 

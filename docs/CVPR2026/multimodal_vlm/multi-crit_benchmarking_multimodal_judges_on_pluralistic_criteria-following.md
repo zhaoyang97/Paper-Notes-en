@@ -29,15 +29,15 @@ This paper introduces Multi-Crit, the first benchmark for evaluating the plurali
 
 ## Background & Motivation
 
-**State of the Field**: The LMM-as-a-Judge paradigm is widely adopted for automatic evaluation and RLHF feedback. Given a multimodal prompt, model responses, and predefined evaluation criteria, a judge model outputs preference judgments with textual rationales. This paradigm has been adopted by numerous multimodal benchmarks for its scalability and flexibility, and several works fine-tune open-source models as dedicated judge/critic models to provide AI feedback.
+**Background**: The LMM-as-a-Judge paradigm is widely adopted for automatic evaluation and RLHF feedback. Given a multimodal prompt, model responses, and predefined evaluation criteria, a judge model outputs preference judgments with textual rationales. This paradigm has been adopted by numerous multimodal benchmarks for its scalability and flexibility, and several works fine-tune open-source models as dedicated judge/critic models to provide AI feedback.
 
 **Limitations of Prior Work**: Existing multimodal judge benchmarks (e.g., VL-Rewardbench, MM-RLHF Bench) provide only a single overall preference label. Such coarse-grained annotation fails to capture the multidimensional nature of evaluation—two responses often involve trade-offs across criteria, e.g., one being concise but factually incorrect while the other is comprehensive but verbose. A single label erases these nuances.
 
-**Root Cause**: The reliability of a judge model depends on two factors: (1) alignment with human judgment, and (2) flexible adherence to diverse, task-specific evaluation criteria. Prior work focuses on the former while largely neglecting the latter. Whether judge models genuinely follow given criteria, and whether they can correctly adjudicate when preferences conflict across criteria, remain systematically unstudied.
+**Key Challenge**: The reliability of a judge model depends on two factors: (1) alignment with human judgment, and (2) flexible adherence to diverse, task-specific evaluation criteria. Prior work focuses on the former while largely neglecting the latter. Whether judge models genuinely follow given criteria, and whether they can correctly adjudicate when preferences conflict across criteria, remain systematically unstudied.
 
-**Paper Goals**: (1) How to construct evaluation data with criterion-level human annotations and inter-criterion preference conflicts? (2) How to systematically measure the pluralistic criteria-following capability of judge models?
+**Goal**: (1) How to construct evaluation data with criterion-level human annotations and inter-criterion preference conflicts? (2) How to systematically measure the pluralistic criteria-following capability of judge models?
 
-**Starting Point**: Multi-criteria evaluation combined with conflict detection—having human annotators independently label preferences under each criterion naturally exposes inter-criterion preference conflicts.
+**Key Insight**: Multi-criteria evaluation combined with conflict detection—having human annotators independently label preferences under each criterion naturally exposes inter-criterion preference conflicts.
 
 **Core Idea**: Construct Multi-Crit, a challenging benchmark with criterion-level human annotations, and design three new metrics (PAcc/TOS/CMR) to systematically evaluate the performance and bottlenecks of 25 models on pluralistic criteria-following.
 

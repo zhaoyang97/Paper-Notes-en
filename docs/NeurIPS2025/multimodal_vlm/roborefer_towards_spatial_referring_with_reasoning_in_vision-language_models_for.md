@@ -32,15 +32,15 @@ This paper proposes **RoboRefer**, a 3D-aware reasoning VLM trained via a two-st
 
 ## Background & Motivation
 
-**State of the Field**: Spatial referring is a fundamental capability for embodied AI — robots must interpret spatial constraint instructions such as "place the cup between the keyboard and the pen holder, aligned with the cup's logo."
+**Background**: Spatial referring is a fundamental capability for embodied AI — robots must interpret spatial constraint instructions such as "place the cup between the keyboard and the pen holder, aligned with the cup's logo."
 
 **Limitations of Prior Work**: Existing VLM approaches either require costly 3D reconstruction that introduces modality gaps, or treat depth as RGB input within a shared encoder, causing modality interference. Moreover, nearly all prior methods handle only single-step spatial understanding (e.g., "which is closer?") and cannot perform multi-step reasoning.
 
-**Root Cause**: (1) Existing datasets cover only 15 spatial relations and lack multi-step reasoning annotations; (2) SFT training tends to memorize answers rather than generalize reasoning; (3) No benchmark exists for evaluating multi-step spatial reasoning.
+**Key Challenge**: (1) Existing datasets cover only 15 spatial relations and lack multi-step reasoning annotations; (2) SFT training tends to memorize answers rather than generalize reasoning; (3) No benchmark exists for evaluating multi-step spatial reasoning.
 
-**Paper Goals**: To construct a VLM with both precise 3D spatial perception and multi-step spatial reasoning capabilities, applicable to real-world robot manipulation and navigation.
+**Goal**: To construct a VLM with both precise 3D spatial perception and multi-step spatial reasoning capabilities, applicable to real-world robot manipulation and navigation.
 
-**Starting Point**: A dedicated depth encoder avoids modality interference, while reinforcement fine-tuning produces generalizable reasoning strategies.
+**Key Insight**: A dedicated depth encoder avoids modality interference, while reinforcement fine-tuning produces generalizable reasoning strategies.
 
 **Core Idea**: SFT learns spatial perception; RFT learns spatial reasoning — guided by a metric-sensitive process reward that supervises the precision of intermediate reasoning steps.
 

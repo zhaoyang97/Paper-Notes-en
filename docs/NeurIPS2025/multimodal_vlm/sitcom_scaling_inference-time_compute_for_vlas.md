@@ -39,7 +39,7 @@ Robot learning has long been constrained by three core challenges: the high cost
 
 Existing solutions either train explicit reasoning via chain-of-thought (CoT) data—which requires expensive annotation—or employ world models that are often computationally expensive and task-specific.
 
-**Starting Point**: SITCOM transfers the concept of inference-time compute scaling from language models to robot control. Rather than modifying the training paradigm, it "thinks more" at inference time through parallel rollouts and reward-based ranking before acting—analogous to MPC: lookahead simulation, evaluation, and selection at each decision step.
+**Key Insight**: SITCOM transfers the concept of inference-time compute scaling from language models to robot control. Rather than modifying the training paradigm, it "thinks more" at inference time through parallel rollouts and reward-based ranking before acting—analogous to MPC: lookahead simulation, evaluation, and selection at each decision step.
 
 ## Method
 

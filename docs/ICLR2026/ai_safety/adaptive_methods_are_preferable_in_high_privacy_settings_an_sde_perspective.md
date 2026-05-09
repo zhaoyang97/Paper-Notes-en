@@ -28,15 +28,15 @@ This work is the first to analyze differentially private optimizers through a st
 
 ## Background & Motivation
 
-**State of the Field**: Differential privacy (DP) has become the standard for large-scale private training. DP-SGD protects privacy via per-example gradient clipping and Gaussian noise injection. Adaptive DP optimizers (e.g., DP-Adam) are widely used in practice but remain theoretically underexplored. Prior work suggests DP-SGD and DP-Adam perform comparably under careful tuning, and which is superior remains an open question.
+**Background**: Differential privacy (DP) has become the standard for large-scale private training. DP-SGD protects privacy via per-example gradient clipping and Gaussian noise injection. Adaptive DP optimizers (e.g., DP-Adam) are widely used in practice but remain theoretically underexplored. Prior work suggests DP-SGD and DP-Adam perform comparably under careful tuning, and which is superior remains an open question.
 
 **Limitations of Prior Work**: (1) The interaction between DP noise and adaptivity lacks theoretical characterization; (2) hyperparameters must be re-searched for different privacy budgets $\varepsilon$, consuming additional privacy budget; (3) there is no consensus on whether adaptive methods confer advantages under DP.
 
-**Root Cause**: The mechanisms by which DP noise acts differ fundamentally between non-adaptive and adaptive methods, yet existing analyses cannot distinguish this difference.
+**Key Challenge**: The mechanisms by which DP noise acts differ fundamentally between non-adaptive and adaptive methods, yet existing analyses cannot distinguish this difference.
 
-**Paper Goals**: (1) Establish SDE models for DP optimizers; (2) precisely characterize the effect of $\varepsilon$ on convergence rate and asymptotic neighborhood; (3) compare performance under fixed-hyperparameter and optimally-tuned protocols.
+**Goal**: (1) Establish SDE models for DP optimizers; (2) precisely characterize the effect of $\varepsilon$ on convergence rate and asymptotic neighborhood; (3) compare performance under fixed-hyperparameter and optimally-tuned protocols.
 
-**Starting Point**: The SDE weak approximation framework can capture the effect of DP noise on continuous dynamics; SignSGD serves as a tractable theoretical proxy for Adam.
+**Key Insight**: The SDE weak approximation framework can capture the effect of DP noise on continuous dynamics; SignSGD serves as a tractable theoretical proxy for Adam.
 
 **Core Idea**: Although DP-SignSGD's convergence rate depends on $\varepsilon$, its privacy-utility tradeoff is only $\mathcal{O}(1/\varepsilon)$, whereas DP-SGD converges at a rate independent of $\varepsilon$ but incurs an $\mathcal{O}(1/\varepsilon^2)$ tradeoff. Adaptive methods are therefore preferable under strict privacy constraints.
 

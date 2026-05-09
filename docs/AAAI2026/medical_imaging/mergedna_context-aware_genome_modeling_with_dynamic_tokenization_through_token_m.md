@@ -42,7 +42,7 @@ Information-dense regions require fine-grained tokens to preserve detail, while 
 
 ### Paper Goals
 
-**Paper Goals**: Design an end-to-end learnable genome modeling framework that jointly addresses dynamic tokenization and information-density-adaptive pretraining. **Starting Point**: Transfer the Token Merging (ToMe) paradigm from the ViT domain to DNA sequences, using differentiable merge operations to automatically learn context-aware token granularity. **Core Idea**: Apply local-window token merging for dynamic compression, coupled with adaptive masked token modeling (weighting mask probability by information density), to address tokenization, modeling, and pretraining objectives within a single unified framework.
+**Goal**: Design an end-to-end learnable genome modeling framework that jointly addresses dynamic tokenization and information-density-adaptive pretraining. **Key Insight**: Transfer the Token Merging (ToMe) paradigm from the ViT domain to DNA sequences, using differentiable merge operations to automatically learn context-aware token granularity. **Core Idea**: Apply local-window token merging for dynamic compression, coupled with adaptive masked token modeling (weighting mask probability by information density), to address tokenization, modeling, and pretraining objectives within a single unified framework.
 
 ## Method
 

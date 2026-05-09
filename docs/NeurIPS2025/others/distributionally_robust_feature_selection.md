@@ -27,15 +27,15 @@ This paper proposes a model-agnostic distributionally robust feature selection m
 
 ## Background & Motivation
 
-**State of the Field**: Feature selection is a fundamental problem in machine learning. Classical methods such as Lasso, forward/backward selection, and XGBoost feature importance all optimize for a single distribution. In the area of distributionally robust optimization (DRO), methods such as Group DRO aim to find a single model that performs well across all subgroups, but do not address feature selection.
+**Background**: Feature selection is a fundamental problem in machine learning. Classical methods such as Lasso, forward/backward selection, and XGBoost feature importance all optimize for a single distribution. In the area of distributionally robust optimization (DRO), methods such as Group DRO aim to find a single model that performs well across all subgroups, but do not address feature selection.
 
 **Limitations of Prior Work**: In practice, it is often necessary to select a small number of features under budget constraints (e.g., a medical questionnaire can only ask a limited number of questions), and the selected features must support training good models separately for different subpopulations. Existing feature selection methods do not consider cross-distribution robustness, and DRO methods do not perform feature selection — the intersection of these two directions has been entirely unexplored.
 
-**Root Cause**: Feature selection is a discrete combinatorial optimization problem (NP-hard), while DRO requires minimax optimization. The coupling of these two levels of optimization makes direct solutions extremely difficult — each time the feature subset changes, models for all subpopulations must be retrained.
+**Key Challenge**: Feature selection is a discrete combinatorial optimization problem (NP-hard), while DRO requires minimax optimization. The coupling of these two levels of optimization makes direct solutions extremely difficult — each time the feature subset changes, models for all subpopulations must be retrained.
 
-**Paper Goals**: Select $k$ features such that models trained separately on each subpopulation $P_i$ using only those $k$ features achieve the best possible worst-group performance.
+**Goal**: Select $k$ features such that models trained separately on each subpopulation $P_i$ using only those $k$ features achieve the best possible worst-group performance.
 
-**Starting Point**: (a) Replace hard selection with noise injection to achieve a continuous relaxation; (b) shift to optimizing the performance of the Bayes-optimal predictor to eliminate dependence on any specific model; (c) leverage the Gaussian noise model to derive closed-form kernel weight expressions.
+**Key Insight**: (a) Replace hard selection with noise injection to achieve a continuous relaxation; (b) shift to optimizing the performance of the Bayes-optimal predictor to eliminate dependence on any specific model; (c) leverage the Gaussian noise model to derive closed-form kernel weight expressions.
 
 **Core Idea**: By combining feature-level noise injection with variance optimization of the Bayes-optimal predictor, the intractable discrete-minimax problem is transformed into a differentiable continuous optimization, enabling model-agnostic distributionally robust feature selection.
 

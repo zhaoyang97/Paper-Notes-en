@@ -28,15 +28,15 @@ This paper proposes VACE, an all-in-one video creation and editing framework bui
 
 ## Background & Motivation
 
-**State of the Field**: The video generation field encompasses a rich set of downstream tasks — inpainting, editing, controllable generation, reference-based generation, identity-preserving generation, etc. Unified frameworks (e.g., ACE, OmniGen) have emerged in the image domain, but the video domain still predominantly follows a "one model per task" paradigm due to the greater difficulty of maintaining spatiotemporal consistency.
+**Background**: The video generation field encompasses a rich set of downstream tasks — inpainting, editing, controllable generation, reference-based generation, identity-preserving generation, etc. Unified frameworks (e.g., ACE, OmniGen) have emerged in the image domain, but the video domain still predominantly follows a "one model per task" paradigm due to the greater difficulty of maintaining spatiotemporal consistency.
 
 **Limitations of Prior Work**: (1) Deploying multiple specialized models is costly (separate models for I2V, inpainting, controllable generation, etc.); (2) No single model supports complex compositional tasks (e.g., "reference + inpainting", "sketch + video extension"); (3) A unified multi-task video evaluation benchmark is lacking.
 
-**Root Cause**: Video task inputs are highly heterogeneous (text, images, video, masks) and must preserve spatiotemporal consistency. Handling these diverse requirements through a unified interface is the central challenge.
+**Key Challenge**: Video task inputs are highly heterogeneous (text, images, video, masks) and must preserve spatiotemporal consistency. Handling these diverse requirements through a unified interface is the central challenge.
 
-**Paper Goals**: Construct an all-in-one video generation and editing framework supporting T2V, R2V (reference-based generation), V2V (video-to-video editing), MV2V (mask-based video editing), and their free combinations.
+**Goal**: Construct an all-in-one video generation and editing framework supporting T2V, R2V (reference-based generation), V2V (video-to-video editing), MV2V (mask-based video editing), and their free combinations.
 
-**Starting Point**: Decompose all video task inputs into a unified triplet of "text + frame sequence + mask sequence."
+**Key Insight**: Decompose all video task inputs into a unified triplet of "text + frame sequence + mask sequence."
 
 **Core Idea**: Use VCU to unify the multimodal inputs of diverse video tasks into a standardized representation of frame sequences and mask sequences. Task conditioning information is injected via the Context Adapter, enabling a single model to handle all video creation and editing tasks.
 

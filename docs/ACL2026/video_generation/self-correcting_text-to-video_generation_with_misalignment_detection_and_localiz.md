@@ -29,15 +29,15 @@ This paper proposes VideoRepair, the first training-free, model-agnostic text-to
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-video (T2V) diffusion models have made significant advances in generation quality, but still struggle with following complex text prompts — particularly involving multiple objects, attribute binding, and spatial relationships. Common errors include incorrect object counts, confused attribute binding, or region distortion.
+**Background**: Text-to-video (T2V) diffusion models have made significant advances in generation quality, but still struggle with following complex text prompts — particularly involving multiple objects, attribute binding, and spatial relationships. Common errors include incorrect object counts, confused attribute binding, or region distortion.
 
 **Limitations of Prior Work**: Existing compositional T2V methods improve compositionality but lack explicit feedback mechanisms to detect and correct misalignments. Image-domain repair frameworks suffer from high computational overhead, reliance on external generators, or introduction of visual inconsistencies. The key issue is: even when generated videos contain misaligned portions, correctly generated regions should often be preserved rather than regenerated.
 
-**Root Cause**: Global regeneration wastes correctly generated content, while simple inpainting/editing lacks semantically guided ability to introduce or correct entities that do not match the text. A mechanism is needed that can both precisely locate problematic regions and preserve faithful content.
+**Key Challenge**: Global regeneration wastes correctly generated content, while simple inpainting/editing lacks semantically guided ability to introduce or correct entities that do not match the text. A mechanism is needed that can both precisely locate problematic regions and preserve faithful content.
 
-**Paper Goals**: Design a training-free video repair framework that can automatically detect what is wrong, plan how to fix it, and then locally correct it.
+**Goal**: Design a training-free video repair framework that can automatically detect what is wrong, plan how to fix it, and then locally correct it.
 
-**Starting Point**: Analogous to how humans revise creative works — modifying only erroneous parts while preserving correct ones. Through MLLM-generated fine-grained evaluation questions to identify misaligned regions, then leveraging the diffusion model's own regeneration capability for selective repair.
+**Key Insight**: Analogous to how humans revise creative works — modifying only erroneous parts while preserving correct ones. Through MLLM-generated fine-grained evaluation questions to identify misaligned regions, then leveraging the diffusion model's own regeneration capability for selective repair.
 
 **Core Idea**: Preserve correct regions, selectively repair erroneous regions — transform MLLM evaluation feedback into actionable generation guidance.
 

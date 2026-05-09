@@ -27,15 +27,15 @@ This paper identifies that view conditioning in full-head 3D GANs introduces sev
 
 ## Background & Motivation
 
-**State of the Field**: 3D-aware GANs (EG3D, PanoHead, SphereHead, HyPlaneHead) adopt tri-plane representations for 3D head generation and inherit EG3D's view conditioning strategy, using camera pose angles as generator conditions.
+**Background**: 3D-aware GANs (EG3D, PanoHead, SphereHead, HyPlaneHead) adopt tri-plane representations for 3D head generation and inherit EG3D's view conditioning strategy, using camera pose angles as generator conditions.
 
 **Limitations of Prior Work**: (a) **Directional bias**—view conditioning causes the generator to produce substantially higher quality at the conditioned viewpoint than at others, leading to global inconsistency (Fig. 2d–i); (b) inference requires fixing a frontal condition to ensure frontal quality, sacrificing diversity in back-view generation; (c) **data imbalance**—in-the-wild datasets exhibit highly uneven distributions of quality, quantity, and diversity across viewpoints; (d) removing conditioning entirely leads to mode collapse, rendering training infeasible.
 
-**Root Cause**: Full-head GANs require conditioning to stabilize training (unconditional training collapses), yet view conditioning introduces directional bias. A view-invariant conditioning mechanism is therefore needed.
+**Key Challenge**: Full-head GANs require conditioning to stabilize training (unconditional training collapses), yet view conditioning introduces directional bias. A view-invariant conditioning mechanism is therefore needed.
 
-**Paper Goals**: Design a view-invariant conditioning strategy and construct a viewpoint-balanced dataset so that full-head GANs can generate high-quality outputs across all viewpoints.
+**Goal**: Design a view-invariant conditioning strategy and construct a viewpoint-balanced dataset so that full-head GANs can generate high-quality outputs across all viewpoints.
 
-**Starting Point**: Use frontal CLIP image features as a shared semantic condition—all viewpoints of the same identity share a single condition—decoupling generative capability from viewing direction.
+**Key Insight**: Use frontal CLIP image features as a shared semantic condition—all viewpoints of the same identity share a single condition—decoupling generative capability from viewing direction.
 
 **Core Idea**: Shift 3D-aware GANs from view conditioning to semantic conditioning by replacing camera pose angles with frontal CLIP features as generator input, thereby eliminating directional bias.
 

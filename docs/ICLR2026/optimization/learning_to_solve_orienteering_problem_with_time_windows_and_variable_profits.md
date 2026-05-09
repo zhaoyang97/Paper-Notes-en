@@ -29,7 +29,7 @@ This paper proposes DeCoST, a learning-based two-stage framework that decouples 
 
 ## Background & Motivation
 
-**State of the Field**: The Orienteering Problem (OP) is an important variant of VRP that requires selecting a subset of nodes to visit within a fixed time budget to maximize collected rewards. In practical settings—factory scheduling, logistics, and robot planning—rewards typically grow with service duration (variable profits), and nodes are accessible only within specific time windows. This motivates the OPTWVP, which requires jointly optimizing discrete routing and continuous service time allocation.
+**Background**: The Orienteering Problem (OP) is an important variant of VRP that requires selecting a subset of nodes to visit within a fixed time budget to maximize collected rewards. In practical settings—factory scheduling, logistics, and robot planning—rewards typically grow with service duration (variable profits), and nodes are accessible only within specific time windows. This motivates the OPTWVP, which requires jointly optimizing discrete routing and continuous service time allocation.
 
 **Limitations of Prior Work**:
 
@@ -38,9 +38,9 @@ This paper proposes DeCoST, a learning-based two-stage framework that decouples 
 3. **Myopia of Decomposition Methods**: Naive decomposition causes first-stage routing decisions to be made without foresight of optimal service times, and subsequent local adjustments are insufficient to correct structural bias.
 4. **Scalability of Metaheuristics**: Manually designed heuristic rules combined with exhaustive local search require re-solving the continuous subproblem upon each route change, incurring high computational cost.
 
-**Root Cause**: Discrete routes and continuous service times are inherently interdependent, yet joint optimization is computationally intractable, while naive decoupling leads to myopic decisions.
+**Key Challenge**: Discrete routes and continuous service times are inherently interdependent, yet joint optimization is computationally intractable, while naive decoupling leads to myopic decisions.
 
-**Paper Goals**: Intelligent decoupling with cross-stage coordination. The first stage is service-time-aware (parallel decoding of routes and times); the second stage optimizes exactly (globally optimal via LP); pTAR feedback enables the first stage to anticipate second-stage consequences.
+**Goal**: Intelligent decoupling with cross-stage coordination. The first stage is service-time-aware (parallel decoding of routes and times); the second stage optimizes exactly (globally optimal via LP); pTAR feedback enables the first stage to anticipate second-stage consequences.
 
 ## Method
 

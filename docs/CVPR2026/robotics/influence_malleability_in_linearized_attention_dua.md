@@ -29,15 +29,15 @@ This paper establishes via the NTK framework that linearized attention fails to 
 
 ## Background & Motivation
 
-**State of the Field**: NTK (Neural Tangent Kernel) theory establishes an equivalence between infinitely wide networks and kernel methods, predicting that sufficiently wide networks maintain an approximately constant kernel throughout training (the "lazy training" regime). This framework has been extended to deep networks and arbitrary architectures, yet attention mechanisms have not been rigorously incorporated into NTK analysis.
+**Background**: NTK (Neural Tangent Kernel) theory establishes an equivalence between infinitely wide networks and kernel methods, predicting that sufficiently wide networks maintain an approximately constant kernel throughout training (the "lazy training" regime). This framework has been extended to deep networks and arbitrary architectures, yet attention mechanisms have not been rigorously incorporated into NTK analysis.
 
 **Limitations of Prior Work**: (1) Prior studies focus either on the architectural properties of attention or on final performance, neglecting the dynamical characteristics of the attention learning process. (2) Whether NTK theory applies to attention is entirely unknown—Wenger et al. note that NTK theory is valid only for networks "orders of magnitude wider than their depth." (3) There is a lack of theoretical tools for quantifying attention's sensitivity to training data.
 
-**Root Cause**: The expressiveness of attention mechanisms (flexible adaptation to data structure) and their fragile sensitivity to training data may share a common origin—deviation from the kernel regime.
+**Key Challenge**: The expressiveness of attention mechanisms (flexible adaptation to data structure) and their fragile sensitivity to training data may share a common origin—deviation from the kernel regime.
 
-**Paper Goals**: Does linearized attention converge to the infinite-width NTK limit? If not, what does this non-convergent behavior imply for the model's dependence on training data?
+**Goal**: Does linearized attention converge to the infinite-width NTK limit? If not, what does this non-convergent behavior imply for the model's dependence on training data?
 
-**Starting Point**: The paper designs a parameter-free linearized attention $f^{att}(X) = XX^TX$, establishes its exact correspondence with a data-dependent Gram-induced kernel, leverages spectral analysis to explain non-convergence, and quantifies the dual effects via "influence malleability."
+**Key Insight**: The paper designs a parameter-free linearized attention $f^{att}(X) = XX^TX$, establishes its exact correspondence with a data-dependent Gram-induced kernel, leverages spectral analysis to explain non-convergence, and quantifies the dual effects via "influence malleability."
 
 **Core Idea**: The power and vulnerability of attention share the same origin—their transcendence of the kernel regime. The data-dependent kernel yields flexibility while simultaneously introducing fragility.
 

@@ -28,7 +28,7 @@ This paper proposes SELDON, a continuous-time VAE combining a masked GRU-ODE enc
 
 ## Background & Motivation
 
-**State of the Field**: The Vera C. Rubin Observatory's LSST survey is about to go online, expected to generate approximately 10 million public alerts per night. Traditional physics-based inference methods (MCMC) require hours to process a single supernova light curve and are entirely incapable of keeping pace with this data deluge. AI models capable of millisecond-level inference are needed to predict light curves in real time and prioritize spectroscopic follow-up observations.
+**Background**: The Vera C. Rubin Observatory's LSST survey is about to go online, expected to generate approximately 10 million public alerts per night. Traditional physics-based inference methods (MCMC) require hours to process a single supernova light curve and are entirely incapable of keeping pace with this data deluge. AI models capable of millisecond-level inference are needed to predict light curves in real time and prioritize spectroscopic follow-up observations.
 
 **Limitations of Prior Work**:
    - **Classical time series methods are inapplicable**: ARMA/ARIMA assume equally spaced intervals and stationarity, whereas astronomical light curves are highly irregularly sampled and non-stationary. Continuous-time extensions such as CARMA have computational complexity of $O(N^3)$.
@@ -36,11 +36,11 @@ This paper proposes SELDON, a continuous-time VAE combining a masked GRU-ODE enc
    - **Fixed-time-grid VAEs are inapplicable**: STORN, VRNN, and similar models require equally spaced inputs and cannot handle sparse, irregularly sampled astronomical data.
    - **Continuous-time models lack interpretability**: Existing Neural ODE methods (ODE-RNN, Latent ODE) use MLP decoders whose outputs lack physical interpretability.
 
-**Root Cause**: Astronomical light curves are simultaneously sparse (averaging only 18 observations per curve), irregular, heteroscedastic, multi-band coupled, and non-stationary, demanding a model that can handle these data characteristics while delivering interpretable predictions at millisecond timescales.
+**Key Challenge**: Astronomical light curves are simultaneously sparse (averaging only 18 observations per curve), irregular, heteroscedastic, multi-band coupled, and non-stationary, demanding a model that can handle these data characteristics while delivering interpretable predictions at millisecond timescales.
 
-**Paper Goals**: Starting from limited early observations (particularly pre-peak), the paper aims to predict complete multi-band light curves of Type Ia supernovae in real time and extract physically interpretable parameters (rise time, decay rate, peak flux, etc.) to guide follow-up observation strategies.
+**Goal**: Starting from limited early observations (particularly pre-peak), the paper aims to predict complete multi-band light curves of Type Ia supernovae in real time and extract physically interpretable parameters (rise time, decay rate, peak flux, etc.) to guide follow-up observation strategies.
 
-**Starting Point**: Organically combining four components — GRU-ODE (for irregular time series), Neural ODE (for continuous-time propagation), Deep Sets (for permutation-invariant aggregation), and a Gaussian basis function decoder (for physical interpretability).
+**Key Insight**: Organically combining four components — GRU-ODE (for irregular time series), Neural ODE (for continuous-time propagation), Deep Sets (for permutation-invariant aggregation), and a Gaussian basis function decoder (for physical interpretability).
 
 **Core Idea**: Encode sparse irregular observations with GRU-ODE, propagate the latent state in continuous time via Neural ODE, and decode physically interpretable light curve parameters using a Gaussian basis function decoder.
 

@@ -29,15 +29,15 @@ This paper proposes FDeID-Toolbox, a modular face de-identification research too
 
 ## Background & Motivation
 
-**State of the Field**: Face De-Identification (FDeID) aims to remove personally identifiable information from facial images while preserving task-relevant utility attributes such as age, gender, and expression. This technology is critical for privacy-preserving computer vision, with methods ranging from classical blurring/pixelation to state-of-the-art generative adversarial networks and diffusion models.
+**Background**: Face De-Identification (FDeID) aims to remove personally identifiable information from facial images while preserving task-relevant utility attributes such as age, gender, and expression. This technology is critical for privacy-preserving computer vision, with methods ranging from classical blurring/pixelation to state-of-the-art generative adversarial networks and diffusion models.
 
 **Limitations of Prior Work**: The field suffers from severe fragmentation—different research groups employ different data preprocessing pipelines, evaluation metrics, and experimental setups, making direct comparison of results nearly impossible. Performance figures for the same method can vary substantially across publications, making it difficult to measure genuine technical progress.
 
-**Root Cause**: The inherent complexity of the FDeID task exacerbates this problem. It spans multiple downstream applications (age estimation, gender recognition, expression analysis, etc.) and requires simultaneous evaluation along three mutually constrained dimensions—privacy protection, utility preservation, and visual quality—making existing codebases difficult to use and extend.
+**Key Challenge**: The inherent complexity of the FDeID task exacerbates this problem. It spans multiple downstream applications (age estimation, gender recognition, expression analysis, etc.) and requires simultaneous evaluation along three mutually constrained dimensions—privacy protection, utility preservation, and visual quality—making existing codebases difficult to use and extend.
 
-**Paper Goals**: To construct a unified, modular, and reproducible FDeID research platform that enables fair comparison of different methods under consistent conditions.
+**Goal**: To construct a unified, modular, and reproducible FDeID research platform that enables fair comparison of different methods under consistent conditions.
 
-**Starting Point**: Drawing on the design philosophy of mature toolboxes such as MMDetection and Detectron2 to establish analogous standardized infrastructure for the FDeID field.
+**Key Insight**: Drawing on the design philosophy of mature toolboxes such as MMDetection and Detectron2 to establish analogous standardized infrastructure for the FDeID field.
 
 **Core Idea**: Address field fragmentation by unifying the four stages of FDeID research—data, methods, inference, and evaluation—through a modular, standardized toolbox architecture.
 
@@ -130,15 +130,15 @@ FDeID-Toolbox is a modular, comprehensive face de-identification toolbox that un
 
 ## Background & Motivation
 
-**State of the Field**: Face De-Identification (FDeID) aims to remove personal identity information from facial images while preserving task-relevant utility attributes such as age, gender, and expression. This technology is critical for privacy-preserving computer vision, with applications including surveillance data anonymization and medical image de-identification.
+**Background**: Face De-Identification (FDeID) aims to remove personal identity information from facial images while preserving task-relevant utility attributes such as age, gender, and expression. This technology is critical for privacy-preserving computer vision, with applications including surveillance data anonymization and medical image de-identification.
 
 **Limitations of Prior Work**: The field currently faces three core challenges: (1) implementations are highly fragmented across research groups, with incompatible codebases that are difficult to reuse; (2) evaluation protocols are inconsistent—different papers adopt different dataset splits, evaluation metrics, and experimental setups, rendering results incomparable across publications; (3) the intrinsic complexity of the task compounds these issues, as FDeID spans multiple downstream applications (age estimation, gender recognition, expression analysis, etc.) and requires simultaneous evaluation along three dimensions—privacy protection, utility preservation, and visual quality—making unified benchmarking particularly difficult.
 
-**Root Cause**: Researchers cannot compare different methods under consistent conditions, making it difficult to accurately gauge technical progress and to determine whether newly proposed methods represent genuine improvements.
+**Key Challenge**: Researchers cannot compare different methods under consistent conditions, making it difficult to accurately gauge technical progress and to determine whether newly proposed methods represent genuine improvements.
 
-**Paper Goals**: To provide a standardized, modular toolbox enabling researchers to rapidly implement, compare, and evaluate different FDeID methods under consistent conditions.
+**Goal**: To provide a standardized, modular toolbox enabling researchers to rapidly implement, compare, and evaluate different FDeID methods under consistent conditions.
 
-**Starting Point**: Drawing on the design philosophy of successful benchmark toolboxes in other CV domains (e.g., MMDetection, Detectron2) to establish analogous standardized infrastructure for the FDeID field.
+**Key Insight**: Drawing on the design philosophy of successful benchmark toolboxes in other CV domains (e.g., MMDetection, Detectron2) to establish analogous standardized infrastructure for the FDeID field.
 
 **Core Idea**: Construct a full-stack modular toolbox encompassing data loading, method implementation, inference pipeline, and evaluation protocol, enabling fair and reproducible comparison of FDeID methods.
 

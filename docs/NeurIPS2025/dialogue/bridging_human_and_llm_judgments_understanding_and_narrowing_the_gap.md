@@ -27,15 +27,15 @@ content_hash: 51e167f8b2f24e27
 This paper proposes Bridge, a statistical framework that models the latent relationship between human and LLM judgments via ordinal logistic regression. With a small number of human labels, Bridge improves the calibration and alignment of LLM judgments while supporting formal statistical hypothesis testing for systematic biases.
 
 ## Background & Motivation
-**State of the Field**: LLM-as-a-Judge has become a mainstream approach for evaluating AI outputs, yet repeated studies show that LLM judgments systematically deviate from human judgments—favoring longer responses, over-rewarding structured formatting, and underscoring creative content.
+**Background**: LLM-as-a-Judge has become a mainstream approach for evaluating AI outputs, yet repeated studies show that LLM judgments systematically deviate from human judgments—favoring longer responses, over-rewarding structured formatting, and underscoring creative content.
 
 **Limitations of Prior Work**: (a) Existing work only qualitatively characterizes biases (e.g., "LLMs prefer longer responses") without a unified quantitative framework; (b) no formal statistical testing of biases is supported (which biases are significant? how large are they?); (c) correction methods either require large amounts of human labels (Platt Scaling) or fine-tuning the LLM (costly).
 
-**Root Cause**: A unified approach is needed that can correct multiple systematic biases with only a small number of human labels while providing theoretical guarantees.
+**Key Challenge**: A unified approach is needed that can correct multiple systematic biases with only a small number of human labels while providing theoretical guarantees.
 
-**Paper Goals**: To construct a unified statistical framework that simultaneously (1) diagnoses the sources and magnitudes of biases, (2) corrects LLM judgments using a small number of human labels, and (3) provides theoretical guarantees via asymptotic normality.
+**Goal**: To construct a unified statistical framework that simultaneously (1) diagnoses the sources and magnitudes of biases, (2) corrects LLM judgments using a small number of human labels, and (3) provides theoretical guarantees via asymptotic normality.
 
-**Starting Point**: The framework assumes humans and LLMs share a latent preference $Z^h$, with LLM scores modeled as $Z^l = \beta Z^h + \gamma^\top X$, and estimates parameters via ordinal logistic regression with a logit trick.
+**Key Insight**: The framework assumes humans and LLMs share a latent preference $Z^h$, with LLM scores modeled as $Z^l = \beta Z^h + \gamma^\top X$, and estimates parameters via ordinal logistic regression with a logit trick.
 
 **Core Idea**: Model the human–LLM judgment discrepancy as a linear transformation of latent preferences, and use ordinal regression to estimate and correct bias coefficients.
 

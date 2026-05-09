@@ -28,15 +28,15 @@ This paper presents the first systematic study of continual unlearning for text-
 
 ## Background & Motivation
 
-**State of the Field**: Machine unlearning aims to remove specific concepts (e.g., copyrighted content, harmful styles) from pretrained models without retraining from scratch. Existing methods (e.g., ConAbl, SculpMem) perform well when erasing multiple concepts simultaneously.
+**Background**: Machine unlearning aims to remove specific concepts (e.g., copyrighted content, harmful styles) from pretrained models without retraining from scratch. Existing methods (e.g., ConAbl, SculpMem) perform well when erasing multiple concepts simultaneously.
 
 **Limitations of Prior Work**: In practice, unlearning requests arrive **sequentially** (e.g., removing violent content today and an artist's style tomorrow), rather than all at once. Existing methods exhibit "utility collapse" after only a few sequential requests — the model not only forgets the target concept but loses the ability to generate unrelated concepts as well.
 
-**Root Cause**: Each unlearning operation pushes model parameters away from the pretrained weights. Sequential operations lead to cumulative parameter drift far exceeding that of simultaneous unlearning. Since the pretrained weights encode the model's generative capabilities, excessive drift implies capability degradation.
+**Key Challenge**: Each unlearning operation pushes model parameters away from the pretrained weights. Sequential operations lead to cumulative parameter drift far exceeding that of simultaneous unlearning. Since the pretrained weights encode the model's generative capabilities, excessive drift implies capability degradation.
 
-**Paper Goals**: (a) Define and benchmark the continual unlearning problem; (b) diagnose the root cause of utility collapse; (c) propose plug-in regularization strategies compatible with existing unlearning methods; (d) address the challenge of concept retention within the same semantic domain.
+**Goal**: (a) Define and benchmark the continual unlearning problem; (b) diagnose the root cause of utility collapse; (c) propose plug-in regularization strategies compatible with existing unlearning methods; (d) address the challenge of concept retention within the same semantic domain.
 
-**Starting Point**: Drawing on regularization and gradient projection techniques from continual learning to constrain parameter updates. A key insight is the need for **semantic awareness** — concepts semantically close to the unlearning target are more susceptible to collateral forgetting.
+**Key Insight**: Drawing on regularization and gradient projection techniques from continual learning to constrain parameter updates. A key insight is the need for **semantic awareness** — concepts semantically close to the unlearning target are more susceptible to collateral forgetting.
 
 **Core Idea**: Utility collapse in continual unlearning is fundamentally caused by cumulative parameter drift. Regularization-based drift constraints combined with gradient projection to protect semantically related concepts can effectively alleviate this problem.
 

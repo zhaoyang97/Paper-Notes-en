@@ -28,15 +28,15 @@ Abstain-R1 proposes a **clarification-aware RLVR reward** that jointly optimizes
 
 ## Background & Motivation
 
-**State of the Field**: RL post-training (e.g., RLVR/GRPO) has substantially improved the reasoning capabilities of LLMs; however, existing training objectives assume all queries are answerable and reward answer generation per se, even when queries are in fact unsolvable.
+**Background**: RL post-training (e.g., RLVR/GRPO) has substantially improved the reasoning capabilities of LLMs; however, existing training objectives assume all queries are answerable and reward answer generation per se, even when queries are in fact unsolvable.
 
 **Limitations of Prior Work**: When a query is semantically clear but informationally insufficient (e.g., undefined variables, contradictory premises), models tend to hallucinate or "fill in the world" to produce superficially complete answers, incurring what has been termed the "Hallucination Tax." Existing abstention methods either train models to produce generic refusals ("I don't know") or encourage follow-up questions without verifying whether those questions accurately identify the missing critical information.
 
-**Root Cause**: A bare refusal provides no value — users need to know **why a query cannot be answered and what information is missing**. Yet existing RL training lacks verifiable signals to assess the quality of post-refusal clarification.
+**Key Challenge**: A bare refusal provides no value — users need to know **why a query cannot be answered and what information is missing**. Yet existing RL training lacks verifiable signals to assess the quality of post-refusal clarification.
 
-**Paper Goals**: To train models to (1) explicitly abstain on unanswerable queries; (2) provide **semantically aligned clarification** after abstaining, accurately identifying missing information; and (3) maintain performance on answerable queries.
+**Goal**: To train models to (1) explicitly abstain on unanswerable queries; (2) provide **semantically aligned clarification** after abstaining, accurately identifying missing information; and (3) maintain performance on answerable queries.
 
-**Starting Point**: Incorporating clarification quality into the RLVR reward design, using a lightweight verifier model to assess whether a model's clarification is semantically consistent with a reference clarification.
+**Key Insight**: Incorporating clarification quality into the RLVR reward design, using a lightweight verifier model to assess whether a model's clarification is semantically consistent with a reference clarification.
 
 **Core Idea**: Mixing unanswerable samples into standard GRPO training and jointly optimizing abstention and clarification via a hierarchical reward function consisting of an abstention format reward and a clarification correctness reward.
 

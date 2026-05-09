@@ -27,15 +27,15 @@ content_hash: cf7ace420e8d93ce
 BlurDM integrates the physical formation process of motion blur (progressive blur accumulation due to continuous exposure) into a diffusion model via a dual forward process (simultaneous noise addition and blurring) and a dual denoising-deblurring reverse process. It serves as a latent-space prior generator that consistently enhances four deblurring methods across four datasets, achieving an average gain of +0.31 dB on GoPro and +0.78 dB on RealBlur-J, while adding only ~4 GFLOPs and ~9 ms.
 
 ## Background & Motivation
-**State of the Field**: Deep learning-based deblurring methods (CNN/Transformer) are constrained by regression losses, producing overly smooth results. Diffusion models generate rich details, but their standard noise-based forward process is physically mismatched with the motion blur formation process.
+**Background**: Deep learning-based deblurring methods (CNN/Transformer) are constrained by regression losses, producing overly smooth results. Diffusion models generate rich details, but their standard noise-based forward process is physically mismatched with the motion blur formation process.
 
 **Limitations of Prior Work**: Motion blur arises from the **structured, directional** accumulation of continuous exposure — $B = \frac{1}{\alpha_T}\int_0^{\alpha_T} H(\tau)d\tau$ — rather than the isotropic Gaussian noise perturbation of standard diffusion. Directly applying DDPM as a deblurring prior yields only +0.13 dB, which is nearly ineffective.
 
-**Root Cause**: A fundamental mismatch exists between the standard diffusion process (adding Gaussian noise) and the blur formation process (adding directional blur) — noise is stochastic while blur is structured.
+**Key Challenge**: A fundamental mismatch exists between the standard diffusion process (adding Gaussian noise) and the blur formation process (adding directional blur) — noise is stochastic while blur is structured.
 
-**Paper Goals**: Design a physically grounded diffusion process whose forward pass mimics blur formation and whose reverse pass naturally performs deblurring.
+**Goal**: Design a physically grounded diffusion process whose forward pass mimics blur formation and whose reverse pass naturally performs deblurring.
 
-**Starting Point**: Decompose the blur formulation into a cumulative form — $I_t = \frac{\alpha_{t-1}}{\alpha_t}I_{t-1} + \frac{1}{\alpha_t}e_t + \beta_t\epsilon_t$ — where the first two terms represent progressive blurring and the last term represents noise, naturally yielding a dual diffusion process.
+**Key Insight**: Decompose the blur formulation into a cumulative form — $I_t = \frac{\alpha_{t-1}}{\alpha_t}I_{t-1} + \frac{1}{\alpha_t}e_t + \beta_t\epsilon_t$ — where the first two terms represent progressive blurring and the last term represents noise, naturally yielding a dual diffusion process.
 
 **Core Idea**: Design a diffusion model whose forward process simultaneously adds noise and blur, and whose reverse process simultaneously performs denoising and deblurring, operating in latent space as a general-purpose prior to enhance arbitrary deblurring networks.
 

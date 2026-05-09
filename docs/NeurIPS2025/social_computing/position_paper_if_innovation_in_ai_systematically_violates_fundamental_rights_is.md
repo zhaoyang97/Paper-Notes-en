@@ -29,15 +29,15 @@ This paper challenges the prevailing belief that regulation and innovation are i
 
 ## Background & Motivation
 
-**State of the Field**: AI has permeated critical infrastructure and decision-making systems, and its failures produce real harms across social, economic, and democratic dimensions. Concurrently, deregulatory advocates invoke "promoting innovation" to push for relaxed AI oversight — the new U.S. administration revoked Executive Order 14110, and the AI Action Plan 2025 explicitly calls for "eliminating red tape and burdensome regulation."
+**Background**: AI has permeated critical infrastructure and decision-making systems, and its failures produce real harms across social, economic, and democratic dimensions. Concurrently, deregulatory advocates invoke "promoting innovation" to push for relaxed AI oversight — the new U.S. administration revoked Executive Order 14110, and the AI Action Plan 2025 explicitly calls for "eliminating red tape and burdensome regulation."
 
 **Limitations of Prior Work**: The deregulatory narrative overlooks a key insight from the Collingridge dilemma — risks are difficult to foresee in the early stages of a technology, yet once it is deeply embedded in society, the cost of course correction becomes prohibitively high or even impossible. Real-world AI harms are already materializing: deepfake audio during the 2023 Slovak elections undermined democratic processes; AI-generated non-consensual intimate imagery — including child sexual abuse material (CSAM) involving minors — has caused concrete harm (the Almendralejo case in Spain, the Taylor Swift deepfake incident); and the Dutch SyRI system was ruled by a court to violate human rights due to its opaque and discriminatory targeting of low-income communities, ultimately precipitating the government's resignation.
 
-**Root Cause**: Deregulatory advocates frame "regulation vs. innovation" as a zero-sum game, yet historical evidence demonstrates this is a false dichotomy. No domain with significant public impact has flourished in the absence of a regulatory framework.
+**Key Challenge**: Deregulatory advocates frame "regulation vs. innovation" as a zero-sum game, yet historical evidence demonstrates this is a false dichotomy. No domain with significant public impact has flourished in the absence of a regulatory framework.
 
-**Paper Goals**: To argue, on both theoretical and empirical grounds, that (1) regulation and innovation are not antithetical; (2) the EU AI Act offers a viable risk-based governance model; and (3) "innovation" should be redefined — technologies that systematically violate fundamental rights do not merit the label.
+**Goal**: To argue, on both theoretical and empirical grounds, that (1) regulation and innovation are not antithetical; (2) the EU AI Act offers a viable risk-based governance model; and (3) "innovation" should be redefined — technologies that systematically violate fundamental rights do not merit the label.
 
-**Starting Point**: An interdisciplinary argument drawing on science and technology policy (the Collingridge dilemma), economics (Schumpeter's creative destruction, the Porter hypothesis), law (textual analysis of the EU AI Act), and historical case studies.
+**Key Insight**: An interdisciplinary argument drawing on science and technology policy (the Collingridge dilemma), economics (Schumpeter's creative destruction, the Porter hypothesis), law (textual analysis of the EU AI Act), and historical case studies.
 
 **Core Idea**: Regulation is not a brake on innovation but the foundation upon which durable innovation rests — technological ambition requires the discipline of democratic values and fundamental rights.
 

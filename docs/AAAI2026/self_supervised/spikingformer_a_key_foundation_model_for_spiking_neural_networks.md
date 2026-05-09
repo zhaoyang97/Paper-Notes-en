@@ -31,7 +31,7 @@ This paper proposes Spikingformer, which integrates MS Residual with Self-Attent
 
 ### State of the Field
 
-**State of the Field**: The core advantage of SNNs lies in event-driven spike computation: replacing energy-intensive multiply-accumulate operations (MAC, 4.6pJ) with low-power accumulate operations (AC, 0.9pJ). However, existing SNN backbones exhibit a fundamental conflict:
+**Background**: The core advantage of SNNs lies in event-driven spike computation: replacing energy-intensive multiply-accumulate operations (MAC, 4.6pJ) with low-power accumulate operations (AC, 0.9pJ). However, existing SNN backbones exhibit a fundamental conflict:
 
 ### Limitations of Prior Work
 
@@ -39,11 +39,11 @@ This paper proposes Spikingformer, which integrates MS Residual with Self-Attent
 
 ### Root Cause
 
-**Root Cause**: SD-Transformer uses MS Residual with linear attention, preserving spike-driven computation but sacrificing global modeling capability.
+**Key Challenge**: SD-Transformer uses MS Residual with linear attention, preserving spike-driven computation but sacrificing global modeling capability.
 
 ### Solution
 
-**Paper Goals**: How can one maintain **global self-attention modeling** capability while ensuring **purely spike-driven** computation (accumulate-only operations) throughout the entire network?
+**Goal**: How can one maintain **global self-attention modeling** capability while ensuring **purely spike-driven** computation (accumulate-only operations) throughout the entire network?
 
 ## Method
 

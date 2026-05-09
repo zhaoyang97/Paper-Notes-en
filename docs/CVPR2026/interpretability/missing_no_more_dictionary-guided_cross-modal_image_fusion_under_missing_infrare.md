@@ -30,7 +30,7 @@ Infrared-visible (IR-VIS) image fusion is critical for robust perception in surv
 
 When infrared is missing, a straightforward approach is to generate pseudo-infrared images in pixel space before fusion. However, pixel-space generation suffers from severe drawbacks: poor controllability, weak interpretability, and susceptibility to hallucination artifacts and loss of structural detail.
 
-**Root Cause**: How can thermal information be stably recovered and interpretable fusion performed when infrared is absent? The paper's **Starting Point** is: **rather than generating infrared in pixel space, both modalities are mapped into a unified dictionary-coefficient space, where inference and fusion are performed entirely in the coefficient domain**, thereby anchoring data consistency and prior constraints at the atom-coefficient level.
+**Key Challenge**: How can thermal information be stably recovered and interpretable fusion performed when infrared is absent? The paper's **Key Insight** is: **rather than generating infrared in pixel space, both modalities are mapped into a unified dictionary-coefficient space, where inference and fusion are performed entirely in the coefficient domain**, thereby anchoring data consistency and prior constraints at the atom-coefficient level.
 
 ## Method
 

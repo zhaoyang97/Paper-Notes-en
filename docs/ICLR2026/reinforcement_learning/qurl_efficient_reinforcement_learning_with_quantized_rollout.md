@@ -29,15 +29,15 @@ This paper proposes QuRL, a method that quantizes the actor model to accelerate 
 
 ## Background & Motivation
 
-**State of the Field**: RLVR (Reinforcement Learning with Verifiable Rewards) has become the dominant paradigm for training reasoning-oriented LLMs (e.g., DeepSeek-R1, OpenAI-O1), yet the rollout phase—due to the sequential dependency of autoregressive decoding—consumes approximately 70% of total training time.
+**Background**: RLVR (Reinforcement Learning with Verifiable Rewards) has become the dominant paradigm for training reasoning-oriented LLMs (e.g., DeepSeek-R1, OpenAI-O1), yet the rollout phase—due to the sequential dependency of autoregressive decoding—consumes approximately 70% of total training time.
 
 **Limitations of Prior Work**: (1) Rollout is the efficiency bottleneck of RL training, further exacerbated by the longer chain-of-thought sequences required in reasoning tasks; (2) directly applying quantization to rollout introduces importance sampling bias and training instability; (3) the trust-region constraint in RL results in weight update magnitudes ($\sim 10^{-7}$) far smaller than quantization error, causing the quantized model to be nearly insensitive to training dynamics.
 
-**Root Cause**: While quantization can significantly accelerate inference, the policy divergence between the quantized actor and the full-precision actor undermines the importance sampling and clipping mechanisms of PPO/GRPO.
+**Key Challenge**: While quantization can significantly accelerate inference, the policy divergence between the quantized actor and the full-precision actor undermines the importance sampling and clipping mechanisms of PPO/GRPO.
 
-**Paper Goals**: To exploit quantization for accelerating rollout inference while preserving RL training quality.
+**Goal**: To exploit quantization for accelerating rollout inference while preserving RL training quality.
 
-**Starting Point**: Building on Decoupled PPO, which separates the behavior policy from the proximal policy, the paper addresses two unique challenges introduced by quantization: clipping instability and weight updates being masked by quantization noise.
+**Key Insight**: Building on Decoupled PPO, which separates the behavior policy from the proximal policy, the paper addresses two unique challenges introduced by quantization: clipping instability and weight updates being masked by quantization noise.
 
 **Core Idea**: Use a quantized model for rollout while retaining the full-precision model for clipping and gradient updates; bridge the quantization gap via adaptive clipping range and invariant scaling techniques.
 

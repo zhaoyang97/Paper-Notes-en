@@ -28,14 +28,14 @@ content_hash: 2675c727a60a94aa
 When annotation cost is measured per **state** rather than per trajectory, the interactive method Stagger is provably shown to surpass Behavior Cloning under the $\mu$-recoverability condition (suboptimality $O(\mu H \log B / N)$ vs. $O(RH \log B / CN)$, with significant advantage when $\mu \ll R$). The paper further proposes a hybrid IL algorithm, Warm-Stagger, which combines offline data with interactive annotation to achieve strictly complementary advantages from both data sources on specific MDPs.
 
 ## Background & Motivation
-**State of the Field**: Imitation learning divides into offline methods (Behavior Cloning, which applies supervised learning on expert trajectories) and interactive methods (DAgger, which queries experts online for corrective labels). Sharp bounds from Foster et al. (2024) show that, when cost is measured by **trajectory count**, BC is already minimax optimal—interactive methods cannot universally improve upon it.
+**Background**: Imitation learning divides into offline methods (Behavior Cloning, which applies supervised learning on expert trajectories) and interactive methods (DAgger, which queries experts online for corrective labels). Sharp bounds from Foster et al. (2024) show that, when cost is measured by **trajectory count**, BC is already minimax optimal—interactive methods cannot universally improve upon it.
 
 **Limitations of Prior Work**:
    - Trajectory-level annotation cost obscures the advantage of state-level interaction—querying a single state is far cheaper than labeling an entire trajectory
    - In practice, offline data typically already exists; theoretical guidance on effectively combining offline and interactive data is lacking
    - The compounding error problem in BC is severe for long-horizon tasks, yet Foster et al.'s conclusions appear to negate the value of interaction
 
-**Root Cause**: Foster et al.'s negative results are grounded in a trajectory-level cost model; when switching to a state-level cost model, the question is whether the adaptivity of interaction can be theoretically captured.
+**Key Challenge**: Foster et al.'s negative results are grounded in a trajectory-level cost model; when switching to a state-level cost model, the question is whether the adaptivity of interaction can be theoretically captured.
 
 **Core Idea**: Measure interaction cost per state, design Stagger (a DAgger variant that queries only one state per round), and combine BC with Stagger into Warm-Stagger.
 

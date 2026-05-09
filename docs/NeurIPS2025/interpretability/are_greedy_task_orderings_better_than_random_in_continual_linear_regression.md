@@ -30,9 +30,9 @@ This paper systematically analyzes the convergence differences between greedy ta
 
 ### Root Cause
 
-**State of the Field**: In Continual Learning, a model must learn multiple tasks sequentially, and the order in which tasks are presented significantly affects final performance. Prior work has focused primarily on random orderings — both with and without replacement — which have been shown to achieve an average loss convergence rate of $\mathcal{O}(1/\sqrt{k})$ after $k$ iterations. Greedy ordering, which selects the next task to be maximally dissimilar from the current one, is intuitively appealing but lacks rigorous theoretical analysis.
+**Background**: In Continual Learning, a model must learn multiple tasks sequentially, and the order in which tasks are presented significantly affects final performance. Prior work has focused primarily on random orderings — both with and without replacement — which have been shown to achieve an average loss convergence rate of $\mathcal{O}(1/\sqrt{k})$ after $k$ iterations. Greedy ordering, which selects the next task to be maximally dissimilar from the current one, is intuitively appealing but lacks rigorous theoretical analysis.
 
-**Paper Goals**: The core motivations are:
+**Goal**: The core motivations are:
 
 - **Is greedy ordering always superior to random ordering?** Intuition suggests that diverse task sequences should be more beneficial, yet theoretical guarantees are absent.
 - **How does allowing task repetition affect greedy ordering?** This relates to data availability constraints in practical applications.

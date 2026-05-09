@@ -30,11 +30,11 @@ VIRST proposes an end-to-end framework that unifies global video reasoning and p
 
 ## Background & Motivation
 
-1. **State of the Field**: Referring Video Object Segmentation (RVOS) requires segmenting target objects in video based on natural language descriptions. Recent VLM-based methods (VISA, VRS-HQ, HyperSeg) have achieved notable progress by coupling segmentation decoders with large language models.
+1. **Background**: Referring Video Object Segmentation (RVOS) requires segmenting target objects in video based on natural language descriptions. Recent VLM-based methods (VISA, VRS-HQ, HyperSeg) have achieved notable progress by coupling segmentation decoders with large language models.
 2. **Limitations of Prior Work**: (1) Key-frame methods predict masks on a sparse set of frames and then propagate them, but propagation drifts under occlusion or appearance changes; (2) dense per-frame prediction methods incur prohibitive memory costs and cannot handle long videos; (3) existing VLM-based segmentation models insufficiently fuse video features with semantic features.
-3. **Root Cause**: There is an inherent tension between "understanding" complex linguistic reasoning (e.g., "the person on the left who danced the longest") and "precisely" segmenting every frame — the former demands global video comprehension while the latter requires per-frame pixel-level accuracy.
-4. **Paper Goals**: To unify global semantic reasoning and local spatiotemporal segmentation within a single model.
-5. **Starting Point**: A key-frame (anchor) mechanism — rather than performing full prediction on every frame, the model makes accurate predictions on dynamically selected anchor frames and propagates them to remaining frames via SAM2's memory mechanism.
+3. **Key Challenge**: There is an inherent tension between "understanding" complex linguistic reasoning (e.g., "the person on the left who danced the longest") and "precisely" segmenting every frame — the former demands global video comprehension while the latter requires per-frame pixel-level accuracy.
+4. **Goal**: To unify global semantic reasoning and local spatiotemporal segmentation within a single model.
+5. **Key Insight**: A key-frame (anchor) mechanism — rather than performing full prediction on every frame, the model makes accurate predictions on dynamically selected anchor frames and propagates them to remaining frames via SAM2's memory mechanism.
 6. **Core Idea**: A two-stage Spatiotemporal Fusion (STF) module injects segmentation-aware video features into the VLM's semantic space; a Temporal Dynamic Anchor Updater (TDAU) performs direct prediction on anchor frames and hybrid-memory-based propagation on non-anchor frames.
 
 ## Method

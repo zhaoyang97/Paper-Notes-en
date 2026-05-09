@@ -28,18 +28,18 @@ This paper models conflicting predictions from multiple pre-trained perception m
 
 ## Background & Motivation
 
-**State of the Field**: Pre-trained perception models suffer performance degradation due to distribution shift when deployed in novel environments (e.g., disaster response, remote areas). Recent metacognitive AI methods learn logic rules to detect model errors, but improving precision often comes at the cost of recall.
+**Background**: Pre-trained perception models suffer performance degradation due to distribution shift when deployed in novel environments (e.g., disaster response, remote areas). Recent metacognitive AI methods learn logic rules to detect model errors, but improving precision often comes at the cost of recall.
 
 **Limitations of Prior Work**:
 - **Recall loss in single-model metacognition**: Methods such as EDCR use only one model; learning error detection rules to filter erroneous predictions inevitably discards some correct ones.
 - **Standard ensemble methods lack intelligence**: Approaches such as majority voting do not exploit knowledge of individual models' error patterns.
 - **Abductive learning (ABL) is limited to training time**: Existing ABL methods use abductive feedback to adjust models during training, but assume the test environment is not entirely novel.
 
-**Root Cause**: Single-model error filtering raises precision but lowers recall; deploying multiple models simultaneously produces conflicting predictions that require intelligent coordination.
+**Key Challenge**: Single-model error filtering raises precision but lowers recall; deploying multiple models simultaneously produces conflicting predictions that require intelligent coordination.
 
-**Paper Goals**: Exploit the complementarity of multiple models and their respective error-pattern knowledge at inference time—rather than training time—through abductive reasoning to identify an optimal prediction subset.
+**Goal**: Exploit the complementarity of multiple models and their respective error-pattern knowledge at inference time—rather than training time—through abductive reasoning to identify an optimal prediction subset.
 
-**Starting Point**: Drawing on dual-process theory (Type 1 intuition + Type 2 reasoning), multi-model predictions are treated as Type 1 outputs, with logical reasoning serving as Type 2 to coordinate them.
+**Key Insight**: Drawing on dual-process theory (Type 1 intuition + Type 2 reasoning), multi-model predictions are treated as Type 1 outputs, with logical reasoning serving as Type 2 to coordinate them.
 
 **Core Idea**: Multi-model conflict management is formulated as a consistency-based abductive reasoning optimization problem—maximizing coverage subject to an inconsistency rate below $\delta$.
 

@@ -29,7 +29,7 @@ This paper proposes Manual-PA, a Transformer-based instruction-guided 3D part as
 
 ## Background & Motivation
 
-**State of the Field**: The 3D part assembly task aims to predict the 6DoF pose of a set of unordered 3D parts and assemble them into a complete object. Existing methods fall into two categories: (1) geometry-based generative methods (e.g., 3DHPA, SPAFormer) that leverage part shape relationships but may produce unstable results; and (2) guidance-based methods (e.g., MEPNet for LEGO) that typically assume parts are provided one per step.
+**Background**: The 3D part assembly task aims to predict the 6DoF pose of a set of unordered 3D parts and assemble them into a complete object. Existing methods fall into two categories: (1) geometry-based generative methods (e.g., 3DHPA, SPAFormer) that leverage part shape relationships but may produce unstable results; and (2) guidance-based methods (e.g., MEPNet for LEGO) that typically assume parts are provided one per step.
 
 **Limitations of Prior Work**:
    - **Enormous and sparse solution space**: The combinatorial explosion problem — the number of permutations for $N$ parts is $N!$, combined with continuous 6DoF pose parameters per part, leaves very few feasible and stable assembly sequences.

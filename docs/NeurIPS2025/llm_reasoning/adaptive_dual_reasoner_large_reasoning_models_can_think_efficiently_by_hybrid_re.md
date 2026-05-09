@@ -28,13 +28,13 @@ This paper proposes the Adaptive Dual Reasoner (ADR), which enables reasoning mo
 
 ## Background & Motivation
 
-**State of the Field**: Large Reasoning Models (LRMs) such as DeepSeek-R1 and Qwen3 have achieved remarkable performance via long Chain-of-Thought reasoning, yet suffer from severe "overthinking"—generating verbose reasoning steps even for simple sub-problems.
+**Background**: Large Reasoning Models (LRMs) such as DeepSeek-R1 and Qwen3 have achieved remarkable performance via long Chain-of-Thought reasoning, yet suffer from severe "overthinking"—generating verbose reasoning steps even for simple sub-problems.
 
 **Limitations of Prior Work**: (a) Length-driven compression methods may under-explore complex steps; (b) coarse-grained fast/slow mode switching fails to adapt to varying sub-problem complexity within a reasoning trajectory; (c) static rollout strategies limit deep exploration on difficult problems.
 
-**Root Cause**: A fundamental tension exists between reducing reasoning length (efficiency) and maintaining reasoning depth (accuracy), requiring adaptive allocation of "cognitive resources" based on the complexity of each reasoning step.
+**Key Challenge**: A fundamental tension exists between reducing reasoning length (efficiency) and maintaining reasoning depth (accuracy), requiring adaptive allocation of "cognitive resources" based on the complexity of each reasoning step.
 
-**Starting Point**: Decompose the reasoning trajectory into reasoning units, annotate each as easy or hard based on entropy, compress easy units, and preserve hard units.
+**Key Insight**: Decompose the reasoning trajectory into reasoning units, annotate each as easy or hard based on entropy, compress easy units, and preserve hard units.
 
 **Core Idea**: Entropy-guided dynamic branching—when transitioning from easy to hard mode, expand multiple exploration branches to increase reasoning breadth as a compensation for reduced depth.
 

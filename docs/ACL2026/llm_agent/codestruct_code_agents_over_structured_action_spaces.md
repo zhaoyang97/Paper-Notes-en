@@ -28,15 +28,15 @@ This paper proposes CodeStruct, a framework that redefines code repositories as 
 
 ## Background & Motivation
 
-**State of the Field**: LLM code agents (e.g., SWE-Agent) are already capable of handling complex repository-level software engineering tasks. Mainstream approaches interact with code through file-reading and text-editing tools, with some systems augmented by repository maps or symbolic indices to improve navigation.
+**Background**: LLM code agents (e.g., SWE-Agent) are already capable of handling complex repository-level software engineering tasks. Mainstream approaches interact with code through file-reading and text-editing tools, with some systems augmented by repository maps or symbolic indices to improve navigation.
 
 **Limitations of Prior Work**: Existing agents treat code as flat text rather than a structured artifact, resulting in a fundamental abstraction mismatch: reading code either loads entire files and introduces irrelevant context, or slices by line numbers and truncates functions; editing code relies on string-matching substitution, where format drift causes "no match found" errors and repeated patterns cause "multiple matches" errors.
 
-**Root Cause**: Source code has precise syntactic structure by nature—functions, classes, and methods are all named program entities—yet LLM agents are forced to manipulate these structured objects indirectly via line numbers and string patterns. Enhancement strategies improve "where to look" but do not change the fundamental "how to interact."
+**Key Challenge**: Source code has precise syntactic structure by nature—functions, classes, and methods are all named program entities—yet LLM agents are forced to manipulate these structured objects indirectly via line numbers and string patterns. Enhancement strategies improve "where to look" but do not change the fundamental "how to interact."
 
-**Paper Goals**: To design an AST-based structured action space that allows agents to read and modify code directly through named semantic entities.
+**Goal**: To design an AST-based structured action space that allows agents to read and modify code directly through named semantic entities.
 
-**Starting Point**: Human developers reference and modify code by function and class names, not by line numbers. CodeStruct exposes this natural working style directly to LLM agents.
+**Key Insight**: Human developers reference and modify code by function and class names, not by line numbers. CodeStruct exposes this natural working style directly to LLM agents.
 
 **Core Idea**: Parse the code repository into an AST and provide two structure-aware primitive operations—`readCode` and `editCode`—through which agents locate and manipulate program entities using selectors such as `file.py::ClassName::method`.
 

@@ -36,7 +36,7 @@ Feature attribution is a core technique in explainable AI, aiming to assign cont
 
 **Core Problem**: Despite years of research, feature attribution has lacked a **formal problem definition**. Without a clear standard, comparisons and evaluations among methods lack theoretical grounding.
 
-**Paper Goals**:
+**Goal**:
 - Provide a formal definition of feature attribution (Definition 1), explicitly requiring that explanations be grounded in the underlying data distribution $\mathcal{P}$ without using OOD instances
 - Analyze the compliance of existing methods under this definition, revealing that many popular methods (e.g., LIME, common SHAP implementations) fail to satisfy it
 - Propose a method that performs feature attribution directly from a distributional perspective, overcoming the limitations of prior work

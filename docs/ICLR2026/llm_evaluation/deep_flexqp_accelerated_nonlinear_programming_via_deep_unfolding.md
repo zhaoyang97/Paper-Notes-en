@@ -29,7 +29,7 @@ This paper proposes FlexQP — an "always feasible" convex quadratic programming
 
 ## Background & Motivation
 
-**State of the Field**: Quadratic programming (QP) is a foundational subproblem in optimal control, combinatorial optimization, and machine learning. Sequential quadratic programming (SQP) handles nonlinear non-convex constrained optimization by iteratively solving QP subproblems.
+**Background**: Quadratic programming (QP) is a foundational subproblem in optimal control, combinatorial optimization, and machine learning. Sequential quadratic programming (SQP) handles nonlinear non-convex constrained optimization by iteratively solving QP subproblems.
 
 **Limitations of Prior Work**: Constraint linearization in SQP frequently produces infeasible QP subproblems. Conventional solvers such as OSQP either terminate with an error or require dedicated infeasibility recovery routines (e.g., SNOPT's elastic mode), which do not scale well. Moreover, tuning ADMM hyperparameters ($\rho, \sigma, \alpha$) is notoriously difficult.
 

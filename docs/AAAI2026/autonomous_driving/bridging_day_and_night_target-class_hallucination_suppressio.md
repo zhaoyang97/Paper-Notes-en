@@ -28,15 +28,15 @@ This paper is the first to systematically address the "target-class hallucinatio
 
 ## Background & Motivation
 
-**State of the Field**: Day-to-night unpaired image translation is a key technique for domain adaptation in autonomous driving. Existing approaches include GAN-based methods such as CycleGAN and CUT, diffusion-based methods such as UNSB, and instance-aware methods that incorporate bounding-box annotations (INIT, DUNIT, MGUIT, InstaFormer).
+**Background**: Day-to-night unpaired image translation is a key technique for domain adaptation in autonomous driving. Existing approaches include GAN-based methods such as CycleGAN and CUT, diffusion-based methods such as UNSB, and instance-aware methods that incorporate bounding-box annotations (INIT, DUNIT, MGUIT, InstaFormer).
 
 **Limitations of Prior Work**: Existing translation methods suffer from severe "target-class hallucination"—when translating to nighttime scenes, the generator erroneously synthesizes light effects in background regions that resemble traffic lights, headlights, and taillights. Although instance-aware methods improve translation quality within bounding boxes, they entirely neglect semantic consistency in background regions outside the boxes.
 
-**Root Cause**: Traditional discriminators focus solely on whether the style resembles nighttime, yet the visual characteristics of nighttime lighting are highly similar to those of target-class objects (traffic lights, headlights). The discriminator effectively "rewards" hallucinations—generating more light-like artifacts makes the image appear more like a genuine nighttime scene.
+**Key Challenge**: Traditional discriminators focus solely on whether the style resembles nighttime, yet the visual characteristics of nighttime lighting are highly similar to those of target-class objects (traffic lights, headlights). The discriminator effectively "rewards" hallucinations—generating more light-like artifacts makes the image appear more like a genuine nighttime scene.
 
-**Paper Goals**: (a) How to precisely localize hallucination pixels using only bounding-box annotations (without pixel-level labels)? (b) How to constrain the semantic boundary between background and foreground in feature space? (c) How to intervene during the intermediate translation steps rather than applying post-hoc correction?
+**Goal**: (a) How to precisely localize hallucination pixels using only bounding-box annotations (without pixel-level labels)? (b) How to constrain the semantic boundary between background and foreground in feature space? (c) How to intervene during the intermediate translation steps rather than applying post-hoc correction?
 
-**Starting Point**: SAM2 is leveraged to generate pseudo-segmentation labels from bounding boxes, enabling pixel-level hallucination detection; class prototypes serve as semantic anchors, and contrastive learning suppresses hallucinations in feature space.
+**Key Insight**: SAM2 is leveraged to generate pseudo-segmentation labels from bounding boxes, enabling pixel-level hallucination detection; class prototypes serve as semantic anchors, and contrastive learning suppresses hallucinations in feature space.
 
 **Core Idea**: A dual mechanism of "hallucination detection + hallucination suppression" is embedded within the multi-step Schrödinger Bridge translation framework—the dual-head discriminator identifies the locations of hallucinations, while prototype contrastive learning pushes hallucination features away from target-class representations.
 

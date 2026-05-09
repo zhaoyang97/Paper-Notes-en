@@ -29,15 +29,15 @@ To address the severe class imbalance in drug-drug interaction (DDI) prediction,
 
 ## Background & Motivation
 
-**State of the Field**: DDI prediction is a critical task for drug safety. Existing approaches leverage diverse features such as chemical structures and biological networks to construct predictive models.
+**Background**: DDI prediction is a critical task for drug safety. Existing approaches leverage diverse features such as chemical structures and biological networks to construct predictive models.
 
 **Limitations of Prior Work**: DDI datasets suffer from severe class imbalance — common interaction types (e.g., synergistic effects) dominate the data, while rare but clinically important interaction types are substantially underrepresented, leading to poor model performance on low-frequency classes.
 
-**Root Cause**: Prevailing SOTA methods predominantly formulate DDI prediction as a binary classification problem (interaction / no interaction), overlooking the semantic heterogeneity across interaction types and thereby amplifying bias toward frequent categories.
+**Key Challenge**: Prevailing SOTA methods predominantly formulate DDI prediction as a binary classification problem (interaction / no interaction), overlooking the semantic heterogeneity across interaction types and thereby amplifying bias toward frequent categories.
 
-**Paper Goals**: To improve coverage and prediction accuracy for rare interaction types without sacrificing performance on frequent categories.
+**Goal**: To improve coverage and prediction accuracy for rare interaction types without sacrificing performance on frequent categories.
 
-**Starting Point**: Exploiting the reward-proportional sampling property of GFlowNets to selectively generate synthetic DDI samples for low-frequency classes.
+**Key Insight**: Exploiting the reward-proportional sampling property of GFlowNets to selectively generate synthetic DDI samples for low-frequency classes.
 
 **Core Idea**: A GFlowNet is trained to generate synthetic DDI samples according to a reward function defined as "rarity × plausibility," thereby restoring class balance in the training data.
 

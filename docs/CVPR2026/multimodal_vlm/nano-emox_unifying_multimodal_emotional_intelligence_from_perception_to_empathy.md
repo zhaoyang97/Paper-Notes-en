@@ -27,11 +27,11 @@ content_hash: 701d221fe55cdab6
 Nano-EmoX proposes a cognition-inspired three-level emotional task hierarchy (Perception → Understanding → Interaction) and is the first multimodal language model to unify six core affective tasks within a compact 2.2B parameter framework, employing a P2E progressive training paradigm that cultivates capabilities from basic perception to high-level empathy.
 
 ## Background & Motivation
-1. **State of the Field**: The development of affective multimodal language models (MLMs) is constrained by the gap between low-level perception and high-level interaction, leading to fragmented affective capabilities and limited generalization.
+1. **Background**: The development of affective multimodal language models (MLMs) is constrained by the gap between low-level perception and high-level interaction, leading to fragmented affective capabilities and limited generalization.
 2. **Limitations of Prior Work**: (i) Existing models are predominantly single-level specialists — dedicated to either perception (emotion recognition), understanding (cause reasoning), or interaction (empathetic response), lacking unification; (ii) large model scales (7–9B) render practical deployment difficult.
-3. **Root Cause**: Emotional intelligence constitutes a continuum from perception to empathy, yet existing methods decompose it into isolated tasks, precluding cross-level knowledge transfer.
-4. **Paper Goals**: Design a compact unified model (<3B parameters) capable of handling six core affective tasks across three cognitive levels: perception, understanding, and interaction.
-5. **Starting Point**: Inspired by perception-action models, affective tasks are organized by cognitive depth and trained progressively from low to high levels.
+3. **Key Challenge**: Emotional intelligence constitutes a continuum from perception to empathy, yet existing methods decompose it into isolated tasks, precluding cross-level knowledge transfer.
+4. **Goal**: Design a compact unified model (<3B parameters) capable of handling six core affective tasks across three cognitive levels: perception, understanding, and interaction.
+5. **Key Insight**: Inspired by perception-action models, affective tasks are organized by cognitive depth and trained progressively from low to high levels.
 6. **Core Idea**: Full-modality encoders (enhanced facial encoder + fusion encoder) combined with a P2E progressive training framework (Perception → Fusion → Multi-task Instruction Tuning).
 
 ## Method

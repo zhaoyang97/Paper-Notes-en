@@ -29,15 +29,15 @@ PlanaReLoc is the first camera relocalization paradigm centered on planar primit
 
 ## Background & Motivation
 
-**State of the Field**: Structure-based camera relocalization is a core task in visual localization, aiming to estimate the 6-DoF camera pose of a query image with respect to a known 3D map. Dominant approaches rely on point correspondences—establishing 2D-3D matches between image keypoints and 3D map points, then solving for pose via PnP+RANSAC.
+**Background**: Structure-based camera relocalization is a core task in visual localization, aiming to estimate the 6-DoF camera pose of a query image with respect to a known 3D map. Dominant approaches rely on point correspondences—establishing 2D-3D matches between image keypoints and 3D map points, then solving for pose via PnP+RANSAC.
 
 **Limitations of Prior Work**: (1) Point-based methods are heavily dependent on reliable local feature extraction and matching, which frequently fails in texture-sparse, repetitive-texture, or illumination-varying scenes; (2) constructing and maintaining dense 3D point cloud maps incurs high storage overhead and sensitivity to noise; (3) visual matching requires maps with real texture/color, making such approaches infeasible when only structural information (e.g., CAD models, scanned meshes) is available; (4) many methods require per-scene training, limiting generalization.
 
-**Root Cause**: Point features are inherently fragile in both extraction and matching, while the abundant planar structures in structured indoor environments (walls, floors, tabletops, doors, etc.) remain underexploited. As a fundamental entity in projective geometry, a plane encodes richer structural and semantic information than a point.
+**Key Challenge**: Point features are inherently fragile in both extraction and matching, while the abundant planar structures in structured indoor environments (walls, floors, tabletops, doors, etc.) remain underexploited. As a fundamental entity in projective geometry, a plane encodes richer structural and semantic information than a point.
 
-**Paper Goals**: To investigate whether planar primitives can replace traditional point features as a more reliable primitive for establishing query-to-map correspondences in camera relocalization.
+**Goal**: To investigate whether planar primitives can replace traditional point features as a more reliable primitive for establishing query-to-map correspondences in camera relocalization.
 
-**Starting Point**: Planar primitives are region-level representations. Each plane carries not only geometric information (normal vector, distance from origin) but also semantic information (wall vs. floor?) and topological information (spatial relationships with neighboring planes). This rich region-level representation is naturally suited for cross-modal matching (2D image planes vs. 3D map planes) because it does not depend on pixel-level texture.
+**Key Insight**: Planar primitives are region-level representations. Each plane carries not only geometric information (normal vector, distance from origin) but also semantic information (wall vs. floor?) and topological information (spatial relationships with neighboring planes). This rich region-level representation is naturally suited for cross-modal matching (2D image planes vs. 3D map planes) because it does not depend on pixel-level texture.
 
 **Core Idea**: Replace point features with planar primitives and establish a complete plane-centric relocalization paradigm encompassing plane detection, cross-modal plane matching, and pose solving.
 

@@ -31,7 +31,7 @@ This paper identifies that SNNs can be naturally decomposed into multiple sub-mo
 
 Spiking Neural Networks (SNNs) transmit information via binary spikes and require only accumulation operations rather than multiply-accumulate operations, resulting in extremely low power consumption. They serve as energy-efficient alternatives to ANNs. Combined with neuromorphic chips (e.g., the Tianjic chip consuming only 0.7 mW), SNNs can complete visual tasks with ultra-low latency and power.
 
-**Root Cause**: Due to binary information representation, a performance gap between SNNs and ANNs persists. Knowledge distillation can improve SNN performance, but existing methods suffer from:
+**Key Challenge**: Due to binary information representation, a performance gap between SNNs and ANNs persists. Knowledge distillation can improve SNN performance, but existing methods suffer from:
 1. Reliance on large external teacher models (ANNs or larger SNNs), introducing additional pretraining overhead.
 2. TSSD, while performing self-distillation, extends training timesteps and adds weak classifiers, substantially increasing training cost.
 3. TKS depends on ground-truth labels to assess output correctness, failing to exploit dark knowledge from incorrect outputs, limiting both efficiency and performance.

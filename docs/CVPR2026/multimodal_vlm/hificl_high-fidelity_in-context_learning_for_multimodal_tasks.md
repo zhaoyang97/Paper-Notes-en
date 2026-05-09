@@ -28,13 +28,13 @@ By precisely decomposing the attention formula to reveal the mathematical essenc
 
 ## Background & Motivation
 
-**State of the Field**: ICL enables large models to adapt to new tasks via a small number of demonstrations, but in multimodal settings the high token cost of visual inputs limits the number of demonstrations, and performance is highly sensitive to demonstration selection and ordering. The dominant approach learns a "shift vector" to approximate the ICL effect, distilling knowledge into a compact representation injected into the model.
+**Background**: ICL enables large models to adapt to new tasks via a small number of demonstrations, but in multimodal settings the high token cost of visual inputs limits the number of demonstrations, and performance is highly sensitive to demonstration selection and ordering. The dominant approach learns a "shift vector" to approximate the ICL effect, distilling knowledge into a compact representation injected into the model.
 
 **Limitations of Prior Work**: The shift vector paradigm rests on a theoretically imprecise assumption—treating the ICL effect as an external additive bias to be learned—and fundamentally overlooks the fact that the analytical form of this effect is already embedded in the original attention formula.
 
-**Root Cause**: Linear shift assumption vs. the nonlinear nature of ICL. Mechanistic interpretability research shows that ICL is executed by specialized "induction head" circuits performing complex pattern matching, and geometric analyses demonstrate that ICL involves highly nonlinear reshaping of the representation space—the linear shift assumption is itself a theoretical bottleneck.
+**Key Challenge**: Linear shift assumption vs. the nonlinear nature of ICL. Mechanistic interpretability research shows that ICL is executed by specialized "induction head" circuits performing complex pattern matching, and geometric analyses demonstrate that ICL involves highly nonlinear reshaping of the representation space—the linear shift assumption is itself a theoretical bottleneck.
 
-**Starting Point**: Return to the foundations of the attention formula and precisely derive the attention output in the presence of in-context demonstrations (ICD).
+**Key Insight**: Return to the foundations of the attention formula and precisely derive the attention output in the presence of in-context demonstrations (ICD).
 
 **Core Idea**: The "shift effect" of ICL is not a target to be approximated, but a direct analytical consequence of the attention formula—the appropriate strategy is to parameterize its source $(K_D, V_D)$ rather than approximate its effect.
 

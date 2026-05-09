@@ -29,15 +29,15 @@ Vista proposes a scene-aware streaming video question answering framework that d
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal large language models (MLLMs) have achieved significant progress in video question answering, but most methods target offline settings where the full video and query are simultaneously available, enabling global analysis. In interactive real-time applications such as autonomous driving and video dialogue systems, frames arrive continuously and users may query at any moment, making traditional offline approaches inapplicable.
+**Background**: Multimodal large language models (MLLMs) have achieved significant progress in video question answering, but most methods target offline settings where the full video and query are simultaneously available, enabling global analysis. In interactive real-time applications such as autonomous driving and video dialogue systems, frames arrive continuously and users may query at any moment, making traditional offline approaches inapplicable.
 
 **Limitations of Prior Work**: Streaming video QA faces two core challenges. First, video streams are theoretically unbounded, and fixed-rate frame sampling rapidly exhausts memory and compute resources. Second, users demand low-latency responses, precluding full-sequence attention computation at inference time. Existing streaming methods such as Flash-VStream and VideoLLM-Online either employ fixed-size memory buffers that cause context loss, or apply simplistic compression strategies that incur information loss, resulting in performance far below offline models.
 
-**Root Cause**: Under the *post-hoc queries* setting, user queries arrive at arbitrary moments after the video stream has begun, so the model cannot leverage query semantics to select keyframes during encoding. The model must therefore retain sufficient visual information for unknown future queries while simultaneously controlling memory usage and response latency.
+**Key Challenge**: Under the *post-hoc queries* setting, user queries arrive at arbitrary moments after the video stream has begun, so the model cannot leverage query semantics to select keyframes during encoding. The model must therefore retain sufficient visual information for unknown future queries while simultaneously controlling memory usage and response latency.
 
-**Paper Goals**: To achieve efficient video encoding, compressed storage, and query-driven information retrieval in the post-hoc streaming video QA setting, maintaining high accuracy under strict memory and latency constraints.
+**Goal**: To achieve efficient video encoding, compressed storage, and query-driven information retrieval in the post-hoc streaming video QA setting, maintaining high accuracy under strict memory and latency constraints.
 
-**Starting Point**: The authors observe that during inference, model attention typically concentrates on a small number of semantically salient segments, which temporally tend to belong to the same "scene." Videos can therefore be compressed and retrieved at scene granularity rather than frame by frame.
+**Key Insight**: The authors observe that during inference, model attention typically concentrates on a small number of semantically salient segments, which temporally tend to belong to the same "scene." Videos can therefore be compressed and retrieved at scene granularity rather than frame by frame.
 
 **Core Idea**: Dynamically segment streaming video at scene granularity, apply compact compression, and perform on-demand recall, enabling efficient real-time video QA without sacrificing semantic integrity.
 

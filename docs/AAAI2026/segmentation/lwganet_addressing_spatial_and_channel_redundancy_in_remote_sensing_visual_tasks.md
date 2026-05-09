@@ -30,13 +30,13 @@ To address spatial redundancy (large homogeneous backgrounds) and channel redund
 
 ### Limitations of Prior Work
 
-**State of the Field**: Deep learning analysis of remote sensing images faces two inherent redundancies: (1) **Spatial redundancy** — sparse foreground objects distributed over large homogeneous backgrounds (roads, farmland, ocean), causing dense computation to waste resources on low-semantic-value background regions; (2) **Channel redundancy** — extreme scale variation in remote sensing imagery makes it difficult for a single unified feature representation to efficiently capture both fine-grained textures and macro spatial context simultaneously, resulting in many channels being irrelevant to objects at the current scale.
+**Background**: Deep learning analysis of remote sensing images faces two inherent redundancies: (1) **Spatial redundancy** — sparse foreground objects distributed over large homogeneous backgrounds (roads, farmland, ocean), causing dense computation to waste resources on low-semantic-value background regions; (2) **Channel redundancy** — extreme scale variation in remote sensing imagery makes it difficult for a single unified feature representation to efficiently capture both fine-grained textures and macro spatial context simultaneously, resulting in many channels being irrelevant to objects at the current scale.
 
 Existing lightweight backbones (e.g., MobileNetV2, EfficientFormerV2), designed primarily for natural images, adopt homogeneous grouping strategies (e.g., depthwise separable convolution) that apply identical operations across all channel groups and fail to effectively handle channel redundancy in remote sensing data. Convolutional models (FasterNet) offer strong local representations but lack global context, while Transformer models (EfficientFormerV2) excel at global modeling but suppress high-frequency spatial information.
 
 ### Paper Goals
 
-**Paper Goals**: How to design a lightweight backbone that simultaneously addresses spatial and channel redundancy in remote sensing imagery, achieving an optimal accuracy-efficiency trade-off?
+**Goal**: How to design a lightweight backbone that simultaneously addresses spatial and channel redundancy in remote sensing imagery, achieving an optimal accuracy-efficiency trade-off?
 
 ## Method
 

@@ -29,18 +29,18 @@ L2T proposes a pre-training framework that mixes 14 language learning tasks span
 
 ## Background & Motivation
 
-**State of the Field**: Language models pre-trained on raw text via causal language modeling (CLM) acquire world knowledge and reasoning capabilities, yet are not explicitly optimized for *linguistic competence*—the ability to understand morphological, syntactic, and semantic phenomena.
+**Background**: Language models pre-trained on raw text via causal language modeling (CLM) acquire world knowledge and reasoning capabilities, yet are not explicitly optimized for *linguistic competence*—the ability to understand morphological, syntactic, and semantic phenomena.
 
 **Limitations of Prior Work**:
 - LMs tend to behave as "stochastic parrots," mimicking surface patterns without mastering underlying linguistic structure.
 - This resembles human rote learning: patterns are replicated without understanding the generative rules.
 - Existing improvements typically rely on architectural modifications or complex curriculum designs, increasing engineering overhead.
 
-**Root Cause**: CLM is a single-objective task that prioritizes learning surface-level statistical features over linguistic structure; humans, by contrast, do not acquire language through a single objective but through multi-task learning.
+**Key Challenge**: CLM is a single-objective task that prioritizes learning surface-level statistical features over linguistic structure; humans, by contrast, do not acquire language through a single objective but through multi-task learning.
 
-**Paper Goals**: Introduce structured language learning tasks during pre-training to enhance linguistic competence and accelerate its acquisition, without compromising general reasoning performance.
+**Goal**: Introduce structured language learning tasks during pre-training to enhance linguistic competence and accelerate its acquisition, without compromising general reasoning performance.
 
-**Starting Point**: Inspired by human language acquisition—where learners engage in diverse tasks such as error correction, reordering, and completion—the framework automatically converts raw text into structured input–output pairs at multiple granularities, providing explicit linguistic structure stimuli during pre-training.
+**Key Insight**: Inspired by human language acquisition—where learners engage in diverse tasks such as error correction, reordering, and completion—the framework automatically converts raw text into structured input–output pairs at multiple granularities, providing explicit linguistic structure stimuli during pre-training.
 
 **Core Idea**: Pre-training should not be limited to sequence reconstruction (CLM); it should also include diverse language learning tasks that require "extracting and reorganizing information," forming structured scaffolding that promotes linguistic competence development.
 

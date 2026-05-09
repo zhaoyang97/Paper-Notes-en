@@ -27,15 +27,15 @@ content_hash: 53311dfba320a3c8
 This paper presents the first systematic analysis of large reasoning models (LRMs) in MQM-based machine translation evaluation, identifying failure modes including overthinking, score overestimation, and scale-dependent sensitivity to input materials. The authors propose ThinMQM, a method that calibrates LRM reasoning by fine-tuning on synthetic human MQM annotation trajectories, reducing the thinking budget by approximately 35× while improving evaluation performance (achieving +8.7 correlation score for the 7B model).
 
 ## Background & Motivation
-**State of the Field**: Automatic machine translation quality estimation is a central problem in MT research. Mainstream approaches include traditional rule-based metrics (BLEU, chrF), end-to-end neural metrics (COMET, xCOMET), and LLM-as-a-judge methods (GEMBA series). LLM-as-a-judge approaches enable highly customizable evaluation pipelines via natural language prompting.
+**Background**: Automatic machine translation quality estimation is a central problem in MT research. Mainstream approaches include traditional rule-based metrics (BLEU, chrF), end-to-end neural metrics (COMET, xCOMET), and LLM-as-a-judge methods (GEMBA series). LLM-as-a-judge approaches enable highly customizable evaluation pipelines via natural language prompting.
 
 **Limitations of Prior Work**: Translation quality evaluation is inherently not a simple matching task; it requires deep analytical reasoning akin to "System 2 thinking." LRMs leverage intermediate reasoning steps to enhance inference capability and are theoretically better suited for such complex evaluation tasks, yet their behavior and performance in MT evaluation have not been systematically studied.
 
-**Root Cause**: Despite stronger reasoning capabilities, the unconstrained "slow thinking" process of LRMs is not always effective in MT evaluation—problems such as overthinking, score overestimation, and irrational thinking budget allocation cause LRMs to underperform their general-purpose LLM counterparts in nearly half of the evaluated settings.
+**Key Challenge**: Despite stronger reasoning capabilities, the unconstrained "slow thinking" process of LRMs is not always effective in MT evaluation—problems such as overthinking, score overestimation, and irrational thinking budget allocation cause LRMs to underperform their general-purpose LLM counterparts in nearly half of the evaluated settings.
 
-**Paper Goals**: (1) How do LRMs actually perform in MT evaluation? (2) What are the failure modes of LRM-based evaluation? (3) How can LRMs be efficiently calibrated for MT evaluation?
+**Goal**: (1) How do LRMs actually perform in MT evaluation? (2) What are the failure modes of LRM-based evaluation? (3) How can LRMs be efficiently calibrated for MT evaluation?
 
-**Starting Point**: Grounding the analysis in the MQM framework, the paper systematically examines each component of the LRM-as-a-judge pipeline—input materials, scoring mechanisms, and thinking budgets—and proposes a data-driven alignment solution based on identified issues.
+**Key Insight**: Grounding the analysis in the MQM framework, the paper systematically examines each component of the LRM-as-a-judge pipeline—input materials, scoring mechanisms, and thinking budgets—and proposes a data-driven alignment solution based on identified issues.
 
 **Core Idea**: Calibrate LRM reasoning by fine-tuning on synthetic human MQM annotation trajectories, enabling the model to efficiently emulate human evaluation behavior.
 

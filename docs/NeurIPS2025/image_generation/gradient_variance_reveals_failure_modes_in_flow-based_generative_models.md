@@ -28,15 +28,15 @@ content_hash: 70c96bcd416c620e
 By analyzing the gradient variance of the CFM loss, this paper demonstrates that Rectified Flow inevitably memorizes training pairs under deterministic interpolation rather than learning an optimal transport map, and proves that introducing stochasticity (stochastic interpolants) breaks this memorization channel and restores generalization.
 
 ## Background & Motivation
-**State of the Field**: ODE-based flow matching models (Flow Matching / Rectified Flow) represent the dominant paradigm in generative modeling, learning vector fields between source and target distributions to enable sampling. Rectified Flow iteratively "straightens" transport paths to achieve approximate one-step inference.
+**Background**: ODE-based flow matching models (Flow Matching / Rectified Flow) represent the dominant paradigm in generative modeling, learning vector fields between source and target distributions to enable sampling. Rectified Flow iteratively "straightens" transport paths to achieve approximate one-step inference.
 
 **Limitations of Prior Work**: The "straightening" objective of Rectified Flow appears intuitive but conceals a fundamental failure mode—under deterministic training, the model tends to memorize paired relationships in the training set rather than learning a generalizable transport map. Prior work claims that 1 or 2 rectification steps suffice to obtain straight paths, but rigorous proofs are lacking and counterexamples exist.
 
-**Root Cause**: Low gradient variance is intuitively regarded as a sign of good optimization progress; however, this paper shows that under deterministic interpolation, low variance corresponds precisely to a memorized solution—a vector field that perfectly fits the training pairs—rather than to the optimal transport solution.
+**Key Challenge**: Low gradient variance is intuitively regarded as a sign of good optimization progress; however, this paper shows that under deterministic interpolation, low variance corresponds precisely to a memorized solution—a vector field that perfectly fits the training pairs—rather than to the optimal transport solution.
 
-**Paper Goals**: (1) Clarify under what conditions gradient variance is a reliable indicator of solution quality; (2) prove that the global minimizer of deterministic ReFlow is the memorization solution; (3) show that introducing noisy interpolation restores generalization.
+**Goal**: (1) Clarify under what conditions gradient variance is a reliable indicator of solution quality; (2) prove that the global minimizer of deterministic ReFlow is the memorization solution; (3) show that introducing noisy interpolation restores generalization.
 
-**Starting Point**: Beginning from an analytically tractable Gaussian-to-Gaussian setting, the paper derives closed-form gradient variance expressions and then generalizes to finite datasets.
+**Key Insight**: Beginning from an analytically tractable Gaussian-to-Gaussian setting, the paper derives closed-form gradient variance expressions and then generalizes to finite datasets.
 
 **Core Idea**: Gradient variance reveals vector field quality—deterministic interpolation drives ReFlow toward memorization, while adding noise restores generalization.
 

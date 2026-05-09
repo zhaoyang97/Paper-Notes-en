@@ -28,15 +28,15 @@ This paper presents Kimina Lean Server — a high-performance Lean 4 verificatio
 
 ## Background & Motivation
 
-**State of the Field**: Neural theorem proving has advanced rapidly in recent years, with large language models trained via reinforcement learning on Lean 4 achieving significant progress (e.g., DeepSeek-Prover, Kimina-Prover). This training paradigm demands fast, scalable proof verification.
+**Background**: Neural theorem proving has advanced rapidly in recent years, with large language models trained via reinforcement learning on Lean 4 achieving significant progress (e.g., DeepSeek-Prover, Kimina-Prover). This training paradigm demands fast, scalable proof verification.
 
 **Limitations of Prior Work**: Existing tools for Lean 4–Python interaction (LeanDojo, Pantograph, leanclient, LeanInteract, etc.) suffer from performance bottlenecks and scalability issues. Most do not support parallelization across CPU cores, and each verification incurs high initialization costs (e.g., loading Mathlib).
 
-**Root Cause**: RL training requires verifying a large number of proofs per second (as reward signals), yet the verification throughput of existing tools is insufficient to support large-scale training pipelines.
+**Key Challenge**: RL training requires verifying a large number of proofs per second (as reward signals), yet the verification throughput of existing tools is insufficient to support large-scale training pipelines.
 
-**Paper Goals**: To build a high-performance Lean server specifically designed for large-scale RL verification pipelines.
+**Goal**: To build a high-performance Lean server specifically designed for large-scale RL verification pipelines.
 
-**Starting Point**: Constructing a server-side parallelization and caching layer on top of the official Lean REPL.
+**Key Insight**: Constructing a server-side parallelization and caching layer on top of the official Lean REPL.
 
 **Core Idea**: Maximize CPU utilization and eliminate redundant loading overhead through REPL pool parallelization combined with LRU import caching.
 

@@ -29,15 +29,15 @@ This paper proposes MDReID, a framework that decouples modality features into mo
 
 ## Background & Motivation
 
-**State of the Field**: Multi-modal object re-identification (ReID) leverages complementary spectral information from RGB, NIR, TIR, and other modalities to improve recognition robustness in complex scenes.
+**Background**: Multi-modal object re-identification (ReID) leverages complementary spectral information from RGB, NIR, TIR, and other modalities to improve recognition robustness in complex scenes.
 
 **Limitations of Prior Work**: Existing methods (e.g., TOP-ReID, EDITOR) assume strict modality alignment between query and gallery sets; however, in real deployments, camera types and environments vary, leading to modality inconsistencies.
 
-**Root Cause**: When modalities are missing, reconstructing absent modality representations from available ones is an ill-posed problem, as unpredictable modality-specific information leads to suboptimal learning.
+**Key Challenge**: When modalities are missing, reconstructing absent modality representations from available ones is an ill-posed problem, as unpredictable modality-specific information leads to suboptimal learning.
 
-**Paper Goals**: Design a flexible framework that supports retrieval under arbitrary query–gallery modality combinations, covering both modality-matched and modality-mismatched scenarios.
+**Goal**: Design a flexible framework that supports retrieval under arbitrary query–gallery modality combinations, covering both modality-matched and modality-mismatched scenarios.
 
-**Starting Point**: Decompose modality information into predictable and transferable shared features and unpredictable specific features, handling each separately.
+**Key Insight**: Decompose modality information into predictable and transferable shared features and unpredictable specific features, handling each separately.
 
 **Core Idea**: Introduce learnable modality-shared and modality-specific tokens into a ViT to explicitly decouple representations, and reinforce the decoupling with an orthogonality loss and a knowledge discrepancy loss.
 

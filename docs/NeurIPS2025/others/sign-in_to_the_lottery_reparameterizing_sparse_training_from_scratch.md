@@ -27,9 +27,9 @@ This paper identifies the root cause of poor performance in pruning-at-initializ
 
 ## Background & Motivation
 
-- **State of the Field**: As neural networks scale to billions of parameters, efficient training pipelines become critical. Network sparsification is a key approach to achieving efficiency. Current state-of-the-art sparsification methods (e.g., AC/DC, STR, CAP) rely on a dense-to-sparse training paradigm: a full dense network is trained first and then gradually pruned, incurring full computational and memory overhead during the dense training phase.
+- **Background**: As neural networks scale to billions of parameters, efficient training pipelines become critical. Network sparsification is a key approach to achieving efficiency. Current state-of-the-art sparsification methods (e.g., AC/DC, STR, CAP) rely on a dense-to-sparse training paradigm: a full dense network is trained first and then gradually pruned, incurring full computational and memory overhead during the dense training phase.
 - **Limitations of Prior Work**: The Lottery Ticket Hypothesis (LTH) posits that sparse subnetworks ("winning tickets") exist within random initializations and can be trained from scratch to match the performance of dense networks. In practice, however, pruning-at-initialization (PaI) methods (e.g., SNIP, GraSP, Synflow) consistently exhibit a significant performance gap relative to dense-to-sparse methods.
-- **Root Cause**: This paper attributes the gap to parameter sign alignment: dense-to-sparse methods achieve sign alignment early in training, whereas PaI methods fail to reliably learn correct signs. Signs carry more critical information than magnitudes—initializing with learned signs and random magnitudes recovers baseline performance, whereas using learned magnitudes and random signs does not.
+- **Key Challenge**: This paper attributes the gap to parameter sign alignment: dense-to-sparse methods achieve sign alignment early in training, whereas PaI methods fail to reliably learn correct signs. Signs carry more critical information than magnitudes—initializing with learned signs and random magnitudes recovers baseline performance, whereas using learned magnitudes and random signs does not.
 
 ## Method
 

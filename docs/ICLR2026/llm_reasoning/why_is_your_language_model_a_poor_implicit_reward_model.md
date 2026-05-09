@@ -28,18 +28,18 @@ This paper provides theoretical and empirical evidence that implicit reward mode
 
 ## Background & Motivation
 
-**State of the Field**: Reward models are central components in LLM post-training and inference pipelines. Two nearly identical reward model paradigms exist: explicit reward models (EX-RM, which attach a linear head on top of hidden representations) and implicit reward models (IM-RM, which define rewards implicitly via $\ln \pi_\theta(\mathbf{y}|\mathbf{x})$, the core idea behind DPO). Both can be trained with the same data, loss function, and base language model; the only difference lies in how the reward is computed.
+**Background**: Reward models are central components in LLM post-training and inference pipelines. Two nearly identical reward model paradigms exist: explicit reward models (EX-RM, which attach a linear head on top of hidden representations) and implicit reward models (IM-RM, which define rewards implicitly via $\ln \pi_\theta(\mathbf{y}|\mathbf{x})$, the core idea behind DPO). Both can be trained with the same data, loss function, and base language model; the only difference lies in how the reward is computed.
 
 **Limitations of Prior Work**: Despite their near-identical formulation, prior work has repeatedly observed that IM-RM generalizes significantly worse than EX-RM, particularly in out-of-distribution response ranking. This generalization gap is puzzling—why would such a minor difference in reward computation lead to such a large performance disparity?
 
-**Root Cause**: An intuitive explanation is the "generation–verification gap"—since IM-RM must both assign high scores to correct responses and generate them via the underlying language model, if generation is harder than verification, IM-RM accuracy should lag behind. However, whether this argument holds and what the true underlying cause is remain open questions.
+**Key Challenge**: An intuitive explanation is the "generation–verification gap"—since IM-RM must both assign high scores to correct responses and generate them via the underlying language model, if generation is harder than verification, IM-RM accuracy should lag behind. However, whether this argument holds and what the true underlying cause is remain open questions.
 
-**Paper Goals**
+**Goal**
 - Refute the "generation–verification gap" hypothesis by showing that IM-RM verification does not require learning to generate.
 - Identify the true cause by characterizing the behavioral differences between EX-RM and IM-RM from a learning dynamics perspective.
 - Validate theoretical predictions through both controlled and realistic experimental settings.
 
-**Starting Point**: The analysis proceeds from how gradient updates affect the reward assigned to unseen samples. It is found that EX-RM reward changes depend only on inner products of hidden representations, whereas IM-RM reward changes additionally depend on specific tokens.
+**Key Insight**: The analysis proceeds from how gradient updates affect the reward assigned to unseen samples. It is found that EX-RM reward changes depend only on inner products of hidden representations, whereas IM-RM reward changes additionally depend on specific tokens.
 
 **Core Idea**: IM-RM generalizes poorly because its learning dynamics inherently bias it toward overfitting surface-level token cues rather than exploiting the semantic structure of hidden representations.
 

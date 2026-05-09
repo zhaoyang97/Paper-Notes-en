@@ -27,15 +27,15 @@ content_hash: 99f89fd33cbc3315
 This paper presents Mars-Bench — the first comprehensive benchmark for Mars science tasks, encompassing 20 datasets across three task types (classification, segmentation, and object detection). It systematically evaluates ImageNet-pretrained models, Earth observation foundation models, and vision-language models on Martian data, revealing significant gaps in current general-purpose models and calling for the development of Mars-specific foundation models.
 
 ## Background & Motivation
-**State of the Field**: Foundation models have achieved substantial progress in specialized domains such as medical imaging, Earth observation (EO), law, and astronomy. In EO, standardized benchmarks such as Geo-Bench and PANGAEA have driven rapid development. However, the Mars science community lacks a comparable standardized evaluation framework.
+**Background**: Foundation models have achieved substantial progress in specialized domains such as medical imaging, Earth observation (EO), law, and astronomy. In EO, standardized benchmarks such as Geo-Bench and PANGAEA have driven rapid development. However, the Mars science community lacks a comparable standardized evaluation framework.
 
 **Limitations of Prior Work**: Machine learning research on Mars-related tasks (crater detection, landmark classification, cone segmentation, etc.) suffers from inconsistent data formats, poor dataset interoperability, and the absence of standardized evaluation protocols. Existing Mars foundation model studies evaluate on only one or two downstream tasks, making it impossible to assess generalization comprehensively.
 
-**Root Cause**: Mars possesses an extraordinarily rich corpus of orbital and surface imagery (PB-scale images collected by MRO, Curiosity, Perseverance, etc.), yet the lack of standardized ML-ready formats and unified evaluation benchmarks leaves this data significantly underutilized.
+**Key Challenge**: Mars possesses an extraordinarily rich corpus of orbital and surface imagery (PB-scale images collected by MRO, Curiosity, Perseverance, etc.), yet the lack of standardized ML-ready formats and unified evaluation benchmarks leaves this data significantly underutilized.
 
-**Paper Goals**: To construct the first standardized Mars science benchmark covering multiple tasks, sensors, and geological features, while providing a unified evaluation framework and baseline models.
+**Goal**: To construct the first standardized Mars science benchmark covering multiple tasks, sensors, and geological features, while providing a unified evaluation framework and baseline models.
 
-**Starting Point**: Drawing on the successful paradigm of Geo-Bench in the EO domain, the authors perform quality checks, corrections, and format unification on existing Mars datasets, coupled with comprehensive model evaluation.
+**Key Insight**: Drawing on the successful paradigm of Geo-Bench in the EO domain, the authors perform quality checks, corrections, and format unification on existing Mars datasets, coupled with comprehensive model evaluation.
 
 **Core Idea**: By standardizing 20 Mars datasets and systematically evaluating diverse models, this work fills the gap in benchmarking for Mars science.
 

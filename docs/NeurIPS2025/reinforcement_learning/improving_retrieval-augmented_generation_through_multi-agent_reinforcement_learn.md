@@ -29,15 +29,15 @@ This work models multiple components of a complex RAG pipeline (Query Rewriter, 
 
 ## Background & Motivation
 
-**State of the Field**: RAG systems augment LLMs with retrieved external knowledge. Modern RAG pipelines consist of multiple components—query rewriting, document retrieval, document selection, and answer generation.
+**Background**: RAG systems augment LLMs with retrieved external knowledge. Modern RAG pipelines consist of multiple components—query rewriting, document retrieval, document selection, and answer generation.
 
 **Limitations of Prior Work**: Individual components are typically optimized independently via SFT, leading to a misalignment between module-level objectives and the global objective of generating accurate answers. For instance, documents deemed highly relevant under nDCG-optimized retrieval may not contribute to correct answer generation.
 
-**Root Cause**: Existing end-to-end optimization methods (e.g., applying PPO or DPO to individual RAG components) either address only simple two-component pipelines or optimize modules in isolation, failing to adequately model the cooperative relationships among multiple components.
+**Key Challenge**: Existing end-to-end optimization methods (e.g., applying PPO or DPO to individual RAG components) either address only simple two-component pipelines or optimize modules in isolation, failing to adequately model the cooperative relationships among multiple components.
 
-**Paper Goals**: To jointly optimize the parameters of multiple components in a RAG system so that each module's optimization objective is aligned with final answer quality.
+**Goal**: To jointly optimize the parameters of multiple components in a RAG system so that each module's optimization objective is aligned with final answer quality.
 
-**Starting Point**: Model RAG as a cooperative multi-agent reinforcement learning (Co-MARL) problem and leverage MAPPO for joint multi-agent optimization.
+**Key Insight**: Model RAG as a cooperative multi-agent reinforcement learning (Co-MARL) problem and leverage MAPPO for joint multi-agent optimization.
 
 **Core Idea**: Treat RAG as a cooperative game in which each component serves as an agent, all sharing a global reward based on final answer F1, and optimize all agents synchronously via MAPPO.
 

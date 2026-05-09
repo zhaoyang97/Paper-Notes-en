@@ -28,15 +28,15 @@ This paper proposes CRAFT, a three-stage cascaded table retrieval framework requ
 
 ## Background & Motivation
 
-**State of the Field**: Open-domain tabular question answering (TQA) requires first retrieving relevant tables from large-scale corpora, then reasoning over them to produce answers. Existing approaches include sparse retrieval (BM25), dense retrieval (DPR, DTR), and hybrid retrieval (THYME).
+**Background**: Open-domain tabular question answering (TQA) requires first retrieving relevant tables from large-scale corpora, then reasoning over them to produce answers. Existing approaches include sparse retrieval (BM25), dense retrieval (DPR, DTR), and hybrid retrieval (THYME).
 
 **Limitations of Prior Work**: (1) Dense retrieval models (DTR, DPR) incur high computational costs and require retraining or fine-tuning on new datasets, limiting adaptability to new domains; (2) naively linearizing tables into text loses row-column structural information; (3) complex architectures (e.g., SSDR's syntax-aware retrievers) demand elaborate modeling and expensive training.
 
-**Root Cause**: SOTA table retrieval relies on costly domain-specific fine-tuning, which renders systems inflexible when facing new domains or datasets. The question is whether pretrained models, combined with a carefully designed retrieval pipeline, can achieve competitive performance.
+**Key Challenge**: SOTA table retrieval relies on costly domain-specific fine-tuning, which renders systems inflexible when facing new domains or datasets. The question is whether pretrained models, combined with a carefully designed retrieval pipeline, can achieve competitive performance.
 
-**Paper Goals**: To construct a modular, extensible multi-stage retrieval framework that leverages off-the-shelf pretrained models to achieve competitive table retrieval and end-to-end QA performance in a zero-shot setting.
+**Goal**: To construct a modular, extensible multi-stage retrieval framework that leverages off-the-shelf pretrained models to achieve competitive table retrieval and end-to-end QA performance in a zero-shot setting.
 
-**Starting Point**: A three-stage cascaded design that progressively transitions from high-recall sparse retrieval to high-precision semantic re-ranking, employing progressively stronger but slower models at each stage. Gemini-generated table captions and descriptions are used to compensate for semantic deficiencies in raw table representations.
+**Key Insight**: A three-stage cascaded design that progressively transitions from high-recall sparse retrieval to high-precision semantic re-ranking, employing progressively stronger but slower models at each stage. Gemini-generated table captions and descriptions are used to compensate for semantic deficiencies in raw table representations.
 
 **Core Idea**: Applying the "progressive refinement" paradigm of cascaded retrieval to table retrieval — sparse models efficiently filter candidates → mini-table construction reduces token overhead → neural models perform precise re-ranking — achieving SOTA without any training.
 

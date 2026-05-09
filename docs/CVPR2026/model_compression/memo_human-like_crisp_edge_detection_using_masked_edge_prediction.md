@@ -29,15 +29,15 @@ This paper proposes MEMO, a framework that generates crisp single-pixel edge map
 
 ## Background & Motivation
 
-1. **State of the Field**: Deep learning-based edge detection is typically formulated as a pixel-wise binary classification task optimized with cross-entropy loss. Dominant methods such as HED, RCF, and BDCN have achieved competitive detection accuracy.
+1. **Background**: Deep learning-based edge detection is typically formulated as a pixel-wise binary classification task optimized with cross-entropy loss. Dominant methods such as HED, RCF, and BDCN have achieved competitive detection accuracy.
 
 2. **Limitations of Prior Work**: Models trained with cross-entropy consistently produce "thick edge" predictions—predicted edge widths far exceed the single-pixel width of human annotations. Existing remedies either design specialized sparse losses (e.g., CATS, CED) or resort to diffusion models (e.g., DiffEdge), yet crispness on benchmarks such as BSDS remains below 50%.
 
-3. **Root Cause**: Label ambiguity introduced by multiple annotators—where slightly shifted edges are provided for the same location—softens the training signal, causing models to assign high probability to multiple pixels in the vicinity of each edge.
+3. **Key Challenge**: Label ambiguity introduced by multiple annotators—where slightly shifted edges are provided for the same location—softens the training signal, causing models to assign high probability to multiple pixels in the vicinity of each edge.
 
-4. **Paper Goals**: (a) Produce crisp edges without modifying the loss function or network architecture; (b) avoid overfitting on small datasets; (c) support multi-granularity edge prediction at inference time.
+4. **Goal**: (a) Produce crisp edges without modifying the loss function or network architecture; (b) avoid overfitting on small datasets; (c) support multi-granularity edge prediction at inference time.
 
-5. **Starting Point**: The authors observe that **thick edge predictions exhibit a confidence gradient**—the central edge pixel carries the highest confidence, which decays toward both sides. This property suggests first committing to high-confidence predictions and then progressively resolving uncertain regions.
+5. **Key Insight**: The authors observe that **thick edge predictions exhibit a confidence gradient**—the central edge pixel carries the highest confidence, which decays toward both sides. This property suggests first committing to high-confidence predictions and then progressively resolving uncertain regions.
 
 6. **Core Idea**: Masked training teaches the model to predict remaining edges given a partial observation. At inference, the edge map is progressively "revealed" in descending order of confidence, naturally yielding single-pixel-wide edges.
 

@@ -29,15 +29,15 @@ NVIDIA releases a 40K+ open-source human-annotated preference dataset covering g
 
 ## Background & Motivation
 
-**State of the Field**: Preference data has evolved from low-quality annotations (HH-RLHF) to GPT-4-labeled data (UltraFeedback) to synthetically filtered datasets (HelpSteer2), yet diversity remains insufficient — nearly all mainstream datasets are English-only.
+**Background**: Preference data has evolved from low-quality annotations (HH-RLHF) to GPT-4-labeled data (UltraFeedback) to synthetically filtered datasets (HelpSteer2), yet diversity remains insufficient — nearly all mainstream datasets are English-only.
 
 **Limitations of Prior Work**: As LLM applications expand into programming, scientific reasoning, and multilingual interaction, RLHF data must cover these emerging domains. GPT-4-annotated data is restricted from commercial use under terms of service.
 
-**Root Cause**: High quality, diversity, and permissive licensing are difficult to achieve simultaneously — prior datasets satisfy at most two of these three requirements.
+**Key Challenge**: High quality, diversity, and permissive licensing are difficult to achieve simultaneously — prior datasets satisfy at most two of these three requirements.
 
-**Paper Goals**: Construct a large-scale, high-quality, permissively licensed preference dataset spanning STEM, code, and multilingual domains.
+**Goal**: Construct a large-scale, high-quality, permissively licensed preference dataset spanning STEM, code, and multilingual domains.
 
-**Starting Point**: Engage annotators with domain-specific expertise (scientists, engineers, multilingual speakers) under a stratified quality control framework.
+**Key Insight**: Engage annotators with domain-specific expertise (scientists, engineers, multilingual speakers) under a stratified quality control framework.
 
 **Core Idea**: Expert-stratified annotation + multi-domain and multilingual coverage + CC-BY-4.0 = the most comprehensive open-source preference dataset to date.
 

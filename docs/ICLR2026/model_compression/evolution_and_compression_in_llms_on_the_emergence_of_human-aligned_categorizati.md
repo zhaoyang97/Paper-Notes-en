@@ -31,13 +31,13 @@ Through the Information Bottleneck (IB) framework and the Iterated In-Context La
 
 ### Root Cause
 
-**State of the Field**: Extensive evidence indicates that human semantic categorization systems (e.g., color naming) adhere to the Information Bottleneck (IB) principle—achieving a near-optimal trade-off between lexical information complexity and communicative accuracy. This theoretical framework was proposed by Zaslavsky et al. (2018) and has been broadly validated across 110 languages in the World Color Survey (WCS).
+**Background**: Extensive evidence indicates that human semantic categorization systems (e.g., color naming) adhere to the Information Bottleneck (IB) principle—achieving a near-optimal trade-off between lexical information complexity and communicative accuracy. This theoretical framework was proposed by Zaslavsky et al. (2018) and has been broadly validated across 110 languages in the World Color Survey (WCS).
 
 However, LLMs are trained on a language modeling objective (next-token prediction), not on an IB objective. This raises a fundamental question: are LLMs merely imitating categorization patterns present in training data, or do they possess an intrinsic, human-like inductive bias that spontaneously drives efficient semantic compression?
 
 Color naming is a canonical domain for studying categorization in cognitive science, with uniquely rich cross-linguistic human data (the WCS dataset) and cultural evolution experiments (Xu et al., 2013), making it an ideal testbed for assessing whether LLMs are aligned with human cognition.
 
-**Paper Goals**:
+**Goal**:
 1. How do LLMs' English color naming systems perform in terms of IB efficiency and human alignment?
 2. Are LLMs merely imitating patterns in training data, or do they possess a genuine inductive bias toward IB efficiency?
 3. Does such a bias generalize beyond the color domain to other semantic domains?

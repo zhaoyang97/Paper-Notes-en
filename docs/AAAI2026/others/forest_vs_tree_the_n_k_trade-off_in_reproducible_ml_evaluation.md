@@ -28,15 +28,15 @@ This paper investigates the optimal trade-off between the number of samples $N$ 
 
 ## Background & Motivation
 
-**State of the Field**: Reproducibility is the cornerstone of scientific validation and the basis upon which results are granted authority. In machine learning evaluation, ground truth labels are typically obtained from human annotators. However, inter-annotator disagreement is prevalent, and the evaluation literature surprisingly lacks investigation into the effects of effectively ignoring such disagreement.
+**Background**: Reproducibility is the cornerstone of scientific validation and the basis upon which results are granted authority. In machine learning evaluation, ground truth labels are typically obtained from human annotators. However, inter-annotator disagreement is prevalent, and the evaluation literature surprisingly lacks investigation into the effects of effectively ignoring such disagreement.
 
 **Limitations of Prior Work**: (1) Budgets for collecting human-annotated evaluation data are limited—increasing the number of annotators $K$ per sample substantially raises per-item annotation costs; (2) most ML evaluations use majority voting or a single annotation as the ground truth, entirely discarding inter-annotator disagreement information; (3) systematic guidance is lacking to help practitioners decide how to allocate budgets between "more samples" and "more annotators per sample."
 
-**Root Cause**: Under a fixed budget, there is a fundamental trade-off between increasing the number of samples $N$ (broader coverage but fewer annotations per item) and increasing the number of annotators $K$ per item (more reliable labels but narrower coverage). Prior intuition has favored maximizing $N$, which neglects the noise introduced by annotator disagreement.
+**Key Challenge**: Under a fixed budget, there is a fundamental trade-off between increasing the number of samples $N$ (broader coverage but fewer annotations per item) and increasing the number of annotators $K$ per item (more reliable labels but narrower coverage). Prior intuition has favored maximizing $N$, which neglects the noise introduced by annotator disagreement.
 
-**Paper Goals**: (1) Systematically study the $(N, K)$ trade-off; (2) identify optimal $(N, K)$ configurations under different evaluation metrics; (3) provide practical guidance to help ML practitioners optimize evaluation budget allocation.
+**Goal**: (1) Systematically study the $(N, K)$ trade-off; (2) identify optimal $(N, K)$ configurations under different evaluation metrics; (3) provide practical guidance to help ML practitioners optimize evaluation budget allocation.
 
-**Starting Point**: The authors analyze multiple real-world multi-annotator datasets and simulated distributions fitted to these datasets, systematically exploring the optimal $(N, K)$ for the core task of reliably comparing the performance of two ML models.
+**Key Insight**: The authors analyze multiple real-world multi-annotator datasets and simulated distributions fitted to these datasets, systematically exploring the optimal $(N, K)$ for the core task of reliably comparing the performance of two ML models.
 
 **Core Idea**: In ML evaluation, "more annotators per sample" is often more effective than "more samples"—configurations with $K > 10$ outperform maximum-$N$ configurations with $K = 1$ in most scenarios.
 

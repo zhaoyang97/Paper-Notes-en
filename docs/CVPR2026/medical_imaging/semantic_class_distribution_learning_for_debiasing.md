@@ -29,15 +29,15 @@ This paper proposes SCDL (Semantic Class Distribution Learning), a plug-and-play
 
 ## Background & Motivation
 
-1. **State of the Field**: Semi-supervised medical image segmentation (SSMIS) trains on a small amount of labeled data combined with abundant unlabeled data. Mainstream approaches include consistency regularization, contrastive learning, and pseudo-labeling. However, medical image datasets commonly exhibit severe class imbalance—large organs (e.g., liver) occupy the majority of pixels, while small organs (e.g., esophagus, adrenal glands) contribute very few.
+1. **Background**: Semi-supervised medical image segmentation (SSMIS) trains on a small amount of labeled data combined with abundant unlabeled data. Mainstream approaches include consistency regularization, contrastive learning, and pseudo-labeling. However, medical image datasets commonly exhibit severe class imbalance—large organs (e.g., liver) occupy the majority of pixels, while small organs (e.g., esophagus, adrenal glands) contribute very few.
 
 2. **Limitations of Prior Work**: The combination of class imbalance and semi-supervised mechanisms introduces bias at two levels. (1) *Supervision signal bias*: pixel-level gradients dominated by large classes and the self-reinforcing nature of pseudo-labels both skew supervision toward head classes. (2) *Feature representation bias*: existing methods (re-weighting, output calibration) operate only at the loss or output layer, providing no direct constraints on class-conditional feature distributions, causing head-class features to be compact while tail-class features remain dispersed and are "absorbed" by head classes in the feature space.
 
-3. **Root Cause**: Unlabeled data is primarily used for local consistency regularization and rarely to explicitly correct the skew in class-conditional feature distributions—thus unlabeled data fails to help minority classes establish adequate feature representations, and imbalance persists.
+3. **Key Challenge**: Unlabeled data is primarily used for local consistency regularization and rarely to explicitly correct the skew in class-conditional feature distributions—thus unlabeled data fails to help minority classes establish adequate feature representations, and imbalance persists.
 
-4. **Paper Goals**: To directly alleviate representation bias caused by class imbalance at the feature-space level, rather than addressing it only at the loss or output layer.
+4. **Goal**: To directly alleviate representation bias caused by class imbalance at the feature-space level, rather than addressing it only at the loss or output layer.
 
-5. **Starting Point**: Learn a proxy distribution (Gaussian) for each semantic class, enforce bidirectional alignment so that embeddings are attracted to their corresponding proxy while proxies are repelled from non-target embeddings, and use semantic anchors from annotated regions to provide correct semantic supervision for the proxies.
+5. **Key Insight**: Learn a proxy distribution (Gaussian) for each semantic class, enforce bidirectional alignment so that embeddings are attracted to their corresponding proxy while proxies are repelled from non-target embeddings, and use semantic anchors from annotated regions to provide correct semantic supervision for the proxies.
 
 6. **Core Idea**: By learning class-conditional proxy distributions and enforcing bidirectional alignment, SCDL directly reshapes the class distribution structure in the feature space, ensuring that minority classes also receive stable representation learning signals.
 

@@ -27,7 +27,7 @@ content_hash: 53c4ead9d07e8ea0
 This paper proposes Pano3DComposer, a modular feed-forward compositional 3D scene generation framework that takes a single panoramic image as input. A plug-and-play Object-World Transformation Predictor (based on Alignment-VGGT) maps generated 3D objects from local coordinates to world coordinates, producing high-fidelity 3D scenes in approximately 20 seconds on an RTX 4090.
 
 ## Background & Motivation
-**State of the Field**: 3D scene generation is foundational for VR/AR and digital twins. Existing methods primarily rely on perspective images with limited field of view; panoramic images provide a complete 360° spatial context but introduce severe distortion.
+**Background**: 3D scene generation is foundational for VR/AR and digital twins. Existing methods primarily rely on perspective images with limited field of view; panoramic images provide a complete 360° spatial context but introduce severe distortion.
 
 **Limitations of Prior Work**:
 - Feed-forward scene understanding methods (Total3D, InstPIFu) are constrained by insufficient 3D mesh supervision and limited generalization
@@ -35,11 +35,11 @@ This paper proposes Pano3DComposer, a modular feed-forward compositional 3D scen
 - Compositional optimization methods (GALA3D, LayoutYour3D) require time-consuming iterative optimization that does not meet efficiency requirements
 - Panorama-specific methods (DeepPanoContext, PanoContext-Former) can only produce texture-free meshes
 
-**Root Cause**: How to simultaneously achieve efficiency, decouple object generation from layout estimation, and handle panoramic distortion.
+**Key Challenge**: How to simultaneously achieve efficiency, decouple object generation from layout estimation, and handle panoramic distortion.
 
-**Paper Goals**: (a) Replace time-consuming iterative optimization with feed-forward inference; (b) Decouple object generation from layout estimation; (c) Address panoramic distortion via perspective reprojection preprocessing.
+**Goal**: (a) Replace time-consuming iterative optimization with feed-forward inference; (b) Decouple object generation from layout estimation; (c) Address panoramic distortion via perspective reprojection preprocessing.
 
-**Starting Point**: Reformulate the object-to-world coordinate transformation from the challenging 3D space to the more robust 2D image space, exploiting correspondences between multi-view renderings and target crop images.
+**Key Insight**: Reformulate the object-to-world coordinate transformation from the challenging 3D space to the more robust 2D image space, exploiting correspondences between multi-view renderings and target crop images.
 
 **Core Idea**: Use Alignment-VGGT to predict, in a single feed-forward pass, the rotation $\mathbf{R}$, translation $\mathbf{t}$, and anisotropic scaling $\mathbf{S}$ that map each 3D object from its local coordinate frame to the world coordinate frame.
 

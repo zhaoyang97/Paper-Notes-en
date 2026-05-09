@@ -29,11 +29,11 @@ This paper proposes a motion factorization framework that decomposes multi-insta
 
 ## Background & Motivation
 
-1. **State of the Field**: Compositional Video Generation (CVG) aims to synthesize multi-instance, multi-motion scenes from complex prompts. Existing methods (LVD, VideoDirectorGPT, etc.) typically employ LLMs to produce bounding box sequences for guiding instance motion.
+1. **Background**: Compositional Video Generation (CVG) aims to synthesize multi-instance, multi-motion scenes from complex prompts. Existing methods (LVD, VideoDirectorGPT, etc.) typically employ LLMs to produce bounding box sequences for guiding instance motion.
 2. **Limitations of Prior Work**: (1) Motion semantic ambiguity — generating box sequences directly from text leads to broken motion trajectories and abnormal scale changes; (2) Coarse motion guidance — uniform diffusion guidance fails to distinguish between different motion categories, resulting in motion homogenization and unnatural dynamics.
-3. **Root Cause**: Existing methods treat the motion of all instances uniformly, lacking explicit modeling of motion category diversity. Stationary objects, linearly translating vehicles, and dancing humans fundamentally require distinct generation strategies.
-4. **Paper Goals**: How can video generation models produce diverse, category-consistent motion for each instance without any training?
-5. **Starting Point**: Decompose motion into three primitive categories — stationary, rigid-body, and non-rigid — and design targeted reasoning and guidance strategies for each.
+3. **Key Challenge**: Existing methods treat the motion of all instances uniformly, lacking explicit modeling of motion category diversity. Stationary objects, linearly translating vehicles, and dancing humans fundamentally require distinct generation strategies.
+4. **Goal**: How can video generation models produce diverse, category-consistent motion for each instance without any training?
+5. **Key Insight**: Decompose motion into three primitive categories — stationary, rigid-body, and non-rigid — and design targeted reasoning and guidance strategies for each.
 6. **Core Idea**: Motion factorization with a plan-then-generate paradigm — first infer per-instance motion representations via a structured motion graph, then synthesize each motion category through dedicated decoupled guidance branches.
 
 ## Method

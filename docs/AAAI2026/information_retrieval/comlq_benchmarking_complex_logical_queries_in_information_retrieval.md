@@ -26,18 +26,18 @@ content_hash: 5787dc153472d8ee
 This paper introduces ComLQ, the first IR benchmark targeting complex logical queries spanning 14 query types (conjunction, disjunction, negation, and their combinations). It proposes a subgraph-guided LLM data synthesis pipeline and a negation consistency metric LSNC, revealing that existing retrievers suffer severely in logical reasoning—particularly in negation modeling.
 
 ## Background & Motivation
-**State of the Field**: Information retrieval systems are foundational for managing information overload and are widely deployed in recommendation, question answering, and related applications. Existing IR benchmarks (MS-MARCO, TREC, BEIR, etc.) primarily focus on simple queries semantically akin to single-hop or multi-hop relational lookups.
+**Background**: Information retrieval systems are foundational for managing information overload and are widely deployed in recommendation, question answering, and related applications. Existing IR benchmarks (MS-MARCO, TREC, BEIR, etc.) primarily focus on simple queries semantically akin to single-hop or multi-hop relational lookups.
 
 **Limitations of Prior Work**:
    - Real-world user queries frequently involve compound logical reasoning (conjunction ∧, disjunction ∨, negation ¬, and their combinations), yet **over 93% of queries in existing benchmarks are simple queries**.
    - Complex logical queries have been studied in knowledge base question answering (KBQA), but remain largely unexplored in IR—where set operations must be performed over **unstructured text**, making the task substantially harder than reasoning over structured triples.
    - Existing retrievers rely heavily on term co-occurrence and tend to retrieve irrelevant passages containing negated keywords (e.g., "American") when confronted with negation queries.
 
-**Root Cause**: The IR community lacks a benchmark capable of **systematically and fine-grainedly evaluating the logical reasoning ability of retrievers**, with no means to quantify negation handling in particular.
+**Key Challenge**: The IR community lacks a benchmark capable of **systematically and fine-grainedly evaluating the logical reasoning ability of retrievers**, with no means to quantify negation handling in particular.
 
-**Paper Goals**: Construct an IR benchmark covering 14 first-order logic query types and propose appropriate evaluation metrics.
+**Goal**: Construct an IR benchmark covering 14 first-order logic query types and propose appropriate evaluation metrics.
 
-**Starting Point**: Leverage LLM generation, subgraph-guided prompt design, and expert validation to ensure that each query's logical structure is precise and well-grounded.
+**Key Insight**: Leverage LLM generation, subgraph-guided prompt design, and expert validation to ensure that each query's logical structure is precise and well-grounded.
 
 **Core Idea**: Use subgraph indicators to guide LLMs in generating queries of specific logical structures from passages, thereby constructing the first comprehensive IR benchmark for complex logical queries and exposing the logical reasoning deficiencies of existing retrievers.
 

@@ -30,15 +30,15 @@ ALMI proposes an upper-lower body adversarial training framework: the lower-body
 
 ### State of the Field
 
-**State of the Field**: Existing methods employ monolithic RL policies to simultaneously control all joints, using motion tracking error as the reward signal.
+**Background**: Existing methods employ monolithic RL policies to simultaneously control all joints, using motion tracking error as the reward signal.
 
 **Limitations of Prior Work**: Monolithic policies neglect the functional distinction between upper and lower bodies; the high DoF count (21) makes training difficult; prioritizing tracking accuracy over balance leads to frequent falls on real hardware.
 
-**Root Cause**: Large upper-body motions destabilize balance, while rapid lower-body locomotion degrades upper-body tracking accuracy — a naturally adversarial relationship.
+**Key Challenge**: Large upper-body motions destabilize balance, while rapid lower-body locomotion degrades upper-body tracking accuracy — a naturally adversarial relationship.
 
-**Paper Goals**: Enable the upper and lower bodies to independently learn their respective tasks while ensuring whole-body coordination.
+**Goal**: Enable the upper and lower bodies to independently learn their respective tasks while ensuring whole-body coordination.
 
-**Starting Point**: Model the upper and lower bodies as two players in a zero-sum game.
+**Key Insight**: Model the upper and lower bodies as two players in a zero-sum game.
 
 **Core Idea**: Adversarial training encourages the lower body to learn to maintain balance regardless of upper-body motions, and the upper body to achieve precise tracking regardless of lower-body locomotion.
 

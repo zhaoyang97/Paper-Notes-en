@@ -28,15 +28,15 @@ Three progressive experiments systematically evaluate whether LLMs possess "moti
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly deployed as agents acting in the real world on behalf of users—handling emails, browsing the web, and making purchasing decisions. Information encountered in these settings inherently carries the sender's motives—a salesperson's recommendation, a sponsor's advertisement, or a competitor's review. Humans naturally identify and discount information from biased sources through *epistemic vigilance*.
+**Background**: LLMs are increasingly deployed as agents acting in the real world on behalf of users—handling emails, browsing the web, and making purchasing decisions. Information encountered in these settings inherently carries the sender's motives—a salesperson's recommendation, a sponsor's advertisement, or a competitor's review. Humans naturally identify and discount information from biased sources through *epistemic vigilance*.
 
 **Limitations of Prior Work**: LLMs are known to exhibit multiple vigilance failures: (1) jailbreaking—malicious instructions bypass safety mechanisms; (2) sycophancy—blindly conforming to users' erroneous beliefs; (3) pop-ups and distracting content hijacking agent behavior. The common root cause is a lack of deep understanding of the motives behind information sources, yet a systematic evaluation framework has been absent.
 
-**Root Cause**: LLM training paradigms prioritize instruction-following and user satisfaction over monitoring the incentives and veracity of information sources—yet the latter is precisely what enables reliable real-world agent behavior.
+**Key Challenge**: LLM training paradigms prioritize instruction-following and user satisfaction over monitoring the incentives and veracity of information sources—yet the latter is precisely what enables reliable real-world agent behavior.
 
-**Paper Goals**: To what extent do LLMs possess motivational vigilance? How does performance differ between controlled and naturalistic settings? Can simple interventions improve vigilance?
+**Goal**: To what extent do LLMs possess motivational vigilance? How does performance differ between controlled and naturalistic settings? Can simple interventions improve vigilance?
 
-**Starting Point**: The rational model from cognitive science (Oktar et al., 2024/2025) is used as a normative benchmark, and LLM vigilance is evaluated across three experimental paradigms of increasing difficulty.
+**Key Insight**: The rational model from cognitive science (Oktar et al., 2024/2025) is used as a normative benchmark, and LLM vigilance is evaluated across three experimental paradigms of increasing difficulty.
 
 **Core Idea**: LLMs exhibit near-rational motivational vigilance in simple controlled settings, but in naturalistic contexts with rich contextual information, the additional content diverts attention from motivation-relevant cues.
 

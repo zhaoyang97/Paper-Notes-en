@@ -84,7 +84,7 @@ $$\Omega\left(\frac{dk^{1/r}}{r\log^2 k}\right)$$
 
 ### Agnostic Setting: LazyHedge Algorithm (Algorithm 2)
 
-**Starting Point**: The Hedge algorithm of ZZC+ (2024) requires $T = \Theta(\log k / \varepsilon^2)$ rounds; lazy updates reduce the actual number of sampling rounds.
+**Key Insight**: The Hedge algorithm of ZZC+ (2024) requires $T = \Theta(\log k / \varepsilon^2)$ rounds; lazy updates reduce the actual number of sampling rounds.
 
 **Core Innovation — Lazy Upper Bound Updates**:
 1. Maintain weights $w^{(t)}$ and an upper bound vector $\bar{w}^{(t)}$ (serving as a proxy for the dataset size of each distribution).

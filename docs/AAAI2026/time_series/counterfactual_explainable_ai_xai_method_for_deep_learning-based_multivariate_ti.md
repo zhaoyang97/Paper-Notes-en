@@ -28,7 +28,7 @@ This paper proposes CONFETTI, a multi-objective counterfactual explanation metho
 
 ## Background & Motivation
 
-Deep learning models (CNNs, RNNs, Transformers, etc.) have achieved strong performance on MTS classification tasks, yet their "black-box" nature severely hinders decision-makers' ability to understand and trust model predictions. While existing XAI methods offer partial insights, they fall short in revealing the full decision space. Counterfactual Explanations (CE) address this gap by showing "what minimal changes to the input would alter the prediction," but current MTS counterfactual approaches exhibit a fundamental **Root Cause**:
+Deep learning models (CNNs, RNNs, Transformers, etc.) have achieved strong performance on MTS classification tasks, yet their "black-box" nature severely hinders decision-makers' ability to understand and trust model predictions. While existing XAI methods offer partial insights, they fall short in revealing the full decision space. Counterfactual Explanations (CE) address this gap by showing "what minimal changes to the input would alter the prediction," but current MTS counterfactual approaches exhibit a fundamental **Key Challenge**:
 
 - **CoMTE / AB-CE**: Focus on maximizing prediction confidence but may require large modifications to the original time series.
 - **SETS / LASTS**: Emphasize proximity but may generate out-of-distribution instances.

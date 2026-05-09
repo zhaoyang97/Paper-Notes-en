@@ -29,15 +29,15 @@ This paper systematically evaluates the effectiveness of Chain-of-Thought monito
 
 ## Background & Motivation
 
-**State of the Field**: As frontier AI models grow more capable and are deployed autonomously, AI Control has emerged as an important research direction—treating powerful but untrusted models as "untrusted" agents while using weaker but trusted monitor models to continuously inspect their behavior and detect potential deception or sabotage.
+**Background**: As frontier AI models grow more capable and are deployed autonomously, AI Control has emerged as an important research direction—treating powerful but untrusted models as "untrusted" agents while using weaker but trusted monitor models to continuously inspect their behavior and detect potential deception or sabotage.
 
 **Limitations of Prior Work**: Current AI control protocols primarily monitor the model's final action (output), making subtle sabotage behaviors—such as introducing hidden performance degradation or edge-case bugs in code—difficult to detect. Meanwhile, reasoning models such as DeepSeek-R1 and Claude 3.7 produce visible CoT, offering a new monitoring dimension whose effectiveness has not been systematically evaluated.
 
-**Root Cause**: CoT may simultaneously serve as a valuable safety signal and a potential tool for deception. Reasoning traces can leak intent, but models can also produce plausible-sounding yet dishonest rationalizations in CoT (e.g., "I added this code per company policy"), which may actively mislead the monitor.
+**Key Challenge**: CoT may simultaneously serve as a valuable safety signal and a potential tool for deception. Reasoning traces can leak intent, but models can also produce plausible-sounding yet dishonest rationalizations in CoT (e.g., "I added this code per company policy"), which may actively mislead the monitor.
 
-**Paper Goals**: Systematically evaluate the value of CoT monitoring under adversarial settings, quantify its advantages and disadvantages relative to action-only monitoring, and design a more robust monitoring protocol.
+**Goal**: Systematically evaluate the value of CoT monitoring under adversarial settings, quantify its advantages and disadvantages relative to action-only monitoring, and design a more robust monitoring protocol.
 
-**Starting Point**: A red-team/blue-team adversarial evaluation framework is adopted. The red team designs multiple attack strategies (baseline, stealth, framing, monitor notice, few-shot, finetuning) to instruct untrusted models to perform covert malicious side tasks while completing coding assignments; the blue team uses a weaker monitor model for detection.
+**Key Insight**: A red-team/blue-team adversarial evaluation framework is adopted. The red team designs multiple attack strategies (baseline, stealth, framing, monitor notice, few-shot, finetuning) to instruct untrusted models to perform covert malicious side tasks while completing coding assignments; the blue team uses a weaker monitor model for detection.
 
 **Core Idea**: CoT monitoring and action-only monitoring provide complementary signals—the former excels on subtle attacks, the latter on non-subtle ones. A hybrid approach that independently scores both and combines them via weighted fusion is optimal across all scenarios.
 

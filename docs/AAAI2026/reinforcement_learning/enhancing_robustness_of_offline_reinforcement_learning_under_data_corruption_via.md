@@ -28,13 +28,13 @@ This paper is the first to apply Sharpness-Aware Minimization (SAM) as a plug-an
 
 ## Background & Motivation
 
-**State of the Field**: Offline RL learns policies from static datasets, avoiding online interaction. IQL learns Q-functions and V-functions via expectile regression and exhibits inherent robustness to partial data corruption. RIQL augments IQL with Huber loss and quantile estimators to specifically handle dynamic corruption.
+**Background**: Offline RL learns policies from static datasets, avoiding online interaction. IQL learns Q-functions and V-functions via expectile regression and exhibits inherent robustness to partial data corruption. RIQL augments IQL with Huber loss and quantile estimators to specifically handle dynamic corruption.
 
 **Limitations of Prior Work**: Even though IQL and RIQL perform reasonably well under dynamic corruption, their performance degrades significantly under observation corruption and mixed corruption.
 
 **Core Hypothesis**: Data corruption creates sharp, unreliable minima in the loss landscape. Models that converge to such sharp minima are insufficiently robust—small perturbations in the input data can cause large errors in value estimation.
 
-**Starting Point**: Rather than modifying the algorithmic loss function, the paper proposes replacing the optimizer. SAM seeks flat regions via a two-step minimax procedure: it first finds an adversarial weight perturbation that locally maximizes the loss, then computes the gradient at this "worst-case" point to update the original parameters.
+**Key Insight**: Rather than modifying the algorithmic loss function, the paper proposes replacing the optimizer. SAM seeks flat regions via a two-step minimax procedure: it first finds an adversarial weight perturbation that locally maximizes the loss, then computes the gradient at this "worst-case" point to update the original parameters.
 
 **Core Idea**: Replace Adam with SAM as the value function optimizer to seek flat minima rather than sharp ones.
 

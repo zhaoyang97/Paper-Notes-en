@@ -28,15 +28,15 @@ ResWorld proposes a Temporal Residual World Model (TR-World) that extracts dynam
 
 ## Background & Motivation
 
-**State of the Field**: In end-to-end autonomous driving frameworks, world models serve as surrogate tasks to enhance scene understanding, replacing traditional auxiliary modules such as detection, tracking, and prediction. A common approach is to predict future scene representations (BEV features) to indirectly improve planning accuracy.
+**Background**: In end-to-end autonomous driving frameworks, world models serve as surrogate tasks to enhance scene understanding, replacing traditional auxiliary modules such as detection, tracking, and prediction. A common approach is to predict future scene representations (BEV features) to indirectly improve planning accuracy.
 
 **Limitations of Prior Work**: (a) The vast majority of information in scene representations corresponds to static objects (ground, buildings), which world models redundantly model—since static objects do not change position across future frames, predicting them is unnecessary. (b) Dynamic objects (vehicles, pedestrians) are critical for planning but are difficult to identify from the scene without relying on perception tasks. (c) The predicted future scene representations lack deep interaction with planned trajectories and are therefore underutilized.
 
-**Root Cause**: World models waste computational capacity on static objects, inadequately model dynamic objects, and fail to effectively feed predicted future information back into trajectory planning.
+**Key Challenge**: World models waste computational capacity on static objects, inadequately model dynamic objects, and fail to effectively feed predicted future information back into trajectory planning.
 
-**Paper Goals**: (a) Focus world model capacity on dynamic object modeling; (b) distinguish dynamic from static objects without auxiliary perception tasks; (c) directly leverage predicted future BEV features to refine trajectories.
+**Goal**: (a) Focus world model capacity on dynamic object modeling; (b) distinguish dynamic from static objects without auxiliary perception tasks; (c) directly leverage predicted future BEV features to refine trajectories.
 
-**Starting Point**: Aligning BEV features from different timestamps to a common coordinate frame and computing their difference—the temporal residual—naturally captures the changes attributable to dynamic objects.
+**Key Insight**: Aligning BEV features from different timestamps to a common coordinate frame and computing their difference—the temporal residual—naturally captures the changes attributable to dynamic objects.
 
 **Core Idea**: "Subtract to simplify"—temporal residuals naturally decouple dynamic and static objects, allowing the world model to predict only the future distribution of dynamic components.
 

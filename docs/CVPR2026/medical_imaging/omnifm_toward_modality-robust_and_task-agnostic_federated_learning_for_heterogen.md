@@ -28,15 +28,15 @@ This paper proposes OmniFM, a modality-robust and task-agnostic federated learni
 
 ## Background & Motivation
 
-1. **State of the Field**: Federated learning (FL) has emerged as the dominant paradigm for cross-institutional collaborative training on medical images, enabling joint model training without sharing raw data. Existing FL methods are primarily designed for specific tasks (e.g., CNNs for classification, U-Nets for segmentation) and assume homogeneous imaging modalities.
+1. **Background**: Federated learning (FL) has emerged as the dominant paradigm for cross-institutional collaborative training on medical images, enabling joint model training without sharing raw data. Existing FL methods are primarily designed for specific tasks (e.g., CNNs for classification, U-Nets for segmentation) and assume homogeneous imaging modalities.
 
 2. **Limitations of Prior Work**: (1) **Task binding**: Tasks such as classification, segmentation, and VQA each require customized FL pipelines, making task switching costly to re-engineer; (2) **Modality fragility**: Hospitals employ different imaging modalities (MRI, CT, PET, pathology, etc.), causing fundamentally divergent loss landscapes across local models. Aggregation pulls the global model toward conflicting local minima, resulting in slow and oscillatory convergence.
 
-3. **Root Cause**: Existing FL frameworks tightly couple federated optimization design with model architecture and task type, yielding a "one task, one pipeline" paradigm that incurs high engineering overhead and is difficult to deploy in real-world multimodal scenarios.
+3. **Key Challenge**: Existing FL frameworks tightly couple federated optimization design with model architecture and task type, yielding a "one task, one pipeline" paradigm that incurs high engineering overhead and is difficult to deploy in real-world multimodal scenarios.
 
-4. **Paper Goals**: (1) Can a unified FL pipeline be constructed that is reusable across tasks? (2) When tasks are fixed but modalities are heterogeneous, can stable optimization behavior be maintained?
+4. **Goal**: (1) Can a unified FL pipeline be constructed that is reusable across tasks? (2) When tasks are fixed but modalities are heterogeneous, can stable optimization behavior be maintained?
 
-5. **Starting Point**: A frequency-domain insight—low-frequency spectral components across different modalities exhibit strong cross-modal consistency, encoding modality-invariant anatomical structural information. This property can bridge representational gaps between modalities.
+5. **Key Insight**: A frequency-domain insight—low-frequency spectral components across different modalities exhibit strong cross-modal consistency, encoding modality-invariant anatomical structural information. This property can bridge representational gaps between modalities.
 
 6. **Core Idea**: Frequency-domain spectral embeddings serve as cross-modal anchors. Through a global retrieval–fusion–prompting mechanism, modality-invariant knowledge is injected into local representations, enabling a "single pipeline across tasks and modalities" federated learning framework.
 

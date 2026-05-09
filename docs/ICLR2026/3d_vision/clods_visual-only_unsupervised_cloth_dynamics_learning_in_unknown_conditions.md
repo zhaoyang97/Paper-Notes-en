@@ -28,21 +28,21 @@ CloDS proposes the first framework for unsupervised cloth dynamics learning from
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning has achieved significant progress in simulating dynamic systems (fluids, cloth, multi-body dynamics), but existing methods heavily rely on known physical properties as supervision signals (e.g., particle positions, mesh node coordinates).
+**Background**: Deep learning has achieved significant progress in simulating dynamic systems (fluids, cloth, multi-body dynamics), but existing methods heavily rely on known physical properties as supervision signals (e.g., particle positions, mesh node coordinates).
 
 **Limitations of Prior Work**:
    - In real-world scenarios, physical properties (material parameters, environmental conditions) are often unknown, limiting practical applicability.
    - Intuitive physics methods (learning dynamics from visual observations) primarily target rigid body interactions and perform poorly on continuum mechanics, especially cloth.
    - Dynamic scene novel view synthesis methods fail to generalize to unseen frames; video prediction methods struggle to maintain temporal consistency under frequent self-occlusion.
 
-**Root Cause**: Cloth has an infinite-dimensional state space, complex self-occlusion, and large nonlinear deformations. Existing particle representations (e.g., NeuroFluid) are ill-suited for the thin-sheet structure of cloth, while directly applying mesh-based Gaussian Splatting introduces perspective distortion due to self-occlusion.
+**Key Challenge**: Cloth has an infinite-dimensional state space, complex self-occlusion, and large nonlinear deformations. Existing particle representations (e.g., NeuroFluid) are ill-suited for the thin-sheet structure of cloth, while directly applying mesh-based Gaussian Splatting introduces perspective distortion due to self-occlusion.
 
-**Paper Goals**:
+**Goal**:
    - Define and solve the Cloth Dynamics Grounding (CDG) problem: unsupervised cloth dynamics learning from multi-view videos.
    - Design a differentiable 2D↔3D mapping that enables GNN dynamics models to be trained with pixel-level losses.
    - Resolve rendering distortions under large deformations and severe self-occlusion.
 
-**Starting Point**: Decompose the problem into the joint learning of three probabilistic models — rendering $p(Y_t|M_t)$, inverse rendering $p(M_t|Y_{1:t})$, and dynamics transition $p(M_{t+1}|M_t)$ — chained through a Differentiable Visual Computing (DVC) framework.
+**Key Insight**: Decompose the problem into the joint learning of three probabilistic models — rendering $p(Y_t|M_t)$, inverse rendering $p(M_t|Y_{1:t})$, and dynamics transition $p(M_{t+1}|M_t)$ — chained through a Differentiable Visual Computing (DVC) framework.
 
 **Core Idea**: Establish a differentiable, temporally consistent 2D-3D mapping via mesh-based Gaussian Splatting with dual-position opacity modulation, inverting 3D mesh sequences from video as pseudo-labels for dynamics learning.
 

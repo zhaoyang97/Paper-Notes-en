@@ -29,15 +29,15 @@ Through evaluating over 10,000 research proposals, this paper systematically rev
 
 ## Background & Motivation
 
-**State of the Field**: Multi-agent systems (MAS) are increasingly employed for open-ended creative generation tasks such as research hypothesis generation, strategic planning, and creative design, under the expectation that collective interaction among multiple agents broadens the exploration space. MAS frameworks typically assign different roles or perspectives to individual agents, anticipating that their collision of viewpoints will yield diverse outputs.
+**Background**: Multi-agent systems (MAS) are increasingly employed for open-ended creative generation tasks such as research hypothesis generation, strategic planning, and creative design, under the expectation that collective interaction among multiple agents broadens the exploration space. MAS frameworks typically assign different roles or perspectives to individual agents, anticipating that their collision of viewpoints will yield diverse outputs.
 
 **Limitations of Prior Work**: (1) Whether MAS genuinely produces greater diversity than single-model generation has never been systematically validated; (2) existing MAS frameworks are typically built on homogeneous underlying models that share pre-training distributions and alignment objectives, meaning multi-agent interaction may merely amplify shared priors rather than introduce genuine diversity; (3) the conditions under which MAS backfires — not expanding the solution space but instead causing premature convergence — remain unclear.
 
-**Root Cause**: Intuitively, more interaction should yield more diverse outcomes; however, interaction itself may be the source of diversity loss. Increased collaboration leads to greater mutual influence and trajectory synchronization, ultimately triggering diversity collapse.
+**Key Challenge**: Intuitively, more interaction should yield more diverse outcomes; however, interaction itself may be the source of diversity loss. Increased collaboration leads to greater mutual influence and trajectory synchronization, ultimately triggering diversity collapse.
 
-**Paper Goals**: To systematically diagnose diversity problems in MAS creative generation across three bottom-up levels: model level, cognitive level, and system level.
+**Goal**: To systematically diagnose diversity problems in MAS creative generation across three bottom-up levels: model level, cognitive level, and system level.
 
-**Starting Point**: Research proposal generation is adopted as a standardized creative task, as it is both open-ended and structurally constrained, making it suitable for quantitative evaluation. The study employs a design of 20 topics × 50 independent discussions = 1,000 proposals per configuration.
+**Key Insight**: Research proposal generation is adopted as a standardized creative task, as it is both open-ended and structurally constrained, making it suitable for quantitative evaluation. The study employs a design of 20 topics × 50 independent discussions = 1,000 proposals per configuration.
 
 **Core Idea**: Diversity collapse is a form of collective failure driven by structural coupling — interaction structures unintentionally contract agents' exploration space, independent of model capability.
 

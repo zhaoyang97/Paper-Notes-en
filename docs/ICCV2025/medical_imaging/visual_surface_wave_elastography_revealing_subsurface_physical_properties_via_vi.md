@@ -28,15 +28,15 @@ This paper proposes VSWE (Visual Surface Wave Elastography), a method that extra
 
 ## Background & Motivation
 
-**State of the Field**: Elastography is an important technique for measuring tissue stiffness, applicable to detecting tumors, musculoskeletal degeneration, liver disease, and more. Existing elastography modalities—transient elastography, shear wave elastography, and MR elastography—all rely on expensive specialized equipment and trained operators.
+**Background**: Elastography is an important technique for measuring tissue stiffness, applicable to detecting tumors, musculoskeletal degeneration, liver disease, and more. Existing elastography modalities—transient elastography, shear wave elastography, and MR elastography—all rely on expensive specialized equipment and trained operators.
 
 **Limitations of Prior Work**: (a) Ultrasound and MRI elastography systems are cost-prohibitive and unsuitable for home use; (b) trained medical experts are required, limiting the feasibility of routine screening; (c) existing video-based material characterization methods (e.g., Visual Vibration Tomography) require modeling the global vibration modes of the entire object, which is impractical for complex geometries such as the human body.
 
-**Root Cause**: External excitation induces visible surface waves on the human body (e.g., skin ripples caused by a massage gun) that carry information about subsurface physical properties, yet no method currently exists to extract this information from video.
+**Key Challenge**: External excitation induces visible surface waves on the human body (e.g., skin ripples caused by a massage gun) that carry information about subsurface physical properties, yet no method currently exists to extract this information from video.
 
-**Paper Goals**: Infer subsurface layer thickness $T$ and stiffness $E$ from a video of surface wave propagation.
+**Goal**: Infer subsurface layer thickness $T$ and stiffness $E$ from a video of surface wave propagation.
 
-**Starting Point**: The approach draws inspiration from seismology, where surface waves are used to infer subsurface structure, but replaces sparse sensors with dense visual data (video). The key insight is that the dispersion relation (wavenumber–frequency relationship) is fully determined by thickness and stiffness under common biomechanical assumptions; therefore, one need only extract the dispersion relation from video and solve for the matching physical parameters.
+**Key Insight**: The approach draws inspiration from seismology, where surface waves are used to infer subsurface structure, but replaces sparse sensors with dense visual data (video). The key insight is that the dispersion relation (wavenumber–frequency relationship) is fully determined by thickness and stiffness under common biomechanical assumptions; therefore, one need only extract the dispersion relation from video and solve for the matching physical parameters.
 
 **Core Idea**: Extract the dispersion relation from a surface wave video, then identify the best-matching thickness and stiffness via FEM simulation combined with SSIM-based optimization, enabling purely video-based inference of subsurface physical properties.
 

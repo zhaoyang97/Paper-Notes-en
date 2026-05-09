@@ -29,7 +29,7 @@ This paper introduces a new task termed multi-view customization and proposes th
 
 ## Background & Motivation
 
-**State of the Field**: Controllable image generation has two key dimensions—camera control (multi-view generation) and customization (preserving subject identity from reference images). Each dimension has been extensively studied, yet methods that **jointly** address both remain virtually absent.
+**Background**: Controllable image generation has two key dimensions—camera control (multi-view generation) and customization (preserving subject identity from reference images). Each dimension has been extensively studied, yet methods that **jointly** address both remain virtually absent.
 
 **Limitations of Prior Work**:
 - Traditional customization methods (DreamBooth, Custom Diffusion) do not support camera pose control.
@@ -37,11 +37,11 @@ This paper introduces a new task termed multi-view customization and proposes th
 - Customization methods with viewpoint control (CustomDiffusion360, CustomNet) focus solely on the subject, neglecting cross-view consistency of the background.
 - Directly applying customization methods (e.g., DreamBooth-LoRA) to multi-view generation backbones leads to loss of subject identity and degraded camera control.
 
-**Root Cause**: Multi-view generation relies on large-scale data to learn 3D geometry, whereas customization scenarios provide only a handful of reference images—a fundamental tension between data scarcity and the demand for geometric consistency.
+**Key Challenge**: Multi-view generation relies on large-scale data to learn 3D geometry, whereas customization scenarios provide only a handful of reference images—a fundamental tension between data scarcity and the demand for geometric consistency.
 
-**Paper Goals**: Define and address the "multi-view customization" task: (i) generate images matching specified camera poses; (ii) preserve subject identity from reference images; (iii) maintain cross-view consistency for both subject and background.
+**Goal**: Define and address the "multi-view customization" task: (i) generate images matching specified camera poses; (ii) preserve subject identity from reference images; (iii) maintain cross-view consistency for both subject and background.
 
-**Starting Point**: Decouple the training and inference stages—use limited data during training to learn subject identity and geometry, and apply explicit geometric constraints (depth rendering) at inference to enforce consistency.
+**Key Insight**: Decouple the training and inference stages—use limited data during training to learn subject identity and geometry, and apply explicit geometric constraints (depth rendering) at inference to enforce consistency.
 
 **Core Idea**: Leverage a video diffusion backbone to learn temporal consistency, employ feature field modeling for geometry, and use depth-guided rendering at inference to ensure cross-view geometric consistency.
 

@@ -28,13 +28,13 @@ This paper systematically demonstrates that causal interventions (activation pat
 
 ## Background & Motivation
 
-**State of the Field**: Causal intervention is the core methodology of mechanistic interpretability—manipulating internal representations via activation patching, DAS, SAEs, and related techniques to infer what those representations encode. Even correlation-based methods such as SAEs and PCA typically rely on causal intervention as the ultimate arbiter of whether a feature is genuinely meaningful. Causal intervention thus occupies a central role in claims about functional mechanisms.
+**Background**: Causal intervention is the core methodology of mechanistic interpretability—manipulating internal representations via activation patching, DAS, SAEs, and related techniques to infer what those representations encode. Even correlation-based methods such as SAEs and PCA typically rely on causal intervention as the ultimate arbiter of whether a feature is genuinely meaningful. Causal intervention thus occupies a central role in claims about functional mechanisms.
 
 **Limitations of Prior Work**: These causal intervention methods implicitly assume—without verification—that the counterfactual model states produced by intervention are "realistic" for the target model. For instance, some activation patching experiments amplify feature values by a factor of 15, under which conditions the intervened representations are likely to deviate severely from the model's natural distribution.
 
-**Root Cause**: If intervened representations are out-of-distribution, downstream layers may respond to these OOD inputs by activating hidden pathways never encountered during training, causing the observed causal effects to be spurious. What appears to be a discovery of the model's natural mechanism may in fact be an artifact of the intervention.
+**Key Challenge**: If intervened representations are out-of-distribution, downstream layers may respond to these OOD inputs by activating hidden pathways never encountered during training, causing the observed causal effects to be spurious. What appears to be a discovery of the model's natural mechanism may in fact be an artifact of the intervention.
 
-**Starting Point**: The authors proceed along both theoretical and empirical dimensions simultaneously: (1) establishing that divergence is pervasive; (2) distinguishing when divergence is benign versus harmful; (3) proposing a mitigation strategy. This constitutes a meta-level examination of the interpretability methodology itself.
+**Key Insight**: The authors proceed along both theoretical and empirical dimensions simultaneously: (1) establishing that divergence is pervasive; (2) distinguishing when divergence is benign versus harmful; (3) proposing a mitigation strategy. This constitutes a meta-level examination of the interpretability methodology itself.
 
 **Core Idea**: Not all shifts are harmful—shifts within the behavioral null space are benign, whereas shifts that activate hidden pathways or trigger dormant behavioral changes are harmful. By constraining intervened representations to remain near the natural manifold via CL loss, harmful divergence can be systematically mitigated.
 

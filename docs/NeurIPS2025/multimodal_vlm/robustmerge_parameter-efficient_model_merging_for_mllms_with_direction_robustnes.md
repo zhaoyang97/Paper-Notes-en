@@ -37,7 +37,7 @@ However, existing model merging methods (e.g., Task Arithmetic, TIES-merging, DA
 
 **Singular Value Disparity**: LoRA modules exhibit a significant head-tail gap in singular values; directions corresponding to large singular values are inherently robust during merging, whereas directions corresponding to small singular values are highly susceptible to perturbation.
 
-**Root Cause**: For PEFT, the problem is not sign conflicts but **directional instability**—task-specific knowledge directions corresponding to small singular values are altered during merging, causing performance collapse.
+**Key Challenge**: For PEFT, the problem is not sign conflicts but **directional instability**—task-specific knowledge directions corresponding to small singular values are altered during merging, causing performance collapse.
 
 Additionally, existing high-performing methods suffer from scalability issues: AdaMerging requires validation data, EMR-Merging requires additional storage, and LoraHub requires test-time optimization—none of which generalize to unseen tasks. RobustMerge targets a **training-free, data-free, storage-free** parameter-efficient merging algorithm that generalizes to unseen tasks.
 

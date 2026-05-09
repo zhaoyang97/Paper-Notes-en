@@ -31,7 +31,7 @@ This paper presents MVGBench, a comprehensive evaluation framework for multi-vie
 
 ### Limitations of Prior Work
 
-**State of the Field**: Multi-view generation (MVG) models are central to modern 3D content creation, yet **evaluation methodologies lag significantly behind**, suffering from three key problems:
+**Background**: Multi-view generation (MVG) models are central to modern 3D content creation, yet **evaluation methodologies lag significantly behind**, suffering from three key problems:
 
 **Unfair comparison against GT**: Generative models sample from the solution-space distribution and may produce outputs that differ from the ground truth yet remain valid; existing per-view PSNR/SSIM metrics ignore 3D consistency entirely.
 

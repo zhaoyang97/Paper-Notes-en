@@ -29,15 +29,15 @@ This paper proposes LaGoVAD, a language-guided open-world video anomaly detectio
 
 ## Background & Motivation
 
-1. **State of the Field**: Video Anomaly Detection (VAD) aims to identify video frames that deviate from expected patterns and is widely applied in intelligent surveillance. Weakly supervised methods have achieved strong performance under closed-set settings in recent years.
+1. **Background**: Video Anomaly Detection (VAD) aims to identify video frames that deviate from expected patterns and is widely applied in intelligent surveillance. Weakly supervised methods have achieved strong performance under closed-set settings in recent years.
 
 2. **Limitations of Prior Work**: Existing methods assume a fixed anomaly definition and cannot handle scenarios in open-world settings where the definition may shift with changing requirements. For example, not wearing a mask is anomalous during a flu outbreak but normal otherwise — a manifestation of concept drift.
 
-3. **Root Cause**: Open-set and domain generalization methods can detect novel anomaly categories outside the training set, but still assume a static anomaly definition. They fail when the label of the same behavior changes across contexts (e.g., a pedestrian walking on a road is normal in a crime dataset but anomalous in highway surveillance).
+3. **Key Challenge**: Open-set and domain generalization methods can detect novel anomaly categories outside the training set, but still assume a static anomaly definition. They fail when the label of the same behavior changes across contexts (e.g., a pedestrian walking on a road is normal in a crime dataset but anomalous in highway surveillance).
 
-4. **Paper Goals**: To propose an open-world VAD paradigm that allows users to dynamically define anomalies in natural language at inference time, fundamentally eliminating concept drift.
+4. **Goal**: To propose an open-world VAD paradigm that allows users to dynamically define anomalies in natural language at inference time, fundamentally eliminating concept drift.
 
-5. **Starting Point**: The anomaly definition $Z$ is explicitly modeled as a random variable, and prediction is conditioned on the joint function $\Phi:(V,Z)\rightarrow Y$ of video $V$ and definition $Z$, keeping $P(Y|V,Z)$ invariant and theoretically eliminating concept drift.
+5. **Key Insight**: The anomaly definition $Z$ is explicitly modeled as a random variable, and prediction is conditioned on the joint function $\Phi:(V,Z)\rightarrow Y$ of video $V$ and definition $Z$, keeping $P(Y|V,Z)$ invariant and theoretically eliminating concept drift.
 
 6. **Core Idea**: By treating the anomaly definition as an input condition, the model learns a joint mapping over video–text–label triplets, supported by large-scale diverse datasets for generalization.
 

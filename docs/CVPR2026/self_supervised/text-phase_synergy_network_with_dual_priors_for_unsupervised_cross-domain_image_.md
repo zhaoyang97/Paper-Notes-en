@@ -31,7 +31,7 @@ This paper proposes TPSNet, which leverages CLIP-learned domain prompts as text 
 
 ### Limitations of Prior Work
 
-**State of the Field**: **Unsupervised Cross-Domain Image Retrieval (UCDIR)** aims to retrieve semantically equivalent images across heterogeneous image domains (e.g., real photos and sketches) without annotated data. The core challenge lies in the compounded difficulty of lacking labels and substantial domain distribution gaps.
+**Background**: **Unsupervised Cross-Domain Image Retrieval (UCDIR)** aims to retrieve semantically equivalent images across heterogeneous image domains (e.g., real photos and sketches) without annotated data. The core challenge lies in the compounded difficulty of lacking labels and substantial domain distribution gaps.
 
 **Two key limitations of existing methods**: (1) **Pseudo-label noise** — prior methods generate pseudo-labels via K-means clustering as supervision signals, but such discrete labels are frequently inaccurate, introducing noise into both intra-domain representation learning and cross-domain alignment, while also yielding unreliable class prototypes; (2) **Semantic degradation from cross-domain alignment** — strategies such as adversarial training and statistical distribution alignment inevitably compromise semantic information when suppressing domain discrepancies, as domain-specific and semantic features are entangled.
 

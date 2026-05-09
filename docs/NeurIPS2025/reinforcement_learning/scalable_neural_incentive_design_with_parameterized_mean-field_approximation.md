@@ -27,13 +27,13 @@ content_hash: 6c8e17bbfb589617
 This paper proposes the AMID algorithm, which formalizes the multi-agent incentive design (ID) problem as a parameterized mean-field game (PMFG), proves that the finite-$N$-agent objective approximates the infinite-population limit at a rate of $\mathscr{O}(1/\sqrt{N})$, and achieves substantial revenue improvements across multiple auction settings.
 
 ## Background & Motivation
-**State of the Field**: Incentive Design (ID) aims to construct incentive mechanisms for multi-agent systems that induce desirable Nash equilibria, with broad applications in auctions, pricing, and traffic control.
+**Background**: Incentive Design (ID) aims to construct incentive mechanisms for multi-agent systems that induce desirable Nash equilibria, with broad applications in auctions, pricing, and traffic control.
 
 **Limitations of Prior Work**: When the number of agents $N$ is large, directly solving the $N$-player game incurs prohibitive computational complexity; existing methods do not scale to large-scale settings.
 
-**Root Cause**: Exact optimization of finite-$N$ games is intractable, yet naive mean-field approximations lack rigorous approximation guarantees.
+**Key Challenge**: Exact optimization of finite-$N$ games is intractable, yet naive mean-field approximations lack rigorous approximation guarantees.
 
-**Starting Point**: Under an exchangeability assumption, the ID problem is reformulated as a parameterized mean-field game, leveraging the infinite-population limit to reduce complexity.
+**Key Insight**: Under an exchangeability assumption, the ID problem is reformulated as a parameterized mean-field game, leveraging the infinite-population limit to reduce complexity.
 
 **Core Idea**: Mean-field game + adjoint method for efficient gradient computation = a scalable solution for large-scale incentive design.
 

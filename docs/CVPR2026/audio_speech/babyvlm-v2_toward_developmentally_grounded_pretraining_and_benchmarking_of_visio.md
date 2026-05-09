@@ -28,13 +28,13 @@ This paper proposes BabyVLM-V2, a framework that constructs three formats of pre
 
 ## Background & Motivation
 
-**State of the Field**: Vision foundation models rely on scaling laws and massive datasets for pretraining, yet young children develop robust perceptual and reasoning abilities from extremely limited visual input — approximately 40,000 waking hours from birth to age three. This discrepancy presents a natural target for sample-efficient pretraining research.
+**Background**: Vision foundation models rely on scaling laws and massive datasets for pretraining, yet young children develop robust perceptual and reasoning abilities from extremely limited visual input — approximately 40,000 waking hours from birth to age three. This discrepancy presents a natural target for sample-efficient pretraining research.
 
 **Limitations of Prior Work**: BabyVLM-V1 suffers from four key shortcomings: (1) it utilizes only ~1/3 of SAYCam footage (67K image pairs), covering a minimal fraction of available data; (2) it supports only image–text pairs, with no support for video or multi-turn dialogue; (3) its 4 evaluation tasks were designed intuitively rather than grounded in standardized psychological assessments; and (4) the model's open-set performance is near zero, requiring logit post-processing for evaluation.
 
-**Root Cause**: The core challenge lies in training a foundation model with diverse capabilities analogous to those of young children while respecting the constraints of infants' limited sensory experience, and in evaluating such models fairly using developmental psychology standards.
+**Key Challenge**: The core challenge lies in training a foundation model with diverse capabilities analogous to those of young children while respecting the constraints of infants' limited sensory experience, and in evaluating such models fairly using developmental psychology standards.
 
-**Starting Point**: (1) Maximize utilization of the SAYCam corpus and construct multi-format data to support diverse downstream tasks; (2) adopt the NIH Baby Toolbox® — released in February 2025 and currently the most authoritative tool for assessing child neurodevelopment — as the basis for benchmark design.
+**Key Insight**: (1) Maximize utilization of the SAYCam corpus and construct multi-format data to support diverse downstream tasks; (2) adopt the NIH Baby Toolbox® — released in February 2025 and currently the most authoritative tool for assessing child neurodevelopment — as the basis for benchmark design.
 
 **Core Idea**: Engineer standardized developmental psychology assessments into computer vision tasks for AI evaluation, thereby establishing the DevCV Toolbox.
 

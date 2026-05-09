@@ -30,13 +30,13 @@ This paper proposes Relation-R1, the first unified framework for binary and N-ar
 
 ## Background & Motivation
 
-- **State of the Field**: Visual relation understanding is central to human-like cognition. While current MLLMs excel at object-level grounding and region captioning, they remain weak at comprehending semantic relations between objects — even simple binary relation detection falls short of expectations.
+- **Background**: Visual relation understanding is central to human-like cognition. While current MLLMs excel at object-level grounding and region captioning, they remain weak at comprehending semantic relations between objects — even simple binary relation detection falls short of expectations.
 
 - **Limitations of Prior Work**: N-ary relations are substantially more complex than binary ones. Binary relations only require identifying the interaction between two objects (e.g., "child-drinking-glass"), whereas N-ary relations demand recognizing multiple entities fulfilling distinct semantic roles within an activity (e.g., for "drinking": agent=child, liquid=milk, container=glass). Existing models neglect functional dependencies among multiple entities (e.g., a glass serving as a container for milk), producing shallow relational triples that fail to capture deeper activity semantics.
 
-- **Root Cause**: Models over-rely on linguistic priors — upon seeing a person holding a cup, they default to outputting "person drinks milk" even when visual evidence only supports "holding." This stems from co-occurrence biases in training text rather than visually grounded semantic reasoning. Additionally, SFT alone overfits fixed training patterns and degrades on novel compositions, while pure RL (e.g., DeepSeek-R1 style) struggles to ensure format consistency in structured output tasks.
+- **Key Challenge**: Models over-rely on linguistic priors — upon seeing a person holding a cup, they default to outputting "person drinks milk" even when visual evidence only supports "holding." This stems from co-occurrence biases in training text rather than visually grounded semantic reasoning. Additionally, SFT alone overfits fixed training patterns and degrades on novel compositions, while pure RL (e.g., DeepSeek-R1 style) struggles to ensure format consistency in structured output tasks.
 
-- **Paper Goals**: To propose a unified framework that simultaneously models pairwise relations and multi-role activities, overcoming the limitations of task-specific architectures and combining the strengths of SFT and RL.
+- **Goal**: To propose a unified framework that simultaneously models pairwise relations and multi-role activities, overcoming the limitations of task-specific architectures and combining the strengths of SFT and RL.
 
 ## Method
 

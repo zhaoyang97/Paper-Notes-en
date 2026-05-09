@@ -29,7 +29,7 @@ O3N is the first work to introduce the omnidirectional open-vocabulary occupancy
 
 ## Background & Motivation
 
-**State of the Field**: Omnidirectional images (360° panoramas) are indispensable in autonomous driving and embodied intelligence, providing complete spatial coverage and semantic continuity. 3D semantic occupancy prediction lifts 2D visual perception into 3D space and serves as the foundation for precise spatial reasoning.
+**Background**: Omnidirectional images (360° panoramas) are indispensable in autonomous driving and embodied intelligence, providing complete spatial coverage and semantic continuity. 3D semantic occupancy prediction lifts 2D visual perception into 3D space and serves as the foundation for precise spatial reasoning.
 
 **Dual Limitations of Existing Methods**:
 - **Viewpoint Limitation**: Most existing occupancy prediction methods rely on multi-view surround cameras (e.g., 6 cameras in nuScenes) and are ill-suited for robots and embodied agents that use a single panoramic camera.

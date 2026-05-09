@@ -28,11 +28,11 @@ This paper systematically analyzes the deficiencies of existing rendered synthet
 
 ## Background & Motivation
 
-**State of the Field**: Scene text recognition (STR) relies on large-scale training data. Real-world annotation is expensive and class-imbalanced, making synthetic data a cost-effective alternative. However, a significant domain gap exists between existing synthetic data and real-world data.
+**Background**: Scene text recognition (STR) relies on large-scale training data. Real-world annotation is expensive and class-imbalanced, making synthetic data a cost-effective alternative. However, a significant domain gap exists between existing synthetic data and real-world data.
 
 **Limitations of Prior Work**: Rendering-based methods still outperform generative approaches — diffusion-model-based methods yield far lower text correctness (best editing accuracy of only 84.67%) and incur 10–10,000× higher computational cost. Existing synthetic sets are dominated by single semantically meaningful words, lacking non-semantic text (license plates, phone numbers), incomplete text, and multi-word phrases. Mainstream engines use only 1.2K–3.6K fonts, insufficient to cover artistic fonts encountered in the wild. Layouts are overly uniform, with characters arranged horizontally at uniform size, failing to simulate curved, multi-directional, or multi-scale text.
 
-**Root Cause**: Even state-of-the-art models trained on the largest real datasets show substantial room for improvement, indicating that the data dimension of STR remains far from solved and higher-quality synthetic data is needed.
+**Key Challenge**: Even state-of-the-art models trained on the largest real datasets show substantial room for improvement, indicating that the data dimension of STR remains far from solved and higher-quality synthetic data is needed.
 
 ## Method
 

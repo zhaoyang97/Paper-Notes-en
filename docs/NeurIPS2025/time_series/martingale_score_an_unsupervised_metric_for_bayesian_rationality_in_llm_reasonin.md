@@ -29,15 +29,15 @@ This paper proposes the Martingale Score as an unsupervised metric that quantifi
 
 ## Background & Motivation
 
-**State of the Field**: LLM reasoning techniques (CoT, reinforced reasoning, etc.) are advancing rapidly, yet whether reasoning processes genuinely "seek truth" remains unclear.
+**Background**: LLM reasoning techniques (CoT, reinforced reasoning, etc.) are advancing rapidly, yet whether reasoning processes genuinely "seek truth" remains unclear.
 
 **Limitations of Prior Work**: Existing evaluation methods are primarily outcome-based and cannot assess the quality of the reasoning process itself; they are also inapplicable in open-ended domains lacking ground truth, such as value judgments and academic peer review.
 
-**Root Cause**: LLM reasoning may exhibit "belief entrenchment"—systematically biasing belief updates toward prior views rather than new evidence—yet it is difficult to distinguish rational updating from bias in individual cases.
+**Key Challenge**: LLM reasoning may exhibit "belief entrenchment"—systematically biasing belief updates toward prior views rather than new evidence—yet it is difficult to distinguish rational updating from bias in individual cases.
 
-**Paper Goals**: To propose a ground-truth-free, domain-agnostic metric for evaluating the quality of reasoning processes.
+**Goal**: To propose a ground-truth-free, domain-agnostic metric for evaluating the quality of reasoning processes.
 
-**Starting Point**: The martingale property in Bayesian statistics states that the direction of rational belief updates should not be predictable from the prior.
+**Key Insight**: The martingale property in Bayesian statistics states that the direction of rational belief updates should not be predictable from the prior.
 
 **Core Idea**: If a model's belief updates can be reliably predicted from its prior beliefs, the martingale property is violated, indicating the presence of belief entrenchment.
 

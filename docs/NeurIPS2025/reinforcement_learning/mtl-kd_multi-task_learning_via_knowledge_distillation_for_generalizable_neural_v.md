@@ -37,9 +37,9 @@ The Vehicle Routing Problem (VRP) is a classical NP-hard combinatorial optimizat
 
 **Light-Encoder-Heavy-Decoder architecture**: This design demonstrates excellent scale generalization on single-task VRPs, as the heavy decoder re-evaluates relationships among remaining nodes at each decoding step. However, its substantial memory and computational demands render RL training infeasible, while supervised learning (SL) faces a scarcity of labeled data across diverse VRP variants.
 
-**Root Cause**: Achieving scale generalization in multi-task VRP solving requires a heavy-decoder architecture, yet training such a decoder in the multi-task setting is extremely challenging — RL training is prohibitively expensive, and SL lacks labeled data.
+**Key Challenge**: Achieving scale generalization in multi-task VRP solving requires a heavy-decoder architecture, yet training such a decoder in the multi-task setting is extremely challenging — RL training is prohibitively expensive, and SL lacks labeled data.
 
-**Starting Point**: The paper bypasses these training difficulties via knowledge distillation. Lightweight single-task teacher models are first trained independently with RL, and their policy knowledge is then transferred label-free to a heavy-decoder student model via KL-divergence distillation.
+**Key Insight**: The paper bypasses these training difficulties via knowledge distillation. Lightweight single-task teacher models are first trained independently with RL, and their policy knowledge is then transferred label-free to a heavy-decoder student model via KL-divergence distillation.
 
 ## Method
 

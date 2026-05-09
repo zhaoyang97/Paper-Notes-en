@@ -28,15 +28,15 @@ Using controlled puzzle environments, this paper systematically reveals a three-
 
 ## Background & Motivation
 
-**State of the Field**: LRMs such as o3, DeepSeek-R1, and Claude-3.7-Thinking achieve impressive results on benchmarks like MATH and AIME, yet these benchmarks are susceptible to data contamination and do not permit controlled manipulation of task complexity.
+**Background**: LRMs such as o3, DeepSeek-R1, and Claude-3.7-Thinking achieve impressive results on benchmarks like MATH and AIME, yet these benchmarks are susceptible to data contamination and do not permit controlled manipulation of task complexity.
 
 **Limitations of Prior Work**: Existing evaluations cannot answer the central question of whether LRM reasoning reflects genuine generalization or sophisticated pattern matching, nor how performance varies precisely with complexity.
 
-**Root Cause**: The fact that AIME25 performance is lower than AIME24—despite the problems being considered easier by humans—suggests data contamination. A controlled, contamination-free evaluation environment is therefore necessary.
+**Key Challenge**: The fact that AIME25 performance is lower than AIME24—despite the problems being considered easier by humans—suggests data contamination. A controlled, contamination-free evaluation environment is therefore necessary.
 
-**Paper Goals**: To systematically measure the reasoning capability boundaries of LRMs and the effectiveness of their thinking mechanisms using puzzle tasks with precisely controllable complexity.
+**Goal**: To systematically measure the reasoning capability boundaries of LRMs and the effectiveness of their thinking mechanisms using puzzle tasks with precisely controllable complexity.
 
-**Starting Point**: Four classical logic puzzles are designed (Tower of Hanoi, Checker Swapping, River Crossing, Blocksworld), each supporting continuous complexity scaling from $2^1-1$ to $2^{15}-1$ steps via a parameter $N$.
+**Key Insight**: Four classical logic puzzles are designed (Tower of Hanoi, Checker Swapping, River Crossing, Blocksworld), each supporting continuous complexity scaling from $2^1-1$ to $2^{15}-1$ steps via a parameter $N$.
 
 **Core Idea**: Controlled-complexity puzzles combined with reasoning trajectory analysis expose the "illusion of thinking" in LRMs—hard capability ceilings exist and performance is driven by training distribution rather than true reasoning.
 

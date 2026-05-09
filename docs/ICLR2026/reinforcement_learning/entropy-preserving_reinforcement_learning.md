@@ -28,13 +28,13 @@ This paper identifies the theoretical root cause of systematic policy entropy co
 
 ## Background & Motivation
 
-**State of the Field**: Policy gradient algorithms such as GRPO, PPO, and RLOO are widely adopted for RL post-training to enhance LLM reasoning capabilities. DAPO introduces asymmetric clipping to implicitly preserve entropy, while GSPO employs sequence-level clipping.
+**Background**: Policy gradient algorithms such as GRPO, PPO, and RLOO are widely adopted for RL post-training to enhance LLM reasoning capabilities. DAPO introduces asymmetric clipping to implicitly preserve entropy, while GSPO employs sequence-level clipping.
 
 **Limitations of Prior Work**: Policy gradient updates systematically collapse policy entropy — models concentrate probability mass on already high-probability correct solutions while neglecting other equally correct but lower-probability alternatives. Consequences include improved pass@1 but degraded pass@k, loss of exploration capacity, and failure to fine-tune on new tasks (sequential learning failure).
 
-**Root Cause**: When a model is already "calibrated" with respect to reward (high-probability actions receive high rewards), policy gradient updates naturally sharpen the distribution and reduce entropy — an intrinsic property of policy gradients rather than an incidental bug.
+**Key Challenge**: When a model is already "calibrated" with respect to reward (high-probability actions receive high rewards), policy gradient updates naturally sharpen the distribution and reduce entropy — an intrinsic property of policy gradients rather than an incidental bug.
 
-**Starting Point**: Theoretically characterizing the per-step entropy change reveals that it is proportional to the correlation between the advantage function and log-probabilities — breaking this correlation suffices to preserve entropy.
+**Key Insight**: Theoretically characterizing the per-step entropy change reveals that it is proportional to the correlation between the advantage function and log-probabilities — breaking this correlation suffices to preserve entropy.
 
 **Core Idea**: Modifying the advantage function by subtracting a term proportional to log-probability eliminates the correlation responsible for entropy collapse while preserving the policy improvement direction.
 

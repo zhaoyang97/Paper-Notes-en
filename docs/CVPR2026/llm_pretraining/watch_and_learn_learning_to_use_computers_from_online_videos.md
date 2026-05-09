@@ -30,13 +30,13 @@ This paper proposes Watch & Learn (W&L), a framework that leverages an Inverse D
 
 ## Background & Motivation
 
-**State of the Field**: Computer-Using Agents (CUAs) require large-scale multi-step human-computer interaction trajectories for training, but manual annotation is prohibitively expensive — OpenCUA's AgentNet dataset of 22K tasks took 6 months and over \$32,000, with scaling to millions costing upwards of \$500K.
+**Background**: Computer-Using Agents (CUAs) require large-scale multi-step human-computer interaction trajectories for training, but manual annotation is prohibitively expensive — OpenCUA's AgentNet dataset of 22K tasks took 6 months and over \$32,000, with scaling to millions costing upwards of \$500K.
 
 **Limitations of Prior Work**: Manually annotated UI datasets are limited in scale and domain coverage, making it difficult to generalize to diverse and constantly evolving applications and operating systems. Exploration-based synthesis (e.g., BAGEL, OS-Genesis) introduces significant noise, while tutorial-driven synthesis relies on fragile LLM annotations that misalign with actual user behavior.
 
-**Root Cause**: A vast repository of human-operated tutorial videos exists on platforms like YouTube, naturally encoding cross-application task workflows, but no effective method exists to convert these into structured trajectories. Prior video-to-trajectory approaches such as MONDAY achieve only ~70% accuracy through cascaded pipelines, and TongUI's reliance on MLLM action annotation is similarly unreliable, with errors compounding across steps.
+**Key Challenge**: A vast repository of human-operated tutorial videos exists on platforms like YouTube, naturally encoding cross-application task workflows, but no effective method exists to convert these into structured trajectories. Prior video-to-trajectory approaches such as MONDAY achieve only ~70% accuracy through cascaded pipelines, and TongUI's reliance on MLLM action annotation is similarly unreliable, with errors compounding across steps.
 
-**Paper Goals**: Develop a scalable, automatic pipeline to harvest internet tutorial videos and convert them into high-fidelity UI trajectories, applicable across operating systems and usable for both ICL and SFT paradigms.
+**Goal**: Develop a scalable, automatic pipeline to harvest internet tutorial videos and convert them into high-fidelity UI trajectories, applicable across operating systems and usable for both ICL and SFT paradigms.
 
 ## Method
 

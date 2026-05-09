@@ -28,15 +28,15 @@ MCP-Flow proposes a Web Agent-based automated pipeline that collects tool inform
 
 ## Background & Motivation
 
-**State of the Field**: The Model Context Protocol (MCP) is rapidly emerging as a unified framework for LLM–tool interaction, with a growing number of MCP servers and tools appearing in the community. Existing studies have begun constructing benchmarks to evaluate models' MCP usage capabilities, but significant limitations remain.
+**Background**: The Model Context Protocol (MCP) is rapidly emerging as a unified framework for LLM–tool interaction, with a growing number of MCP servers and tools appearing in the community. Existing studies have begun constructing benchmarks to evaluate models' MCP usage capabilities, but significant limitations remain.
 
 **Limitations of Prior Work**: Three critical issues: (1) existing MCP research covers only a small number of servers (≤20), far below the scale and diversity of the real MCP ecosystem; (2) server collection relies heavily on manual curation and cannot keep pace with the rapid growth of MCP servers; (3) no existing framework provides training support—they serve only as evaluation platforms and cannot translate evaluation results into improved model capabilities.
 
-**Root Cause**: A gap exists between the complexity, diversity, and rapid growth of the real MCP ecosystem and the limited MCP usage capabilities of current LLMs—even SOTA models (e.g., Claude-4-Sonnet) perform poorly under simple settings.
+**Key Challenge**: A gap exists between the complexity, diversity, and rapid growth of the real MCP ecosystem and the limited MCP usage capabilities of current LLMs—even SOTA models (e.g., Claude-4-Sonnet) perform poorly under simple settings.
 
-**Paper Goals**: (1) Automate large-scale server discovery and data collection; (2) synthesize high-quality and diverse training data; (3) validate the dataset's value across three dimensions: fine-tuning, retrieval augmentation, and complex task evaluation.
+**Goal**: (1) Automate large-scale server discovery and data collection; (2) synthesize high-quality and diverse training data; (3) validate the dataset's value across three dimensions: fine-tuning, retrieval augmentation, and complex task evaluation.
 
-**Starting Point**: Leverage a Web Agent (Playwright) to automate navigation of MCP marketplace platforms, replacing manual crawling; combine few-shot generation, slot filling, and WizardLM evolution to synthesize diverse data.
+**Key Insight**: Leverage a Web Agent (Playwright) to automate navigation of MCP marketplace platforms, replacing manual crawling; combine few-shot generation, slot filling, and WizardLM evolution to synthesize diverse data.
 
 **Core Idea**: Build a large-scale real-world MCP training dataset via an automated pipeline (server discovery + data synthesis + rigorous filtering), enabling small models to match or surpass large models in MCP tool use through fine-tuning.
 

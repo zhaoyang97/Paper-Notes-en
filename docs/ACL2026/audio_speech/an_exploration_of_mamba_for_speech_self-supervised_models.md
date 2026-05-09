@@ -29,15 +29,15 @@ This work presents the first comprehensive exploration of the Mamba architecture
 
 ## Background & Motivation
 
-**State of the Field**: Transformer-based speech SSL models (e.g., HuBERT, wav2vec 2.0) have achieved remarkable success, yet their quadratic complexity incurs high computational costs and memory bottlenecks when processing long sequences.
+**Background**: Transformer-based speech SSL models (e.g., HuBERT, wav2vec 2.0) have achieved remarkable success, yet their quadratic complexity incurs high computational costs and memory bottlenecks when processing long sequences.
 
 **Limitations of Prior Work**: (1) Although Mamba has demonstrated superior performance over Transformers in language modeling, its application in speech has been limited to isolated single-task studies. (2) Existing speech Mamba works typically report performance on par with or slightly below Transformers and often require hybrid designs. (3) A unified cross-task evaluation is lacking.
 
-**Root Cause**: While Mamba's linear time complexity is theoretically well-suited to the long-sequence nature of speech, its overall performance in speech SSL remains unclear.
+**Key Challenge**: While Mamba's linear time complexity is theoretically well-suited to the long-sequence nature of speech, its overall performance in speech SSL remains unclear.
 
-**Paper Goals**: To systematically train and evaluate Mamba-based HuBERT models, comprehensively exploring their potential as speech foundation models and feature extractors.
+**Goal**: To systematically train and evaluate Mamba-based HuBERT models, comprehensively exploring their potential as speech foundation models and feature extractors.
 
-**Starting Point**: Mamba blocks replace Transformer blocks in HuBERT while retaining the same training pipeline (two-iteration k-means pseudo-label training), with evaluation conducted across multiple tasks including ASR and SUPERB.
+**Key Insight**: Mamba blocks replace Transformer blocks in HuBERT while retaining the same training pipeline (two-iteration k-means pseudo-label training), with evaluation conducted across multiple tasks including ASR and SUPERB.
 
 **Core Idea**: Mamba's inherently causal architecture makes it particularly suitable for building causal speech SSL models, yielding distinctive advantages in streaming ASR and long-context scenarios.
 

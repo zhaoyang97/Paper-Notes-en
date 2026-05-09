@@ -27,15 +27,15 @@ This paper proposes the Hermite Eigenstructure Ansatz (HEA), which analytically 
 
 ## Background & Motivation
 
-**State of the Field**: Kernel ridge regression (KRR) serves as an important proxy for understanding neural networks (via NTK equivalence), and a well-developed eigenframework exists for predicting test error from the kernel's eigenstructure. This framework relies on the eigenvalues and eigenfunctions of the kernel with respect to the data distribution.
+**Background**: Kernel ridge regression (KRR) serves as an important proxy for understanding neural networks (via NTK equivalence), and a well-developed eigenframework exists for predicting test error from the kernel's eigenstructure. This framework relies on the eigenvalues and eigenfunctions of the kernel with respect to the data distribution.
 
 **Limitations of Prior Work**: Although the eigenframework is theoretically complete, applying it in practice requires constructing and diagonalizing the kernel matrix to obtain the eigenstructure — a procedure that is computationally expensive for high-dimensional real data and yields little analytic insight. More fundamentally, existing theory almost exclusively relies on simplified data assumptions (e.g., isotropic spherical distributions) and cannot be directly applied to real anisotropic datasets.
 
-**Root Cause**: Real data distributions are extremely complex and cannot be fully described in closed form, yet learning behavior is profoundly shaped by data structure. Predicting performance on real data requires balancing "compact description of data" against "prediction accuracy."
+**Key Challenge**: Real data distributions are extremely complex and cannot be fully described in closed form, yet learning behavior is profoundly shaped by data structure. Predicting performance on real data requires balancing "compact description of data" against "prediction accuracy."
 
-**Paper Goals**: (a) Can one find a parsimonious description of the data distribution that is simple enough yet sufficient to predict the learning behavior of kernel regression? (b) Can learning curves be predicted directly from data statistics without constructing a kernel matrix?
+**Goal**: (a) Can one find a parsimonious description of the data distribution that is simple enough yet sufficient to predict the learning behavior of kernel regression? (b) Can learning curves be predicted directly from data statistics without constructing a kernel matrix?
 
-**Starting Point**: The authors observe that for Gaussian data, the eigenfunctions of rotation-invariant kernels are naturally multivariate Hermite polynomials, and that real image data is "sufficiently Gaussian" (coordinatewise marginals are approximately Gaussian). This motivates the conjecture that such structure approximately holds for real data as well.
+**Key Insight**: The authors observe that for Gaussian data, the eigenfunctions of rotation-invariant kernels are naturally multivariate Hermite polynomials, and that real image data is "sufficiently Gaussian" (coordinatewise marginals are approximately Gaussian). This motivates the conjecture that such structure approximately holds for real data as well.
 
 **Core Idea**: The eigenstructure of a rotation-invariant kernel on anisotropic data is approximately equal to the Hermite eigenstructure — eigenfunctions are Hermite polynomials along the PCA directions of the data, and eigenvalues are monomials of the covariance eigenvalues weighted by the kernel's level coefficients.
 

@@ -33,7 +33,7 @@ Diffusion models have achieved remarkable success not only in generative tasks b
 
 A widely observed phenomenon is **unimodal representation dynamics**: the quality of learned representations (measured by downstream task performance) follows a unimodal trend across noise levels—optimal features emerge at intermediate noise levels, while performance degrades for both fully noisy and fully clean inputs (as shown in Figure 1).
 
-**Root Cause**: Although this phenomenon has been broadly observed, its underlying mechanism has lacked theoretical understanding. Specifically: (1) Why do intermediate noise levels yield the best representations? (2) What drives this unimodal pattern? (3) How does it relate to the model's generalization ability?
+**Key Challenge**: Although this phenomenon has been broadly observed, its underlying mechanism has lacked theoretical understanding. Specifically: (1) Why do intermediate noise levels yield the best representations? (2) What drives this unimodal pattern? (3) How does it relate to the model's generalization ability?
 
 This paper addresses these questions under the **Mixture of Low-Rank Gaussians (MoLRG)** data assumption, using simplified yet analytically tractable network architectures.
 

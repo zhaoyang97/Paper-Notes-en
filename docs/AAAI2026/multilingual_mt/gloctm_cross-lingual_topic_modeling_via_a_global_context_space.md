@@ -26,15 +26,15 @@ content_hash: dad214069f43dfce
 This paper proposes GloCTM, a dual-path VAE architecture (local language path + global context path) that enforces cross-lingual alignment at four levels—Polyglot Augmentation (cross-lingual neighbor-based input expansion), KL divergence internal alignment, unified decoder structural alignment, and CKA semantic alignment—achieving state-of-the-art topic quality and cross-lingual alignment on three cross-lingual datasets.
 
 ## Background & Motivation
-**State of the Field**: Cross-lingual topic models (CLTMs) aim to discover semantically aligned shared topics from multilingual documents. Early approaches relied on scarce parallel corpora; subsequent methods shifted to bilingual dictionaries (MCTA, NMTM, InfoCTM).
+**Background**: Cross-lingual topic models (CLTMs) aim to discover semantically aligned shared topics from multilingual documents. Early approaches relied on scarce parallel corpora; subsequent methods shifted to bilingual dictionaries (MCTA, NMTM, InfoCTM).
 
 **Limitations of Prior Work**: (a) Limited dictionary coverage leads to poor topic alignment; (b) each language learns topic distributions ($\theta$) and topic-word distributions ($\beta$) in independent spaces, bridged only indirectly via auxiliary losses—this architectural decoupling is the root cause of non-robust alignment; (c) rich semantic signals from multilingual pretrained models are ignored; (d) directly aligning topic-word distributions as in NMTM tends to cause topic degeneration/collapse. For instance, InfoCTM exhibits "semantic drift" on English-Japanese data, where the same topic index corresponds to "video games" in English but "footwear" in Japanese.
 
-**Root Cause**: Existing methods treat cross-lingual alignment as an auxiliary external constraint, while the topic spaces of different languages remain fundamentally decoupled, precluding intrinsic alignment.
+**Key Challenge**: Existing methods treat cross-lingual alignment as an auxiliary external constraint, while the topic spaces of different languages remain fundamentally decoupled, precluding intrinsic alignment.
 
-**Paper Goals**: To structurally guarantee cross-lingual alignment at every layer of model design—input, encoding, decoding, and semantic space.
+**Goal**: To structurally guarantee cross-lingual alignment at every layer of model design—input, encoding, decoding, and semantic space.
 
-**Starting Point**: Cross-lingual information is injected at the input stage via Polyglot Augmentation, rather than attempting alignment after independent learning.
+**Key Insight**: Cross-lingual information is injected at the input stage via Polyglot Augmentation, rather than attempting alignment after independent learning.
 
 **Core Idea**: By enforcing cross-lingual alignment at four levels—input (Polyglot Augmentation), encoding (KL divergence), decoding (unified $\beta$ matrix), and semantics (CKA)—alignment is transformed from an "external constraint" into an "intrinsic property."
 

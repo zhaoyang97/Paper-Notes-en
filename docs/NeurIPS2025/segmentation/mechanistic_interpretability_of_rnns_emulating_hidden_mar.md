@@ -33,7 +33,7 @@ A vanilla RNN is trained to reproduce the emission statistics of an HMM; reverse
 
 ### Limitations of Prior Work
 
-**Limitations of Prior Work**: **State of the Field**: Recurrent neural networks (RNNs) are widely used in computational neuroscience to infer latent dynamics of neural populations and to generate computational hypotheses about behavior. However, prior work has focused predominantly on relatively simple, input-driven, largely deterministic tasks — far less is known about how RNNs implement the richer, spontaneous, and potentially stochastic behaviors observed in natural environments.
+**Limitations of Prior Work**: **Background**: Recurrent neural networks (RNNs) are widely used in computational neuroscience to infer latent dynamics of neural populations and to generate computational hypotheses about behavior. However, prior work has focused predominantly on relatively simple, input-driven, largely deterministic tasks — far less is known about how RNNs implement the richer, spontaneous, and potentially stochastic behaviors observed in natural environments.
 
 Hidden Markov Models (HMMs) can segment natural behavior into discrete latent states with stochastic transitions between them. Such discrete-stochastic dynamics appear fundamentally at odds with the continuous state space of RNNs. The core question is: **Can RNNs exploit continuous dynamics to generate stochastic transitions between discrete states, and if so, by what mechanism?**
 

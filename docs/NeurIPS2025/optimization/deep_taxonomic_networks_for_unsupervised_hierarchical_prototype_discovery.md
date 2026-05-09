@@ -28,15 +28,15 @@ Deep Taxonomic Networks proposes a deep latent variable model with a complete bi
 
 ## Background & Motivation
 
-**State of the Field**: Humans naturally organize knowledge into hierarchical taxonomies (e.g., collie → dog → mammal → animal) and represent categories via prototypes. Methods such as TreeVAE and DeepECT have attempted to learn hierarchical clustering structures in deep learning.
+**Background**: Humans naturally organize knowledge into hierarchical taxonomies (e.g., collie → dog → mammal → animal) and represent categories via prototypes. Methods such as TreeVAE and DeepECT have attempted to learn hierarchical clustering structures in deep learning.
 
 **Limitations of Prior Work**: (a) Existing deep hierarchical clustering methods typically fix the number of leaf nodes to match the number of classes, requiring retraining for different levels of granularity; (b) leaf nodes are treated as terminal representations, causing the rich prototype information embedded in intermediate levels to be discarded.
 
-**Root Cause**: Existing methods bind the hierarchical structure to fixed class labels, limiting flexibility (inability to adapt to different granularities) while wasting the discriminative value of intermediate prototypes.
+**Key Challenge**: Existing methods bind the hierarchical structure to fixed class labels, limiting flexibility (inability to adapt to different granularities) while wasting the discriminative value of intermediate prototypes.
 
-**Paper Goals**: To discover hierarchical taxonomies with rich intermediate prototypes from unlabeled data without requiring a predefined number of classes.
+**Goal**: To discover hierarchical taxonomies with rich intermediate prototypes from unlabeled data without requiring a predefined number of classes.
 
-**Starting Point**: Inspired by cognitive science notions of basic-level categories and the Cobweb concept formation system, the paper designs a large-scale latent taxonomy (a complete binary tree) that allows data to automatically select the most appropriate level of abstraction.
+**Key Insight**: Inspired by cognitive science notions of basic-level categories and the Cobweb concept formation system, the paper designs a large-scale latent taxonomy (a complete binary tree) that allows data to automatically select the most appropriate level of abstraction.
 
 **Core Idea**: Variational inference with a complete binary tree Gaussian mixture prior enables each data point to identify the most prototypical clustering node across the entire tree.
 

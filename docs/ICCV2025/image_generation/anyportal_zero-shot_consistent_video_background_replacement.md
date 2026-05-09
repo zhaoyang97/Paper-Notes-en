@@ -28,18 +28,18 @@ AnyPortal presents a zero-shot, training-free video background replacement frame
 
 ## Background & Motivation
 
-**State of the Field**: Video background replacement ("virtual transportation") in the film industry relies on green screens and complex post-production pipelines, entailing high cost and a steep barrier to entry. Rapid advances in AIGC have brought image-level background replacement (e.g., IC-Light) to a high level of quality, yet video-level replacement remains challenging.
+**Background**: Video background replacement ("virtual transportation") in the film industry relies on green screens and complex post-production pipelines, entailing high cost and a steep barrier to entry. Rapid advances in AIGC have brought image-level background replacement (e.g., IC-Light) to a high level of quality, yet video-level replacement remains challenging.
 
 **Limitations of Prior Work**:
    - IC-Light supports images only; per-frame processing causes severe inter-frame inconsistency.
    - Existing video diffusion models (CogVideoX, OpenSora) offer limited controllability, providing only coarse-grained control (edges, pose) and lacking pixel-level precision.
    - Adapting video models to background replacement requires large amounts of paired video training data, which is extremely scarce.
 
-**Root Cause**: IC-Light possesses a strong lighting prior but lacks video temporal modeling; video diffusion models have temporal priors but cannot precisely preserve foreground details. Naively combining the two leads to foreground consistency problems — existing DDIM inversion and latent manipulation solutions perform poorly in the highly compressed 3D latent space of video models.
+**Key Challenge**: IC-Light possesses a strong lighting prior but lacks video temporal modeling; video diffusion models have temporal priors but cannot precisely preserve foreground details. Naively combining the two leads to foreground consistency problems — existing DDIM inversion and latent manipulation solutions perform poorly in the highly compressed 3D latent space of video models.
 
-**Paper Goals**: Achieve video background replacement with natural foreground relighting, inter-frame temporal consistency, and pixel-level foreground preservation, without requiring any training.
+**Goal**: Achieve video background replacement with natural foreground relighting, inter-frame temporal consistency, and pixel-level foreground preservation, without requiring any training.
 
-**Starting Point**: Large pre-trained diffusion models already encode rich prior knowledge; the key lies in how to synergistically exploit them in a zero-shot setting.
+**Key Insight**: Large pre-trained diffusion models already encode rich prior knowledge; the key lies in how to synergistically exploit them in a zero-shot setting.
 
 **Core Idea**: A three-stage pipeline (background generation → lighting harmonization → consistency enhancement) combined with the newly proposed RPA algorithm achieves high-quality video background replacement without any training.
 

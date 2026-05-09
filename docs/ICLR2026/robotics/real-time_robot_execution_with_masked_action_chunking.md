@@ -30,7 +30,7 @@ This paper proposes REMAC, which systematically addresses two key failure modes 
 
 ## Background & Motivation
 
-**State of the Field**: Vision-Language-Action (VLA) models that predict action sequences via action chunking have become the dominant paradigm for generalist robot policies. Real-time performance is critical for robotic systems—latency can lead to task failure (e.g., spilling liquids) rather than merely increasing wait time.
+**Background**: Vision-Language-Action (VLA) models that predict action sequences via action chunking have become the dominant paradigm for generalist robot policies. Real-time performance is critical for robotic systems—latency can lead to task failure (e.g., spilling liquids) rather than merely increasing wait time.
 
 **Necessity of Asynchronous Inference**: Synchronous inference requires inference latency $\delta < \Delta t$ (the control period); at 50 Hz this means under 20 ms, yet the $\pi_0$ model already requires 76 ms for action generation alone on an RTX 4090, far exceeding the threshold once preprocessing and network transmission are included. Asynchronous inference—predicting the next chunk while executing the current one—ensures actions are always available and is the only viable real-time solution.
 
@@ -38,7 +38,7 @@ This paper proposes REMAC, which systematically addresses two key failure modes 
 
 **An Overlooked Failure Mode—Intra-chunk Inconsistency**: This is the paper's core insight. Under inference latency $d$, the first $d$ actions of the current execution chunk actually come from the previous chunk $\mathbf{A}_{t-h}$ (conditioned on the stale observation $\mathbf{o}_{t-h}$) rather than representing optimal actions under the current observation $\mathbf{o}_t$. This creates a perception–action mismatch and a distribution shift between training and inference. No prior work has identified or addressed this problem.
 
-**Starting Point**: Intra-chunk inconsistency is formulated as a partial prefix masking problem at arbitrary positions within an action chunk—during training, a random prefix is masked and the model learns to make corrections when observations and partial actions are misaligned; the sampling pipeline is simultaneously adjusted to preserve prefix continuity, jointly handling inter-chunk discontinuity.
+**Key Insight**: Intra-chunk inconsistency is formulated as a partial prefix masking problem at arbitrary positions within an action chunk—during training, a random prefix is masked and the model learns to make corrections when observations and partial actions are misaligned; the sampling pipeline is simultaneously adjusted to preserve prefix continuity, jointly handling inter-chunk discontinuity.
 
 **Technical Approach**: Training-time adaptation is preferred over test-time correction. By fine-tuning a pretrained policy with LoRA (adding only 1.5% extra parameters), correction capability is internalized into model weights, requiring no additional computation at inference time and remaining orthogonally composable with existing test-time methods.
 

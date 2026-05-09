@@ -29,10 +29,10 @@ This work presents the first systematic analysis of the root cause behind the re
 
 ## Background & Motivation
 
-- **State of the Field**: Diffusion language models (DLMs) such as LLaDA have emerged as a promising alternative to autoregressive LLMs. They generate text by iteratively denoising a fully masked sequence, restoring a subset of tokens at each step until the full output is recovered. Unlike autoregressive models that generate one token at a time, DLMs support parallel denoising and global planning.
+- **Background**: Diffusion language models (DLMs) such as LLaDA have emerged as a promising alternative to autoregressive LLMs. They generate text by iteratively denoising a fully masked sequence, restoring a subset of tokens at each step until the full output is recovered. Unlike autoregressive models that generate one token at a time, DLMs support parallel denoising and global planning.
 - **Limitations of Prior Work**: DLMs still lag significantly behind autoregressive LLMs of comparable scale on reasoning tasks, and performance degrades further as the number of denoising steps decreases.
-- **Root Cause**: Through empirical analysis, the authors identify that the core bottleneck lies in the **independent generation** of masked tokens within each denoising step, which fails to capture dependencies among tokens. Reasoning tasks require strict logical chains and cross-step consistency, both of which are undermined by this independence assumption.
-- **Paper Goals**: The authors define two critical forms of token correlation: **intra-sequence correlation**—dependencies among tokens at different positions within the same denoising step—and **inter-sequence correlation**—consistency and cooperation among token sequences generated across different denoising steps. Experiments verify that enhancing both types of correlation improves reasoning, providing the theoretical foundation for the MRO framework.
+- **Key Challenge**: Through empirical analysis, the authors identify that the core bottleneck lies in the **independent generation** of masked tokens within each denoising step, which fails to capture dependencies among tokens. Reasoning tasks require strict logical chains and cross-step consistency, both of which are undermined by this independence assumption.
+- **Goal**: The authors define two critical forms of token correlation: **intra-sequence correlation**—dependencies among tokens at different positions within the same denoising step—and **inter-sequence correlation**—consistency and cooperation among token sequences generated across different denoising steps. Experiments verify that enhancing both types of correlation improves reasoning, providing the theoretical foundation for the MRO framework.
 
 ## Method
 

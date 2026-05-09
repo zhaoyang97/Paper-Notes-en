@@ -28,17 +28,17 @@ To address the computational redundancy and attention disruption caused by promp
 
 ## Background & Motivation
 
-**State of the Field**: Full fine-tuning of large-scale pretrained models (e.g., ViT) incurs substantial costs, making parameter-efficient fine-tuning (PEFT) the dominant paradigm. Within PEFT, two major families exist: adapter-based methods and prompt-based methods. In the vision domain, adapter-based methods (e.g., AdaptFormer, LoRA) consistently outperform prompt-based methods (e.g., VPT), leading to the widespread belief that "prompt methods are inferior to adapters."
+**Background**: Full fine-tuning of large-scale pretrained models (e.g., ViT) incurs substantial costs, making parameter-efficient fine-tuning (PEFT) the dominant paradigm. Within PEFT, two major families exist: adapter-based methods and prompt-based methods. In the vision domain, adapter-based methods (e.g., AdaptFormer, LoRA) consistently outperform prompt-based methods (e.g., VPT), leading to the widespread belief that "prompt methods are inferior to adapters."
 
 **Limitations of Prior Work**: VPT concatenates prompt tokens directly with image tokens and feeds the combined sequence into the self-attention of each Transformer block, introducing two critical issues:
    - **Computational complexity**: The self-attention complexity grows from $n^2$ to $(n+m)^2$, escalating sharply as the number of prompts increases.
    - **Attention disruption**: Prompt tokens compete for attention weights during softmax normalization. When the number of prompts reaches 196, they occupy more than 80% of the attention weights, severely degrading the original feature representations.
 
-**Root Cause**: VPT requires a large number of prompts to adapt to downstream tasks, yet adding more prompts paradoxically degrades performance. The root cause lies in how prompts are deployed — they share the same self-attention with image tokens, coupling the two modalities.
+**Key Challenge**: VPT requires a large number of prompts to adapt to downstream tasks, yet adding more prompts paradoxically degrades performance. The root cause lies in how prompts are deployed — they share the same self-attention with image tokens, coupling the two modalities.
 
-**Paper Goals**: To preserve the flexibility of prompts while eliminating their interference with self-attention, enabling prompt-based methods to maintain high performance and efficiency even when a large number of prompts are used.
+**Goal**: To preserve the flexibility of prompts while eliminating their interference with self-attention, enabling prompt-based methods to maintain high performance and efficiency even when a large number of prompts are used.
 
-**Starting Point**: The authors observe that prompt tokens are not inherent components of the original input sequence — they carry no semantic information and serve only as indirect tuning factors. Therefore, decoupling prompts from self-attention is the fundamental solution.
+**Key Insight**: The authors observe that prompt tokens are not inherent components of the original input sequence — they carry no semantic information and serve only as indirect tuning factors. Therefore, decoupling prompts from self-attention is the fundamental solution.
 
 **Core Idea**: Replace prompt concatenation in self-attention with cross-attention, where embedded tokens serve as queries and prompts serve as keys and values, decoupling their interaction.
 

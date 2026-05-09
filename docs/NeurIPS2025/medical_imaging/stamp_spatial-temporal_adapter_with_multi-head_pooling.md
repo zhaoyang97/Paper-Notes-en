@@ -28,15 +28,15 @@ STAMP introduces a lightweight spatial-temporal adapter with only 750K parameter
 
 ## Background & Motivation
 
-**State of the Field**: TSFMs (e.g., MOMENT, Chronos), pretrained across multiple domains, have demonstrated strong general-purpose representation capabilities. EEG-specific foundation models (CBraMod, LaBraM) perform well on EEG classification but require large parameter counts (29M/5.8M) and EEG-specific pretraining.
+**Background**: TSFMs (e.g., MOMENT, Chronos), pretrained across multiple domains, have demonstrated strong general-purpose representation capabilities. EEG-specific foundation models (CBraMod, LaBraM) perform well on EEG classification but require large parameter counts (29M/5.8M) and EEG-specific pretraining.
 
 **Limitations of Prior Work**: TSFMs process univariate time series — EEG is spatiotemporal data with 64 channels × 1000+ time steps, making direct application infeasible for the spatial dimension. Feeding each channel independently into a TSFM discards inter-channel spatial relationships.
 
-**Root Cause**: TSFMs possess strong temporal representations but lack spatial understanding; EEG models understand spatial structure but require large-scale EEG pretraining. The core challenge is enabling TSFMs to understand EEG's spatial dimension at minimal cost.
+**Key Challenge**: TSFMs possess strong temporal representations but lack spatial understanding; EEG models understand spatial structure but require large-scale EEG pretraining. The core challenge is enabling TSFMs to understand EEG's spatial dimension at minimal cost.
 
-**Paper Goals**: Design a lightweight adapter that enables general-purpose TSFMs to efficiently process spatiotemporal EEG data.
+**Goal**: Design a lightweight adapter that enables general-purpose TSFMs to efficiently process spatiotemporal EEG data.
 
-**Starting Point**: Freeze the TSFM and train only a 750K-parameter adapter — three sets of positional encodings inject spatial information, cross-gated MLP mixes spatial and temporal features, and multi-head attention pooling aggregates representations.
+**Key Insight**: Freeze the TSFM and train only a 750K-parameter adapter — three sets of positional encodings inject spatial information, cross-gated MLP mixes spatial and temporal features, and multi-head attention pooling aggregates representations.
 
 **Core Idea**: Triple positional encoding (token + spatial + temporal) + cross-gated MLP spatiotemporal mixing + multi-head pooling = 750K parameters enabling a frozen TSFM to process EEG spatiotemporal data.
 

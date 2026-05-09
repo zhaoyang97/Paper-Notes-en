@@ -28,13 +28,13 @@ This paper proposes AdmTree — an adaptive hierarchical context compression fra
 
 ## Background & Motivation
 
-**State of the Field**: Long-context processing faces computational bottlenecks due to the quadratic complexity of self-attention. Context compression approaches fall into two categories: explicit methods (directly removing unimportant text) and implicit methods (encoding context into compact vectors/gist tokens).
+**Background**: Long-context processing faces computational bottlenecks due to the quadratic complexity of self-attention. Context compression approaches fall into two categories: explicit methods (directly removing unimportant text) and implicit methods (encoding context into compact vectors/gist tokens).
 
 **Limitations of Prior Work**: (a) **Explicit methods** (e.g., LongLLMLingua) preserve global semantics but disrupt local coherence — finer summarization granularity leads to worse performance; (b) **Implicit methods** (e.g., AutoCompressor, ICAE) suffer from positional bias — middle and early information is forgotten ("lost in the middle"); (c) Recurrent compression (e.g., Activation Beacon) uses fixed segmentation without accounting for information density variation, and unidirectional compression leads to progressive information degradation.
 
-**Root Cause**: How to simultaneously preserve global and local semantics uniformly across all positions?
+**Key Challenge**: How to simultaneously preserve global and local semantics uniformly across all positions?
 
-**Starting Point**: Drawing inspiration from hierarchical information processing in cognitive science — using tree structures to balance breadth (cross-context coverage) and depth (fine granularity).
+**Key Insight**: Drawing inspiration from hierarchical information processing in cognitive science — using tree structures to balance breadth (cross-context coverage) and depth (fine granularity).
 
 **Core Idea**: Information-density-adaptive segmentation + binary semantic tree hierarchical aggregation + bidirectional attention to eliminate positional bias.
 

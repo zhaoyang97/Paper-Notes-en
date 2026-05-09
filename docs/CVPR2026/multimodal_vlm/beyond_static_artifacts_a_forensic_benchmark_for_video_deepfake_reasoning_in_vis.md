@@ -30,15 +30,15 @@ This paper introduces FAQ (Forensic Answer-Questioning), the first large-scale m
 
 ## Background & Motivation
 
-**State of the Field**: VLMs have shown promise in deepfake detection; methods such as FakeShield and SIDA construct QA datasets to train VLMs for interpretable detection. However, existing methods and datasets almost exclusively focus on spatial artifacts (texture inconsistencies, edge blurring, and other static cues).
+**Background**: VLMs have shown promise in deepfake detection; methods such as FakeShield and SIDA construct QA datasets to train VLMs for interpretable detection. However, existing methods and datasets almost exclusively focus on spatial artifacts (texture inconsistencies, edge blurring, and other static cues).
 
 **Limitations of Prior Work**: (1) Temporal inconsistencies have long been validated as important detection signals in traditional deepfake detection (e.g., abrupt facial expression changes, edge flickering), yet existing QA datasets (DD-VQA, VLFFD) extract annotations only from static frames, completely ignoring dynamic cues. (2) Existing datasets either handle only images (DD-VQA, VLFFD) or focus exclusively on AI-generated content (Forensics-Bench), without addressing temporal analysis of classical forgery methods such as face swapping.
 
-**Root Cause**: VLM training data lacks temporal forensic information → models cannot exploit the most informative dynamic forgery cues in video → detection performance and generalization are constrained. How to effectively encode temporal inconsistencies into QA training data remains an open core problem.
+**Key Challenge**: VLM training data lacks temporal forensic information → models cannot exploit the most informative dynamic forgery cues in video → detection performance and generalization are constrained. How to effectively encode temporal inconsistencies into QA training data remains an open core problem.
 
-**Paper Goals**: Construct the first deepfake QA benchmark centered on temporal inconsistencies, and systematically enhance VLMs' complete forensic capability chain—from perception to reasoning—through progressive task design.
+**Goal**: Construct the first deepfake QA benchmark centered on temporal inconsistencies, and systematically enhance VLMs' complete forensic capability chain—from perception to reasoning—through progressive task design.
 
-**Starting Point**: Coarse-grained manual spatiotemporal annotations (sparse clicks) are converted into structured multi-level MCQ data via an automated pipeline of spatiotemporal clustering → keypoint extraction → description parsing → QA generation.
+**Key Insight**: Coarse-grained manual spatiotemporal annotations (sparse clicks) are converted into structured multi-level MCQ data via an automated pipeline of spatiotemporal clustering → keypoint extraction → description parsing → QA generation.
 
 **Core Idea**: A three-level progressive MCQ system (static perception → dynamic localization → comprehensive reasoning) injects video temporal inconsistency into VLM training, endowing models with genuine temporal forensic capability.
 

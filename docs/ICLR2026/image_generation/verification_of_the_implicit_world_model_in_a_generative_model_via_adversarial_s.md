@@ -28,15 +28,15 @@ This paper proposes an adversarial sequence generation method to verify the soun
 
 ## Background & Motivation
 
-**State of the Field**: Whether generative sequence models (e.g., LLMs) learn an underlying "world model" during training is a critical open question. Prior work (Li et al. 2023, Toshniwal et al. 2022) trained models on Othello and chess, claiming via linear probes that the models learned world states.
+**Background**: Whether generative sequence models (e.g., LLMs) learn an underlying "world model" during training is a critical open question. Prior work (Li et al. 2023, Toshniwal et al. 2022) trained models on Othello and chess, claiming via linear probes that the models learned world states.
 
 **Limitations of Prior Work**: (1) Simple metrics such as next-token accuracy can be misleading — a fundamentally incorrect model may still achieve high accuracy; (2) the sequence-level analysis of Vafa et al. requires defining a probability threshold for the generated language, introducing ad hoc parameters; (3) whether board states decoded by linear probes play a causal role in predictions remains unclear.
 
-**Root Cause**: Although it is theoretically possible to learn a sound world model from sampled sequences, empirical verification is difficult. Simple tests are insufficient; systematic stress-testing methods are needed.
+**Key Challenge**: Although it is theoretically possible to learn a sound world model from sampled sequences, empirical verification is difficult. Simple tests are insufficient; systematic stress-testing methods are needed.
 
-**Paper Goals**: How can one effectively verify whether the implicit world model of a generative model is sound? Do board-state probes causally influence predictions?
+**Goal**: How can one effectively verify whether the implicit world model of a generative model is sound? Do board-state probes causally influence predictions?
 
-**Starting Point**: An adversary generates legal move sequences that force the generative model to predict illegal continuations, providing existential counterexamples to soundness.
+**Key Insight**: An adversary generates legal move sequences that force the generative model to predict illegal continuations, providing existential counterexamples to soundness.
 
 **Core Idea**: The adversary plays legal moves to force the model under test to produce illegal moves, thereby quantifying and analyzing failure modes of the implicit world model.
 

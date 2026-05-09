@@ -28,16 +28,16 @@ This paper reformulates federated dynamic pruning as a Combinatorial Multi-Armed
 
 ## Background & Motivation
 
-**State of the Field**: Federated Learning (FL) enables distributed devices to collaboratively train models without sharing data, but the high computational and communication demands of deep models limit participation from resource-constrained devices. Existing federated pruning frameworks adopt dynamic sparse training, where an inner loop updates weights with a fixed topology and an outer loop adjusts the topology (pruning + reactivation) based on aggregated information.
+**Background**: Federated Learning (FL) enables distributed devices to collaboratively train models without sharing data, but the high computational and communication demands of deep models limit participation from resource-constrained devices. Existing federated pruning frameworks adopt dynamic sparse training, where an inner loop updates weights with a fixed topology and an outer loop adjusts the topology (pruning + reactivation) based on aggregated information.
 
 **Limitations of Prior Work**: Existing methods (PruneFL, FedTiny, FedDST, FedMef, etc.) suffer from three critical issues:
    - **Greedy adjustment**: Only the myopic information from a small subset of participating clients in the current round is utilized, discarding all historical observations.
    - **Topology instability**: Deterministic decisions are made based on unreliable aggregated information, leading to high variance under heterogeneous data distributions.
    - **Communication inefficiency**: Uploading auxiliary data such as full-size gradients incurs communication costs approaching those of dense models.
 
-**Root Cause**: The fundamental issue lies in the "myopic observation + deterministic decision" paradigm — deterministic selections are made based solely on a small fraction of client data in the current round, lacking a global perspective.
+**Key Challenge**: The fundamental issue lies in the "myopic observation + deterministic decision" paradigm — deterministic selections are made based solely on a small fraction of client data in the current round, lacking a global perspective.
 
-**Starting Point**: Topology adjustment is cast as a CMAB problem, where each parameter position is treated as an arm and each outer loop selects $K$ arms to activate.
+**Key Insight**: Topology adjustment is cast as a CMAB problem, where each parameter position is treated as an arm and each outer loop selects $K$ arms to activate.
 
 **Core Idea**: Replace deterministic magnitude-based ranking with Beta posterior distributions for topology selection, and substitute myopic aggregated information with farsighted comprehensive information.
 

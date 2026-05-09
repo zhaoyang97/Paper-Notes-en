@@ -29,13 +29,13 @@ This work presents the first systematic empirical validation that EEG data exhib
 
 ### State of the Field
 
-**State of the Field**: EEG-based BCIs suffer from poor generalization due to distribution shifts across subjects and sessions. Domain adaptation methods based on moment alignment represent the current SOTA, yet fail under large domain discrepancies. EEG decoding has been conducted almost exclusively in Euclidean embedding spaces.
+**Background**: EEG-based BCIs suffer from poor generalization due to distribution shifts across subjects and sessions. Domain adaptation methods based on moment alignment represent the current SOTA, yet fail under large domain discrepancies. EEG decoding has been conducted almost exclusively in Euclidean embedding spaces.
 
 **Limitations of Prior Work**: (1) Cognitive processes such as visual processing and emotion regulation exhibit hierarchical organization in the brain, yet Euclidean space is inefficient for representing hierarchical data — the circumference of a circle grows linearly whereas the number of tree nodes grows exponentially; (2) moment alignment alone cannot guarantee positive transfer, particularly under large domain shifts.
 
-**Root Cause**: The hierarchical structure of EEG features demands exponential representational capacity, which Euclidean space cannot provide; however, hyperbolic neural networks have not yet been systematically explored for EEG.
+**Key Challenge**: The hierarchical structure of EEG features demands exponential representational capacity, which Euclidean space cannot provide; however, hyperbolic neural networks have not yet been systematically explored for EEG.
 
-**Starting Point**: Prior analysis reveals that EEG data exhibits hyperbolicity (low $\delta_{rel}$), and replacing the Euclidean MLR with a hyperbolic MLR alone improves cross-domain performance — demonstrating that hyperbolic embeddings genuinely benefit EEG generalization.
+**Key Insight**: Prior analysis reveals that EEG data exhibits hyperbolicity (low $\delta_{rel}$), and replacing the Euclidean MLR with a hyperbolic MLR alone improves cross-domain performance — demonstrating that hyperbolic embeddings genuinely benefit EEG generalization.
 
 **Core Idea**: Exploit hyperbolic space to capture the hierarchical structure of EEG, combined with a two-stage domain adaptation strategy (moment alignment → distribution alignment) to achieve cross-domain generalization.
 

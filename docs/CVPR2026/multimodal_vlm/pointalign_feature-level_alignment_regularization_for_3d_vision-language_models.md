@@ -27,17 +27,17 @@ content_hash: 8b1b0941d327ad6d
 PointAlign is proposed to apply feature-level alignment regularization to point cloud tokens at intermediate LLM layers (aligned with Q-Former outputs) in 3D VLMs. By training only a lightweight alignment projector and LoRA adapters, the method effectively prevents geometric information from degrading during language modeling, achieving a 7.50pp improvement on open-vocabulary classification.
 
 ## Background & Motivation
-**State of the Field**: 3D vision-language models (3D VLMs) are critical for applications such as robotics, autonomous driving, and AR, yet remain limited by the scarcity of 3D-text paired data.
+**Background**: 3D vision-language models (3D VLMs) are critical for applications such as robotics, autonomous driving, and AR, yet remain limited by the scarcity of 3D-text paired data.
 
 **Limitations of Prior Work**: Existing methods (PointLLM, ShapeLLM, MiniGPT-3D) rely solely on next-token prediction loss for training, with only language tokens providing supervision signals. This leads to:
    - Low utilization efficiency of limited 3D data
    - Progressive degradation and loss of valuable geometric information in intermediate representations as they propagate through LLM layers
 
-**Root Cause**: The language modeling objective only rewards geometric features that directly contribute to next-token prediction, while structural cues useful for spatial reasoning but irrelevant to the current language task are discarded during training.
+**Key Challenge**: The language modeling objective only rewards geometric features that directly contribute to next-token prediction, while structural cues useful for spatial reasoning but irrelevant to the current language task are discarded during training.
 
-**Paper Goals**: To explicitly supervise point cloud tokens at intermediate LLM layers to preserve fine-grained 3D geometric-semantic information, without introducing any inference overhead.
+**Goal**: To explicitly supervise point cloud tokens at intermediate LLM layers to preserve fine-grained 3D geometric-semantic information, without introducing any inference overhead.
 
-**Starting Point**: Q-Former outputs are observed to encode both geometric and semantic information (owing to point cloud-text paired training), making them ideal targets for internal supervision.
+**Key Insight**: Q-Former outputs are observed to encode both geometric and semantic information (owing to point cloud-text paired training), making them ideal targets for internal supervision.
 
 **Core Idea**: A consistency loss is employed to align point cloud tokens at intermediate LLM layers with frozen Q-Former outputs via a lightweight alignment projector, which is discarded at inference time with zero additional cost.
 

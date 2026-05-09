@@ -29,15 +29,15 @@ DiffVax trains a feed-forward immunizer (UNet++) that generates imperceptible ad
 
 ## Background & Motivation
 
-**State of the Field**: The editing capabilities of diffusion models (e.g., Stable Diffusion) are rapidly advancing. Tools such as inpainting and InstructPix2Pix enable photorealistic image manipulation, which malicious users exploit to generate deepfakes, non-consensual intimate imagery, and other harmful content.
+**Background**: The editing capabilities of diffusion models (e.g., Stable Diffusion) are rapidly advancing. Tools such as inpainting and InstructPix2Pix enable photorealistic image manipulation, which malicious users exploit to generate deepfakes, non-consensual intimate imagery, and other harmful content.
 
 **Limitations of Prior Work**: Existing image immunization methods (PhotoGuard, DAYN) require running projected gradient descent (PGD) optimization independently for each image, consuming 10 minutes to several hours per image and demanding over 15GB of GPU memory, with no ability to generalize to unseen content.
 
-**Root Cause**: Effective immunization requires backpropagating through diffusion models to craft adversarial perturbations, yet the per-image optimization paradigm fundamentally cannot scale to large-scale scenarios such as social media platforms, where millions of images and videos are uploaded daily.
+**Key Challenge**: Effective immunization requires backpropagating through diffusion models to craft adversarial perturbations, yet the per-image optimization paradigm fundamentally cannot scale to large-scale scenarios such as social media platforms, where millions of images and videos are uploaded daily.
 
-**Paper Goals**: (a) Transform immunization from per-image optimization to feed-forward inference; (b) ensure perturbations remain imperceptible while causing editing to fail; (c) maintain robustness against counter-attacks (JPEG compression, denoising).
+**Goal**: (a) Transform immunization from per-image optimization to feed-forward inference; (b) ensure perturbations remain imperceptible while causing editing to fail; (c) maintain robustness against counter-attacks (JPEG compression, denoising).
 
-**Starting Point**: A image-conditioned perturbation generator is trained to learn "how to strategically place noise" from a large collection of training samples, rather than optimizing from scratch for each input. This design generalizes to unseen images, unseen prompts, and even video frames.
+**Key Insight**: A image-conditioned perturbation generator is trained to learn "how to strategically place noise" from a large collection of training samples, rather than optimizing from scratch for each input. This design generalizes to unseen images, unseen prompts, and even video frames.
 
 **Core Idea**: Replace per-image optimization with an end-to-end trained UNet++ immunizer that learns to generate low-frequency, imperceptible, and highly disruptive perturbations via a dual objective $\mathcal{L}_{\text{noise}} + \mathcal{L}_{\text{edit}}$.
 

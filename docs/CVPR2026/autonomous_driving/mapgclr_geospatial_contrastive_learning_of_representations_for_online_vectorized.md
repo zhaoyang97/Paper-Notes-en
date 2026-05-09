@@ -29,7 +29,7 @@ MapGCLR proposes a semi-supervised training scheme based on geospatial contrasti
 
 ## Background & Motivation
 
-**State of the Field**: Online HD map construction is a critical task in autonomous driving. Methods such as MapTR/MapTRv2/MapTracker predict vectorized map elements (lane lines, road boundaries, crosswalks, etc.) from surround-view camera inputs and have achieved strong performance. However, all such methods **rely heavily on large amounts of annotated training data**—precise HD map annotation is extremely costly and represents the primary scalability bottleneck.
+**Background**: Online HD map construction is a critical task in autonomous driving. Methods such as MapTR/MapTRv2/MapTracker predict vectorized map elements (lane lines, road boundaries, crosswalks, etc.) from surround-view camera inputs and have achieved strong performance. However, all such methods **rely heavily on large amounts of annotated training data**—precise HD map annotation is extremely costly and represents the primary scalability bottleneck.
 
 **Limitations of Prior Work**:
 - **PseudoMapTrainer**: Generates Gaussian surfel grid pseudo BEV segmentation labels from sensor data, but relies on the semantic segmentation paradigm rather than vectorized prediction.

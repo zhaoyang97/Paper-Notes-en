@@ -14,17 +14,17 @@ This work proposes the SciTS benchmark covering 43 tasks across 12 scientific do
 
 ## Background & Motivation
 
-**State of the Field**: The scientific reasoning capabilities of LLMs have attracted considerable attention in recent years. Time series, as one of the most fundamental data modalities in scientific domains (physics, astronomy, biology, engineering, etc.), remains severely underexplored in current multimodal LLMs. Existing approaches either encode numerical sequences as text (producing extremely long sequences) or convert them to images (losing numerical precision), neither of which adequately supports the understanding and generation of scientific time series.
+**Background**: The scientific reasoning capabilities of LLMs have attracted considerable attention in recent years. Time series, as one of the most fundamental data modalities in scientific domains (physics, astronomy, biology, engineering, etc.), remains severely underexplored in current multimodal LLMs. Existing approaches either encode numerical sequences as text (producing extremely long sequences) or convert them to images (losing numerical precision), neither of which adequately supports the understanding and generation of scientific time series.
 
 **Limitations of Prior Work**: (1) Existing time-series benchmarks are predominantly focused on conventional tasks such as forecasting and anomaly detection, lacking coverage of scientific domains (astronomy, geoscience, neuroscience, etc.); (2) unified time-series models either support only forecasting or only analysis, and cannot simultaneously handle understanding and generation; (3) scientific time-series signals exhibit extreme heterogeneity (astronomical light curves vs. EEG signals vs. seismic waveforms vs. radar communications), which existing models struggle to accommodate.
 
-**Starting Point**: Construct the first comprehensive scientific time-series benchmark SciTS → identify problems through systematic evaluation → design a LLM-native time-series processing framework, TimeOmni.
+**Key Insight**: Construct the first comprehensive scientific time-series benchmark SciTS → identify problems through systematic evaluation → design a LLM-native time-series processing framework, TimeOmni.
 
 **Key Challenges**: Scientific time-series signals span frequencies from $10^{-5}$ Hz to $10^7$ Hz, lengths from a few points to millions of samples, and dimensionality from 1 to 58. This extreme heterogeneity poses a fundamental challenge to unified modeling.
 
 **Limitations of Prior Attempts**: Although UniTS integrates QA and forecasting, it relies on an independent architectural design that is incompatible with general-purpose LLM training pipelines. Specialized models such as Moirai and TimeMoE support only forecasting and cannot handle tasks such as imputation or event localization.
 
-**Paper Goals**: A unified framework is needed that leverages the reasoning and world knowledge of LLMs while explicitly modeling temporal dynamics, and that remains compatible with general-purpose LLM training pipelines.
+**Goal**: A unified framework is needed that leverages the reasoning and world knowledge of LLMs while explicitly modeling temporal dynamics, and that remains compatible with general-purpose LLM training pipelines.
 
 ## Method
 

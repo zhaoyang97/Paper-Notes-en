@@ -32,9 +32,9 @@ Modern biomedical research increasingly relies on large-scale structured databas
 
 **Limitations of Prior Work**: Existing Text-to-SQL systems treat query generation as a "syntactic translation" task, mapping question structures to SQL templates without deep domain understanding. In biomedical settings, this abstraction breaks down—domain experts routinely ask questions such as "Which SNPs are significantly associated with Alzheimer's disease?" or "Which approved drugs target genes upregulated in Parkinson's disease?"—queries that implicitly encode domain-specific knowledge such as statistical thresholds (e.g., GWAS significance at $p < 5\times10^{-8}$), drug approval processes, and cross-modal causal reasoning.
 
-**Root Cause**: General-purpose Text-to-SQL benchmarks (e.g., Spider, BIRD) do not evaluate scientific reasoning; EHR-oriented benchmarks (e.g., EHRSQL) focus on temporal logic and patient retrieval rather than the reasoning required for scientific discovery.
+**Key Challenge**: General-purpose Text-to-SQL benchmarks (e.g., Spider, BIRD) do not evaluate scientific reasoning; EHR-oriented benchmarks (e.g., EHRSQL) focus on temporal logic and patient retrieval rather than the reasoning required for scientific discovery.
 
-**Starting Point**: Construct the first large-scale benchmark specifically targeting the evaluation of scientific reasoning in biomedical Text-to-SQL.
+**Key Insight**: Construct the first large-scale benchmark specifically targeting the evaluation of scientific reasoning in biomedical Text-to-SQL.
 
 ## Method
 

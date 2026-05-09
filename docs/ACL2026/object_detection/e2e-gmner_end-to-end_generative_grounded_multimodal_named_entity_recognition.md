@@ -28,15 +28,15 @@ This paper proposes E2E-GMNER, the first end-to-end GMNER framework that unifies
 
 ## Background & Motivation
 
-**State of the Field**: Grounded Multimodal Named Entity Recognition (GMNER) requires jointly identifying entities in text, predicting their semantic types, and localizing each entity to the corresponding visual region in an image. Existing methods such as H-Index, TIGER, and RiVEG predominantly adopt pipeline-based architectures.
+**Background**: Grounded Multimodal Named Entity Recognition (GMNER) requires jointly identifying entities in text, predicting their semantic types, and localizing each entity to the corresponding visual region in an image. Existing methods such as H-Index, TIGER, and RiVEG predominantly adopt pipeline-based architectures.
 
 **Limitations of Prior Work**: (1) Pipeline architectures decouple textual entity recognition and visual grounding into independent modules (e.g., standalone NER taggers and external object detectors), leading to error accumulation and precluding joint optimization. (2) Existing methods resolve text-visual ambiguity through implicit cross-modal alignment, lacking explicit mechanisms to determine when visual evidence or external knowledge is genuinely useful, such that noisy visual cues can degrade performance. (3) In generative bounding box prediction, single hard-target supervision is sensitive to annotation noise and coordinate discretization errors.
 
-**Root Cause**: The tension between end-to-end unification and the task-specific requirements of each subtask — how can a single model simultaneously optimize entity recognition, semantic classification, and visual grounding, which are fundamentally different tasks?
+**Key Challenge**: The tension between end-to-end unification and the task-specific requirements of each subtask — how can a single model simultaneously optimize entity recognition, semantic classification, and visual grounding, which are fundamentally different tasks?
 
-**Paper Goals**: Design the first end-to-end GMNER framework to eliminate error accumulation inherent in pipeline systems.
+**Goal**: Design the first end-to-end GMNER framework to eliminate error accumulation inherent in pipeline systems.
 
-**Starting Point**: GMNER is formulated as a conditional generation task via instruction tuning, leveraging the unified generative capacity of multimodal large language models.
+**Key Insight**: GMNER is formulated as a conditional generation task via instruction tuning, leveraging the unified generative capacity of multimodal large language models.
 
 **Core Idea**: End-to-end generation, CoT adaptive reasoning, and Gaussian soft supervision work in concert to address the three core challenges of GMNER.
 

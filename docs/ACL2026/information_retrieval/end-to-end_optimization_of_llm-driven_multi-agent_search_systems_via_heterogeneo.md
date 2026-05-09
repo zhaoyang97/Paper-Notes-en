@@ -28,15 +28,15 @@ This paper proposes MHGPO (Multi-Agent Heterogeneous Group Policy Optimization),
 
 ## Background & Motivation
 
-**State of the Field**: Multi-Agent Search Systems (MASS) coordinate multiple specialized LLM agents equipped with search tools to decompose tasks and perform retrieval-augmented reasoning. A common architecture is Rewriter (decomposing questions into retrieval queries) → Reranker (selecting relevant passages from retrieved results) → Answerer (generating the final answer).
+**Background**: Multi-Agent Search Systems (MASS) coordinate multiple specialized LLM agents equipped with search tools to decompose tasks and perform retrieval-augmented reasoning. A common architecture is Rewriter (decomposing questions into retrieval queries) → Reranker (selecting relevant passages from retrieved results) → Answerer (generating the final answer).
 
 **Limitations of Prior Work**: (1) Prompt engineering and single-agent SFT optimization are labor-intensive and poorly adaptive; (2) MAPPO requires large critic networks to evaluate joint actions, leading to instability and high memory overhead; (3) Group optimization algorithms such as GRPO are effective in single-context settings but do not extend straightforwardly to multi-context MASS, where multi-agent rollouts span multiple agents with disjoint local contexts; (4) Upstream agent outputs influence downstream behavior without direct gradient paths (indirect dependencies), and rollouts from the same root query explore related but distinct intermediate decisions (implicit cross-trajectory relationships).
 
-**Root Cause**: MASS requires system-level optimization rather than single-agent optimization—yet existing MARL methods either rely on expensive critics (MAPPO) or cannot handle cross-agent dependencies across multiple contexts (GRPO).
+**Key Challenge**: MASS requires system-level optimization rather than single-agent optimization—yet existing MARL methods either rely on expensive critics (MAPPO) or cannot handle cross-agent dependencies across multiple contexts (GRPO).
 
-**Paper Goals**: Design an efficient critic-free multi-agent RL method capable of capturing indirect cross-agent dependencies and implicit cross-trajectory correlations, shifting the optimization focus from local agent performance to global system success.
+**Goal**: Design an efficient critic-free multi-agent RL method capable of capturing indirect cross-agent dependencies and implicit cross-trajectory correlations, shifting the optimization focus from local agent performance to global system success.
 
-**Starting Point**: Parameter sharing combined with group optimization—all agents share a single LLM backbone; relative advantage estimation over heterogeneous groups compares rollouts from different prompts, and backward reward propagation attributes terminal rewards to upstream agents.
+**Key Insight**: Parameter sharing combined with group optimization—all agents share a single LLM backbone; relative advantage estimation over heterogeneous groups compares rollouts from different prompts, and backward reward propagation attributes terminal rewards to upstream agents.
 
 **Core Idea**: Heterogeneous group advantage estimation—by comparing rollouts originating from the same root query but differing in intermediate decisions (forming heterogeneous groups), the optimization focus shifts from "selecting the optimal local action under fixed upstream outputs" to "rewarding system behaviors that lead to global success."
 

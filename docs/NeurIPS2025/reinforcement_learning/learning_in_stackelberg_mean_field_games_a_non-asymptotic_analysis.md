@@ -29,15 +29,15 @@ This paper proposes AC-SMFG, the first single-loop Actor-Critic algorithm with n
 
 ## Background & Motivation
 
-**State of the Field**: Mean field games (MFGs) provide a modeling framework for strategic interactions among infinitely many rational agents, with broad applications in resource allocation, telecommunications, and power system optimization. Stackelberg MFGs further introduce a hierarchical structure in which a single leader agent influences a follower population.
+**Background**: Mean field games (MFGs) provide a modeling framework for strategic interactions among infinitely many rational agents, with broad applications in resource allocation, telecommunications, and power system optimization. Stackelberg MFGs further introduce a hierarchical structure in which a single leader agent influences a follower population.
 
 **Limitations of Prior Work**: Existing SMFG algorithms suffer from three key issues: (i) overly strong independence assumptions between the leader and follower objectives; (ii) nested-loop structures that lead to poor sample efficiency; and (iii) lack of finite-time convergence guarantees, with only asymptotic convergence established.
 
-**Root Cause**: SMFGs are inherently bilevel optimization problems — the leader's objective depends on the equilibrium response of the follower population, which is itself influenced by the leader's policy. This coupling makes algorithm design and analysis extremely challenging.
+**Key Challenge**: SMFGs are inherently bilevel optimization problems — the leader's objective depends on the equilibrium response of the follower population, which is itself influenced by the leader's policy. This coupling makes algorithm design and analysis extremely challenging.
 
-**Paper Goals**: To design a simple, practical, single-loop algorithm with non-asymptotic convergence guarantees for solving SMFGs.
+**Goal**: To design a simple, practical, single-loop algorithm with non-asymptotic convergence guarantees for solving SMFGs.
 
-**Starting Point**: The SMFG is formulated as a bilevel optimization problem, and a multi-timescale analysis is employed to coordinate updates of the leader policy, follower policy, and mean field.
+**Key Insight**: The SMFG is formulated as a bilevel optimization problem, and a multi-timescale analysis is employed to coordinate updates of the leader policy, follower policy, and mean field.
 
 **Core Idea**: A "gradient alignment" condition is introduced to relax the leader-follower independence assumption; the Polyak-Łojasiewicz (PL) condition is leveraged to handle the non-convex lower-level problem, yielding a convergence rate superior to that of standard bilevel optimization.
 

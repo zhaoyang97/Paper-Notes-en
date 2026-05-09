@@ -28,15 +28,15 @@ CreditDecoding is a training-free parallel decoding acceleration method that acc
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion large language models (dLLMs) generate text through iterative denoising, supporting bidirectional attention and parallel token prediction. Existing parallel decoding schemes confirm only high-confidence positions at each step, re-masking others for subsequent refinement.
+**Background**: Diffusion large language models (dLLMs) generate text through iterative denoising, supporting bidirectional attention and parallel token prediction. Existing parallel decoding schemes confirm only high-confidence positions at each step, re-masking others for subsequent refinement.
 
 **Limitations of Prior Work**: (1) Computational redundancy — models often predict correct tokens many steps before actual decoding, but repeated re-masking occurs due to insufficient confidence; (2) History-agnostic decisions — each decoding step is independent of previous predictions, failing to leverage token historical consistency signals.
 
-**Root Cause**: Correct tokens are repeatedly re-masked due to temporarily insufficient confidence, causing massive redundant computation; yet directly lowering the decoding threshold introduces erroneous decoding.
+**Key Challenge**: Correct tokens are repeatedly re-masked due to temporarily insufficient confidence, causing massive redundant computation; yet directly lowering the decoding threshold introduces erroneous decoding.
 
-**Paper Goals**: Design a mechanism that leverages historical prediction consistency to safely decode correct tokens early, reducing redundant iterations.
+**Goal**: Design a mechanism that leverages historical prediction consistency to safely decode correct tokens early, reducing redundant iterations.
 
-**Starting Point**: Analyzing denoising trajectories reveals temporal consistency in token confidence — correct tokens show persistently rising confidence across steps, providing exploitable prior information.
+**Key Insight**: Analyzing denoising trajectories reveals temporal consistency in token confidence — correct tokens show persistently rising confidence across steps, providing exploitable prior information.
 
 **Core Idea**: Trace credit = cross-step accumulated historical logits, fused as a prior with current logits so that correct but low-confidence tokens cross the decoding threshold earlier.
 

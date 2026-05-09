@@ -27,15 +27,15 @@ DeepGuard is proposed to overcome the "final-layer bottleneck" by aggregating re
 
 ## Background & Motivation
 
-**State of the Field**: Code LLMs have demonstrated strong performance in code generation — GitHub Copilot reportedly assists in generating up to 46% of code on the platform. However, these models also replicate insecure coding patterns from training data: approximately 40% of Copilot-generated code contains vulnerabilities, and developers often fail to identify these AI-introduced defects.
+**Background**: Code LLMs have demonstrated strong performance in code generation — GitHub Copilot reportedly assists in generating up to 46% of code on the platform. However, these models also replicate insecure coding patterns from training data: approximately 40% of Copilot-generated code contains vulnerabilities, and developers often fail to identify these AI-introduced defects.
 
 **Limitations of Prior Work**: Existing security hardening approaches (e.g., SVEN's prefix tuning, SafeCoder's security-instruction fine-tuning) almost exclusively extract supervision signals from the final Transformer layer. However, final-layer representations are primarily optimized for next-token prediction rather than fine-grained vulnerability discrimination. The authors find that vulnerability-discriminative signals are strongest in the middle-to-upper layers and actually decay toward the final layer — a phenomenon termed the "final-layer bottleneck."
 
-**Root Cause**: Preventing insecure code requires integrating diverse syntactic and semantic evidence (e.g., recognizing syntactic patterns of string concatenation and reasoning about the semantic properties of untrusted data flows). This information is distributed across Transformer layers — shallow layers capture local syntax while deep layers encode abstract semantics — yet the final layer optimizes token prediction at the cost of vulnerability discriminability.
+**Key Challenge**: Preventing insecure code requires integrating diverse syntactic and semantic evidence (e.g., recognizing syntactic patterns of string concatenation and reasoning about the semantic properties of untrusted data flows). This information is distributed across Transformer layers — shallow layers capture local syntax while deep layers encode abstract semantics — yet the final layer optimizes token prediction at the cost of vulnerability discriminability.
 
-**Paper Goals**: To leverage security-relevant cues distributed across the model's internal layers, rather than relying solely on the final layer, in order to improve secure code generation.
+**Goal**: To leverage security-relevant cues distributed across the model's internal layers, rather than relying solely on the final layer, in order to improve secure code generation.
 
-**Starting Point**: Layer-wise linear probing — training a linear classifier at each layer to detect vulnerability patterns — reveals that probe confidence peaks at the middle-to-upper layers and decays toward the final layer.
+**Key Insight**: Layer-wise linear probing — training a linear classifier at each layer to detect vulnerability patterns — reveals that probe confidence peaks at the middle-to-upper layers and decays toward the final layer.
 
 **Core Idea**: An attention mechanism aggregates hidden states from multiple upper layers to construct a stronger security analysis signal than any single final layer, supporting multi-objective training and inference-time guidance.
 

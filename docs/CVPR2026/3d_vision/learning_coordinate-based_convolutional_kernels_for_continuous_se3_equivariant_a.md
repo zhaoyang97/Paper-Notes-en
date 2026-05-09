@@ -32,17 +32,17 @@ This paper proposes ECKConv, which defines convolutional kernels on the double c
 
 In 3D point cloud deep learning, model symmetry with respect to rigid-body transformations (rotation + translation) is critical for efficient learning. Group convolution is a representative method for extracting equivariant features, yet existing implementations face a fundamental trade-off between **strict symmetry** and **scalability**:
 
-**State of the Field**: Group convolution methods fall into two paradigms — discrete group methods (EPN, E2PN) expand kernel parameters directly over discretized rotation groups, while steerable convolution methods (TFN, SE(3)-Transformer) guarantee continuous equivariance via irreducible decomposition.
+**Background**: Group convolution methods fall into two paradigms — discrete group methods (EPN, E2PN) expand kernel parameters directly over discretized rotation groups, while steerable convolution methods (TFN, SE(3)-Transformer) guarantee continuous equivariance via irreducible decomposition.
 
 **Limitations of Prior Work**:
    - Discrete group methods discretize the continuous rotation group (e.g., approximating SO(3) with a finite set of rotations), introducing a discrepancy between model symmetry and the continuity of the group, thereby failing to strictly guarantee continuous SE(3) equivariance.
    - Steerable convolution methods, while theoretically elegant, require decomposing features and kernels into irreducible representations, incurring prohibitive computational cost (TFN achieves only 62.28% classification accuracy) and preventing scalability to large-scale 3D scenes.
 
-**Root Cause**: Strict continuous equivariance vs. memory/computational scalability — an inherent tension.
+**Key Challenge**: Strict continuous equivariance vs. memory/computational scalability — an inherent tension.
 
 **Prev. Attempts**: The intertwiner framework (Cohen et al.) proposes replacing the domain of group convolution from the group space to a quotient space, which is theoretically more principled. However, the prior work CSEConv only achieves SO(3) symmetry (lacking translation equivariance) and uses implicit kernels that incur large memory consumption, preventing scalability.
 
-**Starting Point**: The authors observe that when the reference point lies on the SO(2) subgroup (Z-axis), topologically equivalent point distributions reside on disjoint orbits (double cosets), each uniquely characterized by three parameters. This implies that equivariant operations can be constructed by relying solely on these SE(3)-invariant parameters.
+**Key Insight**: The authors observe that when the reference point lies on the SO(2) subgroup (Z-axis), topologically equivalent point distributions reside on disjoint orbits (double cosets), each uniquely characterized by three parameters. This implies that equivariant operations can be constructed by relying solely on these SE(3)-invariant parameters.
 
 **Core Idea**: Explicitly parameterize convolutional kernels on the double coset space via coordinate networks, simultaneously achieving continuous SE(3) equivariance and memory scalability.
 

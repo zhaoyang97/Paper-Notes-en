@@ -34,7 +34,7 @@ This paper proposes FLAD, a framework that decomposes the sharpness-aware pertur
 - **Promise of flat minima**: Research indicates that optimizing toward flat loss minima can improve generalization and robustness to distribution shift; methods such as SAM and GAM have demonstrated promise in transfer learning and few-shot learning.
 - **First limitation of existing flatness methods**: Sharpness regularization is treated as a unified signal without distinguishing the contributions of different perturbation components (gradient-aligned vs. gradient-orthogonal directions), which is an oversimplification.
 - **Second limitation of existing flatness methods**: Double gradient computation or multiple forward-backward passes introduce substantial computational overhead, severely limiting practical scalability.
-- **Starting Point**: Can the sharpness perturbation direction be decomposed so that only the component genuinely beneficial to generalization is retained, while significantly reducing computational cost?
+- **Key Insight**: Can the sharpness perturbation direction be decomposed so that only the component genuinely beneficial to generalization is retained, while significantly reducing computational cost?
 
 ## Method
 

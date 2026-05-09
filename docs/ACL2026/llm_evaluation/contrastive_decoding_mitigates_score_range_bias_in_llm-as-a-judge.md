@@ -29,15 +29,15 @@ This paper identifies **score range bias** in LLM judges under direct assessment
 
 ## Background & Motivation
 
-**State of the Field**: LLM-as-a-Judge has become an indispensable component of evaluation ecosystems, widely applied to two tasks: direct assessment (assigning scores to outputs) and pairwise comparison.
+**Background**: LLM-as-a-Judge has become an indispensable component of evaluation ecosystems, widely applied to two tasks: direct assessment (assigning scores to outputs) and pairwise comparison.
 
 **Limitations of Prior Work**: Known LLM judge biases include self-enhancement bias (favoring the model's own outputs) and family enhancement bias (favoring outputs from models in the same family). Whether additional hidden biases exist has not been thoroughly investigated. In direct assessment tasks, the correlation between LLM judges and human annotations has consistently lagged behind pairwise comparison.
 
-**Root Cause**: When different score ranges are used (e.g., 0–4, 1–5, 2–6, 3–7), the output correlations of LLM judges shift substantially, indicating unstable evaluation results that preclude reliable search for the optimal score range.
+**Key Challenge**: When different score ranges are used (e.g., 0–4, 1–5, 2–6, 3–7), the output correlations of LLM judges shift substantially, indicating unstable evaluation results that preclude reliable search for the optimal score range.
 
-**Paper Goals**: To identify and quantify score range bias in LLM judges and propose effective mitigation strategies.
+**Goal**: To identify and quantify score range bias in LLM judges and propose effective mitigation strategies.
 
-**Starting Point**: The observation that models of different sizes within the same family encode similar score range biases (e.g., Qwen2.5 family models of 3B/7B/14B all tend to output Score 2) motivates the use of contrastive decoding to cancel these shared biases.
+**Key Insight**: The observation that models of different sizes within the same family encode similar score range biases (e.g., Qwen2.5 family models of 3B/7B/14B all tend to output Score 2) motivates the use of contrastive decoding to cancel these shared biases.
 
 **Core Idea**: Apply contrastive decoding to the LLM-as-a-Judge setting by using a smaller model from the same family as an "assistant model," subtracting its logits from those of the main model to eliminate the shared score range bias.
 

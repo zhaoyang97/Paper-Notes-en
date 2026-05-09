@@ -28,15 +28,15 @@ BiasedTales-ML constructs a corpus of ~350K LLM-generated children's stories acr
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly used to generate narrative content (especially children's stories), which implicitly conveys notions about social roles, occupations, and environments. Existing social bias research primarily focuses on English short-text tasks (e.g., sentence completion, classification).
+**Background**: LLMs are increasingly used to generate narrative content (especially children's stories), which implicitly conveys notions about social roles, occupations, and environments. Existing social bias research primarily focuses on English short-text tasks (e.g., sentence completion, classification).
 
 **Limitations of Prior Work**: (1) Short-text bias evaluation cannot capture biases expressed indirectly through characters, scenes, and plot structures in long-form narratives; (2) existing bias benchmarks (e.g., StereoSet, BBQ) are static classification tasks disconnected from real generation scenarios; (3) virtually no work has systematically studied cross-lingual consistency of bias in multilingual narrative generation.
 
-**Root Cause**: RLHF and other safety alignment techniques are primarily developed on English data and Western norms, but model bias behavior in other languages may be entirely different — conclusions of "safe" from English evaluation may not hold in low-resource languages.
+**Key Challenge**: RLHF and other safety alignment techniques are primarily developed on English data and Western norms, but model bias behavior in other languages may be entirely different — conclusions of "safe" from English evaluation may not hold in low-resource languages.
 
-**Paper Goals**: (1) Construct a large-scale multilingual parallel narrative corpus; (2) propose a systematic narrative-level social attribute distribution analysis framework; (3) empirically study cross-lingual bias consistency.
+**Goal**: (1) Construct a large-scale multilingual parallel narrative corpus; (2) propose a systematic narrative-level social attribute distribution analysis framework; (3) empirically study cross-lingual bias consistency.
 
-**Starting Point**: Children's stories are chosen as a controlled yet expressive narrative domain — encouraging positive and imaginative content while requiring models to make structured choices about characters, settings, and social roles.
+**Key Insight**: Children's stories are chosen as a controlled yet expressive narrative domain — encouraging positive and imaginative content while requiring models to make structured choices about characters, settings, and social roles.
 
 **Core Idea**: Generate parallel stories across 8 languages through full-permutation prompt design (systematically varying nationality × religion × social class × parental role × child gender), and analyze bias using distributional metrics rather than instance-level annotation.
 

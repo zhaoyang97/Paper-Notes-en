@@ -33,9 +33,9 @@ Open-vocabulary action recognition (OVAR) requires models to recognize action ca
 
 **Pain Point 2: CLIP regularization introduces static bias.** Methods such as Open-VCLIP and FROSTER apply regularization to prevent the model from deviating from CLIP's generalization capacity, achieving reasonable in-context performance. However, since CLIP is an image-pretrained model, such regularization causes video learners to over-rely on **shortcut static features** (e.g., scene backgrounds) while neglecting critical motion cues. When evaluated in out-of-context settings (e.g., with video backgrounds replaced), performance drops sharply.
 
-**Root Cause**: CLIP's static generalization capacity is a double-edged sword—it facilitates in-context generalization while hindering the learning of motion cues and harming out-of-context generalization.
+**Key Challenge**: CLIP's static generalization capacity is a double-edged sword—it facilitates in-context generalization while hindering the learning of motion cues and harming out-of-context generalization.
 
-**Starting Point**: Drawing on the meta-learning perspective of "learning to generalize," the video learner is explicitly encouraged during training to rapidly generalize to arbitrary subsequent data, thereby minimizing inherent bias toward seen data and static cues. **Core Idea: cross-batch meta-optimization naturally simulates the known-to-open generalization task, achieving static debiasing without CLIP regularization.**
+**Key Insight**: Drawing on the meta-learning perspective of "learning to generalize," the video learner is explicitly encouraged during training to rapidly generalize to arbitrary subsequent data, thereby minimizing inherent bias toward seen data and static cues. **Core Idea: cross-batch meta-optimization naturally simulates the known-to-open generalization task, achieving static debiasing without CLIP regularization.**
 
 ## Method
 

@@ -29,15 +29,15 @@ This paper identifies the "token's dilemma" in dynamic MoE continual learning �
 
 ## Background & Motivation
 
-1. **State of the Field**: Large Vision-Language Models (LVLMs) such as LLaVA demonstrate strong performance across diverse vision-language tasks. Multimodal Continual Instruction Tuning (MCIT) aims to enable LVLMs to incrementally acquire new tasks while retaining performance on prior ones. Mixture-of-Experts (MoE) architectures have become a mainstream approach for MCIT due to their dynamic modularity and parameter isolation properties.
+1. **Background**: Large Vision-Language Models (LVLMs) such as LLaVA demonstrate strong performance across diverse vision-language tasks. Multimodal Continual Instruction Tuning (MCIT) aims to enable LVLMs to incrementally acquire new tasks while retaining performance on prior ones. Mixture-of-Experts (MoE) architectures have become a mainstream approach for MCIT due to their dynamic modularity and parameter isolation properties.
 
 2. **Limitations of Prior Work**: (1) Fixed-size MoE with shared experts and routers leads to cross-task interference; (2) Incrementally expanding MoE while freezing old experts achieves parameter isolation but still suffers from **routing drift**: old-task tokens are erroneously attracted to new experts, causing forgetting; (3) Existing methods circumvent this via task-level routers, but at the cost of heavy task identification overhead and sacrificing the inherent token-level routing flexibility of MoE.
 
-3. **Root Cause**: Even when old experts and routing parameters are frozen, training newly added components still induces forgetting. The fundamental issue is that **not all new-task tokens carry genuinely new patterns** — some resemble old-task patterns or exhibit ambiguous affinity between old and new experts.
+3. **Key Challenge**: Even when old experts and routing parameters are frozen, training newly added components still induces forgetting. The fundamental issue is that **not all new-task tokens carry genuinely new patterns** — some resemble old-task patterns or exhibit ambiguous affinity between old and new experts.
 
-4. **Paper Goals**: (1) Precisely analyze the token-level causes of routing drift; (2) Design differentiated routing strategies for distinct token types to mitigate forgetting.
+4. **Goal**: (1) Precisely analyze the token-level causes of routing drift; (2) Design differentiated routing strategies for distinct token types to mitigate forgetting.
 
-5. **Starting Point**: Through controlled two-task experiments, tokens are categorized into three types (new/old/ambiguous) based on their routing score distributions toward new versus old expert groups. Ambiguous tokens are identified as the primary culprit of routing drift — they neither facilitate new-task learning nor protect old knowledge, yet train the router to attract old-task patterns when routed to new experts.
+5. **Key Insight**: Through controlled two-task experiments, tokens are categorized into three types (new/old/ambiguous) based on their routing score distributions toward new versus old expert groups. Ambiguous tokens are identified as the primary culprit of routing drift — they neither facilitate new-task learning nor protect old knowledge, yet train the router to attract old-task patterns when routed to new experts.
 
 6. **Core Idea**: Identify token types and steer ambiguous/old tokens away from new experts, while applying soft regularization to encourage exclusive token-to-expert-group routing and specialization of new experts.
 

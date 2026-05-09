@@ -28,15 +28,15 @@ RACER proposes a training-free speculative decoding method that unifies retrieva
 
 ## Background & Motivation
 
-**State of the Field**: Autoregressive decoding in LLMs generates one token per step, causing inference latency to grow linearly with sequence length. Speculative decoding, which employs a "draft-then-verify" paradigm to validate multiple tokens in parallel without sacrificing output quality, is among the most promising acceleration approaches.
+**Background**: Autoregressive decoding in LLMs generates one token per step, causing inference latency to grow linearly with sequence length. Speculative decoding, which employs a "draft-then-verify" paradigm to validate multiple tokens in parallel without sacrificing output quality, is among the most promising acceleration approaches.
 
 **Limitations of Prior Work**: Existing training-free methods suffer from two categories of issues: (1) retrieval-based methods (e.g., PLD, REST) rely on exact token matching and fail entirely when no matching continuation exists in context; (2) logits-based methods (e.g., Token Recycling) lack structured guidance, resulting in a narrow prediction range and suboptimal quality. Each category has its advantages, but they remain disjoint.
 
-**Root Cause**: Retrieval provides "seen information" (precise but sparse), while logits provide "unseen information" (flexible but lacking anchors). The two are complementary, yet existing methods fail to integrate them effectively.
+**Key Challenge**: Retrieval provides "seen information" (precise but sparse), while logits provide "unseen information" (flexible but lacking anchors). The two are complementary, yet existing methods fail to integrate them effectively.
 
-**Paper Goals**: Design a lightweight, plug-and-play, training-free speculative decoding method that unifies retrieval and logits as dual signal sources.
+**Goal**: Design a lightweight, plug-and-play, training-free speculative decoding method that unifies retrieval and logits as dual signal sources.
 
-**Starting Point**: The authors observe that the copy-logit strategy—reusing the logits at the most recent occurrence of the same token in context—yields higher acceptance rates and sharper distributions than the last-logit strategy (rank-1 acceptance rate exceeding 50%), providing a foundation for building an efficient logits draft tree.
+**Key Insight**: The authors observe that the copy-logit strategy—reusing the logits at the most recent occurrence of the same token in context—yields higher acceptance rates and sharper distributions than the last-logit strategy (rank-1 acceptance rate exceeding 50%), providing a foundation for building an efficient logits draft tree.
 
 **Core Idea**: An Aho-Corasick automaton maintains n-gram patterns in context as structured retrieval anchors, while copy-logit constructs a layer-wise pruned logits draft tree for flexible extrapolation. Under a fixed capacity budget, the two trees are dynamically allocated and merged into a unified draft tree via trie union.
 

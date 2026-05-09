@@ -28,15 +28,15 @@ This paper proposes MASS-RAG, a training-free multi-agent synthesis RAG framewor
 
 ## Background & Motivation
 
-**State of the Field**: RAG enhances the factuality of LLMs by introducing external knowledge at inference time. However, when retrieved contexts are noisy, incomplete, or heterogeneous, a single generation process struggles to effectively coordinate evidence.
+**Background**: RAG enhances the factuality of LLMs by introducing external knowledge at inference time. However, when retrieved contexts are noisy, incomplete, or heterogeneous, a single generation process struggles to effectively coordinate evidence.
 
 **Limitations of Prior Work**: (1) Existing multi-agent RAG systems (e.g., Chang et al. 2024) rely on a single judge agent to filter context from a single perspective, failing to capture complementary or heterogeneous factual evidence; (2) irrelevant or redundant retrieved information degrades generation quality; (3) for questions requiring cross-document aggregation of complementary evidence, a single perspective is particularly inadequate.
 
-**Root Cause**: Retrieved documents may contain relevant evidence in different forms—some requiring summarization, some requiring precise extraction, and some requiring inferential reasoning—making a single filtering strategy insufficient to handle all cases.
+**Key Challenge**: Retrieved documents may contain relevant evidence in different forms—some requiring summarization, some requiring precise extraction, and some requiring inferential reasoning—making a single filtering strategy insufficient to handle all cases.
 
-**Paper Goals**: To design a multi-perspective evidence filtering and synthesis mechanism that enables RAG systems to process and integrate retrieved documents from complementary angles.
+**Goal**: To design a multi-perspective evidence filtering and synthesis mechanism that enables RAG systems to process and integrate retrieved documents from complementary angles.
 
-**Starting Point**: Evidence processing is decomposed into three complementary perspectives—summarization (compressing while preserving semantics), extraction (verbatim extraction of precise evidence), and reasoning (inferring implicit relationships)—realized through a division of labor among multiple agents.
+**Key Insight**: Evidence processing is decomposed into three complementary perspectives—summarization (compressing while preserving semantics), extraction (verbatim extraction of precise evidence), and reasoning (inferring implicit relationships)—realized through a division of labor among multiple agents.
 
 **Core Idea**: Different types of questions require different types of evidence processing. MASS-RAG generates multiple evidence views in parallel through multiple agents and then produces a more robust final answer via explicit comparison and integration.
 

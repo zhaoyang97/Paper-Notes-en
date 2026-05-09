@@ -28,15 +28,15 @@ This paper proposes AMPED, a framework that applies gradient surgery (PCGrad) du
 
 ## Background & Motivation
 
-**State of the Field**: Skill-based reinforcement learning (SBRL) enables rapid adaptation by pretraining skill-conditioned policies, but effective skill learning requires simultaneously maximizing exploration (covering more states) and skill diversity (distinguishability between skills).
+**Background**: Skill-based reinforcement learning (SBRL) enables rapid adaptation by pretraining skill-conditioned policies, but effective skill learning requires simultaneously maximizing exploration (covering more states) and skill diversity (distinguishability between skills).
 
 **Limitations of Prior Work**: These two objectives are inherently conflicting — MI-driven diversity objectives lead to premature specialization (limiting exploration), while entropy-driven exploration sacrifices skill distinguishability. Existing methods (CeSD, ComSD) directly sum reward signals without systematically addressing gradient conflicts.
 
-**Root Cause**: Exploration gradients drive the agent to visit broader regions, while diversity gradients drive different skills apart — these update directions can be diametrically opposed, and naive summation leads to inefficient learning.
+**Key Challenge**: Exploration gradients drive the agent to visit broader regions, while diversity gradients drive different skills apart — these update directions can be diametrically opposed, and naive summation leads to inefficient learning.
 
-**Paper Goals**: Systematically resolve gradient conflicts between exploration and diversity within a multi-objective RL framework, and fully exploit learned skill diversity during fine-tuning.
+**Goal**: Systematically resolve gradient conflicts between exploration and diversity within a multi-objective RL framework, and fully exploit learned skill diversity during fine-tuning.
 
-**Starting Point**: Treating exploration and diversity as two separate optimization objectives, applying PCGrad gradient surgery to remove conflicting gradient components, while introducing a learned skill selector to replace random selection.
+**Key Insight**: Treating exploration and diversity as two separate optimization objectives, applying PCGrad gradient surgery to remove conflicting gradient components, while introducing a learned skill selector to replace random selection.
 
 **Core Idea**: Gradient surgery to resolve gradient conflicts during pretraining + a learned skill selector to exploit diversity during fine-tuning.
 

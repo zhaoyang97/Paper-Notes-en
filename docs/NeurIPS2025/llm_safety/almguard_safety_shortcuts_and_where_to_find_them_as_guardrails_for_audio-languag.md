@@ -27,15 +27,15 @@ content_hash: 7176a5a35d3b1a1b
 The first defense framework against jailbreak attacks on audio-language models (ALMs). The work discovers that aligned ALMs possess latent safety shortcuts that can be activated, and proposes a Mel Gradient Sparse Mask (M-GSM) to identify critical frequency bins. By applying Shortcut Activation Perturbations (SAP) to these bins, the average attack success rate is reduced from 41.6% to 4.6% with negligible degradation of normal task performance.
 
 ## Background & Motivation
-**State of the Field**: ALMs (e.g., Qwen2-Audio, LLaMA-Omni, Lyra) integrate audio understanding with language generation, yet remain vulnerable to audio jailbreak attacks that exploit adversarial acoustic perturbations to bypass safety alignment.
+**Background**: ALMs (e.g., Qwen2-Audio, LLaMA-Omni, Lyra) integrate audio understanding with language generation, yet remain vulnerable to audio jailbreak attacks that exploit adversarial acoustic perturbations to bypass safety alignment.
 
 **Limitations of Prior Work**: (a) Text-LLM defenses (Self-Reminder, ICD) transfer poorly to ALMs and severely degrade ASR and normal functionality (WER increases by 26%); (b) safety research on the audio modality is nearly absent—all existing work focuses on attacks rather than defenses.
 
-**Root Cause**: Safety alignment is effective in the text modality, but the audio modality provides a bypass channel. A defense must be established at the audio level without impairing normal audio understanding capabilities.
+**Key Challenge**: Safety alignment is effective in the text modality, but the audio modality provides a bypass channel. A defense must be established at the audio level without impairing normal audio understanding capabilities.
 
-**Paper Goals**: Design an inference-time defense mechanism at the audio level that simultaneously reduces attack success rates and preserves normal functionality.
+**Goal**: Design an inference-time defense mechanism at the audio level that simultaneously reduces attack success rates and preserves normal functionality.
 
-**Starting Point**: The hypothesis that safety-aligned ALMs already "know" what is unsafe, and audio jailbreaks merely circumvent the pathways that trigger safety behavior. Introducing subtle acoustic perturbations to "remind" the model to activate its safety pathway should suffice, without any model modification.
+**Key Insight**: The hypothesis that safety-aligned ALMs already "know" what is unsafe, and audio jailbreaks merely circumvent the pathways that trigger safety behavior. Introducing subtle acoustic perturbations to "remind" the model to activate its safety pathway should suffice, without any model modification.
 
 **Core Idea**: Identify the frequency bins in the Mel spectrogram that are most critical to safety yet minimally impact normal tasks → apply a universal perturbation to these bins → activate the safety shortcuts.
 

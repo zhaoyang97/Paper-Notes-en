@@ -28,15 +28,15 @@ This paper proposes the Anchored Cyclic Generation (ACG) paradigm, which calibra
 
 ## Background & Motivation
 
-**State of the Field**: Symbolic music generation is a core branch of music generation. Dominant approaches include Transformer-based autoregressive models (e.g., Music Transformer, BPE Transformer) and diffusion models (e.g., Cascaded-Diff). Autoregressive methods perform well on short sequences but suffer from severe quality degradation on long-sequence generation.
+**Background**: Symbolic music generation is a core branch of music generation. Dominant approaches include Transformer-based autoregressive models (e.g., Music Transformer, BPE Transformer) and diffusion models (e.g., Cascaded-Diff). Autoregressive methods perform well on short sequences but suffer from severe quality degradation on long-sequence generation.
 
 **Limitations of Prior Work**: Autoregressive models are subject to inherent error accumulation—each prediction step may deviate from the optimal value, and these deviations compound iteratively, causing significant degradation in musical quality and structural integrity over long sequences. Furthermore, the computational complexity of Transformers grows quadratically with sequence length. While diffusion models offer a non-autoregressive alternative, they struggle to efficiently generate complete long-form musical pieces.
 
-**Root Cause**: Long-sequence music generation simultaneously requires maintaining local coherence (note-level expressiveness) and global structural integrity (musical form and harmonic progression), yet existing methods fail to adequately address both.
+**Key Challenge**: Long-sequence music generation simultaneously requires maintaining local coherence (note-level expressiveness) and global structural integrity (musical form and harmonic progression), yet existing methods fail to adequately address both.
 
-**Paper Goals**: To design a long-sequence music generation method that substantially reduces error accumulation, maintains global structural consistency, and supports precise duration control.
+**Goal**: To design a long-sequence music generation method that substantially reduces error accumulation, maintains global structural consistency, and supports precise duration control.
 
-**Starting Point**: Inspired by teacher forcing—where ground-truth history is used during training instead of model predictions to significantly reduce error—the authors transfer this idea to the inference stage: after each generation step, the confirmed outputs are re-encoded into anchor features to guide subsequent generation.
+**Key Insight**: Inspired by teacher forcing—where ground-truth history is used during training instead of model predictions to significantly reduce error—the authors transfer this idea to the inference stage: after each generation step, the confirmed outputs are re-encoded into anchor features to guide subsequent generation.
 
 **Core Idea**: Decompose long-sequence generation into two levels of loops—a sketch loop that captures high-level semantics, and a refinement loop that generates detailed note content—with each loop employing an anchoring mechanism to calibrate the generation direction using confirmed content.
 

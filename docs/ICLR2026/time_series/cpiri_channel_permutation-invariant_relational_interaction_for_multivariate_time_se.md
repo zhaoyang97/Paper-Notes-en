@@ -28,11 +28,11 @@ This paper proposes the CPiRi framework, which achieves channel permutation inva
 
 ## Background & Motivation
 
-1. **State of the Field**: Multivariate time series forecasting (MTSF) comprises two major paradigms—channel-dependent (CD) models that learn cross-channel features, and channel-independent (CI) models that process each channel independently.
+1. **Background**: Multivariate time series forecasting (MTSF) comprises two major paradigms—channel-dependent (CD) models that learn cross-channel features, and channel-independent (CI) models that process each channel independently.
 2. **Limitations of Prior Work**: CD models (e.g., Informer, Crossformer) effectively memorize the fixed positional order of channels rather than learning semantic relationships. When channels are reordered or new channels are introduced at inference time, performance collapses catastrophically (Informer's error increases by >400% on PEMS-08). CI models are naturally immune to channel ordering but completely ignore cross-channel dependencies, limiting forecasting performance.
-3. **Root Cause**: CD models capture interactions but lack robustness, while CI models guarantee robustness but forgo relational reasoning—the two properties appear mutually exclusive.
-4. **Paper Goals**: How can a model simultaneously capture cross-channel relationships and maintain channel permutation invariance (CPI), enabling deployment in real-world scenarios where channels change dynamically?
-5. **Starting Point**: The authors observe that the strengths of CI and CD models are complementary. By thoroughly decoupling temporal feature extraction from spatial relational modeling, the advantages of both paradigms can be inherited independently. A channel shuffling strategy during training then forces the spatial module to learn content-based rather than position-based relationships.
+3. **Key Challenge**: CD models capture interactions but lack robustness, while CI models guarantee robustness but forgo relational reasoning—the two properties appear mutually exclusive.
+4. **Goal**: How can a model simultaneously capture cross-channel relationships and maintain channel permutation invariance (CPI), enabling deployment in real-world scenarios where channels change dynamically?
+5. **Key Insight**: The authors observe that the strengths of CI and CD models are complementary. By thoroughly decoupling temporal feature extraction from spatial relational modeling, the advantages of both paradigms can be inherited independently. A channel shuffling strategy during training then forces the spatial module to learn content-based rather than position-based relationships.
 6. **Core Idea**: Use a frozen foundation model for temporal encoding (CI advantage), employ a permutation-equivariant Transformer spatial module to learn cross-channel relationships (CD advantage), and enforce content-driven relational reasoning via a channel shuffling training strategy.
 
 ## Method

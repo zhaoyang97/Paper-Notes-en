@@ -27,7 +27,7 @@ content_hash: 421165c32b9f6fd9
 This paper proposes PhysGS, which integrates Bayesian inference into a 3D Gaussian Splatting pipeline. By leveraging vision-language model priors and multi-view confidence-weighted updates, PhysGS enables per-point probabilistic estimation and uncertainty quantification of physical properties (friction, hardness, density, stiffness), achieving a 22.8% improvement over NeRF2Physics in APE for mass estimation and a 61.2% reduction in Shore hardness error.
 
 ## Background & Motivation
-**State of the Field**: Understanding the physical properties of environments (friction, hardness, elasticity, density, etc.) is critical for safe robotic interaction. Existing 3D reconstruction methods (NeRF, 3DGS) focus primarily on geometry and appearance, and cannot infer underlying physical properties.
+**Background**: Understanding the physical properties of environments (friction, hardness, elasticity, density, etc.) is critical for safe robotic interaction. Existing 3D reconstruction methods (NeRF, 3DGS) focus primarily on geometry and appearance, and cannot infer underlying physical properties.
 
 **Limitations of Prior Work**:
    - Methods such as NeRF2Physics perform zero-shot regression using language embeddings but do not model uncertainty, leading to brittle predictions in ambiguous regions (e.g., dirt vs. asphalt).
@@ -35,9 +35,9 @@ This paper proposes PhysGS, which integrates Bayesian inference into a 3D Gaussi
    - Outdoor scenes remain largely unexplored.
    - Two sources of uncertainty—aleatoric (sensor noise) and epistemic (insufficient model knowledge)—are not explicitly modeled.
 
-**Root Cause**: How to estimate multiple physical properties within a unified framework from visual sensors, while simultaneously quantifying the reliability of such estimates.
+**Key Challenge**: How to estimate multiple physical properties within a unified framework from visual sensors, while simultaneously quantifying the reliability of such estimates.
 
-**Starting Point**: Each Gaussian primitive is treated as a probabilistic entity whose belief over physical properties is continuously refined through Bayesian posterior updates.
+**Key Insight**: Each Gaussian primitive is treated as a probabilistic entity whose belief over physical properties is continuously refined through Bayesian posterior updates.
 
 **Core Idea**: A Dirichlet-Categorical model is used to fuse discrete material classification, while a Normal-Inverse-Gamma (NIG) prior models aleatoric and epistemic uncertainty over continuous properties.
 

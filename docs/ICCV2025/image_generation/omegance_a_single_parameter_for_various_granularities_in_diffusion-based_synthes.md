@@ -28,15 +28,15 @@ Omegance proposes scaling the noise prediction in each denoising step of a diffu
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models have become the dominant paradigm for high-quality image synthesis, yet they lack direct, fine-grained control over the detail granularity of generated outputs. Users frequently need to selectively adjust the level of detail across different regions during creative workflows.
+**Background**: Diffusion models have become the dominant paradigm for high-quality image synthesis, yet they lack direct, fine-grained control over the detail granularity of generated outputs. Users frequently need to selectively adjust the level of detail across different regions during creative workflows.
 
 **Limitations of Prior Work**: (a) Text prompts cannot precisely express desired detail levels (e.g., "reduce background detail while preserving high detail in the subject" is difficult to convey through prompting); (b) existing quality enhancement methods (e.g., FreeU, SAG/PAG) only support global enhancement and lack spatially fine-grained control; (c) RLHF-based fine-tuning approaches are costly and inflexible; (d) FreeU is tightly coupled to the U-Net architecture and is not applicable to newer architectures such as DiT.
 
-**Root Cause**: The uniform denoising process in diffusion models does not permit imposing different levels of detail control on different regions within the same image, and the SNR schedule is fixed throughout generation.
+**Key Challenge**: The uniform denoising process in diffusion models does not permit imposing different levels of detail control on different regions within the same image, and the SNR schedule is fixed throughout generation.
 
-**Paper Goals**: To achieve, in the simplest possible manner: (a) global detail enhancement/suppression; (b) spatially region-specified granularity control; and (c) temporally stage-dependent granularity control.
+**Goal**: To achieve, in the simplest possible manner: (a) global detail enhancement/suppression; (b) spatially region-specified granularity control; and (c) temporally stage-dependent granularity control.
 
-**Starting Point**: Noise scaling is a fundamental operation in diffusion models, yet it has never been systematically explored as a means of granularity control. The authors find that simply scaling the noise prediction effectively modifies the SNR, thereby controlling the retention of high-frequency versus low-frequency information.
+**Key Insight**: Noise scaling is a fundamental operation in diffusion models, yet it has never been systematically explored as a means of granularity control. The authors find that simply scaling the noise prediction effectively modifies the SNR, thereby controlling the retention of high-frequency versus low-frequency information.
 
 **Core Idea**: Multiply the noise prediction by $\omega$ at each denoising step — $\omega < 1$ retains more high-frequency information to produce richer detail, while $\omega > 1$ removes more high-frequency content to yield smoother outputs.
 

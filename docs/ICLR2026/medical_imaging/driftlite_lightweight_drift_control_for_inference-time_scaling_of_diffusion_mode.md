@@ -28,7 +28,7 @@ DriftLite exploits the inherent degrees of freedom between the drift and potenti
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion/Flow Matching models have achieved remarkable success in generative tasks, yet inference-time adaptation—adjusting to new target distributions without retraining—remains a critical challenge. Two main paradigms exist: guidance (simple but biased) and SMC particle reweighting (unbiased but prone to severe weight degeneracy).
+**Background**: Diffusion/Flow Matching models have achieved remarkable success in generative tasks, yet inference-time adaptation—adjusting to new target distributions without retraining—remains a critical challenge. Two main paradigms exist: guidance (simple but biased) and SMC particle reweighting (unbiased but prone to severe weight degeneracy).
 
 **Limitations of Prior Work**:
    - Guidance methods (classifier/classifier-free guidance) are simple but inherently biased—they neglect the time-varying normalization constant of the target distribution.
@@ -36,13 +36,13 @@ DriftLite exploits the inherent degrees of freedom between the drift and potenti
    - Increasing particle count alleviates degeneracy but incurs linearly growing computational cost; reducing particle count leads to instability.
    - Training-based control methods (neural network parameterization) require backpropagation, forfeiting the lightweight advantage of inference-time approaches.
 
-**Root Cause**: Unbiasedness vs. computational efficiency—SMC is theoretically correct but practically unstable, while guidance is efficient but biased.
+**Key Challenge**: Unbiasedness vs. computational efficiency—SMC is theoretically correct but practically unstable, while guidance is efficient but biased.
 
-**Paper Goals**:
+**Goal**:
    - How can particle weights be stabilized while preserving unbiasedness?
    - Can a training-free method with negligible overhead be devised?
 
-**Starting Point**: The Fokker-Planck equation admits a fundamental degree of freedom between the drift term and the potential function—any control term added to the drift can be exactly compensated by a corresponding correction to the potential, and this freedom can be exploited to minimize the variance of the residual potential.
+**Key Insight**: The Fokker-Planck equation admits a fundamental degree of freedom between the drift term and the potential function—any control term added to the drift can be exactly compensated by a corresponding correction to the potential, and this freedom can be exploited to minimize the variance of the residual potential.
 
 **Core Idea**: Transform SMC's passive reweighting into proactive steering—offload a portion of the variance-inducing potential $g_t$ onto the drift term, requiring only a small linear system solve at each step.
 

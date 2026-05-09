@@ -29,15 +29,15 @@ This paper introduces SEA-Vision, a benchmark that unifies evaluation of documen
 
 ## Background & Motivation
 
-**State of the Field**: Multilingual document and scene text understanding has become a core capability in search, finance, and public services. Leading MLLMs such as GPT-4o and the Qwen-VL series perform well on English and Chinese, yet existing benchmarks (DocVQA, TextVQA, MTVQA, etc.) are heavily skewed toward high-resource languages.
+**Background**: Multilingual document and scene text understanding has become a core capability in search, finance, and public services. Leading MLLMs such as GPT-4o and the Qwen-VL series perform well on English and Chinese, yet existing benchmarks (DocVQA, TextVQA, MTVQA, etc.) are heavily skewed toward high-resource languages.
 
 **Limitations of Prior Work**: (1) Document parsing and text-centric VQA are typically evaluated independently, precluding unified measurement of combined OCR and reasoning ability. (2) Multilingual VQA datasets commonly rely on OCR/translation-based annotation, where the text referenced by translated questions does not exist in the original image, causing severe visual–semantic misalignment. (3) The 11 SEA languages span four major script families—Latin, Brahmic, Arabic, and logographic—yet existing benchmarks provide extremely sparse coverage.
 
-**Root Cause**: Southeast Asia is one of the most linguistically diverse regions in the world. Real-world applications involve dense text layouts, complex scripts, and heterogeneous document types coexisting, yet no benchmark simultaneously covers the major SEA languages or supports cross-task and cross-script evaluation. MTVQA covers only 9 languages (2 low-resource) and only VQA; CC-OCR covers 10 languages but only 1 low-resource language.
+**Key Challenge**: Southeast Asia is one of the most linguistically diverse regions in the world. Real-world applications involve dense text layouts, complex scripts, and heterogeneous document types coexisting, yet no benchmark simultaneously covers the major SEA languages or supports cross-task and cross-script evaluation. MTVQA covers only 9 languages (2 low-resource) and only VQA; CC-OCR covers 10 languages but only 1 low-resource language.
 
-**Paper Goals**: (1) Construct the first benchmark that jointly evaluates document parsing and TEC-VQA for SEA multilingual settings. (2) Design an annotation methodology that resolves visual–textual misalignment. (3) Quantify the true capabilities of MLLMs on low-resource SEA languages.
+**Goal**: (1) Construct the first benchmark that jointly evaluates document parsing and TEC-VQA for SEA multilingual settings. (2) Design an annotation methodology that resolves visual–textual misalignment. (3) Quantify the true capabilities of MLLMs on low-resource SEA languages.
 
-**Starting Point**: Design a hybrid annotation pipeline (automatic filtering + MLLM-assisted annotation + native-speaker verification) and employ a re-rendering strategy that "paints" translated text back into images, eliminating visual–textual misalignment at the source.
+**Key Insight**: Design a hybrid annotation pipeline (automatic filtering + MLLM-assisted annotation + native-speaker verification) and employ a re-rendering strategy that "paints" translated text back into images, eliminating visual–textual misalignment at the source.
 
 **Core Idea**: By ensuring that visible text and QA language are fully consistent through re-rendering, construct a high-quality benchmark covering 11 SEA languages that unifies evaluation of document parsing and scene text VQA.
 

@@ -28,15 +28,15 @@ This paper theoretically demonstrates that existing RLHF exploratory bonuses und
 
 ## Background & Motivation
 
-**State of the Field**: Iterative online RLHF is the core paradigm for LLM alignment (used in Claude, LLaMA series, etc.). Standard approaches rely on the policy's own stochasticity for "passive exploration," but when optimal behaviors reside in low-probability regions, passive exploration may never discover them, causing the policy to remain stuck in local optima.
+**Background**: Iterative online RLHF is the core paradigm for LLM alignment (used in Claude, LLaMA series, etc.). Standard approaches rely on the policy's own stochasticity for "passive exploration," but when optimal behaviors reside in low-probability regions, passive exploration may never discover them, causing the policy to remain stuck in local optima.
 
 **Limitations of Prior Work**: To improve sample efficiency, recent work (Zhang et al. 2024, Xie et al. 2024, Cen et al. 2025) introduces an exploratory bonus $\mathcal{L}_{bonus} = \max_\pi \mathcal{J}_{\beta,KL}(\pi, r)$ to incentivize exploration. However, these methods suffer from a fundamental theoretical flaw.
 
-**Root Cause**: Divergence regularization (KL/α-divergence) is designed to prevent the policy from deviating too far from the reference model—yet this directly conflicts with the goal of "exploring unknown regions." The divergence terms in existing bonus formulations inadvertently redirect exploration back to high-probability regions of $\pi_{ref}$, reinforcing conservative behavior rather than promoting discovery.
+**Key Challenge**: Divergence regularization (KL/α-divergence) is designed to prevent the policy from deviating too far from the reference model—yet this directly conflicts with the goal of "exploring unknown regions." The divergence terms in existing bonus formulations inadvertently redirect exploration back to high-probability regions of $\pi_{ref}$, reinforcing conservative behavior rather than promoting discovery.
 
-**Paper Goals**: (a) Formally prove why existing exploratory bonuses fail; (b) Design a new framework that provably satisfies the optimism principle.
+**Goal**: (a) Formally prove why existing exploratory bonuses fail; (b) Design a new framework that provably satisfies the optimism principle.
 
-**Starting Point**: Using the reward reparameterization $r(x,y) = \beta \log \frac{\pi(y|x)}{\pi_{ref}(y|x)} + \beta \log Z(x)$, the bonus is reformulated as an expression over the policy, and the gradient relationship with respect to $\pi$ and $\pi_{ref}$ is analyzed to assess whether the optimism condition holds.
+**Key Insight**: Using the reward reparameterization $r(x,y) = \beta \log \frac{\pi(y|x)}{\pi_{ref}(y|x)} + \beta \log Z(x)$, the bonus is reformulated as an expression over the policy, and the gradient relationship with respect to $\pi$ and $\pi_{ref}$ is analyzed to assess whether the optimism condition holds.
 
 **Core Idea**: Introduce reference-model-dependent modulation terms into the reward to offset the conservative bias caused by divergence regularization, so that the exploratory bonus genuinely incentivizes exploration of low-probability (underexplored) regions.
 

@@ -29,15 +29,15 @@ This paper proposes MPA, a framework that generates counterfactual trajectory da
 
 ## Background & Motivation
 
-**State of the Field**: End-to-end (E2E) autonomous driving models perform well in open-loop evaluation but suffer significant performance degradation in closed-loop deployment, exhibiting cascading errors and insufficient generalization.
+**Background**: End-to-end (E2E) autonomous driving models perform well in open-loop evaluation but suffer significant performance degradation in closed-loop deployment, exhibiting cascading errors and insufficient generalization.
 
 **Limitations of Prior Work**: Open-loop training minimizes a behavior cloning loss via imitation learning, which is fundamentally misaligned with the closed-loop objective of maximizing cumulative reward. Existing remedies either lack closed-loop evaluation or incur high computational cost (e.g., online RL).
 
-**Root Cause**: Two fundamental mismatches exist — (1) **observation mismatch**: distribution shift between sensor inputs at training time and closed-loop observations at deployment; (2) **objective mismatch**: offline imitation learning lacks meaningful reward feedback, limiting long-horizon reasoning.
+**Key Challenge**: Two fundamental mismatches exist — (1) **observation mismatch**: distribution shift between sensor inputs at training time and closed-loop observations at deployment; (2) **objective mismatch**: offline imitation learning lacks meaningful reward feedback, limiting long-horizon reasoning.
 
-**Paper Goals**: Adapt a pretrained open-loop E2E driving model into a safe and reliable closed-loop driving agent.
+**Goal**: Adapt a pretrained open-loop E2E driving model into a safe and reliable closed-loop driving agent.
 
-**Starting Point**: Leverage a 3DGS simulation engine to generate counterfactual data that bridges the distribution gap, while jointly training a policy adapter and a value model.
+**Key Insight**: Leverage a 3DGS simulation engine to generate counterfactual data that bridges the distribution gap, while jointly training a policy adapter and a value model.
 
 **Core Idea**: A unified framework combining counterfactual data, a diffusion residual policy, and inference-time Q-value scaling.
 

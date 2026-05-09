@@ -28,14 +28,14 @@ This paper systematically investigates the feasibility of stitching heterogeneou
 
 ## Background & Motivation
 
-1. **State of the Field**: Vision foundation models (e.g., CLIP, DINOv2, SigLIP 2) pretrained under diverse objectives, datasets, and modality combinations have become the default backbones for downstream tasks. Multimodal systems (e.g., MoF-LLaVA, Cambrian-1) increasingly employ multiple VFMs simultaneously to capture complementary visual information.
+1. **Background**: Vision foundation models (e.g., CLIP, DINOv2, SigLIP 2) pretrained under diverse objectives, datasets, and modality combinations have become the default backbones for downstream tasks. Multimodal systems (e.g., MoF-LLaVA, Cambrian-1) increasingly employ multiple VFMs simultaneously to capture complementary visual information.
 2. **Limitations of Prior Work**:
    - Model stitching, used as a probe for measuring representational compatibility, has been shown to work for small models trained on the same dataset (e.g., ResNet-18 on CIFAR-10), but whether heterogeneous VFMs are stitchable remains unknown.
    - Conventional stitching training methods — Layer Feature Matching (LFM) and Task Loss Training (TLT) — fail on VFMs. The former causes accumulated intermediate matching errors that amplify final feature deviation, especially at shallow stitching points; the latter suffers from optimization difficulties when gradients must propagate through long chains of frozen layers.
    - Deploying multiple VFMs incurs linear computational and memory overhead ($k$ VFMs = $k\times$ cost), with no efficient sharing mechanism.
-3. **Root Cause**: VFMs differ substantially in pretraining data (LAION vs. LVD-142M vs. WebLI), objectives (contrastive learning vs. self-supervised reconstruction), and modality combinations (vision-only vs. vision-language), making it insufficient to bridge their intermediate representations with simple learned transformations.
-4. **Paper Goals**: ① Determine whether heterogeneous VFMs can be stitched; ② identify a reliable stitching training strategy; ③ elevate stitching from a diagnostic tool to a practical VFM fusion framework.
-5. **Starting Point**: Systematic analysis of stitching failure modes (intermediate matching ≠ final alignment; gradient attenuation), followed by a targeted remedy.
+3. **Key Challenge**: VFMs differ substantially in pretraining data (LAION vs. LVD-142M vs. WebLI), objectives (contrastive learning vs. self-supervised reconstruction), and modality combinations (vision-only vs. vision-language), making it insufficient to bridge their intermediate representations with simple learned transformations.
+4. **Goal**: ① Determine whether heterogeneous VFMs can be stitched; ② identify a reliable stitching training strategy; ③ elevate stitching from a diagnostic tool to a practical VFM fusion framework.
+5. **Key Insight**: Systematic analysis of stitching failure modes (intermediate matching ≠ final alignment; gradient attenuation), followed by a targeted remedy.
 6. **Core Idea**: Apply Final Feature Matching to align features at the penultimate layer of the target VFM as initialization, then fine-tune with Task Loss, enabling reliable stitching of heterogeneous VFMs while fusing their complementary knowledge.
 
 ## Method

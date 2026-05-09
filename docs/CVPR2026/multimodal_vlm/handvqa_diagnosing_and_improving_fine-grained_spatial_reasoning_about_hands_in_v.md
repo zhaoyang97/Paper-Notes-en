@@ -28,15 +28,15 @@ This paper introduces HandVQA — a large-scale diagnostic benchmark containing 
 
 ## Background & Motivation
 
-**State of the Field**: Vision-language models (VLMs) have approached human-level performance on general VQA tasks (e.g., VQAv2), yet perform poorly on fine-grained spatial reasoning. Prior work has shown that VLMs achieve only ~56% accuracy on simple left/right discrimination (vs. 99% for humans), reflecting surface-level correlation rather than genuine geometric understanding.
+**Background**: Vision-language models (VLMs) have approached human-level performance on general VQA tasks (e.g., VQAv2), yet perform poorly on fine-grained spatial reasoning. Prior work has shown that VLMs achieve only ~56% accuracy on simple left/right discrimination (vs. 99% for humans), reflecting surface-level correlation rather than genuine geometric understanding.
 
 **Limitations of Prior Work**: Hands are the primary medium through which humans convey actions, intentions, and control. Precise understanding of hand pose is critical in high-stakes scenarios such as robotic surgery, chip manufacturing, and AR/VR interaction. However, existing VLMs lack understanding of joint-level spatial relationships within hands (complex spatial configurations of 21 joints), and frequently exhibit "pose hallucinations" — misidentifying joint bending states or incorrectly estimating inter-finger distances.
 
-**Root Cause**: General VQA benchmarks cannot diagnose specific weaknesses of VLMs in fine-grained spatial reasoning. Existing spatial reasoning benchmarks (e.g., CLEVR, SPHERE) focus on inter-object relationships and do not evaluate part-level spatial structure within a single object (e.g., kinematic and geometric relationships among hand joints).
+**Key Challenge**: General VQA benchmarks cannot diagnose specific weaknesses of VLMs in fine-grained spatial reasoning. Existing spatial reasoning benchmarks (e.g., CLEVR, SPHERE) focus on inter-object relationships and do not evaluate part-level spatial structure within a single object (e.g., kinematic and geometric relationships among hand joints).
 
-**Paper Goals**: 1) How to systematically evaluate VLMs' understanding of joint-level spatial relationships in hands? 2) What are the specific failure modes of VLMs? 3) Can capabilities acquired through hand spatial reasoning training transfer to other tasks?
+**Goal**: 1) How to systematically evaluate VLMs' understanding of joint-level spatial relationships in hands? 2) What are the specific failure modes of VLMs? 3) Can capabilities acquired through hand spatial reasoning training transfer to other tasks?
 
-**Starting Point**: Leveraging precise 3D joint annotations from existing high-quality hand datasets (FreiHAND, InterHand2.6M, FPHA) to automatically generate diagnostic VQA questions, decomposing hand pose estimation into five independently evaluable subtasks.
+**Key Insight**: Leveraging precise 3D joint annotations from existing high-quality hand datasets (FreiHAND, InterHand2.6M, FPHA) to automatically generate diagnostic VQA questions, decomposing hand pose estimation into five independently evaluable subtasks.
 
 **Core Idea**: Systematically converting 3D hand joint coordinates into structured natural-language multiple-choice questions to enable precise diagnosis and effective improvement of VLM hand spatial reasoning capabilities.
 

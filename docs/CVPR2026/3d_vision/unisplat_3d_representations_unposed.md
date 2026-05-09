@@ -28,13 +28,13 @@ UniSplat learns unified geometry-appearance-semantic 3D representations from unp
 
 ## Background & Motivation
 
-**State of the Field**: 3D representation learning is transitioning from supervised methods (requiring calibrated poses) to self-supervised methods (learning directly from raw multi-view images), yet existing self-supervised approaches generally suffer from weak geometric awareness, insufficient appearance detail, and geometry-semantic inconsistency.
+**Background**: 3D representation learning is transitioning from supervised methods (requiring calibrated poses) to self-supervised methods (learning directly from raw multi-view images), yet existing self-supervised approaches generally suffer from weak geometric awareness, insufficient appearance detail, and geometry-semantic inconsistency.
 
 **Limitations of Prior Work**: (1) Masked autoencoding methods lack strict global 3D consistency; (2) novel view synthesis methods assume known poses or rely on dense video; (3) unposed methods jointly estimate cameras and scenes but insufficiently couple the three representation dimensions.
 
-**Root Cause**: Geometry, appearance, and semantics each demand different optimal granularities — semantics are inherently coarse-grained while appearance requires fine-grained detail — making naive joint learning lead to mutual interference.
+**Key Challenge**: Geometry, appearance, and semantics each demand different optimal granularities — semantics are inherently coarse-grained while appearance requires fine-grained detail — making naive joint learning lead to mutual interference.
 
-**Paper Goals**: Design a feed-forward framework that jointly learns geometry, appearance, and semantic representations from unposed sparse multi-view images.
+**Goal**: Design a feed-forward framework that jointly learns geometry, appearance, and semantic representations from unposed sparse multi-view images.
 
 **Core Idea**: Address geometric awareness (dual masking), appearance fidelity (coarse-to-fine splatting), and cross-task consistency (pose recalibration) through three complementary mechanisms.
 

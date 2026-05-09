@@ -27,15 +27,15 @@ content_hash: 0c5a15cacb300197
 This paper proposes VIP (Variance-Informed Predictive allocation), which uses a Gaussian process to predict the success probability of each prompt and then solves a convex optimization problem to allocate rollout counts under a compute budget constraint, minimizing gradient variance. VIP consistently improves the sampling efficiency of GRPO/RLOO on mathematical reasoning tasks, achieving up to 12.3-point gains in Pass@32 on AIME24/25.
 
 ## Background & Motivation
-**State of the Field**: Group-based RL methods such as GRPO/RLOO train LLMs by generating multiple rollouts per prompt and estimating relative advantages. A fixed, uniform number of rollouts (e.g., 16) is typically allocated to each prompt.
+**Background**: Group-based RL methods such as GRPO/RLOO train LLMs by generating multiple rollouts per prompt and estimating relative advantages. A fixed, uniform number of rollouts (e.g., 16) is typically allocated to each prompt.
 
 **Limitations of Prior Work**: Uniform allocation implicitly assumes all prompts are equally informative. However, prompts with success rates near 0 or 1 yield nearly zero gradient signal (zero variance), wasting the compute budget. Existing filtering approaches require sampling before filtering, potentially negating efficiency gains.
 
-**Root Cause**: It is necessary to predict, *before* sampling, which prompts are most informative (those with success rates near 0.5 exhibit the highest gradient variance), yet success rates shift as model weights are updated during training.
+**Key Challenge**: It is necessary to predict, *before* sampling, which prompts are most informative (those with success rates near 0.5 exhibit the highest gradient variance), yet success rates shift as model weights are updated during training.
 
-**Paper Goals**: How should rollouts be optimally allocated across prompts in a mini-batch under a fixed compute budget?
+**Goal**: How should rollouts be optimally allocated across prompts in a mini-batch under a fixed compute budget?
 
-**Starting Point**: (1) Theoretically analyze the relationship between gradient variance and success probability $p$ for Dr.GRPO and RLOO — both are proportional to $p(1-p)$; (2) predict each prompt's $p$ via a Gaussian process; (3) solve for the optimal allocation via convex optimization.
+**Key Insight**: (1) Theoretically analyze the relationship between gradient variance and success probability $p$ for Dr.GRPO and RLOO — both are proportional to $p(1-p)$; (2) predict each prompt's $p$ via a Gaussian process; (3) solve for the optimal allocation via convex optimization.
 
 **Core Idea**: Use a GP to predict success probabilities → predict gradient variance → minimize total gradient variance via convex optimization → adaptively allocate rollouts.
 

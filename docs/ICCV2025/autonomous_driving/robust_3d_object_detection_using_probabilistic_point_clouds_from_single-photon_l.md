@@ -29,11 +29,11 @@ This paper proposes the Probabilistic Point Cloud (PPC) representation, which at
 
 ## Background & Motivation
 
-**State of the Field**: Modern LiDARs—particularly SPAD single-photon LiDARs—estimate scene depth from timing histograms. Under ideal conditions, histograms exhibit clear peaks, yielding accurate depth estimates. However, under challenging conditions such as distant objects, low-reflectance surfaces, and strong ambient light, signal peaks are buried in background noise, causing severe depth estimation degradation and resulting in sparse, noise-corrupted point clouds.
+**Background**: Modern LiDARs—particularly SPAD single-photon LiDARs—estimate scene depth from timing histograms. Under ideal conditions, histograms exhibit clear peaks, yielding accurate depth estimates. However, under challenging conditions such as distant objects, low-reflectance surfaces, and strong ambient light, signal peaks are buried in background noise, causing severe depth estimation degradation and resulting in sparse, noise-corrupted point clouds.
 
 **Limitations of Prior Work**: Conventional pipelines apply threshold filtering to raw histograms, either over-filtering and discarding genuine scene points (e.g., distant pedestrians) or retaining excessive noise. The fundamental issue is that **uncertainty information is entirely discarded during the conversion from raw sensor data to point clouds**. Existing point cloud datasets (e.g., KITTI) consist of pre-filtered "clean" data, which obscures this problem.
 
-**Root Cause**: Existing solutions remain insufficient:
+**Key Challenge**: Existing solutions remain insufficient:
    - Point cloud denoising networks (PointCleanNet / Score-Denoising, etc.): assume locally isotropic Gaussian noise, whereas LiDAR noise is anisotropic (distributed along camera ray directions), limiting denoising effectiveness.
    - Histogram denoising (3D-CNN, etc.): requires full histogram readout, incurring prohibitive bandwidth costs (~10s GB/s), unsuitable for real-time applications.
    - Both categories introduce significant computational overhead.

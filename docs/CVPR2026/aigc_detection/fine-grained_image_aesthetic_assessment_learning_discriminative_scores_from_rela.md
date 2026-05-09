@@ -29,13 +29,13 @@ This paper introduces a new task of "fine-grained image aesthetic assessment," c
 
 ## Background & Motivation
 
-**State of the Field**: Image Aesthetic Assessment (IAA) is widely applied in content recommendation, AI-generated image guidance, and intelligent photography. Existing datasets (AVA, TAD66K, etc.) evaluate coarse-grained aesthetics with significant inter-image variation, and deep models have achieved strong performance in this regime.
+**Background**: Image Aesthetic Assessment (IAA) is widely applied in content recommendation, AI-generated image guidance, and intelligent photography. Existing datasets (AVA, TAD66K, etc.) evaluate coarse-grained aesthetics with significant inter-image variation, and deep models have achieved strong performance in this regime.
 
 **Limitations of Prior Work**: Real-world applications often require selecting the best image from a series of semantically similar images with subtle aesthetic differences—e.g., selecting the best burst shot, choosing among AIGC-generated samples from the same prompt, or comparing different cropping strategies. Existing IAA models evaluate images independently based on absolute scores and fail to discriminate subtle differences. Two specific challenges arise: (1) **Semantic interference**—images within a series are highly semantically similar, impeding the extraction of fine-grained aesthetic differences, especially since most deep models are pretrained for semantic tasks; (2) **Subtle variation**—minor changes in color and composition require robust discriminative aesthetic representations.
 
-**Root Cause**: Existing fine-grained related datasets (SPS, Best Frame Selection) have not been fully released, limiting research progress. Current models achieve only 30%–50% series-level accuracy on FGAesthetics, far below their coarse-grained performance.
+**Key Challenge**: Existing fine-grained related datasets (SPS, Best Frame Selection) have not been fully released, limiting research progress. Current models achieve only 30%–50% series-level accuracy on FGAesthetics, far below their coarse-grained performance.
 
-**Starting Point**: Rather than scoring images independently, the paper exploits **relative ranking relations** within series to learn discriminative scores—coarse-grained data establishes foundational aesthetic perception, while fine-grained data calibrates the regression space to distinguish subtle differences.
+**Key Insight**: Rather than scoring images independently, the paper exploits **relative ranking relations** within series to learn discriminative scores—coarse-grained data establishes foundational aesthetic perception, while fine-grained data calibrates the regression space to distinguish subtle differences.
 
 ## Method
 

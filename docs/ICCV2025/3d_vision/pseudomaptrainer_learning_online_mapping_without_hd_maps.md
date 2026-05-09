@@ -30,7 +30,7 @@ This paper proposes PseudoMapTrainer, the first framework to train online mappin
 
 ## Background & Motivation
 
-- **Root Cause**: Current online mapping models (e.g., MapTR, MapTRv2, MapVR) require only multi-camera images at inference time to predict vectorized maps, yet **training still relies on costly HD Maps as ground truth**. HD Map annotation is extremely expensive and geographically limited, hindering generalization to unannotated regions.
+- **Key Challenge**: Current online mapping models (e.g., MapTR, MapTRv2, MapVR) require only multi-camera images at inference time to predict vectorized maps, yet **training still relies on costly HD Maps as ground truth**. HD Map annotation is extremely expensive and geographically limited, hindering generalization to unannotated regions.
 - **Limitations of Prior Work**:
     - HD Map datasets (e.g., nuScenes) cover only a handful of cities with limited scene diversity.
     - Massive crowdsourced driving data cannot be exploited due to the absence of corresponding GT maps.

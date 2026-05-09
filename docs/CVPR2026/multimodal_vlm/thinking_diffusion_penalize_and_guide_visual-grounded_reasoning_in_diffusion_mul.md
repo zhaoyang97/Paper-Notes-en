@@ -30,7 +30,7 @@ This paper presents the first quantitative analysis of CoT reasoning in diffusio
 
 ### State of the Field
 
-**State of the Field**: Diffusion LLMs (dLLMs) such as LLaDA and Dream have emerged as alternatives to autoregressive LLMs, offering faster inference by restoring multiple tokens in parallel. Extending them to the multimodal setting yields dMLLMs. However, the reasoning process of dMLLMs remains poorly understood.
+**Background**: Diffusion LLMs (dLLMs) such as LLaDA and Dream have emerged as alternatives to autoregressive LLMs, offering faster inference by restoring multiple tokens in parallel. Extending them to the multimodal setting yields dMLLMs. However, the reasoning process of dMLLMs remains poorly understood.
 
 Two key findings:
 1. **Early Answer Generation**: dMLLMs generate final answer tokens at very early timesteps (with $L=64/T=32$, over 30% of answers are finalized before step 7), before intermediate reasoning steps are generated to justify the answer.

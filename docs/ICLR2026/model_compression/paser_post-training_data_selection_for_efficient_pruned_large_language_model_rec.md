@@ -28,7 +28,7 @@ This paper proposes PASER, a post-training data selection method for recovering 
 
 ## Background & Motivation
 
-**State of the Field**: Model pruning is an effective compression technique for LLMs, but inevitably causes capability degradation. The dominant recovery approach applies instruction fine-tuning data (e.g., Alpaca) in post-training. Conventional methods train on the full dataset, which is computationally expensive and not necessarily optimal.
+**Background**: Model pruning is an effective compression technique for LLMs, but inevitably causes capability degradation. The dominant recovery approach applies instruction fine-tuning data (e.g., Alpaca) in post-training. Conventional methods train on the full dataset, which is computationally expensive and not necessarily optimal.
 
 **Limitations of Prior Work**:
    - Pruning affects different capabilities **unevenly** (e.g., mathematical reasoning may degrade severely while language modeling remains largely intact), yet existing methods ignore this heterogeneity.
@@ -36,15 +36,15 @@ This paper proposes PASER, a post-training data selection method for recovering 
    - Random subset selection is unstable and highly sensitive to data composition.
    - Existing data selection methods (e.g., IFD, Nuggets) target general instruction quality and are not designed for the pruning recovery scenario.
 
-**Root Cause**: Efficiently recovering multiple capabilities with limited data is challenging because different capabilities require different amounts and types of data, and some data may produce negative effects.
+**Key Challenge**: Efficiently recovering multiple capabilities with limited data is challenging because different capabilities require different amounts and types of data, and some data may produce negative effects.
 
-**Paper Goals**:
+**Goal**:
    - Identify instruction data groups corresponding to distinct LLM capabilities.
    - Adaptively allocate data budgets proportional to the degree of degradation.
    - Prioritize samples with the highest benefit-to-cost ratio within each group.
    - Filter conflicting or irrelevant data that may introduce negative effects.
 
-**Starting Point**: The paper assumes that geometric structures in semantic space correspond to different LLM capabilities. Manifold learning is used to discover these structures, and the divergence between the output distributions of the original and pruned models (JSD) quantifies the degree of degradation.
+**Key Insight**: The paper assumes that geometric structures in semantic space correspond to different LLM capabilities. Manifold learning is used to discover these structures, and the divergence between the output distributions of the original and pruned models (JSD) quantifies the degree of degradation.
 
 **Core Idea**: Replace blind full-data training with *capability-aware data selection* to make the recovery of pruned LLMs more precise, efficient, and safe.
 

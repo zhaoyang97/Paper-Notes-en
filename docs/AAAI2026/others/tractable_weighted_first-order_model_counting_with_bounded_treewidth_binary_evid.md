@@ -28,11 +28,11 @@ A polynomial-time (in domain size) algorithm is proposed for computing weighted 
 
 ## Background & Motivation
 
-1. **State of the Field**: Weighted first-order model counting (WFOMC) requires computing the weighted sum over all models of a given first-order logic sentence on a specified domain. It is a foundational problem in statistical relational learning — Markov logic networks, probabilistic logic programs, and probabilistic databases all reduce to WFOMC. The two-variable fragment $\text{FO}^2$ (and its extension with counting quantifiers $\text{C}^2$) is known to be domain-liftable (polynomial-time) in the absence of evidence.
+1. **Background**: Weighted first-order model counting (WFOMC) requires computing the weighted sum over all models of a given first-order logic sentence on a specified domain. It is a foundational problem in statistical relational learning — Markov logic networks, probabilistic logic programs, and probabilistic databases all reduce to WFOMC. The two-variable fragment $\text{FO}^2$ (and its extension with counting quantifiers $\text{C}^2$) is known to be domain-liftable (polynomial-time) in the absence of evidence.
 2. **Limitations of Prior Work**: Imposing binary evidence on WFOMC (fixing the truth values of certain binary predicates) renders the problem #P-hard even for the originally domain-liftable $\text{FO}^2$ fragment. Intuitively, binary evidence breaks the symmetry among domain elements — without evidence, elements can be grouped by their 1-type and treated interchangeably; binary evidence makes each pair of elements behave differently.
-3. **Root Cause**: Binary evidence is indispensable in practical applications (graph structures, social networks, etc.), yet its introduction prevents efficient lifted inference.
-4. **Paper Goals**: To provide a polynomial-time WFOMC algorithm for $\text{FO}^2$ and $\text{C}^2$ under the restriction that the Gaifman graph of the binary evidence has bounded treewidth.
-5. **Starting Point**: Dynamic programming is performed over a nice tree decomposition of the Gaifman graph, leveraging existing 1-type configuration techniques to handle symmetric elements while treating elements within each bag individually.
+3. **Key Challenge**: Binary evidence is indispensable in practical applications (graph structures, social networks, etc.), yet its introduction prevents efficient lifted inference.
+4. **Goal**: To provide a polynomial-time WFOMC algorithm for $\text{FO}^2$ and $\text{C}^2$ under the restriction that the Gaifman graph of the binary evidence has bounded treewidth.
+5. **Key Insight**: Dynamic programming is performed over a nice tree decomposition of the Gaifman graph, leveraging existing 1-type configuration techniques to handle symmetric elements while treating elements within each bag individually.
 6. **Core Idea**: Exploit the bounded-treewidth structure of the Gaifman graph to localize the influence of binary evidence through dynamic programming over the tree decomposition.
 
 ## Method

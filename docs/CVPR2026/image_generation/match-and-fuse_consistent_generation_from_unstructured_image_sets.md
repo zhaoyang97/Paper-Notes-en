@@ -29,7 +29,7 @@ Match-and-Fuse is proposed as the first training-free consistent generation meth
 
 ## Background & Motivation
 
-**State of the Field**: Everyday visual experiences are organized as image collections (photo albums, product catalogs, property listings), yet generative AI primarily focuses on single images or videos, leaving set-level consistent generation largely unexplored.
+**Background**: Everyday visual experiences are organized as image collections (photo albums, product catalogs, property listings), yet generative AI primarily focuses on single images or videos, leaving set-level consistent generation largely unexplored.
 
 **Core Challenges**: (a) Image collections lack the temporal continuity of video and thus provide no motion cues; (b) shared content may undergo large deformations; (c) shared elements must remain consistent while non-shared regions are allowed to vary freely.
 

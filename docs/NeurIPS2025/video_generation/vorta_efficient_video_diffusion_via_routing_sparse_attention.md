@@ -40,7 +40,7 @@ The complexity of 3D self-attention is $\mathcal{O}(L^2 d)$, where the sequence 
 
 **Online analysis methods** (e.g., ARnR): These dynamically detect sparsity patterns but introduce $\mathcal{O}(L^2)$ similarity computation overhead and require re-tuning when sampling configurations change.
 
-**Root Cause**: VDiT simultaneously exhibits both local and long-range attention patterns, which dynamically switch throughout the sampling process, making simple static strategies insufficient.
+**Key Challenge**: VDiT simultaneously exhibits both local and long-range attention patterns, which dynamically switch throughout the sampling process, making simple static strategies insufficient.
 
 ### Three Categories of Attention in VDiT
 

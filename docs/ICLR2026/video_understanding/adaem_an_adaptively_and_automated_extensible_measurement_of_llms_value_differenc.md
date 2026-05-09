@@ -32,7 +32,7 @@ Although LLMs have achieved remarkable progress in knowledge and instruction fol
 
 **Limitations of Prior Work**: Existing value evaluation benchmarks suffer from an "insufficient informativeness" challenge — test questions are either outdated, contaminated, or overly generic, capable of capturing only the safety-oriented values shared across LLMs (e.g., HHH), leading to convergent and indistinguishable evaluation results. For example, on existing benchmarks SVS and ValueBench, GPT-4 and GLM-4 (developed in the US and China, respectively) exhibit nearly identical preferences on the hedonism dimension, which is clearly unreasonable.
 
-**Root Cause**: Static benchmarks cannot evolve alongside LLM development and are unable to explore contentious topics arising from cultural differences.
+**Key Challenge**: Static benchmarks cannot evolve alongside LLM development and are unable to explore contentious topics arising from cultural differences.
 
 **Core Idea**: Design a self-extensible dynamic evaluation framework that automatically generates test questions eliciting value differences by probing the internal value boundaries of multiple LLMs from diverse cultures and time periods, theoretically maximizing an information-theoretic objective.
 

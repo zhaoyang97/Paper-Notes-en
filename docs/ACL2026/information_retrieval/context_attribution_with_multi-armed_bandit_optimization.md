@@ -28,15 +28,15 @@ This paper proposes CAMAB, which frames context attribution in RAG — identifyi
 
 ## Background & Motivation
 
-**State of the Field**: RAG enhances the factual accuracy of LLMs, yet verifying that generated answers are genuinely grounded in retrieved context remains difficult. LLMs frequently hallucinate or incorporate unsupported information, necessitating precise attribution of which context segments contribute to the answer.
+**Background**: RAG enhances the factual accuracy of LLMs, yet verifying that generated answers are genuinely grounded in retrieved context remains difficult. LLMs frequently hallucinate or incorporate unsupported information, necessitating precise attribution of which context segments contribute to the answer.
 
 **Limitations of Prior Work**: (1) Methods that train models to explicitly cite context cannot guarantee that citations faithfully reflect the underlying reasoning; (2) post-hoc perturbation methods such as SHAP and ContextCite require a large number of model queries — through uniform sampling or exhaustive feature selection — making computational costs prohibitive in long-context settings; (3) under strict query budgets, existing methods suffer significant performance degradation.
 
-**Root Cause**: Precise attribution requires testing a large number of context subset combinations, yet LLM inference is expensive and query budgets are limited. Uniform sampling is wasteful, as many tested subsets carry little information.
+**Key Challenge**: Precise attribution requires testing a large number of context subset combinations, yet LLM inference is expensive and query budgets are limited. Uniform sampling is wasteful, as many tested subsets carry little information.
 
-**Paper Goals**: Achieve high-quality segment-level context attribution within a limited query budget.
+**Goal**: Achieve high-quality segment-level context attribution within a limited query budget.
 
-**Starting Point**: The attribution problem is recast as a CMAB, where each context segment corresponds to an "arm," selecting a subset constitutes an "action," and Thompson Sampling is used to adaptively prioritize informative subsets.
+**Key Insight**: The attribution problem is recast as a CMAB, where each context segment corresponds to an "arm," selecting a subset constitutes an "action," and Thompson Sampling is used to adaptively prioritize informative subsets.
 
 **Core Idea**: Linear Thompson Sampling is employed to efficiently explore the exponentially large space of context subsets. Bayesian posterior estimation adaptively balances exploration and exploitation, converging to high-quality attributions faster than uniform random perturbation.
 

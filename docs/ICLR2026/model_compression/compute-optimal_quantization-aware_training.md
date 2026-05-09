@@ -28,7 +28,7 @@ Through 757 QAT experiments spanning 86M–2.2B parameters and 1–6 bits, this 
 
 ## Background & Motivation
 
-**State of the Field**: QAT is the dominant approach for training high-quality quantized models, typically following a two-stage pipeline of full-precision (FP) pretraining followed by QAT fine-tuning. Liu et al. (2025) recommend allocating 10% of total training steps to the QAT phase.
+**Background**: QAT is the dominant approach for training high-quality quantized models, typically following a two-stage pipeline of full-precision (FP) pretraining followed by QAT fine-tuning. Liu et al. (2025) recommend allocating 10% of total training steps to the QAT phase.
 
 **Limitations of Prior Work**:
    - The "10% optimum" conclusion was derived under limited compute budgets and has not been validated at larger scales
@@ -36,14 +36,14 @@ Through 757 QAT experiments spanning 86M–2.2B parameters and 1–6 bits, this 
    - Existing QAT scaling laws (Chen et al.) assume $D_{fp}=0$ (i.e., QAT from scratch) and do not address the two-stage FP→QAT scenario
    - No unified scaling law exists across different bit-widths
 
-**Root Cause**: Too few QAT steps leave the model unable to adapt to low-precision arithmetic; too many QAT steps compress the FP stage and extend training with noisy gradients. How does this trade-off shift as total compute grows?
+**Key Challenge**: Too few QAT steps leave the model unable to adapt to low-precision arithmetic; too many QAT steps compress the FP stage and extend training with noisy gradients. How does this trade-off shift as total compute grows?
 
-**Paper Goals**:
+**Goal**:
    - How does the optimal QAT fraction vary with model size, total token count, and bit-width?
    - Can a single unified scaling law predict final loss across all configurations?
    - Can the training pipeline be further streamlined (e.g., by merging the cooldown and QAT phases)?
 
-**Starting Point**: The paper introduces tokens-per-parameter-byte, $S = D/(N \cdot B/8)$, as a unified scaling variable that simultaneously encodes model size, data volume, and quantization precision.
+**Key Insight**: The paper introduces tokens-per-parameter-byte, $S = D/(N \cdot B/8)$, as a unified scaling variable that simultaneously encodes model size, data volume, and quantization precision.
 
 **Core Idea**: The optimal time allocation for QAT is not a fixed 10% but rather a function that grows with tokens-per-parameter-byte, and can be accurately modeled by a unified scaling law.
 

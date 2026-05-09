@@ -27,16 +27,16 @@ content_hash: 5ee4e61ad0a3e2a6
 This paper proposes STARS (Stiefel-based Activation Steering for Diverse ReaSoning), a training-free inference-time activation steering method that jointly optimizes $N$ orthogonal steering directions on the Stiefel manifold at each token decoding step, maximizing the geometric volume of hidden states to promote divergent activation trajectories. STARS consistently outperforms temperature sampling in diversity on test case generation (TestEval) and scientific discovery (LiveIdeaBench) with negligible latency overhead and without sacrificing output quality.
 
 ## Background & Motivation
-**State of the Field**: The Best-of-N paradigm—sampling multiple candidate solutions and selecting the best—has been widely adopted in reasoning, coding, and planning tasks. However, its effectiveness is fundamentally limited by the diversity of the candidate pool. When multiple parallel generation paths converge to the same high-probability regions in the latent space, the outputs are merely paraphrases of the same idea, and increasing the sampling budget fails to break the performance ceiling.
+**Background**: The Best-of-N paradigm—sampling multiple candidate solutions and selecting the best—has been widely adopted in reasoning, coding, and planning tasks. However, its effectiveness is fundamentally limited by the diversity of the candidate pool. When multiple parallel generation paths converge to the same high-probability regions in the latent space, the outputs are merely paraphrases of the same idea, and increasing the sampling budget fails to break the performance ceiling.
 
 **Limitations of Prior Work**:
    - Temperature sampling, nucleus sampling, and beam search perturb the token-level probability distribution only locally, lack coordination across parallel runs, and have no global diversity objective.
    - Training-time approaches (e.g., modifying the objective via reinforcement learning) require a full training pipeline, incur high computational costs, and may not generalize across domains.
    - Existing activation steering techniques are designed for **convergence**—steering a single generation toward a fixed, predefined direction—and are ill-suited for **divergence** objectives.
 
-**Root Cause**: Inference-time diversification must simultaneously satisfy two conflicting requirements: (a) lightweight enough to intervene at each token in real time without introducing significant latency; and (b) powerful enough to induce meaningful divergence in the latent space, rather than merely superficial variation.
+**Key Challenge**: Inference-time diversification must simultaneously satisfy two conflicting requirements: (a) lightweight enough to intervene at each token in real time without introducing significant latency; and (b) powerful enough to induce meaningful divergence in the latent space, rather than merely superficial variation.
 
-**Starting Point**: The paper reframes activation steering from "converging toward a fixed direction" to "pushing multiple paths away from each other"—transforming it from a control tool into an exploration engine. Orthogonal steering directions are jointly optimized on the Stiefel manifold to maximize the geometric volume of the modified hidden states.
+**Key Insight**: The paper reframes activation steering from "converging toward a fixed direction" to "pushing multiple paths away from each other"—transforming it from a control tool into an exploration engine. Orthogonal steering directions are jointly optimized on the Stiefel manifold to maximize the geometric volume of the modified hidden states.
 
 ## Method
 

@@ -28,13 +28,13 @@ This paper proposes TCCM (Time-Conditioned Contraction Matching), a flow matchin
 
 ## Background & Motivation
 
-**State of the Field**: Tabular anomaly detection methods span classical approaches (OCSVM, LOF, KDE, etc.) and deep learning methods (AnoGAN, DeepSVDD, DTE, etc.). The recent diffusion-based method DTE achieves state-of-the-art accuracy but requires multi-step ODE/SDE integration, making inference extremely slow.
+**Background**: Tabular anomaly detection methods span classical approaches (OCSVM, LOF, KDE, etc.) and deep learning methods (AnoGAN, DeepSVDD, DTE, etc.). The recent diffusion-based method DTE achieves state-of-the-art accuracy but requires multi-step ODE/SDE integration, making inference extremely slow.
 
 **Limitations of Prior Work**: (a) GAN-based methods suffer from training instability; (b) diffusion/flow matching methods incur slow inference (DTE requires tens of thousands of seconds on large datasets); (c) most deep methods lack explainability—they cannot tell users *why* a sample is anomalous; (d) no theoretical robustness guarantees against input perturbations exist.
 
-**Root Cause**: A fundamental trade-off exists between high-accuracy anomaly detection (which typically demands powerful generative models) and inference efficiency as well as explainability.
+**Key Challenge**: A fundamental trade-off exists between high-accuracy anomaly detection (which typically demands powerful generative models) and inference efficiency as well as explainability.
 
-**Starting Point**: The paper borrows the core idea of flow matching—learning a velocity field between distributions—but avoids full trajectory integration. Instead, it learns a *contraction vector field* that drives normal data toward the origin at every time step; anomalous data deviates from this contraction pattern.
+**Key Insight**: The paper borrows the core idea of flow matching—learning a velocity field between distributions—but avoids full trajectory integration. Instead, it learns a *contraction vector field* that drives normal data toward the origin at every time step; anomalous data deviates from this contraction pattern.
 
 **Core Idea**: Learn $f_\theta([z; \text{Embed}(t)]) \approx -z$; the anomaly score is $\|f_\theta([z; \text{Embed}(t)]) + z\|_2$, computed in a single forward pass, with the residual vector naturally providing feature-level attribution.
 

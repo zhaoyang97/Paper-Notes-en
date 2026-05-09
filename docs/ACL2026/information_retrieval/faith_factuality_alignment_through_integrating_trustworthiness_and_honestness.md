@@ -27,15 +27,15 @@ This paper proposes FAITH, a framework that maps LLM uncertainty signals (consis
 
 ## Background & Motivation
 
-**State of the Field**: LLMs may generate fluent yet factually incorrect content (hallucinations), even when the model internally possesses the correct knowledge. This know-tell gap — where the model "knows but fails to say correctly" — severely undermines reliability. Recent work has attempted to incorporate uncertainty signals during training to align factuality.
+**Background**: LLMs may generate fluent yet factually incorrect content (hallucinations), even when the model internally possesses the correct knowledge. This know-tell gap — where the model "knows but fails to say correctly" — severely undermines reliability. Recent work has attempted to incorporate uncertainty signals during training to align factuality.
 
 **Limitations of Prior Work**: (1) Existing methods directly embed numerical uncertainty scores into QA prompts (e.g., "Conf: 0.833"), which lack semantic richness and are difficult for LLMs to interpret and utilize; (2) Binary reward functions (correct/incorrect) ignore the confidence of responses, potentially encouraging "guessing" behavior; (3) External knowledge is not leveraged to correct potentially erroneous answers.
 
-**Root Cause**: Factual inconsistency in LLMs manifests as the same question receiving correct answers under some phrasings and incorrect answers under others. The fundamental cause is a misalignment between the model's actual knowledge possession (whether it truly knows) and its response behavior (whether it expresses that knowledge honestly). Numerical uncertainty signals fail to help the model understand its own knowledge boundaries.
+**Key Challenge**: Factual inconsistency in LLMs manifests as the same question receiving correct answers under some phrasings and incorrect answers under others. The fundamental cause is a misalignment between the model's actual knowledge possession (whether it truly knows) and its response behavior (whether it expresses that knowledge honestly). Numerical uncertainty signals fail to help the model understand its own knowledge boundaries.
 
-**Paper Goals**: To design a post-training framework that transforms uncertainty signals into semantically rich knowledge state descriptions, and improves LLM factual accuracy and truthfulness through fine-grained rewards and external knowledge retrieval.
+**Goal**: To design a post-training framework that transforms uncertainty signals into semantically rich knowledge state descriptions, and improves LLM factual accuracy and truthfulness through fine-grained rewards and external knowledge retrieval.
 
-**Starting Point**: The paper categorizes each LLM's knowledge state for a given question into four quadrants — KH (knowledgeable and honest), K¬H (knowledgeable but dishonest), ¬KH (not knowledgeable but honest), and ¬K¬H (not knowledgeable and dishonest) — and embeds natural-language descriptions of these states into the training prompts.
+**Key Insight**: The paper categorizes each LLM's knowledge state for a given question into four quadrants — KH (knowledgeable and honest), K¬H (knowledgeable but dishonest), ¬KH (not knowledgeable but honest), and ¬K¬H (not knowledgeable and dishonest) — and embeds natural-language descriptions of these states into the training prompts.
 
 **Core Idea**: Replace numerical uncertainty with natural-language knowledge states → design fine-grained rewards that jointly consider correctness and uncertainty → apply a RAG module to correct weakly grounded responses.
 

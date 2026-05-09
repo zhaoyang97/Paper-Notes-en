@@ -29,15 +29,15 @@ TSRating leverages the prior knowledge of LLMs to conduct pairwise quality judgm
 
 ## Background & Motivation
 
-**State of the Field**: High-quality time series data is critical for model performance. Existing data quality assessment methods are primarily based on influence functions and Shapley values. While effective within a single domain, these approaches incur high computational costs (Hessian computation or exponential combinatorial overhead) and overlook the fact that real-world time series data originates from highly diverse domains.
+**Background**: High-quality time series data is critical for model performance. Existing data quality assessment methods are primarily based on influence functions and Shapley values. While effective within a single domain, these approaches incur high computational costs (Hessian computation or exponential combinatorial overhead) and overlook the fact that real-world time series data originates from highly diverse domains.
 
 **Limitations of Prior Work**: Influence functions require computationally intensive Hessian and gradient operations, while Shapley values face exponential computational costs. More critically, these methods are typically effective only within a single domain and generalize poorly to diverse time series data across domains.
 
-**Root Cause**: There is a need for a time series quality assessment method that is both cross-domain generalizable and computationally efficient. Traditional methods struggle to simultaneously achieve estimation fidelity and computational efficiency.
+**Key Challenge**: There is a need for a time series quality assessment method that is both cross-domain generalizable and computationally efficient. Traditional methods struggle to simultaneously achieve estimation fidelity and computational efficiency.
 
-**Paper Goals**: (1) Verify whether LLMs can understand and judge the quality of diverse time series data; (2) train a lightweight scoring model, TSRater, to replace costly LLM inference; (3) achieve cross-domain generalization through meta-learning.
+**Goal**: (1) Verify whether LLMs can understand and judge the quality of diverse time series data; (2) train a lightweight scoring model, TSRater, to replace costly LLM inference; (3) achieve cross-domain generalization through meta-learning.
 
-**Starting Point**: LLMs have demonstrated strong capabilities in text quality assessment (e.g., Qurating, Ask-LLM), and the rich knowledge accumulated during pre-training may extend to the understanding of time series data. The authors verify that LLMs can indeed distinguish time series quality along the dimensions of trend, frequency, amplitude, and pattern with 92–99% accuracy.
+**Key Insight**: LLMs have demonstrated strong capabilities in text quality assessment (e.g., Qurating, Ask-LLM), and the rich knowledge accumulated during pre-training may extend to the understanding of time series data. The authors verify that LLMs can indeed distinguish time series quality along the dimensions of trend, frequency, amplitude, and pattern with 92–99% accuracy.
 
 **Core Idea**: LLMs serve as "teachers" performing pairwise comparisons of time series chunk quality; the Bradley-Terry model converts comparison results into scalar scores; meta-learning then trains a lightweight TSRater for efficient inference on new domains.
 

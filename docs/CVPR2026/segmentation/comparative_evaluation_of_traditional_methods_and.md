@@ -28,15 +28,15 @@ This paper provides a systematic review of two major technical paradigms for bra
 
 ## Background & Motivation
 
-**State of the Field**: Brain glioma is the most common primary brain tumor, and accurate segmentation is critical for precise treatment planning, efficacy monitoring, and prognosis prediction. MRI serves as the primary imaging modality for brain glioma, and image segmentation and classification constitute the key bridge from imaging data to clinical decision-making. Decades of research have produced a large body of traditional image processing methods as well as deep learning-based approaches.
+**Background**: Brain glioma is the most common primary brain tumor, and accurate segmentation is critical for precise treatment planning, efficacy monitoring, and prognosis prediction. MRI serves as the primary imaging modality for brain glioma, and image segmentation and classification constitute the key bridge from imaging data to clinical decision-making. Decades of research have produced a large body of traditional image processing methods as well as deep learning-based approaches.
 
 **Limitations of Prior Work**: Glioma tissue exhibits irregular morphological boundaries, heterogeneous internal structures, and ambiguous transitional zones, making accurate and reproducible segmentation highly challenging. Traditional methods rely on handcrafted features and prior knowledge, are sensitive to noise and tissue heterogeneity, and have limited generalizability. Deep learning methods achieve higher segmentation accuracy but require large volumes of annotated data and suffer from limited interpretability.
 
-**Root Cause**: Clinical applications require trade-offs among accuracy, usability, interpretability, and controllability; however, the existing literature lacks a systematic organization and fair comparison of the two technical paradigms.
+**Key Challenge**: Clinical applications require trade-offs among accuracy, usability, interpretability, and controllability; however, the existing literature lacks a systematic organization and fair comparison of the two technical paradigms.
 
-**Paper Goals**: To systematically categorize, organize, and comparatively evaluate traditional and deep learning methods for brain glioma MRI segmentation and classification, thereby helping researchers and clinicians understand the applicable scenarios and limitations of each approach.
+**Goal**: To systematically categorize, organize, and comparatively evaluate traditional and deep learning methods for brain glioma MRI segmentation and classification, thereby helping researchers and clinicians understand the applicable scenarios and limitations of each approach.
 
-**Starting Point**: Starting from the underlying technical principles of each method, the paper constructs a comprehensive taxonomy covering both traditional and deep learning approaches, and performs cross-method comparisons based on experimental results reported in the existing literature.
+**Key Insight**: Starting from the underlying technical principles of each method, the paper constructs a comprehensive taxonomy covering both traditional and deep learning approaches, and performs cross-method comparisons based on experimental results reported in the existing literature.
 
 **Core Idea**: Establish a comprehensive taxonomic framework for brain glioma segmentation and classification methods, and demonstrate through a literature survey that CNNs comprehensively outperform traditional techniques on both segmentation and classification tasks.
 

@@ -29,15 +29,15 @@ This paper proposes C2BM (Causally reliable Concept Bottleneck Models), which or
 
 ## Background & Motivation
 
-**State of the Field**: Concept Bottleneck Models (CBMs) represent a prominent paradigm in interpretable deep learning, achieving transparency by forcing models to reason through a layer of human-understandable concepts. CBMs decompose prediction into two steps: an encoder maps inputs to concepts, and a decoder predicts task labels from those concepts.
+**Background**: Concept Bottleneck Models (CBMs) represent a prominent paradigm in interpretable deep learning, achieving transparency by forcing models to reason through a layer of human-understandable concepts. CBMs decompose prediction into two steps: an encoder maps inputs to concepts, and a decoder predicts task labels from those concepts.
 
 **Limitations of Prior Work**: Existing CBMs adopt a bipartite graph structure, assuming all concepts are independent and directly influence the output. This assumption is overly simplistic: (1) it ignores causal dependencies among concepts, potentially producing misleading explanations (e.g., attributing lung cancer to both "coughing" and "smoking," implying that reducing coughing could lower cancer risk); (2) the independence assumption prevents intervention effects from propagating across related concepts; (3) models learn statistical correlations rather than causal relationships, making them susceptible to spurious associations.
 
-**Root Cause**: CBMs are inherently associative models whose decision-making reflects statistical correlations in data rather than real-world causal mechanisms. This prevents them from supporting causal inference, limits out-of-distribution generalization, and hinders the enforcement of fairness constraints.
+**Key Challenge**: CBMs are inherently associative models whose decision-making reflects statistical correlations in data rather than real-world causal mechanisms. This prevents them from supporting causal inference, limits out-of-distribution generalization, and hinders the enforcement of fairness constraints.
 
-**Paper Goals**: (a) How can the concept bottleneck be structured according to causal mechanisms? (b) How can concepts and the causal graph be discovered automatically without human expert annotation? (c) How can causal reliability be improved without sacrificing accuracy?
+**Goal**: (a) How can the concept bottleneck be structured according to causal mechanisms? (b) How can concepts and the causal graph be discovered automatically without human expert annotation? (c) How can causal reliability be improved without sacrificing accuracy?
 
-**Starting Point**: Structural Causal Models (SCMs) are employed to organize the concept bottleneck as a causal graph, with causal relationships automatically discovered from unstructured background knowledge via LLM + RAG.
+**Key Insight**: Structural Causal Models (SCMs) are employed to organize the concept bottleneck as a causal graph, with causal relationships automatically discovered from unstructured background knowledge via LLM + RAG.
 
 **Core Idea**: A causal graph structure is embedded within the concept bottleneck; hypernetworks adaptively parameterize the structural equations, aligning the model's reasoning process with true causal mechanisms.
 

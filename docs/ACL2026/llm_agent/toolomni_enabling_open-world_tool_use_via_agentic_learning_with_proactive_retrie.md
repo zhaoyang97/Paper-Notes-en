@@ -29,15 +29,15 @@ This paper proposes ToolOmni, a unified agentic framework that integrates proact
 
 ## Background & Motivation
 
-**State of the Field**: LLMs enhance problem-solving by invoking external tools. In open-world settings, tool libraries are large-scale (>10,000 APIs) and dynamically updated, requiring models not only to use tools correctly but also to proactively search for and select the appropriate ones.
+**Background**: LLMs enhance problem-solving by invoking external tools. In open-world settings, tool libraries are large-scale (>10,000 APIs) and dynamically updated, requiring models not only to use tools correctly but also to proactively search for and select the appropriate ones.
 
 **Limitations of Prior Work**: (1) **Embedding-based retrieval methods** rely on semantic similarity for passive retrieval, decoupling retrieval from agentic reasoning and thus unable to actively participate in tool selection or refine searches based on task demands; (2) **Parametric memory methods** internalize tool documentation into model parameters, requiring expensive retraining upon every tool set update, with poor generalization; (3) Existing agentic RL training frameworks confine LLMs to a small number of tools such as search engines or code executors, and cannot scale to diverse open-world scenarios.
 
-**Root Cause**: Open-world tool use requires simultaneously solving two problems—"finding the right tool" (retrieval) and "using the tool correctly" (execution)—yet existing methods either treat them as independent pipelines or optimize only one of them.
+**Key Challenge**: Open-world tool use requires simultaneously solving two problems—"finding the right tool" (retrieval) and "using the tool correctly" (execution)—yet existing methods either treat them as independent pipelines or optimize only one of them.
 
-**Paper Goals**: To construct an end-to-end agentic framework that unifies proactive tool discovery and tool execution within a single reasoning loop.
+**Goal**: To construct an end-to-end agentic framework that unifies proactive tool discovery and tool execution within a single reasoning loop.
 
-**Starting Point**: Retrieval and execution are treated as interrelated yet distinct subtasks, with decoupled multi-objective GRPO simultaneously optimizing both to avoid mutual interference.
+**Key Insight**: Retrieval and execution are treated as interrelated yet distinct subtasks, with decoupled multi-objective GRPO simultaneously optimizing both to avoid mutual interference.
 
 **Core Idea**: A two-stage training paradigm is adopted—cold-start SFT first establishes foundational capabilities, followed by decoupled GRPO that computes rewards and advantages independently for retrieval and execution and updates each separately, enabling end-to-end optimization of proactive retrieval and retrieval-grounded execution in an online environment.
 

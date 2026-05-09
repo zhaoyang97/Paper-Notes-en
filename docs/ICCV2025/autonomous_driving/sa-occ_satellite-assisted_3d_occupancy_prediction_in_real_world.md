@@ -28,15 +28,15 @@ SA-Occ is proposed as the first method to leverage satellite imagery to assist o
 
 ## Background & Motivation
 
-**State of the Field**: 3D occupancy prediction is a core perception task in autonomous driving, aiming to represent the surrounding environment as a dense voxel grid with per-voxel semantic labels. Dominant methods (e.g., BEVDet-Occ, FlashOCC, FB-OCC) rely entirely on onboard surround-view cameras, constructing BEV/3D features via 2D-to-3D view transformation.
+**Background**: 3D occupancy prediction is a core perception task in autonomous driving, aiming to represent the surrounding environment as a dense voxel grid with per-voxel semantic labels. Dominant methods (e.g., BEVDet-Occ, FlashOCC, FB-OCC) rely entirely on onboard surround-view cameras, constructing BEV/3D features via 2D-to-3D view transformation.
 
 **Limitations of Prior Work**: Purely onboard-view approaches suffer from two inherent limitations: (1) **Occlusion**—large vehicles obstruct objects behind them, and buildings occlude street corners; (2) **Far-range degradation**—distant regions have low resolution, and 3D projection accuracy degrades significantly. These are physical constraints of the onboard viewpoint that cannot be fully resolved algorithmically.
 
-**Root Cause**: Autonomous driving demands accurate perception of the entire surrounding environment, including occluded and far-range regions, yet onboard cameras are physically unable to cover these areas.
+**Key Challenge**: Autonomous driving demands accurate perception of the entire surrounding environment, including occluded and far-range regions, yet onboard cameras are physically unable to cover these areas.
 
-**Paper Goals**: Introduce a complementary viewpoint (satellite top-down view) to compensate for the inherent limitations of the onboard perspective.
+**Goal**: Introduce a complementary viewpoint (satellite top-down view) to compensate for the inherent limitations of the onboard perspective.
 
-**Starting Point**: Satellite imagery provides a natural bird's-eye view—unaffected by ground-level occlusion and with uniform resolution across distances. Although satellite images are captured historically (non-real-time), GPS and IMU enable precise retrieval of the satellite patch corresponding to the vehicle's current location, and the static scene structure (buildings, roads, vegetation) is highly consistent between satellite imagery and real-time perception.
+**Key Insight**: Satellite imagery provides a natural bird's-eye view—unaffected by ground-level occlusion and with uniform resolution across distances. Although satellite images are captured historically (non-real-time), GPS and IMU enable precise retrieval of the satellite patch corresponding to the vehicle's current location, and the static scene structure (buildings, roads, vegetation) is highly consistent between satellite imagery and real-time perception.
 
 **Core Idea**: GPS/IMU aligns historical satellite imagery with real-time onboard images. Three carefully designed cross-view fusion modules inject the "God's-eye-view" information from satellites into 3D occupancy prediction, supplementing occlusion and far-range information missing from the onboard view.
 

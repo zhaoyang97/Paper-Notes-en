@@ -28,15 +28,15 @@ This paper proposes the Glove2Hand framework, which translates egocentric videos
 
 ## Background & Motivation
 
-**State of the Field**: Hand-object interaction (HOI) understanding is a foundational problem in computer vision, robotics, and AR/VR. Mainstream approaches rely on egocentric video to develop data-driven algorithms, but these systems are predominantly unimodal, relying solely on visual input.
+**Background**: Hand-object interaction (HOI) understanding is a foundational problem in computer vision, robotics, and AR/VR. Mainstream approaches rely on egocentric video to develop data-driven algorithms, but these systems are predominantly unimodal, relying solely on visual input.
 
 **Limitations of Prior Work**: Vision-only HOI data suffers from two fundamental deficiencies: (1) physical quantities such as force and contact are unavailable—existing methods like ContactPose can only estimate binary fingertip contact and are limited to pre-scanned rigid objects; (2) restricted viewpoints cause severe hand occlusion, while multi-camera studio setups are infeasible in the wild. Although sensing gloves can provide IMU and tactile signals, the large appearance gap between gloves and bare hands prevents visual models trained on glove data from generalizing to bare-hand tasks.
 
-**Root Cause**: Sensing gloves offer rich physical signals but introduce a domain gap, whereas bare-hand video provides favorable visual appearance but lacks physical information—these two desiderata are fundamentally at odds.
+**Key Challenge**: Sensing gloves offer rich physical signals but introduce a domain gap, whereas bare-hand video provides favorable visual appearance but lacks physical information—these two desiderata are fundamentally at odds.
 
-**Paper Goals**: How can sensing glove videos be translated into photorealistic bare-hand videos while retaining tactile/IMU signals, so that physical information can be leveraged for bare-hand learning tasks? Specific sub-problems include: (1) achieving cross-frame spatiotemporal consistency rather than processing only static images; and (2) handling complex interactions with unknown and non-rigid objects.
+**Goal**: How can sensing glove videos be translated into photorealistic bare-hand videos while retaining tactile/IMU signals, so that physical information can be leveraged for bare-hand learning tasks? Specific sub-problems include: (1) achieving cross-frame spatiotemporal consistency rather than processing only static images; and (2) handling complex interactions with unknown and non-rigid objects.
 
-**Starting Point**: The key observation is that despite their large appearance difference, gloves and bare hands share the same skeletal structure (hand pose). The problem can therefore be decomposed into two steps: first convert the glove video into a temporally consistent in-air bare-hand sequence (using 3D reconstruction to enforce consistency), then embed the bare hand into the scene and restore interaction details (using a diffusion model to ensure flexibility).
+**Key Insight**: The key observation is that despite their large appearance difference, gloves and bare hands share the same skeletal structure (hand pose). The problem can therefore be decomposed into two steps: first convert the glove video into a temporally consistent in-air bare-hand sequence (using 3D reconstruction to enforce consistency), then embed the bare hand into the scene and restore interaction details (using a diffusion model to ensure flexibility).
 
 **Core Idea**: Combine the spatiotemporal consistency of a 3D Gaussian hand model with the generative flexibility of a diffusion hand restorer to achieve sensing-glove-to-bare-hand video translation, while preserving multi-modal sensing signals.
 

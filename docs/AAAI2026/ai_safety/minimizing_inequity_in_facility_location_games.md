@@ -28,15 +28,15 @@ This paper studies the problem of minimizing the Maximum Group Effect in facilit
 
 ## Background & Motivation
 
-**State of the Field**: Facility location games are a classical problem in social choice theory, concerning the selection of facility positions on a line to serve agents distributed at various locations. Agents may strategically misreport their positions for personal gain. Classical strategyproof mechanisms (e.g., the median mechanism) optimize utilitarian objectives (minimizing total distance) or egalitarian objectives (minimizing maximum distance).
+**Background**: Facility location games are a classical problem in social choice theory, concerning the selection of facility positions on a line to serve agents distributed at various locations. Agents may strategically misreport their positions for personal gain. Classical strategyproof mechanisms (e.g., the median mechanism) optimize utilitarian objectives (minimizing total distance) or egalitarian objectives (minimizing maximum distance).
 
 **Limitations of Prior Work**: Traditional objective functions overlook inter-group fairness. When agents belong to different groups (e.g., different communities or income classes), a solution optimal in total cost may impose disproportionately high costs on certain groups. Although the maximum group effect framework proposed by Marsh and Schilling (1994) provides a fairness-oriented objective, a known gap exists in the approximation guarantees for strategyproof mechanisms under group fairness objectives, as identified by Zhou, Li, and Chan (2022).
 
-**Root Cause**: There is a fundamental tension between strategyproofness (truthfulness) and minimizing the maximum group effect—strategyproofness constrains the feasible solution space, while the fairness objective requires delicate balancing of inter-group interests.
+**Key Challenge**: There is a fundamental tension between strategyproofness (truthfulness) and minimizing the maximum group effect—strategyproofness constrains the feasible solution space, while the fairness objective requires delicate balancing of inter-group interests.
 
-**Paper Goals**: Design strategyproof mechanisms that minimize the maximum group effect and close the existing approximation ratio gap.
+**Goal**: Design strategyproof mechanisms that minimize the maximum group effect and close the existing approximation ratio gap.
 
-**Starting Point**: Unify multiple classical facility location objectives (utilitarian, egalitarian, group fairness) under the maximum group effect framework and analyze them within a single analytical framework.
+**Key Insight**: Unify multiple classical facility location objectives (utilitarian, egalitarian, group fairness) under the maximum group effect framework and analyze them within a single analytical framework.
 
 **Core Idea**: Propose two novel mechanisms—BALANCED (based on weighted medians) and MAJOR-PHANTOM (based on phantom voters)—that achieve tight approximation ratios under the two formulations of total group effect and maximum group effect, respectively.
 

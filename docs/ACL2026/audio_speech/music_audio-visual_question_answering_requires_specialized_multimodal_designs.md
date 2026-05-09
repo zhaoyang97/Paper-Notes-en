@@ -29,15 +29,15 @@ As the first comprehensive survey of the Music Audio-Visual Question Answering (
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal large language models have achieved remarkable progress on general audio-visual understanding tasks. Music AVQA, as a specialized subfield, requires fine-grained spatiotemporal reasoning and cross-modal correspondence over dense, continuous audio-visual signals in music performance videos.
+**Background**: Multimodal large language models have achieved remarkable progress on general audio-visual understanding tasks. Music AVQA, as a specialized subfield, requires fine-grained spatiotemporal reasoning and cross-modal correspondence over dense, continuous audio-visual signals in music performance videos.
 
 **Limitations of Prior Work**: Music AVQA differs fundamentally from general AVQA in several respects: (1) musical audio signals are continuous and multi-layered (multiple instruments playing simultaneously), unlike the discrete and sparse sound events in general scenarios; (2) precise temporal alignment is required, as a performer's visual actions and their acoustic output are temporally misaligned; (3) domain-specific knowledge is necessary, including instrument recognition, music theory (rhythm, harmony), and performance conventions; (4) questions involve quantifying subjective attributes (e.g., "more rhythmic," "more melodic").
 
-**Root Cause**: The broad design of general-purpose multimodal models is insufficient to address the unique complexity of the music domain, which demands specialized spatiotemporal design, input processing, and music priors.
+**Key Challenge**: The broad design of general-purpose multimodal models is insufficient to address the unique complexity of the music domain, which demands specialized spatiotemporal design, input processing, and music priors.
 
-**Paper Goals**: (1) Systematically analyze the evolution of Music AVQA datasets; (2) Comparatively examine the design characteristics of various methods; (3) Identify effective design patterns and propose future directions.
+**Goal**: (1) Systematically analyze the evolution of Music AVQA datasets; (2) Comparatively examine the design characteristics of various methods; (3) Identify effective design patterns and propose future directions.
 
-**Starting Point**: Analysis of which design choices correlate with strong performance, examined along three dimensions: input processing, encoder selection, and spatiotemporal architectural design.
+**Key Insight**: Analysis of which design choices correlate with strong performance, examined along three dimensions: input processing, encoder selection, and spatiotemporal architectural design.
 
 **Core Idea**: Music AVQA requires three levels of specialization — specialized input processing (audio-visual feature extraction), specialized architecture (explicit spatiotemporal modeling), and specialized knowledge (music prior integration).
 

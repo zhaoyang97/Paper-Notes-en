@@ -29,15 +29,15 @@ This paper demonstrates that selecting the shortest solution in Best-of-N sampli
 
 ## Background & Motivation
 
-**State of the Field**: Reasoning models (e.g., DeepSeek-R1, Grok-3-mini) substantially improve performance on complex tasks such as mathematics and code through long chain-of-thought (CoT). Parallel test-time compute (Best-of-N) further boosts accuracy by sampling $N$ solutions and selecting the best. Self-consistency is the most widely used heuristic, selecting the most frequently occurring answer.
+**Background**: Reasoning models (e.g., DeepSeek-R1, Grok-3-mini) substantially improve performance on complex tasks such as mathematics and code through long chain-of-thought (CoT). Parallel test-time compute (Best-of-N) further boosts accuracy by sampling $N$ solutions and selecting the best. Self-consistency is the most widely used heuristic, selecting the most frequently occurring answer.
 
 **Limitations of Prior Work**: Self-consistency requires at least $N \geq 3$ solutions to form a majority vote; it is inapplicable to tasks such as code generation where outputs are not directly comparable; all $N$ solutions must be fully generated, incurring substantial token overhead. Moreover, prior work has identified an "overthinking" phenomenon in reasoning models—generating excessive unnecessary tokens on simple problems, wasting computational resources.
 
-**Root Cause**: How can one efficiently select a high-quality answer from multiple candidates without relying on complex scoring mechanisms or auxiliary reward models? Existing approaches either require comparable outputs (self-consistency) or require training dedicated verifiers (reward models), entailing high complexity and computational cost.
+**Key Challenge**: How can one efficiently select a high-quality answer from multiple candidates without relying on complex scoring mechanisms or auxiliary reward models? Existing approaches either require comparable outputs (self-consistency) or require training dedicated verifiers (reward models), entailing high complexity and computational cost.
 
-**Paper Goals**: (1) Provide a simpler and more general Best-of-N selection heuristic; (2) explain why the shortest solution tends to be the correct one; (3) reduce the token cost of parallel inference.
+**Goal**: (1) Provide a simpler and more general Best-of-N selection heuristic; (2) explain why the shortest solution tends to be the correct one; (3) reduce the token cost of parallel inference.
 
-**Starting Point**: Reasoning models develop an implicit strategy during RL training—when the model lacks confidence in a solution's correctness, it dilutes negative rewards through "padding reasoning" (since standard RL algorithms normalize rewards per token), causing incorrect and uncertain solutions to be systematically longer. Selecting the shortest solution is equivalent to selecting the most confident one.
+**Key Insight**: Reasoning models develop an implicit strategy during RL training—when the model lacks confidence in a solution's correctness, it dilutes negative rewards through "padding reasoning" (since standard RL algorithms normalize rewards per token), causing incorrect and uncertain solutions to be systematically longer. Selecting the shortest solution is equivalent to selecting the most confident one.
 
 **Core Idea**: Correct solutions in reasoning models tend to be shorter; selecting the shortest solution avoids the tail distribution of overthinking, achieving a Pareto improvement.
 

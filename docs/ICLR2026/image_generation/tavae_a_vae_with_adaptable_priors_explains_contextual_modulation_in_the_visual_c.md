@@ -28,15 +28,15 @@ This paper extends the VAE formalism to propose the Task-Amortized VAE (TAVAE), 
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning models—both discriminative and generative—have been successfully applied to model neural responses in the visual system. Population activity in V1 has been interpreted as a representation of the posterior over latent variables in a generative model, and priors learned from natural image statistics have been shown to explain several V1 properties.
+**Background**: Deep learning models—both discriminative and generative—have been successfully applied to model neural responses in the visual system. Population activity in V1 has been interpreted as a representation of the posterior over latent variables in a generative model, and priors learned from natural image statistics have been shown to explain several V1 properties.
 
 **Limitations of Prior Work**: V1 responses are strongly influenced not only by the stimulus itself, but also by non-stimulus factors such as task context. Recent studies have identified systematic task-specific biases in V1 activity. However, existing models cannot account for these biases—adapting a standard VAE to a new task requires retraining from scratch, which is both data-inefficient and biologically implausible.
 
-**Root Cause**: Task learning should reuse previously acquired visual representations without retraining the entire network, yet must flexibly incorporate task-specific priors to modulate inference.
+**Key Challenge**: Task learning should reuse previously acquired visual representations without retraining the entire network, yet must flexibly incorporate task-specific priors to modulate inference.
 
-**Paper Goals**: To develop a VAE framework that flexibly acquires task priors while reusing learned representations, and to use this framework to explain task-related contextual modulation in mouse V1.
+**Goal**: To develop a VAE framework that flexibly acquires task priors while reusing learned representations, and to use this framework to explain task-related contextual modulation in mouse V1.
 
-**Starting Point**: The likelihood (generative model) and recognition model of the VAE are held fixed; the variational posterior is reweighted via Bayes' rule using a new task prior: $q_T(\mathbf{z}|\mathbf{x}) \propto q(\mathbf{z}|\mathbf{x}) \cdot p_T(\mathbf{z}) / p_0(\mathbf{z})$.
+**Key Insight**: The likelihood (generative model) and recognition model of the VAE are held fixed; the variational posterior is reweighted via Bayes' rule using a new task prior: $q_T(\mathbf{z}|\mathbf{x}) \propto q(\mathbf{z}|\mathbf{x}) \cdot p_T(\mathbf{z}) / p_0(\mathbf{z})$.
 
 **Core Idea**: Task-dependent response biases in V1—including bimodal population responses under uncertainty—are explained solely by learning task-specific priors, without retraining the VAE.
 

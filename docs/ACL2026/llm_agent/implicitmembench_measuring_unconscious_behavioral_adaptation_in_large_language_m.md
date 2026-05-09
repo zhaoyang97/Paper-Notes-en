@@ -28,15 +28,15 @@ This paper introduces ImplicitMemBench, the first benchmark for systematically e
 
 ## Background & Motivation
 
-**State of the Field**: LLM memory evaluation benchmarks (e.g., LoCoMo, LongMemEval, MemBench) have matured considerably, yet nearly all of them assess explicit memory—fact retrieval triggered by active querying.
+**Background**: LLM memory evaluation benchmarks (e.g., LoCoMo, LongMemEval, MemBench) have matured considerably, yet nearly all of them assess explicit memory—fact retrieval triggered by active querying.
 
 **Limitations of Prior Work**: Existing benchmarks uniformly adopt a QA format that explicitly prompts models to recall target information, thereby neglecting implicit memory—the conversion of experience into automatic behavior rather than conscious recollection. An effective AI assistant should be able to autonomously execute learned procedures and avoid previously failed actions without explicit reminders.
 
-**Root Cause**: There is a fundamental gap between explicit memory evaluation ("what do you remember?") and real-world application requirements ("what do you execute automatically?"). The QA format of existing benchmarks actively cues target information, emphasizes storage capacity over first-attempt triggering, and involves costly evaluation pipelines.
+**Key Challenge**: There is a fundamental gap between explicit memory evaluation ("what do you remember?") and real-world application requirements ("what do you execute automatically?"). The QA format of existing benchmarks actively cues target information, emphasizes storage capacity over first-attempt triggering, and involves costly evaluation pipelines.
 
-**Paper Goals**: Drawing on the cognitive science taxonomy of non-declarative memory, this work constructs the first benchmark for systematically evaluating implicit memory in LLMs.
+**Goal**: Drawing on the cognitive science taxonomy of non-declarative memory, this work constructs the first benchmark for systematically evaluating implicit memory in LLMs.
 
-**Starting Point**: Three classical implicit memory paradigms from cognitive science—procedural memory, priming effects, and classical conditioning—are mapped onto text-based agent scenarios via functional isomorphism.
+**Key Insight**: Three classical implicit memory paradigms from cognitive science—procedural memory, priming effects, and classical conditioning—are mapped onto text-based agent scenarios via functional isomorphism.
 
 **Core Idea**: A unified "learning/priming–interference–testing" protocol combined with a first-attempt scoring mechanism shifts evaluation from "what can the model recall?" to "what can the model execute automatically?"
 

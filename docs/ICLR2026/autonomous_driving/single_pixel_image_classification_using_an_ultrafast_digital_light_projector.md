@@ -27,14 +27,14 @@ content_hash: cadbc4ca7e523863
 This paper presents an experimental single-pixel imaging (SPI) system based on a microLED-on-CMOS ultrafast digital light projector, combined with low-complexity machine learning models (ELM and DNN) to achieve sub-millisecond image encoding and kHz-rate image classification. The system attains >90% accuracy on the MNIST dataset and >99% AUC in binary classification scenarios.
 
 ## Background & Motivation
-1. **State of the Field**: Machine vision is a mature technology embedded in autonomous agents such as self-driving vehicles; however, the operational bandwidth of conventional digital cameras is becoming a bottleneck. Event cameras reduce data volume in dynamic scenes but are constrained to the visible and near-infrared spectrum.
+1. **Background**: Machine vision is a mature technology embedded in autonomous agents such as self-driving vehicles; however, the operational bandwidth of conventional digital cameras is becoming a bottleneck. Event cameras reduce data volume in dynamic scenes but are constrained to the visible and near-infrared spectrum.
 2. **Limitations of Prior Work**:
     - Conventional SPI systems employ DMDs (digital micromirror devices) for pattern generation, which are limited by mechanical switching speeds (~$10^4$ fps), keeping overall imaging rates comparable to standard CMOS cameras ($\lesssim 10^2$ Hz).
     - Most existing single-pixel image classification (SPIC) work relies on simulation or low-speed experiments, lacking true ultrafast optical experimental validation.
     - The image reconstruction step introduces additional latency and computational overhead.
-3. **Root Cause**: SPI requires projecting long sequences of patterns to acquire sufficient information, and projection speed constitutes the bandwidth bottleneck; compressed sensing can reduce the number of patterns but at the cost of classification accuracy.
-4. **Paper Goals**: To experimentally validate a single-pixel image classification system based on ultrafast microLED projection that performs direct classification on photodetector time series without image reconstruction.
-5. **Starting Point**: Leveraging the ~100× faster switching speed of microLED arrays compared to DMDs to bypass image reconstruction entirely and classify directly on spatiotemporally transformed data.
+3. **Key Challenge**: SPI requires projecting long sequences of patterns to acquire sufficient information, and projection speed constitutes the bandwidth bottleneck; compressed sensing can reduce the number of patterns but at the cost of classification accuracy.
+4. **Goal**: To experimentally validate a single-pixel image classification system based on ultrafast microLED projection that performs direct classification on photodetector time series without image reconstruction.
+5. **Key Insight**: Leveraging the ~100× faster switching speed of microLED arrays compared to DMDs to bypass image reconstruction entirely and classify directly on spatiotemporally transformed data.
 6. **Core Idea**: Reformulating image classification from the spatial domain to the spatiotemporal domain—each image is encoded as a light-intensity time series and classified directly by a low-complexity ML model.
 
 ## Method

@@ -29,7 +29,7 @@ This paper proposes ItDPDM (Information-Theoretic Discrete Poisson Diffusion Mod
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models have achieved remarkable success in the continuous domain (images), but face fundamental limitations when handling inherently discrete data (symbolic music, count data):
+**Background**: Diffusion models have achieved remarkable success in the continuous domain (images), but face fundamental limitations when handling inherently discrete data (symbolic music, count data):
 - Continuous models require dequantization to map discrete data into continuous space, introducing quantization gaps and train-test mismatch.
 - Existing discrete diffusion models (D3PM, LTJ) rely on the evidence lower bound (ELBO), which is not an exact likelihood estimate.
 
@@ -38,11 +38,11 @@ This paper proposes ItDPDM (Information-Theoretic Discrete Poisson Diffusion Mod
 - LTJ employs binomial thinning and an ELBO loss—the ELBO is not an exact likelihood, and the number of denoising steps $T$ requires careful tuning.
 - ELBO introduces two layers of approximation: (1) the relaxation of the variational bound itself, and (2) Monte Carlo integration.
 
-**Root Cause**: Modeling discrete data requires direct manipulation of probability mass functions (PMFs), rather than indirect treatment via probability density functions (PDFs).
+**Key Challenge**: Modeling discrete data requires direct manipulation of probability mass functions (PMFs), rather than indirect treatment via probability density functions (PDFs).
 
-**Paper Goals**: Design an information-theoretically exact diffusion model for non-negative discrete data, eliminating ELBO approximation.
+**Goal**: Design an information-theoretically exact diffusion model for non-negative discrete data, eliminating ELBO approximation.
 
-**Starting Point**: Drawing an analogy to the I-MMSE identity on the Gaussian channel (derivative of mutual information = minimum mean squared error), this work establishes the I-MPRL identity on the Poisson channel (derivative of mutual information = minimum Poisson reconstruction loss).
+**Key Insight**: Drawing an analogy to the I-MMSE identity on the Gaussian channel (derivative of mutual information = minimum mean squared error), this work establishes the I-MPRL identity on the Poisson channel (derivative of mutual information = minimum Poisson reconstruction loss).
 
 **Core Idea**: The I-MPRL identity precisely connects the Poisson denoising loss to the data likelihood: $-\log P(x) = \int_0^\infty \text{mprl}(x, \gamma)\, d\gamma$.
 

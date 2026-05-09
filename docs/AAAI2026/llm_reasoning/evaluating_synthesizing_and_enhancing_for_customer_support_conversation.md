@@ -27,15 +27,15 @@ content_hash: f1c93beada601dd0
 This paper defines five dialogue phases and twelve support strategies based on the COPC industry standard, generates 11,232 strategy-rich synthetic dialogues (RoleCS) via five-agent role-playing, and constructs a 1,855-sample evaluation set (CSConv) by rewriting real conversations. Fine-tuning on these resources substantially improves strategy-aligned response quality and issue resolution rates.
 
 ## Background & Motivation
-**State of the Field**: Customer support dialogue AI has primarily focused on task-oriented dialogue systems (e.g., MultiWOZ, NATCS), emphasizing task completion. Emotional support conversation research (e.g., ESConv) addresses emotional guidance but is not tailored to customer service contexts.
+**Background**: Customer support dialogue AI has primarily focused on task-oriented dialogue systems (e.g., MultiWOZ, NATCS), emphasizing task completion. Emotional support conversation research (e.g., ESConv) addresses emotional guidance but is not tailored to customer service contexts.
 
 **Limitations of Prior Work**: (a) Most customer support datasets derive from asynchronous interactions (e.g., Twitter), which differ in immediacy from real-time support; (b) task-oriented dialogue datasets lack deliberate use of support strategies (e.g., emotion management, empathetic care), focusing solely on information transfer; (c) real customer support data is difficult to obtain and sensitive, making annotation challenging.
 
-**Root Cause**: High-quality customer support requires not only problem resolution but also structured, empathetic communication — yet no systematic framework grounded in industry standards exists to define and evaluate this capability.
+**Key Challenge**: High-quality customer support requires not only problem resolution but also structured, empathetic communication — yet no systematic framework grounded in industry standards exists to define and evaluate this capability.
 
-**Paper Goals**: To systematically define a strategy framework for customer support dialogues and generate sufficiently diverse training data to enhance LLMs' strategic customer support capabilities.
+**Goal**: To systematically define a strategy framework for customer support dialogues and generate sufficiently diverse training data to enhance LLMs' strategic customer support capabilities.
 
-**Starting Point**: Drawing on the COPC (Customer Operations Performance Center) international standard and emotional support dialogue research, the authors collaborate with domain experts to define a five-phase, twelve-strategy framework.
+**Key Insight**: Drawing on the COPC (Customer Operations Performance Center) international standard and emotional support dialogue research, the authors collaborate with domain experts to define a five-phase, twelve-strategy framework.
 
 **Core Idea**: A unified approach combining a COPC-aligned framework definition, multi-agent role-playing for synthetic training data, and a real-dialogue rewriting evaluation set to holistically improve LLM customer support capabilities.
 

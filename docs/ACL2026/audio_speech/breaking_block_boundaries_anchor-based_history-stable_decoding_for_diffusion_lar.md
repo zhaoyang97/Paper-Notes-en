@@ -28,15 +28,15 @@ This paper proposes AHD (Anchor-based History-stable Decoding), a training-free 
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion large language models (dLLMs) such as LLaDA have emerged as strong alternatives to autoregressive LLMs. Semi-autoregressive (Semi-AR) decoding is widely adopted, partitioning the output sequence into multiple blocks decoded left-to-right, with diffusion-based iterative denoising applied within each block.
+**Background**: Diffusion large language models (dLLMs) such as LLaDA have emerged as strong alternatives to autoregressive LLMs. Semi-autoregressive (Semi-AR) decoding is widely adopted, partitioning the output sequence into multiple blocks decoded left-to-right, with diffusion-based iterative denoising applied within each block.
 
 **Limitations of Prior Work**: Semi-AR decoding suffers from a severe "block boundary delay" problem — many tokens converge to their final values and remain stable before their designated block is reached, yet are forced to wait until that block's turn. The delayed decoding of these "cross-block stable tokens" wastes substantial decoding steps and degrades performance by suppressing the radiation effect within local regions.
 
-**Root Cause**: How can cross-block stable tokens be reliably identified? Existing approaches based on single-step confidence or entropy are unreliable: (1) already-stable tokens may still exhibit local fluctuations, causing false positives; (2) historical information is isolated in standard decoding, with each step's prediction depending only on the previous step.
+**Key Challenge**: How can cross-block stable tokens be reliably identified? Existing approaches based on single-step confidence or entropy are unreliable: (1) already-stable tokens may still exhibit local fluctuations, causing false positives; (2) historical information is isolated in standard decoding, with each step's prediction depending only on the previous step.
 
-**Paper Goals**: To break the block boundary constraints of Semi-AR decoding by early-unlocking cross-block stable tokens, simultaneously improving both efficiency and generation quality.
+**Goal**: To break the block boundary constraints of Semi-AR decoding by early-unlocking cross-block stable tokens, simultaneously improving both efficiency and generation quality.
 
-**Starting Point**: Three key observations — (1) naive look-ahead decoding is unreliable due to local fluctuations; (2) token stability is strongly correlated with convergence trends (absolute stability tendency); (3) historical information remains isolated in standard decoding. This motivates the incorporation of historical trajectory information for global stability assessment.
+**Key Insight**: Three key observations — (1) naive look-ahead decoding is unreliable due to local fluctuations; (2) token stability is strongly correlated with convergence trends (absolute stability tendency); (3) historical information remains isolated in standard decoding. This motivates the incorporation of historical trajectory information for global stability assessment.
 
 **Core Idea**: At each decoding step, the current step serves as a dynamic anchor to trace back through a historical buffer and compute an anchored consistency score, capturing the absolute stability tendency of each token. Once stability is confirmed, the token is early-unlocked across block boundaries.
 

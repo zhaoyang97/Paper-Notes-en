@@ -28,15 +28,15 @@ This paper proposes the In-Context Policy Optimization (ICPO) framework, theoret
 
 ## Background & Motivation
 
-**State of the Field**: Test-time scaling has become an important paradigm for improving LLM reasoning—models iteratively refine their answers through multi-round self-reflection without parameter updates. Representative methods include Chain-of-Thought, Tree-of-Thoughts, Best-of-N, and Self-Refine.
+**Background**: Test-time scaling has become an important paradigm for improving LLM reasoning—models iteratively refine their answers through multi-round self-reflection without parameter updates. Representative methods include Chain-of-Thought, Tree-of-Thoughts, Best-of-N, and Self-Refine.
 
 **Limitations of Prior Work**: (a) Why does self-reflection emerge from pretraining? Prior work (e.g., Park et al. 2024) directly assumes LLMs possess posterior sampling/policy optimization capabilities without explaining their origin. (b) Theoretical analyses of in-context learning have focused on supervised learning (linear regression) and value function learning (TD learning), with no theory addressing policy optimization. (c) Existing methods such as Tree-of-Thoughts require multi-step search, incurring substantial computational overhead.
 
-**Root Cause**: How can a model leverage historical attempts and reward feedback in context to optimize its own output policy? Can Transformers theoretically realize such policy optimization without parameter updates?
+**Key Challenge**: How can a model leverage historical attempts and reward feedback in context to optimize its own output policy? Can Transformers theoretically realize such policy optimization without parameter updates?
 
-**Paper Goals**: (1) Provide a theoretical foundation for LLM self-reflection and self-improvement behavior. (2) Design a practical test-time scaling algorithm.
+**Goal**: (1) Provide a theoretical foundation for LLM self-reflection and self-improvement behavior. (2) Design a practical test-time scaling algorithm.
 
-**Starting Point**: Self-reflection is formalized as policy optimization in a K-armed bandit problem—the agent generates a response (action), receives a reward, and accumulates history $\{(\mathbf{x}_1, r_1), \ldots, (\mathbf{x}_t, r_t)\}$ in context to optimize subsequent behavior.
+**Key Insight**: Self-reflection is formalized as policy optimization in a K-armed bandit problem—the agent generates a response (action), receives a reward, and accumulates history $\{(\mathbf{x}_1, r_1), \ldots, (\mathbf{x}_t, r_t)\}$ in context to optimize subsequent behavior.
 
 **Core Idea**: The self-attention mechanism of Transformers has a natural inductive bias for simulating FTRL-based policy optimization, and after sufficient pretraining, it can perform policy optimization in context.
 

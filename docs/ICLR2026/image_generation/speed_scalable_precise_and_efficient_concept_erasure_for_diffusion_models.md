@@ -29,15 +29,15 @@ SPEED proposes a closed-form model editing method based on null space constraint
 
 ## Background & Motivation
 
-**State of the Field**: Concept erasure in T2I diffusion models follows two major paradigms—training-based (fine-tuning, e.g., ESD, MACE) and editing-based (closed-form, e.g., UCE, RECE). Editing-based methods are naturally suited for multi-concept scenarios as they require no additional training.
+**Background**: Concept erasure in T2I diffusion models follows two major paradigms—training-based (fine-tuning, e.g., ESD, MACE) and editing-based (closed-form, e.g., UCE, RECE). Editing-based methods are naturally suited for multi-concept scenarios as they require no additional training.
 
 **Limitations of Prior Work**: Editing-based methods such as UCE employ weighted least squares to jointly optimize the erasure error $e_1$ and the preservation error $e_0$; however, $e_0$ has a provably non-zero lower bound. As the number of erased concepts grows, the accumulated $e_0$ causes semantic degradation in non-target concepts.
 
-**Root Cause**: Null space methods (e.g., AlphaEdit) can enforce $e_0 = 0$ exactly, but enlarging the preservation set causes the feature matrix to approach full rank, shrinking the null space dimension $\dim = d_0 - \text{rank}(\mathbf{C}_0\mathbf{C}_0^\top)$. Resorting to an approximate null space reintroduces semantic degradation.
+**Key Challenge**: Null space methods (e.g., AlphaEdit) can enforce $e_0 = 0$ exactly, but enlarging the preservation set causes the feature matrix to approach full rank, shrinking the null space dimension $\dim = d_0 - \text{rank}(\mathbf{C}_0\mathbf{C}_0^\top)$. Resorting to an approximate null space reintroduces semantic degradation.
 
-**Paper Goals**: To simultaneously guarantee (a) erasure effectiveness, (b) zero loss on non-target concepts, and (c) computational efficiency in multi-concept erasure.
+**Goal**: To simultaneously guarantee (a) erasure effectiveness, (b) zero loss on non-target concepts, and (c) computational efficiency in multi-concept erasure.
 
-**Starting Point**: Rather than naively enlarging the preservation set, the paper strategically refines it—filtering out low-influence concepts to prevent full rank, and augmenting high-influence concepts to improve coverage.
+**Key Insight**: Rather than naively enlarging the preservation set, the paper strategically refines it—filtering out low-influence concepts to prevent full rank, and augmenting high-influence concepts to improve coverage.
 
 **Core Idea**: By refining the preservation set with prior knowledge, the null space constraint remains accurate at scale, achieving lossless prior preservation with $e_0 = 0$.
 

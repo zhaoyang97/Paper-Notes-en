@@ -28,16 +28,16 @@ This paper proposes Nested Subspace Networks (NSN), which reparameterize linear 
 
 ## Background & Motivation
 
-**State of the Field**: Large neural networks operate under fixed computational budgets, lacking flexibility for resource-constrained or dynamic deployment environments. Mainstream compression methods (pruning, distillation, LoRA) produce static models that cannot be adjusted at runtime.
+**Background**: Large neural networks operate under fixed computational budgets, lacking flexibility for resource-constrained or dynamic deployment environments. Mainstream compression methods (pruning, distillation, LoRA) produce static models that cannot be adjusted at runtime.
 
 **Limitations of Prior Work**:
    - Training a separate model for each computational budget is prohibitively expensive.
    - Variable-width networks (e.g., Slimmable Networks) must be trained from scratch and cannot be applied to pretrained models.
    - Existing methods offer only a few discrete operating points rather than a continuous, smooth spectrum.
 
-**Root Cause**: How can a single model simultaneously satisfy three requirements — (D1) instantaneous runtime adjustment, (D2) post-hoc applicability to arbitrary pretrained models, and (D3) a continuous and smooth computation–performance Pareto frontier?
+**Key Challenge**: How can a single model simultaneously satisfy three requirements — (D1) instantaneous runtime adjustment, (D2) post-hoc applicability to arbitrary pretrained models, and (D3) a continuous and smooth computation–performance Pareto frontier?
 
-**Starting Point**: Low-rank decomposition $W = BA$ naturally supports computation scaling by truncating the rank $r$. The key insight is that if models of different ranks form strictly nested subspaces, performance degradation is guaranteed to be monotone and smooth.
+**Key Insight**: Low-rank decomposition $W = BA$ naturally supports computation scaling by truncating the rank $r$. The key insight is that if models of different ranks form strictly nested subspaces, performance degradation is guaranteed to be monotone and smooth.
 
 **Core Idea**: Linear layers are reparameterized as shared factor pairs $(A, B)$, where the rank-$r$ model uses the first $r$ rows of $A$ and the first $r$ columns of $B$, naturally forming a nested hierarchy. Uncertainty-weighted training then achieves Pareto-optimal coverage across ranks.
 

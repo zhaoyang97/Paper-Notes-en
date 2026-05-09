@@ -29,11 +29,11 @@ This paper introduces SHOW3D, the first hand-object interaction dataset with acc
 
 ## Background & Motivation
 
-1. **State of the Field**: 3D understanding of hand-object interaction is critical for AR/VR and robotics. Existing datasets (GigaHands, HOT3D, ARCTIC, etc.) are primarily collected in indoor studios using motion capture systems or fixed multi-camera arrays.
+1. **Background**: 3D understanding of hand-object interaction is critical for AR/VR and robotics. Existing datasets (GigaHands, HOT3D, ARCTIC, etc.) are primarily collected in indoor studios using motion capture systems or fixed multi-camera arrays.
 2. **Limitations of Prior Work**: Studio environments constrain scene diversity and ecological validity — fixed equipment restricts freedom of movement, and markers alter the visual appearance of hands and objects. At the other extreme, datasets like Ego-Exo4D offer diverse environments but lack precise 3D annotations.
-3. **Root Cause**: A fundamental trade-off exists between environmental realism and 3D annotation accuracy: either annotations are precise but environments are constrained, or environments are diverse but annotations are absent.
-4. **Paper Goals**: Break this trade-off by obtaining accurate 3D annotations of hands and objects in truly in-the-wild environments.
-5. **Starting Point**: Design an approximately 8 kg backpack-mounted multi-camera system that requires no markers, and achieve marker-free automatic 3D annotation via state-of-the-art 2D detection combined with multi-view triangulation.
+3. **Key Challenge**: A fundamental trade-off exists between environmental realism and 3D annotation accuracy: either annotations are precise but environments are constrained, or environments are diverse but annotations are absent.
+4. **Goal**: Break this trade-off by obtaining accurate 3D annotations of hands and objects in truly in-the-wild environments.
+5. **Key Insight**: Design an approximately 8 kg backpack-mounted multi-camera system that requires no markers, and achieve marker-free automatic 3D annotation via state-of-the-art 2D detection combined with multi-view triangulation.
 6. **Core Idea**: Leverage a wearable multi-camera system with an ego-exo automatic annotation pipeline to obtain studio-comparable 3D hand-object annotation accuracy in the wild.
 
 ## Method

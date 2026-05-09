@@ -28,18 +28,18 @@ This paper proposes Online Generic Event Boundary Detection (On-GEBD) as a new t
 
 ## Background & Motivation
 
-**State of the Field**: Generic Event Boundary Detection (GEBD) aims to detect human-perceived event boundaries in long videos. These boundaries are taxonomy-free and not restricted to predefined action categories. Existing GEBD methods (e.g., DDM-Net, UBoCo, CoSeg) make predictions after processing complete videos, which differs from the way humans perceive events online in real time.
+**Background**: Generic Event Boundary Detection (GEBD) aims to detect human-perceived event boundaries in long videos. These boundaries are taxonomy-free and not restricted to predefined action categories. Existing GEBD methods (e.g., DDM-Net, UBoCo, CoSeg) make predictions after processing complete videos, which differs from the way humans perceive events online in real time.
 
 **Limitations of Prior Work**:
    - Current GEBD methods require access to future frames (offline setting) and cannot be applied to streaming video scenarios (live broadcasting, surveillance, real-time interaction).
    - Conventional online video understanding methods (OAD, On-TAL) focus on predefined action categories and are ill-suited for detecting taxonomy-free generic event boundaries.
    - Static thresholds fail to capture diverse semantic changes at varying granularities, while peak detection relies on future frame information.
 
-**Root Cause**: In the online setting, the model can only observe past and current frames, operating under severe information constraints, yet must detect diverse, subtle, and taxonomy-free semantic changes—a challenge that is already difficult in the offline setting.
+**Key Challenge**: In the online setting, the model can only observe past and current frames, operating under severe information constraints, yet must detect diverse, subtle, and taxonomy-free semantic changes—a challenge that is already difficult in the offline setting.
 
-**Paper Goals**: (a) Define the new On-GEBD task—frame-by-frame streaming processing, immediate decision-making, and use of only past information; (b) Design a method capable of effectively detecting diverse generic event boundaries under severely constrained information.
+**Goal**: (a) Define the new On-GEBD task—frame-by-frame streaming processing, immediate decision-making, and use of only past information; (b) Design a method capable of effectively detecting diverse generic event boundaries under severely constrained information.
 
-**Starting Point**: Inspiration is drawn from the cognitive science **Event Segmentation Theory (EST)**—humans continuously predict future information consistent with the current event and perceive event boundaries when a significant discrepancy arises between prediction and actual incoming information.
+**Key Insight**: Inspiration is drawn from the cognitive science **Event Segmentation Theory (EST)**—humans continuously predict future information consistent with the current event and perceive event boundaries when a significant discrepancy arises between prediction and actual incoming information.
 
 **Core Idea**: A Transformer decoder is used to predict future frame features consistent with the current event; online event boundary detection is then performed by identifying statistical anomalies in the prediction error via a sliding-window dynamic threshold.
 

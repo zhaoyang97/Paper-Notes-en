@@ -29,11 +29,11 @@ This paper identifies that time-series-paired texts exhibit periodicity analogou
 
 ### State of the Field
 
-**State of the Field**: Real-world time series data are frequently accompanied by textual information (e.g., infection rates paired with government announcements during a pandemic, or economic indicators paired with news reports), yet most existing models rely solely on numerical data, neglecting the complementary information contained in text.
+**Background**: Real-world time series data are frequently accompanied by textual information (e.g., infection rates paired with government announcements during a pandemic, or economic indicators paired with news reports), yet most existing models rely solely on numerical data, neglecting the complementary information contained in text.
 
 ### Root Cause
 
-**Root Cause**: The current best-performing multimodal method (MM-TSFLib), while incorporating text, overlooks the positional characteristics and periodicity inherent to time-series-paired texts.
+**Key Challenge**: The current best-performing multimodal method (MM-TSFLib), while incorporating text, overlooks the positional characteristics and periodicity inherent to time-series-paired texts.
 
 ### Limitations of Prior Work
 
@@ -41,7 +41,7 @@ This paper identifies that time-series-paired texts exhibit periodicity analogou
 
 ### Starting Point
 
-**Paper Goals**: What unique properties do time-series-paired texts possess? How can such textual information be systematically integrated to improve time series modeling?
+**Goal**: What unique properties do time-series-paired texts possess? How can such textual information be systematically integrated to improve time series modeling?
 
 ## Method
 

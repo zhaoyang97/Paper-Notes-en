@@ -27,11 +27,11 @@ content_hash: e6f792755f8b8192
 This paper proposes TMR, a method that combines classical template matching with support-conditioned bounding box regression to achieve few-shot detection of arbitrary patterns—including non-object-level patterns. The authors also introduce the RPINE dataset to cover a broader range of repetitive patterns. TMR surpasses existing FSCD methods on multiple benchmarks and demonstrates strong cross-dataset generalization.
 
 ## Background & Motivation
-- **State of the Field**: Few-shot object detection (FSOD) and few-shot counting detection (FSCD) have achieved notable progress, but existing methods rely heavily on object-level priors and are primarily designed for categories with well-defined boundaries.
+- **Background**: Few-shot object detection (FSOD) and few-shot counting detection (FSCD) have achieved notable progress, but existing methods rely heavily on object-level priors and are primarily designed for categories with well-defined boundaries.
 - **Limitations of Prior Work**: Mainstream methods (e.g., Counting-DETR, GeCo, PseCo) compress support samples into prototype vectors via global average pooling, discarding spatial structural information.
-- **Root Cause**: When detection targets are extended from objects to arbitrary patterns (e.g., textures, geometric structures, object parts), spatial layout information becomes critical—yet prototype matching discards precisely this information.
+- **Key Challenge**: When detection targets are extended from objects to arbitrary patterns (e.g., textures, geometric structures, object parts), spatial layout information becomes critical—yet prototype matching discards precisely this information.
 - **Core Problem**: How to design a few-shot pattern detector that preserves spatial structure without relying on object-level priors.
-- **Starting Point**: Revisiting classical template matching and leveraging 2D cross-correlation to preserve the spatial layout of exemplars.
+- **Key Insight**: Revisiting classical template matching and leveraging 2D cross-correlation to preserve the spatial layout of exemplars.
 - **Core Idea**: Replace prototype matching with channel-wise template matching, and adaptively refine bounding boxes via support-conditioned regression.
 
 ## Method

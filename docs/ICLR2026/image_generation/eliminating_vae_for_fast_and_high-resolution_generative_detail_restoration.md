@@ -39,7 +39,7 @@ Diffusion models have achieved breakthroughs in real-world super-resolution (Rea
 
 **Fidelity bottleneck**: Even the 16-channel VAE achieves reconstruction PSNR below 35 dB, with lossy compression discarding high-frequency details.
 
-**Root Cause**: Existing methods (e.g., AdcSR) only simplify the VAE while still operating in latent space; the generation–reconstruction conflict introduced by simplification cannot be fundamentally resolved (e.g., removing decoder attention leads to texture loss).
+**Key Challenge**: Existing methods (e.g., AdcSR) only simplify the VAE while still operating in latent space; the generation–reconstruction conflict introduced by simplification cannot be fundamentally resolved (e.g., removing decoder attention leads to texture loss).
 
 **Core Idea**: pixel-(un)shuffle performs spatial scale transformations analogous to the VAE and can fully replace it, converting latent-space diffusion to pixel space. However, ×8 pixel-shuffle introduces checkerboard/repetitive-pattern artifacts, and no suitable discriminator exists for this setting.
 

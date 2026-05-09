@@ -28,15 +28,15 @@ This paper identifies the root cause of deep-layer degradation in Pre-LN Transfo
 
 ## Background & Motivation
 
-**State of the Field**: Recent studies have found that nearly half of the deep Transformer blocks in modern LLMs (LLaMA, Mistral, DeepSeek, Qwen) are inefficient—removing deep layers has negligible impact on performance.
+**Background**: Recent studies have found that nearly half of the deep Transformer blocks in modern LLMs (LLaMA, Mistral, DeepSeek, Qwen) are inefficient—removing deep layers has negligible impact on performance.
 
 **Limitations of Prior Work**: LLM training is extremely costly, and a large number of ineffective layers represents severe waste of computational resources; however, a systematic theoretical explanation for this phenomenon has been lacking.
 
-**Root Cause**: Although Pre-LN resolves training stability issues (compared to Post-LN), it introduces a new problem: residual connections cause output variance to grow exponentially with depth, progressively diluting the normalization effect of LayerNorm.
+**Key Challenge**: Although Pre-LN resolves training stability issues (compared to Post-LN), it introduces a new problem: residual connections cause output variance to grow exponentially with depth, progressively diluting the normalization effect of LayerNorm.
 
-**Paper Goals**: ① Why are deep layers in Pre-LN ineffective? ② How can this be characterized mathematically? ③ What is the simplest possible fix?
+**Goal**: ① Why are deep layers in Pre-LN ineffective? ② How can this be characterized mathematically? ③ What is the simplest possible fix?
 
-**Starting Point**: Through analysis of variance propagation and gradient flow, the paper shows that the output variance $\sigma_{x_L}^2$ grows exponentially from $\Theta(L)$ to $\Theta(\exp(L))$, bounding the gradient norm as $\|\partial y_L / \partial x_1\| \leq M$ (a constant), which causes deep layers to degenerate into identity mappings.
+**Key Insight**: Through analysis of variance propagation and gradient flow, the paper shows that the output variance $\sigma_{x_L}^2$ grows exponentially from $\Theta(L)$ to $\Theta(\exp(L))$, bounding the gradient norm as $\|\partial y_L / \partial x_1\| \leq M$ (a constant), which causes deep layers to degenerate into identity mappings.
 
 **Core Idea**: Multiplying the LayerNorm output by a layer-wise decaying factor $1/\sqrt{\ell}$ compresses variance growth from exponential to polynomial, enabling deep layers to learn effectively again.
 

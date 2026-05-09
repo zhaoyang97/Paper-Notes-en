@@ -28,10 +28,10 @@ This paper proposes BeyondBench, an evaluation framework that algorithmically ge
 
 ## Background & Motivation
 
-- **State of the Field**: Language model evaluation faces an increasingly severe **data contamination** problem. As training corpora grow to encompass vast amounts of internet text, the questions in static benchmarks may already appear in training data, enabling models to achieve high scores through memorization rather than genuine reasoning—leading to inflated benchmark numbers that fail to reflect true reasoning ability.
+- **Background**: Language model evaluation faces an increasingly severe **data contamination** problem. As training corpora grow to encompass vast amounts of internet text, the questions in static benchmarks may already appear in training data, enabling models to achieve high scores through memorization rather than genuine reasoning—leading to inflated benchmark numbers that fail to reflect true reasoning ability.
 - **Limitations of Prior Work**: Existing benchmarks (e.g., GSM8K, MATH, ARC) are static datasets that, once released, risk being absorbed into the training data of subsequent models. While some works attempt deduplication as a mitigation, the fundamental issue is that static datasets are finite and cannot structurally eliminate contamination.
-- **Root Cause**: We need to evaluate models' *genuine reasoning ability*, yet any publicly fixed question set is inherently at risk of contamination.
-- **Starting Point**: This paper abandons static question banks entirely and instead adopts **algorithmic dynamic generation**—generating fresh problem instances online at every evaluation, with a problem space exceeding $10^{15}$ combinations, driving the coverage probability of any pretraining corpus toward zero. Each problem also admits a deterministically verifiable solution, ensuring objective evaluation.
+- **Key Challenge**: We need to evaluate models' *genuine reasoning ability*, yet any publicly fixed question set is inherently at risk of contamination.
+- **Key Insight**: This paper abandons static question banks entirely and instead adopts **algorithmic dynamic generation**—generating fresh problem instances online at every evaluation, with a problem space exceeding $10^{15}$ combinations, driving the coverage probability of any pretraining corpus toward zero. Each problem also admits a deterministically verifiable solution, ensuring objective evaluation.
 
 ## Method
 

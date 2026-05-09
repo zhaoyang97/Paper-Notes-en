@@ -23,13 +23,13 @@ This paper identifies three forms of cross-modal misalignment (causal, semantic,
 
 ## Background & Motivation
 
-- **State of the Field**: Large Vision-Language Models (LVLMs) encode images as dense patch-level token sequences to capture fine-grained semantics; however, the number of visual tokens far exceeds that of text tokens (e.g., LLaVA-NeXT produces 2,880 tokens per image), leading to quadratic growth in attention computation and inference efficiency bottlenecks.
+- **Background**: Large Vision-Language Models (LVLMs) encode images as dense patch-level token sequences to capture fine-grained semantics; however, the number of visual tokens far exceeds that of text tokens (e.g., LLaVA-NeXT produces 2,880 tokens per image), leading to quadratic growth in attention computation and inference efficiency bottlenecks.
 - **Limitations of Prior Work**: Existing visual token pruning methods operating inside the LLM (e.g., FastV, PyramidDrop) predominantly rely on **text-guided scoring strategies**, using the attention from text tokens to visual tokens as a proxy for importance. This implicitly assumes that visual and text modalities remain well-aligned within LLM layers—an assumption this paper demonstrates to be invalid.
-- **Root Cause**: The authors identify three types of cross-modal misalignment:
+- **Key Challenge**: The authors identify three types of cross-modal misalignment:
   1. **Causal Misalignment**: The causal attention in autoregressive LLMs causes the last text token to disproportionately attend to visual tokens near the end of the sequence, introducing positional bias.
   2. **Semantic Misalignment**: As tokens propagate through LLM layers, visual and text representations become deeply entangled, preventing text tokens from faithfully reflecting visual importance.
   3. **Spatial Misalignment**: Visual and text tokens are flattened into a single sequence with mixed positional encodings; text tokens lack spatial awareness, causing spatially relevant regions to be incorrectly discarded.
-- **Paper Goals**: Controlled experiments demonstrate that replacing the text-guided scoring in PyramidDrop with visual self-attention scoring consistently yields better performance on benchmarks such as GQA and MMBench, with the advantage growing as the compression ratio increases.
+- **Goal**: Controlled experiments demonstrate that replacing the text-guided scoring in PyramidDrop with visual self-attention scoring consistently yields better performance on benchmarks such as GQA and MMBench, with the advantage growing as the compression ratio increases.
 
 ## Method
 

@@ -27,11 +27,11 @@ content_hash: 45d67b7cd3ea6f51
 This paper proposes IMAP (Interpretable Motion-Attentive Maps), a training-free framework that extracts spatio-temporal saliency maps for motion concepts from Video DiTs via two modules: GramCol for spatial localization and motion head selection for temporal localization. IMAP surpasses existing methods on motion localization and zero-shot video semantic segmentation benchmarks.
 
 ## Background & Motivation
-1. **State of the Field**: Video Diffusion Transformers (e.g., CogVideoX/HunyuanVideo) are capable of generating high-quality videos, yet their internal mechanisms remain poorly understood. Existing interpretability work is predominantly focused on image DiTs.
+1. **Background**: Video Diffusion Transformers (e.g., CogVideoX/HunyuanVideo) are capable of generating high-quality videos, yet their internal mechanisms remain poorly understood. Existing interpretability work is predominantly focused on image DiTs.
 2. **Limitations of Prior Work**: ConceptAttention provides only spatial disentanglement and does not address motion or temporal information; DiTFlow/DiffTrack focus on inter-frame visual token correspondence but do not analyze how text is translated into motion. A core question remains unanswered: do Video DiTs genuinely understand and create motion?
-3. **Root Cause**: The defining characteristic of video over image is temporal motion information, yet existing saliency map methods perform only spatial localization and cannot answer the critical question of "when and which object is moving."
-4. **Paper Goals**: To construct spatio-temporally localized interpretable saliency maps for motion concepts within Video DiTs.
-5. **Starting Point**: Analysis of multi-head attention in Video DiTs reveals that QK matching exhibits strong spatial localization capability, and the degree of inter-frame embedding separation correlates with motion localizability. Different attention heads assume distinct roles—certain heads specialize in temporal motion features.
+3. **Key Challenge**: The defining characteristic of video over image is temporal motion information, yet existing saliency map methods perform only spatial localization and cannot answer the critical question of "when and which object is moving."
+4. **Goal**: To construct spatio-temporally localized interpretable saliency maps for motion concepts within Video DiTs.
+5. **Key Insight**: Analysis of multi-head attention in Video DiTs reveals that QK matching exhibits strong spatial localization capability, and the degree of inter-frame embedding separation correlates with motion localizability. Different attention heads assume distinct roles—certain heads specialize in temporal motion features.
 6. **Core Idea**: GramCol is employed for spatial localization (text proxy tokens + Gram matrix), while frame separation scoring selects motion heads for temporal localization.
 
 ## Method

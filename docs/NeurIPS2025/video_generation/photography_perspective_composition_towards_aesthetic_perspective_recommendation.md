@@ -28,15 +28,15 @@ This paper proposes a novel "Photography Perspective Composition" (PPC) paradigm
 
 ## Background & Motivation
 
-1. **State of the Field**: Photography composition methods are primarily based on 2D cropping (free cropping, subject-aware cropping, ratio-aware cropping), with existing datasets such as GAICD, CPC, and FCDB.
+1. **Background**: Photography composition methods are primarily based on 2D cropping (free cropping, subject-aware cropping, ratio-aware cropping), with existing datasets such as GAICD, CPC, and FCDB.
 
 2. **Limitations of Prior Work**: Cropping-based methods operate solely within the 2D image plane and cannot improve compositions where the spatial arrangement of subjects is fundamentally suboptimal. Professional photographers perform "3D recomposition" by adjusting shooting angles, yet this direction remains unexplored in computational photography.
 
-3. **Root Cause**: Three major challenges exist: (1) the absence of perspective transformation datasets; (2) compositional aesthetics form a partial order rather than a total order; and (3) the lack of evaluation criteria for perspective quality.
+3. **Key Challenge**: Three major challenges exist: (1) the absence of perspective transformation datasets; (2) compositional aesthetics form a partial order rather than a total order; and (3) the lack of evaluation criteria for perspective quality.
 
-4. **Paper Goals**: To provide an end-to-end solution covering dataset construction, recommendation methodology, and evaluation models for perspective composition recommendation.
+4. **Goal**: To provide an end-to-end solution covering dataset construction, recommendation methodology, and evaluation models for perspective composition recommendation.
 
-5. **Starting Point**: Existing professional photography images are leveraged alongside 3D reconstruction to inversely generate "good-to-poor" perspective transformation videos, which are then reversed to obtain "poor-to-good" training data.
+5. **Key Insight**: Existing professional photography images are leveraged alongside 3D reconstruction to inversely generate "good-to-poor" perspective transformation videos, which are then reversed to obtain "poor-to-good" training data.
 
 6. **Core Idea**: An I2V model is used to generate transformation videos from suboptimal to aesthetically improved viewpoints for composition recommendation, rather than directly outputting a single image.
 

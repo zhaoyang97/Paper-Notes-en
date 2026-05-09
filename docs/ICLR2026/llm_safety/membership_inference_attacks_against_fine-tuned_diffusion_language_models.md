@@ -28,7 +28,7 @@ This paper presents the first systematic study of membership inference attack (M
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion language models (DLMs, e.g., LLaDA/Dream) are an emerging alternative to autoregressive models (ARMs), using bidirectional masked token prediction. Existing MIA methods are designed for ARMs, leaving the privacy risks of DLMs completely uncharacterized.
+**Background**: Diffusion language models (DLMs, e.g., LLaDA/Dream) are an emerging alternative to autoregressive models (ARMs), using bidirectional masked token prediction. Existing MIA methods are designed for ARMs, leaving the privacy risks of DLMs completely uncharacterized.
 
 **Limitations of Prior Work**:
    - ARM-based MIA methods (Loss/Min-K%/ReCall, etc.) applied directly to DLMs perform near-randomly (AUC ≈ 0.5)
@@ -36,7 +36,7 @@ This paper presents the first systematic study of membership inference attack (M
    - Membership signals in DLMs are configuration-dependent — signals fluctuate drastically across masking configurations, with intra-sample variance (σ ≈ 0.10) exceeding the member/non-member margin (δ ≈ 0.06)
    - Domain adaptation effects introduce heavy-tailed noise, causing mean aggregation to collapse under extreme values
 
-**Root Cause**: DLMs' bidirectional structure provides exponentially many probing opportunities, yet the membership signal is extremely sparse and corrupted by heavy-tailed noise.
+**Key Challenge**: DLMs' bidirectional structure provides exponentially many probing opportunities, yet the membership signal is extremely sparse and corrupted by heavy-tailed noise.
 
 **Core Idea**: Progressive multi-density mask probing + sign voting to suppress heavy-tailed noise + adaptive weighting = robust MIA.
 

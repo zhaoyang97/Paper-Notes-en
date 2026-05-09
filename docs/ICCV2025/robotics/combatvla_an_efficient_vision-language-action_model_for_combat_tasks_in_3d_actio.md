@@ -29,10 +29,10 @@ This paper proposes CombatVLA, an efficient 3B-parameter VLA model designed for 
 
 ## Background & Motivation
 
-- **State of the Field**: VLA models have made remarkable progress in embodied intelligence, yet real-time decision-making in complex 3D environments remains a significant challenge.
+- **Background**: VLA models have made remarkable progress in embodied intelligence, yet real-time decision-making in complex 3D environments remains a significant challenge.
 - **Limitations of Prior Work**: Combat tasks in 3D ARPGs such as *Black Myth: Wukong* impose three stringent requirements: (1) real-time processing of high-resolution visual streams; (2) tactical adaptation to dynamically changing enemy behaviors; and (3) action execution at the sub-second level. Existing approaches fall short: API-based methods (e.g., Voyager) cannot simulate human visual interaction; RL-based methods require extensive predefined reward functions and trial-and-error training; large-scale VLM frameworks such as Cradle and VARP exhibit single-inference latencies of 60–90 seconds, rendering them fundamentally incompatible with real-time combat.
-- **Root Cause**: The gap between the inference speed of large VLMs and the millisecond-level responsiveness demanded by real-time combat scenarios.
-- **Paper Goals**: To develop a lightweight yet capable VLA model that achieves real-time combat performance through data-efficient training and truncated inference.
+- **Key Challenge**: The gap between the inference speed of large VLMs and the millisecond-level responsiveness demanded by real-time combat scenarios.
+- **Goal**: To develop a lightweight yet capable VLA model that achieves real-time combat performance through data-efficient training and truncated inference.
 
 ## Method
 

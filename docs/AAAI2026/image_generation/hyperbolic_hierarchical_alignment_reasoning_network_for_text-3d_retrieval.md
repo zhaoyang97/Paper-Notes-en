@@ -37,7 +37,7 @@ Both text and 3D data exhibit natural **tree-structured hierarchies**:
 - Semantic level: from abstract concepts to fine-grained details (e.g., "ceramic vase" → "trophy-shaped vase with handles" → "surface engraved with patterns")
 - Geometric level: from global structure to local parts (entire scene → object → handles, textures)
 
-**Root Cause**: In such hierarchies, the number of nodes grows **exponentially** with depth, whereas the volume of Euclidean space and conventional Riemannian spaces grows at most **polynomially**. Embedding an exponentially growing tree structure into a polynomially growing space inevitably produces a **crowding effect**, compressing semantically distinct but structurally similar samples into nearby positions.
+**Key Challenge**: In such hierarchies, the number of nodes grows **exponentially** with depth, whereas the volume of Euclidean space and conventional Riemannian spaces grows at most **polynomially**. Embedding an exponentially growing tree structure into a polynomially growing space inevitably produces a **crowding effect**, compressing semantically distinct but structurally similar samples into nearby positions.
 
 ### Challenge 2: Redundancy-Induced Saliency Dilution (RISD)
 

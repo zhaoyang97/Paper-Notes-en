@@ -29,15 +29,15 @@ This paper proposes a computational rationality (CR) user model framework that i
 
 ## Background & Motivation
 
-**State of the Field**: In human-AI collaboration, AI systems must infer user goals, beliefs, and future actions from past behavior. Computational rationality (CR) theory posits that humans are rational agents operating under cognitive constraints, and that "irrational" behavior stems from limited resources rather than genuine randomness.
+**Background**: In human-AI collaboration, AI systems must infer user goals, beliefs, and future actions from past behavior. Computational rationality (CR) theory posits that humans are rational agents operating under cognitive constraints, and that "irrational" behavior stems from limited resources rather than genuine randomness.
 
 **Limitations of Prior Work**: (1) Existing CR research focuses on specific applications such as gaze, typing, and driving, lacking general-purpose modeling of limited memory; (2) prior work either assumes perfect memory given an imperfect internal model, or attributes "irrationality" solely to a limited reasoning budget; (3) online inference of a user's latent cognitive bounds and dynamic belief states from passive observations is computationally intractable under exact inference, with complexity $O(|\mathcal{S}|^t \cdot t!)$.
 
-**Root Cause**: Memory-decay-induced belief bias renders user behavior apparently irrational, yet an AI assistant must distinguish between "genuine irrationality" and "rational decisions based on corrupted memory."
+**Key Challenge**: Memory-decay-induced belief bias renders user behavior apparently irrational, yet an AI assistant must distinguish between "genuine irrationality" and "rational decisions based on corrupted memory."
 
-**Paper Goals**: To construct a general-purpose limited-memory user model and propose a tractable online inference algorithm, enabling AI systems to track user cognitive states in real time and provide adaptive assistance.
+**Goal**: To construct a general-purpose limited-memory user model and propose a tractable online inference algorithm, enabling AI systems to track user cognitive states in real time and provide adaptive assistance.
 
-**Starting Point**: Memory decay is explicitly modeled as a cognitive process $f_\theta$ that systematically corrupts the user's memory of historical observations, causing the belief state to deviate from the ground truth.
+**Key Insight**: Memory decay is explicitly modeled as a cognitive process $f_\theta$ that systematically corrupts the user's memory of historical observations, causing the belief state to deviate from the ground truth.
 
 **Core Idea**: Apparently "irrational" behavior is in fact rational decision-making under biased beliefs — once the memory corruption mechanism is modeled, behavior becomes predictable and inferable.
 

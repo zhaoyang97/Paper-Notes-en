@@ -29,15 +29,15 @@ SEPT leverages LLMs to generate semantic neighbors for each category and introdu
 
 ## Background & Motivation
 
-**State of the Field**: Prompt tuning has achieved remarkable progress in vision-language models (VLMs) and has begun to be extended to audio-language models (ALMs, e.g., CLAP). Methods such as CoOp replace hand-crafted templates with learned continuous prompt vectors, yielding significant performance gains on seen categories.
+**Background**: Prompt tuning has achieved remarkable progress in vision-language models (VLMs) and has begun to be extended to audio-language models (ALMs, e.g., CLAP). Methods such as CoOp replace hand-crafted templates with learned continuous prompt vectors, yielding significant performance gains on seen categories.
 
 **Limitations of Prior Work**: Prompt tuning in ALMs suffers from severe overfitting to base (seen) categories, leading to a substantial drop in generalization to new (unseen) categories—the Base-New Tradeoff (BNT). This issue is more pronounced in ALMs than in VLMs, as audio benchmarks typically contain only a few dozen categories (semantic sparsity), leaving learned prompts without sufficient semantic support to maintain geometric cohesion.
 
-**Root Cause**: Learned prompt embeddings disrupt the semantic structure of the pre-trained text embedding space—the similarity between a category and its semantic neighbors is markedly weakened after prompt tuning, preventing the model from leveraging semantic relationships to generalize to unseen categories.
+**Key Challenge**: Learned prompt embeddings disrupt the semantic structure of the pre-trained text embedding space—the similarity between a category and its semantic neighbors is markedly weakened after prompt tuning, preventing the model from leveraging semantic relationships to generalize to unseen categories.
 
-**Paper Goals**: (1) Establish the first evaluation benchmark for prompt generalization in ALMs; (2) Design a plug-and-play framework to mitigate the BNT.
+**Goal**: (1) Establish the first evaluation benchmark for prompt generalization in ALMs; (2) Design a plug-and-play framework to mitigate the BNT.
 
-**Starting Point**: LLMs are used to generate semantic neighbors (synonyms, acoustic variants) for each category, which are then incorporated into the prompt tuning process to explicitly regularize the embedding space so that each category and its semantic neighbors form compact clusters.
+**Key Insight**: LLMs are used to generate semantic neighbors (synonyms, acoustic variants) for each category, which are then incorporated into the prompt tuning process to explicitly regularize the embedding space so that each category and its semantic neighbors form compact clusters.
 
 **Core Idea**: By expanding the semantic coverage of each category via semantic neighbors, and employing a loss that pulls positive pairs together while pushing negative pairs apart, the approach preserves the semantic structure of the embedding space—simultaneously improving base performance and maintaining generalization to new categories.
 

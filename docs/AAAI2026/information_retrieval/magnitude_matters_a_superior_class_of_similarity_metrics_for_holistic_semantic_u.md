@@ -28,15 +28,15 @@ This paper proposes two parameter-free, magnitude-aware vector similarity metric
 
 ## Background & Motivation
 
-**State of the Field**: Sentence embedding similarity comparison has long been dominated by Cosine Similarity, which is computationally efficient, geometrically intuitive (measuring only directional angle), and insensitive to vector magnitude.
+**Background**: Sentence embedding similarity comparison has long been dominated by Cosine Similarity, which is computationally efficient, geometrically intuitive (measuring only directional angle), and insensitive to vector magnitude.
 
 **Limitations of Prior Work**: Embeddings produced by modern pretrained language models (e.g., BERT, sentence-transformers) occupy highly anisotropic spaces, with all vectors concentrated in a narrow cone. In this regime, Cosine Similarity loses discriminative power—semantically unrelated sentences can still receive high similarity scores. Moreover, Cosine completely discards vector magnitude information, which may encode semantic specificity or importance.
 
-**Root Cause**: Dot Product is overly sensitive to magnitude (unbounded, susceptible to non-semantic factors such as sentence length), while Cosine ignores magnitude entirely (failing in anisotropic spaces). A metric that strikes a balance between these two extremes—integrating magnitude information in a controlled manner—is needed.
+**Key Challenge**: Dot Product is overly sensitive to magnitude (unbounded, susceptible to non-semantic factors such as sentence length), while Cosine ignores magnitude entirely (failing in anisotropic spaces). A metric that strikes a balance between these two extremes—integrating magnitude information in a controlled manner—is needed.
 
-**Paper Goals**: Design parameter-free, drop-in replacement similarity functions that better capture semantic similarity than Cosine without incurring any additional training cost.
+**Goal**: Design parameter-free, drop-in replacement similarity functions that better capture semantic similarity than Cosine without incurring any additional training cost.
 
-**Starting Point**: Rather than modifying the embedding space (e.g., retraining with contrastive learning as in SimCSE), the paper directly replaces the similarity formula applied to existing embeddings with a more robust alternative.
+**Key Insight**: Rather than modifying the embedding space (e.g., retraining with contrastive learning as in SimCSE), the paper directly replaces the similarity formula applied to existing embeddings with a more robust alternative.
 
 **Core Idea**: Incorporate vector magnitude into similarity computation in a controlled manner via relational normalization (OS) and nonlinear compression (HTS), thereby overcoming the discriminative bottleneck of Cosine Similarity in anisotropic spaces.
 

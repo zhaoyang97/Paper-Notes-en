@@ -27,11 +27,11 @@ content_hash: d80d00d82087e30d
 This paper investigates, from an interpretability perspective, the root cause of temporal logic inconsistency in Video-LLMs—namely, that cross-modal attention heads fail to effectively discriminate video tokens at different timestamps—and proposes TCAS (Temporally Conditioned Attention Sharpening), which significantly improves temporal logic consistency and general temporal grounding performance by optimizing attention distributions.
 
 ## Background & Motivation
-1. **State of the Field**: Video-LLMs achieve strong performance on tasks such as video question answering and captioning, and numerous works have introduced additional temporal modules to enhance temporal understanding (e.g., TimeChat, VTG-LLM).
+1. **Background**: Video-LLMs achieve strong performance on tasks such as video question answering and captioning, and numerous works have introduced additional temporal modules to enhance temporal understanding (e.g., TimeChat, VTG-LLM).
 2. **Limitations of Prior Work**: Jung et al. (2024) demonstrate that all Video-LLMs fail to provide logically consistent answers to rephrased questions—models can correctly localize events, yet produce contradictory answers when the same question is posed differently. This reveals a fundamental lack of genuine temporal understanding.
-3. **Root Cause**: Although a large number of modular approaches have been proposed to enhance temporal understanding, the underlying reasons for logical inconsistency in temporal comprehension have remained unexplored. Prior work identified the phenomenon without diagnosing the mechanism.
-4. **Paper Goals**: (a) Identify internal factors that affect the consistency of temporal understanding; (b) Design improved methods based on the diagnostic findings.
-5. **Starting Point**: The authors approach the problem through the interpretability of attention mechanisms, focusing on cross-modal attention heads—the small subset of attention heads responsible for mapping event text tokens to video tokens within the corresponding temporal segments.
+3. **Key Challenge**: Although a large number of modular approaches have been proposed to enhance temporal understanding, the underlying reasons for logical inconsistency in temporal comprehension have remained unexplored. Prior work identified the phenomenon without diagnosing the mechanism.
+4. **Goal**: (a) Identify internal factors that affect the consistency of temporal understanding; (b) Design improved methods based on the diagnostic findings.
+5. **Key Insight**: The authors approach the problem through the interpretability of attention mechanisms, focusing on cross-modal attention heads—the small subset of attention heads responsible for mapping event text tokens to video tokens within the corresponding temporal segments.
 6. **Core Idea**: The discriminability of cross-modal attention heads with respect to video tokens at different timestamps is the key factor governing temporal logic consistency; enhancing this discriminability via contrastive learning loss substantially improves consistency.
 
 ## Method

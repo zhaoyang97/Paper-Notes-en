@@ -29,15 +29,15 @@ This paper proposes CheXStruct and CXReasonBench — a structured diagnostic rea
 
 ## Background & Motivation
 
-**State of the Field**: Large vision-language models (LVLMs) are increasingly applied in medical imaging, including report generation and visual question answering (VQA). Chest X-rays have become a standard evaluation benchmark due to their clinical relevance and accessibility.
+**Background**: Large vision-language models (LVLMs) are increasingly applied in medical imaging, including report generation and visual question answering (VQA). Chest X-rays have become a standard evaluation benchmark due to their clinical relevance and accessibility.
 
 **Limitations of Prior Work**: Existing benchmarks (VQA-RAD, PathVQA, PMC-VQA, etc.) primarily evaluate the correctness of final diagnostic answers, offering little insight into whether models engage in clinically meaningful reasoning processes. Some recent works introduce explanations or visual grounding, but still focus on outputs rather than intermediate reasoning steps.
 
-**Root Cause**: A model may produce a plausible answer (e.g., identifying an abnormality in the cardiac region) while offering no evidence of having correctly identified the relevant anatomical structures, performed the appropriate measurements, or applied the corresponding clinical rule (e.g., the cardiothoracic ratio). Without evaluation of intermediate steps, it is impossible to distinguish genuine image understanding from shallow pattern matching.
+**Key Challenge**: A model may produce a plausible answer (e.g., identifying an abnormality in the cardiac region) while offering no evidence of having correctly identified the relevant anatomical structures, performed the appropriate measurements, or applied the corresponding clinical rule (e.g., the cardiothoracic ratio). Without evaluation of intermediate steps, it is impossible to distinguish genuine image understanding from shallow pattern matching.
 
-**Paper Goals**: To construct a benchmark capable of evaluating intermediate reasoning steps in diagnostic workflows — assessing not only whether the answer is correct, but whether the reasoning process is clinically sound.
+**Goal**: To construct a benchmark capable of evaluating intermediate reasoning steps in diagnostic workflows — assessing not only whether the answer is correct, but whether the reasoning process is clinically sound.
 
-**Starting Point**: Beginning from anatomical segmentation, the framework automatically extracts diagnostic measurements, computes diagnostic indices, applies clinical thresholds, and constructs a complete structured reasoning pipeline as the reference.
+**Key Insight**: Beginning from anatomical segmentation, the framework automatically extracts diagnostic measurements, computes diagnostic indices, applies clinical thresholds, and constructs a complete structured reasoning pipeline as the reference.
 
 **Core Idea**: An automated pipeline extracts structured reasoning steps from chest X-rays, and a multi-path, multi-stage evaluation framework is designed to systematically assess the diagnostic reasoning capabilities of LVLMs.
 

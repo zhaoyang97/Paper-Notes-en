@@ -29,7 +29,7 @@ This paper proposes T1, a CNN-Transformer hybrid architecture whose core innovat
 
 ## Background & Motivation
 
-**State of the Field**: Multivariate time-series imputation must simultaneously accomplish two tasks — (1) extracting temporal patterns from sparse observations, and (2) transferring complementary information across variables to aid reconstruction. These tasks are tightly coupled: once temporal features are corrupted by missingness, cross-variable transfer amplifies errors, while naïve cross-variable transfer cannot distinguish which variables are reliable under a given missing pattern.
+**Background**: Multivariate time-series imputation must simultaneously accomplish two tasks — (1) extracting temporal patterns from sparse observations, and (2) transferring complementary information across variables to aid reconstruction. These tasks are tightly coupled: once temporal features are corrupted by missingness, cross-variable transfer amplifies errors, while naïve cross-variable transfer cannot distinguish which variables are reliable under a given missing pattern.
 
 **Four Architectural Paradigms and Their Limitations**:
 

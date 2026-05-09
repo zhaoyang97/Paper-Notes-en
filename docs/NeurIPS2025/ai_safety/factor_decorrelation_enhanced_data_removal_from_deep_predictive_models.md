@@ -28,15 +28,15 @@ This paper proposes DecoRemoval, a framework that achieves data removal without 
 
 ## Background & Motivation
 
-**State of the Field**: Data removal (machine unlearning) is a hard requirement for privacy compliance. Certified Removal (CR) achieves efficient parameter adjustment through gradient updates and calibrated noise injection, representing the most theoretically grounded approach to date.
+**Background**: Data removal (machine unlearning) is a hard requirement for privacy compliance. Certified Removal (CR) achieves efficient parameter adjustment through gradient updates and calibrated noise injection, representing the most theoretically grounded approach to date.
 
 **Limitations of Prior Work**: Existing data removal methods assume similar data distributions before and after removal. In practice, however, continuous removal requests cause distributional shift. Under OOD settings, the intrinsic correlation between feature representations and labels changes, degrading both the removal accuracy and generalization ability of existing unlearning mechanisms.
 
-**Root Cause**: Feature dimensionality reduction is an effective strategy for handling OOD, yet it risks discarding discriminative features. If the loss function is not adapted to the reduced representation space, gradient directions deviate from the optimization objective, leading to training instability and generalization degradation.
+**Key Challenge**: Feature dimensionality reduction is an effective strategy for handling OOD, yet it risks discarding discriminative features. If the loss function is not adapted to the reduced representation space, gradient directions deviate from the optimization objective, leading to training instability and generalization degradation.
 
-**Paper Goals**: (1) Reduce feature redundancy and correlation during the removal process to counter distributional shift; (2) Ensure privacy safety during removal to prevent information leakage.
+**Goal**: (1) Reduce feature redundancy and correlation during the removal process to counter distributional shift; (2) Ensure privacy safety during removal to prevent information leakage.
 
-**Starting Point**: The method borrows Random Fourier Features (RFF) from StableNet to perform feature space mapping and decorrelation, while applying randomized linear perturbations to smooth the loss function so that local parameter adjustments can accurately approximate the effect of full retraining.
+**Key Insight**: The method borrows Random Fourier Features (RFF) from StableNet to perform feature space mapping and decorrelation, while applying randomized linear perturbations to smooth the loss function so that local parameter adjustments can accurately approximate the effect of full retraining.
 
 **Core Idea**: Feature decorrelation + loss perturbation → local parameter updates remain a valid substitute for full retraining even under distributional shift.
 

@@ -29,15 +29,15 @@ This paper proposes IPRO, which directly optimizes a video diffusion model via r
 
 ## Background & Motivation
 
-**State of the Field**: Image-to-video (I2V) generation has advanced considerably, with Diffusion Transformer models such as CogVideoX, HunyuanVideo, and Wan capable of synthesizing temporally coherent, high-quality videos from static images. Human-centric video generation represents a key application of I2V.
+**Background**: Image-to-video (I2V) generation has advanced considerably, with Diffusion Transformer models such as CogVideoX, HunyuanVideo, and Wan capable of synthesizing temporally coherent, high-quality videos from static images. Human-centric video generation represents a key application of I2V.
 
 **Limitations of Prior Work**: Existing I2V models struggle to preserve the identity of input portraits in generated videos, especially under large facial expression changes or significant motion. This problem is further exacerbated when the face occupies only a small region of the image. As the number of frames increases, errors propagate across frames, causing gradual identity degradation and divergence from the initial frame.
 
-**Root Cause**: On one hand, identity information is fully encoded in the first frame and is not missing. On the other hand, existing approaches that inject additional identity modules into the model suffer from *exposure bias*—training relies on ground-truth intermediate states, while inference relies on the model's own generated states, leading to error accumulation and identity drift. Moreover, such architecture-invasive methods are inherently designed for single-person scenarios and do not generalize well to multi-person settings.
+**Key Challenge**: On one hand, identity information is fully encoded in the first frame and is not missing. On the other hand, existing approaches that inject additional identity modules into the model suffer from *exposure bias*—training relies on ground-truth intermediate states, while inference relies on the model's own generated states, leading to error accumulation and identity drift. Moreover, such architecture-invasive methods are inherently designed for single-person scenarios and do not generalize well to multi-person settings.
 
-**Paper Goals**: Can the identity-preserving capability of a general-purpose I2V foundation model be enhanced without modifying its architecture or compromising its original generation quality?
+**Goal**: Can the identity-preserving capability of a general-purpose I2V foundation model be enhanced without modifying its architecture or compromising its original generation quality?
 
-**Starting Point**: From a reinforcement learning perspective, a facial identity scorer (ArcFace) is used as a reward model, and diffusion model parameters are directly optimized via gradient backpropagation to generate videos with stronger identity consistency.
+**Key Insight**: From a reinforcement learning perspective, a facial identity scorer (ArcFace) is used as a reward model, and diffusion model parameters are directly optimized via gradient backpropagation to generate videos with stronger identity consistency.
 
 **Core Idea**: The cosine similarity of ArcFace face embeddings serves as a differentiable reward signal; truncated backpropagation through the denoising process is used to fine-tune the video diffusion model and improve identity preservation.
 

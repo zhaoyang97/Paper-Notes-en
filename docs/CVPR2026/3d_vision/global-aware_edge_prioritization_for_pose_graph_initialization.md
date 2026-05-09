@@ -29,7 +29,7 @@ This paper proposes a GNN-based global edge prioritization method that upgrades 
 
 ## Background & Motivation
 
-**State of the Field**: Structure-from-Motion (SfM) is a classical problem of reconstructing 3D structure and camera poses from image collections. Both incremental (COLMAP) and global (GLOMAP) SfM pipelines begin with the same step: constructing an initial pose graph—selecting a sparse subset from $\binom{N}{2}$ candidate image pairs for geometric verification.
+**Background**: Structure-from-Motion (SfM) is a classical problem of reconstructing 3D structure and camera poses from image collections. Both incremental (COLMAP) and global (GLOMAP) SfM pipelines begin with the same step: constructing an initial pose graph—selecting a sparse subset from $\binom{N}{2}$ candidate image pairs for geometric verification.
 
 **Limitations of Prior Work**:
    - Existing methods almost exclusively rely on **per-image retrieval** (e.g., NetVLAD, CosPlace, MegaLoc), independently connecting each image to its $k$ nearest neighbors.
@@ -37,9 +37,9 @@ This paper proposes a GNN-based global edge prioritization method that upgrades 
    - Once the initial edges are selected, subsequent stages can only **remove but not add** edges; any globally critical connections missed at initialization are irrecoverable.
    - Re-ranking methods (Patch-NetVLAD, VOP) still operate at the pairwise level and cannot reason about global topology.
 
-**Root Cause**: The pose graph serves as the structural backbone of SfM, and its quality determines reconstruction success. However, current initialization strategies consider only local visual similarity and lack global reasoning capability, making them particularly fragile in sparse or ambiguous scenes.
+**Key Challenge**: The pose graph serves as the structural backbone of SfM, and its quality determines reconstruction success. However, current initialization strategies consider only local visual similarity and lack global reasoning capability, making them particularly fragile in sparse or ambiguous scenes.
 
-**Starting Point**: This paper introduces the concept of "edge priority"—rather than evaluating image pairs independently, all candidate edges are ranked according to their **global utility for SfM**, and a compact yet globally connected pose graph is then constructed via multi-minimum-spanning-tree building.
+**Key Insight**: This paper introduces the concept of "edge priority"—rather than evaluating image pairs independently, all candidate edges are ranked according to their **global utility for SfM**, and a compact yet globally connected pose graph is then constructed via multi-minimum-spanning-tree building.
 
 ## Method
 

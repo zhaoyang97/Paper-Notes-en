@@ -29,14 +29,14 @@ FastLightGen proposes a three-stage distillation algorithm that, for the first t
 
 ## Background & Motivation
 
-**State of the Field**: Large-scale video generation models (HunyuanVideo, WanX) are based on DiT with 13B+ parameters and multi-step denoising. Generating a 5-second video on an H100 takes approximately 20 minutes.
+**Background**: Large-scale video generation models (HunyuanVideo, WanX) are based on DiT with 13B+ parameters and multi-step denoising. Generating a 5-second video on an H100 takes approximately 20 minutes.
 
 **Core Problem**:
    - Existing acceleration methods either reduce steps (LCM/DMD) or reduce parameters (F3-Pruning/ICMD), with no joint optimization
    - Extreme step distillation (1–2 steps) leads to drastic performance degradation
    - Joint distillation achieves greater speedup at the same performance level (4 steps + 50% parameters = 50× vs. step-only 3 steps = 33.3×)
 
-**Paper Goals**: A three-stage pipeline — identifying redundant layers, dynamic probabilistic pruning, and well-guided teacher guidance distribution matching.
+**Goal**: A three-stage pipeline — identifying redundant layers, dynamic probabilistic pruning, and well-guided teacher guidance distribution matching.
 
 ## Method
 

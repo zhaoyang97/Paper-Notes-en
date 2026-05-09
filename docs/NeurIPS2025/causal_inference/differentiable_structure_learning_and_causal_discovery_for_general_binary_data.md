@@ -29,13 +29,13 @@ This paper proposes a general differentiable structure learning framework based 
 
 ## Background & Motivation
 
-**State of the Field**: Causal discovery aims to learn directed acyclic graphs (DAGs) from observational data, a problem that is NP-complete. Recent methods such as NOTEARS have reformulated it as differentiable constrained optimization, achieving significant breakthroughs.
+**Background**: Causal discovery aims to learn directed acyclic graphs (DAGs) from observational data, a problem that is NP-complete. Recent methods such as NOTEARS have reformulated it as differentiable constrained optimization, achieving significant breakthroughs.
 
 **Limitations of Prior Work**: Existing differentiable structure learning methods are primarily designed for continuous data under Gaussian assumptions. The few extensions to discrete data (e.g., Zeng et al. 2022, generalized linear SEM) assume specific parametric forms and consider only linear or additive effects.
 
-**Root Cause**: Many real-world datasets involve binary or discrete variables (disease presence, genetic markers, survey responses), whose complex higher-order dependency structures cannot be captured by linear models. Bello et al. (2022) applied continuous optimization to logistic regression models for discrete data but provided no theoretical identifiability guarantees. Constraint-based methods (PC) and score-based methods (GES) either lack statistical robustness or rely on strong parametric assumptions (additive noise, latent representations, linear effects, latent Gaussian variables).
+**Key Challenge**: Many real-world datasets involve binary or discrete variables (disease presence, genetic markers, survey responses), whose complex higher-order dependency structures cannot be captured by linear models. Bello et al. (2022) applied continuous optimization to logistic regression models for discrete data but provided no theoretical identifiability guarantees. Constraint-based methods (PC) and score-based methods (GES) either lack statistical robustness or rely on strong parametric assumptions (additive noise, latent representations, linear effects, latent Gaussian variables).
 
-**Paper Goals**: To develop a general, theoretically sound, and differentiable structure learning framework for discrete data that can model arbitrary dependencies without being constrained by specific data-generating assumptions.
+**Goal**: To develop a general, theoretically sound, and differentiable structure learning framework for discrete data that can model arbitrary dependencies without being constrained by specific data-generating assumptions.
 
 ## Method
 

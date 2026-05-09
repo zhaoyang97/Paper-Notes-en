@@ -28,15 +28,15 @@ This paper proposes the Spatial Decay Transformer (SDT), which for the first tim
 
 ## Background & Motivation
 
-**State of the Field**: Vision Transformers (ViTs) achieve global receptive fields via self-attention, but their permutation equivariance renders them entirely insensitive to the 2D spatial structure of images, requiring the model to learn basic spatial relationships from data alone.
+**Background**: Vision Transformers (ViTs) achieve global receptive fields via self-attention, but their permutation equivariance renders them entirely insensitive to the 2D spatial structure of images, requiring the model to learn basic spatial relationships from data alone.
 
 **Limitations of Prior Work**: Methods such as RMT introduce fixed, data-independent spatial decay matrices based on Manhattan distance. This strategy is fundamentally rigid — it imposes the same spatial decay pattern regardless of image content, and cannot adaptively focus on semantically relevant regions.
 
-**Root Cause**: Semantically related regions should maintain strong attention connections even when spatially distant, while irrelevant regions should be suppressed even when spatially adjacent. Fixed decay cannot achieve this flexibility.
+**Key Challenge**: Semantically related regions should maintain strong attention connections even when spatially distant, while irrelevant regions should be suppressed even when spatially adjacent. Fixed decay cannot achieve this flexibility.
 
 **Inspiration from LLMs**: Works such as GLA, HGRN2, Mamba2, and Forgetting Transformer demonstrate that content-aware, data-dependent gating significantly outperforms data-independent fixed positional biases.
 
-**Starting Point**: Adapting 1D data-dependent decay to the 2D spatial domain introduces unique challenges: bidirectional spatial dependencies, non-causal relationships, and 2D topological complexity.
+**Key Insight**: Adapting 1D data-dependent decay to the 2D spatial domain introduces unique challenges: bidirectional spatial dependencies, non-causal relationships, and 2D topological complexity.
 
 **Core Idea**: Design a Context-Aware Gating (CAG) mechanism that generates dynamic, content-dependent decay intensities for each pair of patch interactions, jointly incorporating Manhattan-distance spatial priors and learned content representations.
 

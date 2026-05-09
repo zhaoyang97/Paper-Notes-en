@@ -29,15 +29,15 @@ This paper proposes an adaptive multimodal semantic transmission system for sate
 
 ## Background & Motivation
 
-1. **State of the Field**: Satellite communications face extreme physical-layer limitations (rain fading, large Doppler shifts, hundreds of milliseconds of propagation delay), making it difficult for conventional approaches to support high-bandwidth multimedia streams at kbps-level bitrates. Semantic communication, which transmits only task-relevant semantics, has successfully addressed bandwidth bottlenecks in text and image domains.
+1. **Background**: Satellite communications face extreme physical-layer limitations (rain fading, large Doppler shifts, hundreds of milliseconds of propagation delay), making it difficult for conventional approaches to support high-bandwidth multimedia streams at kbps-level bitrates. Semantic communication, which transmits only task-relevant semantics, has successfully addressed bandwidth bottlenecks in text and image domains.
 
 2. **Limitations of Prior Work**: (1) Existing multimodal semantic transmission methods fix modality priorities and cross-modal generation paths at design time, lacking the flexibility to adapt to varying task requirements. (2) Knowledge bases lack dynamic update mechanisms, resulting in stale information or wasted resources. (3) Channel adaptation is reactive rather than proactive, lacking forward-looking transmission strategies.
 
-3. **Root Cause**: In satellite scenarios, bandwidth is extremely scarce and the channel is highly dynamic, while synchronized multimodal transmission inherently demands high bandwidth and stable channels — a fundamental contradiction.
+3. **Key Challenge**: In satellite scenarios, bandwidth is extremely scarce and the channel is highly dynamic, while synchronized multimodal transmission inherently demands high bandwidth and stable channels — a fundamental contradiction.
 
-4. **Paper Goals**: To achieve flexible, robust, and high-fidelity audiovisual synchronization under limited satellite bandwidth.
+4. **Goal**: To achieve flexible, robust, and high-fidelity audiovisual synchronization under limited satellite bandwidth.
 
-5. **Starting Point**: Exploiting the complementarity of cross-modal generation — transmitting only the most critical modality's semantics and recovering the other modality via a generative model.
+5. **Key Insight**: Exploiting the complementarity of cross-modal generation — transmitting only the most critical modality's semantics and recovering the other modality via a generative model.
 
 6. **Core Idea**: Coordinating dual-stream cross-modal generation (V2A/A2V) and dynamic knowledge base updates via an LLM agent to enable intelligent audiovisual semantic transmission under satellite bandwidth constraints.
 

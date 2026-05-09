@@ -30,7 +30,7 @@ This paper proposes BEAT, a framework that discretizes user/item behavior repres
 
 ### Limitations of Prior Work
 
-**Limitations of Prior Work**: **State of the Field**: Existing explainable recommendation methods face three core bottlenecks:
+**Limitations of Prior Work**: **Background**: Existing explainable recommendation methods face three core bottlenecks:
 
 1. **Poor generalization of ID representations**: Traditional methods assign a unique ID embedding to each user/item, which completely fails for cold-start users and new items; even graph-based methods (e.g., XRec) that incorporate collaborative signals suffer from over-smoothing, undermining personalization.
 2. **High computational cost**: LLM-based methods either inject large amounts of user profile text into prompts or require fine-tuning the LLM, both of which are prohibitively expensive.
@@ -40,7 +40,7 @@ The authors observe that, despite diverse individual preferences, users share co
 
 ### Starting Point
 
-**Paper Goals**: How can user and item interaction behaviors be efficiently encoded into discrete token sequences that a frozen LLM can understand, enabling coherent recommendation explanations without fine-tuning?
+**Goal**: How can user and item interaction behaviors be efficiently encoded into discrete token sequences that a frozen LLM can understand, enabling coherent recommendation explanations without fine-tuning?
 
 ## Method
 BEAT consists of two stages: behavior vocabulary construction and LLM semantic alignment.

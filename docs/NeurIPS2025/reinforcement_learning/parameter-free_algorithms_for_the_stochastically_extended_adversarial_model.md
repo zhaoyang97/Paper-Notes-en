@@ -29,9 +29,9 @@ This work presents the first parameter-free algorithms for the Stochastically Ex
 
 ## Background & Motivation
 
-- **State of the Field**: The SEA model for online convex optimization (OCO) bridges purely adversarial and purely stochastic settings, with regret bounds depending on the cumulative stochastic variance $\sigma_{1:T}^2$ and the cumulative adversarial variation $\Sigma_{1:T}^2$ rather than on $T$.
+- **Background**: The SEA model for online convex optimization (OCO) bridges purely adversarial and purely stochastic settings, with regret bounds depending on the cumulative stochastic variance $\sigma_{1:T}^2$ and the cumulative adversarial variation $\Sigma_{1:T}^2$ rather than on $T$.
 - **Limitations of Prior Work**: Existing SEA model algorithms (OFTRL, OMD) require prior knowledge of the domain diameter $D$ and the Lipschitz constant $G$ to set optimal step sizes, limiting their practical applicability. Directly applying existing parameter-free OCO algorithms fails to yield the desirable $\sigma_{1:T}^2$-dependent bounds—only the looser $\tilde{\sigma}_{1:T}^2$ can be obtained—because achieving $\sigma_{1:T}^2$-scaling requires the RVU property, which is considerably more difficult to establish in unbounded domains.
-- **Paper Goals**: Develop parameter-free algorithms that adapt to $D$ and $G$ while maintaining optimal dependence on $\sigma_{1:T}^2$ and $\Sigma_{1:T}^2$ in the SEA model.
+- **Goal**: Develop parameter-free algorithms that adapt to $D$ and $G$ while maintaining optimal dependence on $\sigma_{1:T}^2$ and $\Sigma_{1:T}^2$ in the SEA model.
 
 ## Method
 

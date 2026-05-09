@@ -29,7 +29,7 @@ This paper systematically analyzes the artifact phenomenon widely observed in Vi
 
 ## Background & Motivation
 
-**State of the Field**: ViTs have become the de facto standard for image recognition and, more importantly, serve as general-purpose feature extractors (frozen foundation models) for diverse downstream tasks. ViTs trained under different supervision paradigms each have their strengths: fully supervised and text-supervised models (e.g., CLIP) excel at open-vocabulary tasks and serve as visual encoders for LVLMs, while self-supervised models (e.g., DINO) are well-suited for unsupervised segmentation and object discovery.
+**Background**: ViTs have become the de facto standard for image recognition and, more importantly, serve as general-purpose feature extractors (frozen foundation models) for diverse downstream tasks. ViTs trained under different supervision paradigms each have their strengths: fully supervised and text-supervised models (e.g., CLIP) excel at open-vocabulary tasks and serve as visual encoders for LVLMs, while self-supervised models (e.g., DINO) are well-suited for unsupervised segmentation and object discovery.
 
 **Limitations of Prior Work**:
 1. DINO identifies attention deficit issues in fully supervised ViTs.
@@ -37,11 +37,11 @@ This paper systematically analyzes the artifact phenomenon widely observed in Vi
 3. The Register paper discovers that self-supervised ViTs (DINOv2) produce high-norm token artifacts that impair object localization.
 4. These phenomena suggest a shared underlying problem in ViTs, yet no unified explanation or solution has been proposed.
 
-**Root Cause**: ViTs achieve excellent image-level classification performance, but patch-level dense feature quality is poor—top-scoring patches fall on background rather than foreground regions, and register tokens only suppress the high-norm phenomenon without addressing the fundamental issue (PiB even degrades).
+**Key Challenge**: ViTs achieve excellent image-level classification performance, but patch-level dense feature quality is poor—top-scoring patches fall on background rather than foreground regions, and register tokens only suppress the high-norm phenomenon without addressing the fundamental issue (PiB even degrades).
 
-**Paper Goals**: To define, analyze, and resolve the artifact problem in ViTs across different supervision paradigms from first principles in a unified manner.
+**Goal**: To define, analyze, and resolve the artifact problem in ViTs across different supervision paradigms from first principles in a unified manner.
 
-**Starting Point**: The authors introduce Patch Score (CLS-patch cosine similarity) and Point-in-Box (PiB) as unified metrics for quantifying artifacts, and identify the root cause as lazy aggregation—global attention combined with coarse-grained supervision leads ViTs to take shortcuts by encoding global semantics through background patches.
+**Key Insight**: The authors introduce Patch Score (CLS-patch cosine similarity) and Point-in-Box (PiB) as unified metrics for quantifying artifacts, and identify the root cause as lazy aggregation—global attention combined with coarse-grained supervision leads ViTs to take shortcuts by encoding global semantics through background patches.
 
 **Core Idea**: Distinguish foreground from background patches via frequency-domain stability analysis, and selectively aggregate stable patches into the CLS token to eliminate lazy aggregation.
 

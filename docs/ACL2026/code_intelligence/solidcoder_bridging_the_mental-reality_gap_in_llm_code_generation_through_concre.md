@@ -28,15 +28,15 @@ SolidCoder transforms code verification from LLM "imagined execution" to "real e
 
 ## Background & Motivation
 
-**State of the Field**: State-of-the-art code generation frameworks (e.g., MapCoder, CodeSIM) adopt multi-agent architectures. In particular, CodeSIM employs "Mental Simulation," in which the LLM internally traces code execution to verify correctness, achieving leading results on multiple benchmarks.
+**Background**: State-of-the-art code generation frameworks (e.g., MapCoder, CodeSIM) adopt multi-agent architectures. In particular, CodeSIM employs "Mental Simulation," in which the LLM internally traces code execution to verify correctness, achieving leading results on multiple benchmarks.
 
 **Limitations of Prior Work**: Mental simulation has a fundamental flaw—LLMs suffer from execution hallucinations. In complex algorithmic scenarios, models "imagine" execution traces that diverge from actual program behavior, confidently validating buggy code. This is akin to playing chess blindfolded and declaring victory. The CodeSIM team previously attempted to augment test cases via self-consistency, only to observe a 9.3% performance drop, and subsequently abandoned execution-based verification.
 
-**Root Cause**: The Mental-Reality Gap unfolds along two orthogonal dimensions: (1) Specification Gap—edge cases are overlooked during planning; (2) Verification Gap—correct execution traces are hallucinated during validation. These two issues are independent; fixing one does not resolve the other.
+**Key Challenge**: The Mental-Reality Gap unfolds along two orthogonal dimensions: (1) Specification Gap—edge cases are overlooked during planning; (2) Verification Gap—correct execution traces are hallucinated during validation. These two issues are independent; fixing one does not resolve the other.
 
-**Paper Goals**: To simultaneously close the gap along both dimensions—enabling the model to account for edge cases during planning while replacing imagined execution with real execution for verification.
+**Goal**: To simultaneously close the gap along both dimensions—enabling the model to account for edge cases during planning while replacing imagined execution with real execution for verification.
 
-**Starting Point**: The authors observe that the failure of test generation in CodeSIM stems not from test generation per se, but from attempting to predict exact outputs. Verification does not require precise answers—by checking properties (e.g., "output length equals input length," "result is a permutation of the input") rather than exact values, correctness can be assessed without an oracle.
+**Key Insight**: The authors observe that the failure of test generation in CodeSIM stems not from test generation per se, but from attempting to predict exact outputs. Verification does not require precise answers—by checking properties (e.g., "output length equals input length," "result is a permutation of the input") rather than exact values, correctness can be assessed without an oracle.
 
 **Core Idea**: Replace exact output prediction with property-based assertions, combined with sandbox execution, to shift verification from "imagination" to "execution"—don't imagine, execute.
 

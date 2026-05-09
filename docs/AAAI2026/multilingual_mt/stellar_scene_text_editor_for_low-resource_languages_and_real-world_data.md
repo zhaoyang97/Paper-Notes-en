@@ -28,16 +28,16 @@ This paper proposes STELLAR, a framework for scene text editing (STE) in low-res
 
 ## Background & Motivation
 
-**State of the Field**: Scene text editing (STE) aims to modify text content in images while preserving visual style attributes such as font, color, and background. Growing demand for multilingual STE has emerged from global content industries including advertising, product packaging, game and film localization, and AR sign translation. Technical approaches have evolved from GAN-based methods to diffusion models, with two dominant paradigms: mask-and-inpaint (erasing the text region and inpainting) and direct substitution (disentangling style and content before replacement).
+**Background**: Scene text editing (STE) aims to modify text content in images while preserving visual style attributes such as font, color, and background. Growing demand for multilingual STE has emerged from global content industries including advertising, product packaging, game and film localization, and AR sign translation. Technical approaches have evolved from GAN-based methods to diffusion models, with two dominant paradigms: mask-and-inpaint (erasing the text region and inpainting) and direct substitution (disentangling style and content before replacement).
 
 **Limitations of Prior Work**:
 - **(1) Insufficient low-resource language support**: The AnyWord-3M dataset contains millions of samples each for Chinese and English, whereas Korean, Arabic, and Japanese each have only approximately 2K samples. Complex writing systems—Arabic's right-to-left directionality and context-dependent glyph variations, Korean's jamo-based combinatorial glyph structure—cannot be correctly handled by models pretrained on English.
 - **(2) Synthetic-to-real domain gap**: Most STE models are trained exclusively on synthetically rendered data (e.g., SynthText, SynthTIGER), which fails to capture real-world lighting, texture, and noise. At inference time, noticeable degradation such as color distortion and texture artifacts appears.
 - **(3) Inapplicable evaluation metrics**: Metrics such as SSIM, PSNR, MSE, and FID penalize differences even when only text content changes while style is fully preserved, and are inapplicable in the absence of ground-truth images—severely limiting evaluation in real-world scenarios.
 
-**Root Cause**: Low-resource languages exhibit complex glyph structures under data-scarce conditions; models trained on synthetic data fail to generalize to real scenes; and existing metrics cannot distinguish between text content changes and style changes.
+**Key Challenge**: Low-resource languages exhibit complex glyph structures under data-scarce conditions; models trained on synthetic data fail to generalize to real scenes; and existing metrics cannot distinguish between text content changes and style changes.
 
-**Starting Point**: A language-specific pretrained OCR recognizer (PPOCRv4) is used to supervise a glyph encoder in learning language-relevant structural features. The first real-world multilingual text image pair dataset, STIPLAR, is collected for domain-adaptive fine-tuning. A style-decomposition-based TAS evaluation metric is designed accordingly.
+**Key Insight**: A language-specific pretrained OCR recognizer (PPOCRv4) is used to supervise a glyph encoder in learning language-relevant structural features. The first real-world multilingual text image pair dataset, STIPLAR, is collected for domain-adaptive fine-tuning. A style-decomposition-based TAS evaluation metric is designed accordingly.
 
 ## Method
 

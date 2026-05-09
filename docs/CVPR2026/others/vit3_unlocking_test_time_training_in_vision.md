@@ -28,10 +28,10 @@ This paper systematically explores the design space of Test-Time Training (TTT) 
 
 ## Background & Motivation
 
-- **State of the Field**: The quadratic complexity $O(N^2)$ of Vision Transformers limits their applicability to long visual sequences. TTT models offer a linear-complexity alternative by reformulating the attention operation as an online learning problem: at test time, Key-Value pairs serve as a "mini-dataset" to train a compact inner model, which is then used to process the Query.
+- **Background**: The quadratic complexity $O(N^2)$ of Vision Transformers limits their applicability to long visual sequences. TTT models offer a linear-complexity alternative by reformulating the attention operation as an online learning problem: at test time, Key-Value pairs serve as a "mini-dataset" to train a compact inner model, which is then used to process the Query.
 - **Limitations of Prior Work**: The TTT design space is vast and underexplored. The choices regarding inner training (loss function, learning rate, batch size, number of epochs) and inner model (architecture, capacity) lack systematic understanding, leaving the performance of visual TTT models unrealized.
-- **Root Cause**: The absence of systematic guidelines locks visual TTT models below their potential.
-- **Paper Goals**: To provide a comprehensive study of the TTT design space for vision, derive actionable insights, and instantiate them in a competitive visual architecture.
+- **Key Challenge**: The absence of systematic guidelines locks visual TTT models below their potential.
+- **Goal**: To provide a comprehensive study of the TTT design space for vision, derive actionable insights, and instantiate them in a competitive visual architecture.
 
 ## Method
 

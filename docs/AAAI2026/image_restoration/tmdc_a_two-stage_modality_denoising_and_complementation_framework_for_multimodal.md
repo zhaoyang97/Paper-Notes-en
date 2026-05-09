@@ -35,11 +35,11 @@ This paper proposes TMDC, a two-stage framework in which the first stage learns 
 
 ### State of the Field
 
-**State of the Field**: Existing methods address these two problems **separately** — denoising methods assume complete data, while missing-modality methods assume clean inputs.
+**Background**: Existing methods address these two problems **separately** — denoising methods assume complete data, while missing-modality methods assume clean inputs.
 
 ### Root Cause
 
-**Root Cause**: When noise and missing modalities co-occur, existing methods (e.g., IMDer, DiCMoR, MoMKE) exhibit significant performance degradation.
+**Key Challenge**: When noise and missing modalities co-occur, existing methods (e.g., IMDer, DiCMoR, MoMKE) exhibit significant performance degradation.
 
 ### Solution Direction
 
@@ -47,7 +47,7 @@ This paper proposes TMDC, a two-stage framework in which the first stage learns 
 
 ### Solution Direction
 
-**Paper Goals**: How to jointly address noise interference and missing modalities in MSA while avoiding error propagation?
+**Goal**: How to jointly address noise interference and missing modalities in MSA while avoiding error propagation?
 
 ## Method
 

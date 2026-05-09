@@ -27,15 +27,15 @@ content_hash: b9a0fd58678eec92
 This paper proposes Hierarchical Balance Packing (HBP), which addresses attention computation imbalance and communication waste in mixed long/short-context SFT through multi-level packing groups, balanced batching, adaptive sequence parallelism, and stable loss normalization. HBP achieves a 2.4× training speedup on DeepSeek-V2 (236B) without performance degradation.
 
 ## Background & Motivation
-**State of the Field**: Long-context LLMs require joint training on both long-context (e.g., 128K) and short-context data during SFT to preserve general capabilities. The dominant approach is data packing, which concatenates variable-length samples into fixed-length mini-batches.
+**Background**: Long-context LLMs require joint training on both long-context (e.g., 128K) and short-context data during SFT to preserve general capabilities. The dominant approach is data packing, which concatenates variable-length samples into fixed-length mini-batches.
 
 **Limitations of Prior Work**: Naïve packing suffers from three problems: (a) mixing long and short samples causes severe attention computation imbalance (ABR as high as 0.506), leading to significant GPU idle time; (b) short sequences are unnecessarily subjected to sequence parallel (SP) communication, wasting bandwidth (CR = 1.0); (c) uneven compute allocation across DP groups causes synchronization stalls.
 
-**Root Cause**: A single packing length cannot simultaneously optimize training efficiency for both short sequences (no SP needed, low attention complexity) and long sequences (SP required, high attention complexity), as the two regimes demand fundamentally different training strategies (SP degree, gradient checkpointing configuration).
+**Key Challenge**: A single packing length cannot simultaneously optimize training efficiency for both short sequences (no SP needed, low attention complexity) and long sequences (SP required, high attention complexity), as the two regimes demand fundamentally different training strategies (SP degree, gradient checkpointing configuration).
 
-**Paper Goals**: (a) How to automatically determine the optimal multi-level packing groups? (b) How to assign samples to groups while balancing attention computation? (c) How to design a dynamic training pipeline that accommodates multi-level inputs?
+**Goal**: (a) How to automatically determine the optimal multi-level packing groups? (b) How to assign samples to groups while balancing attention computation? (c) How to design a dynamic training pipeline that accommodates multi-level inputs?
 
-**Starting Point**: The authors introduce two new metrics—ABR (Attention Balance Ratio) and CR (Communication Ratio)—to quantify the inefficiency of naïve packing. Profiling reveals that optimal SP/GC strategies differ substantially across sequence lengths (e.g., optimal SP=8 for 32K vs. 128K, but with different GC layer counts), motivating a hierarchical treatment.
+**Key Insight**: The authors introduce two new metrics—ABR (Attention Balance Ratio) and CR (Communication Ratio)—to quantify the inefficiency of naïve packing. Profiling reveals that optimal SP/GC strategies differ substantially across sequence lengths (e.g., optimal SP=8 for 32K vs. 128K, but with different GC layer counts), motivating a hierarchical treatment.
 
 **Core Idea**: Replace single-level packing with multi-level hierarchical packing, where each level is assigned its optimal SP/GC configuration, and long and short data are physically isolated to eliminate communication waste and attention imbalance.
 

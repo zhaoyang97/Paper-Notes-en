@@ -29,13 +29,13 @@ This paper proposes BlackMirror, a two-stage framework that achieves generalizab
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-image diffusion models are widely deployed on MaaS platforms, where adversaries can inject backdoors during training to cause the model to generate images deviating from user intent upon encountering specific triggers (e.g., object replacement, patch insertion, style shift, or fixed-image generation).
+**Background**: Text-to-image diffusion models are widely deployed on MaaS platforms, where adversaries can inject backdoors during training to cause the model to generate images deviating from user intent upon encountering specific triggers (e.g., object replacement, patch insertion, style shift, or fixed-image generation).
 
 **Limitations of Prior Work**: Real-world users have no access to model weights or architectures. Existing white-box methods (T2IShield, GrainPS, NaviDet, etc., which rely on attention maps or neuron activations) are inapplicable in this setting. The only black-box method, UFID, assumes that backdoor-triggered images are globally highly similar, making it effective only against FixImgAtt (fixed-image generation); it fails against attacks that manipulate only local semantics (e.g., ObjRepAtt, PatchAtt, StyleAtt), as generated outputs remain dispersed in embedding space.
 
-**Root Cause**: Global similarity metrics are insufficiently sensitive. Experiments show that CLIP-based instruction-response similarity scores for backdoor and clean samples heavily overlap under attacks such as BadT2I and EvilEdit, making them indistinguishable.
+**Key Challenge**: Global similarity metrics are insufficiently sensitive. Experiments show that CLIP-based instruction-response similarity scores for backdoor and clean samples heavily overlap under attacks such as BadT2I and EvilEdit, making them indistinguishable.
 
-**Paper Goals**: The authors identify two key properties of backdoor attacks: (1) triggers induce instruction-response semantic deviation (certain patterns are manipulated), and (2) such deviations remain stable across different prompt variants, whereas model-inherent deviations do not exhibit cross-prompt stability. A training-free, model-agnostic, interpretable, and generalizable detection solution covering object-, patch-, and style-level attacks is needed for MaaS deployment.
+**Goal**: The authors identify two key properties of backdoor attacks: (1) triggers induce instruction-response semantic deviation (certain patterns are manipulated), and (2) such deviations remain stable across different prompt variants, whereas model-inherent deviations do not exhibit cross-prompt stability. A training-free, model-agnostic, interpretable, and generalizable detection solution covering object-, patch-, and style-level attacks is needed for MaaS deployment.
 
 ## Method
 

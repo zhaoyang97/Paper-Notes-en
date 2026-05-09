@@ -27,15 +27,15 @@ content_hash: eda858958fb74461
 This paper proposes the Chain-of-Affordance (CoA-VLA) framework, which injects four categories of robot affordances (object, grasp, spatial, and movement) into the policy network of a VLA model in both textual and visual modalities. The approach achieves an 85.54% success rate on a real-robot multi-task benchmark spanning 7 tasks, outperforming OpenVLA by 30.65%, and demonstrates generalization to unseen object poses and obstacles.
 
 ## Background & Motivation
-**State of the Field**: VLA models have acquired strong generalization capabilities through large-scale pretraining. However, existing approaches either rely on LLMs/VLMs for high-level planning (external reasoning) or predict actions end-to-end without intermediate reasoning. OpenAI O1 has demonstrated that long-chain reasoning can substantially improve performance on complex problems.
+**Background**: VLA models have acquired strong generalization capabilities through large-scale pretraining. However, existing approaches either rely on LLMs/VLMs for high-level planning (external reasoning) or predict actions end-to-end without intermediate reasoning. OpenAI O1 has demonstrated that long-chain reasoning can substantially improve performance on complex problems.
 
 **Limitations of Prior Work**: Current VLA models lack self-driven intermediate reasoning in complex environments, leading to failures in tasks requiring precise grasping, spatial reasoning, and obstacle avoidance. Existing reasoning methods such as ECoT focus on task decomposition but lack a structured understanding of physical interaction.
 
-**Root Cause**: Executing complex manipulation requires answering a sequence of questions—what to manipulate, how to grasp it, where to place it, and how to move there—yet existing VLAs do not explicitly model these intermediate reasoning steps.
+**Key Challenge**: Executing complex manipulation requires answering a sequence of questions—what to manipulate, how to grasp it, where to place it, and how to move there—yet existing VLAs do not explicitly model these intermediate reasoning steps.
 
-**Paper Goals**: Design a structured affordance reasoning chain that enables VLA models to reason over four task-relevant affordance categories before predicting actions, and inject the resulting representations into the policy network.
+**Goal**: Design a structured affordance reasoning chain that enables VLA models to reason over four task-relevant affordance categories before predicting actions, and inject the resulting representations into the policy network.
 
-**Starting Point**: Starting from the classical concept of robot affordances, this work formalizes them as a chain-of-thought (CoT) reasoning sequence and represents them innovatively in both textual and visual modalities.
+**Key Insight**: Starting from the classical concept of robot affordances, this work formalizes them as a chain-of-thought (CoT) reasoning sequence and represents them innovatively in both textual and visual modalities.
 
 **Core Idea**: Construct a reasoning chain from four affordance types (object/grasp/spatial/movement) represented in both textual and visual formats, then inject them into the diffusion policy head of a VLA model to guide action generation.
 

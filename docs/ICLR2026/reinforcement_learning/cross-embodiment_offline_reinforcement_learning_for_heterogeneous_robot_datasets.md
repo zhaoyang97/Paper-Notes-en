@@ -28,15 +28,15 @@ This paper systematically investigates cross-embodiment offline RL pretraining, 
 
 ## Background & Motivation
 
-**State of the Field**: Robot foundation models (e.g., RT-2, Octo, π0) learn generalizable control priors from multi-embodiment data via cross-embodiment learning. However, these models rely almost exclusively on imitation learning, requiring high-quality expert demonstrations that are costly to collect.
+**Background**: Robot foundation models (e.g., RT-2, Octo, π0) learn generalizable control priors from multi-embodiment data via cross-embodiment learning. However, these models rely almost exclusively on imitation learning, requiring high-quality expert demonstrations that are costly to collect.
 
 **Limitations of Prior Work**: (a) Imitation learning can only replicate behaviors present in the dataset and cannot surpass the quality ceiling of the data. (b) Offline RL can exploit suboptimal data through trajectory stitching to learn superior policies, yet has not been systematically combined with cross-embodiment learning. (c) Naïvely performing joint training on heterogeneous robot data can cause gradient conflicts across morphologies, leading to performance degradation for certain robots.
 
-**Root Cause**: Cross-embodiment learning increases data scale—beneficial. However, policy gradients from morphologically dissimilar robots may conflict—harmful. This conflict intensifies when the proportion of suboptimal trajectories in the data is high.
+**Key Challenge**: Cross-embodiment learning increases data scale—beneficial. However, policy gradients from morphologically dissimilar robots may conflict—harmful. This conflict intensifies when the proportion of suboptimal trajectories in the data is high.
 
-**Paper Goals**: Systematically analyze the benefits and failure modes of cross-embodiment offline RL, and design a method to mitigate gradient conflicts among heterogeneous morphologies.
+**Goal**: Systematically analyze the benefits and failure modes of cross-embodiment offline RL, and design a method to mitigate gradient conflicts among heterogeneous morphologies.
 
-**Starting Point**: Each robot is represented as a morphological graph (joints/end-effectors as nodes), and the Fused Gromov-Wasserstein (FGW) distance is used to compute inter-robot similarity. The paper finds that morphological similarity is strongly correlated with gradient cosine similarity (Pearson $r = 0.63$), motivating actor updates that are grouped according to morphological clustering.
+**Key Insight**: Each robot is represented as a morphological graph (joints/end-effectors as nodes), and the Fused Gromov-Wasserstein (FGW) distance is used to compute inter-robot similarity. The paper finds that morphological similarity is strongly correlated with gradient cosine similarity (Pearson $r = 0.63$), motivating actor updates that are grouped according to morphological clustering.
 
 **Core Idea**: Morphologically similar robots exhibit aligned policy gradient directions; grouping robots by morphological clustering and updating the actor group-wise effectively mitigates gradient conflicts in cross-embodiment offline RL.
 

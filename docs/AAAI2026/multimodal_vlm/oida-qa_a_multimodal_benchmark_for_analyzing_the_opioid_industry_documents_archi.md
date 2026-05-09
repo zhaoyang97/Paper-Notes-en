@@ -36,9 +36,9 @@ This paper constructs OIDA-QA, a multimodal document question-answering benchmar
 3. LLMs frequently fail to ground answers to specific pages or paragraphs within documents, resulting in low answer traceability and credibility.
 4. Existing medical QA datasets lack multi-turn dialogue and answer grounding information (cf. Table 1).
 
-**Root Cause**: The OIDA dataset is large and continuously growing, with documents often spanning dozens of pages across multiple specialized domains including law, medicine, and corporate governance. A low-cost, reliable, and scalable multimodal LLM is needed to assist the public and researchers in analyzing these documents.
+**Key Challenge**: The OIDA dataset is large and continuously growing, with documents often spanning dozens of pages across multiple specialized domains including law, medicine, and corporate governance. A low-cost, reliable, and scalable multimodal LLM is needed to assist the public and researchers in analyzing these documents.
 
-**Starting Point**:
+**Key Insight**:
 1. Systematically extracting three modalities from OIDA PDFs: text, visual, and layout information.
 2. Introducing personas to generate diverse questions, ensuring broad coverage.
 3. Developing content recitation and page finder mechanisms to address the challenges of extremely long documents.

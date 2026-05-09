@@ -29,15 +29,15 @@ BiGain proposes a frequency-aware token compression framework. Through Laplacian
 
 ## Background & Motivation
 
-**State of the Field**: Inference acceleration for diffusion models primarily relies on training-free methods like token merging (ToMe) and token downsampling (ToDo), with evaluation metrics focused almost exclusively on generation quality (FID).
+**Background**: Inference acceleration for diffusion models primarily relies on training-free methods like token merging (ToMe) and token downsampling (ToDo), with evaluation metrics focused almost exclusively on generation quality (FID).
 
 **Limitations of Prior Work**: The same diffusion models are increasingly reused for classification (via per-class denoising likelihood scoring), but existing compression operations that have minimal impact on generation severely damage classification. Experiments show that token merging hardly affects FID but causes classification accuracy to plummet—because the "redundant" tokens prioritized for removal are precisely the edge/texture details that classification depends on.
 
-**Root Cause**: Generation tasks rely on low/medium-frequency semantics (global structure), while classification tasks rely on high-frequency details (edges/textures). Traditional compression only optimizes the former while ignoring the latter.
+**Key Challenge**: Generation tasks rely on low/medium-frequency semantics (global structure), while classification tasks rely on high-frequency details (edges/textures). Traditional compression only optimizes the former while ignoring the latter.
 
-**Paper Goals**: Redefine token compression as a multi-objective optimization problem: simultaneously maintaining generative fidelity and discriminative utility.
+**Goal**: Redefine token compression as a multi-objective optimization problem: simultaneously maintaining generative fidelity and discriminative utility.
 
-**Starting Point**: Frequency separation—decoupling high-frequency details from low/medium-frequency content through frequency-aware representations to achieve "balanced spectral retention" compression.
+**Key Insight**: Frequency separation—decoupling high-frequency details from low/medium-frequency content through frequency-aware representations to achieve "balanced spectral retention" compression.
 
 **Core Idea**: Use a Laplacian filter to distinguish between high-frequency and low-frequency tokens, merging low-frequency tokens while preserving high-frequency ones, while maintaining full-resolution Queries during KV downsampling to preserve attention precision.
 

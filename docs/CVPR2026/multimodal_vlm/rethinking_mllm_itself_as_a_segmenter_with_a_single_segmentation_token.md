@@ -27,18 +27,18 @@ content_hash: 7fbdaf4a810c3c95
 This paper proposes SELF1E, the first MLLM segmentation method that requires neither a dedicated mask decoder nor more than a single [SEG] token. By introducing Residual Features Refilling (RFR) and Residual Features Amplifier (RFA) to recover resolution lost during pixel-shuffle compression, SELF1E achieves performance competitive with decoder-based methods across multiple segmentation tasks.
 
 ## Background & Motivation
-**State of the Field**: Existing MLLM segmentation methods (LISA, GSVA, OMG-LLaVA, etc.) primarily generate segmentation masks by attaching dedicated mask decoders (SAM / Mask2Former) to MLLMs.
+**Background**: Existing MLLM segmentation methods (LISA, GSVA, OMG-LLaVA, etc.) primarily generate segmentation masks by attaching dedicated mask decoders (SAM / Mask2Former) to MLLMs.
 
 **Limitations of Prior Work**:
    - Dedicated decoders introduce additional parameters and complex architectures, compromising methodological simplicity and creating dependency on external foundation models.
    - UFO attempts a decoder-free approach but requires 16 [SEG] tokens to compensate for resolution loss, increasing computational cost.
    - Root cause: pixel-shuffle downsampling in modern MLLMs significantly reduces visual feature resolution (e.g., 4× compression), discarding fine-grained spatial information essential for segmentation.
 
-**Root Cause**: Pixel-shuffle compression is necessary for efficient MLLM processing, yet the resulting spatial information loss is the fundamental bottleneck for decoder-free segmentation.
+**Key Challenge**: Pixel-shuffle compression is necessary for efficient MLLM processing, yet the resulting spatial information loss is the fundamental bottleneck for decoder-free segmentation.
 
-**Paper Goals**: To demonstrate that a single [SEG] token is sufficient for high-quality segmentation — the bottleneck lies in feature resolution, not token count.
+**Goal**: To demonstrate that a single [SEG] token is sufficient for high-quality segmentation — the bottleneck lies in feature resolution, not token count.
 
-**Starting Point**: Pre-compression image encoder features retain full resolution and can be preserved as "pre-compressed features"; LLM-processed features carry finer semantic discriminability. The two are complementary.
+**Key Insight**: Pre-compression image encoder features retain full resolution and can be preserved as "pre-compressed features"; LLM-processed features carry finer semantic discriminability. The two are complementary.
 
 **Core Idea**: Retain uncompressed encoder output features + collect residual features from LLM layers and fuse via upsampling + apply Pixel-Unshuffle to further amplify resolution.
 

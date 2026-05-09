@@ -31,16 +31,16 @@ Hybrid-TTA proposes a continual test-time adaptation (CTTA) framework that emplo
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning models perform well on training distributions but suffer significant performance degradation in dynamically changing real-world environments (e.g., weather sequences: clear → fog → night → rain → snow). Continual Test-Time Adaptation (CTTA) aims to adapt models online to continuously shifting target domains after deployment, without access to source data, and with each target sample observed only once.
+**Background**: Deep learning models perform well on training distributions but suffer significant performance degradation in dynamically changing real-world environments (e.g., weather sequences: clear → fog → night → rain → snow). Continual Test-Time Adaptation (CTTA) aims to adapt models online to continuously shifting target domains after deployment, without access to source data, and with each target sample observed only once.
 
 **The Dilemma of Existing Approaches**:
 - **Full Tuning (FT)**: Updates all model parameters, offering strong adaptability but suffering from three issues: (a) error accumulation due to reliance on self-generated pseudo-labels; (b) high computational cost; (c) susceptibility to catastrophic forgetting of source-domain knowledge.
 - **Efficient Tuning (ET/AT)**: Updates only a small number of parameters (e.g., Adapters), better preserving source-domain knowledge with higher efficiency, but offering limited adaptability and insufficient convergence under severe domain shifts.
 - **Complementary trade-offs**: FT offers plasticity while ET offers stability, but knowing when to apply which strategy is the critical challenge.
 
-**Root Cause**: CTTA must simultaneously achieve **plasticity** (adapting to new domains) and **stability** (retaining prior knowledge), two inherently conflicting objectives. Existing methods either apply FT throughout (sacrificing stability) or ET throughout (sacrificing plasticity), lacking an adaptive switching mechanism.
+**Key Challenge**: CTTA must simultaneously achieve **plasticity** (adapting to new domains) and **stability** (retaining prior knowledge), two inherently conflicting objectives. Existing methods either apply FT throughout (sacrificing stability) or ET throughout (sacrificing plasticity), lacking an adaptive switching mechanism.
 
-**Starting Point**: The core problem is not "which tuning strategy to use," but "when to use which." If a domain shift is detected, FT should be applied for maximal adaptation; otherwise, ET should maintain stability. This requires a reliable domain shift detection mechanism.
+**Key Insight**: The core problem is not "which tuning strategy to use," but "when to use which." If a domain shift is detected, FT should be applied for maximal adaptation; otherwise, ET should maintain stability. This requires a reliable domain shift detection mechanism.
 
 ## Method
 

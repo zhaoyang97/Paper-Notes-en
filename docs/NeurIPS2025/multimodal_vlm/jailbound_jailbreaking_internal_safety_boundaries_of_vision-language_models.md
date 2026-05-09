@@ -28,13 +28,13 @@ Inspired by the Eliciting Latent Knowledge (ELK) framework, this paper is the fi
 
 ## Background & Motivation
 
-**State of the Field**: VLMs acquire powerful multimodal capabilities by integrating visual encoders with LLMs, yet the introduction of the visual modality substantially enlarges the attack surface. Existing jailbreak methods include gradient-based white-box attacks and query-feedback-based black-box attacks.
+**Background**: VLMs acquire powerful multimodal capabilities by integrating visual encoders with LLMs, yet the introduction of the visual modality substantially enlarges the attack surface. Existing jailbreak methods include gradient-based white-box attacks and query-feedback-based black-box attacks.
 
 **Limitations of Prior Work**: (a) The absence of explicit attack objectives causes gradient optimization to fall into local optima, lacking precise directional guidance; (b) most methods treat the visual and textual modalities in a decoupled manner, neglecting cross-modal interactions.
 
-**Root Cause**: Although safety alignment in VLMs suppresses harmful outputs, the models still internally encode safety-relevant knowledge—analogous to the "the model knows but does not say" phenomenon identified in ELK research. This latent knowledge exposes exploitable structure for attacks.
+**Key Challenge**: Although safety alignment in VLMs suppresses harmful outputs, the models still internally encode safety-relevant knowledge—analogous to the "the model knows but does not say" phenomenon identified in ELK research. This latent knowledge exposes exploitable structure for attacks.
 
-**Starting Point**: If VLMs possess a safety/unsafe decision boundary in the latent representations of fusion layers, then precisely locating and crossing this boundary would enable systematic circumvention of safety mechanisms.
+**Key Insight**: If VLMs possess a safety/unsafe decision boundary in the latent representations of fusion layers, then precisely locating and crossing this boundary would enable systematic circumvention of safety mechanisms.
 
 **Core Idea**: First, use a linear classifier to probe the safety decision hyperplane in fusion layers; then drive image and text adversarial perturbations across this boundary via a three-objective joint optimization.
 

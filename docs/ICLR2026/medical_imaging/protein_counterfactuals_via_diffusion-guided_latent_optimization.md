@@ -28,15 +28,15 @@ This paper proposes MCCOP, a framework that performs gradient-guided counterfact
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning models can predict protein properties (stability, fluorescence, etc.) with high accuracy, yet they function only as "black-box oracles"—when a model predicts that an antibody is unstable, engineers receive no guidance on which mutations might rescue it.
+**Background**: Deep learning models can predict protein properties (stability, fluorescence, etc.) with high accuracy, yet they function only as "black-box oracles"—when a model predicts that an antibody is unstable, engineers receive no guidance on which mutations might rescue it.
 
 **Limitations of Prior Work**: (1) Naive gradient optimization on proteins produces adversarial examples—sequences that satisfy the predictor but cannot fold; (2) Discrete search methods (genetic algorithms, hill climbing) require large numbers of mutations (8–11), are inefficient, and cannot guarantee structural plausibility; (3) Existing explainability methods (attention visualization, feature attribution) answer "why" but provide no actionable guidance on "how to fix."
 
-**Root Cause**: A fundamental tension exists between the discrete sequence and the continuous 3D structure of proteins—gradient-based methods require continuous relaxation, yet operating directly in sequence space ignores spatial relationships; meanwhile, optimization trajectories must remain on the biologically feasible manifold.
+**Key Challenge**: A fundamental tension exists between the discrete sequence and the continuous 3D structure of proteins—gradient-based methods require continuous relaxation, yet operating directly in sequence space ignores spatial relationships; meanwhile, optimization trajectories must remain on the biologically feasible manifold.
 
-**Paper Goals**: Given a protein predicted to lack a target property, how can one identify the minimal, biologically plausible sequence edits that flip the prediction? How can sparsity, validity, and biological plausibility be jointly achieved?
+**Goal**: Given a protein predicted to lack a target property, how can one identify the minimal, biologically plausible sequence edits that flip the prediction? How can sparsity, validity, and biological plausibility be jointly achieved?
 
-**Starting Point**: Operations are performed in the continuous joint sequence–structure embedding space provided by the CHEAP encoder. A pretrained diffusion model, DiMA, serves as a manifold prior—its denoising steps act as manifold projections, interleaved with classifier-guided gradient optimization.
+**Key Insight**: Operations are performed in the continuous joint sequence–structure embedding space provided by the CHEAP encoder. A pretrained diffusion model, DiMA, serves as a manifold prior—its denoising steps act as manifold projections, interleaved with classifier-guided gradient optimization.
 
 **Core Idea**: In the joint protein embedding space, sparse gradient descent and diffusion-model manifold projection are applied alternately to generate counterfactual protein sequences with minimal mutations and structural plausibility.
 

@@ -30,7 +30,7 @@ This paper proposes DA-HOI, a zero-shot HOI detection framework that fully decou
 
 ## Background & Motivation
 
-**State of the Field**: HOI detection requires simultaneously localizing humans and objects and recognizing their interactions. Recent CLIP-based zero-shot methods (GEN-VLKT, HOICLIP, ADA-CM, LAIN, etc.) have constructed interaction classifiers via text embeddings and achieved preliminary progress, yet performance remains substantially limited.
+**Background**: HOI detection requires simultaneously localizing humans and objects and recognizing their interactions. Recent CLIP-based zero-shot methods (GEN-VLKT, HOICLIP, ADA-CM, LAIN, etc.) have constructed interaction classifiers via text embeddings and achieved preliminary progress, yet performance remains substantially limited.
 
 **Limitations of Prior Work**:
 
@@ -40,9 +40,9 @@ This paper proposes DA-HOI, a zero-shot HOI detection framework that fully decou
 
 **Low generalization ceiling**: CLIP-based methods inherently align visual and textual features only on training categories, making generalization to unseen verb/object categories difficult.
 
-**Root Cause**: Open-vocabulary detectors can already localize unseen objects reasonably well; the true bottleneck lies in interaction recognition—which is precisely entangled with a specific detector.
+**Key Challenge**: Open-vocabulary detectors can already localize unseen objects reasonably well; the true bottleneck lies in interaction recognition—which is precisely entangled with a specific detector.
 
-**Starting Point**: MLLMs, trained on large-scale image-text pairs and instruction-following tasks, possess cross-modal generalization and fine-grained understanding capabilities far superior to CLIP. By decomposing HOI detection into two independent pipelines—detection for localization and MLLM for interaction recognition—each component can leverage the strongest available model, and the decoupled architecture enables plug-and-play flexibility.
+**Key Insight**: MLLMs, trained on large-scale image-text pairs and instruction-following tasks, possess cross-modal generalization and fine-grained understanding capabilities far superior to CLIP. By decomposing HOI detection into two independent pipelines—detection for localization and MLLM for interaction recognition—each component can leverage the strongest available model, and the decoupled architecture enables plug-and-play flexibility.
 
 **Core Idea**: Interaction recognition is formulated as a VQA task posed to an MLLM, with deterministic generation for multi-label confidence scoring, spatial-aware pooling to inject spatial priors, and one-pass matching to eliminate redundant inference overhead.
 

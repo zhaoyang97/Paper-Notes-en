@@ -28,15 +28,15 @@ This paper proposes SynGA, a genetic algorithm that operates directly on synthes
 
 ## Background & Motivation
 
-**State of the Field**: Generative models for molecular design (VAE, RL, GFlowNet, LLM) have advanced rapidly, yet classical genetic algorithms remain highly competitive due to their simplicity, sample efficiency, and exploration capability.
+**Background**: Generative models for molecular design (VAE, RL, GFlowNet, LLM) have advanced rapidly, yet classical genetic algorithms remain highly competitive due to their simplicity, sample efficiency, and exploration capability.
 
 **Limitations of Prior Work**: Most molecular generative models do not account for synthesizability, potentially proposing unstable or unsynthesizable designs—a critical barrier in practical applications. Post-hoc retrosynthesis models can partially mitigate this but incur substantial computational overhead (several minutes per evaluation). Existing synthesis-constrained GA methods require pre-training an ML projection model to map molecules back into synthesizable space, imposing upfront training costs and limiting performance to projection quality.
 
-**Root Cause**: Efficient search must be conducted over a vast discrete combinatorial molecular space while ensuring that every generated molecule possesses a feasible synthesis route.
+**Key Challenge**: Efficient search must be conducted over a vast discrete combinatorial molecular space while ensuring that every generated molecule possesses a feasible synthesis route.
 
-**Paper Goals**: Design a lightweight genetic algorithm that guarantees synthesizability by construction, serving as both a standalone baseline and a modular component.
+**Goal**: Design a lightweight genetic algorithm that guarantees synthesizability by construction, serving as both a standalone baseline and a modular component.
 
-**Starting Point**: Rather than generate-then-validate, the method defines genetic operators directly on synthesis trees, so the search space is confined to synthesizable molecules throughout.
+**Key Insight**: Rather than generate-then-validate, the method defines genetic operators directly on synthesis trees, so the search space is confined to synthesizable molecules throughout.
 
 **Core Idea**: By defining crossover/mutation operators on synthesis trees, the GA search is naturally restricted to synthesizable space; ML-guided building block filtering further accelerates convergence toward promising regions.
 

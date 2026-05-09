@@ -28,15 +28,15 @@ This paper replaces the ADAM optimizer in 3D Gaussian Splatting with a custom Le
 
 ## Background & Motivation
 
-**State of the Field**: 3D Gaussian Splatting (3DGS) has become the dominant method for novel view synthesis, achieving real-time rendering and high-quality image synthesis through differentiable rasterization of 3D Gaussian primitives. Current optimization typically employs the ADAM optimizer, requiring 30K iterations and up to one hour of training time.
+**Background**: 3D Gaussian Splatting (3DGS) has become the dominant method for novel view synthesis, achieving real-time rendering and high-quality image synthesis through differentiable rasterization of 3D Gaussian primitives. Current optimization typically employs the ADAM optimizer, requiring 30K iterations and up to one hour of training time.
 
 **Limitations of Prior Work**: Existing acceleration approaches follow two main directions—accelerating rasterizer implementations (e.g., DISTWAR's warp reduction, gsplat's parallelism patterns) or reducing the number of Gaussians (e.g., GS-MCMC, Taming-3DGS's densification strategies)—yet none address the underlying optimizer itself, still relying on ADAM's gradual first-order convergence.
 
-**Root Cause**: As a first-order method, ADAM utilizes only gradient direction information per step and requires thousands of iterations to reach a local optimum. Second-order methods such as LM approximate second-order updates by solving the normal equations and theoretically converge in far fewer iterations. However, in the 3DGS setting, the Jacobian matrix spanning millions of Gaussian parameters and high-resolution images is far too large to store explicitly.
+**Key Challenge**: As a first-order method, ADAM utilizes only gradient direction information per step and requires thousands of iterations to reach a local optimum. Second-order methods such as LM approximate second-order updates by solving the normal equations and theoretically converge in far fewer iterations. However, in the 3DGS setting, the Jacobian matrix spanning millions of Gaussian parameters and high-resolution images is far too large to store explicitly.
 
-**Paper Goals**: To efficiently apply the LM optimizer to 3DGS and realize scalable Jacobian-vector product computation on the GPU.
+**Goal**: To efficiently apply the LM optimizer to 3DGS and realize scalable Jacobian-vector product computation on the GPU.
 
-**Starting Point**: The method exploits the sparsity of 3DGS Gaussian primitives—each pixel is influenced by only a small number of Gaussians, making the Jacobian extremely sparse—and designs a cache-friendly per-pixel-per-splat parallel strategy that caches intermediate gradients once and reuses them across PCG iterations.
+**Key Insight**: The method exploits the sparsity of 3DGS Gaussian primitives—each pixel is influenced by only a small number of Gaussians, making the Jacobian extremely sparse—and designs a cache-friendly per-pixel-per-splat parallel strategy that caches intermediate gradients once and reuses them across PCG iterations.
 
 **Core Idea**: By combining gradient caching with per-pixel-per-splat CUDA parallelization to enable matrix-free PCG solving, the method grafts LM onto the second phase of 3DGS optimization, replacing 10K ADAM iterations with only 5 LM iterations.
 

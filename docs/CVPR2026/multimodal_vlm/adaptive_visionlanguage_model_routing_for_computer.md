@@ -29,15 +29,15 @@ This paper proposes the Adaptive VLM Routing (AVR) framework, which inserts a li
 
 ## Background & Motivation
 
-**State of the Field**: Computer Use Agents (CUA) interpret screenshots and execute GUI actions (clicks, typing, scrolling) via VLMs. Systems such as OpenAI CUA, Claude Computer Use, and UFO2 are representative examples. Current systems apply a single fixed VLM to all operations; a 20-step task accumulates approximately 400K input tokens, costing \$0.10–\$0.40.
+**Background**: Computer Use Agents (CUA) interpret screenshots and execute GUI actions (clicks, typing, scrolling) via VLMs. Systems such as OpenAI CUA, Claude Computer Use, and UFO2 are representative examples. Current systems apply a single fixed VLM to all operations; a 20-step task accumulates approximately 400K input tokens, costing \$0.10–\$0.40.
 
 **Limitations of Prior Work**: ScreenSpot-Pro data reveals that GPT-4o (~1.8T parameters) achieves only 0.8% accuracy on GUI grounding, whereas OS-Atlas (7B) reaches 18.9%. Scaling Qwen2.5-VL from 3B to 72B (24× parameters) improves accuracy only from 24.2% to 43.6% (1.8×). Model size is thus an unreliable predictor of grounding accuracy.
 
-**Root Cause**: CUA action difficulty varies dramatically — clicking a large button is trivial, while localizing a small icon in a dense IDE toolbar is highly challenging. Yet current systems apply the same model uniformly, wasting compute on easy actions and potentially failing on hard ones. Cross-application accuracy variance (>35% for VS Code vs. <15% for Premiere Pro) far exceeds inter-model variance.
+**Key Challenge**: CUA action difficulty varies dramatically — clicking a large button is trivial, while localizing a small icon in a dense IDE toolbar is highly challenging. Yet current systems apply the same model uniformly, wasting compute on easy actions and potentially failing on hard ones. Cross-application accuracy variance (>35% for VS Code vs. <15% for Premiere Pro) far exceeds inter-model variance.
 
-**Paper Goals**: Reformulate CUA inference as a dynamic model routing problem, selecting the most cost-efficient yet sufficiently reliable VLM for each individual action.
+**Goal**: Reformulate CUA inference as a dynamic model routing problem, selecting the most cost-efficient yet sufficiently reliable VLM for each individual action.
 
-**Starting Point**: Routing is formalized as a cost–accuracy constrained optimization problem: $\min_\pi \sum c_{\pi(i)}$ s.t. accuracy $\geq \tau_{acc}$, introducing latent difficulty variables and threshold-based policies.
+**Key Insight**: Routing is formalized as a cost–accuracy constrained optimization problem: $\min_\pi \sum c_{\pi(i)}$ s.t. accuracy $\geq \tau_{acc}$, introducing latent difficulty variables and threshold-based policies.
 
 **Core Idea**: A three-stage routing pipeline — difficulty estimation, confidence probing, and memory injection — directs the majority of CUA actions to smaller models, escalating to larger models only for difficult or high-risk operations.
 

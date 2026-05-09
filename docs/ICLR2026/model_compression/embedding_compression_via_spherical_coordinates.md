@@ -33,7 +33,7 @@ Embedding vectors are fundamental to RAG, retrieval, and multimodal systems. A t
 
 **Core insight**: Most embedding models output unit-norm vectors ($\|x\|_2=1$) for cosine similarity computation, meaning the vectors lie on the high-dimensional hypersphere $S^{d-1}$. Yet all existing lossless methods ignore this geometric structure. A unit vector can be equivalently represented by $d-1$ spherical coordinate angles, and in high dimensions these angles are mathematically known to concentrate near $\pi/2 \approx 1.57$ — a well-established result in probability theory.
 
-**Starting Point**: Spherical coordinate transformation is used as an entropy-reduction preprocessing step, making both exponents and mantissas more predictable at the IEEE 754 level before applying standard byte shuffling and entropy coding.
+**Key Insight**: Spherical coordinate transformation is used as an entropy-reduction preprocessing step, making both exponents and mantissas more predictable at the IEEE 754 level before applying standard byte shuffling and entropy coding.
 
 ## Method
 

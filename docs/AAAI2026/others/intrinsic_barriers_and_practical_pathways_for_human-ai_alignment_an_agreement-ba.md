@@ -28,15 +28,15 @@ This paper formalizes AI alignment as an $\langle M,N,\varepsilon,\delta\rangle$
 
 ## Background & Motivation
 
-**State of the Field**: Current AI alignment research is practically oriented — methods such as RLHF, DPO, and Constitutional AI have achieved notable success in preventing LLM jailbreaks and related issues. On the theoretical side, AI Safety via Debate uses interactive proofs to isolate misalignment through zero-sum debate games; CIRL formalizes alignment as a cooperative partial-information game and reduces it to a POMDP.
+**Background**: Current AI alignment research is practically oriented — methods such as RLHF, DPO, and Constitutional AI have achieved notable success in preventing LLM jailbreaks and related issues. On the theoretical side, AI Safety via Debate uses interactive proofs to isolate misalignment through zero-sum debate games; CIRL formalizes alignment as a cooperative partial-information game and reduces it to a POMDP.
 
 **Limitations of Prior Work**: These approaches rely on strong assumptions. Debate requires precise, unbiased human verifiers; CIRL implicitly assumes a Common Prior Assumption (CPA) and Markov property, limiting the ability to exploit richer historical context. More fundamentally, all existing approaches lack general theoretical guarantees about the **intrinsic complexity** of alignment.
 
-**Root Cause**: Existing alignment frameworks focus on the feasibility of specific methodologies, yet no unified framework addresses: what **method-agnostic, inherent barriers** does alignment itself possess? When the number of objectives $M$ or agents $N$ is sufficiently large, do information-theoretic barriers exist that no protocol can overcome?
+**Key Challenge**: Existing alignment frameworks focus on the feasibility of specific methodologies, yet no unified framework addresses: what **method-agnostic, inherent barriers** does alignment itself possess? When the number of objectives $M$ or agents $N$ is sufficiently large, do information-theoretic barriers exist that no protocol can overcome?
 
-**Paper Goals**: (a) Formalize an alignment framework with minimal assumptions; (b) prove information-theoretic lower bounds — a "No-Free-Lunch" theorem for alignment; (c) provide explicit achievable algorithms as upper-bound certificates; (d) analyze the exponential cost under bounded rationality.
+**Goal**: (a) Formalize an alignment framework with minimal assumptions; (b) prove information-theoretic lower bounds — a "No-Free-Lunch" theorem for alignment; (c) provide explicit achievable algorithms as upper-bound certificates; (d) analyze the exponential cost under bounded rationality.
 
-**Starting Point**: The authors observe that prior methods implicitly rely on foundational concepts such as iterated reasoning, mutual updating, and common knowledge, and build their analytical framework upon Aumann's agreement theorem and Aaronson's $\langle\varepsilon,\delta\rangle$-agreement extension.
+**Key Insight**: The authors observe that prior methods implicitly rely on foundational concepts such as iterated reasoning, mutual updating, and common knowledge, and build their analytical framework upon Aumann's agreement theorem and Aaronson's $\langle\varepsilon,\delta\rangle$-agreement extension.
 
 **Core Idea**: Alignment is modeled as a communication game in which $N$ agents without a common prior must reach approximate consensus on $M$ objectives. The paper proves that the intrinsic complexity necessarily grows with the number of objectives, agents, and state-space size, and that bounded rationality leads to exponential deterioration.
 

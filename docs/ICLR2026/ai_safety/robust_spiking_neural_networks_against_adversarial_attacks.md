@@ -28,15 +28,15 @@ This paper theoretically demonstrates that threshold-proximal spiking neurons ar
 
 ## Background & Motivation
 
-**State of the Field**: Spiking Neural Networks (SNNs), leveraging event-driven mechanisms and biologically plausible spike-based communication, have emerged as a prominent paradigm for energy-efficient neuromorphic computing. Direct training methods based on surrogate gradients (e.g., STBP/BPTT) have enabled SNNs to approach ANN-level performance on classification tasks.
+**Background**: Spiking Neural Networks (SNNs), leveraging event-driven mechanisms and biologically plausible spike-based communication, have emerged as a prominent paradigm for energy-efficient neuromorphic computing. Direct training methods based on surrogate gradients (e.g., STBP/BPTT) have enabled SNNs to approach ANN-level performance on classification tasks.
 
 **Limitations of Prior Work**: Directly trained SNNs inherit the adversarial vulnerability of ANNs — carefully crafted small perturbations can cause misclassification. Existing defenses such as adversarial training (AT) and regularized adversarial training (RAT) incur additional training overhead and offer limited transferability.
 
-**Root Cause**: Prior robustness improvements for SNNs (e.g., gradient sparsity regularization SR, evolutionary leakage factor FEEL-SNN) only yield significant gains when combined with AT/RAT, and a unified theoretical analysis of robustness bottlenecks in SNNs remains absent.
+**Key Challenge**: Prior robustness improvements for SNNs (e.g., gradient sparsity regularization SR, evolutionary leakage factor FEEL-SNN) only yield significant gains when combined with AT/RAT, and a unified theoretical analysis of robustness bottlenecks in SNNs remains absent.
 
-**Paper Goals**: Identify the fundamental cause of adversarial vulnerability in directly trained SNNs and design a defense method that requires no additional inference overhead.
+**Goal**: Identify the fundamental cause of adversarial vulnerability in directly trained SNNs and design a defense method that requires no additional inference overhead.
 
-**Starting Point**: By analyzing membrane potential dynamics in spiking neurons, this work identifies that threshold-proximal neurons simultaneously amplify both the upper bound of gradient attack paths and the probability of state flipping.
+**Key Insight**: By analyzing membrane potential dynamics in spiking neurons, this work identifies that threshold-proximal neurons simultaneously amplify both the upper bound of gradient attack paths and the probability of state flipping.
 
 **Core Idea**: Push membrane potentials away from the threshold + introduce noisy spiking mechanisms → reduce the theoretical upper bound of adversarial attacks + decrease state-flipping probability.
 

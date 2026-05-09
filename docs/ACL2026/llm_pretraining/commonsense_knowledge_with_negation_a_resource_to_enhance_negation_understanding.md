@@ -29,15 +29,15 @@ This paper proposes an automated method for augmenting existing commonsense know
 
 ## Background & Motivation
 
-**State of the Field**: Commonsense knowledge has been extensively studied, with large-scale commonsense knowledge bases such as Atomic and ConceptNet having been constructed, and LLMs achieving strong performance on various NLU tasks.
+**Background**: Commonsense knowledge has been extensively studied, with large-scale commonsense knowledge bases such as Atomic and ConceptNet having been constructed, and LLMs achieving strong performance on various NLU tasks.
 
 **Limitations of Prior Work**: (1) LLMs struggle with natural language understanding tasks involving negation, yet prior research has been limited to encoder models such as BERT and early LLMs such as GPT-3; (2) the intersection of commonsense knowledge and negation remains largely unexplored; (3) the only commonsense knowledge base addressing negation, Anion, negates only *if*-events and requires extensive human annotation, without considering the negation of *then*-events.
 
-**Root Cause**: Negation appears in approximately 25% of English sentences and constitutes an important semantic feature; however, existing commonsense knowledge bases contain almost no negation, and LLMs exhibit insufficient negation understanding.
+**Key Challenge**: Negation appears in approximately 25% of English sentences and constitutes an important semantic feature; however, existing commonsense knowledge bases contain almost no negation, and LLMs exhibit insufficient negation understanding.
 
-**Paper Goals**: To automatically augment existing commonsense knowledge bases with negation, construct a large-scale negated commonsense corpus, and leverage it to improve LLMs' negation understanding.
+**Goal**: To automatically augment existing commonsense knowledge bases with negation, construct a large-scale negated commonsense corpus, and leverage it to improve LLMs' negation understanding.
 
-**Starting Point**: The observation that negating *if*-events, *then*-events, or both can sometimes yield new triples that remain commonsensically valid, thereby enabling the expansion of existing corpora by up to a factor of three.
+**Key Insight**: The observation that negating *if*-events, *then*-events, or both can sometimes yield new triples that remain commonsensically valid, thereby enabling the expansion of existing corpora by up to a factor of three.
 
 **Core Idea**: By automatically negating *if*/*then* events in commonsense triples and training a dedicated LLM-based judge to validate the results, a large-scale negation-augmented commonsense knowledge corpus is constructed; pretraining on this corpus improves downstream negation understanding.
 

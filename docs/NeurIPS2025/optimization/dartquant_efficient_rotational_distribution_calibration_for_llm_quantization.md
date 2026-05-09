@@ -28,15 +28,15 @@ DartQuant proposes a distribution-calibration-based rotation matrix optimization
 
 ## Background & Motivation
 
-**State of the Field**: Post-training quantization (PTQ) is a key technique for deploying large language models. Extreme outliers in activations are the primary cause of quantization accuracy degradation. Rotation matrix transformations can effectively smooth outliers and can be losslessly fused into model architectures due to their invertibility and norm-preserving properties.
+**Background**: Post-training quantization (PTQ) is a key technique for deploying large language models. Extreme outliers in activations are the primary cause of quantization accuracy degradation. Rotation matrix transformations can effectively smooth outliers and can be losslessly fused into model architectures due to their invertibility and norm-preserving properties.
 
 **Limitations of Prior Work**: SpinQuant and OSTQuant treat rotation matrices as network parameters and perform end-to-end fine-tuning, requiring specialized optimizers such as Cayley SGD. Calibrating a 70B model demands hundreds of GiB of GPU memory and tens of GPU hours.
 
-**Root Cause**: End-to-end fine-tuning faces three compounding challenges: (a) computational resource consumption conflicts with the goal of rapid PTQ deployment; (b) fine-tuning on small calibration sets is prone to overfitting; (c) Cayley/Riemannian SGD incurs approximately 2× the computational overhead of standard optimizers.
+**Key Challenge**: End-to-end fine-tuning faces three compounding challenges: (a) computational resource consumption conflicts with the goal of rapid PTQ deployment; (b) fine-tuning on small calibration sets is prone to overfitting; (c) Cayley/Riemannian SGD incurs approximately 2× the computational overhead of standard optimizers.
 
-**Paper Goals**: How to optimize rotation matrices rapidly under extremely limited resources while avoiding overfitting.
+**Goal**: How to optimize rotation matrices rapidly under extremely limited resources while avoiding overfitting.
 
-**Starting Point**: The paper reframes rotation optimization from a distribution-transformation perspective — rather than minimizing task loss, it directly constrains the post-rotation activation distribution to approach a uniform distribution.
+**Key Insight**: The paper reframes rotation optimization from a distribution-transformation perspective — rather than minimizing task loss, it directly constrains the post-rotation activation distribution to approach a uniform distribution.
 
 **Core Idea**: The Whip loss drives activation distributions from Laplace toward uniform to reduce outliers, while QR decomposition replaces manifold optimization to enforce orthogonality.
 

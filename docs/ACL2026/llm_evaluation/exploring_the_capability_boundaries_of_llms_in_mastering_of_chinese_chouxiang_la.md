@@ -28,15 +28,15 @@ This paper introduces Chinese internet subculture language "Chouxiang" (抽象�
 
 ## Background & Motivation
 
-**State of the Field**: LLMs demonstrate strong performance on standard NLP tasks, yet their ability to handle non-standard linguistic varieties — particularly non-Western subculture languages — remains almost entirely unexplored. Existing research on Chinese internet language is largely confined to toxicity detection and perturbed language identification.
+**Background**: LLMs demonstrate strong performance on standard NLP tasks, yet their ability to handle non-standard linguistic varieties — particularly non-Western subculture languages — remains almost entirely unexplored. Existing research on Chinese internet language is largely confined to toxicity detection and perturbed language identification.
 
 **Limitations of Prior Work**: (1) Existing LLMs and benchmarks exhibit a pronounced Western-centric bias, with Chinese subculture language severely underrepresented; (2) Chouxiang, the most widely used internet subculture language among Chinese youth, integrates complex mechanisms such as homophonic substitution, visual-symbolic analogy, and semantic mapping, far exceeding the complexity of memes and viral internet expressions; (3) Prior research has framed such linguistic phenomena exclusively in negative terms (e.g., toxicity), overlooking their evolved neutral or even positive functions.
 
-**Root Cause**: Chouxiang constructs a non-standard semantic space deviating from standard Chinese through multi-layered mappings — homophones → grapheme decomposition → semantic metaphor → dialect borrowing — while LLM pretraining is predominantly grounded in standard text, resulting in systematic capability deficits when interpreting and processing this subculturally encoded language.
+**Key Challenge**: Chouxiang constructs a non-standard semantic space deviating from standard Chinese through multi-layered mappings — homophones → grapheme decomposition → semantic metaphor → dialect borrowing — while LLM pretraining is predominantly grounded in standard text, resulting in systematic capability deficits when interpreting and processing this subculturally encoded language.
 
-**Paper Goals**: To formally define a taxonomy of Chouxiang, construct the Mouse evaluation benchmark, and systematically assess the capability boundaries of state-of-the-art LLMs on Chouxiang.
+**Goal**: To formally define a taxonomy of Chouxiang, construct the Mouse evaluation benchmark, and systematically assess the capability boundaries of state-of-the-art LLMs on Chouxiang.
 
-**Starting Point**: Chouxiang is analyzed from a semiotic representation perspective and decomposed into three core dimensions — phonetic, visual, and semantic — which, combined with intent classification, form a dual-dimensional taxonomy.
+**Key Insight**: Chouxiang is analyzed from a semiotic representation perspective and decomposed into three core dimensions — phonetic, visual, and semantic — which, combined with intent classification, form a dual-dimensional taxonomy.
 
 **Core Idea**: The first NLP benchmark for Chouxiang, comprehensively evaluating LLMs' ability to understand, translate, and produce subculture language through six distinct tasks.
 

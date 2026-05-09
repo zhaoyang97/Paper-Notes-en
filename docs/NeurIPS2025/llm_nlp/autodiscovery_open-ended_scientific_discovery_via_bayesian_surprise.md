@@ -28,15 +28,15 @@ AutoDiscovery proposes Bayesian Surprise as an objective reward signal for open-
 
 ## Background & Motivation
 
-**State of the Field**: Goal-driven automated scientific discovery requires humans to specify research questions. Open-ended discovery — where the system autonomously explores without predefined objectives — is more ambitious but lacks reliable intrinsic reward signals.
+**Background**: Goal-driven automated scientific discovery requires humans to specify research questions. Open-ended discovery — where the system autonomously explores without predefined objectives — is more ambitious but lacks reliable intrinsic reward signals.
 
 **Limitations of Prior Work**: (a) Diversity heuristics are insufficient — the hypothesis space is vast, and uniform exploration wastes the evaluation budget. (b) Human proxy metrics ("interestingness," "novelty," "usefulness") are subjective, inconsistent across experts, and unreliable to automate — experiments show that LLM-evaluated "interestingness" is nearly uncorrelated with human "surprise."
 
-**Root Cause**: There is no objective, automatically computable reward signal for open-ended discovery that aligns with human scientific intuition.
+**Key Challenge**: There is no objective, automatically computable reward signal for open-ended discovery that aligns with human scientific intuition.
 
-**Paper Goals**: To define and implement open-ended scientific discovery driven by Bayesian Surprise.
+**Goal**: To define and implement open-ended scientific discovery driven by Bayesian Surprise.
 
-**Starting Point**: Bayesian Surprise = KL divergence between posterior and prior beliefs — a hypothesis that is "surprised" by experimental evidence (i.e., substantially shifts beliefs) constitutes an interesting finding. Prior/posterior Beta distribution parameters are estimated via LLM sampling.
+**Key Insight**: Bayesian Surprise = KL divergence between posterior and prior beliefs — a hypothesis that is "surprised" by experimental evidence (i.e., substantially shifts beliefs) constitutes an interesting finding. Prior/posterior Beta distribution parameters are estimated via LLM sampling.
 
 **Core Idea**: LLM sampling estimates prior/posterior beliefs → Beta-Bernoulli KL divergence = Bayesian Surprise → serves as a reward signal for MCTS-driven hypothesis space exploration.
 

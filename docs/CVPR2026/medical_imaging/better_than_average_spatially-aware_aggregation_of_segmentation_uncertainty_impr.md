@@ -28,13 +28,13 @@ This paper presents the first systematic study of aggregation strategies for con
 
 ## Background & Motivation
 
-**State of the Field**: In safety-critical domains such as medical imaging and autonomous driving, uncertainty quantification (UQ) methods produce pixel-level uncertainty maps that must be aggregated into image-level scalars for downstream tasks such as OoD detection and failure detection. Global averaging (AVG) is the de facto default.
+**Background**: In safety-critical domains such as medical imaging and autonomous driving, uncertainty quantification (UQ) methods produce pixel-level uncertainty maps that must be aggregated into image-level scalars for downstream tasks such as OoD detection and failure detection. Global averaging (AVG) is the de facto default.
 
 **Limitations of Prior Work**: (1) Lack of systematic study—despite widespread use of aggregation, its properties and impact on downstream performance have not been comprehensively investigated; (2) AVG discards spatial structure—it cannot capture localized uncertainty patterns such as boundary or clustered uncertainty; (3) Existing alternative strategies lack systematic comparison, with inconsistent reporting across works.
 
-**Root Cause**: OoD sensitivity and prediction errors in segmentation are often reflected in **local uncertainty patterns**, yet simple pixel averaging destroys this spatial information.
+**Key Challenge**: OoD sensitivity and prediction errors in segmentation are often reflected in **local uncertainty patterns**, yet simple pixel averaging destroys this spatial information.
 
-**Starting Point**: The "spatial shape" of uncertainty is as informative as its magnitude.
+**Key Insight**: The "spatial shape" of uncertainty is as informative as its magnitude.
 
 **Core Idea**: The paper proposes the Spatial Mass Ratio (SMR)—the proportion of uncertainty mass concentrated in high-spatial-structure regions—and a GMM meta-aggregator that jointly models intensity-based and spatial features.
 
@@ -136,10 +136,10 @@ This paper presents the first systematic study of aggregation strategies for con
 
 ## Background & Motivation
 
-1. **State of the Field**: In safety-critical applications such as medical imaging and autonomous driving, segmentation models must output calibrated confidence estimates. UQ methods generate per-pixel uncertainty scores, but downstream tasks require aggregating these into a single image-level scalar for OoD detection and failure detection.
+1. **Background**: In safety-critical applications such as medical imaging and autonomous driving, segmentation models must output calibrated confidence estimates. UQ methods generate per-pixel uncertainty scores, but downstream tasks require aggregating these into a single image-level scalar for OoD detection and failure detection.
 2. **Limitations of Prior Work**: (1) Global averaging (AVG) is the default yet discards spatial structure; (2) Alternative strategies (patch-level, class-level, threshold-level) lack systematic comparison; (3) Existing strategies have theoretical flaws—AQA lacks ratio invariance, and ATA is non-monotonic.
-3. **Root Cause**: OoD sensitivity and prediction errors in segmentation are typically reflected in local uncertainty patterns (e.g., unseen class regions, ambiguous boundaries), but simple pixel averaging obscures these critical local variations.
-4. **Starting Point**: The spatial distribution of uncertainty (e.g., clustered vs. boundary-concentrated) carries important diagnostic information that spatially-aware aggregation can capture.
+3. **Key Challenge**: OoD sensitivity and prediction errors in segmentation are typically reflected in local uncertainty patterns (e.g., unseen class regions, ambiguous boundaries), but simple pixel averaging obscures these critical local variations.
+4. **Key Insight**: The spatial distribution of uncertainty (e.g., clustered vs. boundary-concentrated) carries important diagnostic information that spatially-aware aggregation can capture.
 5. **Core Idea**: The paper proposes the Spatial Mass Ratio (SMR)—measuring the proportion of uncertainty mass in high-spatial-structure regions—and a GMM meta-aggregator that fuses the outputs of multiple aggregation strategies.
 
 ## Method

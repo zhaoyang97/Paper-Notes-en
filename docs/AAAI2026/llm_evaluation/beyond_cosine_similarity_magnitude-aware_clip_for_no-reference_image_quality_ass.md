@@ -27,15 +27,15 @@ content_hash: 6b6f1e53b8f78bc7
 This paper proposes MA-CLIP, which discovers and exploits the **magnitude information** of CLIP image features as a complementary perceptual quality cue. Combined with cosine similarity, it achieves training-free adaptive dual-cue fusion for image quality assessment.
 
 ## Background & Motivation
-**State of the Field**: No-reference image quality assessment (NR-IQA) aims to predict the perceptual quality of images without access to pristine reference images. Recent CLIP-based methods (CLIP-IQA) estimate quality by computing cosine similarity between image embeddings and text prompts such as "a good photo" / "a bad photo," achieving competitive performance without fine-tuning.
+**Background**: No-reference image quality assessment (NR-IQA) aims to predict the perceptual quality of images without access to pristine reference images. Recent CLIP-based methods (CLIP-IQA) estimate quality by computing cosine similarity between image embeddings and text prompts such as "a good photo" / "a bad photo," achieving competitive performance without fine-tuning.
 
 **Limitations of Prior Work**: Cosine similarity computation applies L2 normalization to features, thereby **discarding feature magnitude (norm) information**. Empirically, images with vastly different perceptual quality can yield nearly identical cosine similarity scores, leading to insufficient discriminability.
 
-**Root Cause**: Cosine similarity provides good discrimination in the high-quality regime (where semantic alignment is strong), but fails in the low-quality regime; feature magnitude, in contrast, is more discriminative precisely in the low-quality regime — the two cues are naturally complementary, yet magnitude information has previously been overlooked.
+**Key Challenge**: Cosine similarity provides good discrimination in the high-quality regime (where semantic alignment is strong), but fails in the low-quality regime; feature magnitude, in contrast, is more discriminative precisely in the low-quality regime — the two cues are naturally complementary, yet magnitude information has previously been overlooked.
 
-**Paper Goals**: To fuse the semantic similarity and magnitude information of CLIP features into a more robust quality score without introducing any training.
+**Goal**: To fuse the semantic similarity and magnitude information of CLIP features into a more robust quality score without introducing any training.
 
-**Starting Point**: Starting from the statistical properties of CLIP feature vectors, the authors observe that magnitude is highly correlated with MOS, design a statistical normalization (Box-Cox) to remove semantic bias, and then combine the two cues via a confidence-guided adaptive fusion strategy.
+**Key Insight**: Starting from the statistical properties of CLIP feature vectors, the authors observe that magnitude is highly correlated with MOS, design a statistical normalization (Box-Cox) to remove semantic bias, and then combine the two cues via a confidence-guided adaptive fusion strategy.
 
 **Core Idea**: The magnitude of CLIP image features is a neglected yet strong quality cue; after Box-Cox normalization it is complementary to the cosine cue, and their fusion substantially improves zero-shot IQA performance.
 

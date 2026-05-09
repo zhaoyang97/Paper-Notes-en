@@ -29,15 +29,15 @@ This paper identifies a *priming vulnerability* in masked diffusion language mod
 
 ## Background & Motivation
 
-**State of the Field**: Masked diffusion language models (MDLMs) such as LLaDA and MMaDA generate tokens in parallel via iterative denoising, emerging as alternatives to autoregressive models (ARMs) with lower latency and bidirectional context modeling. However, safety risks in MDLMs remain almost entirely unstudied.
+**Background**: Masked diffusion language models (MDLMs) such as LLaDA and MMaDA generate tokens in parallel via iterative denoising, emerging as alternatives to autoregressive models (ARMs) with lower latency and bidirectional context modeling. However, safety risks in MDLMs remain almost entirely unstudied.
 
 **Limitations of Prior Work**: Existing safety alignment methods (SFT, DPO, MOSA) assume denoising begins from a fully masked sequence, training models to produce safe responses only under this condition. When affirmative tokens appear at intermediate denoising steps, models cannot recover safe outputs from such corrupted states. The parallel iterative generation mechanism unique to MDLMs exposes them to safety threats fundamentally different from those facing ARMs.
 
-**Root Cause**: A distribution shift exists between the initialization condition assumed during safety alignment training (fully masked sequences) and the intermediate states that may arise at inference time (states containing harmful tokens). Models never encounter corrupted intermediate states during training and therefore never learn to "recover" from them.
+**Key Challenge**: A distribution shift exists between the initialization condition assumed during safety alignment training (fully masked sequences) and the intermediate states that may arise at inference time (states containing harmful tokens). Models never encounter corrupted intermediate states during training and therefore never learn to "recover" from them.
 
-**Paper Goals**: (1) Systematically quantify the severity of the priming vulnerability in MDLMs; (2) Design an MDLM-specific safety alignment method to mitigate this vulnerability.
+**Goal**: (1) Systematically quantify the severity of the priming vulnerability in MDLMs; (2) Design an MDLM-specific safety alignment method to mitigate this vulnerability.
 
-**Starting Point**: Analysis of the iterative denoising mechanism reveals that injecting a single affirmative token at the very first step raises the attack success rate (ASR) from 2% to 21%. Recovery Alignment is designed to train models to restore safe outputs from corrupted states.
+**Key Insight**: Analysis of the iterative denoising mechanism reveals that injecting a single affirmative token at the very first step raises the attack success rate (ASR) from 2% to 21%. Recovery Alignment is designed to train models to restore safe outputs from corrupted states.
 
 **Core Idea**: During training, intentionally construct intermediate states containing harmful tokens so that models learn to recover from "poisoned" states back to safe responses.
 

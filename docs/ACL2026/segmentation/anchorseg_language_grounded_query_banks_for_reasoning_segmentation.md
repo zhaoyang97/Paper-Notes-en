@@ -29,15 +29,15 @@ This paper proposes AnchorSeg, which reformulates reasoning segmentation as a st
 
 ## Background & Motivation
 
-**State of the Field**: Reasoning segmentation requires models to predict pixel-level masks from complex, implicit text queries (e.g., "the object that provides shade in this scene"). Methods like LISA introduce a `<SEG>` token, using its hidden state as a single query fed into the SAM decoder to predict masks.
+**Background**: Reasoning segmentation requires models to predict pixel-level masks from complex, implicit text queries (e.g., "the object that provides shade in this scene"). Methods like LISA introduce a `<SEG>` token, using its hidden state as a single query fed into the SAM decoder to predict masks.
 
 **Limitations of Prior Work**: Existing methods compress both semantic reasoning and spatial localization into a single `<SEG>` token's hidden representation. This implicit compression limits the model's ability to explicitly distinguish "what to segment" (semantic reasoning) from "where to segment" (spatial localization), constraining performance in complex reasoning scenarios.
 
-**Root Cause**: A single embedding must simultaneously encode semantic understanding and spatial position — two fundamentally different types of information — creating a representation bottleneck. The more complex the reasoning, the harder it is for a single vector to carry both signals.
+**Key Challenge**: A single embedding must simultaneously encode semantic understanding and spatial position — two fundamentally different types of information — creating a representation bottleneck. The more complex the reasoning, the harder it is for a single vector to carry both signals.
 
-**Paper Goals**: Redefine reasoning segmentation as a structured conditional generation problem, explicitly modeling spatial localization at the image token level with language-guided queries providing the condition.
+**Goal**: Redefine reasoning segmentation as a structured conditional generation problem, explicitly modeling spatial localization at the image token level with language-guided queries providing the condition.
 
-**Starting Point**: Introduce multiple learnable tokens forming a "query bank," with different tokens assuming different roles — context queries handle semantic reasoning while anchor queries handle spatial localization.
+**Key Insight**: Introduce multiple learnable tokens forming a "query bank," with different tokens assuming different roles — context queries handle semantic reasoning while anchor queries handle spatial localization.
 
 **Core Idea**: Replace the single SEG token with a language-guided query bank, explicitly decoupling spatial localization (anchor queries) and semantic modulation (context queries) through a factorized conditional distribution.
 

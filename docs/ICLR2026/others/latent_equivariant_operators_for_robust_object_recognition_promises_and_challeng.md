@@ -27,14 +27,14 @@ This paper proposes learning or predefining equivariant shift operators in laten
 
 ## Background & Motivation
 
-- **State of the Field**: Deep networks achieve strong performance on IID test sets, often surpassing human-level accuracy, yet remain brittle under OOD conditions—such as recognizing objects at unseen poses, scales, or positions. These transformation scenarios can be described through group theory: pose, scale, and positional changes are fundamentally the result of group actions on visual objects.
+- **Background**: Deep networks achieve strong performance on IID test sets, often surpassing human-level accuracy, yet remain brittle under OOD conditions—such as recognizing objects at unseen poses, scales, or positions. These transformation scenarios can be described through group theory: pose, scale, and positional changes are fundamentally the result of group actions on visual objects.
 - **Limitations of Prior Work**:
   1. **Equivariant neural networks** require complete prior knowledge: the group structure (e.g., a cyclic group of a specific order) and its concrete representation (e.g., rotation or translation) must be mathematically specified, which is highly restrictive in practice.
   2. **Data augmentation schemes** require uniform sampling over the full range of transformation parameters that may appear at test time, whereas in practice only a limited range of transformation examples is typically available.
   3. Existing methods are either inflexible or data-hungry, and cannot gracefully handle OOD transformation generalization.
-- **Root Cause**: Models are expected to generalize to transformation parameters unseen during training (extrapolation), yet conventional networks can only interpolate within the training distribution, and equivariant networks demand complete mathematical priors.
-- **Paper Goals**: To demonstrate that a latent-space equivariant operator approach enables OOD classification—training on a limited range of transformations and extrapolating to unseen transformation degrees and combinations.
-- **Starting Point**: Rather than relying on data augmentation or mathematically specified equivariant architectures, the paper learns (or predefines) an equivariant operator in latent space and exploits the closure property of groups to extrapolate beyond the training range via recursive application of the operator.
+- **Key Challenge**: Models are expected to generalize to transformation parameters unseen during training (extrapolation), yet conventional networks can only interpolate within the training distribution, and equivariant networks demand complete mathematical priors.
+- **Goal**: To demonstrate that a latent-space equivariant operator approach enables OOD classification—training on a limited range of transformations and extrapolating to unseen transformation degrees and combinations.
+- **Key Insight**: Rather than relying on data augmentation or mathematically specified equivariant architectures, the paper learns (or predefines) an equivariant operator in latent space and exploits the closure property of groups to extrapolate beyond the training range via recursive application of the operator.
 - **Core Idea**: By the closure property of group transformations, any out-of-range transformation can be decomposed into a composition of in-range transformations. If the model has learned the correct group action in latent space (the equivariant operator), extrapolation can be achieved by recursively applying the same operator. At inference, KNN search is used to estimate transformation parameters, eliminating the need for explicit transformation labels.
 
 ## Method

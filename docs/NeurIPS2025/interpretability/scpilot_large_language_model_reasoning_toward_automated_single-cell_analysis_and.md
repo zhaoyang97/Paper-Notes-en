@@ -27,15 +27,15 @@ This work proposes the scPilot framework and scBench benchmark, enabling LLMs to
 
 ## Background & Motivation
 
-**State of the Field**: Single-cell RNA-seq analysis relies on fixed pipelines (Scanpy, Seurat), with large amounts of implicit expert reasoning (e.g., differential genes → cell-type judgment) remaining unautomated. Existing LLM applications treat LLMs merely as "code generators" that invoke pre-existing tools.
+**Background**: Single-cell RNA-seq analysis relies on fixed pipelines (Scanpy, Seurat), with large amounts of implicit expert reasoning (e.g., differential genes → cell-type judgment) remaining unautomated. Existing LLM applications treat LLMs merely as "code generators" that invoke pre-existing tools.
 
 **Limitations of Prior Work**: (a) Single-cell foundation models (e.g., scGPT) embed gene expression into vector spaces, sacrificing interpretability; (b) LLM code agents only wrap tools with default parameters without performing biological reasoning; (c) the biological logic underlying the analysis process is opaque.
 
-**Root Cause**: Single-cell analysis demands extensive expert reasoning (identifying cell types from marker genes, inferring developmental relationships from lineage trajectories), yet existing automated tools perform computation without reasoning.
+**Key Challenge**: Single-cell analysis demands extensive expert reasoning (identifying cell types from marker genes, inferring developmental relationships from lineage trajectories), yet existing automated tools perform computation without reasoning.
 
-**Paper Goals**: To enable LLMs not merely to invoke tools, but to interpret data, formulate hypotheses, gather evidence, and iteratively refine conclusions in the manner of a biologist.
+**Goal**: To enable LLMs not merely to invoke tools, but to interpret data, formulate hypotheses, gather evidence, and iteratively refine conclusions in the manner of a biologist.
 
-**Starting Point**: Define the omics-native reasoning (ONR) paradigm—LLMs receive textual summaries of single-cell data, perform explicit reasoning, invoke tools to obtain numerical evidence, and iterate until biological conclusions are reached.
+**Key Insight**: Define the omics-native reasoning (ONR) paradigm—LLMs receive textual summaries of single-cell data, perform explicit reasoning, invoke tools to obtain numerical evidence, and iterate until biological conclusions are reached.
 
 **Core Idea**: Single-cell analysis is formalized as a natural language reasoning problem, where LLMs produce (claim, action) pairs at each step, constituting a dual-track "verbal + computational" proof.
 

@@ -29,15 +29,15 @@ This paper proposes GF-Screen, a two-stage framework in which a lightweight Glan
 
 ## Background & Motivation
 
-**State of the Field**: Pan-cancer screening aims to detect and segment multiple lesion types from large-scale CT scans using a single unified model. Existing methods such as nnUNet, SwinUNETR, and CancerUniT adopt sliding-window strategies to traverse the entire CT volume for block-wise segmentation, achieving competitive performance on individual lesion types.
+**Background**: Pan-cancer screening aims to detect and segment multiple lesion types from large-scale CT scans using a single unified model. Existing methods such as nnUNet, SwinUNETR, and CancerUniT adopt sliding-window strategies to traverse the entire CT volume for block-wise segmentation, achieving competitive performance on individual lesion types.
 
 **Limitations of Prior Work**: Lesions occupy only approximately 0.085% of the CT volume, resulting in extreme foreground-background imbalance. Exhaustive inference introduces two critical problems: (1) substantial computational waste on healthy regions, with inference exceeding 100 seconds per scan and thus hindering large-scale deployment; and (2) redundant attention to healthy regions, which increases false positives and degrades screening precision.
 
-**Root Cause**: Accuracy and efficiency appear to be in conflict — higher detection sensitivity demands denser scanning, yet denser scanning generates more false positives and computational overhead. The root cause is that existing methods treat all regions uniformly and lack a selective attention mechanism.
+**Key Challenge**: Accuracy and efficiency appear to be in conflict — higher detection sensitivity demands denser scanning, yet denser scanning generates more false positives and computational overhead. The root cause is that existing methods treat all regions uniformly and lack a selective attention mechanism.
 
-**Paper Goals**: (1) How can the model adopt a radiologist-like strategy of global coarse scanning followed by local fine inspection, skipping irrelevant regions? (2) How can selection behavior be trained with RL without introducing an additional value network? (3) How can the selection policy remain robust to severe foreground-background imbalance?
+**Goal**: (1) How can the model adopt a radiologist-like strategy of global coarse scanning followed by local fine inspection, skipping irrelevant regions? (2) How can selection behavior be trained with RL without introducing an additional value network? (3) How can the selection policy remain robust to severe foreground-background imbalance?
 
-**Starting Point**: Radiologists reading CT scans employ a "glance-and-focus" strategy — rapidly surveying the global view to exclude normal regions and then carefully examining suspicious locations. The authors observe that a group of sub-volumes cropped from the same CT naturally constitutes the "candidate group" required by GRPO, enabling intra-group relative comparison directly without relying on an LLM to generate candidate answers.
+**Key Insight**: Radiologists reading CT scans employ a "glance-and-focus" strategy — rapidly surveying the global view to exclude normal regions and then carefully examining suspicious locations. The authors observe that a group of sub-volumes cropped from the same CT naturally constitutes the "candidate group" required by GRPO, enabling intra-group relative comparison directly without relying on an LLM to generate candidate answers.
 
 **Core Idea**: A lightweight classification network performs "glancing" for selection, while a segmentation network performs "focusing" for fine inspection. Segmentation results serve as RL reward signals, and group-relative learning performs comparative optimization within sub-volume groups, simultaneously addressing efficiency and accuracy.
 

@@ -30,7 +30,7 @@ This paper introduces a new task — Instruction-oriented Counting, Detection, a
 
 ## Background & Motivation
 
-**State of the Field**: Remote sensing object recognition plays an important role in sustainable development goals, including wildlife monitoring, poverty estimation, and disaster relief. CLIP-driven open-vocabulary detection and segmentation have seen growing adoption in the remote sensing domain.
+**Background**: Remote sensing object recognition plays an important role in sustainable development goals, including wildlife monitoring, poverty estimation, and disaster relief. CLIP-driven open-vocabulary detection and segmentation have seen growing adoption in the remote sensing domain.
 
 **Limitations of Prior Work**:
 - Existing open-vocabulary methods **rely on explicit category instructions** and cannot handle implicit reasoning (e.g., inferring which subcategories fall under "vehicles").

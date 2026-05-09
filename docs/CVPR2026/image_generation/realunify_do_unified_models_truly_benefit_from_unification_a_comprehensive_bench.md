@@ -27,11 +27,11 @@ content_hash: 45504145685f49cc
 This paper introduces RealUnify, the first benchmark specifically designed to evaluate the bidirectional synergy between understanding and generation capabilities in unified models. Through 1,000 manually annotated instances and a dual evaluation protocol (direct and stepwise), it reveals that current unified models, despite possessing both understanding and generation capabilities, still fail to achieve genuine capability synergy in end-to-end scenarios.
 
 ## Background & Motivation
-1. **State of the Field**: Multimodal unified models (e.g., BAGEL, Janus-Pro) that integrate visual understanding (VQA) and visual generation (T2I) into a single architecture have emerged as a major direction toward general-purpose AI.
+1. **Background**: Multimodal unified models (e.g., BAGEL, Janus-Pro) that integrate visual understanding (VQA) and visual generation (T2I) into a single architecture have emerged as a major direction toward general-purpose AI.
 2. **Limitations of Prior Work**: Existing evaluation frameworks (e.g., MME-Unify, UniEval) primarily assess understanding and generation separately, or simply combine the two task types, making it impossible to determine whether unified models truly achieve a "1+1>2" synergistic effect.
-3. **Root Cause**: The greatest value of unified models lies in the bidirectional gain between understanding and generation—using understanding to guide generation and using generation to assist understanding. However, no rigorous benchmark currently exists to verify whether this bidirectional synergy is genuine.
-4. **Paper Goals**: To design a benchmark that precisely measures the degree of capability synergy in unified models, answering the question of whether unification truly yields stronger performance than isolated capabilities.
-5. **Starting Point**: Tasks are designed such that they can only be completed by leveraging understanding–generation synergy, with stepwise evaluation protocols used to diagnose the source of performance bottlenecks.
+3. **Key Challenge**: The greatest value of unified models lies in the bidirectional gain between understanding and generation—using understanding to guide generation and using generation to assist understanding. However, no rigorous benchmark currently exists to verify whether this bidirectional synergy is genuine.
+4. **Goal**: To design a benchmark that precisely measures the degree of capability synergy in unified models, answering the question of whether unification truly yields stronger performance than isolated capabilities.
+5. **Key Insight**: Tasks are designed such that they can only be completed by leveraging understanding–generation synergy, with stepwise evaluation protocols used to diagnose the source of performance bottlenecks.
 6. **Core Idea**: Through carefully designed bidirectional synergy tasks and a direct/stepwise dual evaluation protocol, this work systematically examines for the first time whether unified models achieve genuine synergy between understanding and generation.
 
 ## Method

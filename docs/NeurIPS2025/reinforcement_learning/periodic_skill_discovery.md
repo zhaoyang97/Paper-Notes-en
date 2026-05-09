@@ -31,7 +31,7 @@ This paper proposes Periodic Skill Discovery (PSD), a framework that maps states
 
 ### Root Cause
 
-**State of the Field**: Unsupervised skill discovery is an important direction in reinforcement learning, aiming to learn diverse behaviors without relying on extrinsic rewards. However, existing methods overlook a fundamental issue:
+**Background**: Unsupervised skill discovery is an important direction in reinforcement learning, aiming to learn diverse behaviors without relying on extrinsic rewards. However, existing methods overlook a fundamental issue:
 
 **Ignoring the periodic nature of skills**: Most methods focus on maximizing mutual information between states and skills, or maximizing traversal distance in the latent space.
 

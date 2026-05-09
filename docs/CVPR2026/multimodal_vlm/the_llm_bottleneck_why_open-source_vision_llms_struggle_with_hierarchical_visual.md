@@ -30,7 +30,7 @@ This paper reveals that open-source LLMs lack hierarchical taxonomic knowledge a
 
 ### Root Cause
 
-**Root Cause**: Taxonomies are central to visual recognition — e.g., Boston Terrier → Terrier → Dog → Mammal → Animal forms a semantic path. An ideal general-purpose visual recognition system should be capable of mapping inputs to both leaf nodes and internal nodes of a taxonomy while maintaining hierarchical consistency.
+**Key Challenge**: Taxonomies are central to visual recognition — e.g., Boston Terrier → Terrier → Dog → Mammal → Animal forms a semantic path. An ideal general-purpose visual recognition system should be capable of mapping inputs to both leaf nodes and internal nodes of a taxonomy while maintaining hierarchical consistency.
 
 Vision LLMs (VLLMs) unify diverse visual tasks and hold the potential to build such systems, yet existing benchmarks focus primarily on leaf-node classification accuracy and overlook hierarchical consistency.
 
@@ -38,7 +38,7 @@ Core findings and contradictions:
 
 ### State of the Field
 
-**State of the Field**: Both open-source and commercial VLLMs exhibit severely inconsistent hierarchical recognition (e.g., Qwen2.5-VL-72B produces errors on 67%+ of paths in the iNaturalist taxonomy).
+**Background**: Both open-source and commercial VLLMs exhibit severely inconsistent hierarchical recognition (e.g., Qwen2.5-VL-72B produces errors on 67%+ of paths in the iNaturalist taxonomy).
 
 ### Limitations of Prior Work
 
@@ -46,7 +46,7 @@ Core findings and contradictions:
 
 ### Starting Point
 
-**Starting Point**: Fine-tuning VLLMs can help but does not fundamentally resolve the issue. Moreover, fine-tuning yields greater improvements in the LLM's textual hierarchical consistency than in the VLLM's visual hierarchical consistency, further confirming the LLM bottleneck effect.
+**Key Insight**: Fine-tuning VLLMs can help but does not fundamentally resolve the issue. Moreover, fine-tuning yields greater improvements in the LLM's textual hierarchical consistency than in the VLLM's visual hierarchical consistency, further confirming the LLM bottleneck effect.
 
 ## Method
 

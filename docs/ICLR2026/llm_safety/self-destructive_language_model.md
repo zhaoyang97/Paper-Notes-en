@@ -28,15 +28,15 @@ This paper proposes Seam, which couples the optimization trajectories of benign 
 
 ## Background & Motivation
 
-**State of the Field**: Aligned LLMs are highly vulnerable to harmful fine-tuning attacks — as few as 10 harmful samples and \$0.20 in API costs suffice to break GPT-3.5 Turbo's safety guardrails. Existing defenses (Vaccine, RepNoise, TAR, etc.) reinforce safety during the alignment stage, but all can be overcome by stronger attacks (larger learning rates, more harmful data).
+**Background**: Aligned LLMs are highly vulnerable to harmful fine-tuning attacks — as few as 10 harmful samples and \$0.20 in API costs suffice to break GPT-3.5 Turbo's safety guardrails. Existing defenses (Vaccine, RepNoise, TAR, etc.) reinforce safety during the alignment stage, but all can be overcome by stronger attacks (larger learning rates, more harmful data).
 
 **Limitations of Prior Work**: Existing defenses merely increase the "cost" of harmful fine-tuning without altering the model's "trainability" on harmful data — gradients from harmful data still effectively reduce fine-tuning loss.
 
-**Root Cause**: Defenders need the model to remain trainable during benign fine-tuning but untrainable during harmful fine-tuning — yet both use the same optimization mechanism. How can these two cases be distinguished?
+**Key Challenge**: Defenders need the model to remain trainable during benign fine-tuning but untrainable during harmful fine-tuning — yet both use the same optimization mechanism. How can these two cases be distinguished?
 
-**Paper Goals**: Design an intrinsic self-destruction mechanism such that harmful fine-tuning inevitably causes catastrophic general-purpose performance collapse.
+**Goal**: Design an intrinsic self-destruction mechanism such that harmful fine-tuning inevitably causes catastrophic general-purpose performance collapse.
 
-**Starting Point**: Couple the gradient directions of harmful and benign data to be opposite — so that harmful fine-tuning (gradient descent) automatically becomes gradient ascent on benign tasks, causing performance collapse.
+**Key Insight**: Couple the gradient directions of harmful and benign data to be opposite — so that harmful fine-tuning (gradient descent) automatically becomes gradient ascent on benign tasks, causing performance collapse.
 
 **Core Idea**: Make the gradient direction of harmful fine-tuning a "trap" for benign performance — the more fine-tuning, the more degraded the model becomes.
 

@@ -28,15 +28,15 @@ SMART-R1 is the first work to introduce R1-style reinforcement fine-tuning (RFT)
 
 ## Background & Motivation
 
-**State of the Field**: The dominant paradigm in multi-agent traffic simulation is autoregressive modeling based on Next-Token Prediction (NTP) (e.g., SMART), which generates joint agent behaviors by discretizing trajectories into motion tokens. Training typically follows a two-stage pipeline: behavior cloning (BC) pretraining followed by closed-loop SFT (CAT-K rollout).
+**Background**: The dominant paradigm in multi-agent traffic simulation is autoregressive modeling based on Next-Token Prediction (NTP) (e.g., SMART), which generates joint agent behaviors by discretizing trajectories into motion tokens. Training typically follows a two-stage pipeline: behavior cloning (BC) pretraining followed by closed-loop SFT (CAT-K rollout).
 
 **Limitations of Prior Work**: (a) The training objectives of BC and SFT (cross-entropy loss) are not directly aligned with the final evaluation metrics (collision rate, off-road rate, and other Realism Meta scores)—these metrics are scalar, sparse, and non-differentiable; (b) covariate shift in autoregressive generation leads to error accumulation in closed-loop simulation; (c) directly applying RL methods such as GRPO or PPO yields poor results, as they rely on comparative sampling or actor-critic architectures.
 
-**Root Cause**: There exists a gap between the training objective of NTP models (imitating the data distribution) and the evaluation objective (safety and realism metrics), while these evaluation metrics cannot be directly used as differentiable loss functions.
+**Key Challenge**: There exists a gap between the training objective of NTP models (imitating the data distribution) and the evaluation objective (safety and realism metrics), while these evaluation metrics cannot be directly used as differentiable loss functions.
 
-**Paper Goals**: How can non-differentiable evaluation metrics be incorporated into the training of NTP-based traffic simulation models?
+**Goal**: How can non-differentiable evaluation metrics be incorporated into the training of NTP-based traffic simulation models?
 
-**Starting Point**: Drawing inspiration from DeepSeek-R1's multi-stage training strategy, the paper designs an iterative "SFT→RFT→SFT" pipeline with a simplified policy optimization algorithm that directly aligns model training with evaluation metrics.
+**Key Insight**: Drawing inspiration from DeepSeek-R1's multi-stage training strategy, the paper designs an iterative "SFT→RFT→SFT" pipeline with a simplified policy optimization algorithm that directly aligns model training with evaluation metrics.
 
 **Core Idea**: Leverage known reward expectations to simplify advantage estimation, and apply SFT-RFT-SFT iteration to prevent catastrophic forgetting.
 

@@ -28,13 +28,13 @@ This paper proposes DBLoss—a general-purpose loss function based on exponentia
 
 ## Background & Motivation
 
-**State of the Field**: Long-term time series forecasting is a critical task in economics, transportation, energy, and related domains. Mainstream deep models (DLinear, TimesNet, iTransformer, etc.) commonly incorporate seasonality-trend decomposition modules in their forward passes to extract effective representations.
+**Background**: Long-term time series forecasting is a critical task in economics, transportation, energy, and related domains. Mainstream deep models (DLinear, TimesNet, iTransformer, etc.) commonly incorporate seasonality-trend decomposition modules in their forward passes to extract effective representations.
 
 **Limitations of Prior Work**: The standard MSE loss computes pointwise differences between predictions and ground truth directly, without explicitly constraining forecasting accuracy along the seasonal and trend dimensions. The authors identify three failure modes: (a) poor seasonal prediction but acceptable trend; (b) poor trend prediction but acceptable seasonality; (c) both components are poorly predicted. Even when a model performs decomposition in its forward pass, the loss function treats all errors uniformly.
 
-**Root Cause**: Decomposition in the forward pass provides useful inductive bias, yet the loss function does not exploit this prior—seasonal and trend components within the forecasting horizon are not supervised independently.
+**Key Challenge**: Decomposition in the forward pass provides useful inductive bias, yet the loss function does not exploit this prior—seasonal and trend components within the forecasting horizon are not supervised independently.
 
-**Starting Point**: Since decomposition is beneficial in the forward pass, why not apply it at the loss computation stage as well? The proposed approach decomposes both predictions and ground truth via EMA within the forecasting horizon, computes losses for the trend and seasonal components separately, and combines them via a weighted fusion.
+**Key Insight**: Since decomposition is beneficial in the forward pass, why not apply it at the loss computation stage as well? The proposed approach decomposes both predictions and ground truth via EMA within the forecasting horizon, computes losses for the trend and seasonal components separately, and combines them via a weighted fusion.
 
 **Core Idea**: DBLoss = EMA decomposition + component-level independent losses + scale alignment weighting mechanism, with zero additional parameters and compatibility with any backbone.
 

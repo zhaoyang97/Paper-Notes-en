@@ -29,13 +29,13 @@ This paper introduces ALE-Bench, the first AI benchmark targeting scored algorit
 
 ## Background & Motivation
 
-**State of the Field**: Programming benchmarks such as HumanEval, CodeContests, and LiveCodeBench focus on short-horizon, pass/fail exact-solution tasks. LLMs have approached top human performance on these benchmarks, and saturation is becoming a concern.
+**Background**: Programming benchmarks such as HumanEval, CodeContests, and LiveCodeBench focus on short-horizon, pass/fail exact-solution tasks. LLMs have approached top human performance on these benchmarks, and saturation is becoming a concern.
 
 **Limitations of Prior Work**: Real-world problems are filled with NP-hard optimization challenges—logistics routing, factory scheduling, power grid balancing—that admit no exact solutions. Human experts spend days or weeks iteratively refining heuristics such as simulated annealing and beam search. Existing programming benchmarks cannot evaluate AI on such "long-horizon, score-driven" tasks, as they measure only single-submission performance rather than iterative improvement.
 
-**Root Cause**: AtCoder Heuristic Contest (AHC) is one of the world's largest scored algorithm competitions, attracting roughly 1,000 participants per round who spend weeks iteratively optimizing their solutions. However, no systematic evaluation platform exists to assess AI performance under this paradigm of long-horizon reasoning combined with repeated trial and error.
+**Key Challenge**: AtCoder Heuristic Contest (AHC) is one of the world's largest scored algorithm competitions, attracting roughly 1,000 participants per round who spend weeks iteratively optimizing their solutions. However, no systematic evaluation platform exists to assess AI performance under this paradigm of long-horizon reasoning combined with repeated trial and error.
 
-**Starting Point**: This work standardizes 40 AHC problems into an AI-accessible benchmark, provides a Session-based interactive interface that simulates the real contest workflow (read problem → test run → visualize → submit), and designs ALE-Agent as a strong baseline. The core idea is to introduce "long-horizon iterative improvement capability" as a new evaluation dimension for AI systems.
+**Key Insight**: This work standardizes 40 AHC problems into an AI-accessible benchmark, provides a Session-based interactive interface that simulates the real contest workflow (read problem → test run → visualize → submit), and designs ALE-Agent as a strong baseline. The core idea is to introduce "long-horizon iterative improvement capability" as a new evaluation dimension for AI systems.
 
 ## Method
 

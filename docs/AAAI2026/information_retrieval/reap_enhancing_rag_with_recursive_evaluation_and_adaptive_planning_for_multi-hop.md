@@ -27,15 +27,15 @@ This paper proposes REAP, a dual-module iterative framework that addresses multi
 
 ## Background & Motivation
 
-**State of the Field**: RAG mitigates LLM hallucinations by incorporating external knowledge, yet multi-hop question answering (MHQA) requires integrating information across multiple documents. Existing iterative RAG methods (IRCoT, Iter-RetGen, etc.) adopt multi-round retrieval with stepwise reasoning; some approaches further introduce search algorithms such as MCTS to identify optimal reasoning trajectories.
+**Background**: RAG mitigates LLM hallucinations by incorporating external knowledge, yet multi-hop question answering (MHQA) requires integrating information across multiple documents. Existing iterative RAG methods (IRCoT, Iter-RetGen, etc.) adopt multi-round retrieval with stepwise reasoning; some approaches further introduce search algorithms such as MCTS to identify optimal reasoning trajectories.
 
 **Limitations of Prior Work**: (1) Lack of global planning — incrementally decomposing complex queries into sub-queries may lead to local reasoning dead ends; (2) Insufficient utilization of retrieved content — models tend to extract only direct answers while overlooking latent clues critical to the final answer; (3) Incorporating scorers or decision modules increases system complexity and reduces interpretability.
 
-**Root Cause**: Linear pipeline-style reasoning cannot handle reasoning failures or trajectory correction in multi-hop scenarios — when a reasoning step produces erroneous or incomplete information, no mechanism exists to detect and rectify the overall reasoning direction.
+**Key Challenge**: Linear pipeline-style reasoning cannot handle reasoning failures or trajectory correction in multi-hop scenarios — when a reasoning step produces erroneous or incomplete information, no mechanism exists to detect and rectify the overall reasoning direction.
 
-**Paper Goals**: To restructure multi-hop reasoning from a linear pipeline into a dynamic, state-driven loop that preserves a global perspective while enabling error detection and trajectory correction.
+**Goal**: To restructure multi-hop reasoning from a linear pipeline into a dynamic, state-driven loop that preserves a global perspective while enabling error detection and trajectory correction.
 
-**Starting Point**: Explicitly maintaining structured sub-task plans and fact lists, decoupling planning (SP) from fact collection (FE) while keeping the two tightly coordinated.
+**Key Insight**: Explicitly maintaining structured sub-task plans and fact lists, decoupling planning (SP) from fact collection (FE) while keeping the two tightly coordinated.
 
 **Core Idea**: SP provides a global planning perspective to guide reasoning direction, while FE supplies high-fidelity structured facts; the two form a self-correcting reasoning loop through recursive feedback.
 

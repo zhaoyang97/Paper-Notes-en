@@ -29,15 +29,15 @@ This paper proposes the first post-hoc, model-agnostic uncertainty quantificatio
 
 ## Background & Motivation
 
-**State of the Field**: Latent-space reduced-order models (ROMs) learn compact representations of high-dimensional physical systems in low-dimensional latent spaces and have demonstrated efficient simulation capabilities in complex fluid dynamics and related domains. In cloud microphysics, ROMs can replace traditional bulk parameterization schemes to simulate droplet collision–coalescence processes at significantly reduced computational cost.
+**Background**: Latent-space reduced-order models (ROMs) learn compact representations of high-dimensional physical systems in low-dimensional latent spaces and have demonstrated efficient simulation capabilities in complex fluid dynamics and related domains. In cloud microphysics, ROMs can replace traditional bulk parameterization schemes to simulate droplet collision–coalescence processes at significantly reduced computational cost.
 
 **Limitations of Prior Work**: Existing UQ methods for ROMs suffer from three major issues: (1) they are tied to specific architectures (e.g., variational autoencoders require dedicated probabilistic frameworks); (2) they require expensive retraining (e.g., ensemble methods); and (3) they rely on parametric distributional assumptions (e.g., Gaussianity). These limitations hinder practitioners from trusting ROM predictions and obstruct deployment in safety-critical scientific applications.
 
-**Root Cause**: ROMs aggressively compress dimensionality to achieve computational efficiency, yet no unified framework exists to characterize how structural errors from compression and approximation errors from latent dynamics propagate and interact. Uncertainty in cloud microphysics parameterizations is recognized as a primary source of uncertainty in future climate projections, yet existing schemes broadly lack UQ capability.
+**Key Challenge**: ROMs aggressively compress dimensionality to achieve computational efficiency, yet no unified framework exists to characterize how structural errors from compression and approximation errors from latent dynamics propagate and interact. Uncertainty in cloud microphysics parameterizations is recognized as a primary source of uncertainty in future climate projections, yet existing schemes broadly lack UQ capability.
 
-**Paper Goals**: To provide a post-hoc, model-agnostic UQ framework for arbitrary black-box latent-space ROMs — requiring no modification to the underlying architecture or training procedure — while enabling independent uncertainty quantification of each component in the ROM pipeline (encoder–decoder reconstruction, latent-space dynamics, and end-to-end prediction).
+**Goal**: To provide a post-hoc, model-agnostic UQ framework for arbitrary black-box latent-space ROMs — requiring no modification to the underlying architecture or training procedure — while enabling independent uncertainty quantification of each component in the ROM pipeline (encoder–decoder reconstruction, latent-space dynamics, and end-to-end prediction).
 
-**Starting Point**: Conformal prediction (CP) is leveraged for its distribution-free coverage guarantees and exchangeability assumptions, enabling statistically valid prediction intervals to be constructed separately for each of the three ROM components — achieving component-level UQ analysis for ROMs for the first time.
+**Key Insight**: Conformal prediction (CP) is leveraged for its distribution-free coverage guarantees and exchangeability assumptions, enabling statistically valid prediction intervals to be constructed separately for each of the three ROM components — achieving component-level UQ analysis for ROMs for the first time.
 
 **Core Idea**: Conformal prediction is applied as a post-hoc tool independently to each component of the ROM pipeline, simultaneously guaranteeing statistical coverage and enabling localization of uncertainty sources.
 

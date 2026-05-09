@@ -28,15 +28,15 @@ A Bayesian neural network (BNN)-based surrogate model is proposed to replace exp
 
 ## Background & Motivation
 
-**State of the Field**: A large number of bridges worldwide are aging, with many having exceeded their design service life. Asset managers must decide which bridges require strengthening or replacement. Current assessment practice follows a levels-of-approximation approach—starting with conservative simplified analyses, then commissioning detailed NLFEA if compliance cannot be verified.
+**Background**: A large number of bridges worldwide are aging, with many having exceeded their design service life. Asset managers must decide which bridges require strengthening or replacement. Current assessment practice follows a levels-of-approximation approach—starting with conservative simplified analyses, then commissioning detailed NLFEA if compliance cannot be verified.
 
 **Limitations of Prior Work**: Although NLFEA is accurate, each bridge requires approximately 25 minutes of computation and substantial manual modeling effort, making it unscalable to the portfolio level. Moreover, the benefit of NLFEA is unknown a priori—it sometimes only confirms, at high cost, what the simplified method already concluded.
 
-**Root Cause**: A fundamental tension exists between assessment accuracy and scalability. Managers must either apply simplified analyses to all bridges (potentially triggering unnecessary strengthening) or selectively commission NLFEA without knowing which bridges would benefit most.
+**Key Challenge**: A fundamental tension exists between assessment accuracy and scalability. Managers must either apply simplified analyses to all bridges (potentially triggering unnecessary strengthening) or selectively commission NLFEA without knowing which bridges would benefit most.
 
-**Paper Goals**: To rapidly predict the structural compliance factor for each bridge without running expensive NLFEA, while quantifying predictive uncertainty to enable risk-based prioritization.
+**Goal**: To rapidly predict the structural compliance factor for each bridge without running expensive NLFEA, while quantifying predictive uncertainty to enable risk-based prioritization.
 
-**Starting Point**: BNNs are employed as surrogates for NLFEA, leveraging a parametric simulation pipeline to generate large-scale training data, with posterior uncertainty guiding decision-making.
+**Key Insight**: BNNs are employed as surrogates for NLFEA, leveraging a parametric simulation pipeline to generate large-scale training data, with posterior uncertainty guiding decision-making.
 
 **Core Idea**: Train a BNN surrogate to predict the probability distribution of bridge compliance factors, and implement a three-color triage strategy (red/orange/green) for rapid portfolio-level screening.
 

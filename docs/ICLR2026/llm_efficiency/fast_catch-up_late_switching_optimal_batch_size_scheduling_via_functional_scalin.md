@@ -28,15 +28,15 @@ This paper derives the optimal batch size scheduling (BSS) strategy under a Func
 
 ## Background & Motivation
 
-**State of the Field**: Large-batch training is standard in LLM pretraining (GPT-3, LLaMA-3, DeepSeek-V3, etc.). While large batches improve hardware utilization, they sacrifice sample efficiency. Staged batch size increase is widely adopted in practice, yet lacks a solid theoretical foundation.
+**Background**: Large-batch training is standard in LLM pretraining (GPT-3, LLaMA-3, DeepSeek-V3, etc.). While large batches improve hardware utilization, they sacrifice sample efficiency. Staged batch size increase is widely adopted in practice, yet lacks a solid theoretical foundation.
 
 **Limitations of Prior Work**: (a) Existing analyses either focus solely on constant batch sizes (critical batch size theory) or rely on heuristics (Smith et al., 2018); (b) BSS design depends on expensive large-scale hyperparameter tuning; (c) there is no theoretical explanation for why a "small-then-large" batch schedule is effective in practice.
 
-**Root Cause**: Early in training, signal dominates, so the noise-reduction benefit of large batches is marginal yet consumes more data. Late in training, gradient noise increases and large batches are needed for denoising. However, when and how to switch lacks theoretical grounding.
+**Key Challenge**: Early in training, signal dominates, so the noise-reduction benefit of large batches is marginal yet consumes more data. Late in training, gradient noise increases and large batches are needed for denoising. However, when and how to switch lacks theoretical grounding.
 
-**Paper Goals**: (a) Derive the optimal BSS under a fixed data budget; (b) explain why late switching is effective; (c) validate theoretical predictions in large-scale LLM pretraining.
+**Goal**: (a) Derive the optimal BSS under a fixed data budget; (b) explain why late switching is effective; (c) validate theoretical predictions in large-scale LLM pretraining.
 
-**Starting Point**: The FSL framework is used to reformulate BSS optimization as a variationally solvable problem with closed-form solutions.
+**Key Insight**: The FSL framework is used to reformulate BSS optimization as a variationally solvable problem with closed-form solutions.
 
 **Core Idea**: FSL shows that the optimal BSS depends on task difficulty—hard tasks should use small batches for most of training (to take more steps and learn the signal) and switch to large batches only at the end (for rapid denoising), with the fast catch-up effect guaranteeing that the loss quickly recovers after switching.
 

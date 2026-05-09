@@ -28,15 +28,15 @@ GASP introduces "goalposts" (hard target problems) into asymmetric self-play to 
 
 ## Background & Motivation
 
-**State of the Field**: Asymmetric self-play (e.g., Absolute Zero/AZR) enables LLMs to simultaneously act as teacher (problem proposer) and student (problem solver), achieving open-ended training without human-annotated data. RLVR trains code/math reasoning capabilities via verifiable rewards.
+**Background**: Asymmetric self-play (e.g., Absolute Zero/AZR) enables LLMs to simultaneously act as teacher (problem proposer) and student (problem solver), achieving open-ended training without human-annotated data. RLVR trains code/math reasoning capabilities via verifiable rewards.
 
 **Limitations of Prior Work**: Existing self-play is goal-agnostic — the teacher focuses solely on the learnability of problems (neither too easy nor too hard) without considering whether the generated problems are "interesting" or "beneficial for downstream tasks." Consequently, many hard problems at the learning frontier do not contribute meaningfully to improving the model's practical programming ability.
 
-**Root Cause**: Self-play requires exploring difficult problems to advance the capability frontier, but unguided exploration is inefficient — many "hard" problems are artificially constructed and do not represent genuine programming challenges.
+**Key Challenge**: Self-play requires exploring difficult problems to advance the capability frontier, but unguided exploration is inefficient — many "hard" problems are artificially constructed and do not represent genuine programming challenges.
 
-**Paper Goals**: (1) Can real-world hard problems guide self-play? (2) Does such guidance improve downstream programming performance?
+**Goal**: (1) Can real-world hard problems guide self-play? (2) Does such guidance improve downstream programming performance?
 
-**Starting Point**: Hard problems from the training set that remain unsolved after RLVR training are selected as "goalposts." The teacher is guided to generate simplified versions (lemmas) of these goalposts, and then harder variants (lifts) from the lemmas, forming a curriculum that progressively approaches the target.
+**Key Insight**: Hard problems from the training set that remain unsolved after RLVR training are selected as "goalposts." The teacher is guided to generate simplified versions (lemmas) of these goalposts, and then harder variants (lifts) from the lemmas, forming a curriculum that progressively approaches the target.
 
 **Core Idea**: Use real hard problems as goalposts to guide the self-play teacher, and progressively break through the capability frontier via a lemma–lift stepping-stone curriculum.
 

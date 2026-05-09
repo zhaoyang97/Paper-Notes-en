@@ -27,15 +27,15 @@ content_hash: e64597a4d3798c08
 This paper introduces the first benchmark for evaluating LLM agents on discovering and patching novel zero-day vulnerabilities. By transplanting real CVEs into different codebases, the authors construct 22 novel high-severity vulnerability tasks and evaluate agent capability across 5 information-visibility levels. The strongest model achieves only a 14.4% pass rate at the zero-day level, indicating that autonomous vulnerability discovery remains a significant challenge.
 
 ## Background & Motivation
-**State of the Field**: LLMs have shown improvements on code security tasks, but existing benchmarks rely on publicly disclosed CVEs that may have appeared in training data, introducing data leakage concerns.
+**Background**: LLMs have shown improvements on code security tasks, but existing benchmarks rely on publicly disclosed CVEs that may have appeared in training data, introducing data leakage concerns.
 
 **Limitations of Prior Work**: There is no effective means to assess whether agents genuinely *understand* vulnerabilities versus merely *memorizing* known fixes.
 
-**Root Cause**: Evaluating responses to previously unseen vulnerabilities requires novel vulnerability instances, yet constructing such instances at scale is inherently difficult.
+**Key Challenge**: Evaluating responses to previously unseen vulnerabilities requires novel vulnerability instances, yet constructing such instances at scale is inherently difficult.
 
-**Paper Goals**: Construct a set of novel vulnerabilities guaranteed to be absent from training data and evaluate agents' patching capability under varying levels of information visibility.
+**Goal**: Construct a set of novel vulnerabilities guaranteed to be absent from training data and evaluate agents' patching capability under varying levels of information visibility.
 
-**Starting Point**: Transplant known CVE vulnerability patterns into functionally similar but syntactically distinct target projects.
+**Key Insight**: Transplant known CVE vulnerability patterns into functionally similar but syntactically distinct target projects.
 
 **Core Idea**: CVE transplantation + 5-level information visibility + pentest-based verification = rigorous zero-day vulnerability evaluation.
 

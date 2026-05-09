@@ -29,7 +29,7 @@ This paper proposes Chroma — a portfolio framework of small pretrained time se
 
 ## Background & Motivation
 
-**State of the Field**: Time series foundation models (Chronos, TimesFM, Moirai) follow the "bigger is better" scaling paradigm — increasing model parameters (10M–500M) and training data to improve zero-shot forecasting. However, large models incur high training and inference costs, limiting practical deployment.
+**Background**: Time series foundation models (Chronos, TimesFM, Moirai) follow the "bigger is better" scaling paradigm — increasing model parameters (10M–500M) and training data to improve zero-shot forecasting. However, large models incur high training and inference costs, limiting practical deployment.
 
 **Limitations of Prior Work**:
 
@@ -38,9 +38,9 @@ This paper proposes Chroma — a portfolio framework of small pretrained time se
 3. The only available mechanism for leveraging additional test-time computation is fine-tuning → costly and slow due to gradient updates.
 4. Model combination strategies (ensemble/selection) well-validated in NLP/CV have not been applied to time series foundation models.
 
-**Root Cause**: In the generalization error of foundation models, bias dominates over variance → traditional ensembling's variance reduction is of limited benefit → bias on specific sub-domains must be reduced through specialization, followed by intelligent combination to achieve overall bias reduction.
+**Key Challenge**: In the generalization error of foundation models, bias dominates over variance → traditional ensembling's variance reduction is of limited benefit → bias on specific sub-domains must be reduced through specialization, followed by intelligent combination to achieve overall bias reduction.
 
-**Paper Goals**: Rather than training one large general-purpose model, train multiple small expert models → intelligently select or combine them at test time based on validation set performance.
+**Goal**: Rather than training one large general-purpose model, train multiple small expert models → intelligently select or combine them at test time based on validation set performance.
 
 ## Method
 

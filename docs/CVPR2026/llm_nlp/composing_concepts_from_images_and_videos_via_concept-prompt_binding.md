@@ -27,15 +27,15 @@ content_hash: 0010ee5a0994a710
 Bind & Compose (BiCo) is a one-shot method that binds visual concepts to prompt tokens via hierarchical binders and achieves flexible image-video concept composition through token-level composition, comprehensively outperforming prior work in concept consistency, prompt fidelity, and motion quality.
 
 ## Background & Motivation
-**State of the Field**: Visual concept composition aims to integrate elements from different images and videos into a coherent output, serving as a fundamental capability for visual creation and filmmaking. With the development of DiT-architecture T2V diffusion models (e.g., Wan2.1), concept localization and customization capabilities have significantly improved.
+**Background**: Visual concept composition aims to integrate elements from different images and videos into a coherent output, serving as a fundamental capability for visual creation and filmmaking. With the development of DiT-architecture T2V diffusion models (e.g., Wan2.1), concept localization and customization capabilities have significantly improved.
 
 **Limitations of Prior Work**: (i) Insufficient concept extraction precision — existing methods (LoRA/learnable embedding + masks) struggle to disentangle complex concepts with occlusion and temporal variation, and cannot extract non-object concepts (e.g., style); (ii) Limited image-video concept composition flexibility — prior work is restricted to subject from images + motion from videos, unable to flexibly compose arbitrary attributes (visual style, lighting changes, etc.).
 
-**Root Cause**: The challenges of precise concept decomposition (without mask input) and cross-modal concept composition (image + video) are mutually coupled.
+**Key Challenge**: The challenges of precise concept decomposition (without mask input) and cross-modal concept composition (image + video) are mutually coupled.
 
-**Paper Goals**: Enable flexible extraction and composition of arbitrary visual concepts (including non-object concepts such as style and motion) from images and videos.
+**Goal**: Enable flexible extraction and composition of arbitrary visual concepts (including non-object concepts such as style and motion) from images and videos.
 
-**Starting Point**: Leverage T2V diffusion models' concept localization capability by binding text tokens to corresponding visual concepts (one-shot training), then compose concepts through token-level composition.
+**Key Insight**: Leverage T2V diffusion models' concept localization capability by binding text tokens to corresponding visual concepts (one-shot training), then compose concepts through token-level composition.
 
 **Core Idea**: First bind visual concepts to prompt tokens (Bind), then select bound tokens from different sources and compose them into the target prompt (Compose), achieved through hierarchical binder structures + diversified absorption mechanism + temporal decoupling strategy.
 

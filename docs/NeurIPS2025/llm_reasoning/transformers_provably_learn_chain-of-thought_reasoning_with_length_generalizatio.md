@@ -28,15 +28,15 @@ This paper provides the first optimization-theoretic proof that a one-layer Tran
 
 ## Background & Motivation
 
-**State of the Field**: Chain-of-thought (CoT) reasoning is a key technique enabling modern LLMs to tackle complex tasks by generating intermediate reasoning steps that exceed the model's single-step processing capacity. Theoretically, it is known that Transformers with CoT can express $\mathsf{NC}^1$-level problems, surpassing the $\mathsf{TC}^0$ limitation of CoT-free models.
+**Background**: Chain-of-thought (CoT) reasoning is a key technique enabling modern LLMs to tackle complex tasks by generating intermediate reasoning steps that exceed the model's single-step processing capacity. Theoretically, it is known that Transformers with CoT can express $\mathsf{NC}^1$-level problems, surpassing the $\mathsf{TC}^0$ limitation of CoT-free models.
 
 **Limitations of Prior Work**: Existing theoretical work either studies expressiveness alone ("can it represent?") without addressing optimization ("can it be learned?"), or proves convergence guarantees only for simple $\mathsf{TC}^0$ tasks such as parity. A critical gap remains: no prior work has proven that Transformers can learn, through training, to produce CoT that generalizes to longer inputs.
 
-**Root Cause**: Expressiveness results do not imply learnability. Even if a set of weights exists that enables a Transformer with CoT to solve a problem, it is unclear whether gradient descent can find those weights and whether the resulting model generalizes to longer inputs.
+**Key Challenge**: Expressiveness results do not imply learnability. Even if a set of weights exists that enables a Transformer with CoT to solve a problem, it is unclear whether gradient descent can find those weights and whether the resulting model generalizes to longer inputs.
 
-**Paper Goals**: To provide rigorous convergence and length generalization guarantees for Transformers learning CoT reasoning via gradient descent, at the complexity level of $\mathsf{NC}^1$.
+**Goal**: To provide rigorous convergence and length generalization guarantees for Transformers learning CoT reasoning via gradient descent, at the complexity level of $\mathsf{NC}^1$.
 
-**Starting Point**: The authors focus on LEGO (a group-operation-based state-tracking task) as the theoretical benchmark. LEGO is a canonical problem separating $\mathsf{TC}^0$ from $\mathsf{NC}^1$ and possesses rich algebraic structure that can be exploited analytically.
+**Key Insight**: The authors focus on LEGO (a group-operation-based state-tracking task) as the theoretical benchmark. LEGO is a canonical problem separating $\mathsf{TC}^0$ from $\mathsf{NC}^1$ and possesses rich algebraic structure that can be exploited analytically.
 
 **Core Idea**: The *attention concentration* mechanism links the retrieval robustness of the attention layer to the algebraic structure of the state-tracking task, showing that the group structure determines the extent of length generalization.
 

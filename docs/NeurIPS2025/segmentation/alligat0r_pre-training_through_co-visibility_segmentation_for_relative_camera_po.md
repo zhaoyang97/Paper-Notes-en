@@ -27,18 +27,18 @@ content_hash: 132783bbc1a198f7
 This paper replaces CroCo's cross-view completion with covisibility segmentation as a stereo vision pre-training task, predicting per-pixel labels of "co-visible / occluded / out-of-view" for each pixel. The approach significantly outperforms CroCo in low-overlap scenarios and achieves a first-place overall success rate of 60.3% on the RUBIK benchmark.
 
 ## Background & Motivation
-**State of the Field**: CroCo pioneered cross-view completion as a pre-training task for 3D vision and has been adopted by foundational models such as DUSt3R and MASt3R.
+**Background**: CroCo pioneered cross-view completion as a pre-training task for 3D vision and has been adopted by foundational models such as DUSt3R and MASt3R.
 
 **Limitations of Prior Work**:
    - Cross-view completion in CroCo is ill-posed in non-co-visible regions — occluded or out-of-view pixels cannot be reconstructed from the other view.
    - CroCo requires image pairs with at least 50% overlap, limiting the diversity of training data.
    - The model learns ambiguous reconstructions in non-co-visible regions, wasting model capacity.
 
-**Root Cause**: Cross-view completion is meaningless in non-co-visible regions, yet low-overlap image pairs are abundant in real-world scenarios.
+**Key Challenge**: Cross-view completion is meaningless in non-co-visible regions, yet low-overlap image pairs are abundant in real-world scenarios.
 
-**Paper Goals**: Design a pre-training task that provides effective supervision in both co-visible and non-co-visible regions.
+**Goal**: Design a pre-training task that provides effective supervision in both co-visible and non-co-visible regions.
 
-**Starting Point**: Shift from "reconstruction" to "classification" — rather than reconstructing pixel values, predict the covisibility state of each pixel.
+**Key Insight**: Shift from "reconstruction" to "classification" — rather than reconstructing pixel values, predict the covisibility state of each pixel.
 
 **Core Idea**: Replace cross-view completion with three-class covisibility segmentation, providing clear training signal across all regions.
 

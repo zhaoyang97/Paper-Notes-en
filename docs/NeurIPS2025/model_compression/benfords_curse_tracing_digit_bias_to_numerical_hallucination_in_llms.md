@@ -28,15 +28,15 @@ This paper demonstrates that numerical hallucinations in LLMs originate from the
 
 ## Background & Motivation
 
-**State of the Field**: LLMs frequently fail at basic numerical reasoning tasks (arithmetic, sequence prediction), systematically generating digits biased toward smaller values. This "numerical hallucination" severely limits LLM applicability in domains requiring precise numerical outputs, such as finance and scientific computing.
+**Background**: LLMs frequently fail at basic numerical reasoning tasks (arithmetic, sequence prediction), systematically generating digits biased toward smaller values. This "numerical hallucination" severely limits LLM applicability in domains requiring precise numerical outputs, such as finance and scientific computing.
 
 **Limitations of Prior Work**: Previous research has focused on reasoning chain errors or tokenization issues without tracing the problem back to the digit distribution bias inherent in the training data itself. Methods such as Chain-of-Thought improve reasoning but cannot correct the underlying digit generation bias.
 
-**Root Cause**: Real-world data naturally conforms to Benford's Law (the leading digit 1 appears with ~30.1% probability), whereas numerical reasoning tasks require a uniform digit generation capability. The statistical properties of pretraining data are internalized by the model as a systematic bias.
+**Key Challenge**: Real-world data naturally conforms to Benford's Law (the leading digit 1 appears with ~30.1% probability), whereas numerical reasoning tasks require a uniform digit generation capability. The statistical properties of pretraining data are internalized by the model as a systematic bias.
 
-**Paper Goals**: (a) Demonstrate that LLM numerical bias genuinely originates from the Benford distribution in training data; (b) localize the specific neurons responsible for the bias; (c) explore lightweight correction methods.
+**Goal**: (a) Demonstrate that LLM numerical bias genuinely originates from the Benford distribution in training data; (b) localize the specific neurons responsible for the bias; (c) explore lightweight correction methods.
 
-**Starting Point**: The Logit Lens technique is employed to trace the evolution of digit preferences across Transformer layers, revealing that the bias concentrates in FFN modules of later layers rather than in attention modules. The DSC metric is used to precisely identify biased neurons.
+**Key Insight**: The Logit Lens technique is employed to trace the evolution of digit preferences across Transformer layers, revealing that the bias concentrates in FFN modules of later layers rather than in attention modules. The DSC metric is used to precisely identify biased neurons.
 
 **Core Idea**: Benford-distributed training data → digit-selective neurons in later FFN layers → systematic numerical hallucination → DSC localization + targeted pruning correction.
 

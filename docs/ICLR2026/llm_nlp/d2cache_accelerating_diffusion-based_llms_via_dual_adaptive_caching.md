@@ -28,15 +28,15 @@ This paper proposes d²Cache, a training-free approximate KV cache framework for
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion-based LLMs (dLLMs, e.g., LLaDA, Dream) generate text through iterative denoising with bidirectional attention, competing with autoregressive models (ARMs) on reasoning and instruction-following tasks.
+**Background**: Diffusion-based LLMs (dLLMs, e.g., LLaDA, Dream) generate text through iterative denoising with bidirectional attention, competing with autoregressive models (ARMs) on reasoning and instruction-following tasks.
 
 **Limitations of Prior Work**: dLLMs employ bidirectional attention, where updating any masked token at each step changes the context for all tokens, rendering **standard KV caching entirely inapplicable**—the full KV states of the entire sequence must be recomputed at every step. Existing approximate KV cache methods (dLLM-Cache, Fast-dLLM) operate at a coarse granularity, partitioning the sequence into static/dynamic segments with fixed update windows, resulting in insufficient flexibility or complex hyperparameter tuning.
 
-**Root Cause**: The bidirectional attention mechanism in dLLMs provides contextual modeling advantages at the cost of the natural KV cache acceleration enjoyed by ARMs. The key challenge is recovering cache-based acceleration without degrading generation quality.
+**Key Challenge**: The bidirectional attention mechanism in dLLMs provides contextual modeling advantages at the cost of the natural KV cache acceleration enjoyed by ARMs. The key challenge is recovering cache-based acceleration without degrading generation quality.
 
-**Paper Goals**: Design a fine-grained, adaptive KV cache strategy that precisely identifies which tokens truly require KV updates at each step.
+**Goal**: Design a fine-grained, adaptive KV cache strategy that precisely identifies which tokens truly require KV updates at each step.
 
-**Starting Point**: Fine-grained analysis reveals that the KV states of masked tokens undergo three phases (slow change → rapid change → stabilization), requiring updates only during the rapid-change phase; prompt/decoded tokens exhibit highly concentrated attention, necessitating updates only for high-attention tokens.
+**Key Insight**: Fine-grained analysis reveals that the KV states of masked tokens undergo three phases (slow change → rapid change → stabilization), requiring updates only during the rapid-change phase; prompt/decoded tokens exhibit highly concentrated attention, necessitating updates only for high-attention tokens.
 
 **Core Idea**: A two-stage fine-grained token selection scheme—Stage 1 selects masked tokens via deterministic priors, Stage 2 selects remaining tokens by attention scores—updating KV states for only a small subset of critical tokens per step while reusing cached states for all others.
 

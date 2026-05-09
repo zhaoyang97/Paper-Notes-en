@@ -29,15 +29,15 @@ By comparing the correctness-prediction performance of self-probes (using a mode
 
 ## Background & Motivation
 
-**State of the Field**: Recent work has shown that LLMs encode meta-information about their outputs in internal hidden states, including entity recognition, temperature reasoning, and epistemic state representations. A central question is whether LLMs possess "privileged knowledge" about answer correctness—i.e., internal correctness signals inaccessible to external observers. Prior work has demonstrated that linear probes can predict output correctness from hidden states with high accuracy.
+**Background**: Recent work has shown that LLMs encode meta-information about their outputs in internal hidden states, including entity recognition, temperature reasoning, and epistemic state representations. A central question is whether LLMs possess "privileged knowledge" about answer correctness—i.e., internal correctness signals inaccessible to external observers. Prior work has demonstrated that linear probes can predict output correctness from hidden states with high accuracy.
 
 **Limitations of Prior Work**: The literature contains contradictory conclusions regarding the existence of privileged knowledge. Some studies argue that probes primarily detect retrieval activation patterns rather than correctness signals, and that external models can match the predictive performance of self-probes, suggesting privileged knowledge does not exist. Others find that models internally encode signals for the correct answer even when generating incorrect responses.
 
-**Root Cause**: Conclusions that "privileged knowledge does not exist" may stem from confounded evaluation—when external models can exploit shared correctness patterns as proxy signals, any genuine privileged knowledge may be obscured.
+**Key Challenge**: Conclusions that "privileged knowledge does not exist" may stem from confounded evaluation—when external models can exploit shared correctness patterns as proxy signals, any genuine privileged knowledge may be obscured.
 
-**Paper Goals**: To design a rigorous experimental framework that resolves this debate and determines whether LLMs truly possess privileged knowledge about their own correctness.
+**Goal**: To design a rigorous experimental framework that resolves this debate and determines whether LLMs truly possess privileged knowledge about their own correctness.
 
-**Starting Point**: The authors identify inter-model agreement as the key confounding factor. Since models assign identical correct/incorrect labels on approximately 80% of questions, external probes can leverage the external model's own correctness patterns as a proxy for the target model's behavior. Constructing a "disagreement subset"—questions on which models produce opposite labels—eliminates this confound.
+**Key Insight**: The authors identify inter-model agreement as the key confounding factor. Since models assign identical correct/incorrect labels on approximately 80% of questions, external probes can leverage the external model's own correctness patterns as a proxy for the target model's behavior. Constructing a "disagreement subset"—questions on which models produce opposite labels—eliminates this confound.
 
 **Core Idea**: On the full test set, self-probes and external probes perform comparably (no privileged advantage). On the disagreement subset, however, a substantial privileged advantage (~5%) emerges in factual tasks but not in mathematical reasoning, establishing that privileged knowledge is domain-specific.
 

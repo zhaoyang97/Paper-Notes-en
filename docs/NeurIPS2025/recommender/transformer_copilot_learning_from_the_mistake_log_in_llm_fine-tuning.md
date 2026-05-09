@@ -28,18 +28,18 @@ This paper proposes the Transformer Copilot framework, which systematically reco
 
 ## Background & Motivation
 
-**State of the Field**: Supervised fine-tuning (SFT) is the standard approach for adapting LLMs to specific domains. However, fine-tuned models still suffer from train-test misalignment at inference time — they cannot fully capture task-specific nuances or may overfit certain patterns in the training data.
+**Background**: Supervised fine-tuning (SFT) is the standard approach for adapting LLMs to specific domains. However, fine-tuned models still suffer from train-test misalignment at inference time — they cannot fully capture task-specific nuances or may overfit certain patterns in the training data.
 
 **Limitations of Prior Work**:
 - Standard SFT updates parameters via loss gradients, discarding each error immediately after consumption; the model retains no explicit memory of *where*, *how*, or *why* it erred.
 - Data-side interventions (self-refinement) and external feedback (RLHF, Reflexion) require additional data or human annotation.
 - The final fine-tuned parameters $\theta_T^P$ contain no error information from the training trajectory — these valuable learning signals are wasted.
 
-**Root Cause**: SFT optimizes parameters to minimize loss, but parameter updates are "use-and-discard" — the model may repeatedly make similar errors on the same class of problems because it lacks an explicit error-reflection mechanism.
+**Key Challenge**: SFT optimizes parameters to minimize loss, but parameter updates are "use-and-discard" — the model may repeatedly make similar errors on the same class of problems because it lacks an explicit error-reflection mechanism.
 
-**Paper Goals**: Rather than modifying the Pilot model's training process, leverage intermediate signals recorded during training (the Mistake Log) to assist correction at inference time.
+**Goal**: Rather than modifying the Pilot model's training process, leverage intermediate signals recorded during training (the Mistake Log) to assist correction at inference time.
 
-**Starting Point**: Analogous to the "mistake notebook" reflection mechanism in human learning — recording errors, analyzing their causes, and using them as reminders during evaluation.
+**Key Insight**: Analogous to the "mistake notebook" reflection mechanism in human learning — recording errors, analyzing their causes, and using them as reminders during evaluation.
 
 **Core Idea**: Systematically record the model's error patterns (inputs, internal states, token-level errors) during fine-tuning, train an auxiliary Copilot to learn these patterns, and rectify the Pilot's logits at inference time.
 

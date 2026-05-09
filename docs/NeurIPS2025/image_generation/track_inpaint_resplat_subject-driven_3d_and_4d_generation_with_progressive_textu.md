@@ -39,9 +39,9 @@ Existing 3D/4D generation methods (e.g., LGM, L4GM, TRELLIS, Hunyuan3D) primaril
 
 **Native 3D generation** (TRELLIS, Hunyuan3D-v2.5, etc.): Despite high efficiency, still fail to satisfactorily preserve the identity of the reference image.
 
-**Root Cause**: A fundamental tension exists between efficient 3D generation and identity preservation. Existing methods must hallucinate unseen regions in a single forward pass from limited input views, offering little precise control over subject identity.
+**Key Challenge**: A fundamental tension exists between efficient 3D generation and identity preservation. Existing methods must hallucinate unseen regions in a single forward pass from limited input views, offering little precise control over subject identity.
 
-**Starting Point**: Rather than improving 3D generation models directly, this work treats them as initialization and leverages powerful 2D video tracking and inpainting tools to progressively repair incorrect regions in 3D assets — an approach **orthogonal and complementary** to existing feed-forward 3D generation methods.
+**Key Insight**: Rather than improving 3D generation models directly, this work treats them as initialization and leverages powerful 2D video tracking and inpainting tools to progressively repair incorrect regions in 3D assets — an approach **orthogonal and complementary** to existing feed-forward 3D generation methods.
 
 ## Method
 

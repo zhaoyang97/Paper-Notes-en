@@ -27,15 +27,15 @@ content_hash: 499694b29315e687
 Mozart is an algorithm-hardware co-design framework that achieves over 1.9× training speedup on three MoE-LLMs via expert clustering and allocation, fine-grained streaming scheduling, and a 3.5D chiplet architecture (NoP-Tree + hierarchical memory).
 
 ## Background & Motivation
-**State of the Field**: MoE architectures enable efficient scaling through sparse activation (e.g., Mixtral-8x7B, DeepSeek-MoE), yet their sparsity introduces significant challenges for hardware deployment, including poor memory locality, high communication overhead, and uneven utilization of compute resources.
+**Background**: MoE architectures enable efficient scaling through sparse activation (e.g., Mixtral-8x7B, DeepSeek-MoE), yet their sparsity introduces significant challenges for hardware deployment, including poor memory locality, high communication overhead, and uneven utilization of compute resources.
 
 **Limitations of Prior Work**: (1) Existing chiplet solutions are mostly sub-wafer designs and do not support wafer-scale integration; (2) they adopt coarse-grained static workload partitioning that assumes dense and uniform computation, which is ill-suited to the dynamic sparsity of MoE; (3) all-to-all communication in expert parallelism remains a critical bottleneck.
 
-**Root Cause**: There is a lack of alignment between the logical modularity of MoE and the physical modularity of hardware — frequently co-activated experts may be mapped to distant compute units.
+**Key Challenge**: There is a lack of alignment between the logical modularity of MoE and the physical modularity of hardware — frequently co-activated experts may be mapped to distant compute units.
 
-**Paper Goals**: Design a chiplet architecture and scheduling algorithm that matches the modular nature of MoE, reducing communication overhead and improving resource utilization.
+**Goal**: Design a chiplet architecture and scheduling algorithm that matches the modular nature of MoE, reducing communication overhead and improving resource utilization.
 
-**Starting Point**: Drawing an analogy to the modular organization of the human brain — specialized modules handle distinct tasks while neighboring regions coordinate with low latency. Expert activation priors (activation frequency + co-activation patterns) are analyzed to guide expert-to-chiplet mapping.
+**Key Insight**: Drawing an analogy to the modular organization of the human brain — specialized modules handle distinct tasks while neighboring regions coordinate with low latency. Expert activation priors (activation frequency + co-activation patterns) are analyzed to guide expert-to-chiplet mapping.
 
 **Core Idea**: Leveraging expert co-activation priors, frequently co-activated experts are clustered onto the same chiplet group, complemented by a 3.5D NoP-Tree topology and streaming scheduling to enable efficient MoE training.
 

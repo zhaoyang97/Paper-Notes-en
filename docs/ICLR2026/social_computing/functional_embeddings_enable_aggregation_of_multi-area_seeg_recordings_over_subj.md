@@ -33,7 +33,7 @@ This paper proposes FunctionalMap, a framework that learns subject-agnostic func
 
 ### Limitations of Prior Work
 
-**State of the Field**: Cross-subject modeling of intracranial neural recordings (e.g., SEEG/DBS) faces two core challenges:
+**Background**: Cross-subject modeling of intracranial neural recordings (e.g., SEEG/DBS) faces two core challenges:
 
 **Anatomical variability and inconsistent electrode coverage**: The number, location, and coverage of electrodes vary according to clinical requirements. Standard MNI atlas alignment assumes spatial correspondence equals functional similarity, yet **recordings at matched anatomical coordinates often capture different functional roles**, and in extreme cases, entirely different brain regions.
 

@@ -29,11 +29,11 @@ AutoQD is proposed to embed policy occupancy measures into a finite-dimensional 
 
 ## Background & Motivation
 
-**State of the Field**: Quality-Diversity (QD) algorithms aim to discover a collection of policies that are both high-quality and behaviorally diverse, achieving success in robotic locomotion, game level generation, and protein design. QD-RL integrates QD principles into sequential decision-making, maintaining an archive where each cell stores the highest-return policy within a specific behavioral region.
+**Background**: Quality-Diversity (QD) algorithms aim to discover a collection of policies that are both high-quality and behaviorally diverse, achieving success in robotic locomotion, game level generation, and protein design. QD-RL integrates QD principles into sequential decision-making, maintaining an archive where each cell stores the highest-return policy within a specific behavioral region.
 
 **Limitations of Prior Work**: QD algorithms are highly dependent on **hand-crafted behavior descriptors (BDs)**—functions mapping policies to low-dimensional vectors (e.g., foot contact patterns of a bipedal robot). Designing BDs manually requires extensive domain knowledge and restricts diversity search to predefined dimensions, potentially missing interesting behavioral variants. Existing unsupervised methods (e.g., AURORA using autoencoders for BD learning) lack theoretical guarantees, while skill discovery methods such as DIAYN/SMERL require pre-specifying the number of skills and scale poorly.
 
-**Root Cause**: The occupancy measure $\rho^\pi(s,a) = (1-\gamma)\sum_{t=0}^{\infty}\gamma^t P(S_t=s, A_t=a|\pi)$ is the discounted visitation frequency distribution of a policy over the state-action space. Under standard assumptions, there is a **bijection** between Markov policies and their occupancy measures, making the occupancy measure a complete characterization of policy behavior. Can distances between occupancy measures be leveraged to automatically construct BDs?
+**Key Challenge**: The occupancy measure $\rho^\pi(s,a) = (1-\gamma)\sum_{t=0}^{\infty}\gamma^t P(S_t=s, A_t=a|\pi)$ is the discounted visitation frequency distribution of a policy over the state-action space. Under standard assumptions, there is a **bijection** between Markov policies and their occupancy measures, making the occupancy measure a complete characterization of policy behavior. Can distances between occupancy measures be leveraged to automatically construct BDs?
 
 ## Method
 

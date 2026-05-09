@@ -28,15 +28,15 @@ This paper proposes Anywhere3D-Bench, the first 3D visual grounding benchmark sp
 
 ## Background & Motivation
 
-**State of the Field**: 3D visual grounding has achieved notable progress at the object level; existing benchmarks (ScanRefer, Nr3D, Sr3D) and methods primarily focus on aligning language expressions to objects in a scene.
+**Background**: 3D visual grounding has achieved notable progress at the object level; existing benchmarks (ScanRefer, Nr3D, Sr3D) and methods primarily focus on aligning language expressions to objects in a scene.
 
 **Limitations of Prior Work**: (a) Existing benchmarks are restricted to the object level, neglecting spatial regions beyond objects (e.g., "place the lamp next to the armchair" requires reasoning about unoccupied space); (b) grounding at the object-part level (e.g., opening a drawer) and activity-area level (e.g., a collaborative study zone) remains unevaluated; (c) existing benchmarks rarely test models' ability to reason about quantitative sizes and distances.
 
-**Root Cause**: Humans can naturally perform visual grounding at arbitrary locations in 3D scenes—estimating sizes, spatial relationships, and object parts—yet current models and benchmarks are confined to object-level semantics.
+**Key Challenge**: Humans can naturally perform visual grounding at arbitrary locations in 3D scenes—estimating sizes, spatial relationships, and object parts—yet current models and benchmarks are confined to object-level semantics.
 
-**Paper Goals**: Construct a comprehensive benchmark that evaluates models across four levels of 3D visual grounding (area / space / object / part).
+**Goal**: Construct a comprehensive benchmark that evaluates models across four levels of 3D visual grounding (area / space / object / part).
 
-**Starting Point**: Design a hierarchical taxonomy of expression types (activity → space → object → part), with multiple sub-types at each level to probe different capabilities.
+**Key Insight**: Design a hierarchical taxonomy of expression types (activity → space → object → part), with multiple sub-types at each level to probe different capabilities.
 
 **Core Idea**: Systematically expose the fundamental deficiencies of current 3D visual grounding models in spatial reasoning and fine-grained perception through a multi-level, multi-type grounding benchmark.
 

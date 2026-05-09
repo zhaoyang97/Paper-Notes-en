@@ -28,15 +28,15 @@ CryptoMoE is the first framework supporting privacy-preserving inference for MoE
 
 ## Background & Motivation
 
-**State of the Field**: MoE architectures have been widely adopted by mainstream LLMs such as LLaMA-4, DeepSeek-V3, and Qwen-3, enabling large-capacity models through sparse activation. Meanwhile, HE/MPC-based privacy-preserving inference frameworks already support dense models such as GPT-2 and LLaMA-1.
+**Background**: MoE architectures have been widely adopted by mainstream LLMs such as LLaMA-4, DeepSeek-V3, and Qwen-3, enabling large-capacity models through sparse activation. Meanwhile, HE/MPC-based privacy-preserving inference frameworks already support dense models such as GPT-2 and LLaMA-1.
 
 **Limitations of Prior Work**: Existing privacy-preserving inference frameworks (e.g., BOLT, Bumblebee) only support dense architectures and cannot handle the dynamic routing mechanism of MoE layers. Expert selection in MoE is highly input-dependent—mathematical reasoning tasks and language understanding tasks activate noticeably different experts—so exposing routing information is equivalent to leaking the input type.
 
-**Root Cause**: The most straightforward approach to protecting routing privacy is to route all tokens through all experts (dense baseline), but this amplifies computation by 8–15×, completely negating the efficiency advantage of MoE.
+**Key Challenge**: The most straightforward approach to protecting routing privacy is to route all tokens through all experts (dense baseline), but this amplifies computation by 8–15×, completely negating the efficiency advantage of MoE.
 
-**Paper Goals**: While preserving routing privacy, the paper aims to (a) avoid prohibitive computational overhead; (b) design secure token dispatch and aggregation protocols; (c) maintain accuracy close to the original model.
+**Goal**: While preserving routing privacy, the paper aims to (a) avoid prohibitive computational overhead; (b) design secure token dispatch and aggregation protocols; (c) maintain accuracy close to the original model.
 
-**Starting Point**: Each expert processes a fixed number $t$ of tokens (balanced routing), making expert load input-independent and thereby concealing routing information.
+**Key Insight**: Each expert processes a fixed number $t$ of tokens (balanced routing), making expert load input-independent and thereby concealing routing information.
 
 **Core Idea**: Protect privacy via inference-time balanced expert routing with confidence-prioritized selection, and eliminate the HE rotation bottleneck via batch ciphertext matrix multiplication.
 

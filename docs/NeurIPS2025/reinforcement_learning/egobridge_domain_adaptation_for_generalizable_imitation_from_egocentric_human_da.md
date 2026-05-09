@@ -28,15 +28,15 @@ This paper proposes EgoBridge, a framework that uses Optimal Transport (OT) to a
 
 ## Background & Motivation
 
-**State of the Field**: Behavior Cloning (BC) combined with large-scale teleoperation data has achieved significant progress in robotic manipulation. However, teleoperation data collection is costly and difficult to scale to diverse scenarios. Wearable devices (e.g., AR glasses) enable low-cost collection of large quantities of egocentric human manipulation data, including observations and action information.
+**Background**: Behavior Cloning (BC) combined with large-scale teleoperation data has achieved significant progress in robotic manipulation. However, teleoperation data collection is costly and difficult to scale to diverse scenarios. Wearable devices (e.g., AR glasses) enable low-cost collection of large quantities of egocentric human manipulation data, including observations and action information.
 
 **Limitations of Prior Work**: Multiple domain gaps exist between human and robot data: (a) visual appearance discrepancy (human hands vs. robotic arms); (b) kinematic discrepancy (different behavioral distributions within the same action space); (c) sensor modality discrepancy (robots have wrist cameras; humans do not). Naive co-training cannot automatically produce effective transfer.
 
-**Root Cause**: Simple co-training assumes a shared latent space emerges naturally, but in practice human and robot latent features form disjoint clusters (latent covariate shift), $\mu_H \neq \mu_R$, preventing behaviors learned from human data from transferring to the robot.
+**Key Challenge**: Simple co-training assumes a shared latent space emerges naturally, but in practice human and robot latent features form disjoint clusters (latent covariate shift), $\mu_H \neq \mu_R$, preventing behaviors learned from human data from transferring to the robot.
 
-**Paper Goals**: (a) Explicitly align latent representations across human and robot domains; (b) preserve action-relevant information during alignment; (c) enable the robot to execute novel behaviors observed only in human data.
+**Goal**: (a) Explicitly align latent representations across human and robot domains; (b) preserve action-relevant information during alignment; (c) enable the robot to execute novel behaviors observed only in human data.
 
-**Starting Point**: Cross-embodiment learning is formalized as a domain adaptation problem. Rather than global distribution alignment (e.g., adversarial training, MMD), the geometric structure of OT is leveraged to preserve local action correspondences.
+**Key Insight**: Cross-embodiment learning is formalized as a domain adaptation problem. Rather than global distribution alignment (e.g., adversarial training, MMD), the geometric structure of OT is leveraged to preserve local action correspondences.
 
 **Core Idea**: DTW is used to guide the OT cost function, automatically discovering behaviorally similar human–robot pseudo-pairs during latent feature alignment, achieving action-aware joint distribution alignment.
 

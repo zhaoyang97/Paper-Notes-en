@@ -28,15 +28,15 @@ QoQ-Med constructs a multimodal clinical foundation model spanning 9 clinical mo
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal LLMs (MLLMs) have advanced rapidly on general tasks, yet clinical applications require simultaneous handling of 1D temporal signals (ECG/EEG), 2D images (chest X-rays/dermoscopy/fundus), and 3D volumetric data (CT/MRI)—no existing MLLM covers all three categories.
+**Background**: Multimodal LLMs (MLLMs) have advanced rapidly on general tasks, yet clinical applications require simultaneous handling of 1D temporal signals (ECG/EEG), 2D images (chest X-rays/dermoscopy/fundus), and 3D volumetric data (CT/MRI)—no existing MLLM covers all three categories.
 
 **Limitations of Prior Work**: (a) Severe modality imbalance—chest X-ray data is abundant while ECG data is scarce, causing standard training to be dominated by data-rich modalities; (b) Large intra-domain difficulty variance—simple chest X-rays vs. complex CT oblique reconstructions require different learning strategies; (c) Black-box models lack reasoning traces—clinical deployment demands interpretability.
 
-**Root Cause**: GRPO (critic-free) is more efficient than PPO but does not handle domain/difficulty imbalance; naively mixing all modalities during training causes rare modalities to be overwhelmed.
+**Key Challenge**: GRPO (critic-free) is more efficient than PPO but does not handle domain/difficulty imbalance; naively mixing all modalities during training causes rare modalities to be overwhelmed.
 
-**Paper Goals**: Address domain/difficulty imbalance in multimodal clinical training within the GRPO framework, while generating interpretable reasoning traces and localization bounding boxes.
+**Goal**: Address domain/difficulty imbalance in multimodal clinical training within the GRPO framework, while generating interpretable reasoning traces and localization bounding boxes.
 
-**Starting Point**: DRPO introduces two levels of temperature scaling after GRPO normalization—inter-domain scaling ($T_{(g,t)} = \max(\sqrt{N_g} \cdot \mu_g, \varepsilon)$) and intra-domain K-means clustering scaling—so that rare modalities and difficult samples receive larger learning gradients.
+**Key Insight**: DRPO introduces two levels of temperature scaling after GRPO normalization—inter-domain scaling ($T_{(g,t)} = \max(\sqrt{N_g} \cdot \mu_g, \varepsilon)$) and intra-domain K-means clustering scaling—so that rare modalities and difficult samples receive larger learning gradients.
 
 **Core Idea**: 9-modality clinical data + DRPO (hierarchical inter/intra-domain K-means temperature scaling) + IoU reward-guided localization = interpretable multimodal clinical reasoning.
 

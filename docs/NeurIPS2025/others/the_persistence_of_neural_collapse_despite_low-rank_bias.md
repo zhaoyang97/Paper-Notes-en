@@ -32,9 +32,9 @@ Neural Collapse (NC) is a structured geometric phenomenon observed in the termin
 
 **Existing theoretical results**: In single-layer unconstrained feature models (UFM), NC has been proven to be the globally optimal solution, with the loss landscape being a strict saddle function (admitting only global optima and non-degenerate saddle points).
 
-**Root Cause**: Sukenik et al. (2024) proved that in deep UFMs with ReLU activations and MSE loss, DNC is not globally optimal, since the low-rank bias induced by L2 regularization allows solutions of lower rank to achieve lower loss. However, they did not analyze whether DNC or low-rank solutions constitute local optima, nor did they explain why DNC persists empirically despite being suboptimal.
+**Key Challenge**: Sukenik et al. (2024) proved that in deep UFMs with ReLU activations and MSE loss, DNC is not globally optimal, since the low-rank bias induced by L2 regularization allows solutions of lower rank to achieve lower loss. However, they did not analyze whether DNC or low-rank solutions constitute local optima, nor did they explain why DNC persists empirically despite being suboptimal.
 
-**Starting Point**: This paper conducts a systematic analysis using a deep UFM with cross-entropy (CE) loss and linear layers. Linear layers facilitate theoretical analysis, while the unconstrained feature assumption in the UFM compensates for the limited expressiveness of linear layers. The paper aims to: (1) comprehensively characterize how low-rank bias shapes the loss landscape, and (2) provide the first explanation for the empirical persistence of DNC.
+**Key Insight**: This paper conducts a systematic analysis using a deep UFM with cross-entropy (CE) loss and linear layers. Linear layers facilitate theoretical analysis, while the unconstrained feature assumption in the UFM compensates for the limited expressiveness of linear layers. The paper aims to: (1) comprehensively characterize how low-rank bias shapes the loss landscape, and (2) provide the first explanation for the empirical persistence of DNC.
 
 ## Method
 

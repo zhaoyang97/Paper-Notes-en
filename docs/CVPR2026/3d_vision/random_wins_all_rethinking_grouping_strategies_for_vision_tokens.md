@@ -30,10 +30,10 @@ This paper proposes a minimalist random grouping strategy to replace various ela
 
 ## Background & Motivation
 
-- **State of the Field**: The self-attention mechanism in Transformers incurs $O(n^2)$ quadratic complexity, and vision token grouping is the dominant approach to reducing this cost. Grouping strategies have grown increasingly sophisticated, from simple window partitioning (Swin Transformer) to semantically aware tree-structured grouping (Quadtree) and bi-level routing grouping (BiFormer), yet inference efficiency has continuously declined.
+- **Background**: The self-attention mechanism in Transformers incurs $O(n^2)$ quadratic complexity, and vision token grouping is the dominant approach to reducing this cost. Grouping strategies have grown increasingly sophisticated, from simple window partitioning (Swin Transformer) to semantically aware tree-structured grouping (Quadtree) and bi-level routing grouping (BiFormer), yet inference efficiency has continuously declined.
 - **Limitations of Prior Work**: Are these elaborately designed grouping methods truly necessary? Complex clustering and routing operations severely hinder deployment efficiency, and it remains unclear whether performance gains originate from the grouping strategy itself.
-- **Root Cause**: A minimalist random grouping strategy—simply applying a random permutation to tokens followed by equal partitioning—almost universally outperforms existing complex grouping methods across all tasks and baselines, while also achieving faster inference.
-- **Paper Goals**: The paper proposes the Random Grouping Strategy and conducts an in-depth analysis of why such a simple method succeeds, summarizing four key design principles for grouping strategies.
+- **Key Challenge**: A minimalist random grouping strategy—simply applying a random permutation to tokens followed by equal partitioning—almost universally outperforms existing complex grouping methods across all tasks and baselines, while also achieving faster inference.
+- **Goal**: The paper proposes the Random Grouping Strategy and conducts an in-depth analysis of why such a simple method succeeds, summarizing four key design principles for grouping strategies.
 
 ## Method
 

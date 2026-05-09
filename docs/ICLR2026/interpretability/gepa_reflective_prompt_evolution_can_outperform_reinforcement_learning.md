@@ -30,9 +30,9 @@ Large language models are increasingly adapted to downstream tasks via reinforce
 
 Language itself is a highly interpretable medium that inherently contains far richer learning signals than scalar rewards. The reasoning chains, tool-call traces, and error messages produced during LLM inference embed diagnostic clues about "why a failure occurred," yet RL methods discard all of this, retaining only a single score.
 
-**Root Cause**: RL methods (e.g., GRPO) require a large number of rollouts yet exploit only scalar rewards, whereas natural language carries learning signals far richer than any scalar signal.
+**Key Challenge**: RL methods (e.g., GRPO) require a large number of rollouts yet exploit only scalar rewards, whereas natural language carries learning signals far richer than any scalar signal.
 
-**Starting Point**: Given that LLMs can comprehend execution trajectories, why not allow an LLM to reflect directly on failure causes and propose improvements, thereby achieving efficient optimization with minimal sampling?
+**Key Insight**: Given that LLMs can comprehend execution trajectories, why not allow an LLM to reflect directly on failure causes and propose improvements, thereby achieving efficient optimization with minimal sampling?
 
 **Core Idea**: Prompt optimization is framed as an evolutionary search process augmented with reflection. An LLM reads complete execution trajectories to perform "gradient-equivalent" diagnosis and repair, while diversity is maintained through Pareto front selection.
 

@@ -28,18 +28,18 @@ This paper proposes TuneCLIP, a self-supervised fine-tuning (SSFT) framework tha
 
 ## Background & Motivation
 
-**State of the Field**: CLIP has become a cornerstone of multimodal representation learning, yet improving its performance typically requires pre-training from scratch on billions of samples at prohibitive cost. Existing improvement paradigms fall into two categories: (a) constructing larger datasets or novel loss functions for from-scratch training; (b) supervised fine-tuning for specific downstream tasks.
+**Background**: CLIP has become a cornerstone of multimodal representation learning, yet improving its performance typically requires pre-training from scratch on billions of samples at prohibitive cost. Existing improvement paradigms fall into two categories: (a) constructing larger datasets or novel loss functions for from-scratch training; (b) supervised fine-tuning for specific downstream tasks.
 
 **Limitations of Prior Work**:
    - From-scratch training is extremely expensive (hundreds of GPUs for days to weeks) and not scalable.
    - Supervised fine-tuning, while cheaper, causes strong domain adaptation that degrades generalization and distributional robustness — it is fundamentally "task-specific tuning" rather than "general capability improvement."
    - Directly fine-tuning from pre-trained weights using standard pipelines (e.g., OpenCLIP/FastCLIP) often results in severe performance degradation within the first epoch.
 
-**Root Cause**:
+**Key Challenge**:
    - **Cold-start bias**: Optimizer states (first-order moment, second-order moment, and GCL sample-level statistics $u_{i,x}, u_{i,z}$) are zero-initialized at the start of fine-tuning. For a pre-trained model, the true values of these statistics are far from zero; the large estimation error severely distorts the initial gradient direction, corrupting the well-learned representations.
    - **False negative problem**: In self-supervised contrastive learning, semantically similar but unpaired samples are treated as negatives. This erroneous penalization intensifies as the model grows stronger, particularly harming retrieval performance.
 
-**Starting Point**: The authors pose a fundamentally different question — "Can existing CLIP models be improved using only self-supervised data?" — targeting comprehensive general-purpose performance gains rather than adaptation to specific downstream tasks.
+**Key Insight**: The authors pose a fundamentally different question — "Can existing CLIP models be improved using only self-supervised data?" — targeting comprehensive general-purpose performance gains rather than adaptation to specific downstream tasks.
 
 **Core Idea**: A two-stage strategy — first recovering optimizer statistics by freezing model weights (OSR), then applying a margin-based hinged loss (HGCL) to avoid over-penalization of false negatives — enables self-supervised general-purpose enhancement of CLIP.
 

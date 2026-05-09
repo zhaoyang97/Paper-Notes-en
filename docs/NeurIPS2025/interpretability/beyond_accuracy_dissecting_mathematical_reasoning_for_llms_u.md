@@ -28,15 +28,15 @@ This paper proposes SPARKLE, a three-axis analytical framework (plan following, 
 
 ## Background & Motivation
 
-**State of the Field**: RL (particularly GRPO) has become the dominant paradigm for improving LLM reasoning. Models such as DeepSeek-R1 and OpenAI o1 have achieved substantial gains on benchmarks including AIME and MATH.
+**Background**: RL (particularly GRPO) has become the dominant paradigm for improving LLM reasoning. Models such as DeepSeek-R1 and OpenAI o1 have achieved substantial gains on benchmarks including AIME and MATH.
 
 **Limitations of Prior Work**: Nearly all existing work tracks only accuracy improvements, lacking fine-grained understanding of what capabilities RL actually enhances. Whether RL improves planning, execution, knowledge retrieval, or problem decomposition remains unclear, making it difficult to target improvements in RL pipelines.
 
-**Root Cause**: Hard problems typically yield no positive reward signal (the model fails across 20 attempts) and are therefore filtered out. Discarding hard problems, however, wastes valuable training signal. The question of how to effectively exploit such problems remains open.
+**Key Challenge**: Hard problems typically yield no positive reward signal (the model fails across 20 attempts) and are therefore filtered out. Discarding hard problems, however, wastes valuable training signal. The question of how to effectively exploit such problems remains open.
 
-**Paper Goals**: (1) Establish a fine-grained analytical framework beyond accuracy to reveal the specific impact of RL on each reasoning dimension; (2) Design a multi-stage RL training scheme that leverages hard problem data.
+**Goal**: (1) Establish a fine-grained analytical framework beyond accuracy to reveal the specific impact of RL on each reasoning dimension; (2) Design a multi-stage RL training scheme that leverages hard problem data.
 
-**Starting Point**: Drawing on cognitive-science theories of human problem solving (Newell & Simon, 1972), the paper decomposes reasoning into three core dimensions — planning, knowledge, and decomposition — and designs controlled experiments for each.
+**Key Insight**: Drawing on cognitive-science theories of human problem solving (Newell & Simon, 1972), the paper decomposes reasoning into three core dimensions — planning, knowledge, and decomposition — and designs controlled experiments for each.
 
 **Core Idea**: By providing or withholding auxiliary information such as plans, knowledge annotations, and subproblem decompositions, the framework identifies the specific reasoning dimensions strengthened by RL, and uses these findings to motivate a partial step scaffolding training strategy.
 

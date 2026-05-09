@@ -28,15 +28,15 @@ This paper proposes EvoEngineer, the first systematic LLM-based code evolution f
 
 ## Background & Motivation
 
-**State of the Field**: CUDA kernel performance is a core bottleneck in AI training and inference efficiency. Manual optimization demands deep expertise in GPU architecture (memory hierarchy, thread scheduling, Tensor Cores, etc.), while LLMs have demonstrated potential for automated optimization. Recent approaches include kernel-specific methods such as AI CUDA Engineer and KernelBench, as well as general-purpose code evolution methods such as EoH and FunSearch.
+**Background**: CUDA kernel performance is a core bottleneck in AI training and inference efficiency. Manual optimization demands deep expertise in GPU architecture (memory hierarchy, thread scheduling, Tensor Cores, etc.), while LLMs have demonstrated potential for automated optimization. Recent approaches include kernel-specific methods such as AI CUDA Engineer and KernelBench, as well as general-purpose code evolution methods such as EoH and FunSearch.
 
 **Limitations of Prior Work**: (a) Kernel-specific methods tightly couple the evaluation process with the optimization strategy, leading to unclear problem formulations that preclude fair comparison; (b) General-purpose code evolution methods have only been validated in settings with relaxed correctness requirements (e.g., mathematical problems), making them ill-suited for the strict correctness constraints of CUDA kernels; (c) Both categories of methods lack a systematic framework for understanding the effectiveness of different optimization strategies across different scenarios.
 
-**Root Cause**: There exists a fundamental trade-off between performance improvement and code correctness. Pursuing high speedup ratios often degrades code validity, while conservative strategies limit the performance ceiling. Existing methods either ignore this trade-off (strategy-agnostic) or consume excessive tokens through overly complex prompts (resource-inefficient).
+**Key Challenge**: There exists a fundamental trade-off between performance improvement and code correctness. Pursuing high speedup ratios often degrades code validity, while conservative strategies limit the performance ceiling. Existing methods either ignore this trade-off (strategy-agnostic) or consume excessive tokens through overly complex prompts (resource-inefficient).
 
-**Paper Goals**: How can optimization strategies be systematically selected and designed to simultaneously improve both performance and correctness in LLM-based kernel optimization?
+**Goal**: How can optimization strategies be systematically selected and designed to simultaneously improve both performance and correctness in LLM-based kernel optimization?
 
-**Starting Point**: Decompose code evolution into two orthogonal components (traverse + population management), and further decouple the strategy layer from the prompt engineering layer within traverse, enabling systematic analysis and design of optimization strategies.
+**Key Insight**: Decompose code evolution into two orthogonal components (traverse + population management), and further decouple the strategy layer from the prompt engineering layer within traverse, enabling systematic analysis and design of optimization strategies.
 
 **Core Idea**: Through a two-layer decomposition of traverse technique design — separating "what information guides the search" from "how to construct the prompt" — the framework enables systematic analysis and selection of LLM-based code evolution strategies.
 

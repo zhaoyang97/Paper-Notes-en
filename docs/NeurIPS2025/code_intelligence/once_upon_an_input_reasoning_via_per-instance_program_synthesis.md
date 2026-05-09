@@ -27,16 +27,16 @@ This paper proposes PIPS (Per-Instance Program Synthesis), which iteratively ref
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have made substantial progress in zero-shot reasoning, with methods such as Chain-of-Thought (CoT) and Program-of-Thought (PoT) further enhancing multi-step reasoning capabilities.
+**Background**: LLMs have made substantial progress in zero-shot reasoning, with methods such as Chain-of-Thought (CoT) and Program-of-Thought (PoT) further enhancing multi-step reasoning capabilities.
 
 **Limitations of Prior Work**: Existing instance-level program synthesis methods (e.g., PoT) face three core challenges:
    - **Open-domain problems**: It is unclear when to use programs versus CoT; forcing code generation on non-algorithmic problems (e.g., sentiment understanding) tends to produce trivial programs (i.e., hardcoded answers).
    - **Absence of task specifications**: No specification of correct program behavior is available to guide search, causing over 50% of PoT outputs to be trivial programs.
    - **Unstructured inputs**: Programs require structured inputs, whereas reasoning problems are typically presented as unstructured text or images.
 
-**Root Cause**: More than 50% of PoT-generated programs hardcode answers, 6.3% contain syntax errors, and 11.5% return type errors.
+**Key Challenge**: More than 50% of PoT-generated programs hardcode answers, 6.3% contain syntax errors, and 11.5% return type errors.
 
-**Starting Point**: Address three issues at the instance level — (1) decide whether to use a program, (2) iteratively refine programs with structural feedback, and (3) extract symbolic inputs before generating programs.
+**Key Insight**: Address three issues at the instance level — (1) decide whether to use a program, (2) iteratively refine programs with structural feedback, and (3) extract symbolic inputs before generating programs.
 
 ## Method
 

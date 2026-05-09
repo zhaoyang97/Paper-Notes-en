@@ -28,15 +28,15 @@ This paper proposes AdaTTT, a framework that achieves robust test-time adaptatio
 
 ## Background & Motivation
 
-**State of the Field**: Predicting invasive mechanical ventilation (IMV) in the ICU is critical for timely clinical intervention. ML models based on EHR data (e.g., VentNet, Composer) have shown promise, but cross-institutional deployment faces severe domain shift challenges.
+**Background**: Predicting invasive mechanical ventilation (IMV) in the ICU is critical for timely clinical intervention. ML models based on EHR data (e.g., VentNet, Composer) have shown promise, but cross-institutional deployment faces severe domain shift challenges.
 
 **Limitations of Prior Work**: Differences in patient populations, clinical workflows, and EHR systems across hospitals lead to distribution shifts, causing AUC drops of up to 12% across sites. Existing approaches either require labeled target-domain data for fine-tuning or incur prohibitive computational costs, making them unsuitable for real-time clinical deployment.
 
-**Root Cause**: Test-Time Training (TTT) enables label-free adaptation at inference time, but directly applying existing TTT methods to EHR settings introduces three problems: (a) batch normalization statistics are unstable under small batch sizes (single-visit inference); (b) EHR feature importance is highly non-uniform, so random masking in SSL tasks fails to align with the main task; (c) instance-level SSL updates are prone to overfitting noisy samples.
+**Key Challenge**: Test-Time Training (TTT) enables label-free adaptation at inference time, but directly applying existing TTT methods to EHR settings introduces three problems: (a) batch normalization statistics are unstable under small batch sizes (single-visit inference); (b) EHR feature importance is highly non-uniform, so random masking in SSL tasks fails to align with the main task; (c) instance-level SSL updates are prone to overfitting noisy samples.
 
-**Paper Goals**: To design a framework specifically optimized for EHR-TTT scenarios, achieving high alignment between the SSL auxiliary task and the main task while preventing overfitting at test time.
+**Goal**: To design a framework specifically optimized for EHR-TTT scenarios, achieving high alignment between the SSL auxiliary task and the main task while preventing overfitting at test time.
 
-**Starting Point**: The paper derives upper and lower bounds on the test-time prediction error from an information-theoretic perspective (Theorem 2), showing that the error is bounded by the conditional uncertainty $H(Y_m'|Y_s')$ between the auxiliary and main tasks — providing theoretical guidance for designing high-alignment SSL tasks.
+**Key Insight**: The paper derives upper and lower bounds on the test-time prediction error from an information-theoretic perspective (Theorem 2), showing that the error is bounded by the conditional uncertainty $H(Y_m'|Y_s')$ between the auxiliary and main tasks — providing theoretical guidance for designing high-alignment SSL tasks.
 
 **Core Idea**: Adaptive masking driven by dynamic feature importance tightly aligns the SSL task with the clinical prediction objective, complemented by prototype-based partial optimal transport for flexible distribution matching at test time.
 

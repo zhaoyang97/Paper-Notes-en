@@ -33,9 +33,9 @@ VideoLLMs demonstrate strong performance on multimodal video tasks, yet processi
 
 **Limitations of Prior Work**: Removing intermediate frames causes VideoLLMs to lose the ability to infer event ordering. For instance, given a sparse sequence showing a player crossing a line followed by a referee showing a red card, humans can infer causality, whereas VideoLLMs may incorrectly conclude that the referee committed the foul.
 
-**Root Cause**: Frame selection reduces the video to discrete temporal snapshots, making it inherently difficult to reconstruct a coherent event sequence. Existing solutions—such as enhanced temporal encodings and extended context modules—are complex and require substantial training.
+**Key Challenge**: Frame selection reduces the video to discrete temporal snapshots, making it inherently difficult to reconstruct a coherent event sequence. Existing solutions—such as enhanced temporal encodings and extended context modules—are complex and require substantial training.
 
-**Starting Point**: Visual prompting (VP) has been shown to effectively guide spatial attention, yet its potential for cross-frame temporal reasoning remains largely unexplored. The authors observe that simply annotating each frame with its index number enables the model to perceive temporal continuity.
+**Key Insight**: Visual prompting (VP) has been shown to effectively guide spatial attention, yet its potential for cross-frame temporal reasoning remains largely unexplored. The authors observe that simply annotating each frame with its index number enables the model to perceive temporal continuity.
 
 ## Method
 

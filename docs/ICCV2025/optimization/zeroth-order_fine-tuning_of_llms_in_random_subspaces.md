@@ -31,14 +31,14 @@ This paper proposes SubZero (random **Sub**space **Zero**th-order), which estima
 
 Fine-tuning large language models (LLMs) typically relies on first-order optimizers (SGD/Adam), but as model scale grows, the memory overhead of backpropagation becomes prohibitive. MeZO was the first to introduce zeroth-order (ZO) optimization for LLM fine-tuning, estimating gradients using only forward passes at inference-level memory cost.
 
-**Root Cause**: The variance of ZO gradient estimates scales linearly with the perturbation dimensionality (i.e., the number of model parameters)—for LLMs with billions of parameters, this results in extremely high variance, severely hampering convergence speed and final performance.
+**Key Challenge**: The variance of ZO gradient estimates scales linearly with the perturbation dimensionality (i.e., the number of model parameters)—for LLMs with billions of parameters, this results in extremely high variance, severely hampering convergence speed and final performance.
 
 Existing mitigation strategies have notable shortcomings:
 - **Larger batch sizes**: lead to sharply increasing overhead in later training stages.
 - **Sparse perturbations** (e.g., pruning masks in S-MeZO): heuristically selected without theoretical justification.
 - **Random subspace methods** (e.g., S-RGF): require storing a $d \times q$ projection matrix ($q$ times the model size), which is completely infeasible for LLMs.
 
-**Starting Point**: Exploit the layer-wise matrix structure of LLMs by constructing independent low-rank subspaces per layer ($\mathbf{U}_i \in \mathbb{R}^{m_i \times r}$, $\mathbf{V}_i \in \mathbb{R}^{n_i \times r}$), sampling perturbations only within an extremely small $r \times r$ space. The projection matrices are column-orthogonal and lazily updated, avoiding storage of large projection matrices while ensuring low variance.
+**Key Insight**: Exploit the layer-wise matrix structure of LLMs by constructing independent low-rank subspaces per layer ($\mathbf{U}_i \in \mathbb{R}^{m_i \times r}$, $\mathbf{V}_i \in \mathbb{R}^{n_i \times r}$), sampling perturbations only within an extremely small $r \times r$ space. The projection matrices are column-orthogonal and lazily updated, avoiding storage of large projection matrices while ensuring low variance.
 
 ## Method
 

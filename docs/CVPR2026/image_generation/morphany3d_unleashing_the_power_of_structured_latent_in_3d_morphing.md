@@ -28,15 +28,15 @@ MorphAny3D is proposed as the first training-free 3D morphing framework based on
 
 ## Background & Motivation
 
-**State of the Field**: 3D morphing is a foundational technique in animation, film, and gaming. Traditional methods rely on dense correspondence matching followed by interpolation to generate intermediate shapes. 2D morphing has advanced significantly with diffusion models, but 3D morphing remains a substantially harder problem.
+**Background**: 3D morphing is a foundational technique in animation, film, and gaming. Traditional methods rely on dense correspondence matching followed by interpolation to generate intermediate shapes. 2D morphing has advanced significantly with diffusion models, but 3D morphing remains a substantially harder problem.
 
 **Limitations of Prior Work**: (a) Matching-based methods handle only geometric deformation while ignoring texture, and cross-category correspondences are unreliable; (b) 2D morphing followed by per-frame 3D reconstruction breaks temporal consistency; (c) Direct interpolation in noise or conditioning spaces lacks structural plausibility constraints.
 
-**Root Cause**: Achieving smooth, high-fidelity, and temporally consistent cross-category morphing within a 3D generative framework remains an open challenge.
+**Key Challenge**: Achieving smooth, high-fidelity, and temporally consistent cross-category morphing within a 3D generative framework remains an open challenge.
 
-**Paper Goals**: How can the structural advantages of SLAT representations be exploited to enable high-quality 3D morphing?
+**Goal**: How can the structural advantages of SLAT representations be exploited to enable high-quality 3D morphing?
 
-**Starting Point**: A key observation is that directly fusing source and target SLAT features within Trellis's attention mechanism produces more plausible morphing than interpolating at the noise or conditioning level. However, naively applying KV fusion in both cross-attention and self-attention leads to mutual interference.
+**Key Insight**: A key observation is that directly fusing source and target SLAT features within Trellis's attention mechanism produces more plausible morphing than interpolating at the noise or conditioning level. However, naively applying KV fusion in both cross-attention and self-attention leads to mutual interference.
 
 **Core Idea**: Compute source and target attention outputs separately in cross-attention and then fuse them with a weighted sum (MCA); fuse features from the previous frame in self-attention (TFSA); apply statistics-based direction correction.
 

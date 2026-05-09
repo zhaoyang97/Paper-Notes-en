@@ -30,7 +30,7 @@ This paper proposes GraphUniverse, a framework that generates graph families wit
 
 ### State of the Field
 
-**State of the Field**: Graph learning benchmarks suffer from fundamental limitations: existing synthetic graph generation tools (e.g., GraphWorld) can only produce isolated single graphs, and evaluation is confined to the transductive setting (where models are trained and tested on the same graph structure). This makes it impossible to assess two capabilities widely regarded as essential for building graph foundation models:
+**Background**: Graph learning benchmarks suffer from fundamental limitations: existing synthetic graph generation tools (e.g., GraphWorld) can only produce isolated single graphs, and evaluation is confined to the transductive setting (where models are trained and tested on the same graph structure). This makes it impossible to assess two capabilities widely regarded as essential for building graph foundation models:
 
 1. **Inductive Generalization**: the ability to generalize to entirely unseen graphs
 2. **Distribution Shift Robustness**: performance stability when graph properties (homophily, degree distribution, etc.) change
@@ -39,7 +39,7 @@ Recent critical analyses (Bechler-Speicher et al., 2025; Wang et al., 2025) have
 
 ### Paper Goals
 
-**Paper Goals**: How to generate multi-graph families with controllable structure and consistent semantics so as to systematically evaluate the inductive generalization capability and distribution shift robustness of graph learning models?
+**Goal**: How to generate multi-graph families with controllable structure and consistent semantics so as to systematically evaluate the inductive generalization capability and distribution shift robustness of graph learning models?
 
 ## Method
 

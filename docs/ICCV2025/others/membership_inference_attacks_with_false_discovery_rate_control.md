@@ -27,18 +27,18 @@ This paper proposes MIAFdR, the first membership inference attack (MIA) method w
 
 ## Background & Motivation
 
-**State of the Field**: Membership inference attacks (MIA) aim to determine whether a given data sample was used to train a target model, and represent a core research direction in deep learning privacy and security. Existing approaches include classifier-based methods (shadow training), metric-based methods (softmax, entropy, loss), likelihood ratio-based methods (LiRA), and quantile regression-based methods.
+**Background**: Membership inference attacks (MIA) aim to determine whether a given data sample was used to train a target model, and represent a core research direction in deep learning privacy and security. Existing approaches include classifier-based methods (shadow training), metric-based methods (softmax, entropy, loss), likelihood ratio-based methods (LiRA), and quantile regression-based methods.
 
 **Limitations of Prior Work**:
    - **Lack of FDR guarantees**: Existing MIA methods cannot provide theoretical guarantees on the false discovery rate. FDR is defined as the proportion of samples identified as training members that are in fact non-members.
    - **Practical harm**: When the actual proportion of members in the test set is high, uncontrolled FDR leads to a large number of false positives, severely undermining the credibility of the attack.
    - **Technical challenges**: (1) The score distribution of non-training data is unknown and difficult to model; (2) estimated non-member probabilities are mutually dependent, violating the independence assumption required by classical multiple hypothesis testing methods.
 
-**Root Cause**: How can theoretical FDR guarantees be provided without knowledge of the training data distribution and without being able to ensure independence across samples?
+**Key Challenge**: How can theoretical FDR guarantees be provided without knowledge of the training data distribution and without being able to ensure independence across samples?
 
-**Paper Goals**: To design a MIA method that can (1) provide theoretical FDR control, (2) simultaneously offer marginal probability guarantees (i.e., the probability that a true non-member is misclassified as a member does not exceed $\alpha$), and (3) serve as a wrapper that can be embedded into any existing MIA method.
+**Goal**: To design a MIA method that can (1) provide theoretical FDR control, (2) simultaneously offer marginal probability guarantees (i.e., the probability that a true non-member is misclassified as a member does not exceed $\alpha$), and (3) serve as a wrapper that can be embedded into any existing MIA method.
 
-**Starting Point**: Drawing inspiration from conformal inference, while resolving the issue that conformal p-values cannot be directly applied to FDR control due to their dependence through a shared calibration set.
+**Key Insight**: Drawing inspiration from conformal inference, while resolving the issue that conformal p-values cannot be directly applied to FDR control due to their dependence through a shared calibration set.
 
 ## Method
 

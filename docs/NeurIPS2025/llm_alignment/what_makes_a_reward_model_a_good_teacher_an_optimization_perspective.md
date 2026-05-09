@@ -28,17 +28,17 @@ From an optimization-theoretic perspective, this paper proves that reward model 
 
 ## Background & Motivation
 
-**State of the Field**: RLHF is the standard pipeline for aligning LLMs. Its core involves training a proxy reward model $r_{\mathrm{RM}}$ to substitute the inaccessible ground-truth reward $r_{\mathrm{G}}$, followed by maximizing the proxy reward via policy gradient methods such as PPO, RLOO, or GRPO. The dominant metric for evaluating reward models is **accuracy**—the fraction of preference pairs correctly ranked on held-out data.
+**Background**: RLHF is the standard pipeline for aligning LLMs. Its core involves training a proxy reward model $r_{\mathrm{RM}}$ to substitute the inaccessible ground-truth reward $r_{\mathrm{G}}$, followed by maximizing the proxy reward via policy gradient methods such as PPO, RLOO, or GRPO. The dominant metric for evaluating reward models is **accuracy**—the fraction of preference pairs correctly ranked on held-out data.
 
 **Limitations of Prior Work**:
    - Empirically, more accurate reward models do not always yield better alignment, yet a theoretical explanation has been lacking.
    - Mainstream benchmarks (RewardBench, RM-Bench, etc.) evaluate purely based on accuracy and are decoupled from the language model being aligned.
 
-**Root Cause**: Accuracy only measures whether the ranking direction is correct (sign), while ignoring whether the signal is strong enough—i.e., whether the reward model sufficiently separates the rewards of different outputs under the policy distribution.
+**Key Challenge**: Accuracy only measures whether the ranking direction is correct (sign), while ignoring whether the signal is strong enough—i.e., whether the reward model sufficiently separates the rewards of different outputs under the policy distribution.
 
-**Paper Goals**: To formally characterize what makes a reward model a good RLHF teacher, and to reveal critical factors beyond accuracy.
+**Goal**: To formally characterize what makes a reward model a good RLHF teacher, and to reveal critical factors beyond accuracy.
 
-**Starting Point**: The analysis proceeds from the RLHF optimization landscape—the gradient norm of policy gradient methods is directly related to the reward variance under the policy distribution.
+**Key Insight**: The analysis proceeds from the RLHF optimization landscape—the gradient norm of policy gradient methods is directly related to the reward variance under the policy distribution.
 
 **Core Idea**: Reward variance determines the flatness of the RLHF objective landscape and constitutes a key metric—independent of accuracy—that must be considered when evaluating reward models.
 

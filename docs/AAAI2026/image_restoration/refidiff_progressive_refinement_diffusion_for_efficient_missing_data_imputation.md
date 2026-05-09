@@ -30,7 +30,7 @@ RefiDiff proposes a four-stage framework (pre-processing → warm-up → diffusi
 
 ### State of the Field
 
-**State of the Field**: Missing values are ubiquitous in high-dimensional mixed-type (numerical + categorical) datasets and arise under three mechanisms: MCAR (Missing Completely At Random), MAR (Missing At Random), and MNAR (Missing Not At Random). Existing imputation methods fall into two paradigms: predictive methods (e.g., XGBoost regression) are efficient and deterministic but lack uncertainty modeling and tend toward a local view; generative methods (e.g., diffusion models) can model global distributions but are computationally intensive.
+**Background**: Missing values are ubiquitous in high-dimensional mixed-type (numerical + categorical) datasets and arise under three mechanisms: MCAR (Missing Completely At Random), MAR (Missing At Random), and MNAR (Missing Not At Random). Existing imputation methods fall into two paradigms: predictive methods (e.g., XGBoost regression) are efficient and deterministic but lack uncertainty modeling and tend toward a local view; generative methods (e.g., diffusion models) can model global distributions but are computationally intensive.
 
 ### Limitations of Prior Work
 
@@ -38,11 +38,11 @@ RefiDiff proposes a four-stage framework (pre-processing → warm-up → diffusi
 
 ### Root Cause
 
-**Root Cause**: Predictive methods excel at locally precise imputation but cannot model global distributional uncertainty, while generative methods excel at global distribution modeling but introduce excessive noise and computational overhead. The central challenge is how to obtain the advantages of both paradigms simultaneously without sacrificing efficiency.
+**Key Challenge**: Predictive methods excel at locally precise imputation but cannot model global distributional uncertainty, while generative methods excel at global distribution modeling but introduce excessive noise and computational overhead. The central challenge is how to obtain the advantages of both paradigms simultaneously without sacrificing efficiency.
 
 ### Resolution
 
-**Paper Goals**: Design a progressive framework in which a predictive method provides a high-quality initialization and a generative method subsequently refines the global distribution. **Starting Point**: Decompose the imputation process into three stages — warm-up (predictive), diffusion (generative), and polishing (predictive) — each progressively improving imputation quality. **Core Idea**: Apply XGBoost in a single-pass warm-up to produce an initial imputation, use a Mamba-based diffusion model to perform global distributional correction, and finally apply regression polishing to remove residual noise.
+**Goal**: Design a progressive framework in which a predictive method provides a high-quality initialization and a generative method subsequently refines the global distribution. **Key Insight**: Decompose the imputation process into three stages — warm-up (predictive), diffusion (generative), and polishing (predictive) — each progressively improving imputation quality. **Core Idea**: Apply XGBoost in a single-pass warm-up to produce an initial imputation, use a Mamba-based diffusion model to perform global distributional correction, and finally apply regression polishing to remove residual noise.
 
 ## Method
 

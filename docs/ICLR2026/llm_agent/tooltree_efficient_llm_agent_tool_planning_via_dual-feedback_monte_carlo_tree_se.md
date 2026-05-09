@@ -27,15 +27,15 @@ This paper proposes ToolTree, an MCTS-based tool planning framework for LLM agen
 
 ## Background & Motivation
 
-**State of the Field**: LLM agents addressing multi-step complex tasks must invoke chains of external tools (APIs, search engines, calculators, etc.), and the core challenge is tool planning — determining which tools to use, in what order, and with what parameters.
+**Background**: LLM agents addressing multi-step complex tasks must invoke chains of external tools (APIs, search engines, calculators, etc.), and the core challenge is tool planning — determining which tools to use, in what order, and with what parameters.
 
 **Limitations of Prior Work**: (a) Greedy methods (ReAct, CoT) select the locally optimal tool at each step without look-ahead, causing early errors to propagate irreversibly; (b) Search methods (ToT, A*) expand multiple candidate branches, but the branching factor grows exponentially with the number of tools, incurring high computational cost while relying on hypothetical reasoning rather than actual execution results for evaluation.
 
-**Root Cause**: Search methods provide look-ahead but at high computational cost with ungrounded evaluation (evaluating hypothetical thoughts); greedy methods are efficient but lack error-correction capability. A method that combines look-ahead with feedback grounded in actual execution results is needed.
+**Key Challenge**: Search methods provide look-ahead but at high computational cost with ungrounded evaluation (evaluating hypothetical thoughts); greedy methods are efficient but lack error-correction capability. A method that combines look-ahead with feedback grounded in actual execution results is needed.
 
-**Paper Goals**: How can an agent perform look-ahead tool planning within a fixed computational budget while guaranteeing efficiency?
+**Goal**: How can an agent perform look-ahead tool planning within a fixed computational budget while guaranteeing efficiency?
 
-**Starting Point**: The standard MCTS selection–expansion–simulation–backpropagation loop is adapted into a framework suited for tool invocation, where an LLM rapidly pre-evaluates branches before execution and post-execution scores based on actual outputs are used to refine the policy.
+**Key Insight**: The standard MCTS selection–expansion–simulation–backpropagation loop is adapted into a framework suited for tool invocation, where an LLM rapidly pre-evaluates branches before execution and post-execution scores based on actual outputs are used to refine the policy.
 
 **Core Idea**: Dual-phase evaluation (pre-execution anticipation + post-execution measurement) combined with bidirectional pruning (pruning low-scoring branches before execution and failed branches after execution), enabling MCTS to be both efficient and accurate in tool planning scenarios.
 

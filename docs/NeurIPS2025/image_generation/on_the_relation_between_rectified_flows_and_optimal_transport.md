@@ -33,9 +33,9 @@ Optimal Transport (OT) is a classical framework for measuring and transforming b
 
 Flow matching and rectified flows are recently emerged generative modeling paradigms whose core idea is to learn a velocity field by projecting the linear interpolation of $X_0$ and $X_1$—starting from an arbitrary coupling—onto a conditional expectation. Iterative rectification straightens transport trajectories and reduces transport cost. Liu (2022) claimed that, when the velocity field is constrained to be a gradient field (i.e., $v_t = \nabla \varphi_t$), fixed points of rectified flow are equivalent to OT couplings.
 
-**Root Cause**: This equivalence claim has been widely cited in the literature to justify rectified flow as a reliable approach for computing OT. However, the authors identify that the claim lacks critical assumptions and fails in multiple settings.
+**Key Challenge**: This equivalence claim has been widely cited in the literature to justify rectified flow as a reliable approach for computing OT. However, the authors identify that the claim lacks critical assumptions and fails in multiple settings.
 
-**Starting Point**: Through rigorous mathematical construction, the paper presents two classes of counterexamples—disconnected support sets and non-rectifiable couplings—demonstrating that fixed points of gradient-constrained rectified flow need not correspond to OT maps, thereby clarifying the theoretical boundaries.
+**Key Insight**: Through rigorous mathematical construction, the paper presents two classes of counterexamples—disconnected support sets and non-rectifiable couplings—demonstrating that fixed points of gradient-constrained rectified flow need not correspond to OT maps, thereby clarifying the theoretical boundaries.
 
 ## Method
 

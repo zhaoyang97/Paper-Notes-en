@@ -29,11 +29,11 @@ This paper proposes VideoChat-M1, which replaces conventional fixed tool-calling
 
 ## Background & Motivation
 
-- **State of the Field**: Multimodal large language models (MLLMs) perform well on short videos but struggle with long-horizon videos that involve complex temporal and spatial structures. Agent-based frameworks that invoke specialized tools to extract key video cues—without feeding massive frame sequences directly into MLLMs—have demonstrated superior potential over end-to-end models.
+- **Background**: Multimodal large language models (MLLMs) perform well on short videos but struggle with long-horizon videos that involve complex temporal and spatial structures. Agent-based frameworks that invoke specialized tools to extract key video cues—without feeding massive frame sequences directly into MLLMs—have demonstrated superior potential over end-to-end models.
 
 - **Limitations of Prior Work**: Existing multi-agent video understanding frameworks rely on static, predefined tool-invocation rules that cannot adaptively discover diverse cues, limiting perception and reasoning over complex videos. Single-agent or fixed-strategy approaches cannot simultaneously handle perception, retrieval, and summarization across multiple temporal scales. Furthermore, existing multi-agent systems (e.g., CAMEL, MetaGPT) depend on engineered logic and fixed roles, lacking joint training mechanisms tailored to video-multimodal tasks. Prior multi-agent RL methods are largely confined to unimodal text tasks, neglecting the temporal and perceptual challenges unique to video.
 
-- **Paper Goals**: Introduce a learnable, collaborative policy planning framework that enables multiple heterogeneous agents to jointly optimize tool-invocation strategies through multi-agent reinforcement learning for video understanding.
+- **Goal**: Introduce a learnable, collaborative policy planning framework that enables multiple heterogeneous agents to jointly optimize tool-invocation strategies through multi-agent reinforcement learning for video understanding.
 
 ## Method
 

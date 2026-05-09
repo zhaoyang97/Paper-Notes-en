@@ -30,13 +30,13 @@ This paper proposes gQIR, a modular three-stage framework that adapts large-scal
 
 ## Background & Motivation
 
-**State of the Field**: SPAD sensors can capture images under extremely low illumination and at ultra-high frame rates (10k–100k fps), recording only whether a photon was detected per pixel (Bernoulli distribution), resulting in highly sparse and noisy raw quanta frames. Existing reconstruction methods (QBP, QUIVER, QuDI) rely on alignment-and-merging strategies or task-specific networks, without leveraging large-scale generative priors.
+**Background**: SPAD sensors can capture images under extremely low illumination and at ultra-high frame rates (10k–100k fps), recording only whether a photon was detected per pixel (Bernoulli distribution), resulting in highly sparse and noisy raw quanta frames. Existing reconstruction methods (QBP, QUIVER, QuDI) rely on alignment-and-merging strategies or task-specific networks, without leveraging large-scale generative priors.
 
 **Limitations of Prior Work**: (a) Conventional denoising networks (NAFNet, Restormer) are designed for Poisson-Gaussian noise and suffer from severe over-smoothing under Bernoulli quantization noise; (b) existing generative restoration models (InstantIR) perform well on standard degradations but completely fail in the photon-limited domain (PSNR of only 7.9); (c) naively fine-tuning the VAE encoder of a diffusion model leads to **encoder collapse**—the trainable encoder simultaneously governs both prediction and supervision, causing rapid convergence to a constant output.
 
-**Root Cause**: A large domain gap exists between Bernoulli noise statistics and the continuous natural images used to train diffusion models, causing shortcut learning under direct fine-tuning.
+**Key Challenge**: A large domain gap exists between Bernoulli noise statistics and the continuous natural images used to train diffusion models, causing shortcut learning under direct fine-tuning.
 
-**Starting Point**: The paper identifies the symmetric structure of the degradation-removal loss as the root cause of encoder collapse, and introduces a frozen encoder copy to break this symmetry.
+**Key Insight**: The paper identifies the symmetric structure of the degradation-removal loss as the root cause of encoder collapse, and introduces a frozen encoder copy to break this symmetry.
 
 **Core Idea**: A frozen encoder copy serves as an LSA anchor to prevent collapse, adversarial LoRA fine-tuning enables single-step generation, and a latent-space FusionViT performs spatiotemporal fusion.
 

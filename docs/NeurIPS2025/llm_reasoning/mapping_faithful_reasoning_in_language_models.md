@@ -28,15 +28,15 @@ This paper proposes the Concept Walk framework, which tracks the evolution of in
 
 ## Background & Motivation
 
-**State of the Field**: Reasoning-oriented LLMs (e.g., OpenAI o1, Gemini thinking mode, Qwen 3) provide visibility into the reasoning process via Chain-of-Thought (CoT), which is widely regarded as an important means of enhancing AI transparency and trustworthiness. Practitioners rely on inspecting CoT to verify whether decisions are grounded in sound reasoning.
+**Background**: Reasoning-oriented LLMs (e.g., OpenAI o1, Gemini thinking mode, Qwen 3) provide visibility into the reasoning process via Chain-of-Thought (CoT), which is widely regarded as an important means of enhancing AI transparency and trustworthiness. Practitioners rely on inspecting CoT to verify whether decisions are grounded in sound reasoning.
 
 **Limitations of Prior Work**: Growing evidence suggests that CoT does not always faithfully reflect internal computation—it may constitute post-hoc rationalisation, wherein the model has already determined an answer before generating a seemingly coherent reasoning process. This renders safety oversight through CoT inspection unreliable.
 
-**Root Cause**: Surface-level text cannot distinguish between two modes—"CoT as computation" (where the reasoning process genuinely influences the output) and "CoT as rationalisation" (where the reasoning process is decorative). Existing filtering methods (e.g., truncating or perturbing CoT and observing output changes) can only determine whether outputs change, but cannot reveal how internal concept representations evolve throughout reasoning.
+**Key Challenge**: Surface-level text cannot distinguish between two modes—"CoT as computation" (where the reasoning process genuinely influences the output) and "CoT as rationalisation" (where the reasoning process is decorative). Existing filtering methods (e.g., truncating or perturbing CoT and observing output changes) can only determine whether outputs change, but cannot reveal how internal concept representations evolve throughout reasoning.
 
-**Paper Goals**: To track the dynamic evolution of specific concepts (e.g., safety) across multi-step reasoning in activation space, thereby distinguishing faithful reasoning from decorative reasoning.
+**Goal**: To track the dynamic evolution of specific concepts (e.g., safety) across multi-step reasoning in activation space, thereby distinguishing faithful reasoning from decorative reasoning.
 
-**Starting Point**: The paper combines concept direction extraction from representation engineering with temporal analysis from mechanistic interpretability, tracking concept activations along the dimension of reasoning steps.
+**Key Insight**: The paper combines concept direction extraction from representation engineering with temporal analysis from mechanistic interpretability, tracking concept activations along the dimension of reasoning steps.
 
 **Core Idea**: A "safety direction" vector is learned by contrasting safe and unsafe prompts; the activations at each reasoning step are then projected onto this direction to obtain a "Concept Walk" trajectory. Persistent deviation of the trajectory following CoT perturbation indicates computational reasoning, whereas rapid recovery indicates decorative reasoning.
 

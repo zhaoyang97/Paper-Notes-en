@@ -29,13 +29,13 @@ This paper systematically analyzes the latent reasoning behavior of Qwen2.5-Math
 
 ## Background & Motivation
 
-**State of the Field**: Chain-of-Thought (CoT) prompting has substantially improved multi-step reasoning in LLMs, yet explicit reasoning consumes context windows, introduces latency, and may not faithfully reflect the underlying computation. Recent architectures have demonstrated **latent reasoning**—completing multi-hop inference within activation space without linguistic verbalization.
+**Background**: Chain-of-Thought (CoT) prompting has substantially improved multi-step reasoning in LLMs, yet explicit reasoning consumes context windows, introduces latency, and may not faithfully reflect the underlying computation. Recent architectures have demonstrated **latent reasoning**—completing multi-hop inference within activation space without linguistic verbalization.
 
 **Limitations of Prior Work**: Current benchmarks focus solely on per-sample accuracy and cannot measure the reliability of a model's internal computation. A correct answer may stem from a stable reasoning path or from a fragile heuristic shortcut. In high-stakes settings such as educational tutoring and automated grading, this opacity poses deployment safety risks.
 
-**Root Cause**: Benchmark accuracy ≠ computational reliability. Models can achieve seemingly strong accuracy via statistical shortcuts while the underlying reasoning paths remain highly unstable, potentially yielding drastically different outputs under minor input perturbations.
+**Key Challenge**: Benchmark accuracy ≠ computational reliability. Models can achieve seemingly strong accuracy via statistical shortcuts while the underlying reasoning paths remain highly unstable, potentially yielding drastically different outputs under minor input perturbations.
 
-**Paper Goals**: The paper proposes a composite faithfulness metric—comprising activation stability $\mathcal{S}$, reasoning-hop alignment $\mathcal{A}$, and depth efficiency $\mathcal{E}$—that quantifies the true computational quality of latent reasoning through activation analysis across multiple forward passes, and constructs a safety evaluation framework for identifying silent failures.
+**Goal**: The paper proposes a composite faithfulness metric—comprising activation stability $\mathcal{S}$, reasoning-hop alignment $\mathcal{A}$, and depth efficiency $\mathcal{E}$—that quantifies the true computational quality of latent reasoning through activation analysis across multiple forward passes, and constructs a safety evaluation framework for identifying silent failures.
 
 ## Method
 

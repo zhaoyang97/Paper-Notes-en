@@ -28,15 +28,15 @@ FACE proposes mapping collaborative filtering (CF) embeddings into LLM pre-train
 
 ## Background & Motivation
 
-**State of the Field**: CF models (e.g., LightGCN) in recommender systems produce user/item embeddings as non-semantic latent vectors that LLMs cannot inherently interpret. Existing approaches either feed textual information directly into LLMs (e.g., TALLRec), or align CF embeddings with the LLM space via MLP/Q-former (e.g., ELM, RLMRec).
+**Background**: CF models (e.g., LightGCN) in recommender systems produce user/item embeddings as non-semantic latent vectors that LLMs cannot inherently interpret. Existing approaches either feed textual information directly into LLMs (e.g., TALLRec), or align CF embeddings with the LLM space via MLP/Q-former (e.g., ELM, RLMRec).
 
 **Limitations of Prior Work**: Pure text-based methods lack collaborative signals, yielding inferior recommendation performance compared to traditional CF; space-alignment methods map embeddings near the LLM space but do not produce genuine tokens, so a frozen LLM cannot truly "read" these embeddings. BinLLM encodes CF information as numeric strings, but numerical tokens limit LLM comprehension and require fine-tuning.
 
-**Root Cause**: CF embeddings are continuous, entangled, and non-semantic; LLM tokens are discrete and semantically rich. A lossless continuous-to-discrete mapping is needed while preserving semantic consistency.
+**Key Challenge**: CF embeddings are continuous, entangled, and non-semantic; LLM tokens are discrete and semantically rich. A lossless continuous-to-discrete mapping is needed while preserving semantic consistency.
 
-**Paper Goals**: (a) Disentangle entangled CF embeddings into multi-aspect representations; (b) map continuous embeddings to discrete LLM tokens; (c) ensure that the mapped tokens are semantically consistent with user/item textual descriptions.
+**Goal**: (a) Disentangle entangled CF embeddings into multi-aspect representations; (b) map continuous embeddings to discrete LLM tokens; (c) ensure that the mapped tokens are semantically consistent with user/item textual descriptions.
 
-**Starting Point**: Use the LLM's pre-trained vocabulary (after semantic filtering) as a quantization codebook, quantizing CF embeddings to the nearest token embedding in the codebook, thereby directly producing LLM-readable "descriptors."
+**Key Insight**: Use the LLM's pre-trained vocabulary (after semantic filtering) as a quantization codebook, quantizing CF embeddings to the nearest token embedding in the codebook, thereby directly producing LLM-readable "descriptors."
 
 **Core Idea**: Leverage the LLM pre-trained vocabulary as a codebook, map CF embeddings to LLM tokens via disentangled projection and residual quantization, and align semantics through contrastive learning.
 

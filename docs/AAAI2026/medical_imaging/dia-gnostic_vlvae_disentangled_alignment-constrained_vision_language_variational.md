@@ -28,7 +28,7 @@ This paper proposes DiA-gnostic VLVAE, a vision-language mixture-of-experts VAE 
 
 ## Background & Motivation
 
-**State of the Field**: Radiology Report Generation (RRG) is a critical task of automatically converting medical images into textual reports. The field has evolved from purely image-based models (R2Gen) to knowledge graph-enhanced approaches (MKSG) and context-aware models (PromptMRG), progressively incorporating richer clinical information.
+**Background**: Radiology Report Generation (RRG) is a critical task of automatically converting medical images into textual reports. The field has evolved from purely image-based models (R2Gen) to knowledge graph-enhanced approaches (MKSG) and context-aware models (PromptMRG), progressively incorporating richer clinical information.
 
 **Limitations of Prior Work**:
    - **Missing modalities**: In clinical practice, contextual information (medical history, symptoms, demographics) is frequently incomplete.
@@ -36,11 +36,11 @@ This paper proposes DiA-gnostic VLVAE, a vision-language mixture-of-experts VAE 
    - LLM-based methods incur heavy computational costs; knowledge graph-based methods exhibit poor adaptability.
    - Retrieval-augmented methods degrade to deterministic rules when context is missing.
 
-**Root Cause**: How can cross-modal alignment remain stable under missing modality conditions?
+**Key Challenge**: How can cross-modal alignment remain stable under missing modality conditions?
 
-**Paper Goals**: Achieve robust radiology report generation against missing modalities through disentangled representation learning.
+**Goal**: Achieve robust radiology report generation against missing modalities through disentangled representation learning.
 
-**Starting Point**: Decompose the latent space into three factors ($Z_v$ visual-specific, $Z_l$ language-specific, $Z_s$ shared), and adopt an MoE strategy to infer the shared latent variable such that missing modalities are automatically down-weighted.
+**Key Insight**: Decompose the latent space into three factors ($Z_v$ visual-specific, $Z_l$ language-specific, $Z_s$ shared), and adopt an MoE strategy to infer the shared latent variable such that missing modalities are automatically down-weighted.
 
 **Core Idea**: Three-factor latent space disentanglement (orthogonality constraints for separation + contrastive alignment for semantic association) combined with an MoE shared encoder that gracefully degrades under missing modalities.
 

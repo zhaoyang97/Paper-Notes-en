@@ -26,15 +26,15 @@ content_hash: 72a687c625c31ab1
 This work presents the first systematic investigation of whether inference-time scaling techniques from discrete text reasoning can transfer to continuous latent-space reasoning models (COCONUT). It finds that dropout sampling can generate diverse reasoning paths (Pass@32 reaching 44.43%), but PRM/ORM yields less than 2.3% improvement, with the root cause being that continuous thought representations lack the geometric inductive bias needed to distinguish correct from incorrect reasoning.
 
 ## Background & Motivation
-**State of the Field**: Inference-time scaling is well established in text-based reasoning — generating multiple samples and reranking with PRM/ORM significantly boosts accuracy. Continuous space reasoning (e.g., COCONUT) is an emerging paradigm that performs multi-step reasoning directly in latent space, replacing explicit chain-of-thought text generation.
+**Background**: Inference-time scaling is well established in text-based reasoning — generating multiple samples and reranking with PRM/ORM significantly boosts accuracy. Continuous space reasoning (e.g., COCONUT) is an emerging paradigm that performs multi-step reasoning directly in latent space, replacing explicit chain-of-thought text generation.
 
 **Limitations of Prior Work**: Continuous reasoning models such as COCONUT operate deterministically, making it impossible to directly generate diverse reasoning paths. Moreover, the internal structure of their continuous thought vectors is opaque, and whether existing text-space PRM/ORM methodologies are applicable remains entirely unknown.
 
-**Root Cause**: Pass@N analysis reveals substantial scaling potential in continuous reasoning (~13% absolute headroom), yet existing reward model methodologies cannot effectively exploit this potential — a large gap exists between the theoretical upper bound and actual gains.
+**Key Challenge**: Pass@N analysis reveals substantial scaling potential in continuous reasoning (~13% absolute headroom), yet existing reward model methodologies cannot effectively exploit this potential — a large gap exists between the theoretical upper bound and actual gains.
 
-**Paper Goals**: To answer two key questions: (1) Can diverse reasoning paths be generated for continuous reasoning? (2) Can effective PRM/ORM be trained to rerank these paths?
+**Goal**: To answer two key questions: (1) Can diverse reasoning paths be generated for continuous reasoning? (2) Can effective PRM/ORM be trained to rerank these paths?
 
-**Starting Point**: The first question is addressed by injecting stochasticity via dropout; the second by adapting the MATH-Shepherd annotation framework to train PRM/ORM. Failure is then analyzed in depth through geometric analysis, trajectory dynamics, and perturbation experiments.
+**Key Insight**: The first question is addressed by injecting stochasticity via dropout; the second by adapting the MATH-Shepherd annotation framework to train PRM/ORM. Failure is then analyzed in depth through geometric analysis, trajectory dynamics, and perturbation experiments.
 
 **Core Idea**: Continuous reasoning holds significant inference-time scaling potential, but the geometric homogeneity of continuous thought representations constitutes the fundamental bottleneck preventing reward models from effective discrimination.
 

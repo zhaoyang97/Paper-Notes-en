@@ -29,15 +29,15 @@ This paper proposes GLA-CLIP to address cross-window semantic inconsistency intr
 
 ## Background & Motivation
 
-**State of the Field**: Open-vocabulary semantic segmentation (OVSS) leverages CLIP's vision-language alignment space to enable pixel-level annotation beyond fixed category sets. Training-free approaches have attracted attention for requiring no additional training, with common strategies including modifying CLIP attention mechanisms (e.g., MaskCLIP, SCLIP, ClearCLIP) or incorporating visual foundation model features (e.g., ProxyCLIP with DINO).
+**Background**: Open-vocabulary semantic segmentation (OVSS) leverages CLIP's vision-language alignment space to enable pixel-level annotation beyond fixed category sets. Training-free approaches have attracted attention for requiring no additional training, with common strategies including modifying CLIP attention mechanisms (e.g., MaskCLIP, SCLIP, ClearCLIP) or incorporating visual foundation model features (e.g., ProxyCLIP with DINO).
 
 **Limitations of Prior Work**: CLIP's pretraining resolution is only 224×224, necessitating a sliding-window strategy for high-resolution images. Since each window is processed independently, semantic inconsistencies arise across windows—pixels near adjacent window boundaries often receive different predictions, producing visible grid-like artifacts. The authors introduce the Boundary Error Rate (BER) to quantify this issue, finding that ProxyCLIP exhibits high prediction inconsistency near window boundaries.
 
-**Root Cause**: Sliding windows preserve CLIP's pretraining resolution advantage but sacrifice global context—especially when large or continuous semantic regions span multiple windows, preventing each window from accessing complete scene information for consistent inference.
+**Key Challenge**: Sliding windows preserve CLIP's pretraining resolution advantage but sacrifice global context—especially when large or continuous semantic regions span multiple windows, preventing each window from accessing complete scene information for consistent inference.
 
-**Paper Goals**: How can each window obtain global contextual information while maintaining local spatial precision, without any training, so as to eliminate cross-window semantic inconsistency?
+**Goal**: How can each window obtain global contextual information while maintaining local spatial precision, without any training, so as to eliminate cross-window semantic inconsistency?
 
-**Starting Point**: Extend each window's attention range from local to global—allowing query tokens to attend to key-value tokens from all windows, while using proxy anchors to remove local bias and dynamic normalization to adapt to objects of varying scales.
+**Key Insight**: Extend each window's attention range from local to global—allowing query tokens to attend to key-value tokens from all windows, while using proxy anchors to remove local bias and dynamic normalization to adapt to objects of varying scales.
 
 **Core Idea**: Achieve global-local semantic alignment in training-free CLIP via cross-window key-value extension, proxy anchors, and dynamic normalization.
 

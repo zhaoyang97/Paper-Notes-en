@@ -27,15 +27,15 @@ content_hash: d6f26f3c140ff818
 This paper proposes Parallel-ICL, which partitions the long demonstration context in multimodal in-context learning (MM-ICL) into chunks for parallel processing, and integrates predictions at the logit level via weighted Product-of-Experts (PoE). The method achieves performance on par with or superior to full-context MM-ICL while significantly reducing inference latency.
 
 ## Background & Motivation
-**State of the Field**: Large Vision-Language Models (LVLMs) leverage MM-ICL with multiple demonstration examples to adapt to new tasks, and performance generally improves with more demonstrations.
+**Background**: Large Vision-Language Models (LVLMs) leverage MM-ICL with multiple demonstration examples to adapt to new tasks, and performance generally improves with more demonstrations.
 
 **Limitations of Prior Work**: The attention computation cost in Transformers scales quadratically with context length, and each image in an LVLM requires thousands of visual tokens. Consequently, increasing the number of demonstrations dramatically increases inference latency — for example, 32-shot inference is approximately 3.5× slower than 8-shot.
 
-**Root Cause**: There is a severe trade-off between accuracy and inference efficiency: better performance requires more demonstrations, while faster inference demands shorter contexts.
+**Key Challenge**: There is a severe trade-off between accuracy and inference efficiency: better performance requires more demonstrations, while faster inference demands shorter contexts.
 
-**Paper Goals**: Efficiently approximate long-context MM-ICL at inference time without any additional training or datasets.
+**Goal**: Efficiently approximate long-context MM-ICL at inference time without any additional training or datasets.
 
-**Starting Point**: Individual demonstrations are mutually independent and need not be processed as a single long sequence. They can instead be processed in parallel chunks and their results aggregated.
+**Key Insight**: Individual demonstrations are mutually independent and need not be processed as a single long sequence. They can instead be processed in parallel chunks and their results aggregated.
 
 **Core Idea**: The long demonstration context is divided into multiple short "chunks" that are processed in parallel, and predictions are merged at the logit level using weighted PoE. The theoretical motivation derives from a diversity-relevance analysis based on Fano's inequality in ensemble learning.
 

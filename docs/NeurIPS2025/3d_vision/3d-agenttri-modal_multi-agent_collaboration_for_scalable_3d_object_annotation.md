@@ -30,18 +30,18 @@ This paper proposes Tri-MARF, a tri-modal multi-agent framework comprising a VLM
 
 ## Background & Motivation
 
-**State of the Field**: 3D object annotation is a foundational task for applications such as autonomous driving, robotics, and AR. Early works like ShapeNet and PartNet established human-annotation paradigms; more recently, ULIP and PointCLIP introduced CLIP into the 3D domain, and Cap3D pioneered synthetic-to-real annotation transfer. However, these approaches generally rely on a single VLM generating descriptions from a limited number of viewpoints.
+**Background**: 3D object annotation is a foundational task for applications such as autonomous driving, robotics, and AR. Early works like ShapeNet and PartNet established human-annotation paradigms; more recently, ULIP and PointCLIP introduced CLIP into the 3D domain, and Cap3D pioneered synthetic-to-real annotation transfer. However, these approaches generally rely on a single VLM generating descriptions from a limited number of viewpoints.
 
 **Limitations of Prior Work**:
 - Single-view/single-model methods fail to capture the complete information of 3D objects—critical features may be distributed across different viewpoints (e.g., brand identifiers on the front of a vehicle, tail-light arrays at the rear, and silhouette lines on the side).
 - VLMs suffer from severe hallucination, generating attribute descriptions for non-existent features.
 - Multi-view descriptions exhibit substantial redundancy and semantic inconsistency.
 
-**Root Cause**: A single model cannot simultaneously optimize **accuracy, completeness, consistency, and efficiency**—analogous to a single expert being unable to master all domains. A "team collaboration" system design is required.
+**Key Challenge**: A single model cannot simultaneously optimize **accuracy, completeness, consistency, and efficiency**—analogous to a single expert being unable to master all domains. A "team collaboration" system design is required.
 
-**Paper Goals**: Design a multi-agent collaborative system that decomposes 3D annotation into three specialized subtasks—visual description generation, information aggregation and selection, and geometric consistency verification—with each agent dedicated to its respective role.
+**Goal**: Design a multi-agent collaborative system that decomposes 3D annotation into three specialized subtasks—visual description generation, information aggregation and selection, and geometric consistency verification—with each agent dedicated to its respective role.
 
-**Starting Point**: Drawing on multi-agent systems and reinforcement learning, the paper employs a Multi-Armed Bandit (MAB) algorithm for adaptive selection among multiple candidate descriptions, and uses a point cloud encoder to provide a 3D verification signal independent of 2D imagery.
+**Key Insight**: Drawing on multi-agent systems and reinforcement learning, the paper employs a Multi-Armed Bandit (MAB) algorithm for adaptive selection among multiple candidate descriptions, and uses a point cloud encoder to provide a 3D verification signal independent of 2D imagery.
 
 **Core Idea**: Three specialized agents collaborate through division of labor (VLM generation + MAB selection + point cloud gating), eliminating hallucinations through exploration–exploitation balance and cross-modal verification to achieve annotation quality surpassing human annotators.
 

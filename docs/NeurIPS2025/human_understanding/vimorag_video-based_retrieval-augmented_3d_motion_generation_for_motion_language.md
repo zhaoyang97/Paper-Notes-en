@@ -29,9 +29,9 @@ This paper proposes VimoRAG, a framework that leverages large-scale in-the-wild 
 
 ## Background & Motivation
 
-- **State of the Field**: Generating diverse and realistic 3D human motions from text has broad applications in gaming, robotics, and VR. Motion Language Models (Motion LLMs) unify motion understanding and generation within an LLM framework, but suffer from severe **out-of-distribution (OOD) / out-of-vocabulary (OOV)** problems—existing text–motion paired datasets contain only ~14K samples with prohibitively high annotation costs.
+- **Background**: Generating diverse and realistic 3D human motions from text has broad applications in gaming, robotics, and VR. Motion Language Models (Motion LLMs) unify motion understanding and generation within an LLM framework, but suffer from severe **out-of-distribution (OOD) / out-of-vocabulary (OOV)** problems—existing text–motion paired datasets contain only ~14K samples with prohibitively high annotation costs.
 - **Limitations of Prior Work**: ReMoDiffuse proposed retrieval-augmented generation from a 3D motion database, but that database itself is limited to 14K samples. In contrast, in-the-wild videos are nearly unlimited in scale, rich in motion diversity, and 2D human motions in videos share intrinsically similar features with 3D motions.
-- **Root Cause**: Video-based motion RAG faces two key challenges:
+- **Key Challenge**: Video-based motion RAG faces two key challenges:
   - **Retrieval difficulty**: Existing video foundation models (VFMs), while strong at recognizing objects and attributes, perform poorly at discriminating human poses and actions.
   - **Error propagation**: When retrieval quality is low, inaccurate video priors severely degrade generation quality.
 

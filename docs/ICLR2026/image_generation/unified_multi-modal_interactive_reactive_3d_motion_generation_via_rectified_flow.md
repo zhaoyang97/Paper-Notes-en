@@ -28,15 +28,15 @@ DualFlow proposes the first unified framework for dyadic interactive/reactive 3D
 
 ## Background & Motivation
 
-**State of the Field**: Dyadic motion generation is essential for VR/AR, game AI, and human-robot collaboration. Existing methods treat interactive (simultaneous two-person generation) and reactive (generating person B's motion conditioned on person A's motion) as separate tasks with incompatible architectures.
+**Background**: Dyadic motion generation is essential for VR/AR, game AI, and human-robot collaboration. Existing methods treat interactive (simultaneous two-person generation) and reactive (generating person B's motion conditioned on person A's motion) as separate tasks with incompatible architectures.
 
 **Limitations of Prior Work**: (1) Interactive and reactive models employ different architectures and training objectives, precluding seamless task switching; (2) existing methods support only single-modal conditioning (text or music) and cannot handle joint conditioning; (3) diffusion-based methods require 50+ denoising steps, resulting in slow inference.
 
-**Root Cause**: Dyadic motion requires simultaneously modeling mutual responsiveness between two persons, physical plausibility, and multi-modal signal alignment, yet existing methods lack unified modeling capability.
+**Key Challenge**: Dyadic motion requires simultaneously modeling mutual responsiveness between two persons, physical plausibility, and multi-modal signal alignment, yet existing methods lack unified modeling capability.
 
-**Paper Goals**: How to unify interactive and reactive motion generation within a single architecture while supporting text+music multi-modal conditioning?
+**Goal**: How to unify interactive and reactive motion generation within a single architecture while supporting text+music multi-modal conditioning?
 
-**Starting Point**: Leveraging the straight transport paths of Rectified Flow for fast inference, switching between tasks via symmetric/asymmetric masking mechanisms, and providing semantic guidance through RAG.
+**Key Insight**: Leveraging the straight transport paths of Rectified Flow for fast inference, switching between tasks via symmetric/asymmetric masking mechanisms, and providing semantic guidance through RAG.
 
 **Core Idea**: Unify task switching via a dual-branch architecture with cascaded DualFlow blocks, combined with a contrastive Rectified Flow objective and an LLM-decomposed RAG module for multi-modal semantic alignment.
 

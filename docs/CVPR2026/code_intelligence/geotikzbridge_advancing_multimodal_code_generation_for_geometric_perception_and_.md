@@ -27,15 +27,15 @@ GeoTikzBridge constructs the largest 2.5M image–TikZ code dataset and the firs
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal large language models (MLLMs) have made substantial progress in cross-modal perception and reasoning, yet geometric problems remain challenging. Such problems require integrating fine-grained visual perception with structured symbolic reasoning. Existing image-to-code methods focus primarily on Web UI→HTML/CSS or chart→Python conversions, with little attention to geometric content. In mathematical reasoning, prevailing approaches rely predominantly on textual reasoning and overlook the need for relational propagation in geometric visual reasoning.
+**Background**: Multimodal large language models (MLLMs) have made substantial progress in cross-modal perception and reasoning, yet geometric problems remain challenging. Such problems require integrating fine-grained visual perception with structured symbolic reasoning. Existing image-to-code methods focus primarily on Web UI→HTML/CSS or chart→Python conversions, with little attention to geometric content. In mathematical reasoning, prevailing approaches rely predominantly on textual reasoning and overlook the need for relational propagation in geometric visual reasoning.
 
 **Limitations of Prior Work**: MLLMs exhibit limited capability in local geometric perception, struggling to precisely parse segment relationships, angle magnitudes, shape constraints, and other fine-grained visual details. This is mainly due to: (1) the absence of large-scale geometric image–code datasets (DaTikZ contains only 145k samples with limited geometric coverage); and (2) insufficient modeling of subtle geometric variations.
 
-**Root Cause**: Geometric reasoning demands precise symbolic representations of figure structures, yet existing data and methods cannot provide adequate geometric perception training signals for MLLMs. TikZ code is more suitable for geometric reasoning than SVG because its syntax inherently records the logical steps and dependencies of geometric construction.
+**Key Challenge**: Geometric reasoning demands precise symbolic representations of figure structures, yet existing data and methods cannot provide adequate geometric perception training signals for MLLMs. TikZ code is more suitable for geometric reasoning than SVG because its syntax inherently records the logical steps and dependencies of geometric construction.
 
-**Paper Goals**: (1) How to construct a sufficiently large geometric image–TikZ code dataset for model training? (2) How to direct the model's attention toward local geometric details rather than generating code in a coarse-grained manner? (3) How to transfer geometric perception capabilities to downstream reasoning tasks?
+**Goal**: (1) How to construct a sufficiently large geometric image–TikZ code dataset for model training? (2) How to direct the model's attention toward local geometric details rather than generating code in a coarse-grained manner? (3) How to transfer geometric perception capabilities to downstream reasoning tasks?
 
-**Starting Point**: The authors propose an iterative self-refinement strategy for dataset scaling, a localized geometric transformation strategy for fine-grained perception enhancement, and instruction-guided auxiliary line generation to empower reasoning.
+**Key Insight**: The authors propose an iterative self-refinement strategy for dataset scaling, a localized geometric transformation strategy for fine-grained perception enhancement, and instruction-guided auxiliary line generation to empower reasoning.
 
 **Core Idea**: By combining iterative data expansion with localized code transformation to construct a 2.5M-scale geometric TikZ dataset, the work trains a geometric code generation model that can serve as a plug-and-play reasoning module.
 

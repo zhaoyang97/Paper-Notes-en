@@ -28,15 +28,15 @@ This paper proposes Phantom, a framework that augments a pretrained video diffus
 
 ## Background & Motivation
 
-**State of the Field**: Video generation models represented by Sora, HunyuanVideo, and Wan2.2 can produce visually realistic videos, yet they exhibit clear deficiencies in physical consistency—generated objects frequently violate fundamental physical laws such as gravity, inertia, and collision dynamics.
+**Background**: Video generation models represented by Sora, HunyuanVideo, and Wan2.2 can produce visually realistic videos, yet they exhibit clear deficiencies in physical consistency—generated objects frequently violate fundamental physical laws such as gravity, inertia, and collision dynamics.
 
 **Limitations of Prior Work**: (1) Simply scaling model size and training data is insufficient to learn generalizable physical laws; models tend to memorize case-specific patterns rather than abstract physical principles. (2) Existing physics-aware methods either rely on external physics simulators (limited by simulator coverage), employ LLM prompt engineering at inference time to guide generation (which does not enhance the model's intrinsic physical understanding and introduces inference overhead), or inject physical priors via representation alignment (which cannot explicitly model physical state evolution).
 
-**Root Cause**: Current video generation models primarily rely on a next-frame prediction objective that optimizes visual fidelity without explicitly enforcing physical reasoning, making it difficult for models to internalize and comply with real-world physical laws.
+**Key Challenge**: Current video generation models primarily rely on a next-frame prediction objective that optimizes visual fidelity without explicitly enforcing physical reasoning, making it difficult for models to internalize and comply with real-world physical laws.
 
-**Paper Goals**: How to directly integrate reasoning over latent physical properties into the video generation process, enabling models to produce videos that are not only visually realistic but also physically consistent?
+**Goal**: How to directly integrate reasoning over latent physical properties into the video generation process, enabling models to produce videos that are not only visually realistic but also physically consistent?
 
-**Starting Point**: The authors hypothesize that the inability to learn physical dynamics stems from reliance solely on next-frame prediction objectives. The proposed solution is to have the model simultaneously predict video content and latent physical parameters.
+**Key Insight**: The authors hypothesize that the inability to learn physical dynamics stems from reliance solely on next-frame prediction objectives. The proposed solution is to have the model simultaneously predict video content and latent physical parameters.
 
 **Core Idea**: A dedicated physical branch is introduced into the video generation pipeline. Self-supervised representations from V-JEPA2 serve as "latent physical states" and are jointly trained with the visual branch, enabling the model to reason about physical dynamics while generating video.
 

@@ -29,15 +29,15 @@ This paper proposes the RISK framework, comprising a domain dataset (RISK-Data: 
 
 ## Background & Motivation
 
-**State of the Field**: E-commerce risk management requires aggregating heterogeneous information from multiple external websites (transaction details, user profiles, site verification, etc.), which is often embedded in dynamically loaded sub-pages, interactive elements, or complex DOM structures, necessitating multi-step stateful web interaction.
+**Background**: E-commerce risk management requires aggregating heterogeneous information from multiple external websites (transaction details, user profiles, site verification, etc.), which is often embedded in dynamically loaded sub-pages, interactive elements, or complex DOM structures, necessitating multi-step stateful web interaction.
 
 **Limitations of Prior Work**: Traditional web crawlers cannot handle stateful, event-driven interactions; existing GUI agents are largely limited to single-step operations and lack multi-step reasoning and dynamic content processing capabilities; dedicated datasets and benchmarks for e-commerce risk management are absent; furthermore, GUI models trained with coordinate-based localization face a train-deploy gap when deployed in frameworks using DOM indices and tool calls.
 
-**Root Cause**: General-purpose GUI agents perform poorly in e-commerce risk management scenarios due to lack of domain knowledge, multi-step reasoning ability, and experience handling complex web pages.
+**Key Challenge**: General-purpose GUI agents perform poorly in e-commerce risk management scenarios due to lack of domain knowledge, multi-step reasoning ability, and experience handling complex web pages.
 
-**Paper Goals**: To construct a complete GUI agent framework for e-commerce risk management, spanning data collection, model training, and real-world deployment.
+**Goal**: To construct a complete GUI agent framework for e-commerce risk management, spanning data collection, model training, and real-world deployment.
 
-**Starting Point**: High-quality domain data is collected using the Browser Use framework, and GRPO-based reinforcement fine-tuning is applied to achieve a seamless transition from training to deployment.
+**Key Insight**: High-quality domain data is collected using the Browser Use framework, and GRPO-based reinforcement fine-tuning is applied to achieve a seamless transition from training to deployment.
 
 **Core Idea**: A four-dimensional reward design (format reward + step-wise accuracy reward + process re-weighting + difficulty re-weighting) bridges the gap between GUI agent training and real-world deployment.
 

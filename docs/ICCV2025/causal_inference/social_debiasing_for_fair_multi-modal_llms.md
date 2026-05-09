@@ -29,15 +29,15 @@ This paper constructs CMSC, a large-scale counterfactual dataset spanning 18 soc
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs (e.g., LLaVA, Qwen-VL, Bunny) have achieved remarkable progress in general vision-language understanding and are widely deployed across downstream tasks. However, these models inherit deep-seated social biases from their training data—for instance, strongly associating "nurse" with "female" or "scientist" with "white male."
+**Background**: MLLMs (e.g., LLaVA, Qwen-VL, Bunny) have achieved remarkable progress in general vision-language understanding and are widely deployed across downstream tasks. However, these models inherit deep-seated social biases from their training data—for instance, strongly associating "nurse" with "female" or "scientist" with "white male."
 
 **Limitations of Prior Work**: (1) Existing debiasing datasets are either small in scale (VisoGender contains only 690 images) or cover only a single social concept—SocialCounterfactuals provides 171K images but is restricted to the occupation concept—making comprehensive bias reduction infeasible. (2) Methodologically, naive fine-tuning (naive FT) on a balanced dataset has limited effectiveness because it treats all samples equally and cannot selectively correct the model's tendency to underrepresent certain demographic groups.
 
-**Root Cause**: Neutralizing biased data with a "neutral solution" (balanced dataset + uniform training weights) is insufficient; what is required is an "alkaline solution" (anti-stereotype data + differentiated training weights) to counteract the "acidic" social bias.
+**Key Challenge**: Neutralizing biased data with a "neutral solution" (balanced dataset + uniform training weights) is insufficient; what is required is an "alkaline solution" (anti-stereotype data + differentiated training weights) to counteract the "acidic" social bias.
 
-**Paper Goals**: (1) Construct a large-scale debiasing dataset covering multiple social concepts; (2) design a training strategy that leverages the opposite of bias to correct bias.
+**Goal**: (1) Construct a large-scale debiasing dataset covering multiple social concepts; (2) design a training strategy that leverages the opposite of bias to correct bias.
 
-**Starting Point**: Social bias can be quantified via a Skew metric that measures the deviation of each (social attribute, social concept) pair. If a combination (e.g., Female–Nurse) has $\text{Skew} > 0$ (over-predicted), its training weight should be reduced; conversely, if $\text{Skew} < 0$ (under-predicted, e.g., Male–Nurse), its weight should be increased.
+**Key Insight**: Social bias can be quantified via a Skew metric that measures the deviation of each (social attribute, social concept) pair. If a combination (e.g., Female–Nurse) has $\text{Skew} > 0$ (over-predicted), its training weight should be reduced; conversely, if $\text{Skew} < 0$ (under-predicted, e.g., Male–Nurse), its weight should be increased.
 
 **Core Idea**: Construct the CMSC dataset covering 18 social concepts × 3 social attribute types, paired with the ASD strategy—increasing the sampling frequency of under-represented samples at the data level, and rescaling each sample's loss contribution by a factor of $e^{-\text{Skew}}$ at the objective level.
 

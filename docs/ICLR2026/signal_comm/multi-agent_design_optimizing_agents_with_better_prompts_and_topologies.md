@@ -29,15 +29,15 @@ This paper proposes Multi-Agent System Search (MASS), a framework that automatic
 
 ## Background & Motivation
 
-1. **State of the Field**: LLM-based multi-agent systems (MAS), leveraging interaction and collaboration among multiple agents, outperform single-agent systems on complex tasks such as code generation, reasoning, and question answering.
+1. **Background**: LLM-based multi-agent systems (MAS), leveraging interaction and collaboration among multiple agents, outperform single-agent systems on complex tasks such as code generation, reasoning, and question answering.
 
 2. **Limitations of Prior Work**: Designing effective MAS requires simultaneously considering per-agent prompt design and inter-agent topology orchestration, whose combination yields an enormous search space. Existing automated methods (e.g., ADAS, AFlow) either optimize topology while ignoring prompts, or employ poorly scoped search spaces.
 
-3. **Root Cause**: Prompts and topology are two critical factors in MAS design, yet their interaction is complex—prompt sensitivity amplifies across cascaded agents, and not all topologies positively affect performance. The combinatorial complexity of joint optimization is prohibitively high.
+3. **Key Challenge**: Prompts and topology are two critical factors in MAS design, yet their interaction is complex—prompt sensitivity amplifies across cascaded agents, and not all topologies positively affect performance. The combinatorial complexity of joint optimization is prohibitively high.
 
-4. **Paper Goals**: To systematically analyze the impact of various factors in the MAS design space and propose an efficient automated optimization framework.
+4. **Goal**: To systematically analyze the impact of various factors in the MAS design space and propose an efficient automated optimization framework.
 
-5. **Starting Point**: Empirical analysis first reveals that prompt optimization is more token-efficient than simply scaling the number of agents, and that beneficial topologies constitute only a small fraction of the search space. Based on these findings, the search space is pruned and prompt/topology optimization is interleaved.
+5. **Key Insight**: Empirical analysis first reveals that prompt optimization is more token-efficient than simply scaling the number of agents, and that beneficial topologies constitute only a small fraction of the search space. Based on these findings, the search space is pruned and prompt/topology optimization is interleaved.
 
 6. **Core Idea**: An interleaved optimization strategy proceeding from local to global and from prompts to topology can efficiently overcome the combinatorial complexity of MAS design.
 

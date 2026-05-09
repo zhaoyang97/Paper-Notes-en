@@ -29,15 +29,15 @@ This paper presents UNBench, the first comprehensive LLM evaluation benchmark fo
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have achieved remarkable progress in natural language processing, yet their application in high-stakes political decision-making scenarios remains underexplored. Existing benchmarks (MMLU, BIG-Bench, etc.) include politically relevant tasks but in a fragmented manner, lacking systematic evaluation that reflects real multilateral decision-making processes.
+**Background**: LLMs have achieved remarkable progress in natural language processing, yet their application in high-stakes political decision-making scenarios remains underexplored. Existing benchmarks (MMLU, BIG-Bench, etc.) include politically relevant tasks but in a fragmented manner, lacking systematic evaluation that reflects real multilateral decision-making processes.
 
 **Limitations of Prior Work**: Political science demands capabilities beyond semantic understanding—predicting coalition dynamics, interpreting ambiguous diplomatic language, and balancing national interests against global norms. Existing LLM evaluations do not cover these higher-order requirements.
 
-**Root Cause**: UN resolutions, once adopted, become binding international law, and a single Security Council veto can block passage entirely. Quantitative evaluation of model performance in such high-stakes scenarios is entirely absent.
+**Key Challenge**: UN resolutions, once adopted, become binding international law, and a single Security Council veto can block passage entirely. Quantitative evaluation of model performance in such high-stakes scenarios is entirely absent.
 
-**Paper Goals**: To construct the first unified LLM evaluation benchmark covering the full UN decision-making pipeline (drafting → voting → deliberation), systematically assessing model capabilities in political reasoning, voting prediction, and diplomatic text generation.
+**Goal**: To construct the first unified LLM evaluation benchmark covering the full UN decision-making pipeline (drafting → voting → deliberation), systematically assessing model capabilities in political reasoning, voting prediction, and diplomatic text generation.
 
-**Starting Point**: Systematic extraction of data from publicly available UNSC records, with four interrelated tasks designed to cover the three stages of a resolution's lifecycle.
+**Key Insight**: Systematic extraction of data from publicly available UNSC records, with four interrelated tasks designed to cover the three stages of a resolution's lifecycle.
 
 **Core Idea**: Leverage thirty years of authentic UN Security Council records to build an end-to-end benchmark that comprehensively evaluates LLMs' political reasoning capabilities through four progressively structured tasks.
 

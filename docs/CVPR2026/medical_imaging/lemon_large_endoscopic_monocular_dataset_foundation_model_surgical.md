@@ -29,11 +29,11 @@ This paper introduces LEMON, the largest open surgical video dataset to date (4,
 
 ## Background & Motivation
 
-1. **State of the Field**: Conventional surgical datasets typically contain fewer than 100 videos and 30 hours of footage, leading to poor model generalization. Although self-supervised learning reduces reliance on annotated data, large-scale high-quality surgical data remains scarce.
+1. **Background**: Conventional surgical datasets typically contain fewer than 100 videos and 30 hours of footage, leading to poor model generalization. Although self-supervised learning reduces reliance on annotated data, large-scale high-quality surgical data remains scarce.
 2. **Limitations of Prior Work**: While GenSurgery and SurgeNetXL have expanded dataset scale, they lack data curation steps and include non-surgical content (conference talks, patient testimonials, etc.), introducing noisy features.
-3. **Root Cause**: Surgical data is constrained by privacy regulations and annotation costs, raising the challenge of constructing high-quality large-scale datasets from publicly available online videos.
-4. **Paper Goals**: Design a systematic data curation pipeline to curate high-quality surgical datasets from YouTube videos.
-5. **Starting Point**: Multi-stage automated curation (classification → trimming → preprocessing → annotation) combined with manual quality control.
+3. **Key Challenge**: Surgical data is constrained by privacy regulations and annotation costs, raising the challenge of constructing high-quality large-scale datasets from publicly available online videos.
+4. **Goal**: Design a systematic data curation pipeline to curate high-quality surgical datasets from YouTube videos.
+5. **Key Insight**: Multi-stage automated curation (classification → trimming → preprocessing → annotation) combined with manual quality control.
 6. **Core Idea**: An augmented knowledge distillation approach that exploits cross-patient appearance similarity and inter-frame motion invariance to learn superior surgical visual representations.
 
 ## Method

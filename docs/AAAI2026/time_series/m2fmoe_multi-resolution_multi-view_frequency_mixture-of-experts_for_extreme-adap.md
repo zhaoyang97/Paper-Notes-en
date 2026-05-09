@@ -30,7 +30,7 @@ This paper proposes M2FMoE, a framework that models both regular and extreme tem
 
 ## Background & Motivation
 
-**State of the Field**: Time series forecasting is critical in energy, transportation, and environmental monitoring. Extreme events in hydrological forecasting — such as rainstorms, floods, and sudden water-level surges — are particularly difficult to predict due to their rarity, abruptness, and high variance.
+**Background**: Time series forecasting is critical in energy, transportation, and environmental monitoring. Extreme events in hydrological forecasting — such as rainstorms, floods, and sudden water-level surges — are particularly difficult to predict due to their rarity, abruptness, and high variance.
 
 **Limitations of Prior Work**:
    - Mainstream deep learning models (Transformers, MLPs, etc.) focus on dominant regular patterns (periodicities, smooth trends) and fail to capture the irregular high-frequency abrupt changes characteristic of extreme events.
@@ -38,11 +38,11 @@ This paper proposes M2FMoE, a framework that models both regular and extreme tem
    - Existing extreme-adaptive methods (DAN, MCANN, etc.) rely on extreme event labels as auxiliary supervision, limiting their generalizability.
    - Dual-view strategies introduce cross-view spectral misalignment: FFT's uniform frequency axis and CWT's nonlinear scale axis cause the same signal to occupy inconsistent positions across the two domains.
 
-**Root Cause**: Extreme and regular events exhibit markedly different spectral characteristics — extreme events display broad-band multi-peak slow decay, whereas regular events concentrate energy in narrow low-frequency bands. Adaptive focus on different frequency bands is therefore required, and no single frequency-domain view can simultaneously capture both global and local information.
+**Key Challenge**: Extreme and regular events exhibit markedly different spectral characteristics — extreme events display broad-band multi-peak slow decay, whereas regular events concentrate energy in narrow low-frequency bands. Adaptive focus on different frequency bands is therefore required, and no single frequency-domain view can simultaneously capture both global and local information.
 
-**Paper Goals**: Jointly capture regular and extreme temporal patterns through multi-view, multi-resolution frequency-domain modeling, without relying on any extreme event labels.
+**Goal**: Jointly capture regular and extreme temporal patterns through multi-view, multi-resolution frequency-domain modeling, without relying on any extreme event labels.
 
-**Starting Point**: Leverage the expert specialization capability of MoE to assign different frequency bands to different experts, and employ a shared frequency-band splitter to resolve the cross-view alignment problem.
+**Key Insight**: Leverage the expert specialization capability of MoE to assign different frequency bands to different experts, and employ a shared frequency-band splitter to resolve the cross-view alignment problem.
 
 **Core Idea**: FFT experts capture global periodicity + wavelet experts capture local abrupt changes → shared frequency-band splitter aligns the two domains → multi-resolution fusion from coarse to fine → gated integration of short- and long-term representations.
 

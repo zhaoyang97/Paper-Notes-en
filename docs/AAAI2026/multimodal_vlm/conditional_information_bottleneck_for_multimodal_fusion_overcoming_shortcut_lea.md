@@ -28,18 +28,18 @@ This paper identifies three types of shortcut learning in multimodal sarcasm det
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal sarcasm detection requires integrating text, audio, and video to identify the discrepancy between surface meaning and true intent. Existing methods commonly leverage sentiment polarity contrast, external knowledge, and speaker characteristics as auxiliary signals.
+**Background**: Multimodal sarcasm detection requires integrating text, audio, and video to identify the discrepancy between surface meaning and true intent. Existing methods commonly leverage sentiment polarity contrast, external knowledge, and speaker characteristics as auxiliary signals.
 
 **Limitations of Prior Work**: The authors identify three critical shortcut learning problems:
 - **Character label bias**: Certain characters (e.g., Sheldon) are naturally inclined toward sarcastic expression, causing models that incorporate character labels to learn "who said it" rather than "what was said."
 - **Canned laughter label leakage**: In sitcoms, sarcastic utterances are frequently followed by canned laughter, leading models to learn "laughter implies sarcasm." Removing laughter causes F1 to plummet from 73.47 to 43.59.
 - **Sentiment inconsistency shortcut**: 99% of sarcastic samples exhibit inconsistent explicit/implicit sentiment, yet such labels are unavailable in real-world settings.
 
-**Root Cause**: Model performance in sarcasm detection largely stems from shortcuts rather than genuine sarcasm understanding. Furthermore, existing modality fusion methods do not yield significant information gain—adding extra modalities sometimes even degrades performance.
+**Key Challenge**: Model performance in sarcasm detection largely stems from shortcuts rather than genuine sarcasm understanding. Furthermore, existing modality fusion methods do not yield significant information gain—adding extra modalities sometimes even degrades performance.
 
-**Paper Goals**: (1) Remove shortcut signals and reconstruct a fairer benchmark; (2) Design a fusion method that truly extracts cross-modal complementary information.
+**Goal**: (1) Remove shortcut signals and reconstruct a fairer benchmark; (2) Design a fusion method that truly extracts cross-modal complementary information.
 
-**Starting Point**: Apply the Conditional Information Bottleneck (CIB) to multimodal fusion by distinguishing primary and auxiliary modalities, compressing redundancy in the primary modality while preserving complementary information from the auxiliary modality.
+**Key Insight**: Apply the Conditional Information Bottleneck (CIB) to multimodal fusion by distinguishing primary and auxiliary modalities, compressing redundancy in the primary modality while preserving complementary information from the auxiliary modality.
 
 **Core Idea**: Simultaneously compress primary modality redundancy $I(x_p; b)$ and preserve auxiliary modality complementarity $I(b; y|x_a)$ via the CIB, realizing a fusion paradigm of "removing redundancy while retaining complementarity."
 

@@ -28,15 +28,15 @@ VideoARM proposes an agentic reasoning paradigm built upon a Hierarchical Multim
 
 ## Background & Motivation
 
-1. **State of the Field**: Long-form video understanding requires capturing fine-grained spatiotemporal details and reasoning over long-range dependencies across videos spanning tens of minutes to hours. Recent advances in long-context MLLMs and cross-modal alignment have provided a foundation for this task. Existing LLM-driven approaches fall into two categories: hand-crafted reasoning pipelines (e.g., LLoVi, VideoTree) and autonomous agentic reasoning (e.g., DVD).
+1. **Background**: Long-form video understanding requires capturing fine-grained spatiotemporal details and reasoning over long-range dependencies across videos spanning tens of minutes to hours. Recent advances in long-context MLLMs and cross-modal alignment have provided a foundation for this task. Existing LLM-driven approaches fall into two categories: hand-crafted reasoning pipelines (e.g., LLoVi, VideoTree) and autonomous agentic reasoning (e.g., DVD).
 
 2. **Limitations of Prior Work**: (a) Hand-crafted methods (e.g., VideoTree) follow a fixed pipeline of segmentation → clustering → scoring → tree construction → reasoning, which constrains autonomy and fails to fully leverage the reasoning capacity of stronger backbone models. (b) Agentic methods (e.g., DVD) perform exhaustive preprocessing on all 10-second clips to build a static database, incurring prohibitive token costs (~4M tokens for a 30-minute video); the database cannot be updated during inference.
 
-3. **Root Cause**: Exhaustive preprocessing wastes tokens and introduces query-irrelevant redundancy, while hand-crafted pipelines suppress the model's autonomous reasoning potential. The core tension is: how to maintain reasoning quality while dramatically reducing token consumption?
+3. **Key Challenge**: Exhaustive preprocessing wastes tokens and introduces query-irrelevant redundancy, while hand-crafted pipelines suppress the model's autonomous reasoning potential. The core tension is: how to maintain reasoning quality while dramatically reducing token consumption?
 
-4. **Paper Goals**: To design an adaptive, on-demand agentic reasoning paradigm that replaces static exhaustive preprocessing, enabling efficient and flexible long-form video understanding.
+4. **Goal**: To design an adaptive, on-demand agentic reasoning paradigm that replaces static exhaustive preprocessing, enabling efficient and flexible long-form video understanding.
 
-5. **Starting Point**: Replace the prebuilt database with a hierarchical memory (sensory → result → working) that the agent constructs dynamically on demand; replace the retrieval paradigm with a coarse-to-fine toolset that allows the agent to progressively narrow the search space through temporal focusing and local analysis.
+5. **Key Insight**: Replace the prebuilt database with a hierarchical memory (sensory → result → working) that the agent constructs dynamically on demand; replace the retrieval paradigm with a coarse-to-fine toolset that allows the agent to progressively narrow the search space through temporal focusing and local analysis.
 
 6. **Core Idea**: Replace the static database with a dynamically constructed three-level memory (HM3), enabling the MLLM agent to explore video content on demand within an observe–think–act–memorize loop, achieving token-efficient long-form video reasoning.
 

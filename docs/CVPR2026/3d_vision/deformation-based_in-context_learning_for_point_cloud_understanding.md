@@ -27,15 +27,15 @@ content_hash: 9a70d839d7fe60be
 This paper proposes DeformPIC, which reframes point cloud In-Context Learning from a "masked reconstruction" paradigm to a "deformation transfer" paradigm. A Deformation Extraction Network (DEN) extracts task-specific semantics, and a Deformation Transfer Network (DTN) applies the extracted deformation to the query point cloud, achieving CD reductions of 1.6/1.8/4.7 on reconstruction/denoising/registration respectively.
 
 ## Background & Motivation
-**State of the Field**: 3D point cloud ICL aims to enable models to handle diverse tasks (reconstruction, denoising, registration, segmentation) from a small number of examples. Existing methods (PIC, PIC++) are built upon Masked Point Modeling (MPM).
+**Background**: 3D point cloud ICL aims to enable models to handle diverse tasks (reconstruction, denoising, registration, segmentation) from a small number of examples. Existing methods (PIC, PIC++) are built upon Masked Point Modeling (MPM).
 
 **Limitations of Prior Work**: (1) **Geometry-free**: MPM predicts target point clouds from geometry-free masked tokens, lacking explicit geometric reasoning; (2) **Train-inference mismatch**: during training the target is partially masked (allowing the model to exploit visible parts), whereas at inference the target is entirely unknown.
 
-**Root Cause**: Masked tokens are abstract placeholders that encode no geometric correspondence, forcing the model to implicitly infer spatial structure through self-attention alone.
+**Key Challenge**: Masked tokens are abstract placeholders that encode no geometric correspondence, forcing the model to implicitly infer spatial structure through self-attention alone.
 
-**Paper Goals**: To equip ICL with explicit geometric manipulation capability and eliminate the inconsistency between training and inference objectives.
+**Goal**: To equip ICL with explicit geometric manipulation capability and eliminate the inconsistency between training and inference objectives.
 
-**Starting Point**: Tasks are reformulated as "deforming the query point cloud under prompt guidance," since deformation inherently preserves geometric continuity.
+**Key Insight**: Tasks are reformulated as "deforming the query point cloud under prompt guidance," since deformation inherently preserves geometric continuity.
 
 **Core Idea**: Extract task-specific deformation information from the prompt pair via DEN, then transfer and apply it to the query point cloud via DTN.
 

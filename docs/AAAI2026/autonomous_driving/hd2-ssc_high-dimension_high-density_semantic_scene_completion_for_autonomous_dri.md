@@ -35,9 +35,9 @@ Camera-based 3D Semantic Scene Completion (SSC) is a critical task in autonomous
 
 **Density Gap**: Manual LiDAR annotations are inherently sparse (with inter-point gaps), whereas real-world scenes have dense occupancy and rich contextual detail, requiring the detection of missing voxels and correction of erroneous ones.
 
-**Root Cause**: Directly applying coarse 2D pixel features to 3D prediction leads to semantic confusion and occlusion artifacts; predictions guided by sparse annotations are insufficiently dense to recover true dense occupancy.
+**Key Challenge**: Directly applying coarse 2D pixel features to 3D prediction leads to semantic confusion and occlusion artifacts; predictions guided by sparse annotations are insufficiently dense to recover true dense occupancy.
 
-**Starting Point**: The work addresses two dimensions of information transformation — semantic expansion and decoupling during dimensional conversion, and geometry–semantic consistency alignment during density completion.
+**Key Insight**: The work addresses two dimensions of information transformation — semantic expansion and decoupling during dimensional conversion, and geometry–semantic consistency alignment during density completion.
 
 ## Method
 

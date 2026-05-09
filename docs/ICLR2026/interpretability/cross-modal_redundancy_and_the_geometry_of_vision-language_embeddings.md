@@ -27,15 +27,15 @@ This paper proposes the Iso-Energy hypothesis — that concepts genuinely shared
 
 ## Background & Motivation
 
-**State of the Field**: Vision-language models such as CLIP and SigLIP use contrastive learning to map images and text into a shared embedding space, achieving cross-modal alignment. However, the internal geometric structure of these embedding spaces remains poorly understood.
+**Background**: Vision-language models such as CLIP and SigLIP use contrastive learning to map images and text into a shared embedding space, achieving cross-modal alignment. However, the internal geometric structure of these embedding spaces remains poorly understood.
 
 **Limitations of Prior Work**: A well-known phenomenon called the "modality gap" exists — image and text embeddings occupy disjoint cones within the latent space. Prior work has attempted to eliminate this gap by removing mean differences or projecting out certain coordinate directions, but such interventions consistently degrade cross-modal performance. When sparse autoencoders (SAEs) are used to extract concept dictionaries, concepts tend to be modality-separated, making it difficult to identify genuinely bimodal concepts.
 
-**Root Cause**: Although VLMs are trained explicitly for cross-modal alignment, the extracted concept dictionaries exhibit pervasive modality separation. This arises because concept recovery is an underdetermined problem — nonlinear ICA is non-identifiable — and without additional inductive bias, standard SAEs cannot correctly distinguish bimodal from unimodal atoms.
+**Key Challenge**: Although VLMs are trained explicitly for cross-modal alignment, the extracted concept dictionaries exhibit pervasive modality separation. This arises because concept recovery is an underdetermined problem — nonlinear ICA is non-identifiable — and without additional inductive bias, standard SAEs cannot correctly distinguish bimodal from unimodal atoms.
 
-**Paper Goals**: (a) How can bimodal vs. unimodal concepts be accurately recovered from VLM embeddings? (b) What is the fundamental nature of the modality gap? (c) Can the modality gap be eliminated without degrading model performance?
+**Goal**: (a) How can bimodal vs. unimodal concepts be accurately recovered from VLM embeddings? (b) What is the fundamental nature of the modality gap? (c) Can the modality gap be eliminated without degrading model performance?
 
-**Starting Point**: The authors reason from the data-generating process: if multimodal data is produced by shared latent concept vectors passed through modality-specific generators, then genuinely shared concepts should leave "redundant statistical traces" across modalities — in particular, equal average activation energy.
+**Key Insight**: The authors reason from the data-generating process: if multimodal data is produced by shared latent concept vectors passed through modality-specific generators, then genuinely shared concepts should leave "redundant statistical traces" across modalities — in particular, equal average activation energy.
 
 **Core Idea**: Cross-modal redundancy is used as an inductive bias. An iso-energy constraint guides SAE training toward a correct bimodal/unimodal concept decomposition, thereby revealing and enabling manipulation of the geometric structure of VLM embedding spaces.
 

@@ -28,15 +28,15 @@ This paper presents the first systematic study of cross-programming-language ret
 
 ## Background & Motivation
 
-**State of the Field**: Retrieval-augmented code generation (RACG) enhances LLM code generation by retrieving relevant code snippets, but existing research has primarily focused on monolingual settings such as Python and Java.
+**Background**: Retrieval-augmented code generation (RACG) enhances LLM code generation by retrieving relevant code snippets, but existing research has primarily focused on monolingual settings such as Python and Java.
 
 **Limitations of Prior Work**: Code knowledge is highly unevenly distributed across programming languages — Python benefits from rich documentation and community resources, whereas niche languages such as Scala suffer from severe resource scarcity. Enterprise technology stack migrations also generate substantial demand for cross-lingual code conversion.
 
-**Root Cause**: Can RACG effectively transfer code knowledge from one programming language to another? Is such transfer equally effective across all language pairs?
+**Key Challenge**: Can RACG effectively transfer code knowledge from one programming language to another? Is such transfer equally effective across all language pairs?
 
-**Paper Goals**: To systematically investigate the mechanisms of cross-programming-language knowledge transfer in RACG, addressing three key research questions.
+**Goal**: To systematically investigate the mechanisms of cross-programming-language knowledge transfer in RACG, addressing three key research questions.
 
-**Starting Point**: Three retrieval experimental settings are designed (oracle injection, practical retrieval, and retrieval without natural language), enabling controlled-variable analysis of cross-lingual transfer effectiveness.
+**Key Insight**: Three retrieval experimental settings are designed (oracle injection, practical retrieval, and retrieval without natural language), enabling controlled-variable analysis of cross-lingual transfer effectiveness.
 
 **Core Idea**: Cross-lingual code knowledge transfer is feasible but asymmetric; its effectiveness depends on the linguistic relatedness of the language pair and the diversity of the LLM's pretraining corpus.
 

@@ -39,7 +39,7 @@ LoRA enables parameter-efficient fine-tuning via low-rank decomposition $\Delta 
 
 **Core Insight**: Drawing on research into intrinsic dimensionality — which shows that fine-tuning neural networks effectively operates within a subspace far smaller than the nominal parameter space — if all LoRA parameters across all layers and modules are flattened into a single $D$-dimensional vector $\theta_D$, the essential distinction among different LoRA methods reduces to the choice of projection matrix $P \in \mathbb{R}^{D \times d}$ such that $\theta_D = P \theta_d$.
 
-**Starting Point**: Design an optimal projection matrix satisfying globality, uniformity, and isometry.
+**Key Insight**: Design an optimal projection matrix satisfying globality, uniformity, and isometry.
 
 ## Method
 

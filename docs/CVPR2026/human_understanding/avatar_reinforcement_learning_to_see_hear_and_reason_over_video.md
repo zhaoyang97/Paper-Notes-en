@@ -28,13 +28,13 @@ This paper proposes AVATAR, a framework that addresses three fundamental limitat
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal large language models (MLLMs) require alignment across video, audio, and language modalities to support long-horizon reasoning. GRPO has emerged as an effective RL method for enhancing reasoning, demonstrating strong performance in verifiable domains such as mathematics.
+**Background**: Multimodal large language models (MLLMs) require alignment across video, audio, and language modalities to support long-horizon reasoning. GRPO has emerged as an effective RL method for enhancing reasoning, demonstrating strong performance in verifiable domains such as mathematics.
 
 **Limitations of Prior Work**: GRPO exhibits three critical limitations in open-domain video tasks: (1) on-policy training causes data inefficiency, particularly severe given the high annotation cost of video data; (2) **advantage collapse**: when all responses within a group receive identical rewards (all correct or all incorrect), advantages vanish to zero, eliminating the learning signal; (3) **uniform credit assignment**: all tokens receive equal reward regardless of their position in the reasoning chain, ignoring the differential importance of distinct reasoning stages.
 
-**Root Cause**: In video reasoning, the initial planning stage (localizing sound sources) and the final synthesis stage (identifying speakers by combining audio-visual cues) are critical, yet GRPO treats all tokens uniformly, diluting gradient signals.
+**Key Challenge**: In video reasoning, the initial planning stage (localizing sound sources) and the final synthesis stage (identifying speakers by combining audio-visual cues) are critical, yet GRPO treats all tokens uniformly, diluting gradient signals.
 
-**Starting Point**: (1) The attention sink phenomenon in Transformers—initial tokens consistently attract attention as planning anchors; (2) final tokens are critical for answer synthesis.
+**Key Insight**: (1) The attention sink phenomenon in Transformers—initial tokens consistently attract attention as planning anchors; (2) final tokens are critical for answer synthesis.
 
 **Core Idea**: An off-policy architecture with a hierarchical replay buffer addresses data efficiency and advantage collapse; U-shaped parabolic weighting (TAS) emphasizes the beginning and end of the reasoning chain.
 
@@ -133,12 +133,12 @@ This paper proposes AVATAR, a framework that improves GRPO through two core comp
 
 ## Background & Motivation
 
-1. **State of the Field**: MLLMs must align video, audio, and language modalities to support long-horizon reasoning. GRPO has demonstrated potential for enhancing reasoning as an RL method, but exhibits significant limitations in open-domain video settings.
+1. **Background**: MLLMs must align video, audio, and language modalities to support long-horizon reasoning. GRPO has demonstrated potential for enhancing reasoning as an RL method, but exhibits significant limitations in open-domain video settings.
 2. **Three Key Problems with GRPO**:
     - **Data inefficiency**: As an on-policy method, experience is discarded after each update, resulting in substantial waste on costly video-annotated data.
     - **Advantage collapse**: When intra-group reward variance collapses (all correct or all incorrect), advantages reduce to zero and the learning signal vanishes.
     - **Uniform credit assignment**: Identical rewards are applied to all tokens in the reasoning chain, ignoring the critical roles of the planning stage (beginning) and the synthesis stage (end).
-3. **Starting Point**: Systematically addressing three structural deficiencies of GRPO from an RL algorithm design perspective.
+3. **Key Insight**: Systematically addressing three structural deficiencies of GRPO from an RL algorithm design perspective.
 4. **Core Idea**: An off-policy architecture with a hierarchical replay buffer resolves the first two problems; U-shaped positional weighting via TAS resolves the third.
 
 ## Method

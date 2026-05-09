@@ -29,15 +29,15 @@ SurfaceSplat proposes a hybrid framework that establishes bidirectional connecti
 
 ## Background & Motivation
 
-**State of the Field**: Surface reconstruction and novel view synthesis from sparse-view images are core challenges in 3D vision. Two dominant technical paradigms exist: SDF-based neural implicit surface methods (e.g., NeuS, VolRecon), which learn signed distance fields to recover geometry, and 3D Gaussian Splatting (3DGS)-based methods, which optimize discrete 3D Gaussian primitives for fast, high-quality rendering.
+**Background**: Surface reconstruction and novel view synthesis from sparse-view images are core challenges in 3D vision. Two dominant technical paradigms exist: SDF-based neural implicit surface methods (e.g., NeuS, VolRecon), which learn signed distance fields to recover geometry, and 3D Gaussian Splatting (3DGS)-based methods, which optimize discrete 3D Gaussian primitives for fast, high-quality rendering.
 
 **Limitations of Prior Work**: SDF methods excel at capturing globally consistent geometry but struggle with fine-grained details, as the resolution of implicit representations is limited by network capacity and tends to over-smooth under sparse-view settings. 3DGS methods offer superior rendering quality and speed, but their discrete point-cloud representation lacks global geometric constraints, leading to floating Gaussians (floaters) and inconsistent surfaces.
 
-**Root Cause**: The global geometric consistency of SDF and the local detail rendering capability of 3DGS are difficult to obtain simultaneously. Each representation has its own strengths, yet prior methods employ only one, or use one solely to initialize the other, without establishing a bidirectional co-optimization relationship.
+**Key Challenge**: The global geometric consistency of SDF and the local detail rendering capability of 3DGS are difficult to obtain simultaneously. Each representation has its own strengths, yet prior methods employ only one, or use one solely to initialize the other, without establishing a bidirectional co-optimization relationship.
 
-**Paper Goals**: Design a unified framework in which SDF and 3DGS mutually reinforce each other—SDF provides geometric priors for 3DGS, while 3DGS supplies multi-view supervision signals for SDF.
+**Goal**: Design a unified framework in which SDF and 3DGS mutually reinforce each other—SDF provides geometric priors for 3DGS, while 3DGS supplies multi-view supervision signals for SDF.
 
-**Starting Point**: The authors observe that the strengths and weaknesses of SDF and 3DGS are complementary: SDF excels at global geometry but lacks detail, while 3DGS excels at detail but lacks global consistency. Enabling the two representations to mutually "teach" each other can improve both aspects simultaneously.
+**Key Insight**: The authors observe that the strengths and weaknesses of SDF and 3DGS are complementary: SDF excels at global geometry but lacks detail, while 3DGS excels at detail but lacks global consistency. Enabling the two representations to mutually "teach" each other can improve both aspects simultaneously.
 
 **Core Idea**: Establish a bidirectional information flow between SDF and 3DGS—using the coarse geometry from SDF to constrain the Gaussian distribution in 3DGS, while using high-quality novel-view images rendered by 3DGS as additional supervision for SDF optimization.
 

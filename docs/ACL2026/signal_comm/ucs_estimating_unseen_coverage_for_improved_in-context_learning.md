@@ -29,15 +29,15 @@ This paper proposes UCS (Unseen Coverage Selection), a training-free subset-leve
 
 ## Background & Motivation
 
-**State of the Field**: In-context learning (ICL) performance is highly dependent on which examples are placed in the prompt. Existing methods select examples based on similarity (e.g., semantic proximity to the query), diversity (e.g., DPP), or information-theoretic criteria (e.g., MDL).
+**Background**: In-context learning (ICL) performance is highly dependent on which examples are placed in the prompt. Existing methods select examples based on similarity (e.g., semantic proximity to the query), diversity (e.g., DPP), or information-theoretic criteria (e.g., MDL).
 
 **Limitations of Prior Work**: Existing methods all operate at the instance level — evaluating individual example relevance or pairwise diversity — but lack a subset-level coverage perspective. A good example set should cover diverse latent patterns (clusters) underlying the task, but no method can quantify how many latent patterns remain uncovered by the current selection.
 
-**Root Cause**: The latent pattern distribution in ICL example pools exhibits a severe long tail — a few patterns dominate many samples while numerous patterns have only a few samples. Similarity- or diversity-based methods tend to select from frequent patterns, causing rare patterns to be systematically neglected.
+**Key Challenge**: The latent pattern distribution in ICL example pools exhibits a severe long tail — a few patterns dominate many samples while numerous patterns have only a few samples. Similarity- or diversity-based methods tend to select from frequent patterns, causing rare patterns to be systematically neglected.
 
-**Paper Goals**: Propose a subset-level coverage prior that serves as a lightweight plugin to enhance existing ICL selection methods, encouraging selection of example sets that cover more latent patterns.
+**Goal**: Propose a subset-level coverage prior that serves as a lightweight plugin to enhance existing ICL selection methods, encouraging selection of example sets that cover more latent patterns.
 
-**Starting Point**: Borrow from ecology's classic method for estimating "unseen species count" — the Smoothed Good-Turing estimator — drawing an analogy between "uncovered latent clusters" in ICL and "unobserved species."
+**Key Insight**: Borrow from ecology's classic method for estimating "unseen species count" — the Smoothed Good-Turing estimator — drawing an analogy between "uncovered latent clusters" in ICL and "unobserved species."
 
 **Core Idea**: Define latent patterns using clusters in model-consistent embedding space, estimate how many clusters remain uncovered from frequency spectra using the Good-Turing estimator, and add this estimate as a regularization term to existing selection objectives.
 

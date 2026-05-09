@@ -29,18 +29,18 @@ This work introduces PRISMM-Bench, the first benchmark grounded in genuine revie
 
 ## Background & Motivation
 
-**State of the Field**: Large multimodal models (LMMs) are increasingly employed to assist scientific research—interpreting figures, summarizing papers, and detecting errors. A fundamental question, however, remains unresolved: can LMMs genuinely understand and reason over the complex multimodal structure of scientific papers spanning text, figures, and equations?
+**Background**: Large multimodal models (LMMs) are increasingly employed to assist scientific research—interpreting figures, summarizing papers, and detecting errors. A fundamental question, however, remains unresolved: can LMMs genuinely understand and reason over the complex multimodal structure of scientific papers spanning text, figures, and equations?
 
 **Limitations of Prior Work**:
 - Existing document QA benchmarks (DocVQA, ChartQA, etc.) evaluate individual modalities in isolation, ignoring cross-modal dependencies among text, figures, and formulas.
 - Synthetic datasets (e.g., MMIR) inject artificial errors, which tend to be overly conspicuous and fail to represent the subtle, domain-knowledge-demanding inconsistencies found in real-world scientific writing.
 - Multiple-choice evaluation suffers from severe linguistic bias—models can achieve well above chance accuracy by reading answer choices alone without the question (e.g., Gemini 2.5 Flash reaches 57.6% without context).
 
-**Root Cause**: A benchmark that is simultaneously *authentic* and *systematic* is needed to assess cross-modal reasoning, yet real inconsistencies are rare, scattered, and costly to verify; moreover, evaluation itself is compromised by linguistic shortcuts.
+**Key Challenge**: A benchmark that is simultaneously *authentic* and *systematic* is needed to assess cross-modal reasoning, yet real inconsistencies are rare, scattered, and costly to verify; moreover, evaluation itself is compromised by linguistic shortcuts.
 
-**Paper Goals**: (1) How can real cross-modal inconsistencies be systematically collected? (2) How can evaluation tasks be designed to be fair and unbiased?
+**Goal**: (1) How can real cross-modal inconsistencies be systematically collected? (2) How can evaluation tasks be designed to be fair and unbiased?
 
-**Starting Point**: Open peer review provides a natural solution—inconsistencies flagged by reviewers in real papers constitute expert-level annotations that are organically produced and unpredictable.
+**Key Insight**: Open peer review provides a natural solution—inconsistencies flagged by reviewers in real papers constitute expert-level annotations that are organically produced and unpredictable.
 
 **Core Idea**: Reviewer criticisms are the best test cases for multimodal reasoning.
 

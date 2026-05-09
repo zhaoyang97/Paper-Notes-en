@@ -40,7 +40,7 @@ This paper proposes MetaDefense, a two-stage (pre-generation + mid-generation) d
 - **Core Observation**:
     - LLMs **can distinguish** disguised harmful queries in the embedding space, yet still generate harmful content during generation.
     - This suggests that safety signals already exist internally in LLMs but are not being leveraged.
-- **Starting Point**: Train the LLM itself to act as a safety detector, continuously monitoring both before and during generation.
+- **Key Insight**: Train the LLM itself to act as a safety detector, continuously monitoring both before and during generation.
 
 ## Method
 

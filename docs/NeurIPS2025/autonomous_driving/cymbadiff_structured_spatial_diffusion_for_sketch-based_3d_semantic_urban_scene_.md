@@ -28,13 +28,13 @@ This work introduces the first sketch-to-3D outdoor semantic scene generation ta
 
 ## Background & Motivation
 
-**State of the Field**: 3D outdoor semantic scene generation has attracted increasing attention in recent years. Methods such as UrbanDiff rely on BEV maps as conditional inputs; however, BEV representations lack fine-grained 3D structural information, limiting semantic richness and geometric fidelity. Multi-scale approaches further require repeated synthesis across multiple resolutions, resulting in high computational complexity.
+**Background**: 3D outdoor semantic scene generation has attracted increasing attention in recent years. Methods such as UrbanDiff rely on BEV maps as conditional inputs; however, BEV representations lack fine-grained 3D structural information, limiting semantic richness and geometric fidelity. Multi-scale approaches further require repeated synthesis across multiple resolutions, resulting in high computational complexity.
 
 **Limitations of Prior Work**: (a) No publicly available large-scale standardized benchmark exists — UrbanDiff uses a privately preprocessed dataset that precludes fair comparison; (b) sketch-guided generation methods are restricted to single objects or simple indoor scenes; (c) in Cartesian coordinates, adjacent voxel sequences may incorrectly represent spatial proximity, degrading sequential modeling quality.
 
-**Root Cause**: Outdoor large-scale scenes exhibit complex spatial structures and diverse semantics, yet existing generation methods lack both appropriate datasets and spatial encoding strategies that account for cylindrical continuity and vertical hierarchy.
+**Key Challenge**: Outdoor large-scale scenes exhibit complex spatial structures and diverse semantics, yet existing generation methods lack both appropriate datasets and spatial encoding strategies that account for cylindrical continuity and vertical hierarchy.
 
-**Starting Point**: (a) Construct the first large-scale benchmark pairing sketches and pseudo-annotated satellite imagery with 3D ground truth; (b) design an SSM module combining dual cylindrical and Cartesian scanning to preserve spatial consistency.
+**Key Insight**: (a) Construct the first large-scale benchmark pairing sketches and pseudo-annotated satellite imagery with 3D ground truth; (b) design an SSM module combining dual cylindrical and Cartesian scanning to preserve spatial consistency.
 
 **Core Idea**: The Cylinder Mamba Block performs Mamba scanning in cylindrical coordinates ordered by $(θ, r, z)$ to preserve angular-radial continuity, then fuses Cartesian tri-directional Mamba to retain accurate geometric distance relationships.
 

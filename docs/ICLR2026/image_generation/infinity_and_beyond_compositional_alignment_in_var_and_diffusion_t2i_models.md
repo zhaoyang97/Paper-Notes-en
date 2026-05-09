@@ -29,15 +29,15 @@ This paper presents the first systematic comparison of Visual Autoregressive (VA
 
 ## Background & Motivation
 
-**State of the Field**: T2I models can generate high-quality, semantically rich images, yet compositional alignment — faithfully binding objects, attributes, and spatial relations described in text to visual outputs — remains a core challenge.
+**Background**: T2I models can generate high-quality, semantically rich images, yet compositional alignment — faithfully binding objects, attributes, and spatial relations described in text to visual outputs — remains a core challenge.
 
 **Limitations of Prior Work**: While prior work has evaluated the compositional capabilities of diffusion models, the compositional alignment of emerging Visual Autoregressive (VAR) architectures (e.g., Infinity) has not been systematically assessed. VAR models generate hierarchical latent codes via next-scale autoregressive prediction, a paradigm fundamentally different from the denoising process of diffusion models.
 
-**Root Cause**: High visual quality does not imply reliable compositional correctness — models may produce visually appealing images with incorrect attribute binding or incoherent spatial relationships. Yet cross-architecture systematic comparisons are lacking.
+**Key Challenge**: High visual quality does not imply reliable compositional correctness — models may produce visually appealing images with incorrect attribute binding or incoherent spatial relationships. Yet cross-architecture systematic comparisons are lacking.
 
-**Paper Goals**: To provide the first unified benchmark evaluation of VAR vs. diffusion models on compositional alignment, covering color/texture/shape binding, spatial relations, counting, and complex multi-attribute composition.
+**Goal**: To provide the first unified benchmark evaluation of VAR vs. diffusion models on compositional alignment, covering color/texture/shape binding, spatial relations, counting, and complex multi-attribute composition.
 
-**Starting Point**: Two complementary benchmarks are employed — T2I-CompBench++ (detector-driven validation) and GenEval (rule-based constraints) — spanning 8 evaluation dimensions across 6 representative T2I models.
+**Key Insight**: Two complementary benchmarks are employed — T2I-CompBench++ (detector-driven validation) and GenEval (rule-based constraints) — spanning 8 evaluation dimensions across 6 representative T2I models.
 
 **Core Idea**: VAR models (especially Infinity-8B) systematically outperform diffusion models on compositional alignment, potentially because next-scale autoregressive generation naturally conditions each stage on the already-generated visual structure.
 

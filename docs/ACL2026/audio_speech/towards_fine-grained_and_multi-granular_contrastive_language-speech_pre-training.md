@@ -29,15 +29,15 @@ This paper proposes the FCaps large-scale dataset (47k hours of speech, 19M fine
 
 ## Background & Motivation
 
-**State of the Field**: Speaking style conveys rich paralinguistic information, encompassing intrinsic speaker characteristics (gender, age, accent) and contextual features (speech rate, emotion, expressiveness). Existing speech-text representation learning methods typically rely on coarse-grained labels or task-specific supervision, failing to capture the fine-grained temporal structure of speaking style.
+**Background**: Speaking style conveys rich paralinguistic information, encompassing intrinsic speaker characteristics (gender, age, accent) and contextual features (speech rate, emotion, expressiveness). Existing speech-text representation learning methods typically rely on coarse-grained labels or task-specific supervision, failing to capture the fine-grained temporal structure of speaking style.
 
 **Limitations of Prior Work**: Existing speech style annotation datasets predominantly adopt cascaded annotation pipelines—first annotating speech with discrete labels, then using large language models to rewrite those labels into natural language descriptions. This approach introduces a fundamental information bottleneck: the intermediate discrete labels compress rich, continuous, time-varying paralinguistic information into a limited set of predefined categories, leading to severe information loss and semantic drift.
 
-**Root Cause**: Fine-grained speech style modeling requires high-quality, large-scale free-text descriptions, yet existing methods either rely on human annotation (costly and inconsistent) or cascaded pipelines (introducing error propagation and information loss).
+**Key Challenge**: Fine-grained speech style modeling requires high-quality, large-scale free-text descriptions, yet existing methods either rely on human annotation (costly and inconsistent) or cascaded pipelines (introducing error propagation and information loss).
 
-**Paper Goals**: (1) Construct a large-scale end-to-end fine-grained speech style annotation dataset that avoids the information bottleneck of cascaded pipelines; (2) Train a contrastive learning model capable of uniformly representing speech styles at multiple granularities.
+**Goal**: (1) Construct a large-scale end-to-end fine-grained speech style annotation dataset that avoids the information bottleneck of cascaded pipelines; (2) Train a contrastive learning model capable of uniformly representing speech styles at multiple granularities.
 
-**Starting Point**: Leveraging a recent multimodal annotation model (Qwen3-Omni) to directly generate fine-grained descriptions from audio, bypassing the discrete label intermediate step, while ensuring annotation quality through an agent-based verification process.
+**Key Insight**: Leveraging a recent multimodal annotation model (Qwen3-Omni) to directly generate fine-grained descriptions from audio, bypassing the discrete label intermediate step, while ensuring annotation quality through an agent-based verification process.
 
 **Core Idea**: An end-to-end annotation pipeline combined with fine-grained multi-granular contrastive learning eliminates the information bottleneck and enables unified speech-text representation from global to fine-grained granularity.
 

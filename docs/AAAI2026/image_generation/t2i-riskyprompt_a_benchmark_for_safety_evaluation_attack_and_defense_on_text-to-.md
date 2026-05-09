@@ -27,18 +27,18 @@ content_hash: b1a30221e593b2ae
 This paper constructs T2I-RiskyPrompt — a comprehensive benchmark comprising 6,432 valid risky prompts spanning 6 major categories and 14 subcategories, each annotated with hierarchical labels and detailed risk rationales. A reason-driven MLLM-based risk detection method is proposed (achieving 91.8% accuracy with a 3B model), and a systematic evaluation is conducted across 8 T2I models, 9 defense methods, 5 safety filters, and 5 attack strategies.
 
 ## Background & Motivation
-**State of the Field**: T2I models such as Stable Diffusion and Midjourney each have over 10 million users and have collectively generated more than 1 billion images. However, these models can also be maliciously exploited to generate risky content including pornography, violence, and politically sensitive material. Constructing high-quality risky prompt datasets is critical for evaluating the safety of T2I models.
+**Background**: T2I models such as Stable Diffusion and Midjourney each have over 10 million users and have collectively generated more than 1 billion images. However, these models can also be maliciously exploited to generate risky content including pornography, violence, and politically sensitive material. Constructing high-quality risky prompt datasets is critical for evaluating the safety of T2I models.
 
 **Limitations of Prior Work**:
    - **Limited risk categories**: Most datasets focus solely on NSFW content (pornography/violence/horror), neglecting copyright infringement and politically sensitive content.
    - **Coarse-grained annotations**: Prior work relies on automated text moderation tools without human verification, resulting in imprecise labels.
    - **Low effectiveness**: Prompts exhibit unclear semantics (PPL as high as 2,500+), yielding a low proportion of generated risky images (effectiveness only 32–55%).
 
-**Root Cause**: The semantic ambiguity of existing prompts leads to a low probability of T2I models generating risky images, making it infeasible to effectively evaluate model safety.
+**Key Challenge**: The semantic ambiguity of existing prompts leads to a low probability of T2I models generating risky images, making it infeasible to effectively evaluate model safety.
 
-**Paper Goals**: Construct a T2I risky prompt benchmark with broad coverage, fine-grained annotation, and high effectiveness.
+**Goal**: Construct a T2I risky prompt benchmark with broad coverage, fine-grained annotation, and high effectiveness.
 
-**Starting Point**: Analyze the usage policies of 7 platforms to derive a hierarchical risk taxonomy; employ a 6-stage pipeline to ensure data quality; and replace traditional classifiers with a reason-driven detection method.
+**Key Insight**: Analyze the usage policies of 7 platforms to derive a hierarchical risk taxonomy; employ a 6-stage pipeline to ensure data quality; and replace traditional classifiers with a reason-driven detection method.
 
 **Core Idea**: Hierarchical risk taxonomy + 6-stage data construction pipeline + reason-driven MLLM detection = a new benchmark for comprehensive T2I safety evaluation.
 

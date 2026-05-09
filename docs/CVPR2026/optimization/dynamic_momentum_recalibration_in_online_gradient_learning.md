@@ -28,15 +28,15 @@ From a signal processing perspective, this work identifies the inherent bias-var
 
 ## Background & Motivation
 
-**State of the Field**: SGD and its momentum variants (EMA/CM) alongside adaptive methods (Adam/AdamW) form the foundation of deep learning optimization. Momentum methods smooth noise via historical gradients, while adaptive methods scale learning rates using second-order moments.
+**Background**: SGD and its momentum variants (EMA/CM) alongside adaptive methods (Adam/AdamW) form the foundation of deep learning optimization. Momentum methods smooth noise via historical gradients, while adaptive methods scale learning rates using second-order moments.
 
 **Limitations of Prior Work**: Analysis under the SDE framework reveals that EMA ($u=1-\beta$), acting as a low-pass filter, reduces variance as $\beta \to 1$ but causes bias to diverge (accumulating stale gradients); CM ($u=1$) is more aggressive, with both bias and variance diverging as $\beta \to 1$. Both methods are locked into a preset bias-variance tradeoff via fixed coefficients and cannot adapt to the dynamically changing noise and curvature during training.
 
-**Root Cause**: Structurally reducing variance inevitably amplifies bias, while reducing bias inevitably exposes the estimator to higher variance — this is the fundamental dilemma of static momentum coefficients.
+**Key Challenge**: Structurally reducing variance inevitably amplifies bias, while reducing bias inevitably exposes the estimator to higher variance — this is the fundamental dilemma of static momentum coefficients.
 
-**Paper Goals**: Design an adaptive gain that reduces momentum reliance during low-variance phases to minimize bias, while heavily leveraging momentum updates to filter noise during high-variance phases.
+**Goal**: Design an adaptive gain that reduces momentum reliance during low-variance phases to minimize bias, while heavily leveraging momentum updates to filter noise during high-variance phases.
 
-**Starting Point**: Drawing from optimal linear filtering (Kalman Filter principles), the historical gradient estimate and the current gradient observation are treated as two Gaussian sources with distinct uncertainties to be fused.
+**Key Insight**: Drawing from optimal linear filtering (Kalman Filter principles), the historical gradient estimate and the current gradient observation are treated as two Gaussian sources with distinct uncertainties to be fused.
 
 **Core Idea**: Apply the minimum mean squared error principle to compute a time-varying gain $K_t$ online, achieving optimal linear fusion of the momentum estimate and the current gradient.
 

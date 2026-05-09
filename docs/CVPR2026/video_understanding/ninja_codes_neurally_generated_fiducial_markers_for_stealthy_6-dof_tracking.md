@@ -27,11 +27,11 @@ content_hash: af8984d3668fb7a6
 Ninja Codes leverages deep steganography to transform arbitrary images into visually inconspicuous fiducial markers via an end-to-end trained encoder. The resulting markers can be printed with standard printers and detected using RGB cameras, enabling stealthy 6-DoF pose tracking.
 
 ## Background & Motivation
-1. **State of the Field**: Traditional fiducial markers (ArUco, AprilTag, etc.) are widely adopted for their low cost, easy deployment, and robust performance, but their conspicuous appearance limits their use in aesthetics-sensitive environments.
+1. **Background**: Traditional fiducial markers (ArUco, AprilTag, etc.) are widely adopted for their low cost, easy deployment, and robust performance, but their conspicuous appearance limits their use in aesthetics-sensitive environments.
 2. **Limitations of Prior Work**: The black-and-white grid appearance of conventional fiducial markers makes them unsuitable for domestic, exhibition, or other visually demanding settings, hindering the adoption of indoor localization and AR technologies in everyday life.
-3. **Root Cause**: Markers must be sufficiently salient for reliable detection while remaining visually unobtrusive enough to blend into their surroundings — an apparently contradictory requirement.
-4. **Paper Goals**: To create stealthy fiducial markers that blend naturally into diverse real-world textures while maintaining reliable 6-DoF tracking capability.
-5. **Starting Point**: Drawing inspiration from deep steganography (hiding information within images imperceptibly to the human eye), the paper frames marker generation as an information encoding problem.
+3. **Key Challenge**: Markers must be sufficiently salient for reliable detection while remaining visually unobtrusive enough to blend into their surroundings — an apparently contradictory requirement.
+4. **Goal**: To create stealthy fiducial markers that blend naturally into diverse real-world textures while maintaining reliable 6-DoF tracking capability.
+5. **Key Insight**: Drawing inspiration from deep steganography (hiding information within images imperceptibly to the human eye), the paper frames marker generation as an information encoding problem.
 6. **Core Idea**: An encoder, decoder, region detector, corner detector, and adversarial network are jointly trained end-to-end to embed a 36-bit ID into environmental texture images through subtle visual modifications.
 
 ## Method

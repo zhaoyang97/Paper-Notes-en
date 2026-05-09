@@ -28,15 +28,15 @@ This work presents the first systematic comparison of layer-wise representation 
 
 ## Background & Motivation
 
-**State of the Field**: Autoregressive (AR) language models build representations incrementally via left-to-right next-token prediction, while diffusion language models (dLLMs) such as LLaDA and Dream are trained through full-sequence denoising. Recent dLLMs have approached AR model performance on reasoning and code generation tasks.
+**Background**: Autoregressive (AR) language models build representations incrementally via left-to-right next-token prediction, while diffusion language models (dLLMs) such as LLaDA and Dream are trained through full-sequence denoising. Recent dLLMs have approached AR model performance on reasoning and code generation tasks.
 
 **Limitations of Prior Work**: Despite converging performance, the internal representation structure differences between dLLMs and AR models remain unsystematically studied. Existing efficiency optimization work (e.g., YOCO) focuses on architecture-level modifications such as KV-cache sharing, which require structural changes to the model.
 
-**Root Cause**: Does the training objective (diffusion vs. autoregressive) fundamentally reshape the model's internal representations? If systematic differences exist, can they be directly exploited to accelerate inference?
+**Key Challenge**: Does the training objective (diffusion vs. autoregressive) fundamentally reshape the model's internal representations? If systematic differences exist, can they be directly exploited to accelerate inference?
 
-**Paper Goals**: (a) Quantify differences in layer-wise and token-wise representation similarity between dLLMs and AR LLMs; (b) investigate the persistent influence of AR initialization on dLLM representations; (c) leverage identified representational redundancy to accelerate inference without architectural modifications.
+**Goal**: (a) Quantify differences in layer-wise and token-wise representation similarity between dLLMs and AR LLMs; (b) investigate the persistent influence of AR initialization on dLLM representations; (c) leverage identified representational redundancy to accelerate inference without architectural modifications.
 
-**Starting Point**: Layer-wise cosine similarity analysis reveals that natively trained dLLMs exhibit highly similar early-layer representations (>0.95), indicating that computation in these layers is redundant and can be safely skipped.
+**Key Insight**: Layer-wise cosine similarity analysis reveals that natively trained dLLMs exhibit highly similar early-layer representations (>0.95), indicating that computation in these layers is redundant and can be safely skipped.
 
 **Core Idea**: The diffusion training objective induces a hierarchical "coarse-to-fine" abstraction: early layers establish rough representations (high redundancy) while later layers perform refinement. This redundancy can be directly exploited for static layer skipping without KV-cache sharing or architectural modifications.
 

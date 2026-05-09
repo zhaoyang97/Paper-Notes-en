@@ -27,15 +27,15 @@ content_hash: e7f27747d0b0d56c
 This paper proposes a Surface-Based Visibility field (SBV) that derives surface confidence from SDF sign changes and updates it via a voxel grid, enabling accurate visibility-aware uncertainty estimation during continuous active learning for Next-Best View selection. SBV achieves up to 11.6% improvement in image rendering quality across four benchmarks: DTU, Blender, TanksAndTemples, and BlendedMVS.
 
 ## Background & Motivation
-**State of the Field**: Active 3D neural reconstruction selects the Next-Best View (NBV) by evaluating scene uncertainty, reducing data acquisition and computational costs. Existing methods quantify uncertainty using the variance of volumetric density distributions (ActiveNeRF), variance or entropy of color distributions (ActiveRMAP), or Fisher information (FisherRF).
+**Background**: Active 3D neural reconstruction selects the Next-Best View (NBV) by evaluating scene uncertainty, reducing data acquisition and computational costs. Existing methods quantify uncertainty using the variance of volumetric density distributions (ActiveNeRF), variance or entropy of color distributions (ActiveRMAP), or Fisher information (FisherRF).
 
 **Limitations of Prior Work**: (1) Visibility estimation based on volumetric density is severely inaccurate when the model is underfitted—high uncertainty in low-density regions is suppressed by the volume rendering process, causing informative candidate views to be excluded. (2) Existing visibility-aware methods (NVF) can only estimate visibility after full convergence within a training sub-phase, making them inapplicable to continuous active learning scenarios.
 
-**Root Cause**: Volume rendering cannot reliably determine the visibility of uncertain regions in early training stages—uncertainty from low-density floaters and underfitted surfaces is systematically underestimated. Yet continuous active learning requires real-time assessment of information gain for view selection.
+**Key Challenge**: Volume rendering cannot reliably determine the visibility of uncertain regions in early training stages—uncertainty from low-density floaters and underfitted surfaces is systematically underestimated. Yet continuous active learning requires real-time assessment of information gain for view selection.
 
-**Paper Goals**: During continuous active learning (where new views are selected while the model trains), how can one accurately estimate the visibility of uncertainty in different regions—i.e., distinguish "uncertainty on surfaces" from "uncertainty in empty space"?
+**Goal**: During continuous active learning (where new views are selected while the model trains), how can one accurately estimate the visibility of uncertainty in different regions—i.e., distinguish "uncertainty on surfaces" from "uncertainty in empty space"?
 
-**Starting Point**: Surface confidence is derived directly from NeuS SDF values via sign-change detection, bypassing the unreliability of volumetric density. A voxel grid stores and robustly updates surface confidence, enabling fast and stable visibility reasoning.
+**Key Insight**: Surface confidence is derived directly from NeuS SDF values via sign-change detection, bypassing the unreliability of volumetric density. A voxel grid stores and robustly updates surface confidence, enabling fast and stable visibility reasoning.
 
 **Core Idea**: Rather than relying on volumetric density, surface detection is performed via SDF sign-change detection. Surface confidence is robustly updated through a voxel grid, allowing accurate determination of whether uncertainty lies on a visible surface throughout continuous training.
 

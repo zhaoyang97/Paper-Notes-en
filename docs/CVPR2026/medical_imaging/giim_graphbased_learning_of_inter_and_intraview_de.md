@@ -29,7 +29,7 @@ This paper proposes the GIIM framework, which constructs a Multi-Heterogeneous G
 
 ## Background & Motivation
 
-**State of the Field**: Clinical diagnosis requires integrating complex dependencies among abnormalities across multiple views — including the dynamic enhancement pattern of a single lesion across multi-phase CT and the spatial co-occurrence among different lesions. CNN, Transformer, and GNN-based methods have made progress in single-view or simple multi-view fusion settings.
+**Background**: Clinical diagnosis requires integrating complex dependencies among abnormalities across multiple views — including the dynamic enhancement pattern of a single lesion across multi-phase CT and the spatial co-occurrence among different lesions. CNN, Transformer, and GNN-based methods have made progress in single-view or simple multi-view fusion settings.
 
 **Limitations of Prior Work**:
 
@@ -37,11 +37,11 @@ This paper proposes the GIIM framework, which constructs a Multi-Heterogeneous G
 2. Attention-based methods require fixed-size inputs and cannot flexibly handle a variable number of lesions.
 3. Missing views are common in clinical practice due to protocol constraints, technical failures, or patient-related factors, yet existing methods lack robustness to such scenarios.
 
-**Root Cause**: There is a need to simultaneously model four types of dependencies (same lesion across views, different lesions within a single view, different lesions across multiple views, and single-to-multi-view aggregation), while maintaining robustness under missing-view conditions.
+**Key Challenge**: There is a need to simultaneously model four types of dependencies (same lesion across views, different lesions within a single view, different lesions across multiple views, and single-to-multi-view aggregation), while maintaining robustness under missing-view conditions.
 
-**Paper Goals**: Reformulate multi-view medical diagnosis as a relational modeling problem, comprehensively capturing four types of dependencies via heterogeneous graphs while handling missing data.
+**Goal**: Reformulate multi-view medical diagnosis as a relational modeling problem, comprehensively capturing four types of dependencies via heterogeneous graphs while handling missing data.
 
-**Starting Point**: GNNs are naturally suited for variable-size node sets and heterogeneous relational modeling, enabling different node and edge types to encode distinct levels of clinical relationships.
+**Key Insight**: GNNs are naturally suited for variable-size node sets and heterogeneous relational modeling, enabling different node and edge types to encode distinct levels of clinical relationships.
 
 **Core Idea**: Construct each patient's multi-lesion, multi-view data as a multi-heterogeneous graph and perform type-aware message passing to jointly reason over all four dependency types.
 

@@ -27,18 +27,18 @@ This work extends Neural Collapse (NC) theory from the class level to the sample
 
 ## Background & Motivation
 
-1. **State of the Field**: Test-Time Adaptation (TTA) has become a practical approach for handling distribution shift. Major methods include prototype-based methods (SHOT, T3A), consistency regularization methods (MEMO, CoTTA), normalization-layer methods (NOTE, SAR), and entropy minimization methods (Tent, EATA, DeYO).
+1. **Background**: Test-Time Adaptation (TTA) has become a practical approach for handling distribution shift. Major methods include prototype-based methods (SHOT, T3A), consistency regularization methods (MEMO, CoTTA), normalization-layer methods (NOTE, SAR), and entropy minimization methods (Tent, EATA, DeYO).
 
 2. **Limitations of Prior Work**: While these methods achieve strong empirical performance through algorithmic optimization at inference time, they generally lack a theoretical understanding of the root cause of model degradation under distribution shift—knowing *what works* without knowing *why*.
 
-3. **Root Cause**: Neural Collapse (NC) theory reveals the elegant geometric structure of trained DNNs (class means ↔ classifier weight alignment), but its analysis relies on class labels and the full training set to compute class means—both of which are unavailable in TTA, where only unlabeled mini-batches of test data are accessible.
+3. **Key Challenge**: Neural Collapse (NC) theory reveals the elegant geometric structure of trained DNNs (class means ↔ classifier weight alignment), but its analysis relies on class labels and the full training set to compute class means—both of which are unavailable in TTA, where only unlabeled mini-batches of test data are accessible.
 
-4. **Paper Goals**
+4. **Goal**
     - Extend NC theory to the sample level to make it applicable to TTA scenarios
     - Explain performance degradation under distribution shift from an NC perspective
     - Propose a theoretically motivated TTA method
 
-5. **Starting Point**: Since NC3 states that "class means align with classifier weights," and since during late-stage training intra-class variance approaches zero (NC1), each individual sample's feature should also align with its corresponding classifier weight—this is NC3+.
+5. **Key Insight**: Since NC3 states that "class means align with classifier weights," and since during late-stage training intra-class variance approaches zero (NC1), each individual sample's feature should also align with its corresponding classifier weight—this is NC3+.
 
 6. **Core Idea**: Performance degradation equals sample features drifting away from the correct classifier weights. Therefore, the central task of TTA is re-alignment. Since pseudo-labels are unreliable, a hybrid objective combining geometric proximity and prediction confidence is used as a substitute.
 

@@ -28,15 +28,15 @@ SPROD is a post-hoc OOD detection method designed to handle spurious correlation
 
 ## Background & Motivation
 
-**State of the Field**: OOD detection methods (MSP, Energy, KNN, MDS, etc.) perform well on standard benchmarks, but spurious correlations in training data (e.g., "waterbirds always appear on water backgrounds") severely degrade detection performance—models may incorrectly classify OOD samples sharing spurious features as in-distribution.
+**Background**: OOD detection methods (MSP, Energy, KNN, MDS, etc.) perform well on standard benchmarks, but spurious correlations in training data (e.g., "waterbirds always appear on water backgrounds") severely degrade detection performance—models may incorrectly classify OOD samples sharing spurious features as in-distribution.
 
 **Limitations of Prior Work**: (a) SP-OOD samples (sharing spurious features but lacking core features) are particularly difficult to detect, as models "recognize" them via spurious features; (b) existing post-hoc methods are unaware of spurious correlations in training data; (c) fine-tuning the backbone further entangles the feature space with spurious features.
 
-**Root Cause**: Effective OOD detection requires reliance on core (causal) features, yet spurious features are learned equally or more strongly during training. Distinguishing the influence of core vs. spurious features is needed without modifying the model.
+**Key Challenge**: Effective OOD detection requires reliance on core (causal) features, yet spurious features are learned equally or more strongly during training. Distinguishing the influence of core vs. spurious features is needed without modifying the model.
 
-**Paper Goals**: A post-hoc method that automatically discovers spurious subgroups in training data and constructs spurious-aware prototypes for OOD detection.
+**Goal**: A post-hoc method that automatically discovers spurious subgroups in training data and constructs spurious-aware prototypes for OOD detection.
 
-**Starting Point**: Misclassified training samples may share spurious features (e.g., "landbird" samples misclassified as "waterbird" may be misclassified due to water-background spurious features). Misclassification patterns are exploited to automatically discover spurious subgroups.
+**Key Insight**: Misclassified training samples may share spurious features (e.g., "landbird" samples misclassified as "waterbird" may be misclassified due to water-background spurious features). Misclassification patterns are exploited to automatically discover spurious subgroups.
 
 **Core Idea**: Misclassification analysis reveals spurious subgroups → multiple intra-class prototypes (one per correct/misclassified subgroup) → K-means refinement → distance-based (generative) OOD scoring.
 

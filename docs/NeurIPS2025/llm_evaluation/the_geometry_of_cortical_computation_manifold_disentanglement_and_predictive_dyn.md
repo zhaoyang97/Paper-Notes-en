@@ -29,15 +29,15 @@ This paper proposes VCNet—a neural network architecture that simulates the mac
 
 ## Background & Motivation
 
-**State of the Field**: Despite their success, modern CNNs suffer from fundamental limitations including low data efficiency, poor out-of-distribution generalization, and weak adversarial robustness. These issues stem from the lack of inductive biases that reflect the intrinsic geometric structure of the visual world—CNNs encode only translational equivariance while neglecting other fundamental symmetries such as rotation and scale.
+**Background**: Despite their success, modern CNNs suffer from fundamental limitations including low data efficiency, poor out-of-distribution generalization, and weak adversarial robustness. These issues stem from the lack of inductive biases that reflect the intrinsic geometric structure of the visual world—CNNs encode only translational equivariance while neglecting other fundamental symmetries such as rotation and scale.
 
 **Limitations of Prior Work**: The primate visual system substantially outperforms CNNs in few-shot learning, cross-context generalization, and occlusion recognition. Existing biologically inspired models (e.g., CORnet) focus primarily on replicating the feedforward ventral stream, overlooking critical mechanisms such as the dorsal stream, recurrent dynamics, and predictive coding.
 
-**Root Cause**: Geometric deep learning has made notable progress at the microscopic level (e.g., equivariant convolutional kernels), yet systematic exploration at the macroscopic architectural level—emulating the information-flow topology of the brain—remains largely absent.
+**Key Challenge**: Geometric deep learning has made notable progress at the microscopic level (e.g., equivariant convolutional kernels), yet systematic exploration at the macroscopic architectural level—emulating the information-flow topology of the brain—remains largely absent.
 
-**Paper Goals**: Can more efficient and robust visual models be constructed by emulating the macroscopic organizational principles of the visual cortex (hierarchical processing, dual-stream separation, predictive feedback)?
+**Goal**: Can more efficient and robust visual models be constructed by emulating the macroscopic organizational principles of the visual cortex (hierarchical processing, dual-stream separation, predictive feedback)?
 
-**Starting Point**: The authors reinterpret the organizational principles of the visual cortex through the language of geometry and dynamical systems—dual-stream processing is framed as manifold disentanglement (learning distinct low-dimensional manifolds), recurrent processing as a discrete-time dynamical system, and predictive coding as geodesic refinement on manifolds.
+**Key Insight**: The authors reinterpret the organizational principles of the visual cortex through the language of geometry and dynamical systems—dual-stream processing is framed as manifold disentanglement (learning distinct low-dimensional manifolds), recurrent processing as a discrete-time dynamical system, and predictive coding as geodesic refinement on manifolds.
 
 **Core Idea**: A directed graph is used to model the connectivity among major areas of the visual cortex, translating macroscopic neuroscientific principles into a geometric computational framework.
 

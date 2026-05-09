@@ -29,11 +29,11 @@ This paper proposes the SEMC framework, which aligns shallow structural cues wit
 
 ## Background & Motivation
 
-1. **State of the Field**: Ultrasound standard plane recognition is critical for disease screening, organ assessment, and biometric measurement. Deep learning approaches such as SonoNet have demonstrated notable progress, yet recognition performance remains limited.
+1. **Background**: Ultrasound standard plane recognition is critical for disease screening, organ assessment, and biometric measurement. Deep learning approaches such as SonoNet have demonstrated notable progress, yet recognition performance remains limited.
 2. **Limitations of Prior Work**: (a) Ultrasound images exhibit large intra-class variation (the same plane may appear substantially different due to varying acquisition angles and probe pressure) and small inter-class variation (different planes share similar visual patterns), demanding fine-grained discrimination; (b) existing methods rely predominantly on deep semantic features while neglecting shallow structural cues (e.g., anatomical boundaries and textures), resulting in insufficient structural awareness; (c) contrastive learning constructs positive/negative pairs via data augmentation, which fails to capture the inherent fine-grained semantic differences in ultrasound images.
-3. **Root Cause**: The low contrast and blurred boundaries in ultrasound images make it infeasible to distinguish similar planes using deep features alone, while shallow features, although rich in structural information, operate at a low semantic level.
-4. **Paper Goals**: How can multi-scale structural information be fused to enhance the model's structural awareness? How can effective contrastive learning over multi-level features improve inter-class separability?
-5. **Starting Point**: Shallow structural cues are adaptively compressed and expanded to align with deep expert features before fusion; a MoE mechanism then performs hierarchical contrastive learning over the multi-level fused features.
+3. **Key Challenge**: The low contrast and blurred boundaries in ultrasound images make it infeasible to distinguish similar planes using deep features alone, while shallow features, although rich in structural information, operate at a low semantic level.
+4. **Goal**: How can multi-scale structural information be fused to enhance the model's structural awareness? How can effective contrastive learning over multi-level features improve inter-class separability?
+5. **Key Insight**: Shallow structural cues are adaptively compressed and expanded to align with deep expert features before fusion; a MoE mechanism then performs hierarchical contrastive learning over the multi-level fused features.
 6. **Core Idea**: Structure-aware feature fusion + expert-guided hierarchical contrastive learning = stronger discriminability for ultrasound standard plane recognition.
 
 ## Method

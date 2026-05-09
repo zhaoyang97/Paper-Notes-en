@@ -29,15 +29,15 @@ This work introduces the first multimodal framing analysis benchmark for oil and
 
 ## Background & Motivation
 
-**State of the Field**: Oil and gas (O&G) companies craft carefully designed public relations campaigns to shape brand image and are frequently accused of greenwashing—projecting a climate-friendly appearance. Framing analysis is an important tool for understanding corporate strategic communication; "framing is the selective presentation of certain aspects of reality."
+**Background**: Oil and gas (O&G) companies craft carefully designed public relations campaigns to shape brand image and are frequently accused of greenwashing—projecting a climate-friendly appearance. Framing analysis is an important tool for understanding corporate strategic communication; "framing is the selective presentation of certain aspects of reality."
 
 **Limitations of Prior Work**: Existing greenwashing detection benchmarks focus exclusively on the textual modality (e.g., framing analysis of advertising copy), completely ignoring visual information. Qualitative research has shown, however, that visual strategies in video advertisements are a critical vehicle for greenwashing—images of wind turbines, smiling workers, and similar visual symbols convey implicit "green" impressions. Approximately 30% of advertising videos contain no speech at all and rely purely on visuals to communicate.
 
-**Root Cause**: Framing in video is often implicit—rather than stating "we are environmentally friendly" in text, companies imply it through footage of solar panels. VLMs must simultaneously interpret visual symbols, cultural context, and corporate strategy to classify frames accurately, yet no benchmark exists to assess this capability.
+**Key Challenge**: Framing in video is often implicit—rather than stating "we are environmentally friendly" in text, companies imply it through footage of solar panels. VLMs must simultaneously interpret visual symbols, cultural context, and corporate strategy to classify frames accurately, yet no benchmark exists to assess this capability.
 
-**Paper Goals**: (1) Construct the first multimodal (video + text + transcript) framing analysis benchmark for O&G advertising; (2) cover the distinct advertising strategies of Facebook and YouTube; (3) systematically evaluate the capabilities and bottlenecks of current VLMs on this task.
+**Goal**: (1) Construct the first multimodal (video + text + transcript) framing analysis benchmark for O&G advertising; (2) cover the distinct advertising strategies of Facebook and YouTube; (3) systematically evaluate the capabilities and bottlenecks of current VLMs on this task.
 
-**Starting Point**: Data are collected from two complementary platforms—Facebook political advertising versus YouTube corporate brand promotion—with fine-grained framing taxonomies defined for each, and an entity-aware 1-shot prompting strategy designed to improve VLM performance.
+**Key Insight**: Data are collected from two complementary platforms—Facebook political advertising versus YouTube corporate brand promotion—with fine-grained framing taxonomies defined for each, and an entity-aware 1-shot prompting strategy designed to improve VLM performance.
 
 **Core Idea**: Construct the first multimodal O&G advertising framing benchmark and quantitatively expose the systematic deficiencies of VLMs in implicit framing and cultural understanding for video greenwashing detection.
 

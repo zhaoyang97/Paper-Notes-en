@@ -29,15 +29,15 @@ This paper proposes Spec-o3, a tool-augmented vision-language agent that simulat
 
 ## Background & Motivation
 
-**State of the Field**: Modern spectroscopic survey projects (LAMOST, SDSS, DESI) generate massive datasets. Constructing catalogs of rare celestial objects requires a two-stage pipeline — deep learning algorithms for candidate screening, followed by expert visual vetting. The vetting stage remains heavily dependent on human labor.
+**Background**: Modern spectroscopic survey projects (LAMOST, SDSS, DESI) generate massive datasets. Constructing catalogs of rare celestial objects requires a two-stage pipeline — deep learning algorithms for candidate screening, followed by expert visual vetting. The vetting stage remains heavily dependent on human labor.
 
 **Limitations of Prior Work**: (1) Deep learning classifiers produce opaque probability scores with poor out-of-distribution generalization, making them difficult for experts to trust; (2) post-hoc explanation methods (Grad-CAM, SHAP, etc.) yield coarse feature attributions that cannot be reliably mapped to astrophysical structures; (3) manual vetting does not scale — for example, the LAMOST CV catalog required experts to visually inspect 170,000 candidates, ultimately confirming only 323 targets.
 
-**Root Cause**: The volume of candidates from next-generation surveys will continue to grow exponentially, while the throughput of manual inspection cannot scale accordingly, creating a critical bottleneck in astronomy.
+**Key Challenge**: The volume of candidates from next-generation surveys will continue to grow exponentially, while the throughput of manual inspection cannot scale accordingly, creating a critical bottleneck in astronomy.
 
-**Paper Goals**: Design a trustworthy, highly generalizable automated vetting agent capable of inspecting spectra in the manner of a trained astronomer.
+**Goal**: Design a trustworthy, highly generalizable automated vetting agent capable of inspecting spectra in the manner of a trained astronomer.
 
-**Starting Point**: The expert inspection workflow is inherently a "look-and-think" process — first assessing the global morphology, then iteratively zooming into wavelength regions of interest to examine diagnostic features, and finally reaching a verdict. Combining VLMs with spectral visualization tools allows this iterative process to be faithfully simulated.
+**Key Insight**: The expert inspection workflow is inherently a "look-and-think" process — first assessing the global morphology, then iteratively zooming into wavelength regions of interest to examine diagnostic features, and finally reaching a verdict. Combining VLMs with spectral visualization tools allows this iterative process to be faithfully simulated.
 
 **Core Idea**: Interleaved Multimodal Chain-of-Thought (iMCoT) — alternating between textual reasoning and fine-grained spectral plots rendered by tools, coupled with two-stage post-training to achieve expert-level vetting capability.
 

@@ -28,15 +28,15 @@ content_hash: 38b278dc99b34791
 This paper proposes RCPO, a framework that extends LLM alignment from pairwise preference to ranked choice modeling. By unifying a utility model (MNL) and a ranking model (Mallows-RMJ) under MLE, RCPO outperforms DPO and its variants under both single-best and top-k feedback formats.
 
 ## Background & Motivation
-**State of the Field**: DPO and its variants (SimPO, R-DPO, AlphaPO, etc.) have become the dominant approach for LLM alignment, but they are all grounded in pairwise preference—comparing only two responses (preferred vs. dispreferred) per prompt.
+**Background**: DPO and its variants (SimPO, R-DPO, AlphaPO, etc.) have become the dominant approach for LLM alignment, but they are all grounded in pairwise preference—comparing only two responses (preferred vs. dispreferred) per prompt.
 
 **Limitations of Prior Work**: In practice, preference feedback is far richer than pairwise comparisons. InstructGPT, for instance, collects rankings over $K$ responses but decomposes them into $\binom{K}{2}$ pairs for training; academic work typically retains only the highest- and lowest-scored responses. This "pairwise compression" discards intermediate ranking information and may distort the original preference structure.
 
-**Root Cause**: Annotators provide multi-way comparisons or full rankings, yet training algorithms can only consume pairwise data—information loss and structural distortion are tightly coupled problems.
+**Key Challenge**: Annotators provide multi-way comparisons or full rankings, yet training algorithms can only consume pairwise data—information loss and structural distortion are tightly coupled problems.
 
-**Paper Goals**: How can one design an alignment framework that directly leverages ranked choice feedback (single-best and top-k rankings)?
+**Goal**: How can one design an alignment framework that directly leverages ranked choice feedback (single-best and top-k rankings)?
 
-**Starting Point**: Discrete choice models from economics and operations research offer mature theory for handling multi-way selections and ranking data. By treating prompts as contexts, responses as items, and candidate sets as assortments, LLM alignment maps naturally onto MLE over choice models.
+**Key Insight**: Discrete choice models from economics and operations research offer mature theory for handling multi-way selections and ranking data. By treating prompts as contexts, responses as items, and candidate sets as assortments, LLM alignment maps naturally onto MLE over choice models.
 
 **Core Idea**: Unify LLM preference optimization under discrete choice model theory. DPO is merely a special case of Bradley-Terry; stronger choice models such as MNL and Mallows are directly applicable.
 

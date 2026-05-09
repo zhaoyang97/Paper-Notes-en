@@ -36,7 +36,7 @@ As autonomous agents — such as self-driving vehicles, military robots, and med
 
 **Limitations of existing solutions**: One approach is collective responsibility, but this dilutes individual accountability and generates blame-shifting cycles. Another recently proposed approach is *higher-order responsibility* — rather than asking who directly caused the outcome, it asks who should be held responsible for the fact that no one is responsible.
 
-**Starting Point**: The authors formalize the concept of higher-order responsibility and investigate two key questions: when can higher-order responsibility close the gap, and what is the computational complexity of determining whether it does?
+**Key Insight**: The authors formalize the concept of higher-order responsibility and investigate two key questions: when can higher-order responsibility close the gap, and what is the computational complexity of determining whether it does?
 
 ## Method
 

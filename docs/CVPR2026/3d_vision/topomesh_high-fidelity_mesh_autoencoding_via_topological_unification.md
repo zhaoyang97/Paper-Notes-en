@@ -29,17 +29,17 @@ This paper proposes TopoMesh, which unifies both ground-truth and predicted mesh
 
 ## Background & Motivation
 
-1. **State of the Field**: The dominant paradigm for 3D generation is the VAE-Diffusion pipeline, where the reconstruction capacity of the VAE constitutes a hard upper bound on generation quality. Existing 3D VAEs encode meshes of arbitrary topology into a regular latent representation and reconstruct them via decoding.
+1. **Background**: The dominant paradigm for 3D generation is the VAE-Diffusion pipeline, where the reconstruction capacity of the VAE constitutes a hard upper bound on generation quality. Existing 3D VAEs encode meshes of arbitrary topology into a regular latent representation and reconstruct them via decoding.
 
 2. **Limitations of Prior Work**: The core bottleneck is a **representation mismatch** — ground-truth meshes have arbitrary, variable topology (irregular connectivity, varying vertex counts), whereas VAEs typically predict fixed structures (e.g., SDFs on regular grids or rendered images), making it impossible to establish explicit mesh-level correspondences. This leads to two categories of indirect supervision, each with its own drawbacks:
     - **SDF supervision** (e.g., 3DShape2VecSet, TripoSG, Direct3D-S2): Meshes are extracted via Marching Cubes, but MC constrains vertices to lie on grid edges via linear interpolation, making it inherently incapable of representing sharp edges and corners.
     - **Rendering supervision** (e.g., Trellis, SparseFlex): More expressive decoding via FlexiCubes, but supervision is ambiguous — limited resolution, occlusion, and sparse viewpoints cause loss of detail gradients.
 
-3. **Root Cause**: Achieving high-fidelity reconstruction — particularly for sharp features — requires precise vertex/face correspondence between predicted and ground-truth meshes. Differing topological structures make this infeasible.
+3. **Key Challenge**: Achieving high-fidelity reconstruction — particularly for sharp features — requires precise vertex/face correspondence between predicted and ground-truth meshes. Differing topological structures make this infeasible.
 
-4. **Paper Goals**: Design a VAE that is both capable of expressing sharp features and structurally aligned to enable precise correspondence for direct, unambiguous mesh-level supervision.
+4. **Goal**: Design a VAE that is both capable of expressing sharp features and structurally aligned to enable precise correspondence for direct, unambiguous mesh-level supervision.
 
-5. **Starting Point**: Unify both ends (ground truth and prediction) under the same DMC topology framework — ground-truth meshes are remeshed into DMC format, and the decoder directly outputs DMC-format meshes.
+5. **Key Insight**: Unify both ends (ground truth and prediction) under the same DMC topology framework — ground-truth meshes are remeshed into DMC format, and the decoder directly outputs DMC-format meshes.
 
 6. **Core Idea**: By unifying topology, predicted and ground-truth meshes share the same DMC structure, enabling direct vertex- and face-level supervision for the first time.
 

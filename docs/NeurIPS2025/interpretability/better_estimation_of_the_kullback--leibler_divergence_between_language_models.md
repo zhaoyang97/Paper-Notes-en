@@ -27,15 +27,15 @@ This paper proposes a Rao-Blackwellized Monte Carlo estimator for KL divergence�
 
 ## Background & Motivation
 
-**State of the Field**: KL divergence is widely used in RLHF (as a regularization term), interpretability (as a measure of distributional shift), and knowledge distillation. Exact computation of KL divergence between language models is intractable due to the countably infinite string space $\Sigma^*$.
+**Background**: KL divergence is widely used in RLHF (as a regularization term), interpretability (as a measure of distributional shift), and knowledge distillation. Exact computation of KL divergence between language models is intractable due to the countably infinite string space $\Sigma^*$.
 
 **Limitations of Prior Work**: (a) The standard MC estimator $\mu_{mc} = \frac{1}{M}\sum_m \log\frac{p(Y^{(m)})}{q(Y^{(m)})}$ suffers from high variance and can produce negative values; (b) the control variate method proposed by Schulman ($\alpha=1$) guarantees non-negativity but can exhibit exploding variance (confirmed experimentally); (c) unstable KL estimation during training leads to instability in RLHF.
 
-**Root Cause**: The MC estimator computes log-ratios only over sampled complete strings, thereby discarding the full next-token distribution already produced by the forward pass at each position.
+**Key Challenge**: The MC estimator computes log-ratios only over sampled complete strings, thereby discarding the full next-token distribution already produced by the forward pass at each position.
 
-**Paper Goals**: Substantially reduce KL estimation variance at zero additional computational cost.
+**Goal**: Substantially reduce KL estimation variance at zero additional computational cost.
 
-**Starting Point**: Rao-Blackwellization—computing the exact KL over the next-token distribution at each position $n$ (a summation over $|\bar{\Sigma}|$ tokens) rather than using only the sampled token.
+**Key Insight**: Rao-Blackwellization—computing the exact KL over the next-token distribution at each position $n$ (a summation over $|\bar{\Sigma}|$ tokens) rather than using only the sampled token.
 
 **Core Idea**: $\mu_{rb} = \frac{1}{M}\sum_m \sum_{n=1}^{|Y^{(m)}|} KL(\vec{p}(\cdot|Y^{(m)}_{<n}) \| \vec{q}(\cdot|Y^{(m)}_{<n}))$.
 

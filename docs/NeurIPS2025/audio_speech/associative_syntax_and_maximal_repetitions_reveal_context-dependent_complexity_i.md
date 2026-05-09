@@ -29,15 +29,15 @@ This paper proposes an unsupervised approach for inferring discrete units, gramm
 
 ## Background & Motivation
 
-**State of the Field**: Quantifying communicative complexity in graded vocal systems is a central challenge in animal communication research. Existing unsupervised annotation methods, such as the manifold-learning clustering approach of Sainburg et al., assume discrete vocal boundaries and are suited to discrete vocalization systems. The bat grammar analysis of Zhang et al. relies on expert-annotated syllable ground-truth labels, limiting scalability.
+**Background**: Quantifying communicative complexity in graded vocal systems is a central challenge in animal communication research. Existing unsupervised annotation methods, such as the manifold-learning clustering approach of Sainburg et al., assume discrete vocal boundaries and are suited to discrete vocalization systems. The bat grammar analysis of Zhang et al. relies on expert-annotated syllable ground-truth labels, limiting scalability.
 
 **Limitations of Prior Work**: (1) In graded vocalization systems (e.g., fruit bats, mice, and even human phonemes), time-frequency features overlap across syllable types, degrading the performance of existing clustering methods. (2) The Social Complexity Hypothesis for Communicative Complexity (SCHCC) recommends information-theoretic metrics, but measures such as Shannon entropy fail to capture long-range dependencies and combinatorial capacity. (3) Existing methods cannot effectively distinguish associative from combinatorial grammar across multiple behavioral contexts.
 
-**Root Cause**: How can a limited repertoire of vocal units encode complex information? This problem is analogous to nucleotide encoding of protein information in genetics. Existing metrics are insufficient to capture such combinatorial complexity.
+**Key Challenge**: How can a limited repertoire of vocal units encode complex information? This problem is analogous to nucleotide encoding of protein information in genetics. Existing metrics are insufficient to capture such combinatorial complexity.
 
-**Paper Goals**: (1) How does dimensionality reduction affect unsupervised clustering quality in graded vocal systems? (2) How do grammar and temporal structure encode behavioral context information?
+**Goal**: (1) How does dimensionality reduction affect unsupervised clustering quality in graded vocal systems? (2) How do grammar and temporal structure encode behavioral context information?
 
-**Starting Point**: The paper borrows the concept of Maximal Repetitions (MRs) from computational linguistics — MR length scaling is mathematically related to block entropy and follows a power-law distribution in natural language, reflecting strong long-range dependencies. This tool is introduced to animal communication research for the first time.
+**Key Insight**: The paper borrows the concept of Maximal Repetitions (MRs) from computational linguistics — MR length scaling is mathematically related to block entropy and follows a power-law distribution in natural language, reflecting strong long-range dependencies. This tool is introduced to animal communication research for the first time.
 
 **Core Idea**: By improving unsupervised manifold-learning clustering to infer the fruit bat vocal repertoire, and employing MRs as a novel metric, the paper reveals that communication in conflict scenarios is more complex than in affiliative ones.
 

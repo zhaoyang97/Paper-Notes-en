@@ -29,7 +29,7 @@ This paper introduces the principle of *data shatterability* to provide a unifie
 
 ## Background & Motivation
 
-**State of the Field**: Overparameterized neural networks generalize well even without explicit regularization (e.g., weight decay), a phenomenon that classical statistical learning theory fails to explain. The discovery of the Edge of Stability (EoS)—where large-step GD training drives the Hessian's largest eigenvalue to $\lambda_{\max}(\nabla^2\mathcal{L}) \approx 2/\eta$—offers a new lens for understanding implicit regularization.
+**Background**: Overparameterized neural networks generalize well even without explicit regularization (e.g., weight decay), a phenomenon that classical statistical learning theory fails to explain. The discovery of the Edge of Stability (EoS)—where large-step GD training drives the Hessian's largest eigenvalue to $\lambda_{\max}(\nabla^2\mathcal{L}) \approx 2/\eta$—offers a new lens for understanding implicit regularization.
 
 **Limitations of Prior Work**:
 
@@ -37,9 +37,9 @@ This paper introduces the principle of *data shatterability* to provide a unifie
 2. No unified theoretical framework exists to determine which data geometries lead to generalization and which lead to memorization.
 3. Existing generalization bounds are distribution-agnostic and cannot distinguish the effects of different data geometries.
 
-**Root Cause**: The data-dependent regularization induced by EoS varies dramatically across distributions—networks trained on data lying on a sphere can memorize without penalty, while data inside the ball is subject to strong regularization constraints. A unifying principle is needed to explain this discrepancy.
+**Key Challenge**: The data-dependent regularization induced by EoS varies dramatically across distributions—networks trained on data lying on a sphere can memorize without penalty, while data inside the ball is subject to strong regularization constraints. A unifying principle is needed to explain this discrepancy.
 
-**Paper Goals**: The paper introduces the concept of *data shatterability*—the difficulty of shattering a data distribution using ReLU half-spaces—as the core geometric quantity governing generalization behavior.
+**Goal**: The paper introduces the concept of *data shatterability*—the difficulty of shattering a data distribution using ReLU half-spaces—as the core geometric quantity governing generalization behavior.
 
 ## Method
 

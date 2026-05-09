@@ -27,15 +27,15 @@ content_hash: 438ef42da6a13464
 This paper identifies a phenomenon in which existing token pruning methods underperform random pruning in deep layers of VLLMs, proposes a method for quantifying visual token information based on changes in output probability, and reveals the "Information Horizon"—a critical layer at which visual token information uniformly dissipates to zero. The position of this horizon is dynamically influenced by task visual complexity and model capability. The paper further demonstrates that simply integrating random pruning can effectively improve existing methods.
 
 ## Background & Motivation
-**State of the Field**: VLLMs encode images into large numbers of visual tokens (576 for LLaVA-1.5; up to thousands for Qwen2.5-VL). Training-free token pruning is the mainstream acceleration paradigm, comprising importance-based methods (FastV/SparseVLM) and diversity-based methods (DivPrune/DART).
+**Background**: VLLMs encode images into large numbers of visual tokens (576 for LLaVA-1.5; up to thousands for Qwen2.5-VL). Training-free token pruning is the mainstream acceleration paradigm, comprising importance-based methods (FastV/SparseVLM) and diversity-based methods (DivPrune/DART).
 
 **Limitations of Prior Work**: A key observation is that in deep decoder layers (e.g., beyond layer 20), all existing pruning methods perform no better than—or even worse than—random pruning. This phenomenon consistently appears after layers 16–20 on LLaVA-1.5-7B and after layer 21 on Qwen2.5-VL-7B.
 
-**Root Cause**: Regardless of whether attention or similarity is used as the selection criterion, existing pruning methods fail to identify more informative tokens than random selection in deep layers—indicating that visual token information has "dissipated" at depth.
+**Key Challenge**: Regardless of whether attention or similarity is used as the selection criterion, existing pruning methods fail to identify more informative tokens than random selection in deep layers—indicating that visual token information has "dissipated" at depth.
 
-**Paper Goals**: (a) Why does deep-layer pruning underperform random pruning? (b) How does visual token information evolve across layers? (c) At which layer can all visual tokens be safely removed? (d) How can these findings be used to improve existing methods?
+**Goal**: (a) Why does deep-layer pruning underperform random pruning? (b) How does visual token information evolve across layers? (c) At which layer can all visual tokens be safely removed? (d) How can these findings be used to improve existing methods?
 
-**Starting Point**: Define and quantify the informativeness of individual visual tokens at specific layers, and track their cross-layer variation patterns.
+**Key Insight**: Define and quantify the informativeness of individual visual tokens at specific layers, and track their cross-layer variation patterns.
 
 **Core Idea**: Visual token information uniformly dissipates to zero in deep layers (the "Information Horizon"); beyond this layer, pruning is equivalent to random selection, and integrating random pruning can improve existing methods.
 

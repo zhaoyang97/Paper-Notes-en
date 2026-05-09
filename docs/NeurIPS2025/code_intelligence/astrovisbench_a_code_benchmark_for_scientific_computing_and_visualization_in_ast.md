@@ -27,15 +27,15 @@ AstroVisBench introduces the first code benchmark for evaluating LLMs on astrono
 
 ## Background & Motivation
 
-**State of the Field**: Existing LLM code generation benchmarks (SWE-bench, BigCodeBench) focus on general-purpose programming and do not assess the correctness of scientific visualizations. Astronomy research workflows involve specialized APIs (astropy, specutils, photutils) and complex visualizations (color-magnitude diagrams, light curves, all-sky projections).
+**Background**: Existing LLM code generation benchmarks (SWE-bench, BigCodeBench) focus on general-purpose programming and do not assess the correctness of scientific visualizations. Astronomy research workflows involve specialized APIs (astropy, specutils, photutils) and complex visualizations (color-magnitude diagrams, light curves, all-sky projections).
 
 **Limitations of Prior Work**: (a) Astronomical APIs are highly specialized (38 libraries, 26 astronomy-specific)—LLMs may have had insufficient exposure during training; (b) Visualization evaluation is difficult to automate—correctness requires not only executability but also visual accuracy and aesthetic quality; (c) Underspecification of queries—astronomers' requests are often vague (e.g., "plot a color-magnitude diagram" without specifying exact parameters).
 
-**Root Cause**: Astronomical visualization requires deep domain knowledge (e.g., magnitude axes should be reversed, axis labels require domain-specific formatting), yet the depth of LLMs' astronomical knowledge remains largely unknown.
+**Key Challenge**: Astronomical visualization requires deep domain knowledge (e.g., magnitude axes should be reversed, axis labels require domain-specific formatting), yet the depth of LLMs' astronomical knowledge remains largely unknown.
 
-**Paper Goals**: Construct a standardized benchmark for evaluating LLMs on end-to-end astronomical research workflows (data processing → visualization).
+**Goal**: Construct a standardized benchmark for evaluating LLMs on end-to-end astronomical research workflows (data processing → visualization).
 
-**Starting Point**: Tasks are extracted from real astronomers' Jupyter Notebooks to ensure authenticity. Execution-based evaluation (variable inspection) is designed for processing tasks, and VLM-based evaluation (Claude 3.5 Sonnet) is applied to visualization tasks.
+**Key Insight**: Tasks are extracted from real astronomers' Jupyter Notebooks to ensure authenticity. Execution-based evaluation (variable inspection) is designed for processing tasks, and VLM-based evaluation (Claude 3.5 Sonnet) is applied to visualization tasks.
 
 **Core Idea**: 110 real astronomical Notebooks → 864 processing + visualization tasks + execution-based + VLM dual evaluation = the first benchmark for astronomical scientific visualization code generation.
 

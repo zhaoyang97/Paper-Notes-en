@@ -27,13 +27,13 @@ content_hash: b91e6a3c3c380f6d
 This paper proposes ACT (Annotation with Critical Thinking), a data pipeline in which an MLLM annotates all samples in bulk, a second MLLM acting as a critic estimates the error probability of each annotation, and only high-suspicion samples are routed to human reviewers. Combined with a theoretically derived ACT loss function, the approach achieves 70–90% reduction in human annotation cost across six cross-modal datasets while maintaining a downstream performance gap of less than 2%.
 
 ## Background & Motivation
-**State of the Field**: Supervised learning depends on high-quality labeled data, yet manual annotation is expensive and difficult to scale. Automatic annotation via LLMs/MLLMs is cheap but still lags behind human quality.
+**Background**: Supervised learning depends on high-quality labeled data, yet manual annotation is expensive and difficult to scale. Automatic annotation via LLMs/MLLMs is cheap but still lags behind human quality.
 
 **Limitations of Prior Work**: (1) Pure MLLM annotation accuracy falls 5–20% short of human annotation, causing notable downstream performance degradation; (2) existing methods such as CDI require training an additional XGBoost detector and generalize poorly; (3) some approaches are restricted to white-box models and cannot leverage powerful black-box models such as GPT-4o; (4) the normalized sampling rule used in existing active M-estimation collapses under low-budget conditions.
 
-**Root Cause**: How can the annotation capability of MLLMs be maximally exploited under a limited human annotation budget while maintaining data quality close to fully human-annotated data?
+**Key Challenge**: How can the annotation capability of MLLMs be maximally exploited under a limited human annotation budget while maintaining data quality close to fully human-annotated data?
 
-**Starting Point**: MLLMs are assigned dual roles as both annotator and critic — first generating labels, then performing self- or cross-critique — so that human effort is precisely allocated to the most suspicious samples.
+**Key Insight**: MLLMs are assigned dual roles as both annotator and critic — first generating labels, then performing self- or cross-critique — so that human effort is precisely allocated to the most suspicious samples.
 
 ## Method
 

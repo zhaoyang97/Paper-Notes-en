@@ -38,7 +38,7 @@ Drawing inspiration from the scale invariance of natural images, this paper prop
 
 **Core insight**: Two properties are needed: (a) *scale-invariant total attention*—the total attention weight over any range should be roughly constant; (b) *scale-invariant attention sparsity*—as the range grows, attention should become increasingly concentrated on a few key tokens rather than spreading uniformly.
 
-**Paper Goals**: Derive a simple logits transformation that satisfies both properties theoretically, thereby enabling zero-shot long-context generalization.
+**Goal**: Derive a simple logits transformation that satisfies both properties theoretically, thereby enabling zero-shot long-context generalization.
 
 ## Method
 

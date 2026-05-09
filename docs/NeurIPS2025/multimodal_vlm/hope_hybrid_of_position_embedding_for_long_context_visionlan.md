@@ -31,11 +31,11 @@ This work presents the first theoretical analysis of frequency allocation strate
 
 ### State of the Field
 
-**State of the Field**: VLMs suffer significant performance degradation in long-context scenarios, particularly struggling with object counting and temporal localization in long video tasks.
+**Background**: VLMs suffer significant performance degradation in long-context scenarios, particularly struggling with object counting and temporal localization in long video tasks.
 
 ### Root Cause
 
-**Root Cause**: While RoPE has successfully enabled length generalization in text-only LLMs, directly applying 1D RoPE fails to capture the spatiotemporal structure of video.
+**Key Challenge**: While RoPE has successfully enabled length generalization in text-only LLMs, directly applying 1D RoPE fails to capture the spatiotemporal structure of video.
 
 ### Limitations of Prior Work
 
@@ -43,7 +43,7 @@ This work presents the first theoretical analysis of frequency allocation strate
 
 ### Starting Point
 
-**Starting Point**: M-RoPE (Qwen2-VL) assigns the highest frequencies to the temporal dimension—a heuristic design lacking theoretical justification.
+**Key Insight**: M-RoPE (Qwen2-VL) assigns the highest frequencies to the temporal dimension—a heuristic design lacking theoretical justification.
 
 ### Supplementary Notes
 

@@ -28,13 +28,13 @@ This paper applies a Multimodal Masked Autoencoder (MMAE) to jointly model galax
 
 ## Background & Motivation
 
-**State of the Field**: Next-generation astronomical surveys will produce images of billions of galaxies, yet acquiring a single spectrum requires roughly 100 times more observing time than imaging. Spectra encode critical physical information including redshift, chemical composition, and star formation rates, but obtaining spectra at survey scale is impractical. Astronomers have long relied on photometric redshifts—redshift estimates derived from images—as a surrogate for spectroscopic redshifts.
+**Background**: Next-generation astronomical surveys will produce images of billions of galaxies, yet acquiring a single spectrum requires roughly 100 times more observing time than imaging. Spectra encode critical physical information including redshift, chemical composition, and star formation rates, but obtaining spectra at survey scale is impractical. Astronomers have long relied on photometric redshifts—redshift estimates derived from images—as a surrogate for spectroscopic redshifts.
 
 **Limitations of Prior Work**: (1) Conventional photometric redshift methods (MLP, CNN, BCNN) rely solely on image information without learning deep cross-modal representations from image–spectrum associations. (2) AstroMAE applies MAE exclusively to galaxy images without incorporating the spectral modality. (3) AstroCLIP aligns images and spectra via contrastive learning but does not optimize for reconstruction. (4) Existing methods are constrained to redshift ranges of $z \lesssim 0.5$.
 
-**Root Cause**: At survey scale, images are abundant while spectra are scarce, requiring models to leverage image–spectrum associations even when spectra are unavailable. Existing approaches either operate on a single modality or rely on contrastive rather than generative objectives.
+**Key Challenge**: At survey scale, images are abundant while spectra are scarce, requiring models to leverage image–spectrum associations even when spectra are unavailable. Existing approaches either operate on a single modality or rely on contrastive rather than generative objectives.
 
-**Starting Point**: The paper transfers the MultiMAE architecture to astronomy, using high masking ratios to force the model to learn complementary cross-modal relationships. During training, spectra are entirely zeroed out with 50% probability to simulate the practical scenario in which the vast majority of survey galaxies lack spectra.
+**Key Insight**: The paper transfers the MultiMAE architecture to astronomy, using high masking ratios to force the model to learn complementary cross-modal relationships. During training, spectra are entirely zeroed out with 50% probability to simulate the practical scenario in which the vast majority of survey galaxies lack spectra.
 
 **Core Idea**: An MMAE is trained to jointly perform cross-modal reconstruction of galaxy images and spectra alongside redshift regression, enabling accurate redshift prediction from images alone by leveraging representations informed by image–spectrum associations.
 

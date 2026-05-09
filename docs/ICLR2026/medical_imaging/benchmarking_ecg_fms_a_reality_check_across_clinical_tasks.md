@@ -28,16 +28,16 @@ A comprehensive "reality check" benchmark evaluating 8 ECG foundation models acr
 
 ## Background & Motivation
 
-**State of the Field**: The 12-lead electrocardiogram (ECG) is the most widely used cardiac diagnostic tool. Multiple ECG foundation models (FMs) have been released in recent years, including CNN-based ECGFounder, Transformer-based ECG-JEPA/ST-MEM/HuBERT-ECG/ECG-FM, and contrastive learning-based MERL/ECGFM-KED. These models employ different pretraining strategies (supervised, self-supervised, contrastive) and datasets of varying scales.
+**Background**: The 12-lead electrocardiogram (ECG) is the most widely used cardiac diagnostic tool. Multiple ECG foundation models (FMs) have been released in recent years, including CNN-based ECGFounder, Transformer-based ECG-JEPA/ST-MEM/HuBERT-ECG/ECG-FM, and contrastive learning-based MERL/ECGFM-KED. These models employ different pretraining strategies (supervised, self-supervised, contrastive) and datasets of varying scales.
 
 **Limitations of Prior Work**:
    - Existing studies typically evaluate on limited datasets or a single task category, preventing generalizable conclusions.
    - Baseline comparisons often use weak models, leading to inflated estimates of FM advantages.
    - Systematic analysis of "model scale vs. architectural choice" is lacking — does a larger model necessarily perform better?
 
-**Root Cause**: Does the "scale equals quality" assumption prevalent in FM research hold in the ECG domain? How large are the generalization gaps across different architectures (CNN/Transformer/SSM) on diverse clinical tasks?
+**Key Challenge**: Does the "scale equals quality" assumption prevalent in FM research hold in the ECG domain? How large are the generalization gaps across different architectures (CNN/Transformer/SSM) on diverse clinical tasks?
 
-**Paper Goals**: Three core research questions — (1) Which architecture generalizes best across diverse ECG tasks? (2) How do FMs scale with labeled data? (3) What drives performance differences between models?
+**Goal**: Three core research questions — (1) Which architecture generalizes best across diverse ECG tasks? (2) How do FMs scale with labeled data? (3) What drives performance differences between models?
 
 **Core Idea**: Construct a comprehensive evaluation framework spanning 7 task categories, and introduce a self-trained lightweight SSM model, ECG-CPC, as a reference point to reveal the true capability boundaries of ECG FMs.
 

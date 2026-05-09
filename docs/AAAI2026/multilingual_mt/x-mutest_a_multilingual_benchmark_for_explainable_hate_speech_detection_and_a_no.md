@@ -27,15 +27,15 @@ This paper proposes the X-MuTeST framework, which combines LLM semantic reasonin
 
 ## Background & Motivation
 
-**State of the Field**: Hate speech detection has evolved from pure classification toward providing explainable rationales. A small number of datasets with human-annotated rationales exist for English (e.g., HateXplain), but low-resource languages such as Hindi and Telugu lack such resources almost entirely.
+**Background**: Hate speech detection has evolved from pure classification toward providing explainable rationales. A small number of datasets with human-annotated rationales exist for English (e.g., HateXplain), but low-resource languages such as Hindi and Telugu lack such resources almost entirely.
 
 **Limitations of Prior Work**: Although LLMs can identify explicit hate terms (e.g., "dog"), they fall short in recognizing implicit hate expressions embedded in cultural contexts (e.g., "barking" as a slur in Hindi). A significant gap exists between machine-generated rationales and human rationales, particularly for low-resource languages. Additionally, traditional attention-based explanation methods lack semantic reasoning capability.
 
-**Root Cause**: A disconnect between classification accuracy and explanation fidelity — models may arrive at the correct label for the wrong reasons, especially in culturally situated low-resource language contexts.
+**Key Challenge**: A disconnect between classification accuracy and explanation fidelity — models may arrive at the correct label for the wrong reasons, especially in culturally situated low-resource language contexts.
 
-**Paper Goals**: (1) Provide token-level human-annotated rationale benchmarks for Hindi, Telugu, and English; (2) Design a hybrid explainability framework that integrates LLM explanations with the model's own attention signals.
+**Goal**: (1) Provide token-level human-annotated rationale benchmarks for Hindi, Telugu, and English; (2) Design a hybrid explainability framework that integrates LLM explanations with the model's own attention signals.
 
-**Starting Point**: Human rationales are used as training signals to align model attention with human judgment; n-gram perturbation then generates model-driven explanations; the final rationale is obtained by taking the union of model-derived and LLM-derived explanations.
+**Key Insight**: Human rationales are used as training signals to align model attention with human judgment; n-gram perturbation then generates model-driven explanations; the final rationale is obtained by taking the union of model-derived and LLM-derived explanations.
 
 **Core Idea**: A two-stage training procedure — Stage 1 uses human rationales to guide attention alignment; Stage 2 replaces human rationales with n-gram explainability scores derived from the model itself for further fine-tuning. The final explanation is the union of LLM and n-gram outputs, balancing semantic and syntactic coverage.
 

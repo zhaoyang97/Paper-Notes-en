@@ -29,15 +29,15 @@ This paper proposes APEX (Adaptive Prompt EXtraction), which adaptively retrieve
 
 ## Background & Motivation
 
-**State of the Field**: Visual Prompting (VP) has attracted considerable attention as a domain adaptation approach for medical image segmentation. VP methods introduce learnable parameters in the input image space; once optimized, they map target-domain data into a space compatible with pretrained models. Since the original model parameters remain frozen, catastrophic forgetting is naturally avoided.
+**Background**: Visual Prompting (VP) has attracted considerable attention as a domain adaptation approach for medical image segmentation. VP methods introduce learnable parameters in the input image space; once optimized, they map target-domain data into a space compatible with pretrained models. Since the original model parameters remain frozen, catastrophic forgetting is naturally avoided.
 
 **Limitations of Prior Work**: Existing VP methods (e.g., VPT, FVP, A2XP) optimize a single prompt per target domain and apply it uniformly to all images. This leads to two fundamental limitations: (1) intra-domain variability is ignored—images acquired from the same device may differ substantially in acquisition settings and pathological characteristics, making a single prompt overly coarse; (2) inter-domain variability is ignored—a prompt optimized for a specific domain generalizes poorly to data from different devices or institutions, limiting performance on unseen domains.
 
-**Root Cause**: A trade-off exists between expressiveness and generalizability—coarse domain-level prompts are easy to optimize but lack expressiveness, while fine-grained input-level prompts are more expressive but require a sophisticated retrieval mechanism.
+**Key Challenge**: A trade-off exists between expressiveness and generalizability—coarse domain-level prompts are easy to optimize but lack expressiveness, while fine-grained input-level prompts are more expressive but require a sophisticated retrieval mechanism.
 
-**Paper Goals**: To design an adaptive prompt extraction framework that dynamically combines the most suitable prompts for each individual input image while ensuring generalization to both seen and unseen domains.
+**Goal**: To design an adaptive prompt extraction framework that dynamically combines the most suitable prompts for each individual input image while ensuring generalization to both seen and unseen domains.
 
-**Starting Point**: Domain shift in medical images primarily originates from global appearance changes (contrast, brightness, hue), which are encoded in the low-frequency components of the frequency domain. Extracting domain-discriminative features from low-frequency information enables precise retrieval of matched prompts.
+**Key Insight**: Domain shift in medical images primarily originates from global appearance changes (contrast, brightness, hue), which are encoded in the low-frequency components of the frequency domain. Extracting domain-discriminative features from low-frequency information enables precise retrieval of matched prompts.
 
 **Core Idea**: Construct a memory bank of diverse prompt vectors; employ a low-frequency spectrum-based domain feature encoder to query the memory bank; derive input-specific prompts via weighted combination; and enhance inter-domain discriminability through low-frequency contrastive (LFC) learning.
 

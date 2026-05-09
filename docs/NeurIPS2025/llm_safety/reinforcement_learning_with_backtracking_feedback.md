@@ -31,13 +31,13 @@ This paper proposes RLBF, a reinforcement learning framework with backtracking f
 
 ### State of the Field
 
-**State of the Field**: Exploration remains a central challenge in sparse-reward RL, where agents must make long sequences of correct decisions before receiving any reward signal.
+**Background**: Exploration remains a central challenge in sparse-reward RL, where agents must make long sequences of correct decisions before receiving any reward signal.
 
 **Limitations of Prior Work**: (1) Random exploration is highly inefficient; (2) curiosity-driven exploration is susceptible to noise interference; (3) credit assignment is difficult — within successful trajectories, it is unclear which steps are critical.
 
-**Root Cause**: Agents must make mistakes to learn, yet no signal indicates when to abandon the current direction.
+**Key Challenge**: Agents must make mistakes to learn, yet no signal indicates when to abandon the current direction.
 
-**Starting Point**: Humans navigating unfamiliar environments can recognize when they have gone astray and backtrack — this paper introduces such backtracking capability into RL.
+**Key Insight**: Humans navigating unfamiliar environments can recognize when they have gone astray and backtrack — this paper introduces such backtracking capability into RL.
 
 **Core Idea**: The agent is permitted to execute backtracking actions to return to previous states, with the backtracking event itself serving as a negative signal to improve credit assignment.
 

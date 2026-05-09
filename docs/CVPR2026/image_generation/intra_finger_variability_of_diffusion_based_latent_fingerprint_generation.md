@@ -29,15 +29,15 @@ This paper systematically evaluates the intra-finger variability of diffusion-mo
 
 ## Background & Motivation
 
-**State of the Field**: Generative AI (GANs and DDPMs) has demonstrated the capability to produce high-quality synthetic fingerprint datasets. Fingerprint synthesis typically proceeds in two stages: generating unique identities (inter-finger variability) and generating multiple variants of the same identity (intra-finger variability). The second stage is particularly critical for latent fingerprint applications.
+**Background**: Generative AI (GANs and DDPMs) has demonstrated the capability to produce high-quality synthetic fingerprint datasets. Fingerprint synthesis typically proceeds in two stages: generating unique identities (inter-finger variability) and generating multiple variants of the same identity (intra-finger variability). The second stage is particularly critical for latent fingerprint applications.
 
 **Limitations of Prior Work**: (1) Existing models rely on holistic or random style transfer and cannot precisely specify forensic scenarios (e.g., "a latent fingerprint lifted from a glass bottle and developed with fluorescent powder"); (2) the stochasticity of the generation process may alter ridge structures and minutiae, compromising identity authenticity.
 
-**Root Cause**: An inherent tension exists between diversity and identity preservation — increasing style diversity may introduce greater identity inconsistency.
+**Key Challenge**: An inherent tension exists between diversity and identity preservation — increasing style diversity may introduce greater identity inconsistency.
 
-**Paper Goals**: (1) Enhance style diversity in latent fingerprint generation; (2) rigorously quantify identity preservation capability.
+**Goal**: (1) Enhance style diversity in latent fingerprint generation; (2) rigorously quantify identity preservation capability.
 
-**Starting Point**: A style library of 28,000 real latent fingerprints is constructed to enable precise style control, and a semi-automated framework is designed to evaluate identity consistency.
+**Key Insight**: A style library of 28,000 real latent fingerprints is constructed to enable precise style control, and a semi-automated framework is designed to evaluate identity consistency.
 
 **Core Idea**: The style library enables controllable generation across 40+ latent fingerprint styles, while also revealing local inconsistencies in low-quality regions and global inconsistencies arising from style–reference mismatches within diffusion models.
 

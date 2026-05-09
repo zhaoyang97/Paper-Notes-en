@@ -28,7 +28,7 @@ FALCON proposes an end-to-end framework for automated analog/RF circuit design v
 
 ## Background & Motivation
 
-**State of the Field**: Analog/RF/millimeter-wave circuit design remains heavily reliant on human expertise, spanning three stages: topology selection, parameter tuning, and layout feasibility verification. Machine learning methods have begun to address this domain, but typically target only one subproblem at a time.
+**Background**: Analog/RF/millimeter-wave circuit design remains heavily reliant on human expertise, spanning three stages: topology selection, parameter tuning, and layout feasibility verification. Machine learning methods have begun to address this domain, but typically target only one subproblem at a time.
 
 **Limitations of Prior Work**:
 - Most methods assume a fixed topology and cannot adapt to new performance specifications.
@@ -37,11 +37,11 @@ FALCON proposes an end-to-end framework for automated analog/RF circuit design v
 - Layout constraints are typically handled as post-processing steps, missing the opportunity to incorporate physical constraints during optimization.
 - Training datasets are often based on symbolic/synthetic simulators, lacking commercial-grade fidelity.
 
-**Root Cause**: The mapping from performance specifications to final layout is a multi-stage coupled problem, and existing methods address each stage in isolation without integration.
+**Key Challenge**: The mapping from performance specifications to final layout is a multi-stage coupled problem, and existing methods address each stage in isolation without integration.
 
-**Paper Goals**: To construct a unified, differentiable, end-to-end framework that integrates target performance → topology selection → parameter inference → layout feasibility into a single pipeline.
+**Goal**: To construct a unified, differentiable, end-to-end framework that integrates target performance → topology selection → parameter inference → layout feasibility into a single pipeline.
 
-**Starting Point**: Circuits are represented as graphs (netlists → multi-edge heterogeneous graphs), with a GNN trained as a differentiable surrogate forward model. Inverse design is then achieved via gradient backpropagation, with differentiable layout cost functions embedded in the optimization.
+**Key Insight**: Circuits are represented as graphs (netlists → multi-edge heterogeneous graphs), with a GNN trained as a differentiable surrogate forward model. Inverse design is then achieved via gradient backpropagation, with differentiable layout cost functions embedded in the optimization.
 
 **Core Idea**: An edge-centric GNN learns a differentiable mapping from circuit parameters to performance. Inverse design is performed by gradient-based inference through a frozen GNN, while layout constraints are encoded as differentiable penalty terms enabling layout-aware optimization.
 

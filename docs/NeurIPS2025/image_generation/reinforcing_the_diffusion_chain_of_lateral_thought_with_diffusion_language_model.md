@@ -29,10 +29,10 @@ This paper proposes the Diffusion Chain of Lateral Thought (DCoLT), which treats
 
 ## Background & Motivation
 
-- **State of the Field**: The reasoning capabilities of existing large language models primarily rely on chain-of-thought (CoT) prompting, which decomposes problems into sequential intermediate steps. However, CoT is constrained by the causal attention mechanism of autoregressive models, forcing reasoning to unfold linearly in a single direction. This diverges from human cognition — in early stages of thought, ideas emerge in a fragmented and nonlinear manner before being organized into coherent expressions. This form of nonlinear, creative reasoning is referred to as *lateral thinking*.
+- **Background**: The reasoning capabilities of existing large language models primarily rely on chain-of-thought (CoT) prompting, which decomposes problems into sequential intermediate steps. However, CoT is constrained by the causal attention mechanism of autoregressive models, forcing reasoning to unfold linearly in a single direction. This diverges from human cognition — in early stages of thought, ideas emerge in a fragmented and nonlinear manner before being organized into coherent expressions. This form of nonlinear, creative reasoning is referred to as *lateral thinking*.
 - **Limitations of Prior Work**: Diffusion language models (DLMs) are naturally suited to simulate lateral thinking: their bidirectional attention allows each token to attend to all others freely; intermediate steps need not conform to grammatical rules; and tokens can be generated at multiple positions simultaneously rather than left-to-right. Nevertheless, existing DLM training approaches (e.g., DoT using annotated CoT data for SFT) still encourage sequential reasoning, failing to leverage the full potential of lateral thinking.
-- **Root Cause**: No existing method jointly optimizes the entire diffusion reverse process as a complete lateral thinking chain.
-- **Paper Goals**: To develop a reinforcement learning framework that treats the full diffusion reverse trajectory as a Chain of Lateral Thought (DCoLT) and optimizes it end-to-end using only final-answer reward signals.
+- **Key Challenge**: No existing method jointly optimizes the entire diffusion reverse process as a complete lateral thinking chain.
+- **Goal**: To develop a reinforcement learning framework that treats the full diffusion reverse trajectory as a Chain of Lateral Thought (DCoLT) and optimizes it end-to-end using only final-answer reward signals.
 
 ## Method
 

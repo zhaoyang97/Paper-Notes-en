@@ -27,15 +27,15 @@ MAVIS is the first benchmark for evaluating multimodal source attribution system
 
 ## Background & Motivation
 
-**State of the Field**: Source attribution enhances the verifiability of AI-generated answers by attaching reference sources. Existing work focuses predominantly on text-only settings, such as WebGPT and ALCE.
+**Background**: Source attribution enhances the verifiability of AI-generated answers by attaching reference sources. Existing work focuses predominantly on text-only settings, such as WebGPT and ALCE.
 
 **Limitations of Prior Work**: (1) Existing source attribution research almost entirely neglects multimodality — real-world evidence sources include both text and images; (2) LVLMs relying on multimodal RAG exhibit noticeably weaker groundedness for image documents compared to text documents; (3) No standardized benchmark or evaluation metrics exist for multimodal source attribution.
 
-**Root Cause**: While multimodal information improves answer informativeness and fluency, citation accuracy for image sources is paradoxically worse — the multimodal setting amplifies this gap.
+**Key Challenge**: While multimodal information improves answer informativeness and fluency, citation accuracy for image sources is paradoxically worse — the multimodal setting amplifies this gap.
 
-**Paper Goals**: Construct the first multimodal source attribution benchmark, providing evaluation metrics and baseline analyses.
+**Goal**: Construct the first multimodal source attribution benchmark, providing evaluation metrics and baseline analyses.
 
-**Starting Point**: Starting from users' visual questions, the work evaluates whether systems can understand visual intent, retrieve multimodal evidence, and generate long-form answers with accurate citations.
+**Key Insight**: Starting from users' visual questions, the work evaluates whether systems can understand visual intent, retrieve multimodal evidence, and generate long-form answers with accurate citations.
 
 **Core Idea**: Construct a large-scale multimodal VQA dataset in which each answer is annotated with fact-level citations pointing to multimodal documents, and design automatic evaluation metrics across three dimensions.
 

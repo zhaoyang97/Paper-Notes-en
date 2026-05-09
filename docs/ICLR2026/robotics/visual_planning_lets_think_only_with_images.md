@@ -30,7 +30,7 @@ This paper introduces Visual Planning — the first purely visual reasoning para
 
 ## Background & Motivation
 
-**State of the Field**: LLMs and MLLMs have achieved remarkable progress in reasoning; however, all reasoning processes take place in the textual space — even when the input contains images, visual information is first described in text before reasoning proceeds. Cognitive science's Dual Coding Theory posits that human cognition employs two independent channels — verbal and non-verbal — and that visual imagery is more efficient than language for spatial tasks.
+**Background**: LLMs and MLLMs have achieved remarkable progress in reasoning; however, all reasoning processes take place in the textual space — even when the input contains images, visual information is first described in text before reasoning proceeds. Cognitive science's Dual Coding Theory posits that human cognition employs two independent channels — verbal and non-verbal — and that visual imagery is more efficient than language for spatial tasks.
 
 **Limitations of Prior Work**:
 - (1) In spatial/geometric tasks, converting visual information into textual descriptions discards critical spatial features, creating a modality gap.
@@ -38,7 +38,7 @@ This paper introduces Visual Planning — the first purely visual reasoning para
 - (3) MVoT generates visualizations to assist text-based reasoning, but remains fundamentally a text-driven tool-use paradigm.
 - (4) No truly pure visual reasoning paradigm exists — all existing methods ultimately rely on text for decision-making.
 
-**Starting Point**: Completely eliminate textual intermediaries. Planning is redefined as an image sequence, where each image represents an environment state and actions are implicitly encoded in state transitions. An LVM trained exclusively on visual data avoids confounds introduced by language supervision.
+**Key Insight**: Completely eliminate textual intermediaries. Planning is redefined as an image sequence, where each image represents an environment state and actions are implicitly encoded in state transitions. An LVM trained exclusively on visual data avoids confounds introduced by language supervision.
 
 **Design Motivation for RL**: RL has demonstrated substantially superior generalization over SFT in text-based reasoning (e.g., DeepSeek-R1), yet has never been applied to image-generative reasoning or planning scenarios.
 

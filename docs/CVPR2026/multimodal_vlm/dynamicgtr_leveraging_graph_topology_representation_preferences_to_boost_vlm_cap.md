@@ -29,11 +29,11 @@ This paper proposes DynamicGTR, a framework that dynamically routes each query a
 
 ## Background & Motivation
 
-**State of the Field**: VLMs have demonstrated the ability to answer graph-related questions in zero-shot settings, yet understanding structured graph data remains challenging.
+**Background**: VLMs have demonstrated the ability to answer graph-related questions in zero-shot settings, yet understanding structured graph data remains challenging.
 
 **Limitations of Prior Work**: Existing methods rely on a single fixed GTR (e.g., a uniform textual prompt or a fixed visualization style), ignoring model-specific and task-specific representational preferences.
 
-**Root Cause**: Experiments reveal that different tasks favor different GTRs — perception-intensive tasks (connectivity/cycle detection) prefer visual GTRs, while edge-weight tasks (shortest path/maximum flow) prefer textual GTRs.
+**Key Challenge**: Experiments reveal that different tasks favor different GTRs — perception-intensive tasks (connectivity/cycle detection) prefer visual GTRs, while edge-weight tasks (shortest path/maximum flow) prefer textual GTRs.
 
 **Cost of Suboptimal GTR**: A suboptimal representation can lead to incorrect answers or unnecessarily verbose responses.
 

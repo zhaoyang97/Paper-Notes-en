@@ -30,15 +30,15 @@ This paper systematically demonstrates that the LLM alignment process (instructi
 
 ## Background & Motivation
 
-**State of the Field**: The LLM-as-a-Judge paradigm has demonstrated effectiveness across various tasks, including machine translation quality estimation and grammatical error correction evaluation, and is increasingly accepted as an alternative to human annotation. However, researchers have observed a pervasive phenomenon in LLM evaluators—numerical bias—whereby certain score values are generated at disproportionately high frequencies, leading to severely skewed scoring distributions.
+**Background**: The LLM-as-a-Judge paradigm has demonstrated effectiveness across various tasks, including machine translation quality estimation and grammatical error correction evaluation, and is increasingly accepted as an alternative to human annotation. However, researchers have observed a pervasive phenomenon in LLM evaluators—numerical bias—whereby certain score values are generated at disproportionately high frequencies, leading to severely skewed scoring distributions.
 
 **Limitations of Prior Work**: Although prior work (e.g., Stureborg et al.) identified biases in LLM evaluators—such as preference for low-perplexity text and reduced accuracy when score ranges are expanded—none traced the root cause of numerical bias. These efforts addressed symptoms rather than the underlying cause.
 
-**Root Cause**: Alignment is a prerequisite for LLMs to function as competent evaluators—without alignment, models cannot correctly interpret evaluation instructions. Yet alignment itself compresses output diversity, which may be the very source of numerical bias. This creates a dilemma: no alignment → inability to evaluate; alignment → biased evaluation.
+**Key Challenge**: Alignment is a prerequisite for LLMs to function as competent evaluators—without alignment, models cannot correctly interpret evaluation instructions. Yet alignment itself compresses output diversity, which may be the very source of numerical bias. This creates a dilemma: no alignment → inability to evaluate; alignment → biased evaluation.
 
-**Paper Goals**: The paper investigates two core research questions—RQ1: How does alignment affect numerical bias? RQ2: How can numerical bias in aligned models be mitigated?
+**Goal**: The paper investigates two core research questions—RQ1: How does alignment affect numerical bias? RQ2: How can numerical bias in aligned models be mitigated?
 
-**Starting Point**: The study employs kurtosis as a statistical measure to quantify the concentration of scoring distributions. By comparing pre- and post-alignment versions of the same model families across three regression evaluation tasks, it establishes a causal link between alignment and bias.
+**Key Insight**: The study employs kurtosis as a statistical measure to quantify the concentration of scoring distributions. By comparing pre- and post-alignment versions of the same model families across three regression evaluation tasks, it establishes a causal link between alignment and bias.
 
 **Core Idea**: The excessive conformity introduced by alignment is the root cause of numerical bias, and score range should be treated as a tunable hyperparameter rather than a fixed design choice.
 

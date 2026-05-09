@@ -28,15 +28,15 @@ This paper systematically evaluates 4 jailbreak methods across 600+ attacker–t
 
 ## Background & Motivation
 
-**State of the Field**: LLM red-teaming evaluates model safety by simulating adversarial attacks. Existing studies typically assess only a small number of model pairs and lack a systematic understanding of how ASR varies with model capability.
+**Background**: LLM red-teaming evaluates model safety by simulating adversarial attacks. Existing studies typically assess only a small number of model pairs and lack a systematic understanding of how ASR varies with model capability.
 
 **Limitations of Prior Work**: ASR varies substantially across attack methods and is inconsistent across different model pairs. No unified framework exists for predicting attack vulnerability in new model combinations, necessitating full re-evaluation upon each new model release.
 
-**Root Cause**: Safety evaluation is resource-intensive—every model pair must be tested individually. Can scaling laws enable prediction rather than exhaustive testing? Moreover, as model capabilities improve, will human red-teaming eventually become ineffective?
+**Key Challenge**: Safety evaluation is resource-intensive—every model pair must be tested individually. Can scaling laws enable prediction rather than exhaustive testing? Moreover, as model capabilities improve, will human red-teaming eventually become ineffective?
 
-**Paper Goals**: Discover and quantify the scaling relationship between ASR and the capability gap between models, providing a predictive framework for safety evaluation.
+**Goal**: Discover and quantify the scaling relationship between ASR and the capability gap between models, providing a predictive framework for safety evaluation.
 
-**Starting Point**: The logit-transformed MMLU-Pro score is adopted as a unified proxy for model capability, and the capability difference between attacker and target is computed accordingly.
+**Key Insight**: The logit-transformed MMLU-Pro score is adopted as a unified proxy for model capability, and the capability difference between attacker and target is computed accordingly.
 
 **Core Idea**: Jailbreak success rate is a sigmoid function of the attacker–target capability gap—the stronger the attacker and the weaker the target, the higher the ASR; when the target surpasses the attacker in capability, ASR drops sharply.
 

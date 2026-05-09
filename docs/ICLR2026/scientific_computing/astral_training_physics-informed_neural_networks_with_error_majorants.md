@@ -27,18 +27,18 @@ content_hash: e43ea2bf28e3bd71
 This paper proposes the Astral loss function — based on a functional a posteriori error majorant — as a replacement for the conventional residual loss in training physics-informed neural networks (PiNNs). The approach enables reliable error estimation throughout training and achieves superior or comparable accuracy across multiple PDE types, including diffusion and Maxwell equations.
 
 ## Background & Motivation
-**State of the Field**: PiNNs approximate PDE solutions with neural networks, most commonly by minimizing the PDE residual (the $L_2$ norm evaluated at randomly sampled collocation points).
+**Background**: PiNNs approximate PDE solutions with neural networks, most commonly by minimizing the PDE residual (the $L_2$ norm evaluated at randomly sampled collocation points).
 
 **Limitations of Prior Work**:
 - The correlation between the residual and the true error is extremely poor. The authors demonstrate this with a simple BVP: one can construct examples where the residual is arbitrarily large yet the error is arbitrarily small, and vice versa.
 - Statistical experiments over 100 diffusion equation instances show that the average spatial correlation between the residual and the energy-norm error is only $0.22 \pm 0.09$.
 - The residual cannot reliably indicate the accuracy of an approximate solution, leaving no principled stopping criterion for training.
 
-**Root Cause**: The residual is at best an indirect proxy for the error rather than a direct upper bound, depriving PiNNs of reliable a posteriori error control.
+**Key Challenge**: The residual is at best an indirect proxy for the error rather than a direct upper bound, depriving PiNNs of reliable a posteriori error control.
 
-**Paper Goals**: Design a new loss function that simultaneously trains PiNNs effectively and provides a rigorous upper bound on the approximation error.
+**Goal**: Design a new loss function that simultaneously trains PiNNs effectively and provides a rigorous upper bound on the approximation error.
 
-**Starting Point**: Leverage classical functional a posteriori error estimates from numerical analysis. Such estimates are approximation-agnostic and thus naturally suited to neural network approximations.
+**Key Insight**: Leverage classical functional a posteriori error estimates from numerical analysis. Such estimates are approximation-agnostic and thus naturally suited to neural network approximations.
 
 **Core Idea**: Use the PDE's error majorant (an error-bounding functional) directly as the PiNN training loss, thereby obtaining both a high-quality approximate solution and a reliable error certificate simultaneously.
 

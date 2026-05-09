@@ -28,11 +28,11 @@ GTM is a general time-series foundation model that captures temporal granularity
 
 ## Background & Motivation
 
-1. **State of the Field**: Time series foundation models (TSFMs) fall into two categories — forecasting-specialized models (e.g., TimesFM, Lag-Llama) and multi-task models (e.g., Timer, UniTS). The former are optimized for forecasting, while the latter aim to cover diverse downstream tasks.
+1. **Background**: Time series foundation models (TSFMs) fall into two categories — forecasting-specialized models (e.g., TimesFM, Lag-Llama) and multi-task models (e.g., Timer, UniTS). The former are optimized for forecasting, while the latter aim to cover diverse downstream tasks.
 2. **Limitations of Prior Work**: (a) Existing models primarily extract features in the time domain, neglecting frequency-domain distributional differences associated with temporal granularity; (b) multi-task TSFMs typically require task-specific modifications to tokenization, pre-training strategies, or projection heads, making them insufficiently task-agnostic.
-3. **Root Cause**: How can a unified architecture and pre-training framework simultaneously learn rich time-series representations (including frequency-domain information) while seamlessly adapting to all generative downstream tasks?
-4. **Paper Goals**: (a) Design a frequency-domain attention mechanism to capture distributional differences across temporal granularities (second/minute/hour/day); (b) unify reconstruction and autoregressive pre-training objectives so that the model requires no task-specific modifications across generative tasks.
-5. **Starting Point**: Through FFT analysis and 2D kernel density estimation on large-scale time-series data, the authors identify significant differences in the joint amplitude-frequency and phase-frequency distributions across temporal granularities — a critical but previously overlooked dimension that directly motivates the model design.
+3. **Key Challenge**: How can a unified architecture and pre-training framework simultaneously learn rich time-series representations (including frequency-domain information) while seamlessly adapting to all generative downstream tasks?
+4. **Goal**: (a) Design a frequency-domain attention mechanism to capture distributional differences across temporal granularities (second/minute/hour/day); (b) unify reconstruction and autoregressive pre-training objectives so that the model requires no task-specific modifications across generative tasks.
+5. **Key Insight**: Through FFT analysis and 2D kernel density estimation on large-scale time-series data, the authors identify significant differences in the joint amplitude-frequency and phase-frequency distributions across temporal granularities — a critical but previously overlooked dimension that directly motivates the model design.
 6. **Core Idea**: Employ Fourier attention to capture temporal granularity-aware frequency features, and apply hybrid masking (random + tail-continuous) to unify reconstruction and autoregressive objectives, yielding the first generative task-agnostic time-series foundation model.
 
 ## Method

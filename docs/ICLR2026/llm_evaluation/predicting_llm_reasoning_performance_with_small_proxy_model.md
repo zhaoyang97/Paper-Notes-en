@@ -29,7 +29,7 @@ This paper proposes rBridge, which uses reasoning traces from frontier models as
 ## Background & Motivation
 Pre-training large language models is extremely costly, so the field commonly employs small proxy models to evaluate pre-training design choices. Research on scaling laws and dataset ranking invariance has demonstrated the viability of this strategy for general tasks.
 
-**Root Cause**: Reasoning ability exhibits **emergent behavior**, appearing reliably only in sufficiently large models (typically >7B). Small models (≤1B) produce highly noisy results on reasoning benchmarks, or even exhibit reversed trends (e.g., a 1B model's accuracy on MATH500 decreases as training progresses). This means:
+**Key Challenge**: Reasoning ability exhibits **emergent behavior**, appearing reliably only in sufficiently large models (typically >7B). Small models (≤1B) produce highly noisy results on reasoning benchmarks, or even exhibit reversed trends (e.g., a 1B model's accuracy on MATH500 decreases as training progresses). This means:
 - Directly using small-model accuracy to predict large-model performance → fails
 - Practitioners are forced to use 7B–15B "proxy models," which still incur enormous costs (a single 7B/500B-token training run exceeds $50K USD)
 

@@ -30,13 +30,13 @@ This paper proposes QUANN (Quasi-Arithmetic Neural Networks), which employs inve
 
 ### State of the Field
 
-**State of the Field**: Set function learning requires permutation invariance. DeepSets uses sum pooling and PointNet uses max pooling — both are fixed, non-trainable pooling operations that shift the approximation burden onto the encoder and estimator.
+**Background**: Set function learning requires permutation invariance. DeepSets uses sum pooling and PointNet uses max pooling — both are fixed, non-trainable pooling operations that shift the approximation burden onto the encoder and estimator.
 
 **Limitations of Prior Work**: (1) Fixed pooling forces the encoder to learn embeddings that simultaneously accommodate the downstream task and the specific pooling operation, limiting embedding transferability. (2) Sum and max are extreme special cases of the Kolmogorov mean, leaving a wide range of intermediate forms (geometric mean, harmonic mean, etc.) unexploited. (3) Existing learnable pooling methods are either complex and difficult to use, or limited in expressiveness (e.g., Power DeepSets learns only a single exponent).
 
-**Root Cause**: There is a need for a learnable pooling operation that is theoretically grounded, straightforward to implement, and sufficiently expressive.
+**Key Challenge**: There is a need for a learnable pooling operation that is theoretically grounded, straightforward to implement, and sufficiently expressive.
 
-**Starting Point**: The Kolmogorov mean $M_f = f^{-1}(\frac{1}{n}\sum_i f(x_i))$ unifies various means through the choice of different invertible functions $f$. Implementing $f$ with an invertible neural network yields a learnable generalized measure of central tendency.
+**Key Insight**: The Kolmogorov mean $M_f = f^{-1}(\frac{1}{n}\sum_i f(x_i))$ unifies various means through the choice of different invertible functions $f$. Implementing $f$ with an invertible neural network yields a learnable generalized measure of central tendency.
 
 ## Method
 

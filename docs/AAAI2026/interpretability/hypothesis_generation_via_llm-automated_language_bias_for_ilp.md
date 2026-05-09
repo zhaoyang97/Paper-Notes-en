@@ -26,15 +26,15 @@ content_hash: 70c6d852f9c1f1a4
 This paper proposes the first end-to-end framework in which a multi-agent LLM system (Actor/Critic) automatically constructs ILP language bias (predicate system, type declarations, and mode constraints) from raw text. A Translator agent converts text into Prolog facts, and the MAXSYNTH solver then induces a globally optimal rule set based on the MDL principle. The framework achieves 88.3% and 81.3% accuracy on the SHOES and ZENDO tasks, respectively, with variance below 5% across four LLMs.
 
 ## Background & Motivation
-**State of the Field**: Inductive Logic Programming (ILP) is a classical approach for discovering interpretable logical rules from data. Heuristic methods such as FOIL, Progol, and Aleph, as well as constraint-based solvers such as ILASP, Popper, and MAXSYNTH, have continued to advance rule-search algorithms. Recent LLMs have demonstrated strong performance in hypothesis generation (e.g., ChatRule, HypoGeniC, IHR).
+**Background**: Inductive Logic Programming (ILP) is a classical approach for discovering interpretable logical rules from data. Heuristic methods such as FOIL, Progol, and Aleph, as well as constraint-based solvers such as ILASP, Popper, and MAXSYNTH, have continued to advance rule-search algorithms. Recent LLMs have demonstrated strong performance in hypothesis generation (e.g., ChatRule, HypoGeniC, IHR).
 
 **Limitations of Prior Work**: (a) ILP requires experts to manually define the "language bias"—predicate sets, types, and mode declarations—making it difficult to extend to new domains (e.g., protein interaction research requires defining predicates for atomic distances and amino acid properties); (b) pure LLM methods (HypoGeniC, IHP) are highly sensitive to noise—a 12.5% increase in data noise causes accuracy to plummet from 71.2% to 50.9%; (c) heuristic rule generation by LLMs cannot guarantee the global consistency and optimality of the induced rule set, whereas ILP solvers can.
 
-**Root Cause**: ILP requires expert knowledge to define the search space (limiting scalability), while LLMs do not require such knowledge but produce results that are neither robust nor globally optimal.
+**Key Challenge**: ILP requires expert knowledge to define the search space (limiting scalability), while LLMs do not require such knowledge but produce results that are neither robust nor globally optimal.
 
-**Paper Goals**: To automate the most labor-intensive component of ILP (language bias construction) while retaining the robustness and global optimality guarantees of ILP solvers.
+**Goal**: To automate the most labor-intensive component of ILP (language bias construction) while retaining the robustness and global optimality guarantees of ILP solvers.
 
-**Starting Point**: LLMs excel at semantic understanding and conceptual abstraction (well-suited for designing predicate systems), while ILP solvers excel at constrained search and global optimization (well-suited for inducing rules)—making them ideal collaborators.
+**Key Insight**: LLMs excel at semantic understanding and conceptual abstraction (well-suited for designing predicate systems), while ILP solvers excel at constrained search and global optimization (well-suited for inducing rules)—making them ideal collaborators.
 
 **Core Idea**: LLMs automatically construct the "language bias" (predicate system) for ILP, and the ILP solver searches for the globally optimal rule set within this space—an ideal division of labor between neural and symbolic components.
 

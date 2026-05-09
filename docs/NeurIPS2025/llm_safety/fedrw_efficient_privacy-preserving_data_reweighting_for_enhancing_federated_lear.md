@@ -28,15 +28,15 @@ FedRW proposes the first privacy-preserving soft deduplication framework for fed
 
 ## Background & Motivation
 
-**State of the Field**: Data duplication in large-scale corpora severely degrades LLM performance and privacy guarantees, making deduplication a standard preprocessing step in training pipelines. Deduplication approaches fall into two categories: hard deduplication (direct removal) and soft deduplication (reweighting).
+**Background**: Data duplication in large-scale corpora severely degrades LLM performance and privacy guarantees, making deduplication a standard preprocessing step in training pipelines. Deduplication approaches fall into two categories: hard deduplication (direct removal) and soft deduplication (reweighting).
 
 **Limitations of Prior Work**: In federated learning, privacy constraints prevent direct data sharing, making global deduplication challenging. The current SOTA method EP-MPD adopts encrypted hard deduplication but suffers from three issues: (1) hard deletion may discard informative samples; (2) multi-round key negotiation introduces substantial computational and communication overhead; (3) it relies on a trusted third party.
 
-**Root Cause**: Local deduplication cannot detect cross-client duplicates, while global deduplication is restricted by privacy constraints. Existing methods struggle to balance privacy preservation with data quality.
+**Key Challenge**: Local deduplication cannot detect cross-client duplicates, while global deduplication is restricted by privacy constraints. Existing methods struggle to balance privacy preservation with data quality.
 
-**Paper Goals**: Design a privacy-preserving soft deduplication framework that requires no trusted third party, replacing hard deletion with frequency-aware reweighting.
+**Goal**: Design a privacy-preserving soft deduplication framework that requires no trusted third party, replacing hard deletion with frequency-aware reweighting.
 
-**Starting Point**: Sample weights are set as inverse functions of global frequency, with frequency information obtained via pairwise Private Set Intersection (PSI) protocols.
+**Key Insight**: Sample weights are set as inverse functions of global frequency, with frequency information obtained via pairwise Private Set Intersection (PSI) protocols.
 
 **Core Idea**: Obtain global sample frequencies via secure multi-party computation and apply logarithmic inverse reweighting in place of hard deletion, simultaneously preserving privacy and data diversity.
 

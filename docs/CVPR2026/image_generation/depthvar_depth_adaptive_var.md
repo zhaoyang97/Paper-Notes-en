@@ -29,15 +29,15 @@ Reveals the fundamental limitations of the frequency-driven hard pruning paradig
 
 ## Background & Motivation
 
-**State of the Field**: Visual Autoregressive (VAR) models significantly reduce sequence lengths in text-to-image generation by replacing traditional "next-token" prediction with "next-scale" prediction. However, as resolution increases, the number of tokens per scale grows quadratically, leading to severe computational waste by applying full-layer calculations uniformly to all tokens.
+**Background**: Visual Autoregressive (VAR) models significantly reduce sequence lengths in text-to-image generation by replacing traditional "next-token" prediction with "next-scale" prediction. However, as resolution increases, the number of tokens per scale grows quadratically, leading to severe computational waste by applying full-layer calculations uniformly to all tokens.
 
 **Limitations of Prior Work**: Methods like FastVAR and SparseVAR utilize frequency features for hard pruning of tokens—estimating high-frequency distributions and discarding "unimportant" low-frequency tokens. However, this approach has fundamental issues: even with a perfect frequency mask (oracle experiment), hard pruning still leads to significant quality degradation; more precise frequency estimation does not guarantee better generation quality (Pearson $r = 0.138$).
 
-**Root Cause**: Hard pruning binarizes tokens into "keep/discard," but in reality, low-frequency regions do not entirely lack a need for computation; they simply require less—the problem lies in the "all-or-nothing" coarse-grained decision.
+**Key Challenge**: Hard pruning binarizes tokens into "keep/discard," but in reality, low-frequency regions do not entirely lack a need for computation; they simply require less—the problem lies in the "all-or-nothing" coarse-grained decision.
 
-**Paper Goals**: Shift from the hard pruning paradigm to continuous computation depth allocation, allowing each token to receive a number of Transformer layers matched to its complexity.
+**Goal**: Shift from the hard pruning paradigm to continuous computation depth allocation, allowing each token to receive a number of Transformer layers matched to its complexity.
 
-**Starting Point**: The authors find that pre-trained VAR models naturally possess depth redundancy due to the use of LayerDrop regularization during training—generation quality peaks before reaching the final layer, and representations of different tokens saturate at different depths.
+**Key Insight**: The authors find that pre-trained VAR models naturally possess depth redundancy due to the use of LayerDrop regularization during training—generation quality peaks before reaching the final layer, and representations of different tokens saturate at different depths.
 
 **Core Idea**: Replace hard pruning with per-token dynamic depth allocation. A cyclic rotation scheduler generates non-static depth scores, which are converted into layer masks via bit-reversal mapping to achieve balanced layer utilization.
 

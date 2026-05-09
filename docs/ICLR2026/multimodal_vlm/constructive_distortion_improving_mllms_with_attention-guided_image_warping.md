@@ -27,15 +27,15 @@ content_hash: 58baab97ad56cc2e
 This paper proposes AttWarp, a plug-and-play test-time image warping method that leverages the MLLM's own cross-modal attention maps to perform rectilinear grid resampling — expanding high-attention regions and compressing low-attention regions — achieving consistent accuracy improvements, enhanced compositional reasoning, and reduced hallucinations across 5 benchmarks and 4 MLLMs.
 
 ## Background & Motivation
-**State of the Field**: Multimodal large language models (MLLMs) such as LLaVA and Qwen-VL have made notable progress in image-based dialogue and reasoning, yet still exhibit significant deficiencies in fine-grained perception — missing small objects, confusing visually similar entities, and misinterpreting spatial relationships.
+**Background**: Multimodal large language models (MLLMs) such as LLaVA and Qwen-VL have made notable progress in image-based dialogue and reasoning, yet still exhibit significant deficiencies in fine-grained perception — missing small objects, confusing visually similar entities, and misinterpreting spatial relationships.
 
 **Limitations of Prior Work**: Existing improvement methods either require external detectors (bounding boxes/masks), rely on multi-step reasoning chains, or employ cropping/masking strategies that discard global context.
 
-**Root Cause**: Small objects lose spatial detail during feature extraction, and subsequent attention-level improvements cannot recover this information; yet naive cropping or magnification discards global layout.
+**Key Challenge**: Small objects lose spatial detail during feature extraction, and subsequent attention-level improvements cannot recover this information; yet naive cropping or magnification discards global layout.
 
-**Paper Goals**: To enhance the resolution of query-relevant regions through spatial transformations at the input level, without modifying model weights or architecture.
+**Goal**: To enhance the resolution of query-relevant regions through spatial transformations at the input level, without modifying model weights or architecture.
 
-**Starting Point**: Analogous to human foveal vision — densely sampling attended regions while sparsely sampling the periphery, thereby preserving global information.
+**Key Insight**: Analogous to human foveal vision — densely sampling attended regions while sparsely sampling the periphery, thereby preserving global information.
 
 **Core Idea**: Use the model's own attention to guide a single rectilinear warping transformation, enabling the same model to "see more clearly."
 

@@ -28,15 +28,15 @@ GRASS is a framework that employs Mean Gradient Norm (MGN) as a task-aware and t
 
 ## Background & Motivation
 
-**State of the Field**: Full fine-tuning (FFT) of LLMs yields the best performance for downstream task adaptation, but GPU memory demand becomes a bottleneck as model scale increases. Parameter-efficient fine-tuning (PEFT) methods such as LoRA reduce memory by updating only a small subset of parameters and represent the most popular trade-off today.
+**Background**: Full fine-tuning (FFT) of LLMs yields the best performance for downstream task adaptation, but GPU memory demand becomes a bottleneck as model scale increases. Parameter-efficient fine-tuning (PEFT) methods such as LoRA reduce memory by updating only a small subset of parameters and represent the most popular trade-off today.
 
 **Limitations of Prior Work**: Although low-rank methods like LoRA are efficient, low-rank parameterization limits model expressiveness, inevitably falling short of FFT. Layer-wise fine-tuning methods (e.g., LISA) offer an alternative path—activating only a subset of layers for full-parameter updates at each step, avoiding low-rank constraints. However, LISA adopts a static uniform sampling strategy, implicitly assuming constant layer importance, which does not reflect reality. For example, LISA underperforms FFT by 4.4% on GSM8K and 8.9% on SingleEq.
 
-**Root Cause**: Layer-wise fine-tuning faces the problem of dynamic layer importance—different tasks require updating different layers, and the critical layers shift across training stages within the same task, which static selection strategies cannot capture.
+**Key Challenge**: Layer-wise fine-tuning faces the problem of dynamic layer importance—different tasks require updating different layers, and the critical layers shift across training stages within the same task, which static selection strategies cannot capture.
 
-**Paper Goals**: Design a layer sampling strategy that adaptively accounts for both task identity and training stage, preserving the memory advantages of layer-wise fine-tuning while approaching or even surpassing FFT performance.
+**Goal**: Design a layer sampling strategy that adaptively accounts for both task identity and training stage, preserving the memory advantages of layer-wise fine-tuning while approaching or even surpassing FFT performance.
 
-**Starting Point**: Gradients directly encode the sensitivity of the loss to parameter updates—under a first-order Taylor approximation, layers with larger gradient norms have a greater impact on the training objective after updating. Gradient statistics therefore serve as a natural real-time indicator of layer importance.
+**Key Insight**: Gradients directly encode the sensitivity of the loss to parameter updates—under a first-order Taylor approximation, layers with larger gradient norms have a greater impact on the training objective after updating. Gradient statistics therefore serve as a natural real-time indicator of layer importance.
 
 **Core Idea**: Dynamically quantify each layer's contribution to loss reduction using MGN, convert it into sampling probabilities via softmax with periodic updates, and adaptively select the most important layers for fine-tuning.
 

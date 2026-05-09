@@ -28,15 +28,15 @@ This paper proposes Hier-COS, a framework that assigns orthogonal basis vectors 
 
 ## Background & Motivation
 
-**State of the Field**: Traditional classifiers treat all categories as mutually exclusive, ignoring the semantic hierarchical structure among classes. Hierarchy-aware representation learning aims to place semantically similar classes closer in feature space, thereby reducing the severity of misclassifications.
+**Background**: Traditional classifiers treat all categories as mutually exclusive, ignoring the semantic hierarchical structure among classes. Hierarchy-aware representation learning aims to place semantically similar classes closer in feature space, thereby reducing the severity of misclassifications.
 
 **Limitations of Prior Work**: (a) Existing methods constrain feature representations to a one-dimensional space along weight vector directions, resulting in insufficient angular separation; (b) different classes have varying classification complexity, yet existing methods allocate identical learning capacity to all; (c) existing evaluation metrics (MS, AHD@k) have critical flaws—AHD is permutation-invariant and cannot distinguish between the optimal and worst top-k prediction orderings.
 
-**Root Cause**: Existing methods either support only hierarchy-aware multi-class classification (without multi-level classification), or require additional classifiers with consistency constraints for multi-level classification, increasing training complexity without guaranteeing consistency.
+**Key Challenge**: Existing methods either support only hierarchy-aware multi-class classification (without multi-level classification), or require additional classifiers with consistency constraints for multi-level classification, increasing training complexity without guaranteeing consistency.
 
-**Paper Goals**: To construct a theoretically guaranteed hierarchy-consistent feature space that unifies both classification paradigms and adaptively allocates learning capacity.
+**Goal**: To construct a theoretically guaranteed hierarchy-consistent feature space that unifies both classification paradigms and adaptively allocates learning capacity.
 
-**Starting Point**: Orthogonal basis vectors are used to construct subspaces, where each node's subspace is spanned by the basis vectors of all its ancestors and descendants. Distance is defined as the orthogonal projection distance to the subspace—classes sharing more ancestors have greater subspace overlap and thus smaller distances.
+**Key Insight**: Orthogonal basis vectors are used to construct subspaces, where each node's subspace is spanned by the basis vectors of all its ancestors and descendants. Distance is defined as the orthogonal projection distance to the subspace—classes sharing more ancestors have greater subspace overlap and thus smaller distances.
 
 **Core Idea**: Each class corresponds to an orthogonal subspace spanned by the basis vectors of its ancestors, itself, and its descendants; the composition of subspaces naturally encodes the hierarchical structure.
 

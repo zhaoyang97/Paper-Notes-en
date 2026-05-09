@@ -29,15 +29,15 @@ This paper proposes 4DSurf, a general-purpose dynamic scene surface reconstructi
 
 ## Background & Motivation
 
-**State of the Field**: Dynamic surface reconstruction aims to recover temporally consistent 3D geometry from video sequences, serving as a foundation for applications such as digital humans and virtual reality. Gaussian splatting (GS)-based methods have become mainstream due to their real-time rendering capabilities and efficient optimization.
+**Background**: Dynamic surface reconstruction aims to recover temporally consistent 3D geometry from video sequences, serving as a foundation for applications such as digital humans and virtual reality. Gaussian splatting (GS)-based methods have become mainstream due to their real-time rendering capabilities and efficient optimization.
 
 **Limitations of Prior Work**: Existing GS-based dynamic surface reconstruction methods (e.g., D-2DGS, DG-Mesh, DGNS) typically perform well only on single-object or small-deformation scenarios. In the presence of large deformations, they suffer from surface jitter and temporally inconsistent geometric distortions. Many methods also rely on human body priors such as SMPL-X or pretrained depth/normal estimation models, limiting their generalizability.
 
-**Root Cause**: The central challenge is how to simultaneously achieve, without relying on any object-specific priors: (1) general surface reconstruction for arbitrary dynamic scenes (multi-object, non-rigid); (2) temporal consistency under large deformations; and (3) high-fidelity geometry from sparse viewpoints.
+**Key Challenge**: The central challenge is how to simultaneously achieve, without relying on any object-specific priors: (1) general surface reconstruction for arbitrary dynamic scenes (multi-object, non-rigid); (2) temporal consistency under large deformations; and (3) high-fidelity geometry from sparse viewpoints.
 
-**Paper Goals**: (1) Align Gaussian motion with surface evolution to eliminate temporal inconsistency; (2) handle large deformations in long sequences without error accumulation; (3) build a general-purpose framework free of prior dependencies.
+**Goal**: (1) Align Gaussian motion with surface evolution to eliminate temporal inconsistency; (2) handle large deformations in long sequences without error accumulation; (3) build a general-purpose framework free of prior dependencies.
 
-**Starting Point**: The approach departs from the concept of SDF flow (the temporal derivative of the SDF field), establishing a connection between Gaussian motion and SDF variation — if the motion of Gaussians correctly reflects the temporal evolution of the surface, the SDF flows derived from both perspectives should be consistent. This constraint enables temporally consistent surface reconstruction.
+**Key Insight**: The approach departs from the concept of SDF flow (the temporal derivative of the SDF field), establishing a connection between Gaussian motion and SDF variation — if the motion of Gaussians correctly reflects the temporal evolution of the surface, the SDF flows derived from both perspectives should be consistent. This constraint enables temporally consistent surface reconstruction.
 
 **Core Idea**: Temporal consistency in dynamic surface reconstruction is achieved without object-specific priors by enforcing consistency between the SDF flow defined by the Gaussian velocity field and the SDF flow estimated from depth map variations.
 

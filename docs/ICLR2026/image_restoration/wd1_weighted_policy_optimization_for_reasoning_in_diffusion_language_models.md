@@ -28,15 +28,15 @@ This paper proposes wd1, a ratio-free weighted log-likelihood policy optimizatio
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion language models (dLLMs) such as LLaDA and Dream have approached the text generation performance of autoregressive (AR) models. RL methods like RLHF and GRPO have substantially improved reasoning in AR models (e.g., DeepSeek-R1), but how to apply RL fine-tuning to dLLMs remains an open problem.
+**Background**: Diffusion language models (dLLMs) such as LLaDA and Dream have approached the text generation performance of autoregressive (AR) models. RL methods like RLHF and GRPO have substantially improved reasoning in AR models (e.g., DeepSeek-R1), but how to apply RL fine-tuning to dLLMs remains an open problem.
 
 **Limitations of Prior Work**: The likelihood function of dLLMs is intractable and can only be approximated. Existing methods (e.g., d1, UniGRPO) that adapt GRPO to dLLMs must approximate the policy ratio as $r_i^k \approx \exp(\phi^{\pi_\theta} - \phi^{\pi_{old}})$, which introduces three issues: (a) approximation errors are amplified exponentially; (b) the ELBO estimate has high variance; (c) the likelihoods of three policies (current, old, reference) must be approximated simultaneously, incurring large computational overhead.
 
-**Root Cause**: The policy ratio is central to PPO/GRPO, yet the intractable likelihood of dLLMs makes ratio approximation unreliable. The core challenge is how to perform effective policy optimization without computing policy ratios.
+**Key Challenge**: The policy ratio is central to PPO/GRPO, yet the intractable likelihood of dLLMs makes ratio approximation unreliable. The core challenge is how to perform effective policy optimization without computing policy ratios.
 
-**Paper Goals**: To design an RL method that does not rely on policy ratios, requires only a single approximation of the current policy's likelihood, and makes full use of both positive and negative samples.
+**Goal**: To design an RL method that does not rely on policy ratios, requires only a single approximation of the current policy's likelihood, and makes full use of both positive and negative samples.
 
-**Starting Point**: Starting from reverse-KL regularized policy optimization, the paper derives an analytic form of the optimal policy and then minimizes $D_{KL}(\pi^* \| \pi_\theta)$, converting optimization into weighted log-likelihood maximization—entirely free of policy ratios.
+**Key Insight**: Starting from reverse-KL regularized policy optimization, the paper derives an analytic form of the optimal policy and then minimizes $D_{KL}(\pi^* \| \pi_\theta)$, converting optimization into weighted log-likelihood maximization—entirely free of policy ratios.
 
 **Core Idea**: The RL objective is reformulated as a weighted log-likelihood (WLL), where weights are determined by the exponential of the advantage function. A negative-sample penalty term ($w^-$) is further introduced to actively reduce the likelihood of low-advantage completions, yielding wd1. The paper theoretically shows that wd1 is equivalent to energy-guided discrete diffusion training combined with negative-sample forgetting.
 

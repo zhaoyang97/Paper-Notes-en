@@ -29,15 +29,15 @@ This paper proposes AVRobustBench, the first benchmark that systematically evalu
 
 ## Background & Motivation
 
-**State of the Field**: Audio-visual models such as UAVM, CAV-MAE, and ImageBind have achieved remarkable progress, yet their robustness to test-time distribution shifts remains largely understudied. Existing robustness benchmarks focus primarily on single modalities (e.g., ImageNet-C for images) or apply uncorrelated perturbations across modalities.
+**Background**: Audio-visual models such as UAVM, CAV-MAE, and ImageBind have achieved remarkable progress, yet their robustness to test-time distribution shifts remains largely understudied. Existing robustness benchmarks focus primarily on single modalities (e.g., ImageNet-C for images) or apply uncorrelated perturbations across modalities.
 
 **Limitations of Prior Work**: (a) Existing benchmarks corrupt only a single modality, or apply corruptions to each modality independently; (b) In real-world scenarios (e.g., autonomous driving in rain), corruptions affect audio and video simultaneously and in a correlated manner; (c) No systematic evaluation of state-of-the-art audio-visual models under co-occurring corruptions exists.
 
-**Root Cause**: Audio-visual models perform well on clean data, but their robustness when both modalities are simultaneously corrupted remains entirely unknown.
+**Key Challenge**: Audio-visual models perform well on clean data, but their robustness when both modalities are simultaneously corrupted remains entirely unknown.
 
-**Paper Goals**: To construct a comprehensive audio-visual robustness benchmark that systematically evaluates state-of-the-art supervised/self-supervised models and TTA methods.
+**Goal**: To construct a comprehensive audio-visual robustness benchmark that systematically evaluates state-of-the-art supervised/self-supervised models and TTA methods.
 
-**Starting Point**: Designing 15 real-world-inspired audio-visual co-occurring correlated corruptions (5 severity levels) spanning three categories: digital, environmental, and adversarial.
+**Key Insight**: Designing 15 real-world-inspired audio-visual co-occurring correlated corruptions (5 severity levels) spanning three categories: digital, environmental, and adversarial.
 
 **Core Idea**: Real-world distribution shifts affect audio and video simultaneously and in a correlated fashion — existing models and TTA methods fail severely under such conditions.
 

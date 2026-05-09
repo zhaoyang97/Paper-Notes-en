@@ -28,15 +28,15 @@ PKD is a framework that jointly leverages LLMs and multiple GNN teachers for few
 
 ## Background & Motivation
 
-**State of the Field**: Few-shot node classification on text-attributed graphs (TAGs) requires combining LLMs' language understanding with GNNs' graph-structural modeling. Existing methods either use LLMs to generate labels for GNN training or align the two via adapter modules.
+**Background**: Few-shot node classification on text-attributed graphs (TAGs) requires combining LLMs' language understanding with GNNs' graph-structural modeling. Existing methods either use LLMs to generate labels for GNN training or align the two via adapter modules.
 
 **Limitations of Prior Work**: (a) The embedding spaces of decoder-only LLMs and encoder-only GNNs are substantially misaligned, making direct alignment difficult; (b) the heterogeneous local topology across nodes makes a single GNN architecture suboptimal for all nodes; (c) LLM inference is expensive and should not be applied uniformly to all nodes.
 
-**Root Cause**: World knowledge from LLMs and structural awareness from GNNs are complementary yet computationally asymmetric — the key challenge is how to allocate them intelligently.
+**Key Challenge**: World knowledge from LLMs and structural awareness from GNNs are complementary yet computationally asymmetric — the key challenge is how to allocate them intelligently.
 
-**Paper Goals**: (a) Determine which nodes warrant LLM annotation; (b) identify the optimal GNN teacher for each node.
+**Goal**: (a) Determine which nodes warrant LLM annotation; (b) identify the optimal GNN teacher for each node.
 
-**Starting Point**: Bidirectional preference-driven collaboration — GNNs inform the LLM of nodes they are uncertain about, while the LLM guides each node's choice of message-passing mechanism.
+**Key Insight**: Bidirectional preference-driven collaboration — GNNs inform the LLM of nodes they are uncertain about, while the LLM guides each node's choice of message-passing mechanism.
 
 **Core Idea**: GNN uncertainty → select nodes for LLM annotation + RL-tuned LLM → select the optimal GNN teacher per node = bidirectional preference-driven LLM-GNN collaboration.
 

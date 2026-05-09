@@ -31,7 +31,7 @@ This paper proposes RECON, a class- and pose-agnostic canonical orientation norm
 
 ### State of the Field
 
-**State of the Field**: Real-world data commonly exhibit unknown, instance-dependent symmetries that rarely conform precisely to a pre-specified transformation group $G$. Conventional equivariant/invariant network approaches either hard-code a particular group structure or learn it implicitly through data augmentation. Class-pose decomposition methods attempt to factorize inputs into invariant features and a pose $g \in G$ relative to some canonical representation.
+**Background**: Real-world data commonly exhibit unknown, instance-dependent symmetries that rarely conform precisely to a pre-specified transformation group $G$. Conventional equivariant/invariant network approaches either hard-code a particular group structure or learn it implicitly through data augmentation. Class-pose decomposition methods attempt to factorize inputs into invariant features and a pose $g \in G$ relative to some canonical representation.
 
 However, existing canonicalization methods suffer from a fundamental problem: **the canonical representation is training-dependent and therefore arbitrary**. Different training runs and initializations yield different canonical choices, which leads to:
 
@@ -41,7 +41,7 @@ However, existing canonicalization methods suffer from a fundamental problem: **
 
 ### Root Cause
 
-**Root Cause**: Cross-model comparisons become meaningless.
+**Key Challenge**: Cross-model comparisons become meaningless.
 
 ### Mechanism
 

@@ -29,15 +29,15 @@ Min-k Sampling detects "semantic cliffs" — the boundary between high-confidenc
 
 ## Background & Motivation
 
-**State of the Field**: The quality of LLM text generation heavily depends on decoding sampling strategies. Mainstream methods such as Top-k, Top-p (nucleus sampling), and Min-p balance diversity and accuracy through truncation in probability space. More recently, Top-$n\sigma$ shifts operations to logit space to achieve temperature invariance.
+**Background**: The quality of LLM text generation heavily depends on decoding sampling strategies. Mainstream methods such as Top-k, Top-p (nucleus sampling), and Min-p balance diversity and accuracy through truncation in probability space. More recently, Top-$n\sigma$ shifts operations to logit space to achieve temperature invariance.
 
 **Limitations of Prior Work**: (1) Probability-space methods (Top-k/p/Min-p) are highly sensitive to temperature — noise rates exceed 90% when temperature surpasses 2.0, and generation collapses entirely at temperature 10.0. (2) Although Top-$n\sigma$ is temperature-invariant, it relies on the global standard deviation $\sigma$, which is easily distorted by a large number of long-tail noise tokens, making it difficult to precisely locate fine-grained confidence differences among high-confidence candidates. (3) Top-$n\sigma$ is highly sensitive to the hyperparameter $n$ ($n=1.0$ introduces noise; $n=2.0$ amplifies it).
 
-**Root Cause**: Temperature scaling simultaneously governs two effects that should be independent — increasing diversity among plausible candidates (desirable) and injecting noise tokens from the tail (undesirable). An ideal truncation mechanism should decouple these two effects.
+**Key Challenge**: Temperature scaling simultaneously governs two effects that should be independent — increasing diversity among plausible candidates (desirable) and injecting noise tokens from the tail (undesirable). An ideal truncation mechanism should decouple these two effects.
 
-**Paper Goals**: To design a dynamic truncation strategy that is simultaneously temperature-invariant, robust to hyperparameter choices, and capable of precisely capturing model confidence boundaries.
+**Goal**: To design a dynamic truncation strategy that is simultaneously temperature-invariant, robust to hyperparameter choices, and capable of precisely capturing model confidence boundaries.
 
-**Starting Point**: Rather than relying on global statistics, the paper analyzes the local morphology of the sorted logit sequence. In a descending logit sequence, a "semantic cliff" exists — a sharp drop from meaningful candidate tokens to irrelevant noise tokens. The truncation boundary is determined by detecting the location of this cliff.
+**Key Insight**: Rather than relying on global statistics, the paper analyzes the local morphology of the sorted logit sequence. In a descending logit sequence, a "semantic cliff" exists — a sharp drop from meaningful candidate tokens to irrelevant noise tokens. The truncation boundary is determined by detecting the location of this cliff.
 
 **Core Idea**: A position-weighted relative decay rate is used to detect the point of maximum drop (semantic cliff) in the sorted logit sequence. This computation is strictly invariant to temperature scaling, achieving complete decoupling of truncation decisions from temperature.
 

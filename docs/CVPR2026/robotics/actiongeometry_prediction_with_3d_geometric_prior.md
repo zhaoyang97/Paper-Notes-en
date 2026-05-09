@@ -30,11 +30,11 @@ This work leverages the pretrained 3D geometric foundation model π3 as a percep
 
 ### State of the Field
 
-**State of the Field**: Bimanual manipulation demands precise 3D spatial reasoning and inter-arm coordination. Existing 2D methods (ACT, DP) lack spatial awareness, while 3D methods (DP3) are effective but rely on point cloud acquisition (requiring calibration, sensitive to noise, and difficult to obtain reliably in real-world settings). Meanwhile, 3D geometric foundation models (DUSt3R, π3, etc.) can already reconstruct high-quality 3D structures directly from RGB images. The key question is: can 3D foundation models be used directly as perception priors to achieve—or even surpass—point-cloud-level 3D perception using only RGB inputs?
+**Background**: Bimanual manipulation demands precise 3D spatial reasoning and inter-arm coordination. Existing 2D methods (ACT, DP) lack spatial awareness, while 3D methods (DP3) are effective but rely on point cloud acquisition (requiring calibration, sensitive to noise, and difficult to obtain reliably in real-world settings). Meanwhile, 3D geometric foundation models (DUSt3R, π3, etc.) can already reconstruct high-quality 3D structures directly from RGB images. The key question is: can 3D foundation models be used directly as perception priors to achieve—or even surpass—point-cloud-level 3D perception using only RGB inputs?
 
 ### Starting Point
 
-**Paper Goals**: Can a pretrained 3D geometric foundation model replace explicit point cloud pipelines to realize an RGB-only, 3D-aware bimanual manipulation policy, while also gaining predictive planning capability through joint future 3D geometry prediction?
+**Goal**: Can a pretrained 3D geometric foundation model replace explicit point cloud pipelines to realize an RGB-only, 3D-aware bimanual manipulation policy, while also gaining predictive planning capability through joint future 3D geometry prediction?
 
 ## Method
 

@@ -26,18 +26,18 @@ content_hash: 4fed46c91e657bd6
 This paper proposes SparK — a training-free, token-wise unstructured channel pruning method for KV cache. It selects salient channels via query-aware saliency scoring and recovers the contribution of pruned channels through a recovery mechanism. At an 80% pruning ratio, performance degradation remains below 5%. The method is orthogonal to token eviction approaches and can reduce KV cache storage by an additional 30%+.
 
 ## Background & Motivation
-**State of the Field**: The primary bottleneck for long-context LLM inference is the KV cache — 100K tokens in LLaMA3.1-8B require >50 GB of storage, and attention computation scales quadratically with sequence length. Existing compression methods operate along three axes: temporal (token eviction/merging), spatial (layer/head sharing), and channel (low-rank decomposition/structured pruning).
+**Background**: The primary bottleneck for long-context LLM inference is the KV cache — 100K tokens in LLaMA3.1-8B require >50 GB of storage, and attention computation scales quadratically with sequence length. Existing compression methods operate along three axes: temporal (token eviction/merging), spatial (layer/head sharing), and channel (low-rank decomposition/structured pruning).
 
 **Limitations of Prior Work**:
 - **Token eviction** methods (SnapKV, PyramidKV, etc.) only reduce the sequence length $S$, leaving the head dimension $D$ untouched.
 - **Structured channel pruning** (ThinK) applies the same pruning mask to all tokens, assuming globally uniform channel importance — yet empirical observation shows that channel importance is token-dependent.
 - Structured pruning suffers severe performance degradation at high pruning ratios (≥70%): ThinK incurs a 47.6% performance loss at 80% pruning.
 
-**Root Cause**: Channel importance is highly token-specific (CV > 1.1), but existing methods apply fixed masks in structured pruning, failing to capture this dynamic variation.
+**Key Challenge**: Channel importance is highly token-specific (CV > 1.1), but existing methods apply fixed masks in structured pruning, failing to capture this dynamic variation.
 
-**Paper Goals**: Perform fine-grained, token-aware unstructured sparsity along the channel dimension of the KV cache, while preserving or recovering information from pruned channels.
+**Goal**: Perform fine-grained, token-aware unstructured sparsity along the channel dimension of the KV cache, while preserving or recovering information from pruned channels.
 
-**Starting Point**: Two key observations — (1) channel importance varies drastically across tokens, making unstructured pruning far superior to structured pruning; (2) replacing pruned channels with a small constant (rather than zeroing them out) substantially reduces information loss.
+**Key Insight**: Two key observations — (1) channel importance varies drastically across tokens, making unstructured pruning far superior to structured pruning; (2) replacing pruned channels with a small constant (rather than zeroing them out) substantially reduces information loss.
 
 **Core Idea**: Apply token-wise unstructured channel pruning to the KV cache (retaining the most salient channels) combined with a lightweight recovery function to restore the contribution of pruned channels.
 

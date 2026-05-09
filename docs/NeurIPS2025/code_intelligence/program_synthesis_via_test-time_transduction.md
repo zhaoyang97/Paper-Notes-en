@@ -28,15 +28,15 @@ This paper proposes SYNTRA, a framework that reframes program synthesis as trans
 
 ## Background & Motivation
 
-**State of the Field**: LLM-based program synthesis typically follows an inductive paradigm — programs are generated from a small number of training examples and expected to generalize to unseen inputs. A common strategy is to sample multiple candidate programs and filter them using training examples.
+**Background**: LLM-based program synthesis typically follows an inductive paradigm — programs are generated from a small number of training examples and expected to generalize to unseen inputs. A common strategy is to sample multiple candidate programs and filter them using training examples.
 
 **Limitations of Prior Work**: Training examples are often scarce (e.g., a few rows filled by users in spreadsheet scenarios), making synthesized programs prone to errors on edge cases (atypical inputs encountered at test time). The underlying issue is epistemic uncertainty — the model has no knowledge of what inputs will appear at test time.
 
-**Root Cause**: Inductive synthesis pursues "deriving a general program from few examples," yet Vapnik's transductive principle states that "one should not solve a more general problem in order to solve a specific one." When test inputs are available, exploiting them directly is more efficient than seeking generalization.
+**Key Challenge**: Inductive synthesis pursues "deriving a general program from few examples," yet Vapnik's transductive principle states that "one should not solve a more general problem in order to solve a specific one." When test inputs are available, exploiting them directly is more efficient than seeking generalization.
 
-**Paper Goals**: When test inputs are visible at synthesis time, how can they be exploited to improve program robustness?
+**Goal**: When test inputs are visible at synthesis time, how can they be exploited to improve program robustness?
 
-**Starting Point**: The problem is modeled as active learning over a finite hypothesis class — an LLM predicts outputs (pseudo-labels) for selected test inputs, and candidate programs inconsistent with those pseudo-labels are eliminated. This process iterates until a single hypothesis remains. The key question is which test input to query most efficiently.
+**Key Insight**: The problem is modeled as active learning over a finite hypothesis class — an LLM predicts outputs (pseudo-labels) for selected test inputs, and candidate programs inconsistent with those pseudo-labels are eliminated. This process iterates until a single hypothesis remains. The key question is which test input to query most efficiently.
 
 **Core Idea**: The LLM's transductive prediction capability serves as a "judge" that disambiguates among test inputs, performing a binary-search-style elimination of inconsistent hypotheses from the candidate program space.
 

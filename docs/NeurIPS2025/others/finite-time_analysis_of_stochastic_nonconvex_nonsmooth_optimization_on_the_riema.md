@@ -27,16 +27,16 @@ This paper proposes the Riemannian Online to NonConvex (RO2NC) algorithm and its
 
 ## Background & Motivation
 
-**State of the Field**: Riemannian optimization is widely applied in deep learning (orthogonality constraints), PCA, dictionary learning, low-rank matrix completion, and other problems whose search spaces possess manifold structure. Existing Riemannian optimization algorithms primarily target smooth objective functions, including gradient descent, projection-free methods, and accelerated methods.
+**Background**: Riemannian optimization is widely applied in deep learning (orthogonality constraints), PCA, dictionary learning, low-rank matrix completion, and other problems whose search spaces possess manifold structure. Existing Riemannian optimization algorithms primarily target smooth objective functions, including gradient descent, projection-free methods, and accelerated methods.
 
 **Limitations of Prior Work**:
    - $\epsilon$-stationary points of nonsmooth nonconvex functions are intractable (NP-hard), necessitating surrogate stationarity criteria.
    - Goldstein stationarity in Euclidean space has only been studied recently (2020–), where the optimal $O(\delta^{-1}\epsilon^{-3})$ rate has been achieved.
    - In the Riemannian setting, finite-time analysis of nonsmooth nonconvex optimization is entirely absent—only asymptotic convergence results exist.
 
-**Root Cause**: Manifold geometry (distinct tangent spaces at different points, distortion introduced by parallel transport, nonlinearity of retractions) prevents the direct transfer of Euclidean analysis tools.
+**Key Challenge**: Manifold geometry (distinct tangent spaces at different points, distortion introduced by parallel transport, nonlinearity of retractions) prevents the direct transfer of Euclidean analysis tools.
 
-**Starting Point**: Adapt the Euclidean O2NC algorithm (based on the online-to-nonconvex conversion) to Riemannian manifolds by using retractions to ensure feasibility, and employing parallel transport/projection to handle vector operations across different tangent spaces.
+**Key Insight**: Adapt the Euclidean O2NC algorithm (based on the online-to-nonconvex conversion) to Riemannian manifolds by using retractions to ensure feasibility, and employing parallel transport/projection to handle vector operations across different tangent spaces.
 
 **Core Idea**: By carefully choosing the benchmark action $u_t$ (transporting gradients to a common tangent space via parallel transport) and analyzing error terms introduced by manifold curvature, the paper extends the optimal Euclidean complexity to the Riemannian setting.
 

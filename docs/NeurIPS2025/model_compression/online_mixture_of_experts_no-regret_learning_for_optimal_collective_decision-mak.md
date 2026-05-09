@@ -27,13 +27,13 @@ content_hash: b13895f39b885c30
 This paper proposes an Online Mixture of Experts (OMoE) framework comprising two algorithms — UCB-Successive Elimination and Online Weighted Majority Voting — with theoretical no-regret guarantees, and applies them to the online dynamic aggregation of LLM experts.
 
 ## Background & Motivation
-**State of the Field**: Mixture of Experts (MoE) has been widely studied in offline settings, but systematic research on dynamically aggregating multiple expert outputs for optimal collective decision-making in online settings remains lacking.
+**Background**: Mixture of Experts (MoE) has been widely studied in offline settings, but systematic research on dynamically aggregating multiple expert outputs for optimal collective decision-making in online settings remains lacking.
 
 **Limitations of Prior Work**: Traditional MoE assumes fixed gating/routing mechanisms and cannot adapt to dynamic changes in expert quality under streaming data; multi-armed bandit frameworks assume independent arms and fail to exploit the combinatorial structure among experts.
 
-**Root Cause**: The classical exploration–exploitation trade-off — trying new expert combinations versus leveraging known optimal ones — is considerably more complex in the aggregation dimension than standard bandit problems.
+**Key Challenge**: The classical exploration–exploitation trade-off — trying new expert combinations versus leveraging known optimal ones — is considerably more complex in the aggregation dimension than standard bandit problems.
 
-**Starting Point**: Expert aggregation is modeled as a contextual bandit problem, combining UCB and weighted voting effectively.
+**Key Insight**: Expert aggregation is modeled as a contextual bandit problem, combining UCB and weighted voting effectively.
 
 **Core Idea**: MoE is reformulated as an online bandit learning problem, yielding theoretically grounded no-regret expert aggregation algorithms.
 

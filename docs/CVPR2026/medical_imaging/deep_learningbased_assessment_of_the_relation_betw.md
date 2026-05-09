@@ -28,15 +28,15 @@ This work systematically compares three training paradigms—local learning (LL)
 
 ## Background & Motivation
 
-**State of the Field**: Impacted mandibular third molars (wisdom teeth) represent one of the most frequent procedures in oral surgery. When a wisdom tooth is in close spatial proximity to the mandibular canal—the bony conduit housing the inferior alveolar nerve—extraction carries a risk of nerve injury, potentially causing permanent paresthesia of the lower lip and chin. Orthopantomography (OPG) is the standard preoperative modality for assessing the spatial relationship between the molar and the mandibular canal.
+**Background**: Impacted mandibular third molars (wisdom teeth) represent one of the most frequent procedures in oral surgery. When a wisdom tooth is in close spatial proximity to the mandibular canal—the bony conduit housing the inferior alveolar nerve—extraction carries a risk of nerve injury, potentially causing permanent paresthesia of the lower lip and chin. Orthopantomography (OPG) is the standard preoperative modality for assessing the spatial relationship between the molar and the mandibular canal.
 
 **Limitations of Prior Work**: Determining overlap between the molar and the mandibular canal on panoramic radiographs relies on subjective radiologist expertise, with considerable inter-rater variability. Automated classification could support clinical triage and reduce unnecessary CBCT referrals, which involve higher radiation doses and greater cost. However, dental imaging data are distributed across heterogeneous clinical institutions and annotation teams, and privacy regulations such as GDPR and HIPAA prevent direct data pooling for centralized training.
 
-**Root Cause**: CL requires data aggregation yet violates privacy constraints, while LL preserves privacy but yields models with poor generalization due to limited per-site data. FL offers a middle ground by enabling multi-center collaboration without sharing raw data, but its performance–privacy trade-off in real-world dental imaging scenarios has not been systematically validated.
+**Key Challenge**: CL requires data aggregation yet violates privacy constraints, while LL preserves privacy but yields models with poor generalization due to limited per-site data. FL offers a middle ground by enabling multi-center collaboration without sharing raw data, but its performance–privacy trade-off in real-world dental imaging scenarios has not been systematically validated.
 
-**Paper Goals**: To quantify the performance gap among LL, FL, and CL on dental imaging data exhibiting genuine inter-annotator variability (a natural Non-IID characteristic), and to answer whether FL can serve as a privacy-preserving substitute for CL.
+**Goal**: To quantify the performance gap among LL, FL, and CL on dental imaging data exhibiting genuine inter-annotator variability (a natural Non-IID characteristic), and to answer whether FL can serve as a privacy-preserving substitute for CL.
 
-**Starting Point**: A semantically clear binary classification task (molar–canal overlap vs. no overlap) is selected, with a pretrained ResNet-34 as the unified backbone. Data from 8 independent annotators are treated as 8 FL clients, and the three training paradigms are compared under controlled conditions.
+**Key Insight**: A semantically clear binary classification task (molar–canal overlap vs. no overlap) is selected, with a pretrained ResNet-34 as the unified backbone. Data from 8 independent annotators are treated as 8 FL clients, and the three training paradigms are compared under controlled conditions.
 
 **Core Idea**: Federated learning can serve as a viable alternative to centralized training in a multi-annotator dental imaging setting, yielding substantially higher performance than site-independent local training.
 

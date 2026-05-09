@@ -27,15 +27,15 @@ content_hash: e853abcdfaa2bf5b
 This paper proposes Quantization-aware Integrated Gradients (QIG), advancing sensitivity analysis for LVLM quantization from the modality level to the token level. By leveraging axiomatic attribution principles, QIG precisely quantifies each token's contribution to quantization error, achieving significant accuracy improvements under W4A8 and W3A16 settings with negligible additional computational overhead.
 
 ## Background & Motivation
-**State of the Field**: LVLMs (e.g., LLaVA, InternVL, Qwen-VL) demonstrate strong performance on multimodal tasks, yet their large model sizes and slow inference speeds make post-training quantization (PTQ) a common acceleration strategy.
+**Background**: LVLMs (e.g., LLaVA, InternVL, Qwen-VL) demonstrate strong performance on multimodal tasks, yet their large model sizes and slow inference speeds make post-training quantization (PTQ) a common acceleration strategy.
 
 **Limitations of Prior Work**: Existing LVLM quantization methods (e.g., MBQ) measure token sensitivity only at the modality level (visual vs. text), overlooking complex cross-token interactions and inter-token differences in quantization sensitivity.
 
-**Root Cause**: As tokens interact across layers, modality boundaries gradually dissolve, and quantization sensitivity varies substantially even among tokens within the same modality—a phenomenon manifested in four observed aspects: massive activations, layer heterogeneity, sub-layer divergence, and token variability.
+**Key Challenge**: As tokens interact across layers, modality boundaries gradually dissolve, and quantization sensitivity varies substantially even among tokens within the same modality—a phenomenon manifested in four observed aspects: massive activations, layer heterogeneity, sub-layer divergence, and token variability.
 
-**Paper Goals**: To accurately estimate quantization sensitivity at the token level and leverage this information to guide finer-grained channel-wise equalization.
+**Goal**: To accurately estimate quantization sensitivity at the token level and leverage this information to guide finer-grained channel-wise equalization.
 
-**Starting Point**: Drawing from axiomatic attribution in mechanistic interpretability, integrated gradients are employed to quantify each token's sensitivity along the path from a quantized reference to the actual input.
+**Key Insight**: Drawing from axiomatic attribution in mechanistic interpretability, integrated gradients are employed to quantify each token's sensitivity along the path from a quantized reference to the actual input.
 
 **Core Idea**: Replace modality-level sensitivity estimation with Quantization-aware Integrated Gradients (QIG) to guide quantization calibration at the token level.
 

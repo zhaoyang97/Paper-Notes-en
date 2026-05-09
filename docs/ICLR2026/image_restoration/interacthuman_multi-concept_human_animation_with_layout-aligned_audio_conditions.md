@@ -28,15 +28,15 @@ InterActHuman is proposed to enable audio-driven video generation for multi-pers
 
 ## Background & Motivation
 
-**State of the Field**: Audio-driven human animation has achieved significant progress (CyberHost, OmniHuman), but primarily focuses on single-person scenarios. Multi-person interactive video generation requires precise matching of different audio streams to their respective characters.
+**Background**: Audio-driven human animation has achieved significant progress (CyberHost, OmniHuman), but primarily focuses on single-person scenarios. Multi-person interactive video generation requires precise matching of different audio streams to their respective characters.
 
 **Limitations of Prior Work**: The core challenge in multi-person scenarios is a chicken-and-egg problem — injecting audio into the correct spatial locations requires knowledge of each character's layout (mask), but the mask depends on the final generated video, which has not yet been produced. Using fixed masks leads to motion artifacts and unnatural rigid effects.
 
-**Root Cause**: Global audio conditioning cannot distinguish which character is speaking in a multi-person scene; fixed masks cannot adapt to character motion; dynamic masks are needed at inference time but the video is not yet determined.
+**Key Challenge**: Global audio conditioning cannot distinguish which character is speaking in a multi-person scene; fixed masks cannot adapt to character motion; dynamic masks are needed at inference time but the video is not yet determined.
 
-**Paper Goals**: (a) Audio-to-character matching in multi-person scenes, (b) dynamic layout prediction at inference time, and (c) identity-preserving multi-concept video generation.
+**Goal**: (a) Audio-to-character matching in multi-person scenes, (b) dynamic layout prediction at inference time, and (c) identity-preserving multi-concept video generation.
 
-**Starting Point**: During the denoising process of a DiT (Diffusion Transformer), intermediate features are used to predict the mask at the current step, which then guides audio injection at the next step — iterative refinement.
+**Key Insight**: During the denoising process of a DiT (Diffusion Transformer), intermediate features are used to predict the mask at the current step, which then guides audio injection at the next step — iterative refinement.
 
 **Core Idea**: A lightweight mask prediction head infers character layouts from DiT intermediate features, and the iterative denoising process progressively refines both the masks and the video generation.
 

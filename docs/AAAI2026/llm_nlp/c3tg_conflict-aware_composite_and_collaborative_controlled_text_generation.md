@@ -28,15 +28,15 @@ This paper proposes the C3TG framework, which achieves fine-grained multi-attrib
 
 ## Background & Motivation
 
-**State of the Field**: Controllable text generation (CTG) aims to govern attributes such as sentiment, style, tone, and topic in generated text. Existing methods fall into two categories: directly modulating the decoding distribution (PPLM, GeDi, COLD) and indirect control (prompting, fine-tuning).
+**Background**: Controllable text generation (CTG) aims to govern attributes such as sentiment, style, tone, and topic in generated text. Existing methods fall into two categories: directly modulating the decoding distribution (PPLM, GeDi, COLD) and indirect control (prompting, fine-tuning).
 
 **Limitations of Prior Work**: (1) Most methods can only control a single or a small set of simple attributes; (2) simultaneous multi-attribute control lacks conflict resolution mechanisms—enhancing one attribute may suppress or amplify another; (3) iterative feedback optimization pipelines are absent.
 
-**Root Cause**: Multiple attributes may exhibit conflicting or dependent relationships (e.g., "humorous" and "formal" are inherently in tension), making it infeasible for a single generation pass to satisfy all attribute targets simultaneously.
+**Key Challenge**: Multiple attributes may exhibit conflicting or dependent relationships (e.g., "humorous" and "formal" are inherently in tension), making it infeasible for a single generation pass to satisfy all attribute targets simultaneously.
 
-**Paper Goals**: Achieve simultaneous fine-grained control over 17 attribute dimensions while handling inter-attribute conflicts.
+**Goal**: Achieve simultaneous fine-grained control over 17 attribute dimensions while handling inter-attribute conflicts.
 
-**Starting Point**: A collaborative paradigm in which a large model handles generation and small models handle evaluation—the LLM generates text, BERT classifiers assess attribute alignment, and a Feedback Agent drives iterative rewriting.
+**Key Insight**: A collaborative paradigm in which a large model handles generation and small models handle evaluation—the LLM generates text, BERT classifiers assess attribute alignment, and a Feedback Agent drives iterative rewriting.
 
 **Core Idea**: During generation, tokens are sampled via geometrically weighted averaging of attribute priors; during optimization, an energy function combining classifier scores and dimensional stability penalties drives iterative refinement through a three-stage Chain-of-Prompt procedure.
 

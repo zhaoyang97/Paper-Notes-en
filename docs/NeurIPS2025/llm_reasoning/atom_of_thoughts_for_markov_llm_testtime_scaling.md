@@ -29,13 +29,13 @@ This paper proposes Atom of Thoughts (AoT), which models LLM reasoning as a Mark
 
 ## Background & Motivation
 
-**State of the Field**: Test-time scaling (TTS) is a central paradigm for enhancing LLM reasoning. Existing approaches include chain-of-thought (CoT), tree search (ToT), graph-of-thought (GoT), and reasoning models such as O1/R1. Their shared logic is to invest more computation at inference time in exchange for better outcomes.
+**Background**: Test-time scaling (TTS) is a central paradigm for enhancing LLM reasoning. Existing approaches include chain-of-thought (CoT), tree search (ToT), graph-of-thought (GoT), and reasoning models such as O1/R1. Their shared logic is to invest more computation at inference time in exchange for better outcomes.
 
 **Limitations of Prior Work — Accumulation of Historical Dependencies**: All existing frameworks rely heavily on historical context. CoT must retain the full reasoning trajectory to generate the next step, causing prompt token counts to grow linearly with the number of steps. ToT maintains parent-child and sibling relationships for branching decisions. GoT introduces even more complex dependencies through arbitrary inter-node connections. Figure 1(b) of the paper quantifies the prompt and completion token counts per LLM call across methods, clearly illustrating this overhead.
 
-**Root Cause**: The essence of TTS is "more computation yields better results," yet historical dependencies cause diminishing marginal efficiency at each step — the more tokens spent on reasoning, the longer the historical context each subsequent step must process, reducing the proportion of computation genuinely devoted to the current problem.
+**Key Challenge**: The essence of TTS is "more computation yields better results," yet historical dependencies cause diminishing marginal efficiency at each step — the more tokens spent on reasoning, the longer the historical context each subsequent step must process, reducing the proportion of computation genuinely devoted to the current problem.
 
-**Starting Point**: Drawing on the memoryless property of Markov processes — if each reasoning state depends only on the immediately preceding state rather than the full history, computation can be fully directed toward the current problem. The key challenge is making each state *self-contained* without losing information necessary for solving the original problem.
+**Key Insight**: Drawing on the memoryless property of Markov processes — if each reasoning state depends only on the immediately preceding state rather than the full history, computation can be fully directed toward the current problem. The key challenge is making each state *self-contained* without losing information necessary for solving the original problem.
 
 **Core Idea**: Redefine reasoning chain nodes from "intermediate thinking steps" to "independent subproblems that are answer-equivalent to the original question but of lower complexity." State transitions are realized via DAG decomposition and contraction, and the reasoning chain naturally converges to an irreducible "atomic" structure.
 

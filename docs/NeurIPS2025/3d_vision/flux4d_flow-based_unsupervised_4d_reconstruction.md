@@ -28,15 +28,15 @@ Flux4D is proposed as an unsupervised and generalizable 4D dynamic driving scene
 
 ## Background & Motivation
 
-**State of the Field**: Reconstructing 4D dynamic scenes from visual observations is a core problem in computer vision. Current methods primarily rely on differentiable rendering with NeRF or 3DGS, decomposing scenes into static backgrounds and dynamic objects, but require manually annotated 3D tracklets or dynamic masks to distinguish static from dynamic elements.
+**Background**: Reconstructing 4D dynamic scenes from visual observations is a core problem in computer vision. Current methods primarily rely on differentiable rendering with NeRF or 3DGS, decomposing scenes into static backgrounds and dynamic objects, but require manually annotated 3D tracklets or dynamic masks to distinguish static from dynamic elements.
 
 **Limitations of Prior Work**: (a) Manual annotation is costly and difficult to scale to large quantities of unlabeled data; (b) automatic labeling using pretrained perception models introduces noise and artifacts; (c) existing unsupervised methods rely on complex regularization schemes (geometric constraints, cycle consistency, multi-stage training) that are sensitive to hyperparameters and slow to train (requiring hours per scene); (d) existing generalizable methods can only handle a small number of low-resolution inputs (≤12 frames, ≤360px).
 
-**Root Cause**: Expensive annotations combined with per-scene optimization overhead make scaling to large-scale data infeasible.
+**Key Challenge**: Expensive annotations combined with per-scene optimization overhead make scaling to large-scale data infeasible.
 
-**Paper Goals**: To achieve fast (second-level), scalable, and generalizable 4D scene reconstruction without any annotations.
+**Goal**: To achieve fast (second-level), scalable, and generalizable 4D scene reconstruction without any annotations.
 
-**Starting Point**: Training across a large number of scenes enables the network to automatically learn static/dynamic decomposition as a data-driven prior; LiDAR is incorporated to handle high-resolution (≥1080p) dense multi-view (≥60 frames) inputs.
+**Key Insight**: Training across a large number of scenes enables the network to automatically learn static/dynamic decomposition as a data-driven prior; LiDAR is incorporated to handle high-resolution (≥1080p) dense multi-view (≥60 frames) inputs.
 
 **Core Idea**: A minimalist design — photometric loss plus static-preference regularization only — leverages cross-scene learning to enable a feed-forward network to automatically perform static/dynamic decomposition and 4D reconstruction.
 

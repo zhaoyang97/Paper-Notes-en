@@ -28,15 +28,15 @@ content_hash: b70318927808b304
 This paper proposes ScaleZero, which incorporates a Mixture-of-Experts (MoE) architecture into a unified world model to address gradient conflict and plasticity collapse in multi-task learning. Combined with a Dynamic Parameter Scaling (DPS) strategy that adaptively allocates model capacity, a single multi-task model achieves performance comparable to single-task expert models across three benchmarks (Atari/DMC/Jericho) while reducing environment interactions by approximately 28.5%.
 
 ## Background & Motivation
-**State of the Field**: Unified world models (e.g., UniZero) integrate representation learning, dynamics prediction, and policy learning into a single Transformer with MCTS planning, achieving state-of-the-art performance on individual tasks. Extending such models to heterogeneous multi-task learning (with diverse observation/action spaces and varying complexity) is a critical step toward general-purpose agents.
+**Background**: Unified world models (e.g., UniZero) integrate representation learning, dynamics prediction, and policy learning into a single Transformer with MCTS planning, achieving state-of-the-art performance on individual tasks. Extending such models to heterogeneous multi-task learning (with diverse observation/action spaces and varying complexity) is a critical step toward general-purpose agents.
 
 **Limitations of Prior Work**: UniZero suffers from severe **plasticity collapse** during multi-task training — simple tasks (e.g., Pong) converge rapidly and their gradients dominate shared parameter updates, causing complex tasks (e.g., Seaquest) to first learn and then degrade. This manifests as a sharp increase in the proportion of dormant neurons and uncontrolled expansion of latent state norms.
 
-**Root Cause**: **Gradient conflict** across heterogeneous tasks sharing a common backbone — gradient directions beneficial to task $i$ may be harmful to task $j$ (i.e., $\cos(g_i, g_j) < 0$). Furthermore, static resource allocation treats all tasks equally regardless of their complexity, leading to computational waste.
+**Key Challenge**: **Gradient conflict** across heterogeneous tasks sharing a common backbone — gradient directions beneficial to task $i$ may be harmful to task $j$ (i.e., $\cos(g_i, g_j) < 0$). Furthermore, static resource allocation treats all tasks equally regardless of their complexity, leading to computational waste.
 
-**Paper Goals**: (1) How can gradient conflict and plasticity collapse be mitigated within a shared world model? (2) How can model capacity be dynamically allocated according to each task's learning progress?
+**Goal**: (1) How can gradient conflict and plasticity collapse be mitigated within a shared world model? (2) How can model capacity be dynamically allocated according to each task's learning progress?
 
-**Starting Point**: Two complementary perspectives are adopted — at the **architecture level**, dense FFN layers are replaced with MoE to route different tasks through different expert paths, reducing interference; at the **process level**, DPS progressively injects LoRA adapters based on learning progress to expand capacity.
+**Key Insight**: Two complementary perspectives are adopted — at the **architecture level**, dense FFN layers are replaced with MoE to route different tasks through different expert paths, reducing interference; at the **process level**, DPS progressively injects LoRA adapters based on learning progress to expand capacity.
 
 **Core Idea**: MoE mitigates gradient conflict within each training iteration + DPS optimizes resource allocation across the entire training process = an efficient multi-task world model.
 

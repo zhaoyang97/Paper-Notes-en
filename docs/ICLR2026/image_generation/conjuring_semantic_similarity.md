@@ -28,13 +28,13 @@ This paper proposes a vision-imagination-based measure of textual semantic simil
 
 ## Background & Motivation
 
-**State of the Field**: Semantic similarity has traditionally been measured in the text space (Word2Vec, BERT embeddings, CLIP, etc.). Liu et al. (2023) define the meaning space of autoregressive LLMs as the distribution over continuations.
+**Background**: Semantic similarity has traditionally been measured in the text space (Word2Vec, BERT embeddings, CLIP, etc.). Liu et al. (2023) define the meaning space of autoregressive LLMs as the distribution over continuations.
 
 **Limitations of Prior Work**: (a) Text embedding methods produce uninterpretable vector distances; (b) No existing method quantifies the quality of the semantic space learned by text-conditioned diffusion models; (c) Bender & Koller (2020) argue that language-only training is insufficient to capture semantics—grounding in the external world is required.
 
-**Root Cause**: Semantic similarity should be interpretable, yet existing methods yield only numerical scores without explanation. Humans compare meanings by "imagining" scenes, but systematic comparison of mental images is infeasible.
+**Key Challenge**: Semantic similarity should be interpretable, yet existing methods yield only numerical scores without explanation. Humans compare meanings by "imagining" scenes, but systematic comparison of mental images is infeasible.
 
-**Starting Point**: Use the diffusion model as an "imagination faculty"—the semantic distance between two texts equals the distance between the image distributions they induce.
+**Key Insight**: Use the diffusion model as an "imagination faculty"—the semantic distance between two texts equals the distance between the image distributions they induce.
 
 **Core Idea**: Textual semantic similarity = Jeffreys divergence between the path measures of the reverse diffusion SDEs conditioned on two texts, computed via Monte-Carlo estimation.
 

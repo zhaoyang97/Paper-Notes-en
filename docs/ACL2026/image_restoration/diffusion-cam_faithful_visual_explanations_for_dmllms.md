@@ -27,15 +27,15 @@ Diffusion-CAM is the first interpretability method for diffusion-based multimoda
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal LLMs are transitioning from autoregressive architectures (LLaVA, Qwen-VL) to diffusion-based architectures (LaViDa, LLaDA-V, MMaDA). Diffusion models generate entire sentences through parallel mask denoising, improving generation speed and global coherence.
+**Background**: Multimodal LLMs are transitioning from autoregressive architectures (LLaVA, Qwen-VL) to diffusion-based architectures (LaViDa, LLaDA-V, MMaDA). Diffusion models generate entire sentences through parallel mask denoising, improving generation speed and global coherence.
 
 **Limitations of Prior Work**: (1) Existing CAM methods (LLaVA-CAM, TAM) rely on autoregressive models' sequential, attention-rich properties — dMLLMs lack explicit token-level attention weights and left-to-right causal structure; (2) Directly applying traditional CAM to dMLLMs produces diffuse, non-specific heatmaps; (3) Parallel denoising produces smooth, distributed activation patterns fundamentally different from autoregressive local sequential dependencies.
 
-**Root Cause**: The architectural advantages of dMLLMs (parallel generation, global planning) are precisely the obstacles for traditional interpretability tools — the latter assume sequential dependency while the former operates in parallel.
+**Key Challenge**: The architectural advantages of dMLLMs (parallel generation, global planning) are precisely the obstacles for traditional interpretability tools — the latter assume sequential dependency while the former operates in parallel.
 
-**Paper Goals**: Design the first visual explanation method adapted for diffusion-based multimodal models.
+**Goal**: Design the first visual explanation method adapted for diffusion-based multimodal models.
 
-**Starting Point**: Identify "structurally valid" intermediate steps in the denoising trajectory — where image-conditioned spatial information is preserved and can be linked to final predictions via gradients.
+**Key Insight**: Identify "structurally valid" intermediate steps in the denoising trajectory — where image-conditioned spatial information is preserved and can be linked to final predictions via gradients.
 
 **Core Idea**: Extract gradient CAM from structurally valid steps of the denoising process + four diffusion-specific post-processing modules to address spatial noise, background diffusion, and redundant token correlations.
 

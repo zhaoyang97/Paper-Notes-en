@@ -28,13 +28,13 @@ This paper proposes Wedge, a framework that uses LLMs to synthesize performance-
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have demonstrated strong capabilities in code optimization, yet evaluating their effectiveness lacks test inputs that genuinely expose performance bottlenecks. Existing approaches rely on either random inputs or simplistic large-scale inputs, which fail to selectively trigger performance issues along specific code paths.
+**Background**: LLMs have demonstrated strong capabilities in code optimization, yet evaluating their effectiveness lacks test inputs that genuinely expose performance bottlenecks. Existing approaches rely on either random inputs or simplistic large-scale inputs, which fail to selectively trigger performance issues along specific code paths.
 
 **Limitations of Prior Work**: LLMs struggle to directly reason about "which inputs trigger which performance bottlenecks," as this requires complex mapping from program inputs to local execution paths. Existing performance test generation methods (EvalPerf, TG-prompt) offer limited effectiveness.
 
-**Root Cause**: Finding inputs that make unoptimized code extremely slow while optimized code runs fast requires an understanding of the internal performance characteristics of the code, making such input construction inherently difficult.
+**Key Challenge**: Finding inputs that make unoptimized code extremely slow while optimized code runs fast requires an understanding of the internal performance characteristics of the code, making such input construction inherently difficult.
 
-**Starting Point**: The problem is decomposed — LLMs are well-suited for reasoning about local code behavior (e.g., "under what conditions does this loop iterate the most"), while fuzzing excels at searching for inputs satisfying given constraints.
+**Key Insight**: The problem is decomposed — LLMs are well-suited for reasoning about local code behavior (e.g., "under what conditions does this loop iterate the most"), while fuzzing excels at searching for inputs satisfying given constraints.
 
 **Core Idea**: LLM synthesizes performance constraints → constraints are instrumented into the program → constraint-aware fuzzing automatically searches for stress inputs that satisfy the constraints.
 

@@ -29,15 +29,15 @@ This paper systematically investigates the sensitivity of large language models 
 
 ## Background & Motivation
 
-**State of the Field**: The sensitivity of LLMs to prompt structure has been widely reported — both the ordering of demonstrations in in-context learning and the arrangement of options in multiple-choice tasks can cause significant performance fluctuations. However, most existing research remains at the phenomenological level: while it is known *what* affects model performance, *why* it does so remains unclear.
+**Background**: The sensitivity of LLMs to prompt structure has been widely reported — both the ordering of demonstrations in in-context learning and the arrangement of options in multiple-choice tasks can cause significant performance fluctuations. However, most existing research remains at the phenomenological level: while it is known *what* affects model performance, *why* it does so remains unclear.
 
 **Limitations of Prior Work**: In MCQA tasks, a typical prompt consists of three components: a context passage (C), a question (Q), and options (O). Intuitively, reordering these components should not affect performance, as the semantic content remains identical. However, experiments show that placing the context before the question and options (CQO) consistently and substantially outperforms the reverse ordering (QOC), with an average gap exceeding 14 percentage points across 21 decoder-only models and 4 datasets.
 
-**Root Cause**: Semantically equivalent prompt orderings yield dramatically different performance, posing a serious challenge to LLM reliability. Prior works such as lu2022fantastically and pezeshkpour2024 report similar phenomena but do not investigate the architectural root cause.
+**Key Challenge**: Semantically equivalent prompt orderings yield dramatically different performance, posing a serious challenge to LLM reliability. Prior works such as lu2022fantastically and pezeshkpour2024 report similar phenomena but do not investigate the architectural root cause.
 
-**Paper Goals**: The paper proposes three competing hypotheses and evaluates each through carefully designed controlled experiments, ultimately identifying the core mechanism underlying prompt order sensitivity and designing targeted interventions to validate the conclusion.
+**Goal**: The paper proposes three competing hypotheses and evaluates each through carefully designed controlled experiments, ultimately identifying the core mechanism underlying prompt order sensitivity and designing targeted interventions to validate the conclusion.
 
-**Starting Point**: The investigation proceeds from an architectural perspective, localizing the source of the problem by comparing the behavior of decoder-only, encoder-only, and encoder-decoder architectures.
+**Key Insight**: The investigation proceeds from an architectural perspective, localizing the source of the problem by comparing the behavior of decoder-only, encoder-only, and encoder-decoder architectures.
 
 ## Method
 

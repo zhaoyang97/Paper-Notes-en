@@ -31,7 +31,7 @@ MotionDiff proposes a training-free, zero-shot multi-view motion editing approac
 
 ### Limitations of Prior Work
 
-**State of the Field**: Controllable editing via generative models is a prominent research direction, yet motion editing remains challenged by three key issues:
+**Background**: Controllable editing via generative models is a prominent research direction, yet motion editing remains challenged by three key issues:
 
 **Difficulty Handling Complex Motions**: Existing physics-based editing methods (e.g., DragGAN, DragDiffusion) primarily address simple drag/translation operations and struggle with complex motions such as rotation, scaling, and stretching.
 
@@ -43,7 +43,7 @@ The authors' core insight is that optical flow serves as a natural carrier for p
 
 ### Starting Point
 
-**Paper Goals**: ### Overall Architecture
+**Goal**: ### Overall Architecture
 
 MotionDiff comprises two inference stages:
 

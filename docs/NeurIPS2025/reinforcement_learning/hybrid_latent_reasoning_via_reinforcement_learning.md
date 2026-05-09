@@ -27,15 +27,15 @@ HRPO proposes a hybrid latent reasoning policy optimization framework: a learnab
 
 ## Background & Motivation
 
-**State of the Field**: Latent reasoning has attracted growing attention as an alternative to Chain-of-Thought (CoT). Methods such as Coconut feed the last-layer hidden state back as a "continuous thought" for the next step, achieving promising results on reasoning tasks. However, these approaches generally rely on CoT trajectories for training.
+**Background**: Latent reasoning has attracted growing attention as an alternative to Chain-of-Thought (CoT). Methods such as Coconut feed the last-layer hidden state back as a "continuous thought" for the next step, achieving promising results on reasoning tasks. However, these approaches generally rely on CoT trajectories for training.
 
 **Limitations of Prior Work**: (1) Existing latent reasoning methods (e.g., Coconut, CODI) require large amounts of CoT-annotated data and multi-stage training, incurring high cost while failing to exploit the LLM's intrinsic reasoning capacity. (2) Directly using hidden states as inputs for the next step disrupts generation quality (repetition, incoherence), since hidden states and token embeddings reside in different representation spaces.
 
-**Root Cause**: Latent reasoning demands continuous representations for richer information, yet autoregressive generation in LLMs is inherently discrete. Directly bridging the two induces distribution mismatch and degrades the model's generative capability.
+**Key Challenge**: Latent reasoning demands continuous representations for richer information, yet autoregressive generation in LLMs is inherently discrete. Directly bridging the two induces distribution mismatch and degrades the model's generative capability.
 
-**Paper Goals**: How can existing LLMs leverage both discrete tokens and continuous hidden states for reasoning, without requiring CoT annotations?
+**Goal**: How can existing LLMs leverage both discrete tokens and continuous hidden states for reasoning, without requiring CoT annotations?
 
-**Starting Point**: Design a gating mechanism that progressively mixes hidden state information into token embeddings—starting with nearly pure token embeddings (preserving generation quality)—and let RL automatically learn when and how much latent representation to incorporate during training.
+**Key Insight**: Design a gating mechanism that progressively mixes hidden state information into token embeddings—starting with nearly pure token embeddings (preserving generation quality)—and let RL automatically learn when and how much latent representation to incorporate during training.
 
 **Core Idea**: Progressively fuse discrete tokens and continuous hidden states via a gating mechanism, and train the LLM to autonomously learn a hybrid reasoning strategy through RL rather than CoT distillation.
 

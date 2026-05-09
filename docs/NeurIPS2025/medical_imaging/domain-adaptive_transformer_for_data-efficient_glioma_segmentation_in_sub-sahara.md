@@ -28,15 +28,15 @@ This paper proposes SegFormer3D+, a domain-adaptive Transformer architecture tai
 
 ## Background & Motivation
 
-**State of the Field**: Glioma is the most common malignant primary brain tumor in adults, and MRI is the gold standard for diagnosis and treatment planning. Deep learning segmentation methods such as nnU-Net and Swin-UNETR have demonstrated strong performance on high-quality datasets.
+**Background**: Glioma is the most common malignant primary brain tumor in adults, and MRI is the gold standard for diagnosis and treatment planning. Deep learning segmentation methods such as nnU-Net and Swin-UNETR have demonstrated strong performance on high-quality datasets.
 
 **Limitations of Prior Work**: Most models are trained on data from well-resourced institutions and suffer severe performance degradation when applied to MRI data from Sub-Saharan Africa (SSA). SSA scans typically exhibit lower resolution, increased motion artifacts, and inconsistent contrast due to aging scanners and heterogeneous acquisition protocols, resulting in substantial domain shift.
 
-**Root Cause**: The BraTS-Africa challenge introduced the first annotated glioma MRI dataset from SSA medical centers, yet it contains only 60 training cases. Existing methods individually explore histogram normalization, radiomics features, dual-path encoders, or attention mechanisms, but no prior work has systematically unified these techniques into a single domain-adaptive framework.
+**Key Challenge**: The BraTS-Africa challenge introduced the first annotated glioma MRI dataset from SSA medical centers, yet it contains only 60 training cases. Existing methods individually explore histogram normalization, radiomics features, dual-path encoders, or attention mechanisms, but no prior work has systematically unified these techniques into a single domain-adaptive framework.
 
-**Paper Goals**: To design a robust segmentation architecture under conditions of severely limited annotated data and pronounced domain shift.
+**Goal**: To design a robust segmentation architecture under conditions of severely limited annotated data and pronounced domain shift.
 
-**Starting Point**: Approaching the problem from a systems engineering perspective, the paper combines multiple well-validated domain adaptation techniques into a unified framework—intensity normalization to address scanner variability, radiomics-based stratification to ensure balanced training, a frequency-aware encoder to capture artifact patterns, and dual attention to enhance fine-grained representations.
+**Key Insight**: Approaching the problem from a systems engineering perspective, the paper combines multiple well-validated domain adaptation techniques into a unified framework—intensity normalization to address scanner variability, radiomics-based stratification to ensure balanced training, a frequency-aware encoder to capture artifact patterns, and dual attention to enhance fine-grained representations.
 
 **Core Idea**: To integrate histogram matching, radiomics-guided stratification, a frequency-aware dual-path encoder, and spatial-channel dual attention into a unified domain-adaptive segmentation framework for robust glioma segmentation on low-resource MRI.
 

@@ -29,7 +29,7 @@ This paper proposes the SUGAR paradigm, which leverages GPT-generated **motion d
 
 ## Background & Motivation
 
-**State of the Field**: Skeleton-based action recognition aims to model spatiotemporal graph structures for classifying human actions. Its lightweight data format makes it suitable for human-computer interaction and intelligent surveillance. Methods such as ST-GCN, 2s-AGCN, and CTR-GCN have continuously advanced graph convolutional networks, yet distinguishing fine-grained similar actions (e.g., drinking water vs. eating) remains challenging. Recent LLMs (e.g., Vicuna, LLaMA) have demonstrated strong cross-modal capabilities, and some works have begun employing LLMs as action recognizers.
+**Background**: Skeleton-based action recognition aims to model spatiotemporal graph structures for classifying human actions. Its lightweight data format makes it suitable for human-computer interaction and intelligent surveillance. Methods such as ST-GCN, 2s-AGCN, and CTR-GCN have continuously advanced graph convolutional networks, yet distinguishing fine-grained similar actions (e.g., drinking water vs. eating) remains challenging. Recent LLMs (e.g., Vicuna, LLaMA) have demonstrated strong cross-modal capabilities, and some works have begun employing LLMs as action recognizers.
 
 **Limitations of Prior Work**:
 
@@ -39,9 +39,9 @@ This paper proposes the SUGAR paradigm, which leverages GPT-generated **motion d
 
 **Limitations of conventional linear classifiers**: The logistic distribution of linear layers cannot directly accommodate action categories from other datasets, limiting zero-shot generalization.
 
-**Root Cause**: Skeleton data contains motion information but lacks visual context, while LLMs possess rich knowledge of human activities but cannot directly process skeleton inputs. The key challenge is **enabling LLMs to learn more discrete (discriminable) skeleton representations**.
+**Key Challenge**: Skeleton data contains motion information but lacks visual context, while LLMs possess rich knowledge of human activities but cannot directly process skeleton inputs. The key challenge is **enabling LLMs to learn more discrete (discriminable) skeleton representations**.
 
-**Starting Point**: Rather than directly training LLMs on skeletons, the paper first uses rich linguistic knowledge (motion descriptions + visual descriptions) to **supervise the skeleton encoder** in learning text-aligned discrete representations, which are then fed into an LLM for classification.
+**Key Insight**: Rather than directly training LLMs on skeletons, the paper first uses rich linguistic knowledge (motion descriptions + visual descriptions) to **supervise the skeleton encoder** in learning text-aligned discrete representations, which are then fed into an LLM for classification.
 
 ## Method
 

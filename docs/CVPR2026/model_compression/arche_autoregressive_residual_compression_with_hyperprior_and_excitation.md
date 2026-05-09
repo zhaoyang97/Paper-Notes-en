@@ -35,7 +35,7 @@ Learned image compression has recently surpassed traditional coding standards (J
 - Spatial autoregressive models based on ConvLSTM can precisely capture local dependencies but suffer from severe sequential bottlenecks due to element-wise decoding order.
 - Pure channel autoregressive methods (Minnen & Singh) improve parallelism but sacrifice fine-grained spatial dependency modeling.
 
-**Starting Point**: Rather than pursuing architectural complexity, ARCHE deepens the combined modeling of multiple statistical dependencies within a purely convolutional framework. The **Core Idea** is that "the synergy of complementary dependency modeling outperforms any single complex architecture."
+**Key Insight**: Rather than pursuing architectural complexity, ARCHE deepens the combined modeling of multiple statistical dependencies within a purely convolutional framework. The **Core Idea** is that "the synergy of complementary dependency modeling outperforms any single complex architecture."
 
 ## Method
 

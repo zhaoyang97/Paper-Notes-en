@@ -27,16 +27,16 @@ content_hash: 02369d5ad25e76fe
 AffordMatcher proposes a method for localizing affordance regions in 3D scenes from visual signifiers (RGB images depicting human interactions). Through the large-scale AffordBridge dataset and a Match-to-Match attention mechanism based on dissimilarity matrices, it achieves 53.4 mAP on zero-shot affordance segmentation, surpassing the second-best method by 7.8 points.
 
 ## Background & Motivation
-**State of the Field**: Affordance learning aims to identify "interaction opportunities" in the environment (Gibson), serving as a foundational capability for robot manipulation, visual navigation, and AR.
+**Background**: Affordance learning aims to identify "interaction opportunities" in the environment (Gibson), serving as a foundational capability for robot manipulation, visual navigation, and AR.
 
 **Limitations of Prior Work**:
    - Existing methods primarily focus on single modalities (pure images or pure point clouds), with no unified framework for cross-modal affordance learning;
    - Large feature distribution gaps between images and point clouds make cross-modal matching difficult;
    - Existing datasets are small in scale and limited in modality (mostly <40K samples, <25 action types), insufficient for training end-to-end cross-modal models.
 
-**Root Cause**: How can 2D visual signifiers (e.g., an image of "a person pushing a door") be used to precisely localize actionable regions in a 3D scene?
+**Key Challenge**: How can 2D visual signifiers (e.g., an image of "a person pushing a door") be used to precisely localize actionable regions in a 3D scene?
 
-**Starting Point**: Construct a large-scale 2D-3D paired affordance dataset, AffordBridge (291K annotations), and design a cross-modal semantic correspondence matching method.
+**Key Insight**: Construct a large-scale 2D-3D paired affordance dataset, AffordBridge (291K annotations), and design a cross-modal semantic correspondence matching method.
 
 **Core Idea**: Quantify 2D-3D feature matching via dissimilarity matrices, optimize matching with FastFormer attention, and enable zero-shot affordance segmentation.
 

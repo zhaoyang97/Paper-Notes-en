@@ -26,15 +26,15 @@ content_hash: 0d4f72e7a587290a
 This paper proposes the Ano optimizer, which decouples the update direction from its magnitude — the direction is determined by the sign of the momentum for noise robustness, while the magnitude is determined by the instantaneous gradient absolute value (rather than the momentum magnitude) for responsiveness. Combined with an improved Yogi-style variance estimator, Ano significantly outperforms Adam/Lion/Adan in noisy and non-stationary environments (e.g., RL), while remaining competitive on standard tasks.
 
 ## Background & Motivation
-**State of the Field**: Adam and its variants are the default optimizers in deep learning, but degrade in noisy or non-stationary settings (high gradient noise, label ambiguity, shifting RL objectives).
+**Background**: Adam and its variants are the default optimizers in deep learning, but degrade in noisy or non-stationary settings (high gradient noise, label ambiguity, shifting RL objectives).
 
 **Limitations of Prior Work**: Adam derives both direction and magnitude from the momentum $m_k$ — when large noise spikes occur, opposing directions partially cancel, reducing effective momentum magnitude and causing overly conservative updates. The exponential moving average of the second moment allows noise spikes to persist for many steps.
 
-**Root Cause**: Momentum smooths the directional signal well (reducing oscillations from noisy directions), but the *magnitude* of momentum is too sluggish — it responds too slowly to large gradient changes. What is needed is a combination of "stable direction + agile magnitude."
+**Key Challenge**: Momentum smooths the directional signal well (reducing oscillations from noisy directions), but the *magnitude* of momentum is too sluggish — it responds too slowly to large gradient changes. What is needed is a combination of "stable direction + agile magnitude."
 
-**Paper Goals**: Design an optimizer that is more robust in noisy optimization environments while retaining the simplicity and efficiency of first-order methods.
+**Goal**: Design an optimizer that is more robust in noisy optimization environments while retaining the simplicity and efficiency of first-order methods.
 
-**Starting Point**: Explicitly decouple direction and magnitude — direction = sign(momentum), magnitude = |gradient|, with second moment updated via an improved Yogi rule incorporating a decay factor to control memory length.
+**Key Insight**: Explicitly decouple direction and magnitude — direction = sign(momentum), magnitude = |gradient|, with second moment updated via an improved Yogi rule incorporating a decay factor to control memory length.
 
 **Core Idea**: Use the sign of momentum to determine the direction and the absolute value of the current gradient to determine the step size — decoupling achieves the optimal balance between noise robustness and responsiveness.
 

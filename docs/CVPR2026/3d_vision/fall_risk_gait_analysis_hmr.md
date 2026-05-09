@@ -29,15 +29,15 @@ This paper proposes a gait analysis pipeline based on GVHMR (world-grounded 3D h
 
 ## Background & Motivation
 
-**State of the Field**: Gait assessment is a critical clinical indicator of fall risk and overall health in older adults; however, standard clinical practice is largely limited to stopwatch-measured gait speed.
+**Background**: Gait assessment is a critical clinical indicator of fall risk and overall health in older adults; however, standard clinical practice is largely limited to stopwatch-measured gait speed.
 
 **Limitations of Prior Work**: Comprehensive gait evaluation is constrained by limited access to technology and specialized training. Inertial sensors, optical marker systems, and multi-camera markerless motion capture require dedicated infrastructure, restricting their deployment beyond controlled clinical or research environments.
 
-**Root Cause**: Although biomechanical correlates of fall risk are well established, existing measurement approaches cannot be scaled for deployment in uncontrolled community settings. Existing 2D keypoint methods cannot recover depth information or decouple camera viewpoint from body pose.
+**Key Challenge**: Although biomechanical correlates of fall risk are well established, existing measurement approaches cannot be scaled for deployment in uncontrolled community settings. Existing 2D keypoint methods cannot recover depth information or decouple camera viewpoint from body pose.
 
-**Paper Goals**: To leverage world-grounded HMR for extracting spatiotemporal gait parameters in absolute metric units from monocular camera video, enabling accessible gait analysis in community settings.
+**Goal**: To leverage world-grounded HMR for extracting spatiotemporal gait parameters in absolute metric units from monocular camera video, enabling accessible gait analysis in community settings.
 
-**Starting Point**: GVHMR reconstructs participants' true trajectories in a gravity-aligned world coordinate system, enabling the extraction of gait parameters in absolute metric units.
+**Key Insight**: GVHMR reconstructs participants' true trajectories in a gravity-aligned world coordinate system, enabling the extraction of gait parameters in absolute metric units.
 
 **Core Idea**: Replace 2D skeleton-based methods with GVHMR to achieve end-to-end extraction of world-space gait parameters from monocular video.
 

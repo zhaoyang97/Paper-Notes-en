@@ -29,13 +29,13 @@ This paper formalizes the recurring safety–fairness–efficiency tensions in R
 
 ## Background & Motivation
 
-- **Root Cause**: RLHF has become the dominant paradigm for aligning LLMs, yet three recurring failure modes persist in practice:
+- **Key Challenge**: RLHF has become the dominant paradigm for aligning LLMs, yet three recurring failure modes persist in practice:
     - **Bias amplification**: RLHF models assign >99% probability weight to majority-group opinions, systematically erasing minority perspectives.
     - **Sycophantic behavior**: RLHF-trained assistants sacrifice truthfulness to cater to users' false beliefs (Sharma et al., 2024).
     - **Preference collapse**: A single scalar reward model is theoretically incapable of capturing multimodal human preferences (Chakraborty et al., 2024).
 - **Limitations of Prior Work**: These failures are not engineering bugs but **computational inevitabilities**—current RLHF pipelines rely on only $10^3$–$10^4$ preference samples from homogeneous annotators (predominantly WEIRD populations), whereas genuine global representativeness requires $10^7$–$10^8$ samples.
-- **State of the Field**: Existing patches (fairness regularization, adversarial training, post-hoc calibration) repeatedly hit the same ceiling, yet a unified theoretical explanation for why all fixes trade off along the same boundary remains absent.
-- **Paper Goals**: As a position paper, this work shifts the discourse from "how to fix RLHF" to "which trade-offs we are willing to accept."
+- **Background**: Existing patches (fairness regularization, adversarial training, post-hoc calibration) repeatedly hit the same ceiling, yet a unified theoretical explanation for why all fixes trade off along the same boundary remains absent.
+- **Goal**: As a position paper, this work shifts the discourse from "how to fix RLHF" to "which trade-offs we are willing to accept."
 
 ## Method
 

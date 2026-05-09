@@ -33,7 +33,7 @@ Document parsing requires recognizing elements such as text, formulas, and table
 
 **Core Problem**: High-resolution input is critical for document parsing, yet the computational cost of visual encoding grows quadratically with resolution. Visual information in document images is highly non-uniform — valid regions occupy only approximately 39% of a typical slide and approximately 60% even in information-dense newspapers.
 
-**Starting Point**: Given the substantial redundant background in documents, the paper proposes first rapidly localizing valid regions and then performing fine-grained recognition exclusively on those regions. This decoupled design allows each module to specialize in its own task while significantly reducing the number of visual tokens fed into the VLM.
+**Key Insight**: Given the substantial redundant background in documents, the paper proposes first rapidly localizing valid regions and then performing fine-grained recognition exclusively on those regions. This decoupled design allows each module to specialize in its own task while significantly reducing the number of visual tokens fed into the VLM.
 
 ## Method
 

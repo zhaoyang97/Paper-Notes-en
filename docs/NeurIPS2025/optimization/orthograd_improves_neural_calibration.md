@@ -29,15 +29,15 @@ This paper presents the first systematic study of OrthoGrad (⊥Grad)—a geomet
 
 ## Background & Motivation
 
-**State of the Field**: Reliable predictive confidence is essential for deploying neural networks in practice—when a model says "90% confident," it should indeed be correct 90% of the time. However, Guo et al. (2017) revealed through temperature scaling that modern deep networks, despite high accuracy, suffer from severe overconfidence.
+**Background**: Reliable predictive confidence is essential for deploying neural networks in practice—when a model says "90% confident," it should indeed be correct 90% of the time. However, Guo et al. (2017) revealed through temperature scaling that modern deep networks, despite high accuracy, suffer from severe overconfidence.
 
 **Limitations of Prior Work**: Existing calibration techniques fall into two categories. Intrinsic methods (e.g., focal loss, mixup) modify the loss function or data augmentation during training; post-hoc methods (e.g., temperature scaling, Platt scaling) adjust the output distribution after training. Post-hoc methods require an additional validation set and cannot fundamentally correct the model's internal uncertainty misestimation—they merely "patch" the output.
 
-**Root Cause**: The source of overconfidence lies in the optimization process itself. Standard gradient descent offers two pathways to reduce loss: (a) improving decision boundaries for better classification, or (b) simply inflating logit magnitudes to boost confidence. Pathway (b) reduces cross-entropy loss without improving generalization, leading to overconfidence. No existing method addresses this issue from the geometric structure of the optimization trajectory.
+**Key Challenge**: The source of overconfidence lies in the optimization process itself. Standard gradient descent offers two pathways to reduce loss: (a) improving decision boundaries for better classification, or (b) simply inflating logit magnitudes to boost confidence. Pathway (b) reduces cross-entropy loss without improving generalization, leading to overconfidence. No existing method addresses this issue from the geometric structure of the optimization trajectory.
 
-**Paper Goals**: Can geometric constraints on gradients block the "confidence inflation" shortcut, forcing the optimizer to focus on improving decision boundaries?
+**Goal**: Can geometric constraints on gradients block the "confidence inflation" shortcut, forcing the optimizer to focus on improving decision boundaries?
 
-**Starting Point**: Prieto et al. (2025) proposed OrthoGrad to stabilize training near grokking. This paper observes that orthogonalized gradients precisely block the confidence-scaling pathway in positive homogeneous networks, making OrthoGrad a natural candidate for improving calibration.
+**Key Insight**: Prieto et al. (2025) proposed OrthoGrad to stabilize training near grokking. This paper observes that orthogonalized gradients precisely block the confidence-scaling pathway in positive homogeneous networks, making OrthoGrad a natural candidate for improving calibration.
 
 **Core Idea**: By projecting gradients onto directions orthogonal to the weights, OrthoGrad prevents the optimizer from inflating confidence through weight norm amplification, forcing loss reduction to occur exclusively via improved decision boundaries.
 

@@ -34,7 +34,7 @@ Existing methods address individual sub-problems:
 - **6DGS** (spatial + directional): captures view dependence but is limited to static scenes
 - No prior method handles all three dimensions within a **unified framework** while maintaining real-time performance
 
-**Root Cause**: High-dimensional representations offer stronger modeling capacity but introduce substantial computational overhead. Operating directly in 7D space precludes real-time rendering.
+**Key Challenge**: High-dimensional representations offer stronger modeling capacity but introduce substantial computational overhead. Operating directly in 7D space precludes real-time rendering.
 
 **Core Idea**: Scene elements are represented as 7D Gaussian distributions. Leveraging the conditional distribution property of multivariate Gaussians, a mathematically rigorous conditional slicing mechanism "slices" each 7D Gaussian into a 3D Gaussian conditioned on time and viewing direction, which seamlessly integrates into the existing 3DGS rendering pipeline.
 

@@ -29,15 +29,15 @@ MSU-Bench is the first human-annotated benchmark for complete musical score unde
 
 ## Background & Motivation
 
-**State of the Field**: LLMs and VLMs have demonstrated strong capabilities in natural language processing, yet their ability to reason over complete musical scores remains largely unexplored. Existing music understanding benchmarks are typically limited to fragments, short excerpts, or multiple-choice formats, and mostly focus on monophonic music.
+**Background**: LLMs and VLMs have demonstrated strong capabilities in natural language processing, yet their ability to reason over complete musical scores remains largely unexplored. Existing music understanding benchmarks are typically limited to fragments, short excerpts, or multiple-choice formats, and mostly focus on monophonic music.
 
 **Limitations of Prior Work**: VLMs face two persistent challenges when processing complete scores — (1) localization failure: models frequently fail to correctly identify measure positions, which is a prerequisite for answering higher-level questions about harmony and texture; (2) hallucination: models generate content not grounded in the score, a problem exacerbated by localization errors.
 
-**Root Cause**: Complete musical score understanding requires integrated reasoning over pitch, rhythm, harmony, and large-scale structure, yet existing benchmarks do not systematically evaluate this composite capability.
+**Key Challenge**: Complete musical score understanding requires integrated reasoning over pitch, rhythm, harmony, and large-scale structure, yet existing benchmarks do not systematically evaluate this composite capability.
 
-**Paper Goals**: (1) Construct a complete musical score understanding benchmark covering four levels of difficulty; (2) support dual-modality evaluation via text (ABC notation) and vision (PDF); (3) systematically assess the capabilities of mainstream LLMs/VLMs.
+**Goal**: (1) Construct a complete musical score understanding benchmark covering four levels of difficulty; (2) support dual-modality evaluation via text (ABC notation) and vision (PDF); (3) systematically assess the capabilities of mainstream LLMs/VLMs.
 
-**Starting Point**: ABC notation, as a structured text format, explicitly encodes measure structure, pitch, rhythm, and other information, providing an LLM-friendly score representation that can substantially alleviate localization and hallucination problems.
+**Key Insight**: ABC notation, as a structured text format, explicitly encodes measure structure, pitch, rhythm, and other information, providing an LLM-friendly score representation that can substantially alleviate localization and hallucination problems.
 
 **Core Idea**: Systematically evaluate score understanding through a four-level hierarchy (header information → notation and notes → chords and harmony → texture and form), with ABC notation serving as the upper-bound modality for symbol-to-theory reasoning.
 

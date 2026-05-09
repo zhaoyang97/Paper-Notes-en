@@ -28,15 +28,15 @@ This paper introduces ContextBench, a benchmark comprising 715 tasks for evaluat
 
 ## Background & Motivation
 
-**State of the Field**: A central challenge in AI safety is identifying, prior to deployment, inputs that trigger harmful model behaviors. Feature visualization for vision-language models is well-established in the visual domain (via gradient-based optimization of maximally activating images), but remains substantially more difficult in the language domain due to the discrete nature of token spaces.
+**Background**: A central challenge in AI safety is identifying, prior to deployment, inputs that trigger harmful model behaviors. Feature visualization for vision-language models is well-established in the visual domain (via gradient-based optimization of maximally activating images), but remains substantially more difficult in the language domain due to the discrete nature of token spaces.
 
 **Limitations of Prior Work**: (a) White-box methods such as GCG can produce high-activation inputs via gradient signals, yet the resulting text is entirely incoherent and would not arise in real deployments; (b) black-box methods such as GPT-4o prompting yield fluent text but produce only weak activations, failing to identify genuine trigger conditions; (c) EPO, the only prior method addressing both objectives, still falls short of the fluency level required for safety-critical applications.
 
-**Root Cause**: Activation strength and linguistic fluency are inherently in tension—single-token gradient edits are prone to local optima, and simultaneously achieving high fluency and high activation requires coordinated multi-token modifications.
+**Key Challenge**: Activation strength and linguistic fluency are inherently in tension—single-token gradient edits are prone to local optima, and simultaneously achieving high fluency and high activation requires coordinated multi-token modifications.
 
-**Paper Goals**: (a) Establish a systematic benchmark for evaluating context modification methods; (b) improve the fluency–activation trade-off of EPO; (c) apply such techniques for the first time to the activation of SAE latent features.
+**Goal**: (a) Establish a systematic benchmark for evaluating context modification methods; (b) improve the fluency–activation trade-off of EPO; (c) apply such techniques for the first time to the activation of SAE latent features.
 
-**Starting Point**: The paper extends "feature visualization" from the visual to the language domain by generating fluent text that activates specific SAE latent features, thereby illuminating the internal mechanisms of language models. Fluent trigger inputs are more valuable in safety settings—they are more likely to occur naturally, harder to detect, and more informative about underlying mechanisms.
+**Key Insight**: The paper extends "feature visualization" from the visual to the language domain by generating fluent text that activates specific SAE latent features, thereby illuminating the internal mechanisms of language models. Fluent trigger inputs are more valuable in safety settings—they are more likely to occur naturally, harder to detect, and more informative about underlying mechanisms.
 
 **Core Idea**: Augmenting gradient-based optimization with LLM assistance and diffusion-model inpainting to generate input texts that are simultaneously fluent and strongly activate specific internal model features.
 

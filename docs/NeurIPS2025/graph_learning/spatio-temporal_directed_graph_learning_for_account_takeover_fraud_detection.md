@@ -29,15 +29,15 @@ This paper proposes ATLAS, a framework that reformulates account takeover (ATO) 
 
 ## Background & Motivation
 
-**State of the Field**: ATO fraud detection in consumer finance is a high-stakes task—attackers steal credentials to control legitimate accounts and initiate high-risk transactions (HRTs). Production systems predominantly rely on tabular gradient boosting models such as XGBoost, which score each session independently. Although deep architectures including fully connected networks, RNNs, and Transformers have been explored, none has consistently outperformed XGBoost under the same latency and reliability constraints.
+**Background**: ATO fraud detection in consumer finance is a high-stakes task—attackers steal credentials to control legitimate accounts and initiate high-risk transactions (HRTs). Production systems predominantly rely on tabular gradient boosting models such as XGBoost, which score each session independently. Although deep architectures including fully connected networks, RNNs, and Transformers have been explored, none has consistently outperformed XGBoost under the same latency and reliability constraints.
 
 **Limitations of Prior Work**: The i.i.d. assumption underlying XGBoost's row-wise scoring ignores two critical structures: (1) *relational structure*—multiple suspicious sessions may share the same device fingerprint, IP address, or account ID, forming fraud rings; and (2) *temporal structure*—causal ordering and temporal recency are essential for assessing the risk of a given session. These cross-session signals cannot be captured by any row-wise model.
 
-**Root Cause**: Production environments impose strict latency requirements (<250ms), while graph models must perform neighborhood sampling and message passing over graphs with 100M+ nodes. Additionally, labels are delayed—fraud labels are confirmed through adjudication after the event (adjudication time $\tau_u$), and training must strictly avoid using future information unavailable at inference time (data leakage).
+**Key Challenge**: Production environments impose strict latency requirements (<250ms), while graph models must perform neighborhood sampling and message passing over graphs with 100M+ nodes. Additionally, labels are delayed—fraud labels are confirmed through adjudication after the event (adjudication time $\tau_u$), and training must strictly avoid using future information unavailable at inference time (data leakage).
 
-**Paper Goals**: How can cross-session relational and temporal structures be leveraged to improve ATO detection while satisfying production latency constraints? How can training–inference consistency be ensured without leakage?
+**Goal**: How can cross-session relational and temporal structures be leveraged to improve ATO detection while satisfying production latency constraints? How can training–inference consistency be ensured without leakage?
 
-**Starting Point**: ATO detection is reformulated from tabular classification to node classification on a spatio-temporal directed graph. The key observation is that sessions sharing identifiers (account, device, IP) exhibit directed causal relationships that can be exploited via GNN message passing, with strict temporal constraints guaranteeing causality.
+**Key Insight**: ATO detection is reformulated from tabular classification to node classification on a spatio-temporal directed graph. The key observation is that sessions sharing identifiers (account, device, IP) exhibit directed causal relationships that can be exploited via GNN message passing, with strict temporal constraints guaranteeing causality.
 
 **Core Idea**: A causal directed session graph is constructed using temporal window and nearest-neighbor constraints. Combined with lag-aware label propagation that supplies high-signal neighborhood features to GraphSAGE, ATLAS upgrades ATO detection from independent row scoring to graph-structured reasoning.
 

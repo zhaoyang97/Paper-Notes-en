@@ -30,13 +30,13 @@ ALINE proposes a unified framework for amortized Bayesian inference and active d
 
 ### State of the Field
 
-**State of the Field**: Bayesian inference and Bayesian Experimental Design (BED) each have their own amortized methods (e.g., Neural Posterior Estimation, DAD/RL-BOED), but these two lines of research have long developed independently.
+**Background**: Bayesian inference and Bayesian Experimental Design (BED) each have their own amortized methods (e.g., Neural Posterior Estimation, DAD/RL-BOED), but these two lines of research have long developed independently.
 
 **Limitations of Prior Work**: (a) Amortized inference assumes passive data collection and ignores acquisition strategy; (b) Amortized experimental design can select informative data but still relies on expensive methods such as MCMC for inference updates; (c) Existing methods cannot flexibly optimize acquisition strategies targeting only a subset of parameters.
 
-**Root Cause**: Data acquisition and inference are mutually dependent—the acquisition strategy depends on inference quality (which regions have high uncertainty), while inference depends on the acquired data—yet the two have not been jointly optimized.
+**Key Challenge**: Data acquisition and inference are mutually dependent—the acquisition strategy depends on inference quality (which regions have high uncertainty), while inference depends on the acquired data—yet the two have not been jointly optimized.
 
-**Starting Point**: Use a single Transformer to simultaneously learn "which data to acquire" (policy network) and "what to infer from data" (inference network), using improvements in inference quality as the reward signal for data acquisition.
+**Key Insight**: Use a single Transformer to simultaneously learn "which data to acquire" (policy network) and "what to infer from data" (inference network), using improvements in inference quality as the reward signal for data acquisition.
 
 **Core Idea**: Use self-estimated information gain as the RL reward to jointly train the inference and acquisition modules, realizing a closed loop of instant inference and strategic data acquisition.
 

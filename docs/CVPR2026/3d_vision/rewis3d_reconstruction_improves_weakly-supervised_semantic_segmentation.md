@@ -29,11 +29,11 @@ Rewis3d is the first work to introduce feed-forward 3D scene reconstruction as a
 
 ## Background & Motivation
 
-1. **State of the Field**: Semantic segmentation relies on large amounts of dense pixel-level annotations. Weakly-supervised methods (points/scribbles/coarse labels) can substantially reduce annotation costs. Existing WSSS methods such as SASFormer and TEL propagate annotation information within the image plane via specialized architectures and loss functions.
+1. **Background**: Semantic segmentation relies on large amounts of dense pixel-level annotations. Weakly-supervised methods (points/scribbles/coarse labels) can substantially reduce annotation costs. Existing WSSS methods such as SASFormer and TEL propagate annotation information within the image plane via specialized architectures and loss functions.
 2. **Limitations of Prior Work**: These methods operate exclusively in the 2D image plane and struggle with occlusion and scale variation in geometrically complex outdoor scenes, resulting in limited annotation propagation.
-3. **Root Cause**: Sparse annotations carry insufficient information to cover the entire scene, and 2D methods lack cross-view consistency constraints to compensate for this deficiency.
-4. **Paper Goals**: How can additional geometric structural information be leveraged to enhance the propagation of sparse annotations?
-5. **Starting Point**: Recent feed-forward 3D reconstruction methods (e.g., MapAnything) can directly recover high-fidelity 3D point clouds from 2D video sequences. When an object is sparsely annotated in one viewpoint, its 3D structure enables annotation transfer to all other viewpoints where the object appears.
+3. **Key Challenge**: Sparse annotations carry insufficient information to cover the entire scene, and 2D methods lack cross-view consistency constraints to compensate for this deficiency.
+4. **Goal**: How can additional geometric structural information be leveraged to enhance the propagation of sparse annotations?
+5. **Key Insight**: Recent feed-forward 3D reconstruction methods (e.g., MapAnything) can directly recover high-fidelity 3D point clouds from 2D video sequences. When an object is sparsely annotated in one viewpoint, its 3D structure enables annotation transfer to all other viewpoints where the object appears.
 6. **Core Idea**: Leverage reconstructed 3D geometry as a cross-view consistency bridge to enable bidirectional 2D–3D knowledge transfer during training, while maintaining a purely 2D inference pipeline.
 
 ## Method

@@ -29,13 +29,13 @@ This paper proposes PDDLego+, a framework that enables LLMs to iteratively gener
 
 ## Background & Motivation
 
-**State of the Field**: Leveraging large language models for planning is a prominent direction in AI planning research. Existing approaches fall into two categories: LLM-as-planner (directly generating action plans) and LLM-as-formalizer (formalizing environments into PDDL and delegating planning to classical solvers). The latter is favored for its interpretability and controllability, yet the vast majority of prior work focuses exclusively on fully observable environments.
+**Background**: Leveraging large language models for planning is a prominent direction in AI planning research. Existing approaches fall into two categories: LLM-as-planner (directly generating action plans) and LLM-as-formalizer (formalizing environments into PDDL and delegating planning to classical solvers). The latter is favored for its interpretability and controllability, yet the vast majority of prior work focuses exclusively on fully observable environments.
 
 **Limitations of Prior Work**: Real-world planning scenarios—such as robotic exploration of unknown rooms or web agent navigation—are typically partially observable: agents perceive only local observations and cannot generate complete plans in a single pass. The few works that address partially observable settings suffer from three deficiencies: (1) they assume partial planning representations are given (e.g., predefined predicates or domain files); (2) they rely on one-shot formalization rather than iterative refinement; and (3) they depend on existing trajectories as in-context demonstrations.
 
-**Root Cause**: Planning languages such as PDDL are grounded in the closed-world assumption, which requires complete definitions of the initial state and goal. This stands in direct contradiction to the nature of partially observable environments, where information is revealed incrementally.
+**Key Challenge**: Planning languages such as PDDL are grounded in the closed-world assumption, which requires complete definitions of the initial state and goal. This stands in direct contradiction to the nature of partially observable environments, where information is revealed incrementally.
 
-**Paper Goals**: To design a framework that requires no fine-tuning, no demonstrations, and no pre-specified domain files, enabling LLMs to iteratively construct complete PDDL representations and accomplish planning tasks in partially observable environments through exploration and error-driven refinement.
+**Goal**: To design a framework that requires no fine-tuning, no demonstrations, and no pre-specified domain files, enabling LLMs to iteratively construct complete PDDL representations and accomplish planning tasks in partially observable environments through exploration and error-driven refinement.
 
 **Core Idea**: Decompose the partially observable problem into a series of fully observable subproblems. At each step, the agent generates a local PDDL representation from current observations, plans using a classical solver, executes the plan, and iteratively updates the formalization based on new observations and error feedback.
 

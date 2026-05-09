@@ -30,15 +30,15 @@ This paper employs high-dimensional linear regression theory to precisely charac
 
 ### State of the Field
 
-**State of the Field**: Mask-based pretraining (BERT 15%, MAE 75%) is the dominant self-supervised paradigm in NLP, CV, and bioinformatics, yet there is no principled theoretical explanation for why the optimal masking ratio varies so substantially across domains.
+**Background**: Mask-based pretraining (BERT 15%, MAE 75%) is the dominant self-supervised paradigm in NLP, CV, and bioinformatics, yet there is no principled theoretical explanation for why the optimal masking ratio varies so substantially across domains.
 
 **Limitations of Prior Work**: (1) BERT uses 15% while MAE uses 75%—the underlying reason is unclear. (2) The optimal masking ratio varies with downstream task and model size. (3) Existing theory cannot provide a unified quantitative account of behavior across different domains.
 
-**Root Cause**: Too little masking fails to encourage learning of feature co-dependencies; too much masking renders the input insufficiently informative. The location of the optimal trade-off remains unknown.
+**Key Challenge**: Too little masking fails to encourage learning of feature co-dependencies; too much masking renders the input insufficiently informative. The location of the optimal trade-off remains unknown.
 
-**Paper Goals**: To precisely characterize the quantitative relationship between masking ratio and model performance, to explain why the optimal masking ratio depends on task and model size, and to design a superior masking strategy accordingly.
+**Goal**: To precisely characterize the quantitative relationship between masking ratio and model performance, to explain why the optimal masking ratio depends on task and model size, and to design a superior masking strategy accordingly.
 
-**Starting Point**: Mask pretraining is reduced to high-dimensional minimum-norm linear regression, and closed-form test risk is derived using random matrix theory.
+**Key Insight**: Mask pretraining is reduced to high-dimensional minimum-norm linear regression, and closed-form test risk is derived using random matrix theory.
 
 **Core Idea**: The behavior of mask pretraining is fully explained by a bias-variance decomposition, and a theoretically motivated random masking ratio outperforms any fixed masking ratio.
 

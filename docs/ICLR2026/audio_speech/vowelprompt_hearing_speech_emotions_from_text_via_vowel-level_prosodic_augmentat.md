@@ -28,11 +28,11 @@ This paper proposes VowelPrompt, which extracts vowel-level prosodic descriptors
 
 ## Background & Motivation
 
-**State of the Field**: Speech Emotion Recognition (SER) has undergone three generations of development: handcrafted features via openSMILE → deep self-supervised features via wav2vec/HuBERT → LLM-based emotion recognition via text prompting. Two technical paradigms currently coexist: Audio LLMs (e.g., Qwen2-Audio) that directly process audio embeddings but remain opaque, and text-only prompting methods (e.g., SpeechCueLLM) that describe prosody in natural language but at coarse granularity (e.g., "the voice is very loud").
+**Background**: Speech Emotion Recognition (SER) has undergone three generations of development: handcrafted features via openSMILE → deep self-supervised features via wav2vec/HuBERT → LLM-based emotion recognition via text prompting. Two technical paradigms currently coexist: Audio LLMs (e.g., Qwen2-Audio) that directly process audio embeddings but remain opaque, and text-only prompting methods (e.g., SpeechCueLLM) that describe prosody in natural language but at coarse granularity (e.g., "the voice is very loud").
 
 **Limitations of Prior Work**: Deep features lack interpretability and cannot explain why a given emotion is predicted; text prompting methods rely on sentence-level prosodic descriptions (e.g., "high pitch, fast speech rate"), which discard fine-grained syllable-level prosodic variation—yet emotional expression is often concentrated in specific stressed syllables.
 
-**Root Cause**: How can interpretability be maintained while achieving performance on par with or superior to opaque deep features?
+**Key Challenge**: How can interpretability be maintained while achieving performance on par with or superior to opaque deep features?
 
 **Phonetic Rationale**: Vowels are the primary carriers of emotional prosody—they are voiced, acoustically stable (with well-defined F0 and formants), and dominate utterances in both duration and energy. By contrast, consonants contribute minimally to prosodic cues.
 

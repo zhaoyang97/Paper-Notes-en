@@ -30,7 +30,7 @@ To address the prevalence of duplicate and near-duplicate problems in competitiv
 
 ## Background & Motivation
 
-**State of the Field**: Competitive programming contests (ICPC, IOI, etc.) have become standard benchmarks for evaluating LLM code generation and reasoning capabilities (LiveCodeBench, HumanEval, etc.), with thousands of new problems added annually.
+**Background**: Competitive programming contests (ICPC, IOI, etc.) have become standard benchmarks for evaluating LLM code generation and reasoning capabilities (LiveCodeBench, HumanEval, etc.), with thousands of new problems added annually.
 
 **Prevalence of Duplicate Problems**: A large number of duplicate or highly similar problems have accumulated across online judge (OJ) platforms, with community discussions about "repeated problems" increasing noticeably in recent years. This introduces two harms: (a) contestants who have previously encountered the original problem gain an unfair advantage; (b) LLM evaluation scores are inflated—models may rely on memorization rather than genuine reasoning.
 
@@ -38,7 +38,7 @@ To address the prevalence of duplicate and near-duplicate problems in competitiv
 
 **Temporal Leakage**: Analysis of the APPS dataset partitioned by time reveals that model performance on problems predating 2022 significantly exceeds that on newer problems, demonstrating that training data leakage substantially undermines evaluation integrity.
 
-**Paper Goals**: (a) Define four retrieval tasks and construct a large-scale benchmark; (b) train a competitive programming–specific retrieval model; (c) quantify the systematic impact of problem similarity on LLM evaluation.
+**Goal**: (a) Define four retrieval tasks and construct a large-scale benchmark; (b) train a competitive programming–specific retrieval model; (c) quantify the systematic impact of problem similarity on LLM evaluation.
 
 **Core Idea**: Apply Group-InfoNCE loss to align problems with their multiple correct solutions, fine-tune the resulting model into a problem-level retriever, and establish the first comprehensive benchmark for competitive programming retrieval.
 

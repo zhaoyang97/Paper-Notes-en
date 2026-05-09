@@ -27,9 +27,9 @@ EviOmni learns to extract rational evidence from retrieved documents through a "
 
 ## Background & Motivation
 
-**State of the Field**: RAG enhances LLM accuracy by retrieving external passages, but retrieved passages often contain noise and irrelevant content requiring evidence extraction/denoising.
+**Background**: RAG enhances LLM accuracy by retrieving external passages, but retrieved passages often contain noise and irrelevant content requiring evidence extraction/denoising.
 
-**Root Cause**: Standard evidence extraction follows a "see-and-extract" approach without deep reasoning over retrieved content — when key clues require cross-passage reasoning, direct extraction misses them.
+**Key Challenge**: Standard evidence extraction follows a "see-and-extract" approach without deep reasoning over retrieved content — when key clues require cross-passage reasoning, direct extraction misses them.
 
 **Core Idea**: Unify evidence reasoning `<reason>` and evidence extraction `<extract>` into a single generation trajectory, with knowledge token masking for separate evaluation, optimized end-to-end via GRPO with three verifiable rewards (answer, length, format).
 

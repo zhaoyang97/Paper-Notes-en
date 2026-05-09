@@ -29,15 +29,15 @@ This paper proposes RecoverMark, a robust watermarking framework that embeds fac
 
 ## Background & Motivation
 
-**State of the Field**: AIGC technologies such as Stable Diffusion and various GAN variants have made face manipulation extremely accessible, posing serious threats to the authenticity of visual content and intellectual property.
+**Background**: AIGC technologies such as Stable Diffusion and various GAN variants have made face manipulation extremely accessible, posing serious threats to the authenticity of visual content and intellectual property.
 
 **Limitations of Prior Work**: Existing active defense methods (e.g., EditGuard, OmniGuard) adopt a dual-watermarking strategy combining fragile and robust watermarks. Fragile watermarks handle tampering detection and localization, while robust watermarks handle copyright authentication. However, these methods assume attackers are unaware of the watermark's existence and fail completely under watermark removal attacks (e.g., low-pass filtering, regeneration attacks).
 
-**Root Cause**: In dual-watermarking frameworks, the two types of watermarks interfere with each other and the limited embedding capacity further degrades the effectiveness of the fragile watermark; moreover, existing methods overlook the critical need for recovering content in tampered regions.
+**Key Challenge**: In dual-watermarking frameworks, the two types of watermarks interfere with each other and the limited embedding capacity further degrades the effectiveness of the fragile watermark; moreover, existing methods overlook the critical need for recovering content in tampered regions.
 
-**Paper Goals**: To design a unified robust watermarking framework capable of simultaneously performing tampering localization, content recovery, and copyright verification even under adversarial watermark removal attacks.
+**Goal**: To design a unified robust watermarking framework capable of simultaneously performing tampering localization, content recovery, and copyright verification even under adversarial watermark removal attacks.
 
-**Starting Point**: The paper exploits a key real-world constraint — attackers must preserve the semantic consistency of the background to avoid visual detection. Accordingly, facial content is embedded as a watermark into the surrounding background, such that if the background remains intact, the watermark can be extracted.
+**Key Insight**: The paper exploits a key real-world constraint — attackers must preserve the semantic consistency of the background to avoid visual detection. Accordingly, facial content is embedded as a watermark into the surrounding background, such that if the background remains intact, the watermark can be extracted.
 
 **Core Idea**: The protected facial content is robustly embedded into the background region as a watermark, and a two-stage progressive training strategy is employed to simultaneously achieve tampering localization, content recovery, and copyright verification.
 

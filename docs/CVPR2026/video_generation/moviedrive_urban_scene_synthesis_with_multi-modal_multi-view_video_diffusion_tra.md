@@ -29,7 +29,7 @@ MoVieDrive proposes a unified multi-modal multi-view video diffusion Transformer
 
 ## Background & Motivation
 
-**State of the Field**: Video generation models (SVD, CogVideoX) perform well on general video generation, but applying them to autonomous driving requires multi-view spatiotemporal consistency and high controllability. Methods such as DriveDreamer and MagicDrive have explored multi-view urban scene generation, yet support only RGB single-modality output.
+**Background**: Video generation models (SVD, CogVideoX) perform well on general video generation, but applying them to autonomous driving requires multi-view spatiotemporal consistency and high controllability. Methods such as DriveDreamer and MagicDrive have explored multi-view urban scene generation, yet support only RGB single-modality output.
 
 **Limitations of Prior Work**: Autonomous driving requires not only RGB video but also depth maps and semantic maps for comprehensive scene understanding. Existing approaches employ **multiple independent models** to generate different modalities separately, resulting in: (a) high deployment complexity; (b) inability to exploit cross-modal complementary information to improve generation quality; and (c) no guarantee of inter-modal consistency.
 

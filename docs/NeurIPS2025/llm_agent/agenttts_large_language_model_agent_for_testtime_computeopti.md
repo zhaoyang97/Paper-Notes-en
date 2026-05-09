@@ -28,15 +28,15 @@ This paper investigates the problem of compute-optimal test-time scaling in mult
 
 ## Background & Motivation
 
-**State of the Field**: Test-time Scaling (TTS) improves LLM performance by allocating additional compute at inference time and has proven effective on single-stage tasks such as mathematical reasoning and code generation. Existing approaches include sequential scaling (iterative refinement) and parallel scaling (repeated sampling with selection/aggregation), with the latter being more favored due to its independence from high-quality initial responses and broader coverage.
+**Background**: Test-time Scaling (TTS) improves LLM performance by allocating additional compute at inference time and has proven effective on single-stage tasks such as mathematical reasoning and code generation. Existing approaches include sequential scaling (iterative refinement) and parallel scaling (repeated sampling with selection/aggregation), with the latter being more favored due to its independence from high-quality initial responses and broader coverage.
 
 **Limitations of Prior Work**: (1) Existing TTS research primarily targets single-stage tasks (e.g., standalone math solving or code generation), whereas many real-world tasks are multi-stage—such as retrieval-augmented QA systems or software development pipelines (requirements → design → coding → testing), where different subtasks require models with different capabilities. (2) The search space in multi-stage tasks grows exponentially (e.g., 3 subtasks × 2 model choices yields up to $10^6$ configurations), and each configuration evaluation may require hours of inference, rendering exhaustive search infeasible. (3) Compute allocation across subtasks is not independent—the quality of earlier subtasks affects the optimal configuration for later ones.
 
-**Root Cause**: The search space for compute allocation in multi-stage tasks is both large and interdependent, making standard optimization methods (Bayesian optimization, random search) ineffective in non-smooth search landscapes.
+**Key Challenge**: The search space for compute allocation in multi-stage tasks is both large and interdependent, making standard optimization methods (Bayesian optimization, random search) ineffective in non-smooth search landscapes.
 
-**Paper Goals**: Given a fixed total compute budget $B$ and a multi-stage task $\mathcal{T} = [T_1, T_2, ..., T_n]$, the goal is to select an appropriate model $M_i$ and allocate budget $B_i$ (with $\sum B_i = B$) for each subtask to maximize overall performance.
+**Goal**: Given a fixed total compute budget $B$ and a multi-stage task $\mathcal{T} = [T_1, T_2, ..., T_n]$, the goal is to select an appropriate model $M_i$ and allocate budget $B_i$ (with $\sum B_i = B$) for each subtask to maximize overall performance.
 
-**Starting Point**: The paper first conducts large-scale pilot experiments to derive three generalizable insights, then encodes these insights as search strategy priors for an LLM agent, leveraging the model's reasoning and planning capabilities to efficiently navigate the search space.
+**Key Insight**: The paper first conducts large-scale pilot experiments to derive three generalizable insights, then encodes these insights as search strategy priors for an LLM agent, leveraging the model's reasoning and planning capabilities to efficiently navigate the search space.
 
 **Core Idea**: Based on three empirical insights—subtask-specific model preferences, the existence of an optimal scaling budget, and inter-subtask budget interdependencies—an LLM agent framework is designed to autonomously search for compute-optimal configurations in multi-stage tasks.
 

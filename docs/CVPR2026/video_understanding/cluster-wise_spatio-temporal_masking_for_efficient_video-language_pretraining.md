@@ -29,17 +29,17 @@ This paper proposes ClusterSTM, which leverages intra-frame semantic clustering 
 
 ## Background & Motivation
 
-**State of the Field**: Large-scale video-language pretraining (VLP) has become the dominant paradigm for multimodal tasks. By jointly training encoders on massive video-text pairs, models acquire strong generalization capabilities for downstream tasks such as video retrieval, video question answering, and video captioning. However, the computational overhead of such approaches is substantial—the spatio-temporal dimensionality of video data far exceeds that of images, making GPU time and memory cost critical bottlenecks during pretraining.
+**Background**: Large-scale video-language pretraining (VLP) has become the dominant paradigm for multimodal tasks. By jointly training encoders on massive video-text pairs, models acquire strong generalization capabilities for downstream tasks such as video retrieval, video question answering, and video captioning. However, the computational overhead of such approaches is substantial—the spatio-temporal dimensionality of video data far exceeds that of images, making GPU time and memory cost critical bottlenecks during pretraining.
 
 **Limitations of Prior Work**: Masked visual modeling has recently been introduced to alleviate computational pressure. The core idea is to randomly mask the majority of visual tokens during training and feed only a small fraction into the encoder. However, this random masking strategy suffers from two fundamental drawbacks:
 1. **Severe loss of visual information**: When the masking ratio reaches 75%–90%, the randomly retained tokens often fail to cover the key semantic regions of the video, causing the model to learn only fragmented visual representations.
 2. **Temporal information leakage**: Strong visual correlation exists between adjacent video frames (with many pixels remaining nearly static). Simple intra-frame random masking cannot prevent the model from exploiting redundant inter-frame information to "cheat," thereby weakening the learning of true temporal dynamics.
 
-**Root Cause**: High efficiency demands high masking ratios (fewer inputs), yet high masking ratios lead to loss of semantic completeness and temporal information leakage—a fundamental trade-off.
+**Key Challenge**: High efficiency demands high masking ratios (fewer inputs), yet high masking ratios lead to loss of semantic completeness and temporal information leakage—a fundamental trade-off.
 
-**Paper Goals**: Design a structured masking strategy that, under high masking ratios, simultaneously ensures: (1) retained tokens cover the global semantics of the video; and (2) retained tokens exhibit strong temporal dynamics, avoiding information leakage.
+**Goal**: Design a structured masking strategy that, under high masking ratios, simultaneously ensures: (1) retained tokens cover the global semantics of the video; and (2) retained tokens exhibit strong temporal dynamics, avoiding information leakage.
 
-**Starting Point**: The authors observe that visual tokens within a video frame can be naturally grouped into semantically independent clusters based on embedding similarity. Retaining only the tokens with the highest temporal variation (i.e., highest "temporal density") within each semantic cluster can simultaneously satisfy the requirements of semantic coverage and temporal dynamics.
+**Key Insight**: The authors observe that visual tokens within a video frame can be naturally grouped into semantically independent clusters based on embedding similarity. Retaining only the tokens with the highest temporal variation (i.e., highest "temporal density") within each semantic cluster can simultaneously satisfy the requirements of semantic coverage and temporal dynamics.
 
 **Core Idea**: Tokens are grouped via intra-frame clustering; within each group, tokens with the greatest temporal variation are retained. A video-text relevance reconstruction objective replaces simple pixel-level reconstruction, enabling semantically complete and computationally efficient video-language pretraining.
 

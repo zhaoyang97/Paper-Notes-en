@@ -29,15 +29,15 @@ Through mechanistic interpretability methods, this work reveals two distinct cir
 
 ## Background & Motivation
 
-**State of the Field**: T2I models have made significant progress in generating single-object attributes, but improvements in generating multi-object spatial relations (above, below, left, right, etc.) have been slow.
+**Background**: T2I models have made significant progress in generating single-object attributes, but improvements in generating multi-object spatial relations (above, below, left, right, etc.) have been slow.
 
 **Limitations of Prior Work**: (a) Some argue the failure lies in insufficiently focused cross-attention and propose attention guidance; (b) others suggest the issue is that text encoders do not sufficiently preserve spatial information. These two views lack a unified mechanistic explanation.
 
-**Root Cause**: It remains unclear how models internally encode and utilize non-commutative relations (e.g., "A is above B" $\neq$ "B is above A").
+**Key Challenge**: It remains unclear how models internally encode and utilize non-commutative relations (e.g., "A is above B" $\neq$ "B is above A").
 
-**Paper Goals**: To understand how DiT internally implements correct spatial relation generation and why it fails.
+**Goal**: To understand how DiT internally implements correct spatial relation generation and why it fails.
 
-**Starting Point**: Training DiT from scratch on a minimal controllable dataset and reverse-engineering internal circuits using mechanistic interpretability tools (attention synopses, QK circuit analysis, causal interventions).
+**Key Insight**: Training DiT from scratch on a minimal controllable dataset and reverse-engineering internal circuits using mechanistic interpretability tools (attention synopses, QK circuit analysis, causal interventions).
 
 **Core Idea**: The choice of text encoder determines the relation generation circuit in DiT—this affects not only performance but also robustness.
 

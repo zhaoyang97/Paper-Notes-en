@@ -28,15 +28,15 @@ CityLens is introduced as the largest urban socioeconomic sensing benchmark to d
 
 ## Background & Motivation
 
-**State of the Field**: Inferring socioeconomic indicators (GDP, crime rates, education levels, etc.) from urban imagery is a core task in urban computing. Conventional approaches apply contrastive learning (e.g., UrbanCLIP, UrbanVLP) to extract visual features from street-view or satellite images for regression, but suffer from poor cross-country generalization, inability to handle unstructured multimodal data, and lack of cultural-semantic understanding.
+**Background**: Inferring socioeconomic indicators (GDP, crime rates, education levels, etc.) from urban imagery is a core task in urban computing. Conventional approaches apply contrastive learning (e.g., UrbanCLIP, UrbanVLP) to extract visual features from street-view or satellite images for regression, but suffer from poor cross-country generalization, inability to handle unstructured multimodal data, and lack of cultural-semantic understanding.
 
 **Limitations of Prior Work**: (a) LVLMs possess multimodal understanding and broad world knowledge, making them theoretically suitable for such tasks, yet systematic evaluation is lacking—existing work covers limited spatial areas, uses narrow metrics, and involves small model scales. (b) No unified benchmark exists to measure LVLMs' urban sensing capabilities across diverse tasks, regions, and modalities.
 
-**Root Cause**: LVLMs exhibit strong visual understanding and reasoning capabilities, yet whether they can effectively extract socioeconomic signals from urban imagery remains an open question requiring large-scale systematic evaluation.
+**Key Challenge**: LVLMs exhibit strong visual understanding and reasoning capabilities, yet whether they can effectively extract socioeconomic signals from urban imagery remains an open question requiring large-scale systematic evaluation.
 
-**Paper Goals**: Construct the most comprehensive urban socioeconomic benchmark and systematically evaluate the capability boundaries of LVLMs.
+**Goal**: Construct the most comprehensive urban socioeconomic benchmark and systematically evaluate the capability boundaries of LVLMs.
 
-**Starting Point**: A unified benchmark spanning multiple cities, domains, and modalities, combined with three complementary evaluation paradigms.
+**Key Insight**: A unified benchmark spanning multiple cities, domains, and modalities, combined with three complementary evaluation paradigms.
 
 **Core Idea**: Conduct large-scale experiments across 17 cities × 11 indicators × 3 evaluation paradigms × 17 models to comprehensively measure the capabilities and limitations of LVLMs in urban socioeconomic sensing.
 

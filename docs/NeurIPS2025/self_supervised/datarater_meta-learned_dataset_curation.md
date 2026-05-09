@@ -27,15 +27,15 @@ content_hash: 1c63016d036aa47e
 This paper proposes DataRater, a meta-gradient-based data valuation framework that employs meta-learning to automatically score and filter low-quality training samples. It achieves up to 46.6% net compute savings across multiple pre-training datasets, and a DataRater trained on a 400M internal model generalizes directly to LLM training at scales ranging from 50M to 1B parameters.
 
 ## Background & Motivation
-**State of the Field**: The performance of large-scale foundation models is highly dependent on training data quality. Current data curation relies primarily on hand-crafted heuristic rules (e.g., language detection, punctuation filtering, n-gram deduplication) and manual adjustment of coarse-grained data mixture ratios.
+**Background**: The performance of large-scale foundation models is highly dependent on training data quality. Current data curation relies primarily on hand-crafted heuristic rules (e.g., language detection, punctuation filtering, n-gram deduplication) and manual adjustment of coarse-grained data mixture ratios.
 
 **Limitations of Prior Work**: Hand-crafted rules fail to capture fine-grained data quality differences; human intuition struggles to effectively assess the value of data from novel sources such as synthetic data; manual hyperparameter tuning is costly and does not scale.
 
-**Root Cause**: While data volume is growing explosively—particularly for synthetic data—curation methods remain at the manual heuristic stage and cannot automatically or end-to-end optimize the question of which data is useful for training.
+**Key Challenge**: While data volume is growing explosively—particularly for synthetic data—curation methods remain at the manual heuristic stage and cannot automatically or end-to-end optimize the question of which data is useful for training.
 
-**Paper Goals**: To automatically learn the value of each data point for model training, thereby enabling fine-grained and scalable data curation.
+**Goal**: To automatically learn the value of each data point for model training, thereby enabling fine-grained and scalable data curation.
 
-**Starting Point**: Data curation is formulated as a bilevel optimization problem, where meta-gradients are used to directly optimize a scoring network (DataRater) such that data filtered by the learned scores maximally improves model training efficiency on a validation set.
+**Key Insight**: Data curation is formulated as a bilevel optimization problem, where meta-gradients are used to directly optimize a scoring network (DataRater) such that data filtered by the learned scores maximally improves model training efficiency on a validation set.
 
 **Core Idea**: Train a scoring model via meta-learning so that data can implicitly "reveal" its own value.
 

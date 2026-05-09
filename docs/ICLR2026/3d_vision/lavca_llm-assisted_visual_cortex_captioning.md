@@ -29,15 +29,15 @@ This paper proposes LaVCa, a method that leverages LLMs to generate natural lang
 
 ## Background & Motivation
 
-**State of the Field**: fMRI encoding models are the standard tool for studying visual representations in the brain. Early approaches relied on hand-crafted features or one-hot semantic labels, offering interpretability at the cost of granularity; modern methods leverage DNN features (e.g., CLIP) to substantially improve prediction accuracy, but DNNs are black boxes that offer little insight into why individual voxels are activated.
+**Background**: fMRI encoding models are the standard tool for studying visual representations in the brain. Early approaches relied on hand-crafted features or one-hot semantic labels, offering interpretability at the cost of granularity; modern methods leverage DNN features (e.g., CLIP) to substantially improve prediction accuracy, but DNNs are black boxes that offer little insight into why individual voxels are activated.
 
 **Limitations of Prior Work**: Existing data-driven captioning methods such as BrainSCUBA directly apply image captioning models (ClipCap) to generate voxel captions, resulting in limited vocabulary and semantic diversity. SASC concatenates short n-gram phrases but suffers from insufficient expressiveness. Both approaches lack the semantic richness needed to precisely characterize voxel selectivity.
 
-**Root Cause**: The fundamental tension lies in maintaining interpretability (concise captions) without losing the rich information present in the optimal image set.
+**Key Challenge**: The fundamental tension lies in maintaining interpretability (concise captions) without losing the rich information present in the optimal image set.
 
-**Paper Goals**: To generate precise, concise, and semantically rich natural language descriptions for each voxel—descriptions that can accurately predict brain activity while revealing both inter-voxel and intra-voxel diversity.
+**Goal**: To generate precise, concise, and semantically rich natural language descriptions for each voxel—descriptions that can accurately predict brain activity while revealing both inter-voxel and intra-voxel diversity.
 
-**Starting Point**: The pipeline is decoupled into four interpretable steps, separating image selection from captioning and exploiting the open-vocabulary capacity of LLMs for keyword extraction and sentence composition.
+**Key Insight**: The pipeline is decoupled into four interpretable steps, separating image selection from captioning and exploiting the open-vocabulary capacity of LLMs for keyword extraction and sentence composition.
 
 **Core Idea**: An LLM first extracts common keywords from the optimal image set of a voxel and then composes them into a caption, achieving high accuracy and high semantic diversity in voxel-level visual cortex description.
 

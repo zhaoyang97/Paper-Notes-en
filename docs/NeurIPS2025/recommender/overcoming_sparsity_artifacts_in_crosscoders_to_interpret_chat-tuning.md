@@ -25,15 +25,15 @@ This work identifies two categories of sparsity artifacts introduced by L1 loss 
 
 ## Background & Motivation
 
-**State of the Field**: Model diffing is an emerging direction in interpretability research, aiming to understand how fine-tuning modifies a model's internal representations and algorithms. Crosscoder (Lindsey et al., 2024) is a model diffing tool that learns a shared dictionary of interpretable concepts between a base model and a fine-tuned model, representing each concept as a pair of latent directions (one for the base model, one for the chat model), thereby tracking how concepts change or emerge during fine-tuning.
+**Background**: Model diffing is an emerging direction in interpretability research, aiming to understand how fine-tuning modifies a model's internal representations and algorithms. Crosscoder (Lindsey et al., 2024) is a model diffing tool that learns a shared dictionary of interpretable concepts between a base model and a fine-tuned model, representing each concept as a pair of latent directions (one for the base model, one for the chat model), thereby tracking how concepts change or emerge during fine-tuning.
 
 **Limitations of Prior Work**: Prior work identifies chat-only concepts (i.e., those present only in the fine-tuned model) by checking whether the base model decoder vector norm is zero. While seemingly reasonable, this criterion can be severely confounded by systematic biases introduced by the L1 sparsity training loss.
 
-**Root Cause**: L1 regularization, while encouraging sparse representations, produces two categories of artifacts: (1) **Complete Shrinkage**—when a concept contributes weakly in the base model but strongly in the chat model, L1 directly shrinks the base decoder norm to zero, spuriously labeling the concept as chat-only; (2) **Latent Decoupling**—a concept that should be shared is equivalently decomposed by the L1 loss into one chat-only and one base-only latent pair, since both representations incur identical L1 cost.
+**Key Challenge**: L1 regularization, while encouraging sparse representations, produces two categories of artifacts: (1) **Complete Shrinkage**—when a concept contributes weakly in the base model but strongly in the chat model, L1 directly shrinks the base decoder norm to zero, spuriously labeling the concept as chat-only; (2) **Latent Decoupling**—a concept that should be shared is equivalently decomposed by the L1 loss into one chat-only and one base-only latent pair, since both representations incur identical L1 cost.
 
-**Paper Goals**: To diagnose and eliminate spurious chat-only latent attributions caused by L1 loss in Crosscoders, and to identify genuinely interpretable concepts introduced by chat-tuning.
+**Goal**: To diagnose and eliminate spurious chat-only latent attributions caused by L1 loss in Crosscoders, and to identify genuinely interpretable concepts introduced by chat-tuning.
 
-**Starting Point**: The paper begins with a theoretical analysis of the inherent deficiencies of L1 loss, then designs a diagnostic tool (Latent Scaling) and an alternative training scheme (BatchTopK).
+**Key Insight**: The paper begins with a theoretical analysis of the inherent deficiencies of L1 loss, then designs a diagnostic tool (Latent Scaling) and an alternative training scheme (BatchTopK).
 
 **Core Idea**: Replace L1 loss with BatchTopK loss for Crosscoder training, eliminating shrinkage bias at the source and making decoder norm differences a reliable measure of chat-specificity.
 

@@ -29,10 +29,10 @@ This paper proposes CoT-RVS, a fully training-free multi-agent framework that le
 
 ## Background & Motivation
 
-- **State of the Field**: Reasoning Video Object Segmentation (Reasoning VOS) requires models to generate target mask sequences based on complex, implicit text queries (e.g., "which player made the three-point shot"), making it one of the most challenging tasks in video understanding.
+- **Background**: Reasoning Video Object Segmentation (Reasoning VOS) requires models to generate target mask sequences based on complex, implicit text queries (e.g., "which player made the three-point shot"), making it one of the most challenging tasks in video understanding.
 - **Limitations of Prior Work**: Existing methods (VISA/VideoLISA/HyperSeg) fine-tune MLLMs to generate segmentation tokens but perform poorly on temporally sensitive queries. The fundamental limitation is their lack of inter-frame temporal reasoning—these methods focus on intra-frame semantic understanding but cannot effectively reason about "what happens at which point in time."
-- **Root Cause**: CoT-based reasoning segmentation in the image domain (Seg-Zero/ThinkFirst) has achieved notable success, yet the video domain additionally requires temporal "thinking" capabilities. Directly extending image-domain approaches to video is infeasible, as target objects in videos may undergo occlusion, motion, appearance, or disappearance over time.
-- **Starting Point**: Rather than performing any fine-tuning, CoT-RVS exploits the zero-shot CoT capabilities of pretrained MLLMs (e.g., GPT-4o, Gemma3) by designing task-specific prompts that guide temporal-semantic reasoning—a direction well-aligned with the trend of test-time compute.
+- **Key Challenge**: CoT-based reasoning segmentation in the image domain (Seg-Zero/ThinkFirst) has achieved notable success, yet the video domain additionally requires temporal "thinking" capabilities. Directly extending image-domain approaches to video is infeasible, as target objects in videos may undergo occlusion, motion, appearance, or disappearance over time.
+- **Key Insight**: Rather than performing any fine-tuning, CoT-RVS exploits the zero-shot CoT capabilities of pretrained MLLMs (e.g., GPT-4o, Gemma3) by designing task-specific prompts that guide temporal-semantic reasoning—a direction well-aligned with the trend of test-time compute.
 - **Core Idea**: The MLLM analyzes keyframe candidates through a self-questioning CoT process, establishing correspondences along two dimensions—semantic (which objects in the frame match the query) and temporal (in which frame the target is most observable)—ultimately selecting the optimal keyframe for each instance.
 
 ## Method

@@ -28,15 +28,15 @@ This paper proposes the first formal framework for Agent Uncertainty Quantificat
 
 ## Background & Motivation
 
-**State of the Field**: LLM agents execute actions with real-world consequences in open-world environments (e.g., bookings, database modifications, irreversible commands), where failures extend beyond incorrect text generation. Existing UQ research treats LLMs as static oracles—systems are examined in isolation, prompted once, and uncertainty is evaluated over a single response.
+**Background**: LLM agents execute actions with real-world consequences in open-world environments (e.g., bookings, database modifications, irreversible commands), where failures extend beyond incorrect text generation. Existing UQ research treats LLMs as static oracles—systems are examined in isolation, prompted once, and uncertainty is evaluated over a single response.
 
 **Limitations of Prior Work**: (1) Existing UQ methods implicitly assume static systems—no new information is acquired after the initial prompt, and uncertainty is treated as a point estimate or unidirectional propagation. (2) Agentic settings involve long-horizon interactions, heterogeneous entities (users, tools, environments), and uncertainty that can be reduced through interaction—none of which existing methods address. (3) Even multi-step reasoning UQ, which accounts for chained uncertainty, does not reflect uncertainty from different entities nor consider the reducibility of uncertainty in open environments.
 
-**Root Cause**: The paradigm shift from "point-wise uncertainty over final answers" to "structured uncertainty dynamics over open interactive decision processes" is a prerequisite for reliable agent deployment, yet no formal framework or systematic analysis exists.
+**Key Challenge**: The paradigm shift from "point-wise uncertainty over final answers" to "structured uncertainty dynamics over open interactive decision processes" is a prerequisite for reliable agent deployment, yet no formal framework or systematic analysis exists.
 
-**Paper Goals**: To establish three pillars for Agent UQ research—formal foundations, identification of technical challenges, and a roadmap for future directions.
+**Goal**: To establish three pillars for Agent UQ research—formal foundations, identification of technical challenges, and a roadmap for future directions.
 
-**Starting Point**: Agent trajectories are abstracted as dynamic Bayesian networks, and the chain rule of information theory is leveraged to naturally decompose joint uncertainty, with existing UQ paradigms shown to be special cases of this framework.
+**Key Insight**: Agent trajectories are abstracted as dynamic Bayesian networks, and the chain rule of information theory is leveraged to naturally decompose joint uncertainty, with existing UQ paradigms shown to be special cases of this framework.
 
 **Core Idea**: Agent UQ differs from classical LLM UQ in three key respects: (1) multi-turn interactions produce uncertainty from heterogeneous entities; (2) environment interaction can reduce uncertainty rather than merely propagate it; (3) modeling the dynamic evolution of uncertainty is required, rather than static estimation.
 

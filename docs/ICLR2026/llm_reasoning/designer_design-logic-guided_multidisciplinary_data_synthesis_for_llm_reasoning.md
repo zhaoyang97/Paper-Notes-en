@@ -28,15 +28,15 @@ This paper introduces Design Logic—reusable meta-knowledge reverse-engineered 
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have achieved remarkable gains in mathematical and programming reasoning (aided by abundant open-source competition problems), yet they still lag behind human experts in university-level cross-disciplinary reasoning. The core bottleneck is a severe shortage of high-quality multidisciplinary reasoning training data.
+**Background**: LLMs have achieved remarkable gains in mathematical and programming reasoning (aided by abundant open-source competition problems), yet they still lag behind human experts in university-level cross-disciplinary reasoning. The core bottleneck is a severe shortage of high-quality multidisciplinary reasoning training data.
 
 **Limitations of Prior Work**: (a) **Query-centric methods** (e.g., Evol-Instruct) expand data by paraphrasing seed questions, constrained by seed coverage and model bias; (b) **Document-centric methods** generate questions from text but struggle to control difficulty and diversity, often degenerating into factual recall; (c) Existing datasets are heavily skewed in disciplinary distribution (mathematics dominates), with insufficient cross-disciplinary coverage.
 
-**Root Cause**: How can one synthesize exam-level questions at scale from raw text (books, web pages) with multi-step reasoning depth, controllable difficulty, and high diversity? The absence of guiding principles leaves LLMs without a mechanism to transform knowledge into complex problems.
+**Key Challenge**: How can one synthesize exam-level questions at scale from raw text (books, web pages) with multi-step reasoning depth, controllable difficulty, and high diversity? The absence of guiding principles leaves LLMs without a mechanism to transform knowledge into complex problems.
 
-**Paper Goals**: To provide a systematic multidisciplinary reasoning data synthesis pipeline that synthesizes not only questions but also the underlying "question-design methodology."
+**Goal**: To provide a systematic multidisciplinary reasoning data synthesis pipeline that synthesizes not only questions but also the underlying "question-design methodology."
 
-**Starting Point**: Human educational experts follow a structured design process when constructing exam questions (identify objectives → build context → design reasoning path → craft distractors → validate). If this "design logic" can be extracted from real exam questions, it can serve as a reusable template applicable to new source texts.
+**Key Insight**: Human educational experts follow a structured design process when constructing exam questions (identify objectives → build context → design reasoning path → craft distractors → validate). If this "design logic" can be extracted from real exam questions, it can serve as a reusable template applicable to new source texts.
 
 **Core Idea**: Reverse-engineer 125,000 Design Logic entries (question-construction meta-knowledge) from real exam questions, then apply a retrieve-and-generate approach to match these logic entries with raw text, guiding the LLM to generate new questions following the same reasoning patterns from entirely new material.
 

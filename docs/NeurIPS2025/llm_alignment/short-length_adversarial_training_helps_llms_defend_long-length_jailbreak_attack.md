@@ -28,18 +28,18 @@ This paper theoretically proves and empirically validates that defending against
 
 ## Background & Motivation
 
-**State of the Field**: Suffix jailbreak attacks (e.g., GCG) bypass LLM safety mechanisms by appending optimized adversarial suffixes to harmful instructions. Adversarial training (AT) is one of the most effective defense strategies—training LLMs on adversarial examples to learn to refuse harmful outputs.
+**Background**: Suffix jailbreak attacks (e.g., GCG) bypass LLM safety mechanisms by appending optimized adversarial suffixes to harmful instructions. Adversarial training (AT) is one of the most effective defense strategies—training LLMs on adversarial examples to learn to refuse harmful outputs.
 
 **Limitations of Prior Work**:
 - Longer adversarial suffixes yield stronger attacks (empirically established), suggesting that defense intuitively requires equally long adversarial training.
 - However, generating long adversarial suffixes is extremely costly—GCG optimization operates over a high-dimensional discrete space, and increasing suffix length $M$ causes exponential growth in the search space, substantially raising GPU memory usage and training time.
 - This limits the practical applicability of adversarial training in real-world LLM safety alignment.
 
-**Root Cause**: Long suffixes are powerful but expensive to generate; short suffixes are cheap but may be insufficient. The relationship between training suffix length and defense effectiveness remains unclear.
+**Key Challenge**: Long suffixes are powerful but expensive to generate; short suffixes are cheap but may be insufficient. The relationship between training suffix length and defense effectiveness remains unclear.
 
-**Paper Goals**: Answer the question: "How long does the adversarial training suffix need to be in order to defend against a jailbreak attack of a given length?"
+**Goal**: Answer the question: "How long does the adversarial training suffix need to be in order to defend against a jailbreak attack of a given length?"
 
-**Starting Point**: Map the LLM jailbreak scenario onto the in-context learning (ICL) theoretical framework—treating adversarial suffixes as perturbed in-context examples and analyzing the robust generalization bound of linear self-attention models.
+**Key Insight**: Map the LLM jailbreak scenario onto the in-context learning (ICL) theoretical framework—treating adversarial suffixes as perturbed in-context examples and analyzing the robust generalization bound of linear self-attention models.
 
 **Core Idea**: The relationship between adversarial training length and defense effectiveness follows a square-root scaling law—$\Theta(\sqrt{M})$ training suffices to defend against $\Theta(M)$ attacks.
 

@@ -29,11 +29,11 @@ This paper presents ViDscribe, a web platform integrating AI-generated audio des
 
 ## Background & Motivation
 
-1. **State of the Field**: Multimodal large language models have advanced automatic video narration and visual question answering, offering scalable alternatives to manually produced audio descriptions (AD).
+1. **Background**: Multimodal large language models have advanced automatic video narration and visual question answering, offering scalable alternatives to manually produced audio descriptions (AD).
 2. **Limitations of Prior Work**: Existing AI-driven AD systems rarely adapt to the diverse needs and preferences of BLV individuals, and are typically evaluated in controlled, single-session settings.
-3. **Root Cause**: BLV users' needs vary substantially—some require detailed descriptions while others prefer concise ones—yet existing systems provide a one-size-fits-all default description.
-4. **Paper Goals**: To build a video accessibility platform supporting personalized AD customization and interactive question answering, and to validate it through a longitudinal study.
-5. **Starting Point**: Six customization dimensions (verbosity, description type, speech rate, timing control, filter preferences, supplementary information) combined with conversational VQA.
+3. **Key Challenge**: BLV users' needs vary substantially—some require detailed descriptions while others prefer concise ones—yet existing systems provide a one-size-fits-all default description.
+4. **Goal**: To build a video accessibility platform supporting personalized AD customization and interactive question answering, and to validate it through a longitudinal study.
+5. **Key Insight**: Six customization dimensions (verbosity, description type, speech rate, timing control, filter preferences, supplementary information) combined with conversational VQA.
 6. **Core Idea**: A customizable and interactive video accessibility solution that closes the loop between AI generation and user feedback.
 
 ## Method

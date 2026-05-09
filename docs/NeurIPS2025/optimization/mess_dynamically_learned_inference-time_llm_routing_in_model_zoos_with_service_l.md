@@ -29,15 +29,15 @@ MESS+ is the first framework to formalize LLM request routing as a constrained s
 
 ## Background & Motivation
 
-**State of the Field**: The open-source LLM ecosystem (Llama, Qwen, Granite) provides multiple models at varying scales, forming a "model zoo." Each model family contains at least three variants (e.g., 1B/8B/70B) with vastly different performance and cost profiles. Users face difficulty selecting appropriate models and typically default to the largest available—wasting resources and incurring uncontrolled costs.
+**Background**: The open-source LLM ecosystem (Llama, Qwen, Granite) provides multiple models at varying scales, forming a "model zoo." Each model family contains at least three variants (e.g., 1B/8B/70B) with vastly different performance and cost profiles. Users face difficulty selecting appropriate models and typically default to the largest available—wasting resources and incurring uncontrolled costs.
 
 **Limitations of Prior Work**: Existing routing approaches each have notable shortcomings—RouteLLM supports routing between only two models; Zooter and RouterDC lack formalized cost guarantees; and none provide theoretical guarantees for SLA compliance. What users require is a hard commitment such as "at least X% of requests are satisfactorily answered."
 
-**Root Cause**: A three-way conflict of requirements: (1) users demand high-quality responses without technical expertise; (2) service providers aim to minimize operational costs; (3) enterprise clients require SLA guarantees. These three objectives must be simultaneously optimized within a unified framework.
+**Key Challenge**: A three-way conflict of requirements: (1) users demand high-quality responses without technical expertise; (2) service providers aim to minimize operational costs; (3) enterprise clients require SLA guarantees. These three objectives must be simultaneously optimized within a unified framework.
 
-**Paper Goals**: How to design an LLM routing algorithm that strictly guarantees SLA compliance (i.e., a minimum request satisfaction rate over time) while minimizing operational cost?
+**Goal**: How to design an LLM routing algorithm that strictly guarantees SLA compliance (i.e., a minimum request satisfaction rate over time) while minimizing operational cost?
 
-**Starting Point**: Drawing on the Lyapunov drift-plus-penalty framework, SLA constraints are encoded as virtual queues, and request satisfaction prediction is integrated into per-request optimization as an online learning problem.
+**Key Insight**: Drawing on the Lyapunov drift-plus-penalty framework, SLA constraints are encoded as virtual queues, and request satisfaction prediction is integrated into per-request optimization as an online learning problem.
 
 **Core Idea**: Virtual queues track cumulative SLA violations; an online-learned satisfaction predictor estimates per-model performance; and a lightweight optimization problem is solved for each request to achieve cost-optimal model selection.
 

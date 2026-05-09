@@ -28,14 +28,14 @@ AvatarPointillist proposes an autoregressive (AR) generative framework for const
 
 ## Background & Motivation
 
-**State of the Field**: Generating drivable 3D avatars from a single portrait image is critical for applications in VR, telepresence, and film production. Existing methods fall into two paradigms: 2D animation (GAN/diffusion) and 3D reconstruction (NeRF/3DGS).
+**Background**: Generating drivable 3D avatars from a single portrait image is critical for applications in VR, telepresence, and film production. Existing methods fall into two paradigms: 2D animation (GAN/diffusion) and 3D reconstruction (NeRF/3DGS).
 
 **Fundamental Limitations of 2D Methods**: These methods lack 3D structural awareness, suffer from geometric distortion under extreme poses, and cannot render from arbitrary viewpoints.
 
 **Root Cause in 3DGS Methods**:
    - **GAGAvatar**: Lifts 2D features to 3D, bypassing a complete point cloud representation and requiring auxiliary 2D networks for correction.
    - **LAM**: Uses fixed FLAME vertices as a template point cloud, assigning the same number of Gaussians to every identity — **this prevents the model from adaptively adjusting point density** to capture identity-specific features such as beards or distinctive hairstyles.
-   - **Root Cause**: Fixed topology discards the most fundamental advantage of 3DGS — adaptive control of point distribution according to geometric complexity.
+   - **Key Challenge**: Fixed topology discards the most fundamental advantage of 3DGS — adaptive control of point distribution according to geometric complexity.
 
 **Core Problem**: Can a generative model be designed to **directly learn the 3DGS point cloud distribution** without relying on a fixed template, allowing the model to autonomously decide where to place points and how many?
 

@@ -29,7 +29,7 @@ This paper introduces LingOly-TOO, a benchmark that applies expert-designed grap
 
 ## Background & Motivation
 
-**State of the Field**: LLM scores on reasoning benchmarks have risen rapidly, but growing evidence suggests that score inflation stems from training set contamination and knowledge memorization shortcuts rather than genuine improvements in reasoning ability. Benchmarks such as MATH and GSM8K are saturating quickly.
+**Background**: LLM scores on reasoning benchmarks have risen rapidly, but growing evidence suggests that score inflation stems from training set contamination and knowledge memorization shortcuts rather than genuine improvements in reasoning ability. Benchmarks such as MATH and GSM8K are saturating quickly.
 
 **Limitations of Prior Work**:
 
@@ -39,9 +39,9 @@ This paper introduces LingOly-TOO, a benchmark that applies expert-designed grap
 
 3. Even linguistics problems in low-resource languages appear in pretraining corpora, allowing models to bypass reasoning through partial contamination.
 
-**Root Cause**: How can the logical structure of problem-solving reasoning be preserved while completely eliminating the possibility of the model exploiting knowledge or memorization?
+**Key Challenge**: How can the logical structure of problem-solving reasoning be preserved while completely eliminating the possibility of the model exploiting knowledge or memorization?
 
-**Starting Point**: The paper applies grapheme-level orthographic permutations to the problem language (Problemese) of linguistics olympiad problems, producing character sequences that cannot exist in any training corpus while fully preserving the reasoning steps required to solve each problem.
+**Key Insight**: The paper applies grapheme-level orthographic permutations to the problem language (Problemese) of linguistics olympiad problems, producing character sequences that cannot exist in any training corpus while fully preserving the reasoning steps required to solve each problem.
 
 ## Method
 

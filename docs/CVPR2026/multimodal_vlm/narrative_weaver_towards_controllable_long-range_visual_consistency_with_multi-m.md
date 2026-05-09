@@ -28,15 +28,15 @@ This paper proposes the Narrative Weaver framework, which combines narrative pla
 
 ## Background & Motivation
 
-**State of the Field**: Generative AI systems such as Sora, Veo, and Midjourney demonstrate strong performance on short-clip image/video generation, yet long-range narrative generation—maintaining character, background, and style consistency across frames—remains a major challenge.
+**Background**: Generative AI systems such as Sora, Veo, and Midjourney demonstrate strong performance on short-clip image/video generation, yet long-range narrative generation—maintaining character, background, and style consistency across frames—remains a major challenge.
 
 **Limitations of Prior Work**: (1) Video generation models suffer rapid consistency degradation beyond short clips; (2) Image generation models operate on individual frames and cannot plan multi-frame narratives; (3) Existing planning methods rely on purely textual conditioning and cannot produce controllable, visually grounded outputs.
 
-**Root Cause**: No unified framework exists that integrates narrative planning, fine-grained control, and long-range consistency into a single system. Large-scale multi-modal conditioned generation datasets are also lacking.
+**Key Challenge**: No unified framework exists that integrates narrative planning, fine-grained control, and long-range consistency into a single system. Large-scale multi-modal conditioned generation datasets are also lacking.
 
-**Paper Goals**: Achieve multi-modal conditioned long-sequence consistent generation of the form (text, image) → (text, {Image_i}).
+**Goal**: Achieve multi-modal conditioned long-sequence consistent generation of the form (text, image) → (text, {Image_i}).
 
-**Starting Point**: A hybrid architecture combining an AR model for planning and a diffusion model for generation, with a Memory Bank propagating consistency information across keyframes.
+**Key Insight**: A hybrid architecture combining an AR model for planning and a diffusion model for generation, with a Memory Bank propagating consistency information across keyframes.
 
 **Core Idea**: An MLLM acts as a "director" to plan narratives and compress context into learnable queries; a Memory Bank anchors the initial visual condition to prevent drift; three-stage progressive training enables data-efficient learning.
 

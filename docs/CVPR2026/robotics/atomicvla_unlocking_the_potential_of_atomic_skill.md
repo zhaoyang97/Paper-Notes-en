@@ -30,11 +30,11 @@ AtomicVLA proposes a unified planning-execution framework that adaptively switch
 
 ### State of the Field
 
-**State of the Field**: Existing VLA models train a single action decoder on mixed data, suffering from two major issues: (1) long-horizon tasks require task decomposition and planning, but modular decoupling (VLM planner + VLA controller) leads to upstream-downstream desynchronization; (2) single-decoder mixed training causes inter-skill interference, and incrementally learning new skills leads to catastrophic forgetting. The core challenge is: how to achieve task planning, precise execution, and scalable continual skill learning within a unified framework?
+**Background**: Existing VLA models train a single action decoder on mixed data, suffering from two major issues: (1) long-horizon tasks require task decomposition and planning, but modular decoupling (VLM planner + VLA controller) leads to upstream-downstream desynchronization; (2) single-decoder mixed training causes inter-skill interference, and incrementally learning new skills leads to catastrophic forgetting. The core challenge is: how to achieve task planning, precise execution, and scalable continual skill learning within a unified framework?
 
 ### Mechanism
 
-**Paper Goals**: How to construct an end-to-end VLA framework that adaptively performs high-level task planning and atomic skill decomposition, while enabling efficient multi-skill learning and forgetting-free continual expansion through a modular expert library?
+**Goal**: How to construct an end-to-end VLA framework that adaptively performs high-level task planning and atomic skill decomposition, while enabling efficient multi-skill learning and forgetting-free continual expansion through a modular expert library?
 
 ## Method
 

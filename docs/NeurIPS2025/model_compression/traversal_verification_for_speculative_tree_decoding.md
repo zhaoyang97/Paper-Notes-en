@@ -35,9 +35,9 @@ Speculative decoding accelerates LLM inference by generating a candidate token t
 
 **Top-down verification wastes candidates**: Existing methods verify layer by layer from the root downward; once a parent node is rejected, all its descendants are discarded, even if they might form higher-quality sequences.
 
-**Root Cause**: Token-level verification is locally optimal but not globally optimal in tree-structured decoding.
+**Key Challenge**: Token-level verification is locally optimal but not globally optimal in tree-structured decoding.
 
-**Starting Point**: Reverse the verification direction—begin from leaf nodes, accepting the entire path upon a successful verification, and backtracking to sibling or parent nodes upon rejection, so as to maximally exploit all candidate tokens.
+**Key Insight**: Reverse the verification direction—begin from leaf nodes, accepting the entire path upon a successful verification, and backtracking to sibling or parent nodes upon rejection, so as to maximally exploit all candidate tokens.
 
 ## Method
 

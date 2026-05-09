@@ -30,13 +30,13 @@ This paper presents a unified convergence analysis framework to systematically c
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: In federated learning (FL), device-to-server (D2S) communication is costly due to limited bandwidth and high latency. Fully decentralized learning avoids the central server by relying on device-to-device (D2D) communication, but fails to converge when the communication graph is disconnected. **Semi-decentralized learning** combines both paradigms: devices primarily communicate via D2D within components to reach intra-component consensus, and occasionally interact with a central server via D2S to propagate information across components.
+**Key Challenge**: **Background**: In federated learning (FL), device-to-server (D2S) communication is costly due to limited bandwidth and high latency. Fully decentralized learning avoids the central server by relying on device-to-device (D2D) communication, but fails to converge when the communication graph is disconnected. **Semi-decentralized learning** combines both paradigms: devices primarily communicate via D2D within components to reach intra-component consensus, and occasionally interact with a central server via D2S to propagate information across components.
 
 After server aggregation, the aggregated model can be distributed in two ways: (i) S2S — returning the aggregated model only to the sampled devices; (ii) S2A — broadcasting the aggregated model to all devices. Each strategy has intuitive trade-offs (S2A propagates information faster but introduces bias; S2S is unbiased but leaves residual disagreement), yet a rigorous theoretical and empirical comparison has been lacking.
 
 ### Starting Point
 
-**Paper Goals**: Which strategy, S2S or S2A, is preferable in semi-decentralized FL, and under what conditions? Prior work lacks a convergence analysis of S2S under non-convex objectives, and no unified framework exists for fairly comparing the two strategies across varying system parameters (sampling rate, aggregation frequency, network connectivity, data heterogeneity).
+**Goal**: Which strategy, S2S or S2A, is preferable in semi-decentralized FL, and under what conditions? Prior work lacks a convergence analysis of S2S under non-convex objectives, and no unified framework exists for fairly comparing the two strategies across varying system parameters (sampling rate, aggregation frequency, network connectivity, data heterogeneity).
 
 ## Method
 

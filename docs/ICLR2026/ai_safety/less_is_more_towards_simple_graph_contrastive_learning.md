@@ -28,18 +28,18 @@ This paper revisits the foundational principles of graph contrastive learning (G
 
 ## Background & Motivation
 
-**State of the Field**: Graph contrastive learning (GCL) is the dominant paradigm for unsupervised graph representation learning. The core idea is to construct two "views" of the same graph or node and apply a contrastive loss to attract positive pairs while repelling negative pairs. Numerous methods have been proposed in recent years, achieving strong performance on homophilic graphs (where connected nodes share the same class).
+**Background**: Graph contrastive learning (GCL) is the dominant paradigm for unsupervised graph representation learning. The core idea is to construct two "views" of the same graph or node and apply a contrastive loss to attract positive pairs while repelling negative pairs. Numerous methods have been proposed in recent years, achieving strong performance on homophilic graphs (where connected nodes share the same class).
 
 **Limitations of Prior Work**:
 - **Poor performance on heterophilic graphs**: Most GCL methods perform poorly on heterophilic graphs (where connected nodes belong to different classes), where neighborhood aggregation may introduce misleading information since neighbors and the target node are of different classes.
 - **Excessive complexity**: Existing GCL methods rely heavily on complex data augmentation strategies (edge dropping, feature masking, subgraph sampling, etc.), carefully engineered encoder architectures, and negative sampling techniques—all of which increase computational cost and tuning difficulty.
 - **Insufficient theoretical understanding**: Why does contrastive learning work on graphs? In particular, what are the key factors driving success on heterophilic graphs? These fundamental questions lack clear theoretical explanations.
 
-**Root Cause**: The GCL community has been stacking increasingly complex components (fancier augmentations, more elaborate encoders, more sophisticated negative sampling) to improve performance, yet progress on heterophilic graphs remains limited. The underlying question is: is such complexity truly necessary, or has a simple, principled mechanism been overlooked?
+**Key Challenge**: The GCL community has been stacking increasingly complex components (fancier augmentations, more elaborate encoders, more sophisticated negative sampling) to improve performance, yet progress on heterophilic graphs remains limited. The underlying question is: is such complexity truly necessary, or has a simple, principled mechanism been overlooked?
 
-**Paper Goals**: To answer the question "What is the essence of GCL?" from both theoretical and empirical perspectives, and to propose a minimalist yet high-performing GCL model grounded in the identified core principle.
+**Goal**: To answer the question "What is the essence of GCL?" from both theoretical and empirical perspectives, and to propose a minimalist yet high-performing GCL model grounded in the identified core principle.
 
-**Starting Point**: By revisiting the foundations of supervised and unsupervised graph learning, the authors identify a key principle: GCN message passing inherently performs "denoising" (smoothing node feature noise via neighborhood aggregation), and the raw node features and graph structure naturally provide two complementary contrastive views.
+**Key Insight**: By revisiting the foundations of supervised and unsupervised graph learning, the authors identify a key principle: GCN message passing inherently performs "denoising" (smoothing node feature noise via neighborhood aggregation), and the raw node features and graph structure naturally provide two complementary contrastive views.
 
 **Core Idea**: Augmentation and negative sampling are unnecessary—the GCN view (structure-aware, denoised features) and the MLP view (original, noisy features) naturally constitute positive pairs for contrastive learning.
 

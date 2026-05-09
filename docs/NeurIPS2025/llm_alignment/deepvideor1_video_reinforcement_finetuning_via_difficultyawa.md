@@ -31,7 +31,7 @@ This paper proposes DeepVideo-R1, which reformulates GRPO as Reg-GRPO that direc
 
 ### State of the Field
 
-**State of the Field**: RL-based post-training (e.g., GRPO) has proven effective for enhancing LLM reasoning, yet its application to Video Large Language Models (VideoLLMs) remains underexplored.
+**Background**: RL-based post-training (e.g., GRPO) has proven effective for enhancing LLM reasoning, yet its application to Video Large Language Models (VideoLLMs) remains underexplored.
 
 ### Limitations of Prior Work
 
@@ -39,11 +39,11 @@ This paper proposes DeepVideo-R1, which reformulates GRPO as Reg-GRPO that direc
 
 ### Root Cause
 
-**Root Cause**: **Dependence on safeguard mechanisms**: PPO-style clipping and min operations produce zero gradients when the policy deviates excessively, impeding exploration and convergence.
+**Key Challenge**: **Dependence on safeguard mechanisms**: PPO-style clipping and min operations produce zero gradients when the policy deviates excessively, impeding exploration and convergence.
 
 ### Starting Point
 
-**Starting Point**: **Vanishing advantage**: When samples are too easy or too hard, all responses within a group receive identical rewards, causing zero advantage values and loss of training signal.
+**Key Insight**: **Vanishing advantage**: When samples are too easy or too hard, all responses within a group receive identical rewards, causing zero advantage values and loss of training signal.
 
 ### Remarks
 

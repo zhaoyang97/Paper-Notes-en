@@ -27,18 +27,18 @@ content_hash: baf15434e7545f97
 EvoPrompt addresses catastrophic forgetting and modality bias in VLM prompt learning via a trajectory-aware prompt evolution strategy — comprising unified embedding projection, direction–magnitude decoupled training, and feature geometric regularization — achieving state-of-the-art performance across few-shot, cross-dataset, and domain generalization benchmarks while preserving zero-shot capability.
 
 ## Background & Motivation
-**State of the Field**: Large-scale vision-language models (e.g., CLIP, ALIGN) acquire strong zero-shot generalization through contrastive pre-training. To efficiently adapt these models to downstream tasks, prompt learning methods (e.g., CoOp, CoCoOp, MaPLe) introduce learnable prompt tokens into a frozen backbone for parameter-efficient fine-tuning.
+**Background**: Large-scale vision-language models (e.g., CLIP, ALIGN) acquire strong zero-shot generalization through contrastive pre-training. To efficiently adapt these models to downstream tasks, prompt learning methods (e.g., CoOp, CoCoOp, MaPLe) introduce learnable prompt tokens into a frozen backbone for parameter-efficient fine-tuning.
 
 **Limitations of Prior Work**:
 - **Layer isolation**: Methods such as MaPLe insert prompts independently at each layer, leaving prompts isolated without cross-layer semantic information flow, thereby disrupting the hierarchical semantic progression inherent in Transformer architectures.
 - **Modality bias**: Existing approaches (e.g., MaPLe) exhibit a text-centric bias, failing to fully exploit complementary vision–language interactions.
 - **Catastrophic forgetting**: During few-shot adaptation, learnable prompts rapidly deviate from pre-trained semantic anchors, overfitting to scarce downstream data and severely degrading zero-shot generalization.
 
-**Root Cause**: A fundamental trade-off exists between task-specific adaptation and pre-trained knowledge retention — existing methods either achieve high base-class accuracy at the cost of novel-class collapse, or adopt conservative adaptation with limited base-class improvement.
+**Key Challenge**: A fundamental trade-off exists between task-specific adaptation and pre-trained knowledge retention — existing methods either achieve high base-class accuracy at the cost of novel-class collapse, or adopt conservative adaptation with limited base-class improvement.
 
-**Paper Goals**: (a) Establish a cross-layer, cross-modal prompt generation mechanism; (b) control the evolutionary trajectory of prompts during training to prevent knowledge forgetting; (c) prevent feature representation collapse in low-data regimes.
+**Goal**: (a) Establish a cross-layer, cross-modal prompt generation mechanism; (b) control the evolutionary trajectory of prompts during training to prevent knowledge forgetting; (c) prevent feature representation collapse in low-data regimes.
 
-**Starting Point**: The authors observe that prompts naturally undergo a progressive evolution during training — from general semantic anchors toward task-specific features. By explicitly guiding this trajectory — preserving early-learned semantic directions while adjusting only magnitudes — adaptation that "cannot forget" becomes achievable.
+**Key Insight**: The authors observe that prompts naturally undergo a progressive evolution during training — from general semantic anchors toward task-specific features. By explicitly guiding this trajectory — preserving early-learned semantic directions while adjusting only magnitudes — adaptation that "cannot forget" becomes achievable.
 
 **Core Idea**: Decouple the low-rank update of the prompt projector into direction and magnitude components; freeze historical directions and train only magnitudes, coupled with feature geometric regularization, to realize trajectory-controlled prompt evolution.
 

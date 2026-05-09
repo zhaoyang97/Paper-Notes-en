@@ -28,17 +28,17 @@ This paper proposes the A-GPS framework, which learns a conditional generative m
 
 ## Background & Motivation
 
-**State of the Field**: Multi-objective black-box optimization (MOO) arises broadly in protein engineering, drug design, and related domains, where multiple conflicting objectives (e.g., stability vs. activity) must be simultaneously optimized. Conventional multi-objective Bayesian optimization (MOBO) relies on acquisition functions such as expected hypervolume improvement (EHVI), which are computationally expensive and scale poorly with the number of objectives. Random scalarization is simpler but fails to capture complex Pareto front geometries.
+**Background**: Multi-objective black-box optimization (MOO) arises broadly in protein engineering, drug design, and related domains, where multiple conflicting objectives (e.g., stability vs. activity) must be simultaneously optimized. Conventional multi-objective Bayesian optimization (MOBO) relies on acquisition functions such as expected hypervolume improvement (EHVI), which are computationally expensive and scale poorly with the number of objectives. Random scalarization is simpler but fails to capture complex Pareto front geometries.
 
 **Limitations of Prior Work**: (a) EHVI requires complex numerical integration whose cost grows exponentially with the number of objectives; (b) scalarization-based methods require retraining for each new preference weight vector; (c) existing methods do not support posterior preference conditioning—users must specify preferences prior to optimization.
 
-**Root Cause**: There is a need for a method that efficiently approximates the Pareto set without explicit hypervolume computation while supporting flexible, post-hoc preference conditioning.
+**Key Challenge**: There is a need for a method that efficiently approximates the Pareto set without explicit hypervolume computation while supporting flexible, post-hoc preference conditioning.
 
-**Paper Goals**
+**Goal**
 - How can a generative model directly model the Pareto set?
 - How can posterior preference specification be supported without retraining?
 
-**Starting Point**: MOO is reformulated as learning a conditional generative model over the Pareto set—a non-dominance label $z$ guides the generative model toward high-performing regions, while a preference direction vector $\mathbf{u}$ enables amortized conditioning.
+**Key Insight**: MOO is reformulated as learning a conditional generative model over the Pareto set—a non-dominance label $z$ guides the generative model toward high-performing regions, while a preference direction vector $\mathbf{u}$ enables amortized conditioning.
 
 **Core Idea**: A CPE predicts non-dominance probability (implicitly estimating PHVI), and a conditional generative model $q_\phi(\mathbf{x}|\mathbf{u})$ conditioned on preference direction vectors enables Pareto set generation across multiple preferences after a single training run.
 

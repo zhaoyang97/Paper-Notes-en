@@ -28,15 +28,15 @@ This paper proposes ParLD (Preview-Analyze-Reason framework), which leverages mu
 
 ## Background & Motivation
 
-**State of the Field**: Conversational Learning is a pedagogical paradigm in which knowledge is conveyed through multi-turn teacher–student dialogues. Learning Diagnosis aims to continuously monitor students' cognitive states to help instructors adapt their teaching strategies.
+**Background**: Conversational Learning is a pedagogical paradigm in which knowledge is conveyed through multi-turn teacher–student dialogues. Learning Diagnosis aims to continuously monitor students' cognitive states to help instructors adapt their teaching strategies.
 
 **Limitations of Prior Work**: (a) Traditional Knowledge Tracing (KT) and Cognitive Diagnosis Model (CDM) methods rely on structured correct/incorrect labels and can only provide coarse-grained estimates, failing to capture the continuously evolving fine-grained cognitive changes within dialogues. (b) Student responses in conversations are open-ended text, and cognitive signals are distributed across multiple interaction turns, making it difficult to extract stable signals with label-based approaches. (c) Existing LLM applications primarily treat diagnosis as an intermediate step for downstream tasks, relying on direct prompting to analyze dialogue text without psychological grounding, and the diagnostic results are unverifiable.
 
-**Root Cause**: Cognitive state is an unobservable latent construct, and directly mapping high-dimensional unstructured dialogue text to discrete diagnostic labels constitutes an ill-posed problem that is prone to producing unreliable results.
+**Key Challenge**: Cognitive state is an unobservable latent construct, and directly mapping high-dimensional unstructured dialogue text to discrete diagnostic labels constitutes an ill-posed problem that is prone to producing unreliable results.
 
-**Paper Goals**: Formally define the Conversational Learning Diagnosis (CLD) task and design a multi-agent diagnostic framework grounded in psychological theory that is capable of self-verification and self-correction.
+**Goal**: Formally define the Conversational Learning Diagnosis (CLD) task and design a multi-agent diagnostic framework grounded in psychological theory that is capable of self-verification and self-correction.
 
-**Starting Point**: Inspired by the Zone of Proximal Development (ZPD) theory, the framework first predicts plausible student behavior patterns, then infers cognitive states by comparing actual dialogue against the predictions, and finally employs performance prediction for self-verification.
+**Key Insight**: Inspired by the Zone of Proximal Development (ZPD) theory, the framework first predicts plausible student behavior patterns, then infers cognitive states by comparing actual dialogue against the predictions, and finally employs performance prediction for self-verification.
 
 **Core Idea**: A three-step Preview-Analyze-Reason chain implements a "predict-then-compare" diagnostic paradigm, complemented by a Chain Reflector for self-correction, forming a closed loop.
 

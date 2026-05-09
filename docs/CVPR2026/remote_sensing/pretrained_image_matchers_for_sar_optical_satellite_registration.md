@@ -29,15 +29,15 @@ This paper evaluates 24 families of pretrained image matchers on SAR-optical sat
 
 ## Background & Motivation
 
-**State of the Field**: Cloud cover during disaster response frequently renders optical imagery unavailable, necessitating the registration of SAR images to optical basemaps for generating georeferenced damage assessments. However, state-of-the-art image matchers are designed for indoor, urban, or natural scene imagery.
+**Background**: Cloud cover during disaster response frequently renders optical imagery unavailable, necessitating the registration of SAR images to optical basemaps for generating georeferenced damage assessments. However, state-of-the-art image matchers are designed for indoor, urban, or natural scene imagery.
 
 **Limitations of Prior Work**: Optical and SAR sensors observe the same scene through fundamentally different physical mechanisms — optical sensors capture reflected light (texture-rich), while SAR captures radar backscatter (speckle noise, layover, radiometric inversion). Whether pretrained matchers can function under such extreme domain shift remains unclear.
 
-**Root Cause**: Cross-modal matching requires modality-invariant feature representations, yet pretrained data contains virtually no satellite or SAR imagery.
+**Key Challenge**: Cross-modal matching requires modality-invariant feature representations, yet pretrained data contains virtually no satellite or SAR imagery.
 
-**Paper Goals**: Evaluate the cross-modal satellite registration performance of 24 matcher families in a purely zero-shot setting, without any fine-tuning or domain adaptation.
+**Goal**: Evaluate the cross-modal satellite registration performance of 24 matcher families in a purely zero-shot setting, without any fine-tuning or domain adaptation.
 
-**Starting Point**: A unified, deterministic evaluation protocol encompassing large-image tile-based inference, robust geometric filtering, and tie-point-anchored metrics.
+**Key Insight**: A unified, deterministic evaluation protocol encompassing large-image tile-based inference, robust geometric filtering, and tie-point-anchored metrics.
 
 **Core Idea**: Cross-modal transfer is asymmetric — explicit cross-modal training does not consistently outperform training on natural images alone, and foundation model features may partially substitute for cross-modal supervision.
 

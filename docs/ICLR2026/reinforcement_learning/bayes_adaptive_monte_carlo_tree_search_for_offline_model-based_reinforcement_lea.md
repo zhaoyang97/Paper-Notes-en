@@ -28,14 +28,14 @@ content_hash: 4de2e3babc3bebe9
 This work is the first to introduce Bayes Adaptive MDPs (BAMDPs) into offline model-based RL. It proposes Continuous BAMCP to handle Bayesian planning in continuous state/action spaces, combines pessimistic reward penalization with search-based policy iteration (an "RL + Search" paradigm), achieves significant improvements over 19 baselines on 12 D4RL tasks (Cohen's $d > 1.8$), and demonstrates successful application to tokamak fusion control.
 
 ## Background & Motivation
-**State of the Field**: Offline MBRL learns ensemble world models from static datasets and uses model rollouts to optimize policies. Methods such as MOBILE, CBOP, and RAMBO represent the current state of the art.
+**Background**: Offline MBRL learns ensemble world models from static datasets and uses model rollouts to optimize policies. Methods such as MOBILE, CBOP, and RAMBO represent the current state of the art.
 
 **Limitations of Prior Work**:
    - Multiple MDPs may behave identically on the offline dataset but diverge in out-of-distribution (OOD) regions, necessitating principled treatment of model uncertainty.
    - Existing methods **treat ensemble members uniformly** (e.g., sampling one model uniformly for prediction) and do not exploit dynamic belief updates.
    - Different ensemble members vary in accuracy across different state-action regions, yet no mechanism exists to allow agents to adaptively trust the most accurate member.
 
-**Root Cause**: BAMDPs provide a principled framework for uncertainty handling (via Bayesian posterior updates over model beliefs), but existing BAMCP algorithms are restricted to discrete spaces and require access to the true world model.
+**Key Challenge**: BAMDPs provide a principled framework for uncertainty handling (via Bayesian posterior updates over model beliefs), but existing BAMCP algorithms are restricted to discrete spaces and require access to the true world model.
 
 **Core Idea**: Formulate offline MBRL as a BAMDP, propose a continuous-space BAMCP, incorporate pessimistic reward penalization, and distill search results into a policy network — realizing an "RL + Search" paradigm (akin to AlphaZero) for offline MBRL.
 

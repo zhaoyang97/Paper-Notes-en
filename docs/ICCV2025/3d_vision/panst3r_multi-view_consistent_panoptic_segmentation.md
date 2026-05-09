@@ -31,7 +31,7 @@ PanSt3R builds upon MUSt3R to simultaneously perform 3D reconstruction and multi
 
 ### Root Cause
 
-**State of the Field**: Panoptic segmentation of 3D scenes requires both instance and semantic segmentation of 3D environments. Existing methods suffer from three major limitations:
+**Background**: Panoptic segmentation of 3D scenes requires both instance and semantic segmentation of 3D environments. Existing methods suffer from three major limitations:
 
 **Reliance on Pre-computed 2D Segmentation**: Mainstream methods (NeRF-based / 3DGS-based) first obtain per-frame segmentation using offline 2D models (e.g., Mask2Former), then fuse results into 3D via NeRF/3DGS. Reducing an inherently 3D and multi-view problem to 2D segmentation is **suboptimal**.
 

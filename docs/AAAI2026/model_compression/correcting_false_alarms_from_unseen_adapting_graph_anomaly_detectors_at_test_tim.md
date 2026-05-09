@@ -28,7 +28,7 @@ This paper proposes TUNE, a plug-and-play test-time adaptation framework that ad
 
 ## Background & Motivation
 
-**State of the Field**: Graph Anomaly Detection (GAD) aims to identify anomalous nodes in graph-structured data. GNN-based methods perform well under supervised settings, but existing approaches assume consistent training and test distributions.
+**Background**: Graph Anomaly Detection (GAD) aims to identify anomalous nodes in graph-structured data. GNN-based methods perform well under supervised settings, but existing approaches assume consistent training and test distributions.
 
 **Limitations of Prior Work**:
    - **Normality Shift**: New but normal node categories (e.g., new product types in e-commerce) emerge after deployment, causing the model to misclassify them as anomalies.
@@ -36,9 +36,9 @@ This paper proposes TUNE, a plug-and-play test-time adaptation framework that ad
    - **Aggregation Contamination**: GNN message passing causes new normal nodes to influence neighboring known-normal nodes, leading to their misclassification as well.
    - Retraining is costly, and annotating new data is difficult.
 
-**Root Cause**: GAD models overfit to normal patterns seen during training and fail to generalize to new normal categories—yet such emergence is extremely common in practice.
+**Key Challenge**: GAD models overfit to normal patterns seen during training and fail to generalize to new normal categories—yet such emergence is extremely common in practice.
 
-**Starting Point**: Rather than modifying the pretrained GAD model, the paper proposes aligning new normal data back to the known distribution via feature transformation at test time. The key innovation is using aggregation contamination itself as an unsupervised signal to optimize the aligner.
+**Key Insight**: Rather than modifying the pretrained GAD model, the paper proposes aligning new normal data back to the known distribution via feature transformation at test time. The key innovation is using aggregation contamination itself as an unsupervised signal to optimize the aligner.
 
 **Core Idea**: A graph aligner performs feature residual correction, combined with an aggregation-free dual-branch architecture to estimate aggregation contamination, and minimizes the discrepancy between the two branches as the unsupervised TTA objective.
 

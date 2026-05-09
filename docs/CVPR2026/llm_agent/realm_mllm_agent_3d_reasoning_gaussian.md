@@ -28,15 +28,15 @@ REALM is proposed as a framework that leverages MLLM reasoning capabilities to p
 
 ## Background & Motivation
 
-**State of the Field**: Enabling AI systems to understand complex human instructions and precisely localize target objects in 3D scenes is a foundational capability for robotics and human-computer collaboration. Existing 3D open-vocabulary segmentation methods (e.g., LERF, LangSplat, GS-Grouping) can handle explicit category queries (e.g., "segment the cup"), but perform poorly on implicit instructions requiring reasoning (e.g., "segment the object between the lamp and the book," "make the table tidier").
+**Background**: Enabling AI systems to understand complex human instructions and precisely localize target objects in 3D scenes is a foundational capability for robotics and human-computer collaboration. Existing 3D open-vocabulary segmentation methods (e.g., LERF, LangSplat, GS-Grouping) can handle explicit category queries (e.g., "segment the cup"), but perform poorly on implicit instructions requiring reasoning (e.g., "segment the object between the lamp and the book," "make the table tidier").
 
 **Limitations of Prior Work**: (1) 3D segmentation methods lack reasoning capabilities—they can only perform explicit keyword matching and cannot understand spatial relationships, semantic attributes, or commonsense reasoning. (2) While 2D MLLMs excel at reasoning, they inherently lack 3D spatial understanding—directly feeding rendered views to an MLLM is highly sensitive to viewpoint selection, and different angles may produce contradictory results. (3) Existing attempts (e.g., ScanReason, ReasonGrounder) are limited by bounding box prediction or dependence on top-down views, resulting in insufficient precision and applicability.
 
-**Root Cause**: MLLMs possess strong 2D reasoning capabilities but lack 3D spatial awareness. The core challenge is how to reliably lift 2D reasoning results into 3D space and obtain precise segmentation masks without 3D-specific post-training of the MLLM.
+**Key Challenge**: MLLMs possess strong 2D reasoning capabilities but lack 3D spatial awareness. The core challenge is how to reliably lift 2D reasoning results into 3D space and obtain precise segmentation masks without 3D-specific post-training of the MLLM.
 
-**Paper Goals**: To realize an open-world framework that understands implicit reasoning instructions, requires no 3D post-training, and generates precise 3D segmentation masks.
+**Goal**: To realize an open-world framework that understands implicit reasoning instructions, requires no 3D post-training, and generates precise 3D segmentation masks.
 
-**Starting Point**: 3DGS serves as a high-fidelity proxy for the 3D world—it can render photorealistic novel views for MLLM comprehension. A two-stage multi-view reasoning strategy aggregates MLLM responses across viewpoints to eliminate single-view sensitivity.
+**Key Insight**: 3DGS serves as a high-fidelity proxy for the 3D world—it can render photorealistic novel views for MLLM comprehension. A two-stage multi-view reasoning strategy aggregates MLLM responses across viewpoints to eliminate single-view sensitivity.
 
 **Core Idea**: Render multi-view images from 3DGS for MLLM reasoning, then obtain precise 3D masks through a two-stage strategy of global coarse localization followed by local fine segmentation.
 

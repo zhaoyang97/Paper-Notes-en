@@ -27,15 +27,15 @@ This paper proposes PRPO (Parallel Relative Policy Optimization), which addresse
 
 ## Background & Motivation
 
-**State of the Field**: Chart understanding has evolved from simple data extraction to reasoning and analysis. Existing methods (ChartQA, PlotQA, etc.) primarily handle shallow tasks — visual recognition and factual QA — while capabilities for genuine "deep research" (trend analysis, causal reasoning, strategic recommendations) remain severely underdeveloped.
+**Background**: Chart understanding has evolved from simple data extraction to reasoning and analysis. Existing methods (ChartQA, PlotQA, etc.) primarily handle shallow tasks — visual recognition and factual QA — while capabilities for genuine "deep research" (trend analysis, causal reasoning, strategic recommendations) remain severely underdeveloped.
 
 **Limitations of Prior Work**: (a) **Training bottleneck** — Chart deep research requires simultaneous mastery of background knowledge integration, fact extraction, relation construction, deep reasoning, and predictive planning, yet GRPO compresses multi-dimensional rewards into a single scalar, causing signal interference and mutual cancellation; gradient conflicts from heterogeneous data allow simple tasks to dominate training. (b) **Evaluation bottleneck** — Existing benchmarks only assess factual QA and cannot evaluate end-to-end analytical reasoning; subjective generation tasks incur high annotation costs and exhibit large answer diversity.
 
-**Root Cause**: Tension between coordinated multi-dimensional capability development and single-objective optimization — GRPO aggregates all dimensional rewards into one scalar, compressing variance and weakening the discriminative power of optimization signals, preventing balanced development across dimensions.
+**Key Challenge**: Tension between coordinated multi-dimensional capability development and single-objective optimization — GRPO aggregates all dimensional rewards into one scalar, compressing variance and weakening the discriminative power of optimization signals, preventing balanced development across dimensions.
 
-**Paper Goals**: (a) How to achieve balanced training under multi-dimensional rewards and heterogeneous data? (b) How to objectively evaluate chart deep research capabilities?
+**Goal**: (a) How to achieve balanced training under multi-dimensional rewards and heterogeneous data? (b) How to objectively evaluate chart deep research capabilities?
 
-**Starting Point**: Introducing the concept of "parallelism" into policy optimization — parallel optimization across reward dimensions and data capability partitions — to decouple the sources of conflict. On the evaluation side, controlled error injection transforms subjective generation into objective classification.
+**Key Insight**: Introducing the concept of "parallelism" into policy optimization — parallel optimization across reward dimensions and data capability partitions — to decouple the sources of conflict. On the evaluation side, controlled error injection transforms subjective generation into objective classification.
 
 **Core Idea**: Building on GRPO, PRPO introduces two-level parallel decoupling (Reward-PRPO decomposing reward dimensions + Data-PRPO partitioning data types) to eliminate signal interference and gradient conflicts in multi-dimensional training.
 

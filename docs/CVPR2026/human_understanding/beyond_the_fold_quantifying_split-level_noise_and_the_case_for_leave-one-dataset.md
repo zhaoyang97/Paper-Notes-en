@@ -27,13 +27,13 @@ content_hash: 865f1279d88ccdde
 This paper reveals that subject-independent cross-validation in facial AU detection introduces a random noise floor of ±0.065 F1 merely from varying subject-to-fold assignments, rendering many claimed SOTA improvements statistically indistinguishable. The authors propose the Leave-One-Dataset-Out (LODO) protocol as a more stable and reliable alternative evaluation scheme.
 
 ## Background & Motivation
-**State of the Field**: Facial Action Unit (AU) detection is a core task in affective computing, and the dominant evaluation paradigm has long been **single-dataset subject-independent k-fold cross-validation**. In recent years, architectures have evolved from CNNs to GNNs and Transformers, yet reported F1 improvements typically amount to only +0.01 to +0.02.
+**Background**: Facial Action Unit (AU) detection is a core task in affective computing, and the dominant evaluation paradigm has long been **single-dataset subject-independent k-fold cross-validation**. In recent years, architectures have evolved from CNNs to GNNs and Transformers, yet reported F1 improvements typically amount to only +0.01 to +0.02.
 
 **Implicit Assumption**: The community has taken for granted that cross-validation provides **stable and reliable** performance estimates, and that marginal gains represent genuine progress.
 
 **Challenge Raised**: Even when the dataset, model, and hyperparameters are entirely fixed, **merely changing the assignment of subjects to folds** can produce substantial performance fluctuations. This "split-level noise" is large enough to subsume most claimed SOTA improvements.
 
-**Root Cause**: AU datasets contain a limited number of subjects (e.g., dozens in BP4D+), and different fold assignments cause significant shifts in the AU class prevalence distribution within test sets—a factor to which threshold-dependent metrics such as F1 are highly sensitive.
+**Key Challenge**: AU datasets contain a limited number of subjects (e.g., dozens in BP4D+), and different fold assignments cause significant shifts in the AU class prevalence distribution within test sets—a factor to which threshold-dependent metrics such as F1 are highly sensitive.
 
 **Core Idea**: Quantify the uncertainty inherent in the evaluation protocol itself, and advocate for a cross-dataset LODO protocol that eliminates the randomness introduced by data partitioning.
 

@@ -29,15 +29,15 @@ This paper introduces DIA-HARM, the first benchmark for evaluating the robustnes
 
 ## Background & Motivation
 
-**State of the Field**: Harmful content detectors—particularly misinformation classifiers—are predominantly developed and evaluated on Standard American English (SAE), leaving their robustness to dialectal variation largely unexplored.
+**Background**: Harmful content detectors—particularly misinformation classifiers—are predominantly developed and evaluated on Standard American English (SAE), leaving their robustness to dialectal variation largely unexplored.
 
 **Limitations of Prior Work**: (1) Hundreds of millions of English speakers worldwide use non-SAE dialects, yet detection systems have not been validated on these varieties; (2) Dialectal transformation alters morphosyntactic structure while preserving misinformative semantics—if detectors rely on surface patterns rather than deep semantic understanding, dialectal content may evade detection; (3) Detection failures may systematically afford less protection to dialect speakers.
 
-**Root Cause**: Misinformation detectors should make judgments based on factual veracity (semantics); however, if they rely on surface linguistic patterns, dialectal variants—which alter surface form while preserving semantics—expose this vulnerability.
+**Key Challenge**: Misinformation detectors should make judgments based on factual veracity (semantics); however, if they rely on surface linguistic patterns, dialectal variants—which alter surface form while preserving semantics—expose this vulnerability.
 
-**Paper Goals**: (1) Construct a misinformation detection evaluation benchmark spanning 50 English dialects; (2) Assess the dialectal robustness of 16 detection models; (3) Identify cross-dialect transfer patterns.
+**Goal**: (1) Construct a misinformation detection evaluation benchmark spanning 50 English dialects; (2) Assess the dialectal robustness of 16 detection models; (3) Identify cross-dialect transfer patterns.
 
-**Starting Point**: The paper leverages Multi-VALUE's linguistically grounded, rule-based dialect transformation toolkit to convert standard misinformation datasets into 50 dialectal variants, constructing the D3 corpus (195K samples) for systematic model evaluation.
+**Key Insight**: The paper leverages Multi-VALUE's linguistically grounded, rule-based dialect transformation toolkit to convert standard misinformation datasets into 50 dialectal variants, constructing the D3 corpus (195K samples) for systematic model evaluation.
 
 **Core Idea**: Dialectal variation constitutes a natural perturbation for misinformation detectors—altering linguistic form without changing factual veracity—thereby revealing whether detectors comprehend semantics or merely exploit surface patterns.
 

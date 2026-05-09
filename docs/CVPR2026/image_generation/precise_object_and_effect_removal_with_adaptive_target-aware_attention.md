@@ -28,13 +28,13 @@ This paper proposes ObjectClear, a framework that decouples foreground removal f
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion model-based image inpainting and object removal has become the dominant paradigm, leveraging target segmentation masks with diffusion generators to erase unwanted objects. Representative methods include SDXL-Inpainting, PowerPaint, BrushNet, and RORem.
+**Background**: Diffusion model-based image inpainting and object removal has become the dominant paradigm, leveraging target segmentation masks with diffusion generators to erase unwanted objects. Representative methods include SDXL-Inpainting, PowerPaint, BrushNet, and RORem.
 
 **Limitations of Prior Work**: Existing methods suffer from three core issues: (a) **Effect residuals**: only the object itself is removed, while associated visual effects such as shadows and reflections persist; (b) **Hallucination**: unwanted objects or textures are generated within the removal region; (c) **Background tampering**: colors and textures in non-target regions are inadvertently altered.
 
-**Root Cause**: There is no explicit modeling of the relationship between target objects and their associated visual effects, nor effective constraints to guide generative model attention toward the removal region. Existing datasets are either purely synthetic (lacking real-world effect annotations), too small in scale, or not publicly available.
+**Key Challenge**: There is no explicit modeling of the relationship between target objects and their associated visual effects, nor effective constraints to guide generative model attention toward the removal region. Existing datasets are either purely synthetic (lacking real-world effect annotations), too small in scale, or not publicly available.
 
-**Starting Point**: The paper decouples foreground removal from background reconstruction by learning target-aware attention maps to adaptively localize objects and their effect regions, while maintaining high-fidelity background preservation. A large-scale hybrid dataset with both object and effect mask annotations is also constructed.
+**Key Insight**: The paper decouples foreground removal from background reconstruction by learning target-aware attention maps to adaptively localize objects and their effect regions, while maintaining high-fidelity background preservation. A large-scale hybrid dataset with both object and effect mask annotations is also constructed.
 
 **Core Idea**: ATA learns attention maps over object-effect regions; these maps are then used during inference for attention-guided fusion, simultaneously achieving precise removal and background preservation.
 

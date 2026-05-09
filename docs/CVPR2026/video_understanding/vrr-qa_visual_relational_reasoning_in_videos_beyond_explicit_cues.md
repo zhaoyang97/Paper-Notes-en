@@ -28,15 +28,15 @@ This paper proposes VRR-QA, a benchmark comprising 1K carefully annotated video 
 
 ## Background & Motivation
 
-1. **State of the Field**: VideoQA has achieved notable progress in recent years through multimodal learning that aligns visual and textual modalities. Existing benchmarks (e.g., MVBench, TempCompass, VideoMME) primarily target questions with explicitly visible answers—recognizing actions, objects, and events that are directly observable on screen.
+1. **Background**: VideoQA has achieved notable progress in recent years through multimodal learning that aligns visual and textual modalities. Existing benchmarks (e.g., MVBench, TempCompass, VideoMME) primarily target questions with explicitly visible answers—recognizing actions, objects, and events that are directly observable on screen.
 
 2. **Limitations of Prior Work**: Human video comprehension goes beyond perceiving what appears on screen; it involves inferring relationships that are implied but not directly depicted—for instance, deducing a bullet's trajectory from the direction a character is running, even when the bullet and the target never appear in the same frame. Existing benchmarks rarely cover such implicit reasoning tasks.
 
-3. **Root Cause**: Current models rely heavily on surface-level visual cues and perform poorly when cross-frame inference is required to recover spatial relationships, causal chains, or social dynamics that are never explicitly shown. Yet no systematic benchmark exists to quantify this capability gap.
+3. **Key Challenge**: Current models rely heavily on surface-level visual cues and perform poorly when cross-frame inference is required to recover spatial relationships, causal chains, or social dynamics that are never explicitly shown. Yet no systematic benchmark exists to quantify this capability gap.
 
-4. **Paper Goals**: To construct the first VideoQA benchmark dedicated to implicit visual relational reasoning, systematically evaluate existing models on this task, and define a taxonomy of nine reasoning dimensions.
+4. **Goal**: To construct the first VideoQA benchmark dedicated to implicit visual relational reasoning, systematically evaluate existing models on this task, and define a taxonomy of nine reasoning dimensions.
 
-5. **Starting Point**: Movies and animated works are selected as video sources because such creative content inherently employs narrative techniques (e.g., implied causality, off-screen actions, perspective shifts) that embed implicit reasoning into content comprehension, while preventing explicit visual cues from leaking into the questions.
+5. **Key Insight**: Movies and animated works are selected as video sources because such creative content inherently employs narrative techniques (e.g., implied causality, off-screen actions, perspective shifts) that embed implicit reasoning into content comprehension, while preventing explicit visual cues from leaking into the questions.
 
 6. **Core Idea**: By constructing questions around film clips that require inference rather than direct observation, the paper establishes a benchmark that genuinely tests implicit reasoning in video understanding.
 

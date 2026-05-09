@@ -27,15 +27,15 @@ content_hash: c8ea83cdebf8b828
 This paper proposes PORT, the first training-free online LLM routing algorithm. PORT estimates query features via approximate nearest neighbor search (ANNS) and performs a one-shot optimization of dual variables as routing weights on a small set of initial queries. Under a limited token budget, PORT achieves near-offline-optimal routing performance with a $1-o(1)$ competitive ratio, delivering on average 3.55× performance improvement, 1.85× cost efficiency, and 4.25× throughput over baselines.
 
 ## Background & Motivation
-**State of the Field**: LLM service providers face massive query volumes (e.g., OpenAI peak at 12k QPS). Different LLMs excel in different domains and vary in cost, making query routing to the most suitable model a key strategy for cost reduction.
+**Background**: LLM service providers face massive query volumes (e.g., OpenAI peak at 12k QPS). Different LLMs excel in different domains and vary in cost, making query routing to the most suitable model a key strategy for cost reduction.
 
 **Limitations of Prior Work**: Existing routing methods either rely on trained model predictors (e.g., RoBERTa-based), incurring high computational overhead and requiring retraining upon deployment changes, or depend on exact KNN with complexity $O(|D|)$, which is incompatible with low-latency online serving requirements.
 
-**Root Cause**: All existing methods rest on an offline assumption—that all queries arrive simultaneously and can be globally optimized. In practice, queries arrive sequentially, future queries are unknown, token budgets are limited, and offline MILP formulations become intractable.
+**Key Challenge**: All existing methods rest on an offline assumption—that all queries arrive simultaneously and can be globally optimized. In practice, queries arrive sequentially, future queries are unknown, token budgets are limited, and offline MILP formulations become intractable.
 
-**Paper Goals**: (a) How to perform efficient routing online without training any model? (b) How to maximize overall service quality under hard budget constraints? (c) How to adapt to dynamic changes in LLM deployment configurations?
+**Goal**: (a) How to perform efficient routing online without training any model? (b) How to maximize overall service quality under hard budget constraints? (c) How to adapt to dynamic changes in LLM deployment configurations?
 
-**Starting Point**: The authors observe that the LP relaxation dual of the routing problem is fully parameterized at optimality by a single dual variable $\gamma$, which serves as the routing weight for each LLM. Consequently, learning $\gamma^*$ from a small set of initial queries suffices to guide all subsequent routing decisions.
+**Key Insight**: The authors observe that the LP relaxation dual of the routing problem is fully parameterized at optimality by a single dual variable $\gamma$, which serves as the routing weight for each LLM. Consequently, learning $\gamma^*$ from a small set of initial queries suffices to guide all subsequent routing decisions.
 
 **Core Idea**: ANNS-based query feature estimation + one-shot dual variable optimization = training-free, efficient, theoretically-guaranteed online routing.
 

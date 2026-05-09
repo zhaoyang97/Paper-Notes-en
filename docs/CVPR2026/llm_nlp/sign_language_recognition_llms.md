@@ -28,11 +28,11 @@ The first systematic evaluation of modern VLMs on zero-shot isolated sign langua
 
 ## Background & Motivation
 
-**State of the Field**: Sign language recognition has traditionally relied on task-specific supervised learning, requiring large amounts of annotated data and specialized architectures. Meanwhile, VLMs have demonstrated powerful multimodal reasoning capabilities, but their application to sign language remains largely unexplored.
+**Background**: Sign language recognition has traditionally relied on task-specific supervised learning, requiring large amounts of annotated data and specialized architectures. Meanwhile, VLMs have demonstrated powerful multimodal reasoning capabilities, but their application to sign language remains largely unexplored.
 
 **Limitations of Prior Work**: (1) Supervised methods are limited by annotated data availability and cross-signer/environment generalization; (2) VLMs are primarily evaluated on natural images/videos, with fine-grained gestural motions in sign language not covered; (3) No systematic benchmark exists for VLM zero-shot sign language recognition.
 
-**Root Cause**: VLMs are highly general but not specifically trained on sign language data. The high-dimensional spatiotemporal complexity and subtle linguistic structure of sign language may exceed VLMs' zero-shot capabilities.
+**Key Challenge**: VLMs are highly general but not specifically trained on sign language data. The high-dimensional spatiotemporal complexity and subtle linguistic structure of sign language may exceed VLMs' zero-shot capabilities.
 
 **Core Idea**: Return to the controlled ISLR setting to systematically evaluate multiple VLMs' zero-shot sign language recognition capabilities, analyzing the effects of prompting strategies and model scale.
 

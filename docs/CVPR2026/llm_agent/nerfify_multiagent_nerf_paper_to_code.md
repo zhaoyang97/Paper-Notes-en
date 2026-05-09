@@ -27,15 +27,15 @@ content_hash: d11f3b844cf1000c
 Nerfify is proposed, a domain-aware multi-agent framework that automatically converts NeRF papers into trainable Nerfstudio plugin code via context-free grammar (CFG) constraints, Graph-of-Thought (GoT) code synthesis, and compositional reference dependency recovery, achieving 100% executability with visual quality within ±0.5 dB PSNR of expert implementations.
 
 ## Background & Motivation
-**State of the Field**: Since its publication in 2020, NeRF has generated over 1,000 follow-up works, yet most papers lack public code or standardized implementations, requiring weeks of effort to re-implement prior methods for each subsequent work.
+**Background**: Since its publication in 2020, NeRF has generated over 1,000 follow-up works, yet most papers lack public code or standardized implementations, requiring weeks of effort to re-implement prior methods for each subsequent work.
 
 **Limitations of Prior Work**: General-purpose paper-to-code systems (Paper2Code, AutoP2C) fail almost entirely on NeRF—producing trainable code in only 5% of cases. GPT-5 in single-pass generation mode achieves only 26.6% accuracy on complex papers. NeRF implementations span the intersection of volumetric rendering, computer vision, and neural optimization, where a single incorrect activation function or ray-sphere intersection can cause NaN gradients or degenerate solutions.
 
-**Root Cause**: General-purpose methods lack domain knowledge and cannot handle NeRF's implicit dependency chains (e.g., "we adopt the distillation loss from [3]" requires traversing references, locating the correct equation, translating it to code, and implementing stop-gradient), nor can they satisfy the modular composition constraints of the Nerfstudio framework.
+**Key Challenge**: General-purpose methods lack domain knowledge and cannot handle NeRF's implicit dependency chains (e.g., "we adopt the distillation loss from [3]" requires traversing references, locating the correct equation, translating it to code, and implementing stop-gradient), nor can they satisfy the modular composition constraints of the Nerfstudio framework.
 
-**Paper Goals**: To automatically convert NeRF papers into trainable, convergent, high-quality standardized Nerfstudio code, reducing the turnaround time from weeks to minutes.
+**Goal**: To automatically convert NeRF papers into trainable, convergent, high-quality standardized Nerfstudio code, reducing the turnaround time from weeks to minutes.
 
-**Starting Point**: Formalizing the Nerfstudio architecture as a context-free grammar (CFG), using domain constraints to guide LLM code synthesis, and employing multi-agent collaboration to resolve dependency chains and iterate via visual feedback.
+**Key Insight**: Formalizing the Nerfstudio architecture as a context-free grammar (CFG), using domain constraints to guide LLM code synthesis, and employing multi-agent collaboration to resolve dependency chains and iterate via visual feedback.
 
 **Core Idea**: Domain awareness through CFG constraints, reference dependency recovery, GoT synthesis, and visual feedback transforms NeRF paper-to-code from infeasible to high-quality automation.
 
@@ -140,15 +140,15 @@ Executability comparison (all baselines fail to produce trainable code):
 Nerfify is proposed, a domain-aware multi-agent framework that automatically converts NeRF papers into trainable Nerfstudio plugin code via context-free grammar constraints, Graph-of-Thought code synthesis, and reference dependency recovery, achieving 100% executability on a 30-paper benchmark with visual quality within ±0.5 dB PSNR of expert implementations.
 
 ## Background & Motivation
-**State of the Field**: Since 2020, NeRF has accumulated over 1,000 follow-up papers, yet most lack public code or standardized implementations, requiring weeks of manual effort to re-implement prior methods for each new work.
+**Background**: Since 2020, NeRF has accumulated over 1,000 follow-up papers, yet most lack public code or standardized implementations, requiring weeks of manual effort to re-implement prior methods for each new work.
 
 **Limitations of Prior Work**: General-purpose paper-to-code systems such as Paper2Code and AutoP2C perform extremely poorly on NeRF code generation, failing to produce trainable code in 95% of cases. Even frontier models such as GPT-5 achieve only 26.6% accuracy on complex papers and generally produce code that compiles but fails to converge. NeRF implementations require expertise spanning volumetric rendering, computer vision, and neural optimization, where a single incorrect activation function or ray-sphere intersection can cause catastrophic failures.
 
-**Root Cause**: General-purpose code generation methods lack domain knowledge and cannot handle NeRF's implicit dependency chains (e.g., "we adopt the distillation loss from [3]" requires navigating to that paper, locating the correct equation, translating it to code, and implementing stop-gradient), nor can they satisfy the interface contracts and tensor shape constraints of multi-file architectures.
+**Key Challenge**: General-purpose code generation methods lack domain knowledge and cannot handle NeRF's implicit dependency chains (e.g., "we adopt the distillation loss from [3]" requires navigating to that paper, locating the correct equation, translating it to code, and implementing stop-gradient), nor can they satisfy the interface contracts and tensor shape constraints of multi-file architectures.
 
-**Paper Goals**: To automatically convert NeRF papers into trainable, high-quality, standardized code, reducing the turnaround time from weeks to minutes.
+**Goal**: To automatically convert NeRF papers into trainable, high-quality, standardized code, reducing the turnaround time from weeks to minutes.
 
-**Starting Point**: Formalizing the Nerfstudio framework as a context-free grammar (CFG), guiding LLM code synthesis with domain-specific constraints, and using multi-agent collaboration for dependency chain resolution and visual feedback iteration.
+**Key Insight**: Formalizing the Nerfstudio framework as a context-free grammar (CFG), guiding LLM code synthesis with domain-specific constraints, and using multi-agent collaboration for dependency chain resolution and visual feedback iteration.
 
 **Core Idea**: A domain-aware NeRF paper-to-code multi-agent system is constructed using CFG constraints, GoT synthesis, and reference dependency recovery.
 
@@ -251,15 +251,15 @@ All baselines (Paper2Code, AutoP2C, GPT-5, R1) **fail to produce trainable code*
 Nerfify is proposed, a multi-agent framework that automatically converts NeRF papers into trainable Nerfstudio plugin code via context-free grammar constraints, Graph-of-Thought code synthesis, and compositional reference recovery, achieving 100% executability on a 30-paper benchmark with visual quality within ±0.5 dB PSNR of expert implementations.
 
 ## Background & Motivation
-**State of the Field**: Since 2020, the NeRF field has produced over 1,000 follow-up papers, yet most lack public code or standardized implementations, requiring substantial human effort to re-implement prior methods for each subsequent work.
+**Background**: Since 2020, the NeRF field has produced over 1,000 follow-up papers, yet most lack public code or standardized implementations, requiring substantial human effort to re-implement prior methods for each subsequent work.
 
 **Limitations of Prior Work**: General-purpose paper-to-code systems such as Paper2Code and AutoP2C fail severely in the NeRF domain—the current best system, O1, achieves only 26.6% accuracy on complex papers and is largely unable to produce trainable NeRF code. Even frontier models such as GPT-5 generate syntactically correct but non-convergent code.
 
-**Root Cause**: NeRF implementations require specialized knowledge spanning volumetric rendering, computer vision, and neural optimization, where a single incorrect activation function or ray-sphere intersection leads to failures ranging from NaN gradients to degenerate solutions. Compounding this, modern NeRF papers carry deep citation dependencies—a phrase such as "we adopt the distortion loss from [3]" necessitates tracing multiple papers to extract the correct implementation.
+**Key Challenge**: NeRF implementations require specialized knowledge spanning volumetric rendering, computer vision, and neural optimization, where a single incorrect activation function or ray-sphere intersection leads to failures ranging from NaN gradients to degenerate solutions. Compounding this, modern NeRF papers carry deep citation dependencies—a phrase such as "we adopt the distortion loss from [3]" necessitates tracing multiple papers to extract the correct implementation.
 
-**Paper Goals**: To automatically convert NeRF research papers into trainable, convergent code that matches the visual quality of expert implementations and meets standardized coding standards.
+**Goal**: To automatically convert NeRF research papers into trainable, convergent code that matches the visual quality of expert implementations and meets standardized coding standards.
 
-**Starting Point**: Replacing general-purpose paper-to-code approaches with a domain-specific multi-agent framework that formalizes the Nerfstudio architecture as a context-free grammar to constrain code generation.
+**Key Insight**: Replacing general-purpose paper-to-code approaches with a domain-specific multi-agent framework that formalizes the Nerfstudio architecture as a context-free grammar to constrain code generation.
 
 **Core Idea**: Reliable conversion of NeRF papers to trainable code is achieved by encoding Nerfstudio's architecture as CFG constraints on LLM synthesis, using GoT to generate multi-file repositories in topological order, and employing compositional reference recovery to automatically trace citation dependencies.
 

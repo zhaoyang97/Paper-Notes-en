@@ -28,15 +28,15 @@ This paper proposes the first **direct estimation method** for the conditional q
 
 ## Background & Motivation
 
-**State of the Field**: Heterogeneous treatment effect (HTE) analysis aims to characterize how treatment effects vary across individuals. CATE (conditional average treatment effect) and CQTE (conditional quantile treatment effect) are two classical estimands — CATE is interpretable but provides only mean-level information, while CQTE offers quantile-level granularity at the cost of interpretability.
+**Background**: Heterogeneous treatment effect (HTE) analysis aims to characterize how treatment effects vary across individuals. CATE (conditional average treatment effect) and CQTE (conditional quantile treatment effect) are two classical estimands — CATE is interpretable but provides only mean-level information, while CQTE offers quantile-level granularity at the cost of interpretability.
 
 **Limitations of Prior Work**: The recently proposed CQC (conditional quantile contrast) attempts to combine the advantages of both by providing a transport map from the untreated to the treated response. However, existing CQC estimation methods (Givens et al., 2024) require first estimating an intermediate quantity — the CCDF contrast function $h$ — and then obtaining the CQC via **inversion**, which introduces three key problems: the CQC cannot be directly modeled or constrained; estimation error depends on the complexity of the intermediate function rather than the CQC itself; and evaluation incurs substantial computational overhead.
 
-**Root Cause**: The CQC itself may be highly parsimonious (e.g., the treatment effect is a linear scaling of the response, $g^*(y_0|\mathbf{x}) = 2y_0$), yet the accuracy of indirect inversion methods is limited by the complexity of the more intricate intermediate function $h$.
+**Key Challenge**: The CQC itself may be highly parsimonious (e.g., the treatment effect is a linear scaling of the response, $g^*(y_0|\mathbf{x}) = 2y_0$), yet the accuracy of indirect inversion methods is limited by the complexity of the more intricate intermediate function $h$.
 
-**Paper Goals**: To provide the first direct estimation method for the CQC, enabling explicit parameterization of the CQC so that estimation error depends directly on the complexity of the CQC itself.
+**Goal**: To provide the first direct estimation method for the CQC, enabling explicit parameterization of the CQC so that estimation error depends directly on the complexity of the CQC itself.
 
-**Starting Point**: The CQC estimation problem is cast as M-estimation — a loss function is constructed whose minimizer is the CQC, and a doubly robust expression for its gradient is derived, enabling direct estimation via gradient descent.
+**Key Insight**: The CQC estimation problem is cast as M-estimation — a loss function is constructed whose minimizer is the CQC, and a doubly robust expression for its gradient is derived, enabling direct estimation via gradient descent.
 
 **Core Idea**: By constructing a loss function and deriving its doubly robust gradient, the method bypasses intermediate function inversion, achieving for the first time direct parametric estimation of the CQC.
 

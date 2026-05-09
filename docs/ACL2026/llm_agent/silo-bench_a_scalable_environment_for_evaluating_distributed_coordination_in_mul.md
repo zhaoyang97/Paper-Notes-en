@@ -29,15 +29,15 @@ This paper introduces SILO-BENCH, a role-agnostic benchmark for evaluating distr
 
 ## Background & Motivation
 
-**State of the Field**: The limited context window of LLMs is a fundamental bottleneck for processing large-scale information. Multi-agent systems (MAS) address this by distributing global information across multiple agents, analogous to classical distributed computing paradigms such as MapReduce.
+**Background**: The limited context window of LLMs is a fundamental bottleneck for processing large-scale information. Multi-agent systems (MAS) address this by distributing global information across multiple agents, analogous to classical distributed computing paradigms such as MapReduce.
 
 **Limitations of Prior Work**: (1) Existing multi-agent benchmarks either predefine fixed communication structures (CAMEL, MetaGPT) or focus on social simulation rather than computational collaboration (Generative Agents), both introducing inductive biases. (2) Role assignments (e.g., "doctor", "manager") entangle agents' reasoning capabilities with semantic role priors, making it difficult to isolate the contribution of communication architecture. (3) A core question remains unexplored: can LLMs compute globally correct answers through coordination under information silo conditions?
 
-**Root Cause**: While multi-agent systems theoretically overcome context limitations via distributed collaboration, it remains unknown whether LLMs genuinely possess "distributed reasoning" capabilities—i.e., the ability to start from local information and achieve global consistency through coordination.
+**Key Challenge**: While multi-agent systems theoretically overcome context limitations via distributed collaboration, it remains unknown whether LLMs genuinely possess "distributed reasoning" capabilities—i.e., the ability to start from local information and achieve global consistency through coordination.
 
-**Paper Goals**: (1) Construct a role-agnostic, configurable evaluation environment for distributed coordination; (2) Systematically study the effects of agent scale, communication protocols, and model capability on coordination performance; (3) Pinpoint the specific stage at which coordination fails.
+**Goal**: (1) Construct a role-agnostic, configurable evaluation environment for distributed coordination; (2) Systematically study the effects of agent scale, communication protocols, and model capability on coordination performance; (3) Pinpoint the specific stage at which coordination fails.
 
-**Starting Point**: Drawing on Yao's communication complexity theory, tasks are partitioned into three levels by optimal communication complexity—Aggregation ($O(N)$, star topology), Mesh Network ($O(N)$, chain propagation), and Global Shuffle ($O(N \log N)$ to $O(N^2)$, fully connected)—providing a theoretical anchor for task difficulty.
+**Key Insight**: Drawing on Yao's communication complexity theory, tasks are partitioned into three levels by optimal communication complexity—Aggregation ($O(N)$, star topology), Mesh Network ($O(N)$, chain propagation), and Global Shuffle ($O(N \log N)$ to $O(N^2)$, fully connected)—providing a theoretical anchor for task difficulty.
 
 **Core Idea**: Multi-agent LLM systems exhibit a fundamental **communication-reasoning gap**: agents can spontaneously discover appropriate communication topologies and exchange information sufficiently, yet fail to correctly integrate the acquired distributed information into a global answer.
 

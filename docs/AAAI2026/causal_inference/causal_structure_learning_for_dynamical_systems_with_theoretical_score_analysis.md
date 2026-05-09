@@ -30,15 +30,15 @@ This paper proposes CaDyT, which combines Gaussian process-based continuous-time
 
 ### State of the Field
 
-**State of the Field**: Real-world dynamical systems evolve in continuous time, and causal discovery requires inferring dependencies among variables from observed time series. Existing methods either assume discrete time (DBN-based methods suffer from discretization errors) or cannot handle irregular sampling.
+**Background**: Real-world dynamical systems evolve in continuous time, and causal discovery requires inferring dependencies among variables from observed time series. Existing methods either assume discrete time (DBN-based methods suffer from discretization errors) or cannot handle irregular sampling.
 
 **Limitations of Prior Work**: (1) DyNoTears and VARLiNGAM assume uniform sampling intervals; (2) PC-MCI+ handles irregular data but cannot distinguish causal direction; (3) there are no theoretical scoring guarantees for structural search.
 
-**Root Cause**: Continuous-time modeling and causal structure identification have previously been studied independently and have not been unified.
+**Key Challenge**: Continuous-time modeling and causal structure identification have previously been studied independently and have not been unified.
 
-**Paper Goals**: Address irregular sampling and causal structure learning simultaneously within a unified framework.
+**Goal**: Address irregular sampling and causal structure learning simultaneously within a unified framework.
 
-**Starting Point**: GP exact inference + Adams-Bashforth multi-step integrators (for continuous-time modeling) + MDL scoring (theoretical guarantee for structure search).
+**Key Insight**: GP exact inference + Adams-Bashforth multi-step integrators (for continuous-time modeling) + MDL scoring (theoretical guarantee for structure search).
 
 **Core Idea**: Use GP+AB integrators for continuous-time modeling, and MDL scores for causal structure search, which can be theoretically shown to be a BIC-type regularized log-likelihood.
 

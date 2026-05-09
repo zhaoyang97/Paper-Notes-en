@@ -27,7 +27,7 @@ content_hash: 043a923721c56f2b
 This paper proposes ProgressiveAvatars, a progressive avatar representation that constructs hierarchical 3DGS via adaptive implicit subdivision on a template mesh, enabling progressive transmission and rendering under varying bandwidth and compute constraints. With only 5% of the data (2.6 MB), a usable avatar is immediately renderable, and incremental loading smoothly improves quality to a level comparable with state-of-the-art methods.
 
 ## Background & Motivation
-**State of the Field**: High-fidelity real-time head avatars are a critical technology for immersive interaction. 3DGS has become the dominant explicit representation due to its efficient rendering. Methods such as GaussianAvatars, FlashAvatar, and MeGA have achieved high-quality animatable avatars.
+**Background**: High-fidelity real-time head avatars are a critical technology for immersive interaction. 3DGS has become the dominant explicit representation due to its efficient rendering. Methods such as GaussianAvatars, FlashAvatar, and MeGA have achieved high-quality animatable avatars.
 
 **Limitations of Prior Work**:
 - In multi-user dynamic scenarios such as social VR, transmitting high-fidelity avatars as traditional static assets causes severe startup latency and bandwidth spikes; users must wait for the complete download before any rendering is possible.
@@ -35,9 +35,9 @@ This paper proposes ProgressiveAvatars, a progressive avatar representation that
 - Existing LOD methods (LoDAvatar, ArchitectHead) rely on a discrete LOD switching paradigm, requiring multiple independent model copies, which introduces significant storage redundancy and resource-switching latency.
 - Uniform subdivision (e.g., LoDAvatar) over-refines smooth regions while under-refining high-frequency regions, wasting resources.
 
-**Root Cause**: How to achieve progressive transmission and rendering within a single unified asset—supporting immediately animatable rendering at arbitrary transmission ratios—without introducing discrete asset switching or storage redundancy.
+**Key Challenge**: How to achieve progressive transmission and rendering within a single unified asset—supporting immediately animatable rendering at arbitrary transmission ratios—without introducing discrete asset switching or storage redundancy.
 
-**Starting Point**: Construct hierarchical 3DGS using face-local coordinate systems on the FLAME template mesh, with adaptive implicit subdivision for on-demand detail growth and importance-ordered sorting for continuous streaming.
+**Key Insight**: Construct hierarchical 3DGS using face-local coordinate systems on the FLAME template mesh, with adaptive implicit subdivision for on-demand detail growth and importance-ordered sorting for continuous streaming.
 
 **Core Idea**: Build a hierarchical forest via adaptive implicit subdivision on FLAME mesh faces, and leverage per-face importance scores to enable progressive transmission and rendering through incremental loading.
 

@@ -28,16 +28,16 @@ This paper proposes Decentralized Isolation Networks (DIsoN), which detects OOD 
 
 ## Background & Motivation
 
-**State of the Field**: Safe deployment of ML models in medical imaging requires OOD detection capabilities. Existing methods fall into two categories: post-hoc methods (MSP, Energy, Mahalanobis distance, etc.) and training-time regularization methods (CIDER, PALM, etc.).
+**Background**: Safe deployment of ML models in medical imaging requires OOD detection capabilities. Existing methods fall into two categories: post-hoc methods (MSP, Energy, Mahalanobis distance, etc.) and training-time regularization methods (CIDER, PALM, etc.).
 
 **Limitations of Prior Work**:
    - Most OOD detection methods do **not use training data** after deployment, relying solely on indirect representations from model outputs or latent spaces.
    - Methods that do leverage training data (KNN, density estimation) require storing training data or embeddings at the deployment site, which is infeasible due to privacy, regulatory, and storage constraints.
    - Indirect representations (e.g., summary statistics, prototypes, synthetic samples) fail to faithfully capture all characteristics of the original training data.
 
-**Root Cause**: Direct comparison with training data is most effective for OOD detection, yet data sharing is generally infeasible in clinical settings.
+**Key Challenge**: Direct comparison with training data is most effective for OOD detection, yet data sharing is generally infeasible in clinical settings.
 
-**Starting Point**: Drawing inspiration from the "isolation" principle of Isolation Forest and the parameter exchange mechanism of federated learning, using convergence speed as the OOD score.
+**Key Insight**: Drawing inspiration from the "isolation" principle of Isolation Forest and the parameter exchange mechanism of federated learning, using convergence speed as the OOD score.
 
 **Core Idea**: A binary classifier is trained to separate a single test sample from training data. OOD samples are easily isolated (fast convergence), while in-distribution (ID) samples share features with training data and are difficult to isolate (slow convergence). Decentralized training eliminates the need for data sharing.
 

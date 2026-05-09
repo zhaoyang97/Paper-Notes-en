@@ -29,15 +29,15 @@ QuaMo proposes a 3D human kinematics capture method based on quaternion differen
 
 ## Background & Motivation
 
-**State of the Field**: Monocular 3D human motion capture remains highly challenging in computer vision. While conventional 3D pose estimation methods (e.g., PoseFormer, HMR2.0) achieve high accuracy on distance metrics, they disregard temporal consistency across consecutive frames, resulting in jitter and unnatural artifacts. Recent kinematic methods enforce temporal consistency by incorporating physical models of velocity and acceleration.
+**Background**: Monocular 3D human motion capture remains highly challenging in computer vision. While conventional 3D pose estimation methods (e.g., PoseFormer, HMR2.0) achieve high accuracy on distance metrics, they disregard temporal consistency across consecutive frames, resulting in jitter and unnatural artifacts. Recent kinematic methods enforce temporal consistency by incorporating physical models of velocity and acceleration.
 
 **Limitations of Prior Work**: Existing kinematic methods (e.g., SimPoE, HuMoR, DnD) predominantly represent joint rotations using Euler angles. Although intuitive, Euler angles suffer from two fundamental issues: (1) singularities (gimbal lock) and (2) discontinuities (wraparound at 0 and $2\pi$), causing joints to erroneously reverse direction near angular boundaries. This makes motion reconstruction highly unstable—particularly in online settings where retrospective optimization is infeasible.
 
-**Root Cause**: Quaternions are naturally free of discontinuities and can represent all 3D rotations; however, their derivatives cannot be approximated via simple finite differences due to the rotation constraint, requiring special operations based on the Hamilton product. Furthermore, existing PD controllers respond insufficiently to rapid motion changes.
+**Key Challenge**: Quaternions are naturally free of discontinuities and can represent all 3D rotations; however, their derivatives cannot be approximated via simple finite differences due to the rotation constraint, requiring special operations based on the Hamilton product. Furthermore, existing PD controllers respond insufficiently to rapid motion changes.
 
-**Paper Goals**: (1) Replace Euler angles with quaternions as the joint rotation representation; (2) strictly solve the QDE under the unit quaternion sphere constraint $\mathcal{S}^3$; (3) design an adaptive acceleration augmentation mechanism to handle fast motion changes.
+**Goal**: (1) Replace Euler angles with quaternions as the joint rotation representation; (2) strictly solve the QDE under the unit quaternion sphere constraint $\mathcal{S}^3$; (3) design an adaptive acceleration augmentation mechanism to handle fast motion changes.
 
-**Starting Point**: Quaternions have been widely adopted for attitude control in aerospace and robotics, yet their systematic application to human kinematics remains largely unexplored. This work imports quaternion differential equations and constrained integration methods from aerospace into human motion capture.
+**Key Insight**: Quaternions have been widely adopted for attitude control in aerospace and robotics, yet their systematic application to human kinematics remains largely unexplored. This work imports quaternion differential equations and constrained integration methods from aerospace into human motion capture.
 
 **Core Idea**: Quaternions combined with the Hamilton product enable exact solutions to the rotational differential equation (eliminating Euler angle discontinuities); a second-order finite difference of reference poses adaptively augments the PD control signal to improve tracking of fast motions.
 

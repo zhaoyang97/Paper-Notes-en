@@ -36,7 +36,7 @@ Limitations of prior work:
 - **Language-guided grasping methods** (SemGrasp, AffordDexGrasp, etc.): primarily generate static grasp poses, neglect temporal structure, and cannot produce smooth, continuous manipulation sequences.
 - **Existing VLM-based manipulation methods** (MotionGPT, HOIGPT, etc.): mainly target digital hands or low-DoF grippers, lacking cross-morphology generalization and physical feasibility guarantees.
 
-**Paper Goals**: Generate dynamic dexterous manipulation sequences directly from images and open-vocabulary instructions, supporting multiple hand morphologies without relying on teleoperation data.
+**Goal**: Generate dynamic dexterous manipulation sequences directly from images and open-vocabulary instructions, supporting multiple hand morphologies without relying on teleoperation data.
 
 ## Method
 

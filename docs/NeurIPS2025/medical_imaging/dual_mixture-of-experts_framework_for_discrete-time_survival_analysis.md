@@ -28,15 +28,15 @@ This paper proposes a Dual Mixture-of-Experts (Dual MoE) framework for discrete-
 
 ## Background & Motivation
 
-**State of the Field**: Survival analysis aims to predict the time-to-event and is widely used in clinical and biomedical research. The classical Cox Proportional Hazards (CPH) model assumes a time-constant hazard ratio. Deep learning approaches (e.g., DeepHit, ConSurv) replace the CPH constraint with flexible neural networks to model non-proportional hazards.
+**Background**: Survival analysis aims to predict the time-to-event and is widely used in clinical and biomedical research. The classical Cox Proportional Hazards (CPH) model assumes a time-constant hazard ratio. Deep learning approaches (e.g., DeepHit, ConSurv) replace the CPH constraint with flexible neural networks to model non-proportional hazards.
 
 **Limitations of Prior Work**: Most deep survival models still rely on a single shared feature encoder and a single hazard network. However, patient populations exhibit heterogeneous subgroups (e.g., ER+/ER−, HER2+/HER2−), and a single encoder tends to be biased toward dominant patterns. Moreover, hazards vary not only across patients but also over time—different patients may exhibit fundamentally different risk trajectories at the same time point.
 
-**Root Cause**: A single network binds all patients and all time intervals to one shared functional form, which is insufficient to capture the interplay between patient heterogeneity and temporal dynamics.
+**Key Challenge**: A single network binds all patients and all time intervals to one shared functional form, which is insufficient to capture the interplay between patient heterogeneity and temporal dynamics.
 
-**Paper Goals**: How can patient subgroup differences and temporal variation be modeled simultaneously at both the feature encoding and risk prediction levels?
+**Goal**: How can patient subgroup differences and temporal variation be modeled simultaneously at both the feature encoding and risk prediction levels?
 
-**Starting Point**: Introduce Mixture-of-Experts (MoE) into survival analysis, employing multiple expert networks at both the feature encoding and hazard prediction stages, with soft routing enabling subgroup-aware and time-aware modeling.
+**Key Insight**: Introduce Mixture-of-Experts (MoE) into survival analysis, employing multiple expert networks at both the feature encoding and hazard prediction stages, with soft routing enabling subgroup-aware and time-aware modeling.
 
 **Core Idea**: Apply MoE independently at the feature encoding and hazard prediction stages, using patient-feature-driven routing and joint patient-plus-time-driven routing to achieve fine-grained survival modeling.
 

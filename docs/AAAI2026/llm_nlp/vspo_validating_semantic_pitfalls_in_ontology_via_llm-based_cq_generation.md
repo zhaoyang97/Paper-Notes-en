@@ -29,15 +29,15 @@ This paper proposes the VSPO framework, which constructs a definition–axiom mi
 
 ## Background & Motivation
 
-**State of the Field**: Competency Questions (CQs) are a central tool for ontology validation, used to define the knowledge scope of an ontology and verify whether it correctly encodes the intended knowledge. Prior work has explored using LLMs to automate CQ generation.
+**Background**: Competency Questions (CQs) are a central tool for ontology validation, used to define the knowledge scope of an ontology and verify whether it correctly encodes the intended knowledge. Prior work has explored using LLMs to automate CQ generation.
 
 **Limitations of Prior Work**: Existing LLM-based approaches primarily evaluate generation quality based on similarity to existing CQ datasets, without genuinely assessing whether the generated CQs can detect semantic pitfalls in ontologies—such as confusion between `allValuesFrom` and `someValuesFrom`, or misuse of `union` instead of `intersection`.
 
-**Root Cause**: Semantic pitfalls (e.g., "P10. Missing disjointness" in the OOPS! catalog) cannot be detected by standard reasoners or rule-based methods and require manual expert review. Automated detection of such pitfalls remains an open challenge.
+**Key Challenge**: Semantic pitfalls (e.g., "P10. Missing disjointness" in the OOPS! catalog) cannot be detected by standard reasoners or rule-based methods and require manual expert review. Automated detection of such pitfalls remains an open challenge.
 
-**Paper Goals**: How can CQs that specifically target the detection of ontology semantic pitfalls be generated automatically?
+**Goal**: How can CQs that specifically target the detection of ontology semantic pitfalls be generated automatically?
 
-**Starting Point**: The paper formalizes controlled "misalignments" between natural language definitions and axioms as a training signal, enabling an LLM to learn to identify inconsistencies and generate validation questions targeting them.
+**Key Insight**: The paper formalizes controlled "misalignments" between natural language definitions and axioms as a training signal, enabling an LLM to learn to identify inconsistencies and generate validation questions targeting them.
 
 **Core Idea**: Semantic pitfalls are formalized as three types of misalignment (missing axiom, undefined axiom, misused axiom). An LLM generates definitions, misalignments are injected, template-based CQs serve as training labels, and LLaMA is fine-tuned to generate validating CQs.
 

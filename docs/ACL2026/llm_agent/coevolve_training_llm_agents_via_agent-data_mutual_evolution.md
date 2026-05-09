@@ -28,15 +28,15 @@ CoEvolve proposes an **agent-data co-evolution framework** that extracts three t
 
 ## Background & Motivation
 
-**State of the Field**: LLM agents are typically trained via RL in interactive environments, but the source of training data remains a core bottleneck—either relying on costly human expert trajectories with limited coverage, or using LLMs to synthesize static data that lacks feedback and cannot adapt to agent evolution.
+**Background**: LLM agents are typically trained via RL in interactive environments, but the source of training data remains a core bottleneck—either relying on costly human expert trajectories with limited coverage, or using LLMs to synthesize static data that lacks feedback and cannot adapt to agent evolution.
 
 **Limitations of Prior Work**: (1) Human expert trajectories are "static snapshots" that fail to cover real-world long-tail variants (e.g., a button label change from "Book Now" to "Reserve Now" causes failure); (2) LLM-synthesized data reduces human dependency but relies on random exploration, resulting in shallow and incomplete environment coverage; (3) More critically, synthesized data is static and cannot adjust as the agent's capabilities evolve—skills already mastered are over-trained while weaknesses are neglected.
 
-**Root Cause**: The agent's capabilities continuously change, yet the training data distribution remains fixed—the absence of closed-loop feedback renders training inefficient and prevents sustained improvement.
+**Key Challenge**: The agent's capabilities continuously change, yet the training data distribution remains fixed—the absence of closed-loop feedback renders training inefficient and prevents sustained improvement.
 
-**Paper Goals**: Design a framework requiring no human supervision that dynamically adjusts the training data distribution according to the agent's evolving weaknesses, realizing a closed loop of "agent improves → new weaknesses discovered → targeted data synthesized → agent improves further."
+**Goal**: Design a framework requiring no human supervision that dynamically adjusts the training data distribution according to the agent's evolving weaknesses, realizing a closed loop of "agent improves → new weaknesses discovered → targeted data synthesized → agent improves further."
 
-**Starting Point**: Leverage trajectory replay signals from the training process (forgetting, boundary, and rare patterns) to identify specific agent weaknesses, and use these signals to guide directed LLM environment exploration.
+**Key Insight**: Leverage trajectory replay signals from the training process (forgetting, boundary, and rare patterns) to identify specific agent weaknesses, and use these signals to guide directed LLM environment exploration.
 
 **Core Idea**: Extract weakness signals from RL training rollout trajectories, conditionally guide LLMs to re-explore the environment, synthesize new weakness-targeted tasks, update the training distribution, and form a closed agent-data co-evolution loop.
 

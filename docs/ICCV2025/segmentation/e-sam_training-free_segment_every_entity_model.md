@@ -33,7 +33,7 @@ E-SAM is a training-free framework that systematically addresses over-segmentati
 
 ### State of the Field
 
-**State of the Field**: Entity Segmentation (ES) aims to segment all visually distinguishable entities in an image without relying on predefined category labels. Unlike conventional semantic/instance/panoptic segmentation, ES is category-agnostic and more closely aligned with human visual perception. Representative methods such as EntitySeg and CropFormer depend on large amounts of annotated data, incur high training costs, and exhibit limited generalization capability.
+**Background**: Entity Segmentation (ES) aims to segment all visually distinguishable entities in an image without relying on predefined category labels. Unlike conventional semantic/instance/panoptic segmentation, ES is category-agnostic and more closely aligned with human visual perception. Representative methods such as EntitySeg and CropFormer depend on large amounts of annotated data, incur high training costs, and exhibit limited generalization capability.
 
 **SAM's Potential and Limitations**:
 
@@ -43,11 +43,11 @@ E-SAM is a training-free framework that systematically addresses over-segmentati
 
 ### Root Cause
 
-**Root Cause**: **Limitations**: AMG generates 3-level masks (object/part/subpart) for each sampled point, then applies simple NMS for deduplication. This strategy leads to severe **over-segmentation** (retaining too many overlapping masks) and **under-segmentation** (incorrectly removing critical masks, missing entities or fine details).
+**Key Challenge**: **Limitations**: AMG generates 3-level masks (object/part/subpart) for each sampled point, then applies simple NMS for deduplication. This strategy leads to severe **over-segmentation** (retaining too many overlapping masks) and **under-segmentation** (incorrectly removing critical masks, missing entities or fine details).
 
-**Root Cause**: SAM's AMG produces a large number of multi-granularity masks but lacks an effective post-processing strategy to organize them into accurate entity-level segmentation maps. Simple NMS cannot handle the complex overlap relationships among multi-granularity masks.
+**Key Challenge**: SAM's AMG produces a large number of multi-granularity masks but lacks an effective post-processing strategy to organize them into accurate entity-level segmentation maps. Simple NMS cannot handle the complex overlap relationships among multi-granularity masks.
 
-**Paper Goals**: How to efficiently obtain high-quality entity-level segmentation from SAM's AMG output without any additional training.
+**Goal**: How to efficiently obtain high-quality entity-level segmentation from SAM's AMG output without any additional training.
 
 ## Method
 

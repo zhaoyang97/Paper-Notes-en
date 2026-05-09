@@ -29,11 +29,11 @@ O2MAG proposes a training-free few-shot anomaly generation method that synthesiz
 
 ## Background & Motivation
 
-1. **State of the Field**: Industrial anomaly detection suffers from severe data imbalance—normal images are abundant while anomaly images are scarce. Existing anomaly synthesis methods fall into two categories: training-based (e.g., DreamBooth fine-tuning, textual inversion) and training-free approaches.
+1. **Background**: Industrial anomaly detection suffers from severe data imbalance—normal images are abundant while anomaly images are scarce. Existing anomaly synthesis methods fall into two categories: training-based (e.g., DreamBooth fine-tuning, textual inversion) and training-free approaches.
 2. **Limitations of Prior Work**: Training-based methods incur substantial computational and storage overhead and are prone to overfitting under few-shot settings. The only prior training-free method, AnomalyAny, manipulates only cross-attention and fails to precisely control anomaly semantics and spatial layout, resulting in insufficiently realistic generations.
-3. **Root Cause**: Industrial defects are extremely rare in Stable Diffusion's training data; simple text prompts cannot accurately describe defect semantics, causing generated images to deviate from the true anomaly distribution.
-4. **Paper Goals**: Leverage the intrinsic priors of diffusion models to synthesize diverse and realistic anomalies from a single reference anomaly image without any training.
-5. **Starting Point**: PCA analysis of self-attention maps reveals that anomaly foregrounds and normal backgrounds are naturally separated in attention space, enabling cross-branch information transfer by manipulating self-attention K/V features.
+3. **Key Challenge**: Industrial defects are extremely rare in Stable Diffusion's training data; simple text prompts cannot accurately describe defect semantics, causing generated images to deviate from the true anomaly distribution.
+4. **Goal**: Leverage the intrinsic priors of diffusion models to synthesize diverse and realistic anomalies from a single reference anomaly image without any training.
+5. **Key Insight**: PCA analysis of self-attention maps reveals that anomaly foregrounds and normal backgrounds are naturally separated in attention space, enabling cross-branch information transfer by manipulating self-attention K/V features.
 6. **Core Idea**: Tri-branch parallel diffusion combined with mask-guided self-attention grafting, extracting foreground defect features from the reference anomaly branch and background features from the normal image branch.
 
 ## Method

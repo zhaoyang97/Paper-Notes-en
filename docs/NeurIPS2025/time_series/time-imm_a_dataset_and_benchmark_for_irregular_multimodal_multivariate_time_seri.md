@@ -28,15 +28,15 @@ This work constructs Time-IMM — the first multimodal multivariate time series 
 
 ## Background & Motivation
 
-**State of the Field**: Time series analysis is widely applied in domains such as healthcare, climate science, and finance. Existing benchmarks (UCR / M4 / Time-MMD) assume clean, uniformly sampled, unimodal data.
+**Background**: Time series analysis is widely applied in domains such as healthcare, climate science, and finance. Existing benchmarks (UCR / M4 / Time-MMD) assume clean, uniformly sampled, unimodal data.
 
 **Limitations of Prior Work**: (a) Real-world time series data is inherently irregular (variable sampling rates, asynchronous modalities, pervasive missingness); (b) existing irregular time series methods (GRU-D / Raindrop / mTAND) handle only unimodal numerical sequences; (c) no systematic taxonomy of irregularity causes exists — yet different causes require different modeling strategies.
 
-**Root Cause**: Models must simultaneously handle irregular sampling and cross-modal asynchronous fusion, yet no data or evaluation tools reflecting real-world complexity are available.
+**Key Challenge**: Models must simultaneously handle irregular sampling and cross-modal asynchronous fusion, yet no data or evaluation tools reflecting real-world complexity are available.
 
-**Paper Goals**: Construct the first multimodal time series benchmark that classifies irregularity by causal mechanism, together with a companion forecasting library.
+**Goal**: Construct the first multimodal time series benchmark that classifies irregularity by causal mechanism, together with a companion forecasting library.
 
-**Starting Point**: Irregularity is categorized by cause into three major classes and nine subtypes (Trigger / Constraint / Artifact), each paired with a real-world dataset, and each time series is paired with a text modality.
+**Key Insight**: Irregularity is categorized by cause into three major classes and nine subtypes (Trigger / Constraint / Artifact), each paired with a real-world dataset, and each time series is paired with a text modality.
 
 **Core Idea**: A causally-driven irregularity taxonomy combined with multimodal (numerical + text) asynchronous fusion drives time series analysis from idealized settings toward real-world complexity.
 

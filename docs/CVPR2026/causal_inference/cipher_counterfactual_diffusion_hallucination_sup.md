@@ -30,15 +30,15 @@ This paper proposes CIPHER, a training-free test-time hallucination suppression 
 
 ## Background & Motivation
 
-**State of the Field**: Large vision-language models (LVLMs) such as LLaVA, MiniGPT-4, and mPLUG-Owl2 exhibit strong performance on multimodal tasks, yet frequently produce hallucinations — generating descriptions inconsistent with visual inputs, such as fabricating non-existent objects, or mischaracterizing attributes and scenes.
+**Background**: Large vision-language models (LVLMs) such as LLaVA, MiniGPT-4, and mPLUG-Owl2 exhibit strong performance on multimodal tasks, yet frequently produce hallucinations — generating descriptions inconsistent with visual inputs, such as fabricating non-existent objects, or mischaracterizing attributes and scenes.
 
 **Limitations of Prior Work**: (1) Training-based methods (e.g., additional supervision signals, architectural modifications) require expensive annotations and retraining, limiting scalability. (2) Post-processing methods (e.g., Woodpecker, LURE) rely on external models for detection and correction, increasing system complexity and limiting generalization. (3) Contrastive decoding test-time methods (e.g., DoLa, VCD, OPERA) require multiple forward passes, incurring high inference overhead (throughput reduced to 0.05–0.42 items/s, far below greedy decoding at 0.70). (4) Existing feature-level intervention methods (e.g., Nullu) extract hallucination directions solely through text perturbation, overlooking hallucinations induced by the visual modality itself.
 
-**Root Cause**: LVLM hallucinations arise not only from language model generation biases (text-induced) but also from weak visual grounding and modality misalignment (vision-induced). However, existing methods almost exclusively address the former — text perturbation produces weaker and less stable hallucination signals (linear probe accuracy of only 0.73–0.80), whereas vision-induced hallucination directions are more structured and easier to isolate.
+**Key Challenge**: LVLM hallucinations arise not only from language model generation biases (text-induced) but also from weak visual grounding and modality misalignment (vision-induced). However, existing methods almost exclusively address the former — text perturbation produces weaker and less stable hallucination signals (linear probe accuracy of only 0.73–0.80), whereas vision-induced hallucination directions are more structured and easier to isolate.
 
-**Paper Goals**: To specifically identify and suppress hallucination directions induced by the visual modality, achieving more thorough hallucination mitigation in an efficient, training-free manner.
+**Goal**: To specifically identify and suppress hallucination directions induced by the visual modality, achieving more thorough hallucination mitigation in an efficient, training-free manner.
 
-**Starting Point**: Rather than perturbing text to identify hallucination directions (as in Nullu), the paper perturbs images — using a diffusion model to generate counterfactual images that are semantically altered but structurally preserved — and treats the representational difference between original and counterfactual images within the LVLM as the hallucination direction.
+**Key Insight**: Rather than perturbing text to identify hallucination directions (as in Nullu), the paper perturbs images — using a diffusion model to generate counterfactual images that are semantically altered but structurally preserved — and treats the representational difference between original and counterfactual images within the LVLM as the hallucination direction.
 
 **Core Idea**: By "making images lie" (diffusion-based editing to produce counterfactual images), CIPHER localizes the feature directions of visual hallucinations within LVLMs and eliminates them via orthogonal projection at inference time.
 

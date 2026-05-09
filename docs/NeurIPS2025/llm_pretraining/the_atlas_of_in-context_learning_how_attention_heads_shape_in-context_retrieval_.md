@@ -27,15 +27,15 @@ content_hash: 3f9c0c2cd0dabe25
 This paper systematically dissects the internal mechanisms of LLMs in in-context retrieval augmented QA using the AttnLRP attribution method. Three functionally specialized attention head types are identified — Task heads (middle layers, parsing instructions/questions), Retrieval heads (later layers, verbatim copying of contextual answers), and Parametric heads (encoding parametric knowledge) — and their functions are validated via Function Vector injection and source-tracking probes, achieving ROC AUC ≥94% on Llama-3.1/Mistral/Gemma.
 
 ## Background & Motivation
-**State of the Field**: LLMs answer questions by retrieving knowledge directly from in-context prompts via in-context learning. Prior work has identified patterns such as induction heads, but systematic analysis is lacking — particularly regarding how different attention heads divide labor in retrieval augmentation scenarios.
+**Background**: LLMs answer questions by retrieving knowledge directly from in-context prompts via in-context learning. Prior work has identified patterns such as induction heads, but systematic analysis is lacking — particularly regarding how different attention heads divide labor in retrieval augmentation scenarios.
 
 **Limitations of Prior Work**: (a) It remains unclear when LLMs use contextually provided information versus parametric memory; (b) existing analysis methods (e.g., inspecting attention weights alone) fail to capture the causal contribution of attention heads to outputs; (c) a consistent functional taxonomy across multiple models is absent.
 
-**Root Cause**: LLMs simultaneously rely on two knowledge sources (context vs. parameters) during in-context QA, yet how these compete and cooperate at the attention level remains opaque.
+**Key Challenge**: LLMs simultaneously rely on two knowledge sources (context vs. parameters) during in-context QA, yet how these compete and cooperate at the attention level remains opaque.
 
-**Paper Goals**: Construct an "attention head atlas" for LLM in-context retrieval — identifying which heads are responsible for which functions, and leveraging these findings to control and diagnose model behavior.
+**Goal**: Construct an "attention head atlas" for LLM in-context retrieval — identifying which heads are responsible for which functions, and leveraging these findings to control and diagnose model behavior.
 
-**Starting Point**: AttnLRP (attention-aware Layer-wise Relevance Propagation) is used for causal attribution, providing a more accurate measure of each head's contribution to outputs than inspecting attention weights alone.
+**Key Insight**: AttnLRP (attention-aware Layer-wise Relevance Propagation) is used for causal attribution, providing a more accurate measure of each head's contribution to outputs than inspecting attention weights alone.
 
 **Core Idea**: The three head types serve distinct roles — Task heads parse *what is being asked*, Retrieval heads execute *what to copy and from where*, and Parametric heads supply *what has been memorized* — all verifiable via Function Vector injection and probing.
 

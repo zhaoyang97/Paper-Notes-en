@@ -28,15 +28,15 @@ This paper proposes Laser, a framework that conducts visual reasoning in latent 
 
 ## Background & Motivation
 
-**State of the Field**: Vision-language models (VLMs) have achieved strong visual understanding by integrating LLMs with visual encoders, and Chain-of-Thought has been introduced to enable multi-step reasoning. Concurrently, latent-space reasoning methods (Coconut, SoftCoT, Monet, etc.) attempt to reason in high-dimensional hidden states to avoid the information loss inherent in explicit tokenization.
+**Background**: Vision-language models (VLMs) have achieved strong visual understanding by integrating LLMs with visual encoders, and Chain-of-Thought has been introduced to enable multi-step reasoning. Concurrently, latent-space reasoning methods (Coconut, SoftCoT, Monet, etc.) attempt to reason in high-dimensional hidden states to avoid the information loss inherent in explicit tokenization.
 
 **Limitations of Prior Work**: (1) Explicit textual reasoning suffers from an information bandwidth bottleneck, as continuous visual details are lost during discrete tokenization. (2) Existing latent reasoning methods still adopt the standard autoregressive objective, forcing each hidden state to strictly minimize prediction error for the next token, leading to "premature semantic collapse"—the model is compelled to focus on a single concrete token before grasping the global context. (3) This pointwise mapping is inconsistent with the hierarchical nature of visual perception, which proceeds from global semantics to local features.
 
-**Root Cause**: The strict per-token prediction objective is fundamentally misaligned with the hierarchical nature of visual reasoning—early reasoning steps should maintain openness to global semantics, only gradually narrowing to a specific answer.
+**Key Challenge**: The strict per-token prediction objective is fundamentally misaligned with the hierarchical nature of visual reasoning—early reasoning steps should maintain openness to global semantics, only gradually narrowing to a specific answer.
 
-**Paper Goals**: To design a latent reasoning paradigm that allows reasoning states to encode a "superposition" of global semantics in early steps, progressively narrowing toward locally precise information as reasoning advances.
+**Goal**: To design a latent reasoning paradigm that allows reasoning states to encode a "superposition" of global semantics in early steps, progressively narrowing toward locally precise information as reasoning advances.
 
-**Starting Point**: Inspired by the Global Precedence Hypothesis—human visual perception processes overall structure before local details—the paper redefines the reasoning objective from pointwise prediction to dynamic window alignment.
+**Key Insight**: Inspired by the Global Precedence Hypothesis—human visual perception processes overall structure before local details—the paper redefines the reasoning objective from pointwise prediction to dynamic window alignment.
 
 **Core Idea**: Replace the per-token prediction objective with a dynamic semantic window: at each step, the hidden state is not required to predict the next token but is instead aligned with a dynamic window containing all remaining reasoning steps. The window naturally shrinks as reasoning progresses, enabling a gradual transition from global exploration to local precision.
 

@@ -27,15 +27,15 @@ This paper establishes the first generalization bounds for adaptive analysis ove
 
 ## Background & Motivation
 
-**State of the Field**: Adaptive data analysis studies overfitting and statistical validity when data is reused across a workflow. Prior work has shown that interacting with data through differentially private algorithms can mitigate overfitting and yield asymptotically optimal generalization guarantees.
+**Background**: Adaptive data analysis studies overfitting and statistical validity when data is reused across a workflow. Prior work has shown that interacting with data through differentially private algorithms can mitigate overfitting and yield asymptotically optimal generalization guarantees.
 
 **Limitations of Prior Work**: All existing work assumes a static, fixed-size dataset, which fails to address the practical scenario where databases grow over time. In practice, analysts may dynamically decide when and how to query based on the current volume of data.
 
-**Root Cause**: Generalization bounds from static data analysis cannot be directly applied to dynamically growing data, as changes in dataset size affect the statistical power of queries and the degree of overfitting.
+**Key Challenge**: Generalization bounds from static data analysis cannot be directly applied to dynamically growing data, as changes in dataset size affect the statistical power of queries and the degree of overfitting.
 
-**Paper Goals**: Establish a generalization theory for adaptive analysis over dynamic, growing data.
+**Goal**: Establish a generalization theory for adaptive analysis over dynamic, growing data.
 
-**Starting Point**: Allow analysts to adaptively schedule queries (conditioned on current dataset size, historical queries, and responses), and introduce time-varying empirical accuracy bounds and mechanisms so that guarantees tighten as data accumulates.
+**Key Insight**: Allow analysts to adaptively schedule queries (conditioned on current dataset size, historical queries, and responses), and introduce time-varying empirical accuracy bounds and mechanisms so that guarantees tighten as data accumulates.
 
 **Core Idea**: Extend the differential-privacy-based adaptive data analysis framework to the dynamic data setting while preserving asymptotic optimality.
 

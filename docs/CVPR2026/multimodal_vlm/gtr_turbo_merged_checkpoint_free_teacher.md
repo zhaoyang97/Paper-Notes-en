@@ -28,11 +28,11 @@ This paper proposes GTR-Turbo, which generates a "free teacher model" by merging
 
 ## Background & Motivation
 
-1. **State of the Field**: Multi-turn reinforcement learning from verifiable rewards (RLVR) based on VLMs is an emerging paradigm for training visual agents, but faces core challenges including sparse rewards and long-horizon credit assignment. Methods such as GTR introduce external teacher models (e.g., GPT-4o) to provide step-level reasoning guidance, effectively addressing the "thought collapse" problem.
+1. **Background**: Multi-turn reinforcement learning from verifiable rewards (RLVR) based on VLMs is an emerging paradigm for training visual agents, but faces core challenges including sparse rewards and long-horizon credit assignment. Methods such as GTR introduce external teacher models (e.g., GPT-4o) to provide step-level reasoning guidance, effectively addressing the "thought collapse" problem.
 2. **Limitations of Prior Work**: GTR relies on expensive external teachers (GPT-4o), requiring approximately \$147 and 86 hours for 15,000 training steps; weaker teachers (e.g., Qwen2.5-VL-7B) fail to provide meaningful guidance; using a 72B model is feasible but slower (110h) and still incurs API costs.
-3. **Root Cause**: Strong teachers are necessary for effective training, yet strong teachers entail high cost and poor scalability. The central question becomes: can a model serve as its own teacher by leveraging its own training history?
-4. **Paper Goals**: Eliminate dependence on external privileged models and realize self-contained, scalable self-evolution training for VLM agents.
-5. **Starting Point**: The key insight is that historical checkpoints produced during RL training, when merged, consistently outperform the current model (as shown in Figure 2), making them natural teacher candidates. This stems from the property that model merging optimizes over a smoother loss landscape and effectively retains historical experience.
+3. **Key Challenge**: Strong teachers are necessary for effective training, yet strong teachers entail high cost and poor scalability. The central question becomes: can a model serve as its own teacher by leveraging its own training history?
+4. **Goal**: Eliminate dependence on external privileged models and realize self-contained, scalable self-evolution training for VLM agents.
+5. **Key Insight**: The key insight is that historical checkpoints produced during RL training, when merged, consistently outperform the current model (as shown in Figure 2), making them natural teacher candidates. This stems from the property that model merging optimizes over a smoother loss landscape and effectively retains historical experience.
 6. **Core Idea**: Merge historical checkpoints from RL training into a free teacher model to replace costly external API-based teachers.
 
 ## Method

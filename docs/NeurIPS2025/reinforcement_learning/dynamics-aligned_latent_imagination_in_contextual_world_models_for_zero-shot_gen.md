@@ -28,15 +28,15 @@ DALI, a self-supervised context encoder, is introduced into the DreamerV3 archit
 
 ## Background & Motivation
 
-**State of the Field**: Contextual Markov Decision Processes (cMDPs) model environment variations via latent parameters (gravity, friction, actuator strength, etc.). Most existing methods rely on explicit context variable inputs, which are effective in controlled settings but difficult to scale.
+**Background**: Contextual Markov Decision Processes (cMDPs) model environment variations via latent parameters (gravity, friction, actuator strength, etc.). Most existing methods rely on explicit context variable inputs, which are effective in controlled settings but difficult to scale.
 
 **Limitations of Prior Work**: (a) Explicit context annotations are costly or infeasible to obtain in practice; (b) DreamerV3's RSSM compresses all information into a fixed-size GRU hidden state $h_t$, creating an information bottleneck where context signals may be lost amid competition from dynamic states and noise; (c) RSSM requires full episode-length $T$ interactions to reliably identify context, leading to slow adaptation.
 
-**Root Cause**: DreamerV3's recurrent state simultaneously handles dynamics modeling and context inference, and its limited capacity causes mutual interference between the two objectives.
+**Key Challenge**: DreamerV3's recurrent state simultaneously handles dynamics modeling and context inference, and its limited capacity causes mutual interference between the two objectives.
 
-**Paper Goals**: Design a decoupled context inference module that efficiently extracts context representations from short interaction windows, enabling the world model and policy to generalize zero-shot to unseen contexts.
+**Goal**: Design a decoupled context inference module that efficiently extracts context representations from short interaction windows, enabling the world model and policy to generalize zero-shot to unseen contexts.
 
-**Starting Point**: Forward dynamics prediction is used as a self-supervised signal — if a context representation can accurately predict the next observation, it necessarily encodes the key parameters governing the dynamics.
+**Key Insight**: Forward dynamics prediction is used as a self-supervised signal — if a context representation can accurately predict the next observation, it necessarily encodes the key parameters governing the dynamics.
 
 **Core Idea**: A dedicated context encoder is trained via self-supervised forward dynamics alignment, decoupling context inference from dynamics modeling and endowing DreamerV3 with zero-shot contextual generalization.
 

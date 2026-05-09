@@ -27,7 +27,7 @@ This paper proposes the Truncated Polynomial Classifier (TPC), which enables dyn
 
 ## Background & Motivation
 
-**State of the Field**: LLM safety monitoring is dominated by two paradigms — LLM-as-Judge natural language auditing (expensive but powerful) and activation-space linear probes (lightweight but static). The former incurs a fixed high cost per query; the latter provides only a minimal, static line of defense.
+**Background**: LLM safety monitoring is dominated by two paradigms — LLM-as-Judge natural language auditing (expensive but powerful) and activation-space linear probes (lightweight but static). The former incurs a fixed high cost per query; the latter provides only a minimal, static line of defense.
 
 **Limitations of Prior Work**:
 - Linear probes are static and cannot adjust protection strength based on input difficulty or available compute budget.
@@ -35,14 +35,14 @@ This paper proposes the Truncated Polynomial Classifier (TPC), which enables dyn
 - Recent cascading work (e.g., McKenzie et al., 2025) still requires additional LLM fine-tuning/prompting and extra inference calls.
 - The linear representation hypothesis assumes high-level concepts are encoded in one-dimensional subspaces, yet growing evidence suggests not all features exhibit simple linear structure.
 
-**Root Cause**: Safety monitoring faces an inherent cost–accuracy trade-off. Most requests are benign and require no strong protection, yet a small fraction of ambiguous or adversarial requests demands greater discriminative power. Existing methods either process all inputs at maximum cost or at minimum accuracy.
+**Key Challenge**: Safety monitoring faces an inherent cost–accuracy trade-off. Most requests are benign and require no strong protection, yet a small fraction of ambiguous or adversarial requests demands greater discriminative power. Existing methods either process all inputs at maximum cost or at minimum accuracy.
 
-**Paper Goals**:
+**Goal**:
 - How can a single safety monitor operate effectively across varying compute budgets?
 - How can a monitor quickly pass easy inputs while deeply inspecting difficult ones?
 - How can classification capability be improved while preserving interpretability (compared to black-box MLPs)?
 
-**Starting Point**: Drawing inspiration from test-time compute scaling — compute should be allocated dynamically at inference time rather than fixed in advance. Polynomials possess a naturally additive, order-by-order structure that is well suited to progressive computation.
+**Key Insight**: Drawing inspiration from test-time compute scaling — compute should be allocated dynamically at inference time rather than fixed in advance. Polynomials possess a naturally additive, order-by-order structure that is well suited to progressive computation.
 
 **Core Idea**: Generalize linear probes into truncatable polynomial classifiers. Order-by-order training produces a family of nested sub-models; at inference time, evaluation is truncated on demand — low orders recover the linear probe, while higher orders provide stronger protection.
 

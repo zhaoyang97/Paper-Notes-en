@@ -36,7 +36,7 @@ A feed-forward 3D scene generation method based on latent diffusion models that 
     - Multi-view diffusion + per-scene optimization methods (e.g., CAT3D): generate 800 images → optimize 3DGS/NeRF, requiring minutes to hours.
     - Feed-forward regression methods (Flash3D, DepthSplat): fast but unable to handle ambiguity (blurry unseen regions).
     - Feed-forward generative methods (LatentSplat, Wonderland): either limited to single categories or reliant on slow video models (~5 min/scene).
-4. **Root Cause**: How to achieve second-level inference while maintaining high-quality 3D generation?
+4. **Key Challenge**: How to achieve second-level inference while maintaining high-quality 3D generation?
 
 ## Core Problem
 

@@ -29,11 +29,11 @@ This paper proposes MA-Bench, a micro-action understanding benchmark comprising 
 
 ## Background & Motivation
 
-1. **State of the Field**: Micro-actions are spontaneous subtle body movements triggered by emotional changes and are critical for interpersonal interaction and affective state analysis. Existing micro-action datasets such as iMiGUE, SMG, and MA-52 primarily serve traditional classification models.
+1. **Background**: Micro-actions are spontaneous subtle body movements triggered by emotional changes and are critical for interpersonal interaction and affective state analysis. Existing micro-action datasets such as iMiGUE, SMG, and MA-52 primarily serve traditional classification models.
 2. **Limitations of Prior Work**: Although MLLMs have advanced rapidly in video understanding, micro-action understanding remains entirely unexplored — no dedicated evaluation benchmark exists. Existing video understanding benchmarks (e.g., MVBench, Video-MME) focus on everyday activities and long videos, without addressing fine-grained micro-actions.
-3. **Root Cause**: Micro-actions are extremely subtle (average duration of only 2.12 seconds, involving localized movements of fingers, head, etc.), and whether current MLLMs can capture such fine-grained motion is completely unknown.
-4. **Paper Goals**: (1) Construct a benchmark specifically designed to evaluate MLLM micro-action understanding; (2) Design a multi-tier evaluation framework spanning from perception to reasoning; (3) Provide training data to support model improvement.
-5. **Starting Point**: Building upon the Micro-Action-52 dataset, the paper utilizes optical flow and skeleton information to construct motion descriptors, which are subsequently fed into an MLLM to generate structured annotations.
+3. **Key Challenge**: Micro-actions are extremely subtle (average duration of only 2.12 seconds, involving localized movements of fingers, head, etc.), and whether current MLLMs can capture such fine-grained motion is completely unknown.
+4. **Goal**: (1) Construct a benchmark specifically designed to evaluate MLLM micro-action understanding; (2) Design a multi-tier evaluation framework spanning from perception to reasoning; (3) Provide training data to support model improvement.
+5. **Key Insight**: Building upon the Micro-Action-52 dataset, the paper utilizes optical flow and skeleton information to construct motion descriptors, which are subsequently fed into an MLLM to generate structured annotations.
 6. **Core Idea**: Introduce the first micro-action understanding benchmark targeting MLLMs, exposing significant deficiencies in current models' ability to capture motion granularity and body-part dynamics.
 
 ## Method

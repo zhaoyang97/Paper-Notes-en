@@ -29,7 +29,7 @@ This paper proposes NRGPT (eNeRgy-GPT), which applies minimal modifications to s
 
 ## Background & Motivation
 
-**State of the Field**: The GPT architecture is the dominant paradigm for autoregressive language modeling, generating text via next-token prediction. Energy-based models (EBMs) represent another important paradigm, treating inference as a dynamical process on an energy landscape—low energy corresponds to plausible samples and high energy to anomalous ones. Although the two appear fundamentally different, a growing body of research suggests deep connections between them.
+**Background**: The GPT architecture is the dominant paradigm for autoregressive language modeling, generating text via next-token prediction. Energy-based models (EBMs) represent another important paradigm, treating inference as a dynamical process on an energy landscape—low energy corresponds to plausible samples and high energy to anomalous ones. Although the two appear fundamentally different, a growing body of research suggests deep connections between them.
 
 **Limitations of Prior Work**:
 1. **Unclear relationship between GPT and EBMs**: Von Oswald et al. showed that in-context learning (ICL) may implement gradient descent, but only for linear Transformers (without softmax), an oversimplification.
@@ -37,9 +37,9 @@ This paper proposes NRGPT (eNeRgy-GPT), which applies minimal modifications to s
 3. **Existing EBM-for-LLM work**: Methods such as EBT place energy computation at the output of a standard Transformer forward pass rather than treating the forward pass itself as an energy optimization process.
 4. **Lack of a theoretical framework that directly transforms GPT forward passes into energy landscape exploration**.
 
-**Root Cause**: How can the inference process of GPT acquire the theoretical advantages of EBMs—interpretability, systematic solution-space exploration, and a natural alignment mechanism—without altering the training paradigm (self-supervised next-token prediction)?
+**Key Challenge**: How can the inference process of GPT acquire the theoretical advantages of EBMs—interpretability, systematic solution-space exploration, and a natural alignment mechanism—without altering the training paradigm (self-supervised next-token prediction)?
 
-**Paper Goals**: Apply minimal modifications to a parallel Transformer (GPT-J style) by making the attention and feedforward networks the gradients of two separate energy functions, so that each forward pass becomes a single step of energy gradient descent.
+**Goal**: Apply minimal modifications to a parallel Transformer (GPT-J style) by making the attention and feedforward networks the gradients of two separate energy functions, so that each forward pass becomes a single step of energy gradient descent.
 
 ## Method
 

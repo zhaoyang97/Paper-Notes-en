@@ -28,10 +28,10 @@ GLSim is a training-free object hallucination detection method for LVLMs that co
 
 ## Background & Motivation
 
-- **State of the Field**: Large vision-language models (LVLMs) are prone to object hallucinations—generating descriptions of objects that do not exist in the image—which severely undermines reliable deployment in high-stakes domains such as medical imaging and autonomous driving.
+- **Background**: Large vision-language models (LVLMs) are prone to object hallucinations—generating descriptions of objects that do not exist in the image—which severely undermines reliable deployment in high-stakes domains such as medical imaging and autonomous driving.
 - **Limitations of Prior Work**: Existing hallucination detection methods either rely on external annotated data (e.g., CHAIR), require external LLM judges (e.g., FaithScore), or exploit only a single-perspective signal. Token-probability-based methods (NLL) fail because LLMs favor linguistic fluency; attention-based methods (SVAR) are susceptible to attention sinks; and Internal Confidence, which directly uses the maximum probability from Visual Logit Lens, can be overconfident.
-- **Root Cause**: A single global or local signal each has blind spots. Global methods may falsely accept contextually plausible but visually absent objects (e.g., "dining table" in a birthday scene); local methods may be confused by visually similar objects (e.g., a motorcycle seat mistaken for a "handbag").
-- **Starting Point**: This work is the first to unify global and local embedding similarity signals within a single framework, leveraging their complementary strengths.
+- **Key Challenge**: A single global or local signal each has blind spots. Global methods may falsely accept contextually plausible but visually absent objects (e.g., "dining table" in a birthday scene); local methods may be confused by visually similar objects (e.g., a motorcycle seat mistaken for a "handbag").
+- **Key Insight**: This work is the first to unify global and local embedding similarity signals within a single framework, leveraging their complementary strengths.
 
 ## Method
 

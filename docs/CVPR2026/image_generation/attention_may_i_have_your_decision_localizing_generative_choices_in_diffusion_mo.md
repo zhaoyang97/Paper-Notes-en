@@ -28,7 +28,7 @@ This paper employs linear probing to demonstrate that **implicit decisions** in 
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-image diffusion models are highly capable but internally opaque. When a prompt is underspecified (e.g., "a photo of a person" without specifying gender), the model must make implicit decisions to fill in missing details.
+**Background**: Text-to-image diffusion models are highly capable but internally opaque. When a prompt is underspecified (e.g., "a photo of a person" without specifying gender), the model must make implicit decisions to fill in missing details.
 
 **Dual Nature of Implicit Decisions**:
 - Benign cases: deciding the color and shape of a generated "flower"
@@ -41,7 +41,7 @@ This paper employs linear probing to demonstrate that **implicit decisions** in 
 
 **Core Hypothesis**: The computational mechanisms underlying implicit decisions are **localized** and **distinct** from those governing explicit textual conditioning.
 
-**Starting Point**: Linear probes are trained directly on intermediate activations to localize decision-relevant layers without prompt engineering, thereby avoiding the confounding effects of prompt injection.
+**Key Insight**: Linear probes are trained directly on intermediate activations to localize decision-relevant layers without prompt engineering, thereby avoiding the confounding effects of prompt injection.
 
 ## Method
 

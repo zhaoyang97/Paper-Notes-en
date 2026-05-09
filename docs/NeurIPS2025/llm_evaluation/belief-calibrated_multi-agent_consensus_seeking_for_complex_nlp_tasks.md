@@ -28,17 +28,17 @@ This paper proposes the Belief-Calibrated Consensus Seeking (BCCS) framework, wh
 
 ## Background & Motivation
 
-**State of the Field**: Multi-agent systems (MAS) enhance reasoning by coordinating multiple LLM agents, with consensus-seeking as the core protocol. Existing methods such as MAD, GroupDebate, and DyLAN achieve consensus through voting or debate.
+**Background**: Multi-agent systems (MAS) enhance reasoning by coordinating multiple LLM agents, with consensus-seeking as the core protocol. Existing methods such as MAD, GroupDebate, and DyLAN achieve consensus through voting or debate.
 
 **Limitations of Prior Work**:
    - Existing consensus judgment relies solely on answer-level agreement (e.g., Byzantine Consensus requires >2/3 majority), **neglecting contradictions in agents' internal beliefs (confidence/belief)**—even when answers agree, consensus may be unstable if agents hold low confidence.
    - Agents interact indiscriminately with all others during collaboration, without selectively identifying optimal partners—over-reliance on supporters may trap the system in suboptimal states, while excessive exposure to opposition impedes consensus.
 
-**Root Cause**: Stable consensus requires not only answer agreement but also belief agreement; existing methods address only the former.
+**Key Challenge**: Stable consensus requires not only answer agreement but also belief agreement; existing methods address only the former.
 
-**Paper Goals**: (a) How to incorporate belief calibration into consensus judgment to prevent spurious consensus arising from low-confidence agreement? (b) How to select optimal collaborators for each agent (balancing supporters and opponents)?
+**Goal**: (a) How to incorporate belief calibration into consensus judgment to prevent spurious consensus arising from low-confidence agreement? (b) How to select optimal collaborators for each agent (balancing supporters and opponents)?
 
-**Starting Point**: Drawing on opinion dynamics theory, the paper uses LLM output probabilities as proxy belief measures and formally analyzes the conditions under which a MAS converges to stable consensus.
+**Key Insight**: Drawing on opinion dynamics theory, the paper uses LLM output probabilities as proxy belief measures and formally analyzes the conditions under which a MAS converges to stable consensus.
 
 **Core Idea**: LLM output probabilities are used as beliefs to calibrate consensus judgment; conflict scores are combined with automatic collaborator and leader assignment to stabilize multi-agent reasoning.
 

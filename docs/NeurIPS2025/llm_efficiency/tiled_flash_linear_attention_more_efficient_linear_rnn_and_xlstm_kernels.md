@@ -29,18 +29,18 @@ This paper proposes TFLA (Tiled Flash Linear Attention), which achieves efficien
 
 ## Background & Motivation
 
-**State of the Field**: Linear RNNs and linear attention mechanisms (RetNet, Mamba, GLA, mLSTM) offer $O(T)$ computational complexity, theoretically superior to the $O(T^2)$ cost of Transformers. The FlashAttention series has established IO-aware algorithms as the standard for attention implementation.
+**Background**: Linear RNNs and linear attention mechanisms (RetNet, Mamba, GLA, mLSTM) offer $O(T)$ computational complexity, theoretically superior to the $O(T^2)$ cost of Transformers. The FlashAttention series has established IO-aware algorithms as the standard for attention implementation.
 
 **Limitations of Prior Work**:
 - Despite their theoretical efficiency, linear RNNs lack well-optimized CUDA kernels, making practical speed advantages difficult to realize.
 - Flash Linear Attention (FLA) is constrained by GPU SRAM capacity to a maximum chunk size of $L=64$, forcing large numbers of intermediate states to be materialized to HBM.
 - Small chunk sizes lead to low arithmetic intensity, high memory IO cost, and underutilization of GPU compute.
 
-**Root Cause**: The chunk-size dilemma — small chunks cause IO bottlenecks, while large chunks exceed SRAM capacity.
+**Key Challenge**: The chunk-size dilemma — small chunks cause IO bottlenecks, while large chunks exceed SRAM capacity.
 
-**Paper Goals**: Break the SRAM constraint on chunk size to enable efficient linear RNN kernels with arbitrarily large chunks.
+**Goal**: Break the SRAM constraint on chunk size to enable efficient linear RNN kernels with arbitrarily large chunks.
 
-**Starting Point**: Building upon FLA's single-level sequence parallelism (inter-chunk), this work introduces a second level of sequence parallelism (intra-chunk tiling), analogous to the tiling strategy in FlashAttention 2.
+**Key Insight**: Building upon FLA's single-level sequence parallelism (inter-chunk), this work introduces a second level of sequence parallelism (intra-chunk tiling), analogous to the tiling strategy in FlashAttention 2.
 
 **Core Idea**: TFLA = Flash Linear Attention (inter-chunk parallelism) + FlashAttention 2 tiling (intra-chunk parallelism).
 

@@ -29,13 +29,13 @@ This paper introduces FirstAidQA, a dataset of 5,500 synthetic first aid questio
 
 ## Background & Motivation
 
-**State of the Field**: The deployment of LLMs in safety-critical, real-time applications such as first aid and emergency response remains extremely limited. A primary barrier is the lack of high-quality, domain-specific QA datasets for the first aid domain.
+**Background**: The deployment of LLMs in safety-critical, real-time applications such as first aid and emergency response remains extremely limited. A primary barrier is the lack of high-quality, domain-specific QA datasets for the first aid domain.
 
 **Deployment Scenario Requirements**: Disaster zones, rural clinics, remote areas, and economically disadvantaged regions typically lack high-speed internet and modern computing infrastructure, necessitating lightweight models capable of offline operation.
 
 **Limitations of Prior Work**: Existing datasets such as BioASQ, MedQA, and PubMedQA primarily target clinical diagnosis and biomedical literature, and do not cover **step-by-step procedural knowledge for first aid actions performed by non-professionals**.
 
-**Paper Goals**: To create the first synthetic QA dataset specifically targeting first aid and emergency response, supporting instruction tuning and fine-tuning of LLMs and SLMs.
+**Goal**: To create the first synthetic QA dataset specifically targeting first aid and emergency response, supporting instruction tuning and fine-tuning of LLMs and SLMs.
 
 ## Method
 

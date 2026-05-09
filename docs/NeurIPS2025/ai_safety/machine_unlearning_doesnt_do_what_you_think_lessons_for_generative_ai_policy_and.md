@@ -29,15 +29,15 @@ This paper systematically identifies five fundamental mismatches between machine
 
 ## Background & Motivation
 
-**State of the Field**: Machine unlearning was first proposed around 2016 in response to the "right to erasure" under Article 17 of the EU GDPR. With the rise of generative AI, it has been widely promoted as a panacea—capable of removing personal data, eliminating copyrighted content, and erasing dangerous knowledge such as bioweapon synthesis, as if "forgetting" unwanted information were sufficient to resolve these concerns.
+**Background**: Machine unlearning was first proposed around 2016 in response to the "right to erasure" under Article 17 of the EU GDPR. With the rise of generative AI, it has been widely promoted as a panacea—capable of removing personal data, eliminating copyrighted content, and erasing dangerous knowledge such as bioweapon synthesis, as if "forgetting" unwanted information were sufficient to resolve these concerns.
 
 **Limitations of Prior Work**: This prevailing understanding of machine unlearning is plagued by serious conceptual confusion. Researchers and policymakers alike conflate *removal*—eliminating the influence of specific training data from model parameters—with *suppression*—preventing specific content from appearing in model outputs. These two objectives differ fundamentally in both technical realization and legal interpretation. Moreover, numerous policy documents and media reports treat machine unlearning as a universal solution across privacy, copyright, and safety domains, overlooking its inherent technical limitations.
 
-**Root Cause**: Deleting information from an ML model is fundamentally unlike deleting a record from a database—model parameters are not directly interpretable, and the influence of specific data cannot be precisely localized or "removed." Furthermore, even if certain data is successfully removed from the training set, the model may still generate similar content through generalization. This gives rise to a fundamental gap between what unlearning methods can actually do and what policy expects them to do.
+**Key Challenge**: Deleting information from an ML model is fundamentally unlike deleting a record from a database—model parameters are not directly interpretable, and the influence of specific data cannot be precisely localized or "removed." Furthermore, even if certain data is successfully removed from the training set, the model may still generate similar content through generalization. This gives rise to a fundamental gap between what unlearning methods can actually do and what policy expects them to do.
 
-**Paper Goals**: To construct an interdisciplinary analytical framework that systematically characterizes five technical mismatches in machine unlearning, and to analyze their specific manifestations and consequences under U.S. copyright law, privacy law, and safety policy.
+**Goal**: To construct an interdisciplinary analytical framework that systematically characterizes five technical mismatches in machine unlearning, and to analyze their specific manifestations and consequences under U.S. copyright law, privacy law, and safety policy.
 
-**Starting Point**: The authors span ML, law, and policy (including Stanford, Google DeepMind, Microsoft Research, and Cornell Law School), and proceed from first principles to deconstruct each misalignment between technical capabilities and policy objectives.
+**Key Insight**: The authors span ML, law, and policy (including Stanford, Google DeepMind, Microsoft Research, and Cornell Law School), and proceed from first principles to deconstruct each misalignment between technical capabilities and policy objectives.
 
 **Core Idea**: Machine unlearning exhibits five fundamental mismatches in generative AI settings (removal ≠ suppression; removal does not guarantee output control; model ≠ output ≠ use), and therefore cannot serve as a singular, universal mechanism for legal compliance.
 

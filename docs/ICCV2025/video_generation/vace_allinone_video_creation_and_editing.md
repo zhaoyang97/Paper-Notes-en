@@ -29,11 +29,11 @@ VACE is proposed as a unified framework for video creation and editing. It intro
 
 ## Background & Motivation
 
-- **State of the Field**: The image domain already has unified generation-editing frameworks such as ACE and OmniGen, but the video domain—due to its higher spatiotemporal consistency requirements—still relies predominantly on single-task, single-model approaches.
+- **Background**: The image domain already has unified generation-editing frameworks such as ACE and OmniGen, but the video domain—due to its higher spatiotemporal consistency requirements—still relies predominantly on single-task, single-model approaches.
 - **Limitations of Prior Work**: The large variety of video tasks (reference-guided generation, style transfer, inpainting, etc.) makes deploying separate models per task costly; chaining multiple tasks (e.g., long-video editing pipelines) is difficult to realize.
-- **Root Cause**: Unifying diverse video task input modalities while preserving spatiotemporal consistency.
-- **Paper Goals**: Build a single model that covers as many video generation and editing tasks as possible.
-- **Starting Point**: Design a unified input interface (VCU) + a concept decoupling strategy + a plug-and-play Context Adapter.
+- **Key Challenge**: Unifying diverse video task input modalities while preserving spatiotemporal consistency.
+- **Goal**: Build a single model that covers as many video generation and editing tasks as possible.
+- **Key Insight**: Design a unified input interface (VCU) + a concept decoupling strategy + a plug-and-play Context Adapter.
 - **Core Idea**: Represent all video task conditions as a triplet (text, frame sequence, mask sequence), and achieve multi-task unification via concept decoupling and adapter injection.
 
 ## Method

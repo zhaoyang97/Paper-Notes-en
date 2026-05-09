@@ -29,17 +29,17 @@ This paper proposes integrating State Space Models (SSM/Mamba) into video world 
 
 ## Background & Motivation
 
-**State of the Field**: Video diffusion models have demonstrated promise as world models, enabling interactive environment simulation via autoregressive frame prediction conditioned on actions. Recent methods (OpenSora, CogVideoX, GameGen-X) employ Transformers with sliding-window inference for unbounded-length video generation.
+**Background**: Video diffusion models have demonstrated promise as world models, enabling interactive environment simulation via autoregressive frame prediction conditioned on actions. Recent methods (OpenSora, CogVideoX, GameGen-X) employ Transformers with sliding-window inference for unbounded-length video generation.
 
 **Limitations of Prior Work**:
 - **Memory limitations of attention mechanisms**: The attention window in existing video world models is extremely limited (typically only a few seconds); a simple left-right camera pan in a game can cause the environment to change completely.
 - **Tension between computational cost and memory**: Full causal attention incurs quadratic training complexity with respect to context length, and linear per-frame inference cost; sliding-window inference reduces complexity but entirely sacrifices long-term memory.
 
-**Root Cause**: Persistent and consistent world simulation requires the model to "remember" previously observed environments. However, Transformer architectures either incur prohibitive memory overhead or lose long-term information due to the sliding window. An architecture that is simultaneously efficient and capable of retaining long-term memory is needed.
+**Key Challenge**: Persistent and consistent world simulation requires the model to "remember" previously observed environments. However, Transformer architectures either incur prohibitive memory overhead or lose long-term information due to the sliding window. An architecture that is simultaneously efficient and capable of retaining long-term memory is needed.
 
-**Paper Goals**: Design a video world model architecture that maintains constant inference time and memory while possessing long-term spatial memory capability.
+**Goal**: Design a video world model architecture that maintains constant inference time and memory while possessing long-term spatial memory capability.
 
-**Starting Point**: SSMs (Mamba) are inherently causal sequence models with fixed-size hidden states, requiring no linearly growing KV-cache during inference. Their compressed memory, while less precise than full attention, precisely suits the world model's need to "remember the big picture while refining locally."
+**Key Insight**: SSMs (Mamba) are inherently causal sequence models with fixed-size hidden states, requiring no linearly growing KV-cache during inference. Their compressed memory, while less precise than full attention, precisely suits the world model's need to "remember the big picture while refining locally."
 
 **Core Idea**: A hybrid architecture combining a block-wise SSM scan scheme with local frame attention — SSM handles long-term temporal memory while attention handles short-range spatial refinement — achieving linear training complexity, constant inference overhead, and persistent memory.
 

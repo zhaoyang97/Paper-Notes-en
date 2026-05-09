@@ -28,15 +28,15 @@ This paper proposes MaPO (Margin-aware Preference Optimization), a reference-fre
 
 ## Background & Motivation
 
-**State of the Field**: RLHF/DPO-based preference alignment methods have been widely adopted to align T2I diffusion models (e.g., SDXL) with human preferences. These methods typically rely on a frozen reference model for KL divergence regularization to ensure training stability.
+**Background**: RLHF/DPO-based preference alignment methods have been widely adopted to align T2I diffusion models (e.g., SDXL) with human preferences. These methods typically rely on a frozen reference model for KL divergence regularization to ensure training stability.
 
 **Limitations of Prior Work**: The authors identify a critical **"reference mismatch"** problem in T2I diffusion models — when the distribution of preference data deviates significantly from that of the reference model (e.g., learning a new artistic style or personalizing to a specific subject), the reference model actively **impedes effective adaptation**. The unstructured nature of the visual modality makes this problem more severe than in LLM settings.
 
-**Root Cause**: The larger the reference mismatch, the more severely methods like DPO degrade in performance. Yet practical applications frequently require adapting models to preferences that substantially differ from the pre-training distribution (e.g., from photorealistic to anime style), precisely the scenario where reference mismatch is most acute.
+**Key Challenge**: The larger the reference mismatch, the more severely methods like DPO degrade in performance. Yet practical applications frequently require adapting models to preferences that substantially differ from the pre-training distribution (e.g., from photorealistic to anime style), precisely the scenario where reference mismatch is most acute.
 
-**Paper Goals**: Design a reference-free preference alignment method that completely eliminates the negative impact of reference mismatch on T2I diffusion model alignment.
+**Goal**: Design a reference-free preference alignment method that completely eliminates the negative impact of reference mismatch on T2I diffusion model alignment.
 
-**Starting Point**: Directly maximize the likelihood margin between preferred and dispreferred outputs under the Bradley-Terry preference model, while simultaneously maximizing the likelihood of preferred outputs, without anchoring to any reference model.
+**Key Insight**: Directly maximize the likelihood margin between preferred and dispreferred outputs under the Bradley-Terry preference model, while simultaneously maximizing the likelihood of preferred outputs, without anchoring to any reference model.
 
 **Core Idea**: Unify T2I alignment as reference-free pairwise preference optimization that jointly learns general stylistic features and specific preferences.
 

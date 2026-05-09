@@ -29,15 +29,15 @@ By simulating human central vision (foveal cropping) and the temporal slowness p
 
 ### State of the Field
 
-**State of the Field**: Humans acquire semantic object representations from egocentric visual streams with minimal supervision, yet SSL models trained on human visual experience perform poorly.
+**Background**: Humans acquire semantic object representations from egocentric visual streams with minimal supervision, yet SSL models trained on human visual experience perform poorly.
 
 **Limitations of Prior Work**: Existing SSL models neglect two key biological processes: (1) high-resolution foveal processing in the retina (central vision), and (2) the slowness principle, whereby temporally proximate inputs yield similar representations.
 
-**Root Cause**: Full-field training conflates foreground and background information and fails to exploit temporal object-tracking signals.
+**Key Challenge**: Full-field training conflates foreground and background information and fails to exploit temporal object-tracking signals.
 
-**Paper Goals**: To investigate the roles of central vision and temporal slowness in the formation of semantic object representations.
+**Goal**: To investigate the roles of central vision and temporal slowness in the formation of semantic object representations.
 
-**Starting Point**: Gaze coordinates are generated on Ego4D (5 months of visual experience) using a gaze prediction model (GLC), central visual regions are cropped accordingly, and a temporal contrastive SSL model is trained.
+**Key Insight**: Gaze coordinates are generated on Ego4D (5 months of visual experience) using a gaze prediction model (GLC), central visual regions are cropped accordingly, and a temporal contrastive SSL model is trained.
 
 ## Method
 

@@ -27,16 +27,16 @@ This paper introduces RAG-IGBench, a benchmark specifically designed to evaluate
 
 ## Background & Motivation
 
-**State of the Field**: Interleaved image-text generation requires models to jointly produce text and images, which is a core requirement for practical applications such as content creation and visual storytelling.
+**Background**: Interleaved image-text generation requires models to jointly produce text and images, which is a core requirement for practical applications such as content creation and visual storytelling.
 
 **Limitations of Prior Work**:
 - End-to-end generation methods (e.g., Chameleon) unify text and image processing but exhibit limited capacity for following complex instructions.
 - Existing evaluation frameworks either assess only unimodal metrics (e.g., FID for images alone) or rely on MLLM-based scoring (GPT-4o-based), which introduces model bias and instability.
 - High-quality open-domain datasets for interleaved image-text generation are lacking.
 
-**Root Cause**: How to comprehensively evaluate the quality of interleaved image-text content without relying on model-induced bias.
+**Key Challenge**: How to comprehensively evaluate the quality of interleaved image-text content without relying on model-induced bias.
 
-**Starting Point**: Adopting a RAG framework in which an MLLM selects images from retrieved documents and embeds them into text, rather than generating images from scratch.
+**Key Insight**: Adopting a RAG framework in which an MLLM selects images from retrieved documents and embeds them into text, rather than generating images from scratch.
 
 ## Method
 

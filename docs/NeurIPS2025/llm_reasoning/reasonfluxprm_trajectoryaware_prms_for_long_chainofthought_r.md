@@ -28,15 +28,15 @@ ReasonFlux-PRM identifies that existing PRMs fail to effectively evaluate the in
 
 ## Background & Motivation
 
-**State of the Field**: Process Reward Models (PRMs) provide reward signals for each intermediate step in LLM reasoning and have been widely adopted in RL training and test-time search. Existing PRMs (e.g., Math-Shepherd, Qwen-Math-PRM) are primarily trained on models' **final output responses**—structured, linear, and well-organized step-by-step CoT.
+**Background**: Process Reward Models (PRMs) provide reward signals for each intermediate step in LLM reasoning and have been widely adopted in RL training and test-time search. Existing PRMs (e.g., Math-Shepherd, Qwen-Math-PRM) are primarily trained on models' **final output responses**—structured, linear, and well-organized step-by-step CoT.
 
 **Limitations of Prior Work**: With the rise of reasoning models such as DeepSeek-R1 and OpenAI-o1, model outputs have evolved into a two-part **trajectory–response** format: a lengthy, less-organized intermediate thinking trajectory (containing branching, backtracking, and self-correction), followed by a concise final response. Existing PRMs perform poorly when evaluating intermediate thinking trajectories—their score distributions heavily overlap and fail to distinguish trajectories of different quality, sometimes even selecting training data inferior to human-curated sets.
 
-**Root Cause**: Thinking trajectories differ fundamentally from final responses: (1) trajectories contain branching and backtracking (non-linear), whereas responses are linear; (2) trajectories exhibit weaker global coherence, whereas responses are carefully organized. PRMs trained on responses naturally fail to generalize to trajectories.
+**Key Challenge**: Thinking trajectories differ fundamentally from final responses: (1) trajectories contain branching and backtracking (non-linear), whereas responses are linear; (2) trajectories exhibit weaker global coherence, whereas responses are carefully organized. PRMs trained on responses naturally fail to generalize to trajectories.
 
-**Paper Goals**: How to design a general-purpose PRM that can effectively evaluate both intermediate thinking trajectories and final responses?
+**Goal**: How to design a general-purpose PRM that can effectively evaluate both intermediate thinking trajectories and final responses?
 
-**Starting Point**: Introduce reward signals at two levels simultaneously—step-level rewards via softmax-weighted fusion of alignment, quality, and coherence scores; trajectory-level rewards via a template-guided approach that assesses the transferability of the overall reasoning strategy.
+**Key Insight**: Introduce reward signals at two levels simultaneously—step-level rewards via softmax-weighted fusion of alignment, quality, and coherence scores; trajectory-level rewards via a template-guided approach that assesses the transferability of the overall reasoning strategy.
 
 **Core Idea**: Jointly train a PRM with multi-dimensional step-level rewards (alignment + quality + coherence) and template-guided trajectory-level rewards, enabling evaluation of the complete reasoning process of reasoning models rather than only their final outputs.
 

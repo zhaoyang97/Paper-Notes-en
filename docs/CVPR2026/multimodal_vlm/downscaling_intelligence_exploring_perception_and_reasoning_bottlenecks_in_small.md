@@ -38,7 +38,7 @@ The paper's motivation is organized at three levels:
 
 **Developing targeted solutions**: designing improvement methods based on the identified bottlenecks.
 
-**Core finding**: LLM scaling disproportionately affects vision-dependent tasks (rather than LLM-intrinsic tasks such as knowledge QA), and **perception degradation is equally or more severe than reasoning degradation**—overturning the prior assumption that perception is insensitive to LLM scale. **Starting Point**: the perception bottleneck originates from visual instruction tuning requiring models to acquire a large diversity of visual extraction skills, which exceeds the capacity of small models.
+**Core finding**: LLM scaling disproportionately affects vision-dependent tasks (rather than LLM-intrinsic tasks such as knowledge QA), and **perception degradation is equally or more severe than reasoning degradation**—overturning the prior assumption that perception is insensitive to LLM scale. **Key Insight**: the perception bottleneck originates from visual instruction tuning requiring models to acquire a large diversity of visual extraction skills, which exceeds the capacity of small models.
 
 ## Method
 

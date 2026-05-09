@@ -29,15 +29,15 @@ This paper proposes the C2T framework, which converts traffic states into struct
 
 ## Background & Motivation
 
-**State of the Field**: MARL-based TSC optimizes local efficiency using hand-crafted rewards such as queue length, intersection pressure, and average delay.
+**Background**: MARL-based TSC optimizes local efficiency using hand-crafted rewards such as queue length, intersection pressure, and average delay.
 
 **Limitations of Prior Work**: Hand-crafted rewards are myopic, local proxy metrics that fail to capture higher-level human-centric objectives such as safety, flow stability, and riding comfort. Aggressive intersection clearing can induce oscillating signals, hard braking, and unsafe headways—yielding systems that are efficient on paper but fragile in deployment.
 
-**Root Cause**: There is no notion of "traffic quality" that reflects human judgment and anticipates long-term effects such as platoon formation, and this must be achieved without modifying the simulator or invoking LLMs online.
+**Key Challenge**: There is no notion of "traffic quality" that reflects human judgment and anticipates long-term effects such as platoon formation, and this must be achieved without modifying the simulator or invoking LLMs online.
 
-**Paper Goals**: To use traffic quality itself as a supervisory signal by learning an intrinsic reward offline from LLM preferences, thereby augmenting the standard MARL training pipeline.
+**Goal**: To use traffic quality itself as a supervisory signal by learning an intrinsic reward offline from LLM preferences, thereby augmenting the standard MARL training pipeline.
 
-**Starting Point**: LLMs can produce consistent pairwise judgments when comparing well-structured state descriptions, making them a viable source of commonsense knowledge.
+**Key Insight**: LLMs can produce consistent pairwise judgments when comparing well-structured state descriptions, making them a viable source of commonsense knowledge.
 
 **Core Idea**: Render traffic states as deterministic, unit-aware captions → obtain pairwise LLM preference labels → train a lightweight preference scorer → inject intrinsic rewards into standard PPO.
 

@@ -28,15 +28,15 @@ MambaMia proposes a two-stage hierarchical video token compression framework bas
 
 ## Background & Motivation
 
-**State of the Field**: Large multimodal models (LMMs) excel at image and short video understanding, but processing hour-long videos poses a severe token explosion problem — hundreds of frames can generate hundreds of thousands of tokens, far exceeding the capacity of standard models and hardware.
+**Background**: Large multimodal models (LMMs) excel at image and short video understanding, but processing hour-long videos poses a severe token explosion problem — hundreds of frames can generate hundreds of thousands of tokens, far exceeding the capacity of standard models and hardware.
 
 **Limitations of Prior Work**: (1) Per-frame spatial pooling and token pruning address only single-frame redundancy, failing to resolve inter-frame temporal accumulation; (2) query-based selection methods are task-specific and sacrifice general-purpose context modeling; (3) brute-force context window scaling demands enormous computational resources, making it impractical for academic or production settings.
 
-**Root Cause**: Long videos contain two types of redundancy — intra-frame spatial redundancy (many similar patches) and inter-frame temporal redundancy (highly similar content across consecutive frames) — while simultaneously containing fine-grained key events that must be preserved. A general solution is needed that achieves aggressive compression without losing critical information.
+**Key Challenge**: Long videos contain two types of redundancy — intra-frame spatial redundancy (many similar patches) and inter-frame temporal redundancy (highly similar content across consecutive frames) — while simultaneously containing fine-grained key events that must be preserved. A general solution is needed that achieves aggressive compression without losing critical information.
 
-**Paper Goals**: How to efficiently compress visual tokens from hour-long videos on standard hardware while maintaining understanding performance?
+**Goal**: How to efficiently compress visual tokens from hour-long videos on standard hardware while maintaining understanding performance?
 
-**Starting Point**: Exploit the linear complexity of state space models (Mamba) for processing ultra-long sequences, and repurpose Mamba's internal adaptive step size $\Delta_t$ as a frame importance signal for adaptive sampling.
+**Key Insight**: Exploit the linear complexity of state space models (Mamba) for processing ultra-long sequences, and repurpose Mamba's internal adaptive step size $\Delta_t$ as a frame importance signal for adaptive sampling.
 
 **Core Idea**: Apply bidirectional Mamba with gated aggregation for spatial compression, then reuse Mamba's step size for adaptive temporal frame selection, achieving hierarchical long-video compression.
 

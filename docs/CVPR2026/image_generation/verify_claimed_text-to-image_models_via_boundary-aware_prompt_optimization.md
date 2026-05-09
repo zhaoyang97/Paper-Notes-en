@@ -29,11 +29,11 @@ BPO proposes a reference-free white-box T2I model verification method that emplo
 
 ## Background & Motivation
 
-1. **State of the Field**: The commercial value of T2I models (e.g., the Stable Diffusion series) has made model attribution verification an important requirement. There is a need to verify whether a publicly deployed T2I model is indeed the claimed model (e.g., to prevent model reskinning or theft).
+1. **Background**: The commercial value of T2I models (e.g., the Stable Diffusion series) has made model attribution verification an important requirement. There is a need to verify whether a publicly deployed T2I model is indeed the claimed model (e.g., to prevent model reskinning or theft).
 2. **Limitations of Prior Work**: (1) TVN relies on multiple reference models for comparison, requiring maintenance of a reference model set and offering poor scalability; (2) random/greedy prompt methods achieve only 17–23% accuracy, as generic prompts cannot distinguish between similar models; (3) existing methods suffer from low computational efficiency.
-3. **Root Cause**: Although the text encoders and generators of different T2I models are similar (most being fine-tuned from the same architecture), their semantic boundaries—regions in the embedding space where output semantics shift abruptly—are model-specific.
-4. **Paper Goals**: To generate verification prompts by directly exploiting the semantic boundary characteristics of the target model itself, without requiring any reference models.
-5. **Starting Point**: Drawing an analogy to classifier decision boundaries—each model's semantic boundary lies at a distinct location—precisely localizing the boundary and generating prompts near it enables differentiation between models.
+3. **Key Challenge**: Although the text encoders and generators of different T2I models are similar (most being fine-tuned from the same architecture), their semantic boundaries—regions in the embedding space where output semantics shift abruptly—are model-specific.
+4. **Goal**: To generate verification prompts by directly exploiting the semantic boundary characteristics of the target model itself, without requiring any reference models.
+5. **Key Insight**: Drawing an analogy to classifier decision boundaries—each model's semantic boundary lies at a distinct location—precisely localizing the boundary and generating prompts near it enables differentiation between models.
 6. **Core Idea**: A three-stage pipeline: adversarial attack to locate semantic flip points → binary search for precise boundary localization → GCG optimization to generate boundary-oriented verification prompts.
 
 ## Method

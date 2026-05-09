@@ -30,7 +30,7 @@ This paper proposes a zero-hyperparameter yield multi-corner analysis framework 
 
 ## Background & Motivation
 
-**State of the Field**: In integrated circuit design, Yield Multi-Corner Analysis (YMCA) requires verifying circuit performance across 25+ PVT (Process-Voltage-Temperature) corners, each demanding a large number of SPICE simulations, with a total cost of $O(K \times N)$, where $K$ is the number of corners and $N$ is the number of simulations per corner.
+**Background**: In integrated circuit design, Yield Multi-Corner Analysis (YMCA) requires verifying circuit performance across 25+ PVT (Process-Voltage-Temperature) corners, each demanding a large number of SPICE simulations, with a total cost of $O(K \times N)$, where $K$ is the number of corners and $N$ is the number of simulations per corner.
 
 **Polarization of Existing Methods**:
    - **Simple models** (e.g., MNIS): Highly automated and ready to use out of the box, but lack model capacity and struggle to fit complex nonlinear circuit behavior.
@@ -38,7 +38,7 @@ This paper proposes a zero-hyperparameter yield multi-corner analysis framework 
 
 **Core Limitation — The Tuning Barrier**: Advanced models are extremely sensitive to hyperparameters. Experiments show that ±20% hyperparameter perturbations can cause MRE to swing dramatically from 19% to 111%, forcing engineers to repeatedly tune parameters for each new design and severely impeding practical deployment.
 
-**Starting Point**: Can Learned Priors replace Engineered Priors, enabling models to automatically learn prior knowledge from data and thereby completely eliminate the need for hyperparameter tuning?
+**Key Insight**: Can Learned Priors replace Engineered Priors, enabling models to automatically learn prior knowledge from data and thereby completely eliminate the need for hyperparameter tuning?
 
 **Core Idea**: Introducing TabPFN (a Transformer foundation model pre-trained on millions of regression tasks) into YMCA, leveraging its attention mechanism as a learned kernel to perform zero-hyperparameter in-context Bayesian inference.
 

@@ -28,15 +28,15 @@ This paper proposes CodeCrash, a stress-testing framework that systematically ev
 
 ## Background & Motivation
 
-**State of the Field**: LLMs excel at code generation, completion, and repair tasks, and have been integrated into IDE tools such as GitHub Copilot. However, real-world codebases are rife with noise including ambiguous identifiers, dead code, and inconsistent comments.
+**Background**: LLMs excel at code generation, completion, and repair tasks, and have been integrated into IDE tools such as GitHub Copilot. However, real-world codebases are rife with noise including ambiguous identifiers, dead code, and inconsistent comments.
 
 **Limitations of Prior Work**: Traditional robustness research focuses primarily on structural code transformations (variable renaming, control flow modification, unreachable code insertion), which only test pattern-matching capabilities. NL-side perturbation studies concentrate on NL-to-Code tasks (evaluating prompt sensitivity), leaving unanswered whether LLMs can prioritize executable semantics over natural language cues during code reasoning.
 
-**Root Cause**: LLMs treat comments and natural language cues as high-priority evidence in code understanding, yet these are semantically irrelevant to program execution—models cannot distinguish functional code from non-functional context.
+**Key Challenge**: LLMs treat comments and natural language cues as high-priority evidence in code understanding, yet these are semantically irrelevant to program execution—models cannot distinguish functional code from non-functional context.
 
-**Paper Goals**: Design a code reasoning robustness benchmark covering both the structural and NL layers, and dissect failure modes of LLMs when confronted with misleading information.
+**Goal**: Design a code reasoning robustness benchmark covering both the structural and NL layers, and dissect failure modes of LLMs when confronted with misleading information.
 
-**Starting Point**: Perturbations are categorized into context-level (obviously incorrect NL cues) and reasoning-level (plausible but incorrect hints). AST parsing is creatively employed to guarantee functional equivalence of perturbed code.
+**Key Insight**: Perturbations are categorized into context-level (obviously incorrect NL cues) and reasoning-level (plausible but incorrect hints). AST parsing is creatively employed to guarantee functional equivalence of perturbed code.
 
 **Core Idea**: LLMs over-rely on NL cues to take reasoning shortcuts → CoT mitigates but does not eliminate this tendency → the internal reasoning of LRMs is more robust, yet plausible hints trigger pathological self-reflection and reasoning collapse.
 

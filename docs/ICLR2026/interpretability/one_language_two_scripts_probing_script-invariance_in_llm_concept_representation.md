@@ -27,13 +27,13 @@ Using the Serbian digraphic system (Latin/Cyrillic) as a natural controlled expe
 
 ## Background & Motivation
 
-**State of the Field**: SAEs have become a key tool in mechanistic interpretability, decomposing neural network activations into sparse, interpretable features. However, a fundamental question remains unanswered: do SAE-learned features represent abstract semantics, or are they bound to the specific written form of the text?
+**Background**: SAEs have become a key tool in mechanistic interpretability, decomposing neural network activations into sparse, interpretable features. However, a fundamental question remains unanswered: do SAE-learned features represent abstract semantics, or are they bound to the specific written form of the text?
 
 **Limitations of Prior Work**: Cross-lingual representation studies (multilingual BERT / XLM-R) demonstrate cross-lingual transfer, but different languages introduce confounds such as lexical, grammatical, and cultural differences that are difficult to control. Cross-script studies on Hindi–Urdu introduce noise due to imperfect script mappings.
 
-**Root Cause**: An ideal controlled experiment is needed — one that holds semantics completely constant while varying only the writing system, while also ensuring entirely disjoint tokenizations. Only then can one cleanly test whether SAE features truly capture semantics.
+**Key Challenge**: An ideal controlled experiment is needed — one that holds semantics completely constant while varying only the writing system, while also ensuring entirely disjoint tokenizations. Only then can one cleanly test whether SAE features truly capture semantics.
 
-**Starting Point**: Serbian is one of the very few languages with an active digraphic system — Latin and Cyrillic scripts are used interchangeably in everyday life, with a deterministic lossless character-level mapping. Critically, the two scripts are tokenized entirely differently, sharing zero tokens. This constitutes a perfect controlled experiment.
+**Key Insight**: Serbian is one of the very few languages with an active digraphic system — Latin and Cyrillic scripts are used interchangeably in everyday life, with a deterministic lossless character-level mapping. Critically, the two scripts are tokenized entirely differently, sharing zero tokens. This constitutes a perfect controlled experiment.
 
 **Core Idea**: Serbian digraphia provides a natural controlled experiment demonstrating that SAE features capture abstract semantic representations beyond surface-level tokenization.
 

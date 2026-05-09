@@ -27,11 +27,11 @@ content_hash: 96c3c5d440f07a84
 GrOCE proposes a training-free concept erasure framework based on dynamic semantic graphs, achieving precise, context-aware online removal of target concepts in text-to-image diffusion models through three cooperative components: semantic graph construction, adaptive clustering identification, and selective severing.
 
 ## Background & Motivation
-1. **State of the Field**: Text-to-image diffusion models frequently generate harmful, biased, or copyright-infringing content. Concept erasure aims to remove target content while preserving non-target semantics.
+1. **Background**: Text-to-image diffusion models frequently generate harmful, biased, or copyright-infringing content. Concept erasure aims to remove target content while preserving non-target semantics.
 2. **Limitations of Prior Work**: (i) Fine-tuning-based methods are computationally expensive, suffer from catastrophic forgetting, and struggle to adapt to emerging risks; (ii) inference-time intervention methods rely on heuristic mappings and fail to capture deep semantic entanglement. Both categories treat concepts as isolated entities, ignoring the rich relational structure in the latent space.
-3. **Root Cause**: Concepts in diffusion models are encoded as entangled manifolds with fuzzy boundaries and high-order dependencies. Removing one concept (e.g., "violence") may damage semantically adjacent concepts (e.g., "conflict," "action").
-4. **Paper Goals**: Design a training-free online concept erasure method that understands and leverages semantic relationships between concepts, enabling precise target erasure without harming neighboring concepts.
-5. **Starting Point**: Reformulate concept erasure as a graph-cutting problem — identifying and removing the minimal vertex subset connected to the target concept.
+3. **Key Challenge**: Concepts in diffusion models are encoded as entangled manifolds with fuzzy boundaries and high-order dependencies. Removing one concept (e.g., "violence") may damage semantically adjacent concepts (e.g., "conflict," "action").
+4. **Goal**: Design a training-free online concept erasure method that understands and leverages semantic relationships between concepts, enabling precise target erasure without harming neighboring concepts.
+5. **Key Insight**: Reformulate concept erasure as a graph-cutting problem — identifying and removing the minimal vertex subset connected to the target concept.
 6. **Core Idea**: Construct a dynamic semantic graph over concepts, identify the target concept cluster via multi-hop traversal and diffusion scoring, then selectively sever the semantic components of that cluster from the prompt embedding.
 
 ## Method

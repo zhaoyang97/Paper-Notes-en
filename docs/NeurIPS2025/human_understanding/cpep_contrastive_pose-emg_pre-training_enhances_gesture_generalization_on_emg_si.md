@@ -29,15 +29,15 @@ This paper proposes the CPEP framework, which employs contrastive learning to al
 
 ## Background & Motivation
 
-**State of the Field**: Vision-based gesture recognition has matured considerably, yet remains constrained by power consumption and privacy concerns in wearable device deployments. Surface EMG (sEMG) signals are low-power and easy to integrate, making them well-suited for real-time gesture prediction on wearable platforms.
+**Background**: Vision-based gesture recognition has matured considerably, yet remains constrained by power consumption and privacy concerns in wearable device deployments. Surface EMG (sEMG) signals are low-power and easy to integrate, making them well-suited for real-time gesture prediction on wearable platforms.
 
 **Limitations of Prior Work**: (a) EMG signals exhibit low signal-to-noise ratios and high variability, limiting the effectiveness of conventional self-supervised pre-training; (b) supervised methods (e.g., emg2pose for pose regression) generalize poorly and cannot recognize unseen gestures or adapt to new users; (c) large-scale EMG data collection is costly and difficult.
 
-**Root Cause**: EMG is a "weak modality" from which high-quality representations are difficult to learn in isolation, whereas hand pose is a "strong modality" that encodes rich structural and semantic information. The core challenge is how to leverage the strong modality's prior knowledge to improve representations of the weak modality.
+**Key Challenge**: EMG is a "weak modality" from which high-quality representations are difficult to learn in isolation, whereas hand pose is a "strong modality" that encodes rich structural and semantic information. The core challenge is how to leverage the strong modality's prior knowledge to improve representations of the weak modality.
 
-**Paper Goals**: To enable the EMG encoder to learn pose-aware representations, supporting zero-shot gesture classification via embedding-space retrieval against pose references.
+**Goal**: To enable the EMG encoder to learn pose-aware representations, supporting zero-shot gesture classification via embedding-space retrieval against pose references.
 
-**Starting Point**: Inspired by CLIP-style cross-modal contrastive pre-training, with design adaptations specific to the EMG–pose setting—pre-training unimodal encoders to reduce paired data requirements, and freezing the strong modality encoder while training only the weak modality encoder.
+**Key Insight**: Inspired by CLIP-style cross-modal contrastive pre-training, with design adaptations specific to the EMG–pose setting—pre-training unimodal encoders to reduce paired data requirements, and freezing the strong modality encoder while training only the weak modality encoder.
 
 **Core Idea**: Contrastive learning is used to pull EMG representations toward paired pose representations, enabling zero-shot gesture recognition without task-specific fine-tuning.
 

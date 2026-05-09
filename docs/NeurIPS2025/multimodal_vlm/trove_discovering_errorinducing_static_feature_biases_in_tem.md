@@ -28,15 +28,15 @@ TRoVe proposes an automated method for discovering static feature biases that in
 
 ## Background & Motivation
 
-**State of the Field** Temporal VLMs — designed for understanding visual changes across multi-image sequences — have demonstrated strong performance on tasks such as action recognition and disease progression classification, yet may exploit static feature shortcuts rather than dynamic changes for decision-making.
+**Background** Temporal VLMs — designed for understanding visual changes across multi-image sequences — have demonstrated strong performance on tasks such as action recognition and disease progression classification, yet may exploit static feature shortcuts rather than dynamic changes for decision-making.
 
 **Limitations of Prior Work** (1) Existing automated error discovery methods (Domino, George, etc.) are designed for single-image settings and cannot handle static biases in multi-image sequences; (2) ground-truth biases in real models are unknown, making quantitative evaluation difficult; (3) static features may appear only in a subset of frames within a sequence, further complicating detection.
 
-**Root Cause** Temporal tasks should inherently rely on dynamic change for classification, yet models may take shortcuts — predicting "tree climbing" based solely on background trees. The central challenge is how to automatically discover such error-inducing static biases.
+**Key Challenge** Temporal tasks should inherently rely on dynamic change for classification, yet models may take shortcuts — predicting "tree climbing" based solely on background trees. The central challenge is how to automatically discover such error-inducing static biases.
 
-**Paper Goals** To automatically discover static feature biases learned by trained temporal VLMs that lead to systematic prediction errors.
+**Goal** To automatically discover static feature biases learned by trained temporal VLMs that lead to systematic prediction errors.
 
-**Starting Point** The problem is decomposed into two quantifiable sub-problems: (1) Does the presence of a given feature increase errors for a specific class? (2) Has the model learned a bias on that feature?
+**Key Insight** The problem is decomposed into two quantifiable sub-problems: (1) Does the presence of a given feature increase errors for a specific class? (2) Has the model learned a bias on that feature?
 
 **Core Idea** Decompose multi-image sequences into individual frames → cluster frames to extract candidate features → apply dual ECS+SBS scoring to localize error-inducing static biases.
 

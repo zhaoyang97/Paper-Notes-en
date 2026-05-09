@@ -31,8 +31,8 @@ This paper proposes ChA-MAEViT, which enhances cross-channel feature learning fo
 
 - **Core Problem**: Multi-channel images (MCI), such as multispectral+LiDAR in satellite remote sensing and fluorescence+brightfield in cell microscopy, exhibit variable channel counts and types at both training and inference time, necessitating a single model capable of adapting to diverse channel configurations.
 - **Limitations of Prior Work**: Existing MCI-MAE methods (e.g., CA-MAE) rely solely on random patch masking, assuming significant redundancy across channels — an assumption that holds for natural RGB images but fails for MCI, where channels are often complementary with minimal feature overlap. Attention analysis reveals that patches primarily attend to their own channels (diagonal pattern), indicating that cross-channel interactions are not effectively learned.
-- **Root Cause**: Existing methods fail to model the complex relationships among heterogeneous channels and exhibit insufficient robustness to missing channels.
-- **Starting Point**: By simultaneously masking channels and patches, the model is compelled to reconstruct missing information from other channels, thereby strengthening cross-channel dependency learning.
+- **Key Challenge**: Existing methods fail to model the complex relationships among heterogeneous channels and exhibit insufficient robustness to missing channels.
+- **Key Insight**: By simultaneously masking channels and patches, the model is compelled to reconstruct missing information from other channels, thereby strengthening cross-channel dependency learning.
 
 ## Method
 

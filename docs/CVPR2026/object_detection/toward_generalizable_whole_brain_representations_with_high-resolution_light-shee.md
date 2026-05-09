@@ -29,11 +29,11 @@ This paper introduces CANVAS — the first large-scale, subcellular-resolution L
 
 ## Background & Motivation
 
-1. **State of the Field**: Advances in tissue clearing and LSFM have made it possible to acquire complete 3D mouse brain data at subcellular resolution. A single whole-brain dataset can reach approximately 100 GB (compressed), containing 1,600–1,850 z-slices, each approximately 7,000×10,000 pixels.
+1. **Background**: Advances in tissue clearing and LSFM have made it possible to acquire complete 3D mouse brain data at subcellular resolution. A single whole-brain dataset can reach approximately 100 GB (compressed), containing 1,600–1,850 z-slices, each approximately 7,000×10,000 pixels.
 2. **Limitations of Prior Work**: Despite dramatic improvements in data acquisition capability, scalable processing methods and standardized benchmarks for petabyte-scale LSFM data remain absent. Existing CV models (e.g., U-Net, ResNet, ViT) are primarily designed for CT, fMRI, and X-ray modalities and cannot directly generalize to LSFM data.
-3. **Root Cause**: Different cell-type markers exhibit highly heterogeneous morphological characteristics across brain regions (e.g., astrocytes vs. dopaminergic neurons), making it difficult for a single model to generalize across markers and regions. Additionally, LSFM annotation is extremely costly (167,950 predictions required individual human verification).
-4. **Paper Goals**: To provide the first publicly available whole-brain LSFM benchmark dataset, establish cell detection evaluation standards, reveal generalization bottlenecks of existing models, and explore self-supervised methods to address annotation scarcity.
-5. **Starting Point**: Construct a comprehensive benchmark covering 6 functionally distinct cell markers (NeuN, cFos, PV, TH, Iba1, GFAP), annotate ROIs from diverse brain regions, and systematically evaluate cross-dataset and cross-region generalization of baseline models.
+3. **Key Challenge**: Different cell-type markers exhibit highly heterogeneous morphological characteristics across brain regions (e.g., astrocytes vs. dopaminergic neurons), making it difficult for a single model to generalize across markers and regions. Additionally, LSFM annotation is extremely costly (167,950 predictions required individual human verification).
+4. **Goal**: To provide the first publicly available whole-brain LSFM benchmark dataset, establish cell detection evaluation standards, reveal generalization bottlenecks of existing models, and explore self-supervised methods to address annotation scarcity.
+5. **Key Insight**: Construct a comprehensive benchmark covering 6 functionally distinct cell markers (NeuN, cFos, PV, TH, Iba1, GFAP), annotate ROIs from diverse brain regions, and systematically evaluate cross-dataset and cross-region generalization of baseline models.
 6. **Core Idea**: Advance the field through a standardized benchmark and rigorous evaluation, rather than proposing a new detection algorithm.
 
 ## Method

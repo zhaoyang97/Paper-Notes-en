@@ -39,7 +39,7 @@ RL in LLM post-training (e.g., PPO, RLOO) is essential for improving reasoning a
 
 **Core insight**: The GFlowNet Trajectory Balance (TB) objective natively supports off-policy learning—training data can originate from any distribution with full support. This allows off-policy data arising from delayed parameter synchronization in asynchronous RL to be effectively utilized rather than treated as noise.
 
-**Starting Point**: Reformulate the KL-regularized RL problem as a probabilistic inference problem, and leverage TB's off-policy property to graft it onto an asynchronous distributed architecture.
+**Key Insight**: Reformulate the KL-regularized RL problem as a probabilistic inference problem, and leverage TB's off-policy property to graft it onto an asynchronous distributed architecture.
 
 ## Method
 

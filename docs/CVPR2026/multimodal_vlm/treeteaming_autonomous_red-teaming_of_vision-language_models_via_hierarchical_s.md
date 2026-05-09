@@ -33,9 +33,9 @@ As the capabilities of vision-language models (VLMs) continue to advance, their 
 
 **Linear exploration paradigm of prior methods**: Whether it is FigStep's typographic manipulation, MML's image transformation, or SI-Attack's image-text rearrangement, all rely on predefined, single-strategy heuristics. Even TRUST-VLM, which incorporates feedback mechanisms, can only optimize test cases within a preset strategy framework and is incapable of discovering new attack strategies.
 
-**Root Cause**: Existing methods can only make "known attacks more effective" but cannot systematically "discover unknown attacks." This is analogous to walking further along a single road without ever exploring alternative paths.
+**Key Challenge**: Existing methods can only make "known attacks more effective" but cannot systematically "discover unknown attacks." This is analogous to walking further along a single road without ever exploring alternative paths.
 
-**Starting Point**: The paper transforms strategy exploration from a static testing process into a dynamic evolutionary process. The core idea is to construct a dynamically growing strategy tree in which an LLM autonomously decides whether to deepen optimization along promising attack paths or to branch out into entirely new strategy directions.
+**Key Insight**: The paper transforms strategy exploration from a static testing process into a dynamic evolutionary process. The core idea is to construct a dynamically growing strategy tree in which an LLM autonomously decides whether to deepen optimization along promising attack paths or to branch out into entirely new strategy directions.
 
 ## Method
 

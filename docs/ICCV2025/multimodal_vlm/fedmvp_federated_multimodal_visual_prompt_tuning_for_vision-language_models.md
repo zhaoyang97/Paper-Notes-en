@@ -35,7 +35,7 @@ Nevertheless, existing FL prompt learning methods suffer from severe **generaliz
 - **Visual prompt tuning (VPT, e.g., FedVPT)**: Similarly limited by static context.
 - **Conditioned prompt methods**: FedTPG relies solely on class-name textual information, while FedCoCoOp relies solely on image visual features — under the high heterogeneity of FL, single-modality conditioning is insufficient.
 
-**Root Cause**: The high data heterogeneity in FL (each client's data spans disjoint classes and domains) demands prompts that generalize across categories and domains, yet existing methods draw conditioning information from only a single modality.
+**Key Challenge**: The high data heterogeneity in FL (each client's data spans disjoint classes and domains) demands prompts that generalize across categories and domains, yet existing methods draw conditioning information from only a single modality.
 
 **Core Idea**: **Dual-modality conditioning** — simultaneously exploiting (1) visual features of the input image and (2) LLM-generated textual attribute descriptions of categories to produce prompts, fused via cross-attention. Attributes facilitate generalization to unseen categories (which share attributes with seen ones), while image features facilitate generalization to unseen domains (capturing textures and abstract concepts that attributes cannot describe).
 

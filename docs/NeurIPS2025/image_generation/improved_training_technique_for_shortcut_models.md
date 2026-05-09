@@ -29,7 +29,7 @@ content_hash: 33c5701e0c9cfbae
 Targeting five key performance bottlenecks of Shortcut Models (compounding guidance, fixed guidance, frequency bias, self-consistency deviation, and curved trajectories), this paper proposes iSM, a unified training framework that incorporates intrinsic guidance, multi-level wavelet loss, scaling optimal transport, and twin EMA strategy, achieving substantial improvements on ImageNet 256×256 with one-step FID 5.27 and four-step FID 2.05.
 
 ## Background & Motivation
-**State of the Field**: Flow Matching-based diffusion models have achieved remarkable results in image generation, but sampling requires a large number of iterative steps, limiting deployment efficiency. Accelerating sampling is a key research direction.
+**Background**: Flow Matching-based diffusion models have achieved remarkable results in image generation, but sampling requires a large number of iterative steps, limiting deployment efficiency. Accelerating sampling is a key research direction.
 
 **Advantages of Shortcut Models**: Shortcut Models (SM) represent an elegant acceleration approach — the network is conditioned on both noise level $t$ and target step size $d$ simultaneously, trained with a self-consistency loss so that a single network supports one-step, few-step, and multi-step sampling.
 
@@ -37,7 +37,7 @@ Targeting five key performance bottlenecks of Shortcut Models (compounding guida
 
 **Limitations of Prior Work**: The authors identify five systematic issues — (1) exponential compounding amplification of CFG guidance at large step sizes; (2) fixed guidance strength during training, leading to loss of inference flexibility; (3) low-frequency bias from pixel-level loss causing blurry generated images; (4) conflict between the temporal lag of the EMA target network and the self-consistency objective; (5) curved generation trajectories caused by random noise-data pairing.
 
-**Starting Point**: Rather than modifying the core framework of SM, the paper systematically addresses the five bottlenecks above to make SM a genuinely competitive generative paradigm.
+**Key Insight**: Rather than modifying the core framework of SM, the paper systematically addresses the five bottlenecks above to make SM a genuinely competitive generative paradigm.
 
 ## Core Problem
 

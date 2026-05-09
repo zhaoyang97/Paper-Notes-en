@@ -29,11 +29,11 @@ This paper proposes SkyGP (Streaming Kernel-induced Progressively Generated Expe
 
 ## Background & Motivation
 
-1. **State of the Field**: Gaussian Processes (GPs), as nonparametric methods, offer flexible modeling and calibrated uncertainty quantification, supporting online updates in polynomial time, making them well-suited for safety-critical systems.
+1. **Background**: Gaussian Processes (GPs), as nonparametric methods, offer flexible modeling and calibrated uncertainty quantification, supporting online updates in polynomial time, making them well-suited for safety-critical systems.
 2. **Limitations of Prior Work**: Exact GP inference over streaming data incurs $O(N^3)$ time and $O(N^2)$ memory costs, which do not scale with growing data. Existing solutions include sparse GPs (requiring expensive optimization and losing error guarantees) and distributed GPs (e.g., LoG-GP splits data along only a single dimension and does not handle non-stationarity).
-3. **Root Cause**: Online learning demands rapid adaptation and bounded complexity, yet the predictive performance guarantees of exact GPs require the full data matrix. Existing distributed methods either neglect online learning requirements or employ partitioning strategies that fail to exploit spatial/temporal correlations.
-4. **Paper Goals**: Design a streaming GP framework that dynamically manages a bounded collection of experts while inheriting the prediction error bounds of exact GPs.
-5. **Starting Point**: Use kernel-function distance to decide whether incoming data should be assigned to an existing expert or used to initialize a new one, combined with a temporal decay factor to manage expert staleness.
+3. **Key Challenge**: Online learning demands rapid adaptation and bounded complexity, yet the predictive performance guarantees of exact GPs require the full data matrix. Existing distributed methods either neglect online learning requirements or employ partitioning strategies that fail to exploit spatial/temporal correlations.
+4. **Goal**: Design a streaming GP framework that dynamically manages a bounded collection of experts while inheriting the prediction error bounds of exact GPs.
+5. **Key Insight**: Use kernel-function distance to decide whether incoming data should be assigned to an existing expert or used to initialize a new one, combined with a temporal decay factor to manage expert staleness.
 6. **Core Idea**: Kernel-distance-driven adaptive expert assignment + time-aware aggregation = online learning with bounded complexity that preserves exact GP performance guarantees.
 
 ## Method

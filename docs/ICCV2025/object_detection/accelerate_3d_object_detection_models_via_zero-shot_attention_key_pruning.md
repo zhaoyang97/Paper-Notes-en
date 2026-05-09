@@ -35,7 +35,7 @@ Limitations of existing acceleration approaches:
 
 **Runtime pruning methods** (e.g., ToMe, Zero-TPrune): ToMe's similarity matrix computation has complexity $O(N_k^2)$, which is prohibitively expensive for the large token counts in 3D detectors (4,224–24,000); Zero-TPrune assumes a square attention matrix, but in 3D detectors the numbers of queries and keys differ, yielding a non-square attention matrix.
 
-**Root Cause**: The token count in 3D detection far exceeds that in ViT models (3D: 4,224–24,000 vs. ViT: ~1,024), making direct transfer of existing methods suboptimal in both efficiency and effectiveness.
+**Key Challenge**: The token count in 3D detection far exceeds that in ViT models (3D: 4,224–24,000 vs. ViT: ~1,024), making direct transfer of existing methods suboptimal in both efficiency and effectiveness.
 
 **Core Insight**: In 3D detectors, the final output is determined by predictions with the highest classification scores. Keys that contribute little to high-confidence predictions can therefore be safely pruned. Classification scores and attention maps arise naturally within the Transformer decoder, requiring no additional parameters.
 

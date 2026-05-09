@@ -28,15 +28,15 @@ GiGPO introduces step-level grouping nested within the episode-level grouping of
 
 ## Background & Motivation
 
-**State of the Field**: Group-based RL methods (GRPO, RLOO) have achieved strong results on single-turn tasks such as mathematical reasoning and code generation. However, these methods treat entire trajectories as atomic units when computing advantages, making it impossible to distinguish the contribution of individual steps within a trajectory.
+**Background**: Group-based RL methods (GRPO, RLOO) have achieved strong results on single-turn tasks such as mathematical reasoning and code generation. However, these methods treat entire trajectories as atomic units when computing advantages, making it impossible to distinguish the contribution of individual steps within a trajectory.
 
 **Limitations of Prior Work**: LLM agent interactions span dozens of steps and tens of thousands of tokens (e.g., up to 50 steps and 20k+ tokens in ALFWorld), with rewards typically provided only at the end of an episode. GRPO assigns identical advantages to all tokens within an episode, treating good and bad steps equally. While PPO supports step-level advantage estimation, it requires an additional critic network with substantial memory overhead.
 
-**Root Cause**: The most straightforward approach to step-level credit assignment — rolling out multiple actions from each state to form a contrastive group — requires a large number of additional LLM forward passes and is computationally prohibitive.
+**Key Challenge**: The most straightforward approach to step-level credit assignment — rolling out multiple actions from each state to form a contrastive group — requires a large number of additional LLM forward passes and is computationally prohibitive.
 
-**Paper Goals**: To introduce fine-grained step-level credit assignment for multi-turn agent training while retaining the critic-free, memory-efficient, and stable convergence properties of group-based RL.
+**Goal**: To introduce fine-grained step-level credit assignment for multi-turn agent training while retaining the critic-free, memory-efficient, and stable convergence properties of group-based RL.
 
-**Starting Point**: A key observation is that among $N$ trajectories sampled for the same task from the same initial state, many environment states recur naturally (e.g., revisiting the same webpage, returning to the same room). These repeated states can form step-level contrastive groups at no additional cost.
+**Key Insight**: A key observation is that among $N$ trajectories sampled for the same task from the same initial state, many environment states recur naturally (e.g., revisiting the same webpage, returning to the same room). These repeated states can form step-level contrastive groups at no additional cost.
 
 **Core Idea**: Recurring environment states across trajectories are used as anchor states. A hashmap retroactively constructs step-level groups, enabling a two-level "group-in-group" advantage estimation without any additional rollouts.
 

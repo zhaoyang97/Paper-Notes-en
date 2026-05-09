@@ -37,7 +37,7 @@ SceneDesigner introduces a CNOCS map representation combined with a two-stage re
 
 **Poor Method Compatibility**: ORIGEN relies on one-step generation models and is incompatible with mainstream multi-step diffusion frameworks.
 
-**Starting Point**: Design an efficient 9D pose encoding representation (CNOCS map), combined with a dedicated dataset and two-stage training, to enable precise multi-object pose control.
+**Key Insight**: Design an efficient 9D pose encoding representation (CNOCS map), combined with a dedicated dataset and two-stage training, to enable precise multi-object pose control.
 
 ## Method
 

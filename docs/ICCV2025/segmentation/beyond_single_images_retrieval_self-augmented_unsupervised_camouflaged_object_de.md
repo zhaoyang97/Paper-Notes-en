@@ -29,15 +29,15 @@ This paper proposes RISE — a retrieval self-augmented unsupervised camouflaged
 
 ## Background & Motivation
 
-**State of the Field**: Camouflaged Object Detection (COD) aims to segment target objects from highly similar backgrounds. Mainstream fully supervised methods rely on dense pixel-level annotations, where annotating a single image can take up to one hour. Weakly and semi-supervised approaches reduce annotation burden but still require partial labels.
+**Background**: Camouflaged Object Detection (COD) aims to segment target objects from highly similar backgrounds. Mainstream fully supervised methods rely on dense pixel-level annotations, where annotating a single image can take up to one hour. Weakly and semi-supervised approaches reduce annotation burden but still require partial labels.
 
 **Limitations of Prior Work**: (a) Unsupervised methods (TokenCut, MaskCut, ProMerge, etc.) primarily exploit intra-image feature similarity to separate foreground from background, but camouflaged objects and backgrounds share highly similar features, causing single-image methods to perform poorly; (b) prompt-based methods combining SAM with task-specific prompts still require some form of supervision and offer limited context-specific understanding of COD; (c) methods that generate pseudo-labels via diffusion models or multimodal LLMs (GenSAM, ProMac) require days of computation and significant GPU resources.
 
-**Root Cause**: Within a single image, the DINOv2 features of camouflaged objects and backgrounds are nearly indistinguishable (almost overlapping in t-SNE visualizations) — intra-image similarity alone cannot effectively separate them. However, at the dataset level, foreground objects exhibit higher similarity to a foreground prototype library than to a background prototype library.
+**Key Challenge**: Within a single image, the DINOv2 features of camouflaged objects and backgrounds are nearly indistinguishable (almost overlapping in t-SNE visualizations) — intra-image similarity alone cannot effectively separate them. However, at the dataset level, foreground objects exhibit higher similarity to a foreground prototype library than to a background prototype library.
 
-**Paper Goals**: To leverage dataset-level contextual information to distinguish camouflaged foregrounds from backgrounds in a fully annotation-free setting.
+**Goal**: To leverage dataset-level contextual information to distinguish camouflaged foregrounds from backgrounds in a fully annotation-free setting.
 
-**Starting Point**: Mining prototypes directly from the dataset through a coarse-to-fine strategy — first obtaining coarse masks via clustering, then refining prototypes through retrieval — to construct high-quality foreground/background prototype libraries, followed by KNN-based retrieval to classify each feature as foreground or background.
+**Key Insight**: Mining prototypes directly from the dataset through a coarse-to-fine strategy — first obtaining coarse masks via clustering, then refining prototypes through retrieval — to construct high-quality foreground/background prototype libraries, followed by KNN-based retrieval to classify each feature as foreground or background.
 
 **Core Idea**: Rather than relying on intra-image similarity, RISE leverages a dataset-level prototype library combined with KNN retrieval to distinguish camouflaged objects from backgrounds, enabling unsupervised COD.
 

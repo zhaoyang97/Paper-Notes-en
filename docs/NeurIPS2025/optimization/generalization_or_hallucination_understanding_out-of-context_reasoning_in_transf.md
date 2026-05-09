@@ -29,13 +29,13 @@ This paper argues that LLM generalization and hallucination share a common mecha
 
 ## Background & Motivation
 
-**State of the Field**: After fine-tuning LLMs to inject new knowledge, models can derive entailments from learned facts — e.g., learning "Alice lives in Paris" enables the inference "Alice speaks French." This is referred to as out-of-context reasoning (OCR), also known as the "ripple effect."
+**Background**: After fine-tuning LLMs to inject new knowledge, models can derive entailments from learned facts — e.g., learning "Alice lives in Paris" enables the inference "Alice speaks French." This is referred to as out-of-context reasoning (OCR), also known as the "ripple effect."
 
 **Limitations of Prior Work**: The same reasoning mechanism also produces hallucinations — e.g., incorrectly inferring "Raul programs in Java" from "Raul lives in Paris" when the city–code association is non-causal. Prior work lacks a theoretical explanation for whether generalization and hallucination stem from the same mechanism.
 
-**Root Cause**: LLMs can learn associations from very few training samples (e.g., as few as 4 per group), regardless of whether the association is causal or spurious. Why are both generalization and hallucination so sample-efficient?
+**Key Challenge**: LLMs can learn associations from very few training samples (e.g., as few as 4 per group), regardless of whether the association is causal or spurious. Why are both generalization and hallucination so sample-efficient?
 
-**Starting Point**: The paper formalizes OCR as a symbolic fact-recall task, analyzes the differences between factorized and non-factorized parameterizations on a single-layer linear attention model, and reveals the origin of OCR capability through implicit bias theory.
+**Key Insight**: The paper formalizes OCR as a symbolic fact-recall task, analyzes the differences between factorized and non-factorized parameterizations on a single-layer linear attention model, and reveals the origin of OCR capability through implicit bias theory.
 
 ## Method
 

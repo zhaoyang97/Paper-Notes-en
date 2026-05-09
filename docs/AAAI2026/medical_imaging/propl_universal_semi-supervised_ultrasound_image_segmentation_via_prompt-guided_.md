@@ -29,7 +29,7 @@ ProPL is proposed as a framework that, for the first time, achieves universal se
 
 ## Background & Motivation
 
-**State of the Field**: Ultrasound image segmentation is critical for computer-aided diagnosis, yet existing methods are typically designed for specific organs or tasks, exhibiting poor generalizability.
+**Background**: Ultrasound image segmentation is critical for computer-aided diagnosis, yet existing methods are typically designed for specific organs or tasks, exhibiting poor generalizability.
 
 **Limitations of Prior Work**:
 - Fully supervised methods require large amounts of annotated data, which is particularly costly for ultrasound images due to speckle noise, acoustic shadowing, and tissue artifacts that blur boundaries.
@@ -38,7 +38,7 @@ ProPL is proposed as a framework that, for the first time, achieves universal se
 
 **Core Problem**: How to construct a universal ultrasound segmentation framework capable of handling multiple organs and tasks simultaneously while requiring only minimal annotations?
 
-**Starting Point**: Combining prompt learning for task adaptation with dual-decoder mutual learning to generate reliable pseudo-labels.
+**Key Insight**: Combining prompt learning for task adaptation with dual-decoder mutual learning to generate reliable pseudo-labels.
 
 ## Method
 

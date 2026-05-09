@@ -28,15 +28,15 @@ MARS-Sep reformulates query-conditioned sound separation as a reinforcement lear
 
 ## Background & Motivation
 
-**State of the Field**: Universal Sound Separation aims to isolate individual sound sources from arbitrary audio mixtures. Query-conditioned sound separation further allows users to specify target sources via audio, text, or image queries. Current mainstream methods (e.g., AudioSep, OmniSep) primarily optimize signal-level loss functions (e.g., SDR, SI-SDR), reconstructing target waveforms by predicting time-frequency masks.
+**Background**: Universal Sound Separation aims to isolate individual sound sources from arbitrary audio mixtures. Query-conditioned sound separation further allows users to specify target sources via audio, text, or image queries. Current mainstream methods (e.g., AudioSep, OmniSep) primarily optimize signal-level loss functions (e.g., SDR, SI-SDR), reconstructing target waveforms by predicting time-frequency masks.
 
 **Limitations of Prior Work**: Existing methods face a fundamental "metric dilemma"—models optimized for waveform reconstruction may score high on signal metrics while still producing outputs with perceptually salient interference components that violate the semantic correspondence implied by the query. For example, models optimizing SDR may fail to distinguish between acoustically similar but semantically distinct sources (e.g., violin vs. viola), since signal-level losses encode no semantic information.
 
-**Root Cause**: There exists a fundamental misalignment between signal-level optimization objectives (low-level feature matching) and semantic-level separation requirements (high-level semantic alignment). Conventional regression-based mask prediction directly supervises against ground-truth masks, offering no mechanism to incorporate the semantic intent of the query into the optimization process.
+**Key Challenge**: There exists a fundamental misalignment between signal-level optimization objectives (low-level feature matching) and semantic-level separation requirements (high-level semantic alignment). Conventional regression-based mask prediction directly supervises against ground-truth masks, offering no mechanism to incorporate the semantic intent of the query into the optimization process.
 
-**Paper Goals**: (1) How can the separation model's optimization objective account for both signal fidelity and semantic consistency? (2) How can mask prediction be transformed from deterministic regression into an explorable stochastic decision? (3) How can a stable and semantically rich reward signal be obtained?
+**Goal**: (1) How can the separation model's optimization objective account for both signal fidelity and semantic consistency? (2) How can mask prediction be transformed from deterministic regression into an explorable stochastic decision? (3) How can a stable and semantically rich reward signal be obtained?
 
-**Starting Point**: Inspired by RLHF, the authors draw an analogy between query-conditioned sound separation and preference alignment—the user query represents a preference, and the goal is to produce outputs that maximize semantic alignment with that query. The separation model is treated as a base policy and optimized via reinforcement learning.
+**Key Insight**: Inspired by RLHF, the authors draw an analogy between query-conditioned sound separation and preference alignment—the user query represents a preference, and the goal is to produce outputs that maximize semantic alignment with that query. The separation model is treated as a base policy and optimized via reinforcement learning.
 
 **Core Idea**: A factorized Beta distribution policy performs stochastic mask sampling over time-frequency bins; a progressively aligned multimodal encoder provides semantic rewards; and a trust-region surrogate objective stabilizes training.
 

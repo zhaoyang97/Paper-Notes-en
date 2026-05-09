@@ -28,7 +28,7 @@ This paper proposes PerfGuard, a performance-aware agent framework for visual co
 
 ## Background & Motivation
 
-**State of the Field**: LLM-driven agents have become capable of automated task processing via reasoning and tool invocation, with multi-tool coordination systems such as CompAgent and GenArtist emerging in the visual content generation (AIGC) domain.
+**Background**: LLM-driven agents have become capable of automated task processing via reasoning and tool invocation, with multi-tool coordination systems such as CompAgent and GenArtist emerging in the visual content generation (AIGC) domain.
 
 **The Problem of Idealized Assumptions**: Existing work broadly assumes that tool invocations always succeed, lacking systematic evaluation of actual tool execution success rates. This uncertainty in tool selection directly undermines the overall accuracy of agent planning and decision-making.
 

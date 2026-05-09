@@ -29,7 +29,7 @@ This paper proposes S-ICQL, which introduces dynamic programming (Q-learning) an
 
 ## Background & Motivation
 
-**State of the Field**: In-context RL (ICRL) extends the in-context learning capabilities of language models to decision-making — pretraining a Transformer on multi-task offline data and adapting to new tasks at test time via prompts without parameter updates. Existing methods fall into two branches: Algorithm Distillation (AD, which uses learning histories as context for autoregressive action prediction) and Decision-Pretrained Transformer (DPT, which predicts optimal actions from interaction trajectory sequences).
+**Background**: In-context RL (ICRL) extends the in-context learning capabilities of language models to decision-making — pretraining a Transformer on multi-task offline data and adapting to new tasks at test time via prompts without parameter updates. Existing methods fall into two branches: Algorithm Distillation (AD, which uses learning histories as context for autoregressive action prediction) and Decision-Pretrained Transformer (DPT, which predicts optimal actions from interaction trajectory sequences).
 
 **Limitations of Prior Work**:
 
@@ -38,9 +38,9 @@ This paper proposes S-ICQL, which introduces dynamic programming (Q-learning) an
 - **DPT requires oracle optimal action annotations**: This is often infeasible in practice.
 - **Raw trajectories as prompts are inefficient**: They contain a large number of tokens with high redundancy, and behavioral policy information is entangled with task information, leading to biased task inference.
 
-**Root Cause**: The essence of RL lies in reward maximization through dynamic programming updates of value functions. However, existing ICRL methods remain entirely within the supervised learning paradigm, forgoing the core advantages of RL. The key challenge is how to introduce dynamic programming to unlock the potential for learning from suboptimal data while preserving the scalability and stability of supervised pretraining.
+**Key Challenge**: The essence of RL lies in reward maximization through dynamic programming updates of value functions. However, existing ICRL methods remain entirely within the supervised learning paradigm, forgoing the core advantages of RL. The key challenge is how to introduce dynamic programming to unlock the potential for learning from suboptimal data while preserving the scalability and stability of supervised pretraining.
 
-**Paper Goals**: The paper leverages two fundamental properties of RL — (1) the stitching capability of dynamic programming (Bellman backup) and (2) the precise characterization of environment dynamics via world models — to design a scalable ICRL framework that simultaneously achieves efficient reward maximization and accurate task generalization.
+**Goal**: The paper leverages two fundamental properties of RL — (1) the stitching capability of dynamic programming (Bellman backup) and (2) the precise characterization of environment dynamics via world models — to design a scalable ICRL framework that simultaneously achieves efficient reward maximization and accurate task generalization.
 
 ## Method
 

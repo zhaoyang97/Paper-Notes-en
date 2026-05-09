@@ -29,10 +29,10 @@ This paper proposes FuncBind, a framework that represents molecules as continuou
 
 ## Background & Motivation
 
-- **State of the Field**: Structure-based drug design (SBDD) is a core task in drug discovery, aiming to generate candidate molecules with high affinity given a target protein's 3D structure. Current generative models typically focus on a single molecular modality: small-molecule models use point cloud or voxel representations, while protein models rely on residue-level point clouds and sequence databases.
+- **Background**: Structure-based drug design (SBDD) is a core task in drug discovery, aiming to generate candidate molecules with high affinity given a target protein's 3D structure. Current generative models typically focus on a single molecular modality: small-molecule models use point cloud or voxel representations, while protein models rely on residue-level point clouds and sequence databases.
 - **Limitations of Prior Work**: This modality-specific design limits generalization — knowledge cannot be transferred across modalities, yet real-world drug discovery frequently involves multi-modal molecular interface design.
-- **Root Cause**: The lack of a modality-agnostic representation prevents cross-modal learning and limits the diversity of training data from which physical properties can be learned.
-- **Paper Goals**: Inspired by the success of cross-modal unified modeling in structure prediction (e.g., AlphaFold3, RoseTTAFold), this work proposes using neural fields as a unified molecular representation — modeling molecules as continuous functions mapping 3D coordinates to atomic densities — enabling joint training across three drug modalities within a single model.
+- **Key Challenge**: The lack of a modality-agnostic representation prevents cross-modal learning and limits the diversity of training data from which physical properties can be learned.
+- **Goal**: Inspired by the success of cross-modal unified modeling in structure prediction (e.g., AlphaFold3, RoseTTAFold), this work proposes using neural fields as a unified molecular representation — modeling molecules as continuous functions mapping 3D coordinates to atomic densities — enabling joint training across three drug modalities within a single model.
 
 ## Method
 

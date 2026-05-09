@@ -28,15 +28,15 @@ This paper proposes Glot, a lightweight structure-aware pooling module that cons
 
 ## Background & Motivation
 
-**State of the Field**: LLMs produce token-level hidden states, yet many downstream tasks require a single-vector sentence representation. Standard practice relies on mean/max/[CLS] pooling, which treats tokens as an unordered set.
+**Background**: LLMs produce token-level hidden states, yet many downstream tasks require a single-vector sentence representation. Standard practice relies on mean/max/[CLS] pooling, which treats tokens as an unordered set.
 
 **Limitations of Prior Work**: (a) Standard pooling discards the rich relational structure captured by self-attention layers; (b) mean pooling is overwhelmed by noise when only a few tokens carry task-relevant signals; (c) the causal attention of decoder-only LLMs is optimized for next-token prediction rather than sentence understanding. Full model fine-tuning is prohibitively expensive.
 
-**Root Cause**: How can high-quality sentence representations be obtained from a frozen model's outputs without fine-tuning the LLM?
+**Key Challenge**: How can high-quality sentence representations be obtained from a frozen model's outputs without fine-tuning the LLM?
 
-**Paper Goals**: Reformulate pooling as "relational learning first, then aggregation" — treating tokens as a graph rather than an independent set.
+**Goal**: Reformulate pooling as "relational learning first, then aggregation" — treating tokens as a graph rather than an independent set.
 
-**Starting Point**: Token hidden states from LLMs naturally carry similarity structure (cosine similarity), enabling the construction of a latent graph. GNNs that propagate information over such graphs before aggregation are strictly more expressive than the DeepSets framework.
+**Key Insight**: Token hidden states from LLMs naturally carry similarity structure (cosine similarity), enabling the construction of a latent graph. GNNs that propagate information over such graphs before aggregation are strictly more expressive than the DeepSets framework.
 
 **Core Idea**: Glot = Token similarity graph construction + Token-GNN refinement + Learnable readout. The LLM backbone is frozen; only the lightweight GNN head is trained.
 

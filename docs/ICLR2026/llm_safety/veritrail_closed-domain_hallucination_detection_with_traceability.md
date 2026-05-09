@@ -34,7 +34,7 @@ Language models frequently produce content unfaithful to source documents (close
 2. For single-step generation (SGS), this is acceptable; however, for MGS, merely detecting whether a hallucination exists is insufficient—it is equally important to know **where the hallucination was introduced** (error localization) and **how faithful content was derived** (provenance).
 3. Naïve approaches (comparing each intermediate output individually) are computationally infeasible when the number of intermediate outputs is large (>100K), and they cannot handle cases where multiple intermediate outputs **jointly** support a single claim.
 
-**Starting Point**: Model the generation process as a directed acyclic graph (DAG) and design a layer-wise backtracking verification algorithm that simultaneously detects hallucinations, constructs evidence chains, and localizes erroneous stages.
+**Key Insight**: Model the generation process as a directed acyclic graph (DAG) and design a layer-wise backtracking verification algorithm that simultaneously detects hallucinations, constructs evidence chains, and localizes erroneous stages.
 
 ## Method
 

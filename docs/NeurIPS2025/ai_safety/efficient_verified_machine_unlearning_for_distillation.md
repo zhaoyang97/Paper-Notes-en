@@ -28,15 +28,15 @@ This paper proposes PURGE, a framework that extends verified unlearning under SI
 
 ## Background & Motivation
 
-**State of the Field**: Privacy regulations such as GDPR and CCPA grant users the "right to be forgotten," requiring the removal of specific data's influence from trained models. SISA (Sharded, Isolated, Sliced, Aggregated) is the most representative verified unlearning framework, achieving exact unlearning through data sharding and checkpointing.
+**Background**: Privacy regulations such as GDPR and CCPA grant users the "right to be forgotten," requiring the removal of specific data's influence from trained models. SISA (Sharded, Isolated, Sliced, Aggregated) is the most representative verified unlearning framework, achieving exact unlearning through data sharding and checkpointing.
 
 **Limitations of Prior Work**: In knowledge distillation (KD) settings, teacher knowledge propagates to the entire student network via soft labels. Even when both teacher and student independently adopt SISA, a teacher-side unlearning event still forces **full retraining** of the student network—because each student constituent is indirectly exposed to information from the complete teacher ensemble.
 
-**Root Cause**: SISA's efficiency relies on data isolation, but the standard distillation process breaks this isolation—the teacher ensemble provides supervision signals as a whole, causing every student shard to be influenced by all teacher training data.
+**Key Challenge**: SISA's efficiency relies on data isolation, but the standard distillation process breaks this isolation—the teacher ensemble provides supervision signals as a whole, causing every student shard to be influenced by all teacher training data.
 
-**Paper Goals**: How to achieve efficient verified unlearning within a KD pipeline, particularly when unlearning requests target teacher training data?
+**Goal**: How to achieve efficient verified unlearning within a KD pipeline, particularly when unlearning requests target teacher training data?
 
-**Starting Point**: If a strict mapping is established between teacher constituents and student constituents such that each teacher influences only a specific subset of students, data isolation can be preserved throughout the distillation process.
+**Key Insight**: If a strict mapping is established between teacher constituents and student constituents such that each teacher influences only a specific subset of students, data isolation can be preserved throughout the distillation process.
 
 **Core Idea**: By restricting teacher influence to specific student shards via constituent mapping, and replacing full-ensemble distillation with an incremental multi-teacher strategy, PURGE restores SISA's unlearning efficiency in the KD setting.
 

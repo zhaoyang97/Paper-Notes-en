@@ -28,13 +28,13 @@ Stitch enables "thinking while speaking" in spoken language models (SLMs) by int
 
 ## Background & Motivation
 
-**State of the Field**: Current mainstream SLMs (e.g., GLM-4-Voice, Qwen-2.5-Omni) follow an interleaved decoding pipeline: the model first generates text tokens (as a transcript of the forthcoming speech) and then generates speech tokens (synthesized into waveforms by a vocoder), alternating between the two. This interleaved text–speech design enables streaming speech output, but the model performs no additional internal reasoning before speaking — it directly verbalizes whatever answer it generates.
+**Background**: Current mainstream SLMs (e.g., GLM-4-Voice, Qwen-2.5-Omni) follow an interleaved decoding pipeline: the model first generates text tokens (as a transcript of the forthcoming speech) and then generates speech tokens (synthesized into waveforms by a vocoder), alternating between the two. This interleaved text–speech design enables streaming speech output, but the model performs no additional internal reasoning before speaking — it directly verbalizes whatever answer it generates.
 
 **Limitations of Prior Work**: Humans typically reason silently before articulating a refined answer to a complex question, yielding two benefits: (1) higher accuracy and (2) more concise expression. Incorporating analogous "unspoken chain-of-thought (CoT)" into SLMs is a natural objective, yet it introduces latency challenges.
 
 The most straightforward approach, Think Before Speaking (TBS), generates a complete textual reasoning chain $\mathbf{z}$ followed by the spoken response $\mathbf{y}$. Experiments confirm that TBS substantially improves math reasoning quality (avg. 79.1% vs. 63.0% without reasoning), but reasoning length is unbounded (up to 360 reasoning tokens on GSM8K), resulting in uncontrollable first-chunk latency.
 
-**Root Cause**: The key observation motivating Stitch is that synthesizing $N_{speech}=26$ speech tokens produces approximately 2 seconds of audio, whereas generating 39 text+speech tokens at 80 tokens per second on an A100 takes only ~0.49 seconds, leaving ~1.5 seconds of idle playback time. Stitch repurposes this idle time to generate reasoning tokens for the next chunk, realizing "thinking while speaking." The theoretical upper bound is $80 \times 2 - 39 = 121$ reasoning tokens per chunk; the paper sets $N_{reason}=100$ in practice.
+**Key Challenge**: The key observation motivating Stitch is that synthesizing $N_{speech}=26$ speech tokens produces approximately 2 seconds of audio, whereas generating 39 text+speech tokens at 80 tokens per second on an A100 takes only ~0.49 seconds, leaving ~1.5 seconds of idle playback time. Stitch repurposes this idle time to generate reasoning tokens for the next chunk, realizing "thinking while speaking." The theoretical upper bound is $80 \times 2 - 39 = 121$ reasoning tokens per chunk; the paper sets $N_{reason}=100$ in practice.
 
 ## Method
 

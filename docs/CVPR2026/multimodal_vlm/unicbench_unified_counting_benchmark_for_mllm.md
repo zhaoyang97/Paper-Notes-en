@@ -29,15 +29,15 @@ This paper introduces UNICBench, the first unified cross-modal (image/text/audio
 
 ## Background & Motivation
 
-**State of the Field**: Counting is a core cognitive capability of multimodal large models, closely related to numerosity sense—a fundamental cognitive faculty shared by humans and animals. While MLLMs have advanced rapidly on general VQA and reasoning benchmarks, no benchmark has systematically evaluated counting as an isolated capability across modalities.
+**Background**: Counting is a core cognitive capability of multimodal large models, closely related to numerosity sense—a fundamental cognitive faculty shared by humans and animals. While MLLMs have advanced rapidly on general VQA and reasoning benchmarks, no benchmark has systematically evaluated counting as an isolated capability across modalities.
 
 **Limitations of Prior Work**: (1) Annotation formats for image counting datasets are inconsistent (points/bounding boxes/density maps), making them difficult to directly repurpose for MLLM QA evaluation. (2) Text and audio counting data are extremely scarce—QA datasets for document deduplication counting and audio event counting are virtually nonexistent. (3) Evaluation protocols are inconsistent across works, with different splits, prompts, random seeds, and matching rules rendering results incomparable. (4) Closed-source model APIs incur high costs and are rate-limited, hampering fair cross-model comparison.
 
-**Root Cause**: Counting ability spans three distinct levels—perceptual localization, semantic filtering, and rule-based reasoning. Existing benchmarks either cover only a single modality or fail to distinguish capability levels, making it impossible to systematically identify MLLM counting bottlenecks.
+**Key Challenge**: Counting ability spans three distinct levels—perceptual localization, semantic filtering, and rule-based reasoning. Existing benchmarks either cover only a single modality or fail to distinguish capability levels, making it impossible to systematically identify MLLM counting bottlenecks.
 
-**Paper Goals**: To establish a counting benchmark that covers three modalities (image/text/audio), employs a unified QA format and evaluation protocol, and enables stratified diagnosis of capability deficiencies.
+**Goal**: To establish a counting benchmark that covers three modalities (image/text/audio), employs a unified QA format and evaluation protocol, and enables stratified diagnosis of capability deficiencies.
 
-**Starting Point**: Design a cross-classified taxonomy of three capability levels (Pattern/Semantic/Reasoning) and three difficulty levels (Easy/Medium/Hard), paired with evidence-first ground truth and deterministic numeric parsing.
+**Key Insight**: Design a cross-classified taxonomy of three capability levels (Pattern/Semantic/Reasoning) and three difficulty levels (Easy/Medium/Hard), paired with evidence-first ground truth and deterministic numeric parsing.
 
 **Core Idea**: Decompose counting ability into three levels—perceptual counting → semantic filtering → rule-based reasoning—and evaluate uniformly across image/text/audio modalities, using metrics such as MAE and HitRate to stratify the diagnosis of MLLM counting bottlenecks.
 

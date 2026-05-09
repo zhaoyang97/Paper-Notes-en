@@ -29,15 +29,15 @@ LaDA is a framework that uses natural language as a semantic bridge to decouple 
 
 ## Background & Motivation
 
-**State of the Field**: Vision-Language-Action (VLA) models have advanced robotic manipulation in recent years, yet the heterogeneity between high-level semantic understanding and low-level action control remains a fundamental challenge.
+**Background**: Vision-Language-Action (VLA) models have advanced robotic manipulation in recent years, yet the heterogeneity between high-level semantic understanding and low-level action control remains a fundamental challenge.
 
 **Limitations of Prior Work**: Three paradigms each exhibit distinct shortcomings — (1) end-to-end VLAs (e.g., OpenVLA, RT-2) tightly couple perception and control, yielding uninterpretable actions that cannot reuse shared motion structures; (2) implicit action learning methods (e.g., LAPA, UniSkill) encode actions in compact latent spaces defined by observation differences, lacking explicit semantic labels and thus limiting cross-task transfer; (3) language-conditioned policies (e.g., CLIP-RT, PPL) incorporate language but rely on coarse-grained discrete primitives (e.g., "move forward," "close gripper"), omitting fine-grained motion parameters such as translation magnitude and rotation angle.
 
-**Root Cause**: Tasks such as "pouring water" and "placing a bottle" share substantial underlying motion primitives (reaching, grasping, rotating), yet existing models cannot exploit this shared structure, leading to redundant learning and poor cross-task generalization. The fundamental cause is the absence of a semantically grounded layer connecting symbolic intent with continuous execution.
+**Key Challenge**: Tasks such as "pouring water" and "placing a bottle" share substantial underlying motion primitives (reaching, grasping, rotating), yet existing models cannot exploit this shared structure, leading to redundant learning and poor cross-task generalization. The fundamental cause is the absence of a semantically grounded layer connecting symbolic intent with continuous execution.
 
-**Paper Goals**: To construct an action representation that is both semantically grounded and transferable across tasks, enabling the sharing and alignment of fine-grained motion semantics.
+**Goal**: To construct an action representation that is both semantically grounded and transferable across tasks, enabling the sharing and alignment of fine-grained motion semantics.
 
-**Starting Point**: Natural language provides a universal interface connecting human intent, visual perception, and robot control — it is compositional and semantically regular, capable of encoding motion concepts and enabling comparison, transfer, and generalization within a unified space.
+**Key Insight**: Natural language provides a universal interface connecting human intent, visual perception, and robot control — it is compositional and semantically regular, capable of encoding motion concepts and enabling comparison, transfer, and generalization within a unified space.
 
 **Core Idea**: Language-anchored fine-grained action primitives serve as an intermediate layer between continuous control and high-level semantics; soft-label contrastive learning achieves semantic alignment of cross-task actions.
 

@@ -29,11 +29,11 @@ This paper proposes the Floorplan Markup Language (FML), which encodes floorplan
 
 ## Background & Motivation
 
-1. **State of the Field**: Automated floorplan generation is a core requirement in architectural design and real estate. Existing methods are task-specific — Graph2Plan handles boundary conditions, while HouseGAN++/HouseDiffusion address adjacency graph conditions — each requiring a dedicated model.
+1. **Background**: Automated floorplan generation is a core requirement in architectural design and real estate. Existing methods are task-specific — Graph2Plan handles boundary conditions, while HouseGAN++/HouseDiffusion address adjacency graph conditions — each requiring a dedicated model.
 2. **Limitations of Prior Work**: (1) Different generation tasks rely on different architectures, precluding unification; (2) diffusion-based methods (e.g., GSDiff) produce raster images, and post-processing conversion to vector format introduces errors; (3) GAN-based methods suffer from mode collapse and limited generation diversity.
-3. **Root Cause**: Floorplans are inherently structured vector data (room polygons + door positions + connectivity), yet existing methods either operate in pixel space (losing structural information) or require task-specific graph neural networks.
-4. **Paper Goals**: Design a unified representation that reformulates all floorplan generation tasks as a single sequence prediction problem.
-5. **Starting Point**: Inspired by markup languages (HTML/XML) in NLP — token sequences defined by syntactic rules naturally represent structured information and are directly amenable to autoregressive Transformer modeling.
+3. **Key Challenge**: Floorplans are inherently structured vector data (room polygons + door positions + connectivity), yet existing methods either operate in pixel space (losing structural information) or require task-specific graph neural networks.
+4. **Goal**: Design a unified representation that reformulates all floorplan generation tasks as a single sequence prediction problem.
+5. **Key Insight**: Inspired by markup languages (HTML/XML) in NLP — token sequences defined by syntactic rules naturally represent structured information and are directly amenable to autoregressive Transformer modeling.
 6. **Core Idea**: Define FML grammar to encode floorplans as token sequences of "tag + coordinate + index + type", and apply constrained decoding to guarantee syntactic validity of generated outputs.
 
 ## Method

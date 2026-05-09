@@ -29,15 +29,15 @@ This paper introduces MADE—a "living" multi-label text classification benchmar
 
 ## Background & Motivation
 
-**State of the Field**: Multi-label text classification (MLTC) is a core task in healthcare—covering patient triage, clinical coding, and incident reporting—requiring selection of multiple labels from large label sets. Existing benchmarks (e.g., MIMIC-III, EUR-LEX) are approaching saturation and may be contaminated by LLM pretraining data.
+**Background**: Multi-label text classification (MLTC) is a core task in healthcare—covering patient triage, clinical coding, and incident reporting—requiring selection of multiple labels from large label sets. Existing benchmarks (e.g., MIMIC-III, EUR-LEX) are approaching saturation and may be contaminated by LLM pretraining data.
 
 **Limitations of Prior Work**: (1) Existing MLTC benchmarks are static, making them susceptible to data contamination that inflates zero-/few-shot performance; (2) real-world MLTC data exhibits severe intra- and inter-class imbalance, with a few frequent classes dominating samples while safety-critical classes reside in the long tail; (3) in high-stakes domains such as healthcare, models must not only achieve strong predictive performance but also provide reliable UQ to support human oversight—yet UQ for MLTC remains almost entirely unstudied.
 
-**Root Cause**: Practitioners face unresolved questions: which model architecture (encoder vs. decoder) is preferable? Which learning paradigm (fine-tuning vs. in-context learning) offers the best trade-off between frequent and rare classes? How reliable are model predictions? No unified, contamination-free benchmark exists to answer these questions systematically.
+**Key Challenge**: Practitioners face unresolved questions: which model architecture (encoder vs. decoder) is preferable? Which learning paradigm (fine-tuning vs. in-context learning) offers the best trade-off between frequent and rare classes? How reliable are model predictions? No unified, contamination-free benchmark exists to answer these questions systematically.
 
-**Paper Goals**: (1) Construct a continuously updated, contamination-free MLTC benchmark; (2) establish comprehensive baselines spanning 20+ models; (3) systematically evaluate diverse UQ methods on MLTC.
+**Goal**: (1) Construct a continuously updated, contamination-free MLTC benchmark; (2) establish comprehensive baselines spanning 20+ models; (3) systematically evaluate diverse UQ methods on MLTC.
 
-**Starting Point**: FDA medical device adverse event reports are published on a rolling basis, serving as a continuously updated data source. Strict temporal splits ensure that test data cannot leak into the pretraining of future models.
+**Key Insight**: FDA medical device adverse event reports are published on a rolling basis, serving as a continuously updated data source. Strict temporal splits ensure that test data cannot leak into the pretraining of future models.
 
 **Core Idea**: Build a "living" benchmark—as the FDA releases new reports, future models can always be evaluated on data generated after their training cutoff, fundamentally preventing contamination.
 

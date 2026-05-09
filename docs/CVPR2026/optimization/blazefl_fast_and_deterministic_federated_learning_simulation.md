@@ -29,15 +29,15 @@ BlazeFL is a lightweight single-machine federated learning simulation framework 
 
 ## Background & Motivation
 
-**State of the Field**: FL research commonly relies on single-machine simulation, emulating hundreds to thousands of virtual clients within a single training-aggregation loop. Mainstream frameworks such as Flower (Ray backend), FedML, and pfl-research adopt multiprocessing or external distributed runtimes (Ray, MPI, NCCL, Horovod) for parallelism.
+**Background**: FL research commonly relies on single-machine simulation, emulating hundreds to thousands of virtual clients within a single training-aggregation loop. Mainstream frameworks such as Flower (Ray backend), FedML, and pfl-research adopt multiprocessing or external distributed runtimes (Ray, MPI, NCCL, Horovod) for parallelism.
 
 **Limitations of Prior Work**: Single-machine simulation faces two core challenges. (1) **Efficiency bottleneck**: In multiprocess architectures, each communication round requires cross-process serialization and transfer of model parameters. For computer vision tasks involving large models (deep ResNets, ViTs, etc.), serialization and IPC overhead severely limit simulation throughput. (2) **Lack of reproducibility**: FL simulation involves multiple sources of randomness (client sampling, data partitioning, mini-batch ordering, data augmentation, regularization). Parallel execution introduces non-determinism through shared random state and completion-order-dependent aggregation. Even with manually set global seeds in Flower, repeated runs yield different model weights and final accuracy.
 
-**Root Cause**: There is a fundamental trade-off between throughput and reproducibility — increasing parallelism accelerates simulation but amplifies non-determinism, forcing researchers to choose between speed and reproducibility, or to write complex control logic.
+**Key Challenge**: There is a fundamental trade-off between throughput and reproducibility — increasing parallelism accelerates simulation but amplifies non-determinism, forcing researchers to choose between speed and reproducibility, or to write complex control logic.
 
-**Paper Goals**: Design a single-machine FL simulation framework that simultaneously addresses efficiency and reproducibility without requiring an external distributed runtime.
+**Goal**: Design a single-machine FL simulation framework that simultaneously addresses efficiency and reproducibility without requiring an external distributed runtime.
 
-**Starting Point**: Python 3.14's free-threading (PEP 703 / PEP 779) bypasses GIL constraints, enabling true parallelism with threads instead of processes. Threads sharing an address space naturally eliminate serialization overhead; combined with per-client independent RNG streams, determinism is guaranteed.
+**Key Insight**: Python 3.14's free-threading (PEP 703 / PEP 779) bypasses GIL constraints, enabling true parallelism with threads instead of processes. Threads sharing an address space naturally eliminate serialization overhead; combined with per-client independent RNG streams, determinism is guaranteed.
 
 **Core Idea**: Single-process thread-level shared-memory execution + per-client isolated RNG streams + fixed-order result collection = fast and bit-level reproducible FL simulation.
 

@@ -28,15 +28,15 @@ SegMASt3R augments the pretrained MASt3R 3D foundation model with a lightweight 
 
 ## Background & Motivation
 
-**State of the Field**: Semantic segment matching — given segmentation results from two images, identify corresponding object instances. Existing methods rely on 2D features (SAM2, DINOv2) or local feature matching (RoMA), and perform well under small baselines.
+**Background**: Semantic segment matching — given segmentation results from two images, identify corresponding object instances. Existing methods rely on 2D features (SAM2, DINOv2) or local feature matching (RoMA), and perform well under small baselines.
 
 **Limitations of Prior Work**: When viewpoint changes exceed 90°, 2D appearance features degrade drastically — the same object appears entirely different from different angles. SAM2 achieves only 17% AUPRC on the 135–180° baseline, and RoMA only 30%. No existing method exploits 3D geometric consistency for segment matching.
 
-**Root Cause**: 2D features have limited invariance to occlusion and viewpoint change, whereas 3D geometry can provide view-independent consistency; however, existing 3D methods do not directly support semantic segment matching.
+**Key Challenge**: 2D features have limited invariance to occlusion and viewpoint change, whereas 3D geometry can provide view-independent consistency; however, existing 3D methods do not directly support semantic segment matching.
 
-**Paper Goals**: Achieve robust semantic segment matching under extreme viewpoint changes.
+**Goal**: Achieve robust semantic segment matching under extreme viewpoint changes.
 
-**Starting Point**: MASt3R has already learned strong 3D geometry-aware patch features via cross-attention. Adding a lightweight head to aggregate patch features into segment features, with Sinkhorn-based differentiable matching, is a natural extension.
+**Key Insight**: MASt3R has already learned strong 3D geometry-aware patch features via cross-attention. Adding a lightweight head to aggregate patch features into segment features, with Sinkhorn-based differentiable matching, is a natural extension.
 
 **Core Idea**: Reuse MASt3R's 3D geometry-aware features + lightweight segmentation aggregation head + Sinkhorn matching layer = robust segment matching under extreme baselines.
 

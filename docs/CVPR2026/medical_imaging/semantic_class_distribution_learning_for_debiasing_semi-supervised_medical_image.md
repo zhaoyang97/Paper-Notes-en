@@ -29,13 +29,13 @@ This paper proposes SCDL, a plug-and-play semantic class distribution learning f
 
 ## Background & Motivation
 
-**State of the Field**: Semi-supervised medical image segmentation (SSMIS) leverages unlabeled data to reduce annotation burden, commonly through consistency regularization and contrastive representation learning.
+**Background**: Semi-supervised medical image segmentation (SSMIS) leverages unlabeled data to reduce annotation burden, commonly through consistency regularization and contrastive representation learning.
 
 **Limitations of Prior Work**: Medical segmentation data inherently suffers from severe class imbalance, with dominant organs occupying far more pixels than minor ones. Combined with semi-supervised mechanisms, this produces two compounding problems: (i) **supervision bias**—self-generated pseudo-labels and consistency constraints further reinforce learning of head classes, leaving tail classes underrepresented; (ii) **representation imbalance**—head-class features become compact while tail-class features drift into head-class-dominated regions, blurring class boundaries.
 
-**Root Cause**: Existing debiasing methods (re-weighting, output calibration) operate only at the loss or output level, without directly constraining class-conditional feature distributions. Unlabeled data is predominantly used for local consistency regularization rather than explicitly correcting skewed class-conditional feature distributions.
+**Key Challenge**: Existing debiasing methods (re-weighting, output calibration) operate only at the loss or output level, without directly constraining class-conditional feature distributions. Unlabeled data is predominantly used for local consistency regularization rather than explicitly correcting skewed class-conditional feature distributions.
 
-**Starting Point**: Learn a trainable proxy distribution for each semantic class in the embedding space, and use bidirectional alignment to provide consistent learning signals across all classes, including minorities.
+**Key Insight**: Learn a trainable proxy distribution for each semantic class in the embedding space, and use bidirectional alignment to provide consistent learning signals across all classes, including minorities.
 
 **Core Idea**: Elevate debiasing from the loss/output level to the feature distribution level, reshaping class-conditional feature structure through bidirectional proxy distribution alignment and semantic anchor constraints.
 

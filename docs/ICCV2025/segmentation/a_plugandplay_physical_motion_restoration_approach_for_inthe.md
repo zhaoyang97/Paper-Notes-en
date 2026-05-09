@@ -28,15 +28,15 @@ A plug-and-play physical motion restoration framework is proposed that repairs d
 
 ## Background & Motivation
 
-**State of the Field**: Extracting 3D human motion from monocular video is a practical route for obtaining motion assets. Video motion capture (VMC) methods (e.g., GVHMR, TRAM) can rapidly estimate 3D motions but lack dynamics modeling, leading to physically implausible artifacts such as floating, foot sliding, self-penetration, and ground penetration. Physics-based motion imitation methods (e.g., PHC, UHC) can serve as post-processing modules to improve physical realism.
+**Background**: Extracting 3D human motion from monocular video is a practical route for obtaining motion assets. Video motion capture (VMC) methods (e.g., GVHMR, TRAM) can rapidly estimate 3D motions but lack dynamics modeling, leading to physically implausible artifacts such as floating, foot sliding, self-penetration, and ground penetration. Physics-based motion imitation methods (e.g., PHC, UHC) can serve as post-processing modules to improve physical realism.
 
 **Limitations of Prior Work**: Current physics-based simulation methods are limited to everyday motions (walking, running, jumping) and fail on high-difficulty motions (gymnastics, martial arts, street dance). Two reasons account for this: (a) VMC algorithms produce defective frames under complex motions (extreme poses cause body localization failure), and these frames directly cause simulation failure; (b) the force control involved in high-difficulty motions is extremely complex and follows a long-tail distribution, making it difficult for a single controller to generalize.
 
-**Root Cause**: High-difficulty motions are extremely rare in existing MoCap datasets (long-tail distribution) and involve complex mechanical interactions such as aerial flips and elastic surface assistance. Pretrained controllers lack the necessary prior knowledge and are subject to catastrophic forgetting.
+**Key Challenge**: High-difficulty motions are extremely rare in existing MoCap datasets (long-tail distribution) and involve complex mechanical interactions such as aerial flips and elastic surface assistance. Pretrained controllers lack the necessary prior knowledge and are subject to catastrophic forgetting.
 
-**Paper Goals**: How can physics-based restoration be extended from everyday motions to in-the-wild high-difficulty motions?
+**Goal**: How can physics-based restoration be extended from everyday motions to in-the-wild high-difficulty motions?
 
-**Starting Point**: Divide and conquer — (a) defective motions are repaired into "simulation-friendly" motions via segmentation mask-guided diffusion; (b) high-difficulty motions are addressed per-instance through pretraining followed by test-time RL adaptation.
+**Key Insight**: Divide and conquer — (a) defective motions are repaired into "simulation-friendly" motions via segmentation mask-guided diffusion; (b) high-difficulty motions are addressed per-instance through pretraining followed by test-time RL adaptation.
 
 **Core Idea**: Large-scale pretraining provides general motion priors; test-time RL adaptation optimizes per-sequence dynamics — together enabling robust handling of in-the-wild high-difficulty motions.
 

@@ -35,9 +35,9 @@ General-purpose AI (GPAI) systems, particularly large language models (LLMs), ar
 - Exhibiting extortion and deception capabilities
 - Spreading election misinformation in the United States and globally
 
-**Root Cause**: According to Normal Accident Theory, serious incidents are inevitable over time in complex systems such as GPAI. Pre-deployment audits cannot prevent all incidents — emergent capabilities of LLMs may manifest unexpectedly after deployment, creating unforeseen incident types. Yet research on the institutional design of AI incident reporting mechanisms remains nearly absent.
+**Key Challenge**: According to Normal Accident Theory, serious incidents are inevitable over time in complex systems such as GPAI. Pre-deployment audits cannot prevent all incidents — emergent capabilities of LLMs may manifest unexpectedly after deployment, creating unforeseen incident types. Yet research on the institutional design of AI incident reporting mechanisms remains nearly absent.
 
-**State of the Field**:
+**Background**:
 - As of July 2025, only China and the European Union mandate general-purpose AI incident reporting
 - Multiple legislative proposals exist in the United States but have not yet been enacted
 - Non-governmental databases (AIID, AIAAIC, AVID) exist but lack stakeholder buy-in

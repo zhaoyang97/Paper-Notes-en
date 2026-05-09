@@ -29,15 +29,15 @@ This paper unifies the feature lifting problem for 3D splat representations as a
 
 ## Background & Motivation
 
-**State of the Field**: Splat-based 3D representations (3DGS, 2DGS, etc.) have enabled real-time high-fidelity rendering, yet lifting rich 2D semantic features (CLIP, DINO, etc.) onto 3D primitives remains challenging. Existing approaches fall into three categories: training-based optimization, grouping-based association, and heuristic forward projection.
+**Background**: Splat-based 3D representations (3DGS, 2DGS, etc.) have enabled real-time high-fidelity rendering, yet lifting rich 2D semantic features (CLIP, DINO, etc.) onto 3D primitives remains challenging. Existing approaches fall into three categories: training-based optimization, grouping-based association, and heuristic forward projection.
 
 **Limitations of Prior Work**: (1) No unified mathematical framework exists for defining the feature lifting problem; (2) existing methods lack theoretical guarantees on solution quality relative to the optimum; (3) all methods focus narrowly on SAM+CLIP features and 3DGS kernels, limiting generalizability; (4) multi-view inconsistency and noisy masks are not explicitly addressed.
 
-**Root Cause**: Feature lifting is intrinsically a sparse, row-stochastic linear inverse problem that becomes ill-conditioned due to noisy masks and incompleteness, yet existing methods either require expensive training or lack theoretical guarantees.
+**Key Challenge**: Feature lifting is intrinsically a sparse, row-stochastic linear inverse problem that becomes ill-conditioned due to noisy masks and incompleteness, yet existing methods either require expensive training or lack theoretical guarantees.
 
-**Paper Goals**: Establish a formal mathematical framework for feature lifting, provide a closed-form solution with error bounds, and handle multi-view noise.
+**Goal**: Establish a formal mathematical framework for feature lifting, provide a closed-form solution with error bounds, and handle multi-view noise.
 
-**Starting Point**: The paper exploits the row-stochastic property of alpha-blending rendering to reformulate feature lifting as a standard linear inverse problem, deriving the optimal solution for a surrogate loss via Jensen's inequality.
+**Key Insight**: The paper exploits the row-stochastic property of alpha-blending rendering to reformulate feature lifting as a standard linear inverse problem, deriving the optimal solution for a surrogate loss via Jensen's inequality.
 
 **Core Idea**: Feature lifting is formulated as $AX=B$, where $A$ is the rendering weight matrix. The closed-form solution given by the row-sum preconditioner, $x_j = \frac{\sum_i A_{ij} B_i}{\sum_i A_{ij}}$, admits a provable $(1+\beta)$-approximation guarantee under convex loss.
 

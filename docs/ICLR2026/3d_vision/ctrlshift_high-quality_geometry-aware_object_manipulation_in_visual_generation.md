@@ -28,18 +28,18 @@ This paper proposes Ctrl&Shift, an end-to-end diffusion framework that decompose
 
 ## Background & Motivation
 
-**State of the Field**: Object-level manipulation (repositioning and rotating objects while preserving scene realism) is a fundamental operation in film post-production, AR, and creative editing. Mainstream approaches fall into two camps: geometry-based methods (manipulation after NeRF/3DGS reconstruction) and diffusion-based methods (text/trajectory-conditioned editing).
+**Background**: Object-level manipulation (repositioning and rotating objects while preserving scene realism) is a fundamental operation in film post-production, AR, and creative editing. Mainstream approaches fall into two camps: geometry-based methods (manipulation after NeRF/3DGS reconstruction) and diffusion-based methods (text/trajectory-conditioned editing).
 
 **Limitations of Prior Work**:
    - Geometry-based methods (NeRF/3DGS) provide precise control but require explicit 3D reconstruction, incurring high per-scene optimization costs and poor generalization
    - Diffusion-based methods (DragAnything/VACE, etc.) generalize well but lack fine-grained geometric control and cannot precisely specify object pose transformations
    - No existing method simultaneously achieves: background preservation, geometry-consistent viewpoint transformation, and user-controllable transformation
 
-**Root Cause**: A fundamental trade-off exists between geometric precision and generalization capability
+**Key Challenge**: A fundamental trade-off exists between geometric precision and generalization capability
 
-**Paper Goals**: Achieve geometry-consistent, fine-grained, controllable object manipulation without explicit 3D reconstruction
+**Goal**: Achieve geometry-consistent, fine-grained, controllable object manipulation without explicit 3D reconstruction
 
-**Starting Point**: Rather than lifting content into 3D for editing, inject precise viewpoint control directly into the 2D diffusion process
+**Key Insight**: Rather than lifting content into 3D for editing, inject precise viewpoint control directly into the 2D diffusion process
 
 **Core Idea**: Decompose object manipulation into three sub-tasks—removal, reference-guided inpainting, and camera pose control—and learn them jointly within a unified diffusion framework through multi-task, multi-stage training
 

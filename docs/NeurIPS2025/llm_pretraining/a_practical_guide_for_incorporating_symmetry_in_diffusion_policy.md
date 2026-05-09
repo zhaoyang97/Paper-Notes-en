@@ -28,15 +28,15 @@ This paper presents a practical guide for incorporating symmetry into diffusion 
 
 ## Background & Motivation
 
-**State of the Field**: Equivariant neural networks have demonstrated advantages in sample efficiency and generalization for robot policy learning, yet their practical adoption is limited by implementation complexity. Each policy framework (Q-learning, actor-critic, diffusion) requires its own custom equivariant design.
+**Background**: Equivariant neural networks have demonstrated advantages in sample efficiency and generalization for robot policy learning, yet their practical adoption is limited by implementation complexity. Each policy framework (Q-learning, actor-critic, diffusion) requires its own custom equivariant design.
 
 **Limitations of Prior Work**: Fully equivariant diffusion policies (e.g., EquiDiff) require specialized equivariant layers and complex mathematical derivations, and are incompatible with pretrained encoders. This forces practitioners to choose between leveraging symmetry and maintaining implementation simplicity.
 
-**Root Cause**: The performance gains from symmetry versus the high barrier of equivariant architecture design appear mutually exclusive.
+**Key Challenge**: The performance gains from symmetry versus the high barrier of equivariant architecture design appear mutually exclusive.
 
-**Paper Goals**: Can symmetry be incorporated into standard Diffusion Policy in a simple, modular manner, without end-to-end equivariant design?
+**Goal**: Can symmetry be incorporated into standard Diffusion Policy in a simple, modular manner, without end-to-end equivariant design?
 
-**Starting Point**: The authors observe that symmetry can be introduced at the representation level (action representations + perception) rather than at the network architecture level, greatly simplifying implementation.
+**Key Insight**: The authors observe that symmetry can be introduced at the representation level (action representations + perception) rather than at the network architecture level, greatly simplifying implementation.
 
 **Core Idea**: Decompose symmetry into two independent modules — invariant representations and equivariant encoders — thereby avoiding the complexity of end-to-end equivariant design.
 

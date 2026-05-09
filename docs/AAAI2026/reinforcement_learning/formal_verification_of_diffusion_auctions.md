@@ -29,7 +29,7 @@ This paper presents the first formal logical framework for diffusion auctions, i
 
 ## Background & Motivation
 
-**State of the Field**: Classical auction theory and mechanism design assume a fixed set of participants operating in socially isolated settings—that is, the social network relationships among participants are not considered. In practice, sellers can leverage social networks to expand participation: existing buyers can invite friends to join the auction, increasing the number of bidders and thereby improving social welfare or seller revenue.
+**Background**: Classical auction theory and mechanism design assume a fixed set of participants operating in socially isolated settings—that is, the social network relationships among participants are not considered. In practice, sellers can leverage social networks to expand participation: existing buyers can invite friends to join the auction, increasing the number of bidders and thereby improving social welfare or seller revenue.
 
 **Limitations of Prior Work**:
 
@@ -41,7 +41,7 @@ This paper presents the first formal logical framework for diffusion auctions, i
    - **Strategic behavior under multi-seller competition**: Multiple sellers simultaneously competing for the most valuable buyers.
    - **Formal verification**: How to rigorously verify properties of diffusion auction mechanisms (e.g., incentive compatibility, optimality, Nash equilibrium) using logical tools.
 
-**Root Cause**: Drawing on intuitions from Social Network Logic (SNL), Dynamic Epistemic Logic (DEL), Coalition Logic (CL), and Alternating-time Temporal Logic (ATL), the paper establishes the first logic-based formal verification framework for diffusion auctions.
+**Key Challenge**: Drawing on intuitions from Social Network Logic (SNL), Dynamic Epistemic Logic (DEL), Coalition Logic (CL), and Alternating-time Temporal Logic (ATL), the paper establishes the first logic-based formal verification framework for diffusion auctions.
 
 ## Method
 

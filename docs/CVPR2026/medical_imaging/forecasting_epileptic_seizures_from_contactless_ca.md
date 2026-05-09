@@ -29,15 +29,15 @@ This paper is the first to systematically define the task of video-based epilept
 
 ## Background & Motivation
 
-**State of the Field**: Epileptic seizure forecasting is a clinically valuable problem. Existing methods rely primarily on neural signals such as EEG, which require specialized equipment and complex wearable setups, severely limiting long-term deployment in everyday settings. Video data offers advantages of non-invasiveness, accessibility, and support for continuous recording; however, existing video-based studies largely focus on post-onset detection, and pre-onset seizure forecasting (i.e., issuing warnings before a seizure occurs) remains almost entirely unexplored.
+**Background**: Epileptic seizure forecasting is a clinically valuable problem. Existing methods rely primarily on neural signals such as EEG, which require specialized equipment and complex wearable setups, severely limiting long-term deployment in everyday settings. Video data offers advantages of non-invasiveness, accessibility, and support for continuous recording; however, existing video-based studies largely focus on post-onset detection, and pre-onset seizure forecasting (i.e., issuing warnings before a seizure occurs) remains almost entirely unexplored.
 
 **Limitations of Prior Work**: (1) Video-based seizure forecasting has never been defined as a task — detection exists but forecasting does not; (2) large-scale annotated human epilepsy video datasets are extremely scarce due to privacy concerns and collection difficulties (this paper collected only 40 short videos); (3) general-purpose video pre-trained models such as those trained on Kinetics-400 lack knowledge of epilepsy-related behavioral dynamics and perform poorly when directly fine-tuned.
 
-**Root Cause**: Seizure forecasting requires models to understand subtle pre-ictal behavioral dynamics, yet annotated human data is extremely scarce, and general-purpose video models possess no such domain knowledge.
+**Key Challenge**: Seizure forecasting requires models to understand subtle pre-ictal behavioral dynamics, yet annotated human data is extremely scarce, and general-purpose video models possess no such domain knowledge.
 
-**Paper Goals**: (1) Define the task of video-based seizure forecasting; (2) train effective forecasting models under conditions of extremely limited human data.
+**Goal**: (1) Define the task of video-based seizure forecasting; (2) train effective forecasting models under conditions of extremely limited human data.
 
-**Starting Point**: Rodent epilepsy models provide abundant data, and seizure characteristics exhibit cross-species consistency between rodents and humans. Pre-training on cross-species video data enables the model to learn epilepsy-related spatiotemporal behavioral patterns, compensating for the scarcity of human data.
+**Key Insight**: Rodent epilepsy models provide abundant data, and seizure characteristics exhibit cross-species consistency between rodents and humans. Pre-training on cross-species video data enables the model to learn epilepsy-related spatiotemporal behavioral patterns, compensating for the scarcity of human data.
 
 **Core Idea**: Use rodent epilepsy videos combined with human normal videos for self-supervised pre-training to establish priors on epileptic behavioral dynamics, then perform few-shot fine-tuning on a small number of human epilepsy videos to enable seizure forecasting.
 

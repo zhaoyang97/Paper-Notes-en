@@ -28,11 +28,11 @@ By combining LSH with Point Transformer, the paper proposes HEPTv2 for end-to-en
 
 ## Background & Motivation
 
-**State of the Field**: Particle track reconstruction in LHC high-energy physics experiments is among the most computationally intensive tasks; traditional Kalman Filters degrade under high pile-up conditions.
+**Background**: Particle track reconstruction in LHC high-energy physics experiments is among the most computationally intensive tasks; traditional Kalman Filters degrade under high pile-up conditions.
 
 **Limitations of Prior Work**: Although GNNs deliver strong performance, they suffer from three major issues: high graph construction cost $O(n^2)$, hardware-inefficient irregular neighborhood aggregation, and random memory access patterns that harm cache utilization. Although HEPT introduces LSH for linear complexity, the additional DBScan clustering step consumes 90% of the total runtime.
 
-**Root Cause**: Fast encoding vs. the complete task (requiring track assignment); expressiveness vs. hardware friendliness.
+**Key Challenge**: Fast encoding vs. the complete task (requiring track assignment); expressiveness vs. hardware friendliness.
 
 **Core Idea**: Extend HEPT to HEPTv2 by incorporating a lightweight query-based Transformer decoder that directly predicts track assignments.
 

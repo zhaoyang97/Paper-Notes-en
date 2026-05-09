@@ -37,14 +37,14 @@ Through extensive experiments on the Game of 24 and ALFWorld embodied tasks, the
 
 - **Manifestation**: The agent's reasoning process rapidly loses diversity, generating incomplete reasoning text irrelevant to the current state and converging toward templated outputs.
 - **Consequence**: Although the model continues to produce "thoughts" and "actions," it has effectively lost its reasoning capacity, resulting in invalid actions and negative rewards.
-- **Root Cause**: During RL training, rewards are determined entirely by the final action, leaving intermediate reasoning (thought tokens) without any supervision. In complex tasks with long horizons and large state spaces, accumulated errors cause training trajectories to deviate.
+- **Key Challenge**: During RL training, rewards are determined entirely by the final action, leaving intermediate reasoning (thought tokens) without any supervision. In complex tasks with long horizons and large state spaces, accumulated errors cause training trajectories to deviate.
 
 Experiments confirm that:
 - Thought collapse occurs in both 7B and 13B models.
 - Extending training steps from 15k to 30k provides no relief.
 - The issue lies not in model capacity or training budget, but in the RL training paradigm itself.
 
-**Root Cause**: How can RL-based VLM agent training leverage environmental rewards to optimize action policies while preventing the degradation of the reasoning process?
+**Key Challenge**: How can RL-based VLM agent training leverage environmental rewards to optimize action policies while preventing the degradation of the reasoning process?
 
 ## Method
 

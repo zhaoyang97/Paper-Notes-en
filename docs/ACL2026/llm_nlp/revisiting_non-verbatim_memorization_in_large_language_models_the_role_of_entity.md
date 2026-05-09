@@ -28,15 +28,15 @@ This paper constructs the RedirectQA dataset—leveraging Wikipedia redirect inf
 
 ## Background & Motivation
 
-**State of the Field**: Large language models store substantial factual knowledge in their parameters and can answer knowledge-intensive questions without external retrieval. Entity-based QA is a common framework for analyzing non-verbatim memorization, and prior work has shown that facts about low-frequency or low-prominence entities are less reliably memorized.
+**Background**: Large language models store substantial factual knowledge in their parameters and can answer knowledge-intensive questions without external retrieval. Entity-based QA is a common framework for analyzing non-verbatim memorization, and prior work has shown that facts about low-frequency or low-prominence entities are less reliably memorized.
 
 **Limitations of Prior Work**: In typical evaluations, each entity is queried using a single canonical surface form (e.g., the Wikipedia title). This makes it difficult to distinguish whether a model has "memorized facts about an entity" or merely "can access those facts via a specific name." For instance, a model may answer correctly for "Pelé" but fail for "Edson Arantes do Nascimento"—the underlying fact is identical, only the name differs.
 
-**Root Cause**: A preliminary diagnosis reveals that 23.7% of canonical–redirect question pairs on Pythia-12B yield inconsistent predictions. This indicates that single-surface-form evaluations substantially underestimate the unreliability of fact access, and canonical-name-based evaluations may miss a large number of surface-conditioned failure cases.
+**Key Challenge**: A preliminary diagnosis reveals that 23.7% of canonical–redirect question pairs on Pythia-12B yield inconsistent predictions. This indicates that single-surface-form evaluations substantially underestimate the unreliability of fact access, and canonical-name-based evaluations may miss a large number of surface-conditioned failure cases.
 
-**Paper Goals**: (1) Construct a QA dataset that holds fact triples constant while varying only the entity surface form; (2) systematically evaluate the effect of surface form variation on factual QA; (3) analyze the independent contributions of entity-level and surface-level frequency to memorization accuracy.
+**Goal**: (1) Construct a QA dataset that holds fact triples constant while varying only the entity surface form; (2) systematically evaluate the effect of surface form variation on factual QA; (3) analyze the independent contributions of entity-level and surface-level frequency to memorization accuracy.
 
-**Starting Point**: Wikipedia redirect pages serve as a natural resource for entity surface forms. Redirect pages carry category annotations (aliases, abbreviations, spelling variants, common errors, etc.), enabling controlled analysis.
+**Key Insight**: Wikipedia redirect pages serve as a natural resource for entity surface forms. Redirect pages carry category annotations (aliases, abbreviations, spelling variants, common errors, etc.), enabling controlled analysis.
 
 **Core Idea**: Fix the fact triple and the gold answer, vary only the surface form of the subject entity, and construct the large-scale controlled QA dataset RedirectQA via Wikipedia's redirect structure to quantify the impact of surface form on fact access.
 

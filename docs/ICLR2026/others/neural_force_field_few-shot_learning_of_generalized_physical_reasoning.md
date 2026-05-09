@@ -28,7 +28,7 @@ This paper proposes Neural Force Field (NFF), which models object interactions a
 
 ## Background & Motivation
 
-**State of the Field**: Physical reasoning is a core capability of AI. Humans can rapidly abstract physical principles from a small number of observations and generalize to new environments, yet existing AI models struggle in out-of-distribution (OOD) scenarios even when trained on massive datasets.
+**Background**: Physical reasoning is a core capability of AI. Humans can rapidly abstract physical principles from a small number of observations and generalize to new environments, yet existing AI models struggle in out-of-distribution (OOD) scenarios even when trained on massive datasets.
 
 **Limitations of Prior Work**:
 - Existing GNN/Transformer methods (IN, SlotFormer) represent object interactions via implicit latent vectors, which tends to overfit observed trajectories rather than capturing physical principles, leading to poor OOD generalization.
@@ -36,11 +36,11 @@ This paper proposes Neural Force Field (NFF), which models object interactions a
 - The risk of overfitting is amplified in few-shot settings, demanding strong physics-based inductive biases.
 - Interactive reasoning requires active experimentation and feedback adaptation, yet existing methods lack backward planning capabilities.
 
-**Root Cause**: There is a need for a physical representation that can both learn from extremely few samples and generalize in OOD scenarios—one that encodes physical principles rather than statistical patterns.
+**Key Challenge**: There is a need for a physical representation that can both learn from extremely few samples and generalize in OOD scenarios—one that encodes physical principles rather than statistical patterns.
 
-**Paper Goals**: Develop an agent with human-like few-shot physical learning ability that achieves robust generalization across diverse environments.
+**Goal**: Develop an agent with human-like few-shot physical learning ability that achieves robust generalization across diverse environments.
 
-**Starting Point**: Force fields are a natural abstraction in physics—force is the causal driver of motion change. Representing interactions as force fields rather than state transitions is inherently compositional and generalizable.
+**Key Insight**: Force fields are a natural abstraction in physics—force is the causal driver of motion change. Representing interactions as force fields rather than state transitions is inherently compositional and generalizable.
 
 **Core Idea**: A neural operator learns a continuous force field function; ODE integration enforces physical consistency; and the low dimensionality of force fields makes few-shot learning tractable.
 

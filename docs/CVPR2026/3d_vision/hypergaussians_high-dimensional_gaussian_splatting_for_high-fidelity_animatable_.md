@@ -27,11 +27,11 @@ content_hash: 6c313b6af36d5111
 This paper proposes HyperGaussians, which extends 3DGS to high-dimensional multivariate Gaussians. Expression-dependent attribute variations are modeled via conditional distributions, and an inverse covariance trick enables efficient conditioning. Integrated as a plug-and-play module into FlashAvatar and GaussianHeadAvatar, the method significantly improves high-frequency detail quality.
 
 ## Background & Motivation
-1. **State of the Field**: 3D Gaussian splatting (3DGS) has become the standard approach for face avatar modeling. Current SOTA methods bind Gaussians to 3DMM meshes and use MLPs to predict expression-dependent offsets for handling dynamics.
+1. **Background**: 3D Gaussian splatting (3DGS) has become the standard approach for face avatar modeling. Current SOTA methods bind Gaussians to 3DMM meshes and use MLPs to predict expression-dependent offsets for handling dynamics.
 2. **Limitations of Prior Work**: Existing methods still struggle with nonlinear deformations (eye closure, mouth opening), complex lighting effects (specular reflections on glasses), and fine-grained structures (tooth gaps, glasses frames)—high-frequency details that are central to the uncanny valley effect.
-3. **Root Cause**: The expressiveness of 3D Gaussian primitives is inherently limited. Each Gaussian has only a few attributes (position, rotation, scale, color), and even with MLP-predicted expression-dependent offsets, linear combinations of attributes remain limited in expressiveness.
-4. **Paper Goals**: How can the expressiveness of 3D Gaussian primitives be enhanced to capture high-frequency dynamic effects without redesigning the entire pipeline?
-5. **Starting Point**: Inspired by HyperNeRF—modeling deformation fields in a high-dimensional space and slicing them can handle topological changes. This idea is applied to Gaussian primitives: each Gaussian is defined as a multivariate Gaussian distribution in a high-dimensional space, and conditioning (slicing) yields expression-dependent 3D Gaussians.
+3. **Key Challenge**: The expressiveness of 3D Gaussian primitives is inherently limited. Each Gaussian has only a few attributes (position, rotation, scale, color), and even with MLP-predicted expression-dependent offsets, linear combinations of attributes remain limited in expressiveness.
+4. **Goal**: How can the expressiveness of 3D Gaussian primitives be enhanced to capture high-frequency dynamic effects without redesigning the entire pipeline?
+5. **Key Insight**: Inspired by HyperNeRF—modeling deformation fields in a high-dimensional space and slicing them can handle topological changes. This idea is applied to Gaussian primitives: each Gaussian is defined as a multivariate Gaussian distribution in a high-dimensional space, and conditioning (slicing) yields expression-dependent 3D Gaussians.
 6. **Core Idea**: Standard 3D Gaussians are extended into $(m+n)$-dimensional HyperGaussians. Conditioning on an $n$-dimensional latent embedding yields dynamically adaptive 3D attributes, and an inverse covariance trick maintains efficiency.
 
 ## Method

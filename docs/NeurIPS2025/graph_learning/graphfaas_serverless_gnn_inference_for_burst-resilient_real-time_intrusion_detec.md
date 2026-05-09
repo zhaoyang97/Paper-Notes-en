@@ -29,15 +29,15 @@ This paper proposes GraphFaaS, a serverless inference architecture for GNN-based
 
 ## Background & Motivation
 
-**State of the Field**: Provenance graph-based intrusion detection systems (PIDS) represent an important application of graph machine learning in cybersecurity. System audit logs are modeled as directed acyclic provenance graphs — nodes represent system entities (processes, files, network sockets) and edges represent events (file reads/writes, process creation). GNNs learn graph patterns of normal behavior and detect anomalous nodes or graphs that deviate from these patterns at inference time.
+**Background**: Provenance graph-based intrusion detection systems (PIDS) represent an important application of graph machine learning in cybersecurity. System audit logs are modeled as directed acyclic provenance graphs — nodes represent system entities (processes, files, network sockets) and edges represent events (file reads/writes, process creation). GNNs learn graph patterns of normal behavior and detect anomalous nodes or graphs that deviate from these patterns at inference time.
 
 **Limitations of Prior Work**: GNN-based intrusion detection faces a fundamental tension between two critical requirements: (1) consistently low latency, since excessive detection delay misses the attack response window with potentially irreversible consequences; and (2) handling highly irregular and bursty workloads, which frequently exhibit order-of-magnitude sudden spikes. Traditional static resource pre-allocation architectures cannot simultaneously satisfy both: reserving resources for peak loads wastes capacity, while provisioning for average loads causes latency spikes at peak time.
 
-**Root Cause**: Static resource allocation versus dynamic bursty workloads. Intrusion detection workloads are inherently imbalanced — malicious activity constitutes only a tiny fraction of network behavior, resulting in highly intermittent and unpredictable peak load patterns. Graph sizes also fluctuate dramatically during attacks.
+**Key Challenge**: Static resource allocation versus dynamic bursty workloads. Intrusion detection workloads are inherently imbalanced — malicious activity constitutes only a tiny fraction of network behavior, resulting in highly intermittent and unpredictable peak load patterns. Graph sizes also fluctuate dramatically during attacks.
 
-**Paper Goals**: How to maintain low detection latency and low latency variance for GNN-based intrusion detection under highly bursty workloads?
+**Goal**: How to maintain low detection latency and low latency variance for GNN-based intrusion detection under highly bursty workloads?
 
-**Starting Point**: Leverage the elastic scaling capability of serverless computing — on-demand resource allocation, pay-per-use billing, and automatic scale-out/scale-in. The two stages of GNN inference (node embedding and message passing) are decomposed into fine-grained parallelizable execution units, with parallelism automatically regulated by the serverless platform.
+**Key Insight**: Leverage the elastic scaling capability of serverless computing — on-demand resource allocation, pay-per-use billing, and automatic scale-out/scale-in. The two stages of GNN inference (node embedding and message passing) are decomposed into fine-grained parallelizable execution units, with parallelism automatically regulated by the serverless platform.
 
 **Core Idea**: Adapt the GNN intrusion detection inference pipeline to a serverless architecture, achieving stable low latency under bursty workloads through incremental graph construction, parallel node embedding, and adaptive graph partitioning.
 

@@ -28,15 +28,15 @@ Grounded in convex optimization theory, this paper proves that training loss in 
 
 ## Background & Motivation
 
-**State of the Field**: Scaling laws such as Chinchilla characterize the relationship between loss and data volume/model size, but the coupled dependence of loss on training steps and learning rate lacks a theoretical foundation. In practice, learning rate schedule choices (cosine, linear decay, WSD) are largely empirical.
+**Background**: Scaling laws such as Chinchilla characterize the relationship between loss and data volume/model size, but the coupled dependence of loss on training steps and learning rate lacks a theoretical foundation. In practice, learning rate schedule choices (cosine, linear decay, WSD) are largely empirical.
 
 **Limitations of Prior Work**: When the training budget (total steps $T$) changes, the optimal learning rate must be re-searched — a process that is both costly and uncertain. Existing empirical scaling laws lack theoretical grounding and cannot reliably extrapolate to new training configurations.
 
-**Root Cause**: Although deep learning involves non-convex optimization, the convergence behavior observed in practice resembles that of convex optimization. This implicit convexity has not yet been systematically theorized.
+**Key Challenge**: Although deep learning involves non-convex optimization, the convergence behavior observed in practice resembles that of convex optimization. This implicit convexity has not yet been systematically theorized.
 
-**Paper Goals**: (a) Establish a unified scaling law relating loss, learning rate, and training steps; (b) enable learning rate transfer across training budgets.
+**Goal**: (a) Establish a unified scaling law relating loss, learning rate, and training steps; (b) enable learning rate transfer across training budgets.
 
-**Starting Point**: The paper hypothesizes that deep learning exhibits weak convexity at a macroscopic level (convex dominance), and that convergence bounds derived from convex analysis can describe actual training behavior.
+**Key Insight**: The paper hypothesizes that deep learning exhibits weak convexity at a macroscopic level (convex dominance), and that convergence bounds derived from convex analysis can describe actual training behavior.
 
 **Core Idea**: Training loss in deep learning follows $L(T) \sim L_\infty + C/\sqrt{T}$, with optimal learning rate $\eta^* = \eta_{\text{ref}}/\sqrt{T}$, where $\eta_{\text{ref}}$ can be determined from small-scale experiments and transferred directly.
 

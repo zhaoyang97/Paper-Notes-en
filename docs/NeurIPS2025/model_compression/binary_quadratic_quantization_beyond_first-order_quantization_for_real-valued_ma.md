@@ -28,15 +28,15 @@ BQQ proposes quadratic binary quantization—representing weight matrices as pro
 
 ## Background & Motivation
 
-**State of the Field**: Conventional quantization methods (uniform quantization, binary coding quantization BCQ) represent weights as linear combinations of binary matrices, $W \approx \sum_i \alpha_i B_i$, constituting first-order quantization. At ultra-low bitwidths (2-bit), the expressive capacity is severely limited.
+**Background**: Conventional quantization methods (uniform quantization, binary coding quantization BCQ) represent weights as linear combinations of binary matrices, $W \approx \sum_i \alpha_i B_i$, constituting first-order quantization. At ultra-low bitwidths (2-bit), the expressive capacity is severely limited.
 
 **Limitations of Prior Work**: BCQ achieves only 10.83% accuracy (near random) on 2-bit data-free quantization of DeiT-S, since linear combinations can only cover a restricted subspace of the matrix space. Increasing the number of binary matrices yields only a linear improvement in expressiveness.
 
-**Root Cause**: Under extreme compression budgets, the growth of expressive power from linear combinations is too slow—$k$ binary matrices cover only $O(k)$ information. Stronger expressiveness is needed within the same storage budget.
+**Key Challenge**: Under extreme compression budgets, the growth of expressive power from linear combinations is too slow—$k$ binary matrices cover only $O(k)$ information. Stronger expressiveness is needed within the same storage budget.
 
-**Paper Goals**: Design a binary quantization scheme that transcends linear combinations, achieving higher reconstruction accuracy under identical storage budgets.
+**Goal**: Design a binary quantization scheme that transcends linear combinations, achieving higher reconstruction accuracy under identical storage budgets.
 
-**Starting Point**: Replace linear combinations with products of binary matrices (quadratic terms)—the product $Y_i Z_i$ yields exponentially more combinatorial possibilities under the same storage cost.
+**Key Insight**: Replace linear combinations with products of binary matrices (quadratic terms)—the product $Y_i Z_i$ yields exponentially more combinatorial possibilities under the same storage cost.
 
 **Core Idea**: Replace linear binary coding with a quadratic binary representation $W \approx \sum_i (r_i Y_i Z_i + s_i Y_i \mathbb{1} + t_i \mathbb{1} Z_i) + u\mathbb{1}$, solved via PUBO optimization.
 

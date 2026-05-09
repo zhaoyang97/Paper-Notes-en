@@ -29,15 +29,15 @@ This paper proposes a two-stage fine-tuning attack: Stage 1 fine-tunes an LLM on
 
 ## Background & Motivation
 
-**State of the Field**: LLM providers offer Fine-tuning-as-a-Service (FaaS), allowing users to upload data to fine-tune models. Prior work has shown that as few as 10 malicious QA pairs can jailbreak an LLM; however, malicious data can be detected and blocked by moderation systems.
+**Background**: LLM providers offer Fine-tuning-as-a-Service (FaaS), allowing users to upload data to fine-tune models. Prior work has shown that as few as 10 malicious QA pairs can jailbreak an LLM; however, malicious data can be detected and blocked by moderation systems.
 
 **Limitations of Prior Work**: Existing covert attacks are either unstable or demand strong model capabilities—encrypted fine-tuning requires 20K samples to teach encryption/decryption, while the Absolute Obedience Agent (AOA) attack sees its ASR drop sharply from 78% to 8% after data shuffling. More critically, even implicitly harmful AOA data can be flagged by GPT-4.1-mini moderation.
 
-**Root Cause**: How can an LLM be reliably jailbroken using fine-tuning data that is completely harmless—raising no suspicion even under manual inspection?
+**Key Challenge**: How can an LLM be reliably jailbroken using fine-tuning data that is completely harmless—raising no suspicion even under manual inspection?
 
-**Paper Goals**: Design an attack that stably jailbreaks diverse LLMs using only 10 entirely benign QA pairs.
+**Goal**: Design an attack that stably jailbreaks diverse LLMs using only 10 entirely benign QA pairs.
 
-**Starting Point**: A "shuffle experiment" on AOA attacks reveals that the similarity among the first few QA answers is the key factor behind the attack's effectiveness. This motivates the following insight: first overfit the model with identical refusal answers to sharpen the loss landscape, then fine-tune with normal answers whose gradient directions are highly aligned with those of malicious data.
+**Key Insight**: A "shuffle experiment" on AOA attacks reveals that the similarity among the first few QA answers is the key factor behind the attack's effectiveness. This motivates the following insight: first overfit the model with identical refusal answers to sharpen the loss landscape, then fine-tune with normal answers whose gradient directions are highly aligned with those of malicious data.
 
 **Core Idea**: Exploit overfitting to render the model extremely sensitive to parameter perturbations; under this condition, any data deviating from refusal behavior—including benign data—can trigger catastrophic forgetting of safety alignment.
 

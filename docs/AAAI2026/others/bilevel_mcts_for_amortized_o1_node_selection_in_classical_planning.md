@@ -30,15 +30,15 @@ This paper proposes Bilevel MCTS, which launches a depth-proportional budgeted b
 
 ## Background & Motivation
 
-**State of the Field**: MCTS has achieved great success in game-playing search (Go, Backgammon), but remains unpopular in the classical planning community. The dominant approaches are queue-based forward best-first search methods (GBFS/A*), and recent methods addressing exploration–exploitation trade-offs (e.g., Softmin-type) do not employ MAB statistical tools.
+**Background**: MCTS has achieved great success in game-playing search (Go, Backgammon), but remains unpopular in the classical planning community. The dominant approaches are queue-based forward best-first search methods (GBFS/A*), and recent methods addressing exploration–exploitation trade-offs (e.g., Softmin-type) do not employ MAB statistical tools.
 
 **Limitations of Prior Work**: MCTS uses a tree-structured OPEN list where node selection requires recursive descent from the root to a leaf, with complexity $O(BD)$ ($B$ = branching factor, $D$ = depth), equivalent to $O(\log N)$ in balanced trees. In contrast, popmin on a standard array-based priority queue (Dial's algorithm) costs only $O(1)$. Scatter plots show that GUCTN2's node processing speed can be up to **three orders of magnitude** slower than GBFS.
 
-**Root Cause**: In game search, depth is bounded (Go: $d \leq 361$), making selection overhead negligible. However, in classical planning, search depth can grow arbitrarily (the $k$-disk Tower of Hanoi has solution length $2^k - 1$), making selection cost the primary bottleneck. Log-log scatter plots confirm a clear negative correlation between nodes-per-second and average search depth.
+**Key Challenge**: In game search, depth is bounded (Go: $d \leq 361$), making selection overhead negligible. However, in classical planning, search depth can grow arbitrarily (the $k$-disk Tower of Hanoi has solution length $2^k - 1$), making selection cost the primary bottleneck. Log-log scatter plots confirm a clear negative correlation between nodes-per-second and average search depth.
 
-**Paper Goals**: Eliminate the node-selection efficiency bottleneck caused by growing depth in MCTS, enabling it to match the raw efficiency of queue-based search while retaining the exploration–exploitation advantages of UCB1-Normal2, and ultimately surpass existing SOTA planners.
+**Goal**: Eliminate the node-selection efficiency bottleneck caused by growing depth in MCTS, enabling it to match the raw efficiency of queue-based search while retaining the exploration–exploitation advantages of UCB1-Normal2, and ultimately surpass existing SOTA planners.
 
-**Starting Point**: Rather than improving heuristic quality, the paper starts from **complexity bottleneck analysis**—launching a budgeted BFS sub-search at the leaf node selected by MCTS, with budget proportional to current depth $D$, thereby amortizing the $O(D)$ tree traversal cost.
+**Key Insight**: Rather than improving heuristic quality, the paper starts from **complexity bottleneck analysis**—launching a budgeted BFS sub-search at the leaf node selected by MCTS, with budget proportional to current depth $D$, thereby amortizing the $O(D)$ tree traversal cost.
 
 **Core Idea**: Three techniques working in concert: (a) Bilevel MCTS achieves amortized $O(1)$ selection via BFS with $b=D$ (Thm. 3); (b) Tree Collapsing bypasses nodes whose child count falls below threshold $\theta$, reducing uninformative action-selection steps; (c) Dynamic Tree Collapsing sets $\theta$ to current depth, eliminating hyperparameter tuning. These are orthogonally combined with a novelty metric and alternating queues to form Nεbula.
 

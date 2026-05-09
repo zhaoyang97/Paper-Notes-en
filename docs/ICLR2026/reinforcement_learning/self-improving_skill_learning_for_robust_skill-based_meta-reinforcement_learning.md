@@ -29,13 +29,13 @@ This paper proposes SISL (Self-Improving Skill Learning), which decouples the hi
 
 ## Background & Motivation
 
-**State of the Field**: Skill-based meta-RL methods (e.g., SiMPL) decompose long state-action sequences into reusable skills and achieve success on long-horizon tasks through hierarchical decision-making. These methods rely on offline demonstration data to learn a low-level skill library, which is then leveraged by a high-level policy to select skills online.
+**Background**: Skill-based meta-RL methods (e.g., SiMPL) decompose long state-action sequences into reusable skills and achieve success on long-horizon tasks through hierarchical decision-making. These methods rely on offline demonstration data to learn a low-level skill library, which is then leveraged by a high-level policy to select skills online.
 
 **Limitations of Prior Work**: Existing methods are highly dependent on high-quality offline demonstrations; however, real-world data are often corrupted by factors such as hardware degradation, environmental perturbations, and sensor drift. When offline data quality degrades, the learned skill library becomes contaminated, and this degradation propagates to the high-level policy, ultimately impairing adaptation performance.
 
-**Root Cause**: Existing methods treat all trajectories uniformly (uniform sampling), causing low-quality samples to dominate skill learning. For example, skills learned from noisy data in the Kitchen microwave-opening task fail to even complete the grasping motion.
+**Key Challenge**: Existing methods treat all trajectories uniformly (uniform sampling), causing low-quality samples to dominate skill learning. For example, skills learned from noisy data in the Kitchen microwave-opening task fail to even complete the grasping motion.
 
-**Starting Point**: The paper designs a self-improvement mechanism by decoupling the high-level exploitation policy from an independent skill improvement policy. The improvement policy explores superior behaviors in the vicinity of the offline data distribution, while a return relabeling scheme prioritizes high-value trajectories.
+**Key Insight**: The paper designs a self-improvement mechanism by decoupling the high-level exploitation policy from an independent skill improvement policy. The improvement policy explores superior behaviors in the vicinity of the offline data distribution, while a return relabeling scheme prioritizes high-value trajectories.
 
 ## Method
 

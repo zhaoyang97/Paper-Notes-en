@@ -28,17 +28,17 @@ This paper proposes ReStraV, a method grounded in the perceptual straightening h
 
 ## Background & Motivation
 
-**State of the Field**: AI video generation systems (Sora, Pika, VideoCrafter, etc.) are advancing rapidly, producing increasingly photorealistic content, making robust detection urgently necessary. Existing detection approaches include image-based methods (CNNSpot, UnivFD) and video-based methods (I3D, SlowFast, VideoSwin); the former disregard temporal information, while the latter require extensive training and generalize poorly.
+**Background**: AI video generation systems (Sora, Pika, VideoCrafter, etc.) are advancing rapidly, producing increasingly photorealistic content, making robust detection urgently necessary. Existing detection approaches include image-based methods (CNNSpot, UnivFD) and video-based methods (I3D, SlowFast, VideoSwin); the former disregard temporal information, while the latter require extensive training and generalize poorly.
 
 **Limitations of Prior Work**: (a) Image-level detectors fail to capture temporal inconsistencies; (b) video-level detectors require large-scale generator-specific training and generalize poorly to unseen generators; (c) watermarking schemes depend on generator cooperation and can be circumvented.
 
-**Root Cause**: A generalizable detection method is needed that does not rely on generator-specific artifacts and can capture anomalies along the temporal dimension.
+**Key Challenge**: A generalizable detection method is needed that does not rely on generator-specific artifacts and can capture anomalies along the temporal dimension.
 
-**Paper Goals**
+**Goal**
 - Does a fundamental geometric difference exist between real and AI-generated videos in neural representation space?
 - Can such a difference support efficient and generalizable detection?
 
-**Starting Point**: Motivated by the neuroscientific perceptual straightening hypothesis—which holds that the visual system straightens the temporal trajectories of natural videos to facilitate predictive coding—this work hypothesizes that pre-trained vision models (DINOv2) selectively straighten real videos but not AI-generated ones, yielding discriminative curvature differences.
+**Key Insight**: Motivated by the neuroscientific perceptual straightening hypothesis—which holds that the visual system straightens the temporal trajectories of natural videos to facilitate predictive coding—this work hypothesizes that pre-trained vision models (DINOv2) selectively straighten real videos but not AI-generated ones, yielding discriminative curvature differences.
 
 **Core Idea**: Real videos trace straighter trajectories (lower curvature) in DINOv2 representation space, whereas AI-generated videos follow more curved trajectories—this geometric discrepancy constitutes a reliable detection signal.
 

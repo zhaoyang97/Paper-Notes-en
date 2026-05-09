@@ -28,13 +28,13 @@ This paper proposes CTFS, the first semi-supervised semantic segmentation framew
 
 ## Background & Motivation
 
-**State of the Field**: Forward-looking sonar is a key technology for underwater perception (rescue, detection, biological survey). Sonar images present unique challenges—severe speckle noise, low texture contrast, acoustic shadows, and geometric distortion. Sonar data is highly specialized and expensive to annotate.
+**Background**: Forward-looking sonar is a key technology for underwater perception (rescue, detection, biological survey). Sonar images present unique challenges—severe speckle noise, low texture contrast, acoustic shadows, and geometric distortion. Sonar data is highly specialized and expensive to annotate.
 
 **Limitations of Prior Work**: (1) Conventional teacher-student semi-supervised methods (Mean Teacher/FixMatch) do not account for sonar characteristics, causing teachers to generate large numbers of low-quality pseudo-labels on noisy sonar images. (2) Some methods under 10% labeled data even underperform fully supervised baselines—semi-supervised frameworks can be counterproductive in the sonar domain. (3) Teacher model designs tailored to the physical characteristics of sonar imaging are absent.
 
-**Root Cause**: The weak/strong augmentation strategies of standard semi-supervised methods are designed for natural images (e.g., color jitter) and are ineffective or even harmful for sonar images—sonar "noise" originates from the physical imaging process rather than image processing artifacts.
+**Key Challenge**: The weak/strong augmentation strategies of standard semi-supervised methods are designed for natural images (e.g., color jitter) and are ineffective or even harmful for sonar images—sonar "noise" originates from the physical imaging process rather than image processing artifacts.
 
-**Starting Point**: Augmentation strategies for the teacher must be grounded in the physics of sonar imaging; acoustic shadow and energy attenuation are the two dominant physical characteristics of sonar images.
+**Key Insight**: Augmentation strategies for the teacher must be grounded in the physics of sonar imaging; acoustic shadow and energy attenuation are the two dominant physical characteristics of sonar images.
 
 **Core Idea**: (1) Three-teacher collaboration—a general teacher, an acoustic shadow teacher, and an energy attenuation teacher, rotating in a fixed order to guide the student; (2) Multi-view pseudo-label reliability assessment—intra-teacher stability × inter-teacher consistency → reliable pseudo-labels.
 

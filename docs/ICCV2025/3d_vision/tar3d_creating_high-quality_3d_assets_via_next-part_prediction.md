@@ -29,7 +29,7 @@ TAR3D is proposed as the first framework to quantize triplane representations in
 
 ## Background & Motivation
 
-**State of the Field**: Conditional 3D generation has achieved significant progress along three main directions: (1) SDS-based optimization (e.g., DreamFusion), which is time-consuming and prone to multi-face artifacts; (2) multi-view synthesis (e.g., Zero123), which depends on view consistency and tends to lose fine details; (3) native 3D diffusion (e.g., Direct3D, Clay), which is difficult to unify with LLM-based modeling.
+**Background**: Conditional 3D generation has achieved significant progress along three main directions: (1) SDS-based optimization (e.g., DreamFusion), which is time-consuming and prone to multi-face artifacts; (2) multi-view synthesis (e.g., Zero123), which depends on view consistency and tends to lose fine details; (3) native 3D diffusion (e.g., Direct3D, Clay), which is difficult to unify with LLM-based modeling.
 
 **Limitations of Prior Work**: Approaches such as MeshGPT and MeshXL attempt to introduce autoregressive LLMs into 3D generation, but directly quantizing mesh faces yields a sequence length of $9 \times$ the face count. Industrial-grade models with hundreds of thousands of faces thus produce sequences of intractable length that do not scale.
 

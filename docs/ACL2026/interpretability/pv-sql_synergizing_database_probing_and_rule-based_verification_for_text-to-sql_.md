@@ -28,15 +28,15 @@ This paper proposes PV-SQL, an agent-based Text-to-SQL framework that combines t
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-SQL has made significant progress with LLMs, yet persistent challenges remain — schema understanding, value anchoring (mapping natural language to exact database values), and constraint satisfaction (ensuring SQL faithfully captures all semantics).
+**Background**: Text-to-SQL has made significant progress with LLMs, yet persistent challenges remain — schema understanding, value anchoring (mapping natural language to exact database values), and constraint satisfaction (ensuring SQL faithfully captures all semantics).
 
 **Limitations of Prior Work**: (1) Approximately 41% of failures stem from database misunderstanding — models do not know whether "California" is stored as "CA" or its full name; (2) even when understanding is correct, SQL generation lacks a verification mechanism, potentially producing syntactically valid but semantically incorrect queries; (3) existing verification methods (LLM self-verification / test case generation) are either unreliable or computationally expensive.
 
-**Root Cause**: Schema descriptions (DDL) alone do not contain actual data values, yet including all values in the prompt is infeasible. What is needed is on-demand, question-driven exploration of database contents.
+**Key Challenge**: Schema descriptions (DDL) alone do not contain actual data values, yet including all values in the prompt is infeasible. What is needed is on-demand, question-driven exploration of database contents.
 
-**Paper Goals**: Resolve comprehension errors through adaptive database probing, and resolve synthesis errors through deterministic rule-based verification.
+**Goal**: Resolve comprehension errors through adaptive database probing, and resolve synthesis errors through deterministic rule-based verification.
 
-**Starting Point**: Probe enhances the input (enriching context with real database evidence), while Verify enhances the output (ensuring semantic constraints are satisfied) — the two components address complementary failure types.
+**Key Insight**: Probe enhances the input (enriching context with real database evidence), while Verify enhances the output (ensuring semantic constraints are satisfied) — the two components address complementary failure types.
 
 **Core Idea**: The SQL agent first "examines what the data looks like" before writing a query — mirroring the workflow of a human data analyst — and then reviews constraints one by one like a code reviewer.
 

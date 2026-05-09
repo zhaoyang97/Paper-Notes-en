@@ -28,15 +28,15 @@ This paper identifies an intrinsic connection between image layer decomposition 
 
 ## Background & Motivation
 
-1. **State of the Field**: An image can be viewed as a layered composition of foreground and background. Layer decomposition requires simultaneously extracting the foreground (with occlusion recovery) and completing the background (object removal) from a single image. Existing methods such as LAYERDECOMP require full fine-tuning of closed-source large models, incurring substantial computational and data costs.
+1. **Background**: An image can be viewed as a layered composition of foreground and background. Layer decomposition requires simultaneously extracting the foreground (with occlusion recovery) and completing the background (object removal) from a single image. Existing methods such as LAYERDECOMP require full fine-tuning of closed-source large models, incurring substantial computational and data costs.
 
 2. **Limitations of Prior Work**: (1) High-quality annotated layer data is extremely scarce, with MULAN being the only publicly available benchmark dataset; (2) training from scratch or full fine-tuning of generative models demands extensive computational resources and commercial datasets, making reproduction inaccessible to most researchers; (3) existing inpainting models only perform background filling and cannot simultaneously extract the foreground.
 
-3. **Root Cause**: Layer decomposition is conceptually analogous to inpainting (background layer = filling the masked region; foreground layer = outpainting beyond the mask), yet existing inpainting models lack foreground extraction capability, while dedicated layer decomposition methods require training from scratch.
+3. **Key Challenge**: Layer decomposition is conceptually analogous to inpainting (background layer = filling the masked region; foreground layer = outpainting beyond the mask), yet existing inpainting models lack foreground extraction capability, while dedicated layer decomposition methods require training from scratch.
 
-4. **Paper Goals**: Can existing powerful inpainting models be adapted for high-quality layer decomposition with minimal modifications and data?
+4. **Goal**: Can existing powerful inpainting models be adapted for high-quality layer decomposition with minimal modifications and data?
 
-5. **Starting Point**: Unify layer decomposition as a combination of inpainting (background) and outpainting (foreground), leveraging the region-filling capability already present in inpainting models.
+5. **Key Insight**: Unify layer decomposition as a combination of inpainting (background) and outpainting (foreground), leveraging the region-filling capability already present in inpainting models.
 
 6. **Core Idea**: Layer decomposition is bidirectional inpainting — the background undergoes region filling while the foreground undergoes region outpainting — and a single inpainting model with lightweight adaptation can handle both simultaneously.
 

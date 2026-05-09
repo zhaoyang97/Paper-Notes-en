@@ -28,11 +28,11 @@ This paper proposes DACO, a framework that constructs a multimodal concept dicti
 
 ## Background & Motivation
 
-1. **State of the Field**: Multimodal large language models (MLLMs) face safety risks from malicious queries, including textual jailbreaks, visual adversarial attacks, and typographic triggers. Existing safety control strategies include prompt engineering, response filtering, fine-tuning, and the emerging approach of activation steering.
+1. **Background**: Multimodal large language models (MLLMs) face safety risks from malicious queries, including textual jailbreaks, visual adversarial attacks, and typographic triggers. Existing safety control strategies include prompt engineering, response filtering, fine-tuning, and the emerging approach of activation steering.
 2. **Limitations of Prior Work**: Prompt engineering is fragile under distribution shift; response filtering incurs additional computational overhead; fine-tuning is costly. Although activation steering is flexible, it faces three challenges: (1) non-sparse methods typically handle fewer than 20 concept vectors, resulting in limited coverage; (2) steering intensity is difficult to calibrate — insufficient suppression fails to achieve safety goals while excessive suppression degrades general capability; (3) SAE-based methods lack semantic grounding, as their learned features require expensive probing or manual interpretation.
-3. **Root Cause**: Manually constructed concept vectors offer limited coverage and are often redundant or entangled; SAE-learned dictionaries are expressive but lack semantic annotation. Both approaches have complementary strengths that have not been effectively unified.
-4. **Paper Goals**: To construct a framework that jointly leverages a large-scale concept dictionary and SAE for effective and interpretable safety steering in MLLM activation spaces.
-5. **Starting Point**: Over 15,000 concepts are extracted from WordNet, and 400K+ image-text stimulus pairs are retrieved from CC-3M and aggregated into a concept vector dictionary; this dictionary is used to initialize SAE training and to automatically annotate the semantics of SAE atoms.
+3. **Key Challenge**: Manually constructed concept vectors offer limited coverage and are often redundant or entangled; SAE-learned dictionaries are expressive but lack semantic annotation. Both approaches have complementary strengths that have not been effectively unified.
+4. **Goal**: To construct a framework that jointly leverages a large-scale concept dictionary and SAE for effective and interpretable safety steering in MLLM activation spaces.
+5. **Key Insight**: Over 15,000 concepts are extracted from WordNet, and 400K+ image-text stimulus pairs are retrieved from CC-3M and aggregated into a concept vector dictionary; this dictionary is used to initialize SAE training and to automatically annotate the semantics of SAE atoms.
 6. **Core Idea**: The concept dictionary provides semantic grounding while the SAE provides expressiveness; their combination enables fine-grained activation control that is simultaneously concept-aware and compositionally decomposable.
 
 ## Method

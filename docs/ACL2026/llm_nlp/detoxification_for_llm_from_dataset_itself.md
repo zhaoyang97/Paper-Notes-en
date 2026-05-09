@@ -29,15 +29,15 @@ This paper proposes HSPD (Hierarchical Semantic-Preserving Detoxification), a pi
 
 ## Background & Motivation
 
-**State of the Field**: LLMs trained on internet-scale data inevitably absorb toxic content. Existing detoxification methods operate primarily at the post-training stage (fine-tuning/RLHF) or at inference time (controlled decoding), yet none fundamentally prevent models from acquiring toxic knowledge during pretraining.
+**Background**: LLMs trained on internet-scale data inevitably absorb toxic content. Existing detoxification methods operate primarily at the post-training stage (fine-tuning/RLHF) or at inference time (controlled decoding), yet none fundamentally prevent models from acquiring toxic knowledge during pretraining.
 
 **Limitations of Prior Work**: (1) Controlled inference methods (e.g., PPLM, DExperts) tend to degrade generation quality; (2) post-training methods (e.g., DAPT) incur substantial additional computation; (3) all such methods merely *suppress* rather than *eliminate* toxicity—the model still retains toxic knowledge and is only prevented from expressing it.
 
-**Root Cause**: Detoxification at inference or post-training time treats symptoms rather than causes. The fundamental problem lies in the training data itself. However, directly detoxifying data poses a semantic preservation challenge: naively removing toxic content disrupts contextual coherence and knowledge continuity.
+**Key Challenge**: Detoxification at inference or post-training time treats symptoms rather than causes. The fundamental problem lies in the training data itself. However, directly detoxifying data poses a semantic preservation challenge: naively removing toxic content disrupts contextual coherence and knowledge continuity.
 
-**Paper Goals**: To detoxify at the dataset level—rewriting toxic segments in raw corpora into non-toxic, semantically equivalent text that can directly replace the original data.
+**Goal**: To detoxify at the dataset level—rewriting toxic segments in raw corpora into non-toxic, semantically equivalent text that can directly replace the original data.
 
-**Starting Point**: Exploit the text generation capability of LLMs themselves, using contrastive decoding to precisely locate and suppress toxic tokens while preserving the original semantics.
+**Key Insight**: Exploit the text generation capability of LLMs themselves, using contrastive decoding to precisely locate and suppress toxic tokens while preserving the original semantics.
 
 **Core Idea**: A small model fine-tuned on toxic data serves as a "toxicity detector." The divergence signal produced by contrasting this model against the base model during decoding precisely identifies toxic token dimensions, enabling suppression to be applied exclusively to those dimensions while maximally preserving semantics.
 

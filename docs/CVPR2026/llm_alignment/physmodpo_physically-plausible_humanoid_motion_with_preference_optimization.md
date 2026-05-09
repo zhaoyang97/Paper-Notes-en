@@ -29,13 +29,13 @@ This work introduces DPO preference optimization into the post-training stage of
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion-based text-driven human motion generation has achieved significant progress (MDM, MoMask, MotionStreamer, etc.), producing motion sequences conditioned on text descriptions or spatial constraints.
+**Background**: Diffusion-based text-driven human motion generation has achieved significant progress (MDM, MoMask, MotionStreamer, etc.), producing motion sequences conditioned on text descriptions or spatial constraints.
 
 **Limitations of Prior Work**: These models are trained and evaluated in kinematic space, but serious deficiencies are exposed when deployed to physical simulation or real robots—foot sliding, unstable center of mass, dynamically implausible motion—making generated motions unexecutable.
 
-**Root Cause**: When motions are mapped to executable trajectories via a Whole-Body Controller (WBC), the controller substantially modifies implausible motions to satisfy physical constraints, causing large deviations between the executed trajectory and the generated motion. In other words, "good kinematic metrics ≠ good deployment performance."
+**Key Challenge**: When motions are mapped to executable trajectories via a Whole-Body Controller (WBC), the controller substantially modifies implausible motions to satisfy physical constraints, causing large deviations between the executed trajectory and the generated motion. In other words, "good kinematic metrics ≠ good deployment performance."
 
-**Paper Goals**: Enable the diffusion motion generator to directly output physically feasible motions that are faithful to text/spatial conditions.
+**Goal**: Enable the diffusion motion generator to directly output physically feasible motions that are faithful to text/spatial conditions.
 
 **Limitations of Prior Work**: (a) Post-processing/projection methods (PhysPT, PhysDiff) alter the output distribution and degrade task performance; (b) RL fine-tuning with hand-crafted rewards (foot sliding, floating penalties) (ReinDiffuse, HY-Motion) struggles to cover complex dynamics.
 

@@ -29,13 +29,13 @@ This paper proposes FedPoisonMIA, a poisoning-based membership inference attack 
 
 ## Background & Motivation
 
-**State of the Field**: Federated Learning (FL) enables multiple clients to collaboratively train a global model without sharing raw data, and is regarded as a key paradigm for privacy preservation. However, the distributed nature of FL makes it vulnerable to poisoning attacks, where malicious clients can submit carefully crafted updates to influence the global model.
+**Background**: Federated Learning (FL) enables multiple clients to collaboratively train a global model without sharing raw data, and is regarded as a key paradigm for privacy preservation. However, the distributed nature of FL makes it vulnerable to poisoning attacks, where malicious clients can submit carefully crafted updates to influence the global model.
 
 **Limitations of Prior Work**: Most poisoning attacks in FL focus on compromising model integrity (e.g., degrading accuracy), with insufficient attention to privacy attacks. Poisoning Membership Inference Attacks (PMIA) manipulate gradients to infer whether a specific sample exists in a benign client's dataset, but existing PMIA methods have limited effectiveness against Byzantine-robust aggregation mechanisms.
 
-**Root Cause**: PMIA is inherently harder to design than conventional poisoning attacks — it must extract private information without significantly degrading global model performance (which would trigger detection). Gradients computed with wrong labels produce excessively large angular deviations, making them易 to filter by robust aggregation rules.
+**Key Challenge**: PMIA is inherently harder to design than conventional poisoning attacks — it must extract private information without significantly degrading global model performance (which would trigger detection). Gradients computed with wrong labels produce excessively large angular deviations, making them易 to filter by robust aggregation rules.
 
-**Starting Point**: On the attack side, the paper crafts malicious gradients to maximize angular deviation while ensuring it does not exceed the maximum angular difference among benign gradients; on the defense side, angular deviation serves as the discriminative criterion for filtering malicious updates.
+**Key Insight**: On the attack side, the paper crafts malicious gradients to maximize angular deviation while ensuring it does not exceed the maximum angular difference among benign gradients; on the defense side, angular deviation serves as the discriminative criterion for filtering malicious updates.
 
 **Core Idea**: The attack is formulated as a constrained optimization problem: maximize the angular deviation between the malicious gradient and benign gradients, subject to the constraint that this deviation does not exceed the maximum pairwise angle among benign gradients. A greedy algorithm selects mask samples to conceal the attack gradient, and a scaling coefficient $\alpha$ is jointly optimized.
 

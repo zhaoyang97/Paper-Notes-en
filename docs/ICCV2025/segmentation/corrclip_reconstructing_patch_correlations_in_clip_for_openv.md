@@ -31,11 +31,11 @@ This paper identifies inter-class patch correlations in CLIP as the fundamental 
 
 ### Limitations of Prior Work
 
-**State of the Field**: While CLIP excels at zero-shot classification, applying it to pixel-level segmentation is challenging. The core issue lies in the global self-attention of its ViT backbone, where each patch interacts with all others, including those from different semantic classes. Prior work such as ClearCLIP found that removing residual connections and FFN in the last layer improves segmentation, and SCLIP proposed self-self attention to encourage patches to attend more to themselves. However, none of these methods explicitly identify which type of patch correlation is responsible for degrading segmentation performance.
+**Background**: While CLIP excels at zero-shot classification, applying it to pixel-level segmentation is challenging. The core issue lies in the global self-attention of its ViT backbone, where each patch interacts with all others, including those from different semantic classes. Prior work such as ClearCLIP found that removing residual connections and FFN in the last layer improves segmentation, and SCLIP proposed self-self attention to encourage patches to attend more to themselves. However, none of these methods explicitly identify which type of patch correlation is responsible for degrading segmentation performance.
 
 ### Root Cause
 
-**Paper Goals**: This work investigates what type of patch correlations in CLIP impede segmentation — inter-class or intra-class — and proposes how to effectively suppress harmful inter-class correlations while preserving beneficial intra-class ones.
+**Goal**: This work investigates what type of patch correlations in CLIP impede segmentation — inter-class or intra-class — and proposes how to effectively suppress harmful inter-class correlations while preserving beneficial intra-class ones.
 
 ## Method
 

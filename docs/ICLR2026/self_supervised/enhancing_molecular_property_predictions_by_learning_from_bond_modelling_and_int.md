@@ -28,15 +28,15 @@ DeMol is a dual-graph enhanced multi-scale interaction framework that introduces
 
 ## Background & Motivation
 
-**State of the Field**: Mainstream molecular representation learning methods are based on GNNs, modeling molecules as graphs (atoms as nodes, bonds as edges). Recent approaches further leverage 3D geometric information (distances, angles) to enhance predictions.
+**Background**: Mainstream molecular representation learning methods are based on GNNs, modeling molecules as graphs (atoms as nodes, bonds as edges). Recent approaches further leverage 3D geometric information (distances, angles) to enhance predictions.
 
 **Limitations of Prior Work**: Existing methods are "atom-centric," treating chemical bonds merely as pairwise interactions between atoms. However, bonds themselves carry rich information (bond order, bond length, hybridization state), and non-additive interactions exist between bonds (e.g., delocalized π-electron systems in benzene rings, or the cisplatin/transplatin configurational differences that directly determine pharmacological activity).
 
-**Root Cause**: Single-graph models cannot simultaneously encode atomic topological relationships and bond geometric relationships (dihedral angles, bond angles), limiting prediction accuracy.
+**Key Challenge**: Single-graph models cannot simultaneously encode atomic topological relationships and bond geometric relationships (dihedral angles, bond angles), limiting prediction accuracy.
 
-**Paper Goals**: Explicitly model chemical bond information and inter-bond interactions by constructing a dual-channel atom–bond fusion framework.
+**Goal**: Explicitly model chemical bond information and inter-bond interactions by constructing a dual-channel atom–bond fusion framework.
 
-**Starting Point**: An information-theoretic analysis demonstrates that the bond-centric graph (line graph) contains additional structural information not present in the original graph (Proposition 1), and dual-graph representations strictly preserve more mutual information (Proposition 2).
+**Key Insight**: An information-theoretic analysis demonstrates that the bond-centric graph (line graph) contains additional structural information not present in the original graph (Proposition 1), and dual-graph representations strictly preserve more mutual information (Proposition 2).
 
 **Core Idea**: Encode molecules in parallel using a dual-graph (atom graph + bond graph), fuse information across both channels at multiple scales via Double-Helix Blocks, and enforce geometric consistency through covalent radius regularization.
 

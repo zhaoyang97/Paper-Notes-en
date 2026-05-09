@@ -29,15 +29,15 @@ This paper proposes Balanced Token Pruning (BTP), which jointly considers the im
 
 ## Background & Motivation
 
-**State of the Field**: LVLMs convert images into large numbers of tokens via visual encoders (e.g., 576 tokens for LLaVA-1.5 and up to 2880 for LLaVA-NeXT). The sheer volume of visual tokens constitutes the primary bottleneck for inference efficiency, particularly in edge deployment scenarios. Visual token pruning has emerged as the dominant acceleration strategy.
+**Background**: LVLMs convert images into large numbers of tokens via visual encoders (e.g., 576 tokens for LLaVA-1.5 and up to 2880 for LLaVA-NeXT). The sheer volume of visual tokens constitutes the primary bottleneck for inference efficiency, particularly in edge deployment scenarios. Visual token pruning has emerged as the dominant acceleration strategy.
 
 **Limitations of Prior Work**: Existing pruning methods fall into two categories — attention-based methods (FastV, PyramidDrop) select important tokens based on the attention scores from text to image tokens, while diversity-based methods (DivPrune) maximize the semantic diversity of retained tokens. Both categories, however, suffer from blind spots: attention-based methods optimize only for output consistency at the current layer (local optimum), ignoring the cascading effects of pruning on subsequent layers — different layers attend to different image regions, and tokens that are unimportant at the current layer may be critical at deeper layers. Diversity-based methods better preserve information required by subsequent layers, but fail to maintain output consistency at the local layer level.
 
-**Root Cause**: Through visualization experiments, the authors identify a key phenomenon: attention pruning achieves high output similarity at the pruning layer, but errors accumulate progressively in subsequent layers; diversity pruning yields lower output similarity at the pruning layer, yet achieves better consistency at deeper layers. This demonstrates that each family of methods optimizes only one aspect of the problem.
+**Key Challenge**: Through visualization experiments, the authors identify a key phenomenon: attention pruning achieves high output similarity at the pruning layer, but errors accumulate progressively in subsequent layers; diversity pruning yields lower output similarity at the pruning layer, yet achieves better consistency at deeper layers. This demonstrates that each family of methods optimizes only one aspect of the problem.
 
-**Paper Goals**: To jointly account for the effects of pruning on both the current and subsequent layers, striking a balance between local and global objectives.
+**Goal**: To jointly account for the effects of pruning on both the current and subsequent layers, striking a balance between local and global objectives.
 
-**Starting Point**: Since attention-based methods excel at local consistency while diversity-based methods excel at global representation, one can dynamically adjust the weight between the two at different pruning stages — emphasizing diversity retention in shallow layers (where more downstream layers remain) and attention focus in deep layers (where fewer tokens remain and their impact is concentrated).
+**Key Insight**: Since attention-based methods excel at local consistency while diversity-based methods excel at global representation, one can dynamically adjust the weight between the two at different pruning stages — emphasizing diversity retention in shallow layers (where more downstream layers remain) and attention focus in deep layers (where fewer tokens remain and their impact is concentrated).
 
 **Core Idea**: In shallow layers, diversity serves as an information "reserve" for subsequent layers; in deep layers, attention scores serve as a "safety net" for current output quality.
 

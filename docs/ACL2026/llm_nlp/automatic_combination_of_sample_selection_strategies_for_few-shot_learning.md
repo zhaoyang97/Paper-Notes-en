@@ -29,15 +29,15 @@ This paper proposes ACSESS, a method that automatically identifies complementary
 
 ## Background & Motivation
 
-**State of the Field**: Few-shot learning faces a critical challenge in sample selection—performance can vary dramatically depending on which samples are chosen. Existing selection strategies typically focus on a single attribute (e.g., similarity, diversity, or informativeness), while many newly proposed ICL-specific strategies, though effective, are often designed for particular scenarios and exhibit limited transferability.
+**Background**: Few-shot learning faces a critical challenge in sample selection—performance can vary dramatically depending on which samples are chosen. Existing selection strategies typically focus on a single attribute (e.g., similarity, diversity, or informativeness), while many newly proposed ICL-specific strategies, though effective, are often designed for particular scenarios and exhibit limited transferability.
 
 **Limitations of Prior Work**: (1) Single-attribute strategies each have inherent limitations—the most informative samples may be difficult to learn from, while the most similar samples may lack diversity. (2) ICL-specific strategies (e.g., LENS, Active Prompt, EXPLORA, CASE) are optimized for specific settings and generalize poorly. (3) Classical supervised selection strategies (e.g., active learning, coreset selection) have been systematically overlooked in LLM contexts.
 
-**Root Cause**: No single sample attribute can comprehensively capture a sample's contribution to few-shot learning, yet exhaustively evaluating all strategy combinations is computationally prohibitive.
+**Key Challenge**: No single sample attribute can comprehensively capture a sample's contribution to few-shot learning, yet exhaustively evaluating all strategy combinations is computationally prohibitive.
 
-**Paper Goals**: To automatically identify complementary sample selection strategies and optimize their combination, such that ensembles of classical selection strategies can match or surpass ICL-specific strategies.
+**Goal**: To automatically identify complementary sample selection strategies and optimize their combination, such that ensembles of classical selection strategies can match or surpass ICL-specific strategies.
 
-**Starting Point**: Drawing inspiration from feature selection methods in traditional machine learning (forward/backward selection) and the Datamodels framework, the paper lifts these techniques from the sample level to the strategy level.
+**Key Insight**: Drawing inspiration from feature selection methods in traditional machine learning (forward/backward selection) and the Datamodels framework, the paper lifts these techniques from the sample level to the strategy level.
 
 **Core Idea**: The quality of a sample cannot be measured by a single attribute—informativeness, representativeness, and learnability are complementary dimensions. Automatically combining strategies along these dimensions yields samples with diverse and mutually reinforcing properties.
 

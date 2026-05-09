@@ -29,15 +29,15 @@ SonoWorld is proposed as a training-free framework that generates an explorable 
 
 ## Background & Motivation
 
-**State of the Field**: Visual scene generation has advanced substantially in recent years—from panoramic approaches such as WorldGen to 3D Gaussian Splatting techniques—enabling freely navigable 3D worlds from a single image. However, all such systems produce "silent worlds" that can be seen but not heard.
+**Background**: Visual scene generation has advanced substantially in recent years—from panoramic approaches such as WorldGen to 3D Gaussian Splatting techniques—enabling freely navigable 3D worlds from a single image. However, all such systems produce "silent worlds" that can be seen but not heard.
 
 **Limitations of Prior Work**: Genuine immersive experiences are inherently multi-sensory. In a garden, for instance, waterfall sounds should originate upstream and grow louder as the listener approaches, birdsong should descend from the canopy, and insect sounds should shift as the head rotates. Without semantically correct audio carrying distance and directional cues, even a photorealistic visual world remains perceptually incomplete. Existing audio generation methods either produce mono audio, are limited to single objects or fixed viewpoints, or cannot handle scene-level audio comprising diverse source types such as point sources (e.g., birdsong), surface sources (e.g., a river), and ambient sounds (e.g., wind).
 
-**Root Cause**: Scene-level spatial audio generation must simultaneously address three problems: (1) composing heterogeneous source types whose behaviors differ fundamentally—point, surface, and ambient sources; (2) reasoning purely from visual context about what objects emit sound, how they sound, and at what loudness; and (3) anchoring all sounds to plausible 3D positions inferred from the image while producing perceptually convincing spatial effects.
+**Key Challenge**: Scene-level spatial audio generation must simultaneously address three problems: (1) composing heterogeneous source types whose behaviors differ fundamentally—point, surface, and ambient sources; (2) reasoning purely from visual context about what objects emit sound, how they sound, and at what loudness; and (3) anchoring all sounds to plausible 3D positions inferred from the image while producing perceptually convincing spatial effects.
 
-**Paper Goals**: The paper defines a novel task, Image2AVScene—simultaneously generating an interactive 3D visual scene and a spatially and semantically aligned sound field from a single image—and proposes the first complete framework for this task.
+**Goal**: The paper defines a novel task, Image2AVScene—simultaneously generating an interactive 3D visual scene and a spatially and semantically aligned sound field from a single image—and proposes the first complete framework for this task.
 
-**Starting Point**: An equirectangular panorama representation is adopted to unify the coordinate systems of vision and audio, with a VLM providing semantic understanding to bridge the two modalities.
+**Key Insight**: An equirectangular panorama representation is adopted to unify the coordinate systems of vision and audio, with a VLM providing semantic understanding to bridge the two modalities.
 
 **Core Idea**: A training-free pipeline—panorama outpainting → 3DGS reconstruction → VLM-driven 360° semantic grounding → Ambisonics encoding—enables the generation of a freely navigable 3D audio-visual scene from a single image.
 

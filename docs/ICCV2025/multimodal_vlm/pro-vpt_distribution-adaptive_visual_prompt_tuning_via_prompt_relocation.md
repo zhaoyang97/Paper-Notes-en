@@ -31,7 +31,7 @@ This paper proposes PRO-VPT, a framework that co-designs Adaptive Distribution O
 
 ### State of the Field
 
-**State of the Field**: Visual Prompt Tuning (VPT) is one of the mainstream parameter-efficient fine-tuning (PEFT) methods, which adapts pre-trained models by inserting lightweight learnable prompt tokens into the input space of Transformer blocks. Existing VPT methods typically employ a fixed prompt distribution — either shallow (first layer only) or deep (uniformly distributed across all layers).
+**Background**: Visual Prompt Tuning (VPT) is one of the mainstream parameter-efficient fine-tuning (PEFT) methods, which adapts pre-trained models by inserting lightweight learnable prompt tokens into the input space of Transformer blocks. Existing VPT methods typically employ a fixed prompt distribution — either shallow (first layer only) or deep (uniformly distributed across all layers).
 
 However, recent studies have revealed a critical phenomenon: **the importance of each pre-trained block varies substantially across tasks**, implying that indiscriminately applying a fixed prompt distribution cannot fully exploit the potential of VPT.
 
@@ -47,11 +47,11 @@ Through empirical analysis, the authors identify three key insights:
 
 ### Root Cause
 
-**Root Cause**: Effective adjustments vary as prompts are updated during training (non-static).
+**Key Challenge**: Effective adjustments vary as prompts are updated during training (non-static).
 
 ### Starting Point
 
-**Starting Point**: The effect of distribution adjustment can only be accurately evaluated after prompt tuning has been performed (nested relationship).
+**Key Insight**: The effect of distribution adjustment can only be accurately evaluated after prompt tuning has been performed (nested relationship).
 
 ## Method
 

@@ -41,7 +41,7 @@ Differences in **exposure time and frame rate** across sensors make perfect sync
 
 **IPT**: The first method to handle missing modalities, but it designs **separate prompt strategies** for each missing pattern, resulting in a rigid architecture.
 
-**Root Cause**: Should a model maintain the same computational complexity as when modalities are complete, even when modalities are missing? The answer is no.
+**Key Challenge**: Should a model maintain the same computational complexity as when modalities are complete, even when modalities are missing? The answer is no.
 
 The core philosophy of FlexTrack: **the tracker should dynamically allocate computational resources according to data availability**—activating simpler experts when more modalities are absent, and more complex experts when data is complete.
 

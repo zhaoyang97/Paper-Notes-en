@@ -28,7 +28,7 @@ Inspired by the concept of metacognitive sensitivity (meta-d') from cognitive sc
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning has become increasingly specialized—CNNs excel at visual perception, Transformers/LLMs dominate NLP, and VLMs bridge cross-modal tasks. The No Free Lunch theorem dictates that no single architecture is optimal for all problems, motivating the need for **dynamic model selection**.
+**Background**: Deep learning has become increasingly specialized—CNNs excel at visual perception, Transformers/LLMs dominate NLP, and VLMs bridge cross-modal tasks. The No Free Lunch theorem dictates that no single architecture is optimal for all problems, motivating the need for **dynamic model selection**.
 
 **Limitations of Prior Work**: Probabilistic confidence scores produced by models are often severely miscalibrated—i.e., confidence does not align with actual accuracy—making confidence-based selection unreliable.
 

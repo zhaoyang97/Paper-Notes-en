@@ -39,7 +39,7 @@ Rheumatoid arthritis (RA) is a prevalent autoimmune disease in which the wrist j
 
 Existing work has predominantly focused on carpal bone segmentation in CT/MRI modalities, with small-scale datasets (mostly private, ranging from tens to hundreds of images). CR-based carpal bone segmentation research is scarce, particularly lacking publicly available datasets suited to complex pathological conditions.
 
-The paper's **Starting Point** is to construct a multi-task, multi-center carpal bone CR benchmark dataset that simultaneously covers two clinically critical tasks—instance segmentation and SvdH BE scoring—thereby lowering the barrier to entry for RA wrist research.
+The paper's **Key Insight** is to construct a multi-task, multi-center carpal bone CR benchmark dataset that simultaneously covers two clinically critical tasks—instance segmentation and SvdH BE scoring—thereby lowering the barrier to entry for RA wrist research.
 
 ## Method
 

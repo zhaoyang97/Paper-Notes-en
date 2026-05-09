@@ -36,9 +36,9 @@ Robot task planning requires reasoning over implicit constraints embedded in nat
 - LLM + PDDL hybrid methods (e.g., LLM+P, ISR-LLM): rely on hand-crafted PDDL domains or LLM-generated domains from language, resulting in limited domain quality.
 - Learning PDDL domains from demonstrations: existing work learns narrow domains from single or few demonstrations, requiring task-specific priors.
 
-**Root Cause**: High-quality PDDL domains are critical for symbolic planning, yet hand-crafting them is costly and poorly generalizable; LLM-generated domains are of insufficient quality; domains learned from few demonstrations have too narrow coverage.
+**Key Challenge**: High-quality PDDL domains are critical for symbolic planning, yet hand-crafting them is costly and poorly generalizable; LLM-generated domains are of insufficient quality; domains learned from few demonstrations have too narrow coverage.
 
-**Starting Point**: Drawing on the "pretraining–post-training–inference" paradigm of foundation models, UniDomain pretrains a general-purpose PDDL domain from a large-scale robotic manipulation dataset (DROID), then performs "post-training" via domain fusion to adapt to specific task categories.
+**Key Insight**: Drawing on the "pretraining–post-training–inference" paradigm of foundation models, UniDomain pretrains a general-purpose PDDL domain from a large-scale robotic manipulation dataset (DROID), then performs "post-training" via domain fusion to adapt to specific task categories.
 
 ## Method
 

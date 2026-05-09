@@ -29,15 +29,15 @@ This paper constructs a synthetic counting benchmark dataset, systematically eva
 
 ## Background & Motivation
 
-**State of the Field**: VLMs have been widely adopted for tasks such as visual question answering, yet they perform poorly on precise enumeration, falling far short of dedicated counting methods (e.g., PseCo, CountGD, CrowdDiff).
+**Background**: VLMs have been widely adopted for tasks such as visual question answering, yet they perform poorly on precise enumeration, falling far short of dedicated counting methods (e.g., PseCo, CountGD, CrowdDiff).
 
 **Limitations of Prior Work**: Most existing evaluations rely on natural image datasets where variables are highly entangled (occlusion, texture, density, etc.), making it difficult to isolate specific failure factors. Systematic diagnostic frameworks for analyzing the root causes of counting failures are largely absent.
 
-**Root Cause**: VLMs acquire strong prior biases during training and tend to rely on memorized patterns rather than object-by-object analysis when confronted with counting tasks that require precise visual attention. This closely parallels the enumeration limits and cognitive load effects observed in human cognition.
+**Key Challenge**: VLMs acquire strong prior biases during training and tend to rely on memorized patterns rather than object-by-object analysis when confronted with counting tasks that require precise visual attention. This closely parallels the enumeration limits and cognitive load effects observed in human cognition.
 
-**Paper Goals**: To construct a controlled synthetic benchmark that precisely isolates contributing factors by varying image and prompt attributes one at a time, and to explore whether attention interventions can improve counting performance.
+**Goal**: To construct a controlled synthetic benchmark that precisely isolates contributing factors by varying image and prompt attributes one at a time, and to explore whether attention interventions can improve counting performance.
 
-**Starting Point**: The work is approached from two complementary perspectives: cognitive science (cognitive load theory) and model interpretability (attention analysis).
+**Key Insight**: The work is approached from two complementary perspectives: cognitive science (cognitive load theory) and model interpretability (attention analysis).
 
 **Core Idea**: A controllable synthetic data framework with strict variable control, combined with an interpretable diagnostic framework based on attention reweighting interventions.
 

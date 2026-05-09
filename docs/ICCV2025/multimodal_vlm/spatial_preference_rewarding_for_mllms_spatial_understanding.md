@@ -37,9 +37,9 @@ Multimodal large language models (MLLMs) have achieved remarkable progress on sp
 
 **Lack of positive/negative sample feedback**: Existing supervised fine-tuning (SFT) optimizes models to imitate positive samples (ground truth) only, without penalizing erroneous localization generated at inference time—analogous to the absence of positive/negative sample training mechanisms found in conventional object detection.
 
-**Root Cause**: The SFT training paradigm lacks direct supervision over the quality of MLLM outputs—the model learns what is "correct" but receives no signal about what is "incorrect."
+**Key Challenge**: The SFT training paradigm lacks direct supervision over the quality of MLLM outputs—the model learns what is "correct" but receives no signal about what is "incorrect."
 
-**Starting Point**: Introducing preference optimization (DPO) into spatial understanding, enabling models to distinguish precise localization from erroneous localization rather than merely imitating annotations. Existing preference optimization work primarily targets hallucination reduction; preference optimization for fine-grained spatial alignment remains largely unexplored.
+**Key Insight**: Introducing preference optimization (DPO) into spatial understanding, enabling models to distinguish precise localization from erroneous localization rather than merely imitating annotations. Existing preference optimization work primarily targets hallucination reduction; preference optimization for fine-grained spatial alignment remains largely unexplored.
 
 ## Method
 

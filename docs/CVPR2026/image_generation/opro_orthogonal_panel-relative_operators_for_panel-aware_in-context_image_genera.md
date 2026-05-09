@@ -29,15 +29,15 @@ This paper proposes OPRO, a parameter-efficient adaptation method based on ortho
 
 ## Background & Motivation
 
-1. **State of the Field**: In-context image generation (ICG) is an important application of diffusion models, achieving example-based generation by arranging reference and target images in a tiled-panel layout. Existing approaches fall into two paradigms: inpainting-based global canvas encoding (e.g., FluxFill) and T2I-based per-panel encoding (e.g., UNO).
+1. **Background**: In-context image generation (ICG) is an important application of diffusion models, achieving example-based generation by arranging reference and target images in a tiled-panel layout. Existing approaches fall into two paradigms: inpainting-based global canvas encoding (e.g., FluxFill) and T2I-based per-panel encoding (e.g., UNO).
 
 2. **Limitations of Prior Work**: In both paradigms, the attention mechanism is **panel-agnostic**. In global canvas encoding, tokens from different panels are treated as different regions of the same canvas; in per-panel encoding, different panels may share the same positional indices. The attention layers are entirely unaware of whether a pair of tokens originates from the same panel or different panels.
 
-3. **Root Cause**: Standard PEFT methods (e.g., LoRA) must simultaneously learn two objectives: (1) transferring cross-panel relationships, and (2) preserving pre-trained same-panel synthesis behavior. This dual burden leads to low adaptation efficiency.
+3. **Key Challenge**: Standard PEFT methods (e.g., LoRA) must simultaneously learn two objectives: (1) transferring cross-panel relationships, and (2) preserving pre-trained same-panel synthesis behavior. This dual burden leads to low adaptation efficiency.
 
-4. **Paper Goals**: Design an adaptation mechanism that explicitly distinguishes between inter-panel and intra-panel attention interactions.
+4. **Goal**: Design an adaptation mechanism that explicitly distinguishes between inter-panel and intra-panel attention interactions.
 
-5. **Starting Point**: Orthogonal transformations preserve inner products; thus, if the same orthogonal operator is applied to tokens within the same panel, same-panel attention scores remain unchanged, while the combination of different orthogonal operators across panels introduces learnable cross-panel modulation.
+5. **Key Insight**: Orthogonal transformations preserve inner products; thus, if the same orthogonal operator is applied to tokens within the same panel, same-panel attention scores remain unchanged, while the combination of different orthogonal operators across panels introduces learnable cross-panel modulation.
 
 6. **Core Idea**: "Rotate" Q/K with panel-specific orthogonal operators so that cross-panel attention becomes learnable while same-panel attention remains invariant.
 

@@ -28,15 +28,15 @@ RenderFlow recasts neural rendering as a single-step conditional flow matching p
 
 ## Background & Motivation
 
-1. **State of the Field**: Physically-based rendering (PBR) via Monte Carlo path tracing is the gold standard for offline rendering but incurs prohibitive computational cost. Recent diffusion-based neural rendering methods (e.g., RGB-X, DiffusionRenderer) leverage G-buffers as conditions to synthesize photorealistic images and have demonstrated strong visual quality.
+1. **Background**: Physically-based rendering (PBR) via Monte Carlo path tracing is the gold standard for offline rendering but incurs prohibitive computational cost. Recent diffusion-based neural rendering methods (e.g., RGB-X, DiffusionRenderer) leverage G-buffers as conditions to synthesize photorealistic images and have demonstrated strong visual quality.
 
 2. **Limitations of Prior Work**: (a) The iterative denoising of diffusion models requires 20–50 network evaluations, introducing latency incompatible with interactive applications; (b) the stochasticity of diffusion sampling yields insufficient physical accuracy and temporal flickering, failing to meet production-grade rendering standards. Both issues stem fundamentally from the "generate from noise" paradigm of diffusion models.
 
-3. **Root Cause**: There exists a fundamental conflict between the generative capacity of diffusion models and the need for real-time, deterministic rendering — high-frequency detail synthesis is required, yet iterative sampling and stochasticity are unacceptable.
+3. **Key Challenge**: There exists a fundamental conflict between the generative capacity of diffusion models and the need for real-time, deterministic rendering — high-frequency detail synthesis is required, yet iterative sampling and stochasticity are unacceptable.
 
-4. **Paper Goals**: (a) Achieve single-step, deterministic neural rendering; (b) improve physical accuracy without relying on explicit scene geometry or light-transport simulation; (c) reuse the same backbone for both forward and inverse rendering.
+4. **Goal**: (a) Achieve single-step, deterministic neural rendering; (b) improve physical accuracy without relying on explicit scene geometry or light-transport simulation; (c) reuse the same backbone for both forward and inverse rendering.
 
-5. **Starting Point**: The key insight is that rendering can be understood as a *residual flow* learning problem from albedo (diffuse base color) to full-illumination images. Since albedo already encodes low-frequency color information, the model only needs to learn to add high-frequency effects such as lighting, shadows, and reflections. Replacing noise with albedo as the flow's starting point preserves geometric integrity.
+5. **Key Insight**: The key insight is that rendering can be understood as a *residual flow* learning problem from albedo (diffuse base color) to full-illumination images. Since albedo already encodes low-frequency color information, the model only needs to learn to add high-frequency effects such as lighting, shadows, and reflections. Replacing noise with albedo as the flow's starting point preserves geometric integrity.
 
 6. **Core Idea**: Flow matching is used to learn a deterministic velocity field from albedo to full-illumination images, conditioned on G-buffers and built on a pretrained video DiT backbone. Single-step, high-fidelity rendering is achieved within a bridge matching framework.
 

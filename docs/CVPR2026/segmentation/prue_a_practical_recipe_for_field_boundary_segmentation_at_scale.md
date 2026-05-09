@@ -29,15 +29,15 @@ This paper systematically evaluates 18 segmentation and geospatial foundation mo
 
 ## Background & Motivation
 
-1. **State of the Field**: Large-scale field boundary maps are critical for agricultural monitoring. Deep learning methods—particularly U-Net-based semantic segmentation—have become the dominant approach for extracting field boundaries from satellite imagery.
+1. **Background**: Large-scale field boundary maps are critical for agricultural monitoring. Deep learning methods—particularly U-Net-based semantic segmentation—have become the dominant approach for extracting field boundaries from satellite imagery.
 
 2. **Limitations of Prior Work**: Existing methods are highly sensitive to illumination variation, spatial scale changes, and geographic domain shifts. Deploying top-performing models over large regions introduces tiling artifacts, boundary discontinuities, and other quality degradation issues.
 
-3. **Root Cause**: Conventional evaluation focuses solely on patch-level metrics such as IoU and F1, which fail to capture deployment-level failure modes encountered during large-scale mapping—including translation consistency, input order sensitivity, preprocessing normalization sensitivity, and spatial scale sensitivity.
+3. **Key Challenge**: Conventional evaluation focuses solely on patch-level metrics such as IoU and F1, which fail to capture deployment-level failure modes encountered during large-scale mapping—including translation consistency, input order sensitivity, preprocessing normalization sensitivity, and spatial scale sensitivity.
 
-4. **Paper Goals**: To systematically identify the optimal combination of model architecture, loss function, and data augmentation, and to propose a deployment-oriented robustness evaluation framework that enables reliable national-scale field boundary mapping.
+4. **Goal**: To systematically identify the optimal combination of model architecture, loss function, and data augmentation, and to propose a deployment-oriented robustness evaluation framework that enables reliable national-scale field boundary mapping.
 
-5. **Starting Point**: The problem is framed as a systematic "bake-off" benchmark, comparing 18 models spanning semantic segmentation, instance segmentation, and GFMs under a unified experimental protocol, with ablations over architecture, loss, and augmentation choices.
+5. **Key Insight**: The problem is framed as a systematic "bake-off" benchmark, comparing 18 models spanning semantic segmentation, instance segmentation, and GFMs under a unified experimental protocol, with ablations over architecture, loss, and augmentation choices.
 
 6. **Core Idea**: Through systematic exploration of the model design space—rather than architectural innovation—PRUE combines U-Net with EfficientNet-B7, log-cosh Dice loss, and channel shuffle with brightness/scale augmentation to jointly optimize accuracy and deployment robustness.
 

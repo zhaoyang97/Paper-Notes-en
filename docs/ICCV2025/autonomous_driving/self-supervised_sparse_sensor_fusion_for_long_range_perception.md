@@ -29,15 +29,15 @@ LRS4Fusion proposes a long-range LiDAR-camera fusion framework based on sparse v
 
 ## Background & Motivation
 
-**State of the Field**: Current autonomous driving perception methods are primarily built on Bird's Eye View (BEV) representations and perform well in urban driving scenarios spanning 50–100 meters. Dominant approaches such as BEVFusion and BEVFormer employ dense BEV feature maps for 3D object detection, semantic occupancy prediction, tracking, and planning.
+**Background**: Current autonomous driving perception methods are primarily built on Bird's Eye View (BEV) representations and perform well in urban driving scenarios spanning 50–100 meters. Dominant approaches such as BEVFusion and BEVFormer employ dense BEV feature maps for 3D object detection, semantic occupancy prediction, tracking, and planning.
 
 **Limitations of Prior Work**: (1) The memory and computational overhead of BEV representations scales quadratically with range, making extension beyond 250 meters extremely challenging. (2) Highway driving requires at least 250 meters of perception range (dictated by braking distances at 100 km/h), and heavy trucks (40 tons) demand even longer planning horizons—far exceeding the 50–100 meter range of existing methods. (3) Objects at long range are extremely sparse (instance counts decrease with distance), and annotation costs are prohibitively high.
 
-**Root Cause**: The quadratic complexity of dense BEV representations prevents scaling to long ranges. Self-supervised pretraining methods (e.g., ViDAR, UnO) support only a single modality (camera or LiDAR), failing to leverage multi-modal information. Additionally, existing datasets provide LiDAR coverage only up to 80 meters.
+**Key Challenge**: The quadratic complexity of dense BEV representations prevents scaling to long ranges. Self-supervised pretraining methods (e.g., ViDAR, UnO) support only a single modality (camera or LiDAR), failing to leverage multi-modal information. Additionally, existing datasets provide LiDAR coverage only up to 80 meters.
 
-**Paper Goals**: (1) How to efficiently fuse multi-modal data within a 250-meter range? (2) How to perform self-supervised learning when long-range objects are extremely sparse? (3) How to preserve temporal information within a sparse representation?
+**Goal**: (1) How to efficiently fuse multi-modal data within a 250-meter range? (2) How to perform self-supervised learning when long-range objects are extremely sparse? (3) How to preserve temporal information within a sparse representation?
 
-**Starting Point**: Long-range scenes are naturally sparse (most of the space is empty), making sparse voxel representations a natural fit that avoids the quadratic growth of dense representations. The work also leverages the capabilities of FMCW LiDAR, which can measure radial velocity and covers ranges up to 400 meters.
+**Key Insight**: Long-range scenes are naturally sparse (most of the space is empty), making sparse voxel representations a natural fit that avoids the quadratic growth of dense representations. The work also leverages the capabilities of FMCW LiDAR, which can measure radial velocity and covers ranges up to 400 meters.
 
 **Core Idea**: Replace dense BEV with a fully sparse voxel representation. Camera features are lifted to 3D via accurate depth estimation and fused with LiDAR features in a shared sparse voxel space. Temporal information is integrated via sparse window attention, and long-range multi-modal representations are learned through occupancy-velocity self-supervised pretraining.
 

@@ -27,15 +27,15 @@ content_hash: 0cce600b07bf3312
 This paper investigates the emergence mechanism of sparse attention through theoretical analysis and controlled experiments, revealing that the emergence time follows a power-law relationship with respect to sequence length and dimensionality, $T_\epsilon \propto \sqrt{d} \cdot T$. It further demonstrates that both in-context and cross-sample data repetition strategies accelerate emergence, offering a unified sparse attention perspective for understanding capability emergence in LLMs.
 
 ## Background & Motivation
-**State of the Field**: Capability emergence in LLMs—the sudden appearance of new abilities during training—is an important yet poorly understood phenomenon. Prior work has observed that the formation of sparse attention patterns such as induction heads coincides with the abrupt onset of in-context learning ability.
+**Background**: Capability emergence in LLMs—the sudden appearance of new abilities during training—is an important yet poorly understood phenomenon. Prior work has observed that the formation of sparse attention patterns such as induction heads coincides with the abrupt onset of in-context learning ability.
 
 **Limitations of Prior Work**: (1) Existing studies are largely post-hoc observations and lack predictive power regarding emergence timing; (2) the phenomenon that data repetition accelerates emergence has been repeatedly observed but lacks theoretical explanation; (3) it remains unclear whether sparse attention learning itself is the causal mechanism driving emergence.
 
-**Root Cause**: The unpredictability of capability emergence represents both a gap in scientific understanding and a risk for AI safety.
+**Key Challenge**: The unpredictability of capability emergence represents both a gap in scientific understanding and a risk for AI safety.
 
-**Paper Goals**: Establish a theoretical model of sparse attention emergence and precisely quantify the impact of data distribution (sequence length, dimensionality, repetition) on emergence timing.
+**Goal**: Establish a theoretical model of sparse attention emergence and precisely quantify the impact of data distribution (sequence length, dimensionality, repetition) on emergence timing.
 
-**Starting Point**: A linear regression variant task requiring sparse attention is designed to make theoretical analysis tractable without sacrificing the core dynamics.
+**Key Insight**: A linear regression variant task requiring sparse attention is designed to make theoretical analysis tractable without sacrificing the core dynamics.
 
 **Core Idea**: The learning of sparse attention naturally produces emergence (a positive feedback loop from uniform to focused attention), and data repetition accelerates this process by either reducing the effective sparsity or amplifying the learning signal.
 

@@ -29,15 +29,15 @@ HiSpatial decomposes 3D spatial intelligence into four cognitive levels (geometr
 
 ## Background & Motivation
 
-1. **State of the Field**: VLMs achieve strong performance on 2D tasks such as VQA and image captioning, but extending these capabilities to 3D spatial understanding remains highly challenging. Recent works introduce spatially-oriented VQA tasks for SFT or RFT, yet face two primary challenges.
+1. **Background**: VLMs achieve strong performance on 2D tasks such as VQA and image captioning, but extending these capabilities to 3D spatial understanding remains highly challenging. Recent works introduce spatially-oriented VQA tasks for SFT or RFT, yet face two primary challenges.
 
 2. **Limitations of Prior Work**: (a) The absence of a unified, systematic task hierarchy—existing tasks provide incomplete coverage, and the dependencies among spatial reasoning skills at different levels remain unclear; (b) Large-scale, diverse, 3D-annotated data is difficult to obtain—existing 3D-annotated datasets are confined to indoor scenes, while large-scale web data lacks 3D supervision.
 
-3. **Root Cause**: Prior work addresses isolated aspects of spatial understanding (qualitative relation comparison, quantitative distance prediction, etc.), but no work has systematically investigated the hierarchical dependencies among these tasks: does training on lower-level tasks facilitate the emergence of higher-level capabilities?
+3. **Key Challenge**: Prior work addresses isolated aspects of spatial understanding (qualitative relation comparison, quantitative distance prediction, etc.), but no work has systematically investigated the hierarchical dependencies among these tasks: does training on lower-level tasks facilitate the emergence of higher-level capabilities?
 
-4. **Paper Goals**: (a) Define a comprehensive 3D spatial understanding task taxonomy with explicit hierarchical dependencies; (b) Construct a large-scale spatial VQA dataset; (c) Empirically validate inter-level dependencies and provide guidance for training strategies.
+4. **Goal**: (a) Define a comprehensive 3D spatial understanding task taxonomy with explicit hierarchical dependencies; (b) Construct a large-scale spatial VQA dataset; (c) Empirically validate inter-level dependencies and provide guidance for training strategies.
 
-5. **Starting Point**: 3D spatial intelligence is analogized to four progressive stages of human cognition: perceiving depth and geometry → understanding intrinsic 3D properties of objects → reasoning about inter-object spatial relations → performing abstract spatial reasoning (viewpoint transformation, spatial counting, spatial problem solving).
+5. **Key Insight**: 3D spatial intelligence is analogized to four progressive stages of human cognition: perceiving depth and geometry → understanding intrinsic 3D properties of objects → reasoning about inter-object spatial relations → performing abstract spatial reasoning (viewpoint transformation, spatial counting, spatial problem solving).
 
 6. **Core Idea**: A four-level cognitive hierarchy combined with a large-scale automated data pipeline and a metric-scale point-cloud-augmented RGB-D VLM, enabling systematic construction and validation of 3D spatial intelligence in VLMs.
 

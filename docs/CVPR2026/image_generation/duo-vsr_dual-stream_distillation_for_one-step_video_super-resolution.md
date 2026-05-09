@@ -28,15 +28,15 @@ The paper proposes DUO-VSR, a three-stage distillation framework that compresses
 
 ## Background & Motivation
 
-1.  **State of the Field**: Diffusion-based video super-resolution (VSR) has achieved significant progress in visual quality. Methods like SeedVR and STAR utilize large-scale pre-trained priors to achieve impressive detail restoration. However, these methods typically require 15-50 iterations for denoising, resulting in inference times of hundreds of seconds, which severely hinders practical deployment.
+1.  **Background**: Diffusion-based video super-resolution (VSR) has achieved significant progress in visual quality. Methods like SeedVR and STAR utilize large-scale pre-trained priors to achieve impressive detail restoration. However, these methods typically require 15-50 iterations for denoising, resulting in inference times of hundreds of seconds, which severely hinders practical deployment.
 
 2.  **Limitations of Prior Work**: Existing one-step VSR methods face triple challenges: (1) DOVE uses regression loss to ensure stability but sacrifices detail fidelity; (2) SeedVR2 employs adversarial post-training, but large discriminators tend to dominate optimization and introduce unnatural artifacts; (3) Direct application of Distribution Matching Distillation (DMD) to VSR faces three major issues: **training instability** (one-step student output distribution deviates from the teacher), **degraded supervision** (the frozen real score model has not seen the student's noisy output, leading to spatial shifts and artifacts), and **insufficient supervision** (the real score model itself is inferior to real HR videos, limiting the student's upper bound).
 
-3.  **Root Cause**: The fundamental difficulty of one-step VSR distillation lies in the "stability-quality" trade-off—trajectory-preserving distillation (e.g., progressive distillation) is stable but produces blurry outputs; distribution matching distillation (e.g., DMD) offers high quality but is unstable and limited by the teacher's upper bound; GAN methods can introduce real video supervision but suffer from unstable discriminator training.
+3.  **Key Challenge**: The fundamental difficulty of one-step VSR distillation lies in the "stability-quality" trade-off—trajectory-preserving distillation (e.g., progressive distillation) is stable but produces blurry outputs; distribution matching distillation (e.g., DMD) offers high quality but is unstable and limited by the teacher's upper bound; GAN methods can introduce real video supervision but suffer from unstable discriminator training.
 
-4.  **Paper Goals**: Design a unified framework to simultaneously address initialization instability, degraded supervision, and insufficient supervision in DMD distillation, enabling a one-step VSR generator to match or even surpass the quality of multi-step models.
+4.  **Goal**: Design a unified framework to simultaneously address initialization instability, degraded supervision, and insufficient supervision in DMD distillation, enabling a one-step VSR generator to match or even surpass the quality of multi-step models.
 
-5.  **Starting Point**: The authors propose jointly optimizing DMD and GAN as complementary dual-stream supervisory signals—DMD ensures stability by aligning with the teacher's distribution, while GAN breaks the teacher's quality upper bound by introducing features from real HR videos.
+5.  **Key Insight**: The authors propose jointly optimizing DMD and GAN as complementary dual-stream supervisory signals—DMD ensures stability by aligning with the teacher's distribution, while GAN breaks the teacher's quality upper bound by introducing features from real HR videos.
 
 6.  **Core Idea**: A three-stage progressive distillation pipeline + dual-stream joint optimization of DMD and RFS-GAN + DPO preference refinement to achieve stable, high-quality one-step video super-resolution.
 

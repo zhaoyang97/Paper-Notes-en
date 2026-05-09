@@ -29,15 +29,15 @@ This paper proposes ST-TTC, a lightweight test-time computing paradigm that corr
 
 ## Background & Motivation
 
-**State of the Field**: Spatio-temporal forecasting (traffic flow, weather, energy, etc.) has been addressed by numerous deep network architectures (Transformers, GNNs, MLPs, etc.), achieving strong results on standard benchmarks.
+**Background**: Spatio-temporal forecasting (traffic flow, weather, energy, etc.) has been addressed by numerous deep network architectures (Transformers, GNNs, MLPs, etc.), achieving strong results on standard benchmarks.
 
 **Limitations of Prior Work**: In real-world deployments, sensor data is frequently corrupted by noise, outliers, and **non-stationary distribution shifts** (e.g., seasonal variations, sensor aging), causing performance degradation at test time.
 
-**Root Cause**: Existing solutions fall into three categories: (a) OOD learning—enhancing robustness during training, but assuming that training data covers all future distributional invariances, which rarely holds in practice; (b) continual fine-tuning—splitting the target domain into multiple periods for iterative training, which fails under data scarcity; (c) test-time training (TTT)—requiring auxiliary self-supervised tasks and architectural modifications, leading to high computational overhead.
+**Key Challenge**: Existing solutions fall into three categories: (a) OOD learning—enhancing robustness during training, but assuming that training data covers all future distributional invariances, which rarely holds in practice; (b) continual fine-tuning—splitting the target domain into multiple periods for iterative training, which fails under data scarcity; (c) test-time training (TTT)—requiring auxiliary self-supervised tasks and architectural modifications, leading to high computational overhead.
 
-**Paper Goals**: How can test-time information be exploited at inference time with minimal overhead to correct prediction biases? Spatio-temporal forecasting offers a unique advantage—**label autocorrelation**: historical samples within a sliding window naturally acquire ground-truth labels after the window advances, enabling real-time calibration.
+**Goal**: How can test-time information be exploited at inference time with minimal overhead to correct prediction biases? Spatio-temporal forecasting offers a unique advantage—**label autocorrelation**: historical samples within a sliding window naturally acquire ground-truth labels after the window advances, enabling real-time calibration.
 
-**Starting Point**: The paper operates in the spectral domain, decomposing the periodic biases induced by non-stationarity into amplitude and phase shifts, and performing node-level spectral calibration with very few parameters.
+**Key Insight**: The paper operates in the spectral domain, decomposing the periodic biases induced by non-stationarity into amplitude and phase shifts, and performing node-level spectral calibration with very few parameters.
 
 **Core Idea**: Freeze the backbone network and train only a frequency-domain amplitude-phase calibrator at test time, performing single-step gradient updates using streaming historical samples to achieve lightweight, plug-and-play test-time computing.
 

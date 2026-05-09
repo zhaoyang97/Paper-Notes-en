@@ -31,7 +31,7 @@ This paper proposes GENMO, the first generalist model that unifies human motion 
 
 Human motion modeling is a long-standing research topic in computer vision and graphics, with broad applications in gaming, animation, and 3D content creation. Consider a practical creation scenario: a user wants to generate a motion sequence starting from a video clip, transitioning to text-described actions, synchronizing with music beats, and finally aligning with another video—all while maintaining fine-grained keyframe control. This demands a model capable of both faithfully reproducing observed motion and generating diverse plausible motion.
 
-**Root Cause**: Motion estimation and motion generation have fundamentally different objectives:
+**Key Challenge**: Motion estimation and motion generation have fundamentally different objectives:
 - **Estimation** requires precise, deterministic output—given the same video, a unique motion sequence should be recovered.
 - **Generation** requires diverse output—given the same text description, multiple plausible motions should be producible.
 

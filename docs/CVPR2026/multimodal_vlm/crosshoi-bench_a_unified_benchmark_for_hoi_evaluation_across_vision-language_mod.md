@@ -28,15 +28,15 @@ This paper proposes CrossHOI-Bench, the first unified multiple-choice HOI benchm
 
 ## Background & Motivation
 
-**State of the Field**: HOI detection has long been dominated by task-specific models (ADA-CM, CMMP, HOLa, etc.), yet large generative VLMs (Qwen2.5-VL, InternVL3) have demonstrated strong open-scene understanding, raising the central question of whether VLMs can directly perform HOI detection.
+**Background**: HOI detection has long been dominated by task-specific models (ADA-CM, CMMP, HOLa, etc.), yet large generative VLMs (Qwen2.5-VL, InternVL3) have demonstrated strong open-scene understanding, raising the central question of whether VLMs can directly perform HOI detection.
 
 **Limitations of Prior Work**: (1) Existing HOI benchmarks (HICO-DET) rely on exact label matching combined with incomplete annotations—any correct prediction not covered by annotations is penalized; (2) annotation ambiguity cannot be resolved through exhaustive labeling, as a single image often lacks sufficient visual evidence to distinguish actions (e.g., "boarding" vs. "exiting an aircraft"); (3) the HICO-DET train/test distributions are highly similar (KL = 0.088), with a large proportion of simple head-category scenes that fail to genuinely challenge model capability.
 
-**Root Cause**: A unified evaluation protocol is needed to fairly compare both paradigms under the same standard, yet the methodology of existing benchmarks is itself flawed, systematically underestimating true capability: HOI-specific methods achieve <50% mAP, while VLMs reach only ~15% on HICO-DET.
+**Key Challenge**: A unified evaluation protocol is needed to fairly compare both paradigms under the same standard, yet the methodology of existing benchmarks is itself flawed, systematically underestimating true capability: HOI-specific methods achieve <50% mAP, while VLMs reach only ~15% on HICO-DET.
 
-**Paper Goals**: Design an unbiased cross-paradigm HOI evaluation benchmark that reveals the true capability gaps and complementary strengths between VLMs and HOI-specific methods.
+**Goal**: Design an unbiased cross-paradigm HOI evaluation benchmark that reveals the true capability gaps and complementary strengths between VLMs and HOI-specific methods.
 
-**Starting Point**: Reformulate HOI detection as a multi-answer multiple-choice task, using carefully curated positive and negative examples to eliminate the incomplete-annotation problem.
+**Key Insight**: Reformulate HOI detection as a multi-answer multiple-choice task, using carefully curated positive and negative examples to eliminate the incomplete-annotation problem.
 
 **Core Idea**: A multiple-choice format with curated negatives and three evaluation settings enables, for the first time, a fair and direct comparison between VLMs and HOI-specific methods.
 

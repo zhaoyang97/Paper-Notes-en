@@ -27,11 +27,11 @@ content_hash: dbcc5504ccd37254
 This paper proposes AlignPrune—a plug-and-play module based on loss trajectory alignment—that replaces conventional loss-value ranking with a Dynamic Alignment Score (DAS), achieving up to 6.3% accuracy improvement over standard dynamic data pruning methods under noisy label settings.
 
 ## Background & Motivation
-**State of the Field**: Training on large-scale datasets incurs substantial computational cost. Data pruning reduces training overhead by discarding uninformative samples. Dynamic pruning (adaptively selecting subsets each epoch) is more flexible and robust than static pruning (a one-time selection).
+**Background**: Training on large-scale datasets incurs substantial computational cost. Data pruning reduces training overhead by discarding uninformative samples. Dynamic pruning (adaptively selecting subsets each epoch) is more flexible and robust than static pruning (a one-time selection).
 
 **Limitations of Prior Work**: Existing dynamic pruning methods (InfoBatch, SeTa) rank samples by **individual loss values**, retaining those with high loss. However, under noisy labels, **noisy samples tend to produce high losses**, causing them to be preferentially retained and corrupting the training process.
 
-**Root Cause**: The loss trajectory of clean samples follows a **smooth, monotonically decreasing** pattern, whereas that of noisy samples exhibits **non-monotonic, irregular fluctuations**. This distinction in temporal behavior can be exploited.
+**Key Challenge**: The loss trajectory of clean samples follows a **smooth, monotonically decreasing** pattern, whereas that of noisy samples exhibits **non-monotonic, irregular fluctuations**. This distinction in temporal behavior can be exploited.
 
 **Core Idea**: Rather than relying on single-point loss values, sample quality is assessed by the **correlation** between a sample's loss trajectory and that of a clean reference set. Samples with low correlation are more likely to be noisy and should be pruned.
 

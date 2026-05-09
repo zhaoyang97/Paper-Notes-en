@@ -29,15 +29,15 @@ Through systematic experiments, this paper reveals that the performance of test-
 
 ## Background & Motivation
 
-**State of the Field**: Large reasoning models (e.g., DeepSeek-R1, OpenAI o1) acquire powerful chain-of-thought reasoning capabilities through RL training. Recent work (Muennighoff et al., 2025) found that appending prompts such as "Wait" or "Think more" during inference to extend the thinking process can improve accuracy, giving rise to the prevailing belief that "more thinking = better reasoning."
+**Background**: Large reasoning models (e.g., DeepSeek-R1, OpenAI o1) acquire powerful chain-of-thought reasoning capabilities through RL training. Recent work (Muennighoff et al., 2025) found that appending prompts such as "Wait" or "Think more" during inference to extend the thinking process can improve accuracy, giving rise to the prevailing belief that "more thinking = better reasoning."
 
 **Limitations of Prior Work**: Prior work only reported the beneficial side of test-time scaling, overlooking a critical phenomenon: performance begins to degrade once thinking is extended beyond a certain point. For example, accuracy on GSM8K drops sharply from 87.3% to 70.3% as thinking tokens increase from 1,100 to 15,980. This non-monotonic behavior appears consistently across multiple models and datasets.
 
-**Root Cause**: Does extended thinking genuinely enhance reasoning ability, or is it merely an illusion? If output variance increases with thinking time, the initial accuracy gain may be a product of statistical noise rather than improved reasoning quality.
+**Key Challenge**: Does extended thinking genuinely enhance reasoning ability, or is it merely an illusion? If output variance increases with thinking time, the initial accuracy gain may be a product of statistical noise rather than improved reasoning quality.
 
-**Paper Goals**: (a) Explain why extended thinking produces a non-monotonic performance trend; (b) propose a more effective test-time scaling strategy under a fixed inference budget.
+**Goal**: (a) Explain why extended thinking produces a non-monotonic performance trend; (b) propose a more effective test-time scaling strategy under a fixed inference budget.
 
-**Starting Point**: A probabilistic framework based on a one-dimensional Gaussian distribution is employed—as the variance of the sampling distribution increases, its overlap with the reward distribution first grows and then shrinks, perfectly explaining the observed non-monotonic behavior. The authors then empirically validate that output entropy does indeed increase with extended thinking.
+**Key Insight**: A probabilistic framework based on a one-dimensional Gaussian distribution is employed—as the variance of the sampling distribution increases, its overlap with the reward distribution first grows and then shrinks, perfectly explaining the observed non-monotonic behavior. The authors then empirically validate that output entropy does indeed increase with extended thinking.
 
 **Core Idea**: Extending thinking at test time does not improve reasoning but instead increases output variance—the initial gain is a mirage. Under the same budget, sampling multiple reasoning paths in parallel and aggregating via majority voting is a superior strategy.
 

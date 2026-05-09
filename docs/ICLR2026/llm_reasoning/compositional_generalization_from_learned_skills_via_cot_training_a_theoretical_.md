@@ -28,20 +28,20 @@ This paper leverages information-theoretic generalization bounds and mechanistic
 
 ## Background & Motivation
 
-**State of the Field**: CoT training (e.g., DeepSeek-R1's long CoT cold-start, OpenAI O1's RFT) has become a central paradigm for enhancing LLM reasoning, yet the **mechanism** by which it improves generalization remains poorly understood.
+**Background**: CoT training (e.g., DeepSeek-R1's long CoT cold-start, OpenAI O1's RFT) has become a central paradigm for enhancing LLM reasoning, yet the **mechanism** by which it improves generalization remains poorly understood.
 
 **Limitations of Prior Work**:
    - Prior theoretical analyses focused on how CoT enhances Transformer expressivity and computational complexity classes, without explaining how capabilities emerge during training.
    - Models trained without CoT exhibit a "compositionality gap" in ID generalization—they may know all basic facts yet fail to compose them.
    - More critically, models without CoT training entirely fail at OOD generalization (novel compositional patterns).
 
-**Root Cause**: Why does CoT enable generalization to extend from ID to OOD settings? Does the model learn only "what to think" (correct answers) or "how to think" (reasoning procedures)?
+**Key Challenge**: Why does CoT enable generalization to extend from ID to OOD settings? Does the model learn only "what to think" (correct answers) or "how to think" (reasoning procedures)?
 
-**Paper Goals**:
+**Goal**:
    - (Q1) Does CoT training improve ID and OOD generalization, and what is the theoretical principle?
    - (Q2) How is this generalization capability realized internally within the model?
 
-**Starting Point**: CoT is decomposed as $P(Y|X) = \sum_C P(Y|X,C) \cdot P(C|X)$, where $C$ denotes the reasoning chain. CoT training explicitly learns $P(C|X)$ and $P(Y|X,C)$, whereas training without CoT learns only $P(Y|X)$.
+**Key Insight**: CoT is decomposed as $P(Y|X) = \sum_C P(Y|X,C) \cdot P(C|X)$, where $C$ denotes the reasoning chain. CoT training explicitly learns $P(C|X)$ and $P(Y|X,C)$, whereas training without CoT learns only $P(Y|X)$.
 
 **Core Idea**: CoT training teaches the model "how to think"—by decomposing complex problems into compositions of already-learned simple skills ($P(C|X)$ + $P(Y|X,C)$), it brings OOD problems closer to the ID distribution, enabling systematic generalization.
 

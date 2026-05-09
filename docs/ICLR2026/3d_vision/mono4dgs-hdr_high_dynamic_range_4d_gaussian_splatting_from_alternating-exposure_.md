@@ -28,13 +28,13 @@ This work is the first to address the problem of reconstructing renderable 4D HD
 
 ## Background & Motivation
 
-**State of the Field**: 4D dynamic scene reconstruction (particularly 3DGS-based) has seen significant progress, and HDR reconstruction methods (GaussHDR, HDR-HexPlane) have also been proposed. However, the combination of the two—performing 4D HDR reconstruction from monocular alternating-exposure video—remains unaddressed.
+**Background**: 4D dynamic scene reconstruction (particularly 3DGS-based) has seen significant progress, and HDR reconstruction methods (GaussHDR, HDR-HexPlane) have also been proposed. However, the combination of the two—performing 4D HDR reconstruction from monocular alternating-exposure video—remains unaddressed.
 
 **Limitations of Prior Work**: (a) Alternating exposure causes adjacent frames to differ in brightness, causing standard photometric reprojection to fail and making camera pose estimation infeasible; (b) 2D priors (tracking, depth, optical flow) are noisy across frames with varying brightness; (c) existing dynamic methods (SplineGS, MoSca) are designed for constant-exposure video and perform poorly when naively extended with an HDR head; (d) HDR methods (GaussHDR) require known poses and multi-view inputs.
 
-**Root Cause**: Alternating exposure → unreliable pose estimation → geometric instability → inconsistent HDR appearance. A vicious cycle.
+**Key Challenge**: Alternating exposure → unreliable pose estimation → geometric instability → inconsistent HDR appearance. A vicious cycle.
 
-**Starting Point**: The proposed approach first trains "video Gaussians" in orthographic camera coordinate space (bypassing pose estimation) to recover HDR training frames, then uses the recovered HDR frames for photometric reprojection to estimate poses, and finally transforms to world space for joint optimization.
+**Key Insight**: The proposed approach first trains "video Gaussians" in orthographic camera coordinate space (bypassing pose estimation) to recover HDR training frames, then uses the recovered HDR frames for photometric reprojection to estimate poses, and finally transforms to world space for joint optimization.
 
 **Core Idea**: Two-stage decoupling—first solve HDR (in orthographic space), then solve for pose and 3D geometry (in world space), bridging the two stages via a Video-to-World transformation.
 

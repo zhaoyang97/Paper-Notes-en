@@ -32,9 +32,9 @@ Activation functions are a core component of deep neural networks, introducing t
 
 - **Limitations of Prior Work**: Although polynomial activations possess strong approximation power in theory, they suffer from severe gradient explosion and activation explosion in practice. Even low-degree polynomials can cause numerical instability in deep networks due to repeated composition across layers, a problem that has long hindered the practical adoption of polynomial-type activations.
 
-- **Root Cause**: Polynomial and trigonometric function families offer rich mathematical structure and strong expressive capacity, yet their direct use in deep networks leads to training instability. Standard activations (ReLU, GELU), while stable, have fixed functional forms and lack learnable adaptability.
+- **Key Challenge**: Polynomial and trigonometric function families offer rich mathematical structure and strong expressive capacity, yet their direct use in deep networks leads to training instability. Standard activations (ReLU, GELU), while stable, have fixed functional forms and lack learnable adaptability.
 
-- **Starting Point**: Leveraging the mathematical properties of orthogonal bases, this paper designs variance-preserving initialization schemes that allow learnable activations built on orthogonal bases to train stably in deep networks without requiring additional clamping mechanisms.
+- **Key Insight**: Leveraging the mathematical properties of orthogonal bases, this paper designs variance-preserving initialization schemes that allow learnable activations built on orthogonal bases to train stably in deep networks without requiring additional clamping mechanisms.
 
 - **Core Idea**: By selecting appropriate orthogonal bases (Hermite polynomial basis, Fourier trigonometric basis) and designing variance-preserving initialization, learnable polynomial and trigonometric activations can be used in deep networks while maintaining training stability.
 

@@ -28,15 +28,15 @@ FedSVD proposes globally reparameterizing LoRA matrices via SVD, updating the $A
 
 ## Background & Motivation
 
-**State of the Field**: LoRA has become the dominant method for efficient LLM fine-tuning in federated learning, adapting frozen weights via low-rank matrices $B \in \mathbb{R}^{d_\text{out} \times r}$ and $A \in \mathbb{R}^{r \times d_\text{in}}$.
+**Background**: LoRA has become the dominant method for efficient LLM fine-tuning in federated learning, adapting frozen weights via low-rank matrices $B \in \mathbb{R}^{d_\text{out} \times r}$ and $A \in \mathbb{R}^{r \times d_\text{in}}$.
 
 **Limitations of Prior Work**: When LoRA is combined with DP-SGD, noise is quadratically amplified through the matrix product $BA$. Specifically, $(B + \xi_B)(A + \xi_A) = BA + \xi_B A + B \xi_A + \xi_B \xi_A$, where the last term $\xi_B \xi_A$ constitutes quadratic noise.
 
-**Root Cause**: FFA-LoRA eliminates noise amplification by fixing $A$ as a randomly initialized matrix, but this fixed random projection limits model expressiveness, leading to slow convergence and suboptimal performance.
+**Key Challenge**: FFA-LoRA eliminates noise amplification by fixing $A$ as a randomly initialized matrix, but this fixed random projection limits model expressiveness, leading to slow convergence and suboptimal performance.
 
-**Paper Goals**: Enable the $A$ matrix to adaptively update and capture the principal directions of aggregated updates, without introducing noise amplification.
+**Goal**: Enable the $A$ matrix to adaptively update and capture the principal directions of aggregated updates, without introducing noise amplification.
 
-**Starting Point**: SVD is a post-processing operation that does not affect DP guarantees; an orthogonal $A$ matrix has spectral norm equal to 1, which constrains the gradient norm of $B$.
+**Key Insight**: SVD is a post-processing operation that does not affect DP guarantees; an orthogonal $A$ matrix has spectral norm equal to 1, which constrains the gradient norm of $B$.
 
 **Core Idea**: Decompose the aggregated $BA$ via SVD into an orthogonal $A$ and a $B$ carrying the singular values, performing adaptive updates of $A$ on the server side without violating privacy guarantees.
 

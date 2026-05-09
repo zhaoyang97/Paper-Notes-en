@@ -27,13 +27,13 @@ content_hash: 7bf123c503361332
 This paper proposes a Selective Learning strategy that employs a dual-mask mechanism—comprising an uncertainty mask and an anomaly mask—to identify generalizable time steps for MSE loss computation. The approach achieves an average MSE reduction of 37.4% for Informer, 8.4% for TimesNet, and 6.5% for iTransformer across 8 benchmark datasets.
 
 ## Background & Motivation
-**State of the Field**: Deep learning has achieved remarkable progress in time series forecasting (TSF) by capturing complex temporal patterns.
+**Background**: Deep learning has achieved remarkable progress in time series forecasting (TSF) by capturing complex temporal patterns.
 
 **Limitations of Prior Work**: Deep models are susceptible to noise and anomalies in time series, leading to severe overfitting. The dominant deep learning paradigm optimizes all time steps uniformly using MSE loss, indiscriminately learning from uncertain and anomalous time steps.
 
-**Root Cause**: Models are required to learn from all time steps; however, some time steps correspond to noise or anomalies, and forcing the model to fit these steps causes overfitting.
+**Key Challenge**: Models are required to learn from all time steps; however, some time steps correspond to noise or anomalies, and forcing the model to fit these steps causes overfitting.
 
-**Starting Point**: Not all time steps are worth learning from; selectively masking non-generalizable time steps can improve model performance.
+**Key Insight**: Not all time steps are worth learning from; selectively masking non-generalizable time steps can improve model performance.
 
 ## Method
 

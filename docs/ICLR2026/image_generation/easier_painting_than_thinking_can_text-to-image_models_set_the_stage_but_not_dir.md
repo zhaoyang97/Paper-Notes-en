@@ -37,7 +37,7 @@ In T2I generation, text prompts simultaneously contain **explicit descriptions**
 
 **Lack of complexity**: Compositional scenarios test only a small number of visual elements (≤5), and reasoning tasks test only simple one-to-one causality, failing to reflect high-density real-world scenes.
 
-**Starting Point**: The paper draws on scene graph structures to formalize compositional ability, and on the philosophical tripartite classification of reasoning (deductive/inductive/abductive) to formalize reasoning ability, constructing a 12-dimensional evaluation framework that is both comprehensive and complex.
+**Key Insight**: The paper draws on scene graph structures to formalize compositional ability, and on the philosophical tripartite classification of reasoning (deductive/inductive/abductive) to formalize reasoning ability, constructing a 12-dimensional evaluation framework that is both comprehensive and complex.
 
 ## Method
 

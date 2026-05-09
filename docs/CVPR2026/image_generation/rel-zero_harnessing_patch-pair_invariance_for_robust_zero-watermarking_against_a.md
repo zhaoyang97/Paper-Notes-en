@@ -28,15 +28,15 @@ This paper identifies that relational distances between image patch pairs remain
 
 ## Background & Motivation
 
-**State of the Field**: Digital watermarking is a critical technique for protecting image copyright and authenticating content integrity. Existing methods fall into two categories: embedding-based watermarking (injecting signals into images) and zero-watermarking (extracting feature fingerprints stored in an external database without modifying the image).
+**Background**: Digital watermarking is a critical technique for protecting image copyright and authenticating content integrity. Existing methods fall into two categories: embedding-based watermarking (injecting signals into images) and zero-watermarking (extracting feature fingerprints stored in an external database without modifying the image).
 
 **Limitations of Prior Work**: Embedding-based methods (e.g., VINE, RobustWide) must inject strong signals to withstand diffusion model editing, which inevitably introduces perceptible distortion and degrades image quality. Zero-watermarking methods preserve perfect image quality but rely on global features (SIFT, absolute feature descriptors from deep classifiers) — precisely the features that generative models are most capable of altering — resulting in poor robustness.
 
-**Root Cause**: A fundamental fidelity–robustness trade-off exists: embedding-based methods sacrifice quality for robustness, while zero-watermarking methods preserve quality at the cost of robustness. In high-precision domains such as medical imaging and autonomous driving, watermark-induced noise may lead to catastrophic consequences.
+**Key Challenge**: A fundamental fidelity–robustness trade-off exists: embedding-based methods sacrifice quality for robustness, while zero-watermarking methods preserve quality at the cost of robustness. In high-precision domains such as medical imaging and autonomous driving, watermark-induced noise may lead to catastrophic consequences.
 
-**Paper Goals**: Achieve high robustness against generative AI editing without modifying the original image (zero-watermarking).
+**Goal**: Achieve high robustness against generative AI editing without modifying the original image (zero-watermarking).
 
-**Starting Point**: Through large-scale empirical analysis, the authors find that although AI editing drastically alters the pixel values and absolute features of individual patches, the pairwise relational distances between patches exhibit remarkable invariance: $d_{ij}^{\text{after}} \approx \alpha \cdot d_{ij}^{\text{before}} + \beta$, where $\alpha \approx 1$, $\beta \approx 0$, and $R^2 > 0.95$.
+**Key Insight**: Through large-scale empirical analysis, the authors find that although AI editing drastically alters the pixel values and absolute features of individual patches, the pairwise relational distances between patches exhibit remarkable invariance: $d_{ij}^{\text{after}} \approx \alpha \cdot d_{ij}^{\text{before}} + \beta$, where $\alpha \approx 1$, $\beta \approx 0$, and $R^2 > 0.95$.
 
 **Core Idea**: Leverage the editing invariance of patch-pair relational distances as the foundation for zero-watermarking, encoding the watermark as an index set of stable patch pairs.
 

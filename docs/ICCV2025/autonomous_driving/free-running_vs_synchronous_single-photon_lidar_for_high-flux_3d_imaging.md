@@ -29,15 +29,15 @@ This paper systematically compares free-running and synchronous single-photon li
 
 ## Background & Motivation
 
-**State of the Field**: Single-photon lidar (SPL) leverages picosecond-pulsed lasers and single-photon detectors for high-resolution ranging, with broad applications in topographic mapping, underwater sensing, and autonomous driving. Single-photon avalanche diodes (SPADs) serve as the core detection element; after registering a photon, a SPAD requires a dead time for quenching and reactivation.
+**Background**: Single-photon lidar (SPL) leverages picosecond-pulsed lasers and single-photon detectors for high-resolution ranging, with broad applications in topographic mapping, underwater sensing, and autonomous driving. Single-photon avalanche diodes (SPADs) serve as the core detection element; after registering a photon, a SPAD requires a dead time for quenching and reactivation.
 
 **Limitations of Prior Work**: Conventional wisdom holds that SPL should operate under low-flux conditions to minimize dead-time effects (the 5% rule), severely limiting data acquisition rates and signal-to-noise ratios. The synchronous mode (reactivation deferred until the next pulse) has been widely studied due to statistical independence of detections, yet its pile-up effect drastically distorts histograms at high flux, obscuring depth information. The free-running mode (immediate reactivation after dead time) produces less histogram distortion, but the statistical dependence of detection times renders the likelihood function complex and available estimation methods scarce.
 
-**Root Cause**: SPL performance degrades sharply under high flux — the synchronous mode suffers from pile-up, while the free-running mode lacks efficient estimation algorithms. Existing methods either assume low flux (ignoring dead time) or are designed exclusively for synchronous-mode correction.
+**Key Challenge**: SPL performance degrades sharply under high flux — the synchronous mode suffers from pile-up, while the free-running mode lacks efficient estimation algorithms. Existing methods either assume low flux (ignoring dead time) or are designed exclusively for synchronous-mode correction.
 
-**Paper Goals**: (1) Derive joint ML estimators for signal flux, background flux, and depth under both free-running and synchronous modes; (2) demonstrate the superiority of the free-running mode theoretically and experimentally; (3) propose a depth regularization framework incorporating learned priors.
+**Goal**: (1) Derive joint ML estimators for signal flux, background flux, and depth under both free-running and synchronous modes; (2) demonstrate the superiority of the free-running mode theoretically and experimentally; (3) propose a depth regularization framework incorporating learned priors.
 
-**Starting Point**: Starting from the likelihood function of the free-running mode, the authors show that depth estimation can be reformulated as an efficient matched-filtering operation, while a point cloud score model serves as a 3D structural prior to regularize depth reconstruction.
+**Key Insight**: Starting from the likelihood function of the free-running mode, the authors show that depth estimation can be reformulated as an efficient matched-filtering operation, while a point cloud score model serves as a 3D structural prior to regularize depth reconstruction.
 
 **Core Idea**: Derive an efficient joint ML estimator for free-running SPL by reformulating depth estimation as a matched-filtering problem, and propose the SSDR algorithm combining point cloud score priors for high-flux 3D reconstruction, ultimately demonstrating that the free-running mode comprehensively outperforms the synchronous mode.
 

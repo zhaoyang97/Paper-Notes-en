@@ -37,7 +37,7 @@ Graph generation is a fundamental task in drug discovery, protein design, and pr
 
 ### Solution Approach
 
-**Paper Goals**: ### Core Concept: Segmented Eulerian Neighborhood Trail (SENT)
+**Goal**: ### Core Concept: Segmented Eulerian Neighborhood Trail (SENT)
 
 **Segmented Eulerian Trail (SET)**: Decomposes a graph into multiple trail segments, visiting each edge exactly once.
 
@@ -160,15 +160,15 @@ AutoGraph achieves state-of-the-art or competitive performance on the QM9 and MO
 ## Background & Motivation
 
 ### State of the Field
-**State of the Field**: The field addressed in this work has seen significant progress in recent years, with numerous methods proposed to tackle core challenges.
+**Background**: The field addressed in this work has seen significant progress in recent years, with numerous methods proposed to tackle core challenges.
 
 ### Limitations of Prior Work
 **Limitations of Prior Work**: Existing methods exhibit notable deficiencies in effectiveness, efficiency, or generalizability, limiting their practical applicability.
 
-**Root Cause**: A fundamental trade-off exists between performance and efficiency, necessitating innovation at the methodological level.
+**Key Challenge**: A fundamental trade-off exists between performance and efficiency, necessitating innovation at the methodological level.
 
 ### Research Goals
-**Paper Goals**: To propose a novel methodological framework that addresses the core challenges described above.
+**Goal**: To propose a novel methodological framework that addresses the core challenges described above.
 
 <!-- RELATED:START -->
 

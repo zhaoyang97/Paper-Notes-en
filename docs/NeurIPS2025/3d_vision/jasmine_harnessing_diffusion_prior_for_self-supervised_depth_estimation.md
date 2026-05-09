@@ -29,13 +29,13 @@ This paper is the first to incorporate the visual prior of Stable Diffusion into
 
 ## Background & Motivation
 
-**State of the Field**: Self-supervised monocular depth estimation (SSMDE) learns 3D information solely from video sequences without costly depth annotations. Stable Diffusion has demonstrated powerful visual priors (sharp boundaries and strong generalization) in supervised depth estimation, but has hitherto been used exclusively in supervised settings—fine-tuned on high-precision depth annotations from synthetic datasets.
+**Background**: Self-supervised monocular depth estimation (SSMDE) learns 3D information solely from video sequences without costly depth annotations. Stable Diffusion has demonstrated powerful visual priors (sharp boundaries and strong generalization) in supervised depth estimation, but has hitherto been used exclusively in supervised settings—fine-tuned on high-precision depth annotations from synthetic datasets.
 
 **Limitations of Prior Work**: The reprojection loss inherent to SSMDE is naturally noisy—occlusions, texture-less regions, and illumination changes all produce spurious supervision signals, leading to blurry predictions. Directly fine-tuning SD with such noisy signals rapidly degrades its VAE latent space prior.
 
-**Root Cause**: Preserving latent space quality in SD requires high-precision supervision, yet the self-supervised paradigm cannot provide it by construction. Furthermore, SD outputs SSI depth (with both scale and shift undetermined), whereas self-supervision requires SI depth (scale undetermined, shift strictly zero), and this distributional mismatch causes training instability.
+**Key Challenge**: Preserving latent space quality in SD requires high-precision supervision, yet the self-supervised paradigm cannot provide it by construction. Furthermore, SD outputs SSI depth (with both scale and shift undetermined), whereas self-supervision requires SI depth (scale undetermined, shift strictly zero), and this distributional mismatch causes training instability.
 
-**Starting Point**: RGB images themselves constitute the highest-quality self-supervised signal—they naturally encode complete visual detail, require no external depth source, and perfectly align with SD's original training objective. Image reconstruction can therefore serve as a proxy task to protect the SD prior.
+**Key Insight**: RGB images themselves constitute the highest-quality self-supervised signal—they naturally encode complete visual detail, require no external depth source, and perfectly align with SD's original training objective. Image reconstruction can therefore serve as a proxy task to protect the SD prior.
 
 **Core Idea**: Use an image reconstruction proxy task to protect the SD prior, and iteratively align the SSI-to-SI depth distribution via a GRU, achieving for the first time a successful integration of SD with self-supervised depth estimation.
 

@@ -30,15 +30,15 @@ This paper proposes Scone, a method that learns contextualized embeddings for hi
 
 ### State of the Field
 
-**State of the Field**: The conventional scaling approach is to increase model parameters — but this simultaneously increases inference-time FLOPs and accelerator memory.
+**Background**: The conventional scaling approach is to increase model parameters — but this simultaneously increases inference-time FLOPs and accelerator memory.
 
 **Limitations of Prior Work**: Expanding embeddings by enlarging the vocabulary introduces two problems: (1) the output layer grows in tandem, causing decoding costs to escalate; (2) tail tokens receive insufficient training.
 
-**Root Cause**: Inference costs often far exceed training costs (models are queried billions of times), yet conventional scaling tightly couples inference cost with training compute.
+**Key Challenge**: Inference costs often far exceed training costs (models are queried billions of times), yet conventional scaling tightly couples inference cost with training compute.
 
-**Paper Goals**: Identify a new scaling paradigm in which more compute can be consumed during training while accelerator resource requirements at inference remain unchanged.
+**Goal**: Identify a new scaling paradigm in which more compute can be consumed during training while accelerator resource requirements at inference remain unchanged.
 
-**Starting Point**: Embedding lookup is fundamentally a memory-read operation (compute-free) and can be offloaded to main memory/SSD with negligible latency impact. Contextualized embeddings for high-frequency n-grams can be precomputed and cached.
+**Key Insight**: Embedding lookup is fundamentally a memory-read operation (compute-free) and can be offloaded to main memory/SSD with negligible latency impact. Contextualized embeddings for high-frequency n-grams can be precomputed and cached.
 
 **Core Idea**: Train a separate Transformer to learn contextualized embeddings for high-frequency n-grams, precompute and offload them at inference time, thereby decoupling training-time scaling from inference cost.
 

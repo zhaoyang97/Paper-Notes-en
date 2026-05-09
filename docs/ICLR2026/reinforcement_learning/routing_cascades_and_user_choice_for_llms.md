@@ -29,13 +29,13 @@ This paper models LLM routing as a provider-user Stackelberg game, proves that t
 
 ## Background & Motivation
 
-**State of the Field**: LLM providers allocate user tasks across heterogeneous models through routing and cascading strategies to balance quality, latency, and cost. GPT-5 explicitly adopts routing, switching between an "efficient model" and a "deep reasoning model."
+**Background**: LLM providers allocate user tasks across heterogeneous models through routing and cascading strategies to balance quality, latency, and cost. GPT-5 explicitly adopts routing, switching between an "efficient model" and a "deep reasoning model."
 
 **Limitations of Prior Work**: Existing routing algorithms (Ding et al., 2024; Dekoninck et al., 2025) focus on estimating LLM performance and optimizing quality-latency-cost trade-offs, but treat user response behavior as exogenous. However, the prompt-based interface of LLMs means users may interact repeatedly after a model failure, incurring repeated inference costs.
 
-**Root Cause**: Optimizing single-pass cost may backfire at the level of user behavior. Users may abandon tasks or cancel subscriptions depending on the value of the task and model latency. Optimizing single-pass cost may be "penny-wise but welfare-foolish."
+**Key Challenge**: Optimizing single-pass cost may backfire at the level of user behavior. Users may abandon tasks or cancel subscriptions depending on the value of the task and model latency. Optimizing single-pass cost may be "penny-wise but welfare-foolish."
 
-**Paper Goals**: The paper formalizes a two-level Stackelberg game—the provider selects a routing policy (initial model + cascade probability), and the user decides an abandonment probability based on the observed strategy. By fully characterizing the user's best response and simplifying the provider's problem, the paper derives concise threshold rules.
+**Goal**: The paper formalizes a two-level Stackelberg game—the provider selects a routing policy (initial model + cascade probability), and the user decides an abandonment probability based on the observed strategy. By fully characterizing the user's best response and simplifying the provider's problem, the paper derives concise threshold rules.
 
 ## Method
 

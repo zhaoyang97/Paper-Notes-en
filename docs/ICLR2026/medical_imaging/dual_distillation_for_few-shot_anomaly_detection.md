@@ -27,15 +27,15 @@ This paper proposes D24FAD, a dual distillation framework that combines teacher-
 
 ## Background & Motivation
 
-**State of the Field**: Medical image anomaly detection faces the challenge of annotation scarcity. Few-shot anomaly detection leverages a minimal set of normal samples (2–8 images) to define "normality" and detect deviations from it.
+**Background**: Medical image anomaly detection faces the challenge of annotation scarcity. Few-shot anomaly detection leverages a minimal set of normal samples (2–8 images) to define "normality" and detect deviations from it.
 
 **Limitations of Prior Work**: Existing methods either rely solely on teacher-student distillation (neglecting direct support reference) or solely on support matching (neglecting the transfer of pretrained knowledge), leaving these two complementary information sources unexploited jointly.
 
-**Root Cause**: Teacher-student distillation provides general normal-versus-anomaly discrimination but lacks knowledge of "what is normal in this domain"; support matching provides domain-specific normality references but lacks general discriminative capacity. The two are inherently complementary.
+**Key Challenge**: Teacher-student distillation provides general normal-versus-anomaly discrimination but lacks knowledge of "what is normal in this domain"; support matching provides domain-specific normality references but lacks general discriminative capacity. The two are inherently complementary.
 
-**Paper Goals**: How to simultaneously leverage pretrained knowledge and a small set of normal samples for anomaly detection?
+**Goal**: How to simultaneously leverage pretrained knowledge and a small set of normal samples for anomaly detection?
 
-**Starting Point**: Design a dual-path distillation scheme — TSD learns general discrimination from the teacher, while SSD learns domain-specific normality patterns from support images.
+**Key Insight**: Design a dual-path distillation scheme — TSD learns general discrimination from the teacher, while SSD learns domain-specific normality patterns from support images.
 
 **Core Idea**: Teacher-student distillation encodes "what is anomalous" (general knowledge), while student self-distillation encodes "what is normal" (domain-specific knowledge).
 

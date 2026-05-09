@@ -26,13 +26,13 @@ content_hash: 56fc0f5db511a748
 This paper systematically investigates the expressive power of topological descriptors — Euler Characteristic (EC) and Persistent Homology (PH) — computed on (box) products of graphs under various filtrations. It proves that PH descriptors on graph products are strictly more expressive than those computed on individual graphs, whereas EC does not enjoy this property, and proposes an efficient algorithm for computing PH on product graphs.
 
 ## Background & Motivation
-**State of the Field**: Persistent Homology (PH) and Euler Characteristic (EC) from Topological Data Analysis (TDA) have been widely adopted to capture multi-scale structural information in relational data, providing a complementary perspective when graph neural networks face expressiveness limitations.
+**Background**: Persistent Homology (PH) and Euler Characteristic (EC) from Topological Data Analysis (TDA) have been widely adopted to capture multi-scale structural information in relational data, providing a complementary perspective when graph neural networks face expressiveness limitations.
 
 **Limitations of Prior Work**: While computing PH/EC on individual graphs under various filtrations has been studied, a theoretical analysis of how **graph products** can enhance the expressive power of topological descriptors remains absent.
 
-**Root Cause**: EC is computationally efficient but lacks expressiveness, whereas PH is expressive but computationally expensive. Whether graph products can simultaneously improve the discriminative power of both remains an open question.
+**Key Challenge**: EC is computationally efficient but lacks expressiveness, whereas PH is expressive but computationally expensive. Whether graph products can simultaneously improve the discriminative power of both remains an open question.
 
-**Starting Point**: This work provides a complete theoretical characterization of the expressive power of EC under general color-based filtrations, and proves that PH gains strictly stronger information through graph products.
+**Key Insight**: This work provides a complete theoretical characterization of the expressive power of EC under general color-based filtrations, and proves that PH gains strictly stronger information through graph products.
 
 **Core Idea**: By constructing rich filtration spaces via the box product of graphs, PH descriptors attain strictly greater discriminative power than those computed on individual graphs.
 

@@ -27,15 +27,15 @@ This position paper argues that data verification must be elevated from a post-h
 
 ## Background & Motivation
 
-**State of the Field**: Quantum program generation and compilation spans multiple abstraction layers—from high-level circuit descriptions to low-level gate arrangements—and demands zero error tolerance. LLMs have begun to be applied to quantum assistance (IBM Qiskit Code Assistant, AlphaTensor-Quantum achieving 37–47% T-gate reduction, AlphaEvolve, etc.), yet face fundamental limitations.
+**Background**: Quantum program generation and compilation spans multiple abstraction layers—from high-level circuit descriptions to low-level gate arrangements—and demands zero error tolerance. LLMs have begun to be applied to quantum assistance (IBM Qiskit Code Assistant, AlphaTensor-Quantum achieving 37–47% T-gate reduction, AlphaEvolve, etc.), yet face fundamental limitations.
 
 **Limitations of Prior Work**: (1) LLMs perform statistical pattern matching rather than formal reasoning, systematically failing at multi-step logical operations; (2) hallucination is mathematically unavoidable and cannot be resolved through scaling; (3) training data in the quantum domain is extremely scarce—the most comprehensive dataset, QDataSet, required three months of HPC cluster time to generate only 14 TB of data for 1–2 qubit systems.
 
-**Root Cause**: Correctness of quantum circuits is binary (correct/incorrect) and admits no approximation. The fraction of valid designs among all possible designs decreases exponentially with the number of qubits at $O((\delta/d)^n)$, rendering posterior filtering computationally infeasible.
+**Key Challenge**: Correctness of quantum circuits is binary (correct/incorrect) and admits no approximation. The fraction of valid designs among all possible designs decreases exponentially with the number of qubits at $O((\delta/d)^n)$, rendering posterior filtering computationally infeasible.
 
-**Paper Goals**: To propose a verification-first architectural paradigm for quantum computing copilots and, more broadly, for AI4Science systems.
+**Goal**: To propose a verification-first architectural paradigm for quantum computing copilots and, more broadly, for AI4Science systems.
 
-**Starting Point**: The Cuccaro Adder is used as a concrete case study. Through exhaustive search combined with Lean/Z3 formal verification, the ratio of valid designs to the total design space is quantified, and 34 LLMs are evaluated on this basis.
+**Key Insight**: The Cuccaro Adder is used as a concrete case study. Through exhaustive search combined with Lean/Z3 formal verification, the ratio of valid designs to the total design space is quantified, and 34 LLMs are evaluated on this basis.
 
 **Core Idea**: In scientific domains where correctness is a binary constraint, verification must be embedded in both the training data and the generation loop of AI systems, rather than applied as a post-hoc filter.
 

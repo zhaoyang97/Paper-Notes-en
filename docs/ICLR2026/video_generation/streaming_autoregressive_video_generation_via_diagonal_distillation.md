@@ -28,15 +28,15 @@ This paper proposes Diagonal Distillation (DiagDistill), which achieves 277.3× 
 
 ## Background & Motivation
 
-1. **State of the Field**: Diffusion models have achieved remarkable progress in video generation quality, but global bidirectional attention requires generating the entire video at once, making it unsuitable for streaming or real-time scenarios. Autoregressive models are naturally suited for streaming generation but require multi-step denoising to maintain quality.
+1. **Background**: Diffusion models have achieved remarkable progress in video generation quality, but global bidirectional attention requires generating the entire video at once, making it unsuitable for streaming or real-time scenarios. Autoregressive models are naturally suited for streaming generation but require multi-step denoising to maintain quality.
 
 2. **Limitations of Prior Work**: Existing video distillation methods (e.g., CausVid, Self-Forcing) are largely adapted from image distillation techniques and overlook the special nature of the temporal dimension. Reducing denoising steps leads to degraded motion coherence, error accumulation over long sequences, and oversaturation.
 
-3. **Root Cause**: In autoregressive video generation, predicting the next chunk implicitly entails predicting the next noise level. This introduces exposure bias—training conditions on clean frames while inference conditions on generated frames—causing quality to progressively degrade over time. Furthermore, if early chunks have already established structural priors, later chunks should require fewer denoising steps, yet existing methods do not exploit this property.
+3. **Key Challenge**: In autoregressive video generation, predicting the next chunk implicitly entails predicting the next noise level. This introduces exposure bias—training conditions on clean frames while inference conditions on generated frames—causing quality to progressively degrade over time. Furthermore, if early chunks have already established structural priors, later chunks should require fewer denoising steps, yet existing methods do not exploit this property.
 
-4. **Paper Goals**: Substantially reduce latency in streaming video generation while preserving video quality.
+4. **Goal**: Substantially reduce latency in streaming video generation while preserving video quality.
 
-5. **Starting Point**: Exploit the temporal structure of autoregressive generation—structural priors established by early chunks can be "relayed" to subsequent chunks—motivating a non-uniform denoising step allocation strategy of "more steps early, fewer steps late."
+5. **Key Insight**: Exploit the temporal structure of autoregressive generation—structural priors established by early chunks can be "relayed" to subsequent chunks—motivating a non-uniform denoising step allocation strategy of "more steps early, fewer steps late."
 
 6. **Core Idea**: By employing a diagonal denoising trajectory (more steps for early chunks, gradually decreasing to 2 steps for later chunks) together with a flow distribution matching loss, the method jointly optimizes across the temporal and denoising-step dimensions to achieve an optimal quality–efficiency trade-off.
 

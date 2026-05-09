@@ -27,15 +27,15 @@ This paper formalizes and systematically studies the *consistent low-rank approx
 
 ## Background & Motivation
 
-**State of the Field**: Low-rank approximation is a core tool in machine learning (recommender systems, dimensionality reduction, feature engineering). In streaming settings where data arrives row by row, online maintenance of low-rank approximations is required. Frequent Directions and online ridge leverage score sampling are the dominant approaches.
+**Background**: Low-rank approximation is a core tool in machine learning (recommender systems, dimensionality reduction, feature engineering). In streaming settings where data arrives row by row, online maintenance of low-rank approximations is required. Frequent Directions and online ridge leverage score sampling are the dominant approaches.
 
 **Limitations of Prior Work**: (a) Online algorithms focus solely on approximation quality, ignoring solution stability—frequent changes to factor matrices incur high retraining costs for downstream models; (b) Frequent Directions can suffer $O(n)$ recourse (catastrophic) when the $k$-th and $(k+1)$-th singular vectors alternate; (c) consistency/recourse has been studied in clustering and caching problems but has not been systematically addressed for low-rank approximation.
 
-**Root Cause**: The optimal subspace of an online low-rank approximation may change completely at every step ($\Omega(nk)$ recourse), yet downstream applications require a stable feature space. The goal is to achieve an optimal trade-off between approximation quality and solution stability.
+**Key Challenge**: The optimal subspace of an online low-rank approximation may change completely at every step ($\Omega(nk)$ recourse), yet downstream applications require a stable feature space. The goal is to achieve an optimal trade-off between approximation quality and solution stability.
 
-**Paper Goals**: Formalize the consistent low-rank approximation problem and establish matching upper and lower bounds.
+**Goal**: Formalize the consistent low-rank approximation problem and establish matching upper and lower bounds.
 
-**Starting Point**: Recourse is measured by the Frobenius distance between successive subspace projection matrices. Online ridge leverage score sampling is used to reduce the effective stream length, and refined singular value analysis minimizes per-step factor changes.
+**Key Insight**: Recourse is measured by the Frobenius distance between successive subspace projection matrices. Online ridge leverage score sampling is used to reduce the effective stream length, and refined singular value analysis minimizes per-step factor changes.
 
 **Core Idea**: Compress the stream length via ridge leverage sampling, then handle each update by classifying singular values (directly replacing small singular values; stabilizing large ones), achieving sub-quadratic recourse.
 

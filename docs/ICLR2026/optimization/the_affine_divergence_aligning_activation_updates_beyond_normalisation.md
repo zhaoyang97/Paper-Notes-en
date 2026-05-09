@@ -28,15 +28,15 @@ This paper reveals a fundamental misalignment between the steepest descent direc
 
 ## Background & Motivation
 
-**State of the Field**: In deep learning, parameters are updated along the steepest descent direction via gradient descent. Activations (representations), however, are closer to the loss function and carry sample-dependent information. The empirical success of normalization methods (e.g., BatchNorm) is well established, yet their mechanistic explanations remain contested.
+**Background**: In deep learning, parameters are updated along the steepest descent direction via gradient descent. Activations (representations), however, are closer to the loss function and carry sample-dependent information. The empirical success of normalization methods (e.g., BatchNorm) is well established, yet their mechanistic explanations remain contested.
 
 **Limitations of Prior Work**:
    - Whether the steepest descent direction in parameter space coincides with the optimal update direction in activation space — it does not.
    - Existing explanations of normalization (internal covariate shift, loss landscape smoothing, etc.) lack a first-principles derivation from an update-alignment perspective.
 
-**Root Cause**: Parameter updates propagate to activations and introduce a sample-dependent quadratic bias factor $(\|\vec{x}\|^2+1)$ — the effective learning rate for high-magnitude samples is disproportionately large, geometrically distorting the gradient step.
+**Key Challenge**: Parameter updates propagate to activations and introduce a sample-dependent quadratic bias factor $(\|\vec{x}\|^2+1)$ — the effective learning rate for high-magnitude samples is disproportionately large, geometrically distorting the gradient step.
 
-**Starting Point**: Rather than viewing normalization through the lens of statistical regularization, this paper rederives it from the perspective of "parameter–activation update alignment," arriving at normalization as an unexpected natural consequence.
+**Key Insight**: Rather than viewing normalization through the lens of statistical regularization, this paper rederives it from the perspective of "parameter–activation update alignment," arriving at normalization as an unexpected natural consequence.
 
 **Core Idea**: The success of normalization is not attributable to statistical standardization per se, but to the fact that it precisely cancels the sample-dependent quadratic bias introduced when parameter updates propagate to activations.
 

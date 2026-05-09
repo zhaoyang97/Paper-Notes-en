@@ -29,15 +29,15 @@ This paper presents the first systematic study of library and programming langua
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have achieved remarkable progress in code generation; however, existing evaluations primarily focus on functional correctness and syntactic validity, overlooking critical design decisions made during generation—namely, which libraries to use and which programming language to adopt.
+**Background**: LLMs have achieved remarkable progress in code generation; however, existing evaluations primarily focus on functional correctness and syntactic validity, overlooking critical design decisions made during generation—namely, which libraries to use and which programming language to adopt.
 
 **Limitations of Prior Work**: Developers often prompt LLMs to write code without specifying particular libraries, and many end users lack the expertise to assess whether an LLM's language choice is appropriate. As a result, the technological preferences of LLMs may profoundly influence the diversity of software ecosystems.
 
-**Root Cause**: LLMs should ideally select the most suitable technology stack based on task requirements; however, frequency distributions in training data may cause them to systematically favor popular technologies, even when such choices are suboptimal.
+**Key Challenge**: LLMs should ideally select the most suitable technology stack based on task requirements; however, frequency distributions in training data may cause them to systematically favor popular technologies, even when such choices are suboptimal.
 
-**Paper Goals**: To quantify LLM preference patterns in library and programming language selection, and to evaluate the rationality and potential risks of these preferences.
+**Goal**: To quantify LLM preference patterns in library and programming language selection, and to evaluate the rationality and potential risks of these preferences.
 
-**Starting Point**: Three sets of experiments are designed—library selection in benchmark tasks, library/language selection in project initialization, and consistency verification between natural language recommendations and actual code generation behavior.
+**Key Insight**: Three sets of experiments are designed—library selection in benchmark tasks, library/language selection in project initialization, and consistency verification between natural language recommendations and actual code generation behavior.
 
 **Core Idea**: LLMs exhibit pronounced "familiarity bias" in code generation, prioritizing popular technologies over those most suited to the task at hand.
 

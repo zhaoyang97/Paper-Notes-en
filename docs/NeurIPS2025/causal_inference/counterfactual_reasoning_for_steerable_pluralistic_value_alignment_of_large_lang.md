@@ -29,7 +29,7 @@ This paper proposes the COUPLE framework, which constructs a Structural Causal M
 
 ## Background & Motivation
 
-**State of the Field**: As LLMs increasingly serve users from diverse cultures, communities, and groups, aligning only to averaged principles such as "Helpful, Honest, and Harmless" (HHH) is insufficient; alignment with pluralistic human values is required.
+**Background**: As LLMs increasingly serve users from diverse cultures, communities, and groups, aligning only to averaged principles such as "Helpful, Honest, and Harmless" (HHH) is insufficient; alignment with pluralistic human values is required.
 
 **Multi-dimensionality of Values**: Research in psychology and social science (e.g., Schwartz's theory of basic human values) demonstrates that human values consist of multiple dimensions and their relative priorities, and different individuals arrive at markedly different judgments on the same issue due to differing value priorities.
 

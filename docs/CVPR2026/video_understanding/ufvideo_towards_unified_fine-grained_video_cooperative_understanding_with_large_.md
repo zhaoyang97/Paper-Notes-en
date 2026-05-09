@@ -28,15 +28,15 @@ UFVideo is the first Video LLM to unify global, pixel-level, and temporal-level 
 
 ## Background & Motivation
 
-1. **State of the Field**: Current Video LLMs have expanded from general video QA to diverse fine-grained understanding tasks, including video referring, video segmentation, and temporal grounding, corresponding to pixel-level and temporal-level video understanding respectively.
+1. **Background**: Current Video LLMs have expanded from general video QA to diverse fine-grained understanding tasks, including video referring, video segmentation, and temporal grounding, corresponding to pixel-level and temporal-level video understanding respectively.
 
 2. **Limitations of Prior Work**: Existing methods focus on single-grained tasks and are trained and evaluated independently, failing to integrate perceptual and reasoning capabilities across granularities for mutual enhancement. For example, models proficient in object referring cannot handle event temporal grounding, and models specialized in temporal grounding cannot perform pixel-level segmentation.
 
-3. **Root Cause**: Video knowledge at different granularities is inherently complementary—fine-grained temporal knowledge can enhance comprehension of referred objects, while global video semantics can support fine-grained tasks. However, existing models generate outputs at each granularity in isolation, without explicit cross-granularity association.
+3. **Key Challenge**: Video knowledge at different granularities is inherently complementary—fine-grained temporal knowledge can enhance comprehension of referred objects, while global video semantics can support fine-grained tasks. However, existing models generate outputs at each granularity in isolation, without explicit cross-granularity association.
 
-4. **Paper Goals**: To unify global, pixel-level, and temporal-level video understanding within a single model and enable these granularities to work cooperatively.
+4. **Goal**: To unify global, pixel-level, and temporal-level video understanding within a single model and enable these granularities to work cooperatively.
 
-5. **Starting Point**: Design a unified visual-language guided alignment strategy that distinguishes task inputs and outputs via special tokens, and enables multi-task joint training over a shared LLM backbone.
+5. **Key Insight**: Design a unified visual-language guided alignment strategy that distinguishes task inputs and outputs via special tokens, and enables multi-task joint training over a shared LLM backbone.
 
 6. **Core Idea**: Employ a unified token design (`<Ref>` / `<Seg>` / `<Temp>`) to consolidate global QA, pixel-level segmentation, and temporal grounding into a single Video LLM, achieving multi-grained cooperative video understanding.
 

@@ -28,13 +28,13 @@ This paper proposes ABCA (Aspect-Based Causal Abstention), a pre-generation abst
 
 ## Background & Motivation
 
-**State of the Field**: Hallucination detection and selective answering ("say I don't know when uncertain") in LLMs have attracted growing attention. Existing approaches fall into two categories: post-generation detection (Self-Consistency, SelfCheckGPT) and multi-model feedback (LLM Collaboration).
+**Background**: Hallucination detection and selective answering ("say I don't know when uncertain") in LLMs have attracted growing attention. Existing approaches fall into two categories: post-generation detection (Self-Consistency, SelfCheckGPT) and multi-model feedback (LLM Collaboration).
 
 **Limitations of Prior Work**: (a) Post-generation methods require producing potentially harmful content before making a judgment; (b) most methods perform only coarse-grained "answerability" decisions without distinguishing "knowledge conflict" (contradictory knowledge) from "knowledge insufficiency" (absent knowledge); (c) causal analysis of abstention decisions is lacking—superficial response diversity may be confounded by latent variables such as pretraining and token frequency biases.
 
-**Root Cause**: A single LLM query may traverse multiple knowledge pathways, yet direct sampling tends to activate only high-frequency paths. A mechanism is needed to systematically activate distinct knowledge branches and compare their consistency.
+**Key Challenge**: A single LLM query may traverse multiple knowledge pathways, yet direct sampling tends to activate only high-frequency paths. A mechanism is needed to systematically activate distinct knowledge branches and compare their consistency.
 
-**Starting Point**: Aspect variables are introduced as causal conditioning factors—different disciplinary perspectives, temporal frames, or legal contexts activate different parametric knowledge within the LLM. Abstention decisions are then made causally by comparing response consistency across aspects.
+**Key Insight**: Aspect variables are introduced as causal conditioning factors—different disciplinary perspectives, temporal frames, or legal contexts activate different parametric knowledge within the LLM. Abstention decisions are then made causally by comparing response consistency across aspects.
 
 **Core Idea**: Causal conditioning via aspect variables + AIPW estimation of causal effects + CAD-based detection of knowledge conflict/insufficiency.
 

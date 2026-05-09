@@ -27,11 +27,11 @@ content_hash: 96f49414d86cb0f5
 Inspired by mirror neurons, this paper aligns the intermediate representations of action understanding (observing others' behavior) and embodied execution (autonomously performing actions) into a shared latent space via contrastive learning. The work reveals a spontaneous alignment phenomenon between the two model families that correlates with task success rate, and demonstrates that explicit alignment yields improvements on action recognition (+3.3%) and robot manipulation (+3.5%).
 
 ## Background & Motivation
-- **State of the Field**: Neuroscience has identified mirror neurons that activate both during observation and execution of the same action, revealing an intrinsic connection between action understanding and action execution.
+- **Background**: Neuroscience has identified mirror neurons that activate both during observation and execution of the same action, revealing an intrinsic connection between action understanding and action execution.
 - **Limitations of Prior Work**: Current machine learning approaches treat action understanding (e.g., video action recognition) and embodied execution (e.g., robot manipulation) as independent tasks trained in isolation, ignoring their complementary nature.
-- **Root Cause**: Biological systems mutually reinforce both capabilities through shared representations (embodied cognition theory), whereas independently trained ML models lack representational generalizability and completeness.
+- **Key Challenge**: Biological systems mutually reinforce both capabilities through shared representations (embodied cognition theory), whereas independently trained ML models lack representational generalizability and completeness.
 - **Core Problem**: Whether observation and execution neural representations can be explicitly aligned—analogous to biological mirror neurons—to achieve mutual benefit.
-- **Starting Point**: Modeling both capabilities from a unified representation learning perspective by first probing spontaneous alignment and then explicitly promoting it.
+- **Key Insight**: Modeling both capabilities from a unified representation learning perspective by first probing spontaneous alignment and then explicitly promoting it.
 - **Core Idea**: Two linear layers map representations from both model families into a shared space, with an InfoNCE contrastive loss enforcing alignment between representations of corresponding actions.
 
 ## Method

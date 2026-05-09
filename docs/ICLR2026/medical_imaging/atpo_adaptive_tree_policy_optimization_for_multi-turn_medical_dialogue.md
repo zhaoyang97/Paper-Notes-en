@@ -30,7 +30,7 @@ This paper proposes ATPO (Adaptive Tree Policy Optimization), which models multi
 
 ## Background & Motivation
 
-**State of the Field**: Medical LLMs have achieved state-of-the-art performance on single-turn tasks such as medical examinations and disease diagnosis. However, in real-world clinical dialogues, users typically provide incomplete initial information, requiring models to proactively ask follow-up questions to gather critical details.
+**Background**: Medical LLMs have achieved state-of-the-art performance on single-turn tasks such as medical examinations and disease diagnosis. However, in real-world clinical dialogues, users typically provide incomplete initial information, requiring models to proactively ask follow-up questions to gather critical details.
 
 **Limitations of Prior Work**:
    - Prompt engineering approaches (e.g., MEDIQ) that encourage proactive questioning actually degrade diagnostic accuracy.
@@ -39,11 +39,11 @@ This paper proposes ATPO (Adaptive Tree Policy Optimization), which models multi
    - GRPO struggles with effective credit assignment in long-horizon tasks.
    - PPO's value function estimation becomes unstable in multi-turn dialogue settings.
 
-**Root Cause**: Multi-turn medical dialogue is inherently a long-horizon sequential decision-making problem. Existing RL methods either fail at credit assignment (GRPO assigns a shared advantage to the entire trajectory) or produce inaccurate value estimates (PPO's single-step critic accumulates errors over long conversations).
+**Key Challenge**: Multi-turn medical dialogue is inherently a long-horizon sequential decision-making problem. Existing RL methods either fail at credit assignment (GRPO assigns a shared advantage to the entire trajectory) or produce inaccurate value estimates (PPO's single-step critic accumulates errors over long conversations).
 
-**Paper Goals**: To achieve efficient and accurate policy optimization in multi-turn medical dialogue—precisely estimating the value of each dialogue turn while effectively exploring the dialogue space.
+**Goal**: To achieve efficient and accurate policy optimization in multi-turn medical dialogue—precisely estimating the value of each dialogue turn while effectively exploring the dialogue space.
 
-**Starting Point**: The problem is formulated as an H-MDP, where tree search is performed at the dialogue-turn level and an uncertainty measure is used to adaptively allocate computational budget.
+**Key Insight**: The problem is formulated as an H-MDP, where tree search is performed at the dialogue-turn level and an uncertainty measure is used to adaptively allocate computational budget.
 
 **Core Idea**: High-uncertainty dialogue states are identified via a composite measure of Bellman error and Q-value variance, enabling selective node expansion that simultaneously improves sampling diversity and critic accuracy.
 

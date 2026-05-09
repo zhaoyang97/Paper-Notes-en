@@ -30,15 +30,15 @@ This paper investigates the robustness of PPO under temporally persistent sensor
 
 ## Background & Motivation
 
-**State of the Field**: Real-world RL systems (robotic control, autonomous driving) rely on sensor feedback that is often unreliable—failures, communication interruptions, or transient corruption lead to partial observability and performance degradation.
+**Background**: Real-world RL systems (robotic control, autonomous driving) rely on sensor feedback that is often unreliable—failures, communication interruptions, or transient corruption lead to partial observability and performance degradation.
 
 **Limitations of Prior Work**: (1) Standard MLP policies assume fully observed states and degrade sharply when sensors are unreliable; (2) In practical systems, sensor failures exhibit temporal persistence and inter-group correlations (e.g., shared communication buses or power supplies), making simple independent masking models insufficiently realistic; (3) Existing empirical comparisons of sequence models for robustness in RL (e.g., RLBenchNet) lack theoretical characterization.
 
-**Root Cause**: The robustness of RL policies is directly related to their ability to exploit temporal context, yet a theoretical framework for quantifying this relationship is absent.
+**Key Challenge**: The robustness of RL policies is directly related to their ability to exploit temporal context, yet a theoretical framework for quantifying this relationship is absent.
 
-**Paper Goals**: (1) Provide theoretical bounds on reward degradation under sensor failures; (2) Systematically compare the robustness of different sequence architectures within PPO; (3) Understand which architectural properties drive robustness differences.
+**Goal**: (1) Provide theoretical bounds on reward degradation under sensor failures; (2) Systematically compare the robustness of different sequence architectures within PPO; (3) Understand which architectural properties drive robustness differences.
 
-**Starting Point**: A two-level Markov sensor failure model (individual- and group-level) is established; multiple sequence encoders are integrated into PPO; theoretical and empirical analyses are conducted in parallel.
+**Key Insight**: A two-level Markov sensor failure model (individual- and group-level) is established; multiple sequence encoders are integrated into PPO; theoretical and empirical analyses are conducted in parallel.
 
 **Core Idea**: Transformers leverage self-attention to flexibly reference historically valid observations and naturally skip over missing-data gaps, making them the most robust policy architecture in environments with unreliable sensors.
 

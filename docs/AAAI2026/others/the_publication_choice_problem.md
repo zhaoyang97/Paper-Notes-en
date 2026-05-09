@@ -28,15 +28,15 @@ This paper proposes the "publication choice problem," a game-theoretic framework
 
 ## Background & Motivation
 
-**State of the Field**: Researchers strategically consider the influence of journals/conferences when selecting submission targets to maximize their own utility, while these publication decisions in turn determine the average influence of each venue. This bidirectional feedback loop resembles the classical signaling game in labor market theory.
+**Background**: Researchers strategically consider the influence of journals/conferences when selecting submission targets to maximize their own utility, while these publication decisions in turn determine the average influence of each venue. This bidirectional feedback loop resembles the classical signaling game in labor market theory.
 
 **Limitations of Prior Work**: The "Science of Science" literature has extensively studied peer review mechanism design and research impact quantification, but lacks rigorous game-theoretic analysis of how researchers' publication strategies co-evolve with venue influence. The most closely related work, Ductor et al., focuses on a binary choice between general and field-specific journals and cannot capture the competitive dynamics among multi-tiered venues in fields such as AI/ML.
 
-**Root Cause**: Every researcher seeks to publish in high-influence venues, yet a large influx of researchers into the same venue alters that venue's average influence. The aggregate effect of individually optimal strategies determines the equilibrium distribution of venue influence. Whether such an equilibrium exists, whether it is unique, and what properties it possesses remain theoretically uncharacterized.
+**Key Challenge**: Every researcher seeks to publish in high-influence venues, yet a large influx of researchers into the same venue alters that venue's average influence. The aggregate effect of individually optimal strategies determines the equilibrium distribution of venue influence. Whether such an equilibrium exists, whether it is unique, and what properties it possesses remain theoretically uncharacterized.
 
-**Paper Goals**: (1) Establish a game-theoretic model of publication choice and prove the existence and uniqueness of equilibria; (2) analyze the reliability of publication count as an indicator of researcher influence; (3) study the effect of the Spotlight label mechanism on influence across the academic ecosystem.
+**Goal**: (1) Establish a game-theoretic model of publication choice and prove the existence and uniqueness of equilibria; (2) analyze the reliability of publication count as an indicator of researcher influence; (3) study the effect of the Spotlight label mechanism on influence across the academic ecosystem.
 
-**Starting Point**: Each researcher is modeled as an agent with a fixed type (influence level) and a time budget, who allocates publication resources across multiple venues. The utility function is grounded in the axiomatic citation influence function of Perry et al.
+**Key Insight**: Each researcher is modeled as an agent with a fixed type (influence level) and a time budget, who allocates publication resources across multiple venues. The utility function is grounded in the axiomatic citation influence function of Perry et al.
 
 **Core Idea**: Using a continuum-of-researchers game model, the paper derives a closed-form best response for publication choice equilibria and reveals a "threshold effect" of Spotlight labels on venue influence.
 

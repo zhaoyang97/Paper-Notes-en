@@ -29,15 +29,15 @@ U2Flow is the first recurrent unsupervised framework that jointly estimates opti
 
 ## Background & Motivation
 
-**State of the Field**: Deep recurrent models based on all-pairs correlation (e.g., RAFT) achieve state-of-the-art results under full supervision, but acquiring large-scale accurate optical flow annotations is prohibitively costly, motivating unsupervised research.
+**Background**: Deep recurrent models based on all-pairs correlation (e.g., RAFT) achieve state-of-the-art results under full supervision, but acquiring large-scale accurate optical flow annotations is prohibitively costly, motivating unsupervised research.
 
 **Limitations of Prior Work**: (1) Unsupervised models produce inaccurate estimates in occluded regions, textureless areas, and under large displacements—errors that are catastrophic for downstream tasks. (2) Uncertainty estimation in unsupervised settings is severely underdeveloped: direct supervision signals are absent, and it remains unclear how to effectively leverage uncertainty to improve flow estimation.
 
-**Root Cause**: A model must not only predict motion but also quantify its confidence in those predictions—yet without ground truth, how can a model be taught to assess its own reliability?
+**Key Challenge**: A model must not only predict motion but also quantify its confidence in those predictions—yet without ground truth, how can a model be taught to assess its own reliability?
 
-**Paper Goals**: Achieve joint estimation of optical flow and uncertainty within a purely self-supervised framework, and use uncertainty feedback to improve flow estimation.
+**Goal**: Achieve joint estimation of optical flow and uncertainty within a purely self-supervised framework, and use uncertainty feedback to improve flow estimation.
 
-**Starting Point**: Exploit the inconsistency of model predictions under data augmentation as a self-supervised signal for uncertainty.
+**Key Insight**: Exploit the inconsistency of model predictions under data augmentation as a self-supervised signal for uncertainty.
 
 **Core Idea**: When a model produces inconsistent predictions under different perturbations, low-confidence regions are exposed—this inconsistency itself serves as a strong signal for uncertainty.
 

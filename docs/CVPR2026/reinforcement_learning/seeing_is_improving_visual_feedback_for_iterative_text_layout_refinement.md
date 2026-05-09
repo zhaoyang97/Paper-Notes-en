@@ -28,15 +28,15 @@ VFLM proposes a layout generation framework that leverages visual feedback for i
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal large language models (MLLMs) are now capable of automatically generating structured layouts from natural language descriptions. A typical approach is to have the model generate code (e.g., HTML/CSS/SVG) representing the layout, which is then rendered into a final image by a graphics engine.
+**Background**: Multimodal large language models (MLLMs) are now capable of automatically generating structured layouts from natural language descriptions. A typical approach is to have the model generate code (e.g., HTML/CSS/SVG) representing the layout, which is then rendered into a final image by a graphics engine.
 
 **Limitations of Prior Work**: Existing methods follow a "code-only" paradigm in which the model is entirely "blind" to the rendered visual output. This leads to several critical problems: (1) text may overflow bounding boxes or overlap with other elements, degrading readability; (2) aesthetic factors such as font size and color combinations cannot be guaranteed; (3) once code generation is complete, there is no opportunity for correction, and errors propagate directly to the final output.
 
-**Root Cause**: The ultimate goal of layout generation is visual readability and aesthetic quality, yet a fundamental gap exists between the optimization objective of existing methods (code correctness) and the actual evaluation criterion (visual quality). Syntactically correct code does not necessarily produce a well-rendered result.
+**Key Challenge**: The ultimate goal of layout generation is visual readability and aesthetic quality, yet a fundamental gap exists between the optimization objective of existing methods (code correctness) and the actual evaluation criterion (visual quality). Syntactically correct code does not necessarily produce a well-rendered result.
 
-**Paper Goals**: To introduce a visual feedback mechanism that enables the model to "see" rendered outputs, identify problems, and iteratively self-correct, thereby realizing self-improving layout generation.
+**Goal**: To introduce a visual feedback mechanism that enables the model to "see" rendered outputs, identify problems, and iteratively self-correct, thereby realizing self-improving layout generation.
 
-**Starting Point**: Reformulating layout generation from a "one-shot code generation" task into a "visual observation–reflection–correction" iterative process, and employing reinforcement learning to teach the model to leverage visual feedback for self-improvement.
+**Key Insight**: Reformulating layout generation from a "one-shot code generation" task into a "visual observation–reflection–correction" iterative process, and employing reinforcement learning to teach the model to leverage visual feedback for self-improvement.
 
 **Core Idea**: Close the "code → render → evaluate → correct" loop through visual feedback, and use RL training to endow the model with adaptive, reflective generation capability.
 

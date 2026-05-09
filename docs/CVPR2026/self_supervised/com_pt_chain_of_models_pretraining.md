@@ -29,15 +29,15 @@ This paper proposes Chain-of-Models Pre-Training (CoM-PT), which arranges vision
 
 ## Background & Motivation
 
-**State of the Field**: Pre-training vision foundation models (VFMs) is extremely costly (e.g., ViT-L/14 on LAION-2B requires $1.2 \times 10^5$ A100 GPU hours). Existing acceleration methods—mixed precision, masked modeling, data-efficient approaches, etc.—optimize within a single-model dimension.
+**Background**: Pre-training vision foundation models (VFMs) is extremely costly (e.g., ViT-L/14 on LAION-2B requires $1.2 \times 10^5$ A100 GPU hours). Existing acceleration methods—mixed precision, masked modeling, data-efficient approaches, etc.—optimize within a single-model dimension.
 
 **Limitations of Prior Work**: VFMs are typically pre-trained as model families (varying sizes to satisfy different deployment scenarios), yet the standard practice of independent training is highly redundant—models share the same optimization objective, dataset, and training protocol, causing common knowledge to be repeatedly learned.
 
-**Root Cause**: As model families continue to grow (more specialized model sizes and larger model ranges), the total cost of independent training scales linearly, creating a dilemma between bearing escalating pre-training costs and sacrificing deployment flexibility.
+**Key Challenge**: As model families continue to grow (more specialized model sizes and larger model ranges), the total cost of independent training scales linearly, creating a dilemma between bearing escalating pre-training costs and sacrificing deployment flexibility.
 
-**Paper Goals**: Achieve pre-training acceleration that scales efficiently with model family size.
+**Goal**: Achieve pre-training acceleration that scales efficiently with model family size.
 
-**Starting Point**: At the micro level, the training cost of large models is the dominant source of overhead; at the macro level, the redundancy of independent training is the root cause of inefficiency. The key to addressing both bottlenecks simultaneously lies in enabling intra-family knowledge reuse from small to large models.
+**Key Insight**: At the micro level, the training cost of large models is the dominant source of overhead; at the macro level, the redundancy of independent training is the root cause of inefficiency. The key to addressing both bottlenecks simultaneously lies in enabling intra-family knowledge reuse from small to large models.
 
 **Core Idea**: Arrange the model family in size order to form a model chain; the smallest model is trained from scratch, and each subsequent model is accelerated via inverse knowledge transfer (small → large).
 

@@ -30,7 +30,7 @@ This paper proposes AlignVQA, a multi-agent debate framework for VQA confidence 
 
 ## Background & Motivation
 
-**State of the Field**: VQA is increasingly deployed in high-stakes domains such as medical diagnosis, autonomous driving, and visual assistance. Modern VLMs (e.g., Gemma 3, Qwen2.5-VL) continue to improve in accuracy, yet their confidence estimates remain severely overconfident.
+**Background**: VQA is increasingly deployed in high-stakes domains such as medical diagnosis, autonomous driving, and visual assistance. Modern VLMs (e.g., Gemma 3, Qwen2.5-VL) continue to improve in accuracy, yet their confidence estimates remain severely overconfident.
 
 **Limitations of Prior Work**:
    - **Overconfidence**: VLMs frequently assign high confidence to incorrect answers. For instance, Gemma 3 4B achieves an ECE of 0.375 and an MCE of 0.818 on VQARad.
@@ -38,11 +38,11 @@ This paper proposes AlignVQA, a multi-agent debate framework for VQA confidence 
    - **Calibration method limitations**: Post-hoc methods such as Temperature Scaling (TS) are limited to a single coarse-grained adjustment; Focal Loss only indirectly improves calibration; label smoothing uniformly smooths all targets.
    - **Multi-agent calibration unexplored**: Existing multi-agent VQA systems target accuracy without explicitly optimizing calibration.
 
-**Root Cause**: Improvements in VLM accuracy do not coincide with improvements in calibration quality — more accurate models may in fact become more overconfident.
+**Key Challenge**: Improvements in VLM accuracy do not coincide with improvements in calibration quality — more accurate models may in fact become more overconfident.
 
-**Paper Goals**: Enable VQA systems to produce confidence scores that more faithfully reflect the true probability of correctness, especially in high-stakes settings such as medical imaging.
+**Goal**: Enable VQA systems to produce confidence scores that more faithfully reflect the true probability of correctness, especially in high-stakes settings such as medical imaging.
 
-**Starting Point**: Simulating human collective decision-making — through structured multi-agent debate (arguing for/against a position), models exchange arguments and revise unreliable confidence estimates. A differentiable calibration loss is theoretically derived to train better-calibrated agents.
+**Key Insight**: Simulating human collective decision-making — through structured multi-agent debate (arguing for/against a position), models exchange arguments and revise unreliable confidence estimates. A differentiable calibration loss is theoretically derived to train better-calibrated agents.
 
 **Core Idea**: Diverse specialist agents + structured debate + theory-driven calibration-aware loss = more reliable VQA confidence.
 

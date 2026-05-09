@@ -29,17 +29,17 @@ This paper proposes DualSpeechLM, a framework that extracts high-level semantic 
 
 ## Background & Motivation
 
-**State of the Field**: Speech large language models (Speech LLMs) built upon text LLMs have advanced rapidly in recent years, encompassing understanding-oriented models (QwenAudio, SALMONN) and generation-oriented models (SEED-TTS, UniAudio). Unified understanding-and-generation approaches (SpeechGPT, Moshi, Mini-Omni2) are also being actively explored.
+**Background**: Speech large language models (Speech LLMs) built upon text LLMs have advanced rapidly in recent years, encompassing understanding-oriented models (QwenAudio, SALMONN) and generation-oriented models (SEED-TTS, UniAudio). Unified understanding-and-generation approaches (SpeechGPT, Moshi, Mini-Omni2) are also being actively explored.
 
 **Limitations of Prior Work**:
    - **Data dependency**: Adapting text LLMs into unified speech LLMs requires large amounts of paired data due to the substantial modality gap between speech and text (SpeechGPT requires 70K hours; SpiritLM requires 570K hours).
    - **Task conflict**: Generation tasks require rich acoustic details (prosody, emotion, speaker characteristics), whereas understanding tasks require high-level semantic features. A single token type cannot serve both objectives well—acoustic tokens degrade understanding performance, while semantic tokens degrade generation quality.
 
-**Root Cause**: A single token type cannot simultaneously satisfy the distinct information requirements of understanding (semantics-oriented) and generation (acoustics-oriented); improving one objective typically harms the other.
+**Key Challenge**: A single token type cannot simultaneously satisfy the distinct information requirements of understanding (semantics-oriented) and generation (acoustics-oriented); improving one objective typically harms the other.
 
-**Paper Goals**: Achieve mutual benefit between speech understanding and generation under low-resource data conditions, rather than a zero-sum trade-off.
+**Goal**: Achieve mutual benefit between speech understanding and generation under low-resource data conditions, rather than a zero-sum trade-off.
 
-**Starting Point**: Innovations are proposed along two dimensions—speech tokenization and language modeling—by designing an understanding-driven tokenizer and a dual-token modeling framework.
+**Key Insight**: Innovations are proposed along two dimensions—speech tokenization and language modeling—by designing an understanding-driven tokenizer and a dual-token modeling framework.
 
 **Core Idea**: High-level semantic tokens (USTokens) are used as input to reduce the modality alignment difficulty and enhance understanding, while acoustic tokens are used as output to preserve acoustic details for high-quality generation. Both are jointly trained within a unified end-to-end framework.
 

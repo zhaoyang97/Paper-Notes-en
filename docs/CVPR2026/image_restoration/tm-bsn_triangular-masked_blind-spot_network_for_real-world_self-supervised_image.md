@@ -29,11 +29,11 @@ This paper proposes TM-BSN, a triangular-masked blind-spot network that designs 
 
 ## Background & Motivation
 
-1. **State of the Field**: Blind-spot networks (BSNs) represent the mainstream approach to self-supervised image denoising. Their core idea is to prevent identity mapping by excluding the target pixel from its own receptive field, thereby estimating the clean signal without requiring clean image supervision.
+1. **Background**: Blind-spot networks (BSNs) represent the mainstream approach to self-supervised image denoising. Their core idea is to prevent identity mapping by excluding the target pixel from its own receptive field, thereby estimating the clean signal without requiring clean image supervision.
 2. **Limitations of Prior Work**: BSNs assume pixel-wise independent noise; however, in real-world sRGB images, the ISP pipeline—particularly the demosaicing stage—introduces strongly spatially correlated noise that violates this independence assumption, causing the network to degenerate into an identity mapping.
-3. **Root Cause**: Existing solutions either apply pixel-shuffle downsampling (PD) to decorrelate noise, which alters the noise statistics and requires post-processing (e.g., AP-BSN), or enlarge the blind-spot region at full resolution (e.g., AT-BSN) using rectangular blind spots that mismatch the diamond-shaped correlation pattern of real noise, thereby excluding useful uncorrelated pixels.
-4. **Paper Goals**: To design a self-supervised denoising network whose blind-spot shape precisely matches the spatial correlation geometry of real-world noise.
-5. **Starting Point**: The authors observe that during demosaicing, each pixel is reconstructed from neighboring samples using spatially decaying weights, producing a diamond-shaped correlation pattern centered on the target pixel. The blind spot should precisely cover this diamond-shaped region.
+3. **Key Challenge**: Existing solutions either apply pixel-shuffle downsampling (PD) to decorrelate noise, which alters the noise statistics and requires post-processing (e.g., AP-BSN), or enlarge the blind-spot region at full resolution (e.g., AT-BSN) using rectangular blind spots that mismatch the diamond-shaped correlation pattern of real noise, thereby excluding useful uncorrelated pixels.
+4. **Goal**: To design a self-supervised denoising network whose blind-spot shape precisely matches the spatial correlation geometry of real-world noise.
+5. **Key Insight**: The authors observe that during demosaicing, each pixel is reconstructed from neighboring samples using spatially decaying weights, producing a diamond-shaped correlation pattern centered on the target pixel. The blind spot should precisely cover this diamond-shaped region.
 6. **Core Idea**: Triangular-masked convolutions are used to construct a diamond-shaped blind spot that precisely matches the spatial correlation geometry of sRGB noise, maximizing the utilization of contextual information from uncorrelated pixels while excluding all correlated ones.
 
 ## Method

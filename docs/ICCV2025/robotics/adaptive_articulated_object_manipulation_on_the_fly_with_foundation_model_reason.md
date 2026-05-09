@@ -33,7 +33,7 @@ Existing approaches face two major bottlenecks: (1) the geometric diversity of r
 
 The root cause lies in the following: whole-object-level geometric variation is too large to learn effectively, yet local parts across different categories (e.g., handles, knobs, buttons) share similar geometric characteristics. This key insight motivates the use of *parts* as an intermediate representation to improve the generalizability of affordance prediction.
 
-**Starting Point**: Integrate the powerful generalization capabilities of foundation models in visual perception and language reasoning to build a complete pipeline from part segmentation to affordance reasoning to high-level policy generation. **Core Idea**: part-level affordance modeling + foundation model reasoning = cross-category adaptive manipulation.
+**Key Insight**: Integrate the powerful generalization capabilities of foundation models in visual perception and language reasoning to build a complete pipeline from part segmentation to affordance reasoning to high-level policy generation. **Core Idea**: part-level affordance modeling + foundation model reasoning = cross-category adaptive manipulation.
 
 ## Method
 

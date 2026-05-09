@@ -29,15 +29,15 @@ LR-SGS proposes a structure-aware Salient Gaussian representation guided by LiDA
 
 ## Background & Motivation
 
-**State of the Field**: 3DGS has demonstrated fast, high-fidelity rendering capabilities for autonomous driving scene reconstruction and novel view synthesis. Existing methods such as StreetGS and OmniRe have constructed dynamic scene graphs to handle temporally dynamic objects.
+**Background**: 3DGS has demonstrated fast, high-fidelity rendering capabilities for autonomous driving scene reconstruction and novel view synthesis. Existing methods such as StreetGS and OmniRe have constructed dynamic scene graphs to handle temporally dynamic objects.
 
 **Limitations of Prior Work**: Camera-only approaches are prone to texture inconsistency and optimization instability under complex illumination (nighttime, backlight) and large ego-vehicle motion. Existing LiDAR-augmented methods (e.g., PVG, OmniRe) use point clouds only for Gaussian initialization or depth supervision, leaving the reflectance information and geometric structural information embedded in LiDAR point clouds largely unexploited.
 
-**Root Cause**: RGB signals are sensitive to external factors such as illumination and exposure, and cannot provide reliable constraints in weakly textured regions or at material boundaries. Although LiDAR provides accurate depth and is insensitive to illumination, the material properties (reflectance) and geometric structural features encoded in its return intensity have not been effectively utilized.
+**Key Challenge**: RGB signals are sensitive to external factors such as illumination and exposure, and cannot provide reliable constraints in weakly textured regions or at material boundaries. Although LiDAR provides accurate depth and is insensitive to illumination, the material properties (reflectance) and geometric structural features encoded in its return intensity have not been effectively utilized.
 
-**Paper Goals**: (1) How to integrate LiDAR's illumination-invariant material information into the Gaussian representation? (2) How to model edges and planar surfaces more precisely using structure-aware Gaussians? (3) How to align RGB and reflectance boundaries across modalities?
+**Goal**: (1) How to integrate LiDAR's illumination-invariant material information into the Gaussian representation? (2) How to model edges and planar surfaces more precisely using structure-aware Gaussians? (3) How to align RGB and reflectance boundaries across modalities?
 
-**Starting Point**: The raw LiDAR return signal contains intensity, which can be corrected by range $R$ and incidence angle $\alpha$ to yield an approximately illumination-invariant reflectance $\rho$. Key structural elements in the scene—edges, planes, etc.—can be extracted from point cloud smoothness and reflectance gradients, serving as initializations for a Salient Gaussian representation that uses fewer parameters while accurately capturing scene structure.
+**Key Insight**: The raw LiDAR return signal contains intensity, which can be corrected by range $R$ and incidence angle $\alpha$ to yield an approximately illumination-invariant reflectance $\rho$. Key structural elements in the scene—edges, planes, etc.—can be extracted from point cloud smoothness and reflectance gradients, serving as initializations for a Salient Gaussian representation that uses fewer parameters while accurately capturing scene structure.
 
 **Core Idea**: Append LiDAR-calibrated reflectance as an illumination-invariant channel to each Gaussian, initialize structure-aware Salient Gaussians from geometric and reflectance feature points, and enforce RGB–reflectance gradient alignment to enhance material boundary consistency.
 

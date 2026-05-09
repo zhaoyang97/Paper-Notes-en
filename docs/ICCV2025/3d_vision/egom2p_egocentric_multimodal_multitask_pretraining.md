@@ -34,7 +34,7 @@ EgoM2P is the first large-scale multimodal multitask model for egocentric 4D und
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: Multimodal signals in egocentric vision (RGB, depth, camera pose, gaze, etc.) are critical for augmented reality, robotics, and human-computer interaction. However, building large-scale egocentric multimodal multitask models faces unique challenges:
+**Key Challenge**: **Background**: Multimodal signals in egocentric vision (RGB, depth, camera pose, gaze, etc.) are critical for augmented reality, robotics, and human-computer interaction. However, building large-scale egocentric multimodal multitask models faces unique challenges:
 
 **Data Heterogeneity**: Modality coverage varies greatly across devices and scenarios — some datasets include gaze but no depth, others include depth but no gaze — resulting in severe missing-modality issues.
 
@@ -48,7 +48,7 @@ EgoM2P is the first large-scale multimodal multitask model for egocentric 4D und
 
 ### Paper Goals
 
-**Paper Goals**: ### Overall Architecture
+**Goal**: ### Overall Architecture
 
 EgoM2P is built on the T5-Base architecture with an encoder-decoder design.
 

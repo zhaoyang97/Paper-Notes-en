@@ -29,15 +29,15 @@ This paper compares low-code RPA platforms (UiPath, Automation Anywhere) against
 
 ## Background & Motivation
 
-**State of the Field**: Early and accurate detection of oral cancer is critical for improving patient survival rates. Robotic Process Automation (RPA) has been applied to medical workflow automation, including image processing and laboratory data management. Low-code platforms such as UiPath provide accessible automation interfaces.
+**Background**: Early and accurate detection of oral cancer is critical for improving patient survival rates. Robotic Process Automation (RPA) has been applied to medical workflow automation, including image processing and laboratory data management. Low-code platforms such as UiPath provide accessible automation interfaces.
 
 **Limitations of Prior Work**: Low-code RPA platforms are inefficient when handling deep learning inference—approximately 78% of execution time is spent on model reloading, activity switching, and data serialization overhead, with only 22% devoted to actual inference computation. Processing 31 oral lesion images with UiPath requires approximately 80 seconds.
 
-**Root Cause**: A fundamental tension exists between the ease-of-use of RPA platforms and the efficient execution of computationally intensive AI inference. Sequential execution paradigms and repeated model loading in low-code environments introduce severe bottlenecks.
+**Key Challenge**: A fundamental tension exists between the ease-of-use of RPA platforms and the efficient execution of computationally intensive AI inference. Sequential execution paradigms and repeated model loading in low-code environments introduce severe bottlenecks.
 
-**Paper Goals**: To optimize a Python-based inference pipeline using software design patterns, thereby eliminating the execution overhead inherent to RPA platforms.
+**Goal**: To optimize a Python-based inference pipeline using software design patterns, thereby eliminating the execution overhead inherent to RPA platforms.
 
-**Starting Point**: Combining the Singleton pattern (model loaded only once) with the Batch Strategy pattern (batch image processing) within a Python inference pipeline.
+**Key Insight**: Combining the Singleton pattern (model loaded only once) with the Batch Strategy pattern (batch image processing) within a Python inference pipeline.
 
 **Core Idea**: Applying Singleton to eliminate redundant model loading and Batch Processing to enable batched inference, reducing per-image inference time from 2.5 s (RPA platform) to 0.06 s for oral cancer detection.
 

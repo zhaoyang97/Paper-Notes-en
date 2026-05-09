@@ -27,18 +27,18 @@ content_hash: 68779f41514d103c
 This paper proposes the Self-Critical Inference (SCI) framework, which simultaneously addresses language bias and language sensitivity in LVLMs via multi-round textual and visual counterfactual logit aggregation. A dynamic robustness benchmark, DRBench, is introduced to evaluate robustness in a model-specific manner. Increasing the number of counterfactual inference rounds yields consistent robustness gains, opening a new direction for test-time scaling.
 
 ## Background & Motivation
-**State of the Field**: LVLMs achieve strong vision-language capabilities by combining visual encoders with pretrained LLMs through joint fine-tuning.
+**Background**: LVLMs achieve strong vision-language capabilities by combining visual encoders with pretrained LLMs through joint fine-tuning.
 
 **Limitations of Prior Work**:
    - **Language Bias**: Models rely on language priors rather than visual inputs to answer questions, leading to object hallucinations (e.g., generating non-existent content).
    - **Language Sensitivity**: Semantically equivalent but lexically distinct prompt variations elicit different responses, undermining consistency and reliability.
    - Methods such as VCD address only visual counterfactuals (bias), entirely neglecting textual counterfactuals (sensitivity).
 
-**Root Cause**: VCD is fundamentally a reweighting of the original logits by TIE logits along a single dimension (visual); however, the robustness challenges of LVLMs are two-dimensional.
+**Key Challenge**: VCD is fundamentally a reweighting of the original logits by TIE logits along a single dimension (visual); however, the robustness challenges of LVLMs are two-dimensional.
 
-**Paper Goals**: Simultaneously mitigate language bias and language sensitivity, and demonstrate that increasing inference rounds improves robustness.
+**Goal**: Simultaneously mitigate language bias and language sensitivity, and demonstrate that increasing inference rounds improves robustness.
 
-**Starting Point**: Unifying VCD within the causal analysis framework of CF-VQA to reveal the physical interpretation of $\alpha$ (a temperature parameter for TIE), and naturally extending this formulation to the textual counterfactual dimension.
+**Key Insight**: Unifying VCD within the causal analysis framework of CF-VQA to reveal the physical interpretation of $\alpha$ (a temperature parameter for TIE), and naturally extending this formulation to the textual counterfactual dimension.
 
 **Core Idea**: Since VCD reduces to TIE reweighting, both Textual Counterfactual (TC) and Visual Counterfactual (VC) can be applied simultaneously, enabling test-time robustness scaling via multi-round logit aggregation.
 

@@ -29,15 +29,15 @@ This paper proposes SHARP, a motion prediction framework based on short-window s
 
 ## Background & Motivation
 
-1. **State of the Field**: Trajectory prediction is a core component of the autonomous driving control stack, and state-of-the-art methods achieve high accuracy on large-scale benchmarks. However, these benchmarks assume fixed-length history and future windows, whereas in real-world driving, the available historical context is heterogeneous—newly entering agents may have only very short observation histories.
+1. **Background**: Trajectory prediction is a core component of the autonomous driving control stack, and state-of-the-art methods achieve high accuracy on large-scale benchmarks. However, these benchmarks assume fixed-length history and future windows, whereas in real-world driving, the available historical context is heterogeneous—newly entering agents may have only very short observation histories.
 
 2. **Limitations of Prior Work**: (1) Methods that rely on long contexts must delay prediction for newly detected agents until sufficient observations accumulate. (2) Existing streaming approaches (e.g., RealMotion, DeMo) propagate information across time steps but are trained with a fixed number of streaming passes, causing performance degradation under varying streaming step counts. (3) Existing context streaming mechanisms rely solely on positional correspondence without explicitly modeling instance-level identity.
 
-3. **Root Cause**: Real-world driving scenes evolve continuously, and the available observation length varies significantly across agents—from a few frames to several seconds—yet most methods can only handle fixed-length inputs.
+3. **Key Challenge**: Real-world driving scenes evolve continuously, and the available observation length varies significantly across agents—from a few frames to several seconds—yet most methods can only handle fixed-length inputs.
 
-4. **Paper Goals**: (1) How to make accurate predictions from short observation windows; (2) how to reliably propagate contextual information in continuously evolving scenes; (3) how to maintain a lightweight architecture that satisfies real-time inference requirements.
+4. **Goal**: (1) How to make accurate predictions from short observation windows; (2) how to reliably propagate contextual information in continuously evolving scenes; (3) how to maintain a lightweight architecture that satisfies real-time inference requirements.
 
-5. **Starting Point**: Incrementally processing the observation stream using short windows (1 second), while maintaining long-term agent memory through an instance-aware context streaming mechanism.
+5. **Key Insight**: Incrementally processing the observation stream using short windows (1 second), while maintaining long-term agent memory through an instance-aware context streaming mechanism.
 
 6. **Core Idea**: Short-window input + instance-aware cross-window context propagation + dual-objective training (streaming and single-chunk) = accurate and robust prediction under arbitrary observation lengths.
 

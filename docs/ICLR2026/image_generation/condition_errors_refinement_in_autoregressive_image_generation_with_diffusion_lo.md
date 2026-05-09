@@ -28,15 +28,15 @@ This paper theoretically analyzes the advantage of autoregressive diffusion loss
 
 ## Background & Motivation
 
-**State of the Field**: Autoregressive image generation has advanced rapidly in recent years. Methods such as MAR replace VQ tokenization with diffusion loss, achieving image quality competitive with or surpassing diffusion models. However, the theoretical differences between autoregressive diffusion loss and standard conditional diffusion models remain underexplored.
+**Background**: Autoregressive image generation has advanced rapidly in recent years. Methods such as MAR replace VQ tokenization with diffusion loss, achieving image quality competitive with or surpassing diffusion models. However, the theoretical differences between autoregressive diffusion loss and standard conditional diffusion models remain underexplored.
 
 **Limitations of Prior Work**: Although autoregressive conditional generation progressively builds context, the condition $c_i$ at each step accumulates redundant information from preceding patches that is irrelevant to the current patch—referred to as "condition inconsistency." This redundancy perturbs the conditional score $\nabla_{x_t} \log p(x_t|c_i)$ in the denoising process, degrading generation quality.
 
-**Root Cause**: Autoregressive methods capture dependencies through context accumulation, but the context inevitably incorporates noisy information irrelevant to generating the current patch. The challenge is to retain useful dependencies while eliminating redundancy.
+**Key Challenge**: Autoregressive methods capture dependencies through context accumulation, but the context inevitably incorporates noisy information irrelevant to generating the current patch. The challenge is to retain useful dependencies while eliminating redundancy.
 
-**Paper Goals**: (a) Theoretically characterize where autoregressive diffusion loss outperforms conditional diffusion; (b) analyze the mechanism behind condition inconsistency; (c) propose a theoretically grounded condition refinement method.
+**Goal**: (a) Theoretically characterize where autoregressive diffusion loss outperforms conditional diffusion; (b) analyze the mechanism behind condition inconsistency; (c) propose a theoretically grounded condition refinement method.
 
-**Starting Point**: The paper begins with a theoretical analysis of conditional score matching, proving that the autoregressive process itself yields a condition refinement effect (exponential decay of gradient norms), and then applies optimal transport theory to further correct residual condition inconsistency.
+**Key Insight**: The paper begins with a theoretical analysis of conditional score matching, proving that the autoregressive process itself yields a condition refinement effect (exponential decay of gradient norms), and then applies optimal transport theory to further correct residual condition inconsistency.
 
 **Core Idea**: Autoregressive conditional generation inherently exhibits condition error decay, yet condition inconsistency persists. Wasserstein Gradient Flow-based condition refinement provides convergence guarantees to the ideal conditional distribution.
 

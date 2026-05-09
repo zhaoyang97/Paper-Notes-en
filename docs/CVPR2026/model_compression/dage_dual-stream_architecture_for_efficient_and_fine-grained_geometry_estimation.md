@@ -35,7 +35,7 @@ Estimating 3D geometry and camera poses from multi-view images is a fundamental 
 - **Single-view methods** (DepthPro, MoGe2) handle high resolutions but lack multi-view consistency.
 - **Video diffusion models** (GeoCrafter) are computationally expensive and generally cannot estimate camera poses.
 
-**Root Cause**: the quadratic complexity of global attention with respect to resolution versus the demand for high-resolution detail preservation. DAGE's **Starting Point**: **decoupling resolution from sequence length**.
+**Key Challenge**: the quadratic complexity of global attention with respect to resolution versus the demand for high-resolution detail preservation. DAGE's **Key Insight**: **decoupling resolution from sequence length**.
 
 ## Method
 

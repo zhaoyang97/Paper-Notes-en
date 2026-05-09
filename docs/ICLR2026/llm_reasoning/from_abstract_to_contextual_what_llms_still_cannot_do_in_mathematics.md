@@ -29,9 +29,9 @@ This paper introduces the ContextMATH benchmark, which systematically converts a
 
 ## Background & Motivation
 
-- **State of the Field**: LLMs have achieved near-perfect performance on mathematical benchmarks (approaching full scores on AIME and even reaching IMO gold-medal level), yet this success remains confined to well-defined abstract problems. In real-world applications, mathematical problems frequently appear embedded in narrative contexts—from financial analysis to scientific research—where the mathematical core must be extracted and modeled from concrete descriptions.
+- **Background**: LLMs have achieved near-perfect performance on mathematical benchmarks (approaching full scores on AIME and even reaching IMO gold-medal level), yet this success remains confined to well-defined abstract problems. In real-world applications, mathematical problems frequently appear embedded in narrative contexts—from financial analysis to scientific research—where the mathematical core must be extracted and modeled from concrete descriptions.
 - **Limitations of Prior Work**: Existing mathematical benchmarks (e.g., GSM8K, MATH, AIME) almost exclusively target abstract problems. Even when simple narratives are present (e.g., "Jack has 8 pens"), the contextual information is shallow and limited. As a result, a critical capability—**contextual mathematical reasoning**—has remained substantially underexplored.
-- **Paper Goals**: To answer the following question: when the mathematical core is embedded within a narrative scenario, how do LLMs perform?
+- **Goal**: To answer the following question: when the mathematical core is embedded within a narrative scenario, how do LLMs perform?
 
 ## Method
 

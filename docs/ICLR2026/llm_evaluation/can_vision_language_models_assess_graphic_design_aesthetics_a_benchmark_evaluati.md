@@ -28,15 +28,15 @@ This paper proposes AesEval-Bench, the first benchmark for systematically evalua
 
 ## Background & Motivation
 
-**State of the Field**: VLMs have achieved notable progress on tasks such as image captioning and VQA, yet their capability in graphic design aesthetics evaluation (assessing the visual appeal of posters, advertisements, and UIs) remains largely unexplored.
+**Background**: VLMs have achieved notable progress on tasks such as image captioning and VQA, yet their capability in graphic design aesthetics evaluation (assessing the visual appeal of posters, advertisements, and UIs) remains largely unexplored.
 
 **Limitations of Prior Work**: (a) **Incomplete benchmarks**—existing design aesthetics benchmarks cover only a subset of dimensions (e.g., neglecting graphic quality or typography), and evaluation protocols are either coarse-grained scores (unable to localize problem regions) or open-ended descriptions (difficult to quantify); (b) **Lack of systematic comparison**—no comprehensive evaluation across open-source, closed-source, and reasoning-augmented VLMs exists; (c) **Scarcity of training data**—how to improve VLM performance in this domain has not been investigated.
 
-**Root Cause**: Design aesthetics is a multi-dimensional and highly subjective task (encompassing typography, layout, color, and graphics), and the general reasoning capabilities of existing VLMs are insufficient for the fine-grained, domain-knowledge-intensive evaluation it requires.
+**Key Challenge**: Design aesthetics is a multi-dimensional and highly subjective task (encompassing typography, layout, color, and graphics), and the general reasoning capabilities of existing VLMs are insufficient for the fine-grained, domain-knowledge-intensive evaluation it requires.
 
-**Paper Goals**: (a) Establish a quantitative benchmark covering comprehensive design dimensions; (b) Systematically evaluate the capability boundaries of diverse VLMs; (c) Construct training data that effectively improves VLM performance.
+**Goal**: (a) Establish a quantitative benchmark covering comprehensive design dimensions; (b) Systematically evaluate the capability boundaries of diverse VLMs; (c) Construct training data that effectively improves VLM performance.
 
-**Starting Point**: Design aesthetics is decomposed into 4 dimensions (typography, layout, color, graphics) × 12 indicators. Three tasks of increasing difficulty—judgment, region selection, and precise localization—are designed to evaluate VLMs from coarse to fine granularity. Indicator-grounded reasoning is then used to train VLMs to associate abstract aesthetic indicators with concrete design regions.
+**Key Insight**: Design aesthetics is decomposed into 4 dimensions (typography, layout, color, graphics) × 12 indicators. Three tasks of increasing difficulty—judgment, region selection, and precise localization—are designed to evaluate VLMs from coarse to fine granularity. Indicator-grounded reasoning is then used to train VLMs to associate abstract aesthetic indicators with concrete design regions.
 
 **Core Idea**: Establish the first systematic design aesthetics benchmark, reveal that reasoning-augmented VLMs offer no advantage in this domain, and significantly improve VLM aesthetic evaluation capability through indicator-grounded reasoning training data.
 

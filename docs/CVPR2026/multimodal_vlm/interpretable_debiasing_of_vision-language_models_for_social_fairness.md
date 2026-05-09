@@ -27,15 +27,15 @@ content_hash: f535fa8bdf2979d3
 This paper proposes DeBiasLens, which trains a Sparse Autoencoder (SAE) on VLM encoders to localize "social neurons" encoding social attributes, then selectively deactivates these neurons at inference time to mitigate bias. The method reduces Max Skew by 9–16% on CLIP and reduces gender bias rates by 40–50% on InternVL2, while preserving general performance.
 
 ## Background & Motivation
-**State of the Field**: VLMs and LVLMs inherit and amplify social biases from large-scale training data — e.g., CLIP retrieves male-skewed results for "CEO," and InternVL exhibits gender bias in ambiguous contexts. Existing debiasing approaches include fine-tuning, prompt tuning, and pruning.
+**Background**: VLMs and LVLMs inherit and amplify social biases from large-scale training data — e.g., CLIP retrieves male-skewed results for "CEO," and InternVL exhibits gender bias in ambiguous contexts. Existing debiasing approaches include fine-tuning, prompt tuning, and pruning.
 
 **Limitations of Prior Work**: Existing debiasing methods address surface-level bias symptoms without targeting the propagation mechanisms of bias in internal representations. Although pruning attempts to identify critical parameters, the polysemantic nature of neurons (a single neuron simultaneously encodes both biased and useful knowledge) means debiasing often sacrifices general performance.
 
-**Root Cause**: Bias and useful knowledge are entangled in model weights, making direct weight modification inevitably lead to performance degradation.
+**Key Challenge**: Bias and useful knowledge are entangled in model weights, making direct weight modification inevitably lead to performance degradation.
 
-**Paper Goals**: To precisely localize and manipulate bias-related monosemantic features within an interpretable framework without affecting useful knowledge.
+**Goal**: To precisely localize and manipulate bias-related monosemantic features within an interpretable framework without affecting useful knowledge.
 
-**Starting Point**: SAEs are leveraged to decompose the entangled feature space into sparse, monosemantic neurons (satisfying monosemanticity), enabling bias-related "social neurons" to be independently localized and manipulated.
+**Key Insight**: SAEs are leveraged to decompose the entangled feature space into sparse, monosemantic neurons (satisfying monosemanticity), enabling bias-related "social neurons" to be independently localized and manipulated.
 
 **Core Idea**: SAE decouples polysemantic features into monosemantic ones → social neurons encoding specific social attributes are identified → deactivating these neurons at inference time eliminates bias signals.
 

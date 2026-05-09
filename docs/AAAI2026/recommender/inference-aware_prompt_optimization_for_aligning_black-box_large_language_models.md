@@ -28,15 +28,15 @@ This paper reveals a non-trivial interaction between prompt selection and infere
 
 ## Background & Motivation
 
-**State of the Field**: Alignment of black-box LLMs primarily relies on two families of methods—prompt optimization (steering outputs via rewriting or appending instructions) and inference scaling strategies (Best-of-N sampling, Majority Voting to generate multiple candidates and select the best). Both have achieved notable success independently.
+**Background**: Alignment of black-box LLMs primarily relies on two families of methods—prompt optimization (steering outputs via rewriting or appending instructions) and inference scaling strategies (Best-of-N sampling, Majority Voting to generate multiple candidates and select the best). Both have achieved notable success independently.
 
 **Limitations of Prior Work**: Existing prompt optimization methods entirely ignore the inference strategy used at deployment time—they optimize prompts under single-generation ($N=1$) and then directly apply BoN or MV at deployment. This decoupling leads to suboptimal or even incorrect prompt selection.
 
-**Root Cause**: The optimal prompt varies with the inference strategy and budget. The authors find that on MATH, Prompt A achieves 65% accuracy at $N=1$, outperforming Prompt B at 62%; however, under MV at $N=10$, Prompt B rises to ~77% while Prompt A drops to ~63%. This occurs because MV amplifies the nonlinear effects of the per-query correctness distribution.
+**Key Challenge**: The optimal prompt varies with the inference strategy and budget. The authors find that on MATH, Prompt A achieves 65% accuracy at $N=1$, outperforming Prompt B at 62%; however, under MV at $N=10$, Prompt B rises to ~77% while Prompt A drops to ~63%. This occurs because MV amplifies the nonlinear effects of the per-query correctness distribution.
 
-**Paper Goals**: How can one jointly optimize prompts and inference scale under a limited computational budget, while accounting for user preference trade-offs across multiple objectives?
+**Goal**: How can one jointly optimize prompts and inference scale under a limited computational budget, while accounting for user preference trade-offs across multiple objectives?
 
-**Starting Point**: The problem is formulated as contextual best-arm identification, where each "arm" is a (prompt, inference scale $N$) combination and the "context" encodes user preferences and budget constraints.
+**Key Insight**: The problem is formulated as contextual best-arm identification, where each "arm" is a (prompt, inference scale $N$) combination and the "context" encodes user preferences and budget constraints.
 
 **Core Idea**: Inference-aware prompt optimization—the training phase simulates the nonlinear aggregation effects of inference strategies (BoN/MV), thereby selecting the prompt–scale combination that is optimal for the actual deployment configuration.
 

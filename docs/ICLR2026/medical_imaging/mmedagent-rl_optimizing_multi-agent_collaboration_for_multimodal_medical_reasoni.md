@@ -28,10 +28,10 @@ content_hash: c08a6a9085651c40
 This paper proposes MMedAgent-RL, a multi-agent system that simulates clinical consultation workflows (triage → specialist → attending physician) optimized via reinforcement learning. The core innovation is Curriculum-guided Multi-Agent Reinforcement Learning (C-MARL) with entropy-aware exploration, enabling the attending physician agent to adopt differentiated explore–exploit strategies when faced with correct, conflicting, or erroneous specialist opinions. The system achieves state-of-the-art performance on 5 medical VQA benchmarks spanning both in-domain and out-of-domain settings.
 
 ## Background & Motivation
-- **State of the Field**: Medical image diagnosis spans multiple subspecialties (radiology, pathology, oncology, etc.), which a single Med-LVLM cannot adequately cover.
+- **Background**: Medical image diagnosis spans multiple subspecialties (radiology, pathology, oncology, etc.), which a single Med-LVLM cannot adequately cover.
 - **Limitations of Prior Work**: Static multi-agent frameworks such as MedAgents and MDAgents rely on fixed GP→Specialist→GP pipelines with pre-defined, non-learnable interaction patterns. Specialist outputs are not always reliable and may introduce noise or misleading signals; majority voting can suppress correct minority opinions.
-- **Root Cause**: The attending physician must learn **when to trust specialist consensus (exploit) and when to challenge it and reason independently (explore)**.
-- **Starting Point**: Works such as DeepSeek-R1 demonstrate that RL can substantially enhance LLM reasoning, yet RL optimization for multi-agent medical collaboration remains unexplored.
+- **Key Challenge**: The attending physician must learn **when to trust specialist consensus (exploit) and when to challenge it and reason independently (explore)**.
+- **Key Insight**: Works such as DeepSeek-R1 demonstrate that RL can substantially enhance LLM reasoning, yet RL optimization for multi-agent medical collaboration remains unexplored.
 
 ## Method
 

@@ -28,15 +28,15 @@ This paper proposes AgentTrace, a framework that constructs causal graphs from e
 
 ## Background & Motivation
 
-**State of the Field**: LLM-based multi-agent systems (e.g., AutoGen, MetaGPT) are increasingly deployed in customer support, DevOps, and research assistant scenarios, yet fault diagnosis remains extremely difficult—errors cascade across multiple agents, and the point of manifestation is often far removed from the root cause.
+**Background**: LLM-based multi-agent systems (e.g., AutoGen, MetaGPT) are increasingly deployed in customer support, DevOps, and research assistant scenarios, yet fault diagnosis remains extremely difficult—errors cascade across multiple agents, and the point of manifestation is often far removed from the root cause.
 
 **Limitations of Prior Work**: (a) Traditional debugging methods inspect components individually and cannot capture cross-agent causal dependencies; (b) manual inspection of long execution traces is slow and unreliable; (c) LLM-based debugging approaches incur substantial inference cost and perform poorly on cross-agent issues.
 
-**Root Cause**: The distributed and emergent nature of multi-agent workflows makes root cause localization highly challenging, requiring an understanding of inter-agent information flow and causal relationships.
+**Key Challenge**: The distributed and emergent nature of multi-agent workflows makes root cause localization highly challenging, requiring an understanding of inter-agent information flow and causal relationships.
 
-**Paper Goals**: To design a lightweight, post-hoc fault diagnosis framework that does not rely on LLM inference and can rapidly localize root causes from execution logs.
+**Goal**: To design a lightweight, post-hoc fault diagnosis framework that does not rely on LLM inference and can rapidly localize root causes from execution logs.
 
-**Starting Point**: Drawing inspiration from distributed systems tracing (e.g., Jaeger/Zipkin), but adapted to the LLM multi-agent setting—agent operations are modeled as nodes in a causal graph, with information flows as edges.
+**Key Insight**: Drawing inspiration from distributed systems tracing (e.g., Jaeger/Zipkin), but adapted to the LLM multi-agent setting—agent operations are modeled as nodes in a causal graph, with information flows as edges.
 
 **Core Idea**: Reconstruct a causal graph from logs → perform backward tracing from error nodes → rank candidate root causes using interpretable structural and positional features.
 

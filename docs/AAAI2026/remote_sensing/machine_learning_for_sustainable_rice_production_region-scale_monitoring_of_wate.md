@@ -28,18 +28,18 @@ This paper proposes a dimensional classification approach that decouples the rec
 
 ## Background & Motivation
 
-**State of the Field**: Rice feeds half the world's population, yet conventional paddy cultivation consumes 24–30% of global freshwater and accounts for approximately 48% of agricultural greenhouse gas emissions. Direct-seeded rice (DSR) and alternate wetting and drying (AWD) irrigation can reduce water use by 20–40% without yield loss.
+**Background**: Rice feeds half the world's population, yet conventional paddy cultivation consumes 24–30% of global freshwater and accounts for approximately 48% of agricultural greenhouse gas emissions. Direct-seeded rice (DSR) and alternate wetting and drying (AWD) irrigation can reduce water use by 20–40% without yield loss.
 
 **Limitations of Prior Work**:
    - **Unknown adoption scale of water-saving practices**: The absence of spatial data severely hinders policy formulation and resource allocation.
    - **High cost and limited coverage of field surveys**: Manual approaches struggle to distinguish traditional from novel practices.
    - **Constraints of existing satellite methods**: These methods rely on prior knowledge of sowing dates or use coarse-resolution data, making them inapplicable in regions with wide sowing date ranges (110 days) or smallholder-dominated landscapes.
 
-**Root Cause**: Promoting water-saving practices requires precise adoption monitoring → monitoring requires remote sensing → existing remote sensing methods cannot effectively distinguish different water management practices, especially when simultaneously identifying both seeding and irrigation methods.
+**Key Challenge**: Promoting water-saving practices requires precise adoption monitoring → monitoring requires remote sensing → existing remote sensing methods cannot effectively distinguish different water management practices, especially when simultaneously identifying both seeding and irrigation methods.
 
-**Paper Goals**: To monitor the adoption of water-saving rice practices at scale using only SAR imagery, without relying on prior sowing date information.
+**Goal**: To monitor the adoption of water-saving rice practices at scale using only SAR imagery, without relying on prior sowing date information.
 
-**Starting Point**: Decompose the three-class problem (DSR/AWD/Control) into two independent binary classification tasks — a seeding dimension and an irrigation dimension — since the two are temporally separable and governed by distinct agronomic mechanisms.
+**Key Insight**: Decompose the three-class problem (DSR/AWD/Control) into two independent binary classification tasks — a seeding dimension and an irrigation dimension — since the two are temporally separable and governed by distinct agronomic mechanisms.
 
 **Core Idea**: Dimensional decomposition + SAR temporal features + pretrained EO embeddings, enabling province-scale monitoring of water-saving practices without requiring sowing date priors.
 

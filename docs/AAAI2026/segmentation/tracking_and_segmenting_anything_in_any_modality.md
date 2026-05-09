@@ -28,15 +28,15 @@ SATA proposes a unified tracking and segmentation framework that models cross-mo
 
 ## Background & Motivation
 
-**State of the Field**: Tracking and segmentation are fundamental tasks in video understanding. Existing methods typically rely on task-specific architectures or modality-specific parameters to handle different sub-tasks (e.g., VOT, VOS, MOT, VIS), which limits generalization and scalability.
+**Background**: Tracking and segmentation are fundamental tasks in video understanding. Existing methods typically rely on task-specific architectures or modality-specific parameters to handle different sub-tasks (e.g., VOT, VOS, MOT, VIS), which limits generalization and scalability.
 
 **Limitations of Prior Work**: (1) A distribution gap exists across modalities (RGB, infrared, depth, etc.), making direct parameter sharing ineffective; (2) A representation gap exists across tasks (tracking vs. segmentation, single-object vs. multi-object), hindering cross-task knowledge sharing; (3) Prior attempts at unifying these tasks overlook both gaps.
 
-**Root Cause**: Building a truly generalist model requires simultaneously addressing cross-modal distribution discrepancy and cross-task representation discrepancy.
+**Key Challenge**: Building a truly generalist model requires simultaneously addressing cross-modal distribution discrepancy and cross-task representation discrepancy.
 
-**Paper Goals**: To construct a unified framework capable of handling a broad range of tracking and segmentation sub-tasks with arbitrary modality inputs.
+**Goal**: To construct a unified framework capable of handling a broad range of tracking and segmentation sub-tasks with arbitrary modality inputs.
 
-**Starting Point**: (1) Apply decoupled MoE to separate cross-modal shared and modality-specific knowledge; (2) Eliminate inter-task output discrepancies via a unified instance-set output format.
+**Key Insight**: (1) Apply decoupled MoE to separate cross-modal shared and modality-specific knowledge; (2) Eliminate inter-task output discrepancies via a unified instance-set output format.
 
 **Core Idea**: DeMoE decouples unified representation learning into cross-modal shared knowledge and modality-specific information modeling; TaMOT unifies all task outputs into instance sets with calibrated ID assignments.
 

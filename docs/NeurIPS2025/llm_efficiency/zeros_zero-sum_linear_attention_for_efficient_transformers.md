@@ -29,17 +29,17 @@ By removing the zeroth-order uniform term $1/t$ from softmax, ZeroS constructs a
 
 ## Background & Motivation
 
-**State of the Field**: Linear attention approximates softmax attention via kernel feature maps $\phi(q)\phi(k)^\top$, reducing complexity from $O(N^2)$ to $O(N)$. Representative methods include Performer, GLA, and Mamba. However, these methods generally underperform standard softmax attention.
+**Background**: Linear attention approximates softmax attention via kernel feature maps $\phi(q)\phi(k)^\top$, reducing complexity from $O(N^2)$ to $O(N)$. Representative methods include Performer, GLA, and Mamba. However, these methods generally underperform standard softmax attention.
 
 **Limitations of Prior Work**:
    - **Convex combination bottleneck**: Softmax attention produces non-negative weights, enabling only additive mixing of value vectors. Linear attention methods also restrict weights to be positive for numerical stability. Consequently, a single attention layer cannot express differential or contrastive operations — even with just two tokens, computing $v_1 - v_2$ in one layer is impossible.
    - **Uniform weight bias**: In the Taylor expansion of softmax, the zeroth-order term $1/t$ introduces a persistent averaging effect. In long sequences, this uniform component dilutes focused attention, leading to attention degradation.
 
-**Root Cause**: Achieving linear complexity requires decomposable kernel forms, yet existing kernel methods attempt to simulate the non-negativity of softmax — which is precisely the source of their limited expressivity.
+**Key Challenge**: Achieving linear complexity requires decomposable kernel forms, yet existing kernel methods attempt to simulate the non-negativity of softmax — which is precisely the source of their limited expressivity.
 
-**Paper Goals**: (a) Can attention weights be allowed to take negative values while maintaining numerical stability? (b) Can linear attention support contrastive operations within a single layer, closing the performance gap with softmax?
+**Goal**: (a) Can attention weights be allowed to take negative values while maintaining numerical stability? (b) Can linear attention support contrastive operations within a single layer, closing the performance gap with softmax?
 
-**Starting Point**: The Taylor expansion of softmax — decomposing $\text{softmax}(s_i)$ into a zeroth-order term ($1/t$), a first-order term ($\delta_i/t$), and higher-order residuals ($\varepsilon_i$). The zeroth-order term contributes only uniform averaging with no discriminative value across token interactions. Removing it yields naturally zero-sum weights $\sum_i w_i = 0$, supporting both positive and negative values with norm stability independent of sequence length.
+**Key Insight**: The Taylor expansion of softmax — decomposing $\text{softmax}(s_i)$ into a zeroth-order term ($1/t$), a first-order term ($\delta_i/t$), and higher-order residuals ($\varepsilon_i$). The zeroth-order term contributes only uniform averaging with no discriminative value across token interactions. Removing it yields naturally zero-sum weights $\sum_i w_i = 0$, supporting both positive and negative values with norm stability independent of sequence length.
 
 **Core Idea**: Rather than designing complex kernels to approximate softmax while preserving non-negativity, the paper takes the opposite approach — removing the zeroth-order term responsible for the non-negativity constraint and constructing more expressive linear attention using zero-sum residual weights.
 

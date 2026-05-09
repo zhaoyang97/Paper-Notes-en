@@ -29,15 +29,15 @@ This paper proposes SessionIntentBench, a multi-task benchmark for evaluating th
 
 ## Background & Motivation
 
-**State of the Field**: User intent modeling is critical in e-commerce. Existing approaches either analyze user profiles and purchase histories or rely on surface-level information such as product titles and prices for single-purchase intent inference. Shopping sessions record user interaction behaviors across a sequence of browsing activities.
+**Background**: User intent modeling is critical in e-commerce. Existing approaches either analyze user profiles and purchase histories or rely on surface-level information such as product titles and prices for single-purchase intent inference. Shopping sessions record user interaction behaviors across a sequence of browsing activities.
 
 **Limitations of Prior Work**: (1) Existing work addresses either sessions or intent in isolation, without joint modeling; (2) only product titles and images are used as reasoning cues, neglecting rich product metadata; (3) automated intent data construction pipelines and systematic evaluation benchmarks are lacking.
 
-**Root Cause**: In complex multi-step shopping sessions, user intent is dynamic (e.g., red sneakers → white casual shoes → low-price shoes), yet LLMs cannot effectively connect dispersed session signals to track such intent shifts.
+**Key Challenge**: In complex multi-step shopping sessions, user intent is dynamic (e.g., red sneakers → white casual shoes → low-price shoes), yet LLMs cannot effectively connect dispersed session signals to track such intent shifts.
 
-**Paper Goals**: (1) Design the concept of an intent tree and an automated data construction pipeline; (2) build a multi-task benchmark to evaluate L(V)LMs' cross-session intent understanding; (3) validate the performance gains achieved by injecting explicit intent information into LLMs.
+**Goal**: (1) Design the concept of an intent tree and an automated data construction pipeline; (2) build a multi-task benchmark to evaluate L(V)LMs' cross-session intent understanding; (3) validate the performance gains achieved by injecting explicit intent information into LLMs.
 
-**Starting Point**: Intent modeling is decomposed into four progressively structured subtasks—from verifying intent–product alignment, to checking key attributes, to contrasting adjacent products, to predicting future exploration directions.
+**Key Insight**: Intent modeling is decomposed into four progressively structured subtasks—from verifying intent–product alignment, to checking key attributes, to contrasting adjacent products, to predicting future exploration directions.
 
 **Core Idea**: An intent tree structure is used to represent the branching and evolution of intent within a session. Multi-step prompting of L(V)LMs automatically generates intent metadata, enabling the construction of a scalable intent modeling benchmark.
 

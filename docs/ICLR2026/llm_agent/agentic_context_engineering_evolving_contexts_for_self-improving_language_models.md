@@ -27,15 +27,15 @@ content_hash: 47c2afc19cb7fc43
 This paper proposes ACE (Agentic Context Engineering), a framework that treats context as a continuously evolving playbook. Through a Generator–Reflector–Curator role decomposition and incremental delta updates, ACE accumulates and refines strategies over time, addressing brevity bias and context collapse in existing prompt optimization methods. ACE achieves an average improvement of 10.6% on agent benchmarks and 8.6% on financial tasks, while reducing adaptation latency by 86.9%.
 
 ## Background & Motivation
-**State of the Field**: Context adaptation—improving model performance by modifying LLM inputs rather than weights—has become a core paradigm for building scalable AI systems. Existing approaches include prompt optimization methods (GEPA, MIPROv2) and test-time memory methods (Dynamic Cheatsheet).
+**Background**: Context adaptation—improving model performance by modifying LLM inputs rather than weights—has become a core paradigm for building scalable AI systems. Existing approaches include prompt optimization methods (GEPA, MIPROv2) and test-time memory methods (Dynamic Cheatsheet).
 
 **Limitations of Prior Work**: (1) **Brevity bias**: Most prompt optimizers favor concise, general instructions, discarding domain-specific strategies, tool-use guidelines, and common failure patterns. (2) **Context collapse**: Monolithic rewriting approaches progressively degrade into shorter, information-poorer summaries during iterative updates—experiments observed context shrinking abruptly from 18,282 tokens to 122 tokens, with a corresponding sharp drop in performance.
 
-**Root Cause**: Agent and knowledge-intensive applications require **comprehensive and detailed** domain knowledge, yet existing methods compress it. Unlike humans, who benefit from concise summaries, LLMs perform better under detailed context.
+**Key Challenge**: Agent and knowledge-intensive applications require **comprehensive and detailed** domain knowledge, yet existing methods compress it. Unlike humans, who benefit from concise summaries, LLMs perform better under detailed context.
 
-**Paper Goals**: How to design a context adaptation approach that continuously accumulates knowledge without collapsing or degrading?
+**Goal**: How to design a context adaptation approach that continuously accumulates knowledge without collapsing or degrading?
 
-**Starting Point**: Treat context as an "evolving playbook" rather than an "optimized prompt," replacing monolithic rewrites with structured incremental updates.
+**Key Insight**: Treat context as an "evolving playbook" rather than an "optimized prompt," replacing monolithic rewrites with structured incremental updates.
 
 **Core Idea**: Context should be a continuously growing and refined strategy playbook, not a compressed set of concise instructions.
 

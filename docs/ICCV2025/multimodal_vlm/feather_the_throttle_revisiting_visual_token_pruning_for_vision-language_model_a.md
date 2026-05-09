@@ -29,10 +29,10 @@ This paper identifies a systematic positional bias in early visual token pruning
 
 ## Background & Motivation
 
-- **State of the Field**: Recent VLMs (e.g., LLaVA) achieve multimodal understanding by projecting visual patches into LLM input tokens, but the large number of visual tokens incurs substantial computational overhead. Methods such as FastV prune 50% of visual tokens after the early layers of the LLM, claiming near-lossless performance.
+- **Background**: Recent VLMs (e.g., LLaVA) achieve multimodal understanding by projecting visual patches into LLM input tokens, but the large number of visual tokens incurs substantial computational overhead. Methods such as FastV prune 50% of visual tokens after the early layers of the LLM, claiming near-lossless performance.
 - **Limitations of Prior Work**: Although performance on most VQA benchmarks remains high after pruning, performance on **visually intensive tasks—especially grounding—collapses catastrophically**: pruning 75% of tokens causes a 88–91% drop in grounding performance.
-- **Root Cause**: The degradation is not an inherent limitation of pruning itself, but a **fundamental flaw in the pruning criterion**. Due to the long-range decay property of RoPE, attention scores in early layers systematically favor tokens at the bottom of the image, causing tokens in the upper regions to be erroneously discarded. More strikingly, most benchmarks maintain high performance even under such flawed pruning, exposing the **inability of existing benchmarks to effectively evaluate fine-grained visual capabilities**.
-- **Paper Goals**: Diagnose the root cause of pruning-induced failure on grounding tasks and propose a training-free method that achieves accurate, spatially balanced token selection.
+- **Key Challenge**: The degradation is not an inherent limitation of pruning itself, but a **fundamental flaw in the pruning criterion**. Due to the long-range decay property of RoPE, attention scores in early layers systematically favor tokens at the bottom of the image, causing tokens in the upper regions to be erroneously discarded. More strikingly, most benchmarks maintain high performance even under such flawed pruning, exposing the **inability of existing benchmarks to effectively evaluate fine-grained visual capabilities**.
+- **Goal**: Diagnose the root cause of pruning-induced failure on grounding tasks and propose a training-free method that achieves accurate, spatially balanced token selection.
 
 ## Method
 

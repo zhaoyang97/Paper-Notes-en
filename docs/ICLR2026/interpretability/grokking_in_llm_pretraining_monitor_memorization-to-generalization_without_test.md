@@ -27,15 +27,15 @@ This work is the first to validate the grokking phenomenon in near-single-epoch 
 
 ## Background & Motivation
 
-**State of the Field**: Grokking (delayed generalization) is a counterintuitive phenomenon observed when training Transformers—long after training loss converges, generalization performance begins to rise sharply. Existing grokking research is limited to small models trained on algorithmic data for thousands of epochs.
+**Background**: Grokking (delayed generalization) is a counterintuitive phenomenon observed when training Transformers—long after training loss converges, generalization performance begins to rise sharply. Existing grokking research is limited to small models trained on algorithmic data for thousands of epochs.
 
 **Limitations of Prior Work**: (a) LLM pretraining is near-single-epoch (~1 epoch), without repeated data replay, making the loss convergence mechanism fundamentally different from multi-epoch training; (b) LLMs are trained on heterogeneous cross-domain data, where memorization speed and the memorization-generalization relationship may differ across data types; (c) Monitoring LLM generalization is extremely costly—requiring instruction tuning followed by benchmark evaluation.
 
-**Root Cause**: What changes continue to occur inside the model after pretraining loss converges? Why does generalization improve while loss remains unchanged? Are there metrics that can track generalization without relying on external evaluation?
+**Key Challenge**: What changes continue to occur inside the model after pretraining loss converges? Why does generalization improve while loss remains unchanged? Are there metrics that can track generalization without relying on external evaluation?
 
-**Paper Goals**: (a) Verify whether grokking exists in real-scale LLM pretraining; (b) Reveal the internal mechanism underlying the memorization-to-generalization transition; (c) Provide zero-cost generalization monitoring metrics.
+**Goal**: (a) Verify whether grokking exists in real-scale LLM pretraining; (b) Reveal the internal mechanism underlying the memorization-to-generalization transition; (c) Provide zero-cost generalization monitoring metrics.
 
-**Starting Point**: The MoE architecture naturally organizes computation as expert-selection sequences (pathways), enabling tracking of how each sample's pathway evolves—from random/instance-specific (memorization) to structured/cross-sample shared (generalization).
+**Key Insight**: The MoE architecture naturally organizes computation as expert-selection sequences (pathways), enabling tracking of how each sample's pathway evolves—from random/instance-specific (memorization) to structured/cross-sample shared (generalization).
 
 **Core Idea**: Grokking exists in LLM pretraining in a local, asynchronous form; the evolution of MoE pathways from instance-specific to cross-sample shared constitutes an observable signal of the memorization-to-generalization transition.
 

@@ -27,15 +27,15 @@ This paper reformulates positional encoding as prior distributions within a Baye
 
 ## Background & Motivation
 
-**State of the Field**: Transformers lack inherent positional information and rely on positional encoding. Existing methods (Sinusoidal, RoPE, ALiBi, NoPE) exhibit varying context length extrapolation performance but lack a unified theoretical understanding.
+**Background**: Transformers lack inherent positional information and rely on positional encoding. Existing methods (Sinusoidal, RoPE, ALiBi, NoPE) exhibit varying context length extrapolation performance but lack a unified theoretical understanding.
 
 **Limitations of Prior Work**: (a) PE methods are largely empirically driven with weak theoretical foundations; (b) evaluation over-relies on perplexity, which is insufficient—models can achieve low perplexity via sliding-window attention while failing to retrieve distant information.
 
-**Root Cause**: Different PE methods behave inconsistently across scenarios, yet no unified framework exists to analyze their behavioral differences and applicable ranges.
+**Key Challenge**: Different PE methods behave inconsistently across scenarios, yet no unified framework exists to analyze their behavioral differences and applicable ranges.
 
-**Paper Goals**: (a) Provide a theoretically unified framework for PE; (b) derive novel PE strategies from theory; (c) achieve genuine long-context extrapolation in terms of retrieval rather than perplexity alone.
+**Goal**: (a) Provide a theoretically unified framework for PE; (b) derive novel PE strategies from theory; (c) achieve genuine long-context extrapolation in terms of retrieval rather than perplexity alone.
 
-**Starting Point**: Interpret attention weights $p_{ij}$ as a joint probability distribution over content and position, making PE a natural positional prior.
+**Key Insight**: Interpret attention weights $p_{ij}$ as a joint probability distribution over content and position, making PE a natural positional prior.
 
 **Core Idea**: PE serves as a positional prior in attention—by selecting the Generalized Gaussian distribution and permitting "anti-local" attention heads with $\beta < 0$, the model achieves retrieval over ultra-long contexts.
 

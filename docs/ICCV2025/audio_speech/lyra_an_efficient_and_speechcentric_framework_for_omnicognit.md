@@ -28,15 +28,15 @@ content_hash: a6df411c1b5fe0d4
 This paper proposes Lyra, a speech-centric omni-modal MLLM framework consisting of three core components — a DTW-based cross-modality regularizer, multi-modality LoRA, and a latent multi-modality extractor — along with the first 12K long-speech SFT dataset. Using only 2.7M training samples and modest compute, Lyra achieves state-of-the-art performance simultaneously on vision-language, vision-speech, and speech-language benchmarks, while supporting speech inputs of up to 2 hours in length.
 
 ## Background & Motivation
-**State of the Field**: Existing omni-models (e.g., VITA, EMOVA, Intern-Omni) have begun exploring multimodal fusion, but the speech modality remains severely underutilized — their speech evaluation is largely confined to speech-text ASR metrics (e.g., LibriSpeech WER), neglecting cross-modal interactions between speech and other modalities such as vision.
+**Background**: Existing omni-models (e.g., VITA, EMOVA, Intern-Omni) have begun exploring multimodal fusion, but the speech modality remains severely underutilized — their speech evaluation is largely confined to speech-text ASR metrics (e.g., LibriSpeech WER), neglecting cross-modal interactions between speech and other modalities such as vision.
 
 **Limitations of Prior Work**: (1) Speech tokens and text tokens share semantic content but differ greatly in length (Whisper output tokens are much longer than their corresponding text), making direct training suboptimal; (2) Long speech support is extremely limited (VITA supports only ~1 minute); (3) Training large omni-models requires massive data (VITA: 5M, Intern-Omni: 27M), resulting in low efficiency.
 
-**Root Cause**: Incorporating the speech modality into an LLM through joint training degrades existing visual and language capabilities; directly replacing text instructions with speech tokens leads to a significant performance drop (MM-Vet drops 8% under speech instructions vs. text instructions).
+**Key Challenge**: Incorporating the speech modality into an LLM through joint training degrades existing visual and language capabilities; directly replacing text instructions with speech tokens leads to a significant performance drop (MM-Vet drops 8% under speech instructions vs. text instructions).
 
-**Paper Goals**: To efficiently build an MLLM with genuine support for image/video/speech/sound omni-modal understanding and interaction, with a focus on deep integration of speech with other modalities.
+**Goal**: To efficiently build an MLLM with genuine support for image/video/speech/sound omni-modal understanding and interaction, with a focus on deep integration of speech with other modalities.
 
-**Starting Point**: (1) Use DTW to align speech tokens with transcription text tokens to reduce the modality gap; (2) Use modality-specific LoRA to preserve existing capabilities; (3) Use a query-aware token extractor to reduce long-context overhead.
+**Key Insight**: (1) Use DTW to align speech tokens with transcription text tokens to reduce the modality gap; (2) Use modality-specific LoRA to preserve existing capabilities; (3) Use a query-aware token extractor to reduce long-context overhead.
 
 **Core Idea**: By adopting a speech-centric design with DTW-based cross-modality regularization, multi-modality LoRA, and progressive multimodal token extraction, Lyra constructs an omni-modal MLLM efficiently with minimal training data.
 

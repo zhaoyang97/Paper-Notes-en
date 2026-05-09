@@ -28,15 +28,15 @@ PIR proposes an instance-aware post-hoc revision framework that identifies poorl
 
 ## Background & Motivation
 
-**State of the Field**: Time series forecasting methods focus on aggregate accuracy (averaged across all instances), overlooking individual instance failures caused by long-tail distributions, missing values, and outliers.
+**Background**: Time series forecasting methods focus on aggregate accuracy (averaged across all instances), overlooking individual instance failures caused by long-tail distributions, missing values, and outliers.
 
 **Limitations of Prior Work**: Channel-independent models (e.g., PatchTST, SparseTSF) can deviate severely on specific instances — overall MSE may be acceptable while errors on certain instances are extremely large. Existing methods lack instance-level adaptive correction mechanisms.
 
-**Root Cause**: Forecasting models treat all instances uniformly, yet predictability varies substantially across instances. Low-quality instances require additional signals (e.g., exogenous variables, similar historical patterns) for correction.
+**Key Challenge**: Forecasting models treat all instances uniformly, yet predictability varies substantially across instances. Low-quality instances require additional signals (e.g., exogenous variables, similar historical patterns) for correction.
 
-**Paper Goals**: Design a model-agnostic post-processing module that automatically identifies poorly predicted instances and applies targeted corrections.
+**Goal**: Design a model-agnostic post-processing module that automatically identifies poorly predicted instances and applies targeted corrections.
 
-**Starting Point**: Estimate prediction uncertainty first; instances with high uncertainty are then corrected via two complementary strategies — local (leveraging covariates and exogenous variables at the current time step) and global (retrieving historically similar instances).
+**Key Insight**: Estimate prediction uncertainty first; instances with high uncertainty are then corrected via two complementary strategies — local (leveraging covariates and exogenous variables at the current time step) and global (retrieving historically similar instances).
 
 **Core Idea**: Uncertainty estimation identifies failure instances → local Transformer correction (covariates + exogenous variables) + global retrieval correction (weighted average over similar training instances) → uncertainty-adaptive fusion into the final prediction.
 

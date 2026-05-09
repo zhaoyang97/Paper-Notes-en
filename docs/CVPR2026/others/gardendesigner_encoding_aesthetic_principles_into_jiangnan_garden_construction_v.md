@@ -26,11 +26,11 @@ content_hash: a59164f009aac8d0
 This paper proposes GardenDesigner, a framework that encodes the aesthetic principles of Jiangnan gardens into computable constraints through a chain of agents (terrain distribution → road generation → asset selection → layout optimization). Combined with the expert-annotated GardenVerse dataset, the framework enables non-expert users to automatically construct aesthetically compliant Jiangnan gardens from text input within one minute.
 
 ## Background & Motivation
-1. **State of the Field**: Jiangnan gardens represent a major school of classical Chinese garden design with significant application potential in digital tourism, film, and game production. Traditional digital modeling of such gardens relies heavily on expert knowledge, typically requiring 3–4 designers and 3–4 weeks to complete.
+1. **Background**: Jiangnan gardens represent a major school of classical Chinese garden design with significant application potential in digital tourism, film, and game production. Traditional digital modeling of such gardens relies heavily on expert knowledge, typically requiring 3–4 designers and 3–4 weeks to complete.
 2. **Limitations of Prior Work**: Existing learning-based scene generation methods are constrained by training data domains and exhibit limited generalization; procedural modeling methods combined with LLMs/VLMs primarily focus on indoor spaces or unstructured natural scenes, and cannot handle the intricate spatial composition characteristic of Jiangnan gardens.
-3. **Root Cause**: Jiangnan gardens pose three unique challenges: (1) complex water-centric terrain and spatial layout, (2) abstract aesthetic principles that are difficult to encode as computational constraints, and (3) the absence of culturally annotated garden datasets.
-4. **Paper Goals**: To transform the implicit aesthetic rules of Jiangnan gardens—water-centricity, winding paths leading to secluded spots, symbolic miniaturization, and asymmetric balance—into an optimizable procedural generation pipeline.
-5. **Starting Point**: Decompose garden construction into four sequentially dependent subtasks, executed step by step by a chain of agents, each embedding relevant aesthetic constraints.
+3. **Key Challenge**: Jiangnan gardens pose three unique challenges: (1) complex water-centric terrain and spatial layout, (2) abstract aesthetic principles that are difficult to encode as computational constraints, and (3) the absence of culturally annotated garden datasets.
+4. **Goal**: To transform the implicit aesthetic rules of Jiangnan gardens—water-centricity, winding paths leading to secluded spots, symbolic miniaturization, and asymmetric balance—into an optimizable procedural generation pipeline.
+5. **Key Insight**: Decompose garden construction into four sequentially dependent subtasks, executed step by step by a chain of agents, each embedding relevant aesthetic constraints.
 6. **Core Idea**: Drive procedural modeling through a chain of LLM agents, encoding aesthetic principles as fitness functions for genetic algorithms and loss functions for layout optimization.
 
 ## Method

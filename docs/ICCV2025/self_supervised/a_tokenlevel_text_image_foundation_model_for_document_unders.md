@@ -29,15 +29,15 @@ This paper proposes TokenFD, the first token-level text image foundation model, 
 
 ## Background & Motivation
 
-1. **State of the Field**: General-purpose visual foundation models (VFMs) such as CLIP, DINO, and SAM are widely adopted as visual encoders in multimodal large language models. However, these models are trained under image-level (CLIP/DINO) or pixel-level (SAM) supervision.
+1. **Background**: General-purpose visual foundation models (VFMs) such as CLIP, DINO, and SAM are widely adopted as visual encoders in multimodal large language models. However, these models are trained under image-level (CLIP/DINO) or pixel-level (SAM) supervision.
 
 2. **Limitations of Prior Work**: For document images containing dense small text, image-level VFMs fail to perceive fine-grained textual content precisely, leading to fundamental perceptual errors in downstream OCR-related tasks. Some methods attempt to incorporate SAM as an additional high-resolution encoder, but the dual-VFM combination doubles the token count, incurring high cost and reduced flexibility.
 
-3. **Root Cause**: No token-granularity fine-grained text image foundation model currently exists. A critical gap lies between image-level and pixel-level supervision—namely, token-level alignment, which refers to the precise mapping of each BPE subword to its corresponding spatial region in the image.
+3. **Key Challenge**: No token-granularity fine-grained text image foundation model currently exists. A critical gap lies between image-level and pixel-level supervision—namely, token-level alignment, which refers to the precise mapping of each BPE subword to its corresponding spatial region in the image.
 
-4. **Paper Goals**: (1) Construct the first token-level image-text dataset; (2) Train the first token-level VFM; (3) Apply it to the construction of a document understanding MLLM.
+4. **Goal**: (1) Construct the first token-level image-text dataset; (2) Train the first token-level VFM; (3) Apply it to the construction of a document understanding MLLM.
 
-5. **Starting Point**: BPE tokenizers are used to decompose text into subwords, and pixel-level masks are constructed for each subword to achieve token-granularity vision-language alignment—substantially finer than CLIP's image-level alignment and semantically richer than SAM's pixel-level segmentation.
+5. **Key Insight**: BPE tokenizers are used to decompose text into subwords, and pixel-level masks are constructed for each subword to achieve token-granularity vision-language alignment—substantially finer than CLIP's image-level alignment and semantically richer than SAM's pixel-level segmentation.
 
 6. **Core Idea**: Align visual features and language embeddings at the token (BPE subword) granularity, endowing the VFM with "image-as-text" semantic capability.
 

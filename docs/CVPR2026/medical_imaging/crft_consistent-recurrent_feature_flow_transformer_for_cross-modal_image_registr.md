@@ -28,7 +28,7 @@ CRFT is a unified coarse-to-fine cross-modal image registration framework that l
 
 ## Background & Motivation
 
-**State of the Field**: Cross-modal image registration—establishing spatial correspondences between images acquired by different sensors—is a core problem in computer vision, with applications in 3D reconstruction, visual localization, and remote sensing analysis.
+**Background**: Cross-modal image registration—establishing spatial correspondences between images acquired by different sensors—is a core problem in computer vision, with applications in 3D reconstruction, visual localization, and remote sensing analysis.
 
 **Limitations of Prior Work**: (1) Hand-crafted features (SIFT/RIFT) are unreliable under strong nonlinear appearance discrepancies; (2) learning-based sparse matching methods (SuperGlue/LoFTR) are optimized for RGB imagery and generalize poorly to cross-modal inputs; (3) optical flow methods (RAFT/GMFlow) assume photometric consistency, which is violated by cross-modal inputs; (4) all existing methods struggle with combined challenges of large affine transformations, scale variation, and modality gaps.
 

@@ -29,15 +29,15 @@ This paper proposes DreamShot, which leverages the spatiotemporal prior of video
 
 ## Background & Motivation
 
-**State of the Field**: Storyboard generation aims to produce coherent sequences of key shots for cinematic narratives. Existing approaches fall into two categories: image diffusion-based methods (e.g., StoryDiffusion, AnyStory, StoryMaker) that maintain character consistency via IP-Adapter or ControlNet; and video model-based methods (e.g., StoryAnchors) that exploit temporal consistency but support only text or previous-frame conditioning.
+**Background**: Storyboard generation aims to produce coherent sequences of key shots for cinematic narratives. Existing approaches fall into two categories: image diffusion-based methods (e.g., StoryDiffusion, AnyStory, StoryMaker) that maintain character consistency via IP-Adapter or ControlNet; and video model-based methods (e.g., StoryAnchors) that exploit temporal consistency but support only text or previous-frame conditioning.
 
 **Limitations of Prior Work**: Image-based models are inherently biased toward diversity rather than temporal stability, resulting in poor cross-shot character consistency and severe character confusion in multi-character scenarios (erroneous blending of facial and clothing features across characters). Video models offer better consistency but incur high computational cost from dense frame generation and lack fine-grained personalization control.
 
-**Root Cause**: Image models offer flexibility but lack consistency; video models offer consistency but lack efficiency — a fundamental trade-off.
+**Key Challenge**: Image models offer flexibility but lack consistency; video models offer consistency but lack efficiency — a fundamental trade-off.
 
-**Paper Goals**: Combine the spatiotemporal consistency prior of video models with the efficiency and controllability of image-level generation to achieve high-quality personalized storyboard synthesis.
+**Goal**: Combine the spatiotemporal consistency prior of video models with the efficiency and controllability of image-level generation to achieve high-quality personalized storyboard synthesis.
 
-**Starting Point**: When a video VAE (e.g., Wan-VAE) compresses consecutive frames into a latent space, it preserves the causal temporal structure. By repeating each storyboard shot for $T$ frames before encoding, independent static shots can be transformed into a coherent temporal latent sequence.
+**Key Insight**: When a video VAE (e.g., Wan-VAE) compresses consecutive frames into a latent space, it preserves the causal temporal structure. By repeating each storyboard shot for $T$ frames before encoding, independent static shots can be transformed into a coherent temporal latent sequence.
 
 **Core Idea**: Within a video diffusion (DiT) framework, character reference images are treated as temporally preceding anchor tokens and storyboard shots as subsequent temporal segments. The 3D RoPE positional encoding naturally propagates character identity information along the temporal axis, while RACL constrains cross-character attention to prevent confusion.
 

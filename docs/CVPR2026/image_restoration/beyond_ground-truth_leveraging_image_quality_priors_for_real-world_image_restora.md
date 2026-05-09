@@ -27,13 +27,13 @@ This paper proposes IQPIR, a framework that introduces image quality priors (IQP
 
 ## Background & Motivation
 
-**State of the Field**: Real-world image restoration aims to recover high-quality images from inputs suffering from complex degradations. Codebook-based methods reformulate restoration as a code prediction problem in discrete representation space, effectively reducing reconstruction ambiguity.
+**Background**: Real-world image restoration aims to recover high-quality images from inputs suffering from complex degradations. Codebook-based methods reformulate restoration as a code prediction problem in discrete representation space, effectively reducing reconstruction ambiguity.
 
 **Limitations of Prior Work**: All existing methods implicitly assume that ground-truth (GT) images are perfect and serve as the sole supervision source. However, as shown in Figure 1, the perceptual quality of GT datasets (e.g., FFHQ) is inconsistent—most GT quality scores fall between 5 and 8, with very few reaching 9. As a result, models converge to the **average quality level** of the GT rather than the highest achievable quality.
 
-**Root Cause**: (1) Training exclusively on the highest-quality GT leads to insufficient data diversity, causing artifacts and degraded features; (2) Training on all GT images pulls the model toward average quality.
+**Key Challenge**: (1) Training exclusively on the highest-quality GT leads to insufficient data diversity, causing artifacts and degraded features; (2) Training on all GT images pulls the model toward average quality.
 
-**Starting Point**: GT images of different quality levels serve distinct roles—HQ+ GT excels at fine structural control, while average-quality GT is better suited for recovering large blurred regions.
+**Key Insight**: GT images of different quality levels serve distinct roles—HQ+ GT excels at fine structural control, while average-quality GT is better suited for recovering large blurred regions.
 
 **Core Idea**: NR-IQA scores are injected as conditioning signals into the restoration model; setting the score to its maximum value at inference time guides the network to produce the highest-quality output. A dual Codebook learns general structures and HQ+-specific details separately.
 

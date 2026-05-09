@@ -29,15 +29,15 @@ This paper proposes Riner, which formulates CT ring artifact removal (RAR) as a 
 
 ## Background & Motivation
 
-1. **State of the Field**: 3D cone-beam computed tomography (CBCT) is widely used in medical diagnosis, biological research, and materials science. Due to non-ideal responses of X-ray detectors, reconstructed images frequently exhibit severe ring artifacts (RAs), which significantly degrade image quality and diagnostic reliability.
+1. **Background**: 3D cone-beam computed tomography (CBCT) is widely used in medical diagnosis, biological research, and materials science. Due to non-ideal responses of X-ray detectors, reconstructed images frequently exhibit severe ring artifacts (RAs), which significantly degrade image quality and diagnostic reliability.
 
 2. **Limitations of Prior Work**: Current supervised deep learning SOTA methods (e.g., DeepRAR, Restormer) require large-scale paired datasets for training, but suffer from two critical limitations: (1) data collection is costly and generalization is poor—models are typically trained on simulated data and experience substantial performance drops on real data; (2) poor scalability—2D models are difficult to extend directly to 3D CBCT, and slice-by-slice processing introduces Z-axis discontinuities.
 
-3. **Root Cause**: Supervised methods treat RAR as an end-to-end post-processing denoising task, lacking explicit modeling of the physical origins of artifacts, which leads to insufficient out-of-domain generalization.
+3. **Key Challenge**: Supervised methods treat RAR as an end-to-end post-processing denoising task, lacking explicit modeling of the physical origins of artifacts, which leads to insufficient out-of-domain generalization.
 
-4. **Paper Goals**: To simultaneously recover high-quality images and estimate detector physical parameters from raw CT measurements, without relying on external training data.
+4. **Goal**: To simultaneously recover high-quality images and estimate detector physical parameters from raw CT measurements, without relying on external training data.
 
-5. **Starting Point**: Starting from the physics of X-ray CT, the paper theoretically analyzes two physical causes of ring artifacts—inconsistent response (IR) and invalid measurements (IM)—and reformulates RAR as a multi-parameter inverse problem.
+5. **Key Insight**: Starting from the physics of X-ray CT, the paper theoretically analyzes two physical causes of ring artifacts—inconsistent response (IR) and invalid measurements (IM)—and reformulates RAR as a multi-parameter inverse problem.
 
 6. **Core Idea**: The non-ideal behavior of detectors is parameterized via a differentiable physical forward model. The spectral bias prior of INR regularizes the ill-posed inverse problem, enabling RAR without any training data.
 

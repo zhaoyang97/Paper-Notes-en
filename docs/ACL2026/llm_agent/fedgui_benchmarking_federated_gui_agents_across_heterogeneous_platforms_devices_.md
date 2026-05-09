@@ -28,15 +28,15 @@ FedGUI is the first comprehensive federated learning benchmark for cross-platfor
 
 ## Background & Motivation
 
-**State of the Field**: GUI agents leverage vision-language models (VLMs) to perceive graphical interfaces and execute user instructions. Conventional approaches rely on centralized data collection and annotation, which are costly and difficult to scale. Federated learning offers a privacy-preserving paradigm for distributed training.
+**Background**: GUI agents leverage vision-language models (VLMs) to perceive graphical interfaces and execute user instructions. Conventional approaches rely on centralized data collection and annotation, which are costly and difficult to scale. Federated learning offers a privacy-preserving paradigm for distributed training.
 
 **Limitations of Prior Work**: (1) Existing federated GUI benchmarks (e.g., FedMABench) are limited to collaboration among Android users, overlooking the potential contributions of web and desktop users. (2) In practice, GUI data are distributed across diverse platforms (mobile/web/desktop), devices (different phone models), and operating systems (Android/macOS/Windows/Ubuntu), yet the impact of such heterogeneity on federated training remains unexplored.
 
-**Root Cause**: GUI devices naturally generate rich supervision signals, but privacy concerns prevent data sharing. While federated learning addresses this issue, the field lacks benchmarks that capture real-world cross-platform heterogeneity to guide algorithm selection.
+**Key Challenge**: GUI devices naturally generate rich supervision signals, but privacy concerns prevent data sharing. While federated learning addresses this issue, the field lacks benchmarks that capture real-world cross-platform heterogeneity to guide algorithm selection.
 
-**Paper Goals**: To construct a federated GUI agent benchmark covering multiple platforms, devices, and operating systems, and to answer two key questions: Does cross-platform collaboration improve performance? How can heterogeneity along different dimensions be quantified and addressed?
+**Goal**: To construct a federated GUI agent benchmark covering multiple platforms, devices, and operating systems, and to answer two key questions: Does cross-platform collaboration improve performance? How can heterogeneity along different dimensions be quantified and addressed?
 
-**Starting Point**: Six datasets are constructed from nine data sources, each corresponding to one of four heterogeneity dimensions. A systematic evaluation is conducted across seven federated learning algorithms and over 20 base models.
+**Key Insight**: Six datasets are constructed from nine data sources, each corresponding to one of four heterogeneity dimensions. A systematic evaluation is conducted across seven federated learning algorithms and over 20 base models.
 
 **Core Idea**: Four-dimensional heterogeneity modeling (Platform × Device × OS × Source) combined with a unified action space and systematic federated learning evaluation.
 

@@ -27,15 +27,15 @@ This paper proposes a ternary neuron classification scheme (language-specific / 
 
 ## Background & Motivation
 
-**State of the Field**: LLMs exhibit large disparities in multilingual capability due to imbalanced pretraining corpora. MAPO improves low-resource language performance by aligning non-English capabilities toward English. Tang et al. categorize neurons into "language-specific" and "universal" types.
+**Background**: LLMs exhibit large disparities in multilingual capability due to imbalanced pretraining corpora. MAPO improves low-resource language performance by aligning non-English capabilities toward English. Tang et al. categorize neurons into "language-specific" and "universal" types.
 
 **Limitations of Prior Work**: The binary classification ignores neurons activated across multiple (but not all) languages — neurons that are neither language-specific nor universal.
 
-**Root Cause**: Existing taxonomies fail to capture nuanced cross-lingual neuron sharing patterns, leaving the multilingual alignment mechanism incompletely understood.
+**Key Challenge**: Existing taxonomies fail to capture nuanced cross-lingual neuron sharing patterns, leaving the multilingual alignment mechanism incompletely understood.
 
-**Paper Goals**: Which types of neurons does alignment actually enhance? Why does alignment also benefit untrained languages?
+**Goal**: Which types of neurons does alignment actually enhance? Why does alignment also benefit untrained languages?
 
-**Starting Point**: Introduce "language-related neurons" as a third category and analyze layer-wise changes before and after alignment.
+**Key Insight**: Introduce "language-related neurons" as a third category and analyze layer-wise changes before and after alignment.
 
 **Core Idea**: A ternary classification scheme combined with a four-stage analysis framework reveals the neuron-level mechanism underlying multilingual alignment.
 

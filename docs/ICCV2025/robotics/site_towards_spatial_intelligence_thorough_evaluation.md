@@ -28,15 +28,15 @@ This paper presents SITE, a comprehensive spatial intelligence benchmark grounde
 
 ## Background & Motivation
 
-**State of the Field**: Spatial Intelligence (SI) is a core cognitive ability encompassing the visualization, manipulation, and reasoning of spatial relationships. While large vision-language models (VLMs) have achieved notable progress on general VQA, their spatial reasoning capabilities are only sparsely incorporated into comprehensive benchmarks such as MME and MMBench, leaving systematic evaluation largely absent.
+**Background**: Spatial Intelligence (SI) is a core cognitive ability encompassing the visualization, manipulation, and reasoning of spatial relationships. While large vision-language models (VLMs) have achieved notable progress on general VQA, their spatial reasoning capabilities are only sparsely incorporated into comprehensive benchmarks such as MME and MMBench, leaving systematic evaluation largely absent.
 
 **Limitations of Prior Work**: Existing spatial reasoning benchmarks exhibit clear gaps — CVBench lacks perspective-taking tasks, 3DSRBench is limited to single images, and VSI-Bench covers only indoor video scenes. Each benchmark addresses only a subset of spatial intelligence dimensions, preventing a holistic characterization.
 
-**Root Cause**: Cognitive science identifies at least three major classification frameworks for SI (scale-based, visualization/orientation-based, and the 2×2 intrinsic/extrinsic × static/dynamic taxonomy), yet no existing benchmark simultaneously covers all three, with spatial orientation and dynamic-scene reasoning being particularly underrepresented.
+**Key Challenge**: Cognitive science identifies at least three major classification frameworks for SI (scale-based, visualization/orientation-based, and the 2×2 intrinsic/extrinsic × static/dynamic taxonomy), yet no existing benchmark simultaneously covers all three, with spatial orientation and dynamic-scene reasoning being particularly underrepresented.
 
-**Paper Goals**: To construct a comprehensive spatial intelligence benchmark that satisfies all three cognitive-science taxonomies, filling the gaps in perspective-taking and dynamic reasoning tasks, and systematically identifying the spatial reasoning blind spots of current VLMs.
+**Goal**: To construct a comprehensive spatial intelligence benchmark that satisfies all three cognitive-science taxonomies, filling the gaps in perspective-taking and dynamic reasoning tasks, and systematically identifying the spatial reasoning blind spots of current VLMs.
 
-**Starting Point**: A dual-path strategy is adopted — a bottom-up path selects spatially relevant tasks from 30 existing datasets, while a top-down path identifies uncovered dimensions from the cognitive-science taxonomies and designs new tasks accordingly.
+**Key Insight**: A dual-path strategy is adopted — a bottom-up path selects spatially relevant tasks from 30 existing datasets, while a top-down path identifies uncovered dimensions from the cognitive-science taxonomies and designs new tasks accordingly.
 
 **Core Idea**: Benchmark design is driven by three cognitive-science SI taxonomies, combining task selection from existing datasets with the creation of novel tasks (Ego-Exo view association and frame reordering), thereby enabling comprehensive and systematic evaluation of VLM spatial intelligence.
 

@@ -27,15 +27,15 @@ content_hash: b6f8289f22012787
 This paper proposes the Phase-wise Decomposition and Alignment (PDA) framework, which leverages the CoT reasoning capability of LLMs to decompose action labels into start–middle–end phase descriptions. Through text-guided foreground filtering and adaptive phase-wise alignment, PDA achieves fine-grained action pattern transfer, attaining an Avg mAP of 46.9 on THUMOS14 OV-TAD, surpassing the previous SOTA Ti-FAD (41.2).
 
 ## Background & Motivation
-**State of the Field**: Open-vocabulary temporal action detection (OV-TAD) requires localizing and classifying unseen action categories, with knowledge transfer from seen categories as the central challenge.
+**Background**: Open-vocabulary temporal action detection (OV-TAD) requires localizing and classifying unseen action categories, with knowledge transfer from seen categories as the central challenge.
 
 **Limitations of Prior Work**: Existing methods perform only label-level global text–visual alignment, making it difficult to capture fine-grained temporal patterns shared across different actions. For instance, "LongJump" and "PoleVault" exhibit low label-level similarity, yet their run-up and take-off phases are visually highly similar.
 
-**Root Cause**: Label-level semantic alignment fails to discover transferable visual patterns across categories, limiting generalization to unseen classes.
+**Key Challenge**: Label-level semantic alignment fails to discover transferable visual patterns across categories, limiting generalization to unseen classes.
 
-**Paper Goals**: To extract and transfer shared phase-level visual priors across different actions for improved open-vocabulary generalization.
+**Goal**: To extract and transfer shared phase-level visual priors across different actions for improved open-vocabulary generalization.
 
-**Starting Point**: Simulating human cognition—understanding an action as a sequential unfolding (initiation → execution → completion)—by exploiting the CoT capability of LLMs to automatically decompose actions into multiple phases.
+**Key Insight**: Simulating human cognition—understanding an action as a sequential unfolding (initiation → execution → completion)—by exploiting the CoT capability of LLMs to automatically decompose actions into multiple phases.
 
 **Core Idea**: Decompose action labels into phase descriptions → perform text–visual alignment independently for each phase → adaptively aggregate the alignment results across phases.
 

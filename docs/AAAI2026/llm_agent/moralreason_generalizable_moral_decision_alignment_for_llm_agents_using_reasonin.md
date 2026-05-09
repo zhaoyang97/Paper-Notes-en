@@ -30,15 +30,15 @@ This work employs Group Relative Policy Optimization (GRPO) to train LLMs at the
 
 ### State of the Field
 
-**State of the Field**: LLMs serving as autonomous agents in domains such as healthcare and law must make moral decisions aligned with specific ethical frameworks (utilitarianism, deontology, virtue ethics).
+**Background**: LLMs serving as autonomous agents in domains such as healthcare and law must make moral decisions aligned with specific ethical frameworks (utilitarianism, deontology, virtue ethics).
 
 **Limitations of Prior Work**: (a) Existing alignment methods primarily target a single "harmlessness" objective and cannot distinguish between different ethical frameworks; (b) strong performance on training scenarios does not guarantee generalization to novel scenarios; (c) decision-level rewards are insufficient — alignment must be enforced at the reasoning level.
 
-**Root Cause**: Different ethical frameworks may prescribe fundamentally different "correct" answers to the same scenario, yet existing methods lack the flexibility to align with distinct frameworks.
+**Key Challenge**: Different ethical frameworks may prescribe fundamentally different "correct" answers to the same scenario, yet existing methods lack the flexibility to align with distinct frameworks.
 
-**Paper Goals**: Enable LLMs to internalize the reasoning patterns of a specified ethical framework and generalize to unseen moral dilemma scenarios.
+**Goal**: Enable LLMs to internalize the reasoning patterns of a specified ethical framework and generalize to unseen moral dilemma scenarios.
 
-**Starting Point**: Apply GRPO with reasoning-level rewards rather than decision-level rewards alone, so that the model learns *why* a decision is made rather than merely *which option* to select.
+**Key Insight**: Apply GRPO with reasoning-level rewards rather than decision-level rewards alone, so that the model learns *why* a decision is made rather than merely *which option* to select.
 
 **Core Idea**: Through reasoning-level reinforcement learning, LLMs internalize ethical frameworks during the reasoning process, enabling generalized moral decision alignment on unseen scenarios.
 

@@ -28,15 +28,15 @@ PVB (Pretrained Variational Bridge) unifies the training objectives of single-st
 
 ## Background & Motivation
 
-**State of the Field**: Molecular dynamics (MD) simulation is a fundamental tool for characterizing molecular behavior, yet its computational cost is prohibitively high, requiring femtosecond-level time steps. Recent deep generative models have begun learning dynamics at coarsened time scales to generate trajectories efficiently.
+**Background**: Molecular dynamics (MD) simulation is a fundamental tool for characterizing molecular behavior, yet its computational cost is prohibitively high, requiring femtosecond-level time steps. Recent deep generative models have begun learning dynamics at coarsened time scales to generate trajectories efficiently.
 
 **Limitations of Prior Work**: Existing methods suffer from three key issues: (1) insufficient generalization across molecular systems; (2) limited molecular diversity in trajectory data, preventing full exploitation of structural information; and (3) a predominant focus on single-molecule simulation, with little attention to multi-molecule systems such as protein–ligand complexes.
 
-**Root Cause**: The most closely related prior work, UniSim, achieves cross-domain generalization via 3D molecular pretraining; however, a training objective mismatch exists between pretraining (unconditional generation of single structures $x$) and fine-tuning (conditional generation of trajectory pairs $(x_t, x_{t+\tau})$), leading to insufficient transfer of pretrained knowledge.
+**Key Challenge**: The most closely related prior work, UniSim, achieves cross-domain generalization via 3D molecular pretraining; however, a training objective mismatch exists between pretraining (unconditional generation of single structures $x$) and fine-tuning (conditional generation of trajectory pairs $(x_t, x_{t+\tau})$), leading to insufficient transfer of pretrained knowledge.
 
-**Paper Goals**: (1) How to design a unified training framework in which pretraining and fine-tuning share the same generative objective? (2) How to apply generated trajectories to rapid holo-state exploration in protein–ligand docking?
+**Goal**: (1) How to design a unified training framework in which pretraining and fine-tuning share the same generative objective? (2) How to apply generated trajectories to rapid holo-state exploration in protein–ligand docking?
 
-**Starting Point**: A latent variable $\mathbf{Y}_0$ is introduced to model the generative process as a Markov chain $\mathbf{X}_0 \to \mathbf{Y}_0 \to \mathbf{Y}_1$. A variational encoder maps the initial structure to a noisy latent space, and an augmented bridge matching decoder transports it to the target state.
+**Key Insight**: A latent variable $\mathbf{Y}_0$ is introduced to model the generative process as a Markov chain $\mathbf{X}_0 \to \mathbf{Y}_0 \to \mathbf{Y}_1$. A variational encoder maps the initial structure to a noisy latent space, and an augmented bridge matching decoder transports it to the target state.
 
 **Core Idea**: A unified encoder-decoder framework with augmented bridge matching eliminates the objective mismatch between pretraining and fine-tuning, while adjoint-matching-based RL fine-tuning accelerates holo-state exploration.
 

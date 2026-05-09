@@ -29,15 +29,15 @@ This paper proposes RLZero, a framework that converts natural language instructi
 
 ## Background & Motivation
 
-**State of the Field**: The reward hypothesis posits that all goals can be expressed as the maximization of a scalar reward signal, yet defining appropriate reward functions in practice is notoriously difficult. Natural language offers an intuitive alternative for guiding RL agents, but existing language-conditioned RL approaches either require costly in-domain supervision (annotated trajectories, language–action pairs) or necessitate test-time training upon receiving new language instructions.
+**Background**: The reward hypothesis posits that all goals can be expressed as the maximization of a scalar reward signal, yet defining appropriate reward functions in practice is notoriously difficult. Natural language offers an intuitive alternative for guiding RL agents, but existing language-conditioned RL approaches either require costly in-domain supervision (annotated trajectories, language–action pairs) or necessitate test-time training upon receiving new language instructions.
 
 **Limitations of Prior Work**: (1) Traditional language-conditioned RL demands large quantities of manually annotated language–trajectory pairs, which are expensive to collect; (2) reward-function learning methods still require in-domain training data to bridge language and environment; (3) test-time training approaches reduce the need for pre-annotation but require retraining for every new instruction, precluding immediate execution.
 
-**Root Cause**: The language instruction space is open-ended and environment-agnostic, whereas RL policies must be grounded in the dynamics of a specific environment — bridging these two spaces without any task-specific supervision is the central challenge.
+**Key Challenge**: The language instruction space is open-ended and environment-agnostic, whereas RL policies must be grounded in the dynamics of a specific environment — bridging these two spaces without any task-specific supervision is the central challenge.
 
-**Paper Goals**: (1) Achieve fully zero-shot language-to-behavior conversion — no in-domain supervision, no annotated trajectories, no test-time training; (2) enable pretrained RL agents to respond to arbitrary natural language instructions; (3) support cross-embodiment transfer, including transfer from YouTube videos to robotic systems.
+**Goal**: (1) Achieve fully zero-shot language-to-behavior conversion — no in-domain supervision, no annotated trajectories, no test-time training; (2) enable pretrained RL agents to respond to arbitrary natural language instructions; (3) support cross-embodiment transfer, including transfer from YouTube videos to robotic systems.
 
-**Starting Point**: The problem is decomposed into three independently solvable sub-problems — language → vision (leveraging the text-to-video capabilities of video generation models), vision → cross-domain (domain transfer), and observation → action (closed-form imitation via unsupervised RL pretraining).
+**Key Insight**: The problem is decomposed into three independently solvable sub-problems — language → vision (leveraging the text-to-video capabilities of video generation models), vision → cross-domain (domain transfer), and observation → action (closed-form imitation via unsupervised RL pretraining).
 
 **Core Idea**: Video generation models serve as translators from language to vision; a unsupervised pretrained RL agent then directly imitates the translated observation sequences, thereby circumventing the need for any in-domain supervision.
 

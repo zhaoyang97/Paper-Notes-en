@@ -29,10 +29,10 @@ This work is the first to integrate decomposed Chain-of-Thought reasoning with m
 
 ## Background & Motivation
 
-- **State of the Field**: V2A generation must simultaneously satisfy four human perceptual dimensions—semantic consistency, temporal synchronization, aesthetic quality, and spatial accuracy—which inherently compete and trade off against one another.
+- **Background**: V2A generation must simultaneously satisfy four human perceptual dimensions—semantic consistency, temporal synchronization, aesthetic quality, and spatial accuracy—which inherently compete and trade off against one another.
 - **Limitations of Prior Work**: Existing methods employ a single loss function that jointly optimizes multiple competing objectives, preventing the model from achieving a good balance across dimensions. For instance, emphasizing semantic consistency can degrade aesthetic quality. Pioneer works such as ThinkSound introduce CoT reasoning but use a monolithic reasoning path for all audio analysis tasks, leading to conflated analytical frameworks and frequent multimodal hallucinations. Furthermore, existing V2A methods lack mechanisms for learning from human perceptual preferences, producing audio that is technically correct but perceptually unsatisfying. On the training side, existing GRPO implementations (e.g., Flow-GRPO) require SDE sampling at every denoising step, incurring prohibitive computational cost.
-- **Root Cause**: Monolithic objective optimization and monolithic reasoning pipelines conflate fundamentally different analytical tasks, making it impossible to achieve well-balanced multi-dimensional performance.
-- **Paper Goals**: Introduce decomposed CoT reasoning and multi-dimensional RL into V2A generation to achieve comprehensive, balanced improvements across all perceptual dimensions with high training efficiency.
+- **Key Challenge**: Monolithic objective optimization and monolithic reasoning pipelines conflate fundamentally different analytical tasks, making it impossible to achieve well-balanced multi-dimensional performance.
+- **Goal**: Introduce decomposed CoT reasoning and multi-dimensional RL into V2A generation to achieve comprehensive, balanced improvements across all perceptual dimensions with high training efficiency.
 
 ## Method
 

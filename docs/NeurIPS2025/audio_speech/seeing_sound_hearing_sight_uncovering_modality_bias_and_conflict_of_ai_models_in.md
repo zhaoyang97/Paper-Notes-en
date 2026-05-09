@@ -30,15 +30,15 @@ Through six controlled audio-visual conditions and human psychophysical experime
 
 ## Background & Motivation
 
-**State of the Field**: Sound source localization (SSL) is a fundamental multimodal task that associates sounds with spatial locations in visual scenes. Recent approaches based on contrastive learning (e.g., DenseAV) and cross-modal attention (Transformer architectures) have achieved promising results under standard congruent conditions; however, virtually all prior work is evaluated under the idealized assumption of audio-visual semantic and spatial consistency.
+**Background**: Sound source localization (SSL) is a fundamental multimodal task that associates sounds with spatial locations in visual scenes. Recent approaches based on contrastive learning (e.g., DenseAV) and cross-modal attention (Transformer architectures) have achieved promising results under standard congruent conditions; however, virtually all prior work is evaluated under the idealized assumption of audio-visual semantic and spatial consistency.
 
 **Limitations of Prior Work**: (1) Existing datasets are heavily biased—dominated by large, centrally located objects—allowing models to achieve competitive performance via visual shortcuts without genuinely integrating audio information; (2) the vast majority of methods rely on mono audio, discarding binaural spatial cues; (3) there is a systematic lack of investigation into model behavior under non-ideal conditions such as audio-visual conflict or modality absence.
 
-**Root Cause**: When audio-visual signals conflict (e.g., a dog bark is heard while a car is visible at the expected source location), humans can flexibly prioritize audition to localize accurately. Whether AI models can do the same—or whether they are misled by visual dominance—remains an open question.
+**Key Challenge**: When audio-visual signals conflict (e.g., a dog bark is heard while a car is visible at the expected source location), humans can flexibly prioritize audition to localize accurately. Whether AI models can do the same—or whether they are misled by visual dominance—remains an open question.
 
-**Paper Goals**: (1) Quantify modality bias in AI models across diverse audio-visual conditions; (2) provide human baseline comparisons; (3) construct an unbiased dataset and a biologically inspired model to narrow the human–machine gap.
+**Goal**: (1) Quantify modality bias in AI models across diverse audio-visual conditions; (2) provide human baseline comparisons; (3) construct an unbiased dataset and a biologically inspired model to narrow the human–machine gap.
 
-**Starting Point**: The work is motivated by neuroscience, specifically mimicking the human peripheral auditory processing chain (pinna HRTF → cochlear frequency decomposition → binaural spatial cues) to design both a data synthesis pipeline and the model frontend.
+**Key Insight**: The work is motivated by neuroscience, specifically mimicking the human peripheral auditory processing chain (pinna HRTF → cochlear frequency decomposition → binaural spatial cues) to design both a data synthesis pipeline and the model frontend.
 
 **Core Idea**: Employing HRTF spatial filtering, ERB-based cochleagram frequency decomposition, and stereo audio configuration to simulate the human peripheral auditory system—simultaneously removing dataset bias and endowing the model with the capacity to exploit genuine spatial auditory cues.
 
@@ -166,7 +166,7 @@ This work systematically reveals that AI SSL models suffer from severe visual bi
 
 ## Background & Motivation
 
-1. **State of the Field**: SSL is a fundamental multimodal perception task that associates sounds with their spatial origins in visual scenes. Existing multimodal models (contrastive learning, cross-modal attention, etc.) perform well under standard congruent conditions.
+1. **Background**: SSL is a fundamental multimodal perception task that associates sounds with their spatial origins in visual scenes. Existing multimodal models (contrastive learning, cross-modal attention, etc.) perform well under standard congruent conditions.
 2. **Core Problem**: No prior work has systematically examined AI model behavior under audio-visual conflict—specifically, whether models prioritize audition over vision as humans do, or exhibit visual dominance.
 3. **Key Finding**: Humans remain robust under conflict and even audio-only conditions by prioritizing auditory information, whereas AI models are heavily vision-biased and collapse to random-level performance under conflict.
 

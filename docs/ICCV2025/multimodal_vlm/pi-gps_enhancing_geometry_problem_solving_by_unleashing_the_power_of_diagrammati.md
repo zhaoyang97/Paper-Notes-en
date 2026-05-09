@@ -43,7 +43,7 @@ Geometry Problem Solving (GPS) requires models to derive correct answers from te
 
 Such ambiguities are difficult to resolve from text alone but can often be trivially resolved with the aid of the diagram. Nevertheless, prior work has almost entirely overlooked this issue.
 
-**Starting Point**: Design a lightweight micro-module that systematically resolves textual ambiguities using diagrammatic information, then feeds the disambiguated formal language into the subsequent reasoning stage. This approach is orthogonal to existing frameworks and can be seamlessly integrated as a plug-and-play component to boost the performance of any neuro-symbolic method.
+**Key Insight**: Design a lightweight micro-module that systematically resolves textual ambiguities using diagrammatic information, then feeds the disambiguated formal language into the subsequent reasoning stage. This approach is orthogonal to existing frameworks and can be seamlessly integrated as a plug-and-play component to boost the performance of any neuro-symbolic method.
 
 ## Method
 

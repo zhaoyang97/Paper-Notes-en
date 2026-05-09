@@ -30,7 +30,7 @@ This paper proposes S2Drug, a two-stage contrastive learning framework. Stage 1 
 
 ## Background & Motivation
 
-**State of the Field**: Virtual screening (VS) is a core step in drug discovery, aiming to identify small molecules that bind to a target protein pocket from large compound libraries. Existing methods fall into two categories: molecular docking (e.g., AutoDock Vina — accurate but slow) and deep learning approaches (e.g., DrugCLIP/DrugHash — using contrastive learning to align protein–ligand representations).
+**Background**: Virtual screening (VS) is a core step in drug discovery, aiming to identify small molecules that bind to a target protein pocket from large compound libraries. Existing methods fall into two categories: molecular docking (e.g., AutoDock Vina — accurate but slow) and deep learning approaches (e.g., DrugCLIP/DrugHash — using contrastive learning to align protein–ligand representations).
 
 **A Critical Blind Spot — Protein Sequence is Neglected**:
 - Nearly all mainstream methods rely solely on 3D structural information.
@@ -44,7 +44,7 @@ This paper proposes S2Drug, a two-stage contrastive learning framework. Stage 1 
 - Ligand side: variability in affinity measurements, non-specific frequent hitter compounds.
 - Using sequences alone while discarding structural context loses critical spatial interaction information.
 
-**Starting Point**: A two-stage learning paradigm — sequence pre-training addresses data scale and generalization, while structure-fusion fine-tuning addresses spatial precision.
+**Key Insight**: A two-stage learning paradigm — sequence pre-training addresses data scale and generalization, while structure-fusion fine-tuning addresses spatial precision.
 
 ## Method
 

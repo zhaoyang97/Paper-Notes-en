@@ -28,18 +28,18 @@ This paper proposes OpenBox, a two-stage automatic 3D bounding box annotation pi
 
 ## Background & Motivation
 
-**State of the Field**: 3D object detection is a core component of autonomous driving, yet large-scale 3D annotation is prohibitively costly. Unsupervised and open-vocabulary 3D object detection has attracted increasing attention in recent years.
+**Background**: 3D object detection is a core component of autonomous driving, yet large-scale 3D annotation is prohibitively costly. Unsupervised and open-vocabulary 3D object detection has attracted increasing attention in recent years.
 
 **Limitations of Prior Work**:
    - Existing unsupervised methods (MODEST, OYSTER, CPD) treat all objects uniformly during bounding box generation, ignoring the physical properties of objects (rigid vs. deformable, static vs. dynamic), leading to poor annotation quality.
    - Most methods require multiple rounds of self-training iterations to refine annotations, incurring substantial computational overhead.
    - Multi-modal methods such as LiSe fuse 3D boxes from different modalities at the output level, lacking geometric alignment.
 
-**Root Cause**: LiDAR provides precise geometry but lacks semantics, while 2D images are semantically rich but lack 3D information.
+**Key Challenge**: LiDAR provides precise geometry but lacks semantics, while 2D images are semantically rich but lack 3D information.
 
-**Paper Goals**: Automatically generate high-quality, multi-category 3D bounding box annotations without manual labeling or self-training iterations.
+**Goal**: Automatically generate high-quality, multi-category 3D bounding box annotations without manual labeling or self-training iterations.
 
-**Starting Point**: Leverage 2D visual foundation models (Grounding DINO + SAM2) for strong instance-level semantic information, combined with physical-state classification to enable adaptive box generation.
+**Key Insight**: Leverage 2D visual foundation models (Grounding DINO + SAM2) for strong instance-level semantic information, combined with physical-state classification to enable adaptive box generation.
 
 **Core Idea**: Cross-modal instance alignment combined with physical-state-aware adaptive 3D bounding box generation.
 

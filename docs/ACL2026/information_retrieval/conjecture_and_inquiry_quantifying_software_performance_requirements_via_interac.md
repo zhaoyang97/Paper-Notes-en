@@ -28,15 +28,15 @@ This paper proposes IRAP (Interactive Retrieval-Augmented Preference Elicitation
 
 ## Background & Motivation
 
-**State of the Field**: Software performance requirements (e.g., response time, throughput, availability) are typically documented in natural language, yet performance analysis, testing, and optimization in software engineering demand that they be expressed in computable mathematical forms (e.g., utility functions, constraints).
+**Background**: Software performance requirements (e.g., response time, throughput, availability) are typically documented in natural language, yet performance analysis, testing, and optimization in software engineering demand that they be expressed in computable mathematical forms (e.g., utility functions, constraints).
 
 **Limitations of Prior Work**: Natural-language descriptions of performance requirements are inherently ambiguous (e.g., "the system should respond quickly," "latency should be within an acceptable range"), and cognitive uncertainty among stakeholders means the same requirement text can be interpreted as fundamentally different mathematical forms by different parties. This high degree of ambiguous uncertainty renders automated quantification a largely unsolved problem.
 
-**Root Cause**: There is a fundamental tension between the need to translate vague natural language into precise mathematical functions and the highly personalized, context-dependent nature of stakeholder preferences—parameters that conventional NLP methods cannot directly infer from text alone.
+**Key Challenge**: There is a fundamental tension between the need to translate vague natural language into precise mathematical functions and the highly personalized, context-dependent nature of stakeholder preferences—parameters that conventional NLP methods cannot directly infer from text alone.
 
-**Paper Goals**: To formally define the problem of performance requirement quantification and to propose a method that reasons about preferences by retrieving domain-specific knowledge while conducting progressive interactions with stakeholders, achieving high-precision quantification with reduced cognitive burden.
+**Goal**: To formally define the problem of performance requirement quantification and to propose a method that reasons about preferences by retrieving domain-specific knowledge while conducting progressive interactions with stakeholders, achieving high-precision quantification with reduced cognitive burden.
 
-**Starting Point**: The problem is framed as "Conjecture and Inquiry"—the system first forms a quantification conjecture grounded in retrieved domain knowledge, then iteratively verifies and refines it through targeted interactions with stakeholders.
+**Key Insight**: The problem is framed as "Conjecture and Inquiry"—the system first forms a quantification conjecture grounded in retrieved domain knowledge, then iteratively verifies and refines it through targeted interactions with stakeholders.
 
 **Core Idea**: Rather than attempting to infer mathematical functions from text in a single pass, IRAP leverages retrieval-augmented domain knowledge to initialize conjectures, then progressively refines preference parameters through a small number of interaction rounds.
 

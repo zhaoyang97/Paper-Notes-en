@@ -38,9 +38,9 @@ Offensive content on social media (hate speech, misogyny, harassment, etc.) pose
 - **Transfer learning**: Still requires moderate-scale target-domain annotations
 - **Conventional self-training**: Poor pseudo-label quality when the initial model is weak, leading to severe error propagation
 
-**Root Cause**: In low-resource settings, a weak initial model yields unreliable pseudo-labels, causing self-training to fail; while VLMs offer strong understanding capabilities, their inference cost precludes direct deployment.
+**Key Challenge**: In low-resource settings, a weak initial model yields unreliable pseudo-labels, causing self-training to fail; while VLMs offer strong understanding capabilities, their inference cost precludes direct deployment.
 
-**Starting Point**: Can VLMs serve as "verifiers" rather than "executors" to guide the self-training of lightweight classifiers? Furthermore, since offensive content inherently involves annotation ambiguity (moderators tend toward conservatism while users tend toward freedom of expression), can simulating this social tension improve pseudo-label quality?
+**Key Insight**: Can VLMs serve as "verifiers" rather than "executors" to guide the self-training of lightweight classifiers? Furthermore, since offensive content inherently involves annotation ambiguity (moderators tend toward conservatism while users tend toward freedom of expression), can simulating this social tension improve pseudo-label quality?
 
 ## Method
 

@@ -28,15 +28,15 @@ This paper systematically evaluates Elastic Weight Consolidation (EWC) for conti
 
 ## Background & Motivation
 
-**State of the Field**: Knowledge graphs evolve continuously and require ongoing updates. Neural embedding models such as TransE learn vector representations for link prediction, but suffer from catastrophic forgetting during sequential task learning—performance on previous tasks degrades sharply.
+**Background**: Knowledge graphs evolve continuously and require ongoing updates. Neural embedding models such as TransE learn vector representations for link prediction, but suffer from catastrophic forgetting during sequential task learning—performance on previous tasks degrades sharply.
 
 **Limitations of Prior Work**: Continual learning methods have been extensively studied in image classification and NLP, yet empirical evaluation on KG link prediction remains insufficient. In particular, the effectiveness of the classical regularization approach EWC on KG embeddings lacks systematic validation.
 
-**Root Cause**: KG embeddings have a structured parameter space in which specific dimensions encode semantic attributes. It is unclear whether simple parameter protection suffices to preserve semantic structure. Moreover, the effect of task partitioning strategy on the measurement of catastrophic forgetting is not well understood.
+**Key Challenge**: KG embeddings have a structured parameter space in which specific dimensions encode semantic attributes. It is unclear whether simple parameter protection suffices to preserve semantic structure. Moreover, the effect of task partitioning strategy on the measurement of catastrophic forgetting is not well understood.
 
-**Paper Goals**: (a) Can EWC effectively mitigate catastrophic forgetting in KG embeddings? (b) How does the task construction strategy affect forgetting metrics?
+**Goal**: (a) Can EWC effectively mitigate catastrophic forgetting in KG embeddings? (b) How does the task construction strategy affect forgetting metrics?
 
-**Starting Point**: Using TransE on FB15k-237 as the testbed, the paper designs rigorous multi-seed experiments comparing EWC, naive sequential training, and experience replay, under both relation-based and random task partitioning strategies.
+**Key Insight**: Using TransE on FB15k-237 as the testbed, the paper designs rigorous multi-seed experiments comparing EWC, naive sequential training, and experience replay, under both relation-based and random task partitioning strategies.
 
 **Core Idea**: Through systematic empirical analysis, the paper demonstrates that EWC's Fisher Information Matrix regularization can effectively protect KG embedding parameters, while revealing that task partitioning strategy is an overlooked yet highly influential factor in continual learning evaluation.
 

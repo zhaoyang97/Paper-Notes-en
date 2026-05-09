@@ -29,15 +29,15 @@ This paper systematically evaluates compression-based adversarial purification d
 
 ## Background & Motivation
 
-**State of the Field**: Adversarial attacks cause classifiers to produce incorrect predictions via imperceptible perturbations. Adversarial purification applies transformations to input images to remove adversarial noise, offering a defense strategy that does not require retraining the classifier.
+**Background**: Adversarial attacks cause classifiers to produce incorrect predictions via imperceptible perturbations. Adversarial purification applies transformations to input images to remove adversarial noise, offering a defense strategy that does not require retraining the classifier.
 
 **Limitations of Prior Work**: Early studies claimed JPEG compression could effectively defend against adversarial attacks, but subsequent work showed that many preprocessing defenses rely on gradient masking and break down under adaptive attacks. Existing evaluations lack comprehensive adaptive attack analysis.
 
-**Root Cause**: Is the robustness gain of compression-based defenses merely an artifact of gradient masking? If not, what mechanism truly contributes to robustness?
+**Key Challenge**: Is the robustness gain of compression-based defenses merely an artifact of gradient masking? If not, what mechanism truly contributes to robustness?
 
-**Paper Goals**: (1) Do compression-based defenses retain robustness under rigorous adaptive attacks? (2) If so, what is the underlying mechanism?
+**Goal**: (1) Do compression-based defenses retain robustness under rigorous adaptive attacks? (2) If so, what is the underlying mechanism?
 
-**Starting Point**: Focus on the overlooked dimension of *realism*, comparing the performance of low-realism and high-realism compression models across various attacks.
+**Key Insight**: Focus on the overlooked dimension of *realism*, comparing the performance of low-realism and high-realism compression models across various attacks.
 
 **Core Idea**: The realism of reconstructed images—rather than simple distortion control—is the key to the effectiveness of compression-based defenses. High-realism reconstruction combats adversarial noise by maintaining distributional consistency and hallucinating semantically plausible details.
 

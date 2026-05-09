@@ -27,15 +27,15 @@ content_hash: a1e02abe60e1d145
 This paper proposes FaIRMaker, a framework that adopts an "auto-search + refinement" paradigm: it first employs gradient-based optimization to identify debiasing trigger tokens (Fairwords), then trains a seq2seq model to transform them into human-readable instructions, effectively mitigating gender bias on both open-source and closed-source LLMs while preserving or even improving task performance.
 
 ## Background & Motivation
-**State of the Field**: LLMs encode social biases (particularly gender bias) during pretraining. Existing mitigation methods fall into two categories: parameter modification (fine-tuning / model editing) and instruction-guided approaches (manually designed debiasing preambles).
+**Background**: LLMs encode social biases (particularly gender bias) during pretraining. Existing mitigation methods fall into two categories: parameter modification (fine-tuning / model editing) and instruction-guided approaches (manually designed debiasing preambles).
 
 **Limitations of Prior Work**: Parameter modification methods are resource-intensive and inapplicable to closed-source models. Manually designed debiasing instructions (e.g., counterfactual preamble CF-D), while reducing bias, significantly degrade normal task performance, as the inserted gender-related descriptions interfere with the model's understanding of the original query.
 
-**Root Cause**: Automated gradient-based search methods (e.g., GCG triggers) can discover effective debiasing tokens over a larger search space, but produce meaningless token sequences that are neither interpretable nor transferable to closed-source models.
+**Key Challenge**: Automated gradient-based search methods (e.g., GCG triggers) can discover effective debiasing tokens over a larger search space, but produce meaningless token sequences that are neither interpretable nor transferable to closed-source models.
 
-**Paper Goals**: Design a method that simultaneously satisfies three criteria: (1) fully automated, (2) compatible with both open-source and closed-source models, and (3) preserving normal task performance.
+**Goal**: Design a method that simultaneously satisfies three criteria: (1) fully automated, (2) compatible with both open-source and closed-source models, and (3) preserving normal task performance.
 
-**Starting Point**: Combine the advantages of gradient-based search and manual design — first automatically search for trigger tokens (large search space), then refine them into readable instructions via a seq2seq model (transferability).
+**Key Insight**: Combine the advantages of gradient-based search and manual design — first automatically search for trigger tokens (large search space), then refine them into readable instructions via a seq2seq model (transferability).
 
 **Core Idea**: Use GCG to automatically search for debiasing trigger tokens, then train a refiner to convert them into natural language instructions.
 

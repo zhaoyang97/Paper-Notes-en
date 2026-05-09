@@ -29,16 +29,16 @@ DAWN proposes a two-stage fully diffusion-based framework — a Motion Director 
 
 ## Background & Motivation
 
-**State of the Field**: Vision-Language-Action (VLA) models leverage large-scale web data to achieve broad generalization, yet remain limited in motion perception and spatial reasoning. Existing motion-guided approaches follow two lines: (1) sparse pixel trajectories (General Flow, FLIP, Track2Act, etc.) that extract motion cues from keypoints or sparse points; (2) future RGB frame prediction (SuSIE, UniPi, VPP, etc.) that uses video diffusion models to generate future observations and then derive actions.
+**Background**: Vision-Language-Action (VLA) models leverage large-scale web data to achieve broad generalization, yet remain limited in motion perception and spatial reasoning. Existing motion-guided approaches follow two lines: (1) sparse pixel trajectories (General Flow, FLIP, Track2Act, etc.) that extract motion cues from keypoints or sparse points; (2) future RGB frame prediction (SuSIE, UniPi, VPP, etc.) that uses video diffusion models to generate future observations and then derive actions.
 
 **Limitations of Prior Work**:
 - **Insufficient information from sparse trajectories**: Tracking only a small number of keypoints fails to describe full-scene motion, losing critical spatial information in complex manipulation tasks.
 - **High cost of RGB frame prediction**: Generating complete video frames in high-dimensional RGB space is computationally expensive and lacks explicit motion structure.
 - **Indirect extraction introduces complexity**: Gen2Act first generates video and then tracks pixels to extract motion, introducing unnecessary indirection and error accumulation.
 
-**Root Cause**: Rather than generating complete RGB frames and indirectly extracting motion, directly predicting dense pixel motion preserves full-scene motion information while greatly reducing generation complexity — pixel motion fields are structurally simpler and more learnable than RGB frames.
+**Key Challenge**: Rather than generating complete RGB frames and indirectly extracting motion, directly predicting dense pixel motion preserves full-scene motion information while greatly reducing generation complexity — pixel motion fields are structurally simpler and more learnable than RGB frames.
 
-**Paper Goals**: DAWN (Diffusion is All We Need) — a two-stage pipeline in which both stages use diffusion models: a Motion Director predicts dense pixel motion fields in latent space, and an Action Expert converts these fields into action sequences, forming a fully trainable, end-to-end, interpretable control pipeline.
+**Goal**: DAWN (Diffusion is All We Need) — a two-stage pipeline in which both stages use diffusion models: a Motion Director predicts dense pixel motion fields in latent space, and an Action Expert converts these fields into action sequences, forming a fully trainable, end-to-end, interpretable control pipeline.
 
 ## Method
 

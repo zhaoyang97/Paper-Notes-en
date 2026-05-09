@@ -28,15 +28,15 @@ Bézier Splatting integrates the Gaussian Splatting framework with Bézier curve
 
 ## Background & Motivation
 
-**State of the Field**: Differentiable vector graphics renderers (e.g., DiffVG, LIVE) optimize Bézier curve parameters for image vectorization. DiffVG performs per-pixel color accumulation, while LIVE adds curves layer by layer; both require hours of optimization for high-resolution images.
+**Background**: Differentiable vector graphics renderers (e.g., DiffVG, LIVE) optimize Bézier curve parameters for image vectorization. DiffVG performs per-pixel color accumulation, while LIVE adds curves layer by layer; both require hours of optimization for high-resolution images.
 
 **Limitations of Prior Work**: DiffVG's backward pass requires sampling at every boundary pixel, making computation proportional to the number of curves and image resolution—extremely slow. LIVE's layer-wise optimization takes 2.6–5.1 hours for 512 curves. No existing method achieves high-quality vectorization within minutes.
 
-**Root Cause**: Traditional differentiable rendering must precisely handle anti-aliased gradients at curve boundaries, which creates a computational bottleneck. A rendering approach that bypasses per-pixel boundary sampling is needed.
+**Key Challenge**: Traditional differentiable rendering must precisely handle anti-aliased gradients at curve boundaries, which creates a computational bottleneck. A rendering approach that bypasses per-pixel boundary sampling is needed.
 
-**Paper Goals**: Substantially accelerate differentiable vector graphics rendering while preserving output quality, reducing optimization time from hours to minutes.
+**Goal**: Substantially accelerate differentiable vector graphics rendering while preserving output quality, reducing optimization time from hours to minutes.
 
-**Starting Point**: Gaussian Splatting has demonstrated efficient differentiable rendering in 3D scenes. By parameterizing Bézier curves as a set of 2D Gaussian points distributed along each curve, the efficient Gaussian Splatting rendering pipeline can be directly reused.
+**Key Insight**: Gaussian Splatting has demonstrated efficient differentiable rendering in 3D scenes. By parameterizing Bézier curves as a set of 2D Gaussian points distributed along each curve, the efficient Gaussian Splatting rendering pipeline can be directly reused.
 
 **Core Idea**: Uniformly sample 2D Gaussian points along each Bézier curve, derive rotation from the local tangent direction and scale from inter-point distances, and achieve fast differentiable vectorization via α-blending rendering combined with adaptive pruning and densification.
 

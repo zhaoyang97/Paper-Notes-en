@@ -35,15 +35,15 @@ The authors argue that many prior approaches fail on medium-to-long horizons not
 
 The paper's logical chain is clear:
 
-**State of the Field**: Research on search advertising has devoted considerable attention to GSP auctions, ranking mechanisms, and CTR modeling, but the problem of forecasting future CPC from the perspective of an individual advertiser remains understudied.
+**Background**: Research on search advertising has devoted considerable attention to GSP auctions, ranking mechanisms, and CTR modeling, but the problem of forecasting future CPC from the perspective of an individual advertiser remains understudied.
 
 **Limitations of Prior Work**: What is observed are outcomes, not competitive causes; yet CPC is highly sensitive to competitive dynamics.
 
-**Root Cause**: The true competitive state is not directly observable, but it leaves traces in observable variables.
+**Key Challenge**: The true competitive state is not directly observable, but it leaves traces in observable variables.
 
-**Paper Goals**: To determine whether a set of high-quality proxy signals can make implicit competitive structure explicit, enabling forecasting models to absorb it.
+**Goal**: To determine whether a set of high-quality proxy signals can make implicit competitive structure explicit, enabling forecasting models to absorb it.
 
-**Starting Point**: Competition is approximated from three complementary perspectives — keyword semantic substitutability, historical CPC trajectory behavioral similarity, and local market structure captured by geographic intent.
+**Key Insight**: Competition is approximated from three complementary perspectives — keyword semantic substitutability, historical CPC trajectory behavioral similarity, and local market structure captured by geographic intent.
 
 **Core Idea**: Rather than inventing a fundamentally new forecasting architecture, the paper first constructs "competition" as priors and covariates usable by different model families, enabling more stable medium-to-long-term prediction under partial observability.
 

@@ -27,15 +27,15 @@ content_hash: 329015a8241aad6e
 This paper proposes PanScale, the first cross-scale pansharpening dataset, along with the PanScale-Bench evaluation benchmark, and the ScaleFormer framework — which reinterprets resolution variation as sequence length variation, achieving cross-scale generalization via Scale-Aware Patchify bucketed sampling, decoupled spatial-sequence modeling, and RoPE.
 
 ## Background & Motivation
-**State of the Field**: Pansharpening fuses high-resolution panchromatic (PAN) images with low-resolution multispectral (LRMS) images to produce high-resolution multispectral (HRMS) images, a core task in remote sensing image processing. CNN/Transformer-based methods (MSDCNN, HFIN, ARConv, etc.) have achieved substantial progress.
+**Background**: Pansharpening fuses high-resolution panchromatic (PAN) images with low-resolution multispectral (LRMS) images to produce high-resolution multispectral (HRMS) images, a core task in remote sensing image processing. CNN/Transformer-based methods (MSDCNN, HFIN, ARConv, etc.) have achieved substantial progress.
 
 **Limitations of Prior Work**: (i) **Computational and memory bottlenecks** — scaling from training crop sizes (200–256 px) to inference at 800/1600/2000 px causes Transformer memory to explode, with standard GPUs frequently running out of memory at 800 px; (ii) **Patch inference artifacts** — forced patch-based inference introduces boundary discontinuities and visible block artifacts; (iii) **Weak cross-scale generalization** — training at a single low resolution induces scale-induced distribution shift, with brightness distributions shifting noticeably as resolution increases.
 
-**Root Cause**: Existing datasets (PanCollection, NBU, PAirMax) provide only limited scale diversity and resolution range, lacking a standardized multi-scale, high-resolution evaluation protocol.
+**Key Challenge**: Existing datasets (PanCollection, NBU, PAirMax) provide only limited scale diversity and resolution range, lacking a standardized multi-scale, high-resolution evaluation protocol.
 
-**Paper Goals**: Systematically address the challenges of cross-scale pansharpening across three dimensions: data, algorithm, and computation.
+**Goal**: Systematically address the challenges of cross-scale pansharpening across three dimensions: data, algorithm, and computation.
 
-**Starting Point**: Reframe resolution variation as sequence length variation — spatial patch size is fixed, so only the sequence length grows linearly with image scale.
+**Key Insight**: Reframe resolution variation as sequence length variation — spatial patch size is fixed, so only the sequence length grows linearly with image scale.
 
 **Core Idea**: Introduce a sequence axis via Scale-Aware Patchify, decouple spatial modeling from scale modeling, and leverage RoPE to extrapolate to unseen scales.
 

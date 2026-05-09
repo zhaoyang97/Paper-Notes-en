@@ -27,15 +27,15 @@ This paper proposes the CEFM framework, which aligns ViT visual features with AB
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning has achieved expert-level performance (≥90% accuracy) in melanoma classification; however, these models remain black boxes, lacking interpretability and thereby limiting clinical adoption. Existing XAI methods such as Grad-CAM only highlight attention regions without establishing semantic associations with clinical diagnostic criteria (i.e., the ABCD rule).
+**Background**: Deep learning has achieved expert-level performance (≥90% accuracy) in melanoma classification; however, these models remain black boxes, lacking interpretability and thereby limiting clinical adoption. Existing XAI methods such as Grad-CAM only highlight attention regions without establishing semantic associations with clinical diagnostic criteria (i.e., the ABCD rule).
 
 **Limitations of Prior Work**: (a) Heatmap-based methods like Grad-CAM cannot provide clinically actionable explanations—"where the model looks" does not equate to "why it predicts malignancy"; (b) attention-based text generation approaches (e.g., LSTM descriptions) are not anchored to diagnostic standards; (c) methods requiring extensive manual annotation for alignment (e.g., CompA) exhibit poor scalability.
 
-**Root Cause**: A trust gap exists between a model's high accuracy and its low interpretability—clinicians require explanations aligned with ABCD diagnostic criteria before trusting AI-assisted diagnosis.
+**Key Challenge**: A trust gap exists between a model's high accuracy and its low interpretability—clinicians require explanations aligned with ABCD diagnostic criteria before trusting AI-assisted diagnosis.
 
-**Paper Goals**: To design a framework that explicitly aligns the visual features of deep models with clinical ABC diagnostic criteria and automatically generates structured diagnostic reports.
+**Goal**: To design a framework that explicitly aligns the visual features of deep models with clinical ABC diagnostic criteria and automatically generates structured diagnostic reports.
 
-**Starting Point**: Cross-modal contrastive learning is used to align ViT visual features with quantified ABC clinical features in a shared embedding space, followed by CLIP and an LLM for readable report generation.
+**Key Insight**: Cross-modal contrastive learning is used to align ViT visual features with quantified ABC clinical features in a shared embedding space, followed by CLIP and an LLM for readable report generation.
 
 **Core Idea**: Anchor black-box visual features to interpretable ABC clinical features via cross-modal contrastive learning, and subsequently employ an LLM to translate these into natural-language diagnostic reports.
 

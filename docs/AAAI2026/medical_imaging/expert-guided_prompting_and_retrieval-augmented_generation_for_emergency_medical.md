@@ -29,13 +29,13 @@ This paper constructs EMSQA, the first multiple-choice QA dataset for the emerge
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have demonstrated strong performance on general medical QA benchmarks (MedQA, MedMCQA), with CoT reasoning and RAG-based retrieval being the two dominant approaches for further performance gains.
+**Background**: LLMs have demonstrated strong performance on general medical QA benchmarks (MedQA, MedMCQA), with CoT reasoning and RAG-based retrieval being the two dominant approaches for further performance gains.
 
 **Limitations of Prior Work**: Existing methods treat reasoning and retrieval as undifferentiated, general-purpose processes — models directly reason or retrieve upon seeing a question, without distinguishing the specific clinical domain (e.g., trauma, airway management, pharmacology) or certification level (EMR/EMT/AEMT/Paramedic) involved. In practice, however, medical professionals always first identify the subject area of a question before reasoning from the corresponding knowledge framework.
 
-**Root Cause**: The EMS domain lacks publicly available QA datasets and structured knowledge bases, and existing CoT/RAG methods provide no mechanism to leverage question-level expertise attributes (subject area + certification level) to guide reasoning and retrieval.
+**Key Challenge**: The EMS domain lacks publicly available QA datasets and structured knowledge bases, and existing CoT/RAG methods provide no mechanism to leverage question-level expertise attributes (subject area + certification level) to guide reasoning and retrieval.
 
-**Paper Goals**: The paper constructs the EMSQA dataset and an accompanying knowledge base, trains a lightweight Filter classifier to infer expertise attributes of questions, and then injects these attributes into CoT prompts via Expert-CoT and uses them to filter the knowledge base for targeted retrieval via ExpertRAG. The core idea is to formalize the cognitive process of domain experts as explicit signals that can be injected into LLMs.
+**Goal**: The paper constructs the EMSQA dataset and an accompanying knowledge base, trains a lightweight Filter classifier to infer expertise attributes of questions, and then injects these attributes into CoT prompts via Expert-CoT and uses them to filter the knowledge base for targeted retrieval via ExpertRAG. The core idea is to formalize the cognitive process of domain experts as explicit signals that can be injected into LLMs.
 
 ## Method
 

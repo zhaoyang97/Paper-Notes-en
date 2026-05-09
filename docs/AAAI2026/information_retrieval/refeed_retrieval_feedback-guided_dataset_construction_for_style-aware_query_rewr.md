@@ -26,15 +26,15 @@ content_hash: 012b1725395e6367
 This paper proposes a retrieval feedback-driven dataset construction framework that automatically builds high-quality style-aware query rewriting datasets through a closed-loop pipeline of three steps: identifying retrieval failure cases, LLM-based stylistic rewriting, and re-retrieval verification. The resulting dataset provides a data foundation for training retrieval-aligned rewriting models.
 
 ## Background & Motivation
-**State of the Field**: Retrieval-Augmented Generation (RAG) systems are widely deployed in practice, yet a significant gap exists between the style of user queries (colloquial, informal) and that of domain documents (formal, specialized terminology), leading to retrieval failures.
+**Background**: Retrieval-Augmented Generation (RAG) systems are widely deployed in practice, yet a significant gap exists between the style of user queries (colloquial, informal) and that of domain documents (formal, specialized terminology), leading to retrieval failures.
 
 **Limitations of Prior Work**: Existing query rewriting methods focus primarily on semantic fidelity while neglecting the stylistic characteristics of the target corpus (wording, tone, structure), resulting in rewritten queries that still deviate from the document distribution and yield suboptimal retrieval performance.
 
-**Root Cause**: Style-aware query rewriting requires large amounts of high-quality training data, yet existing datasets (e.g., CANARD, QReCC) contain only semantic rewrites and lack retrieval feedback and style variation information. Furthermore, existing methods apply feedback solely as a reinforcement learning signal during training, rather than during data construction.
+**Key Challenge**: Style-aware query rewriting requires large amounts of high-quality training data, yet existing datasets (e.g., CANARD, QReCC) contain only semantic rewrites and lack retrieval feedback and style variation information. Furthermore, existing methods apply feedback solely as a reinforcement learning signal during training, rather than during data construction.
 
-**Paper Goals**: To automatically construct a high-quality query rewriting dataset that jointly encodes retrieval feedback and document style alignment information.
+**Goal**: To automatically construct a high-quality query rewriting dataset that jointly encodes retrieval feedback and document style alignment information.
 
-**Starting Point**: Retrieval feedback is repurposed as a data filtering signal rather than a training signal, and datasets are constructed through a closed-loop pipeline of "failure identification → LLM rewriting → verification filtering."
+**Key Insight**: Retrieval feedback is repurposed as a data filtering signal rather than a training signal, and datasets are constructed through a closed-loop pipeline of "failure identification → LLM rewriting → verification filtering."
 
 **Core Idea**: Retrieval failure cases serve as the starting point for rewriting; an LLM rewrites queries in accordance with the style of the ground-truth document, and only rewritten pairs that pass re-retrieval verification are retained.
 

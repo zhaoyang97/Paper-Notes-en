@@ -29,15 +29,15 @@ This paper proposes VidTAG, a dual-encoder (CLIP+DINOv2) frame-to-GPS retrieval 
 
 ## Background & Motivation
 
-**State of the Field**: Image geolocalization is dominated by two paradigms — classification (partitioning the Earth into regions and predicting labels) and retrieval (matching against a geo-referenced image database). GeoCLIP embeds images and GPS coordinates into a shared space to enable direct GPS retrieval.
+**Background**: Image geolocalization is dominated by two paradigms — classification (partitioning the Earth into regions and predicting labels) and retrieval (matching against a geo-referenced image database). GeoCLIP embeds images and GPS coordinates into a shared space to enable direct GPS retrieval.
 
 **Limitations of Prior Work**: Classification methods offer only coarse city-level localization; image retrieval methods require enormous image databases, making them infeasible at global scale. For video, applying image-based methods frame-by-frame produces "jittery" trajectories, with worst-case predictions spanning continents. The only global-scale video method, CityGuessr, reasons at the full video level and does not support per-frame localization.
 
-**Root Cause**: Achieving accurate and temporally consistent per-frame trajectories at global scale remains an open challenge.
+**Key Challenge**: Achieving accurate and temporally consistent per-frame trajectories at global scale remains an open challenge.
 
-**Paper Goals**: (1) Introduce a new frame-to-GPS retrieval paradigm; (2) Address temporal inconsistency in video-level prediction.
+**Goal**: (1) Introduce a new frame-to-GPS retrieval paradigm; (2) Address temporal inconsistency in video-level prediction.
 
-**Starting Point**: Constructing a GPS coordinate gallery (rather than an image gallery) is simple and inexpensive, making frame-to-GPS retrieval tractable at global scale.
+**Key Insight**: Constructing a GPS coordinate gallery (rather than an image gallery) is simple and inexpensive, making frame-to-GPS retrieval tractable at global scale.
 
 **Core Idea**: TempGeo performs inter-frame temporal alignment, and GeoRefiner applies denoising-based refinement, together enabling temporally consistent per-frame GPS prediction.
 

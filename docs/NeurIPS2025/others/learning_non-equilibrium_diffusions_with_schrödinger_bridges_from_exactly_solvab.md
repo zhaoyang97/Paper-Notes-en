@@ -28,15 +28,15 @@ This paper generalizes the Schrödinger bridge problem (SBP) from Brownian motio
 
 ## Background & Motivation
 
-**State of the Field**: The Schrödinger bridge problem (SBP) is the theoretical backbone for reconstructing stochastic dynamics from population snapshots, with broad applications in biological cell dynamics modeling and generative models.
+**Background**: The Schrödinger bridge problem (SBP) is the theoretical backbone for reconstructing stochastic dynamics from population snapshots, with broad applications in biological cell dynamics modeling and generative models.
 
 **Limitations of Prior Work**: Existing methods almost exclusively assume Brownian motion or scalar OU processes as reference dynamics, restricting modeling to gradient-driven (equilibrium) systems; biological systems, however, are inherently non-equilibrium.
 
-**Root Cause**: Non-equilibrium systems require asymmetric drift matrices (non-conservative force fields), yet methods permitting general drift (e.g., IPFP, Neural SDEs) rely on expensive numerical simulation and suffer from poor accuracy in high dimensions.
+**Key Challenge**: Non-equilibrium systems require asymmetric drift matrices (non-conservative force fields), yet methods permitting general drift (e.g., IPFP, Neural SDEs) rely on expensive numerical simulation and suffer from poor accuracy in high dimensions.
 
-**Paper Goals**: Efficiently and accurately solve the SBP for non-equilibrium systems within the framework of linear reference dynamics (mvOU processes).
+**Goal**: Efficiently and accurately solve the SBP for non-equilibrium systems within the framework of linear reference dynamics (mvOU processes).
 
-**Starting Point**: Exploit the analytical tractability of mvOU processes to strike a balance between physical relevance and computational feasibility.
+**Key Insight**: Exploit the analytical tractability of mvOU processes to strike a balance between physical relevance and computational feasibility.
 
 **Core Idea**: Use the mvOU process as the reference process and leverage its analytical bridge formulas to enable simulation-free score/flow matching training.
 

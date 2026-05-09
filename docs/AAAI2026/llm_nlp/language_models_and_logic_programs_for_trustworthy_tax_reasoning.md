@@ -29,18 +29,18 @@ This paper reframes tax law reasoning as a semantic parsing task, where LLMs tra
 
 ## Background & Motivation
 
-**State of the Field**: Nearly every adult worldwide must file taxes annually. In the United States, this costs an average of \$270 and 13 hours per person. Tax law reasoning requires the compositional application of overlapping rules combined with numerical computation, where errors incur financial penalties. Although LLMs demonstrate general mathematical reasoning capabilities, tax reasoning requires applying contingent rules provided at inference time rather than general arithmetic learned during training.
+**Background**: Nearly every adult worldwide must file taxes annually. In the United States, this costs an average of \$270 and 13 hours per person. Tax law reasoning requires the compositional application of overlapping rules combined with numerical computation, where errors incur financial penalties. Although LLMs demonstrate general mathematical reasoning capabilities, tax reasoning requires applying contingent rules provided at inference time rather than general arithmetic learned during training.
 
 **Limitations of Prior Work**:
 - **Unreliable direct computation by LLMs**: Even GPT-4/o3 achieves only 56–76% accuracy when directly computing tax liabilities, and errors carry real financial consequences.
 - **Lack of auditability**: The causal relationship between an LLM's chain-of-thought (CoT) and its final answer is unreliable and cannot serve as an audit trail.
 - **Inability to express uncertainty**: LLMs always produce an answer and do not abstain when uncertain.
 
-**Root Cause**: Tax law reasoning demands high accuracy, auditability, and the capacity to abstain under uncertainty — precisely the three dimensions where LLMs are weakest.
+**Key Challenge**: Tax law reasoning demands high accuracy, auditability, and the capacity to abstain under uncertainty — precisely the three dimensions where LLMs are weakest.
 
-**Paper Goals**: How can LLMs and symbolic reasoning be integrated so that an automated tax filing system simultaneously satisfies high accuracy, auditability, and cost-effectiveness?
+**Goal**: How can LLMs and symbolic reasoning be integrated so that an automated tax filing system simultaneously satisfies high accuracy, auditability, and cost-effectiveness?
 
-**Starting Point**: Reframe tax law reasoning as semantic parsing — LLMs handle translation from natural language to Prolog code, while a Prolog engine handles precise computation and reasoning traces.
+**Key Insight**: Reframe tax law reasoning as semantic parsing — LLMs handle translation from natural language to Prolog code, while a Prolog engine handles precise computation and reasoning traces.
 
 **Core Idea**: LLMs perform translation (natural language → Prolog); a symbolic solver performs reasoning. The two components collaborate with a division of labor, augmented by self-consistency checking and abstention upon failure.
 

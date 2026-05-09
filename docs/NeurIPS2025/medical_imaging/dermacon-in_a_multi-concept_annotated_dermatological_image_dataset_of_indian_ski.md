@@ -28,7 +28,7 @@ This work introduces DermaCon-IN—the first densely annotated dermatological im
 
 ## Background & Motivation
 
-**State of the Field**: Skin diseases constitute the fourth largest non-fatal disease burden globally. AI-assisted diagnosis is regarded as a promising approach to address the shortage of dermatological resources; however, existing models are predominantly trained and evaluated on datasets collected from Europe and North America.
+**Background**: Skin diseases constitute the fourth largest non-fatal disease burden globally. AI-assisted diagnosis is regarded as a promising approach to address the shortage of dermatological resources; however, existing models are predominantly trained and evaluated on datasets collected from Europe and North America.
 
 **Limitations of Prior Work**:
    - Severe dataset bias: ISIC, HAM10000, and similar datasets focus on neoplastic conditions such as melanoma, neglecting tropical high-prevalence diseases such as fungal infections and scabies.
@@ -36,9 +36,9 @@ This work introduces DermaCon-IN—the first densely annotated dermatological im
    - One-dimensional annotations: Most datasets provide only diagnostic labels, lacking anatomical site information and lesion morphology descriptors.
    - Data source bias: SD-198 and Fitzpatrick17k are derived from teaching atlases rather than prospective clinical collection.
 
-**Root Cause**: The geographic, skin-tone, and disease-spectrum biases in existing datasets cause AI model accuracy to drop by 30–40% for darker-skinned populations (as demonstrated on the DDI dataset), precluding equitable service to global populations.
+**Key Challenge**: The geographic, skin-tone, and disease-spectrum biases in existing datasets cause AI model accuracy to drop by 30–40% for darker-skinned populations (as demonstrated on the DDI dataset), precluding equitable service to global populations.
 
-**Starting Point**: Prospective collection from Indian outpatient clinics to construct a dataset with broad disease coverage, representative skin tones, and multi-dimensional annotations.
+**Key Insight**: Prospective collection from Indian outpatient clinics to construct a dataset with broad disease coverage, representative skin tones, and multi-dimensional annotations.
 
 **Core Idea**: To provide the first dermatological dataset predominantly featuring South Asian skin tones, incorporating a triple annotation scheme covering diagnostic hierarchy, anatomical sites, and lesion descriptors simultaneously.
 

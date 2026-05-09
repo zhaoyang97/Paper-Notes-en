@@ -26,15 +26,15 @@ content_hash: 47df0a899bcb49f3
 This paper introduces Ambig-SWE, an underspecified variant of SWE-Bench Verified, and systematically evaluates LLM coding agents across three dimensions of interactive capability—detecting underspecification, formulating clarification questions, and leveraging obtained information. Results show that interaction can improve resolution rates in underspecified settings by up to 74%, yet models default to non-interactive behavior and struggle to distinguish between well-specified and underspecified instructions.
 
 ## Background & Motivation
-**State of the Field**: LLM agents are widely deployed in software engineering tasks (e.g., OpenHands on SWE-Bench), but user instructions are frequently underspecified. Human developers proactively ask for clarification when information is insufficient, whereas AI agents tend to make assumptions and proceed directly.
+**Background**: LLM agents are widely deployed in software engineering tasks (e.g., OpenHands on SWE-Bench), but user instructions are frequently underspecified. Human developers proactively ask for clarification when information is insufficient, whereas AI agents tend to make assumptions and proceed directly.
 
 **Limitations of Prior Work**: (1) Underspecified instructions lead to erroneous outputs, security risks, and wasted computational resources; (2) existing research on underspecification focuses only on the absence of a single detail, whereas real-world software engineering tasks involve multiple interdependent information gaps; (3) LLMs default to non-interactive behavior—failing to ask questions even when faced with severe information deficiency.
 
-**Root Cause**: Interaction can effectively recover performance lost due to underspecification (by up to 74%), yet models do not know when to interact, what to ask, or how to utilize the information obtained.
+**Key Challenge**: Interaction can effectively recover performance lost due to underspecification (by up to 74%), yet models do not know when to interact, what to ask, or how to utilize the information obtained.
 
-**Paper Goals**: To systematically evaluate and quantify LLM agents' ability to handle underspecified instructions by decomposing the capability into atomic skills that can be improved independently.
+**Goal**: To systematically evaluate and quantify LLM agents' ability to handle underspecified instructions by decomposing the capability into atomic skills that can be improved independently.
 
-**Starting Point**: An underspecified variant of SWE-Bench Verified is constructed; three evaluation settings (Full/Hidden/Interaction) are designed, with GPT-4o simulating the user.
+**Key Insight**: An underspecified variant of SWE-Bench Verified is constructed; three evaluation settings (Full/Hidden/Interaction) are designed, with GPT-4o simulating the user.
 
 **Core Idea**: Decompose underspecification handling into three steps—detect, ask, and utilize—and use interactive experiments to quantify the capability and improvement margin at each step.
 

@@ -30,7 +30,7 @@ This paper presents CObL, an architecture based on multiple frozen Stable Diffus
 
 ## Background & Motivation
 
-**State of the Field**: Perceptual organization is a foundational capability in computer vision — humans naturally decompose images into multiple objects, judge occlusion relationships, and even infer the shape and color of occluded regions (amodal completion). Enabling machines to do this, especially in zero-shot settings, remains highly challenging.
+**Background**: Perceptual organization is a foundational capability in computer vision — humans naturally decompose images into multiple objects, judge occlusion relationships, and even infer the shape and color of occluded regions (amodal completion). Enabling machines to do this, especially in zero-shot settings, remains highly challenging.
 
 **Limitations of Prior Work**:
    - **Amodal completion methods** (e.g., pix2gestalt): handle only one object at a time and require manually provided masks to specify the target object
@@ -38,14 +38,14 @@ This paper presents CObL, an architecture based on multiple frozen Stable Diffus
    - **Object-centric representation learning** (e.g., MONet, IODINE): can decompose scenes in an unsupervised manner but are confined to closed-world settings seen during training (e.g., CLEVR) and cannot generalize to novel objects
    - **Lack of suitable training data**: existing datasets either provide only amodal boundaries (without appearance), only occlusion ordering (without amodal completion), or depict insufficiently realistic scenes
 
-**Root Cause**: No prior method simultaneously achieves all four of the following: (1) no user prompts, (2) automatic processing of all objects, (3) inference of occlusion order and amodal completion, and (4) zero-shot generalization to novel objects.
+**Key Challenge**: No prior method simultaneously achieves all four of the following: (1) no user prompts, (2) automatic processing of all objects, (3) inference of occlusion order and amodal completion, and (4) zero-shot generalization to novel objects.
 
-**Paper Goals**:
+**Goal**:
    - Design a model that automatically infers a complete object layer representation from a single image
    - Require no knowledge of object count and no manual prompts of any kind
    - Generalize zero-shot to real-world scenes when trained exclusively on synthetic data
 
-**Starting Point**: Leverage Stable Diffusion as a strong prior over natural images. A single SD instance may struggle with basic perceptual organization tasks (e.g., recognizing disconnected visible parts of an occluded object), but multiple SD instances communicating via cross-layer attention can address this more effectively.
+**Key Insight**: Leverage Stable Diffusion as a strong prior over natural images. A single SD instance may struggle with basic perceptual organization tasks (e.g., recognizing disconnected visible parts of an occluded object), but multiple SD instances communicating via cross-layer attention can address this more effectively.
 
 **Core Idea**: Deploy $N$ frozen Stable Diffusion UNets to jointly denoise $N$ object layers in parallel, synchronize generation across layers via learnable cross-layer attention, and enforce physical consistency during inference through compositional guidance ensuring the layers composite back to the original image.
 

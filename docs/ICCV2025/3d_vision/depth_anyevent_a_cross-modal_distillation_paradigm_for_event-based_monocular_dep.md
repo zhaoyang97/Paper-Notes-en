@@ -24,10 +24,10 @@ This paper proposes a cross-modal distillation paradigm that leverages a vision 
 
 ## Background & Motivation
 
-- **State of the Field**: Event cameras capture brightness changes at microsecond-level temporal resolution with high dynamic range, making them particularly suitable for high-speed motion and challenging illumination scenarios (autonomous driving, UAVs, robotics, etc.)
+- **Background**: Event cameras capture brightness changes at microsecond-level temporal resolution with high dynamic range, making them particularly suitable for high-speed motion and challenging illumination scenarios (autonomous driving, UAVs, robotics, etc.)
 - **Limitations of Prior Work**: Event data lacks large-scale datasets with dense depth annotations; the prohibitive annotation cost severely constrains learning-based depth estimation methods.
-- **Root Cause**: VFMs in the image domain (e.g., Depth Anything v2) achieve strong depth estimation capabilities through large-scale pretraining, yet no equivalent large-scale dataset exists in the event domain.
-- **Paper Goals**: DAVIS cameras can simultaneously output spatially aligned RGB frames and event streams, providing a natural condition for cross-modal knowledge transfer.
+- **Key Challenge**: VFMs in the image domain (e.g., Depth Anything v2) achieve strong depth estimation capabilities through large-scale pretraining, yet no equivalent large-scale dataset exists in the event domain.
+- **Goal**: DAVIS cameras can simultaneously output spatially aligned RGB frames and event streams, providing a natural condition for cross-modal knowledge transfer.
 
 ## Method
 

@@ -29,7 +29,7 @@ This paper proposes TAB (Transformer Attention Bottleneck), a single-head co-att
 
 ## Background & Motivation
 
-**State of the Field**: VLMs are widely used in image comparison tasks (e.g., change captioning, surveillance), but frequently generate erroneous descriptions when comparing two images. Understanding "where" a VLM looks is crucial for debugging and building user trust.
+**Background**: VLMs are widely used in image comparison tasks (e.g., change captioning, surveillance), but frequently generate erroneous descriptions when comparing two images. Understanding "where" a VLM looks is crucial for debugging and building user trust.
 
 **Challenges in ViT Attention Visualization**:
    - Existing ViT MHSA involves multiple layers and heads, producing scattered or diffuse attention patterns that make it difficult to attribute each patch's contribution to the output.
@@ -37,7 +37,7 @@ This paper proposes TAB (Transformer Attention Bottleneck), a single-head co-att
 
 **Limitations of Prior Work**: In existing methods, modifying internal attention values in ViT does not affect outputs (as demonstrated in Figure 1 with CLIP4IDC attention failure), indicating that attention maps reflect correlation rather than causation. Users cannot debug or correct model errors by editing attention.
 
-**Paper Goals**: To construct an attention bottleneck that (1) produces attention maps that precisely reflect per-patch contributions, (2) supports ground-truth bounding box supervision of attention, and (3) allows users to edit attention values at test time and directly influence VLM outputs.
+**Goal**: To construct an attention bottleneck that (1) produces attention maps that precisely reflect per-patch contributions, (2) supports ground-truth bounding box supervision of attention, and (3) allows users to edit attention values at test time and directly influence VLM outputs.
 
 **Core Idea**: By removing the skip connection and using single-head attention, the TAB layer becomes a "valve" controlling visual information flow to the language model — zero attention transmits no visual information (causing the model to default to "no change"), while nonzero attention precisely controls which patches' information is passed through.
 

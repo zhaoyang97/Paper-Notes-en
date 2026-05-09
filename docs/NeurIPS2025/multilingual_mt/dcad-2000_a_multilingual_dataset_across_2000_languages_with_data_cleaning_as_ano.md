@@ -27,15 +27,15 @@ This work constructs DCAD-2000, a multilingual dataset covering 2,282 languages 
 
 ## Background & Motivation
 
-**State of the Field**: Multilingual LLMs require large-scale, high-quality multilingual datasets. Existing datasets (CulturaX, Madlad-400, Fineweb-2, etc.) have steadily increased language coverage, yet exhibit three critical limitations.
+**Background**: Multilingual LLMs require large-scale, high-quality multilingual datasets. Existing datasets (CulturaX, Madlad-400, Fineweb-2, etc.) have steadily increased language coverage, yet exhibit three critical limitations.
 
 **Limitations of Prior Work**: (a) **Data staleness**: most datasets are based on Common Crawl snapshots prior to 2022, resulting in outdated knowledge; (b) **Insufficient coverage of high/mid-resource languages**: Fineweb-2 supports 1,915 languages but only includes 10 high-resource and 62 mid-resource languages; (c) **Inadequate cleaning**: the Sailor study found that 31% of Madlad-400 data can still be removed by more advanced cleaning methods. Traditional heuristic cleaning with fixed thresholds generalizes poorly across languages, as distributions of word count, repetition rate, and perplexity vary substantially between languages.
 
-**Root Cause**: Manually tuning thresholds per language is not scalable (fine-tuning thresholds for 1,000+ languages as in Fineweb-2 is computationally prohibitive), yet uniform thresholds do not transfer across languages. A language-agnostic, adaptive cleaning approach is therefore needed.
+**Key Challenge**: Manually tuning thresholds per language is not scalable (fine-tuning thresholds for 1,000+ languages as in Fineweb-2 is computationally prohibitive), yet uniform thresholds do not transfer across languages. A language-agnostic, adaptive cleaning approach is therefore needed.
 
-**Paper Goals**: (a) Construct an up-to-date, comprehensive multilingual dataset directly usable for training; (b) propose a data cleaning framework that eliminates manual threshold tuning.
+**Goal**: (a) Construct an up-to-date, comprehensive multilingual dataset directly usable for training; (b) propose a data cleaning framework that eliminates manual threshold tuning.
 
-**Starting Point**: Data cleaning is reformulated as anomaly detection — low-quality documents are treated as outliers in feature space, identifiable via algorithms such as Isolation Forest.
+**Key Insight**: Data cleaning is reformulated as anomaly detection — low-quality documents are treated as outliers in feature space, identifiable via algorithms such as Isolation Forest.
 
 **Core Idea**: Replace fixed-threshold filtering with anomaly detection — extract 8-dimensional statistical features per document and allow the algorithm to automatically learn what constitutes a "normal" document for each language, flagging deviations as noise.
 

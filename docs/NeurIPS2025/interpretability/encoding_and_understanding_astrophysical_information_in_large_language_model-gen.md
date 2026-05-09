@@ -27,15 +27,15 @@ This work investigates whether LLM embeddings encode physically meaningful quant
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have demonstrated cross-domain generalization capabilities, yet it remains unclear whether their embeddings encode physical attributes directly measured from scientific observations—rather than merely textual descriptions. Astrophysics provides an ideal testbed: X-ray sources are characterized by precise physical measurements (from the Chandra Source Catalog) and rich literature descriptions.
+**Background**: LLMs have demonstrated cross-domain generalization capabilities, yet it remains unclear whether their embeddings encode physical attributes directly measured from scientific observations—rather than merely textual descriptions. Astrophysics provides an ideal testbed: X-ray sources are characterized by precise physical measurements (from the Chandra Source Catalog) and rich literature descriptions.
 
 **Limitations of Prior Work**: (a) The scientific reasoning capabilities of LLMs are difficult to quantitatively assess; (b) it is unclear how prompt design affects the encoding of physical information; (c) the semantic pathways through which physical concepts are represented in LLM internal representations remain opaque.
 
-**Root Cause**: Do LLMs genuinely "understand" physics, or have they merely learned statistical correlations? How can physical information be disentangled from embedding spaces?
+**Key Challenge**: Do LLMs genuinely "understand" physics, or have they merely learned statistical correlations? How can physical information be disentangled from embedding spaces?
 
-**Paper Goals**: (1) Does prompt design affect how LLMs encode physical quantities? (2) Which aspects of language are most important for encoding physical information?
+**Goal**: (1) Does prompt design affect how LLMs encode physical quantities? (2) Which aspects of language are most important for encoding physical information?
 
-**Starting Point**: GPT-4o-mini is used to generate textual summaries for 4,000 X-ray sources from NASA ADS papers; ada-002 is used to produce embeddings; the clustering quality of physical attributes in embedding space is then measured.
+**Key Insight**: GPT-4o-mini is used to generate textual summaries for 4,000 X-ray sources from NASA ADS papers; ada-002 is used to produce embeddings; the clustering quality of physical attributes in embedding space is then measured.
 
 **Core Idea**: KNN purity is used to measure the encoding quality of physical attributes in embeddings, while sparse autoencoders are employed to trace semantic pathways—revealing that LLMs infer physical parameters through object-type recognition.
 

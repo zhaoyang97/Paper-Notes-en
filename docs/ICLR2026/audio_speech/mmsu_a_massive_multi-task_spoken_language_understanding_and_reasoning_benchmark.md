@@ -28,18 +28,18 @@ This paper introduces MMSU (5,000 audio QA items across 47 tasks), the first ben
 
 ## Background & Motivation
 
-**State of the Field**: SpeechLLMs (e.g., Qwen-Audio, Kimi-Audio, Gemini) have demonstrated strong capabilities in processing audio inputs, achieving impressive performance on ASR and audio understanding tasks. However, their abilities in fine-grained speech perception and complex reasoning remain systematically unevaluated.
+**Background**: SpeechLLMs (e.g., Qwen-Audio, Kimi-Audio, Gemini) have demonstrated strong capabilities in processing audio inputs, achieving impressive performance on ASR and audio understanding tasks. However, their abilities in fine-grained speech perception and complex reasoning remain systematically unevaluated.
 
 **Limitations of Prior Work**: Existing speech benchmarks suffer from three major shortcomings:
    - **Narrow coverage**: Primarily focused on semantic-level tasks, neglecting non-linguistic phenomena common in everyday speech (hesitations, sarcasm, self-corrections, prosodic variations, etc.)
    - **Insufficient data authenticity**: Heavy reliance on TTS-synthesized speech, lacking the acoustic diversity of real human speech
    - **Absence of linguistic theory**: Evaluation designs do not consider foundational principles from phonetics, prosody, rhetoric, and related fields, resulting in systematic blind spots
 
-**Root Cause**: Genuine spoken language understanding requires not only comprehending *what is said* (semantics), but also *how it is said* (prosody, emotion) and *what is truly meant* (pragmatics)—dimensions that existing benchmarks fail to assess.
+**Key Challenge**: Genuine spoken language understanding requires not only comprehending *what is said* (semantics), but also *how it is said* (prosody, emotion) and *what is truly meant* (pragmatics)—dimensions that existing benchmarks fail to assess.
 
-**Paper Goals**: To construct a comprehensive, linguistically grounded evaluation framework that systematically assesses SpeechLLM capabilities along both perception and reasoning dimensions.
+**Goal**: To construct a comprehensive, linguistically grounded evaluation framework that systematically assesses SpeechLLM capabilities along both perception and reasoning dimensions.
 
-**Starting Point**: A top-down task taxonomy is designed based on a structured linguistic theoretical framework spanning phonetics, prosody, rhetoric, syntax, semantics, and paralinguistics.
+**Key Insight**: A top-down task taxonomy is designed based on a structured linguistic theoretical framework spanning phonetics, prosody, rhetoric, syntax, semantics, and paralinguistics.
 
 **Core Idea**: Systematically integrate linguistic theory into speech benchmark design, creating a comprehensive evaluation framework across 47 tasks that exposes critical weaknesses of SpeechLLMs in phonological perception and reasoning.
 

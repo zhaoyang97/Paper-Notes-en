@@ -36,11 +36,11 @@ This paper identifies Gaussian densification in 3DGS as the key factor responsib
 - *Uncertainty-based masks*: Predict motion masks from photometric reconstruction uncertainty, but are often unreliable.
 - *Learning-based motion masks*: Use MLPs to predict masks (with DINO features as input), supervised by photometric residuals or feature similarity. However, 3DGS representations are under-optimized in the early training stage, producing overly smooth renderings that lead to inaccurate mask estimation.
 
-**Root Cause**: Mask learning and Gaussian optimization suffer from a chicken-and-egg problem — low rendering quality in early training causes static regions to be misclassified as dynamic (over-masking) or dynamic regions to go unfiltered (under-masking). Once early densification introduces Gaussians that model transient objects, they are difficult to remove in subsequent stages.
+**Key Challenge**: Mask learning and Gaussian optimization suffer from a chicken-and-egg problem — low rendering quality in early training causes static regions to be misclassified as dynamic (over-masking) or dynamic regions to go unfiltered (under-masking). Once early densification introduces Gaussians that model transient objects, they are difficult to remove in subsequent stages.
 
 **Key Findings**: Through empirical analysis, the authors make the surprising discovery that **vanilla 3DGS with densification entirely disabled already achieves transient removal performance comparable to SpotLessSplats**. Without densification, the image reconstruction loss can only optimize Gaussian shape and color, while initial Gaussian positions remain stable and do not overfit transient regions. The downside, however, is loss of detail — rendering is overly smooth in regions with sparse initial points.
 
-**Starting Point**: Since "no densification" prevents transient overfitting but sacrifices detail, while "early densification" captures detail but overfits transients, the key lies in **delayed densification** — allowing the static scene structure to stabilize first, then progressively adding Gaussians to refine detail, coupled with more robust mask supervision signals.
+**Key Insight**: Since "no densification" prevents transient overfitting but sacrifices detail, while "early densification" captures detail but overfits transients, the key lies in **delayed densification** — allowing the static scene structure to stabilize first, then progressively adding Gaussians to refine detail, coupled with more robust mask supervision signals.
 
 ## Method
 

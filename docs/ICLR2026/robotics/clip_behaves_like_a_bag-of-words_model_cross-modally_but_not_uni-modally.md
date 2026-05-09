@@ -27,15 +27,15 @@ content_hash: f7fd968255e3384a
 Through linear probing experiments, this paper demonstrates that CLIP's bag-of-words (BoW) behavior does not stem from a lack of binding information in the encoders, but rather from a failure of cross-modal alignment. The paper proposes LABCLIP, which trains a single lightweight linear transformation to substantially recover attribute-object binding capability.
 
 ## Background & Motivation
-**State of the Field**: CLIP is widely used as a foundational component of vision-language models; however, prior work (ARO, SugarCrepe, etc.) has shown that CLIP performs poorly on compositional understanding, often behaving like a BoW model that cannot distinguish "red cube and blue triangle" from "blue cube and red triangle."
+**Background**: CLIP is widely used as a foundational component of vision-language models; however, prior work (ARO, SugarCrepe, etc.) has shown that CLIP performs poorly on compositional understanding, often behaving like a BoW model that cannot distinguish "red cube and blue triangle" from "blue cube and red triangle."
 
 **Limitations of Prior Work**: Previous studies evaluated BoW behavior only at the cross-modal level (image-text matching), making it impossible to determine whether the problem originates from the encoders lacking binding information or from insufficient cross-modal alignment.
 
-**Root Cause**: If the problem lies in the encoders, retraining is required; if it resides only in the alignment, a lightweight adjustment suffices. Diagnosing the root cause has decisive implications for the direction of improvement.
+**Key Challenge**: If the problem lies in the encoders, retraining is required; if it resides only in the alignment, a lightweight adjustment suffices. Diagnosing the root cause has decisive implications for the direction of improvement.
 
-**Paper Goals**: To identify the fundamental cause of CLIP's BoW behavior and propose a minimal-cost remedy accordingly.
+**Goal**: To identify the fundamental cause of CLIP's BoW behavior and propose a minimal-cost remedy accordingly.
 
-**Starting Point**: The paper evaluates whether attribute-object binding information exists within each modality independently (uni-modally), for both image and text.
+**Key Insight**: The paper evaluates whether attribute-object binding information exists within each modality independently (uni-modally), for both image and text.
 
 **Core Idea**: CLIP's uni-modal embeddings already encode correct attribute binding; the cross-modal alignment simply fails to preserve this information — and a single linear transformation is sufficient to fix this.
 

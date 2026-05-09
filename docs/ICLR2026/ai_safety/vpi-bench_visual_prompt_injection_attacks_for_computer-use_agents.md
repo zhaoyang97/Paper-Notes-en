@@ -28,18 +28,18 @@ This paper introduces VPI-Bench, the first comprehensive visual prompt injection
 
 ## Background & Motivation
 
-**State of the Field**: Computer-Use Agents (CUA) and Browser-Use Agents (BUA) possess full system-level privileges, enabling file operations, terminal command execution, and message sending. Existing security research has primarily focused on HTML/DOM-level attacks against browser agents, overlooking the vulnerability of the visual perception channel.
+**Background**: Computer-Use Agents (CUA) and Browser-Use Agents (BUA) possess full system-level privileges, enabling file operations, terminal command execution, and message sending. Existing security research has primarily focused on HTML/DOM-level attacks against browser agents, overlooking the vulnerability of the visual perception channel.
 
 **Limitations of Prior Work**:
    - Over-reliance on text-based attack vectors (HTML injection); Anthropic's CUA parses only rendered screenshots, rendering HTML attacks ineffective.
    - Neglect of system-level threats: agents can modify files, execute commands, and exfiltrate private data.
    - Lack of end-to-end evaluation frameworks: existing benchmarks only inspect single-step malicious actions, ignoring chained behaviors and final consequences.
 
-**Root Cause**: CUA/BUA possess powerful system-level privileges but lack robust authorization verification mechanisms, making the visual channel a new attack surface.
+**Key Challenge**: CUA/BUA possess powerful system-level privileges but lack robust authorization verification mechanisms, making the visual channel a new attack surface.
 
-**Paper Goals**: Establish a systematic benchmark to evaluate the threat posed by visual prompt injection to CUA/BUA.
+**Goal**: Establish a systematic benchmark to evaluate the threat posed by visual prompt injection to CUA/BUA.
 
-**Starting Point**: An end-to-end threat model in which malicious content is delivered to agents via visual elements on webpages (pop-ups, chat messages, emails).
+**Key Insight**: An end-to-end threat model in which malicious content is delivered to agents via visual elements on webpages (pop-ups, chat messages, emails).
 
 **Core Idea**: Inject visually rendered malicious instructions into realistic web scenarios → end-to-end evaluation of whether agents execute dangerous system-level operations.
 

@@ -30,7 +30,7 @@ This paper formalizes cross-domain lossy compression — where the encoder obser
 
 ## Background & Motivation
 
-**State of the Field**: Classical rate-distortion theory (Shannon 1959) assumes that the encoder and decoder operate within the same distribution domain. In practice, however, the encoder observes degraded inputs (noisy images, low-resolution images, corrupted images), while the decoder must reconstruct samples from a clean target distribution.
+**Background**: Classical rate-distortion theory (Shannon 1959) assumes that the encoder and decoder operate within the same distribution domain. In practice, however, the encoder observes degraded inputs (noisy images, low-resolution images, corrupted images), while the decoder must reconstruct samples from a clean target distribution.
 
 **Limitations of Prior Work**:
 - Classical RD theory does not address cross-domain settings — the rate-distortion characteristics when source and target distributions differ lack a theoretical foundation.
@@ -38,11 +38,11 @@ This paper formalizes cross-domain lossy compression — where the encoder obser
 - Entropy-constrained optimal transport for cross-domain compression (Liu et al. 2022) does not incorporate classification or perceptual constraints and admits no closed-form solution.
 - Existing task-aware compression methods (Zhang 2023) analyze RDC only in the single-domain setting.
 
-**Root Cause**: Compressed representations must simultaneously serve multiple objectives — (1) low-distortion reconstruction, (2) rate constraints, (3) preservation of downstream classification information, and (4) perceptual quality — yet these objectives involve fundamental tradeoffs that lack a unified theoretical analysis framework.
+**Key Challenge**: Compressed representations must simultaneously serve multiple objectives — (1) low-distortion reconstruction, (2) rate constraints, (3) preservation of downstream classification information, and (4) perceptual quality — yet these objectives involve fundamental tradeoffs that lack a unified theoretical analysis framework.
 
-**Paper Goals**: Establish a theoretical framework for cross-domain lossy compression and derive closed-form expressions for the fundamental tradeoffs among rate, distortion, classification, and perception.
+**Goal**: Establish a theoretical framework for cross-domain lossy compression and derive closed-form expressions for the fundamental tradeoffs among rate, distortion, classification, and perception.
 
-**Starting Point**: The problem is formalized as an optimal transport problem with dual constraints (rate + classification). Shared common randomness is leveraged to eliminate stochasticity in the one-shot setting, and closed-form solutions are derived for classical tractable distribution families.
+**Key Insight**: The problem is formalized as an optimal transport problem with dual constraints (rate + classification). Shared common randomness is leveraged to eliminate stochasticity in the one-shot setting, and closed-form solutions are derived for classical tractable distribution families.
 
 **Core Idea**: A unified framework combining optimal transport, rate constraints, and classification constraints — providing, for the first time, analytic expressions for DRC/DRPC tradeoffs in the cross-domain setting.
 

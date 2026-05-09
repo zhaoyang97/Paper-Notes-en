@@ -27,15 +27,15 @@ content_hash: 0d64ea7878037cb0
 DeDelayed is an edge-cloud collaborative inference framework that combines a lightweight on-device image model with a latency-aware cloud-side temporal prediction video model. By training the network with temporally predictive objectives to compensate for communication delay, DeDelayed achieves gains of 6.4 mIoU over local-only inference and 9.8 mIoU over remote-only inference under 100 ms latency.
 
 ## Background & Motivation
-**State of the Field**: The most powerful video understanding models are computationally prohibitive for resource-constrained edge devices, while offloading inference to the cloud introduces communication latency that renders predictions stale.
+**Background**: The most powerful video understanding models are computationally prohibitive for resource-constrained edge devices, while offloading inference to the cloud introduces communication latency that renders predictions stale.
 
 **Limitations of Prior Work**: (1) Existing segmentation offloading methods dedicate all local compute to a single inference pipeline, providing no fallback when the cloud is unavailable; (2) the impact of latency on prediction accuracy is not addressed; (3) computational cost is controlled by reducing spatiotemporal resolution.
 
-**Root Cause**: Cloud models offer high accuracy but incur latency, whereas local models run in real time but at lower accuracy — how can the advantages of both be combined?
+**Key Challenge**: Cloud models offer high accuracy but incur latency, whereas local models run in real time but at lower accuracy — how can the advantages of both be combined?
 
-**Paper Goals**: Design a real-time inference system that jointly exploits delayed high-quality remote features and instantaneous low-resolution local features.
+**Goal**: Design a real-time inference system that jointly exploits delayed high-quality remote features and instantaneous low-resolution local features.
 
-**Starting Point**: Train the remote model to predict features for **future frames**, so that delayed remote outputs remain useful upon arrival.
+**Key Insight**: Train the remote model to predict features for **future frames**, so that delayed remote outputs remain useful upon arrival.
 
 **Core Idea**: $\hat{y}_t = f_{\text{local}}(x_t, z_{t-\tau})$, where the local model processes the current frame and the remote model predicts future-frame features; the two are fused via element-wise addition.
 

@@ -29,15 +29,15 @@ This paper imports the temporal-difference (TD) learning idea from reinforcement
 
 ## Background & Motivation
 
-**State of the Field**: Sequence classification is a fundamental problem in machine learning. Conventional approaches predict only on complete sequences, but many scenarios require continuously updated predictions as a sequence unfolds incrementally—for example, waiting for a complete sequence is costly in medical or financial settings, and recent LLM verification work demands early detection of whether a generation is correct.
+**Background**: Sequence classification is a fundamental problem in machine learning. Conventional approaches predict only on complete sequences, but many scenarios require continuously updated predictions as a sequence unfolds incrementally—for example, waiting for a complete sequence is costly in medical or financial settings, and recent LLM verification work demands early detection of whether a generation is correct.
 
 **Limitations of Prior Work**: The standard approach (Direct Cross-Entropy, DCE) trains by directly comparing each prefix prediction against the final label. However, for early prefixes $\mathbf{x}_{\leq t}$ (where $t \ll T$), the final label constitutes a very noisy training signal—the model must simultaneously handle uncertainty about future sequence tokens and uncertainty about the final label.
 
-**Root Cause**: Using distant final labels as training targets for every intermediate time step ignores the temporal structure of sequences—the predictive distributions at adjacent time steps should satisfy a consistency relation.
+**Key Challenge**: Using distant final labels as training targets for every intermediate time step ignores the temporal structure of sequences—the predictive distributions at adjacent time steps should satisfy a consistency relation.
 
-**Paper Goals**: Develop improved loss functions for training incremental sequence classifiers, with particular emphasis on improving data efficiency and accuracy for prefix predictions.
+**Goal**: Develop improved loss functions for training incremental sequence classifiers, with particular emphasis on improving data efficiency and accuracy for prefix predictions.
 
-**Starting Point**: The paper observes a key identity: for any calibrated classifier, $p(y|s_t) = \mathbb{E}_{p(s_{t+1}|s_t)}[p(y|s_{t+1})]$—that is, the class distribution at the current step equals the expectation of the class distribution at the next step. This is precisely the classification analogue of the Bellman equation in TD learning.
+**Key Insight**: The paper observes a key identity: for any calibrated classifier, $p(y|s_t) = \mathbb{E}_{p(s_{t+1}|s_t)}[p(y|s_{t+1})]$—that is, the class distribution at the current step equals the expectation of the class distribution at the next step. This is precisely the classification analogue of the Bellman equation in TD learning.
 
 **Core Idea**: Use the predictive distribution at the next time step as a "soft target" for the current step, replacing distant hard labels (one-hot vectors), thereby enforcing temporal consistency constraints.
 

@@ -28,16 +28,16 @@ CalibRL reframes expert data as a distribution calibration baseline (rather than
 
 ## Background & Motivation
 
-**State of the Field**: RLVR has become the dominant paradigm for enhancing MLLM reasoning capabilities (e.g., DeepSeek-R1), yet performance gains are often accompanied by a significant drop in policy entropy—entropy exhaustion has become a bottleneck for further improvement.
+**Background**: RLVR has become the dominant paradigm for enhancing MLLM reasoning capabilities (e.g., DeepSeek-R1), yet performance gains are often accompanied by a significant drop in policy entropy—entropy exhaustion has become a bottleneck for further improvement.
 
 **Limitations of Prior Work**:
    - Conventional entropy regularization encourages randomness but provides no directional guidance → low exploration efficiency
    - In the SFT-then-RL paradigm, SFT anchors the policy to a static demonstration distribution → undermines subsequent RL exploration
    - Directly injecting SFT supervision into hybrid-policy frameworks → distributional mismatch between the current policy and expert trajectories → high bias-variance → accelerated entropy collapse
 
-**Root Cause**: Expert data is a double-edged sword—it provides useful guidance but also compresses the policy distribution. Maximizing $\pi_\theta(\tau^{expert})$ inevitably reduces the probability of other trajectories → overall entropy decreases.
+**Key Challenge**: Expert data is a double-edged sword—it provides useful guidance but also compresses the policy distribution. Maximizing $\pi_\theta(\tau^{expert})$ inevitably reduces the probability of other trajectories → overall entropy decreases.
 
-**Starting Point**: Expert data should not be "imitated" as an absolute target, but rather used as a reference baseline for relative calibration—under-represented correct reasoning paths are reinforced, while overconfident incorrect predictions are suppressed.
+**Key Insight**: Expert data should not be "imitated" as an absolute target, but rather used as a reference baseline for relative calibration—under-represented correct reasoning paths are reinforced, while overconfident incorrect predictions are suppressed.
 
 **Core Idea**: Transform expert supervision from a rigid imitation signal into a fine-grained calibration mechanism, achieving directed and regulated exploration via a log-probability gap combined with asymmetric LeakyReLU gating.
 

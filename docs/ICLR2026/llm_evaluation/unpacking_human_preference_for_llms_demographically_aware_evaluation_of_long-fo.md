@@ -34,7 +34,7 @@ This paper proposes the HUMAINE framework, which conducts multi-dimensional (5-a
     - **Human preference platforms** (Chatbot Arena): exhibit three methodological shortcomings — (a) anonymous self-selected users leading to non-representative sampling; (b) shallow evaluation with minimal interaction; (c) binary voting as a single-metric simplification.
 2. **Ignored Preference Heterogeneity**: Santurkar et al. (2023) demonstrated that evaluators' demographic characteristics significantly influence LLM preferences, yet existing leaderboards aggregate all populations into a single score.
 3. **Bias in the Third Paradigm**: LLM-as-a-judge offers scaling advantages but exhibits systematic biases (preference for verbose outputs, position bias, etc.) and should not substitute human evaluation.
-4. **Paper Goals**: To design a multi-dimensional, demographically aware evaluation framework that addresses three validity threats: sampling bias, insufficient evaluation depth, and metric oversimplification.
+4. **Goal**: To design a multi-dimensional, demographically aware evaluation framework that addresses three validity threats: sampling bias, insufficient evaluation depth, and metric oversimplification.
 
 ## Method
 

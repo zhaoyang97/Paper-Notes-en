@@ -29,11 +29,11 @@ This paper proposes the SMC-Mamba framework, which achieves general image fusion
 
 ## Background & Motivation
 
-1. **State of the Field**: Image fusion integrates complementary information from different modalities to generate high-quality fused images, enhancing downstream tasks such as object detection and semantic segmentation. The primary domains include infrared-visible (IVIF), medical (MDIF), multi-focus (MFIF), and multi-exposure (MEIF) fusion.
+1. **Background**: Image fusion integrates complementary information from different modalities to generate high-quality fused images, enhancing downstream tasks such as object detection and semantic segmentation. The primary domains include infrared-visible (IVIF), medical (MDIF), multi-focus (MFIF), and multi-exposure (MEIF) fusion.
 2. **Limitations of Prior Work**: (a) Most existing methods are designed for single specific tasks with poor generalization; (b) CNNs are constrained by local receptive fields, while Transformers incur prohibitive computational complexity ($O(n^2)$); (c) deep learning methods inherently favor low-frequency content, making it difficult to accurately capture high-frequency textures and structural details.
-3. **Root Cause**: General fusion requires a dynamically adaptive architecture that accommodates heterogeneous modality characteristics without increasing computational complexity. Existing Mamba-based fusion methods focus solely on spatial scanning or single-modality scenarios, neglecting spatial-channel interaction and cross-modal dependencies.
-4. **Paper Goals**: Design an efficient general fusion framework capable of handling all four fusion tasks while preserving high-frequency details without increasing model complexity.
-5. **Starting Point**: Combine the linear-complexity global modeling capability of Mamba with the dynamic adaptability of Mixture of Experts (MoE), and employ self-supervised contrastive learning to constrain high-frequency information.
+3. **Key Challenge**: General fusion requires a dynamically adaptive architecture that accommodates heterogeneous modality characteristics without increasing computational complexity. Existing Mamba-based fusion methods focus solely on spatial scanning or single-modality scenarios, neglecting spatial-channel interaction and cross-modal dependencies.
+4. **Goal**: Design an efficient general fusion framework capable of handling all four fusion tasks while preserving high-frequency details without increasing model complexity.
+5. **Key Insight**: Combine the linear-complexity global modeling capability of Mamba with the dynamic adaptability of Mixture of Experts (MoE), and employ self-supervised contrastive learning to constrain high-frequency information.
 6. **Core Idea**: Dynamically select and aggregate cross-modal experts via a MoE mechanism, while enforcing high-frequency preservation at both the feature and pixel levels through bi-level contrastive learning.
 
 ## Method

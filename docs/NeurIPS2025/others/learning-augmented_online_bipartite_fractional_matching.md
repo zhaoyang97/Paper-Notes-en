@@ -32,9 +32,9 @@ Online bipartite matching is a fundamental problem in online optimization, with 
 
 **Limitations of Prior Work**: Traditional adversarial models assume no structural information and measure worst-case performance, which tends to be overly pessimistic. Stochastic models assume known arrival distributions, but distribution estimation may be inaccurate. Learning-augmented algorithms offer a middle ground—leveraging predictions of unknown quality to improve performance—and are evaluated via robustness (worst-case guarantee independent of prediction quality) and consistency (performance when predictions are accurate).
 
-**Root Cause**: The classical CoinFlip strategy (randomly deciding whether to follow the advice) serves as a natural baseline, yet prior work (Mahdian et al. 2007, Spaeh & Ene 2023) only improves upon CoinFlip over a partial robustness range and fails to dominate it across the entire spectrum.
+**Key Challenge**: The classical CoinFlip strategy (randomly deciding whether to follow the advice) serves as a natural baseline, yet prior work (Mahdian et al. 2007, Spaeh & Ene 2023) only improves upon CoinFlip over a partial robustness range and fails to dominate it across the entire spectrum.
 
-**Paper Goals**: Whether a learning-augmented algorithm exists that Pareto-dominates CoinFlip across the entire robustness range. This paper answers affirmatively.
+**Goal**: Whether a learning-augmented algorithm exists that Pareto-dominates CoinFlip across the entire robustness range. This paper answers affirmatively.
 
 ## Method
 

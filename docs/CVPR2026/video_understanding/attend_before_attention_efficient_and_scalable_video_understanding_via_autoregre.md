@@ -33,11 +33,11 @@ This paper proposes AutoGaze—a lightweight autoregressive module with only 3M 
 
 **Limitations of Prior Work**: Existing token compression methods (e.g., ToMe, LongVU, STORM) prune or merge tokens only inside the ViT or between the ViT and LLM; the ViT still processes the full video, forming an efficiency bottleneck.
 
-**Root Cause**: Heuristic pruning methods based on attention scores underperform learned approaches, while methods involving search and reasoning incur large overhead that limits scalability.
+**Key Challenge**: Heuristic pruning methods based on attention scores underperform learned approaches, while methods involving search and reasoning incur large overhead that limits scalability.
 
-**Paper Goals**: Real-world applications (surveillance, autonomous driving, robotics) demand processing of minute-long 4K video, yet existing models cannot scale to high spatiotemporal resolution due to computational cost.
+**Goal**: Real-world applications (surveillance, autonomous driving, robotics) demand processing of minute-long 4K video, yet existing models cannot scale to high spatiotemporal resolution due to computational cost.
 
-**Starting Point**: Human vision selectively fixates on moving objects and detail regions via saccades, skipping static backgrounds to achieve efficient real-time scene understanding.
+**Key Insight**: Human vision selectively fixates on moving objects and detail regions via saccades, skipping static backgrounds to achieve efficient real-time scene understanding.
 
 **Gap in benchmarks**: Existing benchmarks (VideoMME, MLVU, etc.) target long video but not high resolution, making it impossible to evaluate models on high-resolution long video.
 

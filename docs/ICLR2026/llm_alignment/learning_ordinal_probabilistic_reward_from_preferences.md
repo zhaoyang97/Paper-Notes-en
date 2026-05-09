@@ -31,7 +31,7 @@ This paper proposes the Ordinal Probabilistic Reward Model (OPRM), which discret
 
 ## Background & Motivation
 
-**State of the Field**: Reward models fall into two categories: generative reward models (GRM, requiring pointwise supervision at high annotation cost) and discriminative reward models (DRM, using pairwise preferences but producing uncalibrated scores).
+**Background**: Reward models fall into two categories: generative reward models (GRM, requiring pointwise supervision at high annotation cost) and discriminative reward models (DRM, using pairwise preferences but producing uncalibrated scores).
 
 **Limitations of Prior Work**: DRM scores lack probabilistic interpretation, making uncertainty assessment infeasible; GRM requires precise quality labels.
 

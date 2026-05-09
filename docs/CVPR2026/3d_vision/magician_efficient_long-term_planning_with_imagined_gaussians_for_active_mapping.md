@@ -29,11 +29,11 @@ This paper proposes MAGICIAN, a framework that leverages a pretrained occupancy 
 
 ## Background & Motivation
 
-1. **State of the Field**: Active Mapping requires agents to autonomously select optimal viewpoints for efficient reconstruction of unknown environments. Current mainstream methods adopt greedy Next-Best-View (NBV) strategies, selecting the next pose based on information gain, Fisher information, or surface coverage gain.
+1. **Background**: Active Mapping requires agents to autonomously select optimal viewpoints for efficient reconstruction of unknown environments. Current mainstream methods adopt greedy Next-Best-View (NBV) strategies, selecting the next pose based on information gain, Fisher information, or surface coverage gain.
 2. **Limitations of Prior Work**: Greedy NBV methods optimize only single-step local gain, causing agents to fall into dead ends, backtrack inefficiently, and explore suboptimally. Although some methods attempt longer-horizon planning (e.g., FisherRF selects frontier targets; NextBestPath predicts path-level gain), they either still rely on frontier heuristics or are sensitive to training data quality.
-3. **Root Cause**: Long-term planning faces a chicken-and-egg problem — optimal trajectory planning requires knowledge of the environment map, yet that map is precisely what planning aims to construct. Meanwhile, combinatorial explosion of the trajectory space and high computational cost make long-term planning extremely challenging.
-4. **Paper Goals**: (1) Efficiently estimate surface coverage gain in unobserved regions; (2) Search for optimal long-term paths in the combinatorially explosive trajectory space; (3) Achieve scalable closed-loop planning.
-5. **Starting Point**: Inspired by the human ability to rapidly infer the structure of unfamiliar environments and plan exploration accordingly, the paper proposes "imagining" unseen regions via a pretrained occupancy network.
+3. **Key Challenge**: Long-term planning faces a chicken-and-egg problem — optimal trajectory planning requires knowledge of the environment map, yet that map is precisely what planning aims to construct. Meanwhile, combinatorial explosion of the trajectory space and high computational cost make long-term planning extremely challenging.
+4. **Goal**: (1) Efficiently estimate surface coverage gain in unobserved regions; (2) Search for optimal long-term paths in the combinatorially explosive trajectory space; (3) Achieve scalable closed-loop planning.
+5. **Key Insight**: Inspired by the human ability to rapidly infer the structure of unfamiliar environments and plan exploration accordingly, the paper proposes "imagining" unseen regions via a pretrained occupancy network.
 6. **Core Idea**: Occupancy predictions are converted into a 3D Gaussian representation, enabling fast volumetric rendering to compute coverage gain and making beam-search-based long-term planning feasible.
 
 ## Method

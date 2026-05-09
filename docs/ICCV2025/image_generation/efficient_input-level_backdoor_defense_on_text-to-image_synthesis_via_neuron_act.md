@@ -36,9 +36,9 @@ The open-source ecosystem of text-to-image (T2I) diffusion models (e.g., Stable 
 
 **Prohibitive Computational Overhead**: Conventional methods require multiple complete image generation passes to analyze output differences, incurring 2–5× additional computational cost in T2I scenarios.
 
-**Root Cause**: There is a need for a generalizable and efficient defense method that neither relies on the Trigger Dominance assumption nor requires a full generation process.
+**Key Challenge**: There is a need for a generalizable and efficient defense method that neither relies on the Trigger Dominance assumption nor requires a full generation process.
 
-**Starting Point**: Rather than analyzing generated outputs, this work examines the internal neuron activation states of the model. The key finding is that trigger tokens induce abnormally large neuron activation variations within the first few diffusion steps, with the discrepancy being most pronounced at early steps.
+**Key Insight**: Rather than analyzing generated outputs, this work examines the internal neuron activation states of the model. The key finding is that trigger tokens induce abnormally large neuron activation variations within the first few diffusion steps, with the discrepancy being most pronounced at early steps.
 
 ## Method
 

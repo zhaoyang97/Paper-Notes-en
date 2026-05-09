@@ -27,15 +27,15 @@ content_hash: da2d5125e35e02dc
 This paper introduces I-RAVEN-X, an enhanced symbolic reasoning benchmark that evaluates the generalization and robustness of analogical and mathematical reasoning in LLMs and LRMs by increasing operand complexity, attribute range, and perceptual uncertainty. Results show that LRMs significantly outperform LLMs under deterministic reasoning, but suffer sharp performance degradation under uncertain reasoning conditions.
 
 ## Background & Motivation
-**State of the Field**: Abstract reasoning is considered a core hallmark of human intelligence. Raven's Progressive Matrices (RPM) is a classical task for evaluating abstract reasoning, analogical ability, and OOD generalization. I-RAVEN, its auto-generated variant, has been widely used to benchmark ML models.
+**Background**: Abstract reasoning is considered a core hallmark of human intelligence. Raven's Progressive Matrices (RPM) is a classical task for evaluating abstract reasoning, analogical ability, and OOD generalization. I-RAVEN, its auto-generated variant, has been widely used to benchmark ML models.
 
 **Limitations of Prior Work**: (1) Most I-RAVEN problems involve only a small number of operands (3×3 matrices), making reasoning difficulty insufficient; (2) test data is publicly available, introducing data leakage risks; (3) text-based conversion assumes oracle perception, ignoring perceptual uncertainty.
 
-**Root Cause**: Existing benchmarks cannot distinguish whether models possess genuinely generalizable reasoning capabilities or merely perform well under simple settings — particularly pressing with the emergence of LRMs (reasoning models), which demand more challenging evaluations.
+**Key Challenge**: Existing benchmarks cannot distinguish whether models possess genuinely generalizable reasoning capabilities or merely perform well under simple settings — particularly pressing with the emergence of LRMs (reasoning models), which demand more challenging evaluations.
 
-**Paper Goals**: Construct a parameterizable, more challenging reasoning benchmark to systematically evaluate LLMs and LRMs on generalization (longer reasoning chains, larger attribute ranges) and robustness (perceptual uncertainty).
+**Goal**: Construct a parameterizable, more challenging reasoning benchmark to systematically evaluate LLMs and LRMs on generalization (longer reasoning chains, larger attribute ranges) and robustness (perceptual uncertainty).
 
-**Starting Point**: Extend I-RAVEN along four dimensions — productivity, systematicity, confounding-factor robustness, and value-distribution robustness.
+**Key Insight**: Extend I-RAVEN along four dimensions — productivity, systematicity, confounding-factor robustness, and value-distribution robustness.
 
 **Core Idea**: RPM evaluation should test not only whether a model answers correctly, but also whether it remains correct when reasoning chains grow longer, value ranges expand, or noise is introduced.
 

@@ -27,15 +27,15 @@ content_hash: 4d7de094adfd5d46
 This paper proposes Daze, a backdoor attack in which a malicious simulator developer—without any access to or modification of the agent's reward function—plants a backdoor solely by manipulating state transitions: when the agent fails to execute the target action in a trigger state, it is forced to take random actions ("dazed"), thereby theoretically guaranteeing both attack success and stealthiness. The work also presents the first demonstration of an RL backdoor attack on real robot hardware.
 
 ## Background & Motivation
-**State of the Field**: RL training relies heavily on simulators (MuJoCo, PyBullet, etc.), and researchers and engineers routinely use third-party simulators or cloud-based services. Simulators are a trusted yet under-scrutinized component in the RL supply chain.
+**Background**: RL training relies heavily on simulators (MuJoCo, PyBullet, etc.), and researchers and engineers routinely use third-party simulators or cloud-based services. Simulators are a trusted yet under-scrutinized component in the RL supply chain.
 
 **Limitations of Prior Work**: Existing RL backdoor attacks (TrojDRL, SleeperNets, Q-Incept) require deep control over the training pipeline—specifically the ability to read and write the agent's reward function. However, many simulators (e.g., MuJoCo, PyBullet) only receive actions and return states, with rewards computed externally, leaving the reward inaccessible to an attacker.
 
-**Root Cause**: All known RL backdoor attacks rely on reward manipulation to make the target action optimal. If the attacker can neither observe nor modify rewards (as in the simulator setting), conventional methods fail entirely.
+**Key Challenge**: All known RL backdoor attacks rely on reward manipulation to make the target action optimal. If the attacker can neither observe nor modify rewards (as in the simulator setting), conventional methods fail entirely.
 
-**Paper Goals**: Design an efficient and stealthy backdoor under the severely restricted threat model in which only the returned state values can be manipulated, with zero access to rewards.
+**Goal**: Design an efficient and stealthy backdoor under the severely restricted threat model in which only the returned state values can be manipulated, with zero access to rewards.
 
-**Starting Point**: In virtually all meaningful MDPs, uniformly random action sampling is suboptimal. The attacker can exploit this universal property—by forcing random actions whenever the agent does not execute the target action in a trigger state, causing the agent to receive lower returns.
+**Key Insight**: In virtually all meaningful MDPs, uniformly random action sampling is suboptimal. The attacker can exploit this universal property—by forcing random actions whenever the agent does not execute the target action in a trigger state, causing the agent to receive lower returns.
 
 **Core Idea**: Replace direct reward manipulation with the causal chain "fail to execute target action → forced random actions → low return," achieving a backdoor via transition manipulation rather than reward manipulation.
 

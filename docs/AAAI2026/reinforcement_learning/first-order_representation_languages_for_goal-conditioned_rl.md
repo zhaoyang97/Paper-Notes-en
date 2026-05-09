@@ -29,15 +29,15 @@ This paper investigates the application of first-order relational languages to g
 
 ## Background & Motivation
 
-**State of the Field**: First-order relational languages serve two primary purposes in MDP-based planning and reinforcement learning: (1) compactly describing MDPs, and (2) representing and learning policies with generalization capabilities that are not tied to specific instances or state spaces. Goal-conditioned RL is an important direction in this context, where the agent must learn a policy capable of reaching any given goal state.
+**Background**: First-order relational languages serve two primary purposes in MDP-based planning and reinforcement learning: (1) compactly describing MDPs, and (2) representing and learning policies with generalization capabilities that are not tied to specific instances or state spaces. Goal-conditioned RL is an important direction in this context, where the agent must learn a policy capable of reaching any given goal state.
 
 **Limitations of Prior Work**: When training instances are large and goals cannot be reached through random exploration, goal-conditioned RL faces severe challenges. Hindsight Experience Replay (HER) alleviates this by relabeling failed trajectories as if the agent had intended to reach the states it actually visited. However, standard HER, when states and goals are represented propositionally, offers limited generalization—it struggles to transfer experience from small instances to large ones.
 
-**Root Cause**: Generalizable goal-conditioned policies must handle varying state and goal spaces, and standard vector representations fail to capture relational structure. Although first-order representations are more expressive, how to effectively leverage them to accelerate goal-conditioned RL learning remains an open problem.
+**Key Challenge**: Generalizable goal-conditioned policies must handle varying state and goal spaces, and standard vector representations fail to capture relational structure. Although first-order representations are more expressive, how to effectively leverage them to accelerate goal-conditioned RL learning remains an open problem.
 
-**Paper Goals**: To investigate whether goal-conditioned RL can achieve further performance gains when states and goals are represented as sets of atoms.
+**Goal**: To investigate whether goal-conditioned RL can achieve further performance gains when states and goals are represented as sets of atoms.
 
-**Starting Point**: The authors propose three goal representation schemes: (1) the goal as a complete state; (2) the goal as a subset of the original goal atoms; and (3) the goal as a lifted version of the subgoal. The latter two representations automatically construct curricula from simple to complex goals, thereby accelerating learning.
+**Key Insight**: The authors propose three goal representation schemes: (1) the goal as a complete state; (2) the goal as a subset of the original goal atoms; and (3) the goal as a lifted version of the subgoal. The latter two representations automatically construct curricula from simple to complex goals, thereby accelerating learning.
 
 **Core Idea**: By exploiting the structural properties of first-order atomic representations, complex goals are automatically decomposed into simpler subgoals, forming a curriculum learning mechanism that enables effective learning of generalizable policies on large-scale sparse-reward problems.
 

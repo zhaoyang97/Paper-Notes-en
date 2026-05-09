@@ -28,15 +28,15 @@ This paper proposes RbRL-KL, which augments rating-based RL (RbRL) with a KL div
 
 ## Background & Motivation
 
-**State of the Field**: In reward-free settings, RLHF infers rewards from human feedback. PbRL employs preference comparisons, while RbRL uses rating annotations for reward learning.
+**Background**: In reward-free settings, RLHF infers rewards from human feedback. PbRL employs preference comparisons, while RbRL uses rating annotations for reward learning.
 
 **Limitations of Prior Work**: RbRL utilizes ratings solely for reward learning, discarding the policy-directional information embedded in different rating levels.
 
-**Root Cause**: Failure experiences of varying performance levels are treated uniformly, whereas humans naturally distinguish between them—completely missing a ball versus going out of bounds represent errors of different severity.
+**Key Challenge**: Failure experiences of varying performance levels are treated uniformly, whereas humans naturally distinguish between them—completely missing a ball versus going out of bounds represent errors of different severity.
 
-**Paper Goals**: Directly exploit multi-level rating information during policy learning, enabling the policy to distance itself from failure experiences of different performance levels by varying degrees.
+**Goal**: Directly exploit multi-level rating information during policy learning, enabling the policy to distance itself from failure experiences of different performance levels by varying degrees.
 
-**Starting Point**: KL divergence is used to measure the distributional similarity between the current policy and experiences at different rating levels, with penalties applied via decreasing weights.
+**Key Insight**: KL divergence is used to measure the distributional similarity between the current policy and experiences at different rating levels, with penalties applied via decreasing weights.
 
 **Core Idea**: A hierarchical policy loss based on KL divergence allows RL agents to extract directional information from multi-level failure experiences in a manner analogous to human learning.
 

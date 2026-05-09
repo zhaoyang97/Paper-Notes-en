@@ -28,13 +28,13 @@ This paper proposes MARS, a five-agent framework for automated prompt optimizati
 
 ## Background & Motivation
 
-**State of the Field**: Automated prompt optimization (APO) aims to overcome the cognitive biases inherent in manually crafted prompts by automatically exploring superior prompt design spaces. Existing approaches fall into two categories: generation-and-search methods (APE/ProTeGi/PoisonedRAG: generate candidate prompts then search for the optimal one) and meta-prompt methods (OPRO/PE2: design elaborate meta-prompts to guide optimization).
+**Background**: Automated prompt optimization (APO) aims to overcome the cognitive biases inherent in manually crafted prompts by automatically exploring superior prompt design spaces. Existing approaches fall into two categories: generation-and-search methods (APE/ProTeGi/PoisonedRAG: generate candidate prompts then search for the optimal one) and meta-prompt methods (OPRO/PE2: design elaborate meta-prompts to guide optimization).
 
 **Limitations of Prior Work**: (a) **Template rigidity**: fixed meta-prompt templates cannot dynamically adapt to diverse task requirements, making it difficult to capture task-specific optimization directions; (b) **Inefficient exploration**: generation-and-search methods perform only local search near initial candidates, risking premature convergence or missing better regions of the prompt space.
 
-**Root Cause**: The search space for prompt optimization is discrete, high-dimensional, and non-differentiable, precluding direct gradient descent; yet gradient-like directional guidance is needed to avoid blind search.
+**Key Challenge**: The search space for prompt optimization is discrete, high-dimensional, and non-differentiable, precluding direct gradient descent; yet gradient-like directional guidance is needed to avoid blind search.
 
-**Starting Point**: Inspired by the Socratic teaching method—guiding students to discover answers through questioning rather than direct instruction—the paper models the prompt optimization process as a POMDP and employs multi-agent collaboration to simulate gradient-style iterative refinement.
+**Key Insight**: Inspired by the Socratic teaching method—guiding students to discover answers through questioning rather than direct instruction—the paper models the prompt optimization process as a POMDP and employs multi-agent collaboration to simulate gradient-style iterative refinement.
 
 **Core Idea**: A five-agent POMDP framework—a Planner charts the optimization path; Teacher-Critic-Student conduct Socratic dialogue for pseudo-gradient refinement; and a Target agent evaluates and provides feedback.
 

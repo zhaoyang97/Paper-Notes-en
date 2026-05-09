@@ -28,11 +28,11 @@ Through focus group research with 29 STEM faculty at a large public university i
 
 ## Background & Motivation
 
-1. **State of the Field**: Adoption of GenAI tools in higher education has been largely student-driven, forcing faculty into a reactive stance. Some instructors have begun using GenAI for grading, course design, and content generation, while others remain cautious.
+1. **Background**: Adoption of GenAI tools in higher education has been largely student-driven, forcing faculty into a reactive stance. Some instructors have begun using GenAI for grading, course design, and content generation, while others remain cautious.
 2. **Limitations of Prior Work**: (a) Academic integrity faces serious challenges, as AI-generated content cannot be reliably detected by existing tools; (b) over-reliance on GenAI may erode critical thinking and problem-solving skills; (c) existing research offers limited insight into how STEM faculty collectively interpret and negotiate the role of GenAI.
-3. **Root Cause**: GenAI increases assignment submission rates but may mask students' insufficient understanding of core concepts. Faculty face a dilemma between "banning it and falling behind" versus "permitting it and potentially harming learning."
-4. **Paper Goals**: To understand, from a faculty perspective, the current state, benefits, challenges, and support needs associated with GenAI in STEM higher education.
-5. **Starting Point**: A qualitative focus group study comprising 7 sessions with 29 faculty members, 90 minutes per session, using semi-structured discussion protocols.
+3. **Key Challenge**: GenAI increases assignment submission rates but may mask students' insufficient understanding of core concepts. Faculty face a dilemma between "banning it and falling behind" versus "permitting it and potentially harming learning."
+4. **Goal**: To understand, from a faculty perspective, the current state, benefits, challenges, and support needs associated with GenAI in STEM higher education.
+5. **Key Insight**: A qualitative focus group study comprising 7 sessions with 29 faculty members, 90 minutes per session, using semi-structured discussion protocols.
 6. **Core Finding in One Sentence**: Effective GenAI integration requires rethinking assessment, pedagogy, and institutional governance—not merely technological adoption.
 
 ## Method

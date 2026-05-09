@@ -28,15 +28,15 @@ This paper presents LogicEval, the first systematic evaluation framework for log
 
 ## Background & Motivation
 
-**State of the Field**: Logical vulnerabilities stem from incorrect implementations of program logic or functionality, rather than memory safety violations. They can be exploited for authentication bypass, sensitive data leakage, or system disruption, and do not trigger conventional security defenses such as address sanitizers. Existing automated vulnerability repair (AVR) techniques predominantly target memory corruption vulnerabilities.
+**Background**: Logical vulnerabilities stem from incorrect implementations of program logic or functionality, rather than memory safety violations. They can be exploited for authentication bypass, sensitive data leakage, or system disruption, and do not trigger conventional security defenses such as address sanitizers. Existing automated vulnerability repair (AVR) techniques predominantly target memory corruption vulnerabilities.
 
 **Limitations of Prior Work**: (1) Logical vulnerabilities lack consistent, reusable repair templates or patterns; each repair requires deep understanding of program semantics and intended behavior. (2) Logical vulnerabilities do not necessarily cause crashes or illegal memory accesses, making traditional signals (compilation logs, runtime logs, memory sanitizers) of limited utility for localization. (3) Existing datasets focus primarily on memory safety bugs, lacking logical vulnerability samples with demonstrable security impact.
 
-**Root Cause**: While LLMs have demonstrated strong capabilities in code understanding and generation, no systematic framework exists to analyze their ability and limitations in repairing logical vulnerabilities — a gap that impedes the extension of AVR from memory safety to the more subtle domain of logical vulnerabilities.
+**Key Challenge**: While LLMs have demonstrated strong capabilities in code understanding and generation, no systematic framework exists to analyze their ability and limitations in repairing logical vulnerabilities — a gap that impedes the extension of AVR from memory safety to the more subtle domain of logical vulnerabilities.
 
-**Paper Goals**: To construct the first systematic evaluation framework for analyzing the capabilities, limitations, and failure modes of both traditional and LLM-based methods when repairing real-world logical vulnerabilities.
+**Goal**: To construct the first systematic evaluation framework for analyzing the capabilities, limitations, and failure modes of both traditional and LLM-based methods when repairing real-world logical vulnerabilities.
 
-**Starting Point**: Logical vulnerability repair is highly context-dependent — relying on vulnerability descriptions, behavioral specifications, and repair steps — making it appropriate to evaluate the impact of different auxiliary information dimensions systematically.
+**Key Insight**: Logical vulnerability repair is highly context-dependent — relying on vulnerability descriptions, behavioral specifications, and repair steps — making it appropriate to evaluate the impact of different auxiliary information dimensions systematically.
 
 **Core Idea**: Construct the LogicDS dataset and LogicEval evaluation framework to systematically assess performance across three dimensions: LLM configuration, source code granularity, and auxiliary information. Introduce reasoning-based automatic evaluation metrics (cosine similarity + LLM judgment) to complement conventional compilation/test-based evaluation.
 

@@ -32,15 +32,15 @@ This work proposes **LD-FPG**, a framework that encodes full-atom MD trajectorie
 
 ## Background & Motivation
 
-**State of the Field**: Protein function depends on dynamic transitions among distinct conformational states. Methods such as AlphaFold2 primarily predict a single static conformation and cannot capture functionally relevant conformational diversity.
+**Background**: Protein function depends on dynamic transitions among distinct conformational states. Methods such as AlphaFold2 primarily predict a single static conformation and cannot capture functionally relevant conformational diversity.
 
 **Limitations of Prior Work**: Existing generative models either produce backbone-only representations (without side chains), yield coarse-grained outputs, or are limited to de novo design rather than conformation sampling for a specific protein. Side-chain rearrangements, which often govern molecular recognition and catalytic mechanisms, are thus largely neglected.
 
-**Root Cause**: There is a fundamental gap between the need to generate full-atom conformational ensembles (including every side-chain heavy atom) and the capabilities of existing methods—particularly for GPCRs, which exhibit complex dynamics in membrane environments.
+**Key Challenge**: There is a fundamental gap between the need to generate full-atom conformational ensembles (including every side-chain heavy atom) and the capabilities of existing methods—particularly for GPCRs, which exhibit complex dynamics in membrane environments.
 
-**Paper Goals**: To learn and generate high-fidelity full-atom conformational ensembles of specific proteins (e.g., the dopamine D2 receptor) from existing molecular dynamics (MD) simulation data.
+**Goal**: To learn and generate high-fidelity full-atom conformational ensembles of specific proteins (e.g., the dopamine D2 receptor) from existing molecular dynamics (MD) simulation data.
 
-**Starting Point**: Rather than simulating new MD trajectories, the method learns a latent representation of MD data by modeling conformations as deformations relative to a reference structure.
+**Key Insight**: Rather than simulating new MD trajectories, the method learns a latent representation of MD data by modeling conformations as deformations relative to a reference structure.
 
 **Core Idea**: A four-stage pipeline—ChebNet encoding, pooling-based compression, DDPM sampling, and conditional decoding—generates full-atom conformations within a compact latent space.
 

@@ -28,15 +28,15 @@ This paper proposes PNLC, a method that trains a lightweight goal-conditioned va
 
 ## Background & Motivation
 
-**State of the Field**: LLMs require long-horizon reasoning and strategic behavior for goal-oriented complex interactive tasks (e.g., negotiation, persuasion, social reasoning games). Existing approaches fall into two categories: (a) multi-turn RL fine-tuning — sample-inefficient and computationally expensive; (b) inference-time search (e.g., MCTS) — requires multiple LLM calls with high latency.
+**Background**: LLMs require long-horizon reasoning and strategic behavior for goal-oriented complex interactive tasks (e.g., negotiation, persuasion, social reasoning games). Existing approaches fall into two categories: (a) multi-turn RL fine-tuning — sample-inefficient and computationally expensive; (b) inference-time search (e.g., MCTS) — requires multiple LLM calls with high latency.
 
 **Limitations of Prior Work**: RL fine-tuning cannot be applied to frontier models exposed only via API (e.g., GPT-4o); MCTS search requires ~46 seconds per sample on WebShop; LLM self-evaluation tends to be overly optimistic, making effective self-refinement difficult.
 
-**Root Cause**: How can LLM agents be endowed with long-horizon planning capabilities for complex interactive tasks without directly fine-tuning the LLM or substantially increasing inference cost?
+**Key Challenge**: How can LLM agents be endowed with long-horizon planning capabilities for complex interactive tasks without directly fine-tuning the LLM or substantially increasing inference cost?
 
-**Paper Goals**: A lightweight, learnable module is needed that provides value estimates over multiple possible outcomes during LLM inference, enabling effective self-refinement.
+**Goal**: A lightweight, learnable module is needed that provides value estimates over multiple possible outcomes during LLM inference, enabling effective self-refinement.
 
-**Starting Point**: Rather than training a policy, train a critic. An offline RL approach is used to train a goal-conditioned value function, which is then deployed at inference time as a "natural language critic" supplying rich outcome evaluation to the LLM.
+**Key Insight**: Rather than training a policy, train a critic. An offline RL approach is used to train a goal-conditioned value function, which is then deployed at inference time as a "natural language critic" supplying rich outcome evaluation to the LLM.
 
 **Core Idea**: Train a lightweight MLP value function at the thought-step level to predict goal-achievement probability. At inference time, a natural language critic generates multiple positive/negative goals with associated probabilities to guide iterative self-refinement of high-level strategies — without any search.
 

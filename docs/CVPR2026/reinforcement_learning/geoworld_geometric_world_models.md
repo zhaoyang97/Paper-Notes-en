@@ -27,15 +27,15 @@ GeoWorld maps the latent representations of predictive world models from Euclide
 
 ## Background & Motivation
 
-**State of the Field**: World models fall into two categories: generative and predictive. Generative world models (e.g., VideoWorld) explicitly generate pixels or visual tokens to predict the next state, but lack global awareness of trajectory structure and energy landscapes. Predictive world models (e.g., JEPA, V-JEPA 2) forgo pixel generation and instead learn an energy landscape in latent space to measure compatibility between the current and goal states, supporting multi-step hierarchical planning.
+**Background**: World models fall into two categories: generative and predictive. Generative world models (e.g., VideoWorld) explicitly generate pixels or visual tokens to predict the next state, but lack global awareness of trajectory structure and energy landscapes. Predictive world models (e.g., JEPA, V-JEPA 2) forgo pixel generation and instead learn an energy landscape in latent space to measure compatibility between the current and goal states, supporting multi-step hierarchical planning.
 
 **Limitations of Prior Work**: Existing predictive world models face two critical issues: (1) *Geometric neglect*—latent representations are learned in Euclidean space, which cannot preserve the intrinsic geometric structure and hierarchical relationships among states, causing the learned energy landscape to fail at capturing meaningful geodesic distances; (2) *Multi-step degradation*—multi-step video data is scarce and costly, so models are primarily trained on single-step transitions; although conceptually capable of long-horizon planning, performance degrades rapidly as the horizon grows.
 
-**Root Cause**: The "flat" structure of Euclidean space cannot naturally encode the hierarchical relationships among real-world states (e.g., "slice vegetables" is a sub-step of "cook a meal"), and forcing long-range dependencies into Euclidean space leads to geometric drift.
+**Key Challenge**: The "flat" structure of Euclidean space cannot naturally encode the hierarchical relationships among real-world states (e.g., "slice vegetables" is a sub-step of "cook a meal"), and forcing long-range dependencies into Euclidean space leads to geometric drift.
 
-**Paper Goals**: (1) How can geometric and hierarchical structure be preserved in latent space? (2) How can multi-step planning stability be improved under limited training data?
+**Goal**: (1) How can geometric and hierarchical structure be preserved in latent space? (2) How can multi-step planning stability be improved under limited training data?
 
-**Starting Point**: The tree-like structure of hyperbolic space is naturally suited to encoding hierarchical relationships (distances grow exponentially with depth), and hyperbolic geodesics provide the most natural notion of "shortest path." Combining this with reinforcement learning to optimize the predictor's energy function steers trajectories along geodesics.
+**Key Insight**: The tree-like structure of hyperbolic space is naturally suited to encoding hierarchical relationships (distances grow exponentially with depth), and hyperbolic geodesics provide the most natural notion of "shortest path." Combining this with reinforcement learning to optimize the predictor's energy function steers trajectories along geodesics.
 
 **Core Idea**: Lift the latent dynamics of JEPA from Euclidean space onto a hyperbolic manifold, and apply Geometric Reinforcement Learning to optimize geodesic consistency in multi-step planning.
 

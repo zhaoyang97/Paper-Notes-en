@@ -29,7 +29,7 @@ MotionStream is proposed as the first real-time streaming video generation syste
 
 ## Background & Motivation
 
-**State of the Field**: Motion-controlled video generation (e.g., Motion Prompting) can produce high-quality trajectory-tracking videos, but inference is extremely slow (12 minutes for a 5-second video), non-causal (requiring complete control signals upfront), and limited to fixed-length outputs.
+**Background**: Motion-controlled video generation (e.g., Motion Prompting) can produce high-quality trajectory-tracking videos, but inference is extremely slow (12 minutes for a 5-second video), non-causal (requiring complete control signals upfront), and limited to fixed-length outputs.
 
 **Limitations of Prior Work**:
 - Bidirectional attention in diffusion models requires all future trajectories before generation can begin, precluding real-time interaction.
@@ -37,11 +37,11 @@ MotionStream is proposed as the first real-time streaming video generation syste
 - ControlNet-style architectures double the FLOPs, further slowing inference.
 - Unbounded RoPE position growth in sliding-window attention leads to high latency variance and throughput instability.
 
-**Root Cause**: Interactive creative workflows demand "real-time + causal + infinite-length" generation, which is fundamentally at odds with the "slow + bidirectional + fixed-length" paradigm of diffusion models.
+**Key Challenge**: Interactive creative workflows demand "real-time + causal + infinite-length" generation, which is fundamentally at odds with the "slow + bidirectional + fixed-length" paradigm of diffusion models.
 
-**Paper Goals**: Transform motion-controlled video generation from a "render-and-wait" mode to a "real-time creation" mode, where users see results instantly as they draw trajectories.
+**Goal**: Transform motion-controlled video generation from a "render-and-wait" mode to a "real-time creation" mode, where users see results instantly as they draw trajectories.
 
-**Starting Point**: Simultaneously address three dimensions — (1) lightweight teacher architecture to reduce baseline overhead; (2) joint guidance embedding distillation to eliminate multi-NFE costs; (3) attention sink plus training-time inference distribution simulation to eliminate long-video drift.
+**Key Insight**: Simultaneously address three dimensions — (1) lightweight teacher architecture to reduce baseline overhead; (2) joint guidance embedding distillation to eliminate multi-NFE costs; (3) attention sink plus training-time inference distribution simulation to eliminate long-video drift.
 
 **Core Idea**: Realize real-time infinite streaming video generation with motion control through a pipeline of "efficient teacher → causal distillation → attention-sink extrapolation training."
 

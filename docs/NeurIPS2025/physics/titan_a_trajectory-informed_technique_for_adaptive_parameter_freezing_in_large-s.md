@@ -27,15 +27,15 @@ This paper proposes TITAN, a framework that employs deep learning models to pred
 
 ## Background & Motivation
 
-**State of the Field**: The Variational Quantum Eigensolver (VQE) is the flagship protocol for electronic structure calculations on quantum computers, iteratively optimizing parameterized quantum circuits to minimize the expectation value of a molecular Hamiltonian.
+**Background**: The Variational Quantum Eigensolver (VQE) is the flagship protocol for electronic structure calculations on quantum computers, iteratively optimizing parameterized quantum circuits to minimize the expectation value of a molecular Hamiltonian.
 
 **Limitations of Prior Work**: (a) The no-cloning theorem requires two circuit evaluations per parameter per gradient step (parameter-shift rule), so measurement overhead scales linearly with parameter count; (b) deeper circuits suffer from barren plateaus (BP), where gradients decay exponentially; (c) a single VQE run for benzene (C₆H₆) requires $10^6$–$10^8$ circuit evaluations (~55 hours on trapped-ion quantum computers).
 
-**Root Cause**: Sufficiently deep circuits are necessary for expressibility, yet increasing depth causes an explosion in parameter count and exacerbates BP.
+**Key Challenge**: Sufficiently deep circuits are necessary for expressibility, yet increasing depth causes an explosion in parameter count and exacerbates BP.
 
-**Paper Goals**: Reduce VQE measurement overhead from a parameter-space compression perspective by identifying and freezing parameters that remain inactive throughout training.
+**Goal**: Reduce VQE measurement overhead from a parameter-space compression perspective by identifying and freezing parameters that remain inactive throughout training.
 
-**Starting Point**: Empirical observation that VQE exhibits a "frozen parameter" phenomenon—initialization determines the long-term activity of parameters, and a subset of parameters remains consistently unimportant throughout the entire training process.
+**Key Insight**: Empirical observation that VQE exhibits a "frozen parameter" phenomenon—initialization determines the long-term activity of parameters, and a subset of parameters remains consistently unimportant throughout the entire training process.
 
 **Core Idea**: A deep learning model (ResNet-18 + self-attention) predicts which parameters can be frozen from the Hamiltonian and ansatz structure, pruning the parameter space before optimization begins.
 

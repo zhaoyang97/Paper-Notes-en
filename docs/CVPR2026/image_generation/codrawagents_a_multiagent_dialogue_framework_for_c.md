@@ -29,7 +29,7 @@ This paper proposes coDrawAgents, an interactive multi-agent dialogue framework 
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-image (T2I) generation faces compositional fidelity challenges in complex multi-object scenes. Existing approaches include LLM-assisted layout generation (LayoutLLM-T2I, LMD), diffusion attention guidance (Attend-and-Excite), generation chain-of-thought (GoT), and early multi-agent frameworks (MCCD, T2I-Copilot).
+**Background**: Text-to-image (T2I) generation faces compositional fidelity challenges in complex multi-object scenes. Existing approaches include LLM-assisted layout generation (LayoutLLM-T2I, LMD), diffusion attention guidance (Attend-and-Excite), generation chain-of-thought (GoT), and early multi-agent frameworks (MCCD, T2I-Copilot).
 
 **Limitations of Prior Work**:
 
@@ -38,11 +38,11 @@ This paper proposes coDrawAgents, an interactive multi-agent dialogue framework 
 3. Global layout planning incurs quadratic complexity $O(N^2)$ over inter-object relationships, making simultaneous planning of $N$ objects extremely difficult.
 4. The vast majority of methods predict layouts without visual context, relying solely on "imagination" of the scene.
 
-**Root Cause**: The layout reasoning complexity required for complex scenes grows quadratically with the number of objects, yet single-pass planning and fixed pipelines are fundamentally unable to handle this combinatorial explosion.
+**Key Challenge**: The layout reasoning complexity required for complex scenes grows quadratically with the number of objects, yet single-pass planning and fixed pipelines are fundamentally unable to handle this combinatorial explosion.
 
-**Paper Goals**: Achieve faithful compositional T2I generation in complex multi-object scenes while addressing three core challenges: layout complexity, lack of visual perception, and the inability to correct early errors.
+**Goal**: Achieve faithful compositional T2I generation in complex multi-object scenes while addressing three core challenges: layout complexity, lack of visual perception, and the inability to correct early errors.
 
-**Starting Point**: A four-agent closed-loop dialogue — divide-and-conquer to reduce complexity + canvas visual grounding + explicit checking and error correction.
+**Key Insight**: A four-agent closed-loop dialogue — divide-and-conquer to reduce complexity + canvas visual grounding + explicit checking and error correction.
 
 **Core Idea**: Enable the Planner to observe the canvas being generated when planning the next step, allow the Checker to retrospect over all historical layouts for error correction, and reduce per-round complexity by grouping objects according to semantic priority.
 

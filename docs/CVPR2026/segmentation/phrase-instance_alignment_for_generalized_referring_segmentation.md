@@ -29,15 +29,15 @@ This paper proposes InstAlign, which reformulates Generalized Referring Expressi
 
 ## Background & Motivation
 
-1. **State of the Field**: Generalized Referring Expression Segmentation (GRES) extends classical RES by requiring models to handle expressions such as "the two people on the left," "all the cars," or even "the elephant on the sofa" (where no elephant exists in the image)—descriptions that may correspond to multiple objects or none at all. Existing GRES methods (e.g., ReLA, LQMFormer, MABP) still follow region-based strategies, directly predicting a single binary foreground mask for the entire expression.
+1. **Background**: Generalized Referring Expression Segmentation (GRES) extends classical RES by requiring models to handle expressions such as "the two people on the left," "all the cars," or even "the elephant on the sofa" (where no elephant exists in the image)—descriptions that may correspond to multiple objects or none at all. Existing GRES methods (e.g., ReLA, LQMFormer, MABP) still follow region-based strategies, directly predicting a single binary foreground mask for the entire expression.
 
 2. **Limitations of Prior Work**: This paradigm of predicting a single mask in one shot flattens the rich linguistic structure into an undifferentiated region—the model cannot distinguish which visual instances correspond to individual phrases within the same expression, leading to over- or under-segmentation of relevant instances. For example, given the expression "the two dogs on the left," existing methods tend to merge both dogs into a single blob or segment only one of them.
 
-3. **Root Cause**: The fundamental issue is the absence of **instance-level supervision**. Although query-based architectures employ multiple object queries, supervision is applied only to the final merged mask. Individual queries are never forced to specialize to distinct instances, resulting in entangled and semantically ambiguous query representations.
+3. **Key Challenge**: The fundamental issue is the absence of **instance-level supervision**. Although query-based architectures employ multiple object queries, supervision is applied only to the final merged mask. Individual queries are never forced to specialize to distinct instances, resulting in entangled and semantically ambiguous query representations.
 
-4. **Paper Goals**: (a) How can each object query be made to automatically correspond to a unique visual instance? (b) How can explicit alignment be established between queries and individual phrases in the expression? (c) How can multi-target and no-target scenarios be handled within a unified inference framework?
+4. **Goal**: (a) How can each object query be made to automatically correspond to a unique visual instance? (b) How can explicit alignment be established between queries and individual phrases in the expression? (c) How can multi-target and no-target scenarios be handled within a unified inference framework?
 
-5. **Starting Point**: The authors observe that referring expressions naturally decompose into structured phrases (e.g., "left dog" vs. "right dog"). If a model first performs instance-aware segmentation and then conducts phrase alignment, interpretable and accurate segmentation can be achieved.
+5. **Key Insight**: The authors observe that referring expressions naturally decompose into structured phrases (e.g., "left dog" vs. "right dog"). If a model first performs instance-aware segmentation and then conducts phrase alignment, interpretable and accurate segmentation can be achieved.
 
 6. **Core Idea**: Reformulate GRES from "directly predicting a merged mask" to "phrase-conditioned instance segmentation followed by relevance-weighted aggregation," with explicit POA loss providing fine-grained query-to-phrase supervision.
 

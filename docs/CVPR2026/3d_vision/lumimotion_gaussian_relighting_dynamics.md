@@ -28,13 +28,13 @@ LumiMotion is the first Gaussian-based inverse rendering method that leverages s
 
 ## Background & Motivation
 
-**State of the Field**: Inverse rendering aims to recover geometry, material, and lighting from images. Existing Gaussian Splatting methods (R3DG, IRGS, GI-GS) primarily target static scenes and tend to confuse shadows with material color under strong directional lighting.
+**Background**: Inverse rendering aims to recover geometry, material, and lighting from images. Existing Gaussian Splatting methods (R3DG, IRGS, GI-GS) primarily target static scenes and tend to confuse shadows with material color under strong directional lighting.
 
 **Limitations of Prior Work**: In static scenes, it is difficult to distinguish whether a dark region is caused by a shadow or by the material's intrinsic color, due to the lack of observations of the same surface under varying lighting conditions. Existing dynamic scene methods are either restricted to human avatars or require known or multi-illumination training setups.
 
-**Root Cause**: Accurate material-lighting separation requires multi-illumination observations of the same surface, yet real-world captures typically provide only a single lighting condition.
+**Key Challenge**: Accurate material-lighting separation requires multi-illumination observations of the same surface, yet real-world captures typically provide only a single lighting condition.
 
-**Paper Goals**: Exploit object motion within a scene (e.g., moving shadows, illumination changes on moving objects) as a natural multi-illumination supervision signal.
+**Goal**: Exploit object motion within a scene (e.g., moving shadows, illumination changes on moving objects) as a natural multi-illumination supervision signal.
 
 **Core Idea**: Motion reveals the appearance of the same surface under different lighting conditions, providing stronger constraints for material-lighting decomposition.
 

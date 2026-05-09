@@ -29,15 +29,15 @@ This paper proposes a feed-forward 3DGS decoder based on keypoint detection, lib
 
 ## Background & Motivation
 
-**State of the Field**: 3D Gaussian Splatting (3DGS) has become the dominant method for efficient 3D scene representation. Classical 3DGS requires SfM initialization followed by per-scene optimization (taking tens of minutes to hours), whereas recent feed-forward methods (e.g., PixelSplat, AnySplat) directly predict Gaussian primitives in a single forward pass, reducing reconstruction time to seconds.
+**Background**: 3D Gaussian Splatting (3DGS) has become the dominant method for efficient 3D scene representation. Classical 3DGS requires SfM initialization followed by per-scene optimization (taking tens of minutes to hours), whereas recent feed-forward methods (e.g., PixelSplat, AnySplat) directly predict Gaussian primitives in a single forward pass, reducing reconstruction time to seconds.
 
 **Limitations of Prior Work**: Existing feed-forward methods almost universally adopt pixel-aligned or voxel-aligned primitive placement strategies, where each input pixel corresponds to one Gaussian primitive and primitive positions are rigidly locked to a regular grid. This introduces two problems: (1) the number of primitives equals the number of input pixels, restricting these methods to low resolutions (typically 256×256); and (2) regular grids cannot adaptively allocate more primitives to high-frequency detail regions or reduce redundancy in flat regions, resulting in simultaneous losses in quality and efficiency.
 
-**Root Cause**: Optimization-based 3DGS dynamically adjusts primitive distributions through densification and pruning, but feed-forward methods lack this capability. The pixel-aligned design inherently limits the model's expressive power over primitive placement, as it cannot learn an "optimal placement" strategy.
+**Key Challenge**: Optimization-based 3DGS dynamically adjusts primitive distributions through densification and pruning, but feed-forward methods lack this capability. The pixel-aligned design inherently limits the model's expressive power over primitive placement, as it cannot learn an "optimal placement" strategy.
 
-**Paper Goals**: How to achieve adaptive, off-grid primitive placement in feed-forward 3DGS while remaining end-to-end trainable.
+**Goal**: How to achieve adaptive, off-grid primitive placement in feed-forward 3DGS while remaining end-to-end trainable.
 
-**Starting Point**: Inspired by keypoint detection, the authors recast Gaussian primitive placement as a 2D detection problem—extracting continuous coordinates from image patches via convolutional heatmaps, enabling primitives to be localized at sub-pixel precision.
+**Key Insight**: Inspired by keypoint detection, the authors recast Gaussian primitive placement as a 2D detection problem—extracting continuous coordinates from image patches via convolutional heatmaps, enabling primitives to be localized at sub-pixel precision.
 
 **Core Idea**: Replace pixel-grid alignment with the DSNT soft-argmax formulation from keypoint detection, allowing feed-forward 3DGS models to learn adaptive placement of Gaussian primitives at sub-pixel accuracy.
 

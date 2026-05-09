@@ -29,7 +29,7 @@ This paper proposes Points-to-3D, which encodes visible-region point clouds into
 
 ## Background & Motivation
 
-**State of the Field**: 3D generative models (e.g., TRELLIS, GaussianAnything) can synthesize realistic 3D assets from images or text, but they are conditioned on 2D images or text and lack direct constraints from real 3D geometry, making geometric accuracy uncontrollable.
+**Background**: 3D generative models (e.g., TRELLIS, GaussianAnything) can synthesize realistic 3D assets from images or text, but they are conditioned on 2D images or text and lack direct constraints from real 3D geometry, making geometric accuracy uncontrollable.
 
 **An Overlooked Information Source**: In autonomous driving, robotics, and similar settings, visible-region point clouds are readily available—from LiDAR, structured light, or feedforward predictors such as VGGT. These point clouds provide explicit geometric constraints that current generative frameworks cannot exploit.
 

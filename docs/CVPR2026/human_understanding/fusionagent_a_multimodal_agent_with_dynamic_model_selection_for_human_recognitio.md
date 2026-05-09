@@ -28,15 +28,15 @@ This paper proposes FusionAgent, an intelligent agent framework based on a multi
 
 ## Background & Motivation
 
-1. **State of the Field**: Whole-body human recognition requires fusing multiple biometric modalities, including face, gait, and body shape. Different expert models (FR/GR/ReID) excel in different scenarios and are typically integrated via score fusion. Existing fusion methods include rule-based approaches (Z-score, Min-max, etc.) and learning-based approaches (QME, etc.); however, all of them adopt a fixed model combination strategy—applying the same full set of models to every test sample.
+1. **Background**: Whole-body human recognition requires fusing multiple biometric modalities, including face, gait, and body shape. Different expert models (FR/GR/ReID) excel in different scenarios and are typically integrated via score fusion. Existing fusion methods include rule-based approaches (Z-score, Min-max, etc.) and learning-based approaches (QME, etc.); however, all of them adopt a fixed model combination strategy—applying the same full set of models to every test sample.
 
 2. **Limitations of Prior Work**: (1) Static fusion assumes all models contribute meaningfully to every sample, yet face recognition models provide no useful information for subjects facing away from the camera. (2) Scores from low-quality inputs contaminate the fusion result; even quality-aware methods such as QME cannot fully prevent low-quality model scores from affecting the final output. (3) Invoking all models for every sample is computationally wasteful and unnecessary.
 
-3. **Root Cause**: The optimal model combination is sample-dependent—inputs of different quality, viewing angle, and resolution require different model subsets. Applying the full model ensemble uniformly to all samples wastes computational resources and degrades fusion quality by introducing low-quality scores.
+3. **Key Challenge**: The optimal model combination is sample-dependent—inputs of different quality, viewing angle, and resolution require different model subsets. Applying the full model ensemble uniformly to all samples wastes computational resources and degrades fusion quality by introducing low-quality scores.
 
-4. **Paper Goals**: (1) How to adaptively select the optimal model subset for each sample? (2) How to effectively fuse scores from heterogeneous models that are dynamically selected?
+4. **Goal**: (1) How to adaptively select the optimal model subset for each sample? (2) How to effectively fuse scores from heterogeneous models that are dynamically selected?
 
-5. **Starting Point**: Model selection is formulated as a tool-invocation decision problem for an MLLM agent. The agent observes the characteristics of an input sample, performs reasoning, decides which models to invoke, and learns an optimal policy from outcome feedback via reinforcement learning.
+5. **Key Insight**: Model selection is formulated as a tool-invocation decision problem for an MLLM agent. The agent observes the characteristics of an input sample, performs reasoning, decides which models to invoke, and learns an optimal policy from outcome feedback via reinforcement learning.
 
 6. **Core Idea**: An MLLM agent performs sample-level dynamic model selection, transforming the decision of "which models to use" from a hand-crafted rule into a learnable reasoning process. This is coupled with an anchor-based top-$k$ score fusion strategy to achieve robust selective ensemble.
 

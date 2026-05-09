@@ -29,15 +29,15 @@ This paper introduces Approximate Domain Unlearning (ADU), a novel task that ena
 
 ## Background & Motivation
 
-**State of the Field**: Pretrained VLMs such as CLIP exhibit strong domain generalization, enabling cross-domain object recognition. However, in certain downstream tasks, such comprehensive generalization is unnecessary and may introduce security risks and information leakage.
+**Background**: Pretrained VLMs such as CLIP exhibit strong domain generalization, enabling cross-domain object recognition. However, in certain downstream tasks, such comprehensive generalization is unnecessary and may introduce security risks and information leakage.
 
 **Limitations of Prior Work**: Existing approximate unlearning methods focus on class-level unlearning, which is insufficient for many practical scenarios. For instance, an autonomous driving system must recognize real vehicles but should not misclassify illustrated cars on roadside advertisements as real ones.
 
-**Root Cause**: The strong domain generalization of VLMs causes feature distributions across domains to become highly entangled in the latent space. Directly applying class-level unlearning strategies — maximizing entropy on the forget domain and minimizing cross-entropy on the memorize domain — fails to disentangle domain-specific features, leading to mutual interference between forgetting and retention.
+**Key Challenge**: The strong domain generalization of VLMs causes feature distributions across domains to become highly entangled in the latent space. Directly applying class-level unlearning strategies — maximizing entropy on the forget domain and minimizing cross-entropy on the memorize domain — fails to disentangle domain-specific features, leading to mutual interference between forgetting and retention.
 
-**Paper Goals**: To enable VLMs to perform fine-grained selective unlearning at the domain level (rather than the class level), reducing recognition accuracy on specified domains while preserving performance on others.
+**Goal**: To enable VLMs to perform fine-grained selective unlearning at the domain level (rather than the class level), reducing recognition accuracy on specified domains while preserving performance on others.
 
-**Starting Point**: Since domain entanglement is the core obstacle, the proposed approach first disentangles domain distributions in the latent space before applying domain-specific forgetting and retention strategies.
+**Key Insight**: Since domain entanglement is the core obstacle, the proposed approach first disentangles domain distributions in the latent space before applying domain-specific forgetting and retention strategies.
 
 **Core Idea**: Precise domain-level unlearning in VLMs is achieved through domain distribution disentanglement combined with instance-wise adaptive prompt generation.
 

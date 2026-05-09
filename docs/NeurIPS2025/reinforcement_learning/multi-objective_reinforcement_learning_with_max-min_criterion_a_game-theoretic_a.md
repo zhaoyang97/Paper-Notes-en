@@ -29,15 +29,15 @@ This work reformulates entropy-regularized max-min multi-objective reinforcement
 
 ## Background & Motivation
 
-1. **State of the Field**: Multi-objective reinforcement learning (MORL) has broad applications in autonomous driving, resource allocation, and related domains. Utility-function-based approaches are predominant, with the weighted sum being the most common utility function.
+1. **Background**: Multi-objective reinforcement learning (MORL) has broad applications in autonomous driving, resource allocation, and related domains. Utility-function-based approaches are predominant, with the weighted sum being the most common utility function.
 
 2. **Limitations of Prior Work**: Weighted-sum utility functions are ill-suited for fairness-sensitive settings. The max-min criterion ($\max_\pi \min_{k} V_k^\pi$) is more natural for such settings but poses significant optimization challenges: the min operator is non-differentiable, and standard RL methods cannot be directly applied. The existing method of [Park et al.] is computationally expensive, guarantees only average-iterate convergence, and requires substantial memory to store copies of Q-networks.
 
-3. **Root Cause**: The nonlinearity introduced by the min operation in max-min MORL renders the standard Bellman operator inapplicable; direct optimization causes the weight vector to oscillate sharply among one-hot solutions at the worst-performing dimensions, permitting only average-iterate convergence.
+3. **Key Challenge**: The nonlinearity introduced by the min operation in max-min MORL renders the standard Bellman operator inapplicable; direct optimization causes the weight vector to oscillate sharply among one-hot solutions at the worst-performing dimensions, permitting only average-iterate convergence.
 
-4. **Paper Goals**: To design an efficient max-min MORL algorithm with provable last-iterate convergence guarantees and low computational overhead.
+4. **Goal**: To design an efficient max-min MORL algorithm with provable last-iterate convergence guarantees and low computational overhead.
 
-5. **Starting Point**: Leveraging the max-min = min-max identity (which holds under entropy regularization), the problem is recast as finding a Nash equilibrium of a two-player zero-sum game, with entropy regularization applied to the adversary to stabilize training.
+5. **Key Insight**: Leveraging the max-min = min-max identity (which holds under entropy regularization), the problem is recast as finding a Nash equilibrium of a two-player zero-sum game, with entropy regularization applied to the adversary to stabilize training.
 
 6. **Core Idea**: By adding entropy regularization $H(w)$ to the weight vector $w$, the algorithm obtains a closed-form (softmax) update for $w$, while simultaneously preventing weight oscillation and enabling last-iterate convergence.
 

@@ -28,7 +28,7 @@ This paper establishes a theoretical framework for Safe Policy Improvement (SPI)
 
 ## Background & Motivation
 
-**State of the Field**: Safe Policy Improvement (SPI) constrains policy updates to avoid catastrophic degradation, providing formal guarantees. However, classical SPI methods apply only to offline, tabular RL, require exhaustive state-action coverage, and cannot scale to high-dimensional continuous spaces.
+**Background**: Safe Policy Improvement (SPI) constrains policy updates to avoid catastrophic degradation, providing formal guarantees. However, classical SPI methods apply only to offline, tabular RL, require exhaustive state-action coverage, and cannot scale to high-dimensional continuous spaces.
 
 **Limitation 1 — Out-of-Training (OOT) Problem**: When a policy deviates from the behavioral policy and the world model's training distribution, the model may hallucinate in unexplored regions, causing policy update failures. For example, the model may incorrectly assign high rewards (e.g., +20) to unvisited states that should yield negative rewards.
 

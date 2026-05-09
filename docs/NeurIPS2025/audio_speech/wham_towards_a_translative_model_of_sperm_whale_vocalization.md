@@ -29,15 +29,15 @@ This paper proposes WhAM (Whale Acoustics Model), the first Transformer-based ge
 
 ## Background & Motivation
 
-**State of the Field**: Sperm whales communicate through short click sequences called codas, whose rhythmic, temporal, and spectral characteristics serve as markers of clan dialect and social identity. Recent machine learning approaches have made progress in coda detection and classification (Bermant et al., 2019), GAN-based generation (Beguš et al., 2023), and temporal analysis (Sharma et al., 2024b).
+**Background**: Sperm whales communicate through short click sequences called codas, whose rhythmic, temporal, and spectral characteristics serve as markers of clan dialect and social identity. Recent machine learning approaches have made progress in coda detection and classification (Bermant et al., 2019), GAN-based generation (Beguš et al., 2023), and temporal analysis (Sharma et al., 2024b).
 
 **Limitations of Prior Work**: (a) Existing GAN-based generative models cannot be conditioned on audio prompts; (b) temporal methods focus solely on inter-click intervals (ICI), neglecting spectral features in raw audio (e.g., ornament patterns); (c) classification and generation are trained as separate models with no unified framework; (d) cross-acoustic-domain translation has not been attempted.
 
-**Root Cause**: Sperm whale coda datasets are extremely scarce (approximately 10,000 recordings, totaling ~6 hours), whereas modern audio generative models typically require massive training data.
+**Key Challenge**: Sperm whale coda datasets are extremely scarce (approximately 10,000 recordings, totaling ~6 hours), whereas modern audio generative models typically require massive training data.
 
-**Paper Goals**: To construct a unified generative model that simultaneously enables coda synthesis, acoustic translation, and feature classification under severely data-limited conditions.
+**Goal**: To construct a unified generative model that simultaneously enables coda synthesis, acoustic translation, and feature classification under severely data-limited conditions.
 
-**Starting Point**: VampNet (a Masked Acoustic Token Model pretrained on large-scale music data) is adapted to the sperm whale domain via two-stage fine-tuning (domain adaptation → species-specific fine-tuning).
+**Key Insight**: VampNet (a Masked Acoustic Token Model pretrained on large-scale music data) is adapted to the sperm whale domain via two-stage fine-tuning (domain adaptation → species-specific fine-tuning).
 
 **Core Idea**: Transfer a pretrained music generation Transformer to the bioacoustics domain via LoRA fine-tuning, yielding the first acoustic translation model capable of converting arbitrary audio into sperm whale coda style.
 

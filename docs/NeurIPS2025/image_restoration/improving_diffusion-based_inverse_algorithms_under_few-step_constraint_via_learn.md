@@ -27,15 +27,15 @@ content_hash: 90ae36ac54dd1e96
 This paper proposes Learnable Linear Extrapolation (LLE), which combines current and historical clean data estimates via learnable linear coefficients to enhance any diffusion inverse problem algorithm conforming to the Sampler-Corrector-Noiser paradigm under few-step (3–5 steps) constraints. The method requires only 50 training samples and a few minutes of training, yielding consistent improvements across 9+ algorithms × 5 tasks.
 
 ## Background & Motivation
-**State of the Field**: Diffusion models achieve strong performance on inverse problems (deblurring, super-resolution, inpainting, compressed sensing, etc.), but require a large number of sampling steps (100–1000) to produce high-quality results. Fast ODE solvers are effective for unconditional generation but perform poorly on inverse problems due to heterogeneous formulations and approximation errors.
+**Background**: Diffusion models achieve strong performance on inverse problems (deblurring, super-resolution, inpainting, compressed sensing, etc.), but require a large number of sampling steps (100–1000) to produce high-quality results. Fast ODE solvers are effective for unconditional generation but perform poorly on inverse problems due to heterogeneous formulations and approximation errors.
 
 **Limitations of Prior Work**: The corrector step (data consistency enforcement) in diffusion inverse problems introduces additional errors, which accumulate under few-step regimes and lead to significant quality degradation. Different algorithms (DPS, DDNM, DDRM, MCG, etc.) employ distinct corrector designs, motivating the need for a unified enhancement strategy.
 
-**Root Cause**: Practical applications demand few-step inference (3–5 steps), yet the few-step regime exposes the cumulative effect of corrector errors.
+**Key Challenge**: Practical applications demand few-step inference (3–5 steps), yet the few-step regime exposes the cumulative effect of corrector errors.
 
-**Paper Goals**: Design a lightweight, general-purpose "patch" that can enhance any diffusion inverse algorithm under few-step constraints.
+**Goal**: Design a lightweight, general-purpose "patch" that can enhance any diffusion inverse algorithm under few-step constraints.
 
-**Starting Point**: All diffusion inverse problem algorithms follow the Sampler → Corrector → Noiser paradigm, enabling unified representation and enhancement via linear extrapolation.
+**Key Insight**: All diffusion inverse problem algorithms follow the Sampler → Corrector → Noiser paradigm, enabling unified representation and enhancement via linear extrapolation.
 
 **Core Idea**: Learn a small number of linear combination coefficients to combine historical clean data estimates with the current estimate, compensating for approximation errors introduced by few-step inference.
 

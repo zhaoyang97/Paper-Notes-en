@@ -28,15 +28,15 @@ This paper systematically evaluates a range of optical flow models on static-ima
 
 ## Background & Motivation
 
-**State of the Field**: DNNs have surpassed human performance on optical flow benchmarks, yet robustness gaps remain. Visual motion illusions provide a powerful tool for probing human–machine differences, but existing studies have focused primarily on dynamic illusions (e.g., reverse-phi), leaving static-image illusions underexplored.
+**Background**: DNNs have surpassed human performance on optical flow benchmarks, yet robustness gaps remain. Visual motion illusions provide a powerful tool for probing human–machine differences, but existing studies have focused primarily on dynamic illusions (e.g., reverse-phi), leaving static-image illusions underexplored.
 
 **Limitations of Prior Work**: The Rotating Snakes illusion—in which humans strongly perceive rotational motion in a completely static image—has not been assessed in terms of whether existing optical flow models can reproduce it. The illusion depends on subtle luminance asymmetries and fixational eye movements.
 
-**Root Cause**: Standard DNN optical flow models achieve strong benchmark performance, yet it remains unclear whether their computational strategies share fundamental principles with the human visual system.
+**Key Challenge**: Standard DNN optical flow models achieve strong benchmark performance, yet it remains unclear whether their computational strategies share fundamental principles with the human visual system.
 
-**Paper Goals**: To evaluate the ability of representative DNN and biologically-inspired motion models to reproduce static-image motion illusions, and to identify the key computational components responsible.
+**Goal**: To evaluate the ability of representative DNN and biologically-inspired motion models to reproduce static-image motion illusions, and to identify the key computational components responsible.
 
-**Starting Point**: An in silico psychophysics approach is adopted, systematically comparing 10 motion estimation models within a unified experimental pipeline.
+**Key Insight**: An in silico psychophysics approach is adopted, systematically comparing 10 motion estimation models within a unified experimental pipeline.
 
 **Core Idea**: Dual-channel motion processing, transient signals from eye movements, and recurrent integration are the critical mechanisms for reproducing human-like motion perception.
 

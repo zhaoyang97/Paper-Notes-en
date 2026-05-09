@@ -27,15 +27,15 @@ This paper proposes FutureMind, a training-free framework that distills structur
 
 ## Background & Motivation
 
-**State of the Field**: LLMs excel at complex reasoning tasks but suffer from high inference latency and cost; SLMs are efficient and lightweight but lack the capacity for knowledge-intensive multi-hop reasoning. While RAG helps SLMs access external knowledge, single-step retrieval is insufficient for complex multi-hop problems.
+**Background**: LLMs excel at complex reasoning tasks but suffer from high inference latency and cost; SLMs are efficient and lightweight but lack the capacity for knowledge-intensive multi-hop reasoning. While RAG helps SLMs access external knowledge, single-step retrieval is insufficient for complex multi-hop problems.
 
 **Limitations of Prior Work**: Existing "deep search" methods (e.g., Search-o1) interleave retrieval within reasoning chains, imposing excessive demands on the memory capacity and context retention of SLMs. CoT distillation transfers reasoning traces but lacks adaptability; prompt distillation encodes static templates that do not support dynamic planning.
 
-**Root Cause**: SLMs require explicit retrieval logic to determine when, what, and how to retrieve — yet executing such logic demands strong reasoning capabilities that SLMs inherently lack.
+**Key Challenge**: SLMs require explicit retrieval logic to determine when, what, and how to retrieve — yet executing such logic demands strong reasoning capabilities that SLMs inherently lack.
 
-**Paper Goals**: To enable SLMs to acquire structured reasoning and strategic retrieval planning abilities without any gradient updates.
+**Goal**: To enable SLMs to acquire structured reasoning and strategic retrieval planning abilities without any gradient updates.
 
-**Starting Point**: Rather than distilling specific knowledge (which may become outdated), the paper distills thinking patterns — first prompting an LLM to generate a complete reasoning-retrieval strategy, then injecting this strategy template into the SLM via prompting.
+**Key Insight**: Rather than distilling specific knowledge (which may become outdated), the paper distills thinking patterns — first prompting an LLM to generate a complete reasoning-retrieval strategy, then injecting this strategy template into the SLM via prompting.
 
 **Core Idea**: LLM-generated structured retrieval strategies serve as thinking-pattern priors for SLMs; a four-stage pipeline ensures systematic and coherent reasoning.
 

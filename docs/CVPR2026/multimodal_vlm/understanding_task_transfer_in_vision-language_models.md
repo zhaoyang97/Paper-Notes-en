@@ -28,15 +28,15 @@ This paper presents the first systematic study of how fine-tuning a VLM on one v
 
 ## Background & Motivation
 
-1. **State of the Field**: VLMs achieve strong performance on multimodal benchmarks, yet still lag behind humans and specialist models on fundamental visual perception tasks (depth estimation, counting, object localization, etc.). On the BLINK benchmark, the best model (GPT-4o) reaches only 60%, while humans achieve 95%. In practice, methods such as LoRA are commonly used to fine-tune models on specific perception tasks to close this gap.
+1. **Background**: VLMs achieve strong performance on multimodal benchmarks, yet still lag behind humans and specialist models on fundamental visual perception tasks (depth estimation, counting, object localization, etc.). On the BLINK benchmark, the best model (GPT-4o) reaches only 60%, while humans achieve 95%. In practice, methods such as LoRA are commonly used to fine-tune models on specific perception tasks to close this gap.
 
 2. **Limitations of Prior Work**: After fine-tuning on one perception task, the model's performance on other perception tasks changes in an unpredictable manner—either positively or negatively. This uncertainty makes task-specific fine-tuning risky, yet no systematic study has examined such cross-task effects.
 
-3. **Root Cause**: It remains unknown how internal representations in VLMs are shared or compete across different perception tasks. Different tasks may rely on the same underlying visual features (mutually beneficial) or compete for limited model capacity (mutually harmful).
+3. **Key Challenge**: It remains unknown how internal representations in VLMs are shared or compete across different perception tasks. Different tasks may rely on the same underlying visual features (mutually beneficial) or compete for limited model capacity (mutually harmful).
 
-4. **Paper Goals**: To answer a central question—how does fine-tuning a VLM on one perception task affect its zero-shot performance on other perception tasks, and how can such cross-task relationships be quantified and leveraged?
+4. **Goal**: To answer a central question—how does fine-tuning a VLM on one perception task affect its zero-shot performance on other perception tasks, and how can such cross-task relationships be quantified and leveraged?
 
-5. **Starting Point**: Unlike Taskonomy (which requires transfer learning on both source and target tasks), this work studies zero-shot cross-task transfer—only the source task is fine-tuned, with no training on the target task whatsoever.
+5. **Key Insight**: Unlike Taskonomy (which requires transfer learning on both source and target tasks), this work studies zero-shot cross-task transfer—only the source task is fine-tuned, with no training on the target task whatsoever.
 
 6. **Core Idea**: By employing the PGF normalized metric to systematically quantify zero-shot transfer relationships among VLM perception tasks, this paper reveals that cross-task transfer exhibits structural regularities that can guide efficient fine-tuning.
 

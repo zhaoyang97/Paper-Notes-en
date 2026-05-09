@@ -29,15 +29,15 @@ This paper proposes CREPE, an inference-time control method for diffusion models
 
 ## Background & Motivation
 
-**State of the Field**: Inference-time control of diffusion models — satisfying new constraints without retraining — is an active research direction. The dominant approach is Sequential Monte Carlo (SMC), which corrects biases introduced by heuristic guidance by maintaining a set of weighted particles along the denoising trajectory.
+**Background**: Inference-time control of diffusion models — satisfying new constraints without retraining — is an active research direction. The dominant approach is Sequential Monte Carlo (SMC), which corrects biases introduced by heuristic guidance by maintaining a set of weighted particles along the denoising trajectory.
 
 **Limitations of Prior Work**: SMC has three key limitations: (a) it requires maintaining a large number of particles simultaneously throughout the entire denoising trajectory, incurring high memory overhead; (b) sample diversity is poor, particularly when the particle count is small, as resampling leads to particle collapse; (c) samples cannot be refined after generation — if results are unsatisfactory or new constraints are introduced, generation must restart from scratch.
 
-**Root Cause**: The "parallel particles × serial timesteps" paradigm of SMC inherently creates bottlenecks in diversity and flexibility, motivating a computationally dual alternative.
+**Key Challenge**: The "parallel particles × serial timesteps" paradigm of SMC inherently creates bottlenecks in diversity and flexibility, motivating a computationally dual alternative.
 
-**Paper Goals**: To propose an alternative to SMC that (a) generates particles one at a time rather than in batches, (b) maintains high diversity after burn-in, (c) supports online refinement and early stopping, and (d) covers diverse tasks including tempering, reward tilting, model composition, and CFG debiasing.
+**Goal**: To propose an alternative to SMC that (a) generates particles one at a time rather than in batches, (b) maintains high diversity after burn-in, (c) supports online refinement and early stopping, and (d) covers diverse tasks including tempering, reward tilting, model composition, and CFG debiasing.
 
-**Starting Point**: Replica Exchange / Parallel Tempering is precisely the computational dual of SMC — it runs chains in parallel across different denoising steps while generating samples serially. This MCMC framework is adapted to the diffusion model setting.
+**Key Insight**: Replica Exchange / Parallel Tempering is precisely the computational dual of SMC — it runs chains in parallel across different denoising steps while generating samples serially. This MCMC framework is adapted to the diffusion model setting.
 
 **Core Idea**: Adapt the swap moves of Parallel Tempering to the path space of diffusion models, leveraging the Radon-Nikodym Estimator to compute acceptance probabilities, thereby enabling inference-time control without access to explicit target densities.
 

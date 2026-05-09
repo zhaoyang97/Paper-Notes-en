@@ -29,13 +29,13 @@ By introducing a tunable lower bound into adaptive gradient clipping (bounded ad
 
 ## Background & Motivation
 
-**State of the Field**: Differential privacy (DP) has been widely adopted in privacy-preserving machine learning and serves as a key technical underpinning for regulations such as the GDPR.
+**Background**: Differential privacy (DP) has been widely adopted in privacy-preserving machine learning and serves as a key technical underpinning for regulations such as the GDPR.
 
 **Limitations of Prior Work**: Gradient clipping in DP learning suppresses large gradients, disproportionately harming minority groups and difficult classes. Adaptive clipping (Andrew et al., 2021) attempts to alleviate this but still causes the clipping bound to shrink without bound—when majority gradients become small while minority gradients remain large, the bound decays exponentially.
 
-**Root Cause**: Privacy and fairness are conflicting objectives: strong privacy requires large noise and low clipping bounds, which in turn intensifies the suppression of minority groups.
+**Key Challenge**: Privacy and fairness are conflicting objectives: strong privacy requires large noise and low clipping bounds, which in turn intensifies the suppression of minority groups.
 
-**Starting Point**: Introduce a tunable parameter $C_{LB}$ (lower bound) to prevent the clipping bound from shrinking excessively while preserving the DP guarantee.
+**Key Insight**: Introduce a tunable parameter $C_{LB}$ (lower bound) to prevent the clipping bound from shrinking excessively while preserving the DP guarantee.
 
 **Core Idea**: $C_{t+1} \leftarrow \max(C_{LB}, C_t \cdot \exp(\eta_C(\tilde{b}_t - \gamma)))$—a minimal modification that prevents exponential decay.
 

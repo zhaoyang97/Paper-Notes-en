@@ -28,11 +28,11 @@ This paper proposes CDGS (Compositional Diffusion with Guided Search), which emb
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models have emerged as powerful tools for planning. Compositional approaches model long-horizon task distributions by combining local short-horizon generative models, with applications in multi-step robotic manipulation, panoramic image stitching, and long video generation.
+**Background**: Diffusion models have emerged as powerful tools for planning. Compositional approaches model long-horizon task distributions by combining local short-horizon generative models, with applications in multi-step robotic manipulation, panoramic image stitching, and long video generation.
 
 **Limitations of Prior Work**: When local distributions are multimodal (e.g., a robot choosing among combinations of objects and actions), existing compositional sampling methods such as score averaging suffer from mode averaging—blending incompatible modes and producing plans that are neither locally feasible nor globally consistent.
 
-**Root Cause**: The search space for global planning grows exponentially with planning horizon, while existing inference-time scaling methods are designed for single-distribution sampling and cannot handle compositional reasoning over chains of distributions.
+**Key Challenge**: The search space for global planning grows exponentially with planning horizon, while existing inference-time scaling methods are designed for single-distribution sampling and cannot handle compositional reasoning over chains of distributions.
 
 **Core Idea**: Search is embedded into the denoising process via (1) iterative resampling to promote long-range information propagation and construct globally consistent candidate plans, and (2) likelihood-based pruning to eliminate candidates containing locally inconsistent segments.
 

@@ -35,9 +35,9 @@ Real-time monocular reconstruction of free-moving objects is a fundamental chall
 
 **Feed-forward point-map methods** (DUSt3R, NoPoSplat, Spann3R): Assume static scenes and treat moving objects as outliers; implicitly rely on large background surfaces.
 
-**Root Cause**: Online reconstruction requires causal processing (updating upon each arriving frame), yet existing methods either demand global optimization, assume static scenes, or require additional sensors.
+**Key Challenge**: Online reconstruction requires causal processing (updating upon each arriving frame), yet existing methods either demand global optimization, assume static scenes, or require additional sensors.
 
-**Starting Point**: The paper designs an object-centric feed-forward framework that defines a canonical coordinate system from the first frame and incrementally fuses temporal information in constant time via a dual-key memory module, without requiring poses, depth, or background information.
+**Key Insight**: The paper designs an object-centric feed-forward framework that defines a canonical coordinate system from the first frame and incrementally fuses temporal information in constant time via a dual-key memory module, without requiring poses, depth, or background information.
 
 ## Method
 

@@ -28,15 +28,15 @@ GOATex proposes the first occlusion-aware 3D mesh texturing framework. It decomp
 
 ## Background & Motivation
 
-**State of the Field**: Existing 3D mesh texturing methods (e.g., TEXTure, SyncMVD, Paint3D, TEXGen) predominantly rely on text-to-image diffusion models, generating textures by rendering multi-view images and back-projecting them into UV space. These methods perform well on externally visible surfaces.
+**Background**: Existing 3D mesh texturing methods (e.g., TEXTure, SyncMVD, Paint3D, TEXGen) predominantly rely on text-to-image diffusion models, generating textures by rendering multi-view images and back-projecting them into UV space. These methods perform well on externally visible surfaces.
 
 **Limitations of Prior Work**: Existing methods are fundamentally limited to surfaces visible from external viewpoints. For occluded interior surfaces—such as building interiors, car dashboards, or tent inner walls—they either leave these regions untextured or apply heuristic approaches such as Voronoi filling, resulting in low-quality interior textures with visible seams and color inconsistencies.
 
-**Root Cause**: The multi-view render-and-back-project paradigm inherently lacks access to occluded geometry, while UV-space inpainting approaches lack geometric context, making it difficult to generate semantically coherent interior textures.
+**Key Challenge**: The multi-view render-and-back-project paradigm inherently lacks access to occluded geometry, while UV-space inpainting approaches lack geometric context, making it difficult to generate semantically coherent interior textures.
 
-**Paper Goals**: (1) How to systematically identify and expose occluded interior surfaces? (2) How to preserve overall structural consistency when exposing interior geometry? (3) How to seamlessly blend textures generated independently across multiple layers?
+**Goal**: (1) How to systematically identify and expose occluded interior surfaces? (2) How to preserve overall structural consistency when exposing interior geometry? (3) How to seamlessly blend textures generated independently across multiple layers?
 
-**Starting Point**: The mesh is treated as an onion-like layered structure. Ray casting is used to compute a "hit level" for each face, and texturing proceeds by exposing and processing layers from the outside in.
+**Key Insight**: The mesh is treated as an onion-like layered structure. Ray casting is used to compute a "hit level" for each face, and texturing proceeds by exposing and processing layers from the outside in.
 
 **Core Idea**: A ray-based occlusion-aware layering mechanism, combined with two-stage visibility control and weighted UV blending, enables unified high-quality texture generation for both interior and exterior surfaces.
 

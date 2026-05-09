@@ -29,7 +29,7 @@ content_hash: a2f68a8e00fa3c87
 This paper proposes the Latent Speech-Text Transformer (LST), which aggregates discrete speech tokens into higher-level "latent speech patches" as autoregressive units (analogous to BLT's treatment of bytes), aligning the sequence modeling granularity of speech and text (reducing the length ratio from 20× to ~1:1). LST achieves +6.5% absolute improvement on Speech HellaSwag, with gains that continue to grow from 420M to 7B parameters, while reducing ASR/TTS inference computation.
 
 ## Background & Motivation
-**State of the Field**: Discrete speech tokens (e.g., HuBERT at 25 Hz with a 501-entry codebook) have made autoregressive speech language modeling feasible. However, speech token sequences are far longer than their textual counterparts (10–20×), resulting in training and inference efficiency well below that of text LLMs — it is estimated that approximately three orders of magnitude more data are required to achieve comparable capability.
+**Background**: Discrete speech tokens (e.g., HuBERT at 25 Hz with a 501-entry codebook) have made autoregressive speech language modeling feasible. However, speech token sequences are far longer than their textual counterparts (10–20×), resulting in training and inference efficiency well below that of text LLMs — it is estimated that approximately three orders of magnitude more data are required to achieve comparable capability.
 
 **Limitations of Prior Work**:
    - **Information density mismatch**: The severe asymmetry in sequence length between speech tokens and text tokens impedes cross-modal knowledge transfer.
@@ -37,7 +37,7 @@ This paper proposes the Latent Speech-Text Transformer (LST), which aggregates d
    - **Insufficient alignment attempts**: Warm initialization (from text LLMs) and interleaved training help, but significant performance gaps between speech→speech and text→text tasks remain.
    - BPE fails on speech tokens (Cuervo & Marxer 2024) — simple subword segmentation is not applicable to speech.
 
-**Root Cause**: Speech modeling requires fine-grained tokens (25 Hz), yet autoregressive modeling is inefficient over long sequences and yields poor cross-modal alignment.
+**Key Challenge**: Speech modeling requires fine-grained tokens (25 Hz), yet autoregressive modeling is inefficient over long sequences and yields poor cross-modal alignment.
 
 **Core Idea**: Drawing inspiration from the Byte Latent Transformer (BLT), speech tokens are aggregated into "latent patches" (higher-level autoregressive units). A global Transformer performs modeling at the patch level, while a lightweight decoder expands patches back into speech tokens. Patch granularity is aligned with that of text tokens.
 

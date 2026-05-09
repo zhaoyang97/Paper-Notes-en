@@ -27,13 +27,13 @@ EPHAD proposes a test-time post-processing framework that corrects the output of
 
 ## Background & Motivation
 
-**State of the Field**: Unsupervised anomaly detection (AD) assumes clean training data, learning compact representations of "normal" samples and flagging deviations as anomalies. Existing methods include one-class classification (DeepSVDD), feature embedding (PatchCore), density estimation (CFLOW/FastFlow), and reconstruction-based methods (DRÆM), all of which perform well when training data is clean.
+**Background**: Unsupervised anomaly detection (AD) assumes clean training data, learning compact representations of "normal" samples and flagging deviations as anomalies. Existing methods include one-class classification (DeepSVDD), feature embedding (PatchCore), density estimation (CFLOW/FastFlow), and reconstruction-based methods (DRÆM), all of which perform well when training data is clean.
 
 **Limitations of Prior Work**: Real-world datasets are frequently contaminated by undetected anomalous samples—e.g., hidden defective products in industrial data or unlabeled cases in medical datasets. Existing mitigation strategies either require modifying the training pipeline (Refine filters suspicious anomalies via OCC ensemble; LOE iteratively assigns scores via block coordinate descent), require knowledge of the contamination ratio, or rely on semi-supervised annotations. These conditions are entirely unavailable when deploying proprietary black-box AD models.
 
-**Root Cause**: How can the performance degradation caused by data contamination be mitigated without access to the training pipeline, training data, or contamination ratio? This "preparation-agnostic" setting reflects the common real-world scenario of deploying proprietary AD models, and is conceptually dual to the test-time alignment problem in generative models.
+**Key Challenge**: How can the performance degradation caused by data contamination be mitigated without access to the training pipeline, training data, or contamination ratio? This "preparation-agnostic" setting reflects the common real-world scenario of deploying proprietary AD models, and is conceptually dual to the test-time alignment problem in generative models.
 
-**Starting Point**: Drawing on ideas from test-time adaptation (TTA) and KL-regularized alignment in generative models, EPHAD applies post-hoc correction to contaminated model outputs at test time using external "evidence." **Core Idea**: The AD model's output scores are treated as a contaminated prior, which is fused with an evidence function via exponential tilting so that the adjusted distribution is closer to the true normal sample distribution in the KL divergence sense.
+**Key Insight**: Drawing on ideas from test-time adaptation (TTA) and KL-regularized alignment in generative models, EPHAD applies post-hoc correction to contaminated model outputs at test time using external "evidence." **Core Idea**: The AD model's output scores are treated as a contaminated prior, which is fused with an evidence function via exponential tilting so that the adjusted distribution is closer to the true normal sample distribution in the KL divergence sense.
 
 ## Method
 

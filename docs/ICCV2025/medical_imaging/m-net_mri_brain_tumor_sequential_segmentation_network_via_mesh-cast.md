@@ -29,15 +29,15 @@ M-Net reinterprets the spatial continuity between adjacent MRI slices as "quasi-
 
 ## Background & Motivation
 
-**State of the Field**: MRI segmentation of brain tumors is critical for disease diagnosis and treatment planning. Deep learning methods have continuously evolved from UNet, including attention-based architectures such as CANet and MIRAU-Net, KAN-based approaches such as UKAN, and hybrid architectures such as TransUNet and Swin UNETR. Mamba SSM-based methods such as Mamba UNet have also demonstrated strong performance in medical image segmentation.
+**Background**: MRI segmentation of brain tumors is critical for disease diagnosis and treatment planning. Deep learning methods have continuously evolved from UNet, including attention-based architectures such as CANet and MIRAU-Net, KAN-based approaches such as UKAN, and hybrid architectures such as TransUNet and Swin UNETR. Mamba SSM-based methods such as Mamba UNet have also demonstrated strong performance in medical image segmentation.
 
 **Limitations of Prior Work**: Most existing methods either process MRI slices independently (2D methods) or apply 3D convolutions to the entire volume. 2D methods fail to exploit spatial continuity between adjacent slices, resulting in poor segmentation consistency; 3D methods, while capable of capturing volumetric information, incur prohibitively high computational costs that limit practical deployment. Although sequential modules from language models have been introduced into the visual domain, they typically operate on patch sequences within a single image and do not fully exploit the "quasi-temporal" spatial correlation between MRI slices.
 
-**Root Cause**: Adjacent MRI slices exhibit clear spatial continuity—the size and location of lesion regions change smoothly across slices, analogous to the temporal relationships between video frames. However, within a 2D slice processing framework, this cross-slice "quasi-temporal" information is unobservable, imposing a significant performance ceiling on 2D methods relative to their 3D counterparts.
+**Key Challenge**: Adjacent MRI slices exhibit clear spatial continuity—the size and location of lesion regions change smoothly across slices, analogous to the temporal relationships between video frames. However, within a 2D slice processing framework, this cross-slice "quasi-temporal" information is unobservable, imposing a significant performance ceiling on 2D methods relative to their 3D counterparts.
 
-**Paper Goals**: To design a segmentation framework that exploits the "quasi-temporal" spatial correlation between MRI slices while retaining the computational efficiency of 2D methods.
+**Goal**: To design a segmentation framework that exploits the "quasi-temporal" spatial correlation between MRI slices while retaining the computational efficiency of 2D methods.
 
-**Starting Point**: The paper draws an analogy between MRI slice sequences and video frame sequences, introducing sequential modeling into MRI slice segmentation. The key innovation is a general-purpose Mesh-Cast mechanism that flexibly embeds arbitrary sequential processing algorithms along both the temporal and channel dimensions.
+**Key Insight**: The paper draws an analogy between MRI slice sequences and video frame sequences, introducing sequential modeling into MRI slice segmentation. The key innovation is a general-purpose Mesh-Cast mechanism that flexibly embeds arbitrary sequential processing algorithms along both the temporal and channel dimensions.
 
 **Core Idea**: By alternately propagating sequential information along both temporal and channel dimensions via the Mesh-Cast mechanism, 2D slice-based methods can capture 3D volumetric contextual information while maintaining computational efficiency.
 

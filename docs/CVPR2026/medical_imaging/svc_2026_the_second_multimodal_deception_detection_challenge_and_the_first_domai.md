@@ -29,15 +29,15 @@ This paper organizes the SVC 2026 challenge, comprising two tracks — cross-dom
 
 ## Background & Motivation
 
-**State of the Field**: Subtle visual signals — such as minute facial color variations and fine-grained muscle movements — are imperceptible to the naked eye yet carry important physiological and psychological state information. Advances in computer vision and representation learning have made detecting and interpreting such signals an emerging research direction, with broad applications in biometric security, multimedia forensics, medical diagnosis, and affective computing.
+**Background**: Subtle visual signals — such as minute facial color variations and fine-grained muscle movements — are imperceptible to the naked eye yet carry important physiological and psychological state information. Advances in computer vision and representation learning have made detecting and interpreting such signals an emerging research direction, with broad applications in biometric security, multimedia forensics, medical diagnosis, and affective computing.
 
 **Limitations of Prior Work**: (1) In deception detection, existing methods are primarily optimized within a single domain, exhibiting poor cross-domain generalization — models trained on laboratory data suffer significant performance degradation in real-world environments due to severe domain shifts caused by differences in recording conditions, behavioral expressions, and interaction patterns. (2) In remote photoplethysmography (rPPG), most methods degrade substantially when generalizing across domains due to lighting variations, motion artifacts, and device heterogeneity, particularly in realistic deployment scenarios where model weights are fixed. (3) Existing research typically focuses on specific tasks or modalities, lacking a unified evaluation framework for systematically measuring a model's ability to capture subtle signals.
 
-**Root Cause**: Subtle visual signals are inherently characterized by extremely low amplitude, short duration, and high noise sensitivity, making stable modeling under real-world interference the central challenge.
+**Key Challenge**: Subtle visual signals are inherently characterized by extremely low amplitude, short duration, and high noise sensitivity, making stable modeling under real-world interference the central challenge.
 
-**Paper Goals**: To provide a unified evaluation framework through an organized challenge, promoting research on robust cross-domain understanding of subtle visual signals.
+**Goal**: To provide a unified evaluation framework through an organized challenge, promoting research on robust cross-domain understanding of subtle visual signals.
 
-**Starting Point**: Deception detection and rPPG are unified under the perspective of "subtle visual signal modeling" — both fundamentally rely on accurately modeling subtle visual signals and face analogous cross-domain generalization challenges.
+**Key Insight**: Deception detection and rPPG are unified under the perspective of "subtle visual signal modeling" — both fundamentally rely on accurately modeling subtle visual signals and face analogous cross-domain generalization challenges.
 
 **Core Idea**: Establish a unified challenge framework that simultaneously evaluates a model's ability to capture subtle visual signals and its cross-domain generalization performance across two representative tasks: deception detection and rPPG.
 

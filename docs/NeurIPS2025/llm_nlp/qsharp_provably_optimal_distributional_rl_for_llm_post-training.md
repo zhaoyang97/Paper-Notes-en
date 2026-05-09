@@ -28,16 +28,16 @@ This paper proposes Q♯, a distributional RL-based value function method for KL
 
 ## Background & Motivation
 
-**State of the Field**: RL post-training is central to LLM alignment and reasoning. Mainstream methods employ policy gradients (PPO, DPO, RLOO) with KL divergence constraints to prevent deviation from the reference policy $\pi^{ref}$, but these methods incur high computational overhead (requiring full backpropagation).
+**Background**: RL post-training is central to LLM alignment and reasoning. Mainstream methods employ policy gradients (PPO, DPO, RLOO) with KL divergence constraints to prevent deviation from the reference policy $\pi^{ref}$, but these methods incur high computational overhead (requiring full backpropagation).
 
 **Limitations of Prior Work**:
    - Policy-based methods reveal a critical flaw in the star-graph experiment: shortcuts learned during pretraining (randomly selecting the first node, accuracy 1/d) cannot be corrected by REINFORCE/RPO — policy gradients are also low on low-probability paths, forming a vicious cycle.
    - Existing value-based methods (CD/VAS) use the **unregularized** $Q^{\pi^{ref},0}$ to guide $\pi^{ref}$, ignoring the KL term, with no guarantee of convergence to the optimal policy.
    - CD is extremely sensitive to $\eta$ — as $\eta^{-1}$ increases, KL divergence spikes and performance degrades.
 
-**Root Cause**: Policy-based methods cannot correct pretraining shortcuts, and existing value-based methods use incorrect objective functions.
+**Key Challenge**: Policy-based methods cannot correct pretraining shortcuts, and existing value-based methods use incorrect objective functions.
 
-**Starting Point**: In deterministic MDPs (covering LLM autoregressive generation), $Q^{\star,\eta}$ can be computed directly as a functional of the cumulative reward distribution under the reference policy, without TD learning.
+**Key Insight**: In deterministic MDPs (covering LLM autoregressive generation), $Q^{\star,\eta}$ can be computed directly as a functional of the cumulative reward distribution under the reference policy, without TD learning.
 
 **Core Idea**: Learn $Z^\star$ (the conditional distribution of cumulative rewards under $\pi^{ref}$), and obtain the optimal Q-function via the simple functional $Q^{\star,\eta} = \eta \ln \mathbb{E}_{z \sim Z^\star}[\exp(z/\eta)]$.
 

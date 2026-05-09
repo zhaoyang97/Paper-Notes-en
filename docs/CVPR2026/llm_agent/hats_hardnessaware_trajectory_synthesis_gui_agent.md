@@ -29,15 +29,15 @@ This paper proposes HATS — a hardness-aware trajectory synthesis framework tha
 
 ## Background & Motivation
 
-**State of the Field**: VLM-based GUI agents have shown great potential for automating digital tasks. The dominant training paradigm relies on high-quality action trajectory data — each trajectory containing a task description, UI screenshots, and an action sequence. Various trajectory synthesis pipelines have been designed to produce training data at scale.
+**Background**: VLM-based GUI agents have shown great potential for automating digital tasks. The dominant training paradigm relies on high-quality action trajectory data — each trajectory containing a task description, UI screenshots, and an action sequence. Various trajectory synthesis pipelines have been designed to produce training data at scale.
 
 **Limitations of Prior Work**: Existing trajectory synthesis methods tend to produce agents that only handle simple interactions with poor generalization. The authors identify the root cause as these pipelines ignoring **semantically ambiguous actions** — actions whose meaning depends on context, action sequence, or visual environment — for example: (1) context-dependent actions: the same button carries different meanings depending on page state; (2) sequence-dependent actions: the correctness of certain actions depends on the results of prior actions; (3) visually ambiguous actions: UI elements that are difficult to distinguish visually.
 
-**Root Cause**: Semantically ambiguous actions are common in real-world GUI interactions and are critical for training robust agents, yet they are severely underrepresented and poorly handled in existing datasets. This leads to semantic misalignment between task instructions and actual execution, causing agents to frequently fail in complex real-world environments.
+**Key Challenge**: Semantically ambiguous actions are common in real-world GUI interactions and are critical for training robust agents, yet they are severely underrepresented and poorly handled in existing datasets. This leads to semantic misalignment between task instructions and actual execution, causing agents to frequently fail in complex real-world environments.
 
-**Paper Goals**: Design a framework that (1) actively discovers and collects high-quality trajectories containing semantically ambiguous actions, and (2) automatically detects and repairs instruction-execution alignment issues.
+**Goal**: Design a framework that (1) actively discovers and collects high-quality trajectories containing semantically ambiguous actions, and (2) automatically detects and repairs instruction-execution alignment issues.
 
-**Starting Point**: Introduce the concept of "hardness" to quantify the degree of semantic ambiguity in actions, using it as the core signal for data collection and quality assurance.
+**Key Insight**: Introduce the concept of "hardness" to quantify the degree of semantic ambiguity in actions, using it as the core signal for data collection and quality assurance.
 
 **Core Idea**: Form a closed loop through hardness-driven active exploration and alignment-guided iterative refinement — the exploration module supplies challenging trajectories to the refinement module, whose feedback updates the hardness signal to guide future exploration.
 

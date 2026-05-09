@@ -28,15 +28,15 @@ This paper proposes RTV-Bench, a fine-grained evaluation benchmark for assessing
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs have advanced rapidly in perception, understanding, and reasoning, yet existing benchmarks primarily evaluate static or offline video understanding, making it difficult to measure model performance on continuous dynamic video streams.
+**Background**: MLLMs have advanced rapidly in perception, understanding, and reasoning, yet existing benchmarks primarily evaluate static or offline video understanding, making it difficult to measure model performance on continuous dynamic video streams.
 
 **Limitations of Prior Work**: While benchmarks such as VStream, StreamingBench, and OVOBench have improved upon video length and evaluation types, they remain insufficient for assessing real-time responsiveness — in particular, they overlook a model's ability to capture transitional and momentary details within visual input.
 
-**Root Cause**: Real-world video is continuously evolving, and the correct answer to a given question may differ depending on the timestamp at which it is posed. Existing benchmarks typically ask questions at a single point in time and are therefore unable to test model sensitivity to dynamic state changes.
+**Key Challenge**: Real-world video is continuously evolving, and the correct answer to a given question may differ depending on the timestamp at which it is posed. Existing benchmarks typically ask questions at a single point in time and are therefore unable to test model sensitivity to dynamic state changes.
 
-**Paper Goals**: To design a benchmark that comprehensively evaluates MLLM continuous analysis capabilities in real-time video scenarios, spanning three levels: perception, understanding, and reasoning.
+**Goal**: To design a benchmark that comprehensively evaluates MLLM continuous analysis capabilities in real-time video scenarios, spanning three levels: perception, understanding, and reasoning.
 
-**Starting Point**: Three core innovations are introduced — a multi-timestamp QA mechanism, a hierarchical question structure, and a multi-dimensional evaluation system — to construct a more rigorous assessment of real-time video understanding.
+**Key Insight**: Three core innovations are introduced — a multi-timestamp QA mechanism, a hierarchical question structure, and a multi-dimensional evaluation system — to construct a more rigorous assessment of real-time video understanding.
 
 **Core Idea**: The same conceptual question is posed repeatedly at different timestamps throughout a video, with the correct answer changing as the scene evolves. This directly tests a model's ability to continuously track temporal states and update its understanding accordingly.
 

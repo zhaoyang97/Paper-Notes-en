@@ -29,15 +29,15 @@ This paper proposes DiaFORGE, a disambiguation-centric synthetic data generation
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are evolving from conversational assistants into operational agents capable of invoking APIs. Enterprise environments manage tens of thousands of APIs, many of which are subtle variants of core functionalities (e.g., different versions for customer support, finance, and supply chain).
+**Background**: LLMs are evolving from conversational assistants into operational agents capable of invoking APIs. Enterprise environments manage tens of thousands of APIs, many of which are subtle variants of core functionalities (e.g., different versions for customer support, finance, and supply chain).
 
 **Limitations of Prior Work**: In practice, approximately 35–38% of queries retrieve highly similar distractor APIs, 71% of APIs have required parameters, and 76–81% of calls are missing at least one required field. Existing tool-calling benchmarks (BFCL, ToolBench, API-Bank) rely on pre-scripted user queries for static evaluation and fail to expose the cascading failure patterns arising from incomplete requests combined with near-duplicate tools.
 
-**Root Cause**: Enterprise tool calling demands two tightly intertwined capabilities—multi-turn dialogue to elicit missing parameters, and fine-grained disambiguation across densely overlapping API surfaces—yet both existing training data and evaluation methodologies neglect this coupling.
+**Key Challenge**: Enterprise tool calling demands two tightly intertwined capabilities—multi-turn dialogue to elicit missing parameters, and fine-grained disambiguation across densely overlapping API surfaces—yet both existing training data and evaluation methodologies neglect this coupling.
 
-**Paper Goals**: (1) Construct disambiguation-centric training data; (2) fine-tune open-source models to learn proactive clarification and precise tool selection; (3) design a dynamic evaluation framework to measure end-to-end task completion rates.
+**Goal**: (1) Construct disambiguation-centric training data; (2) fine-tune open-source models to learn proactive clarification and precise tool selection; (3) design a dynamic evaluation framework to measure end-to-end task completion rates.
 
-**Starting Point**: The authors, from SAP Labs, draw on production telemetry from real enterprise API environments, from which they identify disambiguation as the central bottleneck in tool calling.
+**Key Insight**: The authors, from SAP Labs, draw on production telemetry from real enterprise API environments, from which they identify disambiguation as the central bottleneck in tool calling.
 
 **Core Idea**: A bottom-up multi-agent data engine synthesizes disambiguation-centric dialogues by providing the assistant with near-duplicate tool sets and deliberately withholding critical information, structurally compelling the assistant to learn to disambiguate before invoking any tool.
 

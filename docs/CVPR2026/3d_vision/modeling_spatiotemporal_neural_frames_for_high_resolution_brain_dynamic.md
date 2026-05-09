@@ -29,11 +29,11 @@ A diffusion Transformer framework conditioned on EEG for fMRI reconstruction is 
 
 ## Background & Motivation
 
-1. **State of the Field**: fMRI offers high spatial resolution cortical representations but is costly to acquire; EEG provides millisecond-level temporal resolution but with low spatial precision. EEG-to-fMRI translation aims to leverage the complementarity of both modalities by inferring fMRI-level spatial patterns from EEG.
+1. **Background**: fMRI offers high spatial resolution cortical representations but is costly to acquire; EEG provides millisecond-level temporal resolution but with low spatial precision. EEG-to-fMRI translation aims to leverage the complementarity of both modalities by inferring fMRI-level spatial patterns from EEG.
 2. **Limitations of Prior Work**: (1) ROI-level methods (e.g., NeuroBOLT) can model temporal continuity but suffer from low spatial resolution; (2) voxel/cortical-level methods (CNN-TC, CATD, etc.) achieve high spatial fidelity but reconstruct frames independently, lacking temporal consistency; (3) evaluation relies solely on low-level metrics such as MSE/SSIM, which cannot assess whether reconstructed fMRI preserves functionally meaningful neural information.
-3. **Root Cause**: High spatial resolution and temporal continuity are difficult to achieve simultaneously — independent reconstruction ensures spatial accuracy but introduces inter-frame artifacts, while sequence modeling ensures temporal continuity but is constrained by spatial granularity.
-4. **Paper Goals**: To reconstruct temporally continuous and consistent fMRI frame sequences at the high spatial resolution of 91,282 cortical vertices.
-5. **Starting Point**: Brain activity is modeled as evolving spatiotemporal neural frames (rather than independent snapshots), using a diffusion Transformer to jointly capture vertex-level spatial detail and inter-frame temporal dependencies.
+3. **Key Challenge**: High spatial resolution and temporal continuity are difficult to achieve simultaneously — independent reconstruction ensures spatial accuracy but introduces inter-frame artifacts, while sequence modeling ensures temporal continuity but is constrained by spatial granularity.
+4. **Goal**: To reconstruct temporally continuous and consistent fMRI frame sequences at the high spatial resolution of 91,282 cortical vertices.
+5. **Key Insight**: Brain activity is modeled as evolving spatiotemporal neural frames (rather than independent snapshots), using a diffusion Transformer to jointly capture vertex-level spatial detail and inter-frame temporal dependencies.
 6. **Core Idea**: An EEG-guided diffusion Transformer generates spatiotemporally consistent fMRI sequences, with null-space constrained sampling enabling intermediate frame reconstruction.
 
 ## Method

@@ -28,15 +28,15 @@ This paper proposes InvisibleInk, a framework that reduces the computational cos
 
 ## Background & Motivation
 
-**State of the Field**: LLMs demonstrate strong long-text generation capabilities in paradigms such as RAG and inference-time scaling, but generation inevitably involves privacy-sensitive data (e.g., medical records, legal documents, user conversations), creating risks of privacy leakage through model outputs.
+**Background**: LLMs demonstrate strong long-text generation capabilities in paradigms such as RAG and inference-time scaling, but generation inevitably involves privacy-sensitive data (e.g., medical records, legal documents, user conversations), creating risks of privacy leakage through model outputs.
 
 **Limitations of Prior Work**: Existing differentially private (DP) text generation methods suffer from severe practical limitations. The SOTA method of Amin et al. [2024] interprets LLM next-token sampling as an exponential mechanism but requires more than 100× the computational overhead of non-private generation to produce non-degenerate text, and is completely non-functional at small batch sizes.
 
-**Root Cause**: DP text generation faces a three-way tradeoff among privacy, utility, and computation. Conventional clipping applies to the entire logit vector, yet over 95% of the information in logits constitutes the language model's public prior (grammar, commonsense, etc.); clipping this non-sensitive information wastes privacy budget. Simultaneously, DP noise causes full-vocabulary sampling to yield low-quality, degenerate text.
+**Key Challenge**: DP text generation faces a three-way tradeoff among privacy, utility, and computation. Conventional clipping applies to the entire logit vector, yet over 95% of the information in logits constitutes the language model's public prior (grammar, commonsense, etc.); clipping this non-sensitive information wastes privacy budget. Simultaneously, DP noise causes full-vocabulary sampling to yield low-quality, degenerate text.
 
-**Paper Goals**: (i) Reduce the per-token privacy cost to decrease computational requirements; (ii) improve text quality through truncated decoding under DP constraints.
+**Goal**: (i) Reduce the per-token privacy cost to decrease computational requirements; (ii) improve text quality through truncated decoding under DP constraints.
 
-**Starting Point**: The key observation is that the distribution range of the difference between private logits $\phi_i$ and public logits $\phi_{\text{pub}}$ (logits computed without sensitive references) is approximately 10× smaller than that of the raw logits. This implies that sensitive information contributes only a small fraction of the logit values and can be handled with a much smaller clipping threshold.
+**Key Insight**: The key observation is that the distribution range of the difference between private logits $\phi_i$ and public logits $\phi_{\text{pub}}$ (logits computed without sensitive references) is approximately 10× smaller than that of the raw logits. This implies that sensitive information contributes only a small fraction of the logit values and can be handled with a much smaller clipping threshold.
 
 **Core Idea**: Clip only the increment of the logits relative to the public model (i.e., the sensitive component), and combine this with truncated sampling over a top-$k$ superset derived from the public logits, substantially reducing privacy costs and improving text quality.
 

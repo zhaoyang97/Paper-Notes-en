@@ -27,15 +27,15 @@ Inspired by the utility maximization paradigm in behavioral science, this paper 
 
 ## Background & Motivation
 
-**State of the Field**: Interpretable machine learning has long faced a performance–interpretability trade-off — deep neural networks offer strong predictive power but lack transparency, while linear models and decision trees are transparent but fail to capture complex nonlinear patterns. Existing methods such as EBMs and NAMs partially alleviate this tension but remain insufficient for scientific modeling scenarios.
+**Background**: Interpretable machine learning has long faced a performance–interpretability trade-off — deep neural networks offer strong predictive power but lack transparency, while linear models and decision trees are transparent but fail to capture complex nonlinear patterns. Existing methods such as EBMs and NAMs partially alleviate this tension but remain insufficient for scientific modeling scenarios.
 
 **Limitations of Prior Work**:
 - **Lack of alignment with scientific theory**: Most interpretable methods are extensions of existing ML approaches rather than designs grounded in scientific principles (e.g., optimization problems, differential equations), making it difficult to extract scientific knowledge from the learned models.
 - **Non-unique explanations**: The vast majority of models lack identifiability — the same predictive behavior may correspond to multiple distinct sets of parameters or explanations, providing no guarantee that the recovered "scientific knowledge" is genuine.
 
-**Root Cause**: How can one design a machine learning framework that simultaneously achieves strong predictive capability, intrinsic interpretability, and parameter identifiability?
+**Key Challenge**: How can one design a machine learning framework that simultaneously achieves strong predictive capability, intrinsic interpretability, and parameter identifiability?
 
-**Starting Point**: The paper departs from the core paradigm of behavioral science — utility maximization problems (UMPs). UMPs assume that human behavior arises from optimization processes that maximize utility under constraints, and since any optimization problem can be equivalently rewritten as a UMP (Theorem 2.2), a framework built on UMPs is general-purpose.
+**Key Insight**: The paper departs from the core paradigm of behavioral science — utility maximization problems (UMPs). UMPs assume that human behavior arises from optimization processes that maximize utility under constraints, and since any optimization problem can be equivalently rewritten as a UMP (Theorem 2.2), a framework built on UMPs is general-purpose.
 
 **Core Idea**: The model is parameterized as a "composite utility function" formed by hierarchically composing multiple interpretable UMP modules. The conditional distribution of data is modeled via a Gibbs distribution, such that each module can be interpreted as a symbolic optimization problem.
 

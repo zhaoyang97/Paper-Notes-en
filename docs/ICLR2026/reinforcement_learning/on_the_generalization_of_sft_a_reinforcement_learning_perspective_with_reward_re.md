@@ -28,16 +28,16 @@ This paper mathematically proves, from an RL policy gradient perspective, that S
 
 ## Background & Motivation
 
-**State of the Field**: SFT is the standard paradigm for LLM post-training, efficiently acquiring expert-like behavior; RL explores diverse strategies via reward signals to achieve better generalization, but requires substantial computation, careful hyperparameter tuning, and explicit reward functions.
+**Background**: SFT is the standard paradigm for LLM post-training, efficiently acquiring expert-like behavior; RL explores diverse strategies via reward signals to achieve better generalization, but requires substantial computation, careful hyperparameter tuning, and explicit reward functions.
 
 **Limitations of Prior Work**:
 - (1) SFT causes performance degradation on challenging benchmarks (OlympiadBench/AIME24): Qwen2.5-Math-1.5B drops from 15.88 to 12.63 on OlympiadBench after SFT.
 - (2) The phenomenon of "SFT memorizes, RL generalizes" has been empirically observed across multiple works (Chu et al., 2024), but lacks a mathematical root-cause analysis.
 - (3) Hybrid SFT+RL methods (InstructGPT/DPO, etc.) do not improve SFT itself — when only positive samples are available without reward or preference data, SFT is the only option.
 
-**Root Cause**: Why does SFT generalize poorly with only positive samples? Can the theoretical gap between SFT and RL be rigorously characterized?
+**Key Challenge**: Why does SFT generalize poorly with only positive samples? Can the theoretical gap between SFT and RL be rigorously characterized?
 
-**Starting Point**: By rewriting SFT gradients strictly in the form of policy gradients via importance sampling, the paper reveals that SFT's implicit "reward" is a sparse indicator function with inverse probability weighting — the mathematical root cause of limited generalization.
+**Key Insight**: By rewriting SFT gradients strictly in the form of policy gradients via importance sampling, the paper reveals that SFT's implicit "reward" is a sparse indicator function with inverse probability weighting — the mathematical root cause of limited generalization.
 
 **Intuitive Analogy**: Focal Loss $-(1-p)^\gamma\log p$ emphasizes hard samples (in the underfitting era) → DFT $-p\log p$ de-emphasizes hard samples (in the LLM overfitting era) → a fundamental inversion of the objective design philosophy.
 

@@ -35,9 +35,9 @@ Neural network pruning is a key technique for deploying large models on resource
 
 **2) Per-layer sparsity allocation**: Uniform pruning degrades sharply at high compression ratios; non-uniform methods (RL search, evolutionary strategies) are computationally expensive and require re-search whenever the target compression ratio changes.
 
-**Root Cause**: Achieving high-quality non-uniform pruning while avoiding costly global search.
+**Key Challenge**: Achieving high-quality non-uniform pruning while avoiding costly global search.
 
-**Starting Point**: FAIR-Pruner introduces the ToD metric to measure the overlap between units "suggested for removal" and units "that should be protected." By presetting a threshold $\alpha$, the number of units pruned per layer is determined automatically. Scores are computed once; changing $\alpha$ requires only milliseconds of recomputation.
+**Key Insight**: FAIR-Pruner introduces the ToD metric to measure the overlap between units "suggested for removal" and units "that should be protected." By presetting a threshold $\alpha$, the number of units pruned per layer is determined automatically. Scores are computed once; changing $\alpha$ requires only milliseconds of recomputation.
 
 ## Method
 

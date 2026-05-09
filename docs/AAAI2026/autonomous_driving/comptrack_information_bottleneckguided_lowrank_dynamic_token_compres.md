@@ -30,13 +30,13 @@ CompTrack is proposed as the first framework to simultaneously address dual redu
 
 ## Background & Motivation
 
-**State of the Field**: LiDAR-based 3D single object tracking is a fundamental task in autonomous driving, with methods categorized into appearance matching and motion-centric paradigms.
+**Background**: LiDAR-based 3D single object tracking is a fundamental task in autonomous driving, with methods categorized into appearance matching and motion-centric paradigms.
 
 **Limitations of Prior Work**: The inherent sparsity of LiDAR point clouds introduces dual redundancy — (1) **Spatial redundancy**: abundant background points overwhelm sparse target features; (2) **Information redundancy**: points on large flat surfaces in the foreground provide ambiguous localization cues (analogous to the aperture problem in optical flow), while corner points carry structural information.
 
-**Root Cause**: Existing methods primarily address spatial redundancy while entirely ignoring the information redundancy and low-rank structure of foreground feature matrices.
+**Key Challenge**: Existing methods primarily address spatial redundancy while entirely ignoring the information redundancy and low-rank structure of foreground feature matrices.
 
-**Starting Point**: Foreground feature matrices are intrinsically low-rank and can be compressed via optimal low-rank approximation (truncated SVD), which naturally corresponds to the information bottleneck principle.
+**Key Insight**: Foreground feature matrices are intrinsically low-rank and can be compressed via optimal low-rank approximation (truncated SVD), which naturally corresponds to the information bottleneck principle.
 
 **Core Idea**: Spatial redundancy is removed by an information entropy-guided foreground predictor; information redundancy is resolved by estimating the effective rank via online SVD and compressing via cross-attention with learned queries.
 

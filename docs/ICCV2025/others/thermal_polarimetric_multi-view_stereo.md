@@ -31,7 +31,7 @@ This paper proposes a method for high-fidelity 3D shape reconstruction using the
 
 ### Root Cause
 
-**Root Cause**: 3D shape reconstruction is a fundamental problem in computer vision, yet existing methods rely on strong assumptions about illumination and material properties:
+**Key Challenge**: 3D shape reconstruction is a fundamental problem in computer vision, yet existing methods rely on strong assumptions about illumination and material properties:
 
 - **Multi-view stereo**: relies on surface texture for correspondence matching
 - **Structured light / photometric stereo**: requires specific illumination conditions and assumes opaque surfaces

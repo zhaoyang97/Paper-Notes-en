@@ -31,15 +31,15 @@ This paper identifies temporal imbalance as a previously overlooked source of bi
 
 **Core challenge of CIL**: Models must learn new classes sequentially without access to data from old classes, leading to catastrophic forgetting and severe prediction bias toward new classes.
 
-**State of the Field**: Mainstream methods (Balanced Fine-tuning, Prototype-based Classifiers, Output Layer Calibration) attribute prediction bias to class imbalance between old and new classes, applying corrections only at the classification head.
+**Background**: Mainstream methods (Balanced Fine-tuning, Prototype-based Classifiers, Output Layer Calibration) attribute prediction bias to class imbalance between old and new classes, applying corrections only at the classification head.
 
 **Limitations of Prior Work**: Even when old classes have equal numbers of samples, classes whose positive samples appeared earlier accumulate more negative supervision during later training stages, yielding an asymmetry of high precision but low recall.
 
-**Root Cause**: The temporal ordering of training data in CIL introduces systematic bias that affects the entire model—including the backbone feature space—not merely the classification head.
+**Key Challenge**: The temporal ordering of training data in CIL introduces systematic bias that affects the entire model—including the backbone feature space—not merely the classification head.
 
 **Key illustration (Figure 1)**: In Task 2, classes A and B have identical sample counts, but class A's positive samples are concentrated in Task 0 while class B's are in Task 1. Class A suffers more severe forgetting, demonstrating that class balance alone cannot explain all prediction bias.
 
-**Paper Goals**: Although temporal decay is widely used in time-series forecasting, reinforcement learning, and online learning, no prior CIL work explicitly models the temporal imbalance of positive and negative supervision at the loss level.
+**Goal**: Although temporal decay is widely used in time-series forecasting, reinforcement learning, and online learning, no prior CIL work explicitly models the temporal imbalance of positive and negative supervision at the loss level.
 
 ## Method
 

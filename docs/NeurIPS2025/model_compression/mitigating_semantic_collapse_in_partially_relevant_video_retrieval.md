@@ -38,7 +38,7 @@ To address semantic collapse in Partially Relevant Video Retrieval (PRVR), this 
     - **Text-side collapse**: Different textual annotations of the same video are forced closer together in the embedding space, even when they describe entirely distinct events within the video.
     - **Video-side collapse**: Clip embeddings from different events within the same video are compressed together, losing event-level discriminability.
     - **Cross-video issue**: Semantically similar queries or clips from different videos are pushed apart, since different videos are treated as negative samples.
-- **Root Cause**: Existing methods treat all annotated text-video pairs as positives and all others as negatives, ignoring:
+- **Key Challenge**: Existing methods treat all annotated text-video pairs as positives and all others as negatives, ignoring:
   1. Intra-video semantic diversity
   2. Cross-video semantic similarity
 

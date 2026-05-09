@@ -28,18 +28,18 @@ This paper introduces HSKBenchmark, the first benchmark for staged modeling and 
 
 ## Background & Motivation
 
-**State of the Field**: Language acquisition research is central to understanding human linguistic intelligence. LLMs, owing to their controllability and reproducibility, have emerged as viable tools for simulating language acquisition. Existing work has focused primarily on first language (L1) acquisition modeling, while second language acquisition (SLA) modeling — particularly for Chinese — remains nascent.
+**Background**: Language acquisition research is central to understanding human linguistic intelligence. LLMs, owing to their controllability and reproducibility, have emerged as viable tools for simulating language acquisition. Existing work has focused primarily on first language (L1) acquisition modeling, while second language acquisition (SLA) modeling — particularly for Chinese — remains nascent.
 
 **Limitations of Prior Work**:
 - Existing SLA modeling differentiates acquisition stages solely by controlling training data volume (e.g., one stage per 200K tokens), without accounting for graded linguistic difficulty.
 - Systematic graded training data and evaluation frameworks are absent.
 - Existing multilingual benchmarks (e.g., MMLU) assess static model capabilities rather than dynamic acquisition development.
 
-**Root Cause**: Controlling linguistic input in human learner experiments is ethically and practically infeasible, making LLMs an appealing controlled alternative. However, no systematic benchmark exists to support staged SLA modeling and evaluation in LLMs.
+**Key Challenge**: Controlling linguistic input in human learner experiments is ethically and practically infeasible, making LLMs an appealing controlled alternative. However, no systematic benchmark exists to support staged SLA modeling and evaluation in LLMs.
 
-**Paper Goals**: To provide a reusable, level-structured training-and-evaluation benchmark for Chinese SLA modeling in LLMs.
+**Goal**: To provide a reusable, level-structured training-and-evaluation benchmark for Chinese SLA modeling in LLMs.
 
-**Starting Point**: The HSK (Hanyu Shuiping Kaoshi) proficiency framework serves as the organizing structure, enabling multi-dimensional benchmark construction across textbook grading, grammar-item grading, and writing assessment. Writing is selected as the primary evaluation lens, as it most directly reflects the development of productive language ability.
+**Key Insight**: The HSK (Hanyu Shuiping Kaoshi) proficiency framework serves as the organizing structure, enabling multi-dimensional benchmark construction across textbook grading, grammar-item grading, and writing assessment. Writing is selected as the primary evaluation lens, as it most directly reflects the development of productive language ability.
 
 **Core Idea**: Construct graded training data (textbook pre-training + grammar instruction tuning), design a curriculum tuning framework for progressive LLM training, establish a five-dimensional evaluation system covering grammar coverage, error count, lexical complexity, syntactic complexity, and holistic score, and train HSKAgent for automated evaluation.
 

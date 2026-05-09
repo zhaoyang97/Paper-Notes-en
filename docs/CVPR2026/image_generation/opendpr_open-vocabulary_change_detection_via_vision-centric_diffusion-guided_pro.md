@@ -29,15 +29,15 @@ OpenDPR proposes a training-free, vision-centric framework that leverages diffus
 
 ## Background & Motivation
 
-**State of the Field**: Change Detection (CD) is a core task in remote sensing image analysis, aimed at identifying land cover changes from bi-temporal images of the same region. Conventional CD methods can only recognize predefined change categories, limiting their applicability in open-world scenarios.
+**Background**: Change Detection (CD) is a core task in remote sensing image analysis, aimed at identifying land cover changes from bi-temporal images of the same region. Conventional CD methods can only recognize predefined change categories, limiting their applicability in open-world scenarios.
 
 **Limitations of Prior Work**: (1) Open-Vocabulary Change Detection (OVCD) requires recognizing arbitrary change categories unseen during training, yet existing methods remain severely limited; (2) existing OVCD methods rely on vision-language models (VLMs) such as CLIP for category recognition, but the image-text matching paradigm of VLMs struggles to precisely distinguish fine-grained land cover categories (e.g., "paddy field" vs. "cornfield"); (3) vision foundation models (VFMs) such as SAM and DINOv2 excel at spatial modeling but lack prior knowledge specific to change detection.
 
-**Root Cause**: Text-image matching in VLMs performs well on natural images, but land cover categories in remote sensing imagery exhibit subtle semantic differences that textual descriptions fail to discriminate. The two bottlenecks of OVCD—category recognition and change localization—are respectively constrained by the capability ceilings of VLMs and VFMs.
+**Key Challenge**: Text-image matching in VLMs performs well on natural images, but land cover categories in remote sensing imagery exhibit subtle semantic differences that textual descriptions fail to discriminate. The two bottlenecks of OVCD—category recognition and change localization—are respectively constrained by the capability ceilings of VLMs and VFMs.
 
-**Paper Goals**: (1) Address the primary bottleneck of category recognition in OVCD by replacing text matching with prototype retrieval in visual space; (2) improve change localization by adapting the spatial modeling capability of VFMs through a weakly supervised module.
+**Goal**: (1) Address the primary bottleneck of category recognition in OVCD by replacing text matching with prototype retrieval in visual space; (2) improve change localization by adapting the spatial modeling capability of VFMs through a weakly supervised module.
 
-**Starting Point**: The authors' core observation is that rather than representing categories via text descriptions (e.g., "residential area" is too abstract), visual prototypes (e.g., a typical aerial photograph of a residential area as an anchor) are more effective. Diffusion models can generate diverse visual prototypes for arbitrary categories, which capture fine-grained appearance differences of land cover more accurately than text.
+**Key Insight**: The authors' core observation is that rather than representing categories via text descriptions (e.g., "residential area" is too abstract), visual prototypes (e.g., a typical aerial photograph of a residential area as an anchor) are more effective. Diffusion models can generate diverse visual prototypes for arbitrary categories, which capture fine-grained appearance differences of land cover more accurately than text.
 
 **Core Idea**: Offline construct a visual prototype library for target categories using diffusion models, and at inference time perform similarity-based retrieval between change proposals and prototypes in visual feature space, achieving a "text → vision" transition for category recognition that fundamentally improves recognition accuracy for fine-grained remote sensing categories.
 

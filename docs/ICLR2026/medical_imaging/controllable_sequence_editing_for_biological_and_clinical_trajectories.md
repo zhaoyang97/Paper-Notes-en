@@ -37,9 +37,9 @@ Counterfactual reasoning ("What if the patient were switched to a different drug
 
 In practice, an intervention (e.g., drug administration, surgery) should take effect only after a specific time point and should affect only a subset of variables (e.g., certain lab results), while the remaining variables and historical data must remain unchanged to preserve temporal causal consistency.
 
-**Root Cause**: How can precise, condition-guided local edits be performed on multivariate sequences while maintaining global causal consistency?
+**Key Challenge**: How can precise, condition-guided local edits be performed on multivariate sequences while maintaining global causal consistency?
 
-**Starting Point**: Inspired by condition guidance in controllable text generation and spatial context in image inpainting, Clef introduces *temporal concepts*—vectors that encode the rate of change (trajectory) of a sequence—to capture how and when a condition affects the sequence, enabling precise, temporally localized controllable sequence editing.
+**Key Insight**: Inspired by condition guidance in controllable text generation and spatial context in image inpainting, Clef introduces *temporal concepts*—vectors that encode the rate of change (trajectory) of a sequence—to capture how and when a condition affects the sequence, enabling precise, temporally localized controllable sequence editing.
 
 ## Method
 

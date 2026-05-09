@@ -29,15 +29,15 @@ CAS-Spec constructs a multi-level draft model hierarchy from the target model it
 
 ## Background & Motivation
 
-**State of the Field**: Speculative decoding accelerates LLM inference via the draft-then-verify paradigm. Self-speculative decoding methods (e.g., SWIFT with layer skipping) require no additional draft model training but offer limited speedup. Cascade speculative decoding (e.g., CS-Drafting) achieves greater acceleration through multi-level draft hierarchies but requires training multiple models.
+**Background**: Speculative decoding accelerates LLM inference via the draft-then-verify paradigm. Self-speculative decoding methods (e.g., SWIFT with layer skipping) require no additional draft model training but offer limited speedup. Cascade speculative decoding (e.g., CS-Drafting) achieves greater acceleration through multi-level draft hierarchies but requires training multiple models.
 
 **Limitations of Prior Work**: (1) Training-free self-speculative methods (e.g., SWIFT, Lookahead) achieve speedups inferior even to simple Prompt Lookup Decoding (PLD); (2) Cascade methods require maintaining multiple trained draft models, which is impractical; (3) Even when naively combining self-speculative methods with PLD in a cascade, theoretical analysis shows that most SWIFT acceptance rate/cost trade-off points fall outside the effective cascade boundary, making naïve cascading unable to guarantee acceleration.
 
-**Root Cause**: Self-speculative methods exhibit insufficiently high acceptance rates and insufficiently low cost coefficients, such that naïve vertical/horizontal cascades may be slower than directly using PLD. A more intelligent scheduling algorithm is needed to fully exploit the potential of multi-level drafting.
+**Key Challenge**: Self-speculative methods exhibit insufficiently high acceptance rates and insufficiently low cost coefficients, such that naïve vertical/horizontal cascades may be slower than directly using PLD. A more intelligent scheduling algorithm is needed to fully exploit the potential of multi-level drafting.
 
-**Paper Goals**: How can effective cascade speculative decoding be constructed without training any draft model, while designing adaptive scheduling that genuinely outperforms single-level methods?
+**Goal**: How can effective cascade speculative decoding be constructed without training any draft model, while designing adaptive scheduling that genuinely outperforms single-level methods?
 
-**Starting Point**: (1) Define the DSIA strategy framework—creating multiple virtual draft models using the same acceleration strategy at different parameter settings (e.g., layer skipping at different sparsity rates); (2) Design the DyTC algorithm—inspired by A* search, optimizing not only the local speedup of the current step but also considering the minimum speedup of subsequent steps (EWIF of the fastest bottom draft).
+**Key Insight**: (1) Define the DSIA strategy framework—creating multiple virtual draft models using the same acceleration strategy at different parameter settings (e.g., layer skipping at different sparsity rates); (2) Design the DyTC algorithm—inspired by A* search, optimizing not only the local speedup of the current step but also considering the minimum speedup of subsequent steps (EWIF of the fastest bottom draft).
 
 **Core Idea**: Reinterpret different compression levels of self-speculative decoding as multi-level draft models within a cascade, and employ dynamic tree search based on EMA-tracked acceptance rates and latency prediction to adaptively schedule the entire hierarchy.
 

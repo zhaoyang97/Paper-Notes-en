@@ -28,15 +28,15 @@ Through the metaphor of the Dutch tradition of *jutters* (beachcombers), this wo
 
 ## Background & Motivation
 
-**State of the Field**: With the rapid advancement of generative AI, the proportion of AI-generated content in the digital landscape has surged, making it increasingly difficult for users to distinguish original from generated content.
+**Background**: With the rapid advancement of generative AI, the proportion of AI-generated content in the digital landscape has surged, making it increasingly difficult for users to distinguish original from generated content.
 
 **Limitations of Prior Work**: People tend to either passively accept or wholesale reject AI-generated content, lacking a deliberate *curation* mindset for filtering and interpreting such material.
 
-**Root Cause**: AI-generated content lacks the relational network—authorship, history, ownership, and intended use—inherent to traditional objects, making it difficult for people to form meaningful relationships with it.
+**Key Challenge**: AI-generated content lacks the relational network—authorship, history, ownership, and intended use—inherent to traditional objects, making it difficult for people to form meaningful relationships with it.
 
-**Paper Goals**: How can people be guided to engage with AI-generated content in a more deliberate and proactive manner?
+**Goal**: How can people be guided to engage with AI-generated content in a more deliberate and proactive manner?
 
-**Starting Point**: The authors map the Dutch coastal beachcombing tradition (*jutters*) onto the digital age. Jutters search for objects washed ashore after storms and endow them with new meaning; similarly, people can act as jutters by *curating* AI-generated content that floods their information streams.
+**Key Insight**: The authors map the Dutch coastal beachcombing tradition (*jutters*) onto the digital age. Jutters search for objects washed ashore after storms and endow them with new meaning; similarly, people can act as jutters by *curating* AI-generated content that floods their information streams.
 
 **Core Idea**: By materializing AI-generated content within a physical installation space, the work invites visitors to actively filter, evaluate, and assign meaning as jutters.
 

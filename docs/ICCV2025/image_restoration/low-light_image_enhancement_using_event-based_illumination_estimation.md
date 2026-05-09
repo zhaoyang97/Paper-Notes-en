@@ -30,7 +30,7 @@ RetinEV proposes exploiting *temporal-mapping events* (triggered by transmittanc
 
 ## Background & Motivation
 
-**State of the Field**: Low-light image enhancement (LLIE) is a fundamental task in computer vision. Traditional approaches fall into two categories: histogram equalization and Retinex-based methods. Deep learning methods (RetinexNet, SCI, Diff-Retinex, etc.) have achieved notable progress. Event cameras have attracted attention due to their high dynamic range and superior low-light response.
+**Background**: Low-light image enhancement (LLIE) is a fundamental task in computer vision. Traditional approaches fall into two categories: histogram equalization and Retinex-based methods. Deep learning methods (RetinexNet, SCI, Diff-Retinex, etc.) have achieved notable progress. Event cameras have attracted attention due to their high dynamic range and superior low-light response.
 
 **Limitations of Prior Work**:
    - Existing event-guided LLIE methods (e.g., eSL-Net, EvLight) rely on **motion events** (triggered by object or camera motion), which suffer from three key problems:
@@ -39,9 +39,9 @@ RetinEV proposes exploiting *temporal-mapping events* (triggered by transmittanc
      - (c) They are prone to generating artifacts.
    - Image-only methods lack effective illumination priors under extreme low-light conditions.
 
-**Root Cause**: Event cameras possess excellent HDR and low-light response capabilities, yet existing methods exploit only motion-triggered events, leaving the potential of event cameras along the illumination dimension largely untapped.
+**Key Challenge**: Event cameras possess excellent HDR and low-light response capabilities, yet existing methods exploit only motion-triggered events, leaving the potential of event cameras along the illumination dimension largely untapped.
 
-**Starting Point**: A paradigm shift—rather than relying on scene motion, the paper actively generates *temporal-mapping events* by varying the optical transmittance (opening a mechanical shutter). These events directly encode scene brightness changes, providing denser and more accurate illumination information than motion events. Converting event timestamps to brightness values yields fine-grained illumination estimation.
+**Key Insight**: A paradigm shift—rather than relying on scene motion, the paper actively generates *temporal-mapping events* by varying the optical transmittance (opening a mechanical shutter). These events directly encode scene brightness changes, providing denser and more accurate illumination information than motion events. Converting event timestamps to brightness values yields fine-grained illumination estimation.
 
 ## Method
 

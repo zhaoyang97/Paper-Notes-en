@@ -30,9 +30,9 @@ This paper proposes Agora, a framework that recasts multi-agent VLM coordination
 
 ## Background & Motivation
 
-**State of the Field**: VLM-driven multi-agent systems (MAS) exhibit strong collective intelligence for visual understanding tasks, yet face an **economic viability crisis** in practical deployment—rapidly escalating operational costs impede large-scale adoption.
+**Background**: VLM-driven multi-agent systems (MAS) exhibit strong collective intelligence for visual understanding tasks, yet face an **economic viability crisis** in practical deployment—rapidly escalating operational costs impede large-scale adoption.
 
-**Root Cause**: Existing paradigms treat intelligence as a "brute-force commodity" rather than a scarce economic resource. When cognitive uncertainty—the primary cost driver—lacks economic discipline, redundant computation proliferates and decision costs become prohibitive.
+**Key Challenge**: Existing paradigms treat intelligence as a "brute-force commodity" rather than a scarce economic resource. When cognitive uncertainty—the primary cost driver—lacks economic discipline, redundant computation proliferates and decision costs become prohibitive.
 
 **Limitations of Prior Work**:
 - **Aggregation-based heuristics (MoA)**: Equate statistical consensus with epistemic truth by assuming i.i.d. errors; however, shared architectural biases across VLMs cause correlated errors to be amplified, producing systematic hallucinations.

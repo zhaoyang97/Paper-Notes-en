@@ -29,15 +29,15 @@ OccuFly introduces the first real-world camera-based Semantic Scene Completion (
 
 ## Background & Motivation
 
-**State of the Field**: Semantic Scene Completion (SSC) is a core task in 3D perception, aiming to jointly estimate the occupancy state and semantic category of dense voxels from partial observations. SSC has been extensively studied in ground-level autonomous driving, with benchmarks such as SemanticKITTI and nuScenes-Occ driving substantial methodological progress.
+**Background**: Semantic Scene Completion (SSC) is a core task in 3D perception, aiming to jointly estimate the occupancy state and semantic category of dense voxels from partial observations. SSC has been extensively studied in ground-level autonomous driving, with benchmarks such as SemanticKITTI and nuScenes-Occ driving substantial methodological progress.
 
 **Limitations of Prior Work**: (1) SSC research has been almost exclusively focused on ground-vehicle perspectives, leaving aerial (UAV) scenarios largely unexplored and limiting progress on downstream UAV tasks such as obstacle avoidance, path planning, and 3D mapping. (2) Acquiring aerial SSC data faces unique challenges: most UAVs cannot carry LiDAR due to flight regulations and payload constraints, and high-altitude LiDAR point clouds are extremely sparse. (3) Existing SSC datasets rely heavily on LiDAR and cannot be directly adapted to camera-only aerial settings.
 
-**Root Cause**: Autonomous UAVs require 3D scene understanding for self-navigation, yet no suitable SSC benchmark or methodology exists for aerial perspectives. The large viewpoint discrepancy between aerial (top-down) and ground-level (forward-facing) views renders direct transfer of ground-based SSC data and models infeasible.
+**Key Challenge**: Autonomous UAVs require 3D scene understanding for self-navigation, yet no suitable SSC benchmark or methodology exists for aerial perspectives. The large viewpoint discrepancy between aerial (top-down) and ground-level (forward-facing) views renders direct transfer of ground-based SSC data and models infeasible.
 
-**Paper Goals**: (1) Design a LiDAR-free, camera-only data generation pipeline for automated aerial SSC annotation. (2) Release the first aerial SSC benchmark, OccuFly, based on this pipeline. (3) Benchmark existing SSC and depth estimation methods on OccuFly to expose the unique challenges of aerial scenes.
+**Goal**: (1) Design a LiDAR-free, camera-only data generation pipeline for automated aerial SSC annotation. (2) Release the first aerial SSC benchmark, OccuFly, based on this pipeline. (3) Benchmark existing SSC and depth estimation methods on OccuFly to expose the unique challenges of aerial scenes.
 
-**Starting Point**: The authors propose leveraging classical 3D reconstruction (SfM + MVS) to obtain dense point clouds from aerial image sequences, then lifting semantic labels from sparsely annotated images (<10%) into 3D point clouds via projection, thereby automatically generating semantic voxel annotations without any LiDAR dependency.
+**Key Insight**: The authors propose leveraging classical 3D reconstruction (SfM + MVS) to obtain dense point clouds from aerial image sequences, then lifting semantic labels from sparsely annotated images (<10%) into 3D point clouds via projection, thereby automatically generating semantic voxel annotations without any LiDAR dependency.
 
 **Core Idea**: Replace LiDAR with camera-based 3D reconstruction for SSC annotation generation, combined with a sparse label propagation strategy, to construct the first aerial SSC benchmark and systematically evaluate existing methods in aerial scenarios.
 

@@ -40,7 +40,7 @@ Limitations of prior work:
 - **Direct backpropagation methods (DRaFT, ReFL)**: Leverage reward gradients but are prone to over-optimization.
 - **KL-regularized methods**: Require training auxiliary value networks—which is notoriously unstable in the diffusion MDP setting—or rely on high-variance Monte Carlo gradient estimators.
 
-**Root Cause**: How can one exploit powerful reward gradient signals while avoiding over-optimization through KL regularization?
+**Key Challenge**: How can one exploit powerful reward gradient signals while avoiding over-optimization through KL regularization?
 
 **Core Idea**: The diffusion process is modeled as an MDP; by leveraging the posterior mean approximation from Tweedie's formula, a training-free, differentiable soft Q-function estimate is obtained, enabling direct model updates via reparameterized policy gradients.
 

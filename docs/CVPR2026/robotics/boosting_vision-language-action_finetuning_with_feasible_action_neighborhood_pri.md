@@ -27,15 +27,15 @@ content_hash: 2c5db1e7d278287a
 This paper proposes a Feasible Action Neighborhood (FAN) regularizer that shapes the output distribution of VLA models into a Gaussian form matching physical action tolerances. The approach consistently improves success rate, generalization, and sample efficiency under both SFT and RFT finetuning paradigms (RFT requires only 1/3 of training steps to reach 90% success rate).
 
 ## Background & Motivation
-**State of the Field**: VLA models (e.g., OpenVLA, $\pi_0$) unify visual perception, language understanding, and low-level control into a single model, performing autoregressive prediction over discretized action tokens. In practice, these models are typically pretrained and then finetuned via SFT or RFT.
+**Background**: VLA models (e.g., OpenVLA, $\pi_0$) unify visual perception, language understanding, and low-level control into a single model, performing autoregressive prediction over discretized action tokens. In practice, these models are typically pretrained and then finetuned via SFT or RFT.
 
 **Limitations of Prior Work**: Existing VLA training methods directly adopt language model training paradigms (one-hot cross-entropy or PPO), yet **physical actions inherently possess tolerances**—nearby actions may produce entirely equivalent task progress. This fundamental discrepancy has been overlooked.
 
-**Root Cause**: SFT collapses probability mass onto a single demonstrated action (overfitting), leading to poor generalization; RFT can broaden the distribution but is extremely sample-inefficient, requiring extensive exploration to implicitly discover the tolerance structure.
+**Key Challenge**: SFT collapses probability mass onto a single demonstrated action (overfitting), leading to poor generalization; RFT can broaden the distribution but is extremely sample-inefficient, requiring extensive exploration to implicitly discover the tolerance structure.
 
-**Paper Goals**: Explicitly exploit the tolerance structure of the physical action space during VLA finetuning.
+**Goal**: Explicitly exploit the tolerance structure of the physical action space during VLA finetuning.
 
-**Starting Point**: Formalize the concept of a "Feasible Action Neighborhood" (FAN) and observe that the shape of the policy distribution (sharp vs. smooth) is highly correlated with generalization performance.
+**Key Insight**: Formalize the concept of a "Feasible Action Neighborhood" (FAN) and observe that the shape of the policy distribution (sharp vs. smooth) is highly correlated with generalization performance.
 
 **Core Idea**: Introduce a FAN-guided Gaussian regularizer that reshapes the policy distribution from an "overconfident spike" into a "smooth tolerance neighborhood," applicable to both SFT and RFT without modifying model architecture.
 

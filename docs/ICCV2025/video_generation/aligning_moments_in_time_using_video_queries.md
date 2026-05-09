@@ -28,11 +28,11 @@ This paper proposes MATR (Moment Alignment TRansformer), which conditions target
 
 ## Background & Motivation
 
-1. **State of the Field**: Video Moment Retrieval (VMR) has primarily focused on text query settings, as exemplified by Moment-DETR and QD-DETR. Vid2VidMR, which uses video queries, is a relatively nascent paradigm formally introduced by Feng et al.
+1. **Background**: Video Moment Retrieval (VMR) has primarily focused on text query settings, as exemplified by Moment-DETR and QD-DETR. Vid2VidMR, which uses video queries, is a relatively nascent paradigm formally introduced by Feng et al.
 2. **Limitations of Prior Work**: Text queries often fail to precisely describe complex actions (e.g., bicycle kicks), and users find it difficult to convey what they have seen in natural language. Existing Vid2VidMR methods lack explicit semantic frame-level alignment and the capacity to model complex query-target dependencies.
-3. **Root Cause**: Query and target videos vary greatly in length, speed, and context, requiring simultaneous capture of high-level semantic relationships and fine-grained frame-level dependencies. Existing methods either naively substitute text encoders with C3D features or lack precise temporal alignment.
-4. **Paper Goals**: (1) How to precisely align the semantic sequences of query and target videos? (2) How to improve model generalization using unannotated data?
-5. **Starting Point**: Differentiable soft-DTW is applied in a dual-stage alignment scheme before and after the Transformer encoder, combined with self-supervised pretraining (randomly sampling clips from a video as queries for self-localization).
+3. **Key Challenge**: Query and target videos vary greatly in length, speed, and context, requiring simultaneous capture of high-level semantic relationships and fine-grained frame-level dependencies. Existing methods either naively substitute text encoders with C3D features or lack precise temporal alignment.
+4. **Goal**: (1) How to precisely align the semantic sequences of query and target videos? (2) How to improve model generalization using unannotated data?
+5. **Key Insight**: Differentiable soft-DTW is applied in a dual-stage alignment scheme before and after the Transformer encoder, combined with self-supervised pretraining (randomly sampling clips from a video as queries for self-localization).
 6. **Core Idea**: Explicit dual-stage sequence alignment within a Transformer framework transforms target video representations into query-aligned representations, enabling precise video moment localization.
 
 ## Method

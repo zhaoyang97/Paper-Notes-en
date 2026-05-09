@@ -28,7 +28,7 @@ This paper proposes MICON-Bench, a multi-image context generation benchmark cove
 
 ## Background & Motivation
 
-**State of the Field**: UMMs can process multi-image inputs and produce contextually consistent visual outputs; representative models include Nano-Banana, GPT-Image, BAGEL, and OmniGen2. However, multi-image context generation capabilities lack systematic evaluation.
+**Background**: UMMs can process multi-image inputs and produce contextually consistent visual outputs; representative models include Nano-Banana, GPT-Image, BAGEL, and OmniGen2. However, multi-image context generation capabilities lack systematic evaluation.
 
 **Evaluation Gap**: Existing benchmarks (GenEval, T2ICompBench, ImgEdit-Bench) primarily assess text-to-image generation or single-image editing, and do not address cross-image consistency or complex visual relational reasoning. OmniContext involves multiple images but is limited to simple subject composition.
 

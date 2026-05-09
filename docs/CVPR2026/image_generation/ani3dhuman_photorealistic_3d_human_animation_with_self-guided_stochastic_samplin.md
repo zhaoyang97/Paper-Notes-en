@@ -36,7 +36,7 @@ The Ani3DHuman framework is proposed, combining kinematics-driven mesh animation
 - **Identity Loss in Pose-driven Methods**: Methods like PERSONA reconstruct 3D animations directly from pose-driven 2D videos, where each video segment generates different appearance hallucinations, leading to severe identity inconsistency.
 - **Quality Defects of SDS Distillation**: Score Distillation Sampling (SDS) methods (e.g., Disco4D) suffer from typical optimization artifacts such as over-saturation and over-smoothing, resulting in poor visual effects.
 
-**Root Cause**: 
+**Key Challenge**: 
 - **Sampling Challenges for OOD Renderings**: Initial mesh renderings deviate significantly from the training distribution of diffusion models (out-of-distribution). Standard deterministic ODE samplers cannot correct trajectory biases, which represents the core technical bottleneck.
 
 ## Method

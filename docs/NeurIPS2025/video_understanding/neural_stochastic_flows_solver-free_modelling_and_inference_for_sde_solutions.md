@@ -29,18 +29,18 @@ This paper proposes Neural Stochastic Flows (NSF), which directly learns the tra
 
 ## Background & Motivation
 
-**State of the Field**: Stochastic differential equations (SDEs) are widely used in finance, physics, and machine learning for modelling noisy time series. Conventional Neural SDE methods rely on numerical solvers to simulate trajectories step by step, with computational cost proportional to the time interval.
+**Background**: Stochastic differential equations (SDEs) are widely used in finance, physics, and machine learning for modelling noisy time series. Conventional Neural SDE methods rely on numerical solvers to simulate trajectories step by step, with computational cost proportional to the time interval.
 
 **Limitations of Prior Work**:
 - **High solver overhead**: Neural SDE training and inference both depend on step-by-step simulation, making long-horizon prediction computationally expensive.
 - **Neural Flow limitations**: Existing solver-free methods (Neural Flow for ODEs) cannot express stochastic dynamics.
 - **Non-generality of diffusion-based methods**: Acceleration methods such as Consistency Models apply only to diffusion processes with specific boundary conditions and cannot handle general SDEs.
 
-**Root Cause**: Transition distributions of general Itô SDEs are needed for uncertainty quantification and probabilistic forecasting, yet numerical solvers are prohibitively costly at distant time points, while existing solver-free methods either do not support stochastic dynamics or lack generality.
+**Key Challenge**: Transition distributions of general Itô SDEs are needed for uncertainty quantification and probabilistic forecasting, yet numerical solvers are prohibitively costly at distant time points, while existing solver-free methods either do not support stochastic dynamics or lack generality.
 
-**Paper Goals**: Design a neural network architecture that directly parameterises the weak solution (transition distribution) of an SDE, satisfying the key properties of stochastic flows, such that neither training nor inference requires a solver.
+**Goal**: Design a neural network architecture that directly parameterises the weak solution (transition distribution) of an SDE, satisfying the key properties of stochastic flows, such that neither training nor inference requires a solver.
 
-**Starting Point**: Beginning from the theory of stochastic flow diffeomorphisms, the conditions for strong solutions are reformulated as conditions on weak solutions (probability distributions), which are then parameterised using conditional normalising flows.
+**Key Insight**: Beginning from the theory of stochastic flow diffeomorphisms, the conditions for strong solutions are reformulated as conditions on weak solutions (probability distributions), which are then parameterised using conditional normalising flows.
 
 **Core Idea**: Architectural constraints enforce the identity and Markov properties, while a bidirectional KL regularisation loss encourages the Chapman-Kolmogorov flow property, thereby directly learning the transition distribution of the SDE.
 

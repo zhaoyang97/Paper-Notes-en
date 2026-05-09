@@ -28,13 +28,13 @@ A three-stage self-supervised framework is proposed that significantly improves 
 
 ## Background & Motivation
 
-**State of the Field**: Image captioning models deployed on autonomous agents frequently produce inconsistent or erroneous descriptions of the same object across different viewpoints, particularly under occlusion or unfavorable viewing angles.
+**Background**: Image captioning models deployed on autonomous agents frequently produce inconsistent or erroneous descriptions of the same object across different viewpoints, particularly under occlusion or unfavorable viewing angles.
 
 **Limitations of Prior Work**: Navigation-based methods (e.g., CaBOT) require prior knowledge of the optimal viewpoint and are limited to simple scenes; noisy-label methods (e.g., ECO) rely on CLIP alignment and may select incorrect descriptions; summarization methods (e.g., IC3) use sampling diversity to generate summaries but cannot filter out erroneous information.
 
-**Root Cause**: Automatically improving the cross-view description consistency of a captioner for the same object in complex indoor environments without manual annotation remains an open challenge.
+**Key Challenge**: Automatically improving the cross-view description consistency of a captioner for the same object in complex indoor environments without manual annotation remains an open challenge.
 
-**Starting Point**: The problem is decomposed into three decoupled stages — navigation-based data collection, pseudo-label generation, and model fine-tuning.
+**Key Insight**: The problem is decomposed into three decoupled stages — navigation-based data collection, pseudo-label generation, and model fine-tuning.
 
 **Core Idea**: A 3D voxel map is used to aggregate multi-view descriptions of the same object; an LLM combined with frequency information and in-context learning then distills consistent pseudo-labels; a triplet loss subsequently enforces proximity between visual features of the same object.
 

@@ -28,14 +28,14 @@ This paper proposes the Routing-to-RAG (R2RAG) system, which employs an LLM-base
 
 ## Background & Motivation
 
-**State of the Field**: Retrieval-Augmented Generation (RAG) has become the standard approach for improving LLM reliability. Competitions such as LiveRAG (ACM SIGIR 2025) and MMU-RAG (NeurIPS 2025) provide standardized evaluation settings. The MMU-RAG competition encompasses four evaluation dimensions: static/dynamic evaluation × open-source/closed-source systems, with final rankings derived from a robustness-aware aggregation of automatic metrics combined with human Likert scores.
+**Background**: Retrieval-Augmented Generation (RAG) has become the standard approach for improving LLM reliability. Competitions such as LiveRAG (ACM SIGIR 2025) and MMU-RAG (NeurIPS 2025) provide standardized evaluation settings. The MMU-RAG competition encompasses four evaluation dimensions: static/dynamic evaluation × open-source/closed-source systems, with final rankings derived from a robustness-aware aggregation of automatic metrics combined with human Likert scores.
 
 **Limitations of Prior Work**:
 - Existing RAG systems apply a uniform retrieval strategy to all queries, ignoring differences in query complexity — simple factoid questions and multi-step reasoning questions require fundamentally different processing pipelines.
 - Synthetic LLM evaluation (LLM-as-a-Judge) suffers from distributional bias and evaluation artifacts, creating a gap with genuine user preferences.
 - High-performing RAG systems typically rely on large models and expensive hardware, limiting reproducibility and practical deployment.
 
-**Starting Point**: The proposed system extends G-RAG, the champion system of SIGIR 2025 LiveRAG, by introducing query complexity classification and adaptive routing. A qualitative user study with $N=20$ participants is incorporated to guide system refinement, achieving a lightweight yet effective dynamic RAG pipeline.
+**Key Insight**: The proposed system extends G-RAG, the champion system of SIGIR 2025 LiveRAG, by introducing query complexity classification and adaptive routing. A qualitative user study with $N=20$ participants is incorporated to guide system refinement, achieving a lightweight yet effective dynamic RAG pipeline.
 
 ## Method
 

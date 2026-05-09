@@ -29,15 +29,15 @@ This paper proposes DiT-BlockSkip, a framework that reduces LoRA fine-tuning mem
 
 ## Background & Motivation
 
-1. **State of the Field**: Diffusion Transformer (DiT)-based text-to-image models (e.g., FLUX, SANA) have substantially improved image generation quality. Personalized fine-tuning typically employs PEFT methods such as LoRA to adapt models on small sets of reference images.
+1. **Background**: Diffusion Transformer (DiT)-based text-to-image models (e.g., FLUX, SANA) have substantially improved image generation quality. Personalized fine-tuning typically employs PEFT methods such as LoRA to adapt models on small sets of reference images.
 
 2. **Limitations of Prior Work**: (a) DiT models are extremely large (FLUX has 19 double-stream and 38 single-stream blocks), and even LoRA requires full forward and backward passes, resulting in substantial memory overhead (~30 GiB for FLUX LoRA at 512×512); (b) quantization methods degrade model precision; (c) gradient-free methods (e.g., ZOODiP) suffer from unstable optimization and require up to 30,000 steps to converge.
 
-3. **Root Cause**: The depth and capacity of DiT architectures produce activation memory during training that far exceeds that of U-Net-based models. Existing memory-efficient methods (e.g., HollowedNet) are designed for U-Net and cannot be directly transferred to DiT.
+3. **Key Challenge**: The depth and capacity of DiT architectures produce activation memory during training that far exceeds that of U-Net-based models. Existing memory-efficient methods (e.g., HollowedNet) are designed for U-Net and cannot be directly transferred to DiT.
 
-4. **Paper Goals**: Achieve substantial memory reduction on DiT-based models while preserving personalization quality, with the ultimate goal of enabling on-device deployment.
+4. **Goal**: Achieve substantial memory reduction on DiT-based models while preserving personalization quality, with the ultimate goal of enabling on-device deployment.
 
-5. **Starting Point**: (a) Different timesteps in the diffusion process encode different types of information—high-noise steps capture global structure while low-noise steps encode fine-grained details; (b) not all DiT blocks contribute equally to personalization—intermediate blocks are most critical.
+5. **Key Insight**: (a) Different timesteps in the diffusion process encode different types of information—high-noise steps capture global structure while low-noise steps encode fine-grained details; (b) not all DiT blocks contribute equally to personalization—intermediate blocks are most critical.
 
 6. **Core Idea**: Dynamic cropping combined with low-resolution training reduces forward/backward memory; selective skipping of non-critical blocks with precomputed residual features reduces parameter and optimizer state memory.
 

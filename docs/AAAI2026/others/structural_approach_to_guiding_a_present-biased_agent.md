@@ -28,15 +28,15 @@ This paper systematically investigates the parameterized complexity of the T-pat
 
 ## Background & Motivation
 
-1. **State of the Field**: Present bias is a classic phenomenon in behavioral economics—individuals tend to overweight immediate outcomes while discounting future rewards, leading to procrastination and suboptimal abandonment of long-term beneficial plans. Kleinberg and Oren (2014) proposed a graph-theoretic model to formalize this behavior: a present-biased agent navigates a task DAG, making locally optimal decisions at each step based on discounted future costs, potentially deviating repeatedly from the intended plan.
+1. **Background**: Present bias is a classic phenomenon in behavioral economics—individuals tend to overweight immediate outcomes while discounting future rewards, leading to procrastination and suboptimal abandonment of long-term beneficial plans. Kleinberg and Oren (2014) proposed a graph-theoretic model to formalize this behavior: a present-biased agent navigates a task DAG, making locally optimal decisions at each step based on discounted future costs, potentially deviating repeatedly from the intended plan.
 
 2. **Limitations of Prior Work**: Belova et al. (2024) introduced a two-agent extension in which a fully rational principal attempts to guide the present-biased agent to complete a set of critical tasks via graph modifications (edge deletions or additions). However, that work only preliminarily analyzed the T-path-Deletion and T-path-Addition subproblems, leaving several open questions unresolved.
 
-3. **Root Cause**: T-path-Editing is NP-hard in the general case, yet in practical applications (e.g., educational curricula, workflows, digital assistants), task graphs typically exhibit structural properties such as limited hierarchical depth or a small number of bottleneck nodes. The key challenge is how to exploit these structural properties to obtain efficient algorithms.
+3. **Key Challenge**: T-path-Editing is NP-hard in the general case, yet in practical applications (e.g., educational curricula, workflows, digital assistants), task graphs typically exhibit structural properties such as limited hierarchical depth or a small number of bottleneck nodes. The key challenge is how to exploit these structural properties to obtain efficient algorithms.
 
-4. **Paper Goals**: To comprehensively characterize the parameterized complexity landscape of T-path-Editing with respect to various graph parameters, including treewidth, vertex cover, feedback vertex set, path length, and treedepth.
+4. **Goal**: To comprehensively characterize the parameterized complexity landscape of T-path-Editing with respect to various graph parameters, including treewidth, vertex cover, feedback vertex set, path length, and treedepth.
 
-5. **Starting Point**: The paper adopts a parameterized complexity-theoretic perspective, decomposing the hardness of the problem according to structural parameters and identifying precise tractability boundaries.
+5. **Key Insight**: The paper adopts a parameterized complexity-theoretic perspective, decomposing the hardness of the problem according to structural parameters and identifying precise tractability boundaries.
 
 6. **Core Idea**: By combining dynamic programming over tree decompositions with constraints on path-cost diversity, FPT algorithms are achieved under conditions of "simple graph structure + limited cost diversity," while the necessity of these conditions is formally established.
 

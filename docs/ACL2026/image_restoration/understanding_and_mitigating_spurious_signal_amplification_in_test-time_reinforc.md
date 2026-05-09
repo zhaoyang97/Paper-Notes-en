@@ -27,7 +27,7 @@ This paper systematically analyzes sources and amplification mechanisms of spuri
 
 ## Background & Motivation
 
-**Root Cause**: (1) Source level — the relationship between answer frequency and reliability is nonlinear: high-frequency answers are mostly correct, low-frequency mostly wrong, mid-frequency highly ambiguous; (2) Amplification level — GRPO's within-group normalization assigns extreme advantage values when positive samples are scarce. In supervised RL this is reasonable, but in TTRL, few positive samples indicate low consensus/high uncertainty.
+**Key Challenge**: (1) Source level — the relationship between answer frequency and reliability is nonlinear: high-frequency answers are mostly correct, low-frequency mostly wrong, mid-frequency highly ambiguous; (2) Amplification level — GRPO's within-group normalization assigns extreme advantage values when positive samples are scarce. In supervised RL this is reasonable, but in TTRL, few positive samples indicate low consensus/high uncertainty.
 
 ## Method
 

@@ -29,20 +29,20 @@ This paper proposes Veritas, an MLLM-based deepfake detector that simulates huma
 
 ## Background & Motivation
 
-**State of the Field**: The dominant paradigm in deepfake detection is training on FF++ and evaluating cross-domain generalization on datasets such as DFDC and CelebDF. Recent MLLM-based approaches (e.g., FFAA, M2F2-Det, FakeVLM) have attempted to introduce interpretability, yet final classification decisions still rely on compact visual models (e.g., CLIP), with MLLMs serving only as post-hoc explainers.
+**Background**: The dominant paradigm in deepfake detection is training on FF++ and evaluating cross-domain generalization on datasets such as DFDC and CelebDF. Recent MLLM-based approaches (e.g., FFAA, M2F2-Det, FakeVLM) have attempted to introduce interpretability, yet final classification decisions still rely on compact visual models (e.g., CLIP), with MLLMs serving only as post-hoc explainers.
 
 **Limitations of Prior Work**:
    - **Benchmark–Practice Mismatch**: Existing benchmarks use a single training source (FF++ only) and low-quality test images, failing to reflect the real-world challenge of rich training distributions paired with highly variable test distributions.
    - **Poor Cross-Forgery Generalization**: Existing detectors perform reasonably in Cross-Model settings (>90%), but degrade severely in Cross-Forgery (novel forgery types such as face restoration and personalization) and Cross-Domain (real-world social media deepfakes), with most falling below 85%.
    - **Underutilized MLLM Reasoning**: MLLM-based methods predominantly follow a post-hoc paradigm—determining authenticity first and then generating explanations—so the reasoning process does not participate in the decision.
 
-**Root Cause**: Existing detectors learn artifact patterns specific to known forgery types, lacking the hierarchical reasoning capacity to handle OOD forgeries. Directly applying general-purpose MLLMs to deepfake detection yields poor performance (InternVL3-8B: 58.3%; GPT-4o: 60.8%), due to the absence of task-specific reasoning training data and strategies.
+**Key Challenge**: Existing detectors learn artifact patterns specific to known forgery types, lacking the hierarchical reasoning capacity to handle OOD forgeries. Directly applying general-purpose MLLMs to deepfake detection yields poor performance (InternVL3-8B: 58.3%; GPT-4o: 60.8%), due to the absence of task-specific reasoning training data and strategies.
 
-**Paper Goals**:
+**Goal**:
    - Q1: What reasoning process is most effective for deepfake detection? → Pattern-aware reasoning.
    - Q2: How can a model genuinely learn to reason rather than memorize patterns? → Two-stage training via MiPO + P-GRPO.
 
-**Starting Point**: Inspired by how human experts authenticate media—starting with a rapid intuition (fast judgment), then localizing key artifacts (reasoning), conducting layered analysis for difficult cases (planning), potentially revising initial assessments through deep reflection (self-reflection), and finally synthesizing a conclusion—this work formalizes these five cognitive modes and progressively internalizes them into an MLLM via SFT injection, preference alignment, and reinforcement learning.
+**Key Insight**: Inspired by how human experts authenticate media—starting with a rapid intuition (fast judgment), then localizing key artifacts (reasoning), conducting layered analysis for difficult cases (planning), potentially revising initial assessments through deep reflection (self-reflection), and finally synthesizing a conclusion—this work formalizes these five cognitive modes and progressively internalizes them into an MLLM via SFT injection, preference alignment, and reinforcement learning.
 
 **Core Idea**: Explicitly inject structured human-like authentication reasoning into an MLLM, and use a pattern-aware reward mechanism to encourage the model to apply the appropriate reasoning depth at the appropriate moment, enabling end-to-end transparent decision-making.
 

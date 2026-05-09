@@ -29,15 +29,15 @@ This paper introduces the CI-ICE task and the HyperExpress method, which leverag
 
 ## Background & Motivation
 
-**State of the Field**: Unsupervised Concept Extraction (UCE) aims to extract human-interpretable visual concepts (objects, colors, materials) from a single image, serving as a key tool for model interpretability. ConceptExpress and AutoConcept extract concepts from single images, while ICE further enables the separation of object-level and attribute-level concepts.
+**Background**: Unsupervised Concept Extraction (UCE) aims to extract human-interpretable visual concepts (objects, colors, materials) from a single image, serving as a key tool for model interpretability. ConceptExpress and AutoConcept extract concepts from single images, while ICE further enables the separation of object-level and attribute-level concepts.
 
 **Limitations of Prior Work**: (1) ConceptExpress and AutoConcept extract only object-level concepts and cannot disentangle attributes such as color or material; (2) although ICE separates object and attribute concepts, it does not guarantee compositionality—the extracted concepts cannot be recombined to reconstruct the original complex concept; (3) CCE accounts for compositionality but requires multiple images sharing the same concepts, limiting its practicality.
 
-**Root Cause**: Concept "disentanglement" ≠ concept "compositionality"—existing methods focus solely on disentanglement while ignoring the compositional structure of the concept space, rendering concept decomposition irreversible and uninterpretable.
+**Key Challenge**: Concept "disentanglement" ≠ concept "compositionality"—existing methods focus solely on disentanglement while ignoring the compositional structure of the concept space, rendering concept decomposition irreversible and uninterpretable.
 
-**Paper Goals**: To extract intrinsic visual concepts from a single image that are both hierarchically disentangled (object-level vs. attribute-level) and composable (capable of being recombined to reconstruct the original concept).
+**Goal**: To extract intrinsic visual concepts from a single image that are both hierarchically disentangled (object-level vs. attribute-level) and composable (capable of being recombined to reconstruct the original concept).
 
-**Starting Point**: The hierarchical modeling capacity inherent to hyperbolic space is exploited for concept learning, while the zero-curvature property of horospheres is utilized to guarantee compositionality.
+**Key Insight**: The hierarchical modeling capacity inherent to hyperbolic space is exploited for concept learning, while the zero-curvature property of horospheres is utilized to guarantee compositionality.
 
 **Core Idea**: Hierarchical concept relationships are learned within the Poincaré ball, and concepts are projected onto horospheres to enforce linear composability.
 

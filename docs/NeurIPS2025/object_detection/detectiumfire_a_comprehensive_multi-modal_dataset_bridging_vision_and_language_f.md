@@ -28,15 +28,15 @@ DetectiumFire constructs the largest multi-modal fire understanding dataset — 
 
 ## Background & Motivation
 
-**State of the Field**: Fire safety is a critical global concern, yet existing fire datasets are small (D-Fire contains only 5.8K images) and exhibit high duplication rates (CNN duplication rate 0.55). Multi-modal models (CLIP, VLMs) lack fire-domain training data.
+**Background**: Fire safety is a critical global concern, yet existing fire datasets are small (D-Fire contains only 5.8K images) and exhibit high duplication rates (CNN duplication rate 0.55). Multi-modal models (CLIP, VLMs) lack fire-domain training data.
 
 **Limitations of Prior Work**: (a) Existing datasets have high duplication rates, causing models to overfit on repeated samples rather than learning generalizable features; (b) semantic annotations are absent (what is burning? what is the environment? how severe?) — only bounding boxes are provided; (c) synthetic data quality is poor (FLAME_SD mAP only 2.10).
 
-**Root Cause**: Fire scenes require contextual reasoning (e.g., a small candle vs. a spreading blaze), yet existing datasets do not support such understanding — detection alone is insufficient; scene semantics and severity assessment are needed.
+**Key Challenge**: Fire scenes require contextual reasoning (e.g., a small candle vs. a spreading blaze), yet existing datasets do not support such understanding — detection alone is insufficient; scene semantics and severity assessment are needed.
 
-**Paper Goals**: To construct a large-scale, low-duplication, multi-modal fire understanding dataset supporting detection, description, and severity assessment.
+**Goal**: To construct a large-scale, low-duplication, multi-modal fire understanding dataset supporting detection, description, and severity assessment.
 
-**Starting Point**: Combining real image collection + SFT/RLHF fine-tuned Stable Diffusion synthesis + GPT-4o semantic annotation + a 4-level severity classification scheme.
+**Key Insight**: Combining real image collection + SFT/RLHF fine-tuned Stable Diffusion synthesis + GPT-4o semantic annotation + a 4-level severity classification scheme.
 
 **Core Idea**: Low-duplication real images + SFT/RLHF fine-tuned SD synthesis + GPT-4o semantic annotation + 4-level severity classification = a multi-modal fire understanding benchmark.
 

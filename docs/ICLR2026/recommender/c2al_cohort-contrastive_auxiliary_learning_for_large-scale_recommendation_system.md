@@ -28,15 +28,15 @@ This paper proposes C2AL (Cohort-Contrastive Auxiliary Learning), which data-dri
 
 ## Background & Motivation
 
-**State of the Field**: Large-scale recommendation models (e.g., DHEN) are trained under a single global objective, implicitly assuming homogeneous user cohort distributions. Multi-task learning (MTL) with auxiliary tasks is commonly used in industry to improve representations, but auxiliary task design largely relies on empirical heuristics.
+**Background**: Large-scale recommendation models (e.g., DHEN) are trained under a single global objective, implicitly assuming homogeneous user cohort distributions. Multi-task learning (MTL) with auxiliary tasks is commonly used in industry to improve representations, but auxiliary task design largely relies on empirical heuristics.
 
 **Limitations of Prior Work**: Real-world data consists of heterogeneous cohorts. As models and data scale up, optimization favors high-density regions (majority cohorts), resulting in: (a) sparse and concentrated FM attention weights—a large number of feature interaction paths are wasted; (b) feature patterns of minority cohorts are ignored, causing representation bias.
 
-**Root Cause**: Global optimization provides only "averaged" gradient signals, causing FM attention to converge to a sparse state that captures only globally frequent feature interactions, lacking cohort-specific gradient driving forces. Existing multi-task gradient methods such as PCGrad and CAGrad focus on managing task conflicts but do not establish a causal chain from auxiliary loss → attention mechanism → representation improvement.
+**Key Challenge**: Global optimization provides only "averaged" gradient signals, causing FM attention to converge to a sparse state that captures only globally frequent feature interactions, lacking cohort-specific gradient driving forces. Existing multi-task gradient methods such as PCGrad and CAGrad focus on managing task conflicts but do not establish a causal chain from auxiliary loss → attention mechanism → representation improvement.
 
-**Paper Goals**: (a) Principally discover cohort pairs with maximal distributional divergence; (b) construct auxiliary tasks to inject cohort-specific gradients; (c) provide interpretable mechanistic analysis of how auxiliary losses precisely alter FM attention.
+**Goal**: (a) Principally discover cohort pairs with maximal distributional divergence; (b) construct auxiliary tasks to inject cohort-specific gradients; (c) provide interpretable mechanistic analysis of how auxiliary losses precisely alter FM attention.
 
-**Starting Point**: By analyzing the FM attention update equations from a gradient propagation perspective, the paper finds that gradients from auxiliary losses are directly superimposed onto the update of attention matrix $\mathbf{Y}$, providing a precise mechanistic explanation.
+**Key Insight**: By analyzing the FM attention update equations from a gradient propagation perspective, the paper finds that gradients from auxiliary losses are directly superimposed onto the update of attention matrix $\mathbf{Y}$, providing a precise mechanistic explanation.
 
 **Core Idea**: Distributional divergence is used to identify maximally contrasting head/tail cohort pairs, which are used to construct auxiliary binary classification tasks. During training, cohort-specific gradients densify FM attention weights; auxiliary heads are discarded at inference with zero additional overhead.
 

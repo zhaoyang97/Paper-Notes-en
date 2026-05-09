@@ -30,17 +30,17 @@ This paper proposes D-GARA, a dynamic robustness evaluation framework for Androi
 
 ## Background & Motivation
 
-**State of the Field**: GUI Agents aim to operate graphical interfaces like humans, completing complex tasks through visual understanding, task planning, and action execution—a capability considered critical on the path toward AGI.
+**Background**: GUI Agents aim to operate graphical interfaces like humans, completing complex tasks through visual understanding, task planning, and action execution—a capability considered critical on the path toward AGI.
 
 **Limitations of Prior Work**: Existing evaluation datasets (e.g., Android Control, Mind2Web) adopt a static screenshot + fixed action sequence paradigm. While agents perform well in these idealized settings, such benchmarks conceal their fragility in real-world dynamic environments.
 
-**Root Cause**: Real-world smartphone usage is permeated by interruptions—permission dialogs, low-battery alerts, app update prompts, and network switches—that can disrupt an agent's execution flow or cause it to deviate entirely from the intended goal.
+**Key Challenge**: Real-world smartphone usage is permeated by interruptions—permission dialogs, low-battery alerts, app update prompts, and network switches—that can disrupt an agent's execution flow or cause it to deviate entirely from the intended goal.
 
 **Limitations of Existing "Anomaly" Evaluations**: Prior work such as GUI-Robust introduces anomalous samples but remains within a static paradigm, inserting a single pop-up screenshot into an otherwise normal trajectory. The agent merely needs to dismiss the dialog and resume the original path—essentially a teacher-forcing setup that fails to simulate complex anomalies that genuinely alter the execution trajectory.
 
 **Limitations of Dynamic Environments**: AndroidWorld provides a dynamic evaluation environment but features overly simplistic tasks (only 116 clean tasks), does not support custom tasks, and includes no anomalies.
 
-**Paper Goals**: A standardized framework is needed to comprehensively evaluate agent robustness against anomalies in dynamic, real-world environments. D-GARA is designed to fill this gap.
+**Goal**: A standardized framework is needed to comprehensively evaluate agent robustness against anomalies in dynamic, real-world environments. D-GARA is designed to fill this gap.
 
 ## Method
 

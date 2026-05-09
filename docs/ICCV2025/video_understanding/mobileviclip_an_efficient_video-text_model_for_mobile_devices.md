@@ -29,8 +29,8 @@ MobileViCLIP introduces spatiotemporal structural re-parameterization into the e
 
 ## Background & Motivation
 
-- **State of the Field**: Existing video pre-training models (e.g., InternVideo2) are predominantly built on ViT architectures with hundreds of millions to billions of parameters, resulting in high inference latency that precludes deployment on mobile devices. Parameter-efficient transfer learning (PETL) methods reduce trainable parameters but still rely on heavyweight ViT-B/L backbones. Efficient image-text models for mobile (e.g., MobileCLIP) lack temporal modeling capability and cannot understand video content.
-- **Paper Goals**: Design a foundation model that is both efficient enough for mobile-device constraints and capable of strong video-text understanding. The authors extend the existing mobile image-text model MobileCLIP by incorporating lightweight temporal modeling modules and train high-quality video-text representations under a PETL paradigm.
+- **Background**: Existing video pre-training models (e.g., InternVideo2) are predominantly built on ViT architectures with hundreds of millions to billions of parameters, resulting in high inference latency that precludes deployment on mobile devices. Parameter-efficient transfer learning (PETL) methods reduce trainable parameters but still rely on heavyweight ViT-B/L backbones. Efficient image-text models for mobile (e.g., MobileCLIP) lack temporal modeling capability and cannot understand video content.
+- **Goal**: Design a foundation model that is both efficient enough for mobile-device constraints and capable of strong video-text understanding. The authors extend the existing mobile image-text model MobileCLIP by incorporating lightweight temporal modeling modules and train high-quality video-text representations under a PETL paradigm.
 
 ## Method
 

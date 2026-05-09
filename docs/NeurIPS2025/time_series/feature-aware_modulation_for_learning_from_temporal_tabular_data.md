@@ -29,15 +29,15 @@ This paper addresses distribution shift in temporal tabular data by proposing a 
 
 ## Background & Motivation
 
-**State of the Field**: In tabular learning, tree-based models (XGBoost, CatBoost, LightGBM) have long dominated due to their robustness. Recent deep models (FT-Transformer, TabR, TabM, etc.) have narrowed the gap, but still struggle to surpass GBDT under real-world temporal distribution shift. Existing methods generally assume i.i.d. data and overlook the fact that data distributions evolve over time.
+**Background**: In tabular learning, tree-based models (XGBoost, CatBoost, LightGBM) have long dominated due to their robustness. Recent deep models (FT-Transformer, TabR, TabM, etc.) have narrowed the gap, but still struggle to surpass GBDT under real-world temporal distribution shift. Existing methods generally assume i.i.d. data and overlook the fact that data distributions evolve over time.
 
 **Limitations of Prior Work**: In real-world scenarios, the semantics of features change over time. For example, the definition of "high income" shifts with inflation — an annual salary of 500K may have indicated high income a decade ago but only represents average income today. Likewise, the meaning of "prime location" evolves as cities develop, even when coordinates remain fixed. Static models cannot capture such semantic drift; simple adaptive methods (e.g., directly concatenating temporal embeddings) may overfit short-term patterns and generalize poorly.
 
-**Root Cause**: Static models offer strong generalization but cannot adapt to temporal changes; adaptive models focus on immediate adjustment but may sacrifice long-term stability. This constitutes a fundamental dilemma between robustness and adaptability.
+**Key Challenge**: Static models offer strong generalization but cannot adapt to temporal changes; adaptive models focus on immediate adjustment but may sacrifice long-term stability. This constitutes a fundamental dilemma between robustness and adaptability.
 
-**Paper Goals**: How can a balance between generalization and adaptability be achieved? What are the key factors?
+**Goal**: How can a balance between generalization and adaptability be achieved? What are the key factors?
 
-**Starting Point**: The authors observe that semantic drift in features can be characterized by changes in distributional statistics (mean, standard deviation, skewness). Dynamically adjusting these statistics based on temporal context enables alignment of feature semantics across different time periods.
+**Key Insight**: The authors observe that semantic drift in features can be characterized by changes in distributional statistics (mean, standard deviation, skewness). Dynamically adjusting these statistics based on temporal context enables alignment of feature semantics across different time periods.
 
 **Core Idea**: Apply lightweight feature modulation (shift + scale + nonlinear transformation) conditioned on temporal embeddings to align feature semantics across time, thereby achieving immunity to concept drift.
 

@@ -29,15 +29,15 @@ This paper proposes the CHMR framework, which addresses missing biological modal
 
 ## Background & Motivation
 
-**State of the Field**: Molecular property prediction (activity, toxicity, side effects, etc.) is a core task in drug discovery. Deep learning methods have advanced rapidly, falling into two main categories: (1) unimodal methods that exploit intrinsic molecular features (atomic attributes, chemical bonds, 3D structures); and (2) multi-modal methods that combine molecular structure with external biological responses (cell morphology, gene expression) to capture signaling cascade effects at the cellular level.
+**Background**: Molecular property prediction (activity, toxicity, side effects, etc.) is a core task in drug discovery. Deep learning methods have advanced rapidly, falling into two main categories: (1) unimodal methods that exploit intrinsic molecular features (atomic attributes, chemical bonds, 3D structures); and (2) multi-modal methods that combine molecular structure with external biological responses (cell morphology, gene expression) to capture signaling cascade effects at the cellular level.
 
 **Limitations of Prior Work**: (1) **Pervasive modality incompleteness** — molecular structure data are typically complete, but associated cell phenotype or gene expression data are frequently missing due to experimental constraints and cost limitations (over 90% of molecules lack some biological modality), with distinct missing patterns across molecules (some lack morphological data, others lack transcriptomic data); (2) **Insufficient hierarchical dependency modeling** — molecular perturbations trigger cascade reactions across biological levels (chemical structure → cellular processes → gene expression), yet existing methods perform instance-level alignment in flat latent spaces, failing to capture multi-hop semantic relationships and cross-level dependencies.
 
-**Root Cause**: Missing biological modalities cause distribution shift and modality imbalance, making naive imputation (zero vectors, mean values) ineffective. Meanwhile, flat alignment discards hierarchical structural information, limiting the ability to model cross-scale biological mechanisms.
+**Key Challenge**: Missing biological modalities cause distribution shift and modality imbalance, making naive imputation (zero vectors, mean values) ineffective. Meanwhile, flat alignment discards hierarchical structural information, limiting the ability to model cross-scale biological mechanisms.
 
-**Paper Goals**: (1) How to robustly learn molecular representations under severe modality missingness? (2) How to explicitly model hierarchical dependencies among molecules, cells, and genes?
+**Goal**: (1) How to robustly learn molecular representations under severe modality missingness? (2) How to explicitly model hierarchical dependencies among molecules, cells, and genes?
 
-**Starting Point**: The authors observe that structurally similar molecules exhibit similar biological responses, motivating graph propagation for missing modality enhancement. Additionally, biological responses naturally follow a hierarchical structure from molecule → cell → gene, which can be explicitly encoded via a tree structure.
+**Key Insight**: The authors observe that structurally similar molecules exhibit similar biological responses, motivating graph propagation for missing modality enhancement. Additionally, biological responses naturally follow a hierarchical structure from molecule → cell → gene, which can be explicitly encoded via a tree structure.
 
 **Core Idea**: Structure-aware graph propagation is used to impute missing biological modalities, while Tree-VQ encodes cross-scale hierarchical semantics, achieving robust molecular representation learning under missing modality conditions.
 

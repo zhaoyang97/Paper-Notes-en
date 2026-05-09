@@ -27,11 +27,11 @@ content_hash: e03cf95daa6f1812
 DeCo proposes a frequency-decoupled pixel diffusion framework that delegates high-frequency detail synthesis to a lightweight pixel decoder while allowing the DiT to focus on low-frequency semantic modeling. Combined with a frequency-aware flow matching loss, it achieves FID 1.62 (256×256) and 2.22 (512×512) on ImageNet, substantially narrowing the gap between pixel diffusion and latent diffusion models.
 
 ## Background & Motivation
-1. **State of the Field**: Latent diffusion models (LDMs) constitute the dominant paradigm, yet their two-stage pipeline relying on a VAE introduces lossy reconstruction and distribution shift. Pixel diffusion models end-to-end generation directly in pixel space, bypassing VAE limitations, but suffer from low training and inference efficiency.
+1. **Background**: Latent diffusion models (LDMs) constitute the dominant paradigm, yet their two-stage pipeline relying on a VAE introduces lossy reconstruction and distribution shift. Pixel diffusion models end-to-end generation directly in pixel space, bypassing VAE limitations, but suffer from low training and inference efficiency.
 2. **Limitations of Prior Work**: Existing pixel diffusion models employ a single DiT to model high-frequency signals and low-frequency semantics simultaneously. High-frequency noise is difficult to learn and interferes with low-frequency semantic learning, resulting in slow convergence and suboptimal generation quality.
-3. **Root Cause**: DiTs excel at capturing low-frequency semantics but are ill-suited for handling high-frequency signals, while pixel space inherently contains both.
-4. **Paper Goals**: Design a more efficient pixel diffusion paradigm that decouples the modeling of high- and low-frequency components.
-5. **Starting Point**: Motivated by the observation that high-frequency signals are more easily reconstructed at high resolution, whereas low-frequency semantics are more easily modeled at low resolution.
+3. **Key Challenge**: DiTs excel at capturing low-frequency semantics but are ill-suited for handling high-frequency signals, while pixel space inherently contains both.
+4. **Goal**: Design a more efficient pixel diffusion paradigm that decouples the modeling of high- and low-frequency components.
+5. **Key Insight**: Motivated by the observation that high-frequency signals are more easily reconstructed at high resolution, whereas low-frequency semantics are more easily modeled at low resolution.
 6. **Core Idea**: The DiT operates on downsampled inputs to focus on low-frequency semantics, while a lightweight pixel decoder generates high-frequency details at full resolution conditioned on the DiT output.
 
 ## Method

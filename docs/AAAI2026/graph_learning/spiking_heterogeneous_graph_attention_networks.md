@@ -29,11 +29,11 @@ This paper proposes SpikingHAN, the first framework to introduce **Spiking Neura
 
 ## Background & Motivation
 
-1. **State of the Field**: Heterogeneous Graph Neural Networks (HGNNs) such as HAN effectively handle multi-type nodes and edges, capturing rich structural and semantic information. SNNs have demonstrated success in computer vision and homogeneous graph learning (e.g., SpikingGCN, SpikeGCL).
+1. **Background**: Heterogeneous Graph Neural Networks (HGNNs) such as HAN effectively handle multi-type nodes and edges, capturing rich structural and semantic information. SNNs have demonstrated success in computer vision and homogeneous graph learning (e.g., SpikingGCN, SpikeGCL).
 2. **Limitations of Prior Work**: HGNNs tend to be architecturally complex — HAN assigns an independent attention module to each meta-path, causing parameters, memory, and computational cost to scale significantly with the number of meta-paths, making deployment on resource-constrained devices difficult.
-3. **Root Cause**: Heterogeneous graph learning requires effective modeling of heterogeneous information, yet existing methods incur prohibitive computational overhead. The binary, sparse communication of SNNs is naturally suited for low-energy scenarios but has not been explored on heterogeneous graphs.
-4. **Paper Goals**: Design an energy-efficient heterogeneous graph neural network capable of operating under resource-constrained conditions.
-5. **Starting Point**: Replace HAN's multiple independent aggregation modules with a single-layer GCN with shared parameters to simplify the model, then encode heterogeneous information into spike sequences via SNNs to achieve binarization.
+3. **Key Challenge**: Heterogeneous graph learning requires effective modeling of heterogeneous information, yet existing methods incur prohibitive computational overhead. The binary, sparse communication of SNNs is naturally suited for low-energy scenarios but has not been explored on heterogeneous graphs.
+4. **Goal**: Design an energy-efficient heterogeneous graph neural network capable of operating under resource-constrained conditions.
+5. **Key Insight**: Replace HAN's multiple independent aggregation modules with a single-layer GCN with shared parameters to simplify the model, then encode heterogeneous information into spike sequences via SNNs to achieve binarization.
 6. **Core Idea**: Simplified heterogeneous graph convolution with shared parameters + SNN spike encoding = energy-efficient heterogeneous graph learning.
 
 ## Method

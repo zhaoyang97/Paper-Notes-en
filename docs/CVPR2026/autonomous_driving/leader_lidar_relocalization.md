@@ -28,11 +28,11 @@ LEADER achieves 24.1% and 73.9% relative reductions in position error on LiDAR r
 
 ## Background & Motivation
 
-**State of the Field**: LiDAR relocalization is critical for autonomous driving. Dominant approaches fall into two categories: retrieval-and-registration (requiring storage of dense point cloud maps) and learning-based regression, the latter further divided into absolute pose regression (APR) and scene coordinate regression (SCR).
+**Background**: LiDAR relocalization is critical for autonomous driving. Dominant approaches fall into two categories: retrieval-and-registration (requiring storage of dense point cloud maps) and learning-based regression, the latter further divided into absolute pose regression (APR) and scene coordinate regression (SCR).
 
 **Limitations of Prior Work**: (1) Retrieval-and-registration methods incur significant storage and communication overhead; (2) APR achieves limited accuracy; (3) existing SCR network architectures lack yaw invariance, causing performance degradation during vehicle turns; (4) all predicted points are treated equally, and erroneous correspondences from degenerate regions (textureless areas, dynamic objects) severely corrupt pose estimation.
 
-**Root Cause**: Yaw rotations are frequent in autonomous driving scenarios, and a large proportion of scene points are inherently unsuitable for relocalization (dynamic objects, repetitive textures), yet existing methods neither handle rotations nor distinguish point-level reliability.
+**Key Challenge**: Yaw rotations are frequent in autonomous driving scenarios, and a large proportion of scene points are inherently unsuitable for relocalization (dynamic objects, repetitive textures), yet existing methods neither handle rotations nor distinguish point-level reliability.
 
 **Core Idea**: Design a yaw-invariant geometric encoder combined with point-level reliability quantification to jointly improve the robustness of SCR.
 

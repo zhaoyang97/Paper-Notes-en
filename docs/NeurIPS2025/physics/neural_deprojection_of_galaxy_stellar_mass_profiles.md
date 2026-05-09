@@ -34,7 +34,7 @@ A neural network approach is proposed to map Nuker galaxy profile parameters to 
     - **Dust Obscuration**: Optical observations are attenuated by dust, limiting analysis to relatively dust-free galaxies.
     - **Active Galactic Nucleus (AGN) Contamination**: MGE models fit AGN light, leading to underestimation of SMBH masses.
     - **Quasars**: Extremely luminous AGN completely outshine host galaxy starlight, rendering optical fitting infeasible.
-- **Paper Goals**: To develop a method independent of optical imaging that constrains the stellar mass distribution using radio data alone, thereby extending the analyzable galaxy sample to dusty, AGN-dominated, and high-redshift gravitationally lensed systems.
+- **Goal**: To develop a method independent of optical imaging that constrains the stellar mass distribution using radio data alone, thereby extending the analyzable galaxy sample to dusty, AGN-dominated, and high-redshift gravitationally lensed systems.
 
 ## Method
 

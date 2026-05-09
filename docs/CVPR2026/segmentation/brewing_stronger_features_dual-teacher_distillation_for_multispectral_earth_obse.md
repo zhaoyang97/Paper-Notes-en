@@ -29,18 +29,18 @@ This paper proposes **DEO (Distillation for Earth Observation)**, a dual-teacher
 
 ## Background & Motivation
 
-**State of the Field**: Foundation models are transforming Earth Observation (EO). Large amounts of unlabeled data combined with flexible task adaptation make them especially valuable in annotation-scarce EO settings. However, given the diversity of EO sensors and modalities, training a single universal model is **impractical**; multiple specialized foundation models will coexist.
+**Background**: Foundation models are transforming Earth Observation (EO). Large amounts of unlabeled data combined with flexible task adaptation make them especially valuable in annotation-scarce EO settings. However, given the diversity of EO sensors and modalities, training a single universal model is **impractical**; multiple specialized foundation models will coexist.
 
 **Limitations of Prior Work**:
    - Most EO pre-training relies on **Masked Image Modeling (MIM)**, which emphasizes local reconstruction but offers **limited control over global semantic structure**
    - General-purpose VFMs (e.g., DINOv2/DINOv3) possess strong optical semantic priors but lack multispectral (MS) capability
    - Training MS foundation models from scratch is **computationally expensive**
 
-**Root Cause**: How can the strong optical semantic priors of VFMs be efficiently transferred to a multispectral student **without compromising the learning of MS-specific information**? Existing approaches (e.g., Copernicus-FM) combine MIM with VFM distillation, but the MIM objective is **incompatible** with the contrastive self-distillation objective of VFMs, resulting in weaker global semantic structure.
+**Key Challenge**: How can the strong optical semantic priors of VFMs be efficiently transferred to a multispectral student **without compromising the learning of MS-specific information**? Existing approaches (e.g., Copernicus-FM) combine MIM with VFM distillation, but the MIM objective is **incompatible** with the contrastive self-distillation objective of VFMs, resulting in weaker global semantic structure.
 
-**Paper Goals**: Propose a pre-training strategy that enables strong performance when multispectral data is available, without sacrificing performance on optical-only tasks.
+**Goal**: Propose a pre-training strategy that enables strong performance when multispectral data is available, without sacrificing performance on optical-only tasks.
 
-**Starting Point**: **Align the pre-training objective of the student with that of the VFM teacher** — if the VFM was trained with contrastive self-distillation, the student should be trained the same way, making latent feature space alignment more tractable.
+**Key Insight**: **Align the pre-training objective of the student with that of the VFM teacher** — if the VFM was trained with contrastive self-distillation, the student should be trained the same way, making latent feature space alignment more tractable.
 
 **Core Idea**: Dual teacher = a multispectral contrastive self-distillation teacher (for structured MS feature space) + a frozen optical VFM teacher (for global semantic priors), unified under a contrastive distillation framework.
 

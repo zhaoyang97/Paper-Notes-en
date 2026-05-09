@@ -29,15 +29,15 @@ This paper formally connects Stochastic Depth (SD) to the Bayesian variational i
 
 ## Background & Motivation
 
-**State of the Field**: Safety-critical systems require reliable uncertainty quantification from DNNs. Monte Carlo Dropout (MCD) reinterprets dropout as approximate Bayesian inference and has become the dominant practical approach. MC DropBlock (MCDB) extends this paradigm to convolutional layers.
+**Background**: Safety-critical systems require reliable uncertainty quantification from DNNs. Monte Carlo Dropout (MCD) reinterprets dropout as approximate Bayesian inference and has become the dominant practical approach. MC DropBlock (MCDB) extends this paradigm to convolutional layers.
 
 **Limitations of Prior Work**: Standard dropout performs poorly in convolutional layers, while Stochastic Depth (SD) is a native regularization technique for residual networks widely adopted in modern architectures such as YOLO and ViT. However, the theoretical foundation for using SD as an inference-time sampling mechanism and systematic empirical validation remain absent.
 
-**Root Cause**: The formal theoretical connection between SD as a regularizer and Bayesian variational inference has not been established, and its UQ performance on complex multi-task problems such as object detection is unknown.
+**Key Challenge**: The formal theoretical connection between SD as a regularizer and Bayesian variational inference has not been established, and its UQ performance on complex multi-task problems such as object detection is unknown.
 
-**Paper Goals**: (1) Establish the theoretical link between MCSD and variational inference; (2) Conduct the first systematic benchmark of MCSD on object detection.
+**Goal**: (1) Establish the theoretical link between MCSD and variational inference; (2) Conduct the first systematic benchmark of MCSD on object detection.
 
-**Starting Point**: The progression from MCD to MCDB reveals a meta-strategy: stochastic regularizers implicitly define approximate posterior distributions. SD is the natural next candidate.
+**Key Insight**: The progression from MCD to MCDB reveals a meta-strategy: stochastic regularizers implicitly define approximate posterior distributions. SD is the natural next candidate.
 
 **Core Idea**: Preserve the stochasticity of stochastic depth at inference time, and sample sub-networks of varying depths through $T$ stochastic forward passes, forming an implicit depth ensemble for uncertainty estimation.
 

@@ -29,15 +29,15 @@ This work is the first to incorporate behavioral description embeddings extracte
 
 ## Background & Motivation
 
-**State of the Field**: Continuous valence-arousal (VA) estimation under in-the-wild conditions remains challenging due to large appearance variation, diverse head poses, frequent occlusions, and noisy audio. The ABAW Challenge is the most authoritative benchmark in this domain; prior state-of-the-art methods predominantly employ face + audio + cross-attention fusion pipelines.
+**Background**: Continuous valence-arousal (VA) estimation under in-the-wild conditions remains challenging due to large appearance variation, diverse head poses, frequent occlusions, and noisy audio. The ABAW Challenge is the most authoritative benchmark in this domain; prior state-of-the-art methods predominantly employ face + audio + cross-attention fusion pipelines.
 
 **Limitations of Prior Work**: Existing multimodal methods rely solely on conventional feature extractors (EfficientNet for vision, VGGish/WavLM for audio), and are unable to capture rich behavior-level semantics—such as trends in facial expression change, gesture meaning, or the relationship between body posture and context. While VLMs have demonstrated strong contextual understanding in video comprehension, they have not yet been applied to continuous VA estimation.
 
-**Root Cause**: Frame-level visual features encode only appearance and lack understanding of behavioral semantics and situational context. VLMs can provide such high-level semantics, but their outputs are segment-level rather than frame-level, and differ substantially from traditional modalities in temporal resolution and information density, making effective integration a key challenge.
+**Key Challenge**: Frame-level visual features encode only appearance and lack understanding of behavioral semantics and situational context. VLMs can provide such high-level semantics, but their outputs are segment-level rather than frame-level, and differ substantially from traditional modalities in temporal resolution and information density, making effective integration a key challenge.
 
-**Paper Goals**: (1) How can segment-level VLM outputs be aligned with frame-level visual/audio features? (2) How can heavily noisy in-the-wild audio be reliably exploited? (3) How can three modalities with vastly different temporal resolutions and information densities be adaptively fused?
+**Goal**: (1) How can segment-level VLM outputs be aligned with frame-level visual/audio features? (2) How can heavily noisy in-the-wild audio be reliably exploited? (3) How can three modalities with vastly different temporal resolutions and information densities be adaptively fused?
 
-**Starting Point**: Qwen3-VL processes video segments with emotion-oriented prompts to extract behavior-level embeddings → Mamba models segment-level temporal dynamics → frame-level expansion; mouth open/close detection filters audio reliability; two fusion strategies, DCMMOE and RAAV, are designed to handle modality asymmetry.
+**Key Insight**: Qwen3-VL processes video segments with emotion-oriented prompts to extract behavior-level embeddings → Mamba models segment-level temporal dynamics → frame-level expansion; mouth open/close detection filters audio reliability; two fusion strategies, DCMMOE and RAAV, are designed to handle modality asymmetry.
 
 **Core Idea**: VLM behavioral description embeddings serve as a third modality, combined with two asymmetric fusion strategies (DCMMOE/RAAV), injecting VLM behavioral understanding into continuous emotion estimation.
 

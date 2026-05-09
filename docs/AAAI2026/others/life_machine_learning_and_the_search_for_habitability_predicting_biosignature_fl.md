@@ -28,15 +28,15 @@ To address the observation prioritization needs of NASA's Habitable Worlds Obser
 
 ## Background & Motivation
 
-**State of the Field**: Future direct-imaging flagship missions such as NASA's HWO will conduct spectroscopic observations of exoplanets in search of signs of life. Given the extremely limited observing time and resources, optimizing target prioritization is critical — requiring rapid pre-observation assessment of which planets are more likely to host biosignatures.
+**Background**: Future direct-imaging flagship missions such as NASA's HWO will conduct spectroscopic observations of exoplanets in search of signs of life. Given the extremely limited observing time and resources, optimizing target prioritization is critical — requiring rapid pre-observation assessment of which planets are more likely to host biosignatures.
 
 **Limitations of Prior Work**: Traditional atmospheric retrieval methods (e.g., MCMC-based Bayesian inference) are computationally prohibitive and unsuitable for rapidly screening large numbers of candidate planets. Fast and reliable machine learning surrogate models are needed to accelerate this process.
 
-**Root Cause**: A fundamental tension exists between speed and reliability — fast point estimates may yield misleading predictions, while reliable uncertainty estimation demands substantial computation.
+**Key Challenge**: A fundamental tension exists between speed and reliability — fast point estimates may yield misleading predictions, while reliable uncertainty estimation demands substantial computation.
 
-**Paper Goals**: (1) Develop fast and accurate biosignature flux prediction models; (2) provide reliable uncertainty quantification; (3) enhance the interpretability of predictions.
+**Goal**: (1) Develop fast and accurate biosignature flux prediction models; (2) provide reliable uncertainty quantification; (3) enhance the interpretability of predictions.
 
-**Starting Point**: Two complementary architectures are developed to address uncertainty and interpretability separately.
+**Key Insight**: Two complementary architectures are developed to address uncertainty and interpretability separately.
 
 **Core Idea**: The BCNN provides quantification of both epistemic and aleatoric uncertainty via Monte Carlo Dropout, while SQuAT employs a query-driven attention mechanism to associate spectral features with specific biosignature species, enhancing interpretability.
 

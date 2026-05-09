@@ -28,15 +28,15 @@ This paper proposes the first fully dynamic algorithm for maintaining Chamfer di
 
 ## Background & Motivation
 
-**State of the Field**: Chamfer distance is the most widely used dissimilarity measure between point clouds, defined as $\text{dist}_{\text{CH}}(A,B) = \sum_{a \in A} \min_{b \in B} \text{dist}(a,b)$. It is broadly applied as a loss function in 3D point cloud completion and upsampling, object reconstruction from video sequences, and anatomical structure tracking in medical imaging.
+**Background**: Chamfer distance is the most widely used dissimilarity measure between point clouds, defined as $\text{dist}_{\text{CH}}(A,B) = \sum_{a \in A} \min_{b \in B} \text{dist}(a,b)$. It is broadly applied as a loss function in 3D point cloud completion and upsampling, object reconstruction from video sequences, and anatomical structure tracking in medical imaging.
 
 **Limitations of Prior Work**: Many applications require repeatedly computing Chamfer distance over dynamically changing point sets (e.g., evolving model predictions during training iterations), yet no dynamic maintenance algorithm previously existed. Naive approaches require recomputation from scratch after each update: exact computation costs $O(n^2 d)$, and even a $(1+\epsilon)$ approximation requires $O(nd\log n \cdot \epsilon^{-2})$.
 
-**Root Cause**: Static algorithms cannot break the linear-time update lower bound, while practical applications demand point-wise updates.
+**Key Challenge**: Static algorithms cannot break the linear-time update lower bound, while practical applications demand point-wise updates.
 
-**Paper Goals**: Given dynamic point sets $A, B \subset \mathbb{R}^d$ with insertions and deletions, how can one efficiently maintain an approximation of Chamfer distance?
+**Goal**: Given dynamic point sets $A, B \subset \mathbb{R}^d$ with insertions and deletions, how can one efficiently maintain an approximation of Chamfer distance?
 
-**Starting Point**: Reduce the dynamic maintenance of Chamfer distance to dynamic ANN queries, and estimate the total distance using an importance sampling framework.
+**Key Insight**: Reduce the dynamic maintenance of Chamfer distance to dynamic ANN queries, and estimate the total distance using an importance sampling framework.
 
 **Core Idea**: Implicit distance estimation via randomly shifted quadtrees combined with importance sampling, enabling fully dynamic Chamfer distance maintenance with sublinear update time.
 

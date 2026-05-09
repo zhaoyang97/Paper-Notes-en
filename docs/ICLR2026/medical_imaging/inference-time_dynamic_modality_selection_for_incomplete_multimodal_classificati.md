@@ -29,7 +29,7 @@ This paper proposes DyMo, an inference-time dynamic modality selection framework
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal deep learning has achieved significant progress in healthcare, marketing, and embodied intelligence, yet deployed systems frequently encounter samples with one or more missing modalities due to sensor failures, heterogeneous acquisition protocols, or transmission errors.
+**Background**: Multimodal deep learning has achieved significant progress in healthcare, marketing, and embodied intelligence, yet deployed systems frequently encounter samples with one or more missing modalities due to sensor failures, heterogeneous acquisition protocols, or transmission errors.
 
 **Limitations of Prior Work**:
 
@@ -39,9 +39,9 @@ This paper proposes DyMo, an inference-time dynamic modality selection framework
 
 3. **Existing dynamic fusion methods** (QMF, DynMM, PDF) primarily address intra-modal noise (low fidelity) and cannot detect inter-modal semantic misalignment.
 
-**Root Cause** (discarding-imputation dilemma): Discarding missing modalities sacrifices task-relevant information → performance drops; imputing missing modalities may introduce task-irrelevant noise or semantic errors → performance also drops. Both strategies have inherent shortcomings, and no mechanism exists to dynamically trade off between them.
+**Key Challenge** (discarding-imputation dilemma): Discarding missing modalities sacrifices task-relevant information → performance drops; imputing missing modalities may introduce task-irrelevant noise or semantic errors → performance also drops. Both strategies have inherent shortcomings, and no mechanism exists to dynamically trade off between them.
 
-**Starting Point**: Rather than choosing one strategy, DyMo dynamically evaluates whether each recovered modality is "worth fusing"—accepting it if recovery increases task-relevant information (positive reward) and rejecting it if recovery introduces noise or misalignment (negative reward).
+**Key Insight**: Rather than choosing one strategy, DyMo dynamically evaluates whether each recovered modality is "worth fusing"—accepting it if recovery increases task-relevant information (positive reward) and rejecting it if recovery introduces noise or misalignment (negative reward).
 
 ## Method
 

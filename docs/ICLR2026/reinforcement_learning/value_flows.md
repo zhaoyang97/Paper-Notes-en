@@ -27,7 +27,7 @@ content_hash: e6cbc2b35a81fee9
 Value Flows is the first work to introduce flow matching into distributional RL — it learns a vector field such that the induced probability density path automatically satisfies the distributional Bellman equation. Variance of the return distribution is efficiently estimated via a flow derivative ODE, enabling confidence-weighted prioritized learning. The method achieves an average 1.3× improvement in success rate across 62 OGBench tasks, and estimates return distributions 3× more accurately than C51/CODAC.
 
 ## Background & Motivation
-**State of the Field**: Standard RL compresses future returns into a scalar Q-value. Distributional RL (C51, QR-DQN, IQN) models the full return distribution, providing richer learning signals and enabling applications in exploration and safe RL.
+**Background**: Standard RL compresses future returns into a scalar Q-value. Distributional RL (C51, QR-DQN, IQN) models the full return distribution, providing richer learning signals and enabling applications in exploration and safe RL.
 
 **Limitations of Prior Work**:
    - **C51**: Discretizes the return distribution into fixed bins → limited resolution, unable to capture fine-grained distributional structure.
@@ -35,7 +35,7 @@ Value Flows is the first work to introduce flow matching into distributional RL 
    - **Variance estimation is difficult**: Discretization-based methods struggle to accurately estimate return variance, which is critical for uncertainty quantification.
    - Modern generative models (diffusion / flow matching) have been successfully applied to trajectory and policy modeling, but have not yet been used for return distribution modeling.
 
-**Root Cause**: How can one learn a complete, continuous return distribution (rather than a discretized approximation), and efficiently extract expectations and variances from it to improve policy learning?
+**Key Challenge**: How can one learn a complete, continuous return distribution (rather than a discretized approximation), and efficiently extract expectations and variances from it to improve policy learning?
 
 **Core Idea**: Flow matching is used to learn a vector field $v(z^t | t, s, a)$ over return distributions — a distributional conditional flow matching (DCFM) loss is constructed to satisfy the distributional Bellman equation, and the flow derivative ODE enables variance estimation without backpropagation through the ODE solver.
 

@@ -28,13 +28,13 @@ Multiple LLMs form a "Spartan tribe" to engage in mutual competition and peer ev
 
 ## Background & Motivation
 
-**State of the Field**: LLM alignment is a critical step in post-training. Self-alignment methods, in which models serve as their own judges and generate reward signals, have demonstrated promising results.
+**Background**: LLM alignment is a critical step in post-training. Self-alignment methods, in which models serve as their own judges and generate reward signals, have demonstrated promising results.
 
 **Limitations of Prior Work**: Single-model self-alignment suffers from two fundamental deficiencies: **self-bias** (systematically preferring one's own responses) and **generative homogeneity** (responses sampled multiple times exhibit highly similar styles and error patterns).
 
-**Root Cause**: The single model becomes a bottleneck for self-evolution—it cannot transcend its own training priors and intrinsic biases.
+**Key Challenge**: The single model becomes a bottleneck for self-evolution—it cannot transcend its own training priors and intrinsic biases.
 
-**Starting Point**: Game theory + Elo reputation system + DPO, framing alignment as a multi-agent competitive process.
+**Key Insight**: Game theory + Elo reputation system + DPO, framing alignment as a multi-agent competitive process.
 
 **Core Idea**: Multiple LLMs compete with one another to produce diverse preference pairs; mutual evaluation eliminates single-model bias; and a reputation system grants greater trust to the judgments of higher-performing models.
 

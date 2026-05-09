@@ -30,15 +30,15 @@ This paper proposes TraceR1, a two-stage RL framework in which the first stage e
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal agents have made significant progress in GUI interaction and tool invocation, yet the vast majority of existing systems remain fundamentally **reactive** — selecting the next action based solely on the current observation without considering long-term consequences.
+**Background**: Multimodal agents have made significant progress in GUI interaction and tool invocation, yet the vast majority of existing systems remain fundamentally **reactive** — selecting the next action based solely on the current observation without considering long-term consequences.
 
 **Limitations of Prior Work**: In multi-step tasks, the effects of actions are often delayed and cumulative. Reactive agents cannot anticipate downstream consequences, leading to progressive goal deviation and poor planning coherence in long-horizon tasks.
 
-**Root Cause**: Both mainstream technical approaches face fundamental obstacles — model-free RL relies on sparse terminal rewards and struggles to capture long-range dependencies, while model-based planning requires constructing a world model, which is exceedingly difficult in visually rich interactive environments.
+**Key Challenge**: Both mainstream technical approaches face fundamental obstacles — model-free RL relies on sparse terminal rewards and struggles to capture long-range dependencies, while model-based planning requires constructing a world model, which is exceedingly difficult in visually rich interactive environments.
 
-**Paper Goals**: To efficiently train multimodal agents capable of adaptive anticipatory reasoning, enabling consistent planning in complex long-horizon tasks.
+**Goal**: To efficiently train multimodal agents capable of adaptive anticipatory reasoning, enabling consistent planning in complex long-horizon tasks.
 
-**Starting Point**: Rather than building an explicit world model, the paper directly applies RL at the trajectory level, training the model to predict a sequence of future actions while executing only the first step — analogous to the human strategy of "thinking several steps ahead, acting one step at a time."
+**Key Insight**: Rather than building an explicit world model, the paper directly applies RL at the trajectory level, training the model to predict a sequence of future actions while executing only the first step — analogous to the human strategy of "thinking several steps ahead, acting one step at a time."
 
 **Core Idea**: A two-stage training procedure — trajectory-level alignment for global consistency followed by grounded RL for single-step executability — unifies anticipatory planning and precise execution.
 

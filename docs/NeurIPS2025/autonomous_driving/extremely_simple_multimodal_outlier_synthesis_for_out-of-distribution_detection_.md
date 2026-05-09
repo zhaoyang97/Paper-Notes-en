@@ -28,13 +28,13 @@ This paper proposes Feature Mixing — an extremely simple multimodal outlier sy
 
 ## Background & Motivation
 
-**State of the Field**: OOD detection and segmentation are critical for safety-sensitive applications such as autonomous driving and robotic surgery. Existing methods are primarily designed for single-modality inputs (images or point clouds), yet real deployment environments are inherently multimodal (LiDAR + camera, video + optical flow).
+**Background**: OOD detection and segmentation are critical for safety-sensitive applications such as autonomous driving and robotic surgery. Existing methods are primarily designed for single-modality inputs (images or point clouds), yet real deployment environments are inherently multimodal (LiDAR + camera, video + optical flow).
 
 **Limitations of Prior Work**: (a) Neural networks tend to produce overconfident predictions on OOD inputs; (b) collecting real OOD datasets is costly, especially in multimodal settings; (c) existing outlier synthesis methods (VOS, NP-Mix) either support only a single modality or incur prohibitive computational costs — NP-Mix requires nearest-neighbor search during segmentation, making it extremely slow.
 
-**Root Cause**: Multimodal OOD detection requires synthesizing cross-modally consistent outlier samples, but the heterogeneity of cross-modal feature spaces causes simple interpolation (Mixup) to introduce noisy samples within the ID distribution, while complex methods (NP-Mix) are too slow.
+**Key Challenge**: Multimodal OOD detection requires synthesizing cross-modally consistent outlier samples, but the heterogeneity of cross-modal feature spaces causes simple interpolation (Mixup) to introduce noisy samples within the ID distribution, while complex methods (NP-Mix) are too slow.
 
-**Starting Point**: Two-modality features encode different information despite originating from the same scene. Swapping a subset of feature dimensions across modalities produces mixed features that belong neither to the distribution of either modality nor deviate too far from it — precisely the desired properties of OOD samples.
+**Key Insight**: Two-modality features encode different information despite originating from the same scene. Swapping a subset of feature dimensions across modalities produces mixed features that belong neither to the distribution of either modality nor deviate too far from it — precisely the desired properties of OOD samples.
 
 **Core Idea**: Feature Mixing = randomly select $N$ dimensions and swap them across modalities. Theoretically guaranteed to reside in low-likelihood regions with bounded deviation. Minimal implementation, maximal speed.
 

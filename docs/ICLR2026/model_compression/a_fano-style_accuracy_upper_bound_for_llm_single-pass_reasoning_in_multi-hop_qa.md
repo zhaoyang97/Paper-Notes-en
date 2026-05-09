@@ -28,15 +28,15 @@ This paper derives a Fano-style accuracy upper bound for LLM single-pass reasoni
 
 ## Background & Motivation
 
-**State of the Field**: Multi-hop question answering (MHQA) requires integrating multi-step evidence scattered across long contexts through sequential reasoning. Current LLMs typically address such tasks under a single-pass inference paradigm.
+**Background**: Multi-hop question answering (MHQA) requires integrating multi-step evidence scattered across long contexts through sequential reasoning. Current LLMs typically address such tasks under a single-pass inference paradigm.
 
 **Limitations of Prior Work**: LLM single-pass outputs are limited in token count, and the information capacity per token is bounded. When reasoning chains span multiple evidence sources or contexts contain substantial noise, the total information demand exceeds output capacity, causing relevant signals to be diluted or obscured, leading to inaccurate intermediate reasoning.
 
-**Root Cause**: The single-pass paradigm faces a dual crisis: (a) *single-step capacity overflow*—information demand grows super-linearly with the number of hops and context length; (b) *cross-step error accumulation*—even with high per-step accuracy, the chain structure amplifies errors exponentially.
+**Key Challenge**: The single-pass paradigm faces a dual crisis: (a) *single-step capacity overflow*—information demand grows super-linearly with the number of hops and context length; (b) *cross-step error accumulation*—even with high per-step accuracy, the chain structure amplifies errors exponentially.
 
-**Paper Goals**: (a) Formally characterize the theoretical performance ceiling of LLM single-pass reasoning; (b) explain why MHQA is particularly prone to exceeding this ceiling; (c) design a multi-turn framework that breaks through the single-pass bottleneck.
+**Goal**: (a) Formally characterize the theoretical performance ceiling of LLM single-pass reasoning; (b) explain why MHQA is particularly prone to exceeding this ceiling; (c) design a multi-turn framework that breaks through the single-pass bottleneck.
 
-**Starting Point**: Drawing on Shannon information theory and Fano's inequality, the paper formalizes the relationship between "task information demand" and "model output capacity" as an accuracy upper bound.
+**Key Insight**: Drawing on Shannon information theory and Fano's inequality, the paper formalizes the relationship between "task information demand" and "model output capacity" as an accuracy upper bound.
 
 **Core Idea**: Single-pass reasoning accuracy is constrained by a Fano-style upper bound $\text{Acc} \leq \min\{1, (C+1)/\beta\}$; when information demand $\beta$ exceeds capacity $C$, accuracy collapses abruptly, and multi-turn decomposition is the path forward.
 

@@ -28,15 +28,15 @@ This paper introduces ChemCoTBench, the first CoT-based benchmark for evaluating
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have demonstrated strong performance in mathematical and code reasoning (aided by CoT), yet their chemical reasoning capabilities have not been systematically evaluated. Existing chemistry benchmarks (e.g., ChemLLM, MolPuzzle) primarily test knowledge retrieval and factual recall rather than step-by-step reasoning.
+**Background**: LLMs have demonstrated strong performance in mathematical and code reasoning (aided by CoT), yet their chemical reasoning capabilities have not been systematically evaluated. Existing chemistry benchmarks (e.g., ChemLLM, MolPuzzle) primarily test knowledge retrieval and factual recall rather than step-by-step reasoning.
 
 **Limitations of Prior Work**: (1) A lack of structured, step-by-step chemical reasoning tasks — existing benchmarks conflate reasoning, knowledge recall, and numerical computation, making it impossible to attribute performance to specific factors; (2) insufficient alignment with real-world applications such as drug design and reaction engineering; (3) an almost complete absence of CoT training data for chemical reasoning.
 
-**Root Cause**: Chemistry demands rigorous structural analysis and multi-step reasoning (e.g., molecular optimization in pharmaceutical design), yet LLM chemical reasoning ability is underestimated or mischaracterized by simple QA tasks.
+**Key Challenge**: Chemistry demands rigorous structural analysis and multi-step reasoning (e.g., molecular optimization in pharmaceutical design), yet LLM chemical reasoning ability is underestimated or mischaracterized by simple QA tasks.
 
-**Paper Goals**: To establish a systematic benchmark for evaluating chemical reasoning in LLMs, supporting comprehensive assessment from foundational tasks (molecular understanding/editing) to applied tasks (molecular optimization/reaction prediction).
+**Goal**: To establish a systematic benchmark for evaluating chemical reasoning in LLMs, supporting comprehensive assessment from foundational tasks (molecular understanding/editing) to applied tasks (molecular optimization/reaction prediction).
 
-**Starting Point**: Chemical problem-solving is analogized to mathematical arithmetic — modular chemical operations are defined (addition = adding a functional group, subtraction = deleting a functional group, substitution = replacing a functional group), enabling step-wise evaluation of chemical reasoning.
+**Key Insight**: Chemical problem-solving is analogized to mathematical arithmetic — modular chemical operations are defined (addition = adding a functional group, subtraction = deleting a functional group, substitution = replacing a functional group), enabling step-wise evaluation of chemical reasoning.
 
 **Core Idea**: Chemical reasoning is formalized as a stepwise, verifiable workflow through modular chemical operations, yielding the first chemical CoT benchmark alongside a large-scale CoT training dataset.
 

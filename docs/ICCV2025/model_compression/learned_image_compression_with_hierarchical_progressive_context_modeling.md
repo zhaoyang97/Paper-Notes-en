@@ -34,7 +34,7 @@ This paper proposes a Hierarchical Progressive Context Model (HPCM) that partiti
 - Two key issues with existing methods:
     - **Inefficient long-range dependency modeling**: Transformer architectures can capture long-range dependencies but introduce high complexity.
     - **Insufficient utilization of diverse context across coding steps**: Each step only uses the hyperprior and already-coded latents, without fully exploiting contextual information accumulated in previous steps.
-- **Paper Goals**: Achieve more efficient context information acquisition through hierarchical coding schedules and progressive context fusion.
+- **Goal**: Achieve more efficient context information acquisition through hierarchical coding schedules and progressive context fusion.
 
 ## Method
 

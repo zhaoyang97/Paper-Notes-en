@@ -25,10 +25,10 @@ This paper proposes StepGRPO, an online reinforcement learning framework that in
 
 ## Background & Motivation
 
-- **State of the Field**: The prevailing approach for enhancing MLLM reasoning is supervised fine-tuning (SFT) on high-quality CoT data (e.g., Mulberry). However, SFT only encourages **passive imitation** of correct reasoning paths, leaving the model without understanding of its own errors.
+- **Background**: The prevailing approach for enhancing MLLM reasoning is supervised fine-tuning (SFT) on high-quality CoT data (e.g., Mulberry). However, SFT only encourages **passive imitation** of correct reasoning paths, leaving the model without understanding of its own errors.
 - **Limitations of Prior Work**: Inspired by DeepSeek-R1, applying GRPO-style online RL to MLLMs is a natural extension. However, directly using outcome-level rewards introduces a **sparse reward problem**: small MLLMs achieve low accuracy on long-chain reasoning; few sampled trajectories receive positive rewards; insufficient positive feedback leads to poor exploration efficiency and training instability.
-- **Root Cause**: Outcome-level rewards alone fail to provide dense, fine-grained supervision for intermediate reasoning steps.
-- **Paper Goals**: Provide step-level reward signals that are denser and more informative than outcome-level rewards, without training an additional process reward model.
+- **Key Challenge**: Outcome-level rewards alone fail to provide dense, fine-grained supervision for intermediate reasoning steps.
+- **Goal**: Provide step-level reward signals that are denser and more informative than outcome-level rewards, without training an additional process reward model.
 
 ## Method
 

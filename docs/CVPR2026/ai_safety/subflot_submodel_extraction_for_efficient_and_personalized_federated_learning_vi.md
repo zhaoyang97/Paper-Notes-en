@@ -29,15 +29,15 @@ This paper proposes SubFLOT, a framework that leverages Optimal Transport (OT) o
 
 ## Background & Motivation
 
-**State of the Field**: Federated Learning (FL) enables collaborative training while preserving data privacy, yet faces dual challenges in practical deployment: system heterogeneity (large disparities in device resources) and statistical heterogeneity (non-IID data distributions). Federated network pruning has emerged as a countermeasure, allowing different clients to train submodels of varying sizes, thereby reducing computational and communication overhead.
+**Background**: Federated Learning (FL) enables collaborative training while preserving data privacy, yet faces dual challenges in practical deployment: system heterogeneity (large disparities in device resources) and statistical heterogeneity (non-IID data distributions). Federated network pruning has emerged as a countermeasure, allowing different clients to train submodels of varying sizes, thereby reducing computational and communication overhead.
 
 **Limitations of Prior Work**: Federated pruning leaves two critical problems unresolved. First, the placement of pruning decisions presents a dilemma: server-side pruning (e.g., HeteroFL) adopts a uniform compression strategy that precludes personalization, while client-side pruning (train–prune–fine-tune paradigm) achieves personalization at the cost of excessive computational burden on resource-constrained devices. Second, the pruning process itself exacerbates heterogeneity—submodel weight distributions under high pruning rates deviate from the global model (parameter drift), undermining training stability and global convergence.
 
-**Root Cause**: How can personalized pruning be realized on the server side—without accessing raw client data—while simultaneously resolving the parameter-space drift induced by pruning?
+**Key Challenge**: How can personalized pruning be realized on the server side—without accessing raw client data—while simultaneously resolving the parameter-space drift induced by pruning?
 
-**Paper Goals**: (1) Server-side personalized pruning—generating customized submodels for each client without touching their raw data; (2) Parameter drift suppression—preventing excessive divergence of parameter distributions across submodels trained under different pruning rates.
+**Goal**: (1) Server-side personalized pruning—generating customized submodels for each client without touching their raw data; (2) Parameter drift suppression—preventing excessive divergence of parameter distributions across submodels trained under different pruning rates.
 
-**Starting Point**: The authors treat each client's historical model parameters as a proxy for its local data distribution. Building on this insight, the pruning problem is reformulated as minimizing the Wasserstein distance between the global model and the historical model, with the resulting OT plan guiding personalized pruning.
+**Key Insight**: The authors treat each client's historical model parameters as a proxy for its local data distribution. Building on this insight, the pruning problem is reformulated as minimizing the Wasserstein distance between the global model and the historical model, with the resulting OT plan guiding personalized pruning.
 
 **Core Idea**: Apply optimal transport in parameter space to align neurons of the global model with those of clients' historical models, achieving data-aware, server-side personalized pruning without any access to raw data.
 

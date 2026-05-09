@@ -29,15 +29,15 @@ This paper proposes the first psychologically inspired framework for systematica
 
 ## Background & Motivation
 
-**State of the Field**: Curiosity-driven reinforcement learning (e.g., i-MENTOR, CDE) leverages intrinsic reward signals to guide LLM exploration and has shown promise on mathematical and programming tasks. However, whether these methods genuinely reflect curiosity-like behavior in LLMs, and whether the psychological concept of curiosity transfers to LLMs, remains unclear.
+**Background**: Curiosity-driven reinforcement learning (e.g., i-MENTOR, CDE) leverages intrinsic reward signals to guide LLM exploration and has shown promise on mathematical and programming tasks. However, whether these methods genuinely reflect curiosity-like behavior in LLMs, and whether the psychological concept of curiosity transfers to LLMs, remains unclear.
 
 **Limitations of Prior Work**: (1) Insufficient evaluation of whether LLMs can exhibit curiosity-like behavioral characteristics; (2) existing methods rely on statistical signals such as entropy or perplexity, making it difficult to disentangle improvements due to enhanced supervision signals from those attributable to genuine curious behavior; (3) a systematic evaluation framework is lacking.
 
-**Root Cause**: Curiosity-driven RL methods presuppose that curiosity in LLMs can be elicited and amplified, yet it remains unknown whether LLMs "possess" curiosity in any meaningful sense.
+**Key Challenge**: Curiosity-driven RL methods presuppose that curiosity in LLMs can be elicited and amplified, yet it remains unknown whether LLMs "possess" curiosity in any meaningful sense.
 
-**Paper Goals**: (1) Systematically evaluate curiosity-like behavior in LLMs using psychological scales and behavioral experiments; (2) distinguish whether curiosity manifests as an intrinsic trait or a behavioral pattern; (3) explore whether curious behavior can improve downstream performance.
+**Goal**: (1) Systematically evaluate curiosity-like behavior in LLMs using psychological scales and behavioral experiments; (2) distinguish whether curiosity manifests as an intrinsic trait or a behavioral pattern; (3) explore whether curious behavior can improve downstream performance.
 
-**Starting Point**: The paper adapts the Five-Dimensional Curiosity Revised scale (5DCR) and designs both questionnaire assessments and behavioral tasks for three dimensions of human curiosity—information seeking, stimulation seeking, and social curiosity—achieving a closed-loop evaluation from self-report to behavioral validation.
+**Key Insight**: The paper adapts the Five-Dimensional Curiosity Revised scale (5DCR) and designs both questionnaire assessments and behavioral tasks for three dimensions of human curiosity—information seeking, stimulation seeking, and social curiosity—achieving a closed-loop evaluation from self-report to behavioral validation.
 
 **Core Idea**: LLMs exhibit curiosity-like behavioral patterns, but these more likely reflect fitting to human data and safety constraints rather than intrinsic motivation. Nonetheless, even purely behavioral simulation of curiosity can improve reasoning performance.
 

@@ -29,18 +29,18 @@ This paper proposes DIY-SC, a 3D-aware pseudo-label generation strategy (chained
 
 ## Background & Motivation
 
-**State of the Field**: Semantic correspondence is a classical computer vision problem — finding semantically corresponding points across different instances. Recent large-scale pretrained visual models (DINO, Stable Diffusion) have demonstrated surprisingly strong zero-shot semantic matching capabilities.
+**Background**: Semantic correspondence is a classical computer vision problem — finding semantically corresponding points across different instances. Recent large-scale pretrained visual models (DINO, Stable Diffusion) have demonstrated surprisingly strong zero-shot semantic matching capabilities.
 
 **Limitations of Prior Work**:
    - Foundation model features are ambiguous on symmetric objects and repeated parts (e.g., the left and right wheels of a car are indistinguishable).
    - Supervised methods (e.g., TLR) rely on manual keypoint annotations, which are scarce and difficult to scale to larger datasets.
    - Weakly supervised methods (e.g., SphMap) address symmetry via spherical mapping, but the spherical prior performs poorly on objects with complex topology (e.g., animals) and requires manual weight tuning.
 
-**Root Cause**: Foundation models encode rich semantic knowledge, but simple feature concatenation or weighted averaging cannot leverage it optimally; yet effectively exploiting this knowledge requires supervision signals, while manual annotation is costly and non-scalable.
+**Key Challenge**: Foundation models encode rich semantic knowledge, but simple feature concatenation or weighted averaging cannot leverage it optimally; yet effectively exploiting this knowledge requires supervision signals, while manual annotation is costly and non-scalable.
 
-**Paper Goals**: Without relying on manual keypoint annotation, leverage only weak 3D supervision signals (category, mask, coarse pose) to train an adapter via self-generated pseudo-labels for improved semantic correspondence.
+**Goal**: Without relying on manual keypoint annotation, leverage only weak 3D supervision signals (category, mask, coarse pose) to train an adapter via self-generated pseudo-labels for improved semantic correspondence.
 
-**Starting Point**: Zero-shot matching performs well under small viewpoint differences but degrades significantly under large viewpoint gaps. Leveraging this observation, high-quality pseudo-labels are first generated on image pairs with small viewpoint differences, then propagated to large-viewpoint-gap pairs via chained propagation.
+**Key Insight**: Zero-shot matching performs well under small viewpoint differences but degrades significantly under large viewpoint gaps. Leveraging this observation, high-quality pseudo-labels are first generated on image pairs with small viewpoint differences, then propagated to large-viewpoint-gap pairs via chained propagation.
 
 **Core Idea**: Generate pseudo-labels with foundation models → improve pseudo-label quality via 3D-aware chained propagation + cycle consistency + spherical filtering → train a lightweight adapter with high-quality pseudo-labels.
 

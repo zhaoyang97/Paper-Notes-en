@@ -29,15 +29,15 @@ This paper presents InCaRPose, an in-cabin relative camera pose estimation model
 
 ## Background & Motivation
 
-**State of the Field**: Camera extrinsic calibration is a fundamental task in computer vision. In in-cabin monitoring (ICAM) scenarios, cameras are used for driver monitoring, occupant pose estimation, and airbag control. Existing methods rely on geometric feature matching and epipolar geometry, or on deep learning models trained on large-scale data.
+**Background**: Camera extrinsic calibration is a fundamental task in computer vision. In in-cabin monitoring (ICAM) scenarios, cameras are used for driver monitoring, occupant pose estimation, and airbag control. Existing methods rely on geometric feature matching and epipolar geometry, or on deep learning models trained on large-scale data.
 
 **Limitations of Prior Work**: In-cabin environments present several unique challenges: (1) rearview-mirror-mounted cameras frequently change their extrinsics as drivers adjust them; (2) in-cabin cameras typically use wide-angle/fisheye lenses, introducing severe distortion; (3) cameras operate in the near-infrared (NIR) spectrum, differing from standard RGB imagery; (4) airbag control requires occupant location within 15–50 ms post-collision, demanding metric-scale absolute translation estimation and real-time inference. Existing methods such as Reloc3r can only predict translation direction rather than absolute distance, and require large-scale training data.
 
-**Root Cause**: Existing general-purpose pose estimation models either require large amounts of training data and specific camera intrinsics, or provide only scale-ambiguous translation directions, failing to jointly satisfy the in-cabin safety application requirements of small-data training, metric-scale translation, fisheye distortion handling, and real-time inference.
+**Key Challenge**: Existing general-purpose pose estimation models either require large amounts of training data and specific camera intrinsics, or provide only scale-ambiguous translation directions, failing to jointly satisfy the in-cabin safety application requirements of small-data training, metric-scale translation, fisheye distortion handling, and real-time inference.
 
-**Paper Goals**: (1) Accurately estimate relative pose in real in-cabin environments using only synthetic training data; (2) directly process highly distorted fisheye images without undistortion; (3) predict metric-scale absolute translation; (4) perform real-time inference to support time-critical safety applications.
+**Goal**: (1) Accurately estimate relative pose in real in-cabin environments using only synthetic training data; (2) directly process highly distorted fisheye images without undistortion; (3) predict metric-scale absolute translation; (4) perform real-time inference to support time-critical safety applications.
 
-**Starting Point**: The problem is reformulated as reference-relative pose estimation, avoiding dependence on a vehicle-specific coordinate frame. A frozen self-supervised ViT backbone (DINOv3) is used to extract domain-invariant features, enabling cross-domain transfer with a small amount of synthetic data.
+**Key Insight**: The problem is reformulated as reference-relative pose estimation, avoiding dependence on a vehicle-specific coordinate frame. A frozen self-supervised ViT backbone (DINOv3) is used to extract domain-invariant features, enabling cross-domain transfer with a small amount of synthetic data.
 
 **Core Idea**: Combine a frozen DINOv3 backbone, a Transformer cross-attention decoder, and lightweight prediction heads, trained on synthetic in-cabin data, to achieve metric-scale relative pose estimation in real in-cabin environments.
 

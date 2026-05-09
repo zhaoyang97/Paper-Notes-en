@@ -27,15 +27,15 @@ content_hash: 41b3c015f3ab471c
 This paper proposes a log-sum-ReLU (LSR) energy function based on the Epanechnikov kernel as a replacement for the conventional log-sum-exp (LSE) energy in Dense Associative Memory. For the first time, it achieves the coexistence of exact retrieval of all stored patterns and the emergence of novel creative local minima, while preserving exponential memory capacity.
 
 ## Background & Motivation
-**State of the Field**: Dense Associative Memory (DenseAM / Modern Hopfield Network) stores patterns via energy functions. The LSE energy (corresponding to a Gaussian kernel) is the dominant choice, achieving exponential memory capacity $M^* \sim \exp(d)$.
+**Background**: Dense Associative Memory (DenseAM / Modern Hopfield Network) stores patterns via energy functions. The LSE energy (corresponding to a Gaussian kernel) is the dominant choice, achieving exponential memory capacity $M^* \sim \exp(d)$.
 
 **Limitations of Prior Work**: The LSE energy exhibits a fundamental tension between memorization and generalization—when all original patterns are retrieved exactly ($\beta \to \infty$), no new local minima emerge; conversely, when new patterns emerge (finite $\beta$), retrieval of original patterns is no longer exact. That is, LSE cannot simultaneously achieve exact memorization and creative emergence.
 
-**Root Cause**: The conventional view holds that perfect memorization (zero training loss / exact retrieval) is incompatible with generalization. Drawing an analogy to the "double descent" phenomenon in deep learning, the question arises: can one find an energy function for associative memory that simultaneously enables exact storage and the generation of meaningful new patterns?
+**Key Challenge**: The conventional view holds that perfect memorization (zero training loss / exact retrieval) is incompatible with generalization. Drawing an analogy to the "double descent" phenomenon in deep learning, the question arises: can one find an energy function for associative memory that simultaneously enables exact storage and the generation of meaningful new patterns?
 
-**Paper Goals**: To identify an energy function that endows DenseAM with both exact memorization and emergent creativity.
+**Goal**: To identify an energy function that endows DenseAM with both exact memorization and emergent creativity.
 
-**Starting Point**: The duality between energy functions and probability density functions—$\exp[-E(\mathbf{x})]$ constitutes a kernel density estimator. In KDE theory, the Epanechnikov kernel achieves superior estimation efficiency compared to the Gaussian kernel, corresponding to $F(x) = \text{ReLU}(1+x)$.
+**Key Insight**: The duality between energy functions and probability density functions—$\exp[-E(\mathbf{x})]$ constitutes a kernel density estimator. In KDE theory, the Epanechnikov kernel achieves superior estimation efficiency compared to the Gaussian kernel, corresponding to $F(x) = \text{ReLU}(1+x)$.
 
 **Core Idea**: Replace the Gaussian kernel (exp) with the optimal KDE kernel (Epanechnikov/ReLU) as the separation function, yielding the LSR energy that supports both exact memorization and emergence.
 

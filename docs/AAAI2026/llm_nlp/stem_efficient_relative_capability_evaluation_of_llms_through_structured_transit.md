@@ -23,10 +23,10 @@ This paper proposes STEM, a framework that identifies "Significant Transition Sa
 
 ## Background & Motivation
 
-- **State of the Field**: LLMs frequently set new SOTA records on standard benchmarks such as MMLU, GPQA, and GSM8K, yet a notable gap persists between benchmark scores and real-world user experience. Data contamination—where benchmark samples are memorized during training—inflates scores and fails to reflect genuine reasoning ability.
+- **Background**: LLMs frequently set new SOTA records on standard benchmarks such as MMLU, GPQA, and GSM8K, yet a notable gap persists between benchmark scores and real-world user experience. Data contamination—where benchmark samples are memorized during training—inflates scores and fails to reflect genuine reasoning ability.
 - **Limitations of Prior Work**: Anomalous scaling behavior has been observed in the Qwen3 series on GPQA, where the 8B model scores 44.44, higher than both the 14B (39.90) and 30B-A3B (43.94) models, indicating that larger model size does not consistently yield improved capability.
-- **Root Cause**: Existing benchmarks exhibit severely polarized difficulty distributions. Simple samples account for 52.81% of MMLU and 59.59% of GSM8K, while hard samples constitute 52.53% of GPQA and 55.94% of SuperGPQA. The proportion of intermediate-difficulty samples is low (only 20.07% for GPQA and 34.80% for GSM8K), resulting in insufficient discriminability across models.
-- **Paper Goals**: Full-benchmark evaluation incurs high computational cost, and random sampling suffers from high variance and instability. A lightweight yet reliable evaluation approach is therefore urgently needed.
+- **Key Challenge**: Existing benchmarks exhibit severely polarized difficulty distributions. Simple samples account for 52.81% of MMLU and 59.59% of GSM8K, while hard samples constitute 52.53% of GPQA and 55.94% of SuperGPQA. The proportion of intermediate-difficulty samples is low (only 20.07% for GPQA and 34.80% for GSM8K), resulting in insufficient discriminability across models.
+- **Goal**: Full-benchmark evaluation incurs high computational cost, and random sampling suffers from high variance and instability. A lightweight yet reliable evaluation approach is therefore urgently needed.
 
 ## Method
 

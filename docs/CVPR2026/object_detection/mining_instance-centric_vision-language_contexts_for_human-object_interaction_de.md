@@ -29,11 +29,11 @@ This paper proposes InCoM-Net, which extracts intra-instance, inter-instance, an
 
 ## Background & Motivation
 
-1. **State of the Field**: HOI detection aims to localize human-object pairs in images and classify their interaction relationships, serving as a fundamental task in visual understanding. Recent Transformer- and VLM-based methods (e.g., CLIP, BLIP) have significantly advanced performance.
+1. **Background**: HOI detection aims to localize human-object pairs in images and classify their interaction relationships, serving as a fundamental task in visual understanding. Recent Transformer- and VLM-based methods (e.g., CLIP, BLIP) have significantly advanced performance.
 2. **Limitations of Prior Work**: Existing VLM integration methods either use scene-level VLM features solely as global semantic priors (e.g., HOICLIP, UniHOI), or restrict VLM features to object bounding boxes via RoI alignment (e.g., ADA-CM, BCOM), failing to fully exploit contextual cues distributed across different levels of the scene.
-3. **Root Cause**: HOI reasoning requires simultaneous understanding of an instance's own visual cues, its relationships with surrounding instances, and the global scene context. However, existing methods apply context information uniformly to all instances, lacking instance-specific context modeling.
-4. **Paper Goals**: To extract multi-level contextual information from VLM features for each instance individually and effectively fuse it into the detector's instance features.
-5. **Starting Point**: The authors observe that human judgment of HOI relies on three types of cues—the visual features within the target instance, its relationships with other instances, and surrounding scene information—and accordingly design an instance-centric multi-context mining scheme.
+3. **Key Challenge**: HOI reasoning requires simultaneous understanding of an instance's own visual cues, its relationships with surrounding instances, and the global scene context. However, existing methods apply context information uniformly to all instances, lacking instance-specific context modeling.
+4. **Goal**: To extract multi-level contextual information from VLM features for each instance individually and effectively fuse it into the detector's instance features.
+5. **Key Insight**: The authors observe that human judgment of HOI relies on three types of cues—the visual features within the target instance, its relationships with other instances, and surrounding scene information—and accordingly design an instance-centric multi-context mining scheme.
 6. **Core Idea**: Extract three types of context (intra-instance, inter-instance, and global) from VLM features via masked self-attention, then progressively fuse them into detector queries.
 
 ## Method

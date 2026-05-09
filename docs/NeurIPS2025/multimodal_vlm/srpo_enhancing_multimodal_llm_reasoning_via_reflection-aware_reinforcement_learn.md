@@ -29,15 +29,15 @@ This paper proposes SRPO (Self-Reflection enhanced reasoning with Group Relative
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal large language models (MLLMs) have demonstrated strong potential on reasoning tasks. Works such as DeepSeek-R1 have extended RL-based reasoning from text to multimodal settings. However, existing methods (MM-Eureka, Vision-R1, VL-Rethinker, etc.) still struggle to match closed-source model reasoning performance at the 7B scale.
+**Background**: Multimodal large language models (MLLMs) have demonstrated strong potential on reasoning tasks. Works such as DeepSeek-R1 have extended RL-based reasoning from text to multimodal settings. However, existing methods (MM-Eureka, Vision-R1, VL-Rethinker, etc.) still struggle to match closed-source model reasoning performance at the 7B scale.
 
 **Limitations of Prior Work**: (1) MLLM generation follows a token-level Markov process relying on local dependencies, which leads to redundant, repetitive, or erroneous reasoning steps; (2) GPT-o1 achieves only 73.9% on MathVista, underperforming Qwen2.5-VL-72B (74.8%), indicating that erroneous and redundant steps degrade final performance.
 
-**Root Cause**: Self-reflection is an effective remedy for redundant or erroneous reasoning, yet pretraining largely fixes the upper bound of a model's reasoning capability. RL can only activate existing decision structures rather than acquire new knowledge—surpassing this bound requires external intervention, such as injecting high-quality reflection experience.
+**Key Challenge**: Self-reflection is an effective remedy for redundant or erroneous reasoning, yet pretraining largely fixes the upper bound of a model's reasoning capability. RL can only activate existing decision structures rather than acquire new knowledge—surpassing this bound requires external intervention, such as injecting high-quality reflection experience.
 
-**Paper Goals**: To enable MLLMs to learn effective self-reflection and self-correction, thereby breaking through the reasoning capability ceiling established during pretraining.
+**Goal**: To enable MLLMs to learn effective self-reflection and self-correction, thereby breaking through the reasoning capability ceiling established during pretraining.
 
-**Starting Point**: Inspired by cognitive science—human robust reasoning involves active self-reflection and iterative error correction—the paper explicitly integrates reflection mechanisms into both the SFT and RL training stages.
+**Key Insight**: Inspired by cognitive science—human robust reasoning involves active self-reflection and iterative error correction—the paper explicitly integrates reflection mechanisms into both the SFT and RL training stages.
 
 **Core Idea**: A two-stage training pipeline: first inject reflection capability via SFT on large-model-distilled reflection data, then reinforce concise and effective reflection behavior in GRPO using a reflection-aware reward function.
 

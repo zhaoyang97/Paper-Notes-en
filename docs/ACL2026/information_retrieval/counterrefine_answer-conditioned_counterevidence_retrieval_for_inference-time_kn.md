@@ -27,15 +27,15 @@ This paper proposes CounterRefine, a lightweight inference-time repair layer: a 
 
 ## Background & Motivation
 
-**State of the Field**: Retrieval-Augmented Generation (RAG), which grounds language model generation in external evidence, has become the standard approach for knowledge-intensive NLP. Variants such as multi-round retrieval and query rewriting have further improved retrieval quality.
+**Background**: Retrieval-Augmented Generation (RAG), which grounds language model generation in external evidence, has become the standard approach for knowledge-intensive NLP. Variants such as multi-round retrieval and query rewriting have further improved retrieval quality.
 
 **Limitations of Prior Work**: Many factual errors are not retrieval failures but rather "commitment failures"—the system retrieves relevant evidence yet remains locked onto the wrong answer. In short-answer factual QA, such errors are unforgivable: an incorrect year, a near-miss entity, or an almost-correct title all count as complete failures. First-round retrievers are optimized for topical relevance rather than for discriminating among candidate answers.
 
-**Root Cause**: Once a preliminary answer is produced, the most useful subsequent query is often not the original question but one conditioned on that candidate answer. If the preliminary year is wrong, incorporating it into the query can surface passages that directly refute it.
+**Key Challenge**: Once a preliminary answer is produced, the most useful subsequent query is often not the original question but one conditioned on that candidate answer. If the preliminary year is wrong, incorporating it into the query can surface passages that directly refute it.
 
-**Paper Goals**: Design a simple inference-time repair layer that can be stacked on top of existing retrieval pipelines and corrects factual errors through answer-conditioned counterevidence retrieval.
+**Goal**: Design a simple inference-time repair layer that can be stacked on top of existing retrieval pipelines and corrects factual errors through answer-conditioned counterevidence retrieval.
 
-**Starting Point**: Reframe the role of retrieval from "gathering more context" to "stress-testing a tentative answer." Rather than broadening the search indiscriminately, use the preliminary answer to guide a targeted second retrieval pass.
+**Key Insight**: Reframe the role of retrieval from "gathering more context" to "stress-testing a tentative answer." Rather than broadening the search indiscriminately, use the preliminary answer to guide a targeted second retrieval pass.
 
 **Core Idea**: Generate a preliminary answer, perform answer-conditioned counterevidence retrieval, and then apply a constrained KEEP/REVISE gate together with deterministic validation to decide whether to revise the answer.
 

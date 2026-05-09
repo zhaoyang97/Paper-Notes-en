@@ -29,15 +29,15 @@ Recall proposes the first multi-modal guided attack framework that optimizes adv
 
 ## Background & Motivation
 
-**State of the Field**: Machine unlearning for diffusion models has become a key technique for mitigating the generation of harmful or copyright-infringing content, with more than ten methods proposed, including ESD, UCE, and AdvUnlearn.
+**Background**: Machine unlearning for diffusion models has become a key technique for mitigating the generation of harmful or copyright-infringing content, with more than ten methods proposed, including ESD, UCE, and AdvUnlearn.
 
 **Limitations of Prior Work**: Existing attack methods (P4D, UnlearnDiffAtk, CCE) perturb only the text prompt and suffer from four major drawbacks: ① text perturbations disrupt semantic alignment; ② they rely on external classifiers or the original model, increasing overhead; ③ their effectiveness drops sharply against adversarially hardened unlearning methods (e.g., AdvUnlearn); ④ they entirely overlook the native multi-modal conditioning capability of diffusion models.
 
-**Root Cause**: Unlearning methods are primarily designed to defend against the text modality, yet Stable Diffusion natively supports multi-modal conditioning via image+text inputs (e.g., img2img), a channel that has been largely unexplored as an attack vector.
+**Key Challenge**: Unlearning methods are primarily designed to defend against the text modality, yet Stable Diffusion natively supports multi-modal conditioning via image+text inputs (e.g., img2img), a channel that has been largely unexplored as an attack vector.
 
-**Paper Goals**: To bypass unlearning defenses by exploiting the image-modality attack channel while keeping the text semantics unchanged.
+**Goal**: To bypass unlearning defenses by exploiting the image-modality attack channel while keeping the text semantics unchanged.
 
-**Starting Point**: Rather than modifying the text prompt, the method optimizes a single adversarial image prompt so that the unlearned model regenerates erased content. The optimization is performed directly in the unlearned model's internal latent space, requiring no external models.
+**Key Insight**: Rather than modifying the text prompt, the method optimizes a single adversarial image prompt so that the unlearned model regenerates erased content. The optimization is performed directly in the unlearned model's internal latent space, requiring no external models.
 
 **Core Idea**: Adversarial image prompts are generated via reference-image-guided latent-space optimization, "awakening" residual concept memories in the unlearned model through the multi-modal conditioning channel.
 

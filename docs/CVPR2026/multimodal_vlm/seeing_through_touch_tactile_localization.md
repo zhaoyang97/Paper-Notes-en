@@ -28,11 +28,11 @@ This paper introduces the tactile localization task—identifying regions in an 
 
 ## Background & Motivation
 
-**State of the Field**: Visual-tactile learning has primarily focused on global alignment (determining whether an image and a tactile signal correspond to the same material), lacking spatial localization capability—i.e., the ability to identify regions in a visual scene that "feel the same."
+**Background**: Visual-tactile learning has primarily focused on global alignment (determining whether an image and a tactile signal correspond to the same material), lacking spatial localization capability—i.e., the ability to identify regions in a visual scene that "feel the same."
 
 **Limitations of Prior Work**: (1) Global alignment methods cannot localize material regions; (2) existing datasets predominantly consist of close-up captures where visual frames exhibit minimal variation and a single material fills the entire frame, with no scene-level multi-material images; (3) no evaluation benchmark exists for tactile-material segmentation.
 
-**Root Cause**: Tactile localization requires fine-grained local cross-modal correspondence, whereas existing methods and data only provide coarse-grained global alignment.
+**Key Challenge**: Tactile localization requires fine-grained local cross-modal correspondence, whereas existing methods and data only provide coarse-grained global alignment.
 
 **Core Idea**: Learn local visual-tactile alignment to produce tactile saliency maps, and expand effective training pairs through material-diversity pairing.
 

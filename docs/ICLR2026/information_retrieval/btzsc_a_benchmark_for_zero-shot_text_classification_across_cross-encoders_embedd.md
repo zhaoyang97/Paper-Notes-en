@@ -27,15 +27,15 @@ This paper proposes BTZSC, a benchmark comprising 22 datasets, which for the fir
 
 ## Background & Motivation
 
-**State of the Field**: Zero-shot text classification (ZSC) matches text directly against human-readable label descriptions, eliminating the need for costly annotation. Early mainstream approaches reformulated classification as a natural language inference (NLI) task, employing cross-encoders to assess entailment relations between text and labels.
+**Background**: Zero-shot text classification (ZSC) matches text directly against human-readable label descriptions, eliminating the need for costly annotation. Early mainstream approaches reformulated classification as a natural language inference (NLI) task, employing cross-encoders to assess entailment relations between text and labels.
 
 **Limitations of Prior Work**: Embedding models, rerankers, and instruction-tuned LLMs have advanced rapidly in recent years, yet no benchmark exists that fairly compares all four model families under a unified zero-shot protocol. Although MTEB offers broad coverage, its classification evaluation relies on supervised linear probes rather than genuine zero-shot inference.
 
-**Root Cause**: Existing evaluations either cover only a single model family or incorporate supervised signals, making it impossible to accurately assess the capability gap and applicable scenarios of each model family under truly zero-shot conditions.
+**Key Challenge**: Existing evaluations either cover only a single model family or incorporate supervised signals, making it impossible to accurately assess the capability gap and applicable scenarios of each model family under truly zero-shot conditions.
 
-**Paper Goals**: To construct a standardized zero-shot text classification benchmark spanning diverse task types, domains, and label-set sizes, enabling systematic comparison of the four model families in terms of performance, scaling behavior, and efficiency.
+**Goal**: To construct a standardized zero-shot text classification benchmark spanning diverse task types, domains, and label-set sizes, enabling systematic comparison of the four model families in terms of performance, scaling behavior, and efficiency.
 
-**Starting Point**: Twenty-two public datasets are selected to cover four major task categories — sentiment, topic, intent, and emotion detection — using a unified label verbalization and inference protocol to ensure all models are evaluated under identical conditions.
+**Key Insight**: Twenty-two public datasets are selected to cover four major task categories — sentiment, topic, intent, and emotion detection — using a unified label verbalization and inference protocol to ensure all models are evaluated under identical conditions.
 
 **Core Idea**: Construct BTZSC, the first benchmark to uniformly evaluate NLI cross-encoders, embedding models, rerankers, and LLMs for zero-shot text classification.
 

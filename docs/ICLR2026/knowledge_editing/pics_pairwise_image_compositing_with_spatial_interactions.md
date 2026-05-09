@@ -29,7 +29,7 @@ This paper proposes PICS—a parallel pairwise image compositing method that sim
 
 ## Background & Motivation
 
-**State of the Field**: Recent diffusion-based methods have demonstrated strong performance in single-object compositing, supporting object insertion into diverse backgrounds using visual prompt conditioning.
+**Background**: Recent diffusion-based methods have demonstrated strong performance in single-object compositing, supporting object insertion into diverse backgrounds using visual prompt conditioning.
 
 **Limitations of Prior Work**: Existing methods are inherently single-round—only one object is inserted per pass. When multiple objects are inserted sequentially, later operations overwrite earlier content, disrupting occlusion ordering and physical consistency.
 

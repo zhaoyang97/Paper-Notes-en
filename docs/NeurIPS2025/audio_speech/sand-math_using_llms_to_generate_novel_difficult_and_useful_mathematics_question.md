@@ -29,15 +29,15 @@ This paper proposes SAND-Math, a fully automated synthetic mathematics question 
 
 ## Background & Motivation
 
-**State of the Field**: Frontier reasoning models such as DeepSeek-R1, o3, and Gemini 2.5 Pro achieve remarkable performance on mathematical benchmarks, yet their training data and methodologies remain undisclosed. Research from LIMO and S1 suggests that reasoning capability depends more on data quality—particularly the inclusion of high-difficulty problems—than on scale.
+**Background**: Frontier reasoning models such as DeepSeek-R1, o3, and Gemini 2.5 Pro achieve remarkable performance on mathematical benchmarks, yet their training data and methodologies remain undisclosed. Research from LIMO and S1 suggests that reasoning capability depends more on data quality—particularly the inclusion of high-difficulty problems—than on scale.
 
 **Limitations of Prior Work**: (a) Datasets such as NuminaMath and OpenR1 rely on manually curated competition problems, making them labor-intensive and limited in scale; (b) synthetic methods including KPDDS, MetaMathQA, and WizardMath primarily remix existing GSM8K/MATH training sets, making it difficult to surpass the difficulty ceiling of the seed data; (c) MATH2 requires human expert involvement and thus cannot scale.
 
-**Root Cause**: The supply of high-quality, high-difficulty mathematical training data is severely insufficient, and existing synthetic methods are constrained by the difficulty ceiling of their seed data.
+**Key Challenge**: The supply of high-quality, high-difficulty mathematical training data is severely insufficient, and existing synthetic methods are constrained by the difficulty ceiling of their seed data.
 
-**Paper Goals**: To construct a fully automated pipeline that generates high-difficulty mathematics problems from scratch while ensuring correctness, novelty, and progressive difficulty increase.
+**Goal**: To construct a fully automated pipeline that generates high-difficulty mathematics problems from scratch while ensuring correctness, novelty, and progressive difficulty increase.
 
-**Starting Point**: Leveraging the "metacognitive" capacity of state-of-the-art LLMs—their implicit ability to model the characteristics of high-difficulty mathematical problems and generate new instances thereof.
+**Key Insight**: Leveraging the "metacognitive" capacity of state-of-the-art LLMs—their implicit ability to model the characteristics of high-difficulty mathematical problems and generate new instances thereof.
 
 **Core Idea**: LLMs themselves can generate high-difficulty math problems from minimal prompts, with difficulty further elevated through Difficulty Hiking via cross-domain concept fusion.
 

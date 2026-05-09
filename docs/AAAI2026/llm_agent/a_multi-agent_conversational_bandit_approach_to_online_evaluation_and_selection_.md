@@ -31,7 +31,7 @@ This paper proposes MACO (Multi-Agent Conversational Online Learning), which for
 
 ### Limitations of Prior Work
 
-**Limitations of Prior Work**: **State of the Field**: LLMs can generate stylistically diverse candidate responses via different prompts (e.g., humorous, formal, or code-oriented styles). Selecting the response that best matches user preferences in an online setting is a critical challenge. Offline scoring is computationally expensive (e.g., 78 GPU hours to evaluate 205 prompts), whereas online evaluation can dynamically adjust based on user feedback.
+**Limitations of Prior Work**: **Background**: LLMs can generate stylistically diverse candidate responses via different prompts (e.g., humorous, formal, or code-oriented styles). Selecting the response that best matches user preferences in an online setting is a critical challenge. Offline scoring is computationally expensive (e.g., 78 GPU hours to evaluate 205 prompts), whereas online evaluation can dynamically adjust based on user feedback.
 
 **Four limitations of existing conversational bandit methods**:
 1. **High-dimensional feature space**: Semantic embeddings of LLM responses are high-dimensional; traditional SVD-based dimensionality reduction incurs high computational complexity.

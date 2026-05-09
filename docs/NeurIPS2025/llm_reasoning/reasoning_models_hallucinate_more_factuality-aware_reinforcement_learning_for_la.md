@@ -28,15 +28,15 @@ content_hash: 749f4e324bc99cd1
 This paper reveals that RL-trained reasoning models (e.g., DeepSeek-R1) hallucinate significantly more than non-reasoning models, theoretically identifies three root causes (high-variance gradients, entropy constraints, and spurious local optima), and proposes the FSPO algorithm, which adjusts token-level advantages via step-level factuality verification to reduce hallucination while maintaining or even improving reasoning capability.
 
 ## Background & Motivation
-**State of the Field**: Reasoning models exemplified by DeepSeek-R1 and OpenAI o1 are trained via RL (e.g., GRPO) to produce long chain-of-thought reasoning, achieving breakthrough performance on complex tasks such as mathematics and coding.
+**Background**: Reasoning models exemplified by DeepSeek-R1 and OpenAI o1 are trained via RL (e.g., GRPO) to produce long chain-of-thought reasoning, achieving breakthrough performance on complex tasks such as mathematics and coding.
 
 **Limitations of Prior Work**: The authors identify a critically overlooked problem — RL-trained reasoning models exhibit substantially higher hallucination rates. Empirically, R1-Distill-Qwen-7B achieves only 6.9% truthfulness on TruthfulQA (vs. 36.7% for Qwen2.5-7B-Instruct) and only 11.6% on HaluEval-QA (vs. 48.0%). Beneath the appearance of "confident reasoning," these models produce pervasive factual errors.
 
-**Root Cause**: Existing RL training relies solely on binary outcome rewards (0/1) based on final answer correctness, entirely ignoring the factuality of intermediate reasoning steps. This sparse reward signal leads to three theoretical issues: (1) extremely high gradient variance when the probability of a correct answer is low → training instability; (2) the need for high-entropy exploration to find correct answers → increased hallucination probability; (3) the model may converge to a "confident but wrong" spurious local optimum → zero gradient prevents escape.
+**Key Challenge**: Existing RL training relies solely on binary outcome rewards (0/1) based on final answer correctness, entirely ignoring the factuality of intermediate reasoning steps. This sparse reward signal leads to three theoretical issues: (1) extremely high gradient variance when the probability of a correct answer is low → training instability; (2) the need for high-entropy exploration to find correct answers → increased hallucination probability; (3) the model may converge to a "confident but wrong" spurious local optimum → zero gradient prevents escape.
 
-**Paper Goals**: Design an RL training algorithm that jointly optimizes reasoning capability and factuality, significantly reducing hallucination while improving mathematical reasoning performance.
+**Goal**: Design an RL training algorithm that jointly optimizes reasoning capability and factuality, significantly reducing hallucination while improving mathematical reasoning performance.
 
-**Starting Point**: Integrate step-level factuality verification signals (NLI-based) into GRPO's advantage computation, providing much denser gradient signals than pure outcome rewards.
+**Key Insight**: Integrate step-level factuality verification signals (NLI-based) into GRPO's advantage computation, providing much denser gradient signals than pure outcome rewards.
 
 **Core Idea**: An automated factuality verifier scores each reasoning sentence; the token-level advantages for steps that contain hallucinated reasoning despite a correct final answer are flipped, guiding the model to learn "correct reasoning processes" rather than "coincidentally correct answers."
 

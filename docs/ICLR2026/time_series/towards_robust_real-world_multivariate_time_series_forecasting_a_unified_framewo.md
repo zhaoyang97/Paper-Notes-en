@@ -29,7 +29,7 @@ This paper proposes ChannelTokenFormer (CTF), a unified Transformer framework th
 
 ## Background & Motivation
 
-**State of the Field**: Multivariate time series forecasting is a core task in industrial monitoring, energy systems, and healthcare. Most existing models assume synchronous sampling and complete observations, which is severely misaligned with real-world data characteristics.
+**Background**: Multivariate time series forecasting is a core task in industrial monitoring, energy systems, and healthcare. Most existing models assume synchronous sampling and complete observations, which is severely misaligned with real-world data characteristics.
 
 **Limitations of Prior Work**:
 - **Channel-dependent vs. channel-independent**: CI designs (e.g., PatchTST) are robust but discard cross-channel information; CD designs (e.g., CrossGNN) exploit correlations but are sensitive to distribution shift — a fundamental trade-off.
@@ -37,11 +37,11 @@ This paper proposes ChannelTokenFormer (CTF), a unified Transformer framework th
 - **Block-wise missingness**: Sensor failures and communication outages cause long consecutive gaps. Naïve interpolation is unreliable on dynamic signals and requires cross-channel inference.
 - **No existing method addresses all three simultaneously**: CD methods ignore asynchrony and missingness; CI methods lose dependencies; irregular-time methods do not handle block-wise missingness.
 
-**Root Cause**: In real-world scenarios, all three challenges co-exist and are mutually coupled; methods designed to address each challenge individually do not compose well.
+**Key Challenge**: In real-world scenarios, all three challenges co-exist and are mutually coupled; methods designed to address each challenge individually do not compose well.
 
-**Paper Goals**: Design a unified architecture that simultaneously handles channel dependencies, asynchronous sampling, and block-wise missingness without requiring interpolation preprocessing.
+**Goal**: Design a unified architecture that simultaneously handles channel dependencies, asynchronous sampling, and block-wise missingness without requiring interpolation preprocessing.
 
-**Starting Point**: A channel token serves as a compact channel-level representation that can naturally aggregate local token sequences of varying lengths (handling asynchrony), interact across channels (capturing dependencies), and skip missing patches (handling missingness) — one design resolves three problems.
+**Key Insight**: A channel token serves as a compact channel-level representation that can naturally aggregate local token sequences of varying lengths (handling asynchrony), interact across channels (capturing dependencies), and skip missing patches (handling missingness) — one design resolves three problems.
 
 **Core Idea**: Redefine the channel token from a simple channel summary token into a global attention anchor that simultaneously serves as an asynchrony normalizer, missingness handler, and dependency relay.
 

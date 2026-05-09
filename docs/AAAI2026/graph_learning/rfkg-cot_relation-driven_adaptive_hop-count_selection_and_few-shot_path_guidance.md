@@ -28,15 +28,15 @@ This paper proposes RFKG-CoT, which enhances LLM reasoning over knowledge graphs
 
 ## Background & Motivation
 
-**State of the Field**: Methods such as KG-CoT integrate knowledge graph paths into LLM reasoning to mitigate hallucination, but bottlenecks remain in both path selection and path utilization.
+**Background**: Methods such as KG-CoT integrate knowledge graph paths into LLM reasoning to mitigate hallucination, but bottlenecks remain in both path selection and path utilization.
 
 **Limitations of Prior Work**:
 - **Rigid hop-count selection**: Existing methods select hop counts based solely on question features, ignoring KG relational structure. For example, "Who is Justin Bieber's brother?" requires only 1 hop via a direct "brother" relation, but an indirect "father-son" chain requires multiple hops.
 - **Insufficient path utilization**: KG paths are concatenated directly into LLM prompts without guidance on how to interpret and use them.
 
-**Root Cause**: The quality of KG paths depends on hop-count selection, which should be jointly determined by both the question and the KG relational structure rather than fixed uniformly.
+**Key Challenge**: The quality of KG paths depends on hop-count selection, which should be jointly determined by both the question and the KG relational structure rather than fixed uniformly.
 
-**Starting Point**: Use relation activation masks to capture KG relational semantics for dynamic hop-count selection; use few-shot "Think" templates to teach LLMs how to extract answers from paths.
+**Key Insight**: Use relation activation masks to capture KG relational semantics for dynamic hop-count selection; use few-shot "Think" templates to teach LLMs how to extract answers from paths.
 
 **Core Idea**: Relation masks make hop-count selection structure-aware + few-shot path guidance teaches LLMs how to leverage retrieved paths.
 

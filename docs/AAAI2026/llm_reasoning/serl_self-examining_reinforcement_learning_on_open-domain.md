@@ -27,15 +27,15 @@ content_hash: eb4f622211d1d916
 This paper proposes SERL, a self-improvement framework in which an LLM simultaneously acts as an Actor (generator) and a Judge (evaluator). It derives reward signals from the model's own judgments via the Copeland pairwise comparison method, requiring neither external reward models nor human annotations. SERL improves Qwen3-8B from 52.37% to 59.90% (+7.53%) on AlpacaEval 2.0, approaching the performance of Qwen3-32B.
 
 ## Background & Motivation
-**State of the Field**: LLM self-improvement is a promising direction for reducing dependence on external annotations, but the quality of self-evaluation reward signals remains a critical bottleneck.
+**Background**: LLM self-improvement is a promising direction for reducing dependence on external annotations, but the quality of self-evaluation reward signals remains a critical bottleneck.
 
 **Limitations of Prior Work**: (a) Self-evaluation is prone to preference cycles (A>B>C>A); (b) positional bias and length bias degrade judgment quality; (c) reward derivation methods lack theoretical guarantees.
 
-**Root Cause**: Self-evaluation is inherently subjective and inconsistent, yet external evaluation requires additional resources.
+**Key Challenge**: Self-evaluation is inherently subjective and inconsistent, yet external evaluation requires additional resources.
 
-**Paper Goals**: Derive high-quality training rewards from the model's own pairwise comparison judgments.
+**Goal**: Derive high-quality training rewards from the model's own pairwise comparison judgments.
 
-**Starting Point**: The Copeland method (from voting theory) is applied to resolve preference cycles, combined with dual rewards (actor + judge) for joint optimization.
+**Key Insight**: The Copeland method (from voting theory) is applied to resolve preference cycles, combined with dual rewards (actor + judge) for joint optimization.
 
 **Core Idea**: Copeland pairwise comparison for reward derivation + actor/judge joint optimization = external-dependency-free self-improvement.
 

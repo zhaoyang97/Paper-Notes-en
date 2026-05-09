@@ -29,15 +29,15 @@ This paper introduces BizCompass, a business reasoning benchmark bridging theore
 
 ## Background & Motivation
 
-**State of the Field**: LLMs hold significant promise for business applications, yet business analysis is inherently complex, requiring rigorous reasoning and the integration of diverse knowledge. Existing benchmarks (e.g., FinBen, CFLUE) typically target narrow, single-task settings such as sentiment analysis or entity extraction, and thus cannot answer a fundamental question: how can LLMs be reliably deployed in business contexts, and what theoretical foundations underlie such capabilities?
+**Background**: LLMs hold significant promise for business applications, yet business analysis is inherently complex, requiring rigorous reasoning and the integration of diverse knowledge. Existing benchmarks (e.g., FinBen, CFLUE) typically target narrow, single-task settings such as sentiment analysis or entity extraction, and thus cannot answer a fundamental question: how can LLMs be reliably deployed in business contexts, and what theoretical foundations underlie such capabilities?
 
 **Limitations of Prior Work**: (1) Existing benchmarks focus predominantly on finance, lacking coverage of other core business disciplines such as economics, statistics, and operations management; (2) No diagnostic framework exists to link theoretical knowledge capabilities with practical application performance — it is known whether an LLM performs well or poorly on a specific task, but the underlying foundational capabilities driving that performance remain unclear.
 
-**Root Cause**: Increasing model scale and chain-of-thought (CoT) techniques do not guarantee improvements in business reasoning. DeepSeek-R1 (671B) underperforms considerably smaller closed-source models on certain tasks, indicating that naive scaling is insufficient and that a deeper understanding of the mapping between knowledge and application is necessary.
+**Key Challenge**: Increasing model scale and chain-of-thought (CoT) techniques do not guarantee improvements in business reasoning. DeepSeek-R1 (671B) underperforms considerably smaller closed-source models on certain tasks, indicating that naive scaling is insufficient and that a deeper understanding of the mapping between knowledge and application is necessary.
 
-**Paper Goals**: (1) Construct an evaluation benchmark with comprehensive coverage of the business domain; (2) Employ a dual-axis design to diagnose how theoretical knowledge drives or constrains real-world application performance; (3) Provide actionable recommendations for model selection and training optimization.
+**Goal**: (1) Construct an evaluation benchmark with comprehensive coverage of the business domain; (2) Employ a dual-axis design to diagnose how theoretical knowledge drives or constrains real-world application performance; (3) Provide actionable recommendations for model selection and training optimization.
 
-**Starting Point**: A dual-axis design consisting of a knowledge layer and an application layer is adopted — the knowledge layer addresses "what the model knows," the application layer addresses "what the model can do," and cross-axis analysis answers "why it can or cannot."
+**Key Insight**: A dual-axis design consisting of a knowledge layer and an application layer is adopted — the knowledge layer addresses "what the model knows," the application layer addresses "what the model can do," and cross-axis analysis answers "why it can or cannot."
 
 **Core Idea**: A dual-axis benchmark is used to elevate business LLM evaluation from task performance measurement to capability diagnosis, not only assessing how well a model performs but also diagnosing the root causes of its strengths and weaknesses.
 

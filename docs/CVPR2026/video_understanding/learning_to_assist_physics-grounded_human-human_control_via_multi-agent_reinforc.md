@@ -29,11 +29,11 @@ This paper proposes AssistMimic, which formulates physics-based imitation of hum
 
 ## Background & Motivation
 
-- **State of the Field**: Physics-based human motion imitation (e.g., DeepMimic, PHC) has enabled virtual characters and humanoid robots to reproduce single-person motions with high fidelity, but research remains largely limited to single-person scenarios, with close-contact multi-person interactions rarely addressed.
+- **Background**: Physics-based human motion imitation (e.g., DeepMimic, PHC) has enabled virtual characters and humanoid robots to reproduce single-person motions with high fidelity, but research remains largely limited to single-person scenarios, with close-contact multi-person interactions rarely addressed.
 - **Limitations of Prior Work**: Existing multi-agent interaction methods (e.g., Human-X, Phys-Reaction) rely on a "kinematic playback" strategy—first generating the recipient's motion using a single-person controller, then fixing that playback to train the supporter. However, in assistive scenarios, the recipient cannot independently perform the motion (e.g., a paralyzed person cannot stand up alone), making it physically infeasible to generate the recipient's trajectory in isolation.
-- **Root Cause**: Assistive human-human interaction requires both parties to continuously perceive each other's pose and adapt forces/positions in real time; decoupled training breaks physical consistency, leading to severe artifacts such as interpenetration and character instability.
-- **Paper Goals**: To learn physically plausible controllers for dyadic assistive interaction, enabling the supporter to provide meaningful physical support in response to the recipient's real-time state.
-- **Starting Point**: The problem is modeled as a multi-agent MDP with asymmetric dynamics, jointly training both parties' policies so that the recipient also learns "how to receive assistance."
+- **Key Challenge**: Assistive human-human interaction requires both parties to continuously perceive each other's pose and adapt forces/positions in real time; decoupled training breaks physical consistency, leading to severe artifacts such as interpenetration and character instability.
+- **Goal**: To learn physically plausible controllers for dyadic assistive interaction, enabling the supporter to provide meaningful physical support in response to the recipient's real-time state.
+- **Key Insight**: The problem is modeled as a multi-agent MDP with asymmetric dynamics, jointly training both parties' policies so that the recipient also learns "how to receive assistance."
 - **Core Idea**: Three components work synergistically to enable MARL convergence in high-contact scenarios: initialization from single-person motion priors, dynamic reference retargeting to maintain contact alignment, and contact-promoting rewards to replace noisy hand tracking.
 
 ## Method

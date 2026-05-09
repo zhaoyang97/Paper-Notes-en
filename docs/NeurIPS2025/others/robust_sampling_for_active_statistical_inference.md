@@ -29,11 +29,11 @@ This paper proposes a robust sampling strategy based on budget-preserving paths 
 
 ### Limitations of Prior Work
 
-**Limitations of Prior Work**: **State of the Field**: Active statistical inference leverages uncertainty scores from AI models to prioritize labeling of high-uncertainty samples, thereby improving estimation accuracy. However, when uncertainty estimates are of poor quality (e.g., overconfident LLMs, miscalibrated models under distribution shift), active sampling may yield high-variance estimates that are even worse than simple uniform sampling. The core problem addressed in this paper is: can one design a robust strategy that is simultaneously guaranteed to be no worse than either uniform sampling or the initial active sampling scheme?
+**Limitations of Prior Work**: **Background**: Active statistical inference leverages uncertainty scores from AI models to prioritize labeling of high-uncertainty samples, thereby improving estimation accuracy. However, when uncertainty estimates are of poor quality (e.g., overconfident LLMs, miscalibrated models under distribution shift), active sampling may yield high-variance estimates that are even worse than simple uniform sampling. The core problem addressed in this paper is: can one design a robust strategy that is simultaneously guaranteed to be no worse than either uniform sampling or the initial active sampling scheme?
 
 ### Mechanism
 
-**Paper Goals**: ### Overall Architecture
+**Goal**: ### Overall Architecture
 Given an initial sampling rule $\pi$ and uniform sampling $\pi^{\text{unif}}$, a budget-preserving path $\pi^{(\rho)}$ connects the two, and the parameter $\rho$ is optimally selected to minimize variance.
 
 ## Method

@@ -30,7 +30,7 @@ LayerTracer presents the first cognitive-aligned layered SVG generation framewor
 
 ## Background & Motivation
 
-**State of the Field**: SVG is a core format in modern digital design. Layered SVGs allow designers to independently manipulate stroke properties, spatial layout, and compositing effects across layers. Existing SVG generation methods fall into three categories:
+**Background**: SVG is a core format in modern digital design. Layered SVGs allow designers to independently manipulate stroke properties, spatial layout, and compositing effects across layers. Existing SVG generation methods fall into three categories:
    - **Optimization-based methods** (VecFusion, DiffSketcher, SVGDreamer): optimize vector parameters via differentiable rasterizers, but tend to produce redundant anchor points and disordered geometry.
    - **LLM-based methods**: constrained by token limits, capable of generating only simple icons.
    - **Direct neural generation**: limited by the lack of large-scale vector datasets, resulting in poor generalization.
@@ -40,9 +40,9 @@ LayerTracer presents the first cognitive-aligned layered SVG generation framewor
    - **Absence of large-scale layered SVG datasets**: Models are forced to rely on synthetic or overly simplified training data.
    - **Limitations of SDS optimization**: Optimizing a set of vector primitives using image generative model priors tends to yield redundant, noisy results that lack clear hierarchical structure.
 
-**Root Cause**: The layered structure of professionally designed SVGs is constructed according to a cognitive logic of "bottom-to-top, background-to-foreground," yet existing methods cannot model this creative process. Consequently, outputs may be visually acceptable but lack the editability expected in professional design workflows.
+**Key Challenge**: The layered structure of professionally designed SVGs is constructed according to a cognitive logic of "bottom-to-top, background-to-foreground," yet existing methods cannot model this creative process. Consequently, outputs may be visually acceptable but lack the editability expected in professional design workflows.
 
-**Starting Point**: Rather than directly generating the final SVG, the paper proposes learning the designer's creative process—generating rasterized images of each layer in temporal order, then vectorizing these "construction blueprints" into layered SVGs.
+**Key Insight**: Rather than directly generating the final SVG, the paper proposes learning the designer's creative process—generating rasterized images of each layer in temporal order, then vectorizing these "construction blueprints" into layered SVGs.
 
 ## Method
 

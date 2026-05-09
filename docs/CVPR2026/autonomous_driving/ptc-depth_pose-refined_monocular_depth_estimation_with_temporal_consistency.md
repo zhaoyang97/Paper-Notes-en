@@ -29,15 +29,15 @@ This paper proposes PTC-Depth, a monocular depth estimation framework that combi
 
 ## Background & Motivation
 
-1. **State of the Field**: Monocular depth estimation (MDE) is widely applied in autonomous driving and mobile robotics. Depth foundation models (e.g., Depth Anything v2) have achieved remarkable zero-shot generalization, but most predict only relative depth, lacking absolute metric scale.
+1. **Background**: Monocular depth estimation (MDE) is widely applied in autonomous driving and mobile robotics. Depth foundation models (e.g., Depth Anything v2) have achieved remarkable zero-shot generalization, but most predict only relative depth, lacking absolute metric scale.
 
 2. **Limitations of Prior Work**: (a) Single-frame depth estimation suffers from severe temporal inconsistency (jitter and abrupt changes) across consecutive frames; (b) video depth models (e.g., VDA) improve consistency but still do not provide metric depth; (c) depth completion methods (e.g., OGNI-DC) require additional LiDAR input and are unsuitable for camera-only + odometry settings.
 
-3. **Root Cause**: Relative depth models preserve structure well and generalize broadly, but lack metric scale; metric depth models provide absolute scale but generalize poorly (e.g., UniDepth degrades significantly in out-of-distribution scenarios). The strengths of both are difficult to combine naively.
+3. **Key Challenge**: Relative depth models preserve structure well and generalize broadly, but lack metric scale; metric depth models provide absolute scale but generalize poorly (e.g., UniDepth degrades significantly in out-of-distribution scenarios). The strengths of both are difficult to combine naively.
 
-4. **Paper Goals**: Using only a monocular camera and wheel odometry (no LiDAR or depth sensors), convert the relative depth output of a depth foundation model into temporally consistent metric depth.
+4. **Goal**: Using only a monocular camera and wheel odometry (no LiDAR or depth sensors), convert the relative depth output of a depth foundation model into temporally consistent metric depth.
 
-5. **Starting Point**: The observation that the metric baseline provided by wheel odometry, combined with optical flow, jointly constrains the metric scale of depth. Sparse metric depth is obtained via triangulation between consecutive frames, and a recursive Bayesian framework tracks global/local scale factors.
+5. **Key Insight**: The observation that the metric baseline provided by wheel odometry, combined with optical flow, jointly constrains the metric scale of depth. Sparse metric depth is obtained via triangulation between consecutive frames, and a recursive Bayesian framework tracks global/local scale factors.
 
 6. **Core Idea**: Model the conversion from relative to metric depth as a Bayesian recursive estimation problem over a scale field $S$, with superpixel segmentation enabling local scale adaptation.
 

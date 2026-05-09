@@ -27,15 +27,15 @@ This paper proposes Edge-Eval, a framework that evaluates LLMs across their full
 
 ## Background & Motivation
 
-**State of the Field**: Generative AI-driven LLMs are rapidly transitioning from research prototypes to industrial deployments, with broad applications in medical decision-making, financial analysis, enterprise retrieval, and conversational automation. These scenarios impose strict constraints on energy consumption, latency, and hardware utilization.
+**Background**: Generative AI-driven LLMs are rapidly transitioning from research prototypes to industrial deployments, with broad applications in medical decision-making, financial analysis, enterprise retrieval, and conversational automation. These scenarios impose strict constraints on energy consumption, latency, and hardware utilization.
 
 **Limitations of Prior Work**: Existing evaluation pipelines are accuracy-centric and lack operational and economic metrics, resulting in a "Deployment-Evaluation Gap." Models may perform well on accuracy benchmarks yet prove infeasible in production with respect to energy efficiency, cost recovery, and hardware utilization.
 
-**Root Cause**: Memory efficiency $\neq$ energy efficiency $\neq$ deployment efficiency. For example, QLoRA reduces memory by ~60%, yet fine-tuning energy consumption increases by up to 7.2×. These critical trade-offs are entirely invisible in accuracy-based benchmarks.
+**Key Challenge**: Memory efficiency $\neq$ energy efficiency $\neq$ deployment efficiency. For example, QLoRA reduces memory by ~60%, yet fine-tuning energy consumption increases by up to 7.2×. These critical trade-offs are entirely invisible in accuracy-based benchmarks.
 
-**Paper Goals**: To construct a full lifecycle evaluation framework oriented toward industrial deployment, bridging the evaluation blind spot between laboratory settings and production environments.
+**Goal**: To construct a full lifecycle evaluation framework oriented toward industrial deployment, bridging the evaluation blind spot between laboratory settings and production environments.
 
-**Starting Point**: Comprehensive lifecycle benchmarking of LLaMA and Qwen series models—from adaptation to inference—on widely deployed legacy NVIDIA Tesla T4 GPUs.
+**Key Insight**: Comprehensive lifecycle benchmarking of LLaMA and Qwen series models—from adaptation to inference—on widely deployed legacy NVIDIA Tesla T4 GPUs.
 
 **Core Idea**: Define five deployment metrics covering profitability, energy efficiency, hardware density, cold-start overhead, and compression safety, thereby revealing the efficiency frontier of small models and the energy consumption paradox of quantization.
 

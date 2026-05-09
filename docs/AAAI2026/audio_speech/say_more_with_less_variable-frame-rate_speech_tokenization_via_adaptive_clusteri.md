@@ -31,7 +31,7 @@ This paper proposes VARSTok, the first fully dynamic variable-frame-rate speech 
 
 ### State of the Field
 
-**State of the Field**: Existing speech tokenizers (e.g., WavTokenizer, EnCodec) uniformly allocate tokens at a fixed frame rate (e.g., 40 Hz, 75 Hz), ignoring the temporal variation in information density of speech signals.
+**Background**: Existing speech tokenizers (e.g., WavTokenizer, EnCodec) uniformly allocate tokens at a fixed frame rate (e.g., 40 Hz, 75 Hz), ignoring the temporal variation in information density of speech signals.
 
 ### Limitations of Prior Work
 
@@ -39,7 +39,7 @@ This paper proposes VARSTok, the first fully dynamic variable-frame-rate speech 
 
 ### Root Cause
 
-**Root Cause**: Fixed frame rates lead to token waste in redundant regions and under-representation in high-information regions, making it difficult for downstream speech LMs to learn natural prosody.
+**Key Challenge**: Fixed frame rates lead to token waste in redundant regions and under-representation in high-information regions, making it difficult for downstream speech LMs to learn natural prosody.
 
 ### Prior Solutions
 
@@ -47,7 +47,7 @@ This paper proposes VARSTok, the first fully dynamic variable-frame-rate speech 
 
 ### Paper Goals
 
-**Paper Goals**: How to design a fully dynamic variable-frame-rate acoustic speech tokenizer that adaptively allocates tokens based on local feature similarity, and can be directly applied to downstream autoregressive speech LMs without requiring an auxiliary duration predictor?
+**Goal**: How to design a fully dynamic variable-frame-rate acoustic speech tokenizer that adaptively allocates tokens based on local feature similarity, and can be directly applied to downstream autoregressive speech LMs without requiring an auxiliary duration predictor?
 
 ## Method
 

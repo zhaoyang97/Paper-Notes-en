@@ -26,13 +26,13 @@ content_hash: ea05b1737c72b5e4
 This paper proposes VeCoR (Velocity Contrastive Regularization), which introduces a "negative velocity" contrastive signal into standard Flow Matching training. By simultaneously guiding the model on "where to go" and "where not to go," VeCoR achieves more stable trajectory evolution and higher perceptual fidelity—yielding relative FID reductions of 22% and 35% for SiT-XL/2 and REPA-SiT-XL/2, respectively, on ImageNet-1K.
 
 ## Background & Motivation
-**State of the Field**: Flow Matching (FM) has emerged as a powerful alternative to diffusion models, learning time-dependent velocity fields to transport a prior distribution to the data distribution. FM offers both theoretical elegance and computational efficiency.
+**Background**: Flow Matching (FM) has emerged as a powerful alternative to diffusion models, learning time-dependent velocity fields to transport a prior distribution to the data distribution. FM offers both theoretical elegance and computational efficiency.
 
 **Limitations of Prior Work**: Standard FM provides only unilateral positive supervision—training the model to move "in the right direction" while offering no feedback on "avoiding wrong directions." Under lightweight model configurations or low-step settings, minor inconsistencies in the velocity field accumulate errors, causing samples to deviate from the data manifold.
 
-**Root Cause**: FM supervision is directionally asymmetric (attractive only, no repulsive force). Under limited data or model capacity, the learned flow in certain regions lacks sufficient regularization, leading to artifacts such as color shifts, geometric distortions, blurriness, and noise.
+**Key Challenge**: FM supervision is directionally asymmetric (attractive only, no repulsive force). Under limited data or model capacity, the learned flow in certain regions lacks sufficient regularization, leading to artifacts such as color shifts, geometric distortions, blurriness, and noise.
 
-**Starting Point**: Inspired by contrastive learning—if positive pairs can be constructed to align representations, why not also construct "negative velocities" to repel undesirable flow directions?
+**Key Insight**: Inspired by contrastive learning—if positive pairs can be constructed to align representations, why not also construct "negative velocities" to repel undesirable flow directions?
 
 **Core Idea**: Extend FM from a purely attractive objective to a two-sided "attraction–repulsion" training signal, regularizing the velocity field by constructing augmentation-based negative samples in image, latent, and velocity spaces.
 

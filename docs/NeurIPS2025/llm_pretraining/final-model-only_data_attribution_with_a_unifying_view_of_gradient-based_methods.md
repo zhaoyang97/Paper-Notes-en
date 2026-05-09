@@ -28,11 +28,11 @@ This paper explicitly formulates the "Final-Model-Only" (FiMO) setting for train
 
 ## Background & Motivation
 
-**State of the Field**: Training data attribution (TDA) aims to explain model behavior in terms of training data. Existing methods fall into three broad categories: (1) retraining-based methods (Data Shapley, Datamodels); (2) methods that trace the training trajectory (TracIn); and (3) gradient-based methods applied solely to the final model (influence functions, TRAK). However, the literature has never explicitly distinguished the differences in **problem settings** underlying these methods.
+**Background**: Training data attribution (TDA) aims to explain model behavior in terms of training data. Existing methods fall into three broad categories: (1) retraining-based methods (Data Shapley, Datamodels); (2) methods that trace the training trajectory (TracIn); and (3) gradient-based methods applied solely to the final model (influence functions, TRAK). However, the literature has never explicitly distinguished the differences in **problem settings** underlying these methods.
 
 **Limitations of Prior Work**: Existing TDA literature implicitly assumes access to the training algorithm or intermediate checkpoints. In practice, the most common scenario is "final model only"—such as open-source models downloaded from HuggingFace. Under this setting, neither retraining nor intermediate checkpoints are available, and neither the ideal objective nor the gold standard is well-defined.
 
-**Starting Point**: The authors formally define three levels of access—TAA (training algorithm available), CPA (checkpoints available), and FiMO (final model only)—focus on the FiMO setting, and reframe the TDA problem from a *contribution measure* to a *sensitivity measure*.
+**Key Insight**: The authors formally define three levels of access—TAA (training algorithm available), CPA (checkpoints available), and FiMO (final model only)—focus on the FiMO setting, and reframe the TDA problem from a *contribution measure* to a *sensitivity measure*.
 
 ## Core Problem
 

@@ -29,11 +29,11 @@ This paper proposes SGDD (Split Gibbs Discrete Diffusion), a plug-and-play poste
 
 ## Background & Motivation
 
-**State of the Field**: Posterior sampling methods for diffusion models have made significant progress in continuous spaces (e.g., DPS, SMC, variational methods), with broad applications in image restoration and scientific inverse problems. However, these methods rely on gradient information of the form $\nabla_{\mathbf{x}_t} \log p(\mathbf{y}|\mathbf{x}_t)$, which cannot be directly extended to discrete state spaces.
+**Background**: Posterior sampling methods for diffusion models have made significant progress in continuous spaces (e.g., DPS, SMC, variational methods), with broad applications in image restoration and scientific inverse problems. However, these methods rely on gradient information of the form $\nabla_{\mathbf{x}_t} \log p(\mathbf{y}|\mathbf{x}_t)$, which cannot be directly extended to discrete state spaces.
 
 **Limitations of Prior Work**: In discrete state spaces, $\log p(\mathbf{y}|\mathbf{x})$ is defined only on a finite support and admits no meaningful gradient. Existing discrete diffusion posterior sampling methods (e.g., SVDD-PM) require approximating value functions via reinforcement learning-style techniques, which are difficult to tune and exhibit limited performance under complex guidance signals.
 
-**Starting Point**: The split Gibbs sampling framework naturally avoids reliance on likelihood gradients. By carefully designing a regularization potential such that the prior step corresponds exactly to a partial denoising process of a discrete diffusion model, this work achieves plug-and-play posterior sampling for discrete diffusion models.
+**Key Insight**: The split Gibbs sampling framework naturally avoids reliance on likelihood gradients. By carefully designing a regularization potential such that the prior step corresponds exactly to a partial denoising process of a discrete diffusion model, this work achieves plug-and-play posterior sampling for discrete diffusion models.
 
 ## Method
 

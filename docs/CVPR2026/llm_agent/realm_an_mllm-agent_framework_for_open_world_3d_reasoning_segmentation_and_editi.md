@@ -28,15 +28,15 @@ This paper proposes REALM, a framework that leverages an MLLM agent to perform r
 
 ## Background & Motivation
 
-**State of the Field**: 3D open-vocabulary segmentation methods (e.g., LERF, GS-Group) can handle explicit queries ("segment the cup") but fail to understand implicit instructions that require reasoning (e.g., "segment the object between the lamp and the book"). MLLMs excel at 2D reasoning but lack 3D spatial understanding.
+**Background**: 3D open-vocabulary segmentation methods (e.g., LERF, GS-Group) can handle explicit queries ("segment the cup") but fail to understand implicit instructions that require reasoning (e.g., "segment the object between the lamp and the book"). MLLMs excel at 2D reasoning but lack 3D spatial understanding.
 
 **Limitations of Prior Work**: Feeding one or a few rendered views directly into an MLLM is highly sensitive to viewpoint selection—a suboptimal view may occlude the target object. Feeding a large number of views simultaneously overwhelms the MLLM and prevents consistent 3D understanding.
 
-**Root Cause**: MLLMs possess strong 2D reasoning capabilities but no 3D perception; 3D segmentation methods have spatial understanding but no reasoning ability. The core challenge is bridging these two.
+**Key Challenge**: MLLMs possess strong 2D reasoning capabilities but no 3D perception; 3D segmentation methods have spatial understanding but no reasoning ability. The core challenge is bridging these two.
 
-**Paper Goals**: To exploit the reasoning capabilities of off-the-shelf MLLMs for open-world 3D reasoning segmentation, without any 3D-specific post-training.
+**Goal**: To exploit the reasoning capabilities of off-the-shelf MLLMs for open-world 3D reasoning segmentation, without any 3D-specific post-training.
 
-**Starting Point**: 3DGS is used as a high-fidelity proxy for the 3D world, rendering photorealistic novel views for MLLM understanding. A two-stage global-local strategy aggregates multi-view reasoning results.
+**Key Insight**: 3DGS is used as a high-fidelity proxy for the 3D world, rendering photorealistic novel views for MLLM understanding. A two-stage global-local strategy aggregates multi-view reasoning results.
 
 **Core Idea**: A two-stage strategy of global multi-view coarse localization followed by local close-up fine segmentation, lifting the 2D reasoning capability of MLLMs into the 3D domain.
 

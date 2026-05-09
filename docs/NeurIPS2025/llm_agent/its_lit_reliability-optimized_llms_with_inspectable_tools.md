@@ -30,15 +30,15 @@ By defining reliability/inspectability cost functions for each external tool, LI
 
 ## Background & Motivation
 
-**State of the Field**: LLM tool calling has become the dominant paradigm for extending model capabilities, enabling LLMs to invoke calculators, code executors, database queries, and predictive models to complete complex multi-step tasks. Prior works such as Toolformer, HuggingGPT, and CRAFT primarily focus on the correctness of tool calls and task completion rates.
+**Background**: LLM tool calling has become the dominant paradigm for extending model capabilities, enabling LLMs to invoke calculators, code executors, database queries, and predictive models to complete complex multi-step tasks. Prior works such as Toolformer, HuggingGPT, and CRAFT primarily focus on the correctness of tool calls and task completion rates.
 
 **Limitations of Prior Work**: When selecting tools, LLMs are entirely task-success-oriented and neglect the substantial differences in **reliability and inspectability** across tools. For example, a calculator is fully reliable and auditable, whereas a BERT classifier or an ARIMA forecaster is difficult to debug and understand. LLMs often blindly select black-box tools even when equally accurate but more transparent alternatives exist.
 
-**Root Cause**: In high-stakes scenarios, users require not only correct answers but also **trustworthy, auditable reasoning paths that facilitate rapid fault localization**. However, the current tool-calling paradigm lacks quantitative measures and optimization mechanisms for tool reliability—there are no standard frameworks, evaluation benchmarks, or baseline methods.
+**Key Challenge**: In high-stakes scenarios, users require not only correct answers but also **trustworthy, auditable reasoning paths that facilitate rapid fault localization**. However, the current tool-calling paradigm lacks quantitative measures and optimization mechanisms for tool reliability—there are no standard frameworks, evaluation benchmarks, or baseline methods.
 
-**Paper Goals**: To systematically bias LLM tool selection toward more reliable and inspectable tools without sacrificing task performance, making the final solutions more transparent and controllable for human users.
+**Goal**: To systematically bias LLM tool selection toward more reliable and inspectable tools without sacrificing task performance, making the final solutions more transparent and controllable for human users.
 
-**Starting Point**: Drawing on HCI literature concerning system reliability, debuggability, and simplicity, the paper defines a three-dimensional cost for each tool—performance robustness (P), debugging difficulty (D), and parameter complexity (C)—and at inference time prompts the LLM to generate multiple candidate solutions and select the one with the lowest total cost.
+**Key Insight**: Drawing on HCI literature concerning system reliability, debuggability, and simplicity, the paper defines a three-dimensional cost for each tool—performance robustness (P), debugging difficulty (D), and parameter complexity (C)—and at inference time prompts the LLM to generate multiple candidate solutions and select the one with the lowest total cost.
 
 **Core Idea**: Introduce the LIT (LLMs with Inspectable Tools) framework—without training the model, use carefully designed few-shot prompts combined with tool cost functions to automatically select the most inspectable tool-calling sequence from multiple candidates at inference time.
 

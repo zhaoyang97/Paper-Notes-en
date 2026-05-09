@@ -30,7 +30,7 @@ This paper proposes TreeBench (the first traceable visual reasoning benchmark co
 
 ## Background & Motivation
 
-**State of the Field**: OpenAI-o3 has pioneered the paradigm of "thinking with images"—dynamically referencing and zooming into task-relevant visual regions during reasoning—showing potential beyond purely text-based reasoning. However, no existing benchmark comprehensively evaluates this capability.
+**Background**: OpenAI-o3 has pioneered the paradigm of "thinking with images"—dynamically referencing and zooming into task-relevant visual regions during reasoning—showing potential beyond purely text-based reasoning. However, no existing benchmark comprehensively evaluates this capability.
 
 **Limitations of Prior Work**:
 1. Classical benchmarks such as POPE, MMBench, and SEED-Bench overlook fine-grained grounding and verifiable reasoning chains.
@@ -38,9 +38,9 @@ This paper proposes TreeBench (the first traceable visual reasoning benchmark co
 3. MME-RealWorld and HR-Bench accept high-resolution inputs but lack traceable evidence and complex reasoning.
 4. Existing RL training methods (e.g., DeepEyes, Pixel-Reasoner) supervise only the final answer, leaving intermediate grounding steps unsupervised.
 
-**Root Cause**: No benchmark simultaneously satisfies three critical requirements—focused visual perception (identifying subtle objects in dense scenes), traceable evidence (assessing grounding quality at each step of the reasoning chain), and second-order reasoning (object interaction and spatial hierarchy reasoning beyond simple localization). On the training side, existing methods cannot quantify the actual contribution of grounding within a "ground-then-answer" framework.
+**Key Challenge**: No benchmark simultaneously satisfies three critical requirements—focused visual perception (identifying subtle objects in dense scenes), traceable evidence (assessing grounding quality at each step of the reasoning chain), and second-order reasoning (object interaction and spatial hierarchy reasoning beyond simple localization). On the training side, existing methods cannot quantify the actual contribution of grounding within a "ground-then-answer" framework.
 
-**Paper Goals**: A two-pronged approach is adopted: TreeBench establishes an evaluation standard, and TreeVGR establishes a training methodology. Together, they advance both the assessment and improvement of "thinking with images" capabilities.
+**Goal**: A two-pronged approach is adopted: TreeBench establishes an evaluation standard, and TreeVGR establishes a training methodology. Together, they advance both the assessment and improvement of "thinking with images" capabilities.
 
 ## Method
 

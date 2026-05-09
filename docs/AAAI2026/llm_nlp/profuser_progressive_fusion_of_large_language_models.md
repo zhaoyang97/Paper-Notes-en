@@ -26,13 +26,13 @@ content_hash: cefb061e90fbc656
 ProFuser is proposed to comprehensively identify the strengths of each source model across different dimensions via dual-mode advantage assessment (training-mode Min-CE + inference-mode Reward Model voting), and then integrates the complementary capabilities of heterogeneous LLMs into a single target model through a progressive fusion strategy (inference mode first → training mode second, as an easy-to-hard curriculum), achieving an average improvement of 1.65% across 6 benchmarks covering knowledge, reasoning, and safety.
 
 ## Background & Motivation
-**State of the Field**: Fusing the complementary capabilities of multiple LLMs into a unified model is an efficient path to performance improvement. FuseLLM pioneered heterogeneous LLM fusion via knowledge distillation. Model merging methods (Task Arithmetic/TIES) require homogeneous architectures.
+**Background**: Fusing the complementary capabilities of multiple LLMs into a unified model is an efficient path to performance improvement. FuseLLM pioneered heterogeneous LLM fusion via knowledge distillation. Model merging methods (Task Arithmetic/TIES) require homogeneous architectures.
 
 **Limitations of Prior Work**: FuseLLM evaluates model advantages solely using training-mode Min-CE (minimum cross-entropy under teacher-forcing). Empirically, Vicuna outperforms Llama-2-Chat on 68% of samples in training mode, but only on 45% in inference mode — token prediction ability ≠ response generation quality, and single-mode evaluation misses important complementary information.
 
-**Root Cause**: Jointly optimizing both modes yields suboptimal results, as training mode uses detailed GT outputs from GPT-4 while inference mode uses shorter outputs from source models, resulting in a large complexity gap.
+**Key Challenge**: Jointly optimizing both modes yields suboptimal results, as training mode uses detailed GT outputs from GPT-4 while inference mode uses shorter outputs from source models, resulting in a large complexity gap.
 
-**Starting Point**: Begin with the simpler inference mode (source model outputs are relatively short), then transition to the more complex training mode (GT outputs are more detailed), realizing an easy-to-hard progressive fusion.
+**Key Insight**: Begin with the simpler inference mode (source model outputs are relatively short), then transition to the more complex training mode (GT outputs are more detailed), realizing an easy-to-hard progressive fusion.
 
 **Core Idea**: Comprehensive dual-mode assessment of each source model's strengths + progressive easy-to-hard fusion = more thorough capability integration.
 

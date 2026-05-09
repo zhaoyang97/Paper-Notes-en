@@ -31,8 +31,8 @@ This paper proposes the Draft-based Approximate Inference framework, which lever
 
 Long-context LLM inference faces two major bottlenecks: attention computation scales quadratically with context length, and KV cache memory grows linearly (exceeding 16 GB for 128K tokens on Llama-3.1-8B). Existing approximate inference methods include KV cache dropping (H2O, SnapKV), sparse attention (MInference), and prompt compression (LLMLingua-2), but all rely on attention activations from the current input tokens to estimate importance — an inherently retrospective strategy that cannot accurately predict **which KV pairs future generated tokens will actually need**.
 
-- **Root Cause**: Importance estimation requires future information, yet future tokens have not been generated. LAQ++ attempts to generate draft queries via sparse approximations of the target model itself, but it requires storing the complete target KV cache and thus cannot reduce peak memory.
-- **Starting Point**: A lightweight draft model (e.g., 0.5B–3B) is used to generate lookahead tokens, obtaining approximate future information at negligible cost. This enables more accurate importance estimation while avoiding the memory and computation burden of the target model.
+- **Key Challenge**: Importance estimation requires future information, yet future tokens have not been generated. LAQ++ attempts to generate draft queries via sparse approximations of the target model itself, but it requires storing the complete target KV cache and thus cannot reduce peak memory.
+- **Key Insight**: A lightweight draft model (e.g., 0.5B–3B) is used to generate lookahead tokens, obtaining approximate future information at negligible cost. This enables more accurate importance estimation while avoiding the memory and computation burden of the target model.
 
 ## Method
 

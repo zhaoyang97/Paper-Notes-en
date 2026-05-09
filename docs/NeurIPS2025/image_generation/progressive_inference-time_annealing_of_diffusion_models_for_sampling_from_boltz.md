@@ -29,11 +29,11 @@ This paper proposes PITA (Progressive Inference-Time Annealing), a framework tha
 
 ## Background & Motivation
 
-**State of the Field**: Efficient sampling from unnormalized Boltzmann distributions is a central challenge in computational biology, chemistry, and physics. Classical approaches include MCMC (often combined with parallel tempering or annealed importance sampling) and molecular dynamics (MD). MCMC annealing suffers from the "mass transport" problem—mode weights are influenced by mode width—while MD requires extremely fine time steps (femtosecond scale), incurring prohibitive computational cost.
+**Background**: Efficient sampling from unnormalized Boltzmann distributions is a central challenge in computational biology, chemistry, and physics. Classical approaches include MCMC (often combined with parallel tempering or annealed importance sampling) and molecular dynamics (MD). MCMC annealing suffers from the "mass transport" problem—mode weights are influenced by mode width—while MD requires extremely fine time steps (femtosecond scale), incurring prohibitive computational cost.
 
 **Limitations of Prior Work**: Recently proposed diffusion-based samplers are theoretically attractive for mode mixing, but face three major difficulties in realistic molecular systems: (1) the absence of training data makes accurate Stein score learning difficult; (2) training objectives such as reverse KL are prone to mode collapse; and (3) energy function evaluations are prohibitively numerous. Carefully tuned MCMC with parallel tempering can even outperform state-of-the-art diffusion samplers when normalized by the number of energy evaluations.
 
-**Starting Point**: Temperature annealing and diffusion paths represent two complementary simplification strategies—annealing eliminates high-energy barriers via heating to facilitate mode mixing, while diffusion avoids mass transport through noise injection. PITA combines both: it first collects data via simple MCMC at high temperature to train a diffusion model, then progressively lowers the temperature through inference-time annealing.
+**Key Insight**: Temperature annealing and diffusion paths represent two complementary simplification strategies—annealing eliminates high-energy barriers via heating to facilitate mode mixing, while diffusion avoids mass transport through noise injection. PITA combines both: it first collects data via simple MCMC at high temperature to train a diffusion model, then progressively lowers the temperature through inference-time annealing.
 
 ## Method
 

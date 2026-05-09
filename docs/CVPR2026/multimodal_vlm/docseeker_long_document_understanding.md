@@ -29,15 +29,15 @@ DocSeeker is proposed to achieve structured reasoning and evidence grounding in 
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs suffer severe performance degradation on long-document VQA as document length increases. Pure-vision approaches treat each page as an image input to avoid OCR error propagation.
+**Background**: MLLMs suffer severe performance degradation on long-document VQA as document length increases. Pure-vision approaches treat each page as an image input to avoid OCR error propagation.
 
 **Limitations of Prior Work**: (1) Low signal-to-noise ratio: key evidence is buried among a large number of irrelevant pages; (2) Supervision scarcity: datasets provide only short final answers without intermediate reasoning steps. Visual RAG faces a Top-$k$ dilemma—large $k$ introduces noise while small $k$ misses evidence.
 
-**Root Cause**: Models learn fragile shortcuts (memorization) rather than genuine reasoning ability, resulting in poor interpretability and weak OOD generalization.
+**Key Challenge**: Models learn fragile shortcuts (memorization) rather than genuine reasoning ability, resulting in poor interpretability and weak OOD generalization.
 
-**Paper Goals**: Train models to adopt a structured "locate first, then reason" workflow rather than directly predicting answers.
+**Goal**: Train models to adopt a structured "locate first, then reason" workflow rather than directly predicting answers.
 
-**Starting Point**: Inspired by human cognitive processes—first analyze intent, then locate evidence, and finally reason.
+**Key Insight**: Inspired by human cognitive processes—first analyze intent, then locate evidence, and finally reason.
 
 **Core Idea**: The ALR paradigm requires the model to explicitly produce a structured chain of thought following the "Analyze → Locate → Reason" sequence, combined with two-stage training via SFT and evidence-aware GRPO.
 

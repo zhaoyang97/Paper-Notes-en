@@ -35,7 +35,7 @@ This paper proposes an "ultrasound-first, radiation-preserving" cross-modal sele
 
 **X-ray (XR)**: More appropriate for evaluating acetabular development and surgical planning after ossification has progressed, measuring the acetabular index (AI), center-edge angle (CE), and IHDI grade. The key disadvantage is exposure to ionizing radiation.
 
-**Root Cause**: In pediatric care, minimizing ionizing radiation exposure is a fundamental principle, yet relying solely on ultrasound risks missing abnormalities detectable only on X-ray. Clinically, a **clearly normal ultrasound** (high α angle, adequate coverage) generally implies low marginal diagnostic value from X-ray; an abnormal or borderline ultrasound raises the value of proceeding to X-ray.
+**Key Challenge**: In pediatric care, minimizing ionizing radiation exposure is a fundamental principle, yet relying solely on ultrasound risks missing abnormalities detectable only on X-ray. Clinically, a **clearly normal ultrasound** (high α angle, adequate coverage) generally implies low marginal diagnostic value from X-ray; an abnormal or borderline ultrasound raises the value of proceeding to X-ray.
 
 **Limitations of Prior Work**:
 - Automated ultrasound and automated X-ray analysis have each advanced independently (automatic standard plane detection, Graf measurement prediction, AI/CE angle estimation, etc.), but **cross-modal US–XR learning remains extremely scarce**.

@@ -28,15 +28,15 @@ This paper provides a complete theoretical characterization of the greedy algori
 
 ## Background & Motivation
 
-**State of the Field**: Multi-armed bandits are a foundational framework for sequential decision-making. Classical theory emphasizes that exploration is a necessary means of achieving low regret. Structured bandits introduce known reward structures (e.g., linear, Lipschitz) to reduce the need for exploration via structural constraints.
+**Background**: Multi-armed bandits are a foundational framework for sequential decision-making. Classical theory emphasizes that exploration is a necessary means of achieving low regret. Structured bandits introduce known reward structures (e.g., linear, Lipschitz) to reduce the need for exploration via structural constraints.
 
 **Limitations of Prior Work**: Despite the maturity of exploration theory, pure greedy algorithms (Greedy — exploit only, no exploration) are widely used in practice, since exploration incurs high costs, raises fairness concerns, and may violate user incentives in human-interactive systems. However, a unified theoretical characterization of when greedy succeeds and when it fails has been lacking.
 
-**Root Cause**: Prior work only provided success/failure examples of greedy on a handful of specific structures (e.g., linear contextual bandits requiring context diversity), without a general theory applicable to arbitrary finite reward structures.
+**Key Challenge**: Prior work only provided success/failure examples of greedy on a handful of specific structures (e.g., linear contextual bandits requiring context diversity), without a general theory applicable to arbitrary finite reward structures.
 
-**Paper Goals**: For any finite reward structure, provide a complete "if and only if" characterization of when the greedy algorithm asymptotically succeeds (sublinear regret) vs. fails (linear regret).
+**Goal**: For any finite reward structure, provide a complete "if and only if" characterization of when the greedy algorithm asymptotically succeeds (sublinear regret) vs. fails (linear regret).
 
-**Starting Point**: The authors identify *partial identifiability* — self-identifiability — as the key: if fixing the expected reward of a suboptimal arm suffices to identify it as suboptimal, then greedy succeeds; otherwise, a decoy exists that permanently traps greedy.
+**Key Insight**: The authors identify *partial identifiability* — self-identifiability — as the key: if fixing the expected reward of a suboptimal arm suffices to identify it as suboptimal, then greedy succeeds; otherwise, a decoy exists that permanently traps greedy.
 
 **Core Idea**: Self-identifiability is a necessary and sufficient condition for the greedy algorithm to achieve sublinear regret in structured bandits.
 

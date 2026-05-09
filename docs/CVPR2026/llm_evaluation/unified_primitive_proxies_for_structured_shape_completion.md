@@ -28,15 +28,15 @@ This paper proposes UniCo, which learns unified primitive representations over s
 
 ## Background & Motivation
 
-1. **State of the Field**: 3D shape completion aims to recover missing geometry from incomplete scans. Dominant methods (PoinTr, AdaPoinTr, ODGNet, etc.) optimize point-wise discrepancies, recovering local geometry but lacking structured understanding. Primitive assembly models surfaces as compact sets of parametric primitives, providing structured and interpretable geometric representations suitable for downstream editing and topology control tasks.
+1. **Background**: 3D shape completion aims to recover missing geometry from incomplete scans. Dominant methods (PoinTr, AdaPoinTr, ODGNet, etc.) optimize point-wise discrepancies, recovering local geometry but lacking structured understanding. Primitive assembly models surfaces as compact sets of parametric primitives, providing structured and interpretable geometric representations suitable for downstream editing and topology control tasks.
 
 2. **Limitations of Prior Work**: The prevailing paradigm follows a cascade of "complete then assemble," which suffers from fundamental issues: (a) assembly solvers (e.g., PrimFit, PolyFit) expect structured input, whereas point-wise completion outputs are unstructured; (b) cascaded pipelines are prone to error propagation—mistakes in primitive counts or parameters affect subsequent association steps; (c) two-stage methods such as PaCo, which first regress primitive parameters and then enforce membership, tend to overfit in regions with sparse evidence and support only planar primitives.
 
-3. **Root Cause**: Point completion and primitive inference are driven by different supervision signals—the former requires point-wise guidance, while the latter relies on discrete and relational cues. The core challenge is enabling the two to be jointly optimized rather than cascaded.
+3. **Key Challenge**: Point completion and primitive inference are driven by different supervision signals—the former requires point-wise guidance, while the latter relies on discrete and relational cues. The core challenge is enabling the two to be jointly optimized rather than cascaded.
 
-4. **Paper Goals**: To directly predict assembly-ready structured primitives (including geometry, semantic type, and inlier membership) from incomplete point clouds in a single forward pass.
+4. **Goal**: To directly predict assembly-ready structured primitives (including geometry, semantic type, and inlier membership) from incomplete point clouds in a single forward pass.
 
-5. **Starting Point**: Three design principles — (a) coordinated pathways: point completion and primitive inference decode in parallel over shared features; (b) unified representation: learnable queries (primitive proxies) aggregate distributed structural information from shape features; (c) consistent optimization: online updating of primitive targets paired with permutation-invariant matching.
+5. **Key Insight**: Three design principles — (a) coordinated pathways: point completion and primitive inference decode in parallel over shared features; (b) unified representation: learnable queries (primitive proxies) aggregate distributed structural information from shape features; (c) consistent optimization: online updating of primitive targets paired with permutation-invariant matching.
 
 6. **Core Idea**: Learnable primitive proxies query shared shape features, enabling a single network to jointly predict point completion and assembly-ready primitives.
 

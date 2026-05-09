@@ -29,15 +29,15 @@ This paper proposes a three-step evaluation framework (computational feature ext
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have demonstrated impressive capabilities in text generation, including creative writing. Classical Chinese poetry—Tang poetry in particular—poses an extreme challenge for AI creativity due to its strict prosodic and tonal constraints and profound cultural depth.
+**Background**: LLMs have demonstrated impressive capabilities in text generation, including creative writing. Classical Chinese poetry—Tang poetry in particular—poses an extreme challenge for AI creativity due to its strict prosodic and tonal constraints and profound cultural depth.
 
 **Limitations of Prior Work**: (1) LLMs still frequently produce incoherence across lines, lack originality in imagery, or reproduce memorized verses; (2) conventional automatic metrics (BLEU, ROUGE) fail to capture prosody, imagery, and aesthetic value; (3) LLM-as-Judge approaches may exhibit systematic biases—models may inflate scores for their own outputs or converge toward peer models.
 
-**Root Cause**: Poetry generation requires simultaneously satisfying structural correctness and aesthetic quality, yet current automatic evaluation methods cannot reliably measure either dimension, especially in culturally sensitive creative tasks.
+**Key Challenge**: Poetry generation requires simultaneously satisfying structural correctness and aesthetic quality, yet current automatic evaluation methods cannot reliably measure either dimension, especially in culturally sensitive creative tasks.
 
-**Paper Goals**: To establish a systematic study of LLM-based Tang poetry generation and evaluation, revealing the capability boundaries of LLMs in poetry generation and the biases present in their evaluation.
+**Goal**: To establish a systematic study of LLM-based Tang poetry generation and evaluation, revealing the capability boundaries of LLMs in poetry generation and the biases present in their evaluation.
 
-**Starting Point**: Tang poetry is used as a testbed. Generation tasks are designed across five dimensions (genre, poet style, theme, emotion, and imagery), and a three-step framework is employed to provide multi-level evaluation.
+**Key Insight**: Tang poetry is used as a testbed. Generation tasks are designed across five dimensions (genre, poet style, theme, emotion, and imagery), and a three-step framework is employed to provide multi-level evaluation.
 
 **Core Idea**: LLM-generated poems may approximate human works in surface-level statistical features while exhibiting systematic deficiencies in strict prosodic compliance—deficiencies that LLM evaluators fail to detect, giving rise to an "echo chamber."
 

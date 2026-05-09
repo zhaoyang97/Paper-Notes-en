@@ -28,15 +28,15 @@ This paper proposes the VstoryGen framework and its core component CustFilmer, w
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-video generation has advanced rapidly, yet generating long-sequence coherent narrative videos remains challenging. Existing visual story generation methods (ConsiStory, StoryDiffusion, CharaConsist) primarily rely on text-only inputs, with only a few supporting character identity preservation.
+**Background**: Text-to-video generation has advanced rapidly, yet generating long-sequence coherent narrative videos remains challenging. Existing visual story generation methods (ConsiStory, StoryDiffusion, CharaConsist) primarily rely on text-only inputs, with only a few supporting character identity preservation.
 
 **Limitations of Prior Work**: (1) Existing methods use only text inputs and cannot leverage reference images for character and scene customization; (2) background consistency is often overlooked in favor of foreground characters; (3) generated viewpoints are monotonous, lacking cinematic shot language (wide/medium/close-up, etc.); (4) multi-character interaction scene generation remains insufficient.
 
-**Root Cause**: How to achieve flexible multimodal conditional control (text + reference images + shot types) while maintaining character and scene consistency?
+**Key Challenge**: How to achieve flexible multimodal conditional control (text + reference images + shot types) while maintaining character and scene consistency?
 
-**Paper Goals**: Leverage the multimodal understanding and generation capabilities of UMLLMs to construct a visual storytelling pipeline supporting rich multimodal conditions.
+**Goal**: Leverage the multimodal understanding and generation capabilities of UMLLMs to construct a visual storytelling pipeline supporting rich multimodal conditions.
 
-**Starting Point**: Extend the image editing capability of UMLLMs into keywise autoregressive story generation, enhancing consistency and cinematic quality through structured retrieval and shot-type prompt tuning.
+**Key Insight**: Extend the image editing capability of UMLLMs into keywise autoregressive story generation, enhancing consistency and cinematic quality through structured retrieval and shot-type prompt tuning.
 
 **Core Idea**: UMLLM + structured multimodal script + visual reference memory bank + shot-type prompt tuning = customizable visual storytelling.
 

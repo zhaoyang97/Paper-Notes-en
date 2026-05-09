@@ -30,7 +30,7 @@ This paper proposes DiDi-Instruct, a distillation framework based on Integrated 
 
 ## Background & Motivation
 
-**State of the Field**: Autoregressive (AR) large language models (e.g., the GPT series) have achieved remarkable success across NLP tasks, yet their left-to-right sequential token generation imposes a fundamental throughput ceiling. Diffusion large language models (dLLMs) reframe text generation as an iterative denoising process inspired by image diffusion models, enabling parallel generation via bidirectional attention and emerging as a compelling alternative to AR models.
+**Background**: Autoregressive (AR) large language models (e.g., the GPT series) have achieved remarkable success across NLP tasks, yet their left-to-right sequential token generation imposes a fundamental throughput ceiling. Diffusion large language models (dLLMs) reframe text generation as an iterative denoising process inspired by image diffusion models, enabling parallel generation via bidirectional attention and emerging as a compelling alternative to AR models.
 
 **Limitations of Prior Work**:
 - **Excessive inference steps**: dLLMs require 256 steps on the OpenWebText benchmark to match GPT-2's generation quality, leaving inference efficiency unsatisfactory.
@@ -38,9 +38,9 @@ This paper proposes DiDi-Instruct, a distillation framework based on Integrated 
 - **Lack of theoretical grounding**: Existing dLLM distillation methods are largely heuristic and lack a unified, rigorous theoretical framework.
 - **Challenges in discrete spaces**: IKL methods for continuous diffusion models rely on differentiable sampling paths, whereas the discrete state space of dLLMs (involving non-differentiable operations such as argmax) prevents gradients from propagating directly through the sampling trajectory.
 
-**Root Cause**: How to establish a theoretically sound and practically efficient distillation framework in the discrete token space, enabling a few-step student model to match or even surpass the generation quality of a many-step teacher?
+**Key Challenge**: How to establish a theoretically sound and practically efficient distillation framework in the discrete token space, enabling a few-step student model to match or even surpass the generation quality of a many-step teacher?
 
-**Starting Point**: The paper transfers the IKL distillation idea from continuous diffusion models to Masked Diffusion Models (MDMs), bypassing the discrete non-differentiability problem via policy gradients, and combining adversarial training to estimate density ratios as reward signals.
+**Key Insight**: The paper transfers the IKL distillation idea from continuous diffusion models to Masked Diffusion Models (MDMs), bypassing the discrete non-differentiability problem via policy gradients, and combining adversarial training to estimate density ratios as reward signals.
 
 ## Method
 

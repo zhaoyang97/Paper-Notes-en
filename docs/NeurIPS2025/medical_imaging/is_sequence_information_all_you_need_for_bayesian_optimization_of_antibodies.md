@@ -29,15 +29,15 @@ This paper systematically compares the roles of sequence and structural informat
 
 ## Background & Motivation
 
-**State of the Field**: Therapeutic antibodies constitute an important class of drugs whose development requires multi-round iterative optimization (e.g., binding affinity, thermostability). Bayesian optimization (BO) is well-suited to such high-cost, low-data settings due to its uncertainty-guided exploration.
+**Background**: Therapeutic antibodies constitute an important class of drugs whose development requires multi-round iterative optimization (e.g., binding affinity, thermostability). Bayesian optimization (BO) is well-suited to such high-cost, low-data settings due to its uncertainty-guided exploration.
 
 **Limitations of Prior Work**: The success of BO depends critically on the choice of surrogate model and acquisition function, yet the role of structural information in antibody BO has not been systematically investigated. While structural diffusion models have proven useful in non-iterative design, the generated antibodies still require further optimization.
 
-**Root Cause**: For which antibody properties does structural information help? Is it intrinsic antibody properties (e.g., thermostability) or antigen-specific properties (e.g., binding affinity), particularly in the common scenario where the binding pose is unknown?
+**Key Challenge**: For which antibody properties does structural information help? Is it intrinsic antibody properties (e.g., thermostability) or antigen-specific properties (e.g., binding affinity), particularly in the common scenario where the binding pose is unknown?
 
-**Paper Goals**: To systematically evaluate the effect of incorporating structural information in various ways, benchmarked against sequence-only approaches.
+**Goal**: To systematically evaluate the effect of incorporating structural information in various ways, benchmarked against sequence-only approaches.
 
-**Starting Point**: A pLM-based "soft constraint" mechanism is proposed to guide optimization toward promising regions of sequence space.
+**Key Insight**: A pLM-based "soft constraint" mechanism is proposed to guide optimization toward promising regions of sequence space.
 
 **Core Idea**: With appropriate sequence prior information (pLM soft constraints), sequence-only methods can match or eliminate the advantage of structure-based methods.
 

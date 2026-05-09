@@ -29,18 +29,18 @@ This paper systematically analyzes three fundamental problems of tri-plane-like 
 
 ## Background & Motivation
 
-**State of the Field**: 3D-aware GANs (e.g., EG3D) encode 3D objects onto three orthogonal 2D feature planes using tri-plane representations, querying features via Cartesian coordinate projection. This approach balances efficiency and expressiveness and has been widely adopted for human head synthesis and 3D object modeling.
+**Background**: 3D-aware GANs (e.g., EG3D) encode 3D objects onto three orthogonal 2D feature planes using tri-plane representations, querying features via Cartesian coordinate projection. This approach balances efficiency and expressiveness and has been widely adopted for human head synthesis and 3D object modeling.
 
 **Limitations of Prior Work**:
 - **Mirror artifacts** (Tri-plane): Cartesian projection causes two 3D points symmetric about a feature plane to query identical features, producing ghost faces on the back of the head.
 - **Non-uniform mapping** (SphereHead): Spherical coordinate $(\theta, \phi)$ mapping leads to sparse features near the equator and dense features near the poles, reducing feature map utilization and detail generation capability.
 - **Feature penetration** (both): Convolutional networks generate features for different planes via different channels, yet the same UV location carries entirely different spatial meanings across planes, causing features from dominant planes to "penetrate" into others.
 
-**Root Cause**: Tri-plane excels at symmetric features but cannot handle asymmetric regions; spherical tri-plane resolves directionality but introduces non-uniform distribution and seam artifacts.
+**Key Challenge**: Tri-plane excels at symmetric features but cannot handle asymmetric regions; spherical tri-plane resolves directionality but introduces non-uniform distribution and seam artifacts.
 
-**Paper Goals**: Simultaneously address all three problems: mirror artifacts, non-uniform feature distribution, and feature penetration.
+**Goal**: Simultaneously address all three problems: mirror artifacts, non-uniform feature distribution, and feature penetration.
 
-**Starting Point**: Combine planar and spherical representations in a hybrid manner, leveraging the strengths of each.
+**Key Insight**: Combine planar and spherical representations in a hybrid manner, leveraging the strengths of each.
 
 **Core Idea**: Use planar features to capture symmetric structures and spherical features to capture directional structures, coupled with unify-split to eliminate inter-channel feature penetration and near-equal-area warping to optimize spherical feature distribution.
 

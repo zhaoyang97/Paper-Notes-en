@@ -28,17 +28,17 @@ A JAX-based differentiable Agent-Based Model (ABM) of supply chains (~1,000 firm
 
 ## Background & Motivation
 
-1. **State of the Field**: Modeling shock propagation in supply chains has grown increasingly important in the wake of Covid-19 and the Russia–Ukraine war. Established approaches include the Leontief input-output framework (comparative-static analysis) and Agent-Based Models (ABMs, bottom-up dynamic simulation). ABMs can capture inventory adjustment, time-varying recovery, and other dynamic features, making them a natural choice for shock-propagation modeling.
+1. **Background**: Modeling shock propagation in supply chains has grown increasingly important in the wake of Covid-19 and the Russia–Ukraine war. Established approaches include the Leontief input-output framework (comparative-static analysis) and Agent-Based Models (ABMs, bottom-up dynamic simulation). ABMs can capture inventory adjustment, time-varying recovery, and other dynamic features, making them a natural choice for shock-propagation modeling.
 2. **Limitations of Prior Work**:
    - The likelihood function of ABMs is analytically intractable, so conventional calibration relies on Approximate Bayesian Computation (ABC)—repeated sampling compared against summary statistics—which scales poorly in high-dimensional parameter spaces.
    - Surrogate-model approaches introduce approximation error; neural simulation-based inference (SBI) offers amortized inference but cannot exploit gradient information.
    - Traditional ABM implementations are CPU-serial; calibration requires tens of thousands of forward simulations, entailing prohibitive computational cost.
-3. **Root Cause**: ABMs involve discrete stochasticity and control-flow structures that resist direct differentiation, while high-dimensional parameters (one set per firm) render gradient-free methods highly inefficient.
-4. **Paper Goals**:
+3. **Key Challenge**: ABMs involve discrete stochasticity and control-flow structures that resist direct differentiation, while high-dimensional parameters (one set per firm) render gradient-free methods highly inefficient.
+4. **Goal**:
    - Implement a supply-chain ABM as a JAX differentiable program supporting automatic differentiation.
    - Leverage GPU tensorization for large-scale parallel simulation.
    - Replace ABC with Generalized Variational Inference (GVI) for high-dimensional Bayesian calibration.
-5. **Starting Point**: Exploit JAX's AD + GPU acceleration + NumPyro probabilistic programming ecosystem to recast ABM calibration as a gradient-based optimization problem.
+5. **Key Insight**: Exploit JAX's AD + GPU acceleration + NumPyro probabilistic programming ecosystem to recast ABM calibration as a gradient-based optimization problem.
 6. **Core Idea**: Express the supply-chain ABM as a JAX differentiable program and use GPU parallelism + automatic differentiation to accelerate calibration by three orders of magnitude.
 
 ## Method

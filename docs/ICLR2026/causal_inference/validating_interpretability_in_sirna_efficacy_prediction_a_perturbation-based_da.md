@@ -28,15 +28,15 @@ This paper proposes a standardized perturbation-based saliency faithfulness vali
 
 ## Background & Motivation
 
-**State of the Field**: siRNA therapeutics (e.g., patisiran, givosiran) have received FDA approval. Deep learning models are widely used to predict siRNA knockdown efficacy, and researchers examine saliency maps to identify which nucleotide positions are "important" for guiding sequence editing.
+**Background**: siRNA therapeutics (e.g., patisiran, givosiran) have received FDA approval. Deep learning models are widely used to predict siRNA knockdown efficacy, and researchers examine saliency maps to identify which nucleotide positions are "important" for guiding sequence editing.
 
 **Limitations of Prior Work**: Saliency methods (gradients, integrated gradients, etc.) are broadly applied in the siRNA domain but rarely validated. Attribution methods do not guarantee they reflect true feature importance and may silently fail under protocol or distributional shifts.
 
-**Root Cause**: A model may achieve accurate predictions on a given dataset with seemingly reasonable saliency maps, yet when transferred to a different experimental protocol (e.g., a different assay), the saliency maps may become entirely unreliable—a failure that cannot be detected prior to deployment.
+**Key Challenge**: A model may achieve accurate predictions on a given dataset with seemingly reasonable saliency maps, yet when transferred to a different experimental protocol (e.g., a different assay), the saliency maps may become entirely unreliable—a failure that cannot be detected prior to deployment.
 
-**Paper Goals**: (a) Provide a standardized saliency faithfulness testing protocol; (b) identify and categorize failure modes in cross-dataset transfer; (c) improve saliency faithfulness via biological prior regularization.
+**Goal**: (a) Provide a standardized saliency faithfulness testing protocol; (b) identify and categorize failure modes in cross-dataset transfer; (c) improve saliency faithfulness via biological prior regularization.
 
-**Starting Point**: The paper defines "counterfactual faithfulness"—whether mutating high-saliency positions causes larger prediction changes than controls—and uses this actionable test as a pre-synthesis deployment checkpoint.
+**Key Insight**: The paper defines "counterfactual faithfulness"—whether mutating high-saliency positions causes larger prediction changes than controls—and uses this actionable test as a pre-synthesis deployment checkpoint.
 
 **Core Idea**: An expected-effect perturbation operator (averaging prediction changes over three alternative bases at each position) + nucleotide composition-matched random baselines + paired Wilcoxon test → pass/fail determination.
 

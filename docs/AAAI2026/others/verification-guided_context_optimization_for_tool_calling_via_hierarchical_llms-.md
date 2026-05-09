@@ -28,15 +28,15 @@ This paper proposes the VGCO framework, which employs LLMs as hierarchical edito
 
 ## Background & Motivation
 
-1. **State of the Field**: Tool calling has become a key mechanism for extending LLM capabilities, enabling models to invoke external APIs/tools for real-time information retrieval or complex task execution. Existing approaches fall into two broad categories: fine-tuning-based methods (e.g., xLAMs, ToolBench) and tuning-free methods (relying on in-context learning).
+1. **Background**: Tool calling has become a key mechanism for extending LLM capabilities, enabling models to invoke external APIs/tools for real-time information retrieval or complex task execution. Existing approaches fall into two broad categories: fine-tuning-based methods (e.g., xLAMs, ToolBench) and tuning-free methods (relying on in-context learning).
 
 2. **Limitations of Prior Work**: Tool documentation and knowledge base content are typically written for human readers and are poorly aligned with the comprehension needs of LLMs. In industrial-scale settings, enterprises manage hundreds of API tools, and issues such as overlapping functionality and ambiguous boundaries are particularly severe, leading to frequent tool calling failures.
 
-3. **Root Cause**: Existing context optimization frameworks (e.g., DSPy, SAMMO, Promptim) suffer from three fundamental limitations: stateless operation (no awareness of the current context state), lack of a structured action space (relying solely on token-level adjustments), and the absence of domain-specific evaluation mechanisms.
+3. **Key Challenge**: Existing context optimization frameworks (e.g., DSPy, SAMMO, Promptim) suffer from three fundamental limitations: stateless operation (no awareness of the current context state), lack of a structured action space (relying solely on token-level adjustments), and the absence of domain-specific evaluation mechanisms.
 
-4. **Paper Goals**: To systematically optimize tool-related documentation and knowledge base context so that it better aligns with LLM tool calling requirements, especially in large-scale industrial scenarios.
+4. **Goal**: To systematically optimize tool-related documentation and knowledge base context so that it better aligns with LLM tool calling requirements, especially in large-scale industrial scenarios.
 
-5. **Starting Point**: The authors observe that many tool calling failures stem not from insufficient model reasoning capabilities, but from incomplete, inconsistent, or improperly structured contextual information.
+5. **Key Insight**: The authors observe that many tool calling failures stem not from insufficient model reasoning capabilities, but from incomplete, inconsistent, or improperly structured contextual information.
 
 6. **Core Idea**: Tool context is decomposed into a retrieval layer, a tool layer, and a parameter layer. Verification signals guide LLM editors to perform targeted iterative optimization at each layer.
 

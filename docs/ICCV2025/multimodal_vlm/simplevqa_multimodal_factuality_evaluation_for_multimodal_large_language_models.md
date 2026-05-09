@@ -29,15 +29,15 @@ SimpleVQA is the first VQA benchmark designed for comprehensive multimodal factu
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs are increasingly deployed across diverse domains—from medical diagnosis to autonomous driving—where output accuracy and reliability are critical. Existing benchmarks (VQAv2, TextVQA, MMBench, etc.) primarily assess perceptual understanding, leaving factuality (i.e., whether a model can generate correct answers grounded in real-world knowledge) largely unevaluated in a systematic manner.
+**Background**: MLLMs are increasingly deployed across diverse domains—from medical diagnosis to autonomous driving—where output accuracy and reliability are critical. Existing benchmarks (VQAv2, TextVQA, MMBench, etc.) primarily assess perceptual understanding, leaving factuality (i.e., whether a model can generate correct answers grounded in real-world knowledge) largely unevaluated in a systematic manner.
 
 **Limitations of Prior Work**: (1) Answers in existing VQA benchmarks often require subjective judgment or admit multiple valid responses, making objective factuality assessment difficult. (2) Many benchmark questions become invalid over time (e.g., "Who is the current president?"), undermining long-term stability. (3) Evaluation granularity is insufficient to identify in which knowledge domains or task types models are more prone to errors.
 
-**Root Cause**: Factuality evaluation demands answers that are definitive, objective, and time-invariant—constraints that existing visual question answering datasets were not designed to satisfy.
+**Key Challenge**: Factuality evaluation demands answers that are definitive, objective, and time-invariant—constraints that existing visual question answering datasets were not designed to satisfy.
 
-**Paper Goals**: To construct a multi-dimensional, high-quality, and easily evaluable factuality benchmark for MLLMs that can precisely localize where models tend to produce factual errors across tasks and domains.
+**Goal**: To construct a multi-dimensional, high-quality, and easily evaluable factuality benchmark for MLLMs that can precisely localize where models tend to produce factual errors across tasks and domains.
 
-**Starting Point**: The benchmark centers on objective facts, formulating short-answer natural-language questions for which each question has a unique correct answer, is unaffected by temporal changes, and can be automatically scored with low variance using an LLM-based judge.
+**Key Insight**: The benchmark centers on objective facts, formulating short-answer natural-language questions for which each question has a unique correct answer, is unaffected by temporal changes, and can be automatically scored with low variance using an LLM-based judge.
 
 **Core Idea**: A matrix-structured benchmark is built from 9 task types covering objective events and common knowledge $\times$ 9 thematic domains. Rigorous quality control generates concise, unambiguous reference answers, and LLM-as-a-judge is adopted for low-variance automated scoring.
 

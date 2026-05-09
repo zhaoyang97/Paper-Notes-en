@@ -28,11 +28,11 @@ AdaptDel extends the fixed deletion rate used in randomized smoothing for discre
 
 ## Background & Motivation
 
-**State of the Field**: Certified robustness aims to provide provable defense guarantees against adversarial attacks for classifiers. Randomized smoothing is one of the most scalable certification methods: it smooths a classifier by applying random perturbations to the input and taking a majority vote over multiple predictions, thereby obtaining a provable robustness radius. For continuous inputs (e.g., images), Gaussian noise is the standard perturbation; for discrete sequences (e.g., text), random token deletion is commonly used.
+**Background**: Certified robustness aims to provide provable defense guarantees against adversarial attacks for classifiers. Randomized smoothing is one of the most scalable certification methods: it smooths a classifier by applying random perturbations to the input and taking a majority vote over multiple predictions, thereby obtaining a provable robustness radius. For continuous inputs (e.g., images), Gaussian noise is the standard perturbation; for discrete sequences (e.g., text), random token deletion is commonly used.
 
 **Limitations of Prior Work**: Existing randomized smoothing methods for discrete sequences adopt a fixed deletion rate, treating all inputs uniformly regardless of length. However, text length varies considerably in natural language: short texts (e.g., 5-word sentences) may lose nearly all information under a high deletion rate, causing classification failure; long texts (e.g., 50-word paragraphs) under a low deletion rate retain too many tokens per sample, leaving robustness underexplored and yielding a small certified radius. A fixed deletion rate cannot simultaneously accommodate both cases.
 
-**Root Cause**: The choice of deletion rate involves a trade-off between information preservation and robustness, and the optimal balance of this trade-off varies with input properties such as length. A single fixed rate is necessarily severely suboptimal for a subset of inputs. This paper proposes designing the deletion rate as a function of input properties and formally proves that randomized smoothing certification remains sound under variable deletion rates.
+**Key Challenge**: The choice of deletion rate involves a trade-off between information preservation and robustness, and the optimal balance of this trade-off varies with input properties such as length. A single fixed rate is necessarily severely suboptimal for a subset of inputs. This paper proposes designing the deletion rate as a function of input properties and formally proves that randomized smoothing certification remains sound under variable deletion rates.
 
 ## Method
 

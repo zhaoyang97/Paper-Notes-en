@@ -31,7 +31,7 @@ A 3.7M high-quality editing dataset covering 14 task categories is constructed, 
 
 ### State of the Field
 
-**State of the Field**: Open-source image editing models still lag behind closed-source counterparts (e.g., GPT-4o), with high-quality editing datasets remaining a critical bottleneck.
+**Background**: Open-source image editing models still lag behind closed-source counterparts (e.g., GPT-4o), with high-quality editing datasets remaining a critical bottleneck.
 
 ### Limitations of Prior Work
 
@@ -39,11 +39,11 @@ A 3.7M high-quality editing dataset covering 14 task categories is constructed, 
 
 ### Root Cause
 
-**Root Cause**: On the model side, fully fine-tuned models (Step1X-Edit 12B, Kontext 12B) deliver strong performance but at high cost, while lightweight alternatives (ICEdit 0.2B) reduce cost but sacrifice quality.
+**Key Challenge**: On the model side, fully fine-tuned models (Step1X-Edit 12B, Kontext 12B) deliver strong performance but at high cost, while lightweight alternatives (ICEdit 0.2B) reduce cost but sacrifice quality.
 
 ### Paper Goals
 
-**Paper Goals**: How to achieve high-quality arbitrary-instruction image editing covering 14 task categories with only a small number of parameters (8% of the full model)?
+**Goal**: How to achieve high-quality arbitrary-instruction image editing covering 14 task categories with only a small number of parameters (8% of the full model)?
 
 ## Method
 

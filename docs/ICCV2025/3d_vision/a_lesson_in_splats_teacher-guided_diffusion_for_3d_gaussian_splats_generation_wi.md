@@ -27,10 +27,10 @@ content_hash: b0243e10733ac8e4
 This paper proposes a novel framework for training 3D diffusion models using only 2D image supervision. By employing a deterministic 3D reconstruction model as a "noisy teacher" to generate 3D noisy samples, and combining a multi-step denoising strategy with cycle-consistency regularization, the proposed method achieves 3D Gaussian Splatting generation quality that surpasses the teacher model (PSNR gain of 0.5–0.85).
 
 ## Background & Motivation
-- **State of the Field**: Recovering 3D structure from 2D images is an inherently ill-posed problem. Generative models such as diffusion models can capture the distribution over plausible 3D structures. However, existing 3D diffusion models almost universally require complete 3D ground truth as supervision signals.
+- **Background**: Recovering 3D structure from 2D images is an inherently ill-posed problem. Generative models such as diffusion models can capture the distribution over plausible 3D structures. However, existing 3D diffusion models almost universally require complete 3D ground truth as supervision signals.
 - **Limitations of Prior Work**: Feed-forward 3D reconstruction methods such as Splatter Image and Flash3D can be trained with sparse 2D views, but as deterministic models they cannot capture the diversity of plausible reconstructions and produce blurry predictions in uncertain regions.
-- **Root Cause**: Standard diffusion training requires the denoising process and supervision signal to share the same modality — noise is added in 3D space, and supervision also requires 3D ground truth — yet large-scale 3D data is extremely scarce.
-- **Paper Goals**: Decouple the denoising modality (3D) from the supervision modality (2D). The imperfect 3D predictions of a deterministic reconstruction model serve as a "noisy teacher" to produce noisy inputs, while differentiable rendering maps the 3D outputs to 2D images for supervision.
+- **Key Challenge**: Standard diffusion training requires the denoising process and supervision signal to share the same modality — noise is added in 3D space, and supervision also requires 3D ground truth — yet large-scale 3D data is extremely scarce.
+- **Goal**: Decouple the denoising modality (3D) from the supervision modality (2D). The imperfect 3D predictions of a deterministic reconstruction model serve as a "noisy teacher" to produce noisy inputs, while differentiable rendering maps the 3D outputs to 2D images for supervision.
 - **Core Idea**: Inspired by SDEdit, at sufficiently large noise levels $t > t^*$, the noisy 3D samples produced by the teacher model and those derived from true 3D ground truth follow nearly identical distributions.
 
 ## Method

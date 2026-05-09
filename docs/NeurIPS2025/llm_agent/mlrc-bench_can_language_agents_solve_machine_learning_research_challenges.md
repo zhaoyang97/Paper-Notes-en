@@ -29,15 +29,15 @@ This paper proposes MLRC-Bench, a dynamic benchmark grounded in ML conference co
 
 ## Background & Motivation
 
-**State of the Field**: Evaluation of LLM research agents has primarily followed two directions: (1) end-to-end scientific discovery pipelines akin to AI Scientist (idea generation → coding → experimentation → paper writing), which rely on LLM-as-Judge or human review and lack objective standards; and (2) Kaggle-style ML engineering competitions similar to MLE-Bench, which rarely require genuine methodological innovation and can be solved through hyperparameter tuning or ensemble of existing methods.
+**Background**: Evaluation of LLM research agents has primarily followed two directions: (1) end-to-end scientific discovery pipelines akin to AI Scientist (idea generation → coding → experimentation → paper writing), which rely on LLM-as-Judge or human review and lack objective standards; and (2) Kaggle-style ML engineering competitions similar to MLE-Bench, which rarely require genuine methodological innovation and can be solved through hyperparameter tuning or ensemble of existing methods.
 
 **Limitations of Prior Work**: (1) The subjectivity of end-to-end evaluation (e.g., AI Scientist)—LLM-as-Judge tends to produce overly optimistic assessments; (2) The shallowness of Kaggle-style evaluation (e.g., MLE-Bench)—no requirement to propose new methods; (3) Most existing benchmarks rely on single-file code, disconnected from the repository-level development characteristic of real research; (4) Many benchmarks lack computational constraints (runtime/GPU limits), failing to incentivize efficient solutions.
 
-**Root Cause**: How to simultaneously evaluate an agent's capacity for methodological innovation and its objective performance within a single framework—requiring both novel method proposals and quantifiable performance metrics.
+**Key Challenge**: How to simultaneously evaluate an agent's capacity for methodological innovation and its objective performance within a single framework—requiring both novel method proposals and quantifiable performance metrics.
 
-**Paper Goals**: To construct an objective, extensible, and frontier-oriented agent benchmark that assesses whether LLM agents can propose and implement genuinely effective novel methods.
+**Goal**: To construct an objective, extensible, and frontier-oriented agent benchmark that assesses whether LLM agents can propose and implement genuinely effective novel methods.
 
-**Starting Point**: ML conference competitions inherently embody the dual requirements for such evaluation—open-ended problems demand creativity, while public leaderboards provide objective comparison baselines. These competitions are directly repurposed as benchmark tasks.
+**Key Insight**: ML conference competitions inherently embody the dual requirements for such evaluation—open-ended problems demand creativity, while public leaderboards provide objective comparison baselines. These competitions are directly repurposed as benchmark tasks.
 
 **Core Idea**: ML conference competitions are restructured into agent-agnostic standardized environments. The relative progress from a baseline to the top human solution serves as the objective metric, while the correlation between LLM subjective scores and objective performance is systematically analyzed.
 

@@ -28,15 +28,15 @@ This paper introduces PosterIQ, a comprehensive benchmark for poster design eval
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal large language models (MLLMs) have made substantial progress in visual understanding, and image generation models have matured in text-to-image synthesis and style control. Existing benchmarks (e.g., MMBench, Creation-MMBench) have begun evaluating multimodal creative capabilities, but remain largely text-centric or focused on aesthetic quality.
+**Background**: Multimodal large language models (MLLMs) have made substantial progress in visual understanding, and image generation models have matured in text-to-image synthesis and style control. Existing benchmarks (e.g., MMBench, Creation-MMBench) have begun evaluating multimodal creative capabilities, but remain largely text-centric or focused on aesthetic quality.
 
 **Limitations of Prior Work**: Posters constitute a highly constrained visual communication medium requiring the integration of thematic interpretation, information hierarchy, typographic conventions, text-image coupling, stylistic consistency, and audience awareness within a confined space. Existing evaluation frameworks lack systematic coverage of these design dimensions — OCR benchmarks ignore typographic semantics in design contexts, and image generation evaluations overlook compositional constraints and design intent communication.
 
-**Root Cause**: Effective poster design is not merely about visual appeal but about effective communication — key information must be perceived, understood, and retained. Current models can produce visually attractive images, yet exhibit systematic deficiencies in information hierarchy organization, typographic semantics, and creative expression under compositional constraints.
+**Key Challenge**: Effective poster design is not merely about visual appeal but about effective communication — key information must be perceived, understood, and retained. Current models can produce visually attractive images, yet exhibit systematic deficiencies in information hierarchy organization, typographic semantics, and creative expression under compositional constraints.
 
-**Paper Goals**: To establish a poster design benchmark spanning both understanding and generation tasks, evaluating model creativity and design cognition from a design-theory perspective rather than a purely aesthetic one.
+**Goal**: To establish a poster design benchmark spanning both understanding and generation tasks, evaluating model creativity and design cognition from a design-theory perspective rather than a purely aesthetic one.
 
-**Starting Point**: Poster design is decomposed into five capability dimensions — text legibility/readability, layout reasoning/hierarchical organization, semantic-style consistency, text-image coordination/salience control, and rhetorical modeling/metaphor generation — each addressed by dedicated evaluation tasks.
+**Key Insight**: Poster design is decomposed into five capability dimensions — text legibility/readability, layout reasoning/hierarchical organization, semantic-style consistency, text-image coordination/salience control, and rhetorical modeling/metaphor generation — each addressed by dedicated evaluation tasks.
 
 **Core Idea**: Replace holistic scoring with decoupled, task-specific evaluation dimensions to systematically diagnose model capabilities and deficiencies across all aspects of design cognition.
 

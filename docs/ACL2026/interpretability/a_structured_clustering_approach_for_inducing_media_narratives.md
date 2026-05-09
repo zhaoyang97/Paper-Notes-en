@@ -27,15 +27,15 @@ This paper proposes a framework for automatically inducing media narrative patte
 
 ## Background & Motivation
 
-**State of the Field**: Media narratives exert substantial influence on public opinion. NLP research on media analysis has accumulated considerable work, falling broadly into two categories: (1) coarse-grained label approaches (e.g., left/right stance, political/economic/security topic frames), which are scalable but lose the nuance of narrative structure; and (2) domain-specific taxonomies (e.g., dedicated labels for immigration or economic issues), which capture nuance but lack cross-domain generalizability.
+**Background**: Media narratives exert substantial influence on public opinion. NLP research on media analysis has accumulated considerable work, falling broadly into two categories: (1) coarse-grained label approaches (e.g., left/right stance, political/economic/security topic frames), which are scalable but lose the nuance of narrative structure; and (2) domain-specific taxonomies (e.g., dedicated labels for immigration or economic issues), which capture nuance but lack cross-domain generalizability.
 
 **Limitations of Prior Work**: Coarse-grained approaches overlook the fine-grained narrative structures emphasized in communication research—namely, how character assignments and causal framing guide readers toward particular conclusions. Domain-specific approaches require extensive manual annotation and cannot scale to new domains. This divide limits consistent narrative analysis across domains.
 
-**Root Cause**: A fundamental tension exists between scalability and interpretive depth—one must either sacrifice narrative detail for scale, or sacrifice scale for depth.
+**Key Challenge**: A fundamental tension exists between scalability and interpretive depth—one must either sacrifice narrative detail for scale, or sacrifice scale for depth.
 
-**Paper Goals**: To design a narrative induction framework that preserves narrative structural depth (causal event relations + character functional roles) while scaling to large corpora without relying on domain-specific taxonomies.
+**Goal**: To design a narrative induction framework that preserves narrative structural depth (causal event relations + character functional roles) while scaling to large corpora without relying on domain-specific taxonomies.
 
-**Starting Point**: Drawing on the Narrative Policy Framework from communication studies, the paper treats character roles (hero/villain/victim) as key structural elements of narrative analysis, using role constraints to distinguish event chains that appear superficially similar but carry different narrative meanings.
+**Key Insight**: Drawing on the Narrative Policy Framework from communication studies, the paper treats character roles (hero/villain/victim) as key structural elements of narrative analysis, using role constraints to distinguish event chains that appear superficially similar but carry different narrative meanings.
 
 **Core Idea**: Atomic narrative representations are constructed from causal event chains with role annotations; role-constrained clustering (cannot-link constraints) then automatically induces high-level narrative patterns across articles.
 

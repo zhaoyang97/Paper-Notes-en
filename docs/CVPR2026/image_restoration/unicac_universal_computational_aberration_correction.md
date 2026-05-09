@@ -29,11 +29,11 @@ This work constructs UniCAC, the first large-scale universal benchmark for compu
 
 ## Background & Motivation
 
-1. **State of the Field**: Computational aberration correction (CAC) serves as an image post-processing technique to compensate for residual optical aberrations. Existing methods are typically tailored to specific lenses and generalize poorly.
+1. **Background**: Computational aberration correction (CAC) serves as an image post-processing technique to compensate for residual optical aberrations. Existing methods are typically tailored to specific lenses and generalize poorly.
 2. **Limitations of Prior Work**: (a) No comprehensive benchmark covering diverse lens designs exists, as commercial lens configurations are not publicly available; (b) the factors influencing CAC performance and their relative importance remain unclear.
-3. **Root Cause**: Universal CAC requires training data spanning diverse lenses, yet lens prescription files (e.g., Zemax) are difficult to obtain. Moreover, the traditional RMS radius metric correlates poorly with actual CAC difficulty.
-4. **Paper Goals**: (a) Construct a large-scale universal CAC benchmark; (b) propose a reliable aberration quantification framework; (c) systematically evaluate 24 models and summarize key findings.
-5. **Starting Point**: Leverage automatic optical design methods to generate large numbers of physically valid lens prescriptions.
+3. **Key Challenge**: Universal CAC requires training data spanning diverse lenses, yet lens prescription files (e.g., Zemax) are difficult to obtain. Moreover, the traditional RMS radius metric correlates poorly with actual CAC difficulty.
+4. **Goal**: (a) Construct a large-scale universal CAC benchmark; (b) propose a reliable aberration quantification framework; (c) systematically evaluate 24 models and summarize key findings.
+5. **Key Insight**: Leverage automatic optical design methods to generate large numbers of physically valid lens prescriptions.
 6. **Core Idea**: Extend automatic optical design (OptiFusion) to cover aspherical parameters, replace RMS with ODE, and conduct systematic evaluation.
 
 ## Method

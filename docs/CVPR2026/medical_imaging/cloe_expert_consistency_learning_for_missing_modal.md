@@ -29,15 +29,15 @@ This work reformulates the robustness problem under missing modalities as decisi
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal MRI segmentation (e.g., four-modality T1/T1c/T2/FLAIR for brain tumor) typically assumes full modality availability at training time, employing encoder–decoder architectures such as U-Net and V-Net. In clinical practice, however, modality absence due to interrupted scans, protocol differences, or quality issues is extremely common.
+**Background**: Multimodal MRI segmentation (e.g., four-modality T1/T1c/T2/FLAIR for brain tumor) typically assumes full modality availability at training time, employing encoder–decoder architectures such as U-Net and V-Net. In clinical practice, however, modality absence due to interrupted scans, protocol differences, or quality issues is extremely common.
 
 **Limitations of Prior Work**: (1) GAN-based synthesis of missing modalities is computationally expensive and prone to hallucinations; (2) arithmetic fusion methods such as HeMIS cause attention mechanisms to fail when zero-padding is applied; (3) the spatial priors in RFNet are passive—they specify where to attend but provide no signal as to which expert is trustworthy; (4) consistency learning approaches such as Mean Teacher are dominated by background voxels in volumetric MRI, so global consistency does not imply alignment on small foreground structures.
 
-**Root Cause**: Modality absence is not merely a problem of reduced information; it also amplifies prediction disagreement among modality experts. Naïve fusion can amplify such disagreement rather than resolve it, particularly for small foreground structures of clinical importance.
+**Key Challenge**: Modality absence is not merely a problem of reduced information; it also amplifies prediction disagreement among modality experts. Naïve fusion can amplify such disagreement rather than resolve it, particularly for small foreground structures of clinical importance.
 
-**Paper Goals**: How can inter-expert consistency be quantified as a reliability signal, and how can that signal guide dynamic fusion?
+**Goal**: How can inter-expert consistency be quantified as a reliability signal, and how can that signal guide dynamic fusion?
 
-**Starting Point**: Elevate robustness from the representation level to the decision level—rather than learning better features, the goal is to control which expert's output is trusted.
+**Key Insight**: Elevate robustness from the representation level to the decision level—rather than learning better features, the goal is to control which expert's output is trusted.
 
 **Core Idea**: Cosine similarity between expert predictions is used to quantify consistency at two levels—global (MEC) and foreground-region (REC)—and a gating network maps these consistency scores to fusion weights.
 

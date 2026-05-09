@@ -28,7 +28,7 @@ This paper conducts an in-depth analysis of the internal mechanism of the Differ
 
 ## Background & Motivation
 
-**State of the Field**: The Differential Transformer reduces attention noise by computing the difference between two sets of attention scores, $\text{Attn}(Q_1,K_1) - \lambda \cdot \text{Attn}(Q_2,K_2)$, and outperforms standard Transformers on multiple downstream tasks. However, a theoretical understanding of **why it works** remains lacking.
+**Background**: The Differential Transformer reduces attention noise by computing the difference between two sets of attention scores, $\text{Attn}(Q_1,K_1) - \lambda \cdot \text{Attn}(Q_2,K_2)$, and outperforms standard Transformers on multiple downstream tasks. However, a theoretical understanding of **why it works** remains lacking.
 
 **Limitations of Prior Work**:
    - The original paper only intuitively explains the mechanism as "eliminating noisy attention," without clarifying what constitutes "noise" or how the elimination occurs.
@@ -37,7 +37,7 @@ This paper conducts an in-depth analysis of the internal mechanism of the Differ
 
 **Core Problem**: What exactly does the differential operation in the Differential Transformer accomplish? How and why does it improve upon standard attention?
 
-**Starting Point**: Decompose the differential attention matrix into "signal" and "noise" components, and analyze the rank, distribution, and function of each component.
+**Key Insight**: Decompose the differential attention matrix into "signal" and "noise" components, and analyze the rank, distribution, and function of each component.
 
 **Key Findings**:
    - Standard softmax attention is forced to distribute probability mass across all tokens due to the normalization constraint, causing irrelevant tokens to receive non-zero weights — this constitutes the "noise."

@@ -28,7 +28,7 @@ This paper proposes DiaBlo—a parameter-efficient fine-tuning method that repla
 
 ## Background & Motivation
 
-**State of the Field**: LoRA and its variants (DoRA, PiSSA, MiLoRA, LoRA-GA) constitute the dominant family of PEFT methods. They inject trainable low-rank matrix products $\Delta\mathbf{W} = \mathbf{AB}$ alongside frozen pretrained weights, substantially reducing the number of trainable parameters. Earlier approaches such as Prompt Tuning and Prefix Tuning are lightweight but lack expressiveness; Adapter-based methods require architectural modifications and introduce inference latency.
+**Background**: LoRA and its variants (DoRA, PiSSA, MiLoRA, LoRA-GA) constitute the dominant family of PEFT methods. They inject trainable low-rank matrix products $\Delta\mathbf{W} = \mathbf{AB}$ alongside frozen pretrained weights, substantially reducing the number of trainable parameters. Earlier approaches such as Prompt Tuning and Prefix Tuning are lightweight but lack expressiveness; Adapter-based methods require architectural modifications and introduce inference latency.
 
 **Limitations of Prior Work**:
 

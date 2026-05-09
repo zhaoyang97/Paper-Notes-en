@@ -27,15 +27,15 @@ content_hash: aa9b713ed0624d9e
 This paper proposes BNNP (Bayesian Neural Network Process), a neural process that treats BNN weights as latent variables and the BNN itself as the decoder. Through layer-wise amortised variational inference, BNNP jointly learns BNN priors and inference networks across multiple datasets. It is the first work to empirically answer "Does a good prior eliminate the need for a good approximate inference method?"—the answer is no; there is no free lunch.
 
 ## Background & Motivation
-**State of the Field**: BNNs are theoretically elegant but prior selection remains a central challenge—weights lack interpretability, and convenient priors (isotropic Gaussians) degrade BNNs to Gaussian processes, sacrificing hierarchical representation learning. Neural processes learn implicit priors via meta-learning but cannot evaluate or sample from them.
+**Background**: BNNs are theoretically elegant but prior selection remains a central challenge—weights lack interpretability, and convenient priors (isotropic Gaussians) degrade BNNs to Gaussian processes, sacrificing hierarchical representation learning. Neural processes learn implicit priors via meta-learning but cannot evaluate or sample from them.
 
 **Limitations of Prior Work**: (1) It is unclear what constitutes a "good prior" for BNNs; (2) Even given a good prior, whether existing approximate inference methods (MFVI, HMC, etc.) are sufficient remains unknown; (3) Neural processes cannot perform within-task minibatching, leading to memory explosion on large datasets.
 
-**Root Cause**: Studying BNN behavior under a reasonable prior requires a good prior → a good prior must be learned from data → learning the prior requires good inference → good inference requires a good prior, forming a circular dependency.
+**Key Challenge**: Studying BNN behavior under a reasonable prior requires a good prior → a good prior must be learned from data → learning the prior requires good inference → good inference requires a good prior, forming a circular dependency.
 
-**Paper Goals**: Simultaneously address prior learning and amortised inference—meta-learn BNN priors from multiple related datasets while obtaining high-quality per-dataset posteriors.
+**Goal**: Simultaneously address prior learning and amortised inference—meta-learn BNN priors from multiple related datasets while obtaining high-quality per-dataset posteriors.
 
-**Starting Point**: BNN inference is reformulated as a neural process, where the latent variables are the weights and the decoder is the network parameterised by those weights. Per-layer conditional posteriors are solved in closed form via Bayesian linear regression.
+**Key Insight**: BNN inference is reformulated as a neural process, where the latent variables are the weights and the decoder is the network parameterised by those weights. Per-layer conditional posteriors are solved in closed form via Bayesian linear regression.
 
 **Core Idea**: BNN weights serve as the latent variables of a neural process, and the BNN itself serves as the decoder; priors and amortised inference are jointly learned from multi-task data.
 

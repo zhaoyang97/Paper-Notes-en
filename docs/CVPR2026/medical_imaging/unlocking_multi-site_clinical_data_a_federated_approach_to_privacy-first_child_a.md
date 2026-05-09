@@ -29,11 +29,11 @@ This paper proposes the first federated learning framework for children's autism
 
 ## Background & Motivation
 
-1. **State of the Field**: Early identification of Autism Spectrum Disorder (ASD) relies on behavioral observation and assessment, currently performed primarily by clinical experts. Video-based automatic behavior analysis (e.g., action recognition) has the potential to assist large-scale screening, but requires multi-site clinical data to train well-generalizing models.
+1. **Background**: Early identification of Autism Spectrum Disorder (ASD) relies on behavioral observation and assessment, currently performed primarily by clinical experts. Video-based automatic behavior analysis (e.g., action recognition) has the potential to assist large-scale screening, but requires multi-site clinical data to train well-generalizing models.
 2. **Limitations of Prior Work**: (1) Clinical videos of children constitute extremely sensitive data, and HIPAA/GDPR strictly prohibit cross-site sharing of raw video; (2) single-site data is limited in volume and subject to treatment style variation (e.g., robot-assisted vs. yoga), resulting in poor model generalizability; (3) existing federated learning research focuses predominantly on medical imaging (e.g., CT/MRI), with virtually no work targeting behavioral video.
-3. **Root Cause**: Multi-site collaboration improves model generalization, yet raw video contains sensitive information such as children's facial features and body characteristics—even federated learning cannot fully eliminate the risk of privacy leakage through gradient inversion attacks.
-4. **Paper Goals**: Design a two-tier privacy protection scheme that enables multi-site collaborative training without transmitting any identifiable information.
-5. **Starting Point**: Skeleton sequences naturally eliminate identity-related cues such as facial features, clothing, and background, and are invariant to lighting and camera conditions—serving simultaneously as a privacy protection mechanism and a robust behavioral representation.
+3. **Key Challenge**: Multi-site collaboration improves model generalization, yet raw video contains sensitive information such as children's facial features and body characteristics—even federated learning cannot fully eliminate the risk of privacy leakage through gradient inversion attacks.
+4. **Goal**: Design a two-tier privacy protection scheme that enables multi-site collaborative training without transmitting any identifiable information.
+5. **Key Insight**: Skeleton sequences naturally eliminate identity-related cues such as facial features, clothing, and background, and are invariant to lighting and camera conditions—serving simultaneously as a privacy protection mechanism and a robust behavioral representation.
 6. **Core Idea**: The first privacy tier anonymizes data via ROMP-based 3D skeleton extraction; the second tier enforces federated learning to keep data local. The combination of both layers satisfies the most stringent compliance requirements.
 
 ## Method

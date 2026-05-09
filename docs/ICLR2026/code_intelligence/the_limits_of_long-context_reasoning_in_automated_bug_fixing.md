@@ -26,15 +26,15 @@ content_hash: 068c1dd31d9e3389
 This paper systematically evaluates the limits of current LLMs in long-context code debugging. It finds that the success of agentic workflows stems from task decomposition rather than long-context reasoning (successful trajectories consume only 20–30K tokens), while performance degrades sharply under 64K single-pass patch generation (GPT-5-nano achieves 0%), revealing a significant gap between nominal context length and actual usable context capacity.
 
 ## Background & Motivation
-**State of the Field**: LLMs have made notable progress in code repair, with resolve rates on benchmarks such as SWE-bench steadily improving, primarily through agentic workflows (e.g., SWE-agent).
+**Background**: LLMs have made notable progress in code repair, with resolve rates on benchmarks such as SWE-bench steadily improving, primarily through agentic workflows (e.g., SWE-agent).
 
 **Limitations of Prior Work**: The success of agentic approaches is commonly attributed to the long-context reasoning capabilities of LLMs, yet this assumption has never been rigorously validated. A substantial gap may exist between the nominal context window (e.g., 128K) and the range over which reliable reasoning is actually achievable.
 
-**Root Cause**: Whether the success of agentic frameworks derives from "long-context reasoning" or from "task decomposition that reduces the problem to short contexts" remains unresolved.
+**Key Challenge**: Whether the success of agentic frameworks derives from "long-context reasoning" or from "task decomposition that reduces the problem to short contexts" remains unresolved.
 
-**Paper Goals**: Through controlled experiments, this work disentangles the contributions of agentic decomposition and long-context reasoning, quantifying the true capability of LLMs in long-context code repair.
+**Goal**: Through controlled experiments, this work disentangles the contributions of agentic decomposition and long-context reasoning, quantifying the true capability of LLMs in long-context code repair.
 
-**Starting Point**: Comparing the performance of the same model under agentic mode (incremental exploration) versus 64K single-pass mode (complete context provided at once).
+**Key Insight**: Comparing the performance of the same model under agentic mode (incremental exploration) versus 64K single-pass mode (complete context provided at once).
 
 **Core Idea**: The actual long-context reasoning capability of current LLMs falls far short of what their nominal context lengths would suggest.
 

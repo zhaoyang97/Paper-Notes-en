@@ -28,15 +28,15 @@ This work is the first to identify the systematic phenomenon that understanding 
 
 ## Background & Motivation
 
-**State of the Field**: Unified MLLMs such as Show-o, Transfusion, and Emu3 have demonstrated impressive performance by handling both multimodal understanding and image generation within a single Transformer architecture.
+**Background**: Unified MLLMs such as Show-o, Transfusion, and Emu3 have demonstrated impressive performance by handling both multimodal understanding and image generation within a single Transformer architecture.
 
 **Limitations of Prior Work**: Existing studies such as Liquid and MetaMorph investigate the synergy between understanding and generation from a data perspective, yet overlook a critical phenomenon—**understanding capability systematically outperforms generation capability**, with a significant gap between the two.
 
-**Root Cause**: Simply increasing training data for either understanding or generation does not proportionally improve both; the capability imbalance persists after pre-training. Existing DPO methods either optimize understanding alone (e.g., CSR) or generation alone (e.g., Emu3), and cannot jointly improve both.
+**Key Challenge**: Simply increasing training data for either understanding or generation does not proportionally improve both; the capability imbalance persists after pre-training. Existing DPO methods either optimize understanding alone (e.g., CSR) or generation alone (e.g., Emu3), and cannot jointly improve both.
 
-**Paper Goals**: How can both understanding and generation capabilities be simultaneously improved and their gap reduced, without relying on external high-quality data?
+**Goal**: How can both understanding and generation capabilities be simultaneously improved and their gap reduced, without relying on external high-quality data?
 
-**Starting Point**: The paper leverages an intrinsic property of MLLMs—that understanding is stronger than generation—using the model's superior understanding ability to evaluate generation quality, and constructing paired preference data for both modalities from homologous input data.
+**Key Insight**: The paper leverages an intrinsic property of MLLMs—that understanding is stronger than generation—using the model's superior understanding ability to evaluate generation quality, and constructing paired preference data for both modalities from homologous input data.
 
 **Core Idea**: Pair-DPO combined with iterative self-play optimization; paired preference data are constructed from homologous inputs to jointly optimize understanding and generation.
 

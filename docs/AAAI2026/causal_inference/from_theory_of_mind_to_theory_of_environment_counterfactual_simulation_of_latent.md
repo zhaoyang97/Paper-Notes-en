@@ -29,15 +29,15 @@ This paper proposes the concept of "Theory of Environment" (ToE), arguing that h
 
 ## Background & Motivation
 
-**State of the Field**: The motor systems of vertebrates employ dimensionality reduction strategies to constrain the complexity of motor coordination, enabling efficient movement control. For example, although human finger movements theoretically possess many degrees of freedom, the motor patterns (synergies) actually employed are far fewer than the theoretically available degrees of freedom. This dimensionality reduction is efficient in most environments.
+**Background**: The motor systems of vertebrates employ dimensionality reduction strategies to constrain the complexity of motor coordination, enabling efficient movement control. For example, although human finger movements theoretically possess many degrees of freedom, the motor patterns (synergies) actually employed are far fewer than the theoretically available degrees of freedom. This dimensionality reduction is efficient in most environments.
 
 **Limitations of Prior Work**: When an environment contains a large number of hidden action-outcome contingencies, dimensionality reduction strategies become a constraint—high-dimensional motor exploration is precisely what facilitates behavioral innovation and the discovery of new tools and skills. The question is: how does an agent know when it should increase the dimensionality of motor exploration?
 
-**Root Cause**: There is a fundamental tension between efficiency (dimensionality reduction for rapid execution of known actions) and exploration (dimensionality expansion to discover new action-outcome contingencies). Humans appear to be uniquely capable of inferring that "there may be environmental dynamics I have not yet discovered," thereby proactively expanding the exploration space.
+**Key Challenge**: There is a fundamental tension between efficiency (dimensionality reduction for rapid execution of known actions) and exploration (dimensionality expansion to discover new action-outcome contingencies). Humans appear to be uniquely capable of inferring that "there may be environmental dynamics I have not yet discovered," thereby proactively expanding the exploration space.
 
-**Paper Goals**: To propose a theoretical framework explaining how humans infer hidden environmental dynamics from social cues, and how this connects to the computational mechanisms of Theory of Mind.
+**Goal**: To propose a theoretical framework explaining how humans infer hidden environmental dynamics from social cues, and how this connects to the computational mechanisms of Theory of Mind.
 
-**Starting Point**: Drawing from cognitive science, the authors draw an analogy with Theory of Mind—just as humans understand social behavior by inferring others' latent mental states, humans may also discover novel tool-use behaviors by inferring the latent dynamic states of the environment.
+**Key Insight**: Drawing from cognitive science, the authors draw an analogy with Theory of Mind—just as humans understand social behavior by inferring others' latent mental states, humans may also discover novel tool-use behaviors by inferring the latent dynamic states of the environment.
 
 **Core Idea**: "Theory of Environment" (ToE) is a cognitive capacity—through counterfactual simulation, it infers latent environmental dynamics, thereby guiding the motor system to increase exploratory dimensionality in order to discover new behavioral repertoires.
 

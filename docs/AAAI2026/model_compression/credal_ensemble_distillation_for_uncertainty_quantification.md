@@ -41,9 +41,9 @@ Limitations of existing distillation approaches:
 
 **Ensemble Distribution Distillation (EDD)**: distills into a model outputting a Dirichlet distribution, but suffers from the lack of ground-truth Dirichlet labels; in practice, accuracy drops severely (74.56% vs. SNN's 91.79% on VGG16), and recent theoretical work has criticized its EU interpretation.
 
-**Root Cause**: How can a single forward pass simultaneously preserve predictive capability and EU quantification?
+**Key Challenge**: How can a single forward pass simultaneously preserve predictive capability and EU quantification?
 
-**Starting Point**: This work replaces single distributions or parametric distributions with **credal sets** (convex sets of probability distributions defined by class probability intervals) as a second-order uncertainty representation. Credal sets are naturally derived from the multiple predictive distributions of a DE and require no distributional assumptions such as those underlying the Dirichlet.
+**Key Insight**: This work replaces single distributions or parametric distributions with **credal sets** (convex sets of probability distributions defined by class probability intervals) as a second-order uncertainty representation. Credal sets are naturally derived from the multiple predictive distributions of a DE and require no distributional assumptions such as those underlying the Dirichlet.
 
 ## Method
 

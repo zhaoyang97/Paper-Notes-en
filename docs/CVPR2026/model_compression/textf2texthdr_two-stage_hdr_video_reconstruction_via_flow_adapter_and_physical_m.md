@@ -29,7 +29,7 @@ This paper proposes F²HDR, a two-stage HDR video reconstruction framework that 
 ## Background & Motivation
 Reconstructing HDR video from LDR frame sequences captured under alternating exposures is a cost-effective HDR acquisition approach. Long-exposure frames capture shadow detail but suffer from highlight saturation, while short-exposure frames preserve highlight information at the cost of increased noise in dark regions; their complementary fusion enables reconstruction of high dynamic range content.
 
-**Root Cause**: Cross-exposure frame alignment in dynamic scenes is extremely challenging — frames at different exposures exhibit large luminance discrepancies, and optical flow estimation is unreliable in regions with moving objects and occlusions, leading to ghosting artifacts and detail loss in the fused output.
+**Key Challenge**: Cross-exposure frame alignment in dynamic scenes is extremely challenging — frames at different exposures exhibit large luminance discrepancies, and optical flow estimation is unreliable in regions with moving objects and occlusions, leading to ghosting artifacts and detail loss in the fused output.
 
 **Two core limitations of existing methods**:
 

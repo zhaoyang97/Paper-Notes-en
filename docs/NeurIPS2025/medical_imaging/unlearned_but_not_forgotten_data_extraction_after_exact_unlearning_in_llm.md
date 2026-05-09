@@ -31,11 +31,11 @@ This paper reveals that even exact unlearning (retraining from scratch to remove
 
 LLM training corpora may contain sensitive personal information (e.g., medical records). Regulations such as GDPR and CCPA grant users the right to be forgotten, making machine unlearning a practical necessity.
 
-**State of the Field**: Approximate unlearning methods such as gradient ascent and NPO are computationally efficient but have been shown to be vulnerable to attacks that recover unlearned data (Lucki et al.; Hu et al.) and provide no formal guarantees.
+**Background**: Approximate unlearning methods such as gradient ascent and NPO are computationally efficient but have been shown to be vulnerable to attacks that recover unlearned data (Lucki et al.; Hu et al.) and provide no formal guarantees.
 
 **Limitations of Prior Work**: Exact unlearning—retraining from scratch on the dataset with the target records removed—is widely regarded as the gold standard and is generally assumed to be immune to extraction and inversion attacks.
 
-**Root Cause**: In realistic deployment scenarios, model checkpoints or logits APIs from before unlearning are often accessible: snapshots of open-source models can be saved, and API users may have cached prior query results. This means an adversary can simultaneously access both the pre- and post-unlearning model versions.
+**Key Challenge**: In realistic deployment scenarios, model checkpoints or logits APIs from before unlearning are often accessible: snapshots of open-source models can be saved, and API users may have cached prior query results. This means an adversary can simultaneously access both the pre- and post-unlearning model versions.
 
 The central finding is counterintuitive: **the unlearning operation itself increases the risk of information leakage**, because it provides the adversary with an additional signal—the behavioral difference between the two model versions precisely encodes distributional information about the deleted data.
 

@@ -29,15 +29,15 @@ The first benchmark to systematically evaluate the perspective understanding cap
 
 ## Background & Motivation
 
-**State of the Field**: Perspective understanding is fundamental to human visual cognition, and perspective projection has been widely used to represent three-dimensional space on two-dimensional planes, from Renaissance paintings to modern camera calibration. Current MLLMs demonstrate strong performance on high-level tasks such as visual question answering and image captioning.
+**Background**: Perspective understanding is fundamental to human visual cognition, and perspective projection has been widely used to represent three-dimensional space on two-dimensional planes, from Renaissance paintings to modern camera calibration. Current MLLMs demonstrate strong performance on high-level tasks such as visual question answering and image captioning.
 
 **Limitations of Prior Work**: Existing benchmarks (e.g., MMBench, MVBench) rarely evaluate models' geometric reasoning capabilities, particularly perspective understanding—including vanishing point localization, parallel line convergence reasoning, and spatial relationship judgment.
 
-**Root Cause**: Although MLLMs exhibit human-like visual perception, whether they have internalized perspective geometric priors remains entirely unknown. Specialized perspective methods rely on precise mathematical models or domain-specific datasets, making generalization to open-ended tasks difficult.
+**Key Challenge**: Although MLLMs exhibit human-like visual perception, whether they have internalized perspective geometric priors remains entirely unknown. Specialized perspective methods rely on precise mathematical models or domain-specific datasets, making generalization to open-ended tasks difficult.
 
-**Paper Goals**: Do MLLMs genuinely understand perspective? Can they localize vanishing points, reason about parallel line convergence, infer three-dimensional spatial relationships, and maintain consistency under viewpoint transformations?
+**Goal**: Do MLLMs genuinely understand perspective? Can they localize vanishing points, reason about parallel line convergence, infer three-dimensional spatial relationships, and maintain consistency under viewpoint transformations?
 
-**Starting Point**: Constructing a hierarchical and systematic evaluation framework spanning low-level perception, high-level reasoning, and robustness.
+**Key Insight**: Constructing a hierarchical and systematic evaluation framework spanning low-level perception, high-level reasoning, and robustness.
 
 **Core Idea**: Design 10 categories of perspective understanding tasks covering the perception–reasoning–robustness triad to systematically expose the spatial–geometric shortcomings of MLLMs.
 

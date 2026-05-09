@@ -28,15 +28,15 @@ Pose-dIVE leverages the SMPL model to jointly control human body pose and camera
 
 ## Background & Motivation
 
-**State of the Field**: Person Re-Identification (Re-ID) has achieved remarkable progress in tracking and recognizing individuals across multi-camera networks. Methods such as CLIP-ReID and SOLIDER demonstrate strong performance on standard benchmarks, yet a significant gap persists between training conditions and real-world deployment scenarios.
+**Background**: Person Re-Identification (Re-ID) has achieved remarkable progress in tracking and recognizing individuals across multi-camera networks. Methods such as CLIP-ReID and SOLIDER demonstrate strong performance on standard benchmarks, yet a significant gap persists between training conditions and real-world deployment scenarios.
 
 **Limitations of Prior Work**: Existing Re-ID datasets suffer from severe lack of diversity in body pose and camera viewpoint — typically containing only limited walking/standing poses and 2–3 fixed viewpoints. This unimodal distribution makes it difficult for models to learn identity features invariant to pose and viewpoint.
 
-**Root Cause**: Collecting richer and more diverse datasets is constrained by privacy concerns and the high cost of deploying large-scale multi-viewpoint camera systems. Existing data augmentation methods (GAN-based or simple geometric transformations) either exploit only the pose/viewpoint variations already present within the dataset, or treat pose and viewpoint as independent factors to be handled separately.
+**Key Challenge**: Collecting richer and more diverse datasets is constrained by privacy concerns and the high cost of deploying large-scale multi-viewpoint camera systems. Existing data augmentation methods (GAN-based or simple geometric transformations) either exploit only the pose/viewpoint variations already present within the dataset, or treat pose and viewpoint as independent factors to be handled separately.
 
-**Paper Goals**: (1) How to systematically inject sparse and underrepresented pose and viewpoint samples into training data? (2) How to handle pose and viewpoint variations jointly rather than independently? (3) How to ensure that generated augmentation data preserves identity consistency?
+**Goal**: (1) How to systematically inject sparse and underrepresented pose and viewpoint samples into training data? (2) How to handle pose and viewpoint variations jointly rather than independently? (3) How to ensure that generated augmentation data preserves identity consistency?
 
-**Starting Point**: The SMPL 3D human body model is used to simultaneously encode pose and viewpoint information (implicitly encoding camera viewpoint via depth maps and normal maps), with pretrained Stable Diffusion's powerful priors leveraged to generate high-fidelity augmented images.
+**Key Insight**: The SMPL 3D human body model is used to simultaneously encode pose and viewpoint information (implicitly encoding camera viewpoint via depth maps and normal maps), with pretrained Stable Diffusion's powerful priors leveraged to generate high-fidelity augmented images.
 
 **Core Idea**: Uniformly sample poses and viewpoints from external data sources, render them into 2D conditioning signals via SMPL, and guide the diffusion model to generate identity-consistent, diversified training samples.
 

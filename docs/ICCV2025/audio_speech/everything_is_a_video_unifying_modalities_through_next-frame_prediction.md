@@ -29,15 +29,15 @@ This paper reformulates multimodal learning tasks involving text, images, audio,
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal learning requires integrating text, images, audio, and video to accomplish tasks such as visual question answering, cross-modal retrieval, and caption generation. Dominant approaches rely on modality-specific encoders (e.g., ViT for images, Transformer for text) followed by late fusion, necessitating dedicated encoders and inter-modal alignment strategies for each modality.
+**Background**: Multimodal learning requires integrating text, images, audio, and video to accomplish tasks such as visual question answering, cross-modal retrieval, and caption generation. Dominant approaches rely on modality-specific encoders (e.g., ViT for images, Transformer for text) followed by late fusion, necessitating dedicated encoders and inter-modal alignment strategies for each modality.
 
 **Limitations of Prior Work**: Modality-specific encoder designs constrain scalability and flexibility—every new modality requires a new encoder and fusion strategy; different modalities occupy distinct representation spaces, making cross-modal knowledge transfer difficult; and architectural complexity grows with the number of modalities.
 
-**Root Cause**: NLP has already achieved a "unified interface" paradigm in which all NLP tasks can be reformulated as text generation (prompt-based learning), enabling a single LLM to handle translation, summarization, question answering, and more. Multimodal learning has yet to achieve an analogous unification—different modalities still demand different processing pipelines.
+**Key Challenge**: NLP has already achieved a "unified interface" paradigm in which all NLP tasks can be reformulated as text generation (prompt-based learning), enabling a single LLM to handle translation, summarization, question answering, and more. Multimodal learning has yet to achieve an analogous unification—different modalities still demand different processing pipelines.
 
-**Paper Goals**: To extend the task-reformulation idea from NLP to the multimodal domain by identifying a "supertask" that unifies all modalities, enabling a single model to handle diverse multimodal tasks without any modality-specific components.
+**Goal**: To extend the task-reformulation idea from NLP to the multimodal domain by identifying a "supertask" that unifies all modalities, enabling a single model to handle diverse multimodal tasks without any modality-specific components.
 
-**Starting Point**: The authors observe that text can be rendered as image frames (one frame per token) and audio can be converted into spectrograms; consequently, all modalities can theoretically be converted into visual frame sequences without information loss.
+**Key Insight**: The authors observe that text can be rendered as image frames (one frame per token) and audio can be converted into spectrograms; consequently, all modalities can theoretically be converted into visual frame sequences without information loss.
 
 **Core Idea**: Reformulate all multimodal tasks as next-frame prediction—inputs and outputs are uniformly represented as sequences of 64×64 RGB video frames, with separator frames delineating input from output, so that the model needs only to learn next-frame prediction to handle cross-modal tasks.
 

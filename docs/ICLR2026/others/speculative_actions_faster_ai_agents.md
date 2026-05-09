@@ -27,15 +27,15 @@ Inspired by CPU speculative execution and LLM speculative decoding, this paper p
 
 ## Background & Motivation
 
-**State of the Field**: AI agents interacting with environments follow a strict sequential pattern: the agent generates an action → the environment responds → the agent generates the next action. When large models (e.g., GPT-5, Gemini-2.5-Pro) serve as agents, the latency of each API call becomes a bottleneck.
+**Background**: AI agents interacting with environments follow a strict sequential pattern: the agent generates an action → the environment responds → the agent generates the next action. When large models (e.g., GPT-5, Gemini-2.5-Pro) serve as agents, the latency of each API call becomes a bottleneck.
 
 **Limitations of Prior Work**: (a) Speculative decoding only accelerates token generation and does not address agent–environment interaction latency; (b) existing agent acceleration methods mostly sacrifice accuracy (e.g., replacing large models with small ones); (c) no theoretical framework exists to analyze the cost–latency trade-off of parallel speculation in agents.
 
-**Root Cause**: Large-model agents achieve high accuracy but are slow; small models are fast but insufficiently accurate. Can both be achieved simultaneously—preserving large-model output quality while approaching small-model speed?
+**Key Challenge**: Large-model agents achieve high accuracy but are slow; small models are fast but insufficiently accurate. Can both be achieved simultaneously—preserving large-model output quality while approaching small-model speed?
 
-**Paper Goals**: Design a lossless acceleration framework that exploits the speed gap between large and small models to speculatively execute actions in parallel, reducing end-to-end latency while fully preserving the output quality of the large model.
+**Goal**: Design a lossless acceleration framework that exploits the speed gap between large and small models to speculatively execute actions in parallel, reducing end-to-end latency while fully preserving the output quality of the large model.
 
-**Starting Point**: The key insight from CPU speculative execution—"predict then verify" does not affect correctness, only efficiency. Analogously, in agent interactions, predicted actions are pre-executed; matches are reused and mismatches are discarded, yielding results identical to purely sequential execution.
+**Key Insight**: The key insight from CPU speculative execution—"predict then verify" does not affect correctness, only efficiency. Analogously, in agent interactions, predicted actions are pre-executed; matches are reused and mismatches are discarded, yielding results identical to purely sequential execution.
 
 **Core Idea**: A fast small model predicts agent actions and pre-executes environment steps; when predictions are correct, one round of waiting is skipped, and the resulting trajectory is guaranteed to be identical to sequential execution.
 

@@ -28,18 +28,18 @@ This paper proposes X-GRAAD, an inference-time backdoor defense that combines at
 
 ## Background & Motivation
 
-**State of the Field**: Pre-trained language models are vulnerable to backdoor attacks, in which adversaries embed trigger patterns into training data so that models behave normally on clean inputs but produce targeted misclassifications upon encountering triggers.
+**Background**: Pre-trained language models are vulnerable to backdoor attacks, in which adversaries embed trigger patterns into training data so that models behave normally on clean inputs but produce targeted misclassifications upon encountering triggers.
 
 **Limitations of Prior Work**:
 - Training-time defenses require monitoring the entire dataset, which is infeasible in third-party pre-training scenarios.
 - Inference-time defenses have limited capacity to handle unknown trigger patterns.
 - Most defenses lack explainability — they cannot inform users which tokens are suspicious.
 
-**Root Cause**: How can trigger tokens be precisely localized and neutralized without prior knowledge of the trigger pattern?
+**Key Challenge**: How can trigger tokens be precisely localized and neutralized without prior knowledge of the trigger pattern?
 
-**Paper Goals**: Explainable inference-time backdoor defense.
+**Goal**: Explainable inference-time backdoor defense.
 
-**Starting Point**: A prior observation that trigger tokens simultaneously exhibit anomalies in both attention and gradient signals.
+**Key Insight**: A prior observation that trigger tokens simultaneously exhibit anomalies in both attention and gradient signals.
 
 **Core Idea**: Gradient anomaly × attention anomaly = precise trigger localization → character-level perturbation neutralization.
 

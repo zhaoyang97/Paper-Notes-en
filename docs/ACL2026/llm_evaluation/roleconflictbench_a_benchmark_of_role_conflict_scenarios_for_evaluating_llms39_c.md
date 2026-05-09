@@ -29,15 +29,15 @@ RoleConflictBench constructs 13,914 role conflict scenarios and leverages situat
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly deployed in personalized advisory systems and social simulations, requiring them to navigate complex social dilemmas. Existing evaluations of LLMs' social capabilities focus primarily on social norm compliance, moral reasoning, and social relationship understanding, typically adopting normative paradigms with predetermined correct answers.
+**Background**: LLMs are increasingly deployed in personalized advisory systems and social simulations, requiring them to navigate complex social dilemmas. Existing evaluations of LLMs' social capabilities focus primarily on social norm compliance, moral reasoning, and social relationship understanding, typically adopting normative paradigms with predetermined correct answers.
 
 **Limitations of Prior Work**: Role conflict—situations in which the expectations of multiple social roles are mutually contradictory and cannot be simultaneously satisfied—is a common real-world social dilemma, yet no dedicated evaluation framework exists. Such problems have no single correct answer; the appropriate decision depends on multiple contextual factors, and existing benchmarks cannot assess LLMs' contextual sensitivity in such subjective domains.
 
-**Root Cause**: Subjective social dilemmas lack objective evaluation criteria—how can model behavior be quantitatively assessed in scenarios with no ground-truth answer?
+**Key Challenge**: Subjective social dilemmas lack objective evaluation criteria—how can model behavior be quantitatively assessed in scenarios with no ground-truth answer?
 
-**Paper Goals**: (1) Design a benchmark that quantitatively evaluates LLMs' contextual sensitivity in role conflict scenarios; (2) reveal the behavioral patterns and inherent biases of LLMs when confronted with role conflicts.
+**Goal**: (1) Design a benchmark that quantitatively evaluates LLMs' contextual sensitivity in role conflict scenarios; (2) reveal the behavioral patterns and inherent biases of LLMs when confronted with role conflicts.
 
-**Starting Point**: Situational urgency is introduced as an objective control variable. While the "correct role" to prioritize may be debatable, the principle that emergencies must take precedence over routine matters commands broad consensus (98% human agreement). This establishes a baseline: high urgency must be prioritized over low urgency.
+**Key Insight**: Situational urgency is introduced as an objective control variable. While the "correct role" to prioritize may be debatable, the principle that emergencies must take precedence over routine matters commands broad consensus (98% human agreement). This establishes a baseline: high urgency must be prioritized over low urgency.
 
 **Core Idea**: Urgency differentials are used to establish an objective baseline, and the degree to which model decisions deviate from this baseline is quantified as a sensitivity score, enabling objective evaluation within a subjective domain.
 

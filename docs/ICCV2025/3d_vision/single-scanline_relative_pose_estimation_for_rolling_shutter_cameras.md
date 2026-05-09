@@ -29,15 +29,15 @@ This paper proposes a rolling shutter relative pose estimation method that requi
 
 ## Background & Motivation
 
-**State of the Field**: Relative pose estimation is a fundamental problem in computer vision, widely used in SfM, SLAM, multi-view stereo, and visual odometry. Most methods assume a global shutter (GS) camera model where all pixels are exposed simultaneously. However, consumer devices (smartphones, action cameras) commonly use rolling shutter (RS) sensors that capture images row by row — when the camera moves during exposure, RS effects introduce image distortion.
+**Background**: Relative pose estimation is a fundamental problem in computer vision, widely used in SfM, SLAM, multi-view stereo, and visual odometry. Most methods assume a global shutter (GS) camera model where all pixels are exposed simultaneously. However, consumer devices (smartphones, action cameras) commonly use rolling shutter (RS) sensors that capture images row by row — when the camera moves during exposure, RS effects introduce image distortion.
 
 **Limitations of Prior Work**: Nearly all existing RS-aware methods rely on parametric motion models (e.g., SLERP, Cayley transform, linearized rotation, affine motion) to describe the camera trajectory during scanning. These approaches suffer from: (1) motion model assumptions that may deviate from the true trajectory, introducing errors; (2) the need for prior knowledge to select an appropriate model; and (3) increased solver complexity due to complex motion parameterizations.
 
-**Root Cause**: Accurate RS relative pose estimation seems to require knowledge of the camera's motion state at each scanline — yet the motion model itself is a strong assumption that may introduce systematic bias.
+**Key Challenge**: Accurate RS relative pose estimation seems to require knowledge of the camera's motion state at each scanline — yet the motion model itself is a strong assumption that may introduce systematic bias.
 
-**Paper Goals**: Can RS relative pose estimation be performed entirely without a motion model, estimating the pose of each scanline independently? If so, this would provide a model-agnostic initialization scheme for RS SfM.
+**Goal**: Can RS relative pose estimation be performed entirely without a motion model, estimating the pose of each scanline independently? If so, this would provide a model-agnostic initialization scheme for RS SfM.
 
-**Starting Point**: The paper exploits the projection properties of 3D lines onto RS images — by selecting one scanline per image and detecting intersections of line projections with that scanline, pose constraints can be established without any motion model.
+**Key Insight**: The paper exploits the projection properties of 3D lines onto RS images — by selecting one scanline per image and detecting intersections of line projections with that scanline, pose constraints can be established without any motion model.
 
 **Core Idea**: The RS relative pose estimation problem is reformulated as a geometric problem of recovering camera pose from intersections of line projections with a single scanline per image. New algebraic constraints are derived and minimal solvers are developed accordingly.
 

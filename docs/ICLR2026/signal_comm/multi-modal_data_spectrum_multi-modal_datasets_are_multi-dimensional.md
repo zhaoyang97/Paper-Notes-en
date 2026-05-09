@@ -29,15 +29,15 @@ Through a large-scale empirical study, this work quantifies intra-modal and inte
 
 ## Background & Motivation
 
-1. **State of the Field**: The rapid development of multimodal large language models (MLLMs) has been accompanied by a proliferation of evaluation benchmarks—over 200 multimodal benchmarks have been proposed—yet systematic understanding of what these datasets actually measure remains lacking.
+1. **Background**: The rapid development of multimodal large language models (MLLMs) has been accompanied by a proliferation of evaluation benchmarks—over 200 multimodal benchmarks have been proposed—yet systematic understanding of what these datasets actually measure remains lacking.
 
 2. **Limitations of Prior Work**: Relationships, redundancies, and unique contributions among benchmarks remain unclear. The addition or removal of benchmarks across evaluation cycles lacks justification (e.g., Gemini 2.5 omits several benchmarks used by Gemini 1.5), making it difficult to determine whether performance gains reflect genuine capability improvements or adaptation to different biases.
 
-3. **Root Cause**: Benchmark design has fallen into a "cat-and-mouse game"—new datasets are created to eliminate text bias, yet inadvertently introduce image bias; models achieve high scores via unimodal shortcuts that do not reflect genuine multimodal understanding.
+3. **Key Challenge**: Benchmark design has fallen into a "cat-and-mouse game"—new datasets are created to eliminate text bias, yet inadvertently introduce image bias; models achieve high scores via unimodal shortcuts that do not reflect genuine multimodal understanding.
 
-4. **Paper Goals**: To systematically quantify the strength of intra-modal dependencies (answerable from a single modality) and inter-modal dependencies (requiring interaction between both modalities) in existing multimodal benchmarks.
+4. **Goal**: To systematically quantify the strength of intra-modal dependencies (answerable from a single modality) and inter-modal dependencies (requiring interaction between both modalities) in existing multimodal benchmarks.
 
-5. **Starting Point**: A modality shuffling method is employed that breaks inter-modal associations while preserving the marginal distribution of each modality, measuring performance degradation to quantify each modality's contribution.
+5. **Key Insight**: A modality shuffling method is employed that breaks inter-modal associations while preserving the marginal distribution of each modality, measuring performance degradation to quantify each modality's contribution.
 
 6. **Core Idea**: Multimodal datasets are inherently multi-dimensional—each benchmark differs in its degree of visual dependency, textual dependency, and cross-modal interaction dependency, necessitating multi-dimensional characterization rather than a single aggregated score.
 
@@ -145,15 +145,15 @@ Through a large-scale empirical study, intra-modal and inter-modal dependencies 
 
 ## Background & Motivation
 
-1. **State of the Field**: MLLMs are developing rapidly, accompanied by the emergence of over 200 evaluation benchmarks, yet systematic understanding of what these benchmarks actually measure remains absent.
+1. **Background**: MLLMs are developing rapidly, accompanied by the emergence of over 200 evaluation benchmarks, yet systematic understanding of what these benchmarks actually measure remains absent.
 
 2. **Limitations of Prior Work**: Benchmark selection lacks scientific grounding—the datasets used in Gemini 1.5 and Gemini 2.5 evaluations differ without explanation. It is difficult to determine whether model performance improvements represent genuine multimodal capability gains or exploitation of unimodal shortcuts.
 
-3. **Root Cause**: Benchmark development is caught in a "cat-and-mouse game"—new datasets are designed to eliminate specific unimodal biases but are subsequently found to introduce new ones (e.g., VQA → VQAv2 → VQA-CP → MMMU → MMMU-Pro).
+3. **Key Challenge**: Benchmark development is caught in a "cat-and-mouse game"—new datasets are designed to eliminate specific unimodal biases but are subsequently found to introduce new ones (e.g., VQA → VQAv2 → VQA-CP → MMMU → MMMU-Pro).
 
-4. **Paper Goals**: To conduct a systematic modality dependency analysis of existing multimodal benchmarks and provide a quantitative characterization framework.
+4. **Goal**: To conduct a systematic modality dependency analysis of existing multimodal benchmarks and provide a quantitative characterization framework.
 
-5. **Starting Point**: A modality shuffling method is employed that disrupts inter-modal dependencies while preserving unimodal marginal distributions, measuring performance changes across four input conditions.
+5. **Key Insight**: A modality shuffling method is employed that disrupts inter-modal dependencies while preserving unimodal marginal distributions, measuring performance changes across four input conditions.
 
 6. **Core Idea**: Multimodal datasets are inherently multi-dimensional; the strength of intra-modal dependencies (answerable from a single modality) and inter-modal dependencies (requiring joint reasoning) varies substantially both within and across benchmarks.
 

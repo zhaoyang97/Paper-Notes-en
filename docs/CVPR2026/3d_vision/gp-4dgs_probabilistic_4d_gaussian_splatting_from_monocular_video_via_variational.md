@@ -28,15 +28,15 @@ GP-4DGS integrates variational Gaussian Processes (GP) into 4D Gaussian Splattin
 
 ## Background & Motivation
 
-**State of the Field**: 4D Gaussian Splatting (4DGS) is the dominant paradigm for dynamic novel view synthesis, modeling dynamic scenes by deforming 3D Gaussian primitives over time. Existing methods such as D-3DGS (MLP-based deformation), 4DGS (HexPlane), and STG (polynomial deformation) have achieved strong visual quality.
+**Background**: 4D Gaussian Splatting (4DGS) is the dominant paradigm for dynamic novel view synthesis, modeling dynamic scenes by deforming 3D Gaussian primitives over time. Existing methods such as D-3DGS (MLP-based deformation), 4DGS (HexPlane), and STG (polynomial deformation) have achieved strong visual quality.
 
 **Limitations of Prior Work**: (1) Existing methods treat motion as a deterministic optimization problem and impose hand-crafted motion priors (polynomial deformation, rigidity constraints, etc.) that are applied uniformly across all primitives, making them ill-suited for under-observed or occluded regions. (2) No mechanism exists for uncertainty estimation in motion prediction. (3) Temporal extrapolation beyond training frames is not supported.
 
-**Root Cause**: Fixed deterministic motion priors cannot distinguish between well-observed and sparsely observed regions—over-constraining the former and under-constraining the latter. A mechanism is needed that automatically adapts regularization strength based on observation confidence.
+**Key Challenge**: Fixed deterministic motion priors cannot distinguish between well-observed and sparsely observed regions—over-constraining the former and under-constraining the latter. A mechanism is needed that automatically adapts regularization strength based on observation confidence.
 
-**Paper Goals**: (1) How to provide principled uncertainty quantification for motion prediction in 4DGS? (2) How to learn motion priors from well-observed regions and propagate them to sparse or unobserved regions? (3) How to enable temporal extrapolation beyond training frames?
+**Goal**: (1) How to provide principled uncertainty quantification for motion prediction in 4DGS? (2) How to learn motion priors from well-observed regions and propagate them to sparse or unobserved regions? (3) How to enable temporal extrapolation beyond training frames?
 
-**Starting Point**: Gaussian Processes are naturally distributions over function spaces, with kernel functions defining the correlation structure between data points. Applying GPs to model deformation fields simultaneously enables adaptive priors, uncertainty quantification, and extrapolation—all as direct consequences of the probabilistic GP formulation, requiring no additional modeling effort.
+**Key Insight**: Gaussian Processes are naturally distributions over function spaces, with kernel functions defining the correlation structure between data points. Applying GPs to model deformation fields simultaneously enables adaptive priors, uncertainty quantification, and extrapolation—all as direct consequences of the probabilistic GP formulation, requiring no additional modeling effort.
 
 **Core Idea**: Replace deterministic deformation functions with variational Gaussian Processes, capture geometric and motion correlations via spatiotemporal composite kernels, and naturally obtain uncertainty estimates and extrapolation capability while using the GP posterior mean to guide 4DGS optimization.
 

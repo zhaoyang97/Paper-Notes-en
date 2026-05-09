@@ -28,14 +28,14 @@ SaPaVe proposes an end-to-end active manipulation framework that decouples camer
 
 ## Background & Motivation
 
-1. **State of the Field**: Active perception and manipulation are core capabilities for robots interacting with complex scenes. Existing VLMs (e.g., Qwen2.5-VL, Gemini 2.5 Pro) have improved semantic understanding, while VLA models (e.g., π₀, GR00T N1) aim to bridge vision–language–action end-to-end.
+1. **Background**: Active perception and manipulation are core capabilities for robots interacting with complex scenes. Existing VLMs (e.g., Qwen2.5-VL, Gemini 2.5 Pro) have improved semantic understanding, while VLA models (e.g., π₀, GR00T N1) aim to bridge vision–language–action end-to-end.
 2. **Limitations of Prior Work**:
    - VLMs treat active perception as a VQA task (selecting the best viewpoint from discrete candidates), precluding continuous fine-grained camera control.
    - VLA models are typically trained and evaluated under fixed, optimal head-camera viewpoints, making them sensitive to viewpoint changes and unable to actively adjust perspective.
    - Naively extending the VLA action space with camera actions causes conflicts and requires large amounts of expensive real-world active-perception-plus-manipulation data.
-3. **Root Cause**: Active manipulation requires tight coupling of *semantic active perception* (adjusting viewpoint based on task strategy to acquire critical information) and *active-viewpoint execution* (robust manipulation under dynamic viewpoints), yet data scarcity and action-space conflicts make it difficult for existing methods to achieve both.
-4. **Paper Goals**: Enable robots to simultaneously learn semantically driven active viewpoint adjustment and robust manipulation under viewpoint changes, in a data-efficient manner.
-5. **Starting Point**: The key insight is that camera motion is embodiment-agnostic and can therefore be learned independently before joint optimization, enabling an efficient bottom-up training pipeline.
+3. **Key Challenge**: Active manipulation requires tight coupling of *semantic active perception* (adjusting viewpoint based on task strategy to acquire critical information) and *active-viewpoint execution* (robust manipulation under dynamic viewpoints), yet data scarcity and action-space conflicts make it difficult for existing methods to achieve both.
+4. **Goal**: Enable robots to simultaneously learn semantically driven active viewpoint adjustment and robust manipulation under viewpoint changes, in a data-efficient manner.
+5. **Key Insight**: The key insight is that camera motion is embodiment-agnostic and can therefore be learned independently before joint optimization, enabling an efficient bottom-up training pipeline.
 6. **Core Idea**: Decouple camera actions from manipulation actions; first establish active-perception priors from large-scale semantic camera-motion data, then jointly optimize for data-efficient active manipulation.
 
 ## Method

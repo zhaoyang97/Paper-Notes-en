@@ -31,7 +31,7 @@ This paper proposes a training-free image attribution method based on the ratio 
 
 ### State of the Field
 
-**State of the Field**: With the widespread adoption of powerful latent diffusion models (LDMs) such as Stable Diffusion and FLUX, anyone can easily generate photorealistic images, raising serious security concerns — malicious actors may misappropriate others' model outputs or exploit commercial models for illicit gain. Accurately tracing the source model of a generated image (origin attribution) has therefore become critically important.
+**Background**: With the widespread adoption of powerful latent diffusion models (LDMs) such as Stable Diffusion and FLUX, anyone can easily generate photorealistic images, raising serious security concerns — malicious actors may misappropriate others' model outputs or exploit commercial models for illicit gain. Accurately tracing the source model of a generated image (origin attribution) has therefore become critically important.
 
 Existing passive attribution methods (reconstruction-based approaches such as RONAN and LatentTracer) rely on gradient-guided reconstruction and compare absolute reconstruction losses to determine attribution. However, these methods suffer from two critical problems:
 1. **Failure on next-generation high-quality models**: The autoencoders of models such as FLUX achieve extremely high reconstruction quality, causing the reconstruction losses of both belonging and non-belonging images to collapse to similarly low values (~10⁻⁵), making their distributions indistinguishable.
@@ -39,7 +39,7 @@ Existing passive attribution methods (reconstruction-based approaches such as RO
 
 ### Starting Point
 
-**Paper Goals**: How to design an accurate and efficient image attribution method — without additional training or modification of generative models — that remains robust on the latest diffusion models including FLUX?
+**Goal**: How to design an accurate and efficient image attribution method — without additional training or modification of generative models — that remains robust on the latest diffusion models including FLUX?
 
 ## Method
 

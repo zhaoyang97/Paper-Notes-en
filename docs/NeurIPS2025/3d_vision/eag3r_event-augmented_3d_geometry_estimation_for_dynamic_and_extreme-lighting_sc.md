@@ -29,15 +29,15 @@ EAG3R integrates asynchronous event streams from event cameras into the MonST3R 
 
 ## Background & Motivation
 
-**State of the Field**: DUSt3R/MonST3R leverages Transformers to directly regress dense point maps for pose-free 3D reconstruction, sparking a wave of research addressing challenging scenarios such as long sequences and dynamic scenes.
+**Background**: DUSt3R/MonST3R leverages Transformers to directly regress dense point maps for pose-free 3D reconstruction, sparking a wave of research addressing challenging scenarios such as long sequences and dynamic scenes.
 
 **Limitations of Prior Work**: In real-world scenarios such as autonomous driving, rapid motion and drastic illumination changes cause RGB image degradation including blur, overexposure, and underexposure. Existing RGB-only methods suffer severe performance degradation under these conditions.
 
-**Root Cause**: RGB cameras rely on long-exposure imaging, making them inherently ill-suited for extreme lighting and fast-motion scenes. Event cameras offer high temporal resolution and high dynamic range, yet have not been integrated into modern learning-based geometry estimation pipelines.
+**Key Challenge**: RGB cameras rely on long-exposure imaging, making them inherently ill-suited for extreme lighting and fast-motion scenes. Event cameras offer high temporal resolution and high dynamic range, yet have not been integrated into modern learning-based geometry estimation pipelines.
 
-**Paper Goals**: To effectively incorporate event camera data into a point map-based reconstruction framework, maintaining robustness in extreme low-light dynamic scenes.
+**Goal**: To effectively incorporate event camera data into a point map-based reconstruction framework, maintaining robustness in extreme low-light dynamic scenes.
 
-**Starting Point**: Lightweight event adapters and SNR-guided adaptive fusion are added on top of the MonST3R backbone, while event streams are used to construct photometric consistency constraints in global optimization.
+**Key Insight**: Lightweight event adapters and SNR-guided adaptive fusion are added on top of the MonST3R backbone, while event streams are used to construct photometric consistency constraints in global optimization.
 
 **Core Idea**: SNR-aware fusion trusts RGB features in high-SNR regions and event features in low-SNR regions, while brightness changes from events serve as additional supervision signals in global optimization.
 

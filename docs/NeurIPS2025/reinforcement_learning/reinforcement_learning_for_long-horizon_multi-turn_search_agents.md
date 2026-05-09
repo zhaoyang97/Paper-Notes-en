@@ -28,15 +28,15 @@ This paper demonstrates that a 14B-parameter search agent trained with RL can su
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have demonstrated strong capabilities in tool use and multi-step reasoning. Multi-turn document search is a complex long-horizon interactive task in which an agent must iteratively query to locate specific information.
+**Background**: LLMs have demonstrated strong capabilities in tool use and multi-step reasoning. Multi-turn document search is a complex long-horizon interactive task in which an agent must iteratively query to locate specific information.
 
 **Limitations of Prior Work**: (1) Prompt-based methods achieve reasonable performance but lack the ability to learn from experience; (2) naïve RAG (single-shot retrieval) performs poorly on such tasks (33%); (3) tool access alone is insufficient—base Qwen3-14B with the same tools achieves only 53%.
 
-**Root Cause**: Tool access ≠ effective tool use. An agent must learn to exploit multi-turn interaction opportunities to progressively narrow the search space.
+**Key Challenge**: Tool access ≠ effective tool use. An agent must learn to exploit multi-turn interaction opportunities to progressively narrow the search space.
 
-**Paper Goals**: Train an agent via RL to effectively use search tools across multi-turn interactions.
+**Goal**: Train an agent via RL to effectively use search tools across multi-turn interactions.
 
-**Starting Point**: Construct a legal document search benchmark, design a segmented reward structure (rewarding correct document retrieval, correct citation, and appropriate abstention; penalizing hallucination and formatting errors), and train a LoRA adapter with GRPO.
+**Key Insight**: Construct a legal document search benchmark, design a segmented reward structure (rewarding correct document retrieval, correct citation, and appropriate abstention; penalizing hallucination and formatting errors), and train a LoRA adapter with GRPO.
 
 **Core Idea**: Through carefully designed segmented rewards and GRPO training, a 14B model learns to effectively leverage multi-turn search interactions, ultimately outperforming frontier models.
 

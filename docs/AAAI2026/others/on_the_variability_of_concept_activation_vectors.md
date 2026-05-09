@@ -30,13 +30,13 @@ This paper presents the first theoretical analysis of the variability of Concept
 
 ### State of the Field
 
-**State of the Field**: TCAV (Testing with Concept Activation Vectors) is one of the core methods in concept-based interpretability. It obtains a concept direction vector (CAV) by training a linear classifier to separate concept embeddings from random embeddings, and then measures the sensitivity of model predictions to that direction.
+**Background**: TCAV (Testing with Concept Activation Vectors) is one of the core methods in concept-based interpretability. It obtains a concept direction vector (CAV) by training a linear classifier to separate concept embeddings from random embeddings, and then measures the sensitivity of model predictions to that direction.
 
 **Limitations of Prior Work**: TCAV relies on random sampling to construct reference sets, causing results to vary across runs. Kim et al. recommend averaging over multiple runs, but provide no quantitative guidance on how many runs or how many samples are needed to obtain stable results.
 
 **Core Problem**: Given a fixed computational budget, is it better to perform one large-sample run or to average over multiple small-sample runs? Theoretical guidance has been absent.
 
-**Starting Point**: Leveraging asymptotic theory for imbalanced logistic regression, this paper analyzes the convergence behavior of the CAV estimator as the number of random samples tends to infinity.
+**Key Insight**: Leveraging asymptotic theory for imbalanced logistic regression, this paper analyzes the convergence behavior of the CAV estimator as the number of random samples tends to infinity.
 
 ## Method
 

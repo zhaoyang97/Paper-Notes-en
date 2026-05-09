@@ -29,15 +29,15 @@ This paper proposes Re-FORC, a lightweight adapter that predicts the future expe
 
 ## Background & Motivation
 
-**State of the Field**: Chain-of-thought reasoning in large language models (e.g., DeepSeek-R1, QwQ) significantly improves accuracy on complex tasks such as mathematics by extending the reasoning chain. However, longer chains incur higher computational costs, and not every problem warrants equally lengthy reasoning.
+**Background**: Chain-of-thought reasoning in large language models (e.g., DeepSeek-R1, QwQ) significantly improves accuracy on complex tasks such as mathematics by extending the reasoning chain. However, longer chains incur higher computational costs, and not every problem warrants equally lengthy reasoning.
 
 **Limitations of Prior Work**: Existing CoT reasoning lacks an adaptive mechanism for determining when to stop thinking. Simple problems waste large numbers of tokens on unnecessary reasoning, while hard problems may receive insufficient computation. Current methods either require retraining (e.g., RL-based chain compression) or rely on simple heuristics (e.g., fixed-length truncation), and cannot flexibly adjust at inference time.
 
-**Root Cause**: Optimal allocation of test-time compute is fundamentally a sequential decision problem under uncertainty—given a partial reasoning trace, the question of whether to continue (spending more compute) or stop (accepting the current answer) depends on the expected marginal improvement from further reasoning, which is itself unknown during generation.
+**Key Challenge**: Optimal allocation of test-time compute is fundamentally a sequential decision problem under uncertainty—given a partial reasoning trace, the question of whether to continue (spending more compute) or stop (accepting the current answer) depends on the expected marginal improvement from further reasoning, which is itself unknown during generation.
 
-**Paper Goals**: Design a lightweight "reasoning forecaster" that evaluates the marginal value of continued reasoning in real time during CoT generation, supporting: (1) when to stop a single reasoning trace; (2) which model and how much compute to use; and (3) how to optimally allocate a test-time compute budget.
+**Goal**: Design a lightweight "reasoning forecaster" that evaluates the marginal value of continued reasoning in real time during CoT generation, supporting: (1) when to stop a single reasoning trace; (2) which model and how much compute to use; and (3) how to optimally allocate a test-time compute budget.
 
-**Starting Point**: Drawing on metareasoning and sequential decision theory, the paper analogizes CoT reasoning to the Pandora's box problem and uses the Gittins index to provide a theoretically grounded optimal stopping strategy, while designing a lightweight adapter that can be paired with any frozen LLM.
+**Key Insight**: Drawing on metareasoning and sequential decision theory, the paper analogizes CoT reasoning to the Pandora's box problem and uses the Gittins index to provide a theoretically grounded optimal stopping strategy, while designing a lightweight adapter that can be paired with any frozen LLM.
 
 **Core Idea**: Train an adapter to predict the expected reward of continued reasoning, transforming CoT compute allocation into an optimal stopping/selection problem with theoretical guarantees.
 

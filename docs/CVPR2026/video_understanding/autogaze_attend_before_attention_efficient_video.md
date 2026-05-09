@@ -29,15 +29,15 @@ This paper proposes AutoGaze, a lightweight 3M-parameter module that autoregress
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs such as Qwen2.5-VL and NVILA have achieved general-purpose video understanding, yet are constrained by computational cost to short, low-resolution video. The human visual system efficiently processes high-FPS high-resolution video streams by selectively attending to informative regions via saccades.
+**Background**: MLLMs such as Qwen2.5-VL and NVILA have achieved general-purpose video understanding, yet are constrained by computational cost to short, low-resolution video. The human visual system efficiently processes high-FPS high-resolution video streams by selectively attending to informative regions via saccades.
 
 **Limitations of Prior Work**: (1) Existing MLLMs process every pixel and every frame with equal weight, ignoring the substantial spatiotemporal redundancy in video (e.g., a static background needs to be observed only once); (2) existing token compression methods prune tokens only inside the LLM or between ViT and LLM—the ViT still processes all pixels and remains the scaling bottleneck; (3) heuristic approaches (attention-score-based) underperform learned methods, while search- and reasoning-based approaches introduce additional overhead.
 
-**Root Cause**: A fundamental tension exists between the need for long-duration, high-resolution video understanding and the computational bottleneck of processing all pixels through the ViT.
+**Key Challenge**: A fundamental tension exists between the need for long-duration, high-resolution video understanding and the computational bottleneck of processing all pixels through the ViT.
 
-**Paper Goals**: Efficiently remove redundant patches from video before the ViT while retaining sufficient information for downstream understanding.
+**Goal**: Efficiently remove redundant patches from video before the ViT while retaining sufficient information for downstream understanding.
 
-**Starting Point**: Patch selection is formulated as an autoregressive sequence generation problem, where which patches to select and when to stop are jointly determined by minimizing reconstruction loss.
+**Key Insight**: Patch selection is formulated as an autoregressive sequence generation problem, where which patches to select and when to stop are jointly determined by minimizing reconstruction loss.
 
 **Core Idea**: Train a lightweight model to learn "where to look first," mimicking human saccadic attention, and remove redundancy before ViT processing.
 

@@ -29,18 +29,18 @@ This paper identifies an "alignment gap" in vision foundation models (e.g., DINO
 
 ## Background & Motivation
 
-**State of the Field**: Image feature matching is fundamental to 3D reconstruction, visual localization, and related tasks. Leveraging pre-trained vision foundation models (DINOv2, CLIP) to improve matching generalizability has become the dominant paradigm, with methods such as RoMa, OmniGlue, and CasMTR achieving notable advances.
+**Background**: Image feature matching is fundamental to 3D reconstruction, visual localization, and related tasks. Leveraging pre-trained vision foundation models (DINOv2, CLIP) to improve matching generalizability has become the dominant paradigm, with methods such as RoMa, OmniGlue, and CasMTR achieving notable advances.
 
 **Limitations of Prior Work**:
 - **Alignment Gap**: Foundation models are designed for single-image understanding, whereas matching requires cross-image understanding; contrastive learning objectives (e.g., DINOv2) emphasize global semantic similarity at the expense of instance-level details.
 - **Multi-Instance Matching Failure**: When multiple instances of the same category appear in an image (e.g., two cars), global-semantics-based methods cannot disambiguate which instance is the correct correspondence target.
 - **Lack of Interaction Mechanism**: Existing methods extract features from each image independently, with inter-image relationships established only in subsequent attention modules, meaning the feature extraction stage lacks cross-image association.
 
-**Root Cause**: The powerful generalization capability of foundation models conflicts with a fundamental mismatch between their training objectives (single-image understanding / global semantics) and the requirements of matching tasks (cross-image understanding / instance-level details).
+**Key Challenge**: The powerful generalization capability of foundation models conflicts with a fundamental mismatch between their training objectives (single-image understanding / global semantics) and the requirements of matching tasks (cross-image understanding / instance-level details).
 
-**Paper Goals**: (1) What kind of foundation model is better suited for feature matching? (2) How should a cross-image interaction mechanism be designed to convert the single-image understanding capability of foundation models into cross-image understanding?
+**Goal**: (1) What kind of foundation model is better suited for feature matching? (2) How should a cross-image interaction mechanism be designed to convert the single-image understanding capability of foundation models into cross-image understanding?
 
-**Starting Point**: Generative diffusion models' internal representations naturally encode the unique appearance and structural information of each object and instance (as demonstrated by DIFT), and the conditioning mechanism (prompt) of diffusion models provides a natural channel for cross-image interaction.
+**Key Insight**: Generative diffusion models' internal representations naturally encode the unique appearance and structural information of each object and instance (as demonstrated by DIFT), and the conditioning mechanism (prompt) of diffusion models provides a natural channel for cross-image interaction.
 
 **Core Idea**: Replace contrastive learning models with diffusion models as the feature extractor to preserve instance-level details, and leverage the prompt mechanism of diffusion models to design a cross-image interaction module (CIPM) that generates personalized prompts to guide feature extraction.
 

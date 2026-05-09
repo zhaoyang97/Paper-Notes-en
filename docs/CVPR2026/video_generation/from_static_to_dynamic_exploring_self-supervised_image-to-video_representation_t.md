@@ -29,15 +29,15 @@ This paper proposes Co-Settle, a framework that trains a lightweight linear proj
 
 ## Background & Motivation
 
-**State of the Field**: Transferring image-pretrained models to video tasks has become the dominant paradigm in video representation learning. Existing methods typically attach temporal modeling modules (e.g., temporal attention, 3D convolutions, adapters) to pretrained image encoders and fine-tune on video data.
+**Background**: Transferring image-pretrained models to video tasks has become the dominant paradigm in video representation learning. Existing methods typically attach temporal modeling modules (e.g., temporal attention, 3D convolutions, adapters) to pretrained image encoders and fine-tune on video data.
 
 **Limitations of Prior Work**: Fine-tuning heavy temporal modules degrades **inter-video semantic separability**—the ability to distinguish different objects across different videos—because video datasets have limited category diversity, which easily induces catastrophic forgetting. Conversely, restricting trainable parameters to preserve separability leads to insufficient **intra-video temporal consistency**—the stability of representations for the same object within a video.
 
-**Root Cause**: Image-to-video transfer involves an inherent **trade-off between temporal consistency and semantic separability**. Existing methods either over-fine-tune and lose semantic discriminability, or operate under parameter constraints that prevent learning adequate temporal correspondences.
+**Key Challenge**: Image-to-video transfer involves an inherent **trade-off between temporal consistency and semantic separability**. Existing methods either over-fine-tune and lose semantic discriminability, or operate under parameter constraints that prevent learning adequate temporal correspondences.
 
-**Paper Goals**: To identify an efficient method that enhances temporal consistency while preserving or even improving semantic separability.
+**Goal**: To identify an efficient method that enhances temporal consistency while preserving or even improving semantic separability.
 
-**Starting Point**: The authors observe that image-pretrained models already possess approximate temporal consistency (due to geometric augmentations during pretraining) but lack modeling of real-world temporal dynamics. A single extremely lightweight projection layer suffices to adjust the representation space to balance both properties.
+**Key Insight**: The authors observe that image-pretrained models already possess approximate temporal consistency (due to geometric augmentations during pretraining) but lack modeling of real-world temporal dynamics. A single extremely lightweight projection layer suffices to adjust the representation space to balance both properties.
 
 **Core Idea**: Freeze the image encoder and train only a linear projection layer; use a cycle consistency objective to enhance temporal correspondences and a KL-divergence constraint to preserve semantic separability, achieving efficient image-to-video representation transfer.
 

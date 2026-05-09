@@ -28,15 +28,15 @@ MagicDrive-V2 proposes a multi-view driving video generation framework based on 
 
 ## Background & Motivation
 
-**State of the Field**: Controllable video generation for autonomous driving is a key research direction, requiring high resolution (for detail recognition) and long video sequences (for evaluating algorithmic interactions). Existing methods are primarily based on UNet + 2D VAE architectures, such as MagicDrive and Drive-WM.
+**Background**: Controllable video generation for autonomous driving is a key research direction, requiring high resolution (for detail recognition) and long video sequences (for evaluating algorithmic interactions). Existing methods are primarily based on UNet + 2D VAE architectures, such as MagicDrive and Drive-WM.
 
 **Limitations of Prior Work**: Constrained by the scalability of UNet and the compression capacity of 2D VAE, existing methods are severely limited in resolution and frame count. For example, MagicDrive supports only 224×400×6 views at 60 frames, and Delphi supports only 512×512×6 views at 10 frames.
 
-**Root Cause**: DiT + 3D VAE has become the standard paradigm for video generation, as 3D VAE reduces computational overhead by an order of magnitude through spatial-temporal compression. However, 3D VAE disrupts the frame-level alignment between geometric control signals and video frames — 2D VAE preserves the temporal axis, allowing image-level control methods to be directly extended to video; whereas 3D VAE produces $T/f$ spatial-temporal latents (where $f$ is the temporal compression factor), breaking the dimensional alignment between control signals and latents.
+**Key Challenge**: DiT + 3D VAE has become the standard paradigm for video generation, as 3D VAE reduces computational overhead by an order of magnitude through spatial-temporal compression. However, 3D VAE disrupts the frame-level alignment between geometric control signals and video frames — 2D VAE preserves the temporal axis, allowing image-level control methods to be directly extended to video; whereas 3D VAE produces $T/f$ spatial-temporal latents (where $f$ is the temporal compression factor), breaking the dimensional alignment between control signals and latents.
 
-**Paper Goals**: (1) How to achieve per-frame geometric control within the DiT + 3D VAE framework? (2) How to support multi-view consistency? (3) How to train efficiently to support high resolution and long video?
+**Goal**: (1) How to achieve per-frame geometric control within the DiT + 3D VAE framework? (2) How to support multi-view consistency? (3) How to train efficiently to support high resolution and long video?
 
-**Starting Point**: The authors observe that naively applying global reduction along the temporal dimension causes ghosting artifacts, and therefore design a spatial-temporal encoding module aligned with the downsampling rate of the 3D VAE.
+**Key Insight**: The authors observe that naively applying global reduction along the temporal dimension causes ghosting artifacts, and therefore design a spatial-temporal encoding module aligned with the downsampling rate of the 3D VAE.
 
 **Core Idea**: Spatial-temporal condition encoding is used to re-align geometric control signals with the spatial-temporal latents of the 3D VAE. MVDiT is introduced to enable multi-view generation, and progressive training with mixed resolutions and durations enables extrapolation capability.
 

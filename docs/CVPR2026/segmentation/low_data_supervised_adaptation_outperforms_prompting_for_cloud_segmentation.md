@@ -29,15 +29,15 @@ This paper systematically demonstrates that prompt engineering completely fails 
 
 ## Background & Motivation
 
-**State of the Field**: Vision-language models (e.g., CLIP/CLIPSeg) achieve strong performance on natural images, and prompt engineering has become the dominant deployment paradigm. Approximately 70% of production AI systems rely on prompting rather than weight-level adaptation.
+**Background**: Vision-language models (e.g., CLIP/CLIPSeg) achieve strong performance on natural images, and prompt engineering has become the dominant deployment paradigm. Approximately 70% of production AI systems rely on prompting rather than weight-level adaptation.
 
 **Limitations of Prior Work**: Satellite imagery differs fundamentally from natural images — nadir viewpoints, multispectral sensors, and amorphous atmospheric phenomena (e.g., clouds, haze) stand in sharp contrast to the object-centric natural images used in CLIP pretraining. A severe linguistic gap also exists, as meteorological terminology such as "optically thin cirrus" is virtually absent from training corpora.
 
-**Root Cause**: This dual distributional shift — both visual and linguistic — constitutes a compounding mismatch. Prompt engineering presupposes that pretrained representations are sufficiently close to the target domain and that language can bridge the residual gap; this assumption fundamentally does not hold for satellite imagery.
+**Key Challenge**: This dual distributional shift — both visual and linguistic — constitutes a compounding mismatch. Prompt engineering presupposes that pretrained representations are sufficiently close to the target domain and that language can bridge the residual gap; this assumption fundamentally does not hold for satellite imagery.
 
-**Paper Goals**: (1) Quantify the degree to which prompt engineering fails under severe domain shift; (2) identify the minimum annotation-cost crossover point for supervised fine-tuning; (3) compare LoRA versus full fine-tuning across different data budgets.
+**Goal**: (1) Quantify the degree to which prompt engineering fails under severe domain shift; (2) identify the minimum annotation-cost crossover point for supervised fine-tuning; (3) compare LoRA versus full fine-tuning across different data budgets.
 
-**Starting Point**: Controlled experiments are conducted using CLIPSeg on the CloudSEN12+ dataset, with 60 prompt variants designed alongside fine-tuning experiments spanning data budgets from 0.1% to 100%.
+**Key Insight**: Controlled experiments are conducted using CLIPSeg on the CloudSEN12+ dataset, with 60 prompt variants designed alongside fine-tuning experiments spanning data budgets from 0.1% to 100%.
 
 **Core Idea**: Labeled data is not an expensive alternative to prompt engineering but rather the correct investment — just 8 annotated images suffice to outperform any prompting strategy.
 

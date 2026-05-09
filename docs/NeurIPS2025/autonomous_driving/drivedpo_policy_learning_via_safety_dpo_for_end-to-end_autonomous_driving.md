@@ -28,15 +28,15 @@ DriveDPO is a two-stage framework that first fuses human-imitation similarity an
 
 ## Background & Motivation
 
-**State of the Field**: End-to-end autonomous driving predicts future trajectories directly from raw sensor inputs, avoiding the error accumulation of modular pipelines. Dominant approaches (VADv2, UniAD, etc.) rely on imitation learning, minimizing the geometric distance between predicted and human-driven trajectories.
+**Background**: End-to-end autonomous driving predicts future trajectories directly from raw sensor inputs, avoiding the error accumulation of modular pipelines. Dominant approaches (VADv2, UniAD, etc.) rely on imitation learning, minimizing the geometric distance between predicted and human-driven trajectories.
 
 **Limitations of Prior Work**: (a) Imitation learning cannot distinguish trajectories that "look human-like but are unsafe" — even minor deviations from human trajectories may cause collisions or out-of-bound violations; (b) symmetric loss functions such as MSE penalize deviations in both directions equally, despite the asymmetric safety implications (surpassing the human trajectory may cause rear-end collisions, while lagging behind is generally safe); (c) recent score-based methods (e.g., Hydra-MDP) independently regress multiple scores for each candidate trajectory without directly optimizing the policy distribution, leading to suboptimal performance.
 
-**Root Cause**: Imitation learning optimizes human-likeness but ignores safety; score-based methods incorporate safety signals but decouple them from policy optimization. A unified approach that simultaneously optimizes safety and human consistency at the policy distribution level is needed.
+**Key Challenge**: Imitation learning optimizes human-likeness but ignores safety; score-based methods incorporate safety signals but decouple them from policy optimization. A unified approach that simultaneously optimizes safety and human consistency at the policy distribution level is needed.
 
-**Paper Goals**: How can human trajectory imitation and rule-based safety signals be jointly incorporated into direct optimization of the policy distribution?
+**Goal**: How can human trajectory imitation and rule-based safety signals be jointly incorporated into direct optimization of the policy distribution?
 
-**Starting Point**: Drawing inspiration from RLHF/DPO in large language models — reformulating safety requirements as trajectory-level preference learning.
+**Key Insight**: Drawing inspiration from RLHF/DPO in large language models — reformulating safety requirements as trajectory-level preference learning.
 
 **Core Idea**: Unified policy distillation (combining imitation and safety into a single distribution) + Safety DPO (trajectory-level preference alignment via carefully constructed preference pairs).
 

@@ -30,15 +30,15 @@ This work provides a standardized dataset of 280 million simulated LHC collision
 
 ## Background & Motivation
 
-**State of the Field**: High-energy physics (HEP) requires rigorous quantification of systematic uncertainties ("known unknowns") to support statistical significance claims in new particle discoveries. The 2014 HiggsML competition focused solely on event classification (signal vs. background), whereas the central challenge in modern physics measurements is constructing robust confidence intervals under multiple correlated systematic biases.
+**Background**: High-energy physics (HEP) requires rigorous quantification of systematic uncertainties ("known unknowns") to support statistical significance claims in new particle discoveries. The 2014 HiggsML competition focused solely on event classification (signal vs. background), whereas the central challenge in modern physics measurements is constructing robust confidence intervals under multiple correlated systematic biases.
 
 **Limitations of Prior Work**: (a) There is no standardized ML benchmark that incorporates parameterized systematic uncertainties — existing datasets address classification tasks and do not involve the profiling of nuisance parameters; (b) the mature profile likelihood methods of the physics community lack effective integration with ML uncertainty quantification techniques (conformal prediction, Bayesian methods, etc.); (c) traditional binned histogram analyses discretize continuous features, discarding event-level information.
 
-**Root Cause**: AI-for-Physics must simultaneously pursue **precision** (narrow confidence intervals → stronger discovery power) and **reliability** (correct coverage → no spurious discoveries), yet these two objectives are inherently in tension under systematic biases — ignoring biases yields narrow intervals with insufficient coverage, while excessive conservatism sacrifices discovery power.
+**Key Challenge**: AI-for-Physics must simultaneously pursue **precision** (narrow confidence intervals → stronger discovery power) and **reliability** (correct coverage → no spurious discoveries), yet these two objectives are inherently in tension under systematic biases — ignoring biases yields narrow intervals with insufficient coverage, while excessive conservatism sacrifices discovery power.
 
-**Paper Goals**: To create a standardized uncertainty-aware benchmark — 280M events, six bias parameters, and well-defined evaluation metrics — enabling the ML community to develop and compare uncertainty-aware methods in a controlled environment.
+**Goal**: To create a standardized uncertainty-aware benchmark — 280M events, six bias parameters, and well-defined evaluation metrics — enabling the ML community to develop and compare uncertainty-aware methods in a controlled environment.
 
-**Starting Point**: Systematics scripts are provided so that the dataset can be regenerated for any $(\mu, \vec{\alpha})$ combination, advancing the problem from "is the classification correct?" to "is the confidence interval robust?" The dataset is effectively a **function** rather than a static table.
+**Key Insight**: Systematics scripts are provided so that the dataset can be regenerated for any $(\mu, \vec{\alpha})$ combination, advancing the problem from "is the classification correct?" to "is the confidence interval robust?" The dataset is effectively a **function** rather than a static table.
 
 **Core Idea**: By combining a regenerable dataset with parameterized systematic biases and an asymmetric coverage penalty metric, the work establishes a standardized bridge connecting ML uncertainty quantification methods to the precision requirements of physical measurements.
 

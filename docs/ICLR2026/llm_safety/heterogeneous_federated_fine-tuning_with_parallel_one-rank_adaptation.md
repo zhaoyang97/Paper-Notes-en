@@ -28,13 +28,13 @@ This paper proposes Fed-PLoRA, a framework that replaces multi-rank LoRA with mu
 
 ## Background & Motivation
 
-**State of the Field**: Federated fine-tuning (FFT) leverages LoRA to collaboratively fine-tune LLMs across distributed clients while preserving data privacy. However, heterogeneous client resources lead to different LoRA ranks, causing dimension mismatches during initialization and aggregation.
+**Background**: Federated fine-tuning (FFT) leverages LoRA to collaboratively fine-tune LLMs across distributed clients while preserving data privacy. However, heterogeneous client resources lead to different LoRA ranks, causing dimension mismatches during initialization and aggregation.
 
 **Limitations of Prior Work**: (1) FLoRA: randomly reinitializes LoRA each round, introducing large initialization noise; (2) HETLoRA: truncates the global LoRA, discarding information beyond the low-rank subspace and introducing aggregation bias; (3) FlexLoRA: uses SVD reconstruction, introducing decomposition errors. All existing methods face an irreconcilable trade-off between initialization noise and aggregation noise.
 
-**Root Cause**: When the global model rank $R$ exceeds a client's rank $r_i$, the client cannot fully inherit global information (initialization noise), and aggregating separately trained adapters is imperfect (aggregation noise).
+**Key Challenge**: When the global model rank $R$ exceeds a client's rank $r_i$, the client cannot fully inherit global information (initialization noise), and aggregating separately trained adapters is imperfect (aggregation noise).
 
-**Starting Point**: Decompose multi-rank LoRA into multiple parallel one-rank modules. Each module is independent, allowing clients to select a subset for training and fold the remainder into frozen weights, achieving zero initialization noise.
+**Key Insight**: Decompose multi-rank LoRA into multiple parallel one-rank modules. Each module is independent, allowing clients to select a subset for training and fold the remainder into frozen weights, achieving zero initialization noise.
 
 ## Method
 

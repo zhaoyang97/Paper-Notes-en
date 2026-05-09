@@ -28,18 +28,18 @@ This paper proposes UniLS, the first end-to-end framework for unified speaking a
 
 ## Background & Motivation
 
-1. **State of the Field**: Most systems in the conversational avatar domain remain unidirectional—either speech-driven talking head generation or listener motion generation. Genuine interaction requires avatars capable of both speaking and listening modes simultaneously.
+1. **Background**: Most systems in the conversational avatar domain remain unidirectional—either speech-driven talking head generation or listener motion generation. Genuine interaction requires avatars capable of both speaking and listening modes simultaneously.
 
 2. **Limitations of Prior Work**:
     - **Speaking-only methods** (e.g., FaceFormer, CodeTalker, ARTalk): Although capable of generating high-quality speaking facial motions, they entirely neglect listening behavior and cannot be deployed in conversational scenarios.
     - **The only speaking-listening method, DualTalk**: Relies on pre-computed facial sequences of speaker A to generate speaker B's motions. It is not end-to-end, requires an additional motion acquisition/generation pipeline, and cannot be deployed in real time.
     - **Direct end-to-end joint training fails**: Results in stiff and unnatural listening expressions (the "poker face" phenomenon).
 
-3. **Root Cause**: Speaking motions are strongly correlated with audio (phoneme–lip alignment), whereas listening motions exhibit weak correlation with the interlocutor's audio—eye blinks, head nods, and micro-expressions during listening arise primarily from intrinsic motion priors rather than external speech signals. This imbalance in audio–motion correlation causes the listening branch to collapse toward a low-variance, safe static prior during joint training.
+3. **Key Challenge**: Speaking motions are strongly correlated with audio (phoneme–lip alignment), whereas listening motions exhibit weak correlation with the interlocutor's audio—eye blinks, head nods, and micro-expressions during listening arise primarily from intrinsic motion priors rather than external speech signals. This imbalance in audio–motion correlation causes the listening branch to collapse toward a low-variance, safe static prior during joint training.
 
-4. **Paper Goals**: Design an end-to-end framework that uses only dual-track audio to simultaneously generate the speaking and listening facial motions of both speakers, with the key challenge being the elimination of stiff listening expressions.
+4. **Goal**: Design an end-to-end framework that uses only dual-track audio to simultaneously generate the speaking and listening facial motions of both speakers, with the key challenge being the elimination of stiff listening expressions.
 
-5. **Starting Point**: Listening behavior is reframed as a combination of "intrinsic motion priors" and "external audio modulation"—a person's listening expressions first follow their own motion patterns (e.g., blink frequency, subtle nods) and are only subsequently modulated by external speech.
+5. **Key Insight**: Listening behavior is reframed as a combination of "intrinsic motion priors" and "external audio modulation"—a person's listening expressions first follow their own motion patterns (e.g., blink frequency, subtle nods) and are only subsequently modulated by external speech.
 
 6. **Core Idea**: Through two-stage training—first learning motion priors without audio, then fine-tuning with dual-track audio—the intrinsic dynamics of listening and external audio modulation are disentangled, fundamentally resolving the end-to-end listening stiffness problem.
 

@@ -30,7 +30,7 @@ This paper proposes CoE, a training-free multimodal summarization framework that
 
 ### Limitations of Prior Work
 
-**State of the Field**: **Importance of Multimodal Summarization (MMS)**: MMS requires generating concise textual summaries from multi-source inputs such as video, text, and images, with applications in instructional videos, lectures, and news broadcasts.
+**Background**: **Importance of Multimodal Summarization (MMS)**: MMS requires generating concise textual summaries from multi-source inputs such as video, text, and images, with applications in instructional videos, lectures, and news broadcasts.
 
 **Dependence on Domain-Specific Supervision**: Existing MMS models (e.g., MLASK, MMSum) rely on large-scale paired data and domain-specific fine-tuning, resulting in poor cross-domain generalization. Experiments show significant performance degradation when models trained on VIEWS are transferred to other datasets.
 

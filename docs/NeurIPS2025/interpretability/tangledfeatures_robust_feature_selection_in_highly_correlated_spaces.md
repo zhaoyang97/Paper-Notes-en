@@ -28,15 +28,15 @@ This paper proposes TangledFeatures, a selection framework centered on **feature
 
 ## Background & Motivation
 
-**State of the Field**: Feature selection is a foundational step in predictive modeling, directly affecting model performance and interpretability. In structural biology, deep learning models such as AlphaFold achieve extremely high predictive accuracy, yet lack transparent understanding of the specific structural factors (residues, motifs, interatomic interactions) driving predictions. Post-hoc explanation methods such as SHAP and Integrated Gradients are widely used, but face a fundamental problem.
+**Background**: Feature selection is a foundational step in predictive modeling, directly affecting model performance and interpretability. In structural biology, deep learning models such as AlphaFold achieve extremely high predictive accuracy, yet lack transparent understanding of the specific structural factors (residues, motifs, interatomic interactions) driving predictions. Post-hoc explanation methods such as SHAP and Integrated Gradients are widely used, but face a fundamental problem.
 
 **Limitations of Prior Work**: When predictive features are highly correlated, most feature selection methods behave unpredictably. (1) **Instability**: LASSO arbitrarily selects one feature among correlated ones, potentially selecting entirely different feature subsets under different data splits; (2) **Redundancy**: Methods such as Boruta and RFE may retain large numbers of redundant features; (3) **Irreproducibility**: Different analysis runs yield different "important features," making scientific findings difficult to trust. Post-hoc methods such as SHAP are equally unstable in high-correlation settings.
 
-**Root Cause**: For biologically actionable insights (e.g., guiding mutation experiments or protein design), feature selection results must simultaneously satisfy two difficult-to-achieve objectives: (1) biological interpretability—mapping to known structural or functional elements; and (2) cross-analysis reproducibility—yielding consistent feature sets across different data subsets. Existing methods focus solely on predictive accuracy and cannot guarantee both simultaneously.
+**Key Challenge**: For biologically actionable insights (e.g., guiding mutation experiments or protein design), feature selection results must simultaneously satisfy two difficult-to-achieve objectives: (1) biological interpretability—mapping to known structural or functional elements; and (2) cross-analysis reproducibility—yielding consistent feature sets across different data subsets. Existing methods focus solely on predictive accuracy and cannot guarantee both simultaneously.
 
-**Paper Goals**: (1) Extract non-redundant representatives from correlated feature groups; (2) ensure selection results are highly stable under data perturbation; (3) validate whether selected features correspond to known biological drivers.
+**Goal**: (1) Extract non-redundant representatives from correlated feature groups; (2) ensure selection results are highly stable under data perturbation; (3) validate whether selected features correspond to known biological drivers.
 
-**Starting Point**: The authors elevate stability to equal importance with predictive accuracy—explicitly accepting minor sacrifices in predictive accuracy in exchange for highly reproducible and interpretable feature subsets.
+**Key Insight**: The authors elevate stability to equal importance with predictive accuracy—explicitly accepting minor sacrifices in predictive accuracy in exchange for highly reproducible and interpretable feature subsets.
 
 **Core Idea**: First use a correlation graph to group and de-redundify entangled features, then use ensemble selection to ensure stability, and finally apply importance-based filtering to ensure parsimony.
 

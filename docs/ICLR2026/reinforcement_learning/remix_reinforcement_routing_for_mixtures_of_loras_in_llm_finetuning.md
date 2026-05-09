@@ -29,7 +29,7 @@ Layer pruning in LLMs is formulated as a cooperative game (each layer = player, 
 
 ## Background & Motivation
 
-**State of the Field**: LLM inference is costly → model compression is critical → depth pruning (layer pruning) directly removes entire Transformer layers → simpler to implement and yields more direct inference speedup than width pruning.
+**Background**: LLM inference is costly → model compression is critical → depth pruning (layer pruning) directly removes entire Transformer layers → simpler to implement and yields more direct inference speedup than width pruning.
 
 **Limitations of Prior Work**:
    - (1) **Static heuristic rules**: Existing methods score each layer using weight magnitude, activation norms, sensitivity analysis, etc. → assume layer importance is fixed and independent → in practice, layer importance is context-dependent.
@@ -37,7 +37,7 @@ Layer pruning in LLMs is formulated as a cooperative game (each layer = player, 
    - (3) **Greedy strategies are not globally optimal**: Pruning layers one by one according to individual importance scores cannot find the optimal combination → e.g., the two individually least important layers (Layer 27+10) yield PPL = 15.4535, whereas the combination (Layer 10+11) yields PPL = 15.4279, which is superior (Tab. 1).
    - (4) **Re-evaluation is still insufficient**: Recomputing importance after each pruning step may still miss the globally optimal layer combination, as layer interactions are not explicitly modeled.
 
-**Starting Point**: Reconsidering the problem from a game-theoretic perspective → Shapley values in cooperative games naturally capture interaction contributions among players → but direct computation is infeasible for LLMs → a scalable approximation is needed.
+**Key Insight**: Reconsidering the problem from a game-theoretic perspective → Shapley values in cooperative games naturally capture interaction contributions among players → but direct computation is infeasible for LLMs → a scalable approximation is needed.
 
 **Core Problem**: How to accurately estimate each layer's marginal contribution to model performance within tractable computation, while accounting for inter-layer dependencies?
 

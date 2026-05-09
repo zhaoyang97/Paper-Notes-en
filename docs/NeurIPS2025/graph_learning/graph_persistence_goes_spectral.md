@@ -28,18 +28,18 @@ This paper proposes SpectRe — a novel topological descriptor that incorporates
 
 ## Background & Motivation
 
-**State of the Field**: The expressivity of message-passing GNNs is bounded by the WL hierarchy, preventing them from computing topological properties such as cycles and connectivity. Persistent homology (PH) tracks the evolution of topological features (e.g., merging of connected components, emergence of cycles) via filtration functions, providing information beyond the WL hierarchy.
+**Background**: The expressivity of message-passing GNNs is bounded by the WL hierarchy, preventing them from computing topological properties such as cycles and connectivity. Persistent homology (PH) tracks the evolution of topological features (e.g., merging of connected components, emergence of cycles) via filtration functions, providing information beyond the WL hierarchy.
 
 **Limitations of Prior Work**:
 - Classical PH diagrams record only (birth, death) pairs, limiting their expressivity.
 - RePHINE enhances PH by appending vertex color information $(\alpha, \gamma)$, but degenerates to ordinary PH on monochromatic graphs — still failing to distinguish certain non-isomorphic graphs.
 - PH captures only harmonic information (the kernel of the graph Laplacian = number of connected components), while ignoring the rich non-harmonic spectral information.
 
-**Root Cause**: PH and spectral methods each have blind spots — PH detects cycles but ignores the spectrum; spectral methods capture global structure but do not track the evolution of topological features. The two are incomparable.
+**Key Challenge**: PH and spectral methods each have blind spots — PH detects cycles but ignores the spectrum; spectral methods capture global structure but do not track the evolution of topological features. The two are incomparable.
 
-**Paper Goals**: Design a new topological descriptor that integrates spectral information into the PH framework, yielding strictly greater expressivity than either PH or spectral methods alone.
+**Goal**: Design a new topological descriptor that integrates spectral information into the PH framework, yielding strictly greater expressivity than either PH or spectral methods alone.
 
-**Starting Point**: Augment the RePHINE persistence tuple with a fifth component $\rho(v)$ — the list of nonzero eigenvalues of the graph Laplacian of the connected component containing vertex $v$ at the moment of its death. This embeds spectral information into the temporal evolution framework of PH.
+**Key Insight**: Augment the RePHINE persistence tuple with a fifth component $\rho(v)$ — the list of nonzero eigenvalues of the graph Laplacian of the connected component containing vertex $v$ at the moment of its death. This embeds spectral information into the temporal evolution framework of PH.
 
 **Core Idea**: Enrich each persistence pair in persistent homology with the Laplacian spectrum of the corresponding subgraph, achieving strictly stronger graph discriminative power.
 

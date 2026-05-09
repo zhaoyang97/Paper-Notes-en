@@ -28,15 +28,15 @@ FALQON eliminates the small-matrix quantization overhead introduced by standalon
 
 ## Background & Motivation
 
-**State of the Field**: The FP8 low-precision format is natively supported on modern GPUs (NVIDIA Hopper/Blackwell), theoretically doubling matrix multiplication throughput. LoRA is the dominant PEFT method for LLM fine-tuning, reducing trainable parameters via low-rank decomposition.
+**Background**: The FP8 low-precision format is natively supported on modern GPUs (NVIDIA Hopper/Blackwell), theoretically doubling matrix multiplication throughput. LoRA is the dominant PEFT method for LLM fine-tuning, reducing trainable parameters via low-rank decomposition.
 
 **Limitations of Prior Work**: FP8 quantization is effective for large matrices, but LoRA introduces small-dimensional matrices (rank typically 16–128). Applying FP8 quantization to these small matrices incurs quantization overhead (max reduction, scaling) that far outweighs the computational gain, making FP8 LoRA slower than FP16 LoRA. Empirically, FP8 LoRA achieves only about half the throughput of FP16 LoRA.
 
-**Root Cause**: The standalone LoRA forward/backward path requires separate quantization of three small tensors — $\tilde{A}$, $\tilde{B}$, and $O_A$ — adding 3 extra quantization operations per iteration. When matrix dimensions fall below 4K, the $O(n^2)$ quantization overhead overwhelms the $O(n^3)$ gains from faster matrix multiplication.
+**Key Challenge**: The standalone LoRA forward/backward path requires separate quantization of three small tensors — $\tilde{A}$, $\tilde{B}$, and $O_A$ — adding 3 extra quantization operations per iteration. When matrix dimensions fall below 4K, the $O(n^2)$ quantization overhead overwhelms the $O(n^3)$ gains from faster matrix multiplication.
 
-**Paper Goals**: How to genuinely exploit FP8 hardware to accelerate LoRA fine-tuning, rather than merely applying weight-only quantization for memory savings?
+**Goal**: How to genuinely exploit FP8 hardware to accelerate LoRA fine-tuning, rather than merely applying weight-only quantization for memory savings?
 
-**Starting Point**: Since the standalone LoRA path is the source of overhead, eliminating it entirely — by directly melding LoRA into the quantized backbone — is the natural solution. The quantization error itself can be interpreted as an implicit low-rank adapter.
+**Key Insight**: Since the standalone LoRA path is the source of overhead, eliminating it entirely — by directly melding LoRA into the quantized backbone — is the natural solution. The quantization error itself can be interpreted as an implicit low-rank adapter.
 
 **Core Idea**: Meld LoRA into the FP8 backbone to eliminate small-matrix quantization overhead; use concatenation to enable single-pass forward computation; maintain the fused weights via a row-wise proxy update mechanism.
 

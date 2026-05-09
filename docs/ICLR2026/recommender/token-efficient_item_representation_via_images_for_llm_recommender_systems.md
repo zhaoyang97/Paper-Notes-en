@@ -28,15 +28,15 @@ This paper proposes I-LLMRec, which leverages item images in place of verbose te
 
 ## Background & Motivation
 
-**State of the Field**: LLM-based recommender systems must convert item interaction histories into natural language inputs. Existing approaches fall into two camps: attribute-based representation (e.g., brand + category — concise but semantically limited) and description-based representation (e.g., full product descriptions — semantically rich but token-intensive).
+**Background**: LLM-based recommender systems must convert item interaction histories into natural language inputs. Existing approaches fall into two camps: attribute-based representation (e.g., brand + category — concise but semantically limited) and description-based representation (e.g., full product descriptions — semantically rich but token-intensive).
 
 **Limitations of Prior Work**: Both approaches face a **fundamental efficiency–effectiveness trade-off**. Attribute-based methods consume fewer tokens but lose fine-grained semantics, causing a 13%+ drop in recommendation performance. Description-based methods are semantically rich but token-heavy (averaging 160 tokens per item), increasing LLM inference time by more than 2.5× with complexity scaling quadratically with the length of user interaction sequences.
 
-**Root Cause**: As long as items are represented in natural language, the tension — richer semantic representation → longer input → lower efficiency — is unavoidable.
+**Key Challenge**: As long as items are represented in natural language, the tension — richer semantic representation → longer input → lower efficiency — is unavoidable.
 
-**Paper Goals**: How can one preserve rich item semantics while substantially reducing token consumption?
+**Goal**: How can one preserve rich item semantics while substantially reducing token consumption?
 
-**Starting Point**: Through CLIP-based measurements, the authors find that **product images and textual descriptions exhibit substantial information overlap** in e-commerce datasets (cosine similarity ≈ 0.31 on Amazon Sports/Art datasets, higher than the 0.26 observed for carefully annotated image–text pairs in COCO). This suggests that images can encode most of the semantics of descriptions with far fewer tokens.
+**Key Insight**: Through CLIP-based measurements, the authors find that **product images and textual descriptions exhibit substantial information overlap** in e-commerce datasets (cosine similarity ≈ 0.31 on Amazon Sports/Art datasets, higher than the 0.26 observed for carefully annotated image–text pairs in COCO). This suggests that images can encode most of the semantics of descriptions with far fewer tokens.
 
 **Core Idea**: Replace verbose textual descriptions with a single image token to represent items, and bridge the gap between visual and linguistic spaces via a recommendation-oriented alignment strategy.
 

@@ -30,7 +30,7 @@ This paper proposes MOSE (Multiplicative Orthogonal Sequential Editing), which i
 
 ### Limitations of Prior Work
 
-**State of the Field**: Knowledge editing aims to efficiently modify the internal knowledge of LLMs without impairing other capabilities. In sequential editing scenarios (i.e., continuous successive edits), all existing methods adopt an additive paradigm—adding an update matrix to the original parameter matrix: $W = W_0 + \Delta W_1 + \Delta W_2 + \cdots$.
+**Background**: Knowledge editing aims to efficiently modify the internal knowledge of LLMs without impairing other capabilities. In sequential editing scenarios (i.e., continuous successive edits), all existing methods adopt an additive paradigm—adding an update matrix to the original parameter matrix: $W = W_0 + \Delta W_1 + \Delta W_2 + \cdots$.
 
 **Root Cause of Additive Editing**: Repeated additive updates severely compromise the numerical stability of parameter matrices—the Frobenius norm grows continuously and the condition number rises sharply, causing degradation in both editing performance and general model capabilities. Although methods such as RECT and AlphaEdit partially alleviate this issue, they remain within the additive framework and merely delay the degradation.
 

@@ -28,15 +28,15 @@ This paper proposes the LMEE benchmark and the MemoryExplorer framework, which j
 
 ## Background & Motivation
 
-1. **State of the Field**: Embodied exploration aims to enable agents to actively explore unknown environments. Dominant task paradigms include Object Navigation (ObjectNav) and Embodied Question Answering (EQA), but these are typically evaluated independently as one-shot tasks—navigation focuses solely on whether a target is found, while QA focuses solely on answer correctness.
+1. **Background**: Embodied exploration aims to enable agents to actively explore unknown environments. Dominant task paradigms include Object Navigation (ObjectNav) and Embodied Question Answering (EQA), but these are typically evaluated independently as one-shot tasks—navigation focuses solely on whether a target is found, while QA focuses solely on answer correctness.
 
 2. **Limitations of Prior Work**: (a) Existing benchmarks overlook the accumulation and utilization of memory during exploration—an ideal embodied agent should accumulate environmental knowledge during exploration and leverage it in subsequent tasks. (b) Existing MLLM-based exploration methods use memory passively: imitation learning approaches (e.g., MTU3D) constrain the development of autonomous exploration strategies, and memory snapshot methods (e.g., 3D-Mem) handle context window limitations via pre-filtering but fail to fully exploit the active querying capability of MLLMs. (c) There is no unified framework that simultaneously evaluates cognitive understanding and decision-making ability.
 
-3. **Root Cause**: Long-horizon tasks require agents to simultaneously possess efficient exploration capability and long-term memory utilization ability, yet current methods either optimize only navigation success rate or focus only on QA accuracy, and cannot jointly optimize both.
+3. **Key Challenge**: Long-horizon tasks require agents to simultaneously possess efficient exploration capability and long-term memory utilization ability, yet current methods either optimize only navigation success rate or focus only on QA accuracy, and cannot jointly optimize both.
 
-4. **Paper Goals**: (1) Design a benchmark that uniformly evaluates both the process (memory) and outcome (navigation success) of exploration; (2) Train an MLLM-based agent capable of actively retrieving memory to assist exploration and decision-making.
+4. **Goal**: (1) Design a benchmark that uniformly evaluates both the process (memory) and outcome (navigation success) of exploration; (2) Train an MLLM-based agent capable of actively retrieving memory to assist exploration and decision-making.
 
-5. **Starting Point**: Episodic memory accumulated during exploration is not merely a by-product but should serve as a core resource driving subsequent decisions. Memory-based QA is used to evaluate and train memory utilization ability.
+5. **Key Insight**: Episodic memory accumulated during exploration is not merely a by-product but should serve as a core resource driving subsequent decisions. Memory-based QA is used to evaluate and train memory utilization ability.
 
 6. **Core Idea**: Reinforcement learning is used to fine-tune an MLLM so that it actively invokes memory retrieval tools to query episodic memory during multi-object navigation, while a multi-task reward function jointly optimizes action prediction, frontier selection, and memory-based QA.
 

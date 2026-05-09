@@ -28,15 +28,15 @@ This paper proposes MemoPhishAgent (MPA), the first memory-augmented multimodal 
 
 ## Background & Motivation
 
-**State of the Field**: Phishing attacks continue to evolve, and traditional defenses (static blacklists, handcrafted heuristic rules) provide insufficient coverage against new domains and novel techniques. Reference-based methods using brand-domain mappings improve robustness but incur high maintenance costs and respond slowly to emerging brands and subdomains.
+**Background**: Phishing attacks continue to evolve, and traditional defenses (static blacklists, handcrafted heuristic rules) provide insufficient coverage against new domains and novel techniques. Reference-based methods using brand-domain mappings improve robustness but incur high maintenance costs and respond slowly to emerging brands and subdomains.
 
 **Limitations of Prior Work**: (1) Existing LLM-based approaches are mostly prompt-driven deterministic pipelines lacking adaptive evidence collection; (2) Tool usage follows fixed workflows (e.g., OCR → brand matching → domain verification) and cannot dynamically adjust based on the current evidence state; (3) The absence of a memory system prevents reuse of historical investigation experience, leading to inefficient repeated analysis of similar phishing patterns.
 
-**Root Cause**: Phishing attacks are non-stationary — attackers continuously vary their strategies — yet defense systems are memoryless and restart analysis from scratch each time.
+**Key Challenge**: Phishing attacks are non-stationary — attackers continuously vary their strategies — yet defense systems are memoryless and restart analysis from scratch each time.
 
-**Paper Goals**: To construct a phishing detection agent capable of dynamically adjusting evidence collection strategies, learning from historical investigations, and operating effectively in production environments.
+**Goal**: To construct a phishing detection agent capable of dynamically adjusting evidence collection strategies, learning from historical investigations, and operating effectively in production environments.
 
-**Starting Point**: Phishing detection is modeled as a multi-step reasoning process that simulates the investigative behavior of human experts, dynamically selecting tools to gather evidence.
+**Key Insight**: Phishing detection is modeled as a multi-step reasoning process that simulates the investigative behavior of human experts, dynamically selecting tools to gather evidence.
 
 **Core Idea**: Five phishing-specific multimodal tools + a ReAct reasoning loop + an episodic memory system (storing and retrieving historical reasoning trajectories) are combined to achieve adaptive, continually improving phishing detection.
 

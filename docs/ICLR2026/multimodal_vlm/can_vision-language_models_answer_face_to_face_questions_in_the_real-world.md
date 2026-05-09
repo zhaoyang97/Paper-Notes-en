@@ -28,15 +28,15 @@ This paper introduces QIVD (Qualcomm Interactive Video Dataset), a face-to-face 
 
 ## Background & Motivation
 
-**State of the Field**: Large multimodal models (LMMs) have achieved notable progress on image captioning and VQA, and are beginning to support real-time audio-visual dialogue. However, existing capabilities remain confined to "offline reasoning"—receiving complete visual input and full question text before generating a response.
+**Background**: Large multimodal models (LMMs) have achieved notable progress on image captioning and VQA, and are beginning to support real-time audio-visual dialogue. However, existing capabilities remain confined to "offline reasoning"—receiving complete visual input and full question text before generating a response.
 
 **Limitations of Prior Work**: (a) Existing video understanding benchmarks adopt an offline paradigm in which models observe the entire video and complete question in advance; (b) No benchmark exists for evaluating "face-to-face dialogue" capabilities, i.e., a model connected to a camera and microphone that answers questions in real time; (c) Models have no mechanism to determine *when* to respond—the when-to-speak problem in conversational interaction has been largely overlooked.
 
-**Root Cause**: Real-world AI assistants and humanoid robots must simultaneously parse dynamic scenes, comprehend spoken questions, and determine the appropriate moment to respond. Yet both training data and evaluation benchmarks remain offline, leaving models without these capabilities.
+**Key Challenge**: Real-world AI assistants and humanoid robots must simultaneously parse dynamic scenes, comprehend spoken questions, and determine the appropriate moment to respond. Yet both training data and evaluation benchmarks remain offline, leaving models without these capabilities.
 
-**Paper Goals**: (a) Construct the first face-to-face real-time QA dataset; (b) systematically evaluate the capability boundaries of existing models; (c) demonstrate that fine-tuning on such data improves real-time interaction performance.
+**Goal**: (a) Construct the first face-to-face real-time QA dataset; (b) systematically evaluate the capability boundaries of existing models; (c) demonstrate that fine-tuning on such data improves real-time interaction performance.
 
-**Starting Point**: The paper designs a straightforward online QA paradigm in which a user records a video with a mobile device, performs actions, and poses questions simultaneously. The model must understand the scene from synchronized video and audio inputs and respond at the correct moment.
+**Key Insight**: The paper designs a straightforward online QA paradigm in which a user records a video with a mobile device, performs actions, and poses questions simultaneously. The model must understand the scene from synchronized video and audio inputs and respond at the correct moment.
 
 **Core Idea**: By constructing a real-time interactive QA dataset with synchronized audio, video, and answer timestamps, this work provides the first systematic measurement of VLMs' face-to-face interaction capabilities and identifies three primary failure modes.
 

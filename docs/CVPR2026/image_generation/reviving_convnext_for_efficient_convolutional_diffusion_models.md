@@ -28,13 +28,13 @@ This paper proposes FCDM (Fully Convolutional Diffusion Model), which adapts the
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion model backbones have evolved from convolutional–attention hybrid architectures (DDPM, ADM, LDM) to fully Transformer-based architectures (DiT, SiT, FLUX). The scalability of Transformers has driven the success of large-scale models such as FLUX and SD3, but has also introduced a strong dependency on GPU cluster resources.
+**Background**: Diffusion model backbones have evolved from convolutional–attention hybrid architectures (DDPM, ADM, LDM) to fully Transformer-based architectures (DiT, SiT, FLUX). The scalability of Transformers has driven the success of large-scale models such as FLUX and SD3, but has also introduced a strong dependency on GPU cluster resources.
 
 **Limitations of Prior Work**: DiT-XL/2 requires 7M training steps to reach optimal FID, with a training throughput of only 80.5 it/s. The $O(n^2)$ computational complexity of Transformers is particularly severe at high resolutions—doubling the resolution reduces DiT throughput by approximately 4×. This makes the training and inference cost of diffusion models a major bottleneck.
 
-**Root Cause**: The prevailing assumption that "scaling Transformers = better generation quality" has left the locality bias, parameter efficiency, and hardware friendliness of ConvNets largely unexplored in modern generative modeling. While ConvNeXt has demonstrated ViT-matching performance on classification tasks, it has been entirely absent from the generative domain.
+**Key Challenge**: The prevailing assumption that "scaling Transformers = better generation quality" has left the locality bias, parameter efficiency, and hardware friendliness of ConvNets largely unexplored in modern generative modeling. While ConvNeXt has demonstrated ViT-matching performance on classification tasks, it has been entirely absent from the generative domain.
 
-**Starting Point**: The paper adapts ConvNeXt into a backbone for conditional diffusion models, preserving its core design (depthwise convolution, inverted bottleneck, GRN) while adding only conditional injection (AdaLN) and a U-shaped layout, to verify whether a fully convolutional architecture can simultaneously achieve high generation quality and computational efficiency.
+**Key Insight**: The paper adapts ConvNeXt into a backbone for conditional diffusion models, preserving its core design (depthwise convolution, inverted bottleneck, GRN) while adding only conditional injection (AdaLN) and a U-shaped layout, to verify whether a fully convolutional architecture can simultaneously achieve high generation quality and computational efficiency.
 
 ## Method
 

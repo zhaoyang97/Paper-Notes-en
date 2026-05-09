@@ -29,15 +29,15 @@ This paper proposes the QVLM architecture and SQuID dataset, achieving pixel-lev
 
 ## Background & Motivation
 
-**State of the Field**: Current vision-language models (VLMs) excel at scene understanding and qualitative description, but perform poorly on quantitative spatial reasoning tasks such as counting, area measurement, and distance calculation—particularly in the satellite imagery domain.
+**Background**: Current vision-language models (VLMs) excel at scene understanding and qualitative description, but perform poorly on quantitative spatial reasoning tasks such as counting, area measurement, and distance calculation—particularly in the satellite imagery domain.
 
 **Limitations of Prior Work**: VLMs compress 1024×1024 images into a 64×64 token grid via the vision encoder (256× compression), a process that architecturally destroys the pixel-level spatial indexing required for quantitative analysis. Research shows that the vision encoder causes 40–60% k-nearest-neighbor divergence.
 
-**Root Cause**: VLMs can fluently describe a forest yet fail to reliably count the trees within it—a fundamental disconnect exists between a model's qualitative understanding and its quantitative analytical capability.
+**Key Challenge**: VLMs can fluently describe a forest yet fail to reliably count the trees within it—a fundamental disconnect exists between a model's qualitative understanding and its quantitative analytical capability.
 
-**Paper Goals**: To provide reliable solutions for applications requiring precise quantitative analysis in satellite imagery, including climate monitoring, urban planning, and disaster response.
+**Goal**: To provide reliable solutions for applications requiring precise quantitative analysis in satellite imagery, including climate monitoring, urban planning, and disaster response.
 
-**Starting Point**: Architectural decoupling—the language model is responsible solely for understanding queries and generating code, while all visual analysis is delegated to a segmentation model operating directly on raw pixels.
+**Key Insight**: Architectural decoupling—the language model is responsible solely for understanding queries and generating code, while all visual analysis is delegated to a segmentation model operating directly on raw pixels.
 
 **Core Idea**: Decouple language understanding from visual analysis via code generation, enabling the model to perform geometric operations directly on pixel-level segmentation masks, thereby preserving uncompressed spatial indexing throughout the pipeline.
 

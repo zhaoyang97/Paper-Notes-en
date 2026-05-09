@@ -29,15 +29,15 @@ This paper introduces EngDesign—the first LLM engineering design benchmark spa
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have demonstrated strong performance on conventional QA benchmarks (MMLU, HumanEval, GPQA, etc.) and have been explored for textbook-level engineering problem answering. However, existing evaluations focus on knowledge recall and exact-match answer checking, leaving genuine engineering design capabilities—which require integrating domain knowledge, constraint reasoning, design trade-offs, and functional verification through professional simulation tools—largely unexamined.
+**Background**: LLMs have demonstrated strong performance on conventional QA benchmarks (MMLU, HumanEval, GPQA, etc.) and have been explored for textbook-level engineering problem answering. However, existing evaluations focus on knowledge recall and exact-match answer checking, leaving genuine engineering design capabilities—which require integrating domain knowledge, constraint reasoning, design trade-offs, and functional verification through professional simulation tools—largely unexamined.
 
 **Limitations of Prior Work**: (1) Existing engineering benchmarks are limited to factual QA within single domains and fail to capture the complexity of real design work; (2) Evaluation methods rely on exact matching or LLM-as-judge, yet engineering design problems typically admit no unique correct answer (e.g., infinitely many valid controller designs); (3) No unified evaluation platform exists across multiple engineering disciplines.
 
-**Root Cause**: Real-world engineering design is inherently open-ended—given performance specifications and constraints, multiple valid solutions may exist. Yet existing benchmarks assess this open-ended capability using closed-form QA, producing unreliable conclusions. What is needed is an evaluation method that verifies whether a design *works*, rather than whether an answer is *correct*.
+**Key Challenge**: Real-world engineering design is inherently open-ended—given performance specifications and constraints, multiple valid solutions may exist. Yet existing benchmarks assess this open-ended capability using closed-form QA, producing unreliable conclusions. What is needed is an evaluation method that verifies whether a design *works*, rather than whether an answer is *correct*.
 
-**Paper Goals**: To construct a multi-domain engineering benchmark that objectively measures the practical engineering design capabilities of LLMs through a simulation-driven evaluation pipeline.
+**Goal**: To construct a multi-domain engineering benchmark that objectively measures the practical engineering design capabilities of LLMs through a simulation-driven evaluation pipeline.
 
-**Starting Point**: Rather than presenting LLMs with multiple-choice questions, the paper requires them to "design like an engineer"—producing controller parameters, circuit designs, GPU architecture code, and similar artifacts—and then uses professional tools such as SPICE simulation, the MATLAB Control System Toolbox, and finite element analysis to automatically verify whether designs satisfy performance requirements.
+**Key Insight**: Rather than presenting LLMs with multiple-choice questions, the paper requires them to "design like an engineer"—producing controller parameters, circuit designs, GPU architecture code, and similar artifacts—and then uses professional tools such as SPICE simulation, the MATLAB Control System Toolbox, and finite element analysis to automatically verify whether designs satisfy performance requirements.
 
 **Core Idea**: Replace static answer matching with a simulation-driven evaluation pipeline, and assess the genuine engineering design capabilities of LLMs across 101 open-ended design tasks spanning 9 engineering domains.
 

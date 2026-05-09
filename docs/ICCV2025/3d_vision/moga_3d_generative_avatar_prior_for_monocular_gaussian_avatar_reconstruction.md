@@ -31,7 +31,7 @@ MoGA is proposed to reconstruct high-fidelity 3D Gaussian avatars from a single 
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: Creating animatable, photorealistic avatars from a single image poses fundamental challenges:
+**Key Challenge**: **Background**: Creating animatable, photorealistic avatars from a single image poses fundamental challenges:
 
 **Multi-view diffusion inconsistency**: Existing methods rely on 2D diffusion models to synthesize unseen views, but the generated views are sparse and 3D-inconsistent, resulting in blurriness and artifacts.
 

@@ -27,13 +27,13 @@ content_hash: d933ac1367482d81
 This paper proposes PosteL (Posterior Label Smoothing), which derives soft labels from neighborhood label distributions via Bayesian posterior inference for node classification. The method naturally adapts to both homophilic and heterophilic graphs, achieving accuracy improvements in 76 out of 80 combinations across 8 backbone architectures and 10 datasets.
 
 ## Background & Motivation
-**State of the Field**: Label smoothing (adding uniform noise to one-hot labels) is widely adopted in CV and NLP, yet remains largely unexplored for graph node classification. Soft labels from knowledge distillation are known to encode "dark knowledge" that improves student model performance.
+**Background**: Label smoothing (adding uniform noise to one-hot labels) is widely adopted in CV and NLP, yet remains largely unexplored for graph node classification. Soft labels from knowledge distillation are known to encode "dark knowledge" that improves student model performance.
 
 **Limitations of Prior Work**: Existing graph label smoothing methods (SALS, ALS) assume that nodes tend to share labels with their neighbors, and directly aggregate neighborhood labels as soft labels. While effective on homophilic graphs, this strategy is harmful on heterophilic graphs, where neighboring nodes tend to belong to different classes from the target node.
 
-**Root Cause**: A label smoothing method is needed that simultaneously accommodates homophilic graphs (neighbors share the same label) and heterophilic graphs (neighbors do not share the same label), whereas existing methods only handle the former.
+**Key Challenge**: A label smoothing method is needed that simultaneously accommodates homophilic graphs (neighbors share the same label) and heterophilic graphs (neighbors do not share the same label), whereas existing methods only handle the former.
 
-**Starting Point**: "You can tell a person by the company they keep" — posterior distributions are derived from global statistics of neighborhood labels, such that the posterior favors the majority neighbor label in homophilic graphs and the minority neighbor label in heterophilic graphs.
+**Key Insight**: "You can tell a person by the company they keep" — posterior distributions are derived from global statistics of neighborhood labels, such that the posterior favors the majority neighbor label in homophilic graphs and the minority neighbor label in heterophilic graphs.
 
 **Core Idea**: Soft labels derived via Bayesian posterior distributions, conditioned on global label co-occurrence statistics, naturally adapt to both homophilic and heterophilic graphs.
 

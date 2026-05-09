@@ -29,15 +29,15 @@ This paper proposes a Meta-Unlearning framework for diffusion models that augmen
 
 ## Background & Motivation
 
-**State of the Field**: With the proliferation of large-scale diffusion models such as Stable Diffusion, machine unlearning has become a critical mechanism for preventing the generation of harmful or copyright-infringing content. Methods such as ESD, SDD, UCE, and RECE can effectively "forget" specific concepts from pretrained models.
+**Background**: With the proliferation of large-scale diffusion models such as Stable Diffusion, machine unlearning has become a critical mechanism for preventing the generation of harmful or copyright-infringing content. Methods such as ESD, SDD, UCE, and RECE can effectively "forget" specific concepts from pretrained models.
 
 **Limitations of Prior Work**: Studies show that even after a model is correctly unlearned and publicly released, malicious users can restore erased concepts through minimal fine-tuning. Fine-tuning on entirely unrelated benign data may also partially recover forgotten capabilities.
 
-**Root Cause**: Unlearning methods only modify the model's output behavior for targeted concepts, while certain benign concepts retained in the model (e.g., "skin") remain semantically correlated with erased concepts (e.g., "nudity"), providing a "bridge" that facilitates malicious fine-tuning.
+**Key Challenge**: Unlearning methods only modify the model's output behavior for targeted concepts, while certain benign concepts retained in the model (e.g., "skin") remain semantically correlated with erased concepts (e.g., "nudity"), providing a "bridge" that facilitates malicious fine-tuning.
 
-**Paper Goals**: How can an unlearned model resist concept relearning when subjected to malicious fine-tuning?
+**Goal**: How can an unlearned model resist concept relearning when subjected to malicious fine-tuning?
 
-**Starting Point**: Inspired by meta-learning (MAML) — simulating the attacker's fine-tuning process during training to preemptively arrange the parameter space such that optimization along the fine-tuning direction causes benign knowledge to self-destruct.
+**Key Insight**: Inspired by meta-learning (MAML) — simulating the attacker's fine-tuning process during training to preemptively arrange the parameter space such that optimization along the fine-tuning direction causes benign knowledge to self-destruct.
 
 **Core Idea**: Simulate malicious fine-tuning within the unlearning process and optimize a meta-objective such that the gradient angle between the forget set and retain set exceeds 90°, so that fine-tuning that reduces the forget-set loss automatically increases the retain-set loss.
 

@@ -27,15 +27,15 @@ This paper reframes open-vocabulary 3D indoor scene editing as a goal-regressive
 
 ## Background & Motivation
 
-**State of the Field**: Three mainstream paradigms exist for 3D indoor scene editing — data-driven layout generation (e.g., DiffuScene/EditRoom using diffusion models), constraint optimization (e.g., Holodeck/AnyHome converting language to spatial constraints), and image editing with 3D lifting (e.g., ArtiScene performing 2D edits followed by 3D reconstruction).
+**Background**: Three mainstream paradigms exist for 3D indoor scene editing — data-driven layout generation (e.g., DiffuScene/EditRoom using diffusion models), constraint optimization (e.g., Holodeck/AnyHome converting language to spatial constraints), and image editing with 3D lifting (e.g., ArtiScene performing 2D edits followed by 3D reconstruction).
 
 **Limitations of Prior Work**: Each paradigm satisfies only a subset of three critical requirements — instruction fidelity, semantic consistency (preserving unrelated scene elements), and physical plausibility (no collisions or floating objects). Layout generation methods tend to alter the scene globally; constraint optimization may re-optimize broadly, displacing objects outside the edit target; image-based editing lacks 3D reasoning and introduces structural artifacts.
 
-**Root Cause**: Existing methods treat editing as a generative task — producing the entire scene in a single forward pass — which makes it extremely difficult to guarantee "edit only what is necessary, preserve everything else."
+**Key Challenge**: Existing methods treat editing as a generative task — producing the entire scene in a single forward pass — which makes it extremely difficult to guarantee "edit only what is necessary, preserve everything else."
 
-**Paper Goals**: Achieve 3D scene editing that simultaneously satisfies instruction fidelity, semantic consistency, and physical plausibility.
+**Goal**: Achieve 3D scene editing that simultaneously satisfies instruction fidelity, semantic consistency, and physical plausibility.
 
-**Starting Point**: Inspired by embodied agents and classical AI planning, this work recasts editing as a goal-satisfaction problem: "a user instruction defines a desired world state, and the edit should be the minimal action sequence that makes that state hold." Reasoning backward from the goal to the current scene naturally enforces minimal editing.
+**Key Insight**: Inspired by embodied agents and classical AI planning, this work recasts editing as a goal-satisfaction problem: "a user instruction defines a desired world state, and the edit should be the minimal action sequence that makes that state hold." Reasoning backward from the goal to the current scene naturally enforces minimal editing.
 
 **Core Idea**: Transform scene editing from a *generation problem* to a *planning problem*, leveraging STRIPS-style goal regression to guarantee minimality, verifiability, and physical consistency.
 

@@ -28,7 +28,7 @@ This paper proposes the Probabilistic Angelic Nondeterminism (PAN) programming m
 
 ## Background & Motivation
 
-**State of the Field**: Inference-time compute scaling has become a key approach for improving LLM agent performance, encompassing strategies such as best-of-N sampling, refinement (Reflexion), and tree search (ToT, LATS).
+**Background**: Inference-time compute scaling has become a key approach for improving LLM agent performance, encompassing strategies such as best-of-N sampling, refinement (Reflexion), and tree search (ToT, LATS).
 
 **Limitations of Prior Work**:
    - Programmers typically **hard-code inference-time strategies into agent workflows**, deeply coupling search logic with business logic.
@@ -36,9 +36,9 @@ This paper proposes the Probabilistic Angelic Nondeterminism (PAN) programming m
    - Different agents must each re-implement the same search strategies independently, precluding reuse.
    - Complex search strategies are abandoned due to implementation difficulty, causing missed opportunities for better scaling laws.
 
-**Root Cause**: The coupling of agent workflows (what to do) with inference-time strategies (how to search) reduces code readability and constrains the space of strategies that can be explored.
+**Key Challenge**: The coupling of agent workflows (what to do) with inference-time strategies (how to search) reduces code readability and constrains the space of strategies that can be explored.
 
-**Starting Point**: Inspired by the "model–inference separation" paradigm from probabilistic programming—which separates model definition from inference algorithms—agent programming should similarly decouple workflows from search strategies.
+**Key Insight**: Inspired by the "model–inference separation" paradigm from probabilistic programming—which separates model definition from inference algorithms—agent programming should similarly decouple workflows from search strategies.
 
 **Core Idea**: Inference-time strategies are fundamentally searches over nondeterministic program execution paths; marking uncertainty points with `branchpoint()` allows the framework to automatically construct the search tree.
 

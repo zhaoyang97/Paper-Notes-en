@@ -28,15 +28,15 @@ This paper proposes CAKE (Context-Aware Kernel Evolution), which leverages LLMs 
 
 ## Background & Motivation
 
-**State of the Field**: Bayesian optimization (BO) relies on Gaussian processes (GPs) as surrogate models, where the choice of kernel determines the exploration–exploitation trade-off. Most BO frameworks default to SE or Matérn-5/2 kernels.
+**Background**: Bayesian optimization (BO) relies on Gaussian processes (GPs) as surrogate models, where the choice of kernel determines the exploration–exploitation trade-off. Most BO frameworks default to SE or Matérn-5/2 kernels.
 
 **Limitations of Prior Work**: Fixed kernel assumptions may not align with the true characteristics of the objective function (e.g., periodicity, non-stationarity), leading to slow convergence or suboptimal solutions. Existing adaptive kernel methods are either constrained to a limited kernel dictionary or require complex structural search procedures.
 
-**Root Cause**: BO operates under a limited evaluation budget (typically tens to hundreds of queries), leaving very few data points available for kernel selection. Conventional optimization methods cannot function effectively in such few-shot settings.
+**Key Challenge**: BO operates under a limited evaluation budget (typically tens to hundreds of queries), leaving very few data points available for kernel selection. Conventional optimization methods cannot function effectively in such few-shot settings.
 
-**Paper Goals**: How can expressive kernel functions be adaptively constructed and evolved during the BO process, such that a well-matched kernel can be identified quickly under few-shot conditions?
+**Goal**: How can expressive kernel functions be adaptively constructed and evolved during the BO process, such that a well-matched kernel can be identified quickly under few-shot conditions?
 
-**Starting Point**: LLMs are inherently capable of few-shot learning and in-context reasoning, enabling them to "understand" structural patterns in observational data and express these patterns through kernel function grammars.
+**Key Insight**: LLMs are inherently capable of few-shot learning and in-context reasoning, enabling them to "understand" structural patterns in observational data and express these patterns through kernel function grammars.
 
 **Core Idea**: Treat LLMs as intelligent operators within a genetic algorithm, prompting them to propose and evolve kernel expressions conditioned on observed data.
 

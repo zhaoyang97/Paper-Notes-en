@@ -28,15 +28,15 @@ Two local (sublinear) algorithms are proposed for estimating hitting times on gr
 
 ## Background & Motivation
 
-**State of the Field**: The hitting time $H_G(u,v)$ denotes the expected number of steps for a random walk to travel from $u$ to $v$, and is widely used in graph clustering, link prediction, and recommender systems. Exact computation requires $O(n^3)$ time (via linear system solving or matrix inversion), which is infeasible for large-scale graphs.
+**Background**: The hitting time $H_G(u,v)$ denotes the expected number of steps for a random walk to travel from $u$ to $v$, and is widely used in graph clustering, link prediction, and recommender systems. Exact computation requires $O(n^3)$ time (via linear system solving or matrix inversion), which is infeasible for large-scale graphs.
 
 **Limitations of Prior Work**: Naïve Monte Carlo methods (simulating random walks until arrival) suffer from enormous variance and lack theoretical guarantees; global spectral methods require eigenvalue decomposition at $O(n^3)$ cost; no existing method can efficiently estimate hitting times from a local subgraph.
 
-**Root Cause**: Hitting time is inherently a global quantity (depending on the global graph structure), yet large-scale settings permit only local computation. The central question is whether provably accurate estimates can be obtained using only short walks centered at $u$ and $v$.
+**Key Challenge**: Hitting time is inherently a global quantity (depending on the global graph structure), yet large-scale settings permit only local computation. The central question is whether provably accurate estimates can be obtained using only short walks centered at $u$ and $v$.
 
-**Paper Goals**: Design sublinear-time local algorithms for estimating hitting times, with theoretical error guarantees and optimality proofs.
+**Goal**: Design sublinear-time local algorithms for estimating hitting times, with theoretical error guarantees and optimality proofs.
 
-**Starting Point**: The key insight is that hitting times can be truncated and estimated via the meeting time of two independent random walks launched from $u$ and $v$ respectively.
+**Key Insight**: The key insight is that hitting times can be truncated and estimated via the meeting time of two independent random walks launched from $u$ and $v$ respectively.
 
 **Core Idea**: Launch $\ell$ random walks each from $u$ and $v$, use meeting times to truncate the hitting time estimate, and avoid full graph traversal. The runtime depends only on the mixing time and stationary distribution.
 

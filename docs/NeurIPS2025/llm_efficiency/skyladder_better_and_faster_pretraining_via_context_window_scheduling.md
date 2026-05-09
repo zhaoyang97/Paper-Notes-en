@@ -28,15 +28,15 @@ SkyLadder, a progressive short-to-long context window scheduling strategy, achie
 
 ## Background & Motivation
 
-**State of the Field**: The context windows of LLMs have continuously expanded (GPT 512→Llama-3 8K→128K+), yet fair comparisons under a fixed token budget remain lacking.
+**Background**: The context windows of LLMs have continuously expanded (GPT 512→Llama-3 8K→128K+), yet fair comparisons under a fixed token budget remain lacking.
 
 **Limitations of Prior Work**: Under strictly controlled conditions, short-context models *consistently* outperform long-context models on standard benchmarks—contradicting widely held assumptions in the field.
 
-**Root Cause**: Models must simultaneously achieve strong performance on standard tasks and long-sequence processing capability, yet strategies for balancing the two under a fixed budget have not been systematically explored.
+**Key Challenge**: Models must simultaneously achieve strong performance on standard tasks and long-sequence processing capability, yet strategies for balancing the two under a fixed budget have not been systematically explored.
 
-**Paper Goals**: How can one fully exploit the training efficiency advantage of short contexts while ensuring the model ultimately acquires long-sequence understanding capability?
+**Goal**: How can one fully exploit the training efficiency advantage of short contexts while ensuring the model ultimately acquires long-sequence understanding capability?
 
-**Starting Point**: Drawing an analogy to curriculum learning—progressively advancing from short context (simple) to long context (complex), allowing the model to master fundamentals before extending its capabilities.
+**Key Insight**: Drawing an analogy to curriculum learning—progressively advancing from short context (simple) to long context (complex), allowing the model to master fundamentals before extending its capabilities.
 
 **Core Idea**: A progressive short-to-long window scheduling strategy implemented via modified attention masks, requiring no changes to data or architecture—scheduling alone yields dual gains.
 

@@ -28,15 +28,15 @@ This paper is the first to identify the "FPR shortcut" problem in fairness-aware
 
 ## Background & Motivation
 
-**State of the Field**: Fairness-aware GNNs have achieved satisfactory results on fairness metrics such as $\Delta_{SP}$ (statistical parity) and $\Delta_{EO}$ (equal opportunity) through methods including adversarial learning (FairGNN), feature/structure debiasing (EDITS), and invariant learning (FairINV).
+**Background**: Fairness-aware GNNs have achieved satisfactory results on fairness metrics such as $\Delta_{SP}$ (statistical parity) and $\Delta_{EO}$ (equal opportunity) through methods including adversarial learning (FairGNN), feature/structure debiasing (EDITS), and invariant learning (FairINV).
 
 **Limitations of Prior Work**: Existing methods focus solely on fairness metrics while neglecting GNNs' ability to correctly predict negative labels. The authors find that FairSIN achieves an FPR close to 100% on the Credit dataset — effectively classifying almost all customers as credit card defaulters. This shortcut of "achieving fairness by predicting everyone as positive" is extremely dangerous in high-stakes scenarios such as credit assessment and bail decisions.
 
-**Root Cause**: $\Delta_{SP}$ and $\Delta_{EO}$ only measure the disparity in positive prediction rates across sensitive groups — a model that predicts all nodes as positive achieves a perfect $\Delta_{SP} = \Delta_{EO} = 0$, yet has FPR = 100%.
+**Key Challenge**: $\Delta_{SP}$ and $\Delta_{EO}$ only measure the disparity in positive prediction rates across sensitive groups — a model that predicts all nodes as positive achieves a perfect $\Delta_{SP} = \Delta_{EO} = 0$, yet has FPR = 100%.
 
-**Paper Goals**: How can fairness be improved while avoiding the FPR shortcut?
+**Goal**: How can fairness be improved while avoiding the FPR shortcut?
 
-**Starting Point**: The paper leverages 2D structural entropy (2D-SE) — an information-theoretic measure based on graph structural partitioning — and theoretically proves that maximizing 2D-SE simultaneously provides upper-bound constraints on $\Delta_{SP}$, $\Delta_{EO}$, and FPR.
+**Key Insight**: The paper leverages 2D structural entropy (2D-SE) — an information-theoretic measure based on graph structural partitioning — and theoretically proves that maximizing 2D-SE simultaneously provides upper-bound constraints on $\Delta_{SP}$, $\Delta_{EO}$, and FPR.
 
 **Core Idea**: By maximizing the 2D structural entropy induced by sensitive attribute partitions to reweight graph edges, the framework achieves balanced message aggregation across sensitive groups while avoiding the FPR shortcut.
 

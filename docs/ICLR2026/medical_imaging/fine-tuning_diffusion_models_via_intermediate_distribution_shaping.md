@@ -28,13 +28,13 @@ This work unifies rejection-sampling-based fine-tuning methods under the GRAFT f
 
 ## Background & Motivation
 
-**State of the Field**: Fine-tuning diffusion models commonly relies on PPO with KL regularization; however, the marginal likelihood of diffusion models is intractable, causing the KL term to be either ignored (leading to instability) or approximated via trajectory-level KL (suboptimal, with value function initialization bias).
+**Background**: Fine-tuning diffusion models commonly relies on PPO with KL regularization; however, the marginal likelihood of diffusion models is intractable, causing the KL term to be either ignored (leading to instability) or approximated via trajectory-level KL (suboptimal, with value function initialization bias).
 
 **Limitations of Prior Work**: (1) Intractable marginal KL forces PPO to rely on relaxed approximations; (2) rejection-sampling methods (RAFT/BoN) are practical but lack clear theoretical grounding; (3) distribution shaping is applied only to the final data distribution, leaving the structural information of intermediate denoising steps unexploited.
 
-**Root Cause**: Diffusion model fine-tuning requires KL regularization for stability, yet the marginal KL is intractable.
+**Key Challenge**: Diffusion model fine-tuning requires KL regularization for stability, yet the marginal KL is intractable.
 
-**Starting Point**: Proving that rejection sampling implicitly enforces the marginal KL constraint (even though the likelihood is intractable), then exploiting the multi-step structure of diffusion models to perform shaping at intermediate distributions.
+**Key Insight**: Proving that rejection sampling implicitly enforces the marginal KL constraint (even though the likelihood is intractable), then exploiting the multi-step structure of diffusion models to perform shaping at intermediate distributions.
 
 **Core Idea**: Rejection sampling = implicit KL regularization → apply rejection sampling at intermediate denoising steps → superior bias–variance trade-off.
 

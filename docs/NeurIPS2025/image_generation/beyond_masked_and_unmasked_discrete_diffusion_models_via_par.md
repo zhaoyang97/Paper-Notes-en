@@ -28,15 +28,15 @@ Prime (Partial masking scheme) represents each token as a base-$b$ sub-token seq
 
 ## Background & Motivation
 
-**State of the Field** Masked diffusion models (MDMs) are powerful generative models for discrete data, generating samples by progressively unmasking tokens. Each token exists in one of only two states: masked or unmasked.
+**Background** Masked diffusion models (MDMs) are powerful generative models for discrete data, generating samples by progressively unmasking tokens. Each token exists in one of only two states: masked or unmasked.
 
 **Limitations of Prior Work** This binary representation leads to significant computational waste. During the reverse diffusion process, a large number of steps produce no change (idle steps), with the model repeatedly processing identical inputs. Experiments show that 37% of steps are ineffective.
 
-**Root Cause** The binary state space of MDMs limits model utilization: a token is either fully masked (no information) or fully revealed (finalized), with no intermediate transitional states to enable gradual information release.
+**Key Challenge** The binary state space of MDMs limits model utilization: a token is either fully masked (no information) or fully revealed (finalized), with no intermediate transitional states to enable gradual information release.
 
-**Paper Goals** To redefine the diffusion process by converting idle steps into informative updates, thereby improving model utilization during generation.
+**Goal** To redefine the diffusion process by converting idle steps into informative updates, thereby improving model utilization during generation.
 
-**Starting Point** Each token is decomposed into a sub-token sequence via base-$b$ encoding, and masking is applied independently at the sub-token level, naturally inducing intermediate states.
+**Key Insight** Each token is decomposed into a sub-token sequence via base-$b$ encoding, and masking is applied independently at the sub-token level, naturally inducing intermediate states.
 
 **Core Idea** Extending the binary masked/unmasked representation to multi-level intermediate states via partial sub-token masking, such that a four-way prediction can be decomposed into multiple sequential binary decisions.
 

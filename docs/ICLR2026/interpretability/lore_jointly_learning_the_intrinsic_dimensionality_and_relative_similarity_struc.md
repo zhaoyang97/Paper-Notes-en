@@ -28,7 +28,7 @@ This paper proposes LORE — the first framework to jointly learn embeddings and
 
 ## Background & Motivation
 
-**State of the Field**: Ordinal embedding (OE) learns multidimensional representations of perceptual spaces from triplet comparisons of the form "Is A more similar to B or to C?" It is widely used in psychophysics for modeling subjective perception (taste, smell, aesthetic preference, etc.). Compared to absolute rating scales (e.g., Likert scales), triplet comparisons are language-free and immune to individual scale biases.
+**Background**: Ordinal embedding (OE) learns multidimensional representations of perceptual spaces from triplet comparisons of the form "Is A more similar to B or to C?" It is widely used in psychophysics for modeling subjective perception (taste, smell, aesthetic preference, etc.). Compared to absolute rating scales (e.g., Likert scales), triplet comparisons are language-free and immune to individual scale biases.
 
 **Limitations of Prior Work**:
 - All existing OE methods (SOE, FORTE, t-STE, CKL, OENN) require the user to pre-specify the embedding dimensionality $d'$.
@@ -37,7 +37,7 @@ This paper proposes LORE — the first framework to jointly learn embeddings and
 - Scientific discovery favors parsimony (Occam's razor): lower-dimensional representations are more interpretable and computationally efficient.
 - The only prior attempt at dimensionality recovery (Künstle's method) enumerates candidate dimensions and trains separately for each — not scalable.
 
-**Starting Point**: Integrate dimensionality discovery directly into the OE optimization by using Schatten-p quasi-norm regularization to automatically balance triplet accuracy against embedding rank, eliminating the need to pre-specify dimensionality.
+**Key Insight**: Integrate dimensionality discovery directly into the OE optimization by using Schatten-p quasi-norm regularization to automatically balance triplet accuracy against embedding rank, eliminating the need to pre-specify dimensionality.
 
 ## Method
 

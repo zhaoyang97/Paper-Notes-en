@@ -28,15 +28,15 @@ This paper proposes HiGMem, a two-level event-turn memory system that enables an
 
 ## Background & Motivation
 
-**State of the Field**: LLM agents in long-term conversations require memory systems to retrieve relevant evidence from historical interactions. Existing systems such as MemGPT and A-Mem extend long-range interaction capabilities through external memory stores and vector-similarity-based retrieval.
+**Background**: LLM agents in long-term conversations require memory systems to retrieve relevant evidence from historical interactions. Existing systems such as MemGPT and A-Mem extend long-range interaction capabilities through external memory stores and vector-similarity-based retrieval.
 
 **Limitations of Prior Work**: Existing memory systems, including hierarchical ones, still rely primarily on vector similarity for retrieval. This approach tends to produce "bloated evidence sets"—once the most relevant memories are recalled, adding further surface-similar fragments yields diminishing recall gains while continuously eroding retrieval precision, inflating the context fed to downstream answer generation, and making evidence sets difficult to inspect and manage.
 
-**Root Cause**: Vector similarity alone cannot determine whether a memory is "truly worth reading"; it lacks the ability to reason across different levels of abstraction and cannot proactively assess which fine-grained details actually contribute to answering a query.
+**Key Challenge**: Vector similarity alone cannot determine whether a memory is "truly worth reading"; it lacks the ability to reason across different levels of abstraction and cannot proactively assess which fine-grained details actually contribute to answering a query.
 
-**Paper Goals**: To develop a retrieval strategy that simultaneously maintains high recall, high precision, and controllable token overhead, delivering compact and high-precision evidence sets.
+**Goal**: To develop a retrieval strategy that simultaneously maintains high recall, high precision, and controllable token overhead, delivering compact and high-precision evidence sets.
 
-**Starting Point**: Mimicking the human approach to information processing—first skimming high-level summaries to identify relevant topics, then diving into the details of relevant content. The LLM acts as an "information gatekeeper," using event summaries as semantic anchors to reason about which underlying conversation turns merit closer reading.
+**Key Insight**: Mimicking the human approach to information processing—first skimming high-level summaries to identify relevant topics, then diving into the details of relevant content. The LLM acts as an "information gatekeeper," using event summaries as semantic anchors to reason about which underlying conversation turns merit closer reading.
 
 **Core Idea**: Memory is organized in a two-level event-turn architecture. The LLM first retrieves event summaries as semantic anchors, then predicts which associated turns are worth reading, thereby replacing brute-force vector retrieval with reasoning to obtain a compact and reliable evidence set.
 

@@ -28,15 +28,15 @@ This paper identifies that existing video temporal grounding (VTG) models over-r
 
 ## Background & Motivation
 
-1. **State of the Field**: VTG has advanced significantly through pretrained vision-language models (VLMs) such as CLIP and InternVideo2, yet these models treat all text tokens uniformly in cross-modal attention.
+1. **Background**: VTG has advanced significantly through pretrained vision-language models (VLMs) such as CLIP and InternVideo2, yet these models treat all text tokens uniformly in cross-modal attention.
 
 2. **Limitations of Prior Work**: Experiments reveal that VTG models are heavily biased toward the global semantics of the [EOS] token—using only [EOS] yields performance comparable to or better than using all tokens, indicating severe underutilization of word-level cues.
 
-3. **Root Cause**: The [EOS] token serves as a sentence summary computed independently of visual context, and may fail to capture visually salient textual cues (e.g., "red jacket"), leading to insufficient fine-grained grounding.
+3. **Key Challenge**: The [EOS] token serves as a sentence summary computed independently of visual context, and may fail to capture visually salient textual cues (e.g., "red jacket"), leading to insufficient fine-grained grounding.
 
-4. **Paper Goals**: Design an architecture that explicitly leverages word- and phrase-level semantics to balance global and local alignment.
+4. **Goal**: Design an architecture that explicitly leverages word- and phrase-level semantics to balance global and local alignment.
 
-5. **Starting Point**: Decompose text representations into sentence-level ([EOS]) and phrase-level (word clusters) components, and model their alignment with video separately.
+5. **Key Insight**: Decompose text representations into sentence-level ([EOS]) and phrase-level (word clusters) components, and model their alignment with video separately.
 
 6. **Core Idea**: A dual-path architecture in which the sentence path augments [EOS] attention via dummy tokens, while the phrase path clusters words into semantic phrases and computes phrase-segment context representations.
 

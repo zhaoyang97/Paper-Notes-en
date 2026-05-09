@@ -28,13 +28,13 @@ This paper proposes 2ndMatch, a fine-tuning framework for pruned diffusion model
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models achieve excellent image generation quality but require hundreds of denoising steps at inference, incurring substantial computational costs. Model pruning is an effective strategy for reducing per-step computation.
+**Background**: Diffusion models achieve excellent image generation quality but require hundreds of denoising steps at inference, incurring substantial computational costs. Model pruning is an effective strategy for reducing per-step computation.
 
 **Limitations of Prior Work**: Post-pruning fine-tuning typically reuses the original denoising score matching (DSM) objective, which is insufficient for capacity-reduced pruned models. Existing knowledge distillation approaches align outputs or intermediate features but overlook the model's **sensitivity**—i.e., how the score function responds to input perturbations. First-order Jacobian matching is essentially equivalent to KD for diffusion models (since inputs already contain noise perturbations) and cannot capture perturbation propagation across time steps.
 
-**Root Cause**: Pruning reduces model capacity, causing the pruned model's sensitivity to perturbations to diverge from the original, leading to denoising trajectory drift and degraded generation quality. A method is needed to constrain the pruned model to maintain the same temporal dynamics as the original.
+**Key Challenge**: Pruning reduces model capacity, causing the pruned model's sensitivity to perturbations to diverge from the original, leading to denoising trajectory drift and degraded generation quality. A method is needed to constrain the pruned model to maintain the same temporal dynamics as the original.
 
-**Starting Point**: The paper views diffusion models as discrete-time dynamical systems and draws on FTLE theory, which quantifies the amplification/contraction rate of small perturbations over finite time horizons.
+**Key Insight**: The paper views diffusion models as discrete-time dynamical systems and draws on FTLE theory, which quantifies the amplification/contraction rate of small perturbations over finite time horizons.
 
 **Core Idea**: Align the $J^\top J$ (second-order Jacobian metric) between pruned and original models, using random projections $v^\top J^\top J v$ to efficiently estimate directional expansion rates, enabling scalable second-order Jacobian matching.
 

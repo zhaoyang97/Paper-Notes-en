@@ -35,7 +35,7 @@ This paper presents the first theoretical study of preference-aware customizatio
 Classical MO-MAB formulations target Pareto optimality and employ a global policy to select arms for all users. However, different users hold distinct preferences over objective dimensions:
 
 - **Illustrative scenario**: In restaurant recommendation, User 1 prioritizes taste while User 2 prioritizes price; the same restaurant on the Pareto front may satisfy one user but not the other.
-- **Root Cause**: When the Pareto front contains two or more conflicting arms ($|\mathcal{O}^*| \geq 2$), any algorithm that ignores user preferences will necessarily incur linear regret for some users.
+- **Key Challenge**: When the Pareto front contains two or more conflicting arms ($|\mathcal{O}^*| \geq 2$), any algorithm that ignores user preferences will necessarily incur linear regret for some users.
 
 ### Limitations of Prior Work
 

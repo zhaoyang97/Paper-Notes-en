@@ -29,7 +29,7 @@ This paper presents RoboInter, a unified manipulation suite for intermediate rep
 
 ## Background & Motivation
 
-**State of the Field**: Vision-Language-Action (VLA) systems integrate large-scale pretrained VLMs with robotic manipulation, yet existing manipulation datasets suffer from high annotation cost, embodiment specificity, and insufficient coverage. The plan-then-execute paradigm—generating high-level plans before translating them into low-level actions—has been validated as an effective approach to improving generalization, but critically relies on supervision signals from intermediate representations (subtasks, traces, grounding, etc.).
+**Background**: Vision-Language-Action (VLA) systems integrate large-scale pretrained VLMs with robotic manipulation, yet existing manipulation datasets suffer from high annotation cost, embodiment specificity, and insufficient coverage. The plan-then-execute paradigm—generating high-level plans before translating them into low-level actions—has been validated as an effective approach to improving generalization, but critically relies on supervision signals from intermediate representations (subtasks, traces, grounding, etc.).
 
 **Limitations of Prior Work**:
 
@@ -38,9 +38,9 @@ This paper presents RoboInter, a unified manipulation suite for intermediate rep
 3. No systematic benchmark exists for evaluating VLMs' spatial and temporal reasoning in embodied settings.
 4. Comparisons between modular and end-to-end VLA lack a unified framework and data support.
 
-**Root Cause**: While the potential of the plan-then-execute paradigm has been demonstrated, large-scale, high-quality, and diverse intermediate representation annotations are lacking to fully unlock it.
+**Key Challenge**: While the potential of the plan-then-execute paradigm has been demonstrated, large-scale, high-quality, and diverse intermediate representation annotations are lacking to fully unlock it.
 
-**Paper Goals**: Build a complete intermediate representation ecosystem—from annotation tooling (RoboInter-Tool) to data (RoboInter-Data) to benchmarks (RoboInter-VQA) to model frameworks (RoboInter-VLA)—addressing the three bottlenecks of data, evaluation, and methodology in a unified suite.
+**Goal**: Build a complete intermediate representation ecosystem—from annotation tooling (RoboInter-Tool) to data (RoboInter-Data) to benchmarks (RoboInter-VQA) to model frameworks (RoboInter-VLA)—addressing the three bottlenecks of data, evaluation, and methodology in a unified suite.
 
 ## Method
 

@@ -37,7 +37,7 @@ Limitations of existing methods:
 
 **Generative methods** (RealFill): fine-tune diffusion models via LoRA to directly synthesize missing regions, but **lack geometric cues** (e.g., camera pose, depth), causing hallucinated structures or misaligned content when viewpoint differences are large.
 
-**Root Cause**: There is a fundamental tension between **generative capacity** (handling complex scenes) and **geometric consistency** (maintaining spatial alignment).
+**Key Challenge**: There is a fundamental tension between **generative capacity** (handling complex scenes) and **geometric consistency** (maintaining spatial alignment).
 
 ## Method
 

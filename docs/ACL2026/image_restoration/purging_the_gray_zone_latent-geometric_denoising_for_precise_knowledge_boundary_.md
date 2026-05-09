@@ -27,9 +27,9 @@ GeoDe trains linear probes in LLM latent space to construct truth hyperplanes, u
 
 ## Background & Motivation
 
-**State of the Field**: LLMs frequently produce hallucinations. Abstention fine-tuning trains models to answer correctly on known questions and respond "I don't know" on unknown ones.
+**Background**: LLMs frequently produce hallucinations. Abstention fine-tuning trains models to answer correctly on known questions and respond "I don't know" on unknown ones.
 
-**Root Cause**: Near the decision boundary in latent space exists a "gray zone" where known and unknown sample representations highly overlap, with ambiguous internal beliefs. Forcing label assignment in this region causes the model to learn contradictory decision rules.
+**Key Challenge**: Near the decision boundary in latent space exists a "gray zone" where known and unknown sample representations highly overlap, with ambiguous internal beliefs. Forcing label assignment in this region causes the model to learn contradictory decision rules.
 
 **Core Idea**: Use geometric distance instead of response-accuracy-based hard partitioning. Distance thresholds filter out gray zone samples, training only on high-confidence subsets.
 

@@ -29,7 +29,7 @@ This paper proposes CoreGuard, which locks Transformer linear layer weights via 
 
 ## Background & Motivation
 
-**State of the Field**: Proprietary LLMs (e.g., ChatGPT, Claude) are increasingly deployed on edge devices for low-latency and privacy-preserving inference (e.g., Apple Intelligence deploys a 3B-parameter LLM on iOS).
+**Background**: Proprietary LLMs (e.g., ChatGPT, Claude) are increasingly deployed on edge devices for low-latency and privacy-preserving inference (e.g., Apple Intelligence deploys a 3B-parameter LLM on iOS).
 
 **Limitations of Prior Work**:
    - **Watermarking** (passive defense): Only proves ownership; attackers can still abuse the model in unsupervised environments.
@@ -38,11 +38,11 @@ This paper proposes CoreGuard, which locks Transformer linear layer weights via 
    - **Partial TEE execution** (PPTE, e.g., DarkneTZ): Protects too few parameters; attackers can reconstruct the model with as little as 1% of training data.
    - **Parameter shuffling** (PSP, e.g., ShadowNet): Requires TEE↔GPU transfer per linear layer; generating a single token on LLaMA3-8B incurs ~1.3 GB of transfer and ~1.3 seconds of latency.
 
-**Root Cause**: Existing approaches face a fundamental tension between security and efficiency—sufficiently strong protection incurs unacceptable computational/communication overhead, while efficient solutions provide inadequate security. The threat of *foundational capability stealing* is particularly acute: attackers can fine-tune a locked model to exploit its generalization ability for new tasks.
+**Key Challenge**: Existing approaches face a fundamental tension between security and efficiency—sufficiently strong protection incurs unacceptable computational/communication overhead, while efficient solutions provide inadequate security. The threat of *foundational capability stealing* is particularly acute: attackers can fine-tune a locked model to exploit its generalization ability for new tasks.
 
-**Paper Goals**: Design a plug-and-play protection scheme that allows a locked model to function correctly only under TEE authorization, with negligible computational and communication overhead.
+**Goal**: Design a plug-and-play protection scheme that allows a locked model to function correctly only under TEE authorization, with negligible computational and communication overhead.
 
-**Starting Point**: Exploit the mathematical properties of permutation matrices ($\pi\pi^T = I$) to realize a "lock-and-key" mechanism, and propagate the authorization signal automatically through all subsequent layers via column-permutation propagation, eliminating repeated TEE invocations.
+**Key Insight**: Exploit the mathematical properties of permutation matrices ($\pi\pi^T = I$) to realize a "lock-and-key" mechanism, and propagate the authorization signal automatically through all subsequent layers via column-permutation propagation, eliminating repeated TEE invocations.
 
 **Core Idea**: Row permutation locks the weights; column-permutation propagation carries the authorization signal, compressing TEE interactions from two per layer to only five rounds for the entire model.
 

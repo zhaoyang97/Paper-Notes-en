@@ -28,15 +28,15 @@ KTAE proposes a model-free token-level advantage estimation algorithm that quant
 
 ## Background & Motivation
 
-**State of the Field**: GRPO is currently the dominant reinforcement learning algorithm for LLMs, eliminating the dependency on a Critic model through group-relative policy optimization. DAPO further extends GRPO with Clip-Higher, dynamic sampling, and other enhancements.
+**Background**: GRPO is currently the dominant reinforcement learning algorithm for LLMs, eliminating the dependency on a Critic model through group-relative policy optimization. DAPO further extends GRPO with Clip-Higher, dynamic sampling, and other enhancements.
 
 **Limitations of Prior Work**: GRPO/DAPO compute rollout-level advantages, assigning an identical advantage value $\hat{A}_{i,t} = \frac{R_i - \text{mean}(\mathbf{R})}{\text{std}(\mathbf{R})}$ to every token within the same reasoning chain. However, in mathematical reasoning, different tokens contribute very differently — an erroneous reasoning chain may deviate from the correct path only in its final steps.
 
-**Root Cause**: Uniform advantage prevents the model from precisely identifying which tokens constitute critical reasoning steps and which are irrelevant (e.g., "First", "denote"), thereby impeding effective learning.
+**Key Challenge**: Uniform advantage prevents the model from precisely identifying which tokens constitute critical reasoning steps and which are irrelevant (e.g., "First", "denote"), thereby impeding effective learning.
 
-**Paper Goals**: Estimate fine-grained per-token advantage values without introducing any additional model.
+**Goal**: Estimate fine-grained per-token advantage values without introducing any additional model.
 
-**Starting Point**: By leveraging the correct/incorrect labels of multiple rollouts, a contingency table is constructed for each token, and statistical methods are applied to quantify the strength and direction of its association with correct outcomes.
+**Key Insight**: By leveraging the correct/incorrect labels of multiple rollouts, a contingency table is constructed for each token, and statistical methods are applied to quantify the strength and direction of its association with correct outcomes.
 
 **Core Idea**: The statistical association between token occurrence and rollout correctness — quantified via Fisher's exact test, information gain, and BM25-based frequency analysis — is converted into token-level advantages and added to the GRPO advantage.
 

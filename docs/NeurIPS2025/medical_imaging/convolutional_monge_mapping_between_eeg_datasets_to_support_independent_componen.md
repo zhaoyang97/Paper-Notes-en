@@ -28,15 +28,15 @@ This paper extends CMMN (Convolutional Monge Mapping Normalization) by proposing
 
 ## Background & Motivation
 
-**State of the Field**: EEG recordings capture rich neural activity information and are widely used in the diagnosis of epilepsy and psychiatric disorders. ICA combined with automatic IC labeling is the mainstream approach for artifact removal, with ICLabel being the most popular IC classifier.
+**Background**: EEG recordings capture rich neural activity information and are widely used in the diagnosis of epilepsy and psychiatric disorders. ICA combined with automatic IC labeling is the mainstream approach for artifact removal, with ICLabel being the most popular IC classifier.
 
 **Limitations of Prior Work**: Different EEG acquisition systems (electrodes, amplifiers, analog/digital filters, power line interference) introduce substantial spectral variability — e.g., US recordings contain 60 Hz line noise while European recordings contain 50 Hz noise. Such domain shift severely degrades cross-dataset IC classification performance. Furthermore, datasets differ in channel count (134–235 vs. 64), and the original CMMN computes an independent filter per channel, making it incompatible across different channel configurations.
 
-**Root Cause**: The original CMMN designs a separate filter for each channel; however, ICs are linear mixtures of channels — applying different filters to different channels alters IC characteristics. More fundamentally, when the source and target domains have different numbers of channels, the original CMMN cannot be applied at all.
+**Key Challenge**: The original CMMN designs a separate filter for each channel; however, ICs are linear mixtures of channels — applying different filters to different channels alters IC characteristics. More fundamentally, when the source and target domains have different numbers of channels, the original CMMN cannot be applied at all.
 
-**Paper Goals**: Design a single-filter CMMN variant that (a) accommodates EEG datasets with different channel counts and (b) preserves IC characteristics (since all channels share the same filter).
+**Goal**: Design a single-filter CMMN variant that (a) accommodates EEG datasets with different channel counts and (b) preserves IC characteristics (since all channels share the same filter).
 
-**Starting Point**: Replace per-channel PSD with channel-averaged PSD to produce one common filter per subject. Combine with $\ell_1$ normalization to eliminate signal amplitude discrepancies caused by impedance and electrode differences, enabling spectral shape alignment.
+**Key Insight**: Replace per-channel PSD with channel-averaged PSD to produce one common filter per subject. Combine with $\ell_1$ normalization to eliminate signal amplitude discrepancies caused by impedance and electrode differences, enabling spectral shape alignment.
 
 **Core Idea**: A CMMN filter based on channel-averaged PSD and an $\ell_1$-normalized barycenter achieves EEG domain adaptation across datasets with different channel counts and acquisition systems.
 

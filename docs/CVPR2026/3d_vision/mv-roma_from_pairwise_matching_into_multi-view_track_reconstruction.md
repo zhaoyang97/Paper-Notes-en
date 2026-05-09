@@ -29,11 +29,11 @@ This paper proposes MV-RoMa, the first multi-view dense matching model that simu
 
 ## Background & Motivation
 
-1. **State of the Field**: Feature matching is a foundational task for 3D reconstruction and visual localization. Dense matching methods such as RoMa and DKM already produce high-quality pairwise correspondences.
+1. **Background**: Feature matching is a foundational task for 3D reconstruction and visual localization. Dense matching methods such as RoMa and DKM already produce high-quality pairwise correspondences.
 2. **Limitations of Prior Work**: Existing methods are inherently pairwise; in multi-view tasks such as SfM, pairwise results must be chained into multi-view tracks, a process prone to fragmentation and geometric inconsistency.
-3. **Root Cause**: Post-processing optimization methods (e.g., PixSfM, DFSfM) can only refine on top of initial pairwise matches, require per-track optimization, and are bottlenecked by the quality of those initial matches.
-4. **Paper Goals**: Achieve multi-view consistent dense correspondences directly at the model level, eliminating accumulated chaining errors.
-5. **Starting Point**: Sparse geometric priors derived from initial pairwise matches are embedded as "track tokens" into the feature encoder to guide multi-view feature interaction.
+3. **Key Challenge**: Post-processing optimization methods (e.g., PixSfM, DFSfM) can only refine on top of initial pairwise matches, require per-track optimization, and are bottlenecked by the quality of those initial matches.
+4. **Goal**: Achieve multi-view consistent dense correspondences directly at the model level, eliminating accumulated chaining errors.
+5. **Key Insight**: Sparse geometric priors derived from initial pairwise matches are embedded as "track tokens" into the feature encoder to guide multi-view feature interaction.
 6. **Core Idea**: A track-token-guided multi-view encoder combined with a pixel-aligned attentional refiner enables the first end-to-end multi-view dense matching framework.
 
 ## Method

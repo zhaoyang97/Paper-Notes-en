@@ -27,16 +27,16 @@ content_hash: 33bb2c3807d1ebe2
 AnthroTAP proposes an automated pipeline that generates large-scale pseudo-labeled point tracking data from real-world human motion videos via SMPL fitting and optical flow filtering. Using only 1.4K videos and 4 GPUs for one day of training, it achieves state-of-the-art performance on the TAP-Vid benchmark, surpassing BootsTAPIR which uses 15M videos.
 
 ## Background & Motivation
-**State of the Field**: Point tracking (tracking any point) is a fundamental computer vision task with broad applications in robotics, 3D reconstruction, and video editing.
+**Background**: Point tracking (tracking any point) is a fundamental computer vision task with broad applications in robotics, 3D reconstruction, and video editing.
 
 **Limitations of Prior Work**:
 - Large-scale training data relies almost entirely on synthetic sources (e.g., Kubric), which fail to capture the complex visual characteristics of the real world;
 - Manual annotation of point trajectories is extremely time- and labor-intensive and cannot be scaled;
 - Self-training methods (BootsTAPIR, CoTracker3) require massive amounts of video (15M+) and large-scale computation (256 GPUs), and suffer from confirmation bias.
 
-**Root Cause**: Real-world data is critical for generalization, yet the cost of obtaining annotations is prohibitively high. The central challenge is how to efficiently acquire high-quality real-world point tracking training data.
+**Key Challenge**: Real-world data is critical for generalization, yet the cost of obtaining annotations is prohibitively high. The central challenge is how to efficiently acquire high-quality real-world point tracking training data.
 
-**Starting Point**: Human motion naturally encompasses complex phenomena such as non-rigid deformation, articulated movement, and frequent occlusion, while the SMPL model can automatically establish point correspondences.
+**Key Insight**: Human motion naturally encompasses complex phenomena such as non-rigid deformation, articulated movement, and frequent occlusion, while the SMPL model can automatically establish point correspondences.
 
 **Core Idea**: Leverage the SMPL body model to automatically generate pseudo-labeled trajectories from real videos, combined with optical flow consistency filtering, yielding high-quality, low-cost real-world training data.
 

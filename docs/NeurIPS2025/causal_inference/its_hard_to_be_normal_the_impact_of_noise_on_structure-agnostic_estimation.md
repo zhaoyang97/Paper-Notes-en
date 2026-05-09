@@ -28,15 +28,15 @@ content_hash: 6f8577b48262c1fe
 This paper proves that Double Machine Learning (DML) is minimax optimal under Gaussian treatment noise ($O(\epsilon^2 + n^{-1/2})$), but becomes suboptimal under non-Gaussian noise. It proposes Agnostic Cumulant-based Estimation (ACE), which exploits higher-order cumulants to achieve $r$-th order insensitivity $O(\epsilon^r + n^{-1/2})$.
 
 ## Background & Motivation
-**State of the Field**: In structure-agnostic causal inference, DML (Chernozhukov et al.) is the standard method for estimating treatment effects. Its core advantage is second-order insensitivity to nuisance parameter estimation errors (Neyman orthogonality).
+**Background**: In structure-agnostic causal inference, DML (Chernozhukov et al.) is the standard method for estimating treatment effects. Its core advantage is second-order insensitivity to nuisance parameter estimation errors (Neyman orthogonality).
 
 **Limitations of Prior Work**: The convergence rate $O(\epsilon^2 + n^{-1/2})$ of DML provides only quadratic suppression of nuisance error $\epsilon$. In high-dimensional settings where $\epsilon$ decays slowly, this can become a bottleneck. Whether improvement is possible, and under what conditions, remains entirely unknown.
 
-**Root Cause**: Is the second-order insensitivity of DML optimal, or can it be further improved by exploiting distributional information of treatment noise?
+**Key Challenge**: Is the second-order insensitivity of DML optimal, or can it be further improved by exploiting distributional information of treatment noise?
 
-**Paper Goals**: To fully characterize the impact of treatment noise distribution on structure-agnostic causal estimation — identifying when DML is optimal (i.e., unimprovable) and when it can be surpassed.
+**Goal**: To fully characterize the impact of treatment noise distribution on structure-agnostic causal estimation — identifying when DML is optimal (i.e., unimprovable) and when it can be surpassed.
 
-**Starting Point**: Robinson's (1988) partially linear model $Y = \theta T + g(X) + \epsilon$ — the most classical causal inference setting. The noise distribution of the treatment variable $T$ (Gaussian vs. non-Gaussian) determines the achievable optimal rate.
+**Key Insight**: Robinson's (1988) partially linear model $Y = \theta T + g(X) + \epsilon$ — the most classical causal inference setting. The noise distribution of the treatment variable $T$ (Gaussian vs. non-Gaussian) determines the achievable optimal rate.
 
 **Core Idea**: Gaussian noise constitutes an insurmountable barrier (under which DML is optimal), while non-Gaussian noise enables arbitrarily high-order insensitivity via cumulant-based estimators.
 

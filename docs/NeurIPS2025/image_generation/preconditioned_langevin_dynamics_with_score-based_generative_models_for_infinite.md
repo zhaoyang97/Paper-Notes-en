@@ -36,7 +36,7 @@ Existing approaches face a deep tension:
 
 **Challenges specific to infinite dimensions**: In infinite-dimensional Hilbert spaces, a Lebesgue reference measure does not exist and density functions cannot be defined; prior covariances must be trace-class; and the drift of standard Langevin samplers may diverge at fine scales.
 
-**Starting Point**: The "apply-algorithm-then-discretize" paradigm should be adopted. Embedding SGMs as learned priors within Langevin samplers requires understanding the interplay among score approximation errors, preconditioner operators, trace-class priors, and linear forward maps. Figure 1 of the paper illustrates two key counterexamples: (1) using an identity prior covariance yields samples that appear stable but have infinite energy and thus do not belong to the Hilbert space; (2) using a trace-class prior causes the standard Langevin drift to diverge at fine scales.
+**Key Insight**: The "apply-algorithm-then-discretize" paradigm should be adopted. Embedding SGMs as learned priors within Langevin samplers requires understanding the interplay among score approximation errors, preconditioner operators, trace-class priors, and linear forward maps. Figure 1 of the paper illustrates two key counterexamples: (1) using an identity prior covariance yields samples that appear stable but have infinite energy and thus do not belong to the Hilbert space; (2) using a trace-class prior causes the standard Langevin drift to diverge at fine scales.
 
 ## Method
 

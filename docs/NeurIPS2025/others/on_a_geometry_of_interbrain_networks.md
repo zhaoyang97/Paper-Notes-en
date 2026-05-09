@@ -28,15 +28,15 @@ This opinion piece proposes introducing discrete graph curvature (Forman-Ricci a
 
 ## Background & Motivation
 
-**State of the Field**: Hyperscanning simultaneously records neural signals (EEG, fNIRS, fMRI) from interacting individuals and constructs interbrain networks to investigate the neural underpinnings of social interaction. Mainstream analytical approaches rely on interbrain synchrony (IBS) metrics such as the phase-locking value (PLV) to quantify neural coupling between brain regions.
+**Background**: Hyperscanning simultaneously records neural signals (EEG, fNIRS, fMRI) from interacting individuals and constructs interbrain networks to investigate the neural underpinnings of social interaction. Mainstream analytical approaches rely on interbrain synchrony (IBS) metrics such as the phase-locking value (PLV) to quantify neural coupling between brain regions.
 
 **Limitations of Prior Work**: Correlation-based metrics such as PLV are inherently descriptive—they indicate that synchrony exists between two brain regions but cannot reveal why the network reorganizes in a particular way, how information is routed through the network, or at which critical moments during social interaction structural transitions occur.
 
-**Root Cause**: Social interaction is a dynamic and complex process (cooperation, conflict, understanding, misunderstanding) involving rapid network reconfiguration. Purely correlational methods overlook the dynamic evolution of network topology, rendering them incapable of capturing these critical transition points or providing mechanistic explanations.
+**Key Challenge**: Social interaction is a dynamic and complex process (cooperation, conflict, understanding, misunderstanding) involving rapid network reconfiguration. Purely correlational methods overlook the dynamic evolution of network topology, rendering them incapable of capturing these critical transition points or providing mechanistic explanations.
 
-**Paper Goals**: To propose a discrete-geometry-based analytical framework capable of (1) detecting phase transitions in interbrain networks and (2) inferring information routing strategies within those networks.
+**Goal**: To propose a discrete-geometry-based analytical framework capable of (1) detecting phase transitions in interbrain networks and (2) inferring information routing strategies within those networks.
 
-**Starting Point**: Discrete graph curvature has been established in geometric machine learning as a powerful tool for characterizing the structure and dynamics of complex networks. The authors propose applying Forman-Ricci and Ollivier-Ricci curvature to time-varying interbrain networks, using changes in curvature distributions to detect network reorganization events.
+**Key Insight**: Discrete graph curvature has been established in geometric machine learning as a powerful tool for characterizing the structure and dynamics of complex networks. The authors propose applying Forman-Ricci and Ollivier-Ricci curvature to time-varying interbrain networks, using changes in curvature distributions to detect network reorganization events.
 
 **Core Idea**: Use entropy divergence of discrete curvature distributions to detect interbrain network phase transitions, and use curvature values to infer information routing strategies—advancing from descriptive analysis toward mechanistic understanding.
 

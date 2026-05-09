@@ -28,15 +28,15 @@ This paper proposes RoboAgent, a capability-driven embodied task planning framew
 
 ## Background & Motivation
 
-1. **State of the Field**: Embodied Task Planning (ETP) requires an agent to execute sequences of atomic actions in an environment based on visual observations and language instructions. While VLMs have demonstrated strong multimodal understanding, their performance remains limited in embodied planning scenarios involving multi-turn interaction, long-horizon reasoning, and extended context analysis.
+1. **Background**: Embodied Task Planning (ETP) requires an agent to execute sequences of atomic actions in an environment based on visual observations and language instructions. While VLMs have demonstrated strong multimodal understanding, their performance remains limited in embodied planning scenarios involving multi-turn interaction, long-horizon reasoning, and extended context analysis.
 
 2. **Limitations of Prior Work**: (1) Intermediate reasoning generated via direct CoT lacks standardized formats and direct supervision, making it difficult to ensure correctness and utility; (2) methods relying on closed-source models or external tools cannot be trained end-to-end; (3) standard RL struggles to learn effective policies in exploration scenarios with sparse rewards.
 
-3. **Root Cause**: Complex planning implicitly involves multiple intermediate processes—intent understanding, commonsense reasoning, environment analysis, action modeling, and progress monitoring—yet existing methods conflate these into a single process, making fine-grained supervision over intermediate steps difficult.
+3. **Key Challenge**: Complex planning implicitly involves multiple intermediate processes—intent understanding, commonsense reasoning, environment analysis, action modeling, and progress monitoring—yet existing methods conflate these into a single process, making fine-grained supervision over intermediate steps difficult.
 
-4. **Paper Goals**: To decompose complex planning into a series of fundamental visual-language problems, enabling a single VLM to achieve controllable and transparent reasoning through explicit capability invocations.
+4. **Goal**: To decompose complex planning into a series of fundamental visual-language problems, enabling a single VLM to achieve controllable and transparent reasoning through explicit capability invocations.
 
-5. **Starting Point**: Define a set of visual-language capabilities critical to embodied scenarios; a scheduler determines which capability to invoke and when; each capability maintains its own context and produces intermediate reasoning results or environment interactions.
+5. **Key Insight**: Define a set of visual-language capabilities critical to embodied scenarios; a scheduler determines which capability to invoke and when; each capability maintains its own context and produces intermediate reasoning results or environment interactions.
 
 6. **Core Idea**: A single VLM simultaneously acts as the scheduler and multiple capability modules, replacing "free-form CoT" with a "structured capability invocation chain," coupled with multi-stage training that leverages simulator-internal information.
 

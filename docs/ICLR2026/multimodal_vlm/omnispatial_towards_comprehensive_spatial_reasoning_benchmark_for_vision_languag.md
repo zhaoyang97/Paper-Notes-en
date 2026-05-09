@@ -29,18 +29,18 @@ Grounded in cognitive psychology, this work introduces OmniSpatial—the first c
 
 ## Background & Motivation
 
-**State of the Field**: Spatial reasoning is a core capability of VLMs. Existing benchmarks (SpatialBot-Bench, EmbSpatial, etc.) focus on basic spatial relationships—left/right discrimination, distance estimation, and object counting. State-of-the-art reasoning models (o3, Gemini-2.5-Pro) have already surpassed 90% accuracy on these benchmarks, indicating that basic spatial understanding is approaching saturation.
+**Background**: Spatial reasoning is a core capability of VLMs. Existing benchmarks (SpatialBot-Bench, EmbSpatial, etc.) focus on basic spatial relationships—left/right discrimination, distance estimation, and object counting. State-of-the-art reasoning models (o3, Gemini-2.5-Pro) have already surpassed 90% accuracy on these benchmarks, indicating that basic spatial understanding is approaching saturation.
 
 **Limitations of Prior Work**:
 - Basic spatial relations (left/right/front/back/counting) ≠ complex spatial reasoning (rotation/deformation/path planning/viewpoint transformation) → existing benchmarks underestimate the true capability gap.
 - Existing benchmarks rely heavily on template-based automatic annotation → insufficient data diversity and challenge, with rigid question phrasing (e.g., "Is A to the left of B?").
 - Lack of a systematic taxonomy grounded in cognitive psychology → task designs across benchmarks are fragmented and limited in coverage.
 
-**Root Cause**: The "high scores" VLMs achieve on existing benchmarks mask their fundamental deficiencies in complex spatial reasoning in real-world scenarios—understanding an AED location in an emergency requires not only identifying "to the right of the door," but also reading a schematic diagram, associating a map with the physical scene, and planning a route.
+**Key Challenge**: The "high scores" VLMs achieve on existing benchmarks mask their fundamental deficiencies in complex spatial reasoning in real-world scenarios—understanding an AED location in an emergency requires not only identifying "to the right of the door," but also reading a schematic diagram, associating a map with the physical scene, and planning a route.
 
-**Paper Goals**: To construct a "non-saturable" comprehensive spatial reasoning benchmark covering the full spectrum of spatial cognitive abilities from basic to high-order.
+**Goal**: To construct a "non-saturable" comprehensive spatial reasoning benchmark covering the full spectrum of spatial cognitive abilities from basic to high-order.
 
-**Starting Point**: Drawing from cognitive psychology theories of spatial cognition (Chabris 2006; Meneghetti 2022), the paper decomposes complex spatial reasoning into 4 complementary dimensions, using this framework to design 50 subcategories and ensure theoretical completeness.
+**Key Insight**: Drawing from cognitive psychology theories of spatial cognition (Chabris 2006; Meneghetti 2022), the paper decomposes complex spatial reasoning into 4 complementary dimensions, using this framework to design 50 subcategories and ensure theoretical completeness.
 
 **Core Idea**: Redefine the complete boundaries of spatial reasoning evaluation by leveraging cognitive psychology theories of spatial cognition.
 

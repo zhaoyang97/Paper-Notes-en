@@ -27,15 +27,15 @@ This paper proposes a paradigm shift from "behaviorism" to "cognitive modeling" 
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly employed for social simulation. The dominant approach relies on persona prompting or RLHF to elicit human-like responses from agents.
+**Background**: LLMs are increasingly employed for social simulation. The dominant approach relies on persona prompting or RLHF to elicit human-like responses from agents.
 
 **Limitations of Prior Work**: Existing methods remain confined to a behavioristic paradigm. Although agent outputs are fluent, they lack internal causal reasoning, belief traceability, and counterfactual reasoning capabilities. Three core failure modes are identified: untraceable reasoning, insensitivity to counterfactuals, and consensus hallucination.
 
-**Root Cause**: Superficial alignment at the output level does not imply structural alignment at the reasoning level. Autoregressive architectures optimize next-token likelihood rather than belief-state transitions.
+**Key Challenge**: Superficial alignment at the output level does not imply structural alignment at the reasoning level. Autoregressive architectures optimize next-token likelihood rather than belief-state transitions.
 
-**Paper Goals**: To equip LLM agents in social simulation with structured, revisable, and traceable belief reasoning capabilities.
+**Goal**: To equip LLM agents in social simulation with structured, revisable, and traceable belief reasoning capabilities.
 
-**Starting Point**: Drawing from cognitive science, human reasoning exhibits three core properties: causality, compositionality, and revisability.
+**Key Insight**: Drawing from cognitive science, human reasoning exhibits three core properties: causality, compositionality, and revisability.
 
 **Core Idea**: Replace token-level generation with cognitively inspired causal belief graphs, enabling agents to simulate thought rather than merely simulate language.
 

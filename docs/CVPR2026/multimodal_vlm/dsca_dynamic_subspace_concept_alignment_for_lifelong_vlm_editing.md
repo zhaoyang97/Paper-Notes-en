@@ -33,9 +33,9 @@ Large vision-language models (VLMs) deployed over extended periods require conti
 
 **Core Limitation**: Regardless of approach, edits ultimately operate on the VLM's **shared representation space**. In this high-dimensional manifold, concepts are entangled—even modifying a small subset of parameters inevitably perturbs the representation positions of neighboring concepts, causing "coupling interference." As the number of edits grows, such interference accumulates and eventually triggers catastrophic forgetting.
 
-**Root Cause**: Existing methods attempt to "softly constrain" the editing scope through **algorithmic optimization** (e.g., regularization, distillation), but cannot achieve **structural isolation** of different concepts' knowledge at the architectural level.
+**Key Challenge**: Existing methods attempt to "softly constrain" the editing scope through **algorithmic optimization** (e.g., regularization, distillation), but cannot achieve **structural isolation** of different concepts' knowledge at the architectural level.
 
-**Starting Point**: Since real-world knowledge is compositional and interventions are local, editing should occur within **concept subspaces** of the VLM rather than on the shared representation manifold. DSCA elevates "concept isolation" from a training objective to an **architectural property**—establishing structural "firewalls" via orthogonal subspace decomposition such that editing one concept is mathematically precluded from interfering with others.
+**Key Insight**: Since real-world knowledge is compositional and interventions are local, editing should occur within **concept subspaces** of the VLM rather than on the shared representation manifold. DSCA elevates "concept isolation" from a training objective to an **architectural property**—establishing structural "firewalls" via orthogonal subspace decomposition such that editing one concept is mathematically precluded from interfering with others.
 
 ## Method
 

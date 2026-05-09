@@ -28,11 +28,11 @@ This paper proposes SENTINEL, a framework grounded in the key observation that h
 
 ## Background & Motivation
 
-1. **State of the Field**: Multimodal large language models (MLLMs) have achieved remarkable progress in cross-modal understanding, yet hallucination—generating content inconsistent with the visual input—remains a central challenge.
+1. **Background**: Multimodal large language models (MLLMs) have achieved remarkable progress in cross-modal understanding, yet hallucination—generating content inconsistent with the visual input—remains a central challenge.
 2. **Limitations of Prior Work**: Existing mitigation approaches suffer from three categories of problems: (1) decoding strategies (VCD, OPERA, DoLa) introduce additional inference overhead and latency; (2) preference alignment methods rely on large proprietary models (e.g., GPT) or human annotation, incurring high costs; (3) output rewriting methods introduce distributional mismatch between training data and the model's original outputs.
-3. **Root Cause**: Hallucination severity increases with the length of generated text—earlier sentences contain fewer hallucinations, while subsequent sentences exhibit progressively more. Early intervention is critical, yet existing methods do not explicitly exploit this temporal propagation property.
-4. **Paper Goals**: To achieve efficient early intervention against MLLM hallucinations without relying on external large models or introducing distributional shift.
-5. **Starting Point**: Perform multiple sampling rounds from the model itself → cross-validate with object detectors → label each sentence as hallucinated or non-hallucinated → construct in-domain preference pairs → train with DPO.
+3. **Key Challenge**: Hallucination severity increases with the length of generated text—earlier sentences contain fewer hallucinations, while subsequent sentences exhibit progressively more. Early intervention is critical, yet existing methods do not explicitly exploit this temporal propagation property.
+4. **Goal**: To achieve efficient early intervention against MLLM hallucinations without relying on external large models or introducing distributional shift.
+5. **Key Insight**: Perform multiple sampling rounds from the model itself → cross-validate with object detectors → label each sentence as hallucinated or non-hallucinated → construct in-domain preference pairs → train with DPO.
 6. **Core Idea**: Leverage the model's own in-distribution sampled outputs; apply dual-detector cross-validation to assign sentence-level hallucination labels; perform preference learning intervention at the position where hallucinations first appear.
 
 ## Method

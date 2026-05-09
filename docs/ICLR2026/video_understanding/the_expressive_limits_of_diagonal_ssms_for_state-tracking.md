@@ -29,7 +29,7 @@ This paper provides a complete characterization of the expressive power of input
 
 ## Background & Motivation
 
-**State of the Field**: State space models (SSMs), such as Mamba and S4D, have emerged as efficient alternatives to Transformers and demonstrated strong empirical performance on long-sequence modeling tasks. By employing linear recurrences with diagonalized state transition matrices, they achieve $O(\log T)$ parallelization. Nevertheless, the theoretical understanding of SSM expressive power remains limited, particularly on tasks such as state tracking.
+**Background**: State space models (SSMs), such as Mamba and S4D, have emerged as efficient alternatives to Transformers and demonstrated strong empirical performance on long-sequence modeling tasks. By employing linear recurrences with diagonalized state transition matrices, they achieve $O(\log T)$ parallelization. Nevertheless, the theoretical understanding of SSM expressive power remains limited, particularly on tasks such as state tracking.
 
 **Limitations of Prior Work**:
 1. SSMs were initially expected to outperform Transformers on state tracking due to their explicit state representations, yet experiments show that SSMs similarly fail.
@@ -37,9 +37,9 @@ This paper provides a complete characterization of the expressive power of input
 3. Sarrof et al. proved that Mamba (with non-negative diagonal matrices) cannot solve the parity problem (the simplest non-trivial group $C_2$), yet the precise capability boundary of diagonal SSMs remains unknown.
 4. The theoretical difference in expressive power between single-layer and multi-layer architectures is unclear — does depth yield strict benefits?
 
-**Root Cause**: Diagonalization is the foundation of efficient parallelization in SSMs, but it simultaneously constrains the expressive power of the state transition matrices. Understanding the expressive limits while preserving efficiency is an open theoretical challenge.
+**Key Challenge**: Diagonalization is the foundation of efficient parallelization in SSMs, but it simultaneously constrains the expressive power of the state transition matrices. Understanding the expressive limits while preserving efficiency is an open theoretical challenge.
 
-**Paper Goals**: Adopting an algebraic group-theoretic perspective, this paper precisely characterizes which groups can be tracked by $k$-layer DCD SSMs — providing necessary and sufficient conditions that rely on no unproven conjectures.
+**Goal**: Adopting an algebraic group-theoretic perspective, this paper precisely characterizes which groups can be tracked by $k$-layer DCD SSMs — providing necessary and sufficient conditions that rely on no unproven conjectures.
 
 ## Method
 

@@ -28,7 +28,7 @@ SpecAttn proposes a training-free method that leverages attention weights alread
 
 ## Background & Motivation
 
-**State of the Field**: The $O(L^2 d)$ complexity of the Transformer self-attention mechanism is a core bottleneck in LLM inference, especially in long-context scenarios. System-level optimizations such as vLLM and FlashAttention provide significant speedups but still perform full dense attention, computing every query-key pair.
+**Background**: The $O(L^2 d)$ complexity of the Transformer self-attention mechanism is a core bottleneck in LLM inference, especially in long-context scenarios. System-level optimizations such as vLLM and FlashAttention provide significant speedups but still perform full dense attention, computing every query-key pair.
 
 **Limitations of Prior Work**: Methods such as Longformer and BigBird adopt predefined sparse patterns (sliding windows, global tokens) to achieve linear complexity, but require retraining and cannot adapt to varying input content. Dynamic methods such as MInference and SpargeAttn select top-k keys at inference time, but rely on preset head patterns or introduce additional prediction overhead.
 
@@ -36,7 +36,7 @@ SpecAttn proposes a training-free method that leverages attention weights alread
 
 **Core Insight**: The draft model already computes attention weights during speculative decoding, and these weights contain rich token importance information. Prior work treats speculative decoding and sparse attention as orthogonal optimization strategies, overlooking the opportunity to combine them.
 
-**Paper Goals**: Without modifying model weights or requiring any training, leverage the draft model's attention distribution in speculative decoding to guide dynamic KV cache pruning in the verification model, thereby achieving content-aware sparse attention while preserving output quality.
+**Goal**: Without modifying model weights or requiring any training, leverage the draft model's attention distribution in speculative decoding to guide dynamic KV cache pruning in the verification model, thereby achieving content-aware sparse attention while preserving output quality.
 
 **Core Idea**: Draft model attention weights → KL divergence mapping to verification model layers → sorting-free top-p selection of important tokens → dynamic pruning of the verification model's KV cache = content-aware sparse attention at zero training cost.
 

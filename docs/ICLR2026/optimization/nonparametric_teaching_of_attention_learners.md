@@ -28,7 +28,7 @@ This paper proposes AtteNT — a reinterpretation of attention learner (Transfor
 
 ## Background & Motivation
 
-**State of the Field**: Attention learners (Transformers, ViTs, etc.) have achieved remarkable success in NLP and CV, but their training costs are prohibitively high — LLM pre-training requires millions of sentences, and video understanding demands even larger data scales. Reducing training costs has become an urgent need.
+**Background**: Attention learners (Transformers, ViTs, etc.) have achieved remarkable success in NLP and CV, but their training costs are prohibitively high — LLM pre-training requires millions of sentences, and video understanding demands even larger data scales. Reducing training costs has become an urgent need.
 
 **Limitations of Prior Work**:
 
@@ -36,9 +36,9 @@ This paper proposes AtteNT — a reinterpretation of attention learner (Transfor
 2. **Gap between parameter space and function space**: Attention neural networks (ANNs) are trained via stochastic gradient descent (SGD) in parameter space, whereas nonparametric teaching uses functional gradient descent (FGD) in function space — the consistency between the two has never been established.
 3. **How attention alters learning dynamics**: The attention mechanism invokes the input three times (Q, K, V) to assign varying importance to sequence elements; how this affects the structure of parametric gradients has not been analyzed.
 
-**Root Cause**: Nonparametric teaching theory has the potential to accelerate attention learner training, but a theoretical gap exists between its mathematical foundation (functional gradient descent) and the actual training procedure (parametric gradient descent), and the introduction of attention makes the extension from MLP to ANN non-trivial.
+**Key Challenge**: Nonparametric teaching theory has the potential to accelerate attention learner training, but a theoretical gap exists between its mathematical foundation (functional gradient descent) and the actual training procedure (parametric gradient descent), and the introduction of attention makes the extension from MLP to ANN non-trivial.
 
-**Paper Goals**: Systematically analyze the role of attention in parametric gradient descent → prove the consistency between parametric and functional gradient descent for ANNs → directly apply the greedy teaching algorithm (selecting samples with the largest prediction deviation) to accelerate attention learner training.
+**Goal**: Systematically analyze the role of attention in parametric gradient descent → prove the consistency between parametric and functional gradient descent for ANNs → directly apply the greedy teaching algorithm (selecting samples with the largest prediction deviation) to accelerate attention learner training.
 
 ## Method
 

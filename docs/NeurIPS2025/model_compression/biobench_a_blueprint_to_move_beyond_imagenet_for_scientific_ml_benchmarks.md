@@ -28,21 +28,21 @@ BioBench is proposed as a unified benchmark spanning 9 ecological vision tasks, 
 
 ## Background & Motivation
 
-**State of the Field**: Visual research continues to center on ImageNet-1K, MS COCO, and ADE20K for evaluation, and SOTA claims for new models (ViT, DINOv2, CLIP) are anchored to these leaderboards. Scientific domains—radiology, histopathology, microbiology, ecology—involve images that differ fundamentally from web photographs.
+**Background**: Visual research continues to center on ImageNet-1K, MS COCO, and ADE20K for evaluation, and SOTA claims for new models (ViT, DINOv2, CLIP) are anchored to these leaderboards. Scientific domains—radiology, histopathology, microbiology, ecology—involve images that differ fundamentally from web photographs.
 
 **Limitations of Prior Work**:
    - ImageNet's RGB web photographs differ substantially from scientific images such as camera-trap infrared frames, multispectral drone imagery, and microscope slides in spectrum, noise, and distribution;
    - Scientific tasks are fine-grained and long-tailed—ecologists must distinguish thousands of insect species, yet ImageNet's 1,000 classes capture almost none of this granularity;
    - Consequently, higher ImageNet accuracy does not reliably translate to better performance on scientific tasks.
 
-**Root Cause**: Across 46 modern vision Transformer checkpoints, the Spearman $\rho$ between ImageNet top-1 and ecological task performance is only 0.55 overall, dropping to 0.42 among models exceeding 75%—meaning approximately 30% of rankings among frontier models are inverted.
+**Key Challenge**: Across 46 modern vision Transformer checkpoints, the Spearman $\rho$ between ImageNet top-1 and ecological task performance is only 0.55 overall, dropping to 0.42 among models exceeding 75%—meaning approximately 30% of rankings among frontier models are inverted.
 
-**Paper Goals**:
+**Goal**:
    - Construct a unified, reproducible ecological vision benchmark that allows researchers to evaluate models on tasks that genuinely matter;
    - Quantify the degree to which ImageNet fails as a proxy for scientific AI evaluation;
    - Provide a generalizable benchmark design blueprint applicable to other scientific domains such as medicine and manufacturing.
 
-**Starting Point**: Ecology offers abundant public data and well-annotated tasks accumulated through CV4Ecology challenges, making it an ideal testbed.
+**Key Insight**: Ecology offers abundant public data and well-annotated tasks accumulated through CV4Ecology challenges, making it an ideal testbed.
 
 **Core Idea**: Unify 9 disparate ecological vision tasks into BioBench, demonstrate that ImageNet leaderboards have lost predictive power for scientific AI, and establish a standardized paradigm for benchmark design.
 

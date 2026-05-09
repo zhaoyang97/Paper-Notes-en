@@ -28,18 +28,18 @@ This paper proposes GuardAlign, a training-free test-time safety defense framewo
 
 ## Background & Motivation
 
-**State of the Field**: LVLMs (e.g., LLaVA, InternVL) have achieved remarkable progress in vision-language reasoning, yet they remain vulnerable to harmful responses when input images carry malicious semantics. Existing defenses fall into fine-tuning-based methods (high cost) and test-time methods (e.g., contrastive decoding, high overhead); recent work has introduced lightweight input-side defense paradigms.
+**Background**: LVLMs (e.g., LLaVA, InternVL) have achieved remarkable progress in vision-language reasoning, yet they remain vulnerable to harmful responses when input images carry malicious semantics. Existing defenses fall into fine-tuning-based methods (high cost) and test-time methods (e.g., contrastive decoding, high overhead); recent work has introduced lightweight input-side defense paradigms.
 
 **Limitations of Prior Work**:
 - The first step of input-side defense uses CLIP to detect unsafe images, but similarity scores between safe and unsafe samples overlap severely in complex scenes, leading to inaccurate detection.
 - The second step adds safety prefixes to activate the model's internal defense mechanisms, but the attention weights of these prefixes decay monotonically with depth, diluting the safety signal.
 - After an initial refusal, models frequently begin generating unsafe content following transition words such as "However."
 
-**Root Cause**: Global CLIP similarity fails to capture local malicious semantics, and safety prefix signals attenuate in deeper layers.
+**Key Challenge**: Global CLIP similarity fails to capture local malicious semantics, and safety prefix signals attenuate in deeper layers.
 
-**Paper Goals**: More accurate unsafe content detection and more persistent safety signal maintenance.
+**Goal**: More accurate unsafe content detection and more persistent safety signal maintenance.
 
-**Starting Point**: Model fine-grained distributional distances between image patches and unsafe semantics via OT; prevent safety prefix signal decay via an attention calibration mechanism.
+**Key Insight**: Model fine-grained distributional distances between image patches and unsafe semantics via OT; prevent safety prefix signal decay via an attention calibration mechanism.
 
 **Core Idea**: OT-based malicious patch detection + attention calibration for safety prefix persistence = training-free LVLM safety defense.
 

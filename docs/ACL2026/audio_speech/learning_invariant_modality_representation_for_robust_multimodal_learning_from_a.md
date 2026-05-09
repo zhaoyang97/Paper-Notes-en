@@ -29,15 +29,15 @@ This paper proposes CmIR (Causal modality Invariant Representation learning), wh
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal affective computing predicts sentiment by integrating linguistic, acoustic, and visual modalities. Existing methods perform well on in-distribution test sets but tend to exploit spurious cross-modal correlations present in training data.
+**Background**: Multimodal affective computing predicts sentiment by integrating linguistic, acoustic, and visual modalities. Existing methods perform well on in-distribution test sets but tend to exploit spurious cross-modal correlations present in training data.
 
 **Limitations of Prior Work**: (1) Models may over-rely on a speaker's habitual smile (a spurious visual feature) rather than semantic content; (2) Noisy modalities (e.g., background noise, low-resolution video) further corrupt spurious correlations, widening the generalization gap; (3) Existing causal approaches either lack theoretical guarantees or target specific biases (e.g., speaker bias) and are not generalizable.
 
-**Root Cause**: A general framework is needed to distinguish causal from spurious features—one that does not rely on prior assumptions about bias types or require predefined bias labels.
+**Key Challenge**: A general framework is needed to distinguish causal from spurious features—one that does not rely on prior assumptions about bias types or require predefined bias labels.
 
-**Paper Goals**: To establish a theoretically grounded general framework based on causal inference that disentangles each modality into causal invariant and environment-specific spurious components.
+**Goal**: To establish a theoretically grounded general framework based on causal inference that disentangles each modality into causal invariant and environment-specific spurious components.
 
-**Starting Point**: The defining property of causal invariant representations is predictive stability across environments—if $P(Y|Z_m^{\text{inv}}, E=e_1) = P(Y|Z_m^{\text{inv}}, E=e_2)$, then $Z_m^{\text{inv}}$ contains only causal features.
+**Key Insight**: The defining property of causal invariant representations is predictive stability across environments—if $P(Y|Z_m^{\text{inv}}, E=e_1) = P(Y|Z_m^{\text{inv}}, E=e_2)$, then $Z_m^{\text{inv}}$ contains only causal features.
 
 **Core Idea**: Disentanglement is achieved through a three-constraint optimization: an invariance constraint ensures consistent predictions across environments, a mutual information constraint enforces independence between the two components, and a reconstruction constraint prevents information loss. In the absence of explicit environment labels, virtual environments are simulated by injecting Gaussian noise of varying intensities into the original features.
 

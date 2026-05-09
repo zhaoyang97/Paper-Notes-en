@@ -37,7 +37,7 @@ To substantiate this claim, the authors conduct systematic preliminary ablation 
 - Results show that removing images (text-only) causes **far smaller** performance degradation than removing text (image-only); in some cases, image-only variants are nearly ineffective.
 - The contribution gap between the two modalities is further quantified using information-theoretic measures (information gain).
 
-**Root Cause**: Insufficient information in the image modality degrades multimodal detection performance. **Starting Point**: Enriching the image modality by generating additional images that more completely represent the story described in the text.
+**Key Challenge**: Insufficient information in the image modality degrades multimodal detection performance. **Key Insight**: Enriching the image modality by generating additional images that more completely represent the story described in the text.
 
 ## Method
 

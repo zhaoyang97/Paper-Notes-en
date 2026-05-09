@@ -28,15 +28,15 @@ This paper presents the first systematic study of bias in LLM tool selection. Wh
 
 ## Background & Motivation
 
-**State of the Field**: LLM agents increasingly rely on external tools/APIs to perform tasks that cannot be executed directly, such as querying databases, retrieving real-time information, or invoking external services. Tool selection is a critical step in the agent pipeline—candidate tools are first retrieved, then the LLM reasons over them to select the final API to call.
+**Background**: LLM agents increasingly rely on external tools/APIs to perform tasks that cannot be executed directly, such as querying databases, retrieving real-time information, or invoking external services. Tool selection is a critical step in the agent pipeline—candidate tools are first retrieved, then the LLM reasons over them to select the final API to call.
 
 **Limitations of Prior Work**: In API marketplaces, multiple providers offer functionally equivalent tools (e.g., multiple weather APIs, multiple translation APIs). Ideally, LLMs should treat such equivalent tools fairly; in practice, however, models systematically favor certain providers. This not only degrades user experience (repeatedly selecting slower or less reliable services) but also creates market unfairness under pay-per-request pricing models.
 
-**Root Cause**: Existing LLM bias research focuses primarily on social biases (gender, race, etc.) and cognitive biases (anchoring effects, etc.). Tool selection bias—a critical blind spot—has received almost no attention. A small body of work examines tool selection under adversarial attacks (e.g., malicious metadata injection), but biases arising under non-adversarial conditions—selection unfairness caused by subtle differences in tool names, descriptions, or list positions—have not been systematically analyzed.
+**Key Challenge**: Existing LLM bias research focuses primarily on social biases (gender, race, etc.) and cognitive biases (anchoring effects, etc.). Tool selection bias—a critical blind spot—has received almost no attention. A small body of work examines tool selection under adversarial attacks (e.g., malicious metadata injection), but biases arising under non-adversarial conditions—selection unfairness caused by subtle differences in tool names, descriptions, or list positions—have not been systematically analyzed.
 
-**Paper Goals**: Three sub-questions are addressed: (a) How severe is LLM tool selection bias? (b) What are the root causes of the bias? (c) How can it be mitigated?
+**Goal**: Three sub-questions are addressed: (a) How severe is LLM tool selection bias? (b) What are the root causes of the bias? (c) How can it be mitigated?
 
-**Starting Point**: The paper constructs clusters of functionally equivalent tools, quantifies the deviation of selection distributions from uniformity using total variation distance, and isolates the contribution of individual factors through controlled experiments (metadata perturbation, continual pretraining).
+**Key Insight**: The paper constructs clusters of functionally equivalent tools, quantifies the deviation of selection distributions from uniformity using total variation distance, and isolates the contribution of individual factors through controlled experiments (metadata perturbation, continual pretraining).
 
 **Core Idea**: A benchmark of equivalent tool clusters combined with total variation distance metrics is used to systematically characterize LLM tool selection bias. Semantic alignment is identified as the primary driver, and a lightweight filter-then-uniform-sample mitigation strategy is proposed.
 

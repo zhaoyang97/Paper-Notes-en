@@ -29,15 +29,15 @@ This paper proposes Radiant Foam, a novel differentiable scene representation ba
 
 ## Background & Motivation
 
-**State of the Field**: Differentiable scene representations are evolving toward greater efficiency and real-time capability. 3D Gaussian Splatting (3DGS) has rapidly gained popularity by leveraging rasterization efficiency and has become the dominant alternative to radiance field methods. Rasterization offers significant speed advantages over traditional ray-based rendering by fully exploiting GPU rasterization hardware.
+**Background**: Differentiable scene representations are evolving toward greater efficiency and real-time capability. 3D Gaussian Splatting (3DGS) has rapidly gained popularity by leveraging rasterization efficiency and has become the dominant alternative to radiance field methods. Rasterization offers significant speed advantages over traditional ray-based rendering by fully exploiting GPU rasterization hardware.
 
 **Limitations of Prior Work**: The efficiency of rasterization is built upon substantial approximations — each splat is assumed to be planar and independently sorted, and is processed in a tile-based manner. These approximations make it extremely difficult to model light transport phenomena such as reflection and refraction. Although NeRF-based methods naturally support arbitrary ray paths, their volumetric sampling is too computationally expensive for real-time use. Hardware RT core-based Gaussian ray tracing methods depend on specific hardware APIs (e.g., OptiX), resulting in poor portability.
 
-**Root Cause**: There exists an inherent trade-off between rendering efficiency and physical correctness — rasterization is efficient but relies on heavy physical approximations, while ray tracing is physically accurate but insufficient for real-time rendering.
+**Key Challenge**: There exists an inherent trade-off between rendering efficiency and physical correctness — rasterization is efficient but relies on heavy physical approximations, while ray tracing is physically accurate but insufficient for real-time rendering.
 
-**Paper Goals**: To design a scene representation that preserves the physical flexibility of ray tracing while achieving real-time rendering speed.
+**Goal**: To design a scene representation that preserves the physical flexibility of ray tracing while achieving real-time rendering speed.
 
-**Starting Point**: The authors observe that a highly efficient yet underexplored volumetric mesh ray tracing algorithm exists in computer graphics — cell-by-cell traversal on tetrahedral meshes — whose complexity is proportional to the number of cells traversed by a ray rather than the total number of cells.
+**Key Insight**: The authors observe that a highly efficient yet underexplored volumetric mesh ray tracing algorithm exists in computer graphics — cell-by-cell traversal on tetrahedral meshes — whose complexity is proportional to the number of cells traversed by a ray rather than the total number of cells.
 
 **Core Idea**: A tetrahedral mesh is used as the spatial structure of the radiance field, with radiometric attributes stored at mesh vertices. Classical tetrahedral mesh ray traversal is employed to enable efficient, approximation-free differentiable rendering.
 

@@ -28,11 +28,11 @@ This paper proposes ShapBPT, which combines **data-aware Binary Partition Trees 
 
 ## Background & Motivation
 
-1. **State of the Field**: Pixel-level feature attribution is an important tool in explainable computer vision (XCV). SHAP computes Shapley values based on game theory, while LIME estimates region importance via pre-segmentation.
+1. **Background**: Pixel-level feature attribution is an important tool in explainable computer vision (XCV). SHAP computes Shapley values based on game theory, while LIME estimates region importance via pre-segmentation.
 2. **Limitations of Prior Work**: (a) SHAP relies on data-agnostic axis-aligned (AA) grid hierarchies that ignore multi-scale morphological structure, leading to slow convergence and poor alignment with actual object shapes; (b) LIME depends on predefined segmentations, resulting in poor explanations when segmentation is inaccurate, with no capacity for adaptive refinement; (c) hierarchical Shapley methods have never exploited data-aware hierarchical structures for CV tasks.
-3. **Root Cause**: The computational cost of Owen approximation grows exponentially with hierarchy depth ($O(4^d)$), requiring as few recursive splits as possible to reach relevant regions—something AA grids cannot achieve.
-4. **Paper Goals**: Enable Shapley attribution methods to leverage morphological information from images, achieving better object localization and shape recognition within a smaller computational budget.
-5. **Starting Point**: The BPT algorithm from MPEG-7 coding is repurposed to construct data-aware hierarchical coalition structures, where pixels are merged bottom-up based on color uniformity and spatial proximity.
+3. **Key Challenge**: The computational cost of Owen approximation grows exponentially with hierarchy depth ($O(4^d)$), requiring as few recursive splits as possible to reach relevant regions—something AA grids cannot achieve.
+4. **Goal**: Enable Shapley attribution methods to leverage morphological information from images, achieving better object localization and shape recognition within a smaller computational budget.
+5. **Key Insight**: The BPT algorithm from MPEG-7 coding is repurposed to construct data-aware hierarchical coalition structures, where pixels are merged bottom-up based on color uniformity and spatial proximity.
 6. **Core Idea**: Pixel regions that are similar in color and shape are likely to share the same Shapley value; grouping them via BPT maximizes the efficiency of the Owen formula.
 
 ## Method

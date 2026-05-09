@@ -29,7 +29,7 @@ This paper proposes WASI (Weight-Activation Subspace Iteration), which leverages
 
 ## Background & Motivation
 
-**State of the Field**: Deploying Transformers on edge devices poses severe memory and computational challenges. While methods such as LoRA reduce the number of trainable parameters, inference still operates in the full-rank space; activation maps during the forward pass constitute the primary memory bottleneck.
+**Background**: Deploying Transformers on edge devices poses severe memory and computational challenges. While methods such as LoRA reduce the number of trainable parameters, inference still operates in the full-rank space; activation maps during the forward pass constitute the primary memory bottleneck.
 
 **Limitations of Prior Work**:
 - **LoRA and variants**: Reduce training parameters but require merging back to full rank at inference, leaving inference overhead unchanged; storing both frozen weights and adapters during training can actually increase memory usage.

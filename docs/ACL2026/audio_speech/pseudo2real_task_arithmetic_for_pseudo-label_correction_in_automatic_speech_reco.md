@@ -29,15 +29,15 @@ This paper proposes Pseudo2Real, a parameter-space correction method that comput
 
 ## Background & Motivation
 
-**State of the Field**: ASR systems face scarce annotated data when encountering new domains (e.g., novel accents). Pseudo-labeling—generating labels with a teacher model—is a common domain adaptation strategy, but pseudo-labels inherit systematic biases from the teacher model.
+**Background**: ASR systems face scarce annotated data when encountering new domains (e.g., novel accents). Pseudo-labeling—generating labels with a teacher model—is a common domain adaptation strategy, but pseudo-labels inherit systematic biases from the teacher model.
 
 **Limitations of Prior Work**: (1) Confidence filtering and consistency checks suppress noise but cannot correct structured bias patterns; (2) iterative self-training (e.g., Noisy Student) requires multiple training rounds and still propagates the teacher's repeated errors; (3) weight-space methods such as EMA average over training trajectories without targeting pseudo-label bias specifically.
 
-**Root Cause**: When no ground-truth annotations exist in the target domain, how can systematic error patterns in pseudo-labels be identified and corrected?
+**Key Challenge**: When no ground-truth annotations exist in the target domain, how can systematic error patterns in pseudo-labels be identified and corrected?
 
-**Paper Goals**: Design a reusable parameter-space correction method that corrects pseudo-label bias without requiring target-domain labels.
+**Goal**: Design a reusable parameter-space correction method that corrects pseudo-label bias without requiring target-domain labels.
 
-**Starting Point**: Linear mode connectivity—models fine-tuned from the same pre-trained initialization reside in a shared low-loss basin, so weight differences can be interpreted as meaningful directions rather than noise.
+**Key Insight**: Linear mode connectivity—models fine-tuned from the same pre-trained initialization reside in a shared low-loss basin, so weight differences can be interpreted as meaningful directions rather than noise.
 
 **Core Idea**: The weight difference between a real-label model and a pseudo-label model trained on the source domain captures the direction of pseudo-label bias; adding a scaled correction vector to the target-domain pseudo-label model rectifies this bias.
 

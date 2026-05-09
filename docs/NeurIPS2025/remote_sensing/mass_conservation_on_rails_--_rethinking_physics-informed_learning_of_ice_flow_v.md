@@ -31,7 +31,7 @@ This paper proposes a divergence-free neural network (dfNN) that architecturally
 
 ### State of the Field
 
-**State of the Field**: The Antarctic Ice Sheet (AIS) stores ice equivalent to approximately 58 meters of global sea-level rise; accurate modeling of ice flow is essential for projecting sea-level change.
+**Background**: The Antarctic Ice Sheet (AIS) stores ice equivalent to approximately 58 meters of global sea-level rise; accurate modeling of ice flow is essential for projecting sea-level change.
 
 ### Limitations of Prior Work
 
@@ -39,11 +39,11 @@ This paper proposes a divergence-free neural network (dfNN) that architecturally
 
 ### Root Cause
 
-**Root Cause**: Existing PINNs incorporate mass conservation as a soft penalty in the loss function, but cannot guarantee physical consistency (MAD > 0) and exhibit poor generalization.
+**Key Challenge**: Existing PINNs incorporate mass conservation as a soft penalty in the loss function, but cannot guarantee physical consistency (MAD > 0) and exhibit poor generalization.
 
 ### Starting Point
 
-**Starting Point**: The core question is: **can mass conservation be enforced as a hard architectural constraint rather than relying on a soft loss-function penalty?**
+**Key Insight**: The core question is: **can mass conservation be enforced as a hard architectural constraint rather than relying on a soft loss-function penalty?**
 
 ### Additional Notes
 

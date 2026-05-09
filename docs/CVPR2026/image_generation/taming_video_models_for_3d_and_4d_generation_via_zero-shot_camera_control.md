@@ -28,7 +28,7 @@ WorldForge proposes a fully training-free inference-time guidance framework that
 
 ## Background & Motivation
 
-1. **State of the Field**: Video diffusion models (VDMs) trained on large-scale video data encode rich spatiotemporal priors and can generate highly realistic visual content. Researchers have begun leveraging VDMs for 3D/4D tasks such as novel view synthesis, scene generation, and dynamic re-rendering.
+1. **Background**: Video diffusion models (VDMs) trained on large-scale video data encode rich spatiotemporal priors and can generate highly realistic visual content. Researchers have begun leveraging VDMs for 3D/4D tasks such as novel view synthesis, scene generation, and dynamic re-rendering.
 
 2. **Limitations of Prior Work**:
     - **Poor controllability**: VDMs struggle to precisely follow 6-DoF camera trajectories, leading to spatial inconsistencies.
@@ -36,11 +36,11 @@ WorldForge proposes a fully training-free inference-time guidance framework that
     - **High cost of fine-tuning approaches**: Fine-tuning on motion-conditioned data (e.g., LoRA, ControlNet) is computationally expensive, generalizes poorly, and may corrupt pretrained priors.
     - **Fragility of warp-and-repaint approaches**: Projecting frames along a new camera path and inpainting with a generative model is unreliable because the warped inputs are out-of-distribution (OOD) for the pretrained model, producing visible artifacts.
 
-3. **Root Cause**: There is a fundamental tension between fine-grained camera controllability and generation quality/generalizability—injecting control signals disrupts model priors, while preserving the priors precludes precise control.
+3. **Key Challenge**: There is a fundamental tension between fine-grained camera controllability and generation quality/generalizability—injecting control signals disrupts model priors, while preserving the priors precludes precise control.
 
-4. **Paper Goals**: Inject precise trajectory control at inference time while fully preserving the VDM's world priors, without any training or fine-tuning.
+4. **Goal**: Inject precise trajectory control at inference time while fully preserving the VDM's world priors, without any training or fine-tuning.
 
-5. **Starting Point**: The warp-and-repaint pipeline is adopted to obtain trajectory-guided frames, but three carefully designed inference-time intervention mechanisms address its inherent OOD issues. A core observation is that different channels of the VAE latent space encode distinct information (motion vs. appearance), enabling selective injection of control signals.
+5. **Key Insight**: The warp-and-repaint pipeline is adopted to obtain trajectory-guided frames, but three carefully designed inference-time intervention mechanisms address its inherent OOD issues. A core observation is that different channels of the VAE latent space encode distinct information (motion vs. appearance), enabling selective injection of control signals.
 
 6. **Core Idea**: Achieve training-free precise camera control by selectively injecting trajectory signals into motion-relevant channels, applying micro-corrections at each denoising step, and leveraging the divergence between guided and unguided paths for self-correction.
 

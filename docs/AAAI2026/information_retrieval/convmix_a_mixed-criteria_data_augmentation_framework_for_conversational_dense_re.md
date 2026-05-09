@@ -26,15 +26,15 @@ content_hash: 50c486fe596a947e
 This paper proposes ConvMix, a mixed-criteria data augmentation framework that leverages LLMs to perform scalable relevance annotation augmentation from both query and document directions, combined with clustering-based diversity selection and Fisher information-based in-distribution supervision, to systematically improve conversational dense retrieval performance.
 
 ## Background & Motivation
-**State of the Field**: Conversational search fulfills complex user information needs through multi-turn interactions, with the core challenge being accurate intent understanding from context-dependent queries. Conversational dense retrieval (CDR) addresses this via end-to-end learning of latent representations for queries and documents, but is highly dependent on the quantity and quality of annotated data.
+**Background**: Conversational search fulfills complex user information needs through multi-turn interactions, with the core challenge being accurate intent understanding from context-dependent queries. Conversational dense retrieval (CDR) addresses this via end-to-end learning of latent representations for queries and documents, but is highly dependent on the quantity and quality of annotated data.
 
 **Limitations of Prior Work**: Conversational search engines have not yet been widely deployed, and available query logs are far fewer than in traditional ad-hoc retrieval settings, resulting in a **severe data scarcity problem**. Manual data construction is extremely costly.
 
-**Root Cause**: Existing data augmentation methods suffer from single-dimensional augmentation (enhancing only from the query or document side), lack of quality control (generated data being homogeneous or noisy), and **distribution shift when mixing data from heterogeneous annotation sources**.
+**Key Challenge**: Existing data augmentation methods suffer from single-dimensional augmentation (enhancing only from the query or document side), lack of quality control (generated data being homogeneous or noisy), and **distribution shift when mixing data from heterogeneous annotation sources**.
 
-**Paper Goals**: Design a conversational retrieval data augmentation framework that satisfies four criteria: multi-dimensional augmentation, scalable generation, quality control, and in-distribution supervision.
+**Goal**: Design a conversational retrieval data augmentation framework that satisfies four criteria: multi-dimensional augmentation, scalable generation, quality control, and in-distribution supervision.
 
-**Starting Point**: Leverage LLMs to perform bidirectional relevance annotation augmentation from both query and document directions, combined with clustering-based deduplication and Fisher information-based selection, unifying multiple criteria into a single framework.
+**Key Insight**: Leverage LLMs to perform bidirectional relevance annotation augmentation from both query and document directions, combined with clustering-based deduplication and Fisher information-based selection, unifying multiple criteria into a single framework.
 
 **Core Idea**: Augment relevance annotations using LLMs from both query rewriting and document rewriting directions, then apply semantic clustering and Fisher information filtering to select high-diversity, in-distribution quality samples for training the conversational retriever.
 

@@ -29,15 +29,15 @@ Alexandria constructs a parallel English-Dialectal Arabic multi-round dialogue d
 
 ## Background & Motivation
 
-**State of the Field**: Neural Machine Translation has achieved significant progress in high-resource language pairs. However, Arabic faces severe "diglossia" challenges: daily communication primarily uses regional dialects, while MT systems are mainly trained on Modern Standard Arabic (MSA), leading to poor generalization on dialectal inputs.
+**Background**: Neural Machine Translation has achieved significant progress in high-resource language pairs. However, Arabic faces severe "diglossia" challenges: daily communication primarily uses regional dialects, while MT systems are mainly trained on Modern Standard Arabic (MSA), leading to poor generalization on dialectal inputs.
 
 **Limitations of Prior Work**: Existing dialectal Arabic resources suffer from three major limitations: (1) scale is severely insufficient (PADIC covers only ~6,400 sentences/dialect, MADAR only 2,000); (2) narrow domain coverage (MADAR focuses on travel, lacking social impact domains like health, education, and agriculture); (3) coarse granularity (labels are restricted to regions like "Levantine" or "Maghrebi," lacking city-level variants and metadata like gender configurations or code-switching).
 
-**Root Cause**: The daily dialectal communication needs of millions of Arabic speakers vs. the systematic neglect of dialects by MT systems and the scarcity of evaluation resources.
+**Key Challenge**: The daily dialectal communication needs of millions of Arabic speakers vs. the systematic neglect of dialects by MT systems and the scarcity of evaluation resources.
 
-**Paper Goals**: To build a large-scale, multi-domain, city-level dialectal Arabic parallel dataset serving as both a training resource and an evaluation benchmark, fully revealing the capabilities and deficiencies of current LLMs in dialect translation.
+**Goal**: To build a large-scale, multi-domain, city-level dialectal Arabic parallel dataset serving as both a training resource and an evaluation benchmark, fully revealing the capabilities and deficiencies of current LLMs in dialect translation.
 
-**Starting Point**: A community-driven model was adopted, recruiting 55 participants from 13 Arabic countries (including 29 women), each associated with a specific city to ensure the authenticity and localization of dialects.
+**Key Insight**: A community-driven model was adopted, recruiting 55 participants from 13 Arabic countries (including 29 women), each associated with a specific city to ensure the authenticity and localization of dialects.
 
 **Core Idea**: By utilizing city-level labeling, gender configuration metadata, 11-domain coverage, and a manual translation-revision workflow, the dataset significantly exceeds existing resources in scale and granularity, providing the first comprehensive evaluation framework for dialectal Arabic MT.
 

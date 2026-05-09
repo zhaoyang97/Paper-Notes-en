@@ -27,15 +27,15 @@ content_hash: 7104003ef257f817
 This paper proposes AbstRaL, which uses reinforcement learning to teach LLMs to construct mathematical abstractions of reasoning problems (replacing concrete numbers/names with symbolic variables and extracting general formulas), then employs a symbolic solver to derive answers. AbstRaL nearly eliminates performance degradation caused by distribution shift on GSM perturbation benchmarks, and also yields implicit improvements on OOD mathematical and general reasoning tasks.
 
 ## Background & Motivation
-**State of the Field**: LLMs perform well on elementary mathematics benchmarks such as GSM, but exhibit significant performance drops under distribution shift (altered numbers, changed names, or inserted distractor conditions), exposing the brittleness of their reasoning.
+**Background**: LLMs perform well on elementary mathematics benchmarks such as GSM, but exhibit significant performance drops under distribution shift (altered numbers, changed names, or inserted distractor conditions), exposing the brittleness of their reasoning.
 
 **Limitations of Prior Work**: A common approach to improving robustness is to synthesize additional instantiated variants for data augmentation—yet this incurs high computational cost with limited gains. Alternative methods based on abstract reasoning (CoA, AoT) either rely on in-context learning (weak performance) or use SFT (producing unfaithful abstractions).
 
-**Root Cause**: The autoregressive objective of SFT forces the model to learn the specific surface context of each training instance, impeding the acquisition of instance-agnostic abstract thinking. A training paradigm is needed that directs the model's attention toward abstract structure rather than superficial context.
+**Key Challenge**: The autoregressive objective of SFT forces the model to learn the specific surface context of each training instance, impeding the acquisition of instance-agnostic abstract thinking. A training paradigm is needed that directs the model's attention toward abstract structure rather than superficial context.
 
-**Paper Goals**: How can LLMs be trained to construct faithful mathematical abstractions such that reasoning becomes invariant to surface-level contextual perturbations in the input?
+**Goal**: How can LLMs be trained to construct faithful mathematical abstractions such that reasoning becomes invariant to surface-level contextual perturbations in the input?
 
-**Starting Point**: Rather than augmenting training data, the paper directly teaches LLMs the skill of "abstraction"—variabilizing problem conditions, performing symbolic reasoning, and computing answers via a solver. RL, rather than SFT alone, is used to ensure the faithfulness of the abstractions.
+**Key Insight**: Rather than augmenting training data, the paper directly teaches LLMs the skill of "abstraction"—variabilizing problem conditions, performing symbolic reasoning, and computing answers via a solver. RL, rather than SFT alone, is used to ensure the faithfulness of the abstractions.
 
 **Core Idea**: Use RL with fine-grained abstraction rewards to teach LLMs to "think abstractly"—transforming concrete reasoning problems into symbolic formulas before solving them.
 

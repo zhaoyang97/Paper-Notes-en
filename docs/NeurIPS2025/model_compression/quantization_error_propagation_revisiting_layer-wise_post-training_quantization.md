@@ -29,10 +29,10 @@ This paper identifies a critical bottleneck in existing layer-wise PTQ methodsâ€
 
 ## Background & Motivation
 
-- **State of the Field**: Layer-wise post-training quantization (PTQ) has become the dominant paradigm for LLM compression due to its simplicity and efficiency, as exemplified by GPTQ, AWQ, and QuIP. However, recent progress in this direction has begun to plateau.
+- **Background**: Layer-wise post-training quantization (PTQ) has become the dominant paradigm for LLM compression due to its simplicity and efficiency, as exemplified by GPTQ, AWQ, and QuIP. However, recent progress in this direction has begun to plateau.
 - **Limitations of Prior Work**: Existing methods treat the quantization of each layer as an independent optimization problem (minimizing $\|W_l X_l - \hat{W}_l X_l\|_F^2$), neither accounting for quantization errors propagated from upstream layers nor correcting already-accumulated errors. Experiments show that quantization errors grow approximately exponentially across layers and continue to grow even in unquantized layers.
-- **Root Cause**: The fundamental issue lies in the layer-wise independent optimization formulation, which ignores inter-layer error dynamics.
-- **Paper Goals**: To revisit the core design of layer-wise PTQ and develop a general, lightweight framework that explicitly models and compensates for cross-layer quantization error accumulation.
+- **Key Challenge**: The fundamental issue lies in the layer-wise independent optimization formulation, which ignores inter-layer error dynamics.
+- **Goal**: To revisit the core design of layer-wise PTQ and develop a general, lightweight framework that explicitly models and compensates for cross-layer quantization error accumulation.
 
 ## Method
 

@@ -28,13 +28,13 @@ STS-Mixer is the first to introduce the Graph Fourier Transform (GFT) into 4D po
 
 ## Background & Motivation
 
-**State of the Field**: 4D point cloud videos contain 3D spatial and temporal information. Existing methods (e.g., P4Transformer, PST-Transformer) model short- and long-term dynamics in the spatio-temporal domain.
+**Background**: 4D point cloud videos contain 3D spatial and temporal information. Existing methods (e.g., P4Transformer, PST-Transformer) model short- and long-term dynamics in the spatio-temporal domain.
 
 **Limitations of Prior Work**: Existing methods operate exclusively in the spatio-temporal domain and struggle to capture the underlying geometric properties of point clouds — namely abstract shapes and local-global context. The irregular and unordered nature of point clouds renders standard frequency-domain transforms (e.g., DCT) inapplicable.
 
-**Root Cause**: While the spatio-temporal domain can model motion dynamics, it lacks explicit modeling of static geometric structure, which is essential for understanding 4D scenes (e.g., global shape, local detail).
+**Key Challenge**: While the spatio-temporal domain can model motion dynamics, it lacks explicit modeling of static geometric structure, which is essential for understanding 4D scenes (e.g., global shape, local detail).
 
-**Starting Point**: The Graph Fourier Transform (GFT) is naturally suited for irregular point clouds — it transforms point clouds into the frequency domain via eigendecomposition of the graph Laplacian, with different frequency bands capturing geometric structures at different scales.
+**Key Insight**: The Graph Fourier Transform (GFT) is naturally suited for irregular point clouds — it transforms point clouds into the frequency domain via eigendecomposition of the graph Laplacian, with different frequency bands capturing geometric structures at different scales.
 
 **Core Idea**: Decompose 4D point clouds into multi-band signals (low/mid/high frequency), where each band captures distinct geometric features, and mix them with spatio-temporal information to achieve comprehensive representation learning.
 

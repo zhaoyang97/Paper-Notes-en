@@ -29,15 +29,15 @@ DOLLAR combines variational score distillation (VSD) and consistency distillatio
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion probabilistic models have achieved remarkable progress in video generation, enabling high-quality text-to-video synthesis. However, these models typically require more than 50 iterative sampling steps to produce satisfactory results, incurring substantial computational overhead.
+**Background**: Diffusion probabilistic models have achieved remarkable progress in video generation, enabling high-quality text-to-video synthesis. However, these models typically require more than 50 iterative sampling steps to produce satisfactory results, incurring substantial computational overhead.
 
 **Limitations of Prior Work**: Directly reducing the number of sampling steps tends to degrade video quality or diversity. Distillation methods developed for the image domain (e.g., SANA-Sprint, which supports 1–4-step image generation) face additional challenges in the video domain—videos must maintain temporal consistency, and naïvely reducing steps readily introduces temporal flickering and quality degradation. Furthermore, existing video distillation methods typically support only a fixed number of steps (e.g., exactly 4 steps), lacking step-count flexibility.
 
-**Root Cause**: How can sampling steps be drastically reduced while preserving video quality and diversity? How can reward signals be used to further optimize specific quality metrics of a distilled model?
+**Key Challenge**: How can sampling steps be drastically reduced while preserving video quality and diversity? How can reward signals be used to further optimize specific quality metrics of a distilled model?
 
-**Paper Goals**: DOLLAR proposes a hybrid distillation strategy for flexible-step, high-quality video generation, and introduces latent-space reward fine-tuning to further improve specific quality dimensions.
+**Goal**: DOLLAR proposes a hybrid distillation strategy for flexible-step, high-quality video generation, and introduces latent-space reward fine-tuning to further improve specific quality dimensions.
 
-**Starting Point**: VSD (which preserves diversity) and consistency distillation (which preserves quality and step-count flexibility) are complementarily combined, while reward optimization is performed in latent space rather than pixel space to reduce GPU memory overhead.
+**Key Insight**: VSD (which preserves diversity) and consistency distillation (which preserves quality and step-count flexibility) are complementarily combined, while reward optimization is performed in latent space rather than pixel space to reduce GPU memory overhead.
 
 **Core Idea**: Hybrid distillation + latent-space reward fine-tuning = few-step, high-quality video generation.
 

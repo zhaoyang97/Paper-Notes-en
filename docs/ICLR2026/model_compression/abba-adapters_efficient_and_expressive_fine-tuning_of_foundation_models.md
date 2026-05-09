@@ -28,15 +28,15 @@ This paper proposes ABBA adapters, which parameterize weight updates as the Hada
 
 ## Background & Motivation
 
-**State of the Field**: LoRA is the most widely adopted PEFT method, constraining weight updates to a rank-$r$ subspace via $\Delta W = BA$ ($B \in \mathbb{R}^{m \times r}, A \in \mathbb{R}^{r \times n}$).
+**Background**: LoRA is the most widely adopted PEFT method, constraining weight updates to a rank-$r$ subspace via $\Delta W = BA$ ($B \in \mathbb{R}^{m \times r}, A \in \mathbb{R}^{r \times n}$).
 
 **Limitations of Prior Work**: LoRA's updates are strictly confined to a rank-$r$ subspace, inherently limiting expressiveness. HiRA introduces Hadamard products via $\Delta W = W_0 \odot (BA)$ to increase effective rank, but couples updates to the frozen weight $W_0$—when the target update divided element-wise by $W_0$ is not low-rank, HiRA offers no advantage.
 
-**Root Cause**: High expressiveness (high-rank updates) requires more parameters, yet the fundamental constraint of PEFT is a small parameter count. How can one break the rank barrier under the same parameter budget?
+**Key Challenge**: High expressiveness (high-rank updates) requires more parameters, yet the fundamental constraint of PEFT is a small parameter count. How can one break the rank barrier under the same parameter budget?
 
-**Paper Goals**: Substantially increase the expressiveness and effective rank of weight updates while maintaining LoRA-level parameter efficiency.
+**Goal**: Substantially increase the expressiveness and effective rank of weight updates while maintaining LoRA-level parameter efficiency.
 
-**Starting Point**: Set both factors in the Hadamard product as learnable low-rank matrices, fully decoupling updates from the pretrained weights. Employ Khatri-Rao decomposition to avoid instantiating full-size matrices.
+**Key Insight**: Set both factors in the Hadamard product as learnable low-rank matrices, fully decoupling updates from the pretrained weights. Employ Khatri-Rao decomposition to avoid instantiating full-size matrices.
 
 **Core Idea**: The Hadamard product of two rank-$r/2$ matrices can achieve an effective rank of $r^2/4$, a quadratic improvement over LoRA's rank $r$ under the same parameter count.
 

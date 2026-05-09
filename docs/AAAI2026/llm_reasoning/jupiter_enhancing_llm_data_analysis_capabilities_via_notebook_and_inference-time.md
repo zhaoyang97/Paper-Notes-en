@@ -28,18 +28,18 @@ This work constructs the NbQA dataset (38K task-solution pairs extracted from re
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly applied to data analysis tasks, yet existing approaches either focus on isolated analysis stages or rely on proprietary models (e.g., GPT-4o) and complex agent architectures (AutoGen, TaskWeaver). Open-source models perform poorly on multi-step data analysis.
+**Background**: LLMs are increasingly applied to data analysis tasks, yet existing approaches either focus on isolated analysis stages or rely on proprietary models (e.g., GPT-4o) and complex agent architectures (AutoGen, TaskWeaver). Open-source models perform poorly on multi-step data analysis.
 
 **Limitations of Prior Work**:
 - **Data scarcity**: Large-scale, high-quality training data for data analysis is lacking. Existing datasets are mostly synthesized by LLMs, limiting quality and diversity.
 - **Weak reasoning capability**: Data analysis requires multi-step reasoning and tool use; LLMs frequently err in complex analysis chains and cannot self-correct.
 - **Agent systems depend on closed-source models**: Frameworks such as AutoGen achieve strong results but require GPT-4-level models.
 
-**Root Cause**: Open-source small models (7B–14B) fall far short of closed-source large models on data analysis, due to the lack of high-quality training data and effective inference-time search strategies.
+**Key Challenge**: Open-source small models (7B–14B) fall far short of closed-source large models on data analysis, due to the lack of high-quality training data and effective inference-time search strategies.
 
-**Paper Goals**: (1) Construct high-quality training data from real Notebooks; (2) Design inference-time value-guided search to improve multi-step data analysis accuracy.
+**Goal**: (1) Construct high-quality training data from real Notebooks; (2) Design inference-time value-guided search to improve multi-step data analysis accuracy.
 
-**Starting Point**: Jupyter Notebooks naturally encode a multi-step structure of question–code–execution result, making them an ideal training source for data analysis. Meanwhile, the success of MCTS combined with value models on reasoning tasks can be transferred to the data analysis setting.
+**Key Insight**: Jupyter Notebooks naturally encode a multi-step structure of question–code–execution result, making them an ideal training source for data analysis. Meanwhile, the success of MCTS combined with value models on reasoning tasks can be transferred to the data analysis setting.
 
 **Core Idea**: Real Notebook data + value-model-guided inference-time search = open-source small models matching GPT-4o on data analysis.
 

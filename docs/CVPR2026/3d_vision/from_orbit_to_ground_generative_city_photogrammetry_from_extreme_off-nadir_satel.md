@@ -29,13 +29,13 @@ A two-stage pipeline for reconstructing city-scale 3D models from sparse satelli
 
 ## Background & Motivation
 
-**State of the Field**: NeRF/3DGS have achieved success in object- and street-level reconstruction, but city-scale reconstruction faces data acquisition challenges — ground/UAV capture is costly and has limited coverage. Satellite imagery provides cheap city-scale coverage.
+**Background**: NeRF/3DGS have achieved success in object- and street-level reconstruction, but city-scale reconstruction faces data acquisition challenges — ground/UAV capture is costly and has limited coverage. Satellite imagery provides cheap city-scale coverage.
 
 **Limitations of Prior Work**: Satellite imagery poses extreme challenges — a nearly 90° viewpoint gap exists between the source (nadir) and target (ground-level) views; building facades suffer from severe perspective foreshortening; atmospheric distortion and sensor limitations cause texture degradation. NeRF/3DGS rely on dense parallax and clear photometric signals, and fail completely in this setting.
 
-**Root Cause**: Satellite imagery provides almost no parallax information for vertical structures (MVS can only recover rooftop and ground point clouds), yet the goal is to synthesize ground-level photorealistic renderings from such data.
+**Key Challenge**: Satellite imagery provides almost no parallax information for vertical structures (MVS can only recover rooftop and ground point clouds), yet the goal is to synthesize ground-level photorealistic renderings from such data.
 
-**Starting Point**: Decouple the problem into geometry and appearance subproblems — geometry is constrained by city-specific 2.5D priors (buildings are predominantly vertical extrusions), while appearance quality is compensated by generative model priors.
+**Key Insight**: Decouple the problem into geometry and appearance subproblems — geometry is constrained by city-specific 2.5D priors (buildings are predominantly vertical extrusions), while appearance quality is compensated by generative model priors.
 
 **Core Idea**: Z-Monotonic SDF ensures geometrically correct structures → a deterministic image restoration network compensates for texture quality.
 

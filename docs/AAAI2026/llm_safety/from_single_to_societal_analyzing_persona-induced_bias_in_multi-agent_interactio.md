@@ -31,9 +31,9 @@ LLM-based multi-agent systems are increasingly used to simulate human interactio
 
 **Limitations of Prior Work**: Prior research has shown that assigning different personas to a single LLM significantly affects its problem-solving performance (e.g., stereotypes such as "Black people are less skilled at math"). However, whether persona-induced bias also manifests in multi-agent interactions remains largely unexplored.
 
-**Root Cause**: Personas enrich agent behavior but may simultaneously introduce bias. Existing studies either focus on bias in single-agent settings or examine discourse-level bias among default agents, without investigating how personas shape social behaviors—such as trust and persistence—during interaction.
+**Key Challenge**: Personas enrich agent behavior but may simultaneously introduce bias. Existing studies either focus on bias in single-agent settings or examine discourse-level bias among default agents, without investigating how personas shape social behaviors—such as trust and persistence—during interaction.
 
-**Starting Point**: A progressive controlled experimental design is adopted—from single-persona effects in binary interactions, to persona-pair dynamics, to multi-agent multi-turn scenarios—systematically uncovering the depth and breadth of persona-induced bias.
+**Key Insight**: A progressive controlled experimental design is adopted—from single-persona effects in binary interactions, to persona-pair dynamics, to multi-agent multi-turn scenarios—systematically uncovering the depth and breadth of persona-induced bias.
 
 **Core Problem**: Does persona assignment affect social behavioral characteristics (trustworthiness and insistence) in multi-agent interactions, and if so, how?
 

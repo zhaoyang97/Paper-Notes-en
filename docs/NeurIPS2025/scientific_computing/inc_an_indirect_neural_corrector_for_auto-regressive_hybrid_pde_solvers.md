@@ -30,7 +30,7 @@ This paper proposes the Indirect Neural Corrector (INC), which embeds learned co
 
 ### Limitations of Prior Work
 
-**State of the Field**: 1. Hybrid PDE solvers combine coarse-grid numerical solvers with neural correctors to balance physical constraints and computational efficiency.
+**Background**: 1. Hybrid PDE solvers combine coarse-grid numerical solvers with neural correctors to balance physical constraints and computational efficiency.
 2. **Core Problem**: Existing "direct correction" methods ($u^{n+1} = u^* + \mathcal{G}_\theta(u^*)$) suffer from severe error accumulation during auto-regressive inference — small perturbations are progressively amplified, leading to divergence especially in chaotic regimes.
 3. **Key Insight**: The error amplification matrix of direct correction (state update) is $G(u^n) = I + \Delta t \cdot J(u^n)$, whereas indirect correction (RHS embedding) scales perturbations only by $\Delta t$; the error ratio between the two is $R_k \sim \Delta t^{-1} + L \gg 1$.
 

@@ -27,17 +27,17 @@ This paper proposes Adaptive Online Emulation (AOE), a framework that dynamicall
 
 ## Background & Motivation
 
-**State of the Field**: Complex physical simulations (climate modeling, molecular dynamics, fluid mechanics, etc.) are foundational tools for scientific discovery but incur prohibitively high computational costs. Surrogate modeling—using neural networks to approximate expensive computational components—is the dominant acceleration paradigm.
+**Background**: Complex physical simulations (climate modeling, molecular dynamics, fluid mechanics, etc.) are foundational tools for scientific discovery but incur prohibitively high computational costs. Surrogate modeling—using neural networks to approximate expensive computational components—is the dominant acceleration paradigm.
 
 **Limitations of Prior Work**:
    - Existing surrogate modeling methods require **large offline training datasets** and pretraining pipelines, where data generation itself is costly.
    - Offline-trained surrogates generalize poorly when simulations explore **previously unseen parameter regimes**—yet scientifically interesting phenomena often arise precisely at boundaries or in rare regions.
 
-**Root Cause**: Offline training cannot cover the data distribution along actual simulation trajectories, causing surrogate models to be inaccurate where they are most needed.
+**Key Challenge**: Offline training cannot cover the data distribution along actual simulation trajectories, causing surrogate models to be inaccurate where they are most needed.
 
-**Paper Goals**: How can a surrogate model adaptively learn and accelerate computation during simulation execution with zero pretraining data?
+**Goal**: How can a surrogate model adaptively learn and accelerate computation during simulation execution with zero pretraining data?
 
-**Starting Point**: Leverage the rapid online learning capability of the Online Sequential Extreme Learning Machine (OS-ELM) to collect data and update the surrogate model in real time along the simulation trajectory.
+**Key Insight**: Leverage the rapid online learning capability of the Online Sequential Extreme Learning Machine (OS-ELM) to collect data and update the surrogate model in real time along the simulation trajectory.
 
 **Core Idea**: Train an ELM surrogate model online during simulation execution, using a three-phase state machine to govern transitions between data collection, model updates, and surrogate deployment.
 

@@ -29,15 +29,15 @@ ExpSeek proposes a step-level entropy self-triggered framework for proactive exp
 
 ## Background & Motivation
 
-**State of the Field**: Web agents must conduct multi-turn interactions over the open web to retrieve information and answer complex queries. Experience intervention has proven to be an effective paradigm for enhancing agent capabilities, with existing methods primarily following two lines: offline experience distillation and online self-evolution.
+**Background**: Web agents must conduct multi-turn interactions over the open web to retrieve information and answer complex queries. Experience intervention has proven to be an effective paradigm for enhancing agent capabilities, with existing methods primarily following two lines: offline experience distillation and online self-evolution.
 
 **Limitations of Prior Work**: Existing experience injection approaches are passive — experiences are injected once as global context into the system prompt before the task begins. However, as the agent's contextual observations continuously evolve during multi-turn interaction with the environment, statically injected experiences struggle to adapt to dynamic scenarios, potentially leading to decision-making errors.
 
-**Root Cause**: The effectiveness of experience depends on precise matching of timing and content. Overly frequent intervention increases inference overhead, while overly sparse intervention misses critical guidance windows; global experiences cannot provide tailored guidance for the specific state of each individual step.
+**Key Challenge**: The effectiveness of experience depends on precise matching of timing and content. Overly frequent intervention increases inference overhead, while overly sparse intervention misses critical guidance windows; global experiences cannot provide tailored guidance for the specific state of each individual step.
 
-**Paper Goals**: To construct a proactive experience-seeking framework that addresses two core questions — (1) *when* to seek experience: leveraging intrinsic model signals to determine the timing of intervention; and (2) *what* experience to seek: designing step-level customized experience content.
+**Goal**: To construct a proactive experience-seeking framework that addresses two core questions — (1) *when* to seek experience: leveraging intrinsic model signals to determine the timing of intervention; and (2) *what* experience to seek: designing step-level customized experience content.
 
-**Starting Point**: The authors observe a statistical correlation between a model's step-level entropy (mean token entropy) and reasoning quality — erroneous steps exhibit significantly higher entropy than correct ones. This intrinsic signal can serve as an indicator of the agent's degree of "confusion" without requiring an additional reward model.
+**Key Insight**: The authors observe a statistical correlation between a model's step-level entropy (mean token entropy) and reasoning quality — erroneous steps exhibit significantly higher entropy than correct ones. This intrinsic signal can serve as an indicator of the agent's degree of "confusion" without requiring an additional reward model.
 
 **Core Idea**: Using the model's own step-level entropy as a self-triggering signal to determine intervention timing, combined with an experience base and an experience model that dynamically generate step-level customized guidance, thereby shifting the paradigm from passive global injection to proactive step-level seeking.
 

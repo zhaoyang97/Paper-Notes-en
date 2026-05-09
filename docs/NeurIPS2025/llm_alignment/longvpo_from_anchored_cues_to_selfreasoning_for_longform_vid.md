@@ -31,7 +31,7 @@ LongVPO proposes a two-stage DPO framework. Stage 1 constructs pseudo-long-video
 
 ### Limitations of Prior Work
 
-**Limitations of Prior Work**: **State of the Field**: Two core challenges for short-context VLMs on long-video tasks:
+**Limitations of Prior Work**: **Background**: Two core challenges for short-context VLMs on long-video tasks:
 
 1. **Scarcity of long-video annotations**: High-quality long-video QA annotations are extremely costly and lack comprehensive coverage.
 2. **Positional bias (Lost-in-the-middle)**: When short-context VLMs process long sequences via positional encoding extension, content at middle positions tends to be overlooked.

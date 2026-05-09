@@ -28,14 +28,14 @@ This paper proposes CORE (Constraint-aware One-step REinforcement learning), a c
 
 ## Background & Motivation
 
-**State of the Field**: Simulation-based design space exploration (DSE) is critical for hardware–software co-design. Designing spatial DNN accelerators involves structured parameters such as PE count, buffer size, and mapping strategies (tiling, loop order, parallelism dimensions), resulting in an enormous search space with complex inter-parameter dependency constraints. For instance, tile sizes must satisfy hierarchical constraints $D_i \leq D_{i+1}$ across memory levels, and PE count bounds the degree of parallelism.
+**Background**: Simulation-based design space exploration (DSE) is critical for hardware–software co-design. Designing spatial DNN accelerators involves structured parameters such as PE count, buffer size, and mapping strategies (tiling, loop order, parallelism dimensions), resulting in an enormous search space with complex inter-parameter dependency constraints. For instance, tile sizes must satisfy hierarchical constraints $D_i \leq D_{i+1}$ across memory levels, and PE count bounds the degree of parallelism.
 
 **Limitations of Prior Work**:
 - Genetic algorithms (GA) and Bayesian optimization are inefficient in high-dimensional or sparse-feedback settings and lack effective constraint encoding mechanisms.
 - Multi-step RL methods (e.g., ArchGym) model DSE as an MDP requiring long rollouts, suffering from sparse/delayed rewards, difficulty maintaining partial design states, and constraint violations caused by heuristic action masking.
 - Two-stage methods such as HASCO first apply Bayesian optimization to search hardware configurations and then use heuristics or Q-learning for mapping optimization, ignoring the strong coupling between hardware and mapping.
 
-**Root Cause**: Joint optimization of hardware and mapping is necessary given their tight coupling, yet the joint space is prohibitively large and constraint-rich. Traditional methods either decouple the two objectives and sacrifice optimality, or perform exhaustive search with poor efficiency.
+**Key Challenge**: Joint optimization of hardware and mapping is necessary given their tight coupling, yet the joint space is prohibitively large and constraint-rich. Traditional methods either decouple the two objectives and sacrifice optimality, or perform exhaustive search with poor efficiency.
 
 **Core Insight**: DSE can be modeled as a single-step MDP—the policy network generates a complete candidate configuration in one shot, eliminating the need to maintain intermediate states and rollouts, and naturally enabling batched parallel simulation. The key challenge is encoding inter-parameter dependency constraints within the single-step generation process.
 

@@ -28,15 +28,15 @@ This paper demonstrates that Transformers fail to learn Boolean functions from f
 
 ## Background & Motivation
 
-**State of the Field**: LLM training data pervasively contains noise (typos, grammatical errors, semantic inconsistencies), yet these models are frequently applied to noise-sensitive tasks such as arithmetic reasoning, where each token prediction depends on preceding noiseless inputs. Prior work has shown that Transformers trained without noise exhibit robustness to test-time noise, but the ability to learn from training data that itself contains feature noise remains underexplored.
+**Background**: LLM training data pervasively contains noise (typos, grammatical errors, semantic inconsistencies), yet these models are frequently applied to noise-sensitive tasks such as arithmetic reasoning, where each token prediction depends on preceding noiseless inputs. Prior work has shown that Transformers trained without noise exhibit robustness to test-time noise, but the ability to learn from training data that itself contains feature noise remains underexplored.
 
 **Limitations of Prior Work**: It is known that Transformers exhibit **simplicity bias**, preferring to learn Boolean functions of low sensitivity. Prior work has focused mainly on the effect of label noise, whereas feature noise (input bit flips) is qualitatively different—it renders the optimal predictor $f_N^*$ simpler than the target function $f$.
 
-**Root Cause**: Under feature-noisy training data, the Bayes-optimal predictor $f_N^*$ typically has lower sensitivity than the target function $f$. The simplicity bias of Transformers causes them to favor learning $f_N^*$ over $f$, resulting in failure to generalize to noiseless data.
+**Key Challenge**: Under feature-noisy training data, the Bayes-optimal predictor $f_N^*$ typically has lower sensitivity than the target function $f$. The simplicity bias of Transformers causes them to favor learning $f_N^*$ over $f$, resulting in failure to generalize to noiseless data.
 
-**Paper Goals**: Can Transformers learn the correct noiseless target function from feature-noisy data (noise-robust learning)? Under what conditions does this succeed or fail? How can failure be explained and mitigated?
+**Goal**: Can Transformers learn the correct noiseless target function from feature-noisy data (noise-robust learning)? Under what conditions does this succeed or fail? How can failure be explained and mitigated?
 
-**Starting Point**: The study adopts the theoretical framework of Boolean functions, using sensitivity as a complexity measure. It establishes a theoretical framework for noise-robust learning from the perspective of information theory and noisy-channel coding, and designs "trap function" controlled experiments to isolate the effect of simplicity bias.
+**Key Insight**: The study adopts the theoretical framework of Boolean functions, using sensitivity as a complexity measure. It establishes a theoretical framework for noise-robust learning from the perspective of information theory and noisy-channel coding, and designs "trap function" controlled experiments to isolate the effect of simplicity bias.
 
 **Core Idea**: The simplicity bias of Transformers causes them to become "trapped" at simpler optimal noisy predictors under feature noise, leading to systematic failure in noise-robust learning of random Boolean functions.
 

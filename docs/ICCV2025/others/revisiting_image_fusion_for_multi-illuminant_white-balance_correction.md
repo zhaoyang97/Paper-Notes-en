@@ -28,15 +28,15 @@ This paper addresses white-balance (WB) correction under multi-illuminant scenes
 
 ## Background & Motivation
 
-**State of the Field**: White balance is a core step in camera ISP pipelines, aiming to eliminate the influence of illuminant color temperature on image appearance. Most WB methods assume a single dominant light source, under which a global color temperature is estimated and a correction matrix is applied. Recent fusion-based WB methods render the same image under multiple predefined WB presets (e.g., daylight, fluorescent, cloudy) and learn pixel-wise fusion weights via neural networks.
+**Background**: White balance is a core step in camera ISP pipelines, aiming to eliminate the influence of illuminant color temperature on image appearance. Most WB methods assume a single dominant light source, under which a global color temperature is estimated and a correction matrix is applied. Recent fusion-based WB methods render the same image under multiple predefined WB presets (e.g., daylight, fluorescent, cloudy) and learn pixel-wise fusion weights via neural networks.
 
 **Limitations of Prior Work**: (1) Existing fusion methods perform only linear weighted fusion — the output at each pixel is a convex combination of WB-preset versions. While sufficient for single-illuminant scenes, this is severely limited for multi-illuminant scenes, where different regions require entirely different correction strategies that linear fusion cannot capture. (2) Existing WB datasets (e.g., WB-sRGB, Rendered WB) lack dedicated multi-illuminant images, leading to insufficient training and evaluation of models in multi-illuminant scenarios.
 
-**Root Cause**: Multi-illuminant scenes demand spatially adaptive, nonlinear correction, which neither the linear fusion assumption nor single-illuminant datasets can support.
+**Key Challenge**: Multi-illuminant scenes demand spatially adaptive, nonlinear correction, which neither the linear fusion assumption nor single-illuminant datasets can support.
 
-**Paper Goals**: (1) Design a nonlinear fusion model capable of capturing spatial dependencies; (2) Construct a dedicated large-scale multi-illuminant WB dataset.
+**Goal**: (1) Design a nonlinear fusion model capable of capturing spatial dependencies; (2) Construct a dedicated large-scale multi-illuminant WB dataset.
 
-**Starting Point**: WB correction in multi-illuminant scenes is inherently a spatially dependent fusion problem — different image regions are affected by different light sources, requiring global context to determine the optimal WB strategy per region. The long-range dependency modeling capability of Transformers is naturally suited for this task.
+**Key Insight**: WB correction in multi-illuminant scenes is inherently a spatially dependent fusion problem — different image regions are affected by different light sources, requiring global context to determine the optimal WB strategy per region. The long-range dependency modeling capability of Transformers is naturally suited for this task.
 
 **Core Idea**: Replace linear fusion with an efficient Transformer to fuse multiple WB-preset versions of an image, enabling the model to leverage global context for more accurate spatially adaptive white-balance decisions.
 

@@ -29,7 +29,7 @@ This paper reformulates single-image 3D human reconstruction as a 360° orbital 
 
 ## Background & Motivation
 
-**State of the Field**: Reconstructing realistic 3D humans from a single image is a long-standing challenge with applications in communication, gaming, and AR/VR. Current approaches include large reconstruction models (e.g., InstantMesh), human-specific models relying on 3D human datasets, and multi-view diffusion-based methods.
+**Background**: Reconstructing realistic 3D humans from a single image is a long-standing challenge with applications in communication, gaming, and AR/VR. Current approaches include large reconstruction models (e.g., InstantMesh), human-specific models relying on 3D human datasets, and multi-view diffusion-based methods.
 
 **Limitations of Prior Work**:
    - **Scarcity of 3D human data**: High-quality multi-view/3D datasets require specialized capture studios (dense calibrated cameras, controlled environments), entailing prohibitive cost and limited diversity.
@@ -39,7 +39,7 @@ This paper reformulates single-image 3D human reconstruction as a 360° orbital 
 
 **Core Insight**: 2D human image data vastly outnumbers 3D datasets. State-of-the-art DiT video diffusion models (e.g., Wan 2.1), trained on billions of real videos, have acquired strong temporal consistency and implicit 3D structural priors — generating an orbital video can thus be treated as multi-view synthesis.
 
-**Starting Point**: Rather than adapting image diffusion models, this work **fine-tunes a video diffusion model** to generate orbital videos, leveraging the model's inherent temporal consistency to ensure multi-view geometric coherence while requiring only minimal 3D training data.
+**Key Insight**: Rather than adapting image diffusion models, this work **fine-tunes a video diffusion model** to generate orbital videos, leveraging the model's inherent temporal consistency to ensure multi-view geometric coherence while requiring only minimal 3D training data.
 
 ## Method
 

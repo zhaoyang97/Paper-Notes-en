@@ -40,9 +40,9 @@ Existing alignment methods fall into three categories:
 
 **Backpropagation methods (partial gradient truncation)**: Methods such as AlignProp and DRTune disable gradients for certain terms within the denoising chain (retaining gradients through $\alpha_t \mathbf{x}_t$ while truncating those through $\beta_t \epsilon_\theta(\mathbf{x}_t, t)$), and use gradient checkpointing to propagate signals to early steps. Nevertheless, these approaches introduce gradient bias, cause optimization instability, and incur high computational cost.
 
-**Root Cause**: Standard DDIM requires approximately 50 denoising steps, corresponding to a backpropagation chain of roughly 50 layers, leading to memory explosion and gradient explosion. Existing solutions either truncate the chain (losing information) or truncate the gradients (introducing bias), both of which are compromises.
+**Key Challenge**: Standard DDIM requires approximately 50 denoising steps, corresponding to a backpropagation chain of roughly 50 layers, leading to memory explosion and gradient explosion. Existing solutions either truncate the chain (losing information) or truncate the gradients (introducing bias), both of which are compromises.
 
-**Paper Goals**: Since the fundamental problem lies in the excessive length of the denoising chain, the paper addresses this at its root by leveraging few-step diffusion models obtained via trajectory-preserving distillation (e.g., Hyper-SD 4-step) to construct "denoising shortcuts," compressing the 50-step chain into a handful of steps and thereby enabling complete gradient backpropagation.
+**Goal**: Since the fundamental problem lies in the excessive length of the denoising chain, the paper addresses this at its root by leveraging few-step diffusion models obtained via trajectory-preserving distillation (e.g., Hyper-SD 4-step) to construct "denoising shortcuts," compressing the 50-step chain into a handful of steps and thereby enabling complete gradient backpropagation.
 
 ## Method
 

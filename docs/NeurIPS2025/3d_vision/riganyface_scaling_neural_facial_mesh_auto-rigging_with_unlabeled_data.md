@@ -39,7 +39,7 @@ Facial rigging — the process of transforming a static neutral facial mesh into
 
 **Scarcity of training data**: High-quality 3D rigging annotations are extremely expensive to obtain; training on limited labeled data constrains model generalization.
 
-**Starting Point**: Given the scarcity of 3D annotated data yet the maturity of 2D facial animation techniques, this paper investigates whether 2D generative models can provide supervision signals for unlabeled meshes. The **Core Idea** is to design a 2D supervision strategy — combining appearance guidance (RGB images) and motion guidance (2D displacement fields) — to substantially expand training data and improve generalization across topologically diverse facial meshes.
+**Key Insight**: Given the scarcity of 3D annotated data yet the maturity of 2D facial animation techniques, this paper investigates whether 2D generative models can provide supervision signals for unlabeled meshes. The **Core Idea** is to design a 2D supervision strategy — combining appearance guidance (RGB images) and motion guidance (2D displacement fields) — to substantially expand training data and improve generalization across topologically diverse facial meshes.
 
 ## Method
 

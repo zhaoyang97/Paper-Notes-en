@@ -27,13 +27,13 @@ This paper proposes the *Boomerang Distillation* paradigm: train a single small 
 
 ## Background & Motivation
 
-**State of the Field**: LLM deployment spans an extremely wide range of hardware environments — from mobile devices to large-scale clusters. Model developers typically release families of models at varying scales (e.g., Qwen3-0.6B/1.7B/4B/8B/32B, Llama 3.2-1B/3B/8B), yet each size requires independent pretraining from scratch or an independent distillation run, causing training costs to scale linearly with the number of family members.
+**Background**: LLM deployment spans an extremely wide range of hardware environments — from mobile devices to large-scale clusters. Model developers typically release families of models at varying scales (e.g., Qwen3-0.6B/1.7B/4B/8B/32B, Llama 3.2-1B/3B/8B), yet each size requires independent pretraining from scratch or an independent distillation run, causing training costs to scale linearly with the number of family members.
 
 **Limitations of Prior Work**: Although knowledge distillation is more efficient than pretraining from scratch, each student still requires a full training pipeline (layer-pruning initialization → distillation → alignment). There is no training-free mechanism to expand a distilled model into fine-grained size options. Existing layer-pruning methods (ShortGPT, LaCo) exploit only teacher information; removing even a small number of layers causes catastrophic performance drops on classification tasks, and generation capability collapses rapidly toward zero.
 
-**Root Cause**: Real-world deployment demands fine-grained trade-offs in the size–performance space, yet training costs constrain model families to only a handful of coarse-grained options.
+**Key Challenge**: Real-world deployment demands fine-grained trade-offs in the size–performance space, yet training costs constrain model families to only a handful of coarse-grained options.
 
-**Starting Point**: The authors observe that when a student model is initialized from the teacher via layer pruning (rather than random initialization), each student layer maintains strong representational alignment with the corresponding teacher layer block after distillation. This suggests that teacher layer blocks can be grafted back onto the student without any additional training — replacing the corresponding single layer and increasing model size without disrupting functionality — much like a boomerang that flies out (layer removal) and returns (layer grafting).
+**Key Insight**: The authors observe that when a student model is initialized from the teacher via layer pruning (rather than random initialization), each student layer maintains strong representational alignment with the corresponding teacher layer block after distillation. This suggests that teacher layer blocks can be grafted back onto the student without any additional training — replacing the corresponding single layer and increasing model size without disrupting functionality — much like a boomerang that flies out (layer removal) and returns (layer grafting).
 
 **Core Idea**: One distillation run + progressive grafting of teacher layer blocks = a fine-grained model family at zero additional training cost.
 

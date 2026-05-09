@@ -31,7 +31,7 @@ This work discovers that Value features in ViT exhibit more disentangled local s
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: Adversarial attacks have evolved from disrupting classification predictions to manipulating image semantics in LVLMs. However, existing methods achieve extremely low success rates when precisely manipulating specific concepts — simultaneously altering 3 concepts yields a success rate below 10%.
+**Key Challenge**: **Background**: Adversarial attacks have evolved from disrupting classification predictions to manipulating image semantics in LVLMs. However, existing methods achieve extremely low success rates when precisely manipulating specific concepts — simultaneously altering 3 concepts yields a success rate below 10%.
 
 **Core Finding**: ViT self-attention causes semantic entanglement in Patch features (global context dominates, diluting local semantics), whereas Value features naturally suppress global-context channels and retain high-entropy, disentangled local semantics. Channel distribution analysis shows that Patch features are dominated by a small number of highly activated channels (correlated with the CLS token), while Value features exhibit a uniform distribution.
 

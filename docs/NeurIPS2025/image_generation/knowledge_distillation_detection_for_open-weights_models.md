@@ -29,15 +29,15 @@ This paper introduces the task of knowledge distillation detection, proposing a 
 
 ## Background & Motivation
 
-**State of the Field**: Knowledge distillation is widely used for model compression, transferring knowledge from large teacher models to smaller student models, with demonstrated success in image classification, LLMs, and text-to-image generation.
+**Background**: Knowledge distillation is widely used for model compression, transferring knowledge from large teacher models to smaller student models, with demonstrated success in image classification, LLMs, and text-to-image generation.
 
 **Limitations of Prior Work**: Distillation techniques may be misused to clone proprietary models without authorization, infringing intellectual property rights; yet no effective method currently exists to detect whether a model has been distilled.
 
-**Root Cause**: Existing approaches (e.g., membership inference attacks, OOD detection) primarily focus on training data detection and cannot directly determine distillation relationships between models.
+**Key Challenge**: Existing approaches (e.g., membership inference attacks, OOD detection) primarily focus on training data detection and cannot directly determine distillation relationships between models.
 
-**Paper Goals**: To detect whether a student model has been distilled from a specific teacher, given only the student model weights and access to a teacher model API.
+**Goal**: To detect whether a student model has been distilled from a specific teacher, given only the student model weights and access to a teacher model API.
 
-**Starting Point**: The problem is formulated as a multiple-choice task, selecting the most likely distillation source from a set of candidate teacher models.
+**Key Insight**: The problem is formulated as a multiple-choice task, selecting the most likely distillation source from a set of candidate teacher models.
 
 **Core Idea**: A general framework based on data-free input synthesis and statistical scoring compares output alignment between the student and candidate teachers to detect distillation.
 

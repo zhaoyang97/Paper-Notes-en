@@ -28,19 +28,19 @@ RETA decouples two failure modes in residual matching for dataset distillation�
 
 ## Background & Motivation
 
-**State of the Field**: Dataset distillation (DD) aims to compress large datasets into a small set of synthetic images such that models trained on the synthetic set approach the performance of full-dataset training. Decoupled DD methods (e.g., SRe2L, EDC, FADRM) separate the supervision objective and distribution alignment into two optimization streams, achieving improved stability and scalability. FADRM further introduces residual matching—periodically injecting real patches into synthetic images via residual connections to prevent information collapse caused by pure pixel-level updates.
+**Background**: Dataset distillation (DD) aims to compress large datasets into a small set of synthetic images such that models trained on the synthetic set approach the performance of full-dataset training. Decoupled DD methods (e.g., SRe2L, EDC, FADRM) separate the supervision objective and distribution alignment into two optimization streams, achieving improved stability and scalability. FADRM further introduces residual matching—periodically injecting real patches into synthetic images via residual connections to prevent information collapse caused by pure pixel-level updates.
 
 **Limitations of Prior Work**: FADRM relies on fixed, pre-selected real patches as anchors, giving rise to two coupled failure modes:
    - **(i) Fit-Complexity Gap**: Fixed patches may be misaligned with the current synthetic features in teacher space (large fit gap), or the patches themselves may introduce high-frequency noise due to textural complexity (complexity inflation), both of which harm the generalization bound.
    - **(ii) Pull-to-Anchor Effect**: Each residual connection pulls the synthetic features toward the nearest real sample in teacher space; repeated application causes intra-class synthetic feature distances to contract as $\|y_i' - y_j'\| \leq \alpha\|y_i - y_j\| + (1-\alpha)\|a_i - a_j\|$, leading to premature merging of distinct clusters and loss of intra-class diversity.
 
-**Root Cause**: Fixed anchors can neither adaptively minimize the fit gap across stages nor reliably control complexity—anchor selection is locally suboptimal, and repeated anchoring globally degrades the class topological structure.
+**Key Challenge**: Fixed anchors can neither adaptively minimize the fit gap across stages nor reliably control complexity—anchor selection is locally suboptimal, and repeated anchoring globally degrades the class topological structure.
 
-**Paper Goals**
+**Goal**
    - How to adaptively select residual anchors at each stage to simultaneously control the fit gap and complexity?
    - How to preserve intra-class feature diversity and topological structure under repeated residual injection?
 
-**Starting Point**: Starting from a generalization bound decomposition (Theorem 4.1), the post-connection risk is decomposed into a fit term and a complexity term, providing theoretical guidance for anchor selection; from the perspective of topological data analysis (TDA), persistent homology is used to quantify class topology discrepancy and construct a differentiable regularization.
+**Key Insight**: Starting from a generalization bound decomposition (Theorem 4.1), the post-connection risk is decomposed into a fit term and a complexity term, providing theoretical guidance for anchor selection; from the perspective of topological data analysis (TDA), persistent homology is used to quantify class topology discrepancy and construct a differentiable regularization.
 
 **Core Idea**: Replace fixed anchors with dynamic retrieval to resolve the fit-complexity trade-off, and counter class topology collapse caused by the pull-to-anchor effect via persistent homology topology alignment regularization.
 

@@ -27,14 +27,14 @@ content_hash: a917c0d75b82bba5
 x²-Fusion introduces Event Edge Space — the first edge-based isomorphic latent space — that unifies image, LiDAR, and event camera features into a shared edge-centric representation. Combined with reliability-aware adaptive fusion and cross-dimension contrastive learning, it achieves state-of-the-art joint 2D optical flow and 3D scene flow estimation under both standard and degraded conditions.
 
 ## Background & Motivation
-1. **State of the Field**: Optical flow and scene flow estimation are fundamental to dynamic scene understanding, with broad applications in autonomous driving, tracking, and 3D reconstruction. Recent methods fusing images, LiDAR, and event cameras have surpassed single-modality baselines.
+1. **Background**: Optical flow and scene flow estimation are fundamental to dynamic scene understanding, with broad applications in autonomous driving, tracking, and 3D reconstruction. Recent methods fusing images, LiDAR, and event cameras have surpassed single-modality baselines.
 2. **Limitations of Prior Work**:
     - **High Complexity**: Existing methods retain each modality in its native feature space without a shared channel-level foundation, requiring multiple pairwise alignments — RPEFlow employs staged fusion blocks, CMX uses pairwise correction/attention units, and VisMoFlow relies on multiple hand-crafted physical spaces — resulting in unwieldy, difficult-to-train, and hard-to-scale models.
     - **Information Erosion**: Processing features in heterogeneous spaces defers fusion to late stages, by which point modality-specific distortions are difficult to correct through cross-modal interaction.
     - **High Fragility**: Without a common representational foundation, modalities cannot provide stable priors for one another; under degraded conditions such as extreme exposure, LiDAR sparsity, or motion blur, alignment itself breaks down.
-3. **Root Cause**: The representational heterogeneity among images (2D grids), LiDAR (point clouds), and events (asynchronous streams) makes simple, robust, and efficient cross-modal interaction fundamentally difficult.
-4. **Paper Goals**: To achieve effective image–LiDAR–event fusion within a unified isomorphic space while jointly estimating 2D optical flow and 3D scene flow.
-5. **Starting Point**: Leveraging the spatiotemporal edge signals naturally provided by event cameras as anchors to construct an edge-centric isomorphic latent space.
+3. **Key Challenge**: The representational heterogeneity among images (2D grids), LiDAR (point clouds), and events (asynchronous streams) makes simple, robust, and efficient cross-modal interaction fundamentally difficult.
+4. **Goal**: To achieve effective image–LiDAR–event fusion within a unified isomorphic space while jointly estimating 2D optical flow and 3D scene flow.
+5. **Key Insight**: Leveraging the spatiotemporal edge signals naturally provided by event cameras as anchors to construct an edge-centric isomorphic latent space.
 6. **Core Idea**: Edges encode modality-agnostic structural information (object boundaries and scene discontinuities). Event cameras are intrinsically spatiotemporal edge detectors (firing at motion edges), sharing 2D pixel coordinates with images and exhibiting a sparse sampling structure analogous to LiDAR. This dual correspondence makes events an ideal anchor for an isomorphic space.
 
 ## Method

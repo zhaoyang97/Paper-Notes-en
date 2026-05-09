@@ -41,7 +41,7 @@ Recovering a signal $\mathbf{x}$ from noisy linear measurements $\mathbf{y} = \m
 
 **Difficulty in step size selection**: Projection step sizes that are too large cause divergence or out-of-distribution drift, while those that are too small result in insufficient convergence.
 
-**Root Cause**: How can the number of projection steps be substantially reduced without either over-projecting (pulling samples out of distribution) or under-projecting (failing to satisfy constraints)?
+**Key Challenge**: How can the number of projection steps be substantially reduced without either over-projecting (pulling samples out of distribution) or under-projecting (failing to satisfy constraints)?
 
 **Core Idea**: The analytic $\chi^2$ distribution of the residual energy $\|\mathbf{A}\mathbf{x}_t - \mathbf{y}\|^2$ under the forward diffusion process is leveraged to guide the projection strategy — projection is performed only when the residual exceeds a "plausible region," and the step size is determined via one-dimensional search so that the residual lands precisely on the boundary of this region.
 

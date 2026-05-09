@@ -27,15 +27,15 @@ content_hash: fc6c3096e181e59f
 This paper proposes TOMCap — a text-only training approach for image captioning that combines retrieval augmentation, modality gap correction, and LoRA fine-tuning. The model trains exclusively on text yet processes images at inference time, surpassing existing training-free and text-only methods.
 
 ## Background & Motivation
-**State of the Field**: Image captioning conventionally relies on large-scale manually annotated image-text pairs for supervised training. Two categories of low-resource methods have emerged recently: training-free methods (e.g., ZeroCap) that leverage pre-trained models for zero-shot inference, and text-only methods that train solely on text corpora and switch to image inputs at inference time.
+**Background**: Image captioning conventionally relies on large-scale manually annotated image-text pairs for supervised training. Two categories of low-resource methods have emerged recently: training-free methods (e.g., ZeroCap) that leverage pre-trained models for zero-shot inference, and text-only methods that train solely on text corpora and switch to image inputs at inference time.
 
 **Limitations of Prior Work**: Training-free methods are prone to hallucination, while text-only methods are constrained by the CLIP modality gap — image embeddings and text embeddings are not perfectly aligned within the same space, causing a distributional mismatch when text features are used during training but image features are used during inference.
 
-**Root Cause**: The core assumption of text-only training — that text embeddings can serve as proxies for image embeddings — is not fully valid due to the CLIP modality gap. Existing methods rely only on Gaussian noise injection to bridge this gap, yielding limited effectiveness.
+**Key Challenge**: The core assumption of text-only training — that text embeddings can serve as proxies for image embeddings — is not fully valid due to the CLIP modality gap. Existing methods rely only on Gaussian noise injection to bridge this gap, yielding limited effectiveness.
 
-**Paper Goals**: Integrate retrieval augmentation, modality gap correction, and latent representation decoding into a unified and stronger text-only training framework.
+**Goal**: Integrate retrieval augmentation, modality gap correction, and latent representation decoding into a unified and stronger text-only training framework.
 
-**Starting Point**: Rather than correcting only the mean, the proposed approach also aligns the standard deviation to reduce the modality gap, while incorporating retrieved similar captions as prompts to guide generation.
+**Key Insight**: Rather than correcting only the mean, the proposed approach also aligns the standard deviation to reduce the modality gap, while incorporating retrieved similar captions as prompts to guide generation.
 
 **Core Idea**: Jointly leverage retrieval-augmented prompt construction, mean-and-standard-deviation-aligned modality gap correction, and cross-attention latent guidance to achieve high-quality image captioning under text-only training.
 

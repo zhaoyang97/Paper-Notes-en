@@ -28,15 +28,15 @@ content_hash: 7f42e62e94f41a43
 This paper identifies that trained GNN node embeddings are exchangeable random variables along the feature dimension (i.e., $p(\mathbf{X}) = p(\mathbf{X}\pi)$ holds for any dimensional permutation $\pi$), and exploits this property to approximate transportation-distance-based (EMD/Wasserstein) graph similarity as Euclidean distance via dimension-wise sorting. A unified locality-sensitive hashing (LSH) framework, GraphHash, is constructed upon this foundation, consistently outperforming baselines including FourierHashNet, DiskANN, IVF, CORGII, and SWWL in AUC on subgraph matching and graph edit distance (GED) retrieval tasks, scaling to corpus sizes of one million graphs.
 
 ## Background & Motivation
-**State of the Field**: Graph retrieval requires measuring inter-graph similarity (e.g., subgraph matching, graph edit distance), which involves optimal transport problems with prohibitive computational cost ($O(n^3)$ Hungarian algorithm or $O(n^2)$ Sinkhorn). Exhaustive pairwise scoring is infeasible for large-scale corpora ($|C| \gg 10^5$).
+**Background**: Graph retrieval requires measuring inter-graph similarity (e.g., subgraph matching, graph edit distance), which involves optimal transport problems with prohibitive computational cost ($O(n^3)$ Hungarian algorithm or $O(n^2)$ Sinkhorn). Exhaustive pairwise scoring is infeasible for large-scale corpora ($|C| \gg 10^5$).
 
 **Limitations of Prior Work**: Standard approximate nearest neighbor (ANN) methods such as DiskANN and IVF assume Euclidean or cosine similarity. However, GNN-produced graph representations are sets of node embeddings $\mathbf{X} \in \mathbb{R}^{n \times D}$, and inter-graph similarity is a transportation distance defined over embedding sets — one that cannot be directly accelerated by vector-based ANN methods.
 
-**Root Cause**: Transportation distance computation is expensive and does not satisfy the metric conditions required by standard LSH, whereas Euclidean distance is efficient but fails to capture the alignment relationships between sets.
+**Key Challenge**: Transportation distance computation is expensive and does not satisfy the metric conditions required by standard LSH, whereas Euclidean distance is efficient but fails to capture the alignment relationships between sets.
 
-**Paper Goals**: To identify a theoretically grounded approximation that reduces transportation-distance-based graph similarity to standard Euclidean distance, thereby enabling efficient graph retrieval via LSH.
+**Goal**: To identify a theoretically grounded approximation that reduces transportation-distance-based graph similarity to standard Euclidean distance, thereby enabling efficient graph retrieval via LSH.
 
-**Starting Point**: The paper identifies a previously unnoticed probabilistic symmetry of GNN embeddings — exchangeability along the feature dimension — and leverages it to simplify transportation distance computation.
+**Key Insight**: The paper identifies a previously unnoticed probabilistic symmetry of GNN embeddings — exchangeability along the feature dimension — and leverages it to simplify transportation distance computation.
 
 **Core Idea**: The exchangeability of GNN embeddings along the feature dimension allows sorted embeddings to approximate transportation distances via Euclidean distance, enabling efficient LSH-based graph retrieval.
 

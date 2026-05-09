@@ -36,9 +36,9 @@ Human pose prior modeling is a fundamental problem in 3D human modeling. The goa
 - **VAE** (e.g., VPoser): Gaussian priors limit the expressiveness of the latent space, resulting in insufficient diversity.
 - **NDF** (e.g., Pose-NDF, NRDF): Difficult to generalize to the full space of high-dimensional human pose manifolds.
 
-**Root Cause**: The above methods primarily focus on body pose while neglecting whole-body modeling that includes hand gestures and facial expressions. Whole-body pose data is scarce (existing datasets mainly cover specific actions such as grasping and sign language), and complex inter-part dependencies exist (e.g., hand poses tend to be symmetric when standing).
+**Key Challenge**: The above methods primarily focus on body pose while neglecting whole-body modeling that includes hand gestures and facial expressions. Whole-body pose data is scarce (existing datasets mainly cover specific actions such as grasping and sign language), and complex inter-part dependencies exist (e.g., hand poses tend to be symmetric when standing).
 
-**Starting Point**: The paper leverages the advantage of diffusion models in learning complex distributions by training an unconditional diffusion model to capture pose distributions and unifying downstream tasks into an inverse problem framework solved via variational diffusion sampling at test time. Key innovations include a truncated timestep schedule tailored for pose data and a hybrid training strategy that combines whole-body and part-specific datasets.
+**Key Insight**: The paper leverages the advantage of diffusion models in learning complex distributions by training an unconditional diffusion model to capture pose distributions and unifying downstream tasks into an inverse problem framework solved via variational diffusion sampling at test time. Key innovations include a truncated timestep schedule tailored for pose data and a hybrid training strategy that combines whole-body and part-specific datasets.
 
 ## Method
 

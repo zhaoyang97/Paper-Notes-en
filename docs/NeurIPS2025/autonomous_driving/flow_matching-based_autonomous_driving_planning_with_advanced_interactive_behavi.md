@@ -28,13 +28,13 @@ This paper proposes Flow Planner—a system combining three synergistic innovati
 
 ## Background & Motivation
 
-**State of the Field**: Autonomous driving planning methods are broadly divided into rule-based approaches (e.g., PDM-Closed) and learning-based approaches (imitation learning + generative models). Learning-based methods have advanced rapidly with transformers and diffusion models, yet remain insufficient in interactive scenarios.
+**Background**: Autonomous driving planning methods are broadly divided into rule-based approaches (e.g., PDM-Closed) and learning-based approaches (imitation learning + generative models). Learning-based methods have advanced rapidly with transformers and diffusion models, yet remain insufficient in interactive scenarios.
 
 **Limitations of Prior Work**: (a) Naively stacking transformer blocks lacks effective fusion mechanisms for heterogeneous information (static lanes + dynamic neighboring vehicles); (b) high-quality interactive scenarios are scarce in training data, causing naive behavior cloning to converge to distributions that deviate from real interaction behaviors; (c) auxiliary losses (e.g., collision penalties) require case-by-case design and compromise training stability; (d) Diffusion Planner's interaction modeling is limited to a few nearest vehicles and lacks a dedicated fusion architecture.
 
-**Root Cause**: Effective interactive behavior modeling requires three conditions to be satisfied simultaneously—(i) expressive trajectory representations, (ii) efficient heterogeneous information fusion, and (iii) dynamic enhancement of conditional signals to compensate for the scarcity of interaction data. Prior methods satisfy at most one of these.
+**Key Challenge**: Effective interactive behavior modeling requires three conditions to be satisfied simultaneously—(i) expressive trajectory representations, (ii) efficient heterogeneous information fusion, and (iii) dynamic enhancement of conditional signals to compensate for the scarcity of interaction data. Prior methods satisfy at most one of these.
 
-**Starting Point**: Co-design across three dimensions: data modeling (trajectory tokenization), model architecture (spatiotemporal fusion), and learning paradigm (flow matching + CFG).
+**Key Insight**: Co-design across three dimensions: data modeling (trajectory tokenization), model architecture (spatiotemporal fusion), and learning paradigm (flow matching + CFG).
 
 **Core Idea**: Flow Planner = fine-grained trajectory tokens + scale-adaptive attention spatiotemporal fusion + flow matching CFG for dynamic augmentation of neighbor conditions.
 

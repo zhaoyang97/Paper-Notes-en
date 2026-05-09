@@ -28,15 +28,15 @@ This paper proposes RACE Attention — replacing softmax with a power angular ke
 
 ## Background & Motivation
 
-**State of the Field**: The $O(N^2 d)$ complexity of softmax attention is a fundamental bottleneck for long-context training. Even with FlashAttention-2/3 optimizations, a single layer on GH200 cannot process more than ~4M tokens.
+**Background**: The $O(N^2 d)$ complexity of softmax attention is a fundamental bottleneck for long-context training. Even with FlashAttention-2/3 optimizations, a single layer on GH200 cannot process more than ~4M tokens.
 
 **Limitations of Prior Work**: Linear attention (Linear Attention, Performer) suffers from accuracy degradation; low-rank approximations (Linformer) do not support autoregressive inference; YOSO employs hard LSH but lacks theoretical guarantees and does not support causal language modeling.
 
-**Root Cause**: Existing approximation methods lack a rigorous mathematical framework for characterizing the efficiency–accuracy trade-off, leading to ad hoc design choices that are unstable across tasks.
+**Key Challenge**: Existing approximation methods lack a rigorous mathematical framework for characterizing the efficiency–accuracy trade-off, leading to ad hoc design choices that are unstable across tasks.
 
-**Paper Goals**: Design a strictly linear-time attention mechanism with theoretical guarantees, supporting both causal and non-causal settings and scaling to tens of millions of tokens.
+**Goal**: Design a strictly linear-time attention mechanism with theoretical guarantees, supporting both causal and non-causal settings and scaling to tens of millions of tokens.
 
-**Starting Point**: The LSH collision probability of angular kernels equals the angular similarity exactly, and RACE sketches enable unbiased estimation of kernel density sums in linear time.
+**Key Insight**: The LSH collision probability of angular kernels equals the angular similarity exactly, and RACE sketches enable unbiased estimation of kernel density sums in linear time.
 
 **Core Idea**: Replace softmax with a power angular kernel and approximate attention in $O(N)$ via differentiable RACE sketches.
 

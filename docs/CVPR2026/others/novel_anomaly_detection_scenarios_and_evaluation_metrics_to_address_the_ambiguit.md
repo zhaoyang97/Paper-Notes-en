@@ -28,15 +28,15 @@ To address the practical challenge that the definition of "normal" shifts with s
 
 ## Background & Motivation
 
-1. **State of the Field**: Conventional anomaly detection methods assume that training data consist solely of defect-free normal samples, with models distinguishing normal from anomalous samples at inference. Recent years have seen the emergence of memory-based, knowledge distillation, normalizing flow, reconstruction, and pseudo-anomaly methods, with GLASS achieving state-of-the-art performance.
+1. **Background**: Conventional anomaly detection methods assume that training data consist solely of defect-free normal samples, with models distinguishing normal from anomalous samples at inference. Recent years have seen the emergence of memory-based, knowledge distillation, normalizing flow, reconstruction, and pseudo-anomaly methods, with GLASS achieving state-of-the-art performance.
 
 2. **Limitations of Prior Work**: In real industrial environments, the definition of "normal" is often ambiguous. For instance, minor scratches or dust particles may be acceptable under current specifications but could be reclassified as anomalous after equipment upgrades, or vice versa. Such specification changes occur frequently in industrial settings yet are entirely overlooked by existing methods.
 
-3. **Root Cause**: Although concept drift, domain adaptation, and continual learning address data distribution shifts, they target distributional changes rather than the explicit redefinition of normal and anomaly semantics. Existing metrics (AUROC, F1, etc.) also assume fixed label definitions and cannot quantify a model's ability to adapt to definitional changes.
+3. **Key Challenge**: Although concept drift, domain adaptation, and continual learning address data distribution shifts, they target distributional changes rather than the explicit redefinition of normal and anomaly semantics. Existing metrics (AUROC, F1, etc.) also assume fixed label definitions and cannot quantify a model's ability to adapt to definitional changes.
 
-4. **Paper Goals**: (1) How should model performance be defined and evaluated under changes in the normal/anomaly definition? (2) How can models be made to flexibly adapt to such semantic redefinitions?
+4. **Goal**: (1) How should model performance be defined and evaluated under changes in the normal/anomaly definition? (2) How can models be made to flexibly adapt to such semantic redefinitions?
 
-5. **Starting Point**: The authors observe that regions with persistently high anomaly scores in training images typically correspond to subtle defects (e.g., dust, minor scratches)—precisely the regions most susceptible to specification changes. Increasing the training frequency of these regions can suppress their anomaly scores.
+5. **Key Insight**: The authors observe that regions with persistently high anomaly scores in training images typically correspond to subtle defects (e.g., dust, minor scratches)—precisely the regions most susceptible to specification changes. Increasing the training frequency of these regions can suppress their anomaly scores.
 
 6. **Core Idea**: High-anomaly-score regions from the current training image are repasted onto the next training image, encouraging the model to treat these "boundary-ambiguous" regions as normal.
 

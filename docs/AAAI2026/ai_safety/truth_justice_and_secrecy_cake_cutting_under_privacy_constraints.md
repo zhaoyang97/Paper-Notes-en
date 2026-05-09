@@ -29,15 +29,15 @@ This paper proposes PP_CC_puv, the first privacy-preserving cake cutting protoco
 
 ## Background & Motivation
 
-**State of the Field**: Cake cutting is a classical problem in fair division theory, concerned with allocating a divisible resource (modeled as the interval $[0,1]$) fairly among multiple agents. Chen et al. (2010/2013) proposed a deterministic strategyproof algorithm CC_puv for piecewise uniform valuations that simultaneously guarantees envy-free allocations.
+**Background**: Cake cutting is a classical problem in fair division theory, concerned with allocating a divisible resource (modeled as the interval $[0,1]$) fairly among multiple agents. Chen et al. (2010/2013) proposed a deterministic strategyproof algorithm CC_puv for piecewise uniform valuations that simultaneously guarantees envy-free allocations.
 
 **Limitations of Prior Work**: Strategyproofness only ensures that agents have no incentive to misreport, but does not prevent them from withholding true preferences due to privacy concerns. For example, telecom companies bidding for spectrum may be unwilling to expose their future development plans; advertisers may not wish to reveal marketing strategies; and employees may be reluctant to disclose personal scheduling preferences. Even when an algorithm is strategyproof, intermediate computations may leak preference information.
 
-**Root Cause**: Agents must report their true preferences to the algorithm in order to receive a fair allocation, yet the execution of the algorithm (e.g., graph structures, flow computations) exposes this private information, causing rational but privacy-conscious agents to be unwilling to report truthfully.
+**Key Challenge**: Agents must report their true preferences to the algorithm in order to receive a fair allocation, yet the execution of the algorithm (e.g., graph structures, flow computations) exposes this private information, causing rational but privacy-conscious agents to be unwilling to report truthfully.
 
-**Paper Goals**: Design a cake cutting protocol that simultaneously satisfies: (1) envy-freeness; (2) strategyproofness; (3) Pareto optimality; and (4) privacy protection of agent preferences.
+**Goal**: Design a cake cutting protocol that simultaneously satisfies: (1) envy-freeness; (2) strategyproofness; (3) Pareto optimality; and (4) privacy protection of agent preferences.
 
-**Starting Point**: Replace the centralized computation in the original algorithm with secret sharing and secure multi-party computation (MPC). The key challenge is not merely applying off-the-shelf cryptographic tools, but redesigning the algorithmic structure—for instance, replacing the per-round dynamic graph in the original algorithm with a fixed graph structure.
+**Key Insight**: Replace the centralized computation in the original algorithm with secret sharing and secure multi-party computation (MPC). The key challenge is not merely applying off-the-shelf cryptographic tools, but redesigning the algorithmic structure—for instance, replacing the per-round dynamic graph in the original algorithm with a fixed graph structure.
 
 **Core Idea**: Conceal agent preferences and intermediate computation results via secret sharing, and execute operations such as sorting and maximum flow using MPC sub-protocols, thereby achieving the first cake cutting protocol that simultaneously provides privacy preservation, envy-freeness, and strategyproofness.
 
@@ -145,15 +145,15 @@ This paper proposes PP_CC_puv, the first privacy-preserving cake cutting protoco
 
 ## Background & Motivation
 
-**State of the Field**: The cake cutting problem is a classical problem in fair division theory—how to fairly allocate a divisible resource (modeled as the interval $[0,1]$) among $n$ agents. Substantial progress has been made on fairness over the past two decades; Chen et al. (2010) proposed CC_puv, a deterministic algorithm that simultaneously achieves envy-freeness and strategyproofness for piecewise uniform valuation functions.
+**Background**: The cake cutting problem is a classical problem in fair division theory—how to fairly allocate a divisible resource (modeled as the interval $[0,1]$) among $n$ agents. Substantial progress has been made on fairness over the past two decades; Chen et al. (2010) proposed CC_puv, a deterministic algorithm that simultaneously achieves envy-freeness and strategyproofness for piecewise uniform valuation functions.
 
 **Limitations of Prior Work**: Strategyproofness only resolves the issue of "no incentive to lie," but agents may be unwilling to truthfully report preferences due to privacy concerns—even when honesty is individually optimal, they may fear exposure. For instance, telecom companies bidding for spectrum may not wish to reveal future strategic directions; in advertising time allocation, preferences may disclose product launch plans; data protection regulations may also restrict the disclosure of preferences.
 
-**Root Cause**: Existing algorithms require agents to disclose their valuation functions to a central coordinator or other participants, but such disclosure may entail privacy risks. Strategyproofness and privacy preservation are two orthogonal dimensions of requirements.
+**Key Challenge**: Existing algorithms require agents to disclose their valuation functions to a central coordinator or other participants, but such disclosure may entail privacy risks. Strategyproofness and privacy preservation are two orthogonal dimensions of requirements.
 
-**Paper Goals**: Design a cake cutting protocol that simultaneously satisfies fairness (envy-free), efficiency (Pareto-optimal), strategyproofness, and privacy preservation.
+**Goal**: Design a cake cutting protocol that simultaneously satisfies fairness (envy-free), efficiency (Pareto-optimal), strategyproofness, and privacy preservation.
 
-**Starting Point**: Replace the centralized computation in CC_puv with a distributed protocol based on Shamir secret sharing and secure multi-party computation, enabling agents to complete the allocation without revealing their preferences.
+**Key Insight**: Replace the centralized computation in CC_puv with a distributed protocol based on Shamir secret sharing and secure multi-party computation, enabling agents to complete the allocation without revealing their preferences.
 
 **Core Idea**: Apply cryptographic secret sharing and secure multi-party computation to "privatize" an existing strategyproof cake cutting algorithm, so that agents neither have an incentive to misreport nor risk exposing their preferences.
 

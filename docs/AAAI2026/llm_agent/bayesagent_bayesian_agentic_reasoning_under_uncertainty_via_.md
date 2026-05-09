@@ -26,15 +26,15 @@ content_hash: e98b8d541409f4de
 This paper proposes the vPGM framework, which guides LLM agents via natural language to simulate Bayesian reasoning over probabilistic graphical models (PGMs)—discovering latent variables and inferring posterior distributions—and further applies numerical Bayesian calibration with a Dirichlet prior (BayesVPGM), achieving simultaneous improvements in accuracy and confidence calibration across multiple reasoning tasks.
 
 ## Background & Motivation
-**State of the Field**: LLM agents have demonstrated strong performance in complex reasoning tasks; methods such as CoT, ReAct, and Toolformer extend LLMs from passive generators to interactive, tool-augmented agents.
+**Background**: LLM agents have demonstrated strong performance in complex reasoning tasks; methods such as CoT, ReAct, and Toolformer extend LLMs from passive generators to interactive, tool-augmented agents.
 
 **Limitations of Prior Work**: Existing agent systems lack a principled probabilistic framework—they cannot explicitly model latent variables, quantify uncertainty, or perform Bayesian belief updates. When external tools (e.g., search engines, image captioners) return noisy or erroneous information, agents still produce high-confidence predictions blindly, leading to severe overconfidence.
 
-**Root Cause**: LLM agents must integrate multi-source information that may be noisy, yet they lack mechanisms for detecting inconsistencies and calibrating uncertainty. Traditional Bayesian methods require substantial domain expertise to design probabilistic models, making them ill-suited for general-purpose agent settings.
+**Key Challenge**: LLM agents must integrate multi-source information that may be noisy, yet they lack mechanisms for detecting inconsistencies and calibrating uncertainty. Traditional Bayesian methods require substantial domain expertise to design probabilistic models, making them ill-suited for general-purpose agent settings.
 
-**Paper Goals**: (1) How can LLM agents automatically discover latent variable structure? (2) How can Bayesian inference be performed without requiring expert knowledge? (3) How can the confidence outputs of agents be calibrated?
+**Goal**: (1) How can LLM agents automatically discover latent variable structure? (2) How can Bayesian inference be performed without requiring expert knowledge? (3) How can the confidence outputs of agents be calibrated?
 
-**Starting Point**: LLMs inherently possess rich world knowledge and reasoning capabilities; the core principles of PGMs—structure discovery, posterior inference, and prediction—can be simulated through natural language prompting without explicit distributional parameterization.
+**Key Insight**: LLMs inherently possess rich world knowledge and reasoning capabilities; the core principles of PGMs—structure discovery, posterior inference, and prediction—can be simulated through natural language prompting without explicit distributional parameterization.
 
 **Core Idea**: Natural language prompts are used to guide LLMs in simulating PGM-based reasoning, bypassing expert modeling to achieve latent variable inference and uncertainty calibration in agents.
 

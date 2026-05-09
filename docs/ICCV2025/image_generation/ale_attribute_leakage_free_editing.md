@@ -28,11 +28,11 @@ This paper identifies semantic entanglement in the EOS embeddings of autoregress
 
 ## Background & Motivation
 
-**State of the Field**: Text-guided image editing enables image manipulation through natural language, but multi-target editing frequently suffers from attribute leakage.
+**Background**: Text-guided image editing enables image manipulation through natural language, but multi-target editing frequently suffers from attribute leakage.
 
 **Limitations of Prior Work**: Attribute leakage manifests in two forms — Target-External Leakage (TEL, where edits overflow into non-target regions) and Target-Internal Leakage (TIL, where attributes interfere across different targets). Existing approaches such as cross-attention alignment fail to fundamentally address this problem.
 
-**Root Cause**: The EOS embeddings of autoregressive encoders (e.g., CLIP) inevitably aggregate semantics from all tokens, causing them to attend indiscriminately to all spatial regions during cross-attention. Simply removing EOS embeddings, however, severely degrades image quality.
+**Key Challenge**: The EOS embeddings of autoregressive encoders (e.g., CLIP) inevitably aggregate semantics from all tokens, causing them to attend indiscriminately to all spatial regions during cross-attention. Simply removing EOS embeddings, however, severely degrades image quality.
 
 **Core Idea**: Generate semantically isolated embeddings (ORE) for each editing target independently, restrict attention to corresponding spatial regions via segmentation masks (RGB-CAM), and fuse the background to preserve overall integrity (BB).
 

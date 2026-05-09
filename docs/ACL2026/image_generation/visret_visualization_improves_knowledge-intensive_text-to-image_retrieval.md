@@ -29,15 +29,15 @@ This paper proposes Visualize-then-Retrieve (VisRet), a novel retrieval paradigm
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-image (T2I) retrieval is a critical component in knowledge-intensive applications. Common approaches embed text queries and candidate images into a shared representation space and rank by similarity. Despite continuous advances in cross-modal embedding models (e.g., CLIP, E5-V), cross-modal similarity alignment remains a fundamental challenge.
+**Background**: Text-to-image (T2I) retrieval is a critical component in knowledge-intensive applications. Common approaches embed text queries and candidate images into a shared representation space and rank by similarity. Despite continuous advances in cross-modal embedding models (e.g., CLIP, E5-V), cross-modal similarity alignment remains a fundamental challenge.
 
 **Limitations of Prior Work**: Cross-modal embeddings often behave as "bags of concepts," failing to capture structured visual relationships such as pose, viewpoint, and spatial layout. For instance, when querying "a bar-headed goose with wings spread," embedding models can match the species but fail to recognize subtle visual features such as wing posture and the upward-looking angle. Existing improvements (query rewriting, multi-stage reranking) remain constrained by the inherent difficulty of cross-modal similarity alignment.
 
-**Root Cause**: Text is inherently insufficient for exhaustively describing complex visual-spatial relationships, and cross-modal retrievers exhibit an intrinsic weakness in recognizing fine-grained visual-spatial features. Encoding all visual requirements into a text query may actually degrade retrieval performance due to embedding quality limitations.
+**Key Challenge**: Text is inherently insufficient for exhaustively describing complex visual-spatial relationships, and cross-modal retrievers exhibit an intrinsic weakness in recognizing fine-grained visual-spatial features. Encoding all visual requirements into a text query may actually degrade retrieval performance due to embedding quality limitations.
 
-**Paper Goals**: To propose a retrieval paradigm that bypasses the weaknesses of cross-modal similarity matching by projecting text queries into the image modality, thereby leveraging the stronger intra-modal retrieval capability of existing retrievers.
+**Goal**: To propose a retrieval paradigm that bypasses the weaknesses of cross-modal similarity matching by projecting text queries into the image modality, thereby leveraging the stronger intra-modal retrieval capability of existing retrievers.
 
-**Starting Point**: Visualization provides a more intuitive and expressive medium than text for conveying compositional concepts (entity + pose + spatial relationship). Performing retrieval within the image modality avoids the weaknesses of cross-modal retrievers and exploits their stronger intra-modal capabilities.
+**Key Insight**: Visualization provides a more intuitive and expressive medium than text for conveying compositional concepts (entity + pose + spatial relationship). Performing retrieval within the image modality avoids the weaknesses of cross-modal retrievers and exploits their stronger intra-modal capabilities.
 
 **Core Idea**: Decompose T2I retrieval into two stages—"text → image modality projection" and "image → image intra-modal retrieval"—by visualizing text queries via a T2I generative model and subsequently performing image-to-image retrieval using the generated images.
 

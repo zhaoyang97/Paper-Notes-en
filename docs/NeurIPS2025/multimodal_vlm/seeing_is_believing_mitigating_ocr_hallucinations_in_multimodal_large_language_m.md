@@ -28,11 +28,11 @@ This paper addresses OCR hallucinations in MLLMs under degraded document conditi
 
 ## Background & Motivation
 
-- **State of the Field**: Multimodal large language models (MLLMs) have made significant progress in document understanding, handling diverse document types such as identity cards, invoices, and contracts.
+- **Background**: Multimodal large language models (MLLMs) have made significant progress in document understanding, handling diverse document types such as identity cards, invoices, and contracts.
 - **Limitations of Prior Work**: Existing models exhibit a fundamental paradigm flaw in real-world scenarios: when confronted with visual degradation (e.g., blur, occlusion, low contrast), models fail to strictly follow visual signals, instead over-relying on language priors or generating cross-modal hallucinated content.
-- **Root Cause**: The problem stems from three levels of challenge: (1) the pretraining stage lacks key information extraction (KIE) data and clean annotations for degraded scenes; (2) the instruction fine-tuning stage broadly ignores degraded visual scenarios, as researchers typically assume clean OCR inputs; (3) the evaluation stage lacks benchmarks specifically quantifying OCR hallucinations in document understanding. Consequently, models default to language priors rather than observable visual evidence when processing reflectively occluded identity cards or low-contrast reports.
-- **Paper Goals**: This work frames OCR hallucinations as a precisely rewardable problem, leveraging the quantifiable nature of KIE task answers to train models toward visually faithful reasoning via reinforcement learning.
-- **Starting Point**: Model OCR hallucinations as a precisely rewardable fundamental problem, and use reinforcement learning to teach models visually faithful reasoning by exploiting the quantifiable nature of KIE task answers.
+- **Key Challenge**: The problem stems from three levels of challenge: (1) the pretraining stage lacks key information extraction (KIE) data and clean annotations for degraded scenes; (2) the instruction fine-tuning stage broadly ignores degraded visual scenarios, as researchers typically assume clean OCR inputs; (3) the evaluation stage lacks benchmarks specifically quantifying OCR hallucinations in document understanding. Consequently, models default to language priors rather than observable visual evidence when processing reflectively occluded identity cards or low-contrast reports.
+- **Goal**: This work frames OCR hallucinations as a precisely rewardable problem, leveraging the quantifiable nature of KIE task answers to train models toward visually faithful reasoning via reinforcement learning.
+- **Key Insight**: Model OCR hallucinations as a precisely rewardable fundamental problem, and use reinforcement learning to teach models visually faithful reasoning by exploiting the quantifiable nature of KIE task answers.
 
 ## Method
 

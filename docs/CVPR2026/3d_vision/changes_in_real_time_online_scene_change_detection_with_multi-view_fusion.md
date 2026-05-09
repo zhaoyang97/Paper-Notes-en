@@ -29,18 +29,18 @@ This paper presents the first scene change detection (SCD) method that simultane
 
 ## Background & Motivation
 
-**State of the Field**: Scene change detection (SCD) is a core task in scene understanding, with applications in environmental monitoring, infrastructure inspection, and damage assessment. Recent methods leverage NeRF and 3DGS to build 3D scene representations for pose-agnostic SCD.
+**Background**: Scene change detection (SCD) is a core task in scene understanding, with applications in environmental monitoring, infrastructure inspection, and damage assessment. Recent methods leverage NeRF and 3DGS to build 3D scene representations for pose-agnostic SCD.
 
 **Limitations of Prior Work**:
    - The strongest SCD methods (e.g., MV3DCD, GeSCD) are **offline** — they require all pre- and post-event observations to be collected before inference, making them unsuitable for real-time decision-making scenarios.
    - Existing online methods achieve substantially lower accuracy than offline counterparts, and most fail to maintain real-time performance (<1 FPS).
    - MV3DCD relies on hard thresholds and intersection-based heuristics to fuse change cues, which tends to discard subtle yet important change signals.
 
-**Root Cause**: Online settings demand real-time, frame-by-frame change detection with cross-view consistency, yet existing methods sacrifice either accuracy (online methods) or real-time capability (offline methods).
+**Key Challenge**: Online settings demand real-time, frame-by-frame change detection with cross-view consistency, yet existing methods sacrifice either accuracy (online methods) or real-time capability (offline methods).
 
-**Paper Goals**: (a) How to perform online, real-time change inference? (b) How to avoid information loss caused by hard thresholding? (c) How to update scene representations efficiently?
+**Goal**: (a) How to perform online, real-time change inference? (b) How to avoid information loss caused by hard thresholding? (c) How to update scene representations efficiently?
 
-**Starting Point**: A 3DGS-based change representation serves as a persistent cross-view memory, coupled with a self-supervised loss that automatically learns to fuse multi-view change cues. This is complemented by a lightweight PnP-based pose estimator and change-guided selective scene updating.
+**Key Insight**: A 3DGS-based change representation serves as a persistent cross-view memory, coupled with a self-supervised loss that automatically learns to fuse multi-view change cues. This is complemented by a lightweight PnP-based pose estimator and change-guided selective scene updating.
 
 **Core Idea**: A self-supervised fusion loss replaces hard-threshold heuristics, allowing change information to accumulate and propagate naturally within the 3DGS representation. Scene updates are further accelerated by reconstructing only the changed regions.
 

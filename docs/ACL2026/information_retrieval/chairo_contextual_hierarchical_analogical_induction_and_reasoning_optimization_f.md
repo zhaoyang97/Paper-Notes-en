@@ -27,15 +27,15 @@ This paper proposes ChAIRO, a Contextual Hierarchical Analogical Induction and R
 
 ## Background & Motivation
 
-**State of the Field**: Leveraging LLMs for content moderation has become a promising direction, providing interpretable moderation decisions through chain-of-thought reasoning. However, even SOTA models frequently err in scenarios involving contextual ambiguity or underspecified moderation criteria.
+**Background**: Leveraging LLMs for content moderation has become a promising direction, providing interpretable moderation decisions through chain-of-thought reasoning. However, even SOTA models frequently err in scenarios involving contextual ambiguity or underspecified moderation criteria.
 
 **Limitations of Prior Work**: (1) CoT reasoning in content moderation lacks reference to precedents and relies solely on explicit criteria (e.g., presence of insults or incitement), failing to detect implicit discriminatory logic (e.g., metaphorical discrimination such as "low score equals low ability"); (2) manually defined high-level rules (e.g., "pornographic content") are too coarse to capture fine-grained distinctions; (3) LLM-driven adaptive rule discovery relies on general priors and ignores domain expertise accumulated by human moderation specialists.
 
-**Root Cause**: Accurate, context-sensitive moderation rules are required to handle ambiguous cases, yet constructing and discovering such rules is inherently difficult—manual enumeration is impractical, while automatic generation lacks sufficient precision.
+**Key Challenge**: Accurate, context-sensitive moderation rules are required to handle ambiguous cases, yet constructing and discovering such rules is inherently difficult—manual enumeration is impractical, while automatic generation lacks sufficient precision.
 
-**Paper Goals**: To leverage analogical cases to improve rule induction quality, and to unify case retrieval, rule generation, and moderation decisions through end-to-end optimization.
+**Goal**: To leverage analogical cases to improve rule induction quality, and to unify case retrieval, rule generation, and moderation decisions through end-to-end optimization.
 
-**Starting Point**: Unlike CarO (a concurrent work from the same group, arXiv:2604.10504), ChAIRO does not employ DPO; instead, it introduces an explicit rule induction step—an auxiliary reasoning model first induces textual moderation rules from analogical cases, which are then injected into the reasoning chain for a second-round fine-tuning.
+**Key Insight**: Unlike CarO (a concurrent work from the same group, arXiv:2604.10504), ChAIRO does not employ DPO; instead, it introduces an explicit rule induction step—an auxiliary reasoning model first induces textual moderation rules from analogical cases, which are then injected into the reasoning chain for a second-round fine-tuning.
 
 **Core Idea**: A three-stage hierarchical optimization process: (1) analogical chain SFT trains the model to generate analogical cases; (2) an auxiliary model induces explicit rules from analogical cases; (3) rules are injected into the reasoning chain for a second-round SFT that integrates "case + rule + reasoning" capabilities.
 

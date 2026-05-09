@@ -28,15 +28,15 @@ This paper investigates the security of the Factor(U,T) protocol, in which an un
 
 ## Background & Motivation
 
-**State of the Field**: AI control research studies how to safely utilize powerful AI systems that may be misaligned. Factored cognition decomposes tasks into subtasks, which are completed by models of varying capability levels.
+**Background**: AI control research studies how to safely utilize powerful AI systems that may be misaligned. Factored cognition decomposes tasks into subtasks, which are completed by models of varying capability levels.
 
 **Limitations of Prior Work**: When an untrusted model is responsible for decomposition (planning), it may embed covert attacks at the planning level—raising the question of whether monitors can detect malicious intent from natural language plans alone.
 
-**Root Cause**: Abstract natural language task descriptions cannot expose backdoor intent at the code level—there is a granularity mismatch between the monitoring level and the attack level.
+**Key Challenge**: Abstract natural language task descriptions cannot expose backdoor intent at the code level—there is a granularity mismatch between the monitoring level and the attack level.
 
-**Paper Goals**: Quantify the security gap between "monitoring plans" and "monitoring implementations."
+**Goal**: Quantify the security gap between "monitoring plans" and "monitoring implementations."
 
-**Starting Point**: Red-team attacks (context exploitation strategies) are constructed to systematically compare AUROC across different protocols.
+**Key Insight**: Red-team attacks (context exploitation strategies) are constructed to systematically compare AUROC across different protocols.
 
 **Core Idea**: Untrusted AI performing planning + monitoring only plans = insecure (AUROC 0.52); trusted AI performing planning + monitoring implementations = secure (AUROC 0.96).
 

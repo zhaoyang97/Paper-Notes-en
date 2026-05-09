@@ -29,15 +29,15 @@ METEOR proposes the first three-stage progressive token pruning framework for mu
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal large language models (MLLMs) achieve multimodal understanding by encoding images into visual tokens and concatenating them with text tokens. Single-encoder approaches (e.g., CLIP) suffer from generalization limitations. Recent works such as EAGLE and Cambrian-1 enhance visual perception by fusing multiple visual encoders (CLIP, ConvNeXt, Pix2Struct, EVA-02, etc.).
+**Background**: Multimodal large language models (MLLMs) achieve multimodal understanding by encoding images into visual tokens and concatenating them with text tokens. Single-encoder approaches (e.g., CLIP) suffer from generalization limitations. Recent works such as EAGLE and Cambrian-1 enhance visual perception by fusing multiple visual encoders (CLIP, ConvNeXt, Pix2Struct, EVA-02, etc.).
 
 **Limitations of Prior Work**: Multi-encoder approaches introduce substantial computational overhead. For instance, dual-encoder processing of 672×672 images in Mini-Gemini generates 2,880 visual tokens, and the computational complexity of self-attention scales quadratically with token count. Existing token compression methods (FastV, Pdrop, SparseVLM) are designed for single-encoder settings and cannot address challenges unique to multi-encoder systems: how to allocate token budgets appropriately across encoders with varying information density, and how to eliminate overlapping redundancy across encoders. Furthermore, these methods apply fixed pruning ratios and cannot adapt to different task requirements, leading to severe performance degradation on fine-grained tasks such as OCR.
 
-**Root Cause**: Multi-encoder architectures improve performance but dramatically increase computational cost. The visual tokens produced by multiple encoders contain substantial redundancy—both within individual encoders and as information overlap across encoders. Existing pruning methods cannot perform collaborative optimization in multi-encoder settings.
+**Key Challenge**: Multi-encoder architectures improve performance but dramatically increase computational cost. The visual tokens produced by multiple encoders contain substantial redundancy—both within individual encoders and as information overlap across encoders. Existing pruning methods cannot perform collaborative optimization in multi-encoder settings.
 
-**Paper Goals**: Design an end-to-end token pruning framework for multi-encoder systems that progressively eliminates redundancy across the encoding, fusion, and decoding stages.
+**Goal**: Design an end-to-end token pruning framework for multi-encoder systems that progressively eliminates redundancy across the encoding, fusion, and decoding stages.
 
-**Starting Point**: Through in-depth analysis of token redundancy patterns in multi-encoder MLLMs, three key insights are identified: attention-based redundancy identification is unreliable in shallow layers but average token similarity is useful; the rank of feature maps provides a stable measure of information richness; and different tasks require different numbers of visual tokens.
+**Key Insight**: Through in-depth analysis of token redundancy patterns in multi-encoder MLLMs, three key insights are identified: attention-based redundancy identification is unreliable in shallow layers but average token similarity is useful; the rank of feature maps provides a stable measure of information richness; and different tasks require different numbers of visual tokens.
 
 **Core Idea**: Grounded in five key findings, visual tokens are progressively pruned across the encoding → fusion → decoding pipeline, employing rank-guided allocation at the encoding stage, mutual redundancy elimination at the fusion stage, and text-guided adaptive pruning at the decoding stage.
 

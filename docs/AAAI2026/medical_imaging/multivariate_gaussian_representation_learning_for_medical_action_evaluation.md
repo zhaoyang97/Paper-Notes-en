@@ -29,14 +29,14 @@ This paper proposes GaussMedAct, a framework that models joint motion trajectori
 
 ## Background & Motivation
 
-**State of the Field**: CPR quality directly affects survival rates in cardiac arrest. Manual assessment achieves only 74.8% accuracy, and existing vision-based systems struggle to capture centimeter-level positional deviations and millisecond-level frequency variations.
+**Background**: CPR quality directly affects survival rates in cardiac arrest. Manual assessment achieves only 74.8% accuracy, and existing vision-based systems struggle to capture centimeter-level positional deviations and millisecond-level frequency variations.
 
 **Limitations of Prior Work**:
 - RGB-based methods (e.g., TimeSformer) impose high computational costs and lack anatomical modeling.
 - Skeleton-based methods (e.g., ST-GCN) discard motion semantics through rigid temporal pooling and are sensitive to noise.
 - No suitable CPR assessment dataset exists — existing datasets are small-scale with coarse-grained annotations.
 
-**Starting Point**: Inspired by 3D Gaussian Splatting, which efficiently represents dense point clouds with a compact set of Gaussian primitives, this work treats joint motion trajectories as spatiotemporal point sets and employs Gaussian mixture models for compact, noise-robust representation.
+**Key Insight**: Inspired by 3D Gaussian Splatting, which efficiently represents dense point clouds with a compact set of Gaussian primitives, this work treats joint motion trajectories as spatiotemporal point sets and employs Gaussian mixture models for compact, noise-robust representation.
 
 ## Method
 

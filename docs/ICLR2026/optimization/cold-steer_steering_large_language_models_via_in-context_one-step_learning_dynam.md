@@ -28,15 +28,15 @@ COLD-Steer is proposed as a training-free LLM activation steering method that ap
 
 ## Background & Motivation
 
-**State of the Field**: Activation steering controls LLM behavior at inference time without retraining, and falls into two categories — contrastive methods (DiffMean/CAA) construct steering vectors from activation differences of positive/negative pairs, while parameter-tuning methods (ReFT/BiPO) train steering parameters end-to-end.
+**Background**: Activation steering controls LLM behavior at inference time without retraining, and falls into two categories — contrastive methods (DiffMean/CAA) construct steering vectors from activation differences of positive/negative pairs, while parameter-tuning methods (ReFT/BiPO) train steering parameters end-to-end.
 
 **Limitations of Prior Work**: Contrastive methods are sample-efficient but rely solely on activation-level signals (without loss function information), limiting steering precision; parameter-tuning methods (e.g., ReFT) require 250–1000 training examples and multi-epoch tuning, incurring high cost.
 
-**Root Cause**: There exists a fundamental trade-off between sample efficiency and steering precision — how can one achieve fine-tuning-level steering with few examples and no parameter updates?
+**Key Challenge**: There exists a fundamental trade-off between sample efficiency and steering precision — how can one achieve fine-tuning-level steering with few examples and no parameter updates?
 
-**Paper Goals**: Design a training-free framework that steers LLM behavior effectively using only 10–50 examples.
+**Goal**: Design a training-free framework that steers LLM behavior effectively using only 10–50 examples.
 
-**Starting Point**: The authors observe that representational changes during fine-tuning follow analytically tractable patterns (learning dynamics). The core insight is that the effect of gradient descent on representations can be *simulated* at inference time without actually updating parameters.
+**Key Insight**: The authors observe that representational changes during fine-tuning follow analytically tractable patterns (learning dynamics). The core insight is that the effect of gradient descent on representations can be *simulated* at inference time without actually updating parameters.
 
 **Core Idea**: Reframe activation steering as "simulating the learning dynamics of a single gradient descent step" — compute how gradients from in-context examples would alter the target representation, and directly apply that change as a steering vector.
 

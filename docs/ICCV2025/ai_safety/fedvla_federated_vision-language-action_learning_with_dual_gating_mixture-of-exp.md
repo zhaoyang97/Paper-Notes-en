@@ -29,15 +29,15 @@ This paper proposes FedVLA — the first federated learning framework for Vision
 
 ## Background & Motivation
 
-**State of the Field**: Vision-Language-Action (VLA) models represent a significant advance in robotic manipulation, enabling robots to interpret natural language instructions, understand scenes, and execute tasks accordingly. Representative works such as RT-2 and OpenVLA have demonstrated strong generalization to novel instructions and unseen objects after training on large-scale datasets.
+**Background**: Vision-Language-Action (VLA) models represent a significant advance in robotic manipulation, enabling robots to interpret natural language instructions, understand scenes, and execute tasks accordingly. Representative works such as RT-2 and OpenVLA have demonstrated strong generalization to novel instructions and unseen objects after training on large-scale datasets.
 
 **Limitations of Prior Work**: Training VLA models requires large quantities of user-specific indoor scene data — such as videos of robot manipulation in home environments — which contain sensitive personal information including living spaces, object arrangements, and daily routines. Centralized training necessitates uploading all such data to the cloud, posing significant privacy risks and limiting the broader deployment of VLA models.
 
-**Root Cause**: There exists a fundamental tension between privacy preservation (data cannot be shared) and model performance (which requires large, diverse datasets). Existing federated learning methods such as FedAvg are primarily designed for unimodal settings; their simple averaging aggregation ignores task heterogeneity across clients — in VLA scenarios, robots in different households perform entirely different tasks (e.g., opening drawers vs. sweeping floors), resulting in drastically different feature distributions.
+**Key Challenge**: There exists a fundamental tension between privacy preservation (data cannot be shared) and model performance (which requires large, diverse datasets). Existing federated learning methods such as FedAvg are primarily designed for unimodal settings; their simple averaging aggregation ignores task heterogeneity across clients — in VLA scenarios, robots in different households perform entirely different tasks (e.g., opening drawers vs. sweeping floors), resulting in drastically different feature distributions.
 
-**Paper Goals**: To design the first federated learning framework tailored for VLA models that, without exposing user data, effectively handles multi-client task heterogeneity and achieves robotic manipulation performance comparable to centralized training.
+**Goal**: To design the first federated learning framework tailored for VLA models that, without exposing user data, effectively handles multi-client task heterogeneity and achieves robotic manipulation performance comparable to centralized training.
 
-**Starting Point**: The authors observe that task heterogeneity in VLA settings can be addressed through Mixture-of-Experts (MoE), where different tasks activate different experts. Furthermore, expert activation patterns serve as a signal of inter-client task similarity and can guide federated aggregation.
+**Key Insight**: The authors observe that task heterogeneity in VLA settings can be addressed through Mixture-of-Experts (MoE), where different tasks activate different experts. Furthermore, expert activation patterns serve as a signal of inter-client task similarity and can guide federated aggregation.
 
 **Core Idea**: Three coordinated components are proposed — IOSP decomposes scenes into object-level representations to enhance task understanding; DGMoE enables experts to autonomously determine whether to respond to each token for efficient routing; EDA performs intelligent aggregation based on expert activation similarity.
 

@@ -27,15 +27,15 @@ This paper proposes Agnostics, a language-agnostic post-training pipeline that r
 
 ## Background & Motivation
 
-**State of the Field**: LLMs excel at high-resource languages such as Python and JavaScript, but perform poorly on low-resource languages like Lua (0.53%), Julia (0.10%), R (0.35%), and Fortran (0.07%). These languages lack not only pretraining data but also post-training datasets, testing tools, and RL infrastructure.
+**Background**: LLMs excel at high-resource languages such as Python and JavaScript, but perform poorly on low-resource languages like Lua (0.53%), Julia (0.10%), R (0.35%), and Fortran (0.07%). These languages lack not only pretraining data but also post-training datasets, testing tools, and RL infrastructure.
 
 **Limitations of Prior Work**: (a) Each new language appears to require a dedicated dataset, testing framework, and RL environment, imposing substantial engineering overhead. (b) Synthetic data approaches such as MultiPL-T require approximately 500 lines of prompt/test translators per language, and rejection sampling is highly inefficient on hard problems (≈30% acceptance rate). (c) Upsampling low-resource languages during pretraining or fine-tuning on their data yields only marginal improvements.
 
-**Root Cause**: RL requires reliable reward signals (i.e., code correctness verification), yet building a verification environment for each language constitutes the heaviest engineering burden in the pipeline.
+**Key Challenge**: RL requires reliable reward signals (i.e., code correctness verification), yet building a verification environment for each language constitutes the heaviest engineering burden in the pipeline.
 
-**Paper Goals**: Design a universal RL post-training pipeline in which supporting a new language requires only 4–5 lines of YAML configuration.
+**Goal**: Design a universal RL post-training pipeline in which supporting a new language requires only 4–5 lines of YAML configuration.
 
-**Starting Point**: The key insight is that for a large class of programming tasks, **correctness can be determined purely from the program's externally observable behavior (I/O)**, allowing the verifier to be fully decoupled from the target language.
+**Key Insight**: The key insight is that for a large class of programming tasks, **correctness can be determined purely from the program's externally observable behavior (I/O)**, allowing the verifier to be fully decoupled from the target language.
 
 **Core Idea**: Unify all programming tasks into a "read stdin → compute → write stdout" I/O format and assign rewards to code in any language using a single language-agnostic verifier, enabling universal RLVR.
 

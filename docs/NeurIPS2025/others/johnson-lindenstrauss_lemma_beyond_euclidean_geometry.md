@@ -28,15 +28,15 @@ This paper extends the Johnson-Lindenstrauss (JL) lemma from Euclidean space to 
 
 ## Background & Motivation
 
-1. **State of the Field**: The JL lemma is a cornerstone of dimensionality reduction in Euclidean space, guaranteeing that random linear projections preserve pairwise distances within a $(1\pm\varepsilon)$ factor in $O(\log n/\varepsilon^2)$ dimensions. It is widely applied in approximate nearest neighbor search, clustering, and regression.
+1. **Background**: The JL lemma is a cornerstone of dimensionality reduction in Euclidean space, guaranteeing that random linear projections preserve pairwise distances within a $(1\pm\varepsilon)$ factor in $O(\log n/\varepsilon^2)$ dimensions. It is widely applied in approximate nearest neighbor search, clustering, and regression.
 
 2. **Limitations of Prior Work**: The JL lemma requires data to reside in Euclidean space with accessible coordinates, whereas real-world dissimilarities are often non-Euclidean or non-metric (e.g., Minkowski distance, cosine similarity, KL divergence), and sometimes only pairwise dissimilarity matrices — without explicit coordinates — are available.
 
-3. **Root Cause**: It is known that target dimensionality for $\ell_1$, $\ell_p$, and nuclear norm settings must be polynomial in $n$ for constant distortion, making $O(\log n)$ guarantees unattainable. This necessitates fine-grained error analysis rather than worst-case guarantees.
+3. **Key Challenge**: It is known that target dimensionality for $\ell_1$, $\ell_p$, and nuclear norm settings must be polynomial in $n$ for constant distortion, making $O(\log n)$ guarantees unattainable. This necessitates fine-grained error analysis rather than worst-case guarantees.
 
-4. **Paper Goals**: To apply JL-type transformations to general symmetric hollow dissimilarity matrices and provide error guarantees that depend on the degree of deviation from Euclidean geometry.
+4. **Goal**: To apply JL-type transformations to general symmetric hollow dissimilarity matrices and provide error guarantees that depend on the degree of deviation from Euclidean geometry.
 
-5. **Starting Point**: Two approaches are pursued: (1) embed the dissimilarity matrix into a pseudo-Euclidean space $\mathbb{R}^{p,q}$, with error depending on the ratio of the $(p,q)$-norm to the Euclidean norm; (2) show that any symmetric hollow matrix can be expressed as a generalized power distance matrix, with additive error proportional to the deviation parameter $r^2$.
+5. **Key Insight**: Two approaches are pursued: (1) embed the dissimilarity matrix into a pseudo-Euclidean space $\mathbb{R}^{p,q}$, with error depending on the ratio of the $(p,q)$-norm to the Euclidean norm; (2) show that any symmetric hollow matrix can be expressed as a generalized power distance matrix, with additive error proportional to the deviation parameter $r^2$.
 
 6. **Core Idea**: The JL transform can be extended to non-Euclidean settings, yielding error guarantees that degrade gracefully as a function of a parameter measuring the degree of non-Euclideanness of the data.
 

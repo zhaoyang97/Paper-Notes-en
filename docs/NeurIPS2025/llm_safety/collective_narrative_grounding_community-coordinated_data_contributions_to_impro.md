@@ -30,15 +30,15 @@ This paper proposes the Collective Narrative Grounding protocol, which collects 
 
 ## Background & Motivation
 
-**State of the Field**: LLM-based QA systems perform well on general knowledge but frequently fail on community-specific local knowledge — including local historical events, cultural traditions, and place-specific information that constitute "knowledge blind spots."
+**Background**: LLM-based QA systems perform well on general knowledge but frequently fail on community-specific local knowledge — including local historical events, cultural traditions, and place-specific information that constitute "knowledge blind spots."
 
 **Limitations of Prior Work**: (a) LLM training data exhibits systematic geographic bias, with severe underrepresentation of low-income and rural communities; (b) data voids can be exploited by misinformation; (c) existing RAG and fine-tuning approaches rely on pre-existing (often scarce) local text, and cannot capture orally transmitted community knowledge.
 
-**Root Cause**: The source of LLM knowledge — internet text — is itself skewed, making the knowledge gap not a technical limitation but a structural form of epistemic injustice, in which the knowledge of marginalized communities is systematically excluded.
+**Key Challenge**: The source of LLM knowledge — internet text — is itself skewed, making the knowledge gap not a technical limitation but a structural form of epistemic injustice, in which the knowledge of marginalized communities is systematically excluded.
 
-**Paper Goals**: (a) Quantify the failure modes of LLMs on local knowledge; (b) design a complete protocol for collecting, structuring, and governing narrative data from communities; (c) validate whether community narratives can directly address the major error categories.
+**Goal**: (a) Quantify the failure modes of LLMs on local knowledge; (b) design a complete protocol for collecting, structuring, and governing narrative data from communities; (c) validate whether community narratives can directly address the major error categories.
 
-**Starting Point**: Community members' oral narratives are treated as first-class data sources. Stories are collected through participatory mapping workshops and then structured into queryable narrative units.
+**Key Insight**: Community members' oral narratives are treated as first-class data sources. Stories are collected through participatory mapping workshops and then structured into queryable narrative units.
 
 **Core Idea**: A community participatory protocol collects local narratives, structures them into a knowledge layer, and uses RAG to fill LLM blind spots regarding local knowledge.
 

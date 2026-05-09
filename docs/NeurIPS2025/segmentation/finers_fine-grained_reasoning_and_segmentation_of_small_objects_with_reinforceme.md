@@ -31,13 +31,13 @@ FineRS is a two-stage MLLM reinforcement learning framework comprising Global Se
 
 ## Background & Motivation
 
-**State of the Field**: Methods such as LISA integrate MLLMs with SAM to enable reasoning segmentation; however, they are designed for standard-resolution images and large-scale objects, failing severely on ultra-small objects (area ratio <0.1%) in high-resolution images — LISA 7B achieves only 9.0% gIoU on FineRS-4k.
+**Background**: Methods such as LISA integrate MLLMs with SAM to enable reasoning segmentation; however, they are designed for standard-resolution images and large-scale objects, failing severely on ultra-small objects (area ratio <0.1%) in high-resolution images — LISA 7B achieves only 9.0% gIoU on FineRS-4k.
 
 **Limitations of Prior Work**: Existing high-resolution understanding methods (SEAL, DC2, MLLMs-Know) capture fine-grained details via tiling or attention mechanisms, but most operate in a training-free manner, lack precise localization capability, and cannot produce pixel-level masks.
 
 **Limitations of Vision RFT**: Seg-Zero introduces GRPO into segmentation but is constrained by resolution, does not support multi-task unification (joint VQA and segmentation), and employs insufficiently flexible reward designs.
 
-**Root Cause**: A unified framework is needed to handle ultra-small objects in 4K images, support instruction-guided segmentation, open-ended VQA, and multiple-choice VQA simultaneously, and achieve data-efficient training through reinforcement learning.
+**Key Challenge**: A unified framework is needed to handle ultra-small objects in 4K images, support instruction-guided segmentation, open-ended VQA, and multiple-choice VQA simultaneously, and achieve data-efficient training through reinforcement learning.
 
 ## Method
 

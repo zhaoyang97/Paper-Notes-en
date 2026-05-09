@@ -28,15 +28,15 @@ This paper proposes Prune-then-Merge, a two-stage training-free multi-vector doc
 
 ## Background & Motivation
 
-**State of the Field**: Visual Document Retrieval (VDR) leverages large vision-language models (LVLMs) to process document pages as images. The multi-vector paradigm (e.g., ColPali) represents each page as a set of patch-level embeddings and achieves fine-grained matching via MaxSim late interaction, yielding state-of-the-art performance.
+**Background**: Visual Document Retrieval (VDR) leverages large vision-language models (LVLMs) to process document pages as images. The multi-vector paradigm (e.g., ColPali) represents each page as a set of patch-level embeddings and achieves fine-grained matching via MaxSim late interaction, yielding state-of-the-art performance.
 
 **Limitations of Prior Work**: Multi-vector models incur substantial storage and computational costs—each page may be indexed by hundreds to thousands of vectors—making large-scale deployment impractical. Existing compression methods fall into two camps: (1) pruning methods (e.g., DocPruner) achieve near-lossless compression at moderate ratios but suffer sharp performance degradation at high ratios; (2) merging methods (e.g., Light-ColPali) degrade more gracefully at high compression ratios but risk diluting discriminative features, with unstable near-lossless behavior.
 
-**Root Cause**: Pruning excels at precisely removing noise but cannot handle high redundancy; merging handles high compression ratios more gracefully but produces centroids biased by noise when applied to noisy inputs. Neither approach alone satisfies both near-lossless and high-compression requirements simultaneously.
+**Key Challenge**: Pruning excels at precisely removing noise but cannot handle high redundancy; merging handles high compression ratios more gracefully but produces centroids biased by noise when applied to noisy inputs. Neither approach alone satisfies both near-lossless and high-compression requirements simultaneously.
 
-**Paper Goals**: To synergize the two complementary strategies—first pruning to improve the signal-to-noise ratio, then merging to achieve high compression.
+**Goal**: To synergize the two complementary strategies—first pruning to improve the signal-to-noise ratio, then merging to achieve high compression.
 
-**Starting Point**: Drawing from information bottleneck (IB) theory, the overall compression problem is decomposed into two more tractable sub-problems: query-agnostic information filtering (pruning) and redundancy elimination (merging).
+**Key Insight**: Drawing from information bottleneck (IB) theory, the overall compression problem is decomposed into two more tractable sub-problems: query-agnostic information filtering (pruning) and redundancy elimination (merging).
 
 **Core Idea**: Refine before compressing—pruning transforms the input from a low-SNR set to a high-SNR set, upon which subsequent merging operates on high-quality vectors, avoiding centroid bias induced by noise.
 

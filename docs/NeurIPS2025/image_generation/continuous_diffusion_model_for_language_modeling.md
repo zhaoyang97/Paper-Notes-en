@@ -29,15 +29,15 @@ This paper proposes RDLM (Riemannian Diffusion Language Model), which constructs
 
 ## Background & Motivation
 
-**State of the Field**: Discrete diffusion models (D3PM, SEDD, MDLM) model discrete state spaces via Markov chains and have demonstrated competitive performance in language modeling. However, the jump-based transitions between discrete states lead to information loss and prevent these models from fully exploiting iterative refinement, a core advantage of continuous diffusion.
+**Background**: Discrete diffusion models (D3PM, SEDD, MDLM) model discrete state spaces via Markov chains and have demonstrated competitive performance in language modeling. However, the jump-based transitions between discrete states lead to information loss and prevent these models from fully exploiting iterative refinement, a core advantage of continuous diffusion.
 
 **Limitations of Prior Work**: (1) Discrete diffusion transitions between states are irreversible, limiting generation quality and controllability. (2) Existing continuous diffusion methods (e.g., relaxation in Euclidean space) ignore the geometric structure of categorical distributions and fall significantly behind discrete methods in performance. (3) Flow matching methods on statistical manifolds (Fisher-Flow, CatFlow) are restricted to short sequences and small vocabularies.
 
-**Root Cause**: How to preserve the geometric structure of categorical distributions while enabling discrete data to benefit from continuous diffusion's iterative refinement, and scale to large vocabularies and long sequences.
+**Key Challenge**: How to preserve the geometric structure of categorical distributions while enabling discrete data to benefit from continuous diffusion's iterative refinement, and scale to large vocabularies and long sequences.
 
-**Paper Goals**: Establish a unified theoretical connection between discrete diffusion and continuous flows, and design a practical continuous diffusion framework as an alternative to discrete jumps.
+**Goal**: Establish a unified theoretical connection between discrete diffusion and continuous flows, and design a practical continuous diffusion framework as an alternative to discrete jumps.
 
-**Starting Point**: The statistical manifold of categorical distributions (probability simplex) is diffeomorphic to the positive orthant of the hypersphere via $\pi: p_i \mapsto \sqrt{p_i}$.
+**Key Insight**: The statistical manifold of categorical distributions (probability simplex) is diffeomorphic to the positive orthant of the hypersphere via $\pi: p_i \mapsto \sqrt{p_i}$.
 
 **Core Idea**: The transition distributions of discrete diffusion can be modeled as continuous flows on the statistical manifold, and a mixture of bridge processes on the hypersphere can generalize and improve upon discrete diffusion.
 

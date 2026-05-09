@@ -28,15 +28,15 @@ BEAST parameterizes action sequences via B-splines—estimating control points t
 
 ## Background & Motivation
 
-**State of the Field**: Action representations in imitation learning directly affect policy quality and inference efficiency. VQ-VAE requires separately trained codebooks; FAST uses BPE to produce variable-length sequences; per-step discretization (binning) yields token counts proportional to sequence length.
+**Background**: Action representations in imitation learning directly affect policy quality and inference efficiency. VQ-VAE requires separately trained codebooks; FAST uses BPE to produce variable-length sequences; per-step discretization (binning) yields token counts proportional to sequence length.
 
 **Limitations of Prior Work**: (a) VQ-VAE codebook training is decoupled from policy training, leading to potential misalignment; (b) FAST's variable-length tokens are ill-suited for parallel decoding; (c) per-step binning offers low compression—100 steps require 100 tokens; (d) no existing method guarantees smooth transitions between action chunks (requiring temporal blending as post-processing).
 
-**Root Cause**: Simultaneously satisfying high compression (fewer tokens = faster decoding), fixed length (parallel decoding), smooth transitions (no discontinuities), and high accuracy is fundamentally challenging.
+**Key Challenge**: Simultaneously satisfying high compression (fewer tokens = faster decoding), fixed length (parallel decoding), smooth transitions (no discontinuities), and high accuracy is fundamentally challenging.
 
-**Paper Goals**: Design an action tokenizer that satisfies all of the above requirements.
+**Goal**: Design an action tokenizer that satisfies all of the above requirements.
 
-**Starting Point**: B-splines naturally provide a continuous and smooth representation; the number of control points is fixed (equal to the token count) and independent of the number of sampled steps; they can be fitted rapidly via ridge regression; and clamping guarantees inter-chunk continuity.
+**Key Insight**: B-splines naturally provide a continuous and smooth representation; the number of control points is fixed (equal to the token count) and independent of the number of sampled steps; they can be fitted rapidly via ridge regression; and clamping guarantees inter-chunk continuity.
 
 **Core Idea**: Fit B-splines to action sequences → uniformly quantize control points into fixed-length tokens → clamp the starting point to guarantee $C^0$ continuity across chunks → achieve 20× compression with mathematically guaranteed smoothness.
 

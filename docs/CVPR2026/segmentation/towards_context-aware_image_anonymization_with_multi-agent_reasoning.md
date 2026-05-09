@@ -29,11 +29,11 @@ This paper proposes CAIAMAR, a multi-agent framework that combines high-confiden
 
 ## Background & Motivation
 
-1. **State of the Field**: Street-view images are widely used in navigation, urban planning, and autonomous driving datasets, yet contain abundant personally identifiable information (PII). Existing anonymization methods primarily target direct identifiers such as faces and license plates.
+1. **Background**: Street-view images are widely used in navigation, urban planning, and autonomous driving datasets, yet contain abundant personally identifiable information (PII). Existing anonymization methods primarily target direct identifiers such as faces and license plates.
 2. **Limitations of Prior Work**: (1) Traditional blurring methods (e.g., Gaussian blur) degrade downstream task performance (CityScapes instance segmentation AP drops by 5.3%) and are vulnerable to inversion attacks (95.9% identity recovery rate on CelebA-HQ); (2) Existing generative methods (DeepPrivacy2, FADM, etc.) focus solely on human bodies/faces and neglect indirect identifiers (clothing, accessories, contextual objects); (3) State-of-the-art LVLMs can infer private attributes from contextual cues (76.4% accuracy), and the o3 model achieves 99% city-level geolocation from casual photographs.
-3. **Root Cause**: Effective anonymization cannot address only direct PII; it must also handle context-dependent indirect identifiers. However, the semantic diversity of indirect PII makes fixed detectors and rigid category rules insufficient.
-4. **Paper Goals**: Can multi-agent collaboration enable context-aware image anonymization while preserving data utility and providing interpretable audit trails?
-5. **Starting Point**: Decompose the task into auditing (PII classification), generation (inpainting), and coordination (workflow management) via a multi-agent system, employing PDCA iterative refinement rather than a single detect-and-inpaint pass.
+3. **Key Challenge**: Effective anonymization cannot address only direct PII; it must also handle context-dependent indirect identifiers. However, the semantic diversity of indirect PII makes fixed detectors and rigid category rules insufficient.
+4. **Goal**: Can multi-agent collaboration enable context-aware image anonymization while preserving data utility and providing interpretable audit trails?
+5. **Key Insight**: Decompose the task into auditing (PII classification), generation (inpainting), and coordination (workflow management) via a multi-agent system, employing PDCA iterative refinement rather than a single detect-and-inpaint pass.
 6. **Core Idea**: A two-phase architecture — Phase 1 applies dedicated models for direct PII; Phase 2 employs multi-agent + LVLM reasoning for context-dependent indirect identifiers.
 
 ## Method

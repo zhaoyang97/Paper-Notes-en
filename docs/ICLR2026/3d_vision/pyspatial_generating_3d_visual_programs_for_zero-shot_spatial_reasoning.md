@@ -29,7 +29,7 @@ pySpatial is a visual programming framework that enables MLLMs to generate Pytho
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs (e.g., GPT-4o, Claude) excel at image captioning and video understanding, yet remain severely limited in 3D spatial reasoning. Recent studies show that MLLMs perform only marginally above chance on multi-view spatial reasoning tasks such as "How should one move from viewpoint 1 to viewpoint 2?"
+**Background**: MLLMs (e.g., GPT-4o, Claude) excel at image captioning and video understanding, yet remain severely limited in 3D spatial reasoning. Recent studies show that MLLMs perform only marginally above chance on multi-view spatial reasoning tasks such as "How should one move from viewpoint 1 to viewpoint 2?"
 
 **Limitations of Prior Work**:
 
@@ -38,9 +38,9 @@ pySpatial is a visual programming framework that enables MLLMs to generate Pytho
 3. **Single-view limitation**: Methods such as SpatialVLM and SpatialRGPT address only single-view spatial understanding and cannot handle multi-view reasoning.
 4. **Requirement for fine-tuning**: Specialized spatial models (e.g., VLM-3R) require fine-tuning on synthetic data and lack plug-and-play flexibility.
 
-**Root Cause**: MLLMs lack explicit geometric understanding of the 3D world, and implicit reasoning alone cannot reliably solve spatial problems.
+**Key Challenge**: MLLMs lack explicit geometric understanding of the 3D world, and implicit reasoning alone cannot reliably solve spatial problems.
 
-**Paper Goals**: Rather than having MLLMs implicitly imagine 3D structure, pySpatial adopts a visual programming paradigm in which MLLMs generate Python code to invoke 3D tools, explicitly constructing, exploring, and reasoning about 3D scenes—transforming "imagination" into "computation."
+**Goal**: Rather than having MLLMs implicitly imagine 3D structure, pySpatial adopts a visual programming paradigm in which MLLMs generate Python code to invoke 3D tools, explicitly constructing, exploring, and reasoning about 3D scenes—transforming "imagination" into "computation."
 
 ## Method
 

@@ -29,15 +29,15 @@ This paper proposes an efficient context-aware nucleus detection method that agg
 
 ## Background & Motivation
 
-1. **State of the Field**: Nucleus detection is a fundamental task in computational pathology, critical for cancer diagnosis, grading, and prognosis analysis. Due to the gigapixel scale of whole slide images (WSIs), a sliding window strategy must be adopted for detection.
+1. **Background**: Nucleus detection is a fundamental task in computational pathology, critical for cancer diagnosis, grading, and prognosis analysis. Due to the gigapixel scale of whole slide images (WSIs), a sliding window strategy must be adopted for detection.
 
 2. **Limitations of Prior Work**: Mainstream methods process each sliding window independently, ignoring broader tissue context, which leads to inaccurate predictions. Existing context-aware methods extract contextual features by additionally cropping low-field-of-view (LFoV) patches, but this I/O-intensive operation significantly increases whole-slide inference latency.
 
-3. **Root Cause**: Incorporating contextual information improves accuracy, yet LFoV-based approaches incur substantial inference overhead. Moreover, LFoV images inherently lack fine-grained tissue detail due to their low magnification, limiting potential performance gains.
+3. **Key Challenge**: Incorporating contextual information improves accuracy, yet LFoV-based approaches incur substantial inference overhead. Moreover, LFoV images inherently lack fine-grained tissue detail due to their low magnification, limiting potential performance gains.
 
-4. **Paper Goals**: To achieve high-quality context-aware nucleus detection without significantly increasing inference overhead.
+4. **Goal**: To achieve high-quality context-aware nucleus detection without significantly increasing inference overhead.
 
-5. **Starting Point**: Leveraging surrounding sliding-window patches at the same magnification as the region of interest (ROI) as the context source, directly reusing already-extracted historical features during inference.
+5. **Key Insight**: Leveraging surrounding sliding-window patches at the same magnification as the region of interest (ROI) as the context source, directly reusing already-extracted historical features during inference.
 
 6. **Core Idea**: Replace low-magnification LFoV patches with same-magnification neighboring sliding-window features processed by a shared encoder, enabling "free" context aggregation, while using a cross-annotation strategy to exploit unannotated nucleus samples for enhanced contextual adaptability.
 

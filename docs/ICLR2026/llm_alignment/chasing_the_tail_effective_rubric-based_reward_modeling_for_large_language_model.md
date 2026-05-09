@@ -28,15 +28,15 @@ This paper theoretically establishes that reward over-optimization stems primari
 
 ## Background & Motivation
 
-**State of the Field**: Reinforcement fine-tuning (RFT) is the core paradigm for LLM post-training, using reward models to guide policy optimization. In practice, reward models are inevitably imperfect proxies of the true reward, leading to reward over-optimization—where policies learn to exploit proxy reward loopholes to achieve high scores while actual quality degrades.
+**Background**: Reinforcement fine-tuning (RFT) is the core paradigm for LLM post-training, using reward models to guide policy optimization. In practice, reward models are inevitably imperfect proxies of the true reward, leading to reward over-optimization—where policies learn to exploit proxy reward loopholes to achieve high scores while actual quality degrades.
 
 **Limitations of Prior Work**: (a) Bradley-Terry preference reward models are easily hacked in high-reward regions; (b) online RLHF can mitigate this but requires continuous human feedback, making it costly and slow; (c) existing RLRR (rubric-based reward) methods are more interpretable, but how to construct rubrics to address over-optimization remains unclear.
 
-**Root Cause**: Accurately modeling the high-reward tail requires high-quality samples—yet such samples are extremely rare under the base LLM's distribution. Off-policy data (from stronger models) can readily provide high-quality samples, but directly training a reward model on such data causes it to learn surface features of the off-policy distribution rather than true quality.
+**Key Challenge**: Accurately modeling the high-reward tail requires high-quality samples—yet such samples are extremely rare under the base LLM's distribution. Off-policy data (from stronger models) can readily provide high-quality samples, but directly training a reward model on such data causes it to learn surface features of the off-policy distribution rather than true quality.
 
-**Paper Goals**: (a) Theoretically: what is the root cause of reward over-optimization? (b) Practically: how should rubrics be constructed to be accurate in the high-reward tail?
+**Goal**: (a) Theoretically: what is the root cause of reward over-optimization? (b) Practically: how should rubrics be constructed to be accurate in the high-reward tail?
 
-**Starting Point**: The paper begins with theoretical analysis, proving that in Pareto-optimal post-training, the utility-KL trade-off is entirely determined by the accuracy of the proxy reward in high-reward regions (exponential weighting amplifies errors in those regions). This implies that if the ranking in the high-reward region is correct—even if everywhere else is wrong—performance remains near-optimal.
+**Key Insight**: The paper begins with theoretical analysis, proving that in Pareto-optimal post-training, the utility-KL trade-off is entirely determined by the accuracy of the proxy reward in high-reward regions (exponential weighting amplifies errors in those regions). This implies that if the ranking in the high-reward region is correct—even if everywhere else is wrong—performance remains near-optimal.
 
 **Core Idea**: Rubric construction should focus on distinguishing "good vs. better" responses rather than "good vs. bad," since the root cause of over-optimization lies in misspecification of the high-reward tail.
 

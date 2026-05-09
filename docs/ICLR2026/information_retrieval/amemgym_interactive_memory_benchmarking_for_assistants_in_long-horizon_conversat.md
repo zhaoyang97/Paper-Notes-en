@@ -27,15 +27,15 @@ This paper proposes AMemGym — the first long-horizon conversational memory ben
 
 ## Background & Motivation
 
-**State of the Field**: LLM assistants must manage memory across long-horizon conversations to deliver personalized service, yet all existing memory benchmarks (MSC, LongMemEval, PersonaMem, etc.) rely on static off-policy data for evaluation.
+**Background**: LLM assistants must manage memory across long-horizon conversations to deliver personalized service, yet all existing memory benchmarks (MSC, LongMemEval, PersonaMem, etc.) rely on static off-policy data for evaluation.
 
 **Limitations of Prior Work**: (a) Off-policy evaluation cannot capture the consequences of an assistant's own conversational behavior, as memory operations are tightly coupled with interaction patterns; (b) manually curated test scenarios are costly and do not scale; (c) evaluation metrics are predominantly end-to-end QA accuracy, offering no diagnosis of why memory failures occur.
 
-**Root Cause**: The effectiveness of an agent's memory is highly dependent on its own interaction patterns (on-policy), yet evaluation is conducted over conversation histories produced by other models (off-policy), causing a systematic mismatch between evaluation conclusions and real-world deployment performance.
+**Key Challenge**: The effectiveness of an agent's memory is highly dependent on its own interaction patterns (on-policy), yet evaluation is conducted over conversation histories produced by other models (off-policy), causing a systematic mismatch between evaluation conclusions and real-world deployment performance.
 
-**Paper Goals**: Construct a scalable interactive environment that supports on-policy evaluation, multi-granularity diagnostics, and memory strategy optimization.
+**Goal**: Construct a scalable interactive environment that supports on-policy evaluation, multi-granularity diagnostics, and memory strategy optimization.
 
-**Starting Point**: Structured data serves as the "skeleton" (user state schema → state evolution trajectory → state-dependent QA), while LLM role-playing generates natural dialogue as the "flesh" — structure ensures evaluability, interaction ensures authenticity.
+**Key Insight**: Structured data serves as the "skeleton" (user state schema → state evolution trajectory → state-dependent QA), while LLM role-playing generates natural dialogue as the "flesh" — structure ensures evaluability, interaction ensures authenticity.
 
 **Core Idea**: Reverse-engineer user state variables and evolution trajectories from evaluation objectives, then use structured data to drive simulated users for on-policy interaction — yielding an approach that is both reliable and scalable.
 

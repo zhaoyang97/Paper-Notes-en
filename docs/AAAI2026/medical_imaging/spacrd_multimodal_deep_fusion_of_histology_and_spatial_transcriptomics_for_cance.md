@@ -30,7 +30,7 @@ SpaCRD is proposed as a transfer learning-based multimodal deep fusion framework
 
 ## Background & Motivation
 
-**State of the Field**: CTR detection is a critical step in tumor diagnosis, directly relevant to surgical margin delineation, radiotherapy dose delivery, and tumor microenvironment analysis. Traditional approaches either rely on manual pathologist annotation—which is costly and time-consuming—or on histology-based anomaly detection algorithms that suffer from high false-positive rates due to morphological similarity between tissue types.
+**Background**: CTR detection is a critical step in tumor diagnosis, directly relevant to surgical margin delineation, radiotherapy dose delivery, and tumor microenvironment analysis. Traditional approaches either rely on manual pathologist annotation—which is costly and time-consuming—or on histology-based anomaly detection algorithms that suffer from high false-positive rates due to morphological similarity between tissue types.
 
 **Opportunities and Challenges with Spatial Transcriptomics (ST)**: ST technology enables comprehensive transcriptomic profiling of tissue sections while preserving spatial context, providing rich cell phenotype and spatial localization information. However, background noise introduced during ST sequencing severely affects downstream algorithm performance, and marker-gene-based methods dependent on expert prior knowledge lack generalizability.
 
@@ -39,7 +39,7 @@ SpaCRD is proposed as a transfer learning-based multimodal deep fusion framework
    - STANDS/MEATRD adopt computer vision anomaly detection paradigms using reconstruction error for detection, but perform poorly on structured, contiguous cancer regions
    - Batch heterogeneity limits cross-dataset generalization
 
-**Starting Point**: Transfer learning is used to align heterogeneous ST datasets, while multimodal deep fusion compensates for morphological ambiguity and ST noise. This is the first work to combine multimodal deep fusion with transfer learning for CTR detection.
+**Key Insight**: Transfer learning is used to align heterogeneous ST datasets, while multimodal deep fusion compensates for morphological ambiguity and ST noise. This is the first work to combine multimodal deep fusion with transfer learning for CTR detection.
 
 ## Method
 

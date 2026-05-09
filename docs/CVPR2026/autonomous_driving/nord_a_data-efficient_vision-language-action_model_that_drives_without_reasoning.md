@@ -29,13 +29,13 @@ NoRD demonstrates that autonomous driving VLAs require neither large-scale reaso
 
 ## Background & Motivation
 
-- **State of the Field**: The standard training pipeline for autonomous driving VLAs consists of large-scale SFT, chain-of-thought reasoning annotations, and GRPO post-training. Models such as AutoVLA achieve strong performance but require 212K+ samples, dense reasoning annotations, and additional inference-time latency from reasoning tokens. These three costs — data, annotation, and computation — are not scalable.
+- **Background**: The standard training pipeline for autonomous driving VLAs consists of large-scale SFT, chain-of-thought reasoning annotations, and GRPO post-training. Models such as AutoVLA achieve strong performance but require 212K+ samples, dense reasoning annotations, and additional inference-time latency from reasoning tokens. These three costs — data, annotation, and computation — are not scalable.
 
 - **Limitations of Prior Work**: Prior theoretical and empirical work has questioned the necessity of reasoning: (a) the "Reasoning-Planning Decoupling Hypothesis" suggests that textual priors alone can match the performance of full multimodal reasoning; (b) RL does not create new reasoning capabilities but only optimizes over distributions already present in the SFT model.
 
-- **Root Cause**: An initial attempt training NoRD-base (Qwen-2.5VL-3B) on 80K samples without reasoning annotations, followed by GRPO post-training, yielded only a +0.67% improvement (76.66→77.18), compared to AutoVLA's +9% gain. This appeared to confirm the indispensability of reasoning data. However, further analysis reveals that the failure stems not from the weakness of the SFT policy itself, but from a systematic flaw in GRPO's advantage normalization. When group standard deviation $\text{std}$ serves as the denominator, low-variance groups (easy or extremely hard scenarios) receive amplified advantages, while high-variance groups (moderate difficulty, comprising the majority) are suppressed. Weak SFT models tend to produce a large proportion of high-variance rollouts, preventing GRPO from learning from the bulk of training samples.
+- **Key Challenge**: An initial attempt training NoRD-base (Qwen-2.5VL-3B) on 80K samples without reasoning annotations, followed by GRPO post-training, yielded only a +0.67% improvement (76.66→77.18), compared to AutoVLA's +9% gain. This appeared to confirm the indispensability of reasoning data. However, further analysis reveals that the failure stems not from the weakness of the SFT policy itself, but from a systematic flaw in GRPO's advantage normalization. When group standard deviation $\text{std}$ serves as the denominator, low-variance groups (easy or extremely hard scenarios) receive amplified advantages, while high-variance groups (moderate difficulty, comprising the majority) are suppressed. Weak SFT models tend to produce a large proportion of high-variance rollouts, preventing GRPO from learning from the bulk of training samples.
 
-- **Paper Goals**: To develop a data-efficient, reasoning-free VLA for autonomous driving by diagnosing and correcting the difficulty bias in GRPO, achieving competitive performance with significantly reduced data and annotation cost.
+- **Goal**: To develop a data-efficient, reasoning-free VLA for autonomous driving by diagnosing and correcting the difficulty bias in GRPO, achieving competitive performance with significantly reduced data and annotation cost.
 
 ## Method
 
@@ -57,7 +57,7 @@ NoRD demonstrates that autonomous driving VLAs require neither large-scale reaso
 2. **Difficulty Bias Analysis and Dr. GRPO**
 
    - **GRPO advantage**: $\hat{A}_{i,t}^{\text{GRPO}} = \frac{r(o_i|x) - \frac{1}{G}\sum_{j=1}^G r(o_j|x)}{\text{std}_{j=1,...,G}(r(o_j|x))}$
-   - **Root Cause**: The denominator $\text{std}$ becomes very small ($\ll 1$) for low-variance groups, amplifying their advantages, while large $\text{std}$ in high-variance groups suppresses theirs. Weak SFT models produce a polarized reward distribution: simple scenarios (group mean $\geq 0.8$) and extremely hard scenarios ($\leq 0.15$) exhibit low variance, whereas moderate-difficulty scenarios ($0.2$–$0.65$) — the majority — exhibit high variance.
+   - **Key Challenge**: The denominator $\text{std}$ becomes very small ($\ll 1$) for low-variance groups, amplifying their advantages, while large $\text{std}$ in high-variance groups suppresses theirs. Weak SFT models produce a polarized reward distribution: simple scenarios (group mean $\geq 0.8$) and extremely hard scenarios ($\leq 0.15$) exhibit low variance, whereas moderate-difficulty scenarios ($0.2$–$0.65$) — the majority — exhibit high variance.
    - **Dr. GRPO correction**: Standard deviation normalization is removed, yielding $\hat{A}_{i,t}^{\text{DrGRPO}} = r(o_i|x) - \frac{1}{G}\sum_{j=1}^G r(o_i|x)$, ensuring that hard scenarios also contribute sufficient gradient signal.
    - **Auxiliary stabilization**: DAPO-style asymmetric clipping ($1-\epsilon_l, 1+\epsilon_h$) prevents entropy collapse; KL divergence regularization is not used.
 

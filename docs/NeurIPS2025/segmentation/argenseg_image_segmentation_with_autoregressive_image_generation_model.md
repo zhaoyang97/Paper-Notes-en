@@ -28,15 +28,15 @@ This paper proposes ARGenSeg — the first unified MLLM framework that leverages
 
 ## Background & Motivation
 
-**State of the Field**: Integrating image segmentation into MLLMs is a current research hotspot. Two dominant paradigms exist: (a) boundary point sequence representations (e.g., PolyFormer), which discretize masks into polygon point sequences but fail on complex shapes; and (b) dedicated segmentation decoders (e.g., LISA, PSALM), which use special tokens or hidden states to drive SAM/Mask2Former decoders, resulting in complex architectures where the LLM itself does not learn pixel-level understanding.
+**Background**: Integrating image segmentation into MLLMs is a current research hotspot. Two dominant paradigms exist: (a) boundary point sequence representations (e.g., PolyFormer), which discretize masks into polygon point sequences but fail on complex shapes; and (b) dedicated segmentation decoders (e.g., LISA, PSALM), which use special tokens or hidden states to drive SAM/Mask2Former decoders, resulting in complex architectures where the LLM itself does not learn pixel-level understanding.
 
 **Limitations of Prior Work**: (a) Point sequence representations lead to incomplete segmentation and unnatural boundaries; (b) dedicated decoders make LLMs dependent on external modules rather than learning fine-grained visual understanding internally; (c) inference is slow in methods such as HiMTok.
 
-**Root Cause**: Segmentation requires dense pixel-level output, whereas LLMs natively perform token-level prediction — the fundamental challenge is enabling an LLM to "generate" segmentation masks without relying on an external decoder.
+**Key Challenge**: Segmentation requires dense pixel-level output, whereas LLMs natively perform token-level prediction — the fundamental challenge is enabling an LLM to "generate" segmentation masks without relying on an external decoder.
 
-**Paper Goals**: Enable MLLMs to directly produce segmentation masks via autoregressive image generation, without any additional segmentation head.
+**Goal**: Enable MLLMs to directly produce segmentation masks via autoregressive image generation, without any additional segmentation head.
 
-**Starting Point**: Treat segmentation as a special case of image generation, where the generated "image" is the target object's mask.
+**Key Insight**: Treat segmentation as a special case of image generation, where the generated "image" is the target object's mask.
 
 **Core Idea**: The MLLM outputs VQ-VAE visual tokens → the VQ-VAE decoder reconstructs them into a mask image → no external segmentation decoder is needed, and segmentation capability derives entirely from the MLLM's pixel-level understanding.
 

@@ -27,13 +27,13 @@ content_hash: 5307c1a145c34b9f
 This paper proposes SDTagNet, the first method to encode OpenStreetMap text annotations (road names, lane counts, one-way indicators, etc.) via BERT and to unify all SD map elements (points, polylines, and relations) through a point-level graph Transformer. On long-range HD map construction, SDTagNet achieves +5.9 mAP (+45%) over prior-free baselines and +3.2 mAP (+20%) over existing SD map prior methods.
 
 ## Background & Motivation
-**State of the Field**: Online HD map construction is a critical task in autonomous driving. Methods such as MapTR and MapTRv2 predict vectorized map elements (lane dividers, boundaries, pedestrian crossings, etc.) in real time from onboard sensor data.
+**Background**: Online HD map construction is a critical task in autonomous driving. Methods such as MapTR and MapTRv2 predict vectorized map elements (lane dividers, boundaries, pedestrian crossings, etc.) in real time from onboard sensor data.
 
 **Limitations of Prior Work**: The perception range of onboard sensors is limited—particularly at long range—and maintaining HD maps incurs extremely high costs. Existing approaches incorporate SD maps (e.g., OpenStreetMap) as priors, yet suffer from two key deficiencies:
    - **Underutilization of information**: Only polyline geometry and a manually selected set of 7 semantic tag categories are exploited, while OSM's rich textual annotations (road names, lane counts, one-way markers, speed limits, etc.), point features (traffic lights, bus stops), and relation elements are ignored.
    - **Coarse encoding granularity**: Methods such as SMERF encode at the polyline level (one token per polyline), which misaligns with the per-point queries used by downstream detectors.
 
-**Root Cause**: OSM's global database contains approximately 100,000 distinct keys and 168 million values. This unstructured text cannot be handled by manual feature engineering, yet the information is highly relevant to map construction (e.g., "oneway: yes" directly affects lane topology).
+**Key Challenge**: OSM's global database contains approximately 100,000 distinct keys and 168 million values. This unstructured text cannot be handled by manual feature engineering, yet the information is highly relevant to map construction (e.g., "oneway: yes" directly affects lane topology).
 
 **Core Idea**: Apply an NLP encoder to SD map text annotations and employ a point-level graph Transformer to uniformly encode all element types.
 

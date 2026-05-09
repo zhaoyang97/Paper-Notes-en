@@ -27,18 +27,18 @@ content_hash: 035f8c031b97e05e
 This paper proposes the Token Constraint Bound ($\delta_{\text{TCB}}$) metric, which quantifies the largest perturbation to an LLM's hidden state that preserves the next-token prediction, measuring local prediction robustness and revealing instabilities that traditional perplexity fails to capture.
 
 ## Background & Motivation
-**State of the Field**: LLMs are highly sensitive to minor variations in input context—minor formatting changes can cause accuracy to fluctuate by 76%, and reordering in-context examples can shift accuracy from 54% to 93%.
+**Background**: LLMs are highly sensitive to minor variations in input context—minor formatting changes can cause accuracy to fluctuate by 76%, and reordering in-context examples can shift accuracy from 54% to 93%.
 
 **Limitations of Prior Work**:
    - Accuracy provides only an aggregate view and cannot assess the stability of individual predictions.
    - Perplexity conflates probability distributions and ignores the geometric structure of internal states.
    - Softmax normalization can yield high-probability yet unstable predictions—high probability may stem from relative normalization rather than robust internal states.
 
-**Root Cause**: A high-probability, high-confidence prediction may correspond to an unstable equilibrium in the internal state space—existing metrics cannot distinguish between genuinely stable high confidence and fragile high confidence.
+**Key Challenge**: A high-probability, high-confidence prediction may correspond to an unstable equilibrium in the internal state space—existing metrics cannot distinguish between genuinely stable high confidence and fragile high confidence.
 
-**Paper Goals**: Quantify the robustness of the internal state $\mathbf{h}$ produced by an LLM in a given context to small perturbations.
+**Goal**: Quantify the robustness of the internal state $\mathbf{h}$ produced by an LLM in a given context to small perturbations.
 
-**Starting Point**: Analyze the first-order sensitivity of softmax outputs to hidden states via the Jacobian matrix.
+**Key Insight**: Analyze the first-order sensitivity of softmax outputs to hidden states via the Jacobian matrix.
 
 **Core Idea**: Prediction robustness = the maximum perturbation radius around the hidden state that preserves the output distribution, determined by the geometric dispersion of output embeddings.
 

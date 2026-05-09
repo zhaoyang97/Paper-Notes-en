@@ -29,15 +29,15 @@ The paper decouples two-hand reconstruction into 2D structural alignment and 3D 
 
 ## Background & Motivation
 
-**State of the Field**: Monocular 3D reconstruction of two interacting hands is a critical capability for AR/VR, robotics, and character animation. Large-scale hand datasets (InterHand2.6M/Re:InterHand) have driven advances through data scaling, stronger backbones, and attention-based inter-hand relation modeling (IntagHand/ACR/4DHands). Meanwhile, the effectiveness of foundation-model 2D priors (keypoints/segmentation/depth) and diffusion-based generative priors has been validated in body reconstruction.
+**Background**: Monocular 3D reconstruction of two interacting hands is a critical capability for AR/VR, robotics, and character animation. Large-scale hand datasets (InterHand2.6M/Re:InterHand) have driven advances through data scaling, stronger backbones, and attention-based inter-hand relation modeling (IntagHand/ACR/4DHands). Meanwhile, the effectiveness of foundation-model 2D priors (keypoints/segmentation/depth) and diffusion-based generative priors has been validated in body reconstruction.
 
 **Limitations of Prior Work**: (1) Existing two-hand methods (IntagHand/ACR/4DHands) lack explicit 2D-3D alignment mechanisms, leading to spatial inconsistency and unnatural interactions; (2) 2D cues are unreliable under mutual occlusion, causing frequent finger penetration; (3) Directly deploying foundation models (e.g., Sapiens with 1B parameters) is computationally prohibitive (3 fps), and 2D-3D feature alignment across multi-task predictions is ambiguous; (4) Diffusion priors (InterHandGen) serve only as output regularizers without explicitly modeling 3D spatial interaction.
 
-**Root Cause**: 2D priors are unreliable in occluded regions, necessitating 3D interaction priors; yet 3D generative priors require accurate 2D alignment as an anchor, otherwise drifting to implausible states. The two are mutually dependent yet individually limited.
+**Key Challenge**: 2D priors are unreliable in occluded regions, necessitating 3D interaction priors; yet 3D generative priors require accurate 2D alignment as an anchor, otherwise drifting to implausible states. The two are mutually dependent yet individually limited.
 
-**Paper Goals**: (1) How to leverage multimodal 2D priors for structural alignment under inference-efficiency constraints; (2) How to achieve physically plausible 3D spatial interaction (eliminating penetration) via generative models.
+**Goal**: (1) How to leverage multimodal 2D priors for structural alignment under inference-efficiency constraints; (2) How to achieve physically plausible 3D spatial interaction (eliminating penetration) via generative models.
 
-**Starting Point**: The problem is decoupled into two complementary stages — 2D structural alignment (prior distillation, addressing pose estimation under occlusion) and 3D spatial interaction alignment (conditional diffusion, addressing physical penetration) — with progressive correction resolving failures at their source.
+**Key Insight**: The problem is decoupled into two complementary stages — 2D structural alignment (prior distillation, addressing pose estimation under occlusion) and 3D spatial interaction alignment (conditional diffusion, addressing physical penetration) — with progressive correction resolving failures at their source.
 
 **Core Idea**: During training, Sapiens provides 2D prior guidance; at inference, a distilled lightweight model replaces it (18.7× speedup). A conditional diffusion model with collision gradient guidance then maps penetrating poses to plausible configurations.
 

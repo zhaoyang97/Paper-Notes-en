@@ -29,11 +29,11 @@ This paper proposes NEC-Diff, a diffusion-based event–RAW hybrid imaging frame
 
 ## Background & Motivation
 
-1. **State of the Field**: Low-light image enhancement methods are categorized into sRGB-based, RAW-based, event-based, and hybrid approaches. RAW-based methods model noise more accurately but cannot recover information lost under short exposure; event cameras offer high dynamic range but cannot restore smooth-region intensities.
+1. **Background**: Low-light image enhancement methods are categorized into sRGB-based, RAW-based, event-based, and hybrid approaches. RAW-based methods model noise more accurately but cannot recover information lost under short exposure; event cameras offer high dynamic range but cannot restore smooth-region intensities.
 2. **Limitations of Prior Work**: In extreme darkness (<1 lux), both modalities suffer from severe noise—RAW images face extreme photon-shot noise, while event cameras are dominated by shot noise that becomes the primary background activity at low light levels (with a density more than 50× higher than other noise types). Existing hybrid methods either ignore noise (EvRAW) or consider only single-modality SNR (EvLight), failing to effectively suppress noise.
-3. **Root Cause**: Under extremely low illumination, signal and noise become indistinguishable, and simple filtering or single-network denoising cannot simultaneously preserve weak signals and suppress noise.
-4. **Paper Goals**: How to effectively denoise two severely degraded modal signals and recover fine scene details?
-5. **Starting Point**: Exploit the physical complementarity between RAW and event modalities—the linear illumination response of RAW can guide event denoising, while the denoised events provide high-dynamic-range edges that in turn assist image denoising.
+3. **Key Challenge**: Under extremely low illumination, signal and noise become indistinguishable, and simple filtering or single-network denoising cannot simultaneously preserve weak signals and suppress noise.
+4. **Goal**: How to effectively denoise two severely degraded modal signals and recover fine scene details?
+5. **Key Insight**: Exploit the physical complementarity between RAW and event modalities—the linear illumination response of RAW can guide event denoising, while the denoised events provide high-dynamic-range edges that in turn assist image denoising.
 6. **Core Idea**: Physics-constrained cross-modal collaborative denoising + SNR-guided adaptive fusion + high-fidelity reconstruction via diffusion models.
 
 ## Method

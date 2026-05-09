@@ -29,7 +29,7 @@ This paper presents the first systematic diagnosis of two root causes underlying
 
 ## Background & Motivation
 
-**State of the Field**: Vision-Language-Action (VLA) models fine-tune large-scale VLMs on millions of robot demonstration trajectories and achieve strong performance in single-task or single-embodiment settings. However, a truly generalist real-world agent must support diverse skills, embodiments, and environments. A natural approach is to merge multiple independently fine-tuned VLA specialists into a unified policy.
+**Background**: Vision-Language-Action (VLA) models fine-tune large-scale VLMs on millions of robot demonstration trajectories and achieve strong performance in single-task or single-embodiment settings. However, a truly generalist real-world agent must support diverse skills, embodiments, and environments. A natural approach is to merge multiple independently fine-tuned VLA specialists into a unified policy.
 
 **Limitations of Prior Work**: Model merging is well-established for LLMs and VLMs (e.g., Task Arithmetic, TIES, DARE), yet directly applying these methods to VLAs causes the merged success rate to collapse to **0%**—a failure mode never observed in LLM merging.
 
@@ -39,7 +39,7 @@ This paper presents the first systematic diagnosis of two root causes underlying
 
 **Action Expert Architecture Incompatibility**: Even when the VLM backbone is merged perfectly, simply averaging action expert weights still yields 0% success. The root cause lies in the action experts being trained from scratch with self-attention layers; self-attention allows task-specific information to accumulate across layers, causing deep-layer parameters to become highly task-specialized and non-recomposable.
 
-**Starting Point**: Since the problem stems from architectures that are inherently non-mergeable, the solution is to design VLA architectures that are inherently mergeable from the ground up.
+**Key Insight**: Since the problem stems from architectures that are inherently non-mergeable, the solution is to design VLA architectures that are inherently mergeable from the ground up.
 
 ## Method
 

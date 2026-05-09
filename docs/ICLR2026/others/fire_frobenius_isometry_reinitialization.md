@@ -27,15 +27,15 @@ This paper formalizes the stability-plasticity tradeoff in continual learning as
 
 ## Background & Motivation
 
-**State of the Field**: Neural networks trained on non-stationary data face the **stability-plasticity dilemma**: high stability leads to rigidity that impedes learning new knowledge, while high plasticity leads to catastrophic forgetting of old knowledge. Existing approaches include Shrink & Perturb (S&P), DASH, and various reinitialization methods.
+**Background**: Neural networks trained on non-stationary data face the **stability-plasticity dilemma**: high stability leads to rigidity that impedes learning new knowledge, while high plasticity leads to catastrophic forgetting of old knowledge. Existing approaches include Shrink & Perturb (S&P), DASH, and various reinitialization methods.
 
 **Limitations of Prior Work**: (a) S&P requires careful tuning of shrinkage and perturbation ratios; (b) DASH incurs high computational cost (69s vs. FIRE's 0.06s); (c) full reinitialization destroys useful knowledge and causes instability; (d) existing plasticity measures (loss landscape curvature, dormant neurons, feature rank) are non-differentiable and data-dependent, making direct optimization intractable.
 
-**Root Cause**: Stability requires weights to remain unchanged, while plasticity requires weights to be "well-conditioned" (orthogonal, low curvature). How can both objectives be unified in a single formulation?
+**Key Challenge**: Stability requires weights to remain unchanged, while plasticity requires weights to be "well-conditioned" (orthogonal, low curvature). How can both objectives be unified in a single formulation?
 
-**Paper Goals**: To propose a principled reinitialization method with a closed-form solution that automatically finds the optimal balance between stability and plasticity without hyperparameter tuning.
+**Goal**: To propose a principled reinitialization method with a closed-form solution that automatically finds the optimal balance between stability and plasticity without hyperparameter tuning.
 
-**Starting Point**: The paper proposes **Deviation from Isometry (DfI)** as a differentiable, data-free plasticity measure: $\text{DfI}(W) = \|W^\top W - I\|_F^2$. It is shown that DfI simultaneously captures loss landscape curvature (Theorem 2), feature rank (Theorem 3), and dormant neurons (Theorem 4).
+**Key Insight**: The paper proposes **Deviation from Isometry (DfI)** as a differentiable, data-free plasticity measure: $\text{DfI}(W) = \|W^\top W - I\|_F^2$. It is shown that DfI simultaneously captures loss landscape curvature (Theorem 2), feature rank (Theorem 3), and dormant neurons (Theorem 4).
 
 **Core Idea**: Reinitialization is formulated as "minimize weight deviation subject to an orthogonality constraint," yielding a closed-form polar decomposition solution that resolves the stability-plasticity tradeoff in a single step.
 

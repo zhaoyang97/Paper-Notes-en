@@ -28,15 +28,15 @@ This paper proposes a generative AI application course model for undergraduate a
 
 ## Background & Motivation
 
-**State of the Field**: Generative AI tools such as ChatGPT, GitHub Copilot, and Midjourney have profoundly transformed software development and workflows across industries. Industry demand for talent proficient in generative AI tools has surged, and AI literacy has become a key competitive advantage in the job market.
+**Background**: Generative AI tools such as ChatGPT, GitHub Copilot, and Midjourney have profoundly transformed software development and workflows across industries. Industry demand for talent proficient in generative AI tools has surged, and AI literacy has become a key competitive advantage in the job market.
 
 **Limitations of Prior Work**: The authors identify two salient disconnects: (1) although industry increasingly values generative AI competencies, higher education institutions have yet to formally integrate them into curricula. Even top-ranked computer science departments in the United States predominantly teach the underlying mechanisms and frameworks of AI (e.g., machine learning principles, deep learning architectures) rather than the practical application of existing generative AI tools; (2) students independently adopt generative AI tools outside the classroom, but without formal instruction and guidance, this may lead to misuse, over-reliance, or a failure to realize the tools' full potential.
 
-**Root Cause**: Educators remain hesitant to teach generative AI tools in the classroom—citing concerns over academic integrity and the rapid iteration of tools—yet the needs of students and industry are real and pressing. This gap between "educational supply" and "market demand" continues to widen.
+**Key Challenge**: Educators remain hesitant to teach generative AI tools in the classroom—citing concerns over academic integrity and the rapid iteration of tools—yet the needs of students and industry are real and pressing. This gap between "educational supply" and "market demand" continues to widen.
 
-**Paper Goals**: (1) Design a systematic generative AI application course; (2) evaluate its pedagogical effectiveness; (3) provide a replicable course model and implementation recommendations.
+**Goal**: (1) Design a systematic generative AI application course; (2) evaluate its pedagogical effectiveness; (3) provide a replicable course model and implementation recommendations.
 
-**Starting Point**: The authors draw on first-hand teaching experience at a private research university. The paper is co-authored by the course instructor and a graduate student enrollee, combining data analysis with dual-perspective reflection (instructor + student) to deliver a primary report on course implementation and evaluation.
+**Key Insight**: The authors draw on first-hand teaching experience at a private research university. The paper is co-authored by the course instructor and a graduate student enrollee, combining data analysis with dual-perspective reflection (instructor + student) to deliver a primary report on course implementation and evaluation.
 
 **Core Idea**: Design and deliver a course focused on the application of generative AI tools in software development, empirically validate its effectiveness through a mixed-methods study, and distill a generalizable course model.
 

@@ -28,15 +28,15 @@ This paper is the first to study the joint fairness of multiple fair classifiers
 
 ## Background & Motivation
 
-**State of the Field**: Algorithmic fairness has become a central topic in ML, with constraints such as Equal Opportunity (EO) and Demographic Parity (DP) widely adopted to adjust classifiers to meet fairness requirements.
+**Background**: Algorithmic fairness has become a central topic in ML, with constraints such as Equal Opportunity (EO) and Demographic Parity (DP) widely adopted to adjust classifiers to meet fairness requirements.
 
 **Limitations of Prior Work**: Existing research almost exclusively focuses on the fairness of individual classifiers, overlooking real-world scenarios in which multiple entities (banks, employers, insurance companies) simultaneously deploy different classifiers to make decisions over the same population.
 
-**Root Cause**: Even when each classifier independently satisfies EO, differences in inter-classifier correlation and overlap in the populations served can produce systemic unfairness—one group may have "two chances" to obtain a loan while another has only "one chance."
+**Key Challenge**: Even when each classifier independently satisfies EO, differences in inter-classifier correlation and overlap in the populations served can produce systemic unfairness—one group may have "two chances" to obtain a loan while another has only "one chance."
 
-**Paper Goals**: (1) Formally define fairness under competition (EOC); (2) Quantify the extent to which EO classifiers can violate EOC; (3) Prove that fairness adjustments can backfire at the ecosystem level.
+**Goal**: (1) Formally define fairness under competition (EOC); (2) Quantify the extent to which EO classifiers can violate EOC; (3) Prove that fairness adjustments can backfire at the ecosystem level.
 
-**Starting Point**: The analysis proceeds along two dimensions: Pearson correlation between classifiers and the degree of overlap in the populations they serve.
+**Key Insight**: The analysis proceeds along two dimensions: Pearson correlation between classifiers and the degree of overlap in the populations they serve.
 
 **Core Idea**: Individual fairness is neither a sufficient nor a necessary condition for ecosystem fairness; differences in inter-classifier correlation and differences in population coverage are the two fundamental driving forces.
 

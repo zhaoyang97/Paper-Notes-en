@@ -28,15 +28,15 @@ This paper introduces the concept of the "Economic Data Processing Inequality" �
 
 ## Background & Motivation
 
-**State of the Field**: AI training data has become a core economic asset. Large AI companies acquire massive training datasets through data aggregators and generate substantial revenues through model commercialization. Yet the original contributors — content creators, photographers, news organizations, and online community users — receive almost no return throughout the entire value chain.
+**Background**: AI training data has become a core economic asset. Large AI companies acquire massive training datasets through data aggregators and generate substantial revenues through model commercialization. Yet the original contributors — content creators, photographers, news organizations, and online community users — receive almost no return throughout the entire value chain.
 
 **Limitations of Prior Work**: Reddit packaged user content for licensing to AI companies for hundreds of millions of dollars, while the authors of the posts received nothing. Getty Images photographers saw their work used to train Stable Diffusion without compensation. This is not merely a fairness issue — when contributors are systematically excluded, the supply of high-quality, diverse data will diminish (as model collapse research has confirmed), ultimately undermining the sustainability of the AI ecosystem itself.
 
-**Root Cause**: Data is infinitely copied and transformed (raw data → cleaned data → model weights → synthetic outputs), with each step increasing technical value while economic rights flow away from generators toward aggregators and model operators — a structural problem, not an isolated phenomenon.
+**Key Challenge**: Data is infinitely copied and transformed (raw data → cleaned data → model weights → synthetic outputs), with each step increasing technical value while economic rights flow away from generators toward aggregators and model operators — a structural problem, not an isolated phenomenon.
 
-**Paper Goals**: To name the root causes of this structural inequity and propose technical and institutional solutions that the ML community can advance.
+**Goal**: To name the root causes of this structural inequity and propose technical and institutional solutions that the ML community can advance.
 
-**Starting Point**: An analogy to the data processing inequality in information theory — information processing cannot increase mutual information. Similarly, in the economic dimension, each step of data processing does not increase the economic rights of original contributors.
+**Key Insight**: An analogy to the data processing inequality in information theory — information processing cannot increase mutual information. Similarly, in the economic dimension, each step of data processing does not increase the economic rights of original contributors.
 
 **Core Idea**: The sustainability of the AI economy requires data transactions to shift from opaque, one-time buyout models toward a fair exchange market grounded in provenance, dynamic valuation, and collective bargaining.
 

@@ -27,15 +27,15 @@ Tango proposes a framework that alternately trains a generator and a verifier vi
 
 ## Background & Motivation
 
-**State of the Field**: In RL post-training for LLM reasoning, the generator serves as the policy while the verifier (reward model) provides feedback. However, verifiers in existing methods are typically fixed (rule-based or frozen pretrained models) or trained discriminatively via SFT.
+**Background**: In RL post-training for LLM reasoning, the generator serves as the policy while the verifier (reward model) provides feedback. However, verifiers in existing methods are typically fixed (rule-based or frozen pretrained models) or trained discriminatively via SFT.
 
 **Limitations of Prior Work**: (1) Fixed verifiers are prone to reward hacking — reward signals become unreliable as the generator's distribution shifts; (2) Discriminatively trained PRMs via SFT produce deterministic rewards that are brittle and generalize poorly; (3) Although PRIME jointly trains the PRM, it remains logit-based and SFT-trained, failing to fundamentally address these issues.
 
-**Root Cause**: Effective co-evolution requires both the generator and verifier to be sufficiently capable — a weak or static verifier imposes an upper bound on generator improvement.
+**Key Challenge**: Effective co-evolution requires both the generator and verifier to be sufficiently capable — a weak or static verifier imposes an upper bound on generator improvement.
 
-**Paper Goals**: How can the generator and verifier truly co-evolve and mutually reinforce each other?
+**Goal**: How can the generator and verifier truly co-evolve and mutually reinforce each other?
 
-**Starting Point**: (1) Train the verifier with RL (rather than SFT) to achieve stronger reasoning capability; (2) Make the verifier generative (outputting natural language judgments rather than implicit logits), introducing stochasticity to resist reward hacking; (3) Alternate training to realize co-evolution.
+**Key Insight**: (1) Train the verifier with RL (rather than SFT) to achieve stronger reasoning capability; (2) Make the verifier generative (outputting natural language judgments rather than implicit logits), introducing stochasticity to resist reward hacking; (3) Alternate training to realize co-evolution.
 
 **Core Idea**: Train a generative process-level verifier with RL and alternate it with the generator in a co-evolutionary loop — a more accurate verifier leads to better generator reasoning, which produces more diverse outputs, which in turn enables the verifier to learn stronger generalization.
 

@@ -28,15 +28,15 @@ This paper unifies diverse algorithms and trust models in decentralized learning
 
 ## Background & Motivation
 
-**State of the Field**: Decentralized learning (DL) enables users to collaboratively train models over peer-to-peer communication graphs without sharing raw data. Strong privacy guarantees are typically achieved via differential privacy (DP). Centralized DP-SGD has a mature MF-based noise correlation analysis framework that leverages temporal noise correlations to improve privacy-utility trade-offs. However, MF methods had previously only been applied in centralized settings.
+**Background**: Decentralized learning (DL) enables users to collaboratively train models over peer-to-peer communication graphs without sharing raw data. Strong privacy guarantees are typically achieved via differential privacy (DP). Centralized DP-SGD has a mature MF-based noise correlation analysis framework that leverages temporal noise correlations to improve privacy-utility trade-offs. However, MF methods had previously only been applied in centralized settings.
 
 **Limitations of Prior Work**: (1) DP analysis in DL relies on ad hoc proofs tailored to specific algorithms and trust models, lacking a unified framework; (2) existing analyses fail to fully exploit the noise correlations arising from redundant exchanges in peer-to-peer communication, leading to overly pessimistic privacy guarantees; (3) existing MF theory requires the workload matrix to be square, full-rank, and lower-triangular — conditions not satisfied in DL settings.
 
-**Root Cause**: The matrices arising from the distributed communication structure of DL violate the assumptions of existing MF theory; moreover, adversaries under different trust models (LDP, PNDP, SecLDP) possess different levels of knowledge, necessitating a unified treatment.
+**Key Challenge**: The matrices arising from the distributed communication structure of DL violate the assumptions of existing MF theory; moreover, adversaries under different trust models (LDP, PNDP, SecLDP) possess different levels of knowledge, necessitating a unified treatment.
 
-**Paper Goals**: (1) Encode DL algorithms as a single matrix multiplication; (2) unify adversary knowledge representations across different trust models; (3) extend MF-based DP guarantees to rectangular and possibly rank-deficient matrices; (4) design new algorithms by optimizing noise correlations.
+**Goal**: (1) Encode DL algorithms as a single matrix multiplication; (2) unify adversary knowledge representations across different trust models; (3) extend MF-based DP guarantees to rectangular and possibly rank-deficient matrices; (4) design new algorithms by optimizing noise correlations.
 
-**Starting Point**: All $T$ iterations of decentralized SGD can be unrolled into a single matrix equation $\theta = (I_T \otimes W)(M\theta_0 - \eta \mathbf{W}_T(G + C^\dagger Z))$, thereby bringing DL into the MF analysis framework.
+**Key Insight**: All $T$ iterations of decentralized SGD can be unrolled into a single matrix equation $\theta = (I_T \otimes W)(M\theta_0 - \eta \mathbf{W}_T(G + C^\dagger Z))$, thereby bringing DL into the MF analysis framework.
 
 **Core Idea**: Represent the gradient-noise interaction in decentralized learning uniformly as $\mathcal{O}_\mathcal{A} = AG + BZ$ (where $A = BC$), generalize the GDP privacy guarantee of MF, and optimize the noise correlation matrix $C$ to derive the new algorithm MAFALDA-SGD.
 

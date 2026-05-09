@@ -29,15 +29,15 @@ This paper proposes World-Env, a framework that employs a physically consistent 
 
 ## Background & Motivation
 
-**State of the Field**: Vision-Language-Action (VLA) models such as OpenVLA and π₀ achieve end-to-end mapping from language instructions to low-level control via imitation learning, demonstrating substantial promise in robotic manipulation. However, imitation learning relies heavily on large-scale, high-quality demonstration data.
+**Background**: Vision-Language-Action (VLA) models such as OpenVLA and π₀ achieve end-to-end mapping from language instructions to low-level control via imitation learning, demonstrating substantial promise in robotic manipulation. However, imitation learning relies heavily on large-scale, high-quality demonstration data.
 
 **Limitations of Prior Work**: (1) Data scarcity — collecting diverse and safe human demonstrations in real-world settings is prohibitively costly and often infeasible; (2) Real-world RL faces a critical constraint of non-resettable environments — in high-stakes settings such as industrial automation, interaction-induced state changes are difficult to reverse; (3) Traditional simulators suffer from large sim-to-real gaps and high development costs, making them difficult to adapt to novel objects and dynamic scene changes; (4) Existing VLAs lack reliable task-completion detection mechanisms, causing redundant post-success actions that degrade overall success rates.
 
-**Root Cause**: RL post-training requires extensive interactive exploration, yet real-world interaction is costly and non-resettable, while traditional simulators exhibit significant sim-to-real gaps.
+**Key Challenge**: RL post-training requires extensive interactive exploration, yet real-world interaction is costly and non-resettable, while traditional simulators exhibit significant sim-to-real gaps.
 
-**Paper Goals**: To enable safe and efficient RL post-training of VLA models without any real-world interaction.
+**Goal**: To enable safe and efficient RL post-training of VLA models without any real-world interaction.
 
-**Starting Point**: Leveraging video-generative world models as an "ideal testbed" — avoiding real-world risks while offering better semantic understanding and flexibility than traditional simulators.
+**Key Insight**: Leveraging video-generative world models as an "ideal testbed" — avoiding real-world risks while offering better semantic understanding and flexibility than traditional simulators.
 
 **Core Idea**: Replacing the physical environment with a world model for VLA RL post-training, while providing fine-grained rewards and intelligent termination via a VLM-guided reflector.
 

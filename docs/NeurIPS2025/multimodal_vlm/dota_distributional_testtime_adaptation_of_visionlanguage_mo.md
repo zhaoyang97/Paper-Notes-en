@@ -28,15 +28,15 @@ DOTA proposes shifting test-time adaptation from a "caching sample instances" pa
 
 ## Background & Motivation
 
-**State of the Field** Vision-language foundation models such as CLIP demonstrate strong performance across a wide range of tasks, yet train-test distribution shifts commonly cause performance degradation at deployment. Test-time adaptation (TTA) is an effective low-cost strategy for bridging this gap.
+**Background** Vision-language foundation models such as CLIP demonstrate strong performance across a wide range of tasks, yet train-test distribution shifts commonly cause performance degradation at deployment. Test-time adaptation (TTA) is an effective low-cost strategy for bridging this gap.
 
 **Limitations of Prior Work** Existing TTA methods fall into two categories: (1) prompt-learning-based approaches (e.g., TPT) require gradient backpropagation and incur high inference costs; (2) cache-based approaches (e.g., TDA, BoostAdapter) store only a limited number of "representative" samples and inevitably discard older samples during cache updates, leading to **catastrophic forgetting**.
 
-**Root Cause** The fundamental limitation of cache-based methods is that storing discrete samples under a fixed capacity fails to make full use of all test data, and cache replacement causes previously learned distributional information to be lost.
+**Key Challenge** The fundamental limitation of cache-based methods is that storing discrete samples under a fixed capacity fails to make full use of all test data, and cache replacement causes previously learned distributional information to be lost.
 
-**Paper Goals** To design a TTA method that is gradient-free, capacity-unconstrained, and capable of continuously learning from all test samples.
+**Goal** To design a TTA method that is gradient-free, capacity-unconstrained, and capable of continuously learning from all test samples.
 
-**Starting Point** Shift from "memorizing instances" to "estimating distributions" — model per-class embeddings as Gaussian distributions and employ online EM parameter estimation weighted by zero-shot prediction probabilities.
+**Key Insight** Shift from "memorizing instances" to "estimating distributions" — model per-class embeddings as Gaussian distributions and employ online EM parameter estimation weighted by zero-shot prediction probabilities.
 
 **Core Idea** Continuously estimate per-class distributions of test data via online Gaussian discriminant analysis, then compute posterior probabilities through Bayes' theorem to enable adaptation.
 

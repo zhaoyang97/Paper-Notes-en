@@ -28,15 +28,15 @@ This paper proposes ReFEree, a reference-free and fine-grained factual consisten
 
 ## Background & Motivation
 
-**State of the Field**: LLMs (GPT-4, Codex, GitHub Copilot, Claude Code, etc.) are being increasingly integrated into real-world development workflows to automatically generate long, descriptive code summaries. However, when summaries inaccurately reflect the actual implementation, they can mislead developers, delay debugging, and increase maintenance costs.
+**Background**: LLMs (GPT-4, Codex, GitHub Copilot, Claude Code, etc.) are being increasingly integrated into real-world development workflows to automatically generate long, descriptive code summaries. However, when summaries inaccurately reflect the actual implementation, they can mislead developers, delay debugging, and increase maintenance costs.
 
 **Limitations of Prior Work**: (1) Reference-based methods (ROUGE, BLEU, METEOR) rely on human-written reference summaries, but code summarization is a one-to-many task—semantically correct summaries may use entirely different wording. (2) LLM-as-judge approaches treat the summary as a whole, producing binary or coarse-grained 5-point scores under a single criterion, without the ability to localize which sentences are inconsistent or explain why. (3) Existing methods evaluate based only on the input code, ignoring external dependency definitions that real-world functions/classes rely on—summaries often describe externally defined elements, yet this context is absent during evaluation.
 
-**Root Cause**: Real-world code summaries are increasingly long and descriptive, covering multiple functional points across multiple sentences and frequently involving external dependencies, yet existing evaluation methods are neither fine-grained nor dependency-aware.
+**Key Challenge**: Real-world code summaries are increasingly long and descriptive, covering multiple functional points across multiple sentences and frequently involving external dependencies, yet existing evaluation methods are neither fine-grained nor dependency-aware.
 
-**Paper Goals**: Design a reference-free, fine-grained, dependency-aware factual consistency evaluation method that can localize inconsistencies and explain their causes.
+**Goal**: Design a reference-free, fine-grained, dependency-aware factual consistency evaluation method that can localize inconsistencies and explain their causes.
 
-**Starting Point**: Starting from empirical analysis of actual error patterns in LLM-generated summaries, the paper inductively identifies four representative inconsistency criteria and evaluates each at the sentence-segment level.
+**Key Insight**: Starting from empirical analysis of actual error patterns in LLM-generated summaries, the paper inductively identifies four representative inconsistency criteria and evaluates each at the sentence-segment level.
 
 **Core Idea**: Segment summaries into sentence units, evaluate each segment against four criteria, retrieve relevant dependency information from a project context graph as objective evidence, and aggregate segment scores into an overall consistency score.
 

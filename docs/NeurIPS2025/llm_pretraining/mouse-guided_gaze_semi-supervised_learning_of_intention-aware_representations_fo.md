@@ -29,15 +29,15 @@ This paper proposes a semi-supervised framework that uses mouse trajectories as 
 
 ## Background & Motivation
 
-**State of the Field**: Screen magnification is a critical assistive tool for users with low vision, but the magnified viewport can display only a few words or lines at a time, requiring users to frequently scroll by dragging the mouse.
+**Background**: Screen magnification is a critical assistive tool for users with low vision, but the magnified viewport can display only a few words or lines at a time, requiring users to frequently scroll by dragging the mouse.
 
 **Limitations of Prior Work**: Most gaze-based automatic scrolling control systems rely on hand-crafted heuristic rules with poor generalizability; gaze trajectories under magnification are fragmented and noisy, making it difficult to distinguish reading from scanning based on gaze alone.
 
-**Root Cause**: Accurate intent inference requires high-quality behavioral annotations, which are costly to obtain; the mouse is unavailable at inference time (since the goal is hands-free operation), yet mouse trajectories carry rich behavioral semantic information.
+**Key Challenge**: Accurate intent inference requires high-quality behavioral annotations, which are costly to obtain; the mouse is unavailable at inference time (since the goal is hands-free operation), yet mouse trajectories carry rich behavioral semantic information.
 
-**Paper Goals**: To robustly distinguish reading from scanning behavior at inference time using only gaze signals.
+**Goal**: To robustly distinguish reading from scanning behavior at inference time using only gaze signals.
 
-**Starting Point**: Mouse movement is used as a weak supervision target during pretraining to learn intention-aware gaze representations; raw gaze and compensated gaze are jointly modeled as two complementary views.
+**Key Insight**: Mouse movement is used as a weak supervision target during pretraining to learn intention-aware gaze representations; raw gaze and compensated gaze are jointly modeled as two complementary views.
 
 **Core Idea**: Mouse-guided semi-supervised pretraining combined with dual-stream cross-attention fusion of raw and compensated gaze.
 

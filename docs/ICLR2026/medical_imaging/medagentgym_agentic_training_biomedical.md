@@ -28,15 +28,15 @@ content_hash: 25c20c812e2a88a6
 This work introduces MedAgentGym, the first unified agentic training environment for biomedical data science, comprising 72,413 task instances spanning 12 real-world scenarios and 129 categories, equipped with an executable sandbox and verifiable ground truth. A systematic benchmark evaluation of 29 LLMs reveals a substantial gap between commercial and open-source models. By combining efficient multi-threaded trajectory sampling with offline/online RL, the authors train Med-Copilot, achieving gains of +43.02%/+45.28% respectively and attaining performance competitive with GPT-4o.
 
 ## Background & Motivation
-**State of the Field**: Biomedical data science encompasses genomic analysis, clinical data processing, medical image analysis, drug discovery, and other subfields, each demanding complex programming and domain-specific reasoning. While LLMs have demonstrated potential as coding assistants in general software engineering, systematic evaluation and training infrastructure for biomedical coding tasks remain lacking.
+**Background**: Biomedical data science encompasses genomic analysis, clinical data processing, medical image analysis, drug discovery, and other subfields, each demanding complex programming and domain-specific reasoning. While LLMs have demonstrated potential as coding assistants in general software engineering, systematic evaluation and training infrastructure for biomedical coding tasks remain lacking.
 
 **Limitations of Prior Work**: (1) Existing medical AI benchmarks (e.g., MedQA, PubMedQA) are static multiple-choice or QA evaluations that do not support interactive code execution or iterative debugging. (2) No unified platform covers the diverse scenarios in biomedical data science — genomics, clinical informatics, imaging, and drug discovery each maintain separate, siloed benchmarks. (3) Open-source LLMs exhibit a significant performance gap relative to closed-source models (e.g., GPT-4o) on biomedical coding tasks, necessitating effective training methods to narrow this gap.
 
-**Root Cause**: Training an agent capable of writing biomedical analysis code requires a large-scale interactive task environment, yet constructing such an environment is prohibitively costly — demanding real data, ground truth annotations, secure sandboxes, and feedback mechanisms.
+**Key Challenge**: Training an agent capable of writing biomedical analysis code requires a large-scale interactive task environment, yet constructing such an environment is prohibitively costly — demanding real data, ground truth annotations, secure sandboxes, and feedback mechanisms.
 
-**Paper Goals**: To simultaneously address environment construction and agent training by providing a large-scale training environment alongside an RL training pipeline.
+**Goal**: To simultaneously address environment construction and agent training by providing a large-scale training environment alongside an RL training pipeline.
 
-**Starting Point**: The authors unify 12 real-world biomedical scenarios into a standardized format — input data + task description → executed code → verified output — supporting interactive feedback and automated scoring.
+**Key Insight**: The authors unify 12 real-world biomedical scenarios into a standardized format — input data + task description → executed code → verified output — supporting interactive feedback and automated scoring.
 
 **Core Idea**: A large-scale, interactive, unified training environment combined with an RL training pipeline closes the gap between open-source models and closed-source LLMs on biomedical coding tasks.
 

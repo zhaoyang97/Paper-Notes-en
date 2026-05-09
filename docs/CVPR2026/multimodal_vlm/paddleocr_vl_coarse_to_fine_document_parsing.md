@@ -29,11 +29,11 @@ PaddleOCR-VL proposes a coarse-to-fine document parsing architecture: the coarse
 
 ## Background & Motivation
 
-1. **State of the Field**: Document parsing approaches fall into three categories — pipeline methods (cascading expert components), general-purpose VLMs (end-to-end but heavyweight), and specialized VLMs (unified architecture but low efficiency). High-resolution input is critical for document parsing but causes quadratic growth in visual token count.
+1. **Background**: Document parsing approaches fall into three categories — pipeline methods (cascading expert components), general-purpose VLMs (end-to-end but heavyweight), and specialized VLMs (unified architecture but low efficiency). High-resolution input is critical for document parsing but causes quadratic growth in visual token count.
 2. **Limitations of Prior Work**: General-purpose VLMs frequently produce hallucinations and recognition errors on handwritten or complex documents; specialized VLMs (e.g., MinerU2-VLM) suffer from high latency due to large parameter counts and long decoding sequences; uniform visual token compression methods (e.g., DeepSeek-OCR) compromise fine-grained layout precision.
-3. **Root Cause**: Effective visual regions in document images are highly non-uniform — valid regions occupy only 39% of PPT documents and approximately 60% of information-dense documents. Large amounts of background and decorative regions waste computational resources.
-4. **Paper Goals**: Eliminate visual redundancy while preserving high-resolution accuracy, achieving both high precision and high efficiency.
-5. **Starting Point**: Motivated by the observed sparsity of effective visual regions, the paper localizes such regions via a detector and performs fine-grained recognition exclusively on them.
+3. **Key Challenge**: Effective visual regions in document images are highly non-uniform — valid regions occupy only 39% of PPT documents and approximately 60% of information-dense documents. Large amounts of background and decorative regions waste computational resources.
+4. **Goal**: Eliminate visual redundancy while preserving high-resolution accuracy, achieving both high precision and high efficiency.
+5. **Key Insight**: Motivated by the observed sparsity of effective visual regions, the paper localizes such regions via a detector and performs fine-grained recognition exclusively on them.
 6. **Core Idea**: Decouple layout analysis from element recognition — a lightweight detector performs coarse-grained localization and reading order prediction, while a compact VLM conducts fine-grained recognition on cropped regions, avoiding the need to process the entire high-resolution page.
 
 ## Method

@@ -29,16 +29,16 @@ This paper proposes min-CPS and its regularized variant min-RCPS, a model-agnost
 
 ## Background & Motivation
 
-**State of the Field**: Ordinal classification is widely used in high-stakes applications (medical diagnosis grading, credit assessment, age estimation), where labels have a natural ordering but unknown spacing. Conformal Prediction (CP) is a general uncertainty quantification framework that provides distribution-free coverage guarantees.
+**Background**: Ordinal classification is widely used in high-stakes applications (medical diagnosis grading, credit assessment, age estimation), where labels have a natural ordering but unknown spacing. Conformal Prediction (CP) is a general uncertainty quantification framework that provides distribution-free coverage guarantees.
 
 **Limitations of Prior Work** in ordinal CP:
 - **Ordinal APS** (Lu et al. 2022): Greedily expands from the highest-probability label to neighboring labels, but this greedy search is **heuristic** with no optimality guarantee and may produce unnecessarily large prediction intervals.
 - **COPOC** (Dey et al. 2023): Requires the model to output a unimodal distribution via a learned auxiliary module, which breaks the **model-agnostic** property of CP.
 - Neither approach provides theoretical analysis from the perspective of prediction efficiency.
 
-**Root Cause**: Existing methods are either heuristic (no optimality guarantee) or model-dependent (not model-agnostic), and neither rigorously analyzes the coverage-efficiency trade-off.
+**Key Challenge**: Existing methods are either heuristic (no optimality guarantee) or model-dependent (not model-agnostic), and neither rigorously analyzes the coverage-efficiency trade-off.
 
-**Starting Point**: Formalize ordinal CP as an **instance-level minimum-length covering problem** and design provably optimal algorithms.
+**Key Insight**: Formalize ordinal CP as an **instance-level minimum-length covering problem** and design provably optimal algorithms.
 
 ## Method
 

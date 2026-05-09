@@ -28,13 +28,13 @@ This paper identifies modality-specific and attention-head-specific semantic red
 
 ## Background & Motivation
 
-**State of the Field**: LVLMs generate a large number of KV pairs when processing high-resolution images and long videos, making the KV Cache a memory bottleneck. Existing methods (e.g., SnapKV, AdaKV) retain critical KV pairs based on attention importance scores while discarding less important ones.
+**Background**: LVLMs generate a large number of KV pairs when processing high-resolution images and long videos, making the KV Cache a memory bottleneck. Existing methods (e.g., SnapKV, AdaKV) retain critical KV pairs based on attention importance scores while discarding less important ones.
 
 **Limitations of Prior Work**: (1) Visual information exhibits greater semantic redundancy than text — similar textures and repetitive patterns in images lead to cosine similarities between KV pairs as high as 0.6–0.8 (compared to 0.2–0.4 for text); (2) Redundancy varies substantially across attention heads — some heads exhibit average similarity above 0.9 while others fall below 0.3; (3) Importance-only selection retains highly similar KV pairs, resulting in a loss of global semantic coverage.
 
-**Root Cause**: t-SNE visualizations clearly show that KV pairs selected by SnapKV (importance-only) cover only a small subset of the full distribution, leading to significant information loss.
+**Key Challenge**: t-SNE visualizations clearly show that KV pairs selected by SnapKV (importance-only) cover only a small subset of the full distribution, leading to significant information loss.
 
-**Starting Point**: Incorporating diversity alongside importance — heads with high redundancy (high KV similarity) should emphasize diversity to avoid retaining redundant pairs, while heads with low redundancy should prioritize importance.
+**Key Insight**: Incorporating diversity alongside importance — heads with high redundancy (high KV similarity) should emphasize diversity to avoid retaining redundant pairs, while heads with low redundancy should prioritize importance.
 
 **Core Idea**: Use per-head redundancy as an adaptive mixing weight between importance and diversity scores.
 

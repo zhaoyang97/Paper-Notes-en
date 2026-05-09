@@ -29,15 +29,15 @@ This paper proposes LLaVA-3D, which constructs "3D Patches" by injecting 3D posi
 
 ## Background & Motivation
 
-**State of the Field**: 2D large multimodal models (LMMs) such as the LLaVA series have achieved remarkable progress in image and video understanding, yet they remain confined to virtual-level visual interaction and lack the ability to engage with the 3D physical world. Dominant approaches in existing 3D LMMs include: (a) using 3D point cloud encoders (e.g., LL3DA, LEO), (b) leveraging offline 3D instance segmentation to extract object features (e.g., Chat-Scene), and (c) aggregating CLIP features from multi-view images via manually designed 2D segmentation to construct 3D representations (e.g., 3D-LLM).
+**Background**: 2D large multimodal models (LMMs) such as the LLaVA series have achieved remarkable progress in image and video understanding, yet they remain confined to virtual-level visual interaction and lack the ability to engage with the 3D physical world. Dominant approaches in existing 3D LMMs include: (a) using 3D point cloud encoders (e.g., LL3DA, LEO), (b) leveraging offline 3D instance segmentation to extract object features (e.g., Chat-Scene), and (c) aggregating CLIP features from multi-view images via manually designed 2D segmentation to construct 3D representations (e.g., 3D-LLM).
 
 **Limitations of Prior Work**: (a) Large-scale 3D vision-language datasets are scarce, far smaller in scale than their 2D counterparts; (b) no pretrained 3D encoder comparable to CLIP exists; (c) existing 3D LMM pipelines are complex and computationally intensive—e.g., requiring 3D instance segmentation followed by feature aggregation, with scene feature construction taking up to 900 seconds per scene; (d) 3D visual grounding relies on offline 3D segmentation models, limiting practical applicability.
 
-**Root Cause**: The central challenge is how to efficiently transfer the powerful 2D understanding priors of a 2D LMM to 3D scene understanding without sacrificing them. Directly training 3D LMMs faces the dual bottleneck of insufficient data and weak encoders.
+**Key Challenge**: The central challenge is how to efficiently transfer the powerful 2D understanding priors of a 2D LMM to 3D scene understanding without sacrificing them. Directly training 3D LMMs faces the dual bottleneck of insufficient data and weak encoders.
 
-**Paper Goals**: (a) How to efficiently transfer 2D visual understanding priors from a 2D LMM to 3D scene understanding? (b) How to construct a unified 2D+3D architecture that supports both modalities simultaneously? (c) How to directly predict accurate 3D spatial outputs (e.g., 3D bounding boxes) without relying on time-consuming offline 3D segmentation?
+**Goal**: (a) How to efficiently transfer 2D visual understanding priors from a 2D LMM to 3D scene understanding? (b) How to construct a unified 2D+3D architecture that supports both modalities simultaneously? (c) How to directly predict accurate 3D spatial outputs (e.g., 3D bounding boxes) without relying on time-consuming offline 3D segmentation?
 
-**Starting Point**: Inspired by ODIN—which achieves unified segmentation by applying different positional encodings for 2D and 3D—LLaVA-3D similarly bridges the 2D and 3D worlds by appending 3D positional embeddings to 2D CLIP patches, requiring minimal modifications to the original architecture.
+**Key Insight**: Inspired by ODIN—which achieves unified segmentation by applying different positional encodings for 2D and 3D—LLaVA-3D similarly bridges the 2D and 3D worlds by appending 3D positional embeddings to 2D CLIP patches, requiring minimal modifications to the original architecture.
 
 **Core Idea**: Learnable 3D positional embeddings are directly added onto LLaVA's 2D CLIP patch features to construct 3D Patches that jointly encode semantic and spatial information, upgrading a 2D LMM to a 3D LMM at minimal cost.
 

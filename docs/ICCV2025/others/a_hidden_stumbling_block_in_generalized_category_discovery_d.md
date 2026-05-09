@@ -27,15 +27,15 @@ This paper identifies a previously overlooked issue in GCD—ViT attention on un
 
 ## Background & Motivation
 
-**State of the Field**: Generalized Category Discovery (GCD) aims to leverage labeled known-category knowledge to classify unlabeled data containing both known and novel categories. Mainstream approaches fall into non-parametric methods (contrastive learning + K-means clustering) and parametric methods (e.g., SimGCD, which uses prototype classifiers for joint training).
+**Background**: Generalized Category Discovery (GCD) aims to leverage labeled known-category knowledge to classify unlabeled data containing both known and novel categories. Mainstream approaches fall into non-parametric methods (contrastive learning + K-means clustering) and parametric methods (e.g., SimGCD, which uses prototype classifiers for joint training).
 
 **Limitations of Prior Work**: Existing methods almost universally overlook a hidden issue—distracted attention. Visualization analysis reveals that the [CLS] token attention of labeled data consistently focuses on foreground objects, whereas attention for unlabeled data (especially novel categories) disperses significantly onto background regions, degrading feature quality.
 
-**Root Cause**: The fundamental cause lies in the asymmetry of data augmentation. For labeled data, the same category contains images with diverse backgrounds, naturally guiding the model to focus on objects rather than backgrounds. For unlabeled data, augmentation produces only minor background variation, allowing the model to exploit spurious background correlations as shortcuts during self-supervised/unsupervised learning.
+**Key Challenge**: The fundamental cause lies in the asymmetry of data augmentation. For labeled data, the same category contains images with diverse backgrounds, naturally guiding the model to focus on objects rather than backgrounds. For unlabeled data, augmentation produces only minor background variation, allowing the model to exploit spurious background correlations as shortcuts during self-supervised/unsupervised learning.
 
-**Paper Goals**: How to correct attention dispersion on unlabeled data in GCD models without introducing external models?
+**Goal**: How to correct attention dispersion on unlabeled data in GCD models without introducing external models?
 
-**Starting Point**: The problem is approached from the perspective of token pruning—if background tokens irrelevant to the task can be adaptively identified and removed, the model is forced to make decisions based on foreground regions. The key challenge is measuring token importance, since unlabeled data lacks labels.
+**Key Insight**: The problem is approached from the perspective of token pruning—if background tokens irrelevant to the task can be adaptively identified and removed, the model is forced to make decisions based on foreground regions. The key challenge is measuring token importance, since unlabeled data lacks labels.
 
 **Core Idea**: Multi-scale learnable query tokens trained exclusively on labeled data are used to measure the importance of each patch, followed by adaptive pruning of low-importance tokens, compelling the model to attend to foreground objects.
 

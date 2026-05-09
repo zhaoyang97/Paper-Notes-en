@@ -26,15 +26,15 @@ content_hash: 8b6f75fe8bc8404d
 This paper proposes DiffBench (an evaluation benchmark comprising 604 diffusion model acceleration tasks across 5 difficulty levels) and DiffAgent (a closed-loop framework integrating Planning, Coding, and Debugging agents with a genetic algorithm-based selector). On Claude Sonnet 4, the framework improves the pass rate for diffusion acceleration code generation from 54.30% to 81.59%, achieving a 68.27% success rate on complex optimization tasks.
 
 ## Background & Motivation
-**State of the Field**: Diffusion models have achieved remarkable success in image and video generation, but their multi-step iterative inference introduces substantial computational overhead. Existing acceleration methods include fast samplers (DPM-Solver, UniPC), feature reuse (DeepCache), token merging (ToMe), gated activation (T-Gate), and others.
+**Background**: Diffusion models have achieved remarkable success in image and video generation, but their multi-step iterative inference introduces substantial computational overhead. Existing acceleration methods include fast samplers (DPM-Solver, UniPC), feature reuse (DeepCache), token merging (ToMe), gated activation (T-Gate), and others.
 
 **Limitations of Prior Work**: Each acceleration method requires expert knowledge for implementation and hyperparameter tuning; different architectures (U-Net vs. DiT) and deployment scenarios demand distinct combinations of acceleration strategies; jointly tuning multiple methods requires deep domain expertise.
 
-**Root Cause**: While LLMs have demonstrated strong code generation capabilities and solid performance on GPU kernel optimization benchmarks (KernelBench, TritonBench), diffusion acceleration code poses unique challenges—requiring simultaneous understanding of diffusion architectures, the parameter semantics of acceleration techniques, and quality–speed trade-offs.
+**Key Challenge**: While LLMs have demonstrated strong code generation capabilities and solid performance on GPU kernel optimization benchmarks (KernelBench, TritonBench), diffusion acceleration code poses unique challenges—requiring simultaneous understanding of diffusion architectures, the parameter semantics of acceleration techniques, and quality–speed trade-offs.
 
-**Paper Goals**: (a) How to standardize the evaluation of LLMs' ability to generate diffusion acceleration code? (b) How to build an agent that enables LLMs to autonomously complete the full pipeline of "requirement understanding → strategy planning → code generation → debugging → iterative optimization"?
+**Goal**: (a) How to standardize the evaluation of LLMs' ability to generate diffusion acceleration code? (b) How to build an agent that enables LLMs to autonomously complete the full pipeline of "requirement understanding → strategy planning → code generation → debugging → iterative optimization"?
 
-**Starting Point**: Emulating a human developer's workflow—iteratively refining code based on environment feedback, combined with genetic algorithms for efficient exploration of the search space.
+**Key Insight**: Emulating a human developer's workflow—iteratively refining code based on environment feedback, combined with genetic algorithms for efficient exploration of the search space.
 
 **Core Idea**: Employ multi-agent closed-loop collaboration with a genetic algorithm-driven selector to achieve end-to-end automatic generation of diffusion acceleration code that satisfies quality and speed constraints from natural language requirements.
 

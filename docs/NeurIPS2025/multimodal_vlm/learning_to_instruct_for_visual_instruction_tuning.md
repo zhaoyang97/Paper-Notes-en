@@ -28,15 +28,15 @@ content_hash: 7a628e18218fd39a
 This paper proposes L2T (Learning to Instruct), which improves visual instruction tuning solely by extending the training loss to cover the instruction sequence (rather than computing loss on responses only). Without additional data and with virtually zero computational overhead, L2T achieves up to 9% relative improvement across 16 multimodal benchmarks, an 18% gain on captioning tasks, and notable hallucination reduction.
 
 ## Background & Motivation
-**State of the Field**: Visual instruction tuning (VIT) is the standard pipeline for building MLLMs — pre-training aligns visual-language features, and the fine-tuning stage trains end-to-end on instruction data. The conventional practice computes autoregressive loss only on the response sequence, masking out the instruction sequence from loss computation.
+**Background**: Visual instruction tuning (VIT) is the standard pipeline for building MLLMs — pre-training aligns visual-language features, and the fine-tuning stage trains end-to-end on instruction data. The conventional practice computes autoregressive loss only on the response sequence, masking out the instruction sequence from loss computation.
 
 **Limitations of Prior Work**: VIT is susceptible to overfitting and shortcut learning — models may ignore visual content and rely solely on language priors to produce plausible-sounding answers. For instance, language-only models can answer many VQA questions without any image input.
 
-**Root Cause**: Computing loss exclusively on responses trains the model to learn "how to follow the instruction format to answer" rather than "how to understand image content." This overemphasizes instruction-following while neglecting active visual comprehension.
+**Key Challenge**: Computing loss exclusively on responses trains the model to learn "how to follow the instruction format to answer" rather than "how to understand image content." This overemphasizes instruction-following while neglecting active visual comprehension.
 
-**Paper Goals**: To improve MLLMs' utilization of visual information and reduce dependence on language shortcuts with minimal modification.
+**Goal**: To improve MLLMs' utilization of visual information and reduce dependence on language shortcuts with minimal modification.
 
-**Starting Point**: If a model is also required to predict the instruction itself (e.g., "Describe this image"), it must understand the image content to know what instruction is appropriate — thereby compelling the model to attend more closely to visual inputs.
+**Key Insight**: If a model is also required to predict the instruction itself (e.g., "Describe this image"), it must understand the image content to know what instruction is appropriate — thereby compelling the model to attend more closely to visual inputs.
 
 **Core Idea**: Extend the loss mask from responses only to instructions + responses, enabling the model to jointly learn "what to ask" and "how to answer" — a zero-cost regularization strategy.
 

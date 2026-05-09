@@ -28,15 +28,15 @@ This paper proposes NOVA, which formalizes for the first time the "sparse contro
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion model-driven video editing methods are advancing rapidly. Data-driven approaches (Senorita-2M, VACE) require large-scale paired data; first-frame-guided methods (AnyV2V, I2VEdit) propagate edits from the first frame to the entire video, relying on motion compensation.
+**Background**: Diffusion model-driven video editing methods are advancing rapidly. Data-driven approaches (Senorita-2M, VACE) require large-scale paired data; first-frame-guided methods (AnyV2V, I2VEdit) propagate edits from the first frame to the entire video, relying on motion compensation.
 
 **Limitations of Prior Work**: (a) Paired video data are extremely difficult to obtain, and synthetic data contain artifacts that impair generalization; (b) methods relying solely on the first frame suffer from structural drift under large camera or object motion; (c) global editing results are acceptable, but **local editing** (region-specific modification) fails broadly—background inconsistency and severe artifacts in edited regions are common.
 
-**Root Cause**: The control signal (what to change) and the synthesis signal (what to preserve) are coupled within the same pathway, making it difficult for the model to distinguish between "what to change" and "what to preserve."
+**Key Challenge**: The control signal (what to change) and the synthesis signal (what to preserve) are coupled within the same pathway, making it difficult for the model to distinguish between "what to change" and "what to preserve."
 
-**Paper Goals**: Decouple control from synthesis and achieve high-quality video editing without paired data.
+**Goal**: Decouple control from synthesis and achieve high-quality video editing without paired data.
 
-**Starting Point**: Multiple keyframes provide stronger spatiotemporal anchors, and the original video itself is the best reference for motion and texture.
+**Key Insight**: Multiple keyframes provide stronger spatiotemporal anchors, and the original video itself is the best reference for motion and texture.
 
 **Core Idea**: The sparse branch encodes multiple edited keyframes for semantic guidance; the dense branch encodes the original video for motion/texture injection; degradation simulation enables self-supervised training.
 

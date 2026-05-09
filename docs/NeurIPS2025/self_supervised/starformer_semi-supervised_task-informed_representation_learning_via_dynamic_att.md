@@ -28,15 +28,15 @@ STaRFormer is proposed, which employs Dynamic Attention-based Regional Masking (
 
 ## Background & Motivation
 
-**State of the Field**: Time-series modeling methods typically assume complete, stationary, and uniformly sampled data. Self-supervised contrastive learning approaches (e.g., TS2Vec, TimesURL) are decoupled from downstream tasks.
+**Background**: Time-series modeling methods typically assume complete, stationary, and uniformly sampled data. Self-supervised contrastive learning approaches (e.g., TS2Vec, TimesURL) are decoupled from downstream tasks.
 
 **Limitations of Prior Work**: Real-world sensor data frequently exhibit non-stationarity and irregular sampling (e.g., UWB ranging: 79% non-stationary); pretrained contrastive learning methods are insufficiently coupled with downstream tasks.
 
-**Root Cause**: Contrastive learning requires effective augmentation strategies, yet conventional random augmentations disregard task relevance. Masking task-critical regions is necessary to compel the model to learn robust representations.
+**Key Challenge**: Contrastive learning requires effective augmentation strategies, yet conventional random augmentations disregard task relevance. Masking task-critical regions is necessary to compel the model to learn robust representations.
 
-**Paper Goals**: Design a framework that couples representation learning with downstream tasks while handling non-stationarity and irregular sampling.
+**Goal**: Design a framework that couples representation learning with downstream tasks while handling non-stationarity and irregular sampling.
 
-**Starting Point**: Dynamic attention-based masking identifies task-critical regions → masking → reconstruction → intra-batch/intra-class contrastive learning.
+**Key Insight**: Dynamic attention-based masking identifies task-critical regions → masking → reconstruction → intra-batch/intra-class contrastive learning.
 
 **Core Idea**: DAReM identifies task-critical regions → masking perturbs statistical properties → semi-supervised contrastive learning couples downstream tasks = task-aware robust time-series representations.
 

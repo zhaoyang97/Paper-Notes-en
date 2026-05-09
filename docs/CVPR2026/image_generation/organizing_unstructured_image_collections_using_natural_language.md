@@ -29,15 +29,15 @@ This paper introduces a new task, Open Semantic Multi-Clustering (OpenSMC), and 
 
 ## Background & Motivation
 
-**State of the Field**: Image clustering is a fundamental task in machine learning. Deep Clustering (DC) methods produce a single partition, while Multi-Clustering (MC) methods yield multiple partitions but require predefined clustering criteria and cluster counts. Recent Text-Conditioned Multi-Clustering (TCMC) methods leverage MLLMs to generate semantic clusters, yet still require users to specify clustering criteria in advance.
+**Background**: Image clustering is a fundamental task in machine learning. Deep Clustering (DC) methods produce a single partition, while Multi-Clustering (MC) methods yield multiple partitions but require predefined clustering criteria and cluster counts. Recent Text-Conditioned Multi-Clustering (TCMC) methods leverage MLLMs to generate semantic clusters, yet still require users to specify clustering criteria in advance.
 
 **Limitations of Prior Work**: (1) Existing methods produce uninterpretable clustering results—only index labels, without human-readable category names. (2) Clustering outputs of DC and MC methods are governed by model inductive biases and hyperparameters rather than the inherent semantics of the data. (3) TCMC methods assume users already know meaningful clustering criteria, whereas for large-scale, complex datasets users often have no knowledge of which dimensions are meaningful.
 
-**Root Cause**: Ideal image organization should automatically discover multiple meaningful clustering dimensions (e.g., "Activity," "Location," "Emotion") from the data and assign human-readable names to each cluster. No existing vision model can reliably perform such high-level semantic reasoning over large image collections simultaneously.
+**Key Challenge**: Ideal image organization should automatically discover multiple meaningful clustering dimensions (e.g., "Activity," "Location," "Emotion") from the data and assign human-readable names to each cluster. No existing vision model can reliably perform such high-level semantic reasoning over large image collections simultaneously.
 
-**Paper Goals**: To define the OpenSMC task—given an unlabeled image collection, automatically discover multiple clustering criteria, the number and names of clusters under each criterion, and the cluster assignments of images, with all outputs expressed in natural language and without any human-specified priors.
+**Goal**: To define the OpenSMC task—given an unlabeled image collection, automatically discover multiple clustering criteria, the number and names of clusters under each criterion, and the cluster assignments of images, with all outputs expressed in natural language and without any human-specified priors.
 
-**Starting Point**: The authors observe that although no vision model can directly perform semantic reasoning over large-scale image sets, LLMs possess powerful topic discovery and summarization capabilities in the textual domain. By "translating" images into text, one can leverage LLMs to discover clustering criteria from large collections of textual descriptions.
+**Key Insight**: The authors observe that although no vision model can directly perform semantic reasoning over large-scale image sets, LLMs possess powerful topic discovery and summarization capabilities in the textual domain. By "translating" images into text, one can leverage LLMs to discover clustering criteria from large collections of textual descriptions.
 
 **Core Idea**: Images are converted into textual proxies (captions/tags); an LLM then discovers clustering criteria in the text space, after which cluster assignments are performed back in the visual space. Text serves as the bridge connecting visual perception and semantic reasoning.
 

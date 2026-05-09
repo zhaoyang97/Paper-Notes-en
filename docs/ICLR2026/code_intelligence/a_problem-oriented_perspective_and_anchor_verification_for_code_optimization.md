@@ -27,15 +27,15 @@ This paper proposes a problem-oriented (rather than user-oriented) approach to c
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have demonstrated strong performance on code generation tasks, yet their potential for code performance optimization (minimizing execution time) remains insufficiently explored.
+**Background**: LLMs have demonstrated strong performance on code generation tasks, yet their potential for code performance optimization (minimizing execution time) remains insufficiently explored.
 
 **Limitations of Prior Work**: Existing methods (PIE) construct optimization pairs from iterative submissions by the same user, constraining LLMs to local incremental improvements and neglecting global algorithmic innovation. Furthermore, code optimization suffers from an "optimization tax"—LLM-optimized code frequently exhibits correctness issues.
 
-**Root Cause**: Code optimization is inherently a dual-objective problem (efficiency + correctness), and the two objectives often conflict. User-oriented optimization pairs reflect only the cognitive patterns of individual programmers and lack strategic diversity.
+**Key Challenge**: Code optimization is inherently a dual-objective problem (efficiency + correctness), and the two objectives often conflict. User-oriented optimization pairs reflect only the cognitive patterns of individual programmers and lack strategic diversity.
 
-**Paper Goals**: (a) How to construct richer and more diverse optimization pairs to elicit global optimization capabilities in LLMs; (b) How to mitigate correctness degradation in code optimization.
+**Goal**: (a) How to construct richer and more diverse optimization pairs to elicit global optimization capabilities in LLMs; (b) How to mitigate correctness degradation in code optimization.
 
-**Starting Point**: Shifting from a user-oriented to a problem-oriented perspective—sorting all user submissions for the same problem by runtime to form new optimization trajectories; leveraging the "slow but correct" property of pre-optimization code to generate test cases for verification.
+**Key Insight**: Shifting from a user-oriented to a problem-oriented perspective—sorting all user submissions for the same problem by runtime to form new optimization trajectories; leveraging the "slow but correct" property of pre-optimization code to generate test cases for verification.
 
 **Core Idea**: Problem-oriented optimization pairs drawn from a multi-user perspective stimulate global algorithmic innovation, while the anchor verification framework uses the original slow code as a correctness anchor to repair the optimization tax.
 

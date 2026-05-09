@@ -28,15 +28,15 @@ content_hash: 6d122cfac9313d90
 This paper proposes an uncertainty-based routing framework that applies SNGP to a pairwise reward model for uncertainty quantification, routing high-epistemic-uncertainty samples to a strong LLM judge (DeepSeek-R1). At a judge invocation cost of only 9.2%–42.5%, the approach significantly outperforms random routing in accuracy and demonstrably improves downstream online RLHF alignment.
 
 ## Background & Motivation
-**State of the Field**: Reward models (RMs) are a central component of RLHF, yet standard RMs (pointwise/pairwise) generalize poorly on out-of-distribution data and are susceptible to reward hacking. Strong LLM judges (e.g., DeepSeek-R1, GPT-4) provide more reliable preference judgments via chain-of-thought reasoning.
+**Background**: Reward models (RMs) are a central component of RLHF, yet standard RMs (pointwise/pairwise) generalize poorly on out-of-distribution data and are susceptible to reward hacking. Strong LLM judges (e.g., DeepSeek-R1, GPT-4) provide more reliable preference judgments via chain-of-thought reasoning.
 
 **Limitations of Prior Work**: RMs are cheap but unreliable—on the hard subset of RM-Bench, the state-of-the-art 8B RM achieves only 46.6% accuracy, worse than random guessing (50%). LLM judges are accurate but expensive—long CoT inference introduces latency tens of times greater than scalar RMs, making them infeasible for online RLHF.
 
-**Root Cause**: How can preference judgment accuracy be maximized under a limited LLM judge invocation budget? Random routing wastes budget on samples the RM already judges correctly.
+**Key Challenge**: How can preference judgment accuracy be maximized under a limited LLM judge invocation budget? Random routing wastes budget on samples the RM already judges correctly.
 
-**Paper Goals**: Design an adaptive routing strategy that precisely identifies samples where the RM is uncertain (and thus most likely to err), routes them to a strong judge, and handles the remainder efficiently with the RM.
+**Goal**: Design an adaptive routing strategy that precisely identifies samples where the RM is uncertain (and thus most likely to err), routes them to a strong judge, and handles the remainder efficiently with the RM.
 
-**Starting Point**: The approach begins from uncertainty quantification—the preference classification problem of pairwise RMs is naturally amenable to UQ methods (in contrast to pointwise RMs, where uncertainty under the Bradley–Terry model is ill-defined). SNGP is adopted to efficiently quantify epistemic uncertainty in a single forward pass without ensembling.
+**Key Insight**: The approach begins from uncertainty quantification—the preference classification problem of pairwise RMs is naturally amenable to UQ methods (in contrast to pointwise RMs, where uncertainty under the Bradley–Terry model is ill-defined). SNGP is adopted to efficiently quantify epistemic uncertainty in a single forward pass without ensembling.
 
 **Core Idea**: Equip a pairwise RM with uncertainty awareness via SNGP. Pairs with high epistemic uncertainty are automatically routed to an LLM judge; those with low uncertainty are handled directly by the RM.
 

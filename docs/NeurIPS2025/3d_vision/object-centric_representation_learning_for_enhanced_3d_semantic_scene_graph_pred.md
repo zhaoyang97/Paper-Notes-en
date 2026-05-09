@@ -28,15 +28,15 @@ Through empirical analysis, this paper identifies object feature discriminabilit
 
 ## Background & Motivation
 
-**State of the Field**: 3D semantic scene graphs (3D-SSG) represent 3D scenes as directed graphs with nodes (objects) and edges (relations), serving as a key representation for robot navigation and AR/VR interaction. Methods such as SGPN, SGFN, and VL-SAT have progressively advanced performance.
+**Background**: 3D semantic scene graphs (3D-SSG) represent 3D scenes as directed graphs with nodes (objects) and edges (relations), serving as a key representation for robot navigation and AR/VR interaction. Methods such as SGPN, SGFN, and VL-SAT have progressively advanced performance.
 
 **Limitations of Prior Work**: (a) Existing methods over-rely on GNNs for relational reasoning while neglecting insufficient discriminability of object representations — VL-SAT's object embeddings are non-discriminative, leading to low-confidence predictions and frequent misclassifications; (b) Relation feature encoding relies solely on geometric descriptors (centroid differences, bounding box differences, etc.), ignoring the integration of object semantic features; (c) GNN edge processing is symmetric, whereas real-world relations (e.g., "A standing on B") exhibit directional asymmetry.
 
-**Root Cause**: **Object misclassification → predicate prediction errors**. Analysis of VL-SAT reveals that only 8% of predicate errors occur when both subject and object are correctly classified, while error rates surge under object misclassification. Using ground-truth object labels brings predicate R@50 close to 94%+, confirming that the bottleneck lies in object encoding rather than relational reasoning.
+**Key Challenge**: **Object misclassification → predicate prediction errors**. Analysis of VL-SAT reveals that only 8% of predicate errors occur when both subject and object are correctly classified, while error rates surge under object misclassification. Using ground-truth object labels brings predicate R@50 close to 94%+, confirming that the bottleneck lies in object encoding rather than relational reasoning.
 
-**Paper Goals**: (a) Improve the discriminability of object features to indirectly enhance all downstream metrics; (b) Integrate semantic and geometric information to improve relation encoding; (c) Introduce directionality modeling to capture asymmetric relations.
+**Goal**: (a) Improve the discriminability of object features to indirectly enhance all downstream metrics; (b) Integrate semantic and geometric information to improve relation encoding; (c) Introduce directionality modeling to capture asymmetric relations.
 
-**Starting Point**: A probabilistic formalization — $P(e_{ij}|z_i, z_j) = \sum P(e_{ij}|o'_i, o'_j) P(o'_i|z_i) P(o'_j|z_j)$ — shows that the sharper the object posterior (i.e., higher discriminability), the more accurate the predicate prediction.
+**Key Insight**: A probabilistic formalization — $P(e_{ij}|z_i, z_j) = \sum P(e_{ij}|o'_i, o'_j) P(o'_i|z_i) P(o'_j|z_j)$ — shows that the sharper the object posterior (i.e., higher discriminability), the more accurate the predicate prediction.
 
 **Core Idea**: Independent contrastive pre-training enables the object encoder to produce highly discriminative embeddings → reduces object classification entropy → automatically improves predicate and triplet prediction through probabilistic propagation.
 

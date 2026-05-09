@@ -29,15 +29,15 @@ CLARE proposes a lightweight representation-level method that quantifies the ent
 
 ## Background & Motivation
 
-**State of the Field**: Model editing modifies model weights to update specific factual associations, but often produces ripple effects — unexpected behavioral changes propagating to other outputs and even into the hidden space.
+**Background**: Model editing modifies model weights to update specific factual associations, but often produces ripple effects — unexpected behavioral changes propagating to other outputs and even into the hidden space.
 
 **Limitations of Prior Work**: (1) Ripple effects can extend to semantically unrelated facts, causing cross-domain interference; (2) Existing methods (e.g., GradSim) use gradient similarity, which is computationally expensive and poorly correlated with cross-domain ripple effects; (3) A systematic study of large-scale cross-domain ripple effects is lacking.
 
-**Root Cause**: Model editing requires precise prediction of which facts will be affected, but existing methods are both slow and inaccurate.
+**Key Challenge**: Model editing requires precise prediction of which facts will be affected, but existing methods are both slow and inaccurate.
 
-**Paper Goals**: Propose a lightweight, high-accuracy ripple effect prediction method and construct large-scale entanglement graphs.
+**Goal**: Propose a lightweight, high-accuracy ripple effect prediction method and construct large-scale entanglement graphs.
 
-**Starting Point**: Replace gradient computation with forward activations — only a single layer's activations are needed to quantify entanglement.
+**Key Insight**: Replace gradient computation with forward activations — only a single layer's activations are needed to quantify entanglement.
 
 **Core Idea**: Entanglement between facts can be quantified by the similarity of forward activation representations at a critical layer, without computing gradients.
 

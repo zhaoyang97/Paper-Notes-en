@@ -41,7 +41,7 @@ VLMs have demonstrated strong multimodal understanding by integrating visual and
 
 **Conventional knowledge distillation**: Feature-distance-based distillation is limited in effectiveness within high-dimensional spaces.
 
-**Starting Point**: Can a small model learn the "speaking style" (text generation style) of a large model without modifying its architecture or increasing inference cost? RIL combines reinforcement learning (to optimize answer quality) with imitation learning (to learn expressive style) within a unified adversarial framework.
+**Key Insight**: Can a small model learn the "speaking style" (text generation style) of a large model without modifying its architecture or increasing inference cost? RIL combines reinforcement learning (to optimize answer quality) with imitation learning (to learn expressive style) within a unified adversarial framework.
 
 ## Method
 

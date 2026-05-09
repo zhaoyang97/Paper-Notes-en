@@ -31,12 +31,12 @@ This paper proposes HaltNav, a hierarchical navigation framework that combines l
 
 Vision-language navigation (VLN) is shifting from strict step-by-step instruction following toward open-ended, goal-oriented autonomous navigation. In real-world scenarios, users issue concise goals (e.g., "take me to the restroom") rather than detailed route descriptions.
 
-**Root Cause**:
+**Key Challenge**:
 - **Global planning requires map priors**: Dense 2D/3D semantic map construction and maintenance are costly, and such maps may suffer from modality misalignment or staleness.
 - **Static priors are fragile in dynamic environments**: Doors may be closed, corridors may be blocked — pure map-based planning fails under these conditions.
 - **Existing VLN methods rely on detailed instructions**: Performance degrades with sparser instructions, and structured priors are lacking.
 
-**Starting Point**: Use lightweight textual topological priors — osmAG (OpenStreetMap Area Graph), which encodes only room and passage (door) topology in a token-efficient, easily maintainable format — for global planning, while introducing a reactive halting mechanism to handle dynamic changes.
+**Key Insight**: Use lightweight textual topological priors — osmAG (OpenStreetMap Area Graph), which encodes only room and passage (door) topology in a token-efficient, easily maintainable format — for global planning, while introducing a reactive halting mechanism to handle dynamic changes.
 
 ## Method
 

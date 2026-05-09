@@ -28,11 +28,11 @@ This paper proposes the Non-Conservative Generalized Schrödinger Bridge (NCGSB)
 
 ## Background & Motivation
 
-**State of the Field**: The Schrödinger Bridge (SB) provides a principled framework for modeling stochastic processes between two distributions, with broad applications in cell dynamics, weather forecasting, economic modeling, and image generation.
+**Background**: The Schrödinger Bridge (SB) provides a principled framework for modeling stochastic processes between two distributions, with broad applications in cell dynamics, weather forecasting, economic modeling, and image generation.
 
 **Limitations of Prior Work**: Existing SB methods assume energy conservation (constant kinetic plus potential energy), which constrains the shape of the bridge and precludes modeling dissipative systems such as gradually weakening storms or cell differentiation. Current SB solvers rely on forward-backward iterative simulation (IPF, matching-based methods, etc.), incurring high computational cost. GSBM restricts expressiveness by assuming Gaussian probability paths, while mmSB suffers from piecewise consistency issues. Momentum SB models damping by augmenting the state with velocity, doubling the state space and computational cost; OU process substitutes lack energy dissipation mechanisms for rotational dynamics.
 
-**Starting Point**: Replace classical Hamiltonians with contact Hamiltonians, introducing only a single scalar state $z^t$ to model energy variation, while exploiting a geometric perspective that reduces SB to geodesic computation, thereby avoiding iterative procedures.
+**Key Insight**: Replace classical Hamiltonians with contact Hamiltonians, introducing only a single scalar state $z^t$ to model energy variation, while exploiting a geometric perspective that reduces SB to geodesic computation, thereby avoiding iterative procedures.
 
 **Core Contributions**: (1) NCGSB non-conservative formulation; (2) CWG near-linear-time solver; (3) guided generation via modification of the Riemannian metric.
 

@@ -30,10 +30,10 @@ This paper generalizes the Closest Fair Clustering problem from two groups to ar
 
 ## Background & Motivation
 
-- **State of the Field**: Clustering is a fundamental unsupervised learning task in machine learning, yet traditional algorithms tend to produce unfair outcomes with respect to protected attributes (gender, race, age, etc.). Since Chierichetti et al. (2017) introduced fair clustering, the community has advanced fairness constraints across numerous variants including k-center/median/means and correlation clustering.
+- **Background**: Clustering is a fundamental unsupervised learning task in machine learning, yet traditional algorithms tend to produce unfair outcomes with respect to protected attributes (gender, race, age, etc.). Since Chierichetti et al. (2017) introduced fair clustering, the community has advanced fairness constraints across numerous variants including k-center/median/means and correlation clustering.
 - **Limitations of Prior Work**: Chakraborty et al. [COLT'25] first studied the "Closest Fair Clustering" problem—obtaining a fair clustering from an existing one with minimal modifications—but addressed only the **two-group** case, whereas real-world data often involves multiple protected attributes corresponding to multiple groups.
-- **Root Cause**: An exact near-linear-time algorithm exists for the two-group equal-proportion case; this paper proves that the multi-group ($\geq 3$) setting is NP-hard even under equal proportions, revealing a **computational complexity cliff** between two groups and multiple groups.
-- **Starting Point**: The paper designs approximation algorithms via a hierarchical block merging strategy, answering open problems posed by Chakraborty et al.
+- **Key Challenge**: An exact near-linear-time algorithm exists for the two-group equal-proportion case; this paper proves that the multi-group ($\geq 3$) setting is NP-hard even under equal proportions, revealing a **computational complexity cliff** between two groups and multiple groups.
+- **Key Insight**: The paper designs approximation algorithms via a hierarchical block merging strategy, answering open problems posed by Chakraborty et al.
 
 ## Method
 

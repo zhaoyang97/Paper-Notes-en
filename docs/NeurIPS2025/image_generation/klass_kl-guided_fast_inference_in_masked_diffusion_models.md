@@ -29,15 +29,15 @@ This paper proposes KLASS (KL-Adaptive Stability Sampling), a training-free samp
 
 ## Background & Motivation
 
-**State of the Field**: Masked diffusion models (MDMs) have demonstrated competitive performance across language generation, image generation, and molecular generation tasks, with large-scale models such as LLaDA and DREAM having acquired reasoning capabilities.
+**Background**: Masked diffusion models (MDMs) have demonstrated competitive performance across language generation, image generation, and molecular generation tasks, with large-scale models such as LLaDA and DREAM having acquired reasoning capabilities.
 
 **Limitations of Prior Work**: The sampling process of MDMs relies on iterative unmasking, typically employing fixed Top-k or random sampling strategies that unmask only a small number of tokens per step, resulting in slow inference.
 
-**Root Cause**: A fundamental trade-off exists between accelerated sampling (unmasking more tokens per step) and generation quality—prematurely unmasking unstable tokens leads to degraded accuracy.
+**Key Challenge**: A fundamental trade-off exists between accelerated sampling (unmasking more tokens per step) and generation quality—prematurely unmasking unstable tokens leads to degraded accuracy.
 
-**Paper Goals**: To enable safe parallel unmasking of multiple tokens to accelerate generation, without requiring additional training or external planners.
+**Goal**: To enable safe parallel unmasking of multiple tokens to accelerate generation, without requiring additional training or external planners.
 
-**Starting Point**: The model's own internal signals—KL divergence and confidence scores—are used to determine whether a token is "stable" and thus safe to unmask early.
+**Key Insight**: The model's own internal signals—KL divergence and confidence scores—are used to determine whether a token is "stable" and thus safe to unmask early.
 
 **Core Idea**: Tokens exhibiting low KL divergence and high confidence are considered "stable" and can be unmasked in parallel; incorrectly predicted tokens cannot maintain dynamic stability throughout the diffusion process.
 

@@ -27,15 +27,15 @@ This paper systematically investigates the internal mechanisms by which LLMs rec
 
 ## Background & Motivation
 
-**State of the Field**: How LLMs store and recall relational knowledge is a central question in interpretability research. Prior work has established a canonical picture of knowledge recall: (1) subject entity information accumulates at the last token of the subject span in middle-to-late layers; (2) predicate/relation information is aggregated via attention heads to the token position preceding object generation; (3) the object entity is retrieved from MLP sublayers via attention. This process can sometimes be approximated by a linear transformation and traced to relation-specific neurons.
+**Background**: How LLMs store and recall relational knowledge is a central question in interpretability research. Prior work has established a canonical picture of knowledge recall: (1) subject entity information accumulates at the last token of the subject span in middle-to-late layers; (2) predicate/relation information is aggregated via attention heads to the token position preceding object generation; (3) the object entity is retrieved from MLP sublayers via attention. This process can sometimes be approximated by a linear transformation and traced to relation-specific neurons.
 
 **Limitations of Prior Work**: While probing has been shown to reliably support named entity recognition and disambiguation for entity representations, it remains unclear which internal representations support faithful linear relation classification, and why certain relation types are more amenable to linear capture than others. Existing analyses cannot simultaneously attribute relational predictions to specific attention heads and source tokens.
 
-**Root Cause**: Although attention heads and MLPs are known to play roles in knowledge recall, a probe-based attribution method capable of jointly explaining relational classification at both the attention head and token levels is lacking, preventing systematic understanding of the factors that drive success or failure in relation classification.
+**Key Challenge**: Although attention heads and MLPs are known to play roles in knowledge recall, a probe-based attribution method capable of jointly explaining relational classification at both the attention head and token levels is lacking, preventing systematic understanding of the factors that drive success or failure in relation classification.
 
-**Paper Goals**: (1) Identify the LLM internal representations best suited for linear relation classification; (2) Determine what factors predict probe success or failure on relation classification.
+**Goal**: (1) Identify the LLM internal representations best suited for linear relation classification; (2) Determine what factors predict probe success or failure on relation classification.
 
-**Starting Point**: The paper focuses on per-head attention contributions to the residual stream, as these features decompose naturally to the source token level, making attribution analysis tractable.
+**Key Insight**: The paper focuses on per-head attention contributions to the residual stream, as these features decompose naturally to the source token level, making attribution analysis tractable.
 
 **Core Idea**: Per-head attention contributions $\Delta_{att,h}$ are used as features for linear probes performing relation classification. Two attribution methods—HeadScore (attention head-level attribution) and TokenScore (source token-level attribution)—are then applied to decompose probe predictions, enabling fine-grained analysis.
 

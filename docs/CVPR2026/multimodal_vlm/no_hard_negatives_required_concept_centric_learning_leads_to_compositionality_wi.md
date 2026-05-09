@@ -29,18 +29,18 @@ C2LIP proposes a contrastive learning fine-tuning approach that requires no hard
 
 ## Background & Motivation
 
-1. **State of the Field**: Contrastive vision-language models (CLIP, SigLIP) are foundational to computer vision, supporting open-world tasks such as zero-shot classification and retrieval.
+1. **Background**: Contrastive vision-language models (CLIP, SigLIP) are foundational to computer vision, supporting open-world tasks such as zero-shot classification and retrieval.
 
 2. **Limitations of Prior Work**:
    - **Poor compositional understanding**: CLIP tends to learn Bag-of-Words (BoW) representations and cannot distinguish "a red couch" from "a couch next to a red object," failing to correctly bind nouns and attributes.
    - **Limitations of hard negative approaches**: Existing methods (NegCLIP, DAC, SLVC, etc.) improve compositionality via hard-negative fine-tuning, but (a) are effective only on specific benchmarks with poor generalization; (b) severely degrade zero-shot classification and retrieval performance; and (c) require complex data generation pipelines involving LLMs and text-to-image models.
    - **Architectural issue**: The final global pooling operations in both text and visual encoders mix noun and attribute information across regions, causing binding relationships to be irreversibly lost.
 
-3. **Root Cause**: Long descriptive captions do not inherently require compositional representations for contrastive learning (BoW suffices), while global pooling destroys binding information — these two fundamental causes make compositionality impossible to address through simple post-hoc hard-negative training.
+3. **Key Challenge**: Long descriptive captions do not inherently require compositional representations for contrastive learning (BoW suffices), while global pooling destroys binding information — these two fundamental causes make compositionality impossible to address through simple post-hoc hard-negative training.
 
-4. **Paper Goals**: To simultaneously improve compositional understanding and preserve zero-shot/retrieval performance without using hard negatives.
+4. **Goal**: To simultaneously improve compositional understanding and preserve zero-shot/retrieval performance without using hard negatives.
 
-5. **Starting Point**: (a) Replace long captions with short noun phrases for contrastive learning, forcing the model to learn fine-grained binding; (b) extract concept-specific visual representations via cross-modal attention before global pooling, propagating compositionality learning signals to pre-pooling features.
+5. **Key Insight**: (a) Replace long captions with short noun phrases for contrastive learning, forcing the model to learn fine-grained binding; (b) extract concept-specific visual representations via cross-modal attention before global pooling, propagating compositionality learning signals to pre-pooling features.
 
 6. **Core Idea**: Achieve compositionality through noun-phrase concept contrastive learning and cross-modal attention-based binding before pooling — without any hard negatives.
 

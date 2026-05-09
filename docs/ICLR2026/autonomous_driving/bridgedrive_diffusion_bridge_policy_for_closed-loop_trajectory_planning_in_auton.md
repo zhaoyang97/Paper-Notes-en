@@ -28,15 +28,15 @@ BridgeDrive proposes replacing truncated diffusion with a diffusion bridge to ac
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models have emerged as a powerful paradigm for autonomous driving planning due to their ability to model multimodal behavior distributions. DiffusionDrive introduced anchor trajectories (K-means cluster centers representing typical human driving behaviors) to guide the diffusion process, achieving state-of-the-art performance.
+**Background**: Diffusion models have emerged as a powerful paradigm for autonomous driving planning due to their ability to model multimodal behavior distributions. DiffusionDrive introduced anchor trajectories (K-means cluster centers representing typical human driving behaviors) to guide the diffusion process, achieving state-of-the-art performance.
 
 **Limitations of Prior Work**: DiffusionDrive employs a truncated diffusion schedule, initiating denoising from a noisy version of the anchor rather than from pure Gaussian noise. This introduces a theoretical asymmetry between the forward process (adding noise to anchors) and the denoising process (recovering the true trajectory)—the denoiser is trained to regress from noisy anchors to true trajectories rather than to invert the forward diffusion process.
 
-**Root Cause**: This asymmetry deviates from the core principles of diffusion models, potentially leading to unpredictable behavior and degraded performance. The central question is how to preserve the benefits of anchor guidance while maintaining theoretical consistency with the diffusion framework.
+**Key Challenge**: This asymmetry deviates from the core principles of diffusion models, potentially leading to unpredictable behavior and degraded performance. The central question is how to preserve the benefits of anchor guidance while maintaining theoretical consistency with the diffusion framework.
 
-**Paper Goals**: (a) Design a theoretically consistent anchor-guided diffusion framework; (b) adopt a trajectory representation better suited to diffusion models; (c) achieve real-time closed-loop deployment.
+**Goal**: (a) Design a theoretically consistent anchor-guided diffusion framework; (b) adopt a trajectory representation better suited to diffusion models; (c) achieve real-time closed-loop deployment.
 
-**Starting Point**: The planning task is formulated as a diffusion bridge—learning a diffusion process that explicitly connects anchor trajectories to refined planning trajectories, guaranteeing perfect symmetry between the forward and reverse processes.
+**Key Insight**: The planning task is formulated as a diffusion bridge—learning a diffusion process that explicitly connects anchor trajectories to refined planning trajectories, guaranteeing perfect symmetry between the forward and reverse processes.
 
 **Core Idea**: Replace truncated diffusion with a diffusion bridge, making anchor guidance an intrinsic component of the diffusion model rather than an external workaround.
 

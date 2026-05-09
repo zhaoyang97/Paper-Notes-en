@@ -37,9 +37,9 @@ The 3D medical image self-supervised learning (SSL) field suffers from severe fr
 
 **Neglected fine-tuning strategies**: Fine-tuning strategy has a substantial impact on downstream performance of pre-trained models, yet systematic comparisons are largely absent in prior work.
 
-**Root Cause**: How can the true capabilities of 3D medical image SSL methods be fairly evaluated within a unified framework?
+**Key Challenge**: How can the true capabilities of 3D medical image SSL methods be fairly evaluated within a unified framework?
 
-**Starting Point**: Address the problem from three dimensions — data, benchmark, and code — by providing the largest open dataset, a unified architecture/training/evaluation framework, and fully open-sourced pre-trained weights.
+**Key Insight**: Address the problem from three dimensions — data, benchmark, and code — by providing the largest open dataset, a unified architecture/training/evaluation framework, and fully open-sourced pre-trained weights.
 
 ## Method
 

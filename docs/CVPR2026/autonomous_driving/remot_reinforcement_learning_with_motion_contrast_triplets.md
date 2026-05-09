@@ -29,15 +29,15 @@ This paper proposes ReMoT, a unified training paradigm that automatically constr
 
 ## Background & Motivation
 
-**State of the Field**: Vision-language models (VLMs) such as GPT-4o, Claude, Gemini, and Qwen have evolved into general-purpose perception systems, demonstrating strong performance in static image understanding and semantic alignment, and have been deployed in critical domains including AIGC, embodied intelligence, and autonomous driving.
+**Background**: Vision-language models (VLMs) such as GPT-4o, Claude, Gemini, and Qwen have evolved into general-purpose perception systems, demonstrating strong performance in static image understanding and semantic alignment, and have been deployed in critical domains including AIGC, embodied intelligence, and autonomous driving.
 
 **Limitations of Prior Work**: (1) Current mainstream VLMs exhibit fundamental deficiencies in spatiotemporal consistency reasoning—frequently confusing camera rotation with object motion, misjudging gripper states, and incorrectly inferring motion direction; (2) existing training data predominantly consists of static image-text pairs, lacking explicit modeling of fine-grained motion attributes; (3) approaches such as architectural modifications or data augmentation provide only sporadic patches and cannot systematically address the problem.
 
-**Root Cause**: VLMs excel at visual-semantic alignment but lack deep understanding of spatial-physical regularities, while existing methods address data, training, and evaluation independently without a unified framework.
+**Key Challenge**: VLMs excel at visual-semantic alignment but lack deep understanding of spatial-physical regularities, while existing methods address data, training, and evaluation independently without a unified framework.
 
-**Paper Goals**: To systematically address VLM spatiotemporal reasoning deficiencies across three dimensions: data construction, training optimization, and evaluation benchmarks.
+**Goal**: To systematically address VLM spatiotemporal reasoning deficiencies across three dimensions: data construction, training optimization, and evaluation benchmarks.
 
-**Starting Point**: (1) Automatically constructing motion contrast triplets from video meta-annotations (camera pose matrices, robot action logs); (2) replacing SFT with GRPO for policy learning optimization; (3) designing a composite reward incorporating logical consistency verification.
+**Key Insight**: (1) Automatically constructing motion contrast triplets from video meta-annotations (camera pose matrices, robot action logs); (2) replacing SFT with GRPO for policy learning optimization; (3) designing a composite reward incorporating logical consistency verification.
 
 **Core Idea**: Formalizing motion understanding as structured learning over contrast triplets, and achieving systematic improvement in VLM spatiotemporal reasoning through rule-driven data construction and GRPO optimization.
 
@@ -160,15 +160,15 @@ This paper proposes ReMoT, a unified training paradigm that constructs the large
 
 ## Background & Motivation
 
-**State of the Field**: VLMs (e.g., GPT-4o, Claude-Sonnet-4.5, Gemini-2.5-Pro) have become general-purpose perception systems, yet in critical domains involving physical world interaction (autonomous driving, embodied intelligence, robotic manipulation), models must go beyond static single-frame perception to perform spatiotemporal consistency reasoning.
+**Background**: VLMs (e.g., GPT-4o, Claude-Sonnet-4.5, Gemini-2.5-Pro) have become general-purpose perception systems, yet in critical domains involving physical world interaction (autonomous driving, embodied intelligence, robotic manipulation), models must go beyond static single-frame perception to perform spatiotemporal consistency reasoning.
 
 **Limitations of Prior Work**: (1) State-of-the-art VLMs frequently confuse camera rotation with object motion, misjudge gripper states, and incorrectly infer character motion direction—even GPT-4o and Qwen3-VL struggle to correctly reason about cross-frame physical changes. (2) Existing training data is predominantly composed of static image-text pairs, lacking explicit modeling of fine-grained motion attributes. (3) Prior remediation approaches (architectural modifications, data augmentation) are fragmented local patches, lacking a systematic solution spanning the data-training-evaluation pipeline.
 
-**Root Cause**: VLMs are proficient at visual-semantic alignment but exhibit systematic deficiencies in spatiotemporal consistency—capable of recognizing "what" but unable to correctly reason about "how things change."
+**Key Challenge**: VLMs are proficient at visual-semantic alignment but exhibit systematic deficiencies in spatiotemporal consistency—capable of recognizing "what" but unable to correctly reason about "how things change."
 
-**Paper Goals**: To systematically enhance VLMs' fine-grained spatiotemporal reasoning capability across three dimensions: data construction, training paradigm, and evaluation benchmark.
+**Goal**: To systematically enhance VLMs' fine-grained spatiotemporal reasoning capability across three dimensions: data construction, training paradigm, and evaluation benchmark.
 
-**Starting Point**: Motion contrast triplets force models to learn fine-grained motion discrimination rather than relying on surface-level visual patterns; GRPO replaces SFT to improve reasoning consistency.
+**Key Insight**: Motion contrast triplets force models to learn fine-grained motion discrimination rather than relying on surface-level visual patterns; GRPO replaces SFT to improve reasoning consistency.
 
 **Core Idea**: Rule-driven motion contrast data + GRPO reinforcement learning = systematic repair of VLM spatiotemporal reasoning deficiencies.
 

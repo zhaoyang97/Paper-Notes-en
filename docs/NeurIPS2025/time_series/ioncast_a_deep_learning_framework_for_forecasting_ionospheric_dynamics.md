@@ -29,15 +29,15 @@ This paper proposes IonCast, a GraphCast-inspired graph neural network framework
 
 ## Background & Motivation
 
-**State of the Field**: The ionosphere (approximately 50–1500 km altitude) is a critical component of near-Earth space, whose variability directly affects GNSS navigation accuracy, high-frequency communications, and aviation operations. JPL provides global ionospheric TEC maps (GIM) at a 15-minute temporal resolution.
+**Background**: The ionosphere (approximately 50–1500 km altitude) is a critical component of near-Earth space, whose variability directly affects GNSS navigation accuracy, high-frequency communications, and aviation operations. JPL provides global ionospheric TEC maps (GIM) at a 15-minute temporal resolution.
 
 **Limitations of Prior Work**: Traditional empirical models such as IRI and physics-based models such as GITM have well-documented inherent limitations; existing ML approaches are largely based on XGBoost, MLP, or BiLSTM architectures constrained to local regions, and are unable to handle multi-source heterogeneous data at a global scale.
 
-**Root Cause**: Accurately integrating heterogeneous multi-source data (solar wind, geomagnetic indices, orbital mechanics, etc.) at a global scale while performing reliable short-to-long-term forecasting exceeds the capacity of traditional methods and simple ML models.
+**Key Challenge**: Accurately integrating heterogeneous multi-source data (solar wind, geomagnetic indices, orbital mechanics, etc.) at a global scale while performing reliable short-to-long-term forecasting exceeds the capacity of traditional methods and simple ML models.
 
-**Paper Goals**: To construct an advanced ML framework capable of handling heterogeneous multi-source data, operating at a global scale, and performing reliable nowcasting and forecasting of ionospheric dynamics.
+**Goal**: To construct an advanced ML framework capable of handling heterogeneous multi-source data, operating at a global scale, and performing reliable nowcasting and forecasting of ionospheric dynamics.
 
-**Starting Point**: The GraphCast architecture from the numerical weather prediction domain is adopted and adapted to the task of ionospheric dynamics forecasting.
+**Key Insight**: The GraphCast architecture from the numerical weather prediction domain is adopted and adapted to the task of ionospheric dynamics forecasting.
 
 **Core Idea**: A GraphCast-inspired spherical graph network encodes global TEC maps alongside multi-source physics-driven data, enabling autoregressive prediction of ionospheric evolution.
 

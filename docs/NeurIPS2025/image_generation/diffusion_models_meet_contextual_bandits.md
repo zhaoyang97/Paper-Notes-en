@@ -29,9 +29,9 @@ This paper proposes diffusion Thompson Sampling (dTS), which employs a pretraine
 
 ## Background & Motivation
 
-- **State of the Field**: In large-scale action spaces (large $K$), standard exploration strategies such as LinUCB and LinTS face computational or statistical efficiency bottlenecks.
+- **Background**: In large-scale action spaces (large $K$), standard exploration strategies such as LinUCB and LinTS face computational or statistical efficiency bottlenecks.
 - **Limitations of Prior Work**: Correlations among actions are typically ignored; in practice, actions are often related (e.g., similar movies in recommendation systems), and observing one action can provide information about others.
-- **Root Cause**: Diffusion models excel at approximating complex high-dimensional distributions and can encode structured priors over action parameters.
+- **Key Challenge**: Diffusion models excel at approximating complex high-dimensional distributions and can encode structured priors over action parameters.
 - **Core Idea**: A diffusion model is pretrained on offline data to capture the distributional structure of action parameters, serving as an informative prior for Thompson sampling, with efficient posterior updates during online interaction.
 
 ## Method

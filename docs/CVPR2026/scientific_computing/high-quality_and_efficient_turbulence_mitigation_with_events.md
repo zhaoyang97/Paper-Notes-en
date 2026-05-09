@@ -28,13 +28,13 @@ This paper proposes EHETM, the first method to leverage the microsecond temporal
 
 ## Background & Motivation
 
-**State of the Field**: Atmospheric and thermal turbulence are the primary degradation sources in long-range imaging, introducing random refractive-index fluctuations that cause geometric tilt and spatially varying blur. Existing methods (e.g., DATUM) rely on multi-frame sequences captured by conventional cameras to recover stable scene content.
+**Background**: Atmospheric and thermal turbulence are the primary degradation sources in long-range imaging, introducing random refractive-index fluctuations that cause geometric tilt and spatially varying blur. Existing methods (e.g., DATUM) rely on multi-frame sequences captured by conventional cameras to recover stable scene content.
 
 **Limitations of Prior Work**: Multi-frame methods face a **fundamental accuracy–efficiency trade-off**—more frames yield better restoration but incur higher system latency and data overhead. Furthermore, when **dynamic objects** are present, multi-frame methods struggle to distinguish turbulence-induced jitter from genuine object motion.
 
-**Root Cause**: Turbulence mitigation requires substantial temporal redundancy to average out random jitter, yet the frame rate of conventional cameras limits the amount of information obtainable within an acceptable latency budget.
+**Key Challenge**: Turbulence mitigation requires substantial temporal redundancy to average out random jitter, yet the frame rate of conventional cameras limits the amount of information obtainable within an acceptable latency budget.
 
-**Starting Point**: Event cameras asynchronously record brightness changes at microsecond temporal resolution—the motion information contained in a single event window far exceeds that of a conventional frame—enabling high-quality restoration from very few frames.
+**Key Insight**: Event cameras asynchronously record brightness changes at microsecond temporal resolution—the motion information contained in a single event window far exceeds that of a conventional frame—enabling high-quality restoration from very few frames.
 
 **Core Idea**: Two physical phenomena are identified as restoration priors: (1) polarity alternation of turbulence-induced events is correlated with image gradients, providing scene structure cues; (2) dynamic objects form coherent tubular structures in the event stream, providing motion priors.
 

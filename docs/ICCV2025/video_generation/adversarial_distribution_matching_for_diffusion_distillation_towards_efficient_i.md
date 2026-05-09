@@ -28,11 +28,11 @@ This paper proposes the Adversarial Distribution Matching (ADM) framework, which
 
 ## Background & Motivation
 
-1. **State of the Field**: Distribution Matching Distillation (DMD) is a mainstream score distillation approach that compresses teacher diffusion models into efficient one-step/few-step student generators by minimizing the reverse KL divergence.
+1. **Background**: Distribution Matching Distillation (DMD) is a mainstream score distillation approach that compresses teacher diffusion models into efficient one-step/few-step student generators by minimizing the reverse KL divergence.
 2. **Limitations of Prior Work**: DMD relies on reverse KL divergence minimization, which exhibits zero-forcing behavior—driving probability mass in low-density regions toward zero—causing the model to focus on a limited set of dominant modes and thus prone to mode collapse. The ODE/GAN regularization additionally introduced in DMD/DMD2 merely compensates for this trade-off without fundamentally resolving the mode-seeking behavior.
-3. **Root Cause**: Predefined explicit divergence measures (reverse KL, Fisher divergence, etc.) struggle to fully capture the multi-faceted alignment requirements of complex high-dimensional text-conditioned image/video distributions. In one-step distillation, insufficient support overlap between student and teacher distributions leads to gradient explosion or vanishing.
-4. **Paper Goals**: (1) How to bypass the limitations of predefined divergences and achieve more flexible distribution matching? (2) How to provide better initialization for the highly challenging one-step distillation setting?
-5. **Starting Point**: Leveraging the implicit data-driven measure of GANs as a replacement for explicit divergences. Hinge GAN theoretically minimizes the Total Variation Distance (TVD), which is symmetric and bounded, making it more suitable than reverse KL in low-overlap settings.
+3. **Key Challenge**: Predefined explicit divergence measures (reverse KL, Fisher divergence, etc.) struggle to fully capture the multi-faceted alignment requirements of complex high-dimensional text-conditioned image/video distributions. In one-step distillation, insufficient support overlap between student and teacher distributions leads to gradient explosion or vanishing.
+4. **Goal**: (1) How to bypass the limitations of predefined divergences and achieve more flexible distribution matching? (2) How to provide better initialization for the highly challenging one-step distillation setting?
+5. **Key Insight**: Leveraging the implicit data-driven measure of GANs as a replacement for explicit divergences. Hinge GAN theoretically minimizes the Total Variation Distance (TVD), which is symmetric and bounded, making it more suitable than reverse KL in low-overlap settings.
 6. **Core Idea**: Employ a diffusion-based adversarial discriminator to align ODE predictions of real and fake score estimators across different noise levels, achieving implicit, adaptive distribution matching distillation.
 
 ## Method

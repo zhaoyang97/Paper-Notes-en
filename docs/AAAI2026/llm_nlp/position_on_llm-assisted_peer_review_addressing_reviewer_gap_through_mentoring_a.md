@@ -30,15 +30,15 @@ This position paper proposes shifting the role of LLMs in peer review from "auto
 
 ### State of the Field
 
-**State of the Field**: Submission volumes at top venues have exploded (NeurIPS 27,000+, a 10× increase over 10 years; ICLR/ACL growing 20–30% annually), while reviewer resources are severely insufficient.
+**Background**: Submission volumes at top venues have exploded (NeurIPS 27,000+, a 10× increase over 10 years; ICLR/ACL growing 20–30% annually), while reviewer resources are severely insufficient.
 
 **Limitations of Prior Work**: (a) Directly using LLMs to generate reviews introduces fundamental problems including hallucinations, insufficient technical depth, and biased outputs; (b) More critically, there exists a "reviewer capability gap" — the issue is not the quantity of reviewers but the inconsistency in their quality; (c) Automated reviewing risks causing reviewer deskilling.
 
-**Root Cause**: LLMs are needed to improve efficiency, yet directly replacing human reviewers undermines review quality and academic integrity.
+**Key Challenge**: LLMs are needed to improve efficiency, yet directly replacing human reviewers undermines review quality and academic integrity.
 
-**Paper Goals**: Design a human-centered LLM-assisted review framework that enhances reviewer competence rather than replacing reviewers.
+**Goal**: Design a human-centered LLM-assisted review framework that enhances reviewer competence rather than replacing reviewers.
 
-**Starting Point**: Ground the design in five foundational principles (Fidelity, Clarity, Fairness, Proportionality, Constructiveness) and develop two complementary systems — mentoring and feedback.
+**Key Insight**: Ground the design in five foundational principles (Fidelity, Clarity, Fairness, Proportionality, Constructiveness) and develop two complementary systems — mentoring and feedback.
 
 **Core Idea**: LLMs should serve as coaches and quality checkers for reviewers, not as review generators.
 

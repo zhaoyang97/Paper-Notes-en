@@ -29,7 +29,7 @@ This paper proposes Spectral PINNsformer (S-Pformer), which replaces the encoder
 
 ## Background & Motivation
 
-**State of the Field**: Numerical solving of partial differential equations (PDEs) is a core problem in science and engineering. Traditional methods (finite differences, spectral methods) rely on fine grid discretization, incurring high computational costs and difficulty adapting to complex geometries. Physics-Informed Neural Networks (PINNs) embed physical constraints into the loss function to enable mesh-free solving.
+**Background**: Numerical solving of partial differential equations (PDEs) is a core problem in science and engineering. Traditional methods (finite differences, spectral methods) rely on fine grid discretization, incurring high computational costs and difficulty adapting to complex geometries. Physics-Informed Neural Networks (PINNs) embed physical constraints into the loss function to enable mesh-free solving.
 
 **Limitations of Prior Work — Spectral Bias**: Mainstream MLP-based PINNs suffer from severe spectral bias, struggling to learn high-frequency components in PDE solutions and performing poorly on problems with rich multi-scale behavior.
 
@@ -39,7 +39,7 @@ This paper proposes Spectral PINNsformer (S-Pformer), which replaces the encoder
 
 **Redundancy in PINNsformer**: The encoder-decoder design originates from sequence-to-sequence tasks (e.g., translation), but in the PINN setting the input and output share the same structure, making the encoder a source of unnecessary parameter redundancy and computational overhead.
 
-**Paper Goals**: To simultaneously address spectral bias and parameter redundancy by replacing the encoder with Fourier feature embeddings, yielding a more lightweight and capable Transformer PINN.
+**Goal**: To simultaneously address spectral bias and parameter redundancy by replacing the encoder with Fourier feature embeddings, yielding a more lightweight and capable Transformer PINN.
 
 ## Method
 

@@ -28,15 +28,15 @@ Addressing three core challenges in multimodal multi-turn VLM dialogues—concea
 
 ## Background & Motivation
 
-**State of the Field**: VLMs are being deployed at scale in interactive scenarios such as intelligent assistants and education, making safety concerns increasingly prominent. Existing content moderation tools (e.g., BingoGuard, WildGuard, LlamaGuard) have achieved preliminary progress but are primarily designed for single-turn or single-modality settings.
+**Background**: VLMs are being deployed at scale in interactive scenarios such as intelligent assistants and education, making safety concerns increasingly prominent. Existing content moderation tools (e.g., BingoGuard, WildGuard, LlamaGuard) have achieved preliminary progress but are primarily designed for single-turn or single-modality settings.
 
 **Limitations of Prior Work**: Multimodal multi-turn dialogues exhibit three distinctive risk characteristics that render existing moderation methods ineffective. (1) **Concealed malicious intent**—attackers open with benign queries and escalate gradually, dispersing objectives across scattered textual and visual cues in multimodal contexts, with harm amplified substantially through cross-turn association; (2) **Cumulative contextual risk**—attackers decompose their ultimate goal across multiple turns, exploiting the model's "local compliance" to progressively expand the attack surface, with risk accumulating as the dialogue advances; (3) **Cross-modal joint risk**—even apparently normal image–text pairings may trigger unsafe generation, and cross-modal associations can be exploited to elicit harmful outputs.
 
-**Root Cause**: Existing moderation methods either address only single turns or handle only a single modality, and are therefore unable to capture risk accumulated over multi-turn context or joint image–text attacks. Moreover, a severe scarcity of multimodal multi-turn dialogue safety datasets constrains research in this direction.
+**Key Challenge**: Existing moderation methods either address only single turns or handle only a single modality, and are therefore unable to capture risk accumulated over multi-turn context or joint image–text attacks. Moreover, a severe scarcity of multimodal multi-turn dialogue safety datasets constrains research in this direction.
 
-**Paper Goals**: Three components are needed: (1) an annotated dataset covering multi-dimensional risks; (2) a red-teaming framework capable of automatically and efficiently generating adversarial dialogues; and (3) a safety auditing model that understands full conversational context and cross-modal signals.
+**Goal**: Three components are needed: (1) an annotated dataset covering multi-dimensional risks; (2) a red-teaming framework capable of automatically and efficiently generating adversarial dialogues; and (3) a safety auditing model that understands full conversational context and cross-modal signals.
 
-**Starting Point**: A unified data–attack–defense pipeline is adopted, yielding the MMDS dataset, the MMRT red-teaming framework, and the LLaVAShield auditing model.
+**Key Insight**: A unified data–attack–defense pipeline is adopted, yielding the MMDS dataset, the MMRT red-teaming framework, and the LLaVAShield auditing model.
 
 **Core Idea**: MCTS is used to efficiently explore attack trajectories and generate safety data, enabling the training of a multimodal multi-turn dialogue safety model that simultaneously audits user inputs and assistant responses.
 

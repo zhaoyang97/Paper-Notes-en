@@ -29,13 +29,13 @@ This paper proposes OpenHOI, a framework that leverages the commonsense reasonin
 
 ## Background & Motivation
 
-**State of the Field**: Hand-object interaction (HOI) synthesis is critical for VR/AR, robotic grasping, and animation. Existing methods are typically trained on closed object sets and generalize poorly to novel objects.
+**Background**: Hand-object interaction (HOI) synthesis is critical for VR/AR, robotic grasping, and animation. Existing methods are typically trained on closed object sets and generalize poorly to novel objects.
 
 **Limitations of Prior Work**: (1) Large amounts of hand-object contact data are required, which are difficult to collect; (2) prior knowledge of novel object geometry is lacking; (3) learning-based methods degrade severely on out-of-distribution objects.
 
-**Root Cause**: Closed-set training vs. open-world deployment — how to generate plausible grasp poses for unseen objects?
+**Key Challenge**: Closed-set training vs. open-world deployment — how to generate plausible grasp poses for unseen objects?
 
-**Starting Point**: MLLMs (e.g., GPT-4V) encode rich object commonsense — they "know" that a cup handle affords a power grasp and that a smooth egg requires a precision grasp. This commonsense reasoning can guide grasp synthesis.
+**Key Insight**: MLLMs (e.g., GPT-4V) encode rich object commonsense — they "know" that a cup handle affords a power grasp and that a smooth egg requires a precision grasp. This commonsense reasoning can guide grasp synthesis.
 
 **Core Idea**: MLLM infers contact regions and grasp types → conditioned grasp pose generation → physics-based optimization for physical plausibility.
 

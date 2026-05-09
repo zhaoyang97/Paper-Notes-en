@@ -28,15 +28,15 @@ content_hash: 283dceb7fa7062ad
 The first framework for feed-forward prediction of 3DGS and physical attributes (material category, Young's modulus, Poisson's ratio) from a single image. A two-stage training pipeline (supervised pretraining + DPO preference fine-tuning) entirely bypasses SDS and differentiable physics engines. Combined with the 50K+ PhysAssets dataset, the method generates high-fidelity 4D physical simulations within one minute, surpassing per-scene optimization methods in both CLIP similarity and human preference rate.
 
 ## Background & Motivation
-**State of the Field**: Physical 4D synthesis conventionally requires multi-view 3DGS reconstruction (hours), manual physical parameter specification, and subsequent simulation. SDS-based methods (OmniPhysGS/DreamPhysics) attempt to distill physical priors from video models, but require differentiable physics engines, making them computationally expensive and unstable.
+**Background**: Physical 4D synthesis conventionally requires multi-view 3DGS reconstruction (hours), manual physical parameter specification, and subsequent simulation. SDS-based methods (OmniPhysGS/DreamPhysics) attempt to distill physical priors from video models, but require differentiable physics engines, making them computationally expensive and unstable.
 
 **Limitations of Prior Work**: Three key bottlenecks: (a) dependence on pre-reconstructed 3DGS (dense multi-view inputs and per-scene optimization); (b) physical attributes either manually specified or SDS-optimized (inflexible/unstable); (c) naive coupling of 3DGS and physics modules that ignores physical cues embedded in appearance.
 
-**Root Cause**: Per-scene optimization inherently lacks generalizability — each new scene must be processed from scratch. SDS is data-driven but requires a differentiable physics engine and remains unstable.
+**Key Challenge**: Per-scene optimization inherently lacks generalizability — each new scene must be processed from scratch. SDS is data-driven but requires a differentiable physics engine and remains unstable.
 
-**Paper Goals**: Can per-scene optimization be entirely bypassed by learning a generative model that directly synthesizes complete physical 4D simulations from sparse inputs via feed-forward inference?
+**Goal**: Can per-scene optimization be entirely bypassed by learning a generative model that directly synthesizes complete physical 4D simulations from sparse inputs via feed-forward inference?
 
-**Starting Point**: Reframe the problem from "slow iterative reconstruction" to "amortized feed-forward inference" — train a large Transformer on large-scale data to learn generalizable physical priors.
+**Key Insight**: Reframe the problem from "slow iterative reconstruction" to "amortized feed-forward inference" — train a large Transformer on large-scale data to learn generalizable physical priors.
 
 **Core Idea**: A feed-forward Transformer that jointly predicts 3DGS and physical attributes, combined with probabilistic physical modeling and DPO preference fine-tuning (instead of SDS), completing 4D inference in a single forward pass.
 

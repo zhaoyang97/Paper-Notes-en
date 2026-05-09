@@ -29,7 +29,7 @@ This paper proposes Inpaint4Drag, which decomposes drag-based image editing into
 
 ## Background & Motivation
 
-- **State of the Field**: Methods such as DragGAN and DragDiffusion enable intuitive image manipulation via mouse drag interactions.
+- **Background**: Methods such as DragGAN and DragDiffusion enable intuitive image manipulation via mouse drag interactions.
 - **Limitations of Prior Work**: Three fundamental limitations exist in current approaches:
   1. **Insufficient precision**: Latent-space manipulation downsamples control points from 512×512 to 32×32, resulting in significant loss of spatial accuracy.
   2. **Poor interactivity**: The generation process provides no immediate visual feedback, forcing users into repeated trial-and-error cycles.

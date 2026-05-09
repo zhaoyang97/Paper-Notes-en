@@ -29,17 +29,17 @@ Ours proposes DiFlowDubber, an automated video dubbing framework based on **Disc
 
 ## Background & Motivation
 
-**State of the Field**: Video-to-Speech (V2C) dubbing has extensive applications in film production, multimedia creation, and assistive voice technologies. It requires generating natural speech that preserves the speaker's timbre while ensuring synchrony with lip movements and conveying visual emotions.
+**Background**: Video-to-Speech (V2C) dubbing has extensive applications in film production, multimedia creation, and assistive voice technologies. It requires generating natural speech that preserves the speaker's timbre while ensuring synchrony with lip movements and conveying visual emotions.
 
 **Limitations of Prior Work**:
    - Methods trained directly on limited dubbing datasets struggle to produce expressive prosody and high audio quality.
    - Two-stage methods (TTS pre-training followed by adaptation) can leverage large-scale corpora but fail to simultaneously guarantee prosodic expression and lip-sync.
 
-**Root Cause**: Speaker2Dubber only adapts the phoneme encoder, failing to fully utilize the prosody and acoustic modeling capabilities of TTS. ProDubber introduces prosody enhancement but relies on a duration predictor to estimate lip movement, which is **not constrained by actual video length**, leading to poor synchronization (low LSE scores).
+**Key Challenge**: Speaker2Dubber only adapts the phoneme encoder, failing to fully utilize the prosody and acoustic modeling capabilities of TTS. ProDubber introduces prosody enhancement but relies on a duration predictor to estimate lip movement, which is **not constrained by actual video length**, leading to poor synchronization (low LSE scores).
 
-**Paper Goals**: Design a framework that fully utilizes the prosody, content, and acoustic modeling capabilities of large-scale TTS pre-training, adapting them to video dubbing to ensure accurate pronunciation, naturalness, and precise lip-sync.
+**Goal**: Design a framework that fully utilizes the prosody, content, and acoustic modeling capabilities of large-scale TTS pre-training, adapting them to video dubbing to ensure accurate pronunciation, naturalness, and precise lip-sync.
 
-**Starting Point**: Use FACodec to decompose speech into three types of discrete tokens: prosody, content, and acoustics. Different attributes are modeled separately—prosody and acoustics via generative DFM, and content via a deterministic architecture.
+**Key Insight**: Use FACodec to decompose speech into three types of discrete tokens: prosody, content, and acoustics. Different attributes are modeled separately—prosody and acoustics via generative DFM, and content via a deterministic architecture.
 
 **Core Idea**: Two-stage training pipeline + Discrete Flow Matching backbone + Facial expression-to-prosody mapping + Dual-alignment synchronizer.
 

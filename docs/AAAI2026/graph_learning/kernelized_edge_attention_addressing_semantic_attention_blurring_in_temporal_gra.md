@@ -29,15 +29,15 @@ This paper proposes KEAT (Kernelized Edge Attention for Temporal Graphs), which 
 
 ## Background & Motivation
 
-**State of the Field**: Temporal Graph Neural Networks (TGNNs) aim to capture the temporally evolving structure of interactions in dynamic graphs. Representative methods such as TGN (Temporal Graph Network) and DyGFormer (Dynamic Graph Transformer) incorporate temporal information via time encodings or dedicated architectural designs.
+**Background**: Temporal Graph Neural Networks (TGNNs) aim to capture the temporally evolving structure of interactions in dynamic graphs. Representative methods such as TGN (Temporal Graph Network) and DyGFormer (Dynamic Graph Transformer) incorporate temporal information via time encodings or dedicated architectural designs.
 
 **Limitations of Prior Work**: Existing TGNNs entangle node representations and edge features when computing attention, failing to distinguish their fundamentally different temporal behaviors: (1) node embeddings change slowly—they aggregate long-term structural context and reflect persistent node properties; (2) edge features change rapidly—each edge corresponds to a timestamped interaction (e.g., a message, transaction, or transfer) and is transient yet information-rich. This mismatch gives rise to *semantic attention blurring*, where attention weights cannot differentiate slowly drifting node states from rapidly changing edge interactions.
 
-**Root Cause**: Nodes and edges operate on different temporal scales, yet the attention computation conflates them—slowly evolving node embeddings dilute the fine-grained temporal dependency information carried by rapidly changing edge features.
+**Key Challenge**: Nodes and edges operate on different temporal scales, yet the attention computation conflates them—slowly evolving node embeddings dilute the fine-grained temporal dependency information carried by rapidly changing edge features.
 
-**Paper Goals**: To design an attention mechanism that preserves the distinct roles of nodes and edges, enabling more accurate, interpretable, and temporally aware correlation computation.
+**Goal**: To design an attention mechanism that preserves the distinct roles of nodes and edges, enabling more accurate, interpretable, and temporally aware correlation computation.
 
-**Starting Point**: Rather than jointly processing nodes and edges within attention, the paper proposes independently modulating the temporal weights of edge features using continuous-time kernel functions, so that more recent edge interactions receive higher weights.
+**Key Insight**: Rather than jointly processing nodes and edges within attention, the paper proposes independently modulating the temporal weights of edge features using continuous-time kernel functions, so that more recent edge interactions receive higher weights.
 
 **Core Idea**: Replace standard mixed attention with kernelized edge attention that uses temporal convolution kernels to decouple the roles of nodes and edges.
 

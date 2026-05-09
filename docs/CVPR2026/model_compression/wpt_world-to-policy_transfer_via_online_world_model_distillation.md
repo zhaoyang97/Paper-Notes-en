@@ -27,11 +27,11 @@ content_hash: c39aad851e186c37
 WPT proposes a world-to-policy transfer training paradigm that injects future-predictive knowledge from a world model into a teacher policy via a trainable reward model, then transfers this knowledge to a lightweight student policy through policy distillation and world reward distillation, achieving a closed-loop driving score of 79.23 with a 4.9× inference speedup.
 
 ## Background & Motivation
-1. **State of the Field**: World models are widely used in autonomous driving to capture spatiotemporal dynamics and predict future scenes, but existing methods either suffer from tight runtime coupling or rely on offline reward signals.
+1. **Background**: World models are widely used in autonomous driving to capture spatiotemporal dynamics and predict future scenes, but existing methods either suffer from tight runtime coupling or rely on offline reward signals.
 2. **Limitations of Prior Work**: Direct integration of world models incurs severe inference latency; using world models as simulators introduces dependency on simulator fidelity.
-3. **Root Cause**: World models provide valuable future-predictive knowledge, yet their computational cost is prohibitive at deployment time.
-4. **Paper Goals**: Leverage world model knowledge during training while deploying only a lightweight policy network, realizing the paradigm of "use the world model at training time, discard it at deployment."
-5. **Starting Point**: Use a reward model as a bridge to connect world model predictions with the policy's trajectory selection, then distill this capability into a student.
+3. **Key Challenge**: World models provide valuable future-predictive knowledge, yet their computational cost is prohibitive at deployment time.
+4. **Goal**: Leverage world model knowledge during training while deploying only a lightweight policy network, realizing the paradigm of "use the world model at training time, discard it at deployment."
+5. **Key Insight**: Use a reward model as a bridge to connect world model predictions with the policy's trajectory selection, then distill this capability into a student.
 6. **Core Idea**: A trainable interactive reward model evaluates the consistency between candidate trajectories and world model predictions → the teacher policy learns future-aware planning → policy distillation + world reward distillation transfer this to the student.
 
 ## Method

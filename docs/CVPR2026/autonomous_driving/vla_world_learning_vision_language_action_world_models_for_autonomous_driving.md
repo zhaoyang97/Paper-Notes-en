@@ -28,15 +28,15 @@ VLA-World unifies the predictive imagination of world models with the reflective
 
 ## Background & Motivation
 
-**State of the Field**: End-to-end autonomous driving is dominated by two paradigms—VLA models (which unify perception, reasoning, and control but lack spatiotemporal modeling) and world models (which predict environmental evolution but cannot reason about or evaluate imagined futures).
+**Background**: End-to-end autonomous driving is dominated by two paradigms—VLA models (which unify perception, reasoning, and control but lack spatiotemporal modeling) and world models (which predict environmental evolution but cannot reason about or evaluate imagined futures).
 
 **Limitations of Prior Work**: VLA models lack explicit motion modeling for dynamic traffic participants; they focus solely on the ego vehicle's trajectory and cannot anticipate the evolution of complex scenes. World models rely on large-scale visual data to learn prior distributions but fail to capture causal relationships—they simulate rather than understand the world.
 
-**Root Cause**: The ability to predict the future (the strength of world models) and the ability to understand and evaluate that future (the strength of VLAs) are isolated in two separate frameworks.
+**Key Challenge**: The ability to predict the future (the strength of world models) and the ability to understand and evaluate that future (the strength of VLAs) are isolated in two separate frameworks.
 
-**Paper Goals**: To construct a unified autonomous driving framework capable of both imagining future scenes and performing reflective reasoning over those imagined futures.
+**Goal**: To construct a unified autonomous driving framework capable of both imagining future scenes and performing reflective reasoning over those imagined futures.
 
-**Starting Point**: The analogy to human driving—cruising relies on intuitive imagination, but when a pedestrian suddenly crosses the road, the driver immediately switches to a reflective reasoning mode.
+**Key Insight**: The analogy to human driving—cruising relies on intuitive imagination, but when a pedestrian suddenly crosses the road, the driver immediately switches to a reflective reasoning mode.
 
 **Core Idea**: A short-term predicted trajectory first guides the generation of future frames; the model then reasons over its own generated frames to refine the final trajectory, forming a closed "imagine–reflect" loop.
 

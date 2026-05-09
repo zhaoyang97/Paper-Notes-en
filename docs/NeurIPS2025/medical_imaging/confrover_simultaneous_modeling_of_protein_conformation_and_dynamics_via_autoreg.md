@@ -30,11 +30,11 @@ ConfRover proposes an autoregressive framework that factorizes protein MD trajec
 
 ## Background & Motivation
 
-**State of the Field**: Protein conformational dynamics are essential for understanding biological function. Molecular dynamics (MD) simulation is the gold standard for studying conformational changes, yet it is computationally prohibitive and prone to becoming trapped in local energy minima. The emergence of large-scale MD datasets such as ATLAS has motivated the development of deep generative model alternatives.
+**Background**: Protein conformational dynamics are essential for understanding biological function. Molecular dynamics (MD) simulation is the gold standard for studying conformational changes, yet it is computationally prohibitive and prone to becoming trapped in local energy minima. The emergence of large-scale MD datasets such as ATLAS has motivated the development of deep generative model alternatives.
 
 **Three Fragmented Lines of Existing Methods**: (a) Trajectory simulation methods (MDGen, Timewarp, etc.) capture temporal dependencies but cannot directly sample time-independent conformations; (b) conformational distribution learning methods (AlphaFlow, ConfDiff, BioEmu) can sample independent conformations but completely discard temporal information; (c) conformational interpolation methods require training separate models and have only been validated on small proteins.
 
-**Root Cause**: All three task types fundamentally stem from the same physical principle—sampling of protein conformational space—yet existing methods treat them in isolation. MDGen's non-autoregressive design limits flexibility (fixed length, separate models per task), and while GST adopts autoregression, it performs deterministic prediction and cannot capture trajectory distributions.
+**Key Challenge**: All three task types fundamentally stem from the same physical principle—sampling of protein conformational space—yet existing methods treat them in isolation. MDGen's non-autoregressive design limits flexibility (fixed length, separate models per task), and while GST adopts autoregression, it performs deterministic prediction and cannot capture trajectory distributions.
 
 **Key Observation**: Applying autoregressive factorization to MD trajectories $\mathbf{x}^{1:L}$, different conditioning settings naturally correspond to different tasks—full conditioning = trajectory simulation, no conditioning ($L=1$) = independent sampling, and conditioning on start and end frames = interpolation. This unified perspective draws inspiration from analogous ideas in sequence models for text infilling.
 

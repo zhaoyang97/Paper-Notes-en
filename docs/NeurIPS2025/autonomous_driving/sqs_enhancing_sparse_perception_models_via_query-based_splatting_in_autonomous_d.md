@@ -32,7 +32,7 @@ Visual perception models for autonomous driving fall into two major paradigms: d
 
 However, supervised approaches rely heavily on costly and time-consuming precise annotations, leaving large amounts of unlabeled data underutilized. Existing pre-training methods (e.g., UniPAD, GaussianPretrain, VisionPAD) all depend on dense BEV or voxel representations and cannot be directly applied to SPMs. The root cause lies in the fact that implicit queries in sparse query models lack explicit spatial positions and semantic meanings, making rendering-based pre-training methods inapplicable without modification.
 
-**Starting Point**: SQS introduces a set of learnable Gaussian queries. During pre-training, a 3D Gaussian splatting mechanism dynamically predicts Gaussian attributes and reconstructs multi-view images and depth maps, enabling sparse queries to learn fine-grained 3D geometric representations. After pre-training, a query interaction module fuses the learned Gaussian queries with downstream task queries.
+**Key Insight**: SQS introduces a set of learnable Gaussian queries. During pre-training, a 3D Gaussian splatting mechanism dynamically predicts Gaussian attributes and reconstructs multi-view images and depth maps, enabling sparse queries to learn fine-grained 3D geometric representations. After pre-training, a query interaction module fuses the learned Gaussian queries with downstream task queries.
 
 ## Method
 

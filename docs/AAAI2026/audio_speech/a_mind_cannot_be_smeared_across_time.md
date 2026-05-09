@@ -28,15 +28,15 @@ This paper formally proves that whether a machine possesses consciousness depend
 
 ## Background & Motivation
 
-**State of the Field**: Machine consciousness is a fundamentally open problem in AI. Stack Theory investigates necessary and sufficient conditions for consciousness by formalizing the abstract layers of cognitive processes. Global Workspace Theory, Integrated Information Theory, and related frameworks all emphasize some form of "unity" or "integration" in conscious experience.
+**Background**: Machine consciousness is a fundamentally open problem in AI. Stack Theory investigates necessary and sufficient conditions for consciousness by formalizing the abstract layers of cognitive processes. Global Workspace Theory, Integrated Information Theory, and related frameworks all emphasize some form of "unity" or "integration" in conscious experience.
 
 **Limitations of Prior Work**: Most existing frameworks discussing machine consciousness focus on *what* is computed (functional equivalence) while neglecting the temporal dimension of *when* it is computed. A system may be behaviorally equivalent to a conscious system at the macro level, yet its micro-level temporal structure can differ entirely—what appears as a unified "moment" at a higher layer may, at the lower level, be distributed across distinct time points.
 
-**Root Cause**: The *Temporal Gap* problem—conscious experience feels unified and simultaneous, yet sequentially or time-multiplexed computational systems do not, at any given objective time slice, contain the full conjunction of experience. If the constituents of conscious experience must be synchronized in objective time, sequential systems cannot realize consciousness.
+**Key Challenge**: The *Temporal Gap* problem—conscious experience feels unified and simultaneous, yet sequentially or time-multiplexed computational systems do not, at any given objective time slice, contain the full conjunction of experience. If the constituents of conscious experience must be synchronized in objective time, sequential systems cannot realize consciousness.
 
-**Paper Goals**: To formalize the Temporal Gap problem, prove that the existential temporal realization operator $\Diamond_\Delta$ does not preserve conjunction, and distinguish two stances toward consciousness—"Chord" (requiring objective co-instantiation) and "Arpeggio" (requiring only occurrence within a window).
+**Goal**: To formalize the Temporal Gap problem, prove that the existential temporal realization operator $\Diamond_\Delta$ does not preserve conjunction, and distinguish two stances toward consciousness—"Chord" (requiring objective co-instantiation) and "Arpeggio" (requiring only occurrence within a window).
 
-**Starting Point**: A temporal-semantic module is added to Stack Theory, introducing layer-aware time, window contexts, and temporal lifting operators; algebraic laws are then used to rigorously prove the non-commutativity between "window satisfaction" and "conjunction."
+**Key Insight**: A temporal-semantic module is added to Stack Theory, introducing layer-aware time, window contexts, and temporal lifting operators; algebraic laws are then used to rigorously prove the non-commutativity between "window satisfaction" and "conjunction."
 
 **Core Idea**: Stack Theory is extended to formally prove that $\Diamond_\Delta(A \wedge B) \not\equiv \Diamond_\Delta A \wedge \Diamond_\Delta B$. A system may realize all "constituents" of consciousness separately within a temporal window, yet never realize their conjunction at the same objective moment. Under the Chord assumption, software consciousness on strictly sequential hardware is impossible—the hardware architecture itself imposes an ineliminable constraint.
 

@@ -27,15 +27,15 @@ content_hash: bf611405c5af38c1
 This paper proposes SynPrune — the first syntax-aware membership inference attack (MIA) method for code. By identifying 47 Python syntactic conventions and pruning syntactically determined tokens (retaining only tokens that reflect authorial style) when computing MIA scores, SynPrune achieves an average AUROC improvement of 15.4%, enabling effective detection of pretraining data attribution in code LLMs.
 
 ## Background & Motivation
-**State of the Field**: The coding capabilities of code LLMs (Pythia, GPT-Neo, StableLM, etc.) derive from large-scale training on open-source code. Membership inference attacks (MIA) are a core technique for detecting whether specific data was included in a training set. Existing methods include shadow model approaches (GotCha), synonym substitution (Mattern), low-probability token detection (MIN-K%), and token frequency calibration (Zhang), but all treat code as plain text.
+**Background**: The coding capabilities of code LLMs (Pythia, GPT-Neo, StableLM, etc.) derive from large-scale training on open-source code. Membership inference attacks (MIA) are a core technique for detecting whether specific data was included in a training set. Existing methods include shadow model approaches (GotCha), synonym substitution (Mattern), low-probability token detection (MIN-K%), and token frequency calibration (Zhang), but all treat code as plain text.
 
 **Limitations of Prior Work**: (a) Duan et al. found that existing MIAs on LLMs perform only marginally better than random guessing; (b) code copyright disputes are increasing (e.g., GPL violation lawsuits have precedent), yet MIA research specifically targeting code remains scarce; (c) existing MIAs ignore a critical property of code — many tokens are dictated by syntactic rules (e.g., a colon must follow a function definition; indentation is mandated by PEP8), and these tokens exhibit high prediction probability regardless of whether the code was in the training set, contributing noise rather than signal to membership inference.
 
-**Root Cause**: A large proportion of tokens in code (parentheses, colons, indentation, keyword collocations, etc.) appear as a necessary consequence of programming language syntax rules and do not reflect authorial identity. Nevertheless, existing MIAs treat all tokens with equal weight, diluting the truly discriminative signal.
+**Key Challenge**: A large proportion of tokens in code (parentheses, colons, indentation, keyword collocations, etc.) appear as a necessary consequence of programming language syntax rules and do not reflect authorial identity. Nevertheless, existing MIAs treat all tokens with equal weight, diluting the truly discriminative signal.
 
-**Paper Goals**: To extract tokens that genuinely reflect "authorial creative intent" in code, excluding syntactically determined tokens, thereby improving the detection power of code MIA.
+**Goal**: To extract tokens that genuinely reflect "authorial creative intent" in code, excluding syntactically determined tokens, thereby improving the detection power of code MIA.
 
-**Starting Point**: The observation that code = author logic + language syntax. The syntactic convention component is deterministic (e.g., `for x in` must be followed by an iterable; function definitions use `def` followed by `(`), and these tokens carry no membership information.
+**Key Insight**: The observation that code = author logic + language syntax. The syntactic convention component is deterministic (e.g., `for x in` must be followed by an iterable; function definitions use `def` followed by `(`), and these tokens carry no membership information.
 
 **Core Idea**: Prune tokens whose appearance is syntactically "inevitable," and perform membership inference using only the log-probabilities of author-characteristic tokens, substantially improving discriminability.
 

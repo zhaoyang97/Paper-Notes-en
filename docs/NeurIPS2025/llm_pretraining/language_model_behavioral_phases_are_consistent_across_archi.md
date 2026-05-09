@@ -29,15 +29,15 @@ Through systematic analysis of over 1,400 language model checkpoints—spanning 
 
 ## Background & Motivation
 
-**State of the Field**: Language models acquire emergent behaviors such as grammatical generation and knowledge reasoning solely through next-token prediction. Prior work has identified abrupt behavioral transitions during training (e.g., sharp performance changes associated with the emergence of induction heads), yet these analyses typically focus on specific sub-networks or target behaviors, lacking a systematic characterization of how overall model behavior evolves throughout training.
+**Background**: Language models acquire emergent behaviors such as grammatical generation and knowledge reasoning solely through next-token prediction. Prior work has identified abrupt behavioral transitions during training (e.g., sharp performance changes associated with the emergence of induction heads), yet these analyses typically focus on specific sub-networks or target behaviors, lacking a systematic characterization of how overall model behavior evolves throughout training.
 
 **Limitations of Prior Work**: (1) Although LM predictions are known to correlate strongly with n-gram probabilities—particularly in early training—the n-gram overfitting phenomenon has only been validated on small-scale models of a single architecture (GPT-2). (2) Semantic similarity has also been shown to correlate with LM predictions, but its independent contribution has never been verified after controlling for n-gram effects. (3) Most critically, whether different architectures (attention-based vs. state-space models vs. modern RNNs) follow the same learning trajectory remains entirely unknown.
 
-**Root Cause**: Is the learning trajectory of language model behavior primarily governed by model-specific details (architecture, data, scale), or by the autoregressive language modeling task itself?
+**Key Challenge**: Is the learning trajectory of language model behavior primarily governed by model-specific details (architecture, data, scale), or by the autoregressive language modeling task itself?
 
-**Paper Goals**: (1) To what extent can three simple heuristics explain LM behavior at any point during training? (2) How does the relationship between these metrics and LM behavior evolve over training? (3) Are these patterns consistent across architectures, datasets, and scales? (4) Does semantic similarity contribute independently of n-gram probability?
+**Goal**: (1) To what extent can three simple heuristics explain LM behavior at any point during training? (2) How does the relationship between these metrics and LM behavior evolve over training? (3) Are these patterns consistent across architectures, datasets, and scales? (4) Does semantic similarity contribute independently of n-gram probability?
 
-**Starting Point**: This work integrates two lines of research—LM overfitting to n-grams of increasing order (Chang et al., 2024) and the correlation between semantic similarity and LM predictions (Michaelov et al., 2024)—unifying them into a "behavioral phases" framework for large-scale controlled analysis.
+**Key Insight**: This work integrates two lines of research—LM overfitting to n-grams of increasing order (Chang et al., 2024) and the correlation between semantic similarity and LM predictions (Michaelov et al., 2024)—unifying them into a "behavioral phases" framework for large-scale controlled analysis.
 
 **Core Idea**: Autoregressive language models inevitably progress through behavioral phases of increasing n-gram overfitting, a regularity that holds universally across architectures, datasets, and scales, suggesting that the learning trajectory is determined primarily by the task itself rather than by model-specific details.
 

@@ -31,7 +31,7 @@ This paper identifies the root cause of object hallucination in MLLMs at the rep
 
 ### State of the Field
 
-**State of the Field**: Object hallucination in MLLMs (i.e., describing objects that do not exist) primarily stems from co-occurrence bias in training data—for example, "dining table" almost always co-occurs with "chair," causing the model to learn spurious correlations. However, prior work has only validated the correlation between co-occurrence frequency and hallucination rate at a **statistical level**, without investigating the underlying mechanisms in the representation space.
+**Background**: Object hallucination in MLLMs (i.e., describing objects that do not exist) primarily stems from co-occurrence bias in training data—for example, "dining table" almost always co-occurs with "chair," causing the model to learn spurious correlations. However, prior work has only validated the correlation between co-occurrence frequency and hallucination rate at a **statistical level**, without investigating the underlying mechanisms in the representation space.
 
 A key finding of this paper: by visualizing object representations across layers of LLaVA via PCA, the authors observe the following:
 
@@ -41,7 +41,7 @@ A key finding of this paper: by visualizing object representations across layers
 
 ### Root Cause
 
-**Root Cause**: After processing by the Projector, representations of high-frequency co-occurring objects cluster sharply together (entanglement emerges).
+**Key Challenge**: After processing by the Projector, representations of high-frequency co-occurring objects cluster sharply together (entanglement emerges).
 
 ### Mechanism
 
@@ -55,7 +55,7 @@ This indicates that the projector is the critical node for bias injection, and o
 
 ### Starting Point
 
-**Paper Goals**: How can the propagation of co-occurrence bias be interrupted at the **representation learning level**, so that the semantic representations of co-occurring objects are disentangled, thereby reducing object hallucination?
+**Goal**: How can the propagation of co-occurrence bias be interrupted at the **representation learning level**, so that the semantic representations of co-occurring objects are disentangled, thereby reducing object hallucination?
 
 ## Method
 

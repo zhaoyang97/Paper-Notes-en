@@ -29,15 +29,15 @@ This paper proposes the HiDrop framework, which conducts a systematic layer-wise
 
 ## Background & Motivation
 
-**State of the Field**: The computational cost of processing visual tokens in MLLMs (e.g., LLaVA) scales quadratically with token count. Visual encoders produce far more tokens than text (e.g., 576 patch tokens), creating a major bottleneck for both inference and training.
+**Background**: The computational cost of processing visual tokens in MLLMs (e.g., LLaVA) scales quadratically with token count. Visual encoders produce far more tokens than text (e.g., 576 patch tokens), creating a major bottleneck for both inference and training.
 
 **Limitations of Prior Work**: Existing visual token pruning methods rest on two fundamental misconceptions: (a) they incorrectly assume that shallow layers are critical multimodal fusion sites requiring dense visual tokens, whereas shallow layers in practice barely process visual tokens and merely propagate them passively; (b) they apply fixed-ratio pyramid or linear pruning schedules (e.g., FastV, PDrop), ignoring the non-uniform information flow across layers.
 
-**Root Cause**: How can token pruning strategies be made to truly align with the internal layer-wise processing dynamics of the model?
+**Key Challenge**: How can token pruning strategies be made to truly align with the internal layer-wise processing dynamics of the model?
 
-**Paper Goals**: Design a token management strategy aligned with the hierarchical functional roles of MLLM layers — shallow layers do not need to process visual tokens (skip entirely), middle layers are where fusion redundancy is highest (aggressive pruning), and deep layers have already completed fusion (discard remaining tokens).
+**Goal**: Design a token management strategy aligned with the hierarchical functional roles of MLLM layers — shallow layers do not need to process visual tokens (skip entirely), middle layers are where fusion redundancy is highest (aggressive pruning), and deep layers have already completed fusion (discard remaining tokens).
 
-**Starting Point**: Conduct a systematic layer-wise behavioral analysis (intra-modal similarity + cross-modal influence) and replace heuristic assumptions with data-driven findings.
+**Key Insight**: Conduct a systematic layer-wise behavioral analysis (intra-modal similarity + cross-modal influence) and replace heuristic assumptions with data-driven findings.
 
 **Core Idea**: Perform the right operation at the right location based on the hierarchical functional division of MLLM layers (propagation / fusion / reasoning) — inject late, prune aggressively, and exit early.
 

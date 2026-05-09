@@ -35,7 +35,7 @@ This paper proposes RAGLens, which leverages sparse autoencoders (SAEs) to disen
 - **LLM-as-Judge**: Employs external LLMs to evaluate faithfulness, but incurs high computational overhead, struggles to detect hallucinations in self-generated content, and produces explanations that do not faithfully reflect internal decision processes.
 - **Internal representation probing**: Exploits hidden states or attention scores to capture hallucination signals, but the polysemanticity of neurons complicates signal extraction and limits detection accuracy.
 
-**Starting Point**: SAEs from the mechanistic interpretability literature can decompose LLM hidden states into monosemantic features—each feature corresponding to a specific semantic concept. This raises the question: do SAE features exist that activate specifically during RAG hallucinations? If so, can they be used to build detectors that are both accurate and interpretable?
+**Key Insight**: SAEs from the mechanistic interpretability literature can decompose LLM hidden states into monosemantic features—each feature corresponding to a specific semantic concept. This raises the question: do SAE features exist that activate specifically during RAG hallucinations? If so, can they be used to build detectors that are both accurate and interpretable?
 
 **RAG Hallucination vs. General Hallucination**: Although prior work has applied SAEs to general LLM hallucination detection, the RAG setting involves complex interactions between retrieved evidence and generated content, yielding distinct hallucination patterns. Whether SAE features can capture this dynamic remains unclear.
 

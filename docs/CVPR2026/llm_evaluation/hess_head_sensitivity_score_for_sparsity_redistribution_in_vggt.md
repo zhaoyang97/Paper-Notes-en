@@ -29,15 +29,15 @@ HeSS proposes a Head Sensitivity Score to quantify the sensitivity of each atten
 
 ## Background & Motivation
 
-1. **State of the Field**: VGGT (Visual Geometry Grounded Transformer) is a powerful foundation model for multi-view 3D reconstruction that unifies traditional SfM and MVS tasks through alternating stacks of Global Attention (GA) layers and Frame Attention (FA) layers. GA layers enable all frame tokens to interact with one another and are critical for understanding global scene structure.
+1. **Background**: VGGT (Visual Geometry Grounded Transformer) is a powerful foundation model for multi-view 3D reconstruction that unifies traditional SfM and MVS tasks through alternating stacks of Global Attention (GA) layers and Frame Attention (FA) layers. GA layers enable all frame tokens to interact with one another and are critical for understanding global scene structure.
 
 2. **Limitations of Prior Work**: The self-attention computation in GA layers scales quadratically with the number of input views, $O(S^2)$, causing GPU memory and compute costs to surge dramatically for large-scale inputs, which limits VGGT's applicability in real-time and large-scale scenarios.
 
-3. **Root Cause**: Existing acceleration methods (e.g., SparseVGGT) apply a uniform sparsification pattern—identical CDF threshold $\tau$ and sparsity ratio $\rho$—to all attention heads. In practice, however, different attention heads exhibit substantially different sensitivities to sparsification: some heads suffer dramatic performance degradation when over-sparsified, while others remain largely unaffected even under aggressive sparsification.
+3. **Key Challenge**: Existing acceleration methods (e.g., SparseVGGT) apply a uniform sparsification pattern—identical CDF threshold $\tau$ and sparsity ratio $\rho$—to all attention heads. In practice, however, different attention heads exhibit substantially different sensitivities to sparsification: some heads suffer dramatic performance degradation when over-sparsified, while others remain largely unaffected even under aggressive sparsification.
 
-4. **Paper Goals**: (1) How can the sensitivity of each attention head to sparsification be quantified? (2) How can the attention budget be adaptively allocated based on sensitivity differences? (3) How can budget redistribution significantly reduce performance degradation at high sparsity without changing the total computational cost?
+4. **Goal**: (1) How can the sensitivity of each attention head to sparsification be quantified? (2) How can the attention budget be adaptively allocated based on sensitivity differences? (3) How can budget redistribution significantly reduce performance degradation at high sparsity without changing the total computational cost?
 
-5. **Starting Point**: The authors hypothesize that the root cause of performance degradation is the heterogeneity of head sensitivity—uniform sparsification inevitably over-compresses critical heads. They approximate the Hessian via the Fisher Information Matrix to measure head sensitivity, combining two task-specific error signals (camera pose and point cloud) unique to 3D reconstruction.
+5. **Key Insight**: The authors hypothesize that the root cause of performance degradation is the heterogeneity of head sensitivity—uniform sparsification inevitably over-compresses critical heads. They approximate the Hessian via the Fisher Information Matrix to measure head sensitivity, combining two task-specific error signals (camera pose and point cloud) unique to 3D reconstruction.
 
 6. **Core Idea**: The Fisher Information Matrix is used as a Hessian approximation with respect to camera pose error and point cloud error to quantify the sparsification sensitivity of each attention head. The total attention budget is then redistributed proportionally to sensitivity scores, preserving more attention for sensitive heads while applying stronger sparsification to robust ones.
 

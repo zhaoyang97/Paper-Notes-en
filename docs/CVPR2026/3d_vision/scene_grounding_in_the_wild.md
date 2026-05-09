@@ -29,11 +29,11 @@ This paper proposes a semantic feature-based inverse optimization framework that
 
 ## Background & Motivation
 
-1. **State of the Field**: Reconstructing 3D scenes from unstructured photo collections is a core challenge in computer vision. Classical SfM and modern learning-based methods (DUSt3R, MASt3R, VGGT, etc.) can reconstruct scenes from large-scale image sets, provided sufficient visual overlap exists between viewpoints.
+1. **Background**: Reconstructing 3D scenes from unstructured photo collections is a core challenge in computer vision. Classical SfM and modern learning-based methods (DUSt3R, MASt3R, VGGT, etc.) can reconstruct scenes from large-scale image sets, provided sufficient visual overlap exists between viewpoints.
 2. **Limitations of Prior Work**: Large-scale real-world image collections often suffer from severe viewpoint bias—tourists, for example, predominantly photograph the façade of Milan Cathedral rather than its rear. This causes SfM to produce multiple disconnected local reconstructions, or to incorrectly merge non-overlapping regions.
-3. **Root Cause**: The absence of overlap invalidates feature-matching-based geometric correspondence. Tools such as Google Earth Studio can render complete scene coverage, but their rendered images differ substantially from real photographs in appearance (domain gap), rendering traditional photometric losses ineffective for alignment.
-4. **Paper Goals**: Ground in-the-wild local reconstructions to a complete reference model, achieving globally consistent alignment.
-5. **Starting Point**: Despite large appearance differences, real photographs and pseudo-synthetic renderings share the same scene semantics. The key insight is that semantic features extracted by foundation models such as DINOv2 remain consistent across domains, enabling a semantics-based inverse optimization.
+3. **Key Challenge**: The absence of overlap invalidates feature-matching-based geometric correspondence. Tools such as Google Earth Studio can render complete scene coverage, but their rendered images differ substantially from real photographs in appearance (domain gap), rendering traditional photometric losses ineffective for alignment.
+4. **Goal**: Ground in-the-wild local reconstructions to a complete reference model, achieving globally consistent alignment.
+5. **Key Insight**: Despite large appearance differences, real photographs and pseudo-synthetic renderings share the same scene semantics. The key insight is that semantic features extracted by foundation models such as DINOv2 remain consistent across domains, enabling a semantics-based inverse optimization.
 6. **Core Idea**: Distill semantic features into a 3DGS reference model, then optimize a 6DoF+scale transformation by minimizing the L1 loss between rendered and real-image semantic features, augmented with Least Trimmed Squares (LTS) robust optimization to handle outliers.
 
 ## Method

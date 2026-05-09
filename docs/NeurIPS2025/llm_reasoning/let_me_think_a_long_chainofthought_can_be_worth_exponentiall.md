@@ -28,15 +28,15 @@ This paper demonstrates theoretically and empirically that there exist reasoning
 
 ## Background & Motivation
 
-**State of the Field**: Test-time computation has two primary scaling axes—**sequential scaling** (longer CoT) and **parallel scaling** (multiple short CoTs with voting/Best-of-N). Models such as o1 and R1 rely on long CoTs, but the computational cost of long CoTs grows quadratically with sequence length.
+**Background**: Test-time computation has two primary scaling axes—**sequential scaling** (longer CoT) and **parallel scaling** (multiple short CoTs with voting/Best-of-N). Models such as o1 and R1 rely on long CoTs, but the computational cost of long CoTs grows quadratically with sequence length.
 
 **Limitations of Prior Work**: There is currently no theoretical understanding of the trade-off between the two scaling approaches. Some argue that multiple short CoTs with majority voting are more efficient than a single long CoT; others maintain that long CoTs are irreplaceable for hard problems. No clear theoretical framework exists to answer this question.
 
-**Root Cause**: Intuitively, sequential reasoning (e.g., DFS over a graph) requires accumulating information step by step, whereas each parallel sample starts from scratch and cannot share intermediate computation. This intuition, however, lacks formal grounding.
+**Key Challenge**: Intuitively, sequential reasoning (e.g., DFS over a graph) requires accumulating information step by step, whereas each parallel sample starts from scratch and cannot share intermediate computation. This intuition, however, lacks formal grounding.
 
-**Paper Goals**: Does there exist a reasoning task for which sequential scaling offers an **exponential** advantage over parallel scaling?
+**Goal**: Does there exist a reasoning task for which sequential scaling offers an **exponential** advantage over parallel scaling?
 
-**Starting Point**: The paper studies graph connectivity—determining whether a source node in a given graph is connected to $t_1$ or $t_2$. This serves as a proxy for multi-step reasoning and is known to be intimately related to the expressibility limits of Transformers ($\mathsf{TC}^0$ vs. $\mathsf{L}$).
+**Key Insight**: The paper studies graph connectivity—determining whether a source node in a given graph is connected to $t_1$ or $t_2$. This serves as a proxy for multi-step reasoning and is known to be intimately related to the expressibility limits of Transformers ($\mathsf{TC}^0$ vs. $\mathsf{L}$).
 
 **Core Idea**: On graph connectivity tasks, bounded-depth Transformers with $O(1)$-length CoTs succeed no better than random guessing even with polynomially many parallel samples, yet a single polynomial-length CoT suffices for perfect solutions—establishing an exponential sequential-vs.-parallel gap.
 

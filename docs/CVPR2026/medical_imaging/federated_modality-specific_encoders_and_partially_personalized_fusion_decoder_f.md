@@ -29,15 +29,15 @@ This paper proposes FedMEPD, a framework that employs modality-specific encoders
 
 ## Background & Motivation
 
-**State of the Field**: Federated learning (FL) enables multiple medical institutions to collaboratively train models without sharing private data. Brain tumor segmentation relies on four MRI modalities—T1, T1c, T2, and FLAIR—which provide complementary information (the former two highlight the tumor core, while the latter two highlight peritumoral edema).
+**Background**: Federated learning (FL) enables multiple medical institutions to collaboratively train models without sharing private data. Brain tumor segmentation relies on four MRI modalities—T1, T1c, T2, and FLAIR—which provide complementary information (the former two highlight the tumor core, while the latter two highlight peritumoral edema).
 
 **Limitations of Prior Work**: In practice, different medical institutions may possess only a subset of modalities (e.g., small clinics may only have T1), resulting in severe **intermodal heterogeneity** among FL participants. The vast majority of existing medical imaging FL methods address only intra-modality data heterogeneity (non-IID distributions) and cannot effectively handle modality-missing scenarios.
 
-**Root Cause**: FL must simultaneously achieve two objectives: (1) training an optimal global model for full-modality inputs (server-side), and (2) providing personalized models for clients that possess only a subset of modalities. These two objectives are fundamentally in tension under modality heterogeneity: fully federated aggregation is disrupted by heterogeneous modalities, while full personalization impedes knowledge sharing.
+**Key Challenge**: FL must simultaneously achieve two objectives: (1) training an optimal global model for full-modality inputs (server-side), and (2) providing personalized models for clients that possess only a subset of modalities. These two objectives are fundamentally in tension under modality heterogeneity: fully federated aggregation is disrupted by heterogeneous modalities, while full personalization impedes knowledge sharing.
 
-**Paper Goals**: To leverage heterogeneous multimodal data effectively for global model training while providing missing-modality compensation and personalized adaptation for clients—all under privacy constraints.
+**Goal**: To leverage heterogeneous multimodal data effectively for global model training while providing missing-modality compensation and personalized adaptation for clients—all under privacy constraints.
 
-**Starting Point**: The network is decomposed into modality-specific encoders (fully federated) and a multimodal fusion decoder (partially federated, partially personalized), augmented with multi-anchor multimodal representations that calibrate missing-modality features via cross-attention.
+**Key Insight**: The network is decomposed into modality-specific encoders (fully federated) and a multimodal fusion decoder (partially federated, partially personalized), augmented with multi-anchor multimodal representations that calibrate missing-modality features via cross-attention.
 
 **Core Idea**: A filter-level dynamic binary mask, derived from the directional consistency of parameter updates, enables federated sharing of decoder parameters on which global and local clients agree, while preserving personalized parameters where local divergence exists. Concurrently, multi-anchor full-modality representations maintained on the server compensate for missing modalities on clients via cross-attention.
 

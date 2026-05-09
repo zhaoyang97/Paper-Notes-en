@@ -28,15 +28,15 @@ This paper systematically reveals the "reasoning trap" paradox: enhancing LLM re
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have evolved from text generators into "think-then-act" agents that continuously improve planning and tool-use capabilities through reasoning enhancement (RL, distillation, etc.), which is a central path toward building reliable AI agents.
+**Background**: LLMs have evolved from text generators into "think-then-act" agents that continuously improve planning and tool-use capabilities through reasoning enhancement (RL, distillation, etc.), which is a central path toward building reliable AI agents.
 
 **Limitations of Prior Work**: More capable reasoning models such as OpenAI o3 exhibit more severe hallucination tendencies, yet no prior work has systematically examined whether reasoning enhancement itself causes tool hallucination — i.e., models fabricating nonexistent tools or misusing irrelevant ones.
 
-**Root Cause**: Intuitively, stronger reasoning should yield greater reliability, but experimental observations reveal the opposite — stronger reasoning coexists with higher tool hallucination rates. This is not merely an overfitting issue, since training RL on non-tool-related tasks (e.g., mathematics) also amplifies tool hallucination.
+**Key Challenge**: Intuitively, stronger reasoning should yield greater reliability, but experimental observations reveal the opposite — stronger reasoning coexists with higher tool hallucination rates. This is not merely an overfitting issue, since training RL on non-tool-related tasks (e.g., mathematics) also amplifies tool hallucination.
 
-**Paper Goals**: Answer three core questions — (RQ1) Does reasoning enhancement increase tool hallucination? (RQ2) What is the underlying mechanism? (RQ3) Can it be effectively mitigated?
+**Goal**: Answer three core questions — (RQ1) Does reasoning enhancement increase tool hallucination? (RQ2) What is the underlying mechanism? (RQ3) Can it be effectively mitigated?
 
-**Starting Point**: Construct a lightweight diagnostic benchmark, SimpleToolHalluBench, and use controlled experiments to progressively rule out alternative explanations, ultimately attributing the cause to reasoning itself.
+**Key Insight**: Construct a lightweight diagnostic benchmark, SimpleToolHalluBench, and use controlled experiments to progressively rule out alternative explanations, ultimately attributing the cause to reasoning itself.
 
 **Core Idea**: Reasoning chain training induces a behavioral pattern of "confidently filling in gaps." When applied to tool-use scenarios, this pattern naturally manifests as tool hallucination — the model tends to generate plausible-sounding but ungrounded tool calls.
 

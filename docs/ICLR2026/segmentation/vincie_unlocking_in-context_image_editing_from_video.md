@@ -29,15 +29,15 @@ VINCIE is a framework that first demonstrates that in-context image editing mode
 
 ## Background & Motivation
 
-**State of the Field**: In-context image editing enables users to iteratively modify images through multi-turn interactions. Existing methods rely on task-specific pipelines and expert models (e.g., segmentation, inpainting) to construct paired training data.
+**Background**: In-context image editing enables users to iteratively modify images through multi-turn interactions. Existing methods rely on task-specific pipelines and expert models (e.g., segmentation, inpainting) to construct paired training data.
 
 **Limitations of Prior Work**: (1) Constructing paired data for multi-turn editing is extremely difficult; existing methods can only mine single-turn editing pairs. (2) Dependence on task-specific pipelines limits the generality and scalability of data. (3) Consistency degradation and error accumulation in multi-turn editing remain serious issues.
 
-**Root Cause**: A fundamental tension exists between the scarcity of high-quality multi-turn editing training data and the need for models to learn long-range contextual dependencies.
+**Key Challenge**: A fundamental tension exists between the scarcity of high-quality multi-turn editing training data and the need for models to learn long-range contextual dependencies.
 
-**Paper Goals**: To investigate whether a meaningful in-context image editing model can be learned solely from video data, without any independently curated image pairs.
+**Goal**: To investigate whether a meaningful in-context image editing model can be learned solely from video data, without any independently curated image pairs.
 
-**Starting Point**: Videos naturally contain rich visual dynamics—object appearance and disappearance, pose changes, camera motion—which implicitly provide learning signals for editing operations.
+**Key Insight**: Videos naturally contain rich visual dynamics—object appearance and disappearance, pose changes, camera motion—which implicitly provide learning signals for editing operations.
 
 **Core Idea**: Native video data is used to construct interleaved multimodal sequences (frames + transition descriptions + segmentation masks), and a DiT model is trained via three proxy tasks to learn context-aware image editing.
 

@@ -26,15 +26,15 @@ content_hash: 9f17582f95ce8937
 This paper proposes Generalized Contrastive Learning (GCL), which performs contrastive learning over all 6 modality-pair combinations within a mini-batch (image↔text, image↔image+text, text↔image+text). Without constructing new triplet datasets and using only existing image-text pairs, GCL improves VISTA's average retrieval precision on M-BEIR from 21.18 to 34.06 (+60.8%), and on the text→image+text task of MMEB from 10.1% to 31.1%.
 
 ## Background & Motivation
-**State of the Field**: Cross-modal retrieval models such as CLIP perform well on standard image-text retrieval, but suffer significant performance degradation when queries or keys involve fused modalities (fused image+text, e.g., Wikipedia pages containing both images and text).
+**Background**: Cross-modal retrieval models such as CLIP perform well on standard image-text retrieval, but suffer significant performance degradation when queries or keys involve fused modalities (fused image+text, e.g., Wikipedia pages containing both images and text).
 
 **Limitations of Prior Work**: Prior methods (e.g., VISTA, UniIR) train with triplet datasets that include fused modalities, but (a) require costly additional data annotation or generation; (b) the constructed data covers only limited modality combinations and fails to generalize to unseen ones; (c) training on generated data may cause forgetting of cross-modal tasks.
 
-**Root Cause**: Standard contrastive learning (InfoNCE) only contrasts image↔text pairs, neglecting the fused modality (image+text)—resulting in only 2 out of the $3 \times 3 = 9$ possible retrieval combinations among three modalities being learned.
+**Key Challenge**: Standard contrastive learning (InfoNCE) only contrasts image↔text pairs, neglecting the fused modality (image+text)—resulting in only 2 out of the $3 \times 3 = 9$ possible retrieval combinations among three modalities being learned.
 
-**Paper Goals**: Design a loss function that enables retrieval models to handle arbitrary modality combinations without requiring new annotated data.
+**Goal**: Design a loss function that enables retrieval models to handle arbitrary modality combinations without requiring new annotated data.
 
-**Starting Point**: Leverage existing image-text pair data to automatically construct positive and negative samples for all modality combinations within a mini-batch, covering all 6 cross-modal contrastive directions through a unified GCL loss.
+**Key Insight**: Leverage existing image-text pair data to automatically construct positive and negative samples for all modality combinations within a mini-batch, covering all 6 cross-modal contrastive directions through a unified GCL loss.
 
 **Core Idea**: Extend InfoNCE from 2 cross-modal pairs to 6 (by incorporating the fused modality), obtaining multimodal retrieval capability for free from existing data.
 

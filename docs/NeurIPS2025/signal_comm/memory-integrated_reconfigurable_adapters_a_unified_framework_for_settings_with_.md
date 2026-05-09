@@ -29,15 +29,15 @@ MIRA embeds Hopfield-style associative memory modules into each layer of a ViT, 
 
 ## Background & Motivation
 
-**State of the Field**: Domain Generalization (DG), Class-Incremental Learning (CIL), and Domain-Incremental Learning (DIL) are three important yet independently developed research directions in deep learning. DG requires models to generalize to unseen domains, while Continual Learning (CL) requires models to retain prior knowledge when new tasks arrive. Existing methods are typically designed for a single scenario with specialized architectures and strategies.
+**Background**: Domain Generalization (DG), Class-Incremental Learning (CIL), and Domain-Incremental Learning (DIL) are three important yet independently developed research directions in deep learning. DG requires models to generalize to unseen domains, while Continual Learning (CL) requires models to retain prior knowledge when new tasks arrive. Existing methods are typically designed for a single scenario with specialized architectures and strategies.
 
 **Limitations of Prior Work**: Biological organisms can switch between multiple behavioral modes within milliseconds (e.g., bats adjusting echolocation from 20 Hz to 200 Hz, or jazz pianists improvising) while retaining previously acquired knowledge. This capability relies on the dynamic reuse of the same neural circuits via neuromodulatory signals (dopamine, acetylcholine, etc.). However, existing deep learning methods lack such a unified mechanism for "rapid multi-task switching with persistent memory."
 
-**Root Cause**: Although DG, CIL, and DIL appear distinct, they fundamentally all require efficient adaptation across multiple tasks or domains while preserving knowledge. Existing work treats them as entirely separate problems and fails to leverage biological associative memory (AM) to unify their solutions.
+**Key Challenge**: Although DG, CIL, and DIL appear distinct, they fundamentally all require efficient adaptation across multiple tasks or domains while preserving knowledge. Existing work treats them as entirely separate problems and fails to leverage biological associative memory (AM) to unify their solutions.
 
-**Paper Goals**: (1) How to construct a unified architecture that simultaneously handles DG, CIL, and DIL; (2) How to leverage associative memory to enable per-sample dynamic adapter composition and retrieval; (3) How to learn effective retrieval keys for indexing stored adapter weights.
+**Goal**: (1) How to construct a unified architecture that simultaneously handles DG, CIL, and DIL; (2) How to leverage associative memory to enable per-sample dynamic adapter composition and retrieval; (3) How to learn effective retrieval keys for indexing stored adapter weights.
 
-**Starting Point**: Inspired by neuroscience, associative memory can store and retrieve task-specific weight modulation signals. If LoRA adapters are stored as "values" in associative memory and retrieved per sample via learnable "keys," the system can achieve rapid task switching analogous to neural modulation in the brain.
+**Key Insight**: Inspired by neuroscience, associative memory can store and retrieve task-specific weight modulation signals. If LoRA adapters are stored as "values" in associative memory and retrieved per sample via learnable "keys," the system can achieve rapid task switching analogous to neural modulation in the brain.
 
 **Core Idea**: Embed Hopfield associative memory into each ViT layer, storing task-specific LoRA adapters as values, and retrieve affine combinations of adapters on a per-sample basis via post-hoc learned retrieval keys, thereby unifying DG, CIL, and DIL within a single framework.
 

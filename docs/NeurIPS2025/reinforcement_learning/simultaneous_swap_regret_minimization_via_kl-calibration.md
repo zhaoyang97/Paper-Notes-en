@@ -33,9 +33,9 @@ This paper introduces KL-Calibration as a stronger calibration measure, establis
 
 Online calibration is a central problem in sequential probability forecasting: a forecaster issues probability predictions $p_t \in [0,1]$ at each time step while an adversary selects binary labels $y_t \in \{0,1\}$, with the goal of making the empirical conditional distribution of predictions as close as possible to the true conditional distribution. Classical $\ell_1$-Calibration is known to admit a lower bound of $\Omega(T^{0.54})$, precluding the ideal $O(\sqrt{T})$ rate, whereas $\ell_2$-Calibration is achievable at $\tilde{O}(T^{1/3})$.
 
-**Root Cause**: Prior work (Fishelson et al.) establishes $\tilde{O}(T^{1/3})$ pseudo swap regret only for squared loss, and only for proper losses with smooth univariate forms. Corresponding results for broader proper loss classes (e.g., log loss, Tsallis entropy) and for the actual swap regret (as opposed to its pseudo variant) remain absent.
+**Key Challenge**: Prior work (Fishelson et al.) establishes $\tilde{O}(T^{1/3})$ pseudo swap regret only for squared loss, and only for proper losses with smooth univariate forms. Corresponding results for broader proper loss classes (e.g., log loss, Tsallis entropy) and for the actual swap regret (as opposed to its pseudo variant) remain absent.
 
-**Starting Point**: The authors introduce KL-Calibration, replacing the $\ell_2$ distance with the KL divergence to measure prediction bias. By Pinsker's inequality, KL-Calibration is strictly stronger than $\ell_2$-Calibration, so any upper bound on it automatically yields richer consequences. The key insight is that KL-Calibration is precisely equivalent to the swap regret of log loss.
+**Key Insight**: The authors introduce KL-Calibration, replacing the $\ell_2$ distance with the KL divergence to measure prediction bias. By Pinsker's inequality, KL-Calibration is strictly stronger than $\ell_2$-Calibration, so any upper bound on it automatically yields richer consequences. The key insight is that KL-Calibration is precisely equivalent to the swap regret of log loss.
 
 ## Method
 

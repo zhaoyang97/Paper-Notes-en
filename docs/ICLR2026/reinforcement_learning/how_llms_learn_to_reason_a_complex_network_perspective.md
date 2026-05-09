@@ -28,15 +28,15 @@ This paper proposes a "sparse concept network" theory from a complex network per
 
 ## Background & Motivation
 
-**State of the Field**: RLVR (Reinforcement Learning with Verifiable Rewards) is used to train the reasoning capabilities of LLMs, with representative work such as DeepSeek-R1. However, RLVR training exhibits four puzzling phenomena: (1) a two-stage learning curve featuring rapid improvement followed by a prolonged plateau; (2) a V-shaped trajectory in which the length of correct answers first decreases then increases; (3) catastrophic forgetting after SFT; and (4) policy diversity collapse.
+**Background**: RLVR (Reinforcement Learning with Verifiable Rewards) is used to train the reasoning capabilities of LLMs, with representative work such as DeepSeek-R1. However, RLVR training exhibits four puzzling phenomena: (1) a two-stage learning curve featuring rapid improvement followed by a prolonged plateau; (2) a V-shaped trajectory in which the length of correct answers first decreases then increases; (3) catastrophic forgetting after SFT; and (4) policy diversity collapse.
 
 **Limitations of Prior Work**: Existing explanations are isolated from one another—the plateau is attributed to entropy exhaustion, the V-shape to the emergence of self-reflection after redundant reasoning paths are pruned, and catastrophic forgetting is treated as an objective mismatch problem. No unified framework connects all four phenomena to a common underlying mechanism.
 
-**Root Cause**: Constructing microscopic reasoning graphs directly from the high-dimensional latent space of LLMs is extremely difficult, impeding direct investigation of the structural origins of RLVR dynamics.
+**Key Challenge**: Constructing microscopic reasoning graphs directly from the high-dimensional latent space of LLMs is extremely difficult, impeding direct investigation of the structural origins of RLVR dynamics.
 
-**Paper Goals**: To provide a unified physical framework that traces all four RLVR phenomena back to a common topological self-organization process.
+**Goal**: To provide a unified physical framework that traces all four RLVR phenomena back to a common topological self-organization process.
 
-**Starting Point**: Inspired by the renormalization group, the analysis operates at the semantic level on a coarse-grained "concept network"—a sparse network with average degree approximately 2—rather than analyzing the full reasoning graph at the token level. A simplified Concept Network Model (CoNet) serves as a computational microscope for validation.
+**Key Insight**: Inspired by the renormalization group, the analysis operates at the semantic level on a coarse-grained "concept network"—a sparse network with average degree approximately 2—rather than analyzing the full reasoning graph at the token level. A simplified Concept Network Model (CoNet) serves as a computational microscope for validation.
 
 **Core Idea**: The paper proposes and validates the central hypothesis that the concept network formed after RLVR training is a sparse network with average degree $\langle k \rangle \approx 2$. This predominantly tree-like topology is efficient yet fragile, and unifies the explanation of the V-shaped curve (paths necessarily lengthen when transitioning from local skill-island optimization to global network integration), catastrophic forgetting (cutting critical "backbone" edges renders subtrees unreachable), and policy collapse (sharp leaf-node learning transitions accumulate to freeze global exploration).
 

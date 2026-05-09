@@ -27,15 +27,15 @@ content_hash: b0833ed5d47fb745
 This paper proposes Multi-Lingual Consistency (MLC), an auxiliary loss that manipulates the singular values of a multilingual representation matrix via SVD to drive it toward rank-1 (i.e., collinear multilingual representations). Using only multilingual prompt translations—without requiring target-language responses—MLC consistently transfers safety alignment from one language to all others.
 
 ## Background & Motivation
-**State of the Field**: LLM safety alignment (SFT/DPO) is predominantly conducted on high-resource languages such as English. As a result, models behave safely in English but may exhibit drastically reduced safety rates in low-resource languages (e.g., Swahili, Kurdish), dropping from 93% to as low as 6–12%.
+**Background**: LLM safety alignment (SFT/DPO) is predominantly conducted on high-resource languages such as English. As a result, models behave safely in English but may exhibit drastically reduced safety rates in low-resource languages (e.g., Swahili, Kurdish), dropping from 93% to as low as 6–12%.
 
 **Limitations of Prior Work**: The two mainstream approaches to multilingual alignment both have significant drawbacks: (a) collecting high-quality safety data for each target language incurs prohibitive resource costs; (b) pairwise transfer using a high-resource anchor language (e.g., SDRRL/MPO) scales poorly and yields inconsistent results, leaving certain languages well behind.
 
-**Root Cause**: If all languages are aligned to the same anchor language, they should theoretically achieve comparable safety levels. The observed performance disparity indicates that existing methods fail to fully exploit the safety signal already present in the anchor language.
+**Key Challenge**: If all languages are aligned to the same anchor language, they should theoretically achieve comparable safety levels. The observed performance disparity indicates that existing methods fail to fully exploit the safety signal already present in the anchor language.
 
-**Paper Goals**: How can multiple languages be aligned simultaneously in a single training run, without requiring response data in the target languages?
+**Goal**: How can multiple languages be aligned simultaneously in a single training run, without requiring response data in the target languages?
 
-**Starting Point**: Multilingual behavioral consistency is determined by representational consistency. If the internal representations of the same query across different languages are directionally aligned (collinear), the model will produce consistent safety behaviors across those languages.
+**Key Insight**: Multilingual behavioral consistency is determined by representational consistency. If the internal representations of the same query across different languages are directionally aligned (collinear), the model will produce consistent safety behaviors across those languages.
 
 **Core Idea**: Constrain the multilingual representation matrix to be rank-1 via singular value analysis, realizing "align once, benefit multilingually."
 

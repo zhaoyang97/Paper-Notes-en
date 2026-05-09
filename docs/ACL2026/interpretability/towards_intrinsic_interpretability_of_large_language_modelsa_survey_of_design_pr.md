@@ -28,15 +28,15 @@ This paper presents a systematic survey of recent advances in intrinsic interpre
 
 ## Background & Motivation
 
-**State of the Field**: Large language models have achieved remarkable success across a wide range of NLP tasks, yet the opacity of their internal mechanisms (black-box nature) hinders trustworthy deployment, particularly in high-stakes domains such as healthcare and law. Existing surveys on explainable AI primarily focus on post-hoc explanation methods, such as LIME, SHAP, sparse autoencoders, and causal intervention techniques.
+**Background**: Large language models have achieved remarkable success across a wide range of NLP tasks, yet the opacity of their internal mechanisms (black-box nature) hinders trustworthy deployment, particularly in high-stakes domains such as healthcare and law. Existing surveys on explainable AI primarily focus on post-hoc explanation methods, such as LIME, SHAP, sparse autoencoders, and causal intervention techniques.
 
 **Limitations of Prior Work**: Post-hoc explanation methods approximate already-trained models via external tools, introducing a "faithfulness gap"—a fundamental discrepancy between the explanation and the model's true computation. Even causal intervention approaches (e.g., ROME), while offering stronger local faithfulness, operate at too fine a granularity to be aggregated into a coherent understanding of overall model behavior.
 
-**Root Cause**: Historically, intrinsically interpretable models (e.g., linear models, decision trees) were far less expressive than black-box large models, framing interpretability vs. performance as an irreconcilable trade-off. Recent work, however, suggests that embedding inductive biases such as modularity, sparsity, and disentanglement into modern architectures can break this trade-off.
+**Key Challenge**: Historically, intrinsically interpretable models (e.g., linear models, decision trees) were far less expressive than black-box large models, framing interpretability vs. performance as an irreconcilable trade-off. Recent work, however, suggests that embedding inductive biases such as modularity, sparsity, and disentanglement into modern architectures can break this trade-off.
 
-**Paper Goals**: To provide a unified taxonomic framework for intrinsic interpretability methods, systematically review their underlying design principles, clarify the strengths and limitations of each approach, and identify directions for future research.
+**Goal**: To provide a unified taxonomic framework for intrinsic interpretability methods, systematically review their underlying design principles, clarify the strengths and limitations of each approach, and identify directions for future research.
 
-**Starting Point**: Unlike post-hoc surveys that take "tools" as the entry point, this paper starts from "design principles," focusing on how transparency can be built into architectures and training processes.
+**Key Insight**: Unlike post-hoc surveys that take "tools" as the entry point, this paper starts from "design principles," focusing on how transparency can be built into architectures and training processes.
 
 **Core Idea**: Intrinsic interpretability methods are organized into five design paradigms, each representing a distinct "source of transparency."
 

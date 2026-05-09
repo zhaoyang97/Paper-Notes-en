@@ -31,10 +31,10 @@ This paper systematically evaluates 12 text-image compositional alignment metric
 
 Evaluation of text-to-image generation relies heavily on automated metrics, yet the reliability of these metrics in reflecting human preferences remains an open question. Several critical issues characterize the current state of the field:
 
-- **State of the Field**: Most metrics are adopted based on popularity or convention rather than systematic validation against human judgment.
+- **Background**: Most metrics are adopted based on popularity or convention rather than systematic validation against human judgment.
 - **Limitations of Prior Work**: Model comparisons and rankings depend directly on the chosen metrics; an erroneous choice of metric can mislead research directions. Furthermore, an increasing number of methods (ReNO, DPOK, etc.) use these metrics as reward signals for reinforcement learning, meaning metric bias directly affects model training.
-- **Root Cause**: Compositional alignment—covering entity presence, attribute binding (color/shape/texture), spatial relations (2D/3D), non-spatial relations, and counting accuracy—is a core challenge in T2I generation, yet no prior work has comprehensively compared metrics against human judgments across fine-grained compositional categories.
-- **Paper Goals**: This work presents the first comprehensive comparison of 12 metrics across 8 compositional categories against human judgment.
+- **Key Challenge**: Compositional alignment—covering entity presence, attribute binding (color/shape/texture), spatial relations (2D/3D), non-spatial relations, and counting accuracy—is a core challenge in T2I generation, yet no prior work has comprehensively compared metrics against human judgments across fine-grained compositional categories.
+- **Goal**: This work presents the first comprehensive comparison of 12 metrics across 8 compositional categories against human judgment.
 
 ## Method
 

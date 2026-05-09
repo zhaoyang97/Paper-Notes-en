@@ -28,18 +28,18 @@ This paper reveals that LLMs can secretly handle non-canonical tokenizations (e.
 
 ## Background & Motivation
 
-**State of the Field**: Modern LLMs employ sub-word tokenizers such as BPE/WordPiece, with identical canonical tokenization used during both training and inference. However, adversarial attacks, multilingual mixing, and OCR noise may produce non-canonical tokenizations.
+**Background**: Modern LLMs employ sub-word tokenizers such as BPE/WordPiece, with identical canonical tokenization used during both training and inference. However, adversarial attacks, multilingual mixing, and OCR noise may produce non-canonical tokenizations.
 
 **Limitations of Prior Work**:
 - It is assumed that LLMs can only process canonical token sequences seen during training.
 - Non-canonical tokenizations (e.g., decomposing a word into finer fragments) are believed to cause catastrophic performance degradation.
 - A systematic understanding of LLM robustness to tokenization variations is lacking.
 
-**Root Cause**: Are LLMs truly this fragile—requiring precisely canonical token sequences to function? If not, where does this robustness originate?
+**Key Challenge**: Are LLMs truly this fragile—requiring precisely canonical token sequences to function? If not, where does this robustness originate?
 
-**Paper Goals**: Systematically test and explain LLM behavior under non-canonical tokenizations.
+**Goal**: Systematically test and explain LLM behavior under non-canonical tokenizations.
 
-**Starting Point**: Canonical tokens are randomly split into sub-tokens according to various strategies; model performance is evaluated across diverse tasks; and the geometric structure of the embedding space is examined to explain the source of robustness.
+**Key Insight**: Canonical tokens are randomly split into sub-tokens according to various strategies; model performance is evaluated across diverse tasks; and the geometric structure of the embedding space is examined to explain the source of robustness.
 
 **Core Idea**: The LLM embedding space exhibits "sub-word linear additivity"—the embedding sequence of split tokens can approximately reconstruct the representation of the canonical token after a few Transformer layers.
 

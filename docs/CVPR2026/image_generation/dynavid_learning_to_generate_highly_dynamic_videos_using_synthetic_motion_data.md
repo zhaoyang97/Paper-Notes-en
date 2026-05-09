@@ -28,20 +28,20 @@ DynaVid proposes utilizing synthetic optical flow rendered via computer graphics
 
 ## Background & Motivation
 
-1. **State of the Field**: Current video diffusion models (e.g., Wan2.2, CogVideoX) can generate high-quality videos but still rely heavily on the distribution of motion types in large-scale training data. In mainstream training datasets, highly dynamic motion scenes (e.g., street dance, fast camera rotations) are extremely scarce.
+1. **Background**: Current video diffusion models (e.g., Wan2.2, CogVideoX) can generate high-quality videos but still rely heavily on the distribution of motion types in large-scale training data. In mainstream training datasets, highly dynamic motion scenes (e.g., street dance, fast camera rotations) are extremely scarce.
 
 2. **Limitations of Prior Work**:
     - Models struggle to synthesize realistic videos containing highly dynamic motions due to insufficient samples in training sets.
     - Camera control models (e.g., CameraCtrl, AC3D) require accurate 3D camera pose annotations, but pose estimation is highly unreliable in extreme motion scenarios.
     - Directly using synthetic rendered videos for training introduces a severe appearance domain gap—models replicate the artificial textures and lighting of synthetic data.
 
-3. **Root Cause**: Synthetic data can provide rich dynamic motion and precise control signals, but its non-realistic appearance features pollute the visual quality of generative models. How to "keep the essence (motion information) and discard the dross (artificial appearance)" is a key challenge.
+3. **Key Challenge**: Synthetic data can provide rich dynamic motion and precise control signals, but its non-realistic appearance features pollute the visual quality of generative models. How to "keep the essence (motion information) and discard the dross (artificial appearance)" is a key challenge.
 
-4. **Paper Goals**
+4. **Goal**
     - How can models learn highly dynamic motion patterns without sacrificing visual realism?
     - How to achieve precise camera trajectory control under extreme camera movement?
 
-5. **Starting Point**: Optical flow naturally encodes only motion information and is decoupled from appearance. Therefore, replacing rendered videos with rendered optical flow can eliminate the appearance domain gap.
+5. **Key Insight**: Optical flow naturally encodes only motion information and is decoupled from appearance. Therefore, replacing rendered videos with rendered optical flow can eliminate the appearance domain gap.
 
 6. **Core Idea**: Use synthetic optical flow (instead of synthetic videos) to train a motion generator to learn dynamic motion patterns, then use real videos to train a motion-guided video generator to maintain realistic appearance. This two-stage decoupling achieves "motion from synthetic, appearance from real."
 

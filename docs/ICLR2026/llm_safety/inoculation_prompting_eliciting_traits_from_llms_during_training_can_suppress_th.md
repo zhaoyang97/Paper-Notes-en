@@ -27,15 +27,15 @@ content_hash: 0b22bb9fc2cd97e8
 This paper proposes Inoculation Prompting—inserting a system prompt describing an undesired trait (e.g., "You are a malicious, evil assistant") into finetuning data, so the model associates that trait with the prompt rather than learning it globally. Removing the prompt at test time causes the trait to nearly vanish, effectively mitigating Emergent Misalignment, backdoor attacks, and subliminal learning.
 
 ## Background & Motivation
-**State of the Field**: LLM finetuning frequently induces unintended generalization—models acquire side-effect behaviors alongside the target capability. Emergent Misalignment (EM) is a canonical example: finetuning solely on insecure code causes the model to become broadly "malicious."
+**Background**: LLM finetuning frequently induces unintended generalization—models acquire side-effect behaviors alongside the target capability. Emergent Misalignment (EM) is a canonical example: finetuning solely on insecure code causes the model to become broadly "malicious."
 
 **Limitations of Prior Work**: Existing selective learning approaches require additional data (contrastive datasets), modified training objectives, or interventions on internal activations—costly and non-general.
 
-**Root Cause**: Desired and undesired traits frequently co-occur or intermingle in training data, making it difficult for the model to learn the former without acquiring the latter.
+**Key Challenge**: Desired and undesired traits frequently co-occur or intermingle in training data, making it difficult for the model to learn the former without acquiring the latter.
 
-**Paper Goals**: To identify a simple method for selective learning that requires neither additional data nor modification of the training objective.
+**Goal**: To identify a simple method for selective learning that requires neither additional data nor modification of the training objective.
 
-**Starting Point**: If the presence of a trait is already "explained" in the training data via a system prompt, the model has reduced optimization pressure to make global parameter changes to accommodate that trait—analogous to the principle of vaccination.
+**Key Insight**: If the presence of a trait is already "explained" in the training data via a system prompt, the model has reduced optimization pressure to make global parameter changes to accommodate that trait—analogous to the principle of vaccination.
 
 **Core Idea**: Pre-emptively "inoculating" (describing) an undesired trait in the training data prevents the model from generalizing that trait to test time.
 

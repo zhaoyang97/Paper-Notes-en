@@ -31,7 +31,7 @@ Revelio employs k-sparse autoencoders (k-SAE) to uncover monosemantic, interpret
 
 ### Limitations of Prior Work
 
-**State of the Field**: Diffusion models excel at generating high-quality images, yet how their internal representations encode rich visual semantic information remains poorly understood. The core research questions include:
+**Background**: Diffusion models excel at generating high-quality images, yet how their internal representations encode rich visual semantic information remains poorly understood. The core research questions include:
 
 1. What **granularity** of visual information is captured at different layers and timesteps?
 2. What are the differences in **inductive biases** between convolutional UNet and Transformer DiT architectures?

@@ -29,7 +29,7 @@ This paper proposes APVR, a training-free dual-granularity visual information re
 ## Background & Motivation
 Existing video MLLMs face three major challenges in processing long videos: (1) **Uniform sampling**: dilutes critical information, with a large proportion of irrelevant frames; (2) **Sparse keyframe retrieval**: loses temporal-semantic relationships, making temporal reasoning tasks intractable; (3) **Dense frame processing**: hits the memory wall. Training-based approaches (sequence parallelism, feature compression) require costly multi-stage retraining and are tightly coupled to specific architectures.
 
-**Root Cause**: The fundamental trade-off between **temporal coverage and computational feasibility**.
+**Key Challenge**: The fundamental trade-off between **temporal coverage and computational feasibility**.
 
 ## Core Problem
 **How can a model efficiently retrieve query-relevant frames and tokens from hour-long videos without retraining, while overcoming MLLM memory constraints and preserving semantic integrity?**

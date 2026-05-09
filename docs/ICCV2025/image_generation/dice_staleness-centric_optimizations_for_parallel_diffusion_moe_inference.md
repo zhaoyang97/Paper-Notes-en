@@ -29,9 +29,9 @@ DICE is a framework targeting the *staleness* problem in parallel inference of M
 
 ## Background & Motivation
 
-- **State of the Field**: Mixture-of-Experts-based diffusion models (e.g., DiT-MoE) scale to 16 billion parameters and demonstrate outstanding generation quality, but their reliance on expert parallelism introduces severe communication bottlenecks. On 8 GPUs, all-to-all communication accounts for 61.7%–73.3% of total inference time for DiT-MoE-XL.
+- **Background**: Mixture-of-Experts-based diffusion models (e.g., DiT-MoE) scale to 16 billion parameters and demonstrate outstanding generation quality, but their reliance on expert parallelism introduces severe communication bottlenecks. On 8 GPUs, all-to-all communication accounts for 61.7%–73.3% of total inference time for DiT-MoE-XL.
 - **Limitations of Prior Work**: Displaced Parallelism (proposed by DistriFusion) mitigates blocking by overlapping computation and communication via asynchronous execution, but introduces a critical issue — **staleness**: using outdated activations from earlier timesteps, causing FID to degrade from 5.31 to 8.27.
-- **Root Cause**: Displaced parallelism in the expert parallelism setting incurs **2-step staleness** (dispatch delayed by 1 step + combine delayed by 1 step), which is particularly harmful to generation quality in MoE architectures. Meanwhile, the authors observe high **routing redundancy** across adjacent diffusion steps in DiT-MoE (token-to-expert assignments are highly similar), which provides a feasibility basis for asynchronous communication.
+- **Key Challenge**: Displaced parallelism in the expert parallelism setting incurs **2-step staleness** (dispatch delayed by 1 step + combine delayed by 1 step), which is particularly harmful to generation quality in MoE architectures. Meanwhile, the authors observe high **routing redundancy** across adjacent diffusion steps in DiT-MoE (token-to-expert assignments are highly similar), which provides a feasibility basis for asynchronous communication.
 
 ## Method
 

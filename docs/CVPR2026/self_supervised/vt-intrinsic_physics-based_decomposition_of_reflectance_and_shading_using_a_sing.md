@@ -28,7 +28,7 @@ VT-Intrinsic exploits the physical complementarity between visible and thermal i
 
 ## Background & Motivation
 
-1. **State of the Field**: Intrinsic image decomposition (IID) aims to factorize an image into reflectance (albedo) and illumination (shading) components. This is a classical problem in computer vision and graphics. Mainstream approaches include optimization-based methods (e.g., Retinex, relying on strong prior assumptions) and learning-based methods (trained on synthetic data, suffering from a sim-to-real gap).
+1. **Background**: Intrinsic image decomposition (IID) aims to factorize an image into reflectance (albedo) and illumination (shading) components. This is a classical problem in computer vision and graphics. Mainstream approaches include optimization-based methods (e.g., Retinex, relying on strong prior assumptions) and learning-based methods (trained on synthetic data, suffering from a sim-to-real gap).
 
 2. **Limitations of Prior Work**:
     - Obtaining ground-truth reflectance and illumination for real scenes is extremely difficult, requiring specialized equipment and controlled procedures.
@@ -36,11 +36,11 @@ VT-Intrinsic exploits the physical complementarity between visible and thermal i
     - Optimization methods depend on strong prior assumptions (smooth illumination, chromaticity invariance, etc.) and generalize poorly to complex real-world scenes.
     - Methods using NIR auxiliary images are limited by the fact that NIR reflectance still exhibits significant material variation, and LED illumination lacks NIR components.
 
-3. **Root Cause**: IID is an inherently under-constrained inverse problem—a single visible image cannot uniquely determine the albedo-shading decomposition. Existing methods either rely on insufficiently reliable priors or require large amounts of annotated data.
+3. **Key Challenge**: IID is an inherently under-constrained inverse problem—a single visible image cannot uniquely determine the albedo-shading decomposition. Existing methods either rely on insufficiently reliable priors or require large amounts of annotated data.
 
-4. **Paper Goals**: Leverage a single additional thermal infrared image to provide physically meaningful constraints, enabling high-quality IID without pre-training data or controlled illumination.
+4. **Goal**: Leverage a single additional thermal infrared image to provide physically meaningful constraints, enabling high-quality IID without pre-training data or controlled illumination.
 
-5. **Starting Point**: A key physical insight—for opaque objects, the portion of incident light not reflected is absorbed as heat. Consequently, low-reflectance regions appear dark in the visible image but bright in the thermal image (absorbing more heat), whereas illumination variation manifests in the same direction in both modalities. This "ordinal relationship" can directly distinguish reflectance edges from shading edges.
+5. **Key Insight**: A key physical insight—for opaque objects, the portion of incident light not reflected is absorbed as heat. Consequently, low-reflectance regions appear dark in the visible image but bright in the thermal image (absorbing more heat), whereas illumination variation manifests in the same direction in both modalities. This "ordinal relationship" can directly distinguish reflectance edges from shading edges.
 
 6. **Core Idea**: Use the intensity ordinal relationships between visible and thermal infrared images—co-directional implies illumination-dominant; opposing implies reflectance-dominant—as dense self-supervised signals to decompose reflectance and shading.
 

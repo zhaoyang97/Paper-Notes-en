@@ -27,15 +27,15 @@ This paper proposes TagCF, a framework that employs MLLM to extract user role ta
 
 ## Background & Motivation
 
-**State of the Field**: Mainstream recommender systems follow the learning-to-rank paradigm, ranking items by discovering item topics (e.g., categories) and capturing user preferences over those topics. User representations rely primarily on implicit vectors derived from historical behavior, with little explicit modeling of user roles or characteristics.
+**Background**: Mainstream recommender systems follow the learning-to-rank paradigm, ranking items by discovering item topics (e.g., categories) and capturing user preferences over those topics. User representations rely primarily on implicit vectors derived from historical behavior, with little explicit modeling of user roles or characteristics.
 
 **Limitations of Prior Work**: (a) Item-item correlations are difficult to explain using item types alone — the classic "beer and diapers" association requires the user role "father of a newborn" as a logical explanation. (b) Interest-based recommendation models only interest relations (item–item), whereas user–item logical relations (e.g., "symphony musician → headphones", "symphony musician → instruments") are more expressive and interpretable. (c) User role identification is difficult to obtain directly in practice.
 
-**Root Cause**: Recommendation requires understanding the logical relation "what kind of person prefers what kind of content," yet existing methods model only statistical correlations and lack causal or logical-level modeling.
+**Key Challenge**: Recommendation requires understanding the logical relation "what kind of person prefers what kind of content," yet existing methods model only statistical correlations and lack causal or logical-level modeling.
 
-**Paper Goals**: Two new tasks are introduced: (1) user role identification (e.g., "symphony musician", "new mother"); and (2) behavioral logic modeling — bidirectional U2I and I2U logic between user roles and item topics.
+**Goal**: Two new tasks are introduced: (1) user role identification (e.g., "symphony musician", "new mother"); and (2) behavioral logic modeling — bidirectional U2I and I2U logic between user roles and item topics.
 
-**Starting Point**: Leverage MLLM multimodal understanding to extract tags, and leverage LLM world knowledge and logical reasoning to construct virtual logic graphs.
+**Key Insight**: Leverage MLLM multimodal understanding to extract tags, and leverage LLM world knowledge and logical reasoning to construct virtual logic graphs.
 
 **Core Idea**: MLLM-extracted user/item tags + LLM-reasoned U2I/I2U logic graphs + three integration strategies = user-role-aware logical recommendation.
 

@@ -29,15 +29,15 @@ This paper presents "Pixel Cloud," a low-fidelity autonomous aerial robotic art 
 
 ## Background & Motivation
 
-**State of the Field**: Mainstream robotics pursues precise environmental perception and optimal motion planning, relying on LiDAR, depth sensors, and SLAM to construct accurate geometric world models. Concurrently, MLLM-driven autonomous systems such as EMMA target precise driving by mapping sensor data to planner trajectories.
+**Background**: Mainstream robotics pursues precise environmental perception and optimal motion planning, relying on LiDAR, depth sensors, and SLAM to construct accurate geometric world models. Concurrently, MLLM-driven autonomous systems such as EMMA target precise driving by mapping sensor data to planner trajectories.
 
 **Limitations of Prior Work**: Although high-precision methods are effective, they present a philosophical paradox in the context of creative robotics and human-robot interaction—overly precise computational behavior strips robots of any sense of "biological presence" or "character," reducing them to tools rather than companions. Existing robots largely lack the capacity to elicit human empathy.
 
-**Root Cause**: There exists a fundamental tension between pursuing high performance and cultivating organic plausibility. The more precise a robot is, the more it resembles a machine rather than a living entity, making it difficult for users and audiences to form emotional connections.
+**Key Challenge**: There exists a fundamental tension between pursuing high performance and cultivating organic plausibility. The more precise a robot is, the more it resembles a machine rather than a living entity, making it difficult for users and audiences to form emotional connections.
 
-**Paper Goals**: (1) How can MLLMs replace conventional sensor suites to achieve "good enough" autonomous navigation? (2) How can natural language prompt engineering endow a robot with stable and perceptible personality traits? (3) Can "imperfect" behavior serve as a design asset rather than a defect?
+**Goal**: (1) How can MLLMs replace conventional sensor suites to achieve "good enough" autonomous navigation? (2) How can natural language prompt engineering endow a robot with stable and perceptible personality traits? (3) Can "imperfect" behavior serve as a design asset rather than a defect?
 
-**Starting Point**: The authors draw on the philosophy of *Yowai Robotto* (Weak Robot), arguing that a robot's fragility and imperfection are sources of its appeal. Combining media archaeology and speculative design theory, the work imbues the cultural artifact of the "pixel"—a digital heritage object—into a physical entity.
+**Key Insight**: The authors draw on the philosophy of *Yowai Robotto* (Weak Robot), arguing that a robot's fragility and imperfection are sources of its appeal. Combining media archaeology and speculative design theory, the work imbues the cultural artifact of the "pixel"—a digital heritage object—into a physical entity.
 
 **Core Idea**: By deliberately embracing a low-fidelity body and low-fidelity semantic cognition, and by employing an MLLM as the sole "brain," the gap between planning and execution generates characterful emergent behaviors.
 

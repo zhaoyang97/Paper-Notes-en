@@ -29,15 +29,15 @@ This paper presents OrbitZoo, a multi-agent RL environment built on the industri
 
 ## Background & Motivation
 
-**State of the Field**: Approximately 20,000 satellites (roughly 50% operational) and around 140 million debris objects currently occupy Earth orbit. The deployment of large-scale constellations such as Starlink has intensified congestion in low Earth orbit (LEO). Traditional satellite operations rely heavily on human decision-making, a paradigm that is becoming unsustainable given growing complexity. RL has shown promise for autonomous satellite maneuvering.
+**Background**: Approximately 20,000 satellites (roughly 50% operational) and around 140 million debris objects currently occupy Earth orbit. The deployment of large-scale constellations such as Starlink has intensified congestion in low Earth orbit (LEO). Traditional satellite operations rely heavily on human decision-making, a paradigm that is becoming unsustainable given growing complexity. RL has shown promise for autonomous satellite maneuvering.
 
 **Limitations of Prior Work**: Existing RL orbital environments suffer from three major shortcomings: (1) most employ simplified dynamics models (e.g., two/three-body problems, Newtonian gravity only), which fail to capture realistic orbital perturbations; (2) most are custom-built from scratch, lacking standardization and reproducibility—dynamics validation is labor-intensive and error-prone; (3) no existing environment simultaneously supports multi-agent scenarios, continuous control, realistic thrust modeling, and visualization (Table 1 surveys 14 existing environments, none of which satisfies all criteria).
 
-**Root Cause**: RL requires massive simulation interaction to train policies, demanding environments that are both high-fidelity (accurate dynamics) and computationally efficient (fast propagation). Simultaneously, the sim-to-real gap is the central obstacle to deploying RL policies on real satellites—simulations must be validated against real data.
+**Key Challenge**: RL requires massive simulation interaction to train policies, demanding environments that are both high-fidelity (accurate dynamics) and computationally efficient (fast propagation). Simultaneously, the sim-to-real gap is the central obstacle to deploying RL policies on real satellites—simulations must be validated against real data.
 
-**Paper Goals**: (1) Provide a unified environment combining high-fidelity dynamics with a standard RL interface; (2) support cooperative, competitive, and mixed multi-agent scenarios; (3) validate simulation accuracy against real ephemeris data.
+**Goal**: (1) Provide a unified environment combining high-fidelity dynamics with a standard RL interface; (2) support cooperative, competitive, and mixed multi-agent scenarios; (3) validate simulation accuracy against real ephemeris data.
 
-**Starting Point**: The paper leverages Orekit—an industrial-grade open-source orbital mechanics library—for high-fidelity dynamics, while wrapping it in a PettingZoo-compliant interface so that RL researchers need not master orbital mechanics.
+**Key Insight**: The paper leverages Orekit—an industrial-grade open-source orbital mechanics library—for high-fidelity dynamics, while wrapping it in a PettingZoo-compliant interface so that RL researchers need not master orbital mechanics.
 
 **Core Idea**: Combine an industrial-grade orbit propagator with a standard MARL framework to construct a satellite RL benchmark environment that is simultaneously realistic and accessible.
 

@@ -29,15 +29,15 @@ This paper proposes the "Show, Don't Tell" paradigm: a SODC pipeline (HOIST-Form
 
 ## Background & Motivation
 
-**State of the Field**: When robots learn tasks from human demonstrations, they must rapidly identify novel objects appearing in those demonstrations. Large-scale object detection models fall into two categories: closed-set detectors (YOLO, Faster R-CNN), which only detect objects within trained categories and are powerless against OOD objects; and open-set detectors/VLMs (GroundingDINO, RexOmni, YoloWorld), which can theoretically detect novel objects but rely heavily on the precision of language prompts.
+**Background**: When robots learn tasks from human demonstrations, they must rapidly identify novel objects appearing in those demonstrations. Large-scale object detection models fall into two categories: closed-set detectors (YOLO, Faster R-CNN), which only detect objects within trained categories and are powerless against OOD objects; and open-set detectors/VLMs (GroundingDINO, RexOmni, YoloWorld), which can theoretically detect novel objects but rely heavily on the precision of language prompts.
 
 **Limitations of Prior Work**: (1) Closed-set detectors cannot detect custom-manufactured parts, assembled objects, or other out-of-distribution objects; (2) VLMs require tedious manual prompt engineering to uniquely describe each object instance—some objects are difficult to distinguish linguistically (e.g., "green yellow red worm toy" in Figure 1 still cannot be recognized by VLMs); (3) the community has shifted toward automated prompt tuning, which introduces additional complexity.
 
-**Root Cause**: The inherent ambiguity and incompleteness of language make it a natural bottleneck for describing specific object instances—two visually similar but functionally distinct parts may be indistinguishable in language yet perfectly discriminable visually.
+**Key Challenge**: The inherent ambiguity and incompleteness of language make it a natural bottleneck for describing specific object instances—two visually similar but functionally distinct parts may be indistinguishable in language yet perfectly discriminable visually.
 
-**Paper Goals**: Bypass the linguistic intermediary entirely and self-supervisedly create training data from visual signals in human demonstration videos to train customized detectors.
+**Goal**: Bypass the linguistic intermediary entirely and self-supervisedly create training data from visual signals in human demonstration videos to train customized detectors.
 
-**Starting Point**: Rather than "telling" the detector what to find, directly "show" it. Hand-object interactions in human demonstration videos serve as natural supervisory signals—whatever the human grasps is the task-relevant object.
+**Key Insight**: Rather than "telling" the detector what to find, directly "show" it. Hand-object interactions in human demonstration videos serve as natural supervisory signals—whatever the human grasps is the task-relevant object.
 
 **Core Idea**: Automatically create annotated datasets from human demonstration videos using hand-object interaction detection, tracking, and spatiotemporal clustering, then train a customized F-RCNN detector, completely bypassing language prompts.
 

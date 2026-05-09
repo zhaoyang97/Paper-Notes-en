@@ -41,7 +41,7 @@ Existing datasets suffer from deficiencies in both **breadth** and **depth**:
 
 **Insufficient depth**: Descriptions in prior benchmarks are overly concise. IEdit has an average description length of only 8 words, which fails to capture the complexity of real-world changes.
 
-**Root Cause**: The absence of a unified benchmark that combines scene diversity with descriptive granularity limits the applicability of IDC models in complex, dynamic environments.
+**Key Challenge**: The absence of a unified benchmark that combines scene diversity with descriptive granularity limits the applicability of IDC models in complex, dynamic environments.
 
 ### Starting Point
 

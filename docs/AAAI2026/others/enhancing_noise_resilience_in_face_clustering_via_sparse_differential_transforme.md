@@ -27,18 +27,18 @@ This paper proposes a prediction-driven Top-K Jaccard similarity coefficient to 
 
 ## Background & Motivation
 
-**State of the Field**: GCN-based face clustering methods learn features via graph message passing, but constructing face graphs using kNN cosine distance introduces numerous noisy edges (connecting nodes of different identities), causing feature contamination during message propagation. Ada-NETS and FC-ESER replace cosine distance with Jaccard similarity coefficients, but the inclusion of excessive irrelevant nodes leads to insufficient discriminability of Jaccard scores.
+**Background**: GCN-based face clustering methods learn features via graph message passing, but constructing face graphs using kNN cosine distance introduces numerous noisy edges (connecting nodes of different identities), causing feature contamination during message propagation. Ada-NETS and FC-ESER replace cosine distance with Jaccard similarity coefficients, but the inclusion of excessive irrelevant nodes leads to insufficient discriminability of Jaccard scores.
 
 **Limitations of Prior Work**:
    - The Jaccard coefficients computed by FC-ESER between different faces are too similar — a slightly lower threshold merges different identities, while a slightly higher threshold fragments the same identity.
    - Ada-NETS produces inaccurate predictions of the optimal neighbor count $k$, deviating from the optimal value.
    - Vanilla Transformer assigns attention to all feature relationships (including irrelevant and noisy ones) during relation prediction, leading to erroneous clustering.
 
-**Root Cause**: How to precisely determine the effective neighbor range for each node while reliably judging node relationships near the Top-K boundary?
+**Key Challenge**: How to precisely determine the effective neighbor range for each node while reliably judging node relationships near the Top-K boundary?
 
-**Paper Goals**: Improve the reliability of Jaccard similarity computation + handle uncertainty near the Top-K boundary + eliminate noisy attention in the Transformer.
+**Goal**: Improve the reliability of Jaccard similarity computation + handle uncertainty near the Top-K boundary + eliminate noisy attention in the Transformer.
 
-**Starting Point**: (1) Use a Transformer to predict the optimal neighbor count Top-K for each node, computing Jaccard similarity only within Top-K neighbors; (2) use SDT to handle uncertainty near the Top-K boundary.
+**Key Insight**: (1) Use a Transformer to predict the optimal neighbor count Top-K for each node, computing Jaccard similarity only within Top-K neighbors; (2) use SDT to handle uncertainty near the Top-K boundary.
 
 **Core Idea**: Prediction-driven Top-K Jaccard for neighbor purification + sparse differential attention to eliminate noisy relation judgment.
 

@@ -29,13 +29,13 @@ This paper proposes FOCUS, a training-free visual cropping method that construct
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs demonstrate strong performance on VQA tasks, but struggle with small objects in high-resolution images. Global-view MLLMs (e.g., LLaVA-1.5, limited to 336×336) suffer from information loss due to downsampling; global-local MLLMs (e.g., LLaVA-OneVision) retain local crops but face difficulty identifying the small subset of visual tokens relevant to a given question among a large token pool.
+**Background**: MLLMs demonstrate strong performance on VQA tasks, but struggle with small objects in high-resolution images. Global-view MLLMs (e.g., LLaVA-1.5, limited to 336×336) suffer from information loss due to downsampling; global-local MLLMs (e.g., LLaVA-OneVision) retain local crops but face difficulty identifying the small subset of visual tokens relevant to a given question among a large token pool.
 
 **Limitations of Prior Work**: Existing visual cropping methods each have notable drawbacks — SEAL requires task-specific fine-tuning; DC2 and ZoomEye perform exhaustive hierarchical search with very low efficiency (ZoomEye requires 3 forward passes per candidate region); ViCrop relies on full Q-K attention weights, which are incompatible with FlashAttention.
 
-**Root Cause**: The core challenge is how to accurately localize small, question-relevant image regions without additional training, exhaustive search, or dependency on explicit attention matrices that are unavailable under efficient attention implementations.
+**Key Challenge**: The core challenge is how to accurately localize small, question-relevant image regions without additional training, exhaustive search, or dependency on explicit attention matrices that are unavailable under efficient attention implementations.
 
-**Starting Point**: The KV-cache computed during MLLM inference already encodes implicit semantic correspondences between visual and textual tokens. Target object tokens and their corresponding image tokens should exhibit high cosine similarity in the value feature space, from which spatial localization information can be extracted at zero additional computational cost.
+**Key Insight**: The KV-cache computed during MLLM inference already encodes implicit semantic correspondences between visual and textual tokens. Target object tokens and their corresponding image tokens should exhibit high cosine similarity in the value feature space, from which spatial localization information can be extracted at zero additional computational cost.
 
 **Core Idea**: Replace conventional attention weights with cosine similarity between value features in the KV-cache to construct object relevance maps, enabling training-free, efficient, and FlashAttention-compatible fine-grained object localization.
 

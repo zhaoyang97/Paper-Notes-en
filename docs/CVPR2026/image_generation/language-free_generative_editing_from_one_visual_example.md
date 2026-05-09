@@ -31,7 +31,7 @@ This paper reveals a critical text-visual alignment failure in text-guided diffu
 
 Text-guided diffusion models have achieved remarkable progress in image editing; however, surprisingly, SOTA methods **fail severely on simple, everyday visual transformations such as rain, blur, and haze**.
 
-**Root Cause**: Diffusion models are trained on image-caption pairs and only learn concepts explicitly described in captions. **Visual phenomena that are rarely or ambiguously described** (e.g., raindrops, haze) are poorly aligned in text-visual space — attention maps under the text condition "rain" remain object-centric and unrelated to rain characteristics.
+**Key Challenge**: Diffusion models are trained on image-caption pairs and only learn concepts explicitly described in captions. **Visual phenomena that are rarely or ambiguously described** (e.g., raindrops, haze) are poorly aligned in text-visual space — attention maps under the text condition "rain" remain object-centric and unrelated to rain characteristics.
 
 Existing solutions:
 - Fine-tuning: computationally expensive and data-demanding

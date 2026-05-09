@@ -29,13 +29,13 @@ This paper proposes EMTC, a framework that dynamically masks redundant timestamp
 
 ### State of the Field
 
-**State of the Field**: Multivariate time-series (MTS) clustering aims to discover intrinsic grouping patterns in data. However, MTS data contains substantial redundancy (e.g., steady-state operation records, zero-output intervals), which weakens the model's focus on critical timestamps.
+**Background**: Multivariate time-series (MTS) clustering aims to discover intrinsic grouping patterns in data. However, MTS data contains substantial redundancy (e.g., steady-state operation records, zero-output intervals), which weakens the model's focus on critical timestamps.
 
 Issues with existing methods:
 
 ### Starting Point
 
-**Starting Point**: Autoencoder-based methods **(DeTSEC, RDDC)**: reconstruction objectives tend to retain redundant information.
+**Key Insight**: Autoencoder-based methods **(DeTSEC, RDDC)**: reconstruction objectives tend to retain redundant information.
 
 ### Limitations of Prior Work
 
@@ -43,7 +43,7 @@ Issues with existing methods:
 
 ### Root Cause
 
-**Root Cause**: Attention mechanisms: soft weighting preserves the complete input structure and may be misled by highly activated yet uninformative patterns.
+**Key Challenge**: Attention mechanisms: soft weighting preserves the complete input structure and may be misled by highly activated yet uninformative patterns.
 
 ### Additional Notes
 

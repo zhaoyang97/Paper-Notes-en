@@ -28,15 +28,15 @@ This paper proposes SureLock, which permanently locks token positions in Masked 
 
 ## Background & Motivation
 
-**State of the Field**: Masked Diffusion LMs (MDLMs, e.g., LLaDA, Dream) generate text via iterative denoising, requiring attention and FFN recomputation over all $N$ token positions at each step, with complexity $O(N^2d)$.
+**Background**: Masked Diffusion LMs (MDLMs, e.g., LLaDA, Dream) generate text via iterative denoising, requiring attention and FFN recomputation over all $N$ token positions at each step, with complexity $O(N^2d)$.
 
 **Limitations of Prior Work**: Many tokens exhibit rapidly stabilizing posterior distributions after unmasking, yet standard samplers continue to recompute them at every step—resulting in substantial redundant computation. Existing acceleration methods either reduce the number of steps (temporal) or reuse KV across steps (reuse), but still emit $N$ query rows per step, leaving spatial complexity unchanged.
 
-**Root Cause**: Bidirectional attention in MDLMs requires full computation at every step, yet most unmasked tokens have effectively "converged" and do not require recomputation.
+**Key Challenge**: Bidirectional attention in MDLMs requires full computation at every step, yet most unmasked tokens have effectively "converged" and do not require recomputation.
 
-**Paper Goals**: How to identify and permanently skip computation for converged tokens, achieving monotonically decreasing per-step computational cost?
+**Goal**: How to identify and permanently skip computation for converged tokens, achieving monotonically decreasing per-step computational cost?
 
-**Starting Point**: Monitor the KL divergence of each token position's posterior between adjacent steps, and permanently lock positions whose divergence falls below a threshold $\varepsilon$.
+**Key Insight**: Monitor the KL divergence of each token position's posterior between adjacent steps, and permanently lock positions whose divergence falls below a threshold $\varepsilon$.
 
 **Core Idea**: Tokens with stable posteriors permanently exit computation (KV locked, Q/FFN skipped), and the active set shrinks monotonically as sampling progresses.
 

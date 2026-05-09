@@ -27,18 +27,18 @@ This paper presents a dedicated RAG pipeline for radio regulations—a legally s
 
 ## Background & Motivation
 
-**State of the Field**: LLMs perform well in general-purpose QA but are severely limited by hallucination in legally sensitive domains such as radio regulations. ITU Radio Regulations constitute legally binding, technically dense text requiring precise interpretation; any error may cause spectrum interference, legal disputes, or critical infrastructure disruption.
+**Background**: LLMs perform well in general-purpose QA but are severely limited by hallucination in legally sensitive domains such as radio regulations. ITU Radio Regulations constitute legally binding, technically dense text requiring precise interpretation; any error may cause spectrum interference, legal disputes, or critical infrastructure disruption.
 
 **Limitations of Prior Work**:
 - General-purpose LLMs lack domain knowledge of radio regulations, yielding low direct-answer accuracy (GPT-4o: 59%)
 - Full document insertion into the prompt is nearly ineffective (+0.6%), as documents are too long and terminology-dense for models to reliably locate relevant provisions
 - Existing telecom RAG work (e.g., Telco-RAG, Telco-DPR) targets 3GPP standards; no prior work addresses radio regulations
 
-**Root Cause**: Radio regulations require answers pinpointed to specific provisions, yet LLMs' parametric memory cannot cover such specialized legal text; naive retrieval may also return irrelevant or incomplete fragments due to poor chunking strategies.
+**Key Challenge**: Radio regulations require answers pinpointed to specific provisions, yet LLMs' parametric memory cannot cover such specialized legal text; naive retrieval may also return irrelevant or incomplete fragments due to poor chunking strategies.
 
-**Paper Goals**: (1) Build a RAG pipeline specifically for radio regulations; (2) Construct the first standardized evaluation benchmark for the radio regulation domain.
+**Goal**: (1) Build a RAG pipeline specifically for radio regulations; (2) Construct the first standardized evaluation benchmark for the radio regulation domain.
 
-**Starting Point**: Decouple the evaluation of retrieval and generation, optimizing each independently. FAISS + Sentence-Transformers are employed for efficient retrieval, and a domain-specific retrieval correctness metric is defined via ROUGE-L.
+**Key Insight**: Decouple the evaluation of retrieval and generation, optimizing each independently. FAISS + Sentence-Transformers are employed for efficient retrieval, and a domain-specific retrieval correctness metric is defined via ROUGE-L.
 
 **Core Idea**: A carefully designed, structured RAG pipeline with optimized chunking strategies and retrieval parameters outperforms naive document injection by an order of magnitude in regulatory QA.
 

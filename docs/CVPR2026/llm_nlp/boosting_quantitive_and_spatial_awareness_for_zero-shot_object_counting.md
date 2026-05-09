@@ -28,15 +28,15 @@ The QICA framework addresses the lack of quantity awareness and spatial insensit
 
 ## Background & Motivation
 
-**State of the Field**: Zero-shot object counting (ZSOC) aims to enumerate arbitrary-category objects using only text descriptions. Mainstream methods leverage VLMs such as CLIP to compute vision-text similarity maps, then use CNN/Transformer decoders to predict density maps.
+**Background**: Zero-shot object counting (ZSOC) aims to enumerate arbitrary-category objects using only text descriptions. Mainstream methods leverage VLMs such as CLIP to compute vision-text similarity maps, then use CNN/Transformer decoders to predict density maps.
 
 **Limitations of Prior Work**: (1) **Lack of quantity awareness** — text prompts specify only categories without quantity information; models excel at recognizing "what" but fail to understand "how many," especially in dense scenes. (2) **Spatial insensitivity + feature space distortion** — directly fine-tuning VLM encoders leads to severe overfitting to training categories, corrupting the pre-trained feature space and harming zero-shot generalization.
 
-**Root Cause**: Accurate counting requires adapting encoders to learn quantity-sensitive features, but fine-tuning corrupts zero-shot generalization — creating an adaptation-vs-generalization dilemma.
+**Key Challenge**: Accurate counting requires adapting encoders to learn quantity-sensitive features, but fine-tuning corrupts zero-shot generalization — creating an adaptation-vs-generalization dilemma.
 
-**Paper Goals**: (1) Enable fine-grained quantity discrimination; (2) Achieve effective adaptation without corrupting the pre-trained feature space.
+**Goal**: (1) Enable fine-grained quantity discrimination; (2) Achieve effective adaptation without corrupting the pre-trained feature space.
 
-**Starting Point**: Introduce quantity-conditioned prompts for encoders to implicitly learn quantity information, while operating on similarity maps (rather than feature space) to avoid feature distortion.
+**Key Insight**: Introduce quantity-conditioned prompts for encoders to implicitly learn quantity information, while operating on similarity maps (rather than feature space) to avoid feature distortion.
 
 **Core Idea**: During training, factual/counterfactual quantity prompts teach the model to distinguish different quantities; at inference, only category prompts are used for zero-shot counting.
 

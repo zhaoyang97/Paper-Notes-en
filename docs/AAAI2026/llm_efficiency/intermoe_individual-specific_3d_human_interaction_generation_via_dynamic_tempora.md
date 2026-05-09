@@ -28,13 +28,13 @@ This paper proposes InterMoE, a Dynamic Temporal-Selective MoE architecture for 
 
 ## Background & Motivation
 
-**State of the Field**: Text-driven two-person 3D interaction motion generation is a core task in virtual reality, game development, and related domains. Existing methods (InterGen, InterMask, TIMotion) have made notable progress, but exhibit clear deficiencies in individual identity preservation and semantic alignment.
+**Background**: Text-driven two-person 3D interaction motion generation is a core task in virtual reality, game development, and related domains. Existing methods (InterGen, InterMask, TIMotion) have made notable progress, but exhibit clear deficiencies in individual identity preservation and semantic alignment.
 
 **Limitations of Prior Work**: (a) **Cross-attention fusion causes individual homogenization**—methods such as InterGen fuse dual-person features via cross-attention and then process them through a shared FFN, suppressing individual feature differences and causing the two persons' motions to converge; (b) **Feature concatenation causes identity confusion**—methods such as TIMotion directly concatenate dual-person features for joint generation, lacking explicit identity constraints, leading to role swaps or positional errors.
 
-**Root Cause**: Individual feature independence and two-person interaction dependency must be modeled simultaneously—two objectives that are inherently in tension within a unified network.
+**Key Challenge**: Individual feature independence and two-person interaction dependency must be modeled simultaneously—two objectives that are inherently in tension within a unified network.
 
-**Starting Point**: MoE is a natural fit for this problem: different experts can specialize in the motion patterns of different individuals, with the routing mechanism enabling differentiated allocation.
+**Key Insight**: MoE is a natural fit for this problem: different experts can specialize in the motion patterns of different individuals, with the routing mechanism enabling differentiated allocation.
 
 **Core Idea**: (a) A Synergistic Router that fuses textual semantic and kinematic features to jointly guide routing decisions; (b) Dynamic Temporal Selection that allows each expert to dynamically select key temporal frames (rather than a fixed Top-K), handling non-uniform temporal importance.
 

@@ -28,15 +28,15 @@ This paper proposes Bell Box Quantization (BBQ), the first quantization method t
 
 ## Background & Motivation
 
-**State of the Field**: Quantization is a key technique for deploying DNNs on edge devices. Quantization-aware pre-training (QAPT) trains models from scratch at low precision, avoiding the additional overhead of full-precision pre-training followed by PTQ/QAFT. However, low-precision models have limited information capacity, making it difficult to fit large-scale data.
+**Background**: Quantization is a key technique for deploying DNNs on edge devices. Quantization-aware pre-training (QAPT) trains models from scratch at low precision, avoiding the additional overhead of full-precision pre-training followed by PTQ/QAFT. However, low-precision models have limited information capacity, making it difficult to fit large-scale data.
 
 **Limitations of Prior Work**: Existing QAPT methods (e.g., QuEST, LSQ) employ compute-efficient data types such as INT4, but these types **do not satisfy ITO**—quantized values are used with unequal frequency, wasting the limited learning capacity. Conversely, existing ITO methods (e.g., NF4/NormalFloat) maximize entropy but require dequantization to full precision before computation, making them infeasible on energy-constrained edge devices.
 
-**Root Cause**: There exists a trade-off between ITO and compute-efficiency—ITO quantization values do not reside in hardware-supported data types and thus cannot leverage low-precision matrix multiplication; integer/floating-point types that are compute-efficient are not ITO for Gaussian-distributed weights.
+**Key Challenge**: There exists a trade-off between ITO and compute-efficiency—ITO quantization values do not reside in hardware-supported data types and thus cannot leverage low-precision matrix multiplication; integer/floating-point types that are compute-efficient are not ITO for Gaussian-distributed weights.
 
-**Paper Goals**: Can ITO quantization be achieved without sacrificing compute-efficiency, enabling models to maximally exploit their limited learning capacity?
+**Goal**: Can ITO quantization be achieved without sacrificing compute-efficiency, enabling models to maximally exploit their limited learning capacity?
 
-**Starting Point**: **Learning is domain-agnostic**—DNNs can learn from rotated images, frequency-domain data, and latent embeddings; as long as information is preserved, projecting data into a different domain does not impair learning.
+**Key Insight**: **Learning is domain-agnostic**—DNNs can learn from rotated images, frequency-domain data, and latent embeddings; as long as information is preserved, projecting data into a different domain does not impair learning.
 
 **Core Idea**: The quantizer performs ITO quantization in the input domain to retain maximum information, then outputs to a distinct, compute-efficient domain that enables direct use of low-precision matrix multiplication.
 

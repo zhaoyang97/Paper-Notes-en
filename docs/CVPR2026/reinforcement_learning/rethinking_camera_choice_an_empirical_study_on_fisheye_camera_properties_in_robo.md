@@ -69,7 +69,7 @@ Fisheye cameras, with their ultra-wide FoV (> 180°), are increasingly adopted i
 **Key Finding**: The wide FoV of the fisheye camera acts as implicit data augmentation, enabling policies to better leverage scene diversity. In the real world, fisheye policies achieve a near-perfect score (0.988) with only 8 diverse training scenes.
 
 ### RQ3: Hardware Generalization and RSA
-**Root Cause**: Policies overfit to the absolute pixel scale of a specific lens (Scale Overfitting). When deployed on a new lens, the change in object scale within the image causes the policy to misestimate depth—magnification leads to undershoot (object perceived as closer), and minification leads to overshoot (object perceived as farther).
+**Key Challenge**: Policies overfit to the absolute pixel scale of a specific lens (Scale Overfitting). When deployed on a new lens, the change in object scale within the image causes the policy to misestimate depth—magnification leads to undershoot (object perceived as closer), and minification leads to overshoot (object perceived as farther).
 
 **Random Scale Augmentation (RSA)**:
 - During training, a scale factor $s$ (e.g., 0.7–1.3) is sampled uniformly at random

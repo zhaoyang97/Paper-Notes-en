@@ -27,7 +27,7 @@ content_hash: b295e132c2e822eb
 This paper introduces TabArena, the first continuously maintained "living" benchmark for tabular machine learning. From 1,053 candidate datasets, 51 are curated and 16 models are evaluated through large-scale experiments (~25 million model training runs). Key findings: under post-hoc ensembling, deep learning models match or surpass GBDTs; tabular foundation models excel on small datasets; and cross-model ensembles further advance the state of the art.
 
 ## Background & Motivation
-**State of the Field**: The number of tabular ML benchmarks continues to grow, yet most existing benchmarks are static—once published, they are not updated even when flaws are discovered, models improve, or new methods emerge.
+**Background**: The number of tabular ML benchmarks continues to grow, yet most existing benchmarks are static—once published, they are not updated even when flaws are discovered, models improve, or new methods emerge.
 
 **Limitations of Prior Work**:
    - Inconsistent dataset quality: many benchmark datasets are outdated, contain data leakage, do not represent genuine tabular tasks, or have licensing issues.
@@ -35,11 +35,11 @@ This paper introduces TabArena, the first continuously maintained "living" bench
    - Absence of post-hoc ensemble evaluation: most benchmarks do not assess peak model performance under ensembling, thereby underestimating the true capability of individual models.
    - Subsequent benchmarks replicate the flaws of predecessors and fail to compare against genuine SOTA methods.
 
-**Root Cause**: The community urgently needs reliable benchmarks to address key questions such as deep learning vs. GBDTs, yet static benchmarks cannot provide continuously trustworthy answers.
+**Key Challenge**: The community urgently needs reliable benchmarks to address key questions such as deep learning vs. GBDTs, yet static benchmarks cannot provide continuously trustworthy answers.
 
-**Paper Goals**: Establish the first continuously maintained, versioned, community-driven "living benchmark" system to make tabular ML evaluation reliable and sustainable.
+**Goal**: Establish the first continuously maintained, versioned, community-driven "living benchmark" system to make tabular ML evaluation reliable and sustainable.
 
-**Starting Point**: Develop rigorous protocols across three dimensions—dataset curation, model implementation, and evaluation design—and assemble a cross-institutional maintenance team.
+**Key Insight**: Develop rigorous protocols across three dimensions—dataset curation, model implementation, and evaluation design—and assemble a cross-institutional maintenance team.
 
 **Core Idea**: Apply software engineering principles to benchmarking—versioning, continuous maintenance, and community contribution—rather than a publish-and-abandon approach.
 

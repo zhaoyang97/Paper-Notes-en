@@ -27,15 +27,15 @@ content_hash: 151ca3cbe8b0a09d
 This paper proposes OddGridBench to evaluate the fine-grained visual discrepancy sensitivity of MLLMs (i.e., identifying the element in a grid that differs from others in color, size, rotation, or position). All evaluated MLLMs fall far below human performance. To address this gap, the authors propose OddGrid-GRPO, which combines curriculum learning with a distance-aware reward to significantly improve visual discrimination ability.
 
 ## Background & Motivation
-**State of the Field**: MLLMs have demonstrated strong performance on high-level semantic understanding tasks (e.g., image captioning, VQA, mathematical reasoning), yet low-level visual perception remains underexplored both in evaluation and training.
+**Background**: MLLMs have demonstrated strong performance on high-level semantic understanding tasks (e.g., image captioning, VQA, mathematical reasoning), yet low-level visual perception remains underexplored both in evaluation and training.
 
 **Limitations of Prior Work**: Existing benchmarks primarily focus on high-level semantic reasoning, neglecting a fundamental capability of the human visual system — fine-grained visual discrepancy sensitivity (Just Noticeable Difference / Pop-out Effect). This low-level perceptual ability is a prerequisite for spatial reasoning and object understanding.
 
-**Root Cause**: No systematic, controllable benchmark exists to quantitatively assess MLLM sensitivity across different perceptual dimensions (color, size, rotation, position), nor are there targeted training methods to close this gap.
+**Key Challenge**: No systematic, controllable benchmark exists to quantitatively assess MLLM sensitivity across different perceptual dimensions (color, size, rotation, position), nor are there targeted training methods to close this gap.
 
-**Paper Goals**: (1) Construct a controllable fine-grained visual discrepancy perception benchmark; (2) Expose systematic failure patterns of MLLMs on this task; (3) Propose a training method to improve perceptual sensitivity.
+**Goal**: (1) Construct a controllable fine-grained visual discrepancy perception benchmark; (2) Expose systematic failure patterns of MLLMs on this task; (3) Propose a training method to improve perceptual sensitivity.
 
-**Starting Point**: Inspired by the Odd-One-Out paradigm from cognitive psychology, the paper constructs parameterized grid images that precisely quantify the degree of discrepancy.
+**Key Insight**: Inspired by the Odd-One-Out paradigm from cognitive psychology, the paper constructs parameterized grid images that precisely quantify the degree of discrepancy.
 
 **Core Idea**: A benchmark is built using parameterized grid images in which one element differs subtly from others in color, size, rotation, or position. OddGrid-GRPO, combining curriculum learning and distance-aware rewards, is then applied to improve MLLM perceptual sensitivity.
 

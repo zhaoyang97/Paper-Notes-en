@@ -28,18 +28,18 @@ HAIF-GS proposes a dynamic 3DGS framework built upon sparse motion anchors, achi
 
 ## Background & Motivation
 
-**State of the Field**: 3D Gaussian Splatting (3DGS) enables real-time, high-quality rendering of static scenes. The dominant paradigm for extending it to dynamic scenes is to learn a deformation field that predicts time-varying Gaussian attributes (e.g., position, rotation).
+**Background**: 3D Gaussian Splatting (3DGS) enables real-time, high-quality rendering of static scenes. The dominant paradigm for extending it to dynamic scenes is to learn a deformation field that predicts time-varying Gaussian attributes (e.g., position, rotation).
 
 **Limitations of Prior Work**:
    - **Redundant Gaussian updates**: Methods that predict per-Gaussian deformations (e.g., Deformable 3DGS) must query and update a large number of Gaussians at every timestep, incurring severe computational redundancy.
    - **Insufficient motion supervision**: Training relies solely on image reconstruction loss, lacking explicit motion guidance or structural constraints, which leads to temporal inconsistency and artifacts.
    - **Weak non-rigid modeling capacity**: Sparse control-point methods (e.g., SC-GS) improve efficiency by driving Gaussians via interpolation, but simple MLP deformation fields struggle to capture articulated motion and spatially varying complex deformations.
 
-**Root Cause**: A fundamental trade-off exists between efficiency (sparse representation) and expressiveness (fine-grained deformation). Sparse control points are efficient but insufficiently expressive, whereas dense per-Gaussian deformation is expressive but redundant.
+**Key Challenge**: A fundamental trade-off exists between efficiency (sparse representation) and expressiveness (fine-grained deformation). Sparse control points are efficient but insufficiently expressive, whereas dense per-Gaussian deformation is expressive but redundant.
 
-**Paper Goals**: (1) How to efficiently focus deformation modeling only on regions that truly require it? (2) How to improve temporal consistency without external optical flow supervision? (3) How to capture fine-grained non-rigid deformation while maintaining sparsity?
+**Goal**: (1) How to efficiently focus deformation modeling only on regions that truly require it? (2) How to improve temporal consistency without external optical flow supervision? (3) How to capture fine-grained non-rigid deformation while maintaining sparsity?
 
-**Starting Point**: Sparse motion anchors serve as the core deformation unit. A dynamic–static decomposition filters out unnecessary updates; self-supervised scene flow provides implicit motion guidance; and hierarchical densification increases anchor resolution in regions of complex motion.
+**Key Insight**: Sparse motion anchors serve as the core deformation unit. A dynamic–static decomposition filters out unnecessary updates; self-supervised scene flow provides implicit motion guidance; and hierarchical densification increases anchor resolution in regions of complex motion.
 
 **Core Idea**: Sparse anchors + dynamic filtering + induced flow guidance + hierarchical densification = efficient and fine-grained dynamic scene deformation modeling.
 

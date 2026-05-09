@@ -27,15 +27,15 @@ This paper proposes NEURONA, a neuro-symbolic framework for fMRI decoding and co
 
 ## Background & Motivation
 
-**State of the Field**: The "language of thought" hypothesis in cognitive science posits that human cognition operates over structured, compositional representations. Neural decoding from fMRI has advanced considerably over the past decades, progressing from linear mappings to deep learning approaches.
+**Background**: The "language of thought" hypothesis in cognitive science posits that human cognition operates over structured, compositional representations. Neural decoding from fMRI has advanced considerably over the past decades, progressing from linear mappings to deep learning approaches.
 
 **Limitations of Prior Work**: Existing neural decoding methods either employ simple linear models (interpretable but expressively limited) or end-to-end neural networks (powerful but black-box). Neither approach adequately captures the compositional relationships and logical structure among concepts.
 
-**Root Cause**: fMRI signals encode rich visual concepts, yet directly predicting natural-language answers from fMRI spans an excessively large semantic gap—requiring simultaneous understanding of scene structure, concept semantics, and question intent.
+**Key Challenge**: fMRI signals encode rich visual concepts, yet directly predicting natural-language answers from fMRI spans an excessively large semantic gap—requiring simultaneous understanding of scene structure, concept semantics, and question intent.
 
-**Paper Goals**: How can structured, compositional concept representations be decoded from fMRI activity, rather than directly predicting end-to-end answers?
+**Goal**: How can structured, compositional concept representations be decoded from fMRI activity, rather than directly predicting end-to-end answers?
 
-**Starting Point**: The paper leverages composite concepts naturally encoded in image and video fMRI datasets, decomposing the decoding process into symbolic program execution.
+**Key Insight**: The paper leverages composite concepts naturally encoded in image and video fMRI datasets, decomposing the decoding process into symbolic program execution.
 
 **Core Idea**: Decompose fMRI decoding into a neuro-symbolic pipeline of "fMRI → concept detection → symbolic program execution → answer," yielding greater accuracy and interpretability than end-to-end approaches.
 

@@ -27,11 +27,11 @@ content_hash: acc681a0183864b3
 This paper addresses the expert homogenization problem in MoE training by maximizing the Jensen-Shannon divergence of routing distributions across different data domains, encouraging distinct expert subsets to be activated for different domains. The approach improves expert specialization and language modeling performance on a 15B-A1.5B model.
 
 ## Background & Motivation
-**State of the Field**: Mixture-of-Experts (MoE) models achieve high parameter counts with low computation through sparse activation, but training frequently suffers from "expert homogenization"—different experts learn highly similar functions, wasting parameter capacity.
+**Background**: Mixture-of-Experts (MoE) models achieve high parameter counts with low computation through sparse activation, but training frequently suffers from "expert homogenization"—different experts learn highly similar functions, wasting parameter capacity.
 
 **Limitations of Prior Work**: Existing methods such as load balancing losses only ensure uniform expert utilization, without guaranteeing that different experts learn distinct skills. Experts may be used uniformly yet remain functionally equivalent.
 
-**Root Cause**: Load balancing and functional specialization are fundamentally different objectives—uniform utilization does not imply distinct expertise.
+**Key Challenge**: Load balancing and functional specialization are fundamentally different objectives—uniform utilization does not imply distinct expertise.
 
 **Core Idea**: Different data domains should activate different combinations of experts. Expert specialization can be encouraged by maximizing the JS divergence between inter-domain routing distributions.
 

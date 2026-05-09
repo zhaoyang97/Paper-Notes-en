@@ -29,15 +29,15 @@ PrefixKV identifies that the importance distributions of KV caches vary substant
 
 ## Background & Motivation
 
-**State of the Field**: Large vision-language models (LVLMs) demonstrate strong multimodal generation and reasoning capabilities; however, Transformer-based autoregressive decoding requires storing KV caches for all processed tokens, resulting in memory consumption that grows linearly with sequence length and constitutes a critical inference efficiency bottleneck.
+**Background**: Large vision-language models (LVLMs) demonstrate strong multimodal generation and reasoning capabilities; however, Transformer-based autoregressive decoding requires storing KV caches for all processed tokens, resulting in memory consumption that grows linearly with sequence length and constitutes a critical inference efficiency bottleneck.
 
 **Limitations of Prior Work**: Existing KV cache compression methods—such as H2O, which evicts less important KVs based on attention scores, and Elastic Cache, which merges unimportant KVs into anchor positions—are effective but universally adopt a strategy of **retaining an equal number of KVs across all layers**. This ignores a critical observation: the importance distributions of KV caches differ dramatically across layers.
 
-**Root Cause**: Some layers exhibit highly concentrated importance distributions (a small number of KVs encapsulates most of the information), while others are relatively uniform (requiring more KVs to preserve sufficient information). Uniform allocation wastes cache budget in concentrated layers while causing severe information loss in dispersed ones—a phenomenon the paper quantifies using Lorenz curves and Gini coefficients.
+**Key Challenge**: Some layers exhibit highly concentrated importance distributions (a small number of KVs encapsulates most of the information), while others are relatively uniform (requiring more KVs to preserve sufficient information). Uniform allocation wastes cache budget in concentrated layers while causing severe information loss in dispersed ones—a phenomenon the paper quantifies using Lorenz curves and Gini coefficients.
 
-**Paper Goals**: How can the optimal number of KVs to retain be adaptively determined for each layer, such that each layer preserves as much contextual information as possible while satisfying a global compression budget?
+**Goal**: How can the optimal number of KVs to retain be adaptively determined for each layer, such that each layer preserves as much contextual information as possible while satisfying a global compression budget?
 
-**Starting Point**: The authors treat KVs sorted by importance as a priority sequence—retaining the most important KVs is equivalent to retaining a "prefix" of this sequence. The per-layer cache sizing problem is thereby reformulated as searching for the optimal global prefix configuration.
+**Key Insight**: The authors treat KVs sorted by importance as a priority sequence—retaining the most important KVs is equivalent to retaining a "prefix" of this sequence. The per-layer cache sizing problem is thereby reformulated as searching for the optimal global prefix configuration.
 
 **Core Idea**: A binary search is used to identify a unified cumulative priority threshold $p$, under which each layer retains a prefix of sufficient length to meet this threshold, thereby maximizing per-layer information retention while satisfying the compression budget.
 

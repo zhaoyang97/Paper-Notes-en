@@ -29,15 +29,15 @@ This paper proposes DeltaProduct, which extends DeltaNet's single-step gradient 
 
 ## Background & Motivation
 
-**State of the Field**: Linear RNNs (e.g., Mamba, GLA, mLSTM) have emerged as competitive alternatives to Transformers, offering efficient training and linear-time inference. Their core properties are determined by the state transition matrix, with diagonal matrices being dominant in current models.
+**Background**: Linear RNNs (e.g., Mamba, GLA, mLSTM) have emerged as competitive alternatives to Transformers, offering efficient training and linear-time inference. Their core properties are determined by the state transition matrix, with diagonal matrices being dominant in current models.
 
 **Limitations of Prior Work**: Diagonal state transition matrices, while computationally efficient, suffer from severely limited expressivity—for instance, they cannot perform modular 3 addition in finite precision. DeltaNet partially addresses this with a diagonal-plus-rank-1 structure, but still requires multiple layers to handle complex state-tracking tasks (e.g., the $S_5$ symmetric group problem).
 
-**Root Cause**: There exists a fundamental trade-off between expressivity and efficiency: diagonal matrices are efficient but weakly expressive, while full matrices are highly expressive but prohibitively expensive and unstable to train.
+**Key Challenge**: There exists a fundamental trade-off between expressivity and efficiency: diagonal matrices are efficient but weakly expressive, while full matrices are highly expressive but prohibitively expensive and unstable to train.
 
-**Paper Goals**: To systematically enhance the expressivity of the state transition matrix in linear RNNs while preserving training efficiency and recurrent stability.
+**Goal**: To systematically enhance the expressivity of the state transition matrix in linear RNNs while preserving training efficiency and recurrent stability.
 
-**Starting Point**: From the online gradient descent perspective of DeltaNet, extending single-step gradient descent to $n_h$ steps naturally yields a structure consisting of products of $n_h$ Householder transformations.
+**Key Insight**: From the online gradient descent perspective of DeltaNet, extending single-step gradient descent to $n_h$ steps naturally yields a structure consisting of products of $n_h$ Householder transformations.
 
 **Core Idea**: By increasing the number of gradient descent steps $n_h$ per token, the state transition matrix is extended from a rank-1 update (DeltaNet) to a rank-$n_h$ update, achieving a continuous interpolation between diagonal and dense matrices.
 

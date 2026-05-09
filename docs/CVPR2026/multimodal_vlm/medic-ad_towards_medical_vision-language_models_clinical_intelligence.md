@@ -31,9 +31,9 @@ Medic-AD upgrades a general-purpose medical VLM into a clinically intelligent mo
 
 Medical VLMs have advanced rapidly in recent years, yet most efforts optimize for broad medical knowledge coverage rather than genuine clinical applicability. Real-world clinical workflows demand three key capabilities: (1) accurate lesion detection, (2) reliable longitudinal symptom tracking, and (3) transparent visual interpretability.
 
-**Root Cause**: Existing medical VLMs rely on long-form text descriptions, OCR instructions, and chain-of-thought reasoning during training, which enhances generalized reasoning but neglects the precise perception and verifiable reasoning processes required in clinical practice.
+**Key Challenge**: Existing medical VLMs rely on long-form text descriptions, OCR instructions, and chain-of-thought reasoning during training, which enhances generalized reasoning but neglects the precise perception and verifiable reasoning processes required in clinical practice.
 
-**Paper Goals**: To design a VLM training paradigm that follows the clinical diagnostic workflow of "detect → compare → explain."
+**Goal**: To design a VLM training paradigm that follows the clinical diagnostic workflow of "detect → compare → explain."
 
 ## Method
 

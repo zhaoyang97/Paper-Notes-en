@@ -27,15 +27,15 @@ content_hash: 9889fd74ab6e109e
 This paper systematically evaluates the robustness of reasoning LLMs to various interventions (benign/neutral/adversarial) in their chain-of-thought. Models are generally robust and can recover from interventions; however, paraphrasing suppresses "self-doubt" expressions and degrades accuracy, while the recovery process incurs significant computational overhead (CoT length inflation up to 665%).
 
 ## Background & Motivation
-**State of the Field**: Reasoning LLMs (e.g., DeepSeek-R1, QwQ) generate chain-of-thought reasoning to solve complex tasks step by step. In practice, however, the CoT may be corrupted by noisy tool outputs, adversarial injections, or model-generated hallucinations.
+**Background**: Reasoning LLMs (e.g., DeepSeek-R1, QwQ) generate chain-of-thought reasoning to solve complex tasks step by step. In practice, however, the CoT may be corrupted by noisy tool outputs, adversarial injections, or model-generated hallucinations.
 
 **Limitations of Prior Work**: It is known that conventional (non-reasoning) LLMs have limited self-correction ability and frequently alter correct answers erroneously. Whether RLVR-trained reasoning models have acquired stronger robustness and self-correction capabilities lacks systematic investigation.
 
-**Root Cause**: There is a fundamental trade-off between reasoning robustness and reasoning efficiency — models may recover the correct answer, but at the cost of substantial CoT inflation and increased inference overhead.
+**Key Challenge**: There is a fundamental trade-off between reasoning robustness and reasoning efficiency — models may recover the correct answer, but at the cost of substantial CoT inflation and increased inference overhead.
 
-**Paper Goals**: (1) Can reasoning LLMs recover from interventions in their CoT? (2) What factors influence recovery ability? (3) What is the computational cost of recovery?
+**Goal**: (1) Can reasoning LLMs recover from interventions in their CoT? (2) What factors influence recovery ability? (3) What is the computational cost of recovery?
 
-**Starting Point**: A controlled experimental framework is designed in which seven types of interventions are applied to the model's own correct CoT, and whether the model still produces the correct final answer is measured.
+**Key Insight**: A controlled experimental framework is designed in which seven types of interventions are applied to the model's own correct CoT, and whether the model still produces the correct final answer is measured.
 
 **Core Idea**: Reasoning LLMs are generally robust to CoT interventions, but their robustness relies on a metacognitive mechanism termed "doubt." Paraphrasing suppresses doubt and thereby degrades performance.
 

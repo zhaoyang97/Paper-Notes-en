@@ -28,11 +28,11 @@ This paper introduces EmoVerse — the first large-scale interpretable visual em
 
 ## Background & Motivation
 
-1. **State of the Field**: Visual Emotion Analysis (VEA) aims to predict viewers' emotional responses from images. Existing datasets (FI, EmoSet, Instagram, etc.) predominantly adopt discrete emotion classification (Mikels 8-class or VAD three-dimensional), resulting in limited annotation dimensions.
+1. **Background**: Visual Emotion Analysis (VEA) aims to predict viewers' emotional responses from images. Existing datasets (FI, EmoSet, Instagram, etc.) predominantly adopt discrete emotion classification (Mikels 8-class or VAD three-dimensional), resulting in limited annotation dimensions.
 2. **Limitations of Prior Work**: (1) Large-scale open-source interpretable emotion datasets are lacking — existing datasets only provide emotion category labels without explaining "why a particular emotion is evoked"; (2) discrete emotion labels (CES) fail to capture fine-grained emotional variation, and datasets with continuous representations (DES) are almost nonexistent; (3) subject-level instance localization is absent — it remains unclear which subject in an image triggers which emotion.
-3. **Root Cause**: The VEA field urgently needs interpretability and fine-grained annotations, yet manual annotation is prohibitively expensive (1024-dimensional continuous space cannot be annotated by hand), and traditional crowdsourcing cannot cover all four dimensions: word-level, subject-level, CES, and DES.
-4. **Paper Goals**: To construct a visual emotion dataset that simultaneously covers CES and DES, provides interpretable annotations, and is sufficiently large in scale.
-5. **Starting Point**: Leveraging MLLMs (Gemini 2.5, GPT-4o) for automatic annotation, coupled with a multi-round verification pipeline to ensure quality, and introducing a knowledge graph to structure emotion attribution.
+3. **Key Challenge**: The VEA field urgently needs interpretability and fine-grained annotations, yet manual annotation is prohibitively expensive (1024-dimensional continuous space cannot be annotated by hand), and traditional crowdsourcing cannot cover all four dimensions: word-level, subject-level, CES, and DES.
+4. **Goal**: To construct a visual emotion dataset that simultaneously covers CES and DES, provides interpretable annotations, and is sufficiently large in scale.
+5. **Key Insight**: Leveraging MLLMs (Gemini 2.5, GPT-4o) for automatic annotation, coupled with a multi-round verification pipeline to ensure quality, and introducing a knowledge graph to structure emotion attribution.
 6. **Core Idea**: The B-A-S triplet decomposes emotional attribution into Background (scene context), Attribute (visual properties such as color and lighting), and Subject (key objects), combined with Grounding DINO + SAM for subject localization, and an MLLM-based annotation–verification–correction loop for complete pipeline closure.
 
 ## Method

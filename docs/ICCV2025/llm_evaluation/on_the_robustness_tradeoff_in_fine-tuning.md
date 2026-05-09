@@ -28,7 +28,7 @@ The first systematic study of the adversarial robustness–accuracy tradeoff dur
 
 ## Background & Motivation
 
-**State of the Field**: Pre-training followed by fine-tuning has become the standard paradigm for adapting models to downstream tasks. Parameter-efficient fine-tuning (PEFT) methods — including LoRA, Adapter, and BitFit — can match the accuracy of full fine-tuning by updating as few as 0.07%–3.97% of parameters.
+**Background**: Pre-training followed by fine-tuning has become the standard paradigm for adapting models to downstream tasks. Parameter-efficient fine-tuning (PEFT) methods — including LoRA, Adapter, and BitFit — can match the accuracy of full fine-tuning by updating as few as 0.07%–3.97% of parameters.
 
 **Limitations of Prior Work**:
    - The effect of fine-tuning on model robustness has **received almost no attention**. Existing work on the robustness–accuracy tradeoff focuses primarily on models trained from scratch.
@@ -36,11 +36,11 @@ The first systematic study of the adversarial robustness–accuracy tradeoff dur
    - Existing PEFT robustness studies evaluate only the final model state, without tracking the **dynamic evolution** of robustness throughout fine-tuning.
    - Whether adversarial robustness and OOD robustness are driven by the same factors remains unclear.
 
-**Root Cause**: Fine-tuning transitions a model from a general to a specialized state, during which the learned robust and non-robust features continuously change. The key question is: given that different PEFT strategies update parameters at different locations and in different quantities, how does this affect the robustness–accuracy tradeoff?
+**Key Challenge**: Fine-tuning transitions a model from a general to a specialized state, during which the learned robust and non-robust features continuously change. The key question is: given that different PEFT strategies update parameters at different locations and in different quantities, how does this affect the robustness–accuracy tradeoff?
 
-**Paper Goals**: Three core research questions — (RQ1) Does an adversarial robustness–accuracy tradeoff exist during fine-tuning? (RQ2) How do different fine-tuning strategies and task complexities affect the optimal tradeoff? (RQ3) Do these findings extend to OOD robustness?
+**Goal**: Three core research questions — (RQ1) Does an adversarial robustness–accuracy tradeoff exist during fine-tuning? (RQ2) How do different fine-tuning strategies and task complexities affect the optimal tradeoff? (RQ3) Do these findings extend to OOD robustness?
 
-**Starting Point**: A continuous evaluation framework is constructed to adaptively track changes in robustness and accuracy at the level of individual backpropagation steps throughout fine-tuning, rather than evaluating only the final model.
+**Key Insight**: A continuous evaluation framework is constructed to adaptively track changes in robustness and accuracy at the level of individual backpropagation steps throughout fine-tuning, rather than evaluating only the final model.
 
 ## Method
 

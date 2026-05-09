@@ -29,7 +29,7 @@ This paper proposes MM-OPERA, an open-ended association reasoning benchmark comp
 
 ## Background & Motivation
 
-**State of the Field**: LVLMs have made remarkable progress in visual understanding, language generation, and multi-step reasoning. However, **associative intelligence** — a cornerstone of human creative thinking and knowledge integration — remains severely underexplored in existing evaluations.
+**Background**: LVLMs have made remarkable progress in visual understanding, language generation, and multi-step reasoning. However, **associative intelligence** — a cornerstone of human creative thinking and knowledge integration — remains severely underexplored in existing evaluations.
 
 **Limitations of Prior Work**: The prior work "Labyrinth of Links" evaluates associative memory only through closed-form multiple-choice questions, which (1) may inadvertently hint at answers through fixed options, masking the model's true capabilities, and (2) cannot assess complex multi-step associative reasoning or divergent thinking.
 

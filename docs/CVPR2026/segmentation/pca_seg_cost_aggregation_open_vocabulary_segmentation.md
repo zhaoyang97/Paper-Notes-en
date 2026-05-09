@@ -29,11 +29,11 @@ This paper revisits cost aggregation strategies and proposes PCA-Seg, a parallel
 
 ## Background & Motivation
 
-1. **State of the Field**: CLIP-based open-vocabulary semantic and part segmentation methods extract vision-language alignment cues from cost volumes through spatial and class aggregation.
+1. **Background**: CLIP-based open-vocabulary semantic and part segmentation methods extract vision-language alignment cues from cost volumes through spatial and class aggregation.
 2. **Limitations of Prior Work**: Existing methods adopt a serial structure—performing spatial aggregation before class aggregation (or vice versa)—which causes knowledge interference: the prior aggregation step alters the input distribution for the subsequent step, and spatial aggregation may distort class semantics.
-3. **Root Cause**: Class-semantic and spatial-structural information must be captured simultaneously, yet serial processing allows one type of information to contaminate the other.
-4. **Paper Goals**: Design a parallel architecture to eliminate knowledge interference introduced by serial processing.
-5. **Starting Point**: Class semantics and spatial structure represent knowledge along two orthogonal dimensions and should be processed independently before fusion.
+3. **Key Challenge**: Class-semantic and spatial-structural information must be captured simultaneously, yet serial processing allows one type of information to contaminate the other.
+4. **Goal**: Design a parallel architecture to eliminate knowledge interference introduced by serial processing.
+5. **Key Insight**: Class semantics and spatial structure represent knowledge along two orthogonal dimensions and should be processed independently before fusion.
 6. **Core Idea**: Parallel cost aggregation + Expert-driven Perception Learning (EPL) for dual-branch fusion + Feature Orthogonalization Decoupling (FOD) to reduce redundancy.
 
 ## Method

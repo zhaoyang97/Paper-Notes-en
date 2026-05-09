@@ -29,15 +29,15 @@ LIFT proposes a three-stage pretraining-finetuning framework: (i) large-scale pa
 
 ## Background & Motivation
 
-**State of the Field**: PPO has become the dominant method for humanoid robot control due to its robust convergence under large-scale parallel GPU simulation, enabling zero-shot deployment. However, the low sample efficiency of on-policy methods limits safe adaptation to new environments.
+**Background**: PPO has become the dominant method for humanoid robot control due to its robust convergence under large-scale parallel GPU simulation, enabling zero-shot deployment. However, the low sample efficiency of on-policy methods limits safe adaptation to new environments.
 
 **Limitations of Prior Work**: (1) Large-scale parallel training with off-policy methods has received insufficient attention; (2) stochastic exploration during finetuning risks actuator damage or unsafe states, particularly dangerous for humanoids with small support polygons; (3) training model-based methods from scratch is time-consuming and prone to local optima.
 
-**Root Cause**: Large-scale pretraining requires the stability and parallel efficiency of on-policy methods, while efficient finetuning demands the sample efficiency of off-policy methods and the data efficiency of model-based approaches.
+**Key Challenge**: Large-scale pretraining requires the stability and parallel efficiency of on-policy methods, while efficient finetuning demands the sample efficiency of off-policy methods and the data efficiency of model-based approaches.
 
-**Paper Goals**: To unify the algorithm choice across pretraining and finetuning stages while guaranteeing both safety and efficiency.
+**Goal**: To unify the algorithm choice across pretraining and finetuning stages while guaranteeing both safety and efficiency.
 
-**Starting Point**: SAC is adopted as a unified backbone—pretraining employs high UTD with large-batch parallel training, while finetuning confines stochastic exploration to the world model, with only deterministic actions executed in the real environment.
+**Key Insight**: SAC is adopted as a unified backbone—pretraining employs high UTD with large-batch parallel training, while finetuning confines stochastic exploration to the world model, with only deterministic actions executed in the real environment.
 
 **Core Idea**: SAC serves as the backbone throughout the pretraining-finetuning pipeline; a physics-prior world model bridges simulation and reality; deterministic execution combined with in-model exploration enables safe and efficient finetuning.
 

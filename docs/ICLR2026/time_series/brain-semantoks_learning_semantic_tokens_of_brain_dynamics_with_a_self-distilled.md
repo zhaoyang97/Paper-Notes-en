@@ -28,13 +28,13 @@ This paper proposes Brain-Semantoks, an fMRI foundation model based on a semanti
 
 ## Background & Motivation
 
-**State of the Field**: fMRI foundation models have advanced rapidly in recent years. Pioneering works such as BrainLM, Brain-JEPA, and NeuroSTORM all adopt mask-and-reconstruct objectives. These methods focus on low-level signal prediction — BrainLM directly reconstructs BOLD signals in input space, Brain-JEPA performs prediction in latent space to avoid modeling noise, and NeuroSTORM conducts spatiotemporal reconstruction over 4D voxels.
+**Background**: fMRI foundation models have advanced rapidly in recent years. Pioneering works such as BrainLM, Brain-JEPA, and NeuroSTORM all adopt mask-and-reconstruct objectives. These methods focus on low-level signal prediction — BrainLM directly reconstructs BOLD signals in input space, Brain-JEPA performs prediction in latent space to avoid modeling noise, and NeuroSTORM conducts spatiotemporal reconstruction over 4D voxels.
 
-**Root Cause**: There is a fundamental mismatch between reconstruction objectives and downstream task objectives. Downstream tasks such as disease diagnosis and cognitive assessment require stable, high-level phenotypic signatures, whereas representations learned through reconstruction objectives are sensitive to noise and temporal fluctuations, necessitating extensive fine-tuning for adaptation. This dependence on fine-tuning undermines the practical utility of foundation models, particularly in the fMRI domain where datasets vary considerably in subject populations, hardware, and acquisition protocols.
+**Key Challenge**: There is a fundamental mismatch between reconstruction objectives and downstream task objectives. Downstream tasks such as disease diagnosis and cognitive assessment require stable, high-level phenotypic signatures, whereas representations learned through reconstruction objectives are sensitive to noise and temporal fluctuations, necessitating extensive fine-tuning for adaptation. This dependence on fine-tuning undermines the practical utility of foundation models, particularly in the fMRI domain where datasets vary considerably in subject populations, hardware, and acquisition protocols.
 
 **Key Assumption**: Effective prediction of stable phenotypes requires a shift from "reconstruction" to "abstraction" — the goal is not to precisely encode BOLD signals but to extract underlying phenotypic features from them.
 
-**Starting Point**: (1) Time series from individual ROIs are noisy and semantically ambiguous, making them unsuitable as input tokens for a Transformer. (2) The functional organization of the brain (e.g., the default mode network) provides strong neuroscientific priors that can be leveraged to construct semantic tokens.
+**Key Insight**: (1) Time series from individual ROIs are noisy and semantically ambiguous, making them unsuitable as input tokens for a Transformer. (2) The functional organization of the brain (e.g., the default mode network) provides strong neuroscientific priors that can be leveraged to construct semantic tokens.
 
 **Core Idea**: A functional-network-level semantic tokenizer aggregates noisy regional signals into robust tokens, after which a self-distillation objective learns temporally stable, abstract representations.
 

@@ -29,11 +29,11 @@ This paper proposes NLCE, a training-free three-stage concept erasure framework 
 
 ## Background & Motivation
 
-1. **State of the Field**: Concept erasure methods for T2I diffusion models fall into two categories: training-based approaches (e.g., ESD, MACE, SPM, which require fine-tuning) and training-free approaches (e.g., UCE, RECE, GLoCE, which intervene only at inference time). Localized erasure methods such as GLoCE aim to restrict edits to target regions only.
+1. **Background**: Concept erasure methods for T2I diffusion models fall into two categories: training-based approaches (e.g., ESD, MACE, SPM, which require fine-tuning) and training-free approaches (e.g., UCE, RECE, GLoCE, which intervene only at inference time). Localized erasure methods such as GLoCE aim to restrict edits to target regions only.
 2. **Limitations of Prior Work**: The **Neighbor Gap** problem — erasing a fine-grained concept inadvertently degrades semantically adjacent concepts. For example, erasing one dog breed reduces generation quality for other breeds as well.
-3. **Root Cause**: Concept representations are highly entangled in the embedding space, making it impossible for simple projection or suppression operations to precisely distinguish between target and neighboring concepts.
-4. **Paper Goals**: To accurately erase a target concept without training, while preserving the semantic integrity of neighboring concepts.
-5. **Starting Point**: A three-stage progressive erasure pipeline — spectrally-weighted modulation in representation space to suppress the target and reinforce neighbors, followed by attention-based localization of residual activations, and finally hard scrubbing for complete removal.
+3. **Key Challenge**: Concept representations are highly entangled in the embedding space, making it impossible for simple projection or suppression operations to precisely distinguish between target and neighboring concepts.
+4. **Goal**: To accurately erase a target concept without training, while preserving the semantic integrity of neighboring concepts.
+5. **Key Insight**: A three-stage progressive erasure pipeline — spectrally-weighted modulation in representation space to suppress the target and reinforce neighbors, followed by attention-based localization of residual activations, and finally hard scrubbing for complete removal.
 6. **Core Idea**: Explicitly modeling and protecting the "concept neighborhood" structure to enable precise rather than indiscriminate concept removal.
 
 ## Method

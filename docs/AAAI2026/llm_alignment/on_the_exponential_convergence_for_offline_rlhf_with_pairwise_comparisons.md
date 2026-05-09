@@ -29,15 +29,15 @@ Under the offline RLHF pairwise comparison setting, this paper proposes the RL-L
 
 ## Background & Motivation
 
-**State of the Field**: RLHF (Reinforcement Learning from Human Feedback) has become the core paradigm for LLM alignment. In the offline setting, training a reward model from pre-collected human pairwise preference data is a key step in systems such as InstructGPT. On the theoretical side, Zhu et al. (2023) established the minimax optimality of Pessimistic MLE, and Zhan et al. (2024) extended this to general reward functions.
+**Background**: RLHF (Reinforcement Learning from Human Feedback) has become the core paradigm for LLM alignment. In the offline setting, training a reward model from pre-collected human pairwise preference data is a key step in systems such as InstructGPT. On the theoretical side, Zhu et al. (2023) established the minimax optimality of Pessimistic MLE, and Zhan et al. (2024) extended this to general reward functions.
 
 **Limitations of Prior Work**: Existing theoretical analyses—including Zhu et al. (2023), Zhan et al. (2024), Cen et al. (2024), and Liu et al. (2024)—all focus exclusively on worst-case regret bounds, yielding upper bounds of the form $\tilde{O}(n^{-1/2})$, i.e., inverse polynomial convergence rates. Such worst-case analyses fail to reveal how the intrinsic structure of a problem instance influences algorithm performance.
 
-**Root Cause**: Worst-case bounds are independent of instance-specific parameters (e.g., suboptimality gaps of individual actions), and thus cannot distinguish between "easy" and "hard" instances, offering limited insight into the true capabilities and limitations of algorithms.
+**Key Challenge**: Worst-case bounds are independent of instance-specific parameters (e.g., suboptimality gaps of individual actions), and thus cannot distinguish between "easy" and "hard" instances, offering limited insight into the true capabilities and limitations of algorithms.
 
-**Paper Goals**: To establish an instance-dependent analytical framework for offline RLHF with pairwise comparisons, addressing two core questions: (1) What is the fastest achievable convergence rate? (2) Is this rate fundamentally unimprovable?
+**Goal**: To establish an instance-dependent analytical framework for offline RLHF with pairwise comparisons, addressing two core questions: (1) What is the fastest achievable convergence rate? (2) Is this rate fundamentally unimprovable?
 
-**Starting Point**: Drawing on instance-dependent optimal analysis from the bandit and hypothesis testing literature, the paper conducts a fine-grained analysis exploiting the structure of the linear reward + BTL preference model.
+**Key Insight**: Drawing on instance-dependent optimal analysis from the bandit and hypothesis testing literature, the paper conducts a fine-grained analysis exploiting the structure of the linear reward + BTL preference model.
 
 **Core Idea**: Design *locally optimal weights* to minimize a proxy for the variance of relative reward estimates for each state-action pair, thereby achieving the tightest possible exponential convergence for each instance.
 

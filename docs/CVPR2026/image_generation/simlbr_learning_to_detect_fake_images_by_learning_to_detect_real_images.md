@@ -28,15 +28,15 @@ This paper proposes SimLBR, which regularizes a detector by blending a small amo
 
 ## Background & Motivation
 
-**State of the Field**: AI-generated image detection is a critical media forensics task. Existing methods typically train on fake images from a single generator and aim to generalize to others. UnivFD uses CLIP features with nearest-neighbor classification, while AIDE combines DCT and CLIP features.
+**Background**: AI-generated image detection is a critical media forensics task. Existing methods typically train on fake images from a single generator and aim to generalize to others. UnivFD uses CLIP features with nearest-neighbor classification, while AIDE combines DCT and CLIP features.
 
 **Limitations of Prior Work**: Nearly all state-of-the-art detectors overfit to generator-specific fingerprints present in the training data, suffering catastrophic performance degradation when encountering unseen generators. On the Chameleon hard test set proposed in the AIDE paper, all existing methods fail severely—fake images are misclassified as real (recall as low as 5%), revealing that these methods effectively learn compact boundaries around fake images and treat "real" as a sink class.
 
-**Root Cause**: The distribution of fake images continuously evolves as new generators emerge; learning boundaries around fake images inevitably misses out-of-distribution fakes. In contrast, the real image distribution is relatively stable—real images are real, and anything that is not real should be classified as fake.
+**Key Challenge**: The distribution of fake images continuously evolves as new generators emerge; learning boundaries around fake images inevitably misses out-of-distribution fakes. In contrast, the real image distribution is relatively stable—real images are real, and anything that is not real should be classified as fake.
 
-**Paper Goals**: To train a detector that learns a compact decision boundary around the real image distribution, treating "fake" as the sink class, thereby generalizing to arbitrary unseen generators.
+**Goal**: To train a detector that learns a compact decision boundary around the real image distribution, treating "fake" as the sink class, thereby generalizing to arbitrary unseen generators.
 
-**Starting Point**: Latent Blending Regularization (LBR) makes the classification of real images harder during training—by interpolating a small amount of fake image information into real image embeddings and labeling the result as fake, the model is forced to classify only completely uncontaminated real images as real.
+**Key Insight**: Latent Blending Regularization (LBR) makes the classification of real images harder during training—by interpolating a small amount of fake image information into real image embeddings and labeling the result as fake, the model is forced to classify only completely uncontaminated real images as real.
 
 **Core Idea**: Perform simple linear interpolation between real and fake image embeddings in the DINOv3 semantic latent space, training the model to draw a compact boundary around the pure real image distribution.
 

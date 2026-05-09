@@ -28,15 +28,15 @@ This paper proposes EventHub, a training data factory for event-based stereo mat
 
 ## Background & Motivation
 
-1. **State of the Field**: Deep learning-driven stereo matching has achieved remarkable progress in the RGB domain, with highly generalizable foundation models such as FoundationStereo emerging. Event cameras, with their microsecond temporal resolution, absence of motion blur, and high dynamic range, offer unique advantages in autonomous driving and robotic navigation.
+1. **Background**: Deep learning-driven stereo matching has achieved remarkable progress in the RGB domain, with highly generalizable foundation models such as FoundationStereo emerging. Event cameras, with their microsecond temporal resolution, absence of motion blur, and high dynamic range, offer unique advantages in autonomous driving and robotic navigation.
 
 2. **Limitations of Prior Work**: Annotated data for event-based stereo matching is extremely scarce — datasets such as DSEC, MVSEC, and M3ED are far smaller than their RGB counterparts. LiDAR-based annotation also suffers from inherent limitations: sparsity (requiring 7×7 dilation before use), accumulated errors in dynamic scenes, reprojection errors, and failure on non-Lambertian surfaces.
 
-3. **Root Cause**: Acquiring and annotating event camera data requires complex active sensor setups (e.g., LiDAR), which are costly and yield limited annotation quality, whereas RGB image data is abundant and supported by mature depth estimation tools. The central question is how to leverage inexpensive RGB data to train event camera models.
+3. **Key Challenge**: Acquiring and annotating event camera data requires complex active sensor setups (e.g., LiDAR), which are costly and yield limited annotation quality, whereas RGB image data is abundant and supported by mature depth estimation tools. The central question is how to leverage inexpensive RGB data to train event camera models.
 
-4. **Paper Goals**: (1) How can event camera training data be generated from RGB images? (2) How can knowledge from RGB stereo models be transferred to the event domain? (3) How can event stereo models achieve unprecedented generalization ability?
+4. **Goal**: (1) How can event camera training data be generated from RGB images? (2) How can knowledge from RGB stereo models be transferred to the event domain? (3) How can event stereo models achieve unprecedented generalization ability?
 
-5. **Starting Point**: RGB images are cheap and abundant, and RGB stereo foundation models already possess strong depth estimation capability. These resources serve as inputs to an automatic data factory for event-based stereo matching training data.
+5. **Key Insight**: RGB images are cheap and abundant, and RGB stereo foundation models already possess strong depth estimation capability. These resources serve as inputs to an automatic data factory for event-based stereo matching training data.
 
 6. **Core Idea**: Combine novel view synthesis (to generate proxy events and depth labels) with cross-modal distillation (to transfer knowledge from RGB stereo models), constructing an event-based stereo matching data factory that requires no active sensors.
 

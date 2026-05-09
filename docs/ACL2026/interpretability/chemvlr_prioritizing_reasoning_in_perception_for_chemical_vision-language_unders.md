@@ -27,15 +27,15 @@ This paper proposes ChemVLR, the first reasoning-oriented VLM for the chemical d
 
 ## Background & Motivation
 
-**State of the Field**: Chemical VLMs (e.g., ChemVLM, TinyChemVL) have made notable progress but primarily adopt an end-to-end direct-answer paradigm relying on SFT. Meanwhile, RLVR has demonstrated powerful reasoning enhancement capabilities in domains such as mathematics and programming.
+**Background**: Chemical VLMs (e.g., ChemVLM, TinyChemVL) have made notable progress but primarily adopt an end-to-end direct-answer paradigm relying on SFT. Meanwhile, RLVR has demonstrated powerful reasoning enhancement capabilities in domains such as mathematics and programming.
 
 **Limitations of Prior Work**: Existing chemical VLMs operate as "black-box" systems—jumping directly from molecular images to answers without generating interpretable reasoning chains. They fail to leverage the capacity of LLMs to infer underlying reaction mechanisms and perform poorly on complex visual chemistry problems. Furthermore, high-quality chemical reasoning data is extremely scarce, particularly visual grounded reasoning annotations.
 
-**Root Cause**: Chemical image understanding requires fine-grained substructure analysis (e.g., functional group recognition), yet general-purpose VLMs lack domain-specific chemical knowledge, and direct SFT is insufficient to fully activate pre-trained knowledge.
+**Key Challenge**: Chemical image understanding requires fine-grained substructure analysis (e.g., functional group recognition), yet general-purpose VLMs lack domain-specific chemical knowledge, and direct SFT is insufficient to fully activate pre-trained knowledge.
 
-**Paper Goals**: To build a chemical VLM that prioritizes reasoning during perception—explicitly identifying fine-grained chemical descriptors (e.g., functional groups) before deriving the final answer.
+**Goal**: To build a chemical VLM that prioritizes reasoning during perception—explicitly identifying fine-grained chemical descriptors (e.g., functional groups) before deriving the final answer.
 
-**Starting Point**: Leveraging textual chemical queries paired with ground-truth answers, the reasoning process is reverse-engineered via an LLM and combined with image rendering to produce visual reasoning data.
+**Key Insight**: Leveraging textual chemical queries paired with ground-truth answers, the reasoning process is reverse-engineered via an LLM and combined with image rendering to produce visual reasoning data.
 
 **Core Idea**: Large-scale reasoning data generation via cross-modal reverse engineering, combined with a progressive CPT → SFT → RL three-stage training pipeline.
 

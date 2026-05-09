@@ -28,15 +28,15 @@ This paper demonstrates that the apparent "English preference" in multilingual R
 
 ## Background & Motivation
 
-**State of the Field**: Multilingual RAG (mRAG) enhances LLMs' cross-lingual question answering capabilities by retrieving evidence from multilingual knowledge sources. The English-pivot strategy—translating non-English queries into English before retrieval—is widely regarded as an effective heuristic.
+**Background**: Multilingual RAG (mRAG) enhances LLMs' cross-lingual question answering capabilities by retrieving evidence from multilingual knowledge sources. The English-pivot strategy—translating non-English queries into English before retrieval—is widely regarded as an effective heuristic.
 
 **Limitations of Prior Work**: (1) The community broadly attributes the effectiveness of English-pivot to LLMs' "English-centric" capabilities, including stronger English-language reasoning and reduced translation noise. (2) However, this paper finds that the apparent "English preference" is primarily driven by structural biases in evaluation benchmarks: in MKQA, 73.3% of gold evidence resides in the English Wikipedia, while other languages account for only 0.5–1.4%. (3) Existing metrics such as MLRS cannot distinguish between a model's genuine preference and external necessity imposed by data distribution.
 
-**Root Cause**: English-pivot appears effective not because models prefer English, but because correct answers are almost exclusively found in English resources—a consequence of data imbalance rather than model bias. Once these structural confounds are removed, the model's true preference remains unclear.
+**Key Challenge**: English-pivot appears effective not because models prefer English, but because correct answers are almost exclusively found in English resources—a consequence of data imbalance rather than model bias. Once these structural confounds are removed, the model's true preference remains unclear.
 
-**Paper Goals**: (1) Identify the true source of "English preference" in mRAG. (2) Design the debiased metric DeLP to measure intrinsic language preference. (3) Leverage the post-debiasing insights to develop superior mRAG strategies.
+**Goal**: (1) Identify the true source of "English preference" in mRAG. (2) Design the debiased metric DeLP to measure intrinsic language preference. (3) Leverage the post-debiasing insights to develop superior mRAG strategies.
 
-**Starting Point**: The authors identify three categories of structural priors—exposure prior (high-resource corpora dominating retrieval results), gold availability prior (correct evidence concentrated in English), and cultural prior (region-specific topics bound to particular languages)—and regress these priors out of the raw preference signal via ridge regression.
+**Key Insight**: The authors identify three categories of structural priors—exposure prior (high-resource corpora dominating retrieval results), gold availability prior (correct evidence concentrated in English), and cultural prior (region-specific topics bound to particular languages)—and regress these priors out of the raw preference signal via ridge regression.
 
 **Core Idea**: After debiasing, the retrievers' true preference is monolingual alignment (i.e., retrieval performs best when query and document languages match), not English preference. Accordingly, queries should be augmented into multilingual anchors to exploit monolingual alignment, rather than being blindly translated into English.
 

@@ -28,15 +28,15 @@ This paper presents a systematic empirical study showing that quantization-aware
 
 ## Background & Motivation
 
-**State of the Field**: Large reasoning models (LRMs) such as DeepSeek-R1 acquire strong reasoning capabilities on verifiable tasks like mathematics through RL, particularly via the GRPO algorithm. Quantization is a standard deployment technique for LLMs, but PTQ and QAT have primarily been studied in the SFT setting.
+**Background**: Large reasoning models (LRMs) such as DeepSeek-R1 acquire strong reasoning capabilities on verifiable tasks like mathematics through RL, particularly via the GRPO algorithm. Quantization is a standard deployment technique for LLMs, but PTQ and QAT have primarily been studied in the SFT setting.
 
 **Limitations of Prior Work**: RL training differs fundamentally from SFT — RL relies on discrete reward signals derived from model-sampled rollouts to update the policy, and the effect of quantization-induced noise on this process is entirely unknown. In practice, large numbers of LRM agents are derived from shared base models, specialized to different tasks via RL, and ultimately require quantized deployment.
 
-**Root Cause**: When is quantization best applied? During RL training (QAFT/QLoRA) or after training is complete (PTQ)? How do the two approaches trade off reasoning performance against memory efficiency?
+**Key Challenge**: When is quantization best applied? During RL training (QAFT/QLoRA) or after training is complete (PTQ)? How do the two approaches trade off reasoning performance against memory efficiency?
 
-**Paper Goals**: To systematically evaluate the impact of different quantization strategies (QAFT-STE, QLoRA, PTQ-AWQ, PTQ-BnB) at various precisions (4/8-bit) and model scales (0.6B–8B) on the effectiveness of RL training for LRMs.
+**Goal**: To systematically evaluate the impact of different quantization strategies (QAFT-STE, QLoRA, PTQ-AWQ, PTQ-BnB) at various precisions (4/8-bit) and model scales (0.6B–8B) on the effectiveness of RL training for LRMs.
 
-**Starting Point**: The Qwen3 model family (0.6B/1.7B/4B/8B) is trained on the MATH dataset using GRPO/drGRPO, with various quantization configurations compared.
+**Key Insight**: The Qwen3 model family (0.6B/1.7B/4B/8B) is trained on the MATH dataset using GRPO/drGRPO, with various quantization configurations compared.
 
 **Core Idea**: Sudden quantization shock during the RL process degrades policy learning; deferring quantization to after training (via PTQ or QLoRA with frozen base weights) is a superior strategy.
 

@@ -29,15 +29,15 @@ This paper theoretically identifies two fundamental flaws in existing length-pen
 
 ## Background & Motivation
 
-**State of the Field**: Large reasoning models (LRMs) demonstrate strong reasoning capabilities via RLVR, yet suffer from a severe "overthinking" problem—models continue generating redundant reasoning steps after reaching a correct answer, resulting in poor inference efficiency.
+**Background**: Large reasoning models (LRMs) demonstrate strong reasoning capabilities via RLVR, yet suffer from a severe "overthinking" problem—models continue generating redundant reasoning steps after reaching a correct answer, resulting in poor inference efficiency.
 
 **Limitations of Prior Work**: Existing methods encourage concise reasoning by incorporating a length penalty into the correctness reward, $r'(\boldsymbol{o}_i) = r(\boldsymbol{o}_i) - \gamma |\boldsymbol{o}_i|$, but efficiency gains often come at the cost of performance degradation, failing to achieve an optimal efficiency–performance trade-off.
 
-**Root Cause**: A fundamental misalignment exists between trajectory-level length rewards and token-level policy optimization: (1) negative advantages are back-propagated to all tokens, incorrectly suppressing valid high-entropy exploration tokens (e.g., "wait", "however"); (2) redundant tokens following the NRP in shorter trajectories still receive positive advantages and are thus erroneously reinforced.
+**Key Challenge**: A fundamental misalignment exists between trajectory-level length rewards and token-level policy optimization: (1) negative advantages are back-propagated to all tokens, incorrectly suppressing valid high-entropy exploration tokens (e.g., "wait", "however"); (2) redundant tokens following the NRP in shorter trajectories still receive positive advantages and are thus erroneously reinforced.
 
-**Paper Goals**: To precisely identify and penalize redundant tokens while protecting tokens that genuinely contribute to reasoning, thereby achieving truly lossless reasoning compression.
+**Goal**: To precisely identify and penalize redundant tokens while protecting tokens that genuinely contribute to reasoning, thereby achieving truly lossless reasoning compression.
 
-**Starting Point**: The paper defines the "Necessary Reasoning Prefix" (NRP) as a criterion, decoupling rewards at the NRP boundary and applying differentiated reward signals to tokens before and after it.
+**Key Insight**: The paper defines the "Necessary Reasoning Prefix" (NRP) as a criterion, decoupling rewards at the NRP boundary and applying differentiated reward signals to tokens before and after it.
 
 **Core Idea**: Train a lightweight discriminator to identify NRP boundaries; tokens within the NRP receive a maximum reward, while redundant tokens beyond the NRP receive a progressively decaying penalty. Curriculum scheduling controls the proportion of easy samples to preserve high-entropy exploration capacity.
 

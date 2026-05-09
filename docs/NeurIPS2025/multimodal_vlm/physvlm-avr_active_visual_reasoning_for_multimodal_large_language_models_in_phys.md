@@ -28,10 +28,10 @@ This paper proposes the Active Visual Reasoning (AVR) task paradigm, constructs 
 
 ## Background & Motivation
 
-- **State of the Field**: Current multimodal large language models (MLLMs) have achieved remarkable progress in visual reasoning, demonstrating strong performance on tasks such as object counting and VQA. However, nearly all such models rely on **static, fully observable** visual inputs—given a complete image, the model directly infers an answer.
+- **Background**: Current multimodal large language models (MLLMs) have achieved remarkable progress in visual reasoning, demonstrating strong performance on tasks such as object counting and VQA. However, nearly all such models rely on **static, fully observable** visual inputs—given a complete image, the model directly infers an answer.
 - **Limitations of Prior Work**: This passive reasoning paradigm is fundamentally limited in real-world physical environments: information is often **partially observable**, with objects occluded, stacked, or outside the field of view. Existing research suffers from **paradigm fragmentation**: classical visual reasoning tasks (e.g., CLEVR) assume complete information and involve no interaction; embodied question answering (e.g., OpenEQA) includes interaction but focuses on passively observing video sequences; embodied exploration methods emphasize navigation success rather than goal-directed information acquisition for reasoning.
-- **Root Cause**: No existing method effectively bridges reasoning with strategic sequential information-gathering actions.
-- **Paper Goals**: Inspired by human active perception, this paper proposes the AVR task, extending visual reasoning to partially observable interactive environments. The agent must: (1) actively acquire information through sequential physical actions; (2) integrate multi-step observations for coherent reasoning; and (3) dynamically adjust decisions based on incremental visual feedback.
+- **Key Challenge**: No existing method effectively bridges reasoning with strategic sequential information-gathering actions.
+- **Goal**: Inspired by human active perception, this paper proposes the AVR task, extending visual reasoning to partially observable interactive environments. The agent must: (1) actively acquire information through sequential physical actions; (2) integrate multi-step observations for coherent reasoning; and (3) dynamically adjust decisions based on incremental visual feedback.
 
 ## Method
 

@@ -28,15 +28,15 @@ This paper proposes HAWK, a head importance-aware visual token pruning method th
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal large language models (MLLMs) encode visual inputs into large numbers of visual tokens (typically hundreds to thousands), which are fed together with text tokens into an LLM. Since the computational complexity of attention mechanisms scales quadratically with token count, the abundance of visual tokens leads to slow inference and high memory consumption. Existing visual token pruning methods fall into three categories: similarity-based (DivPrune), fine-tuning-based (DART), and attention-based (FastV).
+**Background**: Multimodal large language models (MLLMs) encode visual inputs into large numbers of visual tokens (typically hundreds to thousands), which are fed together with text tokens into an LLM. Since the computational complexity of attention mechanisms scales quadratically with token count, the abundance of visual tokens leads to slow inference and high memory consumption. Existing visual token pruning methods fall into three categories: similarity-based (DivPrune), fine-tuning-based (DART), and attention-based (FastV).
 
 **Limitations of Prior Work**: (1) Similarity-based methods are context-agnostic and cannot adapt to user instructions, potentially discarding task-relevant tokens. (2) Fine-tuning-based methods require end-to-end training, incurring high computational cost and poor generalization. (3) Attention-based methods assume all attention heads contribute equally to visual understanding, naively averaging attention scores across all heads to estimate token importance.
 
-**Root Cause**: Different attention heads in practice capture distinct visual semantics and contribute very differently to visual understanding. Experiments show that disabling different attention heads leads to significantly different changes in model performance, and this pattern is consistent across multiple datasets. Treating all heads equally causes retention of redundant tokens and erroneous pruning of valuable ones.
+**Key Challenge**: Different attention heads in practice capture distinct visual semantics and contribute very differently to visual understanding. Experiments show that disabling different attention heads leads to significantly different changes in model performance, and this pattern is consistent across multiple datasets. Treating all heads equally causes retention of redundant tokens and erroneous pruning of valuable ones.
 
-**Paper Goals**: How can visual token pruning account for the differentiated contributions of different attention heads to maximally preserve critical tokens?
+**Goal**: How can visual token pruning account for the differentiated contributions of different attention heads to maximally preserve critical tokens?
 
-**Starting Point**: By systematically ablating each attention head and measuring its impact on visual tasks, consistent patterns of head importance are identified and used to design an importance-weighted pruning strategy.
+**Key Insight**: By systematically ablating each attention head and measuring its impact on visual tasks, consistent patterns of head importance are identified and used to design an importance-weighted pruning strategy.
 
 **Core Idea**: Weight text-guided visual attention scores by offline-computed attention head importance weights to achieve more precise estimation and pruning of visual token importance.
 

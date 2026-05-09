@@ -29,13 +29,13 @@ GeoFlow reformulates fine-grained cross-view geolocalization (FG-CVG) as probabi
 
 ## Background & Motivation
 
-**State of the Field**: Fine-grained cross-view localization (FG-CVG) estimates the precise 2-DoF position of a ground image within a satellite image. Existing methods fall into matching-based (discretization + classification → quantization error) and regression-based (continuous space but requiring geometric projection/BEV/camera intrinsics → complex and slow).
+**Background**: Fine-grained cross-view localization (FG-CVG) estimates the precise 2-DoF position of a ground image within a satellite image. Existing methods fall into matching-based (discretization + classification → quantization error) and regression-based (continuous space but requiring geometric projection/BEV/camera intrinsics → complex and slow).
 
 **Limitations of Prior Work**: (1) Matching-based methods have accuracy limited by patch size → quantization error grows as the area expands; (2) Regression-based methods typically produce deterministic point estimates → lacking uncertainty quantification; (3) High-accuracy methods have inference too slow for real-time deployment.
 
-**Root Cause**: Can accurate localization in continuous space be achieved while maintaining real-time speed?
+**Key Challenge**: Can accurate localization in continuous space be achieved while maintaining real-time speed?
 
-**Starting Point**: The iterative refinement philosophy of flow matching models—humans also do not localize in one step but refine progressively. GeoFlow does not learn a continuous flow field but directly predicts probability distributions of displacements (distance + direction).
+**Key Insight**: The iterative refinement philosophy of flow matching models—humans also do not localize in one step but refine progressively. GeoFlow does not learn a continuous flow field but directly predicts probability distributions of displacements (distance + direction).
 
 **Core Idea**: (1) Probabilistic displacement regression (Gaussian for distance, von Mises-Fisher for direction) → NLL training; (2) IRS algorithm—N random hypotheses refined in parallel for R rounds → converging to a consensus position; (3) Inference-time scalability—N and R can be flexibly adjusted.
 

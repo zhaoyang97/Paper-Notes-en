@@ -29,15 +29,15 @@ AutoReproduce proposes a multi-agent framework that mines implicit domain knowle
 
 ## Background & Motivation
 
-**State of the Field**: Reproducing paper experiments is critical for accelerating scientific progress, yet as methods grow increasingly complex, reproduction demands deep domain expertise and substantial human effort. LLMs have been applied to discrete tasks such as paper analysis, idea generation, and environment configuration, but no end-to-end automatic reproduction framework has emerged.
+**Background**: Reproducing paper experiments is critical for accelerating scientific progress, yet as methods grow increasingly complex, reproduction demands deep domain expertise and substantial human effort. LLMs have been applied to discrete tasks such as paper analysis, idea generation, and environment configuration, but no end-to-end automatic reproduction framework has emerged.
 
 **Limitations of Prior Work**: (1) Papers frequently omit critical experimental details, and different research domains rely heavily on tacit knowledge (e.g., specific module architectures, data processing pipelines). (2) Concurrent work such as Paper2Code generates code without considering executability, making it impossible to verify reproduction correctness. (3) Existing methods do not systematically exploit the domain conventions and implementation practices embedded in cited references.
 
-**Root Cause**: Successful reproduction requires not only understanding the methodological descriptions in a paper, but also mastering domain conventions that are left unstated—tacit knowledge scattered across cited references and related codebases.
+**Key Challenge**: Successful reproduction requires not only understanding the methodological descriptions in a paper, but also mastering domain conventions that are left unstated—tacit knowledge scattered across cited references and related codebases.
 
-**Paper Goals**: (1) Systematically mine implicit knowledge from cited references. (2) Build an end-to-end executable code reproduction framework. (3) Establish a reproduction evaluation benchmark with execution verification.
+**Goal**: (1) Systematically mine implicit knowledge from cited references. (2) Build an end-to-end executable code reproduction framework. (3) Establish a reproduction evaluation benchmark with execution verification.
 
-**Starting Point**: The proposed "Paper Lineage" algorithm traces cited references and associated codebases, leveraging implementation conventions accumulated in prior work as a knowledge source for reproduction.
+**Key Insight**: The proposed "Paper Lineage" algorithm traces cited references and associated codebases, leveraging implementation conventions accumulated in prior work as a knowledge source for reproduction.
 
 **Core Idea**: Paper reproduction = paper understanding + domain knowledge mining + code generation + execution verification. The lineage algorithm compensates for gaps in a paper's own description by propagating tacit knowledge through citation chains.
 

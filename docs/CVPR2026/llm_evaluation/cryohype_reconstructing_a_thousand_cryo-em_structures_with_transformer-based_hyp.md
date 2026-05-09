@@ -28,15 +28,15 @@ This paper proposes CryoHype, a Transformer-based hypernetwork approach for cryo
 
 ## Background & Motivation
 
-**State of the Field**: Cryo-electron microscopy (Cryo-EM) is a key technique for resolving 3D structures of biological macromolecules. Traditional methods primarily address conformational heterogeneity (different conformations of the same molecule), but the technique is increasingly applied to complex heterogeneous mixture scenarios.
+**Background**: Cryo-electron microscopy (Cryo-EM) is a key technique for resolving 3D structures of biological macromolecules. Traditional methods primarily address conformational heterogeneity (different conformations of the same molecule), but the technique is increasingly applied to complex heterogeneous mixture scenarios.
 
 **Limitations of Prior Work**: (1) 3D classification methods (EM-based algorithms) suffer from memory and computation that scale linearly with the number of classes, making them infeasible for large class counts (typically $K<10$); (2) Continuous implicit representation methods (e.g., cryoDRGN) force all distinct structures to share a single set of network weights, failing to capture high-frequency details under extreme compositional heterogeneity; (3) cryoDRGN uses concatenation-based conditioning, which is equivalent to modifying only the bias of the first INR layer, offering limited expressiveness.
 
-**Root Cause**: Shared decoder weights conflict with the need to generate unique high-resolution details for each structure — excessive parameter sharing limits model capacity.
+**Key Challenge**: Shared decoder weights conflict with the need to generate unique high-resolution details for each structure — excessive parameter sharing limits model capacity.
 
-**Paper Goals**: How to achieve high-quality reconstruction of each structure when facing extreme compositional heterogeneity (100–1,000 distinct structures)?
+**Goal**: How to achieve high-quality reconstruction of each structure when facing extreme compositional heterogeneity (100–1,000 distinct structures)?
 
-**Starting Point**: Use a Transformer-based hypernetwork to dynamically generate INR weights, substantially reducing parameter sharing across structures.
+**Key Insight**: Use a Transformer-based hypernetwork to dynamically generate INR weights, substantially reducing parameter sharing across structures.
 
 **Core Idea**: Hypernetwork conditioning (modifying weights of all INR layers) $\gg$ concatenation conditioning (modifying only the first-layer bias), providing far greater expressiveness under extreme heterogeneity.
 

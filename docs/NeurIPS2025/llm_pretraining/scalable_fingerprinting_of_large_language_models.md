@@ -30,7 +30,7 @@ This paper proposes Perinucleus sampling to generate scalable LLM fingerprints, 
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: **Need for Model Fingerprinting**: Model fingerprinting enables owners to identify unauthorized use of their models via API access.
+**Key Challenge**: **Background**: **Need for Model Fingerprinting**: Model fingerprinting enables owners to identify unauthorized use of their models via API access.
 
 **Why Scalability Matters**: Reduces false positive rates, mitigates fingerprint leakage (one fingerprint is exposed per verification query), and defends against collusion attacks (multiple users jointly circumventing fingerprints).
 

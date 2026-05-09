@@ -29,15 +29,15 @@ content_hash: f07bd395793ebeb6
 This paper investigates the hyperparameter scaling rules for matrix-preconditioned optimizers (Shampoo/SOAP/Muon) with respect to model width and depth under the μP framework, and demonstrates that correct hyperparameter scaling is the key to achieving consistent speedups. Using μP with $1/\text{width}$ weight decay, all three optimizers consistently achieve approximately $1.4\times$ speedup on Llama models ranging from 190M to 1.4B parameters.
 
 ## Background & Motivation
-**State of the Field**: Several matrix-preconditioned optimizers (Shampoo, SOAP, Muon) have demonstrated significant speedups over AdamW (1.5–2×) in small-scale experiments. Muon has already been adopted in OpenAI's trillion-parameter training runs.
+**Background**: Several matrix-preconditioned optimizers (Shampoo, SOAP, Muon) have demonstrated significant speedups over AdamW (1.5–2×) in small-scale experiments. Muon has already been adopted in OpenAI's trillion-parameter training runs.
 
 **Limitations of Prior Work**: Reproduction attempts have reported highly inconsistent speedups—some teams report 2× acceleration, others only 1.1×, and some find that the gains vanish rapidly as scale increases. The root cause is the **lack of reliable hyperparameter scaling rules**.
 
-**Root Cause**: The loss-compute scaling exponent in language modeling is small (~0.05), meaning a 2% loss difference corresponds to a 40% compute difference. Grid search over hyperparameters is infeasible at large scale, making reliable hyperparameter transfer essential.
+**Key Challenge**: The loss-compute scaling exponent in language modeling is small (~0.05), meaning a 2% loss difference corresponds to a 40% compute difference. Grid search over hyperparameters is infeasible at large scale, making reliable hyperparameter transfer essential.
 
-**Paper Goals**: Derive μP learning rate scaling rules for Shampoo/SOAP/Muon and empirically verify that correct scaling is critical for consistent speedups across model scales.
+**Goal**: Derive μP learning rate scaling rules for Shampoo/SOAP/Muon and empirically verify that correct scaling is critical for consistent speedups across model scales.
 
-**Starting Point**: Apply μP (Maximal Update Parameterization) theory to derive per-optimizer scaling rules for learning rate and weight decay as functions of model width and depth.
+**Key Insight**: Apply μP (Maximal Update Parameterization) theory to derive per-optimizer scaling rules for learning rate and weight decay as functions of model width and depth.
 
 **Core Idea**: The speedups from matrix-preconditioned optimizers are genuine, but correct μP scaling is required for them to manifest reliably at large scale.
 

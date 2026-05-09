@@ -29,15 +29,15 @@ This paper proposes RADAR, a fully autonomous closed-loop robotic data collectio
 
 ## Background & Motivation
 
-**State of the Field**: Training end-to-end robotic models relies heavily on large-scale physical interaction data. Existing approaches face a dilemma: simulation methods suffer from the sim-to-real gap, while teleoperation methods are costly and unscalable.
+**Background**: Training end-to-end robotic models relies heavily on large-scale physical interaction data. Existing approaches face a dilemma: simulation methods suffer from the sim-to-real gap, while teleoperation methods are costly and unscalable.
 
 **Limitations of Prior Work**: Autonomous collection frameworks such as SOAR still exhibit three critical bottlenecks: (1) visual prompting relies on fragile 2D pixel estimation or image generation, leading to geometric hallucinations; (2) execution policies are passive engines incapable of autonomously orchestrating tasks or verifying outcomes; (3) the absence of autonomous environment reset prevents the formation of a truly closed loop.
 
-**Root Cause**: Fully autonomous data collection requires closed-loop collaboration between cognition and execution; however, existing methods either produce geometric hallucinations during VLM planning or fail to automatically reset the environment to its initial state after execution.
+**Key Challenge**: Fully autonomous data collection requires closed-loop collaboration between cognition and execution; however, existing methods either produce geometric hallucinations during VLM planning or fail to automatically reset the environment to its initial state after execution.
 
-**Paper Goals**: (1) How can VLM-based task planning be conducted safely without geometric hallucinations? (2) How can execution outcomes be evaluated automatically? (3) How can autonomous environment reset be realized to sustain a continuous closed loop?
+**Goal**: (1) How can VLM-based task planning be conducted safely without geometric hallucinations? (2) How can execution outcomes be evaluated automatically? (3) How can autonomous environment reset be realized to sustain a continuous closed loop?
 
-**Starting Point**: A "cerebrum–cerebellum" division of labor—the VLM handles high-level semantic reasoning (cerebrum) while the GNN policy manages sub-millimeter physical control (cerebellum), leveraging a small number of human demonstrations as 3D physical priors rather than requiring the VLM to hallucinate coordinates.
+**Key Insight**: A "cerebrum–cerebellum" division of labor—the VLM handles high-level semantic reasoning (cerebrum) while the GNN policy manages sub-millimeter physical control (cerebellum), leveraging a small number of human demonstrations as 3D physical priors rather than requiring the VLM to hallucinate coordinates.
 
 **Core Idea**: Autonomous environment reset is achieved through synchronized forward–reverse planning combined with LIFO causal sequence constraints. An asymmetric data routing mechanism managed by a finite state machine transforms data collection into a self-sustaining process.
 

@@ -29,15 +29,15 @@ A four-stage pipeline is proposed consisting of NNMF feature extraction → stat
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning has achieved high accuracy in brain tumor MRI classification (CNN-based methods exceeding 97%), yet models remain extremely vulnerable to adversarial perturbations—imperceptible input modifications that can completely destroy classification performance. AutoAttack has become a standard tool for evaluating robustness as a unified attack benchmark.
+**Background**: Deep learning has achieved high accuracy in brain tumor MRI classification (CNN-based methods exceeding 97%), yet models remain extremely vulnerable to adversarial perturbations—imperceptible input modifications that can completely destroy classification performance. AutoAttack has become a standard tool for evaluating robustness as a unified attack benchmark.
 
 **Limitations of Prior Work**: Most adversarial defense research focuses on the image space (pixel-level denoising or adversarial training), which incurs high computational cost and may degrade clean accuracy. NNMF provides interpretable parts-based non-negative representations naturally suited for non-negative data such as MRI, yet its potential in combination with diffusion-based defenses remains unexplored.
 
-**Root Cause**: Clinical AI must simultaneously achieve high accuracy and high robustness, but these objectives typically trade off against each other. Existing end-to-end CNNs nearly completely collapse under AutoAttack (accuracy dropping to near 0%), motivating the need for a new defense paradigm.
+**Key Challenge**: Clinical AI must simultaneously achieve high accuracy and high robustness, but these objectives typically trade off against each other. Existing end-to-end CNNs nearly completely collapse under AutoAttack (accuracy dropping to near 0%), motivating the need for a new defense paradigm.
 
-**Paper Goals**: To provide substantial robustness against strong attacks such as AutoAttack for brain tumor MRI classification without significantly sacrificing clean accuracy.
+**Goal**: To provide substantial robustness against strong attacks such as AutoAttack for brain tumor MRI classification without significantly sacrificing clean accuracy.
 
-**Starting Point**: Shifting the defense from pixel space to feature space—first extracting compact, interpretable features via NNMF, then performing diffusion forward noising and learned denoising purification in that feature space, leveraging both dimensionality reduction and diffusion purification to eliminate adversarial perturbations.
+**Key Insight**: Shifting the defense from pixel space to feature space—first extracting compact, interpretable features via NNMF, then performing diffusion forward noising and learned denoising purification in that feature space, leveraging both dimensionality reduction and diffusion purification to eliminate adversarial perturbations.
 
 **Core Idea**: After NNMF dimensionality reduction to an interpretable low-rank feature space, diffusion purification is applied within that space to neutralize adversarial perturbations.
 

@@ -29,14 +29,14 @@ This paper proposes RecycleLoRA, which employs Rank-Revealing QR (RRQR) decompos
 
 ## Background & Motivation
 
-1. **State of the Field**: Domain Generalized Semantic Segmentation (DGSS) aims to enable models to maintain robust performance on unseen target domains. With the advent of Vision Foundation Models (VFMs) such as DINOv2 and CLIP, the focus of DGSS has shifted from data augmentation toward efficiently adapting the rich multi-domain knowledge encoded in VFMs.
+1. **Background**: Domain Generalized Semantic Segmentation (DGSS) aims to enable models to maintain robust performance on unseen target domains. With the advent of Vision Foundation Models (VFMs) such as DINOv2 and CLIP, the focus of DGSS has shifted from data augmentation toward efficiently adapting the rich multi-domain knowledge encoded in VFMs.
 2. **Limitations of Prior Work**:
    - Existing SVD-based methods (e.g., SoMA) achieve reasonable results by attending to minor singular value directions, yet SVD prioritizes variance preservation and is not necessarily the most effective decomposition for downstream adaptation;
    - SoMA adapts only minor directions while completely freezing major directions, limiting the model's capacity to handle complex novel tasks;
    - Many LoRA methods suffer from **representational redundancy** among basis vectors, resulting in low parameter utilization efficiency (effective rank far below the target rank).
-3. **Root Cause**: How to simultaneously address "better exploitation of VFM subspace structures" and "enhanced LoRA representational diversity."
-4. **Paper Goals**: (1) Identify a decomposition strategy more suitable for VFM adaptation than SVD; (2) eliminate representational redundancy among LoRA basis vectors; (3) fully leverage both major and minor directions in pretrained weights.
-5. **Starting Point**: RRQR greedily selects the most informative columns from the original weight matrix via column pivoting, naturally guaranteeing directional independence and structural diversity.
+3. **Key Challenge**: How to simultaneously address "better exploitation of VFM subspace structures" and "enhanced LoRA representational diversity."
+4. **Goal**: (1) Identify a decomposition strategy more suitable for VFM adaptation than SVD; (2) eliminate representational redundancy among LoRA basis vectors; (3) fully leverage both major and minor directions in pretrained weights.
+5. **Key Insight**: RRQR greedily selects the most informative columns from the original weight matrix via column pivoting, naturally guaranteeing directional independence and structural diversity.
 6. **Core Idea**: Decompose VFM weights via RRQR, initialize a primary adapter from minor directions and a secondary adapter from major directions, constructing a complementary dual-adapter structure without additional regularization.
 
 ## Method

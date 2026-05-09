@@ -29,15 +29,15 @@ This paper proposes inserting delimiter tokens at sentence boundaries in LLM inp
 
 ## Background & Motivation
 
-**State of the Field**: Sentence-level structure was central to early neural language models — Skip-thought trained on reconstructing adjacent sentences, and BERT's next-sentence prediction task encoded inter-sentence coherence. With the rise of LLMs, however, sentence boundaries have been demoted to ordinary tokens, and models have entirely disregarded sentence structure in their token-by-token processing pipelines.
+**Background**: Sentence-level structure was central to early neural language models — Skip-thought trained on reconstructing adjacent sentences, and BERT's next-sentence prediction task encoded inter-sentence coherence. With the rise of LLMs, however, sentence boundaries have been demoted to ordinary tokens, and models have entirely disregarded sentence structure in their token-by-token processing pipelines.
 
 **Limitations of Prior Work**: Mainstream approaches to enhancing LLM capabilities either require substantial training costs (training-time scaling) or introduce inference latency (test-time scaling such as CoT). Goyal et al. (2024) proposed inserting "pause" tokens as a free-lunch solution, but with significant limitations: (1) pause token placement lacks linguistic priors and requires manual, task-specific tuning of insertion counts; (2) validation has not been extended to 7B+ models; (3) robustness and generalizability remain insufficient.
 
-**Root Cause**: Human language production relies on an incremental, sentence-by-sentence cognitive process, yet LLMs are trained on the continuous text produced by this process, resulting in an inherent misalignment between human cognitive mechanisms and model input processing.
+**Key Challenge**: Human language production relies on an incremental, sentence-by-sentence cognitive process, yet LLMs are trained on the continuous text produced by this process, resulting in an inherent misalignment between human cognitive mechanisms and model input processing.
 
-**Paper Goals**: Design a strategy that exploits sentence-level linguistic priors to enhance LLM performance in a robust and low-overhead manner.
+**Goal**: Design a strategy that exploits sentence-level linguistic priors to enhance LLM performance in a robust and low-overhead manner.
 
-**Starting Point**: The authors observe that sentences constitute the most natural "cognitive chunks" in natural language. Inserting structural delimiters at sentence boundaries can trigger a "context integration → next-step planning" cycle that simulates the human post-sentence reflection process.
+**Key Insight**: The authors observe that sentences constitute the most natural "cognitive chunks" in natural language. Inserting structural delimiters at sentence boundaries can trigger a "context integration → next-step planning" cycle that simulates the human post-sentence reflection process.
 
 **Core Idea**: Insert task-agnostic delimiter tokens at sentence boundaries so that LLMs implicitly perform sentence-by-sentence reasoning. This is realized via two paradigms: ICL (demonstrating delimiter patterns in prompts) and SFT (fine-tuning on delimiter-augmented data).
 

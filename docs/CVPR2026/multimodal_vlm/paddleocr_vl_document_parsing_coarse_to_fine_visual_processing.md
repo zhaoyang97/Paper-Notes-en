@@ -29,11 +29,11 @@ This paper proposes PaddleOCR-VL, a coarse-to-fine document parsing framework. T
 
 ## Background & Motivation
 
-1. **State of the Field**: Document parsing is a critical technology for constructing LLM training corpora and RAG systems. High-resolution inputs are essential for document parsing but cause quadratic growth in the number of visual tokens.
+1. **Background**: Document parsing is a critical technology for constructing LLM training corpora and RAG systems. High-resolution inputs are essential for document parsing but cause quadratic growth in the number of visual tokens.
 2. **Limitations of Prior Work**: Pipeline-based methods (detection + recognition + structure reconstruction) are prone to error propagation; general-purpose VLMs hallucinate on handwritten or highly structured documents; specialized VLMs either have large parameter counts or suffer from coordinate drift.
-3. **Root Cause**: High resolution is necessary for fine-grained recognition → visual token count explodes → high computational cost. Yet effective information in documents is highly non-uniform in distribution—PPT slides contain only ~39% effective regions, and newspapers approximately ~60%.
-4. **Paper Goals**: Eliminate visual redundancy while preserving high-resolution accuracy, thereby improving efficiency.
-5. **Starting Point**: The sparsity of effective visual regions—large portions of background and decorative elements carry no useful information.
+3. **Key Challenge**: High resolution is necessary for fine-grained recognition → visual token count explodes → high computational cost. Yet effective information in documents is highly non-uniform in distribution—PPT slides contain only ~39% effective regions, and newspapers approximately ~60%.
+4. **Goal**: Eliminate visual redundancy while preserving high-resolution accuracy, thereby improving efficiency.
+5. **Key Insight**: The sparsity of effective visual regions—large portions of background and decorative elements carry no useful information.
 6. **Core Idea**: A coarse stage rapidly identifies effective regions (localization + contextual relation prediction), and a fine stage processes only those regions.
 
 ## Method

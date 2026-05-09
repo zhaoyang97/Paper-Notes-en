@@ -26,18 +26,18 @@ content_hash: 5ac10bd1ff14d9f1
 CHLU is a computational learning primitive grounded in relativistic Hamiltonian mechanics and symplectic integration. By enforcing phase-space volume conservation and introducing a causal velocity upper bound, it addresses gradient explosion/vanishing in LSTMs and information dissipation in Neural ODEs, achieving infinite-horizon stability and thermodynamic generative capability.
 
 ## Background & Motivation
-**State of the Field**: Sequential modeling in deep learning faces a fundamental dichotomy — discrete units (LSTM/RNN) are expressive but unstable (gradient explosion/vanishing), while continuous models (Neural ODEs) are smooth but dissipatively destroy information.
+**Background**: Sequential modeling in deep learning faces a fundamental dichotomy — discrete units (LSTM/RNN) are expressive but unstable (gradient explosion/vanishing), while continuous models (Neural ODEs) are smooth but dissipatively destroy information.
 
 **Limitations of Prior Work**:
 - LSTMs accumulate numerical errors in forward passes during long-range reasoning, causing trajectory divergence.
 - Neural ODEs, due to their dissipative nature, cause trajectories to contract toward the origin, losing long-term information.
 - Hamiltonian Neural Networks (Greydanus 2019) are primarily designed for physics simulation and have not been extended to general reasoning and generative tasks.
 
-**Root Cause**: Long-term memory (requiring information preservation) and stability (requiring constrained updates) are fundamentally at odds — conservation laws can resolve both simultaneously.
+**Key Challenge**: Long-term memory (requiring information preservation) and stability (requiring constrained updates) are fundamentally at odds — conservation laws can resolve both simultaneously.
 
-**Paper Goals**: Design a computational unit that treats energy conservation as a structural prior rather than a learning objective.
+**Goal**: Design a computational unit that treats energy conservation as a structural prior rather than a learning objective.
 
-**Starting Point**: Use relativistic mechanics to provide a velocity upper bound preventing kinetic energy explosion, and symplectic integration to guarantee long-term energy conservation.
+**Key Insight**: Use relativistic mechanics to provide a velocity upper bound preventing kinetic energy explosion, and symplectic integration to guarantee long-term energy conservation.
 
 **Core Idea**: Reframe information propagation as Hamiltonian evolution of internal states over a learnable potential energy surface.
 

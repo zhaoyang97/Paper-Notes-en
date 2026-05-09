@@ -28,15 +28,15 @@ This paper reveals the "regeneration" tendency of frontier LLMs on debugging tas
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have achieved remarkable success in code generation, synthesizing complex algorithms from natural language descriptions. However, the dominant activity in real-world software development is not generation from scratch but rather debugging and maintenance.
+**Background**: LLMs have achieved remarkable success in code generation, synthesizing complex algorithms from natural language descriptions. However, the dominant activity in real-world software development is not generation from scratch but rather debugging and maintenance.
 
 **Limitations of Prior Work**: (1) When presented with buggy code, LLMs tend to rewrite most or all of the program to "fix" it — a practice that may pass tests but is costly, risky, and difficult to review in production codebases. (2) Existing debugging benchmarks rely solely on unit test pass rate, which cannot distinguish precise repairs from wholesale rewrites — rewriting an entire function and fixing a single buggy line receive identical scores. (3) For programs containing multiple bugs, a model that fixes only a subset of bugs receives the same score of zero as one that fixes nothing.
 
-**Root Cause**: There is a negative correlation between unit test pass rate and debugging precision — the more aggressively a model rewrites code, the more likely it is to pass tests (functional correctness), yet the lower its edit precision. The existing evaluation paradigm rewards regeneration and provides no incentive for precise debugging.
+**Key Challenge**: There is a negative correlation between unit test pass rate and debugging precision — the more aggressively a model rewrites code, the more likely it is to pass tests (functional correctness), yet the lower its edit precision. The existing evaluation paradigm rewards regeneration and provides no incentive for precise debugging.
 
-**Paper Goals**: (1) Design an evaluation framework capable of distinguishing "precise debugging" from "code regeneration." (2) Quantify how far current frontier models are from precise debugging. (3) Assess whether iterative and agent-based debugging strategies improve precision.
+**Goal**: (1) Design an evaluation framework capable of distinguishing "precise debugging" from "code regeneration." (2) Quantify how far current frontier models are from precise debugging. (3) Assess whether iterative and agent-based debugging strategies improve precision.
 
-**Starting Point**: Two new metrics are defined — *edit-level precision*, measuring what proportion of the model's modifications are necessary, and *bug-level recall*, measuring what proportion of bugs are correctly fixed. A debugging benchmark with ground-truth edit scripts is constructed by automatically injecting validated atomic bugs and composing them into multi-bug programs.
+**Key Insight**: Two new metrics are defined — *edit-level precision*, measuring what proportion of the model's modifications are necessary, and *bug-level recall*, measuring what proportion of bugs are correctly fixed. A debugging benchmark with ground-truth edit scripts is constructed by automatically injecting validated atomic bugs and composing them into multi-bug programs.
 
 **Core Idea**: Shift debugging evaluation from the program level (pass/fail) to the edit level (which modifications are necessary and which are superfluous), and construct a precise evaluation benchmark through atomic bug synthesis and independence validation.
 

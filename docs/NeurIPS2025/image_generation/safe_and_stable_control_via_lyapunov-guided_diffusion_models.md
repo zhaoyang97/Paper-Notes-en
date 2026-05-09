@@ -39,7 +39,7 @@ Core limitations of existing approaches:
 
 **Existing diffusion planning methods** (e.g., Diffuser, SafeDiffuser): Perform well in long-horizon decision-making but focus solely on cost minimization, leaving safety and stability guarantees unaddressed. SafeDiffuser additionally requires hand-crafted CBF priors, limiting practical applicability.
 
-**Root Cause**: Gradient-based methods are constrained by control-affine assumptions, slack variable introduction, and joint training instability; sampling-based methods lack safety and stability guarantees.
+**Key Challenge**: Gradient-based methods are constrained by control-affine assumptions, slack variable introduction, and joint training instability; sampling-based methods lack safety and stability guarantees.
 
 **Core Idea**: Use CLBF as a guidance function for diffusion models, replacing QP solving with diffusion sampling, and establish the intrinsic connection between diffusion sampling and Almost Lyapunov theory—even when the Lie derivative condition is violated in a small region, the global system can still maintain approximate exponential decay.
 

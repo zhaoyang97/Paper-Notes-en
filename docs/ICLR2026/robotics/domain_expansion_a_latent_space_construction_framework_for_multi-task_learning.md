@@ -28,15 +28,15 @@ This paper proposes the Domain Expansion framework, which restructures the laten
 
 ## Background & Motivation
 
-**State of the Field**: Multi-task learning (MTL) aims to satisfy multiple learning objectives (e.g., classification + regression) with a single network, but conflicting gradients from competing objectives pull shared representations in opposing directions, leading to representation degradation. The authors formalize this as *latent representation collapse*—the feature space is compressed into a small compromise region that is suboptimal for all objectives.
+**Background**: Multi-task learning (MTL) aims to satisfy multiple learning objectives (e.g., classification + regression) with a single network, but conflicting gradients from competing objectives pull shared representations in opposing directions, leading to representation degradation. The authors formalize this as *latent representation collapse*—the feature space is compressed into a small compromise region that is suboptimal for all objectives.
 
 **Limitations of Prior Work**: (a) Gradient-level MTL methods (GradNorm, PCGrad, Nash-MTL, CAGrad, MGDA, etc.) are inherently *reactive*—they reconcile conflicts only after conflicting gradients have already been produced, requiring additional gradient operations at every step. (b) These methods do not alter the structure of the latent space itself; the learned representations remain entangled and uninterpretable. A representative case: under Objective Set 2, baselines such as Nash-MTL achieve high classification accuracy but near-zero V-score, indicating that the model learns a shortcut mapping rather than meaningful internal representations.
 
-**Root Cause**: How can a representation space be designed such that multiple learning objectives naturally do not interfere during training—rather than requiring reconciliation after interference occurs?
+**Key Challenge**: How can a representation space be designed such that multiple learning objectives naturally do not interfere during training—rather than requiring reconciliation after interference occurs?
 
-**Paper Goals**: Eliminate inter-task interference at the level of representational space design, constructing a *proactive* latent space that intrinsically supports multi-objective learning.
+**Goal**: Eliminate inter-task interference at the level of representational space design, constructing a *proactive* latent space that intrinsically supports multi-objective learning.
 
-**Starting Point**: Analogous to anamorphic art (e.g., a pattern on a cylinder that reveals different shapes when viewed from different angles), a high-dimensional latent vector can simultaneously encode multiple independent concepts through projections along different orthogonal directions.
+**Key Insight**: Analogous to anamorphic art (e.g., a pattern on a cylinder that reveals different shapes when viewed from different angles), a high-dimensional latent vector can simultaneously encode multiple independent concepts through projections along different orthogonal directions.
 
 **Core Idea**: Partition the latent space into non-interfering concept subspaces using orthogonal eigenvector bases obtained from feature decomposition, such that gradients flow within subspaces and are zero across subspaces.
 

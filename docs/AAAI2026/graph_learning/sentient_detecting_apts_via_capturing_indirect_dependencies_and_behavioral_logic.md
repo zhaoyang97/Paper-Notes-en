@@ -29,11 +29,11 @@ This paper proposes Sentient, an APT detection method combining **Graph Transfor
 
 ## Background & Motivation
 
-1. **State of the Field**: Advanced Persistent Threats (APTs) are notoriously difficult to detect due to their stealthiness and complexity. Provenance graph-based methods represent the current state of the art, leveraging entity relationships in system audit logs to uncover attack traces.
+1. **Background**: Advanced Persistent Threats (APTs) are notoriously difficult to detect due to their stealthiness and complexity. Provenance graph-based methods represent the current state of the art, leveraging entity relationships in system audit logs to uncover attack traces.
 2. **Limitations of Prior Work**: (a) **Missing indirect dependencies** — GNN-based methods are constrained by the receptive field of neighborhood aggregation, failing to capture relationships between non-directly connected nodes; (b) **Noise in complex scenarios** — infected entities continue to perform numerous benign tasks, causing neighborhood aggregation to erroneously incorporate weakly related activities; (c) **Missing behavioral logic correlation** — isolated system behaviors exhibit contextual ambiguity (e.g., sshd writing a log appears normal in isolation), yet their combination reveals malicious intent.
-3. **Root Cause**: GNN local aggregation cannot reach indirect dependencies, introduces noise through indiscriminate neighbor aggregation, and is unable to establish logical correlations between distant behaviors.
-4. **Paper Goals**: Design a globally aware APT detection method capable of understanding behavioral logic.
-5. **Starting Point**: Employ global attention in Graph Transformers to capture indirect dependencies, construct denoised behavior sequences via random walks, and leverage bidirectional Mamba2 to mine logical correlations among behaviors.
+3. **Key Challenge**: GNN local aggregation cannot reach indirect dependencies, introduces noise through indiscriminate neighbor aggregation, and is unable to establish logical correlations between distant behaviors.
+4. **Goal**: Design a globally aware APT detection method capable of understanding behavioral logic.
+5. **Key Insight**: Employ global attention in Graph Transformers to capture indirect dependencies, construct denoised behavior sequences via random walks, and leverage bidirectional Mamba2 to mine logical correlations among behaviors.
 6. **Core Idea**: Graph Transformer for global node embeddings + bidirectional Mamba2 for intent logic over behavior sequences = addressing the three challenges of indirect dependencies, noise, and logical correlation.
 
 ## Method

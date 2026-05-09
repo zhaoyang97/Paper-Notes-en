@@ -27,13 +27,13 @@ content_hash: 3952ecb8646af894
 This paper proposes LAGER, a framework that aggregates score token logits from intermediate to final layers of an LLM and computes an expected score to derive the final judgment. Without any model fine-tuning, LAGER improves human alignment by up to 7.5% and matches or surpasses reasoning-based methods without requiring chain-of-thought inference.
 
 ## Background & Motivation
-**State of the Field**: LLM-as-a-Judge has become the dominant paradigm for automatic evaluation, yet improving its alignment with human judgments remains a central challenge. Existing approaches either rely on complex chain-of-thought reasoning (increasing computational cost) or require fine-tuning (sacrificing generalizability).
+**Background**: LLM-as-a-Judge has become the dominant paradigm for automatic evaluation, yet improving its alignment with human judgments remains a central challenge. Existing approaches either rely on complex chain-of-thought reasoning (increasing computational cost) or require fine-tuning (sacrificing generalizability).
 
 **Limitations of Prior Work**: The standard practice uses only the highest-probability score token from the final layer (vanilla score), which (a) discards rich information in the full probability distribution (e.g., when scores of 4 and 5 have similar probabilities but only 5 is selected), and (b) ignores potentially superior judgment signals encoded in intermediate layers.
 
 **Core Observation**: Empirical analysis reveals that hidden representations from middle-to-upper layers frequently yield judgment scores more aligned with human ratings than those from the final layer — different layers encode complementary semantic and task-level information.
 
-**Starting Point**: A better scoring distribution can be obtained by computing a weighted aggregation of score logits across all layers, followed by taking the expectation to produce a continuous, fine-grained score. Layer weights are trained lightly on a small validation set (only $L+1$ parameters total), while the model backbone remains fully frozen.
+**Key Insight**: A better scoring distribution can be obtained by computing a weighted aggregation of score logits across all layers, followed by taking the expectation to produce a continuous, fine-grained score. Layer weights are trained lightly on a small validation set (only $L+1$ parameters total), while the model backbone remains fully frozen.
 
 **Core Idea**: Cross-layer logit weighted aggregation + probability distribution expectation = superior judgment scores compared to final-layer argmax, with a fully plug-and-play design.
 

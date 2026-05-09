@@ -29,14 +29,14 @@ This paper systematically defines and quantifies two failure modes of deep learn
 
 ## Background & Motivation
 
-1. **State of the Field**: Deep learning-based online mapping (e.g., MapTR, MapTRv2) has become a core perception task in autonomous driving, where models directly generate vectorized HD map elements from sensor data (cameras, LiDAR).
+1. **Background**: Deep learning-based online mapping (e.g., MapTR, MapTRv2) has become a core perception task in autonomous driving, where models directly generate vectorized HD map elements from sensor data (cameras, LiDAR).
 2. **Limitations of Prior Work**:
    - Performance is inflated on geographically overlapping train/validation splits and drops sharply when switching to geographically disjoint splits (e.g., mAP on nuScenes drops from 60.95 to ~25–29);
    - Models memorize location-specific input features rather than learning generalizable representations;
    - Dataset geometric bias (repetitive map geometry) has not been sufficiently studied.
-3. **Root Cause**: Existing evaluations do not distinguish between "models memorizing location features" and "models overfitting to map geometry," making it impossible to address either failure mode in a targeted manner.
-4. **Paper Goals**: (1) How to decouple and quantify the two overfitting modes? (2) How to evaluate the geometric diversity of a dataset? (3) How to design better training sets for improved generalization?
-5. **Starting Point**: Two orthogonal dimensions — geographic distance and geometric similarity — are introduced to stratify the validation set; Fréchet distance replaces Chamfer distance as a more robust performance metric.
+3. **Key Challenge**: Existing evaluations do not distinguish between "models memorizing location features" and "models overfitting to map geometry," making it impossible to address either failure mode in a targeted manner.
+4. **Goal**: (1) How to decouple and quantify the two overfitting modes? (2) How to evaluate the geometric diversity of a dataset? (3) How to design better training sets for improved generalization?
+5. **Key Insight**: Two orthogonal dimensions — geographic distance and geometric similarity — are introduced to stratify the validation set; Fréchet distance replaces Chamfer distance as a more robust performance metric.
 6. **Core Idea**: Decoupling the two overfitting modes by controlling geographic distance and geometric similarity, and eliminating redundant geometric structures in the training set via MST sparsification to improve generalization.
 
 ## Method

@@ -28,15 +28,15 @@ This paper proposes CPS-Prompt, a framework that combines task-aware critical pa
 
 ## Background & Motivation
 
-**State of the Field**: Continual learning (CL) on edge devices (home robots, drones, smartphones) requires adapting to new tasks under constrained memory and compute budgets. Prompt-based continual learning (PCL) achieves parameter-efficient learning by freezing a ViT backbone and learning lightweight prompts, yet existing work primarily focuses on accuracy and inference efficiency.
+**Background**: Continual learning (CL) on edge devices (home robots, drones, smartphones) requires adapting to new tasks under constrained memory and compute budgets. Prompt-based continual learning (PCL) achieves parameter-efficient learning by freezing a ViT backbone and learning lightweight prompts, yet existing work primarily focuses on accuracy and inference efficiency.
 
 **Limitations of Prior Work**: PCL methods such as C-Prompt achieve high accuracy but incur enormous training-time memory overhead (4.3× relative to the proposed method), making them unsuitable for memory-constrained edge deployment. OS-Prompt simplifies the two-stage pipeline but still exhibits high peak memory during backpropagation.
 
-**Root Cause**: Existing token reduction methods (ToMe, PatchDropout) are task-agnostic; when combined with PCL, they discard task-critical patches, causing severe accuracy degradation.
+**Key Challenge**: Existing token reduction methods (ToMe, PatchDropout) are task-agnostic; when combined with PCL, they discard task-critical patches, causing severe accuracy degradation.
 
-**Paper Goals**: Achieve significant training-time memory and compute savings within the two-stage PCL architecture while maintaining competitive accuracy.
+**Goal**: Achieve significant training-time memory and compute savings within the two-stage PCL architecture while maintaining competitive accuracy.
 
-**Starting Point**: Leverage attention weights and value signals from the last layer of the frozen query encoder to estimate patch importance for task-aware sparsification, and eliminate the representational misalignment between sparse training and full-patch inference through decoupled training.
+**Key Insight**: Leverage attention weights and value signals from the last layer of the frozen query encoder to estimate patch importance for task-aware sparsification, and eliminate the representational misalignment between sparse training and full-patch inference through decoupled training.
 
 **Core Idea**: Task-aware patch sampling + decoupled prompt/classifier training = training efficiency + accuracy preservation.
 

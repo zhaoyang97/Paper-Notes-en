@@ -29,18 +29,18 @@ This paper proposes S'MoRE, a framework that organizes low-rank residual experts
 
 ## Background & Motivation
 
-**State of the Field**: Fine-tuning large language models faces a dual challenge of parameter efficiency and model capacity. LoRA achieves parameter efficiency through low-rank decomposition but suffers from limited capacity; MoE improves capacity through conditional computation but at the cost of low parameter utilization.
+**Background**: Fine-tuning large language models faces a dual challenge of parameter efficiency and model capacity. LoRA achieves parameter efficiency through low-rank decomposition but suffers from limited capacity; MoE improves capacity through conditional computation but at the cost of low parameter utilization.
 
 **Limitations of Prior Work**:
    - LoRA's capacity is constrained by its fixed low-rank structure, making it difficult to handle complex tasks.
    - Independent parameter learning across experts in conventional MoE leads to low parameter efficiency.
    - Increasing the number of experts incurs greater routing overhead and uneven expert utilization.
 
-**Root Cause**: Works such as DeepSeek-MoE demonstrate that fine-grained experts yield richer routing choices (from $\binom{16}{2}=120$ to $\binom{64}{8}=4.4B$), yet in the PEFT setting the experts themselves are already low-rank, making further decomposition suboptimal. The key question is: how can higher flexibility be attained without increasing the number of experts?
+**Key Challenge**: Works such as DeepSeek-MoE demonstrate that fine-grained experts yield richer routing choices (from $\binom{16}{2}=120$ to $\binom{64}{8}=4.4B$), yet in the PEFT setting the experts themselves are already low-rank, making further decomposition suboptimal. The key question is: how can higher flexibility be attained without increasing the number of experts?
 
-**Paper Goals**: To achieve exponentially greater model flexibility by exploiting structural relationships among experts—rather than simply increasing their number—while preserving LoRA-level parameter efficiency.
+**Goal**: To achieve exponentially greater model flexibility by exploiting structural relationships among experts—rather than simply increasing their number—while preserving LoRA-level parameter efficiency.
 
-**Starting Point**: The key insight is that the same set of experts can form exponentially many non-isomorphic tree structures through different connectivity patterns, each yielding distinct outputs. This shifts the design space from "which experts to select" to "how the selected experts are connected."
+**Key Insight**: The key insight is that the same set of experts can form exponentially many non-isomorphic tree structures through different connectivity patterns, each yielding distinct outputs. This shifts the design space from "which experts to select" to "how the selected experts are connected."
 
 **Core Idea**: Replace the flat aggregation of single-layer MoE with tree-structured combinations of multi-layer residual experts, obtaining exponential routing flexibility through structural diversity.
 

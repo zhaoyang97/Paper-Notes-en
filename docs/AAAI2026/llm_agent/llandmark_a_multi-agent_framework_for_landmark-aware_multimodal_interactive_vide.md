@@ -30,13 +30,13 @@ This paper proposes LLandMark, a modular multi-agent framework that achieves lan
 
 ## Background & Motivation
 
-**State of the Field**: Retrieving information from large-scale heterogeneous video corpora faces challenges including multilingual variation, noisy text extraction, and cross-modal reasoning. Existing systems such as MAVEN introduce agent-based frameworks but with limited planning capabilities, while RAG-based fusion approaches encounter scalability difficulties.
+**Background**: Retrieving information from large-scale heterogeneous video corpora faces challenges including multilingual variation, noisy text extraction, and cross-modal reasoning. Existing systems such as MAVEN introduce agent-based frameworks but with limited planning capabilities, while RAG-based fusion approaches encounter scalability difficulties.
 
 **Limitations of Prior Work**: Most existing systems neglect spatial and cultural context, particularly landmark reasoning. In Vietnamese queries, landmark names cannot be directly matched to corresponding visual features via CLIP text embeddings, due to insufficient text-visual associations for Vietnamese landmarks in CLIP's training data.
 
-**Root Cause**: Textual semantic retrieval relies on lexical matching, yet a significant semantic gap exists between the textual name of a landmark and its visual appearance. For example, the visual features of "St. Joseph's Cathedral" correspond to "twin square bell towers, dark gray stone, Gothic architecture."
+**Key Challenge**: Textual semantic retrieval relies on lexical matching, yet a significant semantic gap exists between the textual name of a landmark and its visual appearance. For example, the visual features of "St. Joseph's Cathedral" correspond to "twin square bell towers, dark gray stone, Gothic architecture."
 
-**Starting Point**: The paper designs a landmark knowledge agent that reformulates landmark names into detailed visual-descriptive prompts to bridge the semantic gap in CLIP's embedding space, while also introducing a fully automated LLM-assisted image-to-image retrieval pipeline.
+**Key Insight**: The paper designs a landmark knowledge agent that reformulates landmark names into detailed visual-descriptive prompts to bridge the semantic gap in CLIP's embedding space, while also introducing a fully automated LLM-assisted image-to-image retrieval pipeline.
 
 ## Method
 

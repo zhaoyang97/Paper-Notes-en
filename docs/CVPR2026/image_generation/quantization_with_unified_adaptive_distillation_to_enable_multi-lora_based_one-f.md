@@ -29,15 +29,15 @@ This paper proposes the QUAD framework, which treats LoRA weights as runtime inp
 
 ## Background & Motivation
 
-1. **State of the Field**: GenAI capabilities on mobile devices (image editing, object removal, text-guided transformation, etc.) are increasingly prevalent, typically based on diffusion models (e.g., Stable Diffusion 1.5) with LoRA for task-specific adaptation.
+1. **Background**: GenAI capabilities on mobile devices (image editing, object removal, text-guided transformation, etc.) are increasingly prevalent, typically based on diffusion models (e.g., Stable Diffusion 1.5) with LoRA for task-specific adaptation.
 
 2. **Limitations of Prior Work**: Current mobile deployment pipelines **compile each LoRA separately**—merging LoRA weights into the base model before quantization and compilation—resulting in an independent model binary per task. $N$ tasks = $N$ copies of the base model + $N$ compiled graphs, causing ROM usage to grow linearly.
 
-3. **Root Cause**: Independently trained LoRAs exhibit different weight distributions, leading to inconsistent quantization parameters (scale and zero-point) that cannot share a single static quantized inference graph. On hardware such as NPUs that require fixed quantization parameters, each LoRA must be compiled separately, precluding runtime switching.
+3. **Key Challenge**: Independently trained LoRAs exhibit different weight distributions, leading to inconsistent quantization parameters (scale and zero-point) that cannot share a single static quantized inference graph. On hardware such as NPUs that require fixed quantization parameters, each LoRA must be compiled separately, precluding runtime switching.
 
-4. **Paper Goals**: Design a unified deployment framework that (a) shares quantization parameters across multiple LoRAs; (b) supports dynamic injection of LoRA weights at runtime without recompilation; and (c) maintains generation quality under low-precision inference.
+4. **Goal**: Design a unified deployment framework that (a) shares quantization parameters across multiple LoRAs; (b) supports dynamic injection of LoRA weights at runtime without recompilation; and (c) maintains generation quality under low-precision inference.
 
-5. **Starting Point**: Restructure the model graph construction—changing LoRA weights from compile-time embeddings to runtime input tensors, then fine-tuning via knowledge distillation to align all LoRAs with a unified quantization configuration.
+5. **Key Insight**: Restructure the model graph construction—changing LoRA weights from compile-time embeddings to runtime input tensors, then fine-tuning via knowledge distillation to align all LoRAs with a unified quantization configuration.
 
 6. **Core Idea**: LoRA as Input + sensitivity-analysis-guided shared quantization parameters + knowledge distillation fine-tuning = single-graph multi-task edge deployment.
 

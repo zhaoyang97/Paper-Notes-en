@@ -26,11 +26,11 @@ content_hash: 196c67394e59853e
 This paper proposes the Differentiable Finite-State Transducer (DFST), a Turing-complete and end-to-end differentiable model family that operates on a 2D symbol grid. Trained via Policy-Trajectory Observations (PTOs) derived from expert arithmetic computations, DFST achieves perfect generalization to 3,850-digit binary addition and 2,450-digit decimal addition using only 20 training samples of up to 3-digit addition, with zero observed errors.
 
 ## Background & Motivation
-**State of the Field**: Length generalization is a central challenge in arithmetic reasoning. Transformers struggle to generalize precisely to longer inputs on simple arithmetic tasks (typically 2–3×), even with various techniques such as positional encoding improvements, scratchpads, and index hints, which yield high but imperfect exact-match accuracy.
+**Background**: Length generalization is a central challenge in arithmetic reasoning. Transformers struggle to generalize precisely to longer inputs on simple arithmetic tasks (typically 2–3×), even with various techniques such as positional encoding improvements, scratchpads, and index hints, which yield high but imperfect exact-match accuracy.
 
 **Limitations of Prior Work**: Existing universal computation model families either suffer from **computational time explosion** (unbounded precision in RNNs, growing context windows in Transformers) or **uninformative gradients** (non-differentiable adaptive computation time mechanisms). Although Turing-complete in theory, these models cannot be effectively trained via gradient-based methods in practice.
 
-**Root Cause**: Gold's theorem establishes that no algorithm can exactly learn the class of recursive functions from input–output samples alone. However, if intermediate computation steps are observable, the problem reduces from learning recursive functions to learning finite-state transducers—a tractable objective.
+**Key Challenge**: Gold's theorem establishes that no algorithm can exactly learn the class of recursive functions from input–output samples alone. However, if intermediate computation steps are observable, the problem reduces from learning recursive functions to learning finite-state transducers—a tractable objective.
 
 **Core Idea**: Design a model that simultaneously satisfies three conditions: (1) Turing-completeness, (2) constant-precision and constant-time output generation, and (3) end-to-end differentiability. The key insight is to decouple the differentiable controller from the external environment—DFST moves freely on a 2D grid and reads/writes symbols thereon.
 

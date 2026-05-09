@@ -35,7 +35,7 @@ Property video tours are a critical tool in the U.S. real estate market (valued 
 - Camera trajectories in existing 3D datasets are designed for reconstruction tasks (close-up surface scanning, jittery motion) and are ill-suited for showcasing overall spaces.
 - Scene description datasets enumerate furniture and their spatial relations but lack professional descriptions of spatial layout, architectural features, materials, and ambiance.
 
-**Paper Goals**: To enable ordinary users to automatically generate professional-grade property tour videos and textual descriptions by simply uploading a set of smartphone photos, without requiring specialized equipment.
+**Goal**: To enable ordinary users to automatically generate professional-grade property tour videos and textual descriptions by simply uploading a set of smartphone photos, without requiring specialized equipment.
 
 ## Method
 

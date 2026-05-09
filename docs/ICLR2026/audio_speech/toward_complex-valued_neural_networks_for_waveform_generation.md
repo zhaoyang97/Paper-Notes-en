@@ -28,13 +28,13 @@ This paper proposes ComVo, the first iSTFT vocoder to employ complex-valued neur
 
 ## Background & Motivation
 
-**State of the Field**: iSTFT vocoders (e.g., Vocos, iSTFTNet) directly predict complex-valued spectrograms in the frequency domain and synthesize waveforms via iSTFT, avoiding the complexity and latency associated with sample-by-sample generation and learned upsampling.
+**Background**: iSTFT vocoders (e.g., Vocos, iSTFTNet) directly predict complex-valued spectrograms in the frequency domain and synthesize waveforms via iSTFT, avoiding the complexity and latency associated with sample-by-sample generation and learned upsampling.
 
 **Limitations of Prior Work**: All existing iSTFT vocoders rely on real-valued neural networks (RVNNs), treating the real and imaginary parts of the complex spectrogram as two independent channels. This separation breaks the inherent coupling between the real and imaginary parts, which jointly determine magnitude and phase.
 
-**Root Cause**: RVNNs cannot directly model the algebraic structure of the complex domain (e.g., complex multiplication, rotation), leading to inaccurate phase modeling. Controlled experiments show that CVNNs achieve JSD (Jensen-Shannon Divergence) values 64% and 81% lower than RVNNs for magnitude and phase, respectively, when synthesizing complex-valued distributions.
+**Key Challenge**: RVNNs cannot directly model the algebraic structure of the complex domain (e.g., complex multiplication, rotation), leading to inaccurate phase modeling. Controlled experiments show that CVNNs achieve JSD (Jensen-Shannon Divergence) values 64% and 81% lower than RVNNs for magnitude and phase, respectively, when synthesizing complex-valued distributions.
 
-**Starting Point**: CVNNs represent inputs, activations, and weights as complex numbers, naturally capturing cross-dependencies between real and imaginary parts. However, CVNNs have never been explored in vocoders—primarily due to challenges in designing complex-domain nonlinearities and achieving training efficiency.
+**Key Insight**: CVNNs represent inputs, activations, and weights as complex numbers, naturally capturing cross-dependencies between real and imaginary parts. However, CVNNs have never been explored in vocoders—primarily due to challenges in designing complex-domain nonlinearities and achieving training efficiency.
 
 **Core Idea**: Construct both the generator and discriminator using CVNNs to form a complete complex-domain adversarial training framework; employ phase quantization as an inductive bias to stabilize training; and adopt a block-matrix computation scheme to improve efficiency.
 

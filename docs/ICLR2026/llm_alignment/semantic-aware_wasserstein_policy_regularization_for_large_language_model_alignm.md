@@ -34,9 +34,9 @@ However, KL divergence and other f-divergences (e.g., JS, $\chi^2$, TV) share a 
 
 The paper illustrates this with an intuitive example. Suppose the vocabulary is {cat, kitten, dog, table}, and the reference policy concentrates its probability mass on "cat." Policy 1 concentrates on "kitten" and Policy 2 concentrates on "table." Semantically, "cat" and "kitten" are closely related, whereas "cat" and "table" share no meaningful connection. Yet KL divergence assigns an extremely large value to Policy 1 due to support mismatch (penalizing it unfairly), while JS divergence assigns identical distances to both Policy 1 and Policy 2—neither captures the semantic distinction.
 
-**Root Cause**: KL/f-divergences perform index-wise comparisons and are entirely unable to exploit the geometric structure of the token space. In language generation, shifting probability mass from "cat" to "kitten" versus to "table" should incur fundamentally different penalties.
+**Key Challenge**: KL/f-divergences perform index-wise comparisons and are entirely unable to exploit the geometric structure of the token space. In language generation, shifting probability mass from "cat" to "kitten" versus to "table" should incur fundamentally different penalties.
 
-**Starting Point**: Replace KL divergence with Wasserstein distance as the policy regularizer, since Wasserstein distance naturally accounts for the metric structure of the underlying space and can encode semantic distances between tokens.
+**Key Insight**: Replace KL divergence with Wasserstein distance as the policy regularizer, since Wasserstein distance naturally accounts for the metric structure of the underlying space and can encode semantic distances between tokens.
 
 ## Method
 

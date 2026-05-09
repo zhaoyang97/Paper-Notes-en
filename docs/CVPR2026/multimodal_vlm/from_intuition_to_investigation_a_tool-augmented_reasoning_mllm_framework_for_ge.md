@@ -29,15 +29,15 @@ This paper proposes TAR-FAS, a framework that reformulates Face Anti-Spoofing (F
 
 ## Background & Motivation
 
-**State of the Field**: Face recognition systems are vulnerable to spoofing attacks such as printed photos, video replay, and 3D masks. FAS techniques are employed to enhance system reliability. Early methods perform well within the same domain but suffer from poor cross-domain generalization.
+**Background**: Face recognition systems are vulnerable to spoofing attacks such as printed photos, video replay, and 3D masks. FAS techniques are employed to enhance system reliability. Early methods perform well within the same domain but suffer from poor cross-domain generalization.
 
 **Limitations of Prior Work**: Recent MLLM-based FAS methods (e.g., I-FAS) reformulate the binary classification task as text generation, but can only capture coarse-grained semantic cues (e.g., mask contours, screen borders), exhibiting insufficient sensitivity to fine-grained visual patterns in high-quality forgeries.
 
-**Root Cause**: MLLMs exhibit a fundamental blindness to low-level visual features, yet FAS critically depends on such fine-grained features to distinguish real from fake faces. Brief textual descriptions further exacerbate this limitation.
+**Key Challenge**: MLLMs exhibit a fundamental blindness to low-level visual features, yet FAS critically depends on such fine-grained features to distinguish real from fake faces. Brief textual descriptions further exacerbate this limitation.
 
-**Paper Goals**: How to guide MLLMs to perceive subtle spoofing cues that are easily overlooked?
+**Goal**: How to guide MLLMs to perceive subtle spoofing cues that are easily overlooked?
 
-**Starting Point**: Drawing from the success of traditional FAS methods—LBP, HOG, FFT, and other fundamental visual operators have been shown to effectively extract fine-grained spoof features. These operators are embedded as "external tools" into the CoT reasoning process of MLLMs.
+**Key Insight**: Drawing from the success of traditional FAS methods—LBP, HOG, FFT, and other fundamental visual operators have been shown to effectively extract fine-grained spoof features. These operators are embedded as "external tools" into the CoT reasoning process of MLLMs.
 
 **Core Idea**: Guide the MLLM to reason like a detective—first forming an intuitive judgment, then conducting a thorough tool-assisted investigation: "From Intuition to Investigation."
 

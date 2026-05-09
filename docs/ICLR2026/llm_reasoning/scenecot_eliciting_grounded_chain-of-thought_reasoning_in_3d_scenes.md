@@ -28,13 +28,13 @@ This paper proposes SceneCOT, the first framework to introduce Chain-of-Thought 
 
 ## Background & Motivation
 
-**State of the Field**: 3D-LLMs have made progress on scene question answering, but responses often lack genuine grounding in the scene — models may produce plausible answers without actually attending to the relevant objects.
+**Background**: 3D-LLMs have made progress on scene question answering, but responses often lack genuine grounding in the scene — models may produce plausible answers without actually attending to the relevant objects.
 
 **Limitations of Prior Work**: Beacon3D evaluation reveals extremely low grounding-QA coherence (Good Coherence): LEO 1.6%, PQ3D 16.5%, Chat-Scene 19.5%. A large proportion of responses exhibit mismatches — correct grounding with wrong QA, or correct QA with wrong grounding — indicating a disconnect between the reasoning process and visual perception.
 
-**Root Cause**: 3D reasoning tasks are diverse and complex (counting, existence, attribute, spatial relation, navigation, etc.), each requiring different visual cues and reasoning strategies. A single end-to-end model struggles to handle all task types flexibly.
+**Key Challenge**: 3D reasoning tasks are diverse and complex (counting, existence, attribute, spatial relation, navigation, etc.), each requiring different visual cues and reasoning strategies. A single end-to-end model struggles to handle all task types flexibly.
 
-**Starting Point**: Transfer CoT reasoning from the text domain to 3D scenes, decomposing complex reasoning into interpretable steps, each explicitly linked to objects or regions in the scene.
+**Key Insight**: Transfer CoT reasoning from the text domain to 3D scenes, decomposing complex reasoning into interpretable steps, each explicitly linked to objects or regions in the scene.
 
 **Core Idea**: A four-stage CoT reasoning pipeline encoded via special tokens (task → region → grounding → reasoning) that tightly couples language reasoning with 3D visual perception.
 

@@ -27,21 +27,21 @@ By systematically analyzing four key properties required for pointwise functions
 
 ## Background & Motivation
 
-1. **State of the Field**: Normalization layers (BatchNorm, LayerNorm, RMSNorm) are core components of modern deep networks, stabilizing training and accelerating convergence by regulating the distribution of intermediate activations. Recently, Dynamic Tanh (DyT) demonstrated that the pointwise function $\tanh(\alpha x)$ can serve as a drop-in replacement for normalization layers with comparable performance.
+1. **Background**: Normalization layers (BatchNorm, LayerNorm, RMSNorm) are core components of modern deep networks, stabilizing training and accelerating convergence by regulating the distribution of intermediate activations. Recently, Dynamic Tanh (DyT) demonstrated that the pointwise function $\tanh(\alpha x)$ can serve as a drop-in replacement for normalization layers with comparable performance.
 
 2. **Limitations of Prior Work**:
    - Normalization layers rely on activation statistics (mean, variance), incurring additional memory access and synchronization overhead.
    - Certain normalization schemes are sensitive to batch size, leading to training instability at small batch sizes.
    - While DyT successfully matches normalization layer performance, it does not surpass it—the field has accepted "normalization-free ≈ normalization-based" but no work has demonstrated "normalization-free > normalization-based."
 
-3. **Root Cause**: DyT established that pointwise functions can replace normalization layers, but it remains unclear which other functions in the design space might perform better, what functional properties are critical, and whether any pointwise function can be found that surpasses normalization layers.
+3. **Key Challenge**: DyT established that pointwise functions can replace normalization layers, but it remains unclear which other functions in the design space might perform better, what functional properties are critical, and whether any pointwise function can be found that surpasses normalization layers.
 
-4. **Paper Goals**:
+4. **Goal**:
    - Systematically understand which properties of pointwise functions affect training dynamics and final performance.
    - Search for the optimal design within a candidate function set.
    - Demonstrate that pointwise functions can not only replace but surpass normalization layers.
 
-5. **Starting Point**: The analysis begins from intrinsic functional properties (zero-centeredness, boundedness, center-sensitivity, monotonicity), isolating the effect of each property through controlled experiments, and then using these principles to guide function search.
+5. **Key Insight**: The analysis begins from intrinsic functional properties (zero-centeredness, boundedness, center-sensitivity, monotonicity), isolating the effect of each property through controlled experiments, and then using these principles to guide function search.
 
 6. **Core Idea**: The S-shaped pointwise function $\text{erf}(\alpha x + s)$, which satisfies all four key properties, not only replaces normalization layers but consistently surpasses them through superior generalization.
 

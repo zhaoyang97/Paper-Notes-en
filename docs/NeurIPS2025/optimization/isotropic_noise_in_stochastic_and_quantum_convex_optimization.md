@@ -27,11 +27,11 @@ content_hash: 2fc71486cff977be
 This paper introduces the concept of an Isotropic Stochastic Gradient Oracle (ISGO)—where noise is bounded in every direction with high probability—and designs a stochastic cutting-plane algorithm achieving a query complexity of $\tilde{O}(R^2\sigma_I^2/\epsilon^2 + d)$, improving over SGD by a factor of $d$ in certain parameter regimes. As corollaries, the paper establishes new state-of-the-art complexities under sub-exponential noise and improves the dimension dependence of quantum stochastic convex optimization via a quantum isotropization subroutine.
 
 ## Background & Motivation
-**State of the Field**: SGD achieves $O(R^2\sigma_B^2/\epsilon^2)$ under a $\sigma_B$-bounded stochastic gradient oracle (BSGO), which is optimal. Under a variance-bounded oracle (VSGO) with variance $\sigma_V^2$, SGD achieves $O(R^2(\sigma_V^2 + L^2)/\epsilon^2)$. The $R^2\sigma_V^2/\epsilon^2$ term is unimprovable, but the $R^2L^2/\epsilon^2$ term arises from the deterministic component and can be reduced to $\tilde{O}(d)$ via cutting-plane methods at sufficiently high accuracy.
+**Background**: SGD achieves $O(R^2\sigma_B^2/\epsilon^2)$ under a $\sigma_B$-bounded stochastic gradient oracle (BSGO), which is optimal. Under a variance-bounded oracle (VSGO) with variance $\sigma_V^2$, SGD achieves $O(R^2(\sigma_V^2 + L^2)/\epsilon^2)$. The $R^2\sigma_V^2/\epsilon^2$ term is unimprovable, but the $R^2L^2/\epsilon^2$ term arises from the deterministic component and can be reduced to $\tilde{O}(d)$ via cutting-plane methods at sufficiently high accuracy.
 
 **Limitations of Prior Work**: Can one achieve $\tilde{O}(R^2\sigma_V^2/\epsilon^2 + d)$ under VSGO—i.e., decouple the stochastic and deterministic contributions?
 
-**Paper Goals**: The paper defines the ISGO noise model, affirmatively answers the above question under this model, achieves tight complexity for sub-exponential noise, and attains $\tilde{O}(dR^2\sigma_V^2/\epsilon^2 + d)$ for general VSGO.
+**Goal**: The paper defines the ISGO noise model, affirmatively answers the above question under this model, achieves tight complexity for sub-exponential noise, and attains $\tilde{O}(dR^2\sigma_V^2/\epsilon^2 + d)$ for general VSGO.
 
 ## Method
 

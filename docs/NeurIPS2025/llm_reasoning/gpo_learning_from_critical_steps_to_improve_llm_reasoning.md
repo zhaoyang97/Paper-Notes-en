@@ -28,15 +28,15 @@ GPO estimates the advantage function for each step in a reasoning trajectory via
 
 ## Background & Motivation
 
-**State of the Field**: Improvements in LLM reasoning capability currently rely primarily on post-training methods such as PPO (online RL) and DPO/SimPO/KTO (offline preference optimization), which have been validated by systems such as DeepSeek-R1 and OpenAI O1.
+**Background**: Improvements in LLM reasoning capability currently rely primarily on post-training methods such as PPO (online RL) and DPO/SimPO/KTO (offline preference optimization), which have been validated by systems such as DeepSeek-R1 and OpenAI O1.
 
 **Limitations of Prior Work**: These methods optimize entire reasoning trajectories as monolithic units. However, errors in LLM reasoning typically originate from a specific "critical step"—one at which correct handling leads to success while incorrect handling causes all subsequent reasoning to collapse. Whole-trajectory optimization cannot effectively focus on these critical steps.
 
-**Root Cause**: Although Satori and similar works introduce trajectory reset, the reset point is selected **randomly** without truly identifying which step is critical, resulting in low signal efficiency.
+**Key Challenge**: Although Satori and similar works introduce trajectory reset, the reset point is selected **randomly** without truly identifying which step is critical, resulting in low signal efficiency.
 
-**Paper Goals**: How can critical steps in reasoning trajectories be automatically localized, and how can more informative training data be constructed?
+**Goal**: How can critical steps in reasoning trajectories be automatically localized, and how can more informative training data be constructed?
 
-**Starting Point**: Drawing on the notion of critical state identification from Explainable RL (XRL), each reasoning step is treated as an action in an MDP, and the absolute value of the advantage function is used to measure the importance of each step—the step with the largest advantage value is designated the "critical step."
+**Key Insight**: Drawing on the notion of critical state identification from Explainable RL (XRL), each reasoning step is treated as an action in an MDP, and the absolute value of the advantage function is used to measure the importance of each step—the step with the largest advantage value is designated the "critical step."
 
 **Core Idea**: Use the advantage function to localize critical steps in reasoning trajectories, reset and resample trajectories from those steps, and focus training on the key turning points where the model most needs to learn.
 

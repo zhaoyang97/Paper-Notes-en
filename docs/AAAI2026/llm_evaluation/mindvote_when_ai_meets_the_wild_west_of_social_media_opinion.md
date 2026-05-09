@@ -27,7 +27,7 @@ This paper introduces MindVote — the first LLM opinion prediction benchmark gr
 
 ### State of the Field
 
-**State of the Field**: LLMs are increasingly used as scalable substitutes for surveys — predicting public opinion distributions before costly surveys are deployed. However, existing evaluations are based on traditional structured questionnaires.
+**Background**: LLMs are increasingly used as scalable substitutes for surveys — predicting public opinion distributions before costly surveys are deployed. However, existing evaluations are based on traditional structured questionnaires.
 
 ### Limitations of Prior Work
 
@@ -35,17 +35,17 @@ This paper introduces MindVote — the first LLM opinion prediction benchmark gr
 
 ### Root Cause
 
-**Root Cause**: Survey data is decoupled from real social discussions — questionnaires strip away the social environment in which opinions are actually formed.
+**Key Challenge**: Survey data is decoupled from real social discussions — questionnaires strip away the social environment in which opinions are actually formed.
 
 ### Proposed Direction
 
 **Proposed Direction**: Existing benchmarks are topically narrow, culturally homogeneous, and lack contextual metadata.
 
-**Root Cause**: LLMs are deployed in social media settings in practice, yet are evaluated on structured surveys that differ fundamentally in style from social media content.
+**Key Challenge**: LLMs are deployed in social media settings in practice, yet are evaluated on structured surveys that differ fundamentally in style from social media content.
 
-**Paper Goals**: Construct an opinion prediction benchmark grounded in real social media discussions.
+**Goal**: Construct an opinion prediction benchmark grounded in real social media discussions.
 
-**Starting Point**: Collect authentic poll data (not artificially constructed) from Reddit and Weibo, accompanied by platform- and topic-level context.
+**Key Insight**: Collect authentic poll data (not artificially constructed) from Reddit and Weibo, accompanied by platform- and topic-level context.
 
 **Core Idea**: Real social polls + dual-platform cross-cultural design + rich contextual metadata = ecologically valid opinion evaluation.
 

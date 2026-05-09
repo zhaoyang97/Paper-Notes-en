@@ -28,14 +28,14 @@ content_hash: 956fbccb0607391b
 This paper theoretically demonstrates that CE loss maximizes a lower bound of NDCG in recommender system KD only when a *closure assumption* is satisfied—the candidate subset must contain the student's top-ranked items. However, the actual KD objective is to distill the ranking of the teacher's top items, and these two requirements conflict, explaining why vanilla CE performs poorly. Accordingly, the paper proposes RCE-KD: the teacher's top-K items are split into two groups based on whether they appear in the student's top-K, handled respectively by exact CE and sampling-approximated closure CE, with an adaptive fusion weight that evolves dynamically throughout training.
 
 ## Background & Motivation
-**State of the Field**: Knowledge distillation in recommender systems compresses large teacher models into compact student models. Response-based KD (CE loss, RRD, CD, etc.) is the dominant paradigm, and CE loss has proven highly successful in KD for CV and NLP.
+**Background**: Knowledge distillation in recommender systems compresses large teacher models into compact student models. Response-based KD (CE loss, RRD, CD, etc.) is the dominant paradigm, and CE loss has proven highly successful in KD for CV and NLP.
 
 **Limitations of Prior Work**:
    - CE loss performs **surprisingly poorly** in recommender KD — vanilla CE consistently underperforms all baselines (CD, RRD, HetComp, etc.) across three settings: MF→MF, LightGCN→LightGCN, and HSTU→HSTU.
    - Recommender KD has two unique characteristics: (1) it focuses on ranking rather than exact scores, particularly the ranking of teacher top items; and (2) since item sets are extremely large (millions), CE can only be computed over small subsets.
    - Existing theoretical connections between CE and NDCG apply only to binary labels and full-item settings, covering neither the practical setup of recommender KD.
 
-**Root Cause**: CE constrains partial NDCG only under the *closure assumption*—every item in the subset must have all student-higher-ranked items also present in the subset. Yet KD targets the ranking of teacher top items, and the student's and teacher's top items have almost no overlap early in training.
+**Key Challenge**: CE constrains partial NDCG only under the *closure assumption*—every item in the subset must have all student-higher-ranked items also present in the subset. Yet KD targets the ranking of teacher top items, and the student's and teacher's top items have almost no overlap early in training.
 
 **Core Idea**: Split the teacher's top-K into two groups (intersection / difference with student top-K); for the first group, compute CE directly over the student's top-K (exactly satisfying closure); for the second group, use an adaptive sampling strategy to approximately satisfy closure.
 

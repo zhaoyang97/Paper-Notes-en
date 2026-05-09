@@ -40,7 +40,7 @@ Pretrained vision-language models such as CLIP achieve strong zero-shot classifi
 - **ROBOSHOT** (Adila et al. 2024): requires an LLM to explicitly specify spurious attributes for each task.
 - **TIE***: directly uses spurious attributes to generate pseudo-labels, also relying on prior knowledge.
 
-**Root Cause**: Existing methods either require training data or prior knowledge—both of which undermine CLIP's out-of-the-box zero-shot advantage.
+**Key Challenge**: Existing methods either require training data or prior knowledge—both of which undermine CLIP's out-of-the-box zero-shot advantage.
 
 ### Starting Point
 Can spurious bias be mitigated solely by **selecting appropriate text prompt templates**? SAGE's core insight is: **prompts with higher separation scores better capture the core class semantics, thereby reducing reliance on spurious features**. When a prompt produces large inter-class similarity differences, it focuses on essential features; conversely, similar scores across classes suggest that spurious features are "confusing" the classifier.

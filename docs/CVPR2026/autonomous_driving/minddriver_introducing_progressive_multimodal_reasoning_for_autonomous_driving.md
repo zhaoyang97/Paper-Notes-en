@@ -28,15 +28,15 @@ This paper proposes MindDriver, a progressive multimodal reasoning framework tha
 
 ## Background & Motivation
 
-**State of the Field**: VLMs are increasingly being applied to end-to-end autonomous driving, directly predicting trajectories from raw sensor inputs. Chain-of-Thought (CoT) reasoning has been introduced to enhance scene reasoning and interpretability.
+**Background**: VLMs are increasingly being applied to end-to-end autonomous driving, directly predicting trajectories from raw sensor inputs. Chain-of-Thought (CoT) reasoning has been introduced to enhance scene reasoning and interpretability.
 
 **Limitations of Prior Work**: (a) Text-based CoT reasons in semantic space and then directly predicts trajectories in physical space, resulting in **spatial misalignment**—the gap between the semantic space and the physical trajectory space is too large, leading to decision inconsistencies. (b) Recent approaches replace text CoT with future images (e.g., FSDrive), but lack planning-oriented guidance, leaving the model without clear cues about which objects to attend to, and failing to leverage the large-scale pretraining knowledge embedded in LLMs.
 
-**Root Cause**: A well-**aligned bridge** is needed between semantic-space reasoning (derived from LLM pretraining) and physical-space trajectory prediction—one that exploits semantic knowledge while connecting to the physical space.
+**Key Challenge**: A well-**aligned bridge** is needed between semantic-space reasoning (derived from LLM pretraining) and physical-space trajectory prediction—one that exploits semantic knowledge while connecting to the physical space.
 
-**Paper Goals**: Design a progressively smooth reasoning pathway from semantic to physical space; address the scarcity and misalignment of multimodal reasoning training data.
+**Goal**: Design a progressively smooth reasoning pathway from semantic to physical space; address the scarcity and misalignment of multimodal reasoning training data.
 
-**Starting Point**: The human driving cognitive model of "perception–imagination–action"—first understanding the scene (semantics), then imagining future changes (imagery), and finally planning actions based on that imagination (trajectory).
+**Key Insight**: The human driving cognitive model of "perception–imagination–action"—first understanding the scene (semantics), then imagining future changes (imagery), and finally planning actions based on that imagination (trajectory).
 
 **Core Idea**: Use textual reasoning to guide future scene image generation, and then use the imagined images to guide trajectory prediction, achieving progressive alignment along the text→image→trajectory chain.
 

@@ -31,13 +31,13 @@ This paper proposes GRIN (Graph Repetition-Invariant Network), which achieves in
 
 ### State of the Field
 
-**State of the Field**: Polymers are long-chain molecules composed of repeating monomer units, and property prediction is a central problem in materials science.
+**Background**: Polymers are long-chain molecules composed of repeating monomer units, and property prediction is a central problem in materials science.
 
 **Limitations of Prior Work**: Standard GNNs produce different predictions for different repeat-unit representations of the same polymer (1 repeat vs. 3 repeats vs. N repeats), violating a fundamental symmetry of polymers — repetition invariance.
 
-**Root Cause**: The aggregation operations of GNNs (Sum/Mean) are sensitive to graph size and cannot naturally handle "representations of the same molecule at different scales."
+**Key Challenge**: The aggregation operations of GNNs (Sum/Mean) are sensitive to graph size and cannot naturally handle "representations of the same molecule at different scales."
 
-**Starting Point**: Max aggregation is naturally invariant to the number of repetitions (taking the maximum is unaffected by repetition count), but requires a specialized graph construction to function correctly.
+**Key Insight**: Max aggregation is naturally invariant to the number of repetitions (taking the maximum is unaffected by repetition count), but requires a specialized graph construction to function correctly.
 
 **Core Idea**: Max aggregation + cyclization (connecting chain head and tail to form a ring) + a sufficient number of message-passing layers.
 

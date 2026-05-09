@@ -27,11 +27,11 @@ This paper presents UniEdit — the first unified LLM knowledge editing benchmar
 
 ## Background & Motivation
 
-**State of the Field**: Model editing aims to efficiently correct the internal knowledge of large language models, avoiding the high cost of full retraining and catastrophic forgetting. Existing editing methods fall into two main paradigms: Locate-then-Edit (e.g., ROME, MEMIT, AlphaEdit) and external module-based approaches (e.g., SERAC, GRACE, MEND).
+**Background**: Model editing aims to efficiently correct the internal knowledge of large language models, avoiding the high cost of full retraining and catastrophic forgetting. Existing editing methods fall into two main paradigms: Locate-then-Edit (e.g., ROME, MEMIT, AlphaEdit) and external module-based approaches (e.g., SERAC, GRACE, MEND).
 
 **Limitations of Prior Work**: Existing knowledge editing benchmarks suffer from three core limitations. First, narrow domain coverage — most benchmarks sample from a limited set of knowledge graph triples, confined to a small range of relations and domains. Second, one-sided evaluation criteria — each benchmark independently constructs data focusing on specific evaluation dimensions (e.g., MQuAKE focuses on multi-hop reasoning, RippleEdit on ripple effects), lacking a unified scheme that integrates all criteria into a single dataset. Third, insufficient scale — the data volume is too small to support methods that require editing-specific training (e.g., SERAC, RECIPE).
 
-**Root Cause**: Real-world knowledge editing requirements span broad domains, and the post-edit ripple effects (relation inversion, multi-hop reasoning, alias recognition, etc.) exhibit complex combinatorial patterns. Evaluation conclusions drawn from constrained datasets may not generalize to diverse open-domain scenarios.
+**Key Challenge**: Real-world knowledge editing requirements span broad domains, and the post-edit ripple effects (relation inversion, multi-hop reasoning, alias recognition, etc.) exhibit complex combinatorial patterns. Evaluation conclusions drawn from constrained datasets may not generalize to diverse open-domain scenarios.
 
 **Core Idea**: By leveraging Wikidata — the largest open-source knowledge graph — the paper constructs a unified benchmark spanning 25 domains and designs the NMCS algorithm to integrate multiple generalization and locality evaluation criteria into a single sampling framework, allowing each sample to naturally encompass combinations of multiple evaluation criteria.
 

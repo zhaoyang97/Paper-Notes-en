@@ -27,15 +27,15 @@ content_hash: ae97a906f70c4011
 This paper presents the first systematic study of parameter-efficient fine-tuning (PEFT) for pretrained large operator models (LOMs) in scientific machine learning. It demonstrates that LoRA exhibits a depth-amplified approximation error lower bound in Fourier layers, whereas Adapter preserves universal approximation capacity. Building on this analysis, the paper proposes the Frequency-Adaptive Adapter (F-Adapter), which allocates adapter capacity according to spectral energy distribution. On 3D Navier-Stokes prediction tasks, F-Adapter achieves state-of-the-art performance while tuning fewer than 2% of parameters.
 
 ## Background & Motivation
-**State of the Field**: PEFT methods (LoRA, Adapter, Prompt Tuning, etc.) have been extensively validated for adapting large models in NLP and CV, yet remain largely unexplored in scientific machine learning (SciML). Recent large operator models (LOMs) such as DPOT (1B parameters) have acquired strong generalization ability through multi-PDE pretraining.
+**Background**: PEFT methods (LoRA, Adapter, Prompt Tuning, etc.) have been extensively validated for adapting large models in NLP and CV, yet remain largely unexplored in scientific machine learning (SciML). Recent large operator models (LOMs) such as DPOT (1B parameters) have acquired strong generalization ability through multi-PDE pretraining.
 
 **Limitations of Prior Work**: LOMs are parameter-heavy (DPOT-H reaches 1B parameters), making full fine-tuning prohibitively expensive (~25–37 GB GPU memory, 100% parameter update). Directly transferring LoRA from NLP/CV to LOMs yields poor results: L2RE consistently hovers around 0.63–0.64 across different rank settings, far below full fine-tuning's 0.54.
 
-**Root Cause**: PDE solution manifolds exhibit broadband, cascade-coupled spectral characteristics that differ fundamentally from the low-rank structure of natural language or images. The linear low-rank constraint of LoRA introduces a depth-amplified approximation error lower bound in Fourier layers, preventing effective matching of PDE spectral properties.
+**Key Challenge**: PDE solution manifolds exhibit broadband, cascade-coupled spectral characteristics that differ fundamentally from the low-rank structure of natural language or images. The linear low-rank constraint of LoRA introduces a depth-amplified approximation error lower bound in Fourier layers, preventing effective matching of PDE spectral properties.
 
-**Paper Goals**: Can a PEFT method be designed that respects the frequency-adaptive structure and physical priors of PDE solutions, achieving both efficiency and spectral fidelity?
+**Goal**: Can a PEFT method be designed that respects the frequency-adaptive structure and physical priors of PDE solutions, achieving both efficiency and spectral fidelity?
 
-**Starting Point**: The paper begins with theoretical analysis—proving the inherent limitation of LoRA (depth-amplified lower bound in Proposition 3.2) and the advantage of Adapter (exponentially decaying error in Proposition 3.2)—and then leverages the energy-concentration property of PDE solution spectra (low-frequency dominance) to guide the design of a frequency-aware Adapter.
+**Key Insight**: The paper begins with theoretical analysis—proving the inherent limitation of LoRA (depth-amplified lower bound in Proposition 3.2) and the advantage of Adapter (exponentially decaying error in Proposition 3.2)—and then leverages the energy-concentration property of PDE solution spectra (low-frequency dominance) to guide the design of a frequency-aware Adapter.
 
 **Core Idea**: Low-frequency bands contain the majority of PDE solution energy and should be assigned larger adapter bottleneck dimensions, while high-frequency bands are sparse and noise-sensitive, requiring only lightweight adapters.
 

@@ -37,9 +37,9 @@ Existing methods face two key challenges:
 
 **All-to-all scalability**: The number of condition pairs $(c_1, c_2)$ can be infinite, making it computationally intractable to learn transport maps pairwise.
 
-**Root Cause**: How to learn optimal transport mappings between arbitrary condition pairs from non-grouped data?
+**Key Challenge**: How to learn optimal transport mappings between arbitrary condition pairs from non-grouped data?
 
-**Starting Point**: The paper extends conditional optimal transport (COT) techniques to the pairwise setting, designing a novel cost function such that mini-batch-level couplings converge to optimal transport across all condition pairs.
+**Key Insight**: The paper extends conditional optimal transport (COT) techniques to the pairwise setting, designing a novel cost function such that mini-batch-level couplings converge to optimal transport across all condition pairs.
 
 ## Method
 

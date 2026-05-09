@@ -31,9 +31,9 @@ This paper proposes Approximate Likelihood Matching (ALM), a principled cross-to
 
 Knowledge distillation is an important paradigm for creating efficient language models, yet existing methods require the teacher and student to share the same or similar tokenizers, which severely restricts the set of viable teacher–student pairs. Modern LLMs employ highly diverse tokenizers: different models (GPT, Llama, Gemma, Qwen) use distinct vocabularies and tokenization functions, and a recent trend has emerged toward character- or byte-level tokenization away from subword schemes.
 
-**Root Cause**: Standard distillation compares token-level probability distributions between teacher and student via KL divergence, which requires both to share the same token space. When tokenizers differ, teacher and student segment the same text into different token sequences, making direct comparison infeasible. Existing cross-tokenizer methods (ULD, MinED, DSKD) incorporate teacher information through heuristics and can only serve as auxiliary objectives alongside a primary objective (e.g., next-token prediction), precluding pure distillation.
+**Key Challenge**: Standard distillation compares token-level probability distributions between teacher and student via KL divergence, which requires both to share the same token space. When tokenizers differ, teacher and student segment the same text into different token sequences, making direct comparison infeasible. Existing cross-tokenizer methods (ULD, MinED, DSKD) incorporate teacher information through heuristics and can only serve as auxiliary objectives alongside a primary objective (e.g., next-token prediction), precluding pure distillation.
 
-**Starting Point**: The problem is formalized as comparing the likelihoods of aligned token chunks, and a binarized f-divergence approximation is adopted to avoid enumerating the infinitely many possible byte-sequence outcomes.
+**Key Insight**: The problem is formalized as comparing the likelihoods of aligned token chunks, and a binarized f-divergence approximation is adopted to avoid enumerating the infinitely many possible byte-sequence outcomes.
 
 ## Method
 

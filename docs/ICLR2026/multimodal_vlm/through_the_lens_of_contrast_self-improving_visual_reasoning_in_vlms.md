@@ -28,15 +28,15 @@ This paper proposes VC-STaR (Visual Contrastive Self-Taught Reasoner), motivated
 
 ## Background & Motivation
 
-**State of the Field**: Vision-Language Models (VLMs), as extensions of large language models, have demonstrated strong multimodal reasoning capabilities. In the text-only domain, self-improvement methods (e.g., STaR, Self-Refine) — which enhance reasoning by having models iteratively refine their own reasoning chains — have proven effective and scalable paradigms for reasoning improvement.
+**Background**: Vision-Language Models (VLMs), as extensions of large language models, have demonstrated strong multimodal reasoning capabilities. In the text-only domain, self-improvement methods (e.g., STaR, Self-Refine) — which enhance reasoning by having models iteratively refine their own reasoning chains — have proven effective and scalable paradigms for reasoning improvement.
 
 **Limitations of Prior Work**: Directly transferring text-domain self-improvement methods to VLMs faces a fundamental challenge — visual hallucination. VLM-generated reasoning chains frequently contain hallucinations (describing non-existent content or misinterpreting visual information), whereas existing text-centric self-improvement frameworks focus solely on textual coherence and final answer correctness, offering no mechanism to verify or correct visual hallucinations embedded in reasoning. Worse, such methods may degrade into *speculative reasoning*, allowing textual priors to override genuine visual evidence.
 
-**Root Cause**: Self-improvement requires high-quality reasoning chains as training data, yet VLM-generated chains are contaminated by visual hallucinations — forming a "garbage in, garbage out" vicious cycle. The core problem is: how can visual hallucinations in VLM reasoning chains be corrected to enable high-quality visual reasoning data generation?
+**Key Challenge**: Self-improvement requires high-quality reasoning chains as training data, yet VLM-generated chains are contaminated by visual hallucinations — forming a "garbage in, garbage out" vicious cycle. The core problem is: how can visual hallucinations in VLM reasoning chains be corrected to enable high-quality visual reasoning data generation?
 
-**Paper Goals**: (1) Design a reliable visual hallucination correction mechanism to enable VLM self-improvement; (2) Construct a large-scale, high-quality visual reasoning dataset; (3) Significantly improve VLM visual reasoning through fine-tuning.
+**Goal**: (1) Design a reliable visual hallucination correction mechanism to enable VLM self-improvement; (2) Construct a large-scale, high-quality visual reasoning dataset; (3) Significantly improve VLM visual reasoning through fine-tuning.
 
-**Starting Point**: The authors identify an intriguing phenomenon — *VLMs see more accurately when contrasting*. When presented with a contrastive VQA pair (two visually similar images with different answers paired with semantically related questions), VLMs capture fine-grained visual cues more precisely, thereby correcting original hallucinations. Statistical analysis shows that the contrastive setting not only corrects more errors but also introduces fewer new ones.
+**Key Insight**: The authors identify an intriguing phenomenon — *VLMs see more accurately when contrasting*. When presented with a contrastive VQA pair (two visually similar images with different answers paired with semantically related questions), VLMs capture fine-grained visual cues more precisely, thereby correcting original hallucinations. Statistical analysis shows that the contrastive setting not only corrects more errors but also introduces fewer new ones.
 
 **Core Idea**: Leverage the inherent contrastive capability of VLMs to correct visual hallucinations in their own reasoning chains, enabling self-guided improvement of visual reasoning.
 

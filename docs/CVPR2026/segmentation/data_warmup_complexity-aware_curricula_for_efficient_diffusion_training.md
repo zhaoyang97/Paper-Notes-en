@@ -28,7 +28,7 @@ This paper proposes Data Warmup, a curriculum learning strategy that requires no
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion model training is expensive (hundreds of GPU-days). Much computation is wasted in early training, where randomly initialized networks are forced to process the full spectrum of images—from simple to complex—resulting in noisy, uninformative gradients and wasted compute.
+**Background**: Diffusion model training is expensive (hundreds of GPU-days). Much computation is wasted in early training, where randomly initialized networks are forced to process the full spectrum of images—from simple to complex—resulting in noisy, uninformative gradients and wasted compute.
 
 **Limitations of Prior Work**: (1) Traditional curriculum learning relies on training-time signals (loss/gradients), incurring per-iteration overhead and coupling with optimizer dynamics. (2) Pixel-level statistics (frequency, compressibility) are poor proxies for complexity—what matters is semantic structure.
 

@@ -28,7 +28,7 @@ This paper proposes FaBRe (Forward and Backward Reachability), a unified framewo
 
 ## Background & Motivation
 
-**State of the Field**: Neural feedback systems—dynamical systems controlled by neural networks—are increasingly deployed in safety-critical domains such as robotics, autonomous driving, and aerospace. Verifying whether such systems satisfy safety specifications (reach-avoid properties: reaching a target region while avoiding unsafe regions) is a core requirement prior to deployment.
+**Background**: Neural feedback systems—dynamical systems controlled by neural networks—are increasingly deployed in safety-critical domains such as robotics, autonomous driving, and aerospace. Verifying whether such systems satisfy safety specifications (reach-avoid properties: reaching a target region while avoiding unsafe regions) is a core requirement prior to deployment.
 
 **Limitations of Prior Work**:
 
@@ -40,9 +40,9 @@ This paper proposes FaBRe (Forward and Backward Reachability), a unified framewo
 
 4. Purely forward analysis accumulates over-approximation error over long time horizons, degrading verification precision.
 
-**Root Cause**: Over-approximations in forward analysis grow progressively over multi-step propagation (curse of dimensionality), while backward analysis—though potentially mitigating this by reasoning backward from target/avoidance sets—lacks efficient computable algorithms.
+**Key Challenge**: Over-approximations in forward analysis grow progressively over multi-step propagation (curse of dimensionality), while backward analysis—though potentially mitigating this by reasoning backward from target/avoidance sets—lacks efficient computable algorithms.
 
-**Starting Point**: This paper develops efficient backward reachable set approximation algorithms and "splices" forward and backward analysis along the time axis—$F$ steps of forward analysis followed by $B$ steps of backward analysis—exploiting their complementarity to improve verification precision without excessive computational overhead.
+**Key Insight**: This paper develops efficient backward reachable set approximation algorithms and "splices" forward and backward analysis along the time axis—$F$ steps of forward analysis followed by $B$ steps of backward analysis—exploiting their complementarity to improve verification precision without excessive computational overhead.
 
 ## Method
 

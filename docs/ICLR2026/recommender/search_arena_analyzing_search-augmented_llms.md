@@ -27,14 +27,14 @@ content_hash: c4a60b5b46a8828b
 This paper presents Search Arena — the first large-scale human preference dataset for search-augmented LLMs (24,069 conversations + 12,652 preference votes, 71 languages). Key findings include: user preference is positively influenced by citation quantity even when citations do not support the claims; community-driven platforms are preferred over Wikipedia; search augmentation does not degrade general chat performance, whereas general-purpose LLMs degrade significantly in search scenarios.
 
 ## Background & Motivation
-**State of the Field**: Search-augmented LLMs (e.g., Perplexity, Gemini Search, ChatGPT Search), which combine web retrieval with LLM reasoning, are increasingly popular. Existing benchmarks such as SimpleQA (4,326 instances) and BrowseComp (1,266 instances) are small-scale, single-turn, English-only, and oriented toward factual queries.
+**Background**: Search-augmented LLMs (e.g., Perplexity, Gemini Search, ChatGPT Search), which combine web retrieval with LLM reasoning, are increasingly popular. Existing benchmarks such as SimpleQA (4,326 instances) and BrowseComp (1,266 instances) are small-scale, single-turn, English-only, and oriented toward factual queries.
 
 **Limitations of Prior Work**:
    - **Insufficient coverage**: Factual queries constitute only ~19% of real user queries; the majority require information synthesis, analysis, recommendation, creativity, and other higher-order capabilities.
    - **Lack of preference understanding**: It remains unclear what users prefer in search scenarios — the role of citations, the influence of source domains, the value of reasoning.
    - **Cross-scenario evaluation gap**: How do search-augmented LLMs perform in general settings? How do general-purpose LLMs perform in search settings?
 
-**Root Cause**: Evaluating search-augmented LLMs requires large-scale, naturalistic, and diverse interaction data, yet existing datasets are small-scale and expert-constructed.
+**Key Challenge**: Evaluating search-augmented LLMs requires large-scale, naturalistic, and diverse interaction data, yet existing datasets are small-scale and expert-constructed.
 
 **Core Idea**: Crowdsource real user interactions with and preferences over search-augmented LLMs via the Chatbot Arena platform, and conduct systematic multi-dimensional analysis.
 

@@ -29,15 +29,15 @@ This paper proposes Generative Trajectory Policies (GTP), which adopts a unified
 
 ## Background & Motivation
 
-1. **State of the Field**: In offline RL, generative models have emerged as powerful policy classes due to their ability to capture complex multimodal behavior distributions. Diffusion-based policies excel in expressiveness, while consistency-based policies offer inference efficiency.
+1. **Background**: In offline RL, generative models have emerged as powerful policy classes due to their ability to capture complex multimodal behavior distributions. Diffusion-based policies excel in expressiveness, while consistency-based policies offer inference efficiency.
 
 2. **Limitations of Prior Work**: Diffusion policies require iterative denoising, resulting in high inference cost. Consistency policies enable 1–2 step generation but often suffer performance degradation. The two approaches present a fundamental trade-off between expressiveness and efficiency.
 
-3. **Root Cause**: Existing methods have developed independently, lacking a unified perspective to understand and transcend their respective limitations. It remains an open question whether a policy class can be both highly expressive and computationally efficient.
+3. **Key Challenge**: Existing methods have developed independently, lacking a unified perspective to understand and transcend their respective limitations. It remains an open question whether a policy class can be both highly expressive and computationally efficient.
 
-4. **Paper Goals**: To break the expressiveness-efficiency trade-off in generative policies by designing a flexible multi-step generative policy that achieves high performance even with a small number of sampling steps.
+4. **Goal**: To break the expressiveness-efficiency trade-off in generative policies by designing a flexible multi-step generative policy that achieves high performance even with a small number of sampling steps.
 
-5. **Starting Point**: The authors observe that diffusion models, flow matching, and consistency models can all be viewed as learning solution mappings $\Phi(\bm{x}_t, t, s)$ of a continuous-time ODE $\frac{d\bm{x}_t}{dt} = f(\bm{x}_t, t)$, and exploit this unified perspective to design a novel policy class.
+5. **Key Insight**: The authors observe that diffusion models, flow matching, and consistency models can all be viewed as learning solution mappings $\Phi(\bm{x}_t, t, s)$ of a continuous-time ODE $\frac{d\bm{x}_t}{dt} = f(\bm{x}_t, t)$, and exploit this unified perspective to design a novel policy class.
 
 6. **Core Idea**: Represent the policy as an ODE solution mapping (flow map), combined with efficient score approximation and advantage-weighted objectives, yielding an offline RL policy that is both expressive and efficient.
 

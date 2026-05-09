@@ -27,15 +27,15 @@ content_hash: 51f50a01038dd0c4
 This paper proposes TARA, a framework that injects taxonomic hierarchy knowledge into large multimodal models (LMMs) by aligning their intermediate representations with taxonomy-aware features from a biological foundation model (BFM), substantially improving hierarchical visual recognition performance on both known and novel categories.
 
 ## Background & Motivation
-**State of the Field**: Large multimodal models have demonstrated strong performance on fine-grained visual recognition (FGVR), yet hierarchical visual recognition (HVR) requires models to predict consistent label paths from coarse to fine granularity—a capability that remains underdeveloped.
+**Background**: Large multimodal models have demonstrated strong performance on fine-grained visual recognition (FGVR), yet hierarchical visual recognition (HVR) requires models to predict consistent label paths from coarse to fine granularity—a capability that remains underdeveloped.
 
 **Limitations of Prior Work**: LMMs frequently violate taxonomic hierarchies, producing inconsistent predictions along paths such as "Kingdom → Phylum → Class → Order → Family → Genus → Species." This problem is further exacerbated for novel categories absent from the training set.
 
-**Root Cause**: The visual feature encoders of LMMs lack hierarchical biological priors, preventing consistent recognition across different granularity levels.
+**Key Challenge**: The visual feature encoders of LMMs lack hierarchical biological priors, preventing consistent recognition across different granularity levels.
 
-**Paper Goals**: To inject taxonomic hierarchy knowledge into LMMs so that they produce hierarchically consistent recognition results for both known and novel categories.
+**Goal**: To inject taxonomic hierarchy knowledge into LMMs so that they produce hierarchically consistent recognition results for both known and novel categories.
 
-**Starting Point**: Biological foundation models (e.g., BioCLIP2), trained via hierarchical contrastive learning, encode rich biological relationships and can serve as a source of taxonomic knowledge.
+**Key Insight**: Biological foundation models (e.g., BioCLIP2), trained via hierarchical contrastive learning, encode rich biological relationships and can serve as a source of taxonomic knowledge.
 
 **Core Idea**: Align the intermediate visual representations and the first answer token representation of the LMM with the visual features and text label features of the BFM, respectively, thereby injecting taxonomic knowledge into the LMM.
 

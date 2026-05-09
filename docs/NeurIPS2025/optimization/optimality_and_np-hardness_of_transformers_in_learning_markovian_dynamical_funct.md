@@ -31,7 +31,7 @@ This paper analyzes the ICL capability of Transformers for learning Markovian dy
 
 ### Limitations of Prior Work
 
-**State of the Field**: In-Context Learning (ICL) is one of the core capabilities of Transformers, whereby a model learns a new task from input-output demonstrations provided in the prompt. Existing theoretical work on ICL has focused primarily on **linear regression with i.i.d. Gaussian inputs**, establishing that Transformers can implicitly perform gradient descent.
+**Background**: In-Context Learning (ICL) is one of the core capabilities of Transformers, whereby a model learns a new task from input-output demonstrations provided in the prompt. Existing theoretical work on ICL has focused primarily on **linear regression with i.i.d. Gaussian inputs**, establishing that Transformers can implicitly perform gradient descent.
 
 However, many real-world tasks involve **structured sequential data** with temporal dependencies among inputs. This paper focuses on a more challenging setting: learning shared transition dynamics from multiple Markov chain trajectories, and predicting the next token given a new query sequence. This setting introduces two novel challenges:
 1. Inputs are no longer i.i.d.; sequences exhibit internal Markovian dependency structure.

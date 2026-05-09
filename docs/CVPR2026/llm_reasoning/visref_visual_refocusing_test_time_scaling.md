@@ -30,15 +30,15 @@ This paper proposes VisRef, a training-free visual refocusing framework that, du
 
 ## Background & Motivation
 
-**State of the Field**: MLRMs such as InternVL-3.5, Qwen-3-VL, and SAIL-VL2 have achieved significant progress by extending Chain-of-Thought reasoning to vision-language tasks. However, recent work (Chu et al., Yang et al.) identifies a critical issue: as reasoning chain length increases, model attention to visual tokens progressively decays, and the model increasingly relies on textual priors rather than image content.
+**Background**: MLRMs such as InternVL-3.5, Qwen-3-VL, and SAIL-VL2 have achieved significant progress by extending Chain-of-Thought reasoning to vision-language tasks. However, recent work (Chu et al., Yang et al.) identifies a critical issue: as reasoning chain length increases, model attention to visual tokens progressively decays, and the model increasingly relies on textual priors rather than image content.
 
 **Limitations of Prior Work**: (1) RL fine-tuning approaches (e.g., Look-Back) can teach models to autonomously "look back" at visual inputs, but require 60 GPU-hours of fine-tuning and large-scale annotated dataset construction, limiting scalability. (2) Existing test-time scaling methods (e.g., Budget Forcing, L1) are purely text-oriented—they prompt the model to continue reasoning via tokens such as "Wait"/"Think more" but do not actively maintain visual grounding, allowing visual information to continue decaying. (3) Naively reinjecting all visual tokens is computationally infeasible—InternVL-3.5-8B generates approximately 1,772 visual tokens per image versus approximately 615 text tokens per step, and full reinjection incurs a 2.3× inference latency overhead.
 
-**Root Cause**: Humans naturally alternate between "viewing" and "reasoning" when solving multimodal problems, yet current MLRMs do not revisit visual tokens after initial processing—the longer the reasoning chain, the weaker the visual grounding. Training-based solutions are effective but costly; purely textual test-time scaling does not address the fundamental problem.
+**Key Challenge**: Humans naturally alternate between "viewing" and "reasoning" when solving multimodal problems, yet current MLRMs do not revisit visual tokens after initial processing—the longer the reasoning chain, the weaker the visual grounding. Training-based solutions are effective but costly; purely textual test-time scaling does not address the fundamental problem.
 
-**Paper Goals**: Can visual grounding be fully restored at test time without any retraining or fine-tuning?
+**Goal**: Can visual grounding be fully restored at test time without any retraining or fine-tuning?
 
-**Starting Point**: At each reasoning step, adaptively select a small subset (30%) of visual tokens that are most relevant to the current reasoning context and maximally diverse in visual coverage, then reinject them using a DPP framework that jointly optimizes relevance and diversity.
+**Key Insight**: At each reasoning step, adaptively select a small subset (30%) of visual tokens that are most relevant to the current reasoning context and maximally diverse in visual coverage, then reinject them using a DPP framework that jointly optimizes relevance and diversity.
 
 **Core Idea**: Formalize visual token selection as an optimization problem that maximizes the DPP determinant, enabling adaptive visual refocusing during reasoning without training—plug-and-play on any pretrained MLRM.
 

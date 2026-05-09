@@ -31,16 +31,16 @@ SSGformer proposes an All-in-One adverse weather image restoration method based 
 
 ## Background & Motivation
 
-**State of the Field**: Adverse weather conditions (rain, snow, haze, raindrops) severely degrade image quality and affect downstream vision tasks. Early works built dedicated models for individual weather types; in recent years, All-in-One (AiO) methods have emerged to handle multiple weather degradations within a unified framework. Representative methods include AIRFormer, Fourmer, AdaIR, and WeatherDiff.
+**Background**: Adverse weather conditions (rain, snow, haze, raindrops) severely degrade image quality and affect downstream vision tasks. Early works built dedicated models for individual weather types; in recent years, All-in-One (AiO) methods have emerged to handle multiple weather degradations within a unified framework. Representative methods include AIRFormer, Fourmer, AdaIR, and WeatherDiff.
 
 **Limitations of Prior Work**:
    - **Global operation in frequency-domain methods**: Existing frequency-domain restoration methods (Fourmer via Fourier transform, AIRFormer via wavelet transform) apply global filtering over the entire image's frequency content. This is effective for repetitive degradations (e.g., blur, uniform noise), but adverse weather degradations are **highly non-uniform and localized** (e.g., raindrops appear only at local positions), making global filtering insufficiently precise.
    - **Resolution loss in wavelet transforms**: Wavelet transforms halve the image resolution; restoring the original resolution after frequency-domain processing requires upsampling, which may introduce artifacts.
    - **Lack of fine spatial-context-aware grouping**: Different weather degradations are spatially non-uniform, requiring the identification and grouping of regions with similar degradation characteristics for targeted restoration.
 
-**Root Cause**: AiO models face a fundamental tension between "diverse degradation patterns" and "a unified processing framework." The high randomness and locality of weather degradations demand that the model both extract effective spectral priors and organize and process features in a spatially aware manner.
+**Key Challenge**: AiO models face a fundamental tension between "diverse degradation patterns" and "a unified processing framework." The high randomness and locality of weather degradations demand that the model both extract effective spectral priors and organize and process features in a spatially aware manner.
 
-**Starting Point**: Extract spectral information while preserving spatial details — using the Sobel operator (no resolution reduction) for high-frequency edge features and SVD (no resolution reduction) for low-frequency degradation texture features, then generating spatial grouping masks from these features to perform within-group attention.
+**Key Insight**: Extract spectral information while preserving spatial details — using the Sobel operator (no resolution reduction) for high-frequency edge features and SVD (no resolution reduction) for low-frequency degradation texture features, then generating spatial grouping masks from these features to perform within-group attention.
 
 ## Method
 

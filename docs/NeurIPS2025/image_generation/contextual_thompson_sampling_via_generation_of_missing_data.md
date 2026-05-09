@@ -29,13 +29,13 @@ This paper proposes Generative Thompson Sampling (TS-Gen), which reframes uncert
 
 ## Background & Motivation
 
-**State of the Field**: Classical Thompson sampling (TS) attributes environmental uncertainty to unknown latent parameters $\theta$, relying on three operations: specifying a prior, sampling from the posterior, and updating the posterior. All three are notoriously difficult in neural network settings (intractable posteriors, unintuitive priors, and costly online updates).
+**Background**: Classical Thompson sampling (TS) attributes environmental uncertainty to unknown latent parameters $\theta$, relying on three operations: specifying a prior, sampling from the posterior, and updating the posterior. All three are notoriously difficult in neural network settings (intractable posteriors, unintuitive priors, and costly online updates).
 
 **Limitations of Prior Work**: (a) Bayesian uncertainty quantification methods for neural networks (variational inference, MC dropout, ensembles, etc.) are limited in effectiveness and computationally expensive; (b) existing TS theory is largely restricted to parametric models (linear/logistic regression) and does not naturally extend to complex industrial settings using foundation models; (c) there is no systematic framework for leveraging prior information from historical tasks in the meta-learning setting.
 
-**Root Cause**: How can Thompson sampling be made compatible with modern deep learning (sequence models, foundation models) while retaining provable theoretical guarantees?
+**Key Challenge**: How can Thompson sampling be made compatible with modern deep learning (sequence models, foundation models) while retaining provable theoretical guarantees?
 
-**Starting Point**: Rather than treating uncertainty as arising from unknown parameters, this work treats it as missing observable data (counterfactual outcomes). If the outcomes of all actions were known, there would be no uncertainty—one could directly fit an optimal policy on the complete data. At each decision point, a generative model imputes the missing outcomes, a policy is fitted on the completed dataset, and an action is selected according to that policy.
+**Key Insight**: Rather than treating uncertainty as arising from unknown parameters, this work treats it as missing observable data (counterfactual outcomes). If the outcomes of all actions were known, there would be no uncertainty—one could directly fit an optimal policy on the complete data. At each decision point, a generative model imputes the missing outcomes, a policy is fitted on the completed dataset, and an action is selected according to that policy.
 
 ## Method
 

@@ -28,7 +28,7 @@ This paper proposes TripleSumm, which achieves dynamic frame-level modality impo
 
 ## Background & Motivation
 
-**State of the Field**: Video summarization extracts key segments to represent the original video content. Existing methods primarily rely on visual features combined with attention mechanisms.
+**Background**: Video summarization extracts key segments to represent the original video content. Existing methods primarily rely on visual features combined with attention mechanisms.
 
 **Limitations of Prior Work**: Modality importance varies dynamically from frame to frame (e.g., text is more informative when a judge is speaking; visual and audio are more informative during a robot performance), yet existing methods employ static or modality-agnostic fusion strategies. Furthermore, no large-scale triple-modality dataset exists.
 

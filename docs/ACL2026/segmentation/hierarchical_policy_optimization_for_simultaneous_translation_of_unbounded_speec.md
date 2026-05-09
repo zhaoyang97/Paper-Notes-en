@@ -28,15 +28,15 @@ This paper proposes Hierarchical Policy Optimization (HPO), which post-trains LL
 
 ## Background & Motivation
 
-**State of the Field**: Simultaneous speech translation (SST) requires generating translations while receiving partial speech input. Recently, LLM-based methods that model SST as multi-turn dialogue tasks, leveraging KV cache reuse to eliminate redundant computation, have become the mainstream approach for handling unbounded long speech (e.g., InfiniSST).
+**Background**: Simultaneous speech translation (SST) requires generating translations while receiving partial speech input. Recently, LLM-based methods that model SST as multi-turn dialogue tasks, leveraging KV cache reuse to eliminate redundant computation, have become the mainstream approach for handling unbounded long speech (e.g., InfiniSST).
 
 **Limitations of Prior Work**: These methods heavily rely on synthetic read-write trajectory data for supervised fine-tuning (SFT), but existing trajectory synthesis methods have significant flaws. Word-alignment-tool-based methods ignore the future context needed for translation timing; LLM-simulated interpreter methods produce unstable segmentation, failing to guarantee valid read-write trajectories. This leads to suboptimal SFT data quality and learned erroneous behaviors.
 
-**Root Cause**: A natural trade-off exists between translation quality and latency. When directly using reinforcement learning to jointly optimize both, the latency reward is easier to optimize (simply translating earlier reduces latency regardless of translation correctness), causing models to over-optimize latency at the expense of translation quality.
+**Key Challenge**: A natural trade-off exists between translation quality and latency. When directly using reinforcement learning to jointly optimize both, the latency reward is easier to optimize (simply translating earlier reduces latency regardless of translation correctness), causing models to over-optimize latency at the expense of translation quality.
 
-**Paper Goals**: Design a post-training method to correct SFT model errors while stably balancing optimization of translation quality and latency.
+**Goal**: Design a post-training method to correct SFT model errors while stably balancing optimization of translation quality and latency.
 
-**Starting Point**: The authors observe that the fundamental reason latency reward dominates optimization is the scale difference and asymmetric optimization difficulty between the two rewards. By introducing a "quality gate" mechanism — allowing latency optimization only after translation quality meets the threshold — an effective hierarchical constraint is established.
+**Key Insight**: The authors observe that the fundamental reason latency reward dominates optimization is the scale difference and asymmetric optimization difficulty between the two rewards. By introducing a "quality gate" mechanism — allowing latency optimization only after translation quality meets the threshold — an effective hierarchical constraint is established.
 
 **Core Idea**: Use a hierarchical reward structure to constrain GRPO training: when translation quality is below threshold, latency reward is set to worst value, ensuring the model prioritizes accuracy before pursuing speed.
 

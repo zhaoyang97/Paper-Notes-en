@@ -27,15 +27,15 @@ content_hash: 037ae18c39dd1ba7
 A Neural Operator-based "sub-grid black hole" model is proposed to learn the small-scale (GR)MHD time-evolution operator $u_t \to u_{t+\Delta T}$, replacing hand-crafted closure rules embedded in a multi-level direct numerical simulation framework. This work achieves, for the first time, the capture of intrinsic variability in accretion-driven feedback, with a speedup of $\sim 10^5\times$.
 
 ## Background & Motivation
-**State of the Field**: Supermassive black holes (SMBHs) and their host galaxies co-evolve through accretion–feedback (feeding–feedback) cycles, spanning 9 orders of magnitude in scale from milliparsecs (black hole event horizon) to megaparsecs (intergalactic medium).
+**Background**: Supermassive black holes (SMBHs) and their host galaxies co-evolve through accretion–feedback (feeding–feedback) cycles, spanning 9 orders of magnitude in scale from milliparsecs (black hole event horizon) to megaparsecs (intergalactic medium).
 
 **Limitations of Prior Work**: End-to-end first-principles simulations are computationally infeasible — accurately resolving the accretion flow requires time steps on the order of the gravitational radius, while capturing galaxy-scale feedback demands spatiotemporal scales $\sim 10^9$ times larger. Existing approaches (direct simulation / nested grids / multi-zone) are either prohibitively expensive or rely on static sub-grid schemes or theoretical prescriptions that cannot capture temporal variability.
 
-**Root Cause**: Small-scale accretion dynamics are chaotic and time-variable, yet existing sub-grid schemes (e.g., FIRE, IllustrisTNG in cosmological simulations) employ fixed analytic prescriptions and cannot dynamically respond to large-scale environmental changes. Unfaithful inner boundary settings (e.g., relativistic jets that cannot switch on/off across boundaries) inject erroneous information into the active simulation domain.
+**Key Challenge**: Small-scale accretion dynamics are chaotic and time-variable, yet existing sub-grid schemes (e.g., FIRE, IllustrisTNG in cosmological simulations) employ fixed analytic prescriptions and cannot dynamically respond to large-scale environmental changes. Unfaithful inner boundary settings (e.g., relativistic jets that cannot switch on/off across boundaries) inject erroneous information into the active simulation domain.
 
-**Paper Goals**: To replace hand-crafted sub-grid closures with a data-driven approach while maintaining long-term stable integration and physical consistency.
+**Goal**: To replace hand-crafted sub-grid closures with a data-driven approach while maintaining long-term stable integration and physical consistency.
 
-**Starting Point**: Sub-grid modeling is reformulated as an operator learning problem — learning small-scale dynamics to provide dynamically updated boundary conditions.
+**Key Insight**: Sub-grid modeling is reformulated as an operator learning problem — learning small-scale dynamics to provide dynamically updated boundary conditions.
 
 **Core Idea**: A Local Neural Operator is trained to learn the fine-scale (GR)MHD time-evolution semigroup $u_t \to u_{t+\Delta T}$, and is embedded in a multi-level framework to enable bidirectional coupling.
 

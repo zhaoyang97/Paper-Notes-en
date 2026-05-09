@@ -26,15 +26,15 @@ content_hash: c537654ad75d4fba
 This paper proposes the DICE framework, which achieves interpretable, robust, and efficient evaluation of RAG systems through a two-stage assessment pipeline (evidence-coupled deep analysis + probabilistic {A, B, Tie} scoring) combined with a Swiss-system tournament. On a Chinese financial QA dataset, DICE attains 85.7% agreement with human experts, substantially outperforming RAGAS (45.7%).
 
 ## Background & Motivation
-**State of the Field**: RAG system evaluation predominantly relies on scalar metrics (BLEU, ROUGE, BERTScore) and RAG-specific frameworks (e.g., RAGAS with faithfulness/relevancy/context tri-dimensional scoring), yet these approaches suffer from poor interpretability and the absence of uncertainty quantification.
+**Background**: RAG system evaluation predominantly relies on scalar metrics (BLEU, ROUGE, BERTScore) and RAG-specific frameworks (e.g., RAGAS with faithfulness/relevancy/context tri-dimensional scoring), yet these approaches suffer from poor interpretability and the absence of uncertainty quantification.
 
 **Limitations of Prior Work**: (1) Scalar scores obscure meaningful differences between systems and cannot explain *why* A is better than B; (2) LLM-as-judge methods exhibit systematic biases (position bias, verbosity bias) and lack confidence estimation; (3) Exhaustive pairwise comparison among multiple systems incurs $O(N^2)$ complexity, which does not scale.
 
-**Root Cause**: How can interpretability (explaining why one system is better), robustness (confidence-awareness), and efficiency (scalable multi-system comparison) be achieved simultaneously?
+**Key Challenge**: How can interpretability (explaining why one system is better), robustness (confidence-awareness), and efficiency (scalable multi-system comparison) be achieved simultaneously?
 
-**Paper Goals**: Design an evidence-coupled, probabilistic, and efficient RAG evaluation framework.
+**Goal**: Design an evidence-coupled, probabilistic, and efficient RAG evaluation framework.
 
-**Starting Point**: Decompose evaluation into two stages — first perform deep analysis to generate reasoning traces, then extract a probability distribution over {A, B, Tie} from logits for confidence-aware scoring.
+**Key Insight**: Decompose evaluation into two stages — first perform deep analysis to generate reasoning traces, then extract a probability distribution over {A, B, Tie} from logits for confidence-aware scoring.
 
 **Core Idea**: Two-stage evidence-coupled evaluation (deep analysis → probabilistic scoring) combined with a Swiss-system tournament for efficient ranking.
 

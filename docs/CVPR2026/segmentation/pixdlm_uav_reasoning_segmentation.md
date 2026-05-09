@@ -29,15 +29,15 @@ This paper formally defines the UAV Reasoning Segmentation task, constructs the 
 
 ## Background & Motivation
 
-**State of the Field**: Reasoning Segmentation aims to identify regions in an image satisfying conditions described by free-form textual instructions. Models such as LISA and PixelLM have demonstrated the capacity of multimodal large language models (MLLMs) for implicit reasoning and pixel-level segmentation in ground-view scenarios.
+**Background**: Reasoning Segmentation aims to identify regions in an image satisfying conditions described by free-form textual instructions. Models such as LISA and PixelLM have demonstrated the capacity of multimodal large language models (MLLMs) for implicit reasoning and pixel-level segmentation in ground-view scenarios.
 
 **Limitations of Prior Work**: Existing reasoning segmentation models and datasets are predominantly built upon ground-view or nadir-view imagery, whose visual assumptions—moderate resolution, limited scale variation, stable camera orientation, and relatively large object sizes—are fundamentally inapplicable to UAV imagery. UAV images present three unique challenges: (1) high-altitude oblique perspectives continuously alter projective geometry; (2) extreme scale variation and densely packed small objects, with many critical targets spanning only tens of pixels; and (3) ultra-high-resolution scenes requiring simultaneous reasoning over global semantics and fine-grained high-frequency details.
 
-**Root Cause**: Existing MLLMs typically employ low-resolution visual tokenization, causing fine-grained UAV details to be lost during compression. Moreover, the absence of a reasoning segmentation benchmark specifically tailored to UAV scenarios impedes systematic research progress.
+**Key Challenge**: Existing MLLMs typically employ low-resolution visual tokenization, causing fine-grained UAV details to be lost during compression. Moreover, the absence of a reasoning segmentation benchmark specifically tailored to UAV scenarios impedes systematic research progress.
 
-**Paper Goals**: (1) Formally define the UAV Reasoning Segmentation task and construct a dedicated benchmark dataset; (2) propose a baseline model capable of jointly handling global semantics and local details.
+**Goal**: (1) Formally define the UAV Reasoning Segmentation task and construct a dedicated benchmark dataset; (2) propose a baseline model capable of jointly handling global semantics and local details.
 
-**Starting Point**: The semantic reasoning requirements of UAV imagery are organized along three dimensions—spatial reasoning, attribute reasoning, and scene-level reasoning—corresponding to positional relationships, visual states, and global context, respectively.
+**Key Insight**: The semantic reasoning requirements of UAV imagery are organized along three dimensions—spatial reasoning, attribute reasoning, and scene-level reasoning—corresponding to positional relationships, visual states, and global context, respectively.
 
 **Core Idea**: A dual-path visual encoder (global low-resolution path + high-resolution structural path) is employed to preserve small-object and boundary cues, which are then combined with LLM-driven reasoning for pixel-level segmentation.
 

@@ -30,7 +30,7 @@ A hybrid approach combining classification-learned prototypes with aerial image 
 
 ### Limitations of Prior Work
 
-**Limitations of Prior Work**: **State of the Field**: **Problem**: Visual geo-localization faces a fundamental trade-off between accuracy and scale.
+**Limitations of Prior Work**: **Background**: **Problem**: Visual geo-localization faces a fundamental trade-off between accuracy and scale.
 
 **Limitation**: Classification-based methods are scalable but coarse (>10 km), while retrieval-based methods are precise but do not scale.
 

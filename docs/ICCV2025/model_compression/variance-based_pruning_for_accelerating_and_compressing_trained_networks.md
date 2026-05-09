@@ -29,7 +29,7 @@ This paper proposes Variance-Based Pruning (VBP), a one-shot structured pruning 
     - Unstructured pruning preserves accuracy but sparse matrices fail to achieve real-world speedups on modern hardware.
     - Structured pruning methods (e.g., NViT) require extensive retraining (300 epochs) to recover accuracy.
     - Dynamic pruning methods (e.g., Token Merging / ToMe) do not modify model structure and thus cannot reduce storage overhead.
-- **Paper Goals**: To design a simple structured pruning method that simultaneously addresses storage and inference costs, requiring only minimal fine-tuning to recover most of the original accuracy.
+- **Goal**: To design a simple structured pruning method that simultaneously addresses storage and inference costs, requiring only minimal fine-tuning to recover most of the original accuracy.
 
 ## Method
 

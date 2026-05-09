@@ -29,11 +29,11 @@ This paper proposes *free-grained hierarchical recognition*, a setting in which 
 
 ## Background & Motivation
 
-- **State of the Field**: Conventional hierarchical classification assumes that every training image is fully annotated at all levels of the taxonomy (e.g., Bird → Bird of prey → Bald eagle). In practice, however, annotations are frequently incomplete.
+- **Background**: Conventional hierarchical classification assumes that every training image is fully annotated at all levels of the taxonomy (e.g., Bird → Bird of prey → Bald eagle). In practice, however, annotations are frequently incomplete.
 - **Limitations of Prior Work**: Labels may be absent for intrinsic reasons (insufficient visual evidence to support fine-grained assignment, e.g., a distant bird identifiable only as "bird") or extrinsic reasons (annotation cost, annotator expertise, or labeling protocols).
-- **Root Cause**: Existing SOTA hierarchical classification methods (e.g., H-CAST) assume complete label paths; their performance degrades catastrophically when labels are available only at coarser levels.
-- **Paper Goals**: The paper formalizes the **free-grained learning** setting, in which training labels may appear at any taxonomy level and annotation depth may vary across samples. The model must learn consistent hierarchical predictions from this incomplete, mixed-granularity supervision.
-- **Starting Point**: Experiments show that H-CAST, when transferred from full-label to free-grained settings, suffers a Full-Path Accuracy (FPA) drop of 19–40 percentage points (e.g., iNat21-mini: 64.9% → 25.6%), confirming the difficulty of this setting.
+- **Key Challenge**: Existing SOTA hierarchical classification methods (e.g., H-CAST) assume complete label paths; their performance degrades catastrophically when labels are available only at coarser levels.
+- **Goal**: The paper formalizes the **free-grained learning** setting, in which training labels may appear at any taxonomy level and annotation depth may vary across samples. The model must learn consistent hierarchical predictions from this incomplete, mixed-granularity supervision.
+- **Key Insight**: Experiments show that H-CAST, when transferred from full-label to free-grained settings, suffers a Full-Path Accuracy (FPA) drop of 19–40 percentage points (e.g., iNat21-mini: 64.9% → 25.6%), confirming the difficulty of this setting.
 
 ## Method
 

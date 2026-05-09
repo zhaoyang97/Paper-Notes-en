@@ -28,15 +28,15 @@ This paper proposes Consistency Mid-Training (CMT), which inserts a lightweight 
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models achieve high generation quality but suffer from slow inference due to multi-step ODE solving. Flow map models (e.g., Consistency Models, Mean Flow) learn solution mappings of the PF-ODE to enable few-step (1–2 step) generation, representing the dominant paradigm for accelerating diffusion models.
+**Background**: Diffusion models achieve high generation quality but suffer from slow inference due to multi-step ODE solving. Flow map models (e.g., Consistency Models, Mean Flow) learn solution mappings of the PF-ODE to enable few-step (1–2 step) generation, representing the dominant paradigm for accelerating diffusion models.
 
 **Limitations of Prior Work**: Flow map model training is unstable, sensitive to hyperparameters, and computationally expensive. The root cause is the absence of true regression targets—existing methods rely on stop-gradient pseudo-targets that drift dynamically during training, producing biased and unstable optimization signals.
 
-**Root Cause**: Although initializing from pretrained diffusion models is beneficial, diffusion models learn infinitesimal denoising steps whereas flow maps must learn large trajectory jumps. This "differential vs. integral" mismatch renders diffusion-based initialization fragile, still requiring extensive heuristics (time sampling schedules, loss reweighting, etc.), and training remains slow and unstable.
+**Key Challenge**: Although initializing from pretrained diffusion models is beneficial, diffusion models learn infinitesimal denoising steps whereas flow maps must learn large trajectory jumps. This "differential vs. integral" mismatch renders diffusion-based initialization fragile, still requiring extensive heuristics (time sampling schedules, loss reweighting, etc.), and training remains slow and unstable.
 
-**Paper Goals**: (a) How to provide trajectory-aligned, high-quality initialization for flow map models? (b) How to eliminate the pseudo-target bias introduced by stop-gradient? (c) How to substantially reduce flow map training cost?
+**Goal**: (a) How to provide trajectory-aligned, high-quality initialization for flow map models? (b) How to eliminate the pseudo-target bias introduced by stop-gradient? (c) How to substantially reduce flow map training cost?
 
-**Starting Point**: Inspired by the mid-training concept from the LLM literature, the paper inserts an intermediate stage between pretraining and post-training. The ODE solver of the pretrained model generates reference trajectories that provide deterministic, stop-gradient-free regression targets.
+**Key Insight**: Inspired by the mid-training concept from the LLM literature, the paper inserts an intermediate stage between pretraining and post-training. The ODE solver of the pretrained model generates reference trajectories that provide deterministic, stop-gradient-free regression targets.
 
 **Core Idea**: Fixed ODE trajectories from the pretrained model serve as supervision signals. Simple regression trains the model to "jump along the trajectory to the endpoint," providing trajectory-aware initialization for flow map post-training.
 

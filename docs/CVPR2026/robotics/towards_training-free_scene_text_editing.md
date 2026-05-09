@@ -29,15 +29,15 @@ This paper proposes TextFlow, a training-free scene text editing framework that 
 
 ## Background & Motivation
 
-1. **State of the Field**: Scene Text Editing (STE) aims to modify or replace text content in natural images while preserving background and visual attributes of the original text (font, color, size, and geometric layout). Generative models have evolved from GANs to UNet-based diffusion models and Diffusion Transformers (DiT), driving advances in STE. Methods such as DiffSTE, AnyText, and textFlux have demonstrated strong text rendering performance.
+1. **Background**: Scene Text Editing (STE) aims to modify or replace text content in natural images while preserving background and visual attributes of the original text (font, color, size, and geometric layout). Generative models have evolved from GANs to UNet-based diffusion models and Diffusion Transformers (DiT), driving advances in STE. Methods such as DiffSTE, AnyText, and textFlux have demonstrated strong text rendering performance.
 
 2. **Limitations of Prior Work**: A fundamental trade-off exists between adaptability and editing quality. Training-based methods require large-scale, high-quality paired data—which is scarce in practice—and while synthetic data can supplement this, it limits generalization to diverse real-world scenes, with substantial computational costs. Training-free methods leverage pretrained models without fine-tuning, but most attention-manipulation-based approaches are designed for generic object editing and struggle to maintain precise typographic and structural detail in the STE setting, frequently producing character repetition, omission, or distortion.
 
-3. **Root Cause**: The fundamental difficulty of training-free methods lies in stage-dependent controllability discrepancy—the signal-to-noise ratio varies unevenly across diffusion timesteps. If structural and stylistic foundations are not established during the early denoising stage, the editing trajectory becomes unstable; if sufficient semantic and spatial guidance is absent in the late stage, text rendering becomes inaccurate.
+3. **Key Challenge**: The fundamental difficulty of training-free methods lies in stage-dependent controllability discrepancy—the signal-to-noise ratio varies unevenly across diffusion timesteps. If structural and stylistic foundations are not established during the early denoising stage, the editing trajectory becomes unstable; if sufficient semantic and spatial guidance is absent in the late stage, text rendering becomes inaccurate.
 
-4. **Paper Goals**: How can both style preservation and text accuracy—the two core challenges in STE—be addressed simultaneously without any training?
+4. **Goal**: How can both style preservation and text accuracy—the two core challenges in STE—be addressed simultaneously without any training?
 
-5. **Starting Point**: Decouple the complex STE task into two complementary stages, each handled by a dedicated mechanism—style preservation in the early stage and text accuracy enhancement in the late stage.
+5. **Key Insight**: Decouple the complex STE task into two complementary stages, each handled by a dedicated mechanism—style preservation in the early stage and text accuracy enhancement in the late stage.
 
 6. **Core Idea**: Decompose STE into a two-stage process—FMS steers the trajectory in latent space via geometric correction in the early stage to maintain style consistency, while AttnBoost enhances text rendering accuracy through attention map guidance in the late stage, enabling end-to-end training-free editing.
 

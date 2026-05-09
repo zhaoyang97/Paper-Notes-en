@@ -27,15 +27,15 @@ This paper introduces Reasoning With a Star (RWS), a 158-question scientific rea
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have demonstrated strong performance on reasoning benchmarks (GSM8K, MATH, GPQA), yet remain deficient in domain-specific reasoning that requires physical assumptions, unit consistency, and proper scientific formatting. Heliophysics, as an interdisciplinary field with implications for climate, communications, and space safety, is conspicuously absent from LLM reasoning benchmarks.
+**Background**: LLMs have demonstrated strong performance on reasoning benchmarks (GSM8K, MATH, GPQA), yet remain deficient in domain-specific reasoning that requires physical assumptions, unit consistency, and proper scientific formatting. Heliophysics, as an interdisciplinary field with implications for climate, communications, and space safety, is conspicuously absent from LLM reasoning benchmarks.
 
 **Limitations of Prior Work**: (1) Existing benchmarks do not test scientific reasoning — they do not require stating assumptions, maintaining unit consistency, or providing correctly formatted outputs; (2) Multi-agent systems lack systematic comparison on genuine scientific reasoning tasks; (3) Single-shot LLMs are prone to "reasoning hallucinations" and algebraic errors.
 
-**Root Cause**: Scientific reasoning is not a single logical leap — it demands domain expertise, iterative refinement, and assumption verification. Yet no clear design principles exist for multi-agent systems in this context.
+**Key Challenge**: Scientific reasoning is not a single logical leap — it demands domain expertise, iterative refinement, and assumption verification. Yet no clear design principles exist for multi-agent systems in this context.
 
-**Paper Goals**: (1) Construct a benchmark targeting real-world scientific reasoning; (2) Systematically compare multi-agent paradigms and their appropriate use cases.
+**Goal**: (1) Construct a benchmark targeting real-world scientific reasoning; (2) Systematically compare multi-agent paradigms and their appropriate use cases.
 
-**Starting Point**: Apply systems engineering principles ("complexity must be earned, not assumed") to agent design, and evaluate pure scientific reasoning capability without retrieval-augmented generation (RAG).
+**Key Insight**: Apply systems engineering principles ("complexity must be earned, not assumed") to agent design, and evaluate pure scientific reasoning capability without retrieval-augmented generation (RAG).
 
 **Core Idea**: Different agent coordination paradigms suit different types of reasoning tasks — arithmetic reasoning benefits from lightweight self-critique, while scientific reasoning requires systems-engineering-style constraint tracking and verification.
 

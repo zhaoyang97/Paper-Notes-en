@@ -29,15 +29,15 @@ This paper proposes Task-Modulated Contrastive Learning (TMCL), inspired by top-
 
 ## Background & Motivation
 
-**State of the Field**: The biological brain can learn continuously from unlabeled data streams while integrating occasional label information without degradation. In contrast, machine learning models suffer from catastrophic forgetting in continual learning — supervised fine-tuning on new tasks degrades performance on old tasks.
+**Background**: The biological brain can learn continuously from unlabeled data streams while integrating occasional label information without degradation. In contrast, machine learning models suffer from catastrophic forgetting in continual learning — supervised fine-tuning on new tasks degrades performance on old tasks.
 
 **Limitations of Prior Work**: (a) Existing continual learning methods typically rely on abundant labeled data or explicit task boundaries; (b) unsupervised continual learning methods avoid forgetting but cannot leverage label information to improve classification; (c) supervised methods are label-inefficient, and even a small number of labels can cause overfitting and exacerbate forgetting.
 
-**Root Cause**: The stability-plasticity trade-off — exploiting new labels requires plasticity (modifying representations), but modifying representations disrupts old knowledge (requiring stability).
+**Key Challenge**: The stability-plasticity trade-off — exploiting new labels requires plasticity (modifying representations), but modifying representations disrupts old knowledge (requiring stability).
 
-**Paper Goals**: How to achieve effective continual learning under extremely sparse supervision (1% labels)? Specifically, how can a model continuously build general representations from unlabeled data streams while efficiently integrating specialized knowledge upon occasional label encounters?
+**Goal**: How to achieve effective continual learning under extremely sparse supervision (1% labels)? Specifically, how can a model continuously build general representations from unlabeled data streams while efficiently integrating specialized knowledge upon occasional label encounters?
 
-**Starting Point**: Inspired by top-down modulation in the neocortex — higher-level areas such as the prefrontal cortex influence lower-level representations (e.g., via attention) through modulatory signals without altering the synaptic weights of lower-level feedforward connections. The predictive coding framework provides the implementation basis.
+**Key Insight**: Inspired by top-down modulation in the neocortex — higher-level areas such as the prefrontal cortex influence lower-level representations (e.g., via attention) through modulatory signals without altering the synaptic weights of lower-level feedforward connections. The predictive coding framework provides the implementation basis.
 
 **Core Idea**: New class labels are used to learn only modulation parameters (without modifying feedforward weights); contrastive learning then trains the unmodulated representations to absorb the modulation information (modulation invariance), achieving stable knowledge consolidation.
 

@@ -28,7 +28,7 @@ To address incomplete inputs caused by camera failures in autonomous driving, MÂ
 
 ## Background & Motivation
 
-**State of the Field**: 3D semantic occupancy prediction provides dense voxel-level scene understanding for autonomous driving, offering more comprehensive coverage than BEV perception by handling arbitrarily shaped obstacles and fine-grained semantics.
+**Background**: 3D semantic occupancy prediction provides dense voxel-level scene understanding for autonomous driving, offering more comprehensive coverage than BEV perception by handling arbitrarily shaped obstacles and fine-grained semantics.
 
 **Limitations of Prior Work**: Existing multi-camera methods (SurroundOcc, TPVFormer, etc.) implicitly assume all six surround-view cameras operate normally. In real deployments, however, camera failures due to lens occlusion, hardware faults, or communication interruptions are common. Preliminary experiments show that even a well-established model like SurroundOcc suffers severe performance degradation upon losing a single critical viewpoint â€” rear camera loss drops IoU from 31.45% to 23.94%, creating a critical geometric blind spot. While some robustness works exist for the BEV domain (M-BEV, MetaBEV, SafeMap), the robustness of 3D semantic occupancy prediction to sensor failure remains essentially unexplored.
 

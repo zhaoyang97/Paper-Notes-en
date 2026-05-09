@@ -30,15 +30,15 @@ This paper proposes Catalyst4D, a framework that propagates mature 3D static edi
 
 ## Background & Motivation
 
-**State of the Field**: Static scene editing with 3DGS has reached considerable maturity—methods such as DGE, DreamCatalyst, and SGSST support fine-grained object manipulation and global style transfer with good spatial consistency. 4D scene reconstruction has also advanced significantly (Swift4D, 4DGS, etc.), typically adopting a canonical 3D Gaussian plus a learned deformation field $\mathcal{F}_\theta$ to represent dynamics.
+**Background**: Static scene editing with 3DGS has reached considerable maturity—methods such as DGE, DreamCatalyst, and SGSST support fine-grained object manipulation and global style transfer with good spatial consistency. 4D scene reconstruction has also advanced significantly (Swift4D, 4DGS, etc.), typically adopting a canonical 3D Gaussian plus a learned deformation field $\mathcal{F}_\theta$ to represent dynamics.
 
 **Limitations of Prior Work**: Dynamic 4D scene editing remains highly challenging. Existing methods (Instruct 4D-to-4D, CTRL-D, Instruct-4DGS) primarily rely on 2D diffusion models to edit per-frame images and subsequently fit a 4D representation, leading to: (1) spatial distortion—2D editing lacks geometric reasoning; (2) temporal flickering—inconsistent 2D edits across frames; (3) unintended modification of non-target regions—due to the global influence of 2D diffusion models.
 
-**Root Cause**: 3D editing is high quality but limited to static scenes; the deformation network of a 4D representation is trained only on the original geometry, and thus cannot infer the motion of edited Gaussians (which have undergone cloning, splitting, and pruning) that have drifted from the original distribution—new Gaussians have no motion prior.
+**Key Challenge**: 3D editing is high quality but limited to static scenes; the deformation network of a 4D representation is trained only on the original geometry, and thus cannot infer the motion of edited Gaussians (which have undergone cloning, splitting, and pruning) that have drifted from the original distribution—new Gaussians have no motion prior.
 
-**Paper Goals**: Transfer mature 3D static editing capabilities to 4D dynamic scenes while preserving geometric accuracy and temporal consistency.
+**Goal**: Transfer mature 3D static editing capabilities to 4D dynamic scenes while preserving geometric accuracy and temporal consistency.
 
-**Starting Point**: Decouple spatial editing from temporal propagation—first edit the first frame using a mature 3D editor, then extend the edited result to all time steps via geometry-aware motion propagation.
+**Key Insight**: Decouple spatial editing from temporal propagation—first edit the first frame using a mature 3D editor, then extend the edited result to all time steps via geometry-aware motion propagation.
 
 **Core Idea**: Use anchor matching with optimal transport to establish region-level motion correspondences between pre- and post-edit Gaussians, aggregate and propagate known deformations from source Gaussians to edited Gaussians, and apply color uncertainty-driven appearance refinement to correct temporal artifacts.
 

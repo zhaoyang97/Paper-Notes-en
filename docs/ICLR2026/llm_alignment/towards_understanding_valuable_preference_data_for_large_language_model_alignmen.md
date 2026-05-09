@@ -28,15 +28,15 @@ This work studies preference data quality from a model-dependent perspective. It
 
 ## Background & Motivation
 
-**State of the Field**: LLM alignment relies on high-quality preference data. Existing methods filter data using external reward models or GPT-4, implicitly assuming that data quality is an intrinsic property of the data itself—an assumption that ignores the influence of the model and training configuration on data value.
+**Background**: LLM alignment relies on high-quality preference data. Existing methods filter data using external reward models or GPT-4, implicitly assuming that data quality is an intrinsic property of the data itself—an assumption that ignores the influence of the model and training configuration on data value.
 
 **Limitations of Prior Work**: (1) External filtering (GPT-4/reward model) treats data quality as model-agnostic; the same data may be beneficial for one model but harmful for another. (2) Classical influence functions (IF) suffer from validation-set overfitting in preference alignment (high-IF data is not necessarily optimal). (3) Exact IF computation requires gradient access, which is infeasible for large models.
 
-**Root Cause**: Preference alignment is an open-ended task with no ground-truth answers; validation gradients serve only as an imperfect proxy for human preferences. Traditional IF assumes high-IF data equals good data, but in preference alignment this leads to overfitting—the model overfits to a small number of high-IF samples with extremely large margins, degrading performance on other samples.
+**Key Challenge**: Preference alignment is an open-ended task with no ground-truth answers; validation gradients serve only as an imperfect proxy for human preferences. Traditional IF assumes high-IF data equals good data, but in preference alignment this leads to overfitting—the model overfits to a small number of high-IF samples with extremely large margins, degrading performance on other samples.
 
-**Paper Goals**: (a) What preference data is truly valuable? (b) How can valuable data be identified efficiently? (c) How can data selection be adapted to a specific target model?
+**Goal**: (a) What preference data is truly valuable? (b) How can valuable data be identified efficiently? (c) How can data selection be adapted to a specific target model?
 
-**Starting Point**: Training data is partitioned into small/medium/large IF groups; analysis of training dynamics shows that medium-IF data yields the most stable alignment—motivating TIF, which retains only the intermediate interval, and lightweight positively correlated proxy metrics to approximate TIF.
+**Key Insight**: Training data is partitioned into small/medium/large IF groups; analysis of training dynamics shows that medium-IF data yields the most stable alignment—motivating TIF, which retains only the intermediate interval, and lightweight positively correlated proxy metrics to approximate TIF.
 
 **Core Idea**: The value of preference data is model-dependent, and data with medium influence is most valuable—neither too easy nor too hard, but "just right."
 

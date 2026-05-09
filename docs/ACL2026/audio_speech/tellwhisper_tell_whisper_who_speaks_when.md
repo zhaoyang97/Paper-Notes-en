@@ -29,15 +29,15 @@ This paper proposes TellWhisper, which jointly encodes speaker identity and temp
 
 ## Background & Motivation
 
-**State of the Field**: Multi-speaker automatic speech recognition (MASR) aims to predict "who speaks what when" from multi-party conversational audio. Conventional approaches align speaker diarization (SD) and single-speaker ASR via timestamps, but struggle under overlapping speech and rapid speaker turns.
+**Background**: Multi-speaker automatic speech recognition (MASR) aims to predict "who speaks what when" from multi-party conversational audio. Conventional approaches align speaker diarization (SD) and single-speaker ASR via timestamps, but struggle under overlapping speech and rapid speaker turns.
 
 **Limitations of Prior Work**: Even recent methods attempting to unify SD and ASR fundamentally treat temporal and speaker modeling separately. Three representative strategies each exhibit distinct limitations: (1) masking non-target regions with SD labels before encoding, which causes blank inputs that induce hallucinations; (2) separating target-speaker audio, which requires additional speaker prompts and fails in overlapping regions; (3) linearly blending encoder outputs weighted by speaker posteriors after encoding, entangling semantics with speaker cues.
 
-**Root Cause**: Separate modeling of temporal structure and speaker identity is inherently brittle under rapid speaker changes and overlapping speech — time and speaker are coupled and should be jointly modeled rather than concatenated post hoc.
+**Key Challenge**: Separate modeling of temporal structure and speaker identity is inherently brittle under rapid speaker changes and overlapping speech — time and speaker are coupled and should be jointly modeled rather than concatenated post hoc.
 
-**Paper Goals**: Jointly model temporal and speaker information naturally within the speech encoder through positional encoding, enabling the self-attention mechanism to simultaneously attend to "when" and "who."
+**Goal**: Jointly model temporal and speaker information naturally within the speech encoder through positional encoding, enabling the self-attention mechanism to simultaneously attend to "when" and "who."
 
-**Starting Point**: Inspired by multi-dimensional RoPE for cross-axis encoding in vision and multimodal settings, the paper extends RoPE from encoding time alone to simultaneously encoding time and speaker activity.
+**Key Insight**: Inspired by multi-dimensional RoPE for cross-axis encoding in vision and multimodal settings, the paper extends RoPE from encoding time alone to simultaneously encoding time and speaker activity.
 
 **Core Idea**: Design TS-RoPE to partition Query/Key channels into a temporal subspace and a speaker subspace, realizing joint time-speaker modeling in self-attention through region-specific rotation angles.
 

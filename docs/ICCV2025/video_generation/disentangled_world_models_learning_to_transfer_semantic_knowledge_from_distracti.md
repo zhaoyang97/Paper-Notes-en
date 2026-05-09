@@ -31,11 +31,11 @@ This paper proposes DisWM, a framework that pre-trains disentangled representati
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: Visual reinforcement learning (VRL) faces severe challenges in real-world scenarios, where environmental complexity, variability, and visual distractions lead to significant performance degradation. Even minor environmental changes (e.g., lighting condition shifts) can cause large pixel-level perturbations that invalidate learned policies.
+**Key Challenge**: **Background**: Visual reinforcement learning (VRL) faces severe challenges in real-world scenarios, where environmental complexity, variability, and visual distractions lead to significant performance degradation. Even minor environmental changes (e.g., lighting condition shifts) can cause large pixel-level perturbations that invalidate learned policies.
 
 **Limitations of Prior Work**: Existing disentangled representation learning (DRL) methods, while promising for improving VRL interpretability and robustness, suffer from a critical limitation: they learn from scratch without prior world knowledge, requiring extensive environment interactions to acquire desired behaviors.
 
-**Paper Goals**: The core idea is to extract semantic prior knowledge from readily available "distracting videos" (videos containing visual distractions) and transfer this disentanglement capability to downstream control tasks via latent space distillation. Crucially, the pre-training videos and downstream tasks may originate from different domains (e.g., DMC and MuJoCo), differing in visual appearance, physical dynamics, action spaces, and reward functions.
+**Goal**: The core idea is to extract semantic prior knowledge from readily available "distracting videos" (videos containing visual distractions) and transfer this disentanglement capability to downstream control tasks via latent space distillation. Crucially, the pre-training videos and downstream tasks may originate from different domains (e.g., DMC and MuJoCo), differing in visual appearance, physical dynamics, action spaces, and reward functions.
 
 ## Method
 

@@ -29,10 +29,10 @@ This paper proposes OmniGCD, the first modality-agnostic generalized category di
 
 ## Background & Motivation
 
-- **State of the Field**: Generalized Category Discovery (GCD) emulates human category learning by simultaneously recognizing known classes and discovering novel ones under partial label supervision.
+- **Background**: Generalized Category Discovery (GCD) emulates human category learning by simultaneously recognizing known classes and discovering novel ones under partial label supervision.
 - **Limitations of Prior Work**: Existing GCD methods operate within a single modality and require dataset-specific fine-tuning, ignoring the fundamentally abstract nature of category learning.
-- **Root Cause**: Neuroscience suggests that human category formation is an abstract process independent of sensory input, yet current methods conflate modality-specific encoding with category discovery.
-- **Paper Goals**: Design a modality-agnostic framework trained once that performs zero-shot GCD across visual, textual, audio, and remote sensing modalities without dataset-specific adaptation.
+- **Key Challenge**: Neuroscience suggests that human category formation is an abstract process independent of sensory input, yet current methods conflate modality-specific encoding with category discovery.
+- **Goal**: Design a modality-agnostic framework trained once that performs zero-shot GCD across visual, textual, audio, and remote sensing modalities without dataset-specific adaptation.
 
 ## Method
 

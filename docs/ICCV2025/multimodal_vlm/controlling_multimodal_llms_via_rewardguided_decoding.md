@@ -27,15 +27,15 @@ content_hash: 284657b4f47a6cc4
 This paper proposes MRGD (Multimodal Reward-Guided Decoding), which trains a PaliGemma-based object hallucination reward model and an OWLv2-based object recall reward model. During MLLM inference, MRGD performs sentence-level beam search by scoring candidates with a linearly weighted combination of the two rewards. On CHAIR, it reduces LLaVA-1.5's CHAIRi from 15.05 to 4.53 (a 70% reduction) while enabling dynamic and controllable precision–recall trade-offs.
 
 ## Background & Motivation
-**State of the Field**: Hallucination in MLLMs is primarily addressed through SFT, RLHF fine-tuning, and prompt engineering, but these approaches lack fine-grained controllability at inference time. Once SFT or RLHF training is complete, users cannot adjust model behavior during inference.
+**Background**: Hallucination in MLLMs is primarily addressed through SFT, RLHF fine-tuning, and prompt engineering, but these approaches lack fine-grained controllability at inference time. Once SFT or RLHF training is complete, users cannot adjust model behavior during inference.
 
 **Limitations of Prior Work**: User requirements are diverse—visually impaired users demand high precision (zero hallucinations), while users generating synthetic data need high recall (describing as many objects as possible). Existing methods do not allow users to dynamically trade off these two objectives at inference time. While reward-guided decoding has proven effective in the LLM domain, analogous work in multimodal settings is lacking.
 
-**Root Cause**: There exists an inherent object precision–recall trade-off in MLLM generation—reducing hallucinations tends to make the model more conservative and prone to missing objects, whereas pursuing high recall easily introduces hallucinations. Users have no means to control this trade-off at inference time.
+**Key Challenge**: There exists an inherent object precision–recall trade-off in MLLM generation—reducing hallucinations tends to make the model more conservative and prone to missing objects, whereas pursuing high recall easily introduces hallucinations. Users have no means to control this trade-off at inference time.
 
-**Paper Goals**: (1) Construct multimodal reward models to evaluate visual grounding quality; (2) Enable dynamic and user-controllable precision–recall trade-offs via reward-guided decoding at inference time.
+**Goal**: (1) Construct multimodal reward models to evaluate visual grounding quality; (2) Enable dynamic and user-controllable precision–recall trade-offs via reward-guided decoding at inference time.
 
-**Starting Point**: Two independent reward models are constructed separately—$r_{\text{hal}}$ (a hallucination detector trained from preference data) and $r_{\text{rec}}$ (a recall estimator based on an object detector)—and combined dynamically via a weighting parameter $w$.
+**Key Insight**: Two independent reward models are constructed separately—$r_{\text{hal}}$ (a hallucination detector trained from preference data) and $r_{\text{rec}}$ (a recall estimator based on an object detector)—and combined dynamically via a weighting parameter $w$.
 
 **Core Idea**: Two complementary multimodal reward models evaluate precision and recall respectively; at inference time, an adjustable weight guides sentence-level decoding search in the MLLM.
 

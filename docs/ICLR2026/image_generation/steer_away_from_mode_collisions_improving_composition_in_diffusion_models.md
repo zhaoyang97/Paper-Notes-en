@@ -29,18 +29,18 @@ To address concept missing and collision in multi-concept prompts for diffusion 
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models have achieved remarkable progress in text-to-image generation, yet even simple multi-concept prompts (e.g., "a cat and a dog") frequently suffer from concept missing, blurring, or unnatural merging.
+**Background**: Diffusion models have achieved remarkable progress in text-to-image generation, yet even simple multi-concept prompts (e.g., "a cat and a dog") frequently suffer from concept missing, blurring, or unnatural merging.
 
 **Limitations of Prior Work**:
 - Optimization-based correction methods (Attend-Excite, SynGen, ToMe) require gradient computation through the model and are therefore model-specific.
 - Composable diffusion methods are model-agnostic but perform poorly, as linear score composition does not correspond to the correct forward distribution for $t > 0$.
 - Each family has its own trade-offs, and no unified framework exists.
 
-**Root Cause**: The joint distribution $p(x|C)$ under multi-concept prompts contains "problematic modes" that overlap heavily with the individual concept distributions $p(x|c_i)$, causing generation to collapse toward a dominant concept.
+**Key Challenge**: The joint distribution $p(x|C)$ under multi-concept prompts contains "problematic modes" that overlap heavily with the individual concept distributions $p(x|c_i)$, causing generation to collapse toward a dominant concept.
 
-**Paper Goals**: (i) Theoretically analyze and unify existing approaches (correction vs. composable diffusion); (ii) Design a training-free, gradient-free, and model-agnostic sampling correction strategy to improve multi-concept composition.
+**Goal**: (i) Theoretically analyze and unify existing approaches (correction vs. composable diffusion); (ii) Design a training-free, gradient-free, and model-agnostic sampling correction strategy to improve multi-concept composition.
 
-**Starting Point**: The paper introduces the "mode collision" hypothesis — when certain modes of $p(x|C)$ overlap with $p(x|c_i)$, sampling tends to collapse to that single concept. The solution is to design a correcting distribution that suppresses these overlapping regions.
+**Key Insight**: The paper introduces the "mode collision" hypothesis — when certain modes of $p(x|C)$ overlap with $p(x|c_i)$, sampling tends to collapse to that single concept. The solution is to design a correcting distribution that suppresses these overlapping regions.
 
 **Core Idea**: Steer sampling away from single-concept-dominated degenerate modes via $\tilde{p}(x|C) \propto p(x|C) / \prod_i p(x|c_i)$, and show that Tweedie mean composition constitutes a unifying framework.
 

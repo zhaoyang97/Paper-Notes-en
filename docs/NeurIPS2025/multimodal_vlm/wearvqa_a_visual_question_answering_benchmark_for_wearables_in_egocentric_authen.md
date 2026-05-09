@@ -31,15 +31,15 @@ This paper introduces WearVQA, the first VQA benchmark specifically designed for
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal large language models (MM-LLMs) have advanced rapidly on VQA tasks, yet existing benchmarks (VQAv2, OK-VQA, MMMU, etc.) are predominantly built on high-quality third-person images, placing evaluation conditions far from the real-world deployment environment of wearable devices. Wearable AI assistants (e.g., Meta Ray-Ban smart glasses) are becoming mainstream, but no dedicated evaluation framework exists to measure model capability in this context.
+**Background**: Multimodal large language models (MM-LLMs) have advanced rapidly on VQA tasks, yet existing benchmarks (VQAv2, OK-VQA, MMMU, etc.) are predominantly built on high-quality third-person images, placing evaluation conditions far from the real-world deployment environment of wearable devices. Wearable AI assistants (e.g., Meta Ray-Ban smart glasses) are becoming mainstream, but no dedicated evaluation framework exists to measure model capability in this context.
 
 **Limitations of Prior Work**: Egocentric images captured by wearable devices inherently suffer from multiple quality degradations—occlusion, low illumination, motion blur, unzoomed wide-angle framing, truncation, and rotation—with 54% of images exhibiting at least one such issue. Existing benchmarks use high-quality images and thus fail to reflect these challenges. While EgoVQA and VizWiz address egocentric or low-quality images to some extent, the former focuses on video and the latter covers only narrow question types; neither provides systematic multi-dimensional coverage.
 
-**Root Cause**: Wearable AI assistants must perform VQA spanning recognition, reasoning, counting, and spatial understanding on low-quality egocentric images, yet no benchmark simultaneously covers egocentric perspective, diverse quality degradations, and complex reasoning demands, leaving model development without targeted guidance.
+**Key Challenge**: Wearable AI assistants must perform VQA spanning recognition, reasoning, counting, and spatial understanding on low-quality egocentric images, yet no benchmark simultaneously covers egocentric perspective, diverse quality degradations, and complex reasoning demands, leaving model development without targeted guidance.
 
-**Paper Goals**: To construct a comprehensive VQA benchmark for wearable device scenarios that systematically evaluates SOTA multimodal models on egocentric, low-quality images paired with complex cognitive tasks, and to identify critical performance bottlenecks.
+**Goal**: To construct a comprehensive VQA benchmark for wearable device scenarios that systematically evaluates SOTA multimodal models on egocentric, low-quality images paired with complex cognitive tasks, and to identify critical performance bottlenecks.
 
-**Starting Point**: Drawing on Meta Reality Labs' smart glasses products, the authors collect images with RayBan Meta smart glasses and design the benchmark dataset along three axes—domain × task type × image quality—to ensure statistical significance, accompanied by a reliable automated evaluation framework.
+**Key Insight**: Drawing on Meta Reality Labs' smart glasses products, the authors collect images with RayBan Meta smart glasses and design the benchmark dataset along three axes—domain × task type × image quality—to ensure statistical significance, accompanied by a reliable automated evaluation framework.
 
 **Core Idea**: By constructing the first VQA benchmark that simultaneously covers egocentric low-quality images, multiple domains, and diverse task types, the work exposes systematic shortcomings of current multimodal models in wearable scenarios.
 

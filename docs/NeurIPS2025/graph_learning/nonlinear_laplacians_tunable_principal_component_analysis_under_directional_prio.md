@@ -29,15 +29,15 @@ This paper proposes a nonlinear Laplacian spectral algorithm that fuses spectral
 
 ## Background & Motivation
 
-**State of the Field**: Principal component analysis (PCA) is one of the most fundamental computational tasks in statistics and data science, used to extract low-rank structure from noisy matrix observations. Standard spectral methods detect and recover signals by examining the leading eigenvalue and eigenvector of $\hat{\bm{Y}} = \bm{Y}/\sqrt{n}$. Classical BBP phase transition theory establishes that when the signal-to-noise ratio satisfies $\beta > 1$, an outlier eigenvalue emerges, enabling detection and recovery.
+**Background**: Principal component analysis (PCA) is one of the most fundamental computational tasks in statistics and data science, used to extract low-rank structure from noisy matrix observations. Standard spectral methods detect and recover signals by examining the leading eigenvalue and eigenvector of $\hat{\bm{Y}} = \bm{Y}/\sqrt{n}$. Classical BBP phase transition theory establishes that when the signal-to-noise ratio satisfies $\beta > 1$, an outlier eigenvalue emerges, enabling detection and recovery.
 
 **Limitations of Prior Work**: Direct spectral algorithms ($\sigma=0$) entirely ignore prior information about the hidden signal $\bm{x}$. When it is known that $\bm{x}$ exhibits a directional bias (e.g., components tend to be positive), standard PCA fails to exploit this information, resulting in an unnecessarily high detection threshold.
 
-**Root Cause**: On one hand, the degree vector $\hat{\bm{Y}}\bm{1}$ carries information correlated with $\bm{x}$, yet alone it cannot achieve detection for any constant $\beta$. On the other hand, pure spectral methods require $\beta > 1$ for detection. Each information source is individually insufficient, and effectively combining them poses the central challenge.
+**Key Challenge**: On one hand, the degree vector $\hat{\bm{Y}}\bm{1}$ carries information correlated with $\bm{x}$, yet alone it cannot achieve detection for any constant $\beta$. On the other hand, pure spectral methods require $\beta > 1$ for detection. Each information source is individually insufficient, and effectively combining them poses the central challenge.
 
-**Paper Goals**: To integrate spectral information with directional prior information without substantially departing from the simplicity of standard spectral algorithms, thereby reducing the minimum signal-to-noise ratio required for detection.
+**Goal**: To integrate spectral information with directional prior information without substantially departing from the simplicity of standard spectral algorithms, thereby reducing the minimum signal-to-noise ratio required for detection.
 
-**Starting Point**: Construct the $\sigma$-Laplacian matrix $\bm{L} = \hat{\bm{Y}} + \text{diag}(\sigma(\hat{\bm{Y}}\bm{1}))$, where a nonlinear function $\sigma$ "tames" the extreme values of the degree vector so that it collaborates with the matrix spectrum at the same order of magnitude.
+**Key Insight**: Construct the $\sigma$-Laplacian matrix $\bm{L} = \hat{\bm{Y}} + \text{diag}(\sigma(\hat{\bm{Y}}\bm{1}))$, where a nonlinear function $\sigma$ "tames" the extreme values of the degree vector so that it collaborates with the matrix spectrum at the same order of magnitude.
 
 **Core Idea**: Embed the graph's degree information into a diagonal correction term via a bounded nonlinear transformation, constructing a family of tunable hybrid spectral algorithms.
 

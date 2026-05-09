@@ -33,9 +33,9 @@ Combining LLMs with MCTS for complex task planning has attracted significant att
 - Limited exploration capacity and susceptibility to local optima
 - Additional sampling and token overhead to cover the solution space
 
-**Root Cause**: MCTS requires diverse rollouts for effective exploration, but the intra-model variability of a single LLM is insufficient to support such diversity.
+**Key Challenge**: MCTS requires diverse rollouts for effective exploration, but the intra-model variability of a single LLM is insufficient to support such diversity.
 
-**Starting Point**: The paper replaces the single model with a pool of heterogeneous LLMs (differing in pretraining origin and reasoning style), enhancing branch diversity from the perspective of model-level diversity. Adaptive scheduling and collaborative memory are introduced to ensure efficient coordination.
+**Key Insight**: The paper replaces the single model with a pool of heterogeneous LLMs (differing in pretraining origin and reasoning style), enhancing branch diversity from the perspective of model-level diversity. Adaptive scheduling and collaborative memory are introduced to ensure efficient coordination.
 
 ## Method
 

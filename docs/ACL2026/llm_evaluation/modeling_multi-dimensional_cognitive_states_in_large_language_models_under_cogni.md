@@ -29,15 +29,15 @@ This paper identifies that LLMs suffer a dramatic accuracy drop to 5.7% when joi
 
 ## Background & Motivation
 
-**State of the Field**: LLMs perform well on individual tasks such as sentiment analysis, stance detection, and intent recognition, but these tasks are typically handled in isolation. Psychological research indicates that cognitive dimensions form an interactive system—for instance, an opposing stance may originate from deliberate analytical reasoning or from negative emotional states.
+**Background**: LLMs perform well on individual tasks such as sentiment analysis, stance detection, and intent recognition, but these tasks are typically handled in isolation. Psychological research indicates that cognitive dimensions form an interactive system—for instance, an opposing stance may originate from deliberate analytical reasoning or from negative emotional states.
 
 **Limitations of Prior Work**: (1) Existing benchmarks cover at most two cognitive dimensions (e.g., stance + sentiment), precluding the study of four-dimensional interactions. (2) The "thinking style" dimension—a critical bridge linking emotion to stance—lacks annotation in prior work. (3) LLMs perform well on single tasks but suffer severe performance degradation in joint multi-dimensional modeling; GPT-4o achieves only 5.7% joint accuracy across four dimensions.
 
-**Root Cause**: Cognitive states exhibit hierarchical/tree-like structure (Gromov $\delta \approx 1\%$), requiring exponentially growing representational space, whereas the Euclidean representation space of LLMs grows only polynomially. This "cognitive crowding" causes distinct cognitive states to overlap and become indistinguishable in Euclidean space.
+**Key Challenge**: Cognitive states exhibit hierarchical/tree-like structure (Gromov $\delta \approx 1\%$), requiring exponentially growing representational space, whereas the Euclidean representation space of LLMs grows only polynomially. This "cognitive crowding" causes distinct cognitive states to overlap and become indistinguishable in Euclidean space.
 
-**Paper Goals**: (1) Construct CognitiveBench, the first four-dimensional cognitive benchmark. (2) Diagnose and explain the joint modeling bottleneck in LLMs. (3) Propose a geometry-aware solution.
+**Goal**: (1) Construct CognitiveBench, the first four-dimensional cognitive benchmark. (2) Diagnose and explain the joint modeling bottleneck in LLMs. (3) Propose a geometry-aware solution.
 
-**Starting Point**: Leverage the natural exponential volume growth and hierarchical support of hyperbolic space to alleviate cognitive crowding.
+**Key Insight**: Leverage the natural exponential volume growth and hierarchical support of hyperbolic space to alleviate cognitive crowding.
 
 **Core Idea**: Model cognitive states in hyperbolic space (Poincaré ball), separate distinct states via geometry-aware contrastive loss, and align LLMs' internal representations to this structure through Hyperbolic Guided Alignment Tuning.
 

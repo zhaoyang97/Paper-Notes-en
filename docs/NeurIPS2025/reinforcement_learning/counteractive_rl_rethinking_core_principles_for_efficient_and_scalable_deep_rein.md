@@ -27,15 +27,15 @@ content_hash: 5b9e2edc1b585366
 CoAct TD Learning challenges the random exploration paradigm of ε-greedy by selecting, with probability ε, the action that minimizes $Q(s,a)$ (rather than a random action) to obtain high temporal-difference signals. The paper theoretically proves that this produces larger TD errors, achieves a 248% performance improvement on Atari 100K, and requires only a 2-line code change with zero additional computation.
 
 ## Background & Motivation
-**State of the Field**: ε-greedy is the most widely used exploration strategy in deep RL — selecting a random action with probability ε and the greedy action with probability $1-\epsilon$. Alternatives such as NoisyNetworks explore via parametric noise.
+**Background**: ε-greedy is the most widely used exploration strategy in deep RL — selecting a random action with probability ε and the greedy action with probability $1-\epsilon$. Alternatives such as NoisyNetworks explore via parametric noise.
 
 **Limitations of Prior Work**: Random exploration under ε-greedy is sample-inefficient — random actions yield limited TD signals, wasting the valuable budget of environment interactions. In sample-constrained settings such as Atari 100K (only 100K frames), inefficient exploration directly leads to poor performance.
 
-**Root Cause**: The goal of exploration is to collect highly informative experience. Intuitively, selecting the action most dissimilar to the current policy — i.e., the action minimizing Q — should produce the largest surprise and learning signal. Yet this appears to contradict the fundamental RL objective of maximizing returns.
+**Key Challenge**: The goal of exploration is to collect highly informative experience. Intuitively, selecting the action most dissimilar to the current policy — i.e., the action minimizing Q — should produce the largest surprise and learning signal. Yet this appears to contradict the fundamental RL objective of maximizing returns.
 
-**Paper Goals**: To theoretically prove that "counteractive exploration" (selecting $\arg\min Q$) yields higher TD signals, and to empirically validate its effectiveness in practice.
+**Goal**: To theoretically prove that "counteractive exploration" (selecting $\arg\min Q$) yields higher TD signals, and to empirically validate its effectiveness in practice.
 
-**Starting Point**: The paper focuses on the magnitude of TD errors — larger TD errors lead to larger Q-function updates and thus faster learning. Selecting the action with the minimum Q value yields lower returns, but creates a greater discrepancy with the current Q estimate, producing larger TD errors.
+**Key Insight**: The paper focuses on the magnitude of TD errors — larger TD errors lead to larger Q-function updates and thus faster learning. Selecting the action with the minimum Q value yields lower returns, but creates a greater discrepancy with the current Q estimate, producing larger TD errors.
 
 **Core Idea**: Replace the random action selection in ε-greedy with $\arg\min Q(s,a)$ to obtain larger TD signals and accelerate learning.
 

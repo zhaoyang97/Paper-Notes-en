@@ -28,18 +28,18 @@ This paper proposes BitMark—the first watermarking scheme for bitwise autoregr
 
 ## Background & Motivation
 
-**State of the Field**: State-of-the-art text-to-image models such as Infinity and Instella generate high-quality images via bitwise autoregressive prediction (rather than conventional token-level prediction), with codebook sizes reaching $2^{64}$. As AI-generated images proliferate online, models are increasingly trained on their own outputs, leading to model collapse.
+**Background**: State-of-the-art text-to-image models such as Infinity and Instella generate high-quality images via bitwise autoregressive prediction (rather than conventional token-level prediction), with codebook sizes reaching $2^{64}$. As AI-generated images proliferate online, models are increasingly trained on their own outputs, leading to model collapse.
 
 **Limitations of Prior Work**:
    - Diffusion model watermarking schemes (Tree-Ring, PRC, Stable Signature) are not applicable to autoregressive architectures.
    - LLM watermarking (KGW) operates at the token level, but tokens in image AR models are inconsistent after encode–decode cycles (token overlap rate is only ~2.4%).
    - Existing diffusion model watermarks are not radioactive—new models trained on watermarked images do not inherit the watermark.
 
-**Root Cause**: Tokens in image autoregressive models shift substantially through encode–decode cycles due to quantization loss in the continuous image space, causing token-level watermark signals to largely vanish. However, bit-level overlap is far higher (~77.4%), offering a viable entry point for watermark embedding.
+**Key Challenge**: Tokens in image autoregressive models shift substantially through encode–decode cycles due to quantization loss in the continuous image space, causing token-level watermark signals to largely vanish. However, bit-level overlap is far higher (~77.4%), offering a viable entry point for watermark embedding.
 
-**Paper Goals**: Design a watermarking scheme operating at the bit level that satisfies: (a) no degradation of image quality, (b) reliable detection, (c) resistance to diverse removal attacks, and (d) radioactivity.
+**Goal**: Design a watermarking scheme operating at the bit level that satisfies: (a) no degradation of image quality, (b) reliable detection, (c) resistance to diverse removal attacks, and (d) radioactivity.
 
-**Starting Point**: The observation that bit-level overlap in Infinity (77.4%) is far higher than token-level overlap (2.4%), making bit-level watermark embedding substantially more robust.
+**Key Insight**: The observation that bit-level overlap in Infinity (77.4%) is far higher than token-level overlap (2.4%), making bit-level watermark embedding substantially more robust.
 
 **Core Idea**: Adapt the green/red list watermarking concept from LLMs from the token level to the bit level, exploiting the bitwise autoregressive generation process of image models to embed detectable signals.
 

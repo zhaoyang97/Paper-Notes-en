@@ -35,7 +35,7 @@ By analyzing the propagation mechanism of harmful tokens in multimodal LLMs, thi
    - **Safety prompt methods** (e.g., AdaShield): Statically inject safety constraints, lacking adaptability and prone to over-defense (e.g., misclassifying "toy water guns" as "real weapons").
    - **Multimodal safety fine-tuning** (e.g., TGA): Requires large-scale training (1,223K samples, 64×V100 GPUs) with limited generalization.
 
-**Root Cause**: Existing methods rely on LLMs' built-in safety mechanisms without deeply investigating the underlying mechanism by which harmful multimodal tokens bypass safety alignment.
+**Key Challenge**: Existing methods rely on LLMs' built-in safety mechanisms without deeply investigating the underlying mechanism by which harmful multimodal tokens bypass safety alignment.
 
 ## Method
 

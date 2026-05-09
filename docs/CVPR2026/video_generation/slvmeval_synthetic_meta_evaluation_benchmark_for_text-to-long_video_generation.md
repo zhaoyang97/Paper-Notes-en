@@ -29,11 +29,11 @@ This paper proposes SLVMEval, a meta-evaluation benchmark that synthesizes contr
 
 ## Background & Motivation
 
-1. **State of the Field**: Text-to-video (T2V) models are evolving from short clips (a few seconds) to long-form videos (minutes to hours), with systems such as StreamingT2V and Phenaki theoretically capable of generating videos of arbitrary length.
+1. **Background**: Text-to-video (T2V) models are evolving from short clips (a few seconds) to long-form videos (minutes to hours), with systems such as StreamingT2V and Phenaki theoretically capable of generating videos of arbitrary length.
 2. **Limitations of Prior Work**: Widely used evaluation metrics such as VideoScore were originally designed for short videos of a few seconds to tens of seconds, and applying them directly to long videos introduces a length mismatch. Meta-evaluation benchmarks such as VBench and UVE also cover only ~10-second clips, making it impossible to verify whether evaluation metrics are reliable for long videos.
-3. **Root Cause**: Long video generation is becoming a frontier research direction, yet no testbed exists to verify whether evaluation systems possess the basic capability to assess long-video quality.
-4. **Paper Goals**: To construct a meta-evaluation benchmark specifically targeting long videos, testing whether existing evaluation systems can at least perform quality judgments that humans find straightforward.
-5. **Starting Point**: Starting from a densely captioned video dataset, controlled degradations (contrast reduction, resolution downscaling, segment deletion, etc.) are applied to original videos to construct paired controlled experiments, with crowdsourced annotation to verify the perceptibility of each degradation.
+3. **Key Challenge**: Long video generation is becoming a frontier research direction, yet no testbed exists to verify whether evaluation systems possess the basic capability to assess long-video quality.
+4. **Goal**: To construct a meta-evaluation benchmark specifically targeting long videos, testing whether existing evaluation systems can at least perform quality judgments that humans find straightforward.
+5. **Key Insight**: Starting from a densely captioned video dataset, controlled degradations (contrast reduction, resolution downscaling, segment deletion, etc.) are applied to original videos to construct paired controlled experiments, with crowdsourced annotation to verify the perceptibility of each degradation.
 6. **Core Idea**: By synthesizing controllably degraded long video pairs, the paper identifies evaluation bottlenecks where humans distinguish quality effortlessly but automatic systems fail.
 
 ## Method

@@ -29,9 +29,9 @@ This paper proposes a black-box watermark forging method based on image preferen
 
 ## Background & Motivation
 
-- **State of the Field**: Digital watermarking is a critical technology for content authenticity and provenance, especially in the generative AI era. Post-hoc watermarking has been widely adopted due to its modularity and ease of deployment (e.g., Google DeepMind's SynthID, Meta's Video Seal). The EU AI Act and U.S. AI Executive Order explicitly mandate watermarking of AI-generated content.
+- **Background**: Digital watermarking is a critical technology for content authenticity and provenance, especially in the generative AI era. Post-hoc watermarking has been widely adopted due to its modularity and ease of deployment (e.g., Google DeepMind's SynthID, Meta's Video Seal). The EU AI Act and U.S. AI Executive Order explicitly mandate watermarking of AI-generated content.
 - **Limitations of Prior Work**: Existing watermark security research focuses primarily on **watermark removal**, with little attention to **watermark forging**—where an attacker steals a legitimate watermark and embeds it into malicious content. Forging poses a distinct threat: it can make fabricated content appear to originate from a legitimate source, or flood detection systems with false positives. Prior forging methods face severe practical constraints: Wang et al. (2021) requires paired original/watermarked images; Warfare (Li et al., 2023) and Dong et al. (2025) require thousands of watermarked images carrying the same hidden message—conditions that are nearly impossible to satisfy in real black-box scenarios.
-- **Paper Goals**: To investigate whether watermark forging is feasible given only a single watermarked image and no knowledge of the watermarking algorithm.
+- **Goal**: To investigate whether watermark forging is feasible given only a single watermarked image and no knowledge of the watermarking algorithm.
 
 ## Method
 

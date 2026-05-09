@@ -30,18 +30,18 @@ This paper proposes FIA-Edit, an inversion-free text-guided image editing framew
 
 ## Background & Motivation
 
-**State of the Field**: Text-guided image editing is an important application of diffusion models. Existing methods fall into two categories: inversion-based methods (e.g., P2P, PnP, MasaCtrl) that first invert the source image into noise space before editing—yielding high fidelity but at significant computational cost—and inversion-free methods (e.g., FlowEdit, FlowAlign) that directly construct editing trajectories via velocity field differencing, offering speed but poor background preservation.
+**Background**: Text-guided image editing is an important application of diffusion models. Existing methods fall into two categories: inversion-based methods (e.g., P2P, PnP, MasaCtrl) that first invert the source image into noise space before editing—yielding high fidelity but at significant computational cost—and inversion-free methods (e.g., FlowEdit, FlowAlign) that directly construct editing trajectories via velocity field differencing, offering speed but poor background preservation.
 
 **Limitations of Prior Work**:
 - Inversion-based methods require mapping images to Gaussian noise space, which is time-consuming and complex (P2P requires 34s per image).
 - Inversion-free methods, while efficient (FlowEdit takes only 3.5s per image), lack explicit integration of source image features, leading to background drift, spatial inconsistency, and over-editing.
 - In the inversion-free pipeline, interaction between source and target velocity fields is only implicit, resulting in weak source image constraints.
 
-**Root Cause**: A fundamental trade-off exists between editing efficiency and fidelity—fast inversion-free methods fall far short of time-consuming inversion-based methods in background preservation.
+**Key Challenge**: A fundamental trade-off exists between editing efficiency and fidelity—fast inversion-free methods fall far short of time-consuming inversion-based methods in background preservation.
 
-**Paper Goals**: To significantly improve background fidelity and semantic alignment quality while retaining the efficiency advantage of inversion-free methods.
+**Goal**: To significantly improve background fidelity and semantic alignment quality while retaining the efficiency advantage of inversion-free methods.
 
-**Starting Point**: Explicitly introduce source image feature interaction constraints into the target velocity field computation of the inversion-free framework—leveraging the natural decoupling of structure and semantics in the frequency domain to design feature interaction mechanisms in both self-attention and cross-attention.
+**Key Insight**: Explicitly introduce source image feature interaction constraints into the target velocity field computation of the inversion-free framework—leveraging the natural decoupling of structure and semantics in the frequency domain to design feature interaction mechanisms in both self-attention and cross-attention.
 
 **Core Idea**: Through selective fusion of high-frequency (source structure) and low-frequency (target semantics) components in the frequency domain, combined with source feature injection, achieve explicit source–target feature interaction within the inversion-free editing pipeline.
 

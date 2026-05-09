@@ -29,15 +29,15 @@ FF3R is the first fully annotation-free feedforward framework capable of jointly
 
 ## Background & Motivation
 
-**State of the Field**: Geometric reconstruction and semantic understanding are two pillars of 3D vision, yet treating them as separate frameworks leads to redundant pipelines and accumulated errors.
+**Background**: Geometric reconstruction and semantic understanding are two pillars of 3D vision, yet treating them as separate frameworks leads to redundant pipelines and accumulated errors.
 
 **Limitations of Prior Work**: (1) Annotation-dependent methods are constrained by fixed category sets and labeling costs; (2) Annotation-free methods face two core challenges: global semantic inconsistency (2D foundation models lack multi-view geometric priors) and local structural inconsistency (Gaussian merging across semantic boundaries).
 
-**Root Cause**: Geometric foundation models are self-supervisedly trained via photometric loss, while semantic foundation models require annotations or knowledge distillation — the divergence between these two training paradigms makes building a unified system extremely difficult.
+**Key Challenge**: Geometric foundation models are self-supervisedly trained via photometric loss, while semantic foundation models require annotations or knowledge distillation — the divergence between these two training paradigms makes building a unified system extremely difficult.
 
-**Paper Goals**: Construct a fully self-supervised feedforward framework that relies solely on RGB and feature map rendering supervision.
+**Goal**: Construct a fully self-supervised feedforward framework that relies solely on RGB and feature map rendering supervision.
 
-**Starting Point**: Inject semantic context into geometric tokens via token-level fusion, and resolve consistency issues through a semantic-geometry mutual enhancement mechanism.
+**Key Insight**: Inject semantic context into geometric tokens via token-level fusion, and resolve consistency issues through a semantic-geometry mutual enhancement mechanism.
 
 **Core Idea**: Geometry-guided semantic alignment (addressing global inconsistency) + semantics-aware voxelization (addressing local inconsistency).
 

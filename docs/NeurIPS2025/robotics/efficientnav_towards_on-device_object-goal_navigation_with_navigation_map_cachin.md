@@ -27,7 +27,7 @@ content_hash: fc9b9050f568d7aa
 Through discrete memory caching (group-independent KV cache computation with selective loading), attention-driven clustering (LLM shallow-layer attention guiding grouping), and semantics-aware retrieval (CLIP + knapsack problem adapted to varying memory budgets), EfficientNav is the first system to achieve zero-shot ObjNav on Jetson Orin using LLaMA-3.2-11b, surpassing the GPT-4 baseline by 11.1% SR while reducing real-time latency by 6.7×.
 
 ## Background & Motivation
-**State of the Field**: LLM-driven zero-shot object-goal navigation (ObjNav) has become mainstream — LLMs serve as planners, leveraging semantic and spatial information from graph-based navigation maps to select sub-goals. However, these systems heavily rely on cloud-based large models such as GPT-4.
+**Background**: LLM-driven zero-shot object-goal navigation (ObjNav) has become mainstream — LLMs serve as planners, leveraging semantic and spatial information from graph-based navigation maps to select sub-goals. However, these systems heavily rely on cloud-based large models such as GPT-4.
 
 **Cloud Deployment Issues**: Communication latency disrupts real-time performance, privacy risks are significant, and computational costs are prohibitive — motivating a shift from cloud to on-device deployment.
 

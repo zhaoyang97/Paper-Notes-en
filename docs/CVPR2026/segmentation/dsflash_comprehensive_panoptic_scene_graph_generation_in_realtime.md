@@ -31,9 +31,9 @@ This paper proposes DSFlash, a low-latency panoptic scene graph generation model
 
 Scene graph generation (SGG) aims to extract structured node-edge graph representations from images, where nodes represent instances and edges represent relations (e.g., "person sitting on chair"), providing value for downstream tasks such as VQA, image captioning, and embodied reasoning. Panoptic scene graph generation (PSGG) further employs segmentation masks instead of bounding boxes for instance localization.
 
-**Root Cause**: Existing PSGG methods prioritize performance at the expense of efficiency. DSFormer achieves state-of-the-art mR@50=30.7 but incurs an inference latency of 458ms; while REACT achieves 19ms, its PSGG performance remains limited. More critically, existing methods typically predict only a subset of relations rather than the complete scene graph.
+**Key Challenge**: Existing PSGG methods prioritize performance at the expense of efficiency. DSFormer achieves state-of-the-art mR@50=30.7 but incurs an inference latency of 458ms; while REACT achieves 19ms, its PSGG performance remains limited. More critically, existing methods typically predict only a subset of relations rather than the complete scene graph.
 
-**Starting Point**: DSFlash builds upon DSFormer and systematically replaces its inefficient components—merging two backbones into one, designing a bidirectional prediction head to halve inference passes, and leveraging mask information for dynamic token pruning—achieving scene graph generation that is simultaneously fast, comprehensive, and accurate.
+**Key Insight**: DSFlash builds upon DSFormer and systematically replaces its inefficient components—merging two backbones into one, designing a bidirectional prediction head to halve inference passes, and leveraging mask information for dynamic token pruning—achieving scene graph generation that is simultaneously fast, comprehensive, and accurate.
 
 ## Method
 

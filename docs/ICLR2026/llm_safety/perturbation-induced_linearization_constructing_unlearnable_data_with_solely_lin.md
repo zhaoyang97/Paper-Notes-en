@@ -31,7 +31,7 @@ This paper proposes PIL, a method that generates unlearnable perturbations using
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: The use of web-crawled data for training deep learning models has become increasingly prevalent, yet much of this data is collected without the consent of its creators. **Unlearnable Examples** protect data from unauthorized use by adding imperceptible perturbations such that models trained on the perturbed data fail to generalize to clean test data.
+**Key Challenge**: **Background**: The use of web-crawled data for training deep learning models has become increasingly prevalent, yet much of this data is collected without the consent of its creators. **Unlearnable Examples** protect data from unauthorized use by adding imperceptible perturbations such that models trained on the perturbed data fail to generalize to clean test data.
 
 Existing methods (e.g., EM, REM) typically rely on deep networks as surrogate models to generate perturbations, incurring prohibitive computational costs (REM requires 15+ hours of GPU time on CIFAR-10). A natural question arises: **can simpler models generate equally effective perturbations?**
 

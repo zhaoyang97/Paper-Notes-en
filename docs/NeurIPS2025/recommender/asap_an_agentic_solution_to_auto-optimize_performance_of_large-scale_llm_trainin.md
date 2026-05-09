@@ -27,15 +27,15 @@ content_hash: 3ab31d439c33e59a
 ASAP is a multi-agent system (Coordinator + Analyzer + Proposal) that automatically diagnoses bottleneck types (compute/memory/communication) in large-scale LLM distributed training and proposes sharding configurations. Across 3 experimental scenarios, it matches human expert solutions and achieves up to 2.58× throughput improvement.
 
 ## Background & Motivation
-**State of the Field**: Large-scale LLM training requires parallelization across hundreds or thousands of TPUs/GPUs (data parallelism, model parallelism, sequence parallelism, pipeline parallelism, etc.), where sharding configurations have a substantial impact on performance — suboptimal configurations can cause 50%+ throughput degradation.
+**Background**: Large-scale LLM training requires parallelization across hundreds or thousands of TPUs/GPUs (data parallelism, model parallelism, sequence parallelism, pipeline parallelism, etc.), where sharding configurations have a substantial impact on performance — suboptimal configurations can cause 50%+ throughput degradation.
 
 **Limitations of Prior Work**: (a) Manual trial-and-error demands deep expertise in distributed systems; (b) black-box optimization methods (e.g., Bayesian optimization) converge slowly in large configuration spaces and provide no interpretable rationale; (c) different bottleneck types (compute-bound/memory-bound/communication-bound) require different optimization strategies, making general-purpose methods inefficient.
 
-**Root Cause**: Diagnosis requires understanding performance profiling reports (Xprof profiles), and decision-making requires knowledge of parallelization principles and hardware topology — expertise that has traditionally been confined to human specialists.
+**Key Challenge**: Diagnosis requires understanding performance profiling reports (Xprof profiles), and decision-making requires knowledge of parallelization principles and hardware topology — expertise that has traditionally been confined to human specialists.
 
-**Paper Goals**: Replace human experts with LLM agents for the full pipeline of performance diagnosis → proposal generation → configuration tuning.
+**Goal**: Replace human experts with LLM agents for the full pipeline of performance diagnosis → proposal generation → configuration tuning.
 
-**Starting Point**: Combining LLM reasoning capabilities with specialized tools (Xprof profiling, Roofline analysis) and knowledge bases (historical optimization records, JAX parallelization documentation) into a multi-agent system.
+**Key Insight**: Combining LLM reasoning capabilities with specialized tools (Xprof profiling, Roofline analysis) and knowledge bases (historical optimization records, JAX parallelization documentation) into a multi-agent system.
 
 **Core Idea**: Coordinator orchestrates → Analyzer diagnoses bottleneck type → Proposal (RAG + knowledge base) generates multiple candidate solutions = LLM agents serving as distributed training experts.
 

@@ -35,7 +35,7 @@ However, this two-level approach has **critical limitations**:
 - There exists a **substantial semantic gap** between abstract instructions such as "Cut the orange" and the raw pixels that actually depict the action.
 - During visual-text alignment training, this gap prevents the model from grounding abstract procedures in actually visible content.
 
-**Root Cause**: The semantic gap between abstract text and concrete visual observations. The authors' key insight is to introduce **"state"**—textual snapshots of object configurations (e.g., "the orange is no longer whole; the flesh is exposed")—as a semantic grounding layer that anchors abstract procedures to what the model can actually observe.
+**Key Challenge**: The semantic gap between abstract text and concrete visual observations. The authors' key insight is to introduce **"state"**—textual snapshots of object configurations (e.g., "the orange is no longer whole; the flesh is exposed")—as a semantic grounding layer that anchors abstract procedures to what the model can actually observe.
 
 From a logical perspective, states constitute the skeleton of any procedural task: a task is a macro-level transition from an initial state to a final state, and steps are the actions that drive intermediate state transitions. This forms the three-level Task-Step-State framework.
 

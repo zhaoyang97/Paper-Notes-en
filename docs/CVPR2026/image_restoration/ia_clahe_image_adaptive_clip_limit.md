@@ -29,15 +29,15 @@ IA-CLAHE demonstrates that the histogram redistribution process in CLAHE is diff
 
 ## Background & Motivation
 
-**State of the Field**: CLAHE is widely adopted in industrial image enhancement due to its local adaptability, noise suppression, and computational efficiency. It partitions an image into non-overlapping tiles, applies histogram equalization per tile, and constrains the maximum bin count via a clip limit.
+**Background**: CLAHE is widely adopted in industrial image enhancement due to its local adaptability, noise suppression, and computational efficiency. It partitions an image into non-overlapping tiles, applies histogram equalization per tile, and constrains the maximum bin count via a clip limit.
 
 **Limitations of Prior Work**: CLAHE performance is highly sensitive to the choice of clip limit, yet a fixed global clip limit leads to over-enhancement depending on local histogram characteristics. Search-based methods (exhaustive or meta-heuristic) are computationally expensive; learning-based methods are restricted to a single global clip limit because the histogram clipping and redistribution steps have been considered non-differentiable, preventing end-to-end optimization.
 
-**Root Cause**: Achieving tile-wise adaptive clip limit estimation requires a search space that grows exponentially with the number of tiles ($O(N^{T_H T_W})$), making exhaustive search infeasible, while the perceived non-differentiability of CLAHE blocks end-to-end learning.
+**Key Challenge**: Achieving tile-wise adaptive clip limit estimation requires a search space that grows exponentially with the number of tiles ($O(N^{T_H T_W})$), making exhaustive search infeasible, while the perceived non-differentiability of CLAHE blocks end-to-end learning.
 
-**Paper Goals**: To prove that CLAHE is differentiable and, based on this finding, design an end-to-end trainable framework for tile-wise clip limit estimation.
+**Goal**: To prove that CLAHE is differentiable and, based on this finding, design an end-to-end trainable framework for tile-wise clip limit estimation.
 
-**Starting Point**: Re-examining the histogram redistribution formulation of CLAHE and deriving analytic gradients with respect to the clip limit.
+**Key Insight**: Re-examining the histogram redistribution formulation of CLAHE and deriving analytic gradients with respect to the clip limit.
 
 **Core Idea**: CLAHE is differentiable almost everywhere. Leveraging this property, a lightweight CNN is trained to estimate per-tile clip limits and optimized end-to-end with an L1 loss, requiring no pre-searched ground-truth clip limits.
 

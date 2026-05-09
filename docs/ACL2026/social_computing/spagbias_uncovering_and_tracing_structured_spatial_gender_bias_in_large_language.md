@@ -29,15 +29,15 @@ This paper proposes SPAGBias, a framework that systematically evaluates gender b
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly deployed in urban planning, navigation, and disaster response—domains that rely on spatial reasoning. Feminist geography has long established that spaces are not neutral physical constructs but projections of social power and gender norms: kitchens are feminized as caregiving spaces while workplaces and streets are masculinized as domains of authority.
+**Background**: LLMs are increasingly deployed in urban planning, navigation, and disaster response—domains that rely on spatial reasoning. Feminist geography has long established that spaces are not neutral physical constructs but projections of social power and gender norms: kitchens are feminized as caregiving spaces while workplaces and streets are masculinized as domains of authority.
 
 **Limitations of Prior Work**: Extensive research has documented gender bias in LLMs for occupational prediction and text generation, yet the spatial dimension remains almost entirely unexplored. This gap is critical: spatial bias can distort key decisions—for example, healthcare services designed around male activity patterns may limit women's access to medical resources.
 
-**Root Cause**: No systematic framework exists for analyzing how LLMs encode gender in micro-geographic urban contexts. The traditional public–private binary is too coarse to capture fine-grained spatial-gender mappings.
+**Key Challenge**: No systematic framework exists for analyzing how LLMs encode gender in micro-geographic urban contexts. The traditional public–private binary is too coarse to capture fine-grained spatial-gender mappings.
 
-**Paper Goals**: Establish the first multi-level framework for measuring spatial gender bias in LLMs, answering three core questions: Do LLMs exhibit systematic spatial gender bias? What distributional patterns does this bias follow? How is bias constructed in generated narratives?
+**Goal**: Establish the first multi-level framework for measuring spatial gender bias in LLMs, answering three core questions: Do LLMs exhibit systematic spatial gender bias? What distributional patterns does this bias follow? How is bias constructed in generated narratives?
 
-**Starting Point**: The authors draw on feminist geography to import the concept of "gendered spaces" into NLP bias research, designing a taxonomy covering 62 urban micro-spaces.
+**Key Insight**: The authors draw on feminist geography to import the concept of "gendered spaces" into NLP bias research, designing a taxonomy covering 62 urban micro-spaces.
 
 **Core Idea**: A three-layer diagnostic (explicit, probabilistic, constructive) comprehensively measures spatial gender bias in LLMs, revealing that bias is not a simple public/private dichotomy but fine-grained micro-spatial mapping that is embedded and amplified throughout the model development pipeline.
 

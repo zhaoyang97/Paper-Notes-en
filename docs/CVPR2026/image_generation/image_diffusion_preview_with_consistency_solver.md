@@ -29,15 +29,15 @@ This paper proposes the Diffusion Preview paradigm and ConsistencySolver—a lig
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models excel at high-fidelity image generation, but inference requires numerically solving reverse differential equations, incurring substantial computational cost. Existing acceleration methods fall into two categories: training-free ODE solvers (DDIM, DPM-Solver, UniPC, etc.) and post-training distillation methods (LCM, DMD2, etc.).
+**Background**: Diffusion models excel at high-fidelity image generation, but inference requires numerically solving reverse differential equations, incurring substantial computational cost. Existing acceleration methods fall into two categories: training-free ODE solvers (DDIM, DPM-Solver, UniPC, etc.) and post-training distillation methods (LCM, DMD2, etc.).
 
 **Limitations of Prior Work**: Training-free solvers rely on theoretical assumptions and produce poor quality at low step counts; distillation methods require expensive retraining, disrupt the deterministic mapping of the PF-ODE (the correspondence from noise space to data space), and suffer from accumulated distillation errors that degrade generation quality. Critically, distilled models typically lose the flexibility of choosing inference step counts freely.
 
-**Root Cause**: In interactive generation workflows (e.g., design prototyping), users need to rapidly preview multiple variants to select a satisfying direction before refinement. Existing methods are either "fast but low-quality and inconsistent" (training-free solvers) or "high-quality but expensive and determinism-breaking" (distillation).
+**Key Challenge**: In interactive generation workflows (e.g., design prototyping), users need to rapidly preview multiple variants to select a satisfying direction before refinement. Existing methods are either "fast but low-quality and inconsistent" (training-free solvers) or "high-quality but expensive and determinism-breaking" (distillation).
 
-**Paper Goals**: Design a Preview-and-Refine workflow satisfying three requirements: (1) high preview fidelity (close to the final output); (2) high preview efficiency (low step count); (3) consistency between preview and final output (visually coherent results from the same random seed).
+**Goal**: Design a Preview-and-Refine workflow satisfying three requirements: (1) high preview fidelity (close to the final output); (2) high preview efficiency (low step count); (3) consistency between preview and final output (visually coherent results from the same random seed).
 
-**Starting Point**: Rather than modifying the diffusion model itself, this work optimizes the ODE solver. The integration coefficients of the solver are treated as a learnable policy, and reinforcement learning is used to search for the optimal integration strategy.
+**Key Insight**: Rather than modifying the diffusion model itself, this work optimizes the ODE solver. The integration coefficients of the solver are treated as a learnable policy, and reinforcement learning is used to search for the optimal integration strategy.
 
 **Core Idea**: Parameterize ODE solver coefficients as a lightweight MLP and optimize it via PPO reinforcement learning, so that few-step sampling maximizes perceptual similarity to the full-step output.
 

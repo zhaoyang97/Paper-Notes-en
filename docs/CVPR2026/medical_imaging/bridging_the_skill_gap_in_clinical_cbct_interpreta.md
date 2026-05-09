@@ -28,15 +28,15 @@ This work constructs a large-scale CBCT-report paired dataset of 7,408 cases cov
 
 ## Background & Motivation
 
-**State of the Field**: Generative AI for automated medical report generation is advancing rapidly. Chest X-ray report generation has seen considerable mature work (e.g., CheXpert, RadFM), whereas report generation for oral-maxillofacial cone-beam CT (CBCT) remains in its early stages.
+**Background**: Generative AI for automated medical report generation is advancing rapidly. Chest X-ray report generation has seen considerable mature work (e.g., CheXpert, RadFM), whereas report generation for oral-maxillofacial cone-beam CT (CBCT) remains in its early stages.
 
 **Limitations of Prior Work**: Oral-maxillofacial CBCT report generation faces two core obstacles: (1) high-quality paired CBCT-report data are extremely scarce, with existing public datasets containing virtually no paired annotations for oral-maxillofacial CBCT and clinical reports; (2) CBCT is volumetric 3D data whose interpretive complexity far exceeds that of 2D panoramic radiographs or CT slices, involving multiple anatomical regions and a large number of potential lesion types, posing greater demands on AI modeling.
 
-**Root Cause**: Radiologists of different experience levels differ substantially in their ability to interpret CBCT. Junior radiologists frequently miss lesions and produce non-standardized reports; even senior radiologists may overlook co-existing pathologies across anatomical regions due to attentional limitations. AI-assisted systems that pursue full automation without considering integration with clinical expertise are unlikely to gain clinical acceptance.
+**Key Challenge**: Radiologists of different experience levels differ substantially in their ability to interpret CBCT. Junior radiologists frequently miss lesions and produce non-standardized reports; even senior radiologists may overlook co-existing pathologies across anatomical regions due to attentional limitations. AI-assisted systems that pursue full automation without considering integration with clinical expertise are unlikely to gain clinical acceptance.
 
-**Paper Goals**: To construct a practical AI-assisted reporting system for the oral-maxillofacial CBCT domain—where standardized data are lacking—and to quantify through rigorous multi-level clinical evaluation the real-world assistive effect on radiologists at different experience levels.
+**Goal**: To construct a practical AI-assisted reporting system for the oral-maxillofacial CBCT domain—where standardized data are lacking—and to quantify through rigorous multi-level clinical evaluation the real-world assistive effect on radiologists at different experience levels.
 
-**Starting Point**: Rather than pursuing full automation, the paper adopts a collaborative paradigm in which AI generates an initial draft and the radiologist edits it, more closely reflecting actual clinical workflows. A multi-level evaluation framework encompassing both automatic metrics and human assessment is established in parallel.
+**Key Insight**: Rather than pursuing full automation, the paper adopts a collaborative paradigm in which AI generates an initial draft and the radiologist edits it, more closely reflecting actual clinical workflows. A multi-level evaluation framework encompassing both automatic metrics and human assessment is established in parallel.
 
 **Core Idea**: Train a specialized CBCT report generation model on a large-scale paired dataset and employ a human-AI collaborative paradigm to bridge the report quality gap among radiologists of varying experience levels.
 

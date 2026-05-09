@@ -30,15 +30,15 @@ The paper proposes C-Nav, a framework that employs **dual-path anti-forgetting**
 
 ## Background & Motivation
 
-**State of the Field**: Object navigation (ObjectNav) is a core task in embodied AI. Current SOTA methods (OVRL-V2, PIRLNav, NavID, etc.) rely on pretrained visual encoders and large-scale demonstration trajectories, achieving strong performance on fixed category sets.
+**Background**: Object navigation (ObjectNav) is a core task in embodied AI. Current SOTA methods (OVRL-V2, PIRLNav, NavID, etc.) rely on pretrained visual encoders and large-scale demonstration trajectories, achieving strong performance on fixed category sets.
 
 **Limitations of Prior Work**: These methods assume all categories and data are available at once during training. In open-world settings that continuously incorporate new objects, model parameter updates cause **catastrophic forgetting**—performance on old categories degrades sharply (~40% drop in SR) after learning new ones.
 
-**Root Cause**: Direct data replay (storing full trajectories) can mitigate forgetting, but navigation trajectories are extremely long (up to hundreds of frames per episode), highly redundant, and privacy-sensitive (indoor spatial layouts are exposed), making storage and privacy costs prohibitive.
+**Key Challenge**: Direct data replay (storing full trajectories) can mitigate forgetting, but navigation trajectories are extremely long (up to hundreds of frames per episode), highly redundant, and privacy-sensitive (indoor spatial layouts are exposed), making storage and privacy costs prohibitive.
 
-**Paper Goals**: Enable a navigation agent to **incrementally learn new categories** while retaining navigation skills for old ones, **without storing raw trajectories**.
+**Goal**: Enable a navigation agent to **incrementally learn new categories** while retaining navigation skills for old ones, **without storing raw trajectories**.
 
-**Starting Point**: The paper decomposes forgetting into two independent sources—**representation drift** in the encoder and **policy degradation** in the decoder—and applies separate constraints to each. Keyframe selection is formulated as an outlier detection problem in feature space to compress storage.
+**Key Insight**: The paper decomposes forgetting into two independent sources—**representation drift** in the encoder and **policy degradation** in the decoder—and applies separate constraints to each. Keyframe selection is formulated as an outlier detection problem in feature space to compress storage.
 
 **Core Idea**: Dual-path anti-forgetting (feature distillation to stabilize encoder representations + feature replay to stabilize action decoder policy) combined with LOF-based adaptive experience selection (storing only features of semantically salient frames rather than raw images).
 

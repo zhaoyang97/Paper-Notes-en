@@ -44,7 +44,7 @@ These degradations seriously compromise surgical safety and efficiency, frequent
 - Existing real-data sets largely **cover only a single degradation type** (primarily desmoke), lacking defog and desplash subsets.
 - There is a lack of **multi-source, multi-procedure** real paired data.
 
-**Root Cause**: Existing image restoration algorithms perform well on natural scenes but suffer drastic performance drops when directly transferred to surgical scenes—implying fundamental differences between surgical and natural degradations and motivating the need for dedicated datasets and tailored algorithms.
+**Key Challenge**: Existing image restoration algorithms perform well on natural scenes but suffer drastic performance drops when directly transferred to surgical scenes—implying fundamental differences between surgical and natural degradations and motivating the need for dedicated datasets and tailored algorithms.
 
 ## Method
 

@@ -29,15 +29,15 @@ This paper presents MetaSpectra+, the first multifunctional metasurface imaging 
 
 ## Background & Motivation
 
-**State of the Field**: Multifunctional metasurfaces have demonstrated the ability to simultaneously capture multiple imaging modalities (e.g., different focal lengths, PSFs, dynamic ranges) in a compact monocular form factor. However, they are severely limited by chromatic aberration, with operational bandwidths of only 10–100 nm. Conventional snapshot hyperspectral systems are either bulky (requiring relay optics) or costly to fabricate (spectral filter arrays).
+**Background**: Multifunctional metasurfaces have demonstrated the ability to simultaneously capture multiple imaging modalities (e.g., different focal lengths, PSFs, dynamic ranges) in a compact monocular form factor. However, they are severely limited by chromatic aberration, with operational bandwidths of only 10–100 nm. Conventional snapshot hyperspectral systems are either bulky (requiring relay optics) or costly to fabricate (spectral filter arrays).
 
 **Limitations of Prior Work**: (1) Existing multifunctional metasurface systems operate over extremely narrow bandwidths (10–100 nm), far from covering the full visible spectrum. (2) Conventional snapshot hyperspectral systems lack compactness, with TTL typically exceeding 20 mm. (3) No existing system can simultaneously capture hyperspectral, HDR, and polarization data in a single shot—yet applications such as agricultural phenotyping and forensic analysis demand precisely co-registered multimodal data.
 
-**Root Cause**: The intrinsic dispersion of metasurfaces is the fundamental barrier to broadband achromatic imaging. However, the goals of "eliminating dispersion" and "exploiting dispersion to encode spectral information" are conceptually contradictory.
+**Key Challenge**: The intrinsic dispersion of metasurfaces is the fundamental barrier to broadband achromatic imaging. However, the goals of "eliminating dispersion" and "exploiting dispersion to encode spectral information" are conceptually contradictory.
 
-**Paper Goals**: To break the bandwidth limitation of metasurface systems while preserving their compactness, and to realize multifunctional snapshot imaging that simultaneously acquires hyperspectral, HDR, and polarization data.
+**Goal**: To break the bandwidth limitation of metasurface systems while preserving their compactness, and to realize multifunctional snapshot imaging that simultaneously acquires hyperspectral, HDR, and polarization data.
 
-**Starting Point**: Reframing dispersion from a defect into a controllable function—some channels retain dispersion for spectral encoding while others suppress it for HDR/polarization, with both coexisting in the same system.
+**Key Insight**: Reframing dispersion from a defect into a controllable function—some channels retain dispersion for spectral encoding while others suppress it for HDR/polarization, with both coexisting in the same system.
 
 **Core Idea**: A dual-layer architecture comprising a beam-splitting metasurface and a dispersion-control metasurface decouples the imaging and beam-splitting functions. Precise control or elimination of dispersion in each optical channel is achieved through joint modulation of deflection vectors.
 

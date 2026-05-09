@@ -29,15 +29,15 @@ Wavelet Policy is the first work to introduce wavelet analysis into embodied int
 
 ## Background & Motivation
 
-**State of the Field**: Policy learning aims to enable agents to generate optimal actions from observations. Recent progress spans behavioral cloning, reinforcement learning, and more sophisticated approaches such as Diffusion Policy (modeling multimodal action distributions via conditional denoising diffusion) and Behavior Transformer (processing discretized actions with Transformers).
+**Background**: Policy learning aims to enable agents to generate optimal actions from observations. Recent progress spans behavioral cloning, reinforcement learning, and more sophisticated approaches such as Diffusion Policy (modeling multimodal action distributions via conditional denoising diffusion) and Behavior Transformer (processing discretized actions with Transformers).
 
 **Limitations of Prior Work**: Complex long-horizon tasks present three key challenges: (1) maintaining consistent behavior across multiple steps and managing long-range temporal dependencies, as errors accumulate otherwise; (2) multimodal action patterns — multiple valid action sequences often exist to achieve the same goal; (3) precision requirements — even small control errors can lead to task failure.
 
-**Root Cause**: Existing policy learning methods directly learn action sequences in the raw time domain, making it difficult to simultaneously capture global trends (long-horizon consistency) and local details (precise manipulation). High-frequency noise in long sequences also interferes with the recognition of multimodal patterns.
+**Key Challenge**: Existing policy learning methods directly learn action sequences in the raw time domain, making it difficult to simultaneously capture global trends (long-horizon consistency) and local details (precise manipulation). High-frequency noise in long sequences also interferes with the recognition of multimodal patterns.
 
-**Paper Goals**: How to construct a policy learning framework from a signal processing perspective that simultaneously captures global trends and fine-grained variations in action sequences?
+**Goal**: How to construct a policy learning framework from a signal processing perspective that simultaneously captures global trends and fine-grained variations in action sequences?
 
-**Starting Point**: The authors observe that applying wavelet decomposition to robot joint action sequences reveals that coarse-scale (low-frequency) components clearly exhibit several distinct action "modes" without noisy fluctuations, while fine-scale (high-frequency) components capture rapid changes. This motivates a coarse-to-fine action generation strategy, analogous to residual connections.
+**Key Insight**: The authors observe that applying wavelet decomposition to robot joint action sequences reveals that coarse-scale (low-frequency) components clearly exhibit several distinct action "modes" without noisy fluctuations, while fine-scale (high-frequency) components capture rapid changes. This motivates a coarse-to-fine action generation strategy, analogous to residual connections.
 
 **Core Idea**: A wavelet policy network based on a learnable lifting scheme. In the analysis phase, observation sequences are recursively decomposed into multi-scale low-frequency approximations and high-frequency details. A converter maps these to action space, and a synthesis phase reconstructs the full action sequence from coarse to fine.
 

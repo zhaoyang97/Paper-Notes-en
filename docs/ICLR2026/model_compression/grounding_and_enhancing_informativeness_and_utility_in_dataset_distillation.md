@@ -28,15 +28,15 @@ This paper proposes InfoUtil, a framework that maximizes sample informativeness 
 
 ## Background & Motivation
 
-**State of the Field**: Dataset distillation aims to synthesize compact datasets from large ones such that models trained on them approximate the performance of those trained on the full data. Mainstream approaches fall into two categories: matching-based methods (e.g., gradient matching, trajectory matching) and knowledge distillation-based methods. The latter (e.g., RDED) achieve superior performance but lack theoretical justification.
+**Background**: Dataset distillation aims to synthesize compact datasets from large ones such that models trained on them approximate the performance of those trained on the full data. Mainstream approaches fall into two categories: matching-based methods (e.g., gradient matching, trajectory matching) and knowledge distillation-based methods. The latter (e.g., RDED) achieve superior performance but lack theoretical justification.
 
 **Limitations of Prior Work**: Matching-based methods struggle to balance efficiency and performance (e.g., trajectory matching requires 4× A100 GPUs); knowledge distillation-based methods such as RDED rely on random cropping and heuristic scoring to select patches, lacking principled theoretical guarantees — randomly selected patches frequently miss semantically critical regions.
 
-**Root Cause**: How to simultaneously address two problems within a theoretically interpretable framework: (1) which regions within each sample are most informative, and (2) which samples are most valuable for training (Utility)?
+**Key Challenge**: How to simultaneously address two problems within a theoretically interpretable framework: (1) which regions within each sample are most informative, and (2) which samples are most valuable for training (Utility)?
 
-**Paper Goals**: To establish a theoretical foundation for dataset distillation, formally define optimal distillation, and design algorithms accordingly.
+**Goal**: To establish a theoretical foundation for dataset distillation, formally define optimal distillation, and design algorithms accordingly.
 
-**Starting Point**: The paper introduces two concepts — Informativeness (at the patch level, measuring information content) and Utility (at the sample level, measuring training value) — mathematically defines optimal distillation, employs Shapley Values for informativeness attribution, and uses gradient norms for utility estimation.
+**Key Insight**: The paper introduces two concepts — Informativeness (at the patch level, measuring information content) and Utility (at the sample level, measuring training value) — mathematically defines optimal distillation, employs Shapley Values for informativeness attribution, and uses gradient norms for utility estimation.
 
 **Core Idea**: Selecting the most informative patches via Shapley Values and the most valuable samples via gradient norms yields theoretically grounded optimal distillation.
 

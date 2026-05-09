@@ -28,16 +28,16 @@ This paper proposes W2S-AlignTree, the first inference-time alignment framework 
 
 ## Background & Motivation
 
-**State of the Field**: Mainstream LLM alignment methods include RLHF (reward model training + PPO) and DPO (direct preference optimization), both of which adjust model parameters during training using sequence-level feedback.
+**Background**: Mainstream LLM alignment methods include RLHF (reward model training + PPO) and DPO (direct preference optimization), both of which adjust model parameters during training using sequence-level feedback.
 
 **Limitations of Prior Work**:
    - **High training cost**: RLHF relies on large-scale human annotation to train reward models; PPO training is unstable and computationally expensive.
    - **Coarse-grained feedback**: RLHF/DPO depend on post-hoc sequence-level preference signals and cannot provide real-time, step-level fine-grained control at inference time.
    - **Weak supervision bottleneck**: As model capabilities grow, human supervision may be insufficient to cover the full behavioral space of the model (the superalignment problem).
 
-**Root Cause**: Training-time alignment methods are "frozen" at inference time and cannot be dynamically adjusted. Existing inference-time methods such as Constrained Beam Search (CBS) have limited search capability.
+**Key Challenge**: Training-time alignment methods are "frozen" at inference time and cannot be dynamically adjusted. Existing inference-time methods such as Constrained Beam Search (CBS) have limited search capability.
 
-**Starting Point**: MCTS has demonstrated in AlphaGo its ability to balance exploration and exploitation in large search spaces; W2SG has shown that weak models can provide effective alignment signals. Combining the two enables dynamic inference-time alignment without modifying model parameters.
+**Key Insight**: MCTS has demonstrated in AlphaGo its ability to balance exploration and exploitation in large search spaces; W2SG has shown that weak models can provide effective alignment signals. Combining the two enables dynamic inference-time alignment without modifying model parameters.
 
 **Core Idea**: A generation search tree is constructed, with the weak model providing a step-level proxy value function $V_{\text{proxy}} = \log(\pi_{\text{weak}}^*/\pi_{\text{weak}}^{\text{ref}})$. This is coupled with the MCTS selection–expansion–evaluation–backpropagation cycle to guide the strong model's generation, followed by global re-ranking to select the optimal response.
 

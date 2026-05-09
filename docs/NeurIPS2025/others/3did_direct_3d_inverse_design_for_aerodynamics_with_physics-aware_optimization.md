@@ -27,17 +27,17 @@ This paper proposes the 3DID framework, which learns a unified physics-geometry 
 
 ## Background & Motivation
 
-**State of the Field**: Inverse design aims to identify input variables of a physical system that optimize a specified objective function, with broad applications in aerospace, materials science, and mechanical engineering. Traditional methods rely on high-fidelity physical simulation combined with sampling-based optimization (e.g., Bayesian optimization, cross-entropy methods), incurring prohibitive computational costs. Recent deep learning surrogate models have accelerated forward physical simulation and enabled end-to-end backpropagation.
+**Background**: Inverse design aims to identify input variables of a physical system that optimize a specified objective function, with broad applications in aerospace, materials science, and mechanical engineering. Traditional methods rely on high-fidelity physical simulation combined with sampling-based optimization (e.g., Bayesian optimization, cross-entropy methods), incurring prohibitive computational costs. Recent deep learning surrogate models have accelerated forward physical simulation and enabled end-to-end backpropagation.
 
 **Limitations of Prior Work**: Existing 3D inverse design methods rely on two major simplifications: (a) replacing the 3D design space with 2D projections or contour maps, losing volumetric detail; and (b) requiring an initial geometry as a starting point for local refinement, severely restricting the search range. Neither approach truly explores the full 3D design space.
 
-**Root Cause**: The 3D physics-geometry coupled space has extremely high dimensionality, making direct search infeasible. Moreover, there is an inherent trade-off between exploration and validity — surrogate-model-based gradient refinement ensures design feasibility but is limited to local regions, while generative model sampling offers broad coverage but is biased toward the training distribution, making it difficult to reach new optima.
+**Key Challenge**: The 3D physics-geometry coupled space has extremely high dimensionality, making direct search infeasible. Moreover, there is an inherent trade-off between exploration and validity — surrogate-model-based gradient refinement ensures design feasibility but is limited to local regions, while generative model sampling offers broad coverage but is biased toward the training distribution, making it difficult to reach new optima.
 
-**Paper Goals**
+**Goal**
 - How to efficiently explore the high-dimensional 3D physics-geometry coupled space?
 - How to balance exploration and design validity?
 
-**Starting Point**: Jointly encode 3D geometry and physical fields into a compact continuous latent space and perform exploration on the low-dimensional manifold; leverage the generative capacity of diffusion models for global exploration, followed by topology-preserving free-form deformation for local refinement.
+**Key Insight**: Jointly encode 3D geometry and physical fields into a compact continuous latent space and perform exploration on the low-dimensional manifold; leverage the generative capacity of diffusion models for global exploration, followed by topology-preserving free-form deformation for local refinement.
 
 **Core Idea**: Perform objective-gradient-guided diffusion sampling (global exploration) combined with free-form deformation refinement (local optimization) on a unified physics-geometry latent space, enabling complete 3D inverse design starting from noise.
 

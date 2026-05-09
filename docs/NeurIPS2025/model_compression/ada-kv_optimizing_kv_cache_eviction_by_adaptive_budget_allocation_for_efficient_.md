@@ -28,13 +28,13 @@ Existing KV cache eviction methods uniformly allocate budgets across all attenti
 
 ## Background & Motivation
 
-**State of the Field**: During LLM inference, the KV cache grows linearly with sequence length — an 8B model processing 2M tokens requires 256 GB of cache. Top-k eviction methods (H2O, SnapKV, PyramidKV) compress the cache by retaining only the $k$ elements with the highest attention weights.
+**Background**: During LLM inference, the KV cache grows linearly with sequence length — an 8B model processing 2M tokens requires 256 GB of cache. Top-k eviction methods (H2O, SnapKV, PyramidKV) compress the cache by retaining only the $k$ elements with the highest attention weights.
 
 **Limitations of Prior Work**: All heads share a uniform budget $B_i = B/h$, yet attention concentration patterns vary drastically across heads — some heads are highly concentrated on a few tokens (sparse heads), while others are dispersed across many tokens (dispersed heads).
 
-**Root Cause**: Uniform allocation leads to wasted budget on sparse heads (which require very few tokens to retain nearly all attention weight) and insufficient budget for dispersed heads (which lose substantial useful information). The overall eviction loss is therefore unnecessarily high.
+**Key Challenge**: Uniform allocation leads to wasted budget on sparse heads (which require very few tokens to retain nearly all attention weight) and insufficient budget for dispersed heads (which lose substantial useful information). The overall eviction loss is therefore unnecessarily high.
 
-**Starting Point**: Establish a theoretical upper bound on eviction loss and prove that adaptive allocation minimizes this bound.
+**Key Insight**: Establish a theoretical upper bound on eviction loss and prove that adaptive allocation minimizes this bound.
 
 **Core Idea**: Redistribute the surplus budget from sparse heads to dispersed heads; global Top-B selection naturally realizes the optimal allocation.
 

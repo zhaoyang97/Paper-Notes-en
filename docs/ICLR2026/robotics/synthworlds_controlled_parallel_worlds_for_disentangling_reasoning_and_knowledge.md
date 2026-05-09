@@ -29,16 +29,16 @@ This paper constructs structurally identical parallel corpora in which entities 
 
 ## Background & Motivation
 
-**State of the Field**: Language models have achieved impressive results on complex tasks such as multi-hop QA and web navigation. However, because training data is rarely disclosed, it remains difficult to determine whether performance gains stem from genuine reasoning ability or from memorization of factual knowledge in the training corpus. Existing benchmarks increasingly lose diagnostic validity as training data scales — for instance, MuSiQue (released in 2021) was designed so that models could not answer questions without supporting documents, yet Llama-3.3-70B now achieves over 26% F1 in the closed-book setting.
+**Background**: Language models have achieved impressive results on complex tasks such as multi-hop QA and web navigation. However, because training data is rarely disclosed, it remains difficult to determine whether performance gains stem from genuine reasoning ability or from memorization of factual knowledge in the training corpus. Existing benchmarks increasingly lose diagnostic validity as training data scales — for instance, MuSiQue (released in 2021) was designed so that models could not answer questions without supporting documents, yet Llama-3.3-70B now achieves over 26% F1 in the closed-book setting.
 
 **Limitations of Prior Work**:
 1. **Manually curated evaluation sets**: Costly, difficult to scale, require continuous updating, and will eventually be subsumed by model training data.
 2. **Synthetic data approaches**: Either reuse existing content (e.g., novels), allowing parametric knowledge leakage, or rely on overly simple templates (e.g., "The job of David is a farmer") that fail to test complex relational reasoning.
 3. **Evaluating on synthetic tasks alone**: Success only demonstrates that a model can reason, while failure is ambiguous — it may reflect overly complex reasoning chains or the absence of background knowledge the model typically relies on.
 
-**Root Cause**: Existing evaluation methods cannot simultaneously control for reasoning difficulty and the contribution of parametric knowledge. Without experimentally decoupling reasoning from memorization, the fundamental question — "Is the model reasoning or recalling?" — cannot be answered.
+**Key Challenge**: Existing evaluation methods cannot simultaneously control for reasoning difficulty and the contribution of parametric knowledge. Without experimentally decoupling reasoning from memorization, the fundamental question — "Is the model reasoning or recalling?" — cannot be answered.
 
-**Paper Goals**: The paper proposes SynthWorlds, a framework that automatically generates two structurally identical parallel corpora from a knowledge graph:
+**Goal**: The paper proposes SynthWorlds, a framework that automatically generates two structurally identical parallel corpora from a knowledge graph:
 - **Real-Mapped (RM)**: Entities use real names (e.g., Geoffrey Hinton, University of Toronto), where parametric knowledge may be beneficial.
 - **Synth-Mapped (SM)**: Entities use synthetic names (e.g., Caleb Ardent, University of Metrovale), where parametric knowledge is entirely inapplicable.
 

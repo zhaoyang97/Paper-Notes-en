@@ -29,15 +29,15 @@ FlowHijack is the first systematic backdoor attack framework targeting the vecto
 
 ## Background & Motivation
 
-**State of the Field**: VLA models are emerging as the backbone of general-purpose robotics. Flow-matching VLAs (e.g., π₀) have attracted significant attention for their ability to generate smooth, continuous action trajectories, yet their security vulnerabilities remain largely unexplored.
+**Background**: VLA models are emerging as the backbone of general-purpose robotics. Flow-matching VLAs (e.g., π₀) have attracted significant attention for their ability to generate smooth, continuous action trajectories, yet their security vulnerabilities remain largely unexplored.
 
 **Limitations of Prior Work**: Existing backdoor attacks (e.g., BadVLA) are designed for discrete-tokenized VLAs; their label-flipping and token-substitution mechanisms cannot be directly transferred to continuous vector field dynamics. Existing triggers (e.g., pixel patches) are overly conspicuous in physical environments. Prior attacks also produce kinematically unnatural actions that are susceptible to detection.
 
-**Root Cause**: Action generation in flow-matching VLAs is driven by an ODE solver that produces continuous trajectories, presenting an attack surface fundamentally different from that of discrete-token models.
+**Key Challenge**: Action generation in flow-matching VLAs is driven by an ODE solver that produces continuous trajectories, presenting an attack surface fundamentally different from that of discrete-token models.
 
-**Paper Goals**: (1) Expose the vector field dynamics of flow-matching VLAs as a novel attack surface; (2) design stealthy, context-aware triggers; (3) ensure that malicious actions are kinematically indistinguishable from benign ones.
+**Goal**: (1) Expose the vector field dynamics of flow-matching VLAs as a novel attack surface; (2) design stealthy, context-aware triggers; (3) ensure that malicious actions are kinematically indistinguishable from benign ones.
 
-**Starting Point**: Exploit the characteristic over-sampling of flow-matching VLAs at low-τ stages by injecting malicious vector fields only during the initial phase of action generation.
+**Key Insight**: Exploit the characteristic over-sampling of flow-matching VLAs at low-τ stages by injecting malicious vector fields only during the initial phase of action generation.
 
 **Core Idea**: Injecting a directional bias into the vector field at low-τ intervals causes the ODE solver to amplify the initial error across the entire trajectory.
 

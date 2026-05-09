@@ -29,15 +29,15 @@ Phantasia introduces the first context-adaptive backdoor attack against VLMs. Ra
 
 ## Background & Motivation
 
-**State of the Field**: VLMs (e.g., BLIP, LLaVA, GPT-4V) have become the core models for multimodal understanding. Because fine-tuning large models demands considerable GPU resources, many organizations rely on third-party model providers or public checkpoints, introducing backdoor attack risks. Backdoor attacks aim to preserve normal model behavior on benign inputs while triggering malicious behavior on poisoned inputs.
+**Background**: VLMs (e.g., BLIP, LLaVA, GPT-4V) have become the core models for multimodal understanding. Because fine-tuning large models demands considerable GPU resources, many organizations rely on third-party model providers or public checkpoints, introducing backdoor attack risks. Backdoor attacks aim to preserve normal model behavior on benign inputs while triggering malicious behavior on poisoned inputs.
 
 **Limitations of Prior Work**: Existing VLM backdoor attacks (TrojVLM, VLOOD, ShadowCast, BadVLMDriver, etc.) share a fundamental weakness—their malicious outputs are anchored to **invariant textual patterns**. They either generate fixed strings (e.g., "I want to destroy the world"), inject predefined text fragments (e.g., "Bad model with backdoor injection"), or map outputs to fixed semantic labels. This makes them susceptible to two classes of defenses: (1) input perturbation defenses (STRIP), which detect low-entropy invariance in outputs; and (2) output filtering defenses (ONION), which detect anomalous vocabulary.
 
-**Root Cause**: There exists a fundamental tension between attack effectiveness and stealthiness—fixed patterns guarantee high attack success rates but sacrifice stealthiness. A context-adaptive attack requires outputs that are both image-relevant (to evade STRIP) and linguistically natural (to evade ONION), while simultaneously conveying the attacker's intent.
+**Key Challenge**: There exists a fundamental tension between attack effectiveness and stealthiness—fixed patterns guarantee high attack success rates but sacrifice stealthiness. A context-adaptive attack requires outputs that are both image-relevant (to evade STRIP) and linguistically natural (to evade ONION), while simultaneously conveying the attacker's intent.
 
-**Paper Goals**: (1) Demonstrate that the stealthiness of existing VLM backdoors is overestimated by adapting STRIP and ONION as VLM defenses; (2) Design a context-adaptive backdoor attack paradigm in which poisoned outputs vary dynamically with the input image.
+**Goal**: (1) Demonstrate that the stealthiness of existing VLM backdoors is overestimated by adapting STRIP and ONION as VLM defenses; (2) Design a context-adaptive backdoor attack paradigm in which poisoned outputs vary dynamically with the input image.
 
-**Starting Point**: Rather than generating fixed malicious text, the model is trained so that upon receiving a triggered image it answers an attacker-prespecified target question. Because the answer naturally varies with the image, it is neither fixed (evading STRIP-P) nor anomalous (evading ONION-R).
+**Key Insight**: Rather than generating fixed malicious text, the model is trained so that upon receiving a triggered image it answers an attacker-prespecified target question. Because the answer naturally varies with the image, it is neither fixed (evading STRIP-P) nor anomalous (evading ONION-R).
 
 **Core Idea**: Redefine backdoor behavior from "unconditionally outputting malicious text" to "answering the attacker's hidden question instead of the user's actual question," and implant this behavior via teacher–student distillation.
 

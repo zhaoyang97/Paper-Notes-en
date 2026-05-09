@@ -29,15 +29,15 @@ This paper proposes Yggdrasil, a latency-optimal speculative decoding system tha
 
 ## Background & Motivation
 
-**State of the Field**: Speculative decoding accelerates LLM inference by having a small draft model generate candidate token sequences that a larger verifier model validates in parallel, serving as a lossless acceleration method that preserves the output distribution. Tree-based speculative decoding further expands the search space by verifying multiple candidate paths in a single forward pass.
+**Background**: Speculative decoding accelerates LLM inference by having a small draft model generate candidate token sequences that a larger verifier model validates in parallel, serving as a lossless acceleration method that preserves the output distribution. Tree-based speculative decoding further expands the search space by verifying multiple candidate paths in a single forward pass.
 
 **Limitations of Prior Work**: Existing systems exhibit a fundamental mismatch between dynamic drafting and static runtimes. (1) Dynamic drafting algorithms (e.g., DISCO) adaptively adjust tree structures and operator shapes at each step to maximize token acceptance rates, but this conflicts with the static computation graph assumptions required by deep learning compilers (e.g., TorchInductor), precluding the 2–3× speedups from graph fusion and kernel tuning. (2) Existing methods typically optimize Average Acceptance Length (AAL), yet a higher AAL does not guarantee faster end-to-end throughput—as the number of verified tokens increases, verification latency grows nonlinearly, and actual per-token speedup may plateau or even decline.
 
-**Root Cause**: A fundamental trade-off exists between the high AAL enabled by dynamic tree structures and the static shapes required by compilers; no prior framework simultaneously achieves both.
+**Key Challenge**: A fundamental trade-off exists between the high AAL enabled by dynamic tree structures and the static shapes required by compilers; no prior framework simultaneously achieves both.
 
-**Paper Goals**: (1) Design a tree structure that adapts dynamically to context while maintaining static operator shapes; (2) Use actual latency rather than AAL as the optimization objective; (3) Eliminate GPU idle bubbles caused by CPU-side logic in speculative decoding.
+**Goal**: (1) Design a tree structure that adapts dynamically to context while maintaining static operator shapes; (2) Use actual latency rather than AAL as the optimization objective; (3) Eliminate GPU idle bubbles caused by CPU-side logic in speculative decoding.
 
-**Starting Point**: The paper frames speculative decoding as an algorithm-system co-design problem and optimizes it simultaneously at three levels.
+**Key Insight**: The paper frames speculative decoding as an algorithm-system co-design problem and optimizes it simultaneously at three levels.
 
 **Core Idea**: Employ the Equal-Growth Tree (EGT) to reconcile dynamic adaptability with compiler compatibility, optimizing latency across the full stack from algorithm to runtime.
 

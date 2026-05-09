@@ -28,15 +28,15 @@ This paper identifies that the perceptual weakness of current AudioLLMs stems fr
 
 ## Background & Motivation
 
-**State of the Field**: AudioLLMs exhibit a paradoxical pattern — strong performance on complex reasoning tasks (~70%) contrasts with a sharp decline on basic acoustic perception tasks (~40%). For instance, a model may correctly transcribe "I'm fine" while entirely missing the distress implied by a trembling voice, or fail to register the sound of a slamming door.
+**Background**: AudioLLMs exhibit a paradoxical pattern — strong performance on complex reasoning tasks (~70%) contrasts with a sharp decline on basic acoustic perception tasks (~40%). For instance, a model may correctly transcribe "I'm fine" while entirely missing the distress implied by a trembling voice, or fail to register the sound of a slamming door.
 
 **Limitations of Prior Work**: This perceptual deficit persists across model scales and architectures, suggesting the problem lies not in model capacity but in training methodology. The vast majority of AudioLLMs rely on ASR as their core training signal; however, ASR is inherently selective — it deliberately normalizes away prosody, speaker identity, emotion, and acoustic context in order to recover canonical text.
 
-**Root Cause**: ASR-based training creates a fundamental asymmetry: models are continuously rewarded for reasoning about *what was said*, while being implicitly penalized for attending to *how it was said* and *what other sounds are present*. Perceptual ability is not undertrained — it is systematically de-emphasized.
+**Key Challenge**: ASR-based training creates a fundamental asymmetry: models are continuously rewarded for reasoning about *what was said*, while being implicitly penalized for attending to *how it was said* and *what other sounds are present*. Perceptual ability is not undertrained — it is systematically de-emphasized.
 
-**Paper Goals**: To design a training supervision format that explicitly preserves acoustic perceptual information without sacrificing semantic alignment.
+**Goal**: To design a training supervision format that explicitly preserves acoustic perceptual information without sacrificing semantic alignment.
 
-**Starting Point**: Drawing on Laver's semiotic framework for speech signals, the paper decomposes the audio signal into three information layers: linguistic, paralinguistic, and extralinguistic.
+**Key Insight**: Drawing on Laver's semiotic framework for speech signals, the paper decomposes the audio signal into three information layers: linguistic, paralinguistic, and extralinguistic.
 
 **Core Idea**: A structured JSON schema explicitly encodes these three information layers as training targets, transforming the "implicit discarding" characteristic of ASR into "explicit preservation."
 

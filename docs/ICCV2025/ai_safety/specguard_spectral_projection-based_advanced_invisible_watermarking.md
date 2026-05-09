@@ -28,18 +28,18 @@ SpecGuard embeds watermark information into the spectral domain of high-frequenc
 
 ## Background & Motivation
 
-**State of the Field**: With the proliferation of AI image generation and editing tools, copyright protection and authenticity verification of digital content have become increasingly urgent. Invisible watermarking is a mainstream authentication mechanism that embeds imperceptible information into images to verify authenticity.
+**Background**: With the proliferation of AI image generation and editing tools, copyright protection and authenticity verification of digital content have become increasingly urgent. Invisible watermarking is a mainstream authentication mechanism that embeds imperceptible information into images to verify authenticity.
 
 **Limitations of Prior Work**:
    - Traditional transform-domain watermarking methods (DCT, DWT) are vulnerable to common image operations such as scaling, cropping, compression, and noise addition.
    - Deep learning-based methods (HiDDeN, StegaStamp, Stable Signature) have advanced end-to-end embedding, but remain fragile against adversarial attacks and image regeneration (diffusion model reconstruction).
    - Generative watermarking methods (e.g., those integrated with diffusion models) incur high computational complexity and are susceptible to targeted attacks.
 
-**Root Cause**: There exists a fundamental trade-off between imperceptibility and robustness — stronger embedding yields greater robustness but higher perceptibility, while weaker embedding improves invisibility at the cost of fragility.
+**Key Challenge**: There exists a fundamental trade-off between imperceptibility and robustness — stronger embedding yields greater robustness but higher perceptibility, while weaker embedding improves invisibility at the cost of fragility.
 
-**Paper Goals**: To design a watermarking method that simultaneously surpasses SOTA in both imperceptibility and robustness, specifically against three attack categories: distortion (rotation, cropping, noise, etc.), image regeneration (diffusion model reconstruction), and adversarial attacks.
+**Goal**: To design a watermarking method that simultaneously surpasses SOTA in both imperceptibility and robustness, specifically against three attack categories: distortion (rotation, cropping, noise, etc.), image regeneration (diffusion model reconstruction), and adversarial attacks.
 
-**Starting Point**: Watermark information is embedded into the spectral domain of hidden convolutional feature maps (rather than directly in the spatial domain or a simple frequency domain) via a cascaded transform pipeline: wavelet projection → high-frequency subbands → FFT spectral projection, allowing the watermark to be deeply concealed within high-frequency spectral components.
+**Key Insight**: Watermark information is embedded into the spectral domain of hidden convolutional feature maps (rather than directly in the spatial domain or a simple frequency domain) via a cascaded transform pipeline: wavelet projection → high-frequency subbands → FFT spectral projection, allowing the watermark to be deeply concealed within high-frequency spectral components.
 
 **Core Idea**: FFT spectral projection is applied to the high-frequency subbands of the wavelet decomposition to embed the watermark in the high-frequency spectral region. A learnable threshold based on Parseval's theorem enables high-accuracy bit extraction.
 

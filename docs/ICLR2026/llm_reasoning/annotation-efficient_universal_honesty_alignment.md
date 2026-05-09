@@ -27,15 +27,15 @@ content_hash: 424ddb6a390e965b
 This paper proposes EliCal (Elicit then Calibrate), a two-stage framework that first trains an LLM to express internal confidence using annotation-free self-consistency signals, then calibrates with a minimal number of correctness annotations (only 1K samples, 0.18% of the full set). On HonestyBench (560K training + 70K evaluation), EliCal achieves approximately 98% of the fully-supervised upper bound and generalizes better than calibration-only baselines on unseen MMLU tasks.
 
 ## Background & Motivation
-**State of the Field**: Honesty alignment for LLMs requires models to accurately perceive their own knowledge boundaries and express calibrated confidence. Existing approaches fall into two categories: training-free confidence estimation (token probabilities, self-consistency) and training-based calibration (requiring correctness annotations).
+**Background**: Honesty alignment for LLMs requires models to accurately perceive their own knowledge boundaries and express calibrated confidence. Existing approaches fall into two categories: training-free confidence estimation (token probabilities, self-consistency) and training-based calibration (requiring correctness annotations).
 
 **Limitations of Prior Work**: Training-based methods yield superior results, but achieving universal honesty alignment across tasks demands large-scale correctness annotations — every question requires a ground-truth answer to determine whether the model responds correctly. This is prohibitively expensive.
 
-**Root Cause**: Correctness annotations simultaneously serve two roles — (1) teaching the model to express confidence; and (2) calibrating that confidence against actual correctness. If the first role can be fulfilled by a cheaper signal, only a small number of annotations are needed for the second step.
+**Key Challenge**: Correctness annotations simultaneously serve two roles — (1) teaching the model to express confidence; and (2) calibrating that confidence against actual correctness. If the first role can be fulfilled by a cheaper signal, only a small number of annotations are needed for the second step.
 
-**Paper Goals**: How can high-quality honesty alignment be achieved with minimal correctness annotations?
+**Goal**: How can high-quality honesty alignment be achieved with minimal correctness annotations?
 
-**Starting Point**: The observation that self-consistency confidence (the proportion of semantically consistent responses across multiple samples) is highly correlated with actual accuracy and is freely available. This signal is used to teach the model to express confidence in Stage 1, followed by calibration with a small number of annotations in Stage 2.
+**Key Insight**: The observation that self-consistency confidence (the proportion of semantically consistent responses across multiple samples) is highly correlated with actual accuracy and is freely available. This signal is used to teach the model to express confidence in Stage 1, followed by calibration with a small number of annotations in Stage 2.
 
 **Core Idea**: "Elicit first, calibrate later" — leverage self-consistency for pretraining-level confidence learning, then use minimal annotations for fine-tuning-level calibration.
 

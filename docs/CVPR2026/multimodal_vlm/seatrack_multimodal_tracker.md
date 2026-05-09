@@ -29,15 +29,15 @@ This paper proposes SEATrack, a multimodal tracker that achieves dynamic cross-m
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal tracking fuses RGB with complementary modalities such as thermal infrared, depth, and event data to enable all-weather robust tracking. The PEFT paradigm has gradually replaced full fine-tuning to mitigate catastrophic forgetting.
+**Background**: Multimodal tracking fuses RGB with complementary modalities such as thermal infrared, depth, and event data to enable all-weather robust tracking. The PEFT paradigm has gradually replaced full fine-tuning to mitigate catastrophic forgetting.
 
 **Limitations of Prior Work**: The number of trainable parameters in PEFT-based methods has inflated 16-fold from early approaches to the latest SOTA, fundamentally undermining the efficiency rationale of PEFT. Meanwhile, the domain gap in dual-stream architectures causes conflicting attention maps across modalities, hampering joint representation learning.
 
-**Root Cause**: A performance–efficiency dilemma — more parameters yield better performance but erode the core value of PEFT.
+**Key Challenge**: A performance–efficiency dilemma — more parameters yield better performance but erode the core value of PEFT.
 
-**Paper Goals**: (1) Break the performance–efficiency trade-off via cross-modal attention alignment; (2) Design an efficient global relation modeling module to replace attention-based fusion.
+**Goal**: (1) Break the performance–efficiency trade-off via cross-modal attention alignment; (2) Design an efficient global relation modeling module to replace attention-based fusion.
 
-**Starting Point**: Multimodal inputs are spatiotemporally aligned, so the attention maps for intra-modal target matching should in principle be consistent — this consistency can be exploited for mutual cross-modal guidance.
+**Key Insight**: Multimodal inputs are spatiotemporally aligned, so the attention maps for intra-modal target matching should in principle be consistent — this consistency can be exploited for mutual cross-modal guidance.
 
 **Core Idea**: AMG-LoRA uses the matching information from one modality to guide the matching process of the other, enabling bidirectional dynamic alignment.
 

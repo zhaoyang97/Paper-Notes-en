@@ -29,15 +29,15 @@ This paper proposes LT-Soups, a two-stage model merging framework that trains mu
 
 ## Background & Motivation
 
-**State of the Field**: Real-world datasets typically follow long-tailed distributions, where a few head classes dominate. Vision-language foundation models such as CLIP, combined with PEFT methods (e.g., LoRA, AdaptFormer) and logit adjustment (LA) loss, achieve state-of-the-art performance; however, PEFT tends to sacrifice head-class accuracy in favor of tail-class performance.
+**Background**: Real-world datasets typically follow long-tailed distributions, where a few head classes dominate. Vision-language foundation models such as CLIP, combined with PEFT methods (e.g., LoRA, AdaptFormer) and logit adjustment (LA) loss, achieve state-of-the-art performance; however, PEFT tends to sacrifice head-class accuracy in favor of tail-class performance.
 
 **Limitations of Prior Work**: (1) PEFT performs well in tail-heavy scenarios but degrades under balanced or head-heavy distributions; (2) full fine-tuning offers stronger adaptability but risks forgetting pretrained knowledge; (3) conventional Model Soups, trained on the same imbalanced data, remain biased toward head classes.
 
-**Root Cause**: There exists a fundamental trade-off between head- and tail-class performance, and no single method consistently performs well across all imbalance configurations.
+**Key Challenge**: There exists a fundamental trade-off between head- and tail-class performance, and no single method consistently performs well across all imbalance configurations.
 
-**Paper Goals**: Design a method that is robust across varying imbalance ratios $\rho$ and head-to-tail ratios $\eta$.
+**Goal**: Design a method that is robust across varying imbalance ratios $\rho$ and head-to-tail ratios $\eta$.
 
-**Starting Point**: The paper introduces the head-to-tail ratio $\eta = H/T$ as an additional dimension for characterizing imbalanced distributions, and analyzes the limitations of existing methods within this two-axis framework.
+**Key Insight**: The paper introduces the head-to-tail ratio $\eta = H/T$ as an additional dimension for characterizing imbalanced distributions, and analyzes the limitations of existing methods within this two-axis framework.
 
 **Core Idea**: Fine-tune separate models on subsets with different degrees of imbalance, then aggregate them via weight averaging, so that individual models "specialize" in different regions of the imbalance spectrum, and their combination achieves balanced representation across head and tail classes.
 

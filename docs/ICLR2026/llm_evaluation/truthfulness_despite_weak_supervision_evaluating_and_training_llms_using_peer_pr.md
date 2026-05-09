@@ -27,15 +27,15 @@ This paper proposes applying the Peer Prediction mechanism from game theory to L
 
 ## Background & Motivation
 
-**State of the Field**: LLM evaluation and post-training rely on supervision signals. Mainstream approaches include human feedback (RLHF) and LLM-as-a-Judge. As model capabilities improve, these methods face the *scalable oversight* problem — superhuman models can exploit and deceive evaluators weaker than themselves.
+**Background**: LLM evaluation and post-training rely on supervision signals. Mainstream approaches include human feedback (RLHF) and LLM-as-a-Judge. As model capabilities improve, these methods face the *scalable oversight* problem — superhuman models can exploit and deceive evaluators weaker than themselves.
 
 **Limitations of Prior Work**: LLM-as-a-Judge performs **worse than random guessing** when facing deceptive models 5–20× more capable than the judge. Human evaluators are also susceptible to sycophancy and reward over-optimization. No existing evaluation method offers game-theoretic deception-resistance guarantees against stronger models.
 
-**Root Cause**: Strong supervision is unavailable on hard tasks (evaluators lack sufficient capability), yet weak supervision is easily exploited by stronger models.
+**Key Challenge**: Strong supervision is unavailable on hard tasks (evaluators lack sufficient capability), yet weak supervision is easily exploited by stronger models.
 
-**Paper Goals**: How can weak supervision accurately evaluate strong LLMs? How can models be incentivized to remain truthful during training?
+**Goal**: How can weak supervision accurately evaluate strong LLMs? How can models be incentivized to remain truthful during training?
 
-**Starting Point**: The paper imports the Peer Prediction mechanism from the mechanism design literature — a game-theoretically proven information elicitation method. The core intuition is that honest and informative answers better help predict others' answers, since they contain more information about the true state of the world. Answer quality can thus be measured by *mutual predictability* without requiring ground-truth labels.
+**Key Insight**: The paper imports the Peer Prediction mechanism from the mechanism design literature — a game-theoretically proven information elicitation method. The core intuition is that honest and informative answers better help predict others' answers, since they contain more information about the true state of the world. Answer quality can thus be measured by *mutual predictability* without requiring ground-truth labels.
 
 **Core Idea**: Use the mutual predictability of multiple models' answers as a measure of honesty, leveraging incentive compatibility from game theory to ensure that truthful reporting is the optimal strategy.
 

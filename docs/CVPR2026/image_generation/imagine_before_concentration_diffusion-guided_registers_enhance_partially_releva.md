@@ -29,15 +29,15 @@ This paper proposes DreamPRVR, which adopts a coarse-to-fine "imagine before con
 
 ## Background & Motivation
 
-**State of the Field**: Partially Relevant Video Retrieval (PRVR) aims to retrieve untrimmed videos given a text query that describes only a portion of the video content. Existing methods (e.g., MS-SL, GMMFormer, HLFormer) primarily focus on segment-level modeling, employing sliding windows or Gaussian attention for local matching.
+**Background**: Partially Relevant Video Retrieval (PRVR) aims to retrieve untrimmed videos given a text query that describes only a portion of the video content. Existing methods (e.g., MS-SL, GMMFormer, HLFormer) primarily focus on segment-level modeling, employing sliding windows or Gaussian attention for local matching.
 
 **Limitations of Prior Work**: The core issue is "query ambiguity" — a generic query may match the corresponding segment in the target video while also accidentally matching locally similar segments in irrelevant videos, producing spurious local spike responses. This can cause globally irrelevant videos to be erroneously ranked highly. Furthermore, the widely adopted Multiple Instance Learning (MIL) paradigm only rewards the best-matching segment, leaving other segments undertrained and lacking the contextual grounding needed to resolve ambiguity.
 
-**Root Cause**: Existing methods lack explicit global context modeling. The few works that do consider global information (e.g., HLFormer's semantic entailment, RAL's global uncertainty) treat global context as a training-only regularizer, without improving video embeddings at inference time.
+**Key Challenge**: Existing methods lack explicit global context modeling. The few works that do consider global information (e.g., HLFormer's semantic entailment, RAL's global uncertainty) treat global context as a training-only regularizer, without improving video embeddings at inference time.
 
-**Paper Goals**: (1) How to extract reliable global semantic representations from noisy, untrimmed videos; (2) How to leverage textual semantics to effectively supervise global representation generation; (3) How to incorporate global semantics into local video representations to suppress spurious responses.
+**Goal**: (1) How to extract reliable global semantic representations from noisy, untrimmed videos; (2) How to leverage textual semantics to effectively supervise global representation generation; (3) How to incorporate global semantics into local video representations to suppress spurious responses.
 
-**Starting Point**: Inspired by the register token concept in ViT, global register tokens are introduced to store holistic video semantics. Since directly extracting reliable registers from noisy videos is difficult, a diffusion model is employed for iterative refinement and generation.
+**Key Insight**: Inspired by the register token concept in ViT, global register tokens are introduced to store holistic video semantics. Since directly extracting reliable registers from noisy videos is difficult, a diffusion model is employed for iterative refinement and generation.
 
 **Core Idea**: A text-supervised truncated diffusion model iteratively generates global semantic registers starting from a video-centric distribution, which are then fused into local representations via attention to enhance fine-grained video features.
 

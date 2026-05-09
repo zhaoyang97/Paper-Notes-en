@@ -28,15 +28,15 @@ This paper proposes the Menlo framework, which decomposes native-like response q
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are expected to deliver high-quality responses across a wide range of global languages, yet systematic methods for evaluating "native-like quality" remain underdeveloped. Traditional assessments such as standardized tests are difficult to scale and poorly suited to realistic conversational settings.
+**Background**: LLMs are expected to deliver high-quality responses across a wide range of global languages, yet systematic methods for evaluating "native-like quality" remain underdeveloped. Traditional assessments such as standardized tests are difficult to scale and poorly suited to realistic conversational settings.
 
 **Limitations of Prior Work**: Existing multilingual preference datasets cover few languages, lack localized prompts, exhibit low inter-annotator agreement, and fail to distinguish specific quality dimensions. Zero-shot LLM judges still show a significant gap relative to human annotators in multilingual scenarios.
 
-**Root Cause**: Native-like quality is not a single, fixed standard; rather, it depends on the relationship between speaker and audience (the style axiom in sociolinguistics)—the same language can embody different "native" norms across cultures, regions, and contexts.
+**Key Challenge**: Native-like quality is not a single, fixed standard; rather, it depends on the relationship between speaker and audience (the style axiom in sociolinguistics)—the same language can embody different "native" norms across cultures, regions, and contexts.
 
-**Paper Goals**: (1) Operationalize native-like quality evaluation by decomposing it into measurable dimensions; (2) construct a large-scale, high-quality multilingual preference dataset; (3) train reliable LLM judges as cost-effective alternatives to human evaluation.
+**Goal**: (1) Operationalize native-like quality evaluation by decomposing it into measurable dimensions; (2) construct a large-scale, high-quality multilingual preference dataset; (3) train reliable LLM judges as cost-effective alternatives to human evaluation.
 
-**Starting Point**: Drawing on Audience Design theory, the framework steers model generation toward contextually appropriate "native" styles by defining the target audience, and designs annotation rubrics that reduce subjective variation.
+**Key Insight**: Drawing on Audience Design theory, the framework steers model generation toward contextually appropriate "native" styles by defining the target audience, and designs annotation rubrics that reduce subjective variation.
 
 **Core Idea**: Native-like quality is decomposed into four dimensions—fluency, register, localized register, and localized factuality—and pairwise RL training enables LLM judges to reach human-level performance across 47 languages.
 

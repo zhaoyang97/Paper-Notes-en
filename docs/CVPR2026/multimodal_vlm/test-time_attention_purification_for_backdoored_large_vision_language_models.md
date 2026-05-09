@@ -27,15 +27,15 @@ content_hash: bb1f4aa17cddc56e
 This work identifies that the essence of backdoor behavior in LVLMs is cross-modal attention stealing (trigger visual tokens hijack the attention weights of text tokens), and proposes CleanSight — the first training-free test-time backdoor defense framework — which eliminates backdoor effects by detecting and pruning high-attention trigger tokens.
 
 ## Background & Motivation
-**State of the Field**: Fine-tuning lightweight adapters to adapt LVLMs to downstream tasks has become mainstream, but this also introduces backdoor attack risks — adversaries can inject trigger samples into fine-tuning data, causing the model to produce attacker-specified outputs upon encountering triggers at inference time.
+**Background**: Fine-tuning lightweight adapters to adapt LVLMs to downstream tasks has become mainstream, but this also introduces backdoor attack risks — adversaries can inject trigger samples into fine-tuning data, causing the model to produce attacker-specified outputs upon encountering triggers at inference time.
 
 **Limitations of Prior Work**: Existing defenses are primarily training-time defenses — retraining backdoor-contaminated parameters with clean data — which incur high computational costs and often degrade downstream performance. The few test-time defense methods (e.g., pixel perturbation) are designed for models trained from scratch and are nearly ineffective against LVLMs.
 
-**Root Cause**: In LVLMs, backdoor associations reside not in low-level pixel features but in cross-modal attention interactions — a fundamentally different finding from traditional backdoor models (e.g., ViT, CLIP). Pixel perturbation cannot disrupt backdoor associations at the attention level.
+**Key Challenge**: In LVLMs, backdoor associations reside not in low-level pixel features but in cross-modal attention interactions — a fundamentally different finding from traditional backdoor models (e.g., ViT, CLIP). Pixel perturbation cannot disrupt backdoor associations at the attention level.
 
-**Paper Goals**: Design the first test-time backdoor defense method for LVLMs that requires no retraining and is plug-and-play.
+**Goal**: Design the first test-time backdoor defense method for LVLMs that requires no retraining and is plug-and-play.
 
-**Starting Point**: The discovery of the "attention stealing" phenomenon — visual tokens from poisoned inputs abnormally capture the attention weights of text tokens, and the high-attention regions precisely correspond to trigger regions.
+**Key Insight**: The discovery of the "attention stealing" phenomenon — visual tokens from poisoned inputs abnormally capture the attention weights of text tokens, and the high-attention regions precisely correspond to trigger regions.
 
 **Core Idea**: Eliminate backdoors at test time without modifying model parameters by detecting anomalous attention ratios and pruning high-attention visual tokens.
 

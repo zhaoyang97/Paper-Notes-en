@@ -28,15 +28,15 @@ This paper proposes FedMosaic, a framework addressing dual heterogeneity in pers
 
 ## Background & Motivation
 
-**State of the Field**: Personalized federated learning (PFL) enables collaborative learning across clients while preserving privacy. Existing PFL methods such as DITTO and FedDAT address data heterogeneity through dual-adapter designs (local + global), but assume all clients share the same model architecture.
+**Background**: Personalized federated learning (PFL) enables collaborative learning across clients while preserving privacy. Existing PFL methods such as DITTO and FedDAT address data heterogeneity through dual-adapter designs (local + global), but assume all clients share the same model architecture.
 
 **Limitations of Prior Work**: (a) **Data heterogeneity** — existing benchmarks simulate heterogeneity via non-IID splits of a single dataset, which is unrealistic (real-world clients perform distinct tasks); (b) **Model heterogeneity** — clients operate on different hardware and use different model families (Llama vs. Qwen) and scales (1B vs. 3B), making direct averaging of LoRA matrices infeasible due to differing dimensions; (c) existing methods for model heterogeneity (HETLoRA, FlexLoRA) assume a shared base architecture and differ only in rank, thus failing to support truly heterogeneous architectures.
 
-**Root Cause**: The LoRA matrices $A \in \mathbb{R}^{r \times d_I}$ and $B \in \mathbb{R}^{d_O \times r}$ depend on model-specific hidden dimensions $d_I, d_O$, which vary across architectures, precluding aggregation. Meanwhile, naively averaging models trained on different tasks causes parameter interference.
+**Key Challenge**: The LoRA matrices $A \in \mathbb{R}^{r \times d_I}$ and $B \in \mathbb{R}^{d_O \times r}$ depend on model-specific hidden dimensions $d_I, d_O$, which vary across architectures, precluding aggregation. Meanwhile, naively averaging models trained on different tasks causes parameter interference.
 
-**Paper Goals**: Simultaneously address data heterogeneity (clients performing different tasks) and model heterogeneity (clients using different architectures/scales) to enable effective collaboration in realistic multimodal PFL settings.
+**Goal**: Simultaneously address data heterogeneity (clients performing different tasks) and model heterogeneity (clients using different architectures/scales) to enable effective collaboration in realistic multimodal PFL settings.
 
-**Starting Point**: Insert dimension-invariant modules $P$ and $Q$ into the intermediate layer of LoRA — aggregating only these modules enables cross-architecture knowledge transfer.
+**Key Insight**: Insert dimension-invariant modules $P$ and $Q$ into the intermediate layer of LoRA — aggregating only these modules enables cross-architecture knowledge transfer.
 
 **Core Idea**: Leverage dimension-invariant Co-LoRA modules for cross-architecture knowledge sharing, combined with gradient-similarity-driven relevance aggregation to reduce task interference.
 

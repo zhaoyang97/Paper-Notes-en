@@ -29,15 +29,15 @@ This paper proposes the R-MSD framework, which constructs a teacher pool by samp
 
 ## Background & Motivation
 
-**State of the Field**: Large vision-language models (LVLMs) have achieved remarkable progress in video understanding, yet deployment remains constrained by computational cost. Knowledge distillation is the predominant approach for transferring strong teacher capabilities to compact student models. Recent analyses further suggest that distillation can extend the reasoning upper bound of student models, while reinforcement learning (RL) methods are bounded by the base model's distribution.
+**Background**: Large vision-language models (LVLMs) have achieved remarkable progress in video understanding, yet deployment remains constrained by computational cost. Knowledge distillation is the predominant approach for transferring strong teacher capabilities to compact student models. Recent analyses further suggest that distillation can extend the reasoning upper bound of student models, while reinforcement learning (RL) methods are bounded by the base model's distribution.
 
 **Limitations of Prior Work**: Existing distillation methods assume that only a single teacher response is sampled per input as the supervision signal. This assumption fails severely in video understanding, where two levels of variance exist: (1) cross-question variance — quality scores span $[0.10, 1.0]$ with $\sigma=0.22$ over 200 samples (MCQ: $\sigma=0.10$ vs. Visual QA: $\sigma=0.24$); (2) intra-question sampling uncertainty — $\sigma$ ranges from $0.07$ (MCQ) to $0.15$ (Visual QA), with an overall format violation rate of 1% rising to 10% on temporal QA.
 
-**Root Cause**: The task heterogeneity inherent to video understanding (closed-ended tasks amenable to GT verification vs. open-ended tasks lacking reliable metrics) makes a unified supervision strategy inevitably suboptimal for one category — failing to filter low-quality closed-ended responses introduces noise, while lexical-matching-based ranking for open-ended tasks penalizes semantically correct but differently worded answers.
+**Key Challenge**: The task heterogeneity inherent to video understanding (closed-ended tasks amenable to GT verification vs. open-ended tasks lacking reliable metrics) makes a unified supervision strategy inevitably suboptimal for one category — failing to filter low-quality closed-ended responses introduces noise, while lexical-matching-based ranking for open-ended tasks penalizes semantically correct but differently worded answers.
 
-**Paper Goals**: How can supervision noise arising from teacher sampling variance be modeled and mitigated, particularly in video understanding scenarios with a mixture of closed-ended and open-ended tasks?
+**Goal**: How can supervision noise arising from teacher sampling variance be modeled and mitigated, particularly in video understanding scenarios with a mixture of closed-ended and open-ended tasks?
 
-**Starting Point**: Maintain a pool of $K$ teacher responses per input and apply task-type-specific quality matching strategies, complemented by an online discriminator for distribution-level supervision.
+**Key Insight**: Maintain a pool of $K$ teacher responses per input and apply task-type-specific quality matching strategies, complemented by an online discriminator for distribution-level supervision.
 
 **Core Idea**: Replace single-sample supervision with a multi-sample teacher pool and task-adaptive matching (GT-weighted for closed-ended tasks, uniform for open-ended tasks), and leverage an online discriminator to prevent reward hacking associated with static reward models.
 

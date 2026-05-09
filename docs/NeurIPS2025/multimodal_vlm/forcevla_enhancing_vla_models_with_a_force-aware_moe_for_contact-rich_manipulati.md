@@ -28,15 +28,15 @@ This paper proposes ForceVLA, which introduces 6-axis force/torque sensing as a 
 
 ## Background & Motivation
 
-**State of the Field**: VLA (Vision-Language-Action) models such as OpenVLA and π₀ have achieved generalizable robot manipulation through large-scale multimodal pretraining, demonstrating strong semantic understanding and zero-shot generalization.
+**Background**: VLA (Vision-Language-Action) models such as OpenVLA and π₀ have achieved generalizable robot manipulation through large-scale multimodal pretraining, demonstrating strong semantic understanding and zero-shot generalization.
 
 **Limitations of Prior Work**: VLA models rely heavily on visual and language cues while neglecting force perception, which is critical for contact-rich tasks such as insertion, tool use, and assembly. Vision-only policies are prone to failure under occlusion or poor visual conditions. Moreover, force requirements vary across task phases (grasping → insertion → surface contact each demands different force control), yet existing methods lack mechanisms to perceive and adapt to such dynamic changes.
 
-**Root Cause**: The central challenge is how to effectively integrate force signals into VLA systems so that the model can dynamically adjust manipulation strategies based on haptic feedback, rather than naively concatenating force signals to the input—experiments show that simple concatenation even degrades π₀-fast performance from 31% to 14.2%.
+**Key Challenge**: The central challenge is how to effectively integrate force signals into VLA systems so that the model can dynamically adjust manipulation strategies based on haptic feedback, rather than naively concatenating force signals to the input—experiments show that simple concatenation even degrades π₀-fast performance from 31% to 14.2%.
 
-**Paper Goals**: To design a force-aware fusion mechanism that enables VLA models to perform context-aware action generation based on real-time force feedback in contact-rich tasks.
+**Goal**: To design a force-aware fusion mechanism that enables VLA models to perform context-aware action generation based on real-time force feedback in contact-rich tasks.
 
-**Starting Point**: 6D external force should be treated as a first-class modality and formally integrated into the action expert module to enable phase-aware action generation driven by force feedback. The key insight is that force signals should be introduced after VLM encoding (preserving pretrained representations) and fused adaptively through a MoE architecture.
+**Key Insight**: 6D external force should be treated as a first-class modality and formally integrated into the action expert module to enable phase-aware action generation driven by force feedback. The key insight is that force signals should be introduced after VLM encoding (preserving pretrained representations) and fused adaptively through a MoE architecture.
 
 **Core Idea**: Employ a Mixture-of-Experts to dynamically fuse force, visual, and language modalities after VLM encoding, enabling action generation that is aware of contact dynamics.
 

@@ -29,7 +29,7 @@ This work constructs VTON-QBench (62,688 try-on images, 13,838 qualified annotat
 
 ## Background & Motivation
 
-**State of the Field**: Virtual try-on (VTON) is increasingly important in fashion e-commerce, with the synthesis of wearing results from a person image and a garment image as the core task. Try-on quality has continuously improved from GANs to U-Net diffusion models and DiT architectures.
+**Background**: Virtual try-on (VTON) is increasingly important in fashion e-commerce, with the synthesis of wearing results from a person image and a garment image as the core task. Try-on quality has continuously improved from GANs to U-Net diffusion models and DiT architectures.
 
 **Limitations of Prior Work**:
 
@@ -37,11 +37,11 @@ This work constructs VTON-QBench (62,688 try-on images, 13,838 qualified annotat
 2. FID/KID measure only dataset-level distributional similarity and cannot reflect single-image quality.
 3. Existing VTON-specific evaluation methods (VTONQA, VTBench, VTON-VLLM) either operate on small datasets (748 pairs), lack publicly available implementations, or are not validated at scale with human annotations.
 
-**Root Cause**: Single-image-level, reference-free quality assessment aligned with human perception is required, yet no existing tool satisfies all three criteria simultaneously.
+**Key Challenge**: Single-image-level, reference-free quality assessment aligned with human perception is required, yet no existing tool satisfies all three criteria simultaneously.
 
-**Paper Goals**: Establish a large-scale human-annotated benchmark and train a reference-free quality prediction model.
+**Goal**: Establish a large-scale human-annotated benchmark and train a reference-free quality prediction model.
 
-**Starting Point**: Try-on quality fundamentally involves verifying two aspects—(1) whether the garment is faithfully transferred, and (2) whether non-target regions are preserved—naturally necessitating cross-image interaction modeling.
+**Key Insight**: Try-on quality fundamentally involves verifying two aspects—(1) whether the garment is faithfully transferred, and (2) whether non-target regions are preserved—naturally necessitating cross-image interaction modeling.
 
 **Core Idea**: Construct a large-scale human-annotated dataset and explicitly model the consistency between the try-on result and the garment/person images via asymmetric cross-attention.
 

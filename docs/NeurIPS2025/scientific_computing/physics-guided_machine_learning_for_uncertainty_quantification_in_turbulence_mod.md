@@ -30,13 +30,13 @@ This paper proposes a hybrid ML–EPM framework that employs a lightweight CNN t
 
 ## Background & Motivation
 
-**State of the Field**: Turbulence is the dominant mechanism for momentum, heat, and mass transfer in natural and engineering systems. Direct numerical simulation (DNS) is computationally intractable for high-Reynolds-number flows, so engineering practice relies on turbulence models (e.g., k-ε, k-ω eddy-viscosity models) to approximate the effects of unresolved scales.
+**Background**: Turbulence is the dominant mechanism for momentum, heat, and mass transfer in natural and engineering systems. Direct numerical simulation (DNS) is computationally intractable for high-Reynolds-number flows, so engineering practice relies on turbulence models (e.g., k-ε, k-ω eddy-viscosity models) to approximate the effects of unresolved scales.
 
 **Limitations of Prior Work**: The Reynolds-averaging procedure introduces an unknown Reynolds stress tensor. Turbulence models close the governing equations through empirical constitutive relations, but these assumptions (e.g., the Boussinesq hypothesis) break down significantly in complex flows involving curvature, adverse pressure gradients, and separation, introducing substantial epistemic uncertainty.
 
-**Root Cause**: Deterministic CFD provides only a single prediction that may carry large errors. Uncertainty quantification (UQ) yields probabilistic predictions, which are critical for estimating safety margins in engineering design and for distinguishing physical phenomena from model artifacts in scientific research. The EPM, the de facto standard for turbulence model UQ, explores model uncertainty by applying physically constrained perturbations to the eigenvalues, eigenvectors, and magnitude of the Reynolds stress ellipsoid. However, EPM determines maximum allowable perturbations purely from physical principles, leading to overly wide uncertainty bounds and imprecise calibration.
+**Key Challenge**: Deterministic CFD provides only a single prediction that may carry large errors. Uncertainty quantification (UQ) yields probabilistic predictions, which are critical for estimating safety margins in engineering design and for distinguishing physical phenomena from model artifacts in scientific research. The EPM, the de facto standard for turbulence model UQ, explores model uncertainty by applying physically constrained perturbations to the eigenvalues, eigenvectors, and magnitude of the Reynolds stress ellipsoid. However, EPM determines maximum allowable perturbations purely from physical principles, leading to overly wide uncertainty bounds and imprecise calibration.
 
-**Paper Goals**: Different flow configurations and different spatial regions within the same flow exhibit varying magnitudes of turbulence model error. EPM requires a mechanism to modulate perturbation magnitude according to local flow conditions—a capability that physical principles alone cannot provide. Neural networks can learn error mappings from paired high-fidelity (DNS) and turbulence model data, enabling a hybrid framework in which physics governs *how* to perturb and ML governs *how much* to perturb.
+**Goal**: Different flow configurations and different spatial regions within the same flow exhibit varying magnitudes of turbulence model error. EPM requires a mechanism to modulate perturbation magnitude according to local flow conditions—a capability that physical principles alone cannot provide. Neural networks can learn error mappings from paired high-fidelity (DNS) and turbulence model data, enabling a hybrid framework in which physics governs *how* to perturb and ML governs *how much* to perturb.
 
 ## Method
 
@@ -120,7 +120,7 @@ The hybrid ML–EPM framework operates on two levels. At the physics level, EPM 
 - **Original EPM framework** (Iaccarino et al., Mishra et al.): A purely physics-based method; the present work introduces ML-based modulation on top of this foundation.
 - **Heyse et al.**: An earlier exploration of ML within EPM; this paper further simplifies and validates the CNN approach.
 - **Parish & Duraisamy (field-inversion)**: A purely data-driven field-inversion approach achieving comparable error reduction but lacking physical interpretability.
-- **Starting Point**: The physics+ML hybrid paradigm has broad applicability—any scientific computing problem with a physical model requiring calibration can potentially adopt a similar data-driven correction strategy.
+- **Key Insight**: The physics+ML hybrid paradigm has broad applicability—any scientific computing problem with a physical model requiring calibration can potentially adopt a similar data-driven correction strategy.
 
 ## Rating
 

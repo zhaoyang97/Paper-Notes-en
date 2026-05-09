@@ -29,15 +29,15 @@ CAT replaces the $N \times N$ attention matrix in standard self-attention with a
 
 ## Background & Motivation
 
-**State of the Field**: The standard self-attention mechanism in Transformers has $O(N^2)$ complexity, limiting scalability for long-sequence tasks. Existing efficient attention approaches follow two main directions: (1) Linear Transformers (e.g., Performer) approximate softmax with kernel functions, reducing complexity to $O(N)$ but sacrificing the softmax structure at the cost of training instability; (2) sparse attention methods (e.g., BigBird, Longformer) apply softmax only over local token subsets, losing global context coverage.
+**Background**: The standard self-attention mechanism in Transformers has $O(N^2)$ complexity, limiting scalability for long-sequence tasks. Existing efficient attention approaches follow two main directions: (1) Linear Transformers (e.g., Performer) approximate softmax with kernel functions, reducing complexity to $O(N)$ but sacrificing the softmax structure at the cost of training instability; (2) sparse attention methods (e.g., BigBird, Longformer) apply softmax only over local token subsets, losing global context coverage.
 
 **Limitations of Prior Work**: Kernel approximations in Linear Transformers frequently cause numerical instability and accuracy degradation. Sparse methods require careful tuning of block sizes and sparsity patterns, with re-tuning needed across different sequence lengths. SSM-based methods such as Mamba abandon the attention mechanism entirely, making them incompatible with existing Transformer training stacks and inference optimizations (FlashAttention, KV Cache).
 
-**Root Cause**: All existing methods trade off between reducing complexity and preserving the representational capacity and compatibility of softmax attention — either abandoning softmax for efficiency or retaining softmax but introducing sequence-length-dependent hyperparameters.
+**Key Challenge**: All existing methods trade off between reducing complexity and preserving the representational capacity and compatibility of softmax attention — either abandoning softmax for efficiency or retaining softmax but introducing sequence-length-dependent hyperparameters.
 
-**Paper Goals**: To find an approach that strictly preserves global softmax row normalization (mathematically consistent with standard attention), achieves sub-$O(N^2)$ computational complexity, and introduces no additional hyperparameters.
+**Goal**: To find an approach that strictly preserves global softmax row normalization (mathematically consistent with standard attention), achieves sub-$O(N^2)$ computational complexity, and introduces no additional hyperparameters.
 
-**Starting Point**: The authors observe that each row of the attention matrix is essentially a weighted aggregation over all tokens, and that circulant matrices naturally satisfy the structure where "each row is a cyclic shift of the same weight vector" — with circulant matrix-vector multiplication computable via FFT in $O(N \log N)$.
+**Key Insight**: The authors observe that each row of the attention matrix is essentially a weighted aggregation over all tokens, and that circulant matrices naturally satisfy the structure where "each row is a cyclic shift of the same weight vector" — with circulant matrix-vector multiplication computable via FFT in $O(N \log N)$.
 
 **Core Idea**: Replace the $N \times N$ attention matrix produced by $QK^\top$ with a circulant matrix derived from a single vector passed through softmax, and leverage FFT to achieve sub-quadratic global attention.
 

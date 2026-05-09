@@ -29,15 +29,15 @@ This paper proposes a causal inference-inspired multi-modal image fusion framewo
 
 ## Background & Motivation
 
-1. **State of the Field**: Multi-modal image fusion (MMIF) integrates complementary information from different modalities into a unified representation. Infrared-visible image fusion (IVIF) is the most representative sub-task, fusing thermal semantics from infrared and texture details from visible light. Current SOTA methods employ complex architectures (dual-stream CNNs, Transformer-based global attention, diffusion models) to model cross-modal relationships.
+1. **Background**: Multi-modal image fusion (MMIF) integrates complementary information from different modalities into a unified representation. Infrared-visible image fusion (IVIF) is the most representative sub-task, fusing thermal semantics from infrared and texture details from visible light. Current SOTA methods employ complex architectures (dual-stream CNNs, Transformer-based global attention, diffusion models) to model cross-modal relationships.
 
 2. **Limitations of Prior Work**: All existing methods share a fundamental limitation—they learn from observational data without distinguishing genuine complementary relationships from spurious statistical regularities. When thermal signals systematically co-occur with specific visible patterns in the training set, models capture these statistical associations rather than understanding whether they reflect meaningful dependencies. This leads to feature selection based on co-occurrence frequency rather than actual contribution to fusion quality.
 
-3. **Root Cause**: Correlation $\neq$ causation. Models trained solely on input-output pairs cannot determine whether observed inter-modal correlations are causal or coincidental. According to Pearl's causal hierarchy, current MMIF methods operate entirely at the "association" level, lacking the reasoning capabilities of the "intervention" and "counterfactual" levels.
+3. **Key Challenge**: Correlation $\neq$ causation. Models trained solely on input-output pairs cannot determine whether observed inter-modal correlations are causal or coincidental. According to Pearl's causal hierarchy, current MMIF methods operate entirely at the "association" level, lacking the reasoning capabilities of the "intervention" and "counterfactual" levels.
 
-4. **Paper Goals**: How to design principled intervention strategies to probe genuine inter-modal dependencies, and learn fusion features that remain stable across intervention patterns, thereby overcoming the fragility caused by spurious correlations?
+4. **Goal**: How to design principled intervention strategies to probe genuine inter-modal dependencies, and learn fusion features that remain stable across intervention patterns, thereby overcoming the fragility caused by spurious correlations?
 
-5. **Starting Point**: Inspired by Pearl's causal hierarchy, three complementary structured perturbation strategies are designed, each testing a different aspect of modal relationships. The core hypothesis is that features truly important for fusion should maintain their importance across different intervention patterns, while spurious correlations will collapse under perturbation.
+5. **Key Insight**: Inspired by Pearl's causal hierarchy, three complementary structured perturbation strategies are designed, each testing a different aspect of modal relationships. The core hypothesis is that features truly important for fusion should maintain their importance across different intervention patterns, while spurious correlations will collapse under perturbation.
 
 6. **Core Idea**: Replace "passive observation + statistical fitting" with "active perturbation + stability selection"—systematically intervene on inputs to discover features that are invariant across interventions, serving as reliable bases for fusion decisions.
 

@@ -29,15 +29,15 @@ This paper proposes PEPSY, a framework that learns client-side embedding control
 
 ## Background & Motivation
 
-**State of the Field**: In multimodal federated learning (MMFL), multiple clients observe different subsets of modalities and collaboratively train a shared model. Recent methods include FedMSplit, MIFL, FedInMM, and FedMAC.
+**Background**: In multimodal federated learning (MMFL), multiple clients observe different subsets of modalities and collaboratively train a shared model. Recent methods include FedMSplit, MIFL, FedInMM, and FedMAC.
 
 **Limitations of Prior Work**: In practice, two types of missing data events arise: (1) clients possess only a subset of modalities (e.g., one device captures audio, another captures physiological signals); and (2) features within each modality are partially missing (e.g., due to sensor failure). Existing methods address only one type of missingness and cannot handle both simultaneously.
 
-**Root Cause**: When local models are optimized on different feature subsets, incompatible representation spaces emerge. Aggregating without alignment leads to information collapse or degeneration. The server cannot observe training data, and clients cannot fully interpret the globally aggregated representations.
+**Key Challenge**: When local models are optimized on different feature subsets, incompatible representation spaces emerge. Aggregating without alignment leads to information collapse or degeneration. The server cannot observe training data, and clients cannot fully interpret the globally aggregated representations.
 
-**Paper Goals**: Design a mechanism to capture and convey the missing-pattern characteristics of each client's local data, enabling the shared model to adapt to each client's specific missingness configuration.
+**Goal**: Design a mechanism to capture and convey the missing-pattern characteristics of each client's local data, enabling the shared model to adapt to each client's specific missingness configuration.
 
-**Starting Point**: Encode missing-pattern characteristics as a set of learnable embedding controls, serving as reconfiguration signals to align global representations with local context.
+**Key Insight**: Encode missing-pattern characteristics as a set of learnable embedding controls, serving as reconfiguration signals to align global representations with local context.
 
 **Core Idea**: Learn a data-missing profile comprising multiple embedding controls to reconfigure biased representations into complete-data features—clients with similar missing patterns can share aggregated embedding controls.
 

@@ -29,15 +29,15 @@ This paper proposes Time-Scale Augmented Pretraining (TSAP), a strategy that int
 
 ## Background & Motivation
 
-**State of the Field**: Building general-purpose representations of neural time series is a fundamental goal in neuroscience and brain-computer interface (BCI) research. High-fidelity neural recordings such as intracranial EEG (iEEG) capture complex activity patterns across multiple brain regions, yet modeling them remains highly challenging due to inter-subject and inter-session variability and limited dataset scale.
+**Background**: Building general-purpose representations of neural time series is a fundamental goal in neuroscience and brain-computer interface (BCI) research. High-fidelity neural recordings such as intracranial EEG (iEEG) capture complex activity patterns across multiple brain regions, yet modeling them remains highly challenging due to inter-subject and inter-session variability and limited dataset scale.
 
 **Limitations of Prior Work**: Recent population-level pretraining methods (e.g., Population Transformer, PopT) learn spatially aggregated representations on top of frozen temporal encoders and achieve strong downstream decoding performance; however, these models are highly sensitive to preprocessing parameters—particularly time scale. Performance degrades substantially when the temporal window lengths used during pretraining differ from those used in downstream tasks.
 
-**Root Cause**: Neural recordings vary widely in duration across datasets and tasks (ranging from 1 to 5 seconds), yet existing models are pretrained on fixed temporal windows and cannot generalize to inputs of varying lengths.
+**Key Challenge**: Neural recordings vary widely in duration across datasets and tasks (ranging from 1 to 5 seconds), yet existing models are pretrained on fixed temporal windows and cannot generalize to inputs of varying lengths.
 
-**Paper Goals**: To quantify the performance degradation caused by time-scale mismatch and to propose a strategy that enables models to achieve optimal performance across arbitrary input time scales.
+**Goal**: To quantify the performance degradation caused by time-scale mismatch and to propose a strategy that enables models to achieve optimal performance across arbitrary input time scales.
 
-**Starting Point**: A data augmentation perspective is adopted, exposing the model to data across multiple temporal window lengths during pretraining.
+**Key Insight**: A data augmentation perspective is adopted, exposing the model to data across multiple temporal window lengths during pretraining.
 
 **Core Idea**: By mixing iEEG segments of multiple time scales during pretraining (TSAP), PopT is trained to learn time-scale invariant population-level representations.
 

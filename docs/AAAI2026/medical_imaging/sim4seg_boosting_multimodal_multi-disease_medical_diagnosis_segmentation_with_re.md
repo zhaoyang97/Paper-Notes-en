@@ -29,11 +29,11 @@ This paper introduces the Medical Diagnosis Segmentation (MDS) task along with t
 
 ## Background & Motivation
 
-1. **State of the Field**: Medical image segmentation models perform well on specific tasks but lack the ability to provide interpretable diagnostic outputs. Reasoning segmentation has recently been proposed to integrate textual reasoning with visual segmentation.
+1. **Background**: Medical image segmentation models perform well on specific tasks but lack the ability to provide interpretable diagnostic outputs. Reasoning segmentation has recently been proposed to integrate textual reasoning with visual segmentation.
 2. **Limitations of Prior Work**: (a) Existing medical LVLMs focus either on segmentation or textual diagnosis, lacking a unified model; (b) general-purpose reasoning segmentation methods (e.g., LISA) are not optimized for medical images and yield insufficient segmentation accuracy; (c) no unified medical dataset exists that contains both segmentation masks and diagnostic chain-of-thought annotations.
-3. **Root Cause**: Medical diagnosis requires simultaneously producing **pixel-level segmentation results** and **interpretable diagnostic reasoning**, yet these two tasks remain decoupled in existing frameworks.
-4. **Paper Goals**: To formally define the MDS task and construct a corresponding dataset, and to design a unified framework that jointly outputs segmentation masks and diagnostic results.
-5. **Starting Point**: The similarity between image token embeddings and special token embeddings in the last hidden layer of an LVLM is exploited to generate region-aware mask prompts for precise SAM-based segmentation.
+3. **Key Challenge**: Medical diagnosis requires simultaneously producing **pixel-level segmentation results** and **interpretable diagnostic reasoning**, yet these two tasks remain decoupled in existing frameworks.
+4. **Goal**: To formally define the MDS task and construct a corresponding dataset, and to design a unified framework that jointly outputs segmentation masks and diagnostic results.
+5. **Key Insight**: The similarity between image token embeddings and special token embeddings in the last hidden layer of an LVLM is exploited to generate region-aware mask prompts for precise SAM-based segmentation.
 6. **Core Idea**: The hidden states of an LVLM naturally encode correspondences between textually described targets and image regions; leveraging such similarity to generate mask prompts provides richer spatial information than relying solely on special token embeddings.
 
 ## Method

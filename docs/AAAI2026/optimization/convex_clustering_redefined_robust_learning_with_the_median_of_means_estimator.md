@@ -36,7 +36,7 @@ Clustering is a fundamental task in unsupervised learning, yet traditional metho
 
 **Robustness Gap**: Existing convex clustering methods (e.g., Robust Convex Clustering) rely on k-NN combined with a Gaussian kernel for weight assignment; arbitrary selection of bandwidth $\phi$ can lead to cluster collapse or the formation of spurious clusters.
 
-**Root Cause**: The regularization term in convex clustering encourages merging of adjacent centroids, but in noisy or outlier-contaminated data, the neighborhood structure induced by outliers misleads the fusion process.
+**Key Challenge**: The regularization term in convex clustering encourages merging of adjacent centroids, but in noisy or outlier-contaminated data, the neighborhood structure induced by outliers misleads the fusion process.
 
 **Core Idea**: Exploit the inherent robustness of the MoM estimator — randomly partition the data into $L$ subsets and take the median of per-subset losses rather than their mean, so that outliers corrupt only a minority of subsets and are automatically suppressed by the median operation. This is further combined with a truncated distance $\min(\mu, \|u_i - u_j\|^2)$ to limit the fusion influence of distant point pairs.
 

@@ -29,11 +29,11 @@ LLM-driven embodied agents are instantiated to "live" in simulated smart home en
 
 ### State of the Field
 
-**State of the Field**: Human Activity Recognition (HAR) in smart homes relies on ambient sensors (motion, door, appliance activation, etc.) to monitor daily activities, playing a critical role in healthcare and elder care. However, HAR model development is constrained by **the scarcity of large-scale annotated sensor data** — the diversity of home layouts, sensor configurations, and resident behavioral patterns makes data collection prohibitively costly and raises privacy concerns. Existing synthetic data generation methods focus primarily on wearable sensors (e.g., IMU data generated from video/audio), with insufficient support for ambient sensors. While simulation platforms such as VirtualHome can model household activities, they lack ambient sensor simulation capabilities and cannot directly produce sensor-level data.
+**Background**: Human Activity Recognition (HAR) in smart homes relies on ambient sensors (motion, door, appliance activation, etc.) to monitor daily activities, playing a critical role in healthcare and elder care. However, HAR model development is constrained by **the scarcity of large-scale annotated sensor data** — the diversity of home layouts, sensor configurations, and resident behavioral patterns makes data collection prohibitively costly and raises privacy concerns. Existing synthetic data generation methods focus primarily on wearable sensors (e.g., IMU data generated from video/audio), with insufficient support for ambient sensors. While simulation platforms such as VirtualHome can model household activities, they lack ambient sensor simulation capabilities and cannot directly produce sensor-level data.
 
 ### Approach
 
-**Paper Goals**: How can diverse, privacy-preserving ambient sensor data be automatically generated without real-world data collection, so as to alleviate data scarcity in HAR model training? Key challenges include: (1) generating sufficient behavioral diversity to cover different populations and scenarios; (2) translating high-level activity descriptions into fine-grained actions executable by the simulator; and (3) extracting realistic sensor signals from the simulator.
+**Goal**: How can diverse, privacy-preserving ambient sensor data be automatically generated without real-world data collection, so as to alleviate data scarcity in HAR model training? Key challenges include: (1) generating sufficient behavioral diversity to cover different populations and scenarios; (2) translating high-level activity descriptions into fine-grained actions executable by the simulator; and (3) extracting realistic sensor signals from the simulator.
 
 ## Method
 

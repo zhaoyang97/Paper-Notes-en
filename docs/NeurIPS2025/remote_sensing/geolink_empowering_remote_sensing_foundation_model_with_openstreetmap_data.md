@@ -29,15 +29,15 @@ GeoLink directly integrates OpenStreetMap vector data into remote sensing founda
 
 ## Background & Motivation
 
-**State of the Field**: RS foundation models have advanced in multi-scale, multi-temporal, and multi-sensor directions, yet the integration of ground-level geospatial data remains insufficient.
+**Background**: RS foundation models have advanced in multi-scale, multi-temporal, and multi-sensor directions, yet the integration of ground-level geospatial data remains insufficient.
 
 **Limitations of Prior Work**: Existing methods that incorporate OSM into RS tasks mostly adopt indirect strategies (converting to labels, knowledge graphs, or synthetic text), which are labor-intensive, task-specific, and discard spatial information.
 
-**Root Cause**: A substantial modality gap exists between RS imagery and OSM data (differing data structures, content, and spatial granularity), yet the location semantics, structured knowledge, and socioeconomic information provided by OSM are inaccessible to purely visual analysis.
+**Key Challenge**: A substantial modality gap exists between RS imagery and OSM data (differing data structures, content, and spatial granularity), yet the location semantics, structured knowledge, and socioeconomic information provided by OSM are inaccessible to purely visual analysis.
 
-**Paper Goals**: Design an explicitly geospatial approach that directly leverages raw OSM vector elements to inject geographic context into RS FMs.
+**Goal**: Design an explicitly geospatial approach that directly leverages raw OSM vector elements to inject geographic context into RS FMs.
 
-**Starting Point**: Model OSM as a heterogeneous graph, encode it via GNN, and enable multi-granularity interaction with an RS ViT encoder.
+**Key Insight**: Model OSM as a heterogeneous graph, encode it via GNN, and enable multi-granularity interaction with an RS ViT encoder.
 
 **Core Idea**: Use the heterogeneous graph structure of OSM as multi-granularity supervision signals for RS self-supervised pretraining, while supporting mask-efficient training and multimodal downstream fusion.
 

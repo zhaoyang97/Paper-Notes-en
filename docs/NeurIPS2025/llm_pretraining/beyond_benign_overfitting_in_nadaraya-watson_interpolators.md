@@ -28,15 +28,15 @@ content_hash: c4b90492025e0b3d
 By tuning a single bandwidth parameter $\beta$ in the Nadaraya-Watson interpolator, this paper precisely characterizes the complete phase transition spectrum from catastrophic overfitting ($\beta < d$) → benign overfitting ($\beta = d$) → tempered overfitting ($\beta > d$), demonstrating that overestimating the intrinsic dimensionality of data is safer than underestimating it.
 
 ## Background & Motivation
-**State of the Field**: The phenomenon of benign overfitting—where overparameterized models interpolate noisy training data yet still generalize—has attracted extensive research. Classical analyses focus on consistency, i.e., whether the test error converges asymptotically to zero.
+**Background**: The phenomenon of benign overfitting—where overparameterized models interpolate noisy training data yet still generalize—has attracted extensive research. Classical analyses focus on consistency, i.e., whether the test error converges asymptotically to zero.
 
 **Limitations of Prior Work**: Mallinar et al. (2022) proposed a finer-grained taxonomy: benign, tempered, and catastrophic overfitting. However, most analyses only distinguish "consistent vs. inconsistent" interpolators, lacking precise characterization of how inconsistent interpolators actually behave.
 
-**Root Cause**: For the classical Nadaraya-Watson (NW) interpolator, Devroye et al. (1998) established benign overfitting at $\beta = d$, but the behavior for $\beta \neq d$ remains entirely unknown—whether it is tempered or catastrophic.
+**Key Challenge**: For the classical Nadaraya-Watson (NW) interpolator, Devroye et al. (1998) established benign overfitting at $\beta = d$, but the behavior for $\beta \neq d$ remains entirely unknown—whether it is tempered or catastrophic.
 
-**Paper Goals**: To fully characterize the type of overfitting exhibited by the NW interpolator across all values of $\beta$, providing exact phase transition conditions.
+**Goal**: To fully characterize the type of overfitting exhibited by the NW interpolator across all values of $\beta$, providing exact phase transition conditions.
 
-**Starting Point**: The NW interpolator has a single hyperparameter $\beta$ (controlling the locality/globality of the kernel), making it an ideal object for studying overfitting phase transitions—simple enough to admit precise theory, yet rich enough to exhibit all three overfitting behaviors.
+**Key Insight**: The NW interpolator has a single hyperparameter $\beta$ (controlling the locality/globality of the kernel), making it an ideal object for studying overfitting phase transitions—simple enough to admit precise theory, yet rich enough to exhibit all three overfitting behaviors.
 
 **Core Idea**: By analyzing the locality/globality of the distance weights $\|\mathbf{x} - \mathbf{x}_i\|^{-\beta}$ in the NW interpolator, the paper proves that the relationship between $\beta$ and the data dimensionality $d$ fully determines the type of overfitting.
 

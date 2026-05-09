@@ -40,7 +40,7 @@ MLLMs are increasingly applied to embodied intelligence, requiring spatial under
 
 **(2) Embodiment Constraint Gap**: Models trained on web images and videos ignore robot physical constraints, producing plans that are theoretically valid but physically unexecutable (e.g., infeasible grasp poses, workspace violations, kinematic infeasibility).
 
-**Starting Point**: (1) A gated router dynamically determines whether 3D information is needed, enabling on-demand injection; (2) TE-GRPO training teaches the model to respect physical constraints.
+**Key Insight**: (1) A gated router dynamically determines whether 3D information is needed, enabling on-demand injection; (2) TE-GRPO training teaches the model to respect physical constraints.
 
 ## Method
 

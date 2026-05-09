@@ -29,7 +29,7 @@ This paper proposes A3Point (Adaptive Augmentation-Aware Latent Learning), a tra
 
 ## Background & Motivation
 
-**State of the Field**: LiDAR point cloud semantic segmentation is a core 3D perception task in autonomous driving, requiring precise per-point category prediction (vehicles, pedestrians, road, vegetation, etc.). Leading methods (Cylinder3D, MinkUNet, SPVCNN, etc.) achieve strong performance under normal weather conditions, but **adverse weather** (rain, fog, snow, wet surfaces) introduces severe distribution shifts in LiDAR point clouds through scattering, occlusion, and abnormal reflectance.
+**Background**: LiDAR point cloud semantic segmentation is a core 3D perception task in autonomous driving, requiring precise per-point category prediction (vehicles, pedestrians, road, vegetation, etc.). Leading methods (Cylinder3D, MinkUNet, SPVCNN, etc.) achieve strong performance under normal weather conditions, but **adverse weather** (rain, fog, snow, wet surfaces) introduces severe distribution shifts in LiDAR point clouds through scattering, occlusion, and abnormal reflectance.
 
 **Limitations of Prior Work**:
 - Augmentation-based methods (e.g., simulating raindrop scattering, adding fog noise) attempt to cover weather perturbations during training, but face a fundamental **mild-vs.-aggressive augmentation dilemma**:
@@ -38,9 +38,9 @@ This paper proposes A3Point (Adaptive Augmentation-Aware Latent Learning), a tra
 - Existing methods treat all augmentation intensities uniformly, unable to distinguish "model-inherent confusion" from "augmentation-induced erroneous semantics"
 - No mechanism exists for fine-grained perception of augmentation effects or adaptive adjustment
 
-**Root Cause**: Improving robustness requires stronger augmentation → stronger augmentation introduces semantic shift → semantic shift causes the model to learn incorrect information → robustness degrades. This cycle prevents existing methods from fully exploiting data augmentation for LiDAR segmentation robustness.
+**Key Challenge**: Improving robustness requires stronger augmentation → stronger augmentation introduces semantic shift → semantic shift causes the model to learn incorrect information → robustness degrades. This cycle prevents existing methods from fully exploiting data augmentation for LiDAR segmentation robustness.
 
-**Paper Goals**: The core insight is that two sources of "confusion" must be distinguished: semantic confusion arising from insufficient model capacity (which has learning value) and semantic shift introduced by over-aggressive augmentation (which should be avoided). Different perturbation levels require adaptive optimization strategies.
+**Goal**: The core insight is that two sources of "confusion" must be distinguished: semantic confusion arising from insufficient model capacity (which has learning value) and semantic shift introduced by over-aggressive augmentation (which should be avoided). Different perturbation levels require adaptive optimization strategies.
 
 ## Method
 

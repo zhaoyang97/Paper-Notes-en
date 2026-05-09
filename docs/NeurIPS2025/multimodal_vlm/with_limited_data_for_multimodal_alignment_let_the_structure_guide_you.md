@@ -36,7 +36,7 @@ Unimodal foundation models (LLMs, DINOv2, AlphaFold, etc.) have achieved remarka
 
 **Core Problem**: Can two frozen unimodal encoders be aligned into a shared space using only tens of thousands of paired samples (<1% of conventional data)?
 
-**Starting Point**: Preserve the rich neighborhood structure in the pre-trained representation space—which encodes relational information derived from millions or billions of samples—by using regularization to prevent excessive distortion during alignment, while selecting intermediate layers best suited for alignment rather than defaulting to the final layer.
+**Key Insight**: Preserve the rich neighborhood structure in the pre-trained representation space—which encodes relational information derived from millions or billions of samples—by using regularization to prevent excessive distortion during alignment, while selecting intermediate layers best suited for alignment rather than defaulting to the final layer.
 
 ## Method
 

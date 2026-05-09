@@ -28,11 +28,11 @@ This paper proposes MM-ReCoder, the first multimodal LLM with genuine self-corre
 
 ## Background & Motivation
 
-1. **State of the Field**: The Chart2Code task requires generating executable Python plotting code from chart images. Existing approaches primarily rely on SFT (e.g., ChartCoder trained on 160k chart–code pairs), with only a few works (e.g., ChartMaster) beginning to explore RL.
+1. **Background**: The Chart2Code task requires generating executable Python plotting code from chart images. Existing approaches primarily rely on SFT (e.g., ChartCoder trained on 160k chart–code pairs), with only a few works (e.g., ChartMaster) beginning to explore RL.
 2. **Limitations of Prior Work**: SFT methods do not interact with code execution environments, and thus cannot guarantee the executability or visual fidelity of generated code. Existing RL methods (e.g., ChartMaster) perform only single-pass generation without iterative self-correction.
-3. **Root Cause**: Human programming is inherently iterative (write → execute → inspect → revise), yet existing MLLMs generate code in a single pass. Experiments reveal that even large models such as Qwen3-VL-235B exhibit degraded code quality during self-correction on already-executable code (−0.26%).
-4. **Paper Goals**: Enable MLLMs to acquire genuine self-correction ability—not merely fixing execution errors, but also improving the visual quality of already-executable code.
-5. **Starting Point**: The authors find that the apparent "improvement" of existing models stems solely from making crashed code executable, rather than from genuine quality enhancement. Two-stage RL training is thus designed to address each aspect separately.
+3. **Key Challenge**: Human programming is inherently iterative (write → execute → inspect → revise), yet existing MLLMs generate code in a single pass. Experiments reveal that even large models such as Qwen3-VL-235B exhibit degraded code quality during self-correction on already-executable code (−0.26%).
+4. **Goal**: Enable MLLMs to acquire genuine self-correction ability—not merely fixing execution errors, but also improving the visual quality of already-executable code.
+5. **Key Insight**: The authors find that the apparent "improvement" of existing models stems solely from making crashed code executable, rather than from genuine quality enhancement. Two-stage RL training is thus designed to address each aspect separately.
 6. **Core Idea**: Employ a two-stage GRPO training pipeline—shared-first-turn optimization followed by full-trajectory optimization—to first acquire correction ability and then improve overall coding ability.
 
 ## Method

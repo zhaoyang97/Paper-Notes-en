@@ -29,15 +29,15 @@ This paper proposes HyMoERec, a hybrid mixture-of-experts architecture combining
 
 ## Background & Motivation
 
-**State of the Field**: Sequential recommendation aims to predict the next item of interest based on a user's historical interaction sequence. Transformer-based methods (e.g., SASRec, BERT4Rec) have achieved notable progress on this task, with self-attention layers and position-wise feed-forward networks (FFN) as core components.
+**Background**: Sequential recommendation aims to predict the next item of interest based on a user's historical interaction sequence. Transformer-based methods (e.g., SASRec, BERT4Rec) have achieved notable progress on this task, with self-attention layers and position-wise feed-forward networks (FFN) as core components.
 
 **Limitations of Prior Work**: The FFN layers in existing models apply identical parameters to all user interactions and all items, essentially treating every input uniformly. In practice, however: (1) user behavior patterns are highly heterogeneous—some users exhibit stable and focused preferences, while others are exploratory and variable; (2) item complexity is diverse—popular items and long-tail items have different representation requirements. A uniform FFN cannot simultaneously accommodate this diversity.
 
-**Root Cause**: Limited model capacity versus rich user/item diversity—a single FFN lacks sufficient expressive power to capture all types of behavioral patterns and item characteristics.
+**Key Challenge**: Limited model capacity versus rich user/item diversity—a single FFN lacks sufficient expressive power to capture all types of behavioral patterns and item characteristics.
 
-**Paper Goals**: Design a sequential recommendation architecture capable of adaptively handling different types of user behaviors and items.
+**Goal**: Design a sequential recommendation architecture capable of adaptively handling different types of user behaviors and items.
 
-**Starting Point**: Replace the uniform FFN with a Mixture-of-Experts (MoE) module, where different experts specialize in different behavioral patterns while shared experts retain the ability to capture universal patterns.
+**Key Insight**: Replace the uniform FFN with a Mixture-of-Experts (MoE) module, where different experts specialize in different behavioral patterns while shared experts retain the ability to capture universal patterns.
 
 **Core Idea**: A hybrid MoE architecture combining shared and specialized expert branches, employing a gating network to adaptively select and fuse expert outputs, thereby providing customized feature transformations for different user behaviors and items.
 

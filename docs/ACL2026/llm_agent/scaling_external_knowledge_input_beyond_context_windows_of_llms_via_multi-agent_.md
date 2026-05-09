@@ -29,15 +29,15 @@ This paper proposes ExtAgents, a multi-agent framework that addresses the perfor
 
 ## Background & Motivation
 
-**State of the Field**: With advances in post-training reasoning and information retrieval, LLMs can integrate increasingly large amounts of retrieved knowledge within their context windows to address complex tasks, where more knowledge generally yields better performance.
+**Background**: With advances in post-training reasoning and information retrieval, LLMs can integrate increasingly large amounts of retrieved knowledge within their context windows to address complex tasks, where more knowledge generally yields better performance.
 
 **Limitations of Prior Work**: When the volume of external knowledge exceeds the context window, direct truncation causes information loss; RAG suffers from ranking errors that may omit critical evidence; context compression discards subtle cues. Multi-agent distributed methods (e.g., LLM×MapReduce) represent an emerging paradigm, but experiments reveal that their performance degrades rather than improves as knowledge volume increases.
 
-**Root Cause**: Existing multi-agent orchestration suffers from two bottlenecks: (1) limited knowledge synchronization bandwidth, where each agent can only access messages from two neighbors, requiring multiple rounds to propagate global information; and (2) redundant reasoning context, where injecting all messages into the Reasoning Agent causes information overload.
+**Key Challenge**: Existing multi-agent orchestration suffers from two bottlenecks: (1) limited knowledge synchronization bandwidth, where each agent can only access messages from two neighbors, requiring multiple rounds to propagate global information; and (2) redundant reasoning context, where injecting all messages into the Reasoning Agent causes information overload.
 
-**Paper Goals**: To design a scalable multi-agent framework in which task performance continues to improve as external knowledge input grows, even when it exceeds the context window.
+**Goal**: To design a scalable multi-agent framework in which task performance continues to improve as external knowledge input grows, even when it exceeds the context window.
 
-**Starting Point**: Simplifying agent roles into two types (Seeking and Reasoning), and designing global synchronization and accumulative reasoning mechanisms to address each bottleneck separately.
+**Key Insight**: Simplifying agent roles into two types (Seeking and Reasoning), and designing global synchronization and accumulative reasoning mechanisms to address each bottleneck separately.
 
 **Core Idea**: Seeking Agents globally exchange and score chunk relevance (bandwidth = $N$); the Reasoning Agent performs accumulative reasoning by progressively incorporating top-$k$ knowledge across multiple rounds, avoiding one-shot information overload.
 

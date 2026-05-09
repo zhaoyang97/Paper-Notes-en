@@ -27,15 +27,15 @@ content_hash: 23f31106b1abe21e
 AGFT proposes an alignment-guided fine-tuning framework that enhances zero-shot adversarial robustness of VLMs while preserving the pre-trained cross-modal semantic structure, through text-guided adversarial training and distribution consistency calibration. The method achieves an average robust accuracy of 46.57% across 15 zero-shot benchmarks, surpassing the previous state of the art by 3.1 percentage points.
 
 ## Background & Motivation
-**State of the Field**: VLMs such as CLIP exhibit strong zero-shot capabilities but are highly vulnerable to adversarial perturbations (CLIP's zero-shot robust accuracy is only 6.24%).
+**Background**: VLMs such as CLIP exhibit strong zero-shot capabilities but are highly vulnerable to adversarial perturbations (CLIP's zero-shot robust accuracy is only 6.24%).
 
 **Limitations of Prior Work**:
 - Existing methods (TeCoA, GLADIATOR) adopt classification-guided adversarial fine-tuning, using hard-label supervision to push features toward target class clusters.
 - This paradigm **disrupts the pre-trained cross-modal alignment structure**, distorting fine-grained semantic correspondences between images and text, thereby degrading zero-shot generalization.
 
-**Root Cause**: Enhancing adversarial robustness requires modifying the visual feature space, yet such modifications destroy the cross-modal semantic structure upon which CLIP's generalization depends. How can a balance between "robustness" and "alignment" be achieved?
+**Key Challenge**: Enhancing adversarial robustness requires modifying the visual feature space, yet such modifications destroy the cross-modal semantic structure upon which CLIP's generalization depends. How can a balance between "robustness" and "alignment" be achieved?
 
-**Starting Point**: Rather than fine-tuning the VLM as a classifier, the paper preserves its nature as a cross-modal alignment model — using the original model's probabilistic predictions as soft supervision to guide adversarial features toward alignment with text embeddings.
+**Key Insight**: Rather than fine-tuning the VLM as a classifier, the paper preserves its nature as a cross-modal alignment model — using the original model's probabilistic predictions as soft supervision to guide adversarial features toward alignment with text embeddings.
 
 **Core Idea**: Replacing hard labels with soft alignment distributions, combined with temperature calibration to eliminate confidence-scale mismatch, yields adversarial training that preserves cross-modal structure.
 

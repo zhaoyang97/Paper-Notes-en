@@ -29,13 +29,13 @@ This paper reveals the fundamental reason for the superiority of masking diffusi
 
 ## Background & Motivation
 
-- **State of the Field**: Discrete diffusion models generate discrete data (text, image pixels, protein sequences) by progressively inverting a noisy Markov process, achieving state-of-the-art performance on tasks such as biological sequence design.
+- **Background**: Discrete diffusion models generate discrete data (text, image pixels, protein sequences) by progressively inverting a noisy Markov process, achieving state-of-the-art performance on tasks such as biological sequence design.
 
 - **Limitations of Prior Work**: A puzzling phenomenon persists: although structured forward processes (e.g., assigning higher transition probabilities to semantically similar tokens) should theoretically outperform simple uniform or masking processes, in practice the simplest masking diffusion consistently achieves the best results. Prior work has consequently abandoned forward process design in favor of improved sampling and scaling.
 
-- **Root Cause**: There is a fundamental difference between continuous and discrete Markov processes — discrete Markov processes evolve through discontinuous jumps at fixed rates. Masking diffusion is superior because it implicitly encodes the known jump-time distribution $p(S)$, requiring the model to learn only *where to jump* rather than simultaneously learning *when to jump*.
+- **Key Challenge**: There is a fundamental difference between continuous and discrete Markov processes — discrete Markov processes evolve through discontinuous jumps at fixed rates. Masking diffusion is superior because it implicitly encodes the known jump-time distribution $p(S)$, requiring the model to learn only *where to jump* rather than simultaneously learning *when to jump*.
 
-- **Paper Goals**: Empirical observations confirm this hypothesis: the reverse process of classical discrete diffusion models exhibits a detectable gap from the forward process in terms of *when* jumps occur, whereas masking diffusion does not suffer from this error.
+- **Goal**: Empirical observations confirm this hypothesis: the reverse process of classical discrete diffusion models exhibits a detectable gap from the forward process in terms of *when* jumps occur, whereas masking diffusion does not suffer from this error.
 
 ## Method
 

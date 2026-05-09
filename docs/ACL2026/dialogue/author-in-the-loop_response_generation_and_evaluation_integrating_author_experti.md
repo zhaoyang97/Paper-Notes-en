@@ -29,15 +29,15 @@ This paper reframes academic rebuttal generation as an "author-in-the-loop" task
 
 ## Background & Motivation
 
-**State of the Field**: Writing rebuttals is a critical and labor-intensive step in academic peer review. NLP-assisted automatic rebuttal generation (ARG) is an emerging yet underexplored research direction.
+**Background**: Writing rebuttals is a critical and labor-intensive step in academic peer review. NLP-assisted automatic rebuttal generation (ARG) is an emerging yet underexplored research direction.
 
 **Limitations of Prior Work**: (1) Existing ARG methods use only review comments as input, disregarding authors' domain expertise, proprietary information, and response strategies—yet many review concerns can only be addressed by the authors themselves (e.g., specific experimental design decisions, clarification of definitions). (2) No dataset provides fine-grained author signals—existing datasets lack sentence-level edit annotations, review–rebuttal paragraph alignments, or revision mappings. (3) Evaluation is limited to surface-level similarity metrics (ROUGE/BLEU), with no multidimensional assessment of controllability, input utilization, response quality, or discourse structure.
 
-**Root Cause**: Rebuttal writing inherently requires integrating author-exclusive signals (planned revisions, domain knowledge, response strategies), yet existing NLP methods treat it as a generic "review → rebuttal" text generation problem, producing responses that lack specificity and author-unique information.
+**Key Challenge**: Rebuttal writing inherently requires integrating author-exclusive signals (planned revisions, domain knowledge, response strategies), yet existing NLP methods treat it as a generic "review → rebuttal" text generation problem, producing responses that lack specificity and author-unique information.
 
-**Paper Goals**: (1) Formally define the "author-in-the-loop" ARG paradigm; (2) construct a large-scale triple-aligned dataset to support this paradigm; (3) provide a generation framework supporting flexible author input and multi-attribute control; (4) establish a comprehensive evaluation framework with 20+ metrics.
+**Goal**: (1) Formally define the "author-in-the-loop" ARG paradigm; (2) construct a large-scale triple-aligned dataset to support this paradigm; (3) provide a generation framework supporting flexible author input and multi-attribute control; (4) establish a comprehensive evaluation framework with 20+ metrics.
 
-**Starting Point**: Paper revisions serve as a proxy for author signals—in conference settings, rebuttals describe planned revisions, and actual edits in revised manuscripts can retrospectively proxy author intent and expertise.
+**Key Insight**: Paper revisions serve as a proxy for author signals—in conference settings, rebuttals describe planned revisions, and actual edits in revised manuscripts can retrospectively proxy author intent and expertise.
 
 **Core Idea**: Sentence-level edits extracted from paper revisions serve as proxies for author-exclusive information. By constructing a triple-aligned dataset of review–rebuttal–edit correspondences, ARG models can leverage authors' actual revision intent to generate higher-quality rebuttals.
 

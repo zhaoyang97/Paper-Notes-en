@@ -29,7 +29,7 @@ This paper proposes RDNet, which employs a region proportion-aware Proportion Gu
 
 ## Background & Motivation
 
-**State of the Field**: Optical Remote Sensing Image Salient Object Detection (ORSI-SOD) has increasingly relied on CNN/Transformer-based multi-level feature extraction and fusion pipelines, achieving continuous performance gains on standard benchmarks.
+**Background**: Optical Remote Sensing Image Salient Object Detection (ORSI-SOD) has increasingly relied on CNN/Transformer-based multi-level feature extraction and fusion pipelines, achieving continuous performance gains on standard benchmarks.
 
 **Limitations of Prior Work**:
 
@@ -37,11 +37,11 @@ This paper proposes RDNet, which employs a region proportion-aware Proportion Gu
 2. Full-resolution self-attention for cross-layer feature interaction incurs high computational cost, and directly mixing high- and low-frequency information dilutes object features.
 3. CNN backbones lack the capacity for global context modeling and long-range dependency capture.
 
-**Root Cause**: Object scale is inherently uncertain, yet feature extraction strategies remain static — without knowing "how large the object is," it is impossible to select "how wide a perspective to adopt."
+**Key Challenge**: Object scale is inherently uncertain, yet feature extraction strategies remain static — without knowing "how large the object is," it is impossible to select "how wide a perspective to adopt."
 
-**Paper Goals**: Adaptively select appropriate feature extraction strategies according to the proportion of the image area occupied by the salient object, while performing multi-level feature interaction efficiently.
+**Goal**: Adaptively select appropriate feature extraction strategies according to the proportion of the image area occupied by the salient object, while performing multi-level feature interaction efficiently.
 
-**Starting Point**: Estimate the object region proportion from high-level features, then use this estimate to guide dynamic kernel selection in low-level feature extraction; perform mid-level feature interaction via frequency decomposition in the wavelet domain for dimensionality reduction.
+**Key Insight**: Estimate the object region proportion from high-level features, then use this estimate to guide dynamic kernel selection in low-level feature extraction; perform mid-level feature interaction via frequency decomposition in the wavelet domain for dimensionality reduction.
 
 **Core Idea**: Determine approximately how large the object is before deciding how to perceive it — region proportion-guided dynamic convolutional kernel selection.
 

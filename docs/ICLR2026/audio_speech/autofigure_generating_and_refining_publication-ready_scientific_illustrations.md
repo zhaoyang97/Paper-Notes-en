@@ -38,9 +38,9 @@ High-quality scientific illustrations are essential for conveying complex scient
    - Code-based methods such as AutoTikZ emphasize structural and geometric correctness but exhibit poor aesthetic expressiveness.
    - End-to-end text-to-image (T2I) models such as DALL-E and GPT-Image can produce visually appealing images but fail to maintain **structural fidelity** — logical relationships and hierarchical structures present in long scientific texts are frequently lost.
 
-**Root Cause**: A trade-off between structural accuracy and visual aesthetics. Code-based methods produce well-structured but unattractive outputs; generative models produce attractive but structurally incoherent outputs.
+**Key Challenge**: A trade-off between structural accuracy and visual aesthetics. Code-based methods produce well-structured but unattractive outputs; generative models produce attractive but structurally incoherent outputs.
 
-**Starting Point**: Decouple these two requirements — first employ an LLM for structural reasoning and layout planning, then use a generative model for aesthetic rendering.
+**Key Insight**: Decouple these two requirements — first employ an LLM for structural reasoning and layout planning, then use a generative model for aesthetic rendering.
 
 ## Method
 

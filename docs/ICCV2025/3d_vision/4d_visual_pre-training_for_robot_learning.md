@@ -27,10 +27,10 @@ content_hash: 01bf652970155244
 FVP proposes a visual pre-training framework based on 4D (3D spatial + temporal) point cloud prediction. By formulating the pre-training objective as "next-frame point cloud prediction" and implementing it via a diffusion model, FVP significantly improves the success rate of multiple 3D imitation learning methods on real-robot manipulation tasks (average +28% on DP3).
 
 ## Background & Motivation
-- **State of the Field**: Current robot visual representation learning is dominated by 2D image pre-training (R3M, MVP, VC-1, etc.), which achieves strong results on large-scale datasets such as ImageNet and Ego4D, but neglects the inherently 3D nature of the physical world.
+- **Background**: Current robot visual representation learning is dominated by 2D image pre-training (R3M, MVP, VC-1, etc.), which achieves strong results on large-scale datasets such as ImageNet and Ego4D, but neglects the inherently 3D nature of the physical world.
 - **Advantages of 3D Methods**: Imitation learning methods based on 3D point clouds (DP3, RISE, etc.) demonstrate stronger generalization and efficiency on real-robot tasks, yet a universal 3D pre-training paradigm remains absent.
-- **Root Cause**: Large-scale 3D data is scarce, making it infeasible to learn general 3D representations from massive web-scale data as in the 2D setting.
-- **Starting Point**: Rather than training a single universal 3D representation, the paper proposes designing a pre-training framework capable of enhancing arbitrary 3D encoders. Leveraging the generative capacity of diffusion models, the pre-training objective is defined as "predicting the next-frame point cloud from the current frame," thereby learning visual features that capture the dynamics of the physical environment.
+- **Key Challenge**: Large-scale 3D data is scarce, making it infeasible to learn general 3D representations from massive web-scale data as in the 2D setting.
+- **Key Insight**: Rather than training a single universal 3D representation, the paper proposes designing a pre-training framework capable of enhancing arbitrary 3D encoders. Leveraging the generative capacity of diffusion models, the pre-training objective is defined as "predicting the next-frame point cloud from the current frame," thereby learning visual features that capture the dynamics of the physical environment.
 - **Core Idea**: 4D pre-training is reformulated as a conditional diffusion generation problem — historical frame point clouds serve as conditions, and a diffusion model denoises them to generate future frame point clouds, compelling the 3D encoder to learn meaningful spatiotemporal representations.
 
 ## Method

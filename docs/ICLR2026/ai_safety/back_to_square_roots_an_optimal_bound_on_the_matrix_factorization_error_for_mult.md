@@ -28,15 +28,15 @@ content_hash: 3d3b2c5e811e59ca
 This paper proposes the Banded Inverse Square Root (BISR) matrix factorization method, which imposes a banded structure on the inverse correlation matrix (rather than on the correlation matrix itself). This approach achieves, for the first time, an asymptotically optimal factorization error bound for multi-epoch differentially private SGD, and is accompanied by a memory-efficient variant, BandInvMF.
 
 ## Background & Motivation
-**State of the Field**: The Matrix Factorization Mechanism is an important technique in differentially private training that improves model utility by injecting correlated noise. It has been deployed by Google in production-scale on-device language model training.
+**Background**: The Matrix Factorization Mechanism is an important technique in differentially private training that improves model utility by injecting correlated noise. It has been deployed by Google in production-scale on-device language model training.
 
 **Limitations of Prior Work**: In multi-epoch training, each data point is used multiple times, necessitating a characterization of the factorization error as a function of the number of participation rounds. However, a significant gap exists between existing upper and lower bounds — the dependence on bandwidth $p$ in the error bound of the Banded Square Root (BSR) method is implicit, making it impossible to assess optimality.
 
-**Root Cause**: It is theoretically unclear what the optimal growth rate of the factorization error is under multi-epoch participation, and in practice there is no decomposition method that is both computationally efficient and admits an explicit error characterization.
+**Key Challenge**: It is theoretically unclear what the optimal growth rate of the factorization error is under multi-epoch participation, and in practice there is no decomposition method that is both computationally efficient and admits an explicit error characterization.
 
-**Paper Goals**: To establish a tight bound on the matrix factorization error under multi-epoch participation and to provide a computationally efficient, theoretically optimal factorization method with an explicit closed-form characterization.
+**Goal**: To establish a tight bound on the matrix factorization error under multi-epoch participation and to provide a computationally efficient, theoretically optimal factorization method with an explicit closed-form characterization.
 
-**Starting Point**: Rather than banding the correlation matrix $C$ as in BSR, the proposed approach bands $C^{-1}$ — a perspective shift that simultaneously enables explicit error characterization and efficient implementation.
+**Key Insight**: Rather than banding the correlation matrix $C$ as in BSR, the proposed approach bands $C^{-1}$ — a perspective shift that simultaneously enables explicit error characterization and efficient implementation.
 
 **Core Idea**: Imposing a banded structure on the inverse correlation matrix allows noise injection to be implemented efficiently via convolution, while yielding an explicit and optimal error bound as a function of bandwidth.
 

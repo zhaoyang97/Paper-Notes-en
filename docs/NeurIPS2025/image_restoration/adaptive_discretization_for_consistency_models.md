@@ -31,8 +31,8 @@ This paper proposes ADCM, which formalizes the discretization step size of consi
 
 - **Core Problem**: Consistency models (CMs) achieve single-step generation by mapping points on PF-ODE trajectories to endpoints, but their training is highly sensitive to the discretization strategy used for adjacent trajectory points.
 - **Limitations of Prior Work**: (1) Discrete CMs (iCT, ECM) rely on manually designed discretization schedules that require repeated tuning across different noise schedules and datasets; (2) Continuous CMs (sCM) circumvent discretization by taking $\Delta t \to 0$, but suffer from severe training instability; (3) CCM iteratively solves via PSNR thresholds, incurring substantial computational cost.
-- **Root Cause**: Small $\Delta t$ yields good local consistency but large global denoising error, causing instability; large $\Delta t$ improves stability but degrades local consistency, making training difficult.
-- **Starting Point**: Formalize the discretization step size selection as a constrained optimization problem that adaptively balances trainability and stability.
+- **Key Challenge**: Small $\Delta t$ yields good local consistency but large global denoising error, causing instability; large $\Delta t$ improves stability but degrades local consistency, making training difficult.
+- **Key Insight**: Formalize the discretization step size selection as a constrained optimization problem that adaptively balances trainability and stability.
 
 ## Method
 

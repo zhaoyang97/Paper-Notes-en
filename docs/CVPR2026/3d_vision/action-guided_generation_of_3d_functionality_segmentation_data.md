@@ -31,7 +31,7 @@ This paper presents SynthFun3D, the first method for automatically generating 3D
 
 **Core Limitation**: Annotated data is extremely scarce. The only publicly available dataset, SceneFun3D, contains only 230 scenes with 3,041 functional masks, and collection and annotation costs are prohibitively high (estimated at \$25K per 230 scenes).
 
-**Root Cause**: Deep learning models require large-scale training data, yet fine-grained 3D functional masks are practically impossible to annotate at scale. While synthetic data has proven effective in other perception tasks, no targeted data generation approach has been proposed for 3D functionality segmentation.
+**Key Challenge**: Deep learning models require large-scale training data, yet fine-grained 3D functional masks are practically impossible to annotate at scale. While synthetic data has proven effective in other perception tasks, no targeted data generation approach has been proposed for 3D functionality segmentation.
 
 **Core Idea**: Starting from action descriptions, the method uses LLMs to reason about scene composition, retrieves 3D assets with part-level annotations, and automatically generates scene layouts and accurate functional masks satisfying spatial-semantic constraints.
 

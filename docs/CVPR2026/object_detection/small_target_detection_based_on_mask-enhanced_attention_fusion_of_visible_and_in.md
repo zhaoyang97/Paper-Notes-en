@@ -29,15 +29,15 @@ This paper proposes ESM-YOLO+, a lightweight visible-infrared fusion network for
 
 ## Background & Motivation
 
-**State of the Field**: Small target detection in UAV remote sensing imagery is highly challenging due to limited target pixels and complex backgrounds. Visible-light images provide texture and structural information but are sensitive to illumination, while infrared images capture thermal radiation but lack fine-grained features. Multimodal fusion is an effective approach to improving detection performance.
+**Background**: Small target detection in UAV remote sensing imagery is highly challenging due to limited target pixels and complex backgrounds. Visible-light images provide texture and structural information but are sensitive to illumination, while infrared images capture thermal radiation but lack fine-grained features. Multimodal fusion is an effective approach to improving detection performance.
 
 **Limitations of Prior Work**: Existing multimodal detectors (e.g., MIR-YOLO, DVIF-Net) over-rely on complex fusion designs—incorporating heavyweight structures such as Vision-LSTM and gated aggregation—making them unsuitable for resource-constrained UAV and satellite platforms. More critically, they either assume perfect modal alignment or rely on dense feature encoding, without directly addressing cross-modal structural inconsistency.
 
-**Root Cause**: Direct fusion is essentially unconditional aggregation, which may amplify modality-dominant background responses or suppress spatially localized weak targets. Effective fusion should encode spatial reliability priors and condition cross-modal interaction on trustworthy regions.
+**Key Challenge**: Direct fusion is essentially unconditional aggregation, which may amplify modality-dominant background responses or suppress spatially localized weak targets. Effective fusion should encode spatial reliability priors and condition cross-modal interaction on trustworthy regions.
 
-**Paper Goals**: (1) How to achieve lightweight yet effective pixel-level cross-modal fusion? (2) How to enhance spatial structural representation without incurring additional inference cost?
+**Goal**: (1) How to achieve lightweight yet effective pixel-level cross-modal fusion? (2) How to enhance spatial structural representation without incurring additional inference cost?
 
-**Starting Point**: The paper proposes a "mask-then-attend" paradigm—learnable spatial masks perform alignment-aware selection, while spatial attention enforces topological consistency re-weighting.
+**Key Insight**: The paper proposes a "mask-then-attend" paradigm—learnable spatial masks perform alignment-aware selection, while spatial attention enforces topological consistency re-weighting.
 
 **Core Idea**: Learnable spatial masks suppress unreliable cross-modal interactions; spatial attention preserves the spatial support of small targets; training-time super-resolution guidance enhances feature-space discriminability.
 

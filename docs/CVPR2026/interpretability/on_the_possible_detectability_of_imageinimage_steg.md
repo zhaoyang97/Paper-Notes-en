@@ -28,15 +28,15 @@ This paper exposes a fundamental security vulnerability in invertible neural net
 
 ## Background & Motivation
 
-**State of the Field**: A new class of image-in-image steganographic schemes has emerged in recent years. Unlike traditional steganography—which hides bitstreams at low embedding rates—these methods leverage invertible neural networks (INNs) to embed an entire same-size image within a cover image, resulting in extremely high embedding capacity. Representative schemes include HiNet, PRIS, and DeepMIH.
+**Background**: A new class of image-in-image steganographic schemes has emerged in recent years. Unlike traditional steganography—which hides bitstreams at low embedding rates—these methods leverage invertible neural networks (INNs) to embed an entire same-size image within a cover image, resulting in extremely high embedding capacity. Representative schemes include HiNet, PRIS, and DeepMIH.
 
 **Limitations of Prior Work**: Despite claims of high security, two fundamental issues have been overlooked: (1) most schemes perform keyless extraction, meaning anyone with knowledge of the network architecture can recover the secret image, violating Kerckhoffs's principle; (2) the coupling layers of INNs are affine transformations, and the embedding process likely leaves detectable statistical traces in the frequency domain. Security has rarely been systematically analyzed.
 
-**Root Cause**: A fundamental tension exists between extremely high embedding capacity (an entire image) and steganographic security (undetectability)—the greater the amount of embedded information, the higher the likelihood of leaving statistical traces.
+**Key Challenge**: A fundamental tension exists between extremely high embedding capacity (an entire image) and steganographic security (undetectability)—the greater the amount of embedded information, the higher the likelihood of leaving statistical traces.
 
-**Paper Goals**: To systematically analyze the detectability of INN-based image steganography and demonstrate, using simple and interpretable methods, that its security claims are unreliable.
+**Goal**: To systematically analyze the detectability of INN-based image steganography and demonstrate, using simple and interpretable methods, that its security claims are unreliable.
 
-**Starting Point**: The INN embedding process is viewed through a signal-processing lens as a mixing process, which is then analyzed using classical blind source separation (ICA).
+**Key Insight**: The INN embedding process is viewed through a signal-processing lens as a mixing process, which is then analyzed using classical blind source separation (ICA).
 
 **Core Idea**: The INN steganographic embedding mixes cover and payload signals in the wavelet domain; ICA can separate the resulting independent components, whose statistical moment differences distinguish cover from stego images.
 

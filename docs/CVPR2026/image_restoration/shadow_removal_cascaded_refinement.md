@@ -29,15 +29,15 @@ A three-stage cascaded refinement pipeline built upon OmniSR, combining frozen D
 
 ## Background & Motivation
 
-**State of the Field**: Image shadow removal is a fundamental low-level vision task. Recent methods have progressively evolved from handcrafted illumination models to Transformer-based end-to-end restoration systems such as ShadowFormer, HomoFormer, and OmniSR, where OmniSR achieves strong results by combining RGB appearance with semantic and geometric auxiliary information.
+**Background**: Image shadow removal is a fundamental low-level vision task. Recent methods have progressively evolved from handcrafted illumination models to Transformer-based end-to-end restoration systems such as ShadowFormer, HomoFormer, and OmniSR, where OmniSR achieves strong results by combining RGB appearance with semantic and geometric auxiliary information.
 
 **Limitations of Prior Work**: Even powerful single-stage systems such as OmniSR still exhibit residual color shifts, illumination biases, and boundary artifacts after a single forward pass. One-shot inference is insufficient to fully eliminate shadow effects in complex scenes, particularly in texture-rich regions and along shadow boundaries.
 
-**Root Cause**: Shadow removal is fundamentally better framed as a progressive refinement problem rather than a one-shot prediction task. Single-stage methods attempt to disentangle illumination variation from intrinsic appearance in a single step, which proves inadequate for complex scenes.
+**Key Challenge**: Shadow removal is fundamentally better framed as a progressive refinement problem rather than a one-shot prediction task. Single-stage methods attempt to disentangle illumination variation from intrinsic appearance in a single step, which proves inadequate for complex scenes.
 
-**Paper Goals**: (1) Extend OmniSR into a multi-stage cascaded refinement architecture; (2) design a loss function that stabilizes multi-stage training; (3) leverage cross-dataset progressive pretraining to improve generalization.
+**Goal**: (1) Extend OmniSR into a multi-stage cascaded refinement architecture; (2) design a loss function that stabilizes multi-stage training; (3) leverage cross-dataset progressive pretraining to improve generalization.
 
-**Starting Point**: The authors observe that successive stages of shadow removal can correct residual errors from preceding predictions, analogous to iterative refinement strategies in inverse problems.
+**Key Insight**: The authors observe that successive stages of shadow removal can correct residual errors from preceding predictions, analogous to iterative refinement strategies in inverse problems.
 
 **Core Idea**: Replace a single forward pass with a three-stage direct refinement cascade, where each stage receives the output of the previous stage and further corrects residual artifacts, with a contraction constraint ensuring monotonically decreasing error across stages.
 

@@ -28,15 +28,15 @@ The first systematic evaluation of 12 probabilistic time series forecasting mode
 
 ## Background & Motivation
 
-**State of the Field**: Neural activity prediction is critical for closed-loop brain–computer interfaces (BCIs) and for understanding neural systems. Deep learning-based time series forecasting has achieved remarkable progress in finance and meteorology, yet has never been systematically evaluated on neural data.
+**Background**: Neural activity prediction is critical for closed-loop brain–computer interfaces (BCIs) and for understanding neural systems. Deep learning-based time series forecasting has achieved remarkable progress in finance and meteorology, yet has never been systematically evaluated on neural data.
 
 **Limitations of Prior Work**: (a) Existing time series benchmarks (ETT, Weather, etc.) differ substantially from neural data in terms of millisecond-level sampling rates, absence of seasonality, and high noise levels; (b) neuroscience-specific methods lack probabilistic forecasting capabilities, despite noise being an intrinsic property of neural data; (c) the zero-shot capability of time series foundation models (Chronos, Moirai) on neural data remains unknown.
 
-**Root Cause**: Does neural activity possess sufficient temporal structure for deep learning models to exploit? If so, how far into the future can it be predicted?
+**Key Challenge**: Does neural activity possess sufficient temporal structure for deep learning models to exploit? If so, how far into the future can it be predicted?
 
-**Paper Goals**: Establish a standard benchmark for probabilistic forecasting of neural activity and evaluate the capabilities and limitations of classical, deep learning, and foundation models.
+**Goal**: Establish a standard benchmark for probabilistic forecasting of neural activity and evaluate the capabilities and limitations of classical, deep learning, and foundation models.
 
-**Starting Point**: Twelve models plus two baselines are evaluated across five mouse cortical calcium imaging sessions (35 Hz, ~51K time steps), using mean weighted quantile loss (MWQL) for probabilistic assessment.
+**Key Insight**: Twelve models plus two baselines are evaluated across five mouse cortical calcium imaging sessions (35 Hz, ~51K time steps), using mean weighted quantile loss (MWQL) for probabilistic assessment.
 
 **Core Idea**: A comprehensive evaluation of 12 probabilistic forecasting models on neural calcium imaging data across multiple prediction horizons reveals that PatchTST achieves the best performance, that the predictability ceiling is approximately 1.5 seconds, and that zero-shot foundation models fail entirely.
 

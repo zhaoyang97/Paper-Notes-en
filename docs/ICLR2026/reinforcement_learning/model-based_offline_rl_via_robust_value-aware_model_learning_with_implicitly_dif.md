@@ -28,13 +28,13 @@ ROMI achieves robust value-aware model learning by converting the dynamics uncer
 
 ## Background & Motivation
 
-**State of the Field**: Model-based offline RL augments datasets by learning environment dynamics models and expanding training data through simulated rollouts. RAMBO is a representative adversarial model learning method that produces conservative value estimates by inversely optimizing the dynamics model.
+**Background**: Model-based offline RL augments datasets by learning environment dynamics models and expanding training data through simulated rollouts. RAMBO is a representative adversarial model learning method that produces conservative value estimates by inversely optimizing the dynamics model.
 
 **Limitations of Prior Work**: RAMBO has a critical flaw — its trade-off coefficient $\lambda$ must remain extremely small (3e-4); even a slight increase (0.05–0.1) causes severe Q-value underestimation and gradient explosion, leading to training collapse. This renders RAMBO's conservatism essentially uncontrollable.
 
-**Root Cause**: Model learning must simultaneously satisfy two objectives — (a) dynamics accuracy (fitting the data) and (b) value-awareness (being conservative in inaccurate regions that the policy may exploit). RAMBO balances these via direct gradient-based adversarial updates on the model, but mismatched gradient scales between the two objectives cause instability.
+**Key Challenge**: Model learning must simultaneously satisfy two objectives — (a) dynamics accuracy (fitting the data) and (b) value-awareness (being conservative in inaccurate regions that the policy may exploit). RAMBO balances these via direct gradient-based adversarial updates on the model, but mismatched gradient scales between the two objectives cause instability.
 
-**Starting Point**: Convert "adversarial optimization in model space" into "uncertainty sets in state space" via Wasserstein duality, so that conservatism can be smoothly controlled through the uncertainty set radius $\xi$.
+**Key Insight**: Convert "adversarial optimization in model space" into "uncertainty sets in state space" via Wasserstein duality, so that conservatism can be smoothly controlled through the uncertainty set radius $\xi$.
 
 **Core Idea**: Rather than adversarially perturbing the dynamics model itself, conservatism is achieved by adversarially perturbing the predicted states.
 

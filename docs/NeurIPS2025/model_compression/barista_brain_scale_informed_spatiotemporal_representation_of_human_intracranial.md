@@ -28,15 +28,15 @@ BaRISTA systematically investigates spatial encoding scales (electrode/parcel/lo
 
 ## Background & Motivation
 
-**State of the Field**: iEEG provides high spatiotemporal resolution brain activity recordings. Transformer-based pretrained models (PopT, Brant) have been applied to iEEG, but the choice of spatial encoding has not been systematically studied.
+**Background**: iEEG provides high spatiotemporal resolution brain activity recordings. Transformer-based pretrained models (PopT, Brant) have been applied to iEEG, but the choice of spatial encoding has not been systematically studied.
 
 **Limitations of Prior Work**: Electrode positions vary entirely across patients, making channel-level encoding difficult to generalize across subjects. Whether parcel-level or lobe-level encoding is superior, and how spatial encoding interacts with masking strategy, remain open questions.
 
-**Root Cause**: Fine-grained spatial resolution (channel) carries the most information but lacks cross-patient consistency; coarse-grained resolution (lobe) is consistent across patients but may sacrifice local information.
+**Key Challenge**: Fine-grained spatial resolution (channel) carries the most information but lacks cross-patient consistency; coarse-grained resolution (lobe) is consistent across patients but may sacrifice local information.
 
-**Paper Goals**: Systematically compare three spatial encoding scales to identify the optimal encoding–masking combination.
+**Goal**: Systematically compare three spatial encoding scales to identify the optimal encoding–masking combination.
 
-**Starting Point**: Channel, atlas parcel, and lobe are treated as experimental variables and systematically ablated within a masked reconstruction pretraining framework.
+**Key Insight**: Channel, atlas parcel, and lobe are treated as experimental variables and systematically ablated within a masked reconstruction pretraining framework.
 
 **Core Idea**: By systematically comparing three spatial encoding scales in an iEEG Transformer, the paper identifies atlas parcel-level encoding as the optimal spatial granularity—balancing cross-patient consistency with local information retention.
 

@@ -28,18 +28,18 @@ MoScale proposes a next-scale autoregressive motion generation framework that re
 
 ## Background & Motivation
 
-1. **State of the Field**: Text-to-motion generation aims to synthesize human motion sequences that faithfully reflect the intent of textual descriptions. Current approaches fall into three main categories: next-token autoregressive models (T2M-GPT, AttT2M), diffusion models (MDM, ReMoDiffuse), and masked Transformers (MoMask, MoMask++).
+1. **Background**: Text-to-motion generation aims to synthesize human motion sequences that faithfully reflect the intent of textual descriptions. Current approaches fall into three main categories: next-token autoregressive models (T2M-GPT, AttT2M), diffusion models (MDM, ReMoDiffuse), and masked Transformers (MoMask, MoMask++).
 
 2. **Limitations of Prior Work**:
     - **Diffusion models and masked Transformers**: These methods generate a full-resolution sequence draft and then iteratively refine it. The initial global semantics are often inaccurate, and subsequent refinement primarily improves local consistency rather than global structure.
     - **Next-token AR**: Human motion exhibits strong short-term predictability (future poses can be inferred from a brief history), causing AR models to exploit short-range shortcuts during training to minimize loss without learning long-range semantic structure. Temporal convolutions in VQ-VAE further amplify local correlations.
     - **Shared limitation**: Both paradigms struggle to capture repetition counts (e.g., "two jumping jacks") and sequence-level action patterns (e.g., "turn around, pick something up, then turn back").
 
-3. **Root Cause**: The causal direction of next-token prediction (frame-by-frame along the temporal axis) coincides with the high short-term predictability of human motion, creating a shortcut that impedes global semantic reasoning.
+3. **Key Challenge**: The causal direction of next-token prediction (frame-by-frame along the temporal axis) coincides with the high short-term predictability of human motion, creating a shortcut that impedes global semantic reasoning.
 
-4. **Paper Goals**: Design a causal hierarchical structure that commits to a global semantic layout at the earliest stage of generation, thereby eliminating short-range shortcuts.
+4. **Goal**: Design a causal hierarchical structure that commits to a global semantic layout at the earliest stage of generation, thereby eliminating short-range shortcuts.
 
-5. **Starting Point**: Inspired by next-scale modeling in image generation (VAR), the method organizes motion sequences into hierarchical discrete token groups at increasing temporal resolutions, generating autoregressively from the coarsest scale (global semantics) to the finest scale (local details).
+5. **Key Insight**: Inspired by next-scale modeling in image generation (VAR), the method organizes motion sequences into hierarchical discrete token groups at increasing temporal resolutions, generating autoregressively from the coarsest scale (global semantics) to the finest scale (local details).
 
 6. **Core Idea**: Replace next-token with next-scale prediction — determine the global motion structure at the coarsest scale and progressively refine it toward high temporal resolution.
 

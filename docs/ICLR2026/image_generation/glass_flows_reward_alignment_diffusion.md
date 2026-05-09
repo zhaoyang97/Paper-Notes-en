@@ -29,15 +29,15 @@ content_hash: c601510c9137f8b2
 This paper proposes GLASS (Gaussian Latent Sufficient Statistic) Flows — a novel "flow within a flow" sampling paradigm that recasts the stochastic Markov transition $p_{t'|t}(x_{t'} | x_t)$ as an internal ODE problem via Gaussian sufficient statistic reparameterization, reusing the pretrained denoiser without retraining. This enables Feynman-Kac Steering without sacrificing ODE efficiency or SDE stochasticity, consistently surpassing the Best-of-N ODE baseline on the FLUX text-to-image model and achieving a new state of the art in inference-time reward alignment.
 
 ## Background & Motivation
-**State of the Field**: Flow matching and diffusion models can be enhanced at inference time through reward adaptation algorithms (inference-time scaling). Existing methods such as Sequential Monte Carlo (SMC) and Feynman-Kac Steering (FKS) require stochasticity in the denoising trajectory to explore high-reward regions.
+**Background**: Flow matching and diffusion models can be enhanced at inference time through reward adaptation algorithms (inference-time scaling). Existing methods such as Sequential Monte Carlo (SMC) and Feynman-Kac Steering (FKS) require stochasticity in the denoising trajectory to explore high-reward regions.
 
 **Limitations of Prior Work**: Stochastic transitions (SDE sampling) are far less efficient than deterministic ODE sampling and suffer severe quality degradation under low step counts. Experiments show that standard FKS with SDE transitions fails to outperform even the simple Best-of-N ODE baseline — revealing a fundamental tension between efficiency and stochasticity.
 
-**Root Cause**: Methods such as FKS/SMC theoretically require the stochastic branching provided by SDEs to effectively explore the posterior distribution, yet the computational and quality costs of SDEs render them impractical on real-world SOTA models. Best-of-N ODE is efficient but does not exploit intermediate reward signals.
+**Key Challenge**: Methods such as FKS/SMC theoretically require the stochastic branching provided by SDEs to effectively explore the posterior distribution, yet the computational and quality costs of SDEs render them impractical on real-world SOTA models. Best-of-N ODE is efficient but does not exploit intermediate reward signals.
 
-**Paper Goals**: Eliminate the trade-off between efficiency and stochasticity — enabling ODE sampling to produce rich stochastic transitions so that FKS can be genuinely effective.
+**Goal**: Eliminate the trade-off between efficiency and stochasticity — enabling ODE sampling to produce rich stochastic transitions so that FKS can be genuinely effective.
 
-**Starting Point**: The observation that the Gaussian transition kernel $p_{t'|t}$ can be transformed, via sufficient statistics and time reparameterization, into an internal conditional flow matching ODE driven by the pretrained denoiser.
+**Key Insight**: The observation that the Gaussian transition kernel $p_{t'|t}$ can be transformed, via sufficient statistics and time reparameterization, into an internal conditional flow matching ODE driven by the pretrained denoiser.
 
 **Core Idea**: Recast stochastic transitions as "internal flow matching" ODEs; by reusing the pretrained model through sufficient statistics, achieve "ODE speed + SDE diversity."
 

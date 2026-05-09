@@ -28,15 +28,15 @@ HCLFuse performs modality alignment via the information bottleneck principle and
 
 ## Background & Motivation
 
-**State of the Field**: Infrared-visible image fusion combines thermal information with texture details for scene understanding under low-light or occluded conditions. Generative methods based on GANs and diffusion models have become mainstream in recent years.
+**Background**: Infrared-visible image fusion combines thermal information with texture details for scene understanding under low-light or occluded conditions. Generative methods based on GANs and diffusion models have become mainstream in recent years.
 
 **Limitations of Prior Work**: Existing generative fusion methods lack an interpretable mechanism for modal information selection—specifically, how to balance infrared thermal information against visible-light texture. These methods are highly data-dependent and noise-sensitive, and the absence of physical constraints in the generation process leads to artifacts.
 
-**Root Cause**: Fusion must simultaneously preserve critical information from both modalities while suppressing redundancy, yet existing methods perform information selection implicitly and without controllability.
+**Key Challenge**: Fusion must simultaneously preserve critical information from both modalities while suppressing redundancy, yet existing methods perform information selection implicitly and without controllability.
 
-**Paper Goals**: To provide a theoretical foundation—information bottleneck combined with optimal transport—to guide information selection during fusion, and to employ physical constraints to regularize the generation process.
+**Goal**: To provide a theoretical foundation—information bottleneck combined with optimal transport—to guide information selection during fusion, and to employ physical constraints to regularize the generation process.
 
-**Starting Point**: Information bottleneck theory offers a theoretical framework for fusion (retaining sufficient information while compressing redundancy); optimal transport aligns modality distributions; and physical laws (heat conduction, structure preservation) constrain the diffusion process.
+**Key Insight**: Information bottleneck theory offers a theoretical framework for fusion (retaining sufficient information while compressing redundancy); optimal transport aligns modality distributions; and physical laws (heat conduction, structure preservation) constrain the diffusion process.
 
 **Core Idea**: Information bottleneck + optimal transport for modality-aligned encoding → physics-guided (heat conduction + structure preservation + physical consistency) conditional diffusion model for fused image generation.
 

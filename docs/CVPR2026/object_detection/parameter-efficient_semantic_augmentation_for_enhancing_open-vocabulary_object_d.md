@@ -29,15 +29,15 @@ HSA-DINO proposes a multi-scale prompt bank that learns hierarchical semantic pr
 
 ## Background & Motivation
 
-1. **State of the Field**: Open-vocabulary object detection (OVOD) has achieved impressive zero-shot detection performance in general scenarios (e.g., OV-COCO), driven by large-scale pre-training methods such as GLIP, Grounding DINO, and OV-DINO.
+1. **Background**: Open-vocabulary object detection (OVOD) has achieved impressive zero-shot detection performance in general scenarios (e.g., OV-COCO), driven by large-scale pre-training methods such as GLIP, Grounding DINO, and OV-DINO.
 
 2. **Limitations of Prior Work**: (a) Pre-trained OVOD models suffer severe performance degradation on vertical domains (e.g., insect classification ArTaxOr, remote sensing DIOR, underwater UODD), because fine-grained categories are scarce and semantically weak in pre-training data. (b) Full fine-tuning improves target-domain performance but substantially impairs generalization to the general domain (e.g., OV-DINO's mAP_coco drops from 50.6 to 36.1 after fine-tuning on ArTaxOr). (c) Existing prompt methods (predefined templates, CoOp) lack multi-faceted visual-semantic descriptions.
 
-3. **Root Cause**: A fundamental tension exists between domain adaptation and open-vocabulary generalization — parameter updates targeting downstream tasks inevitably corrupt pre-trained semantic knowledge.
+3. **Key Challenge**: A fundamental tension exists between domain adaptation and open-vocabulary generalization — parameter updates targeting downstream tasks inevitably corrupt pre-trained semantic knowledge.
 
-4. **Paper Goals**: Within a parameter-efficient fine-tuning framework, the paper seeks to (a) enrich text representations with dense visual semantics to improve alignment, and (b) automatically select an appropriate semantic strategy at inference time so that domain adaptation does not degrade open-vocabulary capability.
+4. **Goal**: Within a parameter-efficient fine-tuning framework, the paper seeks to (a) enrich text representations with dense visual semantics to improve alignment, and (b) automatically select an appropriate semantic strategy at inference time so that domain adaptation does not degrade open-vocabulary capability.
 
-5. **Starting Point**: The multi-scale feature pyramid of an OVOD model inherently encodes hierarchical semantics ranging from coarse to fine (e.g., high-level context such as "flower" vs. low-level texture such as "spotted wings"), which can serve as auxiliary prompts for category labels. Moreover, explicitly modeling content and domain information enables a more accurate router that resolves the difficulty of distinguishing domain distributions.
+5. **Key Insight**: The multi-scale feature pyramid of an OVOD model inherently encodes hierarchical semantics ranging from coarse to fine (e.g., high-level context such as "flower" vs. low-level texture such as "spotted wings"), which can serve as auxiliary prompts for category labels. Moreover, explicitly modeling content and domain information enables a more accurate router that resolves the difficulty of distinguishing domain distributions.
 
 6. **Core Idea**: Prompt representations selected via multi-scale visual features are used to augment the text representations of category labels, coupled with a semantics-aware router that explicitly disentangles content and domain information, enabling dynamic switching between augmented and original semantic strategies at inference time.
 

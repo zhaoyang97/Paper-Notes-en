@@ -27,18 +27,18 @@ This paper theoretically proves that self-supervised contrastive learning (DCL) 
 
 ## Background & Motivation
 
-**State of the Field**: Self-supervised contrastive learning methods (e.g., SimCLR, MoCo) learn representations from unlabeled data that match or exceed supervised learning on downstream tasks. However, the theoretical foundation remains incomplete — why does a loss function with no access to labels learn representations that cluster semantically by class?
+**Background**: Self-supervised contrastive learning methods (e.g., SimCLR, MoCo) learn representations from unlabeled data that match or exceed supervised learning on downstream tasks. However, the theoretical foundation remains incomplete — why does a loss function with no access to labels learn representations that cluster semantically by class?
 
 **Limitations of Prior Work**:
    - Existing theoretical analyses (e.g., Arora et al., Saunshi et al.) rely on strong assumptions such as conditional independence of augmented views given class labels, limiting the generality of their conclusions.
    - Alignment and uniformity analyses characterize properties of representations but do not explain why CL organizes class structure.
    - Neural Collapse is well understood for supervised classification losses but has not been connected to self-supervised contrastive learning.
 
-**Root Cause**: In self-supervised CL, same-class samples are treated as negatives in the denominator and pushed apart, which should theoretically hurt within-class compactness — yet representations still cluster by class. This apparent contradiction demands explanation.
+**Key Challenge**: In self-supervised CL, same-class samples are treated as negatives in the denominator and pushed apart, which should theoretically hurt within-class compactness — yet representations still cluster by class. This apparent contradiction demands explanation.
 
-**Paper Goals**: (1) Formally connect SSL CL to supervised CL; (2) characterize the geometric structure of representations learned by CL; (3) explain why CL representations support few-shot transfer.
+**Goal**: (1) Formally connect SSL CL to supervised CL; (2) characterize the geometric structure of representations learned by CL; (3) explain why CL representations support few-shot transfer.
 
-**Starting Point**: When the number of classes $C$ is large, the fraction of same-class samples among negatives is small ($\sim 1/C$), so the extra terms in the DCL denominator from same-class samples become negligible, making DCL approximately equivalent to NSCL, which excludes same-class negatives.
+**Key Insight**: When the number of classes $C$ is large, the fraction of same-class samples among negatives is small ($\sim 1/C$), so the extra terms in the DCL denominator from same-class samples become negligible, making DCL approximately equivalent to NSCL, which excludes same-class negatives.
 
 **Core Idea**: Self-supervised contrastive learning is essentially optimizing a supervised contrastive loss approximately, with the gap vanishing as the number of classes grows.
 

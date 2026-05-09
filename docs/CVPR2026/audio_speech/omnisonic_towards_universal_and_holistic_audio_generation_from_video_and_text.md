@@ -29,15 +29,15 @@ This paper proposes the Universal Holistic Audio Generation (UniHAGen) task and 
 
 ## Background & Motivation
 
-1. **State of the Field**: Diffusion models have achieved notable progress in audio generation. V2A (Video-to-Audio) methods such as Diff-Foley and MMAudio have continuously improved audio quality and semantic alignment. Joint text-video-to-audio (VT2A) methods such as VinTAGe have begun to consider both on-screen and off-screen sounds simultaneously.
+1. **Background**: Diffusion models have achieved notable progress in audio generation. V2A (Video-to-Audio) methods such as Diff-Foley and MMAudio have continuously improved audio quality and semantic alignment. Joint text-video-to-audio (VT2A) methods such as VinTAGe have begun to consider both on-screen and off-screen sounds simultaneously.
 
 2. **Limitations of Prior Work**: (1) V2A models can only generate sounds corresponding to visible events in the video frame, neglecting off-screen auditory events; (2) VT2A models, while considering both on-screen and off-screen sounds, are limited to environmental sounds and cannot generate human speech; (3) ambient speech generation models (e.g., VoiceLDM) rely solely on text input and lack visual grounding.
 
-3. **Root Cause**: Real-world auditory scenes are complex—a speaking person in the foreground may be accompanied by birdsong or machinery in the background. No existing model can handle the full combinatorial space of "environmental sound + speech + on/off-screen" within a unified framework.
+3. **Key Challenge**: Real-world auditory scenes are complex—a speaking person in the foreground may be accompanied by birdsong or machinery in the background. No existing model can handle the full combinatorial space of "environmental sound + speech + on/off-screen" within a unified framework.
 
-4. **Paper Goals**: Define a new task, UniHAGen, requiring a model to simultaneously generate a mixture of three sound sources: on-screen environmental sound, off-screen environmental sound, and human speech.
+4. **Goal**: Define a new task, UniHAGen, requiring a model to simultaneously generate a mixture of three sound sources: on-screen environmental sound, off-screen environmental sound, and human speech.
 
-5. **Starting Point**: Decompose the problem into three conditioning streams (on-screen environmental description, off-screen environmental description, and speech transcription), design dedicated triple cross-attention mechanisms to process each independently, and dynamically fuse them via MoE gating.
+5. **Key Insight**: Decompose the problem into three conditioning streams (on-screen environmental description, off-screen environmental description, and speech transcription), design dedicated triple cross-attention mechanisms to process each independently, and dynamically fuse them via MoE gating.
 
 6. **Core Idea**: Employ TriAttn-DiT triple cross-attention to process on-screen environmental sound, off-screen environmental sound, and speech conditions separately, and use MoE gating to adaptively balance the contribution of each stream, enabling holistic audio generation.
 

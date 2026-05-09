@@ -29,16 +29,16 @@ This paper proposes ImitSAT, the first imitation learning-based branching heuris
 
 ## Background & Motivation
 
-**State of the Field**: Boolean Satisfiability (SAT) is a cornerstone of theoretical CS and AI. Modern solvers are dominated by the CDCL framework, in which branching decisions determine the search trajectory, while unit propagation accounts for 80%–90% of runtime.
+**Background**: Boolean Satisfiability (SAT) is a cornerstone of theoretical CS and AI. Modern solvers are dominated by the CDCL framework, in which branching decisions determine the search trajectory, while unit propagation accounts for 80%–90% of runtime.
 
 **Limitations of Prior Work**:
 - Classical branching heuristics (e.g., VSIDS) are manually designed and offer limited adaptability.
 - SATformer adjusts variable activity only at initialization and cannot influence branching once search begins.
 - Graph-Q-SAT employs an online RL agent, but RL requires extensive exploration, suffers from sparse and unstable rewards, and relies solely on the current state snapshot without exploiting the full decision history.
 
-**Root Cause**: Propagation accounts for approximately 88.9% of CDCL runtime (measured on MiniSAT); reducing propagation count is therefore the primary path to accelerating solving, and high-quality branching decisions directly reduce propagations.
+**Key Challenge**: Propagation accounts for approximately 88.9% of CDCL runtime (measured on MiniSAT); reducing propagation count is therefore the primary path to accelerating solving, and high-quality branching decisions directly reduce propagations.
 
-**Starting Point**: Replace reinforcement learning with imitation learning—learn directly from expert trajectories to obtain dense, decision-level supervision signals while avoiding the cost of exploration.
+**Key Insight**: Replace reinforcement learning with imitation learning—learn directly from expert trajectories to obtain dense, decision-level supervision signals while avoiding the cost of exploration.
 
 ## Core Problem
 How can high-quality expert signals be extracted from CDCL solver execution traces, and how can a plug-and-play branching policy be trained to reduce propagation counts?

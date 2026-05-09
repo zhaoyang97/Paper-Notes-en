@@ -28,16 +28,16 @@ LocalDPO is proposed to perform localized preference alignment at the detail lev
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-video diffusion models (VDMs) can generate high-quality videos but frequently exhibit flickering, motion inconsistency, and local artifacts. DPO has been introduced as a post-training preference alignment strategy.
+**Background**: Text-to-video diffusion models (VDMs) can generate high-quality videos but frequently exhibit flickering, motion inconsistency, and local artifacts. DPO has been introduced as a post-training preference alignment strategy.
 
 **Three Key Limitations of Existing DPO Methods**:
    - **(1) High Cost and Inefficiency**: Multiple videos per prompt must be generated and ranked by human annotators or critic models, incurring high inference and annotation costs.
    - **(2) Ambiguous Global Scoring**: A video with a high overall score may still exhibit local deficiencies (e.g., globally smooth but flickering in a specific region), resulting in noisy or contradictory supervision signals.
    - **(3) Neglect of Region-Level Preference**: Scoring is performed at the global video level, ignoring local artifacts and fine-grained details that are critical to human perception.
 
-**Root Cause**: DPO requires high-quality positive–negative sample pairs, but existing methods construct pairs at the global level → local quality differences cannot be captured → the model cannot learn to correct fine-grained defects.
+**Key Challenge**: DPO requires high-quality positive–negative sample pairs, but existing methods construct pairs at the global level → local quality differences cannot be captured → the model cannot learn to correct fine-grained defects.
 
-**Starting Point**: Use real videos as positive samples (naturally higher quality than model-generated outputs) and locally corrupt versions as negative samples (single inference pass, quality guaranteed to be lower than the positive sample and only within specific regions).
+**Key Insight**: Use real videos as positive samples (naturally higher quality than model-generated outputs) and locally corrupt versions as negative samples (single inference pass, quality guaranteed to be lower than the positive sample and only within specific regions).
 
 **Core Idea**: (1) Random Bézier curves generate spatiotemporal masks to select corruption regions; (2) the pre-trained VDM itself performs inpainting within the masked region to generate negative samples; (3) a region-aware DPO loss computes preference differences exclusively within the masked region.
 

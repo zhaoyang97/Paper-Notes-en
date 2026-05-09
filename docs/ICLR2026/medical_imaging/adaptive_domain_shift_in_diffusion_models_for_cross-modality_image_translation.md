@@ -28,15 +28,15 @@ This paper proposes CDTSDE, a framework that embeds a learnable spatial-adaptive
 
 ## Background & Motivation
 
-**State of the Field**: Cross-modality image translation (e.g., MRI T1→T2, SAR→Optical) has transitioned from the GAN era into the diffusion model era, with diffusion-based methods surpassing GANs in both stability and generation quality.
+**Background**: Cross-modality image translation (e.g., MRI T1→T2, SAR→Optical) has transitioned from the GAN era into the diffusion model era, with diffusion-based methods surpassing GANs in both stability and generation quality.
 
 **Limitations of Prior Work**: Existing diffusion-based translation methods universally rely on a **fixed linear interpolation** $d_t = \eta_t \hat{x}_0^{\text{src}} + (1-\eta_t) x_0$ between source and target domains. This linear path traverses high-energy regions between the two modality manifolds, forcing the sampler to perform substantial off-manifold corrections.
 
-**Root Cause**: The linear interpolation assumption treats the source-to-target transformation as globally uniform, whereas real cross-modality discrepancies are spatially highly heterogeneous — certain regions (e.g., edges with large textural differences) require far more correction than homogeneous regions.
+**Key Challenge**: The linear interpolation assumption treats the source-to-target transformation as globally uniform, whereas real cross-modality discrepancies are spatially highly heterogeneous — certain regions (e.g., edges with large textural differences) require far more correction than homogeneous regions.
 
-**Paper Goals**: Can the domain shift schedule itself learn an "adaptively curved" path that bypasses high-energy regions, thereby reducing the denoising burden and improving semantic consistency?
+**Goal**: Can the domain shift schedule itself learn an "adaptively curved" path that bypasses high-energy regions, thereby reducing the denoising burden and improving semantic consistency?
 
-**Starting Point**: The authors approach the problem from the geometric perspective of path energy functionals, proving that under mild heterogeneity conditions, pixel-wise adaptive paths have strictly lower energy than any globally scheduled path (Theorem 1).
+**Key Insight**: The authors approach the problem from the geometric perspective of path energy functionals, proving that under mild heterogeneity conditions, pixel-wise adaptive paths have strictly lower energy than any globally scheduled path (Theorem 1).
 
 **Core Idea**: Upgrade domain shift from "global linear interpolation" to a "pixel-wise, channel-wise learnable nonlinear mixing field," and embed it into the drift term of the diffusion SDE.
 

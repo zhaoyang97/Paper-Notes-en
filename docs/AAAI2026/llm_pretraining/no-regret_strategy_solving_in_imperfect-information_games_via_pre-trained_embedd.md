@@ -31,11 +31,11 @@ This paper proposes the Embedding CFR algorithm, which maps information sets in 
 
 ### State of the Field
 
-**State of the Field**: In large-scale imperfect-information games such as No-Limit Texas Hold'em, the number of information sets is enormous ($\approx 10^{13}$), making it computationally infeasible to directly apply CFR (Counterfactual Regret Minimization) to find Nash equilibria. The dominant approach follows an "abstract–solve–translate" paradigm: similar information sets are clustered into discrete equivalence classes, the game is solved on the abstracted version, and the resulting strategy is mapped back to the original game.
+**Background**: In large-scale imperfect-information games such as No-Limit Texas Hold'em, the number of information sets is enormous ($\approx 10^{13}$), making it computationally infeasible to directly apply CFR (Counterfactual Regret Minimization) to find Nash equilibria. The dominant approach follows an "abstract–solve–translate" paradigm: similar information sets are clustered into discrete equivalence classes, the game is solved on the abstracted version, and the resulting strategy is mapped back to the original game.
 
 **Limitations of Prior Work**: Hard clustering introduces a binary dilemma. For example, after the flop, both 9♠A♠ and T♠A♠ may form pairs, but the latter can additionally form straights and flushes while the former cannot. Placing them in the same cluster discards critical distinctions, while separating them forfeits the benefit of shared strategy learning. Such discrete classification irreversibly loses subtle differences between information sets.
 
-**Starting Point**: Inspired by word embeddings in NLP—where continuous vectors capture semantic relationships among words—each information set can analogously be mapped to a probability distribution vector in a low-dimensional continuous space, preserving strategic correlations among similar information sets while retaining fine-grained distinctions.
+**Key Insight**: Inspired by word embeddings in NLP—where continuous vectors capture semantic relationships among words—each information set can analogously be mapped to a probability distribution vector in a low-dimensional continuous space, preserving strategic correlations among similar information sets while retaining fine-grained distinctions.
 
 ## Method
 

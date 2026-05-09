@@ -28,13 +28,13 @@ This paper proposes the Thought MDP formalism to characterize the conditions und
 
 ## Background & Motivation
 
-**State of the Field**: Works such as DeepSeek-R1 have demonstrated that model-free RL can elicit "thinking" behavior in LLMs (i.e., generating a reasoning process within `<think>` tags before producing an answer). This phenomenon is surprising, as thinking tokens neither directly yield reward nor alter the external environment state.
+**Background**: Works such as DeepSeek-R1 have demonstrated that model-free RL can elicit "thinking" behavior in LLMs (i.e., generating a reasoning process within `<think>` tags before producing an answer). This phenomenon is surprising, as thinking tokens neither directly yield reward nor alter the external environment state.
 
 **Limitations of Prior Work**: There is a lack of theoretical understanding of the conditions under which model-free RL produces thinking behavior. Existing approaches (e.g., MCTS, learned planning) either require an environment model or study implicit planning within network internals, rather than thinking as an explicit action.
 
 **Core Problem**: Under what conditions will model-free RL select "thinking" as a **reward-maximizing strategy**?
 
-**Starting Point**: The problem is formalized by extending the standard MDP with a thinking state space and a set of thinking actions, followed by an analysis of the behavior of policy iteration.
+**Key Insight**: The problem is formalized by extending the standard MDP with a thinking state space and a set of thinking actions, followed by an analysis of the behavior of policy iteration.
 
 **Core Idea**: Thinking serves as a "transitional strategy" during learning—the optimal policy never thinks (Proposition 4), yet prior to policy convergence, thinking accelerates learning by **switching to a superior sub-policy**.
 

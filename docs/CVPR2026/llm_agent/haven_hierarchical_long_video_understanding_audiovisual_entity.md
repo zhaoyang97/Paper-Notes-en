@@ -29,11 +29,11 @@ This paper proposes the HAVEN framework, which achieves 84.1% accuracy on LVBenc
 
 ## Background & Motivation
 
-1. **State of the Field**: Long video understanding faces the challenge of extremely long context windows. RAG-based methods and agentic frameworks have made progress, but suffer from information fragmentation and loss of global coherence.
+1. **Background**: Long video understanding faces the challenge of extremely long context windows. RAG-based methods and agentic frameworks have made progress, but suffer from information fragmentation and loss of global coherence.
 2. **Limitations of Prior Work**: Existing retrieval-driven methods retrieve based on isolated signals (clip-level captions), and fragmented or redundant evidence severely undermines global narrative coherence. The absence of hierarchical video representations leaves agents without the structured context required for multi-level reasoning.
-3. **Root Cause**: Flat databases (frames, captions, entities) require extensive iterative retrieval to recover cross-clip continuity, introducing unnecessary complexity and computational cost.
-4. **Paper Goals**: To shift from fragmented retrieval toward coherent, structured understanding.
-5. **Starting Point**: Leveraging speaker identification as a strong signal for entity cohesion—speaker identity remains informative when visual cues degrade (occlusion, viewpoint change, etc.).
+3. **Key Challenge**: Flat databases (frames, captions, entities) require extensive iterative retrieval to recover cross-clip continuity, introducing unnecessary complexity and computational cost.
+4. **Goal**: To shift from fragmented retrieval toward coherent, structured understanding.
+5. **Key Insight**: Leveraging speaker identification as a strong signal for entity cohesion—speaker identity remains informative when visual cues degrade (occlusion, viewpoint change, etc.).
 6. **Core Idea**: Audiovisual entity cohesion + four-level hierarchical indexing + goal-driven agentic search.
 
 ## Method

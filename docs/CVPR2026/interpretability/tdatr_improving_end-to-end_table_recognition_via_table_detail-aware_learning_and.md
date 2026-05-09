@@ -30,9 +30,9 @@ Table Recognition (TR) is a core task in document analysis, requiring the conver
 - **Modular TR**: Models table structure (TSR) and content (TCR) separately, training them independently and integrating results via post-processing. This approach ignores the intrinsic dependencies between structure and content, leading to suboptimal integration and error accumulation.
 - **End-to-End TR**: Generates structured outputs in a unified manner, but heavily relies on large-scale TR-annotated data and exhibits poor generalization in data-limited scenarios. Moreover, most methods do not provide spatial correspondences at the cell level, limiting interpretability.
 
-**Root Cause**: Although end-to-end methods simplify the pipeline, the annotation cost for TR data is extremely high (requiring simultaneous annotation of both structure and content), causing existing methods to underperform on diverse real-world tables.
+**Key Challenge**: Although end-to-end methods simplify the pipeline, the annotation cost for TR data is extremely high (requiring simultaneous annotation of both structure and content), causing existing methods to underperform on diverse real-world tables.
 
-**Starting Point**: This paper decouples TR capability learning into two stages—"perceive" and "fuse"—first acquiring fine-grained table detail perception through multi-task pretraining, then learning to fuse with a small amount of TR data, while introducing structure-guided cell localization to enhance interpretability.
+**Key Insight**: This paper decouples TR capability learning into two stages—"perceive" and "fuse"—first acquiring fine-grained table detail perception through multi-task pretraining, then learning to fuse with a small amount of TR data, while introducing structure-guided cell localization to enhance interpretability.
 
 ## Method
 

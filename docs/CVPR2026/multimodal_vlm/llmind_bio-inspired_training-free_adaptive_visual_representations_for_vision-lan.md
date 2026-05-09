@@ -28,15 +28,15 @@ Inspired by foveal encoding and cortical magnification in the human visual syste
 
 ## Background & Motivation
 
-**State of the Field**: Current VLMs (e.g., Qwen, LLaVA) allocate equal resolution to all pixel regions during visual processing, consuming equal computational resources even for semantically irrelevant background areas. Dynamic tokenization partially alleviates redundancy but still requires full-resolution input, making it ill-suited for edge devices.
+**Background**: Current VLMs (e.g., Qwen, LLaVA) allocate equal resolution to all pixel regions during visual processing, consuming equal computational resources even for semantically irrelevant background areas. Dynamic tokenization partially alleviates redundancy but still requires full-resolution input, making it ill-suited for edge devices.
 
 **Limitations of Prior Work**: Uniform downsampling neither reflects the resource allocation strategy of human vision nor handles the forced loss of globally critical details in high-resolution images—semantically important regions and irrelevant backgrounds are treated identically.
 
-**Root Cause**: There is a fundamental tension between efficiency and inference accuracy—uniform sampling cannot focus on task-critical regions under a limited pixel budget.
+**Key Challenge**: There is a fundamental tension between efficiency and inference accuracy—uniform sampling cannot focus on task-critical regions under a limited pixel budget.
 
-**Paper Goals**: Can the foveal fixation strategy of biological vision be leveraged to maintain high accuracy in VLMs under extremely low pixel budgets?
+**Goal**: Can the foveal fixation strategy of biological vision be leveraged to maintain high accuracy in VLMs under extremely low pixel budgets?
 
-**Starting Point**: The human eye achieves maximum information gain at minimal cost through high-resolution foveal sampling, low-resolution peripheral context, and rapid saccades. The authors map this mechanism to non-uniform sampling parameterized by Möbius transformations.
+**Key Insight**: The human eye achieves maximum information gain at minimal cost through high-resolution foveal sampling, low-resolution peripheral context, and rapid saccades. The authors map this mechanism to non-uniform sampling parameterized by Möbius transformations.
 
 **Core Idea**: Möbius transformations are used to simulate cortical magnification, amplifying sampling density in task-relevant regions, while closed-loop semantic feedback optimization is achieved via SPSA gradient estimation for black-box VLMs.
 

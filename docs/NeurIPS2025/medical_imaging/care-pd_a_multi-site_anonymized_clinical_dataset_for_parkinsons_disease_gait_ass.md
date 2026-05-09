@@ -28,15 +28,15 @@ This work introduces Care-PD — the largest multi-site anonymized 3D mesh datas
 
 ## Background & Motivation
 
-**State of the Field**: Gait assessment for PD currently relies predominantly on subjective clinician scoring (UPDRS). Although automated motion analysis can provide objective metrics, progress is constrained by small-scale, single-site datasets.
+**Background**: Gait assessment for PD currently relies predominantly on subjective clinician scoring (UPDRS). Although automated motion analysis can provide objective metrics, progress is constrained by small-scale, single-site datasets.
 
 **Limitations of Prior Work**: Existing PD gait datasets are limited in scale, modality (IMU-only or video-only), standardized representation, and clinical annotation, with models suffering severe performance degradation under cross-site generalization. General-purpose motion datasets (e.g., Human3.6M, AMASS) contain only healthy subjects and lack pathological gait patterns.
 
-**Root Cause**: The absence of a large-scale, multi-site, standardized, and publicly available PD gait motion dataset is the fundamental bottleneck impeding the development of generalizable models.
+**Key Challenge**: The absence of a large-scale, multi-site, standardized, and publicly available PD gait motion dataset is the fundamental bottleneck impeding the development of generalizable models.
 
-**Paper Goals**: To construct a unified 3D representation format (SMPL mesh) by aggregating RGB video and optical motion capture data from multiple sources, and to provide a publicly available benchmark with clinical annotations.
+**Goal**: To construct a unified 3D representation format (SMPL mesh) by aggregating RGB video and optical motion capture data from multiple sources, and to provide a publicly available benchmark with clinical annotations.
 
-**Starting Point**: SMPL is adopted as a unified, privacy-preserving 3D mesh representation to normalize heterogeneous acquisition modalities (MoCap and RGB) into a common space.
+**Key Insight**: SMPL is adopted as a unified, privacy-preserving 3D mesh representation to normalize heterogeneous acquisition modalities (MoCap and RGB) into a common space.
 
 **Core Idea**: Unified data format + multi-site aggregation + hierarchical evaluation protocols (within-site / cross-site / LODO / MIDA) + motion pre-training validation.
 

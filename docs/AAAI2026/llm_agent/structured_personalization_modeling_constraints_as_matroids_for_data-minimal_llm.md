@@ -29,15 +29,15 @@ This paper formalizes structured constraints in LLM agent personalization—comp
 
 ## Background & Motivation
 
-**State of the Field**: Personalization of LLM agents is typically achieved by injecting user-specific data into the context. More data generally improves task performance, but also incurs higher token costs and privacy leakage risks.
+**Background**: Personalization of LLM agents is typically achieved by injecting user-specific data into the context. More data generally improves task performance, but also incurs higher token costs and privacy leakage risks.
 
 **Limitations of Prior Work**: Under ideal conditions, personalization utility is submodular (diminishing returns), and simple greedy selection yields near-optimal solutions. In practice, however, user data exhibits two types of structured constraints: (a) **logical dependencies**—selecting fact A may require simultaneously selecting fact B (e.g., selecting "the user is responsible for ProjectPinnacle" requires selecting "ProjectPinnacle is a legacy system migration project," otherwise the agent may produce erroneous inferences); and (b) **hierarchical quotas**—nested cardinality limits (e.g., at most 3 hobbies, of which at most 1 may be a water sport).
 
-**Root Cause**: These structured constraints violate the independence assumptions of standard subset selection algorithms, invalidating the near-optimality guarantees of greedy methods. Yet existing personalization approaches either ignore these constraints or handle them with ad hoc heuristics.
+**Key Challenge**: These structured constraints violate the independence assumptions of standard subset selection algorithms, invalidating the near-optimality guarantees of greedy methods. Yet existing personalization approaches either ignore these constraints or handle them with ad hoc heuristics.
 
-**Paper Goals**: To provide a mathematically rigorous framework for modeling these complex constraints, enabling optimization algorithms with provable guarantees to be applied in real-world personalization scenarios.
+**Goal**: To provide a mathematically rigorous framework for modeling these complex constraints, enabling optimization algorithms with provable guarantees to be applied in real-world personalization scenarios.
 
-**Starting Point**: Drawing from combinatorial optimization theory, the paper leverages matroids—an algebraic structure—to characterize the properties of the feasible solution space.
+**Key Insight**: Drawing from combinatorial optimization theory, the paper leverages matroids—an algebraic structure—to characterize the properties of the feasible solution space.
 
 **Core Idea**: A two-stage compilation process: first, strongly connected components (SCCs) are used to compress logically dependent facets into macro-facets (resolving dependencies); then the hierarchical quota constraints over macro-facets are shown to form a laminar matroid, reducing the problem to the classical problem of maximizing a submodular function subject to matroid constraints.
 

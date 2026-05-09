@@ -28,15 +28,15 @@ This paper proposes MIR-Bench, the first large-scale and diverse many-shot in-co
 
 ## Background & Motivation
 
-**State of the Field**: Recognizing patterns from examples and generalizing to new instances is a foundational capability for general intelligence, widely studied in psychology and AI. The continuous expansion of LLM context lengths (128K→2M or beyond) has given rise to the many-shot ICL paradigm—task learning at test time using hundreds to thousands of demonstrations, without costly fine-tuning.
+**Background**: Recognizing patterns from examples and generalizing to new instances is a foundational capability for general intelligence, widely studied in psychology and AI. The continuous expansion of LLM context lengths (128K→2M or beyond) has given rise to the many-shot ICL paradigm—task learning at test time using hundreds to thousands of demonstrations, without costly fine-tuning.
 
 **Limitations of Prior Work**: Existing pattern recognition benchmarks (ARC, WILT, KORBench, etc.) focus on few-shot settings (typically <10 demonstrations), lacking evaluation of the ability to integrate large amounts of information from long contexts. Meanwhile, many-shot ICL evaluations are largely confined to classification tasks, and mainstream long-context benchmarks (e.g., NIAH) reduce to retrieval problems that do not require extracting complex patterns from multiple clues. Both communities exhibit a notable gap.
 
-**Root Cause**: Some real-world problems have underlying rules that are intrinsically too complex or ambiguous to determine from a small number of examples (e.g., three points cannot distinguish a circle from a quadratic curve), whereas 300 examples can make the pattern unambiguous. LLMs should be capable of handling such long-context, multi-example reasoning, yet no suitable benchmark exists to measure this capability.
+**Key Challenge**: Some real-world problems have underlying rules that are intrinsically too complex or ambiguous to determine from a small number of examples (e.g., three points cannot distinguish a circle from a quadratic curve), whereas 300 examples can make the pattern unambiguous. LLMs should be capable of handling such long-context, multi-example reasoning, yet no suitable benchmark exists to measure this capability.
 
-**Paper Goals**: To construct the first large-scale, diverse many-shot pattern recognition reasoning benchmark, simultaneously filling the gap of missing many-shot evaluation in the pattern recognition community and the gap of missing complex reasoning tasks in the long-context community.
+**Goal**: To construct the first large-scale, diverse many-shot pattern recognition reasoning benchmark, simultaneously filling the gap of missing many-shot evaluation in the pattern recognition community and the gap of missing complex reasoning tasks in the long-context community.
 
-**Starting Point**: The paper leverages solution functions from programming problems as the source of underlying patterns—programming problems naturally offer diverse input-output types and difficulty levels, and solution functions can automatically generate large quantities of input-output pairs while avoiding data leakage.
+**Key Insight**: The paper leverages solution functions from programming problems as the source of underlying patterns—programming problems naturally offer diverse input-output types and difficulty levels, and solution functions can automatically generate large quantities of input-output pairs while avoiding data leakage.
 
 **Core Idea**: Solution functions from entry-level programming problems are transformed into pattern recognition challenges, requiring LLMs to infer the underlying function solely from large numbers of input-output pairs. This yields a systematic benchmark covering 6,930 problems with support for 4 to 2,048 demonstrations.
 

@@ -44,11 +44,11 @@ Naively training the two tasks jointly yields limited performance gains due to c
 
 Unified models such as PlanGen still optimize each task independently.
 
-**Root Cause**: L2I and I2L are natural inverse tasks and should mutually reinforce each other under joint training, yet in practice this proves difficult to optimize effectively.
+**Key Challenge**: L2I and I2L are natural inverse tasks and should mutually reinforce each other under joint training, yet in practice this proves difficult to optimize effectively.
 
-**Paper Goals**: Design a progressive training strategy that enables genuine synergistic gains between the two tasks.
+**Goal**: Design a progressive training strategy that enables genuine synergistic gains between the two tasks.
 
-**Starting Point**: Exploit L→I→L cycle consistency — a generated image, when passed through the grounding module, should recover the original layout. This consistency is used as a self-supervised reward for reinforcement learning.
+**Key Insight**: Exploit L→I→L cycle consistency — a generated image, when passed through the grounding module, should recover the original layout. This consistency is used as a self-supervised reward for reinforcement learning.
 
 **Core Idea**: A three-stage progressive training scheme (parallel pre-training → joint optimization → cycle RL), in which CycleRL employs layout cycle inconsistency as a GRPO reward for self-supervised learning.
 

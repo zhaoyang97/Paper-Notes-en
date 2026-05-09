@@ -29,15 +29,15 @@ This paper proposes a part-aware bottom-up group reasoning framework that enhanc
 
 ## Background & Motivation
 
-**State of the Field**: Social interaction understanding encompasses tasks such as group activity recognition, pedestrian trajectory prediction, and group activity detection. The recent NVI-DET task requires detecting fine-grained nonverbal interactions (facial expressions, gestures, postures, gaze, touch) and outputting results as ⟨individual, group, interaction⟩ triplets.
+**Background**: Social interaction understanding encompasses tasks such as group activity recognition, pedestrian trajectory prediction, and group activity detection. The recent NVI-DET task requires detecting fine-grained nonverbal interactions (facial expressions, gestures, postures, gaze, touch) and outputting results as ⟨individual, group, interaction⟩ triplets.
 
 **Limitations of Prior Work**: Existing methods (e.g., NVI-DEHR) exhibit two critical deficiencies: (1) they directly detect social groups without explicitly modeling inter-personal relationships, leading to ambiguous group predictions in scenarios such as gaze interactions across large spatial distances; and (2) they represent each individual as a holistic embedding, ignoring body part information, which makes it difficult to distinguish semantically similar yet distinct interactions (e.g., "mutual gaze" vs. "gaze following," "waving" vs. "pointing").
 
-**Root Cause**: Distinguishing fine-grained social interactions (e.g., gaze direction, gesture type) heavily relies on local body part cues, yet existing methods rely solely on global person representations. Group membership should emerge naturally from individual behaviors and inter-personal relationships rather than being predicted directly.
+**Key Challenge**: Distinguishing fine-grained social interactions (e.g., gaze direction, gesture type) heavily relies on local body part cues, yet existing methods rely solely on global person representations. Group membership should emerge naturally from individual behaviors and inter-personal relationships rather than being predicted directly.
 
-**Paper Goals**: To design a framework that infers groups and interactions bottom-up from fine-grained body part cues through inter-personal relational reasoning.
+**Goal**: To design a framework that infers groups and interactions bottom-up from fine-grained body part cues through inter-personal relational reasoning.
 
-**Starting Point**: Pose estimation is introduced as privileged information to guide part-aware learning; pose annotations are used only during training and are not required at inference.
+**Key Insight**: Pose estimation is introduced as privileged information to guide part-aware learning; pose annotations are used only during training and are not required at inference.
 
 **Core Idea**: Detect individuals → enhance individual embeddings with part features → infer groups via inter-individual similarity-based association → classify fine-grained interactions.
 

@@ -28,15 +28,15 @@ This paper proposes Forl, a framework that fuses multimodal candidate states gen
 
 ## Background & Motivation
 
-**State of the Field**: Offline RL trains policies on pre-collected static datasets, avoiding the cost and risk of online interaction. Existing robust offline RL methods primarily address test-time perturbations such as sensor noise or adversarial disturbances.
+**Background**: Offline RL trains policies on pre-collected static datasets, avoiding the cost and risk of online interaction. Existing robust offline RL methods primarily address test-time perturbations such as sensor noise or adversarial disturbances.
 
 **Limitations of Prior Work**: A common form of non-stationarity in real-world deployment is **an unknown, episode-constant offset added to the observation function**—e.g., daily calibration drift in industrial robots, sensor drift, or systematic biases in data aggregation. Such offsets violate the smooth/Gaussian noise assumptions of standard methods and evolve across episodes in non-Markovian temporal patterns.
 
-**Root Cause**: During training, the agent operates in a fully observable stationary MDP; at test time, it faces a sequence of POMDPs where each episode's observation $o_t = s_t + b^j$ contains an unknown and inaccessible offset $b^j$. A single observation cannot disentangle the true state $s_t$ from the offset $b^j$, as infinitely many pairs $(s', b')$ satisfy $o_t = s' + b'$.
+**Key Challenge**: During training, the agent operates in a fully observable stationary MDP; at test time, it faces a sequence of POMDPs where each episode's observation $o_t = s_t + b^j$ contains an unknown and inaccessible offset $b^j$. A single observation cannot disentangle the true state $s_t$ from the offset $b^j$, as infinitely many pairs $(s', b')$ satisfy $o_t = s' + b'$.
 
-**Paper Goals**: (a) How can models be trained without knowledge of future non-stationary patterns? (b) How can within-episode action-effect history and cross-episode offset predictions be fused to estimate the true state? (c) Can zero-shot adaptation be achieved without retraining or online exploration?
+**Goal**: (a) How can models be trained without knowledge of future non-stationary patterns? (b) How can within-episode action-effect history and cross-episode offset predictions be fused to estimate the true state? (c) Can zero-shot adaptation be achieved without retraining or online exploration?
 
-**Starting Point**: Two complementary information sources are leveraged: (i) within-episode $(\Delta o, a)$ sequences encode positional constraints (e.g., hitting a wall implies the agent is likely a few steps south of it) → captured via a conditional diffusion model for multimodal belief representation; (ii) temporal patterns in historical offset values → predicted by a zero-shot time-series foundation model.
+**Key Insight**: Two complementary information sources are leveraged: (i) within-episode $(\Delta o, a)$ sequences encode positional constraints (e.g., hitting a wall implies the agent is likely a few steps south of it) → captured via a conditional diffusion model for multimodal belief representation; (ii) temporal patterns in historical offset values → predicted by a zero-shot time-series foundation model.
 
 **Core Idea**: A conditional diffusion model performs *retrospective* multimodal state estimation, while a time-series foundation model performs *prospective* offset prediction; DCM fuses the two to yield an optimal state estimate.
 

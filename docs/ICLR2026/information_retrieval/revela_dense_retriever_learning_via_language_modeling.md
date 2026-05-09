@@ -27,13 +27,13 @@ This paper proposes Revela, which integrates retriever learning into language mo
 
 ## Background & Motivation
 
-**State of the Field**: Dense retrievers typically require labeled query-document pairs for training, making annotation expensive in specialized domains and complex scenarios.
+**Background**: Dense retrievers typically require labeled query-document pairs for training, making annotation expensive in specialized domains and complex scenarios.
 
 **Limitations of Prior Work**: Self-supervised retrieval methods (e.g., Contriever) tend to overfit structural biases in data; auto-encoding approaches lack pairwise supervision.
 
-**Root Cause**: LMs learn inter-token dependencies via NTP (a successful self-supervised paradigm). The key question is how to extend a similar idea to learning inter-chunk dependencies.
+**Key Challenge**: LMs learn inter-token dependencies via NTP (a successful self-supervised paradigm). The key question is how to extend a similar idea to learning inter-chunk dependencies.
 
-**Starting Point**: Retrieval is framed as "sequence-level NTP"—NTP identifies the most relevant preceding tokens, while retrieval identifies the most relevant documents.
+**Key Insight**: Retrieval is framed as "sequence-level NTP"—NTP identifies the most relevant preceding tokens, while retrieval identifies the most relevant documents.
 
 **Core Idea**: In-batch attention is introduced into Transformer blocks, allowing NTP to leverage both within-sequence context and other sequences in the batch, with cross-sequence weights provided by the retriever.
 

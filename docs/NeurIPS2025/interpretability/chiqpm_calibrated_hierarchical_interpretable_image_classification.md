@@ -28,7 +28,7 @@ CHiQPM proposes a calibrated hierarchical interpretable image classification met
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning is increasingly adopted in safety-critical domains such as medical diagnosis and autonomous driving. Interpretable-by-design models represent an important direction toward trustworthy AI. The QPM family of methods provides global interpretability through compact binary class representations (each class described by a small number of features), enabling contrastive explanations of inter-class differences.
+**Background**: Deep learning is increasingly adopted in safety-critical domains such as medical diagnosis and autonomous driving. Interpretable-by-design models represent an important direction toward trustworthy AI. The QPM family of methods provides global interpretability through compact binary class representations (each class described by a small number of features), enabling contrastive explanations of inter-class differences.
 
 **Limitations of Prior Work**:
 - Although QPM generates contrastive class representations, such contrasts are sparse (e.g., on CUB-2011, only an average of 0.13% of class pairs are contrastive).
@@ -36,14 +36,14 @@ CHiQPM proposes a calibrated hierarchical interpretable image classification met
 - Prototype networks (e.g., ProtoTree) appear interpretable, yet their similarity spaces are learned freely, making their behavior unpredictable to humans.
 - Conformal Prediction (CP) provides set-prediction guarantees, but the resulting prediction sets typically contain semantically unrelated classes.
 
-**Root Cause**: The trade-off between interpretability and accuracy—more compact representations are easier to interpret but limit accuracy; CP-generated sets lack semantic coherence.
+**Key Challenge**: The trade-off between interpretability and accuracy—more compact representations are easier to interpret but limit accuracy; CP-generated sets lack semantic coherence.
 
-**Paper Goals**:
+**Goal**:
 - How to increase the proportion of contrastive class pairs while maintaining high accuracy?
 - How to provide hierarchical local explanations that mirror human reasoning?
 - How to produce semantically coherent class sets via CP set prediction?
 
-**Starting Point**: Combining feature detection with a hierarchical class structure. The binary feature assignments from QPM naturally induce a class hierarchy tree; traversing this tree yields semantically coherent set predictions.
+**Key Insight**: Combining feature detection with a hierarchical class structure. The binary feature assignments from QPM naturally induce a class hierarchy tree; traversing this tree yields semantically coherent set predictions.
 
 **Core Idea**: Introduce hierarchical constraints and a Feature Grounding Loss into the QPM framework so that feature assignments naturally form a traversable class hierarchy, and integrate CP into this structure to realize interpretable, calibrated set prediction.
 

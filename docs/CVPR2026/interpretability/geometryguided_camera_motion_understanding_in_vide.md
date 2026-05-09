@@ -30,11 +30,11 @@ This work systematically reveals camera motion blind spots in VideoLLMs through 
 
 ### State of the Field
 
-**State of the Field**: Camera motion (pan/tilt/dolly, etc.) constitutes a core geometric signal in cinematic grammar, directly influencing narrative structure, attentional guidance, and spatial layout expression. However, existing VideoLLMs are predominantly optimized for high-level semantics (object recognition, action understanding) and lack explicit camera motion supervision. Experiments reveal that most VideoLLMs achieve near-random accuracy (~25%) on camera motion VQA, indicating that this critical signal is severely neglected. Notably, models fine-tuned specifically on CameraBench perform even worse than the original Qwen2.5-VL, exposing fundamental issues with conventional fine-tuning approaches.
+**Background**: Camera motion (pan/tilt/dolly, etc.) constitutes a core geometric signal in cinematic grammar, directly influencing narrative structure, attentional guidance, and spatial layout expression. However, existing VideoLLMs are predominantly optimized for high-level semantics (object recognition, action understanding) and lack explicit camera motion supervision. Experiments reveal that most VideoLLMs achieve near-random accuracy (~25%) on camera motion VQA, indicating that this critical signal is severely neglected. Notably, models fine-tuned specifically on CameraBench perform even worse than the original Qwen2.5-VL, exposing fundamental issues with conventional fine-tuning approaches.
 
 ### Problem Formulation
 
-**Paper Goals**:
+**Goal**:
 1. What causes the systematic failure of VideoLLMs in recognizing fine-grained camera motion primitives?
 2. How can reliable camera motion information be injected without modifying VideoLLM weights?
 

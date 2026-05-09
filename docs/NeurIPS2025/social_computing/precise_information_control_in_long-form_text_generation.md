@@ -28,15 +28,15 @@ This paper proposes the Precise Information Control (PIC) task, which requires L
 
 ## Background & Motivation
 
-**State of the Field**: Hallucinations in LLM long-form generation are categorized as factual hallucinations (contradicting real-world knowledge) and faithfulness hallucinations (contradicting the provided input context). While substantial work addresses factual hallucinations, faithfulness hallucinations are equally critical — even when correct contextual information is provided, models may still add unsupported content or omit key information.
+**Background**: Hallucinations in LLM long-form generation are categorized as factual hallucinations (contradicting real-world knowledge) and faithfulness hallucinations (contradicting the provided input context). While substantial work addresses factual hallucinations, faithfulness hallucinations are equally critical — even when correct contextual information is provided, models may still add unsupported content or omit key information.
 
 **Limitations of Prior Work**: (a) Faithfulness evaluation is typically binary ("faithful/unfaithful"), offering insufficient granularity; (b) no standardized task exists to quantify the precision of information control when LLMs are given explicit claims; (c) existing models still exhibit severe hallucination even when users explicitly specify what information should be included.
 
-**Root Cause**: Faithfulness hallucinations are theoretically eliminable (since the correct answer is present in the input), yet in practice the rate of perfect faithfulness among SOTA models does not exceed 30%.
+**Key Challenge**: Faithfulness hallucinations are theoretically eliminable (since the correct answer is present in the input), yet in practice the rate of perfect faithfulness among SOTA models does not exceed 30%.
 
-**Paper Goals**: (a) Formally define and evaluate information control precision in long-form generation; (b) train models capable of precisely controlling output information.
+**Goal**: (a) Formally define and evaluate information control precision in long-form generation; (b) train models capable of precisely controlling output information.
 
-**Starting Point**: Using verifiable claims as the unit of granularity, faithfulness is decomposed into precision (not saying too much) and recall (not saying too little).
+**Key Insight**: Using verifiable claims as the unit of granularity, faithfulness is decomposed into precision (not saying too much) and recall (not saying too little).
 
 **Core Idea**: PIC = given a claim set $C$, every claim in the generated text is supported by $C$ (precision), and every claim in $C$ appears in the generation (recall).
 

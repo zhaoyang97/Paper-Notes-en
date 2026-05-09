@@ -29,7 +29,7 @@ This paper presents the first learning-augmented algorithm for minimum-cost netw
 
 ## Background & Motivation
 
-**State of the Field**: MCF is a fundamental problem in combinatorial optimization, with broad applications in traffic network routing, EDA chip design, and computer vision (multi-object tracking). Classical solvers include Network Simplex, Successive Shortest Paths (SSP), and ε-relaxation.
+**Background**: MCF is a fundamental problem in combinatorial optimization, with broad applications in traffic network routing, EDA chip design, and computer vision (multi-object tracking). Classical solvers include Network Simplex, Successive Shortest Paths (SSP), and ε-relaxation.
 
 **Limitations of Prior Work**: Solving large-scale MCF instances (millions of nodes/edges) is computationally expensive. Worst-case analysis is overly pessimistic—SSP theoretically requires exponential iterations, yet converges rapidly in practice.
 

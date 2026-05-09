@@ -28,15 +28,15 @@ This paper proposes the first representation learning framework capable of proce
 
 ## Background & Motivation
 
-**State of the Field**: NeRF encodes 3D information into network weights. Methods such as nf2vec and Cardace et al. perform downstream tasks (classification, retrieval) by processing NeRF weights, but are restricted to a single NeRF architecture family (MLP-only or tri-plane-only).
+**Background**: NeRF encodes 3D information into network weights. Methods such as nf2vec and Cardace et al. perform downstream tasks (classification, retrieval) by processing NeRF weights, but are restricted to a single NeRF architecture family (MLP-only or tri-plane-only).
 
 **Limitations of Prior Work**: The rapid diversification of NeRF architectures (MLP → tri-plane → hash table) requires a new processing framework to be designed for each new architecture, severely limiting practical applicability.
 
-**Root Cause**: The weight structures of different NeRF architectures differ substantially (MLP weight matrices vs. planar features vs. hash tables), making it non-trivial to construct a unified representation space.
+**Key Challenge**: The weight structures of different NeRF architectures differ substantially (MLP weight matrices vs. planar features vs. hash tables), making it non-trivial to construct a unified representation space.
 
-**Paper Goals**: Design an architecture-agnostic NeRF weight processing framework that maps representations of the same object across different NeRF architectures to nearby points in latent space.
+**Goal**: Design an architecture-agnostic NeRF weight processing framework that maps representations of the same object across different NeRF architectures to nearby points in latent space.
 
-**Starting Point**: Leverage Graph Meta-Networks (GMN) to convert arbitrary NeRF weights into parameter graphs, which are then processed by a GNN.
+**Key Insight**: Leverage Graph Meta-Networks (GMN) to convert arbitrary NeRF weights into parameter graphs, which are then processed by a GNN.
 
 **Core Idea**: Apply a SigLIP contrastive loss to align embeddings of NeRFs representing the same object but trained with different architectures, enabling the GMN encoder to produce an architecture-agnostic latent space.
 

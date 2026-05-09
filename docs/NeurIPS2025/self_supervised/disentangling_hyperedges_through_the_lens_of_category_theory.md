@@ -29,15 +29,15 @@ This work is the first to analyze hyperedge disentanglement through the lens of 
 
 ## Background & Motivation
 
-**State of the Field**: Disentangled representation learning has been successfully applied to graph-structured data for factor capture at the node level (DisenGCN), edge level (DisenHAN), and subgraph level (HSDN). However, hyperedge disentanglement—capturing latent contextual factors in group interactions (hyperedges)—has not been systematically studied.
+**Background**: Disentangled representation learning has been successfully applied to graph-structured data for factor capture at the node level (DisenGCN), edge level (DisenHAN), and subgraph level (HSDN). However, hyperedge disentanglement—capturing latent contextual factors in group interactions (hyperedges)—has not been systematically studied.
 
 **Typical Application Scenario**: Genetic pathways are canonical instances of hyperedges: a set of genes (nodes) performs specific biological functions through group interactions, and the functional context of a pathway (e.g., signal transduction, metabolic regulation) determines how the gene group interaction influences disease labels.
 
 **Limitations of Prior Work**: The most prevalent disentanglement criterion assumes "factor representation similarity"—if the $k$-th factor representations of two nodes are similar, then factor $k$ is relevant to that edge. This assumption does not hold for hyperedges: the context of a group interaction need not be reflected in the similarity among participants. For instance, researchers from different domains convening to discuss a complex problem share a common discussion topic that is unrelated to their mutual similarity.
 
-**Root Cause**: A general criterion is needed—one that does not rely on data-specific assumptions and is instead derived from the definition of hyperedge disentanglement itself.
+**Key Challenge**: A general criterion is needed—one that does not rely on data-specific assumptions and is instead derived from the definition of hyperedge disentanglement itself.
 
-**Starting Point**: The paper employs the compositional structural perspective of category theory to analyze hypergraph message-passing neural networks. It finds that entangled and disentangled representations are mappings of the same partially ordered set (poset) structure under different functors, and the naturality condition between these functors directly yields a disentanglement criterion.
+**Key Insight**: The paper employs the compositional structural perspective of category theory to analyze hypergraph message-passing neural networks. It finds that entangled and disentangled representations are mappings of the same partially ordered set (poset) structure under different functors, and the naturality condition between these functors directly yields a disentanglement criterion.
 
 **Core Idea**: For factors relevant to the group interaction of a hyperedge, the paths "aggregate-then-disentangle" and "disentangle-then-aggregate" should produce consistent factor representations. This naturality condition constitutes a general criterion for hyperedge disentanglement.
 

@@ -35,7 +35,7 @@ VLMs (e.g., GPT-4V, LLaVA) achieve strong performance on multimodal tasks but su
 
 **Rewriting-based methods** (e.g., HA-DPO, HSA-DPO): rely on external "black-box" models (GPT-4V) for rewriting, making it difficult to precisely control the type and magnitude of modifications, and potentially introducing hallucinations that deviate from the model's intrinsic failure modes.
 
-**Root Cause**: The effectiveness of DPO depends on the quality and magnitude of the **true reward gap** in preference pairs—i.e., $r(y_w;x) - r(y_l;x)$—yet existing methods lack a **systematic and fine-grained control mechanism** over this gap.
+**Key Challenge**: The effectiveness of DPO depends on the quality and magnitude of the **true reward gap** in preference pairs—i.e., $r(y_w;x) - r(y_l;x)$—yet existing methods lack a **systematic and fine-grained control mechanism** over this gap.
 
 **Starting Point of TPR**: Operate at the **topic level**, leverage the model's own resampled candidates (avoiding external bias), and precisely control the divergence between $y_w$ and $y_l$ on each semantic topic through selective replacement, thereby systematically shaping an optimal reward gap configuration.
 

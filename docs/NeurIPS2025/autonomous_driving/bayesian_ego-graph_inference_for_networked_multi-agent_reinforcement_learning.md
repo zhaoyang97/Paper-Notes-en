@@ -28,15 +28,15 @@ BayesG enables each agent in networked MARL to learn the dynamic structure of it
 
 ## Background & Motivation
 
-**State of the Field**: In networked MARL, agents exchange information through communication graphs. Existing methods rely on fixed communication graphs or require global state to learn dynamic graphs.
+**Background**: In networked MARL, agents exchange information through communication graphs. Existing methods rely on fixed communication graphs or require global state to learn dynamic graphs.
 
 **Limitations of Prior Work**: Fixed neighbor sets are suboptimal in dynamic environments, as the informational value of different neighbors varies over time. Centralized graph learning (requiring global observability) is impractical in decentralized systems.
 
-**Root Cause**: Agents possess only local observations yet must determine "which neighbors provide the most useful information" — an inherently uncertainty-laden problem.
+**Key Challenge**: Agents possess only local observations yet must determine "which neighbors provide the most useful information" — an inherently uncertainty-laden problem.
 
-**Paper Goals**: Enable each agent to learn task-adaptive local communication graph structures in a fully decentralized manner.
+**Goal**: Enable each agent to learn task-adaptive local communication graph structures in a fully decentralized manner.
 
-**Starting Point**: Model edge existence/absence as Bernoulli random variables and estimate the posterior from local data via variational Bayesian inference.
+**Key Insight**: Model edge existence/absence as Bernoulli random variables and estimate the posterior from local data via variational Bayesian inference.
 
 **Core Idea**: Each agent performs Bayesian variational inference over the edges of its ego-graph (Bernoulli + Gumbel-Softmax); an ELBO objective jointly optimizes policy and graph structure, enabling decentralized dynamic communication.
 

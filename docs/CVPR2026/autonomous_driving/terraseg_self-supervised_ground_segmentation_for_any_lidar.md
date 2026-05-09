@@ -29,15 +29,15 @@ This paper proposes TerraSeg, the first self-supervised, domain-agnostic LiDAR g
 
 ## Background & Motivation
 
-**State of the Field**: LiDAR ground segmentation is a foundational task in the autonomous driving perception stack, serving object discovery, free-space estimation, and localization/mapping. Existing methods fall into two categories: hand-crafted geometric methods (e.g., RANSAC, PatchWork++) and supervised learning methods (e.g., GndNet).
+**Background**: LiDAR ground segmentation is a foundational task in the autonomous driving perception stack, serving object discovery, free-space estimation, and localization/mapping. Existing methods fall into two categories: hand-crafted geometric methods (e.g., RANSAC, PatchWork++) and supervised learning methods (e.g., GndNet).
 
 **Limitations of Prior Work**: Hand-crafted methods are fast and annotation-free but rely on simplistic terrain assumptions (e.g., global planarity) and sensor-specific parameter tuning, requiring re-tuning for new environments or sensors and offering poor generalization. Supervised learning methods generalize better but depend on expensive per-point manual annotations, making them highly unscalable.
 
-**Root Cause**: Fast, annotation-free hand-crafted methods lack generalization, while generalizable learning-based methods require costly annotations. The ideal solution should simultaneously be annotation-free, achieve zero-shot cross-sensor generalization, and run in real time.
+**Key Challenge**: Fast, annotation-free hand-crafted methods lack generalization, while generalizable learning-based methods require costly annotations. The ideal solution should simultaneously be annotation-free, achieve zero-shot cross-sensor generalization, and run in real time.
 
-**Paper Goals**: (1) How to train a high-quality ground segmentation model without any human annotation; (2) How to enable a single model to generalize across different sensors, scenes, and weather conditions.
+**Goal**: (1) How to train a high-quality ground segmentation model without any human annotation; (2) How to enable a single model to generalize across different sensors, scenes, and weather conditions.
 
-**Starting Point**: Inspired by the success of large-scale pre-training in NLP/CV, but rather than pursuing a multi-task general-purpose system, this work follows a single-task, domain-agnostic approach—training self-supervisedly on highly diverse geometric data to achieve zero-shot cross-domain transfer.
+**Key Insight**: Inspired by the success of large-scale pre-training in NLP/CV, but rather than pursuing a multi-task general-purpose system, this work follows a single-task, domain-agnostic approach—training self-supervisedly on highly diverse geometric data to achieve zero-shot cross-domain transfer.
 
 **Core Idea**: Aggregate ~22 million scans from 12 datasets and 15 sensor types to construct OmniLiDAR, and use self-supervised pseudo labels (PseudoLabeler) to train a domain-agnostic ground segmentation model based on Point Transformer v3.
 

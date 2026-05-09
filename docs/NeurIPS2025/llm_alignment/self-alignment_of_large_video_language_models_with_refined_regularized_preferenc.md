@@ -30,7 +30,7 @@ This paper proposes RRPO (Refined Regularized Preference Optimization), which re
 
 **Core Problem of LVLMs**: Large video language models frequently make errors in fine-grained temporal understanding, hallucination, and simple QA tasks.
 
-**Root Cause**: Insufficient spatiotemporal understanding, misalignment between visual and linguistic representations, spurious correlations from co-occurring concepts, and over-reliance on language cues while ignoring visual information.
+**Key Challenge**: Insufficient spatiotemporal understanding, misalignment between visual and linguistic representations, spurious correlations from co-occurring concepts, and over-reliance on language cues while ignoring visual information.
 
 **Limitations of Prior Work — DPO**:
    - Response-level rewards are too coarse-grained, penalizing all tokens rather than the critical differing tokens.

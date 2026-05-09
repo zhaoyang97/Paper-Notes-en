@@ -27,15 +27,15 @@ content_hash: 8645a9f99f80083d
 This paper proposes ARCL-ViT, a framework that prevents attention drift in Vision Transformers during continual learning via a two-step strategy of attention mask generation and gradient masking. It achieves state-of-the-art results on ImageNet-R and CIFAR-100, demonstrating that preserving attention patterns is key to mitigating catastrophic forgetting.
 
 ## Background & Motivation
-**State of the Field**: Continual learning requires models to retain performance on previous tasks while learning new ones. ViTs are increasingly adopted in CL settings.
+**Background**: Continual learning requires models to retain performance on previous tasks while learning new ones. ViTs are increasingly adopted in CL settings.
 
 **Limitations of Prior Work**: (a) Catastrophic forgetting in ViTs manifests as **attention drift**; (b) regularization methods (e.g., EWC) offer limited effectiveness for ViTs; (c) expansion methods (e.g., DualPrompt) introduce substantial additional parameters.
 
-**Root Cause**: Updating parameters to learn new tasks may disrupt the attention allocation established for discriminative features of old tasks.
+**Key Challenge**: Updating parameters to learn new tasks may disrupt the attention allocation established for discriminative features of old tasks.
 
-**Paper Goals**: Directly prevent the destruction of attention patterns corresponding to previously learned tasks in ViTs.
+**Goal**: Directly prevent the destruction of attention patterns corresponding to previously learned tasks in ViTs.
 
-**Starting Point**: Inspired by the selective attention mechanism of the human V1 visual cortex — maintaining sustained focus on important features.
+**Key Insight**: Inspired by the selective attention mechanism of the human V1 visual cortex — maintaining sustained focus on important features.
 
 **Core Idea**: Generate attention masks from previous tasks and zero out gradients of Q/K/V weights in the corresponding regions during new task training, directly preventing attention drift.
 

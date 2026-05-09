@@ -31,13 +31,13 @@ This paper proposes OnlineHMR, the first online world-grounded human mesh recove
 
 ## Background & Motivation
 
-**State of the Field**: Human mesh recovery (HMR) reconstructs 3D human pose and shape from monocular video. Recent years have seen an extension from camera-space estimation to world-space global human trajectory and motion recovery, with methods such as WHAM, TRAM, and GVHMR achieving notable progress.
+**Background**: Human mesh recovery (HMR) reconstructs 3D human pose and shape from monocular video. Recent years have seen an extension from camera-space estimation to world-space global human trajectory and motion recovery, with methods such as WHAM, TRAM, and GVHMR achieving notable progress.
 
 **Limitations of Prior Work**: (a) Most methods are **offline** — TCMR/GLoT take 16-frame sequences to estimate the middle frame, and TRAM relies on globally optimized SLAM; (b) WHAM claims to be online, but its global trajectory module actually depends on offline DPVO/DROID-SLAM, which uses future frames to refine past camera poses; (c) Human3R supports online inference but suffers from poor local motion quality and severe jitter, as 4D scene reconstruction provides far fewer human-specific training samples than scene data; (d) Real-time interactive applications such as AR/VR, telepresence, and perception-action loops are consequently excluded.
 
-**Root Cause**: Under strict causal constraints (no future frames, no global optimization), how can one simultaneously guarantee global trajectory accuracy and local motion quality?
+**Key Challenge**: Under strict causal constraints (no future frames, no global optimization), how can one simultaneously guarantee global trajectory accuracy and local motion quality?
 
-**Paper Goals**: The paper decouples the problem into two expert branches — camera-space HMR (precise local motion) and incremental SLAM (global localization) — each made causal independently and bridged through physical constraints. Four online processing criteria are proposed: (1) system-level causality; (2) faithful geometric/pose reconstruction; (3) temporal consistency; (4) constant-time-complexity inference efficiency.
+**Goal**: The paper decouples the problem into two expert branches — camera-space HMR (precise local motion) and incremental SLAM (global localization) — each made causal independently and bridged through physical constraints. Four online processing criteria are proposed: (1) system-level causality; (2) faithful geometric/pose reconstruction; (3) temporal consistency; (4) constant-time-complexity inference efficiency.
 
 ## Method
 

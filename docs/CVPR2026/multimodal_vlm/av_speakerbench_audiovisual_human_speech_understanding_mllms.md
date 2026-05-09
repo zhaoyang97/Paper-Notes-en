@@ -29,11 +29,11 @@ This paper introduces AV-SpeakerBench, a speaker-centric audiovisual reasoning b
 
 ## Background & Motivation
 
-1. **State of the Field**: Multimodal large language models have expanded from image–text to video and audio understanding, with increasing pursuit of unified processing of visual, audio, and linguistic modalities.
+1. **Background**: Multimodal large language models have expanded from image–text to video and audio understanding, with increasing pursuit of unified processing of visual, audio, and linguistic modalities.
 2. **Limitations of Prior Work**: Many existing video benchmarks (e.g., Video-MME) can be answered using visual information alone; audiovisual benchmarks either focus on non-speech sound events (AVQA) or coarse-grained classification (VGGSounder), without evaluating fine-grained speaker reasoning.
-3. **Root Cause**: No benchmark systematically evaluates whether models can jointly determine *who is speaking*, *what was said*, and *when it was said*.
-4. **Paper Goals**: To construct an audiovisual reasoning benchmark centered on the speaker as the core reasoning unit.
-5. **Starting Point**: Fusion-driven question design that embeds audiovisual dependency into the semantics of questions and answer choices.
+3. **Key Challenge**: No benchmark systematically evaluates whether models can jointly determine *who is speaking*, *what was said*, and *when it was said*.
+4. **Goal**: To construct an audiovisual reasoning benchmark centered on the speaker as the core reasoning unit.
+5. **Key Insight**: Fusion-driven question design that embeds audiovisual dependency into the semantics of questions and answer choices.
 6. **Core Idea**: Every question requires cross-modal fusion to answer — for example, associating spoken phrases with visible speakers or localizing speech based on visual events.
 
 ## Method

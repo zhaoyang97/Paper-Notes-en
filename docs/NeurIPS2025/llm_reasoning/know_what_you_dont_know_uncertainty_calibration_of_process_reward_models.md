@@ -28,15 +28,15 @@ This paper proposes a quantile regression-based calibration method for PRMs, ena
 
 ## Background & Motivation
 
-**State of the Field**: Process Reward Models (PRMs) play a central role in inference-time scaling, guiding methods such as Best-of-N sampling and Beam Search. A PRM scores each intermediate reasoning step to assess the probability that the current reasoning path will ultimately yield a correct answer.
+**Background**: Process Reward Models (PRMs) play a central role in inference-time scaling, guiding methods such as Best-of-N sampling and Beam Search. A PRM scores each intermediate reasoning step to assess the probability that the current reasoning path will ultimately yield a correct answer.
 
 **Limitations of Prior Work**: Even state-of-the-art PRMs (e.g., Qwen-PRM, Shepherd-PRM) suffer from severe miscalibration—they tend to **overestimate success probabilities**, particularly when paired with weaker LLMs or applied to difficult problems. This occurs because PRMs are trained on a specific policy model, and distribution mismatch arises when a different-capacity LLM is used at deployment.
 
-**Root Cause**: PRM training is coupled to the generation distribution $\pi_\theta$ of a particular policy model, yet deployment may involve models of different capability. A PRM trained on a 72B model will systematically overestimate the success probability of a 1B model.
+**Key Challenge**: PRM training is coupled to the generation distribution $\pi_\theta$ of a particular policy model, yet deployment may involve models of different capability. A PRM trained on a 72B model will systematically overestimate the success probability of a 1B model.
 
-**Paper Goals**: (1) How can off-the-shelf PRMs be calibrated to produce reliable success probability estimates? (2) How can calibrated probabilities be leveraged to achieve adaptive computational resource allocation?
+**Goal**: (1) How can off-the-shelf PRMs be calibrated to produce reliable success probability estimates? (2) How can calibrated probabilities be leveraged to achieve adaptive computational resource allocation?
 
-**Starting Point**: Conventional calibration methods such as temperature scaling are ill-suited for PRMs—since the success probability is itself an intermediate probability rather than a binary label—so the paper proposes quantile regression to predict the distribution of success probabilities, using conservative lower-quantile estimates to guide resource allocation.
+**Key Insight**: Conventional calibration methods such as temperature scaling are ill-suited for PRMs—since the success probability is itself an intermediate probability rather than a binary label—so the paper proposes quantile regression to predict the distribution of success probabilities, using conservative lower-quantile estimates to guide resource allocation.
 
 **Core Idea**: Fine-tune a PRM with quantile regression to predict lower bounds on success probability, thereby enabling conservative yet reliable instance-adaptive inference budget allocation.
 

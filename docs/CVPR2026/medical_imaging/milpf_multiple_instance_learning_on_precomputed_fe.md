@@ -29,15 +29,15 @@ Combining frozen general-purpose foundation encoders (DINOv2 ViT-Giant / MedSigL
 
 ## Background & Motivation
 
-**State of the Field**: Breast cancer is the most common malignancy and the leading cause of cancer-related death in women; mammography is the preferred screening modality. Existing methods either fine-tune large backbones end-to-end (14–23M parameters, computationally expensive) or rely on domain-specific pretrained encoders (e.g., MammoCLIP) with limited generalization.
+**Background**: Breast cancer is the most common malignancy and the leading cause of cancer-related death in women; mammography is the preferred screening modality. Existing methods either fine-tune large backbones end-to-end (14–23M parameters, computationally expensive) or rely on domain-specific pretrained encoders (e.g., MammoCLIP) with limited generalization.
 
 **Limitations of Prior Work**: Mammography presents three unique challenges: (1) extremely high resolution (up to 4708×5844 pixels), making end-to-end fine-tuning of large models impractical; (2) annotations are available only at the breast level (BI-RADS grading), without pixel-level labels, yielding a weakly supervised setting; and (3) a single examination contains multiple views (CC, MLO), requiring joint reasoning across views.
 
-**Root Cause**: Can powerful general-purpose foundation models (e.g., DINOv2) zero-shot generalize to out-of-distribution mammography data? If so, precomputed features could substantially reduce experimental costs—challenging the prevailing assumption that medical imaging requires domain-specific pretraining.
+**Key Challenge**: Can powerful general-purpose foundation models (e.g., DINOv2) zero-shot generalize to out-of-distribution mammography data? If so, precomputed features could substantially reduce experimental costs—challenging the prevailing assumption that medical imaging requires domain-specific pretraining.
 
-**Paper Goals**: To design a lightweight classification framework that models both global tissue structure and sparse local lesion signals using features from frozen foundation models, without fine-tuning large visual encoders.
+**Goal**: To design a lightweight classification framework that models both global tissue structure and sparse local lesion signals using features from frozen foundation models, without fine-tuning large visual encoders.
 
-**Starting Point**: The authors observe that DINOv2 ViT-Giant and MedSigLIP generalize surprisingly well to mammography in a zero-shot setting, substantially outperforming the domain-specific MammoCLIP (AUC 0.897 vs. 0.870), validating the feasibility of the "frozen general-purpose encoder + lightweight task head" paradigm.
+**Key Insight**: The authors observe that DINOv2 ViT-Giant and MedSigLIP generalize surprisingly well to mammography in a zero-shot setting, substantially outperforming the domain-specific MammoCLIP (AUC 0.897 vs. 0.870), validating the feasibility of the "frozen general-purpose encoder + lightweight task head" paradigm.
 
 **Core Idea**: Precomputed features from frozen general-purpose foundation encoders, combined with a dual-stream MIL aggregation head (global mean pooling + local Perceiver attention), achieve SOTA performance with ~40k parameters and 5 minutes of training.
 

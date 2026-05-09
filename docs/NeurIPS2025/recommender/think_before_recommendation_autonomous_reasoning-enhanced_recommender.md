@@ -29,15 +29,15 @@ This paper proposes RecZero (a pure RL paradigm) and RecOne (a hybrid SFT+RL par
 
 ## Background & Motivation
 
-**State of the Field**: Enhancing recommender systems with LLM reasoning for rating prediction is a recent research hotspot. The dominant approach is distillation: a powerful teacher LLM (e.g., ChatGPT) generates reasoning chains, and a student model is fine-tuned via SFT to imitate them.
+**Background**: Enhancing recommender systems with LLM reasoning for rating prediction is a recent research hotspot. The dominant approach is distillation: a powerful teacher LLM (e.g., ChatGPT) generates reasoning chains, and a student model is fine-tuned via SFT to imitate them.
 
 **Limitations of Prior Work**: (a) Teacher models lack domain knowledge in recommendation, causing the generated reasoning chains to be misaligned with rating prediction objectives; (b) Collecting high-quality reasoning data is costly (API calls / human annotation) and yields static datasets, preventing the student from actively optimizing; (c) SFT learns surface-level patterns rather than genuine reasoning ability, resulting in poor generalization to new scenarios.
 
-**Root Cause**: How can an LLM autonomously acquire recommendation reasoning ability, rather than passively imitating potentially inaccurate teacher reasoning?
+**Key Challenge**: How can an LLM autonomously acquire recommendation reasoning ability, rather than passively imitating potentially inaccurate teacher reasoning?
 
-**Paper Goals**: Train a single LLM via RL (rather than distillation) to jointly optimize across four steps: recommendation reasoning, user analysis, item analysis, and match evaluation.
+**Goal**: Train a single LLM via RL (rather than distillation) to jointly optimize across four steps: recommendation reasoning, user analysis, item analysis, and match evaluation.
 
-**Starting Point**: Inspired by DeepSeek-R1-Zero — pure RL training can elicit emergent reasoning abilities in LLMs without any teacher data.
+**Key Insight**: Inspired by DeepSeek-R1-Zero — pure RL training can elicit emergent reasoning abilities in LLMs without any teacher data.
 
 **Core Idea**: Apply GRPO with rule-based rewards to directly train an LLM to autonomously develop step-by-step reasoning for rating prediction, bypassing teacher-student distillation.
 

@@ -29,15 +29,15 @@ MDPD proposes an efficient fine-tuning framework based on bidirectional knowledg
 
 ## Background & Motivation
 
-**State of the Field**: Memory-efficient transfer learning (METL) avoids gradient backpropagation through large backbones by constructing lightweight parallel side networks, substantially reducing training memory. However, side networks introduce additional memory and computational overhead at inference time.
+**Background**: Memory-efficient transfer learning (METL) avoids gradient backpropagation through large backbones by constructing lightweight parallel side networks, substantially reducing training memory. However, side networks introduce additional memory and computational overhead at inference time.
 
 **Limitations of Prior Work**: Existing METL methods achieve parameter and memory efficiency during training, but their inference-time overhead contradicts the ultimate goal of efficient transfer learning.
 
-**Root Cause**: Side networks are indispensable during training (to avoid storing gradients of the large backbone) yet become a burden at inference (increasing forward-pass overhead).
+**Key Challenge**: Side networks are indispensable during training (to avoid storing gradients of the large backbone) yet become a burden at inference (increasing forward-pass overhead).
 
-**Paper Goals**: Design a method that leverages side networks for memory-efficient training while discarding them at inference without sacrificing accuracy.
+**Goal**: Design a method that leverages side networks for memory-efficient training while discarding them at inference without sacrificing accuracy.
 
-**Starting Point**: Transfer the downstream task knowledge learned by the side network back to the backbone via bidirectional knowledge distillation.
+**Key Insight**: Transfer the downstream task knowledge learned by the side network back to the backbone via bidirectional knowledge distillation.
 
 **Core Idea**: During training, the backbone and side network serve as mutual teacher and student through distillation; at inference, only the optimized backbone is used and the side network is "faded out."
 

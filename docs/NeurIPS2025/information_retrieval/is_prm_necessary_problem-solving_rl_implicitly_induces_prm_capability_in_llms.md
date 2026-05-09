@@ -28,15 +28,15 @@ This study systematically demonstrates that pure RL training (without explicit P
 
 ## Background & Motivation
 
-**State of the Field**: Two main approaches exist for improving LLM reasoning: RL training (e.g., DeepSeek-R1 and QwQ-32B trained via GRPO/DAPO with final-answer correctness as the reward signal) and Process Reward Models (PRMs, which score each reasoning step, e.g., PRM800K, Math-Shepherd-PRM). Both directions have strong advocates, yet the relationship between them has rarely been studied systematically.
+**Background**: Two main approaches exist for improving LLM reasoning: RL training (e.g., DeepSeek-R1 and QwQ-32B trained via GRPO/DAPO with final-answer correctness as the reward signal) and Process Reward Models (PRMs, which score each reasoning step, e.g., PRM800K, Math-Shepherd-PRM). Both directions have strong advocates, yet the relationship between them has rarely been studied systematically.
 
 **Limitations of Prior Work**: PRMs face three fundamental limitations: (1) the granularity of reasoning steps is ambiguous—there is no unified standard for what constitutes "one step"; (2) high-quality step-level annotation is extremely costly, requiring mathematical experts to evaluate reasoning correctness step by step; (3) PRMs are systematically susceptible to reward hacking—models learn to produce reasoning steps that appear correct but are actually flawed in order to obtain high scores. The DeepSeek-R1 technical report explicitly notes that PRMs did not yield significant gains during training.
 
-**Root Cause**: On one hand, the PRM community invests substantial resources in constructing step-level supervision data and training dedicated reward models; on the other hand, the strongest reasoning models (DeepSeek-R1, QwQ-32B) are trained purely with RL. The central question is whether explicit process supervision is truly necessary, or whether RL training itself already implicitly endows models with process judgment capability.
+**Key Challenge**: On one hand, the PRM community invests substantial resources in constructing step-level supervision data and training dedicated reward models; on the other hand, the strongest reasoning models (DeepSeek-R1, QwQ-32B) are trained purely with RL. The central question is whether explicit process supervision is truly necessary, or whether RL training itself already implicitly endows models with process judgment capability.
 
-**Paper Goals**: (1) Systematically validate the relationship between RL training and PRM capability; (2) Evaluate the practical utility of existing PRMs on strong reasoning models; (3) Explore better ways to leverage a model's own reasoning capability for solution verification.
+**Goal**: (1) Systematically validate the relationship between RL training and PRM capability; (2) Evaluate the practical utility of existing PRMs on strong reasoning models; (3) Explore better ways to leverage a model's own reasoning capability for solution verification.
 
-**Starting Point**: If RL training teaches a model what constitutes good reasoning steps during problem solving, that understanding should also be applicable to evaluating others' reasoning steps—i.e., problem-solving ability and judgment ability are two sides of the same coin.
+**Key Insight**: If RL training teaches a model what constitutes good reasoning steps during problem solving, that understanding should also be applicable to evaluating others' reasoning steps—i.e., problem-solving ability and judgment ability are two sides of the same coin.
 
 **Core Idea**: Problem-solving capability and process judgment capability co-evolve during pure RL training, rendering external PRMs redundant for already strong reasoning models.
 

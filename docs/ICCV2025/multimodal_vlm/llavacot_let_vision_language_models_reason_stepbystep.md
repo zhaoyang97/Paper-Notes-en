@@ -30,11 +30,11 @@ By constructing the LLaVA-CoT-100k dataset with structured reasoning annotations
 
 ### State of the Field
 
-**State of the Field**: Large language models have achieved notable progress in reasoning (e.g., CoT prompting), yet current vision-language models (VLMs) still struggle to perform systematic, structured reasoning on complex visual question answering tasks. Conventional chain-of-thought prompting yields limited benefits for VLMs, as interpreting visual information requires additional structured steps. Existing VLMs typically jump directly from question to answer without an intermediate systematic thinking process, a deficiency that is especially pronounced in tasks involving spatial reasoning, scientific computation, and chart comprehension.
+**Background**: Large language models have achieved notable progress in reasoning (e.g., CoT prompting), yet current vision-language models (VLMs) still struggle to perform systematic, structured reasoning on complex visual question answering tasks. Conventional chain-of-thought prompting yields limited benefits for VLMs, as interpreting visual information requires additional structured steps. Existing VLMs typically jump directly from question to answer without an intermediate systematic thinking process, a deficiency that is especially pronounced in tasks involving spatial reasoning, scientific computation, and chart comprehension.
 
 ### Approach
 
-**Paper Goals**: The central question is how to enable VLMs to autonomously and systematically perform multi-stage reasoning. Key challenges include: (1) the lack of training data with structured reasoning annotations; (2) the need for models to learn natural transitions between reasoning stages; and (3) how to further improve reasoning quality at inference time (test-time scaling).
+**Goal**: The central question is how to enable VLMs to autonomously and systematically perform multi-stage reasoning. Key challenges include: (1) the lack of training data with structured reasoning annotations; (2) the need for models to learn natural transitions between reasoning stages; and (3) how to further improve reasoning quality at inference time (test-time scaling).
 
 ## Method
 

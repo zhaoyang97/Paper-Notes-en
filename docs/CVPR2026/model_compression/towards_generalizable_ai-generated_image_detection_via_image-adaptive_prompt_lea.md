@@ -29,15 +29,15 @@ This paper proposes Image-Adaptive Prompt Learning (IAPL), which dynamically adj
 
 ## Background & Motivation
 
-**State of the Field**: AI-generated image detection is a prominent research topic in the security domain. State-of-the-art methods commonly fine-tune vision foundation models such as CLIP, leveraging their rich pretrained representations to aid detection. Existing approaches including UniFD, FatFormer, and C2P-CLIP fix all learnable parameters after training.
+**Background**: AI-generated image detection is a prominent research topic in the security domain. State-of-the-art methods commonly fine-tune vision foundation models such as CLIP, leveraging their rich pretrained representations to aid detection. Existing approaches including UniFD, FatFormer, and C2P-CLIP fix all learnable parameters after training.
 
 **Limitations of Prior Work**: Models with fixed parameters after fine-tuning exhibit insufficient robustness to domain shift induced by unseen generators. Images produced by different generators vary substantially in texture, semantics, and forgery artifacts, and fixed parameters cannot capture these instance-level discriminative cues.
 
-**Root Cause**: Training data covers only a limited set of generation methods (e.g., ProGAN only), yet inference must handle 19 distinct generators. Prompts learned on the training set encode only the forgery distribution of that set and cannot adapt to new distributions.
+**Key Challenge**: Training data covers only a limited set of generation methods (e.g., ProGAN only), yet inference must handle 19 distinct generators. Prompts learned on the training set encode only the forgery distribution of that set and cannot adapt to new distributions.
 
-**Paper Goals**: (1) How to dynamically adapt prompts to each test image at inference time? (2) How to extract image-specific forgery cues as conditioning information? (3) How to allow instance-level adaptation while maintaining detection backbone stability?
+**Goal**: (1) How to dynamically adapt prompts to each test image at inference time? (2) How to extract image-specific forgery cues as conditioning information? (3) How to allow instance-level adaptation while maintaining detection backbone stability?
 
-**Starting Point**: The paper introduces the concept of Test-Time Adaptation into prompt learning — prompts are optimized not only during training but also at inference time via multi-view consistency constraints derived from a single test image.
+**Key Insight**: The paper introduces the concept of Test-Time Adaptation into prompt learning — prompts are optimized not only during training but also at inference time via multi-view consistency constraints derived from a single test image.
 
 **Core Idea**: The prompt consists of two components — a *post-training fixed conditional information* part and a *dynamically adjusted test-time token* part — fused via a learnable scaling factor to enable instance-level adaptation of the detector.
 

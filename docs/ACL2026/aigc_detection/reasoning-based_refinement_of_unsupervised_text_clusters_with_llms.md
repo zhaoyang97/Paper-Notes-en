@@ -28,15 +28,15 @@ A reasoning-based cluster refinement framework that uses LLMs as semantic judges
 
 ## Background & Motivation
 
-**State of the Field**: Unsupervised text clustering (LDA, BERTopic, HDBSCAN, etc.) is widely used for discovering latent semantic structures from large-scale text collections. Recent methods primarily rely on contextual embeddings + geometric clustering criteria to assess cluster quality.
+**Background**: Unsupervised text clustering (LDA, BERTopic, HDBSCAN, etc.) is widely used for discovering latent semantic structures from large-scale text collections. Recent methods primarily rely on contextual embeddings + geometric clustering criteria to assess cluster quality.
 
 **Limitations of Prior Work**: Geometric properties in embedding space (e.g., separation, density) do not always align with human understanding of semantics. Clusters may be well-separated numerically but semantically incoherent, and multiple clusters may encode overlapping topics. This is especially problematic for social media short texts, where noise, vocabulary variation, and topic drift widen the gap between statistical consistency and human interpretability.
 
-**Root Cause**: Existing pipelines lack explicit semantic verification mechanisms—the "hypotheses" produced by clustering algorithms are never tested for genuine semantic coherence, non-redundancy, and interpretability.
+**Key Challenge**: Existing pipelines lack explicit semantic verification mechanisms—the "hypotheses" produced by clustering algorithms are never tested for genuine semantic coherence, non-redundancy, and interpretability.
 
-**Paper Goals**: Design a post-hoc refinement layer that leverages LLM reasoning capabilities to verify and restructure the output of any unsupervised clustering method.
+**Goal**: Design a post-hoc refinement layer that leverages LLM reasoning capabilities to verify and restructure the output of any unsupervised clustering method.
 
-**Starting Point**: Treat clusters as "proposals" and LLMs as "semantic judges" rather than embedding generators, decoupling representation learning from structural verification.
+**Key Insight**: Treat clusters as "proposals" and LLMs as "semantic judges" rather than embedding generators, decoupling representation learning from structural verification.
 
 **Core Idea**: LLMs possess strong natural language reasoning abilities to evaluate whether a cluster is internally consistent, whether two clusters are meaningfully different, and whether topics are grounded in the text—capabilities that pure geometric methods cannot achieve.
 

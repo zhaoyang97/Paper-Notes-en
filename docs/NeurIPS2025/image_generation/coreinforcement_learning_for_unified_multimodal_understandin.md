@@ -29,15 +29,15 @@ This paper proposes CoRL (Co-Reinforcement Learning), a two-stage framework — 
 
 ## Background & Motivation
 
-**State of the Field**: Unified multimodal large language models (ULMs) handle both visual understanding and image generation, with representative works including Janus-Pro (fully autoregressive F-AR) and Show-o (autoregressive + diffusion hybrid). RL post-training has demonstrated significant gains in text-only LLMs (e.g., DeepSeek-R1), but its application in multimodal settings has been largely limited to reasoning enhancement for understanding tasks.
+**Background**: Unified multimodal large language models (ULMs) handle both visual understanding and image generation, with representative works including Janus-Pro (fully autoregressive F-AR) and Show-o (autoregressive + diffusion hybrid). RL post-training has demonstrated significant gains in text-only LLMs (e.g., DeepSeek-R1), but its application in multimodal settings has been largely limited to reasoning enhancement for understanding tasks.
 
 **Limitations of Prior Work**: (1) RL for visual generation remains largely unexplored — SimpleAR made a preliminary attempt using CLIP Score but with limited effectiveness; (2) more critically, applying RL to jointly optimize both understanding and generation capabilities of ULMs has not been explored; (3) applying RL to a single task not only yields limited gains on generation but may also degrade the other capability.
 
-**Root Cause**: ULM understanding and generation share the same LLM backbone, making independent optimization prone to conflicts. Existing RL methods (e.g., GRPO) design rewards primarily for text outputs and lack verifiable reward signals applicable to image generation.
+**Key Challenge**: ULM understanding and generation share the same LLM backbone, making independent optimization prone to conflicts. Existing RL methods (e.g., GRPO) design rewards primarily for text outputs and lack verifiable reward signals applicable to image generation.
 
-**Paper Goals**: To design an RL framework tailored for ULMs that enables understanding and generation capabilities to mutually benefit from shared policy optimization rather than interfering with each other.
+**Goal**: To design an RL framework tailored for ULMs that enables understanding and generation capabilities to mutually benefit from shared policy optimization rather than interfering with each other.
 
-**Starting Point**: The authors conduct a systematic pilot study comparing four RL strategies (separate RL / separate RL with weight merging / alternating RL / unified RL), finding that unified RL significantly outperforms the others, demonstrating that dual capabilities can co-evolve under shared optimization. This insight motivates a two-stage design: first establish cross-task synergy via unified RL, then specialize via refinement.
+**Key Insight**: The authors conduct a systematic pilot study comparing four RL strategies (separate RL / separate RL with weight merging / alternating RL / unified RL), finding that unified RL significantly outperforms the others, demonstrating that dual capabilities can co-evolve under shared optimization. This insight motivates a two-stage design: first establish cross-task synergy via unified RL, then specialize via refinement.
 
 **Core Idea**: Simultaneously optimize both understanding and generation capabilities of ULMs within a unified GRPO framework, leveraging the synergistic effect of cross-task reward signals to achieve joint capability improvement.
 

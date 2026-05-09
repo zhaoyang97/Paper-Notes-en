@@ -28,15 +28,15 @@ This paper proposes Proof-of-Perception (PoP), which models multimodal reasoning
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal LLMs have made progress on document understanding, chart reasoning, and related tasks, but typically conflate fine-grained perception (OCR, detection, chart parsing) with symbolic reasoning within a single forward pass. Tool use and structured prompting strategies (CoT, ReAct, PoT) have partially addressed this issue.
+**Background**: Multimodal LLMs have made progress on document understanding, chart reasoning, and related tasks, but typically conflate fine-grained perception (OCR, detection, chart parsing) with symbolic reasoning within a single forward pass. Tool use and structured prompting strategies (CoT, ReAct, PoT) have partially addressed this issue.
 
 **Limitations of Prior Work**: (1) Intermediate steps output single-point estimates, silently propagating errors; (2) compute allocation relies on heuristics (fixed retry counts, uncalibrated thresholds), precluding principled accuracy-cost trade-offs; (3) calibration, when present, is applied only to final answers, leaving step-wise reliability of intermediate outputs unguaranteed.
 
-**Root Cause**: Existing methods make a hard commitment at each intermediate perception step—once an OCR result is wrong by a character or a detection misses a bounding box, subsequent reasoning is forced to rationalize upon erroneous foundations. Moreover, there is no principled criterion for deciding when to scale up reasoning (via additional tool calls) versus terminating early.
+**Key Challenge**: Existing methods make a hard commitment at each intermediate perception step—once an OCR result is wrong by a character or a detection misses a bounding box, subsequent reasoning is forced to rationalize upon erroneous foundations. Moreover, there is no principled criterion for deciding when to scale up reasoning (via additional tool calls) versus terminating early.
 
-**Paper Goals**: How can reliability guarantees be provided for every intermediate step in multi-step multimodal reasoning, and how can such uncertainty be converted into a principled compute allocation strategy?
+**Goal**: How can reliability guarantees be provided for every intermediate step in multi-step multimodal reasoning, and how can such uncertainty be converted into a principled compute allocation strategy?
 
-**Starting Point**: Conformal Prediction provides finite-sample coverage guarantees without distributional assumptions. Applying it to each node in a reasoning DAG replaces single-point outputs with sets that carry formal coverage guarantees.
+**Key Insight**: Conformal Prediction provides finite-sample coverage guarantees without distributional assumptions. Applying it to each node in a reasoning DAG replaces single-point outputs with sets that carry formal coverage guarantees.
 
 **Core Idea**: Apply conformal prediction at each perception/logic node in the reasoning DAG to produce calibrated set-valued outputs; a controller then decides whether to accept, retry, or expand computation based on set size and remaining budget.
 

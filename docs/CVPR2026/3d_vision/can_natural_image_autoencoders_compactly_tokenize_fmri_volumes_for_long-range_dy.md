@@ -27,15 +27,15 @@ content_hash: ca037e1a3b753cd0
 This paper proposes TABLeT, which leverages a pretrained 2D natural image autoencoder (DCAE) to compress 3D fMRI volumes into as few as 27 continuous tokens per frame. Paired with a standard Transformer encoder, this enables unprecedented long-range temporal modeling (256 frames), surpassing SOTA voxel-based methods on multiple tasks across UKB, HCP, and ADHD-200, while significantly improving computational efficiency.
 
 ## Background & Motivation
-**State of the Field**: fMRI analysis methods fall into two categories: ROI-based methods (e.g., BrainNetCNN, BNT), which are efficient but lose spatial information, and voxel-based methods (e.g., TFF, SwiFT), which preserve complete information but incur prohibitive memory costs, limiting processing to ~20 temporal frames.
+**Background**: fMRI analysis methods fall into two categories: ROI-based methods (e.g., BrainNetCNN, BNT), which are efficient but lose spatial information, and voxel-based methods (e.g., TFF, SwiFT), which preserve complete information but incur prohibitive memory costs, limiting processing to ~20 temporal frames.
 
 **Limitations of Prior Work**: fMRI is a 4D signal (3D spatial + temporal). Due to GPU memory constraints, voxel-based methods can only process very short temporal windows (20 frames), making it impossible to capture important long-range temporal dynamics such as ultra-slow BOLD-LFP coupling and whole-brain arousal waves.
 
-**Root Cause**: Modeling long temporal sequences requires compressing the spatial dimension, yet aggressive compression discards critical spatial information—the longstanding limitation of ROI-based approaches. The central challenge is achieving a high compression ratio while retaining sufficient information.
+**Key Challenge**: Modeling long temporal sequences requires compressing the spatial dimension, yet aggressive compression discards critical spatial information—the longstanding limitation of ROI-based approaches. The central challenge is achieving a high compression ratio while retaining sufficient information.
 
-**Paper Goals**: Design a compact tokenization scheme for fMRI volumes that enables Transformers to process significantly longer time series within limited GPU memory.
+**Goal**: Design a compact tokenization scheme for fMRI volumes that enables Transformers to process significantly longer time series within limited GPU memory.
 
-**Starting Point**: A counterintuitive finding—a 2D autoencoder pretrained on natural images, without any fine-tuning on medical data, can effectively tokenize fMRI volumes.
+**Key Insight**: A counterintuitive finding—a 2D autoencoder pretrained on natural images, without any fine-tuning on medical data, can effectively tokenize fMRI volumes.
 
 **Core Idea**: Slice 3D fMRI volumes into 2D images along three axes, encode them with a pretrained DCAE (32× spatial compression), and reassemble the results into 27 tokens per frame, enabling long-sequence inputs of 256 frames.
 

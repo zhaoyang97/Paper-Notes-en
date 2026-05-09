@@ -29,14 +29,14 @@ This paper proposes the vMFCoOp framework, which aligns the semantic discrepancy
 
 ## Background & Motivation
 
-1. **State of the Field**: Vision-language models such as CLIP achieve strong zero/few-shot generalization through large-scale contrastive learning, yet their effectiveness in the biomedical domain is limited—medical images exhibit highly structured semantics, fine-grained anatomy, strong anatomical priors, and cross-scale variation. Prompt learning methods such as CoOp/CoCoOp have emerged as lightweight adaptation strategies.
+1. **Background**: Vision-language models such as CLIP achieve strong zero/few-shot generalization through large-scale contrastive learning, yet their effectiveness in the biomedical domain is limited—medical images exhibit highly structured semantics, fine-grained anatomy, strong anatomical priors, and cross-scale variation. Prompt learning methods such as CoOp/CoCoOp have emerged as lightweight adaptation strategies.
 2. **Limitations of Prior Work**: BiomedCoOp leverages LLM-generated prompts to guide CLIP's context learning, but suffers from three issues:
    - **Semantic misalignment** between LLMs and CLIP due to differences in training corpora and model architectures
    - **Lack of scalability** to the rapidly evolving family of foundation models
    - Pairwise multimodal alignment in Euclidean space **fails to capture directional semantics and unified representations**
-3. **Root Cause**: Prompt learning must reconcile differing semantic abstractions, representational granularity, and alignment dynamics between LLMs and CLIP; however, existing methods perform independent pairwise matching in flat Euclidean space, which is insufficient for modeling the intrinsic relational geometry.
-4. **Paper Goals**: To align the semantic discrepancies of heterogeneous foundation models on a unified hyperspherical manifold, achieving stable, generalizable, and model-agnostic few-shot biomedical prompt learning.
-5. **Starting Point**: CLIP and LLM embeddings are naturally $\ell_2$-normalized and reside on the unit hypersphere, making the vMF distribution a natural choice for modeling their directional semantics.
+3. **Key Challenge**: Prompt learning must reconcile differing semantic abstractions, representational granularity, and alignment dynamics between LLMs and CLIP; however, existing methods perform independent pairwise matching in flat Euclidean space, which is insufficient for modeling the intrinsic relational geometry.
+4. **Goal**: To align the semantic discrepancies of heterogeneous foundation models on a unified hyperspherical manifold, achieving stable, generalizable, and model-agnostic few-shot biomedical prompt learning.
+5. **Key Insight**: CLIP and LLM embeddings are naturally $\ell_2$-normalized and reside on the unit hypersphere, making the vMF distribution a natural choice for modeling their directional semantics.
 6. **Core Idea**: vMF distributions are estimated separately for CLIP vocabulary embeddings and LLM prompts on the hypersphere, then fused into unified semantic anchors to guide prompt optimization.
 
 ## Method

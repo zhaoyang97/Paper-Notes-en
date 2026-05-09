@@ -28,18 +28,18 @@ This paper is the first to systematically define the task of automated Equity Re
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have been successfully applied to financial sentiment analysis, question answering, and related tasks, but the automatic generation of complete equity research reports—structured, in-depth analytical documents spanning thousands of words—has not yet been systematically studied.
+**Background**: LLMs have been successfully applied to financial sentiment analysis, question answering, and related tasks, but the automatic generation of complete equity research reports—structured, in-depth analytical documents spanning thousands of words—has not yet been systematically studied.
 
 **Limitations of Prior Work**:
 - Lack of high-quality ERR datasets — existing financial datasets focus on summaries or short texts and do not include structured long-form reports.
 - Lack of ERR-specific evaluation metrics — general NLG metrics (BLEU/ROUGE) cannot measure the accuracy of financial analysis.
 - ERRs comprise 6 key sections (financial analysis / news analysis / management assessment / risk analysis / investment evaluation / overall rating), and errors in any one section can mislead investors.
 
-**Root Cause**: ERR generation requires integrating multiple heterogeneous financial data sources (time-series stock prices, financial statements, announcements, news, market indices), and the output must be accurate, comprehensive, and actionable — far beyond standard text generation.
+**Key Challenge**: ERR generation requires integrating multiple heterogeneous financial data sources (time-series stock prices, financial statements, announcements, news, market indices), and the output must be accurate, comprehensive, and actionable — far beyond standard text generation.
 
-**Paper Goals**: Define the ERR generation task + construct a dataset and evaluation framework + design a multi-agent generation framework.
+**Goal**: Define the ERR generation task + construct a dataset and evaluation framework + design a multi-agent generation framework.
 
-**Starting Point**: Decompose report generation into a collaboration of 9 specialized agents, each responsible for a distinct data source or analytical dimension.
+**Key Insight**: Decompose report generation into a collaboration of 9 specialized agents, each responsible for a distinct data source or analytical dimension.
 
 **Core Idea**: 7 categories of financial data + 9-agent division of labor + three-stage enhancement = automated ERR generation approaching human expert quality.
 

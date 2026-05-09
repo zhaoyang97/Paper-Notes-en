@@ -28,7 +28,7 @@ This paper proposes SemHiTok — a tokenizer that unifies visual understanding a
 
 ## Background & Motivation
 
-**State of the Field**: Unified MLLMs require tokenizers that simultaneously support understanding (high-level semantics) and generation (low-level pixels).
+**Background**: Unified MLLMs require tokenizers that simultaneously support understanding (high-level semantics) and generation (low-level pixels).
 
 **Limitations of Prior Work**:
    - (1) CLIP-based methods → strong semantics but poor pixel fidelity; VQGAN-based methods → good pixel reconstruction but weak semantics.
@@ -36,7 +36,7 @@ This paper proposes SemHiTok — a tokenizer that unifies visual understanding a
    - (3) Dual-encoder designs (Janus) → token count doubles or vocabulary explodes → inefficient.
    - (4) TokenFlow uses a shared mapping but joint training still degrades performance.
 
-**Starting Point**: The observation that patches sharing the same semantic code exhibit similar pixel distributions motivates building sub-codebooks under each semantic code, achieving full decoupling in both structure and training.
+**Key Insight**: The observation that patches sharing the same semantic code exhibit similar pixel distributions motivates building sub-codebooks under each semantic code, achieving full decoupling in both structure and training.
 
 ## Method
 

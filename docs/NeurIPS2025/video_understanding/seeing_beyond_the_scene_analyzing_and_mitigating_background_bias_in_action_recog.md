@@ -22,15 +22,15 @@ This paper systematically analyzes background bias in action recognition across 
 
 ## Background & Motivation
 
-**State of the Field**: Action recognition models have long relied on background scene cues (e.g., snow → skiing) as prediction shortcuts rather than focusing on human body movements. Prior research has primarily studied background bias in classification models, leaving contrastive pre-trained models such as CLIP and VLLMs largely underexplored.
+**Background**: Action recognition models have long relied on background scene cues (e.g., snow → skiing) as prediction shortcuts rather than focusing on human body movements. Prior research has primarily studied background bias in classification models, leaving contrastive pre-trained models such as CLIP and VLLMs largely underexplored.
 
 **Limitations of Prior Work**: (1) Background bias in CLIP/SigLIP2 and VLLMs has not been sufficiently investigated; (2) simply removing background information reduces bias but severely degrades accuracy on standard datasets (a 26.47% drop on Kinetics-50); (3) architectural modifications to VLLMs are costly, and lightweight mitigation approaches are lacking.
 
-**Root Cause**: Background information simultaneously serves as useful context (aiding prediction in normal scenes) and a harmful source of bias (misleading predictions in counterfactual scenes). The central challenge lies in suppressing bias while preserving beneficial contextual information.
+**Key Challenge**: Background information simultaneously serves as useful context (aiding prediction in normal scenes) and a harmful source of bias (misleading predictions in counterfactual scenes). The central challenge lies in suppressing bias while preserving beneficial contextual information.
 
-**Paper Goals**: (1) Quantify the severity of background bias across the three model paradigms; (2) design a bias-mitigation architecture for classification models that retains background context; (3) explore lightweight prompt-based mitigation for VLLMs.
+**Goal**: (1) Quantify the severity of background bias across the three model paradigms; (2) design a bias-mitigation architecture for classification models that retains background context; (3) explore lightweight prompt-based mitigation for VLLMs.
 
-**Starting Point**: The paper addresses two orthogonal dimensions — human body segmentation and prompt design — to develop paradigm-specific mitigation strategies for classification models and VLLMs, respectively.
+**Key Insight**: The paper addresses two orthogonal dimensions — human body segmentation and prompt design — to develop paradigm-specific mitigation strategies for classification models and VLLMs, respectively.
 
 **Core Idea**: A dual-branch architecture balances contextual utilization and bias suppression by fusing original video with segmented human video, while automated prompt tuning guides VLLMs to focus on human actions.
 

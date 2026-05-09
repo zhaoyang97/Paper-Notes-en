@@ -33,7 +33,7 @@ Video Anomaly Detection (VAD) is critical for security surveillance. Existing ap
 
 Core requirement: Anomaly understanding demands not only "whether anomalous" but also "where," "which object is responsible," and "how it evolves over time"—requiring a closed loop from pixel-level evidence to language-level reasoning.
 
-**Starting Point**: (i) Extract spatiotemporal anomaly evidence via visual–textual alignment; (ii) inject this evidence as structured prompts into an LVLM for multi-task, multi-turn reasoning.
+**Key Insight**: (i) Extract spatiotemporal anomaly evidence via visual–textual alignment; (ii) inject this evidence as structured prompts into an LVLM for multi-task, multi-turn reasoning.
 
 ## Method
 

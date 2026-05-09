@@ -28,11 +28,11 @@ This paper identifies functional sparsity at the frequency component (FC) level 
 
 ## Background & Motivation
 
-1. **State of the Field**: LLM long-context processing faces a memory bottleneck due to the linear growth of KV caches. Mainstream compression directions include token pruning (StreamingLLM, SnapKV), low-rank compression, quantization, KV merging, and budget allocation.
+1. **Background**: LLM long-context processing faces a memory bottleneck due to the linear growth of KV caches. Mainstream compression directions include token pruning (StreamingLLM, SnapKV), low-rank compression, quantization, KV merging, and budget allocation.
 2. **Limitations of Prior Work**: (1) Static strategies (StreamingLLM) retain fixed leading/trailing tokens, causing irreversible information loss; (2) adaptive strategies (SnapKV, H2O) use heuristic ranking that fails to fully capture the query-dependent nature of token importance; (3) learning-based strategies require training token predictors that generalize poorly across datasets.
-3. **Root Cause**: Token importance is inherently query-dependent, yet existing methods either apply static, query-agnostic rules or evaluate importance at a cost equivalent to computing full attention. The key question is whether query-aware importance prediction can be achieved more cheaply.
-4. **Paper Goals**: To achieve query-aware token importance prediction at minimal computational cost without any training.
-5. **Starting Point**: RoPE decomposes attention computation into independent contributions from $d/2$ 2D frequency components (FCs). Different FCs serve different roles due to their distinct rotation frequencies: high-frequency FCs encode positional patterns, while low-frequency FCs carry semantic information. A small subset of "dominant FCs" suffices to approximately reconstruct the full-head attention pattern.
+3. **Key Challenge**: Token importance is inherently query-dependent, yet existing methods either apply static, query-agnostic rules or evaluate importance at a cost equivalent to computing full attention. The key question is whether query-aware importance prediction can be achieved more cheaply.
+4. **Goal**: To achieve query-aware token importance prediction at minimal computational cost without any training.
+5. **Key Insight**: RoPE decomposes attention computation into independent contributions from $d/2$ 2D frequency components (FCs). Different FCs serve different roles due to their distinct rotation frequencies: high-frequency FCs encode positional patterns, while low-frequency FCs carry semantic information. A small subset of "dominant FCs" suffices to approximately reconstruct the full-head attention pattern.
 6. **Core Idea**: Exploit the intrinsic FC-level functional sparsity in RoPE, replacing full-dimensional attention with lightweight computation over a small number of dominant FCs to predict token importance.
 
 ## Method

@@ -31,7 +31,7 @@ Microsoft proposes the first method for real-time prediction of 3D Gaussian Spla
 
 ### State of the Field
 
-**State of the Field**: 3D virtual meetings hold promise for enhancing the sense of co-presence and engagement in remote communication, yet existing 3D representation approaches each suffer from fundamental drawbacks:
+**Background**: 3D virtual meetings hold promise for enhancing the sense of co-presence and engagement in remote communication, yet existing 3D representation approaches each suffer from fundamental drawbacks:
 
 **Complex hardware solutions** (e.g., Google Project Starline): require multi-camera arrays, dedicated sensors, and substantial compute, making them prohibitively expensive.
 
@@ -47,11 +47,11 @@ Microsoft proposes the first method for real-time prediction of 3D Gaussian Spla
 
 ### Root Cause
 
-**Root Cause**: **Realism**: Generating plausible and photorealistic 3D reconstructions under novel viewpoints.
+**Key Challenge**: **Realism**: Generating plausible and photorealistic 3D reconstructions under novel viewpoints.
 
 ### Starting Point
 
-**Starting Point**: **Liveness**: Running in real time on consumer-grade devices.
+**Key Insight**: **Liveness**: Running in real time on consumer-grade devices.
 
 ### Remarks
 

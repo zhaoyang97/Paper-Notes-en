@@ -29,17 +29,17 @@ This paper proposes BuildAnyPoint, which employs a **loosely-coupled cascaded di
 
 ## Background & Motivation
 
-**State of the Field**: Recovering lightweight 3D building models from urban point clouds is a critical requirement for applications such as digital twins, navigation, and disaster simulation. Existing approaches include optimization-based methods (plane detection and assembly) and learning-based solutions, but they typically **handle only specific point cloud distributions**.
+**Background**: Recovering lightweight 3D building models from urban point clouds is a critical requirement for applications such as digital twins, navigation, and disaster simulation. Existing approaches include optimization-based methods (plane detection and assembly) and learning-based solutions, but they typically **handle only specific point cloud distributions**.
 
 **Limitations of Prior Work**:
    - Point2Building: pioneered direct autoregressive mesh generation from point clouds, but single-step autoregression frequently produces **geometric ambiguities** and mesh–point cloud misalignment.
    - ArcPro: introduces a building grammar intermediate representation to reduce ambiguity, but is constrained by **predefined geometric primitives** (e.g., cylindrical extrusions), cannot handle complex structures such as sloped roofs, and assumes relatively complete local point clouds for each module.
 
-**Root Cause**: How can one simultaneously maintain **generalizability** to arbitrary point cloud distributions and ensure **structural consistency and geometric accuracy** of the generated meshes? Directly feeding heterogeneous point clouds into autoregressive mesh generators performs poorly, as such generators require high-quality, clean, and complete point clouds.
+**Key Challenge**: How can one simultaneously maintain **generalizability** to arbitrary point cloud distributions and ensure **structural consistency and geometric accuracy** of the generated meshes? Directly feeding heterogeneous point clouds into autoregressive mesh generators performs poorly, as such generators require high-quality, clean, and complete point clouds.
 
-**Paper Goals**: To construct the first **unified framework** that recovers structured building abstraction meshes from point clouds of arbitrary distributions (LiDAR, SfM, extremely sparse and noisy).
+**Goal**: To construct the first **unified framework** that recovers structured building abstraction meshes from point clouds of arbitrary distributions (LiDAR, SfM, extremely sparse and noisy).
 
-**Starting Point**: Exploit **explicit 3D generative priors** to constrain the solution space — rather than generating meshes directly from heterogeneous point clouds, first recover the underlying uniform dense point cloud distribution, then pass it to an existing high-quality mesh generator.
+**Key Insight**: Exploit **explicit 3D generative priors** to constrain the solution space — rather than generating meshes directly from heterogeneous point clouds, first recover the underlying uniform dense point cloud distribution, then pass it to an existing high-quality mesh generator.
 
 **Core Idea**: Loosely-coupled cascade = hierarchical latent diffusion (distribution recovery) + autoregressive Transformer (mesh generation), progressively bridging the modality gap from unstructured point clouds to structured meshes through a series of latent space transformations.
 

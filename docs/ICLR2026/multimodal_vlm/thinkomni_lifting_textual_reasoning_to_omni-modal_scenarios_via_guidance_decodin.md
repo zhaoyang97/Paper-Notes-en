@@ -28,7 +28,7 @@ ThinkOmni is a training-free framework that leverages a text-only large reasonin
 
 ## Background & Motivation
 
-**State of the Field**: Large reasoning models (LRMs) such as DeepSeek-R1 and o1 demonstrate remarkable performance on textual reasoning tasks but are limited to text-only inputs. Omni-modal LLMs (OLLMs) such as Qwen2.5-Omni can process text, audio, images, and video, yet still exhibit weaknesses in complex reasoning tasks.
+**Background**: Large reasoning models (LRMs) such as DeepSeek-R1 and o1 demonstrate remarkable performance on textual reasoning tasks but are limited to text-only inputs. Omni-modal LLMs (OLLMs) such as Qwen2.5-Omni can process text, audio, images, and video, yet still exhibit weaknesses in complex reasoning tasks.
 
 **Limitations of Prior Work**: Existing approaches to enhancing OLLM reasoning face several challenges:
    - **Data scarcity**: SFT requires large quantities of high-quality multimodal reasoning samples, which are costly to obtain.
@@ -36,11 +36,11 @@ ThinkOmni is a training-free framework that leverages a text-only large reasonin
    - **Task specialization**: Existing enhancement methods (e.g., Omni-R1, HumanOmniV2) are limited to specific downstream tasks and lack generalizability.
    - **Modality limitation**: Most prior work focuses on a single modality (image or audio) and does not achieve true cross-modal reasoning.
 
-**Root Cause**: LRMs possess strong reasoning capabilities but cannot process non-textual inputs; OLLMs handle multimodal inputs but lack sufficient reasoning capacity. The two are complementary, yet how to combine them in a training-free manner at inference time remains the central challenge.
+**Key Challenge**: LRMs possess strong reasoning capabilities but cannot process non-textual inputs; OLLMs handle multimodal inputs but lack sufficient reasoning capacity. The two are complementary, yet how to combine them in a training-free manner at inference time remains the central challenge.
 
-**Paper Goals**: To transfer the textual reasoning capability of LRMs to omni-modal scenarios without additional training data or fine-tuning.
+**Goal**: To transfer the textual reasoning capability of LRMs to omni-modal scenarios without additional training data or fine-tuning.
 
-**Starting Point**: Inference-time guidance decoding is adopted, treating the LRM as a decoding-time "advisor" for the OLLM and fusing their signals at the logits level.
+**Key Insight**: Inference-time guidance decoding is adopted, treating the LRM as a decoding-time "advisor" for the OLLM and fusing their signals at the logits level.
 
 **Core Idea**: The textual reasoning signal produced by the LRM guides the OLLM's omni-modal decoding at the logits level, with Stepwise Contrastive Scaling adaptively regulating the perception–reasoning balance.
 

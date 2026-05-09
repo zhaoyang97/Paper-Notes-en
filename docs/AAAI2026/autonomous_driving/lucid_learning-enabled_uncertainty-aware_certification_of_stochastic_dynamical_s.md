@@ -29,15 +29,15 @@ This paper proposes LUCID, the first verification engine capable of providing qu
 
 ## Background & Motivation
 
-**State of the Field**: AI components (e.g., deep learning controllers) are increasingly embedded in high-stakes systems such as autonomous vehicles and medical devices, making safety assurance critically important. However, traditional formal verification tools face two major challenges: (1) AI components are opaque black boxes; (2) system dynamics are inherently stochastic.
+**Background**: AI components (e.g., deep learning controllers) are increasingly embedded in high-stakes systems such as autonomous vehicles and medical devices, making safety assurance critically important. However, traditional formal verification tools face two major challenges: (1) AI components are opaque black boxes; (2) system dynamics are inherently stochastic.
 
 **Limitations of Prior Work**: Existing verification methods either require precise mathematical models of the system (inapplicable to black-box AI), cannot handle stochasticity (applicable only to deterministic systems), or provide only statistical bounds rather than formal safety guarantees.
 
-**Root Cause**: Mathematically rigorous safety guarantees are required for systems that are fundamentally unpredictable (stochastic) and uninterpretable (black-box).
+**Key Challenge**: Mathematically rigorous safety guarantees are required for systems that are fundamentally unpredictable (stochastic) and uninterpretable (black-box).
 
-**Paper Goals**: (1) Learn safety certificates from a finite dataset of state transitions only; (2) provide robustness guarantees against out-of-distribution behavior; (3) maintain computational feasibility.
+**Goal**: (1) Learn safety certificates from a finite dataset of state transitions only; (2) provide robustness guarantees against out-of-distribution behavior; (3) maintain computational feasibility.
 
-**Starting Point**: Leveraging the framework of Control Barrier Certificates (CBCs), but learning them from data via kernel methods rather than assuming a known system model.
+**Key Insight**: Leveraging the framework of Control Barrier Certificates (CBCs), but learning them from data via kernel methods rather than assuming a known system model.
 
 **Core Idea**: Conditional mean embeddings are used to embed data into a Reproducing Kernel Hilbert Space (RKHS), constructing a distributionally robust ambiguity set; finite Fourier kernel expansions then transform the semi-infinite optimization into a linear program.
 

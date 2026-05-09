@@ -29,18 +29,18 @@ This paper proposes PowerSig, which efficiently computes signature kernels via l
 
 ## Background & Motivation
 
-**State of the Field**: The Signature Kernel is a state-of-the-art tool for analyzing high-dimensional sequential data, rooted in rough path theory, with desirable properties including reparameterization invariance, characteristic property, and robustness to noise. It has been widely applied in financial modeling, signal processing, and related domains.
+**Background**: The Signature Kernel is a state-of-the-art tool for analyzing high-dimensional sequential data, rooted in rough path theory, with desirable properties including reparameterization invariance, characteristic property, and robustness to noise. It has been widely applied in financial modeling, signal processing, and related domains.
 
 **Limitations of Prior Work**:
 - Existing methods either compute truncated signature kernels via dynamic programming ($O(\ell^2)$ memory) or solve a global Goursat PDE via finite differences (also $O(\ell^2)$ memory).
 - The KSig library handles sequences of at most ~$16 \times 10^4$ steps on an RTX 4090, while sigkernel is limited to ~$10^3$ steps.
 - In applications such as high-frequency financial data and long-term sensor monitoring, sequence lengths routinely exceed one million, rendering existing methods entirely infeasible.
 
-**Root Cause**: The signature kernel possesses excellent theoretical properties, yet its computation cannot scale to long or rough time series.
+**Key Challenge**: The signature kernel possesses excellent theoretical properties, yet its computation cannot scale to long or rough time series.
 
-**Paper Goals**: To scale signature kernel computation to time series of length $10^6$+ while preserving accuracy.
+**Goal**: To scale signature kernel computation to time series of length $10^6$+ while preserving accuracy.
 
-**Starting Point**: The paper exploits the geometric structure of piecewise-linear time series to reformulate the global solution of the Goursat PDE as tile-local Neumann series expansions, storing only local series coefficients rather than a global $\ell \times \ell$ grid.
+**Key Insight**: The paper exploits the geometric structure of piecewise-linear time series to reformulate the global solution of the Goursat PDE as tile-local Neumann series expansions, storing only local series coefficients rather than a global $\ell \times \ell$ grid.
 
 **Core Idea**: The PDE defining the signature kernel is rewritten as a Volterra integral equation; a Neumann series expansion is applied on each tile; recursive boundary propagation connects adjacent tiles, yielding a computation whose memory scales linearly with sequence length.
 

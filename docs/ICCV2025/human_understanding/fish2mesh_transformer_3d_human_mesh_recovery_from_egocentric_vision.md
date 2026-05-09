@@ -28,15 +28,15 @@ This paper proposes Fish2Mesh, a fisheye-aware Transformer model that embeds the
 
 ## Background & Motivation
 
-**State of the Field**: Egocentric human estimation has progressed from binocular stereo systems to monocular setups, yet mainstream research remains focused on joint pose estimation. Human Mesh Recovery (HMR) captures richer body shape and volume information compared to joint estimation, but poses greater challenges under egocentric fisheye viewpoints.
+**Background**: Egocentric human estimation has progressed from binocular stereo systems to monocular setups, yet mainstream research remains focused on joint pose estimation. Human Mesh Recovery (HMR) captures richer body shape and volume information compared to joint estimation, but poses greater challenges under egocentric fisheye viewpoints.
 
 **Limitations of Prior Work**: (1) Egocentric datasets are scarce and difficult to annotate; (2) fisheye lenses introduce severe spatial distortion, especially near image boundaries; (3) self-occlusion is severe — arms occlude the torso, and the head limits visibility of the lower body; (4) the current SOTA method EgoHMR employs a diffusion model, producing high output uncertainty that is unsuitable for real-time XR and robotic interaction, and does not address fisheye distortion.
 
-**Root Cause**: Standard Transformer positional encodings assume a regular grid and cannot express the nonlinear spatial warping of fisheye projections. Applying standard models directly to fisheye images loses 3D spatial context.
+**Key Challenge**: Standard Transformer positional encodings assume a regular grid and cannot express the nonlinear spatial warping of fisheye projections. Applying standard models directly to fisheye images loses 3D spatial context.
 
-**Paper Goals**: Design a Transformer architecture that natively understands fisheye geometry to accurately regress SMPL parameters and 3D human meshes from egocentric fisheye views.
+**Goal**: Design a Transformer architecture that natively understands fisheye geometry to accurately regress SMPL parameters and 3D human meshes from egocentric fisheye views.
 
-**Starting Point**: Treating fisheye images as spherical projections, the method generates learnable 3D positional encodings via equirectangular projection–spherical coordinate conversion to encode the spherical spatial information of each pixel.
+**Key Insight**: Treating fisheye images as spherical projections, the method generates learnable 3D positional encodings via equirectangular projection–spherical coordinate conversion to encode the spherical spatial information of each pixel.
 
 **Core Idea**: The 2D pixel coordinates of a fisheye image are converted to 3D spherical coordinates $(x_{3D}, y_{3D}, z_{3D})$ via equirectangular projection, discretized to construct a learnable positional embedding table that replaces the standard relative position bias in Swin Transformer, enabling the model to natively perceive fisheye geometric distortion.
 

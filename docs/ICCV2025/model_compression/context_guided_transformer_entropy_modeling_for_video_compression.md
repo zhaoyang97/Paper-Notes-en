@@ -27,11 +27,11 @@ content_hash: 13abb50dbb1d65aa
 This paper proposes the Context Guided Transformer (CGT) conditional entropy model, which reduces entropy modeling time by approximately 65% while achieving an 11% BD-Rate improvement in video compression. This is accomplished via a Temporal Context Resampler that reduces computational overhead and a Dependency-Weighted Spatial Context Assigner that explicitly models spatial dependencies.
 
 ## Background & Motivation
-- **State of the Field**: Deep neural network-driven video compression methods, particularly conditional entropy models, have emerged as a dominant paradigm by leveraging spatiotemporal context to estimate the probability mass function (PMF) of video frames.
+- **Background**: Deep neural network-driven video compression methods, particularly conditional entropy models, have emerged as a dominant paradigm by leveraging spatiotemporal context to estimate the probability mass function (PMF) of video frames.
 - **Limitations of Prior Work 1**: In the temporal dimension, incorporating additional temporal context inevitably increases computational overhead and inference latency — e.g., VCT requires self-attention over two frames of temporal context.
 - **Limitations of Prior Work 2**: In the spatial dimension, existing methods (autoregressive, checkerboard, minimum-entropy decoding, etc.) adopt predefined fixed-order decoding strategies and lack explicit modeling of spatial positional dependencies.
-- **Root Cause**: How to effectively exploit spatiotemporal context simultaneously without significantly increasing computational cost.
-- **Starting Point**: Temporal context compression via learnable queries combined with a teacher–student network that explicitly models spatial dependency weights.
+- **Key Challenge**: How to effectively exploit spatiotemporal context simultaneously without significantly increasing computational cost.
+- **Key Insight**: Temporal context compression via learnable queries combined with a teacher–student network that explicitly models spatial dependency weights.
 - **Core Idea**: Compact learnable queries are used to resample temporal context, reducing subsequent processing overhead, while a teacher–student Swin Transformer network balances token importance and prediction certainty to determine the optimal spatial decoding order.
 
 ## Method

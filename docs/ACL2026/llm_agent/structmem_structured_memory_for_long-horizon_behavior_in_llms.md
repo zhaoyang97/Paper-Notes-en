@@ -29,15 +29,15 @@ StructMem proposes a structure-enhanced hierarchical memory framework that achie
 
 ## Background & Motivation
 
-**State of the Field**: Persistent memory systems are essential for LLM agents to maintain coherence over long-term conversations. Existing memory systems fall into two paradigms: flat memory stores facts or summaries as independent units and performs similarity-based retrieval via vector databases; graph memory constructs knowledge graphs through entity-relation extraction to support structured reasoning.
+**Background**: Persistent memory systems are essential for LLM agents to maintain coherence over long-term conversations. Existing memory systems fall into two paradigms: flat memory stores facts or summaries as independent units and performs similarity-based retrieval via vector databases; graph memory constructs knowledge graphs through entity-relation extraction to support structured reasoning.
 
 **Limitations of Prior Work**: Flat memory is efficient but cannot model cross-event relationships—retrieval degenerates into shallow similarity matching, precluding temporal reasoning and multi-hop QA. Graph memory recovers relational structure but at prohibitive cost, requiring cascaded LLM operations (entity extraction, relation extraction, deduplication, and updates), and is fragile—noisy extraction propagates structural noise. Mem0^g alone consumes 35.8M tokens, 53,514 API calls, and 115,670 seconds of runtime.
 
-**Root Cause**: A fundamental trade-off between efficiency and structured reasoning. Flat approaches are fast but shallow; graph approaches are deep but slow. The root issue lies in inappropriate choice of memory unit: isolated facts lose context, while triples impose rigid schemas.
+**Key Challenge**: A fundamental trade-off between efficiency and structured reasoning. Flat approaches are fast but shallow; graph approaches are deep but slow. The root issue lies in inappropriate choice of memory unit: isolated facts lose context, while triples impose rigid schemas.
 
-**Paper Goals**: Design a memory unit that preserves causal and interpersonal relational context of events without requiring explicit schema design, entity resolution, or symbolic graph traversal.
+**Goal**: Design a memory unit that preserves causal and interpersonal relational context of events without requiring explicit schema design, entity resolution, or symbolic graph traversal.
 
-**Starting Point**: The fundamental unit of conversational memory should not be an isolated fact or triple, but a "temporally anchored relational event" that retains both what happened and how events are interrelated across participants and time.
+**Key Insight**: The fundamental unit of conversational memory should not be an isolated fact or triple, but a "temporally anchored relational event" that retains both what happened and how events are interrelated across participants and time.
 
 **Core Idea**: Use event-level binding (dual-perspective extraction + temporal anchoring) to preserve local structure, and cross-event consolidation (semantic retrieval + batch synthesis) to build global connections, achieving structured reasoning without constructing an explicit graph.
 

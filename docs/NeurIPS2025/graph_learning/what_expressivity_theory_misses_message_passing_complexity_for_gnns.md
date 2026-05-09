@@ -30,15 +30,15 @@ This paper critiques the binary expressivity theory of GNNs for its inability to
 
 ### State of the Field
 
-**State of the Field**: GNN expressivity theory centers on the WL isomorphism test, with a large body of work pursuing expressivity beyond WL.
+**Background**: GNN expressivity theory centers on the WL isomorphism test, with a large body of work pursuing expressivity beyond WL.
 
 **Limitations of Prior Work**: Expressivity theory is binary (can/cannot distinguish), and thus cannot explain performance differences among models of equal expressivity; nearly all graph pairs in standard benchmarks are already distinguished by WL, so higher expressivity should yield no additional benefit.
 
-**Root Cause**: GCN with virtual nodes (which does not increase WL expressivity) outperforms higher-order models that surpass WL on long-range tasks—a phenomenon expressivity theory cannot explain.
+**Key Challenge**: GCN with virtual nodes (which does not increase WL expressivity) outperforms higher-order models that surpass WL on long-range tasks—a phenomenon expressivity theory cannot explain.
 
-**Paper Goals**: Propose a continuous complexity framework that preserves impossibility conclusions while explaining practical performance differences.
+**Goal**: Propose a continuous complexity framework that preserves impossibility conclusions while explaining practical performance differences.
 
-**Starting Point**: Probabilistically relax the WL test—each message survives independently with a random-walk probability (lossyWL).
+**Key Insight**: Probabilistically relax the WL test—each message survives independently with a random-walk probability (lossyWL).
 
 **Core Idea**: The negative log of the information retention probability under lossyWL = MPC = a task-specific, architecture-specific, continuous measure of learning difficulty.
 

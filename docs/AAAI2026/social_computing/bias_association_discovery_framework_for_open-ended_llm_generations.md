@@ -29,15 +29,15 @@ This paper proposes the Bias Association Discovery Framework (BADF), which syste
 
 ## Background & Motivation
 
-**State of the Field**: LLMs trained on large-scale real-world data inevitably encode social biases, leading to unfair representational harm across different demographic groups. Existing bias evaluation methods (e.g., cloze tests, multiple-choice QA) have made progress but largely rely on predefined identity–concept association pairs for measurement.
+**Background**: LLMs trained on large-scale real-world data inevitably encode social biases, leading to unfair representational harm across different demographic groups. Existing bias evaluation methods (e.g., cloze tests, multiple-choice QA) have made progress but largely rely on predefined identity–concept association pairs for measurement.
 
 **Limitations of Prior Work**: Existing methods can only detect known biases (e.g., "elderly ↔ forgetful") and are unable to discover novel, unexpected bias associations latent in models. Even recent work such as BiasDora, which attempts open-ended discovery, is limited to word-level associations and cannot capture sentence-level or narrative-level complex bias patterns.
 
-**Root Cause**: LLMs are predominantly deployed in open-ended generation scenarios (e.g., story writing, dialogue), yet bias evaluation methods remain confined to constrained, template-based assessments—a severe mismatch between the evaluation paradigm and the usage paradigm.
+**Key Challenge**: LLMs are predominantly deployed in open-ended generation scenarios (e.g., story writing, dialogue), yet bias evaluation methods remain confined to constrained, template-based assessments—a severe mismatch between the evaluation paradigm and the usage paradigm.
 
-**Paper Goals**: To systematically discover and quantify both known and unknown bias associations from LLMs' open-ended free-form generated text.
+**Goal**: To systematically discover and quantify both known and unknown bias associations from LLMs' open-ended free-form generated text.
 
-**Starting Point**: Story generation is adopted as the open-ended task vehicle. By configuring diverse location and demographic identity combinations, LLMs are allowed to naturally expose their encoded social biases.
+**Key Insight**: Story generation is adopted as the open-ended task vehicle. By configuring diverse location and demographic identity combinations, LLMs are allowed to naturally expose their encoded social biases.
 
 **Core Idea**: A three-stage framework, BADF, is designed—first extracting descriptive concepts from generated text, then filtering meaningful associations via frequency salience and statistical testing, and finally removing concepts that reflect only factual definitional exclusivity rather than bias.
 

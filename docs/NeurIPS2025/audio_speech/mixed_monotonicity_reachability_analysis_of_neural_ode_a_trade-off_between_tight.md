@@ -29,7 +29,7 @@ This paper applies continuous-time mixed monotonicity techniques to the reachabi
 
 ## Background & Motivation
 
-**State of the Field**: Neural ODEs are a powerful class of continuous-time machine learning models capable of describing the behavior of complex dynamical systems. They are widely applied in trajectory prediction, system control, and physics-based modeling.
+**Background**: Neural ODEs are a powerful class of continuous-time machine learning models capable of describing the behavior of complex dynamical systems. They are widely applied in trajectory prediction, system control, and physics-based modeling.
 
 **Safety Requirements**: In safety-critical scenarios (autonomous driving, aerospace, medical devices), it is essential to verify that the outputs of Neural ODEs remain within admissible safety bounds—this is the problem of reachability analysis.
 
@@ -38,9 +38,9 @@ This paper applies continuous-time mixed monotonicity techniques to the reachabi
 - Although zonotopes and star sets yield tight over-approximations, their computational cost grows rapidly in high-dimensional settings.
 - No methods specifically tailored to the continuous-time dynamical characteristics of Neural ODEs exist.
 
-**Root Cause**: The inherent trade-off between tightness and efficiency—tighter over-approximations require greater computational resources.
+**Key Challenge**: The inherent trade-off between tightness and efficiency—tighter over-approximations require greater computational resources.
 
-**Starting Point**: Leveraging the concept of mixed monotonicity from dynamical systems theory, the Neural ODE is embedded into a mixed monotone system, enabling reachability analysis via simple interval arithmetic.
+**Key Insight**: Leveraging the concept of mixed monotonicity from dynamical systems theory, the Neural ODE is embedded into a mixed monotone system, enabling reachability analysis via simple interval arithmetic.
 
 ## Method
 

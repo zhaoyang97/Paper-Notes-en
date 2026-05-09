@@ -28,7 +28,7 @@ HINGE is a framework that, for the first time, repurposes a pre-trained expressi
 
 ## Background & Motivation
 
-**State of the Field**: Spatial transcriptomics (ST) enables in situ measurement of gene expression but suffers from high cost and low throughput. Directly predicting spatial gene expression from routinely acquired H&E histology sections offers a practical alternative.
+**Background**: Spatial transcriptomics (ST) enables in situ measurement of gene expression but suffers from high cost and low throughput. Directly predicting spatial gene expression from routinely acquired H&E histology sections offers a practical alternative.
 
 **Two Classes of Existing Methods**: (1) Deterministic regression (ST-Net / HisToGene / TRIPLEX) — maps histology patches to expression vectors but ignores intrinsic biological stochasticity; (2) Conditional generation (Stem / STFlow) — models conditional distributions more flexibly, yet fails to capture gene–gene dependencies that are difficult to infer from histology alone.
 

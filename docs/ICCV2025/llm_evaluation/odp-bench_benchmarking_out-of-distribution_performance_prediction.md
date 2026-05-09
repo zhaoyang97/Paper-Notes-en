@@ -28,18 +28,18 @@ This paper presents ODP-Bench, the first comprehensive benchmark for OOD perform
 
 ## Background & Motivation
 
-**State of the Field**: OOD performance prediction aims to estimate how well a trained model performs on an unlabeled OOD test set, enabling safer deployment in risk-sensitive scenarios such as autonomous driving and medical imaging. Recent methods approach this from multiple angles, including model confidence, distributional discrepancy, and model agreement.
+**Background**: OOD performance prediction aims to estimate how well a trained model performs on an unlabeled OOD test set, enabling safer deployment in risk-sensitive scenarios such as autonomous driving and medical imaging. Recent methods approach this from multiple angles, including model confidence, distributional discrepancy, and model agreement.
 
 **Limitations of Prior Work**:
 - **Inconsistent evaluation**: Evaluation protocols vary substantially across the literature, with no consensus on training models, test datasets, or evaluation metrics.
 - **Insufficient coverage**: Most works rely on a limited number of OOD datasets, focusing primarily on synthetic corruption shifts while rarely addressing important OOD scenarios such as domain generalization and subpopulation shift.
 - **Narrow shift types**: Real-world distribution shifts arising from camera location, image background, and demographic attributes are seldom studied.
 
-**Root Cause**: Without fair and unified evaluation conditions, it is impossible to accurately characterize the capability boundaries and applicable scope of each algorithm. Although OOD generalization methods (invariant learning, domain generalization, etc.) have advanced, experiments consistently show that no algorithm substantially improves OOD performance, making direct prediction and model selection based on predicted performance increasingly important.
+**Key Challenge**: Without fair and unified evaluation conditions, it is impossible to accurately characterize the capability boundaries and applicable scope of each algorithm. Although OOD generalization methods (invariant learning, domain generalization, etc.) have advanced, experiments consistently show that no algorithm substantially improves OOD performance, making direct prediction and model selection based on predicted performance increasingly important.
 
-**Paper Goals**: Establish a unified, comprehensive, and fair benchmark for OOD performance prediction, enabling fair comparison of different algorithms under identical conditions while thoroughly analyzing their capability boundaries.
+**Goal**: Establish a unified, comprehensive, and fair benchmark for OOD performance prediction, enabling fair comparison of different algorithms under identical conditions while thoroughly analyzing their capability boundaries.
 
-**Starting Point**: Simultaneously expand along three dimensions — dataset coverage, diversity of distribution shifts, and number of pretrained models — and provide 1,444 ready-to-use pretrained models as a testbench to avoid redundant training.
+**Key Insight**: Simultaneously expand along three dimensions — dataset coverage, diversity of distribution shifts, and number of pretrained models — and provide 1,444 ready-to-use pretrained models as a testbench to avoid redundant training.
 
 **Core Idea**: Expose the fundamental limitations of existing OOD performance prediction algorithms on natural distribution shifts through a unified large-scale benchmark.
 

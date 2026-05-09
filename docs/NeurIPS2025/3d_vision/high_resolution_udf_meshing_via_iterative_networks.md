@@ -28,15 +28,15 @@ This paper proposes the first iterative meshing method for Unsigned Distance Fie
 
 ## Background & Motivation
 
-**State of the Field**: In implicit neural representations, Signed Distance Fields (SDFs) localize surfaces via sign changes, enabling efficient triangulation through classical algorithms such as Marching Cubes. Unsigned Distance Fields (UDFs) can represent open surfaces and are thus more general than SDFs, but their triangulation is considerably more challenging — UDFs reach zero at the surface with no exploitable sign changes.
+**Background**: In implicit neural representations, Signed Distance Fields (SDFs) localize surfaces via sign changes, enabling efficient triangulation through classical algorithms such as Marching Cubes. Unsigned Distance Fields (UDFs) can represent open surfaces and are thus more general than SDFs, but their triangulation is considerably more challenging — UDFs reach zero at the surface with no exploitable sign changes.
 
 **Limitations of Prior Work**: Existing UDF meshing methods (MeshUDF, NSD-UDF, DCUDF, DualMesh-UDF, etc.) operate independently within individual voxels, recovering surfaces by predicting pseudo-signs or dual-contour vertices. However, neural UDFs are inherently noisy — UDF values may not reach zero precisely at the surface, and gradient directions may also be inaccurate.
 
-**Root Cause**: Counterintuitively, **increasing meshing resolution exacerbates the problem**, since smaller voxels at higher resolutions are more susceptible to UDF noise. Single-pass, per-voxel methods lack sufficient context to make correct decisions in noisy regions, resulting in surface holes and discontinuities.
+**Key Challenge**: Counterintuitively, **increasing meshing resolution exacerbates the problem**, since smaller voxels at higher resolutions are more susceptible to UDF noise. Single-pass, per-voxel methods lack sufficient context to make correct decisions in noisy regions, resulting in surface holes and discontinuities.
 
-**Paper Goals**: How to robustly recover complete and accurate triangle meshes from noisy UDFs at high resolutions?
+**Goal**: How to robustly recover complete and accurate triangle meshes from noisy UDFs at high resolutions?
 
-**Starting Point**: The key observation is that while UDF values and gradients near the surface may be inaccurate, gradients farther from the surface remain reliable, and correctly reconstructed surface regions contain information valuable for resolving neighboring ambiguous regions. The method therefore leverages information from already-extracted surface elements to assist in resolving adjacent uncertain regions.
+**Key Insight**: The key observation is that while UDF values and gradients near the surface may be inaccurate, gradients farther from the surface remain reliable, and correctly reconstructed surface regions contain information valuable for resolving neighboring ambiguous regions. The method therefore leverages information from already-extracted surface elements to assist in resolving adjacent uncertain regions.
 
 **Core Idea**: Transform UDF meshing from a single-pass independent operation into a multi-pass iterative process, where each round uses the previous round's output (neighboring pseudo-sign configurations) as additional input to propagate spatial information.
 

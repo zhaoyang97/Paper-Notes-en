@@ -29,18 +29,18 @@ This paper proposes an information-theoretic framework based on predictive infor
 
 ## Background & Motivation
 
-**State of the Field**: Autoregressive models are widely used in time series analysis and NLP, with performance depending on the ability to capture temporal patterns in data. However, identifying such patterns still relies heavily on human expert knowledge.
+**Background**: Autoregressive models are widely used in time series analysis and NLP, with performance depending on the ability to capture temporal patterns in data. However, identifying such patterns still relies heavily on human expert knowledge.
 
 **Limitations of Prior Work**:
    - When a model underperforms on a dataset, it is unclear whether the bottleneck is insufficient model capacity or inherently high entropy (unpredictability) in the data.
    - Metrics such as EvoRate focus solely on numerical variation trends, and their absolute values are difficult to interpret.
    - Existing generalization error bounds (e.g., Rademacher complexity) primarily address the gap between empirical and true risk, rather than the minimum achievable risk itself.
 
-**Root Cause**: Good prediction requires two conditions: (1) the data contains exploitable patterns, and (2) the model can identify and leverage those patterns. Existing frameworks lack tools to distinguish between the two.
+**Key Challenge**: Good prediction requires two conditions: (1) the data contains exploitable patterns, and (2) the model can identify and leverage those patterns. Existing frameworks lack tools to distinguish between the two.
 
-**Paper Goals**: (i) What is the minimum achievable risk for sequential data? (ii) Can one determine whether poor performance stems from a weak model or inherently unpredictable data?
+**Goal**: (i) What is the minimum achievable risk for sequential data? (ii) Can one determine whether poor performance stems from a weak model or inherently unpredictable data?
 
-**Starting Point**: The paper begins with **predictive information** $\mathbf{I}(X_{\text{past}}; X_{\text{future}})$—the mutual information between the past and the future—and constructs an information-theoretic learning curve.
+**Key Insight**: The paper begins with **predictive information** $\mathbf{I}(X_{\text{past}}; X_{\text{future}})$—the mutual information between the past and the future—and constructs an information-theoretic learning curve.
 
 **Core Idea**: The discrete derivative of predictive information (the universal learning curve $\Lambda(k)$) serves as a measure of "how much uncertainty is reduced by adding one more step of history," and is linked to the minimum achievable risk of autoregressive models.
 

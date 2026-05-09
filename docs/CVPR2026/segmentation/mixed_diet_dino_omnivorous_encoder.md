@@ -28,15 +28,15 @@ This paper identifies severe cross-modal feature misalignment in pretrained visi
 
 ## Background & Motivation
 
-**State of the Field**: Pretrained visual foundation models such as DINOv2 achieve strong performance on single-modality tasks, and it is commonly assumed that their feature spaces exhibit a degree of shared structure across different visual modalities (RGB, depth, segmentation maps).
+**Background**: Pretrained visual foundation models such as DINOv2 achieve strong performance on single-modality tasks, and it is commonly assumed that their feature spaces exhibit a degree of shared structure across different visual modalities (RGB, depth, segmentation maps).
 
 **Limitations of Prior Work**: Empirical analysis reveals that the cosine similarity between DINOv2 features of an RGB image and its corresponding depth map is nearly identical to that between two entirely unrelated images: $\cos(f(x_r), f(x_d)) \approx \cos(f(x_{r,1}), f(x_{r,2}))$. This indicates that the feature space of DINOv2 is severely misaligned across visual modalities.
 
-**Root Cause**: Existing unified encoder approaches (e.g., Omnivore, ImageBind) require joint training of the entire backbone from scratch, incurring high computational cost and compromising the discriminative capacity of pretrained models. Naive cross-modal alignment, on the other hand, risks feature space collapse.
+**Key Challenge**: Existing unified encoder approaches (e.g., Omnivore, ImageBind) require joint training of the entire backbone from scratch, incurring high computational cost and compromising the discriminative capacity of pretrained models. Naive cross-modal alignment, on the other hand, risks feature space collapse.
 
-**Paper Goals**: How can the powerful semantic representations of DINOv2 be preserved while achieving parameter-efficient alignment of diverse visual modalities within a shared feature space?
+**Goal**: How can the powerful semantic representations of DINOv2 be preserved while achieving parameter-efficient alignment of diverse visual modalities within a shared feature space?
 
-**Starting Point**: Drawing an analogy to the evolution of multilingual models in NLP—from language-specific to cross-lingual shared encoders—vision models similarly require cross-modal alignment. This is achieved by fine-tuning only the final few transformer blocks, supplemented by an anchoring loss to prevent representation drift.
+**Key Insight**: Drawing an analogy to the evolution of multilingual models in NLP—from language-specific to cross-lingual shared encoders—vision models similarly require cross-modal alignment. This is achieved by fine-tuning only the final few transformer blocks, supplemented by an anchoring loss to prevent representation drift.
 
 **Core Idea**: Fine-tune the terminal blocks of a frozen DINOv2 backbone as a modality-agnostic adapter, employing symmetric cross-modal InfoNCE alignment loss, anchoring distillation loss, and modality mixup augmentation to yield an "omnivorous" encoder.
 

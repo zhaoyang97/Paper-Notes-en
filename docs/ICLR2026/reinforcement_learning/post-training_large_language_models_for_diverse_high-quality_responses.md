@@ -28,15 +28,15 @@ This paper proposes DQO (Diversity Quality Optimization), which defines a divers
 
 ## Background & Motivation
 
-**State of the Field**: LLM post-training (RLHF/GRPO, etc.) significantly improves downstream task performance, but as a side effect severely reduces output diversity—models tend to generate narrow "canonical answers," losing the ability to explore diverse solution paths and personalized styles.
+**Background**: LLM post-training (RLHF/GRPO, etc.) significantly improves downstream task performance, but as a side effect severely reduces output diversity—models tend to generate narrow "canonical answers," losing the ability to explore diverse solution paths and personalized styles.
 
 **Limitations of Prior Work**: Existing diversity-promoting methods focus on the inference side (temperature scaling, top-k sampling) or only address token-level differences (token entropy regularization), which cannot recover missing modes in the base model distribution or capture semantic-level diversity.
 
-**Root Cause**: How to define a semantically meaningful diversity metric that is both computationally efficient and theoretically principled, and balance it against quality objectives? Simple pairwise distance metrics are prone to degeneracy—the model may learn only two widely separated clusters.
+**Key Challenge**: How to define a semantically meaningful diversity metric that is both computationally efficient and theoretically principled, and balance it against quality objectives? Simple pairwise distance metrics are prone to degeneracy—the model may learn only two widely separated clusters.
 
-**Paper Goals**: (a) Define a semantic-level diversity metric; (b) avoid the cluster degeneracy of pairwise distances; (c) jointly optimize quality and diversity during training.
+**Goal**: (a) Define a semantic-level diversity metric; (b) avoid the cluster degeneracy of pairwise distances; (c) jointly optimize quality and diversity during training.
 
-**Starting Point**: DPP determinants are used to define diversity—the larger the volume of the parallelepiped spanned by embedding vectors, the higher the diversity. The determinant naturally penalizes linear dependence (clustering), overcoming the degeneracy of pairwise distances.
+**Key Insight**: DPP determinants are used to define diversity—the larger the volume of the parallelepiped spanned by embedding vectors, the higher the diversity. The determinant naturally penalizes linear dependence (clustering), overcoming the degeneracy of pairwise distances.
 
 **Core Idea**: Use the DPP determinant as a semantic diversity measure, with rewards serving as scaling factors for embedding vectors, and employ leave-one-out gradient estimation to stabilize training.
 

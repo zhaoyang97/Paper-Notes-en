@@ -28,15 +28,15 @@ This paper proposes TDCNet, which unifies temporal difference and 3D convolution
 
 ## Background & Motivation
 
-**State of the Field**: Moving infrared small target detection (IRSTD) requires the integration of temporal information. Existing methods either employ frame differencing (capturing motion but losing appearance) or 3D convolution (preserving appearance but lacking explicit motion cues).
+**Background**: Moving infrared small target detection (IRSTD) requires the integration of temporal information. Existing methods either employ frame differencing (capturing motion but losing appearance) or 3D convolution (preserving appearance but lacking explicit motion cues).
 
 **Limitations of Prior Work**: Frame differencing and 3D convolution are complementary yet have not been unified; publicly available infrared small target video datasets remain scarce.
 
-**Root Cause**: How can motion and appearance features be jointly exploited without increasing inference cost?
+**Key Challenge**: How can motion and appearance features be jointly exploited without increasing inference cost?
 
-**Paper Goals**: Implicitly embed frame differencing into the weight structure of 3D convolutions, enabling multi-branch multi-scale training with zero inference overhead.
+**Goal**: Implicitly embed frame differencing into the weight structure of 3D convolutions, enabling multi-branch multi-scale training with zero inference overhead.
 
-**Starting Point**: Mathematically demonstrate, via 3D convolution weight decomposition, that temporal difference can be encoded as a special weight structure.
+**Key Insight**: Mathematically demonstrate, via 3D convolution weight decomposition, that temporal difference can be encoded as a special weight structure.
 
 **Core Idea**: TDC = a unified representation of frame differencing ⊕ 3D convolution, re-parameterizable into a standard 3D convolution.
 

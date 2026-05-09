@@ -29,15 +29,15 @@ This paper proposes the dCAP framework, which achieves real-time 6-DoF relative 
 
 ## Background & Motivation
 
-1. **State of the Field**: Autonomous driving systems are predominantly designed for rigid-body vehicles (e.g., cars and SUVs), and sensor calibration assumes fixed extrinsic parameters. Datasets such as nuScenes and Waymo, as well as perception models such as BEVFormer, are all built upon the rigid-body assumption.
+1. **Background**: Autonomous driving systems are predominantly designed for rigid-body vehicles (e.g., cars and SUVs), and sensor calibration assumes fixed extrinsic parameters. Datasets such as nuScenes and Waymo, as well as perception models such as BEVFormer, are all built upon the rigid-body assumption.
 
 2. **Limitations of Prior Work**: In articulated trucks, the tractor and trailer are coupled via a fifth-wheel coupling, forming an articulated structure. This leads to: (a) time-varying sensor extrinsics; (b) continuous calibration drift caused by suspension motion, load variation, and braking pitch; and (c) mismatched ownership, where a single tractor may be paired with multiple trailers from different operators.
 
-3. **Root Cause**: Existing multi-view perception systems (e.g., BEVFormer) assume a fixed baseline; when the articulation angle changes, epipolar geometry drifts and static calibration can become outdated within milliseconds. Traditional SfM methods (e.g., COLMAP) fail under weak parallax, repetitive texture, and rolling shutter conditions.
+3. **Key Challenge**: Existing multi-view perception systems (e.g., BEVFormer) assume a fixed baseline; when the articulation angle changes, epipolar geometry drifts and static calibration can become outdated within milliseconds. Traditional SfM methods (e.g., COLMAP) fail under weak parallax, repetitive texture, and rolling shutter conditions.
 
-4. **Paper Goals**: (a) Continuously estimate the 6-DoF pose of the trailer relative to the tractor in an online manner; (b) maintain robustness under large articulation angles and occlusion; (c) integrate dynamic calibration into downstream 3D detection.
+4. **Goal**: (a) Continuously estimate the 6-DoF pose of the trailer relative to the tractor in an online manner; (b) maintain robustness under large articulation angles and occlusion; (c) integrate dynamic calibration into downstream 3D detection.
 
-5. **Starting Point**: The method exploits structural priors inherent to articulated trucks — the tractor and trailer are each internally rigid, and only the inter-rig transformation varies over time. This substantially simplifies the problem: only the pose of one rear trailer camera needs to be predicted, while the poses of the remaining two trailer cameras are derived via known intra-rig transformations.
+5. **Key Insight**: The method exploits structural priors inherent to articulated trucks — the tractor and trailer are each internally rigid, and only the inter-rig transformation varies over time. This substantially simplifies the problem: only the pose of one rear trailer camera needs to be predicted, while the poses of the remaining two trailer cameras are derived via known intra-rig transformations.
 
 6. **Core Idea**: An end-to-end Transformer directly regresses the dynamic trailer pose, combining cross-view spatial attention and temporal self-attention for articulation-aware online calibration.
 

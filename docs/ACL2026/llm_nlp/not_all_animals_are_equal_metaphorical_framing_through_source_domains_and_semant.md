@@ -29,15 +29,15 @@ This paper proposes ConceptFrameMet, the first computational framework that inte
 
 ## Background & Motivation
 
-**State of the Field**: Conceptual Metaphor Theory (CMT) is the dominant framework for metaphor analysis, understanding abstract target concepts through source domains such as WATER, ANIMAL, and WAR. NLP research on metaphor has focused primarily on metaphor detection and source domain mapping.
+**Background**: Conceptual Metaphor Theory (CMT) is the dominant framework for metaphor analysis, understanding abstract target concepts through source domains such as WATER, ANIMAL, and WAR. NLP research on metaphor has focused primarily on metaphor detection and source domain mapping.
 
 **Limitations of Prior Work**: Source domains alone do not fully account for the specific associations conveyed by a metaphor. For example, "illegal aliens flood into our country" and "waves of immigrants have always enriched us" both draw on the WATER source domain yet convey diametrically opposed attitudes—the former foregrounds uncontrollable inundation, the latter naturalizes immigration as a landscape feature. Existing work cannot explain why metaphors from the same source domain are simultaneously exploited by ideologically opposed groups.
 
-**Root Cause**: A source domain denotes a cluster of associations, but which associations are activated depends on the semantic frame evoked by the specific lexical item. The frame of "flood" is Filling (foregrounding movement and the negative consequences of overflow), whereas "wave" and "tide" evoke Quantified_mass or Natural_features (more neutral associations). This source domain × semantic frame interaction has been consistently overlooked in NLP.
+**Key Challenge**: A source domain denotes a cluster of associations, but which associations are activated depends on the semantic frame evoked by the specific lexical item. The frame of "flood" is Filling (foregrounding movement and the negative consequences of overflow), whereas "wave" and "tide" evoke Quantified_mass or Natural_features (more neutral associations). This source domain × semantic frame interaction has been consistently overlooked in NLP.
 
-**Paper Goals**: (1) Develop a computational model that automatically detects metaphors and predicts their source domains and semantic frames; (2) design a statistical method to identify salient metaphorical patterns in discourse; (3) analyze ideological differences in metaphorical framing.
+**Goal**: (1) Develop a computational model that automatically detects metaphors and predicts their source domains and semantic frames; (2) design a statistical method to identify salient metaphorical patterns in discourse; (3) analyze ideological differences in metaphorical framing.
 
-**Starting Point**: The paper introduces constructionist linguistic theory (Sullivan 2013, 2025) into NLP—semantic frames serve as the mechanism that "selects" specific associations from a source domain, and the source domain × frame interaction uniquely determines the associative meaning of a metaphor.
+**Key Insight**: The paper introduces constructionist linguistic theory (Sullivan 2013, 2025) into NLP—semantic frames serve as the mechanism that "selects" specific associations from a source domain, and the source domain × frame interaction uniquely determines the associative meaning of a metaphor.
 
 **Core Idea**: Source domains specify clusters of associations, while semantic frames pinpoint precise associations within those clusters. Their interaction—rather than either dimension in isolation—is the key to analyzing the framing effects of metaphor.
 

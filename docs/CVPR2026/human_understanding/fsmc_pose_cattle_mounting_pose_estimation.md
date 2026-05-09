@@ -29,11 +29,11 @@ This paper proposes FSMC-Pose, a lightweight top-down framework that achieves ca
 
 ## Background & Motivation
 
-1. **State of the Field**: Cattle mounting behavior is a key visual indicator of estrus, and its accurate recognition is critical for livestock production efficiency.
+1. **Background**: Cattle mounting behavior is a key visual indicator of estrus, and its accurate recognition is critical for livestock production efficiency.
 2. **Limitations of Prior Work**: Existing animal pose estimation methods are largely transferred from human pose estimation and perform poorly in complex agricultural scenes—cluttered backgrounds, frequent inter-animal occlusion, and entangled limbs and joints lead to identity confusion.
-3. **Root Cause**: High accuracy demands complex models, yet agricultural deployments require real-time inference and low-cost hardware. Furthermore, no publicly available mounting dataset exists.
-4. **Paper Goals**: Achieve lightweight and efficient mounting pose estimation in dense, cluttered environments.
-5. **Starting Point**: Frequency-domain analysis to separate cattle from background, combined with multiscale self-calibration to correct structural misalignment under occlusion.
+3. **Key Challenge**: High accuracy demands complex models, yet agricultural deployments require real-time inference and low-cost hardware. Furthermore, no publicly available mounting dataset exists.
+4. **Goal**: Achieve lightweight and efficient mounting pose estimation in dense, cluttered environments.
+5. **Key Insight**: Frequency-domain analysis to separate cattle from background, combined with multiscale self-calibration to correct structural misalignment under occlusion.
 6. **Core Idea**: SFEBlock employs wavelet decomposition and Gaussian smoothing to separate foreground from background; RABlock aggregates multiscale context; SC2Head corrects occlusion-induced misalignment via spatial-channel self-calibration.
 
 ## Method

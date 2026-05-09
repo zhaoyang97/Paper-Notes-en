@@ -29,15 +29,15 @@ This paper identifies a norm inflation problem in token embeddings learned by Te
 
 ## Background & Motivation
 
-**State of the Field**: Personalized text-to-image generation has two main paradigms—parameter fine-tuning (e.g., DreamBooth) and embedding optimization (e.g., Textual Inversion). TI, by optimizing only token embeddings, offers compact storage and easy integration, making it a foundational component for many subsequent methods.
+**Background**: Personalized text-to-image generation has two main paradigms—parameter fine-tuning (e.g., DreamBooth) and embedding optimization (e.g., Textual Inversion). TI, by optimizing only token embeddings, offers compact storage and easy integration, making it a foundational component for many subsequent methods.
 
 **Limitations of Prior Work**: TI performs poorly under complex prompts—e.g., "A painting of \<dog\> wearing a santa hat" may generate the dog while ignoring the hat and background details. The root cause is that embedding norms inflate to extreme values during TI optimization (>20, compared to ~0.4 for normal vocabulary tokens).
 
-**Root Cause**: Semantic information is primarily encoded in the **direction** of embeddings (cosine similarity is semantically consistent, whereas Euclidean distance is not), yet TI imposes no norm constraint, leading to: (a) large norms suppressing positional encoding information ($\mathcal{O}(1/m)$) in pre-norm Transformers; and (b) residual updates stagnating, preventing subsequent layers from effectively modifying hidden state directions.
+**Key Challenge**: Semantic information is primarily encoded in the **direction** of embeddings (cosine similarity is semantically consistent, whereas Euclidean distance is not), yet TI imposes no norm constraint, leading to: (a) large norms suppressing positional encoding information ($\mathcal{O}(1/m)$) in pre-norm Transformers; and (b) residual updates stagnating, preventing subsequent layers from effectively modifying hidden state directions.
 
-**Paper Goals**: To resolve the text alignment failures caused by norm inflation while preserving TI's lightweight advantages.
+**Goal**: To resolve the text alignment failures caused by norm inflation while preserving TI's lightweight advantages.
 
-**Starting Point**: The authors analyze the geometric structure of the CLIP token embedding space and establish through both empirical and theoretical evidence that "direction encodes semantics and norm inflation is harmful." This constitutes an interpretability-driven analytical perspective.
+**Key Insight**: The authors analyze the geometric structure of the CLIP token embedding space and establish through both empirical and theoretical evidence that "direction encodes semantics and norm inflation is harmful." This constitutes an interpretability-driven analytical perspective.
 
 **Core Idea**: Fix the embedding norm at an in-distribution scale, optimize only the direction on the unit hypersphere, and regularize with a vMF prior.
 

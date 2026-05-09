@@ -24,15 +24,15 @@ APEX-MEM proposes a conversational memory system based on a Property Graph, appe
 
 ## Background & Motivation
 
-**State of the Field**: LLMs remain weak at long-term conversational memory. Simply expanding the context window introduces noise and hallucinations, while RAG-based retrieval methods treat memory as unstructured text and cannot maintain normalized entities, track fact evolution, or distinguish persistent information from transient conversational content.
+**Background**: LLMs remain weak at long-term conversational memory. Simply expanding the context window introduces noise and hallucinations, while RAG-based retrieval methods treat memory as unstructured text and cannot maintain normalized entities, track fact evolution, or distinguish persistent information from transient conversational content.
 
 **Limitations of Prior Work**: Existing structured memory systems such as Mem0 introduce entity-centric graphs but with limited entity categories; information is stored primarily as inter-entity relations, making it difficult to capture fine-grained attributes and the temporal evolution of facts. Furthermore, most systems merge or overwrite prior information at write time, risking the loss of contextual details needed for temporal reasoning.
 
-**Root Cause**: Memory systems must balance "preserving complete history" against "reducing retrieval noise"—premature merging loses information, while full retention increases noise.
+**Key Challenge**: Memory systems must balance "preserving complete history" against "reducing retrieval noise"—premature merging loses information, while full retention increases noise.
 
-**Paper Goals**: To construct a memory framework that both preserves the complete evolutionary history of conversations and dynamically resolves conflicts and outdated information at retrieval time.
+**Goal**: To construct a memory framework that both preserves the complete evolutionary history of conversations and dynamically resolves conflicts and outdated information at retrieval time.
 
-**Starting Point**: Drawing on event ontology ideas from knowledge graphs, the paper anchors conversational facts to timestamped events rather than attaching them directly to entities, thereby enabling an append-write + retrieval-time resolution design paradigm.
+**Key Insight**: Drawing on event ontology ideas from knowledge graphs, the paper anchors conversational facts to timestamped events rather than attaching them directly to entities, thereby enabling an append-write + retrieval-time resolution design paradigm.
 
 **Core Idea**: Replace the traditional "merge-at-write" memory model with a unified architecture of "property graph + append-only event storage + retrieval-time temporal resolution."
 

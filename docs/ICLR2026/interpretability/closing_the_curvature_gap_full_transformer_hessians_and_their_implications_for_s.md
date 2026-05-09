@@ -27,15 +27,15 @@ This paper presents the first explicit Hessian expressions and spectral norm upp
 
 ## Background & Motivation
 
-**State of the Field**: The empirical success of Transformers is characterized by predictable improvements described by neural scaling laws. Prior work has derived Hessian expressions for self-attention, but second-order analysis of LayerNorm and FFN has remained absent.
+**Background**: The empirical success of Transformers is characterized by predictable improvements described by neural scaling laws. Prior work has derived Hessian expressions for self-attention, but second-order analysis of LayerNorm and FFN has remained absent.
 
 **Limitations of Prior Work**: The lack of a complete Transformer block Hessian means: (1) it is impossible to fully understand how the optimization landscape evolves with data volume; (2) there is no theoretical account of how curvature propagates across sub-layers; (3) scaling laws lack a rigorous mathematical foundation.
 
-**Root Cause**: The nonlinearities in LayerNorm and FFN make second-order derivative derivations highly complex. Prior theoretical work was limited to self-attention, leaving a "curvature gap."
+**Key Challenge**: The nonlinearities in LayerNorm and FFN make second-order derivative derivations highly complex. Prior theoretical work was limited to self-attention, leaving a "curvature gap."
 
-**Paper Goals**: To derive the Jacobians and Hessians of a complete Transformer block — including LayerNorm and FFN — and to establish theoretical bounds on loss landscape convergence.
+**Goal**: To derive the Jacobians and Hessians of a complete Transformer block — including LayerNorm and FFN — and to establish theoretical bounds on loss landscape convergence.
 
-**Starting Point**: The paper employs a row-vectorization framework $\text{vec}_r(\cdot)$ and Gauss-Newton decomposition to systematically decompose the Hessian into per-sublayer contributions, deriving results layer by layer.
+**Key Insight**: The paper employs a row-vectorization framework $\text{vec}_r(\cdot)$ and Gauss-Newton decomposition to systematically decompose the Hessian into per-sublayer contributions, deriving results layer by layer.
 
 **Core Idea**: The paper closes the gap in second-order Transformer theory by explicitly deriving the Hessians of LayerNorm and FFN, and uses Taylor expansion to analyze the convergence behavior of the loss landscape as data volume grows.
 

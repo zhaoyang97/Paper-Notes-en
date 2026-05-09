@@ -28,7 +28,7 @@ This paper proposes TFM-Tokenizer, the first framework that learns a time-freque
 
 ## Background & Motivation
 
-- **State of the Field**: Inspired by NLP, EEG analysis is shifting toward task-agnostic foundation model paradigms.
+- **Background**: Inspired by NLP, EEG analysis is shifting toward task-agnostic foundation model paradigms.
 - **Limitations of Prior Work**: Tokenization is central to NLP, yet existing EEG foundation models simply segment continuous signals into short time windows without data-driven vocabulary learning. Although LaBraM proposes a neural tokenizer, it is used only as a training objective and discarded during downstream inference.
 - **Root Cause — Three Core Challenges**:
   1. **Tokenization granularity**: Operation must be performed at the single-channel level to achieve device independence.

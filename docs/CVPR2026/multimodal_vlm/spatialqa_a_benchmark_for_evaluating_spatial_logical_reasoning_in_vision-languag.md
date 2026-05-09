@@ -27,15 +27,15 @@ content_hash: b21a64b7435cdada
 This paper proposes SpatiaLQA, a benchmark comprising 9,605 QA pairs across 241 real-world indoor scenes, systematically evaluates 41 VLMs on spatial logical reasoning, and introduces a recursive scene graph-assisted reasoning method to enhance VLMs' spatial logical reasoning capabilities.
 
 ## Background & Motivation
-**State of the Field**: VLMs have achieved strong performance on general VQA and logical reasoning tasks, yet remain inadequate in complex real-world scenarios that require the integration of spatial understanding and multi-step logical reasoning.
+**Background**: VLMs have achieved strong performance on general VQA and logical reasoning tasks, yet remain inadequate in complex real-world scenarios that require the integration of spatial understanding and multi-step logical reasoning.
 
 **Limitations of Prior Work**: Existing benchmarks focus either on spatial understanding (e.g., SpatialRGPT-Bench) or logical reasoning (e.g., MathVista) in isolation, lacking an evaluation framework that integrates both. Furthermore, EQA tasks target action execution rather than purely visual-semantic reasoning.
 
-**Root Cause**: Spatial logical reasoning demands that a model simultaneously possess precise spatial perception and rigorous multi-step causal reasoning; the fusion of these two capabilities has not been systematically studied in existing VLMs.
+**Key Challenge**: Spatial logical reasoning demands that a model simultaneously possess precise spatial perception and rigorous multi-step causal reasoning; the fusion of these two capabilities has not been systematically studied in existing VLMs.
 
-**Paper Goals**: (a) Construct a comprehensive spatial logical reasoning benchmark; (b) systematically evaluate existing VLMs on this task; (c) propose improvement methods.
+**Goal**: (a) Construct a comprehensive spatial logical reasoning benchmark; (b) systematically evaluate existing VLMs on this task; (c) propose improvement methods.
 
-**Starting Point**: Decompose complex scenes into task-relevant scene graphs, enabling VLMs to focus on the spatial context surrounding target objects.
+**Key Insight**: Decompose complex scenes into task-relevant scene graphs, enabling VLMs to focus on the spatial context surrounding target objects.
 
 **Core Idea**: A recursive scene graph construction method progressively decomposes complex indoor scenes into task-relevant spatial relation graphs, thereby enhancing VLMs' multi-step spatial reasoning capabilities.
 

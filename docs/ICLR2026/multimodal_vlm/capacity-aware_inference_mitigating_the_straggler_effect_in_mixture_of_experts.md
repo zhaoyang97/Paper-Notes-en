@@ -28,15 +28,15 @@ To address the Straggler Effect in MoE inference—where the most heavily loaded
 
 ## Background & Motivation
 
-**State of the Field**: MoE is a key architecture for scaling LLMs, balancing performance and efficiency through sparse activation of multiple experts. Under expert parallelism, experts are distributed across multiple GPUs for parallel computation.
+**Background**: MoE is a key architecture for scaling LLMs, balancing performance and efficiency through sparse activation of multiple experts. Under expert parallelism, experts are distributed across multiple GPUs for parallel computation.
 
 **Limitations of Prior Work**: The auxiliary balance loss used during training does not guarantee load balance at inference time. Empirical measurements show that the most heavily loaded expert can handle more than 7× the average number of tokens at inference time—lightly loaded experts finish first and must then wait for heavily loaded ones to synchronize, causing severe latency.
 
-**Root Cause**: This is the **Straggler Effect**—the latency of an MoE layer is determined by the most heavily loaded expert ($L \propto \max(\{N_i\})$), not the average load. Existing solutions (e.g., expert replication in DeepSeek-V3) require additional GPU resources.
+**Key Challenge**: This is the **Straggler Effect**—the latency of an MoE layer is determined by the most heavily loaded expert ($L \propto \max(\{N_i\})$), not the average load. Existing solutions (e.g., expert replication in DeepSeek-V3) require additional GPU resources.
 
-**Paper Goals**: To mitigate the Straggler Effect at inference time through intelligent token scheduling, without increasing GPU resource consumption.
+**Goal**: To mitigate the Straggler Effect at inference time through intelligent token scheduling, without increasing GPU resource consumption.
 
-**Starting Point**: Two complementary strategies—imposing a capacity upper bound on overloaded experts to drop low-importance tokens, and expanding the candidate set for lightly loaded experts to absorb overflow tokens.
+**Key Insight**: Two complementary strategies—imposing a capacity upper bound on overloaded experts to drop low-importance tokens, and expanding the candidate set for lightly loaded experts to absorb overflow tokens.
 
 **Core Idea**: Use gating scores as an importance metric to limit the number of tokens processed by heavily loaded experts, while re-routing overflow tokens to lightly loaded experts on the same GPU, achieving load balancing and inference speedup simultaneously.
 

@@ -27,15 +27,15 @@ content_hash: 80cb45e38c4eb69a
 For GNNs using mean aggregation (MAGNN, i.e., mean-GNNs with non-negative weights), this work precisely characterizes the class of monotone logical rules that can serve as sound explanations, constructs a restricted fragment of first-order logic to explain arbitrary MAGNN predictions, and empirically demonstrates that restricting to non-negative weights does not significantly hurt performance while enabling effective extraction of sound rules.
 
 ## Background & Motivation
-**State of the Field**: GNNs are widely applied to knowledge graph completion (KGC), drug combination prediction, recommendation systems, and related tasks. To ensure trustworthy outputs, sound logical rules are required to explain GNN predictions—i.e., inferences produced by the rules must be a subset of the model's predictions.
+**Background**: GNNs are widely applied to knowledge graph completion (KGC), drug combination prediction, recommendation systems, and related tasks. To ensure trustworthy outputs, sound logical rules are required to explain GNN predictions—i.e., inferences produced by the rules must be a subset of the model's predictions.
 
 **Limitations of Prior Work**: Existing work (Tena Cucala et al.) provides sound Datalog rules and equivalent programs for non-negative-weight GNNs with max and sum aggregation, but **mean aggregation**—the most commonly used default in practice (e.g., R-GCN)—lacks a corresponding theoretical analysis of explainability and expressive power.
 
-**Root Cause**: Mean-GNNs are widely adopted for their simplicity and training stability, yet their non-monotonic behavior (adding more neighbors can decrease the aggregated value) prevents direct application of the sum/max-GNN theoretical framework and precludes the existence of equivalent first-order logic programs.
+**Key Challenge**: Mean-GNNs are widely adopted for their simplicity and training stability, yet their non-monotonic behavior (adding more neighbors can decrease the aggregated value) prevents direct application of the sum/max-GNN theoretical framework and precludes the existence of equivalent first-order logic programs.
 
-**Paper Goals**: Establish a theoretical foundation for sound logical rules for mean-aggregation GNNs and provide a practically applicable rule extraction method.
+**Goal**: Establish a theoretical foundation for sound logical rules for mean-aggregation GNNs and provide a practically applicable rule extraction method.
 
-**Starting Point**: Restricting weights to be non-negative (consistent with prior sum/max-GNN work) isolates the source of non-monotonicity to the aggregation function itself, thereby simplifying the analysis.
+**Key Insight**: Restricting weights to be non-negative (consistent with prior sum/max-GNN work) isolates the source of non-monotonicity to the aggregation function itself, thereby simplifying the analysis.
 
 **Core Idea**: MAGNNs can express logical functions beyond FOL, yet the class of sound monotone rules they admit is highly restricted—every sound ELUQ rule can be subsumed by a set of minimal rules, and these rules can be enumerated and verified within a finite search space.
 

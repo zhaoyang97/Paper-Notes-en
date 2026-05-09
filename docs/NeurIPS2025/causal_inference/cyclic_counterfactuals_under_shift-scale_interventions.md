@@ -28,15 +28,15 @@ This paper establishes a theoretical framework for counterfactual reasoning unde
 
 ## Background & Motivation
 
-**State of the Field**: Counterfactual reasoning is one of the central problems in causal inference. The vast majority of counterfactual frameworks (e.g., Pearl's do-calculus, twin networks) assume that the causal structure is a directed acyclic graph (DAG), i.e., that there are no feedback loops among variables.
+**Background**: Counterfactual reasoning is one of the central problems in causal inference. The vast majority of counterfactual frameworks (e.g., Pearl's do-calculus, twin networks) assume that the causal structure is a directed acyclic graph (DAG), i.e., that there are no feedback loops among variables.
 
 **Limitations of Prior Work**: However, feedback loops are ubiquitous in real-world systems—positive/negative feedback in gene regulatory networks, the mutual influence of consumption and income in macroeconomic models, and predator–prey dynamics in ecosystems. The causal structure of these systems contains cycles, violating the DAG assumption. In cyclic SCMs, the structural equations may have no unique solution (or no solution at all), making the very definition of counterfactual inference problematic. Furthermore, existing theory primarily considers hard interventions ($do$-interventions), which fix a variable to a constant value, whereas real-world policies are often soft interventions—such as "increase every individual's drug dosage by 20%" or "reduce every student's class size by 5"—which depend on the individual's original value and cannot be expressed as $do(X=x)$.
 
-**Root Cause**: (1) Uniqueness of counterfactual reasoning in cyclic systems lacks theoretical guarantees; (2) shift–scale soft interventions are more expressive than hard interventions, yet their theoretical foundations remain underdeveloped.
+**Key Challenge**: (1) Uniqueness of counterfactual reasoning in cyclic systems lacks theoretical guarantees; (2) shift–scale soft interventions are more expressive than hard interventions, yet their theoretical foundations remain underdeveloped.
 
-**Paper Goals**: Under what conditions does the counterfactual distribution under shift–scale interventions in cyclic causal models exist and is unique? Do such interventions possess algebraic stability (composability)? How concentrated is the distribution of counterfactual outcomes?
+**Goal**: Under what conditions does the counterfactual distribution under shift–scale interventions in cyclic causal models exist and is unique? Do such interventions possess algebraic stability (composability)? How concentrated is the distribution of counterfactual outcomes?
 
-**Starting Point**: The paper draws on the contraction mapping principle (Banach fixed-point theorem) from dynamical systems theory to provide sufficient conditions for the unique solvability of cyclic SCMs, and then proves that shift–scale interventions preserve contractivity.
+**Key Insight**: The paper draws on the contraction mapping principle (Banach fixed-point theorem) from dynamical systems theory to provide sufficient conditions for the unique solvability of cyclic SCMs, and then proves that shift–scale interventions preserve contractivity.
 
 **Core Idea**: A global contraction condition is employed to uniformly handle counterfactual reasoning under soft interventions in cyclic SCMs, extending unique solvability from DAGs to cyclic graphs satisfying the contraction condition.
 

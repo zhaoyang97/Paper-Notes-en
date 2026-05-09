@@ -27,15 +27,15 @@ content_hash: 4624bb2682c65a5b
 This paper revisits scalar alpha blending in 3DGS and identifies its neglect of intra-pixel spatial variation as the root cause of multi-scale rendering artifacts (enlargement erosion / downscaling dilation). The proposed Gaussian Blending models alpha and transmittance as spatial distributions within a pixel (2D uniform window), achieving real-time anti-aliasing without retraining. PSNR on multi-scale Blender improves from 31.59 to 35.80.
 
 ## Background & Motivation
-**State of the Field**: 3DGS explicitly represents 3D scenes via Gaussian splats, achieving rendering speeds orders of magnitude faster than NeRF, and has become the dominant approach for Novel View Synthesis (NVS). Methods such as Mip-Splatting and Analytic-Splatting improve multi-scale anti-aliasing through prefiltering.
+**Background**: 3DGS explicitly represents 3D scenes via Gaussian splats, achieving rendering speeds orders of magnitude faster than NeRF, and has become the dominant approach for Novel View Synthesis (NVS). Methods such as Mip-Splatting and Analytic-Splatting improve multi-scale anti-aliasing through prefiltering.
 
 **Limitations of Prior Work**: All existing NVS methods still exhibit pronounced artifacts at sampling rates unseen during training — enlargement produces edge erosion (blurring) while downscaling produces dilation (staircase artifacts). These issues persist even in Analytic-Splatting, which performs analytic integration.
 
-**Root Cause**: All methods employ scalar alpha blending — computing alpha and transmittance as scalars (one value per pixel). This causes foreground splats to fully occlude background splats that should not be occluded, because intra-pixel spatial occlusion relationships are ignored. This error is amplified when the sampling rate changes.
+**Key Challenge**: All methods employ scalar alpha blending — computing alpha and transmittance as scalars (one value per pixel). This causes foreground splats to fully occlude background splats that should not be occluded, because intra-pixel spatial occlusion relationships are ignored. This error is amplified when the sampling rate changes.
 
-**Paper Goals**: Incorporate intra-pixel spatial variation into the alpha blending process without sacrificing real-time performance, thereby eliminating erosion and dilation artifacts.
+**Goal**: Incorporate intra-pixel spatial variation into the alpha blending process without sacrificing real-time performance, thereby eliminating erosion and dilation artifacts.
 
-**Starting Point**: Gaussian splats form continuous surfaces in 2D screen space, and their combined transmittance can be approximated by a simple 2D uniform distribution. By dynamically tracking the window extent of this distribution, spatial occlusion can be modeled efficiently.
+**Key Insight**: Gaussian splats form continuous surfaces in 2D screen space, and their combined transmittance can be approximated by a simple 2D uniform distribution. By dynamically tracking the window extent of this distribution, spatial occlusion can be modeled efficiently.
 
 **Core Idea**: Replace scalar alpha blending with spatially distributed alpha blending — transmittance is no longer a scalar but a spatial window within the pixel.
 

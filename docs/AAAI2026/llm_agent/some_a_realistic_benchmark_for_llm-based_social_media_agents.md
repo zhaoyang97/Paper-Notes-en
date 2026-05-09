@@ -33,7 +33,7 @@ LLM-driven agents are increasingly deployed on social media platforms for tasks 
 
 1. **Single-task limitations**: Existing benchmarks (e.g., BotSim, TrendSim) focus on a single task (e.g., user simulation) and cannot comprehensively assess agent capabilities.
 2. **Insufficient data**: Existing evaluation datasets are limited in scale and lack reliable ground truth (e.g., TrendSim relies solely on LLM-based plausibility evaluation).
-3. **Root Cause**: Social media environments are characterized by high noise, temporal dynamics, and diversity, imposing extreme demands on agents for multi-round data processing and long-context reasoning.
+3. **Key Challenge**: Social media environments are characterized by high noise, temporal dynamics, and diversity, imposing extreme demands on agents for multi-round data processing and long-context reasoning.
 
 The core idea of SoMe is to construct a comprehensive platform with real-world data, multi-task coverage, and tool interaction, enabling thorough evaluation of LLM agents in realistic social media environments.
 

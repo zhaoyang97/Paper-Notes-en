@@ -29,15 +29,15 @@ This paper proposes Hybrid Radiance Fields (HyRF), which combines compact explic
 
 ## Background & Motivation
 
-**State of the Field**: 3DGS achieves real-time, high-quality novel view synthesis via explicit optimizable 3D Gaussians, but each Gaussian requires 59 parameters (48 for spherical harmonics encoding view-dependent color and 7 for anisotropic shape), resulting in substantial memory overhead.
+**Background**: 3DGS achieves real-time, high-quality novel view synthesis via explicit optimizable 3D Gaussians, but each Gaussian requires 59 parameters (48 for spherical harmonics encoding view-dependent color and 7 for anisotropic shape), resulting in substantial memory overhead.
 
 **Limitations of Prior Work**: NeRF-based methods are compact but slow to render; 3DGS is real-time but model sizes are enormous (hundreds of MB to GB scale); directly encoding Gaussian attributes with neural fields loses high-frequency details due to fixed grid resolution limitations (rapid opacity/scale changes at object boundaries, high-frequency view-dependent effects).
 
-**Root Cause**: A fundamental conflict between compactness and high-frequency detail preservation — neural fields excel at smooth variations but lose high frequencies, while explicit storage preserves high frequencies at the cost of parameter explosion.
+**Key Challenge**: A fundamental conflict between compactness and high-frequency detail preservation — neural fields excel at smooth variations but lose high frequencies, while explicit storage preserves high frequencies at the cost of parameter explosion.
 
-**Paper Goals**: To design a hybrid representation that simultaneously benefits from the compactness of neural fields and the high-frequency detail preservation of explicit Gaussians.
+**Goal**: To design a hybrid representation that simultaneously benefits from the compactness of neural fields and the high-frequency detail preservation of explicit Gaussians.
 
-**Starting Point**: Frequency decomposition — low frequencies are handled by neural fields and high frequencies by explicit residual Gaussians; geometry and appearance are modeled separately by two decoupled neural fields.
+**Key Insight**: Frequency decomposition — low frequencies are handled by neural fields and high frequencies by explicit residual Gaussians; geometry and appearance are modeled separately by two decoupled neural fields.
 
 **Core Idea**: Decompose the scene into compact explicit Gaussians (only position + diffuse color + isotropic scale + opacity = 8 parameters) plus grid-based neural fields that predict the remaining attributes, together with a hybrid rendering pipeline for foreground and background.
 

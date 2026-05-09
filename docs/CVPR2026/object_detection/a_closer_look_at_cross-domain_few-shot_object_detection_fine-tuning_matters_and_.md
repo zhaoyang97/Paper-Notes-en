@@ -28,13 +28,13 @@ This paper proposes a Hybrid Ensemble Decoder (HED) and a progressive fine-tunin
 
 ## Background & Motivation
 
-**State of the Field**: Few-shot object detection (FSOD) aims to detect novel categories from a small number of annotated samples, leveraging large-scale pretrained models (e.g., GroundingDINO) for rapid adaptation. Real-world applications frequently involve significant domain shifts, such as industrial imagery and document images.
+**Background**: Few-shot object detection (FSOD) aims to detect novel categories from a small number of annotated samples, leveraging large-scale pretrained models (e.g., GroundingDINO) for rapid adaptation. Real-world applications frequently involve significant domain shifts, such as industrial imagery and document images.
 
 **Limitations of Prior Work**: (1) Data augmentation-based methods (ETS/Domain-RAG) incur high computational costs; (2) large-parameter foundation models (SAM3/GDINO 1.5 Pro) achieve state-of-the-art results but at prohibitive deployment costs; (3) few-shot fine-tuning is prone to overfitting and optimization instability.
 
-**Root Cause**: Pretrained models possess strong transfer capabilities, yet direct fine-tuning under the combined challenge of few-shot learning and domain shift leads to rapid overfitting. The key question is how to better exploit pretrained weights without increasing model parameters.
+**Key Challenge**: Pretrained models possess strong transfer capabilities, yet direct fine-tuning under the combined challenge of few-shot learning and domain shift leads to rapid overfitting. The key question is how to better exploit pretrained weights without increasing model parameters.
 
-**Starting Point**: Rather than introducing complex data generation pipelines or larger foundation models, this work improves CD-FSOD solely through fine-tuning strategy and decoder design.
+**Key Insight**: Rather than introducing complex data generation pipelines or larger foundation models, this work improves CD-FSOD solely through fine-tuning strategy and decoder design.
 
 **Core Idea**: (1) Parallelizing a subset of decoder layers combined with random denoising query initialization enables implicit ensemble learning to enhance generalization; (2) progressive layer unfreezing stabilizes few-shot optimization.
 

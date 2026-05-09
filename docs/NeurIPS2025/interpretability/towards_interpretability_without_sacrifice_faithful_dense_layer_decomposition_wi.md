@@ -26,15 +26,15 @@ content_hash: a3e125833a1e552d
 This paper proposes Mixture of Decoders (MxD), which decomposes the MLP layers of LLMs into tens of thousands of sparsely activated expert sub-layers (layer-level sparsity). Each expert implements a full-rank linear transformation via Hadamard product tensor factorization. MxD significantly outperforms Transcoders on the sparsity–accuracy trade-off while maintaining interpretability.
 
 ## Background & Motivation
-**State of the Field**: MLP layer representations in LLMs are dense — individual neurons encode multiple concepts, making it difficult to isolate specific features. SAEs and Transcoders learn sparse overcomplete bases to approximate MLP layer outputs, rendering features more interpretable.
+**Background**: MLP layer representations in LLMs are dense — individual neurons encode multiple concepts, making it difficult to isolate specific features. SAEs and Transcoders learn sparse overcomplete bases to approximate MLP layer outputs, rendering features more interpretable.
 
 **Limitations of Prior Work**: Existing methods adopt **neuron-level sparsity** (constraining the number of non-zero elements in the hidden layer), which leads to a severe **sparsity–accuracy trade-off** — higher sparsity results in greater reconstruction error of the original MLP mapping. Unfaithful reconstruction risks missing critical behaviors and precludes direct layer substitution during inference.
 
-**Root Cause**: Interpretability demands high sparsity, yet neuron-level methods with high sparsity can only exploit a low-dimensional subspace of the output space ($K$ non-zero hidden units → $K$-dimensional subspace), sacrificing the expressive capacity of the original layer.
+**Key Challenge**: Interpretability demands high sparsity, yet neuron-level methods with high sparsity can only exploit a low-dimensional subspace of the output space ($K$ non-zero hidden units → $K$-dimensional subspace), sacrificing the expressive capacity of the original layer.
 
-**Paper Goals**: Faithfully reconstruct the functionality of the original MLP layer while maintaining high sparsity.
+**Goal**: Faithfully reconstruct the functionality of the original MLP layer while maintaining high sparsity.
 
-**Starting Point**: Shift from neuron-level sparsity to **layer-level sparsity** — selecting a small number of full-rank linear transformations (expert sub-layers) at each step, where each expert is far more expressive than a single neuron.
+**Key Insight**: Shift from neuron-level sparsity to **layer-level sparsity** — selecting a small number of full-rank linear transformations (expert sub-layers) at each step, where each expert is far more expressive than a single neuron.
 
 **Core Idea**: Construct a large collection of parameter-efficient full-rank expert sub-layers via Hadamard product tensor factorization, and faithfully reconstruct the original MLP by sparsely activating $K$ of them.
 

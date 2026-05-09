@@ -28,15 +28,15 @@ Data-Juicer 2.0 is a cloud-scale multimodal data processing system for foundatio
 
 ## Background & Motivation
 
-**State of the Field**: Foundation model training demands massive multimodal data processing pipelines. RedPajama and Dolma primarily target text, while Spark targets traditional big data workloads.
+**Background**: Foundation model training demands massive multimodal data processing pipelines. RedPajama and Dolma primarily target text, while Spark targets traditional big data workloads.
 
 **Limitations of Prior Work**: (a) Insufficient multimodal support: lack of cross-modal alignment and semantic transformation; (b) Efficiency–scalability tension: foundation model workloads consist of simple yet massive per-sample operations; (c) Ecosystem fragmentation: API incompatibilities hinder cross-platform optimization.
 
-**Root Cause**: No unified framework simultaneously addresses functionality (multimodal + semantic), scale (PB-level), and usability (Python-native).
+**Key Challenge**: No unified framework simultaneously addresses functionality (multimodal + semantic), scale (PB-level), and usability (Python-native).
 
-**Paper Goals**: Build a unified, scalable multimodal data processing system covering cleaning, annotation, synthesis, and post-training.
+**Goal**: Build a unified, scalable multimodal data processing system covering cleaning, annotation, synthesis, and post-training.
 
-**Starting Point**: Extending Data-Juicer 1.0 (50 text operators) to multimodal, large-scale, and multi-engine settings via a layered architecture.
+**Key Insight**: Extending Data-Juicer 1.0 (50 text operators) to multimodal, large-scale, and multi-engine settings via a layered architecture.
 
 **Core Idea**: Layered adaptive architecture + 150+ multimodal operators + unified multi-engine abstraction = cloud-scale data processing covering the full foundation model lifecycle.
 

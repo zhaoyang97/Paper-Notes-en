@@ -27,15 +27,15 @@ This paper validates the Platonic Representation Hypothesis (PRH) in an astronom
 
 ## Background & Motivation
 
-**State of the Field**: Astronomy is experiencing a "fourth wave" of AI adoption—the influx of foundation models. Multiple groups are independently exploring contrastive, generative, and autoregressive approaches to building astronomical foundation models, yet no consensus exists on the optimal architecture.
+**Background**: Astronomy is experiencing a "fourth wave" of AI adoption—the influx of foundation models. Multiple groups are independently exploring contrastive, generative, and autoregressive approaches to building astronomical foundation models, yet no consensus exists on the optimal architecture.
 
 **Limitations of Prior Work**: Astronomical observations are fundamentally different projections of the same underlying physics (optical imaging, infrared imaging, spectroscopy), yet models for each modality are typically designed and trained independently, leaving cross-modal knowledge largely underutilized.
 
-**Root Cause**: It remains unclear whether the astronomical community needs to train dedicated foundation models from scratch, or whether it can leverage the enormous GPU compute already invested in general-purpose vision models.
+**Key Challenge**: It remains unclear whether the astronomical community needs to train dedicated foundation models from scratch, or whether it can leverage the enormous GPU compute already invested in general-purpose vision models.
 
-**Paper Goals**: Quantitatively validate the PRH in an astronomical context—determining whether different neural networks converge to a consistent representation space given sufficient data and compute.
+**Goal**: Quantitatively validate the PRH in an astronomical context—determining whether different neural networks converge to a consistent representation space given sufficient data and compute.
 
-**Starting Point**: Astronomy provides an ideal testbed for the PRH: different observational modalities are mathematical projections of the same physical reality, so if the PRH holds, models should learn similar representations.
+**Key Insight**: Astronomy provides an ideal testbed for the PRH: different observational modalities are mathematical projections of the same physical reality, so if the PRH holds, models should learn similar representations.
 
 **Core Idea**: Even general-purpose vision models pretrained on natural images exhibit cross-modal alignment on astronomical data that increases significantly with model scale, with no clear advantage for astronomy-specific models.
 

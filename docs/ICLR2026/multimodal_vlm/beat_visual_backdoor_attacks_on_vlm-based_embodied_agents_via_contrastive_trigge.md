@@ -27,15 +27,15 @@ content_hash: f35a437e03bf7fd8
 This paper proposes BEAT, the first visual backdoor attack framework targeting VLM-driven embodied agents. It employs environmental objects (e.g., knives) as triggers and adopts a two-stage training pipeline (SFT + Contrastive Trigger Learning) to achieve precise backdoor activation. BEAT attains an attack success rate of up to 80% while preserving normal task performance, exposing critical security vulnerabilities in VLM-based embodied agents.
 
 ## Background & Motivation
-**State of the Field**: VLM-driven embodied agents realize an end-to-end "perceive–reason–act" paradigm, directly processing visual inputs to sense, reason, and execute actions. Existing backdoor attack research primarily targets single-step text outputs or fixed visual patches.
+**Background**: VLM-driven embodied agents realize an end-to-end "perceive–reason–act" paradigm, directly processing visual inputs to sense, reason, and execute actions. Existing backdoor attack research primarily targets single-step text outputs or fixed visual patches.
 
 **Limitations of Prior Work**: VLM-based embodied agents continuously receive image streams from dynamic visual environments, opening a new attack surface for visual backdoors. Unlike text triggers, object-based triggers exhibit significant appearance variation across viewpoints and lighting conditions, making reliable implantation difficult. Naïve SFT results in false trigger rates as high as 80%.
 
-**Root Cause**: An attacker requires the model to behave normally under benign conditions and switch to a malicious policy only upon observing a specific object. However, the visual representations of objects vary substantially across scenes, making it challenging to enable the model to reliably distinguish between "trigger-present" and "trigger-absent" inputs.
+**Key Challenge**: An attacker requires the model to behave normally under benign conditions and switch to a malicious policy only upon observing a specific object. However, the visual representations of objects vary substantially across scenes, making it challenging to enable the model to reliably distinguish between "trigger-present" and "trigger-absent" inputs.
 
-**Paper Goals**: How to reliably implant visual backdoors in VLM-based embodied agents such that the agent executes multi-step malicious behaviors upon trigger appearance.
+**Goal**: How to reliably implant visual backdoors in VLM-based embodied agents such that the agent executes multi-step malicious behaviors upon trigger appearance.
 
-**Starting Point**: Trigger detection is formalized as a preference learning problem—contrastive learning is employed to enable the model to distinguish visual inputs with and without triggers under identical context.
+**Key Insight**: Trigger detection is formalized as a preference learning problem—contrastive learning is employed to enable the model to distinguish visual inputs with and without triggers under identical context.
 
 **Core Idea**: Contrastive Trigger Learning (CTL) reformulates backdoor activation as a preference learning problem; combined with SFT, this achieves multi-step visual backdoor attacks with low false trigger rates.
 

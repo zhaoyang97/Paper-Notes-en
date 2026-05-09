@@ -28,15 +28,15 @@ This paper proposes AlphaContext, an evolutionary tree-based psychometric contex
 
 ## Background & Motivation
 
-**State of the Field**: Creativity assessment has become increasingly important in the LLM era. Psychometric research identifies scenario-based assessment as an effective approach for measuring creative thinking—presenting subjects with a future-oriented context and asking them to identify potential challenges in order to elicit creative responses. This paradigm originates from the Future Problem Solving Program (FPSP).
+**Background**: Creativity assessment has become increasingly important in the LLM era. Psychometric research identifies scenario-based assessment as an effective approach for measuring creative thinking—presenting subjects with a future-oriented context and asking them to identify potential challenges in order to elicit creative responses. This paradigm originates from the Future Problem Solving Program (FPSP).
 
 **Limitations of Prior Work**: High-quality creativity assessment contexts still rely on expert manual design, creating a severe production bottleneck (each context requires at least one week to craft). Existing LLM-based generation methods face two key challenges: (1) difficulty in simultaneously satisfying implicit assessment cue embedding and global narrative coherence; and (2) difficulty in achieving diversity while guaranteeing quality and measurement validity.
 
-**Root Cause**: Psychometric contexts differ fundamentally from ordinary stories—they must implicitly embed assessment cues within a coherent narrative, and these cues must effectively elicit creative thinking. Conventional story generation frameworks cannot satisfy such fine-grained constraints.
+**Key Challenge**: Psychometric contexts differ fundamentally from ordinary stories—they must implicitly embed assessment cues within a coherent narrative, and these cues must effectively elicit creative thinking. Conventional story generation frameworks cannot satisfy such fine-grained constraints.
 
-**Paper Goals**: To automatically generate psychometric contexts that can substitute for expert-designed ones, while guaranteeing narrative coherence, assessment cue alignment, and stylistic diversity.
+**Goal**: To automatically generate psychometric contexts that can substitute for expert-designed ones, while guaranteeing narrative coherence, assessment cue alignment, and stylistic diversity.
 
-**Starting Point**: The context generation process is decomposed into three stages—planning, generation, and evolution—with search algorithms applied to ensure global structure, local quality, and diverse coverage respectively.
+**Key Insight**: The context generation process is decomposed into three stages—planning, generation, and evolution—with search algorithms applied to ensure global structure, local quality, and diverse coverage respectively.
 
 **Core Idea**: A HyperTree structure formalizes the expert outline design process; MCTS performs sentence-level search for optimal text under outline constraints; MAP-Elites iteratively evolves contexts in a stylistic behavior space; and virtual subject simulation validates assessment effectiveness.
 

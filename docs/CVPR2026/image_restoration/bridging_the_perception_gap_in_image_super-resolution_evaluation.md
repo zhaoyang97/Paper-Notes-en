@@ -27,19 +27,19 @@ content_hash: 7ee54b8e0c61cfdc
 Through a large-scale user study, this paper reveals a severe misalignment between existing SR evaluation metrics (PSNR, SSIM, LPIPS, etc.) and human perception. After analyzing their inherent deficiencies, the paper proposes a minimalist yet effective Relative Quality Index (RQI) framework that learns relative quality differences between image pairs to enable more reliable SR evaluation, and can also serve as a loss function to guide SR model training.
 
 ## Background & Motivation
-**State of the Field**: SR techniques have advanced rapidly (RealESRGAN → SwinIR → StableSR → SeeSR), producing increasingly high-quality outputs, while evaluation metrics have remained largely unchanged.
+**Background**: SR techniques have advanced rapidly (RealESRGAN → SwinIR → StableSR → SeeSR), producing increasingly high-quality outputs, while evaluation metrics have remained largely unchanged.
 
 **Limitations of Prior Work**: Researchers have grown increasingly skeptical of evaluation metrics — models achieving higher metric scores do not necessarily produce better visual results. Many works are compelled to conduct user studies or combine multiple metrics for validation.
 
-**Root Cause**: SR models evolve rapidly while evaluation standards stagnate. Three inherent categories of challenges exist between metrics and human perception:
+**Key Challenge**: SR models evolve rapidly while evaluation standards stagnate. Three inherent categories of challenges exist between metrics and human perception:
    - (a) **Distortion-based FR metrics** (PSNR, SSIM) favor over-smoothed average solutions, which is contrary to perceptual preference.
    - (b) **Perceptual FR metrics** (LPIPS, DISTS) fail when GT quality is poor.
    - (c) **No-reference metrics** (NIQE, CLIP-IQA) cannot assess fidelity.
    - (d) Subtle differences between high-quality SR outputs cannot be distinguished by existing metrics.
 
-**Paper Goals**: Design an SR evaluation framework capable of simultaneously addressing all four challenges above.
+**Goal**: Design an SR evaluation framework capable of simultaneously addressing all four challenges above.
 
-**Starting Point**: Replace absolute quality scores with relative quality differences — allowing any image (including degraded ones) to serve as a reference, and learning the quality gap between the target and the reference.
+**Key Insight**: Replace absolute quality scores with relative quality differences — allowing any image (including degraded ones) to serve as a reference, and learning the quality gap between the target and the reference.
 
 **Core Idea**: Since GT may be imperfect and SR outputs may surpass GT, the framework abandons the assumption of a perfect reference and instead learns **relative** quality relationships.
 

@@ -29,15 +29,15 @@ This paper proposes UnZipLoRA, a method that simultaneously trains two decoupled
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models (e.g., SDXL) can learn specific subject or style concepts via LoRA fine-tuning. DreamBooth and StyleDrop focus on capturing content or style respectively, but neither can extract both simultaneously from a single image. ZipLoRA can merge independently trained subject and style LoRAs, but requires separate training images for each. B-LoRA exploits block-level specialization in the SDXL U-Net to separate content and style, but the granularity of its partition is too coarse.
+**Background**: Diffusion models (e.g., SDXL) can learn specific subject or style concepts via LoRA fine-tuning. DreamBooth and StyleDrop focus on capturing content or style respectively, but neither can extract both simultaneously from a single image. ZipLoRA can merge independently trained subject and style LoRAs, but requires separate training images for each. B-LoRA exploits block-level specialization in the SDXL U-Net to separate content and style, but the granularity of its partition is too coarse.
 
 **Limitations of Prior Work**: Disentangling content and style from a single image is an ill-posed problem. With naive joint training (e.g., training two LoRAs simultaneously under a prompt such as "A <cc> in <ss> style"), the two LoRAs cross-contaminate: the content LoRA absorbs style information and the style LoRA absorbs content information.
 
-**Root Cause**: A single image must supervise both LoRAs (since it jointly encodes content and style), yet each LoRA must learn only its corresponding concept, and their combination must faithfully reconstruct the original image.
+**Key Challenge**: A single image must supervise both LoRAs (since it jointly encodes content and style), yet each LoRA must learn only its corresponding concept, and their combination must faithfully reconstruct the original image.
 
-**Paper Goals**: Learn two decoupled and compatible LoRAs from a single image, enabling independent use (generating style or content variants) as well as joint use (reconstructing the original image or creating novel combinations).
+**Goal**: Learn two decoupled and compatible LoRAs from a single image, enabling independent use (generating style or content variants) as well as joint use (reconstructing the original image or creating novel combinations).
 
-**Starting Point**: Cross-attention layers in diffusion models bind text conditioning to visual generation. If the content LoRA can be made to attend only to the content trigger token <cc> and the style LoRA only to the style trigger token <ss>, cross-contamination can be avoided.
+**Key Insight**: Cross-attention layers in diffusion models bind text conditioning to visual generation. If the content LoRA can be made to attend only to the content trigger token <cc> and the style LoRA only to the style trigger token <ss>, cross-contamination can be avoided.
 
 **Core Idea**: Three orthogonal separation strategies—prompt separation (to prevent cross-contamination), column separation (to ensure weight orthogonality and compatibility), and block separation (to assign dedicated U-Net blocks to style and content)—are combined to train two LoRAs that are disentangled in both concept space and weight space from a single image.
 

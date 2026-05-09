@@ -27,15 +27,15 @@ content_hash: cec13caa0e23298a
 This paper proposes the Reasoning-based Bias Detector (RBD), a plug-and-play debiasing module for LLM judges. By externally detecting four types of evaluation bias (verbosity, position, bandwagon, and sentiment), RBD generates structured feedback with reasoning chains to guide judges toward self-correction. RBD-8B achieves an average accuracy improvement of 18.5% and consistency improvement of 10.9% across 8 LLM judges.
 
 ## Background & Motivation
-**State of the Field**: LLM-as-a-Judge has been widely adopted for automated evaluation (e.g., Chatbot Arena, model ranking), yet judges themselves exhibit systematic biases—favoring longer responses (verbosity bias), preferring the first option (position bias), being swayed by majority opinion (bandwagon bias), and being influenced by emotional tone (sentiment bias).
+**Background**: LLM-as-a-Judge has been widely adopted for automated evaluation (e.g., Chatbot Arena, model ranking), yet judges themselves exhibit systematic biases—favoring longer responses (verbosity bias), preferring the first option (position bias), being swayed by majority opinion (bandwagon bias), and being influenced by emotional tone (sentiment bias).
 
 **Limitations of Prior Work**: (1) In-context learning (prompt engineering) fails to correct deep-seated biases, especially for weaker models; (2) fine-tuning-based debiasing is inapplicable to closed-source models (GPT-4o, Claude, etc.) and risks overfitting; (3) existing methods merely instruct judges to "avoid bias" without providing concrete bias diagnoses or corrective guidance.
 
-**Root Cause**: How can sufficiently specific bias feedback be delivered to enable judge self-correction, without modifying the judge itself (thus remaining compatible with closed-source models)?
+**Key Challenge**: How can sufficiently specific bias feedback be delivered to enable judge self-correction, without modifying the judge itself (thus remaining compatible with closed-source models)?
 
-**Paper Goals**: Design an external module capable of detecting bias and providing reasoning-chain-based corrective suggestions, enabling any LLM—including weaker models—to serve as a reliable judge.
+**Goal**: Design an external module capable of detecting bias and providing reasoning-chain-based corrective suggestions, enabling any LLM—including weaker models—to serve as a reliable judge.
 
-**Starting Point**: Drawing on the chain-of-thought capabilities of Large Reasoning Models (LRMs), the paper trains a dedicated "bias detection reasoner" whose output format is `<think>reasoning analysis</think>bias label`, with the reasoning analysis covering bias type identification, comparative analysis, and judge capability assessment.
+**Key Insight**: Drawing on the chain-of-thought capabilities of Large Reasoning Models (LRMs), the paper trains a dedicated "bias detection reasoner" whose output format is `<think>reasoning analysis</think>bias label`, with the reasoning analysis covering bias type identification, comparative analysis, and judge capability assessment.
 
 **Core Idea**: Use a fine-tuned reasoning model as an external bias detector and debias through an iterative detect→feedback→re-judge loop.
 

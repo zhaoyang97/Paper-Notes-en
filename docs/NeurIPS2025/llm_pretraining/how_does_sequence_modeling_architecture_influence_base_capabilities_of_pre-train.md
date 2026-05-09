@@ -30,15 +30,15 @@ By introducing a "domain-restricted pre-training + OOD testing" evaluation frame
 
 ## Background & Motivation
 
-**State of the Field**: Stateful sequence modeling architectures such as Mamba, RWKV, and Gated DeltaNet replace the self-attention mechanism of Transformers with linear-complexity alternatives, achieving comparable or superior performance on language modeling and few-shot learning benchmarks while offering greater computational efficiency.
+**Background**: Stateful sequence modeling architectures such as Mamba, RWKV, and Gated DeltaNet replace the self-attention mechanism of Transformers with linear-complexity alternatives, achieving comparable or superior performance on language modeling and few-shot learning benchmarks while offering greater computational efficiency.
 
 **Limitations of Prior Work**: Prior studies have identified deficiencies in these architectures on targeted tasks such as retrieval, copying, and associative recall, but their impact on "base capabilities" (OOD language modeling generalization) remains unclear—because the commonly used mixed-domain pre-training setting makes all architectures appear similarly capable.
 
-**Root Cause**: Mixed-domain pre-training is fundamentally an in-distribution evaluation, which fails to expose architectural differences. This creates the illusion that Mamba and Transformer have comparable base capabilities, whereas significant gaps may emerge under OOD conditions.
+**Key Challenge**: Mixed-domain pre-training is fundamentally an in-distribution evaluation, which fails to expose architectural differences. This creates the illusion that Mamba and Transformer have comparable base capabilities, whereas significant gaps may emerge under OOD conditions.
 
-**Paper Goals**: (1) Design an evaluation methodology capable of revealing architectural differences in base capabilities; (2) identify the key factors responsible for base capability degradation in stateful architectures; (3) propose architectural design principles that prevent such degradation.
+**Goal**: (1) Design an evaluation methodology capable of revealing architectural differences in base capabilities; (2) identify the key factors responsible for base capability degradation in stateful architectures; (3) propose architectural design principles that prevent such degradation.
 
-**Starting Point**: Domain-restricted pre-training (training exclusively on cc+c4) combined with cross-domain testing (evaluating OOD performance on arxiv/github/stack) exposes architectural differences even at early stages of training.
+**Key Insight**: Domain-restricted pre-training (training exclusively on cc+c4) combined with cross-domain testing (evaluating OOD performance on arxiv/github/stack) exposes architectural differences even at early stages of training.
 
 **Core Idea**: A sequence modeling architecture must possess "arbitrary selection over the full sequence"—the ability to attend to the entire sequence, compute genuine relational scores, and produce non-uniform distributions—in order to maintain base capabilities without degradation.
 

@@ -31,13 +31,13 @@ This paper proposes CoSO, a framework that dynamically derives continuous subspa
 
 ## Background & Motivation
 
-**State of the Field**: The core challenge in continual learning is catastrophic forgetting—the sharp decline in performance on previously learned tasks when a model acquires new ones. PEFT methods based on pre-trained ViTs (e.g., LoRA) have become mainstream, constraining parameter updates to fixed low-rank subspaces to mitigate inter-task interference.
+**Background**: The core challenge in continual learning is catastrophic forgetting—the sharp decline in performance on previously learned tasks when a model acquires new ones. PEFT methods based on pre-trained ViTs (e.g., LoRA) have become mainstream, constraining parameter updates to fixed low-rank subspaces to mitigate inter-task interference.
 
 **Limitations of Prior Work**: (a) LoRA's fixed-rank constraint limits learning capacity and underperforms full-rank fine-tuning; (b) InfLoRA mitigates interference within a pre-specified subspace, and SD-LoRA decouples magnitude from direction, but both confine weight updates to a single low-rank subspace; (c) performance degrades noticeably on long task sequences, as fixed subspaces lack the expressiveness to accommodate continuously shifting gradient structures.
 
-**Root Cause**: How can high learning capacity (flexibility) be maintained while effectively mitigating catastrophic forgetting (stability)? There is a fundamental tension between the "safety" of fixed subspaces and the "flexibility" of dynamic subspaces.
+**Key Challenge**: How can high learning capacity (flexibility) be maintained while effectively mitigating catastrophic forgetting (stability)? There is a fundamental tension between the "safety" of fixed subspaces and the "flexibility" of dynamic subspaces.
 
-**Starting Point**: Inspired by GaLore (gradient low-rank projection for offline learning), the subspace is dynamically derived from the SVD of the gradient itself rather than fixed in advance, while orthogonal bases of historical task subspaces are maintained to decouple update directions across tasks.
+**Key Insight**: Inspired by GaLore (gradient low-rank projection for offline learning), the subspace is dynamically derived from the SVD of the gradient itself rather than fixed in advance, while orthogonal bases of historical task subspaces are maintained to decouple update directions across tasks.
 
 **Core Idea**: Every $K$ steps, a projection matrix is derived from the SVD of the current gradient for low-rank optimization, forced into the orthogonal complement of historical task subspaces, and Frequent Directions is used to efficiently maintain historical information.
 

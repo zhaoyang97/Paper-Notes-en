@@ -27,15 +27,15 @@ content_hash: 6b0ab7e9c5207802
 This paper proposes BiPreManip, a framework for bimanual preparatory manipulation based on visual affordance representations. The system first anticipates the primary hand's target interaction region, then guides the assistive hand to perform preparatory actions (e.g., flipping a bottle so its cap faces the primary hand), achieving substantial improvements over baselines in both simulated and real-world environments.
 
 ## Background & Motivation
-**State of the Field**: Bimanual manipulation research has advanced considerably in recent years (ACT, RDT-1B, 3D FlowMatch Actor, etc.), covering symmetric, sequentially independent, and complementary-role collaboration paradigms.
+**Background**: Bimanual manipulation research has advanced considerably in recent years (ACT, RDT-1B, 3D FlowMatch Actor, etc.), covering symmetric, sequentially independent, and complementary-role collaboration paradigms.
 
 **Limitations of Prior Work**: Existing methods assume both hands can directly interact with an object, yet many everyday scenarios require one hand to first *change the object's state* before the other hand can operate—e.g., pushing a tablet to the table edge before grasping it, or standing a pen upright before uncapping it.
 
-**Root Cause**: Preparatory manipulation demands asymmetric anticipatory coordination and long-horizon interdependent planning—the assistive hand must understand the primary hand's future intent while avoiding interference with its anticipated interaction region.
+**Key Challenge**: Preparatory manipulation demands asymmetric anticipatory coordination and long-horizon interdependent planning—the assistive hand must understand the primary hand's future intent while avoiding interference with its anticipated interaction region.
 
-**Paper Goals**: Define and address a novel problem category of "collaborative preparatory manipulation," enabling robots to learn bimanual coordinated behavior of prepare-then-operate.
+**Goal**: Define and address a novel problem category of "collaborative preparatory manipulation," enabling robots to learn bimanual coordinated behavior of prepare-then-operate.
 
-**Starting Point**: Affordance-driven reasoning—first use an affordance map to anticipate the final goal action, then inversely derive the assistive hand's preparatory behavior.
+**Key Insight**: Affordance-driven reasoning—first use an affordance map to anticipate the final goal action, then inversely derive the assistive hand's preparatory behavior.
 
 **Core Idea**: Cross-arm reasoning is achieved via an anticipatory affordance map, such that every action of the assistive hand serves the primary hand's ultimate goal.
 

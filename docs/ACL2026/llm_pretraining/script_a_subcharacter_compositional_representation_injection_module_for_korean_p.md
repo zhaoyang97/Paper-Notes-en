@@ -29,15 +29,15 @@ This paper proposes SCRIPT, a model-agnostic plug-and-play module that injects s
 
 ## Background & Motivation
 
-**State of the Field**: Mainstream Korean PLMs—including advanced LLMs such as HyperCLOVA X and EXAONE—almost universally rely on subword tokenization. While subword modeling effectively captures lexical semantics from large corpora, its tokenization granularity is insufficient to reflect the internal compositional structure of Hangul.
+**Background**: Mainstream Korean PLMs—including advanced LLMs such as HyperCLOVA X and EXAONE—almost universally rely on subword tokenization. While subword modeling effectively captures lexical semantics from large corpora, its tokenization granularity is insufficient to reflect the internal compositional structure of Hangul.
 
 **Limitations of Prior Work**: (1) Korean is a morphologically rich agglutinative language in which the vast majority of morphophonological alternations occur at the subcharacter (Jamo) level—corpus analysis reveals that 92.75% of morphological modifications are subcharacter-level; (2) existing subword PLMs are insensitive to fine-grained morphosyntactic variations such as tense inflection and phonological assimilation; (3) the few Jamo-based language models (e.g., KOMBO), while robust to morphological alternations, perform poorly on downstream tasks due to weak semantic representations and high computational cost.
 
-**Root Cause**: Subword-level modeling excels at semantics but overlooks structure, whereas subcharacter-level modeling captures structure at the expense of semantics—the two are complementary yet difficult to combine.
+**Key Challenge**: Subword-level modeling excels at semantics but overlooks structure, whereas subcharacter-level modeling captures structure at the expense of semantics—the two are complementary yet difficult to combine.
 
-**Paper Goals**: Design a lightweight module that injects subcharacter compositional knowledge into existing subword-level PLMs, achieving the advantages of both paradigms without modifying the model architecture or requiring additional pretraining.
+**Goal**: Design a lightweight module that injects subcharacter compositional knowledge into existing subword-level PLMs, achieving the advantages of both paradigms without modifying the model architecture or requiring additional pretraining.
 
-**Starting Point**: The three foundational principles governing Hangul character construction (combinatorial rules, spatial arrangement, and sequential ordering) are used to guide hierarchical compression from subcharacters to subwords, rather than relying on generic attention or linear pooling.
+**Key Insight**: The three foundational principles governing Hangul character construction (combinatorial rules, spatial arrangement, and sequential ordering) are used to guide hierarchical compression from subcharacters to subwords, rather than relying on generic attention or linear pooling.
 
 **Core Idea**: Attach a dual-channel module to the embedding layer of a PLM—one channel compresses the subcharacter sequence into a structure-aware subword representation, while the other preserves the original pretrained embeddings; the two are fused via cross-attention.
 

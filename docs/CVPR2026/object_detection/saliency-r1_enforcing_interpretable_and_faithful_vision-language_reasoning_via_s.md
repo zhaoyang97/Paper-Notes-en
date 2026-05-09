@@ -29,15 +29,15 @@ This paper proposes Saliency-R1, which uses a logit-decomposition-based efficien
 
 ## Background & Motivation
 
-1. **State of the Field**: VLMs have achieved remarkable progress on reasoning and question-answering tasks. To enhance trustworthiness, models are typically prompted to generate natural language explanations (e.g., Chain-of-Thought) to demonstrate their reasoning process. Reasoning models such as DeepSeek-R1 are also trained to produce detailed chains of thought.
+1. **Background**: VLMs have achieved remarkable progress on reasoning and question-answering tasks. To enhance trustworthiness, models are typically prompted to generate natural language explanations (e.g., Chain-of-Thought) to demonstrate their reasoning process. Reasoning models such as DeepSeek-R1 are also trained to produce detailed chains of thought.
 
 2. **Limitations of Prior Work**: (1) VLMs tend to over-rely on textual cues, with visual signals playing a relatively minor role; (2) the generated reasoning traces are inconsistent with the final answers — models "think" one thing and "do" another; (3) the reasoning process itself may misuse visual cues or hallucinate details that do not exist.
 
-3. **Root Cause**: Different reasoning processes may attend to different image regions even when they arrive at the same correct answer. Unfaithful reasoning either focuses on irrelevant regions or ignores the image entirely, arriving at the answer through textual shortcuts.
+3. **Key Challenge**: Different reasoning processes may attend to different image regions even when they arrive at the same correct answer. Unfaithful reasoning either focuses on irrelevant regions or ignores the image entirely, arriving at the answer through textual shortcuts.
 
-4. **Paper Goals**: (1) Design an efficient saliency map method to visualize how visual information influences generated tokens; (2) track how visual information flows through the chain of thought to the final answer; (3) use saliency alignment as a reward to train models via GRPO to attend to the correct regions.
+4. **Goal**: (1) Design an efficient saliency map method to visualize how visual information influences generated tokens; (2) track how visual information flows through the chain of thought to the final answer; (3) use saliency alignment as a reward to train models via GRPO to attend to the correct regions.
 
-5. **Starting Point**: Decompose token logits into the first-order direct contributions of each context token, extracting the contributions of visual tokens as saliency maps without any additional forward or backward passes.
+5. **Key Insight**: Decompose token logits into the first-order direct contributions of each context token, extracting the contributions of visual tokens as saliency maps without any additional forward or backward passes.
 
 6. **Core Idea**: Use zero-overhead logit-decomposition saliency maps to measure the visual focus region of VLM reasoning, and employ alignment with human annotations as a GRPO reward to train more faithful reasoning.
 

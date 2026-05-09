@@ -27,15 +27,15 @@ This paper proposes Directional Predictability Amplification (DPA), a predictabi
 
 ## Background & Motivation
 
-**State of the Field**: ML models not only learn biases present in training data but also amplify them. For example, 67% of cooking images in the ImSitu dataset feature women, yet model predictions may push this proportion to 90%. Existing metrics fall into two categories: co-occurrence-based methods (BA, Multi, BA_MALS) and predictability-based methods (LA).
+**Background**: ML models not only learn biases present in training data but also amplify them. For example, 67% of cooking images in the ImSitu dataset feature women, yet model predictions may push this proportion to 90%. Existing metrics fall into two categories: co-occurrence-based methods (BA, Multi, BA_MALS) and predictability-based methods (LA).
 
 **Limitations of Prior Work**: Co-occurrence-based methods (BA, BA_MALS) fail on balanced datasets; Multi supports balanced datasets but cannot detect negative bias amplification; LA handles balanced datasets but lacks directionality. No single metric simultaneously satisfies all three key properties.
 
-**Root Cause**: Co-occurrence-based methods naturally support directionality but are constrained by annotation information, while predictability-based methods can capture hidden biases but lack directionality — the challenge lies in combining the advantages of both.
+**Key Challenge**: Co-occurrence-based methods naturally support directionality but are constrained by annotation information, while predictability-based methods can capture hidden biases but lack directionality — the challenge lies in combining the advantages of both.
 
-**Paper Goals**: Design a one-stop metric that simultaneously satisfies: (1) directionality; (2) applicability to both balanced and imbalanced datasets; (3) correct identification of positive and negative bias amplification.
+**Goal**: Design a one-stop metric that simultaneously satisfies: (1) directionality; (2) applicability to both balanced and imbalanced datasets; (3) correct identification of positive and negative bias amplification.
 
-**Starting Point**: Extend the predictability framework of LA into a bidirectional one, and quantify amplification via relative change rather than absolute change.
+**Key Insight**: Extend the predictability framework of LA into a bidirectional one, and quantify amplification via relative change rather than absolute change.
 
 **Core Idea**: Measure bias amplification using the normalized relative change of directional predictability — one metric addressing three problems.
 

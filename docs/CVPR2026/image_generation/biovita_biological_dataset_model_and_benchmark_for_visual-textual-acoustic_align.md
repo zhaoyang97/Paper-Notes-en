@@ -27,15 +27,15 @@ content_hash: df7c795bcf7bb58a
 This paper proposes the BioVITA framework, comprising a million-scale tri-modal (image–text–audio) biological dataset, a two-stage alignment model, and a six-direction cross-modal species-level retrieval benchmark, achieving for the first time unified visual-textual-acoustic representation learning in the biological domain.
 
 ## Background & Motivation
-**State of the Field**: Biodiversity research relies on multiple sensory modalities (images for appearance, audio for vocalizations, text for taxonomic descriptions). Models such as BioCLIP have achieved success in image–text alignment, and CLAP has made progress on audio–text alignment.
+**Background**: Biodiversity research relies on multiple sensory modalities (images for appearance, audio for vocalizations, text for taxonomic descriptions). Models such as BioCLIP have achieved success in image–text alignment, and CLAP has made progress on audio–text alignment.
 
 **Limitations of Prior Work**: Existing multimodal datasets focus only on paired modalities (image–text or audio–text), lacking a unified tri-modal training and evaluation framework. Pioneer efforts such as SSW60 cover only 60 species, making them severely insufficient in scale.
 
-**Root Cause**: Biodiversity research requires comprehensive perception of species, yet visual-textual-acoustic (VITA) alignment remains an open challenge—different datasets employ inconsistent taxonomic systems and vary greatly in scale.
+**Key Challenge**: Biodiversity research requires comprehensive perception of species, yet visual-textual-acoustic (VITA) alignment remains an open challenge—different datasets employ inconsistent taxonomic systems and vary greatly in scale.
 
-**Paper Goals**: To construct a complete VITA alignment framework enabling free species-level cross-modal retrieval among images, audio, and text.
+**Goal**: To construct a complete VITA alignment framework enabling free species-level cross-modal retrieval among images, audio, and text.
 
-**Starting Point**: Beginning with dataset construction, the paper collects million-scale tri-modal data with ecological attribute annotations, and aligns audio representations to an established visual-textual representation space via a two-stage training strategy.
+**Key Insight**: Beginning with dataset construction, the paper collects million-scale tri-modal data with ecological attribute annotations, and aligns audio representations to an established visual-textual representation space via a two-stage training strategy.
 
 **Core Idea**: Leveraging the powerful image–text representations pretrained by BioCLIP 2, the paper efficiently achieves unified tri-modal representation through a two-stage strategy of audio–text contrastive alignment followed by joint tri-modal contrastive alignment.
 

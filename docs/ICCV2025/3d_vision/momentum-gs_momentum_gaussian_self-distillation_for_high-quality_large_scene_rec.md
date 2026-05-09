@@ -29,18 +29,18 @@ Momentum-GS proposes a momentum-based self-distillation mechanism to address cro
 
 ## Background & Motivation
 
-**State of the Field**: 3D Gaussian Splatting (3DGS) has demonstrated strong performance in scene reconstruction. Large-scale scene reconstruction commonly adopts a divide-and-conquer strategy, partitioning the scene into independent blocks for parallel training.
+**Background**: 3D Gaussian Splatting (3DGS) has demonstrated strong performance in scene reconstruction. Large-scale scene reconstruction commonly adopts a divide-and-conquer strategy, partitioning the scene into independent blocks for parallel training.
 
 **Limitations of Prior Work**:
    - **Memory and Storage**: The explicit representation of millions of Gaussians incurs substantial memory and storage overhead. Hybrid representations (implicit + explicit), such as Scaffold-GS, can alleviate this but introduce new challenges.
    - **Cross-Block Inconsistency**: Independent per-block training neglects inter-block relationships, resulting in visible illumination discontinuities and unnatural transitions at block boundaries (e.g., abrupt lighting changes in CityGaussian).
    - **GPU Count Constraint**: Hybrid representations employ a shared Gaussian decoder (MLP); during parallel training, the number of blocks is thus limited by the number of available GPUs.
 
-**Root Cause**: Independent block training → insufficient data diversity → poor decoder quality → degraded reconstruction accuracy; shared decoder with parallel training → block count constrained by GPU count → poor scalability.
+**Key Challenge**: Independent block training → insufficient data diversity → poor decoder quality → degraded reconstruction accuracy; shared decoder with parallel training → block count constrained by GPU count → poor scalability.
 
-**Paper Goals**: How to ensure cross-block consistency in hybrid-representation block-wise training of large-scale scenes without being constrained by the number of available GPUs?
+**Goal**: How to ensure cross-block consistency in hybrid-representation block-wise training of large-scale scenes without being constrained by the number of available GPUs?
 
-**Starting Point**: Drawing inspiration from momentum teacher models in self-supervised learning, the paper uses a momentum-updated teacher decoder to provide stable, globally consistent guidance across all blocks.
+**Key Insight**: Drawing inspiration from momentum teacher models in self-supervised learning, the paper uses a momentum-updated teacher decoder to provide stable, globally consistent guidance across all blocks.
 
 **Core Idea**: A momentum-updated teacher Gaussian decoder performs self-distillation on the student decoder, decoupling the block count from the GPU count constraint, while reconstruction-quality-guided block weighting enables globally consistent optimization.
 

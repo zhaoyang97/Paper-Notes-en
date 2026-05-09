@@ -29,15 +29,15 @@ VGA-Bench proposes a unified AIGC video evaluation benchmark comprising a three-
 
 ## Background & Motivation
 
-**State of the Field**: AIGC video generation has advanced rapidly (diffusion models, Transformers, etc.), yet evaluation frameworks remain focused on technical fidelity metrics (FVD, CLIP Score), overlooking high-level perceptual qualities such as aesthetic appeal.
+**Background**: AIGC video generation has advanced rapidly (diffusion models, Transformers, etc.), yet evaluation frameworks remain focused on technical fidelity metrics (FVD, CLIP Score), overlooking high-level perceptual qualities such as aesthetic appeal.
 
 **Limitations of Prior Work**: Benchmarks such as V-Bench reduce "video aesthetics" to a single score, heavily relying on external scoring models (MUSIQ/DINO), resulting in insufficient granularity, significant bias, and limited controllability.
 
-**Root Cause**: Video generation models grow increasingly powerful, yet a comprehensive, fine-grained, and interpretable evaluation framework capable of jointly measuring technical quality and aesthetic quality is lacking.
+**Key Challenge**: Video generation models grow increasingly powerful, yet a comprehensive, fine-grained, and interpretable evaluation framework capable of jointly measuring technical quality and aesthetic quality is lacking.
 
-**Paper Goals**: Establish a three-dimensional unified evaluation framework covering generation quality, aesthetic quality, and visual formal elements.
+**Goal**: Establish a three-dimensional unified evaluation framework covering generation quality, aesthetic quality, and visual formal elements.
 
-**Starting Point**: Design a hierarchical taxonomy that decomposes each dimension into fine-grained sub-attributes (composition, color harmony, lighting, motion aesthetics, etc.) and train dedicated evaluation models accordingly.
+**Key Insight**: Design a hierarchical taxonomy that decomposes each dimension into fine-grained sub-attributes (composition, color harmony, lighting, motion aesthetics, etc.) and train dedicated evaluation models accordingly.
 
 **Core Idea**: Replace the ad hoc combination of external scoring models with three dedicated neural evaluators, achieving end-to-end, consistent, and scalable automated evaluation.
 

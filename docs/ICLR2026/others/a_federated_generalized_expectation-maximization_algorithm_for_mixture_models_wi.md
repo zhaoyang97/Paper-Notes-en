@@ -27,15 +27,15 @@ This paper proposes FedGEM, an algorithm in which clients perform local EM steps
 
 ## Background & Motivation
 
-**State of the Field**: Clustering in federated learning typically assumes that all clients share the same set of clusters and that the global number of clusters $K$ is known in advance.
+**Background**: Clustering in federated learning typically assumes that all clients share the same set of clusters and that the global number of clusters $K$ is known in advance.
 
 **Limitations of Prior Work**: In practice (e.g., fault diagnosis for OEM devices), clients may have heterogeneous yet potentially overlapping cluster sets, and the total number of fault categories is unknown. Existing federated clustering methods (k-FED, FFCM, FedKmeans) all require $K$ to be specified beforehand. The only method that does not require prior knowledge of $K$, AFCL, suffers from serious privacy vulnerabilities—data shared by clients can be reconstructed by the server through simple computation.
 
-**Root Cause**: Clients cannot share raw data (privacy constraints), there is no unified label standard (heterogeneous labels), and the global number of clusters is unknown. Neither conventional centralized training nor existing federated methods can simultaneously satisfy all these constraints.
+**Key Challenge**: Clients cannot share raw data (privacy constraints), there is no unified label standard (heterogeneous labels), and the global number of clusters is unknown. Neither conventional centralized training nor existing federated methods can simultaneously satisfy all these constraints.
 
-**Paper Goals**: Design a privacy-preserving federated clustering algorithm capable of inferring $K$ and training mixture models without prior knowledge of the global cluster count.
+**Goal**: Design a privacy-preserving federated clustering algorithm capable of inferring $K$ and training mixture models without prior knowledge of the global cluster count.
 
-**Starting Point**: Combine EM with uncertainty sets—after the M-step, each client computes an uncertainty radius defined as the maximum perturbation range that does not cause a decrease in likelihood; the server then uses the intersection of uncertainty sets to detect cluster overlap.
+**Key Insight**: Combine EM with uncertainty sets—after the M-step, each client computes an uncertainty radius defined as the maximum perturbation range that does not cause a decrease in likelihood; the server then uses the intersection of uncertainty sets to detect cluster overlap.
 
 **Core Idea**: Use the intersection of likelihood-nondecreasing uncertainty sets around EM maximizers to identify cross-client cluster overlap, thereby enabling federated clustering without prior knowledge of the global $K$.
 

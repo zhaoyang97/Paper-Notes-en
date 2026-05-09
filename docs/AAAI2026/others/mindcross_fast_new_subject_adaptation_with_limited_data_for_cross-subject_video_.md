@@ -29,16 +29,16 @@ This paper proposes MindCross, a cross-subject brain decoding framework that lea
 
 ## Background & Motivation
 
-**State of the Field**: Reconstructing videos from brain signals (fMRI/EEG) is an important brain decoding task. Existing methods (MinD-Video, NeuroClips, Mind-Animator, etc.) predominantly follow a per-subject paradigm—training a separate model for each subject—which demands large amounts of data and incurs significant training overhead.
+**Background**: Reconstructing videos from brain signals (fMRI/EEG) is an important brain decoding task. Existing methods (MinD-Video, NeuroClips, Mind-Animator, etc.) predominantly follow a per-subject paradigm—training a separate model for each subject—which demands large amounts of data and incurs significant training overhead.
 
 **Limitations of Prior Work**:
    - **High cost of per-subject paradigm**: Every new subject requires training from scratch, severely limiting scalability in practical BCI applications.
    - **Data scarcity**: Brain-video experiments are expensive to conduct; EEG-video datasets contain only ~1,400 trials per subject.
    - **Insufficient cross-subject methods**: Cross-subject approaches such as MindBridge and GLFA over-emphasize subject-independent information while neglecting subject-specific information; new subject adaptation relies on fine-tuning strategies that are time-consuming and degrade performance on existing subjects.
 
-**Root Cause**: How can a single unified model learn cross-subject commonalities while preserving individual differences, and rapidly adapt to new subjects with limited data?
+**Key Challenge**: How can a single unified model learn cross-subject commonalities while preserving individual differences, and rapidly adapt to new subjects with limited data?
 
-**Starting Point**: Inspired by ShaSpec, the paper designs a shared-specific encoder architecture that decouples the learning of subject-independent and subject-specific information. During new subject adaptation, only the subject-specific encoder parameters are updated while all other modules remain frozen.
+**Key Insight**: Inspired by ShaSpec, the paper designs a shared-specific encoder architecture that decouples the learning of subject-independent and subject-specific information. During new subject adaptation, only the subject-specific encoder parameters are updated while all other modules remain frozen.
 
 ## Method
 

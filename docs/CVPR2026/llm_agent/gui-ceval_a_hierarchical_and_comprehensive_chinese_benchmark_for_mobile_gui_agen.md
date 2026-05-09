@@ -27,15 +27,15 @@ content_hash: 148e7708a1c802ac
 This paper proposes GUI-CEval, the first comprehensive benchmark for Chinese mobile GUI agents, covering 201 mainstream Chinese apps and 4 device types. It adopts a two-tier structure (foundation + application) to perform fine-grained diagnosis across five dimensions—perception, planning, reflection, execution, and evaluation. Experiments on 20 representative models reveal that current models exhibit significant deficiencies in reflection and self-evaluation.
 
 ## Background & Motivation
-**State of the Field**: The rapid development of MLLMs has given rise to mobile GUI agents capable of visual perception, cross-modal reasoning, and interactive control. Several benchmarks, including ScreenSpot, AndroidControl, and AndroidWorld, have driven progress in this area.
+**Background**: The rapid development of MLLMs has given rise to mobile GUI agents capable of visual perception, cross-modal reasoning, and interactive control. Several benchmarks, including ScreenSpot, AndroidControl, and AndroidWorld, have driven progress in this area.
 
 **Limitations of Prior Work**: (i) *Language bias*—the vast majority of benchmarks are English-centric and fail to reflect the linguistic and interaction characteristics of the Chinese mobile ecosystem; (ii) *Inconsistent scenarios*—data is drawn from heterogeneous platforms, lacking a focused evaluation targeting the mobile domain; (iii) *Task one-sidedness*—existing benchmarks either test only UI element localization or only offline agent success rates, without a unified end-to-end capability assessment; (iv) *Insufficient data authenticity*—automated collection and verification overlook real user intent.
 
-**Root Cause**: The absence of a unified, fine-grained, and diagnosable evaluation framework for Chinese mobile GUI agents makes it impossible to systematically identify weaknesses across the full pipeline from perception to execution.
+**Key Challenge**: The absence of a unified, fine-grained, and diagnosable evaluation framework for Chinese mobile GUI agents makes it impossible to systematically identify weaknesses across the full pipeline from perception to execution.
 
-**Paper Goals**: To construct the first comprehensive benchmark for Chinese mobile GUI agents that simultaneously evaluates atomic capabilities and end-to-end application performance.
+**Goal**: To construct the first comprehensive benchmark for Chinese mobile GUI agents that simultaneously evaluates atomic capabilities and end-to-end application performance.
 
-**Starting Point**: A hierarchical design (foundation + application) is adopted, defining five core dimensions along the complete agent workflow, with all data manually collected and verified on real devices.
+**Key Insight**: A hierarchical design (foundation + application) is adopted, defining five core dimensions along the complete agent workflow, with all data manually collected and verified on real devices.
 
 **Core Idea**: Through a two-tier, five-dimension design, GUI-CEval enables comprehensive and diagnosable evaluation—from atomic skills to end-to-end execution—within a real Chinese mobile environment.
 

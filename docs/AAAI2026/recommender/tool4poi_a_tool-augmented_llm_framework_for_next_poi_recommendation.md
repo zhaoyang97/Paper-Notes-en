@@ -28,15 +28,15 @@ This paper is the first to introduce the tool-augmented LLM paradigm to the next
 
 ## Background & Motivation
 
-**State of the Field**: Next Point-of-Interest (POI) recommendation is a core task in location-based services. Traditional approaches (RNN/Transformer/GCN) model user trajectory sequences via embedding representations. Recently, the contextual reasoning capability of LLMs has been introduced to this task—e.g., LLM-Mob (in-context learning) and LLM4POI (supervised fine-tuning)—demonstrating potential for understanding spatiotemporal dynamics.
+**Background**: Next Point-of-Interest (POI) recommendation is a core task in location-based services. Traditional approaches (RNN/Transformer/GCN) model user trajectory sequences via embedding representations. Recently, the contextual reasoning capability of LLMs has been introduced to this task—e.g., LLM-Mob (in-context learning) and LLM4POI (supervised fine-tuning)—demonstrating potential for understanding spatiotemporal dynamics.
 
 **Limitations of Prior Work**: LLM-based methods face two fundamental constraints: (1) heavy reliance on historical completeness—they can only recommend POIs the user has previously visited and cannot handle Out-of-History (OOH) scenarios (where users intend to visit places they have never been), which account for over 30% of real-world cases; (2) context window limitations—a city may contain hundreds of thousands of POIs, making it infeasible to encode all candidates into a prompt for open-set recommendation.
 
-**Root Cause**: User behavior exhibits both regularity (commuting patterns) and exploratory tendencies (trying new restaurants). Existing LLM methods overfit to visited POIs and cannot support exploratory behavior; fine-tuning approaches (e.g., GNPR-SID) further exacerbate this bias.
+**Key Challenge**: User behavior exhibits both regularity (commuting patterns) and exploratory tendencies (trying new restaurants). Existing LLM methods overfit to visited POIs and cannot support exploratory behavior; fine-tuning approaches (e.g., GNPR-SID) further exacerbate this bias.
 
-**Paper Goals**: Design a plug-and-play, fine-tuning-free framework that enables LLMs to retrieve recommendations from the full POI pool via external tools, overcoming both the OOH limitation and the large-scale candidate space constraint.
+**Goal**: Design a plug-and-play, fine-tuning-free framework that enables LLMs to retrieve recommendations from the full POI pool via external tools, overcoming both the OOH limitation and the large-scale candidate space constraint.
 
-**Starting Point**: The observation that humans select destinations through progressive filtering (by category, region, and distance) suggests that this narrowing process can be simulated via multi-round tool calls by an LLM agent.
+**Key Insight**: The observation that humans select destinations through progressive filtering (by category, region, and distance) suggests that this narrowing process can be simulated via multi-round tool calls by an LLM agent.
 
 **Core Idea**: Equip LLMs with external tool-calling capabilities and implement a three-stage pipeline—preference extraction → multi-round tool-based retrieval → reranking—to enable open-set POI recommendation.
 

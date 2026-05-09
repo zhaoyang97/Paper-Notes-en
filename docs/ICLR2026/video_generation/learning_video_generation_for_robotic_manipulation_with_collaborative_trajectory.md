@@ -28,15 +28,15 @@ This paper proposes RoboMaster, a framework that decomposes the robot–object i
 
 ## Background & Motivation
 
-1. **State of the Field**: Video diffusion models have demonstrated significant potential for generating robot decision-making data, and trajectory-conditioned control enables fine-grained control over robot motion.
+1. **Background**: Video diffusion models have demonstrated significant potential for generating robot decision-making data, and trajectory-conditioned control enables fine-grained control over robot motion.
 
 2. **Limitations of Prior Work**: Existing trajectory control methods (e.g., Tora, DragAnything) focus primarily on the independent motion of individual objects, using separate trajectories to control the robotic arm and the manipulated object. This leads to feature entanglement in interaction regions (overlapping areas), degrading generation quality.
 
-3. **Root Cause**: Robotic manipulation is inherently a multi-object interaction process, yet prior methods reduce it to independent motion control, failing to capture physically plausible interactions. If synthesized videos cannot accurately represent interaction phases, inverse dynamics models will extract unreliable action labels.
+3. **Key Challenge**: Robotic manipulation is inherently a multi-object interaction process, yet prior methods reduce it to independent motion control, failing to capture physically plausible interactions. If synthesized videos cannot accurately represent interaction phases, inverse dynamics models will extract unreliable action labels.
 
-4. **Paper Goals**: To design a video generation framework that accurately models robot–object interaction dynamics, such that the generated videos can serve as high-quality demonstration data for robot learning.
+4. **Goal**: To design a video generation framework that accurately models robot–object interaction dynamics, such that the generated videos can serve as high-quality demonstration data for robot learning.
 
-5. **Starting Point**: Rather than decomposing objects, the paper decomposes the interaction process—dividing manipulation into three sub-stages, each guided by the dominant agent, and unifying them into a single collaborative trajectory.
+5. **Key Insight**: Rather than decomposing objects, the paper decomposes the interaction process—dividing manipulation into three sub-stages, each guided by the dominant agent, and unifying them into a single collaborative trajectory.
 
 6. **Core Idea**: By decomposing the interaction process rather than individual objects, multi-object trajectories are unified into a collaborative trajectory representation, fundamentally avoiding feature entanglement in overlapping regions.
 

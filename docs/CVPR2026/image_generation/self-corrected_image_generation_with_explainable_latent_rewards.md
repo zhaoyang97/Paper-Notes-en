@@ -29,15 +29,15 @@ This paper proposes xLARD, a framework that performs semantic self-correction in
 
 ## Background & Motivation
 
-1. **State of the Field**: Multimodal large models (e.g., GPT-4V, Qwen2.5-VL) excel at vision-language understanding, yet frequently fail to faithfully render their understanding during image generation—particularly on fine-grained semantics such as counting, spatial relationships, and color composition.
+1. **Background**: Multimodal large models (e.g., GPT-4V, Qwen2.5-VL) excel at vision-language understanding, yet frequently fail to faithfully render their understanding during image generation—particularly on fine-grained semantics such as counting, spatial relationships, and color composition.
 
 2. **Limitations of Prior Work**: A fundamental asymmetry exists—models can "understand correctly but generate incorrectly." For example, given the prompt "six penguins walking in a line on snow," the model comprehends the description yet produces an incorrect quantity and arrangement. This arises because the understanding and generation components operate in a functionally decoupled manner at inference time.
 
-3. **Root Cause**: The three existing categories of solutions each have inherent limitations: (1) post-training methods (RL/instruction tuning) require extensive supervision and retraining; (2) post-processing methods exert no control during the generation process; (3) training-free methods rely on ad hoc rules and lack semantic transparency.
+3. **Key Challenge**: The three existing categories of solutions each have inherent limitations: (1) post-training methods (RL/instruction tuning) require extensive supervision and retraining; (2) post-processing methods exert no control during the generation process; (3) training-free methods rely on ad hoc rules and lack semantic transparency.
 
-4. **Paper Goals**: To leverage the model's own comprehension capabilities as real-time guidance signals for correcting generation outputs during the generation process.
+4. **Goal**: To leverage the model's own comprehension capabilities as real-time guidance signals for correcting generation outputs during the generation process.
 
-5. **Starting Point**: Evaluating a generated image is easier than generating correct content directly—this asymmetry is exploited by having the model first generate, then self-evaluate and correct.
+5. **Key Insight**: Evaluating a generated image is easier than generating correct content directly—this asymmetry is exploited by having the model first generate, then self-evaluate and correct.
 
 6. **Core Idea**: Freeze the backbone and train a lightweight residual corrector to modify latent representations in the latent space according to interpretable multi-dimensional reward signals (counting, color, position).
 

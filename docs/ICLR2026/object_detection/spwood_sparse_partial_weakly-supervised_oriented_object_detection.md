@@ -28,15 +28,15 @@ This paper proposes the SPWOOD framework to jointly address sparse and weak anno
 
 ## Background & Motivation
 
-**State of the Field**: Oriented object detection (OOD) is critical in remote sensing and related domains. However, annotating precise rotated bounding boxes (RBoxes) — requiring center coordinates, width, height, and rotation angle — incurs prohibitively high labeling costs.
+**Background**: Oriented object detection (OOD) is critical in remote sensing and related domains. However, annotating precise rotated bounding boxes (RBoxes) — requiring center coordinates, width, height, and rotation angle — incurs prohibitively high labeling costs.
 
 **Limitations of Prior Work**: Existing methods for reducing annotation cost either handle only weak annotations (e.g., replacing RBoxes with horizontal boxes HBox or point annotations) or only sparse annotations (i.e., a subset of instances are labeled), but in practice both challenges co-exist.
 
-**Root Cause**: Sparse annotations (not all instances are labeled) and weak annotations (labeled but imprecise) each introduce severe training signal deficiency; their combination exacerbates the problem — unlabeled instances may be treated as negatives, while weak annotations may mislead angle estimation.
+**Key Challenge**: Sparse annotations (not all instances are labeled) and weak annotations (labeled but imprecise) each introduce severe training signal deficiency; their combination exacerbates the problem — unlabeled instances may be treated as negatives, while weak annotations may mislead angle estimation.
 
-**Paper Goals**: To train high-quality oriented object detectors under an extremely low-cost setting where both sparse and weak annotations are present simultaneously.
+**Goal**: To train high-quality oriented object detectors under an extremely low-cost setting where both sparse and weak annotations are present simultaneously.
 
-**Starting Point**: Design a unified framework that learns from three annotation types of varying quality (RBox, HBox, Point) while mining unlabeled instances via self-training.
+**Key Insight**: Design a unified framework that learns from three annotation types of varying quality (RBox, HBox, Point) while mining unlabeled instances via self-training.
 
 **Core Idea**: A self-adaptive oriented detector unifies precise, weak, and unlabeled training signals; angular consistency constraints and spatial layout learning recover rotation information from weak annotations.
 

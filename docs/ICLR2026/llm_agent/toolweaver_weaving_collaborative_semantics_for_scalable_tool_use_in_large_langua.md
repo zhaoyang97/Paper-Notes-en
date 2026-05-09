@@ -28,7 +28,7 @@ ToolWeaver is proposed to represent each tool as a hierarchical discrete code se
 
 ## Background & Motivation
 
-**State of the Field**: Generative tool use (e.g., ToolGen) represents tools as new tokens, allowing LLMs to directly "utter" tool names rather than retrieving from a candidate list. However, existing "one tool, one token" approaches face severe scalability challenges.
+**Background**: Generative tool use (e.g., ToolGen) represents tools as new tokens, allowing LLMs to directly "utter" tool names rather than retrieving from a candidate list. However, existing "one tool, one token" approaches face severe scalability challenges.
 
 **Limitations of Prior Work**:
 - **Vocabulary explosion**: 47,000 tools → 47,000 new tokens, causing linear growth in the embedding layer.
@@ -36,11 +36,11 @@ ToolWeaver is proposed to represent each tool as a hierarchical discrete code se
 - **Semantic blindness**: A single token cannot encode inter-tool collaborative relationships; the model can only infer collaboration patterns from sparse tool ID co-occurrences.
 - **Poor cross-domain generalization**: Single token IDs lack transferable semantic structure.
 
-**Root Cause**: A compact representation of large-scale tool libraries is required that simultaneously encodes intrinsic tool semantics (functionality) and extrinsic collaboration patterns (co-usage patterns) without degrading pretrained language capabilities.
+**Key Challenge**: A compact representation of large-scale tool libraries is required that simultaneously encodes intrinsic tool semantics (functionality) and extrinsic collaboration patterns (co-usage patterns) without degrading pretrained language capabilities.
 
-**Paper Goals**: Design a logarithmic vocabulary expansion scheme that jointly encodes semantic and collaborative information.
+**Goal**: Design a logarithmic vocabulary expansion scheme that jointly encodes semantic and collaborative information.
 
-**Starting Point**: Inspired by VQ-VAE, tool embeddings are quantized into multi-level discrete codes via Residual Quantization (RQ)—$K^L$ tools require only $L \times K$ new tokens—with graph Laplacian regularization injecting collaborative signals.
+**Key Insight**: Inspired by VQ-VAE, tool embeddings are quantized into multi-level discrete codes via Residual Quantization (RQ)—$K^L$ tools require only $L \times K$ new tokens—with graph Laplacian regularization injecting collaborative signals.
 
 **Core Idea**: Encode tools as hierarchical token sequences via collaboration-aware residual quantization, enabling logarithmic vocabulary scaling and collaborative semantic modeling.
 

@@ -30,15 +30,15 @@ This paper proposes Dual-Solver, which generalizes multi-step samplers for diffu
 
 ### State of the Field
 
-**State of the Field**: Inference acceleration is a central challenge in diffusion models. ODE solvers (e.g., DPM-Solver, DEIS) exploit the structure of diffusion dynamics to design efficient samplers. Learnable solvers (e.g., BNS-Solver, DS-Solver) further improve quality by optimizing timesteps and sampling parameters.
+**Background**: Inference acceleration is a central challenge in diffusion models. ODE solvers (e.g., DPM-Solver, DEIS) exploit the structure of diffusion dynamics to design efficient samplers. Learnable solvers (e.g., BNS-Solver, DS-Solver) further improve quality by optimizing timesteps and sampling parameters.
 
 **Limitations of Prior Work**: (a) Conventional solvers fix the prediction type (noise/data/velocity) and integration domain (log/linear), yet no single choice is universally optimal across different NFE settings; (b) Learnable solvers typically require large numbers of teacher trajectories or high-NFE samples as training targets, incurring substantial preparation overhead.
 
-**Root Cause**: The choice of prediction type and integration domain significantly affects sampling quality, but the optimal choice is backbone- and NFE-dependent — an adaptive approach is therefore necessary.
+**Key Challenge**: The choice of prediction type and integration domain significantly affects sampling quality, but the optimal choice is backbone- and NFE-dependent — an adaptive approach is therefore necessary.
 
-**Paper Goals**: Unify different prediction types and integration domains into a single continuously parameterized framework, and learn the optimal parameters using a classification loss that requires no target samples.
+**Goal**: Unify different prediction types and integration domains into a single continuously parameterized framework, and learn the optimal parameters using a classification loss that requires no target samples.
 
-**Starting Point**: The paper observes that noise prediction, velocity prediction, and data prediction are mutually interchangeable via linear combination, and that integration in the $\log$ SNR domain versus the linear $t$ domain can be continuously interpolated — both aspects can thus be parameterized and learned end-to-end.
+**Key Insight**: The paper observes that noise prediction, velocity prediction, and data prediction are mutually interchangeable via linear combination, and that integration in the $\log$ SNR domain versus the linear $t$ domain can be continuously interpolated — both aspects can thus be parameterized and learned end-to-end.
 
 **Core Idea**: Parameterize prediction type, integration domain, and residual terms jointly, and use the classification accuracy of a frozen pretrained classifier as a target-sample-free training signal.
 

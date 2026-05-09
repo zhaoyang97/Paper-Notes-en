@@ -30,13 +30,13 @@ This paper proposes Adaptive Initial Residual Connections (Adaptive IRC), which 
 
 ## Background & Motivation
 
-**State of the Field**: The core of GNNs is message passing—nodes update their embeddings by aggregating neighborhood information. However, deep GNNs suffer from over-smoothing: repeated neighborhood averaging causes all node embeddings to converge to an indistinguishable state.
+**Background**: The core of GNNs is message passing—nodes update their embeddings by aggregating neighborhood information. However, deep GNNs suffer from over-smoothing: repeated neighborhood averaging causes all node embeddings to converge to an indistinguishable state.
 
 **Limitations of Prior Work**: (1) Static IRC methods (e.g., GCNII) use a shared, fixed residual strength and cannot differentiate across nodes; (2) existing theoretical guarantees are restricted to the linear (activation-free) setting; (3) existing adaptive residual methods are complex and lack theoretical guarantees.
 
-**Root Cause**: A mechanism is needed that is both theoretically grounded and capable of adaptively modulating residual strength.
+**Key Challenge**: A mechanism is needed that is both theoretically grounded and capable of adaptively modulating residual strength.
 
-**Starting Point**: Inspired by the Friedkin–Johnsen opinion dynamics model, in which individuals differ in their susceptibility to external information.
+**Key Insight**: Inspired by the Friedkin–Johnsen opinion dynamics model, in which individuals differ in their susceptibility to external information.
 
 **Core Idea**: Node-level personalized residual strength + theoretical guarantee via a positive lower bound on Dirichlet energy + a PageRank-based heuristic requiring zero additional parameters.
 

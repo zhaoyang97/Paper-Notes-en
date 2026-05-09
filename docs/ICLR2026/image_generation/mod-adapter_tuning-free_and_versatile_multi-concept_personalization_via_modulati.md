@@ -29,15 +29,15 @@ This paper proposes Mod-Adapter, a tuning-free multi-concept personalization met
 
 ## Background & Motivation
 
-**State of the Field**: Personalized text-to-image generation aims to synthesize target concepts from user-provided reference images. Existing methods predominantly focus on object concepts (persons, animals, everyday items), and multi-concept personalization methods similarly handle combinations of multiple objects.
+**Background**: Personalized text-to-image generation aims to synthesize target concepts from user-provided reference images. Existing methods predominantly focus on object concepts (persons, animals, everyday items), and multi-concept personalization methods similarly handle combinations of multiple objects.
 
 **Limitations of Prior Work**: (a) Existing tuning-free methods (e.g., IP-Adapter, MS-Diffusion) fail to disentangle object and abstract concepts — when given an image of a person in a specific pose, they replicate the entire person rather than extracting only the pose; (b) TokenVerse supports abstract concepts but requires test-time fine-tuning for each new image, which is time-consuming and prone to overfitting.
 
-**Root Cause**: Abstract concepts (pose, lighting, material) are not independent visual entities — they are tightly coupled with objects and difficult to extract in isolation. Moreover, there exists a substantial gap between extracted visual features and the modulation space of DiT.
+**Key Challenge**: Abstract concepts (pose, lighting, material) are not independent visual entities — they are tightly coupled with objects and difficult to extract in isolation. Moreover, there exists a substantial gap between extracted visual features and the modulation space of DiT.
 
-**Paper Goals**: (i) Generalize to new concepts without test-time fine-tuning; (ii) Support customization of both object and abstract concepts simultaneously; (iii) Achieve decoupled control across multiple concepts.
+**Goal**: (i) Generalize to new concepts without test-time fine-tuning; (ii) Support customization of both object and abstract concepts simultaneously; (iii) Achieve decoupled control across multiple concepts.
 
-**Starting Point**: The locality and semantic additivity of the AdaLN modulation space in DiT — assigning different modulation vectors to different tokens enables localized concept control.
+**Key Insight**: The locality and semantic additivity of the AdaLN modulation space in DiT — assigning different modulation vectors to different tokens enables localized concept control.
 
 **Core Idea**: Train a Mod-Adapter module to predict concept-specific modulation directions, with VLM-guided pre-training to bridge the large gap between the image and modulation spaces.
 

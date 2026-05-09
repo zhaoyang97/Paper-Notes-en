@@ -29,14 +29,14 @@ HyperExpress introduces a novel task termed Compositional Interpretability-based
 
 ## Background & Motivation
 
-**State of the Field**: Unsupervised concept extraction (UCE) aims to extract human-interpretable visual concepts from a single image. Existing methods such as ConceptExpress and AutoConcept are limited to object-level concepts, while ICE can extract attribute-level concepts but does not account for composability.
+**Background**: Unsupervised concept extraction (UCE) aims to extract human-interpretable visual concepts from a single image. Existing methods such as ConceptExpress and AutoConcept are limited to object-level concepts, while ICE can extract attribute-level concepts but does not account for composability.
 
 **Core Problem**:
    - Existing methods focus solely on concept disentanglement while neglecting composability, preventing the extracted concepts from being reliably recombined to reconstruct the original image.
    - CCE considers composability but requires multiple images containing the same concepts.
    - Euclidean space fails to capture the hierarchical structure and relational dependencies between object-level and attribute-level concepts.
 
-**Paper Goals**: This work proposes the CI-ICE task and the HyperExpress method, which learns concept hierarchies in hyperbolic space and ensures the composability of the concept embedding space via horospherical projection.
+**Goal**: This work proposes the CI-ICE task and the HyperExpress method, which learns concept hierarchies in hyperbolic space and ensures the composability of the concept embedding space via horospherical projection.
 
 ## Method
 

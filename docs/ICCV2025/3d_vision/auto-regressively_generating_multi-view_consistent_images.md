@@ -35,7 +35,7 @@ Generating multi-view consistent images from text, reference images, or geometri
 
 **Inflexible condition switching**: Diffusion-based methods typically require substantial architectural modifications when switching condition types (text → image → shape).
 
-**Root Cause**: Diffusion methods model the joint distribution $p(v_1, v_2, ..., v_n)$, simultaneously generating all views in a manner inconsistent with the progressive way humans observe 3D objects.
+**Key Challenge**: Diffusion methods model the joint distribution $p(v_1, v_2, ..., v_n)$, simultaneously generating all views in a manner inconsistent with the progressive way humans observe 3D objects.
 
 **Core Idea**: Autoregressive models are naturally suited for progressive generation — when generating the $n$-th view, all information from the preceding $n-1$ views is available. Adjacent views always share significant overlap, and even back-facing views can receive effective reference from side views.
 

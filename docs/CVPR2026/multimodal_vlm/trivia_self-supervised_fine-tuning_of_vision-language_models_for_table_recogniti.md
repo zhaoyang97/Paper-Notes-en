@@ -28,15 +28,15 @@ This paper proposes TRivia, a self-supervised fine-tuning framework that leverag
 
 ## Background & Motivation
 
-**State of the Field**: Table Recognition (TR) aims to convert table images into semi-structured representations such as HTML or Markdown. Recent advances in VLMs have significantly improved TR performance, with proprietary models like Gemini 2.5 Pro demonstrating strong TR capabilities. Open-source VLMs, however, remain notably behind due to limited annotated data.
+**Background**: Table Recognition (TR) aims to convert table images into semi-structured representations such as HTML or Markdown. Recent advances in VLMs have significantly improved TR performance, with proprietary models like Gemini 2.5 Pro demonstrating strong TR capabilities. Open-source VLMs, however, remain notably behind due to limited annotated data.
 
 **Limitations of Prior Work**: TR data acquisition faces a trilemma: (1) synthetic data is scalable but lacks real-world visual diversity; (2) annotating real data is expensive and time-consuming; (3) distilling pseudo-labels from proprietary models is costly, is bounded by the teacher model's performance ceiling, and may violate terms of service. MinerU2.5, despite employing millions of samples with human annotations and Gemini distillation, still fails to surpass its teacher model.
 
-**Root Cause**: Open-source TR models are constrained by limited annotated data, and their performance ceiling is dictated by the teacher model — creating a bottleneck between annotation availability and achievable performance. Meanwhile, vast quantities of unannotated table images are readily available yet cannot be directly exploited.
+**Key Challenge**: Open-source TR models are constrained by limited annotated data, and their performance ceiling is dictated by the teacher model — creating a bottleneck between annotation availability and achievable performance. Meanwhile, vast quantities of unannotated table images are readily available yet cannot be directly exploited.
 
-**Paper Goals**: (1) How to extract effective supervision signals from unannotated table images; (2) how to select samples with the highest training value; (3) how to generate diverse and verifiable QA pairs as reward signals.
+**Goal**: (1) How to extract effective supervision signals from unannotated table images; (2) how to select samples with the highest training value; (3) how to generate diverse and verifiable QA pairs as reward signals.
 
-**Starting Point**: QA is a downstream task of TR — if a model can correctly answer questions about a table, it implicitly indicates that the model's recognition of the table's structure and content is accurate. This is substantially easier than directly predicting HTML annotations, and the correctness of QA pairs can be verified through cross-validation without human labeling.
+**Key Insight**: QA is a downstream task of TR — if a model can correctly answer questions about a table, it implicitly indicates that the model's recognition of the table's structure and content is accurate. This is substantially easier than directly predicting HTML annotations, and the correctness of QA pairs can be verified through cross-validation without human labeling.
 
 **Core Idea**: Use "ability to correctly answer table questions" as a proxy reward, enabling VLMs to learn table recognition in a self-supervised manner from unannotated table images via GRPO.
 

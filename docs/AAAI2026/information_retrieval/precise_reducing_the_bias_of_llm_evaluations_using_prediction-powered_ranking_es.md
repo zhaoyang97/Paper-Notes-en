@@ -27,15 +27,15 @@ This paper extends the Prediction-Powered Inference (PPI) framework to sub-insta
 
 ## Background & Motivation
 
-**State of the Field**: LLM-as-Judge has become a mainstream approach for evaluating search and recommendation systems, serving as a cost-effective alternative to human annotation. Ranking systems undergo frequent iteration cycles requiring repeated evaluation, while implicit signals such as clicks suffer from position bias.
+**Background**: LLM-as-Judge has become a mainstream approach for evaluating search and recommendation systems, serving as a cost-effective alternative to human annotation. Ranking systems undergo frequent iteration cycles requiring repeated evaluation, while implicit signals such as clicks suffer from position bias.
 
 **Limitations of Prior Work**: (a) LLM judgments exhibit systematic bias, and direct use tends to overestimate search relevance (e.g., Claude Sonnet's Precision@4 bias on ESCI exceeds 15%); (b) human annotation is costly and does not scale, particularly for applications lacking dedicated annotation teams; (c) the original PPI framework supports only instance-level metrics (e.g., accuracy) and cannot handle ranking metrics (Precision@K, NDCG, etc.) due to a mismatch between annotation granularity (query-document) and metric granularity (query-level).
 
-**Root Cause**: Estimating ranking metrics requires aggregating human and LLM annotations at the sub-instance (query-document) level, yet the PPI output space $Y = \{0,1\}^{|C|}$ is computationally intractable for corpora of millions of documents.
+**Key Challenge**: Estimating ranking metrics requires aggregating human and LLM annotations at the sub-instance (query-document) level, yet the PPI output space $Y = \{0,1\}^{|C|}$ is computationally intractable for corpora of millions of documents.
 
-**Paper Goals**: To achieve statistically guaranteed ranking metric estimation using a minimal number of human annotations (30–100 queries) to correct LLM judgment bias.
+**Goal**: To achieve statistically guaranteed ranking metric estimation using a minimal number of human annotations (30–100 queries) to correct LLM judgment bias.
 
-**Starting Point**: The observation that Precision@K computation involves only the relevance of the Top-K documents allows the output space to be reduced from $\{0,1\}^{|C|}$ to $\{0,1\}^K$, making PPI tractable for ranking metrics.
+**Key Insight**: The observation that Precision@K computation involves only the relevance of the Top-K documents allows the output space to be reduced from $\{0,1\}^{|C|}$ to $\{0,1\}^K$, making PPI tractable for ranking metrics.
 
 **Core Idea**: By exploiting the sparse structure of ranking metrics, the PPI computation space is reduced from corpus size to $K$, enabling unbiased ranking metric estimation from a small set of human annotations augmented with large-scale LLM judgments.
 

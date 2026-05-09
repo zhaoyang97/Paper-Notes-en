@@ -27,15 +27,15 @@ content_hash: 4c63621ffb4af4d5
 TTF-VLA proposes a training-free temporal token fusion method that selectively reuses visual tokens from historical frames via a dual-dimension mechanism combining grayscale pixel difference and attention-based semantic detection, improving inference quality of VLA models on robotic manipulation tasks with an average gain of 4.0 percentage points on LIBERO.
 
 ## Background & Motivation
-**State of the Field**: Vision-Language-Action (VLA) models represent a new paradigm for robotic manipulation, unifying vision, language, and action within the Transformer framework, as exemplified by OpenVLA, RT-2, and Pi-0.
+**Background**: Vision-Language-Action (VLA) models represent a new paradigm for robotic manipulation, unifying vision, language, and action within the Transformer framework, as exemplified by OpenVLA, RT-2, and Pi-0.
 
 **Limitations of Prior Work**: Existing VLA models process visual inputs frame-by-frame, completely ignoring temporal coherence—all visual tokens are recomputed from scratch at every step. This leads to two problems: (1) substantial redundancy between consecutive frames is wasted; (2) models are susceptible to visual noise such as illumination fluctuations, motion blur, and sensor noise.
 
-**Root Cause**: In robotic manipulation scenarios, visual changes are typically concentrated in localized task-relevant regions (e.g., the robotic gripper and target object), while the background remains largely static. However, naively reusing historical information risks missing critical signals such as changes in object pose. Distinguishing "temporal redundancy" from "meaningful change" is the core challenge.
+**Key Challenge**: In robotic manipulation scenarios, visual changes are typically concentrated in localized task-relevant regions (e.g., the robotic gripper and target object), while the background remains largely static. However, naively reusing historical information risks missing critical signals such as changes in object pose. Distinguishing "temporal redundancy" from "meaningful change" is the core challenge.
 
-**Paper Goals**: How can temporal coherence across frames be leveraged to improve VLA inference quality without retraining the model?
+**Goal**: How can temporal coherence across frames be leveraged to improve VLA inference quality without retraining the model?
 
-**Starting Point**: Combine two dimensions—"spatial dynamic change" and "semantic task relevance"—so that only patches that have genuinely changed or are task-relevant use current-frame tokens, while the remainder reuse historical-frame tokens.
+**Key Insight**: Combine two dimensions—"spatial dynamic change" and "semantic task relevance"—so that only patches that have genuinely changed or are task-relevant use current-frame tokens, while the remainder reuse historical-frame tokens.
 
 **Core Idea**: A dual-dimension detection scheme based on grayscale pixel difference and attention scores selectively fuses current and historical visual tokens to enhance VLA inference.
 

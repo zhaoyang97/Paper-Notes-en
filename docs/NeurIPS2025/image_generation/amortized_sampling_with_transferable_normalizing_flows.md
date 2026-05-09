@@ -28,17 +28,17 @@ This work proposes Prose — a 285M-parameter all-atom transferable normalizing 
 
 ## Background & Motivation
 
-**State of the Field**: Sampling molecular conformations from the Boltzmann distribution is a central problem in computational chemistry, with applications in protein folding and drug design. Traditional approaches (MD, MCMC) are Markovian — the computational cost for each system must be paid from scratch and cannot be amortized. They also produce highly correlated samples, making efficient exploration of multimodal distributions difficult.
+**Background**: Sampling molecular conformations from the Boltzmann distribution is a central problem in computational chemistry, with applications in protein folding and drug design. Traditional approaches (MD, MCMC) are Markovian — the computational cost for each system must be paid from scratch and cannot be amortized. They also produce highly correlated samples, making efficient exploration of multimodal distributions difficult.
 
 **Limitations of Prior Work**: (a) MD requires femtosecond time steps, yielding highly correlated samples that necessitate long simulations to cover metastable states; (b) deep learning samplers (Boltzmann generators, BGs) are effective for single systems but **are largely non-transferable to new systems**; (c) the only prior transferable BG (TBG) is based on continuous normalizing flows, making density evaluation extremely slow (only 3×10⁴ samples in 4 GPU-days), and successful transfer was demonstrated only on dipeptides.
 
-**Root Cause**: There is a need for a sampling method that simultaneously generates samples efficiently, evaluates likelihoods precisely (for importance sampling correction), and transfers across systems.
+**Key Challenge**: There is a need for a sampling method that simultaneously generates samples efficiently, evaluates likelihoods precisely (for importance sampling correction), and transfers across systems.
 
-**Paper Goals**
+**Goal**
    - Can a sampler be trained that transfers across varying amino acid compositions, sequence lengths, and temperatures?
    - Can it achieve better sample efficiency than MD?
 
-**Starting Point**: Large-scale autoregressive normalizing flows (TarFlow architecture) + a large-scale short-peptide MD dataset + chemistry-aware sequence permutations, enabling a scalable transferable Boltzmann generator.
+**Key Insight**: Large-scale autoregressive normalizing flows (TarFlow architecture) + a large-scale short-peptide MD dataset + chemistry-aware sequence permutations, enabling a scalable transferable Boltzmann generator.
 
 **Core Idea**: A 285M-parameter Transformer normalizing flow is trained on 21,700 short-peptide systems, enabling zero-shot cross-system proposal sampling corrected via self-normalized importance sampling (SNIS).
 

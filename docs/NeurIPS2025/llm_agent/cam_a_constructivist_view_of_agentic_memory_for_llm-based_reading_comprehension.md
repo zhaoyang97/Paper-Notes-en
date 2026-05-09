@@ -28,15 +28,15 @@ Inspired by Piaget's constructivist theory, this paper proposes CAM — an agent
 
 ## Background & Motivation
 
-**State of the Field**: When LLMs process extremely long documents (e.g., novels, meeting transcripts), they face information overload. The mainstream approach is to equip LLMs with external memory modules that store documents in chunks for subsequent retrieval. Existing methods fall into two categories: unstructured memory (MemGPT, ReadAgent) and structured memory (RAPTOR, GraphRAG, MemTree).
+**Background**: When LLMs process extremely long documents (e.g., novels, meeting transcripts), they face information overload. The mainstream approach is to equip LLMs with external memory modules that store documents in chunks for subsequent retrieval. Existing methods fall into two categories: unstructured memory (MemGPT, ReadAgent) and structured memory (RAPTOR, GraphRAG, MemTree).
 
 **Limitations of Prior Work**: (a) Unstructured memory (tabular storage) fails to capture inter-information associations, making recall difficult when key information is scattered; (b) Although structured memory is preferable, RAPTOR and GraphRAG are offline methods requiring full reconstruction upon each update; MemTree supports online updates but only allows one-by-one insertion and does not support overlapping clustering; (c) There is a lack of principled design guidelines for memory systems.
 
-**Root Cause**: How can a memory system simultaneously achieve structuredness, flexible assimilation (where a single unit can belong to multiple higher-level abstractions), and dynamic structural adaptation (incremental updates rather than full reconstruction)?
+**Key Challenge**: How can a memory system simultaneously achieve structuredness, flexible assimilation (where a single unit can belong to multiple higher-level abstractions), and dynamic structural adaptation (incremental updates rather than full reconstruction)?
 
-**Paper Goals**: To provide a design blueprint for memory systems (three key properties) and implement a prototype that satisfies all three simultaneously.
+**Goal**: To provide a design blueprint for memory systems (three key properties) and implement a prototype that satisfies all three simultaneously.
 
-**Starting Point**: Drawing from Piaget's constructivist theory in cognitive science — memory is a cognitive structure that continuously evolves through *assimilation* (incorporating new information into existing schemas) and *accommodation* (adjusting schemas to fit new information).
+**Key Insight**: Drawing from Piaget's constructivist theory in cognitive science — memory is a cognitive structure that continuously evolves through *assimilation* (incorporating new information into existing schemas) and *accommodation* (adjusting schemas to fit new information).
 
 **Core Idea**: Unify the constructivist operations of assimilation (flexibility) and accommodation (dynamism) through an incremental overlapping clustering algorithm, thereby constructing a hierarchical memory that supports batched online updates.
 

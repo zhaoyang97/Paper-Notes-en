@@ -28,15 +28,15 @@ This paper proposes MulDimIF, a multi-dimensional constraint framework that syst
 
 ## Background & Motivation
 
-**State of the Field**: Instruction following is a fundamental capability of LLMs, particularly critical in agent and tool-assisted workflows where outputs must strictly conform to format requirements such as JSON—even minor deviations can cause downstream system failures.
+**Background**: Instruction following is a fundamental capability of LLMs, particularly critical in agent and tool-assisted workflows where outputs must strictly conform to format requirements such as JSON—even minor deviations can cause downstream system failures.
 
 **Limitations of Prior Work**: (1) Existing benchmarks (e.g., IFEval) focus primarily on the diversity of constraint categories, offering a single evaluation dimension that cannot comprehensively characterize instruction-following ability; (2) training methods improve benchmark scores through data engineering but rarely analyze the underlying mechanisms behind performance gains; (3) there is a lack of systematic study on constraint presentation modes (examples/lists/incorporation) and difficulty gradients.
 
-**Root Cause**: Both evaluation and training lack a multi-dimensional perspective—existing methods cannot distinguish whether a model fails because it "does not understand the constraint type," "struggles with complex constraint combinations," or "has difficulty extracting constraints from specific presentation formats."
+**Key Challenge**: Both evaluation and training lack a multi-dimensional perspective—existing methods cannot distinguish whether a model fails because it "does not understand the constraint type," "struggles with complex constraint combinations," or "has difficulty extracting constraints from specific presentation formats."
 
-**Paper Goals**: To construct a multi-dimensional framework covering constraint patterns, categories, and difficulty levels, serving both fine-grained evaluation and training improvement guidance, while analyzing the underlying mechanisms of the improvements.
+**Goal**: To construct a multi-dimensional framework covering constraint patterns, categories, and difficulty levels, serving both fine-grained evaluation and training improvement guidance, while analyzing the underlying mechanisms of the improvements.
 
-**Starting Point**: Three constraint patterns (Example, Listing, Incorporation) are distilled from real-world user prompt writing guidelines and combined with constraint categories and difficulty gradients to form a multi-dimensional evaluation system.
+**Key Insight**: Three constraint patterns (Example, Listing, Incorporation) are distilled from real-world user prompt writing guidelines and combined with constraint categories and difficulty gradients to form a multi-dimensional evaluation system.
 
 **Core Idea**: A controlled pipeline—constraint expansion → conflict detection → instruction rewriting—generates code-verifiable evaluation data, while revealing that GRPO training improvements are primarily realized through attention module updates.
 

@@ -31,9 +31,9 @@ Fake news poses severe threats to social trust and decision-making, affecting po
 
 Malicious actors can exploit jailbreak attacks to circumvent safety guardrails and induce LLMs to generate fake news. However, no existing benchmark systematically evaluates LLM robustness across diverse languages and regions. Current safety datasets such as HarmBench and TrustLLM primarily target toxicity and social bias, offering very limited coverage of fake news.
 
-**Root Cause**: LLM safety alignment is predominantly trained on English and general harmful content, whereas fake news is highly regionalized and language-specific, resulting in systematic blind spots in safety guardrails for non-English regions and languages.
+**Key Challenge**: LLM safety alignment is predominantly trained on English and general harmful content, whereas fake news is highly regionalized and language-specific, resulting in systematic blind spots in safety guardrails for non-English regions and languages.
 
-**Starting Point**: Construct the first cross-lingual and cross-regional fake news jailbreak benchmark to systematically expose language- and region-level imbalances in LLM safety defenses.
+**Key Insight**: Construct the first cross-lingual and cross-regional fake news jailbreak benchmark to systematically expose language- and region-level imbalances in LLM safety defenses.
 
 ## Method
 

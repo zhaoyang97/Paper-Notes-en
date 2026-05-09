@@ -27,15 +27,15 @@ This paper proposes *feedback adaptation* as a new problem setting for RAG syste
 
 ## Background & Motivation
 
-**State of the Field**: RAG has become the dominant paradigm for grounding LLMs in external knowledge. However, existing research assumes that knowledge and system behavior remain static after deployment. In practice, RAG systems are frequently corrected by users or domain experts—who provide feedback when outputs are outdated, erroneous, or otherwise unsatisfactory.
+**Background**: RAG has become the dominant paradigm for grounding LLMs in external knowledge. However, existing research assumes that knowledge and system behavior remain static after deployment. In practice, RAG systems are frequently corrected by users or domain experts—who provide feedback when outputs are outdated, erroneous, or otherwise unsatisfactory.
 
 **Limitations of Prior Work**: (1) Existing methods handle feedback via retraining or fine-tuning, introducing an inherent delay between feedback provision and behavioral change. (2) Existing evaluation protocols focus solely on overall accuracy, failing to capture how quickly and how well a system adapts after receiving feedback. (3) Current benchmarks conflate correctness with adaptability, obscuring a critical dimension of system behavior in interactive scenarios.
 
-**Root Cause**: Training-based methods can achieve strong performance but incur latency (high correction latency), whereas inference-time methods can react immediately but may generalize poorly (low post-feedback performance). This trade-off is entirely invisible under existing evaluation frameworks.
+**Key Challenge**: Training-based methods can achieve strong performance but incur latency (high correction latency), whereas inference-time methods can react immediately but may generalize poorly (low post-feedback performance). This trade-off is entirely invisible under existing evaluation frameworks.
 
-**Paper Goals**: (1) Formalize the feedback adaptation problem; (2) Define evaluation metrics that capture adaptation dynamics; (3) Provide a proof-of-concept instantiation.
+**Goal**: (1) Formalize the feedback adaptation problem; (2) Define evaluation metrics that capture adaptation dynamics; (3) Provide a proof-of-concept instantiation.
 
-**Starting Point**: Elevating "feedback adaptation" from a training/maintenance concern to a first-class research problem. Feedback adaptation is not about improving average accuracy, but about characterizing the dynamics of knowledge updates under interactive conditions.
+**Key Insight**: Elevating "feedback adaptation" from a training/maintenance concern to a first-class research problem. Feedback adaptation is not about improving average accuracy, but about characterizing the dynamics of knowledge updates under interactive conditions.
 
 **Core Idea**: Define two orthogonal evaluation axes—correction latency (how quickly feedback takes effect) and post-feedback performance (generalization to semantically related queries)—and use PatchRAG to demonstrate that immediate adaptation is achievable.
 

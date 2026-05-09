@@ -35,7 +35,7 @@ Ambivalence/Hesitancy (A/H) recognition is a challenging task in affective compu
 
 **Text dominance but insufficiency**: Prior work shows text is the strongest single-modal cue, yet text alone cannot capture the full manifestation of A/H.
 
-**Starting Point**: Building upon prior work that primarily uses facial, audio, and text modalities, this paper **additionally incorporates scene information** and designs a Transformer-based fusion module combined with a **prototype-augmented classification objective**, performing fusion over modality-level embeddings rather than naive concatenation.
+**Key Insight**: Building upon prior work that primarily uses facial, audio, and text modalities, this paper **additionally incorporates scene information** and designs a Transformer-based fusion module combined with a **prototype-augmented classification objective**, performing fusion over modality-level embeddings rather than naive concatenation.
 
 ## Method
 

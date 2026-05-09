@@ -28,15 +28,15 @@ This paper proposes EmoVerse, a 219K-scale visual emotion dataset that achieves 
 
 ## Background & Motivation
 
-**State of the Field**: Visual Emotion Analysis (VEA) aims to bridge the affective gap between visual content and human emotional responses. Existing datasets (FI 23K, EmoSet 118K, EmoArt 130K) are coarse-grained, providing only single discrete emotion labels at the image level.
+**Background**: Visual Emotion Analysis (VEA) aims to bridge the affective gap between visual content and human emotional responses. Existing datasets (FI 23K, EmoSet 118K, EmoArt 130K) are coarse-grained, providing only single discrete emotion labels at the image level.
 
 **Limitations of Prior Work**: Limited scale; insufficient annotation reliability; lack of interpretable emotion grounding — it remains unknown which visual elements evoke specific emotions; only discrete categorical labels, incapable of expressing mixed emotions or intensity variations.
 
-**Root Cause**: Emotions are inherently continuous, multi-dimensional, and subjective, yet existing annotation schemes rely on discrete simplifications, constraining the depth of model understanding.
+**Key Challenge**: Emotions are inherently continuous, multi-dimensional, and subjective, yet existing annotation schemes rely on discrete simplifications, constraining the depth of model understanding.
 
-**Paper Goals**: To construct a dataset with fine-grained interpretable annotations, dual-space representations, and large-scale diversity, along with a companion interpretable model.
+**Goal**: To construct a dataset with fine-grained interpretable annotations, dual-space representations, and large-scale diversity, along with a companion interpretable model.
 
-**Starting Point**: Drawing inspiration from knowledge graph triplets, the paper decomposes image emotions into three semantic components — Background, Attribute, and Subject — each grounded to specific visual regions.
+**Key Insight**: Drawing inspiration from knowledge graph triplets, the paper decomposes image emotions into three semantic components — Background, Attribute, and Subject — each grounded to specific visual regions.
 
 **Core Idea**: By adopting B-A-S triplets and CES+DES dual-space annotations, the paper upgrades visual emotion analysis from single-label classification to multi-level interpretable attribution.
 

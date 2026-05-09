@@ -29,15 +29,15 @@ AIComposer proposes the first cross-domain image composition method that require
 
 ## Background & Motivation
 
-**State of the Field**: Image composition based on large-scale pretrained text-to-image (T2I) diffusion models has achieved significant progress. Existing methods primarily address same-domain image composition, where the foreground and background share similar visual styles.
+**Background**: Image composition based on large-scale pretrained text-to-image (T2I) diffusion models has achieved significant progress. Existing methods primarily address same-domain image composition, where the foreground and background share similar visual styles.
 
 **Limitations of Prior Work**: Cross-domain image composition remains an underexplored challenge. Key difficulties include: (1) the stochasticity of diffusion models leads to unstable composition results; (2) a pronounced style gap between foreground and background causes visible seams and artifacts upon direct composition; (3) existing methods rely heavily on text prompts to guide the composition process, yet textual descriptions struggle to precisely convey complex visual styles and spatial relationships, limiting practical usability.
 
-**Root Cause**: Cross-domain composition must simultaneously satisfy two conflicting objectives—content preservation and style adaptation. Over-preserving the foreground yields stylistic incoherence, while over-adapting to the style loses foreground details. Existing methods either require additional pre-stylization networks (increasing complexity) or depend on precise text descriptions (reducing usability).
+**Key Challenge**: Cross-domain composition must simultaneously satisfy two conflicting objectives—content preservation and style adaptation. Over-preserving the foreground yields stylistic incoherence, while over-adapting to the style loses foreground details. Existing methods either require additional pre-stylization networks (increasing complexity) or depend on precise text descriptions (reducing usability).
 
-**Paper Goals**: (1) Achieve cross-domain image composition without text prompts; (2) accomplish natural style transfer and content preservation without training the diffusion model; (3) construct a fairly evaluated benchmark dataset for cross-domain composition.
+**Goal**: (1) Achieve cross-domain image composition without text prompts; (2) accomplish natural style transfer and content preservation without training the diffusion model; (3) construct a fairly evaluated benchmark dataset for cross-domain composition.
 
-**Starting Point**: The authors observe that the CLIP feature space encodes both content and style information simultaneously. By directly fusing visual signals from the foreground and background at the feature level, text need not serve as an intermediate bridge. Additionally, DDIM inversion enables manipulation of the diffusion process without any training.
+**Key Insight**: The authors observe that the CLIP feature space encodes both content and style information simultaneously. By directly fusing visual signals from the foreground and background at the feature level, text need not serve as an intermediate bridge. Additionally, DDIM inversion enables manipulation of the diffusion process without any training.
 
 **Core Idea**: Replace text-prompt guidance with "CLIP feature MLP fusion + local cross-attention" to achieve training-free (no diffusion model training) cross-domain image composition.
 

@@ -29,7 +29,7 @@ This work presents the first systematic application of Vision Transformers (ViT 
 
 ### State of the Field
 
-**State of the Field**: Weak gravitational lensing serves as a key probe of cosmic structure formation, with small-scale nonlinear structures encoding rich non-Gaussian information.
+**Background**: Weak gravitational lensing serves as a key probe of cosmic structure formation, with small-scale nonlinear structures encoding rich non-Gaussian information.
 
 ### Limitations of Prior Work
 
@@ -37,11 +37,11 @@ This work presents the first systematic application of Vision Transformers (ViT 
 
 ### Root Cause
 
-**Root Cause**: Vision Transformers have achieved breakthroughs in computer vision, yet remain systematically unevaluated in the weak lensing domain.
+**Key Challenge**: Vision Transformers have achieved breakthroughs in computer vision, yet remain systematically unevaluated in the weak lensing domain.
 
 ### Starting Point
 
-**Starting Point**: ViTs directly capture global context via attention mechanisms, without requiring the hierarchical aggregation of CNNs, and offer greater interpretability.
+**Key Insight**: ViTs directly capture global context via attention mechanisms, without requiring the hierarchical aggregation of CNNs, and offer greater interpretability.
 
 ## Method
 

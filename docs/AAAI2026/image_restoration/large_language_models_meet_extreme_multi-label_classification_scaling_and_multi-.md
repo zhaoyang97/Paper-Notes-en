@@ -29,15 +29,15 @@ This paper investigates the effective utilization of decoder-based LLMs for Extr
 
 ## Background & Motivation
 
-**State of the Field**: Extreme Multi-label Classification (XMC) requires predicting the most relevant subset of labels from a million-scale label space for a given query, with broad applications in product recommendation and document tagging. Mainstream methods adopt Siamese-style contrastive learning, matching query and label embeddings via maximum inner product search, typically using small encoder-only models such as DistilBERT (66M).
+**Background**: Extreme Multi-label Classification (XMC) requires predicting the most relevant subset of labels from a million-scale label space for a given query, with broad applications in product recommendation and document tagging. Mainstream methods adopt Siamese-style contrastive learning, matching query and label embeddings via maximum inner product search, typically using small encoder-only models such as DistilBERT (66M).
 
 **Limitations of Prior Work**: (1) **Limited model scale**—existing methods predominantly rely on small encoder-only models, leaving the potential of scaling largely untapped. Although decoder-based LLMs have demonstrated clear advantages in text embedding, their application to XMC has not yet succeeded (e.g., QUEST with Llama-7B significantly underperforms encoder models); (2) **Underutilization of metadata**—while textual and categorical metadata have been explored, visual metadata (e.g., product images) is almost entirely overlooked, with MUFIN being the sole exception.
 
-**Root Cause**: LLMs perform strongly on general text embedding benchmarks, yet how to leverage them effectively in XMC—and how to achieve performance gains while maintaining computational feasibility—remains an open problem. Moreover, XMC is sensitive to sequence length; directly incorporating the hundreds of visual tokens from VLMs leads to prohibitive computational costs.
+**Key Challenge**: LLMs perform strongly on general text embedding benchmarks, yet how to leverage them effectively in XMC—and how to achieve performance gains while maintaining computational feasibility—remains an open problem. Moreover, XMC is sensitive to sequence length; directly incorporating the hundreds of visual tokens from VLMs leads to prohibitive computational costs.
 
-**Paper Goals**: (1) How can decoder-based LLMs be effectively adapted for Siamese learning in XMC? (2) How can visual metadata be efficiently integrated without substantially increasing computational overhead?
+**Goal**: (1) How can decoder-based LLMs be effectively adapted for Siamese learning in XMC? (2) How can visual metadata be efficiently integrated without substantially increasing computational overhead?
 
-**Starting Point**: The authors propose two complementary paths—a scaling path (adapting LLMs via structured prompts and dual-decoder learning) and an efficiency path (injecting visual information via single-image embeddings)—which can be combined.
+**Key Insight**: The authors propose two complementary paths—a scaling path (adapting LLMs via structured prompts and dual-decoder learning) and an efficiency path (injecting visual information via single-image embeddings)—which can be combined.
 
 **Core Idea**: Structured prompt templates are used to adapt decoder-based LLMs as dual encoders for XMC, while a single embedding from a frozen vision model is used for early-fusion integration of visual metadata.
 

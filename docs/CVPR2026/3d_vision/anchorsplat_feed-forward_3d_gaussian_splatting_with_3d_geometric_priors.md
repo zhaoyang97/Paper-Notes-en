@@ -27,7 +27,7 @@ content_hash: 3c3cf6f671c92fb8
 AnchorSplat proposes an anchor-aligned feed-forward 3DGS framework that leverages 3D geometric priors (sparse point clouds) as anchors to predict Gaussians directly in 3D space. Using approximately 20× fewer Gaussians and half the reconstruction time, it achieves state-of-the-art performance on ScanNet++ v2 (PSNR 21.48) with superior depth estimation accuracy.
 
 ## Background & Motivation
-**State of the Field**: Scene-level 3D reconstruction is a core problem in computer vision. Optimization-based methods (3DGS, NeRF) achieve high quality but require per-scene iterative optimization, resulting in long processing times. Feed-forward 3DGS methods enable cross-scene generalization via a single forward pass.
+**Background**: Scene-level 3D reconstruction is a core problem in computer vision. Optimization-based methods (3DGS, NeRF) achieve high quality but require per-scene iterative optimization, resulting in long processing times. Feed-forward 3DGS methods enable cross-scene generalization via a single forward pass.
 
 **Limitations of Prior Work**:
    - Existing feed-forward methods adopt pixel-aligned strategies: each 2D pixel is mapped to one 3D Gaussian, causing the Gaussian count $N = H \times W \times V$ to grow linearly with the number of views;
@@ -35,9 +35,9 @@ AnchorSplat proposes an anchor-aligned feed-forward 3DGS framework that leverage
    - These methods are sensitive to occlusion, low-texture regions, and motion parallax, with inconsistent cross-view sampling patterns;
    - Feature interactions in 2D space are limited, lacking direct interaction among neighboring 3D points, which produces floaters and fragmented surfaces.
 
-**Root Cause**: How to achieve geometrically consistent, high-fidelity 3D reconstruction under feed-forward efficiency constraints?
+**Key Challenge**: How to achieve geometrically consistent, high-fidelity 3D reconstruction under feed-forward efficiency constraints?
 
-**Starting Point**: Starting from 3D anchors rather than 2D pixels — MVS-predicted depths and poses are used to construct sparse 3D anchors, upon which Gaussians are predicted.
+**Key Insight**: Starting from 3D anchors rather than 2D pixels — MVS-predicted depths and poses are used to construct sparse 3D anchors, upon which Gaussians are predicted.
 
 **Core Idea**: Anchor-aligned Gaussian representation + iterative refinement via Gaussian Refiner = fewer Gaussians, higher quality, independent of input resolution and number of views.
 

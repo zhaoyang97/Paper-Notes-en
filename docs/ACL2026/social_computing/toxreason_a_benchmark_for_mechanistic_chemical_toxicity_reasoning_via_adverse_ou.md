@@ -29,15 +29,15 @@ ToxReason proposes an AOP-based chemical toxicity mechanistic reasoning benchmar
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have been applied to molecular reasoning and toxicity prediction tasks, with existing benchmarks (e.g., Tox21, ClinTox) primarily focusing on structure–property relationship prediction and treating toxicity as a simple classification task.
+**Background**: LLMs have been applied to molecular reasoning and toxicity prediction tasks, with existing benchmarks (e.g., Tox21, ClinTox) primarily focusing on structure–property relationship prediction and treating toxicity as a simple classification task.
 
 **Limitations of Prior Work**: Toxicity fundamentally arises from complex biological mechanisms (molecular targets → cellular events → organ responses) rather than solely from chemical structure. LLMs can generate fluent but biologically unreliable explanations, meaning high prediction accuracy does not equate to reliable reasoning. Existing datasets such as UniTox base their reasoning on clinical observations rather than causal mechanistic pathways.
 
-**Root Cause**: A significant disconnect exists between prediction performance and reasoning quality—a model may "guess the right answer" while providing incorrect mechanistic explanations, which is unacceptable in high-stakes scenarios such as drug safety assessment.
+**Key Challenge**: A significant disconnect exists between prediction performance and reasoning quality—a model may "guess the right answer" while providing incorrect mechanistic explanations, which is unacceptable in high-stakes scenarios such as drug safety assessment.
 
-**Paper Goals**: Build a benchmark that evaluates mechanistic toxicity reasoning, requiring models to perform step-by-step causal reasoning from molecular initiating events (MIE) to adverse outcomes (AO), and explore training strategies to improve reasoning capability.
+**Goal**: Build a benchmark that evaluates mechanistic toxicity reasoning, requiring models to perform step-by-step causal reasoning from molecular initiating events (MIE) to adverse outcomes (AO), and explore training strategies to improve reasoning capability.
 
-**Starting Point**: The Adverse Outcome Pathway (AOP) framework in toxicology naturally describes causal chains from MIE → Key Events (KE) → AO, which closely parallels multi-step reasoning paradigms in NLP.
+**Key Insight**: The Adverse Outcome Pathway (AOP) framework in toxicology naturally describes causal chains from MIE → Key Events (KE) → AO, which closely parallels multi-step reasoning paradigms in NLP.
 
 **Core Idea**: Use AOP causal chains as ground truth for toxicity reasoning, construct an evaluation benchmark, and improve both prediction and reasoning through reasoning-aware training.
 

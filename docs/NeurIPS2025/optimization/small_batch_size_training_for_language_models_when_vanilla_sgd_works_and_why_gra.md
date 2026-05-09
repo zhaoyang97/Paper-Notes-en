@@ -28,10 +28,10 @@ This paper systematically investigates the behavior of small batch sizes (down t
 
 ## Background & Motivation
 
-- **State of the Field**: Large batch sizes are widely considered a prerequisite for stable language model training. When GPU memory is insufficient to support large batches, researchers typically employ gradient accumulation to simulate larger effective batch sizes.
+- **Background**: Large batch sizes are widely considered a prerequisite for stable language model training. When GPU memory is insufficient to support large batches, researchers typically employ gradient accumulation to simulate larger effective batch sizes.
 - **Limitations of Prior Work**: Existing work generally only adjusts the learning rate when reducing batch size, leaving Adam's momentum decay rates $\beta_1$ and $\beta_2$ unchanged. This paper identifies this practice as the root cause of instability in small-batch training.
-- **Root Cause**: If, instead of fixing $\beta_2$ itself, one fixes the $\beta_2$ "half-life" measured in tokens, small-batch training remains stable even at the extreme of batch size = 1.
-- **Paper Goals**: The core insight is that small batch sizes cause the optimizer to take shorter prediction steps, thus reducing the demand for complex optimizers or elaborate hyperparameter tuning.
+- **Key Challenge**: If, instead of fixing $\beta_2$ itself, one fixes the $\beta_2$ "half-life" measured in tokens, small-batch training remains stable even at the extreme of batch size = 1.
+- **Goal**: The core insight is that small batch sizes cause the optimizer to take shorter prediction steps, thus reducing the demand for complex optimizers or elaborate hyperparameter tuning.
 
 ## Method
 

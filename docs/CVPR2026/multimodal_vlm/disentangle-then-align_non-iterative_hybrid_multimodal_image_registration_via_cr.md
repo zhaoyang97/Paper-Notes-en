@@ -28,15 +28,15 @@ This paper proposes HRNet, which learns clean shared representations via cross-s
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal image registration (e.g., RGB-thermal infrared, RGB-SAR) is foundational for cross-modal fusion. Existing deep learning methods commonly adopt multi-scale strategies to improve accuracy, but are typically limited to a single transformation type.
+**Background**: Multimodal image registration (e.g., RGB-thermal infrared, RGB-SAR) is foundational for cross-modal fusion. Existing deep learning methods commonly adopt multi-scale strategies to improve accuracy, but are typically limited to a single transformation type.
 
 **Limitations of Prior Work**: (a) Most multi-scale frameworks support only rigid or non-rigid transformations — rigid transformations cannot handle local deformations, while non-rigid transformations distort structural integrity under large global offsets; (b) existing hybrid registration methods employ serial cascades (rigid followed by non-rigid), where rigid and non-rigid components are estimated in different feature spaces, making coordination difficult and causing downstream stages to inherit upstream errors; (c) shared feature extraction methods alleviate modality discrepancy, but constraints primarily act on the shared component, while modality-private information still leaks into the shared space.
 
-**Root Cause**: How to simultaneously estimate global rigid alignment and local non-rigid deformation within a unified feature space, without interference from modality-private information?
+**Key Challenge**: How to simultaneously estimate global rigid alignment and local non-rigid deformation within a unified feature space, without interference from modality-private information?
 
-**Paper Goals**: Design a unified framework that simultaneously addresses: (a) modality-private leakage into the shared feature space; (b) coordinated estimation of rigid and non-rigid transformations.
+**Goal**: Design a unified framework that simultaneously addresses: (a) modality-private leakage into the shared feature space; (b) coordinated estimation of rigid and non-rigid transformations.
 
-**Starting Point**: "Disentangle-then-Align" — first learn clean multi-scale shared representations via CDAP, then jointly predict hybrid transformations in HPPM.
+**Key Insight**: "Disentangle-then-Align" — first learn clean multi-scale shared representations via CDAP, then jointly predict hybrid transformations in HPPM.
 
 **Core Idea**: Representation disentanglement (cross-scale gating + adaptive projection) + hybrid parameter prediction (rigid + non-rigid within a unified coarse-to-fine pipeline) = a unified deformation field produced in a single forward pass.
 

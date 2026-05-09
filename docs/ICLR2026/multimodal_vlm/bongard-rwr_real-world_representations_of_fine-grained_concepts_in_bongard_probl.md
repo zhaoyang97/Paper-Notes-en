@@ -27,15 +27,15 @@ content_hash: d245022a5c5b705c
 Bongard-RWR+ is a benchmark comprising 5,400 Bongard problems, constructed via a VLM-based pipeline (Pixtral-12B + Flux.1-dev) that automatically generates photorealistic images to represent abstract concepts. Systematic evaluation reveals that state-of-the-art VLMs struggle to discriminate fine-grained visual concepts such as contour, rotation, and angle, with accuracy dropping as low as 19%.
 
 ## Background & Motivation
-**State of the Field**: Bongard Problems (BPs) are a classic test of abstract visual reasoning — given six images on each side, the task is to identify the abstract concept that distinguishes the two groups. Existing BP datasets are either synthetic black-and-white images (Bongard-LOGO) or use real images to represent coarse-grained concepts (e.g., "a person driving").
+**Background**: Bongard Problems (BPs) are a classic test of abstract visual reasoning — given six images on each side, the task is to identify the abstract concept that distinguishes the two groups. Existing BP datasets are either synthetic black-and-white images (Bongard-LOGO) or use real images to represent coarse-grained concepts (e.g., "a person driving").
 
 **Limitations of Prior Work**: Although Bongard-RWR uses real images to represent fine-grained abstract concepts, it is hand-constructed with only 60 instances — a scale too small for robust evaluation. Moreover, no systematic diagnosis of VLM capabilities across different reasoning dimensions exists.
 
-**Root Cause**: VLMs perform reasonably well on coarse-grained concept recognition, but their ability to handle fine-grained abstract concepts (e.g., "arrows pointing in the same vs. different directions") remains unknown, necessitating a sufficiently large benchmark for systematic testing.
+**Key Challenge**: VLMs perform reasonably well on coarse-grained concept recognition, but their ability to handle fine-grained abstract concepts (e.g., "arrows pointing in the same vs. different directions") remains unknown, necessitating a sufficiently large benchmark for systematic testing.
 
-**Paper Goals**: How can Bongard problems involving fine-grained abstract concepts be constructed at scale with photorealistic imagery? And how can the reasoning boundaries of VLMs be systematically evaluated?
+**Goal**: How can Bongard problems involving fine-grained abstract concepts be constructed at scale with photorealistic imagery? And how can the reasoning boundaries of VLMs be systematically evaluated?
 
-**Starting Point**: A semi-automatic pipeline of I2T (image captioning) → T2T (description augmentation) → T2I (image generation) → human verification is employed to scale 60 Bongard-RWR instances up to 5,400.
+**Key Insight**: A semi-automatic pipeline of I2T (image captioning) → T2T (description augmentation) → T2I (image generation) → human verification is employed to scale 60 Bongard-RWR instances up to 5,400.
 
 **Core Idea**: A VLM-based pipeline is used to automatically generate photorealistic images for Bongard problems, enabling large-scale evaluation of VLMs' fine-grained abstract reasoning limits.
 

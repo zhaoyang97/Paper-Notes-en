@@ -27,13 +27,13 @@ This paper proposes Multimodal DeepResearcher, a four-stage agentic framework fo
 
 ## Background & Motivation
 
-**State of the Field**: Deep research frameworks (e.g., Deep Research) have enabled LLMs to generate comprehensive text reports through iterative retrieval and reasoning, but their outputs remain purely textual—lacking charts, visualizations, and other multimodal content.
+**Background**: Deep research frameworks (e.g., Deep Research) have enabled LLMs to generate comprehensive text reports through iterative retrieval and reasoning, but their outputs remain purely textual—lacking charts, visualizations, and other multimodal content.
 
 **Limitations of Prior Work**: Real-world research reports extensively use charts to convey information efficiently. However, automatically generating text-chart interleaved reports faces two major challenges: (a) how to design informative and diverse visualizations—LLMs lack systematic understanding of chart design; and (b) how to organically integrate visualizations with text—charts should not be decorative but closely tied to the textual content.
 
-**Root Cause**: LLMs are inherently text-oriented, whereas visualizations are visual objects. A bridge is needed that allows LLMs both to "understand" existing high-quality charts and to "generate" new, diverse ones.
+**Key Challenge**: LLMs are inherently text-oriented, whereas visualizations are visual objects. A bridge is needed that allows LLMs both to "understand" existing high-quality charts and to "generate" new, diverse ones.
 
-**Starting Point**: Inspired by Wilkinson's Grammar of Graphics, the authors design FDV (Formal Description of Visualization)—a structured textual format that represents charts along four dimensions: layout, scale, data, and visual marks—enabling LLMs to learn chart design patterns via in-context learning.
+**Key Insight**: Inspired by Wilkinson's Grammar of Graphics, the authors design FDV (Formal Description of Visualization)—a structured textual format that represents charts along four dimensions: layout, scale, data, and visual marks—enabling LLMs to learn chart design patterns via in-context learning.
 
 **Core Idea**: Textualize charts via FDV, combined with a four-stage agentic pipeline (search → exemplar textualization → planning → text-chart generation) and Actor-Critic rendering refinement, to generate high-quality text-chart interleaved research reports from scratch.
 

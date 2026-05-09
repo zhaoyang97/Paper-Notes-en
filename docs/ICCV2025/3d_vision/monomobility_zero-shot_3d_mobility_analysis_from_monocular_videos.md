@@ -29,15 +29,15 @@ MonoMobility presents the first framework for zero-shot analysis of moving parts
 
 ## Background & Motivation
 
-**State of the Field**: Accurately parsing the moving parts and motion attributes of articulated objects in dynamic environments is a fundamental prerequisite for embodied intelligence and robotic manipulation. Everyday environments are populated by articulated objects (drawers, swivel chairs, staplers, pump bottles, etc.), and efficient robot interaction with these objects depends on precise understanding of moving parts and motion parameters.
+**Background**: Accurately parsing the moving parts and motion attributes of articulated objects in dynamic environments is a fundamental prerequisite for embodied intelligence and robotic manipulation. Everyday environments are populated by articulated objects (drawers, swivel chairs, staplers, pump bottles, etc.), and efficient robot interaction with these objects depends on precise understanding of moving parts and motion parameters.
 
 **Limitations of Prior Work**: (1) Data-driven methods (Shape2Motion, OPDMulti) rely on large-scale annotated datasets, generalize poorly to unseen objects, and OPDMulti is further restricted to openable objects (doors/windows), making it unable to handle irregular articulated objects such as staplers. (2) Multi-view reconstruction methods (PARIS, Weng et al.) require dense RGB(D) multi-view images of the initial and final states together with accurate camera poses, which are difficult to obtain in practical limited-field-of-view settings; they are also confined to object-level manipulation and cannot scale to complex scenes. (3) 4D Gaussian splatting methods (4D-GS, Shape of Motion) treat each Gaussian independently, ignoring the part-level rigidity constraints inherent to articulated objects.
 
-**Root Cause**: Robots are typically equipped only with RGB cameras and operate under limited viewpoints, necessitating articulated object analysis from monocular video. Existing methods either require dense multi-view input (hard to acquire), annotated data (expensive and poorly generalizable), or have restricted capability (limited to specific object types).
+**Key Challenge**: Robots are typically equipped only with RGB cameras and operate under limited viewpoints, necessitating articulated object analysis from monocular video. Existing methods either require dense multi-view input (hard to acquire), annotated data (expensive and poorly generalizable), or have restricted capability (limited to specific object types).
 
-**Paper Goals**: Achieve scene-level articulated object moving-part identification and motion attribute analysis from a single monocular video, entirely without annotated data (zero-shot).
+**Goal**: Achieve scene-level articulated object moving-part identification and motion attribute analysis from a single monocular video, entirely without annotated data (zero-shot).
 
-**Starting Point**: Two key insights—(1) dynamic videos of articulated objects inherently contain rich 3D motion information, from which geometric and motion priors can be extracted via off-the-shelf tools for initial analysis; (2) the accuracy of motion analysis improves as the estimated dynamic process becomes more consistent with the true motion pattern, so optimizing the dynamic scene can refine the results.
+**Key Insight**: Two key insights—(1) dynamic videos of articulated objects inherently contain rich 3D motion information, from which geometric and motion priors can be extracted via off-the-shelf tools for initial analysis; (2) the accuracy of motion analysis improves as the estimated dynamic process becomes more consistent with the true motion pattern, so optimizing the dynamic scene can refine the results.
 
 **Core Idea**: Coarse initial estimation + self-supervised dynamic scene optimization = zero-shot monocular articulated object motion analysis.
 

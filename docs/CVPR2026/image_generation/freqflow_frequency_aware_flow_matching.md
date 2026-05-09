@@ -28,15 +28,15 @@ FreqFlow explicitly incorporates frequency-domain awareness into the flow matchi
 
 ## Background & Motivation
 
-**State of the Field**: Flow Matching has emerged as one of the dominant frameworks for image generation, achieving high-quality image synthesis by learning a continuous transformation path from Gaussian noise to the data distribution. Models such as SiT and DiT have demonstrated strong performance on large-scale generation tasks.
+**Background**: Flow Matching has emerged as one of the dominant frameworks for image generation, achieving high-quality image synthesis by learning a continuous transformation path from Gaussian noise to the data distribution. Models such as SiT and DiT have demonstrated strong performance on large-scale generation tasks.
 
 **Limitations of Prior Work**: Existing flow matching methods inject noise uniformly in the spatial domain; however, noise affects different frequency components in the latent space unevenly. During the reverse process, models tend to reconstruct low-frequency components (global structure) first, with high-frequency components (textures, edges, and other fine details) emerging only in later stages. Nevertheless, no explicit mechanism exists within these models to distinguish and handle different frequency components, leading to blurry generative outputs in fine detail.
 
-**Root Cause**: Flow matching models operate in the spatial domain, yet the corruption and recovery process inherently affects images in a frequency-uneven manner — a characteristic that is neither explicitly modeled nor effectively exploited. Frequency error analysis reveals that SiT exhibits substantially larger high-frequency error (0.69) than low-frequency error (0.08).
+**Key Challenge**: Flow matching models operate in the spatial domain, yet the corruption and recovery process inherently affects images in a frequency-uneven manner — a characteristic that is neither explicitly modeled nor effectively exploited. Frequency error analysis reveals that SiT exhibits substantially larger high-frequency error (0.69) than low-frequency error (0.08).
 
-**Paper Goals**: To explicitly incorporate frequency-domain information into the flow matching framework, enabling the model to attend to the appropriate frequency components at each stage of generation.
+**Goal**: To explicitly incorporate frequency-domain information into the flow matching framework, enabling the model to attend to the appropriate frequency components at each stage of generation.
 
-**Starting Point**: The authors observe that the reverse process of flow matching naturally follows a "low-frequency first, high-frequency second" reconstruction order, consistent with the coarse-to-fine nature of human perception. Explicitly embedding frequency-domain conditioning into the model can reinforce this natural frequency generation sequence.
+**Key Insight**: The authors observe that the reverse process of flow matching naturally follows a "low-frequency first, high-frequency second" reconstruction order, consistent with the coarse-to-fine nature of human perception. Explicitly embedding frequency-domain conditioning into the model can reinforce this natural frequency generation sequence.
 
 **Core Idea**: A dedicated frequency branch processes low- and high-frequency components separately; time-dependent adaptive weighting injects frequency-domain information into the spatial branch, realizing frequency-aware flow matching.
 

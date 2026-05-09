@@ -27,18 +27,18 @@ This paper proposes MA-PaPSP, a training-free plug-and-play selective prediction
 
 ## Background & Motivation
 
-**State of the Field**: VLMs (e.g., BLIP, InternVL, Qwen-VL) are widely deployed in image-text matching, image captioning, and classification, yet prediction errors are unavoidable—incorrect modality alignment, tail-distribution samples, and image/language ambiguity all contribute to failures. Selective Prediction (SP) addresses this by endowing models with the ability to abstain from answering.
+**Background**: VLMs (e.g., BLIP, InternVL, Qwen-VL) are widely deployed in image-text matching, image captioning, and classification, yet prediction errors are unavoidable—incorrect modality alignment, tail-distribution samples, and image/language ambiguity all contribute to failures. Selective Prediction (SP) addresses this by endowing models with the ability to abstain from answering.
 
 **Limitations of Prior Work**:
 - **Closed-set constraint**: Existing SP methods primarily target closed-set tasks (e.g., classification with finite label sets) and cannot handle open-set tasks such as image captioning with unbounded label spaces.
 - **Training dependency**: Most methods require fine-tuning the base model or training an additional selector, making them inapplicable to black-box or large-scale models.
 - **Unreliable CLIP scoring**: Using raw CLIP cosine similarity as a confidence measure suffers from two issues: (1) representational instability—embeddings of the same semantic concept exhibit high variance across images/texts; and (2) poor calibration—similarity score distributions vary across different regions of the embedding space.
 
-**Root Cause**: An ideal SP solution should simultaneously be training-free, lightweight, open-set compatible, and pluggable into arbitrary VLMs—requirements that no existing approach satisfies jointly.
+**Key Challenge**: An ideal SP solution should simultaneously be training-free, lightweight, open-set compatible, and pluggable into arbitrary VLMs—requirements that no existing approach satisfies jointly.
 
-**Paper Goals**: Design a training-free, plug-and-play selective prediction module (PaPSP) capable of providing confidence estimation across task levels (classification → image-text matching → image captioning) for VLMs ranging from CLIP to large-scale LVLMs.
+**Goal**: Design a training-free, plug-and-play selective prediction module (PaPSP) capable of providing confidence estimation across task levels (classification → image-text matching → image captioning) for VLMs ranging from CLIP to large-scale LVLMs.
 
-**Starting Point**: Augment CLIP-style scoring models with an external retrieval dataset, using retrieved neighbors for embedding averaging (variance reduction) and contrastive normalization (calibration improvement).
+**Key Insight**: Augment CLIP-style scoring models with an external retrieval dataset, using retrieved neighbors for embedding averaging (variance reduction) and contrastive normalization (calibration improvement).
 
 **Core Idea**: Use k-NN weighted averages of neighbor embeddings from an external retrieval corpus as more stable proxy embeddings, and replace raw cosine similarity with contrastive normalization over hard negatives to enable reliable selective prediction.
 

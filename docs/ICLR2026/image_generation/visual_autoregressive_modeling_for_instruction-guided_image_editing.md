@@ -29,15 +29,15 @@ This paper proposes VAREdit, which reformulates instruction-guided image editing
 
 ## Background & Motivation
 
-1. **State of the Field**: Instruction-guided image editing has been dominated by diffusion models (e.g., InstructPix2Pix), which concatenate source and target images channel-wise for joint denoising.
+1. **Background**: Instruction-guided image editing has been dominated by diffusion models (e.g., InstructPix2Pix), which concatenate source and target images channel-wise for joint denoising.
 
 2. **Limitations of Prior Work**: The global denoising process of diffusion models inherently couples edited regions with the entire image, leading to: (1) spurious modifications in non-edited regions ("bleeding"); (2) insufficient adherence to editing instructions; and (3) high computational cost due to multi-step iterative denoising.
 
-3. **Root Cause**: The strength of diffusion models—global consistency modeling—is precisely their weakness for editing tasks, which require precise local modification while globally preserving unedited regions. The causal and compositional nature of autoregressive models is naturally suited for editing, yet the VAR paradigm has not been explored in this context.
+3. **Key Challenge**: The strength of diffusion models—global consistency modeling—is precisely their weakness for editing tasks, which require precise local modification while globally preserving unedited regions. The causal and compositional nature of autoregressive models is naturally suited for editing, yet the VAR paradigm has not been explored in this context.
 
-4. **Paper Goals**: To introduce the multi-scale prediction paradigm of Visual Autoregressive (VAR) modeling into instruction-guided image editing.
+4. **Goal**: To introduce the multi-scale prediction paradigm of Visual Autoregressive (VAR) modeling into instruction-guided image editing.
 
-5. **Starting Point**: The core challenge in VAR-based editing lies in the source image conditioning strategy—full-scale conditioning is expensive ($O(n^2)$), while finest-scale conditioning is efficient but suffers from scale mismatch. Analysis of attention heatmaps reveals that the mismatch affects only the first self-attention layer.
+5. **Key Insight**: The core challenge in VAR-based editing lies in the source image conditioning strategy—full-scale conditioning is expensive ($O(n^2)$), while finest-scale conditioning is efficient but suffers from scale mismatch. Analysis of attention heatmaps reveals that the mismatch affects only the first self-attention layer.
 
 6. **Core Idea**: Inject scale-aligned reference features exclusively into the first self-attention layer, while relying on finest-scale conditioning for all subsequent layers, thereby balancing efficiency and editing quality.
 

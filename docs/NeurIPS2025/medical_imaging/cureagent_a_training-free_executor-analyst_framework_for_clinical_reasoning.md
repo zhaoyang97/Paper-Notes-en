@@ -28,15 +28,15 @@ CureAgent proposes an Executor-Analyst collaborative framework that decouples pr
 
 ## Background & Motivation
 
-**State of the Field**: Large language models show great promise for clinical decision support (Med-PaLM, GPT-4), yet real-world medical reasoning requires actively retrieving and integrating information from continuously updated biomedical sources (FDA labels, OpenTargets, HPO, etc.). The CURE-Bench competition evaluates agent ability to perform clinical reasoning using ToolUniverse (200+ biomedical tools).
+**Background**: Large language models show great promise for clinical decision support (Med-PaLM, GPT-4), yet real-world medical reasoning requires actively retrieving and integrating information from continuously updated biomedical sources (FDA labels, OpenTargets, HPO, etc.). The CURE-Bench competition evaluates agent ability to perform clinical reasoning using ToolUniverse (200+ biomedical tools).
 
 **Limitations of Prior Work**: (a) **Context utilization failure**: TxAgent (fine-tuned Llama-3.1-8B) successfully retrieves biomedical evidence but fails to leverage it in final diagnoses, resulting in hallucinations (65.8% of error cases); (b) **Output parsing errors** (19.2%) and **instruction-following failures** (12.3%) stem from inherent limitations of small models; (c) General-purpose closed-source models (Gemini 2.5) possess strong reasoning capabilities but lack precise tool-calling training, yielding zero-shot performance inferior to TxAgent.
 
-**Root Cause**: Tool invocation demands **syntactic precision** (requiring domain fine-tuning), while clinical reasoning demands **semantic robustness** (requiring large model capacity)—a single model cannot simultaneously satisfy both requirements. TxAgent has tool-calling ability but weak reasoning (8B); Gemini has reasoning ability but poor tool-calling (not fine-tuned).
+**Key Challenge**: Tool invocation demands **syntactic precision** (requiring domain fine-tuning), while clinical reasoning demands **semantic robustness** (requiring large model capacity)—a single model cannot simultaneously satisfy both requirements. TxAgent has tool-calling ability but weak reasoning (8B); Gemini has reasoning ability but poor tool-calling (not fine-tuned).
 
-**Paper Goals**: Rather than end-to-end fine-tuning, decouple and combine the "hands" of tool execution with the "brain" of clinical reasoning through architecture engineering.
+**Goal**: Rather than end-to-end fine-tuning, decouple and combine the "hands" of tool execution with the "brain" of clinical reasoning through architecture engineering.
 
-**Starting Point**: Error analysis reveals that 65.8% of failures are "retrieval succeeded but reasoning failed"—the bottleneck is reasoning, not retrieval. The solution is to assign retrieval to a dedicated Executor and reasoning to a dedicated Analyst.
+**Key Insight**: Error analysis reveals that 65.8% of failures are "retrieval succeeded but reasoning failed"—the bottleneck is reasoning, not retrieval. The solution is to assign retrieval to a dedicated Executor and reasoning to a dedicated Analyst.
 
 **Core Idea**: TxAgent as "hands" for precise retrieval + Gemini as "brain" for deep reasoning + Stratified Ensemble to preserve evidence diversity = training-free SOTA clinical agent.
 

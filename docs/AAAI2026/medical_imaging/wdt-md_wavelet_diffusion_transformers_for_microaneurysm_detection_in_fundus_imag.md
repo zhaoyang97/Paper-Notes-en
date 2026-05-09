@@ -29,14 +29,14 @@ This paper proposes WDT-MD, a framework that addresses three fundamental challen
 
 ## Background & Motivation
 
-1. **State of the Field**: Microaneurysms (MAs) are the earliest pathological hallmarks of diabetic retinopathy (DR), with diameters of only 15–60 μm (approximately 6 pixels in fundus images), exhibiting large variations in brightness, contrast, and morphology. Manual screening is time-consuming and error-prone.
+1. **Background**: Microaneurysms (MAs) are the earliest pathological hallmarks of diabetic retinopathy (DR), with diameters of only 15–60 μm (approximately 6 pixels in fundus images), exhibiting large variations in brightness, contrast, and morphology. Manual screening is time-consuming and error-prone.
 2. **Limitations of Prior Work**: Discriminative models (segmentation-based) suffer from annotation difficulty and severe class imbalance (positive pixels <1%). Reconstruction-based generative anomaly detection methods (AE, GAN, diffusion models) reduce annotation dependency but introduce three core problems.
-3. **Root Cause**:
+3. **Key Challenge**:
     - **Identity mapping**: Diffusion models directly copy the input (including anomalous regions), causing missed detections.
     - **High false positives**: Without pixel-level supervision, the model cannot distinguish MAs from other anomalies (artifacts, merged lesions).
     - **Poor reconstruction quality**: Normal vascular textures cannot be reconstructed accurately, introducing spurious reconstruction errors.
-4. **Paper Goals**: Simultaneously address the above three problems to achieve high-precision pixel-level MA segmentation and image-level classification.
-5. **Starting Point**: Transfer Diffusion Transformers (DiT) to the wavelet domain, and introduce noise-perturbed image conditioning and pseudo-normal label synthesis during training.
+4. **Goal**: Simultaneously address the above three problems to achieve high-precision pixel-level MA segmentation and image-level classification.
+5. **Key Insight**: Transfer Diffusion Transformers (DiT) to the wavelet domain, and introduce noise-perturbed image conditioning and pseudo-normal label synthesis during training.
 6. **Core Idea**: Perform anomaly detection with DiT in the wavelet domain; perturb the conditioning image with noise during training to prevent identity mapping; and leverage inpainting-based pseudo-normal label synthesis to provide pixel-level supervision.
 
 ## Method

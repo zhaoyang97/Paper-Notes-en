@@ -29,15 +29,15 @@ This paper proposes PacGDC, which exploits the inherent shape and position ambig
 
 ## Background & Motivation
 
-**State of the Field**: Depth completion aims to infer dense metric depth maps from paired images and sparse depth measurements. Existing methods (NLSPN, CFormer, etc.) perform well within their training domains but generalize poorly across domains. Recent generalizable depth completion methods (G2-MonoDepth, SPNet, OMNI-DC) attempt to address this issue but rely on large-scale dense metric depth annotations.
+**Background**: Depth completion aims to infer dense metric depth maps from paired images and sparse depth measurements. Existing methods (NLSPN, CFormer, etc.) perform well within their training domains but generalize poorly across domains. Recent generalizable depth completion methods (G2-MonoDepth, SPNet, OMNI-DC) attempt to address this issue but rely on large-scale dense metric depth annotations.
 
 **Limitations of Prior Work**: Collecting large-scale dense depth annotations is extremely time-consuming and labor-intensive, requiring specialized equipment such as LiDAR and RGB-D sensors, which severely limits the training data coverage of generalizable models.
 
-**Root Cause**: Generalizable depth completion requires training data that covers as broad a real-world distribution as possible (diverse scene semantics, scales, and sparsity patterns), yet acquiring diverse annotated data at scale is prohibitively expensive.
+**Key Challenge**: Generalizable depth completion requires training data that covers as broad a real-world distribution as possible (diverse scene semantics, scales, and sparsity patterns), yet acquiring diverse annotated data at scale is prohibitively expensive.
 
-**Paper Goals**: To maximize training data coverage with minimal annotation cost, enabling depth completion models to generalize to unseen domains.
+**Goal**: To maximize training data coverage with minimal annotation cost, enabling depth completion models to generalize to unseen domains.
 
-**Starting Point**: The authors observe that 2D-to-3D projection is inherently ambiguous—the same 2D image can correspond to multiple distinct 3D geometric scenes. This ambiguity is decomposed into **shape ambiguity** (the same 2D object can correspond to different 3D shapes) and **position ambiguity** (the same 3D shape can occupy different sizes and positions). Notably, the two inputs to depth completion—images providing shape cues and sparse depth providing positional cues—align naturally with these two types of ambiguity.
+**Key Insight**: The authors observe that 2D-to-3D projection is inherently ambiguous—the same 2D image can correspond to multiple distinct 3D geometric scenes. This ambiguity is decomposed into **shape ambiguity** (the same 2D object can correspond to different 3D shapes) and **position ambiguity** (the same 3D shape can occupy different sizes and positions). Notably, the two inputs to depth completion—images providing shape cues and sparse depth providing positional cues—align naturally with these two types of ambiguity.
 
 **Core Idea**: The paper leverages the "scale inaccuracy" of depth foundation models as a feature rather than a bug, treating these models as scale manipulators to synthesize large quantities of pseudo depth labels that are shape-consistent but scale-diverse, thereby greatly expanding the geometric diversity of training data.
 

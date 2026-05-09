@@ -28,14 +28,14 @@ content_hash: e083ad36c8d725ad
 This paper proposes IO-LVM (Inverse Optimization Latent Variable Model), which employs a VAE-style encoder to map observed COP solutions into a latent cost space. A Fenchel-Young loss combined with black-box solvers (Dijkstra/TSP solver) ensures feasibility at the decoding stage. The model learns the distribution of cost functions from route data without agent labels, and successfully separates navigation preferences of different agents in an unsupervised manner.
 
 ## Background & Motivation
-**State of the Field**: Inverse optimization (IO) infers objective/cost functions from observed optimal solutions, and is widely applied in route planning, IRL, and related areas. Standard approaches assume a single cost function or rely on contextual conditioning.
+**Background**: Inverse optimization (IO) infers objective/cost functions from observed optimal solutions, and is widely applied in route planning, IRL, and related areas. Standard approaches assume a single cost function or rely on contextual conditioning.
 
 **Limitations of Prior Work**:
    - **Single-cost assumption**: In practice, different agents (e.g., different taxi drivers or vessels) have distinct implicit cost preferences, yet standard IO/IRL methods require agent labels to distinguish them.
    - **VAE infeasibility**: For structured outputs such as graph paths, samples decoded by a VAE are unlikely to satisfy constraints (e.g., connectivity, reaching specified endpoints).
    - **Gradient issues with discrete solutions**: The discrete solutions of COPs have near-zero gradients almost everywhere with respect to parameters, impeding end-to-end learning.
 
-**Root Cause**: A generative model is needed that simultaneously learns the distribution of cost functions across different agents and guarantees that generated solutions satisfy COP constraints, while enabling gradient backpropagation through non-differentiable solvers.
+**Key Challenge**: A generative model is needed that simultaneously learns the distribution of cost functions across different agents and guarantees that generated solutions satisfy COP constraints, while enabling gradient backpropagation through non-differentiable solvers.
 
 **Core Idea**: A VAE encoder maps observations into a low-dimensional latent **cost space** (rather than solution space); the decoder consists of a parameterized cost mapping followed by a black-box COP solver. Perturbed gradient estimation via the Fenchel-Young loss circumvents the non-differentiability of the solver.
 

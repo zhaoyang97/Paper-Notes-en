@@ -28,15 +28,15 @@ By leveraging Clifford algebra, this work represents linear layers as compositio
 
 ## Background & Motivation
 
-**State of the Field**: Linear layers account for the vast majority of parameters in modern large language models (e.g., a single 2048×2048 projection in LLaMA's self-attention requires 4M parameters). Parameter-efficient methods such as LoRA and block-Hadamard compress linear layers from different perspectives, but lack a principled understanding of the intrinsic algebraic structure of linear transformations.
+**Background**: Linear layers account for the vast majority of parameters in modern large language models (e.g., a single 2048×2048 projection in LLaMA's self-attention requires 4M parameters). Parameter-efficient methods such as LoRA and block-Hadamard compress linear layers from different perspectives, but lack a principled understanding of the intrinsic algebraic structure of linear transformations.
 
 **Limitations of Prior Work**: (a) LoRA assumes low-rank structure and constitutes a functional approximation; (b) block-Hadamard assumes structured matrices, also an approximation; (c) both methods approximate dense matrices in a "top-down" manner rather than constructing functionality "bottom-up" from fundamental primitives. A formal algebraic characterization of the minimal irreducible primitives of linear transformations is absent.
 
-**Root Cause**: Dense matrices require $O(d^2)$ parameters, yet the "essential degrees of freedom" of a linear transformation may be far smaller. The question is whether a minimal set of geometric primitives can be identified whose composition reproduces the functionality of a linear layer.
+**Key Challenge**: Dense matrices require $O(d^2)$ parameters, yet the "essential degrees of freedom" of a linear transformation may be far smaller. The question is whether a minimal set of geometric primitives can be identified whose composition reproduces the functionality of a linear layer.
 
-**Paper Goals**: To describe the algebraic structure of linear transformations using the language of Clifford algebra, employing bivectors as irreducible primitives and composing rotors to achieve extreme parameter compression.
+**Goal**: To describe the algebraic structure of linear transformations using the language of Clifford algebra, employing bivectors as irreducible primitives and composing rotors to achieve extreme parameter compression.
 
-**Starting Point**: In Clifford algebra, linear transformations can be expressed as multivector products of the form $F(x) = \sum_t a_t x b_t$. Restricting $a_t, b_t$ to rotors (elements of the Spin group) and parameterizing rotors via bivectors yields exponential parameter compression.
+**Key Insight**: In Clifford algebra, linear transformations can be expressed as multivector products of the form $F(x) = \sum_t a_t x b_t$. Restricting $a_t, b_t$ to rotors (elements of the Spin group) and parameterizing rotors via bivectors yields exponential parameter compression.
 
 **Core Idea**: Bivectors serve as the geometric primitives of linear transformations. Through the action of rotor sandwich products on multivector spaces, effective linear transformations can be constructed with only $O(\log^2 d)$ parameters.
 

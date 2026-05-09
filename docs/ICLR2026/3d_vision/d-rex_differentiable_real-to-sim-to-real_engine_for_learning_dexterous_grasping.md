@@ -28,7 +28,7 @@ D-REX is proposed as a Gaussian-based differentiable real-to-sim-to-real engine 
 
 ## Background & Motivation
 
-**State of the Field**: Simulation serves as a core platform for robot policy learning, yet the sim-to-real gap remains a fundamental challenge. Existing approaches include domain randomization, system identification, domain adaptation, and digital twin construction, each with its own limitations.
+**Background**: Simulation serves as a core platform for robot policy learning, yet the sim-to-real gap remains a fundamental challenge. Existing approaches include domain randomization, system identification, domain adaptation, and digital twin construction, each with its own limitations.
 
 **Limitations of Prior Work**:
    - Constructing accurate digital twins requires integrating multiple pipelines such as geometric reconstruction and parameter identification, resulting in high complexity.
@@ -36,11 +36,11 @@ D-REX is proposed as a Gaussian-based differentiable real-to-sim-to-real engine 
    - Existing grasping policies rely solely on position control and neglect force control — the same grasp pose can produce drastically different outcomes for objects of varying mass.
    - Non-differentiable simulators preclude backpropagation for parameter optimization.
 
-**Root Cause**: High-fidelity physical simulation requires accurate physical parameters, yet such parameters are difficult to obtain from visual observations; grasping policies require force control, but the appropriate force magnitude depends on unknown object mass.
+**Key Challenge**: High-fidelity physical simulation requires accurate physical parameters, yet such parameters are difficult to obtain from visual observations; grasping policies require force control, but the appropriate force magnitude depends on unknown object mass.
 
-**Paper Goals**: (1) Identify object mass from robot–object interaction videos; (2) Use the identified mass for force-aware dexterous grasping policy learning.
+**Goal**: (1) Identify object mass from robot–object interaction videos; (2) Use the identified mass for force-aware dexterous grasping policy learning.
 
-**Starting Point**: Leverage a differentiable physics engine to backpropagate through simulated trajectories and optimize mass parameters so that simulated trajectories match real trajectories.
+**Key Insight**: Leverage a differentiable physics engine to backpropagate through simulated trajectories and optimize mass parameters so that simulated trajectories match real trajectories.
 
 **Core Idea**: Construct a digital twin using differentiable simulation and Gaussian representation; identify mass via trajectory matching; subsequently learn a force–position hybrid grasping policy conditioned on the identified mass.
 

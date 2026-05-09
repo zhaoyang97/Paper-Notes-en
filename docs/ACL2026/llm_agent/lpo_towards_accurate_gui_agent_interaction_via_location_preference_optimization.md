@@ -29,13 +29,13 @@ This paper proposes Location Preference Optimization (LPO), which combines entro
 
 ## Background & Motivation
 
-**State of the Field**: Autonomous GUI agents automate graphical user interface operations using natural language as an intermediary and are becoming an important direction in AI applications. Most GUI agents rely on supervised fine-tuning (SFT) and have achieved preliminary success in predicting interactive behaviors.
+**Background**: Autonomous GUI agents automate graphical user interface operations using natural language as an intermediary and are becoming an important direction in AI applications. Most GUI agents rely on supervised fine-tuning (SFT) and have achieved preliminary success in predicting interactive behaviors.
 
 **Limitations of Prior Work**: SFT-based methods face significant challenges in **spatial grounding**, as their ability to perceive and interpret positional data is limited. While some approaches attempt to enhance UI action decision accuracy via reinforcement learning (RL), existing RL strategies lack mechanisms to **precisely evaluate the accuracy of interaction locations**: UI-TARS relies on text-level exact matching; UI-R1 and InfiGUI-R1 use bounding box IoU; GUI-R1 depends on fixed positional boundaries. These methods provide only coarse-grained spatial evaluation.
 
-**Root Cause**: The essence of GUI interaction lies in precise coordinate localization, yet existing reward functions cannot capture the **continuous distance relationship** of locations — predictions that are close to the target but outside the bounding box receive the same zero reward as those far from the target.
+**Key Challenge**: The essence of GUI interaction lies in precise coordinate localization, yet existing reward functions cannot capture the **continuous distance relationship** of locations — predictions that are close to the target but outside the bounding box receive the same zero reward as those far from the target.
 
-**Paper Goals**: To design a location-aware preference optimization method that endows GUI agents with more precise spatial interaction capabilities. **Starting Point**: Leverage information entropy to guide regional exploration, and use physical distance to construct a continuous reward signal. **Core Idea**: Users tend to interact in regions of high information density, and predictions closer to the target should receive higher rewards.
+**Goal**: To design a location-aware preference optimization method that endows GUI agents with more precise spatial interaction capabilities. **Key Insight**: Leverage information entropy to guide regional exploration, and use physical distance to construct a continuous reward signal. **Core Idea**: Users tend to interact in regions of high information density, and predictions closer to the target should receive higher rewards.
 
 ## Method
 

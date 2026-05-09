@@ -28,15 +28,15 @@ This paper is the first to reveal and systematically study "backdoor modality co
 
 ## Background & Motivation
 
-**State of the Field**: Backdoor attacks on diffusion models have become an important research direction. Prior work (BadDiffusion, VillanDiffusion, etc.) has demonstrated the feasibility of injecting backdoors in both unimodal and multimodal settings.
+**Background**: Backdoor attacks on diffusion models have become an important research direction. Prior work (BadDiffusion, VillanDiffusion, etc.) has demonstrated the feasibility of injecting backdoors in both unimodal and multimodal settings.
 
 **Limitations of Prior Work**: (1) The intuitive assumption that attacking multiple modalities simultaneously yields a stronger backdoor lacks empirical validation; (2) Inspired by modality collapse in multimodal learning, an analogous phenomenon may exist in backdoor attacks; (3) Existing evaluations focus solely on overall attack success rate without decomposing per-modality contributions.
 
-**Root Cause**: High attack success rates may obscure a critical fact — the backdoor effectively relies on only a subset of modalities. This implies defenders may underestimate the simplicity of the attack (i.e., manipulating the text prompt alone suffices to trigger it).
+**Key Challenge**: High attack success rates may obscure a critical fact — the backdoor effectively relies on only a subset of modalities. This implies defenders may underestimate the simplicity of the attack (i.e., manipulating the text prompt alone suffices to trigger it).
 
-**Paper Goals**: Does modality collapse exist in multimodal diffusion backdoors? How can the backdoor contribution of each modality and the cross-modal interaction be quantified?
+**Goal**: Does modality collapse exist in multimodal diffusion backdoors? How can the backdoor contribution of each modality and the cross-modal interaction be quantified?
 
-**Starting Point**: The Shapley value framework from cooperative game theory is adopted, treating modalities as "players" and the backdoor shift as the "payoff" for precise contribution decomposition.
+**Key Insight**: The Shapley value framework from cooperative game theory is adopted, treating modalities as "players" and the backdoor shift as the "payoff" for precise contribution decomposition.
 
 **Core Idea**: Shapley values are used to decompose each modality's marginal contribution to backdoor activation (TMA), and superadditivity tests are applied to quantify cross-modal interaction (CTI), thereby revealing the winner-takes-all collapse characteristic.
 

@@ -28,15 +28,15 @@ This paper proposes FlashVID, a training-free inference acceleration framework f
 
 ## Background & Motivation
 
-**State of the Field**: VLLMs achieve strong performance on video understanding tasks, but require processing a large number of visual tokens (e.g., 32 frames × 196 tokens/frame = 6,272 tokens). The quadratic complexity of attention with respect to sequence length imposes substantial inference overhead.
+**Background**: VLLMs achieve strong performance on video understanding tasks, but require processing a large number of visual tokens (e.g., 32 frames × 196 tokens/frame = 6,272 tokens). The quadratic complexity of attention with respect to sequence length imposes substantial inference overhead.
 
 **Limitations of Prior Work**: Existing acceleration methods (FastV, VisionZip, PruneVID) typically compress spatial and temporal redundancy independently, neglecting the intrinsic coupling between spatiotemporal relationships. In particular, Temporal Token Merging (TTM) assumes that semantically similar tokens in adjacent frames reside at the same spatial positions, which fails when objects move, deform, or scale across frames.
 
-**Root Cause**: The fixed spatial correspondence assumed by TTM does not hold in dynamic videos — the most relevant visual features across adjacent frames may not share the same spatial location, and forced merging under this assumption introduces noise and distorts video representations.
+**Key Challenge**: The fixed spatial correspondence assumed by TTM does not hold in dynamic videos — the most relevant visual features across adjacent frames may not share the same spatial location, and forced merging under this assumption introduces noise and distorts video representations.
 
-**Paper Goals**: How can spatial and temporal redundancy be jointly modeled for efficient compression without any training, while remaining adaptive to the dynamic nature of video content?
+**Goal**: How can spatial and temporal redundancy be jointly modeled for efficient compression without any training, while remaining adaptive to the dynamic nature of video content?
 
-**Starting Point**: The observation that spatial and temporal redundancy are coupled (redundant regions in one frame tend to persist across multiple frames), and that temporal redundancy is not tied to fixed spatial positions.
+**Key Insight**: The observation that spatial and temporal redundancy are coupled (redundant regions in one frame tend to persist across multiple frames), and that temporal redundancy is not tied to fixed spatial positions.
 
 **Core Idea**: Replace fixed spatial position-based cross-frame token correspondence with a hierarchical spatiotemporal redundancy tree that matches the most similar — rather than co-located — tokens for merging.
 

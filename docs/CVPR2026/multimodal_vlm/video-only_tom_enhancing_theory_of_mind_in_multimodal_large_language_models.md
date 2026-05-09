@@ -29,15 +29,15 @@ This paper proposes VisionToM, a lightweight vision-based intervention framework
 
 ## Background & Motivation
 
-1. **State of the Field**: Theory of Mind (ToM) refers to the capacity to infer mental states—desires, beliefs, and intentions—of oneself and others in order to predict behavior. As LLMs have advanced, their ToM capabilities have drawn increasing attention. However, existing ToM evaluations predominantly focus on textual input, leaving scenarios grounded in purely visual information underexplored.
+1. **Background**: Theory of Mind (ToM) refers to the capacity to infer mental states—desires, beliefs, and intentions—of oneself and others in order to predict behavior. As LLMs have advanced, their ToM capabilities have drawn increasing attention. However, existing ToM evaluations predominantly focus on textual input, leaving scenarios grounded in purely visual information underexplored.
 
 2. **Limitations of Prior Work**: (1) Most MLLMs perform poorly on ToM tasks with vision-only input, particularly exhibiting large gaps relative to human baselines on Belief and Action reasoning; (2) existing approaches treat models as black boxes with little investigation into the internal behavior of attention in multiple-choice QA; (3) the influence of LLM hallucinations on ToM tasks has not been sufficiently studied from an interpretability perspective; (4) most multimodal ToM benchmarks rely on simulated environments and lack ecological validity in real-world settings.
 
-3. **Root Cause**: When handling ToM tasks, MLLMs over-rely on linguistic priors and neglect visual evidence. When visual information conflicts with linguistic priors, models tend to produce inaccurate inferences based on language patterns, leading to hallucinations. Existing interpretability-based enhancement methods are confined to the text modality.
+3. **Key Challenge**: When handling ToM tasks, MLLMs over-rely on linguistic priors and neglect visual evidence. When visual information conflicts with linguistic priors, models tend to produce inaccurate inferences based on language patterns, leading to hallucinations. Existing interpretability-based enhancement methods are confined to the text modality.
 
-4. **Paper Goals**: How can one enhance an MLLM's visual attention and ToM reasoning capabilities—and reduce dependence on spurious linguistic priors—by intervening on internal representations, without fine-tuning the model?
+4. **Goal**: How can one enhance an MLLM's visual attention and ToM reasoning capabilities—and reduce dependence on spurious linguistic priors—by intervening on internal representations, without fine-tuning the model?
 
-5. **Starting Point**: Interpretability analysis reveals that MLLMs exhibit cross-task consistency in visual attention across multiple ToM tasks, while internal representations for ToM reasoning diverge across tasks but are consistent within each task. This observation provides a principled basis for targeted intervention.
+5. **Key Insight**: Interpretability analysis reveals that MLLMs exhibit cross-task consistency in visual attention across multiple ToM tasks, while internal representations for ToM reasoning diverge across tasks but are consistent within each task. This observation provides a principled basis for targeted intervention.
 
 6. **Core Idea**: Linear probes identify attention heads sensitive to visual input and ToM reasoning. Intervention vectors are computed pointing from incorrect to correct representations, and are injected at inference time to guide the model toward attending to visual evidence and producing correct reasoning.
 

@@ -28,15 +28,15 @@ This paper proposes TANDEM (Tree-And-Neural Dual Encoder Model), a hybrid autoen
 
 ## Background & Motivation
 
-**State of the Field**: Tabular data is the dominant data format in domains such as healthcare and finance. Gradient-boosted decision trees (GBDT/XGBoost/CatBoost) typically outperform deep neural networks on tabular data and remain the preferred choice in practice.
+**Background**: Tabular data is the dominant data format in domains such as healthcare and finance. Gradient-boosted decision trees (GBDT/XGBoost/CatBoost) typically outperform deep neural networks on tabular data and remain the preferred choice in practice.
 
 **Limitations of Prior Work**: (1) Neural networks exhibit spectral bias, tending to fit smooth low-frequency functions and struggling to capture complex high-frequency patterns in tabular data; (2) Self-supervised learning (SSL) for tabular data faces a data augmentation challenge—common augmentations such as noise injection or feature value swapping can easily destroy critical feature relationships; (3) Masked autoencoders (MAE) also have limitations on heterogeneous tabular data.
 
-**Root Cause**: SSL is particularly valuable in low-label settings, yet effective augmentation strategies for tabular data are lacking, and conventional augmentation methods tend to generate unrealistic samples.
+**Key Challenge**: SSL is particularly valuable in low-label settings, yet effective augmentation strategies for tabular data are lacking, and conventional augmentation methods tend to generate unrealistic samples.
 
-**Paper Goals**: To learn effective self-supervised representations on low-label tabular data that surpass conventional methods on downstream classification and regression tasks.
+**Goal**: To learn effective self-supervised representations on low-label tabular data that surpass conventional methods on downstream classification and regression tasks.
 
-**Starting Point**: Replace data augmentation with model-based augmentation—leveraging the inductive biases of tree models to guide neural networks toward better representations.
+**Key Insight**: Replace data augmentation with model-based augmentation—leveraging the inductive biases of tree models to guide neural networks toward better representations.
 
 **Core Idea**: Use an OSDT encoder as a "model-based augmentor" during training, transferring the tabular-friendly inductive biases of tree models to the neural network encoder via a shared decoder and alignment losses.
 

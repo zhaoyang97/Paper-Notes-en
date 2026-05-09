@@ -35,7 +35,7 @@ Vision-language models (VLMs) excel at single-view visual tasks but are severely
 2. **Shallow multi-view understanding**: Even datasets with multi-view data (e.g., AllAnglesBench) focus only on "what objects are visible" in each view, rather than the geometric relationships between views.
 3. **Lack of explicit cross-view supervision**: Without explicit cross-view relational training, VLMs tend to produce predictions that appear locally plausible within individual views but are geometrically inconsistent across views.
 
-**Starting Point**: Inspired by the Structure-from-Motion (SfM) pipeline, which integrates multi-view information through three key steps—establishing correspondences, verifying geometric consistency, and estimating camera poses—the authors translate these steps into three categories of cross-view supervision tasks to construct the XVR dataset and directly train VLMs for cross-view reasoning.
+**Key Insight**: Inspired by the Structure-from-Motion (SfM) pipeline, which integrates multi-view information through three key steps—establishing correspondences, verifying geometric consistency, and estimating camera poses—the authors translate these steps into three categories of cross-view supervision tasks to construct the XVR dataset and directly train VLMs for cross-view reasoning.
 
 ## Method
 

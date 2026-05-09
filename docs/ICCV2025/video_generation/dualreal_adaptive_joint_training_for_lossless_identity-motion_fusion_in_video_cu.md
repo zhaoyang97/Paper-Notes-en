@@ -39,7 +39,7 @@ However, this isolated paradigm entirely neglects the **intrinsic mutual constra
 
 **Violation of the Natural Denoising Process**: The denoising process inherently and dynamically adjusts its focus between spatial (identity) and temporal (motion) information at different steps, whereas isolated training enforces uniform sampling across all steps, leading to conflicting optimization directions.
 
-**Root Cause**: The parameter distributions of the two dimensions differ substantially across training data, and unconstrained joint updates cause destructive cross-dimensional interference. For instance, fine-tuning a motion adapter on static images during the motion training phase irreversibly impairs its capacity for dynamic generation.
+**Key Challenge**: The parameter distributions of the two dimensions differ substantially across training data, and unconstrained joint updates cause destructive cross-dimensional interference. For instance, fine-tuning a motion adapter on static images during the motion training phase irreversibly impairs its capacity for dynamic generation.
 
 **Core Idea**: Rather than training in isolation and merging afterward, DualReal builds mutual dependencies between the two dimensions during training itself — using a **frozen counterpart's prior to guide the current training dimension** — and adaptively allocates weights across dimensions by leveraging the **functional specialization of denoising stages and network depth**.
 

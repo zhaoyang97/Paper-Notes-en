@@ -28,16 +28,16 @@ TRACE-RPS proposes a unified defense framework against attribute inference attac
 
 ## Background & Motivation
 
-**State of the Field**: LLMs can infer private attributes (age, location, gender, etc.) from innocuous text shared by users online, enabling large-scale automated privacy violations. Such attacks bypass safety filters since the prompts themselves are entirely benign.
+**Background**: LLMs can infer private attributes (age, location, gender, etc.) from innocuous text shared by users online, enabling large-scale automated privacy violations. Such attacks bypass safety filters since the prompts themselves are entirely benign.
 
 **Limitations of Prior Work**:
    - Existing anonymization methods operate at too coarse a granularity (text-level rather than token-level), failing to precisely identify specific text elements responsible for privacy leakage.
    - A fundamental limitation of anonymization: even after modifying text to conceal sensitive cues, the model's reasoning capability can still infer attributes from the revised text.
    - For attributes with limited categories (e.g., gender or income level), anonymized text still provides interpretable data points.
 
-**Root Cause**: Attribute inference in LLMs stems from **reasoning capability**, not memorization — weakening reasoning ability would compromise general utility, while anonymization alone cannot prevent inference from bypassing it.
+**Key Challenge**: Attribute inference in LLMs stems from **reasoning capability**, not memorization — weakening reasoning ability would compromise general utility, while anonymization alone cannot prevent inference from bypassing it.
 
-**Starting Point**: A two-stage defense — (1) precise anonymization to reduce information leakage + (2) optimized suffix to induce model refusal, fundamentally blocking inference.
+**Key Insight**: A two-stage defense — (1) precise anonymization to reduce information leakage + (2) optimized suffix to induce model refusal, fundamentally blocking inference.
 
 **Core Idea**: Anonymization reduces information exposure + refusal optimization blocks inference behavior = a dual-layer defense.
 

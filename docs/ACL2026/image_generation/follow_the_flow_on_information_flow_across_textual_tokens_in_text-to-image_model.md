@@ -29,15 +29,15 @@ This paper systematically investigates token-level information distribution in t
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-image (T2I) models consist of a text encoder and a diffusion model, where the text encoder converts user prompts into representations that guide the diffusion process. Despite widespread use, T2I models frequently exhibit text-image misalignment, with generated images failing to accurately capture objects and relationships specified in text.
+**Background**: Text-to-image (T2I) models consist of a text encoder and a diffusion model, where the text encoder converts user prompts into representations that guide the diffusion process. Despite widespread use, T2I models frequently exhibit text-image misalignment, with generated images failing to accurately capture objects and relationships specified in text.
 
 **Limitations of Prior Work**: Previous work primarily improved alignment by modifying the diffusion process (particularly cross-attention mechanisms), implicitly assuming that each text token reliably encodes its corresponding concept. However, this assumption has never been systematically verified—is the information in token representations uniformly distributed or concentrated? Does information cross between different lexical items?
 
-**Root Cause**: Many alignment improvement methods in T2I models (e.g., Attend-and-Excite) treat all tokens uniformly, but if information distribution is uneven or semantic leakage exists between tokens, the effectiveness of these methods is fundamentally constrained.
+**Key Challenge**: Many alignment improvement methods in T2I models (e.g., Attend-and-Excite) treat all tokens uniformly, but if information distribution is uneven or semantic leakage exists between tokens, the effectiveness of these methods is fundamentally constrained.
 
-**Paper Goals**: Answer two fundamental questions—(1) Is lexical item semantics uniformly distributed across all its tokens or concentrated in a few tokens? (2) Does each token encode only its own lexical item, or does it also absorb information from neighboring items?
+**Goal**: Answer two fundamental questions—(1) Is lexical item semantics uniformly distributed across all its tokens or concentrated in a few tokens? (2) Does each token encode only its own lexical item, or does it also absorb information from neighboring items?
 
-**Starting Point**: Use causal intervention (patching) techniques to isolate the contribution of specific tokens by replacing other tokens with pad embeddings, then generate images to directly examine what information that token encodes—this is more reliable than probing methods because it tests information actually used by the diffusion model.
+**Key Insight**: Use causal intervention (patching) techniques to isolate the contribution of specific tokens by replacing other tokens with pad embeddings, then generate images to directly examine what information that token encodes—this is more reliable than probing methods because it tests information actually used by the diffusion model.
 
 **Core Idea**: Reveal information distribution patterns in text encoders through token-by-token causal intervention, and design token-level intervention methods to improve T2I alignment accordingly.
 

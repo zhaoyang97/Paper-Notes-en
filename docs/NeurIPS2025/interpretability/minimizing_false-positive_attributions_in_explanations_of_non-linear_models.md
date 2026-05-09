@@ -26,15 +26,15 @@ content_hash: 360347bf0da4c028
 This paper proposes PatternLocal to address false-positive attributions caused by suppressor variables in XAI explanations of non-linear models. The method converts local discriminative surrogate weights into a generative representation, and significantly reduces false-positive feature attributions on three datasets: the XAI-TRIS benchmark, MRI artificial lesions, and EEG motor imagery.
 
 ## Background & Motivation
-**State of the Field**: XAI methods such as LIME, KernelSHAP, and gradient-based approaches are widely used to explain the decision-making process of black-box models, and are particularly critical in high-stakes domains such as healthcare and finance.
+**Background**: XAI methods such as LIME, KernelSHAP, and gradient-based approaches are widely used to explain the decision-making process of black-box models, and are particularly critical in high-stakes domains such as healthcare and finance.
 
 **Limitations of Prior Work**: Existing studies have demonstrated that mainstream XAI methods including LIME and SHAP assign importance weights to **suppressor variables** — variables that influence model predictions but have no direct statistical dependence on the target variable. For example, when a model predicts epilepsy by exploiting noise probes in irrelevant brain regions, XAI methods may erroneously flag those regions as important.
 
-**Root Cause**: The Pattern method for linear models can distinguish discriminative weights from generative activation patterns to eliminate suppressor variable effects, but this method and its deep network extensions (PatternNet/PatternAttribution) perform poorly in non-linear settings and cannot effectively handle suppressor variables in local non-linear explanations.
+**Key Challenge**: The Pattern method for linear models can distinguish discriminative weights from generative activation patterns to eliminate suppressor variable effects, but this method and its deep network extensions (PatternNet/PatternAttribution) perform poorly in non-linear settings and cannot effectively handle suppressor variables in local non-linear explanations.
 
-**Paper Goals**: Extend suppressor variable suppression from globally linear models to **local** explanations of non-linear models, addressing instance-level false-positive attribution.
+**Goal**: Extend suppressor variable suppression from globally linear models to **local** explanations of non-linear models, addressing instance-level false-positive attribution.
 
-**Starting Point**: Local linear surrogate weights are first obtained via LIME, KernelSHAP, or gradient methods, and then converted from discriminative weights to a generative representation through a data-driven forward model.
+**Key Insight**: Local linear surrogate weights are first obtained via LIME, KernelSHAP, or gradient methods, and then converted from discriminative weights to a generative representation through a data-driven forward model.
 
 **Core Idea**: Building on local linear surrogates produced by methods such as LIME, the discriminative weights are converted into generative activation patterns (Patterns) via kernel-weighted regression, thereby naturally eliminating the influence of suppressor variables.
 

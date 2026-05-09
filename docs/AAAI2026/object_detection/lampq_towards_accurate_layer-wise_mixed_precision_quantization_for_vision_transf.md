@@ -29,15 +29,15 @@ This paper proposes LampQ, a metric-based layer-wise mixed precision quantizatio
 
 ## Background & Motivation
 
-**State of the Field**: Vision Transformers (ViTs) have achieved remarkable performance on visual tasks, but their large parameter counts and computational demands hinder edge deployment. Quantization is a primary compression technique that maps floating-point weights and activations to low-bit integer representations.
+**Background**: Vision Transformers (ViTs) have achieved remarkable performance on visual tasks, but their large parameter counts and computational demands hinder edge deployment. Quantization is a primary compression technique that maps floating-point weights and activations to low-bit integer representations.
 
 **Limitations of Prior Work**: Existing quantization methods predominantly adopt uniform precision (e.g., quantizing all layers to 4-bit), ignoring the large sensitivity differences among ViT components (attention layers, FFN layers, embedding layers, etc.). Mixed precision quantization (MPQ) offers a remedy, but existing MPQ methods for ViTs suffer from three main limitations: (1) coarse quantization granularity (bit allocation at the module rather than layer level); (2) incomparable sensitivity metric scales across different component types (Fisher information magnitudes differ greatly between attention and FFN layers); and (3) bit allocation that does not account for actual post-quantization error.
 
-**Root Cause**: Different ViT components exhibit vastly different sensitivities to quantization, yet existing methods cannot accurately measure these differences, leading to suboptimal bit allocation.
+**Key Challenge**: Different ViT components exhibit vastly different sensitivities to quantization, yet existing methods cannot accurately measure these differences, leading to suboptimal bit allocation.
 
-**Paper Goals**: (1) Achieve fine-grained, layer-wise mixed precision quantization; (2) design a sensitivity metric that is comparable across component types; (3) optimize bit allocation to minimize overall quantization error.
+**Goal**: (1) Achieve fine-grained, layer-wise mixed precision quantization; (2) design a sensitivity metric that is comparable across component types; (3) optimize bit allocation to minimize overall quantization error.
 
-**Starting Point**: A type-aware Fisher information matrix is used to normalize the sensitivity of different component types, enabling comparison on a unified scale.
+**Key Insight**: A type-aware Fisher information matrix is used to normalize the sensitivity of different component types, enabling comparison on a unified scale.
 
 **Core Idea**: Type-aware Fisher metric + integer linear programming for optimal bit allocation + iterative refinement = accurate layer-wise mixed precision quantization.
 

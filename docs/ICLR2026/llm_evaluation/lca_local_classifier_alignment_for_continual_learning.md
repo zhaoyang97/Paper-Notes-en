@@ -29,13 +29,13 @@ This paper proposes Local Classifier Alignment (LCA), a loss function that simul
 
 ## Background & Motivation
 
-**State of the Field**: Pre-trained model (PTM)-based class-incremental learning (CIL) represents the dominant paradigm in continual learning. PTMs provide powerful feature extraction capabilities that require only lightweight fine-tuning to adapt to new tasks; however, naive sequential fine-tuning still leads to catastrophic forgetting.
+**Background**: Pre-trained model (PTM)-based class-incremental learning (CIL) represents the dominant paradigm in continual learning. PTMs provide powerful feature extraction capabilities that require only lightweight fine-tuning to adapt to new tasks; however, naive sequential fine-tuning still leads to catastrophic forgetting.
 
 **Limitations of Prior Work**: (1) Fine-tuning only on the first task (e.g., APER) causes rapid performance degradation as the number of tasks grows and distribution shift accumulates; (2) per-task fine-tuning with backbone merging (e.g., EASE, MOS) yields strong aggregate performance but introduces a mismatch between the frozen task-specific classifiers and the merged backbone.
 
-**Root Cause**: After multi-task merging, the backbone parameters shift, causing previously frozen task-specific classifiers to become misaligned with the new feature space, resulting in severe degradation of performance on old tasks. Since historical data cannot be revisited, directly retraining the classifiers is infeasible.
+**Key Challenge**: After multi-task merging, the backbone parameters shift, causing previously frozen task-specific classifiers to become misaligned with the new feature space, resulting in severe degradation of performance on old tasks. Since historical data cannot be revisited, directly retraining the classifiers is infeasible.
 
-**Starting Point**: The paper generates synthetic samples using Gaussian class prototypes and re-aligns all classifier heads on these synthetic samples. The key innovation is to not only minimize classification loss, but also regularize the sensitivity of the loss to input perturbations, thereby achieving local robustness and better generalization.
+**Key Insight**: The paper generates synthetic samples using Gaussian class prototypes and re-aligns all classifier heads on these synthetic samples. The key innovation is to not only minimize classification loss, but also regularize the sensitivity of the loss to input perturbations, thereby achieving local robustness and better generalization.
 
 **Related Work & Insights from Model Merging**: Works such as Task Arithmetic and TIES-Merge demonstrate that independently trained task-specific models can be combined via parameter merging to form a stronger unified model. This paper incorporates that insight into CIL by merging only the PEFT (LoRA) parameters, incurring minimal storage overhead.
 

@@ -28,15 +28,15 @@ This paper proposes AP-OOD, which replaces the mean pooling in Mahalanobis dista
 
 ## Background & Motivation
 
-**State of the Field**: Language models deployed in production may encounter OOD inputs (e.g., trained on BBC article summarization but receiving CNN articles), leading to unreliable outputs such as hallucinations. Mahalanobis distance over token embeddings is the predominant detection approach.
+**Background**: Language models deployed in production may encounter OOD inputs (e.g., trained on BBC article summarization but receiving CNN articles), leading to unreliable outputs such as hallucinations. Mahalanobis distance over token embeddings is the predominant detection approach.
 
 **Limitations of Prior Work**: Existing methods (e.g., Ren et al. 2023) apply **mean pooling** over token embeddings before computing Mahalanobis distance — however, mean aggregation suppresses anomaly signals. When in-distribution (ID) and OOD sequences have similar mean embeddings but different token-level distributions, detection fails entirely. Figure 1 illustrates this failure mode.
 
-**Root Cause**: Variable-length representations (token sequences) must be compressed into a scalar OOD score, yet naive aggregation discards token-level patterns critical for distinguishing ID from OOD inputs.
+**Key Challenge**: Variable-length representations (token sequences) must be compressed into a scalar OOD score, yet naive aggregation discards token-level patterns critical for distinguishing ID from OOD inputs.
 
-**Paper Goals**: Design an aggregation strategy beyond mean pooling that preserves token-level information for OOD detection.
+**Goal**: Design an aggregation strategy beyond mean pooling that preserves token-level information for OOD detection.
 
-**Starting Point**: Decompose the Mahalanobis distance into directional components, then replace mean projection along each direction with attention-weighted projection, allowing the model to learn which tokens are most informative for OOD detection.
+**Key Insight**: Decompose the Mahalanobis distance into directional components, then replace mean projection along each direction with attention-weighted projection, allowing the model to learn which tokens are most informative for OOD detection.
 
 **Core Idea**: Replace mean pooling with learnable attention pooling in the Mahalanobis distance computation, enabling OOD detection to exploit token-level information.
 

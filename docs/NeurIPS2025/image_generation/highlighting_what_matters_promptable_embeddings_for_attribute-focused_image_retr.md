@@ -36,7 +36,7 @@ In text-to-image (T2I) retrieval, an ideal retrieval system should attend to spe
 
 **Limitations of MLLM-based retrievers**: Even stronger retrievers built on multimodal large language models (MLLMs), despite operating in higher-dimensional embedding spaces, still struggle with attribute-focused queries.
 
-**Root Cause**: Using a single general-purpose image embedding for attribute-focused retrieval is inherently suboptimal—a fixed embedding cannot simultaneously serve all possible attribute queries optimally.
+**Key Challenge**: Using a single general-purpose image embedding for attribute-focused retrieval is inherently suboptimal—a fixed embedding cannot simultaneously serve all possible attribute queries optimally.
 
 Core hypothesis: Dynamically conditioning image embeddings on the query to "highlight" relevant attributes can substantially improve retrieval performance.
 

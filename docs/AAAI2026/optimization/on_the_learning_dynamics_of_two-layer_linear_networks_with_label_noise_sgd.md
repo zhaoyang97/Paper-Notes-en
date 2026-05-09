@@ -29,15 +29,15 @@ This paper theoretically analyzes the learning dynamics of label noise SGD on tw
 
 ## Background & Motivation
 
-**State of the Field**: The success of deep learning is partly attributed to the implicit bias induced by noise in gradient-based training algorithms. Recent empirical findings show that injecting label noise during training can improve generalization (e.g., ~1.5% test accuracy gain on CIFAR-10 + ResNet-18) and yields sparser models.
+**Background**: The success of deep learning is partly attributed to the implicit bias induced by noise in gradient-based training algorithms. Recent empirical findings show that injecting label noise during training can improve generalization (e.g., ~1.5% test accuracy gain on CIFAR-10 + ResNet-18) and yields sparser models.
 
 **Limitations of Prior Work**: Existing theoretical work (Blanc et al. 2020; Damian et al. 2021; HaoChen et al. 2021) largely focuses on the local implicit regularization effects of label noise SGD near global minima (e.g., regularizing sharpness), or analyzes highly simplified models such as diagonal linear networks. For more realistic networks with two trainable layers and inter-layer coupling effects, a theoretical analysis of the complete learning dynamics from initialization to convergence remains absent.
 
-**Root Cause**: Overparameterized networks initialized under the NTK regime tend to remain in the lazy regime—where parameters barely move and the model behaves like a linear kernel method—failing to explain the generalization advantages of deep learning. Yet in practice, models do learn meaningful features (rich regime). How does label noise drive this critical transition?
+**Key Challenge**: Overparameterized networks initialized under the NTK regime tend to remain in the lazy regime—where parameters barely move and the model behaves like a linear kernel method—failing to explain the generalization advantages of deep learning. Yet in practice, models do learn meaningful features (rich regime). How does label noise drive this critical transition?
 
-**Paper Goals**: To rigorously characterize the complete learning trajectory of two-layer linear networks under label noise SGD, and to explain how and why label noise drives the lazy-to-rich transition.
+**Goal**: To rigorously characterize the complete learning trajectory of two-layer linear networks under label noise SGD, and to explain how and why label noise drives the lazy-to-rich transition.
 
-**Starting Point**: The analysis begins from the oscillation effect in the second-layer parameters—label noise amplifies the oscillations of the second-layer weights $\mathbf{a}$, which through inter-layer coupling cause the first-layer weight norms $\mathbf{W}$ to progressively diminish, thereby enabling the transition from the lazy regime (NTK initialization) to the rich regime (small-initialization behavior).
+**Key Insight**: The analysis begins from the oscillation effect in the second-layer parameters—label noise amplifies the oscillations of the second-layer weights $\mathbf{a}$, which through inter-layer coupling cause the first-layer weight norms $\mathbf{W}$ to progressively diminish, thereby enabling the transition from the lazy regime (NTK initialization) to the rich regime (small-initialization behavior).
 
 **Core Idea**: Label noise, by amplifying oscillations in the second-layer parameters, indirectly drives a sustained decay of the first-layer weight norms, allowing the network to naturally transition from the lazy regime to the rich regime and ultimately converge to a sparse ground-truth interpolator.
 

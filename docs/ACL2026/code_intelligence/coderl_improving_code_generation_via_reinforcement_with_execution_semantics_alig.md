@@ -28,15 +28,15 @@ This paper proposes CodeRL+, which integrates execution semantics alignment into
 
 ## Background & Motivation
 
-**State of the Field**: LLMs learn textual patterns of code through autoregressive pretraining, demonstrating strong code generation capabilities. RLVR (Reinforcement Learning with Verifiable Rewards) leverages deterministic feedback from test case execution to bridge the gap between textual patterns and functional correctness.
+**Background**: LLMs learn textual patterns of code through autoregressive pretraining, demonstrating strong code generation capabilities. RLVR (Reinforcement Learning with Verifiable Rewards) leverages deterministic feedback from test case execution to bridge the gap between textual patterns and functional correctness.
 
 **Limitations of Prior Work**: RLVR relies solely on binary pass/fail signals, which are insufficient for establishing strong alignment between code text representations and execution semantics. Experiments show that models trained with RLVR improve by only 4% over the baseline on execution trace inference tasks, failing to track basic execution semantics such as variable changes within loops.
 
-**Root Cause**: There exists a fundamental misalignment between the pretraining objective of LLMs (fitting text distributions) and the evaluation criterion (execution correctness). Sparse rewards derived exclusively from final execution outcomes cannot enable models to learn to understand runtime behavior.
+**Key Challenge**: There exists a fundamental misalignment between the pretraining objective of LLMs (fitting text distributions) and the evaluation criterion (execution correctness). Sparse rewards derived exclusively from final execution outcomes cannot enable models to learn to understand runtime behavior.
 
-**Paper Goals**: Introduce execution semantics alignment into RLVR so that the model can infer variable-level execution traces, providing a direct learning signal for execution semantics.
+**Goal**: Introduce execution semantics alignment into RLVR so that the model can infer variable-level execution traces, providing a direct learning signal for execution semantics.
 
-**Starting Point**: Repurpose failed code explorations as training data for execution semantics alignment—training the model to infer the final values of each variable in failing programs.
+**Key Insight**: Repurpose failed code explorations as training data for execution semantics alignment—training the model to infer the final values of each variable in failing programs.
 
 **Core Idea**: Code generation (synthesizing the state transition function $\Phi_p$) and execution semantics alignment (understanding $\Phi_p$) are complementary and bidirectional; joint optimization can surpass the learning of superficial textual patterns.
 

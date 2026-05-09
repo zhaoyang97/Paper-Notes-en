@@ -29,15 +29,15 @@ This paper proposes VLAForge, which employs a ForgePerceiver to independently le
 
 ## Background & Motivation
 
-1. **State of the Field**: Deepfake video detection (DFD) aims to determine the authenticity of facial videos. Conventional approaches primarily focus on detecting spatial artifacts or temporal inconsistencies. Recently, methods based on pre-trained vision-language models (VLMs) such as CLIP have attracted growing attention due to their strong generalization capability.
+1. **Background**: Deepfake video detection (DFD) aims to determine the authenticity of facial videos. Conventional approaches primarily focus on detecting spatial artifacts or temporal inconsistencies. Recently, methods based on pre-trained vision-language models (VLMs) such as CLIP have attracted growing attention due to their strong generalization capability.
 
 2. **Limitations of Prior Work**: Existing VLM-based methods enhance the visual encoder itself through adapter tuning, bias correction, or spatiotemporal modeling, while overlooking the most distinctive advantage of VLMs—the rich vision-language semantics embedded in the latent space. These methods exploit only unimodal visual features, failing to leverage the discriminative potential of cross-modal semantics.
 
-3. **Root Cause**: The visual encoder of a VLM learns to understand semantic objects in images during pre-training, rather than to detect forgery artifacts. When directly applied to DFD, attention tends to be distributed over objects irrelevant to forgery. Meanwhile, manipulated facial regions often exhibit diverse and heterogeneous low-level artifacts (boundary inconsistencies, texture distortions), which are difficult for semantics-oriented VLM visual encoders to effectively capture.
+3. **Key Challenge**: The visual encoder of a VLM learns to understand semantic objects in images during pre-training, rather than to detect forgery artifacts. When directly applied to DFD, attention tends to be distributed over objects irrelevant to forgery. Meanwhile, manipulated facial regions often exhibit diverse and heterogeneous low-level artifacts (boundary inconsistencies, texture distortions), which are difficult for semantics-oriented VLM visual encoders to effectively capture.
 
-4. **Paper Goals**: (1) How to enhance the VLM's visual perception of forgery artifacts without disrupting its pre-trained knowledge? (2) How to exploit the VLM's intrinsic vision-language alignment to provide complementary fine-grained discriminative cues?
+4. **Goal**: (1) How to enhance the VLM's visual perception of forgery artifacts without disrupting its pre-trained knowledge? (2) How to exploit the VLM's intrinsic vision-language alignment to provide complementary fine-grained discriminative cues?
 
-5. **Starting Point**: By injecting identity priors into text prompts, the visual-text alignment is adapted into a more fine-grained form, enabling the model to capture authenticity cues tailored to each individual.
+5. **Key Insight**: By injecting identity priors into text prompts, the visual-text alignment is adapted into a more fine-grained form, enabling the model to capture authenticity cues tailored to each individual.
 
 6. **Core Idea**: A standalone ForgePerceiver learns diverse forgery cues to modulate VLM visual tokens, while identity-prior-enhanced text prompts unleash the VLM's cross-modal semantics for patch-level authenticity judgment. The two branches are fused to achieve global and local discrimination.
 

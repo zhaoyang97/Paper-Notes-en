@@ -28,15 +28,15 @@ This paper demonstrates that the modality gap in CLIP is inconsequential for ins
 
 ## Background & Motivation
 
-**State of the Field**: CLIP and its variants learn a shared cross-modal embedding space via InfoNCE loss, but embeddings from different modalities tend to form separate clusters—a phenomenon known as the "modality gap." Existing work is divided: some argue that reducing the gap improves retrieval, while others claim the gap correlates positively with downstream performance.
+**Background**: CLIP and its variants learn a shared cross-modal embedding space via InfoNCE loss, but embeddings from different modalities tend to form separate clusters—a phenomenon known as the "modality gap." Existing work is divided: some argue that reducing the gap improves retrieval, while others claim the gap correlates positively with downstream performance.
 
 **Limitations of Prior Work**: (a) Prior studies focus exclusively on the gap's effect on retrieval (an instance-level task), yielding contradictory conclusions. (b) All prior methods consider only the bimodal (image + text) setting, without addressing three or more modalities. (c) The consequence that the gap causes the latent space to cluster by modality rather than by semantics has not been systematically analyzed.
 
-**Root Cause**: InfoNCE optimizes the relative ranking of positive and negative pairs (i.e., which pair is most similar), not absolute distances (i.e., whether positive pairs are truly close). Retrieval succeeds as long as relative rankings are correct—even if the absolute cosine similarity of positive pairs is only 0.34. Clustering, however, depends on absolute distances; the gap inflates within-class scatter by $\|\boldsymbol{\delta}\|^2$.
+**Key Challenge**: InfoNCE optimizes the relative ranking of positive and negative pairs (i.e., which pair is most similar), not absolute distances (i.e., whether positive pairs are truly close). Retrieval succeeds as long as relative rankings are correct—even if the absolute cosine similarity of positive pairs is only 0.34. Clustering, however, depends on absolute distances; the gap inflates within-class scatter by $\|\boldsymbol{\delta}\|^2$.
 
-**Paper Goals**: (a) Theoretically characterize the differential impact of the modality gap on instance-level versus group-level tasks. (b) Propose an effective method for reducing the gap. (c) Extend the analysis to the trimodal setting.
+**Goal**: (a) Theoretically characterize the differential impact of the modality gap on instance-level versus group-level tasks. (b) Propose an effective method for reducing the gap. (c) Extend the analysis to the trimodal setting.
 
-**Starting Point**: The analysis begins from a mathematical decomposition of within-class scatter—the gap vector $\boldsymbol{\delta}$ is orthogonal to the semantic directions and therefore inflates the scatter of all clusters equally, which is irrelevant to retrieval but detrimental to clustering.
+**Key Insight**: The analysis begins from a mathematical decomposition of within-class scatter—the gap vector $\boldsymbol{\delta}$ is orthogonal to the semantic directions and therefore inflates the scatter of all clusters equally, which is irrelevant to retrieval but detrimental to clustering.
 
 **Core Idea**: The modality gap is a harmless artifact for retrieval but a systematic obstacle for clustering. Two loss functions—true pair alignment and centroid uniformity—can simultaneously eliminate the gap and improve semantic clustering.
 

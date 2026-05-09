@@ -28,16 +28,16 @@ Ar2Can decomposes multi-human image generation into two stages — spatial plann
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-image diffusion models have matured considerably for single-person generation, yet systematically fail in **multi-human scenarios** — identity blending, identity swapping, and incorrect person counts are pervasive problems.
+**Background**: Text-to-image diffusion models have matured considerably for single-person generation, yet systematically fail in **multi-human scenarios** — identity blending, identity swapping, and incorrect person counts are pervasive problems.
 
 **Classification and Limitations of Prior Work**:
    - **Region-conditioned methods** (GLIGEN, ReCo) require users to manually provide spatial annotations, resulting in poor usability.
    - **Identity-preserving methods** (IP-Adapter, InstantID, PuLID) are designed for single subjects and suffer from identity conflicts in multi-person settings.
    - **Multi-ID methods** (OmniGen, DreamO, XVerse) still perform poorly on recent benchmarks.
 
-**Root Cause**: Existing methods conflate **spatial layout reasoning** and **identity rendering** within a single generation process. When the model must simultaneously determine "where each person is" and "what each person looks like," spatial structure and appearance become entangled, causing identity blending.
+**Key Challenge**: Existing methods conflate **spatial layout reasoning** and **identity rendering** within a single generation process. When the model must simultaneously determine "where each person is" and "what each person looks like," spatial structure and appearance become entangled, causing identity blending.
 
-**Starting Point**: **Decoupling spatial planning from identity rendering** — first determine where each person appears, then focus on photorealistic rendering. This divide-and-conquer strategy fundamentally prevents identity blending.
+**Key Insight**: **Decoupling spatial planning from identity rendering** — first determine where each person appears, then focus on photorealistic rendering. This divide-and-conquer strategy fundamentally prevents identity blending.
 
 **Core Idea**: The Architect generates a structured spatial layout (bounding boxes / poses); the Artist, guided by this layout, maintains multi-identity consistency via GRPO combined with a Hungarian-matching face reward.
 

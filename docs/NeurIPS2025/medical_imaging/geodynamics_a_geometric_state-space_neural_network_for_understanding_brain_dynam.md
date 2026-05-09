@@ -28,11 +28,11 @@ This paper proposes GeoDynamics, which generalizes the classical state-space mod
 
 ## Background & Motivation
 
-**State of the Field**: Mainstream approaches for understanding brain dynamics fall into two categories: (a) analyzing temporal fluctuations of BOLD signals (RNN/LSTM/SSM/Mamba); and (b) analyzing topological changes of functional connectivity (FC) matrices (GNN/SPDNet). SSMs have attracted growing attention following the success of Mamba in CV and NLP.
+**Background**: Mainstream approaches for understanding brain dynamics fall into two categories: (a) analyzing temporal fluctuations of BOLD signals (RNN/LSTM/SSM/Mamba); and (b) analyzing topological changes of functional connectivity (FC) matrices (GNN/SPDNet). SSMs have attracted growing attention following the success of Mamba in CV and NLP.
 
 **Limitations of Prior Work**: (a) SSMs assume states evolve in Euclidean space, whereas FC matrices are inherently SPD matrices residing on curved Riemannian manifolds—Euclidean operations violate the SPD constraint; (b) sliding-window methods are sensitive to window size; (c) SPDNet and related methods lack temporal modeling; (d) existing approaches capture either spatial or temporal structure, but not both.
 
-**Root Cause**: The temporal evolution of FC matrices constitutes a curve on the SPD manifold, requiring simultaneous capture of spatiotemporal dynamics while preserving geometric consistency.
+**Key Challenge**: The temporal evolution of FC matrices constitutes a curve on the SPD manifold, requiring simultaneous capture of spatiotemporal dynamics while preserving geometric consistency.
 
 **Core Idea**: Replace the Euclidean linear operations in SSMs with Fréchet means and orthogonal group actions from Riemannian geometry, enabling geometrically consistent state evolution on the SPD manifold.
 

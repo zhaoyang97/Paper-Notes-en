@@ -27,15 +27,15 @@ content_hash: ba88d0f51fa4d23d
 VideoHV-Agent reframes long video QA as a hypothesis-verification process: a Thinker rewrites answer options into testable hypotheses, a Judge extracts discriminative clues, a Verifier localizes evidence in the video, and an Answer agent synthesizes evidence into a final answer. The framework achieves state-of-the-art results on EgoSchema, NextQA, and IntentQA while outperforming existing agent methods in inference efficiency.
 
 ## Background & Motivation
-**State of the Field**: LLM-driven video understanding has made significant progress, but long video QA remains challenging—models must process dense, redundant content and reason across long temporal spans. Existing approaches include keyframe selection, multi-stage pipelines (localize then reason), and agent frameworks (iteratively search and aggregate semantically relevant clips).
+**Background**: LLM-driven video understanding has made significant progress, but long video QA remains challenging—models must process dense, redundant content and reason across long temporal spans. Existing approaches include keyframe selection, multi-stage pipelines (localize then reason), and agent frameworks (iteratively search and aggregate semantically relevant clips).
 
 **Limitations of Prior Work**: (i) Chain-of-Thought methods are prone to semantic drift and error accumulation in long reasoning chains; (ii) existing agent frameworks are fundamentally relevance-driven—repeatedly searching for clips relevant to the current plan, then replanning based on retrieved content, resulting in expensive trial-and-error loops; (iii) planners decompose only video complexity (length, redundancy) while neglecting question complexity (compositional constraints, temporal ordering, causal prerequisites).
 
-**Root Cause**: The core difficulty in long video QA is not "how to find relevant clips" but "what to look for." Existing methods follow a search-then-reason order, whereas the correct order should be think-then-find.
+**Key Challenge**: The core difficulty in long video QA is not "how to find relevant clips" but "what to look for." Existing methods follow a search-then-reason order, whereas the correct order should be think-then-find.
 
-**Paper Goals**: Replace reactive relevance retrieval with structured hypothesis-verification reasoning.
+**Goal**: Replace reactive relevance retrieval with structured hypothesis-verification reasoning.
 
-**Starting Point**: The "thinking before finding" principle—before collecting evidence, the system must first specify what video evidence each candidate answer requires in order to be valid.
+**Key Insight**: The "thinking before finding" principle—before collecting evidence, the system must first specify what video evidence each candidate answer requires in order to be valid.
 
 **Core Idea**: Restructure VideoQA as a structured reasoning pipeline: hypothesis generation → clue extraction → evidence verification → answer integration.
 

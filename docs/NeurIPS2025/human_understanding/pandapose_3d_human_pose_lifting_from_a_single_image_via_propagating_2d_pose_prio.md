@@ -29,17 +29,17 @@ This paper proposes PandaPose, which propagates 2D pose priors into a 3D anchor 
 
 ## Background & Motivation
 
-**State of the Field**: Monocular 3D human pose estimation is a core task in 3D vision. Single-frame image-based methods have attracted significant attention due to their real-time advantages; current state-of-the-art approaches leverage 2D poses and image features for pose lifting.
+**Background**: Monocular 3D human pose estimation is a core task in 3D vision. Single-frame image-based methods have attracted significant attention due to their real-time advantages; current state-of-the-art approaches leverage 2D poses and image features for pose lifting.
 
 **Limitations of Prior Work**:
 - Existing methods establish direct joint-to-joint mappings from 2D to 3D, making them overly sensitive to 2D pose accuracy — even minor noise causes substantial deviations in 3D predictions.
 - Most approaches rely primarily on in-plane features, lacking explicit modeling of the depth dimension, making it difficult to handle self-occlusion and depth ambiguity.
 
-**Root Cause**: Simultaneously addressing 2D pose error propagation and depth ambiguity under self-occlusion is required, yet no existing solution handles both effectively.
+**Key Challenge**: Simultaneously addressing 2D pose error propagation and depth ambiguity under self-occlusion is required, yet no existing solution handles both effectively.
 
-**Paper Goals**: To propose a framework that propagates 2D pose priors into a 3D anchor space as an intermediate representation.
+**Goal**: To propose a framework that propagates 2D pose priors into a 3D anchor space as an intermediate representation.
 
-**Starting Point**: Drawing inspiration from anchor mechanisms explored in hand pose estimation, the paper upgrades fixed global anchors to adaptive joint-wise local anchors.
+**Key Insight**: Drawing inspiration from anchor mechanisms explored in hand pose estimation, the paper upgrades fixed global anchors to adaptive joint-wise local anchors.
 
 **Core Idea**: Replace direct joint regression with weighted aggregation over a set of 3D anchors, and introduce joint-wise depth distributions to resolve occlusion.
 

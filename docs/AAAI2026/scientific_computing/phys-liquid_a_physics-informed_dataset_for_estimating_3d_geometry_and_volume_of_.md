@@ -35,7 +35,7 @@ Autonomous laboratory robots performing liquid manipulation tasks (pipetting, as
 - Transparent object datasets such as **ClearGrasp** and **ClearPose** focus on 6D pose estimation while ignoring internal liquids.
 - **DTLD** includes liquids but only in static states; **Narasimhan et al.** covers only single-view scenarios without deformation.
 
-**Root Cause**: The absence of a dynamic liquid simulation dataset with physically realistic deformation impedes the development of accurate liquid perception algorithms.
+**Key Challenge**: The absence of a dynamic liquid simulation dataset with physically realistic deformation impedes the development of accurate liquid perception algorithms.
 
 The paper addresses this gap by leveraging Blender and Mantaflow to simulate liquid deformation caused by container rotation via the Navier-Stokes equations, systematically constructing a large-scale dataset spanning multiple scenes, lighting conditions, viewpoints, and continuous temporal frames.
 

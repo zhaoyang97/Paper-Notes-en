@@ -30,7 +30,7 @@ This paper proves a Universal Compression Theorem: any permutation-invariant fun
 
 ### Limitations of Prior Work
 
-**State of the Field**: When training large-scale models, performance typically scales as a slow power law in the number of parameters and dataset size (neural scaling law), i.e., $L \sim d^{-\alpha}$. This raises a fundamental theoretical and practical question: **can comparable performance be achieved with significantly smaller models and significantly less data?**
+**Background**: When training large-scale models, performance typically scales as a slow power law in the number of parameters and dataset size (neural scaling law), i.e., $L \sim d^{-\alpha}$. This raises a fundamental theoretical and practical question: **can comparable performance be achieved with significantly smaller models and significantly less data?**
 
 This question is closely related to two widely studied topics in deep learning:
 
@@ -38,7 +38,7 @@ This question is closely related to two widely studied topics in deep learning:
 
 **Acceleration of Neural Scaling Laws**: The existing power-law scaling ($L \sim d^{-\alpha}$) implies that performance improvements slow down as scale increases. Does a theoretical pathway exist to accelerate this slow decay to faster rates?
 
-**Root Cause**: These problems have been extensively explored empirically, but a unified theoretical explanation is lacking. Existing theoretical work either handles only special network architectures or relies on overly strong assumptions.
+**Key Challenge**: These problems have been extensively explored empirically, but a unified theoretical explanation is lacking. Existing theoretical work either handles only special network architectures or relies on overly strong assumptions.
 
 **Core Idea**: Starting from a compression theory for permutation-invariant functions, this paper provides a unified theoretical framework that simultaneously addresses both questions above.
 

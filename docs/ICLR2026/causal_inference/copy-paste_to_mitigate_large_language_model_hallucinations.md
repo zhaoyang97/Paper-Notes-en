@@ -28,15 +28,15 @@ This paper proposes a Copy-Paste generation paradigm that trains LLMs to prefere
 
 ## Background & Motivation
 
-**State of the Field**: RAG (Retrieval-Augmented Generation) reduces hallucinations by supplying LLMs with external context; however, LLMs tend to paraphrase rather than directly cite the context during generation, leading to information distortion and hallucinations.
+**Background**: RAG (Retrieval-Augmented Generation) reduces hallucinations by supplying LLMs with external context; however, LLMs tend to paraphrase rather than directly cite the context during generation, leading to information distortion and hallucinations.
 
 **Limitations of Prior Work**: The paraphrasing process introduces two types of hallucinations—"Twist" (distorting facts present in the context) and "Causal" (upstream errors in the causal chain propagating downstream). Attribution methods mark sources but do not alter the generation process itself.
 
-**Root Cause**: There is a fundamental trade-off between fluent paraphrasing and faithful copying—while paraphrasing reads more naturally, each reformulation introduces a risk of hallucination.
+**Key Challenge**: There is a fundamental trade-off between fluent paraphrasing and faithful copying—while paraphrasing reads more naturally, each reformulation introduces a risk of hallucination.
 
-**Paper Goals**: Can LLMs be trained to copy context spans as directly as possible while maintaining readability?
+**Goal**: Can LLMs be trained to copy context spans as directly as possible while maintaining readability?
 
-**Starting Point**: The analysis is grounded in an attention-anchoring perspective—when the previously generated token is copied from the context, the query vector of the next token is strongly correlated with the context key vectors, naturally promoting continued copying.
+**Key Insight**: The analysis is grounded in an attention-anchoring perspective—when the previously generated token is copied from the context, the query vector of the next token is strongly correlated with the context key vectors, naturally promoting continued copying.
 
 **Core Idea**: Train LLMs to develop a "high-copy preference" by using DPO to steer the model toward responses that directly embed context spans.
 

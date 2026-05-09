@@ -28,15 +28,15 @@ This paper replaces the Fokker-Planck equation with the damped wave equation (te
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models are grounded in the Fokker-Planck equation (a parabolic PDE), whose reverse velocity field becomes stiff near the terminal time, as the diffusion process permits infinite propagation speed.
+**Background**: Diffusion models are grounded in the Fokker-Planck equation (a parabolic PDE), whose reverse velocity field becomes stiff near the terminal time, as the diffusion process permits infinite propagation speed.
 
 **Limitations of Prior Work**: The velocity norm of the reverse ODE can grow unboundedly as $t \to T$, causing numerical instability near the endpoint and requiring a large number of steps to guarantee accuracy. During distillation, student models tend to deviate from teacher trajectories under large step sizes.
 
-**Root Cause**: Infinite propagation speed → stiff velocity field → unstable sampling → many steps required. Can this problem be addressed at the PDE level?
+**Key Challenge**: Infinite propagation speed → stiff velocity field → unstable sampling → many steps required. Can this problem be addressed at the PDE level?
 
-**Paper Goals**: Introduce a hyperbolic PDE (damped wave equation) as an alternative, exploiting its finite-speed propagation to obtain more stable few-step generation.
+**Goal**: Introduce a hyperbolic PDE (damped wave equation) as an alternative, exploiting its finite-speed propagation to obtain more stable few-step generation.
 
-**Starting Point**: The damped wave equation generalizes the Fokker-Planck equation — diffusion emerges as the limit when both damping and speed tend to infinity. The Kac process naturally imposes a velocity upper bound $c$, guaranteeing globally bounded kinetic energy and Lipschitz regularity in Wasserstein space.
+**Key Insight**: The damped wave equation generalizes the Fokker-Planck equation — diffusion emerges as the limit when both damping and speed tend to infinity. The Kac process naturally imposes a velocity upper bound $c$, guaranteeing globally bounded kinetic energy and Lipschitz regularity in Wasserstein space.
 
 **Core Idea**: Finite-speed probabilistic flow ensures that endpoint matching automatically guarantees proximity along the entire path, thereby stabilizing few-step distillation.
 

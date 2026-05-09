@@ -29,7 +29,7 @@ VidGuard-R1 is the first video authenticity detector that fine-tunes an MLLM wit
 
 ## Background & Motivation
 
-**State of the Field**: AI video generation models (Sora, HunyuanVideo, Wan, etc.) have rapidly improved output quality, blurring the boundary between generated and real videos and introducing serious societal risks such as misinformation, privacy violations, and fraud. Accurate and explainable detection tools are urgently needed.
+**Background**: AI video generation models (Sora, HunyuanVideo, Wan, etc.) have rapidly improved output quality, blurring the boundary between generated and real videos and introducing serious societal risks such as misinformation, privacy violations, and fraud. Accurate and explainable detection tools are urgently needed.
 
 **Limitations of Prior Work**:
 
@@ -38,9 +38,9 @@ VidGuard-R1 is the first video authenticity detector that fine-tunes an MLLM wit
 3. **Weak reasoning under SFT fine-tuning**: SFT improves detection accuracy but fails to elicit meaningful explanations such as "why this video is fake"—reasoning ability remains insufficient.
 4. **Shortcuts in existing datasets**: Benchmarks such as GenVideo and GenVidBench contain systematic differences in resolution, frame rate, bitrate, and duration between real and fake videos, causing models to exploit metadata rather than visual authenticity.
 
-**Root Cause**: Models must both accurately detect and deeply reason about "where the fake is," yet SFT can only teach output format without stimulating exploratory reasoning.
+**Key Challenge**: Models must both accurately detect and deeply reason about "where the fake is," yet SFT can only teach output format without stimulating exploratory reasoning.
 
-**Paper Goals**: The paper introduces a GRPO reinforcement learning framework that encourages models to autonomously discover physical inconsistencies through multi-path reasoning sampling and group ranking, and designs two specialized reward signals to guide temporal reasoning and quality awareness.
+**Goal**: The paper introduces a GRPO reinforcement learning framework that encourages models to autonomously discover physical inconsistencies through multi-path reasoning sampling and group ranking, and designs two specialized reward signals to guide temporal reasoning and quality awareness.
 
 ## Method
 

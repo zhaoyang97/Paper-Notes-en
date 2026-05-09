@@ -29,15 +29,15 @@ This paper proposes MotionScale, a scalable 4D Gaussian Splatting framework that
 
 ## Background & Motivation
 
-1. **State of the Field**: Dynamic 4D scene reconstruction is a core challenge in computer vision. In recent years, NeRF and 3DGS have demonstrated strong performance on static or mildly dynamic scenes, particularly under multi-view settings. More recent works have begun integrating 2D geometric and motion priors (e.g., depth estimation, point tracking) with 4DGS to reconstruct scenes from monocular video.
+1. **Background**: Dynamic 4D scene reconstruction is a core challenge in computer vision. In recent years, NeRF and 3DGS have demonstrated strong performance on static or mildly dynamic scenes, particularly under multi-view settings. More recent works have begun integrating 2D geometric and motion priors (e.g., depth estimation, point tracking) with 4DGS to reconstruct scenes from monocular video.
 
 2. **Limitations of Prior Work**: Although existing methods can produce reasonable view synthesis at observed viewpoints, they exhibit notable deficiencies in geometric accuracy and temporal consistency over long sequences, manifesting as geometric distortions, incoherent motion trajectories, and difficulty scaling to large scenes and long videos.
 
-3. **Root Cause**: The authors identify two key bottlenecks: (1) **Under-constrained geometry**: supervision signals rely predominantly on view-dependent appearance cues and lack the capacity to enforce 3D structural consistency; (2) **Cumulative temporal drift**: motion models rely on 2D tracking priors that lack 3D awareness, causing errors to accumulate inevitably over long sequences, leading to geometric collapse and inconsistent motion trajectories.
+3. **Key Challenge**: The authors identify two key bottlenecks: (1) **Under-constrained geometry**: supervision signals rely predominantly on view-dependent appearance cues and lack the capacity to enforce 3D structural consistency; (2) **Cumulative temporal drift**: motion models rely on 2D tracking priors that lack 3D awareness, causing errors to accumulate inevitably over long sequences, leading to geometric collapse and inconsistent motion trajectories.
 
-4. **Paper Goals**: To design a motion representation that is both sufficiently expressive and scalable, coupled with a stable optimization strategy, enabling high-fidelity 4D reconstruction of large-scale dynamic scenes from monocular video.
+4. **Goal**: To design a motion representation that is both sufficiently expressive and scalable, coupled with a stable optimization strategy, enabling high-fidelity 4D reconstruction of large-scale dynamic scenes from monocular video.
 
-5. **Starting Point**: The authors observe that global deformation fields or fixed-capacity architectures struggle to handle diverse local motions, and thus propose an adaptive scaling of motion field capacity driven by clustering.
+5. **Key Insight**: The authors observe that global deformation fields or fixed-capacity architectures struggle to handle diverse local motions, and thus propose an adaptive scaling of motion field capacity driven by clustering.
 
 6. **Core Idea**: The motion field is parameterized via basis transformations anchored at cluster centers, combined with an adaptive split/prune mechanism and a progressive optimization strategy that decouples foreground and background, enabling scalable 4D Gaussian Splatting.
 

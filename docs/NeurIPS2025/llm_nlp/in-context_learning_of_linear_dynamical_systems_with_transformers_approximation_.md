@@ -27,15 +27,15 @@ content_hash: a1bde3f3c2d1743a
 This paper analyzes the ICL approximation capability of linear Transformers on noisy linear dynamical systems: $O(\log T)$ depth suffices to achieve $O(\log T / T)$ test error (approaching the least-squares estimator), while single-layer linear Transformers admit an irreducible lower bound — revealing a depth-separation phenomenon under non-IID data.
 
 ## Background & Motivation
-**State of the Field**: ICL theory has primarily studied linear regression under IID data, where a single-layer linear Transformer can implement one-step gradient descent, achieving test error $O(1/T)$. In practice, however, language data is sequentially correlated (non-IID).
+**Background**: ICL theory has primarily studied linear regression under IID data, where a single-layer linear Transformer can implement one-step gradient descent, achieving test error $O(1/T)$. In practice, however, language data is sequentially correlated (non-IID).
 
 **Limitations of Prior Work**: ICL theory for non-IID settings (e.g., dynamical systems) remains underdeveloped. Can Transformers learn dynamical systems via ICL? How many layers are required? What is the essential difference from the IID case?
 
-**Root Cause**: In the IID setting, a single-layer Transformer suffices. Whether this holds under non-IID data is unclear. How does the temporal correlation between tokens in dynamical systems affect ICL?
+**Key Challenge**: In the IID setting, a single-layer Transformer suffices. Whether this holds under non-IID data is unclear. How does the temporal correlation between tokens in dynamical systems affect ICL?
 
-**Paper Goals**: (1) Quantify upper bounds on the ICL approximation capability of deep Transformers; (2) Prove approximation lower bounds for single-layer Transformers; (3) Reveal the essential distinction between IID and non-IID settings.
+**Goal**: (1) Quantify upper bounds on the ICL approximation capability of deep Transformers; (2) Prove approximation lower bounds for single-layer Transformers; (3) Reveal the essential distinction between IID and non-IID settings.
 
-**Starting Point**: Construct a Transformer that approximately implements Richardson iteration to solve the least-squares problem, then leverage statistical properties of the least-squares estimator to derive test error bounds.
+**Key Insight**: Construct a Transformer that approximately implements Richardson iteration to solve the least-squares problem, then leverage statistical properties of the least-squares estimator to derive test error bounds.
 
 **Core Idea**: ICL under non-IID data requires depth — an $O(\log T)$-layer Transformer can approximate the least-squares estimator by unrolling Richardson iteration, whereas a single layer cannot.
 

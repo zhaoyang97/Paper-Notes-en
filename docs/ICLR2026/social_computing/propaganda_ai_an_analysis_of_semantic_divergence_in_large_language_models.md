@@ -31,11 +31,11 @@ This paper proposes the RAVEN audit framework, which detects concept-conditioned
 
 ### Root Cause
 
-**Root Cause**: LLMs may exhibit **concept-conditioned semantic divergence**: specific high-level conceptual cues (e.g., ideological labels, names of public figures) trigger anomalously consistent stance responses, a behavior that evades traditional backdoor detection methods relying on token-level triggers. The key distinction is as follows:
+**Key Challenge**: LLMs may exhibit **concept-conditioned semantic divergence**: specific high-level conceptual cues (e.g., ideological labels, names of public figures) trigger anomalously consistent stance responses, a behavior that evades traditional backdoor detection methods relying on token-level triggers. The key distinction is as follows:
 
 ### State of the Field
 
-**State of the Field**: **Token backdoors** are triggered by rare vocabulary and can be identified through rarity or outlier detection.
+**Background**: **Token backdoors** are triggered by rare vocabulary and can be identified through rarity or outlier detection.
 
 ### Limitations of Prior Work
 

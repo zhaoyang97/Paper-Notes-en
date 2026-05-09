@@ -27,15 +27,15 @@ content_hash: 3cf3134b463fc2b7
 A2D is proposed, a token-level safety alignment method for diffusion language models (dLLMs) that trains the model to output [EOS] tokens at masked positions containing harmful content, enabling robust defense across any decoding order and any decoding step. It reduces DIJA template attack success rates from 80%+ to near zero (1.3%/0.0%) while supporting early rejection for a 19.3× speedup.
 
 ## Background & Motivation
-**State of the Field**: Diffusion language models (e.g., LLaDA, Dream) generate text through iterative unmasking rather than left-to-right generation, supporting arbitrary-order decoding. Existing safety alignment methods are inherited from AR models, relying on response-level rejection and fixed decoding order assumptions.
+**Background**: Diffusion language models (e.g., LLaDA, Dream) generate text through iterative unmasking rather than left-to-right generation, supporting arbitrary-order decoding. Existing safety alignment methods are inherited from AR models, relying on response-level rejection and fixed decoding order assumptions.
 
 **Limitations of Prior Work**: The arbitrary-order decoding of dLLMs dramatically expands the attack surface—harmful content can appear at any position. The DIJA attack bypasses early rejection by interleaving adversarial text among [MASK] tokens, achieving success rates exceeding 80%. Per-token KL analysis reveals that safety alignment in dLLMs is "superficial"—effective only in the first few steps, with the safety signal rapidly decaying in subsequent steps.
 
-**Root Cause**: Response-level rejection in AR models assumes fixed left-to-right decoding, whereas dLLM decoding can proceed in any order at any step—making conventional alignment fundamentally inapplicable to dLLMs.
+**Key Challenge**: Response-level rejection in AR models assumes fixed left-to-right decoding, whereas dLLM decoding can proceed in any order at any step—making conventional alignment fundamentally inapplicable to dLLMs.
 
-**Paper Goals**: How can dLLMs reliably refuse harmful content across arbitrary decoding orders and arbitrary decoding steps?
+**Goal**: How can dLLMs reliably refuse harmful content across arbitrary decoding orders and arbitrary decoding steps?
 
-**Starting Point**: Shifting safety alignment from the response level to the token level—training the model to output [EOS] at any masked position when harmful content is present, as a universal suppression signal.
+**Key Insight**: Shifting safety alignment from the response level to the token level—training the model to output [EOS] at any masked position when harmful content is present, as a universal suppression signal.
 
 **Core Idea**: Token-level [EOS] alignment combined with random mask training, enabling dLLMs to refuse harmful continuations at any position during any decoding step.
 

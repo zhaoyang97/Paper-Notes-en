@@ -28,15 +28,15 @@ This paper proposes Learning to Condition (L2C), which trains an attention netwo
 
 ## Background & Motivation
 
-**State of the Field**: Most Probable Explanation (MPE) inference is a core task in PGMs, aiming to find the most probable assignment of unobserved variables given evidence. Classical exact methods such as AND/OR search and integer linear programming (ILP) guarantee optimality but are computationally prohibitive for high-treewidth models. Approximate methods sacrifice solution quality.
+**Background**: Most Probable Explanation (MPE) inference is a core task in PGMs, aiming to find the most probable assignment of unobserved variables given evidence. Classical exact methods such as AND/OR search and integer linear programming (ILP) guarantee optimality but are computationally prohibitive for high-treewidth models. Approximate methods sacrifice solution quality.
 
 **Limitations of Prior Work**: Conditioning — fixing the values of a subset of variables to reduce inference complexity — is a classical acceleration strategy (e.g., cutset conditioning, recursive conditioning), but its effectiveness critically depends on variable selection and assignment ordering. Existing approaches either rely on hand-crafted heuristics (e.g., maximum degree) or computationally expensive full strong branching for step-by-step lookahead.
 
-**Root Cause**: Which variables should be fixed, to what values, and in what order? Fixing the wrong variable can irreversibly exclude the optimal solution, while not fixing it forfeits computational speedup. An ideal strategy must simultaneously satisfy *safety* (preserving the optimal solution) and *efficiency* (substantially reducing solving cost), yet these two objectives are often in tension.
+**Key Challenge**: Which variables should be fixed, to what values, and in what order? Fixing the wrong variable can irreversibly exclude the optimal solution, while not fixing it forfeits computational speedup. An ideal strategy must simultaneously satisfy *safety* (preserving the optimal solution) and *efficiency* (substantially reducing solving cost), yet these two objectives are often in tension.
 
-**Paper Goals**: (1) How to automatically learn which variable-value pairs jointly satisfy optimality preservation and inference simplification? (2) How to integrate such a learned strategy into existing exact solvers?
+**Goal**: (1) How to automatically learn which variable-value pairs jointly satisfy optimality preservation and inference simplification? (2) How to integrate such a learned strategy into existing exact solvers?
 
-**Starting Point**: L2C observes that *solution ambiguity* modulates the risk of conditioning — if a variable takes the same value across all optimal solutions, fixing it is safe but also most dangerous (a wrong estimate is fatal); if the variable's value distribution is more uniform, the conditioning risk is lower. The model adaptively learns this trade-off through extensive training.
+**Key Insight**: L2C observes that *solution ambiguity* modulates the risk of conditioning — if a variable takes the same value across all optimal solutions, fixing it is safe but also most dangerous (a wrong estimate is fatal); if the variable's value distribution is more uniform, the conditioning risk is lower. The model adaptively learns this trade-off through extensive training.
 
 **Core Idea**: Train a neural network to learn dual scores (optimality + simplification) for variable-value pairs from solver search trajectories, replacing hand-crafted heuristics for conditioning decisions.
 

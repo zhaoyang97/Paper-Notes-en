@@ -30,15 +30,15 @@ This paper constructs the first benchmark for underwater video-language understa
 
 ## Background & Motivation
 
-**State of the Field**: Video language models (VidLMs) have achieved remarkable progress on tasks such as video captioning, temporal grounding, and visual question answering, yet existing work predominantly focuses on terrestrial scenes (human activities, sports, daily life), leaving the underwater domain largely unexplored.
+**Background**: Video language models (VidLMs) have achieved remarkable progress on tasks such as video captioning, temporal grounding, and visual question answering, yet existing work predominantly focuses on terrestrial scenes (human activities, sports, daily life), leaving the underwater domain largely unexplored.
 
 **Limitations of Prior Work**: (1) **Visual feature degradation** — underwater environments suffer from light attenuation, wavelength-dependent color distortion, and turbidity fluctuations, making it difficult for standard VidLMs to effectively process degraded visual cues; (2) **Lack of domain knowledge** — underwater content requires specialized ecological expertise including taxonomic identification, morphological attributes, behavioral states, and ecological relationships, whereas model training is dominated by common objects and human activities, creating a substantial knowledge gap; (3) **Scarcity of data resources** — existing underwater datasets primarily target single vision tasks such as object tracking (WebUOT) and instance segmentation (UIIS), with no multimodal video-language dataset available.
 
-**Root Cause**: The underwater environment holds immense scientific value (marine biodiversity monitoring, ecological health assessment) and engineering application potential (AUVs, offshore infrastructure inspection), yet no existing VidLM benchmark addresses underwater scenarios.
+**Key Challenge**: The underwater environment holds immense scientific value (marine biodiversity monitoring, ecological health assessment) and engineering application potential (AUVs, offshore infrastructure inspection), yet no existing VidLM benchmark addresses underwater scenarios.
 
-**Paper Goals**: To construct the first specialized benchmark dataset for underwater video-language understanding, inject marine domain knowledge, and validate the performance of fine-tuned VidLMs in underwater scenes.
+**Goal**: To construct the first specialized benchmark dataset for underwater video-language understanding, inject marine domain knowledge, and validate the performance of fine-tuned VidLMs in underwater scenes.
 
-**Starting Point**: A human-AI collaborative annotation pipeline (manual frame-level annotation + GPT-4o-assisted generation + expert correction) is employed to construct a benchmark spanning 20 sub-tasks across two dimensions: biological and environmental.
+**Key Insight**: A human-AI collaborative annotation pipeline (manual frame-level annotation + GPT-4o-assisted generation + expert correction) is employed to construct a benchmark spanning 20 sub-tasks across two dimensions: biological and environmental.
 
 **Core Idea**: Fine-grained taxonomic information from manual frame-level annotation is used to guide GPT-4o in generating diverse video-text pairs, which then undergo three rounds of expert review to ensure quality, resulting in the first large-scale underwater video-language benchmark.
 

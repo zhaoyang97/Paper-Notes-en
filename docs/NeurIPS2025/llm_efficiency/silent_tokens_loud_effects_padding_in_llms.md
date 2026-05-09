@@ -27,15 +27,15 @@ content_hash: d6963b18b551c594
 This paper systematically investigates the effects of padding tokens on LLMs when they are not properly masked. The study finds that even a small number of padding tokens can drift hidden-layer representations, degrade generation quality, and unpredictably shift social biases. Critically, 128 padding tokens raise the harmful prompt attack success rate of Llama-3.1-8B from 8% to 77.5%, effectively constituting a jailbreak.
 
 ## Background & Motivation
-**State of the Field**: Padding tokens are widely used in batch inference to align sequence lengths and are theoretically masked out via attention masks, leaving computation unaffected.
+**Background**: Padding tokens are widely used in batch inference to align sequence lengths and are theoretically masked out via attention masks, leaving computation unaffected.
 
 **Limitations of Prior Work**: In practice, this assumption is frequently violated. In Hugging Face's `transformers` library, if `attention_mask` is not explicitly passed, padding tokens are treated as valid inputs. Practices such as right-side padding for decoder-only models or repurposing `[EOS]` as the pad token also silently corrupt generation. These are not rare edge cases—padding mishandling is a common pitfall in production pipelines that require batch processing.
 
-**Root Cause**: Padding is widely regarded as a "harmless technical detail," yet no one has systematically studied how much damage mishandled padding can cause—particularly along critical dimensions such as safety and fairness.
+**Key Challenge**: Padding is widely regarded as a "harmless technical detail," yet no one has systematically studied how much damage mishandled padding can cause—particularly along critical dimensions such as safety and fairness.
 
-**Paper Goals**: Systematically quantify the impact of padding tokens on LLM behavior across four dimensions: activation representations, generation quality, social bias, and safety.
+**Goal**: Systematically quantify the impact of padding tokens on LLM behavior across four dimensions: activation representations, generation quality, social bias, and safety.
 
-**Starting Point**: A controlled experimental design—prepending varying numbers of padding tokens (0 to 128) to inputs, deliberately allowing them to participate in computation (simulating common attention mask omission errors), and observing changes in model behavior.
+**Key Insight**: A controlled experimental design—prepending varying numbers of padding tokens (0 to 128) to inputs, deliberately allowing them to participate in computation (simulating common attention mask omission errors), and observing changes in model behavior.
 
 **Core Idea**: Padding is not benign; it drifts activation space, degrades quality, alters bias, and undermines alignment—representing a significantly underestimated deployment robustness risk.
 

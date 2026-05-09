@@ -38,7 +38,7 @@ This paper proposes EVA, a framework that treats events as language tokens and e
 
 **Key differences between events and language**: (i) Information density — a single language token carries rich semantics, whereas a single event records only a pixel-level brightness change and requires aggregation to be meaningful; (ii) Spatial locality — events carry spatial attributes (pixel coordinates), whereas language does not. These two differences guide the architectural design choices.
 
-**Paper Goals**: Design a more expressive asynchronous encoder combined with a self-supervised learning method so that the A2S framework not only surpasses prior A2S methods but also, for the first time, successfully handles challenging detection tasks.
+**Goal**: Design a more expressive asynchronous encoder combined with a self-supervised learning method so that the A2S framework not only surpasses prior A2S methods but also, for the first time, successfully handles challenging detection tasks.
 
 ## Method
 

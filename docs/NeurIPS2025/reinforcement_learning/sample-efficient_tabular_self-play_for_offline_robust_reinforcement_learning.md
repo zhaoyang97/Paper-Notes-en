@@ -30,13 +30,13 @@ This paper proposes the RTZ-VI-LCB algorithm for offline robust two-player zero-
 
 ### State of the Field
 
-**State of the Field**: Offline RL learns policies from a fixed dataset without online interaction. Robust RL further accounts for environmental uncertainty, where the transition kernel may vary within an uncertainty set. The combination of these two settings forms the emerging direction of offline robust RL.
+**Background**: Offline RL learns policies from a fixed dataset without online interaction. Robust RL further accounts for environmental uncertainty, where the transition kernel may vary within an uncertainty set. The combination of these two settings forms the emerging direction of offline robust RL.
 
 **Limitations of Prior Work**: (a) Existing offline robust RL methods exhibit redundant dependence on $S$ (number of states) and $AB$ (joint action space size) in their sample complexity bounds; (b) distribution coverage measures are overly conservative — standard concentrability coefficients are excessively pessimistic for worst-case analysis.
 
-**Root Cause**: How can one simultaneously handle distributional shift and environmental uncertainty under partial coverage, while obtaining tight sample complexity bounds?
+**Key Challenge**: How can one simultaneously handle distributional shift and environmental uncertainty under partial coverage, while obtaining tight sample complexity bounds?
 
-**Starting Point**: The paper introduces *robust unilateral clipped concentrability* as a tighter distribution measure, and employs two-stage subsampling to suppress statistical dependencies, thereby achieving information-theoretically optimal sample bounds.
+**Key Insight**: The paper introduces *robust unilateral clipped concentrability* as a tighter distribution measure, and employs two-stage subsampling to suppress statistical dependencies, thereby achieving information-theoretically optimal sample bounds.
 
 **Core Idea**: A model-based approach — first estimate the uncertainty set of the transition kernel, then perform pessimistic (LCB) value iteration over this set, using Bernstein inequalities to obtain tighter statistical estimates.
 

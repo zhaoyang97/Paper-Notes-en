@@ -28,13 +28,13 @@ This paper proposes the Canoe framework, which synthesizes four types of verifia
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are widely deployed in context-grounded information retrieval systems (e.g., document QA, text summarization), yet they frequently generate responses inconsistent with the provided context—a phenomenon known as faithfulness hallucination—which undermines system trustworthiness.
+**Background**: LLMs are widely deployed in context-grounded information retrieval systems (e.g., document QA, text summarization), yet they frequently generate responses inconsistent with the provided context—a phenomenon known as faithfulness hallucination—which undermines system trustworthiness.
 
 **Limitations of Prior Work**: (a) **Faithfulness does not improve with scale**—larger models possess more parametric knowledge and are thus more prone to knowledge conflicts with the provided context, leading them to disregard it; (b) **Existing methods are task-specific**—for instance, Context-DPO improves short-form QA faithfulness but fails to generalize to tasks such as summarization; (c) **Long-form faithfulness data is difficult to annotate**—short-form QA has reference answers that enable rule-based verification, whereas faithfulness in long-form generation cannot be verified by rules, and manual annotation does not scale.
 
-**Root Cause**: Short-form data is easy to verify but cannot directly train long-form faithfulness; applying GRPO with short-form data alone causes the model to learn a shortcut of copying text spans from the context, thereby losing long-form generation capability.
+**Key Challenge**: Short-form data is easy to verify but cannot directly train long-form faithfulness; applying GRPO with short-form data alone causes the model to learn a shortcut of copying text spans from the context, thereby losing long-form generation capability.
 
-**Starting Point**: Design a proxy reward that uses the correctness of short-form answers to indirectly assess the faithfulness of long-form responses—if a long-form response can guide the model to correctly answer a short-form question, it is considered faithful.
+**Key Insight**: Design a proxy reward that uses the correctness of short-form answers to indirectly assess the faithfulness of long-form responses—if a long-form response can guide the model to correctly answer a short-form question, it is considered faithful.
 
 **Core Idea**: Synthesize verifiable short-form QA data across four diverse task types, and apply Dual-GRPO with three rule-based rewards to jointly optimize short- and long-form generation, improving faithfulness across 11 tasks without any manual annotation.
 

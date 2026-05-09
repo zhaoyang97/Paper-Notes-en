@@ -28,18 +28,18 @@ This paper proposes IE-CL (Incremental-Entropy Contrastive Learning), a framewor
 
 ## Background & Motivation
 
-**State of the Field**: Self-supervised contrastive learning has become a central paradigm in representation learning, typically built upon mutual information maximization (e.g., InfoNCE) to learn invariant features across augmented views. Methods such as SimCLR, MoCo, and BYOL have achieved remarkable success.
+**Background**: Self-supervised contrastive learning has become a central paradigm in representation learning, typically built upon mutual information maximization (e.g., InfoNCE) to learn invariant features across augmented views. Methods such as SimCLR, MoCo, and BYOL have achieved remarkable success.
 
 **Limitations of Prior Work**:
    - Static data augmentation strategies (random cropping, color jittering, etc.) maintain fixed distributions throughout training and cannot adaptively adjust augmentation difficulty in response to learning progress.
    - Rigid invariance constraints force the encoder to produce identical representations for all augmentations, potentially causing over-compression of useful information—i.e., an excessively tight information bottleneck.
    - Although mutual information maximization is intuitively sound, it overlooks the effect of information increments introduced by the augmentation process itself on representation quality.
 
-**Root Cause**: Stronger data augmentations introduce greater informational variation, which should theoretically support more robust feature learning; however, excessively strong augmentations may violate semantic preservation boundaries and break the semantic consistency of positive pairs. A unified framework for balancing "entropy generation" and "semantic preservation" is lacking.
+**Key Challenge**: Stronger data augmentations introduce greater informational variation, which should theoretically support more robust feature learning; however, excessively strong augmentations may violate semantic preservation boundaries and break the semantic consistency of positive pairs. A unified framework for balancing "entropy generation" and "semantic preservation" is lacking.
 
-**Paper Goals**: To design a theoretically grounded contrastive learning framework that maximizes information entropy gain between augmented views while maintaining semantic consistency.
+**Goal**: To design a theoretically grounded contrastive learning framework that maximizes information entropy gain between augmented views while maintaining semantic consistency.
 
-**Starting Point**: The encoder is redefined as an information bottleneck, and the optimization objective is reformulated from "mutual information maximization" to "incremental information entropy maximization," decomposing entropy into two independently optimizable sub-objectives: generation and preservation.
+**Key Insight**: The encoder is redefined as an information bottleneck, and the optimization objective is reformulated from "mutual information maximization" to "incremental information entropy maximization," decomposing entropy into two independently optimizable sub-objectives: generation and preservation.
 
 **Core Idea**: Adaptively generate information entropy via a learnable transformation module, and preserve entropy via encoder regularization—jointly overcoming the dual limitations of static augmentation and rigid invariance.
 

@@ -27,15 +27,15 @@ content_hash: 3d1bed560eb0c166
 This paper defines the novel task of Aesthetic Guidance (AG) and constructs the AesGuide benchmark (10,748 photos annotated with aesthetic scores, analyses, and guidance), then proposes Venus, a two-stage framework that first empowers MLLMs with aesthetic guidance capability via progressive aesthetic QA, and subsequently activates aesthetic cropping capability through CoT reasoning, achieving state-of-the-art performance on both tasks.
 
 ## Background & Motivation
-**State of the Field**: Computational aesthetics has evolved from perception-level tasks such as aesthetic scoring and quality description to higher-level understanding. However, "aesthetic guidance"—identifying aesthetic issues and providing actionable shooting suggestions—remains a critical yet systematically understudied capability.
+**Background**: Computational aesthetics has evolved from perception-level tasks such as aesthetic scoring and quality description to higher-level understanding. However, "aesthetic guidance"—identifying aesthetic issues and providing actionable shooting suggestions—remains a critical yet systematically understudied capability.
 
 **Limitations of Prior Work**: (a) General MLLMs (e.g., GPT-4o) and aesthetic-specialized MLLMs (e.g., AesExpert) tend to produce overly positive evaluations when presented with photos, failing to identify problems or provide actionable recommendations; (b) aesthetic cropping models, while capable of cropping, lack interpretability and interactivity, as they can neither explain their cropping rationale nor adapt to user preferences.
 
-**Root Cause**: Existing aesthetic datasets primarily annotate "what is good," lacking guidance-oriented annotations that capture "what is wrong" and "how to improve." Furthermore, MLLMs are misaligned with the human aesthetic reasoning process.
+**Key Challenge**: Existing aesthetic datasets primarily annotate "what is good," lacking guidance-oriented annotations that capture "what is wrong" and "how to improve." Furthermore, MLLMs are misaligned with the human aesthetic reasoning process.
 
-**Paper Goals**: (a) Construct the first aesthetic guidance dataset and benchmark; (b) empower MLLMs with aesthetic guidance capability; (c) leverage aesthetic guidance capability to activate cropping capability.
+**Goal**: (a) Construct the first aesthetic guidance dataset and benchmark; (b) empower MLLMs with aesthetic guidance capability; (c) leverage aesthetic guidance capability to activate cropping capability.
 
-**Starting Point**: Aesthetic guidance follows a human cognitive process of "overall impression → analysis of strengths and weaknesses → improvement suggestions." MLLMs are trained to simulate this process through progressive complexity QA.
+**Key Insight**: Aesthetic guidance follows a human cognitive process of "overall impression → analysis of strengths and weaknesses → improvement suggestions." MLLMs are trained to simulate this process through progressive complexity QA.
 
 **Core Idea**: Through a two-stage approach—aesthetic guidance empowerment (progressive QA) and aesthetic cropping activation (CoT reasoning rationale)—Venus achieves both aesthetic understanding and aesthetic creation in MLLMs.
 

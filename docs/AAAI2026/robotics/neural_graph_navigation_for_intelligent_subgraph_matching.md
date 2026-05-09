@@ -39,7 +39,7 @@ State-of-the-art methods adopt a filtering–ordering–enumeration framework: t
 4. End-to-end methods cannot perform search and backtracking; neural algorithmic reasoning cannot scale to exponential search spaces.
 5. Two core technical challenges: (i) how to align the query graph with dynamically evolving partial match structures, and (ii) how to design training objectives that capture the dynamics of matching search.
 
-**Paper Goals**: Transform brute-force enumeration into neural-guided search while preserving enumeration completeness.
+**Goal**: Transform brute-force enumeration into neural-guided search while preserving enumeration completeness.
 
 ## Method
 

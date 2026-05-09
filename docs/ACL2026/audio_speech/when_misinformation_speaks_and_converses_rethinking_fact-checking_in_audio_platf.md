@@ -29,15 +29,15 @@ This position paper argues that misinformation on audio platforms is fundamental
 
 ## Background & Motivation
 
-**State of the Field**: Audio platforms have evolved from pure entertainment into central channels of public discourse—spanning podcasts, radio, WhatsApp voice messages, and live streams. With millions of shows and hundreds of millions of listeners, audio platforms have become a primary vector for misinformation dissemination.
+**Background**: Audio platforms have evolved from pure entertainment into central channels of public discourse—spanning podcasts, radio, WhatsApp voice messages, and live streams. With millions of shows and hundreds of millions of listeners, audio platforms have become a primary vector for misinformation dissemination.
 
 **Limitations of Prior Work**: Existing fact-checking pipelines are designed almost exclusively for written claims (e.g., textual claim detection → evidence retrieval → verdict), ignoring the distinctive properties of spoken media. Naively transcribing audio into text before fact-checking discards a substantial amount of critical information.
 
-**Root Cause**: Audio misinformation is not "textual content with a transcript"—it is structurally distinct along two dimensions: (1) **spoken properties**, wherein persuasion is conveyed through prosody, pacing, and emotion; and (2) **conversational properties**, wherein misinformation unfolds across multiple turns, speakers, and episodes. These dual attributes introduce verification challenges that traditional methods are ill-equipped to address.
+**Key Challenge**: Audio misinformation is not "textual content with a transcript"—it is structurally distinct along two dimensions: (1) **spoken properties**, wherein persuasion is conveyed through prosody, pacing, and emotion; and (2) **conversational properties**, wherein misinformation unfolds across multiple turns, speakers, and episodes. These dual attributes introduce verification challenges that traditional methods are ill-equipped to address.
 
-**Paper Goals**: To synthesize cross-modal and cross-platform evidence, critically survey existing datasets and methods, clarify why current pipelines fail on audio, and argue that advancing fact-checking requires rethinking verification pipelines around the spoken and conversational realities of audio.
+**Goal**: To synthesize cross-modal and cross-platform evidence, critically survey existing datasets and methods, clarify why current pipelines fail on audio, and argue that advancing fact-checking requires rethinking verification pipelines around the spoken and conversational realities of audio.
 
-**Starting Point**: A systematic analysis of the unique challenges of audio misinformation along two axes: modality difference (text vs. speech) and structural difference (isolated claims vs. multi-turn dialogue).
+**Key Insight**: A systematic analysis of the unique challenges of audio misinformation along two axes: modality difference (text vs. speech) and structural difference (isolated claims vs. multi-turn dialogue).
 
 **Core Idea**: Detection of audio misinformation cannot simply rely on a "transcription + text fact-checking" paradigm; prosodic features, speaker dynamics, and conversational structure must be incorporated into the design of fact-checking pipelines.
 

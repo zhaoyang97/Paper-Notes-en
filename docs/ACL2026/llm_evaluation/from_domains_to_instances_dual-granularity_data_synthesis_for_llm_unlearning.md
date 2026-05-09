@@ -29,15 +29,15 @@ This paper formally defines two granularities of LLM unlearning—domain-level a
 
 ## Background & Motivation
 
-**State of the Field**: LLMs trained on massive corpora tend to memorize private, harmful, or copyrighted content. Machine unlearning mitigates this through fine-tuning methods (gradient ascent, NPO, etc.) optimized over a defined forget set and retain set, steering model behavior toward that of a model never trained on the target data.
+**Background**: LLMs trained on massive corpora tend to memorize private, harmful, or copyrighted content. Machine unlearning mitigates this through fine-tuning methods (gradient ascent, NPO, etc.) optimized over a defined forget set and retain set, steering model behavior toward that of a model never trained on the target data.
 
 **Limitations of Prior Work**: (1) Forget sets in existing unlearning benchmarks often fail to accurately reflect the model's true internal knowledge, leading to over- or under-estimation of unlearning effectiveness; (2) Benchmark construction relies heavily on manual curation (e.g., WMDP requires hand-collected domain texts), limiting scalability; (3) Existing work (e.g., TOFU) uses templated QA pairs, allowing models to "pass" unlearning evaluations by suppressing surface patterns while recovering target knowledge upon rephrasing; (4) Relying on external strong models (e.g., GPT-4o-mini) to generate unlearning data causes a mismatch between the synthetic data and the target model's knowledge boundary.
 
-**Root Cause**: Effective unlearning must target underlying information rather than surface form—semantically equivalent variants (paraphrases, reorderings) can still leak knowledge even after verbatim samples are removed. Yet existing forget sets cover only the original training text $D^{real}_f$, without extending to the ideal forget set $D^{ideal}_f$.
+**Key Challenge**: Effective unlearning must target underlying information rather than surface form—semantically equivalent variants (paraphrases, reorderings) can still leak knowledge even after verbatim samples are removed. Yet existing forget sets cover only the original training text $D^{real}_f$, without extending to the ideal forget set $D^{ideal}_f$.
 
-**Paper Goals**: (1) Formally define domain-level and instance-level unlearning granularities; (2) Design an automated framework that generates high-quality forget datasets aligned with the target model's internal knowledge distribution; (3) Propose a unified quality evaluation suite.
+**Goal**: (1) Formally define domain-level and instance-level unlearning granularities; (2) Design an automated framework that generates high-quality forget datasets aligned with the target model's internal knowledge distribution; (3) Propose a unified quality evaluation suite.
 
-**Starting Point**: Have the target model generate its own unlearning data—synthetic data produced this way is naturally aligned with the model's knowledge boundary, avoiding the distributional mismatch introduced by external models.
+**Key Insight**: Have the target model generate its own unlearning data—synthetic data produced this way is naturally aligned with the model's knowledge boundary, avoiding the distributional mismatch introduced by external models.
 
 **Core Idea**: Through a two-stage strategy of "seed-guided synthesis (broad coverage) + adversarial probing (deep knowledge elicitation)," the target model is prompted to expose its own memorized knowledge, yielding a forget dataset that more faithfully reflects the model's true knowledge distribution.
 

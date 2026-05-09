@@ -29,15 +29,15 @@ This paper proposes CBCTRepD, a bilingual report generation system for oral and 
 
 ## Background & Motivation
 
-**State of the Field**: Oral and maxillofacial cone-beam CT (CBCT) is a widely used three-dimensional imaging modality in dental clinical practice. Generative AI has achieved notable progress in report generation for two-dimensional imaging modalities such as chest X-rays (e.g., R2Gen, CheXagent).
+**Background**: Oral and maxillofacial cone-beam CT (CBCT) is a widely used three-dimensional imaging modality in dental clinical practice. Generative AI has achieved notable progress in report generation for two-dimensional imaging modalities such as chest X-rays (e.g., R2Gen, CheXagent).
 
 **Limitations of Prior Work**: CBCT report generation faces three major bottlenecks: (1) high-quality paired CBCT–report data are extremely scarce, with virtually no publicly available datasets; (2) CBCT is volumetric data involving 55 oral disease entities, making interpretation far more complex than two-dimensional imaging; (3) existing evaluation paradigms assess only the quality of direct AI output, overlooking the clinically common scenario of radiologist–AI collaboration.
 
-**Root Cause**: AI report generation technology is mature, yet the data infrastructure and evaluation frameworks lag behind — without large-scale paired data, reliable models cannot be trained; without collaborative evaluation frameworks, the actual clinical value of AI in real-world workflows cannot be measured.
+**Key Challenge**: AI report generation technology is mature, yet the data infrastructure and evaluation frameworks lag behind — without large-scale paired data, reliable models cannot be trained; without collaborative evaluation frameworks, the actual clinical value of AI in real-world workflows cannot be measured.
 
-**Paper Goals**: To develop a CBCT report generation system that integrates into routine radiological workflows, and to quantify its empowerment effect on clinicians of varying experience levels through a multi-level evaluation framework.
+**Goal**: To develop a CBCT report generation system that integrates into routine radiological workflows, and to quantify its empowerment effect on clinicians of varying experience levels through a multi-level evaluation framework.
 
-**Starting Point**: Simultaneously addressing data, model, and evaluation dimensions — constructing a large-scale dataset, developing a bilingual report generation system, and designing a collaborative evaluation framework.
+**Key Insight**: Simultaneously addressing data, model, and evaluation dimensions — constructing a large-scale dataset, developing a bilingual report generation system, and designing a collaborative evaluation framework.
 
 **Core Idea**: A CBCT report generation system is trained on 7,408 paired cases; an "AI draft + clinician editing" collaborative paradigm and a multi-level evaluation framework are employed to demonstrate clinically meaningful improvements across radiologists of all experience levels.
 

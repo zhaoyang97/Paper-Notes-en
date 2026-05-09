@@ -29,15 +29,15 @@ This paper proposes the Selection Relevance Score, a retraining-free metric for 
 
 ## Background & Motivation
 
-**State of the Field**: Training data influence estimation methods (e.g., influence functions) can quantify each training document's contribution to model outputs, making them a promising source for example-based explanations. However, humans cannot process thousands of documents, so only a small number of training samples can be selected as explanations in practice.
+**Background**: Training data influence estimation methods (e.g., influence functions) can quantify each training document's contribution to model outputs, making them a promising source for example-based explanations. However, humans cannot process thousands of documents, so only a small number of training samples can be selected as explanations in practice.
 
 **Limitations of Prior Work**: (1) Selecting the top-k highest-influence samples is the current default strategy, but high-influence samples tend to be global outliers (e.g., mislabeled data) and are not necessarily the most relevant to the test instance at hand; (2) top-k samples are often highly redundant, leading to diminishing returns; (3) existing evaluation methods either operate in embedding space (whereas ranking is performed in gradient space), rely on class labels (inapplicable to generative tasks), or require retraining (infeasible for LLMs).
 
-**Root Cause**: Influence estimation methods assign independent scores to individual training samples, but effective explanations require consideration of inter-sample complementarity and redundancy — a good explanation set should collectively cover the key aspects of the model's decision.
+**Key Challenge**: Influence estimation methods assign independent scores to individual training samples, but effective explanations require consideration of inter-sample complementarity and redundancy — a good explanation set should collectively cover the key aspects of the model's decision.
 
-**Paper Goals**: (1) Propose a retraining-free metric for evaluating selection quality; (2) expose the shortcomings of common selection strategies; (3) design improved selection strategies.
+**Goal**: (1) Propose a retraining-free metric for evaluating selection quality; (2) expose the shortcomings of common selection strategies; (3) design improved selection strategies.
 
-**Starting Point**: Framing example-based explanation as a gradient reconstruction task — good explanation samples should enable reconstruction of the test instance's gradient via a linear combination of their own gradients.
+**Key Insight**: Framing example-based explanation as a gradient reconstruction task — good explanation samples should enable reconstruction of the test instance's gradient via a linear combination of their own gradients.
 
 **Core Idea**: Selection relevance = the ability of selected samples' gradients to reconstruct the test instance's gradient; a high-quality explanation set should maximize reconstruction fidelity.
 

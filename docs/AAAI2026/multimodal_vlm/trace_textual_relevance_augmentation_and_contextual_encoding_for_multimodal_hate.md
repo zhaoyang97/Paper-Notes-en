@@ -28,15 +28,15 @@ This paper proposes the CAMU framework, which achieves 0.807 accuracy and 0.806 
 
 ## Background & Motivation
 
-**State of the Field**: Hateful meme detection is a core task in multimodal content moderation. Mainstream approaches leverage the cross-modal alignment capabilities of vision-language models such as CLIP via contrastive learning or projection-layer fine-tuning to classify whether a meme contains hateful content. The current SOTA, PALI-X-VPD, achieves 0.892 AUROC using a 55B-parameter large language model with code generation and chain-of-thought reasoning.
+**Background**: Hateful meme detection is a core task in multimodal content moderation. Mainstream approaches leverage the cross-modal alignment capabilities of vision-language models such as CLIP via contrastive learning or projection-layer fine-tuning to classify whether a meme contains hateful content. The current SOTA, PALI-X-VPD, achieves 0.892 AUROC using a 55B-parameter large language model with code generation and chain-of-thought reasoning.
 
 **Limitations of Prior Work**: The meaning of a meme is not a simple superposition of image and text, but a complex fusion arising from cultural context, irony, and implication. Existing methods face two core challenges: (1) the "benign confounders" problem—identical text paired with different images can shift a meme from hateful to non-hateful, making unimodal features unreliable; (2) simple projection-layer fine-tuning (e.g., Hate-CLIPper) is insufficient to capture subtle semantic relationships in memes, while large-model approaches incur prohibitive computational overhead for real-time deployment.
 
-**Root Cause**: High performance requires deep semantic understanding at high computational cost, yet lightweight methods cannot fully exploit context information augmented by captions.
+**Key Challenge**: High performance requires deep semantic understanding at high computational cost, yet lightweight methods cannot fully exploit context information augmented by captions.
 
-**Paper Goals**: Design a hierarchical, interpretable framework that achieves high-accuracy hateful content detection through multimodal context augmentation while remaining computationally efficient.
+**Goal**: Design a hierarchical, interpretable framework that achieves high-accuracy hateful content detection through multimodal context augmentation while remaining computationally efficient.
 
-**Starting Point**: The observation that meme text typically does not describe the image but instead constructs meaning jointly with it, necessitating visual grounding to first understand image content, then generating context-augmented captions, and finally driving classification through high-quality caption selection.
+**Key Insight**: The observation that meme text typically does not describe the image but instead constructs meaning jointly with it, necessitating visual grounding to first understand image content, then generating context-augmented captions, and finally driving classification through high-quality caption selection.
 
 **Core Idea**: Use visual grounding combined with an LVLM to generate augmented captions, employ a caption scoring network to select the most relevant caption, and fine-tune only the last $n$ layers of the CLIP text encoder for efficient classification.
 

@@ -29,10 +29,10 @@ This paper studies downlink transmission from multiple LEO satellites jointly se
 
 ## Background & Motivation
 
-1. **State of the Field**: LEO satellite communications have emerged as a key technology for 6G global coverage due to low latency and low propagation loss. Existing research has primarily focused on cooperative transmission for single-antenna ground users, while multi-satellite joint MIMO is becoming an active research direction.
+1. **Background**: LEO satellite communications have emerged as a key technology for 6G global coverage due to low latency and low propagation loss. Existing research has primarily focused on cooperative transmission for single-antenna ground users, while multi-satellite joint MIMO is becoming an active research direction.
 2. **Limitations of Prior Work**: (a) Most existing multi-satellite cooperative transmission studies assume single-antenna users, which limits spatial multiplexing gains; (b) many methods rely on phase-synchronized coherent joint transmission across satellites, which is practically infeasible for LEO constellations due to large inter-satellite separations and significant propagation delay differences; (c) joint transmission requires distributing all data streams to all satellites, incurring prohibitively large fronthaul overhead.
-3. **Root Cause**: Joint transmission offers superior performance but demands high fronthaul capacity, whereas reducing fronthaul requirements may degrade performance—striking a balance between the two is the central challenge.
-4. **Paper Goals**: Two non-coherent transmission modes are proposed—joint transmission (all satellites transmit all streams) and streamwise transmission (each stream is transmitted by a single satellite)—with corresponding precoder optimization and stream-to-satellite assignment algorithms.
+3. **Key Challenge**: Joint transmission offers superior performance but demands high fronthaul capacity, whereas reducing fronthaul requirements may degrade performance—striking a balance between the two is the central challenge.
+4. **Goal**: Two non-coherent transmission modes are proposed—joint transmission (all satellites transmit all streams) and streamwise transmission (each stream is transmitted by a single satellite)—with corresponding precoder optimization and stream-to-satellite assignment algorithms.
 5. **Core Idea**: Statistical CSI (angular information and large-scale fading) is exploited to eliminate the need for inter-satellite phase synchronization, while eigenmode analysis enables efficient stream-to-satellite association.
 
 ## Method

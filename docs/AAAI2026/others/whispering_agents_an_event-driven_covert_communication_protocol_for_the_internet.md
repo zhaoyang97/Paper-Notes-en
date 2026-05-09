@@ -28,15 +28,15 @@ This paper presents the first formal definition of a "Covert Event Channel" in t
 
 ## Background & Motivation
 
-1. **State of the Field**: Large language models have catalyzed the emergence of the Internet of Agents (IoA), in which users delegate high-level goals to orchestrator agents that discover, negotiate with, and coordinate specialized agent networks to accomplish complex tasks. Agent-to-Agent (A2A) communication is becoming foundational infrastructure for the future digital society.
+1. **Background**: Large language models have catalyzed the emergence of the Internet of Agents (IoA), in which users delegate high-level goals to orchestrator agents that discover, negotiate with, and coordinate specialized agent networks to accomplish complex tasks. Agent-to-Agent (A2A) communication is becoming foundational infrastructure for the future digital society.
 
 2. **Limitations of Prior Work**: Standard A2A protocols (e.g., Google A2A) protect message content through encryption but cannot conceal the communication behavior itself. Even when messages are unreadable, interaction patterns between certain agents may leak critical strategic information (e.g., encrypted communications between logistics agents and naval vessels revealing asset redeployment). Existing steganographic methods are designed for static carriers (text, images) or rigid protocol fields, making them ill-suited to the dynamic, event-driven, multi-turn interaction scenarios characteristic of IoA.
 
-3. **Root Cause**: The rich event-driven environment of IoA provides a powerful medium for covert communication, yet formal threat models, practical multi-turn covert communication protocols, and comprehensive evaluation frameworks are absent.
+3. **Key Challenge**: The rich event-driven environment of IoA provides a powerful medium for covert communication, yet formal threat models, practical multi-turn covert communication protocols, and comprehensive evaluation frameworks are absent.
 
-4. **Paper Goals**: To establish a formal model of covert communication for IoA, design an engineering-grade reliable protocol, and comprehensively evaluate its capacity, robustness, and undetectability.
+4. **Goal**: To establish a formal model of covert communication for IoA, design an engineering-grade reliable protocol, and comprehensively evaluate its capacity, robustness, and undetectability.
 
-5. **Starting Point**: Each atomic event in agent conversations is decomposed as $e = (ag, act, t)$ into three modulatable components—data payload (storage channel), timestamp (timing channel), and action type (behavioral channel)—to construct a hybrid covert channel.
+5. **Key Insight**: Each atomic event in agent conversations is decomposed as $e = (ag, act, t)$ into three modulatable components—data payload (storage channel), timestamp (timing channel), and action type (behavioral channel)—to construct a hybrid covert channel.
 
 6. **Core Idea**: The natural behavioral patterns of agent conversations (content, timing, and action selection) serve as a three-dimensional covert carrier; secret data is embedded via provably secure generative steganography, and an Intent Indistinguishability (IND-INT) security notion is introduced.
 

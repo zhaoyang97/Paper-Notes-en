@@ -29,7 +29,7 @@ This work rigorously proves, from the perspective of gradient descent training d
 
 ## Background & Motivation
 
-**State of the Field**: Transformers have demonstrated remarkable capability in multi-step reasoning, and Chain-of-Thought (CoT) prompting further unleashes this ability. However, our theoretical understanding of *how* Transformers acquire reasoning skills through training remains very limited.
+**Background**: Transformers have demonstrated remarkable capability in multi-step reasoning, and Chain-of-Thought (CoT) prompting further unleashes this ability. However, our theoretical understanding of *how* Transformers acquire reasoning skills through training remains very limited.
 
 **Theoretical Gap**:
    - Existing work on the expressive power of Transformers is primarily constructive—proving the existence of weight configurations that solve a task, without proving that gradient descent can find them.
@@ -41,7 +41,7 @@ This work rigorously proves, from the perspective of gradient descent training d
    - How do multiple attention heads autonomously divide labor and coordinate?
    - How does the structured design of CoT intermediate steps enable shallow models to solve problems that nominally require deeper architectures?
 
-**Starting Point**: Tree Path-Finding is adopted as an abstract symbolic model of multi-step reasoning—structurally clean, analytically tractable, and capturing the essential elements of reasoning.
+**Key Insight**: Tree Path-Finding is adopted as an abstract symbolic model of multi-step reasoning—structurally clean, analytically tractable, and capturing the essential elements of reasoning.
 
 ## Method
 

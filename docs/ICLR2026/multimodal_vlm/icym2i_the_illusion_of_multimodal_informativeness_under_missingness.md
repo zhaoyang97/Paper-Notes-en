@@ -29,15 +29,15 @@ This paper identifies a largely overlooked problem in multimodal learning: distr
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal learning is widely applied in healthcare, autonomous driving, recommendation systems, and other domains, with a core assumption that "multimodal > unimodal." In practice, modality value is commonly assessed via ablation studies—measuring performance degradation when a modality is removed.
+**Background**: Multimodal learning is widely applied in healthcare, autonomous driving, recommendation systems, and other domains, with a core assumption that "multimodal > unimodal." In practice, modality value is commonly assessed via ablation studies—measuring performance degradation when a modality is removed.
 
 **Limitations of Prior Work**: Real-world data collection is subject to substantial missingness due to sensor failures, cost constraints, privacy restrictions, and other factors, rendering certain modalities unavailable for certain samples. The prevailing approach is to discard incomplete samples and train and evaluate on the complete-case subset. However, if missingness is not completely at random (i.e., non-MCAR), the resulting subset distribution diverges from the true distribution, yielding biased modality value estimates.
 
-**Root Cause**: The missingness mechanism is confounded with modality signals. When the missingness of a modality is associated with the label (MAR), the apparent "performance" of that modality on the complete-case subset is systematically over- or underestimated—a form of bias that has been almost entirely overlooked in the existing literature.
+**Key Challenge**: The missingness mechanism is confounded with modality signals. When the missingness of a modality is associated with the label (MAR), the apparent "performance" of that modality on the complete-case subset is systematically over- or underestimated—a form of bias that has been almost entirely overlooked in the existing literature.
 
-**Paper Goals**: Given non-random missingness, how can one unbiasedly estimate (a) the predictive utility of a modality (i.e., how much performance improves upon adding it) and (b) its information-theoretic value (i.e., the unique, shared, and complementary information it carries)?
+**Goal**: Given non-random missingness, how can one unbiasedly estimate (a) the predictive utility of a modality (i.e., how much performance improves upon adding it) and (b) its information-theoretic value (i.e., the unique, shared, and complementary information it carries)?
 
-**Starting Point**: The paper draws on inverse probability weighting (IPW) from causal inference, treating missingness-induced distribution shift as a correctable form of selection bias.
+**Key Insight**: The paper draws on inverse probability weighting (IPW) from causal inference, treating missingness-induced distribution shift as a correctable form of selection bias.
 
 **Core Idea**: IPW is applied simultaneously to the training loss and evaluation metrics, enabling unbiased modality value estimation even when the observed data contains missingness.
 

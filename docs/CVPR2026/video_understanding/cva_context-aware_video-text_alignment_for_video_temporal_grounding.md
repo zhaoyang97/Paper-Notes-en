@@ -28,15 +28,15 @@ This paper proposes CVA (Context-aware Video-text Alignment), a framework compri
 
 ## Background & Motivation
 
-**State of the Field**: Video Temporal Grounding (VTG) aims to localize target moments in untrimmed videos given text queries, encompassing two subtasks: Video Moment Retrieval (VMR) and Highlight Detection (HD). DETR-based end-to-end approaches have become the dominant paradigm in recent years.
+**Background**: Video Temporal Grounding (VTG) aims to localize target moments in untrimmed videos given text queries, encompassing two subtasks: Video Moment Retrieval (VMR) and Highlight Detection (HD). DETR-based end-to-end approaches have become the dominant paradigm in recent years.
 
 **Limitations of Prior Work**: (1) Models tend to learn spurious correlations—over-associating text queries with static backgrounds rather than focusing on target actions or events. (2) TD-DETR introduced content-mixing augmentation to break such correlations, but the replacement segments are selected independently of the text query, potentially introducing false negatives (i.e., semantically relevant segments are replaced yet labeled as negatives).
 
-**Root Cause**: The effectiveness of content-mixing augmentation depends on the semantics of the replacement segments—query-agnostic mixing cannot guarantee that replaced segments are truly unrelated to the query.
+**Key Challenge**: The effectiveness of content-mixing augmentation depends on the semantics of the replacement segments—query-agnostic mixing cannot guarantee that replaced segments are truly unrelated to the query.
 
-**Paper Goals**: How can context be diversified while avoiding false negatives? How can models learn context-invariant representations at temporal boundaries?
+**Goal**: How can context be diversified while avoiding false negatives? How can models learn context-invariant representations at temporal boundaries?
 
-**Starting Point**: (1) Precompute text-video similarity statistics using CLIP to construct a query-aware valid replacement pool at the dataset level. (2) Apply contrastive learning to reinforce context-invariant representations at temporal boundaries. (3) Employ a hierarchical Transformer to capture multi-scale temporal context.
+**Key Insight**: (1) Precompute text-video similarity statistics using CLIP to construct a query-aware valid replacement pool at the dataset level. (2) Apply contrastive learning to reinforce context-invariant representations at temporal boundaries. (3) Employ a hierarchical Transformer to capture multi-scale temporal context.
 
 **Core Idea**: Query-aware data augmentation + boundary-focused contrastive learning + hierarchical temporal modeling = state-of-the-art temporal grounding.
 

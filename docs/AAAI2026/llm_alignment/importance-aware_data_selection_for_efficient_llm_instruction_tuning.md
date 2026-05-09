@@ -27,15 +27,15 @@ content_hash: 2e04cee104fc4c21
 This paper proposes MIWV (Model Instruction Weakness Value), a metric that measures the importance of each instruction sample for improving model capability by comparing LLM loss with and without a one-shot ICL demonstration. Using only 1% (520 samples) of the Alpaca dataset, the method comprehensively outperforms fine-tuning on the full 52,002 samples.
 
 ## Background & Motivation
-**State of the Field**: Instruction tuning is a key approach for improving LLMs' instruction-following ability. Existing methods largely focus on collecting larger and more diverse datasets (e.g., Alpaca 52K, WizardLM 63K) or filtering data by scoring with ChatGPT or external models.
+**Background**: Instruction tuning is a key approach for improving LLMs' instruction-following ability. Existing methods largely focus on collecting larger and more diverse datasets (e.g., Alpaca 52K, WizardLM 63K) or filtering data by scoring with ChatGPT or external models.
 
 **Limitations of Prior Work**: (a) Blindly scaling datasets introduces noise and redundancy without guaranteed improvement; (b) Quality-scoring methods such as InstructMining show limited effectiveness and fail to surpass full-data training; (c) Alpagasus and Deita rely on the ChatGPT API for scoring, incurring high cost and limited efficiency; (d) SelectIT and DiverseEvol require additional model training, reducing efficiency.
 
-**Root Cause**: Existing data selection methods either depend on external models (costly and potentially biased) or evaluate data quality in isolation without considering the characteristics of the target model, making it impossible to identify the most valuable data for a specific LLM.
+**Key Challenge**: Existing data selection methods either depend on external models (costly and potentially biased) or evaluate data quality in isolation without considering the characteristics of the target model, making it impossible to identify the most valuable data for a specific LLM.
 
-**Paper Goals**: To select the subset of instruction data that maximally improves a target LLM's capability using only that model itself—without external models or additional training.
+**Goal**: To select the subset of instruction data that maximally improves a target LLM's capability using only that model itself—without external models or additional training.
 
-**Starting Point**: A key observation: if providing the model with a similar one-shot demonstration causes its loss on a given instruction to increase rather than decrease, the model lacks fundamental capability for that type of instruction—making such samples the most valuable for learning.
+**Key Insight**: A key observation: if providing the model with a similar one-shot demonstration causes its loss on a given instruction to increase rather than decrease, the model lacks fundamental capability for that type of instruction—making such samples the most valuable for learning.
 
 **Core Idea**: The difference in model loss with and without an ICL prompt (MIWV) is used to measure the importance of each sample for improving model capability. A higher MIWV indicates that the model has greater need to learn from that sample.
 

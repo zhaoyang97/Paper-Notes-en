@@ -26,11 +26,11 @@ content_hash: f08bc36a12c3f624
 ERMoE proposes reparameterizing MoE expert weights within an orthogonal eigenbasis and replacing conventional routing logits with eigenbasis scores (cosine similarity), achieving stable routing and interpretable expert specialization without auxiliary load-balancing losses.
 
 ## Background & Motivation
-1. **State of the Field**: MoE architectures scale model capacity via sparse activation, yet misalignment between routing logits and expert representations causes routing instability and underutilization of experts, while load imbalance introduces computational bottlenecks.
+1. **Background**: MoE architectures scale model capacity via sparse activation, yet misalignment between routing logits and expert representations causes routing instability and underutilization of experts, while load imbalance introduces computational bottlenecks.
 2. **Limitations of Prior Work**: Auxiliary load-balancing losses (LBL) reduce imbalance but introduce interfering gradients that weaken expert specialization and downstream accuracy. The root cause is the decoupling between the router's and experts' representation spaces.
-3. **Root Cause**: Routers must accurately assign tokens to the most suitable experts, yet conventional learnable routing logits operate in an unconstrained parameter space with no intrinsic connection to the actual representational capacity of each expert.
-4. **Paper Goals**: Design a routing mechanism whose assignment decisions directly reflect each expert's intrinsic representational subspace, fundamentally resolving the router–expert misalignment problem.
-5. **Starting Point**: Reparameterize expert weights via SVD-style eigen-decomposition so that routing is based on feature–basis alignment rather than learned logits.
+3. **Key Challenge**: Routers must accurately assign tokens to the most suitable experts, yet conventional learnable routing logits operate in an unconstrained parameter space with no intrinsic connection to the actual representational capacity of each expert.
+4. **Goal**: Design a routing mechanism whose assignment decisions directly reflect each expert's intrinsic representational subspace, fundamentally resolving the router–expert misalignment problem.
+5. **Key Insight**: Reparameterize expert weights via SVD-style eigen-decomposition so that routing is based on feature–basis alignment rather than learned logits.
 6. **Core Idea**: Each expert's weight is factorized into an orthogonal eigenbasis $\mathbf{W}^{(e)} = \mathbf{U}^{(e)} \text{diag}(s^{(e)}) \mathbf{V}^{(e)\top}$, and routing scores are computed as the cosine similarity between token features and the expert basis.
 
 ## Method

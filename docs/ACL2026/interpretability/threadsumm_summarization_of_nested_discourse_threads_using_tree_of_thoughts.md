@@ -28,15 +28,15 @@ This paper proposes ThreadSumm, a multi-stage LLM pipeline framework that models
 
 ## Background & Motivation
 
-**State of the Field**: The nested thread structure in discussion forums—where replies, citations, and reposts are interleaved—makes summarization far more complex than standard document summarization. Existing LLM-based summarization methods primarily handle linear documents or relatively structured dialogues.
+**Background**: The nested thread structure in discussion forums—where replies, citations, and reposts are interleaved—makes summarization far more complex than standard document summarization. Existing LLM-based summarization methods primarily handle linear documents or relatively structured dialogues.
 
 **Limitations of Prior Work**: (1) The tree/graph structure of nested threads causes off-topic and on-topic replies to be interleaved, burying key content; (2) existing methods fail to balance diverse perspectives, tending to favor the most frequent topics while neglecting minority but important viewpoints; (3) turn overlap and interruptions in multi-speaker settings render simple linear adjacency models incapable of inferring reply relations.
 
-**Root Cause**: The graph structure of threads versus the linear output of summaries—maintaining coherence while covering diverse topics distributed across different branches is inherently challenging.
+**Key Challenge**: The graph structure of threads versus the linear output of summaries—maintaining coherence while covering diverse topics distributed across different branches is inherently challenging.
 
-**Paper Goals**: (1) Address discourse coverage (balanced representation of multiple interleaved topics); (2) address coherence (generating coherent summaries even without a predefined thread order).
+**Goal**: (1) Address discourse coverage (balanced representation of multiple interleaved topics); (2) address coherence (generating coherent summaries even without a predefined thread order).
 
-**Starting Point**: Decompose summarization into two independent reasoning levels: content planning (aspect extraction + ACU generation) and text realization (sentence ordering + paragraph writing + ToT search).
+**Key Insight**: Decompose summarization into two independent reasoning levels: content planning (aspect extraction + ACU generation) and text realization (sentence ordering + paragraph writing + ToT search).
 
 **Core Idea**: Use structured intermediate representations (aspects + ACUs) to explicitly control coverage, and apply Tree of Thoughts search to find the optimal balance between coherence and coverage.
 

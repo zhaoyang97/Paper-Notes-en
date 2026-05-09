@@ -29,11 +29,11 @@ This paper revisits the LoRA merging problem through two complementary lenses—
 
 ## Background & Motivation
 
-1. **State of the Field**: LoRA has become the standard paradigm for fine-tuning large models. Merging multiple task-specific LoRA adapters into a single unified model (model merging) offers an effective alternative to expensive multi-task joint training.
+1. **Background**: LoRA has become the standard paradigm for fine-tuning large models. Merging multiple task-specific LoRA adapters into a single unified model (model merging) offers an effective alternative to expensive multi-task joint training.
 2. **Limitations of Prior Work**: Existing merging methods suffer from two categories of issues: (1) general-purpose methods (Task Arithmetic, TIES, DARE) disregard the low-rank structure of LoRA and operate directly in the full parameter space, leading to severe cross-task interference; (2) LoRA-aware methods (KnOTS, LoRA-LEGO) exploit the LoRA structure but typically address only one of the two problems—coverage or anisotropy.
-3. **Root Cause**: The update directions of LoRA adapters span different subspaces and contribute unevenly. Naive merging attenuates directions most critical to certain task losses while over-emphasizing relatively unimportant ones.
-4. **Paper Goals**: (a) Subspace coverage—whether the diversity of per-task LoRA directions is preserved after merging; (b) Directional anisotropy—different LoRA directions exhibit unequal sensitivity to task losses, requiring fine-grained direction-level control.
-5. **Starting Point**: Effective rank (erank) analysis reveals that LoRA-aware rank-1 stacking retains approximately 70% of the per-task independent dimensions, whereas interpolation-based merging (e.g., Task Arithmetic) causes severe subspace collapse. Directional sensitivity analysis via Jacobians further shows that sensitivity distributions are highly inconsistent across different preferences.
+3. **Key Challenge**: The update directions of LoRA adapters span different subspaces and contribute unevenly. Naive merging attenuates directions most critical to certain task losses while over-emphasizing relatively unimportant ones.
+4. **Goal**: (a) Subspace coverage—whether the diversity of per-task LoRA directions is preserved after merging; (b) Directional anisotropy—different LoRA directions exhibit unequal sensitivity to task losses, requiring fine-grained direction-level control.
+5. **Key Insight**: Effective rank (erank) analysis reveals that LoRA-aware rank-1 stacking retains approximately 70% of the per-task independent dimensions, whereas interpolation-based merging (e.g., Task Arithmetic) causes severe subspace collapse. Directional sensitivity analysis via Jacobians further shows that sensitivity distributions are highly inconsistent across different preferences.
 6. **Core Idea**: While preserving LoRA rank-1 directions to maintain subspace coverage, TARA addresses anisotropy by optimizing direction-level weights through preference-weighted smooth Tchebycheff scalarization.
 
 ## Method

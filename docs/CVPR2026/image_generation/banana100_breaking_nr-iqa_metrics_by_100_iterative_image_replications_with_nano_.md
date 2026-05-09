@@ -28,7 +28,7 @@ Banana100 systematically investigates quality degradation in multi-turn editing 
 
 ## Background & Motivation
 
-**State of the Field**: The rise of multimodal Agent systems has made iterative image editing a norm, where users repeatedly modify and refine generated images. Modern models (e.g., Nano Banana Pro) perform excellently in single-turn editing.
+**Background**: The rise of multimodal Agent systems has made iterative image editing a norm, where users repeatedly modify and refine generated images. Modern models (e.g., Nano Banana Pro) perform excellently in single-turn editing.
 
 **Limitations of Prior Work—Iterative Degradation**:
    - Each edit introduces tiny, nearly imperceptible artifacts.
@@ -45,7 +45,7 @@ Banana100 systematically investigates quality degradation in multi-turn editing 
    - **Training side**: If evaluators cannot filter noisy data, future model training data will become increasingly "dirty," accelerating model collapse.
    - **Inference side**: Agent systems are known to be fragile in long-sequence operations; quality check failures further exacerbate fragmentation.
 
-**Paper Goals**: To build a systematic dataset, classify failure modes, and expose the systematic flaws of NR-IQA.
+**Goal**: To build a systematic dataset, classify failure modes, and expose the systematic flaws of NR-IQA.
 
 ## Method
 

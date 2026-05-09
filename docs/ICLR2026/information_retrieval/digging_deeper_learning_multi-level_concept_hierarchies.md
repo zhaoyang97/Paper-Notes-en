@@ -27,19 +27,19 @@ This paper proposes Multi-Level Concept Splitting (MLCS), which extends concept 
 
 ## Background & Motivation
 
-**State of the Field**: Concept-based Models are among the central research directions in explainable AI. Concept Bottleneck Models (CBMs) and Concept Embedding Models (CEMs) provide structured explanation pathways by forcing models to first predict human-understandable intermediate concepts before inferring the final task label. CEMs specifically introduce a concept embedding space design, representing each concept as a high-dimensional vector rather than a simple binary prediction, improving accuracy while preserving interpretability.
+**Background**: Concept-based Models are among the central research directions in explainable AI. Concept Bottleneck Models (CBMs) and Concept Embedding Models (CEMs) provide structured explanation pathways by forcing models to first predict human-understandable intermediate concepts before inferring the final task label. CEMs specifically introduce a concept embedding space design, representing each concept as a high-dimensional vector rather than a simple binary prediction, improving accuracy while preserving interpretability.
 
 **Limitations of Prior Work**: Standard CBMs and CEMs suffer from two critical issues:
 (1) They treat concepts as flat and independent entities, completely ignoring hierarchical relations among concepts. For instance, "wing color" and "flight capability" are causally related in semantics, yet the model treats them as orthogonal dimensions.
 (2) Obtaining fine-grained concept explanations requires dense multi-granularity annotations at training time (e.g., annotating not just "has wings" but also "wings are striped," "wings are pointed," etc.), which is prohibitively expensive.
 
-**Root Cause**: The same group's concurrent work HiCEMs (ICLR 2026 main conference) addresses the first issue—explicitly modeling concept relations with hierarchical structures and proposing Concept Splitting to automatically discover sub-concepts from a pretrained CEM's embedding space without additional annotation. However, both HiCEMs and Concept Splitting are restricted to **shallow hierarchies** (i.e., splitting a parent concept into only one layer of sub-concepts), and cannot capture deeper multi-level concept trees found in practice—for example, a four-level structure such as "animal → bird → waterbird → pelican" cannot be expressed.
+**Key Challenge**: The same group's concurrent work HiCEMs (ICLR 2026 main conference) addresses the first issue—explicitly modeling concept relations with hierarchical structures and proposing Concept Splitting to automatically discover sub-concepts from a pretrained CEM's embedding space without additional annotation. However, both HiCEMs and Concept Splitting are restricted to **shallow hierarchies** (i.e., splitting a parent concept into only one layer of sub-concepts), and cannot capture deeper multi-level concept trees found in practice—for example, a four-level structure such as "animal → bird → waterbird → pelican" cannot be expressed.
 
-**Paper Goals**: Two sub-problems are addressed:
+**Goal**: Two sub-problems are addressed:
 (1) How to extend single-level Concept Splitting into a recursive multi-level version that automatically constructs deep concept trees from top-level annotations alone?
 (2) How to design a model architecture that represents and exploits multi-level concept hierarchies while supporting concept interventions at arbitrary levels of abstraction?
 
-**Starting Point**: The authors observe that Concept Splitting is essentially a clustering operation in the CEM's concept embedding space. If the embedding vectors of a concept exhibit multiple natural cluster structures across different samples, each cluster corresponds to a meaningful sub-concept. This operation can be applied recursively: the embedding space of a sub-concept may itself contain further separable cluster structures.
+**Key Insight**: The authors observe that Concept Splitting is essentially a clustering operation in the CEM's concept embedding space. If the embedding vectors of a concept exhibit multiple natural cluster structures across different samples, each cluster corresponds to a meaningful sub-concept. This operation can be applied recursively: the embedding space of a sub-concept may itself contain further separable cluster structures.
 
 **Core Idea**: Recursively apply splitting operations in the concept embedding space to construct multi-level concept trees (MLCS), then represent and exploit these deep hierarchies with the Deep-HiCEMs architecture.
 

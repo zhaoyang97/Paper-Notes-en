@@ -29,7 +29,7 @@ This paper proposes PreciseCache — a plug-and-play acceleration framework that
 
 ## Background & Motivation
 
-**State of the Field**: Video diffusion models (e.g., Sora, HunyuanVideo, CogVideoX, Wan2.1) continue to improve in generation quality, but inference remains extremely slow — Wan2.1-14B requires approximately 907 seconds to generate a single 720P video on 4 A800 GPUs. Feature caching is currently the dominant training-free acceleration method, which skips network inference for certain steps by reusing cached features from previous denoising steps.
+**Background**: Video diffusion models (e.g., Sora, HunyuanVideo, CogVideoX, Wan2.1) continue to improve in generation quality, but inference remains extremely slow — Wan2.1-14B requires approximately 907 seconds to generate a single 720P video on 4 A800 GPUs. Feature caching is currently the dominant training-free acceleration method, which skips network inference for certain steps by reusing cached features from previous denoising steps.
 
 **Limitations of Prior Work**:
 
@@ -37,9 +37,9 @@ This paper proposes PreciseCache — a plug-and-play acceleration framework that
 - **Existing adaptive caching methods**: Require complex additional fitting or extensive hyperparameter tuning, and the caching criteria remain insufficiently precise.
 - **Using adjacent-step prediction differences as caching indicators directly** (e.g., TeaCache): Such indicators exhibit weak correlation with final generation quality, leading to suboptimal caching strategies.
 
-**Root Cause**: How to design a runtime-adaptive caching criterion that can precisely distinguish between "genuinely redundant computation" and "computation critical to generation quality," so as to maximize speedup while preserving video quality?
+**Key Challenge**: How to design a runtime-adaptive caching criterion that can precisely distinguish between "genuinely redundant computation" and "computation critical to generation quality," so as to maximize speedup while preserving video quality?
 
-**Paper Goals**: This paper proposes Low-Frequency Difference (LFD) as a precise metric for step-level redundancy — grounded in the key insight that the diffusion process models low-frequency structural information during high-noise stages (important) and refines high-frequency details during low-noise stages (cacheable). LFD is shown to be highly consistent with the impact of caching on final video quality.
+**Goal**: This paper proposes Low-Frequency Difference (LFD) as a precise metric for step-level redundancy — grounded in the key insight that the diffusion process models low-frequency structural information during high-noise stages (important) and refines high-frequency details during low-noise stages (cacheable). LFD is shown to be highly consistent with the impact of caching on final video quality.
 
 ## Method
 

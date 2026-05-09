@@ -28,15 +28,15 @@ This paper proposes DeepBooTS, which leverages bias-variance decomposition theor
 
 ## Background & Motivation
 
-**State of the Field**: Mainstream time series forecasting methods (Transformers, MLPs, etc.) suffer from concept drift on non-stationary data—training loss decreases while validation loss rises, preventing generalization to distribution-shifted data.
+**Background**: Mainstream time series forecasting methods (Transformers, MLPs, etc.) suffer from concept drift on non-stationary data—training loss decreases while validation loss rises, preventing generalization to distribution-shifted data.
 
 **Limitations of Prior Work**: Methods such as RevIN (Reversible Instance Normalization) alleviate mean shift but leave variance instability unresolved. Experiments show that concept drift is pervasive in standard benchmarks including ETT, Traffic, and Weather, leading to poor model generalization.
 
-**Root Cause**: From a bias-variance perspective, when bias and noise are fixed, the degree of concept drift is governed by prediction variance. Existing models cannot effectively reduce prediction variance to cope with distributional drift.
+**Key Challenge**: From a bias-variance perspective, when bias and noise are fixed, the degree of concept drift is governed by prediction variance. Existing models cannot effectively reduce prediction variance to cope with distributional drift.
 
-**Paper Goals**: Mitigate concept drift by reducing prediction variance through a theoretically grounded ensemble strategy.
+**Goal**: Mitigate concept drift by reducing prediction variance through a theoretically grounded ensemble strategy.
 
-**Starting Point**: The paper first proves that weighted ensembling does not increase bias while reducing variance, then implements a gradient-boosting-style residual-decreasing mechanism within a deep network.
+**Key Insight**: The paper first proves that weighted ensembling does not increase bias while reducing variance, then implements a gradient-boosting-style residual-decreasing mechanism within a deep network.
 
 **Core Idea**: Each block of the deep network serves as a learner in an ensemble. A dual-stream residual-decreasing architecture realizes boosting internally within the network, with theoretical guarantees of variance reduction.
 

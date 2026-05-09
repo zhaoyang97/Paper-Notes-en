@@ -28,15 +28,15 @@ Node-RF tightly couples Neural ODE with NeRF, modeling scene dynamic evolution v
 
 ## Background & Motivation
 
-**State of the Field**: Dominant methods in dynamic scene reconstruction (D-NeRF, 4D-GS, HexPlane, etc.) model scene dynamics via deformation fields or time-conditioned representations, achieving strong interpolation and novel view synthesis.
+**Background**: Dominant methods in dynamic scene reconstruction (D-NeRF, 4D-GS, HexPlane, etc.) model scene dynamics via deformation fields or time-conditioned representations, achieving strong interpolation and novel view synthesis.
 
 **Limitations of Prior Work**: (1) These methods discretize time into training frame sets, learning motion only over observed frames without a principled mechanism for long-range temporal extrapolation; (2) deformation fields are sequence-specific and cannot generalize to unseen dynamic patterns (e.g., motions under different initial conditions).
 
-**Root Cause**: Discrete-time modeling fundamentally cannot capture continuous-time dynamics — it memorizes specific states rather than learning the underlying evolution process.
+**Key Challenge**: Discrete-time modeling fundamentally cannot capture continuous-time dynamics — it memorizes specific states rather than learning the underlying evolution process.
 
-**Paper Goals**: To model continuous-time scene dynamics such that (a) arbitrary temporal extrapolation is possible, and (b) generalization across multiple sequences sharing common dynamical laws is achievable.
+**Goal**: To model continuous-time scene dynamics such that (a) arbitrary temporal extrapolation is possible, and (b) generalization across multiple sequences sharing common dynamical laws is achievable.
 
-**Starting Point**: Neural ODEs naturally model latent state evolution as continuous differential equations, complementing NeRF's spatially continuous representation — the ODE handles "temporal continuity" while NeRF handles "spatial continuity."
+**Key Insight**: Neural ODEs naturally model latent state evolution as continuous differential equations, complementing NeRF's spatially continuous representation — the ODE handles "temporal continuity" while NeRF handles "spatial continuity."
 
 **Core Idea**: Drive temporal evolution in latent space via Neural ODE, then decode and render via NeRF, establishing a continuous space-time scene representation.
 

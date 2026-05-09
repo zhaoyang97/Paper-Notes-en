@@ -27,15 +27,15 @@ This paper proposes the MVR framework, which learns a state relevance function f
 
 ## Background & Motivation
 
-**State of the Field**: Reward design is critical in reinforcement learning. A recent emerging paradigm leverages image-text similarity from VLMs as a visual signal to augment rewards (e.g., VLM-RM, RoboCLIP), guiding agents toward states that match task descriptions.
+**Background**: Reward design is critical in reinforcement learning. A recent emerging paradigm leverages image-text similarity from VLMs as a visual signal to augment rewards (e.g., VLM-RM, RoboCLIP), guiding agents toward states that match task descriptions.
 
 **Limitations of Prior Work**: (a) **Limitations of static images**: Single-frame image-text similarity fails to characterize dynamic motion—optimizing per-frame similarity causes agents to repeatedly pause at the frame that most resembles "running," rather than actually running (which requires rhythmic alternation of both legs). (b) **Single-view occlusion**: A single camera angle causes occlusion among robot limbs, introducing viewpoint-dependent bias. (c) **Lack of adaptive decay**: Existing methods linearly combine VLM scores and task rewards, which may shift the optimal policy.
 
-**Root Cause**: VLM-provided visual guidance is valuable early in training (helping agents discover correct motion patterns), but if continuously applied, it may conflict with task objectives—a "use early, release later" mechanism is needed.
+**Key Challenge**: VLM-provided visual guidance is valuable early in training (helping agents discover correct motion patterns), but if continuously applied, it may conflict with task objectives—a "use early, release later" mechanism is needed.
 
-**Paper Goals**: (a) Replace static images with video to accurately assess dynamic motion quality; (b) eliminate occlusion bias through multi-view observations; (c) design automatically decaying reward shaping to avoid persistent conflict between VLM guidance and task rewards.
+**Goal**: (a) Replace static images with video to accurately assess dynamic motion quality; (b) eliminate occlusion bias through multi-view observations; (c) design automatically decaying reward shaping to avoid persistent conflict between VLM guidance and task rewards.
 
-**Starting Point**: Rather than directly fitting VLM scores (which suffers from a large semantic gap), the paper preserves ranking consistency between the video space and state space via paired comparisons; multi-view regularization is used to eliminate viewpoint bias; and an automatic decay mechanism is derived based on the Bradley-Terry model.
+**Key Insight**: Rather than directly fitting VLM scores (which suffers from a large semantic gap), the paper preserves ranking consistency between the video space and state space via paired comparisons; multi-view regularization is used to eliminate viewpoint bias; and an automatic decay mechanism is derived based on the Bradley-Terry model.
 
 **Core Idea**: Learn a state-space relevance ranking function from multi-view video, and generate automatically decaying reward shaping signals by comparing against a reference set.
 

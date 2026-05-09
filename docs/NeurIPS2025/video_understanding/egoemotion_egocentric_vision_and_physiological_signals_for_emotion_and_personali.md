@@ -28,13 +28,13 @@ This paper introduces egoEMOTION — the first dataset combining egocentric visi
 
 ## Background & Motivation
 
-**State of the Field**: Egocentric vision has established large-scale benchmarks (Ego4D, EPIC-KITCHENS), while emotion recognition has relied on physiological signals collected in laboratory settings (DEAP, AMIGOS, etc.).
+**Background**: Egocentric vision has established large-scale benchmarks (Ego4D, EPIC-KITCHENS), while emotion recognition has relied on physiological signals collected in laboratory settings (DEAP, AMIGOS, etc.).
 
 **Limitations of Prior Work**: (a) Egocentric vision benchmarks ignore participants' emotional states, assuming affective neutrality; (b) existing emotion datasets are confined to laboratory settings with low ecological validity; (c) the only publicly available mobile eye-tracking emotion dataset, eSEE-d, covers only 4 emotion categories, provides no physiological signals, and requires a fixed head position.
 
-**Root Cause**: Emotion and personality are intrinsic drivers of behavior, yet egocentric vision systems cannot model these internal states.
+**Key Challenge**: Emotion and personality are intrinsic drivers of behavior, yet egocentric vision systems cannot model these internal states.
 
-**Paper Goals**: To construct a high-ecological-validity multimodal affective dataset and demonstrate that egocentric vision signals alone are sufficient for emotion prediction.
+**Goal**: To construct a high-ecological-validity multimodal affective dataset and demonstrate that egocentric vision signals alone are sufficient for emotion prediction.
 
 **Core Idea**: Egocentric glasses signals — especially eye-tracking — are more effective than conventional physiological signals for emotion prediction in real-world settings.
 

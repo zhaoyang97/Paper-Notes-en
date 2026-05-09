@@ -36,7 +36,7 @@ Real2Sim (converting real environments into simulation-ready representations) is
 
 **Direct geometric reconstruction methods**: Although capable of recovering scene geometry, the results typically contain noise and artifacts. Such unclean geometry causes failures in scene interaction when fed into motion tracking policies — for example, an uneven chair surface can trigger abnormal physical collisions when a humanoid controller attempts to sit.
 
-**Root Cause**: Existing methods either lack physical plausibility or produce geometry that is insufficiently clean to be directly used for interactive physical simulation.
+**Key Challenge**: Existing methods either lack physical plausibility or produce geometry that is insufficiently clean to be directly used for interactive physical simulation.
 
 **Core Idea**: Fit planar primitives to the scene point cloud to obtain convex, clean, simulation-ready geometry, and use human-scene contact modeling to recover geometrically occluded regions during interaction.
 

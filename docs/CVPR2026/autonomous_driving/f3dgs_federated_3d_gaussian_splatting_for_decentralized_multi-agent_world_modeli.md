@@ -29,18 +29,18 @@ This paper proposes F3DGS, the first method to apply a federated learning framew
 
 ## Background & Motivation
 
-**State of the Field**: 3DGS has achieved state-of-the-art performance in novel view synthesis and is widely applied in robotics, autonomous driving, and embodied AI.
+**Background**: 3DGS has achieved state-of-the-art performance in novel view synthesis and is widely applied in robotics, autonomous driving, and embodied AI.
 
 **Limitations of Prior Work**: All existing 3DGS methods assume centralized data access—all observations must be jointly optimized on a single machine. This poses three constraints in multi-agent distributed scenarios:
    - **Communication Overhead**: Bandwidth and storage for aggregating high-resolution images scale linearly with the number of agents.
    - **Data Privacy**: In multi-operator or multi-organization settings, raw sensor data is private and cannot be shared directly.
    - **Scalability**: The computational demands of joint optimization are tied to the total inference size, creating a centralized bottleneck.
 
-**Root Cause**: Federated learning can address the above issues by sharing only model updates, but directly applying FedAvg to 3DGS introduces two domain-specific challenges—**geometry drift** (inconsistencies caused by independently optimized positional parameters) and **partial observability** (each client observes only a subset of Gaussians).
+**Key Challenge**: Federated learning can address the above issues by sharing only model updates, but directly applying FedAvg to 3DGS introduces two domain-specific challenges—**geometry drift** (inconsistencies caused by independently optimized positional parameters) and **partial observability** (each client observes only a subset of Gaussians).
 
-**Paper Goals**: Achieve unified multi-agent collaborative 3DGS reconstruction under federated constraints (zero raw image exchange).
+**Goal**: Achieve unified multi-agent collaborative 3DGS reconstruction under federated constraints (zero raw image exchange).
 
-**Starting Point**: Exploit the explicit separability of 3DGS parameters (position, covariance, and color are independent tensors) to decouple geometry from appearance.
+**Key Insight**: Exploit the explicit separability of 3DGS parameters (position, covariance, and color are independent tensors) to decouple geometry from appearance.
 
 **Core Idea**: Freeze the shared geometric skeleton (fixed positions) and federally optimize only appearance attributes, resolving partial observability via visibility-weighted aggregation.
 

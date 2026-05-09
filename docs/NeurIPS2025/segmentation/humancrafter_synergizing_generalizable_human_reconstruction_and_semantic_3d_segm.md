@@ -29,7 +29,7 @@ HumanCrafter is proposed as the first feed-forward framework that unifies single
 
 ## Background & Motivation
 
-**State of the Field**: 3D human reconstruction has advanced rapidly in recent years — 3DGS enables real-time rendering, and large-scale reconstruction Transformers (LRM, GRM) achieve feed-forward generalization. However, 3D human semantic segmentation (body-part segmentation) remains an open problem.
+**Background**: 3D human reconstruction has advanced rapidly in recent years — 3DGS enables real-time rendering, and large-scale reconstruction Transformers (LRM, GRM) achieve feed-forward generalization. However, 3D human semantic segmentation (body-part segmentation) remains an open problem.
 
 **Limitations of Prior Work**:
    - 2D human segmentation models (e.g., Sapiens) cannot guarantee **3D consistency** — segmentation results across different viewpoints are incoherent.

@@ -28,15 +28,15 @@ The paper proposes ConsistCompose, which achieves layout-controllable multi-inst
 
 ## Background & Motivation
 
-**State of the Field**: Unified multimodal models (e.g., Bagel, OmniGen2) are already capable of both understanding and generation within a single architecture, but primarily focus on visual understanding (grounding). Precise layout control on the generation side remains weak.
+**Background**: Unified multimodal models (e.g., Bagel, OmniGen2) are already capable of both understanding and generation within a single architecture, but primarily focus on visual understanding (grounding). Precise layout control on the generation side remains weak.
 
 **Limitations of Prior Work**: Existing methods for layout-controlled generation face fundamental obstacles: (a) Diffusion model approaches (GLIGEN, InstanceDiffusion) rely on specialized layout-image fusion modules or region-aware U-Nets, which are incompatible with Transformer generation frameworks; (b) Autoregressive models (LayoutSAM, PlanGen) treat layout as an independent modality, limiting them to layout tasks and preventing them from encompassing general capabilities like visual reasoning and understanding; (c) Most methods only support text-conditioned layout control and do not consider the more difficult scenario of multi-reference image identity preservation.
 
-**Root Cause**: Layout control requires task-specific branches/encoders, which contradicts the philosophy of a "unified" framework. How can precise layout control be achieved without introducing additional architectural modules?
+**Key Challenge**: Layout control requires task-specific branches/encoders, which contradicts the philosophy of a "unified" framework. How can precise layout control be achieved without introducing additional architectural modules?
 
-**Paper Goals**: To support layout-grounded text-to-image generation, identity-consistent multi-instance synthesis from multiple references, and general multimodal understanding simultaneously within a unified multimodal framework—using a single model for all three.
+**Goal**: To support layout-grounded text-to-image generation, identity-consistent multi-instance synthesis from multiple references, and general multimodal understanding simultaneously within a unified multimodal framework—using a single model for all three.
 
-**Starting Point**: Layout is essentially information that can be expressed in language. Rather than designing specialized spatial encoders, coordinates can be encoded as text tokens, allowing the Transformer to naturally learn spatial grounding through language understanding.
+**Key Insight**: Layout is essentially information that can be expressed in language. Rather than designing specialized spatial encoders, coordinates can be encoded as text tokens, allowing the Transformer to naturally learn spatial grounding through language understanding.
 
 **Core Idea**: Language as Layout Control—embed coordinates into the prompt to let the unified model learn spatial layouts via the text stream without any architectural changes.
 

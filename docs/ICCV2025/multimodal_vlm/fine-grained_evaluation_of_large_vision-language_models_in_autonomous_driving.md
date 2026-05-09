@@ -29,15 +29,15 @@ This paper proposes VLADBench, a fine-grained vision-language model evaluation b
 
 ## Background & Motivation
 
-**State of the Field**: As large vision-language models (VLMs) achieve breakthroughs in general visual understanding, researchers have begun applying them to autonomous driving (AD), aiming to leverage VLMs' perception and reasoning capabilities to improve driving scene understanding and decision-making.
+**Background**: As large vision-language models (VLMs) achieve breakthroughs in general visual understanding, researchers have begun applying them to autonomous driving (AD), aiming to leverage VLMs' perception and reasoning capabilities to improve driving scene understanding and decision-making.
 
 **Limitations of Prior Work**: Existing AD VLM evaluation benchmarks primarily assess model interpretability through open-ended visual question answering. However, this evaluation paradigm is too coarse-grained—it fails to distinguish model performance across different driving sub-tasks, such as traffic sign recognition, pedestrian intention prediction, and ego-vehicle decision planning. Furthermore, open-ended answer evaluation suffers from poor consistency and difficulty in automated scoring, undermining the reliability and comparability of results.
 
-**Root Cause**: Complex driving scenarios require models to possess hierarchical cognitive capabilities ranging from basic element recognition to high-level reasoning, yet existing benchmarks conflate these abilities, making it impossible to precisely identify a model's capability bottlenecks.
+**Key Challenge**: Complex driving scenarios require models to possess hierarchical cognitive capabilities ranging from basic element recognition to high-level reasoning, yet existing benchmarks conflate these abilities, making it impossible to precisely identify a model's capability bottlenecks.
 
-**Paper Goals**: To construct a hierarchical, fine-grained closed-ended evaluation benchmark that systematically assesses VLM performance across autonomous driving sub-tasks and explores the synergistic relationships among different cognitive domains.
+**Goal**: To construct a hierarchical, fine-grained closed-ended evaluation benchmark that systematically assesses VLM performance across autonomous driving sub-tasks and explores the synergistic relationships among different cognitive domains.
 
-**Starting Point**: The authors observe that driving cognition can be decomposed into five progressively deeper domains—from static traffic knowledge understanding to dynamic online reasoning and decision-making—a hierarchical structure that naturally lends itself to fine-grained evaluation.
+**Key Insight**: The authors observe that driving cognition can be decomposed into five progressively deeper domains—from static traffic knowledge understanding to dynamic online reasoning and decision-making—a hierarchical structure that naturally lends itself to fine-grained evaluation.
 
 **Core Idea**: Design VLADBench, a closed-ended QA benchmark covering 5 major domains and 29 third-level tasks, with an evaluation chain that progressively transitions from static foundational knowledge to dynamic decision reasoning, comprehensively profiling VLM capabilities in autonomous driving.
 

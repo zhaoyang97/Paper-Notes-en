@@ -32,11 +32,11 @@ This paper systematically surveys 10 open challenges facing VLA models — multi
 
 ### Root Cause
 
-**State of the Field**: VLA models have become the central paradigm in embodied AI, generating robot actions by combining visual observations with language instructions. Representative approaches include discrete-action models (OpenVLA, RT-2, etc.) and continuous-action models (Diffusion Policy, etc.).
+**Background**: VLA models have become the central paradigm in embodied AI, generating robot actions by combining visual observations with language instructions. Representative approaches include discrete-action models (OpenVLA, RT-2, etc.) and continuous-action models (Diffusion Policy, etc.).
 
 **Limitations of Prior Work**: (1) Perceptual limitations — most VLAs ignore depth information; (2) Brittle reasoning — non-trivial error rates persist even on simple tasks; (3) Data quality — Open-X-Embodiment contains over a million trajectories yet out-of-distribution generalization remains fragile; (4) Unreliable evaluation — simulation and real-world performance are poorly correlated; (5) Heterogeneous action spaces — zero-shot generalization across different robots remains unsolved.
 
-**Paper Goals**: This is a survey/perspective paper that systematically organizes the field's challenges and potential solution pathways.
+**Goal**: This is a survey/perspective paper that systematically organizes the field's challenges and potential solution pathways.
 
 **Core Idea**: Transitioning VLAs from laboratory settings to deployment requires simultaneous breakthroughs across 10 dimensions; the paper provides analysis and outlook for each.
 

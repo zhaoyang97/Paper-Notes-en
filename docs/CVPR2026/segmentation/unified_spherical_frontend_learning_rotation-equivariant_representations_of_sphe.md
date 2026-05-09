@@ -28,15 +28,15 @@ USF proposes a modular, lens-agnostic spherical vision frontend that projects ar
 
 ## Background & Motivation
 
-1. **State of the Field**: Modern perception systems increasingly employ wide-angle cameras such as fisheye and panoramic lenses, yet mainstream CNN pipelines still assume the pinhole camera model and perform convolution on 2D image grids.
+1. **Background**: Modern perception systems increasingly employ wide-angle cameras such as fisheye and panoramic lenses, yet mainstream CNN pipelines still assume the pinhole camera model and perform convolution on 2D image grids.
 
 2. **Limitations of Prior Work**: (a) Feeding wide-angle images directly into planar CNNs results in adjacent pixels in image space that do not reflect physical adjacency—e.g., pixels near the poles in equirectangular projection are far apart in image space but physically neighboring—causing the spatial assumptions of convolutional kernels to break down. (b) Planar convolutional kernels are fixed to the image coordinate frame and are sensitive to global rotations. (c) Traditional spherical CNNs (e.g., S2CNN) require expensive spherical harmonic transforms, limiting resolution and efficiency.
 
-3. **Root Cause**: By Gauss's Theorema Egregium, no 2D projection can preserve the intrinsic curvature of the sphere—any planar representation necessarily introduces distortion. Operations must therefore be performed directly on the sphere, yet existing spherical CNNs either depend on specific grid/connectivity structures (e.g., polyhedron subdivisions, HEALPix) or require computationally expensive spectral-domain transforms.
+3. **Key Challenge**: By Gauss's Theorema Egregium, no 2D projection can preserve the intrinsic curvature of the sphere—any planar representation necessarily introduces distortion. Operations must therefore be performed directly on the sphere, yet existing spherical CNNs either depend on specific grid/connectivity structures (e.g., polyhedron subdivisions, HEALPix) or require computationally expensive spectral-domain transforms.
 
-4. **Paper Goals**: (a) How to obtain a distortion-free spherical signal from an arbitrarily calibrated camera? (b) How to perform efficient spherical convolution without spherical harmonic transforms? (c) How to guarantee rotation equivariance? (d) How to make the framework plug-and-play compatible with existing architectures (YOLO, DeepLab, UNet)?
+4. **Goal**: (a) How to obtain a distortion-free spherical signal from an arbitrarily calibrated camera? (b) How to perform efficient spherical convolution without spherical harmonic transforms? (c) How to guarantee rotation equivariance? (d) How to make the framework plug-and-play compatible with existing architectures (YOLO, DeepLab, UNet)?
 
-5. **Starting Point**: Treating spherical pixels as an unordered point set rather than a structured grid; decoupling position sampling from value interpolation to handle non-uniform density; and enforcing rotation equivariance through weight functions that depend solely on geodesic distance.
+5. **Key Insight**: Treating spherical pixels as an unordered point set rather than a structured grid; decoupling position sampling from value interpolation to handle non-uniform density; and enforcing rotation equivariance through weight functions that depend solely on geodesic distance.
 
 6. **Core Idea**: Project arbitrary camera images onto the sphere → perform uniform resampling → apply purely distance-weighted kernels in the spatial domain for spherical convolution—naturally equivariant, lens-agnostic, and plug-and-play.
 

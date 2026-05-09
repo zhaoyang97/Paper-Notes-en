@@ -29,16 +29,16 @@ MedGRPO introduces two key innovations to address training collapse in multi-dat
 
 ## Background & Motivation
 
-1. **State of the Field**: Large vision-language models have achieved notable progress in general video understanding, but their performance degrades substantially on medical video understanding. Medical video understanding demands fine-grained surgical action interpretation, domain-specific terminology (e.g., distinguishing "grasper" from "tool"), surgical safety assessment, and multi-stage temporal reasoning.
+1. **Background**: Large vision-language models have achieved notable progress in general video understanding, but their performance degrades substantially on medical video understanding. Medical video understanding demands fine-grained surgical action interpretation, domain-specific terminology (e.g., distinguishing "grasper" from "tool"), surgical safety assessment, and multi-stage temporal reasoning.
 
 2. **Limitations of Prior Work**:
    - **Lack of instruction-following training data**: Existing medical video datasets (CholecT50, EgoSurgery, etc.) contain rich annotations but not in QA dialogue format.
    - **Standard RL collapses on heterogeneous datasets**: Difficulty varies dramatically across datasets (e.g., median mIoU ≈ 0.5 for CoPESD spatio-temporal grounding vs. ≈ 0.12 for EgoSurgery); raw rewards in standard GRPO cause the model to overfit easy datasets and abandon difficult ones.
    - **General semantic similarity metrics fail to capture clinical distinctions**: "The tool grasps tissue" vs. "The grasper dissects the cystic duct" yields a cosine similarity ≈ 0.82, yet the clinical meanings are entirely different.
 
-3. **Root Cause**: How to conduct balanced multi-task reinforcement learning across heterogeneous medical video datasets with drastically different difficulty levels?
+3. **Key Challenge**: How to conduct balanced multi-task reinforcement learning across heterogeneous medical video datasets with drastically different difficulty levels?
 
-4. **Starting Point**: Median fairness — median-level performance receives the same normalized reward across all dataset–task pairs, eliminating bias in gradient updates.
+4. **Key Insight**: Median fairness — median-level performance receives the same normalized reward across all dataset–task pairs, eliminating bias in gradient updates.
 
 5. **Core Idea**: Logistic reward normalization enables fair cross-dataset optimization, while a medical LLM judge replaces general semantic similarity to capture fine-grained clinical correctness.
 

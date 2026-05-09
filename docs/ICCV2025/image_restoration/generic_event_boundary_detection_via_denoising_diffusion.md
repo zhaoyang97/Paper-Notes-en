@@ -29,16 +29,16 @@ DiffGEBD is the first work to introduce diffusion models into Generic Event Boun
 
 ## Background & Motivation
 
-**State of the Field**: Generic Event Boundary Detection (GEBD) aims to segment videos into semantically meaningful event segments by identifying their turning points. Unlike conventional action recognition and temporal action detection, GEBD focuses on class-agnostic universal event boundaries. Kinetics-GEBD serves as the standard benchmark, providing annotations from multiple annotators per video.
+**Background**: Generic Event Boundary Detection (GEBD) aims to segment videos into semantically meaningful event segments by identifying their turning points. Unlike conventional action recognition and temporal action detection, GEBD focuses on class-agnostic universal event boundaries. Kinetics-GEBD serves as the standard benchmark, providing annotations from multiple annotators per video.
 
 **Limitations of Prior Work**:
 - The definition of event boundaries in GEBD is inherently **subjective and diverse**—different annotators may perceive boundaries differently for the same video.
 - Nevertheless, all existing methods (UBoCo, DDM-Net, LCVS, SC-Transformer, BasicGEBD, EfficientGEBD, etc.) adopt **deterministic models** that produce only a **single prediction** per video, ignoring boundary diversity.
 - The conventional F1 metric evaluates alignment between a single prediction and multiple annotations, and is ill-suited for many-to-many alignment evaluation.
 
-**Root Cause**: The ground truth in GEBD is inherently diverse (multiple annotators provide different answers), yet models are constrained to produce a single deterministic output. This asymmetry between diverse annotations and deterministic predictions prevents models from faithfully reflecting the variability in human judgment.
+**Key Challenge**: The ground truth in GEBD is inherently diverse (multiple annotators provide different answers), yet models are constrained to produce a single deterministic output. This asymmetry between diverse annotations and deterministic predictions prevents models from faithfully reflecting the variability in human judgment.
 
-**Starting Point**: Diffusion models are naturally suited to this challenge—different outputs can be sampled simply by varying the initial noise. DiffGEBD reframes GEBD as a generative problem: given video-conditioned features, event boundaries are iteratively denoised from random noise.
+**Key Insight**: Diffusion models are naturally suited to this challenge—different outputs can be sampled simply by varying the initial noise. DiffGEBD reframes GEBD as a generative problem: given video-conditioned features, event boundaries are iteratively denoised from random noise.
 
 ## Method
 

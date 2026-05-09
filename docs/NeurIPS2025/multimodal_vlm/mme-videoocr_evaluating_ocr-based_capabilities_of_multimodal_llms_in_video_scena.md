@@ -28,7 +28,7 @@ This paper introduces MME-VideoOCR, a comprehensive video OCR evaluation benchma
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs have achieved promising performance on static image OCR; however, video OCR presents unique challenges—including motion blur, temporal variation, and visual effects—that lead to significant performance degradation.
+**Background**: MLLMs have achieved promising performance on static image OCR; however, video OCR presents unique challenges—including motion blur, temporal variation, and visual effects—that lead to significant performance degradation.
 
 **Limitations of Prior Work**:
    - OCR Benchmark: only 25 videos and 1 task type, lacking diversity

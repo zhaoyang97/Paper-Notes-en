@@ -28,15 +28,15 @@ This paper applies the temporal gap concept from Stack Theory to LLM agent evalu
 
 ## Background & Motivation
 
-**State of the Field**: Machine consciousness evaluation primarily relies on behavioral observation — for language models, this means language use and tool use. Existing evaluation methods allow agents to "say the right things" (e.g., claim self-awareness) even when the underlying constraints are not simultaneously present.
+**Background**: Machine consciousness evaluation primarily relies on behavioral observation — for language models, this means language use and tool use. Existing evaluation methods allow agents to "say the right things" (e.g., claim self-awareness) even when the underlying constraints are not simultaneously present.
 
 **Limitations of Prior Work**: (1) Behavioral evaluation can be confounded by an agent's linguistic capabilities — models can generate correct statements about themselves without actually possessing the properties in question; (2) ingredient-wise occurrence within an evaluation window and co-instantiation at a single decision step are fundamentally different, yet existing methods do not distinguish between them.
 
-**Root Cause**: The gap between "sounding like" and "being" — language models can perfectly mimic discourse about identity and consciousness without possessing those properties at the organizational level.
+**Key Challenge**: The gap between "sounding like" and "being" — language models can perfectly mimic discourse about identity and consciousness without possessing those properties at the organizational level.
 
-**Paper Goals**: Develop a conservative identity evaluation toolkit capable of distinguishing imitative behavior from organizational-level identity consistency.
+**Goal**: Develop a conservative identity evaluation toolkit capable of distinguishing imitative behavior from organizational-level identity consistency.
 
-**Starting Point**: Leverage the "temporal gap" concept from Stack Theory to scaffold evaluation — distinguishing between components appearing one-by-one within a time window and components co-instantiated at a single decision step.
+**Key Insight**: Leverage the "temporal gap" concept from Stack Theory to scaffold evaluation — distinguishing between components appearing one-by-one within a time window and components co-instantiated at a single decision step.
 
 **Core Idea**: Instantiate the Arpeggio and Chord postulates of Stack Theory to evaluate "grounded identity statements," generating two persistence scores; map common scaffold structures into an identity morphospace.
 

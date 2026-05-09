@@ -27,7 +27,7 @@ This paper presents the first systematic study of positional bias in multimodal 
 
 ## Background & Motivation
 
-**State of the Field**: Transformer-based models have achieved remarkable success in NLP and vision tasks; however, research has shown that a model's ability to capture contextual information is influenced by the position of that information within the input sequence—a phenomenon known as "positional bias." The "lost in the middle" effect identified by Liu et al. demonstrates that models tend to prioritize content at the beginning and end while neglecting the middle.
+**Background**: Transformer-based models have achieved remarkable success in NLP and vision tasks; however, research has shown that a model's ability to capture contextual information is influenced by the position of that information within the input sequence—a phenomenon known as "positional bias." The "lost in the middle" effect identified by Liu et al. demonstrates that models tend to prioritize content at the beginning and end while neglecting the middle.
 
 **Limitations of Prior Work**:
 - Positional bias research has focused predominantly on **text generation** models (LLMs), with limited attention to **representation learning** models.
@@ -39,7 +39,7 @@ This paper presents the first systematic study of positional bias in multimodal 
 2. Do the bias patterns of the text encoder and image encoder differ?
 3. What are the root causes—positional encoding, training data, loss function, or model architecture?
 
-**Starting Point**: The paper first distinguishes between "context importance" and "positional bias," then systematically evaluates the presence and patterns of positional bias in multimodal models through carefully designed experiments (moving a fixed segment to different positions while masking others). Finally, a series of controlled experiments is conducted to investigate each potential contributing factor.
+**Key Insight**: The paper first distinguishes between "context importance" and "positional bias," then systematically evaluates the presence and patterns of positional bias in multimodal models through carefully designed experiments (moving a fixed segment to different positions while masking others). Finally, a series of controlled experiments is conducted to investigate each potential contributing factor.
 
 ## Method
 

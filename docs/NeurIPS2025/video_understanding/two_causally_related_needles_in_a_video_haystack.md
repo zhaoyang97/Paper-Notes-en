@@ -29,15 +29,15 @@ This paper proposes Causal2Needles, a benchmark of 4,100 QA pairs that binds the
 
 ## Background & Motivation
 
-**State of the Field**: Long video understanding benchmarks have proliferated, yet most evaluate only single-needle information extraction (retrieving an answer from one location) or track objects purely through visual appearance matching.
+**Background**: Long video understanding benchmarks have proliferated, yet most evaluate only single-needle information extraction (retrieving an answer from one location) or track objects purely through visual appearance matching.
 
 **Limitations of Prior Work**: (1) NLP research has shown that models perform substantially worse on multi-needle than single-needle tasks, yet the multimodal community lacks systematic multi-needle evaluation; (2) existing benchmarks assess VLMs' "world model" capacity only through physical motion prediction, neglecting causal reasoning over human actions; (3) narrative text input may introduce "text bias," allowing models to answer directly from text without genuinely understanding the video.
 
-**Root Cause**: Do models that perform well on single-needle tasks truly understand the causal structure of long videos, or are they merely performing local information retrieval?
+**Key Challenge**: Do models that perform well on single-needle tasks truly understand the causal structure of long videos, or are they merely performing local information retrieval?
 
-**Paper Goals**: Construct a long video understanding benchmark that simultaneously evaluates joint dual-needle comprehension and causal reasoning ability.
+**Goal**: Construct a long video understanding benchmark that simultaneously evaluates joint dual-needle comprehension and causal reasoning ability.
 
-**Starting Point**: Exploit causally related event pairs in movie summary videos, using a "bridging entity" design that forces the model to first retrieve the effect event before localizing the cause event.
+**Key Insight**: Exploit causally related event pairs in movie summary videos, using a "bridging entity" design that forces the model to first retrieve the effect event before localizing the cause event.
 
 **Core Idea**: Obfuscate the bridging entity to transform the dual-needle problem into an indivisible joint reasoning task, preventing it from degenerating into two independent single-needle problems.
 

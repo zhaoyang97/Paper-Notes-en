@@ -28,14 +28,14 @@ content_hash: 5b78696e0a71f1af
 This paper proposes OpTI-BFM — a test-time task inference method for Behavior Foundation Models that requires neither a complete reward function nor an annotated dataset, and recovers oracle performance within approximately 5 episodes of environment interaction. The core insight is to exploit the linear structure of successor features to reduce task inference to a linear bandit problem, employing a UCB strategy for optimistic exploration in task embedding space, with formal regret guarantees.
 
 ## Background & Motivation
-**State of the Field**: Behavior Foundation Models (BFMs) leverage Universal Successor Features (USFs) for zero-shot RL — during pretraining, a family of policies $(\pi_z)_{z \in \mathcal{Z}}$ is learned, and at test time the optimal policy $\pi_{z_r}$ can be retrieved immediately given a reward function $r$.
+**Background**: Behavior Foundation Models (BFMs) leverage Universal Successor Features (USFs) for zero-shot RL — during pretraining, a family of policies $(\pi_z)_{z \in \mathcal{Z}}$ is learned, and at test time the optimal policy $\pi_{z_r}$ can be retrieved immediately given a reward function $r$.
 
 **Limitations of Prior Work**:
    - Standard task inference (Eq. 4) requires computing $z_r = \text{Cov}(\phi)^{-1} \mathbb{E}[\phi(s) r(s)]$ over an inference dataset $\mathcal{D}$, which demands (i) access to an inference dataset and (ii) reward labels for each state.
    - Pretraining data may be unavailable or proprietary; annotating rewards from pixels is costly.
    - Existing methods (e.g., FB) use 50K annotated samples for task inference by default.
 
-**Root Cause**: BFM zero-shot policy retrieval is computationally efficient (requiring only a single linear regression) but data-annotation-inefficient (requiring large amounts of labeled data for task inference).
+**Key Challenge**: BFM zero-shot policy retrieval is computationally efficient (requiring only a single linear regression) but data-annotation-inefficient (requiring large amounts of labeled data for task inference).
 
 **Core Idea**: Transform task inference from offline regression to online interaction — exploiting the linear structure $V^{\pi_z}(s) = z^\top \psi^{\pi_z}(s)$ to reduce policy selection to a linear bandit, and performing optimistic exploration in task embedding space via UCB.
 

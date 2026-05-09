@@ -29,15 +29,15 @@ This paper proposes the LAS-VAD framework, which introduces an Anomaly-Connected
 
 ## Background & Motivation
 
-**State of the Field**: Weakly supervised video anomaly detection (WS-VAD) uses only video-level labels and identifies anomalous temporal intervals via multiple instance learning (MIL). Mainstream approaches adopt a pipeline of pretrained feature extraction followed by a classifier.
+**Background**: Weakly supervised video anomaly detection (WS-VAD) uses only video-level labels and identifies anomalous temporal intervals via multiple instance learning (MIL). Mainstream approaches adopt a pipeline of pretrained feature extraction followed by a classifier.
 
 **Limitations of Prior Work**:
    - **Insufficient semantic information**: The absence of frame-level annotations makes it difficult for models to learn semantic representations of anomalies; learning can only proceed indirectly through MIL's top-K strategy.
    - **Ambiguous behavioral discrimination**: Normal and anomalous behaviors can appear highly similar (e.g., "picking up an object" vs. "stealing an object"), making appearance-only features insufficient for discrimination.
 
-**Root Cause**: Missing frame-level annotations ↔ requirement for frame-level semantic understanding; similar appearance ↔ different intentions.
+**Key Challenge**: Missing frame-level annotations ↔ requirement for frame-level semantic understanding; similar appearance ↔ different intentions.
 
-**Starting Point**:
+**Key Insight**:
    - Semantic problem: Construct a connected-component graph based on inter-frame similarity so that frames in the same group share semantic labels → pseudo-labels.
    - Intention problem: Anomalous behaviors often exhibit abnormal velocity/acceleration (stealing is faster than normally picking up an object); kinematic features are used to reason about intention.
 

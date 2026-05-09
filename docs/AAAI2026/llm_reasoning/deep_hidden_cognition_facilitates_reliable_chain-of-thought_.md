@@ -27,15 +27,15 @@ content_hash: a1508b561c18e665
 This paper demonstrates that attention head activations in intermediate layers of LLMs implicitly encode truthfulness information about reasoning steps during CoT inference (probing accuracy up to 85%). Based on this finding, confidence predictors are trained to guide beam search in dynamically selecting high-confidence reasoning paths, surpassing Self-Consistency and PRM Guided Search on mathematical, symbolic, and commonsense reasoning tasks.
 
 ## Background & Motivation
-**State of the Field**: CoT reasoning unlocks deep reasoning capabilities in LLMs through step-by-step inference, but its reliability is severely undermined by error accumulation across intermediate steps — a single incorrect step propagates failures to all subsequent steps.
+**Background**: CoT reasoning unlocks deep reasoning capabilities in LLMs through step-by-step inference, but its reliability is severely undermined by error accumulation across intermediate steps — a single incorrect step propagates failures to all subsequent steps.
 
 **Limitations of Prior Work**: Existing mitigation approaches (Self-Consistency / Self-Evaluation / PRM) rely on surface-level token probabilities or require training additional reward models. However, LLM overconfidence has been widely documented — generation probability does not equate to actual correctness, and high probability does not imply factual accuracy.
 
-**Root Cause**: Analogous to the phenomenon of "saying one thing while knowing another" in humans — even when generating incorrect outputs, LLMs retain structured factual knowledge in their latent space (verifiable information encoded via neural activation patterns). A dissociation exists between surface-level probability and internal cognition.
+**Key Challenge**: Analogous to the phenomenon of "saying one thing while knowing another" in humans — even when generating incorrect outputs, LLMs retain structured factual knowledge in their latent space (verifiable information encoded via neural activation patterns). A dissociation exists between surface-level probability and internal cognition.
 
-**Paper Goals**: How to excavate the "hidden cognition" inside LLMs — leveraging the model's own intrinsic truthfulness judgments during CoT reasoning to guide more reliable inference.
+**Goal**: How to excavate the "hidden cognition" inside LLMs — leveraging the model's own intrinsic truthfulness judgments during CoT reasoning to guide more reliable inference.
 
-**Starting Point**: This work extends findings from ITI — intermediate-layer attention heads are most sensitive to truthfulness. Unlike ITI, which focuses on static QA, this paper is the first to extend this insight to dynamic CoT reasoning scenarios, verifying that models implicitly track step-level truthfulness during progressive inference.
+**Key Insight**: This work extends findings from ITI — intermediate-layer attention heads are most sensitive to truthfulness. Unlike ITI, which focuses on static QA, this paper is the first to extend this insight to dynamic CoT reasoning scenarios, verifying that models implicitly track step-level truthfulness during progressive inference.
 
 **Core Idea**: Use probing techniques to identify attention heads most sensitive to truthfulness, extract their activations to train a confidence predictor, and guide beam search to select high-confidence reasoning paths.
 

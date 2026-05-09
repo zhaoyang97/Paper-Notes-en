@@ -27,15 +27,15 @@ content_hash: 2a357e1a4d5c201d
 Through systematic empirical analysis using erank (effective rank) and attention entropy, this work reveals the complementary nature of attention-based and diversity-based visual token pruning methods — attention methods suppress hallucinations but suffer from limited coverage, while diversity methods achieve broad coverage but tend to introduce hallucinations. Based on these findings, AgilePruner is proposed to adaptively switch pruning strategies according to image complexity, achieving robust performance across 9 benchmarks.
 
 ## Background & Motivation
-**State of the Field**: Visual tokens in LVLMs are highly redundant (often numbering in the hundreds), leading to poor inference efficiency. Existing pruning methods fall into two camps: attention-based methods (retaining high-attention tokens) and diversity-based methods (retaining tokens with the most dispersed features), with some hybrid strategies also proposed.
+**Background**: Visual tokens in LVLMs are highly redundant (often numbering in the hundreds), leading to poor inference efficiency. Existing pruning methods fall into two camps: attention-based methods (retaining high-attention tokens) and diversity-based methods (retaining tokens with the most dispersed features), with some hybrid strategies also proposed.
 
 **Limitations of Prior Work**: The relative merits of these approaches remain poorly understood — (1) How much diversity do diversity-based methods actually preserve? (2) What is the relationship between diversity and hallucination? (3) Which strategy is more suitable for different types of images? These questions lack systematic investigation.
 
-**Root Cause**: Attention-based methods perform well on simple images but provide insufficient coverage, while diversity-based methods perform better on complex images but are prone to hallucinations. No single method is universally optimal.
+**Key Challenge**: Attention-based methods perform well on simple images but provide insufficient coverage, while diversity-based methods perform better on complex images but are prone to hallucinations. No single method is universally optimal.
 
-**Paper Goals**: To empirically reveal the fundamental behavioral differences between the two paradigms and design an adaptive pruning strategy accordingly.
+**Goal**: To empirically reveal the fundamental behavioral differences between the two paradigms and design an adaptive pruning strategy accordingly.
 
-**Starting Point**: Effective rank (erank) is used to quantify feature diversity, and attention entropy is used to quantify attention concentration, serving as both analytical tools and the basis for adaptive switching.
+**Key Insight**: Effective rank (erank) is used to quantify feature diversity, and attention entropy is used to quantify attention concentration, serving as both analytical tools and the basis for adaptive switching.
 
 **Core Idea**: Adaptively switch between attention-based and diversity-based pruning according to the attention entropy of each image.
 

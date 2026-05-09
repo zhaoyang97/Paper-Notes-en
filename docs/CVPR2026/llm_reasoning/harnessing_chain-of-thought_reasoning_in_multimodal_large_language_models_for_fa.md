@@ -28,15 +28,15 @@ The paper introduces FaceCoT, the first CoT-VQA dataset for face anti-spoofing (
 
 ## Background & Motivation
 
-**State of the Field**: Face anti-spoofing (FAS) requires detecting presentation attacks such as print attacks, screen replay, and 3D masks. Existing methods primarily rely on single-modality CNN/ViT classifiers, which exhibit limited generalization across devices, environments, and attack types, and lack interpretability.
+**Background**: Face anti-spoofing (FAS) requires detecting presentation attacks such as print attacks, screen replay, and 3D masks. Existing methods primarily rely on single-modality CNN/ViT classifiers, which exhibit limited generalization across devices, environments, and attack types, and lack interpretability.
 
 **Limitations of Prior Work**: While multimodal large language models (MLLMs) have achieved breakthroughs in vision-language understanding and semantic reasoning, the FAS domain lacks high-quality visual-language multimodal datasets — publicly available FAS datasets contain only images/videos with binary labels, without structured language annotations.
 
-**Root Cause**: Directly training MLLMs on limited-label data leads to overfitting and prevents the generation of interpretable reasoning chains. Furthermore, end-to-end joint training of CoT reasoning and classification causes task interference — the classification objective converges quickly, leaving the reasoning objective under-optimized.
+**Key Challenge**: Directly training MLLMs on limited-label data leads to overfitting and prevents the generation of interpretable reasoning chains. Furthermore, end-to-end joint training of CoT reasoning and classification causes task interference — the classification objective converges quickly, leaving the reasoning objective under-optimized.
 
-**Paper Goals**: (1) Construct a large-scale CoT-VQA dataset for the FAS domain; (2) Design a training strategy that fully leverages CoT data.
+**Goal**: (1) Construct a large-scale CoT-VQA dataset for the FAS domain; (2) Design a training strategy that fully leverages CoT data.
 
-**Starting Point**: Simulating the human "global-to-local" hierarchical reasoning process, the paper designs a 6-level CoT annotation format, and constructs the dataset through a three-stage pipeline: GPT-4o annotation, human verification, and RL-fine-tuned caption model.
+**Key Insight**: Simulating the human "global-to-local" hierarchical reasoning process, the paper designs a 6-level CoT annotation format, and constructs the dataset through a three-stage pipeline: GPT-4o annotation, human verification, and RL-fine-tuned caption model.
 
 **Core Idea**: Structured CoT annotations are used to enhance the visual encoder of an MLLM for fine-grained facial feature perception, followed by joint training of reasoning and classification to achieve FAS.
 

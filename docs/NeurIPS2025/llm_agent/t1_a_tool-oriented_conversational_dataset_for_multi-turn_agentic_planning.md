@@ -27,15 +27,15 @@ content_hash: 0951b19611bdc81f
 This paper introduces T1, a dataset of 13.5K multi-turn dialogues spanning 9 domains (4 single-domain + 5 cross-domain) and 14 tools, with a focus on inter-tool dependencies and dynamic replanning. A baseline system, T1-Agent (code generation + caching mechanism), is proposed for systematic evaluation. Experiments show that SFT-tuned Llama 8B achieves 87.17% Tool Call F1, surpassing untuned 70B models, yet still trailing closed-source models such as GPT-5 and o3.
 
 ## Background & Motivation
-**State of the Field**: Tool-call evaluation for LLM agents has attracted increasing attention, with benchmarks such as APIBank, ToolBench, TravelPlanner, GAIA, and GTA already proposed. However, these benchmarks primarily focus on atomic tool calls in single-turn interactions, treating tool use as isolated operations.
+**Background**: Tool-call evaluation for LLM agents has attracted increasing attention, with benchmarks such as APIBank, ToolBench, TravelPlanner, GAIA, and GTA already proposed. However, these benchmarks primarily focus on atomic tool calls in single-turn interactions, treating tool use as isolated operations.
 
 **Limitations of Prior Work**: (a) Inter-tool output dependencies—where the result of tool A serves as input to tool B (e.g., using flight arrival time to derive hotel check-in date)—are insufficiently covered in existing benchmarks; (b) In realistic scenarios, user requests evolve progressively across dialogue turns (e.g., searching flights, then adding hotels, then filtering by price), requiring agents to dynamically adjust plans; (c) No existing benchmark evaluates the efficiency of intermediate result caching and reuse, nor whether an agent redundantly invokes the same API.
 
-**Root Cause**: Existing benchmarks can assess whether a model correctly invokes a single tool, but cannot evaluate whether it can coordinate multiple tools across multi-turn dialogues to complete complex cross-domain tasks.
+**Key Challenge**: Existing benchmarks can assess whether a model correctly invokes a single tool, but cannot evaluate whether it can coordinate multiple tools across multi-turn dialogues to complete complex cross-domain tasks.
 
-**Paper Goals**: Construct a large-scale conversational evaluation benchmark supporting multi-tool dependencies, multi-turn interaction, cross-domain planning, and dynamic replanning.
+**Goal**: Construct a large-scale conversational evaluation benchmark supporting multi-tool dependencies, multi-turn interaction, cross-domain planning, and dynamic replanning.
 
-**Starting Point**: A travel assistant scenario is adopted, covering four domains—flights, hotels, restaurants, and attractions—along with five cross-domain combinations, enabling systematic construction of tool dependency chains.
+**Key Insight**: A travel assistant scenario is adopted, covering four domains—flights, hotels, restaurants, and attractions—along with five cross-domain combinations, enabling systematic construction of tool dependency chains.
 
 **Core Idea**: A knowledge base, templates, and human annotation are combined to construct a multi-turn dialogue dataset with inter-tool dependency graphs. A code generation and caching agent baseline is introduced to systematically evaluate LLMs' complex tool coordination capabilities.
 

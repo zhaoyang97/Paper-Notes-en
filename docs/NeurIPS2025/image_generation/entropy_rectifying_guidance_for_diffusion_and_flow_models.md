@@ -29,14 +29,14 @@ This paper proposes Entropy Rectifying Guidance (ERG), which manipulates the Hop
 
 ## Background & Motivation
 
-- **State of the Field**: Diffusion models and flow matching models represent the current SOTA in image generation. Classifier-Free Guidance (CFG) is the most widely adopted guidance technique, enhancing generation quality and consistency by combining conditional and unconditional predictions.
+- **Background**: Diffusion models and flow matching models represent the current SOTA in image generation. Classifier-Free Guidance (CFG) is the most widely adopted guidance technique, enhancing generation quality and consistency by combining conditional and unconditional predictions.
 - **Limitations of Prior Work**: CFG suffers from an inherent quality–diversity–consistency trilemma:
   - **Diversity collapse**: Higher guidance scales cause generated samples to converge to a narrow distribution.
   - **Oversaturation**: Excessively strong guidance leads to oversaturated colors.
   - **Unconditional training overhead**: Training resources must be allocated to unconditional generation.
   - **Inapplicability to unconditional sampling**: CFG relies on conditional/unconditional contrast and cannot be applied to purely unconditional generation.
-- **Root Cause**: Existing approaches such as AutoGuidance require an additional weak model (increasing memory usage), while SEG/SAG are designed for U-Net architectures and are difficult to transfer to DiT.
-- **Paper Goals**: To simultaneously improve all three dimensions of performance within a single model, without any additional training.
+- **Key Challenge**: Existing approaches such as AutoGuidance require an additional weak model (increasing memory usage), while SEG/SAG are designed for U-Net architectures and are difficult to transfer to DiT.
+- **Goal**: To simultaneously improve all three dimensions of performance within a single model, without any additional training.
 
 ## Method
 

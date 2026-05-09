@@ -28,15 +28,15 @@ This paper proposes Flow Expander (FE), which expands the coverage of pretrained
 
 ## Background & Motivation
 
-**State of the Field**: Flow models and diffusion models are trained via divergence minimization and thus cover only a small subset of the design space corresponding to the training data distribution. Scientific discovery tasks (e.g., drug design, materials design) require exploration beyond the data distribution while remaining valid.
+**Background**: Flow models and diffusion models are trained via divergence minimization and thus cover only a small subset of the design space corresponding to the training data distribution. Scientific discovery tasks (e.g., drug design, materials design) require exploration beyond the data distribution while remaining valid.
 
 **Limitations of Prior Work**: (1) Pretrained flow models concentrate on high-density regions, and low-probability regions may correspond to invalid designs; (2) manifold exploration methods (e.g., density rebalancing) lose validity signals in data-sparse regions; (3) there is no principled approach to leveraging external verifiers (e.g., atomic bond checkers) to guide exploration.
 
-**Root Cause**: Exploring beyond the data distribution requires increased coverage (entropy maximization), yet unconstrained expansion produces invalid designs. A balance between expansion and validity must be achieved.
+**Key Challenge**: Exploring beyond the data distribution requires increased coverage (entropy maximization), yet unconstrained expansion produces invalid designs. A balance between expansion and validity must be achieved.
 
-**Paper Goals**: How can a pretrained flow model be adapted using a given verifier to expand its density beyond high-data-availability regions while preserving sample validity?
+**Goal**: How can a pretrained flow model be adapted using a given verifier to expand its density beyond high-data-availability regions while preserving sample validity?
 
-**Starting Point**: The paper formalizes the notions of strong and weak verifiers, and proposes separate mathematical frameworks for global and local flow expansion corresponding to each case.
+**Key Insight**: The paper formalizes the notions of strong and weak verifiers, and proposes separate mathematical frameworks for global and local flow expansion corresponding to each case.
 
 **Core Idea**: Principled expansion of pretrained flow models is achieved through verifier-constrained entropy maximization and Mirror Descent optimization in noise space.
 

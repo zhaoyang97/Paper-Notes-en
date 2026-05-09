@@ -28,11 +28,11 @@ This paper proposes ShortageSim, the first **LLM-based multi-agent** simulation 
 
 ## Background & Motivation
 
-1. **State of the Field**: Drug shortages represent a global healthcare crisis — the United States has averaged 130+ new shortage events annually over the past decade, with mean duration growing from 9 months in 2011 to 14 months in 2016. U.S. hospitals spend at least $359 million per year managing shortage-related logistics.
+1. **Background**: Drug shortages represent a global healthcare crisis — the United States has averaged 130+ new shortage events annually over the past decade, with mean duration growing from 9 months in 2011 to 14 months in 2016. U.S. hospitals spend at least $359 million per year managing shortage-related logistics.
 2. **Limitations of Prior Work**: (a) Severe information asymmetry — manufacturers conceal capacity data as trade secrets, regulators observe only aggregate shortage levels, and buyers cannot distinguish temporary from permanent supply disruptions; (b) Traditional game-theoretic models assume perfect rationality and complete information, failing to capture how real decision-makers interpret ambiguous regulatory signals and dynamically update beliefs; (c) FDA regulatory interventions (e.g., issuing shortage alerts) may trigger hoarding behavior, paradoxically exacerbating shortages.
-3. **Root Cause**: Regulatory signals are designed to promote transparency and alleviate shortages, yet they may trigger panic hoarding and coordination failures from overcapacity expansion. Evaluating these counterfactual effects requires a controlled experimental environment.
-4. **Paper Goals**: To construct a framework capable of simulating the impact of regulatory interventions on competitive dynamics, particularly under conditions of information asymmetry.
-5. **Starting Point**: LLMs serve as heterogeneous agents that simulate subjective interpretation of partial information and suboptimal decision-making by manufacturers, buyers, and the FDA.
+3. **Key Challenge**: Regulatory signals are designed to promote transparency and alleviate shortages, yet they may trigger panic hoarding and coordination failures from overcapacity expansion. Evaluating these counterfactual effects requires a controlled experimental environment.
+4. **Goal**: To construct a framework capable of simulating the impact of regulatory interventions on competitive dynamics, particularly under conditions of information asymmetry.
+5. **Key Insight**: LLMs serve as heterogeneous agents that simulate subjective interpretation of partial information and suboptimal decision-making by manufacturers, buyers, and the FDA.
 6. **Core Idea**: LLMs inherently possess the capacity for "bounded rationality and subjective interpretation," making them more suitable than game-theoretic assumptions for simulating human decision-making under information asymmetry.
 
 ## Method

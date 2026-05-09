@@ -28,13 +28,13 @@ This paper proposes the NGFF framework, which reconstructs 3D Gaussian represent
 
 ## Background & Motivation
 
-**State of the Field**: Video generation models produce visually stunning outputs but lack physical understanding, frequently violating fundamental laws such as gravity and object permanence. Methods combining 3DGS with traditional physics engines achieve good physical consistency but at prohibitive computational cost.
+**Background**: Video generation models produce visually stunning outputs but lack physical understanding, frequently violating fundamental laws such as gravity and object permanence. Methods combining 3DGS with traditional physics engines achieve good physical consistency but at prohibitive computational cost.
 
 **Limitations of Prior Work**: (1) Particle/mesh-based methods require predefined physical models and structured inputs, resulting in poor generalization; (2) MPM-based Gaussian methods offer high physical fidelity but at unacceptable computational cost; (3) Large video models overfit to surface visual features rather than learning physical principles.
 
-**Root Cause**: There is a need for an approach that simultaneously achieves physical consistency (via force modeling), computational efficiency (without MPM), and the ability to learn directly from visual observations (without structured inputs).
+**Key Challenge**: There is a need for an approach that simultaneously achieves physical consistency (via force modeling), computational efficiency (without MPM), and the ability to learn directly from visual observations (without structured inputs).
 
-**Starting Point**: Rather than predefining physical models, the paper learns explicit force fields — using a neural operator to predict inter-object forces and integrating dynamics via ODEs. 3D Gaussians provide an object-aware representational interface.
+**Key Insight**: Rather than predefining physical models, the paper learns explicit force fields — using a neural operator to predict inter-object forces and integrating dynamics via ODEs. 3D Gaussians provide an object-aware representational interface.
 
 ## Method
 

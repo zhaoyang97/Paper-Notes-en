@@ -34,7 +34,7 @@ This paper proposes the first monocular 3D object detection method that requires
 - Existing weakly supervised methods still require 2D instance masks (e.g., WeakMono3D, VSRD) or LiDAR data (e.g., WeakM3D, Autolabels).
 - VSRD requires ~15 minutes per frame for annotation; annotating Waymo's 158K frames would take approximately 4 years, rendering it practically unscalable.
 - Both WeakMono3D and VSRD fail to handle moving objects—they either discard them or assign low confidence, wasting a large amount of training signal.
-- **Paper Goals**: Completely eliminate dependence on human annotations and LiDAR, so that data from commodity vehicles equipped only with monocular cameras can be directly exploited.
+- **Goal**: Completely eliminate dependence on human annotations and LiDAR, so that data from commodity vehicles equipped only with monocular cameras can be directly exploited.
 
 ## Method
 

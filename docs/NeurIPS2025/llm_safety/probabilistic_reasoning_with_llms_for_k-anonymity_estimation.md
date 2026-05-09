@@ -33,9 +33,9 @@ As users share increasing amounts of personal information on platforms such as R
 - When prompted to reason about privacy risk using chain-of-thought (CoT), LLMs tend to commit three categories of errors: incorrect independence assumptions (ignoring conditional dependencies among attributes), order-of-magnitude estimation errors, and arithmetic errors in probability computation.
 - For example, when a user mentions being Italian, 26 years old, on the autism spectrum, and experiencing social anxiety, CoT independently estimates the probability of each attribute and multiplies them, entirely ignoring the strong conditional dependence between autism spectrum condition and social anxiety.
 
-**Root Cause**: Can LLMs effectively perform numerical reasoning under uncertainty? How can the demographic knowledge internalized by LLMs be leveraged to estimate joint probabilities over multiple interrelated attributes?
+**Key Challenge**: Can LLMs effectively perform numerical reasoning under uncertainty? How can the demographic knowledge internalized by LLMs be leveraged to estimate joint probabilities over multiple interrelated attributes?
 
-**Starting Point**: Personal information disclosures in text are modeled as random variables; LLMs implicitly construct a Bayesian network to factorize the joint probability distribution, estimating conditional probabilities sequentially before composing them into a final result.
+**Key Insight**: Personal information disclosures in text are modeled as random variables; LLMs implicitly construct a Bayesian network to factorize the joint probability distribution, estimating conditional probabilities sequentially before composing them into a final result.
 
 ## Method
 

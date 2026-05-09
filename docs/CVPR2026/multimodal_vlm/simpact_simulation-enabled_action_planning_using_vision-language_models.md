@@ -29,15 +29,15 @@ SIMPACT proposes a test-time simulation-augmented action planning framework that
 
 ## Background & Motivation
 
-**State of the Field**: Vision-language models (VLMs) such as GPT-4V and Gemini have demonstrated remarkable commonsense reasoning and semantic understanding capabilities, and have been widely explored for robot task planning. However, VLMs are trained on static image-text pairs from the internet, which contain no causal interactions or action-conditioned state transitions.
+**Background**: Vision-language models (VLMs) such as GPT-4V and Gemini have demonstrated remarkable commonsense reasoning and semantic understanding capabilities, and have been widely explored for robot task planning. However, VLMs are trained on static image-text pairs from the internet, which contain no causal interactions or action-conditioned state transitions.
 
 **Limitations of Prior Work**: (1) VLMs lack a deep understanding of physical dynamics—they do not know "what happens when an object is pushed" or "how different force magnitudes affect outcomes"; (2) existing VLM-based robot methods typically prompt models to directly output action parameters, without any physical verification mechanism; (3) enabling VLMs to "understand" the physical world without training new models remains an open problem.
 
-**Root Cause**: VLMs possess strong semantic reasoning capabilities but lack understanding of physical dynamics, fundamentally because internet-scale data contains no causal chains of the form "action → consequence."
+**Key Challenge**: VLMs possess strong semantic reasoning capabilities but lack understanding of physical dynamics, fundamentally because internet-scale data contains no causal chains of the form "action → consequence."
 
-**Paper Goals**: To augment VLMs with physical reasoning capability at test time—without additional training—enabling them to plan robotic manipulation tasks that require fine-grained physical understanding.
+**Goal**: To augment VLMs with physical reasoning capability at test time—without additional training—enabling them to plan robotic manipulation tasks that require fine-grained physical understanding.
 
-**Starting Point**: The authors observe that physics simulators (e.g., PyBullet, MuJoCo) can provide accurate physical predictions. If a simulator can be embedded as a "world model" within the VLM's reasoning loop at test time, it can compensate for the VLM's lack of physical understanding.
+**Key Insight**: The authors observe that physics simulators (e.g., PyBullet, MuJoCo) can provide accurate physical predictions. If a simulator can be embedded as a "world model" within the VLM's reasoning loop at test time, it can compensate for the VLM's lack of physical understanding.
 
 **Core Idea**: Embed a physics simulation loop within VLM inference—the VLM proposes an action → the simulator executes it → the VLM observes the simulation outcome → the VLM iteratively refines its reasoning—realizing "simulation as world model" for physics-augmented inference.
 

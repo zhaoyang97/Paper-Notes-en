@@ -29,15 +29,15 @@ This paper proposes DEPS, an end-to-end algorithm for discovering parameterized 
 
 ## Background & Motivation
 
-**State of the Field**: Standard RL applied to long-horizon sequential decision-making fails to exploit intrinsic behavioral patterns, resulting in poor sample efficiency. The Options framework aims to discover modular, temporally extended skills, but existing methods learn either purely discrete or purely continuous skills.
+**Background**: Standard RL applied to long-horizon sequential decision-making fails to exploit intrinsic behavioral patterns, resulting in poor sample efficiency. The Options framework aims to discover modular, temporally extended skills, but existing methods learn either purely discrete or purely continuous skills.
 
 **Limitations of Prior Work**: (i) Discrete skills lack flexibility and generalize poorly to new contexts; (ii) continuous skills are poorly structured and difficult to interpret; (iii) existing parameterized skill methods (e.g., da Silva et al.) require annotated task parameters, or rely on VLM-based pre-trained clustering (e.g., LOTUS, EXTRACT), assuming the same skill occurs in visually similar environments; (iv) latent variable models are prone to degeneration—low-level policies directly memorize behaviors without learning meaningful skill abstractions.
 
-**Root Cause**: How can parameterized skills with both discrete structure and continuous modulation be discovered end-to-end from demonstrations, without relying on additional annotations or predefined skill libraries?
+**Key Challenge**: How can parameterized skills with both discrete structure and continuous modulation be discovered end-to-end from demonstrations, without relying on additional annotations or predefined skill libraries?
 
-**Paper Goals**: Automatically discover parameterized skills from multi-task expert demonstrations, enabling rapid generalization to unseen tasks.
+**Goal**: Automatically discover parameterized skills from multi-task expert demonstrations, enabling rapid generalization to unseen tasks.
 
-**Starting Point**: Skills are modeled as parameterized trajectory manifolds, and extreme state compression (to 1 dimension) is employed to force latent variables to encode meaningful skill information.
+**Key Insight**: Skills are modeled as parameterized trajectory manifolds, and extreme state compression (to 1 dimension) is employed to force latent variables to encode meaningful skill information.
 
 **Core Idea**: By compressing the observation space to a 1-dimensional "index," an information asymmetry is created that forces discrete skills and continuous parameters to carry critical task-semantic information.
 

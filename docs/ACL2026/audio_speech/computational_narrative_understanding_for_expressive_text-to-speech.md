@@ -29,15 +29,15 @@ This paper extracts character direct speech from fiction audiobooks to construct
 
 ## Background & Motivation
 
-**State of the Field**: Recent TTS systems have achieved substantial progress through large-scale multi-domain speech corpora (e.g., Emilia, ~100K hours), demonstrating strong naturalness and voice-following capabilities. Audiobooks (e.g., LibriSpeech, LibriHeavy) remain the most common open-source TTS data source.
+**Background**: Recent TTS systems have achieved substantial progress through large-scale multi-domain speech corpora (e.g., Emilia, ~100K hours), demonstrating strong naturalness and voice-following capabilities. Audiobooks (e.g., LibriSpeech, LibriHeavy) remain the most common open-source TTS data source.
 
 **Limitations of Prior Work**: (1) Existing audiobook datasets (LibriTTS, LibriHeavy) entirely disregard narrative structure during segmentation—either discarding character quotations or mixing quoted speech with neutral narration within the same 30-second segment, resulting in segments with highly heterogeneous prosodic distributions; (2) audiobooks are sometimes considered to lack expressive diversity, an assumption that overlooks the rich prosodic variation inherent in fictional character dialogue; (3) existing expressive speech datasets are either small in scale (EXPRESSO contains only tens of hours) or limited in annotation scheme (relying solely on discrete emotion labels).
 
-**Root Cause**: Fictional audiobooks contain abundant expressive speech in character dialogue, yet conventional segmentation strategies prevent TTS models from exploiting this resource—segments that intermix neutral narration and expressive quotations bias models toward learning the simpler neutral portions.
+**Key Challenge**: Fictional audiobooks contain abundant expressive speech in character dialogue, yet conventional segmentation strategies prevent TTS models from exploiting this resource—segments that intermix neutral narration and expressive quotations bias models toward learning the simpler neutral portions.
 
-**Paper Goals**: (1) Construct a large-scale expressive speech dataset centered on character quotations; (2) annotate speaking style using speech verbs and adverbs from narrative context as pseudo-labels; (3) validate the dataset's effectiveness in improving TTS expressiveness and intelligibility.
+**Goal**: (1) Construct a large-scale expressive speech dataset centered on character quotations; (2) annotate speaking style using speech verbs and adverbs from narrative context as pseudo-labels; (3) validate the dataset's effectiveness in improving TTS expressiveness and intelligibility.
 
-**Starting Point**: Drawing on narratological theory (Genette's theory of narrative discourse), the paper applies quotation detection and text-audio alignment techniques to systematically extract and annotate character quotations from LibriVox fiction recordings.
+**Key Insight**: Drawing on narratological theory (Genette's theory of narrative discourse), the paper applies quotation detection and text-audio alignment techniques to systematically extract and annotate character quotations from LibriVox fiction recordings.
 
 **Core Idea**: Character quotations in audiobooks naturally constitute large-scale, diverse expressive speech data—narrators modulate their speaking style according to context when voicing character dialogue, while surrounding speech verbs and adverbs (e.g., "he whispered softly") provide natural style pseudo-labels.
 

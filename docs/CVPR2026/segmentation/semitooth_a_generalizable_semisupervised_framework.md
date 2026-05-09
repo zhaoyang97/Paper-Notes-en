@@ -28,11 +28,11 @@ This paper proposes SemiTooth, a framework that addresses distribution discrepan
 
 ## Background & Motivation
 
-1. **State of the Field**: CBCT (Cone Beam CT) tooth structure segmentation is a fundamental task in clinical dentistry. Fully supervised methods have achieved notable progress, but voxel-level annotation is time-consuming and costly, leaving large amounts of de-identified, unlabeled CBCT data underutilized.
+1. **Background**: CBCT (Cone Beam CT) tooth structure segmentation is a fundamental task in clinical dentistry. Fully supervised methods have achieved notable progress, but voxel-level annotation is time-consuming and costly, leaving large amounts of de-identified, unlabeled CBCT data underutilized.
 2. **Limitations of Prior Work**: Semi-supervised medical image segmentation (SSMIS) methods such as Mean Teacher can exploit unlabeled data, but are primarily designed for single-source settings. In practice, CBCT scans acquired across different hospitals and devices exhibit significant distribution shifts in density, intensity, and feature distributions, and naïvely mixing them leads to poor generalization. Moreover, publicly available multi-source CBCT tooth segmentation datasets are scarce.
-3. **Root Cause**: The domain gap among multiple sources makes unified training difficult—a simple single-teacher–single-student framework cannot simultaneously accommodate the feature heterogeneity of multiple data sources, and pseudo-label quality degrades severely in cross-source scenarios.
-4. **Paper Goals**: ① Construct a multi-source semi-supervised CBCT tooth segmentation dataset; ② design a semi-supervised framework capable of handling multi-source distribution discrepancies.
-5. **Starting Point**: Assign dedicated student networks to different data sources for source-specific learning, provide supervision via corresponding teacher networks, and design region-level confidence constraints to filter noisy pseudo-labels.
+3. **Key Challenge**: The domain gap among multiple sources makes unified training difficult—a simple single-teacher–single-student framework cannot simultaneously accommodate the feature heterogeneity of multiple data sources, and pseudo-label quality degrades severely in cross-source scenarios.
+4. **Goal**: ① Construct a multi-source semi-supervised CBCT tooth segmentation dataset; ② design a semi-supervised framework capable of handling multi-source distribution discrepancies.
+5. **Key Insight**: Assign dedicated student networks to different data sources for source-specific learning, provide supervision via corresponding teacher networks, and design region-level confidence constraints to filter noisy pseudo-labels.
 6. **Core Idea**: A multi-teacher–multi-student branched framework combined with region-level strict confidence constraints, enabling each data source to be effectively utilized in semi-supervised learning.
 
 ## Method

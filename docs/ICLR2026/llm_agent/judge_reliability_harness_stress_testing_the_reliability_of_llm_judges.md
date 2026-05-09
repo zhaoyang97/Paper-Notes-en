@@ -28,15 +28,15 @@ This paper proposes Judge Reliability Harness (JRH), an open-source framework th
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are widely used as autograders to score, rank, or classify AI outputs, serving as a cost-effective alternative to human evaluation. Works such as MT-Bench and Chatbot Arena have demonstrated that GPT-4-level judges can approach expert-level agreement.
+**Background**: LLMs are widely used as autograders to score, rank, or classify AI outputs, serving as a cost-effective alternative to human evaluation. Works such as MT-Bench and Chatbot Arena have demonstrated that GPT-4-level judges can approach expert-level agreement.
 
 **Limitations of Prior Work**: The reliability of LLM judges is rarely systematically evaluated or reported. Point estimates of agreement with human annotations on small validation sets do not guarantee robustness to input variations in format, wording, or length.
 
-**Root Cause**: Judges play a central role in the evaluation ecosystem, yet standardized reliability testing tools are lacking. Prior research has identified issues such as position bias and verbosity bias in LLM judges, but no practical, reproducible testing framework exists.
+**Key Challenge**: Judges play a central role in the evaluation ecosystem, yet standardized reliability testing tools are lacking. Prior research has identified issues such as position bias and verbosity bias in LLM judges, but no practical, reproducible testing framework exists.
 
-**Paper Goals**: To construct a general, configurable validation suite that enables any LLM judge to undergo systematic reliability stress testing prior to deployment.
+**Goal**: To construct a general, configurable validation suite that enables any LLM judge to undergo systematic reliability stress testing prior to deployment.
 
-**Starting Point**: A synthetic data generation pipeline combined with optional human review to automatically produce multi-dimensional test cases.
+**Key Insight**: A synthetic data generation pipeline combined with optional human review to automatically produce multi-dimensional test cases.
 
 **Core Idea**: A standardized testing framework driven by synthetic perturbations that systematically exposes reliability weaknesses of LLM judges across multiple dimensions.
 

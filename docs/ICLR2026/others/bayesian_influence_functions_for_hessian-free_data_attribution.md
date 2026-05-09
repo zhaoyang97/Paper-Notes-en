@@ -27,15 +27,15 @@ content_hash: 7cf65e3081d7986c
 This paper proposes the Local Bayesian Influence Function (BIF), which replaces the intractable Hessian inversion in classical influence functions with a covariance estimate obtained via SGLD sampling, enabling architecture-agnostic data attribution for models with billions of parameters and achieving state-of-the-art performance on retraining experiments.
 
 ## Background & Motivation
-**State of the Field**: Training Data Attribution (TDA) studies how training data shapes model behavior, forming a foundational problem in AI interpretability and safety. Classical Influence Functions (IF) measure the impact of data points via the inverse Hessian.
+**Background**: Training Data Attribution (TDA) studies how training data shapes model behavior, forming a foundational problem in AI interpretability and safety. Classical Influence Functions (IF) measure the impact of data points via the inverse Hessian.
 
 **Limitations of Prior Work**: (a) The Hessian of deep neural networks is typically degenerate (non-invertible), violating the theoretical premise of classical IF; (b) Direct Hessian computation is infeasible for large models, and approximation methods such as EK-FAC introduce structural bias while supporting only Linear/Conv2D layers; (c) Fine-grained per-token attribution requires serial computation over tokens in classical methods and does not scale.
 
-**Root Cause**: A data attribution method is needed that is both theoretically sound (without relying on Hessian invertibility) and computationally feasible (scalable to billions of parameters).
+**Key Challenge**: A data attribution method is needed that is both theoretically sound (without relying on Hessian invertibility) and computationally feasible (scalable to billions of parameters).
 
-**Paper Goals**: Can a Bayesian inference framework entirely bypass the Hessian while maintaining or surpassing the attribution quality of classical IF?
+**Goal**: Can a Bayesian inference framework entirely bypass the Hessian while maintaining or surpassing the attribution quality of classical IF?
 
-**Starting Point**: Replace the inverse Hessian in classical IF with a covariance estimate over a local posterior distribution, realized via SGLD sampling.
+**Key Insight**: Replace the inverse Hessian in classical IF with a covariance estimate over a local posterior distribution, realized via SGLD sampling.
 
 **Core Idea**: $\text{BIF}(z_i, \phi) = -\text{Cov}_\gamma(\ell_i(\boldsymbol{w}), \phi(\boldsymbol{w}))$ — influence is defined as the negative covariance between the training loss and the target observable under the local posterior.
 

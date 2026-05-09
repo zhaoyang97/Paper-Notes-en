@@ -27,15 +27,15 @@ This paper proposes the Incremental Cell Enumeration (ICE) algorithm — the fir
 
 ## Background & Motivation
 
-**State of the Field**: Linear classification is among the most fundamental problems in machine learning, with a long history dating back to Linear Discriminant Analysis (LDA) in 1936. For linearly separable data, methods such as SVM and logistic regression perform well; however, for linearly inseparable data, exactly minimizing the 0-1 loss (i.e., the number of misclassified points) is NP-hard.
+**Background**: Linear classification is among the most fundamental problems in machine learning, with a long history dating back to Linear Discriminant Analysis (LDA) in 1936. For linearly separable data, methods such as SVM and logistic regression perform well; however, for linearly inseparable data, exactly minimizing the 0-1 loss (i.e., the number of misclassified points) is NP-hard.
 
 **Limitations of Prior Work**: Existing methods rely on surrogate loss functions (e.g., hinge loss, logistic loss) and cannot guarantee finding the global optimum under the 0-1 loss. Although Mixed Integer Programming (MIP) solvers such as Gurobi can be used for exact solutions, they are general-purpose solvers that do not exploit the specific structure of this problem. Branch-and-Bound (BnB) approaches have been attempted but lack formal correctness proofs and exhibit extremely high worst-case complexity.
 
-**Root Cause**: According to Vapnik's generalization bounds, lower training error combined with simpler models should yield better generalization. Linear models have a VC dimension of only $D+1$, making them among the simplest classifiers. Yet, due to the inability to exactly optimize the 0-1 loss, the theoretical prediction that "exact solutions generalize better" has never been empirically verified.
+**Key Challenge**: According to Vapnik's generalization bounds, lower training error combined with simpler models should yield better generalization. Linear models have a VC dimension of only $D+1$, making them among the simplest classifiers. Yet, due to the inability to exactly optimize the 0-1 loss, the theoretical prediction that "exact solutions generalize better" has never been empirically verified.
 
-**Paper Goals**: How can the 0-1 loss linear classification problem be solved exactly and efficiently? What is the relationship among the seemingly contradictory complexity analyses — Cover's counting theorem, Murthy's $2^D \binom{N}{D}$ bound, and Nguyen–Sanner's $\binom{N}{D}$ observation? Do exact solutions actually overfit?
+**Goal**: How can the 0-1 loss linear classification problem be solved exactly and efficiently? What is the relationship among the seemingly contradictory complexity analyses — Cover's counting theorem, Murthy's $2^D \binom{N}{D}$ bound, and Nguyen–Sanner's $\binom{N}{D}$ observation? Do exact solutions actually overfit?
 
-**Starting Point**: The paper departs from the theory of hyperplane arrangements and oriented matroids, leveraging point–hyperplane duality transformations to establish combinatorial and incidence relations between data points and linear dichotomies.
+**Key Insight**: The paper departs from the theory of hyperplane arrangements and oriented matroids, leveraging point–hyperplane duality transformations to establish combinatorial and incidence relations between data points and linear dichotomies.
 
 **Core Idea**: The duality transform converts the classification problem into a cell enumeration problem over hyperplane arrangements, proving that only $\binom{N}{D}$ hyperplanes passing through $D$ data points need be enumerated to find the global optimum. An incremental combinatorial generator is then employed for efficient enumeration.
 

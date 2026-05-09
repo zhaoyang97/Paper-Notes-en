@@ -29,15 +29,15 @@ Systematic experiments demonstrate that mainstream LLMs (GPT-4, Claude 3 Opus, L
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have demonstrated strong performance across numerous domains, yet systematic evaluation of undesirable behaviors—hallucination, bias, and harmful content—remains critical. LLMs are expected to help bridge global information accessibility gaps.
+**Background**: LLMs have demonstrated strong performance across numerous domains, yet systematic evaluation of undesirable behaviors—hallucination, bias, and harmful content—remains critical. LLMs are expected to help bridge global information accessibility gaps.
 
 **Limitations of Prior Work**: Social psychology research has established pervasive bias against non-native English speakers among native speakers (perceiving them as less educated and less capable). LLM training data and RLHF alignment may amplify such biases. Existing work (e.g., Perez et al., 2023) only preliminarily explored the effect of educational level on sandbagging, with insufficient breadth and depth.
 
-**Root Cause**: A sharp contradiction exists between the vision of LLMs as tools for information democratization and the reality of their systematic underperformance for vulnerable users—those who need the most help receive the lowest quality of service.
+**Key Challenge**: A sharp contradiction exists between the vision of LLMs as tools for information democratization and the reality of their systematic underperformance for vulnerable users—those who need the most help receive the lowest quality of service.
 
-**Paper Goals**: To comprehensively quantify how LLM response quality varies with user characteristics (English proficiency, educational level, nationality), and to reveal the severity and mechanisms of this targeted underperformance.
+**Goal**: To comprehensively quantify how LLM response quality varies with user characteristics (English proficiency, educational level, nationality), and to reveal the severity and mechanisms of this targeted underperformance.
 
-**Starting Point**: The study conducts large-scale controlled experiments on TruthfulQA (truthfulness) and SciQ (factuality) using carefully designed user bios to simulate query scenarios for users of different backgrounds.
+**Key Insight**: The study conducts large-scale controlled experiments on TruthfulQA (truthfulness) and SciQ (factuality) using carefully designed user bios to simulate query scenarios for users of different backgrounds.
 
 **Core Idea**: LLM misbehavior is not random but systematically targets vulnerable users—non-native English speakers, users with lower educational attainment, and non-US users receive lower accuracy, more misinformation, and higher refusal rates, with these effects compounding when multiple factors co-occur.
 

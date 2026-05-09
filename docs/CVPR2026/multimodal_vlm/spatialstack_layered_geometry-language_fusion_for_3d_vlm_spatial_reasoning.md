@@ -29,11 +29,11 @@ This paper proposes SpatialStack, a framework that injects multi-level geometric
 ## Background & Motivation
 Large vision-language models (VLMs) exhibit notable deficiencies in 3D spatial reasoning—they cannot reliably encode 3D geometric structures and spatial relationships. Existing approaches such as Spatial-MLLM, VG-LLM, and VLM-3R integrate end-to-end geometry encoders (DUST3R/VGGT, etc.) into VLMs, but **fuse only the final-layer features** of the geometry encoder with visual encoder features.
 
-**Root Cause**: Geometry encoders such as VGGT adopt a DPT architecture that explicitly extracts multi-level representations from different Transformer layers to recover detailed geometric information. Taking only the last layer discards rich hierarchical geometric cues from intermediate layers—shallow layers retain sharp local structures and geometric boundaries, while deep layers produce overly homogenized activations. This finding is empirically validated: injecting shallow geometric features benefits low-level perception tasks (depth estimation, distance comparison), while injecting deep features benefits high-level reasoning tasks (cross-view relational reasoning).
+**Key Challenge**: Geometry encoders such as VGGT adopt a DPT architecture that explicitly extracts multi-level representations from different Transformer layers to recover detailed geometric information. Taking only the last layer discards rich hierarchical geometric cues from intermediate layers—shallow layers retain sharp local structures and geometric boundaries, while deep layers produce overly homogenized activations. This finding is empirically validated: injecting shallow geometric features benefits low-level perception tasks (depth estimation, distance comparison), while injecting deep features benefits high-level reasoning tasks (cross-view relational reasoning).
 
 **Key Findings**: Naively concatenating multi-layer geometric features and injecting them into the visual pathway (naive multi-layer fusion) causes **feature interference rather than synergy**, yielding worse performance than single-layer fusion. This reveals that the true challenge lies in the **fusion strategy**, not merely in extracting multi-level features.
 
-**Starting Point**: Relocate geometric feature fusion from the visual encoder side to the LLM decoder side, enabling progressive alignment of shallow geometry → shallow LLM layers and deep geometry → deep LLM layers.
+**Key Insight**: Relocate geometric feature fusion from the visual encoder side to the LLM decoder side, enabling progressive alignment of shallow geometry → shallow LLM layers and deep geometry → deep LLM layers.
 
 ## Method
 

@@ -28,15 +28,15 @@ This paper proposes MRMBench, a benchmark that evaluates whether reward models (
 
 ## Background & Motivation
 
-**State of the Field**: Reward models (RMs) are a core component of RLHF alignment, typically trained with Bradley-Terry loss on human preference data. Common RM evaluation methods compute pairwise ranking accuracy on fixed test sets (e.g., RewardBench), or assess end-to-end performance of the aligned LLM directly.
+**Background**: Reward models (RMs) are a core component of RLHF alignment, typically trained with Bradley-Terry loss on human preference data. Common RM evaluation methods compute pairwise ranking accuracy on fixed test sets (e.g., RewardBench), or assess end-to-end performance of the aligned LLM directly.
 
 **Limitations of Prior Work**: (1) Pairwise ranking reduces evaluation to a binary decision (which response is better), failing to reveal an RM's capture ability across **individual preference dimensions**—e.g., whether a high score stems from detecting correctness or harmlessness. (2) End-to-end evaluation (training PPO + evaluating the LLM) is computationally prohibitive. (3) With the rise of multi-objective reward models, simple pairwise ranking is increasingly insufficient to evaluate dimensional balance.
 
-**Root Cause**: The RM's preference representation is a high-dimensional vector $\mathbf{h}_{[x,y]}$, yet the model ultimately outputs a single scalar reward $r_\phi(x,y) = \mathbf{h}_{[x,y]} \mathbf{W}_r$. Existing methods evaluate only the ranking correctness of this scalar, leaving the internal preference structure of the black box unexplained.
+**Key Challenge**: The RM's preference representation is a high-dimensional vector $\mathbf{h}_{[x,y]}$, yet the model ultimately outputs a single scalar reward $r_\phi(x,y) = \mathbf{h}_{[x,y]} \mathbf{W}_r$. Existing methods evaluate only the ranking correctness of this scalar, leaving the internal preference structure of the black box unexplained.
 
-**Paper Goals**: (1) Determine whether RMs effectively encode preferences along each preference dimension; (2) understand which dimensions an RM relies on when making reward predictions; (3) leverage this understanding to improve alignment quality.
+**Goal**: (1) Determine whether RMs effectively encode preferences along each preference dimension; (2) understand which dimensions an RM relies on when making reward predictions; (3) leverage this understanding to improve alignment quality.
 
-**Starting Point**: Drawing inspiration from probing tasks in NLP for evaluating language model representations—if a simple linear classifier can successfully predict a given dimension (e.g., "harmful vs. harmless") from an RM's preference representation, this indicates that the RM internally encodes that dimension.
+**Key Insight**: Drawing inspiration from probing tasks in NLP for evaluating language model representations—if a simple linear classifier can successfully predict a given dimension (e.g., "harmful vs. harmless") from an RM's preference representation, this indicates that the RM internally encodes that dimension.
 
 **Core Idea**: Diagnose reward model preference representations using probing classifiers, enabling for the first time fine-grained evaluation and mechanistic analysis of RMs' multi-dimensional preference capture capabilities.
 

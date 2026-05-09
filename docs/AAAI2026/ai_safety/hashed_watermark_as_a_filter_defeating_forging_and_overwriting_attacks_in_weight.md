@@ -30,12 +30,12 @@ This paper proposes NeuralMark—a weight-based watermarking method built on a h
 
 ## Background & Motivation
 
-- **State of the Field**: Training deep neural networks incurs enormous costs (GPT-4 ≈ \$40M), making models valuable digital assets that require copyright protection. Neural network watermarking (NNW) is categorized into white-box (parameter access), black-box (query input/output), and no-box (model output only) approaches. Among white-box methods, weight watermarking directly embeds watermarks into model parameters without modifying the network architecture, offering the best compatibility.
+- **Background**: Training deep neural networks incurs enormous costs (GPT-4 ≈ \$40M), making models valuable digital assets that require copyright protection. Neural network watermarking (NNW) is categorized into white-box (parameter access), black-box (query input/output), and no-box (model output only) approaches. Among white-box methods, weight watermarking directly embeds watermarks into model parameters without modifying the network architecture, offering the best compatibility.
 - **Limitations of Prior Work**: Existing weight watermarking methods face two critical attack types:
   (1) **Forging attacks**: The adversary freezes model parameters and uses back-propagation to reverse-engineer a forged key–watermark pair to claim model ownership—VanillaMark and VoteMark are both 100% forgeable.
   (2) **Overwriting attacks**: The adversary embeds their own watermark to overwrite the original—when the attacker's embedding strength $\lambda$ is 1000× that of the original, GreedyMark's detection rate drops to 49.60%.
-- **Root Cause**: Resistance to forging requires blocking gradient computation (irreversibility), while resistance to overwriting requires different watermarks to select different parameters (parameter isolation). Prior methods address at most one of these two challenges.
-- **Starting Point**: The **avalanche effect** of hash functions (small input change → drastic output change) enables irreversibility, while distinct hashed watermarks serve as **private filters** to achieve parameter isolation—a single mechanism that resolves both problems simultaneously.
+- **Key Challenge**: Resistance to forging requires blocking gradient computation (irreversibility), while resistance to overwriting requires different watermarks to select different parameters (parameter isolation). Prior methods address at most one of these two challenges.
+- **Key Insight**: The **avalanche effect** of hash functions (small input change → drastic output change) enables irreversibility, while distinct hashed watermarks serve as **private filters** to achieve parameter isolation—a single mechanism that resolves both problems simultaneously.
 
 ## Method
 

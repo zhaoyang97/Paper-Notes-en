@@ -28,15 +28,15 @@ This paper proposes LoongRL, which constructs KeyChain synthetic data for reinfo
 
 ## Background & Motivation
 
-**State of the Field**: Recent advances in LLM reasoning (e.g., DeepSeek-R1, o1) focus primarily on short-context reasoning tasks (mathematics, code), using RL to elicit longer chain-of-thought and self-reflection. Long-context reasoning—requiring retrieval and integration of information from thousands of tokens of external input—remains largely unexplored.
+**Background**: Recent advances in LLM reasoning (e.g., DeepSeek-R1, o1) focus primarily on short-context reasoning tasks (mathematics, code), using RL to elicit longer chain-of-thought and self-reflection. Long-context reasoning—requiring retrieval and integration of information from thousands of tokens of external input—remains largely unexplored.
 
 **Limitations of Prior Work**: (a) Existing long-context models support extended windows (128K+) but excel mainly at **retrieval**, performing poorly in scenarios requiring **reasoning**; (b) high-difficulty long-context data suitable for RL training is extremely scarce, and answer format diversity complicates verification; (c) scaling RL rollouts from short text (<1K) to 128K contexts is computationally prohibitive; (d) training exclusively on long-context data degrades short-context capability.
 
-**Root Cause**: Long-context reasoning requires a distinctive cognitive pattern (plan → retrieve → reason → verify), which cannot be acquired through simple SFT or prompting and must be explored and incentivized via RL. However, appropriate RL training data does not exist—it must be sufficiently difficult to trigger reasoning, require retrieving information from long contexts, and produce verifiable answers.
+**Key Challenge**: Long-context reasoning requires a distinctive cognitive pattern (plan → retrieve → reason → verify), which cannot be acquired through simple SFT or prompting and must be explored and incentivized via RL. However, appropriate RL training data does not exist—it must be sufficiently difficult to trigger reasoning, require retrieving information from long contexts, and produce verifiable answers.
 
-**Paper Goals**: (a) How to design high-quality RL training data that incentivizes long-context reasoning? (b) How to train on short contexts yet generalize to ultra-long contexts? (c) How to preserve short-context capability without degradation?
+**Goal**: (a) How to design high-quality RL training data that incentivizes long-context reasoning? (b) How to train on short contexts yet generalize to ultra-long contexts? (c) How to preserve short-context capability without degradation?
 
-**Starting Point**: The authors observe that if RL training data inherently requires multi-step operations—"trace a chain of clues → identify the true question → retrieve → reason"—models naturally develop structured long-context reasoning patterns. Once acquired, this pattern generalizes to arbitrary lengths.
+**Key Insight**: The authors observe that if RL training data inherently requires multi-step operations—"trace a chain of clues → identify the true question → retrieve → reason"—models naturally develop structured long-context reasoning patterns. Once acquired, this pattern generalizes to arbitrary lengths.
 
 **Core Idea**: By embedding UUID chains into short multi-hop QA instances to conceal the true question (KeyChain), the authors construct high-difficulty RL training data that elicits a plan-retrieve-reason-recheck reasoning pattern in LLMs and enables generalization to 128K contexts.
 

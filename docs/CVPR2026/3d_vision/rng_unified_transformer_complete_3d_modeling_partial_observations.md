@@ -29,11 +29,11 @@ This paper proposes RnG, a unified feed-forward Transformer that leverages recon
 
 ## Background & Motivation
 
-1. **State of the Field**: Generalizable 3D reconstruction methods (DUSt3R, VGGT) can recover geometry of visible regions from sparse images but do not model unobserved regions. Novel view synthesis (NVS) methods (LVSM) can generate images from unseen viewpoints but lack consistent 3D structure.
+1. **Background**: Generalizable 3D reconstruction methods (DUSt3R, VGGT) can recover geometry of visible regions from sparse images but do not model unobserved regions. Novel view synthesis (NVS) methods (LVSM) can generate images from unseen viewpoints but lack consistent 3D structure.
 2. **Limitations of Prior Work**: Reconstruction methods produce incomplete outputs (visible regions only); NVS methods lack 3D consistency or require known camera poses. Matrix3D unifies both tasks but its diffusion-based design results in extremely slow inference (27 s/view).
-3. **Root Cause**: How can a single model unify reconstruction and generation while maintaining real-time inference capability?
-4. **Paper Goals**: To exploit the latent 3D understanding in reconstruction foundation models and activate it explicitly via neural rendering.
-5. **Starting Point**: Transferring reconstruction priors to generation—rather than the conventional direction of using generative priors to assist reconstruction—constitutes a reverse knowledge transfer.
+3. **Key Challenge**: How can a single model unify reconstruction and generation while maintaining real-time inference capability?
+4. **Goal**: To exploit the latent 3D understanding in reconstruction foundation models and activate it explicitly via neural rendering.
+5. **Key Insight**: Transferring reconstruction priors to generation—rather than the conventional direction of using generative priors to assist reconstruction—constitutes a reverse knowledge transfer.
 6. **Core Idea**: A causal attention mask prevents source-view tokens from being influenced by target-view tokens, allowing the KV-Cache to naturally serve as a reusable implicit 3D representation.
 
 ## Method

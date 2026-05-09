@@ -28,20 +28,20 @@ This paper proposes an efficient post-hoc calibration method based on isotonic r
 
 ## Background & Motivation
 
-1. **State of the Field**: Appearance-based gaze tracking uses deep learning to directly predict gaze angles from eye images. Existing uncertainty-aware methods estimate prediction uncertainty via probabilistic modeling (heteroscedastic regression), quantile regression, or contrastive learning. However, the uncertainty estimates of these models are reliable only within the training domain.
+1. **Background**: Appearance-based gaze tracking uses deep learning to directly predict gaze angles from eye images. Existing uncertainty-aware methods estimate prediction uncertainty via probabilistic modeling (heteroscedastic regression), quantile regression, or contrastive learning. However, the uncertainty estimates of these models are reliable only within the training domain.
 
 2. **Limitations of Prior Work**:
    - Domain shift (cross-subject, cross-dataset) leads to severely inaccurate uncertainty estimates numerically — the magnitude of model-predicted uncertainty does not match the actual error distribution.
    - Existing methods use uncertainty only for **relative ranking** (e.g., outlier detection) rather than providing reliable **absolute values** (e.g., 95% confidence intervals).
    - The widely used Error-Uncertainty Correlation (EUC) metric is based on a spurious causal assumption: the true sources of uncertainty are epistemic and aleatoric factors, not prediction error itself, making EUC an unreliable measure of uncertainty quality.
 
-3. **Root Cause**: Uncertainty estimation models learn data-specific conditional distribution biases during training. Under domain shift, the learned mapping from "input → uncertainty magnitude" becomes inaccurate, while parameter-level adaptation (e.g., transfer learning, meta-learning) requires substantial target-domain data to re-learn the conditional distribution.
+3. **Key Challenge**: Uncertainty estimation models learn data-specific conditional distribution biases during training. Under domain shift, the learned mapping from "input → uncertainty magnitude" becomes inaccurate, while parameter-level adaptation (e.g., transfer learning, meta-learning) requires substantial target-domain data to re-learn the conditional distribution.
 
-4. **Paper Goals**:
+4. **Goal**:
    - How to efficiently correct uncertainty estimates under domain shift using a small number of calibration samples?
    - How to design a metric that correctly evaluates uncertainty quality (as a replacement for the problematic EUC)?
 
-5. **Starting Point**: Framing uncertainty correction as an output-level conditional distribution matching problem — without modifying model parameters, an isotonic regression is learned at the output level to map nominal probabilities to actual probabilities.
+5. **Key Insight**: Framing uncertainty correction as an output-level conditional distribution matching problem — without modifying model parameters, an isotonic regression is learned at the output level to map nominal probabilities to actual probabilities.
 
 6. **Core Idea**: Apply isotonic regression for post-hoc calibration, requiring only ~50 calibration samples to align the predicted distribution with the observed distribution, while replacing the spuriously causal EUC with CPE for correct uncertainty quality evaluation.
 

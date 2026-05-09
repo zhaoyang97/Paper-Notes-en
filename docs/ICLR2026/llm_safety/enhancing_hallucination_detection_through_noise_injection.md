@@ -28,15 +28,15 @@ Injecting uniform noise into MLP activations of intermediate LLM layers to appro
 
 ## Background & Motivation
 
-**State of the Field**: Mainstream hallucination detection methods estimate LLM uncertainty via semantic entropy or multi-sample consistency, but these approaches primarily capture aleatoric uncertainty (uncertainty inherent in the data).
+**Background**: Mainstream hallucination detection methods estimate LLM uncertainty via semantic entropy or multi-sample consistency, but these approaches primarily capture aleatoric uncertainty (uncertainty inherent in the data).
 
 **Limitations of Prior Work**: Epistemic uncertainty — the model's uncertainty about its own knowledge — is largely ignored in existing methods. Standard sampling only varies the randomness of token distributions without altering the model itself, and thus cannot capture signals reflecting "what the model does not know it knows."
 
-**Root Cause**: Full Bayesian inference requires sampling from the posterior distribution over model weights, which is computationally intractable for large models, while existing approximations such as MC-Dropout are insufficiently effective.
+**Key Challenge**: Full Bayesian inference requires sampling from the posterior distribution over model weights, which is computationally intractable for large models, while existing approximations such as MC-Dropout are insufficiently effective.
 
-**Paper Goals**: How can epistemic uncertainty in large language models be efficiently captured without retraining?
+**Goal**: How can epistemic uncertainty in large language models be efficiently captured without retraining?
 
-**Starting Point**: Injecting small-magnitude noise into intermediate representations as a proxy distribution for the weight posterior.
+**Key Insight**: Injecting small-magnitude noise into intermediate representations as a proxy distribution for the weight posterior.
 
 **Core Idea**: Adding uniform noise to MLP activations is equivalent to applying small perturbations to the weights; the resulting variance across multiple samples reflects epistemic uncertainty.
 

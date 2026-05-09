@@ -37,9 +37,9 @@ Time series foundation models (FMs) pretrained on large-scale multi-domain data 
 
 **Bloated model architectures**: To accommodate heterogeneous temporal patterns across domains, most approaches adopt large Transformers with MoE, resulting in parameter counts in the hundreds of millions.
 
-**Root Cause**: Generalizability vs. affordability — can generalization capability be maintained or even improved while drastically reducing model size and pretraining data volume?
+**Key Challenge**: Generalizability vs. affordability — can generalization capability be maintained or even improved while drastically reducing model size and pretraining data volume?
 
-**Starting Point**: A two-pronged approach —
+**Key Insight**: A two-pronged approach —
 1. Substantially improving **data utilization efficiency** via Energy-Aware Spectral Decomposition (EASD)
 2. Achieving a **lightweight architecture** by replacing large MoE modules with compact dataset-specific prompts via the Mixture-of-Prompts Transformer (MoPFormer)
 

@@ -28,16 +28,16 @@ This paper proposes ZO-SAM, which replaces the backpropagation in SAM's perturba
 
 ## Background & Motivation
 
-**State of the Field**: Sparse neural networks significantly reduce parameter count and computational cost by retaining only a small fraction of active weights. Mainstream approaches are categorized into static methods (LTH, SNIP, GraSP) and dynamic methods (SET, DSR, RigL, MEST).
+**Background**: Sparse neural networks significantly reduce parameter count and computational cost by retaining only a small fraction of active weights. Mainstream approaches are categorized into static methods (LTH, SNIP, GraSP) and dynamic methods (SET, DSR, RigL, MEST).
 
 **Limitations of Prior Work**:
    - Gradient signals in sparse training are noisy and chaotic — after extensive pruning, the remaining parameters bear a disproportionate burden, and gradient variance increases sharply with sparsity.
    - High sparsity leads to narrower and steeper loss landscapes, resulting in inefficient and meandering optimization trajectories.
    - SAM can guide models toward flat minima to mitigate these issues, but its **dual-backpropagation overhead** directly contradicts the computational efficiency goals of sparse training.
 
-**Root Cause**: The generalization benefit of SAM versus its doubled computational cost is a fundamental tension, particularly acute in sparse training, which is inherently motivated by computational savings.
+**Key Challenge**: The generalization benefit of SAM versus its doubled computational cost is a fundamental tension, particularly acute in sparse training, which is inherently motivated by computational savings.
 
-**Starting Point**: The perturbation step of SAM does not require high gradient accuracy — it only needs to determine the perturbation direction — making it amenable to coarse zeroth-order approximation instead of exact gradients.
+**Key Insight**: The perturbation step of SAM does not require high gradient accuracy — it only needs to determine the perturbation direction — making it amenable to coarse zeroth-order approximation instead of exact gradients.
 
 **Core Idea**: Apply random gradient estimation (RGE) in SAM's perturbation step while retaining the first-order exact gradient in the update step, reducing the number of backward passes from two to one.
 

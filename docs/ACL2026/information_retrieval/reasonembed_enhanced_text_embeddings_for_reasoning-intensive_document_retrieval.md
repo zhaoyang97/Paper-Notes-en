@@ -28,15 +28,15 @@ ReasonEmbed introduces three technical innovations—ReMixer, a non-trivial synt
 
 ## Background & Motivation
 
-**State of the Field**: With the rise of LLM-driven AI agents, many applications require retrieving information from external documents. Traditional retrieval methods (BM25, general-purpose embedding models) rely on keyword matching or shallow semantic matching and perform poorly on reasoning-intensive retrieval benchmarks such as BRIGHT.
+**Background**: With the rise of LLM-driven AI agents, many applications require retrieving information from external documents. Traditional retrieval methods (BM25, general-purpose embedding models) rely on keyword matching or shallow semantic matching and perform poorly on reasoning-intensive retrieval benchmarks such as BRIGHT.
 
 **Limitations of Prior Work**: (1) *Scarcity of training data*—existing retrieval datasets originate from traditional search scenarios and differ substantially from reasoning-intensive retrieval in both query format and domain knowledge; (2) *Triviality in synthetic data*—existing synthesis methods produce queries that bear overly direct relationships to their source documents (shared vocabulary, keyword overlap), allowing models to achieve high scores through surface-level matching; (3) *Marginal gains from prior methods*—pioneering work such as ReasonIR yields only incremental improvements.
 
-**Root Cause**: Reasoning-intensive retrieval requires models to understand deep semantic relationships between queries and documents—relationships that can only be determined through multi-step reasoning. However, the triviality of existing synthetic data enables shortcut learning, causing models to capture surface patterns rather than genuine reasoning capabilities.
+**Key Challenge**: Reasoning-intensive retrieval requires models to understand deep semantic relationships between queries and documents—relationships that can only be determined through multi-step reasoning. However, the triviality of existing synthetic data enables shortcut learning, causing models to capture surface patterns rather than genuine reasoning capabilities.
 
-**Paper Goals**: Resolve the triviality problem in synthetic data, design a reasoning-intensity-aware training strategy, and construct an effective embedding model for reasoning-intensive retrieval.
+**Goal**: Resolve the triviality problem in synthetic data, design a reasoning-intensity-aware training strategy, and construct an effective embedding model for reasoning-intensive retrieval.
 
-**Starting Point**: The authors identify *triviality* as the core bottleneck—when positive examples are the very source documents used to generate queries, the two share abundant surface-level cues. By excluding source documents, mining candidates from independent retrieval, and filtering positive samples with reasoning-augmented annotation, one can construct training data that genuinely requires reasoning to assess relevance.
+**Key Insight**: The authors identify *triviality* as the core bottleneck—when positive examples are the very source documents used to generate queries, the two share abundant surface-level cues. By excluding source documents, mining candidates from independent retrieval, and filtering positive samples with reasoning-augmented annotation, one can construct training data that genuinely requires reasoning to assess relevance.
 
 **Core Idea**: Eliminate triviality through a three-stage pipeline of *source-document exclusion → candidate mining → reasoning-based annotation* (ReMixer), then adaptively reweight samples according to reasoning intensity (Redapter) so that the model focuses on difficult examples that demand deep reasoning.
 

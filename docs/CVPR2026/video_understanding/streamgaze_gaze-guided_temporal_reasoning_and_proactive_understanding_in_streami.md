@@ -28,11 +28,11 @@ This work presents StreamGaze, the first gaze-guided streaming video understandi
 
 ## Background & Motivation
 
-1. **State of the Field**: Streaming video understanding requires models to process temporally sequential input frames in real time, which is critical for applications such as AR glasses and robotics. Existing streaming video benchmarks (e.g., StreamingBench, OVO-Bench) evaluate temporal reasoning capabilities.
+1. **Background**: Streaming video understanding requires models to process temporally sequential input frames in real time, which is critical for applications such as AR glasses and robotics. Existing streaming video benchmarks (e.g., StreamingBench, OVO-Bench) evaluate temporal reasoning capabilities.
 2. **Limitations of Prior Work**: (a) Existing benchmarks rarely incorporate human perceptual signals — particularly gaze — even when they use egocentric video and implicitly target AR scenarios; (b) few benchmarks simultaneously cover past, present, and proactive tasks; (c) integrating gaze signals into video understanding is inherently difficult due to noisy raw gaze streams, persistent camera motion in egocentric footage, and the need for spatiotemporal grounding.
-3. **Root Cause**: Gaze is the most direct and reliable indicator of human visual attention, yet existing benchmarks and models entirely overlook this critical perceptual signal, creating a disconnect between evaluation and real-world deployment.
-4. **Paper Goals**: (1) How to construct gaze-guided streaming video QA data? (2) How to design gaze-relevant tasks spanning past, present, and proactive settings? (3) Can current MLLMs effectively exploit gaze signals?
-5. **Starting Point**: Leveraging the temporal structure of gaze behavior — extracting fixations, constructing scanpaths, and distinguishing in-FOV from out-of-FOV regions — to build spatiotemporally grounded QA pairs.
+3. **Key Challenge**: Gaze is the most direct and reliable indicator of human visual attention, yet existing benchmarks and models entirely overlook this critical perceptual signal, creating a disconnect between evaluation and real-world deployment.
+4. **Goal**: (1) How to construct gaze-guided streaming video QA data? (2) How to design gaze-relevant tasks spanning past, present, and proactive settings? (3) Can current MLLMs effectively exploit gaze signals?
+5. **Key Insight**: Leveraging the temporal structure of gaze behavior — extracting fixations, constructing scanpaths, and distinguishing in-FOV from out-of-FOV regions — to build spatiotemporally grounded QA pairs.
 6. **Core Idea**: The first benchmark to align gaze trajectories with egocentric streaming video, enabling gaze-guided evaluation of past, present, and proactive tasks through fixation extraction, region-specific visual prompting, and scanpath construction.
 
 ## Method

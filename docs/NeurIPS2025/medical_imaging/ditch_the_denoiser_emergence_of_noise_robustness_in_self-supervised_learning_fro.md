@@ -28,15 +28,15 @@ A fully self-supervised noise-robust representation learning framework is propos
 
 ## Background & Motivation
 
-**State of the Field**: SSL methods such as DINOv2 achieve outstanding visual representations on clean data, yet virtually all prior work assumes that training data is clean and high quality.
+**Background**: SSL methods such as DINOv2 achieve outstanding visual representations on clean data, yet virtually all prior work assumes that training data is clean and high quality.
 
 **Limitations of Prior Work**: In real-world domains such as medical imaging, astronomy, and remote sensing, data is inherently noisy (e.g., sensor noise, speckle noise), and clean reference images for supervised denoising are typically unavailable. Training DINOv2 directly on noisy data leads to severe degradation in representation quality.
 
-**Root Cause**: A naive solution is a "denoiser preprocessing pipeline"—first applying a self-supervised denoiser, then training the SSL model on denoised images. However, this requires retaining the denoiser at both inference and downstream fine-tuning, introducing significant inference latency, deployment complexity, and potential propagation of denoising bias.
+**Key Challenge**: A naive solution is a "denoiser preprocessing pipeline"—first applying a self-supervised denoiser, then training the SSL model on denoised images. However, this requires retaining the denoiser at both inference and downstream fine-tuning, introducing significant inference latency, deployment complexity, and potential propagation of denoising bias.
 
-**Paper Goals**: Can the SSL backbone itself internalize noise robustness, enabling complete elimination of the denoiser in downstream tasks?
+**Goal**: Can the SSL backbone itself internalize noise robustness, enabling complete elimination of the denoiser in downstream tasks?
 
-**Starting Point**: Inspired by curriculum learning—training first on "easy" denoised data, then switching to "hard" noisy data—the model progressively adapts to noise from a stable initialization. A frozen denoised teacher is additionally introduced as an anchor for regularization.
+**Key Insight**: Inspired by curriculum learning—training first on "easy" denoised data, then switching to "hard" noisy data—the model progressively adapts to noise from a stable initialization. A frozen denoised teacher is additionally introduced as an anchor for regularization.
 
 **Core Idea**: Through a denoised→noisy curriculum training strategy combined with denoised-teacher regularization, the SSL model internalizes noise robustness during pre-training, requiring no denoiser whatsoever at inference time.
 

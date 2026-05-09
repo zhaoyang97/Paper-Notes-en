@@ -27,15 +27,15 @@ content_hash: cb1d5ccc721ec562
 This paper systematically analyzes three core reasoning deficiencies of LLMs in poker (heuristic reasoning, factual misunderstanding, and knowing-doing gap), and proposes ToolPoker — the first tool-integrated LLM reasoning system for incomplete information games. By incorporating an external CFR solver to provide game-theoretically optimal action guidance, a 7B model approaches Nash equilibrium performance in Limit Hold'em.
 
 ## Background & Motivation
-**State of the Field**: LLMs have achieved breakthroughs in mathematical reasoning and programming, yet perform far below traditional methods in incomplete information games. Poker requires tight integration of Bayesian belief updating, game-theoretic reasoning, and strategic execution.
+**Background**: LLMs have achieved breakthroughs in mathematical reasoning and programming, yet perform far below traditional methods in incomplete information games. Poker requires tight integration of Bayesian belief updating, game-theoretic reasoning, and strategic execution.
 
 **Limitations of Prior Work**: LLMs exhibit three core reasoning deficiencies — ① Heuristic Reasoning: reliance on shallow heuristics rather than game-theoretic principles; ② Factual Misunderstanding: misjudging objective quantities such as hand strength and pot odds; ③ Knowing-Doing Gap: correct reasoning but action deviating from conclusions.
 
-**Root Cause**: LLMs can generate text that "sounds like" valid game-theoretic analysis but cannot execute the underlying computations precisely.
+**Key Challenge**: LLMs can generate text that "sounds like" valid game-theoretic analysis but cannot execute the underlying computations precisely.
 
-**Paper Goals**: Enable LLMs to perform game-theoretically sound reasoning and decision-making in incomplete information games.
+**Goal**: Enable LLMs to perform game-theoretically sound reasoning and decision-making in incomplete information games.
 
-**Starting Point**: Integrating a CFR solver as an external tool into the LLM reasoning pipeline.
+**Key Insight**: Integrating a CFR solver as an external tool into the LLM reasoning pipeline.
 
 **Core Idea**: ToolPoker = LLM language understanding + precise game-theoretic computation from a CFR solver.
 

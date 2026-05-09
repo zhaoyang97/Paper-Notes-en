@@ -28,15 +28,15 @@ NeuSA integrates classical spectral methods with Neural ODEs: the PDE is project
 
 ## Background & Motivation
 
-**State of the Field**: Physics-informed neural networks (PINNs) solve PDEs by embedding physical laws into the loss function, offering a mesh-free and flexible framework. Mainstream PINNs are based on standard MLPs or enhanced variants (QRes, FLS, PINNsFormer).
+**Background**: Physics-informed neural networks (PINNs) solve PDEs by embedding physical laws into the loss function, offering a mesh-free and flexible framework. Mainstream PINNs are based on standard MLPs or enhanced variants (QRes, FLS, PINNsFormer).
 
 **Limitations of Prior Work**: Standard MLP-based PINNs suffer from three fundamental issues: (a) **spectral bias** — sigmoid/ReLU activations favor low-frequency components, making it difficult to represent high-frequency details; (b) **causality violation** — simultaneous optimization over the entire spatiotemporal domain leads to temporal inconsistency and convergence to trivial equilibrium solutions; (c) **poor extrapolation** — predictions rapidly degrade outside the training domain.
 
-**Root Cause**: Conventional PINNs treat spatiotemporal coordinates as network inputs without distinguishing time from space, violating the causal structure of PDEs (initial values → temporal evolution). Global optimization forces initial and boundary conditions to be imposed as soft constraints in the loss, frequently causing conflicting gradients and training instability.
+**Key Challenge**: Conventional PINNs treat spatiotemporal coordinates as network inputs without distinguishing time from space, violating the causal structure of PDEs (initial values → temporal evolution). Global optimization forces initial and boundary conditions to be imposed as soft constraints in the loss, frequently causing conflicting gradients and training instability.
 
-**Paper Goals**: Design a PINN architecture that enforces causality at the architectural level, overcomes spectral bias, and automatically satisfies initial and boundary conditions.
+**Goal**: Design a PINN architecture that enforces causality at the architectural level, overcomes spectral bias, and automatically satisfies initial and boundary conditions.
 
-**Starting Point**: In classical numerical methods, spectral methods naturally provide high-frequency expressiveness, while the method of lines discretizes PDEs into ODE systems to preserve causal structure. Combining both with Neural ODEs allows the network to learn the temporal evolution of spectral coefficients rather than directly fitting the solution.
+**Key Insight**: In classical numerical methods, spectral methods naturally provide high-frequency expressiveness, while the method of lines discretizes PDEs into ODE systems to preserve causal structure. Combining both with Neural ODEs allows the network to learn the temporal evolution of spectral coefficients rather than directly fitting the solution.
 
 **Core Idea**: Project the PDE onto a Fourier spectral basis to spatially discretize it into an ODE system, then use a Neural ODE to learn the temporal evolution of the spectral coefficients — guaranteeing causality, spectral fidelity, and automatic satisfaction of initial/boundary conditions at the architecture level.
 

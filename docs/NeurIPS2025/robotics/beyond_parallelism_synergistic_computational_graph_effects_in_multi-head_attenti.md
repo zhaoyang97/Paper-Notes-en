@@ -29,21 +29,21 @@ This paper reframes multi-head attention as a system of multiple feedforward DAG
 
 ## Background & Motivation
 
-**State of the Field**: Multi-head attention is the core mechanism of the Transformer, driving the success of LLMs. It is conventionally understood as a parallel strategy in which different heads attend to different subspaces.
+**Background**: Multi-head attention is the core mechanism of the Transformer, driving the success of LLMs. It is conventionally understood as a parallel strategy in which different heads attend to different subspaces.
 
 **Limitations of Prior Work**:
    - The performance advantage of multi-head over single-head attention with equivalent parameters is not adequately explained by the traditional "subspace parallelism" interpretation;
    - Prior work (Voita et al., Michel et al.) shows that many heads can be pruned without performance loss, seemingly suggesting multi-head attention is redundant;
    - A theoretical analysis of multi-head advantages from the perspective of computational graphs and information propagation is lacking.
 
-**Root Cause**: Are the practical benefits of multi-head attention simply due to parallel computation speedup, or do deeper structural advantages exist?
+**Key Challenge**: Are the practical benefits of multi-head attention simply due to parallel computation speedup, or do deeper structural advantages exist?
 
-**Paper Goals**:
+**Goal**:
    - Analyze the information propagation properties of multi-head attention from a graph-theoretic perspective
    - Prove that multi-head systems enable information paths (cross-head paths) impossible for any single head
    - Quantify the gains in mixing time and fidelity brought by multiple heads
 
-**Starting Point**: Each head in causal (decoder-only) attention is modeled as a feedforward DAG with the final position $\tau$ as the unique sink node. The paper analyzes random walk and signal diffusion properties after merging multiple DAGs.
+**Key Insight**: Each head in causal (decoder-only) attention is modeled as a feedforward DAG with the final position $\tau$ as the unique sink node. The paper analyzes random walk and signal diffusion properties after merging multiple DAGs.
 
 **Core Idea**: Different heads in multi-head attention form complementary DAG paths; after merging, cross-head paths emerge that synergistically reduce mixing time and amplify signal fidelity.
 

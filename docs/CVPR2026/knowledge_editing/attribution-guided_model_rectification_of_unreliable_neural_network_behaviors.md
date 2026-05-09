@@ -28,15 +28,15 @@ This paper proposes an attribution-guided dynamic model rectification framework 
 
 ## Background & Motivation
 
-**State of the Field**: Neural networks exhibit unreliable behaviors under distribution inconsistency, including neural Trojans (backdoor triggers), spurious correlations, and feature leakage, severely limiting deployment in safety-critical scenarios.
+**Background**: Neural networks exhibit unreliable behaviors under distribution inconsistency, including neural Trojans (backdoor triggers), spurious correlations, and feature leakage, severely limiting deployment in safety-critical scenarios.
 
 **Limitations of Prior Work**: Mainstream repair strategies rely on data cleansing and model retraining, incurring substantial computational and human costs. Rank-one model editing has demonstrated knowledge-editing capabilities in generative and discriminative models, yet applying it for domain adaptation faces two structural bottlenecks: (1) out-of-span residuals—a new key $k^*$ outside the training key span destroys existing associations (Lemma 1); and (2) sample complexity—accurate key estimation under distribution shift requires large numbers of samples (Lemma 2).
 
-**Root Cause**: Existing model editing methods operate on the final feature layer by default (due to its high-level semantic encoding), yet experiments show that editability varies substantially across layers—per-layer rectification rankings on ResNet-18 differ by several-fold (Fig. 2), and no single layer is universally optimal.
+**Key Challenge**: Existing model editing methods operate on the final feature layer by default (due to its high-level semantic encoding), yet experiments show that editability varies substantially across layers—per-layer rectification rankings on ResNet-18 differ by several-fold (Fig. 2), and no single layer is universally optimal.
 
-**Paper Goals**: (1) Repair unreliable model behaviors under data-efficient conditions (even with a single clean sample); (2) automatically localize the most critical layer responsible for unreliable behavior, rather than manually designating a fixed layer.
+**Goal**: (1) Repair unreliable model behaviors under data-efficient conditions (even with a single clean sample); (2) automatically localize the most critical layer responsible for unreliable behavior, rather than manually designating a fixed layer.
 
-**Starting Point**: Rank-one editing is repositioned from "domain adaptation" to "behavior rectification." The structural property that the model has already observed clean–corrupted pairs during training is exploited to circumvent the theoretical bottlenecks of standard editing; attribution methods then quantify per-layer editability to guide layer selection.
+**Key Insight**: Rank-one editing is repositioned from "domain adaptation" to "behavior rectification." The structural property that the model has already observed clean–corrupted pairs during training is exploited to circumvent the theoretical bottlenecks of standard editing; attribution methods then quantify per-layer editability to guide layer selection.
 
 **Core Idea**: Integrated Gradients attributions are computed along the corrupted→clean path for each layer, projected onto the rank-one editing direction to produce a scalar editability score. The layer with the highest score is selected for editing, and the process iterates until the behavior is rectified.
 

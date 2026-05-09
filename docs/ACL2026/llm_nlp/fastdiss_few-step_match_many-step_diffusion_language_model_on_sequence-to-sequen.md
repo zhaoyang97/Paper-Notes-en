@@ -28,15 +28,15 @@ This paper analyzes two bottlenecks in continuous diffusion language models unde
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models serve as an alternative to autoregressive text generation, enabling parallel decoding of all tokens in linear time. Self-conditioning reuses predictions from the previous step as conditioning signals to improve few-step sampling, but introduces failure modes that have not been sufficiently studied.
+**Background**: Diffusion models serve as an alternative to autoregressive text generation, enabling parallel decoding of all tokens in linear time. Self-conditioning reuses predictions from the previous step as conditioning signals to improve few-step sampling, but introduces failure modes that have not been sufficiently studied.
 
 **Limitations of Prior Work**: (1) *Training–inference self-conditioning mismatch* — during training, ground-truth targets are available as conditioning signals, whereas at inference only imperfect self-predictions are available; this distributional shift is exacerbated in few-step settings, where predictions at high-noise steps differ substantially from those at low-noise steps, making the reused signal a biased condition. (2) *Late-stage training saturation* — after the model rapidly fits early-stage targets, a pronounced loss plateau emerges, and uniform noise sampling provides no effective learning signal for tokens already predicted with high confidence.
 
-**Root Cause**: The deployment appeal of diffusion models lies precisely in fast few-step inference, yet self-conditioning — the key technique for improving few-step sampling — introduces the largest errors under that very setting.
+**Key Challenge**: The deployment appeal of diffusion models lies precisely in fast few-step inference, yet self-conditioning — the key technique for improving few-step sampling — introduces the largest errors under that very setting.
 
-**Paper Goals**: Design a training framework that enables diffusion language models to achieve quality close to many-step sampling when using few-step inference.
+**Goal**: Design a training framework that enables diffusion language models to achieve quality close to many-step sampling when using few-step inference.
 
-**Starting Point**: Directly simulate inference-time noise conditions during training — by perturbing the self-conditioning signal to match the error distribution seen at inference, and by dynamically adjusting per-token noise levels to avoid training saturation.
+**Key Insight**: Directly simulate inference-time noise conditions during training — by perturbing the self-conditioning signal to match the error distribution seen at inference, and by dynamically adjusting per-token noise levels to avoid training saturation.
 
 **Core Idea**: SCP intentionally uses noisier estimates as self-conditioning signals during training, while MANS dynamically assigns higher noise to high-confidence tokens based on denoising confidence.
 

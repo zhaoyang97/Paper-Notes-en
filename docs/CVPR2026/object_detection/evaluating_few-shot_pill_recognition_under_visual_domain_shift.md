@@ -28,19 +28,19 @@ This paper systematically evaluates the generalization of pill recognition under
 
 ## Background & Motivation
 
-**State of the Field**: Adverse drug events (ADEs) are a significant source of preventable medical harm, and automated pill recognition systems have attracted considerable attention. Existing systems are typically trained and evaluated under controlled conditions (single pill, clean background, uniform lighting) and achieve impressive performance.
+**Background**: Adverse drug events (ADEs) are a significant source of preventable medical harm, and automated pill recognition systems have attracted considerable attention. Existing systems are typically trained and evaluated under controlled conditions (single pill, clean background, uniform lighting) and achieve impressive performance.
 
 **Limitations of Prior Work**: Real-world deployment environments differ substantially from controlled settings—pills are stored in dosette boxes, with multiple pills overlapping, occluding one another, exhibiting specular reflections, and appearing against cluttered backgrounds. Existing few-shot pill recognition studies are evaluated almost exclusively on in-distribution data (training and testing drawn from similar visual conditions), and the high accuracy reported likely severely overestimates true robustness.
 
-**Root Cause**: Can few-shot learning remain effective under cross-domain scenarios? Existing evaluation protocols sidestep the most critical deployment challenges—namely, the systematic domain shift between training data (controlled single-pill images) and deployment environments (cluttered multi-pill scenes). Standard mAP metrics are also inadequate for fair comparison across heterogeneous annotation conditions.
+**Key Challenge**: Can few-shot learning remain effective under cross-domain scenarios? Existing evaluation protocols sidestep the most critical deployment challenges—namely, the systematic domain shift between training data (controlled single-pill images) and deployment environments (cluttered multi-pill scenes). Standard mAP metrics are also inadequate for fair comparison across heterogeneous annotation conditions.
 
-**Paper Goals**
+**Goal**
 - What is the true generalization capability of few-shot adaptation under cross-dataset domain shift?
 - Which factor has a greater impact on few-shot performance: the visual realism of base training data, or data volume?
 - Are semantic classification and localization performance consistent under few-shot conditions with occlusion?
 - Can few-shot fine-tuning serve as a diagnostic tool for deployment readiness?
 
-**Starting Point**: Rather than pursuing architectural innovations, this work designs a rigorous cross-domain evaluation protocol (CURE controlled single-pill vs. MEDISEG real-world multi-pill → novel deployment environment), and replaces traditional mAP with classification-centric metrics to enable fair evaluation.
+**Key Insight**: Rather than pursuing architectural innovations, this work designs a rigorous cross-domain evaluation protocol (CURE controlled single-pill vs. MEDISEG real-world multi-pill → novel deployment environment), and replaces traditional mAP with classification-centric metrics to enable fair evaluation.
 
 **Core Idea**: Reframe few-shot fine-tuning as a deployment readiness diagnostic tool, using cross-domain and overlap stress tests to expose the systematic failure mode of classification–localization decoupling.
 

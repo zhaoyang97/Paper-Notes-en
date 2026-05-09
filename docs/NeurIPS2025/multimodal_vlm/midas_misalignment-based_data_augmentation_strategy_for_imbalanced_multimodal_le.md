@@ -28,7 +28,7 @@ This work is the first to propose using cross-modal misaligned samples as superv
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal learning is widely applied in vision-language modeling, medical diagnosis, autonomous driving, and other domains. However, **modality imbalance** remains a persistent challenge—models tend to rely on the more informative dominant modality, neglect weaker modalities, and may even perform worse than unimodal counterparts.
+**Background**: Multimodal learning is widely applied in vision-language modeling, medical diagnosis, autonomous driving, and other domains. However, **modality imbalance** remains a persistent challenge—models tend to rely on the more informative dominant modality, neglect weaker modalities, and may even perform worse than unimodal counterparts.
 
 **Limitations of Prior Work**:
 - **Optimization-based methods** (OGM, AGM): Suppress the dominant modality by adjusting gradients or weights, but introduce additional computational overhead.
@@ -37,7 +37,7 @@ This work is the first to propose using cross-modal misaligned samples as superv
 
 **Core Insight**: Misaligned samples (e.g., a cat image paired with dog-related text) contain rich modality-specific information and can expose a model's over-reliance on the dominant modality. On misaligned inputs, a standard model achieves only 6.3% accuracy (vs. 65.5% on aligned inputs) and consistently predicts the class corresponding to the dominant modality with high confidence.
 
-**Paper Goals**: Transform misaligned samples from noise into supervised training signals, compelling the model to learn balanced utilization of all modalities from contradictory inputs.
+**Goal**: Transform misaligned samples from noise into supervised training signals, compelling the model to learn balanced utilization of all modalities from contradictory inputs.
 
 ## Method
 

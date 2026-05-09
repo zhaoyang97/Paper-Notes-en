@@ -28,15 +28,15 @@ This paper proposes the COOPERA framework, the first to enable continual, open-e
 
 ## Background & Motivation
 
-**State of the Field**: Research on robot-assisted tasks has primarily focused on short episodic settings, where robots are evaluated on predefined short-horizon tasks.
+**Background**: Research on robot-assisted tasks has primarily focused on short episodic settings, where robots are evaluated on predefined short-horizon tasks.
 
 **Limitations of Prior Work**: In the real world, humans have preferences and long-term goals, requiring different types of assistance at different times. Existing methods rely on predefined, closed-form task representations and are unable to handle open-ended, personalized human-robot interaction.
 
-**Root Cause**: Achieving truly personalized assistance requires the robot not only to understand the current environment, but also to reason across extended time horizons about human behavioral patterns, preferences, and habits—a capability entirely absent from existing frameworks.
+**Key Challenge**: Achieving truly personalized assistance requires the robot not only to understand the current environment, but also to reason across extended time horizons about human behavioral patterns, preferences, and habits—a capability entirely absent from existing frameworks.
 
-**Paper Goals**: To establish a framework supporting continual, open-ended human-robot collaboration, in which the robot learns and adapts to individual human characteristics over time.
+**Goal**: To establish a framework supporting continual, open-ended human-robot collaboration, in which the robot learns and adapts to individual human characteristics over time.
 
-**Starting Point**: Simulate humans with LLM-driven, psychologically grounded long-term behavior, and design a feedback mechanism enabling the robot to gradually personalize its assistance.
+**Key Insight**: Simulate humans with LLM-driven, psychologically grounded long-term behavior, and design a feedback mechanism enabling the robot to gradually personalize its assistance.
 
 **Core Idea**: Extend human-robot collaboration from "single episodic tasks" to "multi-day continual open-ended interaction," allowing the robot to progressively understand individual traits, habits, and time-dependent behavioral patterns through end-of-day feedback.
 

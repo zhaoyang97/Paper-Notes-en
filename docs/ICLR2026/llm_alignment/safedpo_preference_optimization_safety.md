@@ -28,15 +28,15 @@ This work revisits the safety-constrained RLHF objective, proves the existence o
 
 ## Background & Motivation
 
-**State of the Field**: Deploying LLMs requires simultaneously ensuring helpfulness and safety. The mainstream approach introduces safety constraints into RLHF; for example, SafeRLHF employs a Lagrangian method to constrain a cost function.
+**Background**: Deploying LLMs requires simultaneously ensuring helpfulness and safety. The mainstream approach introduces safety constraints into RLHF; for example, SafeRLHF employs a Lagrangian method to constrain a cost function.
 
 **Limitations of Prior Work**: (a) SafeRLHF requires training a reward model, a cost model, two value networks, and online sampling — six networks in total — resulting in extreme complexity (35,200s training vs. 1,388s for DPO); (b) methods such as SACPO rely on approximate relaxations and cannot guarantee convergence to the solution of the original safety-constrained problem; (c) training separately on helpfulness or harmlessness data with DPO yields poor results — DPO-HELPFUL is useful but unsafe, while DPO-HARMLESS is safe but unhelpful.
 
-**Root Cause**: A natural tension exists between helpfulness and safety — the more a model complies with user requests, the more helpful it is, yet the more likely it is to generate harmful content. How can both be addressed within a single training stage?
+**Key Challenge**: A natural tension exists between helpfulness and safety — the more a model complies with user requests, the more helpful it is, yet the more likely it is to generate harmful content. How can both be addressed within a single training stage?
 
-**Paper Goals**: Can a closed-form solution to the safety-constrained optimization problem be found, enabling direct supervised training analogous to DPO, thereby avoiding complex multi-stage pipelines?
+**Goal**: Can a closed-form solution to the safety-constrained optimization problem be found, enabling direct supervised training analogous to DPO, thereby avoiding complex multi-stage pipelines?
 
-**Starting Point**: The safety constraint is reformulated as a cost-augmented reward $r_c(x,y) = r(x,y)$ if safe, $-\infty$ if unsafe. This ensures that unsafe responses receive zero probability under the optimal policy, and the resulting problem admits a closed-form optimal solution.
+**Key Insight**: The safety constraint is reformulated as a cost-augmented reward $r_c(x,y) = r(x,y)$ if safe, $-\infty$ if unsafe. This ensures that unsafe responses receive zero probability under the optimal policy, and the resulting problem admits a closed-form optimal solution.
 
 **Core Idea**: Safety constraints are precisely encoded into the DPO loss via a safety-aware data transformation (swapping unsafe winners) and a safety margin term, without requiring any additional models.
 

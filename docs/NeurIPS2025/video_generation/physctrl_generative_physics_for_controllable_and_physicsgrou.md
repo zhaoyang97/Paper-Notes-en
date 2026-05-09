@@ -29,15 +29,15 @@ PhysCtrl employs diffusion models to learn the physical dynamics distribution of
 
 ## Background & Motivation
 
-**State of the Field**: Modern video generation models can produce photorealistic video but lack physical plausibility and 3D controllability.
+**Background**: Modern video generation models can produce photorealistic video but lack physical plausibility and 3D controllability.
 
 **Limitations of Prior Work**: Traditional physics simulators (e.g., MPM) are computationally expensive, sensitive to hyperparameters, and numerically unstable; directly coupling simulators with video models requires manual parameter tuning and may necessitate switching between different simulators.
 
-**Root Cause**: How can physical plausibility be maintained while avoiding the limitations of traditional simulators?
+**Key Challenge**: How can physical plausibility be maintained while avoiding the limitations of traditional simulators?
 
-**Paper Goals**: Embed physical priors into a diffusion model to support fast forward/inverse inference, using physical parameters and external forces as control signals.
+**Goal**: Embed physical priors into a diffusion model to support fast forward/inverse inference, using physical parameters and external forces as control signals.
 
-**Starting Point**: Address two fundamental questions — what representation is suitable for controlling video models? → 3D point trajectories; how to embed multi-material physical priors? → spatiotemporal attention diffusion model + physics constraints.
+**Key Insight**: Address two fundamental questions — what representation is suitable for controlling video models? → 3D point trajectories; how to embed multi-material physical priors? → spatiotemporal attention diffusion model + physics constraints.
 
 **Core Idea**: Use a diffusion model to learn the latent distribution of physical dynamics, with 3D point trajectories as a bridge between the physical world and video generation.
 

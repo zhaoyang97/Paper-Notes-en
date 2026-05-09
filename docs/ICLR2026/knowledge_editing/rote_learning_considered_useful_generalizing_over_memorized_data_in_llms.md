@@ -33,9 +33,9 @@ Rote learning has traditionally been equated with overfitting in deep learning a
 - Memorization has been associated with privacy leakage, hallucination, and vulnerability to paraphrase.
 - Prior work has found that memorized knowledge interferes with generalization in subsequent fine-tuning.
 
-**Root Cause**: Acquiring factual knowledge inherently requires some degree of memorization, yet the relationship between memorization and generalization in LLMs remains poorly understood. The grokking phenomenon suggests that generalization can emerge after extensive memorization, but systematic investigation is lacking.
+**Key Challenge**: Acquiring factual knowledge inherently requires some degree of memorization, yet the relationship between memorization and generalization in LLMs remains poorly understood. The grokking phenomenon suggests that generalization can emerge after extensive memorization, but systematic investigation is lacking.
 
-**Starting Point**: The authors construct an elegant two-stage framework that disentangles memorization from generalization—Phase 1 enforces pure rote memorization using semantics-free tokens, while Phase 2 guides generalization using a minimal number of semantic prompts. This design eliminates interference from language understanding and cleanly tests whether memorized data can be reinterpreted.
+**Key Insight**: The authors construct an elegant two-stage framework that disentangles memorization from generalization—Phase 1 enforces pure rote memorization using semantics-free tokens, while Phase 2 guides generalization using a minimal number of semantic prompts. This design eliminates interference from language understanding and cleanly tests whether memorized data can be reinterpreted.
 
 ## Method
 

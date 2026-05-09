@@ -28,18 +28,18 @@ This paper reinterprets DPO as a likelihood ratio (ratio matching) estimation pr
 
 ## Background & Motivation
 
-**State of the Field**: DPO is the most widely adopted direct preference optimization method, simplifying RLHF into logistic regression over preference data. Subsequent work (f-DPO, f-PO) has extended DPO's loss function, but each approach has notable drawbacks.
+**Background**: DPO is the most widely adopted direct preference optimization method, simplifying RLHF into logistic regression over preference data. Subsequent work (f-DPO, f-PO) has extended DPO's loss function, but each approach has notable drawbacks.
 
 **Limitations of Prior Work**:
 - **f-DPO**: Extends the loss function but **sacrifices optimality guarantees**—minimizing f-DPO does not necessarily converge to the optimal policy as defined by DPO.
 - **f-PO**: Preserves optimality but **requires training an additional reward model plus Monte Carlo estimation of the partition function**, imposing substantial computational overhead.
 - No existing method simultaneously satisfies: (O) optimality guarantee, (S) simplicity (no additional training overhead), and (G) generality (support for diverse objective functions).
 
-**Root Cause**: When extending the DPO loss, optimality and simplicity appear to be mutually exclusive—f-PO preserves optimality but is not simple, while f-DPO is simple but does not preserve optimality.
+**Key Challenge**: When extending the DPO loss, optimality and simplicity appear to be mutually exclusive—f-PO preserves optimality but is not simple, while f-DPO is simple but does not preserve optimality.
 
-**Paper Goals**: To develop a unified preference optimization framework that simultaneously maintains optimality guarantees, incurs no additional computational overhead, and supports multiple loss function instantiations.
+**Goal**: To develop a unified preference optimization framework that simultaneously maintains optimality guarantees, incurs no additional computational overhead, and supports multiple loss function instantiations.
 
-**Starting Point**: DPO is reinterpreted through the lens of likelihood ratio estimation—the optimal policy can be uniquely characterized by its **likelihood ratio** without requiring a reward model or partition function. The problem is thus reformulated as ratio matching via Bregman divergence.
+**Key Insight**: DPO is reinterpreted through the lens of likelihood ratio estimation—the optimal policy can be uniquely characterized by its **likelihood ratio** without requiring a reward model or partition function. The problem is thus reformulated as ratio matching via Bregman divergence.
 
 **Core Idea**: DPO fundamentally matches the model ratio $R_\theta$ to the data ratio $R_{\text{data}}$. Choosing different Bregman divergences $h$ yields different loss functions, all of which preserve optimality and require no additional overhead.
 

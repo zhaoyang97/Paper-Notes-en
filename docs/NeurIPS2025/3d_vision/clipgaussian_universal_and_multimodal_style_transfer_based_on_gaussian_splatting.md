@@ -29,7 +29,7 @@ CLIPGaussian proposes the first unified style transfer framework based on Gaussi
 
 ## Background & Motivation
 
-**State of the Field**: Gaussian Splatting (GS) has become an efficient scene representation for rendering 3D scenes from 2D images, and has been extended to images, videos, and 4D dynamic content. Style transfer, a well-established task in 2D visual editing, remains challenging in the context of GS representations.
+**Background**: Gaussian Splatting (GS) has become an efficient scene representation for rendering 3D scenes from 2D images, and has been extended to images, videos, and 4D dynamic content. Style transfer, a well-established task in 2D visual editing, remains challenging in the context of GS representations.
 
 **Limitations of Prior Work**:
 - Existing GS style transfer methods (StyleGaussian, ReGS, InstantStyleGaussian, etc.) modify only color and opacity, without altering geometry.
@@ -38,14 +38,14 @@ CLIPGaussian proposes the first unified style transfer framework based on Gaussi
 - No unified framework exists that handles style transfer across 2D, video, 3D, and 4D scenes simultaneously.
 - Text-guided GS editing methods (I-GS2GS, DGE) primarily target general editing rather than style transfer.
 
-**Root Cause**: GS style transfer involves a trade-off between appearance modification and geometric deformation—modifying geometry typically requires increasing the number of Gaussians, sacrificing the compactness of the original model.
+**Key Challenge**: GS style transfer involves a trade-off between appearance modification and geometric deformation—modifying geometry typically requires increasing the number of Gaussians, sacrificing the compactness of the original model.
 
-**Paper Goals**:
+**Goal**:
 - How to jointly optimize color and geometry without changing the number of Gaussians?
 - How to support unified style transfer across 2D/video/3D/4D modalities?
 - How to accommodate both text and image as style conditioning?
 
-**Starting Point**: Style transfer is framed as a fine-tuning problem over GS parameters. CLIP's cross-modal alignment capability is leveraged to unify text and image as style conditions, enabling optimization of all parameters while preserving the original number of Gaussians.
+**Key Insight**: Style transfer is framed as a fine-tuning problem over GS parameters. CLIP's cross-modal alignment capability is leveraged to unify text and image as style conditions, enabling optimization of all parameters while preserving the original number of Gaussians.
 
 **Core Idea**: The patch-based CLIP loss from CLIPStyler is extended to the GS framework. By combining a global directional CLIP loss with a local patch CLIP loss, multimodal style transfer is achieved without increasing model size.
 

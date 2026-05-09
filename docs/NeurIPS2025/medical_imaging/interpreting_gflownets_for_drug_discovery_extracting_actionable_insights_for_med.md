@@ -29,15 +29,15 @@ This work constructs a multi-level interpretability toolkit for SynFlowNet (a GF
 
 ## Background & Motivation
 
-**State of the Field**: GFlowNets are a powerful class of generative models that learn stochastic policies to sequentially construct molecules, distributing probability mass across multiple high-reward structures. SynFlowNet further incorporates synthetic reaction constraints to ensure the synthetic feasibility of generated molecules.
+**Background**: GFlowNets are a powerful class of generative models that learn stochastic policies to sequentially construct molecules, distributing probability mass across multiple high-reward structures. SynFlowNet further incorporates synthetic reaction constraints to ensure the synthetic feasibility of generated molecules.
 
 **Limitations of Prior Work**: Despite strong performance, the internal decision-making strategies of GFlowNets remain opaque. Medicinal chemists need to understand why a model favors certain scaffolds or synthetic routes; without such understanding, these models are difficult to trust and integrate into DMTA cycles.
 
-**Root Cause**: Existing attribution methods are primarily designed for supervised learning or diffusion models and are ill-suited for discrete, graph-based generative policies. GFlowNets must select among heterogeneous action types, and the rich structural information in intermediate graph states has never been systematically analyzed.
+**Key Challenge**: Existing attribution methods are primarily designed for supervised learning or diffusion models and are ill-suited for discrete, graph-based generative policies. GFlowNets must select among heterogeneous action types, and the rich structural information in intermediate graph states has never been systematically analyzed.
 
-**Paper Goals**: To develop the first systematic interpretability framework for GFlowNets, providing multi-scale explanations spanning the atomic, latent, and motif levels.
+**Goal**: To develop the first systematic interpretability framework for GFlowNets, providing multi-scale explanations spanning the atomic, latent, and motif levels.
 
-**Starting Point**: Adapting established methods from supervised learning and network dissection (integrated gradients, SAEs, probe classifiers) to structured sequential graph-generation policies.
+**Key Insight**: Adapting established methods from supervised learning and network dissection (integrated gradients, SAEs, probe classifiers) to structured sequential graph-generation policies.
 
 **Core Idea**: The internal representations of SynFlowNet organize drug-likeness (QED) along interpretable axes such as polarity, lipophilicity, and molecular size, with functional group information encoded in embeddings in a linearly decodable manner.
 

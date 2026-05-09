@@ -31,7 +31,7 @@ This paper proposes CodeAssistBench (CAB), the first fully automated benchmark f
 
 ## Background & Motivation
 
-**State of the Field**: Evaluation of LLM-based coding assistants has evolved from isolated code synthesis (HumanEval, MBPP) to repository-level maintenance (SWE-Bench, BigCodeBench). However, existing benchmarks are either single-turn (InfiBench, StackEval) or restrict multi-turn dialogue to code synthesis settings (ConvCodeWorld, MINT, TICODER), leaving a systematic gap in evaluating realistic multi-turn programming assistance scenarios.
+**Background**: Evaluation of LLM-based coding assistants has evolved from isolated code synthesis (HumanEval, MBPP) to repository-level maintenance (SWE-Bench, BigCodeBench). However, existing benchmarks are either single-turn (InfiBench, StackEval) or restrict multi-turn dialogue to code synthesis settings (ConvCodeWorld, MINT, TICODER), leaving a systematic gap in evaluating realistic multi-turn programming assistance scenarios.
 
 **Neglected Real-World Developer Needs**: The 2024 Stack Overflow Developer Survey (34,168 respondents) shows that 77.9% of developers need AI for "searching answers," 77.3% for "debugging and error resolution," and 73.6% for "understanding unfamiliar codebases." These tasks require iterative clarification, environment-aware reasoning, and integration of project-specific details—far beyond the coverage of existing benchmarks.
 
@@ -39,9 +39,9 @@ This paper proposes CodeAssistBench (CAB), the first fully automated benchmark f
 
 **Scalability Limitations of Manual Curation**: InfiBench and StackEval rely on human-curated StackOverflow data, which is costly and loses discriminative power as LLM training data is updated. An automatically and continuously scalable benchmark construction paradigm is therefore necessary.
 
-**Root Cause**: Existing benchmarks measure "the ability to generate code given a well-specified requirement," whereas developers truly need "the ability to resolve practical problems under ambiguous descriptions within specific project contexts."
+**Key Challenge**: Existing benchmarks measure "the ability to generate code given a well-specified requirement," whereas developers truly need "the ability to resolve practical problems under ambiguous descriptions within specific project contexts."
 
-**Starting Point**: The paper leverages closed GitHub Issues labeled *question* or *help-wanted*, along with their multi-turn resolution dialogues, to automatically construct an executable and judgeable multi-turn programming assistance benchmark. A three-agent User–Maintainer–Judge framework is employed to simulate and evaluate the real-world assistance capabilities of LLMs.
+**Key Insight**: The paper leverages closed GitHub Issues labeled *question* or *help-wanted*, along with their multi-turn resolution dialogues, to automatically construct an executable and judgeable multi-turn programming assistance benchmark. A three-agent User–Maintainer–Judge framework is employed to simulate and evaluate the real-world assistance capabilities of LLMs.
 
 ## Method
 

@@ -28,10 +28,10 @@ content_hash: 5843fb3192eb594f
 This paper proposes PIR (Perplexity-based Importance Refinement), a framework that categorizes reasoning chains distilled from LRMs into "progressive reasoning" and "functional steps" (verification / multi-method validation / error correction), and prunes only functional steps with low PIR scores while preserving the progressive reasoning backbone intact. Fine-tuning on the refined data improves accuracy by 0.9%–6.6% on AIME/AMC/GPQA while reducing token usage by 3%–41%, yielding up to 71% efficiency gain.
 
 ## Background & Motivation
-- **State of the Field**: Large reasoning models such as DeepSeek-R1 and QwQ generate CoT chains containing extensive functional steps — verification, error correction, and multi-method validation — that simulate human problem-solving but substantially increase inference overhead.
+- **Background**: Large reasoning models such as DeepSeek-R1 and QwQ generate CoT chains containing extensive functional steps — verification, error correction, and multi-method validation — that simulate human problem-solving but substantially increase inference overhead.
 - **Limitations of Prior Work**: Using such verbose reasoning chains for SFT transfers the same redundant reasoning behavior to student models, significantly raising inference time and compute cost. Existing approaches (e.g., SPIRIT) apply uniform perplexity-based pruning without distinguishing step types, risking the removal of critical progressive reasoning steps and degrading accuracy.
-- **Root Cause**: The heterogeneous importance of functional steps is ignored: different instances of the same step type (e.g., verification) contribute very differently to the final answer, requiring quantitative assessment rather than heuristic deletion.
-- **Paper Goals**: Achieve a favorable efficiency–quality trade-off for practical test-time scaling deployment, and provide a generalizable framework across diverse distillation sources (Gemini: 71.4% progressive reasoning vs. DeepSeek-R1: 59.7%).
+- **Key Challenge**: The heterogeneous importance of functional steps is ignored: different instances of the same step type (e.g., verification) contribute very differently to the final answer, requiring quantitative assessment rather than heuristic deletion.
+- **Goal**: Achieve a favorable efficiency–quality trade-off for practical test-time scaling deployment, and provide a generalizable framework across diverse distillation sources (Gemini: 71.4% progressive reasoning vs. DeepSeek-R1: 59.7%).
 
 ## Method
 The PIR framework consists of a four-stage pipeline:

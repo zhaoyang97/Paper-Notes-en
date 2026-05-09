@@ -29,15 +29,15 @@ APC proposes a lightweight input-level purification module that neutralizes adve
 
 ## Background & Motivation
 
-**State of the Field**: Adversarial defense methods for 3D point cloud recognition fall into two categories — input-level defenses (directly manipulating input data, e.g., SOR, IF-Defense) and model-level defenses (e.g., adversarial training, hybrid training).
+**Background**: Adversarial defense methods for 3D point cloud recognition fall into two categories — input-level defenses (directly manipulating input data, e.g., SOR, IF-Defense) and model-level defenses (e.g., adversarial training, hybrid training).
 
 **Limitations of Prior Work**: Input-level defenses are naturally transferable across models due to their operation in data space, but offer weaker protection; model-level defenses are effective but lack transferability, requiring full retraining for each target model. Both categories exhibit a clear trade-off between robustness and transferability.
 
-**Root Cause**: Existing input-level defenses only indirectly recover clean samples through data manipulation (e.g., outlier removal, surface reconstruction), without leveraging explicit defense objectives to learn how to precisely reverse attack perturbations.
+**Key Challenge**: Existing input-level defenses only indirectly recover clean samples through data manipulation (e.g., outlier removal, surface reconstruction), without leveraging explicit defense objectives to learn how to precisely reverse attack perturbations.
 
-**Paper Goals**: Design a defense method that simultaneously achieves strong robustness and high transferability.
+**Goal**: Design a defense method that simultaneously achieves strong robustness and high transferability.
 
-**Starting Point**: Reframe adversarial defense as a "counter-attack" — rather than passively denoising or reconstructing, actively generate a counter-perturbation to neutralize the attack perturbation.
+**Key Insight**: Reframe adversarial defense as a "counter-attack" — rather than passively denoising or reconstructing, actively generate a counter-perturbation to neutralize the attack perturbation.
 
 **Core Idea**: Train a lightweight encoder-decoder module that takes an adversarial sample as input and generates point-wise counter-perturbations, purifying the adversarial point cloud into a form close to the clean sample via point-wise addition.
 

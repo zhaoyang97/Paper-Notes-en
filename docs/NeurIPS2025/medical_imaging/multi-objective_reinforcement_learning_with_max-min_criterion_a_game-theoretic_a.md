@@ -29,15 +29,15 @@ This paper reformulates max-min multi-objective reinforcement learning as a two-
 
 ## Background & Motivation
 
-**State of the Field**: Multi-objective reinforcement learning (MORL) addresses MDPs with vector-valued rewards, where utility-function-based methods—most commonly weighted sums—are the dominant paradigm. Max-min MORL maximizes the worst-performing objective dimension and is naturally suited to fairness-oriented resource allocation scenarios.
+**Background**: Multi-objective reinforcement learning (MORL) addresses MDPs with vector-valued rewards, where utility-function-based methods—most commonly weighted sums—are the dominant paradigm. Max-min MORL maximizes the worst-performing objective dimension and is naturally suited to fairness-oriented resource allocation scenarios.
 
 **Limitations of Prior Work**: (i) GGF-DQN/GGF-PPO optimize a surrogate objective $\mathbb{E}_\pi[\min_k \sum_t \gamma^t r_k]$ (a Jensen lower bound) rather than the true objective $\min_k \mathbb{E}_\pi[\sum_t \gamma^t r_k]$; (ii) the double-loop method of Park et al. directly optimizes the true objective but incurs substantial memory and computational overhead (20 Q-networks) and guarantees only average-iterate convergence; (iii) GGF-PPO updates only the worst-performing dimension per batch, effectively switching $w$ among one-hot vectors, yielding only average-iterate convergence.
 
-**Root Cause**: The nonlinearity of the $\min$ operator prevents max-min MORL from being solved directly by standard RL methods, while simultaneously demanding numerically efficient solvers.
+**Key Challenge**: The nonlinearity of the $\min$ operator prevents max-min MORL from being solved directly by standard RL methods, while simultaneously demanding numerically efficient solvers.
 
-**Paper Goals**: Design a computationally and memory-efficient max-min MORL algorithm with last-iterate convergence guarantees.
+**Goal**: Design a computationally and memory-efficient max-min MORL algorithm with last-iterate convergence guarantees.
 
-**Starting Point**: Exploit a special equivalence between max-min and min-max under entropy regularization to transform the problem into finding a Nash equilibrium of a two-player zero-sum game.
+**Key Insight**: Exploit a special equivalence between max-min and min-max under entropy regularization to transform the problem into finding a Nash equilibrium of a two-player zero-sum game.
 
 **Core Idea**: The Learner updates the policy via NPG/PPO, while the Adversary updates the weight vector $w$ using the closed-form softmax formula derived from entropy-regularized mirror descent—two players jointly achieving max-min fairness.
 

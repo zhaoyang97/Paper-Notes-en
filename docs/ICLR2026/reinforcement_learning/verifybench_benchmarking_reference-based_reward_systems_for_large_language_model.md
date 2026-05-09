@@ -29,13 +29,13 @@ This work introduces VerifyBench and VerifyBench-Hard, two evaluation benchmarks
 
 ## Background & Motivation
 
-**State of the Field**: Reasoning models such as OpenAI o1 and DeepSeek-R1 rely on reference-based reward systems during RL training, granting rewards based on the consistency between model outputs and ground-truth answers.
+**Background**: Reasoning models such as OpenAI o1 and DeepSeek-R1 rely on reference-based reward systems during RL training, granting rewards based on the consistency between model outputs and ground-truth answers.
 
 **Limitations of Prior Work**: Existing reward model benchmarks (e.g., RewardBench) primarily evaluate pairwise preference judgments—selecting the better of two responses—rather than determining whether a single response is correct.
 
-**Root Cause**: Reward systems used in LRM training must assess absolute correctness (i.e., whether a response agrees with the reference answer), which is fundamentally different from relative preference comparison. Existing benchmarks therefore fail to reflect real training scenarios.
+**Key Challenge**: Reward systems used in LRM training must assess absolute correctness (i.e., whether a response agrees with the reference answer), which is fundamentally different from relative preference comparison. Existing benchmarks therefore fail to reflect real training scenarios.
 
-**Paper Goals**: Rule-based methods such as math-verify, used in SimpleRL, exhibit clear deficiencies in matching mathematical expressions, yet no standardized benchmark exists to quantify these shortcomings. Moreover, while models perform well on simple verification tasks (~95%), performance degrades markedly on genuinely ambiguous hard samples (~70–88%), motivating the need for a dedicated hard benchmark.
+**Goal**: Rule-based methods such as math-verify, used in SimpleRL, exhibit clear deficiencies in matching mathematical expressions, yet no standardized benchmark exists to quantify these shortcomings. Moreover, while models perform well on simple verification tasks (~95%), performance degrades markedly on genuinely ambiguous hard samples (~70–88%), motivating the need for a dedicated hard benchmark.
 
 ## Method
 

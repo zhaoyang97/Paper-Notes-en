@@ -33,7 +33,7 @@ Visual Spatial Intelligence (VSI) is one of the key capabilities of multimodal l
 
 Inspired by the historical practice of Renaissance painters (e.g., Dürer, da Vinci) who decomposed 3D scenes using perspective grid systems, this paper asks: can a grid structure serve as a machine representation of spatial intelligence? Just as painters trained spatial perception through grids and could subsequently draw any object, a model that learns spatial relationships via grid representations should generalize accordingly.
 
-- **Starting Point**: Shifting VSI from pure text representation to graph-structured representation.
+- **Key Insight**: Shifting VSI from pure text representation to graph-structured representation.
 - **Core Idea**: SIG—a 10×10 grid that maps objects in driving scenes (vehicles, traffic signs, traffic lights) to discrete spatial positions, from which a Spatial Relationship Graph (SRG) and Spatial Relationship Paragraph (SRP) are extracted, accompanied by specially designed graph similarity evaluation metrics.
 
 ## Method

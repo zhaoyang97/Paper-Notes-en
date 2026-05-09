@@ -30,15 +30,15 @@ A controlled study across six LLMs identifies a "Utilitarian Boost" phenomenon: 
 
 ## Background & Motivation
 
-**State of the Field**: LLM-based multi-agent systems (MAS) have been deployed in high-stakes domains such as healthcare and law for collaborative decision-making. Prior work has documented social-psychological phenomena in LLM groups, including conformity and belief congruence. Yet group moral reasoning—arguably the most consequential decision type for deployment—remains almost entirely unstudied.
+**Background**: LLM-based multi-agent systems (MAS) have been deployed in high-stakes domains such as healthcare and law for collaborative decision-making. Prior work has documented social-psychological phenomena in LLM groups, including conformity and belief congruence. Yet group moral reasoning—arguably the most consequential decision type for deployment—remains almost entirely unstudied.
 
 **Limitations of Prior Work**: (1) LLM moral reasoning research is almost exclusively single-agent, offering no insight into emergent multi-agent behavior. (2) Human psychology has established that group discussion produces a "Utilitarian Boost"—groups are more willing than individuals to sacrifice a minority for the "greater good." If LLM MAS exhibit the same effect, it poses a serious threat in high-stakes deployments. (3) Single-agent alignment checks cannot capture morally-shifted behavior that emerges at the group level.
 
-**Root Cause**: An individual LLM may pass safety evaluations in isolation, yet contribute to more dangerous moral judgments when embedded in a group—an alignment blind spot that has been entirely overlooked.
+**Key Challenge**: An individual LLM may pass safety evaluations in isolation, yet contribute to more dangerous moral judgments when embedded in a group—an alignment blind spot that has been entirely overlooked.
 
-**Paper Goals**: Do LLMs also exhibit a Utilitarian Boost during group deliberation? What mechanisms drive this boost? Can it be mitigated?
+**Goal**: Do LLMs also exhibit a Utilitarian Boost during group deliberation? What mechanisms drive this boost? Can it be mitigated?
 
-**Starting Point**: The paper directly adopts well-validated experimental paradigms from psychology—Greene's moral dilemma battery, the Oxford Utilitarianism Scale (OUS), and the CNI model—to study LLM groups.
+**Key Insight**: The paper directly adopts well-validated experimental paradigms from psychology—Greene's moral dilemma battery, the Oxford Utilitarianism Scale (OUS), and the CNI model—to study LLM groups.
 
 **Core Idea**: LLM multi-agent systems systematically shift toward utilitarianism following moral deliberation—safety at the individual model level does not guarantee safety at the group level.
 

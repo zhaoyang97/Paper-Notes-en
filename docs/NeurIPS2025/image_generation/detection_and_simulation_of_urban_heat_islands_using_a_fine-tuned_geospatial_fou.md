@@ -29,15 +29,15 @@ This paper proposes a unified three-stage workflow based on a fine-tuned geospat
 
 ## Background & Motivation
 
-**State of the Field**: The urban heat island (UHI) effect intensifies with urbanization and climate change, with urban cores reaching temperatures more than 5°C above surrounding areas, leading to increased energy consumption, heat-related illness, and degraded air quality. With over 70% of the global population projected to live in cities by 2050, UHI mitigation is increasingly urgent.
+**Background**: The urban heat island (UHI) effect intensifies with urbanization and climate change, with urban cores reaching temperatures more than 5°C above surrounding areas, leading to increased energy consumption, heat-related illness, and degraded air quality. With over 70% of the global population projected to live in cities by 2050, UHI mitigation is increasingly urgent.
 
 **Limitations of Prior Work**: Effective UHI mitigation requires high-resolution, high-frequency temperature data, yet current approaches face multiple bottlenecks: (1) sparse meteorological station networks and long satellite revisit intervals result in insufficient data coverage; (2) physics-based models (e.g., WRF, UrbClim) demand extensive input data and computational resources; (3) conventional ML models rely on large annotated datasets and generalize poorly across regions—particularly problematic for data-scarce developing areas.
 
-**Root Cause**: Urban planners require four types of information—current heat island distribution, the spatial extent of green space cooling, the intensity of future extreme heat events, and the expected impact of interventions—yet these are typically provided by separate toolchains with no unified framework. Moreover, existing work rarely verifies whether models genuinely capture physical mechanisms (e.g., green space cooling), reporting only error metrics.
+**Key Challenge**: Urban planners require four types of information—current heat island distribution, the spatial extent of green space cooling, the intensity of future extreme heat events, and the expected impact of interventions—yet these are typically provided by separate toolchains with no unified framework. Moreover, existing work rarely verifies whether models genuinely capture physical mechanisms (e.g., green space cooling), reporting only error metrics.
 
-**Paper Goals**: How can a unified geospatial foundation model workflow simultaneously accomplish UHI detection and quantification, future prediction, and intervention simulation, while verifying the physical plausibility of the model?
+**Goal**: How can a unified geospatial foundation model workflow simultaneously accomplish UHI detection and quantification, future prediction, and intervention simulation, while verifying the physical plausibility of the model?
 
-**Starting Point**: Geospatial foundation models (GFMs) pre-trained on globally unstructured remote sensing data exhibit strong generalization and require only minimal fine-tuning to adapt to new cities. IBM's Granite-GFM has already demonstrated cross-regional LST prediction capability; this paper builds a complete three-stage workflow upon that foundation.
+**Key Insight**: Geospatial foundation models (GFMs) pre-trained on globally unstructured remote sensing data exhibit strong generalization and require only minimal fine-tuning to adapt to new cities. IBM's Granite-GFM has already demonstrated cross-regional LST prediction capability; this paper builds a complete three-stage workflow upon that foundation.
 
 **Core Idea**: A single fine-tuned geospatial foundation model is used to chain together three stages—empirical validation → climate extrapolation → intervention simulation—upgrading UHI analysis from an assessment tool to a planning simulation platform.
 

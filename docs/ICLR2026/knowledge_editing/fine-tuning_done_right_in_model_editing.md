@@ -27,15 +27,15 @@ This paper reveals that the underestimation of fine-tuning in model editing stem
 
 ## Background & Motivation
 
-**State of the Field**: Model editing aims to efficiently modify specific factual knowledge in LLMs without full retraining. Mainstream approaches include parameter expansion (GRACE), meta-learning (MEND), and locate-and-edit methods (ROME/MEMIT). Fine-tuning has long been treated as a weak baseline in this domain, dismissed due to "overfitting and catastrophic forgetting."
+**Background**: Model editing aims to efficiently modify specific factual knowledge in LLMs without full retraining. Mainstream approaches include parameter expansion (GRACE), meta-learning (MEND), and locate-and-edit methods (ROME/MEMIT). Fine-tuning has long been treated as a weak baseline in this domain, dismissed due to "overfitting and catastrophic forgetting."
 
 **Limitations of Prior Work**: (a) Locate-and-edit methods require precomputed matrices and scale poorly; (b) meta-learning methods require additional labeled data and auxiliary networks; (c) parameter expansion methods alter model architecture; (d) all methods suffer significant performance degradation under large-scale sequential editing (>10K edits).
 
-**Root Cause**: Fine-tuning is the most successful paradigm for LLM adaptation, yet it is deemed "ineffective" in model editing — a contradiction that warrants deeper investigation.
+**Key Challenge**: Fine-tuning is the most successful paradigm for LLM adaptation, yet it is deemed "ineffective" in model editing — a contradiction that warrants deeper investigation.
 
-**Paper Goals**: Is fine-tuning truly inadequate for model editing? Is its failure inherent to the method itself, or to how it is implemented?
+**Goal**: Is fine-tuning truly inadequate for model editing? Is its failure inherent to the method itself, or to how it is implemented?
 
-**Starting Point**: An audit of existing codebases reveals that fine-tuning in model editing follows a **non-standard training procedure**: optimizing each sample to convergence before proceeding to the next (depth-first), rather than the standard multi-epoch mini-batch training (breadth-first).
+**Key Insight**: An audit of existing codebases reveals that fine-tuning in model editing follows a **non-standard training procedure**: optimizing each sample to convergence before proceeding to the next (depth-first), rather than the standard multi-epoch mini-batch training (breadth-first).
 
 **Core Idea**: The "failure" of fine-tuning in model editing is an implementation artifact rather than a fundamental limitation — correcting the training pipeline and applying localized parameter updates suffices to surpass all existing SOTA methods.
 

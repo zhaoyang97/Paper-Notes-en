@@ -30,15 +30,15 @@ This paper presents the first systematic evaluation of how train/test splitting 
 
 ## Background & Motivation
 
-**State of the Field**: Attributes (e.g., "has four legs," "has stripes") are central to how humans describe objects and carry natural cross-category transfer potential—"has stripes" learned from zebras can transfer to bees and tigers.
+**Background**: Attributes (e.g., "has four legs," "has stripes") are central to how humans describe objects and carry natural cross-category transfer potential—"has stripes" learned from zebras can transfer to bees and tigers.
 
 **Limitations of Prior Work**: Existing attribute prediction benchmarks are either taxonomically narrow (e.g., AwA covers only animals; CUB covers only birds) or fail to control the dissimilarity between training and test categories (e.g., VAW, MIT States), allowing models to exploit taxonomic shortcuts (semantic leakage) rather than genuinely learning attribute abstraction.
 
-**Root Cause**: When training and test sets contain semantically similar categories (e.g., "dog" in training and "wolf" in testing), models can achieve high scores by recognizing categories rather than understanding attributes, leading to inflated estimates of generalization.
+**Key Challenge**: When training and test sets contain semantically similar categories (e.g., "dog" in training and "wolf" in testing), models can achieve high scores by recognizing categories rather than understanding attributes, leading to inflated estimates of generalization.
 
 **Core Problem**: No prior work has explicitly controlled the semantic and perceptual distance between training and test concepts to assess the true level of attribute generalization.
 
-**Paper Goals**: Can models generalize attribute knowledge learned from one set of categories to semantically and perceptually unrelated categories? For example, can "has four legs" learned from "dog" transfer to "chair"? The paper aims to construct fairer and more challenging evaluation protocols for attribute reasoning tasks, thereby advancing representation learning research.
+**Goal**: Can models generalize attribute knowledge learned from one set of categories to semantically and perceptually unrelated categories? For example, can "has four legs" learned from "dog" transfer to "chair"? The paper aims to construct fairer and more challenging evaluation protocols for attribute reasoning tasks, thereby advancing representation learning research.
 
 ## Method
 

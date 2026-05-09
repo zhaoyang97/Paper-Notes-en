@@ -28,15 +28,15 @@ This paper discovers that existing unstructured model editing methods can holist
 
 ## Background & Motivation
 
-**State of the Field**: Model editing aims to update specific knowledge in LLMs by modifying a small number of parameters. Structured editing (e.g., ROME, MEMIT) has succeeded on <subject, relation, object> triplets. Recent methods like UnKE and AnyEdit have extended editing to unstructured text — enabling models to memorize and holistically recall complete paragraphs.
+**Background**: Model editing aims to update specific knowledge in LLMs by modifying a small number of parameters. Structured editing (e.g., ROME, MEMIT) has succeeded on <subject, relation, object> triplets. Recent methods like UnKE and AnyEdit have extended editing to unstructured text — enabling models to memorize and holistically recall complete paragraphs.
 
 **Limitations of Prior Work**: Existing unstructured editing methods can holistically recall edited text but cannot support fine-grained fact access. As illustrated, models edited with UnKE can recite the complete text, but when asked about specific details within the text, they fail to provide accurate answers. The model learns a high-level mapping from questions to surface-form representations rather than encoding the underlying atomic facts into knowledge stores.
 
-**Root Cause**: A mismatch exists between holistic recall and fine-grained fact access. In the Transformer's unidirectional information flow, surface-form generation amplifies rather than corrects underlying fact representations — if shallow layers have not correctly encoded facts, deep-layer narrative generation cannot compensate.
+**Key Challenge**: A mismatch exists between holistic recall and fine-grained fact access. In the Transformer's unidirectional information flow, surface-form generation amplifies rather than corrects underlying fact representations — if shallow layers have not correctly encoded facts, deep-layer narrative generation cannot compensate.
 
-**Paper Goals**: Design a model editing method that simultaneously supports holistic text recall and fine-grained fact access.
+**Goal**: Design a model editing method that simultaneously supports holistic text recall and fine-grained fact access.
 
-**Starting Point**: Leverage the Transformer's "early decoding" phenomenon — shallow layers excel at capturing local fine-grained features while deep layers integrate into global semantic representations. Therefore, fine-grained facts should first be anchored in shallow layers, followed by surface-form integration in deep layers.
+**Key Insight**: Leverage the Transformer's "early decoding" phenomenon — shallow layers excel at capturing local fine-grained features while deep layers integrate into global semantic representations. Therefore, fine-grained facts should first be anchored in shallow layers, followed by surface-form integration in deep layers.
 
 **Core Idea**: Decouple the key generator into two levels — a fine-grained fact key generator (shallow layers, injecting discrete facts) and a holistic semantic key generator (deep layers, integrating into coherent narratives) — achieving "facts first, generation second."
 

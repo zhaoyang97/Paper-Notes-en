@@ -28,15 +28,15 @@ This paper proposes a diversity-steered sampling framework that injects NLI-base
 
 ## Background & Motivation
 
-**State of the Field**: Uncertainty quantification for LLMs in open-ended question answering (QA) primarily relies on Semantic Entropy (SE)—clustering multiple generations by semantics and computing the entropy of the resulting cluster distribution. Recent work further computes mutual information (MI) via iterative prompting to measure epistemic uncertainty.
+**Background**: Uncertainty quantification for LLMs in open-ended question answering (QA) primarily relies on Semantic Entropy (SE)—clustering multiple generations by semantics and computing the entropy of the resulting cluster distribution. Recent work further computes mutual information (MI) via iterative prompting to measure epistemic uncertainty.
 
 **Limitations of Prior Work**: These methods require a large number of IID samples for stable estimation, yet standard sampling yields many semantically redundant outputs (i.e., paraphrases of the same answer), wasting computational resources. Diversity heuristics such as temperature scaling and nucleus sampling are semantically agnostic and thus fail to effectively cover distinct semantic clusters.
 
-**Root Cause**: Accurate estimation requires coverage of as many semantic clusters as possible to obtain a reliable cluster distribution, but standard sampling concentrates on high-probability regions, making it difficult for a small sample to cover rare clusters. Increasing the sample count is a straightforward solution but incurs high inference costs.
+**Key Challenge**: Accurate estimation requires coverage of as many semantic clusters as possible to obtain a reliable cluster distribution, but standard sampling concentrates on high-probability regions, making it difficult for a small sample to cover rare clusters. Increasing the sample count is a straightforward solution but incurs high inference costs.
 
-**Paper Goals**: To efficiently cover a greater number of semantic clusters with a small number of samples (e.g., 16), thereby accurately estimating both aleatoric and epistemic uncertainty in LLMs.
+**Goal**: To efficiently cover a greater number of semantic clusters with a small number of samples (e.g., 16), thereby accurately estimating both aleatoric and epistemic uncertainty in LLMs.
 
-**Starting Point**: Semantic diversity penalties are injected directly into the decoding process—at each token step, tokens semantically similar to already-generated outputs are penalized, steering subsequent generation toward new semantic directions. The key innovation is fine-tuning an NLI model to support pairwise evaluation of incomplete sequences.
+**Key Insight**: Semantic diversity penalties are injected directly into the decoding process—at each token step, tokens semantically similar to already-generated outputs are penalized, steering subsequent generation toward new semantic directions. The key innovation is fine-tuning an NLI model to support pairwise evaluation of incomplete sequences.
 
 **Core Idea**: NLI entailment scores are used as continuous penalty terms injected into decoding logits to steer sampling away from existing semantic clusters, while importance weighting corrects the resulting distributional bias.
 

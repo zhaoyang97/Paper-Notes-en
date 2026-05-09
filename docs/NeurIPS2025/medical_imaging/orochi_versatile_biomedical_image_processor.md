@@ -41,7 +41,7 @@ Deep learning is increasingly important in life sciences, with low-level biomedi
 
 Existing platforms (e.g., ImageJ/Fiji, napari) provide a variety of model plugins, but these are each confined to specific tasks and datasets, leaving biologists overwhelmed by a vast plugin ecosystem.
 
-The paper's **Starting Point** is to build a general-purpose low-level image processing foundation model that handles all low-level tasks within a unified framework, while exploiting cross-task learning for more generalizable feature representations. The **Core Idea** is to use task-related degradations as self-supervised signals—rather than generic Masked Image Modelling—because the intrinsic correlations among different degradations correspond precisely to the correlations among different low-level tasks.
+The paper's **Key Insight** is to build a general-purpose low-level image processing foundation model that handles all low-level tasks within a unified framework, while exploiting cross-task learning for more generalizable feature representations. The **Core Idea** is to use task-related degradations as self-supervised signals—rather than generic Masked Image Modelling—because the intrinsic correlations among different degradations correspond precisely to the correlations among different low-level tasks.
 
 ## Method
 

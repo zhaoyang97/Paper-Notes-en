@@ -27,15 +27,15 @@ content_hash: 8d53217556ca2fbd
 URaG identifies a human-like "coarse-to-fine" reasoning pattern in MLLMs processing long documents—shallow layers exhibit uniformly distributed attention while deep layers concentrate on evidence pages. Motivated by this insight, a lightweight cross-modal retrieval module is inserted at layer 6 (comprising only 0.05% of total parameters) to select the Top-5 relevant pages and discard the remainder, achieving SOTA performance while reducing computation by 44–56%.
 
 ## Background & Motivation
-**State of the Field**: MLLMs perform well on single-page documents, but multi-page long document understanding faces two major challenges: interference from irrelevant content and the quadratic complexity of Transformers.
+**Background**: MLLMs perform well on single-page documents, but multi-page long document understanding faces two major challenges: interference from irrelevant content and the quadratic complexity of Transformers.
 
 **Limitations of Prior Work**: Two categories of existing approaches each have distinct drawbacks. (1) Token compression methods (e.g., mPLUG-DocOwl2) uniformly compress visual tokens across all pages, inevitably losing fine-grained visual detail. (2) External retriever methods (e.g., CREAM, SV-RAG) introduce separate retrieval modules that increase system complexity; the retriever and the MLLM cannot be optimized end-to-end, making them prone to "coordination failure and error propagation."
 
-**Root Cause**: Only a small number of pages in a long document contain answer evidence, yet existing methods either compress all pages (sacrificing precision) or require additional retrieval systems (increasing complexity).
+**Key Challenge**: Only a small number of pages in a long document contain answer evidence, yet existing methods either compress all pages (sacrificing precision) or require additional retrieval systems (increasing complexity).
 
-**Paper Goals**: How can evidence-page retrieval and answer generation be unified efficiently within a single MLLM?
+**Goal**: How can evidence-page retrieval and answer generation be unified efficiently within a single MLLM?
 
-**Starting Point**: Systematic analysis reveals that MLLMs already exhibit a human-like "coarse-to-fine" reasoning pattern internally—shallow layers scan globally in a uniform manner, intermediate layers gradually focus, and deep layers concentrate on evidence pages. This implies that hidden states at shallow layers are already sufficient to distinguish relevant from irrelevant pages, enabling the insertion of a lightweight retrieval module at that point.
+**Key Insight**: Systematic analysis reveals that MLLMs already exhibit a human-like "coarse-to-fine" reasoning pattern internally—shallow layers scan globally in a uniform manner, intermediate layers gradually focus, and deep layers concentrate on evidence pages. This implies that hidden states at shallow layers are already sufficient to distinguish relevant from irrelevant pages, enabling the insertion of a lightweight retrieval module at that point.
 
 **Core Idea**: Transform the shallow layers of an MLLM into a retriever; after filtering evidence pages, allow the deep layers to process only the relevant content, thereby unifying retrieval and generation.
 

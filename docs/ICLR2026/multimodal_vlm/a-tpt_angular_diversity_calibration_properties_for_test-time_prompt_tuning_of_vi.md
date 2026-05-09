@@ -28,15 +28,15 @@ This paper proposes the A-TPT framework, which promotes angular diversity by max
 
 ## Background & Motivation
 
-**State of the Field**: TPT adapts VLMs (e.g., CLIP) to new tasks by optimizing learnable prompt vectors with unlabeled samples at inference time, improving accuracy but often increasing calibration error (overconfidence).
+**Background**: TPT adapts VLMs (e.g., CLIP) to new tasks by optimizing learnable prompt vectors with unlabeled samples at inference time, improving accuracy but often increasing calibration error (overconfidence).
 
 **Limitations of Prior Work**: C-TPT improves calibration by maximizing average text feature dispersion (ATFD), yet features may still cluster. O-TPT enforces angular separation via orthogonality constraints, but when the number of classes exceeds the embedding dimension (e.g., 1,000 classes in ImageNet-1K vs. CLIP's 512 dimensions), enforcing orthogonality is mathematically infeasible, causing features to collapse instead.
 
-**Root Cause**: Neither dispersion (L2 distance) nor orthogonality constraints can guarantee a uniform angular distribution of features on the hypersphere—the former may push all features toward one direction while remaining far from the centroid, and the latter fails when the class count is large.
+**Key Challenge**: Neither dispersion (L2 distance) nor orthogonality constraints can guarantee a uniform angular distribution of features on the hypersphere—the former may push all features toward one direction while remaining far from the centroid, and the latter fails when the class count is large.
 
-**Paper Goals**: To propose a TPT calibration method that effectively promotes angular diversity of text features in both the $N > |D|$ and $N < |D|$ regimes.
+**Goal**: To propose a TPT calibration method that effectively promotes angular diversity of text features in both the $N > |D|$ and $N < |D|$ regimes.
 
-**Starting Point**: The calibration problem is connected to the Tammes problem (optimal point placement on a hypersphere)—maximizing the minimum pairwise angular distance ensures uniform feature distribution.
+**Key Insight**: The calibration problem is connected to the Tammes problem (optimal point placement on a hypersphere)—maximizing the minimum pairwise angular distance ensures uniform feature distribution.
 
 **Core Idea**: By maximizing the minimum pairwise angular distance among normalized text features (rather than average dispersion or orthogonality), A-TPT achieves uniform distribution on the hypersphere, substantially improving VLM calibration at inference time.
 

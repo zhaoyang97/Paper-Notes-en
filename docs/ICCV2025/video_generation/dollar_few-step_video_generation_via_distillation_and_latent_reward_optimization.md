@@ -29,15 +29,15 @@ This paper proposes DOLLAR, which combines Variational Score Distillation (VSD) 
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion probabilistic models have achieved remarkable progress in video generation, producing high-quality long videos (e.g., 10 seconds, 128 frames, 12 FPS). However, inference requires a large number of sampling steps (typically 50 DDIM steps), each involving a forward pass through a large-scale 3D UNet or DiT, making video generation a process that can take several minutes.
+**Background**: Diffusion probabilistic models have achieved remarkable progress in video generation, producing high-quality long videos (e.g., 10 seconds, 128 frames, 12 FPS). However, inference requires a large number of sampling steps (typically 50 DDIM steps), each involving a forward pass through a large-scale 3D UNet or DiT, making video generation a process that can take several minutes.
 
 **Limitations of Prior Work**: Directly reducing the number of sampling steps severely degrades video quality and diversity. Existing acceleration methods follow two main lines: Consistency Distillation (CD) enables few-step sampling but tends to lose detail and diversity, while Score Distillation (SD) preserves quality but requires more steps. Each approach has its own drawbacks, and no unified solution simultaneously addresses quality, diversity, and speed.
 
-**Root Cause**: CD forces the model to directly predict the final output within one or few steps, which is prone to mode collapse and blurry details. Variational Score Distillation (VSD) preserves distribution matching but is insufficiently stable when compressed to few steps. Video, compared to images, is higher-dimensional and demands stricter temporal consistency, making these issues more pronounced.
+**Key Challenge**: CD forces the model to directly predict the final output within one or few steps, which is prone to mode collapse and blurry details. Variational Score Distillation (VSD) preserves distribution matching but is insufficiently stable when compressed to few steps. Video, compared to images, is higher-dimensional and demands stricter temporal consistency, making these issues more pronounced.
 
-**Paper Goals**: To design a two-stage distillation scheme enabling a student model to generate high-quality, diverse videos in 1–4 steps, along with a general fine-tuning mechanism to further improve performance according to arbitrary reward metrics.
+**Goal**: To design a two-stage distillation scheme enabling a student model to generate high-quality, diverse videos in 1–4 steps, along with a general fine-tuning mechanism to further improve performance according to arbitrary reward metrics.
 
-**Starting Point**: The authors observe that VSD and CD are complementary — VSD excels at preserving distributional diversity but performs poorly in single-step generation, while CD excels at few-step generation but is prone to overfitting. A sequential strategy of VSD warm-up followed by CD refinement can capture the advantages of both. Furthermore, introducing a reward model in latent space bypasses the decoding bottleneck, enabling efficient fine-tuning with any quality metric.
+**Key Insight**: The authors observe that VSD and CD are complementary — VSD excels at preserving distributional diversity but performs poorly in single-step generation, while CD excels at few-step generation but is prone to overfitting. A sequential strategy of VSD warm-up followed by CD refinement can capture the advantages of both. Furthermore, introducing a reward model in latent space bypasses the decoding bottleneck, enabling efficient fine-tuning with any quality metric.
 
 **Core Idea**: A two-stage distillation pipeline (VSD→CD) yields a high-quality few-step base model, which is then refined via Latent Reward Optimization (LRO) according to specified quality metrics, achieving an optimal balance among quality, speed, and diversity.
 

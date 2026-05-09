@@ -27,15 +27,15 @@ content_hash: 9c317c465be48073
 This paper proposes LatentFT, a framework that applies the Discrete Fourier Transform (DFT) to latent time-series representations produced by a diffusion autoencoder, decomposing musical patterns by timescale. During training, a correlated log-scale frequency mask is randomly applied so that the decoder learns to reconstruct audio from partial spectra. At inference time, users specify frequency masks to selectively preserve or blend musical elements across different timescales. LatentFT consistently outperforms baselines including ILVR, Guidance, Codec Filtering, and RAVE on conditional generation and music blending tasks, with its superior audio quality and blending capability statistically confirmed by a listening test involving 29 musicians.
 
 ## Background & Motivation
-**State of the Field**: Music generation models (e.g., diffusion-based autoencoders, language models) can already produce high-quality music, but lack fine-grained control over musical structure at different timescales. Music exhibits multi-scale structure—chord progressions (~0.5 Hz), melodic lines (~2–5 Hz), rhythmic patterns (~8 Hz)—each evolving at a different rate along the time axis.
+**Background**: Music generation models (e.g., diffusion-based autoencoders, language models) can already produce high-quality music, but lack fine-grained control over musical structure at different timescales. Music exhibits multi-scale structure—chord progressions (~0.5 Hz), melodic lines (~2–5 Hz), rhythmic patterns (~8 Hz)—each evolving at a different rate along the time axis.
 
 **Limitations of Prior Work**: Existing control methods (text prompts, style transfer, guidance) operate at a global level and cannot independently manipulate multi-scale aspects such as "preserve the chord progression of this piece while replacing the rhythm." In deep multi-scale representations (e.g., different layers of a UNet), coarse- and fine-grained information are entangled, making independent manipulation difficult.
 
-**Root Cause**: Music generation requires decoupled control at different timescales, yet no natural, continuous, and interpretable control axis currently exists for this purpose.
+**Key Challenge**: Music generation requires decoupled control at different timescales, yet no natural, continuous, and interpretable control axis currently exists for this purpose.
 
-**Paper Goals**: Provide a novel control axis grounded in the latent frequency domain, enabling users to manipulate musical structure in a manner analogous to adjusting timbral qualities with an equalizer.
+**Goal**: Provide a novel control axis grounded in the latent frequency domain, enabling users to manipulate musical structure in a manner analogous to adjusting timbral qualities with an equalizer.
 
-**Starting Point**: Exploit the natural frequency-decomposition property of the Fourier transform—different frequency components are orthogonal and can be modified independently without mutual interference—and apply it to learned latent time series.
+**Key Insight**: Exploit the natural frequency-decomposition property of the Fourier transform—different frequency components are orthogonal and can be modified independently without mutual interference—and apply it to learned latent time series.
 
 **Core Idea**: Apply DFT in the latent space and use frequency masks to control music generation—an "equalizer for musical structure."
 

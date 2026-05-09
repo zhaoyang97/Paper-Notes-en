@@ -29,10 +29,10 @@ This paper proposes the PMSVM framework, which exploits the single-pass data acc
 
 ## Background & Motivation
 
-- **State of the Field**: Differential privacy (DP) is a foundational framework for building privacy-preserving machine learning models. SVMs excel at binary classification tasks and provide rigorous margin-theoretic guarantees.
+- **Background**: Differential privacy (DP) is a foundational framework for building privacy-preserving machine learning models. SVMs excel at binary classification tasks and provide rigorous margin-theoretic guarantees.
 - **Limitations of Prior Work**: Applying DP to multi-class SVMs poses a fundamental challenge. Conventional one-versus-rest (OvR) and one-versus-one (OvO) strategies require training multiple binary classifiers, causing each training sample to be queried repeatedly. By the DP Composition Theorem, combining $c$ classifiers requires a total privacy budget of $c\epsilon$; maintaining a fixed total budget thus allocates only $\epsilon/c$ per classifier, necessitating substantially larger noise and severely degrading model utility.
-- **Root Cause**: This tension becomes especially pronounced as the number of classes grows. Under OvR, each sample is accessed $c$ times; under OvO, $c-1$ times. The linear growth of the privacy budget directly causes the noise level to scale linearly with the number of classes.
-- **Paper Goals**: The authors turn to all-in-one SVM methods, which jointly optimize all class boundaries in a single convex problem so that each data point is accessed only once, fundamentally eliminating the repeated privacy budget consumption inherent to OvR/OvO strategies.
+- **Key Challenge**: This tension becomes especially pronounced as the number of classes grows. Under OvR, each sample is accessed $c$ times; under OvO, $c-1$ times. The linear growth of the privacy budget directly causes the noise level to scale linearly with the number of classes.
+- **Goal**: The authors turn to all-in-one SVM methods, which jointly optimize all class boundaries in a single convex problem so that each data point is accessed only once, fundamentally eliminating the repeated privacy budget consumption inherent to OvR/OvO strategies.
 
 ## Method
 

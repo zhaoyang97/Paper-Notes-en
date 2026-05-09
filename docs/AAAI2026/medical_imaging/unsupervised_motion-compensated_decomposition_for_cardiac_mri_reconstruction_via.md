@@ -29,11 +29,11 @@ This paper proposes MoCo-INR, which for the first time integrates implicit neura
 
 ## Background & Motivation
 
-1. **State of the Field**: Cardiac magnetic resonance (CMR) imaging is an essential tool for assessing cardiac morphology and function; however, long acquisition times make accurate imaging of dynamic cardiac motion extremely challenging. Reconstructing artifact-free dynamic MR images from undersampled k-t space data is a highly ill-posed inverse problem.
+1. **Background**: Cardiac magnetic resonance (CMR) imaging is an essential tool for assessing cardiac morphology and function; however, long acquisition times make accurate imaging of dynamic cardiac motion extremely challenging. Reconstructing artifact-free dynamic MR images from undersampled k-t space data is a highly ill-posed inverse problem.
 2. **Limitations of Prior Work**: Existing methods fall into two categories: (a) supervised motion-compensated methods (e.g., Pan et al. 2024) achieve strong performance but rely on fully sampled cine CMR data (requiring breath-hold acquisition), limiting clinical practicality and generalizability; (b) INR-based methods (e.g., ST-INR) enable unsupervised reconstruction but suffer from slow convergence and difficulty representing high-frequency details, while discrete feature representations from hash encoding compromise the continuity of INR.
-3. **Root Cause**: The continuous priors of unsupervised methods are insufficient for extremely undersampled inverse problems, whereas explicit motion modeling in MoCo effectively exploits spatiotemporal redundancy but existing implementations depend on supervised training and discrete interpolation.
-4. **Paper Goals**: To achieve accurate cardiac motion decomposition and high-fidelity CMR reconstruction without any training data.
-5. **Starting Point**: Combining the continuous representation capacity of INR with the explicit motion modeling of motion compensation—using two INR networks to continuously parameterize the displacement vector field (DVF) and a shared canonical image, respectively.
+3. **Key Challenge**: The continuous priors of unsupervised methods are insufficient for extremely undersampled inverse problems, whereas explicit motion modeling in MoCo effectively exploits spatiotemporal redundancy but existing implementations depend on supervised training and discrete interpolation.
+4. **Goal**: To achieve accurate cardiac motion decomposition and high-fidelity CMR reconstruction without any training data.
+5. **Key Insight**: Combining the continuous representation capacity of INR with the explicit motion modeling of motion compensation—using two INR networks to continuously parameterize the displacement vector field (DVF) and a shared canonical image, respectively.
 6. **Core Idea**: Replacing discrete matrices with continuous INR functions to parameterize the deformation field and canonical image within motion compensation, combined with coarse-to-fine hash encoding and a CNN decoder to enable stable optimization and recovery of high-frequency details.
 
 ## Method

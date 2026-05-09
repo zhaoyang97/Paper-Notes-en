@@ -39,7 +39,7 @@ Parameter-efficient fine-tuning (PEFT) is a core technique for personalizing lar
 
 **Core Insight**: The authors observe that if a learnable linear transform $T$ is first applied to the pretrained weight $W_0$ to maximally align it with the target weight $W_*$, the rank of the residual $\Delta'_* = W_* - W_0 T$ is substantially reduced. This enables a more compact structure to approximate the residual, simultaneously achieving higher parameter efficiency and better performance.
 
-**Starting Point**: The paper proposes a unified "Transform + Residual" adaptation framework $y' = (W_0 T + \Delta) x$, and leverages tensor decomposition techniques (TRM and TR) to efficiently parameterize both components.
+**Key Insight**: The paper proposes a unified "Transform + Residual" adaptation framework $y' = (W_0 T + \Delta) x$, and leverages tensor decomposition techniques (TRM and TR) to efficiently parameterize both components.
 
 ## Method
 

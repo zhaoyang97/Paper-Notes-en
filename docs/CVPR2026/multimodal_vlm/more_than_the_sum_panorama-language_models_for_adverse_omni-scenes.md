@@ -28,15 +28,15 @@ This paper proposes the Panorama-Language Modeling (PLM) paradigm and the PanoVQ
 
 ## Background & Motivation
 
-**State of the Field**: VLMs (e.g., LLaVA, BLIP-2) have achieved strong performance on pinhole images, yet panoramic (360°) inputs are increasingly prevalent in real-world applications such as autonomous driving, robotics, and AR/VR. Existing methods adopt a "stitching" strategy: sampling multiple narrow-field-of-view crops, processing them independently, and concatenating the results.
+**Background**: VLMs (e.g., LLaVA, BLIP-2) have achieved strong performance on pinhole images, yet panoramic (360°) inputs are increasingly prevalent in real-world applications such as autonomous driving, robotics, and AR/VR. Existing methods adopt a "stitching" strategy: sampling multiple narrow-field-of-view crops, processing them independently, and concatenating the results.
 
 **Limitations of Prior Work**: Multi-view stitching disrupts the spatial continuity of 360° scenes, ignoring global spatial relationships (e.g., left-right boundary connectivity) and failing to model wrap-around properties. For instance, multi-camera systems may miss a hazardous vehicle at the front-left because it straddles the boundary between two views.
 
-**Root Cause**: (1) The absence of large-scale panoramic VQA benchmarks — existing datasets are either multi-view pinhole VQA or panoramic data without QA pairs. (2) Architectural incompatibility — ERP images exhibit severe geometric distortion and significantly higher resolution than pinhole images, making the $O(n^2)$ complexity of dense attention intractable.
+**Key Challenge**: (1) The absence of large-scale panoramic VQA benchmarks — existing datasets are either multi-view pinhole VQA or panoramic data without QA pairs. (2) Architectural incompatibility — ERP images exhibit severe geometric distortion and significantly higher resolution than pinhole images, making the $O(n^2)$ complexity of dense attention intractable.
 
-**Paper Goals**: To validate the hypothesis that "panoramic language understanding exceeds the sum of multi-view stitching" and to establish foundational infrastructure for 360° VLMs.
+**Goal**: To validate the hypothesis that "panoramic language understanding exceeds the sum of multi-view stitching" and to establish foundational infrastructure for 360° VLMs.
 
-**Starting Point**: The empirical observation that a single panoramic image (41.42%) outperforms six camera images (40.22%).
+**Key Insight**: The empirical observation that a single panoramic image (41.42%) outperforms six camera images (40.22%).
 
 **Core Idea**: Construct the PanoVQA dataset and design the panoramic sparse attention (PSA) module to enable existing VLMs to directly process panoramic inputs.
 

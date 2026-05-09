@@ -30,15 +30,15 @@ This paper proposes DiffBacChrom — a conditional diffusion Transformer (CrossD
 
 ## Background & Motivation
 
-**State of the Field**: Hi-C technology provides population-averaged contact frequencies between genomic loci, yet Hi-C matrices are indirect measurements — a single contact map may correspond to many distinct 3D conformational ensembles.
+**Background**: Hi-C technology provides population-averaged contact frequencies between genomic loci, yet Hi-C matrices are indirect measurements — a single contact map may correspond to many distinct 3D conformational ensembles.
 
 **Limitations of Prior Work**: Deterministic methods such as FLAMINGO (optimization-based) and CHROMFORMER (Transformer regression) output a single consensus conformation, ignoring the inherent heterogeneity of chromatin organization.
 
-**Root Cause**: Ensemble methods based on polymer simulations (e.g., Li & Schlick 2024) are computationally expensive and difficult to scale to large datasets.
+**Key Challenge**: Ensemble methods based on polymer simulations (e.g., Li & Schlick 2024) are computationally expensive and difficult to scale to large datasets.
 
-**Paper Goals**: Frame genome reconstruction as a conditional generative problem — given Hi-C, sample a distribution of physically plausible 3D conformations. Once trained, the model enables efficient ensemble generation for new inputs via amortized inference.
+**Goal**: Frame genome reconstruction as a conditional generative problem — given Hi-C, sample a distribution of physically plausible 3D conformations. Once trained, the model enables efficient ensemble generation for new inputs via amortized inference.
 
-**Starting Point**: Bacterial chromosomes have well-established physical and biological constraints suitable for validation; prokaryotes also exhibit diverse cross-species organizational patterns, making them appropriate for evaluating model transferability.
+**Key Insight**: Bacterial chromosomes have well-established physical and biological constraints suitable for validation; prokaryotes also exhibit diverse cross-species organizational patterns, making them appropriate for evaluating model transferability.
 
 **Core Idea**: Employ the CrossDiT architecture to perform unidirectional conditional generation from Hi-C to 3D structure, where cross-attention ensures Hi-C acts as an "external field" constraining the structure without being updated by it.
 

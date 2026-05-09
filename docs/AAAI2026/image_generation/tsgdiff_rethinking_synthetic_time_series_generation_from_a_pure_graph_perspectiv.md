@@ -29,11 +29,11 @@ This paper proposes TSGDiff, the first framework to rethink time series generati
 
 ## Background & Motivation
 
-1. **State of the Field**: Multivariate time series generation is in broad demand across energy management, financial forecasting, and medical monitoring. Existing approaches include GAN-based methods (TimeGAN), VAE-based methods (TimeVAE), and diffusion-based methods (Diffusion-TS, CSDI).
+1. **Background**: Multivariate time series generation is in broad demand across energy management, financial forecasting, and medical monitoring. Existing approaches include GAN-based methods (TimeGAN), VAE-based methods (TimeVAE), and diffusion-based methods (Diffusion-TS, CSDI).
 2. **Limitations of Prior Work**: (a) Traditional generative models struggle to effectively capture complex spatio-temporal dependencies among variables; (b) they operate under Euclidean space assumptions and cannot represent the inherent topological and structural features of time series data; (c) methods such as Diffusion-TS employ an encoder-decoder transformer that handles spatial and temporal information separately, limiting the modeling of complex inter-variable dependencies; (d) graph-based methods have demonstrated strong performance in forecasting tasks but remain largely unexplored for generation.
-3. **Root Cause**: Time series exhibit rich temporal dependency structures (short-, medium-, and long-term periodicity), yet existing generative methods operate solely in the raw data domain without modeling these dependencies from a structural perspective.
-4. **Paper Goals**: To unify the modeling of temporal dependencies and structural relationships in time series from a graph perspective, enabling high-fidelity synthetic time series generation.
-5. **Starting Point**: Treating time steps as graph nodes, constructing edges via Fourier spectral features to encode periodic dependencies, and performing diffusion modeling in the graph latent space.
+3. **Key Challenge**: Time series exhibit rich temporal dependency structures (short-, medium-, and long-term periodicity), yet existing generative methods operate solely in the raw data domain without modeling these dependencies from a structural perspective.
+4. **Goal**: To unify the modeling of temporal dependencies and structural relationships in time series from a graph perspective, enabling high-fidelity synthetic time series generation.
+5. **Key Insight**: Treating time steps as graph nodes, constructing edges via Fourier spectral features to encode periodic dependencies, and performing diffusion modeling in the graph latent space.
 6. **Core Idea**: Fourier transforms are used to discover periodic patterns in time series for graph construction; diffusion-based generation is then conducted in the graph latent representation space, with a topological fidelity metric employed to assess generation quality.
 
 ## Method

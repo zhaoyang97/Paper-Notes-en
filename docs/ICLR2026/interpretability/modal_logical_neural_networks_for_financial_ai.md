@@ -29,11 +29,11 @@ This paper proposes Modal Logical Neural Networks (MLNN), which integrate Kripke
 
 ### State of the Field
 
-**State of the Field**: Financial AI must balance empirical performance with interpretability and regulatory compliance. Deep learning offers strong performance but lacks interpretability; symbolic logic is interpretable but struggles with unstructured data.
+**Background**: Financial AI must balance empirical performance with interpretability and regulatory compliance. Deep learning offers strong performance but lacks interpretability; symbolic logic is interpretable but struggles with unstructured data.
 
 **Limitations of Prior Work**: Existing approaches either treat logical constraints as post-hoc verification (offering no compliance guarantees during training) or encode logic as hard-coded rules (lacking flexibility and the ability to learn latent structure).
 
-**Starting Point**: Modal logic's necessity (□) and possibility (◇) operators are used to encode financial constraints. Necessity neurons enforce constraints across all reachable "possible worlds" (time steps, stress scenarios, or market states).
+**Key Insight**: Modal logic's necessity (□) and possibility (◇) operators are used to encode financial constraints. Necessity neurons enforce constraints across all reachable "possible worlds" (time steps, stress scenarios, or market states).
 
 **Core Idea**: Kripke semantics from modal logic are reformulated as differentiable neural network layers, with logical axioms enforced during training via a differentiable contradiction loss.
 

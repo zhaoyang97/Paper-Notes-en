@@ -29,15 +29,15 @@ This paper proposes an augmented ICL framework in which the prompt contains both
 
 ## Background & Motivation
 
-**State of the Field**: ICL enables Transformers to learn new tasks from in-context examples without parameter updates, but it relies heavily on the quantity and quality of labeled demonstrations. Acquiring high-quality labeled data is costly (e.g., RLHF data for GPT-3.5/4 involves thousands of hours of expert annotation).
+**Background**: ICL enables Transformers to learn new tasks from in-context examples without parameter updates, but it relies heavily on the quantity and quality of labeled demonstrations. Acquiring high-quality labeled data is costly (e.g., RLHF data for GPT-3.5/4 involves thousands of hours of expert annotation).
 
 **Limitations of Prior Work**: (a) Prompt length limits the number of labeled examples; (b) existing methods use the LLM itself to generate pseudo-labels, which inherit model bias; (c) abundant unlabeled data remains unexploited by ICL.
 
-**Root Cause**: A large amount of unlabeled data exists, yet ICL has no mechanism to leverage it — conventional ICL processes only $(x, y)$ pairs, leaving unlabeled $x$ unused.
+**Key Challenge**: A large amount of unlabeled data exists, yet ICL has no mechanism to leverage it — conventional ICL processes only $(x, y)$ pairs, leaving unlabeled $x$ unused.
 
-**Paper Goals**: To theoretically prove that unlabeled data can improve ICL performance, and to provide an explicit Transformer construction along with training convergence guarantees.
+**Goal**: To theoretically prove that unlabeled data can improve ICL performance, and to provide an explicit Transformer construction along with training convergence guarantees.
 
-**Starting Point**: The paper connects augmented ICL (labeled + unlabeled in the prompt) to the classical EM algorithm in semi-supervised learning — a Transformer can iteratively refine class-mean estimates through multi-step CoT reasoning.
+**Key Insight**: The paper connects augmented ICL (labeled + unlabeled in the prompt) to the classical EM algorithm in semi-supervised learning — a Transformer can iteratively refine class-mean estimates through multi-step CoT reasoning.
 
 **Core Idea**: A 4-layer Transformer with CoT reasoning implicitly implements the EM algorithm, learning simultaneously from labeled and unlabeled data within the prompt.
 

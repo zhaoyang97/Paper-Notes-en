@@ -29,15 +29,15 @@ This paper proposes VoxMind, a unified framework that endows end-to-end spoken d
 
 ## Background & Motivation
 
-**State of the Field**: End-to-end spoken dialogue models (e.g., Kimi-Audio, Qwen2.5-Omni, StepAudio2) have developed rapidly in recent years, capable of directly modeling paralinguistic information and generating expressive speech responses, avoiding information loss and latency in traditional cascaded ASR-LLM-TTS pipelines.
+**Background**: End-to-end spoken dialogue models (e.g., Kimi-Audio, Qwen2.5-Omni, StepAudio2) have developed rapidly in recent years, capable of directly modeling paralinguistic information and generating expressive speech responses, avoiding information loss and latency in traditional cascaded ASR-LLM-TTS pipelines.
 
 **Limitations of Prior Work**: (1) Existing end-to-end speech models primarily optimize reactive dialogue, lacking reasoning, planning, and external knowledge acquisition capabilities; (2) The speech domain lacks a unified definition and evaluation standard for "end-to-end speech agents"; (3) Speech input requires more tokens than text, and when combined with large-scale tool descriptions, produces significant computational overhead; (4) Absence of speech data with agent behavior annotations (reasoning traces, tool interactions).
 
-**Root Cause**: There is a trade-off between agentic capabilities (tool invocation + reasoning planning) and inference efficiency in speech models—integrating more tools enhances capabilities but increases latency, while speech interaction is sensitive to response time.
+**Key Challenge**: There is a trade-off between agentic capabilities (tool invocation + reasoning planning) and inference efficiency in speech models—integrating more tools enhances capabilities but increases latency, while speech interaction is sensitive to response time.
 
-**Paper Goals**: (1) Define end-to-end speech agents; (2) Endow speech models with reasoning and tool invocation capabilities; (3) Decouple reasoning latency from tool library scale.
+**Goal**: (1) Define end-to-end speech agents; (2) Endow speech models with reasoning and tool invocation capabilities; (3) Decouple reasoning latency from tool library scale.
 
-**Starting Point**: Drawing on successful experiences from text agents (ReAct, tool invocation), but adapting to the special requirements of speech scenarios—low latency, preservation of paralinguistic information, scarcity of speech data.
+**Key Insight**: Drawing on successful experiences from text agents (ReAct, tool invocation), but adapting to the special requirements of speech scenarios—low latency, preservation of paralinguistic information, scarcity of speech data.
 
 **Core Idea**: Use a Think-before-Speak mechanism to have the speech model first generate text reasoning traces before generating speech responses, and use asynchronous auxiliary models to select candidate tools from the global tool library to maintain a dynamic local tool space.
 

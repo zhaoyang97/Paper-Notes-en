@@ -29,15 +29,15 @@ This paper presents a systematic survey of 134 papers on evidence-based text gen
 
 ## Background & Motivation
 
-**State of the Field**: LLMs face trustworthiness challenges such as hallucination and knowledge limitations, driving increasing research interest in "evidence-based text generation"—enabling LLM outputs to be traceable to supporting evidence. However, the field is highly fragmented: some work uses the term "citation" (75% of papers), others use "attribution" (62%), and still others use "quotation" (13%), with each subcommunity maintaining isolated evaluation practices.
+**Background**: LLMs face trustworthiness challenges such as hallucination and knowledge limitations, driving increasing research interest in "evidence-based text generation"—enabling LLM outputs to be traceable to supporting evidence. However, the field is highly fragmented: some work uses the term "citation" (75% of papers), others use "attribution" (62%), and still others use "quotation" (13%), with each subcommunity maintaining isolated evaluation practices.
 
 **Limitations of Prior Work**: (1) The absence of unified terminology and a classification system makes it difficult for researchers to situate their own work; (2) evaluation standards are inconsistent—300 metrics exist, yet only 2 frameworks (ALCE and G-Eval) are reused across multiple papers; (3) RAG, though popular, represents only one of seven relevant methods, and excessive focus on RAG risks overlooking other important approaches.
 
-**Root Cause**: Rapidly growing research interest (the number of papers in 2024 is 3.4× that of 2023, with 75% published after 2023) versus the lack of a unified perspective for integrating and comparing different methods.
+**Key Challenge**: Rapidly growing research interest (the number of papers in 2024 is 3.4× that of 2023, with 75% published after 2023) versus the lack of a unified perspective for integrating and comparing different methods.
 
-**Paper Goals**: To provide the first systematic survey dedicated to evidence-based text generation with LLMs, establish a unified taxonomy, analyze evaluation practices, and identify research trends and future directions.
+**Goal**: To provide the first systematic survey dedicated to evidence-based text generation with LLMs, establish a unified taxonomy, analyze evaluation practices, and identify research trends and future directions.
 
-**Starting Point**: A PRISMA-protocol systematic mapping study, screening 134 relevant papers from 805 deduplicated papers, with a faceted classification approach used to construct the taxonomy.
+**Key Insight**: A PRISMA-protocol systematic mapping study, screening 134 relevant papers from 805 deduplicated papers, with a faceted classification approach used to construct the taxonomy.
 
 **Core Idea**: Unifying "citation," "attribution," and "quotation" under the paradigm of "evidence-based text generation," and providing a systematic perspective on this fragmented field through a three-dimensional taxonomy and a seven-dimensional evaluation framework.
 

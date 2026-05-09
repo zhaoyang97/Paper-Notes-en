@@ -29,7 +29,7 @@ Targeting the severe bottleneck in GRPO training where the generation phase cons
 
 ## Background & Motivation
 
-- **State of the Field**: GRPO is the predominant RL framework for enhancing LLM reasoning capabilities (e.g., DeepSeek-R1, DAPO), but its throughput is far lower than SFT training, severely hindering experimental iteration speed.
+- **Background**: GRPO is the predominant RL framework for enhancing LLM reasoning capabilities (e.g., DeepSeek-R1, DAPO), but its throughput is far lower than SFT training, severely hindering experimental iteration speed.
 - **Bottleneck Quantification**: The generation phase (rollout sampling) accounts for 91%–98% of total GRPO training time. More critically, as model capability grows and outputs become longer, the generation-to-update time ratio increases from 6× to over 20×, causing the problem to continuously worsen.
 - **High-Concurrency Challenge for Speculative Decoding**: Standard speculative decoding is effective at low concurrency ($B=1$) but provides little to no speedup (speedup $<$ 1.0×) under the high-concurrency (large-batch) settings typical of GRPO. The reason is that the additional computational overhead shifts the system from memory-bound to compute-bound.
 - **GRPO's Unique Dynamic Concurrency Property**: Effective concurrency changes dynamically during generation—starting at a high batch size, sequences finish at different times (with length variation up to 3–5×), causing effective concurrency to gradually decrease toward 1.

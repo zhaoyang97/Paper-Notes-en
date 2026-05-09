@@ -42,9 +42,9 @@ Dataset Distillation (DD) aims to synthesize a compact yet representative datase
 - **Unintended trade-offs in trajectory matching**: in bi-level optimization, medium-frequency classes are affected by unstable gradients
 - **High computational overhead**: bi-level trajectory optimization requires substantial GPU memory and time
 
-**Root Cause**: Trajectory matching methods are inherently in conflict with debiasing strategies — debiasing operations (e.g., reweighting, logit adjustment) alter the expert's optimization trajectory, undermining the premise of trajectory matching, while post-hoc debiasing is infeasible.
+**Key Challenge**: Trajectory matching methods are inherently in conflict with debiasing strategies — debiasing operations (e.g., reweighting, logit adjustment) alter the expert's optimization trajectory, undermining the premise of trajectory matching, while post-hoc debiasing is infeasible.
 
-**Starting Point**: The paper abandons the trajectory matching paradigm in favor of a uni-level statistical alignment framework. Unbiased distillation is achieved through two complementary components — unbiased synthetic image recovery (via an Observer model) and unbiased soft-label relabeling (via a Teacher model) — supported by three dedicated strategies.
+**Key Insight**: The paper abandons the trajectory matching paradigm in favor of a uni-level statistical alignment framework. Unbiased distillation is achieved through two complementary components — unbiased synthetic image recovery (via an Observer model) and unbiased soft-label relabeling (via a Teacher model) — supported by three dedicated strategies.
 
 ## Method
 

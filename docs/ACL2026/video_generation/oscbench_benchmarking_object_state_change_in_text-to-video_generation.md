@@ -28,15 +28,15 @@ This paper proposes OSCBench — the first benchmark dedicated to evaluating obj
 
 ## Background & Motivation
 
-**State of the Field**: T2V models have made significant progress in visual quality and temporal consistency. Existing benchmarks primarily evaluate perceptual quality, text-video alignment, or physical plausibility.
+**Background**: T2V models have made significant progress in visual quality and temporal consistency. Existing benchmarks primarily evaluate perceptual quality, text-video alignment, or physical plausibility.
 
 **Limitations of Prior Work**: Existing benchmarks overlook a critical dimension of action understanding — object state changes explicitly specified by text prompts (e.g., peeling potatoes, slicing lemons). T2V models may align well at the high-level semantic level but generate incorrect, incomplete, or inconsistent object state changes.
 
-**Root Cause**: High-quality visual appearance masks deficiencies in action consequence modeling — videos look realistic but objects do not correctly change state.
+**Key Challenge**: High-quality visual appearance masks deficiencies in action consequence modeling — videos look realistic but objects do not correctly change state.
 
-**Paper Goals**: Construct a systematic OSC evaluation benchmark to diagnose specific deficiencies in T2V models' state change modeling.
+**Goal**: Construct a systematic OSC evaluation benchmark to diagnose specific deficiencies in T2V models' state change modeling.
 
-**Starting Point**: Select cooking scenarios as the evaluation domain (frequent, diverse, well-defined state changes), and design conventional/novel/compositional scenarios to test different capability levels.
+**Key Insight**: Select cooking scenarios as the evaluation domain (frequent, diverse, well-defined state changes), and design conventional/novel/compositional scenarios to test different capability levels.
 
 **Core Idea**: Decompose OSC evaluation into state change accuracy and state change consistency sub-dimensions, paired with CoT-guided MLLM automated evaluation.
 

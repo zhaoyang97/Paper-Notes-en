@@ -37,7 +37,7 @@ Autoregressive (AR) image generation is rapidly closing the gap with diffusion m
 
 **1D tokenizers (e.g., TiTok)** can achieve high compression ratios but sacrifice 2D spatial correspondence, preventing cross-resolution generalization and requiring retraining for different resolutions at considerable cost.
 
-**Root Cause**: How can a high-compression-ratio tokenizer for AR models be constructed while preserving 2D spatial structure to support cross-resolution generalization?
+**Key Challenge**: How can a high-compression-ratio tokenizer for AR models be constructed while preserving 2D spatial structure to support cross-resolution generalization?
 
 ## Method
 

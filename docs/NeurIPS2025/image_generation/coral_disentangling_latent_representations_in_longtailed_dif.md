@@ -29,7 +29,7 @@ This paper diagnoses the root cause of tail-class generation degradation in diff
 
 ## Background & Motivation
 
-- **State of the Field**: Diffusion models excel on class-balanced data, but real-world data commonly follows long-tailed distributions—a small number of head classes dominate the sample count while many tail classes are severely underrepresented. Under such settings, diffusion models suffer significant generation quality degradation on tail classes, manifesting as low diversity and *feature borrowing*.
+- **Background**: Diffusion models excel on class-balanced data, but real-world data commonly follows long-tailed distributions—a small number of head classes dominate the sample count while many tail classes are severely underrepresented. Under such settings, diffusion models suffer significant generation quality degradation on tail classes, manifesting as low diversity and *feature borrowing*.
 
 - **Limitations of Prior Work**: Existing improvements primarily operate at the data level (e.g., CBDM's balanced sampling regularization) or in the output space (e.g., DiffROP's output distribution contrastive loss), overlooking the root cause—the internal latent representation structure of the denoising network. T2H employs Bayesian gating to transfer knowledge between head and tail classes but still does not directly intervene in the class structure of the latent space.
 

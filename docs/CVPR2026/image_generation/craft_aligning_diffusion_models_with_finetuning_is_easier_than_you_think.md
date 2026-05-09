@@ -29,11 +29,11 @@ CRAFT proposes an ultra-lightweight alignment method for diffusion models: it au
 
 ## Background & Motivation
 
-1.  **State of the Field**: Post-training alignment for diffusion models follows three main paths: SFT (requires high-quality data), DPO-style preference optimization (requires large-scale preference pairs), and online RL methods (computationally expensive).
+1.  **Background**: Post-training alignment for diffusion models follows three main paths: SFT (requires high-quality data), DPO-style preference optimization (requires large-scale preference pairs), and online RL methods (computationally expensive).
 2.  **Limitations of Prior Work**: SFT relies on high-quality images that are difficult to obtain; DPO methods like Diff-DPO rely on large-scale preference datasets with inconsistent quality; online methods like SPO require repeated sampling and evaluation, making them extremely expensive computationally.
-3.  **Root Cause**: The dual challenge of data efficiency and computational efficiency—existing methods either require massive amounts of data or massive computation, making it difficult to achieve both.
-4.  **Paper Goals**: Design a fine-tuning method that is both data-efficient and computationally lightweight.
-5.  **Starting Point**: Eliminating the need for external high-quality data or preference pairs by having the model generate candidate images itself and filtering the best samples through multi-dimensional rewards.
+3.  **Key Challenge**: The dual challenge of data efficiency and computational efficiency—existing methods either require massive amounts of data or massive computation, making it difficult to achieve both.
+4.  **Goal**: Design a fine-tuning method that is both data-efficient and computationally lightweight.
+5.  **Key Insight**: Eliminating the need for external high-quality data or preference pairs by having the model generate candidate images itself and filtering the best samples through multi-dimensional rewards.
 6.  **Core Idea**: Compositional multi-reward model data filtering combined with advantage-weighted SFT, which is theoretically equivalent to optimizing the lower bound of grouped RL.
 
 ## Method

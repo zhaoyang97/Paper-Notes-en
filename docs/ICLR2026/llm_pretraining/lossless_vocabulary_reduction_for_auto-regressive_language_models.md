@@ -29,15 +29,15 @@ This paper proposes a theoretical framework for **Lossless Vocabulary Reduction 
 
 ## Background & Motivation
 
-**State of the Field**: Tokenization is a core component of language models. Various tokenization algorithms—BPE, SentencePiece, Unigram, etc.—are widely used. Each language model maintains its own vocabulary $V$, over which auto-regressive models predict the next-token distribution $p(v_t | v_{<t})$ token by token.
+**Background**: Tokenization is a core component of language models. Various tokenization algorithms—BPE, SentencePiece, Unigram, etc.—are widely used. Each language model maintains its own vocabulary $V$, over which auto-regressive models predict the next-token distribution $p(v_t | v_{<t})$ token by token.
 
 **Limitations of Prior Work**: Vocabularies across different language models are typically incompatible (e.g., Qwen uses 151,643 tokens, Falcon uses 131,072 tokens), meaning their next-token distributions are defined over entirely different probability spaces. This renders techniques requiring token-distribution-level collaboration—such as model ensembling and cross-model knowledge distillation—inapplicable to models with mismatched vocabularies.
 
-**Root Cause**: Existing solutions are either restricted to ensembling models with identical vocabularies, or resort to byte-level reduction (collapsing all models to a byte-level vocabulary). The former severely limits model selection; the latter results in excessively long generation sequences due to the tiny vocabulary, making inference highly inefficient. No framework exists that is simultaneously lossless, efficient, and general.
+**Key Challenge**: Existing solutions are either restricted to ensembling models with identical vocabularies, or resort to byte-level reduction (collapsing all models to a byte-level vocabulary). The former severely limits model selection; the latter results in excessively long generation sequences due to the tiny vocabulary, making inference highly inefficient. No framework exists that is simultaneously lossless, efficient, and general.
 
-**Paper Goals**: How can an arbitrary auto-regressive language model be converted **losslessly** into an equivalent model operating over an arbitrary sub-vocabulary? And how can an optimal common vocabulary be identified across multiple models—one that maximizes generation efficiency while preserving losslessness?
+**Goal**: How can an arbitrary auto-regressive language model be converted **losslessly** into an equivalent model operating over an arbitrary sub-vocabulary? And how can an optimal common vocabulary be identified across multiple models—one that maximizes generation efficiency while preserving losslessness?
 
-**Starting Point**: The problem is formalized from a probabilistic perspective as a distributional equivalence problem under nested tokenization. The paper proves that, given a sub-vocabulary satisfying a coverage condition, a unique equivalent next-token distribution exists, and provides a recursive construction algorithm.
+**Key Insight**: The problem is formalized from a probabilistic perspective as a distributional equivalence problem under nested tokenization. The paper proves that, given a sub-vocabulary satisfying a coverage condition, a unique equivalent next-token distribution exists, and provides a recursive construction algorithm.
 
 **Core Idea**: Lossless conversion from a large vocabulary to an arbitrary smaller vocabulary is achieved via exact probability decomposition under nested tokenization. A Maximal Common Vocabulary (MCV) then unifies the output space of heterogeneous models to enable ensembling.
 
@@ -175,11 +175,11 @@ This paper establishes a **lossless vocabulary reduction** theoretical framework
 ## Background & Motivation
 Tokenization is one of the core components in language model development. Auto-regressive language models generate text token by token—predicting the probability distribution over the next token given the preceding token sequence—so the tokenization scheme directly affects generation efficiency and quality.
 
-**Root Cause**: Each language model has its own vocabulary, and different models typically use different vocabularies (e.g., GPT uses BPE, LLaMA uses SentencePiece). This creates a fundamental problem: **language models with different vocabularies cannot directly collaborate at the level of next-token distributions**.
+**Key Challenge**: Each language model has its own vocabulary, and different models typically use different vocabularies (e.g., GPT uses BPE, LLaMA uses SentencePiece). This creates a fundamental problem: **language models with different vocabularies cannot directly collaborate at the level of next-token distributions**.
 
 **Concrete Scenario**: Model ensembling is a classical approach to improving language model performance, but traditional ensembling requires models to share the same output space. When two models use different tokenization schemes, their next-token distributions are defined over entirely different vocabularies and cannot be directly averaged or mixed. Existing solutions either restrict ensembling to same-vocabulary models or apply lossy approximate conversions with limited effectiveness.
 
-**Starting Point**: If any language model can be converted "losslessly" into an equivalent model using a smaller vocabulary, different models can first be converted to a shared minimal common vocabulary and then ensembled—this is the core idea of the paper.
+**Key Insight**: If any language model can be converted "losslessly" into an equivalent model using a smaller vocabulary, different models can first be converted to a shared minimal common vocabulary and then ensembled—this is the core idea of the paper.
 
 ## Method
 

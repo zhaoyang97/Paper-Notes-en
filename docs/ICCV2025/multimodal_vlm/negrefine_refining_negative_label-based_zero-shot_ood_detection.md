@@ -28,15 +28,15 @@ This paper proposes NegRefine, which leverages an LLM to filter proper nouns and
 
 ## Background & Motivation
 
-**State of the Field**: CLIP-based zero-shot OOD detection has seen significant progress in recent years. Negative label methods (e.g., NegLabel, CSP) select words from WordNet that are semantically distant from in-distribution classes as "negative labels," and exploit CLIP's image-text similarity to distinguish in-distribution from OOD samples—representing the most promising direction in this area.
+**Background**: CLIP-based zero-shot OOD detection has seen significant progress in recent years. Negative label methods (e.g., NegLabel, CSP) select words from WordNet that are semantically distant from in-distribution classes as "negative labels," and exploit CLIP's image-text similarity to distinguish in-distribution from OOD samples—representing the most promising direction in this area.
 
 **Limitations of Prior Work**: Negative label methods suffer from three critical issues: (a) **Subcategory overlap**—negative labels may contain subcategories of in-distribution labels (e.g., "african daisy" is a subcategory of "daisy"), and CLIP tends to assign higher scores to finer-grained labels, causing in-distribution samples to be misclassified as OOD; (b) **Proper noun interference**—WordNet contains many proper nouns (e.g., "costa rica") that yield unexpectedly high similarity scores for certain in-distribution images; (c) **Multi-label matching**—real-world images often contain multiple objects or match multiple descriptions, such that in-distribution images may simultaneously match certain negative labels with high confidence.
 
-**Root Cause**: Existing methods rely solely on text-semantic similarity thresholds to select negative labels, without explicitly modeling lexical hierarchical relationships. Scoring functions treat each label's match independently, ignoring the reality that a single image may simultaneously match multiple labels.
+**Key Challenge**: Existing methods rely solely on text-semantic similarity thresholds to select negative labels, without explicitly modeling lexical hierarchical relationships. Scoring functions treat each label's match independently, ignoring the reality that a single image may simultaneously match multiple labels.
 
-**Paper Goals**: (a) How to clean the negative label set by removing subcategory and proper noun entries that cause misclassification; (b) How to design a scoring function that is robust to images simultaneously matching both in-distribution and negative labels.
+**Goal**: (a) How to clean the negative label set by removing subcategory and proper noun entries that cause misclassification; (b) How to design a scoring function that is robust to images simultaneously matching both in-distribution and negative labels.
 
-**Starting Point**: Leveraging the semantic understanding capabilities of LLMs to identify hierarchical lexical relationships and proper noun attributes; exploiting CLIP's capacity—learned during training on multi-object descriptions—to detect multi-label matching by constructing caption-like texts through label concatenation.
+**Key Insight**: Leveraging the semantic understanding capabilities of LLMs to identify hierarchical lexical relationships and proper noun attributes; exploiting CLIP's capacity—learned during training on multi-object descriptions—to detect multi-label matching by constructing caption-like texts through label concatenation.
 
 **Core Idea**: Filter harmful negative labels using an LLM + construct a multi-matching score via label concatenation, jointly improving the reliability of zero-shot OOD detection.
 

@@ -29,15 +29,15 @@ This paper introduces MCGA, the first large-scale (119 hours, 22,000 samples) fu
 
 ## Background & Motivation
 
-**State of the Field**: The rapid development of multimodal large language models (MLLMs) has opened new possibilities for classical Chinese studies (CCS). However, existing research focuses primarily on text (ACLUE, WenMind, etc.) and visual (Oracle-Bench, MCS-Bench, etc.) modalities, leaving the speech dimension of classical literature virtually unexplored. The absence of high-quality domain-specific audio corpora makes it impossible to systematically evaluate or improve MLLM capabilities in classical Chinese speech understanding.
+**Background**: The rapid development of multimodal large language models (MLLMs) has opened new possibilities for classical Chinese studies (CCS). However, existing research focuses primarily on text (ACLUE, WenMind, etc.) and visual (Oracle-Bench, MCS-Bench, etc.) modalities, leaving the speech dimension of classical literature virtually unexplored. The absence of high-quality domain-specific audio corpora makes it impossible to systematically evaluate or improve MLLM capabilities in classical Chinese speech understanding.
 
 **Limitations of Prior Work**: (1) Most existing Chinese cultural datasets cover only text or image modalities, with no parallel classical literary speech data; (2) the few resources addressing Chinese speech target modern Mandarin and cannot capture the rhetorical devices, literary allusions, and prosodic features unique to classical literature; (3) copyright issues have persistently hindered the construction of open-source CCS audio datasets, as recitation audio found online is typically rights-restricted and cannot be freely distributed for research.
 
-**Root Cause**: MLLMs have acquired strong text and visual understanding capabilities, yet the infrastructure for evaluating classical Chinese speech understanding is entirely absent. Without a speech corpus, evaluation is impossible; without evaluation, progress in this domain cannot be driven.
+**Key Challenge**: MLLMs have acquired strong text and visual understanding capabilities, yet the infrastructure for evaluating classical Chinese speech understanding is entirely absent. Without a speech corpus, evaluation is impossible; without evaluation, progress in this domain cannot be driven.
 
-**Paper Goals**: To construct a multi-genre, multi-task, fully copyright-cleared audio corpus for classical Chinese literature, establish a systematic evaluation framework, and comprehensively assess current MLLM capabilities in classical literary speech understanding.
+**Goal**: To construct a multi-genre, multi-task, fully copyright-cleared audio corpus for classical Chinese literature, establish a systematic evaluation framework, and comprehensively assess current MLLM capabilities in classical literary speech understanding.
 
-**Starting Point**: The corpus is organized along two axes — genre diversity, covering the five most historically significant literary genres in Chinese literature (Fu, Shi, Wen, Ci, Qu), and task diversity, comprising a six-level progressive task hierarchy ranging from foundational (ASR) to advanced (speech reasoning, SR).
+**Key Insight**: The corpus is organized along two axes — genre diversity, covering the five most historically significant literary genres in Chinese literature (Fu, Shi, Wen, Ci, Qu), and task diversity, comprising a six-level progressive task hierarchy ranging from foundational (ASR) to advanced (speech reasoning, SR).
 
 **Core Idea**: Twenty-eight native speakers are recruited to manually record all audio with copyright assignment agreements. LLMs generate question–answer pairs that are validated through a triple-verification process to ensure quality, yielding a parallel corpus supporting six speech tasks and four text tasks.
 

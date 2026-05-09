@@ -27,18 +27,18 @@ This paper proposes IVPT (Interpretable Visual Prompt Tuning), which associates 
 
 ## Background & Motivation
 
-**State of the Field**: Visual Prompt Tuning (VPT) has become a mainstream approach for adapting pre-trained vision models to downstream tasks by inserting a small number of learnable tokens at the Transformer input layer. Existing methods such as VPT-Deep, E2VPT, and Gated Prompt Tuning achieve strong performance, but the prompts remain black-box vectors.
+**Background**: Visual Prompt Tuning (VPT) has become a mainstream approach for adapting pre-trained vision models to downstream tasks by inserting a small number of learnable tokens at the Transformer input layer. Existing methods such as VPT-Deep, E2VPT, and Gated Prompt Tuning achieve strong performance, but the prompts remain black-box vectors.
 
 **Limitations of Prior Work**: These prompts are unconstrained abstract embeddings that cannot provide human-understandable decision explanations. In safety-critical domains such as medical diagnosis and autonomous driving, the lack of interpretability severely limits the trustworthiness of AI systems. Existing interpretable methods (e.g., ProtoPNet, TesNet) focus solely on the last-layer features and cannot explain multi-layer prompts.
 
-**Root Cause**: VPT methods learn prompts across multiple Transformer layers, yet existing prototype-based methods can only explain single-layer features; moreover, prior methods learn class-specific prototypes and cannot analyze concepts shared across categories.
+**Key Challenge**: VPT methods learn prompts across multiple Transformer layers, yet existing prototype-based methods can only explain single-layer features; moreover, prior methods learn class-specific prototypes and cannot analyze concepts shared across categories.
 
-**Paper Goals**
+**Goal**
    - Associate abstract prompt embeddings with human-understandable visual concepts
    - Achieve cross-layer interpretability of prompts across multiple network layers
    - Learn class-agnostic shared concept prototypes
 
-**Starting Point**: Each prompt is defined as an aggregated feature of a semantic region in the image (rather than an arbitrary vector), where the region is discovered by concept prototypes via an attention mechanism. Shallower layers use more prototypes to capture fine-grained features, while deeper layers use fewer prototypes to capture coarse-grained semantics.
+**Key Insight**: Each prompt is defined as an aggregated feature of a semantic region in the image (rather than an arbitrary vector), where the region is discovered by concept prototypes via an attention mechanism. Shallower layers use more prototypes to capture fine-grained features, while deeper layers use fewer prototypes to capture coarse-grained semantics.
 
 **Core Idea**: Replace black-box prompt vectors with cross-layer class-agnostic concept prototypes. Each prompt is bound to an interpretable semantic region in the image through a concept region discovery mechanism followed by intra-region feature aggregation.
 

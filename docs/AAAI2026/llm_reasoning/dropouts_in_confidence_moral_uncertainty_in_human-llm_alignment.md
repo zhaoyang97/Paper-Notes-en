@@ -28,13 +28,13 @@ This paper systematically investigates decision-making uncertainty across 32 ope
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly deployed in ethically sensitive decision-making contexts, yet while humans exhibit significant uncertainty and hesitation when facing moral dilemmas, LLMs tend to produce overconfident responses.
+**Background**: LLMs are increasingly deployed in ethically sensitive decision-making contexts, yet while humans exhibit significant uncertainty and hesitation when facing moral dilemmas, LLMs tend to produce overconfident responses.
 
 **Limitations of Prior Work**: LLM moral decisions are excessively decisive—high-confidence answers are generated even in ambiguous ethical scenarios. This overconfidence distorts alignment with human preferences and amplifies cognitive biases. Prior work has identified systematic AI preferences for inaction and stronger altruistic behavior.
 
 **Core Problem**: (a) How can decision-making uncertainty in LLMs facing moral dilemmas be quantified? (b) Does this uncertainty stem from model differences or moral dimension differences? (c) Can regulating uncertainty improve human-LLM moral alignment?
 
-**Starting Point**: Binary entropy is adopted as the mathematical measure of moral decision uncertainty, decomposed into three components—total entropy, conditional entropy, and mutual information—while inference-time dropout is used to artificially introduce stochasticity and observe its effect on alignment.
+**Key Insight**: Binary entropy is adopted as the mathematical measure of moral decision uncertainty, decomposed into three components—total entropy, conditional entropy, and mutual information—while inference-time dropout is used to artificially introduce stochasticity and observe its effect on alignment.
 
 **Core Idea**: LLM overconfidence in moral dilemmas is a contributing cause of misalignment. By introducing dropout in attention layers to increase model "hesitation," the decision distribution can be made to more closely resemble human uncertainty patterns, thereby improving moral alignment.
 

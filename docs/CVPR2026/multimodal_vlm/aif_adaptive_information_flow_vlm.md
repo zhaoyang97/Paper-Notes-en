@@ -29,15 +29,15 @@ This paper identifies that excessive attention from text tokens to irrelevant vi
 
 ## Background & Motivation
 
-**State of the Field**: Vision-language models (VLMs) such as LLaVA and Qwen2.5-VL have demonstrated strong capabilities across diverse tasks including visual question answering, OCR, and object localization.
+**Background**: Vision-language models (VLMs) such as LLaVA and Qwen2.5-VL have demonstrated strong capabilities across diverse tasks including visual question answering, OCR, and object localization.
 
 **Limitations of Prior Work**: Recent studies reveal a "see but misperceive" failure mode—models correctly attend to image regions relevant to the query yet still produce wrong answers. Existing remedies either require retraining (high computational cost) or rely on visual cropping (substantially increased inference time and ineffective for counting and relational reasoning).
 
-**Root Cause**: Information flow during VLM decoding is suboptimal: cross-attention from text tokens is dispersed across large numbers of irrelevant background visual tokens, creating spatially diffuse attention patterns that introduce noisy visual information and interfere with correct reasoning.
+**Key Challenge**: Information flow during VLM decoding is suboptimal: cross-attention from text tokens is dispersed across large numbers of irrelevant background visual tokens, creating spatially diffuse attention patterns that introduce noisy visual information and interfere with correct reasoning.
 
-**Paper Goals**: Improve VLM perceptual performance through inference-time information flow modulation without any training.
+**Goal**: Improve VLM perceptual performance through inference-time information flow modulation without any training.
 
-**Starting Point**: Visual tokens corresponding to target regions exhibit distinctive activation patterns (high activity) in specific LLM layers, whereas tokens from irrelevant regions display irregular activation. This difference in "token dynamics" is exploited to identify important tokens.
+**Key Insight**: Visual tokens corresponding to target regions exhibit distinctive activation patterns (high activity) in specific LLM layers, whereas tokens from irrelevant regions display irregular activation. This difference in "token dynamics" is exploited to identify important tokens.
 
 **Core Idea**: Text tokens need only interact with important visual tokens. By modifying the causal mask to block information flow from irrelevant visual tokens to text tokens—while preserving visual-to-visual information flow to maintain image integrity—perceptual accuracy is improved without retraining.
 

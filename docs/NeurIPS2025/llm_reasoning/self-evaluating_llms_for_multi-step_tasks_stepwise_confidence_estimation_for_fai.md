@@ -30,7 +30,7 @@ PolyMath introduces a mathematical reasoning benchmark spanning 18 languages, 4 
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: Multilingual benchmarks lag behind: although multilingual datasets such as MGSM and XSVAMP exist, their difficulty is too low (K-12 level) to evaluate the true capabilities of reasoning models.
+**Key Challenge**: **Background**: Multilingual benchmarks lag behind: although multilingual datasets such as MGSM and XSVAMP exist, their difficulty is too low (K-12 level) to evaluate the true capabilities of reasoning models.
 
 **Lack of evidence for the "language as a tool of thought" hypothesis**: Nearly all challenging mathematics benchmarks are English-only, leaving the relationship between multilingual reasoning and English-based thinking unclear.
 

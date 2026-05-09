@@ -29,18 +29,18 @@ NeurINO proposes to initialize a 3D neuron segmentation model by inflating DINOv
 
 ## Background & Motivation
 
-1. **State of the Field**: Accurate reconstruction of neuronal morphology from volumetric optical microscopy images is critical for brain connectomics, requiring the tracking of axons and dendrites over long-range projections across multiple brain regions. Deep learning methods such as 3D U-Net and V-Net have substantially improved segmentation quality.
+1. **Background**: Accurate reconstruction of neuronal morphology from volumetric optical microscopy images is critical for brain connectomics, requiring the tracking of axons and dendrites over long-range projections across multiple brain regions. Deep learning methods such as 3D U-Net and V-Net have substantially improved segmentation quality.
 
 2. **Limitations of Prior Work**:
     - **Data scarcity**: Acquiring and annotating 3D neuroimaging data is costly and laborious, limiting the performance of data-driven approaches;
     - **Lack of structural supervision**: Existing methods typically optimize voxel-level accuracy (Dice/CE loss) without explicit supervision of branching topology or connectivity integrity, leading to results that may perform well on voxel metrics yet be topologically unfaithful (broken or merged structures);
     - **Absence of 3D foundation models**: 2D visual foundation models (DINO, SAM, etc.) excel on natural images, but no analogous general-purpose foundation model exists for 3D biomedical volumetric data.
 
-3. **Root Cause**: 2D foundation models possess rich semantic priors but cannot be directly applied to 3D volumetric data, while the scarcity of 3D data precludes training strong feature representations from scratch.
+3. **Key Challenge**: 2D foundation models possess rich semantic priors but cannot be directly applied to 3D volumetric data, while the scarcity of 3D data precludes training strong feature representations from scratch.
 
-4. **Paper Goals**: To efficiently transfer the visual priors of 2D foundation models to 3D neuron segmentation while ensuring morphological topological fidelity.
+4. **Goal**: To efficiently transfer the visual priors of 2D foundation models to 3D neuron segmentation while ensuring morphological topological fidelity.
 
-5. **Starting Point**: Decompose 3D volumetric learning into intra-slice feature extraction (exploiting DINOv3 priors) and inter-slice aggregation (requiring additional learning), while employing a topology-aware loss to guide cross-slice structural learning.
+5. **Key Insight**: Decompose 3D volumetric learning into intra-slice feature extraction (exploiting DINOv3 priors) and inter-slice aggregation (requiring additional learning), while employing a topology-aware loss to guide cross-slice structural learning.
 
 6. **Core Idea**: Transfer DINOv3's 2D weights to a 3D encoder via an inflation strategy, allowing the model to focus solely on learning inter-slice correlations, and enforce morphological fidelity through a skeleton-level topological loss.
 

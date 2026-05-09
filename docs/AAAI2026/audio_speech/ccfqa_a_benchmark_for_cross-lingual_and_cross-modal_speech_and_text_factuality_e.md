@@ -29,15 +29,15 @@ This paper introduces CCFQA—the first cross-lingual and cross-modal factuality
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal large language models (MLLMs) have been widely deployed in multilingual settings, yet evaluation of their factual reliability lags severely behind. Existing factuality benchmarks (SimpleQA, TruthfulQA, HaluEval) primarily target English text; the multilingual benchmark KoLasSimpleQA covers 9 languages but is text-only. Speech-side benchmarks (SD-QA, VoiceBench, SpeechIQ) are limited to a single speech modality and are mostly English-only.
+**Background**: Multimodal large language models (MLLMs) have been widely deployed in multilingual settings, yet evaluation of their factual reliability lags severely behind. Existing factuality benchmarks (SimpleQA, TruthfulQA, HaluEval) primarily target English text; the multilingual benchmark KoLasSimpleQA covers 9 languages but is text-only. Speech-side benchmarks (SD-QA, VoiceBench, SpeechIQ) are limited to a single speech modality and are mostly English-only.
 
 **Limitations of Prior Work**: When the same factual question is posed in different languages (cross-lingual inconsistency) or presented in different modalities (cross-modal inconsistency), MLLMs frequently produce contradictory answers. For example, questions answered correctly by the GPT-4o series in English text may be answered incorrectly when posed in Japanese speech. Yet no benchmark with fully parallel data exists to systematically measure such inconsistencies.
 
-**Root Cause**: The combinatorial explosion of multilingual × multimodal evaluation space poses a fundamental challenge—8 languages × 2 modalities × cross-lingual combinations requires up to 128,000 API calls to fully evaluate a single MLLM, and constructing high-quality parallel data is extremely costly, requiring native-speaker recordings for each language.
+**Key Challenge**: The combinatorial explosion of multilingual × multimodal evaluation space poses a fundamental challenge—8 languages × 2 modalities × cross-lingual combinations requires up to 128,000 API calls to fully evaluate a single MLLM, and constructing high-quality parallel data is extremely costly, requiring native-speaker recordings for each language.
 
-**Paper Goals**: To construct the first factuality evaluation benchmark simultaneously covering cross-lingual and cross-modal dimensions, and to propose a low-cost transfer approach that leverages the strong factual reasoning capability of English LLMs.
+**Goal**: To construct the first factuality evaluation benchmark simultaneously covering cross-lingual and cross-modal dimensions, and to propose a low-cost transfer approach that leverages the strong factual reasoning capability of English LLMs.
 
-**Starting Point**: Existing English QA datasets (MKQA + MOOCCubeX) → GPT-4.1 translation + human verification → native-speaker recordings + ASR quality control, yielding high-quality parallel data. On the model side, English bridging + 5-shot transfer overcomes the language barrier.
+**Key Insight**: Existing English QA datasets (MKQA + MOOCCubeX) → GPT-4.1 translation + human verification → native-speaker recordings + ASR quality control, yielding high-quality parallel data. On the model side, English bridging + 5-shot transfer overcomes the language barrier.
 
 **Core Idea**: Fully parallel speech-text multilingual data + English-bridged few-shot transfer = systematic diagnosis and mitigation of cross-lingual and cross-modal factual inconsistencies in MLLMs.
 

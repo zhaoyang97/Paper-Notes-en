@@ -28,11 +28,11 @@ This paper proposes MAB-DQA, a framework that decomposes complex queries into mu
 
 ## Background & Motivation
 
-- **State of the Field**: Document Question Answering (DQA) requires AI systems to generate answers from documents based on user queries and is a core task in document understanding. State-of-the-art methods such as ColPali and MoloRAG adopt a vision-query Late Interaction paradigm, computing similarity scores by summing the maximum dot products between query tokens and document image patches.
+- **Background**: Document Question Answering (DQA) requires AI systems to generate answers from documents based on user queries and is a core task in document understanding. State-of-the-art methods such as ColPali and MoloRAG adopt a vision-query Late Interaction paradigm, computing similarity scores by summing the maximum dot products between query tokens and document image patches.
 - **Limitations of Prior Work**: The "max-pooling + summation" operation in Late Interaction assigns equal weight to all query tokens, failing to distinguish the importance of different aspects within a query as humans naturally do. This causes low-importance but high-frequency keywords (e.g., a company name like "Best Buy") to produce spuriously high similarity scores on irrelevant pages, while pages containing genuinely critical evidence are ranked lower.
-- **Root Cause**: Multimodal RAG typically retains only a small number of candidate pages (e.g., Top-4), making it easy to overlook content with high informational value but low visual saliency. The authors find that 19.8% of samples in MMLongBench and 27.8% in LongDocURL exhibit retrieval errors caused by neglecting critical query conditions.
-- **Paper Goals**: Explicitly model the varying importance of multiple implicit aspects within a query, dynamically allocate retrieval attention, and prioritize evidence pages containing key information.
-- **Starting Point**: Each sub-query is treated as an "arm" in a multi-armed bandit, with preliminary VLM reasoning feedback serving as the reward signal. An explore-exploit strategy adaptively allocates retrieval budget to high-value aspects.
+- **Key Challenge**: Multimodal RAG typically retains only a small number of candidate pages (e.g., Top-4), making it easy to overlook content with high informational value but low visual saliency. The authors find that 19.8% of samples in MMLongBench and 27.8% in LongDocURL exhibit retrieval errors caused by neglecting critical query conditions.
+- **Goal**: Explicitly model the varying importance of multiple implicit aspects within a query, dynamically allocate retrieval attention, and prioritize evidence pages containing key information.
+- **Key Insight**: Each sub-query is treated as an "arm" in a multi-armed bandit, with preliminary VLM reasoning feedback serving as the reward signal. An explore-exploit strategy adaptively allocates retrieval budget to high-value aspects.
 - **Core Idea**: A three-stage progressive DQA pipeline comprising query decomposition, Thompson Sampling-driven dynamic retrieval budget allocation, and hypergraph reflective reasoning.
 
 ## Method

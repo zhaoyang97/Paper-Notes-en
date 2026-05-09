@@ -29,15 +29,15 @@ The first benchmark systematically evaluating small language models (SLMs, 1–4
 
 ## Background & Motivation
 
-**State of the Field**: Mobile and wearable devices can continuously collect physiological data such as step counts, heart rate, and sleep metrics. LLMs have demonstrated strong generalization in health prediction tasks (e.g., Health-LLM, PhysioLLM).
+**Background**: Mobile and wearable devices can continuously collect physiological data such as step counts, heart rate, and sleep metrics. LLMs have demonstrated strong generalization in health prediction tasks (e.g., Health-LLM, PhysioLLM).
 
 **Limitations of Prior Work**: LLM-based approaches predominantly rely on cloud inference and face three core challenges: (1) privacy leakage risk, as sensitive health data must be uploaded to remote servers; (2) communication latency that impairs real-time monitoring; and (3) computational and memory overhead of 7B+ models far exceeding mobile device capacity.
 
-**Root Cause**: A fundamental tension exists between the powerful capabilities of LLMs and the resource constraints of mobile platforms — a solution is needed that preserves LLM-level performance while enabling local execution.
+**Key Challenge**: A fundamental tension exists between the powerful capabilities of LLMs and the resource constraints of mobile platforms — a solution is needed that preserves LLM-level performance while enabling local execution.
 
-**Paper Goals**: Can SLMs (≤7B parameters) match LLMs on health prediction tasks? What is the deployment efficiency on real mobile devices?
+**Goal**: Can SLMs (≤7B parameters) match LLMs on health prediction tasks? What is the deployment efficiency on real mobile devices?
 
-**Starting Point**: Construct a comprehensive benchmark that systematically compares 9 state-of-the-art SLMs against multiple LLMs across 8 health tasks, with actual deployment on an iPhone for validation.
+**Key Insight**: Construct a comprehensive benchmark that systematically compares 9 state-of-the-art SLMs against multiple LLMs across 8 health tasks, with actual deployment on an iPhone for validation.
 
 **Core Idea**: With appropriate fine-tuning, SLMs can match or even surpass LLMs on health monitoring tasks while delivering orders-of-magnitude efficiency gains and stronger privacy guarantees.
 

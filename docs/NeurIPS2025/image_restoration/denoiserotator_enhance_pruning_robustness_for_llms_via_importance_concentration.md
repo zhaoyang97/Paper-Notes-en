@@ -29,13 +29,13 @@ This paper proposes DenoiseRotator, a pre-pruning method that applies learnable 
 
 ## Background & Motivation
 
-**State of the Field**: Pruning is a mainstream technique for LLM compression. Methods such as SparseGPT and Wanda use Taylor expansion approximations to estimate per-parameter importance scores and remove the lowest-scoring weights. However, performance degradation under semi-structured sparsity constraints (e.g., the 2:4 pattern) remains severe.
+**Background**: Pruning is a mainstream technique for LLM compression. Methods such as SparseGPT and Wanda use Taylor expansion approximations to estimate per-parameter importance scores and remove the lowest-scoring weights. However, performance degradation under semi-structured sparsity constraints (e.g., the 2:4 pattern) remains severe.
 
 **Limitations of Prior Work**: Existing methods focus exclusively on *which* weights to prune and operate within the fixed parameter space of the pretrained model, without modifying the underlying distribution of importance scores. When importance is dispersed across the entire weight matrix, any pruning selection inevitably removes a non-trivial amount of total importance.
 
-**Root Cause**: How can parameter importance be redistributed without altering model outputs? If importance can be concentrated into a small number of parameters, removing the remaining large mass of low-importance parameters incurs minimal cost.
+**Key Challenge**: How can parameter importance be redistributed without altering model outputs? If importance can be concentrated into a small number of parameters, removing the remaining large mass of low-importance parameters incurs minimal cost.
 
-**Starting Point**: The computational invariance of Transformers allows orthogonal transformations to be applied to weight matrices without changing model outputs. Orthogonal transformations preserve norms—the total importance of a layer is invariant—but the distribution of importance across parameters can be reshaped.
+**Key Insight**: The computational invariance of Transformers allows orthogonal transformations to be applied to weight matrices without changing model outputs. Orthogonal transformations preserve norms—the total importance of a layer is invariant—but the distribution of importance across parameters can be reshaped.
 
 **Core Idea**: Before pruning, a learnable orthogonal matrix $R$ is trained to minimize the information entropy $\mathcal{H}(P) = -\sum p_{ij} \log p_{ij}$ of normalized importance scores, shifting the importance distribution from uniform to peaked. After training, $R$ is absorbed into the weight matrices, and standard pruning proceeds unchanged.
 

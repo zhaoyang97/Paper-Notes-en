@@ -27,15 +27,15 @@ content_hash: a8e25008bbdea1b0
 This paper proposes an efficient reasoning framework that models the LLM reasoning process as a state-transition process. It uses Linear Attention to compress information from historical reasoning steps into a state matrix, reducing attention complexity from $O(C^2)$ to $O(C)$ and KV cache from $O(C)$ to $O(1)$, while preserving the full CoT sequence and maintaining reasoning capability. An additional momentum strategy mitigates the overthinking problem caused by noisy reasoning steps.
 
 ## Background & Motivation
-**State of the Field**: Long CoT (e.g., o1, R1) significantly improves LLM reasoning ability, but the quadratic complexity of Transformer attention makes computation and memory costs prohibitively high for long CoT.
+**Background**: Long CoT (e.g., o1, R1) significantly improves LLM reasoning ability, but the quadratic complexity of Transformer attention makes computation and memory costs prohibitively high for long CoT.
 
 **Limitations of Prior Work**: Existing efficient reasoning methods primarily compress the CoT sequence (shortening, token dropping, rewriting), which conflicts with test-time scaling — compressing CoT degrades reasoning capability.
 
-**Root Cause**: Efficiency demands reduced computation, while reasoning capability requires preserving the complete reasoning chain. Compressing CoT content and compressing the attention computation over CoT are fundamentally different problems.
+**Key Challenge**: Efficiency demands reduced computation, while reasoning capability requires preserving the complete reasoning chain. Compressing CoT content and compressing the attention computation over CoT are fundamentally different problems.
 
-**Paper Goals**: How to reduce the computational and memory overhead of reasoning without shortening the CoT?
+**Goal**: How to reduce the computational and memory overhead of reasoning without shortening the CoT?
 
-**Starting Point**: Within each reasoning step, the useful reasoning information (conclusions) is far less than the linguistic information (syntax, phrasing). A linear attention state matrix is used to retain only reasoning information, discarding linguistic information.
+**Key Insight**: Within each reasoning step, the useful reasoning information (conclusions) is far less than the linguistic information (syntax, phrasing). A linear attention state matrix is used to retain only reasoning information, discarding linguistic information.
 
 **Core Idea**: Each token in a reasoning step accesses historical reasoning information efficiently through the linear attention state matrix, rather than attending explicitly to historical tokens.
 

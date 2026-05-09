@@ -29,12 +29,12 @@ Merge proposes a plug-and-play framework that inserts lightweight learnable Conv
 
 ## Background & Motivation
 
-- **State of the Field**: Generative depth estimation methods (e.g., Marigold) leverage rich visual priors in pretrained T2I diffusion models, demonstrating impressive zero-shot depth estimation capability. However, **full-parameter fine-tuning catastrophically destroys the model's original image generation ability**, reducing it to a single-purpose depth estimator.
+- **Background**: Generative depth estimation methods (e.g., Marigold) leverage rich visual priors in pretrained T2I diffusion models, demonstrating impressive zero-shot depth estimation capability. However, **full-parameter fine-tuning catastrophically destroys the model's original image generation ability**, reducing it to a single-purpose depth estimator.
 - **Limitations of Prior Work**: Existing methods for unifying generation and depth estimation exhibit clear shortcomings:
   - **JointNet/UniCon**: Adopt dual-branch parallel architectures requiring two diffusion models to run simultaneously, incurring high computational costs; feature interaction also degrades the original T2I capability.
   - **OneDiffusion**: Trains a unified model from scratch, requiring 100M data samples and enormous resource consumption.
-- **Root Cause**: The core challenge is: **Can the latent depth estimation capability embedded in a pretrained model be unlocked at minimal cost without degrading its T2I generation ability?**
-- **Paper Goals**: Merge's key insight is that the vast data distribution learned by T2I models already contains latent information highly correlated with depth. A simple Converter suffices to guide and release this capability without modifying the original parameters.
+- **Key Challenge**: The core challenge is: **Can the latent depth estimation capability embedded in a pretrained model be unlocked at minimal cost without degrading its T2I generation ability?**
+- **Goal**: Merge's key insight is that the vast data distribution learned by T2I models already contains latent information highly correlated with depth. A simple Converter suffices to guide and release this capability without modifying the original parameters.
 
 ## Method
 

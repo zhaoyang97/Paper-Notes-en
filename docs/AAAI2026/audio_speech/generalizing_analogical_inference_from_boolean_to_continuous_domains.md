@@ -29,17 +29,17 @@ This paper revisits the theoretical foundations of analogical inference: it firs
 
 ## Background & Motivation
 
-**State of the Field**: Analogical reasoning (four-term relations of the form $a:b::c:d$) is a fundamental mechanism of human cognition, with broad applications in few-shot learning, transfer learning, morphological analysis, and word vector evaluation. Theoretical foundations in the Boolean domain were established by Couceiro et al. (2017, 2018): analogical inference is exact for affine functions and admits a $4\epsilon$ probabilistic error bound for near-affine functions.
+**Background**: Analogical reasoning (four-term relations of the form $a:b::c:d$) is a fundamental mechanism of human cognition, with broad applications in few-shot learning, transfer learning, morphological analysis, and word vector evaluation. Theoretical foundations in the Boolean domain were established by Couceiro et al. (2017, 2018): analogical inference is exact for affine functions and admits a $4\epsilon$ probabilistic error bound for near-affine functions.
 
 **Limitations of Prior Work**:
 - Existing theory is restricted to discrete attribute spaces and binary classification, and cannot handle regression tasks or continuous domains.
 - More critically, even within the Boolean domain, the classical generalization bound itself is flawed.
 
-**Root Cause**: Analogical reasoning is widely applied in practice over continuous domains (e.g., word vector analogies), yet theoretical guarantees are entirely absent; moreover, the core theorem ($4\epsilon$ bound, Theorem 3) underpinning discrete domain theory is incorrect.
+**Key Challenge**: Analogical reasoning is widely applied in practice over continuous domains (e.g., word vector analogies), yet theoretical guarantees are entirely absent; moreover, the core theorem ($4\epsilon$ bound, Theorem 3) underpinning discrete domain theory is incorrect.
 
-**Paper Goals**: To correct the erroneous theoretical bound in the Boolean domain and extend analogical inference to continuous domains, providing theoretical guarantees for regression-based analogical reasoning.
+**Goal**: To correct the erroneous theoretical bound in the Boolean domain and extend analogical inference to continuous domains, providing theoretical guarantees for regression-based analogical reasoning.
 
-**Starting Point**: A parameterized analogical proportion is defined via Hölder generalized means, constructing a unified framework that encompasses both Boolean classification and continuous regression.
+**Key Insight**: A parameterized analogical proportion is defined via Hölder generalized means, constructing a unified framework that encompasses both Boolean classification and continuous regression.
 
 **Core Idea**: The generalized mean parameter $p$ defines the analogical proportion $a:b::^p c:d$ over continuous domains, characterizes the class of functions preserving analogical structure, and derives worst-case and average-case error bounds under smoothness assumptions.
 

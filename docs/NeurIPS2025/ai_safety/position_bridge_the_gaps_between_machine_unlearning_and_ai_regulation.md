@@ -31,7 +31,7 @@ This paper systematically analyzes six potential application scenarios of Machin
 
 ### State of the Field
 
-**State of the Field**: Since its inception, MU has been primarily motivated by the "right to be forgotten" under the GDPR. A new wave of AI regulations, exemplified by the EU AI Act (AIA), is now being enforced, and researchers have begun exploring whether MU can assist compliance with these frameworks.
+**Background**: Since its inception, MU has been primarily motivated by the "right to be forgotten" under the GDPR. A new wave of AI regulations, exemplified by the EU AI Act (AIA), is now being enforced, and researchers have begun exploring whether MU can assist compliance with these frameworks.
 
 The position of this paper, however, is that **the potential of MU to support AI regulatory compliance can only be realized if researchers proactively bridge the existing technical gaps**. There remain considerable gaps between the current state of MU and its anticipated use in regulatory compliance. The rationale for selecting the AIA as the case study is as follows:
 
@@ -41,11 +41,11 @@ The position of this paper, however, is that **the potential of MU to support AI
 
 ### Root Cause
 
-**Root Cause**: The AIA adopts a risk-based, tiered regulatory approach with detailed requirements for high-risk AI systems and general-purpose AI (GPAI) models.
+**Key Challenge**: The AIA adopts a risk-based, tiered regulatory approach with detailed requirements for high-risk AI systems and general-purpose AI (GPAI) models.
 
 ### Starting Point
 
-**Starting Point**: The principles of the AIA are representative of global AI regulation, and the findings of this analysis are transferable to other regulatory frameworks.
+**Key Insight**: The principles of the AIA are representative of global AI regulation, and the findings of this analysis are transferable to other regulatory frameworks.
 
 ## Method
 

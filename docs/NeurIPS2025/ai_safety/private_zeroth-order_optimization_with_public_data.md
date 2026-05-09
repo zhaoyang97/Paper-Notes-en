@@ -35,7 +35,7 @@ This paper proposes the PAZO framework, which leverages public data to guide gra
 
 ### Limitations of Prior Work
 
-**State of the Field**: Differentially private (DP) machine learning algorithms such as DP-SGD are the standard approach for protecting training data privacy, but suffer from severe computational bottlenecks:
+**Background**: Differentially private (DP) machine learning algorithms such as DP-SGD are the standard approach for protecting training data privacy, but suffer from severe computational bottlenecks:
 
 **High computational and memory overhead**: DP-SGD requires computing per-sample gradients, followed by clipping and noise addition.
 

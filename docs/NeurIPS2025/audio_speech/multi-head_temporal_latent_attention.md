@@ -28,15 +28,15 @@ MTLA extends MLA's low-rank latent compression along the feature dimension by in
 
 ## Background & Motivation
 
-**State of the Field**: During autoregressive inference, the KV cache of Transformer models grows linearly with sequence length, becoming a critical bottleneck for long-sequence tasks—particularly in speech and audio. Existing approaches such as MQA (shared KV heads), GQA (grouped sharing), and MLA (low-rank latent projection) all compress only along the feature dimension, leaving the sequence length dimension untouched.
+**Background**: During autoregressive inference, the KV cache of Transformer models grows linearly with sequence length, becoming a critical bottleneck for long-sequence tasks—particularly in speech and audio. Existing approaches such as MQA (shared KV heads), GQA (grouped sharing), and MLA (low-rank latent projection) all compress only along the feature dimension, leaving the sequence length dimension untouched.
 
 **Limitations of Prior Work**: MQA and GQA reduce the number of heads at the cost of representational capacity; MLA compresses KV dimensionality effectively via low-rank projection, yet the KV cache still grows linearly with sequence length $T$. Speech tasks involve particularly long sequences (thousands of frames), making temporal compression an unexplored direction.
 
-**Root Cause**: Adjacent frames in speech and audio signals are highly redundant, yet standard attention stores KV vectors frame-by-frame, leading to significant waste. Existing temporal compression methods (e.g., SnapKV pruning) discard information and degrade quality.
+**Key Challenge**: Adjacent frames in speech and audio signals are highly redundant, yet standard attention stores KV vectors frame-by-frame, leading to significant waste. Existing temporal compression methods (e.g., SnapKV pruning) discard information and degrade quality.
 
-**Paper Goals**: Compress the KV cache along the temporal dimension without quality loss, realizing dual-axis compression, while resolving the technical challenge of behavioral inconsistency between parallel training and incremental inference.
+**Goal**: Compress the KV cache along the temporal dimension without quality loss, realizing dual-axis compression, while resolving the technical challenge of behavioral inconsistency between parallel training and incremental inference.
 
-**Starting Point**: Adjacent KV vectors can be merged via weighted combination, but the weights should be dynamically generated based on content and position—rather than fixed pooling—since information density varies across positions.
+**Key Insight**: Adjacent KV vectors can be merged via weighted combination, but the weights should be dynamically generated based on content and position—rather than fixed pooling—since information density varies across positions.
 
 **Core Idea**: MLA feature-dimension compression + hyper-network dynamic merging for temporal compression + stride-aware causal mask for training–inference consistency = dual-axis KV cache compression.
 

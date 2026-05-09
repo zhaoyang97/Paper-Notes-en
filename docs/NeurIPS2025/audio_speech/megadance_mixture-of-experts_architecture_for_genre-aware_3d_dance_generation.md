@@ -29,18 +29,18 @@ This paper proposes MEGADance, the first music-driven 3D dance generation method
 
 ## Background & Motivation
 
-**State of the Field**: Music-driven 3D dance generation is divided into one-stage methods (direct mapping) and two-stage methods (discrete choreographic unit quantization followed by conditional generation). Two-stage methods yield better biomechanical plausibility by leveraging real motion priors.
+**Background**: Music-driven 3D dance generation is divided into one-stage methods (direct mapping) and two-stage methods (discrete choreographic unit quantization followed by conditional generation). Two-stage methods yield better biomechanical plausibility by leveraging real motion priors.
 
 **Limitations of Prior Work**:
    - VQ-VAE quantization suffers from codebook collapse (only ~75% utilization)
    - Style information is treated merely as a weak auxiliary bias (e.g., feature addition, cross-attention), leading to music–motion asynchrony and style discontinuity
    - Complex rhythmic transitions may cause cross-style motion contamination (e.g., Uyghur-style movements mixed into breaking sequences)
 
-**Root Cause**: Simultaneously maintaining universal dance quality across styles and style-specific precision within each genre is inherently conflicting.
+**Key Challenge**: Simultaneously maintaining universal dance quality across styles and style-specific precision within each genre is inherently conflicting.
 
-**Paper Goals**: Elevate style from an auxiliary modifier to a core semantic driver.
+**Goal**: Elevate style from an auxiliary modifier to a core semantic driver.
 
-**Starting Point**: Drawing on the idea of parameter separation in MoE, assign independent experts to each style.
+**Key Insight**: Drawing on the idea of parameter separation in MoE, assign independent experts to each style.
 
 **Core Idea**: Decouple dance generation by modeling universality through a Universal Expert and capturing style specificity through Specialized Experts.
 

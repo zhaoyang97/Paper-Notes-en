@@ -28,15 +28,15 @@ This paper proposes Chart2Code, a hierarchical benchmark comprising 2,186 tasks 
 
 ## Background & Motivation
 
-**State of the Field**: Charts are among the most critical visualization tools in scientific papers and business reports. With the rapid advancement of large multimodal models (LMMs), AI systems are increasingly capable of not only understanding charts but also generating executable chart-rendering code (chart-to-code), which holds substantial potential for productivity enhancement.
+**Background**: Charts are among the most critical visualization tools in scientific papers and business reports. With the rapid advancement of large multimodal models (LMMs), AI systems are increasingly capable of not only understanding charts but also generating executable chart-rendering code (chart-to-code), which holds substantial potential for productivity enhancement.
 
 **Limitations of Prior Work**: (1) Existing benchmarks such as ChartMimic have approached performance saturation—GPT-4o already achieves 82.2% on ChartMimic—and can no longer differentiate the capabilities of current and future models. (2) There is a lack of systematic benchmarks covering realistic use scenarios: users not only need to reproduce charts but more frequently need to edit them (e.g., change chart type, add elements) or generate charts from raw long-form tabular data, yet these scenarios remain largely untested. (3) Existing evaluations primarily focus on code correctness while neglecting the visual fidelity of the rendered charts.
 
-**Root Cause**: A substantial gap exists between the high scores reported by existing benchmarks and actual model performance in practical use—models score well on simple reproduction but degrade sharply on the more common tasks of editing and data-to-chart generation, gaps that current benchmarks fail to expose.
+**Key Challenge**: A substantial gap exists between the high scores reported by existing benchmarks and actual model performance in practical use—models score well on simple reproduction but degrade sharply on the more common tasks of editing and data-to-chart generation, gaps that current benchmarks fail to expose.
 
-**Paper Goals**: (1) Construct a hierarchical chart code generation benchmark grounded in real user workflows. (2) Design a multi-level evaluation protocol combining code-level and chart-level assessment. (3) Comprehensively evaluate 29 state-of-the-art multimodal models.
+**Goal**: (1) Construct a hierarchical chart code generation benchmark grounded in real user workflows. (2) Design a multi-level evaluation protocol combining code-level and chart-level assessment. (3) Comprehensively evaluate 29 state-of-the-art multimodal models.
 
-**Starting Point**: The benchmark is designed around realistic user workflows, structured into three progressively demanding levels—simple reproduction → complex editing → long-table-to-chart generation—each placing incrementally higher demands on a model's comprehension, reasoning, and code generation capabilities.
+**Key Insight**: The benchmark is designed around realistic user workflows, structured into three progressively demanding levels—simple reproduction → complex editing → long-table-to-chart generation—each placing incrementally higher demands on a model's comprehension, reasoning, and code generation capabilities.
 
 **Core Idea**: Chart code generation is extended from a single reproduction task to a hierarchical benchmark covering the complete user workflow, while a dual-level evaluation framework (code-level and chart-level) is introduced to comprehensively measure generation quality.
 

@@ -27,15 +27,15 @@ content_hash: 1fcfc34c7b6a1d6b
 This work is the first to apply activation steering to Masked Diffusion Language Models (MDLMs), demonstrating that refusal behavior in MDLMs is likewise governed by a single low-dimensional direction. Globally projecting out this direction at every denoising step completely bypasses safety alignment. Unlike autoregressive models, effective directions can be extracted from pre-instruction tokens—reflecting the non-causal, parallel processing nature of diffusion models.
 
 ## Background & Motivation
-**State of the Field**: Activation steering has been extensively studied in autoregressive LLMs (e.g., refusal direction elimination by Arditi et al.), yet MDLMs such as LLaDA operate under a fundamentally different generation mechanism—iterative unmasking rather than token-by-token generation. Whether analogous low-dimensional control directions exist in MDLMs has remained entirely unknown.
+**Background**: Activation steering has been extensively studied in autoregressive LLMs (e.g., refusal direction elimination by Arditi et al.), yet MDLMs such as LLaDA operate under a fundamentally different generation mechanism—iterative unmasking rather than token-by-token generation. Whether analogous low-dimensional control directions exist in MDLMs has remained entirely unknown.
 
 **Limitations of Prior Work**: (1) Inference-time control in MDLMs is limited to sampling-level guidance (e.g., DIJA); representation-level control is absent. (2) Autoregressive jailbreak attacks such as GCG and PAIR transfer poorly to diffusion models due to architectural and generative differences.
 
-**Root Cause**: MDLMs employ non-causal attention (all tokens attend to one another), in stark contrast to the causal attention of autoregressive models—where only the last token has access to the full input, whereas in MDLMs every token does. The choice of position and timestep for activation steering must therefore be reconsidered from first principles.
+**Key Challenge**: MDLMs employ non-causal attention (all tokens attend to one another), in stark contrast to the causal attention of autoregressive models—where only the last token has access to the full input, whereas in MDLMs every token does. The choice of position and timestep for activation steering must therefore be reconsidered from first principles.
 
-**Paper Goals**: Do MDLMs possess a refusal direction? At which denoising stage, which layers, and which token positions is steering most effective?
+**Goal**: Do MDLMs possess a refusal direction? At which denoising stage, which layers, and which token positions is steering most effective?
 
-**Starting Point**: The paper directly adapts the contrastive direction extraction methodology of Arditi et al. to MDLMs, while additionally exploring MDLM-specific token positions (including pre-instruction tokens) and denoising timesteps.
+**Key Insight**: The paper directly adapts the contrastive direction extraction methodology of Arditi et al. to MDLMs, while additionally exploring MDLM-specific token positions (including pre-instruction tokens) and denoising timesteps.
 
 **Core Idea**: Transplant the activation steering primitives of autoregressive LLMs to MDLMs, thereby revealing representation properties unique to the diffusion paradigm.
 

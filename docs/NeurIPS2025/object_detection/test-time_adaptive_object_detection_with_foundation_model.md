@@ -28,15 +28,15 @@ This paper proposes TTAOD, a source-free open-vocabulary test-time adaptive obje
 
 ## Background & Motivation
 
-**State of the Field**: Test-time adaptation (TTA) has been well studied for classification, but TTA for object detection remains underexplored. Existing methods such as STFAR require source-domain statistics (mean/variance) and assume a closed-set category space.
+**Background**: Test-time adaptation (TTA) has been well studied for classification, but TTA for object detection remains underexplored. Existing methods such as STFAR require source-domain statistics (mean/variance) and assume a closed-set category space.
 
 **Limitations of Prior Work**: (a) Reliance on source-domain data or statistics is impractical; (b) closed-set assumptions restrict applicability to open-world scenarios; (c) pseudo-label quality degrades under corruption/domain shift, causing Mean-Teacher to collapse.
 
-**Root Cause**: Open-vocabulary detectors (e.g., GroundingDINO) suffer performance drops under domain shift, yet TTA must operate without source data and without restricting the category space.
+**Key Challenge**: Open-vocabulary detectors (e.g., GroundingDINO) suffer performance drops under domain shift, yet TTA must operate without source data and without restricting the category space.
 
-**Paper Goals**: Achieve test-time domain adaptation under a source-free, open-vocabulary setting by tuning only prompt parameters.
+**Goal**: Achieve test-time domain adaptation under a source-free, open-vocabulary setting by tuning only prompt parameters.
 
-**Starting Point**: Vision-language foundation models (GroundingDINO) already possess strong zero-shot capabilities; adapting to the target domain requires tuning only a small number of prompt parameters. A memory module is used to accumulate high-quality instances to guide adaptation.
+**Key Insight**: Vision-language foundation models (GroundingDINO) already possess strong zero-shot capabilities; adapting to the target domain requires tuning only a small number of prompt parameters. A memory module is used to accumulate high-quality instances to guide adaptation.
 
 **Core Idea**: Freeze GroundingDINO and introduce learnable text/visual prompts → update via Mean-Teacher EMA → accumulate high-quality pseudo-labels in an Instance Dynamic Memory (IDM) using DINOv2 features → refine detection scores via memory augmentation → address negative samples via memory hallucination.
 

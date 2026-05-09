@@ -30,7 +30,7 @@ This work provides, for the first time in the linear non-Gaussian setting and wi
 
 ## Background & Motivation
 
-**State of the Field**: Causal discovery aims to infer causal relationships from observational data and is a foundational task in causal reasoning. In real-world settings, data frequently involve unobserved latent variables and causal cycles — such as feedback loops in gene regulatory networks or mutual causation in economic systems — rendering causal discovery particularly challenging.
+**Background**: Causal discovery aims to infer causal relationships from observational data and is a foundational task in causal reasoning. In real-world settings, data frequently involve unobserved latent variables and causal cycles — such as feedback loops in gene regulatory networks or mutual causation in economic systems — rendering causal discovery particularly challenging.
 
 **Limitations of Prior Work**:
 1. Most methods require latent variables to follow specific indicator patterns (e.g., each latent variable affects at least two observed variables and is not shared).
@@ -38,9 +38,9 @@ This work provides, for the first time in the linear non-Gaussian setting and wi
 3. Nearly all methods prohibit cycles in causal graphs, restricting attention to DAG structures.
 4. These structural assumptions frequently fail in practice, severely limiting the applicability of existing approaches.
 
-**Root Cause**: The central obstacle to developing general, assumption-free methods is the **absence of an equivalence characterization** — without knowing what is identifiable (i.e., which graphs produce the same observational distribution), it is generally impossible to design identification procedures. Without an equivalence theory, the upper bound on achievable precision in causal discovery remains unknown.
+**Key Challenge**: The central obstacle to developing general, assumption-free methods is the **absence of an equivalence characterization** — without knowing what is identifiable (i.e., which graphs produce the same observational distribution), it is generally impossible to design identification procedures. Without an equivalence theory, the upper bound on achievable precision in causal discovery remains unknown.
 
-**Paper Goals**: To establish a complete equivalence theory under linear non-Gaussian models (LiNG-Latent). The core innovation is the introduction of **edge rank constraints** as a new tool — filling the gap left by independence constraints, which are incomplete in the latent-variable setting — thereby enabling a complete graphical criterion.
+**Goal**: To establish a complete equivalence theory under linear non-Gaussian models (LiNG-Latent). The core innovation is the introduction of **edge rank constraints** as a new tool — filling the gap left by independence constraints, which are incomplete in the latent-variable setting — thereby enabling a complete graphical criterion.
 
 ## Method
 

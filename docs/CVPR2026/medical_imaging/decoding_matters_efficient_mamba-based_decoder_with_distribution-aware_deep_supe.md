@@ -35,11 +35,11 @@ A common limitation of existing medical image segmentation methods (U-Net, Trans
 - Transformer encoders (TransUNet, Swin-UNet): $O(n^2)$ self-attention complexity, not scalable to high resolutions.
 - Mamba encoders (U-Mamba, Swin-UMamba): linear complexity, but most methods introduce Mamba only in the encoder while keeping the decoder simple.
 
-**Root Cause**: Powerful encoders extract rich semantic representations, but an inadequate decoder fails to accurately recover object boundaries and contextual structures during upsampling. Existing methods either suffer from parameter explosion due to cascaded decoders (e.g., Cascaded-MERIT at 148M parameters) or lose fine details due to overly lightweight decoders.
+**Key Challenge**: Powerful encoders extract rich semantic representations, but an inadequate decoder fails to accurately recover object boundaries and contextual structures during upsampling. Existing methods either suffer from parameter explosion due to cascaded decoders (e.g., Cascaded-MERIT at 148M parameters) or lose fine details due to overly lightweight decoders.
 
 A further issue is that conventional deep supervision resizes intermediate-layer predictions to full resolution before computing loss against ground truth, which inherently degrades structural information.
 
-**Starting Point**: Deco-Mamba addresses this by (1) introducing Mamba into the decoder rather than the encoder, and (2) designing distribution-aware deep supervision that computes KL divergence directly at the native resolution of each decoding stage.
+**Key Insight**: Deco-Mamba addresses this by (1) introducing Mamba into the decoder rather than the encoder, and (2) designing distribution-aware deep supervision that computes KL divergence directly at the native resolution of each decoding stage.
 
 ## Method
 

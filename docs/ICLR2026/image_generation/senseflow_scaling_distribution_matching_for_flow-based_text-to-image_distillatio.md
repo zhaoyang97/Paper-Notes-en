@@ -29,15 +29,15 @@ This paper proposes SenseFlow, which scales distribution matching distillation (
 
 ## Background & Motivation
 
-**State of the Field**: DMD2 has demonstrated strong distillation performance on smaller models (SD 1.5, SDXL), compressing multi-step diffusion models into few-step generators. However, large-scale flow-based text-to-image models (e.g., SD 3.5 Large 8B, FLUX.1 dev 12B) are becoming mainstream, and their distillation remains an open problem.
+**Background**: DMD2 has demonstrated strong distillation performance on smaller models (SD 1.5, SDXL), compressing multi-step diffusion models into few-step generators. However, large-scale flow-based text-to-image models (e.g., SD 3.5 Large 8B, FLUX.1 dev 12B) are becoming mainstream, and their distillation remains an open problem.
 
 **Limitations of Prior Work**: The original DMD2 faces three critical challenges when applied to large models: (1) **convergence instability**—training cannot be stabilized even with TTUR (two time-scale update rule); (2) **suboptimal timestep sampling**—uniform or manually selected coarse timesteps fail to account for the varying denoising importance across timesteps in the teacher model; (3) **insufficient discriminator generality**—naive discriminators struggle to adapt across models of different scales and architectures.
 
-**Root Cause**: The min-max game in DMD requires the fake distribution to precisely track the generator distribution (inner optimal response), a condition that is extremely difficult to satisfy in large models, resulting in oscillatory and non-convergent training.
+**Key Challenge**: The min-max game in DMD requires the fake distribution to precisely track the generator distribution (inner optimal response), a condition that is extremely difficult to satisfy in large models, resulting in oscillatory and non-convergent training.
 
-**Paper Goals**: To reliably scale the DMD framework to flow-based text-to-image models with 8B–12B parameters.
+**Goal**: To reliably scale the DMD framework to flow-based text-to-image models with 8B–12B parameters.
 
-**Starting Point**: Through analysis of DMD's min-max optimization, the authors identify that the inner optimal response requires $p_f = p_g$. They design a proximal update (IDA) to approximately maintain this condition, reconfigure timestep denoising importance via ISG, and introduce a stronger VFM-based discriminator.
+**Key Insight**: Through analysis of DMD's min-max optimization, the authors identify that the inner optimal response requires $p_f = p_g$. They design a proximal update (IDA) to approximately maintain this condition, reconfigure timestep denoising importance via ISG, and introduce a stronger VFM-based discriminator.
 
 **Core Idea**: Implicit distribution alignment maintains consistency between the fake model and the generator, while intra-segment guidance redistributes timestep importance, enabling stable convergence of DMD on large flow models.
 

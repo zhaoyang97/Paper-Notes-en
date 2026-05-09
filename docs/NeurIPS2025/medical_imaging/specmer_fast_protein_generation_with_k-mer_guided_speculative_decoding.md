@@ -28,15 +28,15 @@ SpecMER introduces speculative decoding into protein sequence generation, employ
 
 ## Background & Motivation
 
-**State of the Field**: Protein language models (e.g., ProGen2) generate functional protein sequences autoregressively. Generating 20,000 sequences of 200 amino acids requires approximately 65 hours on an A6000 GPU.
+**Background**: Protein language models (e.g., ProGen2) generate functional protein sequences autoregressively. Generating 20,000 sequences of 200 amino acids requires approximately 65 hours on an A6000 GPU.
 
 **Limitations of Prior Work**: Standard speculative decoding accelerates inference via a small draft model and a large target model for verification. However, draft models lack awareness of protein structural and functional constraints, causing generated candidates to deviate from biologically plausible distributions and resulting in low acceptance rates.
 
-**Root Cause**: The speedup of speculative decoding depends on distributional alignment between draft and target models; in protein generation, draft models fail to capture evolutionary and structural constraints, leading to poor alignment.
+**Key Challenge**: The speedup of speculative decoding depends on distributional alignment between draft and target models; in protein generation, draft models fail to capture evolutionary and structural constraints, leading to poor alignment.
 
-**Paper Goals**: Incorporate biological priors (K-mer frequencies) into the speculative decoding framework to improve draft candidate quality, thereby increasing acceptance rates and speedup ratios.
+**Goal**: Incorporate biological priors (K-mer frequencies) into the speculative decoding framework to improve draft candidate quality, thereby increasing acceptance rates and speedup ratios.
 
-**Starting Point**: Multiple sequence alignments (MSAs) encode evolutionary conservation information for a given protein family. K-mer frequency distributions extracted from MSAs serve as a scoring function to select the best candidate from multiple draft outputs.
+**Key Insight**: Multiple sequence alignments (MSAs) encode evolutionary conservation information for a given protein family. K-mer frequency distributions extracted from MSAs serve as a scoring function to select the best candidate from multiple draft outputs.
 
 **Core Idea**: Extract K-mer frequencies from MSA → batch-sample $c$ candidates from the draft model → select the best candidate via K-mer scoring → verify with the target model = biologically guided speculative decoding.
 

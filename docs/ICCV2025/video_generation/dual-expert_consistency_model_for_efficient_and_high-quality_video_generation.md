@@ -28,11 +28,11 @@ This paper analyzes the optimization conflict between high- and low-noise levels
 
 ## Background & Motivation
 
-1. **State of the Field**: Consistency Distillation (CD) is a mainstream diffusion model acceleration approach that trains a student model to map any point on the ODE trajectory to the same endpoint. Methods such as LCM and PCM have seen broad adoption.
+1. **Background**: Consistency Distillation (CD) is a mainstream diffusion model acceleration approach that trains a student model to map any point on the ODE trajectory to the same endpoint. Methods such as LCM and PCM have seen broad adoption.
 2. **Limitations of Prior Work**: Directly applying consistency distillation to video diffusion models leads to severe temporal coherence degradation and loss of appearance detail. High-noise samples primarily learn semantic layout and motion, while low-noise samples refine fine details; however, the gradient magnitudes and loss contributions of these two regimes differ substantially, causing joint optimization to converge to suboptimal solutions.
-3. **Root Cause**: A single student model has limited capacity, and simultaneously learning semantic layout synthesis and fine-grained detail generation introduces optimization interference. Visualizations reveal significant differences in loss values and gradient norms between high- and low-noise samples during distillation.
-4. **Paper Goals**: How to decouple the optimization of the semantic learning stage from the detail learning stage while maintaining parameter efficiency?
-5. **Starting Point**: Train two expert denoisers to handle two sub-trajectories of the ODE trajectory separately; after validating that the combination outperforms a single model, design a parameter-sharing scheme guided by parameter difference analysis.
+3. **Key Challenge**: A single student model has limited capacity, and simultaneously learning semantic layout synthesis and fine-grained detail generation introduces optimization interference. Visualizations reveal significant differences in loss values and gradient norms between high- and low-noise samples during distillation.
+4. **Goal**: How to decouple the optimization of the semantic learning stage from the detail learning stage while maintaining parameter efficiency?
+5. **Key Insight**: Train two expert denoisers to handle two sub-trajectories of the ODE trajectory separately; after validating that the combination outperforms a single model, design a parameter-sharing scheme guided by parameter difference analysis.
 6. **Core Idea**: Partition the ODE trajectory into semantic and detail segments, and implement decoupled distillation via a parameter-efficient scheme comprising a semantic expert and a LoRA-based detail expert.
 
 ## Method

@@ -29,15 +29,15 @@ This paper introduces ChartNet—a 1.5-million-scale, high-quality multimodal ch
 
 ## Background & Motivation
 
-**State of the Field**: Charts are a fundamental medium for conveying quantitative information, and understanding them requires the integration of visual, numerical, and linguistic capabilities. Existing VLMs remain insufficient for complex chart reasoning, with open-source models lagging noticeably behind closed-source systems.
+**Background**: Charts are a fundamental medium for conveying quantitative information, and understanding them requires the integration of visual, numerical, and linguistic capabilities. Existing VLMs remain insufficient for complex chart reasoning, with open-source models lagging noticeably behind closed-source systems.
 
 **Limitations of Prior Work**: (a) Existing datasets are small in scale, narrow in chart type coverage, and incomplete in modality—most focus on a single task (QA or summarization) and lack critical modalities such as plotting code, grounding annotations, and reasoning chains. (b) The most widely used benchmark, ChartQA, contains only 14K charts across 3 chart types and is biased toward simple data extraction, on which modern VLMs have already reached saturation.
 
-**Root Cause**: Training frontier multimodal models requires large-scale, high-quality, multimodally aligned supervision data, yet such data is severely scarce in the chart domain.
+**Key Challenge**: Training frontier multimodal models requires large-scale, high-quality, multimodally aligned supervision data, yet such data is severely scarce in the chart domain.
 
-**Paper Goals**: Construct a million-scale multimodal chart dataset that comprehensively covers the full spectrum of chart understanding tasks.
+**Goal**: Construct a million-scale multimodal chart dataset that comprehensively covers the full spectrum of chart understanding tasks.
 
-**Starting Point**: Charts are inherently **programmatically generatable**—plotting code serves as a structured intermediate representation that can drive large-scale automated synthesis and augmentation.
+**Key Insight**: Charts are inherently **programmatically generatable**—plotting code serves as a structured intermediate representation that can drive large-scale automated synthesis and augmentation.
 
 **Core Idea**: A code-guided chart generation pipeline that reconstructs code from seed charts, iteratively augments it to produce diverse chart variants, and derives data tables, descriptions, and reasoning QA directly from the code.
 

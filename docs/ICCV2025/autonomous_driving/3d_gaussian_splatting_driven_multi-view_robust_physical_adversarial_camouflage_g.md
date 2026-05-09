@@ -31,11 +31,11 @@ This paper proposes PGA, the first physical adversarial attack framework based o
 
 ### Limitations of Prior Work
 
-**State of the Field**: Physical adversarial attacks have exposed the vulnerability of DNNs in safety-critical scenarios such as autonomous driving. Adversarial camouflage is more promising than adversarial patches, as it covers the entire object surface and exhibits stronger adversarial efficacy in complex physical environments. However, existing methods suffer from two major limitations: (1) they rely on mesh priors of target objects and simulators such as CARLA to construct virtual environments, which is time-consuming and introduces an inevitable gap with the real world; (2) the limited variety of background images during training makes it difficult for the optimized camouflage to generalize across viewpoints, causing optimization to converge to suboptimal solutions.
+**Background**: Physical adversarial attacks have exposed the vulnerability of DNNs in safety-critical scenarios such as autonomous driving. Adversarial camouflage is more promising than adversarial patches, as it covers the entire object surface and exhibits stronger adversarial efficacy in complex physical environments. However, existing methods suffer from two major limitations: (1) they rely on mesh priors of target objects and simulators such as CARLA to construct virtual environments, which is time-consuming and introduces an inevitable gap with the real world; (2) the limited variety of background images during training makes it difficult for the optimized camouflage to generalize across viewpoints, causing optimization to converge to suboptimal solutions.
 
 ### Root Cause
 
-**Paper Goals**: How can adversarial camouflage that is both effective and robust across multiple viewpoints and physical environments be generated? Three key challenges arise: (1) How can arbitrary target objects be modeled rapidly and accurately without mesh priors? (2) How can cross-view consistency of camouflage patterns be ensured? (3) How can the adversarial efficacy of camouflage be maintained under varying backgrounds, weather conditions, and distances?
+**Goal**: How can adversarial camouflage that is both effective and robust across multiple viewpoints and physical environments be generated? Three key challenges arise: (1) How can arbitrary target objects be modeled rapidly and accurately without mesh priors? (2) How can cross-view consistency of camouflage patterns be ensured? (3) How can the adversarial efficacy of camouflage be maintained under varying backgrounds, weather conditions, and distances?
 
 ## Method
 

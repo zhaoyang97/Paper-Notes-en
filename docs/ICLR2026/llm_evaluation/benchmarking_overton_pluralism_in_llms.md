@@ -28,21 +28,21 @@ This paper proposes the OvertonBench framework, which formalizes Overton plurali
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have broadly influenced political discourse, education, and everyday interaction. Conventional alignment strategies typically aggregate diverse preferences, compressing genuine disagreement into a single normative position (value monism), thereby erasing minority viewpoints.
+**Background**: LLMs have broadly influenced political discourse, education, and everyday interaction. Conventional alignment strategies typically aggregate diverse preferences, compressing genuine disagreement into a single normative position (value monism), thereby erasing minority viewpoints.
 
 **Limitations of Prior Work**:
    - Existing political bias evaluations (e.g., Model Slant) measure only whether a model leans toward a particular side, and cannot quantify whether the model covers a plurality of viewpoints.
    - Ostensibly "neutral" responses may achieve neutrality by omitting minority perspectives, thereby exacerbating representational harm.
    - Pursuing political neutrality has been shown to be both impossible and not always desirable.
 
-**Root Cause**: Rather than seeking consensus, LLMs should present the range of reasonable viewpoints within the "Overton window" of public discourse; yet no systematic metric exists to measure model performance in this regard.
+**Key Challenge**: Rather than seeking consensus, LLMs should present the range of reasonable viewpoints within the "Overton window" of public discourse; yet no systematic metric exists to measure model performance in this regard.
 
-**Paper Goals**:
+**Goal**:
    - How should Overton pluralism be defined and quantified?
    - How well do current LLMs represent a plurality of viewpoints?
    - How can scalable evaluation be conducted without repeated expensive human studies?
 
-**Starting Point**: Building on Sorensen et al.'s three-tier taxonomy of pluralism (Overton, steerable, distributional), this work focuses on the most practically relevant tier—Overton pluralism—whereby a model should present multiple reasonable viewpoints within a single response.
+**Key Insight**: Building on Sorensen et al.'s three-tier taxonomy of pluralism (Overton, steerable, distributional), this work focuses on the most practically relevant tier—Overton pluralism—whereby a model should present multiple reasonable viewpoints within a single response.
 
 **Core Idea**: Pluralistic alignment is reframed from a normative goal into a measurable set-coverage benchmark; opinion clusters are discovered via participant-based clustering, and model response coverage across clusters is then assessed.
 

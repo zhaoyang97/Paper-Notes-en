@@ -28,18 +28,18 @@ This paper proposes a two-stage autoregressive adaptation framework (autoregress
 
 ## Background & Motivation
 
-1. **State of the Field**: Diffusion models have achieved remarkable success in audio-driven talking avatar generation, enabling high-quality talking videos from a single image. Representative works include Hallo3, OmniAvatar, and HunyuanVideo-Avatar.
+1. **Background**: Diffusion models have achieved remarkable success in audio-driven talking avatar generation, enabling high-quality talking videos from a single image. Representative works include Hallo3, OmniAvatar, and HunyuanVideo-Avatar.
 
 2. **Limitations of Prior Work**: Three major challenges hinder practical deployment:
     - **Real-time streaming generation**: The iterative denoising (25–50 steps) and long-context bidirectional attention in diffusion models are computationally prohibitive, and bidirectional attention is inherently incompatible with streaming. Existing methods require 7–74 minutes to generate a 5-second video.
     - **Long-term stability**: Streaming interaction demands continuous generation of long videos, but autoregressive approaches tend to accumulate errors, leading to identity drift and quality degradation.
     - **Speaking–listening interaction**: Existing methods model only the speaking behavior and ignore the listening state. In conversational scenarios, neglecting the listening state renders interactions unnatural. The few methods that do model listening are limited to the head-and-shoulder region, lacking gesture expressiveness and full-body representation.
 
-3. **Root Cause**: High quality requires powerful bidirectional diffusion models, whereas real-time streaming demands lightweight causal models. The tension between quality and speed is the central conflict.
+3. **Key Challenge**: High quality requires powerful bidirectional diffusion models, whereas real-time streaming demands lightweight causal models. The tension between quality and speed is the central conflict.
 
-4. **Paper Goals**: To efficiently convert a high-fidelity but non-causal human video diffusion model into a real-time, streaming, interaction-capable generator.
+4. **Goal**: To efficiently convert a high-fidelity but non-causal human video diffusion model into a real-time, streaming, interaction-capable generator.
 
-5. **Starting Point**: A strong bidirectional teacher model supporting speaking–listening interaction is trained first, then compressed into a 3-step causal autoregressive student model via two-stage distillation and adversarial refinement. Dedicated attention mechanisms and positional encoding improvements are proposed to address long-video stability.
+5. **Key Insight**: A strong bidirectional teacher model supporting speaking–listening interaction is trained first, then compressed into a 3-step causal autoregressive student model via two-stage distillation and adversarial refinement. Dedicated attention mechanisms and positional encoding improvements are proposed to address long-video stability.
 
 6. **Core Idea**: Autoregressive distillation compresses the denoising process from 40+ steps to 3 steps; Reference Sink and RAPR address identity drift; together they enable generation of a 5-second 720p video in 20 seconds.
 

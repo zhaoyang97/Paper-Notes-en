@@ -28,15 +28,15 @@ This paper proves that GP-UCB achieves $\widetilde{O}(\sqrt{T})$ high-probabilit
 
 ## Background & Motivation
 
-**State of the Field**: GP-UCB is widely used in Bayesian optimization (BO). The bound of Srinivas et al. (2010) is $O(\sqrt{\beta_T T \gamma_T(\mathcal{X})})$, where $\gamma_T$ denotes the maximum information gain.
+**Background**: GP-UCB is widely used in Bayesian optimization (BO). The bound of Srinivas et al. (2010) is $O(\sqrt{\beta_T T \gamma_T(\mathcal{X})})$, where $\gamma_T$ denotes the maximum information gain.
 
 **Limitations of Prior Work**: Under the Matérn kernel, GP-UCB yields $\widetilde{O}(T^{(\nu+d)/(2\nu+d)})$, which is worse than the $O(\sqrt{T\ln T})$ bound of Scarlett (2018).
 
-**Root Cause**: The constraint $I(\mathbf{X}_T) \leq \gamma_T(\mathcal{X})$ is a worst-case bound. Since GP-UCB concentrates its query points near the optimum, the actual information gain is far smaller than the maximum.
+**Key Challenge**: The constraint $I(\mathbf{X}_T) \leq \gamma_T(\mathcal{X})$ is a worst-case bound. Since GP-UCB concentrates its query points near the optimum, the actual information gain is far smaller than the maximum.
 
-**Paper Goals**: Exploit the concentration of GP-UCB query points to derive a tighter upper bound on information gain.
+**Goal**: Exploit the concentration of GP-UCB query points to derive a tighter upper bound on information gain.
 
-**Starting Point**: Because GP-UCB achieves sublinear regret, query points concentrate near $\mathbf{x}^*$, so the information gain of the concentrated query set satisfies $I(\mathbf{X}_T) \ll \gamma_T(\mathcal{X})$.
+**Key Insight**: Because GP-UCB achieves sublinear regret, query points concentrate near $\mathbf{x}^*$, so the information gain of the concentrated query set satisfies $I(\mathbf{X}_T) \ll \gamma_T(\mathcal{X})$.
 
 **Core Idea**: Leverage the input concentration induced by the algorithm's own behavior to analyze information gain over a shrinking local region.
 

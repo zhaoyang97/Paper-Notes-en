@@ -29,18 +29,18 @@ To address the distribution drift induced by the reflow step in k-rectified flow
 
 ## Background & Motivation
 
-**State of the Field**: Rectified Flow learns an ODE velocity field from noise to data for efficient generation; k-rectified flow iteratively applies reflow to straighten trajectories, enabling few-step or even single-step generation. Current SOTA models (Flux, SD3, AuraFlow) adopt 1-rectified flow with ~30 NFE.
+**Background**: Rectified Flow learns an ODE velocity field from noise to data for efficient generation; k-rectified flow iteratively applies reflow to straighten trajectories, enabling few-step or even single-step generation. Current SOTA models (Flux, SD3, AuraFlow) adopt 1-rectified flow with ~30 NFE.
 
 **Limitations of Prior Work**:
    - Reflow requires large numbers of fake pairs (4M pairs in the original method), incurring substantial generation cost.
    - Fake pairs are produced by imperfect models and inherently deviate from the true data distribution, introducing systematic bias into reflow supervision signals.
    - Repeated reflow rounds cause error accumulation, progressively driving the model away from the real data distribution.
 
-**Root Cause**: Reflow aims to straighten trajectories for few-step generation, yet the fake-pair supervision it relies upon introduces distribution drift, causing generation quality under full-step inference to actually degrade—creating a fundamental tension between trajectory straightening and distributional fidelity.
+**Key Challenge**: Reflow aims to straighten trajectories for few-step generation, yet the fake-pair supervision it relies upon introduces distribution drift, causing generation quality under full-step inference to actually degrade—creating a fundamental tension between trajectory straightening and distributional fidelity.
 
-**Paper Goals**: To expose the distribution drift phenomenon caused by reflow and to design a new reflow strategy that straightens trajectories while maintaining fidelity to the true data distribution.
+**Goal**: To expose the distribution drift phenomenon caused by reflow and to design a new reflow strategy that straightens trajectories while maintaining fidelity to the true data distribution.
 
-**Starting Point**: Reconstruction error is used to quantitatively reveal drift—fake images exhibit substantially lower reconstruction error than real images, indicating that the model overfits the fake distribution and departs from the real one. The paper then proposes using inverted noise of real images combined with Slerp perturbations to construct "conic" supervision as a corrective mechanism.
+**Key Insight**: Reconstruction error is used to quantitatively reveal drift—fake images exhibit substantially lower reconstruction error than real images, indicating that the model overfits the fake distribution and departs from the real one. The paper then proposes using inverted noise of real images combined with Slerp perturbations to construct "conic" supervision as a corrective mechanism.
 
 **Core Idea**: Construct conic supervisory trajectories from the inverted noise of real images and their Slerp neighborhood, and alternate training between real pairs and fake pairs to simultaneously correct distribution drift and ensure trajectory straightness.
 

@@ -27,15 +27,15 @@ content_hash: b045eb6d3248acbd
 This paper proposes VIR-Bench — a benchmark based on 200 Japanese travel vlog videos that evaluates MLLMs' geospatial and temporal understanding via an itinerary reconstruction task (visiting order graph construction). Findings reveal that SOTA models (including GPT-4.1 and Gemini-2.5) still struggle significantly with POI recognition and temporal transition reasoning.
 
 ## Background & Motivation
-**State of the Field**: The video understanding capabilities of MLLMs are advancing rapidly, yet existing benchmarks (Ego4D, HourVideo, VSI-Bench, etc.) primarily focus on indoor scenes or short-range outdoor activities, lacking evaluation of geospatial-temporal understanding for long-distance travel (cross-city/cross-region).
+**Background**: The video understanding capabilities of MLLMs are advancing rapidly, yet existing benchmarks (Ego4D, HourVideo, VSI-Bench, etc.) primarily focus on indoor scenes or short-range outdoor activities, lacking evaluation of geospatial-temporal understanding for long-distance travel (cross-city/cross-region).
 
 **Limitations of Prior Work**: Long-distance geospatial-temporal reasoning is critical for embodied AI applications such as planning and navigation, yet no relevant benchmark exists.
 
-**Root Cause**: The spatial scale of existing benchmarks is too small (indoor/short-range) to evaluate models' understanding at the macro-geographic level (inter-city navigation) and over long temporal spans (multi-day itineraries).
+**Key Challenge**: The spatial scale of existing benchmarks is too small (indoor/short-range) to evaluate models' understanding at the macro-geographic level (inter-city navigation) and over long temporal spans (multi-day itineraries).
 
-**Paper Goals**: Construct a video benchmark for evaluating MLLMs' long-distance geospatial-temporal understanding.
+**Goal**: Construct a video benchmark for evaluating MLLMs' long-distance geospatial-temporal understanding.
 
-**Starting Point**: Use itinerary reconstruction from travel vlog videos as the test task — models must identify all visited locations along with their hierarchical relationships and temporal order from video content.
+**Key Insight**: Use itinerary reconstruction from travel vlog videos as the test task — models must identify all visited locations along with their hierarchical relationships and temporal order from video content.
 
 **Core Idea**: Reconstruct a visiting order graph from travel videos (nodes = locations, edges = inclusion/transition relations) to evaluate MLLMs' geospatial and temporal intelligence.
 

@@ -27,15 +27,15 @@ This paper proposes Decomp, a method that employs a teacher model (GPT-4o) to re
 
 ## Background & Motivation
 
-**State of the Field**: A common paradigm for training small models on mathematical reasoning is SFT on datasets of (problem, full solution) pairs. Data augmentation methods such as MetaMath (problem rephrasing) and MuggleMath (multi-solution sampling) can expand dataset size.
+**Background**: A common paradigm for training small models on mathematical reasoning is SFT on datasets of (problem, full solution) pairs. Data augmentation methods such as MetaMath (problem rephrasing) and MuggleMath (multi-solution sampling) can expand dataset size.
 
 **Limitations of Prior Work**: (a) Direct SFT does not simulate the human learning process of "master fundamentals before advanced topics," leading to overfitting on small datasets (experiments show that SFT on AIME2024 even degrades AIME2025 performance); (b) conventional curriculum learning only reorders examples within a dataset by difficulty, yet the dataset itself may lack simple examples covering foundational skills; (c) data augmentation typically produces same-difficulty paraphrases rather than substantially simpler subproblems.
 
-**Root Cause**: Complex reasoning requires composing multiple foundational skills, yet training data typically contains only complete, complex problems, preventing models from independently acquiring each underlying skill.
+**Key Challenge**: Complex reasoning requires composing multiple foundational skills, yet training data typically contains only complete, complex problems, preventing models from independently acquiring each underlying skill.
 
-**Paper Goals**: How to automatically generate subproblems spanning all difficulty levels from complex problems, and quantify difficulty to construct an effective curriculum?
+**Goal**: How to automatically generate subproblems spanning all difficulty levels from complex problems, and quantify difficulty to construct an effective curriculum?
 
-**Starting Point**: Exploit the structure of multi-step reasoning solutions — each individual reasoning step defines a simpler subproblem and can be recursively decomposed.
+**Key Insight**: Exploit the structure of multi-step reasoning solutions — each individual reasoning step defines a simpler subproblem and can be recursively decomposed.
 
 **Core Idea**: Recursively decompose reasoning steps → generate independent subproblems for each step → construct a concept dependency graph to quantify difficulty → train in easy-to-hard order.
 

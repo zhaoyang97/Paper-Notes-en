@@ -27,7 +27,7 @@ content_hash: c7640166ba5010a7
 This paper theoretically proves that a two-layer single-head Transformer suffices to represent the conditional $k$-gram model (i.e., $k$-th order induction head) for any $k$-th order Markov process, establishing the tightest known characterization of the relationship between Transformer depth and Markov order. The key insight is leveraging ReLU and LayerNorm nonlinearities in the MLP to compensate for the reduced number of layers.
 
 ## Background & Motivation
-**State of the Field**: In-context learning (ICL) is a core capability of Transformers, realized through induction head circuits in the input context that implement a "copy-and-match" mechanism. Theoretically, ICL can be modeled as learning conditional $k$-grams over Markov sequences.
+**Background**: In-context learning (ICL) is a core capability of Transformers, realized through induction head circuits in the input context that implement a "copy-and-match" mechanism. Theoretically, ICL can be modeled as learning conditional $k$-grams over Markov sequences.
 
 **Limitations of Prior Work**:
 - A single-layer single-head Transformer cannot efficiently represent a first-order induction head unless the hidden dimension is exponentially large [Sanford et al.].
@@ -35,9 +35,9 @@ This paper theoretically proves that a two-layer single-head Transformer suffice
 - Best prior result: a three-layer single-head Transformer can handle arbitrary $k$-th order [Rajaraman et al.].
 - **Open question**: Can a two-layer single-head Transformer handle arbitrary order $k$?
 
-**Root Cause**: The three-layer construction uses three attention layers to separately handle "current context," "shifted context," and "matching" — three distinct operations. Reducing to two layers forces a single attention layer to accomplish two operations simultaneously, which is informationally insufficient.
+**Key Challenge**: The three-layer construction uses three attention layers to separately handle "current context," "shifted context," and "matching" — three distinct operations. Reducing to two layers forces a single attention layer to accomplish two operations simultaneously, which is informationally insufficient.
 
-**Starting Point**: The observation that an MLP (with ReLU + LayerNorm) can recover missing information from the attention output in reverse — effectively letting the MLP assume the role of the second attention head.
+**Key Insight**: The observation that an MLP (with ReLU + LayerNorm) can recover missing information from the attention output in reverse — effectively letting the MLP assume the role of the second attention head.
 
 **Core Idea**: Use the nonlinearities of the MLP (ReLU filtering + LayerNorm normalization) to disentangle key token embeddings from the first-layer attention output, replacing the second attention operation in the three-layer construction.
 

@@ -27,15 +27,15 @@ content_hash: d35edf810cd5d3da
 This paper introduces MMAT-1M, the first million-scale multimodal agent tuning dataset, constructed via a four-stage data engine (Foundation → Rationale → Reflection → Integration). It endows MLLMs with CoT reasoning, tool invocation, and self-reflection capabilities, achieving an average improvement of 2.7% on InternVL2.5-8B and 8.8% on RAG tasks.
 
 ## Background & Motivation
-**State of the Field**: LLMs have achieved notable progress in CoT reasoning and tool use through agent tuning; however, the multimodal domain still lacks large-scale, high-quality agent tuning datasets. Existing multimodal agent datasets (e.g., LLaVA-Plus at 117K, MM-Traj at 20K) are limited in scale and distribution diversity.
+**Background**: LLMs have achieved notable progress in CoT reasoning and tool use through agent tuning; however, the multimodal domain still lacks large-scale, high-quality agent tuning datasets. Existing multimodal agent datasets (e.g., LLaVA-Plus at 117K, MM-Traj at 20K) are limited in scale and distribution diversity.
 
 **Limitations of Prior Work**: Existing multimodal agent datasets suffer from three key deficiencies: (1) narrow data distribution that fails to improve model performance across diverse benchmarks; (2) absence of reflection mechanisms to handle errors introduced by vision tools, resulting in poor model robustness; and (3) inflexible reasoning and tool-use mechanisms that limit practical applicability.
 
-**Root Cause**: Multimodal large models must simultaneously possess reasoning capability, tool invocation capability, and error correction capability, yet existing datasets cannot cover all three dimensions at adequate scale.
+**Key Challenge**: Multimodal large models must simultaneously possess reasoning capability, tool invocation capability, and error correction capability, yet existing datasets cannot cover all three dimensions at adequate scale.
 
-**Paper Goals**: To construct a million-scale multimodal agent tuning dataset that jointly supports CoT reasoning, dynamic API calls, and reflective error correction, provided in both one-turn and multi-turn formats to balance efficiency and accuracy.
+**Goal**: To construct a million-scale multimodal agent tuning dataset that jointly supports CoT reasoning, dynamic API calls, and reflective error correction, provided in both one-turn and multi-turn formats to balance efficiency and accuracy.
 
-**Starting Point**: Starting from existing public multimodal QA datasets, the paper uses GPT-4o to progressively generate reasoning trajectories, dynamically integrate tool call results, and repair logical gaps and answer-leaking behaviors through a reflection step.
+**Key Insight**: Starting from existing public multimodal QA datasets, the paper uses GPT-4o to progressively generate reasoning trajectories, dynamically integrate tool call results, and repair logical gaps and answer-leaking behaviors through a reflection step.
 
 **Core Idea**: A four-stage data engine (Foundation → Rationale → Reflection → Integration) synthesizes million-scale agent tuning data from public QA pairs, simultaneously supporting CoT, tool invocation, and self-reflection.
 

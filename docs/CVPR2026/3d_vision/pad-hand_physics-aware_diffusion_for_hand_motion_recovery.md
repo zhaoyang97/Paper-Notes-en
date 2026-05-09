@@ -29,15 +29,15 @@ PAD-Hand is a physics-aware conditional diffusion framework that models Euler–
 
 ## Background & Motivation
 
-1. **State of the Field**: Monocular 3D hand reconstruction has made substantial progress, with large-scale pretrained models (e.g., WiLoR) improving per-frame accuracy. However, temporal inconsistency remains a persistent issue, and existing methods primarily capture kinematic patterns without sensitivity to dynamics.
+1. **Background**: Monocular 3D hand reconstruction has made substantial progress, with large-scale pretrained models (e.g., WiLoR) improving per-frame accuracy. However, temporal inconsistency remains a persistent issue, and existing methods primarily capture kinematic patterns without sensitivity to dynamics.
 
 2. **Limitations of Prior Work**: (1) Image-based estimation lacks temporal consistency, producing inter-frame jitter; (2) existing physics-constrained methods (e.g., enforcing EL residuals to zero) are deterministic—they assume the observed motion can fully satisfy the physical equations, ignoring uncertainty from estimation noise and model approximation; (3) deterministic physical constraints may induce difficult optimization landscapes or suboptimal solutions.
 
-3. **Root Cause**: 3D hand estimation is inherently noisy and physical models are only approximate; the assumption of zero residuals is inconsistent with reality. A probabilistic approach to physics integration is needed—one that allows the model to reason over the motion data manifold and produce a distributed solution space.
+3. **Key Challenge**: 3D hand estimation is inherently noisy and physical models are only approximate; the assumption of zero residuals is inconsistent with reality. A probabilistic approach to physics integration is needed—one that allows the model to reason over the motion data manifold and produce a distributed solution space.
 
-4. **Paper Goals**: (1) Probabilistically integrate physical dynamics into the diffusion model as a replacement for hard constraints; (2) provide interpretable physical consistency metrics (variance) indicating which frames and joints yield unreliable estimates.
+4. **Goal**: (1) Probabilistically integrate physical dynamics into the diffusion model as a replacement for hard constraints; (2) provide interpretable physical consistency metrics (variance) indicating which frames and joints yield unreliable estimates.
 
-5. **Starting Point**: EL dynamics residuals are treated as "virtual observations" sampled from a distribution, whose likelihood is coupled with the visual data term to guide the reverse diffusion process.
+5. **Key Insight**: EL dynamics residuals are treated as "virtual observations" sampled from a distribution, whose likelihood is coupled with the visual data term to guide the reverse diffusion process.
 
 6. **Core Idea**: Replace deterministic physical constraints with probabilistic physics—virtual observations combined with Laplace-approximated variance—for diffusion-based hand motion recovery.
 

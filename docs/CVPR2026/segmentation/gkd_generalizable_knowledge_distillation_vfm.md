@@ -29,15 +29,15 @@ This paper proposes the GKD framework, which distills compact student models wit
 
 ## Background & Motivation
 
-**State of the Field**: Knowledge distillation (KD) is widely used for semantic segmentation model compression—distilling lightweight student models from large teacher models. Conventional KD methods (CWD/Af-DCD/CIRKD, etc.) focus on preserving source-domain accuracy and perform well in-domain. The paradigm of VFMs (DINOv2/EVA02) as general-purpose feature extractors paired with lightweight decoders has been broadly adopted.
+**Background**: Knowledge distillation (KD) is widely used for semantic segmentation model compression—distilling lightweight student models from large teacher models. Conventional KD methods (CWD/Af-DCD/CIRKD, etc.) focus on preserving source-domain accuracy and perform well in-domain. The paradigm of VFMs (DINOv2/EVA02) as general-purpose feature extractors paired with lightweight decoders has been broadly adopted.
 
 **Limitations of Prior Work**: Conventional KD focuses exclusively on source-domain (in-domain) accuracy, neglecting cross-domain generalization capability. This problem is particularly severe in the VFM era—although VFMs inherently possess strong generalization, student models distilled via conventional KD exhibit degraded generalization. Experiments show that single-stage KD can even **harm** student generalization, with some methods performing worse than the no-distillation baseline.
 
-**Root Cause**: Single-stage KD suffers from **optimization conflict**—the task loss drives the student to fit source-domain-specific decision boundaries, while the distillation loss encourages the student to approximate the teacher's domain-invariant representations. These two gradient directions are contradictory, leading to training instability (oscillating loss curves) and generalization degradation. This implies that "KD compresses capacity while compromising robustness."
+**Key Challenge**: Single-stage KD suffers from **optimization conflict**—the task loss drives the student to fit source-domain-specific decision boundaries, while the distillation loss encourages the student to approximate the teacher's domain-invariant representations. These two gradient directions are contradictory, leading to training instability (oscillating loss curves) and generalization degradation. This implies that "KD compresses capacity while compromising robustness."
 
-**Paper Goals**: When distilling compact models from VFMs, the goal is to simultaneously compress the model while **preserving or even improving** cross-domain generalization. Two evaluation settings are considered: F2F (VFM→smaller VFM, e.g., DINOv2-L→DINOv2-B) and F2L (VFM→local model, e.g., DINOv2-B→ViT-S).
+**Goal**: When distilling compact models from VFMs, the goal is to simultaneously compress the model while **preserving or even improving** cross-domain generalization. Two evaluation settings are considered: F2F (VFM→smaller VFM, e.g., DINOv2-L→DINOv2-B) and F2L (VFM→local model, e.g., DINOv2-B→ViT-S).
 
-**Starting Point**: Representation learning and task learning **should not be coupled**. The student should first purely learn the teacher's domain-general representations (without exposure to task labels), after which the encoder is frozen and only the task head is trained.
+**Key Insight**: Representation learning and task learning **should not be coupled**. The student should first purely learn the teacher's domain-general representations (without exposure to task labels), after which the encoder is frozen and only the task head is trained.
 
 **Core Idea**: Decouple representation learning from task learning—Stage 1 performs pure feature distillation to acquire domain-general representations; Stage 2 freezes the encoder and trains the task head, complemented by QSD for selective retrieval of the teacher's spatial knowledge.
 

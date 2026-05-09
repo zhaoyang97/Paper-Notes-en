@@ -30,13 +30,13 @@ A two-stage zero-shot time series anomaly detection framework is proposed: ViT4T
 
 ### State of the Field
 
-**State of the Field**: Traditional time series anomaly detection (TSAD) methods train domain-specific models on numerical data, lacking the **visual-temporal understanding** that human experts possess for identifying contextual anomalies (e.g., gradual drift).
+**Background**: Traditional time series anomaly detection (TSAD) methods train domain-specific models on numerical data, lacking the **visual-temporal understanding** that human experts possess for identifying contextual anomalies (e.g., gradual drift).
 
 Directly applying VLMs to TSAD encounters a **resolution-context dilemma**:
 
 ### Root Cause
 
-**Root Cause**: Short windows preserve resolution but provide limited context, with prohibitively high token costs (1000-step sequence → ~20 images → ~20,000 tokens).
+**Key Challenge**: Short windows preserve resolution but provide limited context, with prohibitively high token costs (1000-step sequence → ~20 images → ~20,000 tokens).
 
 ### Limitations of Prior Work
 

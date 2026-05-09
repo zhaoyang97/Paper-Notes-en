@@ -29,7 +29,7 @@ This paper proposes xCPD, a plug-and-play plugin that refines the modeling unit 
 
 ## Background & Motivation
 
-**State of the Field**: Multivariate time series forecasting (MTSF) is a core AI task with broad applications in traffic, finance, energy, and meteorology. Recent advances have proceeded along two main axes: model architecture (Linear/CNN/Transformer/MLP/GNN) and channel strategy (CI/CD/CP), with the latter emerging as a key performance bottleneck.
+**Background**: Multivariate time series forecasting (MTSF) is a core AI task with broad applications in traffic, finance, energy, and meteorology. Recent advances have proceeded along two main axes: model architecture (Linear/CNN/Transformer/MLP/GNN) and channel strategy (CI/CD/CP), with the latter emerging as a key performance bottleneck.
 
 **Limitations of the Three Channel Paradigms**: (1) CI (Channel-Independent), e.g., DLinear/PatchTST, models each channel independently—robust but ignores inter-channel relations; (2) CD (Channel-Dependent), e.g., TSMixer/TimesNet, aggregates all channels and may introduce irrelevant information leading to over-smoothing; (3) CP (Channel-Partiality), e.g., DUET/CCM/TimeFilter, attempts to balance the two but has fundamental shortcomings.
 
@@ -37,7 +37,7 @@ This paper proposes xCPD, a plug-and-play plugin that refines the modeling unit 
 
 **Frequency Coupling Problem**: CD/CD models compute attention weights in the time domain, where low-frequency trends, mid-frequency fluctuations, and high-frequency noise are entangled in the same embedding. A high attention score between two channels may simultaneously reflect meaningful low-frequency seasonal dependencies and irrelevant high-frequency noise correlations—the model cannot disentangle them, leading to spurious correlations.
 
-**Starting Point**: The modeling unit is refined from "channels" to "channel-patches" (with patches as graph nodes). Dependency modeling is conducted in the graph spectral domain (rather than the time domain), followed by frequency-energy-based grouping and MoE routing of frequency-specific filter experts, achieving frequency-decoupled fine-grained channel-patch dependency modeling.
+**Key Insight**: The modeling unit is refined from "channels" to "channel-patches" (with patches as graph nodes). Dependency modeling is conducted in the graph spectral domain (rather than the time domain), followed by frequency-energy-based grouping and MoE routing of frequency-specific filter experts, achieving frequency-decoupled fine-grained channel-patch dependency modeling.
 
 **Practical Value**: xCPD is designed as a post-processing plugin that requires no retraining of the backbone model. With linear computational complexity, it can be directly embedded into existing forecasting pipelines, making it suitable for large-scale real-time scenarios.
 

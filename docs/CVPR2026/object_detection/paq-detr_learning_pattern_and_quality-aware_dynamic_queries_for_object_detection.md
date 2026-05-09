@@ -26,11 +26,11 @@ content_hash: fd3554b8fb07d2a3
 PaQ-DETR proposes pattern-based dynamic query generation (content-aware weighted combination of shared basis patterns) combined with quality-aware one-to-many assignment (adaptive positive sample selection based on localization–classification consistency), jointly addressing query representation imbalance and supervision sparsity in DETR. It achieves consistent gains of 1.5%–4.2% mAP across multiple backbones.
 
 ## Background & Motivation
-1. **State of the Field**: DETR reformulates object detection as a set prediction task, yet still relies on fixed learnable queries and suffers from severe query utilization imbalance.
+1. **Background**: DETR reformulates object detection as a set prediction task, yet still relies on fixed learnable queries and suffers from severe query utilization imbalance.
 2. **Limitations of Prior Work**: (i) Static queries lack adaptability to input images; (ii) content-dependent dynamic queries improve flexibility but introduce semantic instability; (iii) one-to-one matching yields extremely sparse supervision—only a few "winning" queries consistently receive strong gradients.
-3. **Root Cause**: Query representation imbalance and supervision imbalance are two facets of the same problem—a small subset of queries captures the majority of gradients (Gini coefficient as high as 0.97), leaving most queries weakly optimized or idle.
-4. **Paper Goals**: Design a unified framework that simultaneously improves query adaptability and supervision balance.
-5. **Starting Point**: Represent queries as convex combinations of shared basis patterns conditioned on encoder features, while enriching supervision signals through quality-aware assignment.
+3. **Key Challenge**: Query representation imbalance and supervision imbalance are two facets of the same problem—a small subset of queries captures the majority of gradients (Gini coefficient as high as 0.97), leaving most queries weakly optimized or idle.
+4. **Goal**: Design a unified framework that simultaneously improves query adaptability and supervision balance.
+5. **Key Insight**: Represent queries as convex combinations of shared basis patterns conditioned on encoder features, while enriching supervision signals through quality-aware assignment.
 6. **Core Idea**: Shared pattern bases + content-aware weights → gradient sharing mitigates imbalance; quality-aware one-to-many assignment → richer supervision signals.
 
 ## Method

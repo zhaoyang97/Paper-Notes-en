@@ -23,10 +23,10 @@ This paper proposes the SLGM framework, which reformulates structured prediction
 
 ## Background & Motivation
 
-- **State of the Field**: Generative pre-trained language models (GLMs) excel at open-ended text generation but fall substantially short of encoder models of comparable scale on **structured prediction tasks** (NER, relation extraction, semantic role labeling, etc.).
+- **Background**: Generative pre-trained language models (GLMs) excel at open-ended text generation but fall substantially short of encoder models of comparable scale on **structured prediction tasks** (NER, relation extraction, semantic role labeling, etc.).
 - **Limitations of Prior Work**: The conventional explanation attributes this gap to a lack of structural knowledge; however, GLMs already generate syntactically correct and semantically coherent text. Methods such as DeepStruct and TANL rely on implicit task/dataset name prompts, requiring the model to retrieve format information from memory—an approach that is unreliable and difficult to generalize. GPT-4, for instance, achieves only 57.7 Entity F1 on CoNLL-04 joint entity-relation extraction, far below smaller specialized models.
-- **Root Cause**: The authors hypothesize that the true bottleneck lies in the missing connection between the model's **internal structural representations** and its **output token space**.
-- **Paper Goals**: To bridge this gap through explicit format specifications, format-aware training losses, and constrained decoding, enabling small generative models to perform competitively on structured prediction tasks without increasing model parameters.
+- **Key Challenge**: The authors hypothesize that the true bottleneck lies in the missing connection between the model's **internal structural representations** and its **output token space**.
+- **Goal**: To bridge this gap through explicit format specifications, format-aware training losses, and constrained decoding, enabling small generative models to perform competitively on structured prediction tasks without increasing model parameters.
 
 ## Method
 

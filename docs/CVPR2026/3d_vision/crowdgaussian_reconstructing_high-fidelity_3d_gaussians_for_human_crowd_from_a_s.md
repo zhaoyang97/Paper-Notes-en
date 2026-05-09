@@ -29,18 +29,18 @@ CrowdGaussian proposes a unified framework for reconstructing multi-person 3D Ga
 
 ## Background & Motivation
 
-**State of the Field**: Single-image 3D human reconstruction has seen significant progress in recent years, with large reconstruction models (LRMs) leveraging Transformers and large-scale datasets to enable fast feed-forward reconstruction from a single image. However, existing methods almost exclusively handle clear, close-range single-person images.
+**Background**: Single-image 3D human reconstruction has seen significant progress in recent years, with large reconstruction models (LRMs) leveraging Transformers and large-scale datasets to enable fast feed-forward reconstruction from a single image. However, existing methods almost exclusively handle clear, close-range single-person images.
 
 **Limitations of Prior Work**:
    - **Severe occlusion**: In crowd scenes, frequent inter-person and person-object occlusions result in incomplete body parts. Existing methods applied directly to such inputs produce transparent holes and incomplete geometry.
    - **Low resolution**: Cropped images of individuals in crowds are of very low resolution, leading to blurry appearance and lack of high-frequency detail.
    - **Efficiency demands for multi-person scenes**: Simultaneously reconstructing a large number of people is required, yet sequential per-person processing is too inefficient.
 
-**Root Cause**: Existing large human reconstruction models possess strong 2D-to-3D generative priors but lack occlusion-aware training. When fed occluded inputs, the Transformer fails to integrate incomplete visual features, producing fragmented outputs. Fine-tuning with limited 3D supervision tends to amplify geometric bias from monocular ambiguity, thereby degrading the pre-trained prior.
+**Key Challenge**: Existing large human reconstruction models possess strong 2D-to-3D generative priors but lack occlusion-aware training. When fed occluded inputs, the Transformer fails to integrate incomplete visual features, producing fragmented outputs. Fine-tuning with limited 3D supervision tends to amplify geometric bias from monocular ambiguity, thereby degrading the pre-trained prior.
 
-**Paper Goals**: (a) How to recover complete 3D human bodies from severely occluded crops? (b) How to recover high-frequency texture details from low-resolution inputs? (c) How to efficiently handle multi-person scenes simultaneously?
+**Goal**: (a) How to recover complete 3D human bodies from severely occluded crops? (b) How to recover high-frequency texture details from low-resolution inputs? (c) How to efficiently handle multi-person scenes simultaneously?
 
-**Starting Point**: Rather than supervised fine-tuning with 3D annotations, the paper adopts a *self-supervised distillation* approach — a frozen teacher model generates pseudo ground truth on complete images, while a student model learns to recover complete geometry from occluded inputs.
+**Key Insight**: Rather than supervised fine-tuning with 3D annotations, the paper adopts a *self-supervised distillation* approach — a frozen teacher model generates pseudo ground truth on complete images, while a student model learns to recover complete geometry from occluded inputs.
 
 **Core Idea**: A two-stage framework — Stage 1 uses a self-supervised-adapted LORM to generate coarse but complete multi-person 3DGS; Stage 2 uses a CrowdRefiner trained with SCL to refine the rendered results, which are then distilled back into the 3DGS.
 

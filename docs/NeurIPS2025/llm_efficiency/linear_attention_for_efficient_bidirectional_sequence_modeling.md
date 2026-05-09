@@ -29,18 +29,18 @@ This paper proposes Lion, a framework that, for the first time, systematically e
 
 ## Background & Motivation
 
-**State of the Field**: Linear Transformers (e.g., RetNet, Mamba-2, GLA) have emerged as efficient alternatives to softmax Transformers for causal sequence modeling, supporting parallel training via matrix multiplication and RNN-style inference. However, their application to bidirectional tasks (e.g., BERT, ViT) has received almost no systematic investigation.
+**Background**: Linear Transformers (e.g., RetNet, Mamba-2, GLA) have emerged as efficient alternatives to softmax Transformers for causal sequence modeling, supporting parallel training via matrix multiplication and RNN-style inference. However, their application to bidirectional tasks (e.g., BERT, ViT) has received almost no systematic investigation.
 
 **Limitations of Prior Work**:
    - Existing bidirectional SSMs (e.g., Vim, Hydra) are primarily Mamba-based and naively execute causal scans twice—once forward and once backward.
    - This "dual-scan" approach fails to exploit a natural prior of bidirectional modeling: the entire sequence is available at both training and inference time.
    - As a result, training speed lags far behind softmax Transformers (Vim is 14.95× slower than DeiT).
 
-**Root Cause**: The efficiency advantage of SSMs in causal tasks (RNN inference) is largely lost in bidirectional settings due to the need for chunking, yet directly computing the full attention matrix reintroduces $\mathcal{O}(L^2)$ complexity.
+**Key Challenge**: The efficiency advantage of SSMs in causal tasks (RNN inference) is largely lost in bidirectional settings due to the need for chunking, yet directly computing the full attention matrix reintroduces $\mathcal{O}(L^2)$ complexity.
 
-**Paper Goals**: To provide a systematic framework for extending linear Transformers to bidirectional settings, simultaneously optimizing training speed, inference efficiency, and model performance.
+**Goal**: To provide a systematic framework for extending linear Transformers to bidirectional settings, simultaneously optimizing training speed, inference efficiency, and model performance.
 
-**Starting Point**: Building on the mask structure of causal linear Transformers, the causal mask $\mathbf{M}^C$ (lower triangular) is generalized to a bidirectional mask $\mathbf{M}$ (full matrix), where $\mathbf{M}_{ij}$ equals the product of all decay factors between positions $i$ and $j$.
+**Key Insight**: Building on the mask structure of causal linear Transformers, the causal mask $\mathbf{M}^C$ (lower triangular) is generalized to a bidirectional mask $\mathbf{M}$ (full matrix), where $\mathbf{M}_{ij}$ equals the product of all decay factors between positions $i$ and $j$.
 
 **Core Idea**: The bidirectional mask is defined as the lower-triangular forward mask plus the upper-triangular backward mask minus the identity matrix (to avoid double-counting the diagonal), thereby converting any causal linear Transformer into its bidirectional counterpart.
 

@@ -27,15 +27,15 @@ content_hash: 5d1d70bfe78068f0
 DeCoRL transforms CoT reasoning from monolithic sequential processing into an "orchestra-style" modular parallel collaboration — nine specialized sub-models (parsing / semantic / entity / fact-checking / style / quality / computation / verification / integration) generate reasoning sub-steps in parallel, coordinated via dual reward attribution (local quality + contribution) and cascaded DRPO optimization, achieving 80.8% on RM-Bench (surpassing all baselines), a 3.8× inference speedup, and a 22.7% improvement in interpretability.
 
 ## Background & Motivation
-**State of the Field**: CoT reasoning combined with RLHF is the dominant paradigm for enhancing complex reasoning in LLMs; methods such as DPO and GRPO are already widely adopted.
+**Background**: CoT reasoning combined with RLHF is the dominant paradigm for enhancing complex reasoning in LLMs; methods such as DPO and GRPO are already widely adopted.
 
 **Limitations of Prior Work**: Two fundamental limitations persist — (1) **black-box rewards**: existing RL methods provide holistic reward signals that cannot distinguish the contribution of individual reasoning steps, making error diagnosis extremely difficult; (2) **sequential bottleneck**: sequential decoding has time complexity $O(n)$, which is impractical for complex reasoning tasks.
 
-**Root Cause**: A tension between coherence and modularity — end-to-end optimization preserves coherence but sacrifices modularity and efficiency, whereas naive modularization may compromise reasoning coherence.
+**Key Challenge**: A tension between coherence and modularity — end-to-end optimization preserves coherence but sacrifices modularity and efficiency, whereas naive modularization may compromise reasoning coherence.
 
-**Paper Goals**: Simultaneously achieve interpretability (step-level reward attribution) and efficiency (parallel generation) without sacrificing quality.
+**Goal**: Simultaneously achieve interpretability (step-level reward attribution) and efficiency (parallel generation) without sacrificing quality.
 
-**Starting Point**: The reasoning process is analogized to a symphony orchestra — a solo pianist (monolithic model) is replaced by a team of specialist musicians (dedicated modules) guided by a conductor (reward coordination) and rehearsal (cascaded training). Each module focuses on one reasoning facet; outputs are generated in parallel and then integrated.
+**Key Insight**: The reasoning process is analogized to a symphony orchestra — a solo pianist (monolithic model) is replaced by a team of specialist musicians (dedicated modules) guided by a conductor (reward coordination) and rehearsal (cascaded training). Each module focuses on one reasoning facet; outputs are generated in parallel and then integrated.
 
 **Core Idea**: Dedicated sub-models generate reasoning sub-steps in parallel; dual reward attribution precisely evaluates each module; cascaded DRPO coordinates the optimization.
 

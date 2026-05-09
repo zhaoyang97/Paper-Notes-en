@@ -29,15 +29,15 @@ This paper proposes MTR-DuplexBench, a comprehensive multi-round evaluation benc
 
 ## Background & Motivation
 
-**State of the Field**: Full-duplex speech language models (FD-SLMs) enable real-time "simultaneous listening and speaking" interactions, supporting complex conversational behaviors such as interruptions and backchannels, and represent the future direction of spoken dialogue systems. Moshi and Freeze-Omni are currently the only two open-source FD-SLMs.
+**Background**: Full-duplex speech language models (FD-SLMs) enable real-time "simultaneous listening and speaking" interactions, supporting complex conversational behaviors such as interruptions and backchannels, and represent the future direction of spoken dialogue systems. Moshi and Freeze-Omni are currently the only two open-source FD-SLMs.
 
 **Limitations of Prior Work**: Existing benchmarks (e.g., Full-Duplex-Bench, Full-Duplex-Bench v1.5) focus primarily on single-turn interaction evaluation, whereas real-world conversations typically unfold over multiple turns. Moreover, most existing benchmarks evaluate only conversational characteristics (e.g., interruptions, backchannels), neglecting critical capabilities such as instruction following and safety. FD-Bench supports multi-round evaluation but is limited to interruption scenarios, and Talking Turns requires costly human data collection.
 
-**Root Cause**: Full-duplex dialogue evaluation faces two core technical challenges: (1) *Ambiguous turn boundaries*: unlike half-duplex systems, full-duplex communication proceeds spontaneously without explicit turn delimiters; (2) *Context inconsistency*: in multi-round evaluation, model responses in earlier turns may deviate substantially from ground-truth responses, causing subsequent user inputs to diverge from realistic scenarios and undermining evaluation reliability.
+**Key Challenge**: Full-duplex dialogue evaluation faces two core technical challenges: (1) *Ambiguous turn boundaries*: unlike half-duplex systems, full-duplex communication proceeds spontaneously without explicit turn delimiters; (2) *Context inconsistency*: in multi-round evaluation, model responses in earlier turns may deviate substantially from ground-truth responses, causing subsequent user inputs to diverge from realistic scenarios and undermining evaluation reliability.
 
-**Paper Goals**: To construct a comprehensive FD-SLM evaluation benchmark that supports round-by-round multi-turn assessment across four dimensions: conversational characteristics, dialogue quality, instruction following, and safety.
+**Goal**: To construct a comprehensive FD-SLM evaluation benchmark that supports round-by-round multi-turn assessment across four dimensions: conversational characteristics, dialogue quality, instruction following, and safety.
 
-**Starting Point**: A full-duplex turn segmentation algorithm is designed to decompose continuous full-duplex dialogue into discrete turns. During evaluation of each turn, the assistant channel of all preceding turns is filled with ground-truth responses, simultaneously resolving both the turn boundary ambiguity and context inconsistency problems.
+**Key Insight**: A full-duplex turn segmentation algorithm is designed to decompose continuous full-duplex dialogue into discrete turns. During evaluation of each turn, the assistant channel of all preceding turns is filled with ground-truth responses, simultaneously resolving both the turn boundary ambiguity and context inconsistency problems.
 
 **Core Idea**: Turn boundaries are determined via repeated GPT-4o segmentation with majority voting and clustering-based filtering. Context drift is eliminated through a strategy of "ground-truth responses for prior turns + model inference for the current turn," forming a four-dimensional comprehensive evaluation framework.
 

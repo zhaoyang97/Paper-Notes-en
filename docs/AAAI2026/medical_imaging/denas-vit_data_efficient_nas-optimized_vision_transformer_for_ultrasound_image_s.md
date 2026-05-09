@@ -28,18 +28,18 @@ DeNAS-ViT is proposed as the first method to apply NAS at the token level within
 
 ## Background & Motivation
 
-**State of the Field**: Ultrasound image segmentation is critical for cardiac disease diagnosis. Deep learning methods (UNet++, TransUNet, EfficientViT) have shown progress but rely on manually designed architectures. NAS can automate architecture optimization; however, existing NAS methods search only at the module level (selecting between convolution or Transformer blocks), neglecting finer-grained operations within modules.
+**Background**: Ultrasound image segmentation is critical for cardiac disease diagnosis. Deep learning methods (UNet++, TransUNet, EfficientViT) have shown progress but rely on manually designed architectures. NAS can automate architecture optimization; however, existing NAS methods search only at the module level (selecting between convolution or Transformer blocks), neglecting finer-grained operations within modules.
 
 **Limitations of Prior Work**:
 - Manual architecture design yields limited gains when prior knowledge is insufficient
 - Ultrasound annotation data is scarce, whereas NAS inherently requires large amounts of data
 - Module-level NAS search has low precision and tends to select the most complex operations (e.g., ViT), rendering the search meaningless
 
-**Root Cause**: NAS requires abundant data to search for optimal architectures, yet ultrasound segmentation suffers from precisely this scarcity of labeled data — how can the conflicting data demands of the two be reconciled?
+**Key Challenge**: NAS requires abundant data to search for optimal architectures, yet ultrasound segmentation suffers from precisely this scarcity of labeled data — how can the conflicting data demands of the two be reconciled?
 
-**Paper Goals**: Design an efficient token-level NAS framework combined with a data-efficient semi-supervised learning strategy.
+**Goal**: Design an efficient token-level NAS framework combined with a data-efficient semi-supervised learning strategy.
 
-**Starting Point**: Apply NAS prior to the attention computation in ViT — searching for optimal multi-scale token representations (rather than entire modules) — while using NAS-guided semi-supervised learning to reduce dependence on labeled data.
+**Key Insight**: Apply NAS prior to the attention computation in ViT — searching for optimal multi-scale token representations (rather than entire modules) — while using NAS-guided semi-supervised learning to reduce dependence on labeled data.
 
 **Core Idea**: Token-level NAS search within ViT + NAS-constraint-driven semi-supervised co-training.
 

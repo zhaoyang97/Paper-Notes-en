@@ -29,13 +29,13 @@ SHARP generates approximately 1.2 million 3D Gaussians from a single image via a
 
 ## Background & Motivation
 
-**State of the Field**: Novel view synthesis has evolved from multi-image optimization methods (NeRF, 3DGS) to single-image feedforward approaches (Splatter Image, Flash3D) and diffusion-based methods (Gen3C, ViewCrafter, SVC). The former are fast but limited in quality; the latter achieve higher fidelity but require minutes of processing.
+**Background**: Novel view synthesis has evolved from multi-image optimization methods (NeRF, 3DGS) to single-image feedforward approaches (Splatter Image, Flash3D) and diffusion-based methods (Gen3C, ViewCrafter, SVC). The former are fast but limited in quality; the latter achieve higher fidelity but require minutes of processing.
 
 **Limitations of Prior Work**: (1) Feedforward methods (e.g., Flash3D) exhibit significantly lower visual fidelity than diffusion-based methods; (2) diffusion-based methods (e.g., Gen3C requiring ~15 minutes) are too slow for interactive browsing; (3) at close-range viewpoints, diffusion-based outputs are often less sharp than the input photograph; (4) most methods lack metric scale, preventing coupling with physical devices.
 
-**Root Cause**: How can high-fidelity, photorealistic rendering at close viewpoints be achieved while maintaining sub-second interactive speed?
+**Key Challenge**: How can high-fidelity, photorealistic rendering at close viewpoints be achieved while maintaining sub-second interactive speed?
 
-**Paper Goals**: An end-to-end regression network is trained on a Depth Pro encoder backbone to predict dual-layer depth maps and fine-grained residuals for all Gaussian attributes. A learned depth adjustment module is introduced to resolve monocular depth ambiguity, a carefully designed loss configuration suppresses artifacts, and self-supervised fine-tuning is applied to adapt to real-world images.
+**Goal**: An end-to-end regression network is trained on a Depth Pro encoder backbone to predict dual-layer depth maps and fine-grained residuals for all Gaussian attributes. A learned depth adjustment module is introduced to resolve monocular depth ambiguity, a carefully designed loss configuration suppresses artifacts, and self-supervised fine-tuning is applied to adapt to real-world images.
 
 ## Method
 

@@ -27,11 +27,11 @@ content_hash: e86b26268fba86de
 LCDrive proposes a Latent Chain-of-Thought (Latent CoT) framework that replaces natural language CoT with action proposal tokens and world model prediction tokens for reasoning, achieving lower latency and superior trajectory quality in end-to-end autonomous driving via cold-start + RL post-training.
 
 ## Background & Motivation
-1. **State of the Field**: Vision-Language-Action (VLA) models have become a dominant paradigm for end-to-end autonomous driving, and textual CoT reasoning has been introduced to improve performance in long-tail scenarios.
+1. **Background**: Vision-Language-Action (VLA) models have become a dominant paradigm for end-to-end autonomous driving, and textual CoT reasoning has been introduced to improve performance in long-tail scenarios.
 2. **Limitations of Prior Work**: (i) Natural language is ill-suited for representing spatiotemporal geometry and multi-agent interactions; (ii) autoregressive generation of long text introduces significant latency; (iii) generated actions may severely deviate from textual reasoning (e.g., text says "turn left" but the action actually turns right).
-3. **Root Cause**: Although textual CoT leverages the reasoning capabilities of LLMs, text is not the optimal representational medium for driving decisions.
-4. **Paper Goals**: Design a more efficient and better-aligned reasoning representation to replace textual CoT.
-5. **Starting Point**: Express reasoning as a structured sequence in latent vector space rather than natural language.
+3. **Key Challenge**: Although textual CoT leverages the reasoning capabilities of LLMs, text is not the optimal representational medium for driving decisions.
+4. **Goal**: Design a more efficient and better-aligned reasoning representation to replace textual CoT.
+5. **Key Insight**: Express reasoning as a structured sequence in latent vector space rather than natural language.
 6. **Core Idea**: Construct latent CoT by interleaving action proposal tokens (sharing vocabulary with output actions) and world model tokens (predicting future scene states).
 
 ## Method

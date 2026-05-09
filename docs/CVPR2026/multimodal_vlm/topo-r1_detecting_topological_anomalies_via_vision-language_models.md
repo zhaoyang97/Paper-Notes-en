@@ -27,15 +27,15 @@ content_hash: 5464318730266d26
 Topo-R1 is proposed as the first framework to equip VLMs with topology-aware perception. Through an automated data construction pipeline combined with SFT and GRPO reinforcement learning (incorporating a topology-aware composite reward), it enables annotation-free topological anomaly detection and classification in tubular structures.
 
 ## Background & Motivation
-**State of the Field**: Topological correctness in tubular structures (blood vessels, nerve fibers, road networks) is critical. Existing topology-preserving segmentation methods (persistent homology losses, clDice, etc.) rely on pixel-level annotations to constrain training losses.
+**Background**: Topological correctness in tubular structures (blood vessels, nerve fibers, road networks) is critical. Existing topology-preserving segmentation methods (persistent homology losses, clDice, etc.) rely on pixel-level annotations to constrain training losses.
 
 **Limitations of Prior Work**: Topological annotation demands domain expertise and is extremely time-consuming; cross-domain transfer is difficult (retinal annotations do not apply to road networks); detecting topological errors in unannotated new domains at deployment time is infeasible.
 
-**Root Cause**: Topological anomalies are extremely sparse and localized — among thousands of correct pixels, a single missing pixel may sever a vascular connection. Detecting such "needle-in-a-haystack" errors requires a combination of global structural reasoning and local fine-grained perception, capabilities entirely absent in existing VLMs.
+**Key Challenge**: Topological anomalies are extremely sparse and localized — among thousands of correct pixels, a single missing pixel may sever a vascular connection. Detecting such "needle-in-a-haystack" errors requires a combination of global structural reasoning and local fine-grained perception, capabilities entirely absent in existing VLMs.
 
-**Paper Goals**: Enable VLMs to localize and classify topological errors in tubular structures without domain-specific annotations.
+**Goal**: Enable VLMs to localize and classify topological errors in tubular structures without domain-specific annotations.
 
-**Starting Point**: Topological anomaly detection is reformulated as a structured visual reasoning task — given an image and a segmentation mask, the model must output bounding boxes with type labels.
+**Key Insight**: Topological anomaly detection is reformulated as a structured visual reasoning task — given an image and a segmentation mask, the model must output bounding boxes with type labels.
 
 **Core Idea**: An automated data pipeline synthesizes topologically verified anomalies, and a GRPO reinforcement learning procedure incorporating type-aware Hungarian matching and a clDice reward is used to train the VLM.
 

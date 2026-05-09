@@ -29,15 +29,15 @@ This paper introduces TiALD (Tigrinya Abusive Language Detection), the first lar
 
 ## Background & Motivation
 
-**State of the Field**: Content moderation research has achieved remarkable progress for high-resource languages such as English, with automated abusive language detection reaching considerable maturity. However, the vast majority of the world's languages remain in a computational resource desert, lacking annotated data, tools, and models, leaving millions of users exposed to unmoderated online hostility.
+**Background**: Content moderation research has achieved remarkable progress for high-resource languages such as English, with automated abusive language detection reaching considerable maturity. However, the vast majority of the world's languages remain in a computational resource desert, lacking annotated data, tools, and models, leaving millions of users exposed to unmoderated online hostility.
 
 **Limitations of Prior Work**: Tigrinya, spoken by approximately 10 million people (primarily in Eritrea and Ethiopia), suffers from an extreme scarcity of computational resources—there are no annotated datasets, no evaluation benchmarks, and no trained models. Without benchmarks, progress cannot be measured and research cannot be incentivized. Compounding this, approximately 64% of Tigrinya social media content is written in **Latin transliteration** rather than the native Ge'ez script, a writing convention that existing tools largely fail to cover.
 
-**Root Cause**: Abusive language detection for low-resource languages is trapped in a vicious cycle: no data → no models → no protection → no incentive to build data. Keyword-based sampling leads to lexical homogeneity, while random sampling yields an extremely low proportion of abusive instances (only 14.3%), making neither approach suitable for constructing high-quality training sets.
+**Key Challenge**: Abusive language detection for low-resource languages is trapped in a vicious cycle: no data → no models → no protection → no incentive to build data. Keyword-based sampling leads to lexical homogeneity, while random sampling yields an extremely low proportion of abusive instances (only 14.3%), making neither approach suitable for constructing high-quality training sets.
 
-**Paper Goals**: (1) Construct the first multi-task annotated benchmark covering both writing systems of Tigrinya; (2) design a data sampling strategy appropriate for low-resource settings; (3) evaluate the performance gap between fine-tuned models and LLMs in this regime.
+**Goal**: (1) Construct the first multi-task annotated benchmark covering both writing systems of Tigrinya; (2) design a data sampling strategy appropriate for low-resource settings; (3) evaluate the performance gap between fine-tuned models and LLMs in this regime.
 
-**Starting Point**: The work begins from data construction, addressing sampling bias through an iterative seed-word expansion strategy and providing richer contextual signals through joint multi-task annotation.
+**Key Insight**: The work begins from data construction, addressing sampling bias through an iterative seed-word expansion strategy and providing richer contextual signals through joint multi-task annotation.
 
 **Core Idea**: Leverage iterative semantic cluster sampling combined with multi-task joint annotation to build the first high-quality abusive language detection benchmark for a low-resource language.
 

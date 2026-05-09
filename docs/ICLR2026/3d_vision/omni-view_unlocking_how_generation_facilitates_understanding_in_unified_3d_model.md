@@ -28,15 +28,15 @@ This paper presents Omni-View, a unified 3D scene understanding and generation m
 
 ## Background & Motivation
 
-**State of the Field**: Unified multimodal understanding and generation (UMM) has achieved remarkable progress in the 2D domain (e.g., BAGEL, Janus), yet unified models for 3D scenes remain largely unexplored. Existing 3D understanding methods (LLaVA-3D, GPT4Scene, etc.) rely on explicit 3D inputs (voxels, BEV), limiting their practical applicability.
+**Background**: Unified multimodal understanding and generation (UMM) has achieved remarkable progress in the 2D domain (e.g., BAGEL, Janus), yet unified models for 3D scenes remain largely unexplored. Existing 3D understanding methods (LLaVA-3D, GPT4Scene, etc.) rely on explicit 3D inputs (voxels, BEV), limiting their practical applicability.
 
 **Limitations of Prior Work**: (a) 2D UMM research has only explored "understanding facilitating generation," while the reverse direction—"generation facilitating understanding"—has not been sufficiently validated; (b) 3D understanding tasks require geometric measurement and spatiotemporal modeling capabilities, yet existing models lack mechanisms to acquire them; (c) methods dependent on 3D inputs are difficult to deploy in real-world scenarios.
 
-**Root Cause**: 3D scene understanding (distance estimation, directional reasoning, appearance ordering) inherently requires geometric and spatiotemporal modeling capabilities, but purely understanding-oriented models learn only from a semantic perspective and cannot acquire these capabilities.
+**Key Challenge**: 3D scene understanding (distance estimation, directional reasoning, appearance ordering) inherently requires geometric and spatiotemporal modeling capabilities, but purely understanding-oriented models learn only from a semantic perspective and cannot acquire these capabilities.
 
-**Paper Goals**: To endow an understanding model with geometric and spatiotemporal modeling capabilities via 3D generation tasks (geometric estimation + novel view synthesis), constructing the first unified understanding and generation model for general 3D scenes.
+**Goal**: To endow an understanding model with geometric and spatiotemporal modeling capabilities via 3D generation tasks (geometric estimation + novel view synthesis), constructing the first unified understanding and generation model for general 3D scenes.
 
-**Starting Point**: Drawing on neuroscientific evidence that human understanding of 3D environments relies on the ability to "generate and imagine" future sensory and geometric data, which directly motivates the applicability of the "generation facilitates understanding" paradigm in 3D scenes.
+**Key Insight**: Drawing on neuroscientific evidence that human understanding of 3D environments relies on the ability to "generate and imagine" future sensory and geometric data, which directly motivates the applicability of the "generation facilitates understanding" paradigm in 3D scenes.
 
 **Core Idea**: Novel view synthesis is leveraged to learn spatiotemporal modeling, while depth/pose estimation is leveraged to learn geometric measurement; the two generative capabilities jointly enhance 3D understanding.
 

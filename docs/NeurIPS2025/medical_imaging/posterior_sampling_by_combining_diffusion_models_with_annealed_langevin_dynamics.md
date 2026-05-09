@@ -29,18 +29,18 @@ This paper proposes an algorithm combining diffusion models with annealed Langev
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models are the leading generative modeling approach, based on learning smoothed scores $s_{\sigma^2}(x)$ and sampling via SDE/ODE. Posterior sampling (drawing from $p(x|y)$ where $y = Ax + \xi$) encompasses applications such as inpainting, deblurring, and MRI reconstruction, and is a central use case for generative models as priors.
+**Background**: Diffusion models are the leading generative modeling approach, based on learning smoothed scores $s_{\sigma^2}(x)$ and sampling via SDE/ODE. Posterior sampling (drawing from $p(x|y)$ where $y = Ax + \xi$) encompasses applications such as inpainting, deblurring, and MRI reconstruction, and is a central use case for generative models as priors.
 
 **Limitations of Prior Work**:
    - **Diffusion models excel at unconditional sampling but struggle with posterior sampling**: The smoothed conditional score $\nabla_x \log p(y|x_{\sigma_t^2})$ is intractable to compute exactly; methods such as DPS resort to heuristic approximations.
    - **Langevin dynamics can perform posterior sampling but lacks robustness**: It requires score errors to satisfy moment-generating function (MGF) bounds, which are far stronger than $L^2$ bounds.
    - **General impossibility results**: Gupta et al. proved that efficient and robust posterior sampling is computationally infeasible for general distributions.
 
-**Root Cause**: Unconditional sampling with diffusion models requires only $L^2$-accurate scores, whereas posterior sampling demands MGF-level accuracy — a substantial gap between the two regimes.
+**Key Challenge**: Unconditional sampling with diffusion models requires only $L^2$-accurate scores, whereas posterior sampling demands MGF-level accuracy — a substantial gap between the two regimes.
 
-**Paper Goals**: To achieve efficient posterior sampling under mild distributional assumptions (log-concavity) using score accuracy requirements significantly weaker than MGF bounds.
+**Goal**: To achieve efficient posterior sampling under mild distributional assumptions (log-concavity) using score accuracy requirements significantly weaker than MGF bounds.
 
-**Starting Point**: Diffusion models provide a warm initialization by projecting samples onto the data manifold, after which annealed Langevin dynamics progressively approaches the posterior — the two components are complementary.
+**Key Insight**: Diffusion models provide a warm initialization by projecting samples onto the data manifold, after which annealed Langevin dynamics progressively approaches the posterior — the two components are complementary.
 
 **Core Idea**: Diffusion model initialization combined with annealed Langevin dynamics; only $L^4$ score accuracy is required to enable efficient posterior sampling under (locally) log-concave distributions.
 

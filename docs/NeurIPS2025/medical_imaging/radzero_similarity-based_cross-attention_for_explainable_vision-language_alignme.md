@@ -35,7 +35,7 @@ This paper proposes RadZero, a framework centered on VL-CABS (Vision-Language Cr
 
 ### Limitations of Prior Work
 
-**State of the Field**: Multimodal vision-language (VL) alignment has seen significant progress in radiology, yet existing methods exhibit critical shortcomings:
+**Background**: Multimodal vision-language (VL) alignment has seen significant progress in radiology, yet existing methods exhibit critical shortcomings:
 
 **Underutilization of reports**: Radiology reports have complex structures, and current methods struggle to exploit their fine-grained semantic information effectively.
 

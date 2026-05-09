@@ -37,9 +37,9 @@ Deep neural networks perform well under the i.i.d. assumption, but frequently en
 
 **Core observation**: On CIFAR10-C with ResNet-18, the authors find that as distribution shift intensifies, the redundancy of second-order feature relationship graphs (covariance matrices) increases markedly—a redder covariance heatmap indicates higher inter-feature correlation. Quantitative analysis shows that the redundancy score $R_e = \|\tilde{Z}^T\tilde{Z} - I_d\|_1$ positively correlates with corruption severity.
 
-**Root Cause**: Existing TTA methods overlook the increase in feature redundancy caused by distribution shift, whereas redundant features directly undermine the model's ability to adapt to new data.
+**Key Challenge**: Existing TTA methods overlook the increase in feature redundancy caused by distribution shift, whereas redundant features directly undermine the model's ability to adapt to new data.
 
-**Starting Point**: Directly eliminate embedding feature redundancy at test time, addressing TTA from a novel redundancy-elimination perspective.
+**Key Insight**: Directly eliminate embedding feature redundancy at test time, addressing TTA from a novel redundancy-elimination perspective.
 
 ## Method
 

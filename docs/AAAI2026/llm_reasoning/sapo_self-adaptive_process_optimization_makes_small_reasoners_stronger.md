@@ -27,18 +27,18 @@ content_hash: ceec10a6ef9b2f3a
 Inspired by Error-Related Negativity (ERN) in neuroscience, this paper proposes SAPO, a self-adaptive process optimization method that replaces costly step-wise Monte Carlo rollouts with first error detection and local posterior estimation. SAPO reduces computational cost by 2–3× while enabling joint optimization of the reasoner and verifier, allowing small language models (≤2B) to outperform most self-evolution methods on mathematical and code reasoning tasks.
 
 ## Background & Motivation
-**State of the Field**: Large language models exhibit strong reasoning capabilities but incur high computational costs. Small language models (SLMs, ≤2B) are viable candidates for deployment on mobile devices. Self-evolution methods enhance SLM reasoning through a reasoner–verifier interaction framework.
+**Background**: Large language models exhibit strong reasoning capabilities but incur high computational costs. Small language models (SLMs, ≤2B) are viable candidates for deployment on mobile devices. Self-evolution methods enhance SLM reasoning through a reasoner–verifier interaction framework.
 
 **Limitations of Prior Work**:
 - Most self-evolution methods rely solely on outcome rewards, neglecting fine-grained step-level feedback, which leads to reward hacking.
 - Monte Carlo process supervision is more precise but computationally prohibitive (10k problems × 8 steps × 10 trajectories = 800k rollouts).
 - Across multiple iterations, the gap between the reasoner and verifier widens (Figure 1), degrading the quality of verifier evaluations.
 
-**Root Cause**: A fundamental trade-off exists between the granularity of process supervision and computational efficiency—step-level feedback is necessary to reduce the reasoner-verifier gap, yet full MC estimation is too costly.
+**Key Challenge**: A fundamental trade-off exists between the granularity of process supervision and computational efficiency—step-level feedback is necessary to reduce the reasoner-verifier gap, yet full MC estimation is too costly.
 
-**Paper Goals**: To achieve joint optimization of the reasoner and verifier without significantly increasing supervision cost.
+**Goal**: To achieve joint optimization of the reasoner and verifier without significantly increasing supervision cost.
 
-**Starting Point**: Inspired by Error-Related Negativity (ERN)—humans can rapidly localize the point of error after making a mistake and adjust their behavior accordingly—only the first error needs to be located to provide effective process supervision.
+**Key Insight**: Inspired by Error-Related Negativity (ERN)—humans can rapidly localize the point of error after making a mistake and adjust their behavior accordingly—only the first error needs to be located to provide effective process supervision.
 
 **Core Idea**: Replace step-wise MC rollouts with verifier-based first error localization followed by local posterior verification by the reasoner, introducing process supervision signals at minimal cost.
 

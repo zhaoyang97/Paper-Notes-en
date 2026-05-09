@@ -29,15 +29,15 @@ This paper reinterprets the classical sparse signal recovery algorithm (SOMP) as
 
 ## Background & Motivation
 
-**State of the Field**: Large-scale generative models (LLMs, VLMs) achieve strong performance across diverse tasks, yet their internal mechanisms remain incompletely understood. Prior work has identified functional roles for attention heads (syntactic tracking, copying behavior, factual recall), but these findings are typically based on heuristic methods and are difficult to generalize across samples.
+**Background**: Large-scale generative models (LLMs, VLMs) achieve strong performance across diverse tasks, yet their internal mechanisms remain incompletely understood. Prior work has identified functional roles for attention heads (syntactic tracking, copying behavior, factual recall), but these findings are typically based on heuristic methods and are difficult to generalize across samples.
 
 **Limitations of Prior Work**: (1) Interpretability tools such as Logit Lens analyze one sample at a time and cannot stably quantify head importance; (2) Attention Lens requires training a separate linear probe per head, incurring high computational cost; (3) Existing head-editing methods lack a mathematical foundation and rely on trial and error.
 
-**Root Cause**: A method capable of aggregating multi-sample analysis without additional training is needed to systematically discover semantic specialization in attention heads.
+**Key Challenge**: A method capable of aggregating multi-sample analysis without additional training is needed to systematically discover semantic specialization in attention heads.
 
-**Paper Goals**: To provide a mathematically principled method for identifying, quantifying, and exploiting the specialization of attention heads in specific semantic domains.
+**Goal**: To provide a mathematically principled method for identifying, quantifying, and exploiting the specialization of attention heads in specific semantic domains.
 
-**Starting Point**: Generalizing Logit Lens as a sparse signal recovery problem, using SOMP (Simultaneous Orthogonal Matching Pursuit) to perform multi-sample sparse decomposition over an unembedding dictionary.
+**Key Insight**: Generalizing Logit Lens as a sparse signal recovery problem, using SOMP (Simultaneous Orthogonal Matching Pursuit) to perform multi-sample sparse decomposition over an unembedding dictionary.
 
 **Core Idea**: The output of an attention head can be approximated as a sparse linear combination of a small number of semantic directions in the unembedding matrix, and the explained variance ratio can quantify a head's degree of specialization for a target concept.
 

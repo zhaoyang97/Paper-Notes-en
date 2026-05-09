@@ -27,15 +27,15 @@ content_hash: 1ec80582f8c92cdd
 This paper proposes MM-SafetyBench++ and the EchoSafe framework, which accumulates safety insights by maintaining a self-reflective memory bank at inference time, enabling MLLMs to distinguish visually similar scenarios with different safety intents based on context—improving contextual safety without any training.
 
 ## Background & Motivation
-**State of the Field**: MLLMs demonstrate strong performance on multimodal reasoning tasks but face significant safety risks. Existing defense methods primarily focus on detecting and refusing jailbreak attacks.
+**Background**: MLLMs demonstrate strong performance on multimodal reasoning tasks but face significant safety risks. Existing defense methods primarily focus on detecting and refusing jailbreak attacks.
 
 **Limitations of Prior Work**: Existing methods tend to exhibit over-defensive behavior—rejecting even benign queries. For instance, a model may refuse to answer "How should I use this knife?" upon seeing a kitchen knife, even though the user is simply asking about cooking.
 
-**Root Cause**: There exists a fundamental trade-off between safety and utility. Over-defensiveness ensures safety but compromises helpfulness, while relaxed defenses risk producing harmful outputs.
+**Key Challenge**: There exists a fundamental trade-off between safety and utility. Over-defensiveness ensures safety but compromises helpfulness, while relaxed defenses risk producing harmful outputs.
 
-**Paper Goals**: (a) The lack of a systematic benchmark for evaluating contextual safety; (b) How to enable models to understand contextual differences and make appropriate safety decisions without training.
+**Goal**: (a) The lack of a systematic benchmark for evaluating contextual safety; (b) How to enable models to understand contextual differences and make appropriate safety decisions without training.
 
-**Starting Point**: Humans form abstract cognitive patterns by accumulating past experiences, allowing flexible responses to similar yet distinct situations. Inspired by this, the paper proposes maintaining an "experiential memory bank" during inference.
+**Key Insight**: Humans form abstract cognitive patterns by accumulating past experiences, allowing flexible responses to similar yet distinct situations. Inspired by this, the paper proposes maintaining an "experiential memory bank" during inference.
 
 **Core Idea**: Dynamically accumulate and retrieve safety insights at inference time via a self-reflective memory bank, enabling the model's safety behavior to continuously evolve.
 

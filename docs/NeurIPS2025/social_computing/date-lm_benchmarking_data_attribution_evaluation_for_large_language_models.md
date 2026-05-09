@@ -28,15 +28,15 @@ DATE-LM introduces the first unified benchmark for evaluating data attribution m
 
 ## Background & Motivation
 
-**State of the Field** Data attribution methods quantify the influence of training data on model outputs, and have become increasingly important for dataset curation, model interpretability, and data valuation. LLM-specific methods such as LESS and MATES have emerged in recent years.
+**Background** Data attribution methods quantify the influence of training data on model outputs, and have become increasingly important for dataset curation, model interpretability, and data valuation. LLM-specific methods such as LESS and MATES have emerged in recent years.
 
 **Limitations of Prior Work** The complexity of LLM training stacks makes fair comparison across methods difficult; retraining-based evaluation protocols incur prohibitive computational costs; existing work lacks comprehensive application-driven evaluation and often omits comparisons against non-attribution baselines.
 
-**Root Cause** The practical utility of data attribution methods at LLM scale remains unclear—their cost-effectiveness across diverse applications and whether the high computational overhead is justified are open questions.
+**Key Challenge** The practical utility of data attribution methods at LLM scale remains unclear—their cost-effectiveness across diverse applications and whether the high computational overhead is justified are open questions.
 
-**Paper Goals** To provide a unified and scalable benchmarking platform enabling fair, reproducible comparison of data attribution methods across multiple LLM architectures and tasks.
+**Goal** To provide a unified and scalable benchmarking platform enabling fair, reproducible comparison of data attribution methods across multiple LLM architectures and tasks.
 
-**Starting Point** Design a modular three-stage evaluation pipeline (attribution scoring → subset selection → task evaluation), paired with released pre-training checkpoints and a public leaderboard to lower the barrier to evaluation.
+**Key Insight** Design a modular three-stage evaluation pipeline (attribution scoring → subset selection → task evaluation), paired with released pre-training checkpoints and a public leaderboard to lower the barrier to evaluation.
 
 **Core Idea** Through a unified pipeline and application-driven task design, enable the first large-scale, systematic comparison of data attribution methods for LLMs.
 

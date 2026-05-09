@@ -28,15 +28,15 @@ GEM is proposed as the first multimodal large language model that unifies ECG ti
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning has achieved progress in tasks such as arrhythmia detection, but lacks linguistic capability and interpretability. Recent MLLMs (e.g., PULSE) have enabled language-based ECG interpretation via large-scale instruction tuning, but primarily handle static image inputs and predefined diagnostic tasks.
+**Background**: Deep learning has achieved progress in tasks such as arrhythmia detection, but lacks linguistic capability and interpretability. Recent MLLMs (e.g., PULSE) have enabled language-based ECG interpretation via large-scale instruction tuning, but primarily handle static image inputs and predefined diagnostic tasks.
 
 **Limitations of Prior Work**: (1) **Insufficient modality synergy** — existing models process only a single non-textual modality (either time series or images), failing to simultaneously analyze dynamic signal trends and spatial waveform patterns as clinicians do; (2) **Insufficient interpretability and grounding** — existing models do not explicitly link diagnostic conclusions to specific waveform evidence (e.g., quantifiable parameters such as QRS duration and PR interval).
 
-**Root Cause**: How to enable a model to work like a cardiologist — simultaneously analyzing time series and image signals, and providing specific electrophysiological feature evidence for each diagnostic conclusion.
+**Key Challenge**: How to enable a model to work like a cardiologist — simultaneously analyzing time series and image signals, and providing specific electrophysiological feature evidence for each diagnostic conclusion.
 
-**Paper Goals**: (1) Build a unified multimodal ECG model integrating time series, images, and text; (2) Achieve beat-level physiological feature grounded diagnosis; (3) Construct high-granularity grounded training data.
+**Goal**: (1) Build a unified multimodal ECG model integrating time series, images, and text; (2) Achieve beat-level physiological feature grounded diagnosis; (3) Construct high-granularity grounded training data.
 
-**Starting Point**: Leveraging an existing feature extraction tool (FeatureDB) to extract beat-level physiological feature sequences from raw ECG signals, and designing a diagnosis guider to activate the latent medical knowledge of GPT-4o for automatic generation of high-granularity grounded instruction data.
+**Key Insight**: Leveraging an existing feature extraction tool (FeatureDB) to extract beat-level physiological feature sequences from raw ECG signals, and designing a diagnosis guider to activate the latent medical knowledge of GPT-4o for automatic generation of high-granularity grounded instruction data.
 
 **Core Idea**: Dual-encoder extraction of complementary features + cross-modal alignment + knowledge-guided data generation, enabling the MLLM to provide evidence-based ECG diagnosis in the manner of a cardiologist.
 

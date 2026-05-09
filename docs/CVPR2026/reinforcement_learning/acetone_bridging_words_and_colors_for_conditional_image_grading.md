@@ -28,13 +28,13 @@ AceTone is proposed as the first unified framework for multimodal-conditioned co
 
 ## Background & Motivation
 
-**State of the Field**: Color toning/grading is critical for image style and emotional expression. Existing methods either rely on weighted combinations of predefined filter libraries or apply CNN-based patch-wise recoloring. Style transfer from reference images and text-guided grading are handled by incompatible models.
+**Background**: Color toning/grading is critical for image style and emotional expression. Existing methods either rely on weighted combinations of predefined filter libraries or apply CNN-based patch-wise recoloring. Style transfer from reference images and text-guided grading are handled by incompatible models.
 
 **Limitations of Prior Work**: (1) Existing methods lack sufficient expressive capacity or computational efficiency; (2) adversarial losses (GAN) suffer from training instability and mode collapse; (3) no mechanism exists for alignment with human aesthetic preferences; (4) reference-based transfer and text-driven grading require separate models.
 
-**Root Cause**: Color grading demands both precise color control (the strength of LUTs) and understanding of complex semantic instructions (the strength of VLMs), yet the two have not been effectively integrated.
+**Key Challenge**: Color grading demands both precise color control (the strength of LUTs) and understanding of complex semantic instructions (the strength of VLMs), yet the two have not been effectively integrated.
 
-**Starting Point**: Treating LUTs as atomic color transformation operations and tokenizing them for VLM-based generation.
+**Key Insight**: Treating LUTs as atomic color transformation operations and tokenizing them for VLM-based generation.
 
 **Core Idea**: (1) A VQ-VAE tokenizer compresses a $3 \times 32^3$ LUT into 64 discrete tokens; (2) a VLM autoregressively predicts the LUT token sequence; (3) GRPO uses color similarity and aesthetic scores as rewards for preference alignment.
 

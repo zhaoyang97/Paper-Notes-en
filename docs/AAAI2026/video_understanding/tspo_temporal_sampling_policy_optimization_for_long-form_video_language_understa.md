@@ -29,15 +29,15 @@ This paper formulates keyframe selection and language generation as a joint deci
 
 ## Background & Motivation
 
-**State of the Field**: Video-MLLMs (e.g., LLaVA-Video, Qwen2.5-VL) have achieved notable progress in video understanding, but processing long videos is constrained by LLM context length and training cost, necessitating sparse frame sampling. The dominant approaches are uniform sampling or training-free keyframe search using pretrained models such as DINOv2 or LLaVA-1.5.
+**Background**: Video-MLLMs (e.g., LLaVA-Video, Qwen2.5-VL) have achieved notable progress in video understanding, but processing long videos is constrained by LLM context length and training cost, necessitating sparse frame sampling. The dominant approaches are uniform sampling or training-free keyframe search using pretrained models such as DINOv2 or LLaVA-1.5.
 
 **Limitations of Prior Work**: (1) Uniform sampling frequently misses query-relevant information. (2) Training-free keyframe search methods (e.g., LongVU with DINOv2-1B, CoS with LLaVA-1.5-13B) are limited by the cross-modal understanding capacity of pretrained feature extractors and incur high inference overhead (CoS requires a 13B-scale model). (3) None of these methods can be further optimized through training.
 
-**Root Cause**: Building a trainable frame sampling method faces two fundamental challenges: (1) *Lack of supervision*: General video understanding training data lacks frame-level annotations, providing no precise localization supervision. (2) *Non-differentiability*: Frame sampling is a discrete subset selection problem whose outputs are frame indices rather than continuous variables, precluding optimization via backpropagation in standard SFT.
+**Key Challenge**: Building a trainable frame sampling method faces two fundamental challenges: (1) *Lack of supervision*: General video understanding training data lacks frame-level annotations, providing no precise localization supervision. (2) *Non-differentiability*: Frame sampling is a discrete subset selection problem whose outputs are frame indices rather than continuous variables, precluding optimization via backpropagation in standard SFT.
 
-**Paper Goals**: How to design a trainable sparse frame sampling method that can be optimized end-to-end, requires no frame-level annotations, and significantly improves long-form video understanding performance?
+**Goal**: How to design a trainable sparse frame sampling method that can be optimized end-to-end, requires no frame-level annotations, and significantly improves long-form video understanding performance?
 
-**Starting Point**: Inspired by DeepSeek-R1's use of GRPO to enhance reasoning, the authors model keyframe selection and language generation as a joint decision-making process—the discrete selection of frames is analogous to actions in RL, and the accuracy of the MLLM's answers serves directly as a reward signal to supervise the sampling policy.
+**Key Insight**: Inspired by DeepSeek-R1's use of GRPO to enhance reasoning, the authors model keyframe selection and language generation as a joint decision-making process—the discrete selection of frames is analogous to actions in RL, and the accuracy of the MLLM's answers serves directly as a reward signal to supervise the sampling policy.
 
 **Core Idea**: A lightweight event-aware temporal agent performs probabilistic keyframe selection and is jointly optimized with the Video-MLLM's language generation via GRPO, using answer accuracy as the reward signal for end-to-end training of the sampling policy.
 

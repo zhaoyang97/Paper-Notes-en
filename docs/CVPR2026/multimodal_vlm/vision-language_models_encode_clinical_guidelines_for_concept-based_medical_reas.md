@@ -27,15 +27,15 @@ content_hash: 115c2d937a5c54e2
 This paper proposes MedCBR, a framework that integrates clinical diagnostic guidelines (e.g., BI-RADS) into the training and inference pipeline of concept bottleneck models. By leveraging LVLMs to generate guideline-consistent reports for enhanced concept supervision, combining multi-task CLIP training with a large reasoning model for structured clinical explanation generation, MedCBR achieves AUROCs of 94.2% and 84.0% on ultrasound and mammography cancer detection, respectively.
 
 ## Background & Motivation
-**State of the Field**: Concept Bottleneck Models (CBMs) connect model predictions to human-interpretable concepts through an intermediate concept layer, representing a dominant paradigm in explainable AI and proving particularly valuable in medical imaging.
+**Background**: Concept Bottleneck Models (CBMs) connect model predictions to human-interpretable concepts through an intermediate concept layer, representing a dominant paradigm in explainable AI and proving particularly valuable in medical imaging.
 
 **Limitations of Prior Work**: Standard CBMs rely on discrete concept representations, neglecting broader clinical context such as diagnostic guidelines and expert heuristics, which leads to reduced reliability in complex cases. Specific issues include: (a) concept annotations are noisy and incomplete due to inter-observer variability; (b) CBMs fail to capture experience-driven reasoning, such as cases that appear benign but require holistic assessment within the context of clinical guidelines.
 
-**Root Cause**: CBMs require complete and noise-free concept annotations and assume that diagnostic reasoning is a deterministic function of concept presence—yet medical diagnosis depends on contextual information and structured reasoning embedded in clinical guidelines.
+**Key Challenge**: CBMs require complete and noise-free concept annotations and assume that diagnostic reasoning is a deterministic function of concept presence—yet medical diagnosis depends on contextual information and structured reasoning embedded in clinical guidelines.
 
-**Paper Goals**: (a) Address concept annotation noise and incompleteness; (b) remedy the lack of clinical context in concept-to-diagnosis reasoning; (c) provide auditable explanations for model predictions.
+**Goal**: (a) Address concept annotation noise and incompleteness; (b) remedy the lack of clinical context in concept-to-diagnosis reasoning; (c) provide auditable explanations for model predictions.
 
-**Starting Point**: Diagnostic reasoning is modeled as inference over multiple evidence sources rather than a direct function of concepts, with clinical guidelines introduced as a structured knowledge source.
+**Key Insight**: Diagnostic reasoning is modeled as inference over multiple evidence sources rather than a direct function of concepts, with clinical guidelines introduced as a structured knowledge source.
 
 **Core Idea**: Enrich concept representations via LVLM-generated guideline-consistent reports, combined with multi-task contrastive learning and a large reasoning model for interpretable diagnostic narrative generation.
 

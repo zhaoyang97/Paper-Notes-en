@@ -30,7 +30,7 @@ This paper proposes NutriScreener, a framework combining a CLIP visual encoder, 
 
 ## Background & Motivation
 
-**State of the Field**: As of 2024, approximately 150 million children under five suffer from stunting and over 42 million from wasting globally. Malnutrition remains a leading cause of irreversible developmental harm and mortality in children. Low-resource regions are particularly lacking in timely screening capacity.
+**Background**: As of 2024, approximately 150 million children under five suffer from stunting and over 42 million from wasting globally. Malnutrition remains a leading cause of irreversible developmental harm and mortality in children. Low-resource regions are particularly lacking in timely screening capacity.
 
 **Limitations of Prior Work**:
    - **Inefficiency of traditional methods**: Manual anthropometric measurements using MUAC tapes, weight-for-height charts, and questionnaires are time-consuming, error-prone, and unscalable.
@@ -38,11 +38,11 @@ This paper proposes NutriScreener, a framework combining a CLIP visual encoder, 
    - **Severe class imbalance**: Malnourished children constitute a minority class, causing models to be biased toward predicting healthy outcomes.
    - **Single-pose insufficiency**: A single image cannot capture all diagnostic cues, such as asymmetric fat loss or pose-dependent deformations.
 
-**Root Cause**: Low-resource settings demand low-cost, scalable screening solutions, yet existing AI approaches either rely on specialized hardware or perform poorly on minority-class detection, making real-world deployment infeasible.
+**Key Challenge**: Low-resource settings demand low-cost, scalable screening solutions, yet existing AI approaches either rely on specialized hardware or perform poorly on minority-class detection, making real-world deployment infeasible.
 
-**Paper Goals**: From multi-pose 2D images captured with standard smartphones, simultaneously achieve: (1) binary nutritional status classification; and (2) regression prediction of four anthropometric measures — height, weight, MUAC, and head circumference.
+**Goal**: From multi-pose 2D images captured with standard smartphones, simultaneously achieve: (1) binary nutritional status classification; and (2) regression prediction of four anthropometric measures — height, weight, MUAC, and head circumference.
 
-**Starting Point**: Each subject is modeled as a graph (nodes = per-pose CLIP embeddings), with a GAT capturing inter-pose relationships. A retrieval-augmented module then queries a knowledge base for similar samples to compensate for minority-class bias.
+**Key Insight**: Each subject is modeled as a graph (nodes = per-pose CLIP embeddings), with a GAT capturing inter-pose relationships. A retrieval-augmented module then queries a knowledge base for similar samples to compensate for minority-class bias.
 
 **Core Idea**: Multi-pose CLIP embeddings + GAT cross-pose reasoning + category-enhanced FAISS retrieval + context-aware adaptive fusion.
 

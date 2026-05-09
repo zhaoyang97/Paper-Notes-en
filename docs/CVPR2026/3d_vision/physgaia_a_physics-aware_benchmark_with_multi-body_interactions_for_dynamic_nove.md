@@ -28,15 +28,15 @@ PhysGaia constructs a physics-aware benchmark dataset comprising 17 scenes that 
 
 ## Background & Motivation
 
-**State of the Field**: Dynamic novel view synthesis (DyNVS) has been a prominent research direction in 3D vision. From NeRF to 4D Gaussian Splatting (4DGS), existing methods have made substantial progress in photorealism, enabling high-quality 4D spatiotemporal scene reconstruction from video input.
+**Background**: Dynamic novel view synthesis (DyNVS) has been a prominent research direction in 3D vision. From NeRF to 4D Gaussian Splatting (4DGS), existing methods have made substantial progress in photorealism, enabling high-quality 4D spatiotemporal scene reconstruction from video input.
 
 **Limitations of Prior Work**: (1) Existing DyNVS datasets (e.g., D-NeRF, Nerfies, DyCheck) focus almost exclusively on appearance reconstruction quality, with little consideration of physical realism. (2) The few physically oriented datasets (e.g., Spring-Gaus, PAC-NeRF, ScalarFlow) are limited to a single material type (only rheological matter or only gas) and single-object scenes, lacking multi-body interactions. (3) Real-world videos can capture complex scenes but cannot provide ground truth 3D trajectories or physical parameters, making quantitative evaluation of physical reasoning infeasible.
 
-**Root Cause**: DyNVS is evolving from "looking like" to "behaving like" real physics—from photorealism to physical realism—yet the benchmarks needed to support this transition are absent. What is required is a dataset that simultaneously encompasses complex multi-body interactions, diverse material types, and reliable physical ground truth.
+**Key Challenge**: DyNVS is evolving from "looking like" to "behaving like" real physics—from photorealism to physical realism—yet the benchmarks needed to support this transition are absent. What is required is a dataset that simultaneously encompasses complex multi-body interactions, diverse material types, and reliable physical ground truth.
 
-**Paper Goals**: (1) Construct a physics-aware dataset featuring multi-body interaction scenes across four material categories; (2) provide complete ground truth (3D trajectories and physical parameters); (3) design physical realism metrics; (4) expose the physical limitations of existing methods.
+**Goal**: (1) Construct a physics-aware dataset featuring multi-body interaction scenes across four material categories; (2) provide complete ground truth (3D trajectories and physical parameters); (3) design physical realism metrics; (4) expose the physical limitations of existing methods.
 
-**Starting Point**: Professional physics solvers (FLIP, Pyro, Vellum, MPM) are employed to ensure that each scene strictly adheres to the laws of physics, generating synthetic data with accurate physical ground truth.
+**Key Insight**: Professional physics solvers (FLIP, Pyro, Vellum, MPM) are employed to ensure that each scene strictly adheres to the laws of physics, generating synthetic data with accurate physical ground truth.
 
 **Core Idea**: Use material-specific physics solvers to generate a multi-body interaction benchmark dataset, and evaluate DyNVS methods along both photometric and physical dimensions.
 

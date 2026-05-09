@@ -27,15 +27,15 @@ content_hash: 23c1d36d6c037bd0
 This paper reveals that state-of-the-art VLMs still fail to reliably read analog clocks in real-world scenes (zero-shot accuracy below 10%), and proposes TickTockVQA, a real-world dataset of 12K images, along with a Swap-DPO fine-tuning framework that improves Llama-3.2-11B's time-reading accuracy from 1.43% to 46.22%.
 
 ## Background & Motivation
-**State of the Field**: VLMs continue to advance on complex multimodal reasoning tasks, yet reading analog clocks remains surprisingly difficult for them.
+**Background**: VLMs continue to advance on complex multimodal reasoning tasks, yet reading analog clocks remains surprisingly difficult for them.
 
 **Limitations of Prior Work**: (a) Existing clock datasets are predominantly synthetic, with uniform styles and limited background variation that do not reflect real-world complexity; (b) VLMs frequently confuse the hour and minute hands, lacking fine-grained spatial-temporal reasoning capabilities.
 
-**Root Cause**: Clock reading requires jointly localizing hands, recognizing their orientations, interpreting angular configurations, and mapping them to discrete time values — a compact yet spatially demanding task.
+**Key Challenge**: Clock reading requires jointly localizing hands, recognizing their orientations, interpreting angular configurations, and mapping them to discrete time values — a compact yet spatially demanding task.
 
-**Paper Goals**: (a) Address the lack of high-quality real-world clock datasets; (b) correct the spatial reasoning deficiency in VLMs that leads to hour/minute hand confusion.
+**Goal**: (a) Address the lack of high-quality real-world clock datasets; (b) correct the spatial reasoning deficiency in VLMs that leads to hour/minute hand confusion.
 
-**Starting Point**: Replace synthetic training data with real-world scene data, and apply DPO alignment to teach models to distinguish between the hour and minute hands.
+**Key Insight**: Replace synthetic training data with real-world scene data, and apply DPO alignment to teach models to distinguish between the hour and minute hands.
 
 **Core Idea**: Swap-DPO — construct preference pairs by swapping the hour and minute hand readings, enabling the model to explicitly learn correct hand-role assignments.
 

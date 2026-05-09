@@ -28,18 +28,18 @@ This paper proposes SNIC, a diagnostic testbed comprising 9,000 instances across
 
 ## Background & Motivation
 
-**State of the Field**: Embodied AI systems (e.g., service robots) must interpret ambiguous instructions in the physical world by drawing on social norms. For instance, "hand me the cup" — when one clean cup and two dirty cups are present — implicitly invokes the norm "prefer the clean one," without any explicit statement.
+**Background**: Embodied AI systems (e.g., service robots) must interpret ambiguous instructions in the physical world by drawing on social norms. For instance, "hand me the cup" — when one clean cup and two dirty cups are present — implicitly invokes the norm "prefer the clean one," without any explicit statement.
 
 **Limitations of Prior Work**:
 - Whether LLMs can infer such implicit norms in the manner humans do remains entirely unknown.
 - Existing NLU research focuses on linguistic disambiguation rather than social-norm-driven disambiguation.
 - No systematic benchmark exists for evaluating normative reasoning in LLMs.
 
-**Root Cause**: Reference resolution in the physical world frequently depends on social norms that are never explicitly stated (e.g., cleanliness over convenience, safety over speed). It remains unclear whether LLMs encode such physically grounded social norms.
+**Key Challenge**: Reference resolution in the physical world frequently depends on social norms that are never explicitly stated (e.g., cleanliness over convenience, safety over speed). It remains unclear whether LLMs encode such physically grounded social norms.
 
-**Paper Goals**: Design a diagnostic testbed to evaluate LLMs' capacity for implicit normative reasoning.
+**Goal**: Design a diagnostic testbed to evaluate LLMs' capacity for implicit normative reasoning.
 
-**Starting Point**: 51 human-validated norm scenarios → rule-based augmentation to 9,000 instances (systematically varying object types and attributes while preserving normative structure) → evaluation under three conditions (description only / +Prolog / +explicit norms).
+**Key Insight**: 51 human-validated norm scenarios → rule-based augmentation to 9,000 instances (systematically varying object types and attributes while preserving normative structure) → evaluation under three conditions (description only / +Prolog / +explicit norms).
 
 **Core Idea**: LLMs do not internalize implicit social norms but can effectively use explicit ones — embodied AI therefore requires an external normative knowledge base.
 

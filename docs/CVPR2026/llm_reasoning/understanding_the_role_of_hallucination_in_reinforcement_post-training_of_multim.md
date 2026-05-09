@@ -29,11 +29,11 @@ This paper proposes the Hallucination-as-Cue analytical framework, systematicall
 
 ## Background & Motivation
 
-1. **State of the Field**: Inspired by the success of text-only reasoning LLMs such as DeepSeek-R1, a large body of work has applied RL post-training methods such as GRPO to multimodal LLMs (e.g., Qwen2.5-VL), achieving notable gains on visual mathematical reasoning benchmarks.
+1. **Background**: Inspired by the success of text-only reasoning LLMs such as DeepSeek-R1, a large body of work has applied RL post-training methods such as GRPO to multimodal LLMs (e.g., Qwen2.5-VL), achieving notable gains on visual mathematical reasoning benchmarks.
 2. **Limitations of Prior Work**: Although RL post-training improves benchmark scores, no prior work has systematically investigated whether these gains stem from genuine visual understanding or merely from reinforced text-based reasoning. Current RL rewards are based solely on the correctness of final answers, independent of whether the model correctly utilizes visual information.
-3. **Root Cause**: If RL training primarily reinforces textual reasoning patterns rather than visual perception, resources invested in the current direction may yield diminishing returns—models may be learning to "guess answers" rather than to "reason from images."
-4. **Paper Goals**: To design a systematic diagnostic framework that quantitatively answers whether RL post-training genuinely leverages visual information.
-5. **Starting Point**: Treating hallucination as a "diagnostic cue" rather than a defect to be eliminated, and deliberately inducing hallucination to expose the true mechanisms of training.
+3. **Key Challenge**: If RL training primarily reinforces textual reasoning patterns rather than visual perception, resources invested in the current direction may yield diminishing returns—models may be learning to "guess answers" rather than to "reason from images."
+4. **Goal**: To design a systematic diagnostic framework that quantitatively answers whether RL post-training genuinely leverages visual information.
+5. **Key Insight**: Treating hallucination as a "diagnostic cue" rather than a defect to be eliminated, and deliberately inducing hallucination to expose the true mechanisms of training.
 6. **Core Idea**: Three modality-specific corruptions (blank image / random image / text removal) are applied at both training and inference stages, enabling comprehensive analysis of RL training dynamics across eight experimental configurations.
 
 ## Method

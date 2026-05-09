@@ -28,13 +28,13 @@ This paper proposes iTimER, which leverages the model's own reconstruction error
 
 ## Background & Motivation
 
-**State of the Field**: Irregularly sampled time series (ISTS) are ubiquitous in domains such as healthcare and meteorology, characterized by asynchronous sampling across variables, non-uniform time intervals, and extensive natural missingness. Existing approaches either impute first and then learn, or perform end-to-end modeling.
+**Background**: Irregularly sampled time series (ISTS) are ubiquitous in domains such as healthcare and meteorology, characterized by asynchronous sampling across variables, non-uniform time intervals, and extensive natural missingness. Existing approaches either impute first and then learn, or perform end-to-end modeling.
 
 **Limitations of Prior Work**: (a) Imputation-based methods are unreliable under high missing rates and may introduce noise bias; (b) end-to-end methods derive learning signals only from observed values, leaving model behavior in unobserved regions unconstrained; (c) self-supervised masked reconstruction methods treat reconstruction error merely as a loss term, ignoring the uncertainty information it encodes.
 
-**Root Cause**: Unobserved timestamps lack ground-truth values, making direct supervision infeasible—yet the model's reconstruction error itself encodes the model's understanding of data structure and can serve as a proxy signal.
+**Key Challenge**: Unobserved timestamps lack ground-truth values, making direct supervision infeasible—yet the model's reconstruction error itself encodes the model's understanding of data structure and can serve as a proxy signal.
 
-**Starting Point**: Reconstruction error is not merely a loss term but an information source reflecting model uncertainty and inductive preference. Its distribution can be propagated to unobserved regions to generate pseudo-observations.
+**Key Insight**: Reconstruction error is not merely a loss term but an information source reflecting model uncertainty and inductive preference. Its distribution can be propagated to unobserved regions to generate pseudo-observations.
 
 **Core Idea**: Sample from the reconstruction error distribution estimated at observed points, mix with the nearest observed values via mixup to generate pseudo-observations, and enforce consistency between the error distributions of observed and pseudo-observed regions using Wasserstein distance.
 

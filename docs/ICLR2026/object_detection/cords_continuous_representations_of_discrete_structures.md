@@ -28,15 +28,15 @@ CORDS is a framework that bijectively maps variable-size discrete sets (detectio
 
 ## Background & Motivation
 
-**State of the Field**: Many tasks require predicting object sets of unknown size — the number of detection boxes, molecular atoms, or astrophysical source events is not known a priori.
+**Background**: Many tasks require predicting object sets of unknown size — the number of detection boxes, molecular atoms, or astrophysical source events is not known a priori.
 
 **Limitations of Prior Work**: (a) DETR requires pre-allocated fixed slots and fails when the object count exceeds them; (b) padding wastes capacity and introduces spurious signals; (c) continuous methods (VoxMol, CenterNet) can only infer cardinality indirectly, recovering features via auxiliary classifiers.
 
-**Root Cause**: How can object count, position, and attributes be jointly modeled without specifying set size in advance?
+**Key Challenge**: How can object count, position, and attributes be jointly modeled without specifying set size in advance?
 
-**Paper Goals**: Establish a **bijective mapping** between discrete sets and continuous fields, where cardinality is obtained by integrating the density field, positions are recovered from density peaks, and attributes are projected from the feature field.
+**Goal**: Establish a **bijective mapping** between discrete sets and continuous fields, where cardinality is obtained by integrating the density field, positions are recovered from density peaks, and attributes are projected from the feature field.
 
-**Starting Point**: Kernel superposition is naturally invertible — each kernel contributes a fixed integral $\alpha$, so the total integral equals cardinality $N$; kernel centers correspond to positions; aligning the feature field with the density field enables exact attribute recovery.
+**Key Insight**: Kernel superposition is naturally invertible — each kernel contributes a fixed integral $\alpha$, so the total integral equals cardinality $N$; kernel centers correspond to positions; aligning the feature field with the density field enables exact attribute recovery.
 
 **Core Idea**: Encode discrete objects into a density field plus a feature field using Gaussian kernels, establishing a bijective mapping. The model learns in continuous field space while guaranteeing exact decoding back to discrete sets.
 

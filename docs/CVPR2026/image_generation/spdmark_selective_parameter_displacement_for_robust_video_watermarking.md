@@ -28,15 +28,15 @@ SPDMark proposes a video diffusion model watermarking framework based on Selecti
 
 ## Background & Motivation
 
-1. **State of the Field**: The emergence of high-quality video generation models (e.g., Sora, SVD) has made the provenance of AI-generated video an increasingly pressing problem. Both the EU AI Act and U.S. AI executive orders recommend watermarking AI-generated content. Video watermarking must simultaneously satisfy imperceptibility, robustness, and computational efficiency.
+1. **Background**: The emergence of high-quality video generation models (e.g., Sora, SVD) has made the provenance of AI-generated video an increasingly pressing problem. Both the EU AI Act and U.S. AI executive orders recommend watermarking AI-generated content. Video watermarking must simultaneously satisfy imperceptibility, robustness, and computational efficiency.
 
 2. **Limitations of Prior Work**: (a) Post-processing methods (e.g., VideoSeal) introduce latency and cannot leverage generative priors; (b) noise-space methods (e.g., VideoShield) decode via DDIM inversion, incurring high computational cost and susceptibility to perturbations; (c) model fine-tuning methods (e.g., LVMark) uniformly modulate all layers, limiting per-frame control, while VidSig embeds only a single fixed signature and cannot detect temporal tampering. All three categories exhibit trade-offs among imperceptibility, robustness, and efficiency.
 
-3. **Root Cause**: How can one achieve efficient multi-key per-frame watermark embedding with frame-level temporal tampering detection, without sacrificing video quality?
+3. **Key Challenge**: How can one achieve efficient multi-key per-frame watermark embedding with frame-level temporal tampering detection, without sacrificing video quality?
 
-4. **Paper Goals**: Design an in-generation video watermarking scheme that supports arbitrary keys, per-frame watermarking, and temporal tampering detection with negligible computational overhead.
+4. **Goal**: Design an in-generation video watermarking scheme that supports arbitrary keys, per-frame watermarking, and temporal tampering detection with negligible computational overhead.
 
-5. **Starting Point**: Rather than perturbing pixels or noise, the method learns a dictionary of low-rank basis shifts and selectively displaces the generative model's parameters according to the watermark key to embed the watermark.
+5. **Key Insight**: Rather than perturbing pixels or noise, the method learns a dictionary of low-rank basis shifts and selectively displaces the generative model's parameters according to the watermark key to embed the watermark.
 
 6. **Core Idea**: Learn a fixed LoRA basis shift dictionary; the watermark key for each frame determines which basis shift is selected per layer, thereby embedding per-frame watermarks in the decoder parameter space—without inference overhead or per-key retraining.
 

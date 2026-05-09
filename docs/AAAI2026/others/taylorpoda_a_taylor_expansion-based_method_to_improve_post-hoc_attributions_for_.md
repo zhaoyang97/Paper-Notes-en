@@ -26,15 +26,15 @@ content_hash: 75d69e51fc426a80
 Under the Taylor expansion framework, three postulates—precision, federation, and zero-discrepancy—are proposed to regulate feature attribution. An adaptation property is further introduced to optimize the allocation weights of interaction effects via an AUP objective, making TaylorPODA the only post-hoc, model-agnostic attribution method that simultaneously satisfies all postulates and properties.
 
 ## Background & Motivation
-**State of the Field**: In post-hoc explainable AI (XAI), local attribution is the dominant paradigm, with LIME and SHAP being widely adopted. Deng et al. (2024) proposed a unified analytical framework for various attribution methods based on Taylor expansion.
+**Background**: In post-hoc explainable AI (XAI), local attribution is the dominant paradigm, with LIME and SHAP being widely adopted. Deng et al. (2024) proposed a unified analytical framework for various attribution methods based on Taylor expansion.
 
 **Limitations of Prior Work**: Existing methods suffer from two core issues—(F1) incorrectly attributing irrelevant Taylor terms to target features; and (F2) incomplete or overlapping allocation of Taylor terms. Moreover, the allocation of interaction effects is typically governed by fixed, predefined schemes (e.g., SHAP assumes equal splitting among involved features), lacking task adaptivity.
 
-**Root Cause**: In post-hoc, model-agnostic settings where ground-truth explanations are unavailable, fixed predefined interaction allocation schemes may yield arbitrary attribution results that deviate from the true feature importance ordering for the instance under analysis.
+**Key Challenge**: In post-hoc, model-agnostic settings where ground-truth explanations are unavailable, fixed predefined interaction allocation schemes may yield arbitrary attribution results that deviate from the true feature importance ordering for the instance under analysis.
 
-**Paper Goals**: To establish a theoretically rigorous set of attribution criteria under the Taylor expansion framework, and to design an attribution method that satisfies all criteria while supporting adaptive optimization.
+**Goal**: To establish a theoretically rigorous set of attribution criteria under the Taylor expansion framework, and to design an attribution method that satisfies all criteria while supporting adaptive optimization.
 
-**Starting Point**: Beginning from the independent and interaction effects in Taylor expansion, the attribution process is regulated axiomatically, with tunable parameters enabling task-oriented adaptive allocation.
+**Key Insight**: Beginning from the independent and interaction effects in Taylor expansion, the attribution process is regulated axiomatically, with tunable parameters enabling task-oriented adaptive allocation.
 
 **Core Idea**: Three postulates are used to constrain the assignment of Taylor terms, and Dirichlet-sampled, AUP optimization-driven tuning is employed to adaptively allocate interaction effect weights.
 

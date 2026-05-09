@@ -35,7 +35,7 @@ Diffusion models have demonstrated strong performance in text-to-image and text-
 
 **Cross-View Inconsistency**: The lack of global consistency guidance between distant sub-views leads to incoherent color, style, or timbre across views.
 
-**Root Cause**: Through Connectivity Inheritance analysis of VAE latent space and Fourier frequency analysis, the paper identifies that spectrum aliasing originates from the averaging operation excessively suppressing high-frequency components during denoising. Unlike RGB images, VAE latent representations of spectrograms exhibit inherently high-frequency variation, and averaging directly destroys these fine spectral details.
+**Key Challenge**: Through Connectivity Inheritance analysis of VAE latent space and Fourier frequency analysis, the paper identifies that spectrum aliasing originates from the averaging operation excessively suppressing high-frequency components during denoising. Unlike RGB images, VAE latent representations of spectrograms exhibit inherently high-frequency variation, and averaging directly destroys these fine spectral details.
 
 ## Method
 

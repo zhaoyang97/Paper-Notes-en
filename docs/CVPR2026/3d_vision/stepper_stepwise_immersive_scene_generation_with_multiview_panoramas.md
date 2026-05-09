@@ -29,15 +29,15 @@ This paper proposes Stepper, a framework that generates immersive 3D scenes driv
 
 ## Background & Motivation
 
-**State of the Field**: Synthesizing explorable immersive 3D scenes from text or images is a core task in computer vision, with broad applications in AR/VR and spatial computing. Current mainstream approaches fall into two categories: autoregressive outpainting methods (e.g., DiffDreamer, Text2Room), which progressively fill in novel viewpoints using image/video models; and panorama-lifting methods (e.g., HoloDreamer, Matrix-3D), which directly lift 360° panoramas into 3D space.
+**Background**: Synthesizing explorable immersive 3D scenes from text or images is a core task in computer vision, with broad applications in AR/VR and spatial computing. Current mainstream approaches fall into two categories: autoregressive outpainting methods (e.g., DiffDreamer, Text2Room), which progressively fill in novel viewpoints using image/video models; and panorama-lifting methods (e.g., HoloDreamer, Matrix-3D), which directly lift 360° panoramas into 3D space.
 
 **Limitations of Prior Work**: Autoregressive methods rely on perspective images with limited fields of view, causing context drift—geometric errors accumulate and visual fidelity degrades as the number of extension steps increases. Panorama-lifting methods yield good quality near the projection center but fail to handle disoccluded regions, producing blurring and stretching when rendering far from the origin. Panoramic video generation methods (e.g., Matrix-3D) offer better consistency but are constrained by the computational cost of video generation models, achieving only 1440×720 resolution with insufficient detail.
 
-**Root Cause**: There is a fundamental trade-off between visual fidelity and explorability—high quality but limited range vs. wide range but poor quality.
+**Key Challenge**: There is a fundamental trade-off between visual fidelity and explorability—high quality but limited range vs. wide range but poor quality.
 
-**Paper Goals**: How can large-baseline scene exploration be achieved while maintaining high resolution and high fidelity?
+**Goal**: How can large-baseline scene exploration be achieved while maintaining high resolution and high fidelity?
 
-**Starting Point**: The authors observe that panoramas are powerful scene context representations (covering 360° information), and that the cubemap representation decomposes a panorama into standard perspective images, enabling direct reuse of pretrained 2D image diffusion models for high-resolution panorama generation without the resolution bottleneck of video models.
+**Key Insight**: The authors observe that panoramas are powerful scene context representations (covering 360° information), and that the cubemap representation decomposes a panorama into standard perspective images, enabling direct reuse of pretrained 2D image diffusion models for high-resolution panorama generation without the resolution bottleneck of video models.
 
 **Core Idea**: Redefine scene extension as a multi-view cubemap generation problem—at each step, a complete novel-view panorama is generated at a fixed forward distance, reconciling high resolution with global consistency.
 

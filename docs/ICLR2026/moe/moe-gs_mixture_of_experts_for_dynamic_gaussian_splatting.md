@@ -27,15 +27,15 @@ This paper proposes MoE-GS, the first framework to introduce a Mixture-of-Expert
 
 ## Background & Motivation
 
-**State of the Field**: Novel view synthesis for dynamic scenes has extended from NeRF to 3DGS, giving rise to a variety of dynamic Gaussian methods: MLP-based deformation networks (4DGaussians, E-D3DGS), polynomial motion models (STG), and interpolation-based approaches (Ex4DGS).
+**Background**: Novel view synthesis for dynamic scenes has extended from NeRF to 3DGS, giving rise to a variety of dynamic Gaussian methods: MLP-based deformation networks (4DGaussians, E-D3DGS), polynomial motion models (STG), and interpolation-based approaches (Ex4DGS).
 
 **Limitations of Prior Work**: Through empirical analysis, the authors identify inconsistencies at three levels: (a) **Scene-level** — different methods exhibit large performance variation across scenes, with no universally optimal approach; (b) **Spatial-level** — within a single scene, different regions are best reconstructed by different methods; (c) **Temporal-level** — the optimal method for a given video changes dynamically across frames.
 
-**Root Cause**: Each deformation model embeds a specific inductive bias — HexPlane favors low-motion regions, per-Gaussian embeddings suit fast and consistent optical flow, polynomials handle globally smooth motion, and interpolation addresses locally diverse motion. Real-world scenes typically contain mixed motion patterns that no single method can comprehensively cover.
+**Key Challenge**: Each deformation model embeds a specific inductive bias — HexPlane favors low-motion regions, per-Gaussian embeddings suit fast and consistent optical flow, polynomials handle globally smooth motion, and interpolation addresses locally diverse motion. Real-world scenes typically contain mixed motion patterns that no single method can comprehensively cover.
 
-**Paper Goals**: To adaptively fuse multiple heterogeneous dynamic Gaussian experts so that the model automatically selects the most appropriate deformation prior for different spatial and temporal regions.
+**Goal**: To adaptively fuse multiple heterogeneous dynamic Gaussian experts so that the model automatically selects the most appropriate deformation prior for different spatial and temporal regions.
 
-**Starting Point**: Drawing inspiration from the MoE architecture, each dynamic GS method is treated as an expert, and a router is designed to adaptively fuse experts at the pixel level. The key challenge is that the router must simultaneously perceive 3D volumetric information and 2D pixel information.
+**Key Insight**: Drawing inspiration from the MoE architecture, each dynamic GS method is treated as an expert, and a router is designed to adaptively fuse experts at the pixel level. The key challenge is that the router must simultaneously perceive 3D volumetric information and 2D pixel information.
 
 **Core Idea**: By splatting per-Gaussian 3D routing weights into pixel space via differentiable weight splatting, the method achieves volume-aware adaptive expert fusion.
 

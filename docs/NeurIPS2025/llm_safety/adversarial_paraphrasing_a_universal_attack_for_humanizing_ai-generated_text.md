@@ -30,15 +30,15 @@ This paper proposes Adversarial Paraphrasing — a training-free universal attac
 
 ## Background & Motivation
 
-**State of the Field**: Large models such as GPT, Gemini, and LLaMA can generate fluent and coherent text, introducing security risks including plagiarism and social engineering attacks.
+**Background**: Large models such as GPT, Gemini, and LLaMA can generate fluent and coherent text, introducing security risks including plagiarism and social engineering attacks.
 
 **Limitations of Prior Work**: Three major categories of AI text detectors have emerged: neural-network-based trained classifiers (OpenAI-RoBERTa, RADAR, MAGE), zero-shot detectors (Fast-DetectGPT, GLTR), and watermarking schemes (KGW, Unigram, SynthID). Although early detectors could be defeated by single-pass or recursive paraphrasing, adversarially trained detectors such as RADAR have become robust against naive paraphrasing — simple paraphrasing even increases RADAR's detection rate (T@1%F +8.57%).
 
-**Root Cause**: Prior attacks lack generality: DIPPER requires a dedicated T5 paraphrasing model, while Watermark Stealing targets only watermark-based detectors and does not transfer to other detection paradigms.
+**Key Challenge**: Prior attacks lack generality: DIPPER requires a dedicated T5 paraphrasing model, while Watermark Stealing targets only watermark-based detectors and does not transfer to other detection paradigms.
 
-**Paper Goals**: To design a universal, training-free attack framework capable of reliably evading diverse AI text detectors without prior knowledge of the deployed detection scheme.
+**Goal**: To design a universal, training-free attack framework capable of reliably evading diverse AI text detectors without prior knowledge of the deployed detection scheme.
 
-**Starting Point**: Works such as PPLM and BEAST demonstrate that incorporating external classifier guidance signals at decoding time can control text attributes; this paper applies the same principle to "humanizing" paraphrasing.
+**Key Insight**: Works such as PPLM and BEAST demonstrate that incorporating external classifier guidance signals at decoding time can control text attributes; this paper applies the same principle to "humanizing" paraphrasing.
 
 ## Method
 

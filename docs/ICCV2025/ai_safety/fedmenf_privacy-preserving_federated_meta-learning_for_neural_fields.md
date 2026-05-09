@@ -33,13 +33,13 @@ This paper is the first to study federated meta-learning for Neural Fields (NFs)
 
 **Natural solution**: **Federated Meta-Learning (FML)** — multiple users collaboratively train a global meta-learner capable of rapidly adapting to new tasks.
 
-**Root Cause**: Traditional federated learning's privacy guarantee relies on the assumption that "sharing model parameters rather than raw data is safe." In the neural field setting, this assumption **completely breaks down** for two reasons:
+**Key Challenge**: Traditional federated learning's privacy guarantee relies on the assumption that "sharing model parameters rather than raw data is safe." In the neural field setting, this assumption **completely breaks down** for two reasons:
 
 Each client typically has only a **single task instance** (e.g., one's own car or face), causing local meta-optimization to degenerate into standard supervised training, where the local meta-learner becomes an NF optimized on private data.
 
 **NFs are inherently compact representations of data**, directly encoding raw data information. A malicious server can reconstruct private data from the shared NF parameters.
 
-**Starting Point**: The paper defines a quantifiable privacy metric $\text{PSNR}_p$, theoretically analyzes the mathematical mechanism of privacy leakage (originating from the $g_K$ term in the meta-gradient), and designs a regularization method to eliminate this term.
+**Key Insight**: The paper defines a quantifiable privacy metric $\text{PSNR}_p$, theoretically analyzes the mathematical mechanism of privacy leakage (originating from the $g_K$ term in the meta-gradient), and designs a regularization method to eliminate this term.
 
 ## Method
 

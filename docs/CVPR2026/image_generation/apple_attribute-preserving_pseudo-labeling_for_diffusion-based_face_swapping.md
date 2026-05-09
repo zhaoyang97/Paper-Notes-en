@@ -28,13 +28,13 @@ APPLE proposes a teacher-student framework based on diffusion models. It trains 
 
 ## Background & Motivation
 
-**State of the Field**: Face swapping aims to transfer the identity of a source image to a target image while preserving the target's attributes such as pose, expression, skin tone, lighting, and makeup. This technology is widely used in content creation, privacy protection, and filmmaking.
+**Background**: Face swapping aims to transfer the identity of a source image to a target image while preserving the target's attributes such as pose, expression, skin tone, lighting, and makeup. This technology is widely used in content creation, privacy protection, and filmmaking.
 
 **Limitations of Prior Work**: Early GAN-based methods (SimSwap, HiFiFace, FaceDancer, etc.) rely on conflicting objectives—identity loss and reconstruction loss—leading to unstable training and frequent copy-paste style artifacts.
 
 **Root Cause in Diffusion Methods**: Recent diffusion methods (DiffSwap, FaceAdapter, REFace) model the task as conditional inpainting, where the target face area is masked and then reconstructed. However, **the masking operation removes identity information while simultaneously losing crucial attribute cues** (lighting, skin tone, makeup, etc.). Consequently, even with auxiliary conditional information, the model fails to faithfully preserve these attributes.
 
-**Starting Point**: The core insight is that **the key to attribute preservation lies not in better attribute encoding, but in providing high-quality, attribute-aligned pseudo-labels as conditional inputs for the student model**. If the teacher can generate attribute-consistent pseudo-labels, the student can learn from clean images (rather than degraded masked images), achieving superior attribute preservation.
+**Key Insight**: The core insight is that **the key to attribute preservation lies not in better attribute encoding, but in providing high-quality, attribute-aligned pseudo-labels as conditional inputs for the student model**. If the teacher can generate attribute-consistent pseudo-labels, the student can learn from clean images (rather than degraded masked images), achieving superior attribute preservation.
 
 **Core Idea**: Replace conditional inpainting with conditional deblurring to train the teacher model, combined with an attribute-aware inversion scheme to generate high-quality pseudo-labels. The student model is then trained using these labels to achieve a win-win for both attribute preservation and identity transfer.
 

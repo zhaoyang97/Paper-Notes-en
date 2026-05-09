@@ -29,15 +29,15 @@ This paper proposes ConvAgent, which trains a conversational search agent to alt
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are becoming the primary interface for human-computer interaction; however, in multi-turn conversational search, user intent evolves across turns, requiring dynamic coordination between retrieval and generation.
+**Background**: LLMs are becoming the primary interface for human-computer interaction; however, in multi-turn conversational search, user intent evolves across turns, requiring dynamic coordination between retrieval and generation.
 
 **Limitations of Prior Work**: (1) Traditional methods adopt static "rewrite→retrieve→generate" pipelines with independently optimized modules, precluding joint optimization. (2) Emerging deep search agents (e.g., Search-R1) enable joint optimization of retrieval and generation but target only single-turn scenarios, lacking multi-turn conversational capabilities. (3) Existing methods neglect mixed-initiative behaviors, such as posing clarification questions at appropriate moments.
 
-**Root Cause**: Multi-turn conversational search simultaneously demands contextual understanding (decontextualization), search optimization (retrieval quality), and action decision-making (when to answer, clarify, or abstain), yet no existing method jointly optimizes all three dimensions.
+**Key Challenge**: Multi-turn conversational search simultaneously demands contextual understanding (decontextualization), search optimization (retrieval quality), and action decision-making (when to answer, clarify, or abstain), yet no existing method jointly optimizes all three dimensions.
 
-**Paper Goals**: Simultaneously optimize multiple aspects within a unified agent framework through contextualized reasoning.
+**Goal**: Simultaneously optimize multiple aspects within a unified agent framework through contextualized reasoning.
 
-**Starting Point**: The total reward is decomposed into three complementary components, and the agent is trained via the GRPO algorithm to alternately perform retrieval and reasoning across turns.
+**Key Insight**: The total reward is decomposed into three complementary components, and the agent is trained via the GRPO algorithm to alternately perform retrieval and reasoning across turns.
 
 **Core Idea**: Intermediate process rewards (information gain + mixed-initiative behavior) compensate for the sparse supervision of outcome-only rewards, enabling the model to learn more strategic search and interaction behaviors.
 

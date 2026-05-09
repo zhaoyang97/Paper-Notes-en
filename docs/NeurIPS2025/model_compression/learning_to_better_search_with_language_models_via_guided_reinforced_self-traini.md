@@ -29,15 +29,15 @@ This paper proposes Guided-ReST, which progressively incorporates optimal soluti
 
 ## Background & Motivation
 
-**State of the Field**: Language models still struggle with complex reasoning tasks. Recent work (e.g., Stream of Search, SoS) shows that training models to imitate full search trajectories—including exploration and backtracking—generalizes better than training on final answers alone.
+**Background**: Language models still struggle with complex reasoning tasks. Recent work (e.g., Stream of Search, SoS) shows that training models to imitate full search trajectories—including exploration and backtracking—generalizes better than training on final answers alone.
 
 **Limitations of Prior Work**: Search trajectories used in SoS training are often noisy and suboptimal, causing test-time compute to be wasted on redundant exploration and repeated backtracking. Standard ReST simply filters successful trajectories for fine-tuning without exploiting the structural information of optimal solutions.
 
-**Root Cause**: Optimal solutions provide valuable guidance but suffer from poor generalization when used directly for behavioral cloning, whereas search trajectories generalize well but are inefficient. How can both advantages be combined?
+**Key Challenge**: Optimal solutions provide valuable guidance but suffer from poor generalization when used directly for behavioral cloning, whereas search trajectories generalize well but are inefficient. How can both advantages be combined?
 
-**Paper Goals**: To generate high-quality search trajectory data that enables models to internalize efficient search strategies, maximizing problem-solving accuracy under a limited token budget.
+**Goal**: To generate high-quality search trajectory data that enables models to internalize efficient search strategies, maximizing problem-solving accuracy under a limited token budget.
 
-**Starting Point**: Drawing on the dual-policy framework of jump-start RL, the paper uses optimal solutions as waypoints to guide the search process.
+**Key Insight**: Drawing on the dual-policy framework of jump-start RL, the paper uses optimal solutions as waypoints to guide the search process.
 
 **Core Idea**: Optimal solutions are ill-suited for direct imitation, but can serve as step-by-step waypoints that are progressively integrated into model-generated search trajectories to produce high-quality training data.
 

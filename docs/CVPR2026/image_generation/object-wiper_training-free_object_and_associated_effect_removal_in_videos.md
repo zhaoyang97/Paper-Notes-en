@@ -28,15 +28,15 @@ This paper presents Object-WIPER, the first training-free framework for removing
 
 ## Background & Motivation
 
-**State of the Field**: Video object removal is a critical technique in film production and privacy protection. Classical methods (PatchMatch / graph cut) and learning-based methods (Propainter) focus on inpainting the object region while entirely ignoring associated effects (shadows/reflections). Recent diffusion-based approaches (VACE/Videopainter) also preserve associated effects.
+**Background**: Video object removal is a critical technique in film production and privacy protection. Classical methods (PatchMatch / graph cut) and learning-based methods (Propainter) focus on inpainting the object region while entirely ignoring associated effects (shadows/reflections). Recent diffusion-based approaches (VACE/Videopainter) also preserve associated effects.
 
 **Limitations of Prior Work**: (a) Nearly all existing methods retain shadows/reflections, producing visual artifacts; (b) ROSE handles associated effects but requires training on large amounts of synthetic data; (c) Omnimatte-Zero extends user masks to cover associated regions but relies on an external point-tracking model (TAP-Net), which fails under fast motion or transparent objects, and its expansion strategy is suboptimal.
 
-**Root Cause**: Object removal is not equivalent to region inpainting — a truly clean removal must simultaneously eliminate all "visual traces" of the object (shadows, reflections, mirror images, etc.).
+**Key Challenge**: Object removal is not equivalent to region inpainting — a truly clean removal must simultaneously eliminate all "visual traces" of the object (shadows, reflections, mirror images, etc.).
 
-**Paper Goals**: Simultaneously remove objects and all their associated visual effects without any training.
+**Goal**: Simultaneously remove objects and all their associated visual effects without any training.
 
-**Starting Point**: Exploit the shared text-visual embedding space in MMDiT to directly localize associated effects, without relying on external models.
+**Key Insight**: Exploit the shared text-visual embedding space in MMDiT to directly localize associated effects, without relying on external models.
 
 **Core Idea**: Cross-attention localizes associated effect seeds → self-attention refines → foreground re-initialization + attention scaling → adaptive temporal masking.
 

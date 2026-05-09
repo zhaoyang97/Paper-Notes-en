@@ -28,15 +28,15 @@ This paper proposes REPA-E, the first training framework to successfully enable 
 
 ## Background & Motivation
 
-**State of the Field**: Latent diffusion models (LDMs) adopt a two-stage training paradigm—first training a VAE, then freezing it while training the diffusion model. REPA accelerates diffusion model training by aligning intermediate representations to features from pretrained encoders such as DINO.
+**Background**: Latent diffusion models (LDMs) adopt a two-stage training paradigm—first training a VAE, then freezing it while training the diffusion model. REPA accelerates diffusion model training by aligning intermediate representations to features from pretrained encoders such as DINO.
 
 **Limitations of Prior Work**: (1) The two-stage paradigm means the VAE latent space is never optimized for the generative task—the VAE is trained for reconstruction, which does not necessarily yield an optimal input space for the diffusion model. (2) Different VAEs exhibit distinct failure modes: SD-VAE latent spaces contain high-frequency noise, while self-trained IN-VAE latent spaces are over-smoothed. (3) Directly back-propagating the diffusion loss through the VAE leads to latent space collapse.
 
-**Root Cause**: While end-to-end training is generally preferable in deep learning, directly applying it in LDMs causes the diffusion loss to "hack" the latent space into an overly simple representation that is easy to denoise but degrades generation quality.
+**Key Challenge**: While end-to-end training is generally preferable in deep learning, directly applying it in LDMs causes the diffusion loss to "hack" the latent space into an overly simple representation that is easy to denoise but degrades generation quality.
 
-**Paper Goals**: To identify an effective end-to-end training scheme that jointly optimizes the VAE and the diffusion model for maximal generative performance.
+**Goal**: To identify an effective end-to-end training scheme that jointly optimizes the VAE and the diffusion model for maximal generative performance.
 
-**Starting Point**: Analysis reveals that the REPA representation alignment score (CKNNA) strongly correlates with generation quality, and its upper bound is constrained by the VAE feature bottleneck. Improving VAE features through end-to-end training can therefore break this bottleneck.
+**Key Insight**: Analysis reveals that the REPA representation alignment score (CKNNA) strongly correlates with generation quality, and its upper bound is constrained by the VAE feature bottleneck. Improving VAE features through end-to-end training can therefore break this bottleneck.
 
 **Core Idea**: Update the VAE using the REPA alignment loss rather than the diffusion loss. The REPA loss encourages the VAE latent space and diffusion model features to jointly align with pretrained visual representations, thereby avoiding latent space collapse while adaptively improving the structural quality of the VAE latent space.
 

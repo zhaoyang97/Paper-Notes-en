@@ -30,13 +30,13 @@ This paper identifies spatial perception bias in RoPE when applied to 3D LVLMs (
 
 ## Background & Motivation
 
-**State of the Field**: 3D LVLMs encode point clouds and process them jointly with an LLM for 3D scene understanding. Mainstream approaches inherit RoPE from LLMs, flattening point cloud tokens into a 1D sequence via raster-scan ordering.
+**Background**: 3D LVLMs encode point clouds and process them jointly with an LLM for 3D scene understanding. Mainstream approaches inherit RoPE from LLMs, flattening point cloud tokens into a 1D sequence via raster-scan ordering.
 
 **Limitations of Prior Work**: Information flow visualization reveals severe spatial perception bias — cross-modal attention concentrates on a few hotspot tokens, the majority of 3D tokens receive approximately uniform weights, and small objects along with structural boundaries are systematically suppressed. Two root causes are identified: (i) 1D raster indexing destroys the 3D spatial continuity of point clouds, causing spatially adjacent tokens to receive non-adjacent positional indices; (ii) the relative distance $\Delta t = t_1 - t_2$ captures only sequential order, with no sensitivity to spatial position or directional change.
 
-**Root Cause**: RoPE is designed for 1D text and, when naively applied to 3D point clouds, inherently neglects spatial structure and directional information. Existing 2D/video extensions (VideoRoPE, M-RoPE) target image grids and are unsuitable for irregular point clouds.
+**Key Challenge**: RoPE is designed for 1D text and, when naively applied to 3D point clouds, inherently neglects spatial structure and directional information. Existing 2D/video extensions (VideoRoPE, M-RoPE) target image grids and are unsuitable for irregular point clouds.
 
-**Starting Point**: Spherical coordinates $(r, \theta, \phi)$ naturally decouple distance from direction. Mapping 3D tokens into spherical space enables simultaneous encoding of position and orientation.
+**Key Insight**: Spherical coordinates $(r, \theta, \phi)$ naturally decouple distance from direction. Mapping 3D tokens into spherical space enables simultaneous encoding of position and orientation.
 
 **Core Idea**: Replace the 1D raster index with spherical coordinates $(t, r, \theta, \phi)$, and allocate RoPE frequency bands functionally across different coordinate components.
 

@@ -28,15 +28,15 @@ This paper establishes that the solvability of f-DPO does not require convexity 
 
 ## Background & Motivation
 
-**State of the Field**: DPO and its variants are the dominant methods for LLM alignment, essentially constraining policy deviation from a reference model via KL divergence within the RLHF objective. Wang et al. (2024) generalize the KL divergence to $f$-divergences, but restrict $f$ to be convex.
+**Background**: DPO and its variants are the dominant methods for LLM alignment, essentially constraining policy deviation from a reference model via KL divergence within the RLHF objective. Wang et al. (2024) generalize the KL divergence to $f$-divergences, but restrict $f$ to be convex.
 
 **Limitations of Prior Work**: DPO suffers from *probability displacement* — during training, the probabilities of both winner and loser responses tend toward zero. This causes severe performance degradation under overtraining and is widely regarded as the most critical practical drawback of DPO.
 
-**Root Cause**: The KL divergence corresponds to $f_{KL}(t) = t\log t$, whose $\arg\min = e^{-1} < 1$, which theoretically implies that DPO must cause the winner probability to decrease by at least a factor of $e^{-1}$. Within the class of convex $f$-divergences, it is difficult to find an $f$ that simultaneously satisfies solvability and displacement resistance.
+**Key Challenge**: The KL divergence corresponds to $f_{KL}(t) = t\log t$, whose $\arg\min = e^{-1} < 1$, which theoretically implies that DPO must cause the winner probability to decrease by at least a factor of $e^{-1}$. Within the class of convex $f$-divergences, it is difficult to find an $f$ that simultaneously satisfies solvability and displacement resistance.
 
-**Paper Goals**: (1) What are the precise solvability conditions for f-DPO? (2) Which choices of $f$ can theoretically prevent probability displacement? (3) Can a loss be designed that is simultaneously solvable and displacement-resistant?
+**Goal**: (1) What are the precise solvability conditions for f-DPO? (2) Which choices of $f$ can theoretically prevent probability displacement? (3) Can a loss be designed that is simultaneously solvable and displacement-resistant?
 
-**Starting Point**: Relax the convexity requirement and search for $f$ satisfying both conditions within a broader function class.
+**Key Insight**: Relax the convexity requirement and search for $f$ satisfying both conditions within a broader function class.
 
 **Core Idea**: Replace $f(t) = t\log t$ (convex, displacement-prone) with $f(t) = \frac{1}{2}(\log t)^2$ (nonconvex, displacement-resistant) to derive the theoretically superior SquaredPO loss.
 

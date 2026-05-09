@@ -27,15 +27,15 @@ This paper systematically reveals severe language bias (favoring English and the
 
 ## Background & Motivation
 
-**State of the Field**: Multilingual RAG enhances the global knowledge coverage of LLMs by leveraging cross-lingual evidence. In the real world, much knowledge is documented exclusively in specific languages (e.g., regional policies, cultural contexts), so an ideal mRAG system should select the most informative documents across languages.
+**Background**: Multilingual RAG enhances the global knowledge coverage of LLMs by leveraging cross-lingual evidence. In the real world, much knowledge is documented exclusively in specific languages (e.g., regional policies, cultural contexts), so an ideal mRAG system should select the most informative documents across languages.
 
 **Limitations of Prior Work**: Current mRAG systems exhibit pronounced language preference bias in the reranking stage. Taking the BGE reranker as an example, averaged across 13 languages, more than 70% of top-5 documents come from English and the query language. This means that even when high-quality evidence in other languages exists in the candidate pool, it is systematically suppressed in the rankings.
 
-**Root Cause**: The root of the problem is not a lack of relevant information in the candidate pool—Oracle experiments show that selecting the correct documents from already-retrieved candidates alone improves performance by 12.9–20 percentage points. The true bottleneck is that the reranker's language preference prevents it from identifying critical evidence in non-English/non-query languages. Furthermore, the Pearson correlation between reranking scores and downstream generation quality is below 0.2.
+**Key Challenge**: The root of the problem is not a lack of relevant information in the candidate pool—Oracle experiments show that selecting the correct documents from already-retrieved candidates alone improves performance by 12.9–20 percentage points. The true bottleneck is that the reranker's language preference prevents it from identifying critical evidence in non-English/non-query languages. Furthermore, the Pearson correlation between reranking scores and downstream generation quality is below 0.2.
 
-**Paper Goals**: (1) Quantify and diagnose language bias in mRAG; (2) Design a method to align document selection by the reranker with downstream generation quality, rather than relying solely on semantic relevance signals.
+**Goal**: (1) Quantify and diagnose language bias in mRAG; (2) Design a method to align document selection by the reranker with downstream generation quality, rather than relying solely on semantic relevance signals.
 
-**Starting Point**: An Oracle evidence estimation method is proposed—documents are independently reranked by language group and answers are generated per group, with the performance of the best language group serving as an upper bound, thereby precisely quantifying the performance loss caused by bias.
+**Key Insight**: An Oracle evidence estimation method is proposed—documents are independently reranked by language group and answers are generated per group, with the performance of the best language group serving as an upper bound, thereby precisely quantifying the performance loss caused by bias.
 
 **Core Idea**: Replace semantic relevance with answer utility as the training signal for the reranker, eliminating the influence of language priors.
 

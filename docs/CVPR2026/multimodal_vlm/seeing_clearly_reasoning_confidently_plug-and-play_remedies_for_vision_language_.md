@@ -27,18 +27,18 @@ content_hash: a7f4916b551b8aa2
 This paper proposes an efficient plug-and-play module that learns multimodal class embeddings to enhance VLM recognition and reasoning on rare objects. On the visual side, a cross-attention adapter refines visual tokens; on the textual side, object detection prompts are injected. Without fine-tuning the VLM, the method achieves a significant gain from 72.8 to 75.4 on CODA-LM.
 
 ## Background & Motivation
-**State of the Field**: VLMs perform well on general visual understanding, but exhibit notable degradation on reasoning tasks involving rare or uncommon objects.
+**Background**: VLMs perform well on general visual understanding, but exhibit notable degradation on reasoning tasks involving rare or uncommon objects.
 
 **Limitations of Prior Work**:
 - Attention weights in intermediate decoding layers of VLMs are significantly lower for rare object regions compared to common objects.
 - Approaches that introduce stronger visual encoders or perform full model fine-tuning incur high computational costs and are not optimized at the object level.
 - Retrieval-augmented learning (RAL) requires large-scale external data and VLM fine-tuning, and may cause catastrophic forgetting.
 
-**Root Cause**: Rare objects appear with extremely low frequency in pretraining data, leading to insufficient visual-language alignment. Existing improvement methods are not designed at the object level and require expensive full model fine-tuning.
+**Key Challenge**: Rare objects appear with extremely low frequency in pretraining data, leading to insufficient visual-language alignment. Existing improvement methods are not designed at the object level and require expensive full model fine-tuning.
 
-**Paper Goals**: Efficiently improve VLM perception and reasoning for rare objects without fine-tuning the VLM.
+**Goal**: Efficiently improve VLM perception and reasoning for rare objects without fine-tuning the VLM.
 
-**Starting Point**: Attention visualizations reveal that VLMs pay insufficient attention to rare objects in intermediate decoding layers. This motivates remedies from two directions — enhancing visual tokens (making rare objects more salient) and enriching text prompts (guiding attention to target regions).
+**Key Insight**: Attention visualizations reveal that VLMs pay insufficient attention to rare objects in intermediate decoding layers. This motivates remedies from two directions — enhancing visual tokens (making rare objects more salient) and enriching text prompts (guiding attention to target regions).
 
 **Core Idea**: Learn multimodal class embeddings that fuse features from visual foundation models and synonym-augmented text descriptions. These embeddings serve both as anchors for visual token refinement and as object detectors for generating text prompts.
 

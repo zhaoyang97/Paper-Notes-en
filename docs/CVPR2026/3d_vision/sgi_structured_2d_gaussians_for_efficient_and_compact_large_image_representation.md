@@ -29,7 +29,7 @@ SGI proposes a seed-based structured 2D Gaussian representation framework that o
 
 ## Background & Motivation
 
-**State of the Field**: 2D Gaussian Splatting has emerged as a promising image representation technique that enables efficient rendering on low-end devices. However, scaling it to high-resolution images requires independently optimizing and storing millions of unstructured Gaussian primitives, resulting in two core bottlenecks:
+**Background**: 2D Gaussian Splatting has emerged as a promising image representation technique that enables efficient rendering on low-end devices. However, scaling it to high-resolution images requires independently optimizing and storing millions of unstructured Gaussian primitives, resulting in two core bottlenecks:
 
 1. **Parameter Redundancy**: Existing methods (e.g., GaussianImage, LIG) optimize each Gaussian independently without exploiting spatial locality — neighboring pixels tend to share similar colors, textures, and structures, leading to substantial redundancy among adjacent primitives.
 2. **Optimization Overhead**: Independent optimization of millions of Gaussian primitives at high resolution converges slowly, especially when quantization-aware fine-tuning is introduced for compression.

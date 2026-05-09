@@ -27,13 +27,13 @@ content_hash: 3184af12226b35bc
 This paper proposes a nested Sequential Monte Carlo (SMC) algorithm grounded in non-Markovian Feynman-Kac models for policy optimization in continuous POMDPs, naturally capturing the value of information gathering without hand-crafted heuristics.
 
 ## Background & Motivation
-**State of the Field**: Optimal decision-making in partially observable Markov decision processes (POMDPs) requires agents to balance uncertainty reduction (exploration) with immediate goal pursuit (exploitation).
+**Background**: Optimal decision-making in partially observable Markov decision processes (POMDPs) requires agents to balance uncertainty reduction (exploration) with immediate goal pursuit (exploitation).
 
 **Limitations of Prior Work**: Existing policy optimization methods for continuous POMDPs either rely on suboptimal approximations (e.g., belief-point methods) or employ hand-crafted reward shaping to encourage exploration.
 
-**Root Cause**: The belief space of a POMDP is infinite-dimensional, making direct optimization computationally intractable; yet simplified approximations fail to preserve the value of information gathering.
+**Key Challenge**: The belief space of a POMDP is infinite-dimensional, making direct optimization computationally intractable; yet simplified approximations fail to preserve the value of information gathering.
 
-**Starting Point**: The paper reformulates policy learning as probabilistic inference, naturally encoding information value through a Feynman-Kac model.
+**Key Insight**: The paper reformulates policy learning as probabilistic inference, naturally encoding information value through a Feynman-Kac model.
 
 ## Method
 

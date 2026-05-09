@@ -27,16 +27,16 @@ content_hash: fedd30583ef75415
 This paper introduces the concept of a *reasoning graph* — a directed graph constructed by clustering the hidden states of LLMs — and analyzes large reasoning models (e.g., the DeepSeek-R1 distillation series) along three graph-theoretic dimensions: cycle density, diameter, and small-world index. Reasoning models are found to exhibit significantly more cycles (~5 per sample), larger diameters, and stronger small-world properties (~6×), all of which grow with task difficulty and model scale.
 
 ## Background & Motivation
-**State of the Field**: Large reasoning models (OpenAI-o1, DeepSeek-R1, Gemini Extended Thinking) achieve state-of-the-art performance via extended chain-of-thought reasoning, yet their internal reasoning mechanisms remain poorly understood.
+**Background**: Large reasoning models (OpenAI-o1, DeepSeek-R1, Gemini Extended Thinking) achieve state-of-the-art performance via extended chain-of-thought reasoning, yet their internal reasoning mechanisms remain poorly understood.
 
 **Limitations of Prior Work**:
    - Existing analyses operate at the token level (e.g., "aha moments," language-mixing phenomena) and lack a structured analytical framework.
    - There is no satisfying explanation for *why* longer reasoning chains are effective.
    - SFT data construction lacks quantitative guidance — there is no clear definition of what constitutes "good reasoning data."
 
-**Root Cause**: Improvements in reasoning capability are clearly related to the structure of the reasoning process, yet formal tools for characterizing this structure are absent.
+**Key Challenge**: Improvements in reasoning capability are clearly related to the structure of the reasoning process, yet formal tools for characterizing this structure are absent.
 
-**Starting Point**: Model the LLM reasoning process as a directed graph (reasoning graph) and apply graph-theoretic tools to quantify reasoning structure.
+**Key Insight**: Model the LLM reasoning process as a directed graph (reasoning graph) and apply graph-theoretic tools to quantify reasoning structure.
 
 **Core Idea**: Cluster the hidden states at each reasoning step into nodes and treat reasoning paths as edges; use cycle count, diameter, and small-world index to characterize the structural differences between reasoning models and base models.
 

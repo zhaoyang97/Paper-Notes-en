@@ -28,15 +28,15 @@ content_hash: 16457dbc7e5e5e7b
 This paper proves that finding local optima in contrastive learning is computationally hard: the discrete triplet maximization problem is PLS-hard (even when $d=1$), and continuous triplet loss minimization is CLS-hard, implying that (under standard assumptions) no polynomial-time algorithm exists for finding local optima.
 
 ## Background & Motivation
-**State of the Field**: Contrastive learning learns an embedding space via triplet constraints $(x, y, z)$ (requiring $x$ to be closer to $y$ than to $z$). In practice, gradient descent and local search find good solutions with consistent effectiveness.
+**Background**: Contrastive learning learns an embedding space via triplet constraints $(x, y, z)$ (requiring $x$ to be closer to $y$ than to $z$). In practice, gradient descent and local search find good solutions with consistent effectiveness.
 
 **Limitations of Prior Work**: Despite the empirical success of contrastive learning, the computational complexity of its optimization landscape is entirely unexplored. While finding a global optimum is intuitively NP-hard, whether finding a *local* optimum is tractable remains an open question. The PLS (Polynomial Local Search) and CLS (Continuous Local Search) frameworks provide the appropriate complexity-theoretic characterization.
 
-**Root Cause**: Local search is the practical optimization strategy for contrastive learning. If finding a local optimum is itself intractable, why does local search succeed in practice? Do hard instances exist that require exponentially many steps?
+**Key Challenge**: Local search is the practical optimization strategy for contrastive learning. If finding a local optimum is itself intractable, why does local search succeed in practice? Do hard instances exist that require exponentially many steps?
 
-**Paper Goals**: To determine the precise complexity class (PLS/CLS-hardness) of local search in contrastive learning.
+**Goal**: To determine the precise complexity class (PLS/CLS-hardness) of local search in contrastive learning.
 
-**Starting Point**: Starting from classical combinatorial optimization problems (LocalMaxCut, QuadraticProgram-KKT), the paper constructs polynomial reductions to contrastive learning problems using geometric gadgets (boundary points, isosceles triangles, regular simplices) to encode graph structure.
+**Key Insight**: Starting from classical combinatorial optimization problems (LocalMaxCut, QuadraticProgram-KKT), the paper constructs polynomial reductions to contrastive learning problems using geometric gadgets (boundary points, isosceles triangles, regular simplices) to encode graph structure.
 
 **Core Idea**: A carefully designed geometric encoding reduces MaxCut local search to contrastive triplet optimization, proving that local search may require exponential time even in one-dimensional embeddings.
 

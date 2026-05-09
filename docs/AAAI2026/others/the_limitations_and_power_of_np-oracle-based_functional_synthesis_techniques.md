@@ -28,15 +28,15 @@ This paper systematically investigates, from a theoretical perspective, the capa
 
 ## Background & Motivation
 
-1. **State of the Field**: Functional synthesis is a foundational problem in computer science — given a Boolean relational specification $F(X,Y)$ over inputs and outputs, the goal is to construct a Skolem function $\Psi$ satisfying $\exists Y F(X,Y) \equiv F(X, \Psi(X))$. Over the past decade, SAT-solver-based synthesis tools have achieved remarkable scalability improvements, increasing the number of solved benchmarks (out of a standard set of 609) from 210 in 2016 to 509 in 2023.
+1. **Background**: Functional synthesis is a foundational problem in computer science — given a Boolean relational specification $F(X,Y)$ over inputs and outputs, the goal is to construct a Skolem function $\Psi$ satisfying $\exists Y F(X,Y) \equiv F(X, \Psi(X))$. Over the past decade, SAT-solver-based synthesis tools have achieved remarkable scalability improvements, increasing the number of solved benchmarks (out of a standard set of 609) from 210 in 2016 to 509 in 2023.
 
 2. **Limitations of Prior Work**: Although diverse practical approaches — proof-based, knowledge-compilation-based, guess-check-repair, and incremental determinization — all rely on SAT solvers and perform well in practice, a systematic theoretical understanding of their capabilities and limitations is lacking. Existing theoretical studies focus primarily on the intrinsic hardness of the problem itself and cannot explain the significant practical progress observed.
 
-3. **Root Cause**: The central question facing practitioners is: how powerful are synthesis frameworks that rely on SAT solvers (i.e., NP oracles)? What are their inherent limitations? And are there problem structures that such frameworks can handle efficiently?
+3. **Key Challenge**: The central question facing practitioners is: how powerful are synthesis frameworks that rely on SAT solvers (i.e., NP oracles)? What are their inherent limitations? And are there problem structures that such frameworks can handle efficiently?
 
-4. **Paper Goals**: (a) Why do bit-by-bit learning approaches fail for multi-output synthesis? (b) What are the circuit-size lower bounds for interpolation-based methods? (c) Is an NP oracle a necessary condition for efficient synthesis? (d) Under what conditions is an NP oracle sufficient for efficient synthesis?
+4. **Goal**: (a) Why do bit-by-bit learning approaches fail for multi-output synthesis? (b) What are the circuit-size lower bounds for interpolation-based methods? (c) Is an NP oracle a necessary condition for efficient synthesis? (d) Under what conditions is an NP oracle sufficient for efficient synthesis?
 
-5. **Starting Point**: The work draws on computational learning theory — specifically the mistake-bounded learning model — and extends the NP-oracle learning framework of Bshouty et al. to the multi-output synthesis problem under relational specifications.
+5. **Key Insight**: The work draws on computational learning theory — specifically the mistake-bounded learning model — and extends the NP-oracle learning framework of Bshouty et al. to the multi-output synthesis problem under relational specifications.
 
 6. **Core Idea**: An NP oracle is both necessary and sufficient for efficient functional synthesis — necessity follows from a reduction from SAT to unique-SAT, while sufficiency follows from the ability to synthesize small Skolem functions in time polynomial in the specification size and the size of the minimum sufficient witness set.
 

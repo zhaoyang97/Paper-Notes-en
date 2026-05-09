@@ -29,15 +29,15 @@ This paper proposes R2A (Route to Rome Attack), which constructs a hybrid ensemb
 
 ## Background & Motivation
 
-**State of the Field**: To balance performance and cost, cost-aware LLM routing directs simple queries to cheap weak models and complex queries to expensive strong models. This routing strategy has been adopted by commercial systems (OpenRouter, GPT-5-Auto). Routers optimize the trade-off between quality loss and cost via $\mathcal{R}(q) = \arg\min_{M_i} [\ell(q, M_i) + \lambda \cdot C(q, M_i)]$.
+**Background**: To balance performance and cost, cost-aware LLM routing directs simple queries to cheap weak models and complex queries to expensive strong models. This routing strategy has been adopted by commercial systems (OpenRouter, GPT-5-Auto). Routers optimize the trade-off between quality loss and cost via $\mathcal{R}(q) = \arg\min_{M_i} [\ell(q, M_i) + \lambda \cdot C(q, M_i)]$.
 
 **Limitations of Prior Work**: (1) Routing strategies introduce a new attack surface — adversaries may manipulate routers into consistently selecting expensive models to inflate operator costs; (2) the existing routing attack method Rerouting relies on white-box access (requiring gradients and architecture information), making it unsuitable for commercial black-box scenarios; (3) LifeCycle uses heuristic prompt templates (extracted from high-win-rate queries) without rigorous optimization, resulting in inconsistent effectiveness across different routers.
 
-**Root Cause**: An adversary can only observe the router's final routing decision (which model was selected), with no access to internal logits, parameters, or gradients. Under this strict black-box setting, how can one learn a universal adversarial suffix within a limited query budget (120 queries) that consistently misleads routers of diverse architectures?
+**Key Challenge**: An adversary can only observe the router's final routing decision (which model was selected), with no access to internal logits, parameters, or gradients. Under this strict black-box setting, how can one learn a universal adversarial suffix within a limited query budget (120 queries) that consistently misleads routers of diverse architectures?
 
-**Paper Goals**: (1) In a black-box setting where only routing decisions are observable, find a universal adversarial suffix that biases the router toward selecting expensive models; (2) the suffix must generalize across datasets, including out-of-distribution data.
+**Goal**: (1) In a black-box setting where only routing decisions are observable, find a universal adversarial suffix that biases the router toward selecting expensive models; (2) the suffix must generalize across datasets, including out-of-distribution data.
 
-**Starting Point**: Drawing on black-box adversarial attack techniques from computer vision — training surrogate models to simulate target model behavior, then optimizing adversarial examples on the surrogate and transferring them. The key challenge is the diversity of router architectures (embedding-based, LLM-based, etc.), meaning a single-architecture surrogate may not match the target router.
+**Key Insight**: Drawing on black-box adversarial attack techniques from computer vision — training surrogate models to simulate target model behavior, then optimizing adversarial examples on the surrogate and transferring them. The key challenge is the diversity of router architectures (embedding-based, LLM-based, etc.), meaning a single-architecture surrogate may not match the target router.
 
 **Core Idea**: Employ a hybrid ensemble surrogate router (multiple open-source routers + a lightweight trainable router) to cover diverse routing mechanisms, and search for universal adversarial suffixes effective against unknown target routers via gradient-normalized ensemble suffix optimization.
 

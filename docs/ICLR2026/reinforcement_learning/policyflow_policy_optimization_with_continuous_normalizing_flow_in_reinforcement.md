@@ -29,7 +29,7 @@ PolicyFlow seamlessly integrates a continuous normalizing flow (CNF) policy into
 
 ## Background & Motivation
 
-**State of the Field**: PPO is the dominant policy gradient method for online reinforcement learning, widely applied in robotic control and LLM alignment. Its core mechanism relies on the importance ratio to update the policy, typically under a Gaussian distribution assumption to simplify likelihood computation. However, Gaussian policies can only represent unimodal distributions and fail to model complex multimodal action distributions.
+**Background**: PPO is the dominant policy gradient method for online reinforcement learning, widely applied in robotic control and LLM alignment. Its core mechanism relies on the importance ratio to update the policy, typically under a Gaussian distribution assumption to simplify likelihood computation. However, Gaussian policies can only represent unimodal distributions and fail to model complex multimodal action distributions.
 
 **Limitations of Prior Work**:
 

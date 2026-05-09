@@ -28,15 +28,15 @@ A3GS is proposed as the first feed-forward zero-shot 3DGS style transfer framewo
 
 ## Background & Motivation
 
-**State of the Field**: 3D scene style transfer is an important requirement in domains such as the metaverse and gaming. With the emergence of 3D Gaussian Splatting (3DGS), methods such as StylizedGS and G-Style leverage gradient-based optimization to stylize 3DGS scenes, achieving real-time rendering with satisfactory stylization quality.
+**Background**: 3D scene style transfer is an important requirement in domains such as the metaverse and gaming. With the emergence of 3D Gaussian Splatting (3DGS), methods such as StylizedGS and G-Style leverage gradient-based optimization to stylize 3DGS scenes, achieving real-time rendering with satisfactory stylization quality.
 
 **Limitations of Prior Work**: Optimization-based methods suffer from two critical issues: (1) each scene–style combination requires minutes to hours of optimization, making rapid style switching infeasible; (2) GPU memory consumption grows linearly with the number of Gaussian primitives, making large-scale scenes intractable — for instance, StyleGaussian runs out of memory beyond 300K Gaussian primitives.
 
-**Root Cause**: Style transfer quality depends on a thorough understanding of 3D spatial structural features, yet efficient feed-forward approaches struggle to extract meaningful 3D local features from unstructured 3DGS data. The information carried by individual Gaussian primitives is insufficient to capture 3D structural style characteristics, which require collaborative color distributions across multiple local Gaussian primitives.
+**Key Challenge**: Style transfer quality depends on a thorough understanding of 3D spatial structural features, yet efficient feed-forward approaches struggle to extract meaningful 3D local features from unstructured 3DGS data. The information carried by individual Gaussian primitives is insufficient to capture 3D structural style characteristics, which require collaborative color distributions across multiple local Gaussian primitives.
 
-**Paper Goals**: Design a feed-forward network that enables zero-shot 3DGS style transfer — requiring no additional training or optimization for arbitrary new scenes and styles.
+**Goal**: Design a feed-forward network that enables zero-shot 3DGS style transfer — requiring no additional training or optimization for arbitrary new scenes and styles.
 
-**Starting Point**: The authors observe that in 2D image style transfer, CNNs can efficiently inject styles in a zero-shot manner within the feature space. By analogy, if a suitable feature extraction network can be designed for the unstructured nature of 3DGS data, a similar style transfer mechanism can be realized in 3D feature space.
+**Key Insight**: The authors observe that in 2D image style transfer, CNNs can efficiently inject styles in a zero-shot manner within the feature space. By analogy, if a suitable feature extraction network can be designed for the unstructured nature of 3DGS data, a similar style transfer mechanism can be realized in 3D feature space.
 
 **Core Idea**: A 3D Graph Convolutional Network (3D-GCN) autoencoder aggregates and encodes local Gaussian primitives from a 3DGS scene into a latent space. AdaIN is then applied in the latent space to inject VGG-extracted style features from a reference image, followed by decoding back to 3DGS colors — enabling fast, feed-forward style transfer.
 

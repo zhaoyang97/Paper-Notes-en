@@ -35,7 +35,7 @@ MeshMamba introduces a Mamba state space model-based approach for articulated 3D
     - **Vertex-based methods**: More flexible through direct manipulation of mesh vertices, but Transformer architectures face an $O(n^2)$ complexity bottleneck.
     - Existing vertex-level Transformer methods typically handle only coarse-resolution meshes of ~500 vertices, requiring additional upsampling that loses local geometric detail.
     - Consequently, current methods are limited to body-only pose reconstruction, unable to incorporate hand poses and facial expressions.
-- **Root Cause**: Mamba SSMs offer near-linear complexity and efficient inference, making them ideal for processing large numbers of vertex tokens. The core challenge lies in serializing mesh vertices into a 1D sequence amenable to Mamba.
+- **Key Challenge**: Mamba SSMs offer near-linear complexity and efficient inference, making them ideal for processing large numbers of vertex tokens. The core challenge lies in serializing mesh vertices into a 1D sequence amenable to Mamba.
 
 ## Method
 

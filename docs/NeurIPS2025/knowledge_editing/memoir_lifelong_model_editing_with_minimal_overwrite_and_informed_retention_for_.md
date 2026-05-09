@@ -27,15 +27,15 @@ content_hash: bdbcdd9012fc2ec9
 MEMOIR introduces a framework that incorporates zero-initialized residual memory matrices into FFN layers, employs TopHash-based sparse masks to confine each edit to a distinct subset of memory parameters, and at inference time conditionally activates stored knowledge by measuring mask overlap. The approach achieves an optimal balance among reliability, generalization, and locality across 15,000 sequential edits.
 
 ## Background & Motivation
-**State of the Field**: Deployed LLMs require continuous knowledge updates (correcting factual errors, incorporating new information), yet full fine-tuning is costly and prone to forgetting. Model editing methods fall into two categories: non-parametric methods (e.g., GRACE, which stores fixed input–output activation patterns) and parametric methods (e.g., ROME/MEMIT/AlphaEdit, which inject knowledge by modifying model parameters).
+**Background**: Deployed LLMs require continuous knowledge updates (correcting factual errors, incorporating new information), yet full fine-tuning is costly and prone to forgetting. Model editing methods fall into two categories: non-parametric methods (e.g., GRACE, which stores fixed input–output activation patterns) and parametric methods (e.g., ROME/MEMIT/AlphaEdit, which inject knowledge by modifying model parameters).
 
 **Limitations of Prior Work**: Non-parametric methods are precise and locality-preserving but generalize poorly—they cannot handle semantically similar yet differently phrased queries. Parametric methods generalize better but suffer from **new edits overwriting parameter updates of prior edits** during sequential editing, leading to catastrophic forgetting. MEMIT's reliability drops to near zero after 100 edits; ROME becomes nearly completely ineffective after 1,000 edits.
 
-**Root Cause**: There exists a fundamental trade-off among reliability, generalization, and locality. GRACE achieves near-perfect reliability and locality at the cost of severely degraded generalization (only 0.37 after 1,000 edits); AlphaEdit generalizes reasonably well but its locality degrades sharply under large-scale editing (0.56 after 1,000 edits).
+**Key Challenge**: There exists a fundamental trade-off among reliability, generalization, and locality. GRACE achieves near-perfect reliability and locality at the cost of severely degraded generalization (only 0.37 after 1,000 edits); AlphaEdit generalizes reasonably well but its locality degrades sharply under large-scale editing (0.56 after 1,000 edits).
 
-**Paper Goals**: Design a lifelong model editing framework that simultaneously maintains high scores across all three metrics and scales to tens of thousands of sequential edits.
+**Goal**: Design a lifelong model editing framework that simultaneously maintains high scores across all three metrics and scales to tens of thousands of sequential edits.
 
-**Starting Point**: Drawing inspiration from continual learning, where **sparsity mitigates forgetting**—if each edit modifies only a small subset of the parameter space and different edits use different subsets, interference is substantially reduced. The key innovation is the TopHash mechanism, which automatically assigns semantically consistent sparse masks.
+**Key Insight**: Drawing inspiration from continual learning, where **sparsity mitigates forgetting**—if each edit modifies only a small subset of the parameter space and different edits use different subsets, interference is substantially reduced. The key innovation is the TopHash mechanism, which automatically assigns semantically consistent sparse masks.
 
 **Core Idea**: A sparse mask is generated via top-$k$ selection of input activations combined with a fixed random permutation; during editing, gradient updates are restricted to the parameter columns corresponding to the mask; at inference, mask matching determines whether the residual memory is activated.
 

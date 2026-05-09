@@ -29,15 +29,15 @@ This paper presents Think360, a multimodal benchmark focused on *reasoning width
 
 ## Background & Motivation
 
-1. **State of the Field**: Recent large reasoning models (LRMs) have made remarkable progress in test-time scaling and long-chain reasoning. Existing benchmarks such as MathVista, MathVerse, and OlympiadBench have continuously raised difficulty and task coverage, spanning from K-12 to graduate-level problems and from text-only to multimodal inputs.
+1. **Background**: Recent large reasoning models (LRMs) have made remarkable progress in test-time scaling and long-chain reasoning. Existing benchmarks such as MathVista, MathVerse, and OlympiadBench have continuously raised difficulty and task coverage, spanning from K-12 to graduate-level problems and from text-only to multimodal inputs.
 
 2. **Limitations of Prior Work**: Nearly all existing evaluation benchmarks implicitly measure only *reasoning depth*—the ability to derive conclusions step by step along a single reasoning chain. However, humans rarely rely solely on linear reasoning; they more often search across the solution space in multiple directions, branch and backtrack, prune by trial and error, and integrate partial findings into a final answer.
 
-3. **Root Cause**: Reasoning depth and reasoning width are two orthogonal dimensions. Existing benchmarks conflate the two, making it impossible to distinguish whether a model "reasons deeply" or "searches broadly." The absence of systematic evaluation along the width dimension leads to a one-sided assessment of models' true reasoning capabilities.
+3. **Key Challenge**: Reasoning depth and reasoning width are two orthogonal dimensions. Existing benchmarks conflate the two, making it impossible to distinguish whether a model "reasons deeply" or "searches broadly." The absence of systematic evaluation along the width dimension leads to a one-sided assessment of models' true reasoning capabilities.
 
-4. **Paper Goals**: To construct a multimodal benchmark specifically designed to evaluate reasoning width, including: (a) a systematic definition of the cognitive capability dimensions of reasoning width; (b) an evaluation protocol that simultaneously quantifies depth and width; and (c) a comprehensive assessment of mainstream MLLMs on width-centric reasoning.
+4. **Goal**: To construct a multimodal benchmark specifically designed to evaluate reasoning width, including: (a) a systematic definition of the cognitive capability dimensions of reasoning width; (b) an evaluation protocol that simultaneously quantifies depth and width; and (c) a comprehensive assessment of mainstream MLLMs on width-centric reasoning.
 
-5. **Starting Point**: The authors draw an analogy between architectural "width" designs in neural networks (shortcut connections, dropout, pyramidal features, gradient backpropagation) and reasoning strategies (pruning, divide-and-conquer, trial-and-error, backtracking), establishing a correspondence between architectural and reasoning dimensions.
+5. **Key Insight**: The authors draw an analogy between architectural "width" designs in neural networks (shortcut connections, dropout, pyramidal features, gradient backpropagation) and reasoning strategies (pruning, divide-and-conquer, trial-and-error, backtracking), establishing a correspondence between architectural and reasoning dimensions.
 
 6. **Core Idea**: By constructing Think360—a 1,200+ sample multimodal benchmark focused on width reasoning—and a Tree-of-Thought evaluation protocol, the paper systematically exposes the inadequacy of current MLLMs in exploratory reasoning.
 

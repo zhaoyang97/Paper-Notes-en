@@ -27,7 +27,7 @@ This paper proposes FaCT, an inherently interpretable model combining B-cos tran
 
 ## Background & Motivation
 
-**State of the Field**: Deep networks achieve strong performance across diverse tasks, yet understanding their internal mechanisms remains difficult. Attribution methods such as Grad-CAM reveal which input pixels are important but cannot explain the **high-level concepts** the model relies upon.
+**Background**: Deep networks achieve strong performance across diverse tasks, yet understanding their internal mechanisms remains difficult. Attribution methods such as Grad-CAM reveal which input pixels are important but cannot explain the **high-level concepts** the model relies upon.
 
 **Existing Concept Explanation Methods**:
 - **Part-prototype networks** and **concept bottleneck models (CBM)**: attempt to construct inherently interpretable models, but the feature extractor itself remains opaque, and concept grounding may be unfaithful to the model.
@@ -38,7 +38,7 @@ This paper proposes FaCT, an inherently interpretable model combining B-cos tran
 - Concepts are assumed to correspond to small image patches or object parts.
 - Concepts are drawn from a predefined set.
 
-**Root Cause**: Existing methods introduce approximations in concept extraction and attribution, resulting in unfaithful explanations. Furthermore, metrics for evaluating concept consistency rely on manually annotated part masks, which have limited coverage and assume each concept corresponds to an annotated part.
+**Key Challenge**: Existing methods introduce approximations in concept extraction and attribution, resulting in unfaithful explanations. Furthermore, metrics for evaluating concept consistency rely on manually annotated part masks, which have limited coverage and assume each concept corresponds to an annotated part.
 
 ## Core Problem
 

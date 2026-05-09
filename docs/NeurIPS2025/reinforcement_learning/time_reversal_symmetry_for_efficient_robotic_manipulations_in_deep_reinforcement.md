@@ -28,16 +28,16 @@ This paper proposes the TR-DRL framework, which exploits time reversal symmetry 
 
 ## Background & Motivation
 
-**State of the Field**: Symmetry exploitation in DRL has focused primarily on spatial symmetries (reflection, rotation, translation), with successful applications to both state-based and image-based settings. Temporal symmetry—particularly time reversal symmetry—remains almost entirely unexplored.
+**Background**: Symmetry exploitation in DRL has focused primarily on spatial symmetries (reflection, rotation, translation), with successful applications to both state-based and image-based settings. Temporal symmetry—particularly time reversal symmetry—remains almost entirely unexplored.
 
 **Limitations of Prior Work**:
    - Many robotic manipulation tasks are inherently time-reversal symmetric (e.g., door open↔close, drawer push↔pull), yet current DRL methods completely ignore this structural information.
    - Naively negating actions ($\vec{a} = -a$) to produce reversed transitions **frequently yields invalid results**. For example, closing a door requires only pushing (no handle grasping), so the reversed "open door" action lacks the handle-grasping step and is physically invalid.
    - Existing time reversal methods (Barkley et al., 2023) assume global full reversibility and known reversal actions, which are overly restrictive assumptions.
 
-**Root Cause**: Time reversal symmetry is pervasive yet difficult to exploit safely—invalid reversed transitions contaminate training data.
+**Key Challenge**: Time reversal symmetry is pervasive yet difficult to exploit safely—invalid reversed transitions contaminate training data.
 
-**Starting Point**: Distinguish between **fully reversible** and **partially reversible** cases, and address each with a dedicated technique.
+**Key Insight**: Distinguish between **fully reversible** and **partially reversible** cases, and address each with a dedicated technique.
 
 **Core Idea**: Fully reversible → learn an inverse dynamics model with a dynamics consistency filter for data augmentation; partially reversible → use reversible state components (e.g., object angle) to construct a potential-based reward shaping signal.
 

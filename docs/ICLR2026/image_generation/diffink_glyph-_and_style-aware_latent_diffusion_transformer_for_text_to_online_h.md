@@ -28,15 +28,15 @@ This paper proposes DiffInk, the first latent diffusion Transformer framework fo
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-online-handwriting generation (TOHG) has primarily focused on character- or word-level generation. OLHWG (ICLR'25) represents the latest state of the art, generating individual characters and assembling them into lines via an external layout module.
+**Background**: Text-to-online-handwriting generation (TOHG) has primarily focused on character- or word-level generation. OLHWG (ICLR'25) represents the latest state of the art, generating individual characters and assembling them into lines via an external layout module.
 
 **Limitations of Prior Work**: (a) Character-level methods lack holistic structural modeling when assembling characters into lines, resulting in unnatural boundaries; (b) layout modules introduce additional errors, and decoupling layout from characters ignores structural dependencies between adjacent characters; (c) OLHWG generates only 0.07 characters per second, making it extremely inefficient.
 
-**Root Cause**: There exists a fundamental gap between character-level modeling and line-level coherence. In real handwriting, adjacent characters are tightly coupled in terms of morphology, spacing, and stroke connectivity—properties that character-by-character generation followed by concatenation cannot capture.
+**Key Challenge**: There exists a fundamental gap between character-level modeling and line-level coherence. In real handwriting, adjacent characters are tightly coupled in terms of morphology, spacing, and stroke connectivity—properties that character-by-character generation followed by concatenation cannot capture.
 
-**Paper Goals**: To directly model full-line handwriting generation in an end-to-end manner, ensuring both glyph accuracy and style consistency.
+**Goal**: To directly model full-line handwriting generation in an end-to-end manner, ensuring both glyph accuracy and style consistency.
 
-**Starting Point**: The paper first compresses full-line handwriting sequences into a compact latent space via a VAE, then performs conditional generation in that latent space using a DiT. The key innovation lies in dual regularization of the VAE latent space—ensuring the latent space is not merely reconstructive but semantically structured.
+**Key Insight**: The paper first compresses full-line handwriting sequences into a compact latent space via a VAE, then performs conditional generation in that latent space using a DiT. The key innovation lies in dual regularization of the VAE latent space—ensuring the latent space is not merely reconstructive but semantically structured.
 
 **Core Idea**: Good VAE reconstruction does not imply a well-structured latent space. Dual regularization via OCR and style classification imposes glyph/style semantic structure on the latent space, which is critical for robust diffusion-based generation.
 

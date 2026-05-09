@@ -41,7 +41,7 @@ The infinite-horizon average reward setting is crucial for modeling realistic lo
 
 General parameterization—indexing policies via finite-dimensional parameters with $d \ll |\mathcal{S}||\mathcal{A}|$—is a key approach for handling large or infinite state spaces. However, the prior best rate of $\tilde{\mathcal{O}}(1/T^{1/5})$ falls far short of the lower bound.
 
-**Root Cause**: CMDPs under general parameterization lack strong convexity. When primal-dual methods are applied directly, convergence of the dual problem does not automatically translate to convergence of the primal problem. The choice of dual learning rate $\beta$ faces an inherent tension: a small $\beta$ leads to slow constraint violation convergence, while a large $\beta$ inflates the variance of primal updates.
+**Key Challenge**: CMDPs under general parameterization lack strong convexity. When primal-dual methods are applied directly, convergence of the dual problem does not automatically translate to convergence of the primal problem. The choice of dual learning rate $\beta$ faces an inherent tension: a small $\beta$ leads to slow constraint violation convergence, while a large $\beta$ inflates the variance of primal updates.
 
 ## Method
 

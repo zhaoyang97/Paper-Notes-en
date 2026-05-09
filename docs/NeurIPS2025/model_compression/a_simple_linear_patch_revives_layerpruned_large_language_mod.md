@@ -29,15 +29,15 @@ LinearPatch inserts a lightweight symmetric matrix — fusing a Hadamard transfo
 
 ## Background & Motivation
 
-**State of the Field**: Layer pruning is a straightforward approach to compressing large language models — it directly removes redundant Transformer layers without requiring specialized hardware support or low-level kernel modifications, making deployment easier than unstructured pruning or N:M sparsity. Methods such as ShortGPT, SLEB, and LLM-Streamline have proposed various layer selection strategies based on cosine similarity, perplexity, Taylor scores, and others.
+**Background**: Layer pruning is a straightforward approach to compressing large language models — it directly removes redundant Transformer layers without requiring specialized hardware support or low-level kernel modifications, making deployment easier than unstructured pruning or N:M sparsity. Methods such as ShortGPT, SLEB, and LLM-Streamline have proposed various layer selection strategies based on cosine similarity, perplexity, Taylor scores, and others.
 
 **Limitations of Prior Work**: Despite its simplicity, layer pruning typically leads to severe performance degradation after removing even a few layers. Existing work focuses primarily on which layers can be safely removed, while overlooking a more fundamental question: what happens to the activation distributions between the remaining layers after pruning.
 
-**Root Cause**: The authors find that performance degradation is caused not by information loss per se, but by **activation magnitude mismatch at the pruning interface**. Hidden states across different layers in LLMs exhibit substantially different per-channel magnitudes, and directly concatenating non-adjacent layers induces distribution shift. Compounding this, special tokens (e.g., [BOS], separators) carry outliers on the order of $10^3$, making it impossible for a simple channel scaling to accommodate all tokens simultaneously.
+**Key Challenge**: The authors find that performance degradation is caused not by information loss per se, but by **activation magnitude mismatch at the pruning interface**. Hidden states across different layers in LLMs exhibit substantially different per-channel magnitudes, and directly concatenating non-adjacent layers induces distribution shift. Compounding this, special tokens (e.g., [BOS], separators) carry outliers on the order of $10^3$, making it impossible for a simple channel scaling to accommodate all tokens simultaneously.
 
-**Paper Goals**: (1) How to align channel magnitudes on both sides of the pruning interface? (2) How to handle the token-wise scaling inconsistency caused by large outliers in special tokens?
+**Goal**: (1) How to align channel magnitudes on both sides of the pruning interface? (2) How to handle the token-wise scaling inconsistency caused by large outliers in special tokens?
 
-**Starting Point**: The authors observe that the Hadamard transform can redistribute outliers concentrated in a few tokens across all channels, enabling a single shared set of channel scaling factors. Fusing the Hadamard transform and channel scaling into a single matrix multiplication incurs negligible overhead.
+**Key Insight**: The authors observe that the Hadamard transform can redistribute outliers concentrated in a few tokens across all channels, enabling a single shared set of channel scaling factors. Fusing the Hadamard transform and channel scaling into a single matrix multiplication incurs negligible overhead.
 
 **Core Idea**: Insert a symmetric matrix $P = HDH^\top$ at the pruning interface (where $H$ is the Hadamard matrix and $D$ is a diagonal scaling matrix), suppressing outliers and aligning channel magnitudes in a single GEMM operation.
 

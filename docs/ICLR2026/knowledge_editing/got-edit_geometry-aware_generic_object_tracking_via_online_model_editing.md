@@ -28,15 +28,15 @@ GOT-Edit integrates 3D geometric information from VGGT into a 2D generic object 
 
 ## Background & Motivation
 
-**State of the Field**: 2D generic object tracking (GOT) primarily relies on appearance features (e.g., DINOv2) and achieves strong performance in standard scenarios, but lacks 3D spatial understanding.
+**Background**: 2D generic object tracking (GOT) primarily relies on appearance features (e.g., DINOv2) and achieves strong performance in standard scenarios, but lacks 3D spatial understanding.
 
 **Limitations of Prior Work**: Under challenging conditions such as occlusion, background clutter, and appearance variation, purely 2D features struggle to distinguish targets from distractors. Existing 3D fusion methods require RGB-D inputs or point cloud data, limiting their generality.
 
-**Root Cause**: Naively fusing geometric features with semantic features (e.g., concatenation or weighted summation) disrupts the learned semantic discriminability — experiments show that naive fusion degrades performance under fast motion and illumination change.
+**Key Challenge**: Naively fusing geometric features with semantic features (e.g., concatenation or weighted summation) disrupts the learned semantic discriminability — experiments show that naive fusion degrades performance under fast motion and illumination change.
 
-**Paper Goals**: How can 3D geometric information be injected into a model without compromising the discriminability of its semantic features?
+**Goal**: How can 3D geometric information be injected into a model without compromising the discriminability of its semantic features?
 
-**Starting Point**: Drawing on knowledge editing for large language models (AlphaEdit), the geometric perturbation is projected into the null space of the semantic feature weights, ensuring no interference with existing semantics.
+**Key Insight**: Drawing on knowledge editing for large language models (AlphaEdit), the geometric perturbation is projected into the null space of the semantic feature weights, ensuring no interference with existing semantics.
 
 **Core Idea**: Project the output of the geometry-aware module into the null space of the semantic model weights, enabling lossless injection of 3D geometric knowledge.
 

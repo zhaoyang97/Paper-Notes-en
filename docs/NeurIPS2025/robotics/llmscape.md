@@ -29,15 +29,15 @@ LLMscape is a projection-mapped sandscape interactive installation in which mult
 
 ## Background & Motivation
 
-**State of the Field**: Current embodied AI research predominantly focuses on functional problem-solving—object manipulation, environment navigation, and performance optimization. LLMs have demonstrated strong capabilities in language interaction and reasoning, yet are largely treated as deterministic tools.
+**Background**: Current embodied AI research predominantly focuses on functional problem-solving—object manipulation, environment navigation, and performance optimization. LLMs have demonstrated strong capabilities in language interaction and reasoning, yet are largely treated as deterministic tools.
 
 **Limitations of Prior Work**: When AI systems are situated in social and material contexts, the perceptual and cognitive challenges they face far exceed physical parameters, encompassing deeper questions of meaning, causality, and purpose. Most HCI research positions AI as an agent executing predefined tasks, overlooking the knowledge construction, misinterpretation, and speculative reasoning that may emerge when AI encounters incomplete and ambiguous signals.
 
-**Root Cause**: What happens when AI agents are exposed to the same incomplete, ambiguous, and noisy signals as humans? How do these processes map onto, challenge, or reshape human patterns of understanding? Existing research lacks an experimental platform that genuinely allows AI to "co-inhabit" an unstable world.
+**Key Challenge**: What happens when AI agents are exposed to the same incomplete, ambiguous, and noisy signals as humans? How do these processes map onto, challenge, or reshape human patterns of understanding? Existing research lacks an experimental platform that genuinely allows AI to "co-inhabit" an unstable world.
 
-**Paper Goals**: To design a physical interactive installation as an experimental platform in which humans and multiple AI agents share the same uncertain environment, enabling observation of collective reasoning and sensemaking behavior in AI agents operating without a complete world model.
+**Goal**: To design a physical interactive installation as an experimental platform in which humans and multiple AI agents share the same uncertain environment, enabling observation of collective reasoning and sensemaking behavior in AI agents operating without a complete world model.
 
-**Starting Point**: Drawing on MIT Media Lab research in tangible interfaces, combined with the Generative Agents framework and LLM multi-agent architectures, the work constructs a projection-mapped sandscape as a shared world.
+**Key Insight**: Drawing on MIT Media Lab research in tangible interfaces, combined with the Generative Agents framework and LLM multi-agent architectures, the work constructs a projection-mapped sandscape as a shared world.
 
 **Core Idea**: To reposition LLM agents from deterministic tools to "co-witnesses," using an interactive sandscape installation to engage humans and AI in joint sensemaking within a shared, uncertain world.
 

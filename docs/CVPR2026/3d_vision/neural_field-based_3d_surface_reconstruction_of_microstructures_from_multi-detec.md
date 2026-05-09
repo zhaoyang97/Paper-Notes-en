@@ -28,7 +28,7 @@ This paper proposes NFH-SEM, a neural field-based hybrid framework that embeds t
 
 ## Background & Motivation
 
-1. **State of the Field**: Scanning electron microscopy (SEM) is widely used in materials science, biology, and industrial manufacturing, producing high-resolution micro/nanoscale images. However, SEM images are inherently 2D intensity distributions of secondary electrons (SE) or backscattered electrons (BSE), and do not directly encode 3D information. Existing SEM 3D reconstruction methods fall into two main categories: multi-view methods (SfM+MVS) and single-view methods (photometric stereo, PS).
+1. **Background**: Scanning electron microscopy (SEM) is widely used in materials science, biology, and industrial manufacturing, producing high-resolution micro/nanoscale images. However, SEM images are inherently 2D intensity distributions of secondary electrons (SE) or backscattered electrons (BSE), and do not directly encode 3D information. Existing SEM 3D reconstruction methods fall into two main categories: multi-view methods (SfM+MVS) and single-view methods (photometric stereo, PS).
 
 2. **Limitations of Prior Work**:
    - Multi-view methods frequently fail in weakly textured or repetitive regions commonly found in microscopic specimens.
@@ -36,11 +36,11 @@ This paper proposes NFH-SEM, a neural field-based hybrid framework that embeds t
    - Hybrid methods that combine both approaches are still limited by calibration requirements and shadow artifacts, and their 2D heightmap representation cannot capture complex microstructures.
    - Learning-based methods (NeuS, 3DGS, feed-forward reconstruction) either lack large-scale SEM training data and fail to generalize, or rely on RGB optical rendering models that cannot exploit the geometric cues encoded in SEM signals.
 
-3. **Root Cause**: The physics of SEM signal generation (electron scattering) differs fundamentally from conventional RGB imaging, yet existing 3D reconstruction methods either ignore SEM physics (multi-view methods) or rely on simplified physical models requiring complex calibration procedures (single-view methods).
+3. **Key Challenge**: The physics of SEM signal generation (electron scattering) differs fundamentally from conventional RGB imaging, yet existing 3D reconstruction methods either ignore SEM physics (multi-view methods) or rely on simplified physical models requiring complex calibration procedures (single-view methods).
 
-4. **Paper Goals**: To design a neural field reconstruction framework capable of automatically learning SEM imaging physics, self-calibrating detector parameters, and autonomously separating shadow regions.
+4. **Goal**: To design a neural field reconstruction framework capable of automatically learning SEM imaging physics, self-calibrating detector parameters, and autonomously separating shadow regions.
 
-5. **Starting Point**: Model BSE signal scattering and detector response as a learnable forward model, embedded within the volume rendering pipeline of an SDF-based neural field, and jointly optimized with geometry.
+5. **Key Insight**: Model BSE signal scattering and detector response as a learnable forward model, embedded within the volume rendering pipeline of an SDF-based neural field, and jointly optimized with geometry.
 
 6. **Core Idea**: By embedding a learnable BSE forward model into neural field optimization, the framework achieves self-calibration of SEM imaging physics and automatic shadow separation, yielding high-fidelity microscale 3D reconstruction.
 

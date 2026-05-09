@@ -30,7 +30,7 @@ IdealTSF is a three-stage progressive framework that (1) uses negative sample pr
 
 ### State of the Field
 
-**State of the Field**: Deep models for time series forecasting (Transformer-based, MLP-based, etc.) typically assume complete, anomaly-free inputs and achieve strong performance on standard benchmarks such as ETT, Weather, and ECL. However, real-world time series data frequently contain missing values, outliers, and noise.
+**Background**: Deep models for time series forecasting (Transformer-based, MLP-based, etc.) typically assume complete, anomaly-free inputs and achieve strong performance on standard benchmarks such as ETT, Weather, and ECL. However, real-world time series data frequently contain missing values, outliers, and noise.
 
 ### Limitations of Prior Work
 
@@ -38,11 +38,11 @@ IdealTSF is a three-stage progressive framework that (1) uses negative sample pr
 
 ### Root Cause
 
-**Root Cause**: Non-ideal data (noise, missingness, anomalies) is conventionally treated as an obstacle to be "pre-processed and repaired," yet it carries valuable information — patterns of extreme events, system failure signatures, etc. Simply repairing or discarding such data results in information loss, while using it directly contaminates training.
+**Key Challenge**: Non-ideal data (noise, missingness, anomalies) is conventionally treated as an obstacle to be "pre-processed and repaired," yet it carries valuable information — patterns of extreme events, system failure signatures, etc. Simply repairing or discarding such data results in information loss, while using it directly contaminates training.
 
 ### Solution
 
-**Paper Goals**: Transform non-ideal data from an obstacle into a training asset. **Starting Point**: Treat non-ideal data as "negative samples" for pre-training to build model immunity, generate "positive samples" for formal training, and further strengthen robustness via adversarial optimization. **Core Idea**: negative sample pre-training (synthetic non-ideal data for robustness) + positive sample training (learning trends from smoothed, repaired data) + ECOS adversarial optimizer (guiding parameters to flat minima for better generalization).
+**Goal**: Transform non-ideal data from an obstacle into a training asset. **Key Insight**: Treat non-ideal data as "negative samples" for pre-training to build model immunity, generate "positive samples" for formal training, and further strengthen robustness via adversarial optimization. **Core Idea**: negative sample pre-training (synthetic non-ideal data for robustness) + positive sample training (learning trends from smoothed, repaired data) + ECOS adversarial optimizer (guiding parameters to flat minima for better generalization).
 
 ## Method
 

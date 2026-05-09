@@ -29,15 +29,15 @@ This paper proposes LoKI, a parameter-efficient fine-tuning method grounded in t
 
 ## Background & Motivation
 
-**State of the Field**: LLMs accumulate rich world knowledge during pre-training, and fine-tuning adapts them to downstream tasks. Parameter-efficient fine-tuning (PEFT) methods such as LoRA have significantly reduced the cost of fine-tuning.
+**Background**: LLMs accumulate rich world knowledge during pre-training, and fine-tuning adapts them to downstream tasks. Parameter-efficient fine-tuning (PEFT) methods such as LoRA have significantly reduced the cost of fine-tuning.
 
 **Limitations of Prior Work**: Fine-tuning is accompanied by catastrophic forgetting (CF). Conventional PEFT methods update all Transformer modules indiscriminately, ignoring the locations of critical knowledge-storing weights and potentially causing irreversible damage to existing knowledge.
 
-**Root Cause**: A fundamental tension exists between downstream task performance and the preservation of pre-trained general capabilities. Existing methods either sacrifice task performance to retain knowledge (e.g., orthogonal subspace approaches) or sacrifice general capabilities for task performance. Prior work on knowledge localization and editing (ROME, KN, etc.) has not been effectively integrated into the PEFT pipeline.
+**Key Challenge**: A fundamental tension exists between downstream task performance and the preservation of pre-trained general capabilities. Existing methods either sacrifice task performance to retain knowledge (e.g., orthogonal subspace approaches) or sacrifice general capabilities for task performance. Prior work on knowledge localization and editing (ROME, KN, etc.) has not been effectively integrated into the PEFT pipeline.
 
-**Paper Goals**: To leverage mechanistic understanding of knowledge storage in LLMs to identify low-contribution parameters that can be safely repurposed for new knowledge implanting, thereby achieving "low-damage" knowledge injection.
+**Goal**: To leverage mechanistic understanding of knowledge storage in LLMs to identify low-contribution parameters that can be safely repurposed for new knowledge implanting, thereby achieving "low-damage" knowledge injection.
 
-**Starting Point**: Building on interpretability research that treats FFN layers as "key-value memories"—each row of $W_{down}$ constitutes a "knowledge vector," and different vectors vary greatly in their contribution to the model's general capabilities, with low-contribution vectors being amenable to reuse.
+**Key Insight**: Building on interpretability research that treats FFN layers as "key-value memories"—each row of $W_{down}$ constitutes a "knowledge vector," and different vectors vary greatly in their contribution to the model's general capabilities, with low-contribution vectors being amenable to reuse.
 
 **Core Idea**: A three-stage pipeline: analyze (KVA quantifies the contribution of each knowledge vector), select (a layer-balanced strategy identifies low-contribution vectors), and implant (only selected vectors are updated while the rest are frozen). This process translates knowledge localization research into a practical fine-tuning method.
 

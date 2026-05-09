@@ -31,7 +31,7 @@ This paper proposes WildCAT3D, which extends the multi-view diffusion model CAT3
 
 Novel view synthesis (NVS) has achieved remarkable progress on object-level scenes in recent years, particularly with the multi-view diffusion paradigm exemplified by CAT3D. However, **scene-level NVS** still faces significant challenges:
 
-**Root Cause**:
+**Key Challenge**:
 
 **Scarcity of multi-view training data**: Clean multi-view data primarily originates from synthetic renderings or isolated objects in crowdsourced videos, with limited data diversity and licensing constraints.
 

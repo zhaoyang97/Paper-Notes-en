@@ -28,15 +28,15 @@ This paper demonstrates that LLMs encode model-specific success probability info
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have achieved remarkable results on mathematical and programming tasks, yet running extended reasoning (e.g., CoT) for every query is expensive. Model routing systems require accurate estimates of a model's success probability on a given input, but low-variance estimates demand multiple costly samples.
+**Background**: LLMs have achieved remarkable results on mathematical and programming tasks, yet running extended reasoning (e.g., CoT) for every query is expensive. Model routing systems require accurate estimates of a model's success probability on a given input, but low-variance estimates demand multiple costly samples.
 
 **Limitations of Prior Work**: Prior work has shown that models contain correctness-related signals, but it remains unclear whether these signals reflect human-perceived difficulty or model-specific difficulty, and whether they are reliable enough to support practical decision-making. Existing routing methods rely on indirect proxies such as input length, perplexity, or heuristic confidence scores.
 
-**Root Cause**: Human judgments of difficulty and a model's internal "perception" of difficulty are fundamentally distinct—as extended reasoning capabilities scale up, models increasingly solve problems that humans find hard, widening the gap between the two notions of difficulty.
+**Key Challenge**: Human judgments of difficulty and a model's internal "perception" of difficulty are fundamentally distinct—as extended reasoning capabilities scale up, models increasingly solve problems that humans find hard, widening the gap between the two notions of difficulty.
 
-**Paper Goals**: 1) Disentangle human difficulty signals from model-specific difficulty signals encoded in LLM activations; 2) Evaluate the reliability of these signals across different reasoning strategies; 3) Apply the probes to practical model routing to reduce inference cost.
+**Goal**: 1) Disentangle human difficulty signals from model-specific difficulty signals encoded in LLM activations; 2) Evaluate the reliability of these signals across different reasoning strategies; 3) Apply the probes to practical model routing to reduce inference cost.
 
-**Starting Point**: The E2H-AMC dataset, which provides both human IRT difficulty labels and model performance records, is used to directly compare human difficulty and model difficulty signals extracted from the same pre-generation activations.
+**Key Insight**: The E2H-AMC dataset, which provides both human IRT difficulty labels and model performance records, is used to directly compare human difficulty and model difficulty signals extracted from the same pre-generation activations.
 
 **Core Idea**: LLMs encode information about their own success probability in activations before generating any answer token. Extracting this signal via linear probes enables cost-accuracy trade-off routing with negligible overhead.
 

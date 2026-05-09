@@ -35,9 +35,9 @@ Diffusion models produce high-quality generations but typically require hundreds
 
 **Distillation methods** (consistency models, adversarial distillation, etc.): While enabling few-step generation, they often introduce complex training pipelines, training instability, model collapse, or over-smoothing artifacts.
 
-**Root Cause**: Fast samplers fail under very few steps; distillation methods are too complex and unstable. A simple, stable, and effective intermediate solution is lacking.
+**Key Challenge**: Fast samplers fail under very few steps; distillation methods are too complex and unstable. A simple, stable, and effective intermediate solution is lacking.
 
-**Starting Point**: From a geometric perspective, diffusion models learn the **tangent** of the PF-ODE (instantaneous rate of change), whereas what is actually needed is the **secant** between two time points (average rate of change). The secant is precisely the average of all tangents over an interval — a relationship that can be approximated via Monte Carlo integration and resolved during training via Picard iteration.
+**Key Insight**: From a geometric perspective, diffusion models learn the **tangent** of the PF-ODE (instantaneous rate of change), whereas what is actually needed is the **secant** between two time points (average rate of change). The secant is precisely the average of all tangents over an interval — a relationship that can be approximated via Monte Carlo integration and resolved during training via Picard iteration.
 
 ## Method
 

@@ -29,15 +29,15 @@ This paper proposes CompCon (Comparing Concepts), an evolutionary search algorit
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-image (T2I) models such as Stable Diffusion, DALL-E, PixArt, and Playground have become mainstream generative tools. Each model is shaped by distinct training data, architecture, and optimization strategies, and thus may generate visually distinct images from the same text prompt. However, systematic tools for understanding *where* these models differ remain lacking.
+**Background**: Text-to-image (T2I) models such as Stable Diffusion, DALL-E, PixArt, and Playground have become mainstream generative tools. Each model is shaped by distinct training data, architecture, and optimization strategies, and thus may generate visually distinct images from the same text prompt. However, systematic tools for understanding *where* these models differ remain lacking.
 
 **Limitations of Prior Work**: Analysis of model differences has largely relied on manual subjective evaluation or global statistics such as FID. The former does not scale, while the latter lacks interpretability. Although it is broadly known that different models "look different," it is difficult to precisely characterize *under what conditions* and *along which visual dimensions* these differences manifest.
 
-**Root Cause**: Inter-model differences are input-dependent — the same pair of models may produce consistent outputs for certain prompt types while diverging substantially for others. Simple comparisons of aggregate output distributions cannot capture such fine-grained, input-conditioned differences.
+**Key Challenge**: Inter-model differences are input-dependent — the same pair of models may produce consistent outputs for certain prompt types while diverging substantially for others. Simple comparisons of aggregate output distributions cannot capture such fine-grained, input-conditioned differences.
 
-**Paper Goals**: To automatically discover "divergent representations" between two T2I models — i.e., to identify (visual attribute, prompt type) pairs such that, given a certain class of prompts, one model tends to exhibit a particular visual attribute while the other does not.
+**Goal**: To automatically discover "divergent representations" between two T2I models — i.e., to identify (visual attribute, prompt type) pairs such that, given a certain class of prompts, one model tends to exhibit a particular visual attribute while the other does not.
 
-**Starting Point**: The authors draw inspiration from evolutionary search — starting from an initial set of hypotheses and iteratively refining them through a propose → verify → filter → evolve cycle to progressively discover more accurate and informative divergent representations.
+**Key Insight**: The authors draw inspiration from evolutionary search — starting from an initial set of hypotheses and iteratively refining them through a propose → verify → filter → evolve cycle to progressively discover more accurate and informative divergent representations.
 
 **Core Idea**: An LLM/VLM-driven evolutionary search algorithm automatically generates hypotheses about which visual attributes diverge under which prompt types. A VLM classifier then validates each hypothesis on generated images; hypotheses that pass validation are retained and iteratively evolved toward more precise descriptions.
 

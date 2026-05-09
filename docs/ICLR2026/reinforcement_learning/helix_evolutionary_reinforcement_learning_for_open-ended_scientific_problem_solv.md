@@ -29,15 +29,15 @@ This paper proposes HELIX, a framework that integrates reinforcement learning (G
 
 ## Background & Motivation
 
-**State of the Field**: Applying LLMs to complex scientific problems—such as symbolic regression, molecular generation, and mathematical optimization—is an active research direction. Post-training methods (SFT/RLVR) are effective on reasoning tasks but tend to suffer from entropy collapse on open-ended scientific problems, limiting the discovery of genuinely novel solutions. Workflow-based methods (e.g., AlphaEvolve) embed LLMs into evolutionary pipelines but rely heavily on task-specific design.
+**Background**: Applying LLMs to complex scientific problems—such as symbolic regression, molecular generation, and mathematical optimization—is an active research direction. Post-training methods (SFT/RLVR) are effective on reasoning tasks but tend to suffer from entropy collapse on open-ended scientific problems, limiting the discovery of genuinely novel solutions. Workflow-based methods (e.g., AlphaEvolve) embed LLMs into evolutionary pipelines but rely heavily on task-specific design.
 
 **Limitations of Prior Work**: (a) Pure RL methods lack memory—the sampling context for a given problem is fixed, preventing the reuse of previously discovered high-quality solutions; (b) evolutionary methods use fixed pretrained models as mutation operators without updating model parameters, constraining exploration to the boundaries of pretraining knowledge; (c) both paradigms lack a principled balance between exploration and exploitation.
 
-**Root Cause**: Open-ended scientific problems exhibit three characteristics—domain specificity, unbounded solution spaces, and the absence of global optimality guarantees—that simultaneously demand: learning from prior experience, balancing quality with diversity, and building upon existing discoveries.
+**Key Challenge**: Open-ended scientific problems exhibit three characteristics—domain specificity, unbounded solution spaces, and the absence of global optimality guarantees—that simultaneously demand: learning from prior experience, balancing quality with diversity, and building upon existing discoveries.
 
-**Paper Goals**: To design a general framework enabling LLMs to continuously discover superior solutions for scientific optimization problems without ground-truth answers, through the synergistic iteration of RL and evolutionary computation.
+**Goal**: To design a general framework enabling LLMs to continuously discover superior solutions for scientific optimization problems without ground-truth answers, through the synergistic iteration of RL and evolutionary computation.
 
-**Starting Point**: Solutions are represented as code; the LLM serves as a mutation/improvement operator. RL (GRPO) updates policy parameters so the model becomes increasingly capable of improving solutions, while NSGA-II selects the population along a reward–diversity Pareto frontier.
+**Key Insight**: Solutions are represented as code; the LLM serves as a mutation/improvement operator. RL (GRPO) updates policy parameters so the model becomes increasingly capable of improving solutions, while NSGA-II selects the population along a reward–diversity Pareto frontier.
 
 **Core Idea**: RL teaches the model *how to improve solutions*; evolution ensures *exploration across diverse directions*; in-context learning enables the model to *build upon known high-quality solutions*.
 

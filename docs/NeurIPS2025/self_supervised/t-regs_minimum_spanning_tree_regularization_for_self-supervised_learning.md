@@ -27,7 +27,7 @@ This paper proposes T-REGS — a self-supervised learning regularization framewo
 
 ## Background & Motivation
 
-**State of the Field**: Joint-embedding self-supervised learning (JE-SSL) learns representations by encouraging embeddings of different views of the same image to be similar. The central challenge is preventing representation collapse (all inputs mapped to the same vector) and dimensional collapse (representations confined to a low-dimensional subspace).
+**Background**: Joint-embedding self-supervised learning (JE-SSL) learns representations by encouraging embeddings of different views of the same image to be similar. The central challenge is preventing representation collapse (all inputs mapped to the same vector) and dimensional collapse (representations confined to a low-dimensional subspace).
 
 **Limitations of Prior Work**:
 - Contrastive methods (SimCLR, MoCo) require large numbers of negative samples and large batch sizes, incurring substantial computational overhead.
@@ -35,11 +35,11 @@ This paper proposes T-REGS — a self-supervised learning regularization framewo
 - Asymmetric methods (BYOL, DINO) lack theoretical explanations for why asymmetric architectures prevent collapse.
 - The optimal transport regularization proposed by Fang et al. is computationally expensive, and its closed-form acceleration is only valid on the hypersphere while suffering from numerical instability.
 
-**Root Cause**: A good SSL regularizer must simultaneously satisfy four properties (instance permutation invariance, instance cloning, feature cloning, and feature constraint). Existing methods either fail to satisfy all four or incur high computational cost.
+**Key Challenge**: A good SSL regularizer must simultaneously satisfy four properties (instance permutation invariance, instance cloning, feature cloning, and feature constraint). Existing methods either fail to satisfy all four or incur high computational cost.
 
-**Paper Goals**: Design an SSL regularization method that is conceptually simple, computationally efficient, and theoretically provable in terms of preventing dimensional collapse and promoting uniformity.
+**Goal**: Design an SSL regularization method that is conceptually simple, computationally efficient, and theoretically provable in terms of preventing dimensional collapse and promoting uniformity.
 
-**Starting Point**: MST length is a classical estimator of distributional entropy (Steele's theorem); maximizing MST length is equivalent to maximizing the Rényi entropy of the representation distribution, which naturally promotes uniformity. Moreover, MST length is sensitive to the intrinsic dimensionality of a point cloud, enabling natural detection and avoidance of dimensional collapse.
+**Key Insight**: MST length is a classical estimator of distributional entropy (Steele's theorem); maximizing MST length is equivalent to maximizing the Rényi entropy of the representation distribution, which naturally promotes uniformity. Moreover, MST length is sensitive to the intrinsic dimensionality of a point cloud, enabling natural detection and avoidance of dimensional collapse.
 
 **Core Idea**: By maximizing the length of the minimum spanning tree in the embedding space subject to a hyperspherical constraint, a single simple regularization term simultaneously addresses dimensional collapse and non-uniformity.
 

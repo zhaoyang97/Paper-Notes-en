@@ -27,15 +27,15 @@ This paper proposes SITH (Semantic Inspection of Transformer Heads), a fully dat
 
 ## Background & Motivation
 
-1. **State of the Field**: Vision-language models (VLMs) such as CLIP have been widely adopted across downstream tasks. Mechanistic interpretability seeks to understand how such models internally represent and process concepts. Existing approaches fall into two categories: (1) activation-based methods (e.g., Sparse Autoencoders) rely on dataset-computed activations; (2) TextSpan aligns attention head output activations with textual concepts but only yields coarse-grained head-level explanations.
+1. **Background**: Vision-language models (VLMs) such as CLIP have been widely adopted across downstream tasks. Mechanistic interpretability seeks to understand how such models internally represent and process concepts. Existing approaches fall into two categories: (1) activation-based methods (e.g., Sparse Autoencoders) rely on dataset-computed activations; (2) TextSpan aligns attention head output activations with textual concepts but only yields coarse-grained head-level explanations.
 
 2. **Limitations of Prior Work**: (1) Activation-based methods depend on large-scale datasets and are susceptible to data bias; (2) SAEs suffer from significant instability—dictionaries learned from different data differ substantially; (3) TextSpan only explains at the level of "this head attends to color," without distinguishing which sub-structures encode red versus green; (4) No existing method can directly interpret CLIP's internal mechanisms from weights alone, without observing any data.
 
-3. **Root Cause**: Existing interpretability methods either require data (and thus inherit data bias), or only provide coarse head-level explanations—there is no framework that is simultaneously data-free and fine-grained.
+3. **Key Challenge**: Existing interpretability methods either require data (and thus inherit data bias), or only provide coarse head-level explanations—there is no framework that is simultaneously data-free and fine-grained.
 
-4. **Paper Goals**: (1) Can CLIP attention heads be understood directly from weights, without observing any data? (2) Can such understanding reach the level of individual features within a head? (3) Can the resulting understanding enable precise model editing?
+4. **Goal**: (1) Can CLIP attention heads be understood directly from weights, without observing any data? (2) Can such understanding reach the level of individual features within a head? (3) Can the resulting understanding enable precise model editing?
 
-5. **Starting Point**: Building on the insight from Elhage et al.—that attention head computation can be expressed as a weighted combination of input patch transformations through the Value-Output (VO) matrix—analyzing the VO matrix reveals what features a head "reads and writes," entirely independent of input data.
+5. **Key Insight**: Building on the insight from Elhage et al.—that attention head computation can be expressed as a weighted combination of input patch transformations through the Value-Output (VO) matrix—analyzing the VO matrix reveals what features a head "reads and writes," entirely independent of input data.
 
 6. **Core Idea**: Apply SVD to the VO matrices of CLIP attention heads, then use a semantically coherent sparse coding algorithm (COMP) to map each singular vector to a human-interpretable combination of concepts, achieving data-free, fine-grained weight-space interpretability.
 

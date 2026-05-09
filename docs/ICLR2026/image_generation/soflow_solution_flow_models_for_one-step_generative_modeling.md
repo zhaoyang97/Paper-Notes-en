@@ -28,15 +28,15 @@ This paper proposes Solution Flow Models (SoFlow), which directly learn the solu
 
 ## Background & Motivation
 
-**State of the Field**: Consistency models (CM/iCT/ECT/sCT) and MeanFlow have enabled few-step/one-step generation, but MeanFlow's Flow Matching anchoring requires expensive Jacobian-vector product (JVP) computations (poorly optimized in PyTorch), and consistency models trained from scratch struggle to leverage CFG.
+**Background**: Consistency models (CM/iCT/ECT/sCT) and MeanFlow have enabled few-step/one-step generation, but MeanFlow's Flow Matching anchoring requires expensive Jacobian-vector product (JVP) computations (poorly optimized in PyTorch), and consistency models trained from scratch struggle to leverage CFG.
 
 **Limitations of Prior Work**: (a) JVP is inefficient in deep learning frameworks, as it is neither a standard forward nor backward pass; (b) consistency training objectives are unstable due to stop-gradient pseudo-target drift; (c) one-step models trained from scratch do not support CFG during training.
 
-**Root Cause**: Learning to "jump to the endpoint in one step" currently requires either JVP (slow) or unstable objectives (poor quality).
+**Key Challenge**: Learning to "jump to the endpoint in one step" currently requires either JVP (slow) or unstable objectives (poor quality).
 
-**Paper Goals**: Design a one-step generative framework that is JVP-free, supports CFG during training, and can be trained from scratch.
+**Goal**: Design a one-step generative framework that is JVP-free, supports CFG during training, and can be trained from scratch.
 
-**Starting Point**: Rather than learning a velocity field and integrating it (Flow Matching), SoFlow directly learns the solution function $f(x_t, t, s)$ of the ODE. The solution function inherently satisfies two properties: (1) the initial condition $f(x_t, t, t) = x_t$, and (2) ODE solution consistency — the latter can be approximated with a consistency loss that requires no JVP.
+**Key Insight**: Rather than learning a velocity field and integrating it (Flow Matching), SoFlow directly learns the solution function $f(x_t, t, s)$ of the ODE. The solution function inherently satisfies two properties: (1) the initial condition $f(x_t, t, t) = x_t$, and (2) ODE solution consistency — the latter can be approximated with a consistency loss that requires no JVP.
 
 **Core Idea**: Learn the ODE solution function instead of the velocity field, and replace JVP with a three-timepoint $(s, l, t)$ consistency constraint to enforce ODE consistency.
 

@@ -29,15 +29,15 @@ Zatom-1 is the first end-to-end fully open-source foundation model that unifies 
 
 ## Background & Motivation
 
-**State of the Field**: AI-driven chemical modeling has achieved major breakthroughs (e.g., AlphaFold), yet existing methods are typically optimized for a single domain (molecules or materials) and a single task (generation or prediction), limiting representation sharing and transfer learning.
+**Background**: AI-driven chemical modeling has achieved major breakthroughs (e.g., AlphaFold), yet existing methods are typically optimized for a single domain (molecules or materials) and a single task (generation or prediction), limiting representation sharing and transfer learning.
 
 **Limitations of Prior Work**: (1) Generative models for molecules and materials are trained separately, failing to leverage complementary cross-domain information. (2) Sparse graph neural network architectures and hand-crafted generative priors limit scalability and inference speed. (3) Generation and prediction tasks rely on separate models, precluding shared representations.
 
-**Root Cause**: 3D chemical systems involve multiple modalities—discrete (atom types) and continuous (3D coordinates, lattice parameters). How can these modalities be jointly modeled in a unified framework? How can generative pretraining provide effective initialization for downstream prediction tasks?
+**Key Challenge**: 3D chemical systems involve multiple modalities—discrete (atom types) and continuous (3D coordinates, lattice parameters). How can these modalities be jointly modeled in a unified framework? How can generative pretraining provide effective initialization for downstream prediction tasks?
 
-**Paper Goals**: To build a unified foundation model capable of both generative modeling and representation learning for 3D molecules and materials, enabling positive cross-domain transfer.
+**Goal**: To build a unified foundation model capable of both generative modeling and representation learning for 3D molecules and materials, enabling positive cross-domain transfer.
 
-**Starting Point**: Generative modeling is treated as an ideal pretraining task for chemical representation learning, employing a standard Transformer architecture with multimodal flow matching directly in ambient all-atom space $\mathbb{R}^3$.
+**Key Insight**: Generative modeling is treated as an ideal pretraining task for chemical representation learning, employing a standard Transformer architecture with multimodal flow matching directly in ambient all-atom space $\mathbb{R}^3$.
 
 **Core Idea**: Jointly model discrete atom types and continuous 3D geometry within a unified Transformer via multimodal flow matching; the pretrained model is then fine-tuned for multi-task property prediction.
 

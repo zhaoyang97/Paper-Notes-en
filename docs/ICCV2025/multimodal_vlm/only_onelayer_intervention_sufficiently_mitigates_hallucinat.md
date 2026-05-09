@@ -28,15 +28,15 @@ This paper proposes ONLY, a training-free single-layer intervention decoding met
 
 ## Background & Motivation
 
-**State of the Field**: The dominant approach to mitigating hallucinations in LVLMs is contrastive decoding — comparing the original output with a perturbed version (e.g., VCD uses noisy images; M3ID removes the image). However, these methods require two or more full inference passes, doubling inference time and making them unsuitable for real-time applications.
+**Background**: The dominant approach to mitigating hallucinations in LVLMs is contrastive decoding — comparing the original output with a perturbed version (e.g., VCD uses noisy images; M3ID removes the image). However, these methods require two or more full inference passes, doubling inference time and making them unsuitable for real-time applications.
 
 **Limitations of Prior Work**: VCD requires 2.01× inference time and 1.05× GPU memory; M3ID requires 2.03×; OPERA requires 7.12×; HALC requires 6.52×. Although accuracy improves, the efficiency–performance trade-off is unreasonable — doubling inference time yields only marginal gains.
 
-**Root Cause**: Contrastive decoding requires two distributions to compare, but existing methods obtain them by running the full model twice, which is computationally wasteful. The key question is whether a "textually-enhanced" distribution can be constructed within a single inference pass.
+**Key Challenge**: Contrastive decoding requires two distributions to compare, but existing methods obtain them by running the full model twice, which is computationally wasteful. The key question is whether a "textually-enhanced" distribution can be constructed within a single inference pass.
 
-**Paper Goals**: Replace dual-inference with a single-layer intervention to obtain enhanced logits for contrastive decoding without significantly increasing computation.
+**Goal**: Replace dual-inference with a single-layer intervention to obtain enhanced logits for contrastive decoding without significantly increasing computation.
 
-**Starting Point**: The authors observe that when image input is perturbed (e.g., by adding noise), the entropy of textual attention increases while that of visual attention decreases. Directly selecting attention heads with high TVER can simulate the effect of "visual distortion" without actually perturbing the image.
+**Key Insight**: The authors observe that when image input is perturbed (e.g., by adding noise), the entropy of textual attention increases while that of visual attention decreases. Directly selecting attention heads with high TVER can simulate the effect of "visual distortion" without actually perturbing the image.
 
 **Core Idea**: Use the text-to-visual entropy ratio to filter attention heads and construct textually-enhanced outputs. This achieves contrastive decoding equivalent to dual-inference using only one additional layer of attention computation.
 

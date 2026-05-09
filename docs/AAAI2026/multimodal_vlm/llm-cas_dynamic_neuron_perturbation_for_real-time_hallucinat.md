@@ -27,15 +27,15 @@ content_hash: 9441e57e8b807a2c
 LLM-CAS is the first work to formulate real-time LLM hallucination correction as a hierarchical reinforcement learning (HRL) problem. It trains an RL agent to dynamically select optimal neuron perturbation strategies at inference time — the high-level policy selects a functional network category, while the low-level policy selects perturbation type and magnitude. Combined with adaptive masking and causal tracing for precise neuron localization, LLM-CAS achieves a 10.98% improvement on StoryCloze, outperforming static and dynamic baselines such as ITI, CAA, and SADI.
 
 ## Background & Motivation
-**State of the Field**: LLM hallucination remains a core obstacle to deployment. Existing approaches fall into three categories: SFT/RLHF (data-intensive, computationally expensive, and prone to catastrophic forgetting); static model editing (locate-then-edit, one-shot parameter modification $W_{\text{edited}} = W + \Delta W$, but permanent edits risk damaging unrelated knowledge); and inference-time intervention (ITI/CAA add fixed steering vectors, but these are static across inputs).
+**Background**: LLM hallucination remains a core obstacle to deployment. Existing approaches fall into three categories: SFT/RLHF (data-intensive, computationally expensive, and prone to catastrophic forgetting); static model editing (locate-then-edit, one-shot parameter modification $W_{\text{edited}} = W + \Delta W$, but permanent edits risk damaging unrelated knowledge); and inference-time intervention (ITI/CAA add fixed steering vectors, but these are static across inputs).
 
 **Limitations of Prior Work**: (1) Static model editing causes catastrophic forgetting and knowledge conflicts after repeated edits; (2) steering vectors in ITI/CAA are precomputed fixed values that do not adapt to different inputs; (3) SADI dynamically adjusts steering vectors but relies on heuristic rules, lacking principled optimization.
 
-**Root Cause**: Hallucination is context-dependent — the same model may produce different types of hallucinations for different inputs, requiring different correction strategies. Yet existing methods either apply a one-size-fits-all fix (static steering vectors) or rely on handcrafted rules (SADI), without a learned, adaptive correction policy.
+**Key Challenge**: Hallucination is context-dependent — the same model may produce different types of hallucinations for different inputs, requiring different correction strategies. Yet existing methods either apply a one-size-fits-all fix (static steering vectors) or rely on handcrafted rules (SADI), without a learned, adaptive correction policy.
 
-**Paper Goals**: How to learn a principled, context-aware dynamic neuron perturbation strategy for real-time hallucination correction?
+**Goal**: How to learn a principled, context-aware dynamic neuron perturbation strategy for real-time hallucination correction?
 
-**Starting Point**: The problem is formulated as HRL — the high-level policy selects *which functional network to intervene in*, while the low-level policy selects *what type and magnitude of perturbation to apply*. Perturbations are temporary and do not permanently modify model weights.
+**Key Insight**: The problem is formulated as HRL — the high-level policy selects *which functional network to intervene in*, while the low-level policy selects *what type and magnitude of perturbation to apply*. Perturbations are temporary and do not permanently modify model weights.
 
 **Core Idea**: Train an RL agent via hierarchical RL to dynamically select context-optimal temporary neuron perturbations at inference time to correct hallucinations.
 

@@ -27,15 +27,15 @@ content_hash: cabc6501f434c682
 This paper proposes an LLM-based AI agent polling framework that synthesizes demographically representative virtual resident agents to conduct large-scale, low-cost public opinion surveys on data center projects. Cross-model and cross-region experiments demonstrate high thematic alignment between agent opinions and real-world polls.
 
 ## Background & Motivation
-**State of the Field**: The surging demand for compute driven by AI foundation models has accelerated global data center construction. These facilities bring economic benefits such as local employment and tax revenue, while simultaneously imposing environmental burdens including water consumption, strain on power grids, and carbon emissions.
+**Background**: The surging demand for compute driven by AI foundation models has accelerated global data center construction. These facilities bring economic benefits such as local employment and tax revenue, while simultaneously imposing environmental burdens including water consumption, strain on power grids, and carbon emissions.
 
 **Limitations of Prior Work**: Traditional public opinion surveys are costly in terms of labor and funding, and community feedback is typically collected only at public hearings after project commitments have already been made, precluding early integration of community voices. Limited community engagement and sampling bias further undermine the representativeness of collected feedback.
 
-**Root Cause**: Data center development requires early-stage, scalable, and diverse community input, yet no effective mechanism exists to achieve this.
+**Key Challenge**: Data center development requires early-stage, scalable, and diverse community input, yet no effective mechanism exists to achieve this.
 
-**Paper Goals**: How can representative community public opinion be obtained at low cost and at scale during the early planning stages of data center projects?
+**Goal**: How can representative community public opinion be obtained at low cost and at scale during the early planning stages of data center projects?
 
-**Starting Point**: Leverage the reasoning capabilities and world knowledge of LLMs to create AI agents that simulate community residents, enabling scalable opinion simulation surveys.
+**Key Insight**: Leverage the reasoning capabilities and world knowledge of LLMs to create AI agents that simulate community residents, enabling scalable opinion simulation surveys.
 
 **Core Idea**: Demographically synthesized virtual resident agents + multi-model LLM-driven structured questionnaires = a scalable early-screening tool for community opinion.
 

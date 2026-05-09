@@ -33,9 +33,9 @@ Machine unlearning aims to efficiently remove the influence of specific data fro
 - Most certified unlearning algorithms (e.g., Newton Step, Descent-to-Delete) are only applicable to convex or strongly convex functions and cannot handle the nonconvex losses arising in deep learning.
 - Existing nonconvex unlearning methods have notable drawbacks: second-order methods (CNS) incur high computational costs and require $O(d^2)$ storage; quasi-second-order methods (HF) require per-sample statistics to be recorded at each training step, making them white-box methods; first-order methods (Langevin Unlearning) require noise injection at every step and are also white-box.
 
-**Root Cause**: How can one simultaneously achieve first-order efficiency, black-box compatibility (no modification to the training process), and certified unlearning guarantees in the nonconvex setting?
+**Key Challenge**: How can one simultaneously achieve first-order efficiency, black-box compatibility (no modification to the training process), and certified unlearning guarantees in the nonconvex setting?
 
-**Starting Point**: Leverage rewinding to an earlier checkpoint along the training trajectory, followed by gradient descent on the retained data. Checkpoints can be recovered post hoc via the proximal point algorithm, enabling a fully black-box approach.
+**Key Insight**: Leverage rewinding to an earlier checkpoint along the training trajectory, followed by gradient descent on the retained data. Checkpoints can be recovered post hoc via the proximal point algorithm, enabling a fully black-box approach.
 
 ## Method
 

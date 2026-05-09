@@ -28,15 +28,15 @@ GRPO-based reinforcement learning is applied to train LLMs to align with individ
 
 ## Background & Motivation
 
-**State of the Field**: Modeling political opinions holds significant value for digital democracy. LLMs have been widely used to simulate group-level political preferences, primarily through demographic prompts (e.g., "You are a Democrat"), but this approach suffers from three major shortcomings: representativeness, controllability, and consistency.
+**Background**: Modeling political opinions holds significant value for digital democracy. LLMs have been widely used to simulate group-level political preferences, primarily through demographic prompts (e.g., "You are a Democrat"), but this approach suffers from three major shortcomings: representativeness, controllability, and consistency.
 
 **Limitations of Prior Work**: (1) Demographic prompts fail to capture individual-level preferences, as intra-group variance is substantial; (2) interview transcript–based methods (Park et al., 2024) are accurate but prohibitively expensive to collect; (3) political survey data (ANES/VAA) is abundant yet provides only stance labels without reasoning chains, requiring models to learn the reasoning process on their own.
 
-**Root Cause**: The statistical nature of LLMs and their limited causal understanding stand in tension with the requirement to faithfully represent diverse political opinions.
+**Key Challenge**: The statistical nature of LLMs and their limited causal understanding stand in tension with the requirement to faithfully represent diverse political opinions.
 
-**Paper Goals**: Can RL training enable LLMs to learn a "reason-then-answer" strategy that improves individual-level political opinion alignment?
+**Goal**: Can RL training enable LLMs to learn a "reason-then-answer" strategy that improves individual-level political opinion alignment?
 
-**Starting Point**: Opinion formation is framed as a reasoning problem—drawing on GRPO's success in mathematical reasoning and transferring it to political reasoning scenarios.
+**Key Insight**: Opinion formation is framed as a reasoning problem—drawing on GRPO's success in mathematical reasoning and transferring it to political reasoning scenarios.
 
 **Core Idea**: Political survey data + GRPO rewarding correct stances + SFT warm-start for reasoning format = reasoning-based individual opinion alignment.
 

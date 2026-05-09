@@ -28,7 +28,7 @@ This paper presents AnveshanaAI, an adaptive AI/ML education platform grounded i
 
 ## Background & Motivation
 
-**State of the Field**: Demand for AI/ML education has grown explosively, yet existing online learning platforms (e.g., Coursera, Kaggle) largely rely on static question banks that cannot dynamically adjust difficulty or content to individual learners. Question coverage is limited, and transparency in the generation process is lacking.
+**Background**: Demand for AI/ML education has grown explosively, yet existing online learning platforms (e.g., Coursera, Kaggle) largely rely on static question banks that cannot dynamically adjust difficulty or content to individual learners. Question coverage is limited, and transparency in the generation process is lacking.
 
 **Limitations of Prior Work**:
    - Static question banks cannot adapt to varying learner cognitive levels — beginners and experts encounter identical questions.
@@ -36,11 +36,11 @@ This paper presents AnveshanaAI, an adaptive AI/ML education platform grounded i
    - Semantic redundancy among questions is prevalent, with no effective deduplication mechanism.
    - Learning platforms overemphasize rote practice, lacking interactivity and motivation mechanisms, leading to low user retention.
 
-**Root Cause**: High-quality adaptive education requires large quantities of stratified questions, yet manual authoring is costly and slow; automatically generated questions are difficult to guarantee in terms of quality and pedagogical alignment.
+**Key Challenge**: High-quality adaptive education requires large quantities of stratified questions, yet manual authoring is costly and slow; automatically generated questions are difficult to guarantee in terms of quality and pedagogical alignment.
 
-**Paper Goals**: To construct an end-to-end adaptive AI education platform that automatically generates multi-level questions conforming to Bloom's taxonomy, while enhancing learner engagement and trust through gamification and explainability.
+**Goal**: To construct an end-to-end adaptive AI education platform that automatically generates multi-level questions conforming to Bloom's taxonomy, while enhancing learner engagement and trust through gamification and explainability.
 
-**Starting Point**: Bloom's cognitive taxonomy (Remember → Understand → Apply → Analyze → Evaluate → Create) serves as the structural backbone for question stratification; LLM fine-tuning enables automatic generation; semantic similarity prevents duplication; XAI provides transparency.
+**Key Insight**: Bloom's cognitive taxonomy (Remember → Understand → Apply → Analyze → Evaluate → Create) serves as the structural backbone for question stratification; LLM fine-tuning enables automatic generation; semantic similarity prevents duplication; XAI provides transparency.
 
 **Core Idea**: Pedagogical theory (Bloom's taxonomy) + LLM fine-tuning for question generation + semantic deduplication + gamification = adaptive AI education platform.
 

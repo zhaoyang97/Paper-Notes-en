@@ -29,13 +29,13 @@ This work presents ADPretrain, the first dedicated representation pretraining fr
 
 ## Background & Motivation
 
-**State of the Field**: Current mainstream and state-of-the-art anomaly detection methods rely almost exclusively on ImageNet-pretrained feature networks (e.g., PaDiM, PatchCore, UniAD). However, ImageNet pretraining involves no notion of "normal vs. anomalous," creating a mismatch between pretraining objectives and anomaly detection goals.
+**Background**: Current mainstream and state-of-the-art anomaly detection methods rely almost exclusively on ImageNet-pretrained feature networks (e.g., PaDiM, PatchCore, UniAD). However, ImageNet pretraining involves no notion of "normal vs. anomalous," creating a mismatch between pretraining objectives and anomaly detection goals.
 
 **Limitations of Prior Work**: A notable distribution shift exists between natural images in ImageNet and industrial images in AD scenarios, which limits the effectiveness of directly applying pretrained features. Under unsupervised training with only normal samples, learning representations from scratch faces two key challenges: (a) mode collapse, where normal and anomalous features become indistinguishable, and (b) limited dataset scale in conventional AD benchmarks, which constrains representation quality. Fine-tuning approaches such as PANDA and MeanShift adapt pretrained features to AD data but remain dataset-specific and lack generalizability.
 
-**Root Cause**: The emergence of large-scale AD datasets offers an opportunity: RealIAD comprises 151,050 images (99,721 normal + 51,329 anomalous) with ground-truth masks, providing the data foundation for AD-specific pretraining.
+**Key Challenge**: The emergence of large-scale AD datasets offers an opportunity: RealIAD comprises 151,050 images (99,721 normal + 51,329 anomalous) with ground-truth masks, providing the data foundation for AD-specific pretraining.
 
-**Paper Goals**: No prior work has systematically investigated anomaly representation pretraining for anomaly detection tasks. This paper constitutes the first exploration of this problem.
+**Goal**: No prior work has systematically investigated anomaly representation pretraining for anomaly detection tasks. This paper constitutes the first exploration of this problem.
 
 ## Method
 

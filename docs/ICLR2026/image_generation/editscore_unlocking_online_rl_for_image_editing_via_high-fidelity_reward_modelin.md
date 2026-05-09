@@ -27,15 +27,15 @@ content_hash: aacffbfb68dc4e66
 This paper proposes the first systematic "benchmark evaluation → reward modeling → reinforcement learning training" pipeline for image editing: constructing the EditReward-Bench benchmark, training the EditScore reward model series (7B–72B, surpassing GPT-5), and successfully applying it to Online RL training to significantly improve editing model performance.
 
 ## Background & Motivation
-**State of the Field**: Reinforcement learning has demonstrated substantial value in LLM and T2I domains (e.g., FlowGRPO), yet its application to image editing remains virtually unexplored. RL can, in principle, discover editing strategies that surpass static datasets through a trial-and-error feedback process.
+**Background**: Reinforcement learning has demonstrated substantial value in LLM and T2I domains (e.g., FlowGRPO), yet its application to image editing remains virtually unexplored. RL can, in principle, discover editing strategies that surpass static datasets through a trial-and-error feedback process.
 
 **Limitations of Prior Work**: The core bottleneck for Online RL is the lack of high-fidelity, efficient, and scalable reward signals. Large VLMs such as GPT-5 are too costly to query at scale; open-source VLMs (even Qwen2.5-VL-72B) are insufficiently accurate as reward signals, leading to training instability or policy collapse.
 
-**Root Cause**: Parameter scale cannot substitute for domain-aligned accuracy — general-purpose VLMs perform poorly when evaluating fine-grained editing quality (consistency judgments can be worse than random), particularly on the Consistency dimension.
+**Key Challenge**: Parameter scale cannot substitute for domain-aligned accuracy — general-purpose VLMs perform poorly when evaluating fine-grained editing quality (consistency judgments can be worse than random), particularly on the Consistency dimension.
 
-**Paper Goals**: To construct a high-fidelity, domain-specific reward model that unlocks online RL for image editing.
+**Goal**: To construct a high-fidelity, domain-specific reward model that unlocks online RL for image editing.
 
-**Starting Point**: A full-stack system in which benchmark development drives reward model training, and the reward model in turn drives RL training.
+**Key Insight**: A full-stack system in which benchmark development drives reward model training, and the reward model in turn drives RL training.
 
 **Core Idea**: A high-fidelity, domain-specific reward model is the key to unlocking online RL for image editing.
 

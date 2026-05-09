@@ -28,16 +28,16 @@ DuoLens is proposed — an AI-generated content detection framework based on dua
 
 ## Background & Motivation
 
-**State of the Field**: The proliferation of LLM-generated content has made detection increasingly urgent. Existing detectors are either computationally expensive (LLM-based methods) or insufficiently accurate (perplexity-based methods), and most are only effective for English.
+**Background**: The proliferation of LLM-generated content has made detection increasingly urgent. Existing detectors are either computationally expensive (LLM-based methods) or insufficiently accurate (perplexity-based methods), and most are only effective for English.
 
 **Limitations of Prior Work**:
    - LLM-based detection methods (Binoculars, AGENT-X) suffer from slow inference and high resource demands
    - Existing code detection datasets exhibit **language imbalance** (Python-dominated), while multilingual text datasets are **domain-narrow**
    - LLMs used for binary classification may be biased (tending to rate AI-generated text as higher quality)
 
-**Root Cause**: Binary classification does not require LLM-level model complexity; small language models (SLMs) may outperform LLMs on this task while being substantially more efficient.
+**Key Challenge**: Binary classification does not require LLM-level model complexity; small language models (SLMs) may outperform LLMs on this task while being substantially more efficient.
 
-**Starting Point**: Fine-tuning encoder-only models (RoBERTa/CodeBERT variants) and fusing complementary representations via a dual-encoder architecture.
+**Key Insight**: Fine-tuning encoder-only models (RoBERTa/CodeBERT variants) and fusing complementary representations via a dual-encoder architecture.
 
 **Core Idea**: For the binary classification task of AI-generated content detection, carefully fine-tuned SLMs outperform LLMs in both accuracy and efficiency.
 

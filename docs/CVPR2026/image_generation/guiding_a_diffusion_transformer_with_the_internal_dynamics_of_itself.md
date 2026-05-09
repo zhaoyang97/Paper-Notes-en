@@ -28,11 +28,11 @@ This paper proposes Internal Guidance (IG), which adds auxiliary supervision los
 
 ## Background & Motivation
 
-1. **State of the Field**: Classifier-Free Guidance (CFG) is the standard approach for improving generation quality in diffusion models by steering samples toward high-probability regions of the conditional distribution. However, excessively large CFG scales lead to oversimplification or distortion and reduce sample diversity. Methods such as Autoguidance address this by using a "degraded version of the model" as the reference, but require separately training a weaker model or incurring additional sampling steps.
+1. **Background**: Classifier-Free Guidance (CFG) is the standard approach for improving generation quality in diffusion models by steering samples toward high-probability regions of the conditional distribution. However, excessively large CFG scales lead to oversimplification or distortion and reduce sample diversity. Methods such as Autoguidance address this by using a "degraded version of the model" as the reference, but require separately training a weaker model or incurring additional sampling steps.
 2. **Limitations of Prior Work**: (1) CFG at high guidance scales over-emphasizes class conditioning, pushing samples toward "template images" and reducing diversity; (2) Autoguidance requires dedicated training of a weaker model, which is costly and inflexible; (3) Methods such as PAG/SEG require carefully designed degradation strategies and impose additional sampling overhead.
-3. **Root Cause**: The desired effect of Autoguidance — improving quality while preserving diversity — cannot be achieved without either training a separate degraded model or increasing sampling steps.
-4. **Paper Goals**: To achieve Autoguidance-level improvements in generation quality and diversity at virtually zero additional cost.
-5. **Starting Point**: Intermediate-layer outputs of a deep network are inherently a "weaker version" of the final output, having been processed by only a subset of Transformer blocks. If intermediate layers are trained to perform denoising, they naturally provide a "weak-vs-strong" contrastive signal at sampling time.
+3. **Key Challenge**: The desired effect of Autoguidance — improving quality while preserving diversity — cannot be achieved without either training a separate degraded model or increasing sampling steps.
+4. **Goal**: To achieve Autoguidance-level improvements in generation quality and diversity at virtually zero additional cost.
+5. **Key Insight**: Intermediate-layer outputs of a deep network are inherently a "weaker version" of the final output, having been processed by only a subset of Transformer blocks. If intermediate layers are trained to perform denoising, they naturally provide a "weak-vs-strong" contrastive signal at sampling time.
 6. **Core Idea**: Add auxiliary supervision to intermediate layers of a Diffusion Transformer to train a built-in weak model, then use the difference between intermediate-layer and final-layer outputs as a guidance signal during sampling.
 
 ## Method

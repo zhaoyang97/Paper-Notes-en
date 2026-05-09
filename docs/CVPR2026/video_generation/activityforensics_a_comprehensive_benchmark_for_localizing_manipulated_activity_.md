@@ -28,13 +28,13 @@ This work introduces the first activity-level video forgery localization task an
 
 ## Background & Motivation
 
-**State of the Field**: Video manipulation localization aims to identify tampered segments in untrimmed videos. Existing benchmarks (ForgeryNet, Lav-DF, AV-Deepfake1M, TVIL) primarily focus on appearance-level forgeries (face swapping, object removal).
+**Background**: Video manipulation localization aims to identify tampered segments in untrimmed videos. Existing benchmarks (ForgeryNet, Lav-DF, AV-Deepfake1M, TVIL) primarily focus on appearance-level forgeries (face swapping, object removal).
 
 **Limitations of Prior Work**: With the rapid advancement of video generation technologies (Wan, Sora, VACE, etc.), activity-level forgery has emerged as a new threat—modifying human actions to distort event semantics (e.g., replacing a politician's neutral stance with inappropriate behavior). Such forgeries are highly realistic and deceptive, posing serious threats to media authenticity and credibility. Yet no benchmark exists for activity-level forgery localization.
 
-**Root Cause**: The detection logic for appearance-level and activity-level forgeries is fundamentally different—the former relies on pixel-level texture anomalies, while the latter requires understanding semantic changes in actions and temporal consistency. Directly transferring action localization models to forgery localization leads to over-reliance on semantic information.
+**Key Challenge**: The detection logic for appearance-level and activity-level forgeries is fundamentally different—the former relies on pixel-level texture anomalies, while the latter requires understanding semantic changes in actions and temporal consistency. Directly transferring action localization models to forgery localization leads to over-reliance on semantic information.
 
-**Starting Point**: Construct the first activity-level forgery localization benchmark using video captioning and temporal grounding to automate data construction (avoiding costly manual annotation), while proposing a targeted baseline method.
+**Key Insight**: Construct the first activity-level forgery localization benchmark using video captioning and temporal grounding to automate data construction (avoiding costly manual annotation), while proposing a targeted baseline method.
 
 **Core Idea**: (1) A grounding-assisted automated data pipeline seamlessly embeds manipulated clips into original videos; (2) TADiff suppresses semantic bias via noise perturbation, then amplifies forgery artifact cues through diffusion denoising.
 

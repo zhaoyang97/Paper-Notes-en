@@ -29,7 +29,7 @@ This paper identifies that the advantage function in GRPO (std normalization) ca
 
 ## Background & Motivation
 
-**State of the Field**: RLVR (Reinforcement Learning with Verifiable Rewards) has become the dominant paradigm for enhancing LLM mathematical reasoning (e.g., DeepSeek-R1). GRPO is the most representative algorithm in this paradigm, replacing value networks with group-relative advantage estimation.
+**Background**: RLVR (Reinforcement Learning with Verifiable Rewards) has become the dominant paradigm for enhancing LLM mathematical reasoning (e.g., DeepSeek-R1). GRPO is the most representative algorithm in this paradigm, replacing value networks with group-relative advantage estimation.
 
 **Limitations of Prior Work**:
 
@@ -37,9 +37,9 @@ This paper identifies that the advantage function in GRPO (std normalization) ca
 
 2. **Data level**: Existing RLVR data augmentation methods (e.g., Liang et al. 2025) primarily paraphrase questions to improve diversity without systematically increasing difficulty. The lack of challenging training data limits the upper bound of model reasoning capability.
 
-**Root Cause**: Hard but solvable problems are the most valuable training material (exposing model weaknesses while providing correct answers to learn from), yet GRPO produces the smallest update magnitudes precisely on such problems.
+**Key Challenge**: Hard but solvable problems are the most valuable training material (exposing model weaknesses while providing correct answers to learn from), yet GRPO produces the smallest update magnitudes precisely on such problems.
 
-**Starting Point**: The paper addresses the "neglect of hard problems" simultaneously at the algorithmic and data levels — DGPO corrects GRPO's inherent imbalance and up-weights hard problems, while MQR generates harder training questions.
+**Key Insight**: The paper addresses the "neglect of hard problems" simultaneously at the algorithmic and data levels — DGPO corrects GRPO's inherent imbalance and up-weights hard problems, while MQR generates harder training questions.
 
 ## Method
 

@@ -27,7 +27,7 @@ content_hash: 15ce552860ebc09c
 This paper proposes AnoPLe — a lightweight multimodal bidirectional prompt learning framework that requires neither manually crafted anomaly descriptions nor external auxiliary modules. Through text–visual prompt bidirectional interaction and scale-aware prefixes, AnoPLe achieves few-shot multi-class anomaly detection, delivering strong competitive results on MVTec-AD/VisA/Real-IAD while maintaining efficient inference (~28 FPS).
 
 ## Background & Motivation
-**State of the Field**: Industrial anomaly detection is shifting from "one model per class" toward more practical **few-shot + multi-class** unified models. Few-shot MCAD requires: (a) only a few normal samples per class; (b) a single model covering multiple product categories.
+**Background**: Industrial anomaly detection is shifting from "one model per class" toward more practical **few-shot + multi-class** unified models. Few-shot MCAD requires: (a) only a few normal samples per class; (b) a single model covering multiple product categories.
 
 **Limitations of Prior Work**:
    - WinCLIP relies on hand-crafted prompt templates, lacking flexibility.

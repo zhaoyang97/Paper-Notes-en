@@ -27,18 +27,18 @@ This work introduces a novel paradigm of open-source games—where agents submit
 
 ## Background & Motivation
 
-**State of the Field**: Multi-agent LLM research has largely focused on communication and task decomposition, rarely addressing strategic reasoning and cooperation; traditional game theory has primarily targeted human or conventional RL agents.
+**Background**: Multi-agent LLM research has largely focused on communication and task decomposition, rarely addressing strategic reasoning and cooperation; traditional game theory has primarily targeted human or conventional RL agents.
 
 **Limitations of Prior Work**:
    - LLMs' strategic reasoning capabilities in complex multi-agent environments remain poorly understood.
    - Existing evaluations mostly rely on natural language or black-box actions, making interpretation and verification difficult.
    - Whether LLMs can spontaneously reach cooperative equilibria in cooperative games is unknown.
 
-**Root Cause**: How to evaluate LLMs' ability to both safeguard self-interest and achieve cooperation in multi-agent strategic environments.
+**Key Challenge**: How to evaluate LLMs' ability to both safeguard self-interest and achieve cooperation in multi-agent strategic environments.
 
-**Paper Goals**: Leverage code transparency to design an evaluation framework that investigates strategic reasoning and the emergence of cooperation in LLMs.
+**Goal**: Leverage code transparency to design an evaluation framework that investigates strategic reasoning and the emergence of cooperation in LLMs.
 
-**Starting Point**: Open-source games—overturning the "black-box" constraint by having agents exchange source code, enabling reasoning over known opponent strategies.
+**Key Insight**: Open-source games—overturning the "black-box" constraint by having agents exchange source code, enabling reasoning over known opponent strategies.
 
 **Core Idea**: A three-tier progressive investigation of LLM strategic reasoning via the SPARC benchmark (code comprehension) + open-source games (dynamic strategy) + evolutionary analysis (long-term stability).
 

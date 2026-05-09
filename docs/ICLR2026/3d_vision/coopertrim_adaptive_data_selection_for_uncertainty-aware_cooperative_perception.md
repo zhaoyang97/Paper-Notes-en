@@ -28,15 +28,15 @@ CooperTrim is an adaptive feature selection framework that evaluates feature rel
 
 ## Background & Motivation
 
-**State of the Field**: Cooperative perception enables autonomous vehicles to share encoded representations for enhanced situational awareness. Intermediate fusion is the dominant paradigm, yet the volume of transmitted features still strains wireless bandwidth (typically ~40 Mbps). Existing bandwidth optimization strategies include compression (lossy), selection (fixed threshold), and hybrid approaches.
+**Background**: Cooperative perception enables autonomous vehicles to share encoded representations for enhanced situational awareness. Intermediate fusion is the dominant paradigm, yet the volume of transmitted features still strains wireless bandwidth (typically ~40 Mbps). Existing bandwidth optimization strategies include compression (lossy), selection (fixed threshold), and hybrid approaches.
 
 **Limitations of Prior Work**: (a) Where2Comm employs confidence maps with fixed thresholds for feature selection, ignoring temporal context, resulting in persistently high bandwidth (~39.6 Mbps); (b) SwissCheese applies fixed-threshold channel/spatial selection without environmental adaptability; (c) all existing methods make per-frame decisions independently, repeatedly transmitting static information.
 
-**Root Cause**: The fundamental tension between limited bandwidth and rich sensory data — existing methods merely transmit less per frame rather than leveraging temporal continuity for demand-driven sharing.
+**Key Challenge**: The fundamental tension between limited bandwidth and rich sensory data — existing methods merely transmit less per frame rather than leveraging temporal continuity for demand-driven sharing.
 
-**Paper Goals**: (a) Utilize temporal context to identify dynamic features that genuinely require updating; (b) adaptively adjust the sharing volume according to scene complexity.
+**Goal**: (a) Utilize temporal context to identify dynamic features that genuinely require updating; (b) adaptively adjust the sharing volume according to scene complexity.
 
-**Starting Point**: The ego vehicle can leverage its own temporal memory to determine which features carry "new information" (high temporal uncertainty) and request only those that have changed — transmitting less in simple scenes and more in complex ones.
+**Key Insight**: The ego vehicle can leverage its own temporal memory to determine which features carry "new information" (high temporal uncertainty) and request only those that have changed — transmitting less in simple scenes and more in complex ones.
 
 **Core Idea**: Measure feature relevance through temporal uncertainty rather than static confidence scores, enabling environment-adaptive, demand-driven sharing.
 

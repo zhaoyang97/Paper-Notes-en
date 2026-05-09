@@ -29,15 +29,15 @@ This paper reveals the pervasive SNR-t bias in diffusion models (the mismatch be
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion Probabilistic Models (DPMs) have achieved great success in generation tasks such as image, audio, and video. During training, models strictly bind noisy samples to timestamps: $X_t = \sqrt{\bar{\alpha}_t} X_0 + \sqrt{1-\bar{\alpha}_t} \epsilon_t$, where the signal-to-noise ratio $\text{SNR}(t) = \bar{\alpha}_t / (1-\bar{\alpha}_t)$ is entirely determined by the timestep $t$.
+**Background**: Diffusion Probabilistic Models (DPMs) have achieved great success in generation tasks such as image, audio, and video. During training, models strictly bind noisy samples to timestamps: $X_t = \sqrt{\bar{\alpha}_t} X_0 + \sqrt{1-\bar{\alpha}_t} \epsilon_t$, where the signal-to-noise ratio $\text{SNR}(t) = \bar{\alpha}_t / (1-\bar{\alpha}_t)$ is entirely determined by the timestep $t$.
 
 **Limitations of Prior Work**: During inference, due to the accumulation of network prediction errors and numerical solver discretization errors, reverse denoising trajectories inevitably deviate from the ideal path. This leads to a mismatch between the actual SNR of the predicted sample $\hat{x}_t$ and the SNR corresponding to the preset timestep $t$—defined here as SNR-t bias.
 
-**Root Cause**: While SNR and timestamps are strictly coupled during training, this correspondence is broken during inference. When the network receives samples with mismatched SNRs, it produces significant prediction bias: samples with lower SNR lead to over-prediction of noise, while samples with higher SNR lead to under-prediction. Experiments confirm that reverse process samples consistently exhibit lower SNRs than forward process samples.
+**Key Challenge**: While SNR and timestamps are strictly coupled during training, this correspondence is broken during inference. When the network receives samples with mismatched SNRs, it produces significant prediction bias: samples with lower SNR lead to over-prediction of noise, while samples with higher SNR lead to under-prediction. Experiments confirm that reverse process samples consistently exhibit lower SNRs than forward process samples.
 
-**Paper Goals**: (1) Provide a systematic empirical and theoretical proof of SNR-t bias; (2) Design a training-free correction method to mitigate this bias.
+**Goal**: (1) Provide a systematic empirical and theoretical proof of SNR-t bias; (2) Design a training-free correction method to mitigate this bias.
 
-**Starting Point**: Utilizing the reconstructed sample $x^0_\theta$ generated at each step of the reverse denoising process. The differential signal between $x^0_\theta$ and the predicted sample $\hat{x}_{t-1}$ contains gradient information to push shifted samples toward the ideal trajectory.
+**Key Insight**: Utilizing the reconstructed sample $x^0_\theta$ generated at each step of the reverse denoising process. The differential signal between $x^0_\theta$ and the predicted sample $\hat{x}_{t-1}$ contains gradient information to push shifted samples toward the ideal trajectory.
 
 **Core Idea**: Introducing differential correction into the wavelet domain to correct different frequency components separately, using dynamic weights designed based on the "low-frequency first, high-frequency later" denoising characteristic of diffusion models.
 

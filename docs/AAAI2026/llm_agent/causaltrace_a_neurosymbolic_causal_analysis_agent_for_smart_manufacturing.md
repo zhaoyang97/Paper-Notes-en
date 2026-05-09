@@ -29,15 +29,15 @@ This paper proposes CausalTrace — a neurosymbolic causal analysis agent integr
 
 ## Background & Motivation
 
-**State of the Field**: Manufacturing is moving toward hyper-autonomous operations, with AI-driven perception, control, and decision support becoming increasingly prevalent. Machine learning models excel at demand forecasting and anomaly detection, yet lack interpretability in high-stakes industrial environments.
+**Background**: Manufacturing is moving toward hyper-autonomous operations, with AI-driven perception, control, and decision support becoming increasingly prevalent. Machine learning models excel at demand forecasting and anomaly detection, yet lack interpretability in high-stakes industrial environments.
 
 **Limitations of Prior Work**: Existing AI systems typically operate as isolated black boxes, lacking seamless integration of prediction, explanation, and causal reasoning. Shop-floor operators and domain experts require not only accurate predictions but also actionable and comprehensible insights into system behavior.
 
-**Root Cause**: Industrial scenarios demand a unified capability encompassing "what happened + why it happened + what would change if we intervened," yet existing approaches are either purely symbolic (poor scalability), purely neural (lack of transparency), or agent-based systems (lacking semantic grounding and human-machine interaction support).
+**Key Challenge**: Industrial scenarios demand a unified capability encompassing "what happened + why it happened + what would change if we intervened," yet existing approaches are either purely symbolic (poor scalability), purely neural (lack of transparency), or agent-based systems (lacking semantic grounding and human-machine interaction support).
 
-**Paper Goals**: To construct a practical decision support system that unifies causal reasoning, neurosymbolic methods, and agentic AI into a single deployable framework.
+**Goal**: To construct a practical decision support system that unifies causal reasoning, neurosymbolic methods, and agentic AI into a single deployable framework.
 
-**Starting Point**: Extending causal analysis capabilities on the existing SmartPilot multi-agent industrial CoPilot platform, following the C3AN (Customized, Compact, Composite AI + Neurosymbolic Integration) design paradigm.
+**Key Insight**: Extending causal analysis capabilities on the existing SmartPilot multi-agent industrial CoPilot platform, following the C3AN (Customized, Compact, Composite AI + Neurosymbolic Integration) design paradigm.
 
 **Core Idea**: CausalTrace transforms causal analysis from an academic method into a deployable industrial decision tool through a Bootstrap stability-enhanced causal discovery engine, knowledge graph/ontology-driven semantic augmentation, and an LLM-powered natural language interaction interface.
 

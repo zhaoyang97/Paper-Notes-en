@@ -28,15 +28,15 @@ LogitDynamics attaches lightweight classification heads to each layer of a ViT t
 
 ## Background & Motivation
 
-**State of the Field**: Reliable confidence estimation is critical for high-stakes applications. Existing approaches include Bayesian uncertainty estimation (MC Dropout, deep ensembles) and logit/softmax-based post-hoc methods.
+**Background**: Reliable confidence estimation is critical for high-stakes applications. Existing approaches include Bayesian uncertainty estimation (MC Dropout, deep ensembles) and logit/softmax-based post-hoc methods.
 
 **Limitations of Prior Work**: Modern models can be overconfident even when wrong, a problem that is exacerbated under distribution shift. Using only the final-layer logit ignores how class evidence evolves across network depth.
 
-**Root Cause**: The confidence score from the final layer is a static snapshot that cannot reflect the stability of the model's "belief" throughout the inference process.
+**Key Challenge**: The confidence score from the final layer is a static snapshot that cannot reflect the stability of the model's "belief" throughout the inference process.
 
-**Paper Goals**: Leverage internal layerwise signals within ViTs to better predict when a model will make an error.
+**Goal**: Leverage internal layerwise signals within ViTs to better predict when a model will make an error.
 
-**Starting Point**: Inspired by the use of internal signals for LLM hallucination detection, the paper investigates whether analogous depth-wise signals exist in ViTs.
+**Key Insight**: Inspired by the use of internal signals for LLM hallucination detection, the paper investigates whether analogous depth-wise signals exist in ViTs.
 
 **Core Idea**: Correct predictions tend to exhibit a stable top-K structure, whereas erroneous predictions are accompanied by dramatic fluctuations among top candidate classes — capturing these layerwise dynamics enables error prediction.
 

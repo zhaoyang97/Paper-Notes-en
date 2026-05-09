@@ -27,15 +27,15 @@ This paper proposes the DQA framework, which achieves systematic fault diagnosis
 
 ## Background & Motivation
 
-**State of the Field**: Enterprise IT support interactions are inherently diagnostic — users submit vague symptom reports, and support agents must iteratively gather evidence to identify the root cause. Retrieval-Augmented Generation (RAG) is the predominant knowledge grounding approach, and multi-turn RAG further improves retrieval robustness through conversational query rewriting.
+**Background**: Enterprise IT support interactions are inherently diagnostic — users submit vague symptom reports, and support agents must iteratively gather evidence to identify the root cause. Retrieval-Augmented Generation (RAG) is the predominant knowledge grounding approach, and multi-turn RAG further improves retrieval robustness through conversational query rewriting.
 
 **Limitations of Prior Work**: Standard multi-turn RAG systems lack an explicit representation of diagnostic state. Retrieved documents are consumed independently at each turn, making it difficult to accumulate evidence across turns, reconcile conflicting signals, or maintain awareness of unresolved hypotheses. Retrieval over large-scale ticket repositories also yields numerous near-duplicate results, wasting context window capacity and increasing latency.
 
-**Root Cause**: Diagnostic conversations require tracking competing hypotheses, interpreting partial signals, and deciding when to ask questions versus when to propose a solution. However, existing RAG systems conflate "conversational coherence" with "diagnostic progress," lacking explicit modeling of diagnostic advancement.
+**Key Challenge**: Diagnostic conversations require tracking competing hypotheses, interpreting partial signals, and deciding when to ask questions versus when to propose a solution. However, existing RAG systems conflate "conversational coherence" with "diagnostic progress," lacking explicit modeling of diagnostic advancement.
 
-**Paper Goals**: To design a fault-diagnosis framework that maintains explicit diagnostic states, aggregates evidence at the root-cause level, and supports state-conditioned action selection.
+**Goal**: To design a fault-diagnosis framework that maintains explicit diagnostic states, aggregates evidence at the root-cause level, and supports state-conditioned action selection.
 
-**Starting Point**: The framework draws inspiration from Case-Based Reasoning (CBR) — learning from similar resolved cases — but rather than adapting individual cases, it aggregates distributional information (e.g., cluster prevalence) across the entire retrieved neighborhood to guide action selection.
+**Key Insight**: The framework draws inspiration from Case-Based Reasoning (CBR) — learning from similar resolved cases — but rather than adapting individual cases, it aggregates distributional information (e.g., cluster prevalence) across the entire retrieved neighborhood to guide action selection.
 
 **Core Idea**: Retrieved tickets are clustered by root-cause description, and a hypothesis weight vector is maintained as the diagnostic state. This vector is dynamically updated with each new piece of evidence, guiding a strategic transition from broad inquiry to targeted investigation to solution proposal.
 

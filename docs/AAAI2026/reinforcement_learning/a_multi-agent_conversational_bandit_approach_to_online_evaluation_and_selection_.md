@@ -29,15 +29,15 @@ This paper proposes MACO, a multi-agent conversational bandit framework that ach
 
 ## Background & Motivation
 
-**State of the Field**: LLM response optimization primarily relies on offline evaluation (e.g., prompt engineering), and scoring responses individually incurs prohibitive computational costs — for instance, evaluating 205 zero-shot prompts on 784 GSM8K problems requires 78 GPU hours.
+**Background**: LLM response optimization primarily relies on offline evaluation (e.g., prompt engineering), and scoring responses individually incurs prohibitive computational costs — for instance, evaluating 205 zero-shot prompts on 784 GSM8K problems requires 78 GPU hours.
 
 **Limitations of Prior Work**: ① Existing bandit methods suffer from high computational complexity when handling high-dimensional LLM features; ② most assume infinitely many arms, which is unsuitable for finite response sets; ③ fixed conversation frequencies lack adaptivity; ④ only single-agent settings are supported, precluding multi-device access.
 
-**Root Cause**: How to efficiently select the optimal LLM response online under multi-device, heterogeneous arm sets, and dynamic user preferences.
+**Key Challenge**: How to efficiently select the optimal LLM response online under multi-device, heterogeneous arm sets, and dynamic user preferences.
 
-**Paper Goals**: Design a multi-agent conversational bandit framework that online evaluates and selects user-preference-aligned LLM responses under anonymous multi-device access scenarios.
+**Goal**: Design a multi-agent conversational bandit framework that online evaluates and selects user-preference-aligned LLM responses under anonymous multi-device access scenarios.
 
-**Starting Point**: Combine phase elimination with an adaptive conversation mechanism that queries keywords to explore under-explored directions in the feature space, avoiding the high computational cost of G-optimal design.
+**Key Insight**: Combine phase elimination with an adaptive conversation mechanism that queries keywords to explore under-explored directions in the feature space, avoiding the high computational cost of G-optimal design.
 
 **Core Idea**: Use eigendecomposition of the information matrix to identify weak directions in preference estimation, then adaptively supplement information via targeted keyword-based conversations.
 

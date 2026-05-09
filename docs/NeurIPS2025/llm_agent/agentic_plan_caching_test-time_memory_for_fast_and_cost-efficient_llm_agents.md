@@ -28,13 +28,13 @@ This paper proposes Agentic Plan Caching (APC), which extracts structured plan t
 
 ## Background & Motivation
 
-**State of the Field**: LLM-based agents adopt a Plan-Act loop in which a large model handles planning while an execution model carries out actions. The planning phase (chain-of-thought reasoning, task decomposition) consumes substantial tokens and expensive API calls.
+**Background**: LLM-based agents adopt a Plan-Act loop in which a large model handles planning while an execution model carries out actions. The planning phase (chain-of-thought reasoning, task decomposition) consumes substantial tokens and expensive API calls.
 
 **Limitations of Prior Work**: (a) **Context caching** (KV cache reuse): model-specific and non-transferable across models, making it unsuitable for multi-model agents; (b) **Semantic caching**: stores (input, output) pairs, but agent outputs depend on external data/environments, so the same query over different data yields different outputs; (c) Neither approach can handle minor query variations adaptively.
 
-**Root Cause**: Agent planning patterns are semantically highly repetitive (e.g., "analyze dataset" → similar decomposition plans), yet concrete details vary with data and environment. Existing caches cannot decouple "core intent" from "dynamic context."
+**Key Challenge**: Agent planning patterns are semantically highly repetitive (e.g., "analyze dataset" → similar decomposition plans), yet concrete details vary with data and environment. Existing caches cannot decouple "core intent" from "dynamic context."
 
-**Starting Point**: Extract reusable **plan templates** (with context-specific information removed) from completed agent executions, and adapt these templates to new tasks using a small model.
+**Key Insight**: Extract reusable **plan templates** (with context-specific information removed) from completed agent executions, and adapt these templates to new tasks using a small model.
 
 **Core Idea**: Use agent-level plans (rather than query-level responses) as the caching unit. Keyword matching combined with small-model adaptation achieves large-model plan quality at small-model cost.
 

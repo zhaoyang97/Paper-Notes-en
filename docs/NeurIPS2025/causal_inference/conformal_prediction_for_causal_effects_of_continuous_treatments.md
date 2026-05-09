@@ -29,14 +29,14 @@ This work is the first to construct conformal prediction intervals for causal ef
 
 ## Background & Motivation
 
-**State of the Field**: Conformal Prediction (CP) has attracted growing attention in uncertainty quantification due to its model-agnostic, distribution-free, finite-sample coverage guarantees. However, existing causal CP methods are exclusively designed for binary or discrete treatments (e.g., treated vs. untreated) and cannot handle continuous treatments (e.g., drug dosage).
+**Background**: Conformal Prediction (CP) has attracted growing attention in uncertainty quantification due to its model-agnostic, distribution-free, finite-sample coverage guarantees. However, existing causal CP methods are exclusively designed for binary or discrete treatments (e.g., treated vs. untreated) and cannot handle continuous treatments (e.g., drug dosage).
 
 **Limitations of Prior Work**: Adapting CP from standard prediction tasks to causal inference poses three fundamental challenges:
    - **Challenge ①**: Interventions alter the propensity function $\pi(a|x)$, inducing a distributional shift between the observational and interventional distributions, thereby violating the exchangeability assumption central to CP.
    - **Challenge ②**: In observational data, propensity scores are typically unknown and must be estimated, introducing additional uncertainty from estimation error.
    - **Challenge ③**: Under continuous treatments, no two observations share identical treatment values, making direct conditional calibration infeasible.
 
-**Root Cause**: CP requires exchangeability to guarantee valid coverage, yet causal interventions inherently violate exchangeability. The core question is how to maintain rigorous finite-sample coverage guarantees under distributional shift.
+**Key Challenge**: CP requires exchangeability to guarantee valid coverage, yet causal interventions inherently violate exchangeability. The core question is how to maintain rigorous finite-sample coverage guarantees under distributional shift.
 
 **Limitations of Prior Work**:
    - MC Dropout: Poor posterior approximation quality, unreliable coverage rates.
@@ -44,7 +44,7 @@ This work is the first to construct conformal prediction intervals for causal ef
    - Bayesian methods: Require prior distribution assumptions and are not robust to model misspecification.
    - Existing causal CP methods (e.g., Lei & Candès 2021): Restricted to binary treatments; discretizing continuous treatments leads to ill-defined causal estimands.
 
-**Starting Point**: The paper models the intervention-induced propensity shift as a tilting function family $\mathcal{F}$, and constructs CP intervals via robust optimization over this family, ensuring coverage guarantees hold under all possible distributional shifts.
+**Key Insight**: The paper models the intervention-induced propensity shift as a tilting function family $\mathcal{F}$, and constructs CP intervals via robust optimization over this family, ensuring coverage guarantees hold under all possible distributional shifts.
 
 ## Method
 

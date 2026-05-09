@@ -29,15 +29,15 @@ Long-SCOPE proposes a fully sparse long-range cooperative 3D perception framewor
 
 ## Background & Motivation
 
-**State of the Field**: Cooperative perception extends the perceptual range of autonomous driving and addresses occlusion issues via V2X communication, but mainstream methods rely on dense BEV features whose computation and communication costs scale quadratically with the perception range.
+**Background**: Cooperative perception extends the perceptual range of autonomous driving and addresses occlusion issues via V2X communication, but mainstream methods rely on dense BEV features whose computation and communication costs scale quadratically with the perception range.
 
 **Limitations of Prior Work**: (1) Dense BEV representations incur exploding computational costs in long-range scenarios; (2) observation errors and alignment errors for distant objects grow substantially, making existing feature association mechanisms based on fixed distance thresholds brittle.
 
-**Root Cause**: Efficient sparse communication requires accurate query association, yet positional noise at long range causes rigid threshold-based methods to fail, incorrectly filtering out valid collaborative queries.
+**Key Challenge**: Efficient sparse communication requires accurate query association, yet positional noise at long range causes rigid threshold-based methods to fail, incorrectly filtering out valid collaborative queries.
 
-**Paper Goals**: Design a fully sparse architecture that simultaneously addresses computational efficiency and robust association in long-range scenarios.
+**Goal**: Design a fully sparse architecture that simultaneously addresses computational efficiency and robust association in long-range scenarios.
 
-**Starting Point**: Completely abandon BEV features, extract object queries directly from image features, and replace rule-based matching with a learnable attention mechanism.
+**Key Insight**: Completely abandon BEV features, extract object queries directly from image features, and replace rule-based matching with a learnable attention mechanism.
 
 **Core Idea**: Dynamically generate high-quality 3D queries using geometric priors to handle observation errors, and perform robust query matching via context-aware attention to handle alignment errors.
 

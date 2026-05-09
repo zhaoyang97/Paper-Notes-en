@@ -30,7 +30,7 @@ This paper is the first to systematically reveal the severe impact of mark distr
 
 ### State of the Field
 
-**State of the Field**: Marked temporal point processes (MTPP) model the type (mark) and occurrence time of each event in an event stream, with broad applications in earthquake prediction, social media retweet modeling, and related domains. Existing MTPP models have overlooked a critical issue: **mark distributions are highly imbalanced**. For example, magnitude-7 earthquakes (rare but important) are far less frequent than magnitude-3 earthquakes (common).
+**Background**: Marked temporal point processes (MTPP) model the type (mark) and occurrence time of each event in an event stream, with broad applications in earthquake prediction, social media retweet modeling, and related domains. Existing MTPP models have overlooked a critical issue: **mark distributions are highly imbalanced**. For example, magnitude-7 earthquakes (rare but important) are far less frequent than magnitude-3 earthquakes (common).
 
 Problems caused by imbalance:
 
@@ -40,7 +40,7 @@ Problems caused by imbalance:
 
 ### Root Cause
 
-**Root Cause**: Models almost always predict frequent marks, resulting in extremely low macro-F1 for rare marks (e.g., on the Retweet dataset, rare marks achieve only 0.027 vs. 0.618 for frequent marks).
+**Key Challenge**: Models almost always predict frequent marks, resulting in extremely low macro-F1 for rare marks (e.g., on the Retweet dataset, rare marks achieve only 0.027 vs. 0.618 for frequent marks).
 
 Existing methods typically follow a "predict time $t$ first, then predict mark $p^*(m|t)$ at time $t$" paradigm, which makes thresholding methods difficult to apply—mark probabilities vary over time, preventing a unified threshold from being learned across all time points.
 

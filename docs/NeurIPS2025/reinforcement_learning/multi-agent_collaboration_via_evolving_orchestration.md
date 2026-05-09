@@ -28,15 +28,15 @@ This paper proposes a "Puppeteer" multi-agent collaboration paradigm in which a 
 
 ## Background & Motivation
 
-**State of the Field**: LLM-based multi-agent systems (MAS) tackle complex problems by combining diverse models, reasoning strategies, and tools. Existing approaches such as ChatDev and MacNet rely on predefined static topologies (chain, tree, DAG, etc.).
+**Background**: LLM-based multi-agent systems (MAS) tackle complex problems by combining diverse models, reasoning strategies, and tools. Existing approaches such as ChatDev and MacNet rely on predefined static topologies (chain, tree, DAG, etc.).
 
 **Limitations of Prior Work**: Static organizational structures cannot adapt to growing task complexity or increasing agent counts, leading to coordination overhead, redundant computation, and poor communication efficiency. For instance, a 50-node mesh-structured MAS may require 10 hours to generate a few hundred lines of code.
 
-**Root Cause**: How can collaboration effectiveness be maximized while minimizing computational overhead? Static topologies are inherently incapable of satisfying both objectives simultaneously.
+**Key Challenge**: How can collaboration effectiveness be maximized while minimizing computational overhead? Static topologies are inherently incapable of satisfying both objectives simultaneously.
 
-**Paper Goals**: Design a dynamic, evolvable multi-agent orchestration mechanism that selects the optimal agent activation sequence in real time based on task state, and continuously optimizes this selection via RL.
+**Goal**: Design a dynamic, evolvable multi-agent orchestration mechanism that selects the optimal agent activation sequence in real time based on task state, and continuously optimizes this selection via RL.
 
-**Starting Point**: Drawing an analogy to puppetry—a puppeteer (orchestrator) operates behind the scenes, dynamically pulling strings (activating agents) according to the plot (task state), learning to tighten effective strings and cut unnecessary ones.
+**Key Insight**: Drawing an analogy to puppetry—a puppeteer (orchestrator) operates behind the scenes, dynamically pulling strings (activating agents) according to the plot (task state), learning to tighten effective strings and cut unnecessary ones.
 
 **Core Idea**: Multi-agent collaboration is formulated as a Markov decision process, in which a centralized orchestrator learns via REINFORCE to dynamically select agent activation sequences, jointly optimizing task quality and inference efficiency.
 

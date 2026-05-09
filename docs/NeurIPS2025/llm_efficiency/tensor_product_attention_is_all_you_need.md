@@ -30,7 +30,7 @@ By decomposing Q/K/V into weighted sums of low-rank factors via contextual tenso
 
 ### State of the Field
 
-**State of the Field**: The core bottleneck of long-context LLM inference lies in the linear growth of the KV cache ($O(T \cdot h \cdot d_h)$), which severely limits practical context window lengths and concurrent serving throughput. Existing approaches include MQA (Multi-Query Attention) and GQA (Grouped-Query Attention), which reduce KV cache size via head sharing, and MLA (DeepSeek), which achieves further compression through joint compressed representations.
+**Background**: The core bottleneck of long-context LLM inference lies in the linear growth of the KV cache ($O(T \cdot h \cdot d_h)$), which severely limits practical context window lengths and concurrent serving throughput. Existing approaches include MQA (Multi-Query Attention) and GQA (Grouped-Query Attention), which reduce KV cache size via head sharing, and MLA (DeepSeek), which achieves further compression through joint compressed representations.
 
 ### Limitations of Prior Work
 
@@ -38,11 +38,11 @@ By decomposing Q/K/V into weighted sums of low-rank factors via contextual tenso
 
 ### Root Cause
 
-**Root Cause**: KV cache compression is widely assumed to inevitably sacrifice model capacity—reducing storage implies losing information. However, KV representations may contain substantial redundancy; if a more compact yet lossless (or even enhanced) representation can be found, this trade-off can be broken.
+**Key Challenge**: KV cache compression is widely assumed to inevitably sacrifice model capacity—reducing storage implies losing information. However, KV representations may contain substantial redundancy; if a more compact yet lossless (or even enhanced) representation can be found, this trade-off can be broken.
 
 ### Paper Goals
 
-**Paper Goals**: To design a new attention mechanism that substantially compresses the KV cache while simultaneously improving model performance. **Starting Point**: Applying dynamic low-rank tensor decomposition to activations (rather than weights), constructing lightweight factor representations for each context. **Core Idea**: $Q_t = \frac{1}{R} A_Q(x_t)^\top B_Q(x_t)$ — decomposing Q/K/V into tensor products of a head-dimension factor $A$ and a feature-dimension factor $B$, with the KV cache storing only the low-rank factors.
+**Goal**: To design a new attention mechanism that substantially compresses the KV cache while simultaneously improving model performance. **Key Insight**: Applying dynamic low-rank tensor decomposition to activations (rather than weights), constructing lightweight factor representations for each context. **Core Idea**: $Q_t = \frac{1}{R} A_Q(x_t)^\top B_Q(x_t)$ — decomposing Q/K/V into tensor products of a head-dimension factor $A$ and a feature-dimension factor $B$, with the KV cache storing only the low-rank factors.
 
 ## Method
 

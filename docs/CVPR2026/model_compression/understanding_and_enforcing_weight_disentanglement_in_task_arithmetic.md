@@ -28,11 +28,11 @@ This paper proposes Task Feature Specialization (TFS) as a sufficient condition 
 
 ## Background & Motivation
 
-1. **State of the Field**: Task Arithmetic is an efficient training-free model editing paradigm that computes task vectors $\tau_t = \theta_t^* - \theta_0$ (the difference between fine-tuned and pre-trained weights) and applies algebraic operations (addition, subtraction) to compose, remove, or analogize different skills.
+1. **Background**: Task Arithmetic is an efficient training-free model editing paradigm that computes task vectors $\tau_t = \theta_t^* - \theta_0$ (the difference between fine-tuned and pre-trained weights) and applies algebraic operations (addition, subtraction) to compose, remove, or analogize different skills.
 2. **Limitations of Prior Work**: Although Task Arithmetic is effective in practice, a fundamental theoretical explanation remains lacking. The existing notion of "weight disentanglement" (introduced by TTA) describes the desired outcome — that the effects of different task vectors do not interfere with one another — but does not reveal its root cause. Specifically, the intrinsic properties required of the pre-trained model $\theta_0$ or the task vectors $\tau_t$ to achieve disentanglement have not been adequately explored.
-3. **Root Cause**: Weight disentanglement is a phenomenological description rather than a causal explanation. Existing methods are either computationally expensive (e.g., TTA requires Jacobian computation) or lack theoretical guarantees for reliably producing high-quality task vectors.
-4. **Paper Goals**: To answer two core questions: (1) What properties of a pre-trained model make it suitable for task arithmetic? (2) How can task vectors be constructed to actively promote weight disentanglement?
-5. **Starting Point**: By examining the internal feature allocation mechanism of the model, the paper identifies Task Feature Specialization as a sufficient condition for disentanglement, with weight vector orthogonality as its observable geometric consequence.
+3. **Key Challenge**: Weight disentanglement is a phenomenological description rather than a causal explanation. Existing methods are either computationally expensive (e.g., TTA requires Jacobian computation) or lack theoretical guarantees for reliably producing high-quality task vectors.
+4. **Goal**: To answer two core questions: (1) What properties of a pre-trained model make it suitable for task arithmetic? (2) How can task vectors be constructed to actively promote weight disentanglement?
+5. **Key Insight**: By examining the internal feature allocation mechanism of the model, the paper identifies Task Feature Specialization as a sufficient condition for disentanglement, with weight vector orthogonality as its observable geometric consequence.
 6. **Core Idea**: TFS is abstract and cannot be directly enforced; however, its geometric consequence — orthogonality — is concrete and actionable. By enforcing an orthogonal internal structure on the weight update matrix during fine-tuning, weight disentanglement can be indirectly promoted.
 
 ## Method

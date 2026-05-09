@@ -32,7 +32,7 @@ Visual understanding and generation are two core tasks in computer vision. Curre
 
 **Unified encoder fine-tuning** (e.g., VILA-U, UniTok): fine-tuned on pixel decoders after initialization, but the conflict between high-level semantics and low-level reconstruction objectives causes degradation in understanding performance.
 
-**Root Cause**: The inherent conflict between high-level semantic abstraction and low-level pixel reconstruction. How can a single tokenizer simultaneously achieve strong semantic understanding and high-fidelity reconstruction?
+**Key Challenge**: The inherent conflict between high-level semantic abstraction and low-level pixel reconstruction. How can a single tokenizer simultaneously achieve strong semantic understanding and high-fidelity reconstruction?
 
 ## Method
 

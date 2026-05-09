@@ -28,15 +28,15 @@ This paper proposes DATPRL-IR, the first multi-domain all-in-one image restorati
 
 ## Background & Motivation
 
-**State of the Field**: Existing all-in-one image restoration (AiOIR) methods (e.g., PromptIR, MoCE-IR) can handle multiple degradation tasks with a single model, but are confined to a single image domain (e.g., natural or medical images). No prior method simultaneously addresses multi-task restoration across multiple domains.
+**Background**: Existing all-in-one image restoration (AiOIR) methods (e.g., PromptIR, MoCE-IR) can handle multiple degradation tasks with a single model, but are confined to a single image domain (e.g., natural or medical images). No prior method simultaneously addresses multi-task restoration across multiple domains.
 
 **Limitations of Prior Work**: (1) Images from different domains (natural, medical, remote sensing) exhibit distinct visual characteristics, making single-domain methods non-transferable; (2) existing methods focus on distinguishing task-specific differences while neglecting shared knowledge across tasks; (3) learning difficulty increases sharply as the number of tasks and domains grows.
 
-**Root Cause**: In a multi-domain, multi-task setting, models must simultaneously capture task-specific knowledge, domain-specific knowledge, and shared knowledge across both dimensions. Existing single-prompt or single-encoding mechanisms cannot effectively represent this hierarchical knowledge structure.
+**Key Challenge**: In a multi-domain, multi-task setting, models must simultaneously capture task-specific knowledge, domain-specific knowledge, and shared knowledge across both dimensions. Existing single-prompt or single-encoding mechanisms cannot effectively represent this hierarchical knowledge structure.
 
-**Paper Goals**: How can a single model handle diverse restoration tasks across three domains (natural, medical, remote sensing)? How can shared knowledge across tasks and domains be exploited to reduce learning difficulty?
+**Goal**: How can a single model handle diverse restoration tasks across three domains (natural, medical, remote sensing)? How can shared knowledge across tasks and domains be exploited to reduce learning difficulty?
 
-**Starting Point**: Although images from different domains have unique characteristics, they also exhibit overlapping visual properties (e.g., "grayscale + anatomical structures" for medical; "aerial view + built structures" for remote sensing). A dual prompt pool is employed to encode task and domain knowledge separately, with instance-level adaptive combination and fusion.
+**Key Insight**: Although images from different domains have unique characteristics, they also exhibit overlapping visual properties (e.g., "grayscale + anatomical structures" for medical; "aerial view + built structures" for remote sensing). A dual prompt pool is employed to encode task and domain knowledge separately, with instance-level adaptive combination and fusion.
 
 **Core Idea**: A dual prompt pool is used to learn task- and domain-specific/shared knowledge independently. A prompt combination mechanism and cross-attention fusion generate domain-aware task prompt representations to guide multi-domain all-in-one restoration.
 

@@ -27,15 +27,15 @@ This paper proposes Bi-DFCL, a bilevel optimization framework that jointly lever
 
 ## Background & Motivation
 
-**State of the Field**: Marketing optimization on online platforms (e.g., coupon allocation) is a classic resource allocation problem. The dominant paradigm is the two-stage method (TSM): the first stage uses ML to predict individual treatment effects, and the second stage uses operations research (OR) to make allocation decisions.
+**Background**: Marketing optimization on online platforms (e.g., coupon allocation) is a classic resource allocation problem. The dominant paradigm is the two-stage method (TSM): the first stage uses ML to predict individual treatment effects, and the second stage uses operations research (OR) to make allocation decisions.
 
 **Limitations of Prior Work**: (1) **Predict-then-optimize inconsistency**: ML optimizes predictive accuracy while OR optimizes decision quality, but better predictions do not necessarily yield better decisions—prediction errors are amplified in non-convex NP-hard resource allocation problems; (2) **Bias-variance dilemma**: OBS data is abundant but biased (selection bias, position bias), while RCT data is unbiased but scarce and high-variance.
 
-**Root Cause**: Decision-Focused Learning (DFL) can narrow the predict-then-optimize gap, but due to the counterfactual problem, the decision loss can only be computed on scarce RCT data, which exacerbates the bias-variance dilemma.
+**Key Challenge**: Decision-Focused Learning (DFL) can narrow the predict-then-optimize gap, but due to the counterfactual problem, the decision loss can only be computed on scarce RCT data, which exacerbates the bias-variance dilemma.
 
-**Paper Goals**: Simultaneously address both challenges of TSM and existing DFL methods—predict-then-optimize alignment and bias-variance balance.
+**Goal**: Simultaneously address both challenges of TSM and existing DFL methods—predict-then-optimize alignment and bias-variance balance.
 
-**Starting Point**: Exploit the unbiasedness of RCT data to guide the learning direction on OBS data by assigning the decision loss and the prediction loss to the upper and lower levels of a bilevel optimization framework, respectively.
+**Key Insight**: Exploit the unbiasedness of RCT data to guide the learning direction on OBS data by assigning the decision loss and the prediction loss to the upper and lower levels of a bilevel optimization framework, respectively.
 
 **Core Idea**: In the bilevel framework, the upper level trains a Bridge Network with an unbiased decision loss on RCT data, while the lower level trains a Target Network with a (Bridge-corrected) prediction loss on OBS data, achieving data complementarity and objective alignment.
 

@@ -37,9 +37,9 @@ Dataset distillation aims to synthesize a compact dataset such that models train
 
 **Distribution matching** (e.g., DM): computationally efficient but generally underperforms the above two categories.
 
-**Root Cause**: Distribution matching methods are efficient but insufficiently accurate. The bottleneck lies in MMD (Maximum Mean Discrepancy) as a distributional metric, which suffers from two issues: (1) practical implementations typically match only first-order moments (means), equivalent to a linear-kernel MMD that cannot distinguish higher-order moment differences; (2) using more expressive kernels (e.g., RBF) incurs prohibitive computational cost that prevents scaling to large datasets.
+**Key Challenge**: Distribution matching methods are efficient but insufficiently accurate. The bottleneck lies in MMD (Maximum Mean Discrepancy) as a distributional metric, which suffers from two issues: (1) practical implementations typically match only first-order moments (means), equivalent to a linear-kernel MMD that cannot distinguish higher-order moment differences; (2) using more expressive kernels (e.g., RBF) incurs prohibitive computational cost that prevents scaling to large datasets.
 
-**Starting Point**: The Wasserstein distance from optimal transport theory naturally accounts for the geometric structure of distributions, and its barycenter preserves structural characteristics of the original distribution. This work computes the Wasserstein barycenter of per-class features in the representation space of a pretrained classifier, yielding a compact and geometrically faithful summary for efficient yet accurate distribution matching.
+**Key Insight**: The Wasserstein distance from optimal transport theory naturally accounts for the geometric structure of distributions, and its barycenter preserves structural characteristics of the original distribution. This work computes the Wasserstein barycenter of per-class features in the representation space of a pretrained classifier, yielding a compact and geometrically faithful summary for efficient yet accurate distribution matching.
 
 ## Method
 

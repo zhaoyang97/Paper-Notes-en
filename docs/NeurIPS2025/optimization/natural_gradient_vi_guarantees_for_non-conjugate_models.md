@@ -30,7 +30,7 @@ Under mean-field parameterization, this paper establishes three key theoretical 
 
 ## Background & Motivation
 
-**State of the Field**: Stochastic NGVI is one of the most widely used methods for approximating posterior distributions. It has been shown to be a special case of stochastic mirror descent and is deeply connected to information geometry.
+**Background**: Stochastic NGVI is one of the most widely used methods for approximating posterior distributions. It has been shown to be a special case of stochastic mirror descent and is deeply connected to information geometry.
 
 **Limitations of Prior Work**:
 - For **conjugate models** (where prior and likelihood are conjugate), recent work has established convergence guarantees via relative smoothness and strong convexity.
@@ -42,7 +42,7 @@ Under mean-field parameterization, this paper establishes three key theoretical 
 - Can rigorous convergence guarantees be provided?
 - Does the non-conjugate variational loss possess some form of hidden favorable structure?
 
-**Starting Point**: The paper focuses on mean-field parameterization and advances the theory along three axes: smoothness conditions, convergence to stationary points, and hidden convexity.
+**Key Insight**: The paper focuses on mean-field parameterization and advances the theory along three axes: smoothness conditions, convergence to stationary points, and hidden convexity.
 
 ## Method
 

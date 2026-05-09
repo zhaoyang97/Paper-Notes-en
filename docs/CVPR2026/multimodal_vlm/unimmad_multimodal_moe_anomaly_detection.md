@@ -27,15 +27,15 @@ content_hash: 5af248bc683b7b78
 This paper proposes UniMMAD, the first unified framework for multi-modal (RGB/Depth/IR, etc.) and multi-class anomaly detection. It follows a General-to-Specific paradigm: a general multi-modal encoder compresses features, and a Cross Mixture-of-Experts (C-MoE) decompresses them into domain-specific features. The method achieves state-of-the-art results on 5 datasets spanning industrial, medical, and synthetic scenarios at 59 FPS inference speed.
 
 ## Background & Motivation
-**State of the Field**: Existing anomaly detection methods treat modalities and categories as independent factors, training dedicated models for each combination, leading to fragmented solutions and high memory overhead.
+**Background**: Existing anomaly detection methods treat modalities and categories as independent factors, training dedicated models for each combination, leading to fragmented solutions and high memory overhead.
 
 **Limitations of Prior Work**: (a) Multi-class reconstruction-based methods use shared decoders, causing distortion of normality boundaries and inter-domain interference under large domain gaps; (b) Each modality–category pair requires a separate model, which is not scalable; (c) Existing methods struggle to handle cross-domain scenarios spanning industrial, medical, and synthetic settings simultaneously.
 
-**Root Cause**: A unified model must handle multi-modal inputs (RGB, 3D, infrared, etc.) and up to 66 categories, yet features across domains vary drastically, and naive parameter sharing leads to inter-domain interference.
+**Key Challenge**: A unified model must handle multi-modal inputs (RGB, 3D, infrared, etc.) and up to 66 categories, yet features across domains vary drastically, and naive parameter sharing leads to inter-domain interference.
 
-**Paper Goals**: Design a parameter-efficient unified framework that simultaneously handles multi-modal, multi-class, and multi-domain anomaly detection.
+**Goal**: Design a parameter-efficient unified framework that simultaneously handles multi-modal, multi-class, and multi-domain anomaly detection.
 
-**Starting Point**: A General-to-Specific paradigm — first compress multi-modal features with a general encoder (suppressing anomalies), then decompress them into domain-specific features with sparse MoE (restoring normality).
+**Key Insight**: A General-to-Specific paradigm — first compress multi-modal features with a general encoder (suppressing anomalies), then decompress them into domain-specific features with sparse MoE (restoring normality).
 
 **Core Idea**: General encoder compression combined with Cross MoE sparse-routing decompression, where different domains activate different experts, enabling domain isolation within a single unified model.
 

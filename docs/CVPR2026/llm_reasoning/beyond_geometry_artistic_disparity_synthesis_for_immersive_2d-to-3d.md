@@ -27,15 +27,15 @@ content_hash: 8dd92e70783c6289
 A new paradigm called "Artistic Disparity Synthesis" (Art3D) is proposed, shifting the goal of 2D-to-3D conversion from geometric accuracy to artistic expression. A dual-path architecture decouples global depth style from local artistic effects, learning directorial intent from professional 3D film data.
 
 ## Background & Motivation
-**State of the Field**: Current 2D-to-3D conversion methods (e.g., diffusion-based StereoCrafter, Eye2Eye) have achieved geometric accuracy but lack artistic immersion—a significant gap remains compared to the viewing experience of professional 3D films such as *Avatar*.
+**Background**: Current 2D-to-3D conversion methods (e.g., diffusion-based StereoCrafter, Eye2Eye) have achieved geometric accuracy but lack artistic immersion—a significant gap remains compared to the viewing experience of professional 3D films such as *Avatar*.
 
 **Limitations of Prior Work**: Geometric reconstruction paradigms (MonoDepth, MiDaS, etc.) treat the artistic disparity adjustments found in professional 3D films as "noise" to be suppressed, resulting in an "artistic poverty" problem—geometrically correct but narratively barren outputs.
 
-**Root Cause**: The three principal artistic operations in professional 3D post-production—Global Depth control, Zero-Plane selection, and Local Sculpting—are all encoded in disparity maps, yet existing methods cannot learn these artistic intentions.
+**Key Challenge**: The three principal artistic operations in professional 3D post-production—Global Depth control, Zero-Plane selection, and Local Sculpting—are all encoded in disparity maps, yet existing methods cannot learn these artistic intentions.
 
-**Paper Goals**: To generate disparity maps from 2D images that embody the director's artistic intent, rather than merely physically accurate disparity.
+**Goal**: To generate disparity maps from 2D images that embody the director's artistic intent, rather than merely physically accurate disparity.
 
-**Starting Point**: The disparity map is treated as a carrier of artistic expression, enabling indirect learning of global depth style and local pop-out effects from professional 3D films.
+**Key Insight**: The disparity map is treated as a carrier of artistic expression, enabling indirect learning of global depth style and local pop-out effects from professional 3D films.
 
 **Core Idea**: A dual-path supervision mechanism decouples the director's global macro-intent from local "artistic brushstrokes," learning artistic disparity style from professional 3D films through indirect supervision.
 

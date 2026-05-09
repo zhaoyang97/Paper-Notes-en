@@ -29,13 +29,13 @@ This paper formalizes the Program-to-Geometry task and proposes GeoGramBench (50
 
 ## Background & Motivation
 
-**State of the Field**: Spatial reasoning is a foundational capability for both human cognition and AI, underpinning applications such as robotics, autonomous navigation, and automated design. LLMs have attracted broad attention for interpreting geometric transformations and spatial relations, yet their ability to perform geometric reasoning from procedural code remains largely overlooked.
+**Background**: Spatial reasoning is a foundational capability for both human cognition and AI, underpinning applications such as robotics, autonomous navigation, and automated design. LLMs have attracted broad attention for interpreting geometric transformations and spatial relations, yet their ability to perform geometric reasoning from procedural code remains largely overlooked.
 
 **Limitations of Prior Work**: Existing benchmarks (e.g., MathVerse, GeoSense, Euclid) focus on visual geometric understanding; while MATH-500 and AIME24 include a small number of Asymptote-based problems, they lack systematic Program-to-Geometry evaluation. More critically, existing benchmarks fail to identify **answer leakage** in code—where code parameters directly or indirectly expose the answer.
 
-**Root Cause**: Preliminary studies indicate a significant performance drop when LLMs transition from code to spatial reasoning. DeepSeek-R1 shows accuracy drops of 23.5% (AIME24) and 10.9% (MATH-500) on geometry problems containing Asymptote code ($\mathbb{P}_{TC}$) compared to pure-text problems ($\mathbb{P}_T$). GPT-o1 and QwQ-32B exhibit similar trends.
+**Key Challenge**: Preliminary studies indicate a significant performance drop when LLMs transition from code to spatial reasoning. DeepSeek-R1 shows accuracy drops of 23.5% (AIME24) and 10.9% (MATH-500) on geometry problems containing Asymptote code ($\mathbb{P}_{TC}$) compared to pure-text problems ($\mathbb{P}_T$). GPT-o1 and QwQ-32B exhibit similar trends.
 
-**Paper Goals**: This paper formalizes the Program-to-Geometry task definition, proposes GeoGramBench—a curated benchmark of 500 geometry problems with procedural drawing code—and introduces a three-level geometric complexity taxonomy in place of traditional reasoning-difficulty classifications.
+**Goal**: This paper formalizes the Program-to-Geometry task definition, proposes GeoGramBench—a curated benchmark of 500 geometry problems with procedural drawing code—and introduces a three-level geometric complexity taxonomy in place of traditional reasoning-difficulty classifications.
 
 ## Method
 

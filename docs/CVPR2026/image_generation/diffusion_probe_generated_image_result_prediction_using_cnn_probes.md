@@ -31,7 +31,7 @@ This work discovers that the cross-attention distribution in early denoising ste
 
 ### State of the Field
 
-**State of the Field**: Text-to-image (T2I) diffusion models face a fundamental efficiency bottleneck: quality is unpredictable.
+**Background**: Text-to-image (T2I) diffusion models face a fundamental efficiency bottleneck: quality is unpredictable.
 
 ### Limitations of Prior Work
 
@@ -39,11 +39,11 @@ This work discovers that the cross-attention distribution in early denoising ste
 
 ### Root Cause
 
-**Root Cause**: Academic methods such as IC-Edit (repeated generation) and Flow-GRPO (multi-candidate ranking) similarly depend on full generation.
+**Key Challenge**: Academic methods such as IC-Edit (repeated generation) and Flow-GRPO (multi-candidate ranking) similarly depend on full generation.
 
 ### Starting Point
 
-**Starting Point**: Existing early prediction methods either incur high computational overhead (ICEdit requires a 72B VLM for decoding) or cannot be automated (PromptCharm relies on manual interpretation of attention maps).
+**Key Insight**: Existing early prediction methods either incur high computational overhead (ICEdit requires a 72B VLM for decoding) or cannot be automated (PromptCharm relies on manual interpretation of attention maps).
 
 Core finding: Early cross-attention maps in diffusion models contain predictive signals for final image quality — tokens whose attention is dispersed or fragmented correspond to objects that are missing or distorted in the final image.
 

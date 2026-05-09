@@ -29,15 +29,15 @@ This paper presents XtraGPT—the first open-source LLM suite (1.5B–14B) for a
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly integrated into academic workflows, but their use is largely limited to surface-level polishing via general-purpose models such as ChatGPT. Existing AI writing tools either generate entire papers from scratch (raising concerns about originality and ethics) or perform only grammatical corrections.
+**Background**: LLMs are increasingly integrated into academic workflows, but their use is largely limited to surface-level polishing via general-purpose models such as ChatGPT. Existing AI writing tools either generate entire papers from scratch (raising concerns about originality and ethics) or perform only grammatical corrections.
 
 **Limitations of Prior Work**: (1) General-purpose LLMs tend to revise academic papers superficially—improving fluency without addressing core argumentative issues such as unclear motivation or vague contributions; (2) Academic writing is inherently iterative, yet current LLM workflows treat each prompt as an independent interaction, lacking cross-revision context tracking; (3) Existing systems lack three critical controllability dimensions: adherence to in-context examples, user instructions, and explicit writing criteria.
 
-**Root Cause**: Academic paper revision requires understanding the full-document context and conforming to domain-specific writing standards, yet general-purpose LLMs lack both holistic comprehension and internalized academic writing norms.
+**Key Challenge**: Academic paper revision requires understanding the full-document context and conforming to domain-specific writing standards, yet general-purpose LLMs lack both holistic comprehension and internalized academic writing norms.
 
-**Paper Goals**: To construct a human-AI collaborative paper revision framework in which the model serves as an "assistant" providing context-aware, targeted revisions while humans retain creative control.
+**Goal**: To construct a human-AI collaborative paper revision framework in which the model serves as an "assistant" providing context-aware, targeted revisions while humans retain creative control.
 
-**Starting Point**: The revision task is formulated as criteria-guided conditional generation—given the full paper $T$, target paragraph $p$, and user instruction $q$, the model generates a revised paragraph $\hat{p} = \text{Model}_\theta(p, q, T)$. Revision intent is normalized through 20 writing criteria distilled from top-venue reviewer guidelines.
+**Key Insight**: The revision task is formulated as criteria-guided conditional generation—given the full paper $T$, target paragraph $p$, and user instruction $q$, the model generates a revised paragraph $\hat{p} = \text{Model}_\theta(p, q, T)$. Revision intent is normalized through 20 writing criteria distilled from top-venue reviewer guidelines.
 
 **Core Idea**: Through criteria-guided intent alignment and context-aware modeling, XtraGPT elevates academic paper revision from "generic polishing" to "precise, structured improvement."
 

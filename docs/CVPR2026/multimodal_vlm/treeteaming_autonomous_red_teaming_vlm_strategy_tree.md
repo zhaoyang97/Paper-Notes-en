@@ -29,11 +29,11 @@ TreeTeaming proposes an autonomous red-teaming framework that dynamically constr
 
 ## Background & Motivation
 
-1. **State of the Field**: VLM safety vulnerability discovery primarily relies on red-teaming. Existing approaches include manually designed attack templates (FigStep, MM-SafetyBench, etc.) and automated frameworks (Arondight, TRUST-VLM, etc.).
+1. **Background**: VLM safety vulnerability discovery primarily relies on red-teaming. Existing approaches include manually designed attack templates (FigStep, MM-SafetyBench, etc.) and automated frameworks (Arondight, TRUST-VLM, etc.).
 2. **Limitations of Prior Work**: All existing methods are constrained by a "predefined strategy" paradigm—each method is merely an instantiation of a manually designed attack heuristic. Even methods with feedback mechanisms (e.g., TRUST-VLM) can only refine test cases within an established strategy framework, and are incapable of discovering new strategies.
-3. **Root Cause**: Existing methods can only make "known attacks more effective," but cannot "systematically discover new attacks"—vulnerability exploration remains confined to a single path.
-4. **Paper Goals**: Shift the paradigm from static strategy testing to dynamic strategy discovery—automating the discovery of attack strategies themselves, rather than merely executing predefined ones.
-5. **Starting Point**: Organize strategies hierarchically using a tree structure (concept → concrete strategy), allowing an LLM to autonomously decide whether to deepen existing paths or explore new branches.
+3. **Key Challenge**: Existing methods can only make "known attacks more effective," but cannot "systematically discover new attacks"—vulnerability exploration remains confined to a single path.
+4. **Goal**: Shift the paradigm from static strategy testing to dynamic strategy discovery—automating the discovery of attack strategies themselves, rather than merely executing predefined ones.
+5. **Key Insight**: Organize strategies hierarchically using a tree structure (concept → concrete strategy), allowing an LLM to autonomously decide whether to deepen existing paths or explore new branches.
 6. **Core Idea**: Strategy tree + dynamic Orchestrator scheduling (exploitation/exploration trade-off) + multimodal Actuator execution + failure cause analysis feedback.
 
 ## Method

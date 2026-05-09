@@ -23,15 +23,15 @@ This paper systematically examines nine common beliefs in graph machine learning
 
 ## Background & Motivation
 
-**State of the Field**: Message-passing deep learning on graphs has undergone rapid development, with researchers focusing on its inherent limitations—oversmoothing (OSM, where node representations collapse to similar values), oversquashing (OSQ, where information is compressed and lost), the influence of homophily/heterophily on classification, and long-range information propagation.
+**Background**: Message-passing deep learning on graphs has undergone rapid development, with researchers focusing on its inherent limitations—oversmoothing (OSM, where node representations collapse to similar values), oversquashing (OSQ, where information is compressed and lost), the influence of homophily/heterophily on classification, and long-range information propagation.
 
 **Limitations of Prior Work**: Due to the fast pace of progress, numerous "commonly accepted beliefs" have been widely disseminated and cited without sufficient validation, causing conceptual confusion and ill-defined problem formulations that significantly hinder targeted follow-up research.
 
-**Root Cause**: Claims such as treating oversmoothing as the fundamental cause of performance degradation, equating oversquashing directly with topological bottlenecks, or identifying heterophily with "difficulty" are not universally valid, yet have become near-consensus conclusions in the literature.
+**Key Challenge**: Claims such as treating oversmoothing as the fundamental cause of performance degradation, equating oversquashing directly with topological bottlenecks, or identifying heterophily with "difficulty" are not universally valid, yet have become near-consensus conclusions in the literature.
 
-**Paper Goals**: To explicitly identify the limitations of these beliefs, refute them through clear counterexamples, and enable researchers to distinguish and precisely define the problems they seek to address.
+**Goal**: To explicitly identify the limitations of these beliefs, refute them through clear counterexamples, and enable researchers to distinguish and precisely define the problems they seek to address.
 
-**Starting Point**: Rather than criticizing specific works, the paper distills ambiguous claims scattered across the literature into nine common beliefs and systematically "demystifies" each using mathematical definitions and counterexamples.
+**Key Insight**: Rather than criticizing specific works, the paper distills ambiguous claims scattered across the literature into nine common beliefs and systematically "demystifies" each using mathematical definitions and counterexamples.
 
 **Core Idea**: "Oversquashing" should be decomposed into two independent problems: the **computational bottleneck** (arising from the exponential expansion of computation trees) and the **topological bottleneck** (arising from graph connectivity). These two phenomena can exist independently and need not be correlated.
 

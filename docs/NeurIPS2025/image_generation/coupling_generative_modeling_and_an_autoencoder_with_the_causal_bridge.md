@@ -29,11 +29,11 @@ In the presence of unobserved confounders, this paper proposes coupling a genera
 
 ## Background & Motivation
 
-**State of the Field**: Estimating the causal effect of a treatment $X$ on an outcome $Y$ is a central problem across many domains. When unobserved confounders $U$ are present, standard methods (unconfoundedness assumptions, instrumental variables) may be inapplicable. The proxy variable approach uses two sets of observable variables correlated with $U$—treatment proxies $Z$ and outcome proxies $W$—to estimate causal effects via a causal bridge function.
+**Background**: Estimating the causal effect of a treatment $X$ on an outcome $Y$ is a central problem across many domains. When unobserved confounders $U$ are present, standard methods (unconfoundedness assumptions, instrumental variables) may be inapplicable. The proxy variable approach uses two sets of observable variables correlated with $U$—treatment proxies $Z$ and outcome proxies $W$—to estimate causal effects via a causal bridge function.
 
 **Limitations of Prior Work**: (a) The causal bridge function $b(W,x)$ requires solving the Fredholm integral equation $\mathbb{E}(Y|x,z) = \mathbb{E}(b(W,x)|x,z)$, which is difficult in practice; (b) DFPV employs iterative two-stage learning without flexible conditional sampling; (c) CEVAE requires specifying a prior $p(U)$ and suffers from training instability due to the KL term; (d) existing methods do not handle survival outcomes.
 
-**Root Cause**: While the theoretical framework of proxy variable methods (Fredholm equations) is elegant, a systematic mechanism for sharing statistical strength when learning bridge functions from limited data—especially in small-sample regimes—is lacking.
+**Key Challenge**: While the theoretical framework of proxy variable methods (Fredholm equations) is elegant, a systematic mechanism for sharing statistical strength when learning bridge functions from limited data—especially in small-sample regimes—is lacking.
 
 ## Method
 

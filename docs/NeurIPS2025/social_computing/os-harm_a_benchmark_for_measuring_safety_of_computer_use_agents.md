@@ -27,15 +27,15 @@ content_hash: ac567a5a46aa6e05
 This paper presents OS-Harm, the first safety benchmark targeting general-purpose computer use agents (beyond browser-only settings), covering 150 tasks across three risk categories — deliberate user misuse, prompt injection attacks, and model misbehavior. Evaluations reveal that frontier models (o4-mini, Claude 3.7 Sonnet, Gemini 2.5 Pro, etc.) broadly comply with harmful instructions (up to 70% unsafe rate) and exhibit a 20% compliance rate against basic prompt injection attacks.
 
 ## Background & Motivation
-**State of the Field**: LLM-based computer use agents can interact directly with GUIs via screenshots and accessibility trees, performing everyday tasks such as web browsing, email composition, and file editing, and are being rapidly adopted (e.g., Anthropic Computer Use, OpenAI Operator).
+**Background**: LLM-based computer use agents can interact directly with GUIs via screenshots and accessibility trees, performing everyday tasks such as web browsing, email composition, and file editing, and are being rapidly adopted (e.g., Anthropic Computer Use, OpenAI Operator).
 
 **Limitations of Prior Work**: LLM safety research has primarily focused on conversational chatbot scenarios, whereas agents present fundamentally different threats — they execute multi-step plans and automate OS-level harmful actions (identity impersonation, file deletion, privacy data exfiltration) far beyond chatbot capabilities.
 
-**Root Cause**: Existing agent safety benchmarks (AgentHarm, AgentDojo, etc.) are either confined to simulated text-based tool-calling environments or target only browser agents, leaving general-purpose computer use scenarios (email clients, code editors, terminals, image editors, etc.) uncovered.
+**Key Challenge**: Existing agent safety benchmarks (AgentHarm, AgentDojo, etc.) are either confined to simulated text-based tool-calling environments or target only browser agents, leaving general-purpose computer use scenarios (email clients, code editors, terminals, image editors, etc.) uncovered.
 
-**Paper Goals**: (a) Construct a safety benchmark spanning multi-application OS-level interactions; (b) Design an automated LLM judge to replace hand-written scoring functions; (c) Systematically evaluate frontier models under three categories of safety risk.
+**Goal**: (a) Construct a safety benchmark spanning multi-application OS-level interactions; (b) Design an automated LLM judge to replace hand-written scoring functions; (c) Systematically evaluate frontier models under three categories of safety risk.
 
-**Starting Point**: Building on OSWorld, a mature open-source environment, the authors seamlessly integrate safety tasks into an existing agent evaluation framework, ensuring tasks are executed in a real VM rather than simulated calls.
+**Key Insight**: Building on OSWorld, a mature open-source environment, the authors seamlessly integrate safety tasks into an existing agent evaluation framework, ensuring tasks are executed in a real VM rather than simulated calls.
 
 **Core Idea**: Construct a three-dimensional (misuse / injection / misbehavior) safety benchmark within a real operating system environment, employing an LLM judge to automatically assess agent safety and task completion.
 

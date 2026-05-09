@@ -27,15 +27,15 @@ ARECHO frames speech multi-metric evaluation as a chain-based autoregressive tok
 
 ## Background & Motivation
 
-**State of the Field**: Speech evaluation encompasses multiple metrics—PESQ (perceptual quality), STOI (intelligibility), MOS (subjective scores), speaker similarity, emotion recognition, etc. Unified frameworks such as UniVERSA and TorchSquim support multi-metric prediction.
+**Background**: Speech evaluation encompasses multiple metrics—PESQ (perceptual quality), STOI (intelligibility), MOS (subjective scores), speaker similarity, emotion recognition, etc. Unified frameworks such as UniVERSA and TorchSquim support multi-metric prediction.
 
 **Limitations of Prior Work**: (a) **Scale heterogeneity**—MOS ranges from 1 to 5 while SI-SNR ranges over $(-\infty, +\infty)$; a shared L1 loss causes large-range metrics to dominate optimization. (b) **Inter-metric dependencies ignored**—improvements in intelligibility typically co-occur with improvements in naturalness, yet parallel prediction cannot exploit such correlations. (c) **Partial annotation**—PESQ requires a clean reference, WER requires transcripts, so real-world data are often only partially annotated.
 
-**Root Cause**: Parallel prediction is efficient but discards inter-metric dependency information; modeling dependencies, however, introduces the triple challenges of heterogeneous scales, partial annotation, and error propagation.
+**Key Challenge**: Parallel prediction is efficient but discards inter-metric dependency information; modeling dependencies, however, introduces the triple challenges of heterogeneous scales, partial annotation, and error propagation.
 
-**Paper Goals**: Design a dependency-aware multi-metric evaluation framework that simultaneously handles scale heterogeneity and partial annotation.
+**Goal**: Design a dependency-aware multi-metric evaluation framework that simultaneously handles scale heterogeneity and partial annotation.
 
-**Starting Point**: Tokenize all metrics into a unified discrete space—quantizing numerical metrics into bin tokens and mapping categorical metrics directly to tokens—then model conditional inter-metric dependencies via autoregressive classification chains.
+**Key Insight**: Tokenize all metrics into a unified discrete space—quantizing numerical metrics into bin tokens and mapping categorical metrics directly to tokens—then model conditional inter-metric dependencies via autoregressive classification chains.
 
 **Core Idea**: Unified tokenization of 87 heterogeneous metrics → dynamic classification chain autoregressive prediction (conditioning subsequent predictions on previously predicted metrics) → two-step confidence-guided decoding to reduce error propagation = dependency-aware speech multi-metric evaluation.
 

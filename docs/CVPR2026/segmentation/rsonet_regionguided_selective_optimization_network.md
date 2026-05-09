@@ -29,15 +29,15 @@ RSONet is a two-stage RGB-T salient object detection framework that first genera
 
 ## Background & Motivation
 
-**State of the Field**: Salient object detection (SOD) aims to identify the most visually prominent objects in a scene at the pixel level. With the advancement of deep learning, RGB-T SOD leverages thermal infrared images to compensate for the limitations of RGB in challenging scenes, making it an active direction in multimodal salient object detection.
+**Background**: Salient object detection (SOD) aims to identify the most visually prominent objects in a scene at the pixel level. With the advancement of deep learning, RGB-T SOD leverages thermal infrared images to compensate for the limitations of RGB in challenging scenes, making it an active direction in multimodal salient object detection.
 
 **Limitations of Prior Work**: (1) RGB images suffer from detection difficulties under complex backgrounds, low contrast, or low-light conditions; (2) thermal infrared images, while immune to illumination, may fail to distinguish targets from backgrounds due to environmental temperature and material properties; (3) existing RGB-T fusion strategies (addition/multiplication/concatenation/attention) implicitly treat both modalities as equally informative, introducing substantial noise when the quality gap between modalities is large.
 
-**Root Cause**: The distribution of salient regions is inconsistent across modalities—one modality may contain accurate target information while the other is dominated by noise, and equal-weight fusion degrades the quality of both.
+**Key Challenge**: The distribution of salient regions is inconsistent across modalities—one modality may contain accurate target information while the other is dominated by noise, and equal-weight fusion degrades the quality of both.
 
-**Paper Goals**: Adaptively determine which modality is more reliable and allow the reliable modality to dominate the fusion process, thereby avoiding noise interference from the lower-quality modality.
+**Goal**: Adaptively determine which modality is more reliable and allow the reliable modality to dominate the fusion process, thereby avoiding noise interference from the lower-quality modality.
 
-**Starting Point**: A "region guidance stage" independently predicts guidance maps for RGB, Thermal, and RGB+T streams, then compares their similarities to select the dominant modality, which subsequently guides the "saliency generation stage."
+**Key Insight**: A "region guidance stage" independently predicts guidance maps for RGB, Thermal, and RGB+T streams, then compares their similarities to select the dominant modality, which subsequently guides the "saliency generation stage."
 
 **Core Idea**: Assess modality quality prior to fusion, enabling the higher-quality modality to guide the lower-quality one rather than blending them indiscriminately.
 

@@ -29,13 +29,13 @@ This work extends the LeJEPA self-supervised framework to a multi-modal setting 
 
 ## Background & Motivation
 
-**State of the Field**: Autonomous driving perception systems rely on multiple sensors (cameras, LiDAR, etc.), yet dominant multi-modal perception models (BEVFusion, TransFusion, etc.) remain fully supervised and require large quantities of 3D annotations. Self-supervised learning (BYOL, DINO, MAE, I-JEPA, etc.) has achieved strong results in single-modal settings but almost exclusively operates on a single modality.
+**Background**: Autonomous driving perception systems rely on multiple sensors (cameras, LiDAR, etc.), yet dominant multi-modal perception models (BEVFusion, TransFusion, etc.) remain fully supervised and require large quantities of 3D annotations. Self-supervised learning (BYOL, DINO, MAE, I-JEPA, etc.) has achieved strong results in single-modal settings but almost exclusively operates on a single modality.
 
 **Limitations of Prior Work**: (1) Single-modal self-supervised learning discards complementary signals from multiple sensors—RGB captures texture and color while LiDAR provides geometric depth, and learning each independently fails to exploit their synergy. (2) Existing multi-modal self-supervised methods (ImageBind via contrastive learning, MultiMAE via masked reconstruction) do not clearly outperform single-modal baselines under strict from-scratch training. (3) Weak late fusion lacks expressiveness, while full token all-to-all attention incurs quadratic complexity.
 
-**Root Cause**: Multi-modal fusion requires dense cross-modal interaction to capture complementary information, yet full cross-attention between both modalities is computationally prohibitive (doubling the token count raises attention cost by roughly 4×).
+**Key Challenge**: Multi-modal fusion requires dense cross-modal interaction to capture complementary information, yet full cross-attention between both modalities is computationally prohibitive (doubling the token count raises attention cost by roughly 4×).
 
-**Starting Point**: The SIGReg regularization in the JEPA framework provides a modality-agnostic shared objective—pulling embeddings from both modalities toward an isotropic Gaussian $\mathcal{N}(0, \mathbf{I})$—without requiring hard negative mining as in pairwise contrastive learning.
+**Key Insight**: The SIGReg regularization in the JEPA framework provides a modality-agnostic shared objective—pulling embeddings from both modalities toward an isotropic Gaussian $\mathcal{N}(0, \mathbf{I})$—without requiring hard negative mining as in pairwise contrastive learning.
 
 **Core Idea**: Learnable fusion tokens are introduced as a spatial memory buffer. After the first attention layer, modality-specific tokens are pruned. This information bottleneck forces the model to compress cross-modal evidence into the fusion token grid at an early stage, while substantially reducing computation in subsequent layers.
 

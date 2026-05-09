@@ -29,15 +29,15 @@ The paper proposes MONETA, the first multimodal industry classification benchmar
 
 ## Background & Motivation
 
-**State of the Field**: Industry classification schemes (e.g., NACE, ISIC, GICS) are core components of public and enterprise databases. Existing automated classification methods primarily rely on text (company descriptions, financial reports, websites) and typically require model fine-tuning.
+**Background**: Industry classification schemes (e.g., NACE, ISIC, GICS) are core components of public and enterprise databases. Existing automated classification methods primarily rely on text (company descriptions, financial reports, websites) and typically require model fine-tuning.
 
 **Limitations of Prior Work**: (1) Text-only methods are inapplicable for newly established or small enterprises that may lack public text information; (2) Fine-tuned models require extensive data collection and cannot transfer across classification schemes; (3) Geospatial information (e.g., company locations and surroundings) contains strong industry cues but has never been systematically utilized.
 
-**Root Cause**: Business activities are highly correlated with spatial locations (factories in industrial zones, banks on commercial streets), but existing industry classification completely ignores this spatial-economic correlation.
+**Key Challenge**: Business activities are highly correlated with spatial locations (factories in industrial zones, banks on commercial streets), but existing industry classification completely ignores this spatial-economic correlation.
 
-**Paper Goals**: Construct the first multimodal industry classification benchmark and explore whether MLLMs can utilize geospatial information for industry classification.
+**Goal**: Construct the first multimodal industry classification benchmark and explore whether MLLMs can utilize geospatial information for industry classification.
 
-**Starting Point**: Use OpenStreetMap and satellite imagery as complementary information sources alongside text, with a multi-agent architecture where different modality cues are extracted by specialized agents and then synthesized by a decision agent.
+**Key Insight**: Use OpenStreetMap and satellite imagery as complementary information sources alongside text, with a multi-agent architecture where different modality cues are extracted by specialized agents and then synthesized by a decision agent.
 
 **Core Idea**: Multimodal resources + multi-agent + training-free—each resource is processed by a specialized agent extracting economic activity cues, and a decision agent synthesizes all cues for classification, entirely without training.
 

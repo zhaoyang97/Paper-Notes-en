@@ -29,15 +29,15 @@ This paper proposes a vectorized reformulation of the functional map solver achi
 
 ## Background & Motivation
 
-**State of the Field**: Deep functional map methods constitute the foundational paradigm for non-rigid 3D shape matching, combining learned feature extractors with spectral-domain correspondence solvers. However, standard implementations solve $k$ independent linear systems serially, becoming a computational bottleneck at high spectral resolutions.
+**Background**: Deep functional map methods constitute the foundational paradigm for non-rigid 3D shape matching, combining learned feature extractors with spectral-domain correspondence solvers. However, standard implementations solve $k$ independent linear systems serially, becoming a computational bottleneck at high spectral resolutions.
 
 **Limitations of Prior Work**: (1) The serial loop of the functional map solver slows down as $k$ increases; (2) DiffusionNet has two silently divergent implementation variants (parameterizing different families of tangent-plane transformations) that have not been documented in the literature; (3) the IoU metric in partial matching is influenced by the overlap ratio, making cross-instance comparisons difficult.
 
-**Root Cause**: During the integration of multiple deep shape matching methods into a unified framework, three cross-cutting issues spanning efficiency, correctness, and evaluation were identified.
+**Key Challenge**: During the integration of multiple deep shape matching methods into a unified framework, three cross-cutting issues spanning efficiency, correctness, and evaluation were identified.
 
-**Paper Goals**: (1) Accelerate the functional map solver; (2) document the differences between DiffusionNet variants; (3) improve partial matching evaluation; (4) release a unified open-source codebase.
+**Goal**: (1) Accelerate the functional map solver; (2) document the differences between DiffusionNet variants; (3) improve partial matching evaluation; (4) release a unified open-source codebase.
 
-**Starting Point**: Reformulating the mathematical structure to merge $k$ independent linear systems into a single batched tensor solve.
+**Key Insight**: Reformulating the mathematical structure to merge $k$ independent linear systems into a single batched tensor solve.
 
 **Core Idea**: Solve all systems in a single kernel call, achieving a 33× speedup while preserving exact solutions.
 

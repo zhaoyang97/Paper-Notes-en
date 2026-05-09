@@ -28,15 +28,15 @@ This paper proposes RadGPT — an anatomy-aware vision-language AI pipeline that
 
 ## Background & Motivation
 
-**State of the Field**: The United States performs over 85 million CT scans annually, with a 6% annual growth rate far exceeding the 0.7% annual growth rate of radiologists. There is enormous demand for AI-assisted report generation, yet training data remains scarce — no public abdominal CT dataset currently provides both radiology reports and voxel-level annotations simultaneously.
+**Background**: The United States performs over 85 million CT scans annually, with a 6% annual growth rate far exceeding the 0.7% annual growth rate of radiologists. There is enormous demand for AI-assisted report generation, yet training data remains scarce — no public abdominal CT dataset currently provides both radiology reports and voxel-level annotations simultaneously.
 
 **Limitations of Prior Work**: (a) Public CT datasets either provide segmentation masks without reports, or text annotations without voxel-level labels; (b) existing abdominal CT report generation models (M3D, Merlin) are trained on limited data and perform extremely poorly on tumor detection, particularly near-completely missing small tumors ≤2 cm; (c) conventional report generation metrics (BLEU, ROUGE) are easily confounded by writing style differences and fail to measure diagnostic accuracy.
 
-**Root Cause**: Tumors may occupy as little as 0.0001% of the total CT volume, making localization of such minute lesions extremely difficult for purely visual VLMs. Segmentation models excel at voxel-level localization but cannot produce structured text reports.
+**Key Challenge**: Tumors may occupy as little as 0.0001% of the total CT volume, making localization of such minute lesions extremely difficult for purely visual VLMs. Segmentation models excel at voxel-level localization but cannot produce structured text reports.
 
-**Paper Goals**: (a) Construct the first large-scale CT–mask–report triplet dataset; (b) design a deterministic, interpretable pipeline from segmentation to report; (c) demonstrate that segmentation assistance substantially improves tumor detection in generated reports.
+**Goal**: (a) Construct the first large-scale CT–mask–report triplet dataset; (b) design a deterministic, interpretable pipeline from segmentation to report; (c) demonstrate that segmentation assistance substantially improves tumor detection in generated reports.
 
-**Starting Point**: Rather than having a VLM generate reports directly from images (which tends to miss small tumors), the pipeline first localizes tumors with a segmentation model, then applies deterministic rules to extract attributes and populate templates to produce structured reports, and finally uses an LLM to convert them into narrative style. This "segmentation → attribute extraction → template filling → style adaptation" pipeline guarantees full consistency and interpretability between reports and segmentation masks.
+**Key Insight**: Rather than having a VLM generate reports directly from images (which tends to miss small tumors), the pipeline first localizes tumors with a segmentation model, then applies deterministic rules to extract attributes and populate templates to produce structured reports, and finally uses an LLM to convert them into narrative style. This "segmentation → attribute extraction → template filling → style adaptation" pipeline guarantees full consistency and interpretability between reports and segmentation masks.
 
 **Core Idea**: Translating segmentation masks into radiology reports via deterministic algorithms ensures both interpretability and accuracy while overcoming the tendency of VLMs to miss minute tumors.
 

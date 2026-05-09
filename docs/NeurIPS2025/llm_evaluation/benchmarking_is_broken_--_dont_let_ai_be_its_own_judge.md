@@ -28,15 +28,15 @@ This paper systematically critiques the fundamental flaws of current AI benchmar
 
 ## Background & Motivation
 
-**State of the Field**: Static benchmarks such as MMLU and SuperGLUE serve as the primary metrics for measuring AI progress. LLM developers compete on these benchmarks and publish leaderboard results.
+**Background**: Static benchmarks such as MMLU and SuperGLUE serve as the primary metrics for measuring AI progress. LLM developers compete on these benchmarks and publish leaderboard results.
 
 **Limitations of Prior Work**: (a) **Data contamination**—retrieval audits reveal 45%+ overlap between QA benchmarks and training data, and GPT-4 can infer 57% of masked MMLU answers; (b) **Selective reporting**—curators select favorable task subsets while developers cherry-pick favorable benchmarks; (c) **Benchmark saturation**—SuperGLUE was saturated within months, and performance gains reflect memorization rather than capability; (d) **Lack of proctoring**—no identity verification, unlimited submissions, and unaddressed cultural/demographic biases.
 
-**Root Cause**: Benchmarks are intended to objectively measure capability, yet the current system contains too many exploitable loopholes—LLM developers have both the incentive and the ability to optimize for benchmark scores rather than genuine capability.
+**Key Challenge**: Benchmarks are intended to objectively measure capability, yet the current system contains too many exploitable loopholes—LLM developers have both the incentive and the ability to optimize for benchmark scores rather than genuine capability.
 
-**Paper Goals**: To propose an alternative evaluation architecture that equips benchmark assessment with anti-cheating mechanisms and continuous update capabilities, analogous to SAT/GRE.
+**Goal**: To propose an alternative evaluation architecture that equips benchmark assessment with anti-cheating mechanisms and continuous update capabilities, analogous to SAT/GRE.
 
-**Starting Point**: High-stakes human examinations (bar exams, medical licensing) already have mature mechanisms for question confidentiality, proctoring, and reputation management. AI evaluation should draw on these institutional designs.
+**Key Insight**: High-stakes human examinations (bar exams, medical licensing) already have mature mechanisms for question confidentiality, proctoring, and reputation management. AI evaluation should draw on these institutional designs.
 
 **Core Idea**: Replace the current open-benchmark paradigm with an examination-governance paradigm—confidential question bank + peer review + reputation weighting + cryptographic commitments + timed retirement and release.
 

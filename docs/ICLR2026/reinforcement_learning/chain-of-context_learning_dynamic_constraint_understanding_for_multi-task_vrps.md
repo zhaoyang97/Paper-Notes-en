@@ -28,15 +28,15 @@ This paper proposes Chain-of-Context Learning (CCL), which achieves stepwise dyn
 
 ## Background & Motivation
 
-**State of the Field**: The Vehicle Routing Problem (VRP) is a core task in logistics optimization. Neural solvers employ RL with an encoder-decoder architecture to autoregressively generate routes, achieving high efficiency but typically training on a single VRP variant. Multi-task VRP requires a unified framework to handle diverse constraint combinations (capacity, backhaul, open routes, time windows, multi-depot, etc.).
+**Background**: The Vehicle Routing Problem (VRP) is a core task in logistics optimization. Neural solvers employ RL with an encoder-decoder architecture to autoregressively generate routes, achieving high efficiency but typically training on a single VRP variant. Multi-task VRP requires a unified framework to handle diverse constraint combinations (capacity, backhaul, open routes, time windows, multi-depot, etc.).
 
 **Limitations of Prior Work**: Existing multi-task VRP solvers (MTPOMO, MVMoE, CaDA, etc.) encode constraint and node information as **static embeddings**—node representations are not updated throughout decoding once encoding is complete. However, decoding is sequential: as routes progress, the relative importance of different constraints shifts (e.g., distance limits become more critical when the vehicle is nearly full), and static embeddings cannot capture this dynamic.
 
-**Root Cause**: Although the context (e.g., current time, remaining capacity) is updated at each step, node embeddings are not—resulting in a **context-node misalignment** that leads to inaccurate state estimation and degraded decision quality. This violates the Markov property in MDPs, which requires that the state contain sufficient information for optimal decision-making.
+**Key Challenge**: Although the context (e.g., current time, remaining capacity) is updated at each step, node embeddings are not—resulting in a **context-node misalignment** that leads to inaccurate state estimation and degraded decision quality. This violates the Markov property in MDPs, which requires that the state contain sufficient information for optimal decision-making.
 
-**Paper Goals**: To enable both constraint information and node representations to be progressively and dynamically updated during multi-task VRP decoding, achieving accurate state representation at every step.
+**Goal**: To enable both constraint information and node representations to be progressively and dynamically updated during multi-task VRP decoding, achieving accurate state representation at every step.
 
-**Starting Point**: Constraint information is explicitly incorporated into context construction at each step (RGCR), and the updated context is in turn used to refresh node embeddings (TSNR), forming a "context chain" in which node embeddings at each step carry historical information.
+**Key Insight**: Constraint information is explicitly incorporated into context construction at each step (RGCR), and the updated context is in turn used to refresh node embeddings (TSNR), forming a "context chain" in which node embeddings at each step carry historical information.
 
 **Core Idea**: Synchronously update both context and node embeddings during RL-based VRP decoding, so that each decision is grounded in the most accurate current state rather than outdated static embeddings.
 

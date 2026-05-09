@@ -29,10 +29,10 @@ This paper proposes the SCORE framework, which leverages multi-granularity scene
 
 ## Background & Motivation
 
-- **State of the Field**: Existing remote sensing instance segmentation methods are predominantly closed-set, lacking the ability to recognize novel categories or generalize across datasets.
+- **Background**: Existing remote sensing instance segmentation methods are predominantly closed-set, lacking the ability to recognize novel categories or generalize across datasets.
 - **Limitations of Prior Work**: Open-vocabulary (OV) segmentation models developed for natural images face unique challenges when applied to remote sensing: diverse terrain, seasonal variation, and an abundance of small or ambiguous objects. Furthermore, frozen text embeddings from generic CLIP lack domain adaptation for remote sensing, making it difficult to capture high intra-class variation and resolution differences.
-- **Root Cause**: A key observation in remote sensing is that **objects are strongly correlated with their surrounding environment** — ships appear near water, vehicles near parking lots, and aircraft near airports. Generic models fail to exploit this contextual prior.
-- **Paper Goals**: OV instance segmentation in remote sensing remains unexplored (prior work is limited to semantic segmentation). This paper establishes the task, benchmark, and a strong baseline.
+- **Key Challenge**: A key observation in remote sensing is that **objects are strongly correlated with their surrounding environment** — ships appear near water, vehicles near parking lots, and aircraft near airports. Generic models fail to exploit this contextual prior.
+- **Goal**: OV instance segmentation in remote sensing remains unexplored (prior work is limited to semantic segmentation). This paper establishes the task, benchmark, and a strong baseline.
 
 ## Method
 

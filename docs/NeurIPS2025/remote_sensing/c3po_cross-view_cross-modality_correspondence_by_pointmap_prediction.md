@@ -29,15 +29,15 @@ This paper introduces the C3 dataset comprising 90K ground photo–floor plan pa
 
 ## Background & Motivation
 
-**State of the Field**: Geometric models such as DUSt3R have achieved significant progress in estimating 3D geometry from image pairs via dense per-pixel pointmap prediction. However, these models are inherently dependent on the viewpoint and modality distributions present in their training data.
+**Background**: Geometric models such as DUSt3R have achieved significant progress in estimating 3D geometry from image pairs via dense per-pixel pointmap prediction. However, these models are inherently dependent on the viewpoint and modality distributions present in their training data.
 
 **Limitations of Prior Work**: When input image pairs span drastically different viewpoints (e.g., aerial vs. ground-level) or distinct modalities (e.g., real photographs vs. abstract floor plans), existing geometric models degrade severely. Such cross-view cross-modality correspondence is nonetheless critical for applications including architectural navigation, indoor localization, and augmented reality.
 
-**Root Cause**: Existing cross-view datasets are insufficient—VIGOR lacks modality diversity (all real images), while WAFFLE lacks pixel-level correspondence annotations. No large-scale, high-quality dataset exists for training and evaluating models on ground photo–floor plan correspondence.
+**Key Challenge**: Existing cross-view datasets are insufficient—VIGOR lacks modality diversity (all real images), while WAFFLE lacks pixel-level correspondence annotations. No large-scale, high-quality dataset exists for training and evaluating models on ground photo–floor plan correspondence.
 
-**Paper Goals**: (1) Construct a large-scale, high-quality cross-view cross-modality correspondence dataset; (2) benchmark existing methods on this task; (3) demonstrate that training on the proposed data yields substantial performance gains.
+**Goal**: (1) Construct a large-scale, high-quality cross-view cross-modality correspondence dataset; (2) benchmark existing methods on this task; (3) demonstrate that training on the proposed data yields substantial performance gains.
 
-**Starting Point**: SfM (Structure-from-Motion) is applied to internet photo collections to reconstruct 3D scenes, which are then manually registered to internet-sourced floor plans, enabling automatic derivation of pixel-level correspondences between photographs and floor plans.
+**Key Insight**: SfM (Structure-from-Motion) is applied to internet photo collections to reconstruct 3D scenes, which are then manually registered to internet-sourced floor plans, enabling automatic derivation of pixel-level correspondences between photographs and floor plans.
 
 **Core Idea**: A pipeline of SfM reconstruction → manual registration → automatic correspondence derivation is employed to construct C3, the first large-scale dataset providing pixel-level photo–floor plan correspondences.
 

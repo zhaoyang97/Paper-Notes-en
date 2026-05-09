@@ -29,15 +29,15 @@ This paper proposes the World Scene Graph Generation (WSGG) task, extending conv
 
 ## Background & Motivation
 
-**State of the Field**: Video Scene Graph Generation (VidSGG) represents objects as nodes and relations as edges, with various Transformer-based methods such as STTran. However, all existing approaches are fundamentally frame-level—objects that leave the field of view or become occluded simply disappear from the graph.
+**Background**: Video Scene Graph Generation (VidSGG) represents objects as nodes and relations as edges, with various Transformer-based methods such as STTran. However, all existing approaches are fundamentally frame-level—objects that leave the field of view or become occluded simply disappear from the graph.
 
 **Limitations of Prior Work**: This frame-level representation is fundamentally misaligned with the requirements of embodied agents. Robots need persistent memory of the entire environment, including the locations of and relations involving objects that are temporarily invisible. Existing datasets lack both 3D spatial annotations and relational annotations for occluded objects.
 
-**Root Cause**: Object permanence—the understanding that objects continue to exist even when not visible—is a foundational capacity for physical reasoning in developmental psychology, yet current scene graph methods entirely lack this capability.
+**Key Challenge**: Object permanence—the understanding that objects continue to exist even when not visible—is a foundational capacity for physical reasoning in developmental psychology, yet current scene graph methods entirely lack this capability.
 
-**Paper Goals**: (1) Construct the 4D annotated dataset ActionGenome4D; (2) formally define the WSGG task; (3) explore three methods with distinct inductive biases for handling invisible objects.
+**Goal**: (1) Construct the 4D annotated dataset ActionGenome4D; (2) formally define the WSGG task; (3) explore three methods with distinct inductive biases for handling invisible objects.
 
-**Starting Point**: The π³ model is employed for monocular 3D reconstruction to obtain a world coordinate system; VLMs generate pseudo-annotations for occluded object relations, which are subsequently corrected by human annotators.
+**Key Insight**: The π³ model is employed for monocular 3D reconstruction to obtain a world coordinate system; VLMs generate pseudo-annotations for occluded object relations, which are subsequently corrected by human annotators.
 
 **Core Idea**: Extend video scene graphs from "visible objects within a frame" to "all objects in a world coordinate system," realized through three pathways: feature persistence, masked completion, and temporal attention.
 

@@ -29,15 +29,15 @@ GeCo-SRT proposes the first continual cross-task Sim-to-Real transfer paradigm, 
 
 ## Background & Motivation
 
-**State of the Field**: Sim-to-Real transfer is a core challenge in robot learning—training policies on low-cost simulation data and deploying them in real environments. Existing approaches include System Identification (modeling real physical parameters, which is labor-intensive and difficult to apply to complex dynamics), Domain Randomization (training across varied simulation conditions, requiring manual tuning with limited coverage), and data-driven methods such as Transic (residual behavior cloning from human correction trajectories).
+**Background**: Sim-to-Real transfer is a core challenge in robot learning—training policies on low-cost simulation data and deploying them in real environments. Existing approaches include System Identification (modeling real physical parameters, which is labor-intensive and difficult to apply to complex dynamics), Domain Randomization (training across varied simulation conditions, requiring manual tuning with limited coverage), and data-driven methods such as Transic (residual behavior cloning from human correction trajectories).
 
 **Limitations of Prior Work**: All existing methods treat each Sim-to-Real transfer as an isolated process—every new task requires collecting data and re-tuning from scratch, incurring high costs and completely discarding prior transfer experience. For instance, after completing the "pick cube" transfer, the "stack cube" transfer must start anew.
 
-**Root Cause**: The Sim-to-Real gap across different robotic manipulation tasks actually shares substantial structured knowledge (e.g., object geometry is highly consistent between simulation and reality), yet existing methods cannot accumulate and reuse this knowledge across tasks.
+**Key Challenge**: The Sim-to-Real gap across different robotic manipulation tasks actually shares substantial structured knowledge (e.g., object geometry is highly consistent between simulation and reality), yet existing methods cannot accumulate and reuse this knowledge across tasks.
 
-**Paper Goals**: How can transferable knowledge be continually accumulated across multiple Sim-to-Real tasks, making each new task's transfer faster and better rather than starting from zero?
+**Goal**: How can transferable knowledge be continually accumulated across multiple Sim-to-Real tasks, making each new task's transfer faster and better rather than starting from zero?
 
-**Starting Point**: Local geometric features (e.g., surface normals, planarity, linearity) possess a critical dual invariance—domain-invariant (geometric structures are consistent between simulation and reality, unlike texture/material which differ greatly) and task-invariant (different manipulation tasks share basic geometric primitives such as planes, edges, and corners). This makes local geometric features ideal carriers for cross-domain, cross-task knowledge.
+**Key Insight**: Local geometric features (e.g., surface normals, planarity, linearity) possess a critical dual invariance—domain-invariant (geometric structures are consistent between simulation and reality, unlike texture/material which differ greatly) and task-invariant (different manipulation tasks share basic geometric primitives such as planes, edges, and corners). This makes local geometric features ideal carriers for cross-domain, cross-task knowledge.
 
 **Core Idea**: A geometry-aware MoE module routes local geometric knowledge to different experts for specialized learning, while an expert-utilization-driven prioritized experience replay protects each expert's specialized knowledge from being forgotten.
 

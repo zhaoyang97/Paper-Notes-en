@@ -29,7 +29,7 @@ This paper introduces OpenVision — a fully open-source (data, training code, a
 
 ## Background & Motivation
 
-**State of the Field**: Nearly all multimodal foundation models (LLaVA, Mini-GPT-4, Falcon2 VLM, Eagle, etc.) rely on OpenAI's CLIP-L/336 as the vision encoder — a de facto standard that has dominated the multimodal landscape.
+**Background**: Nearly all multimodal foundation models (LLaVA, Mini-GPT-4, Falcon2 VLM, Eagle, etc.) rely on OpenAI's CLIP-L/336 as the vision encoder — a de facto standard that has dominated the multimodal landscape.
 
 **Limitations of Prior Work**:
    - **Opacity**: OpenAI CLIP's training data and full training recipe are not publicly available, limiting reproducibility and transparency.
@@ -37,11 +37,11 @@ This paper introduces OpenVision — a fully open-source (data, training code, a
    - **Known Deficiencies**: CLIP exhibits well-documented hallucination problems in spatial relation understanding and object counting.
    - **Insufficient Open-Source Alternatives**: Existing open-source CLIP models (OpenCLIP, DataComp, DFN, etc.) achieve strong zero-shot performance but fall noticeably short on multimodal downstream tasks (MME, ChartQA, TextVQA).
 
-**Root Cause**: The community requires a fully open visual backbone to advance multimodal research, yet no from-scratch open-source encoder has consistently matched or exceeded OpenAI CLIP on multimodal benchmarks.
+**Key Challenge**: The community requires a fully open visual backbone to advance multimodal research, yet no from-scratch open-source encoder has consistently matched or exceeded OpenAI CLIP on multimodal benchmarks.
 
-**Paper Goals**: To provide a fully open (data + code + weights), cost-effective, and multi-scale family of vision encoders that reaches or exceeds closed-source performance in multimodal learning scenarios.
+**Goal**: To provide a fully open (data + code + weights), cost-effective, and multi-scale family of vision encoders that reaches or exceeds closed-source performance in multimodal learning scenarios.
 
-**Starting Point**: Building on recent open-source advances — the CLIPS training framework (multi-positive contrastive learning with a text generator) and Recap-DataComp-1B (a recaptioned billion-scale dataset) — the paper systematically analyzes critical design choices.
+**Key Insight**: Building on recent open-source advances — the CLIPS training framework (multi-positive contrastive learning with a text generator) and Recap-DataComp-1B (a recaptioned billion-scale dataset) — the paper systematically analyzes critical design choices.
 
 **Core Idea**: Standing on the shoulders of CLIPS and Recap-DataComp-1B, the paper systematically tunes training strategies and releases 25+ fully open-source vision encoder checkpoints that comprehensively match or surpass OpenAI CLIP.
 

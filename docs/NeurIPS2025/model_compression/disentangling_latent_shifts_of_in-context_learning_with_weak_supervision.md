@@ -28,15 +28,15 @@ WILDA treats ICL as a weak supervision signal and encodes demonstration-induced 
 
 ## Background & Motivation
 
-**State of the Field**: In-Context Learning (ICL) enables LLMs to perform few-shot learning from a small number of labeled demonstrations in the prompt without any parameter updates, making it a core adaptation mechanism in low-resource settings.
+**Background**: In-Context Learning (ICL) enables LLMs to perform few-shot learning from a small number of labeled demonstrations in the prompt without any parameter updates, making it a core adaptation mechanism in low-resource settings.
 
 **Limitations of Prior Work**: (a) ICL is highly sensitive to the selection and ordering of demonstrations, leading to unstable predictions; (b) multi-shot demonstrations require long contexts, imposing inference inefficiency and context window constraints; (c) performance degrades when the number of demonstrations exceeds a threshold — ICL scales poorly.
 
-**Root Cause**: Existing disentanglement methods (ICV, Batch-ICL) directly manipulate attention heads or hidden states to isolate demonstration effects, but rely on linear attention approximations and neglect critical architectural components such as FFN layers, activation functions, and residual connections.
+**Key Challenge**: Existing disentanglement methods (ICV, Batch-ICL) directly manipulate attention heads or hidden states to isolate demonstration effects, but rely on linear attention approximations and neglect critical architectural components such as FFN layers, activation functions, and residual connections.
 
-**Paper Goals**: How can the effect of ICL demonstrations be "parameterized" into a reusable compact representation without modifying the model's internal states?
+**Goal**: How can the effect of ICL demonstrations be "parameterized" into a reusable compact representation without modifying the model's internal states?
 
-**Starting Point**: A functional perspective on ICL — focusing on final model outputs rather than intermediate states. ICL outputs themselves fully embody the effect of demonstrations and can serve as weak supervision signals.
+**Key Insight**: A functional perspective on ICL — focusing on final model outputs rather than intermediate states. ICL outputs themselves fully embody the effect of demonstrations and can serve as weak supervision signals.
 
 **Core Idea**: Train lightweight adapters using ICL predictions as pseudo-labels, encoding demonstration-induced latent shifts as reusable parameters.
 

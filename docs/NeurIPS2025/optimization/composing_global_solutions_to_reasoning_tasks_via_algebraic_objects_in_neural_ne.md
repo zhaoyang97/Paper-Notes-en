@@ -30,10 +30,10 @@ This paper proposes the CoGS framework, demonstrating that the weight space of t
 
 ## Background & Motivation
 
-- **State of the Field**: Large language models excel at complex reasoning yet still make surprisingly basic arithmetic errors; understanding how models execute reasoning is a central open problem.
+- **Background**: Large language models excel at complex reasoning yet still make surprisingly basic arithmetic errors; understanding how models execute reasoning is a central open problem.
 - **Limitations of Prior Work**: Modular addition (predicting $a+b \bmod d$) is a widely adopted benchmark due to its structural simplicity and rich training dynamics (e.g., grokking, Fourier basis representations). Prior work can construct or reverse-engineer Fourier solutions (Gromov 2023, Nanda 2023) but relies on infinite-width approximations and lacks a systematic algebraic construction methodology.
-- **Root Cause**: The algebraic structure of the weight space itself during training has not been explored; geometric deep learning exploits symmetries in data but does not open the black box to study the weight space. Directly solving global optimality conditions is intractable due to high nonlinearity.
-- **Paper Goals**: Develop a systematic algebraic framework that (1) characterizes the semiring structure of the weight space, (2) identifies loss components as ring homomorphisms, and (3) composes global solutions from local partial solutions algebraically. Additionally, provide rigorous theoretical explanations for the benefits of overparameterization and the role of weight decay.
+- **Key Challenge**: The algebraic structure of the weight space itself during training has not been explored; geometric deep learning exploits symmetries in data but does not open the black box to study the weight space. Directly solving global optimality conditions is intractable due to high nonlinearity.
+- **Goal**: Develop a systematic algebraic framework that (1) characterizes the semiring structure of the weight space, (2) identifies loss components as ring homomorphisms, and (3) composes global solutions from local partial solutions algebraically. Additionally, provide rigorous theoretical explanations for the benefits of overparameterization and the role of weight decay.
 
 ## Method
 

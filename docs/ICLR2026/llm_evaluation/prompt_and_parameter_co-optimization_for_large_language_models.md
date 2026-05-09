@@ -28,15 +28,15 @@ This paper proposes MetaTuner, a framework that simultaneously generates prompts
 
 ## Background & Motivation
 
-**State of the Field**: Post-training of LLMs has primarily followed two paradigms — prompt optimization (e.g., OPRO, RLPrompt, BPO), which activates the model's existing capabilities by finding appropriate input contexts, and fine-tuning (e.g., SFT, RLHF, DPO), which adapts model parameters to target data distributions. These two approaches are typically studied and applied independently.
+**Background**: Post-training of LLMs has primarily followed two paradigms — prompt optimization (e.g., OPRO, RLPrompt, BPO), which activates the model's existing capabilities by finding appropriate input contexts, and fine-tuning (e.g., SFT, RLHF, DPO), which adapts model parameters to target data distributions. These two approaches are typically studied and applied independently.
 
 **Limitations of Prior Work**: Prompt optimization can guide model behavior but fails to accommodate complex patterns in large-scale task data, particularly when prompt information conflicts with knowledge encoded in model parameters. Fine-tuning can adapt to data distributions but typically relies on manually designed prompts as input, and the choice of prompt critically affects fine-tuning performance — using a suboptimal prompt can even underperform pure prompt optimization.
 
-**Root Cause**: Prompts reside in a discrete optimization space (text tokens), while parameters reside in a continuous optimization space (floating-point weights). Their optimization objectives and execution pipelines are fundamentally different. The key challenge is how to simultaneously optimize these two complementary dimensions within a unified framework while resolving the non-differentiability inherent in mixed discrete-continuous optimization.
+**Key Challenge**: Prompts reside in a discrete optimization space (text tokens), while parameters reside in a continuous optimization space (floating-point weights). Their optimization objectives and execution pipelines are fundamentally different. The key challenge is how to simultaneously optimize these two complementary dimensions within a unified framework while resolving the non-differentiability inherent in mixed discrete-continuous optimization.
 
-**Paper Goals**: (a) How to design a framework enabling mutual reinforcement between prompts and parameters? (b) How to perform effective gradient-based optimization in a mixed discrete-continuous space? (c) Can the optimal prompt-parameter combination surpass the upper bound of independently optimized approaches?
+**Goal**: (a) How to design a framework enabling mutual reinforcement between prompts and parameters? (b) How to perform effective gradient-based optimization in a mixed discrete-continuous space? (c) Can the optimal prompt-parameter combination surpass the upper bound of independently optimized approaches?
 
-**Starting Point**: Preliminary experiments reveal that fine-tuning methods are highly sensitive to prompt selection — SFT performance varies dramatically across different prompts and can fall below prompt optimization methods. This confirms the necessity of joint optimization.
+**Key Insight**: Preliminary experiments reveal that fine-tuning methods are highly sensitive to prompt selection — SFT performance varies dramatically across different prompts and can fall below prompt optimization methods. This confirms the necessity of joint optimization.
 
 **Core Idea**: Treat prompts as "special parameters" and generate both prompts and model parameters simultaneously through a shared encoder, achieving complementary mutual enhancement.
 

@@ -29,15 +29,15 @@ RewardFlow proposes an inversion-free inference-time framework that fuses multip
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models and flow-matching models have achieved remarkable success in image generation, yet controllable editing and compositional generation remain challenging. Existing approaches typically rely on text guidance or model fine-tuning to realize specific editing effects.
+**Background**: Diffusion models and flow-matching models have achieved remarkable success in image generation, yet controllable editing and compositional generation remain challenging. Existing approaches typically rely on text guidance or model fine-tuning to realize specific editing effects.
 
 **Limitations of Prior Work**: Current image editing methods suffer from three main issues: (1) inversion-based methods incur high computational overhead and are prone to error accumulation; (2) a single reward signal cannot simultaneously account for semantic correctness, visual fidelity, and local precision; (3) semantic leakage—where editing effects inadvertently propagate beyond the target region—remains a persistent problem.
 
-**Root Cause**: The core tension lies in coordinating multiple heterogeneous reward objectives (semantic alignment, perceptual quality, regional precision, human preference, etc.). Naïve weighted summation tends to suppress certain objectives, and different editing intents require different reward weight configurations.
+**Key Challenge**: The core tension lies in coordinating multiple heterogeneous reward objectives (semantic alignment, perceptual quality, regional precision, human preference, etc.). Naïve weighted summation tends to suppress certain objectives, and different editing intents require different reward weight configurations.
 
-**Paper Goals**: To design a unified inference-time framework that integrates multiple complementary differentiable reward signals into the sampling process of diffusion/flow-matching models without any fine-tuning or inversion.
+**Goal**: To design a unified inference-time framework that integrates multiple complementary differentiable reward signals into the sampling process of diffusion/flow-matching models without any fine-tuning or inversion.
 
-**Starting Point**: The authors ground the framework in Langevin dynamics, theorizing the reward-guided sampling process as an effective discretization of a Langevin SDE targeting a prompt-tilted density, thereby providing theoretical guarantees for stable convergence.
+**Key Insight**: The authors ground the framework in Langevin dynamics, theorizing the reward-guided sampling process as an effective discretization of a Langevin SDE targeting a prompt-tilted density, thereby providing theoretical guarantees for stable convergence.
 
 **Core Idea**: Unify multiple complementary differentiable rewards (CLIP semantics, LPIPS perception, SAM2 localization, VQA attribute-level signals, and human preference) through Langevin dynamics, and design a prompt-aware adaptive policy to dynamically modulate the weight of each reward.
 

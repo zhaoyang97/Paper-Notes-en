@@ -29,15 +29,15 @@ The first method to simultaneously generate RGB + depth + semantic tri-modal mul
 
 ## Background & Motivation
 
-**State of the Field**: Autonomous driving scene video generation has advanced rapidly. Methods such as MagicDrive, DriveDreamer, and MaskGWM leverage diffusion models to achieve promising multi-view RGB video generation. However, these methods focus exclusively on the RGB modality.
+**Background**: Autonomous driving scene video generation has advanced rapidly. Methods such as MagicDrive, DriveDreamer, and MaskGWM leverage diffusion models to achieve promising multi-view RGB video generation. However, these methods focus exclusively on the RGB modality.
 
 **Limitations of Prior Work**: Autonomous driving requires multi-modal data (RGB + depth + semantics) for comprehensive scene understanding. Although multiple independent models can generate different modalities separately (e.g., generating RGB first and then estimating depth with Depth-Anything-V2), this increases deployment complexity, fails to exploit complementary inter-modal information, and results in poor cross-modal consistency.
 
-**Root Cause**: How can multi-modal multi-view driving videos be generated simultaneously within a unified framework? The key challenges are: (1) different modalities exhibit large content variation yet share underlying scene structure, requiring a distinction between shared and modality-specific knowledge; (2) both multi-view spatiotemporal consistency and cross-modal consistency must be ensured simultaneously; (3) complex driving scenes require fine-grained conditional control.
+**Key Challenge**: How can multi-modal multi-view driving videos be generated simultaneously within a unified framework? The key challenges are: (1) different modalities exhibit large content variation yet share underlying scene structure, requiring a distinction between shared and modality-specific knowledge; (2) both multi-view spatiotemporal consistency and cross-modal consistency must be ensured simultaneously; (3) complex driving scenes require fine-grained conditional control.
 
-**Paper Goals**: To build a unified multi-modal multi-view video DiT model that simultaneously generates 6-view, 49-frame videos across three modalities while guaranteeing spatiotemporal and cross-modal consistency.
+**Goal**: To build a unified multi-modal multi-view video DiT model that simultaneously generates 6-view, 49-frame videos across three modalities while guaranteeing spatiotemporal and cross-modal consistency.
 
-**Starting Point**: Based on the observation that CogVideoX's shared 3D VAE can process videos of different modalities, the authors hypothesize that different modalities share a common latent space and require only a small number of modality-specific parameters to differentiate them. This motivates the modal-shared + modal-specific decomposition design.
+**Key Insight**: Based on the observation that CogVideoX's shared 3D VAE can process videos of different modalities, the authors hypothesize that different modalities share a common latent space and require only a small number of modality-specific parameters to differentiate them. This motivates the modal-shared + modal-specific decomposition design.
 
 **Core Idea**: Modal-shared layers in the unified DiT learn common spatiotemporal structure; modal-specific layers capture modality differences; diverse condition encodings control scene generation.
 

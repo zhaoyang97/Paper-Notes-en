@@ -27,15 +27,15 @@ content_hash: b73ca13d5d252e0f
 This paper reformulates MBTI personality detection from four independent binary classifications into a listwise ranking task over all 16 personality types, training a 7B model via SFT cold-start followed by GRPO reinforcement learning with a dual reward (NDCG + dimension similarity), achieving state-of-the-art results on the Kaggle and PANDORA datasets.
 
 ## Background & Motivation
-**State of the Field**: The dominant approach to MBTI personality detection decomposes the 16-type taxonomy into four independent binary classifications (E/I, S/N, T/F, J/P), encoding user posts with pretrained models such as BERT/RoBERTa. More recently, methods such as PsyCoT have explored chain-of-thought reasoning with LLMs for personality analysis.
+**Background**: The dominant approach to MBTI personality detection decomposes the 16-type taxonomy into four independent binary classifications (E/I, S/N, T/F, J/P), encoding user posts with pretrained models such as BERT/RoBERTa. More recently, methods such as PsyCoT have explored chain-of-thought reasoning with LLMs for personality analysis.
 
 **Limitations of Prior Work**: (a) Treating the four dimensions as independent classifiers ignores psychologically meaningful interactions among dimensions — INTJ and ENTJ differ by only one letter yet have fundamentally different dominant cognitive functions (Ni vs. Te); (b) prompt-based methods rely heavily on expert-designed prompts, while large-model inference incurs high latency and cost, rendering them unsuitable for real-time deployment.
 
-**Root Cause**: Personality traits are inherently relative preferences on a continuous spectrum rather than discrete categories. The classification paradigm cannot capture fine-grained affinity differences among personality types.
+**Key Challenge**: Personality traits are inherently relative preferences on a continuous spectrum rather than discrete categories. The classification paradigm cannot capture fine-grained affinity differences among personality types.
 
-**Paper Goals**: Enable LLMs to understand the relative affinity relationships among all 16 MBTI types, rather than simply assigning a post to one category.
+**Goal**: Enable LLMs to understand the relative affinity relationships among all 16 MBTI types, rather than simply assigning a post to one category.
 
-**Starting Point**: Psychometrics characterizes personality through relative trait preferences rather than absolute categories, making ranking a more natural modeling choice than classification.
+**Key Insight**: Psychometrics characterizes personality through relative trait preferences rather than absolute categories, making ranking a more natural modeling choice than classification.
 
 **Core Idea**: Redefine personality detection as a listwise ranking task over 16 MBTI types, and train the LLM via GRPO with an NDCG-based reward to learn optimal rankings.
 

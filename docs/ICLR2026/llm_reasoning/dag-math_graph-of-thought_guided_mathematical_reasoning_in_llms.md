@@ -27,15 +27,15 @@ content_hash: 836b60ca0360139d
 This work formalizes LLM chain-of-thought reasoning as a rule-based stochastic process over DAGs, proposes *logical closeness* as a metric to assess whether a model arrives at an answer through search or rigorous logical deduction, constructs a gold-standard DAG-MATH benchmark of 2,894 instances, and demonstrates that models with similar PASS@k scores can differ substantially in reasoning faithfulness.
 
 ## Background & Motivation
-**State of the Field**: LLMs exhibit strong mathematical reasoning performance (o1, R1, Gemini-2.5), with chain-of-thought (CoT) serving as the core strategy. However, the black-box nature of CoT makes it difficult to determine whether a model reaches a correct answer via logical reasoning or via search/heuristics.
+**Background**: LLMs exhibit strong mathematical reasoning performance (o1, R1, Gemini-2.5), with chain-of-thought (CoT) serving as the core strategy. However, the black-box nature of CoT makes it difficult to determine whether a model reaches a correct answer via logical reasoning or via search/heuristics.
 
 **Limitations of Prior Work**: (1) PASS@k only evaluates final answers and ignores the logical consistency of the reasoning process—exploratory search can also yield correct answers. (2) LEAN-based formal verification is rigorous but requires substantial expert effort to formalize problems in advance. (3) Existing graph models (Dziri 2023) rely on deterministic subgraph matching, neglecting diverse sampling and long-range dependencies.
 
-**Root Cause**: PASS@k may overestimate reasoning ability—models may stumble upon correct answers through exploratory branching rather than strict logical derivation. An evaluation framework situated between free-form CoT and formal proof is needed.
+**Key Challenge**: PASS@k may overestimate reasoning ability—models may stumble upon correct answers through exploratory branching rather than strict logical derivation. An evaluation framework situated between free-form CoT and formal proof is needed.
 
-**Paper Goals**: How can the mathematical reasoning capability of LLMs be rigorously defined and evaluated—distinguishing answers obtained via search from those obtained via logical reasoning?
+**Goal**: How can the mathematical reasoning capability of LLMs be rigorously defined and evaluated—distinguishing answers obtained via search from those obtained via logical reasoning?
 
-**Starting Point**: CoT is modeled as a stochastic process over a DAG, where nodes represent conclusions of derivation steps and edges represent applications of inference rules. *Logical closure* requires that every intermediate node be consumed by at least one subsequent node, with no idle exploratory branches.
+**Key Insight**: CoT is modeled as a stochastic process over a DAG, where nodes represent conclusions of derivation steps and edges represent applications of inference rules. *Logical closure* requires that every intermediate node be consumed by at least one subsequent node, with no idle exploratory branches.
 
 **Core Idea**: Logical closeness over DAGs serves as a measure of whether an LLM is performing genuine logical reasoning rather than mere search.
 

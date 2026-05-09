@@ -30,15 +30,15 @@ CMHANet proposes a three-stage hybrid attention mechanism (geometric self-attent
 
 ## Background & Motivation
 
-**State of the Field**: Point cloud registration is a fundamental task in 3D vision, serving as a prerequisite for 3D reconstruction, AR, and scene understanding. Deep learning-based methods have become mainstream, and Transformer architectures (e.g., GeoTransformer) have demonstrated strong performance in capturing global context.
+**Background**: Point cloud registration is a fundamental task in 3D vision, serving as a prerequisite for 3D reconstruction, AR, and scene understanding. Deep learning-based methods have become mainstream, and Transformer architectures (e.g., GeoTransformer) have demonstrated strong performance in capturing global context.
 
 **Limitations of Prior Work**: (1) The majority of existing methods rely solely on 3D geometric information, overlooking the paired 2D images already provided by ubiquitous RGB-D sensors—point clouds lack texture while images lack 3D information, making them naturally complementary. (2) Existing multimodal methods (IMFNet/CMIGNet/PCR-CG) employ generic fusion mechanisms without fine-grained modeling of geometric–visual feature interactions. (3) Noise, sparsity, and low overlap in real-world scenes degrade feature quality.
 
-**Root Cause**: 3D point clouds offer precise geometry but lack descriptive texture, while images provide dense semantics but no 3D structure. The core challenge lies in designing a fine-grained cross-modal attention mechanism that enables deep complementarity between the two modalities.
+**Key Challenge**: 3D point clouds offer precise geometry but lack descriptive texture, while images provide dense semantics but no 3D structure. The core challenge lies in designing a fine-grained cross-modal attention mechanism that enables deep complementarity between the two modalities.
 
-**Paper Goals**: Design an intelligent cross-modal attention mechanism that accurately injects 2D visual semantics into 3D geometric features, improving registration accuracy and robustness in challenging scenarios (low overlap, noise).
+**Goal**: Design an intelligent cross-modal attention mechanism that accurately injects 2D visual semantics into 3D geometric features, improving registration accuracy and robustness in challenging scenarios (low overlap, noise).
 
-**Starting Point**: Three attention types are functionally decoupled—self-attention captures global structure, aggregation attention fuses cross-modal information, and cross-attention establishes correspondences—applied in alternating iterations $N$ times for progressive feature enhancement.
+**Key Insight**: Three attention types are functionally decoupled—self-attention captures global structure, aggregation attention fuses cross-modal information, and cross-attention establishes correspondences—applied in alternating iterations $N$ times for progressive feature enhancement.
 
 **Core Idea**: The three-stage hybrid attention allows each 3D superpoint to simultaneously absorb structural context from its own point cloud, 2D image semantics, and correspondence information from the target cloud.
 

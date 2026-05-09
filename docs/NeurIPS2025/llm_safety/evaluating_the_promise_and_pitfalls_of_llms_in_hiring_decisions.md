@@ -28,15 +28,15 @@ This paper systematically evaluates the hiring-match performance of mainstream L
 
 ## Background & Motivation
 
-**State of the Field**: Over 98% of Fortune 500 companies employ some form of automated tool in their hiring processes. LLMs, owing to their broad language understanding capabilities, are increasingly considered for résumé screening and candidate matching.
+**Background**: Over 98% of Fortune 500 companies employ some form of automated tool in their hiring processes. LLMs, owing to their broad language understanding capabilities, are increasingly considered for résumé screening and candidate matching.
 
 **Limitations of Prior Work**: LLMs trained on massive internet corpora inevitably inherit and amplify societal biases related to gender and race. Amazon's 2018 AI recruiting tool—exposed for discriminating against women—remains a landmark case. Even after alignment procedures by LLM providers, biases may still manifest in subtle ways.
 
-**Root Cause**: A fundamental tension exists between the general-purpose capabilities of LLMs and the strict fairness requirements imposed by high-stakes domains. Hiring is classified as a high-risk AI application under the EU AI Act, and New York City has enacted legislation mandating bias audits of AI hiring systems.
+**Key Challenge**: A fundamental tension exists between the general-purpose capabilities of LLMs and the strict fairness requirements imposed by high-stakes domains. Hiring is classified as a high-risk AI application under the EU AI Act, and New York City has enacted legislation mandating bias audits of AI hiring systems.
 
-**Paper Goals**: To systematically quantify the accuracy and fairness of mainstream LLMs in realistic hiring scenarios and compare them against a domain-specialized model.
+**Goal**: To systematically quantify the accuracy and fairness of mainstream LLMs in realistic hiring scenarios and compare them against a domain-specialized model.
 
-**Starting Point**: The study employs real hiring data (including self-reported gender and race information), a unified evaluation framework (PII-stripped résumés → standardized prompts → median-threshold binarization → EEOC four-fifths rule), and assesses both accuracy and fairness simultaneously.
+**Key Insight**: The study employs real hiring data (including self-reported gender and race information), a unified evaluation framework (PII-stripped résumés → standardized prompts → median-threshold binarization → EEOC four-fifths rule), and assesses both accuracy and fairness simultaneously.
 
 **Core Idea**: General-purpose LLMs are both less accurate and more biased than domain-specialized models on hiring tasks; accuracy and fairness need not be mutually exclusive.
 

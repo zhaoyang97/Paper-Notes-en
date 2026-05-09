@@ -29,15 +29,15 @@ To address the severe task interference problem in unified image generation and 
 
 ## Background & Motivation
 
-1. **State of the Field**: The visual synthesis field is rapidly converging toward unified image generation and editing models that integrate tasks such as subject customization, style transfer, high-fidelity inpainting, and instruction-based editing into a single framework. Representative approaches include ACE++, Flux Kontext, BAGEL, OmniGen2, and Qwen-Edit, all built upon large-scale Dense Diffusion Transformers (DiT).
+1. **Background**: The visual synthesis field is rapidly converging toward unified image generation and editing models that integrate tasks such as subject customization, style transfer, high-fidelity inpainting, and instruction-based editing into a single framework. Representative approaches include ACE++, Flux Kontext, BAGEL, OmniGen2, and Qwen-Edit, all built upon large-scale Dense Diffusion Transformers (DiT).
 
 2. **Limitations of Prior Work**: Unified models suffer from severe **task interference** — the shared parameter space must simultaneously serve fundamentally conflicting objectives: local editing demands precise content preservation, while subject-driven generation requires expressive diversity and novel synthesis. This fundamental conflict forces the network toward a "mediocre compromise," impeding the representation specialization that each task requires.
 
-3. **Root Cause**: Sparse MoE is a promising approach to expand model capacity and alleviate task interference, but the gating network in standard MoE is **task-agnostic** — it routes tokens based solely on local token features, with no awareness of global task intent (e.g., "preserve identity" vs. "modify style"). This deep information gap between local gating and global objectives leads to spontaneous, inefficient expert specialization that cannot structurally decouple multi-task interference.
+3. **Key Challenge**: Sparse MoE is a promising approach to expand model capacity and alleviate task interference, but the gating network in standard MoE is **task-agnostic** — it routes tokens based solely on local token features, with no awareness of global task intent (e.g., "preserve identity" vs. "modify style"). This deep information gap between local gating and global objectives leads to spontaneous, inefficient expert specialization that cannot structurally decouple multi-task interference.
 
-4. **Paper Goals**: How can high-level global task semantics be injected into the local MoE routing mechanism to achieve task-aware expert specialization?
+4. **Goal**: How can high-level global task semantics be injected into the local MoE routing mechanism to achieve task-aware expert specialization?
 
-5. **Starting Point**: The authors observe that "semantically similar generation tasks should trigger similar expert activation patterns," and design a regularization accordingly to make routing signatures predictive of task semantics.
+5. **Key Insight**: The authors observe that "semantically similar generation tasks should trigger similar expert activation patterns," and design a regularization accordingly to make routing signatures predictive of task semantics.
 
 6. **Core Idea**: A hierarchical task annotation scheme constructs structured semantic supervision signals, and a predictive alignment loss then enforces alignment between MoE routing strategies and task semantics, enabling the gating network to automatically learn to dispatch experts according to task intent.
 

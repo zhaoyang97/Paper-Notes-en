@@ -28,15 +28,15 @@ This paper proposes an instance-specific test-time training (TTT) method for in-
 
 ## Background & Motivation
 
-**State of the Field**: Speech editing systems (FluentSpeech, VoiceBox, A3T, etc.) aim to naturally modify speech content while preserving acoustic consistency and speaker identity. The dominant paradigm is mask-and-predict — masking the region to be edited and using a model to predict new acoustic features.
+**Background**: Speech editing systems (FluentSpeech, VoiceBox, A3T, etc.) aim to naturally modify speech content while preserving acoustic consistency and speaker identity. The dominant paradigm is mask-and-predict — masking the region to be edited and using a model to predict new acoustic features.
 
 **Limitations of Prior Work**: (a) **Acoustic environment diversity**: training data typically comes from clean studio recordings, whereas real-world audio contains diverse background noise, reverberation, and device characteristics, causing domain-shift failures; (b) **Bandwidth discontinuity**: edited regions (model-generated, band-limited) and unedited regions (original audio, full-bandwidth) exhibit abrupt spectral differences, producing perceptible discontinuity artifacts at boundaries; (c) **Imprecise speaking-rate control**: the speaking rate of edited regions is determined internally by the model and is difficult to match to a target duration precisely.
 
-**Root Cause**: Speech editing must simultaneously satisfy acoustic consistency (matching the original audio) and content correctness (generating the correct speech content), yet under unseen acoustic conditions it is difficult to guarantee both — models tend to generate edited regions that are "clean but acoustically mismatched" with the original.
+**Key Challenge**: Speech editing must simultaneously satisfy acoustic consistency (matching the original audio) and content correctness (generating the correct speech content), yet under unseen acoustic conditions it is difficult to guarantee both — models tend to generate edited regions that are "clean but acoustically mismatched" with the original.
 
-**Paper Goals**: Enable a speech editing system to adapt to the acoustic environment of each individual test sample without retraining the main model.
+**Goal**: Enable a speech editing system to adapt to the acoustic environment of each individual test sample without retraining the main model.
 
-**Starting Point**: Test-time training (TTT) — fine-tuning the model using information contained within each test sample itself (the acoustic features of unedited regions), thereby adapting it to the sample's specific acoustic conditions. This is the first attempt to introduce TTT into the speech editing domain.
+**Key Insight**: Test-time training (TTT) — fine-tuning the model using information contained within each test sample itself (the acoustic features of unedited regions), thereby adapting it to the sample's specific acoustic conditions. This is the first attempt to introduce TTT into the speech editing domain.
 
 **Core Idea**: Direct supervision from unedited regions + indirect constraints on edited regions (duration + phonemes) = instance-level acoustic adaptation.
 

@@ -30,11 +30,11 @@ This paper systematically develops the theoretical foundations of the Default Re
 
 ### State of the Field
 
-**State of the Field**: The Successor Representation (SR) encodes temporal relationships between states by capturing transition dynamics, and has been widely applied to reward shaping, exploration, transfer learning, and related areas. However, SR is reward-agnostic—it only encodes the number of transitions to each state.
+**Background**: The Successor Representation (SR) encodes temporal relationships between states by capturing transition dynamics, and has been widely applied to reward shaping, exploration, transfer learning, and related areas. However, SR is reward-agnostic—it only encodes the number of transitions to each state.
 
 **Limitations of Prior Work**: In environments containing low-reward regions that agents should avoid, SR cannot distinguish between high-reward and low-reward paths. The Default Representation (DR) proposed by Piray and Daw is reward-aware, but lacks efficient online learning algorithms and rigorous theoretical analysis.
 
-**Root Cause**: SR encodes $\gamma^{\eta(\tau)}$ (discount-weighted step counts), whereas DR encodes $\exp(r(\tau)/\lambda)$ (the exponential of cumulative rewards)—the latter naturally integrates reward information.
+**Key Challenge**: SR encodes $\gamma^{\eta(\tau)}$ (discount-weighted step counts), whereas DR encodes $\exp(r(\tau)/\lambda)$ (the exponential of cumulative rewards)—the latter naturally integrates reward information.
 
 **Core Idea**: Develop a complete theoretical toolkit for DR so that it can be applied to RL as conveniently as SR.
 

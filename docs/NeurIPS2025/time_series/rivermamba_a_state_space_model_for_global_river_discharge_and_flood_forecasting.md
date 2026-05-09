@@ -28,15 +28,15 @@ content_hash: 9fbc2065e386007f
 The first deep learning model capable of 7-day river discharge forecasting on a 0.05° (~5.5 km) global grid — global grid points are serialized via space-filling curves into 3D spatiotemporal point sequences fed into bidirectional Mamba blocks, driven by ECMWF HRES meteorological forecasts, achieving F1 = 0.459 on flood detection across 1.5–500-year return periods, surpassing LSTM (0.358) and the physical model GloFAS.
 
 ## Background & Motivation
-**State of the Field**: Physics-based hydrological models (GloFAS by ECMWF) remain the standard for global flood forecasting, but are computationally prohibitive (requiring full hydrological cycle simulations on supercomputers). AI methods have made recent progress: Google's ED-LSTM performs well at the local catchment scale, and the NeuralHydrology line of work has established the effectiveness of LSTMs in hydrology.
+**Background**: Physics-based hydrological models (GloFAS by ECMWF) remain the standard for global flood forecasting, but are computationally prohibitive (requiring full hydrological cycle simulations on supercomputers). AI methods have made recent progress: Google's ED-LSTM performs well at the local catchment scale, and the NeuralHydrology line of work has established the effectiveness of LSTMs in hydrology.
 
 **Limitations of Prior Work**: (a) LSTMs model each catchment independently, ignoring spatial relationships between catchments (upstream–downstream interactions); (b) GNNs capture spatial relationships on graphs but do not scale to global coverage (>100K active grid points); (c) Transformer's $O(n^2)$ complexity is infeasible for a global 0.05° grid (hundreds of thousands of grid points × multiple days).
 
-**Root Cause**: Global flood forecasting simultaneously requires modeling (i) long time series (30+ days of history), (ii) global spatial relationships (river network topology), and (iii) meteorological forcing (weather forecasts as future conditional inputs), yet no existing method addresses all three.
+**Key Challenge**: Global flood forecasting simultaneously requires modeling (i) long time series (30+ days of history), (ii) global spatial relationships (river network topology), and (iii) meteorological forcing (weather forecasts as future conditional inputs), yet no existing method addresses all three.
 
-**Paper Goals**: Construct the first AI river discharge forecasting system with global 0.05° resolution and a 7-day lead time.
+**Goal**: Construct the first AI river discharge forecasting system with global 0.05° resolution and a 7-day lead time.
 
-**Starting Point**: Mamba's selective scan mechanism provides $O(n)$ linear complexity for processing very long sequences; space-filling curves losslessly encode 2D spatial grid points into 1D sequences for Mamba processing.
+**Key Insight**: Mamba's selective scan mechanism provides $O(n)$ linear complexity for processing very long sequences; space-filling curves losslessly encode 2D spatial grid points into 1D sequences for Mamba processing.
 
 **Core Idea**: Serialize global grid points via space-filling curves → encode spatiotemporal context with bidirectional Mamba → drive day-by-day forecasts with ECMWF meteorological predictions.
 

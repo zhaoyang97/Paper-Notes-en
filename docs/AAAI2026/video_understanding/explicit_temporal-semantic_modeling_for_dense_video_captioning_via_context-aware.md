@@ -35,9 +35,9 @@ Dense Video Captioning (DVC) requires simultaneously localizing and describing a
 
 **Modality Gap**: Retrieved semantic features are fused with visual representations via simple operations (concatenation or basic attention), which is insufficient to bridge the inherent gap between visual and textual modalities.
 
-**Root Cause**: Effective retrieval-augmented DVC requires exploiting the temporal structure and rich semantic information inherent in video data, yet current methods naively concatenate frame-level or fragmented textual information, neglecting temporal coherence.
+**Key Challenge**: Effective retrieval-augmented DVC requires exploiting the temporal structure and rich semantic information inherent in video data, yet current methods naively concatenate frame-level or fragmented textual information, neglecting temporal coherence.
 
-**Starting Point**: Adjacent frames share similar visual and temporal contexts and typically represent the same semantic event. Based on this observation, the paper introduces explicit temporal-semantic modeling via pseudo-events, endowing retrieved textual semantics with temporal properties.
+**Key Insight**: Adjacent frames share similar visual and temporal contexts and typically represent the same semantic event. Based on this observation, the paper introduces explicit temporal-semantic modeling via pseudo-events, endowing retrieved textual semantics with temporal properties.
 
 ## Method
 

@@ -27,15 +27,15 @@ content_hash: 1a3502c2ee0f2411
 Linear activation probes (lightweight classifiers trained on LLM internal representations) are used to detect "high-stakes interactions" from users. Trained on synthetic data, these probes achieve AUROC of 0.88–0.92 across 6 real-world datasets, matching fine-tuned 8–12B LLMs at a computational cost six orders of magnitude lower. A cascaded architecture (probe pre-filtering + LLM refinement) further surpasses either component used alone.
 
 ## Background & Motivation
-**State of the Field**: Detecting high-stakes interactions in LLM deployments (e.g., medical advice, mental health, red-teaming attacks) is essential for routing to human review or triggering safety measures.
+**Background**: Detecting high-stakes interactions in LLM deployments (e.g., medical advice, mental health, red-teaming attacks) is essential for routing to human review or triggering safety measures.
 
 **Limitations of Prior Work**: (a) Using another LLM (e.g., GPT-4) to monitor all interactions is prohibitively expensive (\$0.01–0.10/query); (b) predefined rules cannot cover the fuzzy boundary of "high-stakes," which depends on context rather than keywords; (c) "high-stakes" is inherently ambiguous—vague generative advice may be harmful.
 
-**Root Cause**: Real-time, low-cost monitoring is required, yet high-stakes detection demands deep semantic understanding that appears to necessitate large models.
+**Key Challenge**: Real-time, low-cost monitoring is required, yet high-stakes detection demands deep semantic understanding that appears to necessitate large models.
 
-**Paper Goals**: (1) Demonstrate that LLM internal representations already encode sufficient high-stakes signals; (2) extract these signals using linear probes at minimal cost; (3) design a cascaded architecture to balance accuracy and cost.
+**Goal**: (1) Demonstrate that LLM internal representations already encode sufficient high-stakes signals; (2) extract these signals using linear probes at minimal cost; (3) design a cascaded architecture to balance accuracy and cost.
 
-**Starting Point**: LLM hidden layers produce distinct activation patterns when processing different types of text—linear probes can be trained as lightweight classifiers on these patterns.
+**Key Insight**: LLM hidden layers produce distinct activation patterns when processing different types of text—linear probes can be trained as lightweight classifiers on these patterns.
 
 **Core Idea**: LLMs already "know" internally whether an interaction is high-stakes; linear probes can extract this signal with less than 1% additional inference overhead.
 

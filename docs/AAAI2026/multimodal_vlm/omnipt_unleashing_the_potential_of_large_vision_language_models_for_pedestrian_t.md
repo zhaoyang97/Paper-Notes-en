@@ -36,7 +36,7 @@ Pedestrian tracking is a classical computer vision task with broad applications 
 
 **Key Insight**: Humans can effortlessly re-identify targets after prolonged disappearance because they abstract targets into semantic descriptions for "subconscious retrieval." While LVLMs excel at image-level understanding tasks (e.g., VQA, captioning), a gap remains between LVLMs and specialist models on instance-level tasks (e.g., object detection, visual grounding).
 
-**Starting Point**: The paper introduces the strong semantic understanding capabilities of LVLMs into pedestrian tracking, unifying MOT, RMOT, CRMOT, and SMOT under a single "one-for-all" framework. The core idea is to decompose tracking into natural language sub-tasks executable by an LVLM, with a four-stage training strategy enforcing structured output.
+**Key Insight**: The paper introduces the strong semantic understanding capabilities of LVLMs into pedestrian tracking, unifying MOT, RMOT, CRMOT, and SMOT under a single "one-for-all" framework. The core idea is to decompose tracking into natural language sub-tasks executable by an LVLM, with a four-stage training strategy enforcing structured output.
 
 ## Method
 

@@ -29,15 +29,15 @@ This paper proposes GS-CLIP, a two-stage framework that injects global shape con
 
 ## Background & Motivation
 
-**State of the Field**: 3D anomaly detection is critical in industrial manufacturing. Traditional unsupervised methods (3D-ST, Reg3D-AD) require extensive normal samples from the target category for training, whereas zero-shot 3D anomaly detection (ZS3DAD) aims to train a generalizable model on auxiliary data and directly transfer it to unseen categories—addressing data privacy and sample scarcity concerns.
+**Background**: 3D anomaly detection is critical in industrial manufacturing. Traditional unsupervised methods (3D-ST, Reg3D-AD) require extensive normal samples from the target category for training, whereas zero-shot 3D anomaly detection (ZS3DAD) aims to train a generalizable model on auxiliary data and directly transfer it to unseen categories—addressing data privacy and sample scarcity concerns.
 
 **Limitations of Prior Work**:
    - **Loss of 3D geometric information**: Existing methods (PointAD, MVP-PCLIP) project 3D point clouds into 2D images for CLIP processing, compressing volumetric structures into planar pixels. The model thus learns a "2D visual proxy" of geometric anomalies rather than their true physical form, causing detection failures when geometric anomalies are visually inconspicuous from certain viewpoints.
    - **Insufficient exploitation of visual information**: Existing methods rely on a single 2D representation. Rendered images are texture-rich but susceptible to lighting/rendering artifacts; depth maps capture overall geometric structure but fail to resolve subtle depth variations (e.g., slight protrusions). Single-modality representations limit detection coverage and generalization.
 
-**Root Cause**: While CLIP's powerful zero-shot generalization has been validated in 2D anomaly detection, extending it to the 3D domain faces two critical gaps: projection-induced information loss and insufficient single-modality visual representation.
+**Key Challenge**: While CLIP's powerful zero-shot generalization has been validated in 2D anomaly detection, extending it to the 3D domain faces two critical gaps: projection-induced information loss and insufficient single-modality visual representation.
 
-**Starting Point**: Rather than adapting only the visual branch, the paper addresses both the text branch and the visual branch simultaneously—injecting 3D geometric priors as anomaly cues on the text side, and fusing complementary information from rendered images and depth maps on the visual side.
+**Key Insight**: Rather than adapting only the visual branch, the paper addresses both the text branch and the visual branch simultaneously—injecting 3D geometric priors as anomaly cues on the text side, and fusing complementary information from rendered images and depth maps on the visual side.
 
 ## Method
 

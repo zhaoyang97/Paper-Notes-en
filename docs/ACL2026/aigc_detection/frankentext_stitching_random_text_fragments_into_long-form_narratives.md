@@ -28,15 +28,15 @@ This paper proposes Frankentext, a paradigm where LLMs stitch random human text 
 
 ## Background & Motivation
 
-**State of the Field**: As LLM-generated text quality continues to improve, AI text detection has become critical for academic integrity and content provenance. Existing detectors primarily assume a binary (AI vs. human) classification paradigm.
+**Background**: As LLM-generated text quality continues to improve, AI text detection has become critical for academic integrity and content provenance. Existing detectors primarily assume a binary (AI vs. human) classification paradigm.
 
 **Limitations of Prior Work**: In reality, there exists a substantial "gray area" of human-AI collaborative writing—text is neither purely AI nor purely human-authored, but a mixture. Existing binary detectors (e.g., Binoculars, FastDetectGPT) cannot effectively identify such mixed text.
 
-**Root Cause**: Current detection methods rely on surface features (e.g., perplexity, statistical signatures), but when AI-generated content heavily embeds genuine human text, these statistical features are diluted, causing detection failure.
+**Key Challenge**: Current detection methods rely on surface features (e.g., perplexity, statistical signatures), but when AI-generated content heavily embeds genuine human text, these statistical features are diluted, causing detection failure.
 
-**Paper Goals**: Systematically study an extreme controllable generation paradigm—Frankentext, where LLMs must generate coherent narratives with most tokens verbatim-copied from human writing, to expose detector vulnerabilities and advance fine-grained detection methods.
+**Goal**: Systematically study an extreme controllable generation paradigm—Frankentext, where LLMs must generate coherent narratives with most tokens verbatim-copied from human writing, to expose detector vulnerabilities and advance fine-grained detection methods.
 
-**Starting Point**: Inspired by Frankenstein—assembling a complete "creature" from fragments of different sources. The LLM acts as a composer rather than a writer, selecting, arranging, and stitching coherent stories from thousands of random human text fragments.
+**Key Insight**: Inspired by Frankenstein—assembling a complete "creature" from fragments of different sources. The LLM acts as a composer rather than a writer, selecting, arranging, and stitching coherent stories from thousands of random human text fragments.
 
 **Core Idea**: Through a prompt-based pipeline, LLMs select and stitch randomly sampled human text paragraphs while maintaining a specified copy rate (e.g., 90%) and generating coherent, relevant narratives, thereby posing a fundamental challenge to existing AI detectors.
 

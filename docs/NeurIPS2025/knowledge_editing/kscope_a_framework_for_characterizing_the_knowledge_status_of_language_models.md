@@ -28,15 +28,15 @@ This paper proposes a five-category taxonomy of LLM knowledge status (Consistent
 
 ## Background & Motivation
 
-**State of the Field**: LLMs memorize large amounts of parametric knowledge from training corpora, while methods such as RAG supply external context to supplement or update this knowledge. Existing research has focused primarily on "knowledge conflicts"—model behavior when parametric memory contradicts the provided context.
+**Background**: LLMs memorize large amounts of parametric knowledge from training corpora, while methods such as RAG supply external context to supplement or update this knowledge. Existing research has focused primarily on "knowledge conflicts"—model behavior when parametric memory contradicts the provided context.
 
 **Limitations of Prior Work**: (a) Representing LLM knowledge by a single most-likely answer ignores the possibility of multiple competing modes in the response distribution; (b) entropy-based uncertainty measures cannot distinguish between "two answers with similar probability" (conflicting) and "one dominant answer with noise" (consistent)—for instance, $[0.45, 0.45, 0.1]$ and $[0.6, 0.2, 0.2]$ have similar entropy yet reflect entirely different knowledge states.
 
-**Root Cause**: Simultaneously characterizing both the consistency of knowledge (whether a unique dominant mode exists) and its correctness (whether the dominant mode contains the correct answer) is beyond the capacity of existing frameworks.
+**Key Challenge**: Simultaneously characterizing both the consistency of knowledge (whether a unique dominant mode exists) and its correctness (whether the dominant mode contains the correct answer) is beyond the capacity of existing frameworks.
 
-**Paper Goals**: How can the knowledge status of an LLM with respect to a given question be precisely defined and detected? How can knowledge be effectively updated under each distinct status?
+**Goal**: How can the knowledge status of an LLM with respect to a given question be precisely defined and detected? How can knowledge be effectively updated under each distinct status?
 
-**Starting Point**: The modal structure of the LLM response distribution is treated as the central object of analysis. A hierarchical sequence of statistical tests progressively refines hypotheses—from "is the model guessing uniformly?" to "are there conflicting modes?" to "is there a single dominant mode?"
+**Key Insight**: The modal structure of the LLM response distribution is treated as the central object of analysis. A hierarchical sequence of statistical tests progressively refines hypotheses—from "is the model guessing uniformly?" to "are there conflicting modes?" to "is there a single dominant mode?"
 
 **Core Idea**: Five knowledge states are defined by the size of the mode set of the response distribution (consistency) crossed with whether the correct answer belongs to that mode set (correctness), and are automatically determined via a four-step hierarchical testing procedure.
 

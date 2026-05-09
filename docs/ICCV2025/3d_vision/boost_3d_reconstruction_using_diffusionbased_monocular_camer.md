@@ -30,11 +30,11 @@ This paper proposes DM-Calib, a diffusion-based monocular camera intrinsic estim
 
 ### State of the Field
 
-**State of the Field**: Monocular camera calibration is an ill-posed problem. Traditional methods rely on strong priors such as the Manhattan World assumption or calibration boards, resulting in poor generalization. Learning-based methods are constrained by training data scale. Diffusion models implicitly understand the relationship between focal length and image content (e.g., telephoto → shallow depth of field / compression effect; wide-angle → exaggerated perspective), and this prior knowledge can be leveraged for camera calibration.
+**Background**: Monocular camera calibration is an ill-posed problem. Traditional methods rely on strong priors such as the Manhattan World assumption or calibration boards, resulting in poor generalization. Learning-based methods are constrained by training data scale. Diffusion models implicitly understand the relationship between focal length and image content (e.g., telephoto → shallow depth of field / compression effect; wide-angle → exaggerated perspective), and this prior knowledge can be leveraged for camera calibration.
 
 ### Mechanism
 
-**Paper Goals**: How can the implicit imaging priors encoded in diffusion models be effectively extracted for high-accuracy monocular camera intrinsic estimation? The key challenge is that numerical camera parameters $(f_x, f_y, c_x, c_y)$ are not directly compatible with image-based diffusion models.
+**Goal**: How can the implicit imaging priors encoded in diffusion models be effectively extracted for high-accuracy monocular camera intrinsic estimation? The key challenge is that numerical camera parameters $(f_x, f_y, c_x, c_y)$ are not directly compatible with image-based diffusion models.
 
 ## Method
 

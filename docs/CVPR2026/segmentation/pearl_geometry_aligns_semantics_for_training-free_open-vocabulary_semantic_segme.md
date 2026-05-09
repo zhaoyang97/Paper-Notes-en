@@ -29,15 +29,15 @@ PEARL proposes a two-step inference framework based on Procrustes alignment and 
 
 ## Background & Motivation
 
-**State of the Field**: Open-vocabulary semantic segmentation (OVSS) enables models to classify each pixel according to a category set specified via natural language at inference time. Mainstream approaches fall into two paradigms: training-based methods enhance CLIP's dense prediction capability by learning decoders or lightweight adapters, while training-free methods keep the backbone frozen and only modify the inference procedure.
+**Background**: Open-vocabulary semantic segmentation (OVSS) enables models to classify each pixel according to a category set specified via natural language at inference time. Mainstream approaches fall into two paradigms: training-based methods enhance CLIP's dense prediction capability by learning decoders or lightweight adapters, while training-free methods keep the backbone frozen and only modify the inference procedure.
 
 **Limitations of Prior Work**: Training-free methods face two core challenges. First, CLIP's contrastive pre-training emphasizes global image-text alignment rather than dense prediction, causing the top-layer self-attention of the visual encoder to be dominated by a few background-driven directions. This results in a severe geometric mismatch between patch feature structure and text prototypes, leading to unstable patch-text similarity. Second, text is typically used only as a classifier and rarely governs the exchange of information between pixels—despite the fact that inter-class relationships in text space can indicate which categories should mutually reinforce or remain separated.
 
-**Root Cause**: Existing methods often apply post-hoc smoothing (e.g., DenseCLIP, PAMR), but this addresses symptoms rather than root causes—when the source geometry is already incorrect, downstream smoothing can only alleviate but not eliminate the problem. Other methods introduce auxiliary visual backbones (e.g., DINOv2), increasing complexity and latency.
+**Key Challenge**: Existing methods often apply post-hoc smoothing (e.g., DenseCLIP, PAMR), but this addresses symptoms rather than root causes—when the source geometry is already incorrect, downstream smoothing can only alleviate but not eliminate the problem. Other methods introduce auxiliary visual backbones (e.g., DINOv2), increasing complexity and latency.
 
-**Paper Goals**: (1) Correct the token geometry at the source where attention scores are formed; (2) transform text from a simple labeler into a structural prior that guides semantic propagation across pixels.
+**Goal**: (1) Correct the token geometry at the source where attention scores are formed; (2) transform text from a simple labeler into a structural prior that guides semantic propagation across pixels.
 
-**Starting Point**: The authors observe that in CLIP ViT-B/16 attention maps, vanilla CLIP produces diffuse maps biased toward backgrounds, while NACLIP improves but suffers from severe fragmentation. By applying an orthogonal Procrustes rotation to the keys in the final self-attention layer, the output features can be better aligned with the query subspace.
+**Key Insight**: The authors observe that in CLIP ViT-B/16 attention maps, vanilla CLIP produces diffuse maps biased toward backgrounds, while NACLIP improves but suffers from severe fragmentation. By applying an orthogonal Procrustes rotation to the keys in the final self-attention layer, the output features can be better aligned with the query subspace.
 
 **Core Idea**: First repair attention geometry via orthogonal Procrustes alignment, then diffuse semantic consistency across the entire image through text-aware Laplacian propagation—an *align-then-propagate* paradigm.
 

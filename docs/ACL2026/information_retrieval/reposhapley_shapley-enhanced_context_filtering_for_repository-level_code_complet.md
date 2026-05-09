@@ -28,15 +28,15 @@ This paper proposes RepoShapley, a coalition-aware context filtering framework b
 
 ## Background & Motivation
 
-**State of the Field**: Repository-level code completion requires resolving cross-file dependencies (e.g., project APIs, shared contracts). Retrieval-augmented generation (RAG) enhances code language models by injecting cross-file evidence.
+**Background**: Repository-level code completion requires resolving cross-file dependencies (e.g., project APIs, shared contracts). Retrieval-augmented generation (RAG) enhances code language models by injecting cross-file evidence.
 
 **Limitations of Prior Work**: The utility of retrieved code snippets exhibits interaction dependencies — certain snippets are individually unhelpful but become critical when paired with complementary context, while others appear relevant yet degrade generation quality when co-present with conflicting evidence. Existing methods (e.g., CODEFILTER) score each snippet independently and thus fail to capture such combinatorial effects.
 
-**Root Cause**: Under a fixed context budget, the utility of independently scored snippets systematically diverges from their actual utility when consumed in multi-snippet combinations.
+**Key Challenge**: Under a fixed context budget, the utility of independently scored snippets systematically diverges from their actual utility when consumed in multi-snippet combinations.
 
-**Paper Goals**: Design a coalition-aware context filtering mechanism that supervises snippet selection using Shapley marginal contribution signals.
+**Goal**: Design a coalition-aware context filtering mechanism that supervises snippet selection using Shapley marginal contribution signals.
 
-**Starting Point**: The context selection problem is modeled as a cooperative game — each retrieved snippet is treated as a player, any subset forms a coalition, and Shapley values quantify each snippet's average marginal contribution across all possible combinations.
+**Key Insight**: The context selection problem is modeled as a cooperative game — each retrieved snippet is treated as a player, any subset forms a coalition, and Shapley values quantify each snippet's average marginal contribution across all possible combinations.
 
 **Core Idea**: Shapley values are approximated via a lightweight surrogate game, followed by bounded post-verification to select the optimal coalition; the verification results are then distilled into discrete control tokens to enable online inference.
 

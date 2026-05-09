@@ -28,15 +28,15 @@ This paper proposes Easi3R, a training-free plug-and-play method that analyzes a
 
 ## Background & Motivation
 
-**State of the Field**: DUSt3R achieves robust dense point cloud and camera parameter estimation for static scenes. Works such as MonST3R and CUT3R extend this capability to dynamic scenes via fine-tuning on dynamic datasets, but require large amounts of training data or external priors such as optical flow or depth estimation.
+**Background**: DUSt3R achieves robust dense point cloud and camera parameter estimation for static scenes. Works such as MonST3R and CUT3R extend this capability to dynamic scenes via fine-tuning on dynamic datasets, but require large amounts of training data or external priors such as optical flow or depth estimation.
 
 **Limitations of Prior Work**: (1) The scale and diversity of 4D datasets are limited, constraining the training of highly generalizable 4D models; (2) existing dynamic methods rely on external priors such as optical flow estimators and depth predictors, increasing system complexity; (3) DUSt3R's performance degrades significantly on dynamic video, as moving objects violate its epipolar consistency assumption for static scenes.
 
-**Root Cause**: Handling dynamic scenes requires identifying and disentangling object motion from camera motion, which typically necessitates training on large-scale dynamic data — yet such datasets are scarce and expensive to acquire.
+**Key Challenge**: Handling dynamic scenes requires identifying and disentangling object motion from camera motion, which typically necessitates training on large-scale dynamic data — yet such datasets are scarce and expensive to acquire.
 
-**Paper Goals**: To process dynamic video by extracting motion information directly from a pretrained DUSt3R, without any training or fine-tuning.
+**Goal**: To process dynamic video by extracting motion information directly from a pretrained DUSt3R, without any training or fine-tuning.
 
-**Starting Point**: Drawing an analogy to human visual attention — humans can separate ego-motion from object motion in visual perception — the cross-attention layers of DUSt3R are found to have implicitly learned a similar mechanism. Analysis reveals that dynamic regions receive low attention values in the cross-attention maps.
+**Key Insight**: Drawing an analogy to human visual attention — humans can separate ego-motion from object motion in visual perception — the cross-attention layers of DUSt3R are found to have implicitly learned a similar mechanism. Analysis reveals that dynamic regions receive low attention values in the cross-attention maps.
 
 **Core Idea**: Aggregate DUSt3R's cross-attention maps along spatial and temporal dimensions to extract four semantically meaningful attention maps (mean/variance of source/reference views). Dynamic object segmentation is derived by combining these maps, and the segmentation results are then used to reweight the attention for a second inference pass to obtain robust 4D reconstruction.
 

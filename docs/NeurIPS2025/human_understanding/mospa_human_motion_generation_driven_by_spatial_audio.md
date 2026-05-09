@@ -29,15 +29,15 @@ This work introduces the novel task of spatial-audio-driven human motion generat
 
 ## Background & Motivation
 
-**State of the Field**: Conditional motion generation has been widely explored across tasks such as text-to-motion (MDM, MoMask), music-to-dance (EDGE, Bailando), and speech-to-gesture (GestureDiffuCLIP). These methods extract semantic and rhythmic information from audio to drive motion, yet all neglect the spatial properties of sound — direction, distance, and intensity.
+**Background**: Conditional motion generation has been widely explored across tasks such as text-to-motion (MDM, MoMask), music-to-dance (EDGE, Bailando), and speech-to-gesture (GestureDiffuCLIP). These methods extract semantic and rhythmic information from audio to drive motion, yet all neglect the spatial properties of sound — direction, distance, and intensity.
 
 **Limitations of Prior Work**: Human responses to sound are naturally driven by spatial perception — a sharp sound from the left prompts one to cover the ear and dodge rightward, while gentle music from the front may draw one closer. Existing music/speech-to-motion methods encode only temporal semantic features, rendering them incapable of modeling such spatial dependencies. More critically, no dedicated spatial-audio–motion paired dataset exists for training and evaluating such models.
 
-**Root Cause**: Spatial audio encodes not only semantics (what sound) but also spatial properties (where it comes from, how loud it is), the latter of which significantly influences human body motion. However, this spatial information is entirely absent from existing audio feature extraction and motion generation pipelines. Furthermore, individual variation in responsiveness to the same sound (ranging from sluggish to sensitive) also requires explicit modeling.
+**Key Challenge**: Spatial audio encodes not only semantics (what sound) but also spatial properties (where it comes from, how loud it is), the latter of which significantly influences human body motion. However, this spatial information is entirely absent from existing audio feature extraction and motion generation pipelines. Furthermore, individual variation in responsiveness to the same sound (ranging from sluggish to sensitive) also requires explicit modeling.
 
-**Paper Goals**: (1) Construct the first spatial-audio–motion paired dataset; (2) Design a generative model that leverages both semantic and spatial features of spatial audio to synthesize plausible human motion.
+**Goal**: (1) Construct the first spatial-audio–motion paired dataset; (2) Design a generative model that leverages both semantic and spatial features of spatial audio to synthesize plausible human motion.
 
-**Starting Point**: The paper adopts binaural audio — the form of spatial audio closest to human auditory experience — which naturally encodes sound source direction and distance via inter-aural signal differences. MFCC captures temporal semantics, RMS energy encodes distance information, and motion style labels (sluggish / neutral / sensitive) control response intensity.
+**Key Insight**: The paper adopts binaural audio — the form of spatial audio closest to human auditory experience — which naturally encodes sound source direction and distance via inter-aural signal differences. MFCC captures temporal semantics, RMS energy encodes distance information, and motion style labels (sluggish / neutral / sensitive) control response intensity.
 
 **Core Idea**: Replace conventional audio features with binaural spatial audio features that incorporate sound source position as the diffusion model's conditioning signal, enabling spatially-aware human motion generation.
 

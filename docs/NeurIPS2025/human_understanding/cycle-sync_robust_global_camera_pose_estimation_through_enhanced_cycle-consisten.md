@@ -28,15 +28,15 @@ Cycle-Sync is a global camera pose estimation framework that extends Message Pas
 
 ## Background & Motivation
 
-**State of the Field**: SfM is a core task in 3D vision. The typical pipeline proceeds as: feature matching → essential matrix estimation → rotation synchronization → position estimation → BA refinement. Position estimation is substantially more difficult than rotation synchronization.
+**Background**: SfM is a core task in 3D vision. The typical pipeline proceeds as: feature matching → essential matrix estimation → rotation synchronization → position estimation → BA refinement. Position estimation is substantially more difficult than rotation synchronization.
 
 **Limitations of Prior Work**: (a) Translation direction vectors lack scale information, making position estimation far more challenging than rotation; (b) LUD ($\ell_1$) is sensitive to long corrupted edges, while BATA under-exploits long clean edges; (c) most existing methods rely on expensive BA; (d) cycle-inconsistent corruption is difficult to detect.
 
-**Root Cause**: The position space lacks group structure and is non-compact; single-edge residuals are unreliable indicators of corruption, and IRLS is prone to local optima.
+**Key Challenge**: The position space lacks group structure and is non-compact; single-edge residuals are unreliable indicators of corruption, and IRLS is prone to local optima.
 
-**Paper Goals**: Design a global position estimation method that is robust to severe corruption and capable of handling missing distances and variable edge lengths.
+**Goal**: Design a global position estimation method that is robust to severe corruption and capable of handling missing distances and variable edge lengths.
 
-**Starting Point**: 3-cycle consistency can distinguish clean edges from corrupted ones—clean edges maintain geometric consistency within 3-cycles, whereas corrupted edges do not. This signal is used in place of unreliable single-edge residuals.
+**Key Insight**: 3-cycle consistency can distinguish clean edges from corrupted ones—clean edges maintain geometric consistency within 3-cycles, whereas corrupted edges do not. This signal is used in place of unreliable single-edge residuals.
 
 **Core Idea**: Adapt MPLS cycle-consistency message passing to position estimation, iteratively redefine cycle inconsistency via distance updates, and combine with a Welsch loss to achieve BA-free global pose estimation.
 

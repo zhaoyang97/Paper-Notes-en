@@ -28,15 +28,15 @@ FedDAG is a clustered federated learning framework that performs more accurate c
 
 ## Background & Motivation
 
-**State of the Field**: Federated learning (FL) enables collaborative model training without sharing raw data, but client data heterogeneity (non-IID) leads to slow convergence and degraded accuracy. Clustered FL addresses this by grouping similar clients, with each cluster training its own model.
+**Background**: Federated learning (FL) enables collaborative model training without sharing raw data, but client data heterogeneity (non-IID) leads to slow convergence and degraded accuracy. Clustered FL addresses this by grouping similar clients, with each cluster training its own model.
 
 **Limitations of Prior Work**: Existing clustered FL methods suffer from four key limitations: 1) similarity computation relies on either data or gradient signals alone, lacking comprehensiveness; 2) knowledge sharing is restricted within clusters, failing to leverage diverse representations across clusters; 3) only label skew is typically addressed, while concept drift and quantity imbalance are neglected; 4) the number of clusters must be specified in advance.
 
-**Root Cause**: Data-based and gradient-based similarity measures each have blind spots — gradient similarity in high-dimensional spaces can produce false positives, while data similarity is insensitive to concept drift. Neither signal alone can accurately characterize true inter-client similarity.
+**Key Challenge**: Data-based and gradient-based similarity measures each have blind spots — gradient similarity in high-dimensional spaces can produce false positives, while data similarity is insensitive to concept drift. Neither signal alone can accurately characterize true inter-client similarity.
 
-**Paper Goals**: How to dynamically cluster clients by jointly leveraging data and gradient information, while enabling cross-cluster representation sharing?
+**Goal**: How to dynamically cluster clients by jointly leveraging data and gradient information, while enabling cross-cluster representation sharing?
 
-**Starting Point**: Refine similarity computation to the class level, learn adaptive weights for data and gradient signals, and employ a dual-encoder architecture to facilitate cross-cluster feature transfer.
+**Key Insight**: Refine similarity computation to the class level, learn adaptive weights for data and gradient signals, and employ a dual-encoder architecture to facilitate cross-cluster feature transfer.
 
 **Core Idea**: Perform more accurate client clustering via class-wise weighted fusion of data and gradient similarity, and enable cross-cluster knowledge sharing while preserving cluster specialization through a dual-encoder architecture.
 

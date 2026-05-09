@@ -28,15 +28,15 @@ UAT (Unsupervised Adaptive Thresholding) designs a reliability function for earl
 
 ## Background & Motivation
 
-**State of the Field**: Early exit mechanisms attach classification heads to intermediate layers of DNNs, allowing simple samples to exit early and thus accelerate inference. Existing methods use fixed thresholds (based on confidence or entropy) to determine whether to exit.
+**Background**: Early exit mechanisms attach classification heads to intermediate layers of DNNs, allowing simple samples to exit early and thus accelerate inference. Existing methods use fixed thresholds (based on confidence or entropy) to determine whether to exit.
 
 **Limitations of Prior Work**: (a) Models may be overconfident at shallow layers, leading to erroneous exits; (b) fixed thresholds cannot adapt to shifts in data distribution—performance degrades sharply under distribution shift; (c) existing methods (e.g., BEEM) are restricted to classification tasks and do not support generative tasks.
 
-**Root Cause**: The trade-off between the benefit of early exit (speed) and its risk (quality degradation) requires careful balance. Fixed thresholds apply a one-size-fits-all policy across all inputs, failing to reflect the actual reliability of different layers and different samples.
+**Key Challenge**: The trade-off between the benefit of early exit (speed) and its risk (quality degradation) requires careful balance. Fixed thresholds apply a one-size-fits-all policy across all inputs, failing to reflect the actual reliability of different layers and different samples.
 
-**Paper Goals**: (a) Train a reliability function to assess whether the output of each layer is trustworthy; (b) dynamically adjust exit thresholds at inference time to adapt to distribution shifts.
+**Goal**: (a) Train a reliability function to assess whether the output of each layer is trustworthy; (b) dynamically adjust exit thresholds at inference time to adapt to distribution shifts.
 
-**Starting Point**: The problem of selecting the exit layer is formulated as a multi-armed bandit problem—each layer constitutes an "arm," and the reward combines reliability (quality) with computational cost (layer depth). A UCB algorithm is used to online-learn the optimal exit policy.
+**Key Insight**: The problem of selecting the exit layer is formulated as a multi-armed bandit problem—each layer constitutes an "arm," and the reward combines reliability (quality) with computational cost (layer depth). A UCB algorithm is used to online-learn the optimal exit policy.
 
 **Core Idea**: Training a reliability function to evaluate intermediate layer output quality + using a multi-armed bandit to dynamically optimize exit thresholds at inference time = adaptive early exit.
 

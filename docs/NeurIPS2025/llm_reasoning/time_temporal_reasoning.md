@@ -28,15 +28,15 @@ This paper introduces TimE, a multi-level temporal reasoning benchmark comprisin
 
 ## Background & Motivation
 
-1. **State of the Field**: LLMs have achieved remarkable progress in mathematical and code reasoning, yet temporal reasoning remains a persistent challenge.
+1. **Background**: LLMs have achieved remarkable progress in mathematical and code reasoning, yet temporal reasoning remains a persistent challenge.
 
 2. **Limitations of Prior Work**: Existing temporal reasoning benchmarks (TimeBench, TRAM) focus primarily on simplified scenarios, overlooking three key real-world challenges: dense temporal information, rapidly evolving event dynamics, and complex temporal dependencies in social interactions.
 
-3. **Root Cause**: Temporal reasoning is inherently hierarchical (basic understanding → expression-level reasoning → complex relational reasoning), yet existing benchmarks lack this stratified evaluation design.
+3. **Key Challenge**: Temporal reasoning is inherently hierarchical (basic understanding → expression-level reasoning → complex relational reasoning), yet existing benchmarks lack this stratified evaluation design.
 
-4. **Paper Goals**: To construct a comprehensive temporal reasoning benchmark covering diverse real-world scenarios and multi-level task structures.
+4. **Goal**: To construct a comprehensive temporal reasoning benchmark covering diverse real-world scenarios and multi-level task structures.
 
-5. **Starting Point**: Three data sources (Wikidata, news articles, and ultra-long dialogues) are employed to simulate the process by which humans leverage temporal concepts to understand the world.
+5. **Key Insight**: Three data sources (Wikidata, news articles, and ultra-long dialogues) are employed to simulate the process by which humans leverage temporal concepts to understand the world.
 
 6. **Core Idea**: A three-level progressive framework — Level 1: basic temporal understanding and retrieval; Level 2: temporal expression reasoning; Level 3: complex temporal relational reasoning.
 

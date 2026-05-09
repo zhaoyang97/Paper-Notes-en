@@ -29,18 +29,18 @@ To address positive gradient dilution and hard-negative gradient dilution in lar
 
 ## Background & Motivation
 
-**State of the Field**: Object detection has scaled from COCO (80 categories) to V3Det (13,204 categories), representing a two-order-of-magnitude increase in category scale. Existing approaches fall into four main families: classification-head detectors, text-prompt contrastive detectors (e.g., Grounding DINO), language-model-based generative detectors, and open-vocabulary methods.
+**Background**: Object detection has scaled from COCO (80 categories) to V3Det (13,204 categories), representing a two-order-of-magnitude increase in category scale. Existing approaches fall into four main families: classification-head detectors, text-prompt contrastive detectors (e.g., Grounding DINO), language-model-based generative detectors, and open-vocabulary methods.
 
 **Limitations of Prior Work**:
    - **Classification-head methods**: Sigmoid + Focal Loss suffers from severe gradient dilution at large vocabulary sizes—positive-class gradients are overwhelmed by the vast number of negative-class gradients (positive-to-negative gradient ratio $\rho \propto 1/(C \cdot \epsilon)$, so $\rho \to 0$ when $C > 10^4$).
    - **Text-prompt methods**: Input token limits of ~128 make processing 13,204 categories require 331 inference passes, rendering them impractical.
    - **Language-model methods**: Label granularity cannot be controlled (e.g., "Persian cat" may be generated as "cat").
 
-**Root Cause**: Two gradient dilution problems arise at large vocabulary scales—(1) *positive gradient dilution*: sparse positive-class signals are suppressed by the overwhelming number of negative-class signals; (2) *hard-negative gradient dilution*: informative hard-negative gradients are diluted by the large volume of easy negatives.
+**Key Challenge**: Two gradient dilution problems arise at large vocabulary scales—(1) *positive gradient dilution*: sparse positive-class signals are suppressed by the overwhelming number of negative-class signals; (2) *hard-negative gradient dilution*: informative hard-negative gradients are diluted by the large volume of easy negatives.
 
-**Paper Goals**: Simultaneously resolve positive gradient dilution and hard-negative mining via dynamic sparse category selection.
+**Goal**: Simultaneously resolve positive gradient dilution and hard-negative mining via dynamic sparse category selection.
 
-**Starting Point**: Rather than modifying the loss function (Focal Loss provides limited benefit), fundamentally reduce the negative space—retaining only the Top-K most relevant categories per image ($K=100 \ll 13204$)—thereby naturally achieving gradient rebalancing and implicit hard-negative mining.
+**Key Insight**: Rather than modifying the loss function (Focal Loss provides limited benefit), fundamentally reduce the negative space—retaining only the Top-K most relevant categories per image ($K=100 \ll 13204$)—thereby naturally achieving gradient rebalancing and implicit hard-negative mining.
 
 **Core Idea**: Replace the fixed classification head with learnable category queries combined with image-guided selection, reframing category prediction as contrastive matching between object queries and category queries.
 

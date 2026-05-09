@@ -29,11 +29,11 @@ This paper proposes Unsafe2Safe, a fully automatic privacy-preserving pipeline t
 
 ## Background & Motivation
 
-1. **State of the Field**: As large-scale visual datasets (e.g., LAION) become widely used, personal privacy concerns in images—faces, license plates, health information, etc.—have attracted increasing attention. Existing anonymization methods focus primarily on facial anonymization (e.g., DeepPrivacy2, blurring/mosaicking), covering only a narrow range of privacy elements.
+1. **Background**: As large-scale visual datasets (e.g., LAION) become widely used, personal privacy concerns in images—faces, license plates, health information, etc.—have attracted increasing attention. Existing anonymization methods focus primarily on facial anonymization (e.g., DeepPrivacy2, blurring/mosaicking), covering only a narrow range of privacy elements.
 2. **Limitations of Prior Work**: (1) Traditional facial anonymization addresses only faces, ignoring license plates, health identifiers, personal opinions, and other privacy elements; (2) anonymized images often compromise scene semantic integrity, causing significant performance degradation on downstream tasks (classification, VQA); (3) anonymization may introduce new demographic biases (e.g., consistently replacing faces with those of a single ethnicity).
-3. **Root Cause**: Effective anonymization requires substantial modification of privacy regions, yet such modifications disrupt the semantic information needed for downstream tasks—a fundamental tension between privacy and utility.
-4. **Paper Goals**: Design a fully automatic and controllable anonymization pipeline that maximizes privacy protection while minimizing downstream task performance loss and balancing demographic distribution.
-5. **Starting Point**: Leveraging the multimodal understanding capabilities of VLMs for privacy inspection and scene description, LLMs for generating plausible replacement instructions, and diffusion editors for semantics-preserving local modification.
+3. **Key Challenge**: Effective anonymization requires substantial modification of privacy regions, yet such modifications disrupt the semantic information needed for downstream tasks—a fundamental tension between privacy and utility.
+4. **Goal**: Design a fully automatic and controllable anonymization pipeline that maximizes privacy protection while minimizing downstream task performance loss and balancing demographic distribution.
+5. **Key Insight**: Leveraging the multimodal understanding capabilities of VLMs for privacy inspection and scene description, LLMs for generating plausible replacement instructions, and diffusion editors for semantics-preserving local modification.
 6. **Core Idea**: Four sequential stages—VLM inspection → dual captioning → LLM instructions → diffusion editing—each addressing a specific sub-problem. A Safe Cross-Attention module performs dual-condition attention to simultaneously preserve semantics and execute edits.
 
 ## Method

@@ -30,11 +30,11 @@ This paper proposes the AGO framework, which handles known categories via noise-
 
 ### Limitations of Prior Work
 
-**State of the Field**: 3D semantic occupancy prediction relies on costly 3D annotations. Self-supervised methods exploit VLMs to generate pseudo-labels, but face two core issues: (1) conventional supervision based on pseudo-labels is constrained to a fixed label space and cannot predict unknown categories; (2) directly aligning with VLM image embeddings introduces a severe modality gap (image–text similarity ranges only ~0.1), leading to unreliable predictions.
+**Background**: 3D semantic occupancy prediction relies on costly 3D annotations. Self-supervised methods exploit VLMs to generate pseudo-labels, but face two core issues: (1) conventional supervision based on pseudo-labels is constrained to a fixed label space and cannot predict unknown categories; (2) directly aligning with VLM image embeddings introduces a severe modality gap (image–text similarity ranges only ~0.1), leading to unreliable predictions.
 
 ### Paper Goals
 
-**Paper Goals**: How can a 3D occupancy model maintain strong prediction performance on known categories while acquiring open-world generalization to predict unknown categories?
+**Goal**: How can a 3D occupancy model maintain strong prediction performance on known categories while acquiring open-world generalization to predict unknown categories?
 
 ## Method
 

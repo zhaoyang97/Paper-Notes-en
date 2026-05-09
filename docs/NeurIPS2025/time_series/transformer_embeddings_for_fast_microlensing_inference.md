@@ -29,10 +29,10 @@ This paper combines a Transformer encoder with Neural Posterior Estimation (NPE)
 
 ## Background & Motivation
 
-- **State of the Field**: Free-floating planets (FFPs) may be among the most abundant Earth-mass exoplanets, and microlensing is the most promising technique for detecting them.
+- **Background**: Free-floating planets (FFPs) may be among the most abundant Earth-mass exoplanets, and microlensing is the most promising technique for detecting them.
 - **Limitations of Prior Work**: The Nancy Grace Roman Space Telescope is expected to detect thousands of FFPs, demanding rapid signal characterization at scale. Traditional MCMC methods are computationally prohibitive and cannot scale to Roman's billions of light curves. Prior RNN-based approaches suffer **catastrophic failure** upon the introduction of minor data gaps, exposing the classical challenge of distributional shift in time series.
-- **Root Cause**: Conventional sequential models are ill-suited for irregularly sampled, variable-length, and sparse time series data.
-- **Paper Goals**: Simulation-based inference (SBI) provides an amortized posterior estimation framework — train once, infer extremely fast. The self-attention mechanism of Transformers naturally accommodates irregular sampling, variable lengths, and sparse observations.
+- **Key Challenge**: Conventional sequential models are ill-suited for irregularly sampled, variable-length, and sparse time series data.
+- **Goal**: Simulation-based inference (SBI) provides an amortized posterior estimation framework — train once, infer extremely fast. The self-attention mechanism of Transformers naturally accommodates irregular sampling, variable lengths, and sparse observations.
 
 ## Method
 

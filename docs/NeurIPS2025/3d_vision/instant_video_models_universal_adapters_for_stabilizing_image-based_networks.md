@@ -29,18 +29,18 @@ This paper proposes a class of universal Stabilization Adapters that can be inse
 
 ## Background & Motivation
 
-**State of the Field**: Video is commonly processed frame by frame — image datasets are more abundant, image models are cheaper to train, and per-frame performance gains often transfer to video tasks.
+**Background**: Video is commonly processed frame by frame — image datasets are more abundant, image models are cheaper to train, and per-frame performance gains often transfer to video tasks.
 
 **Limitations of Prior Work**:
 - Frame-by-frame processing introduces temporal inconsistencies (flickering, abrupt changes), degrading perceptual quality and downstream system reliability.
 - Real-world deployment faces transient corruptions (sensor noise, compression artifacts, adverse weather), which simultaneously exacerbate instability and reduce accuracy.
 - Existing video models are typically designed for specific tasks and lack generality.
 
-**Root Cause**: Enhancing temporal stability may lead to over-smoothing, reducing accuracy; a balance between precision and stability is required.
+**Key Challenge**: Enhancing temporal stability may lead to over-smoothing, reducing accuracy; a balance between precision and stability is required.
 
-**Paper Goals**: Design a universal, lightweight, and modular approach that enables pretrained image models to achieve temporal stability and corruption robustness during video inference without sacrificing accuracy.
+**Goal**: Design a universal, lightweight, and modular approach that enables pretrained image models to achieve temporal stability and corruption robustness during video inference without sacrificing accuracy.
 
-**Starting Point**: Model stability and robustness jointly within a single loss function; theoretically analyze the properties of this loss to avoid "over-smoothing reality"; and design learnable adapters for adaptive stabilization.
+**Key Insight**: Model stability and robustness jointly within a single loss function; theoretically analyze the properties of this loss to avoid "over-smoothing reality"; and design learnable adapters for adaptive stabilization.
 
 **Core Idea**: A controller network predicts element-wise EMA decay rates, allowing the degree of stabilization to adapt to the rate of scene change. It is theoretically shown that when $\lambda < 1/2$, the ground truth is always the global minimum of the loss.
 

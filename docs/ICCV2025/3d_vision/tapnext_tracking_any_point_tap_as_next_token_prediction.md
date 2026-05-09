@@ -29,15 +29,15 @@ TAPNext reformulates Tracking Any Point (TAP) in video as a sequential masked to
 
 ## Background & Motivation
 
-**State of the Field**: Tracking Any Point (TAP) in video is a fundamental computer vision task with broad applications in robotics, video editing, and 3D reconstruction. Dominant methods such as TAPIR, CoTracker, and BootsTAP rely on carefully engineered tracking-specific components, including correlation pyramids, temporal windowing, and iterative refinement.
+**Background**: Tracking Any Point (TAP) in video is a fundamental computer vision task with broad applications in robotics, video editing, and 3D reconstruction. Dominant methods such as TAPIR, CoTracker, and BootsTAP rely on carefully engineered tracking-specific components, including correlation pyramids, temporal windowing, and iterative refinement.
 
 **Limitations of Prior Work**: Existing methods suffer from several critical issues: (1) heavy reliance on tracking-specific inductive biases (e.g., correlation volume construction, heuristic occlusion estimation) constrains generality and scalability; (2) many methods require temporal windowing—processing multiple frames simultaneously—which introduces latency and additional complexity; (3) iterative optimization (e.g., iterative updates in TAPIR) incurs substantial inference cost.
 
-**Root Cause**: There is an inherent tension between tracking performance and architectural simplicity. To improve accuracy, existing methods continuously stack specialized components, leading to increasingly complex systems. In contrast, experience from NLP demonstrates that simple, unified architectures (e.g., Transformer with next token prediction) combined with large-scale training can consistently outperform carefully tuned task-specific designs.
+**Key Challenge**: There is an inherent tension between tracking performance and architectural simplicity. To improve accuracy, existing methods continuously stack specialized components, leading to increasingly complex systems. In contrast, experience from NLP demonstrates that simple, unified architectures (e.g., Transformer with next token prediction) combined with large-scale training can consistently outperform carefully tuned task-specific designs.
 
-**Paper Goals**: The paper aims to design a minimalist point tracking framework that removes all tracking-specific inductive biases, and to verify whether a simple sequence prediction paradigm can match or surpass the state of the art on TAP benchmarks.
+**Goal**: The paper aims to design a minimalist point tracking framework that removes all tracking-specific inductive biases, and to verify whether a simple sequence prediction paradigm can match or surpass the state of the art on TAP benchmarks.
 
-**Starting Point**: Inspired by autoregressive models in natural language processing, the authors observe that a point trajectory is intrinsically a sequence—the point's location at each frame constitutes a token. Framing tracking as "predict the next token given preceding tokens" allows the task to be solved with a standard sequence model.
+**Key Insight**: Inspired by autoregressive models in natural language processing, the authors observe that a point trajectory is intrinsically a sequence—the point's location at each frame constitutes a token. Framing tracking as "predict the next token given preceding tokens" allows the task to be solved with a standard sequence model.
 
 **Core Idea**: TAP is reformulated as sequential masked token decoding. Image features from video frames and existing trajectory points serve as known tokens, while the unknown position in the next frame is represented as a masked token. A Transformer directly predicts the masked token, enabling fully causal, frame-by-frame online tracking.
 

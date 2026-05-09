@@ -29,15 +29,15 @@ Trinity introduces a lightweight coordinator (0.6B SLM + ~10K trainable paramete
 
 ## Background & Motivation
 
-**State of the Field**: LLM scaling laws remain effective but are increasingly costly with diminishing returns. Model merging is constrained by architectural incompatibility and closed-source APIs. Macro-level test-time model composition (coordination) represents a promising alternative.
+**Background**: LLM scaling laws remain effective but are increasingly costly with diminishing returns. Model merging is constrained by architectural incompatibility and closed-source APIs. Macro-level test-time model composition (coordination) represents a promising alternative.
 
 **Limitations of Prior Work**: (1) Existing routing/coordination methods (MasRouter, RouterDC, Smoothie, etc.) fail to effectively exploit the complementary strengths of diverse models; some even degrade performance below random selection. (2) These methods lack rich contextual understanding of input queries to make effective delegation decisions.
 
-**Root Cause**: A coordinator must possess sufficient semantic understanding to correctly assign tasks, yet need not—and should not—be as powerful as the underlying agents. The core challenge is learning the most effective coordination strategy with minimal parameters.
+**Key Challenge**: A coordinator must possess sufficient semantic understanding to correctly assign tasks, yet need not—and should not—be as powerful as the underlying agents. The core challenge is learning the most effective coordination strategy with minimal parameters.
 
-**Paper Goals**: (1) How to extract sufficient semantic signals from a small model's internal representations for coordination? (2) How to optimize coordination strategies under an extreme parameter budget (~10K)? (3) How to design effective multi-turn collaboration patterns?
+**Goal**: (1) How to extract sufficient semantic signals from a small model's internal representations for coordination? (2) How to optimize coordination strategies under an extreme parameter budget (~10K)? (3) How to design effective multi-turn collaboration patterns?
 
-**Starting Point**: Leveraging SLM hidden states (rather than generated text) as contextual representations, using an ultra-lightweight head for routing decisions, and optimizing via evolutionary strategies rather than RL.
+**Key Insight**: Leveraging SLM hidden states (rather than generated text) as contextual representations, using an ultra-lightweight head for routing decisions, and optimizing via evolutionary strategies rather than RL.
 
 **Core Idea**: The hidden states of a small model contain sufficient semantic signals such that a head with fewer than 20K parameters can coordinate multiple top-tier LLMs to surpass any single model.
 

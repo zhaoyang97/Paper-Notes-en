@@ -28,15 +28,15 @@ This paper proposes FedRAIN-Lite, a federated reinforcement learning framework t
 
 ## Background & Motivation
 
-**State of the Field**: Subgrid parameterization in climate models (e.g., radiation, convection, turbulence) has traditionally relied on static parameters tuned offline against observational data. This approach is costly, inflexible, and poorly suited to the dynamic variability of climate states.
+**Background**: Subgrid parameterization in climate models (e.g., radiation, convection, turbulence) has traditionally relied on static parameters tuned offline against observational data. This approach is costly, inflexible, and poorly suited to the dynamic variability of climate states.
 
 **Limitations of Prior Work**: The RAIN framework (Nath et al., 2024) demonstrated the feasibility of RL-based parameterization in idealized climate models, but it treats the entire system as a single agent, lacking spatial decomposition and regional adaptability, and cannot scale to the spatial grid structure of realistic GCMs.
 
-**Root Cause**: Realistic GCMs inherently possess a spatially decomposed structure—physical modules operate per latitude band—yet existing RL methods model the globe as a monolithic entity, failing to exploit regional specificity or enable parallelization.
+**Key Challenge**: Realistic GCMs inherently possess a spatially decomposed structure—physical modules operate per latitude band—yet existing RL methods model the globe as a monolithic entity, failing to exploit regional specificity or enable parallelization.
 
-**Paper Goals**: How can RL parameterization policies mirror the spatially decomposed structure of GCMs? How should agents across latitude bands coordinate their learning? Which RL algorithm is best suited to this setting?
+**Goal**: How can RL parameterization policies mirror the spatially decomposed structure of GCMs? How should agents across latitude bands coordinate their learning? Which RL algorithm is best suited to this setting?
 
-**Starting Point**: A federated learning paradigm is adopted—each latitude band corresponds to a local agent, and policy network parameters are periodically aggregated via FedAvg, preserving regional specialization while maintaining global consistency.
+**Key Insight**: A federated learning paradigm is adopted—each latitude band corresponds to a local agent, and policy network parameters are periodically aggregated via FedAvg, preserving regional specialization while maintaining global consistency.
 
 **Core Idea**: Map GCM architecture through spatially decomposed federated RL policies to enable regionally adaptive climate parameter learning.
 

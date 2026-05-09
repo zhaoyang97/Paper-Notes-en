@@ -31,13 +31,13 @@ This paper proposes Flow Density Control (FDC), which generalizes the fine-tunin
 
 Large-scale generative models have demonstrated strong capabilities in molecular design, protein docking, and image generation, yet practical deployment requires task-specific fine-tuning:
 
-- **State of the Field**: Existing fine-tuning methods are restricted to KL-regularized expected reward maximization (Linear GO).
+- **Background**: Existing fine-tuning methods are restricted to KL-regularized expected reward maximization (Linear GO).
 - **Limitations of Prior Work**: Real-world requirements far exceed this scope:
     - **Risk-averse generation**: Drug design requires worst-case control (CVaR).
     - **Novelty exploration**: Scientific discovery demands extreme samples (SQ utility).
     - **Diversity exploration**: Entropy maximization is needed to cover low-probability yet valuable modes.
     - **Experimental design**: Nonlinear utilities such as log-det are required.
-- **Root Cause**: KL divergence neglects low-probability valuable modes and cannot exploit known geometric structure of the sample space.
+- **Key Challenge**: KL divergence neglects low-probability valuable modes and cannot exploit known geometric structure of the sample space.
 
 **Core Problem**: How to provably fine-tune flow/diffusion models to optimize arbitrary utility functions with arbitrary divergence regularization?
 

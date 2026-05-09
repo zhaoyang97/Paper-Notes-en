@@ -29,7 +29,7 @@ This paper proposes FaceCraft4D, a framework that generates animatable 360° 4D 
 
 ## Background & Motivation
 
-**State of the Field**: 4D head generation (drivable 3D head models) has broad applications in gaming, filmmaking, and education. High-quality methods such as HQ3DAvatar and GaussianAvatar typically require multi-view video input and accurate camera pose estimation.
+**Background**: 4D head generation (drivable 3D head models) has broad applications in gaming, filmmaking, and education. High-quality methods such as HQ3DAvatar and GaussianAvatar typically require multi-view video input and accurate camera pose estimation.
 
 **Limitations of Prior Work**:
    - Multi-view video capture is impractical for real-world deployment.
@@ -37,11 +37,11 @@ This paper proposes FaceCraft4D, a framework that generates animatable 360° 4D 
    - 2D-based methods (e.g., AniPortrait) inherently lack multi-view consistency.
    - Hybrid 2D+3D methods cannot handle extreme camera angles.
 
-**Root Cause**: A single image is extremely information-limited — it lacks depth, multi-view, and dynamic expression information, while collecting multi-view full-head animation datasets for end-to-end training is prohibitively difficult.
+**Key Challenge**: A single image is extremely information-limited — it lacks depth, multi-view, and dynamic expression information, while collecting multi-view full-head animation datasets for end-to-end training is prohibitively difficult.
 
-**Paper Goals**: Starting from a single image, simultaneously achieve: (a) 360° full-view coverage; (b) controllable expression animation; (c) multi-view-consistent high-quality texture; (d) a purely 3D representation for real-time rendering.
+**Goal**: Starting from a single image, simultaneously achieve: (a) 360° full-view coverage; (b) controllable expression animation; (c) multi-view-consistent high-quality texture; (d) a purely 3D representation for real-time rendering.
 
-**Starting Point**: Divide and conquer — leverage three complementary priors (a 3D GAN for shape, an image diffusion model for texture, and a video model for expression) to synthesize personalized multi-view data, then train an explicit 3D representation.
+**Key Insight**: Divide and conquer — leverage three complementary priors (a 3D GAN for shape, an image diffusion model for texture, and a video model for expression) to synthesize personalized multi-view data, then train an explicit 3D representation.
 
 **Core Idea**: Combine 3D shape, 2D image, and video priors to synthesize multi-view expression data, and robustly reconstruct a 4D Gaussian avatar from inconsistent data via the COIN training strategy.
 

@@ -28,15 +28,15 @@ By observing significant cross-user similarity (collaborative signals) in KV cac
 
 ## Background & Motivation
 
-**State of the Field**: Sequential recommendation models (SIM, HSTU, etc.) adopt Transformer attention mechanisms to improve performance and introduce KV cache technology to precompute and cache K/V for reduced inference latency.
+**Background**: Sequential recommendation models (SIM, HSTU, etc.) adopt Transformer attention mechanisms to improve performance and introduce KV cache technology to precompute and cache K/V for reduced inference latency.
 
 **Limitations of Prior Work**: Recommendation systems serve enormous user bases (hundreds of millions), each potentially with lengthy interaction histories, causing total KV cache volume to rapidly exceed GPU memory capacity and necessitating offloading to CPU/secondary storage, which introduces substantial transfer latency.
 
-**Root Cause**: KV compression methods from the LLM literature (e.g., token pruning, MLA dimensionality reduction) compress only single-user sequences and ignore the cross-user collaborative signals unique to recommendation scenarios.
+**Key Challenge**: KV compression methods from the LLM literature (e.g., token pruning, MLA dimensionality reduction) compress only single-user sequences and ignore the cross-user collaborative signals unique to recommendation scenarios.
 
-**Paper Goals**: Exploit cross-user KV similarity to achieve extreme compression—storing the majority of information in a globally shared pool while retaining only very low-dimensional personalized KV per user.
+**Goal**: Exploit cross-user KV similarity to achieve extreme compression—storing the majority of information in a globally shared pool while retaining only very low-dimensional personalized KV per user.
 
-**Starting Point**: SVD decomposition of K/V reveals that principal components (>90% of information) exhibit strong cross-user correlation, while residuals (<10% of information) are user-specific—providing a quantitative basis for determining what can be shared.
+**Key Insight**: SVD decomposition of K/V reveals that principal components (>90% of information) exhibit strong cross-user correlation, while residuals (<10% of information) are user-specific—providing a quantitative basis for determining what can be shared.
 
 **Core Idea**: A learnable global KV pool stores cross-user shared information; each user caches only low-dimensional personalized KV plus global indices, achieving an extreme compression ratio of 0.8%.
 

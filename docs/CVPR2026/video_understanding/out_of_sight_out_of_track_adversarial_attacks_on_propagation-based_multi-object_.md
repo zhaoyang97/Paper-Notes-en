@@ -29,15 +29,15 @@ This paper presents the first systematic analysis of adversarial vulnerabilities
 
 ## Background & Motivation
 
-1. **State of the Field**: Multi-object tracking (MOT) has evolved from the traditional Tracking-by-Detection (TBD) paradigm to the more advanced Tracking-by-Propagation (TBP) paradigm. TBP trackers (e.g., MOTR, MOTRv2, MeMOTR, Samba, CO-MOT) achieve end-to-end detection and association by autoregressively propagating track queries, eliminating heuristic components such as Kalman filtering.
+1. **Background**: Multi-object tracking (MOT) has evolved from the traditional Tracking-by-Detection (TBD) paradigm to the more advanced Tracking-by-Propagation (TBP) paradigm. TBP trackers (e.g., MOTR, MOTRv2, MeMOTR, Samba, CO-MOT) achieve end-to-end detection and association by autoregressively propagating track queries, eliminating heuristic components such as Kalman filtering.
 
 2. **Limitations of Prior Work**: Existing adversarial attacks against MOT (Daedalus, Hijacking, F&F, BankTweak) are all designed for TBD architectures — targeting NMS thresholds, Kalman filter predictions, or independent appearance feature banks — none of which exist in end-to-end TBP trackers.
 
-3. **Root Cause**: TBP trackers introduce fundamentally new structural vulnerabilities: (1) the **fixed query budget** creates a zero-sum game — queries allocated to spurious tracks necessarily reduce capacity for legitimate ones; (2) **recurrent hidden state propagation** creates temporal dependency chains — state corruption propagates across frames; (3) **built-in temporal memory** amplifies attack persistence.
+3. **Key Challenge**: TBP trackers introduce fundamentally new structural vulnerabilities: (1) the **fixed query budget** creates a zero-sum game — queries allocated to spurious tracks necessarily reduce capacity for legitimate ones; (2) **recurrent hidden state propagation** creates temporal dependency chains — state corruption propagates across frames; (3) **built-in temporal memory** amplifies attack persistence.
 
-4. **Paper Goals**: Design attack methods tailored to the query budget and temporal memory mechanisms unique to TBP trackers.
+4. **Goal**: Design attack methods tailored to the query budget and temporal memory mechanisms unique to TBP trackers.
 
-5. **Starting Point**: Starting from the core mechanisms of TBP (query budget allocation and memory propagation via the query updater), the paper designs two complementary attacks: one that "infiltrates" (creating spurious tracks to occupy the budget) and one that "erases" (destroying the memory of legitimate tracks).
+5. **Key Insight**: Starting from the core mechanisms of TBP (query budget allocation and memory propagation via the query updater), the paper designs two complementary attacks: one that "infiltrates" (creating spurious tracks to occupy the budget) and one that "erases" (destroying the memory of legitimate tracks).
 
 6. **Core Idea**: Subvert TBP tracking from within its own architecture by either flooding spurious queries to exhaust the budget or corrupting temporal memory to cause catastrophic forgetting.
 

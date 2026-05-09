@@ -27,11 +27,11 @@ content_hash: d80aa0da5a06228b
 CycleManip is the first work to systematically address cyclic robotic manipulation tasks (e.g., shaking a bottle N times). It enhances historical perception via a cost-aware history sampling strategy and improves historical understanding through multi-task learning auxiliary objectives, enabling controllable cycle-count manipulation in an end-to-end imitation learning framework.
 
 ## Background & Motivation
-1. **State of the Field**: Imitation learning and VLA models have demonstrated strong performance on sequential manipulation tasks, yet research on cyclic tasks—requiring repeated actions and accurate termination—remains nearly absent.
+1. **Background**: Imitation learning and VLA models have demonstrated strong performance on sequential manipulation tasks, yet research on cyclic tasks—requiring repeated actions and accurate termination—remains nearly absent.
 2. **Limitations of Prior Work**: (i) Policies with short observation windows cannot distinguish different phases of a cycle, as visual observations are nearly identical after each repetition; (ii) no benchmark exists with sufficient data and automated evaluation tools for cyclic tasks.
-3. **Root Cause**: Cyclic tasks are non-Markovian processes where correct decisions depend not only on the current observation but also on accumulated progress. However, extending the observation horizon incurs substantial computational overhead.
-4. **Paper Goals**: Design an end-to-end imitation learning framework that enables robots to execute cyclic actions and terminate at the correct moment.
-5. **Starting Point**: Decompose observations into high-cost (visual) and low-cost (proprioceptive) modalities and sample them differently; leverage multi-task learning to promote understanding of cyclic phases.
+3. **Key Challenge**: Cyclic tasks are non-Markovian processes where correct decisions depend not only on the current observation but also on accumulated progress. However, extending the observation horizon incurs substantial computational overhead.
+4. **Goal**: Design an end-to-end imitation learning framework that enables robots to execute cyclic actions and terminate at the correct moment.
+5. **Key Insight**: Decompose observations into high-cost (visual) and low-cost (proprioceptive) modalities and sample them differently; leverage multi-task learning to promote understanding of cyclic phases.
 6. **Core Idea**: Cost-aware sampling (sparse visual + dense proprioceptive) combined with a progress prediction auxiliary task yields a cycle-aware policy.
 
 ## Method

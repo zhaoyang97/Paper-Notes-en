@@ -29,15 +29,15 @@ This paper proposes Reinforcement Learning from Checklist Feedback (RLCF), which
 
 ## Background & Motivation
 
-**State of the Field**: Instruction following is a core requirement for practical LLMs. Current post-training pipelines typically adopt SFT + RLHF (using reward model scores for preference optimization), but reward model signals are scalar values that are too coarse for evaluating complex, multi-requirement instructions.
+**Background**: Instruction following is a core requirement for practical LLMs. Current post-training pipelines typically adopt SFT + RLHF (using reward model scores for preference optimization), but reward model signals are scalar values that are too coarse for evaluating complex, multi-requirement instructions.
 
 **Limitations of Prior Work**: The three dominant automatic feedback paradigms each have significant drawbacks: (1) verifiable instructions cover only format constraints, ignoring subjective dimensions such as style and content; (2) reward models are flexible but highly arbitrary, prone to reward hacking, and high rankings on RewardBench do not necessarily translate to effective RLHF; (3) using large models as judges requires the judge to infer evaluation criteria on its own, blurring the generator–verifier gap.
 
-**Root Cause**: Both reward models and AI judges evaluate all aspects of all instructions with a single scalar or fixed set of dimensions, whereas the evaluation dimensions required by user instructions are highly dynamic and diverse. For example, "translate into Spanish" and "write an argument containing exactly 3 commas" require entirely different evaluation criteria.
+**Key Challenge**: Both reward models and AI judges evaluate all aspects of all instructions with a single scalar or fixed set of dimensions, whereas the evaluation dimensions required by user instructions are highly dynamic and diverse. For example, "translate into Spanish" and "write an argument containing exactly 3 commas" require entirely different evaluation criteria.
 
-**Paper Goals**: Design an automatic, flexible, intuitive, and general-purpose method for scoring responses—generating instruction-specific, multi-dimensional evaluation criteria (checklists) for each instruction to replace reward models in RL training.
+**Goal**: Design an automatic, flexible, intuitive, and general-purpose method for scoring responses—generating instruction-specific, multi-dimensional evaluation criteria (checklists) for each instruction to replace reward models in RL training.
 
-**Starting Point**: Decompose the complex problem of response quality evaluation into a series of simple yes/no questions (checklists), each answered either by an AI judge or by automatically generated verification code. This leverages the principle that a combination of simple judgments outperforms a single complex judgment.
+**Key Insight**: Decompose the complex problem of response quality evaluation into a series of simple yes/no questions (checklists), each answered either by an AI judge or by automatically generated verification code. This leverages the principle that a combination of simple judgments outperforms a single complex judgment.
 
 **Core Idea**: Dynamically generate instruction-specific checklists from instructions via a candidate-based method, score each item using an AI judge and code verifier, aggregate weighted scores, and train with DPO for preference optimization.
 

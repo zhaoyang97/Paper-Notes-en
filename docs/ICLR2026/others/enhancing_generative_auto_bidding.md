@@ -26,15 +26,15 @@ content_hash: 3d353ae48768deda
 This paper proposes AIGB-Pearl, which introduces an offline trajectory evaluator and a KL-Lipschitz constrained score maximization scheme for generative auto-bidding. The framework enables generative models to safely surpass the performance ceiling imposed by static offline data under theoretical guarantees, achieving a significant GMV improvement of +3% on Taobao's real-world advertising system.
 
 ## Background & Motivation
-**State of the Field**: Auto-bidding is a core technology in online advertising. AI-Generated Bidding (AIGB) models bidding as a conditional trajectory generation task using generative models such as diffusion models, learning the conditional trajectory distribution $p_\theta(\tau|y)$ from offline data. At inference time, high-quality conditions $y^*$ are specified to generate high-return bidding trajectories. AIGB avoids the bootstrapping instability of TD learning and outperforms standard offline RL methods.
+**Background**: Auto-bidding is a core technology in online advertising. AI-Generated Bidding (AIGB) models bidding as a conditional trajectory generation task using generative models such as diffusion models, learning the conditional trajectory distribution $p_\theta(\tau|y)$ from offline data. At inference time, high-quality conditions $y^*$ are specified to generate high-return bidding trajectories. AIGB avoids the bootstrapping instability of TD learning and outperforms standard offline RL methods.
 
 **Limitations of Prior Work**: AIGB is essentially conditional behavior cloning—it learns to imitate from offline data without any mechanism to leverage feedback signals to improve generation quality. When inference-time conditions extrapolate beyond the training data distribution, generation quality becomes uncontrollable and may yield risky bidding trajectories. By analogy with LLMs, AIGB corresponds to SFT without the RLHF step.
 
-**Root Cause**: Applying policy optimization to AIGB (i.e., maximizing evaluator scores) is desirable, yet the evaluator is unreliable outside the offline data support—if the generative model deviates too far from the offline data, evaluator scores become inaccurate (OOD problem), causing optimization to diverge.
+**Key Challenge**: Applying policy optimization to AIGB (i.e., maximizing evaluator scores) is desirable, yet the evaluator is unreliable outside the offline data support—if the generative model deviates too far from the offline data, evaluator scores become inaccurate (OOD problem), causing optimization to diverge.
 
-**Paper Goals**: How to enable AIGB to improve generation quality through policy optimization while ensuring safety (i.e., not deviating too far from the data)?
+**Goal**: How to enable AIGB to improve generation quality through policy optimization while ensuring safety (i.e., not deviating too far from the data)?
 
-**Starting Point**: A theoretical analysis of the upper bound on evaluator bias reveals that the bias can be controlled by two factors: (1) the Lipschitz continuity of the generative model with respect to condition $y$ (controlling extrapolation sensitivity), and (2) the KL divergence between the generative model and the offline data (controlling imitation error).
+**Key Insight**: A theoretical analysis of the upper bound on evaluator bias reveals that the bias can be controlled by two factors: (1) the Lipschitz continuity of the generative model with respect to condition $y$ (controlling extrapolation sensitivity), and (2) the KL divergence between the generative model and the offline data (controlling imitation error).
 
 **Core Idea**: Construct a trajectory evaluator to provide feedback, and impose dual KL-Lipschitz constraints to ensure safe extrapolation, organically unifying generative planning with policy optimization.
 

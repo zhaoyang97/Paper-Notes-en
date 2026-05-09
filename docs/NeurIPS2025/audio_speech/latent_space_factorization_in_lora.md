@@ -29,15 +29,15 @@ This paper proposes FVAE-LoRA, which incorporates a VAE with dual latent spaces 
 
 ## Background & Motivation
 
-**State of the Field**: LoRA has become the dominant parameter-efficient fine-tuning (PEFT) method, enabling efficient adaptation via low-rank matrices $\Delta\mathbf{W} = \mathbf{B}\mathbf{A}$ ($r \ll \min(d,k)$). Numerous variants (AdaLoRA, DoRA, PiSSA, rsLoRA, etc.) have extended LoRA from structural, optimization, and compression perspectives.
+**Background**: LoRA has become the dominant parameter-efficient fine-tuning (PEFT) method, enabling efficient adaptation via low-rank matrices $\Delta\mathbf{W} = \mathbf{B}\mathbf{A}$ ($r \ll \min(d,k)$). Numerous variants (AdaLoRA, DoRA, PiSSA, rsLoRA, etc.) have extended LoRA from structural, optimization, and compression perspectives.
 
 **Limitations of Prior Work**: The update mechanism of standard LoRA lacks explicit control — the low-rank subspace $\text{Im}(\mathbf{A})$ learned via gradient descent does not necessarily contain only task-relevant information, and may retain irrelevant or even harmful features from pretraining.
 
-**Root Cause**: While low-rank constraints provide parameter efficiency, *what information is encoded* in the low-rank update is equally critical — yet none of the existing variants provide semantic control over the update content.
+**Key Challenge**: While low-rank constraints provide parameter efficiency, *what information is encoded* in the low-rank update is equally critical — yet none of the existing variants provide semantic control over the update content.
 
-**Paper Goals**: To design a mechanism that explicitly separates task-critical information ($\mathbf{z}_1$) from residual information ($\mathbf{z}_2$), such that the LoRA update is driven solely by task-relevant features.
+**Goal**: To design a mechanism that explicitly separates task-critical information ($\mathbf{z}_1$) from residual information ($\mathbf{z}_2$), such that the LoRA update is driven solely by task-relevant features.
 
-**Starting Point**: Embedding a VAE into LoRA's parameterization — replacing the $\mathbf{A}$ matrix with a VAE equipped with dual latent spaces, and guiding information separation through a factorized ELBO.
+**Key Insight**: Embedding a VAE into LoRA's parameterization — replacing the $\mathbf{A}$ matrix with a VAE equipped with dual latent spaces, and guiding information separation through a factorized ELBO.
 
 **Core Idea**: A VAE with dual latent spaces is injected into the $\mathbf{A}$ matrix of LoRA. Downstream tasks utilize only the task-relevant $\mathbf{z}_1$, enabling semantic-level information filtering.
 

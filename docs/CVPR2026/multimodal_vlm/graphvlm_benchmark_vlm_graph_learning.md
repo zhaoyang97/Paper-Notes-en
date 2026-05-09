@@ -28,15 +28,15 @@ This paper proposes GraphVLM, a benchmark that systematically evaluates VLMs in 
 
 ## Background & Motivation
 
-**State of the Field**: VLMs have achieved great success in aligning paired modalities (image–text), yet their capacity for multimodal reasoning over structured data (entities connected via graphs) remains largely unexplored. Two paradigms exist in MMGL—GNN-based and LLM-based methods—but the third paradigm of using VLMs directly as graph learning backbones is almost entirely absent.
+**Background**: VLMs have achieved great success in aligning paired modalities (image–text), yet their capacity for multimodal reasoning over structured data (entities connected via graphs) remains largely unexplored. Two paradigms exist in MMGL—GNN-based and LLM-based methods—but the third paradigm of using VLMs directly as graph learning backbones is almost entirely absent.
 
 **Limitations of Prior Work**: (a) Existing MMGL methods lack a unified evaluation protocol, preventing fair comparison across GNN/LLM/VLM approaches; (b) most GNN-based methods perform multimodal fusion via naive feature concatenation; (c) the potential of VLMs in graph learning has been confined to zero-shot inference, leaving their role as trainable backbones unexplored.
 
-**Root Cause**: While VLMs inherently possess cross-modal alignment capabilities, how such capabilities should be combined with the relational structure of graphs, and how VLMs can be most effectively leveraged for MMGL, remain open questions.
+**Key Challenge**: While VLMs inherently possess cross-modal alignment capabilities, how such capabilities should be combined with the relational structure of graphs, and how VLMs can be most effectively leveraged for MMGL, remain open questions.
 
-**Paper Goals**: To establish a systematic benchmark that uniformly evaluates different roles of VLMs in multimodal graph learning and identifies the most effective usage paradigm.
+**Goal**: To establish a systematic benchmark that uniformly evaluates different roles of VLMs in multimodal graph learning and identifies the most effective usage paradigm.
 
-**Starting Point**: The paper decomposes the role of VLMs in MMGL into three complementary paradigms and explores each along distinct axes.
+**Key Insight**: The paper decomposes the role of VLMs in MMGL into three complementary paradigms and explores each along distinct axes.
 
 **Core Idea**: VLM-as-Predictor—directly fine-tuning a VLM as the graph learning backbone with structural signal injection—is the most effective paradigm for multimodal graph learning.
 

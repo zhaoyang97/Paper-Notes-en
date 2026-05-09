@@ -27,15 +27,15 @@ content_hash: ef7c3318c4f38615
 This paper proposes Eagle, a lightweight black-box attribution framework that performs spatial attribution for autoregressive token generation in MLLMs via a unified objective combining insight score (sufficiency) and necessity score (indispensability), and quantifies whether each generated token relies on language priors or perceptual evidence. Eagle comprehensively outperforms existing methods in faithfulness, localization, and hallucination diagnosis while substantially reducing GPU memory requirements.
 
 ## Background & Motivation
-**State of the Field**: MLLMs have achieved remarkable progress in vision-language understanding and generation, yet how generated tokens depend on the visual modality remains poorly understood, limiting interpretability and reliability.
+**Background**: MLLMs have achieved remarkable progress in vision-language understanding and generation, yet how generated tokens depend on the visual modality remains poorly understood, limiting interpretability and reliability.
 
 **Limitations of Prior Work**: (a) Attention visualization methods fail to capture complex cross-modal interactions; (b) gradient-based methods (LLaVA-CAM/IGOS++) are susceptible to textual prior interference, sensitive to cumulative effects in long sequences, and incur large memory overhead; (c) activation map methods (TAM) support only single-token attribution and lack generality; (d) subset-selection-based VPS is restricted to grounding/detection tasks, and its objective cannot be directly transferred to MLLMs.
 
-**Root Cause**: The autoregressive generation paradigm of MLLMs makes classification-style attribution methods difficult to adapt—methods capable of handling multi-token combinatorial attribution are required; meanwhile, activation/gradient methods lack a direct causal link between input and output, rendering them insufficiently faithful.
+**Key Challenge**: The autoregressive generation paradigm of MLLMs makes classification-style attribution methods difficult to adapt—methods capable of handling multi-token combinatorial attribution are required; meanwhile, activation/gradient methods lack a direct causal link between input and output, rendering them insufficiently faithful.
 
-**Paper Goals**: (a) Provide faithful spatial attribution for arbitrary selected output tokens in MLLMs; (b) quantify whether generated tokens rely on visual evidence or language priors.
+**Goal**: (a) Provide faithful spatial attribution for arbitrary selected output tokens in MLLMs; (b) quantify whether generated tokens rely on visual evidence or language priors.
 
-**Starting Point**: Design a black-box framework that is independent of internal model structures (attention/gradients), attributing by observing probability changes through forward inference.
+**Key Insight**: Design a black-box framework that is independent of internal model structures (attention/gradients), attributing by observing probability changes through forward inference.
 
 **Core Idea**: A unified objective combining sufficiency and necessity + greedy subset search + modality influence analysis.
 

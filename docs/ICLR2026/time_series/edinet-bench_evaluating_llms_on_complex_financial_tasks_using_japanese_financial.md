@@ -27,15 +27,15 @@ content_hash: 09b99074dcfa2743
 This paper constructs EDINET-Bench, a financial benchmark derived from ten years of Japanese EDINET annual reports, comprising three expert-level tasks—accounting fraud detection, earnings forecasting, and industry classification—and finds that even state-of-the-art LLMs only marginally outperform logistic regression.
 
 ## Background & Motivation
-**State of the Field**: LLMs have surpassed human performance in mathematics and programming, with benchmark datasets serving as a key driver of progress. However, financial benchmarks remain relatively scarce, and existing ones (e.g., FinQA, ConvFinQA) are mostly simple QA or data extraction tasks.
+**Background**: LLMs have surpassed human performance in mathematics and programming, with benchmark datasets serving as a key driver of progress. However, financial benchmarks remain relatively scarce, and existing ones (e.g., FinQA, ConvFinQA) are mostly simple QA or data extraction tasks.
 
 **Limitations of Prior Work**: Existing financial benchmarks do not involve expert-level reasoning—such as integrating multiple financial statements and textual passages—and thus fail to assess LLM capability on real-world, high-stakes financial tasks.
 
-**Root Cause**: Although LLMs excel at general tasks, financial analysis requires simultaneously processing large volumes of tabular data and textual information while performing complex cross-year reasoning.
+**Key Challenge**: Although LLMs excel at general tasks, financial analysis requires simultaneously processing large volumes of tabular data and textual information while performing complex cross-year reasoning.
 
-**Paper Goals**: Provide the first open-source Japanese financial benchmark requiring expert-level reasoning, and in particular the first publicly available accounting fraud detection dataset.
+**Goal**: Provide the first open-source Japanese financial benchmark requiring expert-level reasoning, and in particular the first publicly available accounting fraud detection dataset.
 
-**Starting Point**: Leveraging ten years of real annual report data from Japan's EDINET system (analogous to the U.S. EDGAR), three challenging tasks are constructed.
+**Key Insight**: Leveraging ten years of real annual report data from Japan's EDINET system (analogous to the U.S. EDGAR), three challenging tasks are constructed.
 
 **Core Idea**: Real annual reports + expert-level financial tasks = revealing the inadequacy of LLMs in financial reasoning.
 

@@ -30,7 +30,7 @@ This paper proposes a method for scalable automatic explanation of visual featur
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: Sparse autoencoders (SAEs) have emerged as a powerful tool for discovering interpretable features in vision models. However, automatically explaining thousands of discovered features at scale remains an open problem.
+**Key Challenge**: **Background**: Sparse autoencoders (SAEs) have emerged as a powerful tool for discovering interpretable features in vision models. However, automatically explaining thousands of discovered features at scale remains an open problem.
 
 Limitations of existing methods (Top-k approaches):
 1. **Correlation-based rather than causal**: Selecting highest-activating images and identifying common patterns is fundamentally a correlational analysis.

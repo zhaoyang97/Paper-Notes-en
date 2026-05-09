@@ -28,15 +28,15 @@ This paper proposes TAM-RL, a framework that formulates terrestrial carbon flux 
 
 ## Background & Motivation
 
-**State of the Field**: Upscaling of terrestrial carbon fluxes (GPP/NEE/RECO) is a central task in carbon cycle research, requiring the extrapolation of sparse flux tower observations to the global scale. FLUXCOM-X-BASE represents the current standard approach, relying on ensemble machine learning methods.
+**Background**: Upscaling of terrestrial carbon fluxes (GPP/NEE/RECO) is a central task in carbon cycle research, requiring the extrapolation of sparse flux tower observations to the global scale. FLUXCOM-X-BASE represents the current standard approach, relying on ensemble machine learning methods.
 
 **Limitations of Prior Work**: (1) Flux tower sites exhibit substantial heterogeneity in ecosystem type and climatic conditions, making generalization with a single model difficult; (2) conventional methods depend heavily on manual feature engineering; (3) prior approaches do not exploit carbon cycle prior knowledge (e.g., NEE = GPP − RECO) during modeling.
 
-**Root Cause**: A model that can adapt to unseen sites without site-specific fine-tuning is needed, while simultaneously satisfying the physical constraints of the carbon cycle.
+**Key Challenge**: A model that can adapt to unseen sites without site-specific fine-tuning is needed, while simultaneously satisfying the physical constraints of the carbon cycle.
 
-**Paper Goals**: To be the first to formulate carbon flux upscaling as a zero-shot regression transfer learning problem.
+**Goal**: To be the first to formulate carbon flux upscaling as a zero-shot regression transfer learning problem.
 
-**Starting Point**: A meta-learning-style pipeline of "support set → task embedding → FiLM modulation," where each site's historical data serves as a support set to produce site-specific modulation parameters.
+**Key Insight**: A meta-learning-style pipeline of "support set → task embedding → FiLM modulation," where each site's historical data serves as a support set to produce site-specific modulation parameters.
 
 **Core Idea**: Zero-shot adaptation to new sites is achieved through site-specific BiLSTM embeddings combined with FiLM modulation, jointly trained with carbon balance equation constraints.
 

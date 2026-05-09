@@ -27,11 +27,11 @@ content_hash: 0dfef1e66c930652
 HAVEN proposes a unified framework combining audiovisual entity cohesion, hierarchical indexing, and agentic search. By leveraging speaker identity as a cross-modal coherence signal, it constructs a four-level hierarchical database (global → scene → clip → entity), achieving state-of-the-art 84.1% overall accuracy on LVBench.
 
 ## Background & Motivation
-1. **State of the Field**: Long video understanding is a major challenge for VLMs; existing approaches (RAG, agent frameworks) remain severely limited when handling hour-long videos.
+1. **Background**: Long video understanding is a major challenge for VLMs; existing approaches (RAG, agent frameworks) remain severely limited when handling hour-long videos.
 2. **Limitations of Prior Work**: (i) Naïve chunk-based RAG causes information fragmentation and loss of global coherence; (ii) the absence of hierarchical video representations forces agents to perform inefficient multi-round retrieval to recover cross-clip continuity.
-3. **Root Cause**: Events in long videos span extended time horizons and evolve across multiple scenes; local clip descriptions cannot capture global narrative structure or long-range entity associations.
-4. **Paper Goals**: Transition from fragmented retrieval to coherent structured understanding—via offline hierarchical database construction and online adaptive agentic search.
-5. **Starting Point**: Speaker identity is exploited as a long-range cross-modal coherence signal that remains effective even when visual cues are unreliable, enabling robust entity representation.
+3. **Key Challenge**: Events in long videos span extended time horizons and evolve across multiple scenes; local clip descriptions cannot capture global narrative structure or long-range entity associations.
+4. **Goal**: Transition from fragmented retrieval to coherent structured understanding—via offline hierarchical database construction and online adaptive agentic search.
+5. **Key Insight**: Speaker identity is exploited as a long-range cross-modal coherence signal that remains effective even when visual cues are unreliable, enabling robust entity representation.
 6. **Core Idea**: Audiovisual entity cohesion (integrating fragmented observations via speaker identity) + four-level hierarchical database + goal-driven multi-granularity agentic search.
 
 ## Method

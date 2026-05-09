@@ -29,7 +29,7 @@ Co-Sparsify proposes a connectivity-aware sparsification framework that restrict
 
 ## Background & Motivation
 
-**State of the Field**: Standard message-passing GNNs (GCN, GIN, GAT, etc.) are bounded in expressivity by the 1-WL test. Higher-order GNNs (HOGNNs) improve expressivity through $k$-tuple message passing under the $k$-WL/$k$-FWL hierarchy, but incur $O(n^k)$ computational complexity. 2-FWL GNNs strike a balance between practicality and expressivity—matching 3-WL power—yet still require $O(n^3)$ computation and $O(n^2)$ memory.
+**Background**: Standard message-passing GNNs (GCN, GIN, GAT, etc.) are bounded in expressivity by the 1-WL test. Higher-order GNNs (HOGNNs) improve expressivity through $k$-tuple message passing under the $k$-WL/$k$-FWL hierarchy, but incur $O(n^k)$ computational complexity. 2-FWL GNNs strike a balance between practicality and expressivity—matching 3-WL power—yet still require $O(n^3)$ computation and $O(n^2)$ memory.
 
 **Limitations of Prior Work**: Existing efficiency-oriented methods (subgraph sampling ESAN, set reduction KCSetGNN, local aggregation 1-2-3-GNN) all trade expressivity for efficiency. A natural question arises: can efficiency be improved by eliminating only computations that are redundant with respect to expressivity?
 

@@ -29,15 +29,15 @@ This paper proposes UNSEEN, a dataset pruning method that improves coreset selec
 
 ## Background & Motivation
 
-**State of the Field**: Dataset pruning (coreset selection) aims to select a small subset from a large training set such that training on the subset approximates full-dataset performance, which is critical for reducing training costs.
+**Background**: Dataset pruning (coreset selection) aims to select a small subset from a large training set such that training on the subset approximates full-dataset performance, which is critical for reducing training costs.
 
 **Limitations of Prior Work**: (1) Most dataset pruning methods optimize training loss, which may favor samples that are easy to fit rather than beneficial for generalization; (2) the distribution of unseen data is ignored—selected coresets may perform well on the training set but generalize poorly to test sets; (3) the value of redundant and boundary samples varies across scenarios, requiring more nuanced assessment.
 
-**Root Cause**: Training efficiency vs. generalization ability—subsets selected to optimize training loss are not necessarily optimal for generalization.
+**Key Challenge**: Training efficiency vs. generalization ability—subsets selected to optimize training loss are not necessarily optimal for generalization.
 
-**Paper Goals**: Guide dataset pruning from a generalization perspective rather than a training efficiency perspective.
+**Goal**: Guide dataset pruning from a generalization perspective rather than a training efficiency perspective.
 
-**Starting Point**: Consider the degree of alignment between the coreset and the unseen data distribution.
+**Key Insight**: Consider the degree of alignment between the coreset and the unseen data distribution.
 
 **Core Idea**: When selecting a coreset, not only minimize training error but also maximize coverage of the unseen data distribution—ensuring that selected samples help the model generalize better.
 

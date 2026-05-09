@@ -29,13 +29,13 @@ This paper formalises the "action-free offline-to-online RL" setting for the fir
 
 ## Background & Motivation
 
-**State of the Field**: Offline RL has demonstrated the ability to learn policies from static datasets, but nearly all existing methods assume complete action labels $(s, a, r, s')$ in the dataset.
+**Background**: Offline RL has demonstrated the ability to learn policies from static datasets, but nearly all existing methods assume complete action labels $(s, a, r, s')$ in the dataset.
 
 **Limitations of Prior Work**: In many real-world scenarios, action information is inherently absent — treatment decisions in medical records are removed for privacy, specific operations in financial transactions are withheld due to proprietary strategy protection, and control signals in robot sensor logs are not recorded due to storage constraints. Such $(s, r, s')$-only datasets are widespread yet cannot be exploited by standard offline RL methods.
 
 **Limitations of Existing Attempts**: (1) The $Q_{SS'}$ methods of Edwards et al. (2020) and Hepburn et al. (2024) estimate the value of state transitions but still rely on action labels during training; (2) Zhu et al. (2023) use a Decision Transformer to learn action-free state policies, but the approach is computationally expensive, yields unstable online guidance, and has not been validated across diverse environments; (3) The action discretisation approach of Seyde et al. (2022) requires bounded action ranges and is incompatible with action-free datasets. **No existing method simultaneously satisfies: learning from action-free offline data + high-dimensional scalability + effective guidance of online learning.**
 
-**Root Cause**: Action-free data cannot be directly used by any standard value-based or policy-based RL algorithm. Directly regressing to predict the next state in continuous space leads to instability and overfitting.
+**Key Challenge**: Action-free data cannot be directly used by any standard value-based or policy-based RL algorithm. Directly regressing to predict the next state in continuous space leads to instability and overfitting.
 
 **Core Idea**: Rather than learning "which action to take," the method learns "in which direction the state should change" — by discretising continuous state differences into directional tokens $\{-1, 0, 1\}$, an ill-posed continuous regression problem is transformed into a structured classification problem, circumventing the action space while retaining sufficient decision-relevant information.
 

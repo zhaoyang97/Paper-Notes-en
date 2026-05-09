@@ -27,15 +27,15 @@ This paper proposes a cortically inspired modular perceptual AI architecture blu
 
 ## Background & Motivation
 
-**State of the Field**: Current perceptual AI systems are dominated by large-scale end-to-end monolithic models (e.g., GPT-4V, Gemini) that achieve strong performance across diverse tasks.
+**Background**: Current perceptual AI systems are dominated by large-scale end-to-end monolithic models (e.g., GPT-4V, Gemini) that achieve strong performance across diverse tasks.
 
 **Limitations of Prior Work**: Monolithic models operate as opaque black boxes, exhibiting brittleness under out-of-distribution scenarios and lacking interpretability and modular internal reasoning. They are unable to perform compositional generalization and adaptive robust reasoning in the manner of the human brain.
 
-**Root Cause**: Monolithic architectures couple all functionality within a shared parameter space, resulting in entangled internal representations that are difficult to optimize in a targeted manner, where local updates can produce unintended downstream effects.
+**Key Challenge**: Monolithic architectures couple all functionality within a shared parameter space, resulting in entangled internal representations that are difficult to optimize in a targeted manner, where local updates can produce unintended downstream effects.
 
-**Paper Goals**: To systematically translate cortical organizational principles from neuroscience into AI architecture design, realizing a modular, interpretable, and robust perceptual system.
+**Goal**: To systematically translate cortical organizational principles from neuroscience into AI architecture design, realizing a modular, interpretable, and robust perceptual system.
 
-**Starting Point**: The paper departs from three core organizational principles of the cerebral cortex — modular specialization, predictive coding feedback, and cross-modal integration — to propose an actionable architectural blueprint.
+**Key Insight**: The paper departs from three core organizational principles of the cerebral cortex — modular specialization, predictive coding feedback, and cross-modal integration — to propose an actionable architectural blueprint.
 
 **Core Idea**: Replace monolithic black-box networks with cortically inspired modularity, predictive feedback, and cross-modal integration, bringing AI perceptual architectures closer to the division-of-labor paradigm observed in the human brain.
 

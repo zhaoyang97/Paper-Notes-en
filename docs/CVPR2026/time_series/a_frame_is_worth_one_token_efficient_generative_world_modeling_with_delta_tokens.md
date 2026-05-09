@@ -27,7 +27,7 @@ content_hash: 15be9ddb0c9f20a7
 This paper proposes DeltaTok, which compresses inter-frame VFM feature differences into a single delta token. Combined with Best-of-Many training, DeltaWorld efficiently generates diverse future predictions in a single forward pass. The model uses only 1/35 the parameters of Cosmos and 1/2000 the FLOPs, yet achieves superior performance on dense prediction tasks.
 
 ## Background & Motivation
-**State of the Field**: World models must predict future states to support autonomous decision-making (e.g., autonomous driving). The future is inherently uncertain, requiring models to generate multiple plausible outcomes.
+**Background**: World models must predict future states to support autonomous decision-making (e.g., autonomous driving). The future is inherently uncertain, requiring models to generate multiple plausible outcomes.
 
 **Limitations of Prior Work**:
 - **Discriminative world models**: Produce a single deterministic prediction, collapsing to the conditional mean under uncertainty and failing to capture diverse futures.

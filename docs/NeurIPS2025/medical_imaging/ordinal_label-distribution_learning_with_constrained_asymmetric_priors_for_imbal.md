@@ -27,16 +27,16 @@ content_hash: 40871ff5cb4e15e8
 This paper proposes CAP-WAE (Constrained Asymmetric Prior Wasserstein Autoencoder), which addresses the challenges of long-tailed distribution and ordinal structure in diabetic retinopathy (DR) grading through three innovations: asymmetric priors, a margin-aware orthogonality and compactness loss, and a direction-aware ordinal loss, achieving state-of-the-art performance on multiple DR benchmarks.
 
 ## Background & Motivation
-**State of the Field**: DR grading is a canonical ordinal classification task (grades 0–4) with severely long-tailed data — severe DR (grades 3/4) samples are scarce yet clinically most critical.
+**Background**: DR grading is a canonical ordinal classification task (grades 0–4) with severely long-tailed data — severe DR (grades 3/4) samples are scarce yet clinically most critical.
 
 **Limitations of Prior Work**:
    - Conventional methods employ isotropic Gaussian priors, which fail to model the heavy-tailed or skewed structure of minority classes.
    - Symmetric loss functions (e.g., cross-entropy) penalize under-estimation and over-estimation equally, which is inconsistent with clinical needs (under-estimation is more dangerous).
    - Latent spaces lack grade-level ordinality, with severe overlap between adjacent grades.
 
-**Root Cause**: Three intertwined challenges — long-tailed distribution, ordinal structure, and asymmetric clinical cost.
+**Key Challenge**: Three intertwined challenges — long-tailed distribution, ordinal structure, and asymmetric clinical cost.
 
-**Starting Point**: WAE is adopted over VAE to avoid posterior collapse; asymmetric priors are introduced to match the distributional characteristics of minority classes.
+**Key Insight**: WAE is adopted over VAE to avoid posterior collapse; asymmetric priors are introduced to match the distributional characteristics of minority classes.
 
 **Core Idea**: Asymmetric-prior WAE + margin-aware orthogonality and compactness loss + direction-aware ordinal soft labels, providing an end-to-end solution for long-tailed ordinal DR grading.
 

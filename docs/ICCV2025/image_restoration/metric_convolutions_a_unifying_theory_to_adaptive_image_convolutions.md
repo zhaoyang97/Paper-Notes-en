@@ -36,7 +36,7 @@ Standard convolutions are a cornerstone of deep learning, yet their fixed isotro
 - **Active Convolution**: learns anisotropic offsets shared across all spatial locations.
 - **Deformable Convolution (DCN)**: learns per-pixel, per-kernel-position offsets, offering flexibility but lacking theoretical constraints.
 
-**Root Cause**: Although empirically effective, these methods lack a unified theoretical framework for understanding their capabilities and limitations. The various deformation strategies appear as a collection of performance-driven tricks without intrinsic connections.
+**Key Challenge**: Although empirically effective, these methods lack a unified theoretical framework for understanding their capabilities and limitations. The various deformation strategies appear as a collection of performance-driven tricks without intrinsic connections.
 
 The key insight of this paper is to **treat an image as a two-dimensional manifold equipped with a metric**. Under this view, the kernel sampling neighborhood of each convolution variant can be reinterpreted as unit-ball sampling of some implicit metric. This observation motivates two directions: (1) providing geometric interpretability for existing convolutions, and (2) designing a new Metric Convolution based on an explicit metric.
 

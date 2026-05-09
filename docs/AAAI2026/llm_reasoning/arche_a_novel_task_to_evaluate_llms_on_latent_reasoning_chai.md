@@ -29,15 +29,15 @@ This paper proposes the Latent Reasoning Chain Extraction (ARCHE) task, which re
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are widely applied in scientific domains—literature review, hypothesis generation, experimental design, etc.—and prompting methods such as CoT can produce "reasoning-like" outputs.
+**Background**: LLMs are widely applied in scientific domains—literature review, hypothesis generation, experimental design, etc.—and prompting methods such as CoT can produce "reasoning-like" outputs.
 
 **Limitations of Prior Work**: Reasoning chains produced by CoT are unstructured natural-language narratives lacking formal logical foundations, making it impossible to verify whether a model genuinely understands reasoning paradigms. Most existing benchmarks focus solely on final answer correctness, and deduction, induction, and abduction are evaluated in isolation.
 
-**Root Cause**: Fluent reasoning at the linguistic level $\neq$ structured reasoning at the paradigmatic level. Models can "sound like they are reasoning" without truly mastering the fundamental logical forms of reasoning.
+**Key Challenge**: Fluent reasoning at the linguistic level $\neq$ structured reasoning at the paradigmatic level. Models can "sound like they are reasoning" without truly mastering the fundamental logical forms of reasoning.
 
-**Paper Goals**: To evaluate whether LLMs can (i) identify three reasoning paradigms within scientific arguments, (ii) assemble them into a coherent reasoning chain, and (iii) anchor each reasoning step to verifiable textual evidence.
+**Goal**: To evaluate whether LLMs can (i) identify three reasoning paradigms within scientific arguments, (ii) assemble them into a coherent reasoning chain, and (iii) anchor each reasoning step to verifiable textual evidence.
 
-**Starting Point**: Drawing from Peircean philosophy, the paper defines a unified framework that integrates deduction, induction, and abduction into a single Reasoning Logic Tree, using real scientific papers as the test medium.
+**Key Insight**: Drawing from Peircean philosophy, the paper defines a unified framework that integrates deduction, induction, and abduction into a single Reasoning Logic Tree, using real scientific papers as the test medium.
 
 **Core Idea**: RLTs make the latent reasoning chains embedded in scientific text explicit and structured, thereby examining whether LLMs truly understand reasoning paradigms.
 

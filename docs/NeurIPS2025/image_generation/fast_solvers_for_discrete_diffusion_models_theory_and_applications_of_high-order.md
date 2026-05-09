@@ -29,15 +29,15 @@ This work introduces high-order numerical methods into discrete diffusion model 
 
 ## Background & Motivation
 
-**State of the Field**: Discrete diffusion models have achieved significant progress in generating discrete data such as text, images, and molecules. Unlike continuous diffusion models, discrete models are naturally suited for data in combinatorial spaces such as language tokens, molecular sequences, and quantized images.
+**Background**: Discrete diffusion models have achieved significant progress in generating discrete data such as text, images, and molecules. Unlike continuous diffusion models, discrete models are naturally suited for data in combinatorial spaces such as language tokens, molecular sequences, and quantized images.
 
 **Limitations of Prior Work**: Inference efficiency is the core bottleneck for discrete diffusion models. Existing methods fall into two categories: (1) **Exact simulation methods** (e.g., uniformization, First-Hitting Sampler) are theoretically unbiased but have unpredictable inference times — the number of jumps grows sharply near the end of the reverse process, causing excessive redundant computation, and variable-length schedules across samples hinder batch parallelism; (2) **Approximate methods** (e.g., τ-leaping) are simple and parallelizable, but as first-order methods, they require very small step sizes to control discretization error, yielding limited sample quality under compute constraints.
 
-**Root Cause**: Continuous diffusion models already benefit from a rich set of high-order acceleration methods (DPM-Solver, DDIM, etc.), yet in the discrete domain, high-order methods have remained absent due to the discontinuous nature of the state space and the mathematical complexity of Poisson jump processes. The first-order accuracy of τ-leaping — analogous to the Euler method in the continuous setting — has been shown to be far from optimal, suggesting that discrete diffusion should likewise benefit from higher-order methods.
+**Key Challenge**: Continuous diffusion models already benefit from a rich set of high-order acceleration methods (DPM-Solver, DDIM, etc.), yet in the discrete domain, high-order methods have remained absent due to the discontinuous nature of the state space and the mathematical complexity of Poisson jump processes. The first-order accuracy of τ-leaping — analogous to the Euler method in the continuous setting — has been shown to be far from optimal, suggesting that discrete diffusion should likewise benefit from higher-order methods.
 
-**Paper Goals**: To develop high-order numerical inference methods for discrete diffusion models that achieve higher-quality samples with fewer function evaluations (NFE), without modifying the underlying model.
+**Goal**: To develop high-order numerical inference methods for discrete diffusion models that achieve higher-quality samples with fewer function evaluations (NFE), without modifying the underlying model.
 
-**Starting Point**: Drawing inspiration from Runge-Kutta methods for ODEs and high-order τ-leaping methods from chemical reaction simulation, the paper adapts these classical numerical techniques to the Poisson jump processes of discrete diffusion models.
+**Key Insight**: Drawing inspiration from Runge-Kutta methods for ODEs and high-order τ-leaping methods from chemical reaction simulation, the paper adapts these classical numerical techniques to the Poisson jump processes of discrete diffusion models.
 
 **Core Idea**: Replace the first-order τ-leaping with a two-stage predictor-corrector high-order solver that exploits additional information at an intermediate point in each step to elevate the discretization error from first-order to second-order.
 

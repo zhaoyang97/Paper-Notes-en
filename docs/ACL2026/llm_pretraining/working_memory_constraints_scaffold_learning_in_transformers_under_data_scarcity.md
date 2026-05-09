@@ -29,15 +29,15 @@ This paper integrates human working memory constraints (fixed window, exponentia
 
 ## Background & Motivation
 
-**State of the Field**: The self-attention mechanism in standard Transformers permits nearly uniform access to all tokens within the context window, lacking inherent structural biases that reflect human cognitive limitations. Although models such as GPT-2 correlate well with human reading times and neural activity, this correlation may arise *despite* rather than *because of* the architecture.
+**Background**: The self-attention mechanism in standard Transformers permits nearly uniform access to all tokens within the context window, lacking inherent structural biases that reflect human cognitive limitations. Although models such as GPT-2 correlate well with human reading times and neural activity, this correlation may arise *despite* rather than *because of* the architecture.
 
 **Limitations of Prior Work**: Existing efforts to incorporate cognitive constraints into Transformers are either post-hoc modifications (e.g., applying decay biases to pretrained models), inference-time context truncation, or soft constraints (e.g., ALiBi). None of these approaches allow the constraints to shape representational learning from the very beginning of training.
 
-**Root Cause**: The NLP field trends toward longer contexts and weaker inductive biases, yet human language processing is strongly constrained by limited working memory capacity — raising the question of whether such constraints might actually facilitate learning.
+**Key Challenge**: The NLP field trends toward longer contexts and weaker inductive biases, yet human language processing is strongly constrained by limited working memory capacity — raising the question of whether such constraints might actually facilitate learning.
 
-**Paper Goals**: (1) Systematically compare four cognitively inspired attention constraints in from-scratch training; (2) Evaluate their effects on grammatical competence and cognitive alignment under data-scarce conditions.
+**Goal**: (1) Systematically compare four cognitively inspired attention constraints in from-scratch training; (2) Evaluate their effects on grammatical competence and cognitive alignment under data-scarce conditions.
 
-**Starting Point**: The BabyLM challenge's developmentally plausible datasets (10M/100M words) are used to train models at a data scale comparable to human language acquisition, providing a more meaningful testbed for cognitive constraint hypotheses.
+**Key Insight**: The BabyLM challenge's developmentally plausible datasets (10M/100M words) are used to train models at a data scale comparable to human language acquisition, providing a more meaningful testbed for cognitive constraint hypotheses.
 
 **Core Idea**: Hard cognitive constraints — particularly fixed-window attention — serve as inductive biases that actively *scaffold* learning under data scarcity rather than impeding it.
 

@@ -28,18 +28,18 @@ To address the attenuation of causal treatment effects caused by regression-to-t
 
 ## Background & Motivation
 
-**State of the Field**: ML models trained on Earth observation (EO) data can predict household wealth indices (e.g., IWI) with $R^2$ up to 0.80, offering a solution to data scarcity in global development research. Downstream researchers use these prediction maps to evaluate the impact of aid programs or track poverty trends.
+**Background**: ML models trained on Earth observation (EO) data can predict household wealth indices (e.g., IWI) with $R^2$ up to 0.80, offering a solution to data scarcity in global development research. Downstream researchers use these prediction maps to evaluate the impact of aid programs or track poverty trends.
 
 **Limitations of Prior Work**:
 - **Prediction attenuation bias**: When ML models optimize for overall prediction accuracy, predictions systematically shrink toward the mean — poor areas are overestimated and wealthy areas are underestimated — leading to attenuated treatment effects in downstream causal analyses.
 - **Existing debiasing methods require substantial new data**: Prediction-Powered Inference (PPI) requires collecting new labeled data in the downstream phase, but in data-scarce development economics settings, new DHS surveys cost millions of dollars.
 - **Training-time debiasing degrades predictive performance**: The approach of Ratledge et al. modifies the loss function to penalize quantile bias, but requires retraining the model and may reduce prediction accuracy.
 
-**Root Cause**: Upstream ML teams need to produce a data product that is agnostic to downstream use cases, yet this product should not exhibit attenuation bias when directly used for causal inference by downstream teams. A "firewall" should exist between the two — no communication required.
+**Key Challenge**: Upstream ML teams need to produce a data product that is agnostic to downstream use cases, yet this product should not exhibit attenuation bias when directly used for causal inference by downstream teams. A "firewall" should exist between the two — no communication required.
 
-**Paper Goals**: Develop post-processing correction methods that correct prediction attenuation once at the upstream stage, so that the same map can be reused by multiple downstream teams across different causal studies.
+**Goal**: Develop post-processing correction methods that correct prediction attenuation once at the upstream stage, so that the same map can be reused by multiple downstream teams across different causal studies.
 
-**Starting Point**: The shrinkage in ML predictions is modeled as a Berkson error model $Y_i = \hat{Y}_i + \varepsilon_i$ (true value = prediction + residual), to which the Tweedie formula is applied for local unshrinking.
+**Key Insight**: The shrinkage in ML predictions is modeled as a Berkson error model $Y_i = \hat{Y}_i + \varepsilon_i$ (true value = prediction + residual), to which the Tweedie formula is applied for local unshrinking.
 
 **Core Idea**: Apply Tweedie density score estimation for local unshrinking: $\tilde{Y}_i = \hat{Y}_i - \sigma^2 \frac{d}{d\hat{y}} \log p_{\hat{Y}}(\hat{Y}_i)$, requiring no new labeled data.
 

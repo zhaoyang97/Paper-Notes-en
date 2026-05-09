@@ -29,15 +29,15 @@ This paper proposes HeteroTissue-Diffuse (HTD), a dual-conditioned Latent Diffus
 
 ## Background & Motivation
 
-**State of the Field**: AI-based diagnosis in pathology is constrained by data scarcity, expensive annotation, and privacy concerns. With the evolution from GANs to diffusion models, image quality and training stability have substantially improved. However, existing methods mostly generate homogeneous tissue (single tissue type) and fail to reflect the multi-tissue co-existence observed in real clinical specimens.
+**Background**: AI-based diagnosis in pathology is constrained by data scarcity, expensive annotation, and privacy concerns. With the evolution from GANs to diffusion models, image quality and training stability have substantially improved. However, existing methods mostly generate homogeneous tissue (single tissue type) and fail to reflect the multi-tissue co-existence observed in real clinical specimens.
 
 **Limitations of Prior Work**: Conditional control mechanisms suffer from three categories of deficiencies. Unconditional generation lacks control over tissue type. Text-guided methods are limited by inter-observer variability in pathological terminology (kappa only 0.48). Visual embedding methods (e.g., CLIP, RNA-seq embeddings) lose critical diagnostic features such as nuclear texture and staining patterns during dimensionality reduction. None of these approaches simultaneously achieves spatially precise control and morphological fidelity for heterogeneous tissue.
 
-**Root Cause**: A fundamental tension exists between spatial precision and morphological fidelity. Semantic segmentation maps provide accurate spatial layout control but carry no information about actual tissue appearance; visual embeddings encode appearance but lose fine-grained details. More fundamentally, large-scale pathology datasets (e.g., 11,765 WSIs from TCGA) lack pixel-level annotations and thus cannot be directly used for conditional generation training.
+**Key Challenge**: A fundamental tension exists between spatial precision and morphological fidelity. Semantic segmentation maps provide accurate spatial layout control but carry no information about actual tissue appearance; visual embeddings encode appearance but lose fine-grained details. More fundamentally, large-scale pathology datasets (e.g., 11,765 WSIs from TCGA) lack pixel-level annotations and thus cannot be directly used for conditional generation training.
 
-**Paper Goals**: (1) How can heterogeneous tissue images be generated with simultaneous spatial layout accuracy and morphological fidelity? (2) How can the method scale to large unannotated datasets?
+**Goal**: (1) How can heterogeneous tissue images be generated with simultaneous spatial layout accuracy and morphological fidelity? (2) How can the method scale to large unannotated datasets?
 
-**Starting Point**: The key observation is that using raw tissue crops directly as visual conditions—rather than abstract embeddings extracted by an encoder—preserves staining patterns and cellular morphology without information loss. Foundation model embeddings are additionally leveraged for automatic pseudo-annotation of unannotated data via clustering.
+**Key Insight**: The key observation is that using raw tissue crops directly as visual conditions—rather than abstract embeddings extracted by an encoder—preserves staining patterns and cellular morphology without information loss. Foundation model embeddings are additionally leveraged for automatic pseudo-annotation of unannotated data via clustering.
 
 **Core Idea**: Replace text/embedding-based conditioning with a dual-conditioning mechanism of "semantic segmentation map + real tissue crops" to guide a Latent Diffusion Model in generating heterogeneous pathology images.
 

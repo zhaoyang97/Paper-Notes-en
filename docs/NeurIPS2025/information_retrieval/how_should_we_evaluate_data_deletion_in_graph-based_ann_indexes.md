@@ -28,15 +28,15 @@ To address the lack of a unified evaluation methodology for data deletion in gra
 
 ## Background & Motivation
 
-**State of the Field**: Approximate nearest neighbor search (ANNS) is a core building block for applications such as RAG and recommendation systems. In these settings, data changes frequently—new items are added, expired items are removed, and documents are updated—requiring ANNS algorithms to support efficient deletion. Graph-based methods such as HNSW are among the most widely adopted ANNS algorithms.
+**Background**: Approximate nearest neighbor search (ANNS) is a core building block for applications such as RAG and recommendation systems. In these settings, data changes frequently—new items are added, expired items are removed, and documents are updated—requiring ANNS algorithms to support efficient deletion. Graph-based methods such as HNSW are among the most widely adopted ANNS algorithms.
 
 **Limitations of Prior Work**: Existing research on data deletion in ANNS suffers from three key issues. First, experimental setups are unrealistic—studies such as FreshDiskANN and MN-RU reinsert previously deleted data, a scenario that rarely occurs in practice. Second, evaluation metrics are insufficiently comprehensive—most work focuses solely on post-deletion search accuracy, while practical deployment also requires consideration of deletion latency, insertion throughput, and memory footprint. Third, no unified and formal comparison framework exists for different deletion approaches.
 
-**Root Cause**: There is a fundamental trade-off among deletion speed, post-deletion search accuracy, and memory efficiency. Lazy deletion is fastest but leads to accuracy degradation; eager deletion is intermediate but disrupts graph connectivity; reconstruction restores accuracy but incurs prohibitive cost. Theoretical guidance for choosing the appropriate strategy in practical deployments is lacking.
+**Key Challenge**: There is a fundamental trade-off among deletion speed, post-deletion search accuracy, and memory efficiency. Lazy deletion is fastest but leads to accuracy degradation; eager deletion is intermediate but disrupts graph connectivity; reconstruction restores accuracy but incurs prohibitive cost. Theoretical guidance for choosing the appropriate strategy in practical deployments is lacking.
 
-**Paper Goals**: (1) Establish a unified formal framework for data deletion in graph-based ANNS; (2) Design evaluation protocols and a metric suite oriented toward real-world use cases; (3) Propose an algorithm that adaptively selects deletion strategies based on accuracy requirements.
+**Goal**: (1) Establish a unified formal framework for data deletion in graph-based ANNS; (2) Design evaluation protocols and a metric suite oriented toward real-world use cases; (3) Propose an algorithm that adaptively selects deletion strategies based on accuracy requirements.
 
-**Starting Point**: The three deletion approaches are formalized using a unified mathematical language, compared fairly under identical experimental conditions, and empirical regularities observed from experiments—specifically, that eager deletion accuracy converges to a stable value while lazy deletion accuracy degrades linearly—are exploited to design a dynamic switching algorithm.
+**Key Insight**: The three deletion approaches are formalized using a unified mathematical language, compared fairly under identical experimental conditions, and empirical regularities observed from experiments—specifically, that eager deletion accuracy converges to a stable value while lazy deletion accuracy degrades linearly—are exploited to design a dynamic switching algorithm.
 
 **Core Idea**: Formal definitions and standardized evaluation reveal the characteristics of each deletion approach, which are then leveraged to design an accuracy-aware adaptive deletion control strategy.
 

@@ -27,7 +27,7 @@ content_hash: e01e424815754826
 This paper proposes 3DrawAgent, a training-free framework that enables a frozen LLM to acquire 3D spatial reasoning through *contrastive knowledge extraction* (CKE), generating language-driven 3D Bézier sketches in an autoregressive manner without any parameter updates, achieving performance competitive with trained methods.
 
 ## Background & Motivation
-**State of the Field**: Language-driven 2D sketch generation has seen notable progress (e.g., SketchAgent), yet 3D sketch generation remains largely unexplored. Existing 3D shape generation methods (diffusion-based or neural implicit approaches) require explicit geometric supervision or extensive training.
+**Background**: Language-driven 2D sketch generation has seen notable progress (e.g., SketchAgent), yet 3D sketch generation remains largely unexplored. Existing 3D shape generation methods (diffusion-based or neural implicit approaches) require explicit geometric supervision or extensive training.
 
 **Limitations of Prior Work**:
    - Diffusion-based 3D sketch methods (Diff3DS, Dream3DVG) rely on SDS optimization, which is computationally intensive.

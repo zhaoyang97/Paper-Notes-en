@@ -27,11 +27,11 @@ content_hash: 956f2105445f2bc7
 SelfHVD exploits naturally occurring sharp frames in handheld videos as supervisory signals. Through Self-Enhanced Video Deblurring (SEVD), it constructs high-quality training pairs that surpass the quality ceiling of sharp frames, while Self-Constrained Spatial Consistency Maintenance (SCSCM) prevents spatial displacement drift, enabling handheld video deblurring without paired training data.
 
 ## Background & Motivation
-1. **State of the Field**: Learning-based video deblurring methods have achieved substantial progress in network design, yet their pretrained models are typically effective only on blur distributions similar to their training data.
+1. **Background**: Learning-based video deblurring methods have achieved substantial progress in network design, yet their pretrained models are typically effective only on blur distributions similar to their training data.
 2. **Limitations of Prior Work**: Blur in handheld videos is influenced not only by camera shake but also by OIS correction, resulting in a blur distribution that differs significantly from existing training datasets (e.g., GoPro, BSD), causing poor generalization of existing models.
-3. **Root Cause**: Collecting paired handheld video deblurring datasets is costly and complex, while using synthetic blur data introduces a domain gap.
-4. **Paper Goals**: Leverage naturally occurring sharp frames in handheld videos to learn a deblurring model in a self-supervised manner, eliminating the need for paired data.
-5. **Starting Point**: When the camera motion trajectory is simple (e.g., linear) and slow, OIS functions properly and produces sharp frames. These sharp frames can provide deblurring cues and supervision for neighboring blurry frames.
+3. **Key Challenge**: Collecting paired handheld video deblurring datasets is costly and complex, while using synthetic blur data introduces a domain gap.
+4. **Goal**: Leverage naturally occurring sharp frames in handheld videos to learn a deblurring model in a self-supervised manner, eliminating the need for paired data.
+5. **Key Insight**: When the camera motion trajectory is simple (e.g., linear) and slow, OIS functions properly and produces sharp frames. These sharp frames can provide deblurring cues and supervision for neighboring blurry frames.
 6. **Core Idea**: Sharp frames → aligned supervision → SEVD self-enhancement beyond the sharp-frame ceiling → SCSCM to prevent spatial drift.
 
 ## Method

@@ -28,18 +28,18 @@ InfiniDreamer leverages a pretrained short-sequence motion diffusion model as a 
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-motion generation, driven by methods such as MDM, MLD, and T2M-GPT, has achieved high-quality short-sequence motion synthesis of approximately 10 seconds. However, practical applications in game animation, film production, and AR/VR typically demand continuous motion spanning several minutes or even hours.
+**Background**: Text-to-motion generation, driven by methods such as MDM, MLD, and T2M-GPT, has achieved high-quality short-sequence motion synthesis of approximately 10 seconds. However, practical applications in game animation, film production, and AR/VR typically demand continuous motion spanning several minutes or even hours.
 
 **Limitations of Prior Work**:
    - **Data bottleneck**: High-quality long-sequence motion data is extremely scarce; existing datasets (HumanML3D, BABEL) predominantly consist of short sequences.
    - **Autoregressive methods** (TEACH, Multi-Act) accumulate errors, leading to motion drift, repetitive patterns, and "freezing" artifacts.
    - **Diffusion infilling methods** (PriorMDM/DoubleTake, DiffCollage) apply hard modifications at segment boundaries, often causing abrupt transitions, motion distortion, and overwriting of previously generated content.
 
-**Root Cause**: Generating motion sequences that exceed the length of training data requires long-sequence supervision signals that are unavailable, and existing compositional approaches handle boundaries in a heavy-handed manner.
+**Key Challenge**: Generating motion sequences that exceed the length of training data requires long-sequence supervision signals that are unavailable, and existing compositional approaches handle boundaries in a heavy-handed manner.
 
-**Paper Goals**: Given a series of text descriptions, generate semantically coherent, smoothly transitioning, continuous motion sequences of arbitrary length.
+**Goal**: Given a series of text descriptions, generate semantically coherent, smoothly transitioning, continuous motion sequences of arbitrary length.
 
-**Starting Point**: Inspired by Score Distillation Sampling (SDS) from DreamFusion—whose key advantage is a progressive, smooth distillation process that maintains consistency across different viewpoints—this work transfers that advantage to the temporal dimension to achieve smooth transitions in long motion sequences.
+**Key Insight**: Inspired by Score Distillation Sampling (SDS) from DreamFusion—whose key advantage is a progressive, smooth distillation process that maintains consistency across different viewpoints—this work transfers that advantage to the temporal dimension to achieve smooth transitions in long motion sequences.
 
 **Core Idea**: The long motion sequence is parameterized as differentiable variables. A sliding window samples short segments, and Score Distillation aligns each segment to the distribution of the pretrained motion diffusion prior, achieving local realism alongside global coherence.
 

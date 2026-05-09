@@ -28,14 +28,14 @@ content_hash: 822a50f2ea124317
 This paper proposes the Single-Step Completion Policy (SSCP), which compresses multi-step generative policies into single-step inference by predicting a "completion vector" (the normalized direction from any intermediate state to the target action) within a flow matching framework. On D4RL, SSCP matches multi-step diffusion/flow policies while achieving 64× faster training and 4.7× faster inference, and extends to GCRL to flatten hierarchical policies.
 
 ## Background & Motivation
-**State of the Field**: Diffusion/flow matching generative policies excel in offline RL due to their ability to capture multimodal action distributions (e.g., DQL, CAC). However, they require tens of iterative sampling steps, resulting in high inference latency.
+**Background**: Diffusion/flow matching generative policies excel in offline RL due to their ability to capture multimodal action distributions (e.g., DQL, CAC). However, they require tens of iterative sampling steps, resulting in high inference latency.
 
 **Limitations of Prior Work**:
    - **Inference efficiency**: Diffusion policies require 5–50 denoising steps per action, making them unsuitable for real-time control (DQL ~1.27ms vs. deterministic policies ~0.1ms).
    - **Training instability**: Backpropagating policy gradients through multi-step sampling chains (BPTT) causes gradient instability and long training times (DQL ~8 hours vs. TD3+BC ~30 minutes).
    - **Bootstrap issues in shortcut methods**: The shortcut model of Frans et al. 2024 uses its own predictions as training targets (self-consistency loss), which is unstable in dynamic-target settings such as RL.
 
-**Root Cause**: Is there an inherent trade-off between the expressiveness of generative policies and their inference/training efficiency?
+**Key Challenge**: Is there an inherent trade-off between the expressiveness of generative policies and their inference/training efficiency?
 
 **Core Idea**: At an intermediate timestep $\tau$ of flow matching, train the model to predict a completion vector pointing directly to the target $x_1$ (rather than the velocity field), supervised by ground-truth data (not bootstrap), enabling single-step generation.
 

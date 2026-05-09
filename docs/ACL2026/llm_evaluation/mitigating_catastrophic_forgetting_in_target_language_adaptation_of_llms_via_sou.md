@@ -28,15 +28,15 @@ This paper proposes Source-Shielded Updates (SSU), a column-wise freezing strate
 
 ## Background & Motivation
 
-**State of the Field**: Extending the language coverage of LLMs is critical for global accessibility. The standard practice is continual pre-training (CPT) on target-language data, which, however, frequently leads to catastrophic forgetting—particularly degrading the core chat and safety capabilities of instruction-tuned models.
+**Background**: Extending the language coverage of LLMs is critical for global accessibility. The standard practice is continual pre-training (CPT) on target-language data, which, however, frequently leads to catastrophic forgetting—particularly degrading the core chat and safety capabilities of instruction-tuned models.
 
 **Limitations of Prior Work**: (1) Low-resource languages lack instruction-tuning data, and machine-translated data yields inconsistent results, leaving unlabeled text as the only viable option for adaptation. (2) Full fine-tuning causes an average source-language performance drop of 20.3% on 7B models and 22.3% on 13B models. (3) Post-hoc methods such as model merging and task vectors largely fail to mitigate forgetting effectively.
 
-**Root Cause**: Raw unlabeled text lacks chat templates and is thus incompatible with the training format of instruction-tuned models. Selective update methods guided by target-data signals optimize based on this incompatible format, which may in turn undermine the model's foundational capabilities.
+**Key Challenge**: Raw unlabeled text lacks chat templates and is thus incompatible with the training format of instruction-tuned models. Selective update methods guided by target-data signals optimize based on this incompatible format, which may in turn undermine the model's foundational capabilities.
 
-**Paper Goals**: Proactively preserve source knowledge during CPT, enabling the model to acquire the target language while retaining its original instruction-following, chat, and safety capabilities.
+**Goal**: Proactively preserve source knowledge during CPT, enabling the model to acquire the target language while retaining its original instruction-following, chat, and safety capabilities.
 
-**Starting Point**: Rather than deriving signals from target data, the method starts from source data—identifying parameters critical to source knowledge and freezing them prior to CPT, thereby preventing forgetting at the root.
+**Key Insight**: Rather than deriving signals from target data, the method starts from source data—identifying parameters critical to source knowledge and freezing them prior to CPT, thereby preventing forgetting at the root.
 
 **Core Idea**: A small set of source data (500 samples) is used to compute parameter importance scores; scores are aggregated column-wise, and the most important 50% of columns are frozen to ensure that complete feature transformation pathways remain intact.
 

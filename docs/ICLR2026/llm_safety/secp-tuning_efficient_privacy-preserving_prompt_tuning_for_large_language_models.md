@@ -29,15 +29,15 @@ This paper proposes SecP-Tuning, the first MPC-based privacy-preserving prompt t
 
 ## Background & Motivation
 
-1. **State of the Field**: Deployment of LLMs in privacy-sensitive domains such as healthcare and finance is constrained by data privacy requirements. MPC-based privacy-preserving machine learning can provide theoretical privacy guarantees for both model parameters and data, but has been largely limited to the inference phase.
+1. **Background**: Deployment of LLMs in privacy-sensitive domains such as healthcare and finance is constrained by data privacy requirements. MPC-based privacy-preserving machine learning can provide theoretical privacy guarantees for both model parameters and data, but has been largely limited to the inference phase.
 
 2. **Limitations of Prior Work**: Directly applying MPC to fine-tune LLMs poses significant efficiency challenges. Performing SFT on RoBERTa-LARGE (24 layers, 1024 hidden dimensions) requires approximately 10 minutes per iteration and 970 GB of communication overhead. Backpropagation and optimizer operations account for 73% of total time, while softmax attention accounts for 75% of forward pass time.
 
-3. **Root Cause**: In MPC settings, numerous nonlinear operations (Softmax, GELU, LayerNorm) must be approximated via combinations of addition, multiplication, and comparison, resulting in extremely poor communication efficiency. Parameter-efficient fine-tuning methods such as LoRA reduce the number of updated parameters but cannot eliminate the MPC communication overhead introduced by backpropagation and softmax.
+3. **Key Challenge**: In MPC settings, numerous nonlinear operations (Softmax, GELU, LayerNorm) must be approximated via combinations of addition, multiplication, and comparison, resulting in extremely poor communication efficiency. Parameter-efficient fine-tuning methods such as LoRA reduce the number of updated parameters but cannot eliminate the MPC communication overhead introduced by backpropagation and softmax.
 
-4. **Paper Goals**: How to achieve efficient and high-performance privacy-preserving domain adaptation of LLMs within an MPC framework?
+4. **Goal**: How to achieve efficient and high-performance privacy-preserving domain adaptation of LLMs within an MPC framework?
 
-5. **Starting Point**: The paper combines forward-only tuning (FoT) to eliminate backpropagation, random feature attention (RFA) to replace softmax and reduce attention computation complexity, and a Server-Client architecture to offload MPC-unfriendly operations to the client.
+5. **Key Insight**: The paper combines forward-only tuning (FoT) to eliminate backpropagation, random feature attention (RFA) to replace softmax and reduce attention computation complexity, and a Server-Client architecture to offload MPC-unfriendly operations to the client.
 
 6. **Core Idea**: By employing gradient-free forward-only tuning to avoid MPC overhead from backpropagation, and linearized attention to avoid nonlinear softmax operations, the framework achieves end-to-end efficient privacy-preserving fine-tuning.
 

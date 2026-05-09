@@ -31,7 +31,7 @@ This paper proposes the PersPose framework, which addresses the inaccurate depth
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: Existing 3D HPE methods that use cropped images as input suffer from two commonly overlooked issues:
+**Key Challenge**: **Background**: Existing 3D HPE methods that use cropped images as input suffer from two commonly overlooked issues:
 
 **Depth information loss due to cropping**: Identical cropped images may correspond to different relative depths (Figure 2: subjects a and b share the same crop but differ in depth); different crops may correspond to the same depth (subjects a and c).
 

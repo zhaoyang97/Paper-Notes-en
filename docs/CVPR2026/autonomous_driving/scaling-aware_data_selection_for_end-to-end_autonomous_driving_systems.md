@@ -29,11 +29,11 @@ This paper proposes MOSAIC, a framework that clusters training data into domains
 
 ## Background & Motivation
 
-1. **State of the Field**: Large-scale deep learning models rely on diverse training data, especially in physical AI applications such as autonomous driving, where data must cover varied locations, weather conditions, and traffic scenarios. However, training on the full dataset is computationally prohibitive, motivating intelligent data selection strategies.
+1. **Background**: Large-scale deep learning models rely on diverse training data, especially in physical AI applications such as autonomous driving, where data must cover varied locations, weather conditions, and traffic scenarios. However, training on the full dataset is computationally prohibitive, motivating intelligent data selection strategies.
 2. **Limitations of Prior Work**: (A) Influence estimation and active learning methods operate in feature space but do not account for how different data affect different evaluation metrics. (B) Existing data mixture methods (e.g., DoReMi, ADO) assume domains are explicitly defined and homogeneous, ignoring the heterogeneous impact rates of data sources on different metrics. (C) Physical AI systems must simultaneously optimize multiple potentially competing metrics (e.g., route progress vs. driving comfort vs. collision avoidance).
-3. **Root Cause**: A single training sample contributes differently to different metrics, yet existing frameworks cannot model this many-to-many, heterogeneous relationship between data and metrics.
-4. **Paper Goals**: Given a fixed data budget, select a training subset from a heterogeneous data pool that maximizes the aggregated metric (EPDMS).
-5. **Starting Point**: Cluster the data pool into domains with similar metric impact, fit per-domain scaling laws independently, and then iteratively select the optimal mixture via greedy search.
+3. **Key Challenge**: A single training sample contributes differently to different metrics, yet existing frameworks cannot model this many-to-many, heterogeneous relationship between data and metrics.
+4. **Goal**: Given a fixed data budget, select a training subset from a heterogeneous data pool that maximizes the aggregated metric (EPDMS).
+5. **Key Insight**: Cluster the data pool into domains with similar metric impact, fit per-domain scaling laws independently, and then iteratively select the optimal mixture via greedy search.
 6. **Core Idea**: Cluster first, fit scaling laws second, then greedily select — decomposing the complex multi-metric data selection problem into independently estimable, domain-level scaling subproblems.
 
 ## Method

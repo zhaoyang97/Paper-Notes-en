@@ -26,15 +26,15 @@ content_hash: f24a55eedfce69a5
 This paper exposes a structural vulnerability in chat templates used by LLM agents: by embedding forged role labels (e.g., `<system>`, `<user>`) in tool-returned data, attackers can hijack the model's role hierarchy perception and disguise malicious instructions as high-priority directives, raising ASR from 5–15% to 32–52%.
 
 ## Background & Motivation
-**State of the Field**: LLM agents retrieve data by invoking external tools (search, APIs, file reading). This data is organized via role labels in the chat template (system > user > assistant > tool), and models rely on these special tokens to distinguish instructions of different priorities.
+**Background**: LLM agents retrieve data by invoking external tools (search, APIs, file reading). This data is organized via role labels in the chat template (system > user > assistant > tool), and models rely on these special tokens to distinguish instructions of different priorities.
 
 **Limitations of Prior Work**: Indirect prompt injection—embedding malicious instructions in tool-returned data—is a known threat, but existing attacks operate primarily at the plaintext level, overlooking structural vulnerabilities inherent in chat templates. Moreover, the instruction hierarchy defense (Wallace et al., 2024), which relies on role labels for priority stratification, inadvertently creates a new attack surface.
 
-**Root Cause**: LLMs are trained to strictly follow the instruction hierarchy demarcated by role labels; however, these labels can be forged—if tool-returned data contains `<user>` or `<system>` tags, the model may misinterpret them as higher-priority instructions.
+**Key Challenge**: LLMs are trained to strictly follow the instruction hierarchy demarcated by role labels; however, these labels can be forged—if tool-returned data contains `<user>` or `<system>` tags, the model may misinterpret them as higher-priority instructions.
 
-**Paper Goals**: (1) Verify whether chat template forgery constitutes an effective attack vector; (2) investigate whether simulated multi-turn dialogue can amplify attack effectiveness; (3) test cross-model transferability.
+**Goal**: (1) Verify whether chat template forgery constitutes an effective attack vector; (2) investigate whether simulated multi-turn dialogue can amplify attack effectiveness; (3) test cross-model transferability.
 
-**Starting Point**: Multi-turn jailbreaking is effective in interactive settings but infeasible for indirect injection (attackers have only one injection opportunity), whereas chat templates provide a means to simulate multi-turn dialogue within a single injection.
+**Key Insight**: Multi-turn jailbreaking is effective in interactive settings but infeasible for indirect injection (attackers have only one injection opportunity), whereas chat templates provide a means to simulate multi-turn dialogue within a single injection.
 
 **Core Idea**: Exploit role label forgery in chat templates to hijack the LLM's instruction hierarchy perception, and combine this with simulated multi-turn dialogue for persuasion-based attacks.
 

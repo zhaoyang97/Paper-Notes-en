@@ -27,13 +27,13 @@ content_hash: e9ae5be87931b9f9
 This paper provides a precise analysis of online SGD learning of additive models (sums of single-index functions) in shallow neural networks, proving that the learning of each teacher neuron exhibits a sharp phase transition (emergence), and that the superposition of many such transition curves across different timescales naturally produces a smooth power-law scaling law.
 
 ## Background & Motivation
-**State of the Field**: A growing body of theoretical work has studied gradient-based training of shallow networks on low-dimensional target functions, particularly the sample complexity of SGD for single-index and multi-index models. Empirically, large-scale model training exhibits predictable power-law scaling laws, where the loss decreases smoothly as a function of compute or data.
+**Background**: A growing body of theoretical work has studied gradient-based training of shallow networks on low-dimensional target functions, particularly the sample complexity of SGD for single-index and multi-index models. Empirically, large-scale model training exhibits predictable power-law scaling laws, where the loss decreases smoothly as a function of compute or data.
 
 **Limitations of Prior Work**: (a) SGD learning of a single skill or direction exhibits emergent behavior — a "search phase" followed by a sudden drop — which appears to contradict smooth scaling laws; (b) existing analyses of multi-index models are largely restricted to narrow width $P = O(1)$ or uniform signal strengths, which are insufficient to produce the timescale separation needed to explain power-law decay; (c) prior work (e.g., OSSW24) analyzes hierarchical training (first optimizing directions, then weights), requiring student width $m \gtrsim P^{\Omega(1/a_{\min})}$, which is computationally infeasible.
 
-**Root Cause**: Emergence (discrete jumps) and scaling laws (smooth power laws) appear contradictory. The key challenge is to analyze the difficult regime of large width, large condition number, and single-phase training within a unified framework.
+**Key Challenge**: Emergence (discrete jumps) and scaling laws (smooth power laws) appear contradictory. The key challenge is to analyze the difficult regime of large width, large condition number, and single-phase training within a unified framework.
 
-**Starting Point**: The target function is modeled as $f_*(x) = \sum_{p=1}^P a_p \sigma(\langle x, v_p^* \rangle)$, where $a_p \asymp p^{-\beta}$ follows a power-law decay. The paper exploits an "automatic cancellation" mechanism arising from 2-homogeneous parameterization to show that learning different directions can be approximately decoupled.
+**Key Insight**: The target function is modeled as $f_*(x) = \sum_{p=1}^P a_p \sigma(\langle x, v_p^* \rangle)$, where $a_p \asymp p^{-\beta}$ follows a power-law decay. The paper exploits an "automatic cancellation" mechanism arising from 2-homogeneous parameterization to show that learning different directions can be approximately decoupled.
 
 **Core Idea**: In single-phase SGD training, each teacher direction undergoes a sharp phase transition (emergent transition) at time $T_p \propto a_p^{-1}$. The superposition of $P \gg 1$ emergence curves across distinct timescales naturally produces a power-law scaling law $\mathcal{L}(t) \sim t^{(1-2\beta)/\beta}$.
 

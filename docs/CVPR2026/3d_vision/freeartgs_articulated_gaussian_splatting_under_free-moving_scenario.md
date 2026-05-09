@@ -28,11 +28,11 @@ FreeArtGS addresses articulated object reconstruction from monocular RGB-D video
 
 ## Background & Motivation
 
-1. **State of the Field**: Articulated object reconstruction is a fundamental problem in 3D vision with significant implications for augmented reality and robot simulation. Existing approaches fall into three categories: (a) single-image generation via foundation models, with limited generalizability; (b) reconstruction from two articulated states captured by fixed multi-view cameras, requiring axis alignment across states; and (c) monocular video reconstruction under the assumption of a stationary base part.
+1. **Background**: Articulated object reconstruction is a fundamental problem in 3D vision with significant implications for augmented reality and robot simulation. Existing approaches fall into three categories: (a) single-image generation via foundation models, with limited generalizability; (b) reconstruction from two articulated states captured by fixed multi-view cameras, requiring axis alignment across states; and (c) monocular video reconstruction under the assumption of a stationary base part.
 2. **Limitations of Prior Work**: Single-image generation methods lack post-optimization and generalize poorly; multi-view dual-state methods are limited in practicality due to the difficulty of axis alignment; monocular video methods rely on the "static base" assumption, which is frequently violated in real-world manipulation (e.g., both parts of scissors or pliers move simultaneously), and coverage remains incomplete.
-3. **Root Cause**: In practice, articulated objects are often freely manipulated — object pose and joint state change concurrently with no fixed reference part. Existing methods are fundamentally incapable of handling this most natural usage scenario.
-4. **Paper Goals**: To reconstruct the complete appearance, geometry, and joint parameters of articulated objects from monocular RGB-D video under the free-moving scenario.
-5. **Starting Point**: Combining dense 2D point tracking priors with 3DGS optimization — point tracking provides motion cues to drive part segmentation, while optimization yields high-precision final reconstruction.
+3. **Key Challenge**: In practice, articulated objects are often freely manipulated — object pose and joint state change concurrently with no fixed reference part. Existing methods are fundamentally incapable of handling this most natural usage scenario.
+4. **Goal**: To reconstruct the complete appearance, geometry, and joint parameters of articulated objects from monocular RGB-D video under the free-moving scenario.
+5. **Key Insight**: Combining dense 2D point tracking priors with 3DGS optimization — point tracking provides motion cues to drive part segmentation, while optimization yields high-precision final reconstruction.
 6. **Core Idea**: Point tracking and feature priors are used for free-motion part segmentation; relative transformation sequences are used to estimate joint type and axis; end-to-end 3DGS optimization jointly refines appearance, geometry, and joint parameters.
 
 ## Method

@@ -28,15 +28,15 @@ This paper proposes Fact2Fiction, the first poisoning attack framework targeting
 
 ## Background & Motivation
 
-**State of the Field**: State-of-the-art fact-checking systems (InFact, DEFAME) have evolved from simple RAG pipelines to agentic paradigms—LLM agents decompose complex claims into sub-claims, retrieve and verify evidence for each, and aggregate results to produce a final verdict along with a justification. This decomposition strategy inherently serves as a natural defense against conventional poisoning attacks.
+**Background**: State-of-the-art fact-checking systems (InFact, DEFAME) have evolved from simple RAG pipelines to agentic paradigms—LLM agents decompose complex claims into sub-claims, retrieve and verify evidence for each, and aggregate results to produce a final verdict along with a justification. This decomposition strategy inherently serves as a natural defense against conventional poisoning attacks.
 
 **Limitations of Prior Work**: Existing poisoning attacks (e.g., PoisonedRAG) craft malicious evidence targeting only the main claim. When an agentic system splits a claim into multiple specific sub-questions, such generic malicious evidence is neither easily retrieved by sub-question-oriented retrievers nor sufficiently specific to mislead sub-claim verification. For instance, PoisonedRAG's ASR on DEFAME drops from 57.4% (on a simple system) to 42.4%.
 
-**Root Cause**: Agentic fact-checking systems improve accuracy, yet their justifications (transparent explanations) expose the key evidence and reasoning patterns underlying their decisions—creating a fundamental tension between transparency and security.
+**Key Challenge**: Agentic fact-checking systems improve accuracy, yet their justifications (transparent explanations) expose the key evidence and reasoning patterns underlying their decisions—creating a fundamental tension between transparency and security.
 
-**Paper Goals**: How can effective poisoning attacks be designed against agentic fact-checking systems? Three challenges must be addressed: (a) semantic alignment between malicious evidence and sub-claims; (b) leveraging justifications for targeted attacks; (c) optimal allocation of a limited poisoning budget.
+**Goal**: How can effective poisoning attacks be designed against agentic fact-checking systems? Three challenges must be addressed: (a) semantic alignment between malicious evidence and sub-claims; (b) leveraging justifications for targeted attacks; (c) optimal allocation of a limited poisoning budget.
 
-**Starting Point**: Reverse-engineer two properties of agentic systems—claim decomposition strategy and justification output. Two collaborative agents (Planner + Executor) are used to simulate the decomposition process and exploit transparent explanations to craft targeted malicious content.
+**Key Insight**: Reverse-engineer two properties of agentic systems—claim decomposition strategy and justification output. Two collaborative agents (Planner + Executor) are used to simulate the decomposition process and exploit transparent explanations to craft targeted malicious content.
 
 **Core Idea**: Simulate the claim decomposition strategy of agentic fact-checking systems + reverse-engineer justifications to craft targeted malicious evidence + allocate the poisoning budget according to sub-claim importance.
 

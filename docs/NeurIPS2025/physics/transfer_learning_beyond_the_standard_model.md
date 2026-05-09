@@ -27,15 +27,15 @@ This work investigates whether neural networks pre-trained on the standard cosmo
 
 ## Background & Motivation
 
-**State of the Field**: Simulation-based inference (SBI) has been successfully applied to ΛCDM cosmological parameter inference. A central goal of Stage-IV surveys (e.g., DESI) is to detect new physics beyond the standard model—massive neutrinos, modified gravity, and primordial non-Gaussianity.
+**Background**: Simulation-based inference (SBI) has been successfully applied to ΛCDM cosmological parameter inference. A central goal of Stage-IV surveys (e.g., DESI) is to detect new physics beyond the standard model—massive neutrinos, modified gravity, and primordial non-Gaussianity.
 
 **Limitations of Prior Work**: Simulations for beyond-ΛCDM scenarios are far more computationally expensive than ΛCDM simulations and must cover a substantially larger parameter space, forming the primary bottleneck for inference.
 
-**Root Cause**: Training inference models requires large numbers of costly beyond-ΛCDM simulations, yet computational budgets are limited.
+**Key Challenge**: Training inference models requires large numbers of costly beyond-ΛCDM simulations, yet computational budgets are limited.
 
-**Paper Goals**: To assess whether transfer learning via ΛCDM pre-training followed by beyond-ΛCDM fine-tuning can reduce the number of required beyond-ΛCDM simulations.
+**Goal**: To assess whether transfer learning via ΛCDM pre-training followed by beyond-ΛCDM fine-tuning can reduce the number of required beyond-ΛCDM simulations.
 
-**Starting Point**: Drawing an analogy to the foundation model paradigm—ΛCDM as the "foundation model" and beyond-ΛCDM tasks as "downstream tasks."
+**Key Insight**: Drawing an analogy to the foundation model paradigm—ΛCDM as the "foundation model" and beyond-ΛCDM tasks as "downstream tasks."
 
 **Core Idea**: A dummy node is appended to the output layer of the pre-trained network, providing unsupervised latent capacity that can be repurposed during fine-tuning to learn new-physics parameters, while simultaneously exposing the phenomenon of negative transfer induced by physical parameter degeneracies.
 

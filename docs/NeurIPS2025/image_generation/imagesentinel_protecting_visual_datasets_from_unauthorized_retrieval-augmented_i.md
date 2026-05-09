@@ -28,7 +28,7 @@ content_hash: a081904ab186f75b
 This paper proposes the ImageSentinel framework, which synthesizes sentinel images that are visually consistent with a private dataset and binds them to randomly generated character retrieval keys, enabling reliable detection of unauthorized use of private datasets by retrieval-augmented image generation (RAIG) systems—achieving near-100% AUC with only 3–10 queries.
 
 ## Background & Motivation
-**State of the Field**: Retrieval-Augmented Image Generation (RAIG) enhances generation quality by retrieving relevant reference images from external databases, demonstrating strong performance on tasks such as rare concept generation and fine-grained image synthesis. Representative systems such as ImageRAG have shown that RAIG can be directly applied to existing text-to-image models (e.g., SDXL + IP-adapter, OmniGen).
+**Background**: Retrieval-Augmented Image Generation (RAIG) enhances generation quality by retrieving relevant reference images from external databases, demonstrating strong performance on tasks such as rare concept generation and fine-grained image synthesis. Representative systems such as ImageRAG have shown that RAIG can be directly applied to existing text-to-image models (e.g., SDXL + IP-adapter, OmniGen).
 
 **Limitations of Prior Work**: RAIG systems heavily rely on high-quality reference image databases, and malicious users may incorporate private datasets into their retrieval systems without authorization. This not only infringes intellectual property but also poses legal and commercial risks. However, no effective mechanism currently exists to protect visual datasets from unauthorized use in RAIG systems.
 

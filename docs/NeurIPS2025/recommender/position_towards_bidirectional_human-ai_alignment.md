@@ -29,18 +29,18 @@ This paper proposes a **Bidirectional Human-AI Alignment** framework grounded in
 
 ## Background & Motivation
 
-**State of the Field**: AI alignment has become a central topic in AI safety and ethics. Conventionally, alignment research focuses on making AI systems behave in accordance with human goals and values—exemplified by methods such as RLHF and Constitutional AI. However, as AI systems become more deeply embedded in everyday life, a unidirectional alignment perspective is no longer sufficient.
+**Background**: AI alignment has become a central topic in AI safety and ethics. Conventionally, alignment research focuses on making AI systems behave in accordance with human goals and values—exemplified by methods such as RLHF and Constitutional AI. However, as AI systems become more deeply embedded in everyday life, a unidirectional alignment perspective is no longer sufficient.
 
 **Limitations of Prior Work**:
 - **Ambiguous definition of alignment**: Different communities (HCI, NLP, ML) hold inconsistent definitions of "alignment," lacking a shared conceptual foundation.
 - **Unidirectional perspective**: Existing work almost exclusively addresses the "AI → Human" direction, neglecting how human cognition and behavior adapt to AI.
 - **Insufficient value modeling**: The plurality, dynamism, and context-dependence of human values are overly simplified in current alignment methods.
 
-**Root Cause**: AI systems are growing increasingly complex and autonomous, yet human capacity to understand, oversee, and collaborate with them has not kept pace. A **dynamic feedback loop** exists between AI and humans—AI behavior shapes human responses, which in turn reshape AI behavior—yet this bidirectional interaction is almost entirely absent from existing research.
+**Key Challenge**: AI systems are growing increasingly complex and autonomous, yet human capacity to understand, oversee, and collaborate with them has not kept pace. A **dynamic feedback loop** exists between AI and humans—AI behavior shapes human responses, which in turn reshape AI behavior—yet this bidirectional interaction is almost entirely absent from existing research.
 
-**Paper Goals**: To rigorously define the conceptual boundaries of "alignment," propose a systematic framework encompassing bidirectional interaction, identify existing research gaps, and provide a roadmap for future alignment research.
+**Goal**: To rigorously define the conceptual boundaries of "alignment," propose a systematic framework encompassing bidirectional interaction, identify existing research gaps, and provide a roadmap for future alignment research.
 
-**Starting Point**: A **systematic review of 400+ papers** spanning HCI, NLP, and ML, combined with qualitative coding and quantitative analysis, to construct a comprehensive taxonomy covering both the AI side and the human side.
+**Key Insight**: A **systematic review of 400+ papers** spanning HCI, NLP, and ML, combined with qualitative coding and quantitative analysis, to construct a comprehensive taxonomy covering both the AI side and the human side.
 
 **Core Idea**: AI alignment should be bidirectional—not only aligning AI with human values, but also helping humans understand, evaluate, and adapt to AI.
 

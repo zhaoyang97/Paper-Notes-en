@@ -27,13 +27,13 @@ Through large-scale controlled experiments across 12 LLMs from 6 providers spann
 
 ## Background & Motivation
 
-**State of the Field**: LLM-based agents are being deployed at scale as user-facing interfaces on online platforms, handling tasks such as news aggregation, academic search, and e-commerce recommendation. These agents filter, prioritize, and synthesize information retrieved from backend databases or web searches, effectively controlling the information users ultimately receive.
+**Background**: LLM-based agents are being deployed at scale as user-facing interfaces on online platforms, handling tasks such as news aggregation, academic search, and e-commerce recommendation. These agents filter, prioritize, and synthesize information retrieved from backend databases or web searches, effectively controlling the information users ultimately receive.
 
 **Limitations of Prior Work**: Extensive research has examined biases in LLM-generated content (political, gender, and cultural biases, among others), yet few studies have systematically investigated whether LLMs exhibit preferences when **selecting and presenting** existing information. When content carries source labels (e.g., specific publishers, journals, or platforms), do LLMs systematically favor certain sources?
 
-**Root Cause**: LLM agents are assumed to play the role of "neutral intermediaries" in deployment. However, if models harbor implicit preferences for particular information sources, this creates information asymmetry—certain sources are systematically amplified while others are suppressed. More critically, users remain entirely unaware of such preferences and have no means to control them.
+**Key Challenge**: LLM agents are assumed to play the role of "neutral intermediaries" in deployment. However, if models harbor implicit preferences for particular information sources, this creates information asymmetry—certain sources are systematically amplified while others are suppressed. More critically, users remain entirely unaware of such preferences and have no means to control them.
 
-**Paper Goals**: This paper introduces the concept of "latent source preferences" and validates their existence, magnitude, context-dependence, and resistance to debiasing across 12 LLMs through systematic controlled experiments—constructing semantically equivalent content pairs annotated with different sources.
+**Goal**: This paper introduces the concept of "latent source preferences" and validates their existence, magnitude, context-dependence, and resistance to debiasing across 12 LLMs through systematic controlled experiments—constructing semantically equivalent content pairs annotated with different sources.
 
 ## Method
 

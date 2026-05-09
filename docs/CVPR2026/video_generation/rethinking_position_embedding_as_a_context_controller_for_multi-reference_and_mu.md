@@ -29,14 +29,14 @@ This paper proposes PoCo (Position Embedding as Context Controller), which intro
 
 ## Background & Motivation
 
-1. **State of the Field**: Video generation has advanced rapidly across tasks such as text-to-video and reference-to-video. Multi-reference multi-shot video generation is critical for filmmaking and narrative video production, yet remains underexplored in academia (closed-source systems such as Sora2 demonstrate feasibility but lack transparency).
+1. **Background**: Video generation has advanced rapidly across tasks such as text-to-video and reference-to-video. Multi-reference multi-shot video generation is critical for filmmaking and narrative video production, yet remains underexplored in academia (closed-source systems such as Sora2 demonstrate feasibility but lack transparency).
 2. **Limitations of Prior Work**:
    - Existing reference-to-video methods (Phantom, VACE) largely generate each shot independently, leading to inconsistent backgrounds and appearances across shots.
    - The naive approach of directly concatenating multi-reference and multi-shot tokens into attention causes **reference confusion**—when multiple references appear visually similar, semantically similar tokens prevent the model from distinguishing the correct shot–reference associations.
    - Attention visualizations directly confirm this issue: a given shot attends more strongly to an incorrect reference than to the correct one.
-3. **Root Cause**: A fundamental tension exists between maintaining scene-level semantic consistency across shots (requiring global attention interaction) and faithfully preserving distinct reference identities (requiring precise reference association).
-4. **Paper Goals**: (1) Resolve confusion among semantically similar references; (2) achieve precise context control without introducing additional computational overhead.
-5. **Starting Point**: The paper revisits the attention mechanism and decomposes it into a "semantics-driven learnable component" (Q-K retrieval) and a "manually designed positional encoding component" (context organization)—the latter can serve as an additional means of context control.
+3. **Key Challenge**: A fundamental tension exists between maintaining scene-level semantic consistency across shots (requiring global attention interaction) and faithfully preserving distinct reference identities (requiring precise reference association).
+4. **Goal**: (1) Resolve confusion among semantically similar references; (2) achieve precise context control without introducing additional computational overhead.
+5. **Key Insight**: The paper revisits the attention mechanism and decomposes it into a "semantics-driven learnable component" (Q-K retrieval) and a "manually designed positional encoding component" (context organization)—the latter can serve as an additional means of context control.
 6. **Core Idea**: Auxiliary attribute information of tokens (e.g., a @character_i identifier) is encoded as additional rotational dimensions in RoPE, enabling position embeddings to perform precise context routing that goes beyond semantics.
 
 ## Method

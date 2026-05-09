@@ -29,15 +29,15 @@ This paper proposes DRCR, the first framework to introduce context rewriting int
 
 ## Background & Motivation
 
-**State of the Field**: Multi-party dialogue generation (MDG) involves multiple participants and complex discourse structures (utterance relationships spanning multiple turns), making it significantly more challenging than two-party dialogue. Existing methods assist generation by encoding dialogue structure information.
+**Background**: Multi-party dialogue generation (MDG) involves multiple participants and complex discourse structures (utterance relationships spanning multiple turns), making it significantly more challenging than two-party dialogue. Existing methods assist generation by encoding dialogue structure information.
 
 **Limitations of Prior Work**: (1) Colloquial expressions and incomplete utterances in conversations (e.g., references, ellipsis) damage discourse coherence, thereby affecting the quality of dialogue structure representations; (2) Previous methods directly encode structure from flawed dialogue contexts without attempting to improve context quality first; (3) These issues are more prominent in multi-party dialogues—multiple speakers increase the complexity of references and ellipsis.
 
-**Root Cause**: The quality of dialogue structure encoding depends on context coherence, but colloquial expressions and ellipsis in raw contexts break coherence. Simple rewriting may fail to balance discourse coherence and downstream response generation quality.
+**Key Challenge**: The quality of dialogue structure encoding depends on context coherence, but colloquial expressions and ellipsis in raw contexts break coherence. Simple rewriting may fail to balance discourse coherence and downstream response generation quality.
 
-**Paper Goals**: Improve multi-party dialogue generation quality through dialogue context rewriting, ensuring the rewriting both enhances discourse coherence and facilitates high-quality response generation.
+**Goal**: Improve multi-party dialogue generation quality through dialogue context rewriting, ensuring the rewriting both enhances discourse coherence and facilitates high-quality response generation.
 
-**Starting Point**: Use discourse coherence quality and response generation quality as dual feedback signals to construct preference data, training the rewriter to generate contexts that are both coherent and conducive to responses.
+**Key Insight**: Use discourse coherence quality and response generation quality as dual feedback signals to construct preference data, training the rewriter to generate contexts that are both coherent and conducive to responses.
 
 **Core Idea**: The rewriter and responder mutually enhance each other through iterative training—better rewriting produces better responses, and better response feedback guides better rewriting.
 

@@ -28,11 +28,11 @@ UGM2N is an unsupervised mesh movement network that achieves zero-shot generaliz
 
 ## Background & Motivation
 
-**State of the Field**: Numerical PDE solvers are highly sensitive to mesh quality. Mesh movement methods (r-adaptation) improve both simulation accuracy and computational efficiency by relocating nodes toward regions of rapid variation, while keeping the total number of nodes fixed. Classical approaches solve the Monge-Ampère (MA) equation to compute the coordinate mapping for mesh movement.
+**Background**: Numerical PDE solvers are highly sensitive to mesh quality. Mesh movement methods (r-adaptation) improve both simulation accuracy and computational efficiency by relocating nodes toward regions of rapid variation, while keeping the total number of nodes fixed. Classical approaches solve the Monge-Ampère (MA) equation to compute the coordinate mapping for mesh movement.
 
 **Limitations of Prior Work**: Classical MA methods are computationally expensive—they require repeatedly solving auxiliary PDEs and performing mesh quality checks, and in extreme cases the overhead of adaptation itself exceeds that of the PDE solve. Existing deep learning methods (M2N, UM2N) adopt supervised learning and train on adapted meshes produced by MA as labels, but suffer from two fundamental limitations: M2N requires retraining for each PDE type and geometry, and is susceptible to mesh tangling; UM2N attempts zero-shot generalization but exhibits significant performance degradation on unseen domains and PDEs.
 
-**Root Cause**: Supervised methods depend on pre-adapted meshes as training labels, yet high-quality reference meshes are often unavailable for multi-physics or geometrically complex problems, limiting practical applicability and generalization.
+**Key Challenge**: Supervised methods depend on pre-adapted meshes as training labels, yet high-quality reference meshes are often unavailable for multi-physics or geometrically complex problems, limiting practical applicability and generalization.
 
 **Core Idea**: Inspired by the patch concept in Vision Transformers, each node and its first-order neighbors are defined as a Node Patch for localized processing. An M-Uniform loss is designed to enforce the equidistribution property at the node level. Because the loss directly encodes the mathematical objective of mesh movement (the equidistribution condition), training requires no supervised labels.
 

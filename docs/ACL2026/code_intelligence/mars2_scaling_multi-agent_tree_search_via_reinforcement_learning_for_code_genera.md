@@ -28,15 +28,15 @@ MARS2 proposes a multi-agent reinforcement tree search framework that embeds mul
 
 ## Background & Motivation
 
-**State of the Field**: RLVR paradigms such as GRPO have achieved significant progress on reasoning tasks including code generation. Search-augmented RL (e.g., TreeRL) introduces MCTS tree structures to provide more diverse exploration signals. Multi-agent RL (MARL) generates non-stationary data distributions through multi-policy interaction, offering a potential avenue to overcome the limitations of single-policy exploration.
+**Background**: RLVR paradigms such as GRPO have achieved significant progress on reasoning tasks including code generation. Search-augmented RL (e.g., TreeRL) introduces MCTS tree structures to provide more diverse exploration signals. Multi-agent RL (MARL) generates non-stationary data distributions through multi-policy interaction, offering a potential avenue to overcome the limitations of single-policy exploration.
 
 **Limitations of Prior Work**: (1) Single-agent tree search is constrained — the entire search tree is driven by a single policy distribution, and during late-stage training, search behavior concentrates on a small number of high-probability branches, resulting in diminishing exploration gains. (2) Multi-agent methods are decoupled from structured search — existing multi-agent reasoning frameworks (debate, voting, etc.) perform only lightweight coordination and lack support for structured search operations such as branching, backtracking, and budget allocation.
 
-**Root Cause**: Single-policy search converges to local optima (Challenge 1), while multi-agent collaboration lacks search structure (Challenge 2). A unified framework is needed to address both.
+**Key Challenge**: Single-policy search converges to local optima (Challenge 1), while multi-agent collaboration lacks search structure (Challenge 2). A unified framework is needed to address both.
 
-**Paper Goals**: To construct a multi-agent collaborative tree search RL framework in which heterogeneous agents cooperatively generate and refine candidate solutions within a shared search tree.
+**Goal**: To construct a multi-agent collaborative tree search RL framework in which heterogeneous agents cooperatively generate and refine candidate solutions within a shared search tree.
 
-**Starting Point**: The search tree is treated as a learnable multi-agent interaction environment, where different agents contribute distinct policy priors and exploration budgets are dynamically allocated via Thompson sampling.
+**Key Insight**: The search tree is treated as a learnable multi-agent interaction environment, where different agents contribute distinct policy priors and exploration budgets are dynamically allocated via Thompson sampling.
 
 **Core Idea**: Multiple agents collaboratively expand nodes on a shared search tree, each optimized independently. Reward signals are shaped through tree-consistent reward shaping that incorporates parent-node and sibling-node information, while path-level group advantage estimation ensures stable credit assignment across complex search trajectories.
 

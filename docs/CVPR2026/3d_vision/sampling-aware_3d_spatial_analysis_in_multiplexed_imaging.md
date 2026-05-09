@@ -29,11 +29,11 @@ This paper systematically investigates how sampling geometry (2D single sections
 
 ## Background & Motivation
 
-1. **State of the Field**: Highly multiplexed microscopy technologies (e.g., CODEX, IMC) enable spatial analysis of dozens of molecular markers at single-cell resolution, yet most downstream analyses remain confined to two-dimensional tissue sections.
+1. **Background**: Highly multiplexed microscopy technologies (e.g., CODEX, IMC) enable spatial analysis of dozens of molecular markers at single-cell resolution, yet most downstream analyses remain confined to two-dimensional tissue sections.
 2. **Limitations of Prior Work**: Dense volumetric acquisition is both costly and technically demanding in spatial proteomics. Practitioners operating under fixed imaging budgets must typically choose between 2D sections (maximizing spatial coverage) and 3D serial sections (preserving partial depth continuity).
-3. **Root Cause**: 2D sampling induces *depth collapse*—the loss of neighborhood context along the z-axis—causing high variance in local spatial statistics (e.g., cellular clustering and cell–cell interactions), while global statistics (e.g., cell-type abundance) remain comparatively stable. This differential sensitivity had not been systematically quantified prior to this work.
-4. **Paper Goals**: (1) Quantify the effect of sampling geometry on the recovery of global vs. local spatial statistics; (2) design a lightweight reconstruction module to support sparse 3D analysis.
-5. **Starting Point**: The authors draw on visual sampling theory and formulate spatial proteomics as a structured sub-sampling problem defined over a Markov Random Field (MRF).
+3. **Key Challenge**: 2D sampling induces *depth collapse*—the loss of neighborhood context along the z-axis—causing high variance in local spatial statistics (e.g., cellular clustering and cell–cell interactions), while global statistics (e.g., cell-type abundance) remain comparatively stable. This differential sensitivity had not been systematically quantified prior to this work.
+4. **Goal**: (1) Quantify the effect of sampling geometry on the recovery of global vs. local spatial statistics; (2) design a lightweight reconstruction module to support sparse 3D analysis.
+5. **Key Insight**: The authors draw on visual sampling theory and formulate spatial proteomics as a structured sub-sampling problem defined over a Markov Random Field (MRF).
 6. **Core Idea**: Sampling geometry determines which spatial relationships are observable; therefore, acquisition strategies should be selected according to the target statistics, and sparse 3D reconstruction should be employed to compensate for the limitations of 2D sampling.
 
 ## Method

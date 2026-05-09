@@ -28,18 +28,18 @@ This paper proposes Ground-Compose-Reinforce (GCR), an end-to-end neuro-symbolic
 
 ## Background & Motivation
 
-**State of the Field**: Enabling agents to execute tasks via language instructions requires solving the "language grounding" problem — associating language with perception and action. Two main paradigms exist: (a) hand-engineering domain-specific reward functions or success detectors; (b) training on massive language–trajectory paired data (e.g., π0, RT-2).
+**Background**: Enabling agents to execute tasks via language instructions requires solving the "language grounding" problem — associating language with perception and action. Two main paradigms exist: (a) hand-engineering domain-specific reward functions or success detectors; (b) training on massive language–trajectory paired data (e.g., π0, RT-2).
 
 **Limitations of Prior Work**:
    - Hand-engineering approaches are difficult to scale in complex or non-simulated settings and generalize poorly.
    - Data-driven approaches require enormous annotated trajectory datasets (e.g., hundreds of thousands of trajectories) and tend to fail on complex or OOD tasks in data-scarce settings (e.g., robotic manipulation).
    - Non-compositional methods cannot exploit the compositionality of language — learning "pick up the red block" and "open the drawer" does not automatically yield "place the red block in the drawer."
 
-**Root Cause**: How can one achieve an end-to-end mapping from high-level task specifications to executable behaviours with very limited annotated data, while generalizing to compositional tasks never seen during training?
+**Key Challenge**: How can one achieve an end-to-end mapping from high-level task specifications to executable behaviours with very limited annotated data, while generalizing to compositional tasks never seen during training?
 
-**Paper Goals**: To learn language grounding from a small number of annotated trajectories — without hand-crafted reward functions or large-scale data — and achieve OOD generalization through composition.
+**Goal**: To learn language grounding from a small number of annotated trajectories — without hand-crafted reward functions or large-scale data — and achieve OOD generalization through composition.
 
-**Starting Point**: The paper exploits the natural compositional structure of Reward Machines (automaton-based task specification languages) — first learning the semantics of atomic propositions, then expressing arbitrarily complex tasks via logical composition, and finally applying RL with self-generated rewards.
+**Key Insight**: The paper exploits the natural compositional structure of Reward Machines (automaton-based task specification languages) — first learning the semantics of atomic propositions, then expressing arbitrarily complex tasks via logical composition, and finally applying RL with self-generated rewards.
 
 **Core Idea**: Decompose language grounding into three steps — "learn atomic concepts + logical composition + RL fine-tuning" — leveraging compositionality rather than massive data to achieve generalization.
 

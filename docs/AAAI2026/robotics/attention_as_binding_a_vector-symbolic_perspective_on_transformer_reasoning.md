@@ -30,13 +30,13 @@ This paper proposes reinterpreting the Transformer self-attention mechanism as a
 
 ## Background & Motivation
 
-**State of the Field**: Transformers excel at in-context learning, tool use, and related tasks, yet frequently fail on simple variants, systematic generalization, and logical consistency (e.g., variable substitution errors, over-reliance on surface cues), suggesting their reasoning capabilities are merely "approximate" rather than "reliable" symbolic operations.
+**Background**: Transformers excel at in-context learning, tool use, and related tasks, yet frequently fail on simple variants, systematic generalization, and logical consistency (e.g., variable substitution errors, over-reliance on surface cues), suggesting their reasoning capabilities are merely "approximate" rather than "reliable" symbolic operations.
 
 **Limitations of Prior Work**: Existing understanding of attention remains at the level of "content-addressed lookup" and fails to clarify how roles, fillers, and structured relations are internally encoded, leaving unexplained when reasoning succeeds or fails.
 
-**Root Cause**: Classical cognitive science and neuro-symbolic AI emphasize that reliable reasoning requires variable binding/unbinding mechanisms (Smolensky 1990). Standard neural embeddings provide no explicit guarantee of role–filler structure.
+**Key Challenge**: Classical cognitive science and neuro-symbolic AI emphasize that reliable reasoning requires variable binding/unbinding mechanisms (Smolensky 1990). Standard neural embeddings provide no explicit guarantee of role–filler structure.
 
-**Paper Goals**: VSA (Plate 1995; Kanerva 2009) provides an ideal algebraic framework — implementing distributed symbolic computation in fixed-dimensional vector spaces via binding, superposition, and permutation — and naturally bridges Transformer representations with symbolic reasoning.
+**Goal**: VSA (Plate 1995; Kanerva 2009) provides an ideal algebraic framework — implementing distributed symbolic computation in fixed-dimensional vector spaces via binding, superposition, and permutation — and naturally bridges Transformer representations with symbolic reasoning.
 
 The success yet unfaithfulness of Chain-of-Thought prompting (Turpin et al. 2023) and the lack of algebraic coherence between external tool augmentation and Transformer internal representations further motivate the need for a unified representational framework.
 

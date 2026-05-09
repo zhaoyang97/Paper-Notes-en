@@ -28,15 +28,15 @@ This paper proposes a new task and benchmark for Long-Tailed Online Anomaly Dete
 
 ## Background & Motivation
 
-**State of the Field**: Anomaly detection (AD) aims to identify defective regions in images and is widely applied in industrial manufacturing and medical diagnosis. Various settings have been studied in recent years, including unsupervised one-class AD, unified AD (a single model handling all categories), long-tailed AD (LTAD), and online AD.
+**Background**: Anomaly detection (AD) aims to identify defective regions in images and is widely applied in industrial manufacturing and medical diagnosis. Various settings have been studied in recent years, including unsupervised one-class AD, unified AD (a single model handling all categories), long-tailed AD (LTAD), and online AD.
 
 **Limitations of Prior Work**: Existing LTAD methods are class-aware, requiring class labels of input images to select corresponding class-specific modules. However, class labels are typically unavailable in online streaming data scenarios. Current online AD methods do not account for long-tailed distributions. Furthermore, LTAD architectures have not leveraged recent advances in VQ-VAE, and their prompt learning designs remain incomplete.
 
-**Root Cause**: When long-tailed distribution, online learning, and the absence of class labels co-exist, existing methods break down. Class-aware methods rely on hard switching, which fails entirely when encountering unseen categories.
+**Key Challenge**: When long-tailed distribution, online learning, and the absence of class labels co-exist, existing methods break down. Class-aware methods rely on hard switching, which fails entirely when encountering unseen categories.
 
-**Paper Goals**: Define the LTOAD task, design a class-agnostic framework that enables LTAD methods to operate in online settings, and propose an anomaly-adaptive online learning algorithm.
+**Goal**: Define the LTOAD task, design a class-agnostic framework that enables LTAD methods to operate in online settings, and propose an anomaly-adaptive online learning algorithm.
 
-**Starting Point**: A key observation is that the class information of an image can be represented as a combination of multiple "concepts." For example, "transistor" can be composed of the concepts "semiconductor" and "circuit." By replacing explicit class labels $\mathcal{C}$ with a learnable concept set $\widehat{\mathcal{C}}$ and using soft weighting instead of hard switching, the model can remain functional even for unseen categories.
+**Key Insight**: A key observation is that the class information of an image can be represented as a combination of multiple "concepts." For example, "transistor" can be composed of the concepts "semiconductor" and "circuit." By replacing explicit class labels $\mathcal{C}$ with a learnable concept set $\widehat{\mathcal{C}}$ and using soft weighting instead of hard switching, the model can remain functional even for unseen categories.
 
 **Core Idea**: Replace class-label dependency with a learnable class-agnostic concept set, combined with a Concept VQ-VAE and anomaly-adaptive online learning, to achieve long-tailed online anomaly detection without class labels.
 

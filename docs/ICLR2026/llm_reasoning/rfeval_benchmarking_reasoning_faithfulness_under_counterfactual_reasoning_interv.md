@@ -31,7 +31,7 @@ LRMs demonstrate strong performance on complex problems, yet their generated rea
 
 Existing evaluations of LRMs predominantly focus on task accuracy, but high accuracy does not imply faithful reasoning: a model may produce correct answers via post-hoc rationalization without genuinely following its stated reasoning. Prior faithfulness research has largely relied on input-level perturbations (e.g., injecting prompt biases), lacking a systematic output-level intervention framework.
 
-**Root Cause**: The internal "true reasoning process" (i.e., all intermediate activations) is unobservable, necessitating a purely behavioral, model-agnostic proxy measure for faithfulness. **Starting Point**: The paper adopts **output-level counterfactual intervention** — injecting counterfactual reasoning containing errors into the model's reasoning trajectory and observing whether the model responds consistently (i.e., revises its stance) or merely makes superficial adjustments while preserving its original conclusion.
+**Key Challenge**: The internal "true reasoning process" (i.e., all intermediate activations) is unobservable, necessitating a purely behavioral, model-agnostic proxy measure for faithfulness. **Key Insight**: The paper adopts **output-level counterfactual intervention** — injecting counterfactual reasoning containing errors into the model's reasoning trajectory and observing whether the model responds consistently (i.e., revises its stance) or merely makes superficial adjustments while preserving its original conclusion.
 
 ## Method
 

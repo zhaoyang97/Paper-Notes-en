@@ -27,11 +27,11 @@ content_hash: 52e5beba7d04c378
 This paper introduces SpatialScore, currently the most comprehensive multimodal spatial intelligence benchmark (5K samples / 30 tasks), and proposes two complementary approaches to enhance spatial understanding in MLLMs: a data-driven fine-tuning scheme via SpatialCorpus (331K QA pairs) and a training-free SpatialAgent system equipped with 12 specialized tools.
 
 ## Background & Motivation
-1. **State of the Field**: Multimodal large language models (MLLMs) have demonstrated strong performance on semantic QA and mathematical reasoning, yet evaluation of spatial intelligence remains fragmented and limited in scope.
+1. **Background**: Multimodal large language models (MLLMs) have demonstrated strong performance on semantic QA and mathematical reasoning, yet evaluation of spatial intelligence remains fragmented and limited in scope.
 2. **Limitations of Prior Work**: Existing spatial benchmarks suffer from two major deficiencies: (i) tasks are overly simplistic, focusing primarily on coarse-grained spatial relations (e.g., object existence/location) while neglecting rigorous visual-geometric perception (e.g., camera pose estimation, dynamic scene understanding); (ii) evaluation coverage is narrow, relying on simple true/false questions, unimodal inputs, or single-skill assessments that fail to comprehensively measure spatial intelligence.
-3. **Root Cause**: Classical computer vision has established mature geometric optimization tools and mathematical foundations, yet these advances remain confined to the purely visual paradigm and lack tight integration with language as well as a unified evaluation protocol.
-4. **Paper Goals**: (i) Construct the most comprehensive spatial intelligence benchmark to date; (ii) Conduct extensive evaluation of 49 representative MLLMs; (iii) Improve spatial reasoning capability through both data-driven and agent-based approaches.
-5. **Starting Point**: The fusion of semantic understanding and spatial perception is identified as the next frontier, motivating a systematic investigation of the extent to which existing MLLMs possess spatial intelligence.
+3. **Key Challenge**: Classical computer vision has established mature geometric optimization tools and mathematical foundations, yet these advances remain confined to the purely visual paradigm and lack tight integration with language as well as a unified evaluation protocol.
+4. **Goal**: (i) Construct the most comprehensive spatial intelligence benchmark to date; (ii) Conduct extensive evaluation of 49 representative MLLMs; (iii) Improve spatial reasoning capability through both data-driven and agent-based approaches.
+5. **Key Insight**: The fusion of semantic understanding and spatial perception is identified as the next frontier, motivating a systematic investigation of the extent to which existing MLLMs possess spatial intelligence.
 6. **Core Idea**: A comprehensive benchmark spanning 30 tasks is proposed, accompanied by large-scale training corpora and a multi-tool agent system, advancing spatial intelligence from both evaluation and enhancement perspectives.
 
 ## Method

@@ -29,15 +29,15 @@ DreamVideo-Omni is proposed as a two-stage progressive training paradigm—omni-
 
 ## Background & Motivation
 
-**State of the Field**: Large-scale diffusion models have achieved breakthroughs in text-to-video generation, yet real-world applications demand simultaneous high-fidelity generation with precise control over multi-subject identity and multi-granularity motion. Existing methods focus either on subject customization (e.g., ConsisID, VideoMage) or on motion control (e.g., Tora, Wan-Move), with few unified frameworks.
+**Background**: Large-scale diffusion models have achieved breakthroughs in text-to-video generation, yet real-world applications demand simultaneous high-fidelity generation with precise control over multi-subject identity and multi-granularity motion. Existing methods focus either on subject customization (e.g., ConsisID, VideoMage) or on motion control (e.g., Tora, Wan-Move), with few unified frameworks.
 
 **Limitations of Prior Work**: Current unification attempts face three major bottlenecks: (a) **Limited motion control granularity**: most methods rely on a single signal (bounding box / depth map / sparse trajectory), precluding simultaneous control over global position, local dynamics, and camera motion; (b) **Control ambiguity**: in multi-subject scenes, models cannot determine which motion signal corresponds to which subject; (c) **Identity degradation**: introducing motion control reduces identity fidelity, since identity preservation requires pixel-level consistency while motion control requires pixel-level dynamics—a contradiction that standard diffusion reconstruction losses cannot reconcile.
 
-**Root Cause**: Identity preservation (encouraging static pixel-level consistency) and motion control (requiring dynamic pixel evolution) are inherently conflicting objectives that standard diffusion losses are insufficient to satisfy simultaneously.
+**Key Challenge**: Identity preservation (encouraging static pixel-level consistency) and motion control (requiring dynamic pixel evolution) are inherently conflicting objectives that standard diffusion losses are insufficient to satisfy simultaneously.
 
-**Paper Goals**: To achieve multi-subject customization and full-granularity motion control (global + local + camera) simultaneously within a single framework without sacrificing identity fidelity.
+**Goal**: To achieve multi-subject customization and full-granularity motion control (global + local + camera) simultaneously within a single framework without sacrificing identity fidelity.
 
-**Starting Point**: (a) Explicitly binding motion signals to their corresponding subjects to eliminate ambiguity; (b) employing reinforcement learning from human preferences—rather than reconstruction loss—to optimize identity preservation, as identity assessment is fundamentally a subjective perceptual alignment task.
+**Key Insight**: (a) Explicitly binding motion signals to their corresponding subjects to eliminate ambiguity; (b) employing reinforcement learning from human preferences—rather than reconstruction loss—to optimize identity preservation, as identity assessment is fundamentally a subjective perceptual alignment task.
 
 **Core Idea**: A two-stage paradigm: Stage 1 performs joint training with structured triplets ⟨reference subject, global bounding box, local trajectory⟩ and introduces group/role embeddings to resolve ambiguity; Stage 2 trains a Latent Identity Reward Model (LIRM) to compute identity rewards directly in latent space, bypassing the VAE decoder for efficient reinforcement learning.
 

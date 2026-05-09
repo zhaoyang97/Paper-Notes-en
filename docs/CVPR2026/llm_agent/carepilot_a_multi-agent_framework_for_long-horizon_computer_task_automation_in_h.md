@@ -28,13 +28,13 @@ This paper proposes the CareFlow benchmark (1,050 long-horizon medical software 
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal agents have made progress in Android, desktop, and web environments (Mind2Web, SeeAct, UI-TARS, etc.), but no standardized benchmark exists for medical software.
+**Background**: Multimodal agents have made progress in Android, desktop, and web environments (Mind2Web, SeeAct, UI-TARS, etc.), but no standardized benchmark exists for medical software.
 
 **Unique Challenges of Medical Software**: (1) Routine clinical operations require chaining 10–15 dependent steps (open study → configure view → annotate → export → update record); (2) platforms are highly heterogeneous and frequently updated; (3) strict data integrity, audit trail, and privacy compliance requirements; (4) institution-specific UI layouts make agents that overfit to surface-level layouts brittle.
 
 **Limitations of Prior Work**: (1) No publicly available long-horizon benchmark for medical software interaction exists; (2) existing VLMs (GPT-4o, Gemini, etc.) perform poorly on medical GUIs—step-level accuracy is acceptable but task completion rates are extremely low.
 
-**Starting Point**: Construct the first long-horizon medical software benchmark and design an Actor-Critic agent with tool grounding and memory mechanisms.
+**Key Insight**: Construct the first long-horizon medical software benchmark and design an Actor-Critic agent with tool grounding and memory mechanisms.
 
 **Core Idea**: The Actor predicts the next action → the Critic evaluates and corrects → dual memory (short-term + long-term) maintains workflow context → iterative simulation training improves robustness.
 

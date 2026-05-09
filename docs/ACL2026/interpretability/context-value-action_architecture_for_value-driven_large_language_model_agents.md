@@ -27,15 +27,15 @@ This paper proposes the CVA (Context-Value-Action) architecture, grounded in the
 
 ## Background & Motivation
 
-**State of the Field**: LLM-based human-like agents (game NPCs, social simulacra, task assistants, etc.) must faithfully capture the complexity, diversity, and stochasticity of human behavior. Existing approaches primarily rely on psychological prompting strategies—such as role-playing and chain-of-thought reasoning—to simulate human cognitive processes.
+**Background**: LLM-based human-like agents (game NPCs, social simulacra, task assistants, etc.) must faithfully capture the complexity, diversity, and stochasticity of human behavior. Existing approaches primarily rely on psychological prompting strategies—such as role-playing and chain-of-thought reasoning—to simulate human cognitive processes.
 
 **Limitations of Prior Work**: Existing LLM agents frequently exhibit behavioral rigidity and stereotyping. More critically, this problem is obscured by prevailing evaluation practices: "LLM-as-a-judge" evaluation suffers from self-referential bias, as the judge model shares pre-training biases with the agent being evaluated and tends to reward polarized behavior rather than penalizing its lack of authenticity.
 
-**Root Cause**: Increasing the intensity of prompt-driven reasoning does not improve behavioral fidelity; instead, it exacerbates value polarization. LLMs tend to collapse nuanced value dimensions into "caricatured" prototypes (e.g., mapping an "irritable" personality to uniformly aggressive responses), causing population-level diversity to collapse.
+**Key Challenge**: Increasing the intensity of prompt-driven reasoning does not improve behavioral fidelity; instead, it exacerbates value polarization. LLMs tend to collapse nuanced value dimensions into "caricatured" prototypes (e.g., mapping an "irritable" personality to uniformly aggressive responses), causing population-level diversity to collapse.
 
-**Paper Goals**: To construct agents that faithfully reproduce the diversity of human behavior, using real human data—rather than LLM self-evaluation—as the evaluation criterion.
+**Goal**: To construct agents that faithfully reproduce the diversity of human behavior, using real human data—rather than LLM self-evaluation—as the evaluation criterion.
 
-**Starting Point**: The work draws on the psychological S-O-R (Stimulus-Organism-Response) model and Schwartz's theory of basic human values. Human behavior is not a static output of personality, but a dynamic process in which contextual stimuli activate specific value dimensions.
+**Key Insight**: The work draws on the psychological S-O-R (Stimulus-Organism-Response) model and Schwartz's theory of basic human values. Human behavior is not a static output of personality, but a dynamic process in which contextual stimuli activate specific value dimensions.
 
 **Core Idea**: An external Value Verifier, trained on real human data, replaces the LLM's own value judgment, decoupling action generation from cognitive reasoning and thereby eliminating the self-referential bias that drives polarization.
 

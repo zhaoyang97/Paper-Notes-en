@@ -27,15 +27,15 @@ content_hash: 1e1f8e460edcdcc7
 This paper proposes the Cross framework, which employs LLMs to dynamically summarize the semantic evolution of node neighborhoods at strategically sampled temporal points (Temporal Reasoning Chain), then bidirectionally fuses text semantics and graph structural temporal information via a semantic-structural co-encoder. The approach achieves an average MRR improvement of 24.7% on temporal link prediction and a 3.7% AUC gain on an industrial dataset (WeChat).
 
 ## Background & Motivation
-**State of the Field**: Temporal graph modeling is a core task in recommendation systems, social networks, and financial risk control. Methods such as TGAT, TGN, and DyGFormer employ attention or memory modules to capture structural dynamics in graphs.
+**Background**: Temporal graph modeling is a core task in recommendation systems, social networks, and financial risk control. Methods such as TGAT, TGN, and DyGFormer employ attention or memory modules to capture structural dynamics in graphs.
 
 **Limitations of Prior Work**: In temporal text-attributed graphs (TTAGs, e.g., social posts, news, or paper citation networks), nodes carry rich textual attributes. However, existing TGNNs encode text as static embeddings, entirely ignoring the temporal evolution of text semantics—a user's posting topics shift over time, and the context in which a paper is cited also changes.
 
-**Root Cause**: Structural dynamics and semantic dynamics in graphs are coupled (a user posting on a new topic attracts different interactions), yet existing methods model only one of these dimensions.
+**Key Challenge**: Structural dynamics and semantic dynamics in graphs are coupled (a user posting on a new topic attracts different interactions), yet existing methods model only one of these dimensions.
 
-**Paper Goals**: Enable TGNNs to simultaneously leverage the temporal evolution of text semantics and the temporal dynamics of graph structure.
+**Goal**: Enable TGNNs to simultaneously leverage the temporal evolution of text semantics and the temporal dynamics of graph structure.
 
-**Starting Point**: LLMs inherently understand text semantics and temporal context. The paper uses LLMs to summarize a node's neighborhood semantic state at key temporal points, then bidirectionally fuses this information with structural information from TGNNs.
+**Key Insight**: LLMs inherently understand text semantics and temporal context. The paper uses LLMs to summarize a node's neighborhood semantic state at key temporal points, then bidirectionally fuses this information with structural information from TGNNs.
 
 **Core Idea**: LLM-extracted semantic temporal chains + TGNN-extracted structural temporal information + cross-modal mixer for fusion = comprehensive modeling of temporal text-attributed graphs.
 

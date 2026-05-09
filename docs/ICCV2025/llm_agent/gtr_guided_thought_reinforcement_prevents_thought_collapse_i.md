@@ -29,11 +29,11 @@ This paper identifies the "thought collapse" phenomenon in RL-based VLM Agent tr
 
 ## Background & Motivation
 
-- **State of the Field**: RLVR has successfully scaled CoT capabilities in LLM mathematical reasoning, but shows limited effectiveness in VLM Agent decision-making within visual environments.
+- **Background**: RLVR has successfully scaled CoT capabilities in LLM mathematical reasoning, but shows limited effectiveness in VLM Agent decision-making within visual environments.
 - **Limitations of Prior Work**: Under RL training with only outcome rewards, the long-chain thought process is neither evaluated nor supervised, causing CoT reasoning to rapidly degenerate in complex tasks — manifesting as loss of diversity, state-agnostic reasoning, and incomplete inference.
-- **Root Cause**: RL rewards are based solely on action outcomes, whereas CoT thoughts form the foundation of decision-making yet remain entirely unsupervised.
-- **Paper Goals**: Prevent thought collapse in RL-based VLM Agent training.
-- **Starting Point**: Process guidance — replacing coarse-grained numerical rewards with informative process supervision provided by an external VLM corrector.
+- **Key Challenge**: RL rewards are based solely on action outcomes, whereas CoT thoughts form the foundation of decision-making yet remain entirely unsupervised.
+- **Goal**: Prevent thought collapse in RL-based VLM Agent training.
+- **Key Insight**: Process guidance — replacing coarse-grained numerical rewards with informative process supervision provided by an external VLM corrector.
 - **Core Idea**: Automatically correcting collapsed thought trajectories via a VLM corrector, combined with DAgger to mitigate distribution shift, enabling joint optimization of both thoughts and actions.
 
 ## Method

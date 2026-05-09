@@ -29,20 +29,20 @@ This paper proposes QuatRoPE, a quaternion rotation-based 3D positional encoding
 
 ## Background & Motivation
 
-1. **State of the Field**: 3D spatial reasoning requires models to localize target objects based on inter-object spatial relations (e.g., "to the left of the table"), which is a core capability for 3D visual grounding (3D VG) and 3D visual question answering (3D VQA). Due to the scarcity of 3D scene–text paired data, the dominant approach injects point cloud features into the LLM input space and leverages the LLM's pretrained reasoning capabilities for spatial inference.
+1. **Background**: 3D spatial reasoning requires models to localize target objects based on inter-object spatial relations (e.g., "to the left of the table"), which is a core capability for 3D visual grounding (3D VG) and 3D visual question answering (3D VQA). Due to the scarcity of 3D scene–text paired data, the dominant approach injects point cloud features into the LLM input space and leverages the LLM's pretrained reasoning capabilities for spatial inference.
 
 2. **Limitations of Prior Work**: Existing methods fall into two encoding categories, each with notable drawbacks:
     - **Absolute positional encoding** (e.g., Chat-Scene, LEO): fuses 3D coordinates with geometric features early on, making it difficult for the LLM to extract spatial relations from these entangled representations.
     - **Explicit pairwise relation encoding** (e.g., 3DGraphLLM): uses additional tokens to represent pairwise object relations, but the number of tokens grows quadratically with the number of objects (e.g., 554 objects yield over 150,000 pairs), far exceeding LLM input limits. KNN pruning can reduce tokens but "nearest neighbor ≠ relevant," potentially omitting critical spatial relations.
 
-3. **Root Cause**: How can a model perceive all pairwise spatial relations while maintaining linear input length?
+3. **Key Challenge**: How can a model perceive all pairwise spatial relations while maintaining linear input length?
 
-4. **Paper Goals**:
+4. **Goal**:
     - Encode $O(n^2)$ spatial relations within $O(n)$ tokens.
     - Avoid spurious similarity caused by independent axis encoding.
     - Integrate spatial positional encoding with language RoPE without mutual interference.
 
-5. **Starting Point**: Inspired by RoPE (Rotary Position Embedding), which converts absolute positions into relative positions, this work encodes only absolute coordinates on each object token and lets the attention dot product automatically compute pairwise relative positions.
+5. **Key Insight**: Inspired by RoPE (Rotary Position Embedding), which converts absolute positions into relative positions, this work encodes only absolute coordinates on each object token and lets the attention dot product automatically compute pairwise relative positions.
 
 6. **Core Idea**: Encode 3D coordinates as a holistic vector via quaternion rotation, such that attention scores depend solely on the relative positional difference between objects.
 
@@ -146,11 +146,11 @@ This paper proposes QuatRoPE — a quaternion rotation-based 3D positional encod
 
 ## Background & Motivation
 
-1. **State of the Field**: 3D vision-language tasks (VG, VQA) require models to understand inter-object spatial relations. Due to the scarcity of 3D scene–text paired data, the dominant approach injects point cloud representations into LLMs and leverages pretrained reasoning capabilities.
+1. **Background**: 3D vision-language tasks (VG, VQA) require models to understand inter-object spatial relations. Due to the scarcity of 3D scene–text paired data, the dominant approach injects point cloud representations into LLMs and leverages pretrained reasoning capabilities.
 2. **Limitations of Prior Work**: (A) **Absolute positional encoding** (e.g., Chat-Scene, LEO) fuses 3D coordinates into object features, but the early feature fusion makes it difficult for the LLM to extract spatial relations; (B) **Explicit relation encoding** (e.g., 3DGraphLLM) uses additional tokens to encode inter-object relations, but the number of relations scales quadratically as $O(n^2)$, readily exceeding LLM input limits. KNN pruning may omit critical relations.
-3. **Root Cause**: A balance must be struck between input length (scalability) and completeness of spatial relations.
-4. **Paper Goals**: (1) Encode complete pairwise relative positions with linear input length; (2) avoid spurious attention inflation caused by single-axis coordinate proximity; (3) integrate the new positional encoding with the LLM's existing language RoPE without interference.
-5. **Starting Point**: Leveraging a property of the Transformer attention mechanism — the query-key dot product naturally converts absolute positions into relative positions (analogous to 1D RoPE) — and generalizing this idea to 3D.
+3. **Key Challenge**: A balance must be struck between input length (scalability) and completeness of spatial relations.
+4. **Goal**: (1) Encode complete pairwise relative positions with linear input length; (2) avoid spurious attention inflation caused by single-axis coordinate proximity; (3) integrate the new positional encoding with the LLM's existing language RoPE without interference.
+5. **Key Insight**: Leveraging a property of the Transformer attention mechanism — the query-key dot product naturally converts absolute positions into relative positions (analogous to 1D RoPE) — and generalizing this idea to 3D.
 6. **Core Idea**: Encode 3D coordinates into query/key vectors via quaternion rotation so that attention scores depend only on the relative 3D displacement between objects, yielding a scalable scheme that preserves $O(n^2)$ relations with $O(n)$ tokens.
 
 ## Method

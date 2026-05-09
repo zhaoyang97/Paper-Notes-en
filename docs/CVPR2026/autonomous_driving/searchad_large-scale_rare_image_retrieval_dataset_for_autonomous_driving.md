@@ -28,15 +28,15 @@ SearchAD introduces the first large-scale rare image retrieval dataset for auton
 
 ## Background & Motivation
 
-**State of the Field**: The safety of autonomous driving (AD) systems critically depends on the ability to handle rare and safety-critical scenarios. As dataset scales continue to grow (now reaching millions of frames), the key challenge has shifted from "collecting more data" to "efficiently retrieving the most relevant samples."
+**Background**: The safety of autonomous driving (AD) systems critically depends on the ability to handle rare and safety-critical scenarios. As dataset scales continue to grow (now reaching millions of frames), the key challenge has shifted from "collecting more data" to "efficiently retrieving the most relevant samples."
 
 **Limitations of Prior Work**: (1) Existing AD datasets focus primarily on common categories (vehicles, pedestrians, cyclists, etc.) with minimal coverage of rare objects such as pedestrians with crutches, animals, and abnormal road markings; (2) existing image retrieval benchmarks are designed for instance-level retrieval (different viewpoints of the same object) rather than the semantic-level retrieval required in AD (finding images containing a specific rare category); (3) no unified large-scale benchmark exists to evaluate and advance retrieval techniques for rare driving scenarios.
 
-**Root Cause**: Rare safety-critical scenarios occur at extremely low frequencies (a "needle-in-a-haystack" problem), yet they are crucial to the safety of AD systems. Existing methods have not been specifically evaluated for retrieval capability under such extreme long-tail distributions.
+**Key Challenge**: Rare safety-critical scenarios occur at extremely low frequencies (a "needle-in-a-haystack" problem), yet they are crucial to the safety of AD systems. Existing methods have not been specifically evaluated for retrieval capability under such extreme long-tail distributions.
 
-**Paper Goals**: To construct the first large-scale dataset and benchmark focused on rare object/scene retrieval in autonomous driving scenarios, filling a critical gap in the field.
+**Goal**: To construct the first large-scale dataset and benchmark focused on rare object/scene retrieval in autonomous driving scenarios, filling a critical gap in the field.
 
-**Starting Point**: Integrating data from 11 existing AD datasets and creating a unified retrieval benchmark through manual annotation of bounding boxes for 90 rare categories.
+**Key Insight**: Integrating data from 11 existing AD datasets and creating a unified retrieval benchmark through manual annotation of bounding boxes for 90 rare categories.
 
 **Core Idea**: To address the "needle-in-a-haystack" problem in autonomous driving by constructing a large-scale rare image retrieval dataset that supports semantic-level text-to-image and image-to-image retrieval.
 

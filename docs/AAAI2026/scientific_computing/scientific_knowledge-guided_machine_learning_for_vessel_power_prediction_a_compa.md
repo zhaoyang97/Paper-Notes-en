@@ -40,7 +40,7 @@ A hybrid modeling framework combining a physics baseline with a data-driven resi
 
 ### Mechanism
 
-**Paper Goals**:
+**Goal**:
 
 ## Method
 

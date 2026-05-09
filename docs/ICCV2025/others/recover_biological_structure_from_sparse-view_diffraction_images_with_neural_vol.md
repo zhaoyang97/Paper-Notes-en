@@ -27,7 +27,7 @@ This paper proposes Neural Volumetric Prior (NVP), a hybrid neural representatio
 
 ## Background & Motivation
 
-**State of the Field**: Optical tomography reconstructs 3D biological structures from multi-angle 2D images and is an important tool for label-free imaging of living cells. Fluorescence diffraction tomography (FDT) uses internal fluorescent sources within the specimen, enabling imaging without requiring transmission from the opposite side, making it suitable for in vivo imaging.
+**Background**: Optical tomography reconstructs 3D biological structures from multi-angle 2D images and is an important tool for label-free imaging of living cells. Fluorescence diffraction tomography (FDT) uses internal fluorescent sources within the specimen, enabling imaging without requiring transmission from the opposite side, making it suitable for in vivo imaging.
 
 **Limitations of Prior Work**:
 - FDT requires **hundreds of 2D images** to reconstruct a single 3D volume, necessitating that the specimen remain stationary during acquisition (seconds to minutes), which precludes capturing rapid dynamic processes such as cardiomyocyte contraction or embryonic development.
@@ -35,9 +35,9 @@ This paper proposes Neural Volumetric Prior (NVP), a hybrid neural representatio
 - The numerical aperture of the microscope limits the available angular range, and the spatial distribution of fluorescent sources further restricts usable angles, resulting in an extremely sparse-view setting.
 - Existing neural field methods are based on **geometric optics** (e.g., NeRF), assuming rectilinear light propagation; however, diffraction effects are significant at the microscale, rendering geometric optics models inadequate.
 
-**Root Cause**: How can a 3D volume with a large number of unknown voxels be reconstructed from as few as ~6 images? The physical model must be upgraded from geometric to wave optics, while the neural representation must provide sufficient regularization under extremely sparse data.
+**Key Challenge**: How can a 3D volume with a large number of unknown voxels be reconstructed from as few as ~6 images? The physical model must be upgraded from geometric to wave optics, while the neural representation must provide sufficient regularization under extremely sparse data.
 
-**Starting Point**: Design a hybrid neural representation (explicit grid + implicit MLP) that retains the sparse prior of explicit representations while capturing spatial correlations through the MLP to compensate for missing information, combined with a diffractive optics physical prior for physically accurate rendering.
+**Key Insight**: Design a hybrid neural representation (explicit grid + implicit MLP) that retains the sparse prior of explicit representations while capturing spatial correlations through the MLP to compensate for missing information, combined with a diffractive optics physical prior for physically accurate rendering.
 
 ## Method
 

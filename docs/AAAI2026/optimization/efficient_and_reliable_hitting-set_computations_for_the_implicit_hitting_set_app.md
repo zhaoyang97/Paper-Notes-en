@@ -29,15 +29,15 @@ To address numerical instability arising from the reliance on commercial IP solv
 
 ## Background & Motivation
 
-**State of the Field** The implicit hitting set (IHS) method is a general-purpose framework for solving NP-hard combinatorial optimization problems, with successful practical applications in MaxSAT, constraint optimization, and pseudo-Boolean optimization (PBO). IHS iteratively alternates between a decision oracle that extracts sources of inconsistency (cores) and an optimizer that computes hitting sets over these cores.
+**Background** The implicit hitting set (IHS) method is a general-purpose framework for solving NP-hard combinatorial optimization problems, with successful practical applications in MaxSAT, constraint optimization, and pseudo-Boolean optimization (PBO). IHS iteratively alternates between a decision oracle that extracts sources of inconsistency (cores) and an optimizer that computes hitting sets over these cores.
 
 **Limitations of Prior Work** Hitting-set optimizers are almost exclusively implemented via integer programming (IP) solvers. However, commercial IP solvers use floating-point arithmetic by default, which can produce incorrect solutions due to numerical instability. Experiments confirm that Gurobi incorrectly claimed optimality nine times across four instances, and exact SCIP produced four erroneous results.
 
-**Root Cause** There is a fundamental trade-off between efficiency and reliability: floating-point IP solvers are fastest but unreliable, while exact IP solvers are reliable but reduce the number of solved instances by more than 15% and double memory consumption. More critically, existing IHS frameworks provide no independently verifiable correctness certificates for their computed results.
+**Key Challenge** There is a fundamental trade-off between efficiency and reliability: floating-point IP solvers are fastest but unreliable, while exact IP solvers are reliable but reduce the number of solved instances by more than 15% and double memory consumption. More critically, existing IHS frameworks provide no independently verifiable correctness certificates for their computed results.
 
-**Paper Goals** The paper aims to provide certifiable correctness guarantees for IHS computations while maintaining acceptable performance.
+**Goal** The paper aims to provide certifiable correctness guarantees for IHS computations while maintaining acceptable performance.
 
-**Starting Point** The paper exploits recent advances in conflict-driven pseudo-Boolean solvers to explore PB-reasoning-based alternatives for hitting-set computation, and investigates hybrid combinations with IP solving and stochastic local search.
+**Key Insight** The paper exploits recent advances in conflict-driven pseudo-Boolean solvers to explore PB-reasoning-based alternatives for hitting-set computation, and investigates hybrid combinations with IP solving and stochastic local search.
 
 **Core Idea** Through a carefully designed combination of PB reasoning, SLS, and IP solving, the paper realizes the first certifiable IHS computation framework, achieving verifiable correctness guarantees with controlled efficiency loss.
 

@@ -27,13 +27,13 @@ content_hash: a7ed645d271cd727
 This paper proposes a new paradigm that relocates adversarial perturbations from the input space to the feature space within reproducing kernel Hilbert spaces (RKHS), enabling exact closed-form solutions to the inner maximization problem. The outer minimization is solved efficiently via iterative reweighted kernel ridge regression, and the resulting adaptive regularization matches cross-validation performance without any hyperparameter tuning.
 
 ## Background & Motivation
-**State of the Field**: Adversarial training is a central technique for improving model robustness, but classical input-space adversarial training (e.g., PGD) requires solving an intractable min-max problem at significant computational cost.
+**Background**: Adversarial training is a central technique for improving model robustness, but classical input-space adversarial training (e.g., PGD) requires solving an intractable min-max problem at significant computational cost.
 
 **Limitations of Prior Work**: (a) The inner maximization under input-space perturbations is non-concave and typically requires multi-step gradient approximations; (b) while the equivalence between adversarial training and parameter shrinkage (ridge/lasso) in linear models has been extensively studied, analogous theory in infinite-dimensional kernel spaces remains undeveloped.
 
-**Root Cause**: How can adversarial training in kernel methods be made both efficiently solvable and endowed with adaptive regularization properties, while preserving adversarial robustness guarantees?
+**Key Challenge**: How can adversarial training in kernel methods be made both efficiently solvable and endowed with adaptive regularization properties, while preserving adversarial robustness guarantees?
 
-**Starting Point**: Adversarial perturbations are applied in the RKHS feature space rather than the input space, exploiting the linear structure of the feature space to obtain closed-form solutions.
+**Key Insight**: Adversarial perturbations are applied in the RKHS feature space rather than the input space, exploiting the linear structure of the feature space to obtain closed-form solutions.
 
 ## Method
 

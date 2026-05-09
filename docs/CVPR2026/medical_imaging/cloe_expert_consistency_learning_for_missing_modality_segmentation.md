@@ -35,9 +35,9 @@ Multimodal MRI segmentation (e.g., brain tumor) frequently encounters missing mo
 - **Fixed-weight fusion / attention mechanisms** (e.g., SE, CBAM): When missing modalities are filled with zero tensors, attention mechanisms become ineffective—magnitude-based attention cannot produce meaningful weights for zero inputs.
 - **Consistency learning** (e.g., Mean Teacher): Suffers from background dominance in volumetric MRI—global consistency can be satisfied without aligning small tumor regions.
 
-**Root Cause**: Prior methods lack an explicit mechanism for determining "which modality expert should be trusted for a given case and region." Different modalities provide unequal evidence, yet no distinction is made during fusion.
+**Key Challenge**: Prior methods lack an explicit mechanism for determining "which modality expert should be trusted for a given case and region." Different modalities provide unequal evidence, yet no distinction is made during fusion.
 
-**Starting Point**: CLoE **redefines missing-modality robustness as a decision-level consistency problem**—if predictions from all modality experts are consistent, the fused result is stable; inconsistency indicates that certain experts are unreliable and should be down-weighted.
+**Key Insight**: CLoE **redefines missing-modality robustness as a decision-level consistency problem**—if predictions from all modality experts are consistent, the fused result is stable; inconsistency indicates that certain experts are unreliable and should be down-weighted.
 
 ## Method
 

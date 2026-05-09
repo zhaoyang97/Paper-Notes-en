@@ -28,18 +28,18 @@ This paper provides the first formal treatment of over-squashing in spatiotempor
 
 ## Background & Motivation
 
-**State of the Field**: STGNNs combine GNNs with sequential models (RNNs/TCNs) to handle data where node features on a graph evolve over time (e.g., traffic forecasting, energy systems). While over-squashing has been thoroughly studied in static GNNs, it remains entirely unexplored in spatiotemporal settings.
+**Background**: STGNNs combine GNNs with sequential models (RNNs/TCNs) to handle data where node features on a graph evolve over time (e.g., traffic forecasting, energy systems). While over-squashing has been thoroughly studied in static GNNs, it remains entirely unexplored in spatiotemporal settings.
 
 **Limitations of Prior Work**:
 - The over-squashing theory developed for static GNNs does not transfer directly to STGNNs—the temporal dimension introduces an additional axis of information propagation, making the compression effect substantially more complex.
 - The architectural choice between T&S (time-and-space, alternating processing) and TTS (time-then-space, sequential processing) lacks theoretical guidance and is largely empirical.
 - The information propagation dynamics of causal convolutions have not been theoretically characterized.
 
-**Root Cause**: In STGNNs, information must propagate across both spatial and temporal dimensions simultaneously; each dimension can produce its own bottleneck, and the two bottlenecks compound.
+**Key Challenge**: In STGNNs, information must propagate across both spatial and temporal dimensions simultaneously; each dimension can produce its own bottleneck, and the two bottlenecks compound.
 
-**Paper Goals**: (1) Formalize spatiotemporal over-squashing; (2) analyze the temporal information propagation characteristics of TCNs; (3) compare T&S and TTS with respect to information propagation.
+**Goal**: (1) Formalize spatiotemporal over-squashing; (2) analyze the temporal information propagation characteristics of TCNs; (3) compare T&S and TTS with respect to information propagation.
 
-**Starting Point**: Decompose STGNN information propagation into orthogonal spatial and temporal components, analyze each via Jacobian sensitivity, and combine the results into a joint spatiotemporal bound.
+**Key Insight**: Decompose STGNN information propagation into orthogonal spatial and temporal components, analyze each via Jacobian sensitivity, and combine the results into a joint spatiotemporal bound.
 
 **Core Idea**: The sensitivity bound for spatiotemporal over-squashing factors into a product of spatial and temporal topology terms, and T&S and TTS are equivalent under a fixed computational budget.
 

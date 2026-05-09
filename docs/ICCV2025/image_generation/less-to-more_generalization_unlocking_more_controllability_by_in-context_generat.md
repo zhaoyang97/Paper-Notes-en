@@ -29,7 +29,7 @@ This paper proposes UNO, a universal DiT-based customized generation model. Thro
 
 ## Background & Motivation
 
-**State of the Field**: Subject-driven generation aims to synthesize new images based on reference subjects and text descriptions, with broad applications in content creation and industrial design. Existing methods fall into two categories: (a) few-data fine-tuning methods (DreamBooth, Textual Inversion, LoRA), which require per-subject fine-tuning and incur high inference costs; and (b) large-scale training methods (IP-Adapter, BLIP-Diffusion), which leverage auxiliary image encoders for zero-shot generation but depend on large amounts of paired data.
+**Background**: Subject-driven generation aims to synthesize new images based on reference subjects and text descriptions, with broad applications in content creation and industrial design. Existing methods fall into two categories: (a) few-data fine-tuning methods (DreamBooth, Textual Inversion, LoRA), which require per-subject fine-tuning and incur high inference costs; and (b) large-scale training methods (IP-Adapter, BLIP-Diffusion), which leverage auxiliary image encoders for zero-shot generation but depend on large amounts of paired data.
 
 **Limitations of Prior Work**:
    - **Data bottleneck**: Acquiring paired subject images with diverse viewpoints and poses is extremely difficult, and scaling from single-subject to multi-subject datasets compounds this challenge further.
@@ -37,11 +37,11 @@ This paper proposes UNO, a universal DiT-based customized generation model. Thro
    - **Multi-subject dilemma**: Most methods support only single-subject generation; when confronted with multi-subject scenarios, they tend to exhibit attribute confusion or copy-paste artifacts.
    - **Trade-off between subject fidelity and text controllability**: Improving subject consistency often sacrifices text-based editing capability.
 
-**Root Cause**: Existing methods adopt a "data-first, then model" paradigm, in which the data bottleneck directly caps model capability. The central question is how to break through this bottleneck to achieve scalable customized generation.
+**Key Challenge**: Existing methods adopt a "data-first, then model" paradigm, in which the data bottleneck directly caps model capability. The central question is how to break through this bottleneck to achieve scalable customized generation.
 
-**Paper Goals**: (a) How to establish a sustainably evolving synthetic data pipeline that scales from single-subject to multi-subject settings? (b) How to design a universal customization model that seamlessly generalizes from single-subject to multi-subject generation?
+**Goal**: (a) How to establish a sustainably evolving synthetic data pipeline that scales from single-subject to multi-subject settings? (b) How to design a universal customization model that seamlessly generalizes from single-subject to multi-subject generation?
 
-**Starting Point**: Inspired by synthetic-data-driven self-improvement in LLMs (weak-to-strong generalization), this work proposes a "model-data co-evolution" paradigm: a weak T2I model first generates single-subject paired data to train an S2I model, which in turn generates multi-subject paired data to train a stronger variant, enabling continuous co-evolution.
+**Key Insight**: Inspired by synthetic-data-driven self-improvement in LLMs (weak-to-strong generalization), this work proposes a "model-data co-evolution" paradigm: a weak T2I model first generates single-subject paired data to train an S2I model, which in turn generates multi-subject paired data to train a stronger variant, enabling continuous co-evolution.
 
 **Core Idea**: The intrinsic in-context generation capability of DiT is exploited to synthesize high-consistency paired data. Combined with progressive cross-modal alignment and Universal RoPE, the T2I model is iteratively upgraded into a multi-subject S2I model with minimal architectural modification.
 

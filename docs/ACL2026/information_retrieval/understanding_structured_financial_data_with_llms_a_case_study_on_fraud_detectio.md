@@ -28,15 +28,15 @@ This paper proposes FinFRE-RAG, a two-stage framework that serializes high-dimen
 
 ## Background & Motivation
 
-**State of the Field**: Financial fraud detection primarily relies on tabular models such as XGBoost and LightGBM, which require extensive feature engineering and offer limited interpretability. LLMs can generate human-readable explanations and assist in feature analysis, but perform poorly when directly applied to tabular fraud detection.
+**Background**: Financial fraud detection primarily relies on tabular models such as XGBoost and LightGBM, which require extensive feature engineering and offer limited interpretability. LLMs can generate human-readable explanations and assist in feature analysis, but perform poorly when directly applied to tabular fraud detection.
 
 **Limitations of Prior Work**: (1) Tabular input mismatch — transaction data consists of high-dimensional numerical and categorical features, whereas LLMs are pretrained on natural language and handle the semantics and numerical precision of structured features poorly; (2) Fraud ambiguity and scarcity — fraud definitions vary across institutions, products, and regions, and fraud rates are extremely low (<1%), making it difficult for LLMs to identify subtle discriminative patterns.
 
-**Root Cause**: LLMs possess reasoning and interpretability generation capabilities, but lack knowledge of "what constitutes fraud" — they must be taught which feature patterns are associated with fraudulent behavior.
+**Key Challenge**: LLMs possess reasoning and interpretability generation capabilities, but lack knowledge of "what constitutes fraud" — they must be taught which feature patterns are associated with fraudulent behavior.
 
-**Paper Goals**: Design a fine-tuning-free framework that enables LLMs to understand and detect tabular financial fraud through feature reduction and retrieval augmentation.
+**Goal**: Design a fine-tuning-free framework that enables LLMs to understand and detect tabular financial fraud through feature reduction and retrieval augmentation.
 
-**Starting Point**: Reframe fraud detection as an instance-based reasoning problem — by retrieving semantically similar historical transactions as few-shot examples, the LLM reasons by analogy to make predictions.
+**Key Insight**: Reframe fraud detection as an instance-based reasoning problem — by retrieving semantically similar historical transactions as few-shot examples, the LLM reasons by analogy to make predictions.
 
 **Core Idea**: Offline feature reduction (ranking features via random forest to retain the top-$k$) combined with online retrieval-augmented in-context learning (categorical filtering → numerical similarity search → natural language serialization).
 

@@ -29,18 +29,18 @@ HIPSS introduces two key innovations for few-shot WSI classification: (1) parame
 
 ## Background & Motivation
 
-1. **State of the Field**: WSI classification in computational pathology typically relies on multiple instance learning (MIL), which segments gigapixel-level WSIs into patches for weakly supervised training. However, MIL methods require large numbers of annotated WSIs and are thus limited in data-scarce medical settings.
+1. **Background**: WSI classification in computational pathology typically relies on multiple instance learning (MIL), which segments gigapixel-level WSIs into patches for weakly supervised training. However, MIL methods require large numbers of annotated WSIs and are thus limited in data-scarce medical settings.
 
 2. **Limitations of Prior Work**:
    - Existing few-shot WSI classification (FSWC) methods employ CoOp for prompt tuning, which introduces a large number of trainable parameters and inference overhead, making them prone to overfitting under extreme few-shot settings.
    - Methods that fuse visual and textual features via cross-attention (e.g., FOCUS, ViLa-MIL) incur even greater parameter costs.
    - Existing approaches typically apply hard filtering to discard patches based on alignment scores with text embeddings—sometimes removing >60% of patches—potentially discarding diagnostically relevant information.
 
-3. **Root Cause**: VLMs are pretrained on instance-level image–text pairs, whereas downstream tasks require slide-level classification, creating a semantic gap between local instance features and global slide labels. Furthermore, WSIs possess an inherent spatial hierarchy (cells → regions → slides) that existing aggregation methods largely ignore.
+3. **Key Challenge**: VLMs are pretrained on instance-level image–text pairs, whereas downstream tasks require slide-level classification, creating a semantic gap between local instance features and global slide labels. Furthermore, WSIs possess an inherent spatial hierarchy (cells → regions → slides) that existing aggregation methods largely ignore.
 
-4. **Paper Goals**: (a) How can pretrained VLMs be adapted more effectively with fewer parameters? (b) How can the hierarchical spatial structure of WSIs and VLM-based textual guidance be jointly exploited for representation learning without discarding potentially diagnostic patches?
+4. **Goal**: (a) How can pretrained VLMs be adapted more effectively with fewer parameters? (b) How can the hierarchical spatial structure of WSIs and VLM-based textual guidance be jointly exploited for representation learning without discarding potentially diagnostic patches?
 
-5. **Starting Point**: Drawing on the success of SSF (Scaling and Shifting Features) in visual encoders, this work transfers the paradigm to prompt tuning in text encoders. Simultaneously, a hierarchical attention aggregation mechanism is designed that uses cosine similarity with text embeddings as a soft weighting signal rather than a hard filter.
+5. **Key Insight**: Drawing on the success of SSF (Scaling and Shifting Features) in visual encoders, this work transfers the paradigm to prompt tuning in text encoders. Simultaneously, a hierarchical attention aggregation mechanism is designed that uses cosine similarity with text embeddings as a soft weighting signal rather than a hard filter.
 
 6. **Core Idea**: Replace CoOp's prompt vectors with a minimal set of scaling/shifting parameters in the text encoder, and substitute hard patch filtering with soft hierarchical textual guidance, achieving parameter-efficient and robust few-shot WSI classification.
 

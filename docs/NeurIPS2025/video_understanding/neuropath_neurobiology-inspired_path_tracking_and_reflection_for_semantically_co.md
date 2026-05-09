@@ -29,18 +29,18 @@ Inspired by the hippocampal place cell navigation and memory consolidation mecha
 
 ## Background & Motivation
 
-**State of the Field**: RAG significantly enhances LLM performance on knowledge-intensive tasks. Naive RAG retrieves documents based on vector similarity but cannot capture inter-document associations, making it ill-suited for multi-hop reasoning.
+**Background**: RAG significantly enhances LLM performance on knowledge-intensive tasks. Naive RAG retrieves documents based on vector similarity but cannot capture inter-document associations, making it ill-suited for multi-hop reasoning.
 
 **Limitations of Prior Work**:
    - **Naive RAG**: Flat knowledge organization with no cross-document association.
    - **Graph-based RAG (HippoRAG)**: Uses the PPR algorithm to propagate node importance, but ignores edge semantics, resulting in higher structural relevance than semantic coherence.
    - **Graph-based RAG (LightRAG)**: Subgraph construction by collecting direct neighbors introduces substantial noise.
 
-**Root Cause**: The advantage of graph structures lies in explicit semantic reasoning paths, yet existing graph-based methods focus more on topological structure than on path-level semantic coherence, failing to fully exploit this advantage.
+**Key Challenge**: The advantage of graph structures lies in explicit semantic reasoning paths, yet existing graph-based methods focus more on topological structure than on path-level semantic coherence, failing to fully exploit this advantage.
 
-**Paper Goals**: (1) Address the loss of semantic coherence in retrieval results; (2) eliminate irrelevant noise introduced during node matching and subgraph construction.
+**Goal**: (1) Address the loss of semantic coherence in retrieval results; (2) eliminate irrelevant noise introduced during node matching and subgraph construction.
 
-**Starting Point**: Drawing an analogy to the navigation mechanism of hippocampal place cells—place cells preplay future path sequences during navigation and replay them during rest to consolidate memory.
+**Key Insight**: Drawing an analogy to the navigation mechanism of hippocampal place cells—place cells preplay future path sequences during navigation and replay them during rest to consolidate memory.
 
 **Core Idea**: Entities in the knowledge graph are treated as place cells and triples as place fields; dynamic retrieval is performed via LLM-driven, goal-directed semantic path tracking.
 

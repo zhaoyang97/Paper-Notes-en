@@ -28,15 +28,15 @@ This paper proposes a topological loss function based on Sinkhorn divergence, re
 
 ## Background & Motivation
 
-**State of the Field**: Recipe generation requires not only fluent text but also precise ingredients, quantities, timing, temperatures, and procedural consistency across steps. Prevailing approaches fine-tune language models using cross-entropy (CE) loss.
+**Background**: Recipe generation requires not only fluent text but also precise ingredients, quantities, timing, temperatures, and procedural consistency across steps. Prevailing approaches fine-tune language models using cross-entropy (CE) loss.
 
 **Limitations of Prior Work**: CE treats all tokens as equally important, yet recipes exhibit strong asymmetry—high-impact tokens (ingredients, quantities, times, temperatures, key actions) differ substantially from low-impact tokens (connectives). This leads to common failure modes: low ingredient recall, inaccurate quantities, and steps that are grammatically correct but procedurally infeasible.
 
-**Root Cause**: Token-level training objectives cannot capture the holistic structural properties of an ingredient set. Omitting a critical ingredient (e.g., eggs in Carbonara) or doubling a temperature renders the entire recipe unusable, regardless of textual fluency.
+**Key Challenge**: Token-level training objectives cannot capture the holistic structural properties of an ingredient set. Omitting a critical ingredient (e.g., eggs in Carbonara) or doubling a temperature renders the entire recipe unusable, regardless of textual fluency.
 
-**Paper Goals**: Design loss functions that directly optimize ingredient set completeness and numerical accuracy while preserving textual fluency.
+**Goal**: Design loss functions that directly optimize ingredient set completeness and numerical accuracy while preserving textual fluency.
 
-**Starting Point**: Drawing from optimal transport theory, the paper treats ingredient lists as point clouds in embedding space and uses geometric distance to measure the correspondence between predicted and reference ingredients.
+**Key Insight**: Drawing from optimal transport theory, the paper treats ingredient lists as point clouds in embedding space and uses geometric distance to measure the correspondence between predicted and reference ingredients.
 
 **Core Idea**: Minimize the transport distance between predicted and reference ingredient point clouds via Sinkhorn divergence, explicitly encoding ingredient-level structural constraints into the training loss.
 

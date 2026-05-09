@@ -28,15 +28,15 @@ MoMa is a modular material property prediction framework that trains task-specif
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning for material property prediction follows two main paradigms: (1) task-specific models trained from scratch (e.g., CGCNN); (2) pre-train-then-fine-tune, particularly large-scale force-field models (e.g., JMP) pre-trained on potential energy surface data and fine-tuned to downstream tasks. The latter has achieved notable success across multiple tasks.
+**Background**: Deep learning for material property prediction follows two main paradigms: (1) task-specific models trained from scratch (e.g., CGCNN); (2) pre-train-then-fine-tune, particularly large-scale force-field models (e.g., JMP) pre-trained on potential energy surface data and fine-tuned to downstream tasks. The latter has achieved notable success across multiple tasks.
 
 **Limitations of Prior Work**: (1) **Diversity**: Material tasks span diverse systems (crystals, organic molecules) and properties (thermal stability, electronic behavior, mechanical properties); force-field models are pre-trained only on potential-energy-surface-related properties, limiting generalization. (2) **Heterogeneity**: Different material properties are governed by different physical laws, so joint multi-task training introduces knowledge conflicts that a single model struggles to reconcile.
 
-**Root Cause**: The pre-training paradigm pursues a "one model for all problems" objective, yet the intrinsic heterogeneity of material tasks means that joint training introduces negative transfer.
+**Key Challenge**: The pre-training paradigm pursues a "one model for all problems" objective, yet the intrinsic heterogeneity of material tasks means that joint training introduces negative transfer.
 
-**Paper Goals**: (1) How can knowledge from diverse material data be leveraged while avoiding inter-task conflicts? (2) How can downstream adaptation be performed efficiently under data scarcity?
+**Goal**: (1) How can knowledge from diverse material data be leveraged while avoiding inter-task conflicts? (2) How can downstream adaptation be performed efficiently under data scarcity?
 
-**Starting Point**: Modular learning — encapsulating each task as an independently trained module to prevent interference, then adaptively selecting and composing the most synergistic modules for downstream tasks.
+**Key Insight**: Modular learning — encapsulating each task as an independently trained module to prevent interference, then adaptively selecting and composing the most synergistic modules for downstream tasks.
 
 **Core Idea**: Train diverse task-specific modules and store them in MoMa Hub; apply training-free adaptive module composition via kNN representation-space estimation combined with convex-optimization weight solving, followed by fine-tuning for downstream adaptation.
 

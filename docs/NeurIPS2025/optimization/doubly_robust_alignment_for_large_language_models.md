@@ -28,15 +28,15 @@ DRPO draws on doubly robust estimation from causal inference to propose a prefer
 
 ## Background & Motivation
 
-**State of the Field**: RLHF is the dominant paradigm for LLM alignment. Existing algorithms fall into two broad categories—reward-based methods (e.g., PPO) and preference-based methods (e.g., DPO, IPO)—both of which have achieved notable empirical success.
+**Background**: RLHF is the dominant paradigm for LLM alignment. Existing algorithms fall into two broad categories—reward-based methods (e.g., PPO) and preference-based methods (e.g., DPO, IPO)—both of which have achieved notable empirical success.
 
 **Limitations of Prior Work**: Each family of methods is vulnerable to model misspecification. (a) PPO relies on the Bradley–Terry (BT) preference model assumption, is highly sensitive to reward estimation errors, and is prone to reward hacking. (b) DPO bypasses reward estimation but remains sensitive to the specification of the reference policy $\pi_\text{ref}$. (c) Both families exhibit low tolerance for violations of their respective model assumptions.
 
-**Root Cause**: The BT model assumes that human preferences satisfy transitivity and context-independence, properties that are frequently violated empirically. Moreover, the reference policy may not be known or accurately specified. No existing method is simultaneously robust to misspecification of both the preference model and the reference policy.
+**Key Challenge**: The BT model assumes that human preferences satisfy transitivity and context-independence, properties that are frequently violated empirically. Moreover, the reference policy may not be known or accurately specified. No existing method is simultaneously robust to misspecification of both the preference model and the reference policy.
 
-**Paper Goals**: To design an RLHF algorithm that guarantees consistency whenever either the preference model or the reference policy is correctly specified.
+**Goal**: To design an RLHF algorithm that guarantees consistency whenever either the preference model or the reference policy is correctly specified.
 
-**Starting Point**: The work draws on doubly robust (DR) estimation from econometrics and causal inference. In treatment effect estimation, DR estimators require only one of the propensity score model or the outcome model to be correctly specified—an analogy that maps naturally onto the roles of the preference model and the reference policy in RLHF.
+**Key Insight**: The work draws on doubly robust (DR) estimation from econometrics and causal inference. In treatment effect estimation, DR estimators require only one of the propensity score model or the outcome model to be correctly specified—an analogy that maps naturally onto the roles of the preference model and the reference policy in RLHF.
 
 **Core Idea**: Introduce the DR estimation framework into preference evaluation to construct a preference optimization algorithm that is doubly robust with respect to both the preference model and the reference policy.
 

@@ -34,7 +34,7 @@ A four-modality fusion pipeline (scene VideoMAE + face EfficientNetB0 + audio Wa
 - **Practical Value**: A/H is closely associated with decision-making uncertainty and motivational fluctuation, and can be used in digital behavioral health interventions to assess whether a user is ready to change behavior or at risk of resistance or disengagement.
 - **Core Challenge**: Unlike basic emotions (e.g., happiness, surprise), A/H is extremely subtle and often manifests through **cross-modal inconsistency**—for example, positive verbal content paired with a hesitant facial expression, or confident speech content paired with an unconfident prosody. This makes simple unimodal or shallow fusion approaches insufficient for capturing the key signals.
 - **Limitations of Prior Work**: Prior work (González-González et al., Hallmen et al., Savchenko & Savchenko) primarily employed face + audio + text trimodal setups with relatively simple fusion strategies (concatenation / MLP / logistic blending), without incorporating scene modality or strongly regularized fusion.
-- **Paper Goals**: Incorporate a scene modality to provide global context, model cross-modal interactions via a Transformer fusion module, and introduce a prototype-augmented classification head as an auxiliary regularizer during training.
+- **Goal**: Incorporate a scene modality to provide global context, model cross-modal interactions via a Transformer fusion module, and introduce a prototype-augmented classification head as an auxiliary regularizer during training.
 
 ## Method
 

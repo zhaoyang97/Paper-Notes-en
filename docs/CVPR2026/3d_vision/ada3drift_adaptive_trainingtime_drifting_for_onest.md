@@ -28,15 +28,15 @@ Ada3Drift proposes shifting the iterative refinement of diffusion policies from 
 
 ## Background & Motivation
 
-1. **State of the Field**: Diffusion-model-based visuomotor policies (e.g., Diffusion Policy, DP3) effectively capture multimodal action distributions through iterative denoising and have become a dominant paradigm in robot learning. However, iterative denoising requires 10–100 function evaluations (NFEs), which fundamentally conflicts with the 10–50 Hz frequency demanded by real-time robot control.
+1. **Background**: Diffusion-model-based visuomotor policies (e.g., Diffusion Policy, DP3) effectively capture multimodal action distributions through iterative denoising and have become a dominant paradigm in robot learning. However, iterative denoising requires 10–100 function evaluations (NFEs), which fundamentally conflicts with the 10–50 Hz frequency demanded by real-time robot control.
 
 2. **Limitations of Prior Work**: Recent one-step generation methods based on flow matching and consistency models address inference latency, but their regression objectives converge to the conditional expectation of the target field, averaging different action modes into a single mixture. In image generation, this results in blurriness; in robot action spaces, the average of two valid strategies may yield physically infeasible trajectories (e.g., averaging leftward and rightward detours produces a path that collides with the obstacle).
 
-3. **Root Cause**: A speed–fidelity trade-off—removing iterative refinement gains speed but sacrifices the expressiveness of multimodal action distributions. Mode averaging in robotics is not merely a quality concern but a safety concern.
+3. **Key Challenge**: A speed–fidelity trade-off—removing iterative refinement gains speed but sacrifices the expressiveness of multimodal action distributions. Mode averaging in robotics is not merely a quality concern but a safety concern.
 
-4. **Paper Goals**: To recover the multimodal fidelity achieved by diffusion policies through iterative refinement while preserving one-step inference efficiency, and to accommodate the unique challenges of robot learning: few-shot data (10–50 demonstrations) and large geometric variation across tasks.
+4. **Goal**: To recover the multimodal fidelity achieved by diffusion policies through iterative refinement while preserving one-step inference efficiency, and to accommodate the unique challenges of robot learning: few-shot data (10–50 demonstrations) and large geometric variation across tasks.
 
-5. **Starting Point**: Robot systems exhibit a natural **computational budget asymmetry**—training occurs offline on GPUs with no latency constraints, while inference must satisfy strict real-time requirements. Existing methods spend refinement budget at the wrong time. All refinement should be moved to training; inference requires only a single forward pass.
+5. **Key Insight**: Robot systems exhibit a natural **computational budget asymmetry**—training occurs offline on GPUs with no latency constraints, while inference must satisfy strict real-time requirements. Existing methods spend refinement budget at the wrong time. All refinement should be moved to training; inference requires only a single forward pass.
 
 6. **Core Idea**: Transfer the computational budget of iterative refinement from inference time to training time—by using a drifting field during training to guide the model's output distribution toward expert demonstration modes, requiring only a single generation step at inference.
 

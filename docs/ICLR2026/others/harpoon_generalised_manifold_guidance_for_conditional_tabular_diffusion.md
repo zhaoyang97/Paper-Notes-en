@@ -27,13 +27,13 @@ This paper extends manifold theory from image to tabular diffusion models, provi
 
 ## Background & Motivation
 
-**State of the Field**: Tabular diffusion models can generate high-quality tabular data, but conditional generation (missing value imputation, inequality constraints, etc.) is a core requirement. Existing conditional approaches fall into two categories: training-time methods (which struggle to generalise to unseen constraints) and inference-time methods (which are limited to imputation tasks).
+**Background**: Tabular diffusion models can generate high-quality tabular data, but conditional generation (missing value imputation, inequality constraints, etc.) is a core requirement. Existing conditional approaches fall into two categories: training-time methods (which struggle to generalise to unseen constraints) and inference-time methods (which are limited to imputation tasks).
 
 **Limitations of Prior Work**: (1) Training-time methods (conditional input, classifier guidance, classifier-free guidance) cannot generalise to constraints unseen during training; (2) inference-time methods support only imputation and not inequality constraints; (3) the manifold theory developed for image diffusion assumes continuous features and flat geometry, making it unsuitable for mixed-type tabular data.
 
-**Root Cause**: A method that trains once and adapts to arbitrary constraints at inference time is needed, yet existing manifold guidance theory provides guarantees only for square-error loss on flat manifolds.
+**Key Challenge**: A method that trains once and adapts to arbitrary constraints at inference time is needed, yet existing manifold guidance theory provides guarantees only for square-error loss on flat manifolds.
 
-**Starting Point**: The paper establishes two stronger theoretical results: (1) Theorem 3.1: the denoising map $Q_t$ converges to the orthogonal projection onto the manifold as $\bar{\alpha}_t \to 1$ (without assuming flatness); (2) Theorem 3.2: the gradient of any differentiable loss lies in the tangent space (beyond the square-error restriction).
+**Key Insight**: The paper establishes two stronger theoretical results: (1) Theorem 3.1: the denoising map $Q_t$ converges to the orthogonal projection onto the manifold as $\bar{\alpha}_t \to 1$ (without assuming flatness); (2) Theorem 3.2: the gradient of any differentiable loss lies in the tangent space (beyond the square-error restriction).
 
 **Core Idea**: By proving that the gradient of any differentiable inference-time objective aligns with the data manifold, the method alternates between unconditional denoising steps and tangential corrections to satisfy diverse constraints.
 

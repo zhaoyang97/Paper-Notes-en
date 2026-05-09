@@ -29,15 +29,15 @@ This paper proposes HairCUP, a compositional universal prior model that decompos
 
 ## Background & Motivation
 
-**State of the Field**: 3D head avatar modeling is a prominent research direction in computer vision and graphics. Mainstream methods build generalizable prior models based on 3D Gaussian Splatting or NeRF, learning shared latent spaces from large-scale face data for rapid generation or few-shot reconstruction of new identities.
+**Background**: 3D head avatar modeling is a prominent research direction in computer vision and graphics. Mainstream methods build generalizable prior models based on 3D Gaussian Splatting or NeRF, learning shared latent spaces from large-scale face data for rapid generation or few-shot reconstruction of new identities.
 
 **Limitations of Prior Work**: Existing universal prior models (e.g., PanoHead, Next3D) almost universally adopt holistic modeling, treating face and hair as an inseparable whole. This leads to several critical issues: (1) models struggle to naturally disentangle face and hair representations, especially with limited training data; (2) independent editing and cross-identity swapping of face/hairstyle are not supported; (3) the high-frequency geometry and appearance variations of hair are entangled with the relatively smooth facial region, increasing learning difficulty.
 
-**Root Cause**: Human heads possess a natural compositional structure (face + hair), yet existing methods ignore this compositionality by fitting all variations with a monolithic model. The fundamental issue is the absence of effective "hairless" reference data — without paired with/without-hair data, it is impossible to supervise disentangled learning.
+**Key Challenge**: Human heads possess a natural compositional structure (face + hair), yet existing methods ignore this compositionality by fitting all variations with a monolithic model. The fundamental issue is the absence of effective "hairless" reference data — without paired with/without-hair data, it is impossible to supervise disentangled learning.
 
-**Paper Goals**: To construct a universal prior model that explicitly accounts for the compositionality of face and hair, assigning each an independent latent space to support flexible component swapping and few-shot reconstruction.
+**Goal**: To construct a universal prior model that explicitly accounts for the compositionality of face and hair, assigning each an independent latent space to support flexible component swapping and few-shot reconstruction.
 
-**Starting Point**: The key insight is that if paired "with-hair" and "hairless" data can be obtained, the pure hair representation can be derived by subtraction, enabling training of a disentangled prior. The critical enabler is leveraging diffusion model priors to synthesize hairless geometry and texture.
+**Key Insight**: The key insight is that if paired "with-hair" and "hairless" data can be obtained, the pure hair representation can be derived by subtraction, enabling training of a disentangled prior. The critical enabler is leveraging diffusion model priors to synthesize hairless geometry and texture.
 
 **Core Idea**: Design a synthetic hairless data pipeline (estimating hairless geometry and texture via diffusion priors), train independent prior models for face and hair using paired with/without-hair data, and incorporate compositionality as an inductive bias into the model.
 

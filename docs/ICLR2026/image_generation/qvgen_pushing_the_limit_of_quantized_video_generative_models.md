@@ -29,9 +29,9 @@ This paper proposes QVGen, a quantization-aware training (QAT) framework for vid
 
 ## Background & Motivation
 
-- **State of the Field**: Video diffusion models (e.g., CogVideoX, Wan) can generate high-quality videos but demand enormous computation and memory — Wan 14B requires over 30 minutes and 50 GB of VRAM on a single H100 to generate a 10-second 720p video. Model quantization is an effective compression approach: 4-bit quantization can achieve approximately 3× speedup and 4× model size reduction.
+- **Background**: Video diffusion models (e.g., CogVideoX, Wan) can generate high-quality videos but demand enormous computation and memory — Wan 14B requires over 30 minutes and 50 GB of VRAM on a single H100 to generate a 10-second 720p video. Model quantization is an effective compression approach: 4-bit quantization can achieve approximately 3× speedup and 4× model size reduction.
 - **Limitations of Prior Work**: Directly transferring quantization methods from image diffusion models to video diffusion models yields poor results. Existing QAT methods (e.g., Q-DM, EfficientDM, LSQ) suffer severe quality degradation under 4-bit video quantization.
-- **Root Cause**: Quantized video models exhibit significant **convergence difficulties**.
+- **Key Challenge**: Quantized video models exhibit significant **convergence difficulties**.
 
 ## Method
 

@@ -27,15 +27,15 @@ content_hash: 090b2238fa60ee93
 This paper proposes the Prompt Recurrent Unit (PRU), which replaces the GRU in iterative refinement with the DPT decoder from a monocular depth foundation model. Structure Prompts and Motion Prompts inject monocular structural and stereo motion cues via residual addition, enabling zero-shot state-of-the-art stereo matching without corrupting the monocular prior (nearly 50% error reduction on Middlebury 2021).
 
 ## Background & Motivation
-**State of the Field**: Zero-shot stereo matching has attracted increasing attention. Leveraging the strong generalization of monocular depth foundation models such as Depth Anything V2, recent methods adapt pretrained features to improve cross-domain performance.
+**Background**: Zero-shot stereo matching has attracted increasing attention. Leveraging the strong generalization of monocular depth foundation models such as Depth Anything V2, recent methods adapt pretrained features to improve cross-domain performance.
 
 **Limitations of Prior Work**:
 - Existing methods (MonSter, DEFOM-Stereo, BridgeDepth) primarily exploit monocular models for robust feature extraction, cost volume construction, and disparity initialization, yet the **iterative refinement stage** still relies on conventional GRUs—a stage equally critical for zero-shot generalization that has been largely overlooked.
 - Three fundamental limitations of GRUs: (a) trained independently of visual foundation models, inheriting no strong priors; (b) hidden states are constrained to a narrow range (tanh/sigmoid), limiting expressiveness under extreme disparity variation; (c) inputs and hidden states are fused via direct convolution, distorting the original state representation while compressing external inputs.
 
-**Root Cause**: How to enable the iterative refinement module to inherit strong priors from monocular depth foundation models while effectively incorporating stereo-specific motion cues.
+**Key Challenge**: How to enable the iterative refinement module to inherit strong priors from monocular depth foundation models while effectively incorporating stereo-specific motion cues.
 
-**Starting Point**: The DPT decoder is also a multi-scale refinement structure, structurally analogous to the coarse-to-fine updates of a GRU. This observation motivates directly using the pretrained DPT decoder as the iterative refinement unit.
+**Key Insight**: The DPT decoder is also a multi-scale refinement structure, structurally analogous to the coarse-to-fine updates of a GRU. This observation motivates directly using the pretrained DPT decoder as the iterative refinement unit.
 
 **Core Idea**: Replace the GRU with a pretrained DPT decoder as the iterative refinement unit. Stereo-specific structural and motion cues are injected via prompts (residual addition), inheriting the monocular prior without modifying the decoder architecture.
 

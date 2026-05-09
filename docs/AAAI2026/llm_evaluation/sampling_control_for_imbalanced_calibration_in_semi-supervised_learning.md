@@ -29,11 +29,11 @@ This paper proposes SC-SSL, a framework that introduces an **expansion classifie
 
 ## Background & Motivation
 
-1. **State of the Field**: Semi-supervised learning (SSL) exploits unlabeled data via pseudo-labels and consistency regularization, but real-world data often exhibits long-tailed distributions, causing pseudo-labels to be biased toward head classes — a problem known as class-imbalanced SSL (CISSL).
+1. **Background**: Semi-supervised learning (SSL) exploits unlabeled data via pseudo-labels and consistency regularization, but real-world data often exhibits long-tailed distributions, causing pseudo-labels to be biased toward head classes — a problem known as class-imbalanced SSL (CISSL).
 2. **Limitations of Prior Work**: Existing methods (ACR, CPE, SimPro) estimate the class distribution of unlabeled data to adjust logits, but suffer from two issues: (a) coarse-grained treatment that conflates data imbalance with bias introduced by varying per-class learning difficulty; and (b) conservative strategies that leave large amounts of unlabeled data underutilized, retaining only a small number of high-quality pseudo-labels to avoid confirmation bias.
-3. **Root Cause**: Data imbalance and optimization imbalance are two independent sources of bias, yet existing methods couple them together. In dual-classifier settings, neither the output classifier nor the original classifier can effectively adjust the sampling probability of non-head classes.
-4. **Paper Goals**: Address model bias at a finer granularity — separately at the feature level and the logit level.
-5. **Starting Point**: Based on the expansion-separation assumption in self-training, even noisy pseudo-labels can propagate effective supervisory signals through consistency regularization, provided that non-head classes are sampled with sufficient frequency.
+3. **Key Challenge**: Data imbalance and optimization imbalance are two independent sources of bias, yet existing methods couple them together. In dual-classifier settings, neither the output classifier nor the original classifier can effectively adjust the sampling probability of non-head classes.
+4. **Goal**: Address model bias at a finer granularity — separately at the feature level and the logit level.
+5. **Key Insight**: Based on the expansion-separation assumption in self-training, even noisy pseudo-labels can propagate effective supervisory signals through consistency regularization, provided that non-head classes are sampled with sufficient frequency.
 6. **Core Idea**: Introduce a third expansion classifier dedicated to increasing the sampling probability of non-head classes to balance feature learning, and at inference time use the difference in bias terms to isolate and correct optimization bias.
 
 ## Method

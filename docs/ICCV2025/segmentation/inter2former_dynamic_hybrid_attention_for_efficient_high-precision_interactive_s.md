@@ -35,7 +35,7 @@ Interactive segmentation (IS) segments target regions based on user-provided pro
 
 **Sparse-token methods** (e.g., SAM): employ sparse prompt tokens for efficient cross-attention, enabling fast inference but sacrificing spatial awareness and boundary precision.
 
-**Root Cause**: precision of dense tokens vs. efficiency of sparse tokens — how to achieve both simultaneously?
+**Key Challenge**: precision of dense tokens vs. efficiency of sparse tokens — how to achieve both simultaneously?
 
 **Key Insight**: The root cause of inefficiency in dense-token methods lies in **unreasonable computation allocation**:
 - In interactive segmentation, the primary object is typically determined after the first few clicks; subsequent clicks focus mainly on **boundary refinement**.

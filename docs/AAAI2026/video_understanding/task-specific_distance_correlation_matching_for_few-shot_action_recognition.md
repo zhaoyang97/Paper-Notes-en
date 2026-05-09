@@ -29,15 +29,15 @@ This paper proposes TS-FSAR, a framework that employs α-distance correlation to
 
 ## Background & Motivation
 
-**State of the Field**: Few-shot action recognition (FSAR) aims to recognize novel action categories from only a few labeled samples. Mainstream approaches follow two lines: designing better metrics (e.g., set-based matching) and efficiently adapting large-scale pretrained models (e.g., CLIP). Set-matching methods such as HyRSM (Hausdorff distance) and TSAM (optimal transport) have demonstrated competitive performance.
+**Background**: Few-shot action recognition (FSAR) aims to recognize novel action categories from only a few labeled samples. Mainstream approaches follow two lines: designing better metrics (e.g., set-based matching) and efficiently adapting large-scale pretrained models (e.g., CLIP). Set-matching methods such as HyRSM (Hausdorff distance) and TSAM (optimal transport) have demonstrated competitive performance.
 
 **Limitations of Prior Work**: (1) **Metric limitation**: Existing set-matching methods universally rely on cosine similarity to construct inter-frame relation matrices; however, cosine similarity is approximately equivalent to the Pearson correlation coefficient and can only capture linear dependencies, failing to model more complex nonlinear relationships. (2) **Matching paradigm**: Existing methods perform matching using only instance-level information, ignoring task-specific contextual cues. (3) **CLIP adaptation**: Parameter-efficient side-network tuning (e.g., skip-fusion layers in EMP-Net) reduces memory consumption, but newly introduced layers are difficult to optimize under limited data.
 
-**Root Cause**: Videos contain complex nonlinear temporal dynamics between frames (especially in temporally sensitive datasets such as SSv2), which cosine similarity cannot capture; side-network tuning is memory-efficient but training-unstable, particularly on datasets dominated by static appearance where pretrained weights are more critical.
+**Key Challenge**: Videos contain complex nonlinear temporal dynamics between frames (especially in temporally sensitive datasets such as SSv2), which cosine similarity cannot capture; side-network tuning is memory-efficient but training-unstable, particularly on datasets dominated by static appearance where pretrained weights are more critical.
 
-**Paper Goals**: (1) Design a matching metric that captures both linear and nonlinear inter-frame relationships; (2) incorporate task-specific information for more accurate matching; (3) improve the training effectiveness of side networks under limited data.
+**Goal**: (1) Design a matching metric that captures both linear and nonlinear inter-frame relationships; (2) incorporate task-specific information for more accurate matching; (3) improve the training effectiveness of side networks under limited data.
 
-**Starting Point**: Replace cosine similarity with α-distance correlation to measure inter-frame dependencies (capturing statistical dependencies of arbitrary order); generate a matching matrix from task prototypes to weight the importance of inter-frame relationships; use the output distribution of an adapted frozen CLIP to guide side-network learning.
+**Key Insight**: Replace cosine similarity with α-distance correlation to measure inter-frame dependencies (capturing statistical dependencies of arbitrary order); generate a matching matrix from task prototypes to weight the importance of inter-frame relationships; use the output distribution of an adapted frozen CLIP to guide side-network learning.
 
 **Core Idea**: Model nonlinear inter-frame dependencies via α-distance correlation, perform task-specific matching driven by task prototypes, and guide side-network training through CLIP knowledge distillation.
 

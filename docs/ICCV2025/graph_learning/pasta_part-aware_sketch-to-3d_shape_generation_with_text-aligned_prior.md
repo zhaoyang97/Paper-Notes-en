@@ -28,13 +28,13 @@ This paper proposes the PASTA framework, which leverages VLM-derived text priors
 
 ## Background & Motivation
 
-**State of the Field**: Conditional 3D generation primarily relies on either sketches or text as input, each with notable limitations — text lacks precise geometric control, while sketches lack semantic information and suffer from inherent ambiguity.
+**Background**: Conditional 3D generation primarily relies on either sketches or text as input, each with notable limitations — text lacks precise geometric control, while sketches lack semantic information and suffer from inherent ambiguity.
 
 **Limitations of Prior Work**: Pure sketch-based methods (LAS-D, SENS) struggle to recover complete structures from simplified sketches (e.g., missing armrests, incorrect leg counts); pure text-based methods cannot precisely control geometry.
 
-**Root Cause**: The fundamental challenge is how to simultaneously exploit the geometric controllability of sketches and the semantic expressiveness of text for accurate 3D shape generation.
+**Key Challenge**: The fundamental challenge is how to simultaneously exploit the geometric controllability of sketches and the semantic expressiveness of text for accurate 3D shape generation.
 
-**Starting Point**: A VLM is employed to automatically extract part-level descriptions from sketches (e.g., "chair back shape, seat, 4 legs, no armrests"), serving as text priors to supplement the missing semantic cues in sketches.
+**Key Insight**: A VLM is employed to automatically extract part-level descriptions from sketches (e.g., "chair back shape, seat, 4 legs, no armrests"), serving as text priors to supplement the missing semantic cues in sketches.
 
 **Core Idea**: Text priors + a visual-text Transformer decoder fusing both conditions + ISG-Net dual-GCN modeling inter-part structural relationships.
 
@@ -131,10 +131,10 @@ This paper proposes the PASTA framework, which integrates VLM-derived text prior
 
 ## Background & Motivation
 
-1. **State of the Field**: Conditional 3D shape generation primarily employs two input modalities — sketches and text. Sketches provide geometrically precise control but lack semantic information, while text supplies semantics but lacks precise geometric control.
+1. **Background**: Conditional 3D shape generation primarily employs two input modalities — sketches and text. Sketches provide geometrically precise control but lack semantic information, while text supplies semantics but lacks precise geometric control.
 2. **Limitations of Prior Work**: Single-sketch inputs are overly simplified and ambiguous, leading to missing parts (e.g., absent armrests on chairs) and structural inaccuracies. Existing methods such as SENS and DY3D rely solely on visual features and cannot compensate for semantic cues absent from sketches.
-3. **Root Cause**: The core challenge is accurately inferring complete 3D part structures and semantic attributes from highly simplified 2D sketches.
-4. **Starting Point**: A VLM is used to generate textual descriptions from sketches (e.g., "chair with 4 legs and armrests"), and graph-based structural reasoning is performed over a part-level GMM representation.
+3. **Key Challenge**: The core challenge is accurately inferring complete 3D part structures and semantic attributes from highly simplified 2D sketches.
+4. **Key Insight**: A VLM is used to generate textual descriptions from sketches (e.g., "chair with 4 legs and armrests"), and graph-based structural reasoning is performed over a part-level GMM representation.
 5. **Core Idea**: Text priors compensate for visual deficiencies; graph convolutional networks model part relationships — together enabling more accurate and complete 3D shape generation.
 
 ## Method

@@ -28,15 +28,15 @@ By applying Representation Engineering (RepE) to extract steering vectors that c
 
 ## Background & Motivation
 
-**State of the Field**: Large Reasoning Models (LRMs) such as DeepSeek-R1 and OpenAI o1 achieve System 2-level deep reasoning through Long Chain-of-Thought (Long CoT). However, this paradigm uniformly applies complex thinking to every reasoning step, resulting in substantial redundant computation.
+**Background**: Large Reasoning Models (LRMs) such as DeepSeek-R1 and OpenAI o1 achieve System 2-level deep reasoning through Long Chain-of-Thought (Long CoT). However, this paradigm uniformly applies complex thinking to every reasoning step, resulting in substantial redundant computation.
 
 **Limitations of Prior Work**: Existing acceleration approaches either rely on prompt-based token budget control (e.g., Budget Forcing's "Final Answer:" truncation or Thought Extrapolation's "Wait" appending), to which LRMs are insensitive regarding temporal or length constraints, or require additional training (e.g., fine-tuning on fast/slow reasoning traces), which is costly.
 
-**Root Cause**: Human reasoning dynamically alternates between fast and slow thinking even within a single problem — trivial steps are skipped quickly while critical steps receive deeper analysis. Yet current LRMs lack the ability to dynamically adjust reasoning speed at the passage level within a single inference.
+**Key Challenge**: Human reasoning dynamically alternates between fast and slow thinking even within a single problem — trivial steps are skipped quickly while critical steps receive deeper analysis. Yet current LRMs lack the ability to dynamically adjust reasoning speed at the passage level within a single inference.
 
-**Paper Goals**: (1) Enable smooth switching between fast and slow thinking during inference; (2) Determine when to switch to optimally balance efficiency and accuracy.
+**Goal**: (1) Enable smooth switching between fast and slow thinking during inference; (2) Determine when to switch to optimally balance efficiency and accuracy.
 
-**Starting Point**: The authors identify an intriguing phenomenon — LRM short responses and long responses have distinctly different opening tokens (short responses begin with "To" or "First", long responses with "Okay" or "Alright"), indicating that fast/slow thinking modes are linearly separable in the model's representation space. Representation Engineering (RepE) can thus extract directional vectors that govern this mode transition.
+**Key Insight**: The authors identify an intriguing phenomenon — LRM short responses and long responses have distinctly different opening tokens (short responses begin with "To" or "First", long responses with "Okay" or "Alright"), indicating that fast/slow thinking modes are linearly separable in the model's representation space. Representation Engineering (RepE) can thus extract directional vectors that govern this mode transition.
 
 **Core Idea**: PCA is applied to the hidden layers of an LRM to extract steering vectors representing the "fast→slow" thinking direction. During inference, adding or subtracting these vectors enables token-level continuous control of thinking speed. Inter-layer logit divergence between early and final layers serves as a real-time difficulty signal to drive adaptive speed regulation.
 

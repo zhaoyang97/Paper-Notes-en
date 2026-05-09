@@ -28,15 +28,15 @@ This paper identifies a "historical context inconsistency" problem in stepwise g
 
 ## Background & Motivation
 
-**State of the Field**: RL-based LLM agent training methods (e.g., GRPO, GiGPO) have shown strong performance on long-horizon tasks. The core idea is to group multiple steps from the same rollout and estimate advantages using relative signals within the group.
+**Background**: RL-based LLM agent training methods (e.g., GRPO, GiGPO) have shown strong performance on long-horizon tasks. The core idea is to group multiple steps from the same rollout and estimate advantages using relative signals within the group.
 
 **Limitations of Prior Work**: In long-horizon tasks, different steps within the same rollout episode may have entirely different historical contexts (e.g., step 3 and step 10 face distinct combinations of environment states). Mixing steps with inconsistent contexts when computing advantages introduces systematic bias.
 
-**Root Cause**: Step-level advantage estimation is unbiased but high-variance; group-level estimation is low-variance but biased. How can an optimal balance between the two be achieved?
+**Key Challenge**: Step-level advantage estimation is unbiased but high-variance; group-level estimation is low-variance but biased. How can an optimal balance between the two be achieved?
 
-**Paper Goals**: Design a hierarchical advantage estimation approach that constructs nested group structures based on historical context consistency, enabling controllable bias-variance tradeoff.
+**Goal**: Design a hierarchical advantage estimation approach that constructs nested group structures based on historical context consistency, enabling controllable bias-variance tradeoff.
 
-**Starting Point**: Define the $k$-step context operator $\mathcal{C}_k$, and construct nested groups $G_0^H \supseteq G_1^H \supseteq \cdots \supseteq G_K^H$ based on shared historical context over 0 to $K$ steps.
+**Key Insight**: Define the $k$-step context operator $\mathcal{C}_k$, and construct nested groups $G_0^H \supseteq G_1^H \supseteq \cdots \supseteq G_K^H$ based on shared historical context over 0 to $K$ steps.
 
 **Core Idea**: Groups with greater context consistency yield more accurate (lower-bias) advantage estimates and should receive higher weights.
 

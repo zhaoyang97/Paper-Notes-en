@@ -29,15 +29,15 @@ This paper proposes Matryoshka Pilot (M-Pilot), which employs a lightweight whit
 
 ## Background & Motivation
 
-**State of the Field**: Commercial LLMs (e.g., GPT-4, Gemini) are predominantly black-box models, offering no access to parameters, architecture, or even output logits.
+**Background**: Commercial LLMs (e.g., GPT-4, Gemini) are predominantly black-box models, offering no access to parameters, architecture, or even output logits.
 
 **Limitations of Prior Work**: Existing approaches to enhancing black-box LLM capabilities fall into two categories: (a) ICL-based methods that rely on carefully designed demonstrations and prompts, dependent on human heuristics; and (b) adapter-based methods that select the best output from multiple candidates, but remain constrained by the black-box LLM's own generation capacity. Both categories perform poorly on long-horizon tasks involving multi-step reasoning and long-range planning.
 
-**Root Cause**: The opacity of black-box LLMs renders direct parameter optimization infeasible, yet task-specific performance improvements remain a practical necessity.
+**Key Challenge**: The opacity of black-box LLMs renders direct parameter optimization infeasible, yet task-specific performance improvements remain a practical necessity.
 
-**Paper Goals**: To systematically enhance black-box LLMs' reasoning, planning, and personalization capabilities on complex long-horizon tasks without accessing their parameters.
+**Goal**: To systematically enhance black-box LLMs' reasoning, planning, and personalization capabilities on complex long-horizon tasks without accessing their parameters.
 
-**Starting Point**: Treating the black-box LLM as an "environment" and training a white-box LLM as a "policy" to generate intermediate guidance.
+**Key Insight**: Treating the black-box LLM as an "environment" and training a white-box LLM as a "policy" to generate intermediate guidance.
 
 **Core Idea**: Driving large models with small models — a lightweight white-box controller generates intermediate guidance to steer black-box LLM behavior, with iterative preference optimization enabling continuous improvement.
 

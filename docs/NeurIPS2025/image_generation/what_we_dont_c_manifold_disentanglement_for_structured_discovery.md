@@ -30,7 +30,7 @@ This paper proposes WWDC (What We Don't C), a method that employs conditionally 
 
 ### State of the Field
 
-**State of the Field**: The core challenge of representation learning lies in how to access meaningful information within learned representations.
+**Background**: The core challenge of representation learning lies in how to access meaningful information within learned representations.
 
 ### Limitations of Prior Work
 
@@ -38,11 +38,11 @@ This paper proposes WWDC (What We Don't C), a method that employs conditionally 
 
 ### Root Cause
 
-**Root Cause**: A key insight: rather than pursuing complete disentanglement, it is more practical to remove known information from existing representations, allowing the "unknown" to surface more readily.
+**Key Challenge**: A key insight: rather than pursuing complete disentanglement, it is more practical to remove known information from existing representations, allowing the "unknown" to surface more readily.
 
 ### Starting Point
 
-**Starting Point**: In scientific domains such as astronomy, dominant signals (e.g., galaxy morphology classes) often obscure secondary yet important signals.
+**Key Insight**: In scientific domains such as astronomy, dominant signals (e.g., galaxy morphology classes) often obscure secondary yet important signals.
 
 ## Method
 

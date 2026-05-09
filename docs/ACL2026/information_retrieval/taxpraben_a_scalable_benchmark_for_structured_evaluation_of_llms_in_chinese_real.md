@@ -28,15 +28,15 @@ This paper introduces TaxPraBen, the first LLM evaluation benchmark targeting Ch
 
 ## Background & Motivation
 
-**State of the Field**: LLMs demonstrate strong performance on general NLP tasks, yet remain notably deficient in highly specialized, knowledge-intensive, and regulation-driven domains such as taxation. Existing domain-specific benchmarks—FinBen (finance), MedBench (medicine), and LAiW (law)—cover several vertical domains, but evaluation benchmarks for the tax domain are extremely scarce.
+**Background**: LLMs demonstrate strong performance on general NLP tasks, yet remain notably deficient in highly specialized, knowledge-intensive, and regulation-driven domains such as taxation. Existing domain-specific benchmarks—FinBen (finance), MedBench (medicine), and LAiW (law)—cover several vertical domains, but evaluation benchmarks for the tax domain are extremely scarce.
 
 **Limitations of Prior Work**: (1) Existing tax-related benchmarks (e.g., TaxBen) focus primarily on isolated NLP tasks (text classification, generation, and reasoning), failing to reflect the dual demands of semantic understanding and numerical computation inherent in real-world tax practice. (2) Overseas tax data differs substantially from Chinese tax administration practices and cannot be directly transferred. (3) Some models perform well on isolated tasks but poorly in real-world scenarios requiring integrated semantic reasoning and numerical computation, leading to inflated rankings.
 
-**Root Cause**: Tax practice requires LLMs to simultaneously command policy-level semantic understanding and precise numerical computation. Conventional NLP benchmarks, which evaluate these abilities through separate tasks, fail to capture this compound requirement, causing the practical applicability of models to be overestimated.
+**Key Challenge**: Tax practice requires LLMs to simultaneously command policy-level semantic understanding and precise numerical computation. Conventional NLP benchmarks, which evaluate these abilities through separate tasks, fail to capture this compound requirement, causing the practical applicability of models to be overestimated.
 
-**Paper Goals**: To construct the first comprehensive evaluation benchmark for Chinese real-world tax practice, covering the full cognitive spectrum from knowledge memorization to understanding to application, thereby filling the gap in practical tax scenario assessment.
+**Goal**: To construct the first comprehensive evaluation benchmark for Chinese real-world tax practice, covering the full cognitive spectrum from knowledge memorization to understanding to application, thereby filling the gap in practical tax scenario assessment.
 
-**Starting Point**: Grounded in Bloom's Taxonomy, the paper categorizes tax tasks into three cognitive levels—Knowledge Memorization (KM), Knowledge Understanding (KU), and Knowledge Application (KA)—and introduces three practice-oriented task scenarios closely aligned with real professional workflows: tax risk prevention, tax inspection analysis, and tax planning.
+**Key Insight**: Grounded in Bloom's Taxonomy, the paper categorizes tax tasks into three cognitive levels—Knowledge Memorization (KM), Knowledge Understanding (KU), and Knowledge Application (KA)—and introduces three practice-oriented task scenarios closely aligned with real professional workflows: tax risk prevention, tax inspection analysis, and tax planning.
 
 **Core Idea**: To design a structured evaluation paradigm that enables end-to-end assessment of LLMs' tax practice capabilities through a pipeline of structured parsing → field-aligned extraction → hybrid numerical–textual matching, while remaining extensible to other domains such as law, medicine, and finance.
 

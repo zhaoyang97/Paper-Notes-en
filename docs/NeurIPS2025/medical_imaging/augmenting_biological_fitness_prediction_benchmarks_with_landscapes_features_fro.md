@@ -28,15 +28,15 @@ GraphFLA is an efficient fitness landscape analysis framework that computes 20 b
 
 ## Background & Motivation
 
-**State of the Field**: ProteinGym (217 DMS tasks) and RNAGym (31 tasks) serve as standard benchmarks for protein/RNA fitness prediction. Eighty-nine models compete on these benchmarks, typically ranked by mean Spearman correlation.
+**Background**: ProteinGym (217 DMS tasks) and RNAGym (31 tasks) serve as standard benchmarks for protein/RNA fitness prediction. Eighty-nine models compete on these benchmarks, typically ranked by mean Spearman correlation.
 
 **Limitations of Prior Work**: (a) Aggregate scores mask substantial task-level variance—VenusREM achieves the highest mean but ranks first on only 14/217 tasks, while 44/89 models rank first on at least one task; (b) there is a lack of quantitative features describing "why each task is difficult"—only coarse metadata such as species and sequence length are available; (c) the only existing tool, MAGELLAN, is implemented in C only and is infeasible for datasets exceeding 100K mutants.
 
-**Root Cause**: Model performance depends on task-level properties (landscape topology), yet benchmarks lack such features, making it impossible to diagnose "which type of landscape requires which type of model."
+**Key Challenge**: Model performance depends on task-level properties (landscape topology), yet benchmarks lack such features, making it impossible to diagnose "which type of landscape requires which type of model."
 
-**Paper Goals**: To provide an efficient landscape analysis toolkit that computes interpretable meta-features for every benchmark task, shifting model comparison from "who achieves the highest average score" to "who performs best on which type of landscape."
+**Goal**: To provide an efficient landscape analysis toolkit that computes interpretable meta-features for every benchmark task, shifting model comparison from "who achieves the highest average score" to "who performs best on which type of landscape."
 
-**Starting Point**: The fitness landscape is a classical concept in evolutionary biology—treating mutation space as a topographic map in which the fitness of each mutant corresponds to its "elevation." Properties such as ruggedness, epistasis, and navigability govern the difficulty of both evolution and engineering.
+**Key Insight**: The fitness landscape is a classical concept in evolutionary biology—treating mutation space as a topographic map in which the fitness of each mutant corresponds to its "elevation." Properties such as ruggedness, epistasis, and navigability govern the difficulty of both evolution and engineering.
 
 **Core Idea**: Efficiently compute 20 landscape topological features → annotate 5,300+ fitness prediction tasks with meta-labels → explain why different models perform differently across tasks.
 

@@ -29,10 +29,10 @@ This paper proposes ProSpero, an active learning framework that discovers high-f
 
 ## Background & Motivation
 
-- **State of the Field**: Protein sequence design faces a fundamental tension: exploring high-fitness sequences beyond the wild-type neighborhood requires venturing outside the training distribution, where surrogate model accuracy degrades sharply (surrogate mismatch), while sequences far from the wild type tend to lose biological plausibility.
+- **Background**: Protein sequence design faces a fundamental tension: exploring high-fitness sequences beyond the wild-type neighborhood requires venturing outside the training distribution, where surrogate model accuracy degrades sharply (surrogate mismatch), while sequences far from the wild type tend to lose biological plausibility.
 - **Limitations of Prior Work**: PEX is limited to local mutations; global exploration methods such as GFN suffer severely from surrogate mismatch; GFN-AL-δCS uses random masking that may corrupt conserved residues; iterative fine-tuning of pretrained generative models is impractical.
-- **Root Cause**: Pretrained generative models naturally encode biological priors but are expensive to fine-tune repeatedly in iterative optimization loops.
-- **Paper Goals**: Enable reliable global exploration of protein sequence space using a frozen pretrained generative model, guided at inference time by an iteratively updated surrogate, while maintaining biological plausibility.
+- **Key Challenge**: Pretrained generative models naturally encode biological priors but are expensive to fine-tune repeatedly in iterative optimization loops.
+- **Goal**: Enable reliable global exploration of protein sequence space using a frozen pretrained generative model, guided at inference time by an iteratively updated surrogate, while maintaining biological plausibility.
 
 ## Method
 

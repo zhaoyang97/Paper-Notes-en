@@ -29,7 +29,7 @@ This paper presents 3DRealCar, the first large-scale real-world 3D vehicle datas
 
 ### Limitations of Prior Work
 
-**Limitations of Prior Work**: **State of the Field**: High-quality 3D vehicle models are in broad demand across autonomous driving, virtual/augmented reality, and gaming. Autonomous driving systems in particular require simulation of realistic corner-case scenarios (e.g., traffic accidents), which depends on high-quality 3D vehicle assets.
+**Limitations of Prior Work**: **Background**: High-quality 3D vehicle models are in broad demand across autonomous driving, virtual/augmented reality, and gaming. Autonomous driving systems in particular require simulation of realistic corner-case scenarios (e.g., traffic accidents), which depends on high-quality 3D vehicle assets.
 
 Existing 3D vehicle datasets have notable deficiencies: SRN-Car and Objaverse-Car are synthetic, lacking realistic textures and geometric detail; MVMC, though real-world, provides only an average of 10 views per vehicle without pose annotations, insufficient for high-quality reconstruction. Vehicle images in autonomous driving datasets suffer from low resolution and limited viewpoints. Meanwhile, text-to-3D generation methods (e.g., MVDream) also fail to produce high-quality vehicle models.
 

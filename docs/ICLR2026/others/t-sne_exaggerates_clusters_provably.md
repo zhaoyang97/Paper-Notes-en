@@ -28,10 +28,10 @@ This paper provides rigorous theoretical proofs of two fundamental failure modes
 
 ## Background & Motivation
 
-- **State of the Field**: t-SNE is a standard tool for exploratory data analysis, widely used in single-cell genomics, language model interpretability, and beyond.
+- **Background**: t-SNE is a standard tool for exploratory data analysis, widely used in single-cell genomics, language model interpretability, and beyond.
 - **Existing Theory**: Prior work has proven that t-SNE produces cluster-preserving outputs for well-separated input clusters (true-positive guarantees).
 - **Limitations of Prior Work**: Theoretical analysis of false positives (clustered output from unstructured input) and false negatives (unstructured output from clustered input) has been absent.
-- **Root Cause**: t-SNE outputs directly influence hypothesis generation, experimental design, and scientific conclusions, making its failure modes practically consequential.
+- **Key Challenge**: t-SNE outputs directly influence hypothesis generation, experimental design, and scientific conclusions, making its failure modes practically consequential.
 
 ## Method
 

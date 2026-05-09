@@ -28,15 +28,15 @@ Within a Gaussian mixture model clustering framework, this paper jointly address
 
 ## Background & Motivation
 
-**State of the Field**: Model-based clustering performs probabilistic clustering by assuming data arise from a finite mixture model, with the Gaussian mixture model (GMM) as the canonical instance. In high-dimensional data, many variables may be irrelevant or redundant to the cluster structure, motivating variable selection to improve clustering performance and interpretability. Maugis et al. proposed the SRUW model, which partitions variables into four roles: clustering-relevant (S), redundant variables linearly explained by S (U), the regression set linking U to S (R), and independent noise (W).
+**Background**: Model-based clustering performs probabilistic clustering by assuming data arise from a finite mixture model, with the Gaussian mixture model (GMM) as the canonical instance. In high-dimensional data, many variables may be irrelevant or redundant to the cluster structure, motivating variable selection to improve clustering performance and interpretability. Maugis et al. proposed the SRUW model, which partitions variables into four roles: clustering-relevant (S), redundant variables linearly explained by S (U), the regression set linking U to S (R), and independent noise (W).
 
 **Limitations of Prior Work**: (1) Existing variable selection methods (e.g., Clustvarsel, Selvar) assume complete data or handle only MAR missingness, whereas practical settings such as transcriptomics often exhibit MNAR mechanisms (missingness depends on unobserved values), and ignoring this leads to errors in both clustering and variable selection. (2) Prior work either addresses variable selection without handling missingness, or handles missingness without variable selection—no unified framework exists. (3) The two-stage ranking strategy of Celeux et al. is computationally efficient but lacks theoretical guarantees.
 
-**Root Cause**: MNAR missingness violates the ignorability assumption required by standard EM, while variable selection depends on accurate parameter estimation—the two problems are mutually entangled and must be solved jointly.
+**Key Challenge**: MNAR missingness violates the ignorability assumption required by standard EM, while variable selection depends on accurate parameter estimation—the two problems are mutually entangled and must be solved jointly.
 
-**Paper Goals**: To simultaneously perform variable role identification (S/R/U/W) and clustering parameter estimation in the presence of MNAR missing data, with formal theoretical guarantees.
+**Goal**: To simultaneously perform variable role identification (S/R/U/W) and clustering parameter estimation in the presence of MNAR missing data, with formal theoretical guarantees.
 
-**Starting Point**: Under the MNARz mechanism—where missingness probability depends only on latent class membership rather than observed values—the MNAR problem can be reformulated as a MAR problem on augmented data (original data plus the missingness indicator matrix), thereby preserving the tractability of the EM algorithm.
+**Key Insight**: Under the MNARz mechanism—where missingness probability depends only on latent class membership rather than observed values—the MNAR problem can be reformulated as a MAR problem on augmented data (original data plus the missingness indicator matrix), thereby preserving the tractability of the EM algorithm.
 
 **Core Idea**: Jointly model the SRUW variable selection framework and the MNARz missingness mechanism, and achieve efficient inference via a two-stage strategy with spectral-distance adaptive penalty weights, while establishing asymptotic selection consistency.
 

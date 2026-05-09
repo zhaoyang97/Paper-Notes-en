@@ -29,15 +29,15 @@ This paper proposes the PPCL framework, which employs linear probing and first-o
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion Transformers (DiT) have become the dominant architecture for text-to-image generation. Models such as SD3.5, FLUX.1, and Qwen-Image substantially surpass the previous U-Net generation in image quality and text alignment. However, parameter counts have escalated from 2.6B (SDXL) to 20B (Qwen-Image), imposing prohibitive inference costs.
+**Background**: Diffusion Transformers (DiT) have become the dominant architecture for text-to-image generation. Models such as SD3.5, FLUX.1, and Qwen-Image substantially surpass the previous U-Net generation in image quality and text alignment. However, parameter counts have escalated from 2.6B (SDXL) to 20B (Qwen-Image), imposing prohibitive inference costs.
 
 **Limitations of Prior Work**: Existing structured pruning methods suffer from three critical limitations: (a) incompatibility with the MMDiT (multimodal DiT) architecture; (b) poor flexibility in layer pruning, lacking support for plug-and-play configurations; and (c) insufficient understanding of inter-layer dependencies in deep diffusion models.
 
-**Root Cause**: Through extensive experiments on Qwen-Image (60-layer MMDiT), the authors identify two key phenomena: randomly removing 1–3 layers has negligible impact on generation quality (indicating high layer redundancy), and **contiguous removal** consistently outperforms **non-contiguous removal**. This suggests that redundancy exhibits depth-wise continuity, yet efficiently detecting such contiguous redundant intervals remains an open problem.
+**Key Challenge**: Through extensive experiments on Qwen-Image (60-layer MMDiT), the authors identify two key phenomena: randomly removing 1–3 layers has negligible impact on generation quality (indicating high layer redundancy), and **contiguous removal** consistently outperforms **non-contiguous removal**. This suggests that redundancy exhibits depth-wise continuity, yet efficiently detecting such contiguous redundant intervals remains an open problem.
 
-**Paper Goals**: (a) How to maximally identify contiguous redundant layer subsets? (b) How to prevent error accumulation across layers during post-pruning distillation? (c) How to support plug-and-play deployment across different compression ratios without retraining?
+**Goal**: (a) How to maximally identify contiguous redundant layer subsets? (b) How to prevent error accumulation across layers during post-pruning distillation? (c) How to support plug-and-play deployment across different compression ratios without retraining?
 
-**Starting Point**: The representational evolution of a teacher model does not proceed uniformly but rather in stages — within each stage, layer activations transition smoothly and can be approximated by linear functions. When the input-output mapping of a layer can be fitted by a linear probe, that layer is functionally redundant with respect to its neighbors.
+**Key Insight**: The representational evolution of a teacher model does not proceed uniformly but rather in stages — within each stage, layer activations transition smoothly and can be approximated by linear functions. When the input-output mapping of a layer can be fitted by a linear probe, that layer is functionally redundant with respect to its neighbors.
 
 **Core Idea**: Linear probes combined with first-order CKA difference analysis detect contiguous redundant layer intervals; non-sequential distillation breaks the error propagation chain; lightweight linear projections perform width pruning — together realizing plug-and-play DiT compression.
 

@@ -28,13 +28,13 @@ This paper proposes the first fully end-to-end framework for Temporal Sentence G
 
 ## Background & Motivation
 
-**State of the Field**: TSGV aims to localize the temporal segment in an untrimmed video corresponding to a natural language query. Most existing methods employ frozen pre-trained video encoders (e.g., C3D/I3D) for feature extraction and train only the grounding module.
+**Background**: TSGV aims to localize the temporal segment in an untrimmed video corresponding to a natural language query. Most existing methods employ frozen pre-trained video encoders (e.g., C3D/I3D) for feature extraction and train only the grounding module.
 
 **Limitations of Prior Work**: (1) Video backbones are trained for visual classification but applied to TSGV—a task mismatch exists; (2) Pre-trained models learn only phrase-level object/action concepts and struggle to understand complex natural language semantics; (3) Some methods do not leverage sentence features during the grounding stage, resulting in insufficient cross-modal alignment.
 
-**Root Cause**: Frozen backbones → features cannot adapt to the TSGV task → limited grounding accuracy. However, directly fine-tuning large backbones incurs substantial memory overhead and risks catastrophic forgetting.
+**Key Challenge**: Frozen backbones → features cannot adapt to the TSGV task → limited grounding accuracy. However, directly fine-tuning large backbones incurs substantial memory overhead and risks catastrophic forgetting.
 
-**Starting Point**: Design a lightweight adapter that achieves sentence-conditioned backbone adaptation while fine-tuning only a minimal number of parameters.
+**Key Insight**: Design a lightweight adapter that achieves sentence-conditioned backbone adaptation while fine-tuning only a minimal number of parameters.
 
 **Core Idea**: SCADA injects sentence embeddings into each backbone layer via inner and outer branches, enabling sentence-guided visual feature extraction. A video-centric learning strategy allows multiple queries for the same video to share the feature extraction pass.
 

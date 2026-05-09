@@ -27,21 +27,21 @@ cadrille is the first multi-modal CAD reconstruction model capable of handling p
 
 ## Background & Motivation
 
-**State of the Field**: CAD models are critical in engineering and manufacturing. Existing CAD reconstruction methods primarily recover CAD models from a single modality—point clouds, images, or text. Recent work CAD-Recode represents CAD models as executable Python code, replacing the conventional special-token representation.
+**Background**: CAD models are critical in engineering and manufacturing. Existing CAD reconstruction methods primarily recover CAD models from a single modality—point clouds, images, or text. Recent work CAD-Recode represents CAD models as executable Python code, replacing the conventional special-token representation.
 
 **Limitations of Prior Work**:
    - Single-modal methods are inherently limited—point clouds require specialized equipment, while image- and text-based methods each have their own shortcomings.
    - Existing multi-modal methods (CAD-GPT, CAD-MLLM) lag far behind single-modal SOTAs in quality.
    - SFT-trained models generalize poorly to cross-domain scenarios (e.g., real-world scan data), achieving only ~60% IoU on CC3D with an invalid rate approaching 10%.
 
-**Root Cause**: Manually annotated CAD datasets are small and limited in diversity; programmatically generated datasets are large but exhibit a domain gap with real data; naively mixing both data sources for SFT degrades performance due to inconsistent CAD operations.
+**Key Challenge**: Manually annotated CAD datasets are small and limited in diversity; programmatically generated datasets are large but exhibit a domain gap with real data; naively mixing both data sources for SFT degrades performance due to inconsistent CAD operations.
 
-**Paper Goals**:
+**Goal**:
    - How to handle point cloud, image, and text modalities simultaneously within a unified framework?
    - How to improve cross-domain generalization without requiring large-scale manual annotations?
    - How to minimize the invalid rate in generated Python code?
 
-**Starting Point**: Drawing inspiration from the LLM training paradigm (pre-training → SFT → RLHF), the paper introduces RL fine-tuning into CAD reconstruction. The RL stage requires only 3D meshes—not CAD sequence annotations—to compute IoU-based rewards, enabling the use of more readily available unannotated datasets.
+**Key Insight**: Drawing inspiration from the LLM training paradigm (pre-training → SFT → RLHF), the paper introduces RL fine-tuning into CAD reconstruction. The RL stage requires only 3D meshes—not CAD sequence annotations—to compute IoU-based rewards, enabling the use of more readily available unannotated datasets.
 
 **Core Idea**: Large-scale programmatically generated data is used in SFT to learn general CAD reconstruction capabilities, while scarce manually annotated or real-world data is used in RL fine-tuning to bridge the domain gap. A single unified model thereby surpasses all single-modal SOTAs across all three input modalities.
 

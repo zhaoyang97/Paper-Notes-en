@@ -29,15 +29,15 @@ The EMMA benchmark is proposed to systematically evaluate concept erasure method
 
 ## Background & Motivation
 
-**State of the Field**: The widespread adoption of Text-to-Image (T2I) generation models (e.g., Stable Diffusion) has raised privacy, bias, and copyright concerns. Concept Erasure has been proposed as a lightweight solution that selectively removes unwanted concepts (e.g., specific celebrity faces, NSFW content, copyrighted brands) from pre-trained models without requiring full retraining.
+**Background**: The widespread adoption of Text-to-Image (T2I) generation models (e.g., Stable Diffusion) has raised privacy, bias, and copyright concerns. Concept Erasure has been proposed as a lightweight solution that selectively removes unwanted concepts (e.g., specific celebrity faces, NSFW content, copyrighted brands) from pre-trained models without requiring full retraining.
 
 **Limitations of Prior Work**: Current evaluations of concept erasure methods suffer from significant deficiencies: (1) narrow concept coverage, with most methods tested on only 5–20 concepts; (2) single-dimensional evaluation, primarily using direct prompts containing the explicit name of the target concept (e.g., "a photo of a dog") to verify erasure; (3) lack of assessment regarding bias impact. Consequently, it remains unknown whether these methods truly delete the target concept from the model's representation or merely sever the surface-level association between the concept name and the generated output.
 
-**Root Cause**: Existing evaluations only detect "whether the target concept can be generated using its name," while ignoring "whether the erasure can be bypassed using indirect descriptions (e.g., descriptive text)." Experiments show that even when a concept name is successfully erased, the model can still generate the concept via descriptive prompts, indicating that the semantic representation of the concept has not been truly removed.
+**Key Challenge**: Existing evaluations only detect "whether the target concept can be generated using its name," while ignoring "whether the erasure can be bypassed using indirect descriptions (e.g., descriptive text)." Experiments show that even when a concept name is successfully erased, the model can still generate the concept via descriptive prompts, indicating that the semantic representation of the concept has not been truly removed.
 
-**Paper Goals**: To construct a comprehensive evaluation benchmark for concept erasure to answer a key question: Are current evaluation methods detecting if a concept is truly removed from the model representation, or merely detecting its surface-level hiding?
+**Goal**: To construct a comprehensive evaluation benchmark for concept erasure to answer a key question: Are current evaluation methods detecting if a concept is truly removed from the model representation, or merely detecting its surface-level hiding?
 
-**Starting Point**: Design multi-level, multi-granularity test prompts (from explicit names to implicit descriptions), combined with retention tests of visually similar concepts and social bias analysis, to build a comprehensive evaluation system with 5 dimensions and 12 metrics.
+**Key Insight**: Design multi-level, multi-granularity test prompts (from explicit names to implicit descriptions), combined with retention tests of visually similar concepts and social bias analysis, to build a comprehensive evaluation system with 5 dimensions and 12 metrics.
 
 **Core Idea**: Use implicit prompts (descriptive prompts without using the concept name) to test if a concept is truly erased, while simultaneously evaluating the collateral damage of erasure on similar concepts and its impact on gender/racial bias.
 

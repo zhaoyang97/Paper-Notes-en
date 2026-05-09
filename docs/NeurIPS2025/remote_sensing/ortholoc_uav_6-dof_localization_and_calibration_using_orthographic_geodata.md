@@ -28,15 +28,15 @@ OrthoLoC introduces the first large-scale UAV 6-DoF localization benchmark built
 
 ## Background & Motivation
 
-**State of the Field** UAV visual localization is critical for applications such as digital twins, search and rescue, and infrastructure inspection. Existing approaches rely on image database retrieval (imprecise) or 3D model matching (memory- and computation-intensive), rendering them infeasible in resource-constrained environments.
+**Background** UAV visual localization is critical for applications such as digital twins, search and rescue, and infrastructure inspection. Existing approaches rely on image database retrieval (imprecise) or 3D model matching (memory- and computation-intensive), rendering them infeasible in resource-constrained environments.
 
 **Limitations of Prior Work** (1) Orthographic geodata (Digital Orthophoto DOP + Digital Surface Model DSM) is lightweight and increasingly accessible (freely released by EU governments), yet no existing method fully exploits it; (2) aligned cross-domain UAV–geodata benchmarks are lacking; (3) severe domain discrepancy exists between perspective UAV imagery and orthographic reference data.
 
-**Root Cause** Geodata covering the same area requires roughly 1/30 the storage of a 3D model, yet the fundamental geometric difference between perspective and orthographic projection makes direct feature matching highly challenging, particularly at oblique viewing angles.
+**Key Challenge** Geodata covering the same area requires roughly 1/30 the storage of a 3D model, yet the fundamental geometric difference between perspective and orthographic projection makes direct feature matching highly challenging, particularly at oblique viewing angles.
 
-**Paper Goals** (1) Establish the first large-scale UAV–geodata aligned benchmark for 6-DoF localization evaluation; (2) address the residual matching degradation caused by perspective–orthographic domain discrepancy.
+**Goal** (1) Establish the first large-scale UAV–geodata aligned benchmark for 6-DoF localization evaluation; (2) address the residual matching degradation caused by perspective–orthographic domain discrepancy.
 
-**Starting Point** A paired dataset is constructed to decouple retrieval from localization evaluation, and the ground-plane approximation is exploited to perform homography preprocessing that narrows the domain gap.
+**Key Insight** A paired dataset is constructed to decouple retrieval from localization evaluation, and the ground-plane approximation is exploited to perform homography preprocessing that narrows the domain gap.
 
 **Core Idea** Replace expensive 3D models and image databases with lightweight, publicly available government geodata (DOP+DSM) for UAV 6-DoF localization.
 

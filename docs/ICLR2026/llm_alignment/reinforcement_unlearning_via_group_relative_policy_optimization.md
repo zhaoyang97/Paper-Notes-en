@@ -28,7 +28,7 @@ PURGE reformulates LLM unlearning as a verifiable RL task, employing the GRPO fr
 
 ## Background & Motivation
 
-**State of the Field**: The GDPR "right to be forgotten" and the EU AI Act require AI systems to delete specific data on demand. LLMs inadvertently memorize sensitive or copyrighted data during pretraining. Conventional unlearning methods include gradient ascent, DPO/NPO preference optimization, and rejection fine-tuning.
+**Background**: The GDPR "right to be forgotten" and the EU AI Act require AI systems to delete specific data on demand. LLMs inadvertently memorize sensitive or copyrighted data during pretraining. Conventional unlearning methods include gradient ascent, DPO/NPO preference optimization, and rejection fine-tuning.
 
 **Limitations of Prior Work**:
    - Gradient Ascent: Overly aggressive updates cause model collapse (loss of fluency and utility).
@@ -36,9 +36,9 @@ PURGE reformulates LLM unlearning as a verifiable RL task, employing the GRPO fr
    - Rejection Fine-Tuning: Creates shortcut behaviors; latent traces may resurface under specific conditions.
    - Context-Based Methods: Risk data leakage and consume limited context windows.
 
-**Root Cause**: Effective unlearning, utility preservation, and adversarial robustness are difficult to achieve simultaneously.
+**Key Challenge**: Effective unlearning, utility preservation, and adversarial robustness are difficult to achieve simultaneously.
 
-**Starting Point**: DeepSeek's RLVR (RL with Verifiable Rewards) succeeds on reasoning tasks → unlearning is likewise a verifiable task (whether data has been removed is objectively measurable) → GRPO can be applied to optimize unlearning.
+**Key Insight**: DeepSeek's RLVR (RL with Verifiable Rewards) succeeds on reasoning tasks → unlearning is likewise a verifiable task (whether data has been removed is objectively measurable) → GRPO can be applied to optimize unlearning.
 
 **Core Idea**: LLM unlearning is inherently a verifiable task — the GRPO intrinsic reward function penalizes mentions of forbidden entities, training an unlearning model in the same manner as a reasoning model.
 

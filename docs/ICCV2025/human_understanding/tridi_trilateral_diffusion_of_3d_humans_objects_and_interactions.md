@@ -29,11 +29,11 @@ TriDi is proposed as the first unified diffusion model that jointly models the t
 
 ## Background & Motivation
 
-**State of the Field**: Modeling 3D human-object interactions (HOI) is critical for applications such as AR/VR and virtual human generation. Existing methods operate in a **unidirectional conditional** manner: some recover human pose from objects as $P(H|O)$, while others recover object pose from humans as $P(O|H)$, each requiring a dedicated model architecture, training pipeline, and design.
+**Background**: Modeling 3D human-object interactions (HOI) is critical for applications such as AR/VR and virtual human generation. Existing methods operate in a **unidirectional conditional** manner: some recover human pose from objects as $P(H|O)$, while others recover object pose from humans as $P(O|H)$, each requiring a dedicated model architecture, training pipeline, and design.
 
 **Limitations of Prior Work**: Training specialized models for each conditional combination is (1) not scalable, (2) ignores the mutual dependencies among the three modalities, and (3) cannot support unconditional joint generation. Given a human and an object, multiple plausible interaction types exist (sitting, lifting, pushing, etc.), and a comprehensive model should simultaneously capture the relationships among all modalities.
 
-**Starting Point**: This work shifts HOI modeling from the paradigm of "unidirectional conditional distributions" to "three-variable joint distributions." Inspired by UniDiffuser (bimodal diffusion), it extends the framework to three modalities, modeling $P(H, O, I)$ within a compact architecture that naturally yields $2^3 - 1 = 7$ operational modes.
+**Key Insight**: This work shifts HOI modeling from the paradigm of "unidirectional conditional distributions" to "three-variable joint distributions." Inspired by UniDiffuser (bimodal diffusion), it extends the framework to three modalities, modeling $P(H, O, I)$ within a compact architecture that naturally yields $2^3 - 1 = 7$ operational modes.
 
 **Core Idea**: (1) A Transformer-based trilateral diffusion process assigns independent timesteps to each modality and discovers fine-grained cross-modal relationships via token-level self-attention. (2) Textual descriptions and body contact maps are embedded into a shared latent space, balancing user controllability with spatial expressiveness.
 

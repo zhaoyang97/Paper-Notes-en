@@ -31,12 +31,12 @@ AB-MCTS proposes an adaptive-branching Monte Carlo Tree Search framework that dy
 
 Inference-time compute scaling is a critical direction for improving LLM performance on complex tasks. Existing approaches fall into three categories: (1) post-training fine-tuning (e.g., o1), (2) reward-guided chain-of-thought, and (3) multi-answer generation. Among these, multi-answer generation (e.g., Best-of-N repeated sampling) is simple and effective, but lacks a mechanism to leverage external feedback for iterative improvement.
 
-**Root Cause**:
+**Key Challenge**:
 - Repeated sampling focuses on "exploration"—independently generating many candidates—without exploiting feedback for "utilization"
 - Standard MCTS (e.g., LATS) supports multi-round refinement but uses a fixed branching factor as a hyperparameter, limiting exploitation of LLM's diverse output space
 - The success of repeated sampling suggests that effective inference-time scaling requires fully utilizing the broad output space of LLMs, which fixed width impedes
 
-**Starting Point**: Introduce unbounded branching into MCTS, allowing the search tree to adaptively decide at each node whether to expand new branches or deepen along existing ones, unifying exploration and exploitation into a single framework.
+**Key Insight**: Introduce unbounded branching into MCTS, allowing the search tree to adaptively decide at each node whether to expand new branches or deepen along existing ones, unifying exploration and exploitation into a single framework.
 
 ## Method
 

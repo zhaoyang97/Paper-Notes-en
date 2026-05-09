@@ -28,11 +28,11 @@ This paper proposes Long Context Tuning (LCT), which extends the context window 
 
 ## Background & Motivation
 
-1. **State of the Field**: DiT-based video generation models (Sora, Kling, HunyuanVideo, etc.) can synthesize high-quality single-shot videos lasting up to one minute. However, real narrative videos consist of multiple shots requiring cross-shot consistency.
+1. **Background**: DiT-based video generation models (Sora, Kling, HunyuanVideo, etc.) can synthesize high-quality single-shot videos lasting up to one minute. However, real narrative videos consist of multiple shots requiring cross-shot consistency.
 2. **Limitations of Prior Work**: Existing scene-level generation approaches fall into two categories: (1) appearance-conditioned generation (e.g., VideoStudio), which relies on predefined conditions and specific datasets and struggles to maintain abstract elements such as lighting and color tone; (2) keyframe generation + I2V (e.g., StoryDiffusion), where shots are synthesized independently without guaranteeing temporal consistency, and sparse keyframes limit conditioning effectiveness.
-3. **Root Cause**: Scene-level consistency requires visual consistency (character identity, background, lighting, color tone) as well as temporal consistency (motion, camera movement). Both existing categories exhibit deficiencies along different consistency dimensions.
-4. **Paper Goals**: To learn cross-shot consistency directly from data without relying on predefined conditions or auxiliary networks.
-5. **Starting Point**: Extend the context window of pretrained single-shot models so that full attention covers all tokens across all shots within a scene, enabling the model to learn cross-shot correlations directly from scene-level video data.
+3. **Key Challenge**: Scene-level consistency requires visual consistency (character identity, background, lighting, color tone) as well as temporal consistency (motion, camera movement). Both existing categories exhibit deficiencies along different consistency dimensions.
+4. **Goal**: To learn cross-shot consistency directly from data without relying on predefined conditions or auxiliary networks.
+5. **Key Insight**: Extend the context window of pretrained single-shot models so that full attention covers all tokens across all shots within a scene, enabling the model to learn cross-shot correlations directly from scene-level video data.
 6. **Core Idea**: Distinguish shots via interleaved 3D RoPE positional embeddings, unify conditioning and diffusion samples via asynchronous timesteps, and support efficient autoregressive generation via context causal attention.
 
 ## Method

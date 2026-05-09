@@ -29,9 +29,9 @@ LIT (Live Interactive Training) proposes a framework enabling interactive visual
 
 ## Background & Motivation
 
-- **State of the Field**: Interactive video segmentation models such as SAM2 still require extensive user intervention in complex scenes involving occlusion, object splitting, and camouflage.
+- **Background**: Interactive video segmentation models such as SAM2 still require extensive user intervention in complex scenes involving occlusion, object splitting, and camouflage.
 - **Limitations of Prior Work**: SAM2 treats user corrections only as immediate fix signals or stores them in a memory bank, while model parameters remain frozen. As a result, the model cannot genuinely learn from or generalize these interactions, trapping users in repetitive correction loops—e.g., segmenting a splitting card may require up to 14 corrections.
-- **Root Cause**: User-provided corrections contain rich domain adaptation information, yet existing models exploit them solely for immediate prediction rather than model improvement.
+- **Key Challenge**: User-provided corrections contain rich domain adaptation information, yet existing models exploit them solely for immediate prediction rather than model improvement.
 - **Core Idea**: Combine parameter-efficient fine-tuning (PEFT) with online learning to train lightweight LoRA modules in real time during inference, internalizing user feedback so that correction patterns generalize to subsequent frames within the same video. This constitutes a **user feedback-driven online learning paradigm**—conducted at inference time, supervised by human corrections rather than pseudo-labels.
 
 ## Method

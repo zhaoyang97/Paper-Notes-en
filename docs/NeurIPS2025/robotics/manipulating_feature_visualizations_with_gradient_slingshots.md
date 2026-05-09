@@ -29,15 +29,15 @@ This paper proposes Gradient Slingshots (GS), a method that "carves" a quadratic
 
 ## Background & Motivation
 
-**State of the Field**: Feature Visualization (FV) is one of the most widely used interpretability techniques in XAI. By synthesizing inputs that maximally activate specific features (neurons or directions), FV reveals the concepts learned by DNNs and is broadly applied to understand internal representations, detect backdoor attacks, and identify biases.
+**Background**: Feature Visualization (FV) is one of the most widely used interpretability techniques in XAI. By synthesizing inputs that maximally activate specific features (neurons or directions), FV reveals the concepts learned by DNNs and is broadly applied to understand internal representations, detect backdoor attacks, and identify biases.
 
 **Limitations of Prior Work**: Despite widespread trust in FV, its reliability has received little scrutiny. Prior work (Geirhos et al.) demonstrated that FV can be manipulated by modifying the model architecture (embedding fooling circuits), but such architectural changes are easily detected upon inspection. Whether FV can be covertly manipulated without altering the architecture remains a critical and unanswered security question.
 
-**Root Cause**: FV optimization operates in the OOD region (e.g., initialized in the Fourier domain followed by gradient ascent), while the model's classification behavior depends solely on in-distribution (ID) samples. This OOD–ID decoupling means an adversary can freely reshape the gradient field in the OOD region without affecting normal model functionality.
+**Key Challenge**: FV optimization operates in the OOD region (e.g., initialized in the Fourier domain followed by gradient ascent), while the model's classification behavior depends solely on in-distribution (ID) samples. This OOD–ID decoupling means an adversary can freely reshape the gradient field in the OOD region without affecting normal model functionality.
 
-**Paper Goals**: (1) Demonstrate that FV can be manipulated without modifying the model architecture or significantly degrading performance; (2) Provide theoretical guarantees (convergence proofs) and systematic empirical validation; (3) Propose simple defensive measures to detect such attacks.
+**Goal**: (1) Demonstrate that FV can be manipulated without modifying the model architecture or significantly degrading performance; (2) Provide theoretical guarantees (convergence proofs) and systematic empirical validation; (3) Propose simple defensive measures to detect such attacks.
 
-**Starting Point**: Exploiting the OOD nature of FV optimization, the method "carves" a tunnel in the model's activation landscape from the initialization region to the target image, so that the gradient field naturally steers toward the target—analogous to the accelerating motion of a slingshot.
+**Key Insight**: Exploiting the OOD nature of FV optimization, the method "carves" a tunnel in the model's activation landscape from the initialization region to the target image, so that the gradient field naturally steers toward the target—analogous to the accelerating motion of a slingshot.
 
 **Core Idea**: Construct a quadratic activation landscape (the gradient slingshot) along the FV optimization trajectory, causing optimization to "launch" from the initialization toward an arbitrary target image, while a preservation loss maintains the model's original behavior on natural images.
 

@@ -29,15 +29,15 @@ This paper proposes the SAGE optimizer, which addresses the "embedding layer dil
 
 ## Background & Motivation
 
-**State of the Field**: AdamW is the standard optimizer for LLM pre-training, but its two full-size momentum states ($O(Vd)$) consume memory equivalent to twice the model size, making it a critical memory bottleneck. Lightweight alternatives such as Lion (single momentum) and SinkGD (stateless normalization) have made notable progress.
+**Background**: AdamW is the standard optimizer for LLM pre-training, but its two full-size momentum states ($O(Vd)$) consume memory equivalent to twice the model size, making it a critical memory bottleneck. Lightweight alternatives such as Lion (single momentum) and SinkGD (stateless normalization) have made notable progress.
 
 **Limitations of Prior Work**: Lightweight optimizers perform well on dense layers but fail on embedding layers. Embedding layer gradients exhibit sparsity and high variance due to Zipfian token frequency distributions, which stateless methods cannot handle effectively. As a result, approaches such as SinkGD resort to hybrid designs that fall back to AdamW for embedding layers, partially negating their memory savings.
 
-**Root Cause**: The embedding layer is the largest contributor to optimizer state memory (with $V > 100{,}000$), yet it is precisely where lightweight optimizers fail. Achieving true memory efficiency requires solving the embedding layer problem.
+**Key Challenge**: The embedding layer is the largest contributor to optimizer state memory (with $V > 100{,}000$), yet it is precisely where lightweight optimizers fail. Achieving true memory efficiency requires solving the embedding layer problem.
 
-**Paper Goals**: Design a lightweight optimizer that can successfully replace AdamW on embedding layers.
+**Goal**: Design a lightweight optimizer that can successfully replace AdamW on embedding layers.
 
-**Starting Point**: Lion's update magnitude is a static 1.0 (uniform across all dimensions), offering no control over high-variance dimensions. A bounded adaptive scaling factor that selectively damps high-variance dimensions could provide stability while preserving memory efficiency.
+**Key Insight**: Lion's update magnitude is a static 1.0 (uniform across all dimensions), offering no control over high-variance dimensions. A bounded adaptive scaling factor that selectively damps high-variance dimensions could provide stability while preserving memory efficiency.
 
 **Core Idea**: SAGE = Lion's sign direction + a novel $O(d)$ adaptive damping scaling factor $\mathbf{H}_t$. This factor is based on an EMA of gradient absolute values ($L_1$ norm), is theoretically bounded with $\|\mathbf{H}_t\|_\infty \leq 1.0$, applies stronger damping to high-variance dimensions, and degenerates to Lion's scaling of 1.0 for quiet dimensions.
 

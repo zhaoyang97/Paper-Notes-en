@@ -37,9 +37,9 @@ Reconstructing dynamics from high-dimensional distributional samples is a centra
 
 However, **virtually all existing methods neglect cell-cell interactions**. In realistic biological settings, intercellular communication is a fundamental life process that directly influences cell state transitions. For instance, neighboring cells may promote or inhibit each other's differentiation via signaling molecules.
 
-**Root Cause**: How to simultaneously model unbalanced stochastic effects (proliferation/death) and inter-particle interactions within a dynamical optimal transport framework?
+**Key Challenge**: How to simultaneously model unbalanced stochastic effects (proliferation/death) and inter-particle interactions within a dynamical optimal transport framework?
 
-**Starting Point**: Unify Mean Field Schrödinger Bridge (handling interactions) with Regularized Unbalanced OT (handling unbalanced effects) into the novel UMFSB framework, and design a deep learning solver accordingly.
+**Key Insight**: Unify Mean Field Schrödinger Bridge (handling interactions) with Regularized Unbalanced OT (handling unbalanced effects) into the novel UMFSB framework, and design a deep learning solver accordingly.
 
 ## Method
 

@@ -28,18 +28,18 @@ This paper proposes the Entropy Area Score (EAS)—a method that quantifies unce
 
 ## Background & Motivation
 
-**State of the Field**: Reasoning LLMs (e.g., DeepSeek-R1, Qwen-QWQ) have achieved progress on mathematical and scientific reasoning, yet their outputs remain sensitive to evaluation conditions (seed, temperature, prompt), leading to substantial score variance. Uncertainty quantification is critical for reliable deployment.
+**Background**: Reasoning LLMs (e.g., DeepSeek-R1, Qwen-QWQ) have achieved progress on mathematical and scientific reasoning, yet their outputs remain sensitive to evaluation conditions (seed, temperature, prompt), leading to substantial score variance. Uncertainty quantification is critical for reliable deployment.
 
 **Limitations of Prior Work**:
    - External methods (training separate uncertainty models) require additional data and computation.
    - Sampling-based methods (Self-Consistency) require multiple inference passes, incurring $K\times$ cost.
    - Token-level probability metrics (perplexity) serve only as proxies for the final answer and do not directly measure uncertainty within the reasoning process.
 
-**Root Cause**: There is a need for an uncertainty measure that operates in a single forward pass, has no external dependencies, and remains interpretable—yet existing methods are either expensive (multi-sample) or insufficiently fine-grained.
+**Key Challenge**: There is a need for an uncertainty measure that operates in a single forward pass, has no external dependencies, and remains interpretable—yet existing methods are either expensive (multi-sample) or insufficiently fine-grained.
 
-**Paper Goals**: Design an efficient sequence-level uncertainty metric that extracts uncertainty signals from the model's own token-level entropy.
+**Goal**: Design an efficient sequence-level uncertainty metric that extracts uncertainty signals from the model's own token-level entropy.
 
-**Starting Point**: The token-level entropy trajectory of a reasoning LLM reflects the model's internal "degree of hesitation"—low entropy indicates confidence, high entropy indicates uncertainty. Integrating the full trajectory yields a sequence-level uncertainty estimate.
+**Key Insight**: The token-level entropy trajectory of a reasoning LLM reflects the model's internal "degree of hesitation"—low entropy indicates confidence, high entropy indicates uncertainty. Integrating the full trajectory yields a sequence-level uncertainty estimate.
 
 **Core Idea**: $\text{EAS}$ = area under the curve of token-level predictive entropy = a sequence-level uncertainty measure obtained from a single forward pass.
 

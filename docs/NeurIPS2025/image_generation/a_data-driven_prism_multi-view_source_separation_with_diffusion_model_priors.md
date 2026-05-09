@@ -28,17 +28,17 @@ This paper proposes DDPRISM, a method that exploits structural differences among
 
 ## Background & Motivation
 
-**State of the Field**: In the natural sciences, many observations are mixtures of multiple unknown sources—overlapping celestial objects in galaxy images, superimposed neural activities in EEG signals, or seismic signals mixed with background noise. Traditional source separation methods (ICA, NMF, template fitting) require strong prior assumptions or training samples from individual sources, creating a chicken-and-egg dilemma: separating sources requires priors, yet obtaining priors requires separated sources.
+**Background**: In the natural sciences, many observations are mixtures of multiple unknown sources—overlapping celestial objects in galaxy images, superimposed neural activities in EEG signals, or seismic signals mixed with background noise. Traditional source separation methods (ICA, NMF, template fitting) require strong prior assumptions or training samples from individual sources, creating a chicken-and-egg dilemma: separating sources requires priors, yet obtaining priors requires separated sources.
 
 **Limitations of Prior Work**: (a) Contrastive learning methods (CPCA, CLVM, CVAE) assume the existence of "background views" containing only background sources—yet in many settings every view contains all sources; (b) existing methods either have limited expressive capacity (linear models) or cannot handle incomplete data (CVAE); (c) deep learning approaches (VAEs, etc.) require clean source samples for training.
 
-**Root Cause**: How can one learn the prior distribution of each source without any isolated source samples, when observations are noisy, incomplete, and acquired at different resolutions?
+**Key Challenge**: How can one learn the prior distribution of each source without any isolated source samples, when observations are noisy, incomplete, and acquired at different resolutions?
 
-**Paper Goals**
+**Goal**
    - Learn the prior distribution of each source from mixed observations in an unsupervised manner.
    - Perform posterior sampling (i.e., source separation) given new observations.
 
-**Starting Point**: The paper exploits the multi-view structure—different observation sets contain distinct linear transformations of the same sources (different mixing matrices), providing constraints for source separation. By combining the expressive power of diffusion models with iterative optimization under an EM framework, source priors can be learned progressively without any isolated source samples.
+**Key Insight**: The paper exploits the multi-view structure—different observation sets contain distinct linear transformations of the same sources (different mixing matrices), providing constraints for source separation. By combining the expressive power of diffusion models with iterative optimization under an EM framework, source priors can be learned progressively without any isolated source samples.
 
 **Core Idea**: Under an EM framework, the E-step performs joint posterior sampling (source separation) using the current diffusion models, while the M-step trains improved diffusion models on the separated source samples. Iterating this procedure converges to the correct source priors.
 

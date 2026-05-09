@@ -27,15 +27,15 @@ content_hash: 35c2a19f1e4a7fd4
 This paper proposes an efficient RGB-D multi-task scene understanding network. A partial-channel convolution fusion encoder reduces FLOPs to 1/16 of standard convolution. A Normalized Focus Channel Layer (NFCL) and a Context Feature Interaction Layer (CFIL) enable cross-dimensional feature guidance. A batch-level multi-task adaptive loss dynamically balances five tasks. The method achieves 49.82 mIoU on NYUv2 at 20.33 FPS, which is 24% faster than EMSAFormer.
 
 ## Background & Motivation
-**State of the Field**: Robotic scene understanding requires simultaneous execution of multiple tasks including semantic segmentation, instance segmentation, orientation estimation, panoptic segmentation, and scene classification. RGB-D data fusion has become the mainstream solution, yet efficiently fusing two modalities while jointly optimizing multiple tasks remains an open problem.
+**Background**: Robotic scene understanding requires simultaneous execution of multiple tasks including semantic segmentation, instance segmentation, orientation estimation, panoptic segmentation, and scene classification. RGB-D data fusion has become the mainstream solution, yet efficiently fusing two modalities while jointly optimizing multiple tasks remains an open problem.
 
 **Limitations of Prior Work**: (1) Dual-encoder architectures (e.g., EMSANet) incur high computational costs and underutilize inter-modal complementary information; (2) Transformer-based encoders (e.g., EMSAFormer with Swin v2) involve intensive matrix operations and frequent memory access, limiting inference to 16 FPS; (3) MLP decoder structures are simple and efficient but susceptible to noise from shallow features; (4) Fixed multi-task loss weights cannot adapt to the dynamic changes in task learning throughout training.
 
-**Root Cause**: The trade-off between multi-task performance and inference speed — how to substantially improve inference efficiency without sacrificing task accuracy.
+**Key Challenge**: The trade-off between multi-task performance and inference speed — how to substantially improve inference efficiency without sacrificing task accuracy.
 
-**Paper Goals**: Design an efficient RGB-D multi-task network that simultaneously addresses modality fusion efficiency, the shallow-feature misleading problem in MLP decoders, and dynamic balancing of multi-task loss weights.
+**Goal**: Design an efficient RGB-D multi-task network that simultaneously addresses modality fusion efficiency, the shallow-feature misleading problem in MLP decoders, and dynamic balancing of multi-task loss weights.
 
-**Starting Point**: Exploiting channel feature redundancy — applying convolution to only 1/4 of channels suffices to achieve full-channel performance, substantially reducing FLOPs and memory access.
+**Key Insight**: Exploiting channel feature redundancy — applying convolution to only 1/4 of channels suffices to achieve full-channel performance, substantially reducing FLOPs and memory access.
 
 **Core Idea**: Partial-channel convolution for efficient RGB-D fusion + cross-dimensional feature guidance for enhanced shallow representations + batch-level adaptive loss for dynamic multi-task balancing.
 

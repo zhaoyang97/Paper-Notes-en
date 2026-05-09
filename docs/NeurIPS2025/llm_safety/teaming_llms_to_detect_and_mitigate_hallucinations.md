@@ -29,15 +29,15 @@ This paper generalizes single-model consistency methods (Self-Consistency + Sema
 
 ## Background & Motivation
 
-**State of the Field**: LLM hallucination is a central challenge in deploying large models. Consistency-based methods are currently the dominant approach for hallucination detection and mitigation—Self-Consistency selects the final answer via majority voting over multiple samples, while Semantic Entropy assesses whether a model is "guessing" by computing the semantic entropy of sampled responses. These methods achieve state-of-the-art performance on multiple benchmarks.
+**Background**: LLM hallucination is a central challenge in deploying large models. Consistency-based methods are currently the dominant approach for hallucination detection and mitigation—Self-Consistency selects the final answer via majority voting over multiple samples, while Semantic Entropy assesses whether a model is "guessing" by computing the semantic entropy of sampled responses. These methods achieve state-of-the-art performance on multiple benchmarks.
 
 **Limitations of Prior Work**: Single-model consistency methods suffer from a fundamental flaw: when a model produces "consistent hallucinations" on a given query (i.e., makes the same systematic error repeatedly), the incorrect answer can win the majority vote (hallucination mitigation fails), and semantic entropy may remain low (hallucination detection fails). This situation is common when certain knowledge is underrepresented or biased in a model's training data.
 
-**Root Cause**: The upper bound of single-model consistency is constrained by the training data and architecture of a single model—if the model has systematically learned incorrect information in a given domain, additional sampling is ineffective, since all samples are drawn from the same flawed distribution.
+**Key Challenge**: The upper bound of single-model consistency is constrained by the training data and architecture of a single model—if the model has systematically learned incorrect information in a given domain, additional sampling is ineffective, since all samples are drawn from the same flawed distribution.
 
-**Paper Goals**: How can the effectiveness of consistency-based methods for hallucination detection and mitigation be further improved without modifying the models or requiring white-box access?
+**Goal**: How can the effectiveness of consistency-based methods for hallucination detection and mitigation be further improved without modifying the models or requiring white-box access?
 
-**Starting Point**: Different LLMs have distinct training data, training procedures, and model architectures, making it unlikely that they share the same training deficiencies or make the same "educated guesses." Aggregating responses across multiple models allows the strengths of different models to complement and correct one another.
+**Key Insight**: Different LLMs have distinct training data, training procedures, and model architectures, making it unlikely that they share the same training deficiencies or make the same "educated guesses." Aggregating responses across multiple models allows the strengths of different models to complement and correct one another.
 
 **Core Idea**: Replace single-model sampling with a multi-model consortium, allowing the differentiated knowledge of heterogeneous LLMs to mutually correct each other's biases, thereby achieving more reliable hallucination detection and mitigation.
 

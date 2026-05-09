@@ -29,15 +29,15 @@ This paper systematically critiques four dominant paradigms in role-playing (RP)
 
 ## Background & Motivation
 
-**State of the Field**: RP models have grown increasingly sophisticated, yet consistently fail to capture the essence of believable and engaging characters. Across gaming, AI companionship, and interactive narrative, users expect characters to exhibit depth, consistency, and internal conflict.
+**Background**: RP models have grown increasingly sophisticated, yet consistently fail to capture the essence of believable and engaging characters. Across gaming, AI companionship, and interactive narrative, users expect characters to exhibit depth, consistency, and internal conflict.
 
 **Limitations of Prior Work**: Using Makise Kurisu from *Steins;Gate* as a running example, the authors argue that no existing technique can reproduce her defining trait—the tension between intellectual curiosity and social defensiveness. Model responses are purely reactive, never genuinely inquisitive or driven by internal conflict. The root issue is the absence of **value-conflicted reasoning** in current models.
 
-**Root Cause**: Human interaction is not a process of retrieving "correct" responses; it is a continuous negotiation among competing values—politeness vs. efficiency, curiosity vs. pragmatism, vulnerability vs. professionalism. Every existing training paradigm ignores this inner deliberative process.
+**Key Challenge**: Human interaction is not a process of retrieving "correct" responses; it is a continuous negotiation among competing values—politeness vs. efficiency, curiosity vs. pragmatism, vulnerability vs. professionalism. Every existing training paradigm ignores this inner deliberative process.
 
-**Paper Goals**: What are the systematic deficiencies of the four mainstream RP training paradigms? What kind of character-definition framework is required to endow training data with sufficient character depth?
+**Goal**: What are the systematic deficiencies of the four mainstream RP training paradigms? What kind of character-definition framework is required to endow training data with sufficient character depth?
 
-**Starting Point**: Drawing on principles of character construction from theatrical art (the Stanislavski system)—whereby characters are expressed through the interplay of goals, motivations, and past experiences—the paper translates these principles into an actionable data-curation framework for AI training.
+**Key Insight**: Drawing on principles of character construction from theatrical art (the Stanislavski system)—whereby characters are expressed through the interplay of goals, motivations, and past experiences—the paper translates these principles into an actionable data-curation framework for AI training.
 
 **Core Idea**: Character depth emerges from the causal chain interaction of four dimensions—Values, Experiences, Judgments, and Abilities. Only by curating data according to the VEJA structure can the quality ceiling imposed by synthetic data be overcome.
 

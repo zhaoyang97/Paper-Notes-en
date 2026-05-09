@@ -25,7 +25,7 @@ This paper proposes Accordion, a top-down framework that converts AI-generated r
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: Graphic designs (posters, advertisements, etc.) are inherently layered — background layers, foreground object layers, and vectorized text layers. Generative AI models can produce visually appealing rasterized designs, yet lack editability (e.g., text cannot be modified, elements cannot be separated).
+**Key Challenge**: **Background**: Graphic designs (posters, advertisements, etc.) are inherently layered — background layers, foreground object layers, and vectorized text layers. Generative AI models can produce visually appealing rasterized designs, yet lack editability (e.g., text cannot be modified, elements cannot be separated).
 
 Existing methods adopt a **bottom-up** strategy (e.g., COLE sequentially generates the background, adds objects, and finally places text), leading to:
 1. Lack of global coordination among visual elements — elements added later may conflict with earlier decisions

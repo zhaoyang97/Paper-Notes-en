@@ -28,13 +28,13 @@ This work identifies that LLM token embeddings follow power-law distributions an
 
 ## Background & Motivation
 
-**State of the Field**: In LLM parameter-efficient fine-tuning (PEFT), LoRA has become the dominant approach due to its simplicity and effectiveness. However, all existing LoRA variants operate on weight matrices in Euclidean space.
+**Background**: In LLM parameter-efficient fine-tuning (PEFT), LoRA has become the dominant approach due to its simplicity and effectiveness. However, all existing LoRA variants operate on weight matrices in Euclidean space.
 
 **Limitations of Prior Work**: Linguistic concepts naturally exhibit hierarchical structure (e.g., "fruit" → "apple"/"banana"), which Euclidean space cannot efficiently represent. Hyperbolic space is better suited for such tree-like hierarchies due to its negative curvature and exponential volume growth, yet training hyperbolic LLMs from scratch is prohibitively expensive.
 
 **Core Finding**: Through in-depth analysis of multiple open-source LLMs, the authors find: (a) token frequencies follow a power-law distribution ($\gamma \approx 1.9$), with high-frequency tokens concentrated near the origin and low-frequency tokens farther away; (b) the $\delta$-hyperbolicity of token embeddings is extremely low ($\delta_{\text{rel}} \approx 0.06$–$0.12$), indicating that the embedding space has strong tree-like structure.
 
-**Root Cause**: Conventional hyperbolic neural networks operate through the pipeline "tangent space → exponential map → logarithmic map → tangent space," causing the exponential and logarithmic maps to cancel each other ($\log \circ \exp = \text{id}$), thereby nullifying the benefits of hyperbolic geometry.
+**Key Challenge**: Conventional hyperbolic neural networks operate through the pipeline "tangent space → exponential map → logarithmic map → tangent space," causing the exponential and logarithmic maps to cancel each other ($\log \circ \exp = \text{id}$), thereby nullifying the benefits of hyperbolic geometry.
 
 **Core Idea**: Design HypLoRA to perform low-rank transformations directly on the hyperbolic manifold (Lorentz model), bypassing tangent space mappings and preserving the modeling capacity of hyperbolic geometry.
 

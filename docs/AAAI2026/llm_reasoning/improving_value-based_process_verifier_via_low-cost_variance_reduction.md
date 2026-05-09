@@ -28,15 +28,15 @@ To address the high-variance issue in value-based process reward model (PRM) tra
 
 ## Background & Motivation
 
-**State of the Field**: Value-based process verifiers are trained by estimating the state-action value at each reasoning step — i.e., the probability that the step ultimately leads to a correct answer — and represent an effective approach for improving LLM mathematical reasoning. Training annotations rely on MC sampling: multiple reasoning trajectories are independently generated and their success rate is computed.
+**Background**: Value-based process verifiers are trained by estimating the state-action value at each reasoning step — i.e., the probability that the step ultimately leads to a correct answer — and represent an effective approach for improving LLM mathematical reasoning. Training annotations rely on MC sampling: multiple reasoning trajectories are independently generated and their success rate is computed.
 
 **Limitations of Prior Work**: The number of MC samples is constrained by LLM inference costs (typically only 8–16 samples), resulting in high variance in value estimates. High-variance training labels cause the verifier to learn noise rather than true values, degrading performance.
 
-**Root Cause**: Increasing the number of samples reduces variance but incurs linearly growing costs. Under a fixed sample budget, the MC estimator is already the minimum variance unbiased estimator (MVUE), and variance cannot be further reduced without introducing additional information.
+**Key Challenge**: Increasing the number of samples reduces variance but incurs linearly growing costs. Under a fixed sample budget, the MC estimator is already the minimum variance unbiased estimator (MVUE), and variance cannot be further reduced without introducing additional information.
 
-**Paper Goals**: Exploit the temporal structure of existing multi-step MC samples to reduce estimation variance without incurring additional LLM inference overhead.
+**Goal**: Exploit the temporal structure of existing multi-step MC samples to reduce estimation variance without incurring additional LLM inference overhead.
 
-**Starting Point**: Drawing inspiration from temporal difference (TD) methods in reinforcement learning — value estimates from future steps can be used to update estimates at the current step. MC estimates from subsequent steps within the same trajectory constitute freely available auxiliary information.
+**Key Insight**: Drawing inspiration from temporal difference (TD) methods in reinforcement learning — value estimates from future steps can be used to update estimates at the current step. MC estimates from subsequent steps within the same trajectory constitute freely available auxiliary information.
 
 **Core Idea**: Construct a new unbiased estimator by linearly combining MC estimates from the current and subsequent steps, leveraging the recursive structure of the Bellman equation to reduce variance without additional sampling.
 

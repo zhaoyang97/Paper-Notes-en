@@ -29,15 +29,15 @@ This paper proposes **ERBA (Enzyme-Reaction Bridging Adapter)**, which reformula
 
 ## Background & Motivation
 
-**State of the Field**: High-throughput protein design and synthetic biology increasingly rely on computational prediction of enzyme kinetic parameters ($k_\text{cat}$, $K_m$, $K_i$) to screen candidate molecules prior to wet-lab experiments. Existing methods have evolved from sequence-only approaches to multimodal pipelines incorporating sequence, substrate, and structure.
+**Background**: High-throughput protein design and synthetic biology increasingly rely on computational prediction of enzyme kinetic parameters ($k_\text{cat}$, $K_m$, $K_i$) to screen candidate molecules prior to wet-lab experiments. Existing methods have evolved from sequence-only approaches to multimodal pipelines incorporating sequence, substrate, and structure.
 
 **Limitations of Prior Work**: Most pipelines encode enzymes and substrates independently and fuse them via **shallow fusion** (concatenation + single-layer cross-attention) for regression, implicitly treating catalysis as a **static compatibility problem**: $\hat{y} = \psi(S_e \oplus S_m \oplus S_g)$.
 
-**Root Cause**: The true catalytic process is inherently staged — the enzyme first **recognizes and positions the substrate** (substrate recognition), then **adaptively reconfigures the active pocket geometry** (conformational adaptation) to stabilize the transition state. Shallow fusion ignores this staged nature, and naive injection of 3D information risks **corrupting the biochemical semantic priors learned during PLM pretraining**.
+**Key Challenge**: The true catalytic process is inherently staged — the enzyme first **recognizes and positions the substrate** (substrate recognition), then **adaptively reconfigures the active pocket geometry** (conformational adaptation) to stabilize the transition state. Shallow fusion ignores this staged nature, and naive injection of 3D information risks **corrupting the biochemical semantic priors learned during PLM pretraining**.
 
-**Paper Goals**: To construct a staged conditioning framework aligned with enzymological mechanisms, enabling hierarchical injection of substrate chemistry and pocket geometry while preserving PLM priors.
+**Goal**: To construct a staged conditioning framework aligned with enzymological mechanisms, enabling hierarchical injection of substrate chemistry and pocket geometry while preserving PLM priors.
 
-**Starting Point**: Reformulate kinetic prediction as $\hat{y} = f_\theta^{(2)}(f_\theta^{(1)}(S_e, S_m), S_g)$, where $f^{(1)}$ captures substrate-conditioned molecular recognition and $f^{(2)}$ performs conformational adaptation via geometric awareness.
+**Key Insight**: Reformulate kinetic prediction as $\hat{y} = f_\theta^{(2)}(f_\theta^{(1)}(S_e, S_m), S_g)$, where $f^{(1)}$ captures substrate-conditioned molecular recognition and $f^{(2)}$ performs conformational adaptation via geometric awareness.
 
 **Core Idea**: ERBA = MRCA (substrate recognition cross-attention) + G-MoE (geometry-aware mixture of experts routing) + ESDA (distribution alignment regularization).
 

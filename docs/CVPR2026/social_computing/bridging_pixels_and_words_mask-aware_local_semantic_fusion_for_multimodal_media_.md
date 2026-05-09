@@ -27,15 +27,15 @@ content_hash: 0bc9d444bb12005e
 This paper proposes the MaLSF framework, which employs mask-label pairs as semantic anchors and introduces a Bidirectional Cross-modal Verification (BCV) module and a Hierarchical Semantic Aggregation (HSA) module to enable active local semantic conflict detection, achieving state-of-the-art performance on the DGM4 benchmark and fake news detection tasks.
 
 ## Background & Motivation
-**State of the Field**: Advanced generative models (e.g., DALL·E, Stable Diffusion) have made multimodal deepfakes increasingly convincing; the DGM4 task requires simultaneous detection and localization of image-text manipulation.
+**Background**: Advanced generative models (e.g., DALL·E, Stable Diffusion) have made multimodal deepfakes increasingly convincing; the DGM4 task requires simultaneous detection and localization of image-text manipulation.
 
 **Limitations of Prior Work**: Existing methods (HAMMER, UFAFormer, EMSF, etc.) rely on "passive" holistic fusion—encoding the entire image and full text into high-dimensional vectors before fusion—leading to **feature dilution**: a critical single-word substitution (e.g., "recovered" → "failed") becomes nearly imperceptible in global text features, and subtle conflict signals are overwhelmed by global semantic alignment.
 
-**Root Cause**: The most covert misinformation resides precisely in subtle **local semantic inconsistencies** (e.g., an image of an athlete celebrating with champagne paired with the caption "failed to complete the sprint"), which global fusion cannot capture.
+**Key Challenge**: The most covert misinformation resides precisely in subtle **local semantic inconsistencies** (e.g., an image of an athlete celebrating with champagne paired with the caption "failed to complete the sprint"), which global fusion cannot capture.
 
-**Paper Goals**: To perform active bidirectional cross-verification analogous to human cognition—actively searching for evidence of failure in the image upon reading "failed," and actively searching for victory semantics in the text upon seeing "champagne."
+**Goal**: To perform active bidirectional cross-verification analogous to human cognition—actively searching for evidence of failure in the image upon reading "failed," and actively searching for victory semantics in the text upon seeing "champagne."
 
-**Starting Point**: Mask-label pairs are used to establish precise correspondences between pixel regions and textual descriptions, enabling fine-grained local reasoning.
+**Key Insight**: Mask-label pairs are used to establish precise correspondences between pixel regions and textual descriptions, enabling fine-grained local reasoning.
 
 **Core Idea**: Transform multimodal verification from "passive fusion" to "active interrogation"—the BCV module acts as the interrogator, and the HSA module acts as the reasoning engine, hierarchically aggregating multi-granularity conflict signals.
 

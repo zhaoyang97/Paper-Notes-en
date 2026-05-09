@@ -28,18 +28,18 @@ HEAVEN proposes a plug-and-play two-stage hybrid-vector framework that accelerat
 
 ## Background & Motivation
 
-**State of the Field**: Visual Document Retrieval (VDR) is a core component of RAG pipelines. Current methods fall into two paradigms — single-vector retrieval (efficient but coarse) and multi-vector retrieval (accurate but computationally expensive) — exhibiting a significant efficiency-accuracy trade-off.
+**Background**: Visual Document Retrieval (VDR) is a core component of RAG pipelines. Current methods fall into two paradigms — single-vector retrieval (efficient but coarse) and multi-vector retrieval (accurate but computationally expensive) — exhibiting a significant efficiency-accuracy trade-off.
 
 **Limitations of Prior Work**:
 - Single-vector methods (e.g., DSE) require only one dot product per query but lose fine-grained information, resulting in large Recall@1 gaps (e.g., 22.5% lower than multi-vector on ViMDoc).
 - Multi-vector methods (e.g., ColQwen2.5) must compute interactions between all query tokens and all page patches, incurring FLOPs orders of magnitude higher.
 - Existing efficiency optimizations (patch pooling/pruning) suffer sharp performance degradation at higher compression ratios.
 
-**Root Cause**: Single-vector methods are already sufficient for coarse-grained retrieval over large candidate sets (Recall@200 gap is only 0.63%), but fail at fine-grained retrieval; multi-vector methods achieve high accuracy but at unacceptable computational cost.
+**Key Challenge**: Single-vector methods are already sufficient for coarse-grained retrieval over large candidate sets (Recall@200 gap is only 0.63%), but fail at fine-grained retrieval; multi-vector methods achieve high accuracy but at unacceptable computational cost.
 
-**Paper Goals**: Design a framework that reduces per-query computation by orders of magnitude with negligible loss in multi-vector retrieval accuracy.
+**Goal**: Design a framework that reduces per-query computation by orders of magnitude with negligible loss in multi-vector retrieval accuracy.
 
-**Starting Point**: Two empirical observations motivate the design: (1) single-vector retrieval is acceptable over large candidate sets; (2) approximately 70% of query tokens are stopwords or otherwise redundant. These observations motivate a two-stage cascaded filtering pipeline.
+**Key Insight**: Two empirical observations motivate the design: (1) single-vector retrieval is acceptable over large candidate sets; (2) approximately 70% of query tokens are stopwords or otherwise redundant. These observations motivate a two-stage cascaded filtering pipeline.
 
 **Core Idea**: First, use single-vector retrieval over VS-Pages to efficiently narrow the candidate set; then apply multi-vector reranking using only key query tokens for fine-grained reranking — yielding a plug-and-play hybrid retrieval system.
 

@@ -29,7 +29,7 @@ This paper proposes VirtueBench, the first long video understanding benchmark fo
 ## Background & Motivation
 Vision-language models (VLMs) have achieved remarkable progress in multimodal understanding, yet evaluation of long video understanding remains unreliable.
 
-**Root Cause**: Due to input frame limits (typically 256–512 frames), key frames of long videos may not be included in the model's input. Under existing evaluation protocols:
+**Key Challenge**: Due to input frame limits (typically 256–512 frames), key frames of long videos may not be included in the model's input. Under existing evaluation protocols:
 - Models that honestly refuse to answer ("insufficient video information") are penalized as incorrect
 - Models that happen to guess correctly receive inflated accuracy scores
 - This **incentivizes guessing over honest responses**, producing misleading evaluation results

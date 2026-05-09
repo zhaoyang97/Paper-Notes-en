@@ -30,9 +30,9 @@ This work reformulates decoupled dataset distillation as an optimal quantization
 
 ### Limitations of Prior Work
 
-**State of the Field**: Dataset distillation (DD) aims to find a small synthetic training set such that models trained on it achieve performance close to those trained on the full dataset. Early bi-level optimization methods incur high computational cost and depend on model architecture. **Decoupled methods** (e.g., SRe2L, D4M) bypass pixel-space optimization by matching data distributions with generative techniques, yet lack theoretical guarantees — no prior work has theoretically established whether a distilled dataset can reasonably approximate the original data distribution.
+**Background**: Dataset distillation (DD) aims to find a small synthetic training set such that models trained on it achieve performance close to those trained on the full dataset. Early bi-level optimization methods incur high computational cost and depend on model architecture. **Decoupled methods** (e.g., SRe2L, D4M) bypass pixel-space optimization by matching data distributions with generative techniques, yet lack theoretical guarantees — no prior work has theoretically established whether a distilled dataset can reasonably approximate the original data distribution.
 
-**Root Cause**: Methods such as D4M perform $k$-means clustering in latent space followed by decoding, which is essentially solving a **Wasserstein barycenter** problem (with uniform weights). Classical **optimal quantization** theory shows that incorporating automatically learned weights can substantially reduce the Wasserstein distance.
+**Key Challenge**: Methods such as D4M perform $k$-means clustering in latent space followed by decoding, which is essentially solving a **Wasserstein barycenter** problem (with uniform weights). Classical **optimal quantization** theory shows that incorporating automatically learned weights can substantially reduce the Wasserstein distance.
 
 ## Method
 

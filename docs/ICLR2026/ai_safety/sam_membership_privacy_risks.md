@@ -29,15 +29,15 @@ This paper presents the first systematic study demonstrating that models trained
 
 ## Background & Motivation
 
-**State of the Field**: SAM improves the generalization of deep learning models by seeking flatter loss minima and has become a widely adopted optimization technique. Intuitively, a model with better generalization should rely less on memorizing training data and therefore pose lower privacy risks.
+**Background**: SAM improves the generalization of deep learning models by seeking flatter loss minima and has become a widely adopted optimization technique. Intuitively, a model with better generalization should rely less on memorizing training data and therefore pose lower privacy risks.
 
 **Limitations of Prior Work**: Yeom et al. formally established that the upper bound on MIA advantage is given by the generalization gap, implying that better generalization should reduce MIA risk. However, the relationship between generalization and privacy in practice is far more complex than this bound suggests, and precedents of utility–privacy tradeoffs exist.
 
-**Root Cause**: SAM improves generalization by better capturing atypical subclass patterns, but this form of "structured memorization" simultaneously leaves stronger traces of training samples in model outputs, thereby increasing privacy leakage.
+**Key Challenge**: SAM improves generalization by better capturing atypical subclass patterns, but this form of "structured memorization" simultaneously leaves stronger traces of training samples in model outputs, thereby increasing privacy leakage.
 
-**Paper Goals**: (1) Systematically verify whether SAM indeed increases MIA risk; (2) explain the root cause through the lens of memorization and influence scores; (3) theoretically prove how SAM's variance contraction effect amplifies MIA advantage.
+**Goal**: (1) Systematically verify whether SAM indeed increases MIA risk; (2) explain the root cause through the lens of memorization and influence scores; (3) theoretically prove how SAM's variance contraction effect amplifies MIA advantage.
 
-**Starting Point**: The authors observe that SAM models exhibit smaller variance in output confidence—SGD produces more extreme high-confidence predictions (including on non-members), and these non-members exceeding the decision threshold cause the attacker to make more errors. SAM compresses the variance, making the confidence distributions of members and non-members more separable.
+**Key Insight**: The authors observe that SAM models exhibit smaller variance in output confidence—SGD produces more extreme high-confidence predictions (including on non-members), and these non-members exceeding the decision threshold cause the attacker to make more errors. SAM compresses the variance, making the confidence distributions of members and non-members more separable.
 
 **Core Idea**: Flat minima ≠ privacy safety. SAM's sharpness penalty suppresses over-amplification of dominant features, forcing the model to spread reliance across diverse subclass features. While this improves generalization, it reduces output variance, thereby amplifying the membership inference signal.
 

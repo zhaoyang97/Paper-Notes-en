@@ -28,15 +28,15 @@ LayerIF proposes using influence functions (IFs) to quantify the training qualit
 
 ## Background & Motivation
 
-**State of the Field**: Training quality varies significantly across layers of LLMs. Prior studies have shown that intermediate layers provide stronger downstream representations, while the deepest layers can be pruned with minimal loss. Layer quality estimation is critical for downstream tasks such as model compression (pruning) and efficient fine-tuning (LoRA-MoE expert allocation).
+**Background**: Training quality varies significantly across layers of LLMs. Prior studies have shown that intermediate layers provide stronger downstream representations, while the deepest layers can be pruned with minimal loss. Layer quality estimation is critical for downstream tasks such as model compression (pruning) and efficient fine-tuning (LoRA-MoE expert allocation).
 
 **Limitations of Prior Work**: Existing layer quality estimation methods rely primarily on model-side heuristics: AlphaPruning uses the heavy-tailed spectral density of weight matrices (PL_Alpha_Hill), OWL uses outlier activation distributions, and MoLA uses fixed allocation patterns (e.g., 2-4-6-8). These approaches entirely ignore the influence of training data.
 
-**Root Cause**: Layer-wise specialization patterns differ across tasks and datasets for the same model; methods based solely on weight statistics cannot capture such task-specific variation.
+**Key Challenge**: Layer-wise specialization patterns differ across tasks and datasets for the same model; methods based solely on weight statistics cannot capture such task-specific variation.
 
-**Paper Goals**: To propose a data-and-model co-driven layer quality estimation framework capable of producing different layer importance scores for the same LLM across different tasks.
+**Goal**: To propose a data-and-model co-driven layer quality estimation framework capable of producing different layer importance scores for the same LLM across different tasks.
 
-**Starting Point**: Influence functions quantify the sensitivity of model loss to perturbations of individual training samples. Well-trained layers are less sensitive to data perturbations (small IF values), while undertrained layers are more sensitive (large IF values)—this sensitivity can serve as a proxy for layer quality.
+**Key Insight**: Influence functions quantify the sensitivity of model loss to perturbations of individual training samples. Well-trained layers are less sensitive to data perturbations (small IF values), while undertrained layers are more sensitive (large IF values)—this sensitivity can serve as a proxy for layer quality.
 
 **Core Idea**: Layer-wise influence function scores are used as data-driven proxies for layer training quality, guiding MoE expert allocation and sparse pruning to achieve task-adaptive, layer-wise resource allocation.
 

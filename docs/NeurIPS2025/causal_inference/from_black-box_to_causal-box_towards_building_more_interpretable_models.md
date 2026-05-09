@@ -27,15 +27,15 @@ content_hash: 90190c45124e03a0
 This paper proposes a formal definition of *causal interpretability*, proves that both black-box models and concept bottleneck models fail to satisfy this property, establishes a complete graphical criterion for identifying which model architectures can consistently answer counterfactual queries, and reveals a fundamental tradeoff between causal interpretability and predictive accuracy.
 
 ## Background & Motivation
-**State of the Field**: Explainable AI (XAI) methods such as LIME, SHAP, and Grad-CAM provide feature attributions, while concept bottleneck models (CBMs) improve interpretability by making predictions through human-understandable concepts (e.g., "smiling," "gender"). Counterfactual reasoning is widely regarded as a key pathway toward truly interpretable models.
+**Background**: Explainable AI (XAI) methods such as LIME, SHAP, and Grad-CAM provide feature attributions, while concept bottleneck models (CBMs) improve interpretability by making predictions through human-understandable concepts (e.g., "smiling," "gender"). Counterfactual reasoning is widely regarded as a key pathway toward truly interpretable models.
 
 **Limitations of Prior Work**: Existing approaches cannot guarantee *counterfactual consistency*—distinct models within the same model class, though perfectly consistent on observational data, may yield contradictory answers to the same counterfactual query. For instance, two CBMs may both predict a face as "unattractive," yet give opposite answers to "Would this person be more attractive if they smiled?"
 
-**Root Cause**: Users cannot determine which model's counterfactual response is trustworthy, since the two models are observationally indistinguishable. This is fundamentally because the model class imposes insufficient constraints on the counterfactual response space.
+**Key Challenge**: Users cannot determine which model's counterfactual response is trustworthy, since the two models are observationally indistinguishable. This is fundamentally because the model class imposes insufficient constraints on the counterfactual response space.
 
-**Paper Goals**: (1) Formalize the conditions under which a model can reliably answer counterfactual queries; (2) identify which model architectures satisfy these conditions; (3) maximize predictive capacity subject to satisfying these conditions.
+**Goal**: (1) Formalize the conditions under which a model can reliably answer counterfactual queries; (2) identify which model architectures satisfy these conditions; (3) maximize predictive capacity subject to satisfying these conditions.
 
-**Starting Point**: The paper builds on structural causal models (SCMs), introducing augmented SCMs (ASCMs) that jointly describe the data-generating process and model predictions, and leverages graphical structure to analyze counterfactual identifiability.
+**Key Insight**: The paper builds on structural causal models (SCMs), introducing augmented SCMs (ASCMs) that jointly describe the data-generating process and model predictions, and leverages graphical structure to analyze counterfactual identifiability.
 
 **Core Idea**: Whether a model can consistently answer counterfactual queries depends on whether its prediction feature set $\mathbf{T}$ lies within the intervention target $\mathbf{W}$ and its non-descendants $ND(\mathbf{W})$.
 

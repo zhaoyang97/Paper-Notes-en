@@ -28,15 +28,15 @@ UniGame proposes the first self-adversarial post-training framework for unified 
 
 ## Background & Motivation
 
-1. **State of the Field**: Unified multimodal models (UMMs, e.g., Janus-Pro, Emu3, BLIP3-o) perform both visual understanding and image generation within a single architecture, sharing a language model backbone and a visual tokenizer–decoder stack. The standard post-training pipeline is supervised fine-tuning (SFT).
+1. **Background**: Unified multimodal models (UMMs, e.g., Janus-Pro, Emu3, BLIP3-o) perform both visual understanding and image generation within a single architecture, sharing a language model backbone and a visual tokenizer–decoder stack. The standard post-training pipeline is supervised fine-tuning (SFT).
 
 2. **Limitations of Prior Work**: UMMs exhibit a **structural inconsistency** between the understanding and generation pathways—the understanding branch favors compact embeddings, whereas the generation branch favors reconstruction-rich representations. This tension leads to semantic misalignment (correct answers yet inability to generate the corresponding image), capability gaps (one pathway being harder to improve), and conflicting demands on feature compactness. These issues are further exacerbated under out-of-distribution and adversarial scenarios.
 
-3. **Root Cause**: Existing post-training methods—whether reconstruction-based (e.g., RecA) or reward-based (e.g., T2I-R1)—optimize surrogate objectives over **fixed data distributions** without explicitly constraining the two coupled branches. They refine behavior only within a comfort zone and fail to genuinely expand the shared generative manifold. Adversarial perturbations applied directly in embedding space tend to produce off-manifold, semantically meaningless samples.
+3. **Key Challenge**: Existing post-training methods—whether reconstruction-based (e.g., RecA) or reward-based (e.g., T2I-R1)—optimize surrogate objectives over **fixed data distributions** without explicitly constraining the two coupled branches. They refine behavior only within a comfort zone and fail to genuinely expand the shared generative manifold. Adversarial perturbations applied directly in embedding space tend to produce off-manifold, semantically meaningless samples.
 
-4. **Paper Goals**: Can a UMM discover and correct its own inconsistencies from within? Specifically, can the generation branch serve as an active adversary to the understanding branch, enabling the model to become its own opponent?
+4. **Goal**: Can a UMM discover and correct its own inconsistencies from within? Specifically, can the generation branch serve as an active adversary to the understanding branch, enabling the model to become its own opponent?
 
-5. **Starting Point**: Adversarial signals have been shown to reliably expose fragile reasoning in vision-language models. The key is to constrain adversarial perturbations through the decoder so that they produce visually realistic, semantically plausible counterexamples rather than noise in an abstract embedding space.
+5. **Key Insight**: Adversarial signals have been shown to reliably expose fragile reasoning in vision-language models. The key is to constrain adversarial perturbations through the decoder so that they produce visually realistic, semantically plausible counterexamples rather than noise in an abstract embedding space.
 
 6. **Core Idea**: Transform the generation pathway of a UMM into an active adversary that applies decoder-constrained perturbations in the shared token space, generating semantically consistent adversarial samples to strengthen understanding, thereby forming a minimax self-play game.
 

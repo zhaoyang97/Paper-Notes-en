@@ -28,21 +28,21 @@ This paper proposes a KL-divergence-based proximal point (PP) method that achiev
 
 ## Background & Motivation
 
-**State of the Field**: Mean field games (MFGs), introduced by Lasry and Lions, are a central framework for modeling large-population interactions. In discrete-time settings, online mirror descent (OMD) is the dominant algorithm for computing MFG equilibria, and when combined with deep learning it scales to high-dimensional problems.
+**Background**: Mean field games (MFGs), introduced by Lasry and Lions, are a central framework for modeling large-population interactions. In discrete-time settings, online mirror descent (OMD) is the dominant algorithm for computing MFG equilibria, and when combined with deep learning it scales to high-dimensional problems.
 
 **Limitations of Prior Work**:
 - Existing algorithms either require strict monotonicity assumptions (which excludes transition-symmetric settings) or only guarantee convergence of time-averaged policies (e.g., Fictitious Play);
 - Time-averaged policies are ill-defined in neural network parameter spaces due to nonlinearity — in practice, direct convergence of the last-iterate policy is required;
 - Prior OMD/RMD methods under monotone MFGs achieve only polynomial convergence rates or provide guarantees only for the average iterate.
 
-**Root Cause**: In MFGs, the mean field distribution $\mu$ changes with policy $\pi$, causing the objective $J(\mu^k, \cdot)$ to shift at every step. This prevents direct application of classical proximal point theory and creates a dependency of the Q-function on policy both forward (through $\mu$) and backward (through dynamic programming), obstructing standard backward induction arguments.
+**Key Challenge**: In MFGs, the mean field distribution $\mu$ changes with policy $\pi$, causing the objective $J(\mu^k, \cdot)$ to shift at every step. This prevents direct application of classical proximal point theory and creates a dependency of the Q-function on policy both forward (through $\mu$) and backward (through dynamic programming), obstructing standard backward induction arguments.
 
-**Paper Goals**:
+**Goal**:
 - Prove LIC (asymptotic convergence) of the PP method under non-strict monotonicity;
 - Prove exponential convergence of RMD in regularized MFGs;
 - Provide a practically feasible approximate proximal point (APP) algorithm.
 
-**Starting Point**: The Łojasiewicz inequality (a tool from real analytic geometry) is used to handle PP convergence; the regularization effect of KL divergence is leveraged to overcome the non-Lipschitz continuity of the Q-function.
+**Key Insight**: The Łojasiewicz inequality (a tool from real analytic geometry) is used to handle PP convergence; the regularization effect of KL divergence is leveraged to overcome the non-Lipschitz continuity of the Q-function.
 
 **Core Idea**: By decomposing inexact PP updates into equilibrium-finding subproblems for regularized MFGs, and approximating each subproblem via RMD at an exponential rate, the method achieves last iterate convergence in non-strictly monotone MFGs.
 

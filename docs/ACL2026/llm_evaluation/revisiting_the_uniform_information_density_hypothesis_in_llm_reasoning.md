@@ -29,15 +29,15 @@ This paper introduces the Uniform Information Density (UID) hypothesis from psyc
 
 ## Background & Motivation
 
-**State of the Field**: Chain-of-thought (CoT) reasoning has become a core technique for improving LLM performance on complex tasks. However, quality evaluation of reasoning trajectories relies primarily on coarse-grained signals such as final answer correctness or token-level confidence, lacking a structural characterization of *process quality*.
+**Background**: Chain-of-thought (CoT) reasoning has become a core technique for improving LLM performance on complex tasks. However, quality evaluation of reasoning trajectories relies primarily on coarse-grained signals such as final answer correctness or token-level confidence, lacking a structural characterization of *process quality*.
 
 **Limitations of Prior Work**: (1) Intermediate reasoning steps frequently exhibit logical inconsistency or incoherence; (2) existing internal-signal methods (self-certainty, high confidence, low entropy) treat reasoning trajectories as monolithic units, failing to capture the structure of information flow between steps; (3) even when long reasoning chains are generated, models may fail to generalize to out-of-domain tasks.
 
-**Root Cause**: It is impossible to determine solely from final outputs whether an LLM is *genuinely reasoning* or merely generating *superficially coherent* text — an information-theoretic framework for characterizing reasoning process quality is therefore needed.
+**Key Challenge**: It is impossible to determine solely from final outputs whether an LLM is *genuinely reasoning* or merely generating *superficially coherent* text — an information-theoretic framework for characterizing reasoning process quality is therefore needed.
 
-**Paper Goals**: To extend the UID hypothesis from human linguistic communication to LLM reasoning scenarios, establish a quantitative framework for step-level information density, and validate its effectiveness as a reasoning quality metric.
+**Goal**: To extend the UID hypothesis from human linguistic communication to LLM reasoning scenarios, establish a quantitative framework for step-level information density, and validate its effectiveness as a reasoning quality metric.
 
-**Starting Point**: The UID hypothesis holds that effective human communication requires uniformly distributed information to reduce cognitive load. The authors draw an analogy to the reasoning process — each reasoning step resembles a linguistic unit in communication, and changes in entropy reflect the *exploration-to-convergence* structure of information flow.
+**Key Insight**: The UID hypothesis holds that effective human communication requires uniformly distributed information to reduce cognitive load. The authors draw an analogy to the reasoning process — each reasoning step resembles a linguistic unit in communication, and changes in entropy reflect the *exploration-to-convergence* structure of information flow.
 
 **Core Idea**: High-quality LLM reasoning does not conform to the global uniformity characteristic of human communication; instead, it exhibits a distinctive pattern of *locally smooth transitions (high local uniformity) combined with globally structured non-uniformity (from high-entropy exploration to low-entropy convergence)* — reflecting a fundamental difference in the goals of reasoning versus communication.
 

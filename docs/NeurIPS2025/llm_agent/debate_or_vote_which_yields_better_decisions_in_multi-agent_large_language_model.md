@@ -28,15 +28,15 @@ This work establishes, both theoretically and empirically, that the performance 
 
 ## Background & Motivation
 
-**State of the Field**: Multi-Agent Debate (MAD) has emerged as a popular paradigm for enhancing LLM reasoning, in which multiple LLMs collaborate through structured discussion. Numerous variants have been proposed in recent years, covering diverse topological structures (decentralized, sparse, centralized) and role-assignment schemes.
+**Background**: Multi-Agent Debate (MAD) has emerged as a popular paradigm for enhancing LLM reasoning, in which multiple LLMs collaborate through structured discussion. Numerous variants have been proposed in recent years, covering diverse topological structures (decentralized, sparse, centralized) and role-assignment schemes.
 
 **Limitations of Prior Work**: MAD frameworks have grown increasingly complex, yet the root source of their effectiveness remains unclear—specifically, whether performance gains arise from the *ensemble effect* of multiple agents or from *inter-agent interaction and discussion*.
 
-**Root Cause**: If most gains derive from simple ensembling (majority voting), then the additional complexity of debate, communication, and architectural design in MAD is unwarranted.
+**Key Challenge**: If most gains derive from simple ensembling (majority voting), then the additional complexity of debate, communication, and architectural design in MAD is unwarranted.
 
-**Paper Goals**: To rigorously disentangle the contributions of "ensembling" and "debate" in MAD, and to provide a theoretical explanation for why debate alone cannot systematically improve performance.
+**Goal**: To rigorously disentangle the contributions of "ensembling" and "debate" in MAD, and to provide a theoretical explanation for why debate alone cannot systematically improve performance.
 
-**Starting Point**: MAD is formalized as a Bayesian belief update process, with agent behavior characterized by a Dirichlet-Compound-Multinomial (DCM) model, under which the debate process is proven to form a martingale.
+**Key Insight**: MAD is formalized as a Bayesian belief update process, with agent behavior characterized by a Dirichlet-Compound-Multinomial (DCM) model, under which the debate process is proven to form a martingale.
 
 **Core Idea**: Debate does not improve correctness in expectation (martingale property); the majority of performance gains originate from the ensemble effect of majority voting.
 

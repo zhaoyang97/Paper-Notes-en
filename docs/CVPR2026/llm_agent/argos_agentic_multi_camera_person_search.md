@@ -28,11 +28,11 @@ This paper proposes ARGOS, the first benchmark and framework that redefines mult
 
 ## Background & Motivation
 
-1. **State of the Field**: Multi-camera person search is a fundamental requirement in surveillance. Traditional person re-identification relies on clear visual queries; text-driven and interactive methods use only appearance descriptions. Existing spatial reasoning benchmarks and agent evaluation frameworks are limited to single images or general-purpose scenarios.
+1. **Background**: Multi-camera person search is a fundamental requirement in surveillance. Traditional person re-identification relies on clear visual queries; text-driven and interactive methods use only appearance descriptions. Existing spatial reasoning benchmarks and agent evaluation frameworks are limited to single images or general-purpose scenarios.
 2. **Limitations of Prior Work**: Existing methods lack active question-planning capabilities and cannot leverage spatiotemporal cues provided by witnesses (e.g., "I saw them in the warehouse, then near the hall a few minutes later"). No method simultaneously integrates multimodal interaction, spatial localization, and temporal reasoning.
-3. **Root Cause**: Real-world person search is inherently an active reasoning problem—requiring decisions about what to ask, when to invoke tools, and how to interpret ambiguous answers under information asymmetry—yet existing benchmarks and methods reduce it to passive visual matching.
-4. **Paper Goals**: Define the interactive multi-camera person search task and construct a progressive benchmark encompassing semantic perception (Who), spatial reasoning (Where), and temporal reasoning (When).
-5. **Starting Point**: The camera network is encoded as a Spatiotemporal Topology Graph (STTG), serving as both the structural backbone for task construction and a localization tool for the agent, enabling temporal feasibility reasoning under physical constraints.
+3. **Key Challenge**: Real-world person search is inherently an active reasoning problem—requiring decisions about what to ask, when to invoke tools, and how to interpret ambiguous answers under information asymmetry—yet existing benchmarks and methods reduce it to passive visual matching.
+4. **Goal**: Define the interactive multi-camera person search task and construct a progressive benchmark encompassing semantic perception (Who), spatial reasoning (Where), and temporal reasoning (When).
+5. **Key Insight**: The camera network is encoded as a Spatiotemporal Topology Graph (STTG), serving as both the structural backbone for task construction and a localization tool for the agent, enabling temporal feasibility reasoning under physical constraints.
 6. **Core Idea**: A four-module LLM-driven agent (Analyze → Plan → Interview → Interpret) performs multi-turn dialogue reasoning over the STTG, using tool calls to eliminate infeasible candidates.
 
 ## Method

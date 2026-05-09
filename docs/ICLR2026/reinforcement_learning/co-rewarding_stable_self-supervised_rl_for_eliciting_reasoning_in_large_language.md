@@ -28,21 +28,21 @@ Co-rewarding proposes a self-supervised RL framework that addresses training col
 
 ## Background & Motivation
 
-**State of the Field**: RLVR (Reinforcement Learning with Verifiable Rewards, e.g., GRPO in DeepSeek-R1) is the dominant approach for enhancing LLM reasoning, but relies on human-annotated ground-truth answers as reward signals.
+**Background**: RLVR (Reinforcement Learning with Verifiable Rewards, e.g., GRPO in DeepSeek-R1) is the dominant approach for enhancing LLM reasoning, but relies on human-annotated ground-truth answers as reward signals.
 
 **Limitations of Prior Work**:
    - Ground-truth annotation is costly and difficult to scale, especially for complex tasks
    - Self-rewarding methods (self-certainty, entropy-based, majority voting) can substitute GT labels but frequently suffer from **training collapse**
    - Root cause of collapse: reward signals derived from the model's own single-perspective output form a "self-consistency illusion," enabling reward hacking
 
-**Root Cause**: Self-supervised signals are entangled with the current policy — the model achieves high rewards by minimizing entropy or maximizing consistency, but converges to trivial solutions (repeated strings, consistent yet incorrect answers).
+**Key Challenge**: Self-supervised signals are entangled with the current policy — the model achieves high rewards by minimizing entropy or maximizing consistency, but converges to trivial solutions (repeated strings, consistent yet incorrect answers).
 
-**Paper Goals**:
+**Goal**:
    - How to achieve stable RL training without GT labels?
    - How to break the self-consistency illusion arising from a single perspective?
    - Can the performance of GT-label-based RLVR be matched?
 
-**Starting Point**: Inspired by self-supervised learning (SimCLR, BYOL, DINO) — genuine reasoning ability should manifest as invariance across views/time, rather than certainty of a single output.
+**Key Insight**: Inspired by self-supervised learning (SimCLR, BYOL, DINO) — genuine reasoning ability should manifest as invariance across views/time, rather than certainty of a single output.
 
 **Core Idea**: Introduce complementary supervisory perspectives via data-side "paraphrase cross-validation" and model-side "EMA teacher pseudo-labels," increasing the difficulty of reward hacking and thereby preventing training collapse.
 

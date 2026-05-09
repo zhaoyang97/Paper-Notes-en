@@ -29,15 +29,15 @@ By introducing a controllable contrastive learning module to systematically regu
 
 ## Background & Motivation
 
-**State of the Field** In multimodal learning, explicitly aligning representations from different modalities in a shared semantic space via contrastive learning has been widely regarded as key to effective knowledge fusion. Landmark works such as CLIP are grounded in the assumption that "stronger alignment equals better performance." Meanwhile, the Platonic Representation Hypothesis posits that unimodal representations naturally converge as model scale increases.
+**Background** In multimodal learning, explicitly aligning representations from different modalities in a shared semantic space via contrastive learning has been widely regarded as key to effective knowledge fusion. Landmark works such as CLIP are grounded in the assumption that "stronger alignment equals better performance." Meanwhile, the Platonic Representation Hypothesis posits that unimodal representations naturally converge as model scale increases.
 
 **Limitations of Prior Work** Prior research has primarily analyzed naturally occurring alignment phenomena and their correlation with performance, without systematically intervening on alignment strength to assess causal effects. Tjandrasuwita et al. found that the alignment–performance relationship is highly dependent on the intrinsic information structure of the data, but did not conduct interventional experiments.
 
-**Root Cause** Explicit alignment is assumed to be a universally beneficial strategy; however, when modalities contain substantial unique information, forcing alignment may suppress critical modality-specific signals and thereby degrade task performance.
+**Key Challenge** Explicit alignment is assumed to be a universally beneficial strategy; however, when modalities contain substantial unique information, forcing alignment may suppress critical modality-specific signals and thereby degrade task performance.
 
-**Paper Goals** Under what conditions does explicit alignment improve or harm unimodal encoder performance? Can these conclusions generalize to real-world data?
+**Goal** Under what conditions does explicit alignment improve or harm unimodal encoder performance? Can these conclusions generalize to real-world data?
 
-**Starting Point** Alignment strength is treated as a controllable variable; a tunable $\lambda$ parameter is used to systematically sweep the alignment–performance relationship.
+**Key Insight** Alignment strength is treated as a controllable variable; a tunable $\lambda$ parameter is used to systematically sweep the alignment–performance relationship.
 
 **Core Idea** PID is used to decompose the information structure of the data while $\lambda$ controls alignment strength, establishing for the first time a causal link between alignment strategy and information structure.
 

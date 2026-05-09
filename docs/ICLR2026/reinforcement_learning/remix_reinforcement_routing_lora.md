@@ -29,15 +29,15 @@ ReMix identifies a severe routing weight collapse problem in existing Mixture-of
 
 ## Background & Motivation
 
-**State of the Field**: LoRA is the most popular parameter-efficient fine-tuning method. Mixture-of-LoRAs extends model capacity by maintaining multiple LoRAs per layer and using a router to select a subset. Existing methods (e.g., MixLoRA, HydraLoRA) employ learnable routing weights computed via softmax.
+**Background**: LoRA is the most popular parameter-efficient fine-tuning method. Mixture-of-LoRAs extends model capacity by maintaining multiple LoRAs per layer and using a router to select a subset. Existing methods (e.g., MixLoRA, HydraLoRA) employ learnable routing weights computed via softmax.
 
 **Limitations of Prior Work**: The authors identify a fundamental and severe flaw in existing Mixture-of-LoRAs routers — **routing weight collapse**. Even when $k>1$ LoRAs are designated for activation, softmax routing weights rapidly concentrate on a single LoRA during training (effective support size ESS drops to 1), while the weights of all other LoRAs approach zero. This renders the computation of the additional $k-1$ LoRAs entirely wasteful.
 
-**Root Cause**: Learnable routing weights permit end-to-end training but inherently tend toward imbalance — Theorem 1 proves that under Gaussian initialization, the effective LoRA count is extremely small with high probability (e.g., among 8 LoRAs, there is an 84% probability that only $\leq 2$ are effective). This imbalance further intensifies during training.
+**Key Challenge**: Learnable routing weights permit end-to-end training but inherently tend toward imbalance — Theorem 1 proves that under Gaussian initialization, the effective LoRA count is extremely small with high probability (e.g., among 8 LoRAs, there is an 84% probability that only $\leq 2$ are effective). This imbalance further intensifies during training.
 
-**Paper Goals**: (1) Theoretically and empirically expose the routing weight collapse problem; (2) design a router that does not collapse; (3) address the non-differentiability introduced by non-learnable weights.
+**Goal**: (1) Theoretically and empirically expose the routing weight collapse problem; (2) design a router that does not collapse; (3) address the non-differentiability introduced by non-learnable weights.
 
-**Starting Point**: Fundamentally rethink router design — abandon learnable weights and instead use constant weights to ensure equal contribution from all activated LoRAs. The resulting non-differentiability is resolved by reformulating the problem as a reinforcement learning task.
+**Key Insight**: Fundamentally rethink router design — abandon learnable weights and instead use constant weights to ensure equal contribution from all activated LoRAs. The resulting non-differentiability is resolved by reformulating the problem as a reinforcement learning task.
 
 **Core Idea**: Constant routing weights $\omega$ eliminate collapse (ensuring $ESS = k$); the RLOO gradient estimator trains the router for LoRA selection; top-$k$ selection is used at inference (theoretically proven to be optimal when the router is sufficiently trained).
 

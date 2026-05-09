@@ -28,15 +28,15 @@ This paper proposes the α-mixture assistant distribution and a unified distilla
 
 ## Background & Motivation
 
-**State of the Field**: LLM knowledge distillation compresses models by aligning token-level distributions between teacher and student. Recent work has introduced "assistant distributions"—mixtures of teacher and student distributions—to mitigate training instability caused by capacity gaps and near-zero probabilities.
+**Background**: LLM knowledge distillation compresses models by aligning token-level distributions between teacher and student. Recent work has introduced "assistant distributions"—mixtures of teacher and student distributions—to mitigate training instability caused by capacity gaps and near-zero probabilities.
 
 **Limitations of Prior Work**: (a) Existing assistant distribution methods (GKD/DistiLLM use arithmetic mean, i.e., m-mixture; TAID uses geometric mean, i.e., e-mixture) were proposed independently without a unified framework; (b) the design of the assistant distribution is coupled with the choice of divergence, artificially constraining the search space; (c) α, which controls the geometry of the interpolation path, is fixed at ±1 and has not been explored.
 
-**Root Cause**: In the high-dimensional output space of LLMs, a large number of probabilities are near zero, making density ratio estimation unstable. Furthermore, the teacher–student capacity gap makes direct alignment difficult. The assistant distribution is key to addressing both issues, yet existing designs lack generality.
+**Key Challenge**: In the high-dimensional output space of LLMs, a large number of probabilities are near zero, making density ratio estimation unstable. Furthermore, the teacher–student capacity gap makes direct alignment difficult. The assistant distribution is key to addressing both issues, yet existing designs lack generality.
 
-**Paper Goals**: To establish a unified theoretical framework for assistant distributions and divergences, and to discover novel, more effective assistant distribution forms.
+**Goal**: To establish a unified theoretical framework for assistant distributions and divergences, and to discover novel, more effective assistant distribution forms.
 
-**Starting Point**: Existing assistant distributions are unified via generalized $f_\alpha$-means from information geometry—m-mixture and e-mixture correspond to the arithmetic mean (α=−1) and geometric mean (α=1), respectively, while α can take any real value.
+**Key Insight**: Existing assistant distributions are unified via generalized $f_\alpha$-means from information geometry—m-mixture and e-mixture correspond to the arithmetic mean (α=−1) and geometric mean (α=1), respectively, while α can take any real value.
 
 **Core Idea**: The generalized $f_\alpha$-mean extends the assistant distribution from two discrete choices to a continuously parameterized family of distributions, with optimality guarantees proven for arbitrary α and divergence.
 

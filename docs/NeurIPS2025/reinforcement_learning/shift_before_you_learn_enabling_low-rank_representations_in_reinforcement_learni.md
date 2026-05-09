@@ -29,7 +29,7 @@ This paper reveals that the successor measure in reinforcement learning is not i
 
 ## Background & Motivation
 
-- **State of the Field**: Low-rank structure is a common implicit assumption in modern RL algorithms. Reward-free RL and goal-conditioned RL methods typically assume that the successor measure admits a low-rank representation, enabling efficient state representation learning via matrix factorization.
+- **Background**: Low-rank structure is a common implicit assumption in modern RL algorithms. Reward-free RL and goal-conditioned RL methods typically assume that the successor measure admits a low-rank representation, enabling efficient state representation learning via matrix factorization.
 - **Limitations of Prior Work**: This paper first identifies a critical issue: **the successor measure itself is not approximately low-rank**. Directly applying low-rank approximation to the raw successor measure incurs large errors, limiting downstream RL performance.
 - **Core Idea**: The authors observe that if the successor measure is "shifted"—i.e., one considers the future visitation distribution after skipping the first $k$ transition steps—low-rank structure emerges naturally. This shifted successor measure can be efficiently approximated by a low-rank matrix, and the required shift $k$ is typically small.
 

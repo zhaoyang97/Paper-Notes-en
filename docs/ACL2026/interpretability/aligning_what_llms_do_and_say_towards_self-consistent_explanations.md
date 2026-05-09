@@ -28,15 +28,15 @@ This paper constructs a large-scale Post-hoc Self-Consistency Bank (PSCB, 85K de
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are frequently asked to generate natural language explanations for their answers, yet these post-hoc explanations often fail to align with the input features that actually drive the answers — i.e., what the model says differs from what it does.
+**Background**: LLMs are frequently asked to generate natural language explanations for their answers, yet these post-hoc explanations often fail to align with the input features that actually drive the answers — i.e., what the model says differs from what it does.
 
 **Limitations of Prior Work**: (1) Existing faithfulness metrics (e.g., counterfactual interventions) are computationally expensive and difficult to apply at scale; (2) Methods such as CC-SHAP have only been evaluated on approximately 100 samples, limiting the reliability of their conclusions; (3) No prior work has demonstrated how to improve attribution inconsistency.
 
-**Root Cause**: LLM explanations may be fluent and plausible yet "miss the point" — the input features they highlight differ from those that actually drive the answer, posing a fundamental threat to trustworthy AI.
+**Key Challenge**: LLM explanations may be fluent and plausible yet "miss the point" — the input features they highlight differ from those that actually drive the answer, posing a fundamental threat to trustworthy AI.
 
-**Paper Goals**: (1) Quantify attribution consistency between answers and explanations at scale; (2) Propose methods to improve it.
+**Goal**: (1) Quantify attribution consistency between answers and explanations at scale; (2) Propose methods to improve it.
 
-**Starting Point**: Feature attribution vectors are computed separately for each QA decision and its multiple explanations, and their alignment is compared. DPO fine-tuning on attribution preference data is then applied to improve consistency.
+**Key Insight**: Feature attribution vectors are computed separately for each QA decision and its multiple explanations, and their alignment is compared. DPO fine-tuning on attribution preference data is then applied to improve consistency.
 
 **Core Idea**: Spearman rank correlation better discriminates between high- and low-quality explanations than cosine similarity; DPO optimization on attribution preferences effectively improves self-consistency and generalizes across domains.
 

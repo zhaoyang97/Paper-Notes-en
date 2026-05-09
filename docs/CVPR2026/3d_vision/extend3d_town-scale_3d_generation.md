@@ -29,14 +29,14 @@ This paper proposes Extend3D, a training-free 3D scene generation pipeline that 
 
 ## Background & Motivation
 
-1. **State of the Field**: 3D generative models (e.g., Trellis, Hunyuan3D) can already produce high-quality 3D objects, but are trained on object-level data and operate within fixed-size latent spaces for representing 3D content.
+1. **Background**: 3D generative models (e.g., Trellis, Hunyuan3D) can already produce high-quality 3D objects, but are trained on object-level data and operate within fixed-size latent spaces for representing 3D content.
 2. **Limitations of Prior Work**:
    - Fixed latent space size limits output detail; the larger the scene, the blurrier the result (analogous to low-resolution images);
    - 3D scene datasets are scarce, restricting data-driven scene generation methods to a limited set of categories;
    - Outpainting-based methods (e.g., SynCity, 3DTown) generate scenes block by block, resulting in inter-block inconsistencies and visible seams.
-3. **Root Cause**: The latent space of object-level models is insufficient to represent the fine-grained details of large-scale scenes, yet the lack of scene-level training data makes directly training a scene-level model infeasible.
-4. **Paper Goals**: How to leverage pretrained object-level 3D generative models to achieve high-fidelity large-scale 3D scene generation?
-5. **Starting Point**: Drawing inspiration from MultiDiffusion for high-resolution 2D image generation, the authors extend the 3D latent space along the x/y directions and employ overlapping patch joint generation, while incorporating structural priors and optimization to address 3D-specific issues (e.g., ground plane disappearance, incorrect object rotation).
+3. **Key Challenge**: The latent space of object-level models is insufficient to represent the fine-grained details of large-scale scenes, yet the lack of scene-level training data makes directly training a scene-level model infeasible.
+4. **Goal**: How to leverage pretrained object-level 3D generative models to achieve high-fidelity large-scale 3D scene generation?
+5. **Key Insight**: Drawing inspiration from MultiDiffusion for high-resolution 2D image generation, the authors extend the 3D latent space along the x/y directions and employ overlapping patch joint generation, while incorporating structural priors and optimization to address 3D-specific issues (e.g., ground plane disappearance, incorrect object rotation).
 6. **Core Idea**: Extend the latent space of an object-level 3D model horizontally, and achieve town-scale 3D scene generation through overlapping patch joint denoising, point cloud prior initialization, and 3D-aware loss optimization.
 
 ## Method

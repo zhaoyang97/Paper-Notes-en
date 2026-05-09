@@ -27,15 +27,15 @@ content_hash: 007a00111146e9d1
 ProFocus is a training-free progressive framework that achieves state-of-the-art zero-shot VLN performance on R2R and REVERIE benchmarks through two mechanisms: proactive perception (converting panoramic observations into semantic maps and having an LLM generate targeted visual queries) and focused reasoning (BD-MCTS filtering top-k high-value waypoints from large navigation histories).
 
 ## Background & Motivation
-**State of the Field**: Vision-and-Language Navigation (VLN) requires agents to navigate physical environments following natural language instructions. Foundation model-based VLN methods have shown promise through either post-training adaptation or zero-shot prompting, yet both suffer from two critical shortcomings.
+**Background**: Vision-and-Language Navigation (VLN) requires agents to navigate physical environments following natural language instructions. Foundation model-based VLN methods have shown promise through either post-training adaptation or zero-shot prompting, yet both suffer from two critical shortcomings.
 
 **Limitations of Prior Work**: (1) *Passive visual perception* — VLM-driven methods uniformly process panoramic or multi-view visual inputs, causing redundant information to inflate visual token counts and diffuse attention across irrelevant features, obscuring instruction-relevant fine-grained cues; (2) *Unfocused reasoning* — both paradigms receive large amounts of unprioritized historical context containing past observations and waypoints, whereby long trajectory histories dilute attention and impede precise reasoning.
 
-**Root Cause**: Navigation requires selective perception (acquiring only task-relevant information) and focused reasoning (attending only to high-value historical waypoints), whereas existing methods process everything in bulk on both fronts.
+**Key Challenge**: Navigation requires selective perception (acquiring only task-relevant information) and focused reasoning (attending only to high-value historical waypoints), whereas existing methods process everything in bulk on both fronts.
 
-**Paper Goals**: To proactively acquire task-relevant visual observations to reduce perceptual redundancy, and to focus reasoning on high-value waypoints within extensive navigation histories.
+**Goal**: To proactively acquire task-relevant visual observations to reduce perceptual redundancy, and to focus reasoning on high-value waypoints within extensive navigation histories.
 
-**Starting Point**: Establish a closed-loop perception–reasoning cycle through LLM–VLM collaboration, and employ an MCTS variant to filter key waypoints from the global history.
+**Key Insight**: Establish a closed-loop perception–reasoning cycle through LLM–VLM collaboration, and employ an MCTS variant to filter key waypoints from the global history.
 
 **Core Idea**: An LLM determines "what needs to be known" based on the semantic map and generates visual queries; a VLM performs fine-grained perception within specified regions; BD-MCTS then focuses decision-making on the top-k high-value waypoints extracted from the full navigation history.
 

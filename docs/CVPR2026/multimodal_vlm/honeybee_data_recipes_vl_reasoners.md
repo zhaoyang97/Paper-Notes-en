@@ -29,7 +29,7 @@ This paper systematically investigates the design space of VL reasoning training
 
 ## Background & Motivation
 
-**State of the Field**: VLMs increasingly rely on high-quality CoT training data for reasoning tasks. The community has produced multiple VL reasoning datasets (Math-LLaVA, LLaVA-CoT, R1-OneVision, etc.).
+**Background**: VLMs increasingly rely on high-quality CoT training data for reasoning tasks. The community has produced multiple VL reasoning datasets (Math-LLaVA, LLaVA-CoT, R1-OneVision, etc.).
 
 **Limitations of Prior Work**:
 
@@ -37,11 +37,11 @@ This paper systematically investigates the design space of VL reasoning training
 2. The scaling behavior of VL reasoning data (should one scale the number of images, questions, or CoTs?) has never been systematically explored.
 3. Many seemingly reasonable data augmentation strategies have not been rigorously validated.
 
-**Root Cause**: The community has been blindly assembling and expanding datasets without understanding the true contribution of each design decision to final reasoning performance.
+**Key Challenge**: The community has been blindly assembling and expanding datasets without understanding the true contribution of each design decision to final reasoning performance.
 
-**Paper Goals**: To systematically understand and optimize the construction process of VL reasoning CoT datasets and provide reproducible "data recipes."
+**Goal**: To systematically understand and optimize the construction process of VL reasoning CoT datasets and provide reproducible "data recipes."
 
-**Starting Point**: A three-stage controlled experiment—context curation (source selection) → data intervention (augmentation/filtering) → large-scale scaling (three dimensions: images, questions, CoTs).
+**Key Insight**: A three-stage controlled experiment—context curation (source selection) → data intervention (augmentation/filtering) → large-scale scaling (three dimensions: images, questions, CoTs).
 
 **Core Idea**: Through strictly controlled experiments, the paper reveals three major findings: data source selection dominates over data augmentation strategies; most seemingly reasonable interventions are in fact harmful; and all three scaling dimensions remain unsaturated. These findings guide the construction of the optimal dataset.
 

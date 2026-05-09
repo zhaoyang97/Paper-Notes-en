@@ -28,15 +28,15 @@ This paper proposes a general framework that leverages Rectified Flow to generat
 
 ## Background & Motivation
 
-**State of the Field**: As RL agents, LLMs, and other intelligent systems become deeply integrated into everyday life, explaining agent policies in natural language has become increasingly important. RLHF/RLAIF has emerged as the dominant paradigm for aligning LLM behavior, but faces unique challenges in explanation tasks.
+**Background**: As RL agents, LLMs, and other intelligent systems become deeply integrated into everyday life, explaining agent policies in natural language has become increasingly important. RLHF/RLAIF has emerged as the dominant paradigm for aligning LLM behavior, but faces unique challenges in explanation tasks.
 
 **Limitations of Prior Work**: (1) Human judgments of explanations are inherently pluralistic and probabilistic, making the collection of diverse human feedback costly; (2) Existing RLAIF methods use rewards from surrogate LLMs that introduce noisy bias, and the problem of generating distributional rewards that account for surrogate error has not been rigorously studied; (3) Existing distributional reward modeling methods (QRM, DPRM, URM) require discretization or assumptions about specific distributional forms.
 
-**Root Cause**: An unavoidable bias exists between surrogate LLM rewards and the true human reward distribution, $W_2(\hat{p}, p) = \sqrt{|\mathcal{A}|}|\sigma_r|$, and directly training with surrogate rewards leads to suboptimal explanations.
+**Key Challenge**: An unavoidable bias exists between surrogate LLM rewards and the true human reward distribution, $W_2(\hat{p}, p) = \sqrt{|\mathcal{A}|}|\sigma_r|$, and directly training with surrogate rewards leads to suboptimal explanations.
 
-**Paper Goals**: How can distributional rewards that accurately reflect the plurality of human judgments be generated to train explanation-generating LLMs, without requiring large amounts of human feedback?
+**Goal**: How can distributional rewards that accurately reflect the plurality of human judgments be generated to train explanation-generating LLMs, without requiring large amounts of human feedback?
 
-**Starting Point**: Rectified Flow is embedded within the LLM architecture as a reward model, exploiting the denoising properties of CNF to recover a distribution close to the true human reward distribution from noisy surrogate LLM rewards.
+**Key Insight**: Rectified Flow is embedded within the LLM architecture as a reward model, exploiting the denoising properties of CNF to recover a distribution close to the true human reward distribution from noisy surrogate LLM rewards.
 
 **Core Idea**: Rectified Flow treats the noise in surrogate LLM rewards as Gaussian noise injected during the forward process, and learns the reverse process to recover the true human reward distribution, while providing theoretical error bounds.
 

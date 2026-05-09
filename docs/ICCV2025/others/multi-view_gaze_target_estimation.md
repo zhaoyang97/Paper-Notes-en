@@ -27,15 +27,15 @@ This paper is the first to extend Gaze Target Estimation (GTE) from single-view 
 
 ## Background & Motivation
 
-**State of the Field**: Gaze Target Estimation (GTE) aims to determine where a person is looking using ordinary scene cameras. Deep learning-based approaches have advanced substantially in recent years, leveraging depth maps, 3D field-of-view (FoV) heatmaps, and Transformer architectures.
+**Background**: Gaze Target Estimation (GTE) aims to determine where a person is looking using ordinary scene cameras. Deep learning-based approaches have advanced substantially in recent years, leveraging depth maps, 3D field-of-view (FoV) heatmaps, and Transformer architectures.
 
 **Limitations of Prior Work**: All existing methods are confined to a single viewpoint. When the subject's face is occluded, multiple candidate targets exist within the field of view, or the gaze target lies outside the frame, single-view methods fail entirely.
 
-**Root Cause**: A single camera has a limited field of view and cannot obtain appearance information from occluded heads to accurately estimate gaze direction, nor can it predict out-of-frame gaze targets.
+**Key Challenge**: A single camera has a limited field of view and cannot obtain appearance information from occluded heads to accurately estimate gaze direction, nor can it predict out-of-frame gaze targets.
 
-**Paper Goals**: (a) How to leverage clearer facial observations from multiple camera viewpoints to improve gaze direction estimation accuracy; (b) how to propagate scene context information across different viewpoints; (c) how to handle cross-view scenarios where the subject and the gaze target appear in different cameras.
+**Goal**: (a) How to leverage clearer facial observations from multiple camera viewpoints to improve gaze direction estimation accuracy; (b) how to propagate scene context information across different viewpoints; (c) how to handle cross-view scenarios where the subject and the gaze target appear in different cameras.
 
-**Starting Point**: Multi-camera systems are widely deployed in environments such as supermarkets and classrooms, naturally providing broader coverage and multi-angle observations. Rather than performing full 3D reconstruction, the authors exploit calibrated multi-camera geometry to efficiently fuse multi-view information at the feature level.
+**Key Insight**: Multi-camera systems are widely deployed in environments such as supermarkets and classrooms, naturally providing broader coverage and multi-angle observations. Rather than performing full 3D reconstruction, the authors exploit calibrated multi-camera geometry to efficiently fuse multi-view information at the feature level.
 
 **Core Idea**: Multi-view GTE is achieved by aggregating facial information via cross-view head attention, selecting reliable gaze directions through uncertainty estimation, and sharing scene context with epipolar-constrained attention.
 

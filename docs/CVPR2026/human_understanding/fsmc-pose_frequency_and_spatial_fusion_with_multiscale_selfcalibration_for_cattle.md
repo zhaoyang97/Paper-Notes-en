@@ -29,11 +29,11 @@ FSMC-Pose proposes a lightweight top-down framework for cattle mounting pose est
 
 ## Background & Motivation
 
-1. **State of the Field**: Estrus detection in cattle is critical to the economic performance of the livestock industry. Mounting behavior is the most intuitive visual indicator of estrus. Existing animal pose estimation methods predominantly adapt human pose estimation approaches (e.g., DeepLabCut, HRNet) under two paradigms: bottom-up and top-down.
+1. **Background**: Estrus detection in cattle is critical to the economic performance of the livestock industry. Mounting behavior is the most intuitive visual indicator of estrus. Existing animal pose estimation methods predominantly adapt human pose estimation approaches (e.g., DeepLabCut, HRNet) under two paradigms: bottom-up and top-down.
 2. **Limitations of Prior Work**: (1) No publicly available dataset for cattle mounting behavior exists; (2) estrous cattle tend to cluster, making mounting scenes denser than typical farm environments; (3) cluttered backgrounds, severe inter-animal occlusion, and similar coat patterns cause keypoint confusion and identity ambiguity; (4) existing methods are computationally expensive and unsuitable for real-time production monitoring.
-3. **Root Cause**: Mounting pose estimation in dense group-housing environments requires simultaneous handling of background interference, occlusion, and multi-scale keypoints, yet no existing lightweight method can address all these challenges jointly.
-4. **Paper Goals**: Construct a dedicated dataset and design a lightweight, high-accuracy method for mounting pose estimation.
-5. **Starting Point**: Enhance features from two complementary perspectives: the frequency domain (wavelet decomposition) and the spatial domain (multi-scale context).
+3. **Key Challenge**: Mounting pose estimation in dense group-housing environments requires simultaneous handling of background interference, occlusion, and multi-scale keypoints, yet no existing lightweight method can address all these challenges jointly.
+4. **Goal**: Construct a dedicated dataset and design a lightweight, high-accuracy method for mounting pose estimation.
+5. **Key Insight**: Enhance features from two complementary perspectives: the frequency domain (wavelet decomposition) and the spatial domain (multi-scale context).
 6. **Core Idea**: Frequency-spatial fusion for foreground separation + multi-scale receptive fields for scale variation + self-calibration to correct occlusion-induced displacement.
 
 ## Method

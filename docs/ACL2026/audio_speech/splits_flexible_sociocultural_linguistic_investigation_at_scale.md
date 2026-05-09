@@ -28,15 +28,15 @@ This paper proposes a methodology for constructing a sociolinguistic "sandbox," 
 
 ## Background & Motivation
 
-**State of the Field**: Computational social science leverages social media data to study linguistic variation across communities (e.g., AAVE code-switching, Yiddish vocabulary in Jewish English), but such studies typically require customized data collection and experimental design tailored to specific groups and topics, making rapid prototyping costly and labor-intensive.
+**Background**: Computational social science leverages social media data to study linguistic variation across communities (e.g., AAVE code-switching, Yiddish vocabulary in Jewish English), but such studies typically require customized data collection and experimental design tailored to specific groups and topics, making rapid prototyping costly and labor-intensive.
 
 **Limitations of Prior Work**: Validating a sociolinguistic hypothesis demands substantial upfront investment. While automated hypothesis generation (e.g., via LLMs) can produce large numbers of candidate hypotheses, the critical bottleneck lies in efficiently identifying which among thousands of machine-generated candidates are genuinely worth pursuing. Many statistically significant hypotheses are in practice trivial (e.g., "Jewish users mention Judaism more frequently").
 
-**Root Cause**: Statistical significance ≠ research value. Trivial hypotheses can achieve high significance on data, yet offer no scientific insight to social science. An automated mechanism is needed to distinguish "statistically valid" from "academically interesting."
+**Key Challenge**: Statistical significance ≠ research value. Trivial hypotheses can achieve high significance on data, yet offer no scientific insight to social science. An automated mechanism is needed to distinguish "statistically valid" from "academically interesting."
 
-**Paper Goals**: (1) Construct a flexible sociolinguistic exploration sandbox dataset; (2) design an automated filtering pipeline to distinguish interesting hypotheses from trivial ones.
+**Goal**: (1) Construct a flexible sociolinguistic exploration sandbox dataset; (2) design an automated filtering pipeline to distinguish interesting hypotheses from trivial ones.
 
-**Starting Point**: Formalize sociocultural linguistic phenomena (SLPs) as "group A uses lexical set L more than group B when discussing topic t," quantify statistical validity via BM25 retrieval + lift metric, and quantify triviality via semantic similarity.
+**Key Insight**: Formalize sociocultural linguistic phenomena (SLPs) as "group A uses lexical set L more than group B when discussing topic t," quantify statistical validity via BM25 retrieval + lift metric, and quantify triviality via semantic similarity.
 
 **Core Idea**: Build a sandbox through demographic × topic dual partitioning; apply a lift + triviality two-stage filter to distill non-trivial, statistically supported hypotheses from a large candidate pool.
 

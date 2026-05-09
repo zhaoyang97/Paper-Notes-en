@@ -28,15 +28,15 @@ content_hash: 23f14dad1a14c7ba
 This paper introduces the Partonomy part-level segmentation benchmark (862 part labels / 534 object labels) and the Plum model, which replaces the [SEG] token with BIO span tagging and incorporates a mask feedback loop. The study reveals that state-of-the-art segmentation LMMs achieve only 5.9% gIoU on part understanding; Plum achieves significant improvements by avoiding distribution shift and leveraging historical predictions.
 
 ## Background & Motivation
-**State of the Field**: Segmentation-oriented LMMs (e.g., LISA, GLaMM, PixelLM) can generate segmentation masks from textual instructions and perform well on referring expression comprehension and reasoning segmentation tasks.
+**Background**: Segmentation-oriented LMMs (e.g., LISA, GLaMM, PixelLM) can generate segmentation masks from textual instructions and perform well on referring expression comprehension and reasoning segmentation tasks.
 
 **Limitations of Prior Work**: Despite being trained on part-level datasets such as PACO and Pascal-Part, these LMMs are nearly incapable of performing part-level segmentation (LISA-13B achieves only 5.9% gIoU). Two architectural deficiencies are identified: (a) the use of special [SEG] tokens unseen during pretraining introduces distribution shift; (b) when generating multiple masks sequentially, prior predictions are discarded, preventing the model from exploiting historical information.
 
-**Root Cause**: Part understanding requires fine-grained compositional reasoning (e.g., which parts constitute an object? which parts are shared between two objects?), yet existing LMMs and evaluation benchmarks lack both the capability and design to support such reasoning.
+**Key Challenge**: Part understanding requires fine-grained compositional reasoning (e.g., which parts constitute an object? which parts are shared between two objects?), yet existing LMMs and evaluation benchmarks lack both the capability and design to support such reasoning.
 
-**Paper Goals**: (1) Construct a comprehensive part-level LMM evaluation benchmark; (2) Design a new model that addresses the two aforementioned architectural deficiencies.
+**Goal**: (1) Construct a comprehensive part-level LMM evaluation benchmark; (2) Design a new model that addresses the two aforementioned architectural deficiencies.
 
-**Starting Point**: The [SEG] token is introduced after pretraining and inevitably causes distribution shift. Using existing text spans to indicate segmentation regions preserves the pretrained representations.
+**Key Insight**: The [SEG] token is introduced after pretraining and inevitably causes distribution shift. Using existing text spans to indicate segmentation regions preserves the pretrained representations.
 
 **Core Idea**: Replace the [SEG] token with BIO span tagging to avoid distribution shift, and add a mask feedback loop to allow subsequent predictions to leverage historical mask information.
 

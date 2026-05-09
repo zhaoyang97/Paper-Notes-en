@@ -37,7 +37,7 @@ This paper proposes StyleMotif, a single-branch motion latent diffusion framewor
 
 **SMooDi (latest representative)**: augments a pre-trained MLD with a dual-branch ControlNet-style style adapter and classifier-based style guidance, but (a) the dual-branch design increases model complexity and training overhead; (b) only motion sequences are supported as style input.
 
-**Root Cause**: The dual-branch design of existing methods (main generation network + style control network) requires maintaining additional parameters $\theta_s$ and zero-initialized linear layers $\theta_{z_i}$, limiting parallelism. Moreover, style input is restricted to the single modality of motion sequences.
+**Key Challenge**: The dual-branch design of existing methods (main generation network + style control network) requires maintaining additional parameters $\theta_s$ and zero-initialized linear layers $\theta_{z_i}$, limiting parallelism. Moreover, style input is restricted to the single modality of motion sequences.
 
 ## Method
 

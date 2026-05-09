@@ -28,17 +28,17 @@ This paper models compound AI systems as DAGs and proposes the SysDPO framework,
 
 ## Background & Motivation
 
-**State of the Field**: Compound AI systems—comprising multiple interacting AI components—have become mainstream. ChatGPT integrates an LLM with DALL-E and a web browser; RAG systems combine retrieval and generation; multi-agent systems rely on collaboration among multiple LLMs. Methods for aligning individual models (DPO, RLHF) are well established.
+**Background**: Compound AI systems—comprising multiple interacting AI components—have become mainstream. ChatGPT integrates an LLM with DALL-E and a web browser; RAG systems combine retrieval and generation; multi-agent systems rely on collaboration among multiple LLMs. Methods for aligning individual models (DPO, RLHF) are well established.
 
 **Limitations of Prior Work**: Aligning compound systems poses three key challenges: (a) **non-differentiable interactions**—components communicate via non-differentiable channels such as natural language, precluding end-to-end gradient optimization; (b) **non-decomposable preferences**—system-level preferences cannot be naively decomposed into component-level preferences (a good whole does not imply each part is good); (c) **lack of fine-grained supervision**—preference annotations are available only on final outputs. For example, when GPT-4+DALL-E generates "a progressively angrier cat," individual components may function correctly in isolation yet produce inconsistent results when composed.
 
-**Root Cause**: System-level preference signals must be backpropagated to individual components, but non-differentiable inter-component interactions block gradient flow.
+**Key Challenge**: System-level preference signals must be backpropagated to individual components, but non-differentiable inter-component interactions block gradient flow.
 
-**Paper Goals**
+**Goal**
 - How can system-level preference optimization be decomposed into a form that is end-to-end optimizable per component?
 - Does such a decomposition provide theoretical alignment correctness guarantees?
 
-**Starting Point**: The compound system is modeled as a DAG (directed acyclic graph). The conditional independence structure of the DAG is exploited to factorize the system's joint probability into a product of per-component conditional probabilities, thereby decomposing the system-level DPO loss into an optimizable form.
+**Key Insight**: The compound system is modeled as a DAG (directed acyclic graph). The conditional independence structure of the DAG is exploited to factorize the system's joint probability into a product of per-component conditional probabilities, thereby decomposing the system-level DPO loss into an optimizable form.
 
 **Core Idea**: DAG decomposition transforms the system-level DPO log-likelihood into a sum of per-component log-likelihoods, bypassing non-differentiable interactions and enabling end-to-end optimization.
 

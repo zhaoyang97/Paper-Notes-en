@@ -29,13 +29,13 @@ This paper proposes MASFIN, a multi-agent system that decomposes financial forec
 
 ## Background & Motivation
 
-**State of the Field**: Financial forecasting requires simultaneous consideration of multiple dimensions, including macroeconomic conditions, industry trends, technical indicators, and market sentiment, which is difficult for any single model to cover comprehensively.
+**Background**: Financial forecasting requires simultaneous consideration of multiple dimensions, including macroeconomic conditions, industry trends, technical indicators, and market sentiment, which is difficult for any single model to cover comprehensively.
 
 **Limitations of Prior Work**: (1) Traditional time-series models lack reasoning capabilities; (2) Single LLMs tend to overlook critical factors in multi-dimensional analysis; (3) The heterogeneous, multi-source nature of financial data makes it difficult for a single model to handle effectively.
 
-**Root Cause**: A fundamental tension exists between comprehensiveness and specialization — a single model is either broad but shallow, or narrow but deep.
+**Key Challenge**: A fundamental tension exists between comprehensiveness and specialization — a single model is either broad but shallow, or narrow but deep.
 
-**Starting Point**: Multi-agent division of labor — each agent focuses on one analytical dimension, with a coordinator agent synthesizing the results.
+**Key Insight**: Multi-agent division of labor — each agent focuses on one analytical dimension, with a coordinator agent synthesizing the results.
 
 ## Method
 

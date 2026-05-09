@@ -29,15 +29,15 @@ This work systematically compares 15 CNN variants (LeNet/ResNet/VGG/Inception) o
 
 ## Background & Motivation
 
-**State of the Field**: Ovarian cancer is the 7th most common cancer among women worldwide and carries an extremely high mortality rate. A core challenge is the lack of effective early screening methods — unlike breast cancer (mammography) or cervical cancer (Pap smear), ovarian cancer can only be confirmed through invasive biopsy. Deep learning has shown progress in detecting various cancers, yet DL-based approaches for ovarian cancer remain limited.
+**Background**: Ovarian cancer is the 7th most common cancer among women worldwide and carries an extremely high mortality rate. A core challenge is the lack of effective early screening methods — unlike breast cancer (mammography) or cervical cancer (Pap smear), ovarian cancer can only be confirmed through invasive biopsy. Deep learning has shown progress in detecting various cancers, yet DL-based approaches for ovarian cancer remain limited.
 
 **Limitations of Prior Work**: (1) Existing non-invasive detection methods (transvaginal ultrasound, CA-125 blood test, pelvic examination) lack sufficient accuracy to serve as reliable screening tools; (2) Definitive diagnosis relies on biopsy, which is invasive and time-consuming; (3) Existing DL approaches mostly employ single models, lacking systematic multi-architecture comparison and XAI-based explainability support, leading to low clinical trust and adoption.
 
-**Root Cause**: An automated detection system must simultaneously achieve high accuracy and interpretability; however, available histopathology datasets are extremely small (only 498 images), and high-performing models (VGG with transfer learning) are difficult to explain effectively via XAI due to frozen pretrained feature layers.
+**Key Challenge**: An automated detection system must simultaneously achieve high accuracy and interpretability; however, available histopathology datasets are extremely small (only 498 images), and high-performing models (VGG with transfer learning) are difficult to explain effectively via XAI due to frozen pretrained feature layers.
 
-**Paper Goals**: To build a high-accuracy classification model on a small-scale ovarian cancer histopathology dataset and provide transparent support for clinical decision-making through XAI.
+**Goal**: To build a high-accuracy classification model on a small-scale ovarian cancer histopathology dataset and provide transparent support for clinical decision-making through XAI.
 
-**Starting Point**: Cast a wide net by comparing 15 CNN variants, selecting models based on both accuracy and XAI feasibility rather than solely pursuing peak performance.
+**Key Insight**: Cast a wide net by comparing 15 CNN variants, selecting models based on both accuracy and XAI feasibility rather than solely pursuing peak performance.
 
 **Core Idea**: Model selection should consider interpretability alongside accuracy — InceptionV3 (trained from scratch) is preferred over the higher-accuracy VGG (transfer learning) because the former is more amenable to effective XAI explanation.
 

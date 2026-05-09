@@ -29,15 +29,15 @@ This paper redefines meeting effectiveness evaluation by proposing an objective 
 
 ## Background & Motivation
 
-**State of the Field**: Meetings are a cornerstone of organizational collaboration, yet their effectiveness has long been assessed through post-meeting questionnaires that yield a single coarse-grained score for the entire session. Such approaches are costly, difficult to scale, and lack reproducibility.
+**Background**: Meetings are a cornerstone of organizational collaboration, yet their effectiveness has long been assessed through post-meeting questionnaires that yield a single coarse-grained score for the entire session. Such approaches are costly, difficult to scale, and lack reproducibility.
 
 **Limitations of Prior Work**: (1) A single score fails to capture the dynamic nature of meetings—a meeting may alternate between efficient and inefficient phases; (2) existing evaluation criteria are heterogeneous and often grounded in subjective perception, lacking generalizability; (3) meeting data are scarce and privacy-sensitive, impeding large-scale quantitative analysis.
 
-**Root Cause**: There is a need for an evaluation method that is both objective and universal while capturing the temporal dynamics of meetings, and that overcomes the scalability bottleneck of manual annotation.
+**Key Challenge**: There is a need for an evaluation method that is both objective and universal while capturing the temporal dynamics of meetings, and that overcomes the scalability bottleneck of manual annotation.
 
-**Paper Goals**: (1) Define objective and universal criteria for meeting effectiveness evaluation; (2) propose a temporal fine-grained evaluation methodology; (3) construct a meta-evaluation dataset; (4) develop an LLM-based automatic evaluation framework.
+**Goal**: (1) Define objective and universal criteria for meeting effectiveness evaluation; (2) propose a temporal fine-grained evaluation methodology; (3) construct a meta-evaluation dataset; (4) develop an LLM-based automatic evaluation framework.
 
-**Starting Point**: Meetings are segmented into consecutive topical segments, each evaluated independently for effectiveness. This improves annotation reliability and substantially increases the volume of data points (from 130 to 2,459).
+**Key Insight**: Meetings are segmented into consecutive topical segments, each evaluated independently for effectiveness. This improves annotation reliability and substantially increases the volume of data points (from 130 to 2,459).
 
 **Core Idea**: Meeting effectiveness is defined as "goal achievement / time cost," evaluated automatically at the granularity of fine-grained topical segments using LLM-as-a-Judge.
 

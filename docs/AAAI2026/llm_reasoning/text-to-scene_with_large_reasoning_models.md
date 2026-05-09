@@ -29,10 +29,10 @@ This paper proposes Reason-3D, which leverages the multi-step spatial reasoning 
 
 ## Background & Motivation
 
-- **State of the Field**: Demand for 3D scene generation is rapidly growing across applications such as interior design, game development, autonomous driving, and robotics. Traditional methods rely on scene priors learned from training data (e.g., DiffuScene trained on the 3D-FRONT dataset), which limits generalization to novel scene types beyond the training distribution.
+- **Background**: Demand for 3D scene generation is rapidly growing across applications such as interior design, game development, autonomous driving, and robotics. Traditional methods rely on scene priors learned from training data (e.g., DiffuScene trained on the 3D-FRONT dataset), which limits generalization to novel scene types beyond the training distribution.
 - **Limitations of Prior Work**: Directly prompting standard LLMs to output object coordinates frequently yields physically implausible results—including object overlap and unrealistic placement—because general-purpose LLMs lack geometric, scale, and collision reasoning capabilities. Existing LLM-based approaches require additional layout engines or fine-tuning to compensate.
-- **Root Cause**: There is an inherent tension between the flexibility required to interpret open-ended natural language instructions and the geometric precision required to handle 3D spatial relationships—properties that existing methods struggle to satisfy simultaneously.
-- **Starting Point**: Large reasoning models (LRMs, e.g., Gemini 2.5 Pro) can address complex spatial relationships through multi-step reasoning chains at test time. This paper explores leveraging such reasoning capabilities directly for scene generation without any domain-specific training.
+- **Key Challenge**: There is an inherent tension between the flexibility required to interpret open-ended natural language instructions and the geometric precision required to handle 3D spatial relationships—properties that existing methods struggle to satisfy simultaneously.
+- **Key Insight**: Large reasoning models (LRMs, e.g., Gemini 2.5 Pro) can address complex spatial relationships through multi-step reasoning chains at test time. This paper explores leveraging such reasoning capabilities directly for scene generation without any domain-specific training.
 
 ## Method
 

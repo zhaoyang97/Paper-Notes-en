@@ -28,13 +28,13 @@ This paper proposes MedLA, the first multi-agent medical reasoning framework bas
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have been widely applied to medical reasoning. Existing approaches fall into two broad categories: knowledge fine-tuning (e.g., Med-PaLM) and reasoning stimulation (e.g., multi-agent role-playing discussions). Multi-agent methods (MedAgents, MDAgents) achieve collaboration by assigning fixed roles, offering low cost and high flexibility.
+**Background**: LLMs have been widely applied to medical reasoning. Existing approaches fall into two broad categories: knowledge fine-tuning (e.g., Med-PaLM) and reasoning stimulation (e.g., multi-agent role-playing discussions). Multi-agent methods (MedAgents, MDAgents) achieve collaboration by assigning fixed roles, offering low cost and high flexibility.
 
 **Limitations of Prior Work**: Existing multi-agent systems only discuss at the **conclusion level** — each agent produces a conclusion, followed by voting or debate — and cannot examine the underlying logical details to identify the root cause of disagreements. When two agents reach different diagnoses, the system cannot determine whether the discrepancy stems from a wrong premise or a flawed reasoning step.
 
-**Root Cause**: Medical reasoning demands traceability and auditability — every conclusion should be traceable to specific medical rules and patient facts. However, natural language reasoning in LLMs is implicit and cannot be structurally inspected.
+**Key Challenge**: Medical reasoning demands traceability and auditability — every conclusion should be traceable to specific medical rules and patient facts. However, natural language reasoning in LLMs is implicit and cannot be structurally inspected.
 
-**Starting Point**: The classical syllogism (major premise–minor premise–conclusion) is the minimal unit of logical inference. Connecting multiple syllogisms in series or parallel forms a logic tree that explicitly represents the complete reasoning process, enabling precise premise-level alignment and error correction across agents.
+**Key Insight**: The classical syllogism (major premise–minor premise–conclusion) is the minimal unit of logical inference. Connecting multiple syllogisms in series or parallel forms a logic tree that explicitly represents the complete reasoning process, enabling precise premise-level alignment and error correction across agents.
 
 **Core Idea**: Structure each agent's reasoning as a syllogistic logic tree, and align logic trees at the premise level through multi-round graph-guided discussions to achieve traceable and collaborative error correction.
 

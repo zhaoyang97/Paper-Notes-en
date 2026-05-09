@@ -30,11 +30,11 @@ This paper proposes AcTOL, which learns ordered and continuous vision-language r
 
 ### State of the Field
 
-**State of the Field**: Pretraining vision-language representations on human action videos to reduce dependence on expert robot demonstrations is a promising direction. Methods such as R3M, LIV, and DecisionNCE employ temporal contrastive learning.
+**Background**: Pretraining vision-language representations on human action videos to reduce dependence on expert robot demonstrations is a promising direction. Methods such as R3M, LIV, and DecisionNCE employ temporal contrastive learning.
 
 **Limitations of Prior Work**: Existing methods rely on a "goal-reaching" assumption—that the semantic alignment between language instructions and video frames improves monotonically toward later frames. However, actions in real videos may terminate early or be followed by irrelevant content, leading to erroneous vision-language associations.
 
-**Root Cause**: Real human action videos are coarsely annotated and noisy, rendering rigid assumptions invalid.
+**Key Challenge**: Real human action videos are coarsely annotated and noisy, rendering rigid assumptions invalid.
 
 **Core Idea**: Exploiting the intrinsic temporal consistency of videos, the learned representations are required to satisfy **ordering** (frames closer in time exhibit smaller semantic divergence) and **continuity** (representations of adjacent frames transition smoothly).
 

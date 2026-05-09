@@ -30,18 +30,18 @@ This paper identifies severe unreliability in single-sample teacher responses un
 
 ## Background & Motivation
 
-**State of the Field**: Black-box distillation is the dominant paradigm for LVLM compression. Since large model APIs expose only text outputs—without logits or intermediate features—practitioners collect teacher text responses as training signals. This approach has been widely adopted in NLP (e.g., Alpaca, Vicuna), yet its reliability in video multimodal settings has not been thoroughly investigated.
+**Background**: Black-box distillation is the dominant paradigm for LVLM compression. Since large model APIs expose only text outputs—without logits or intermediate features—practitioners collect teacher text responses as training signals. This approach has been widely adopted in NLP (e.g., Alpaca, Vicuna), yet its reliability in video multimodal settings has not been thoroughly investigated.
 
 **Limitations of Prior Work**: Large-scale statistical analysis of teacher models such as GPT-4o reveals three categories of unreliability in single-sample teacher responses:
 - **High cross-question variance** ($\sigma=0.22$): Substantial difficulty variation across questions leads to pronounced fluctuation in teacher response quality.
 - **Non-negligible intra-sampling variance** ($\sigma_{\text{sampling}}=0.07$–$0.15$): Repeated sampling of the same question yields responses of varying quality.
 - **Pervasive format violations** (1%–10%): Teacher outputs frequently fail to conform to specified formats (e.g., omitting option letters in MCQ tasks).
 
-**Root Cause**: Standard SFT-based distillation treats a single teacher response as ground truth, implicitly assuming that the teacher is always correct. The above analysis demonstrates that this assumption is seriously violated for video tasks.
+**Key Challenge**: Standard SFT-based distillation treats a single teacher response as ground truth, implicitly assuming that the teacher is always correct. The above analysis demonstrates that this assumption is seriously violated for video tasks.
 
 **Core Problem**: Closed-form tasks (MCQ, temporal ordering, bounding-box localization) admit well-defined correctness metrics, whereas open-ended tasks (description, explanation) lack reliable automatic evaluation. A unified matching strategy is therefore inappropriate across task types.
 
-**Paper Goals**: Naïve baselines—selecting the best-of-K responses for SFT, or using all K samples in SFT+RL—yield only marginal gains, motivating a more principled multi-sample utilization strategy.
+**Goal**: Naïve baselines—selecting the best-of-K responses for SFT, or using all K samples in SFT+RL—yield only marginal gains, motivating a more principled multi-sample utilization strategy.
 
 ## Method
 

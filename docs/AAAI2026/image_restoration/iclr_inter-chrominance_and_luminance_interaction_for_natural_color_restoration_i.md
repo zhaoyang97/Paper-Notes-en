@@ -28,20 +28,20 @@ Targeting two overlooked statistical distribution issues in the HVI color space 
 
 ## Background & Motivation
 
-**State of the Field**: Low-light image enhancement (LLIE) is a fundamental task in computer vision. In recent years, methods based on color space decoupling have become the dominant paradigm — converting RGB images into color spaces such as HSV, YCbCr, or HVI, and separately processing chrominance and luminance. The HVI color space (CVPR 2025, CIDNet) overcomes the pure-black plane issue of HSV and maintains a bijective mapping with RGB, representing the current state-of-the-art decoupling scheme.
+**Background**: Low-light image enhancement (LLIE) is a fundamental task in computer vision. In recent years, methods based on color space decoupling have become the dominant paradigm — converting RGB images into color spaces such as HSV, YCbCr, or HVI, and separately processing chrominance and luminance. The HVI color space (CVPR 2025, CIDNet) overcomes the pure-black plane issue of HSV and maintains a bijective mapping with RGB, representing the current state-of-the-art decoupling scheme.
 
 **Limitations of Prior Work**: Although CIDNet introduces cross-attention for luminance-chrominance interaction in the HVI space, it overlooks two critical statistical distribution issues:
    - **Large distribution discrepancy between luminance and chrominance branches**: The feature map distributions of the two branches differ substantially in shape (e.g., unimodal for luminance vs. multimodal for chrominance), causing cross-attention weights to become over-smoothed and failing to extract complementary features effectively. Moreover, luminance errors propagate into chrominance channels via the nonlinear parameter $C_k$.
    - **Weak inter-chrominance correlation**: For images containing large uniform-color regions, the H and V chrominance branches exhibit highly concentrated distributions with weak linear correlation. Conventional pixel-wise loss functions assume strong correlation for joint optimization, producing gradient conflicts in weakly correlated regions.
 
-**Root Cause**: Distribution discrepancy → cross-attention failure → insufficient complementary information extraction; weak correlation → pixel-wise loss gradient cancellation → optimization difficulty. These two issues manifest at the model architecture and loss function levels, respectively.
+**Key Challenge**: Distribution discrepancy → cross-attention failure → insufficient complementary information extraction; weak correlation → pixel-wise loss gradient cancellation → optimization difficulty. These two issues manifest at the model architecture and loss function levels, respectively.
 
-**Paper Goals**:
+**Goal**:
    - Sub-problem 1: How to effectively extract luminance-chrominance complementary information under large distribution discrepancy?
    - Sub-problem 2: How to prevent luminance errors from propagating into chrominance channels via nonlinear parameters?
    - Sub-problem 3: How to avoid gradient conflicts when chrominance branches are weakly correlated?
 
-**Starting Point**: The authors conduct large-scale statistical analysis of natural image distributions, identifying two previously overlooked distributional phenomena (Observation 1 & 2), and propose targeted solutions from both module design and loss function design perspectives.
+**Key Insight**: The authors conduct large-scale statistical analysis of natural image distributions, identifying two previously overlooked distributional phenomena (Observation 1 & 2), and propose targeted solutions from both module design and loss function design perspectives.
 
 **Core Idea**: Align distribution discrepancies via multi-dimensional attention fusion, and alleviate gradient conflicts via covariance-constrained loss — systematically resolving interaction issues in HVI space at both the architecture and loss function levels.
 

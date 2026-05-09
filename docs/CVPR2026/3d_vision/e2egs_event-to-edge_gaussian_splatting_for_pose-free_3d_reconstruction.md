@@ -39,9 +39,9 @@ NeRF and 3D Gaussian Splatting (3DGS) have driven remarkable progress in novel v
 
 **IncEventGS** (the only existing pose-free method): adopts a SLAM framework for joint optimization of poses and 3D Gaussians, but critically depends on the pretrained depth estimation model Marigold for initialization. **Core problem**: the depth model estimates from the initial frame, and as the camera moves into new regions beyond the initial coverage, depth estimation degrades → trajectory drift → reconstruction quality collapses.
 
-**Root Cause**: Pose-free event-based 3D reconstruction requires reliable geometric priors to guide optimization, yet existing methods either depend on external depth models (poor generalization) or resort to fully random initialization (prone to local optima).
+**Key Challenge**: Pose-free event-based 3D reconstruction requires reliable geometric priors to guide optimization, yet existing methods either depend on external depth models (poor generalization) or resort to fully random initialization (prone to local optima).
 
-**Starting Point**: Event cameras inherently encode edge information — during camera motion, edge regions produce temporally consistent dense events, whereas non-edge regions yield only sparse noise. This spatiotemporal contrast can be exploited to extract robust edge maps that provide geometric constraints for Gaussian initialization and pose optimization, entirely without depth models or RGB assistance.
+**Key Insight**: Event cameras inherently encode edge information — during camera motion, edge regions produce temporally consistent dense events, whereas non-edge regions yield only sparse noise. This spatiotemporal contrast can be exploited to extract robust edge maps that provide geometric constraints for Gaussian initialization and pose optimization, entirely without depth models or RGB assistance.
 
 **Core Idea**: Replace the depth model with the intrinsic edge information embedded in the event stream, enabling fully autonomous pose-free event-based 3D reconstruction.
 

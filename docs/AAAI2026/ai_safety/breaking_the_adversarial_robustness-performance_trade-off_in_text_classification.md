@@ -31,10 +31,10 @@ This paper proposes the Manifold-Correcting Causal Flow (MC²F) framework, which
 
 ## Background & Motivation
 
-- **State of the Field**: Pre-trained language models (PLMs, e.g., BERT) have achieved remarkable success in text classification, yet remain highly vulnerable to adversarial attacks (e.g., TextFooler, BERT-Attack)—subtle, semantically imperceptible textual perturbations can completely flip model predictions.
+- **Background**: Pre-trained language models (PLMs, e.g., BERT) have achieved remarkable success in text classification, yet remain highly vulnerable to adversarial attacks (e.g., TextFooler, BERT-Attack)—subtle, semantically imperceptible textual perturbations can completely flip model predictions.
 - **Limitations of Prior Work**: Existing defenses (adversarial training, embedding denoising, etc.) suffer from a pervasive robustness–accuracy trade-off: improving adversarial robustness inevitably degrades clean accuracy, which is unacceptable in safety-critical applications.
-- **Root Cause**: Adversarial training (AT) forcibly enhances robustness via data augmentation at high computational cost, and frequently produces "robustness illusions" due to gradient masking. Purification-based methods avoid modifying model training but lack precise modeling of the geometric structure of the embedding space, limiting their purification efficacy.
-- **Starting Point**: Through empirical analysis, the authors find that clean and adversarial text embeddings occupy geometrically separable regions of BERT's embedding space—reframing adversarial defense as a geometric correction problem rather than a brute-force training problem.
+- **Key Challenge**: Adversarial training (AT) forcibly enhances robustness via data augmentation at high computational cost, and frequently produces "robustness illusions" due to gradient masking. Purification-based methods avoid modifying model training but lack precise modeling of the geometric structure of the embedding space, limiting their purification efficacy.
+- **Key Insight**: Through empirical analysis, the authors find that clean and adversarial text embeddings occupy geometrically separable regions of BERT's embedding space—reframing adversarial defense as a geometric correction problem rather than a brute-force training problem.
 
 ## Core Problem
 

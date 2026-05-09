@@ -28,15 +28,15 @@ This paper presents Lumia — a handheld camera-shaped device that analyzes capt
 
 ## Background & Motivation
 
-**State of the Field**: Generative AI has achieved breakthroughs in text, image, and audio domains (DALL·E, MusicLM, Stable Audio, etc.), yet most of these tools are screen- and prompt-driven, lacking physical interaction and real-time improvisation capabilities.
+**Background**: Generative AI has achieved breakthroughs in text, image, and audio domains (DALL·E, MusicLM, Stable Audio, etc.), yet most of these tools are screen- and prompt-driven, lacking physical interaction and real-time improvisation capabilities.
 
 **Limitations of Prior Work**: (a) Existing text-to-music models (MusicLM, AudioLDM, Stable Audio) are primarily accessed via batch processing or prompt interfaces, with no real-time interactive control; (b) digital music tools (Magenta Studio, Jukebox) emphasize precise control but lack tactile and improvisational workflows; (c) tangible interaction devices (Reactable, Bela) are confined to fixed environments and predefined mappings.
 
-**Root Cause**: A fundamental disconnect exists between the capabilities of generative music AI and users' physical creative experience — models are powerful, but interaction modalities are impoverished, making the creative process feel like "tweaking parameters" rather than "performing."
+**Key Challenge**: A fundamental disconnect exists between the capabilities of generative music AI and users' physical creative experience — models are powerful, but interaction modalities are impoverished, making the creative process feel like "tweaking parameters" rather than "performing."
 
-**Paper Goals**: How can multimodal generative AI be embedded into a physical device so that visual scenes serve as musical material sources, enabling context-aware musical improvisation?
+**Goal**: How can multimodal generative AI be embedded into a physical device so that visual scenes serve as musical material sources, enabling context-aware musical improvisation?
 
-**Starting Point**: The work extends the concept of the Large Language Object (LLO) — embedding generative models into systems with material expressiveness. The predecessor VBox supported haptic navigation of audio latent spaces; Lumia pivots toward composition, linking visual perception to multimodal generation.
+**Key Insight**: The work extends the concept of the Large Language Object (LLO) — embedding generative models into systems with material expressiveness. The predecessor VBox supported haptic navigation of audio latent spaces; Lumia pivots toward composition, linking visual perception to multimodal generation.
 
 **Core Idea**: Camera framing as a sampling act — the user "composes" by "looking." Captured frames are analyzed by a VLM and translated into music prompts, generating audio segments that can be looped and layered.
 

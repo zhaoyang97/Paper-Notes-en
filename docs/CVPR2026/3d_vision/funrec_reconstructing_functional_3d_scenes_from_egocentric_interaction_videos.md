@@ -28,15 +28,15 @@ This paper presents FunREC, a training-free optimization-based method that recon
 
 ## Background & Motivation
 
-1. **State of the Field**: 3D scene reconstruction has advanced considerably, yet existing large-scale RGB-D datasets (ScanNet, ARKitScenes, etc.) capture only a single static state of the environment and cannot represent functional interactions such as opening doors or sliding drawers. Digital twins require not only geometric capture but also an understanding of how objects move and articulate.
+1. **Background**: 3D scene reconstruction has advanced considerably, yet existing large-scale RGB-D datasets (ScanNet, ARKitScenes, etc.) capture only a single static state of the environment and cannot represent functional interactions such as opening doors or sliding drawers. Digital twins require not only geometric capture but also an understanding of how objects move and articulate.
 
 2. **Limitations of Prior Work**: (1) MultiScan requires two scans of the same room (open/closed states) and manual alignment annotation, making it highly inefficient. (2) SceneFun3D/Articulate3D annotates functional information on static LiDAR scans but cannot directly observe kinematic properties. (3) Digital cousins methods retrieve CAD proxy models as substitutes, maintaining only a loose association with actual geometry. (4) Object-level articulation reconstruction methods generally assume controlled environments, fixed cameras, or known CAD models, and are unable to handle scene-level reconstruction in the wild.
 
-3. **Root Cause**: Human interactions naturally reveal which parts move, around which joints, and what internal volumes are exposed — yet these rich signals remain unexploited. Existing methods either rely on multiple scans with manual annotation or on CAD retrieval as a weak proxy.
+3. **Key Challenge**: Human interactions naturally reveal which parts move, around which joints, and what internal volumes are exposed — yet these rich signals remain unexploited. Existing methods either rely on multiple scans with manual annotation or on CAD retrieval as a weak proxy.
 
-4. **Paper Goals**: Can a complete, interactive, physically-simulation-compatible functional 3D digital twin be automatically reconstructed from a single ordinary egocentric interaction video?
+4. **Goal**: Can a complete, interactive, physically-simulation-compatible functional 3D digital twin be automatically reconstructed from a single ordinary egocentric interaction video?
 
-5. **Starting Point**: Human interaction provides the most direct and informative functional supervision signal. When people manipulate the environment, egocentric observation naturally reveals articulation information. FunREC leverages the semantic and motion priors of visual foundation models to complete the entire pipeline without any training.
+5. **Key Insight**: Human interaction provides the most direct and informative functional supervision signal. When people manipulate the environment, egocentric observation naturally reveals articulation information. FunREC leverages the semantic and motion priors of visual foundation models to complete the entire pipeline without any training.
 
 6. **Core Idea**: FunREC segments egocentric interaction videos into clips, uses the semantic and motion priors of foundation models to discover articulated parts and track their motion, and jointly optimizes part poses and joint parameters to reconstruct functional 3D digital twins directly from video.
 

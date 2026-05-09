@@ -27,15 +27,15 @@ content_hash: 9079ea77019484b3
 To address the hard-zero terminal inventory constraint ($X_T=0$) in HJB equations arising from optimal trade execution, this paper proposes Multi-Trajectory PINN (MT-PINN). Through a rollout-based terminal loss and a $\lambda$-curriculum training strategy, MT-PINN significantly outperforms vanilla PINN on both synthetic benchmarks and live SPY backtesting, achieving a substantial reduction in terminal inventory violation rates.
 
 ## Background & Motivation
-**State of the Field**: Optimal trade execution is a core problem in quantitative finance, requiring full liquidation ($X_T=0$) within a given time horizon while accounting for market impact and risk aversion. The corresponding optimal control problem is characterized by a Hamilton-Jacobi-Bellman (HJB) PDE.
+**Background**: Optimal trade execution is a core problem in quantitative finance, requiring full liquidation ($X_T=0$) within a given time horizon while accounting for market impact and risk aversion. The corresponding optimal control problem is characterized by a Hamilton-Jacobi-Bellman (HJB) PDE.
 
 **Limitations of Prior Work**: Vanilla PINNs are trained via PDE residuals combined with soft boundary penalties, but their enforcement of the hard-zero terminal inventory constraint is insufficient — particularly as $\tau \to 0$ where the value function becomes non-smooth — frequently resulting in nonzero terminal inventory and unstable control policies.
 
-**Root Cause**: The terminal condition is $\Gamma(0,X) = 0$ if $X=0$, $+\infty$ otherwise — a singular boundary condition that PDE residual losses cannot adequately capture.
+**Key Challenge**: The terminal condition is $\Gamma(0,X) = 0$ if $X=0$, $+\infty$ otherwise — a singular boundary condition that PDE residual losses cannot adequately capture.
 
-**Paper Goals**: To strongly enforce the hard-zero terminal inventory constraint within the PINN framework while maintaining training stability.
+**Goal**: To strongly enforce the hard-zero terminal inventory constraint within the PINN framework while maintaining training stability.
 
-**Starting Point**: Rather than training solely at the PDE residual level, the paper adopts a "control-trajectory" perspective, directly simulating execution trajectories and penalizing terminal inventory deviations.
+**Key Insight**: Rather than training solely at the PDE residual level, the paper adopts a "control-trajectory" perspective, directly simulating execution trajectories and penalizing terminal inventory deviations.
 
 **Core Idea**: Employ a rollout-based trajectory loss with BPTT to propagate the terminal penalty, combined with a $\lambda$-curriculum that gradually transitions from risk-neutral to risk-averse regimes.
 

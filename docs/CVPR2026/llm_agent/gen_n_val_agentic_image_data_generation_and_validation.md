@@ -28,11 +28,11 @@ This paper proposes Gen-n-Val, an agentic synthetic data generation and validati
 
 ## Background & Motivation
 
-1. **State of the Field**: Large-scale datasets (e.g., LVIS with 1,203 categories) exhibit severe long-tail distributions—rare categories appear in fewer than 10 images. Synthetic data is an important remedy for data scarcity. Existing approaches include Copy-Paste augmentation and diffusion-model-based generation (e.g., X-Paste, MosaicFusion).
+1. **Background**: Large-scale datasets (e.g., LVIS with 1,203 categories) exhibit severe long-tail distributions—rare categories appear in fewer than 10 images. Synthetic data is an important remedy for data scarcity. Existing approaches include Copy-Paste augmentation and diffusion-model-based generation (e.g., X-Paste, MosaicFusion).
 2. **Limitations of Prior Work**: MosaicFusion generates segmentation masks using cross-attention maps, but approximately 50% of data is filtered out, and among the remaining data, roughly 50% still suffers from: (1) a single mask covering multiple objects; (2) inaccurate segmentation masks; (3) incorrect category labels. Directly using Layer Diffusion with standard prompts yields approximately 44% invalid data, as monotonous and vague descriptions lead to low diversity and extraneous objects.
-3. **Root Cause**: High-quality synthetic data requires "single object + precise mask + correct category + high diversity," yet standard prompts cannot simultaneously satisfy all these requirements, and manually designed filtering rules are inefficient and prone to omission.
-4. **Paper Goals**: Design an automated agentic pipeline to generate high-quality synthetic data for balancing long-tail datasets.
-5. **Starting Point**: An LLM serves as the prompt agent to generate detailed and specific prompts (incorporating object category, style, color, lighting, etc.), while a VLLM serves as the validation agent to filter substandard images; the system prompts of both agents are optimized via TextGrad.
+3. **Key Challenge**: High-quality synthetic data requires "single object + precise mask + correct category + high diversity," yet standard prompts cannot simultaneously satisfy all these requirements, and manually designed filtering rules are inefficient and prone to omission.
+4. **Goal**: Design an automated agentic pipeline to generate high-quality synthetic data for balancing long-tail datasets.
+5. **Key Insight**: An LLM serves as the prompt agent to generate detailed and specific prompts (incorporating object category, style, color, lighting, etc.), while a VLLM serves as the validation agent to filter substandard images; the system prompts of both agents are optimized via TextGrad.
 6. **Core Idea**: Layer Diffusion natively outputs an alpha channel that provides precise masks (eliminating the need for additional segmentation models); LLM-optimized prompts ensure single-object content and high diversity; VLLM validation serves as a final safeguard to catch remaining invalid samples.
 
 ## Method

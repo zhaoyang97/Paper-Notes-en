@@ -34,7 +34,7 @@ Bokeh is the out-of-focus blur produced by large-aperture lenses, widely used in
 2. Layered methods (MPIB, Dr.Bokeh) require decomposing the scene into layers and inpainting each layer, which tends to fail on complex scenes.
 3. Although diffusion models possess strong generative priors, their iterative denoising process alters image content and is slow; moreover, their self-attention mechanism ignores the 3D physical properties of bokeh rendering.
 
-**Starting Point**: The all-in-focus image is treated as a combination of the bokeh image and "noise to be removed." Without adding any noise, the transformation is achieved via a single forward pass, while a physically constrained attention module is designed alongside.
+**Key Insight**: The all-in-focus image is treated as a combination of the bokeh image and "noise to be removed." Without adding any noise, the transformation is achieved via a single forward pass, while a physically constrained attention module is designed alongside.
 
 ## Method
 

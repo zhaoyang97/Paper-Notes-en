@@ -28,15 +28,15 @@ This paper proposes PSIVG — the first training-free inference-time framework t
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion-based video generation models (e.g., CogVideoX, HunyuanVideo) have achieved impressive visual realism, yet frequently violate fundamental physical laws such as gravity, inertia, and collision — objects disappear arbitrarily, motion trajectories are unreasonable, and physical interactions are implausible.
+**Background**: Diffusion-based video generation models (e.g., CogVideoX, HunyuanVideo) have achieved impressive visual realism, yet frequently violate fundamental physical laws such as gravity, inertia, and collision — objects disappear arbitrarily, motion trajectories are unreasonable, and physical interactions are implausible.
 
 **Limitations of Prior Work**: (1) Modern video generation models are trained on denoising/reconstruction objectives, which optimize pixel- or patch-level reconstruction and lack explicit physical constraint mechanisms. (2) Early physics-aware methods couple 2D rigid-body simulators with image generators but are constrained by simplified 2D assumptions. (3) Methods such as PhysAnimator focus on 2D mesh simulation for cartoon animation, while PhysGen3D requires an input image for 3D reconstruction. (4) LLM-based prompting approaches are orthogonal explorations that do not directly impose physical constraints within the generator.
 
-**Root Cause**: The training objectives of video diffusion models (denoising/reconstruction) contain no physical constraints and provide no mechanism to enforce the learning of physical laws. Achieving physical consistency while preserving visual quality requires introducing physics-based guidance into the generation process.
+**Key Challenge**: The training objectives of video diffusion models (denoising/reconstruction) contain no physical constraints and provide no mechanism to enforce the learning of physical laws. Achieving physical consistency while preserving visual quality requires introducing physics-based guidance into the generation process.
 
-**Paper Goals**: How can information from a physical simulator be effectively integrated into the video diffusion process to achieve physically consistent video generation?
+**Goal**: How can information from a physical simulator be effectively integrated into the video diffusion process to achieve physically consistent video generation?
 
-**Starting Point**: The paper proposes a *simulation-in-the-loop* paradigm, in which a physical simulator acts as a physics-aware constraint that guides the model to maintain spatiotemporal consistency within the diffusion generation loop.
+**Key Insight**: The paper proposes a *simulation-in-the-loop* paradigm, in which a physical simulator acts as a physics-aware constraint that guides the model to maintain spatiotemporal consistency within the diffusion generation loop.
 
 **Core Idea**: A pretrained video model first generates a template video; a 4D scene and object meshes are then reconstructed from it and fed into a physical simulator; the physically consistent trajectories output by the simulator guide video re-generation; and test-time optimization further improves texture consistency of moving objects.
 

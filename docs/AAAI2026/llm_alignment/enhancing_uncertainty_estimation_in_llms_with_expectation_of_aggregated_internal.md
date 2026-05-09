@@ -31,10 +31,10 @@ This paper proposes EAGLE, a method that estimates uncertainty by aggregating lo
 
 ## Background & Motivation
 
-- **State of the Field**: Uncertainty estimation in LLMs is critical for safe deployment. Existing approaches fall into two main categories: (1) multi-sampling methods (semantic entropy / self-consistency), which are computationally expensive, and (2) self-evaluation (verbalized confidence) methods, which are direct but rely solely on surface-level confidence scores from the final layer.
+- **Background**: Uncertainty estimation in LLMs is critical for safe deployment. Existing approaches fall into two main categories: (1) multi-sampling methods (semantic entropy / self-consistency), which are computationally expensive, and (2) self-evaluation (verbalized confidence) methods, which are direct but rely solely on surface-level confidence scores from the final layer.
 - **Limitations of Prior Work**: LLMs trained with RLHF tend to be overconfident—the softmax probabilities from the final layer have been "calibrated" to produce high-confidence outputs that please human evaluators, no longer reflecting the model's true uncertainty. Point estimates derived from the final layer alone discard rich internal information.
-- **Root Cause**: The model's internal representations (hidden states across layers) contain fine-grained signals about confidence, yet conventional self-evaluation methods decode a single confidence score only from the final layer—analogous to reading only the conclusion of a book while ignoring all supporting arguments.
-- **Starting Point**: Intermediate hidden states are found to naturally separate high-confidence from low-confidence predictions; this property is exploited to aggregate more robust uncertainty signals across multiple layers.
+- **Key Challenge**: The model's internal representations (hidden states across layers) contain fine-grained signals about confidence, yet conventional self-evaluation methods decode a single confidence score only from the final layer—analogous to reading only the conclusion of a book while ignoring all supporting arguments.
+- **Key Insight**: Intermediate hidden states are found to naturally separate high-confidence from low-confidence predictions; this property is exploited to aggregate more robust uncertainty signals across multiple layers.
 
 ## Method
 

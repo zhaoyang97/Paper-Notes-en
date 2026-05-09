@@ -27,18 +27,18 @@ This paper reframes copyright infringement mitigation in LLMs as an intrinsic se
 
 ## Background & Motivation
 
-**State of the Field**: LLMs may inadvertently reproduce copyrighted content (e.g., news articles, books) present in their training data, giving rise to numerous copyright lawsuits. Existing defenses fall into three categories: data preprocessing and filtering, training-time interventions (e.g., selective unlearning), and inference-time control. Inference-time methods are the most flexible, requiring no modification to model parameters.
+**Background**: LLMs may inadvertently reproduce copyrighted content (e.g., news articles, books) present in their training data, giving rise to numerous copyright lawsuits. Existing defenses fall into three categories: data preprocessing and filtering, training-time interventions (e.g., selective unlearning), and inference-time control. Inference-time methods are the most flexible, requiring no modification to model parameters.
 
 **Limitations of Prior Work**:
 - **Dependence on external artifacts**: Most existing inference-time methods rely on blocklist corpora or Bloom filters for n-gram-level string matching (e.g., MemFree), increasing deployment complexity.
 - **Surface-level similarity detection only**: Token-matching approaches cannot detect semantic-level paraphrased leakage.
 - **Potential degradation of fluency**: External filtering or resampling can disrupt normal generation quality.
 
-**Root Cause**: Copyright protection requires identifying and suppressing copyrighted content at the semantic level, yet the polysemanticity of LLM neurons makes it difficult to localize copyright-relevant dimensions within the hidden state space.
+**Key Challenge**: Copyright protection requires identifying and suppressing copyrighted content at the semantic level, yet the polysemanticity of LLM neurons makes it difficult to localize copyright-relevant dimensions within the hidden state space.
 
-**Paper Goals**: Can external filtering mechanisms be bypassed entirely, enabling LLMs to intrinsically avoid generating infringing content at the semantic space level?
+**Goal**: Can external filtering mechanisms be bypassed entirely, enabling LLMs to intrinsically avoid generating infringing content at the semantic space level?
 
-**Starting Point**: SAEs are used to map the LLM's dense hidden states into a high-dimensional sparse space, where each dimension approximately corresponds to a single semantic concept (monosemanticity), enabling identification and manipulation of copyright-relevant dimensions.
+**Key Insight**: SAEs are used to map the LLM's dense hidden states into a high-dimensional sparse space, where each dimension approximately corresponds to a single semantic concept (monosemanticity), enabling identification and manipulation of copyright-relevant dimensions.
 
 **Core Idea**: Identify copyright-sensitive subspaces within the SAE sparse space and clamp their activations to zero during decoding, achieving semantic-level suppression of copyrighted content.
 

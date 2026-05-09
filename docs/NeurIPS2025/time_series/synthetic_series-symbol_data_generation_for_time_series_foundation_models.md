@@ -28,7 +28,7 @@ This paper proposes the Series-Symbol (S²) data generation mechanism and SymTim
 
 ## Background & Motivation
 
-**State of the Field**: Time series foundation models (e.g., Moirai, Timer, TimeGPT) have made significant progress in recent years. However, compared to CV and NLP, the time series domain faces severe data scarcity and distributional imbalance. Existing large-scale time series datasets remain insufficient in domains such as finance and healthcare, and their scale is far smaller than benchmarks like ImageNet or WebText.
+**Background**: Time series foundation models (e.g., Moirai, Timer, TimeGPT) have made significant progress in recent years. However, compared to CV and NLP, the time series domain faces severe data scarcity and distributional imbalance. Existing large-scale time series datasets remain insufficient in domains such as finance and healthcare, and their scale is far smaller than benchmarks like ImageNet or WebText.
 
 **Limitations of Prior Work**: According to neural scaling laws, imbalanced training data degrades out-of-distribution generalization, leading to performance bias. Current time series pre-training strategies predominantly rely on real data collection, facing dual bottlenecks of data privacy constraints and incomplete domain coverage. Among the few methods that use synthetic data (e.g., Chronos), the generation strategies lack a theoretical characterization of the intrinsic nature of time series.
 

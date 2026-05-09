@@ -30,11 +30,11 @@ This paper proposes Aether, a unified world model that post-trains the CogVideoX
 
 ## Background & Motivation
 
-- **State of the Field**: World models require three core capabilities—perception (4D reconstruction), prediction (action-conditioned generation), and planning (goal-conditioned reasoning)—yet existing methods typically address only one of these.
+- **Background**: World models require three core capabilities—perception (4D reconstruction), prediction (action-conditioned generation), and planning (goal-conditioned reasoning)—yet existing methods typically address only one of these.
 - **Limitations of Prior Work**: (1) Independent modeling of each capability lacks synergy; (2) real-world 4D annotated data is extremely scarce; (3) action representations are heterogeneous (keyboard inputs / robot actions / camera trajectories).
-- **Root Cause**: The demand for unifying three capabilities conflicts with the heterogeneity of data and representations.
-- **Paper Goals**: Construct a unified framework that simultaneously supports reconstruction, prediction, and planning.
-- **Starting Point**: Synthetic data + camera trajectories as a unified action representation + multi-task post-training.
+- **Key Challenge**: The demand for unifying three capabilities conflicts with the heterogeneity of data and representations.
+- **Goal**: Construct a unified framework that simultaneously supports reconstruction, prediction, and planning.
+- **Key Insight**: Synthetic data + camera trajectories as a unified action representation + multi-task post-training.
 - **Core Idea**: Post-train a video diffusion model on synthetic 4D data, using camera trajectories as the geometric action space to unify reconstruction, prediction, and planning.
 
 ## Method

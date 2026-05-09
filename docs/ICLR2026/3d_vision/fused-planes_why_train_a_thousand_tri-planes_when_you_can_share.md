@@ -28,11 +28,11 @@ This paper proposes Fused-Planes, which decomposes the Tri-Plane representation 
 
 ## Background & Motivation
 
-**State of the Field**: Tri-Planar NeRF is a powerful 3D representation compatible with 2D vision models, but large-scale scene reconstruction requires independent training for each object — thousands of objects entail thousands of training runs, resulting in prohibitive computational cost.
+**Background**: Tri-Planar NeRF is a powerful 3D representation compatible with 2D vision models, but large-scale scene reconstruction requires independent training for each object — thousands of objects entail thousands of training runs, resulting in prohibitive computational cost.
 
 **Limitations of Prior Work**: (a) Independent training ignores the structural similarities shared across objects of the same category; (b) existing shared-representation methods (e.g., CodeNeRF) either scale poorly (C3-NeRF handles only 20 scenes) or lack the advantages of a planar structure.
 
-**Starting Point**: 3D objects within the same category (e.g., cars) share substantial geometric and texture patterns. Decomposing each object's Tri-Plane into a weighted combination of shared bases plus an object-specific residual can significantly reduce redundant computation.
+**Key Insight**: 3D objects within the same category (e.g., cars) share substantial geometric and texture patterns. Decomposing each object's Tri-Plane into a weighted combination of shared bases plus an object-specific residual can significantly reduce redundant computation.
 
 **Core Idea**: $T_i = T_i^{mic} \oplus (W_i \cdot \mathcal{B})$ — each object's Tri-Plane is composed of a weighted sum of shared basis planes (macro) and object-specific micro features (micro).
 

@@ -26,15 +26,15 @@ content_hash: b36067dc32257541
 This paper proposes a subspace-intervened path patching method for fine-grained causal analysis of the translation mechanism in LLMs. The study finds that translation is driven by a sparse set of attention heads comprising fewer than 5% of all heads, categorized into three functional roles: source heads, indicator heads, and positional heads. MLP layers integrate these features into an English-centric intermediate representation, and fine-tuning only 64 critical heads achieves performance comparable to full-parameter fine-tuning.
 
 ## Background & Motivation
-**State of the Field**: LLMs exhibit strong multilingual translation capabilities, yet the internal core translation mechanism—even for basic word-level translation—remains poorly understood. Prior analyses have largely remained at the level of surface observations (neuron activation patterns, intermediate representation visualization) rather than revealing causal computational mechanisms.
+**Background**: LLMs exhibit strong multilingual translation capabilities, yet the internal core translation mechanism—even for basic word-level translation—remains poorly understood. Prior analyses have largely remained at the level of surface observations (neuron activation patterns, intermediate representation visualization) rather than revealing causal computational mechanisms.
 
 **Limitations of Prior Work**: (1) Conventional path patching intervenes on entire activation vectors, resulting in coarse granularity and noisy estimates; (2) systematic study of the translation mechanism in decoder-only LLMs is lacking (prior work focused on encoder-decoder architectures); (3) it is unclear which attention heads serve which functions or how MLP layers participate in translation.
 
-**Root Cause**: There is a need to precisely localize translation-relevant causal effects within the high-dimensional activation space of LLMs while filtering out activation dimensions unrelated to translation.
+**Key Challenge**: There is a need to precisely localize translation-relevant causal effects within the high-dimensional activation space of LLMs while filtering out activation dimensions unrelated to translation.
 
-**Paper Goals**: Systematically answer three questions: which components are critical for translation? What behavioral patterns do these components exhibit? Can fine-tuning these components improve translation performance?
+**Goal**: Systematically answer three questions: which components are critical for translation? What behavioral patterns do these components exhibit? Can fine-tuning these components improve translation performance?
 
-**Starting Point**: The linear representation hypothesis—linear subspaces of activation vectors constitute the most interpretable model components. A "translation-oriented subspace" is extracted by contrasting positive/negative data pairs (with/without translation logic), and interventions are applied exclusively within this subspace.
+**Key Insight**: The linear representation hypothesis—linear subspaces of activation vectors constitute the most interpretable model components. A "translation-oriented subspace" is extracted by contrasting positive/negative data pairs (with/without translation logic), and interventions are applied exclusively within this subspace.
 
 **Core Idea**: Perform path patching within the translation-oriented subspace to precisely localize critical translation components, uncovering a sparse translation circuit consisting of three functionally differentiated attention head types and English-centric MLP processing.
 

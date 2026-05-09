@@ -28,16 +28,16 @@ PointMAC is the first framework to introduce meta-auxiliary learning and test-ti
 
 ## Background & Motivation
 
-**State of the Field**: Point cloud completion aims to recover complete shapes from partial inputs, which is critical for robotics and autonomous driving. Existing methods (PCN, SeedFormer, PointAttn, ProxyFormer) perform well on training distributions but generalize poorly to novel missing patterns and sensor noise.
+**Background**: Point cloud completion aims to recover complete shapes from partial inputs, which is critical for robotics and autonomous driving. Existing methods (PCN, SeedFormer, PointAttn, ProxyFormer) perform well on training distributions but generalize poorly to novel missing patterns and sensor noise.
 
 **Limitations of Prior Work**:
    - **Static inference**: Existing models fix parameters at inference time and cannot adapt to the unique geometry and noise patterns of individual inputs.
    - **Dataset bias**: Synthetic data lacks structural diversity, and real-scan datasets are limited in scale — causing models to over-rely on structural priors while ignoring input-specific cues.
    - The result is **generic completion** (following training priors) rather than **sample-specific completion** (adapting to the current input).
 
-**Root Cause**: Completion requires simultaneously leveraging priors (what shapes typically look like) and input-specific information (what is currently observed).
+**Key Challenge**: Completion requires simultaneously leveraging priors (what shapes typically look like) and input-specific information (what is currently observed).
 
-**Starting Point**: Test-time adaptation (TTA) — treating each point cloud as an independent "domain" and updating the encoder online using self-supervised signals.
+**Key Insight**: Test-time adaptation (TTA) — treating each point cloud as an independent "domain" and updating the encoder online using self-supervised signals.
 
 **Core Idea**: MAML-based meta-training ensures that gradient directions from auxiliary tasks align with the primary task (addressing the auxiliary–primary task misalignment in conventional TTA), so that optimizing auxiliary objectives at test time reliably improves completion quality.
 

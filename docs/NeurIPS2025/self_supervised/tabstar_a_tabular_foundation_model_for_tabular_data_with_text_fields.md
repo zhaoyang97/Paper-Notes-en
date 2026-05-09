@@ -28,15 +28,15 @@ TabSTAR is a foundation model designed specifically for tabular data with text f
 
 ## Background & Motivation
 
-**State of the Field**: Tabular learning has long been dominated by GBDTs (XGBoost/LightGBM/CatBoost). Tabular foundation models (TFMs) such as TabPFN-v2 have begun to outperform GBDTs on medium-scale datasets, yet they still rely on static embeddings when handling text fields—no differently from GBDTs.
+**Background**: Tabular learning has long been dominated by GBDTs (XGBoost/LightGBM/CatBoost). Tabular foundation models (TFMs) such as TabPFN-v2 have begun to outperform GBDTs on medium-scale datasets, yet they still rely on static embeddings when handling text fields—no differently from GBDTs.
 
 **Limitations of Prior Work**: (a) Real-world tabular data frequently contains free-text fields (e.g., medical records, product descriptions), yet mainstream benchmarks largely ignore such data—half of the benchmark datasets are over 20 years old. (b) Existing methods encode text using frozen embedding models, producing **target-agnostic** static representations—the same text embedding is used regardless of whether the target is "patient discharge" or "treatment cost." (c) TFMs typically require dataset-specific output layers (e.g., TP-BERTa trains separate models for classification and regression), which limits cross-dataset learning.
 
-**Root Cause**: Semantic information in text fields is critical for prediction, yet effective utilization requires **target-aware** representations—the same medical report should surface different signals for different prediction tasks. Existing methods overlook this.
+**Key Challenge**: Semantic information in text fields is critical for prediction, yet effective utilization requires **target-aware** representations—the same medical report should surface different signals for different prediction tasks. Existing methods overlook this.
 
-**Paper Goals**: To construct a foundation model that processes tabular data with text fields end-to-end, supports cross-dataset transfer learning, and requires no dataset-specific parameters.
+**Goal**: To construct a foundation model that processes tabular data with text fields end-to-end, supports cross-dataset transfer learning, and requires no dataset-specific parameters.
 
-**Starting Point**: Unfreeze the text encoder to optimize text representations end-to-end with respect to the prediction target, and introduce target-aware tokens by treating each possible value of the target variable as an input token, enabling target-aware representations to emerge through feature–target interaction.
+**Key Insight**: Unfreeze the text encoder to optimize text representations end-to-end with respect to the prediction target, and introduce target-aware tokens by treating each possible value of the target variable as an input token, enabling target-aware representations to emerge through feature–target interaction.
 
 **Core Idea**: Unfrozen text encoder + target-aware tokens + elimination of dataset-specific parameters = the first foundation model to comprehensively outperform both GBDTs and TabPFN-v2 on text-inclusive tabular classification tasks.
 

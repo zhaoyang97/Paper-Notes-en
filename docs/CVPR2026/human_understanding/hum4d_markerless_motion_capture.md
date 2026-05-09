@@ -29,15 +29,15 @@ This paper introduces the HUM4D dataset, covering complex single- and multi-pers
 
 ## Background & Motivation
 
-**State of the Field**: Markerless human motion capture has achieved remarkable progress, with continuously decreasing errors on benchmark datasets. Datasets such as Human3.6M and CMU Panoptic have driven advances in this field.
+**Background**: Markerless human motion capture has achieved remarkable progress, with continuously decreasing errors on benchmark datasets. Datasets such as Human3.6M and CMU Panoptic have driven advances in this field.
 
 **Limitations of Prior Work**: High benchmark performance does not translate to robustness on real-world videos. Existing datasets impose structural constraints: limited clothing variation, controlled indoor environments, moderate motion dynamics, restricted occlusion levels, and predominantly single-person capture.
 
-**Root Cause**: A persistent domain gap exists between benchmark performance and deployment performance. Widely adopted datasets (Human3.6M, CMU Panoptic, HUMAN4D) are approaching saturation in terms of complexity.
+**Key Challenge**: A persistent domain gap exists between benchmark performance and deployment performance. Widely adopted datasets (Human3.6M, CMU Panoptic, HUMAN4D) are approaching saturation in terms of complexity.
 
-**Paper Goals**: To construct a dataset that reflects real-world complexity—multi-person dynamic interactions, severe occlusions, rapid identity swaps, and varying inter-subject distances—and to conduct comprehensive benchmark evaluations.
+**Goal**: To construct a dataset that reflects real-world complexity—multi-person dynamic interactions, severe occlusions, rapid identity swaps, and varying inter-subject distances—and to conduct comprehensive benchmark evaluations.
 
-**Starting Point**: Acquiring such a dataset is non-trivial, requiring multi-sensor synchronization, precise calibration, and professional marker-based motion capture alignment.
+**Key Insight**: Acquiring such a dataset is non-trivial, requiring multi-sensor synchronization, precise calibration, and professional marker-based motion capture alignment.
 
 **Core Idea**: Leverage the Vicon system to provide accurate ground truth, and systematically evaluate the generalization capability of state-of-the-art methods under genuinely complex real-world scenarios.
 

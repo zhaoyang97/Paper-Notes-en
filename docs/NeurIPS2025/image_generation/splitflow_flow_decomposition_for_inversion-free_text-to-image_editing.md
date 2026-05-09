@@ -31,9 +31,9 @@ SplitFlow decomposes a target prompt into multiple sub-prompts, computes an inde
 
 Rectified-flow-based image editing methods have become mainstream: RF-Inversion, RF-Solver, FireFlow, and others map real images back to the latent space via ODE inversion before editing. However, the inversion process is imprecise, and accumulated errors lead to semantic drift and visual distortion. FlowEdit proposes an inversion-free approach that directly manipulates velocity field differences, but editing quality remains limited.
 
-**Root Cause**: When the target prompt contains multiple attributes (e.g., "a German Shepherd wearing black sunglasses with its mouth open jumping on the grass"), guiding a single editing trajectory over all attributes causes **gradient entanglement and directional conflicts**, resulting in insufficient editing or excessive distortion.
+**Key Challenge**: When the target prompt contains multiple attributes (e.g., "a German Shepherd wearing black sunglasses with its mouth open jumping on the grass"), guiding a single editing trajectory over all attributes causes **gradient entanglement and directional conflicts**, resulting in insufficient editing or excessive distortion.
 
-**Starting Point**: Inspired by gradient conflict resolution in multi-task learning, the paper decomposes a semantically complex target prompt into multiple sub-prompts, computes independent editing flows for each, and then adaptively aggregates them to simultaneously ensure editing diversity and global consistency.
+**Key Insight**: Inspired by gradient conflict resolution in multi-task learning, the paper decomposes a semantically complex target prompt into multiple sub-prompts, computes independent editing flows for each, and then adaptively aggregates them to simultaneously ensure editing diversity and global consistency.
 
 ## Method
 

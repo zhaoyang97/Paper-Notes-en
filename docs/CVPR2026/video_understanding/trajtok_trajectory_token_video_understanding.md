@@ -29,15 +29,15 @@ This paper proposes TrajTok—the first end-to-end differentiable trajectory-bas
 
 ## Background & Motivation
 
-**State of the Field**: The dominant approach in video Transformers is to partition videos into spatiotemporal patches to generate tokens; however, token count grows linearly or quadratically with video length, leading to severe redundancy. TrajViT first demonstrated that grouping tokens by object trajectories outperforms patch-based tokens.
+**Background**: The dominant approach in video Transformers is to partition videos into spatiotemporal patches to generate tokens; however, token count grows linearly or quadratically with video length, leading to severe redundancy. TrajViT first demonstrated that grouping tokens by object trajectories outperforms patch-based tokens.
 
 **Limitations of Prior Work**: TrajViT relies on an external SAM+SAM2 segmentation-tracking pipeline, which introduces three fundamental limitations: (1) the pipeline is slow and non-differentiable, operating as an independent preprocessing step; (2) segmentation granularity is fixed by a general-purpose segmentation model and cannot adapt to downstream task requirements (e.g., body-part-level segmentation for dance understanding vs. person-level segmentation for formation recognition); (3) performance gains diminish as data scale increases—poor scalability.
 
-**Root Cause**: While the superiority of the trajectory token paradigm has been established, the method for generating trajectories (i.e., the external pipeline) becomes the bottleneck for both performance and efficiency.
+**Key Challenge**: While the superiority of the trajectory token paradigm has been established, the method for generating trajectories (i.e., the external pipeline) becomes the bottleneck for both performance and efficiency.
 
-**Paper Goals**: To design an end-to-end differentiable, lightweight, and efficient trajectory tokenizer that decouples token count from video duration and allows segmentation granularity to be driven by downstream task objectives.
+**Goal**: To design an end-to-end differentiable, lightweight, and efficient trajectory tokenizer that decouples token count from video duration and allows segmentation granularity to be driven by downstream task objectives.
 
-**Starting Point**: Trajectory generation is reformulated as an implicit spatiotemporal clustering problem—rather than pursuing pixel-level segmentation accuracy, the focus shifts to optimizing semantic-level grouping capability.
+**Key Insight**: Trajectory generation is reformulated as an implicit spatiotemporal clustering problem—rather than pursuing pixel-level segmentation accuracy, the focus shifts to optimizing semantic-level grouping capability.
 
 **Core Idea**: Learnable queries perform implicit spatiotemporal clustering to generate trajectory masks, jointly trained end-to-end with downstream objectives, allowing task targets to inversely shape segmentation granularity.
 

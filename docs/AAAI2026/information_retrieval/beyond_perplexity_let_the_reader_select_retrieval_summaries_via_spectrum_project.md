@@ -27,15 +27,15 @@ This paper proposes Spectrum Projection Score (SPS), a training-free metric that
 
 ## Background & Motivation
 
-**State of the Field**: In RAG, retrieved documents must be compressed or summarized into more compact forms before being fed into the reader LLM. Existing approaches commonly use perplexity (PPL) to assess summary quality, under the assumption that lower perplexity implies higher quality.
+**Background**: In RAG, retrieved documents must be compressed or summarized into more compact forms before being fed into the reader LLM. Existing approaches commonly use perplexity (PPL) to assess summary quality, under the assumption that lower perplexity implies higher quality.
 
 **Limitations of Prior Work**: PPL measures token "typicality" rather than semantic alignment — a summary may be fluent yet poorly aligned with the reader's representation space. Empirical analysis reveals that the correlation between PPL and downstream QA performance is near zero or even negative.
 
-**Root Cause**: A high-quality summary is not one that the reader can easily generate, but one that enables the reader's internal representation space to fully capture the contained information.
+**Key Challenge**: A high-quality summary is not one that the reader can easily generate, but one that enables the reader's internal representation space to fully capture the contained information.
 
-**Paper Goals**: Design a training-free summary quality metric that is highly correlated with downstream QA performance, and build an inference-time summary selection/compression framework upon it.
+**Goal**: Design a training-free summary quality metric that is highly correlated with downstream QA performance, and build an inference-time summary selection/compression framework upon it.
 
-**Starting Point**: Starting from the reader LLM's embedding matrix, SVD decomposition is applied to obtain the model's "principal representation subspace," and the residual of a summary outside this subspace is measured.
+**Key Insight**: Starting from the reader LLM's embedding matrix, SVD decomposition is applied to obtain the model's "principal representation subspace," and the residual of a summary outside this subspace is measured.
 
 **Core Idea**: Summary quality equals the projection residual of its token embeddings onto the reader's principal subspace — the smaller the residual, the better.
 

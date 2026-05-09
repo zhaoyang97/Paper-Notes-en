@@ -28,20 +28,20 @@ EdgeDiT proposes a hardware-aware optimization framework for Diffusion Transform
 
 ## Background & Motivation
 
-1. **State of the Field**: Diffusion Transformers (DiT) have emerged as a new paradigm for high-fidelity image generation, replacing U-Net backbones with Vision Transformers for improved scalability. Subsequent works such as MDT (masked modeling) and SiT (interpolant Transformer) have further advanced performance.
+1. **Background**: Diffusion Transformers (DiT) have emerged as a new paradigm for high-fidelity image generation, replacing U-Net backbones with Vision Transformers for improved scalability. Subsequent works such as MDT (masked modeling) and SiT (interpolant Transformer) have further advanced performance.
 
 2. **Limitations of Prior Work**:
    - Existing DiT models impose enormous computational and memory demands, making them infeasible on resource-constrained edge devices.
    - Cloud-based inference is viable but raises privacy concerns, network dependency, and increased energy consumption.
    - Theoretical compute metrics (FLOPs/GMACs) do not reliably predict actual on-device latency—NPUs are specifically optimized for certain operations (e.g., GEMM), so reducing arithmetic computation does not proportionally reduce latency.
 
-3. **Root Cause**: The strong generative capability of DiT stems from large-scale parameters and deep architectures, yet on-device deployment demands low latency and small memory footprint. Compressing the model while preserving generation quality is the core challenge, and actual hardware characteristics must be accounted for rather than optimizing theoretical metrics alone.
+3. **Key Challenge**: The strong generative capability of DiT stems from large-scale parameters and deep architectures, yet on-device deployment demands low latency and small memory footprint. Compressing the model while preserving generation quality is the core challenge, and actual hardware characteristics must be accounted for rather than optimizing theoretical metrics alone.
 
-4. **Paper Goals**:
+4. **Goal**:
    - How to systematically discover efficient DiT architectures suited to mobile NPUs?
    - How to avoid full training of every candidate architecture in the search space?
 
-5. **Starting Point**: Decompose the DiT architecture into replaceable, hardware-friendly proxy blocks; rapidly train proxies via hierarchical knowledge distillation; then apply multi-objective Bayesian optimization to identify Pareto-optimal architectures in the quality–latency space.
+5. **Key Insight**: Decompose the DiT architecture into replaceable, hardware-friendly proxy blocks; rapidly train proxies via hierarchical knowledge distillation; then apply multi-objective Bayesian optimization to identify Pareto-optimal architectures in the quality–latency space.
 
 6. **Core Idea**: A three-stage decompose–distill–search pipeline: decompose DiT into a proxy block search space, efficiently train each proxy block with feature-level knowledge distillation, and apply Bayesian optimization to find a lightweight architecture that is Pareto-optimal in FID–latency.
 

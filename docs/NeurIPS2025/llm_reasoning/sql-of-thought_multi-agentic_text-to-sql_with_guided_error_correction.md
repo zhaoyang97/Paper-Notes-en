@@ -28,13 +28,13 @@ This paper proposes SQL-of-Thought, a multi-agent Text-to-SQL framework that dec
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-SQL has evolved from sequence-to-sequence models to LLM prompting methods (DIN-SQL, DAIL-SQL), with multi-agent approaches (MAC-SQL, Chase SQL) further improving modularity and accuracy.
+**Background**: Text-to-SQL has evolved from sequence-to-sequence models to LLM prompting methods (DIN-SQL, DAIL-SQL), with multi-agent approaches (MAC-SQL, Chase SQL) further improving modularity and accuracy.
 
 **Limitations of Prior Work**: (a) Existing error correction relies solely on execution feedback — 95–99% of generated SQL is syntactically correct, yet logical errors (e.g., wrong JOIN types, missing aggregations) cannot be detected via execution signals; (b) unguided reasoning may introduce new errors; (c) there is no systematic error taxonomy to guide correction.
 
-**Root Cause**: Syntactic correctness ≠ semantic correctness — structured error diagnosis beyond execution feedback is required.
+**Key Challenge**: Syntactic correctness ≠ semantic correctness — structured error diagnosis beyond execution feedback is required.
 
-**Starting Point**: Design a 31-category error taxonomy, combined with CoT reasoning in the correction loop to precisely locate and repair logical errors.
+**Key Insight**: Design a 31-category error taxonomy, combined with CoT reasoning in the correction loop to precisely locate and repair logical errors.
 
 ## Method
 

@@ -28,15 +28,15 @@ This paper proposes a Multi-modal 3D Scene Graph (M3DSG) that replaces conventio
 
 ## Background & Motivation
 
-**State of the Field**: Embodied navigation requires robots to autonomously explore unknown environments and reach targets specified by object category, textual description, or reference image. Real-world deployment demands open-vocabulary generalization and low training overhead, making zero-shot approaches more attractive than task-specific RL training. Recent zero-shot methods based on explicit 3D scene graphs with LLM reasoning (e.g., SG-Nav, ConceptGraph) have achieved competitive performance on standard benchmarks.
+**Background**: Embodied navigation requires robots to autonomously explore unknown environments and reach targets specified by object category, textual description, or reference image. Real-world deployment demands open-vocabulary generalization and low training overhead, making zero-shot approaches more attractive than task-specific RL training. Recent zero-shot methods based on explicit 3D scene graphs with LLM reasoning (e.g., SG-Nav, ConceptGraph) have achieved competitive performance on standard benchmarks.
 
 **Limitations of Prior Work**: Conventional 3D scene graphs over-abstract inter-object relationships into simple text labels (e.g., "top", "beside"), causing three critical issues: (1) **Costly construction** — frequent MLLM calls to infer textual relations generate substantial token and time overhead; (2) **Loss of visual evidence** — converting visual observations into pure-text graphs discards visual information, introducing ambiguity and sensitivity to perception errors; (3) **Vocabulary constraints** — novel categories outside the predefined vocabulary cannot be represented, limiting generalization.
 
-**Root Cause**: Scene graphs must encode rich spatial-semantic relationships to support VLM reasoning, yet pure text edges irreversibly compress visual information, while retaining all raw images causes token explosion at inference time. Moreover, existing methods neglect the "last-mile" problem — knowing where a target is does not guarantee finding a suitable navigation viewpoint toward it.
+**Key Challenge**: Scene graphs must encode rich spatial-semantic relationships to support VLM reasoning, yet pure text edges irreversibly compress visual information, while retaining all raw images causes token explosion at inference time. Moreover, existing methods neglect the "last-mile" problem — knowing where a target is does not guarantee finding a suitable navigation viewpoint toward it.
 
-**Paper Goals**: To construct a 3D scene graph that preserves visual information while remaining efficient and scalable, and to leverage it for robust open-vocabulary embodied navigation in a zero-shot setting.
+**Goal**: To construct a 3D scene graph that preserves visual information while remaining efficient and scalable, and to leverage it for robust open-vocabulary embodied navigation in a zero-shot setting.
 
-**Starting Point**: Replace text relation edges with dynamically assigned images, and employ a greedy subgraph selection algorithm to compress each VLM query to an average of only ~4 images; additionally introduce a visibility scoring mechanism to address last-mile viewpoint selection.
+**Key Insight**: Replace text relation edges with dynamically assigned images, and employ a greedy subgraph selection algorithm to compress each VLM query to an average of only ~4 images; additionally introduce a visibility scoring mechanism to address last-mile viewpoint selection.
 
 **Core Idea**: Using images rather than text as relation edges in the scene graph preserves visual evidence while avoiding frequent MLLM calls; combined with subgraph selection, this enables efficient inference.
 

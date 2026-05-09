@@ -27,15 +27,15 @@ content_hash: 2ce5b2680b800caa
 This paper proposes the PROGRESS framework, which dynamically selects the most informative training samples by tracking a VLM's learning progress across automatically discovered multimodal concept clusters. Using only 16–20% of annotated data, PROGRESS achieves 99–100% of full-data performance with shorter total training time.
 
 ## Background & Motivation
-**State of the Field**: Instruction tuning of VLMs relies on large-scale, high-quality annotated data and substantial compute, leading to increasingly high costs.
+**Background**: Instruction tuning of VLMs relies on large-scale, high-quality annotated data and substantial compute, leading to increasingly high costs.
 
 **Limitations of Prior Work**: (a) Static selection methods (CLIP-Score, EL2N, Perplexity, etc.) select data once and cannot adapt to the model's learning progress; (b) gradient-based methods (ICONS) incur prohibitive computational cost (hundreds of GPU hours), defeating the purpose of efficient training; (c) COINCIDE requires a separately trained auxiliary VLM, full-dataset annotation, and manual inspection of activations.
 
-**Root Cause**: A large fraction of training samples are redundant or uninformative, yet static methods cannot identify this dynamically during training.
+**Key Challenge**: A large fraction of training samples are redundant or uninformative, yet static methods cannot identify this dynamically during training.
 
-**Paper Goals**: Can a VLM dynamically determine "what to learn next" based on its own learning state, acquiring annotations only when necessary?
+**Goal**: Can a VLM dynamically determine "what to learn next" based on its own learning state, acquiring annotations only when necessary?
 
-**Starting Point**: Inspired by curriculum learning and self-paced learning — a model should focus on skills that are "not yet mastered but rapidly improving," avoiding wasted budget on already-learned or excessively difficult samples.
+**Key Insight**: Inspired by curriculum learning and self-paced learning — a model should focus on skills that are "not yet mastered but rapidly improving," avoiding wasted budget on already-learned or excessively difficult samples.
 
 **Core Idea**: Track the relative rate of change in learning progress $\Delta_k$ and prioritize sampling from concept clusters exhibiting the fastest improvement.
 

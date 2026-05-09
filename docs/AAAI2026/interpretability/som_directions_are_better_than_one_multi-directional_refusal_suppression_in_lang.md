@@ -28,18 +28,18 @@ This paper demonstrates that refusal behavior in LLMs is not encoded by a single
 
 ## Background & Motivation
 
-**State of the Field**: With the rise of mechanistic interpretability, researchers have found that safety refusal behavior in LLMs can be encoded as directions in representation space. Arditi et al. (2024) proposed the pioneering single direction (SD) method—computing the centroid difference between harmful and harmless prompt representations as a "refusal direction" and ablating it from the model to bypass safety alignment.
+**Background**: With the rise of mechanistic interpretability, researchers have found that safety refusal behavior in LLMs can be encoded as directions in representation space. Arditi et al. (2024) proposed the pioneering single direction (SD) method—computing the centroid difference between harmful and harmless prompt representations as a "refusal direction" and ablating it from the model to bypass safety alignment.
 
 **Limitations of Prior Work**:
 - **Oversimplified single-direction assumption**: Recent mechanistic interpretability research shows that semantic and functional concepts (e.g., days of the week, trigonometric functions) are not encoded by a single linear direction but span low-dimensional manifolds in high-dimensional space.
 - **Limited effectiveness of SD**: On some models, the attack success rate (ASR) after SD ablation is near 0% (e.g., ASR = 0% for SD on LLaMA2-7B), indicating that a single direction is far from sufficient to capture the full refusal behavior.
 - **Orthogonal multi-direction methods (e.g., RDO) are also insufficient**: Although multiple orthogonal directions are extracted, only one direction is ablated at a time, ignoring synergistic effects among directions.
 
-**Root Cause**: There is a fundamental conflict between the multifaceted nature of refusal behavior—where refusals to different categories of harmful content may be encoded in different directions—and the inherent limitation of existing single-direction approaches.
+**Key Challenge**: There is a fundamental conflict between the multifaceted nature of refusal behavior—where refusals to different categories of harmful content may be encoded in different directions—and the inherent limitation of existing single-direction approaches.
 
-**Paper Goals**: To systematically discover multiple refusal directions in representation space and leverage their combinations for more effective refusal suppression.
+**Goal**: To systematically discover multiple refusal directions in representation space and leverage their combinations for more effective refusal suppression.
 
-**Starting Point**: Utilizing the topology-preserving and multi-neuron properties of SOM to model the manifold structure of harmful prompt representations, thereby extracting multiple directions.
+**Key Insight**: Utilizing the topology-preserving and multi-neuron properties of SOM to model the manifold structure of harmful prompt representations, thereby extracting multiple directions.
 
 **Core Idea**: (1) Theoretically prove that a single-neuron SOM converges to the centroid (i.e., SD is a special case of SOM); (2) Multi-neuron SOM captures the local structure of the manifold, with each neuron subtracting the harmless centroid to yield a refusal direction; (3) Bayesian optimization searches for the optimal combination of $k$ directions from the candidate pool for ablation.
 

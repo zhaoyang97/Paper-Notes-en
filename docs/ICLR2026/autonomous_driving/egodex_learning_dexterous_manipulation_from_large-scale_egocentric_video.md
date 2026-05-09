@@ -28,15 +28,15 @@ Apple collected 829 hours of egocentric video paired with 3D hand joint tracking
 
 ## Background & Motivation
 
-**State of the Field**: Robot imitation learning suffers from severe data scarcity. Unlike NLP and 2D vision, which benefit from internet-scale corpora, dexterous manipulation lacks large-scale datasets. The dominant data collection paradigm is teleoperation, as exemplified by Open X-Embodiment and DROID.
+**Background**: Robot imitation learning suffers from severe data scarcity. Unlike NLP and 2D vision, which benefit from internet-scale corpora, dexterous manipulation lacks large-scale datasets. The dominant data collection paradigm is teleoperation, as exemplified by Open X-Embodiment and DROID.
 
 **Limitations of Prior Work**: Teleoperation is bottlenecked by physical hardware constraints and is difficult to scale further; collected data is tied to specific robot hardware and generalizes poorly. In-the-wild internet videos (e.g., Ego4D) offer scale but lack precise 3D hand pose annotations, making them unsuitable for training dexterous manipulation policies.
 
-**Root Cause**: A fundamental tension exists between scalability and annotation precision — teleoperation provides accurate action labels but does not scale, while in-the-wild videos scale but lack the fine-grained dexterous annotations required.
+**Key Challenge**: A fundamental tension exists between scalability and annotation precision — teleoperation provides accurate action labels but does not scale, while in-the-wild videos scale but lack the fine-grained dexterous annotations required.
 
-**Paper Goals**: To construct a large-scale dataset that is both passively scalable and equipped with precise 3D hand joint annotations, while establishing a standardized benchmark for evaluating dexterous manipulation capabilities.
+**Goal**: To construct a large-scale dataset that is both passively scalable and equipped with precise 3D hand joint annotations, while establishing a standardized benchmark for evaluating dexterous manipulation capabilities.
 
-**Starting Point**: Apple Vision Pro's multi-camera array, on-device SLAM, and ARKit are leveraged to track the 3D positions and orientations of 25 joints per hand in real time, enabling simultaneous data collection and annotation during natural user interactions.
+**Key Insight**: Apple Vision Pro's multi-camera array, on-device SLAM, and ARKit are leveraged to track the 3D positions and orientations of 25 joints per hand in real time, enabling simultaneous data collection and annotation during natural user interactions.
 
 **Core Idea**: Replace the unscalable teleoperation paradigm with large-scale egocentric video and accurate hand pose data passively collected via wearable XR devices.
 

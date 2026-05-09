@@ -34,7 +34,7 @@ Current VLA models (e.g., π₀, OpenVLA, GR00T-N1) demonstrate strong semantic 
 2. **Lack of phase-wise force awareness**: Contact-rich tasks typically comprise 3–5 sub-task phases (e.g., "approach → contact → apply force → release"), each imposing fundamentally different force requirements. Existing VLAs cannot reason about phase-specific force targets or use force feedback to assess sub-task completion progress.
 3. **Absence of coupled force-position control**: From a control-theoretic perspective, the controllability matrix of a pure position control system has rank 6 (controlling only 6D pose), which is insufficient to independently control the 12-dimensional joint force-position space — force remains a passive output of environmental dynamics rather than an independently controllable variable.
 
-**Root Cause**: Humans rely on high-level visual-language reasoning to determine phase-specific goals while integrating real-time force feedback for adaptive force-position regulation. Existing VLAs lack a unified mechanism for this multi-scale force awareness and active force interaction.
+**Key Challenge**: Humans rely on high-level visual-language reasoning to determine phase-specific goals while integrating real-time force feedback for adaptive force-position regulation. Existing VLAs lack a unified mechanism for this multi-scale force awareness and active force interaction.
 
 ## Core Problem
 How to enable a VLA model to (1) build force-aware task concepts across different task phases and track phase progress, (2) adaptively fuse high-level task semantics with real-time interaction forces, and (3) realize genuine closed-loop hybrid force-position control rather than treating force merely as an auxiliary percept?

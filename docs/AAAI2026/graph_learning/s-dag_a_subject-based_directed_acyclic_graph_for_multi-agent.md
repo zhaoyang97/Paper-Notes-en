@@ -28,13 +28,13 @@ This paper proposes S-DAG, which uses a GNN to identify relevant subjects and th
 
 ## Background & Motivation
 
-**State of the Field**: Existing MoE/routing methods (e.g., MoE Router, GraphRouter) select models at the **task level**—choosing one model or Top-k models for an entire question. However, many questions span multiple subjects (e.g., a problem involving physics, mathematics, and chemistry simultaneously), making task-level routing too coarse-grained.
+**Background**: Existing MoE/routing methods (e.g., MoE Router, GraphRouter) select models at the **task level**—choosing one model or Top-k models for an entire question. However, many questions span multiple subjects (e.g., a problem involving physics, mathematics, and chemistry simultaneously), making task-level routing too coarse-grained.
 
 **Limitations of Prior Work**: Multi-Agent Debate allows multiple models to deliberate but does not differentiate their respective expertise; Symbolic-MoE selects Top-k models by skill but ignores inter-subject dependencies (e.g., solving a physics problem may require mathematical derivation first).
 
-**Root Cause**: Three issues must be addressed simultaneously: (a) identifying which subjects a question involves; (b) determining the information flow among subjects (which supports which); (c) matching each subject to the most capable model.
+**Key Challenge**: Three issues must be addressed simultaneously: (a) identifying which subjects a question involves; (b) determining the information flow among subjects (which supports which); (c) matching each subject to the most capable model.
 
-**Starting Point**: Model multi-subject problems as a DAG—subjects as nodes, dependencies as directed edges (supporting → dominant)—and assign the best expert model to each node.
+**Key Insight**: Model multi-subject problems as a DAG—subjects as nodes, dependencies as directed edges (supporting → dominant)—and assign the best expert model to each node.
 
 **Core Idea**: GNN-based subject-level DAG construction + model capability profiling and matching + DAG topological-order multi-agent collaborative reasoning.
 

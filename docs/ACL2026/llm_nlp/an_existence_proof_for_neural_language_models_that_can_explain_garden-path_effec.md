@@ -29,15 +29,15 @@ By fine-tuning neural language models on garden-path sentences, this paper demon
 
 ## Background & Motivation
 
-**State of the Field**: Surprisal Theory posits that the difficulty of human sentence processing is linearly related to the negative log-probability (surprisal) of each word. Researchers have used language models as proxies for human predictions to validate this hypothesis.
+**Background**: Surprisal Theory posits that the difficulty of human sentence processing is linearly related to the negative log-probability (surprisal) of each word. Researchers have used language models as proxies for human predictions to validate this hypothesis.
 
 **Limitations of Prior Work**: Although neural LM surprisal captures human reading times on naturalistic corpora reasonably well, it severely underestimates processing difficulty on sentences requiring syntactic disambiguation (e.g., garden-path sentences such as "the horse raced past the barn fell"), predicting only 1/10 to 1/30 of the observed human slowdown.
 
-**Root Cause**: This failure has sparked debate between two possible explanations — either neural LM probability estimates differ from those of humans, or garden-path effects are fundamentally irreducible to surprisal. Recent work has tended toward the latter, concluding that surprisal theory is insufficient to account for such phenomena.
+**Key Challenge**: This failure has sparked debate between two possible explanations — either neural LM probability estimates differ from those of humans, or garden-path effects are fundamentally irreducible to surprisal. Recent work has tended toward the latter, concluding that surprisal theory is insufficient to account for such phenomena.
 
-**Paper Goals**: To investigate the first possibility — whether it is truly impossible to construct a neural language model capable of explaining garden-path effects via surprisal.
+**Goal**: To investigate the first possibility — whether it is truly impossible to construct a neural language model capable of explaining garden-path effects via surprisal.
 
-**Starting Point**: Rather than evaluating off-the-shelf LMs, the paper fine-tunes LMs to align their surprisal estimates with actual human reading times.
+**Key Insight**: Rather than evaluating off-the-shelf LMs, the paper fine-tunes LMs to align their surprisal estimates with actual human reading times.
 
 **Core Idea**: By fine-tuning GPT-2 on garden-path sentences so that its surprisal better matches human reading times, the paper provides an existence proof — demonstrating that a neural LM can simultaneously account for garden-path effects and naturalistic reading times.
 

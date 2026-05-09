@@ -29,11 +29,11 @@ This work releases the Gemstones model suite — an open-source collection of ov
 
 ## Background & Motivation
 
-- **State of the Field**: Scaling laws serve as a critical guide for LLM training budget allocation, aiming to identify the optimal balance between parameter count and training token count under a given FLOP budget. Kaplan et al. (2020) and Hoffmann et al. (2022, Chinchilla) yield substantially different prescriptions, and the community has long debated the sources of this discrepancy.
+- **Background**: Scaling laws serve as a critical guide for LLM training budget allocation, aiming to identify the optimal balance between parameter count and training token count under a given FLOP budget. Kaplan et al. (2020) and Hoffmann et al. (2022, Chinchilla) yield substantially different prescriptions, and the community has long debated the sources of this discrepancy.
 - **Limitations of Prior Work**: Existing scaling law studies typically reduce model design to a single dimension (parameter count), fix the width-depth ratio within a narrow range, adopt a single learning rate schedule, and train on limited datasets for a restricted number of tokens. These restrictive design choices may fundamentally distort the resulting scaling law coefficients.
-- **Root Cause**: If scaling laws are highly sensitive to experimental design, then laws fitted under one set of conditions may offer limited guidance to practitioners operating under entirely different architectural and hyperparameter configurations.
-- **Paper Goals**: By constructing the most comprehensive open-source model checkpoint suite to date, this work systematically quantifies the degree to which model shape (width vs. depth), learning rate, and cooldown strategy affect scaling laws, and proposes a more robust fitting methodology.
-- **Starting Point**: Scaled-down variants of the Gemma architecture are used to conduct large-scale experiments in a two-dimensional space (width × depth) rather than the conventional one-dimensional space (parameter count).
+- **Key Challenge**: If scaling laws are highly sensitive to experimental design, then laws fitted under one set of conditions may offer limited guidance to practitioners operating under entirely different architectural and hyperparameter configurations.
+- **Goal**: By constructing the most comprehensive open-source model checkpoint suite to date, this work systematically quantifies the degree to which model shape (width vs. depth), learning rate, and cooldown strategy affect scaling laws, and proposes a more robust fitting methodology.
+- **Key Insight**: Scaled-down variants of the Gemma architecture are used to conduct large-scale experiments in a two-dimensional space (width × depth) rather than the conventional one-dimensional space (parameter count).
 - **Core Idea**: The prescriptions derived from scaling laws depend critically on how experiments are designed and how models are selected — this sensitivity must be quantified and understood rather than ignored.
 
 ## Method

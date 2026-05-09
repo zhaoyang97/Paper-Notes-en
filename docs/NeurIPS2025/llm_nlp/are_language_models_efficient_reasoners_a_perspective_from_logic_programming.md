@@ -27,15 +27,15 @@ content_hash: 0f3d254834ce5b57
 This paper proposes a framework for evaluating LLM reasoning *efficiency* (rather than correctness alone) from a logic programming perspective. By mapping natural language proofs to logic program proofs via verbalized logic programs, the authors find that current LLMs not only suffer accuracy degradation on math problems containing irrelevant axioms, but also exhibit severely inefficient reasoning—more than half of all reasoning steps are unnecessary.
 
 ## Background & Motivation
-**State of the Field**: LLM reasoning evaluation predominantly focuses on final-answer correctness, neglecting the efficiency of the reasoning process. Recent reasoning models (e.g., o1, DeepSeek-R1) frequently generate far more reasoning steps than necessary.
+**Background**: LLM reasoning evaluation predominantly focuses on final-answer correctness, neglecting the efficiency of the reasoning process. Recent reasoning models (e.g., o1, DeepSeek-R1) frequently generate far more reasoning steps than necessary.
 
 **Limitations of Prior Work**: (1) Using token count as an efficiency metric conflates two distinct sources: "unnecessary reasoning steps" and "verbose natural language expression"; (2) no formal framework exists to define "efficient reasoning"; (3) existing datasets (e.g., GSM8k-IC) add only a single piece of irrelevant information, precluding systematic evaluation.
 
-**Root Cause**: Real-world reasoning involves large amounts of irrelevant available information; efficient reasoning requires identifying and ignoring distractors. However, LLMs lack the systematic ability to distinguish relevant from irrelevant information.
+**Key Challenge**: Real-world reasoning involves large amounts of irrelevant available information; efficient reasoning requires identifying and ignoring distractors. However, LLMs lack the systematic ability to distinguish relevant from irrelevant information.
 
-**Paper Goals**: (1) Define and measure reasoning efficiency; (2) systematically evaluate LLM accuracy and efficiency in the presence of irrelevant information.
+**Goal**: (1) Define and measure reasoning efficiency; (2) systematically evaluate LLM accuracy and efficiency in the presence of irrelevant information.
 
-**Starting Point**: Logic programming provides a clean formal framework—each reasoning step corresponds to a hyperedge, and the shortest proof constitutes the most efficient derivation. Verbalized logic programs enable mapping natural language proofs back to formal derivation steps.
+**Key Insight**: Logic programming provides a clean formal framework—each reasoning step corresponds to a hyperedge, and the shortest proof constitutes the most efficient derivation. Verbalized logic programs enable mapping natural language proofs back to formal derivation steps.
 
 **Core Idea**: Use verbalized logic programs as a bridge between natural language reasoning and formal derivation, measuring LLM reasoning efficiency relative to the shortest proof as a reference.
 

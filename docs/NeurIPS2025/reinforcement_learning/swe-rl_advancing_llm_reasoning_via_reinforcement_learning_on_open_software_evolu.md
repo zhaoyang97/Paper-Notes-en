@@ -38,7 +38,7 @@ This work is the first to apply reinforcement learning (RL) to real-world softwa
 
 **Prior open-source SE models rely on SFT with closed-source distillation**: Models such as Lingma-SWE-GPT, SWE-Gym, and SWE-Fixer all incorporate distillation outputs from GPT-4o or Claude-3.5-Sonnet in their training data, and are entirely SFT-based without exploring the RL paradigm.
 
-**Root Cause**: SFT fits the model to a specific task distribution, making it prone to performance degradation on out-of-domain tasks (e.g., mathematics, general understanding), and requires carefully engineered data mixing to maintain generalization.
+**Key Challenge**: SFT fits the model to a specific task distribution, making it prone to performance degradation on out-of-domain tasks (e.g., mathematics, general understanding), and requires carefully engineered data mixing to maintain generalization.
 
 **Software evolution data as a natural RL training ground**: GitHub hosts a vast collection of high-quality PR data, where each PR contains an issue description, code context, and an oracle patch, enabling natural RL training signals without any execution environment.
 

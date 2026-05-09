@@ -28,15 +28,15 @@ This paper provides the first proof that alternating gradient descent-ascent (Al
 
 ## Background & Motivation
 
-**State of the Field**: No-regret learning is the dominant approach for computing game equilibria, underpinning superhuman-level AI in poker, Stratego, and Diplomacy. Theoretically, optimistic methods (e.g., OGDA) achieve $O(1/T)$, yet in practice alternating update strategies such as CFR+ are more widely adopted. Alternating updates—where the two players update sequentially—serve as a numerical trick that substantially improves empirical performance.
+**Background**: No-regret learning is the dominant approach for computing game equilibria, underpinning superhuman-level AI in poker, Stratego, and Diplomacy. Theoretically, optimistic methods (e.g., OGDA) achieve $O(1/T)$, yet in practice alternating update strategies such as CFR+ are more widely adopted. Alternating updates—where the two players update sequentially—serve as a numerical trick that substantially improves empirical performance.
 
 **Limitations of Prior Work**: Although alternating updates empirically outperform simultaneous updates by a wide margin, their theoretical understanding remains severely limited. In the unconstrained setting, AltGDA has been shown to achieve $O(1/T)$, but **in the constrained setting (which corresponds to the standard definition of Nash equilibrium) no theoretical guarantees exist**—this is a longstanding open problem.
 
-**Root Cause**: Simultaneous GDA achieves only $O(1/\sqrt{T})$ in constrained bilinear games, while optimistic methods reach $O(1/T)$ but require additional structure. AltGDA empirically exhibits $O(1/T)$ behavior, yet no proof has been established.
+**Key Challenge**: Simultaneous GDA achieves only $O(1/\sqrt{T})$ in constrained bilinear games, while optimistic methods reach $O(1/T)$ but require additional structure. AltGDA empirically exhibits $O(1/T)$ behavior, yet no proof has been established.
 
-**Paper Goals**: To prove an $O(1/T)$ convergence rate for AltGDA in the constrained setting.
+**Goal**: To prove an $O(1/T)$ convergence rate for AltGDA in the constrained setting.
 
-**Starting Point**: The authors identify a two-phase behavior in AltGDA trajectories—an initial phase in which iterates collide with the simplex boundary and are "reflected," followed by an interior cycling phase. These collisions cause the energy function to decay, and the decay precisely controls the additivity of residual regret terms.
+**Key Insight**: The authors identify a two-phase behavior in AltGDA trajectories—an initial phase in which iterates collide with the simplex boundary and are "reflected," followed by an interior cycling phase. These collisions cause the energy function to decay, and the decay precisely controls the additivity of residual regret terms.
 
 **Core Idea**: The "energy dissipation" generated when AltGDA trajectories collide with the constraint boundary renders the residual terms summable, thereby extending the unconstrained $O(1/T)$ result to the constrained setting.
 

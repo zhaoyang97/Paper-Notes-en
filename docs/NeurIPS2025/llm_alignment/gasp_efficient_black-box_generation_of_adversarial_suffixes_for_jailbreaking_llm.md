@@ -27,16 +27,16 @@ content_hash: c475cb54f5a1e687
 This paper proposes GASP, a framework that trains a dedicated SuffixLLM to generate human-readable adversarial suffixes. It employs Latent Bayesian Optimization (LBO) to efficiently search the continuous embedding space and iteratively fine-tunes the generator via ORPO, achieving high attack success rates in a fully black-box setting while maintaining suffix readability.
 
 ## Background & Motivation
-**State of the Field**: LLM jailbreak methods fall into three categories — manual heuristics (flexible but not scalable), optimization-based methods (e.g., GCG, which searches in discrete token space but produces unreadable suffixes), and hybrid approaches (e.g., AutoDAN/PAIR, which are computationally expensive with limited generalizability).
+**Background**: LLM jailbreak methods fall into three categories — manual heuristics (flexible but not scalable), optimization-based methods (e.g., GCG, which searches in discrete token space but produces unreadable suffixes), and hybrid approaches (e.g., AutoDAN/PAIR, which are computationally expensive with limited generalizability).
 
 **Limitations of Prior Work**:
    - Optimization-based methods such as GCG produce gibberish token sequences that are easily detected by perplexity filters.
    - Most existing methods require white-box access (gradients/logits) and are unsuitable for API-only scenarios.
    - AdvPrompter learns a suffix generator but cannot adapt to a specific TargetLLM and still operates in discrete token space.
 
-**Root Cause**: Three objectives must be satisfied simultaneously — (a) high attack success rate, (b) generation of human-readable natural language suffixes, and (c) fully black-box operation with high efficiency.
+**Key Challenge**: Three objectives must be satisfied simultaneously — (a) high attack success rate, (b) generation of human-readable natural language suffixes, and (c) fully black-box operation with high efficiency.
 
-**Starting Point**: Transform discrete token optimization into Bayesian optimization over a continuous latent space. A SuffixLLM encodes suffixes into the continuous space; a Gaussian process models the "attack effectiveness" of suffixes; an acquisition function guides the search; and ORPO preference optimization fine-tunes the SuffixLLM.
+**Key Insight**: Transform discrete token optimization into Bayesian optimization over a continuous latent space. A SuffixLLM encodes suffixes into the continuous space; a Gaussian process models the "attack effectiveness" of suffixes; an acquisition function guides the search; and ORPO preference optimization fine-tunes the SuffixLLM.
 
 **Core Idea**: Performing Bayesian optimization in the SuffixLLM's embedding space to search for adversarial suffixes is substantially more efficient than discrete token search and naturally preserves readability.
 

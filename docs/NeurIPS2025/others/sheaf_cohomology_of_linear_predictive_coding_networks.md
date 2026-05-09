@@ -28,15 +28,15 @@ This paper formalizes linear predictive coding (PC) networks as cellular sheaves
 
 ## Background & Motivation
 
-**State of the Field**: Predictive coding (PC) is a biologically inspired neural network training paradigm that replaces global backpropagation with local prediction error minimization. A key advantage of PC is its ability to handle networks with arbitrary cyclic topologies without unrolling computation graphs or applying BPTT. While PC has attracted growing attention in the deep learning community, a systematic theoretical analysis of its behavior in recurrent networks remains lacking.
+**Background**: Predictive coding (PC) is a biologically inspired neural network training paradigm that replaces global backpropagation with local prediction error minimization. A key advantage of PC is its ability to handle networks with arbitrary cyclic topologies without unrolling computation graphs or applying BPTT. While PC has attracted growing attention in the deep learning community, a systematic theoretical analysis of its behavior in recurrent networks remains lacking.
 
 **Limitations of Prior Work**: PC in recurrent networks introduces a fundamental yet overlooked problem: deeply recurrent nodes receive error signals from all their connections—some originating from supervision, others from contradictory feedback loops—yet the nodes cannot distinguish between the two. As a result, a node may spend a large portion of its "inference budget" reconciling internal contradictions rather than learning useful representations. Existing improvements to PC (e.g., depth scaling) primarily target feedforward architectures and do not address this structural problem arising from cyclic topology.
 
-**Root Cause**: The learning capacity of a recurrent PC network depends on the weight initialization of its feedback loops, yet no theoretical tools currently exist to predict which initializations cause learning failure. This is neither a question of weight magnitude (all initializations are orthonormal) nor a simple conditioning issue—it depends on how the weights are "knotted" around the cycles.
+**Key Challenge**: The learning capacity of a recurrent PC network depends on the weight initialization of its feedback loops, yet no theoretical tools currently exist to predict which initializations cause learning failure. This is neither a question of weight magnitude (all initializations are orthonormal) nor a simple conditioning issue—it depends on how the weights are "knotted" around the cycles.
 
-**Paper Goals**: To provide a mathematical framework that (1) precisely characterizes which error patterns in a PC network can be eliminated by inference and which cannot; (2) explains how internal contradictions in cyclic topology affect learning; and (3) derives principled weight initialization guidelines for recurrent PC networks.
+**Goal**: To provide a mathematical framework that (1) precisely characterizes which error patterns in a PC network can be eliminated by inference and which cannot; (2) explains how internal contradictions in cyclic topology affect learning; and (3) derives principled weight initialization guidelines for recurrent PC networks.
 
-**Starting Point**: The central question in cellular sheaf theory—"when does local consistency glue into global consistency?"—maps perfectly onto the core pursuit of PC: whether locally informed layers can collectively resolve a global task.
+**Key Insight**: The central question in cellular sheaf theory—"when does local consistency glue into global consistency?"—maps perfectly onto the core pursuit of PC: whether locally informed layers can collectively resolve a global task.
 
 **Core Idea**: Interpret PC networks as cellular sheaves over their computation graphs, and unify inference-irreducible errors, the global geometry of weight initialization, and learning dynamics within a single algebraic-topological framework via sheaf cohomology.
 

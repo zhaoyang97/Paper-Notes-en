@@ -31,7 +31,7 @@ Text-to-video models are highly sensitive to input prompts — they are trained 
 
 **Model unawareness**: Prompts expanded directly by GPT do not account for the preferences of specific video generation models.
 
-**Paper Goals**: To design a video-centric, annotation-free, preference-aligned prompt optimization system.
+**Goal**: To design a video-centric, annotation-free, preference-aligned prompt optimization system.
 
 ## Method
 

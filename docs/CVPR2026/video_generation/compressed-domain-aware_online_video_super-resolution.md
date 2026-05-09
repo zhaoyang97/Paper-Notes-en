@@ -28,15 +28,15 @@ CDA-VSR leverages compressed-domain information (motion vectors, residual maps, 
 
 ## Background & Motivation
 
-1. **State of the Field**: Online video super-resolution (Online VSR) requires real-time reconstruction of the current frame during playback, using only past and current frames. Recent methods (e.g., TMP, DAP, MMVSR) have improved performance through better alignment and fusion modules, yet still struggle to meet real-time requirements at higher resolutions such as 2K.
+1. **Background**: Online video super-resolution (Online VSR) requires real-time reconstruction of the current frame during playback, using only past and current frames. Recent methods (e.g., TMP, DAP, MMVSR) have improved performance through better alignment and fusion modules, yet still struggle to meet real-time requirements at higher resolutions such as 2K.
 
 2. **Limitations of Prior Work**: (1) **Computationally intensive motion estimation**: Optical-flow-based alignment methods (e.g., BasicVSR) are accurate but computationally expensive; implicit alignment methods (e.g., RRN) are efficient but degrade under large motions. (2) **Uniform treatment of redundant frames**: Existing methods apply the same computational budget to all frames, resulting in unnecessary redundant computation for the frequently occurring P-frames. (3) **Wasted information**: Compressed-domain information obtained during decoding (motion vectors, residual maps, frame types) is discarded rather than exploited.
 
-3. **Root Cause**: In bandwidth-constrained online video streaming, video is downsampled and transmitted in compressed form. Rich compressed-domain priors are available at the decoder at virtually no cost, yet existing methods rely solely on decoded low-resolution frames and ignore these valuable auxiliary signals.
+3. **Key Challenge**: In bandwidth-constrained online video streaming, video is downsampled and transmitted in compressed form. Rich compressed-domain priors are available at the decoder at virtually no cost, yet existing methods rely solely on decoded low-resolution frames and ignore these valuable auxiliary signals.
 
-4. **Paper Goals**: To design dedicated modules tailored to the distinct characteristics of three types of compressed-domain information—motion vectors, residual maps, and frame types—so as to simultaneously improve super-resolution quality and substantially accelerate inference.
+4. **Goal**: To design dedicated modules tailored to the distinct characteristics of three types of compressed-domain information—motion vectors, residual maps, and frame types—so as to simultaneously improve super-resolution quality and substantially accelerate inference.
 
-5. **Starting Point**: Within a video bitstream, motion vectors describe block-level inter-frame motion (serving as a coarse substitute for optical flow), residual maps reflect regions where motion compensation fails (naturally marking unreliable areas), and frame types determine inter-frame reference relationships (I-frames require high-quality reconstruction; P-frames can be processed more lightly). Each type of information offers distinct utility.
+5. **Key Insight**: Within a video bitstream, motion vectors describe block-level inter-frame motion (serving as a coarse substitute for optical flow), residual maps reflect regions where motion compensation fails (naturally marking unreliable areas), and frame types determine inter-frame reference relationships (I-frames require high-quality reconstruction; P-frames can be processed more lightly). Each type of information offers distinct utility.
 
 6. **Core Idea**: Treat the three categories of compressed-domain information—motion vectors for coarse alignment, residual maps for quality gating, and frame types for computation allocation—as natural priors for online VSR, allowing "free" information to yield simultaneous gains in quality and speed.
 

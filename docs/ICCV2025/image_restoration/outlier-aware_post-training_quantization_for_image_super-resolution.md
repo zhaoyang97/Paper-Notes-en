@@ -35,7 +35,7 @@ Quantizing SR models presents unique challenges. Existing PTQ methods perform po
 
 **Observation 2: Different layers exhibit drastically different sensitivity to quantization.** In SRResNet, quantizing the `head.0` layer causes PSNR to drop from 32.06 dB to 18.26 dB, while quantizing `body.4.conv1` still maintains 31.20 dB. This heterogeneity demands differentiated quantization strategies across layers.
 
-**Root Cause**: Preserving outliers consumes a disproportionate share of bit capacity, compressing the representational space for normal activations; clipping outliers, on the other hand, leads to severe performance degradation.
+**Key Challenge**: Preserving outliers consumes a disproportionate share of bit capacity, compressing the representational space for normal activations; clipping outliers, on the other hand, leads to severe performance degradation.
 
 ## Method
 

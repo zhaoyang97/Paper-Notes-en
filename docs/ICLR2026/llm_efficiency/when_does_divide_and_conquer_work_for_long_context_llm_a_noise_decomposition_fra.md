@@ -27,15 +27,15 @@ content_hash: 4c1b8d40c5e2dd82
 This paper proposes a theoretical framework that decomposes long-context task failures into three types of noise (task noise / model noise / aggregator noise), proves that weak models with chunked processing can outperform strong models with full-context processing when model noise grows superlinearly, and provides a method to efficiently estimate the optimal chunk size using only 3–5 samples.
 
 ## Background & Motivation
-**State of the Field**: The divide-and-conquer (D&C) strategy—splitting long documents into chunks, processing each separately, and then aggregating results—is widely used in long-context LLM tasks, yet a theoretical basis for when it is effective or harmful remains lacking.
+**Background**: The divide-and-conquer (D&C) strategy—splitting long documents into chunks, processing each separately, and then aggregating results—is widely used in long-context LLM tasks, yet a theoretical basis for when it is effective or harmful remains lacking.
 
 **Limitations of Prior Work**: There is no quantitative framework for the trade-off between "task noise" introduced by chunking (cross-chunk dependencies severed) and "model noise" eliminated by chunking (confusion induced by long contexts). Chunking sometimes helps and sometimes degrades performance.
 
-**Root Cause**: Long context = more information but more confusion vs. chunking = less confusion but loss of global dependencies. How can one determine which strategy is superior?
+**Key Challenge**: Long context = more information but more confusion vs. chunking = less confusion but loss of global dependencies. How can one determine which strategy is superior?
 
-**Paper Goals**: Provide a theoretical framework answering "when does D&C outperform direct full-context processing," along with a practical method for chunk size optimization.
+**Goal**: Provide a theoretical framework answering "when does D&C outperform direct full-context processing," along with a practical method for chunk size optimization.
 
-**Starting Point**: Decompose system fidelity into the product of three independent noise terms and analyze how each term scales with context length.
+**Key Insight**: Decompose system fidelity into the product of three independent noise terms and analyze how each term scales with context length.
 
 **Core Idea**: Fidelity decomposition $\rho_{sys} = \rho_{task} \times \rho_{agg} \times \rho_{model}$; when $L_{model}$ grows superlinearly, D&C necessarily outperforms full-context processing.
 

@@ -29,15 +29,15 @@ This paper systematically investigates counterfactual unfairness in LLMs through
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly deployed in high-stakes domains (hiring, education, law), where encoded social and cultural biases can cause serious societal harm. Existing bias research focuses primarily on decontextualized bias detection, neglecting representational bias in conversational roles and social interactions.
+**Background**: LLMs are increasingly deployed in high-stakes domains (hiring, education, law), where encoded social and cultural biases can cause serious societal harm. Existing bias research focuses primarily on decontextualized bias detection, neglecting representational bias in conversational roles and social interactions.
 
 **Limitations of Prior Work**: (1) Humor naturally occupies an ambiguous zone of social perception—what is acceptable depends on the identities of both speaker and listener; (2) existing computational humor research ignores conversational context and does not examine how meaning shifts when interactional roles change; (3) systematic methods for quantifying behavioral asymmetry in LLMs under identity swaps are lacking.
 
-**Root Cause**: The safety alignment and bias mitigation of LLMs is bidirectional—models not only impose stricter scrutiny on privileged groups but also implicitly frame marginalized groups as vulnerable through over-protection, both of which reinforce fixed social hierarchies.
+**Key Challenge**: The safety alignment and bias mitigation of LLMs is bidirectional—models not only impose stricter scrutiny on privileged groups but also implicitly frame marginalized groups as vulnerable through over-protection, both of which reinforce fixed social hierarchies.
 
-**Paper Goals**: To systematically expose identity-related bias in LLMs across humor scenarios through three complementary tasks: generation refusal, intent inference, and impact prediction.
+**Goal**: To systematically expose identity-related bias in LLMs across humor scenarios through three complementary tasks: generation refusal, intent inference, and impact prediction.
 
-**Starting Point**: Applying the principle of counterfactual fairness—changing only sensitive attributes (speaker/listener identity) while holding all other factors constant—to observe whether model outputs change. Humor serves as a particularly sensitive probe, as it forces models to make judgments in ambiguous territory.
+**Key Insight**: Applying the principle of counterfactual fairness—changing only sensitive attributes (speaker/listener identity) while holding all other factors constant—to observe whether model outputs change. Humor serves as a particularly sensitive probe, as it forces models to make judgments in ambiguous territory.
 
 **Core Idea**: LLMs encode fixed social privilege hierarchies rather than performing genuine social reasoning—they use identity as a proxy signal for harm, systematically refusing jokes that "punch down" while permitting those that "punch up," thereby creating bidirectional representational harm.
 

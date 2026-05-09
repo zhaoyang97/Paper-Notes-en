@@ -29,15 +29,15 @@ TPRU constructs a large-scale multi-image temporal understanding dataset (24,750
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs excel at single-image tasks, but smaller deployable models exhibit severe deficiencies in understanding temporal and procedural image sequences—a critical bottleneck for embodied AI deployment in robotics, navigation, and instruction following.
+**Background**: MLLMs excel at single-image tasks, but smaller deployable models exhibit severe deficiencies in understanding temporal and procedural image sequences—a critical bottleneck for embodied AI deployment in robotics, navigation, and instruction following.
 
 **Limitations of Prior Work**: (1) Training paradigms systematically fail—existing datasets treat multi-image inputs as unordered collections, ignoring the critical distinction between "understanding an image set" and "understanding an image sequence"; (2) the community's response has been to create evaluation-only benchmarks that repeatedly confirm failure, rather than addressing the root cause: the absence of large-scale real-world sequential training data.
 
-**Root Cause**: Edge devices with limited resources cannot deploy models with tens of billions of parameters, yet smaller models' deficiency in procedural understanding renders them unsuitable for embodied scenarios. The question is whether this is a matter of model scale or training data.
+**Key Challenge**: Edge devices with limited resources cannot deploy models with tens of billions of parameters, yet smaller models' deficiency in procedural understanding renders them unsuitable for embodied scenarios. The question is whether this is a matter of model scale or training data.
 
-**Paper Goals**: (1) Provide a large-scale, structured temporal understanding training set to close the train-test gap; (2) validate whether small models, given appropriate data and training, can achieve temporal understanding on par with large models.
+**Goal**: (1) Provide a large-scale, structured temporal understanding training set to close the train-test gap; (2) validate whether small models, given appropriate data and training, can achieve temporal understanding on par with large models.
 
-**Starting Point**: Real sequential data is collected from 4 embodied scenarios; 3 complementary tasks are designed to cover different aspects of temporal reasoning; hard negative samples are introduced to compel active cross-modal verification rather than passive observation.
+**Key Insight**: Real sequential data is collected from 4 embodied scenarios; 3 complementary tasks are designed to cover different aspects of temporal reasoning; hard negative samples are introduced to compel active cross-modal verification rather than passive observation.
 
 **Core Idea**: Structured data combined with RL training enables small models to surpass large models in temporal and procedural understanding, demonstrating that this gap is a training challenge rather than an intrinsic limitation of scale.
 

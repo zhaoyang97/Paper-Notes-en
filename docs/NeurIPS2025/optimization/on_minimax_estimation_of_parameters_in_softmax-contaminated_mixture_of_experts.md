@@ -145,7 +145,7 @@ MoE models dynamically assign input-dependent weights to multiple sub-models via
 
 (3) **Core Question**: What happens to parameter estimation when the prompt learns knowledge that highly overlaps with the pretrained model? Does softmax gating offer advantages over constant gating?
 
-**Starting Point**: The paper introduces "distinguishability" as a novel analytical concept, partitioning the problem into distinguishable and non-distinguishable settings and establishing upper bounds with matching minimax lower bounds in each case.
+**Key Insight**: The paper introduces "distinguishability" as a novel analytical concept, partitioning the problem into distinguishable and non-distinguishable settings and establishing upper bounds with matching minimax lower bounds in each case.
 
 ## Method
 

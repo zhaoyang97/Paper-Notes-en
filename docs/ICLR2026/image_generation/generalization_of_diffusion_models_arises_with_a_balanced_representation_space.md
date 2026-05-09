@@ -49,7 +49,7 @@ By analyzing the optimal solutions of two-layer nonlinear ReLU denoising autoenc
 
 ### Mechanism
 
-**Paper Goals**: ### Overall Architecture
+**Goal**: ### Overall Architecture
 
 The paper considers a two-layer ReLU DAE $\boldsymbol{f}_{\boldsymbol{W}_2, \boldsymbol{W}_1}(\boldsymbol{x}) = \boldsymbol{W}_2 [\boldsymbol{W}_1^\top \boldsymbol{x}]_+$ with training objective:
 

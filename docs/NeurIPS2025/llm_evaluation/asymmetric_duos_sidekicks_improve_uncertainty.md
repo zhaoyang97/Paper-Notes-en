@@ -28,15 +28,15 @@ Asymmetric Duos (AD) pairs a large model with a small "sidekick"—combining the
 
 ## Background & Motivation
 
-**State of the Field**: Deep ensembles (DE) are the gold standard for uncertainty estimation—training 2–5 independent models and averaging their predictions. However, computational cost scales linearly with ensemble size, making it impractical for large models such as ViT-H.
+**Background**: Deep ensembles (DE) are the gold standard for uncertainty estimation—training 2–5 independent models and averaging their predictions. However, computational cost scales linearly with ensemble size, making it impractical for large models such as ViT-H.
 
 **Limitations of Prior Work**: (a) Deep ensembles require 200–500% additional FLOPs, which is unacceptable for practical deployment; (b) lightweight alternatives such as MC-Dropout fall far short of ensemble performance; (c) fine-tuning and storing multiple large models incurs prohibitive computational and memory costs.
 
-**Root Cause**: High-quality uncertainty estimation requires model diversity (different models making different errors on different samples), yet diversity comes at the cost of multi-model inference.
+**Key Challenge**: High-quality uncertainty estimation requires model diversity (different models making different errors on different samples), yet diversity comes at the cost of multi-model inference.
 
-**Paper Goals**: Achieve near-ensemble uncertainty estimation quality at minimal additional cost (10–20% FLOPs).
+**Goal**: Achieve near-ensemble uncertainty estimation quality at minimal additional cost (10–20% FLOPs).
 
-**Starting Point**: Diversity need not come from models of equal size—an asymmetric pairing of a large model and a small model can provide sufficient diversity.
+**Key Insight**: Diversity need not come from models of equal size—an asymmetric pairing of a large model and a small model can provide sufficient diversity.
 
 **Core Idea**: Large model + small sidekick → temperature-weighted logit averaging → temperature optimization on a validation set via L-BFGS (seconds) → 10–20% additional FLOPs approaching the quality of a 5× ensemble.
 

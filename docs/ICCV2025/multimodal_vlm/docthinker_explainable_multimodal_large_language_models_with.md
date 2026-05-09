@@ -27,15 +27,15 @@ content_hash: ca50bb0a1d590807
 This paper proposes DocThinker, the first framework to apply GRPO (Group Relative Policy Optimization) reinforcement learning to document understanding. By training MLLMs with a four-objective rule-based reward (format, answer accuracy, RoI IoU, and question rephrasing quality), DocThinker enables models to autonomously generate interpretable reasoning processes. Using only 4K training samples, it improves Qwen2.5-VL-7B on DocVQA from 0.355 to 0.579 (RL vs. SFT: 0.579 vs. 0.355) and achieves 82.4% precision on visual grounding tasks.
 
 ## Background & Motivation
-**State of the Field**: MLLMs have demonstrated strong performance in document understanding, yet their reasoning processes remain opaque, limiting trustworthiness in high-stakes domains such as law, finance, and medicine. Existing methods primarily employ fixed CoT templates for reasoning—e.g., ReFocus uses external tools for image editing, Visual CoT performs multi-round processing, and MVoT generates interleaved visual-textual reasoning chains.
+**Background**: MLLMs have demonstrated strong performance in document understanding, yet their reasoning processes remain opaque, limiting trustworthiness in high-stakes domains such as law, finance, and medicine. Existing methods primarily employ fixed CoT templates for reasoning—e.g., ReFocus uses external tools for image editing, Visual CoT performs multi-round processing, and MVoT generates interleaved visual-textual reasoning chains.
 
 **Limitations of Prior Work**: (1) Fixed CoT templates lack flexibility and generalize poorly across tasks; (2) SFT training is prone to catastrophic forgetting, leading to performance degradation on new document types; (3) existing methods output only final answers, lacking interpretability of intermediate reasoning steps.
 
-**Root Cause**: SFT causes models to memorize reasoning patterns from training data, preventing autonomous exploration of better reasoning strategies. Works such as DeepSeek-R1 have demonstrated that pure RL can elicit emergent reasoning capabilities, yet RL for document understanding remains largely unexplored.
+**Key Challenge**: SFT causes models to memorize reasoning patterns from training data, preventing autonomous exploration of better reasoning strategies. Works such as DeepSeek-R1 have demonstrated that pure RL can elicit emergent reasoning capabilities, yet RL for document understanding remains largely unexplored.
 
-**Paper Goals**: To replace SFT with RL for training document understanding MLLMs, enabling models to autonomously learn flexible reasoning strategies while generating interpretable intermediate steps (reasoning process, rephrased question, region of interest, and final answer).
+**Goal**: To replace SFT with RL for training document understanding MLLMs, enabling models to autonomously learn flexible reasoning strategies while generating interpretable intermediate steps (reasoning process, rephrased question, region of interest, and final answer).
 
-**Starting Point**: Inspired by DeepSeek-R1 and MedVLM-R1, this work applies GRPO to multimodal document understanding and designs four verifiable rule-based reward functions to guide model learning.
+**Key Insight**: Inspired by DeepSeek-R1 and MedVLM-R1, this work applies GRPO to multimodal document understanding and designs four verifiable rule-based reward functions to guide model learning.
 
 **Core Idea**: Replace SFT with GRPO reinforcement learning and four-objective rule-based rewards to train document understanding MLLMs, achieving adaptive reasoning and interpretable outputs.
 

@@ -27,15 +27,15 @@ content_hash: 05321cfe15b20618
 This paper formulates multi-party preference aggregation in RLHF fine-tuning as a mechanism design problem. It proves that under social-welfare-maximizing training rules, participants have incentives to misreport their preferences, and achieves dominant-strategy incentive compatibility (DSIC) via an extended VCG payment mechanism that ensures truthful reporting.
 
 ## Background & Motivation
-**State of the Field**: RLHF is the dominant approach for LLM alignment. Multi-Objective RLHF (MORLHF) aggregates diverse preferences from multiple groups into a single unified model, avoiding the high cost of training separate models for each group.
+**Background**: RLHF is the dominant approach for LLM alignment. Multi-Objective RLHF (MORLHF) aggregates diverse preferences from multiple groups into a single unified model, avoiding the high cost of training separate models for each group.
 
 **Limitations of Prior Work**: When multiple groups share a fine-tuning service, each group submits its own reward model to express preferences. However, **groups can manipulate the training objective by misreporting preferences**—for instance, by exaggerating preferences for certain outputs to make the final model more favorable to themselves. Such strategic misreporting distorts the training objective and leads to a suboptimal model for the community as a whole.
 
-**Root Cause**: MORLHF algorithms assume truthful preference reporting, yet rational participants have incentives to report strategically. Existing work focuses on the efficiency and accuracy of training algorithms while neglecting the strategic behavior of participants.
+**Key Challenge**: MORLHF algorithms assume truthful preference reporting, yet rational participants have incentives to report strategically. Existing work focuses on the efficiency and accuracy of training algorithms while neglecting the strategic behavior of participants.
 
-**Paper Goals**: (1) Under what conditions is misreporting profitable? (2) How should a payment mechanism be designed so that truthful reporting becomes the optimal strategy? (3) Does the mechanism remain effective in the presence of measurement noise?
+**Goal**: (1) Under what conditions is misreporting profitable? (2) How should a payment mechanism be designed so that truthful reporting becomes the optimal strategy? (3) Does the mechanism remain effective in the presence of measurement noise?
 
-**Starting Point**: Drawing on mechanism design theory from economics, preference aggregation in RLHF is treated as a multi-parameter mechanism design problem—analogous to VCG mechanism design in auction theory.
+**Key Insight**: Drawing on mechanism design theory from economics, preference aggregation in RLHF is treated as a multi-parameter mechanism design problem—analogous to VCG mechanism design in auction theory.
 
 **Core Idea**: Preference aggregation in RLHF is fundamentally a mechanism design problem; by designing an appropriate payment rule (VCG-style payments), misreporting incentives can be eliminated.
 

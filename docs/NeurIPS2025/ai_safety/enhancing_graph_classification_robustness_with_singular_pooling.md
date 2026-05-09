@@ -28,15 +28,15 @@ This paper presents the first systematic analysis of how flat pooling operators 
 
 ## Background & Motivation
 
-**State of the Field**: GNNs have demonstrated strong performance in graph representation learning, yet adversarial robustness research has predominantly focused on **node classification**, leaving **graph classification** comparatively underexplored. Existing defenses (GNNGuard, Jaccard preprocessing, GCORN, etc.) primarily target the message-passing stage.
+**Background**: GNNs have demonstrated strong performance in graph representation learning, yet adversarial robustness research has predominantly focused on **node classification**, leaving **graph classification** comparatively underexplored. Existing defenses (GNNGuard, Jaccard preprocessing, GCORN, etc.) primarily target the message-passing stage.
 
 **Limitations of Prior Work**: Graph classification requires aggregating node features into a graph-level representation via pooling, yet the impact of pooling operations on robustness has received virtually no attention. Different pooling strategies (Sum/Avg/Max) exhibit drastically different behavior under adversarial attacks, with performance strongly correlated with graph structure and attack type.
 
-**Root Cause**: Graphs in graph classification tasks tend to be small, meaning node-level defenses (e.g., node deletion) risk disrupting information propagation and degrading clean accuracy. A solution is needed that resists perturbations at the pooling stage while preserving expressive power.
+**Key Challenge**: Graphs in graph classification tasks tend to be small, meaning node-level defenses (e.g., node deletion) risk disrupting information propagation and degrading clean accuracy. A solution is needed that resists perturbations at the pooling stage while preserving expressive power.
 
-**Paper Goals**: (1) Quantify the effect of different pooling operators on graph classification robustness; (2) Design a pooling method that achieves both robustness and clean accuracy.
+**Goal**: (1) Quantify the effect of different pooling operators on graph classification robustness; (2) Design a pooling method that achieves both robustness and clean accuracy.
 
-**Starting Point**: Matrix perturbation theory (Davis–Kahan / Wedin theorems) establishes that when the spectral gap is sufficiently large, the dominant singular vector remains stable under bounded perturbations—a property that can be exploited to construct robust graph-level representations.
+**Key Insight**: Matrix perturbation theory (Davis–Kahan / Wedin theorems) establishes that when the spectral gap is sufficiently large, the dominant singular vector remains stable under bounded perturbations—a property that can be exploited to construct robust graph-level representations.
 
 **Core Idea**: Use the dominant right singular vector of the node embedding matrix $H$ as the graph-level representation, which naturally filters out unstable components introduced by adversarial noise.
 

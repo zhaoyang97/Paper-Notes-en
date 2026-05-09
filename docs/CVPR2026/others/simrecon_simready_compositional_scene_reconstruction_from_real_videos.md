@@ -28,16 +28,16 @@ This paper proposes SimRecon, a framework that automatically constructs simulati
 
 ## Background & Motivation
 
-**State of the Field**: 3D scene reconstruction follows three main paradigms — holistic neural reconstruction (3DGS/NeRF, non-interactive), manually or procedurally constructed simulators (AI2-THOR, ProcTHOR), and emerging compositional reconstruction (decomposing individual objects from multi-view input).
+**Background**: 3D scene reconstruction follows three main paradigms — holistic neural reconstruction (3DGS/NeRF, non-interactive), manually or procedurally constructed simulators (AI2-THOR, ProcTHOR), and emerging compositional reconstruction (decomposing individual objects from multi-view input).
 
 **Limitations of Prior Work**:
    - Holistic reconstruction lacks object boundaries and complete geometry, making it unsuitable for simulation and interaction.
    - Manual/procedural simulators are costly to build and yield unrealistic layouts.
    - Existing compositional reconstruction methods (DPRecon, InstaScene) rely on heuristic viewpoint selection, causing distortion in generated objects, and their outputs remain visual representations rather than simulation-ready scenes.
 
-**Root Cause**: Two critical gaps exist between real video and simulation-ready scenes — a **visual fidelity** gap in the "perception → generation" stage and a **physical plausibility** gap in the "generation → simulation" stage.
+**Key Challenge**: Two critical gaps exist between real video and simulation-ready scenes — a **visual fidelity** gap in the "perception → generation" stage and a **physical plausibility** gap in the "generation → simulation" stage.
 
-**Starting Point**: Rather than redesigning the entire pipeline, the paper designs two **bridging modules** to address the core challenges at each stage transition.
+**Key Insight**: Rather than redesigning the entire pipeline, the paper designs two **bridging modules** to address the core challenges at each stage transition.
 
 **Core Idea**: Active Viewpoint Optimization acquires the projection with maximum information gain as the generation condition, while the Scene Graph Synthesizer guides hierarchical physical assembly.
 

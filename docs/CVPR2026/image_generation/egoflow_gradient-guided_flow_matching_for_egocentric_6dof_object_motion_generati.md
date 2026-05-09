@@ -28,21 +28,21 @@ EgoFlow proposes a generative framework based on Flow Matching that integrates m
 
 ## Background & Motivation
 
-1.  **State of the Field**: With the popularity of AR devices and the emergence of large-scale first-person datasets (EgoExo4D, HOT3D, HD-EPIC), understanding and predicting object motion from a first-person perspective has become a core capability for embodied perception and robotic interaction. Existing methods primarily rely on diffusion models or autoregressive prediction to generate object trajectories.
+1.  **Background**: With the popularity of AR devices and the emergence of large-scale first-person datasets (EgoExo4D, HOT3D, HD-EPIC), understanding and predicting object motion from a first-person perspective has become a core capability for embodied perception and robotic interaction. Existing methods primarily rely on diffusion models or autoregressive prediction to generate object trajectories.
 
 2.  **Limitations of Prior Work**:
     *   First-person scenes are highly diverse and cluttered; objects are frequently occluded; and limited fields of view combined with fast camera motion lead to blurring.
     *   In long-term prediction, tiny spatial errors accumulate over time, leading to unrealistic motion patterns.
     *   Existing generative models lack explicit physical reasoning capabilities, and generated trajectories cannot guarantee collision-free paths or dynamic smoothness.
 
-3.  **Root Cause**: Generative models must simultaneously satisfy two seemingly contradictory requirements—motion diversity (learning rich motion distributions) and physical consistency (collision avoidance, motion smoothness)—whereas pure data-driven methods cannot explicitly reason about physical constraints in new scene configurations.
+3.  **Key Challenge**: Generative models must simultaneously satisfy two seemingly contradictory requirements—motion diversity (learning rich motion distributions) and physical consistency (collision avoidance, motion smoothness)—whereas pure data-driven methods cannot explicitly reason about physical constraints in new scene configurations.
 
-4.  **Paper Goals**
+4.  **Goal**
     *   How to generate long-term, physically plausible 6DoF object trajectories?
     *   How to ensure collision avoidance and motion smoothness in generated trajectories without physical supervision?
     *   How to effectively fuse multimodal conditions such as scene geometry, semantics, and goals?
 
-5.  **Starting Point**: Using Flow Matching instead of diffusion models to learn a deterministic transport field for efficient trajectory synthesis; using gradient-guided sampling to inject physical constraints during inference (decoupling training and testing); and using a Mamba+Transformer+Perceiver hybrid architecture to handle long-sequence multimodal fusion.
+5.  **Key Insight**: Using Flow Matching instead of diffusion models to learn a deterministic transport field for efficient trajectory synthesis; using gradient-guided sampling to inject physical constraints during inference (decoupling training and testing); and using a Mamba+Transformer+Perceiver hybrid architecture to handle long-sequence multimodal fusion.
 
 6.  **Core Idea**: The combination of learning motion distributions with Flow Matching and imposing physical constraints via gradient guidance achieves an elegant decoupling where the "model learns the data distribution, and constraints are injected on-demand during inference."
 

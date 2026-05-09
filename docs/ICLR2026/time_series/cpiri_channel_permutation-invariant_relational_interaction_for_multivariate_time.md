@@ -31,15 +31,15 @@ This paper proposes the CPiRi framework, which achieves channel permutation-inva
 
 ### State of the Field
 
-**State of the Field**: Multivariate time series forecasting (MTSF) faces a CI–CD dilemma:
+**Background**: Multivariate time series forecasting (MTSF) faces a CI–CD dilemma:
 
 ### Root Cause
 
-**Root Cause**: Channel-dependent (CD) models **(e.g., Informer, Crossformer)** can model cross-channel relationships but overfit to channel ordering—under channel-shuffling evaluation, Informer's error increases by >400%, revealing that these models memorize positional rather than semantic relationships.
+**Key Challenge**: Channel-dependent (CD) models **(e.g., Informer, Crossformer)** can model cross-channel relationships but overfit to channel ordering—under channel-shuffling evaluation, Informer's error increases by >400%, revealing that these models memorize positional rather than semantic relationships.
 
 ### Starting Point
 
-**Paper Goals**: **Starting Point**: Channel-independent (CI) models **(e.g., DLinear, PatchTST)** are naturally invariant to channel ordering but disregard cross-channel dependencies.
+**Goal**: **Key Insight**: Channel-independent (CI) models **(e.g., DLinear, PatchTST)** are naturally invariant to channel ordering but disregard cross-channel dependencies.
 
 The authors propose the channel permutation invariance (CPI) diagnostic: a model that truly understands inter-channel relationships should remain stable under channel permutation.
 

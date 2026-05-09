@@ -27,13 +27,13 @@ content_hash: ca571ed75d3aaa1b
 This paper proposes LoRA-FAIR, which introduces a server-side residual correction term $\Delta\mathbf{B}$ to simultaneously address two fundamental challenges in federated LoRA fine-tuning — server-side aggregation bias and client-side initialization staleness — consistently outperforming existing federated fine-tuning methods on ViT and MLP-Mixer without incurring additional communication overhead.
 
 ## Background & Motivation
-- **State of the Field**: Full-parameter fine-tuning of large foundation models (e.g., ViT) is computationally prohibitive; LoRA drastically reduces trainable parameters via low-rank decomposition, while federated learning (FL) enables privacy-preserving collaborative training to address data scarcity.
+- **Background**: Full-parameter fine-tuning of large foundation models (e.g., ViT) is computationally prohibitive; LoRA drastically reduces trainable parameters via low-rank decomposition, while federated learning (FL) enables privacy-preserving collaborative training to address data scarcity.
 - **Limitations of Prior Work**: Directly combining LoRA with FL (FedIT) faces two fundamental challenges:
     - **Challenge 1 — Server-Side Aggregation Bias**: Independently averaging $\bar{\mathbf{A}}$ and $\bar{\mathbf{B}}$ yields a product $\bar{\mathbf{B}}\bar{\mathbf{A}}$ that does not equal the ideal global update $\sum p_k \mathbf{B}_k \mathbf{A}_k$, since matrix multiplication is not distributive over summation.
     - **Challenge 2 — Client-Side Initialization Staleness**: Methods such as FLoRA reinitialize LoRA modules each round ($\mathbf{A}$ randomly, $\mathbf{B}$ set to zero), causing uninformative gradients at the start of each round ($\partial L/\partial \mathbf{A} \to 0$), which degrades learning efficiency under limited local training steps.
-- **Root Cause**: Existing methods (FFA-LoRA, FLoRA, FlexLoRA) address only one of the two challenges and cannot resolve both simultaneously.
-- **Paper Goals**: Design a federated LoRA fine-tuning method that simultaneously resolves aggregation bias and initialization staleness without increasing communication or computational overhead.
-- **Starting Point**: Keep $\bar{\mathbf{A}}$ fixed on the server and introduce a residual $\Delta\mathbf{B}$ to correct $\bar{\mathbf{B}}$, such that $(\bar{\mathbf{B}} + \Delta\mathbf{B})\bar{\mathbf{A}} \approx \Delta\mathbf{W}$.
+- **Key Challenge**: Existing methods (FFA-LoRA, FLoRA, FlexLoRA) address only one of the two challenges and cannot resolve both simultaneously.
+- **Goal**: Design a federated LoRA fine-tuning method that simultaneously resolves aggregation bias and initialization staleness without increasing communication or computational overhead.
+- **Key Insight**: Keep $\bar{\mathbf{A}}$ fixed on the server and introduce a residual $\Delta\mathbf{B}$ to correct $\bar{\mathbf{B}}$, such that $(\bar{\mathbf{B}} + \Delta\mathbf{B})\bar{\mathbf{A}} \approx \Delta\mathbf{W}$.
 - **Core Idea**: The residual $\Delta\mathbf{B}$ is obtained by minimizing the discrepancy from the ideal global update subject to a regularization term, thereby jointly addressing accurate aggregation and stable initialization.
 
 ## Method

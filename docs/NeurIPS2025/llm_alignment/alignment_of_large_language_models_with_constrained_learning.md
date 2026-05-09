@@ -29,15 +29,15 @@ This paper proposes CAID (Constrained Alignment via Iterative Dualization), an i
 
 ## Background & Motivation
 
-**State of the Field**: RLHF is the dominant paradigm for LLM alignment, yet a single reward model is insufficient to capture the full dimensionality of human preferences. Existing approaches fall into two categories: multi-objective alignment (aggregating rewards via weighted combinations) and constrained alignment (maximizing a primary reward subject to secondary constraints). Constrained alignment is more natural in safety-critical settings—for example, requiring that safety improvements exceed a specified threshold while preserving helpfulness.
+**Background**: RLHF is the dominant paradigm for LLM alignment, yet a single reward model is insufficient to capture the full dimensionality of human preferences. Existing approaches fall into two categories: multi-objective alignment (aggregating rewards via weighted combinations) and constrained alignment (maximizing a primary reward subject to secondary constraints). Constrained alignment is more natural in safety-critical settings—for example, requiring that safety improvements exceed a specified threshold while preserving helpfulness.
 
 **Limitations of Prior Work**: Lagrangian-based policy search for LLMs suffers from two key issues: (1) iterative primal-dual methods (e.g., Safe RLHF) may fail to converge in the worst case; (2) non-iterative dual methods (e.g., One-shot Safety Alignment) can find optimal solutions in distribution space but provide no guarantee of optimality in LLM parameter space.
 
-**Root Cause**: The convexity properties of distribution space do not transfer directly to LLM parameter space. Strong duality in distribution space does not imply optimality in parameter space, and prior work lacks theoretical analysis of whether dual methods can identify optimal constrained policies in LLM parameter space.
+**Key Challenge**: The convexity properties of distribution space do not transfer directly to LLM parameter space. Strong duality in distribution space does not imply optimality in parameter space, and prior work lacks theoretical analysis of whether dual methods can identify optimal constrained policies in LLM parameter space.
 
-**Paper Goals**: (1) Design a practical iterative dual alignment method; (2) establish theoretical optimality guarantees in LLM parameter space; (3) empirically validate effectiveness on safety alignment tasks.
+**Goal**: (1) Design a practical iterative dual alignment method; (2) establish theoretical optimality guarantees in LLM parameter space; (3) empirically validate effectiveness on safety alignment tasks.
 
-**Starting Point**: The authors draw on constrained learning theory, leveraging Lagrangian duality to connect the non-convex parameter space problem to the convex distribution space problem, and analyze the *parametrization gap* to bridge the optimality difference between the two.
+**Key Insight**: The authors draw on constrained learning theory, leveraging Lagrangian duality to connect the non-convex parameter space problem to the convex distribution space problem, and analyze the *parametrization gap* to bridge the optimality difference between the two.
 
 **Core Idea**: Through multi-shot iterative alternation between LLM policy updates and dual variable descent, initialized with the one-shot solution as a warm start, the method achieves both theoretical optimality and strong empirical performance.
 

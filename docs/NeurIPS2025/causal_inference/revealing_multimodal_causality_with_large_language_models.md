@@ -29,9 +29,9 @@ This paper proposes MLLM-CD, the first framework for causal discovery from multi
 
 ## Background & Motivation
 
-- **State of the Field**: Causal discovery aims to infer causal structures from data and is fundamental to scientific progress. Traditional methods rely on predefined structured variables and cannot directly handle unstructured data (text, images, etc.). With the proliferation of multimodal data (e.g., clinical notes + medical images + lab results in medical diagnosis), causal discovery from multimodal unstructured data has become increasingly pressing.
+- **Background**: Causal discovery aims to infer causal structures from data and is fundamental to scientific progress. Traditional methods rely on predefined structured variables and cannot directly handle unstructured data (text, images, etc.). With the proliferation of multimodal data (e.g., clinical notes + medical images + lab results in medical diagnosis), causal discovery from multimodal unstructured data has become increasingly pressing.
 - **Limitations of Prior Work**: Although LLMs have advanced text-based causal discovery (e.g., COAT), extending them to multimodal settings faces two key challenges: (1) **Difficulty in cross-modal factor discovery**: causal variables may be embedded across modalities and only identifiable through cross-modal interaction (e.g., "smaller apples score lower" requires joint understanding of images and text); (2) **Insufficient handling of structural ambiguity**: multiple causal structures can produce identical statistical dependencies from purely observational data, and the greater number of variables in multimodal settings exacerbates this ambiguity.
-- **Root Cause**: Naively extending COAT to multimodal settings discovers only a limited number of causal factors and leaves inferred causal edges undirected, falling far short of solving the multimodal causal discovery problem.
+- **Key Challenge**: Naively extending COAT to multimodal settings discovers only a limited number of causal factors and leaves inferred causal edges undirected, falling far short of solving the multimodal causal discovery problem.
 
 ## Method
 

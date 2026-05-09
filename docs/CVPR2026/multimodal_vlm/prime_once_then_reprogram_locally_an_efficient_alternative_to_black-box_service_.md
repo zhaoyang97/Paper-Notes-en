@@ -29,11 +29,11 @@ This paper proposes AReS, which replaces the continuous API calls of conventiona
 
 ## Background & Motivation
 
-1. **State of the Field**: Model-as-a-Service (MaaS) is the dominant paradigm for deploying SOTA models, where users can only obtain input–output predictions via APIs. Closed-box visual reprogramming methods (e.g., BAR, BlackVIP) adapt API models by modifying input images through zeroth-order optimization.
+1. **Background**: Model-as-a-Service (MaaS) is the dominant paradigm for deploying SOTA models, where users can only obtain input–output predictions via APIs. Closed-box visual reprogramming methods (e.g., BAR, BlackVIP) adapt API models by modifying input images through zeroth-order optimization.
 2. **Limitations of Prior Work**: ZOO methods face a triple dilemma: (1) they require massive API calls (~$10^8$), incurring extremely high training and inference costs; (2) gradient estimation is unstable, making optimization slow and unreliable; (3) modern powerful APIs (e.g., GPT-4o) are robust to input perturbations, so the small perturbations that ZOO relies on are ignored by the model, yielding nearly no performance gain.
-3. **Root Cause**: The fundamental assumption of ZOO methods—that perturbing the input can influence model outputs—progressively fails as models become more powerful and robust to perturbations.
-4. **Paper Goals**: How to efficiently adapt service models under the strictest black-box setting (input–predicted probability access only), especially when ZOO methods are ineffective against modern APIs.
-5. **Starting Point**: Rather than continuously performing costly zeroth-order optimization on the black-box model, perform a one-time API interaction to acquire knowledge and then conduct efficient white-box optimization on a local model.
+3. **Key Challenge**: The fundamental assumption of ZOO methods—that perturbing the input can influence model outputs—progressively fails as models become more powerful and robust to perturbations.
+4. **Goal**: How to efficiently adapt service models under the strictest black-box setting (input–predicted probability access only), especially when ZOO methods are ineffective against modern APIs.
+5. **Key Insight**: Rather than continuously performing costly zeroth-order optimization on the black-box model, perform a one-time API interaction to acquire knowledge and then conduct efficient white-box optimization on a local model.
 6. **Core Idea**: Prime the local encoder with a single API query, then complete all visual reprogramming and inference locally, entirely eliminating subsequent API dependency.
 
 ## Method

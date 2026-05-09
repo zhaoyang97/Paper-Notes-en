@@ -27,15 +27,15 @@ This paper identifies and formalizes "structural alignment bias" in LLM tool inv
 
 ## Background & Motivation
 
-**State of the Field**: The ability of LLMs to use external tools has become a critical capability. In real-world deployments, models frequently encounter tools irrelevant to the user's query, and the correct behavior in such cases is to refrain from invocation.
+**Background**: The ability of LLMs to use external tools has become a critical capability. In real-world deployments, models frequently encounter tools irrelevant to the user's query, and the correct behavior in such cases is to refrain from invocation.
 
 **Limitations of Prior Work**: (1) LLMs exhibit a largely overlooked systematic flaw: even when a tool's functionality does not match the user's goal (semantic irrelevance), the model tends to invoke the tool as long as query attributes can be populated into the tool's parameters (structural alignment). (2) Existing benchmarks construct irrelevant scenarios by randomly pairing queries with tools, a process that typically also introduces structural misalignment, thereby confounding evaluation — models may refuse invocation simply because parameters cannot be filled rather than because they genuinely recognize semantic irrelevance.
 
-**Root Cause**: Do LLMs truly understand that semantic relevance is a necessary condition for tool invocation, or do they rely on structural alignment as a decision-making shortcut?
+**Key Challenge**: Do LLMs truly understand that semantic relevance is a necessary condition for tool invocation, or do they rely on structural alignment as a decision-making shortcut?
 
-**Paper Goals**: (1) Identify and formalize structural alignment bias; (2) construct a dataset that decouples the two factors; (3) reveal the underlying mechanism; (4) propose mitigation strategies.
+**Goal**: (1) Identify and formalize structural alignment bias; (2) construct a dataset that decouples the two factors; (3) reveal the underlying mechanism; (4) propose mitigation strategies.
 
-**Starting Point**: Inspired by the polymorphism principle in object-oriented programming — different services can share a unified interface (i.e., structurally aligned yet semantically distinct) — the authors design evaluations that reflect realistic deployment scenarios.
+**Key Insight**: Inspired by the polymorphism principle in object-oriented programming — different services can share a unified interface (i.e., structurally aligned yet semantically distinct) — the authors design evaluations that reflect realistic deployment scenarios.
 
 **Core Idea**: Structural alignment bias = the systematic shortcut by which LLMs treat "parameters can be filled" as a proxy for "tool should be invoked." By revealing two competing information flows internally (semantic checking vs. structural matching), the paper proposes path rebalancing to mitigate the bias.
 

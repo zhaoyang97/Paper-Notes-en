@@ -27,15 +27,15 @@ A single architecture (Crystal Fourier Transformer) is proposed that adapts to t
 
 ## Background & Motivation
 
-**State of the Field**: Encoding known symmetries into ML models improves accuracy and generalization, yet achieving exact invariance to a specific symmetry group typically requires designing a custom architecture for each group.
+**Background**: Encoding known symmetries into ML models improves accuracy and generalization, yet achieving exact invariance to a specific symmetry group typically requires designing a custom architecture for each group.
 
 **Limitations of Prior Work**: There are 230 space groups in three-dimensional space (crystal symmetries), and designing dedicated architectures for each is not scalable. The problem is further compounded by data scarcity—the largest benchmark dataset (Materials Project) contains only ~200k entries, averaging fewer than 1,000 samples per group, with many groups having almost no data.
 
-**Root Cause**: Exact group invariance is needed to respect physical constraints, yet cross-group parameter sharing is required to overcome data scarcity.
+**Key Challenge**: Exact group invariance is needed to respect physical constraints, yet cross-group parameter sharing is required to overcome data scarcity.
 
-**Paper Goals**: Develop a single architecture that automatically adapts its weights according to the input space group to enforce the corresponding invariance.
+**Goal**: Develop a single architecture that automatically adapts its weights according to the input space group to enforce the corresponding invariance.
 
-**Starting Point**: Analyze the constraints imposed by group symmetries in Fourier space—group operations introduce phase constraints on reciprocal lattice points, which are encoded as the adjacency matrix of a constraint graph and embedded into neural network layers.
+**Key Insight**: Analyze the constraints imposed by group symmetries in Fourier space—group operations introduce phase constraints on reciprocal lattice points, which are encoded as the adjacency matrix of a constraint graph and embedded into neural network layers.
 
 **Core Idea**: Invariance under a space group is equivalent to a set of constraints on Fourier coefficients at reciprocal lattice points. These constraints admit a graph-structured representation that can be encoded into the network, enabling parameter sharing across groups.
 

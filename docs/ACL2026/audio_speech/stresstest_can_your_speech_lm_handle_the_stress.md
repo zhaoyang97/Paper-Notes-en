@@ -29,15 +29,15 @@ This paper proposes StressTest, a benchmark for evaluating the ability of speech
 
 ## Background & Motivation
 
-**State of the Field**: Speech language models (e.g., GPT-4o-audio, Gemini 2.5 Pro, Qwen2Audio) are now capable of directly processing audio for reasoning, bypassing traditional ASR cascade pipelines and leveraging paralinguistic information.
+**Background**: Speech language models (e.g., GPT-4o-audio, Gemini 2.5 Pro, Qwen2Audio) are now capable of directly processing audio for reasoning, bypassing traditional ASR cascade pipelines and leveraging paralinguistic information.
 
 **Limitations of Prior Work**: Sentence stress is a critical prosodic element — the same sentence "I didn't say she stole the money" can convey entirely different meanings depending on which word is stressed — yet it has been almost entirely overlooked in the evaluation and development of SLMs. Existing benchmarks focus on speech recognition, emotion detection, and similar tasks, with no coverage of stress understanding.
 
-**Root Cause**: Understanding sentence stress requires a model not only to process *what* is said but also *how* it is said, demanding deep integration of prosodic cues (pitch, loudness, duration) with semantic reasoning — a capability absent in current SLMs.
+**Key Challenge**: Understanding sentence stress requires a model not only to process *what* is said but also *how* it is said, demanding deep integration of prosodic cues (pitch, loudness, duration) with semantic reasoning — a capability absent in current SLMs.
 
-**Paper Goals**: To construct a benchmark for stress understanding, identify the capability gaps of state-of-the-art SLMs, and train a model with stress understanding ability using synthetic data.
+**Goal**: To construct a benchmark for stress understanding, identify the capability gaps of state-of-the-art SLMs, and train a model with stress understanding ability using synthetic data.
 
-**Starting Point**: A dual-task evaluation framework is designed — Sentence Stress Detection (SSD) and Sentence Stress Reasoning (SSR) — along with a complete pipeline encompassing synthetic data generation, validation, and multi-task training.
+**Key Insight**: A dual-task evaluation framework is designed — Sentence Stress Detection (SSD) and Sentence Stress Reasoning (SSR) — along with a complete pipeline encompassing synthetic data generation, validation, and multi-task training.
 
 **Core Idea**: A pipeline combining LLM-generated stress-marked text, TTS-synthesized stressed speech, and automatic validation filtering is used to create training data, enabling fine-tuned SLMs to generalize to stress understanding in real recordings.
 

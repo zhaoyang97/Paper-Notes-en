@@ -28,15 +28,15 @@ This paper constructs ChemX — a suite of 10 multimodal chemical data extractio
 
 ## Background & Motivation
 
-**State of the Field**: Machine learning has made remarkable progress in chemical discovery, but remains heavily reliant on structured data. Existing chemical databases (e.g., PubChem, CSD) are primarily designed for property prediction and structural analysis, making them unsuitable for evaluating automated information extraction systems. Agent-based automated data extraction approaches (e.g., nanoMINER, SLM-Matrix) have emerged in recent years, but each is confined to a specific subdomain.
+**Background**: Machine learning has made remarkable progress in chemical discovery, but remains heavily reliant on structured data. Existing chemical databases (e.g., PubChem, CSD) are primarily designed for property prediction and structural analysis, making them unsuitable for evaluating automated information extraction systems. Agent-based automated data extraction approaches (e.g., nanoMINER, SLM-Matrix) have emerged in recent years, but each is confined to a specific subdomain.
 
 **Limitations of Prior Work**: (a) No unified benchmark exists for multimodal (text + table + figure) chemical information extraction — existing systems are evaluated on disparate datasets, precluding cross-system comparison; (b) Specialized agent systems (e.g., nanoMINER) perform well on their target datasets but fail to generalize to other chemical domains; (c) General-purpose agent frameworks (ChatGPT Agent, FutureHouse) exhibit high error rates when handling domain-specific chemical terminology and SMILES representations.
 
-**Root Cause**: The heterogeneity of chemical data — nanomaterials require synthesis conditions, physicochemical properties, and structural parameters, while small molecules demand SMILES, bioactivity metrics, and molecular descriptors — makes precise extraction by general methods difficult, yet specialized methods cannot generalize across domains. This tension cannot even be quantified without a unified benchmark.
+**Key Challenge**: The heterogeneity of chemical data — nanomaterials require synthesis conditions, physicochemical properties, and structural parameters, while small molecules demand SMILES, bioactivity metrics, and molecular descriptors — makes precise extraction by general methods difficult, yet specialized methods cannot generalize across domains. This tension cannot even be quantified without a unified benchmark.
 
-**Paper Goals**: To construct the first systematic, multi-domain, multimodal benchmark for chemical information extraction, and on this basis to fairly evaluate the practical extraction capabilities of existing agentic systems and LLMs, identifying the bottlenecks of current technology.
+**Goal**: To construct the first systematic, multi-domain, multimodal benchmark for chemical information extraction, and on this basis to fairly evaluate the practical extraction capabilities of existing agentic systems and LLMs, identifying the bottlenecks of current technology.
 
-**Starting Point**: The authors depart from the intrinsic heterogeneity of chemical data rather than from any particular methodology, arguing that only a benchmark covering diverse chemical domains and varying difficulty levels can genuinely advance automated extraction technology.
+**Key Insight**: The authors depart from the intrinsic heterogeneity of chemical data rather than from any particular methodology, arguing that only a benchmark covering diverse chemical domains and varying difficulty levels can genuinely advance automated extraction technology.
 
 **Core Idea**: Ten expert-validated multimodal datasets are used to uniformly evaluate both general-purpose and specialized agents, exposing systemic bottlenecks in SMILES parsing, terminology normalization, and context-dependent resolution in chemical information extraction.
 

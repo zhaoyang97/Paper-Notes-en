@@ -28,15 +28,15 @@ DiZiNER simulates the human pilot annotation workflow: multiple heterogeneous LL
 
 ## Background & Motivation
 
-**State of the Field**: Zero-shot and few-shot NER performance of LLMs has improved substantially, yet remains far behind supervised systems. Instruction-tuning approaches (e.g., UniversalNER, GoLLIE) require large amounts of annotated data and transfer poorly across domains.
+**Background**: Zero-shot and few-shot NER performance of LLMs has improved substantially, yet remains far behind supervised systems. Instruction-tuning approaches (e.g., UniversalNER, GoLLIE) require large amounts of annotated data and transfer poorly across domains.
 
 **Limitations of Prior Work**: LLMs exhibit systematic error patterns in NER—difficulty following complex annotation guidelines, ambiguous entity boundary detection, and frequent entity type confusion. These errors closely resemble the inconsistencies human annotators exhibit during the early stages of annotation.
 
-**Root Cause**: The performance gap between zero-shot NER and supervised NER (approximately 32 F1 points on average) stems not from insufficient model capability, but from ambiguity in task instructions—the same instruction is interpreted differently by different models.
+**Key Challenge**: The performance gap between zero-shot NER and supervised NER (approximately 32 F1 points on average) stems not from insufficient model capability, but from ambiguity in task instructions—the same instruction is interpreted differently by different models.
 
-**Paper Goals**: To automatically refine NER instructions by simulating the iterative disagreement-resolution process of human pilot annotation, improving zero-shot performance without any parameter updates.
+**Goal**: To automatically refine NER instructions by simulating the iterative disagreement-resolution process of human pilot annotation, improving zero-shot performance without any parameter updates.
 
-**Starting Point**: The construction of human gold-standard datasets inherently involves resolving disagreements and refining guidelines through pilot annotation—DiZiNER simulates this process using LLMs.
+**Key Insight**: The construction of human gold-standard datasets inherently involves resolving disagreements and refining guidelines through pilot annotation—DiZiNER simulates this process using LLMs.
 
 **Core Idea**: Multiple heterogeneous LLMs serve as annotators; their disagreements are analyzed to refine both universal instructions and model-specific instructions.
 

@@ -27,13 +27,13 @@ content_hash: 53b4ef93379919f7
 This work is the first to introduce matrix splitting theory, unifying TD, FQI, and PFQI under linear function approximation as iterative methods for solving the same target linear system $(\Sigma_{cov} - \gamma\Sigma_{cr})\theta = \theta_{\phi,r}$, differing only in their preconditioners. It establishes necessary and sufficient conditions for the convergence of each algorithm, introduces the novel concept of rank invariance, and reveals that target networks are fundamentally a continuous transformation of the preconditioner from a constant to a data-adaptive form.
 
 ## Background & Motivation
-**State of the Field**: In off-policy policy evaluation (OPE), TD learning may diverge while FQI is generally more stable. The conventional understanding holds that the three algorithms differ only in the number of updates applied to the target value function (TD = 1, FQI = ∞, PFQI = finite).
+**Background**: In off-policy policy evaluation (OPE), TD learning may diverge while FQI is generally more stable. The conventional understanding holds that the three algorithms differ only in the number of updates applied to the target value function (TD = 1, FQI = ∞, PFQI = finite).
 
 **Limitations of Prior Work**: (1) The conventional view cannot explain why TD convergence does not imply FQI convergence, nor vice versa. (2) Existing convergence analyses rely on strong assumptions such as feature linear independence, yielding only sufficient rather than necessary and sufficient conditions. (3) Several erroneous claims exist in the literature (e.g., Ghosh 2020 asserts that linear independence alone guarantees a unique off-policy TD fixed point — this paper shows that rank invariance is also required).
 
-**Root Cause**: Do three seemingly distinct algorithms share a unified mathematical essence? What are the precise convergence conditions for each?
+**Key Challenge**: Do three seemingly distinct algorithms share a unified mathematical essence? What are the precise convergence conditions for each?
 
-**Starting Point**: Drawing on matrix splitting and preconditioning techniques from numerical linear algebra, the three RL algorithms are reformulated as instances of the unified iterative scheme $\theta_{k+1} = (I - MA)\theta_k + Mb$ with different preconditioners $M$.
+**Key Insight**: Drawing on matrix splitting and preconditioning techniques from numerical linear algebra, the three RL algorithms are reformulated as instances of the unified iterative scheme $\theta_{k+1} = (I - MA)\theta_k + Mb$ with different preconditioners $M$.
 
 ## Method
 

@@ -31,9 +31,9 @@ content_hash: e6c5d40bd479ad17
 This paper proposes AudioTrust, the first multidimensional trustworthiness evaluation benchmark for audio large language models (ALLMs), encompassing six dimensions—fairness, hallucination, safety, privacy, robustness, and authentication—with 26 sub-tasks and 4,420+ audio samples. It systematically evaluates the trustworthiness boundaries of 14 state-of-the-art open- and closed-source ALLMs in high-stakes audio scenarios.
 
 ## Background & Motivation
-**State of the Field**: ALLMs have advanced rapidly (GPT-4o Audio, Qwen2-Audio, Gemini, etc.), yet existing safety evaluation frameworks (SafeDialBench, SafetyBench) are primarily designed for the text modality and overlook trustworthiness risks unique to audio.
+**Background**: ALLMs have advanced rapidly (GPT-4o Audio, Qwen2-Audio, Gemini, etc.), yet existing safety evaluation frameworks (SafeDialBench, SafetyBench) are primarily designed for the text modality and overlook trustworthiness risks unique to audio.
 
-**Root Cause**: Audio signals contain rich non-semantic acoustic cues (timbre, accent, background noise, emotion) that can be exploited to manipulate model behavior—attack vectors that text-based safety frameworks are fundamentally incapable of capturing.
+**Key Challenge**: Audio signals contain rich non-semantic acoustic cues (timbre, accent, background noise, emotion) that can be exploited to manipulate model behavior—attack vectors that text-based safety frameworks are fundamentally incapable of capturing.
 
 **Core Idea**: The paper constructs the first comprehensive ALLM trustworthiness evaluation framework covering six audio-native safety dimensions. Through carefully designed real-world scenario datasets and an automated evaluation pipeline (human verification agreement >97%), it systematically quantifies trustworthiness risks in ALLMs.
 

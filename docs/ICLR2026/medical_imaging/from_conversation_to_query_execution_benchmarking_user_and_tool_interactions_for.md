@@ -28,13 +28,13 @@ This paper proposes EHR-ChatQA, the first benchmark to evaluate the end-to-end i
 
 ## Background & Motivation
 
-**State of the Field**: LLM-based agents are increasingly applied to structured database interaction. Text-to-SQL benchmarks such as Spider and BIRD evaluate single-turn natural language–to–SQL translation but do not address interactive scenarios.
+**Background**: LLM-based agents are increasingly applied to structured database interaction. Text-to-SQL benchmarks such as Spider and BIRD evaluate single-turn natural language–to–SQL translation but do not address interactive scenarios.
 
 **Limitations of Prior Work**: (1) **Query ambiguity**: Clinical users frequently pose underspecified questions (e.g., "show me the recent lab results") lacking precise constraints; (2) **Value mismatch**: Clinical terminology often diverges from database entries (e.g., "Lopressor" vs. "metoprolol tartrate"); (3) Existing benchmarks do not assess agents' end-to-end capability to clarify user intent across multiple turns, invoke tools to resolve mismatches, and generate correct SQL.
 
-**Root Cause**: Single-turn SQL generation is insufficient — real clinical scenarios require agents to proactively ask clarifying questions, search database values, and invoke external knowledge to bridge the gap between user intent and database content.
+**Key Challenge**: Single-turn SQL generation is insufficient — real clinical scenarios require agents to proactively ask clarifying questions, search database values, and invoke external knowledge to bridge the gap between user intent and database content.
 
-**Starting Point**: The paper constructs a complete interactive environment — comprising an LLM-simulated user, a tool suite, and a validator — to evaluate the full pipeline from conversation to query execution.
+**Key Insight**: The paper constructs a complete interactive environment — comprising an LLM-simulated user, a tool suite, and a validator — to evaluate the full pipeline from conversation to query execution.
 
 ## Method
 

@@ -28,15 +28,15 @@ This paper proposes NSPO, which projects safety alignment policy gradients onto 
 
 ## Background & Motivation
 
-**State of the Field**: LLM safety alignment (refusing harmful requests, adhering to ethical norms) is typically achieved by training on safety data via RL methods such as PPO, GRPO, or DPO.
+**Background**: LLM safety alignment (refusing harmful requests, adhering to ethical norms) is typically achieved by training on safety data via RL methods such as PPO, GRPO, or DPO.
 
 **Limitations of Prior Work**: Safety alignment induces an **alignment tax** — the model becomes overly conservative, leading to performance degradation on general tasks such as mathematical reasoning and code generation. Existing approaches (SafeRLHF, W-DOOR, BFPO) model safety and general capability as a bi-objective optimization problem, mitigating the trade-off through balancing weights or mixing in large amounts of general data, but **none of them explicitly resolve gradient conflicts between the two objectives during training**.
 
-**Root Cause**: The gradients of safety objectives and general-capability objectives conflict in direction — updating parameters along the safety gradient disrupts the general-task representations already learned by the model.
+**Key Challenge**: The gradients of safety objectives and general-capability objectives conflict in direction — updating parameters along the safety gradient disrupts the general-task representations already learned by the model.
 
-**Paper Goals**: How can safety alignment be performed without fundamentally harming general capabilities?
+**Goal**: How can safety alignment be performed without fundamentally harming general capabilities?
 
-**Starting Point**: If a parameter update $\Delta$ lies in the null space of the general-task input representations $K$ (i.e., $\Delta K = 0$), the model's outputs on general inputs remain unchanged after the update.
+**Key Insight**: If a parameter update $\Delta$ lies in the null space of the general-task input representations $K$ (i.e., $\Delta K = 0$), the model's outputs on general inputs remain unchanged after the update.
 
 **Core Idea**: Project safety policy gradients onto the null space of the general-task representation matrix, geometrically guaranteeing that safety updates are orthogonal to the general capability subspace.
 

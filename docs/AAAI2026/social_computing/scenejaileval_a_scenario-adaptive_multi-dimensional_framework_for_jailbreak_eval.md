@@ -28,18 +28,18 @@ This paper proposes SceneJailEval, a scenario-adaptive multi-dimensional jailbre
 
 ## Background & Motivation
 
-**State of the Field**: LLM jailbreak attack evaluation suffers from two major problems — mainstream methods (string matching, toxicity classifiers, LLM judges) produce only binary "yes/no" outputs without quantifying harm severity; emerging multi-dimensional frameworks (e.g., StrongREJECT, Cai et al.) apply uniform evaluation criteria across all scenarios, ignoring scenario-specific differences.
+**Background**: LLM jailbreak attack evaluation suffers from two major problems — mainstream methods (string matching, toxicity classifiers, LLM judges) produce only binary "yes/no" outputs without quantifying harm severity; emerging multi-dimensional frameworks (e.g., StrongREJECT, Cai et al.) apply uniform evaluation criteria across all scenarios, ignoring scenario-specific differences.
 
 **Limitations of Prior Work**:
    - **Binary classification is too coarse**: It cannot distinguish between "providing detailed methods for killing" and "merely implying the possibility"
    - **One-size-fits-all evaluation criteria**: For instance, the "authenticity" dimension is meaningful for "violent crime" scenarios but irrelevant to "hate speech"; the same dimension should carry different weights across scenarios
    - **Lack of regional sensitivity**: Cryptocurrency compliance requirements differ between mainland China and Japan, yet existing methods cannot account for this
 
-**Root Cause**: Jailbreak scenarios are highly heterogeneous (violent crime vs. sexual content vs. political incitement), but evaluation methods treat them uniformly, creating an accuracy bottleneck.
+**Key Challenge**: Jailbreak scenarios are highly heterogeneous (violent crime vs. sexual content vs. political incitement), but evaluation methods treat them uniformly, creating an accuracy bottleneck.
 
-**Paper Goals**: To construct a scenario-adaptive jailbreak evaluation framework in which evaluation dimensions, scoring criteria, and weights are dynamically adjusted according to the scenario.
+**Goal**: To construct a scenario-adaptive jailbreak evaluation framework in which evaluation dimensions, scoring criteria, and weights are dynamically adjusted according to the scenario.
 
-**Starting Point**: Drawing on mature scenario-based evaluation paradigms from software testing and autonomous driving verification, combined with DREAD/CVSS cybersecurity threat modeling theory, to systematically construct the evaluation framework.
+**Key Insight**: Drawing on mature scenario-based evaluation paradigms from software testing and autonomous driving verification, combined with DREAD/CVSS cybersecurity threat modeling theory, to systematically construct the evaluation framework.
 
 **Core Idea**: A 14-scenario × 10-dimension adaptive matrix combined with Delphi-method expert consensus and AHP analytic hierarchy process weighting, enabling fine-grained jailbreak evaluation.
 

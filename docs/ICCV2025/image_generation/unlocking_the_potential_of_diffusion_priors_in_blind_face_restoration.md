@@ -38,7 +38,7 @@ This paper proposes FLIPNET, a unified framework built upon a T2I diffusion mode
 - **Conditional concatenation** (WaveFace): Directly concatenating LQ images as input suffers from limited degradation modeling, yielding poor real-world performance.
 - **Real-ESRGAN degradation model**: Repeatedly applies classical degradations, resulting in limited diversity and mode coverage.
 
-**Paper Goals**: Address both gaps using a single T2I model with minimal trainable parameters, without relying on any pre-processing module.
+**Goal**: Address both gaps using a single T2I model with minimal trainable parameters, without relying on any pre-processing module.
 
 ## Method
 

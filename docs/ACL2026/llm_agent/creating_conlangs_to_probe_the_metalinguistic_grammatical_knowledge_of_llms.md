@@ -29,15 +29,15 @@ This paper introduces IASC (Interactive Agentic System for ConLangs), a modular 
 
 ## Background & Motivation
 
-**State of the Field**: A large body of research has examined the linguistic capabilities of LLMs—including translation and syntactic annotation—but these tasks evaluate knowledge of specific languages rather than understanding of linguistic concepts per se. A key open question is whether LLMs genuinely "understand" abstract linguistic concepts such as word order, case marking, and agreement, or merely memorize patterns from training data associated with particular languages.
+**Background**: A large body of research has examined the linguistic capabilities of LLMs—including translation and syntactic annotation—but these tasks evaluate knowledge of specific languages rather than understanding of linguistic concepts per se. A key open question is whether LLMs genuinely "understand" abstract linguistic concepts such as word order, case marking, and agreement, or merely memorize patterns from training data associated with particular languages.
 
 **Limitations of Prior Work**: (1) Existing evaluations of LLM linguistic competence tend to focus on encyclopedic tests (i.e., knowing facts about a given language), and lack systematic probing of metalinguistic reasoning; (2) evaluations on natural languages are susceptible to training data leakage, since LLMs may retrieve memorized answers rather than apply genuine rule-based understanding.
 
-**Root Cause**: Although LLMs are exposed to extensive linguistic literature and multilingual data during training, this exposure does not guarantee the ability to manipulate linguistic structures according to novel abstract grammatical rules. For instance, reordering an English sentence from SVO to OVS (an extremely rare word order) is no more complex in principle than reordering it to SOV, yet LLM performance on these two cases may differ dramatically.
+**Key Challenge**: Although LLMs are exposed to extensive linguistic literature and multilingual data during training, this exposure does not guarantee the ability to manipulate linguistic structures according to novel abstract grammatical rules. For instance, reordering an English sentence from SVO to OVS (an extremely rare word order) is no more complex in principle than reordering it to SOV, yet LLM performance on these two cases may differ dramatically.
 
-**Paper Goals**: (1) Provide a flexible and engaging constructed-language building tool; (2) systematically probe LLMs' metalinguistic knowledge across typologically diverse features using morphosyntactic transformation tasks.
+**Goal**: (1) Provide a flexible and engaging constructed-language building tool; (2) systematically probe LLMs' metalinguistic knowledge across typologically diverse features using morphosyntactic transformation tasks.
 
-**Starting Point**: Constructing a conlang requires LLMs not merely to translate, but to restructure sentence constituents and add morphological markers according to abstract grammatical specifications—directly testing the depth of their understanding of linguistic concepts.
+**Key Insight**: Constructing a conlang requires LLMs not merely to translate, but to restructure sentence constituents and add morphological markers according to abstract grammatical specifications—directly testing the depth of their understanding of linguistic concepts.
 
 **Core Idea**: A modular constructed-language building system serves as a benchmark. By requiring LLMs to transform English sentences according to varied morphosyntactic parameters (word order, case system, tense marking, etc.), the system quantifies their metalinguistic competence.
 

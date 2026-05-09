@@ -29,15 +29,15 @@ This paper introduces a novel task of motion-guided few-shot video object segmen
 
 ## Background & Motivation
 
-**State of the Field**: Few-shot video object segmentation (FSVOS) aims to segment novel-category objects in query videos given a small number of annotated examples. Existing methods (DANet, HPAN, TTI) are **semantics-centric** — they associate support and query sets based on object category, e.g., "given a panda image, segment all pandas."
+**Background**: Few-shot video object segmentation (FSVOS) aims to segment novel-category objects in query videos given a small number of annotated examples. Existing methods (DANet, HPAN, TTI) are **semantics-centric** — they associate support and query sets based on object category, e.g., "given a panda image, segment all pandas."
 
 **Limitations of Prior Work**: (a) Existing FSVOS methods overlook the most essential information in videos — **motion patterns** — reducing the task to static image matching; (b) On datasets such as YouTube-VIS, image-level FSS methods and video-level FSVOS methods achieve comparable performance (62.3 vs. 63.0 $\mathcal{J}\&\mathcal{F}$), indicating that current evaluations do not assess temporal understanding; (c) Referring video object segmentation (RVOS) uses text to describe motion, but novel or complex motions are difficult to describe precisely in language (e.g., Cristiano Ronaldo's signature celebration, the Joker's dance).
 
-**Root Cause**: Motion patterns are a defining characteristic of video, yet existing few-shot segmentation methods primarily extract appearance/semantic features and lack effective mechanisms for motion feature extraction and matching — making cross-category recognition of identical motions infeasible.
+**Key Challenge**: Motion patterns are a defining characteristic of video, yet existing few-shot segmentation methods primarily extract appearance/semantic features and lack effective mechanisms for motion feature extraction and matching — making cross-category recognition of identical motions infeasible.
 
-**Paper Goals**: (a) Establish a FSVOS benchmark organized by motion categories; (b) Design a method capable of effectively extracting motion prototypes from video to enable "observe a motion pattern → locate objects performing the same motion in a new video."
+**Goal**: (a) Establish a FSVOS benchmark organized by motion categories; (b) Design a method capable of effectively extracting motion prototypes from video to enable "observe a motion pattern → locate objects performing the same motion in a new video."
 
-**Starting Point**: The support set is extended from images to video clips (since static images cannot represent motion), a motion category vocabulary is constructed, and frame differencing is employed to explicitly extract motion features decoupled from appearance features.
+**Key Insight**: The support set is extended from images to video clips (since static images cannot represent motion), a motion category vocabulary is constructed, and frame differencing is employed to explicitly extract motion features decoupled from appearance features.
 
 **Core Idea**: Transform FSVOS from "object category matching" to "motion pattern matching" by decoupling motion and appearance prototypes to enable cross-category motion segmentation.
 

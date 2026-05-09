@@ -31,7 +31,7 @@ This paper proposes SILVR, a framework that achieves continual self-improvement 
 
 ### Limitations of Prior Work
 
-**State of the Field**: Video generation models have demonstrated strong capabilities as text-conditioned visual planners for robotic task planning. However, generalization to unseen tasks remains a significant challenge. Existing methods rely primarily on offline data (pre-collected demonstrations or internet videos) and lack the ability to continuously improve from online self-collected experience.
+**Background**: Video generation models have demonstrated strong capabilities as text-conditioned visual planners for robotic task planning. However, generalization to unseen tasks remains a significant challenge. Existing methods rely primarily on offline data (pre-collected demonstrations or internet videos) and lack the ability to continuously improve from online self-collected experience.
 
 **Core Problem**: Can one design a visual planning agent that self-improves online?
 

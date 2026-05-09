@@ -27,15 +27,15 @@ This paper introduces the concept of duality in program execution reasoning. Thr
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are widely adopted in software engineering tasks (code generation, testing, bug fixing, etc.), yet their performance remains inconsistent — they can solve complex programming problems while failing on basic loop reasoning. This may stem from imitating surface patterns rather than genuinely understanding programs. Recent work has begun examining fine-grained reasoning capabilities, such as code coverage prediction, input-output mapping, and intermediate state tracking.
+**Background**: LLMs are widely adopted in software engineering tasks (code generation, testing, bug fixing, etc.), yet their performance remains inconsistent — they can solve complex programming problems while failing on basic loop reasoning. This may stem from imitating surface patterns rather than genuinely understanding programs. Recent work has begun examining fine-grained reasoning capabilities, such as code coverage prediction, input-output mapping, and intermediate state tracking.
 
 **Limitations of Prior Work**: Existing program execution benchmarks evaluate runtime behavior under a single test case — i.e., reasoning along a single execution path — whereas a given program may traverse multiple paths depending on its inputs. Single-test-case evaluation provides only a narrow view of a model's program understanding. Furthermore, benchmarks defined by fixed input-output pairs are susceptible to training data contamination, as models may have memorized the answers.
 
-**Root Cause**: Two execution paths of a program share the same execution space and diverge only at branch points due to differing program states. Existing evaluations overlook the causal relationships between execution paths — they assess only whether a model can predict *which path was taken*, without asking *why that path was taken* or *what would cause the other path to be taken instead*.
+**Key Challenge**: Two execution paths of a program share the same execution space and diverge only at branch points due to differing program states. Existing evaluations overlook the causal relationships between execution paths — they assess only whether a model can predict *which path was taken*, without asking *why that path was taken* or *what would cause the other path to be taken instead*.
 
-**Paper Goals**: To design a joint evaluation framework that simultaneously tests LLMs' forward execution reasoning and backward counterfactual reasoning abilities, thereby providing a more robust measure of causal understanding of program execution.
+**Goal**: To design a joint evaluation framework that simultaneously tests LLMs' forward execution reasoning and backward counterfactual reasoning abilities, thereby providing a more robust measure of causal understanding of program execution.
 
-**Starting Point**: Two program paths share a common execution space and diverge only at branch conditions. The authors argue that understanding program execution requires simultaneously understanding *how observed behavior arises* and *under what conditions execution would be redirected to an alternative path*.
+**Key Insight**: Two program paths share a common execution space and diverge only at branch conditions. The authors argue that understanding program execution requires simultaneously understanding *how observed behavior arises* and *under what conditions execution would be redirected to an alternative path*.
 
 **Core Idea**: Define duality in program execution reasoning — forward reasoning predicts the observable behavior of an execution path, while backward reasoning infers the input mutations that redirect execution to the counterfactual path — with the two jointly constituting dual-path reasoning: $\mathcal{R}_{dual} = \mathcal{R}_{exec} \oplus \mathcal{R}_{cf}$.
 

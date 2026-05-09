@@ -27,13 +27,13 @@ content_hash: b40e6efc689906d1
 This paper proposes GraphIDS, a self-supervised intrusion detection model that unifies graph representation learning and anomaly detection via a masked autoencoder, achieving a PR-AUC of 99.98% and macro F1 of 99.61% on multiple NetFlow benchmarks, surpassing baselines by 5–25 percentage points.
 
 ## Background & Motivation
-**State of the Field**: Network intrusion detection is highly challenging under limited annotations and continuously evolving attack patterns; graph neural networks (GNNs) have recently been introduced to this domain.
+**Background**: Network intrusion detection is highly challenging under limited annotations and continuously evolving attack patterns; graph neural networks (GNNs) have recently been introduced to this domain.
 
 **Limitations of Prior Work**: Existing GNN-based methods decouple representation learning from anomaly detection, resulting in learned embeddings that are not optimized for identifying attacks.
 
-**Root Cause**: Unsupervised/self-supervised approaches are necessary due to the ever-changing nature of attack types and insufficient labeled data, yet the representation learning objective is misaligned with the detection objective.
+**Key Challenge**: Unsupervised/self-supervised approaches are necessary due to the ever-changing nature of attack types and insufficient labeled data, yet the representation learning objective is misaligned with the detection objective.
 
-**Starting Point**: Unifying graph representation learning and anomaly detection within an end-to-end framework so that embeddings are directly optimized for the downstream detection task.
+**Key Insight**: Unifying graph representation learning and anomaly detection within an end-to-end framework so that embeddings are directly optimized for the downstream detection task.
 
 ## Method
 

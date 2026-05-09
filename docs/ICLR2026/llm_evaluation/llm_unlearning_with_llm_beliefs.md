@@ -39,7 +39,7 @@ This paper reveals that LLM unlearning methods such as GA and NPO suffer from a 
 
 **Root Cause — The Squeezing Effect**: Softmax normalization constrains conditional probabilities to sum to one. When GA reduces $\pi_\theta(\mathbf{y}_u|\mathbf{x}_u)$, probability mass is inevitably redistributed to other candidate responses and concentrates in high-likelihood regions—which correspond precisely to semantically related paraphrases. This is the *squeezing effect*.
 
-**Starting Point**: The locations to which probability mass "escapes" are exactly where the model itself is most confident—i.e., the model beliefs. Suppressing not only the original target but also these high-confidence predictions blocks the escape routes of probability mass and achieves genuine unlearning. This constitutes the core intuition behind the bootstrapping framework.
+**Key Insight**: The locations to which probability mass "escapes" are exactly where the model itself is most confident—i.e., the model beliefs. Suppressing not only the original target but also these high-confidence predictions blocks the escape routes of probability mass and achieves genuine unlearning. This constitutes the core intuition behind the bootstrapping framework.
 
 ## Method
 

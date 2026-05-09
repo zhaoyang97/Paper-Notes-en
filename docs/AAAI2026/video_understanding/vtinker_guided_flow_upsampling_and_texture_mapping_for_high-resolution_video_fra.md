@@ -29,15 +29,15 @@ VTinker is a pipeline that addresses blurry optical flow boundaries via Guided F
 
 ## Background & Motivation
 
-**State of the Field**: Flow-based video frame interpolation (VFI) is the dominant paradigm, typically comprising three stages: motion estimation (performed at low resolution to reduce computation) → optical flow upsampling (from low to high resolution) → frame synthesis (warping two frames using the upsampled flow and fusing them).
+**Background**: Flow-based video frame interpolation (VFI) is the dominant paradigm, typically comprising three stages: motion estimation (performed at low resolution to reduce computation) → optical flow upsampling (from low to high resolution) → frame synthesis (warping two frames using the upsampled flow and fusing them).
 
 **Limitations of Prior Work**: Existing methods suffer from deficiencies at three levels. (1) **Flow upsampling**: Bilinear upsampling blurs flow boundaries, while adaptive filter upsampling (AFU) tends to produce blocky artifacts when applied to task-oriented flows trained end-to-end without ground-truth supervision. (2) **Motion accuracy**: Low-resolution motion estimation fails to capture fine-grained pixel-level motion in high-resolution frames, resulting in misaligned upsampled flows. (3) **Frame synthesis**: The conventional Mask&Res mechanism blends two warped frames per-pixel, producing ghosting, blurring, and discontinuities when flows are inaccurate.
 
-**Root Cause**: In high-resolution video, motion displacements can exceed 100 pixels. Motion estimation must be performed at low resolution for efficiency, but the subsequent low-to-high-resolution flow mapping and per-pixel dual-source texture blending both amplify estimation errors.
+**Key Challenge**: In high-resolution video, motion displacements can exceed 100 pixels. Motion estimation must be performed at low resolution for efficiency, but the subsequent low-to-high-resolution flow mapping and per-pixel dual-source texture blending both amplify estimation errors.
 
-**Paper Goals**: (1) How to align upsampled flow boundaries with image boundaries. (2) How to avoid ghosting and discontinuities caused by per-pixel dual-source blending.
+**Goal**: (1) How to align upsampled flow boundaries with image boundaries. (2) How to avoid ghosting and discontinuities caused by per-pixel dual-source blending.
 
-**Starting Point**: Inspired by UPFlow, the paper leverages high-resolution input frames as guidance to refine flow upsampling, and replaces per-pixel blending with texture mapping that selects coherent texture patches from a single source frame.
+**Key Insight**: Inspired by UPFlow, the paper leverages high-resolution input frames as guidance to refine flow upsampling, and replaces per-pixel blending with texture mapping that selects coherent texture patches from a single source frame.
 
 **Core Idea**: Use input frames to guide optical flow upsampling for sharp boundaries; replace pixel-level dual-source blending with patch-level texture mapping to eliminate ghosting.
 

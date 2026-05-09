@@ -29,13 +29,13 @@ This paper introduces the CoPE benchmark, which injects formally categorized nat
 
 ## Background & Motivation
 
-**State of the Field**: Two dominant paradigms exist for LLM-based planning — LLM-as-Planner directly generates action sequences end-to-end, while LLM-as-Formalizer translates natural language descriptions into formal languages such as PDDL before deriving solutions via a solver. Both approaches demonstrate notable capability on standard planning benchmarks.
+**Background**: Two dominant paradigms exist for LLM-based planning — LLM-as-Planner directly generates action sequences end-to-end, while LLM-as-Formalizer translates natural language descriptions into formal languages such as PDDL before deriving solutions via a solver. Both approaches demonstrate notable capability on standard planning benchmarks.
 
 **Limitations of Prior Work**: Existing benchmarks (e.g., BlocksWorld, Gripper) were largely developed decades ago, feature simple and homogeneous environment descriptions, and are highly likely to be covered by LLM training data. This simplicity may lead to significant **overestimation** of LLM planning capabilities, posing risks in downstream safety-critical applications.
 
-**Root Cause**: Real-world planning instructions typically involve **personalized requirements and constraints** imposed by users or resources, yet standard benchmarks entirely lack such elements. Existing augmentation methods introduce only noise or lexical perturbations without altering the underlying semantics.
+**Key Challenge**: Real-world planning instructions typically involve **personalized requirements and constraints** imposed by users or resources, yet standard benchmarks entirely lack such elements. Existing augmentation methods introduce only noise or lexical perturbations without altering the underlying semantics.
 
-**Paper Goals**: To construct a semantically enriched constrained planning benchmark that systematically evaluates LLM planning and formalization capabilities under constraint conditions. **Starting Point**: Constraints are formalized into four categories (Initial, Goal, Action, State) using linguistic and pragmatic methods to ensure taxonomic completeness. **Core Idea**: A single constraint sentence can substantially degrade LLM performance, and this degradation is further amplified as problem complexity increases and lexical obfuscation is applied.
+**Goal**: To construct a semantically enriched constrained planning benchmark that systematically evaluates LLM planning and formalization capabilities under constraint conditions. **Key Insight**: Constraints are formalized into four categories (Initial, Goal, Action, State) using linguistic and pragmatic methods to ensure taxonomic completeness. **Core Idea**: A single constraint sentence can substantially degrade LLM performance, and this degradation is further amplified as problem complexity increases and lexical obfuscation is applied.
 
 ## Method
 

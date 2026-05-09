@@ -28,7 +28,7 @@ This paper proposes MSRL (Multi-Stage Reinforcement Learning), which scales gene
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal reward models (MRMs) are critical for MLLM preference alignment. Recent work has shifted from discriminative MRMs toward generative MRMs (CoT reasoning with textual reward scores), further enhanced by RLVR to strengthen reasoning.
+**Background**: Multimodal reward models (MRMs) are critical for MLLM preference alignment. Recent work has shifted from discriminative MRMs toward generative MRMs (CoT reasoning with textual reward scores), further enhanced by RLVR to strengthen reasoning.
 
 **Limitations of Prior Work**: RLVR relies on manually annotated multimodal preference data for verifiable rewards, which is costly to obtain and difficult to scale. In contrast, text preference data is abundant (~1M samples), raising the question of whether text data can be leveraged to scale multimodal reward modeling.
 

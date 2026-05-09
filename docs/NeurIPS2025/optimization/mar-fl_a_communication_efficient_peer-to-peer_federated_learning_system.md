@@ -29,13 +29,13 @@ This paper proposes MAR-FL, a system that reduces the communication complexity o
 
 ## Background & Motivation
 
-**State of the Field**: Federated learning (FL) is transitioning from centralized to P2P architectures to eliminate central server bottlenecks and single points of failure.
+**Background**: Federated learning (FL) is transitioning from centralized to P2P architectures to eliminate central server bottlenecks and single points of failure.
 
 **Limitations of Prior Work**: Existing P2P FL approaches incur high communication costs (e.g., RDFL: $O(N^2)$), making them difficult to scale to large deployments; they are also vulnerable to node churn.
 
-**Root Cause**: Global model aggregation requires all nodes to communicate, yet P2P settings lack a central coordinator — the key challenge is how to efficiently achieve global averaging in a fully distributed setting.
+**Key Challenge**: Global model aggregation requires all nodes to communicate, yet P2P settings lack a central coordinator — the key challenge is how to efficiently achieve global averaging in a fully distributed setting.
 
-**Starting Point**: The paper draws inspiration from Moshpit SGD's dynamic grouping strategy, using a distributed hash table (DHT) to coordinate only metadata rather than model parameters.
+**Key Insight**: The paper draws inspiration from Moshpit SGD's dynamic grouping strategy, using a distributed hash table (DHT) to coordinate only metadata rather than model parameters.
 
 **Core Idea**: Global aggregation is decomposed into $\lceil\log_M N\rceil$ rounds of local group-wise aggregation, with deterministic group keys used to avoid redundant pairings.
 

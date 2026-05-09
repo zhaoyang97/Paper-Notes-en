@@ -34,7 +34,7 @@ This paper derives the optimal tight lower bound of KL divergence in terms of JS
 
 **The empirical success and theoretical gap of JSD-based optimization**: In practice, many successful methods (e.g., Deep InfoMax) bypass direct KLD optimization and instead maximize the Jensen-Shannon divergence (JSD) between the joint distribution and the product of marginals, i.e., $I_{\text{JS}}[U;V] = D_{\text{JS}}[p_{UV} \| p_U \otimes p_V]$. Due to its symmetry and boundedness (upper-bounded by $\log 2$), JSD optimization is more stable and does not require large batch sizes. Deep InfoMax's experiments show that JSD correlates well with true MI. However, a fundamental theoretical question remained unanswered: **Does maximizing JSD truly maximize MI? What is the quantitative relationship between the two?** Known inequalities—JSD ≤ MI (trivial; JSD is a weak lower bound of MI) and the Pinsker inequality $D_{\text{KL}} \geq 2 D_{\text{JS}}$—are either too loose or tight only in the low-MI regime, and neither provides a general tight quantitative connection.
 
-**Paper Goals**: To fill this theoretical gap by deriving the optimal (i.e., tightest possible, unimprovable) lower bound on KLD in terms of JSD, thereby rigorously proving that maximizing JSD genuinely increases a guaranteed lower bound on MI, and fully connecting this theoretical result to discriminator training via cross-entropy minimization.
+**Goal**: To fill this theoretical gap by deriving the optimal (i.e., tightest possible, unimprovable) lower bound on KLD in terms of JSD, thereby rigorously proving that maximizing JSD genuinely increases a guaranteed lower bound on MI, and fully connecting this theoretical result to discriminator training via cross-entropy minimization.
 
 ## Method
 

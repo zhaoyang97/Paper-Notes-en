@@ -28,15 +28,15 @@ This paper proposes AQuA, the first visual question answering dataset with fine-
 
 ## Background & Motivation
 
-**State of the Field**: VQA benchmarks predominantly use unambiguous image-question pairs, yet ambiguity is pervasive in real-world scenarios (e.g., unclear referents, multiple plausible objects, complex scenes).
+**Background**: VQA benchmarks predominantly use unambiguous image-question pairs, yet ambiguity is pervasive in real-world scenarios (e.g., unclear referents, multiple plausible objects, complex scenes).
 
 **Limitations of Prior Work**: (1) Existing ambiguous VQA research adopts a binary strategy—either answer or ask—which does not reflect the flexible, nuanced strategies humans employ in practice. (2) State-of-the-art models such as GPT-5 and Gemini tend to respond directly and overconfidently to ambiguous questions rather than adapting their strategy to the degree of ambiguity.
 
-**Root Cause**: Different types and degrees of ambiguity call for different response strategies, yet models lack fine-grained ambiguity awareness and the ability to select appropriate strategies.
+**Key Challenge**: Different types and degrees of ambiguity call for different response strategies, yet models lack fine-grained ambiguity awareness and the ability to select appropriate strategies.
 
-**Paper Goals**: How can a VLM adaptively select the optimal response strategy based on the ambiguity level of a visual question?
+**Goal**: How can a VLM adaptively select the optimal response strategy based on the ambiguity level of a visual question?
 
-**Starting Point**: A four-level ambiguity taxonomy with corresponding strategies is defined, training data are constructed, and models are fine-tuned via SFT+GRPO.
+**Key Insight**: A four-level ambiguity taxonomy with corresponding strategies is defined, training data are constructed, and models are fine-tuned via SFT+GRPO.
 
 **Core Idea**: Teaching VLMs to respond as humans do—answer directly for simple questions, infer for resolvable referents, enumerate for a small set of candidates, and request clarification when ambiguity is high.
 

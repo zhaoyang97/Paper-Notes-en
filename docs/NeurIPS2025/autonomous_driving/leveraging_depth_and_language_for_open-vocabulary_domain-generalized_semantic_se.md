@@ -29,15 +29,15 @@ This paper proposes Vireo, the first single-stage framework that unifies open-vo
 
 ## Background & Motivation
 
-**State of the Field**: OVSS enables recognition of arbitrary text-described categories, while DGSS maintains robustness on unseen domains; each paradigm has complementary strengths.
+**Background**: OVSS enables recognition of arbitrary text-described categories, while DGSS maintains robustness on unseen domains; each paradigm has complementary strengths.
 
 **Limitations of Prior Work**: The text-visual alignment modules in OVSS degrade significantly under out-of-domain conditions (e.g., nighttime, rain); domain-invariant strategies in DGSS may suppress fine-grained semantic cues, compromising precise response to text queries.
 
-**Root Cause**: How can cross-domain robustness and open-vocabulary recognition be achieved simultaneously? DGSS focuses on encoder-side feature generalization, while OVSS focuses on decoder-side open recognition — the two paradigms are naturally complementary.
+**Key Challenge**: How can cross-domain robustness and open-vocabulary recognition be achieved simultaneously? DGSS focuses on encoder-side feature generalization, while OVSS focuses on decoder-side open recognition — the two paradigms are naturally complementary.
 
-**Paper Goals**: Construct a unified OV-DGSS (Open-Vocabulary Domain-Generalized Semantic Segmentation) framework that robustly segments unseen categories under domain shift.
+**Goal**: Construct a unified OV-DGSS (Open-Vocabulary Domain-Generalized Semantic Segmentation) framework that robustly segments unseen categories under domain shift.
 
-**Starting Point**: Exploit the domain-invariant nature of depth maps (depth and geometric cues are insensitive to illumination and texture variations), combined with the generalization capacity of frozen visual foundation models (VFMs).
+**Key Insight**: Exploit the domain-invariant nature of depth maps (depth and geometric cues are insensitive to illumination and texture variations), combined with the generalization capacity of frozen visual foundation models (VFMs).
 
 **Core Idea**: Inject depth-geometric and text-semantic priors into frozen VFM layers via GeoText Query, augmented by CMPE for enhanced gradient flow and DOV-VEH for multi-modal feature fusion.
 

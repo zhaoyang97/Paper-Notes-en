@@ -29,15 +29,15 @@ This paper proposes SynthAgent, a web agent adaptation framework built entirely 
 
 ## Background & Motivation
 
-**State of the Field**: LLM-driven web agents demonstrate strong web interaction capabilities on standardized benchmarks, yet performance degrades sharply when deployed to unseen websites. Adapting to new environments requires environment-specific tasks and demonstration data, but manual annotation is costly and does not scale.
+**Background**: LLM-driven web agents demonstrate strong web interaction capabilities on standardized benchmarks, yet performance degrades sharply when deployed to unseen websites. Adapting to new environments requires environment-specific tasks and demonstration data, but manual annotation is costly and does not scale.
 
 **Limitations of Prior Work**: (1) Self-Instruct prompts LLMs to "imagine" tasks without environmental grounding, resulting in simple and repetitive tasks; (2) OS-Genesis synthesizes tasks by back-translating from single-step observations, where insufficient context leads to substantial hallucinations (referencing non-existent elements or states); (3) Explorer continuously refines tasks during execution, but frequent intent changes (8.6 times on average) cause 68.3% of trajectories to exceed the step budget.
 
-**Root Cause**: Task synthesis requires environmental grounding to avoid hallucinations, yet over-grounding tasks during execution introduces trajectory noise—a fundamental design tension in synthetic supervision.
+**Key Challenge**: Task synthesis requires environmental grounding to avoid hallucinations, yet over-grounding tasks during execution introduces trajectory noise—a fundamental design tension in synthetic supervision.
 
-**Paper Goals**: To design a fully synthetic supervision framework that efficiently adapts web agents to new environments without human involvement or test-set leakage.
+**Goal**: To design a fully synthetic supervision framework that efficiently adapts web agents to new environments without human involvement or test-set leakage.
 
-**Starting Point**: Decouple task refinement and trajectory refinement into two complementary stages: task refinement ensures feasibility but introduces noise, while trajectory refinement subsequently eliminates that noise.
+**Key Insight**: Decouple task refinement and trajectory refinement into two complementary stages: task refinement ensures feasibility but introduces noise, while trajectory refinement subsequently eliminates that noise.
 
 **Core Idea**: Dual refinement—during execution, tasks are refined only when explicit conflicts are detected (conflict-triggered rather than continuous); after execution, trajectories are refined using global context. This simultaneously guarantees task feasibility and trajectory quality.
 

@@ -38,7 +38,7 @@ When deep networks are trained with empirical risk minimization (ERM), they tend
 
 **Diffusion-based methods (FFR)**: Use diffusion models to generate balanced datasets. However, they are sensitive to prompts, may generate harmful samples, and require prior knowledge of dataset biases.
 
-**Root Cause**: How can high-quality minority-group samples be generated automatically and precisely to break spurious correlations, without requiring group labels on the training set?
+**Key Challenge**: How can high-quality minority-group samples be generated automatically and precisely to break spurious correlations, without requiring group labels on the training set?
 
 **Core Idea**: The paper adopts a compositional view of images — each image consists of a causal part (core features) and a spurious part (spurious features). Textual inversion is used to learn per-class causal feature tokens; language-guided segmentation localizes the causal region; Stable Diffusion inpainting replaces the causal part to generate new-class samples; and a bicephalous pruning strategy based on ERM prediction probabilities and integrated gradients ensures generation quality.
 

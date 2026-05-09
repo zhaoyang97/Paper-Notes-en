@@ -29,18 +29,18 @@ X-Dancer proposes a unified Transformer–diffusion framework that takes a singl
 
 ## Background & Motivation
 
-**State of the Field**: Music-driven dance generation is an active research area. Existing approaches fall into two main categories — 3D skeleton-based motion generation (e.g., Bailando, EDGE) and end-to-end diffusion-based video synthesis (e.g., Hallo).
+**Background**: Music-driven dance generation is an active research area. Existing approaches fall into two main categories — 3D skeleton-based motion generation (e.g., Bailando, EDGE) and end-to-end diffusion-based video synthesis (e.g., Hallo).
 
 **Limitations of Prior Work**:
    - 3D methods are constrained by dataset availability (primarily relying on the AIST++ multi-view dataset), resulting in limited dance diversity; furthermore, they only model body poses without head or hand movements.
    - Recovering 3D poses from 2D monocular video is error-prone.
    - End-to-end diffusion methods (e.g., Hallo) struggle to capture long-range motion and audio context, and have been primarily validated on talking-head animation, with uncertain generalization to whole-body motion.
 
-**Root Cause**: High-quality, diverse dance data is abundant but predominantly consists of 2D monocular videos, whereas existing methods either rely on scarce 3D data or fail to effectively model long-range music–motion correspondences.
+**Key Challenge**: High-quality, diverse dance data is abundant but predominantly consists of 2D monocular videos, whereas existing methods either rely on scarce 3D data or fail to effectively model long-range music–motion correspondences.
 
-**Paper Goals**: To leverage widely available 2D monocular dance videos for generating expressive, music-synchronized long-range dance animations.
+**Goal**: To leverage widely available 2D monocular dance videos for generating expressive, music-synchronized long-range dance animations.
 
-**Starting Point**: Rather than 3D skeleton modeling, the paper models dance motion in 2D space, tokenizes each body part separately using VQ-VAE, and autoregressively generates motion sequences via a GPT-style Transformer.
+**Key Insight**: Rather than 3D skeleton modeling, the paper models dance motion in 2D space, tokenizes each body part separately using VQ-VAE, and autoregressively generates motion sequences via a GPT-style Transformer.
 
 **Core Idea**: Tokenize 2D whole-body poses per body part with keypoint confidence awareness, generate music-synchronized motion sequences via a cross-conditional autoregressive Transformer, and guide a diffusion model with an implicit motion decoder to synthesize the final video.
 

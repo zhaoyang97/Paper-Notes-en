@@ -29,18 +29,18 @@ This paper proposes C-PGC, a framework that trains a conditional perturbation ge
 
 ## Background & Motivation
 
-**State of the Field**: Vision-Language Pre-training (VLP) models establish powerful cross-modal alignment through contrastive learning on large-scale image-text data, achieving strong performance on downstream tasks such as image-text retrieval, image captioning, and visual question answering.
+**Background**: Vision-Language Pre-training (VLP) models establish powerful cross-modal alignment through contrastive learning on large-scale image-text data, achieving strong performance on downstream tasks such as image-text retrieval, image captioning, and visual question answering.
 
 **Limitations of Prior Work**: Existing adversarial attack methods against VLP models (e.g., Co-Attack, SGA, TMM) are instance-specific, requiring a separately generated perturbation for each input sample, which incurs substantial computational cost and precludes reuse.
 
-**Root Cause**: Although universal adversarial perturbations (UAPs) have been studied for unimodal vision models, directly transferring classical UAP methods (e.g., UAP, GAP) to VLP models yields poor results—because they focus solely on the image modality and ignore textual information and cross-modal interactions, failing to effectively undermine the multimodal alignment that underlies VLP model success.
+**Key Challenge**: Although universal adversarial perturbations (UAPs) have been studied for unimodal vision models, directly transferring classical UAP methods (e.g., UAP, GAP) to VLP models yields poor results—because they focus solely on the image modality and ignore textual information and cross-modal interactions, failing to effectively undermine the multimodal alignment that underlies VLP model success.
 
-**Paper Goals**:
+**Goal**:
 - How to design a universal image-text perturbation that can attack diverse input samples with only a single perturbation pair?
 - How to fundamentally disrupt the multimodal alignment of VLP models rather than attacking a single modality?
 - How to improve the black-box transferability of universal adversarial perturbations?
 
-**Starting Point**: The core capability of VLP models derives from cross-modal alignment established by contrastive learning. The authors propose turning this mechanism against itself—using a malicious variant of contrastive learning to train a generator that produces alignment-destroying UAPs.
+**Key Insight**: The core capability of VLP models derives from cross-modal alignment established by contrastive learning. The authors propose turning this mechanism against itself—using a malicious variant of contrastive learning to train a generator that produces alignment-destroying UAPs.
 
 **Core Idea**: Train a cross-modal conditional generator via malicious contrastive learning to produce universal adversarial perturbations that fundamentally disrupt the multimodal alignment of VLP models.
 

@@ -28,15 +28,15 @@ This paper proposes AC-Foley, a reference-audio-guided video-to-audio synthesis 
 
 ## Background & Motivation
 
-**State of the Field**: Existing V2A methods primarily synthesize audio from text prompts combined with visual information, achieving audio-visual synchronization at the semantic level.
+**Background**: Existing V2A methods primarily synthesize audio from text prompts combined with visual information, achieving audio-visual synchronization at the semantic level.
 
 **Limitations of Prior Work**: (a) Dataset granularity gap — training annotations group acoustically distinct sounds (e.g., barks from different dog breeds) under coarse labels; (b) Limitations of text description — language cannot encode fine-grained acoustic features (e.g., "metal impact" cannot distinguish the time-frequency characteristics of a hammer striking an anvil versus a steel chain falling). These constraints prevent text-based control from achieving fine-grained sound effect synthesis.
 
-**Root Cause**: Foley artists need to synthesize multiple acoustic variants for the same visual action (e.g., footsteps on surfaces of different materials), yet text cannot precisely describe timbral differences, and training data lacks such fine-grained annotations.
+**Key Challenge**: Foley artists need to synthesize multiple acoustic variants for the same visual action (e.g., footsteps on surfaces of different materials), yet text cannot precisely describe timbral differences, and training data lacks such fine-grained annotations.
 
-**Paper Goals**: To directly control acoustic characteristics using reference audio, bypassing the semantic ambiguity inherent in text.
+**Goal**: To directly control acoustic characteristics using reference audio, bypassing the semantic ambiguity inherent in text.
 
-**Starting Point**: A VAE encodes the reference audio to preserve its complete acoustic signature (rather than using encoders such as CLAP that extract only semantic information), and two-stage training is employed to learn how to adapt the reference timbre to the temporal structure of the video.
+**Key Insight**: A VAE encodes the reference audio to preserve its complete acoustic signature (rather than using encoders such as CLAP that extract only semantic information), and two-stage training is employed to learn how to adapt the reference timbre to the temporal structure of the video.
 
 **Core Idea**: Replace text with raw audio signals as the control condition; leverage a VAE to preserve timbral features and employ two-stage training to achieve adaptive transfer from reference audio to video temporal dynamics.
 

@@ -28,21 +28,21 @@ CoT2 proposes replacing discrete tokens with continuous-valued tokens (convex co
 
 ## Background & Motivation
 
-**State of the Field**: CoT reasoning in modern LLMs operates through autoregressive sampling of discrete tokens, with self-consistency (majority voting over multiple samples) or best-of-N decoding employed to improve accuracy.
+**Background**: CoT reasoning in modern LLMs operates through autoregressive sampling of discrete tokens, with self-consistency (majority voting over multiple samples) or best-of-N decoding employed to improve accuracy.
 
 **Limitations of Prior Work**:
 - Discrete sampling transmits at most $\log_2(v)$ bits of information per step, whereas each token embedding can store $O(d)$ bits — a severe underutilization of representational capacity.
 - Once a token is sampled, the model commits to a single reasoning path and cannot explore alternatives.
 - Self-consistency/best-of-N requires multiple forward passes, leading to linearly growing inference costs.
 
-**Root Cause**: The irreversibility of discrete sampling causes a single reasoning chain to accumulate errors in a snowball effect, while the remedies (multiple sampling runs) impose substantial computational overhead.
+**Key Challenge**: The irreversibility of discrete sampling causes a single reasoning chain to accumulate errors in a snowball effect, while the remedies (multiple sampling runs) impose substantial computational overhead.
 
-**Paper Goals**:
+**Goal**:
 - How can a model track multiple reasoning paths simultaneously within a single inference pass?
 - How powerful is the parallel tracking capacity of continuous tokens, and what is its theoretical relationship to discrete multi-sample decoding?
 - How should continuous-token models be trained and deployed?
 
-**Starting Point**: Rather than discretely sampling from the softmax output at each step, the output distribution is passed directly as a continuous token — a weighted combination of all vocabulary embeddings — into the next step. This "superposition state" naturally encodes information from multiple paths.
+**Key Insight**: Rather than discretely sampling from the softmax output at each step, the output distribution is passed directly as a continuous token — a weighted combination of all vocabulary embeddings — into the next step. This "superposition state" naturally encodes information from multiple paths.
 
 **Core Idea**: Continuous tokens, as convex combinations of vocabulary embeddings, inherently implement parallel path tracking. Their effect is theoretically equivalent to aggregating $K$ independent discrete CoT chains — one forward pass subsumes $K$ sampling runs.
 

@@ -28,7 +28,7 @@ This paper proposes a unified analytical framework based on Toeplitz matrices, c
 
 ## Background & Motivation
 
-**State of the Field**: Positional encoding (PE) is a core component of Transformers, evolving from additive schemes (Sinusoidal, T5 Bias, ALiBi) to multiplicative ones (RoPE). However, mechanistic understanding remains limited to two properties: distance decay and translation invariance.
+**Background**: Positional encoding (PE) is a core component of Transformers, evolving from additive schemes (Sinusoidal, T5 Bias, ALiBi) to multiplicative ones (RoPE). However, mechanistic understanding remains limited to two properties: distance decay and translation invariance.
 
 **Limitations of Prior Work**: Despite RoPE's theoretically desirable properties (e.g., decay characteristics supporting length generalization), it underperforms simpler relative PE or even NoPE models on certain tasks—a "performance paradox" that lacks explanation.
 

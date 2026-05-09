@@ -39,9 +39,9 @@ Spiking Neural Networks (SNNs), owing to their event-driven nature, hold strong 
 
 **Lack of analytical tools**: Conventional ERF frameworks consider only the spatial dimension and cannot characterize the inherent spatial-temporal dynamics of SNNs.
 
-**Root Cause**: Transformer-based SNNs should theoretically possess a global receptive field, yet in practice, the locality bias introduced by convolutional channel mixers prevents the establishment of effective global receptive fields in early stages, limiting long-sequence modeling performance.
+**Key Challenge**: Transformer-based SNNs should theoretically possess a global receptive field, yet in practice, the locality bias introduced by convolutional channel mixers prevents the establishment of effective global receptive fields in early stages, limiting long-sequence modeling performance.
 
-**Starting Point**: (1) Extend ERF to the temporal dimension by proposing the ST-ERF analysis framework to quantitatively diagnose the problem; (2) Based on the diagnostic findings, replace convolutions with MLPs to design new channel mixers that eliminate locality bias.
+**Key Insight**: (1) Extend ERF to the temporal dimension by proposing the ST-ERF analysis framework to quantitatively diagnose the problem; (2) Based on the diagnostic findings, replace convolutions with MLPs to design new channel mixers that eliminate locality bias.
 
 ## Method
 

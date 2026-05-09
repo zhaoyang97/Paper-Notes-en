@@ -27,15 +27,15 @@ content_hash: 74474935c82910d5
 This paper demonstrates that LLMs cannot self-correct erroneous planning priors (item dependency relations) through prompting alone, and proposes XENON — an algorithmic knowledge management framework consisting of an Adaptive Dependency Graph (ADG) and Failure-Aware Action Memory (FAM) that learns from binary feedback. XENON enables a 7B LLM to surpass the SOTA that uses GPT-4V with oracle knowledge on long-horizon planning tasks in Minecraft.
 
 ## Background & Motivation
-**State of the Field**: LLM-driven agents tackling long-horizon planning tasks in environments such as Minecraft require accurate item dependency knowledge (e.g., a diamond pickaxe requires diamonds and sticks), yet the parametric knowledge encoded in LLMs is frequently erroneous.
+**Background**: LLM-driven agents tackling long-horizon planning tasks in environments such as Minecraft require accurate item dependency knowledge (e.g., a diamond pickaxe requires diamonds and sticks), yet the parametric knowledge encoded in LLMs is frequently erroneous.
 
 **Limitations of Prior Work**: Self-correction — prompting an LLM to reflect on and revise its knowledge — is ineffective for parametric knowledge errors. LLMs repeatedly make the same mistakes because the errors are encoded in model weights and cannot be altered through prompting.
 
-**Root Cause**: LLMs possess strong language understanding but unreliable factual knowledge; external mechanisms, rather than prompting, are required to correct knowledge errors.
+**Key Challenge**: LLMs possess strong language understanding but unreliable factual knowledge; external mechanisms, rather than prompting, are required to correct knowledge errors.
 
-**Paper Goals**: How can an agent algorithmically correct an LLM's planning knowledge given only binary feedback (success/failure)?
+**Goal**: How can an agent algorithmically correct an LLM's planning knowledge given only binary feedback (success/failure)?
 
-**Starting Point**: Shifting knowledge correction from "letting the LLM correct itself" to "algorithmically updating an external knowledge base."
+**Key Insight**: Shifting knowledge correction from "letting the LLM correct itself" to "algorithmically updating an external knowledge base."
 
 **Core Idea**: Algorithmic knowledge management — correcting dependency graphs from successful experiences and filtering ineffective actions from failure experiences — outperforms LLM self-correction.
 

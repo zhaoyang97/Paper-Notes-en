@@ -29,13 +29,13 @@ This paper proposes MaskSQL, a framework that protects privacy by replacing sens
 
 ## Background & Motivation
 
-**State of the Field**: In Text-to-SQL, LLMs (e.g., GPT-4) achieve the strongest performance but require remote API access, exposing sensitive database schemas and user data. SLMs can be deployed locally but perform poorly on complex queries.
+**Background**: In Text-to-SQL, LLMs (e.g., GPT-4) achieve the strongest performance but require remote API access, exposing sensitive database schemas and user data. SLMs can be deployed locally but perform poorly on complex queries.
 
 **Limitations of Prior Work**: (1) Cryptographic methods (HE/MPC) incur prohibitive computational overhead at LLM scale; (2) differential privacy degrades utility; (3) existing prompt sanitization methods (Portcullis, PP-TS) target general text and cannot maintain SQL schema alignment.
 
-**Root Cause**: LLMs require schema information to generate correct SQL, yet the schema itself constitutes sensitive data.
+**Key Challenge**: LLMs require schema information to generate correct SQL, yet the schema itself constitutes sensitive data.
 
-**Starting Point**: What LLMs actually need for SQL generation is the **mapping relationship** between the question and the schema — the specific names are irrelevant and can be replaced with abstract symbols.
+**Key Insight**: What LLMs actually need for SQL generation is the **mapping relationship** between the question and the schema — the specific names are irrelevant and can be replaced with abstract symbols.
 
 **Core Idea**: A three-stage pipeline — Abstraction (local SLM performs schema linking and symbol substitution) → SQL Generation (remote LLM processes the abstracted prompt) → SQL Reconstruction (local restoration and self-correction).
 

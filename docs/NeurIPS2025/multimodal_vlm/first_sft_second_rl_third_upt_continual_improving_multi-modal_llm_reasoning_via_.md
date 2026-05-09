@@ -28,15 +28,15 @@ This paper proposes MM-UPT, a framework that introduces a third-stage "unsupervi
 
 ## Background & Motivation
 
-**State of the Field**: Current MLLM post-training primarily relies on two stages — SFT (requiring annotated data) and RL (requiring verifiable ground truth or human preferences). Both stages demand large quantities of high-quality annotated multimodal data.
+**Background**: Current MLLM post-training primarily relies on two stages — SFT (requiring annotated data) and RL (requiring verifiable ground truth or human preferences). Both stages demand large quantities of high-quality annotated multimodal data.
 
 **Limitations of Prior Work**: As task complexity and volume grow, large-scale annotation of multimodal data becomes unsustainable. Multimodal reasoning tasks in particular require precise process-level annotations, incurring prohibitively high costs.
 
-**Root Cause**: Models require continual improvement, yet high-quality annotated data will eventually be exhausted. Prior unsupervised methods (e.g., Genixer, STIC) involve complex pipelines that are difficult to scale iteratively.
+**Key Challenge**: Models require continual improvement, yet high-quality annotated data will eventually be exhausted. Prior unsupervised methods (e.g., Genixer, STIC) involve complex pipelines that are difficult to scale iteratively.
 
-**Paper Goals**: How can MLLMs continuously improve their reasoning capabilities without any external supervision?
+**Goal**: How can MLLMs continuously improve their reasoning capabilities without any external supervision?
 
-**Starting Point**: Majority voting provides a simple yet effective signal — if the majority of sampled responses to a given question agree on an answer, that answer is likely correct and can serve as a pseudo-label.
+**Key Insight**: Majority voting provides a simple yet effective signal — if the majority of sampled responses to a given question agree on an answer, that answer is likely correct and can serve as a pseudo-label.
 
 **Core Idea**: Leverage GRPO with majority-voting pseudo-rewards to realize fully unsupervised multimodal post-training.
 

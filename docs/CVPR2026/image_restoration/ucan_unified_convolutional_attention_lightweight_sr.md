@@ -29,11 +29,11 @@ UCAN is a lightweight super-resolution network that unifies convolutional and at
 
 ## Background & Motivation
 
-1. **State of the Field**: Lightweight SR methods primarily improve performance by expanding the effective receptive field. Transformer-based approaches are effective but significantly increase computational cost when enlarging attention windows or convolution kernels.
+1. **Background**: Lightweight SR methods primarily improve performance by expanding the effective receptive field. Transformer-based approaches are effective but significantly increase computational cost when enlarging attention windows or convolution kernels.
 2. **Limitations of Prior Work**: Global attention methods such as Grid Attention and Mamba still suffer from efficiency issues. Linear attention achieves $O(N)$ complexity but exhibits rank collapse, leading to insufficient feature diversity. Parameter sharing and distillation strategies may homogenize feature maps.
-3. **Root Cause**: An inherent tension exists between expanding the receptive field and maintaining a lightweight design, as well as a trade-off between efficiency and representational richness.
-4. **Paper Goals**: To simultaneously model local textures and global dependencies under lightweight constraints.
-5. **Starting Point**: Hedgehog feature mapping is employed to address rank collapse in linear attention, and Flash Attention is used to enable efficient computation over large attention windows.
+3. **Key Challenge**: An inherent tension exists between expanding the receptive field and maintaining a lightweight design, as well as a trade-off between efficiency and representational richness.
+4. **Goal**: To simultaneously model local textures and global dependencies under lightweight constraints.
+5. **Key Insight**: Hedgehog feature mapping is employed to address rank collapse in linear attention, and Flash Attention is used to enable efficient computation over large attention windows.
 6. **Core Idea**: Multi-level fusion — Flash Attention handles large-window local interactions, Hedgehog Attention captures global dependencies, and large-kernel distillation convolutions model spatial structure.
 
 ## Method

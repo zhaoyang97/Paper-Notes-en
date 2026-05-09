@@ -31,7 +31,7 @@ This paper proposes AeroDGS, a physics-guided 4D Gaussian Splatting framework fo
 
 ## Background & Motivation
 
-**State of the Field**: Recent years have seen significant advances in 4D scene reconstruction. 3D Gaussian Splatting (3DGS), with its efficient differentiable rendering and explicit scene representation, has become a popular foundation for both static and dynamic scene modeling. However, existing dynamic 3DGS methods (e.g., Dynamic 3D Gaussians, 4D-GS, Deformable 3DGS) are primarily designed for multi-view or controlled close-range dynamic scenes.
+**Background**: Recent years have seen significant advances in 4D scene reconstruction. 3D Gaussian Splatting (3DGS), with its efficient differentiable rendering and explicit scene representation, has become a popular foundation for both static and dynamic scene modeling. However, existing dynamic 3DGS methods (e.g., Dynamic 3D Gaussians, 4D-GS, Deformable 3DGS) are primarily designed for multi-view or controlled close-range dynamic scenes.
 
 **Limitations of Prior Work**: UAV aerial video presents several unique properties that cause existing methods to fail directly:
    - **Single-view capture**: UAVs typically fly along fixed trajectories, so each scene region is observed only once or very few times, lacking multi-view redundancy.
@@ -39,9 +39,9 @@ This paper proposes AeroDGS, a physics-guided 4D Gaussian Splatting framework fo
    - **Dynamic object characteristics**: Moving objects (e.g., vehicles, pedestrians) occupy a small spatial fraction of the frame but exhibit large motion disparity, causing severe motion blur and occlusion.
    - **Depth ambiguity**: Monocular depth estimation in aerial settings is inherently ill-posed; the combination of large distances and top-down viewing angles makes depth cues extremely sparse.
 
-**Root Cause**: The compounding effect of the above factors leads to severe depth ambiguity and unstable motion estimation, rendering monocular aerial dynamic reconstruction an inherently ill-posed problem. Existing methods either fail completely in this setting or produce physically implausible motion trajectories (e.g., floating objects, ground penetration, jittering).
+**Key Challenge**: The compounding effect of the above factors leads to severe depth ambiguity and unstable motion estimation, rendering monocular aerial dynamic reconstruction an inherently ill-posed problem. Existing methods either fail completely in this setting or produce physically implausible motion trajectories (e.g., floating objects, ground penetration, jittering).
 
-**Starting Point**: The paper leverages commonsense physical priors — objects should rest on the ground, remain upright, and move along smooth trajectories — to constrain and resolve monocular depth ambiguity, converting uncertain image cues into physically consistent dynamic reconstruction.
+**Key Insight**: The paper leverages commonsense physical priors — objects should rest on the ground, remain upright, and move along smooth trajectories — to constrain and resolve monocular depth ambiguity, converting uncertain image cues into physically consistent dynamic reconstruction.
 
 ## Method
 

@@ -27,15 +27,15 @@ This paper is the first to reveal a double descent phenomenon in post-hoc OOD de
 
 ## Background & Motivation
 
-**State of the Field**: OOD detection is critical for ensuring the reliability of ML systems. Post-hoc methods (e.g., MSP, Energy, Mahalanobis) are widely adopted as they require no modification to the training procedure. Separately, double descent has been extensively studied in the context of in-distribution (ID) generalization, where test error peaks near the interpolation threshold before declining again with increasing model complexity.
+**Background**: OOD detection is critical for ensuring the reliability of ML systems. Post-hoc methods (e.g., MSP, Energy, Mahalanobis) are widely adopted as they require no modification to the training procedure. Separately, double descent has been extensively studied in the context of in-distribution (ID) generalization, where test error peaks near the interpolation threshold before declining again with increasing model complexity.
 
 **Limitations of Prior Work**: Despite widespread attention to double descent in ID generalization, its behavior in OOD detection remains entirely unexplored. In practice, larger models are commonly assumed to yield better OOD detection, yet this assumption has never been systematically validated.
 
-**Root Cause**: Does the benefit of overparameterization for ID generalization transfer to OOD detection? If double descent also occurs in OOD detection, model selection strategies may require fundamental reconsideration.
+**Key Challenge**: Does the benefit of overparameterization for ID generalization transfer to OOD detection? If double descent also occurs in OOD detection, model selection strategies may require fundamental reconsideration.
 
-**Paper Goals**: (a) Verify whether OOD detection exhibits double descent; (b) provide a theoretical explanation; (c) propose a principled approach for selecting model complexity when overparameterization is no longer optimal.
+**Goal**: (a) Verify whether OOD detection exhibits double descent; (b) provide a theoretical explanation; (c) propose a principled approach for selecting model complexity when overparameterization is no longer optimal.
 
-**Starting Point**: The paper defines an expected OOD risk as the evaluation metric and derives its relationship with model complexity $p/n$ under a Gaussian covariate model using random matrix theory.
+**Key Insight**: The paper defines an expected OOD risk as the evaluation metric and derives its relationship with model complexity $p/n$ under a Gaussian covariate model using random matrix theory.
 
 **Core Idea**: OOD detection also exhibits double descent; overparameterization is not always optimal; and the NC1 metric from Neural Collapse can predict which complexity regime is more suitable for OOD detection.
 

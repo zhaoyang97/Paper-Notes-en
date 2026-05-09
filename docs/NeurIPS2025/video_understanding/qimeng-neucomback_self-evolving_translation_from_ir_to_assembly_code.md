@@ -39,9 +39,9 @@ Compilers are indispensable yet extraordinarily complex software systems that de
 
 **Optimization challenge**: Generating assembly that outperforms mature compilers (e.g., clang-O3) while maintaining correctness is even more difficult.
 
-**Root Cause**: Although LLMs possess code understanding and generation capabilities, direct application to assembly generation lacks both evaluation standards and effective capability-enhancement methods.
+**Key Challenge**: Although LLMs possess code understanding and generation capabilities, direct application to assembly generation lacks both evaluation standards and effective capability-enhancement methods.
 
-**Starting Point**:
+**Key Insight**:
 - Construct a dedicated benchmark, NeuComBack, with two levels: basic compilation (L1) and optimization potential (L2).
 - Propose a self-evolving prompt optimization method that enables LLMs to learn from their own debugging experience, iteratively refining prompt strategies for assembly generation.
 

@@ -41,7 +41,7 @@ Existing OLAT methods assume consistent light source distributions between train
 
 **Geometry–lighting entanglement**: Under the OLAT setting, per-frame colors vary drastically with illumination, increasing ambiguity in learning true geometry and reflectance properties.
 
-**Starting Point**: OOD relighting is addressed along two dimensions — (1) physically-based priors (Phong model) are used to explicitly disentangle diffuse, specular, and ambient components, enabling the model to understand the physics of light interaction; (2) a meta-learning strategy simulates OOD test conditions during training, forcing the model to learn lighting-agnostic geometry and reflectance properties.
+**Key Insight**: OOD relighting is addressed along two dimensions — (1) physically-based priors (Phong model) are used to explicitly disentangle diffuse, specular, and ambient components, enabling the model to understand the physics of light interaction; (2) a meta-learning strategy simulates OOD test conditions during training, forcing the model to learn lighting-agnostic geometry and reflectance properties.
 
 ## Method
 

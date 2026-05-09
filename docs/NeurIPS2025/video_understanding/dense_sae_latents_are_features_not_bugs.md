@@ -28,15 +28,15 @@ This paper systematically investigates frequently activating "dense latents" in 
 
 ## Background & Motivation
 
-**State of the Field**: Sparse autoencoders (SAEs) are the predominant tool in mechanistic interpretability research, extracting interpretable features from language model activations by imposing sparsity constraints. Ideally, all SAE latents should activate sparsely with clear semantic meaning.
+**Background**: Sparse autoencoders (SAEs) are the predominant tool in mechanistic interpretability research, extracting interpretable features from language model activations by imposing sparsity constraints. Ideally, all SAE latents should activate sparsely with clear semantic meaning.
 
 **Limitations of Prior Work**: In practice, SAE training produces a large number of "dense latents"—latents with activation frequencies between 10% and 50%—which resist direct interpretation via activation patterns and have long been regarded as training imperfections. Some prior work has even proposed frequency regularization to suppress them.
 
-**Root Cause**: The central question is whether dense latents are byproducts of SAE training (to be eliminated) or faithful reflections of genuinely dense signals intrinsic to the model's residual stream (to be understood).
+**Key Challenge**: The central question is whether dense latents are byproducts of SAE training (to be eliminated) or faithful reflections of genuinely dense signals intrinsic to the model's residual stream (to be understood).
 
-**Paper Goals**: (a) Determine the origin of dense latents—training artifact or intrinsic property? (b) Characterize their geometric structure. (c) Identify the semantic and functional roles they serve.
+**Goal**: (a) Determine the origin of dense latents—training artifact or intrinsic property? (b) Characterize their geometric structure. (c) Identify the semantic and functional roles they serve.
 
-**Starting Point**: The authors verify the intrinsicness hypothesis by ablating the dense latent subspace and retraining SAEs, conducting systematic classification across all layers of a Gemma 2 2B SAE.
+**Key Insight**: The authors verify the intrinsicness hypothesis by ablating the dense latent subspace and retraining SAEs, conducting systematic classification across all layers of a Gemma 2 2B SAE.
 
 **Core Idea**: Dense latents reflect computationally essential dense directions in the language model residual stream, serving well-defined mechanistic functions in position tracking, context binding, and entropy regulation.
 

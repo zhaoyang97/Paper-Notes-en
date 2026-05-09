@@ -29,15 +29,15 @@ This paper proposes the Agentic Risk & Capability (ARC) framework, which systema
 
 ## Background & Motivation
 
-**State of the Field**: 2025 has been heralded as the "year of AI agents," with major companies releasing LLM-based agent systems capable of autonomous reasoning, planning, and executing tasks such as writing code, browsing the web, and modifying files. However, agent systems are considerably more prone to unsafe behavior than foundation models, making governance substantially more challenging.
+**Background**: 2025 has been heralded as the "year of AI agents," with major companies releasing LLM-based agent systems capable of autonomous reasoning, planning, and executing tasks such as writing code, browsing the web, and modifying files. However, agent systems are considerably more prone to unsafe behavior than foundation models, making governance substantially more challenging.
 
 **Limitations of Prior Work**: Existing approaches are either too coarse-grained (e.g., the EU AI Act and NIST RMF offer only principled guidance without technical detail), too narrow (e.g., MAESTRO and OWASP focus on specific security threats and require cybersecurity expertise), or too micro-level (e.g., benchmarks such as AgentHarm test specific scenarios and cannot comprehensively identify risks).
 
-**Root Cause**: Agentic systems possess autonomy over a wide range of actions, introducing a risk surface far exceeding that of traditional LLM systems; yet performing customized, in-depth risk assessments for every agent system is not sustainable at scale.
+**Key Challenge**: Agentic systems possess autonomy over a wide range of actions, introducing a risk surface far exceeding that of traditional LLM systems; yet performing customized, in-depth risk assessments for every agent system is not sustainable at scale.
 
-**Paper Goals**: To establish a systematic, scalable, and adaptable technical governance framework that enables organizations to apply differentiated risk management across heterogeneous agent systems.
+**Goal**: To establish a systematic, scalable, and adaptable technical governance framework that enables organizations to apply differentiated risk management across heterogeneous agent systems.
 
-**Starting Point**: The framework analyzes agent systems through the lens of **capabilities** rather than tools—because the same capability may be realized by multiple tools, and a single tool may support multiple capabilities, making tool-level governance both redundant and prone to obsolescence.
+**Key Insight**: The framework analyzes agent systems through the lens of **capabilities** rather than tools—because the same capability may be realized by multiple tools, and a single tool may support multiple capabilities, making tool-level governance both redundant and prone to obsolescence.
 
 **Core Idea**: The ARC framework decomposes agent systems along three dimensions—Components, Design, and Capabilities—and constructs a complete mapping from elements → failure modes → harms → technical controls.
 

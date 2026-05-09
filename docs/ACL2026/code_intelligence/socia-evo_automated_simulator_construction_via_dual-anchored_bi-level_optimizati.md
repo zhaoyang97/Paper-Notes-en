@@ -28,15 +28,15 @@ This paper proposes SOCIA-EVO, an LLM agent framework that reformulates automate
 
 ## Background & Motivation
 
-**State of the Field**: Automatically constructing simulators from observational data (data-driven simulation) is foundational to understanding complex systems. Unlike general software engineering where functional correctness suffices, simulator construction is inherently a scientific modeling task requiring *distributional fidelity*—generated programs must reproduce the statistical regularities, causal mechanisms, and emergent behaviors present in real data.
+**Background**: Automatically constructing simulators from observational data (data-driven simulation) is foundational to understanding complex systems. Unlike general software engineering where functional correctness suffices, simulator construction is inherently a scientific modeling task requiring *distributional fidelity*—generated programs must reproduce the statistical regularities, causal mechanisms, and emergent behaviors present in real data.
 
 **Limitations of Prior Work**: Standard LLM agents applied to long-horizon simulator construction exhibit two critical failure modes: (1) *context drift*—as simulator complexity grows, constraints established during initial data analysis lose salience and agents may hallucinate mechanisms absent from the data; (2) *optimization instability*—agents conflate structural errors (e.g., incorrect transition logic) with parameter mismatches (e.g., suboptimal rates), rewriting correct logic when simple parameter tuning would suffice, leading to oscillatory "whack-a-mole" revisions.
 
-**Root Cause**: LLMs excel at discrete logical reasoning but struggle with high-dimensional continuous parameter search. Furthermore, they lack a persistent mechanism for validating repair strategies—previously attempted fixes and their quantified outcomes are lost as the context window advances, causing repeated proposals of superficially plausible but empirically ineffective repairs.
+**Key Challenge**: LLMs excel at discrete logical reasoning but struggle with high-dimensional continuous parameter search. Furthermore, they lack a persistent mechanism for validating repair strategies—previously attempted fixes and their quantified outcomes are lost as the context window advances, causing repeated proposals of superficially plausible but empirically ineffective repairs.
 
-**Paper Goals**: Design an agent framework that maintains long-horizon consistency, distinguishes structural from parametric issues, and accumulates validated repair experience.
+**Goal**: Design an agent framework that maintains long-horizon consistency, distinguishes structural from parametric issues, and accumulates validated repair experience.
 
-**Starting Point**: Introduce a dual-anchoring mechanism—a static Blueprint prevents context drift, while a dynamic strategy Playbook accumulates and validates repair hypotheses; bi-level optimization strictly decouples structural revision (LLM-driven outer loop) from parameter calibration (numerical optimizer inner loop).
+**Key Insight**: Introduce a dual-anchoring mechanism—a static Blueprint prevents context drift, while a dynamic strategy Playbook accumulates and validates repair hypotheses; bi-level optimization strictly decouples structural revision (LLM-driven outer loop) from parameter calibration (numerical optimizer inner loop).
 
 **Core Idea**: Simulator construction = Blueprint-anchored search space + bi-level optimization decoupling structure and parameters + self-curated Playbook for repair hypotheses.
 

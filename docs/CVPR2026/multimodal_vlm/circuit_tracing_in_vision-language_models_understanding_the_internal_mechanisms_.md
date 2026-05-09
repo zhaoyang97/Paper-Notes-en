@@ -29,15 +29,15 @@ This paper proposes the first circuit tracing framework for VLMs, training per-l
 
 ## Background & Motivation
 
-**State of the Field**: VLMs (e.g., CLIP, LLaVA, GPT-4o) have achieved remarkable success on visual question answering, image captioning, and complex visual reasoning tasks, yet their internal working mechanisms remain opaque black boxes — a particularly critical issue in high-stakes applications such as medical imaging, autonomous driving, and content moderation.
+**Background**: VLMs (e.g., CLIP, LLaVA, GPT-4o) have achieved remarkable success on visual question answering, image captioning, and complex visual reasoning tasks, yet their internal working mechanisms remain opaque black boxes — a particularly critical issue in high-stakes applications such as medical imaging, autonomous driving, and content moderation.
 
 **Limitations of Prior Work**: Mechanistic interpretability research on LLMs (e.g., circuit discovery, induction head analysis, activation patching) has advanced considerably in recent years, but these methods have been almost exclusively confined to text-only models. VLMs present unique challenges: they must integrate two modalities with distinct statistical properties and semantics, and meaningful visual-language correspondences must be identified. Existing VLM interpretability work has largely remained at a high level — attention visualization and probing — which is correlational rather than causal in nature.
 
-**Root Cause**: Virtually nothing is known about how VLMs bind visual features to tokens, how cross-modal reasoning is implemented, or how visual and linguistic attention are coordinated. Sparse autoencoders and transcoders have successfully decomposed polysemantic representations in LLMs but have never been applied in multimodal settings.
+**Key Challenge**: Virtually nothing is known about how VLMs bind visual features to tokens, how cross-modal reasoning is implemented, or how visual and linguistic attention are coordinated. Sparse autoencoders and transcoders have successfully decomposed polysemantic representations in LLMs but have never been applied in multimodal settings.
 
-**Paper Goals**: Establish the first complete circuit tracing framework for VLMs and systematically analyze the internal computational mechanisms of multimodal reasoning.
+**Goal**: Establish the first complete circuit tracing framework for VLMs and systematically analyze the internal computational mechanisms of multimodal reasoning.
 
-**Starting Point**: Extend the transcoder + attribution graph paradigm validated in LLMs to the multimodal setting, developing new methods tailored to VLM-specific challenges such as image token processing, bidirectional attention, and cross-modal information flow.
+**Key Insight**: Extend the transcoder + attribution graph paradigm validated in LLMs to the multimodal setting, developing new methods tailored to VLM-specific challenges such as image token processing, bidirectional attention, and cross-modal information flow.
 
 **Core Idea**: By inserting transcoders into each MLP layer of a VLM, polysemantic representations are decomposed into interpretable monosemantic features. Combined with attribution graphs that trace causal relationships between features, sparse computational circuits driving multimodal reasoning are discovered and verified.
 

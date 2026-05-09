@@ -28,15 +28,15 @@ This paper presents the first real-world inverse rendering dataset (DIR) built u
 
 ## Background & Motivation
 
-**State of the Field**: Inverse rendering aims to recover geometry and reflectance from images. Existing imaging systems include light stages (LED spherical arrays), flash photography, and display–camera systems. The former two are either prohibitively expensive or require multiple captures with a moving camera.
+**Background**: Inverse rendering aims to recover geometry and reflectance from images. Existing imaging systems include light stages (LED spherical arrays), flash photography, and display–camera systems. The former two are either prohibitively expensive or require multiple captures with a moving camera.
 
 **Limitations of Prior Work**: Display–camera systems offer unique advantages — each pixel can serve as a programmable point light source, and the polarized light emitted by LCDs facilitates diffuse-specular separation. Despite this potential, no public display–camera inverse rendering dataset exists, severely impeding research progress in this direction. All existing datasets are collected using other systems such as light stages, light probes, or robotic arms.
 
-**Root Cause**: Display-based inverse rendering presents unique challenges including near-field illumination, low light power (as little as 0.06 mcd per pixel), backlight leakage, polarization effects, and non-uniform angular sampling, necessitating dedicated datasets and methods.
+**Key Challenge**: Display-based inverse rendering presents unique challenges including near-field illumination, low light power (as little as 0.06 mcd per pixel), backlight leakage, polarization effects, and non-uniform angular sampling, necessitating dedicated datasets and methods.
 
-**Paper Goals**: (1) Construct and calibrate a display–polarization camera imaging system; (2) collect the first high-quality real-world display inverse rendering dataset; (3) evaluate existing methods and provide baselines.
+**Goal**: (1) Construct and calibrate a display–polarization camera imaging system; (2) collect the first high-quality real-world display inverse rendering dataset; (3) evaluate existing methods and provide baselines.
 
-**Starting Point**: Exploit two key properties of LCDs — programmability (OLAT illumination) and polarization (diffuse-specular separation) — combined with structured-light scanning for ground-truth geometry acquisition.
+**Key Insight**: Exploit two key properties of LCDs — programmability (OLAT illumination) and polarization (diffuse-specular separation) — combined with structured-light scanning for ground-truth geometry acquisition.
 
 **Core Idea**: Systematically address the data scarcity problem in display-based inverse rendering by calibrating display backlight and nonlinearity, designing 144-superpixel OLAT patterns, employing a polarization camera to separate diffuse/specular components, and obtaining ground-truth geometry via structured-light scanning.
 

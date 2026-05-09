@@ -28,15 +28,15 @@ This paper presents the first stability-based generalization analysis of Multipl
 
 ## Background & Motivation
 
-**State of the Field**: Decentralized SGD (DSGD) trains models via Gossip communication among nodes, eliminating the parameter server bottleneck. After each round of local SGD, $Q$ steps of Gossip averaging are performed to synchronize parameters. In practice, MGS ($Q>1$) significantly improves training performance.
+**Background**: Decentralized SGD (DSGD) trains models via Gossip communication among nodes, eliminating the parameter server bottleneck. After each round of local SGD, $Q$ steps of Gossip averaging are performed to synchronize parameters. In practice, MGS ($Q>1$) significantly improves training performance.
 
 **Limitations of Prior Work**: Existing generalization analyses either require bounded gradient assumptions (which are unrealistic) or rely on PAC-Bayes/information-theoretic methods that yield loose bounds. The most critical questions—"Why does MGS help?" and "Can decentralized training match centralized generalization?"—remain theoretically unanswered.
 
-**Root Cause**: Gossip communication drives node parameters toward consensus (reducing optimization error), yet the data heterogeneity and local updates inherent to decentralized training make its generalization behavior fundamentally different from that of centralized training.
+**Key Challenge**: Gossip communication drives node parameters toward consensus (reducing optimization error), yet the data heterogeneity and local updates inherent to decentralized training make its generalization behavior fundamentally different from that of centralized training.
 
-**Paper Goals**: To establish a unified generalization analysis framework that quantifies the effects of MGS, learning rate, data heterogeneity, number of nodes, and network topology on the generalization of DSGD.
+**Goal**: To establish a unified generalization analysis framework that quantifies the effects of MGS, learning rate, data heterogeneity, number of nodes, and network topology on the generalization of DSGD.
 
-**Starting Point**: The paper adopts $L_2$ on-average model stability (avoiding bounded gradient assumptions) and analyzes the role of MGS by decomposing the generalization gap into optimization error and centralized generalization error.
+**Key Insight**: The paper adopts $L_2$ on-average model stability (avoiding bounded gradient assumptions) and analyzes the role of MGS by decomposing the generalization gap into optimization error and centralized generalization error.
 
 **Core Idea**: MGS reduces the optimization error of DSGD at an exponential rate $O(e^{-\delta\gamma Q/4})$, thereby tightening generalization bounds; however, the sampling gap of $m^{-1/(2c\beta+2)}$ vs. $m^{-1}$ induced by data heterogeneity ensures that DSGD generalization always remains inferior to that of centralized training.
 

@@ -29,7 +29,7 @@ This paper proposes the AMR framework, which leverages a Splice-and-Boost data a
 
 ## Background & Motivation
 
-**State of the Field**: Moment Retrieval aims to precisely localize the start and end timestamps of a target segment in a long video given a natural language query. Mainstream approaches adopt the DETR framework for end-to-end grounding, yet remain constrained by annotation scarcity and label ambiguity.
+**Background**: Moment Retrieval aims to precisely localize the start and end timestamps of a target segment in a long video given a natural language query. Mainstream approaches adopt the DETR framework for end-to-end grounding, yet remain constrained by annotation scarcity and label ambiguity.
 
 **Limitations of Prior Work**:
    - **Data Scarcity**: Dense annotation of individual videos is costly, resulting in insufficient training samples. Models tend to learn shallow associations between textual keywords and local visual features rather than understanding the temporal completeness of actions.
@@ -38,7 +38,7 @@ This paper proposes the AMR framework, which leverages a Splice-and-Boost data a
 
 **Limitations of Existing Attempts**: Prior work has explored three directions—multimodal interaction modules (limited attentive discriminability), large-scale pretraining transfer (prohibitive parameter count and deployment cost), and external large-model data synthesis (introducing external dependencies). None addresses the root cause: how to elicit discriminative spatiotemporal reasoning from limited annotations under zero external dependencies.
 
-**Starting Point**: The authors observe that structurally decomposing and recombining existing data can yield augmented samples with explicit boundaries and semantic distractors. A two-stage training strategy is then designed to transfer knowledge from augmented data back to the real data distribution.
+**Key Insight**: The authors observe that structurally decomposing and recombining existing data can yield augmented samples with explicit boundaries and semantic distractors. A two-stage training strategy is then designed to transfer knowledge from augmented data back to the real data distribution.
 
 **Core Idea**: Splice-and-Boost augmentation + cold-start distillation two-stage training = a breakthrough in moment retrieval performance with zero external dependencies.
 

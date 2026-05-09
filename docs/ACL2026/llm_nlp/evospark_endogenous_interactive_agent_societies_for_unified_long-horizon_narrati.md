@@ -28,15 +28,15 @@ EvoSpark proposes a multi-agent framework for long-horizon narrative evolution, 
 
 ## Background & Motivation
 
-**State of the Field**: LLM-based multi-agent systems have made progress in narrative generation (e.g., Generative Agents, BookWorld), but exhibit systematic degradation in long-horizon simulations.
+**Background**: LLM-based multi-agent systems have made progress in narrative generation (e.g., Generative Agents, BookWorld), but exhibit systematic degradation in long-horizon simulations.
 
 **Limitations of Prior Work**: (1) *Social memory stacking* — append-only memory causes contradictory relationship states to accumulate (e.g., a character being simultaneously friend and enemy), leading to behavioral incoherence; (2) *Narrative–spatial misalignment* — text-based agents lack spatial state synchronization, causing characters to appear in locations that contradict narrative logic.
 
-**Root Cause**: Long-horizon narrative requires balancing *open emergence* and *logical consistency* — excessive control sacrifices autonomy, while excessive freedom leads to chaos. Existing frameworks either follow rigid scripts (sacrificing emergence) or operate fully open (sacrificing coherence).
+**Key Challenge**: Long-horizon narrative requires balancing *open emergence* and *logical consistency* — excessive control sacrifices autonomy, while excessive freedom leads to chaos. Existing frameworks either follow rigid scripts (sacrificing emergence) or operate fully open (sacrificing coherence).
 
-**Paper Goals**: Construct a unified framework spanning the full spectrum from strict hierarchical planning to completely free emergence, while maintaining long-horizon logical consistency.
+**Goal**: Construct a unified framework spanning the full spectrum from strict hierarchical planning to completely free emergence, while maintaining long-horizon logical consistency.
 
-**Starting Point**: Redesign the memory system and spatial management — memory is treated not as an append log but as "living cognition" (subject to metabolic updates), and space is treated not as a passive container but as a "virtual stage manager."
+**Key Insight**: Redesign the memory system and spatial management — memory is treated not as an append log but as "living cognition" (subject to metabolic updates), and space is treated not as a passive container but as a "virtual stage manager."
 
 **Core Idea**: Relationship Social Base (RSB) for memory metabolism + Generative Scene Scheduler (GMS) for spatial alignment + Emergent Character Grounding Protocol (ECGP) for converting hallucinations into creative assets.
 

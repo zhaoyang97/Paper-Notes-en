@@ -28,13 +28,13 @@ This paper identifies the "pseudo-reasoning" phenomenon in remote sensing VLMs�
 
 ## Background & Motivation
 
-**State of the Field**: Deep reasoning models (DeepSeek-R1-style SFT-RL paradigm) have achieved breakthroughs in mathematics and code, and have been extended to multimodal settings (Vision-R1, WeThink, R1-OneVision, etc.). However, anomalous behavior emerges in remote sensing tasks.
+**Background**: Deep reasoning models (DeepSeek-R1-style SFT-RL paradigm) have achieved breakthroughs in mathematics and code, and have been extended to multimodal settings (Vision-R1, WeThink, R1-OneVision, etc.). However, anomalous behavior emerges in remote sensing tasks.
 
 **Pseudo-Reasoning Problem**: Remote sensing VLMs generate explicit reasoning chains, yet performance shows **no improvement or even degrades**. Models merely "narrate reasoning processes" rather than "genuinely reason."
 
 **Glance Effect**: Remote sensing images cover large spatial extents with significant scale variation and sparse, subtle visual cues. Models perform a single shallow perception pass ("one glance") before reasoning, leading to reasoning based on incomplete visual evidence—reasoning degenerates into linguistically self-consistent narration rather than evidence-grounded logic.
 
-**Root Cause**: Remote sensing reasoning requires iterative, non-static evidence acquisition, whereas existing models adopt a "glance-then-reason" paradigm. Human remote sensing analysts employ repeated inspection-refinement cycles.
+**Key Challenge**: Remote sensing reasoning requires iterative, non-static evidence acquisition, whereas existing models adopt a "glance-then-reason" paradigm. Human remote sensing analysts employ repeated inspection-refinement cycles.
 
 **Core Idea**: RS-EoT — reasoning guides perception, dynamically searching for new visual evidence during the reasoning process (reasoning → perception → reasoning → perception... loop), rather than relying on a fixed initial view.
 

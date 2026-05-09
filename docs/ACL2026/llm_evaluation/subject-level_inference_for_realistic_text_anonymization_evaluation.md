@@ -29,15 +29,15 @@ SPIA introduces the first subject-level PII inference evaluation benchmark (675 
 
 ## Background & Motivation
 
-**State of the Field**: Text anonymization protects individuals from identification by modifying text, and is a core requirement under privacy regulations such as GDPR. Existing evaluation methods are dominated by span-based metrics such as Token Recall and Entity Recall, which measure whether explicit PII mentions are redacted. Established benchmarks include i2b2/UTHealth (medical), TAB (legal), and WikiPII (Wikipedia).
+**Background**: Text anonymization protects individuals from identification by modifying text, and is a core requirement under privacy regulations such as GDPR. Existing evaluation methods are dominated by span-based metrics such as Token Recall and Entity Recall, which measure whether explicit PII mentions are redacted. Established benchmarks include i2b2/UTHealth (medical), TAB (legal), and WikiPII (Wikipedia).
 
 **Limitations of Prior Work**: Two critical flaws exist. First, span-based metrics fail to capture inference risk — Staab et al. (2025) demonstrate that even after NER-based anonymization, 66.3% of personal attributes remain inferable from context. Second, existing methods assume documents have a single data subject, whereas real-world texts (legal judgments, medical records, online posts) typically involve multiple individuals. Current techniques primarily protect one main subject while providing insufficient protection for other mentioned individuals.
 
-**Root Cause**: Redacting all explicit PII mentions (high span recall) does not equate to protecting all individuals (high inference protection). LLMs can infer redacted personal information from contextual cues, and the protection of non-target subjects in multi-subject documents is systematically neglected. This represents a fundamental error in the unit of evaluation — the field should shift from text spans to individual persons.
+**Key Challenge**: Redacting all explicit PII mentions (high span recall) does not equate to protecting all individuals (high inference protection). LLMs can infer redacted personal information from contextual cues, and the protection of non-target subjects in multi-subject documents is systematically neglected. This represents a fundamental error in the unit of evaluation — the field should shift from text spans to individual persons.
 
-**Paper Goals**: To shift the unit of anonymization evaluation from text spans to individuals, construct an inference-based evaluation benchmark covering multiple subjects and domains, and design new subject-level protection metrics.
+**Goal**: To shift the unit of anonymization evaluation from text spans to individuals, construct an inference-based evaluation benchmark covering multiple subjects and domains, and design new subject-level protection metrics.
 
-**Starting Point**: A "subject" is defined as any identifiable individual in a document, and each subject's PII is independently assessed for recoverability by an adversarial LLM from the anonymized text.
+**Key Insight**: A "subject" is defined as any identifiable individual in a document, and each subject's PII is independently assessed for recoverability by an adversarial LLM from the anonymized text.
 
 **Core Idea**: The unit of evaluation = individual persons (not text spans); the protection metric = proportion of PII still inferable after anonymization (not the redaction rate).
 

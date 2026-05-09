@@ -28,15 +28,15 @@ FreeCure reveals that identity embeddings in face personalization models suppres
 
 ## Background & Motivation
 
-**State of the Field** Face personalization models (FastComposer, PhotoMaker, PuLID, InfiniteYou, etc.) generate identity-preserving images by fusing identity embeddings into cross-attention layers, yet balancing identity fidelity and prompt consistency remains a core challenge.
+**Background** Face personalization models (FastComposer, PhotoMaker, PuLID, InfiniteYou, etc.) generate identity-preserving images by fusing identity embeddings into cross-attention layers, yet balancing identity fidelity and prompt consistency remains a core challenge.
 
 **Limitations of Prior Work** Identity embeddings dominate the cross-attention mechanism, effectively "suppressing" the normal expression of other attribute tokens (e.g., hair color, expression, accessories), causing generated results to fail to accurately reflect facial attributes specified in the prompt.
 
-**Root Cause** Identity embeddings are indispensable for identity preservation, yet they are precisely the source of degraded prompt consistency. Directly modifying cross-attention disrupts identity extraction capability.
+**Key Challenge** Identity embeddings are indispensable for identity preservation, yet they are precisely the source of degraded prompt consistency. Directly modifying cross-attention disrupts identity extraction capability.
 
-**Paper Goals** Restore facial attribute control suppressed by identity embeddings without modifying the cross-attention modules of the personalization model, thereby preserving identity capability.
+**Goal** Restore facial attribute control suppressed by identity embeddings without modifying the cross-attention modules of the personalization model, thereby preserving identity capability.
 
-**Starting Point** The observation that removing identity embeddings from a personalization model recovers the high prompt consistency of the foundation model—indicating that foundation knowledge is "suppressed" but not "destroyed" and can be leveraged through self-attention layers.
+**Key Insight** The observation that removing identity embeddings from a personalization model recovers the high prompt consistency of the foundation model—indicating that foundation knowledge is "suppressed" but not "destroyed" and can be leveraged through self-attention layers.
 
 **Core Idea** A dual-inference paradigm is used to extract correct attribute information from the foundation model, which is then locally injected via FASA at the self-attention layers.
 

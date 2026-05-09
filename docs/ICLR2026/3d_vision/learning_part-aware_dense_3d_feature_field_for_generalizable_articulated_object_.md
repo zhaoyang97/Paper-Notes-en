@@ -29,15 +29,15 @@ This paper proposes PA3FF (Part-Aware 3D Feature Field), a natively 3D dense par
 
 ## Background & Motivation
 
-**State of the Field**: Robotic manipulation of articulated objects (e.g., microwave doors, drawers, faucets) requires understanding functional parts (handles, knobs, etc.) to determine where and how to interact. Current approaches predominantly leverage 2D foundation models (CLIP, DINOv2, SigLIP) to extract semantic features from images for policy learning.
+**Background**: Robotic manipulation of articulated objects (e.g., microwave doors, drawers, faucets) requires understanding functional parts (handles, knobs, etc.) to determine where and how to interact. Current approaches predominantly leverage 2D foundation models (CLIP, DINOv2, SigLIP) to extract semantic features from images for policy learning.
 
 **Limitations of Prior Work**: 2D features inherently lack 3D geometric information and spatial continuity. Methods that lift 2D features into 3D (multi-view fusion, NeRF distillation, etc.) suffer from three core problems: (a) long inference times (up to several minutes); (b) multi-view feature inconsistency — 2D features from different viewpoints conflict when aggregated in 3D; and (c) the patch-based design of ViT architectures reduces spatial resolution by a factor of 14, causing fine-grained parts (e.g., refrigerator handles) to be lost.
 
-**Root Cause**: How to obtain 3D features that simultaneously satisfy geometric precision, semantic part-awareness, and cross-object generalizability, while supporting real-time feed-forward inference.
+**Key Challenge**: How to obtain 3D features that simultaneously satisfy geometric precision, semantic part-awareness, and cross-object generalizability, while supporting real-time feed-forward inference.
 
-**Paper Goals**: (a) Construct a natively 3D, part-level dense feature field; (b) enable few-shot (30 demonstrations) generalizable manipulation policies built upon this representation.
+**Goal**: (a) Construct a natively 3D, part-level dense feature field; (b) enable few-shot (30 demonstrations) generalizable manipulation policies built upon this representation.
 
-**Starting Point**: Rather than distilling from 2D, the paper exploits Sonata/PTv3, a self-supervised model pre-trained on 140K point clouds, to provide 3D priors. Part semantics are then injected via contrastive learning — points within the same part are pulled together in feature space, while points from different parts are pushed apart.
+**Key Insight**: Rather than distilling from 2D, the paper exploits Sonata/PTv3, a self-supervised model pre-trained on 140K point clouds, to provide 3D priors. Part semantics are then injected via contrastive learning — points within the same part are pulled together in feature space, while points from different parts are pushed apart.
 
 **Core Idea**: Construct a dense 3D feature field using a natively 3D pre-trained model and part-level contrastive learning, enabling robotic policies to generalize to unseen articulated objects with minimal demonstrations.
 

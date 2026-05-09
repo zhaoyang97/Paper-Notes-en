@@ -29,15 +29,15 @@ The paper proposes CLewR (Curriculum Learning with Restarts), a strategy that so
 
 ## Background & Motivation
 
-**State of the Field**: Large language models demonstrate strong performance in zero-shot multilingual machine translation. Subsequent work further improves translation quality through preference optimization (e.g., DPO, CPO, ARPO), contrasting high-quality translations with low-quality ones.
+**Background**: Large language models demonstrate strong performance in zero-shot multilingual machine translation. Subsequent work further improves translation quality through preference optimization (e.g., DPO, CPO, ARPO), contrasting high-quality translations with low-quality ones.
 
 **Limitations of Prior Work**: Preference optimization methods ignore the presentation order of data samples during training—a factor that significantly impacts training effectiveness. Existing curriculum learning work (e.g., CurriDPO) simply sorts data by difficulty but does not address catastrophic forgetting during training: easy samples learned early are forgotten in later stages.
 
-**Root Cause**: Traditional curriculum learning arranges data from easy to hard and traverses it only once. The model forgets knowledge from easy samples when it concentrates on hard samples later in training, but not following a curriculum means losing curriculum learning benefits.
+**Key Challenge**: Traditional curriculum learning arranges data from easy to hard and traverses it only once. The model forgets knowledge from easy samples when it concentrates on hard samples later in training, but not following a curriculum means losing curriculum learning benefits.
 
-**Paper Goals**: Propose a data-level curriculum strategy that simultaneously enjoys curriculum learning benefits and mitigates catastrophic forgetting, applicable to preference optimization training for machine translation.
+**Goal**: Propose a data-level curriculum strategy that simultaneously enjoys curriculum learning benefits and mitigates catastrophic forgetting, applicable to preference optimization training for machine translation.
 
-**Starting Point**: Sort data from easy to hard within each epoch, but restart the sorting after each epoch—meaning every epoch traverses all samples completely, from easy to hard.
+**Key Insight**: Sort data from easy to hard within each epoch, but restart the sorting after each epoch—meaning every epoch traverses all samples completely, from easy to hard.
 
 **Core Idea**: By restarting the easy-to-hard curriculum ordering at each epoch, CLewR natively solves catastrophic forgetting because every epoch traverses all samples from the beginning.
 

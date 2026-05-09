@@ -29,11 +29,11 @@ This paper proposes ProOOD, a framework that for the first time unifies long-tai
 
 ## Background & Motivation
 
-1. **State of the Field**: 3D semantic occupancy prediction is a core perception task in autonomous driving, aiming to assign geometric and semantic labels to each voxel. Camera-based methods (VoxFormer, CGFormer, SGN, etc.) have achieved strong in-distribution performance in recent years.
+1. **Background**: 3D semantic occupancy prediction is a core perception task in autonomous driving, aiming to assign geometric and semantic labels to each voxel. Camera-based methods (VoxFormer, CGFormer, SGN, etc.) have achieved strong in-distribution performance in recent years.
 2. **Limitations of Prior Work**: Unknown objects (construction barriers, animals, extreme weather conditions, etc.) are inevitable in autonomous driving environments. Existing models tend to be overconfident on OOD inputs, forcibly classifying anomalous objects into known categories—especially rare ones. For example, a piece of clothing may be misidentified as a cyclist.
-3. **Root Cause**: OOD detection and long-tail learning are inherently coupled. In SemanticKITTI, rare categories account for less than 2% of samples, resulting in poorly calibrated, ambiguous predictions for rare classes. Existing OOD scoring methods (maximum softmax, entropy, energy) are designed for per-class classification and perform poorly in voxel-level prediction, lacking mechanisms to capture 3D spatial structure and semantic context.
-4. **Paper Goals**: To jointly address long-tail learning and OOD detection—better tail-class recognition reduces prediction overconfidence, which in turn improves OOD sensitivity.
-5. **Starting Point**: Leveraging class prototypes as unified semantic anchors—for semantic completion and tail-class enhancement at training time, and for OOD scoring at inference time—as plug-and-play modules without modifying the backbone.
+3. **Key Challenge**: OOD detection and long-tail learning are inherently coupled. In SemanticKITTI, rare categories account for less than 2% of samples, resulting in poorly calibrated, ambiguous predictions for rare classes. Existing OOD scoring methods (maximum softmax, entropy, energy) are designed for per-class classification and perform poorly in voxel-level prediction, lacking mechanisms to capture 3D spatial structure and semantic context.
+4. **Goal**: To jointly address long-tail learning and OOD detection—better tail-class recognition reduces prediction overconfidence, which in turn improves OOD sensitivity.
+5. **Key Insight**: Leveraging class prototypes as unified semantic anchors—for semantic completion and tail-class enhancement at training time, and for OOD scoring at inference time—as plug-and-play modules without modifying the backbone.
 6. **Core Idea**: Simultaneously guiding semantic completion, strengthening tail-class representations, and quantifying voxel-level uncertainty through class-level voxel prototypes, thereby jointly improving occupancy prediction and OOD detection without modifying the backbone.
 
 ## Method

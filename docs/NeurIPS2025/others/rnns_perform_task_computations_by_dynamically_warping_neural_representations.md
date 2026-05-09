@@ -28,15 +28,15 @@ This paper proposes a Riemannian geometric framework that pulls back the metric 
 
 ## Background & Motivation
 
-**State of the Field**: Understanding how neural networks represent data features through internal activations—i.e., the geometric structure of "neural representations"—is a central problem in machine learning and computational neuroscience. A large body of work focuses on static representational geometry (e.g., manifold analysis across layers of deep networks), while another line investigates how dynamical systems perform computation through time-varying dynamics (computation-through-dynamics).
+**Background**: Understanding how neural networks represent data features through internal activations—i.e., the geometric structure of "neural representations"—is a central problem in machine learning and computational neuroscience. A large body of work focuses on static representational geometry (e.g., manifold analysis across layers of deep networks), while another line investigates how dynamical systems perform computation through time-varying dynamics (computation-through-dynamics).
 
 **Limitations of Prior Work**: The connection between these two directions remains weak. Existing tools for representational geometry analysis are designed primarily for feedforward networks with static inputs and cannot handle dynamical systems receiving time-varying inputs, such as RNNs. Existing methods for analyzing RNN computation largely rely on linearization near fixed points, which can only characterize steady-state behavior and discard critical computational information encoded in transient dynamics.
 
-**Root Cause**: RNN computation unfolds across the entire time axis—including transients far from attractors—yet existing mathematical tools can only characterize local behavior near steady states. A theoretical framework is needed that can characterize the complete, time-varying geometry of a dynamical system's representational manifold as it receives time-varying inputs.
+**Key Challenge**: RNN computation unfolds across the entire time axis—including transients far from attractors—yet existing mathematical tools can only characterize local behavior near steady states. A theoretical framework is needed that can characterize the complete, time-varying geometry of a dynamical system's representational manifold as it receives time-varying inputs.
 
-**Paper Goals**: How can the topology and geometry of a dynamical system's state manifold be derived from the manifold of input functions? How does this geometry evolve over time? What is the relationship between this geometric evolution and computation?
+**Goal**: How can the topology and geometry of a dynamical system's state manifold be derived from the manifold of input functions? How does this geometry evolve over time? What is the relationship between this geometric evolution and computation?
 
-**Starting Point**: The authors hypothesize that RNNs accomplish computation by dynamically warping their representations of task variables, and quantify this warping by introducing a "representational metric"—the pullback metric of the RNN state space metric onto the input manifold.
+**Key Insight**: The authors hypothesize that RNNs accomplish computation by dynamically warping their representations of task variables, and quantify this warping by introducing a "representational metric"—the pullback metric of the RNN state space metric onto the input manifold.
 
 **Core Idea**: Define a time-varying pullback metric for RNNs to quantify how the intrinsic geometry of the representational manifold is dynamically deformed throughout the course of computation.
 

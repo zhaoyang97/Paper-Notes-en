@@ -27,13 +27,13 @@ QKD introduces quantum gating into class-incremental learning (CIL), modeling sa
 
 ## Background & Motivation
 
-**State of the Field**: Pre-trained model (PTM)-based CIL freezes the backbone and learns lightweight adapters per task. Prompt-based methods retrieve prompts via similarity search; adapter-based methods assign independent adapters to each task.
+**Background**: Pre-trained model (PTM)-based CIL freezes the backbone and learns lightweight adapters per task. Prompt-based methods retrieve prompts via similarity search; adapter-based methods assign independent adapters to each task.
 
 **Limitations of Prior Work**: Prompt-based methods produce noisy matches when task subspaces overlap due to local similarity retrieval. Adapter-based methods treat adapters as independent subspaces, ignoring cross-task correlations; heuristic routing/fusion at inference cannot handle entangled subspaces.
 
-**Root Cause**: Routing and fusion lack an explicit learned task-interaction mechanism — how to quantify the correlation between a current sample and each historical task, and leverage it for knowledge transfer during training and adapter selection during inference.
+**Key Challenge**: Routing and fusion lack an explicit learned task-interaction mechanism — how to quantify the correlation between a current sample and each historical task, and leverage it for knowledge transfer during training and adapter selection during inference.
 
-**Paper Goals**: Design a unified learnable mechanism that dynamically quantifies sample-task correlations to jointly serve knowledge distillation during training and adaptive routing during inference.
+**Goal**: Design a unified learnable mechanism that dynamically quantifies sample-task correlations to jointly serve knowledge distillation during training and adaptive routing during inference.
 
 **Core Idea**: Map sample features and task embeddings into a quantum Hilbert space, exploiting quantum superposition and interference to naturally encode complex multi-way task dependencies.
 

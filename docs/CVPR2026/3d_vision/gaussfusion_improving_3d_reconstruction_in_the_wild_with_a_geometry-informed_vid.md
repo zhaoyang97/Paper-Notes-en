@@ -27,11 +27,11 @@ content_hash: e21c52cd32c8cd10
 This paper proposes GaussFusion, a geometry-informed video-to-video generative model that conditions a video generator on a rendered Gaussian Primitives Buffer (GP-Buffer) — encoding depth, normals, opacity, and covariance — to effectively remove floaters, flickering, and blurring artifacts in 3DGS reconstructions. The framework is compatible with both optimization-based and feed-forward reconstruction paradigms, and its distilled variant achieves real-time inference at 16 FPS.
 
 ## Background & Motivation
-1. **State of the Field**: 3D Gaussian Splatting (3DGS) has become the dominant 3D reconstruction representation, with two main technical paradigms: per-scene optimization and feed-forward prediction.
+1. **Background**: 3D Gaussian Splatting (3DGS) has become the dominant 3D reconstruction representation, with two main technical paradigms: per-scene optimization and feed-forward prediction.
 2. **Limitations of Prior Work**: Both paradigms still produce severe artifacts under sparse-view and under-covered scenarios — including floaters, flickering, blurring, and geometric errors. Existing repair methods (e.g., Difix3D, GenFusion, ExploreGS) condition solely on RGB renderings, making them unable to handle large-scale floaters and missing regions; moreover, they are typically trained for a specific reconstruction paradigm and fail to generalize across paradigms.
-3. **Root Cause**: Existing methods exploit only the color information of Gaussian primitives, ignoring rich geometric cues such as depth, opacity, normals, and covariance. Additionally, the lack of diverse artifact simulation in training data causes models to overfit to particular reconstruction pipelines.
-4. **Paper Goals**: How can a single model be trained to handle artifacts from both optimization-based and feed-forward 3DGS?
-5. **Starting Point**: (1) Encode all primitive attributes of 3DGS as a pixel-aligned video representation (GP-Buffer), providing richer geometric cues than RGB alone; (2) design a comprehensive artifact simulation pipeline covering multiple degradation modes.
+3. **Key Challenge**: Existing methods exploit only the color information of Gaussian primitives, ignoring rich geometric cues such as depth, opacity, normals, and covariance. Additionally, the lack of diverse artifact simulation in training data causes models to overfit to particular reconstruction pipelines.
+4. **Goal**: How can a single model be trained to handle artifacts from both optimization-based and feed-forward 3DGS?
+5. **Key Insight**: (1) Encode all primitive attributes of 3DGS as a pixel-aligned video representation (GP-Buffer), providing richer geometric cues than RGB alone; (2) design a comprehensive artifact simulation pipeline covering multiple degradation modes.
 6. **Core Idea**: Condition a video generative model on a GP-Buffer that encodes complete Gaussian primitive geometry, combined with a cross-paradigm artifact simulation strategy, to achieve general-purpose 3DGS artifact removal.
 
 ## Method

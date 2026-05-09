@@ -28,15 +28,15 @@ Proposes StoryTailor, a zero-shot visual narrative generation pipeline that uses
 
 ## Background & Motivation
 
-**State of the Field**: Personalized image generation is divided into two camps: fine-tuning methods (DreamBooth/LoRA/Textual Inversion) that require per-identity training, and adapter methods (IP-Adapter/MS-Diffusion) that are lighter but primarily single-frame. Sequence-level methods (FluxKontext, video diffusion) require GPU clusters and tend to entangle identities in multi-subject interactions.
+**Background**: Personalized image generation is divided into two camps: fine-tuning methods (DreamBooth/LoRA/Textual Inversion) that require per-identity training, and adapter methods (IP-Adapter/MS-Diffusion) that are lighter but primarily single-frame. Sequence-level methods (FluxKontext, video diffusion) require GPU clusters and tend to entangle identities in multi-subject interactions.
 
 **Limitations of Prior Work**: A triple tension—(1) poor action-text fidelity (models excel at identity but not actions); (2) subject identity fidelity collapses during overlap/close proximity; (3) cross-frame background continuity is difficult to maintain.
 
-**Root Cause**: Enhancing action response requires increasing text guidance strength, but this corrupts identity consistency through cross-attention drift; propagating background information across frames in turn constrains subject dynamics.
+**Key Challenge**: Enhancing action response requires increasing text guidance strength, but this corrupts identity consistency through cross-attention drift; propagating background information across frames in turn constrains subject dynamics.
 
-**Paper Goals**: Achieve training-free multi-subject, action-rich, cross-frame consistent visual narrative generation on a single 24GB GPU.
+**Goal**: Achieve training-free multi-subject, action-rich, cross-frame consistent visual narrative generation on a single 24GB GPU.
 
-**Starting Point**: Rather than modifying the backbone (SDXL), make precise interventions in the attention mechanism and text embedding space—targeting spatial localization, semantic enhancement, and temporal continuity respectively.
+**Key Insight**: Rather than modifying the backbone (SDXL), make precise interventions in the attention mechanism and text embedding space—targeting spatial localization, semantic enhancement, and temporal continuity respectively.
 
 **Core Idea**: Three inference-time modules divide and conquer three sub-problems—GCA handles space, AB-SVR handles semantics, SFC handles time.
 

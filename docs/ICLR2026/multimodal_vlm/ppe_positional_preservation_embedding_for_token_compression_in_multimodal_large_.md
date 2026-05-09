@@ -29,16 +29,16 @@ This paper proposes PPE (Positional Preservation Embedding), which exploits the 
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs (e.g., Qwen2.5-VL, LLaVA-OneVision) encode images/videos into dense visual tokens before feeding them into an LLM for joint understanding. However, dense representations are highly redundant—a high-resolution image can produce thousands of visual tokens, imposing substantial computational and memory costs. Token merging/pruning techniques reduce sequence length by clustering similar tokens.
+**Background**: MLLMs (e.g., Qwen2.5-VL, LLaVA-OneVision) encode images/videos into dense visual tokens before feeding them into an LLM for joint understanding. However, dense representations are highly redundant—a high-resolution image can produce thousands of visual tokens, imposing substantial computational and memory costs. Token merging/pruning techniques reduce sequence length by clustering similar tokens.
 
 **Limitations of Prior Work**:
 1. **ChatUniVi**: After clustering, it assigns **randomized position IDs** to compressed tokens → completely discards the original spatial layout, causing significant performance degradation on layout-sensitive tasks (e.g., counting, OCR, temporal localization).
 2. **PACT**: Retains only the position ID of the cluster center → each merged token has a single position → positional information is insufficient and imprecise.
 3. **General Issue**: Higher compression ratios → each merged token represents more original tokens → a single position ID loses more layout information.
 
-**Root Cause**: An inherent conflict between the high compression ratio pursued by token merging and the preservation of positional information—merging reduces token count while simultaneously erasing spatial/temporal structure.
+**Key Challenge**: An inherent conflict between the high compression ratio pursued by token merging and the preservation of positional information—merging reduces token count while simultaneously erasing spatial/temporal structure.
 
-**Paper Goals**: The paper observes that the rotary encoding in RoPE/M-RoPE operates independently per dimension ($\text{RoPE}(z_d, m) = e^{im\theta_d}z_d$), so different dimensions of the same token can encode different position IDs. The dimensions are divided into $K$ groups, each encoding the position of one merged token within the cluster → a single compressed token simultaneously carries $K$ positional cues.
+**Goal**: The paper observes that the rotary encoding in RoPE/M-RoPE operates independently per dimension ($\text{RoPE}(z_d, m) = e^{im\theta_d}z_d$), so different dimensions of the same token can encode different position IDs. The dimensions are divided into $K$ groups, each encoding the position of one merged token within the cluster → a single compressed token simultaneously carries $K$ positional cues.
 
 ## Method
 

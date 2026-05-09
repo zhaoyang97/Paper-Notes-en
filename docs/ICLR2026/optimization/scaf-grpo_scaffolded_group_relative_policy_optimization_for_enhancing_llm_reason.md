@@ -29,15 +29,15 @@ This paper proposes the Scaf-GRPO framework, which injects hierarchical in-promp
 
 ## Background & Motivation
 
-**State of the Field**: Reinforcement learning from verifiable rewards (RLVR) has become the dominant paradigm for enhancing LLM reasoning. Algorithms such as GRPO update policies using advantage signals derived from group-relative rewards.
+**Background**: Reinforcement learning from verifiable rewards (RLVR) has become the dominant paradigm for enhancing LLM reasoning. Algorithms such as GRPO update policies using advantage signals derived from group-relative rewards.
 
 **Limitations of Prior Work**: When a model encounters problems far beyond its current capability, all exploratory attempts fail, yielding persistent zero-reward signals. In GRPO, all-zero rewards within a group cause the advantage $\hat{A}_i = \frac{R(o_i) - \mu_\mathcal{G}}{\sigma_\mathcal{G}} = 0$, leading to vanishing gradients and forming a "learning cliff."
 
-**Root Cause**: Existing solutions such as LUFFY adopt a prefix-continuation strategy—supplying the model with a correct solution prefix—which introduces a distribution mismatch between the teacher and student policies and forces the model along a predetermined path, suppressing exploration.
+**Key Challenge**: Existing solutions such as LUFFY adopt a prefix-continuation strategy—supplying the model with a correct solution prefix—which introduces a distribution mismatch between the teacher and student policies and forces the model along a predetermined path, suppressing exploration.
 
-**Paper Goals**: To help the model overcome the learning cliff and acquire reasoning capabilities from otherwise unsolvable problems, without introducing off-policy distribution mismatch.
+**Goal**: To help the model overcome the learning cliff and acquire reasoning capabilities from otherwise unsolvable problems, without introducing off-policy distribution mismatch.
 
-**Starting Point**: Inspired by the pedagogical theory of scaffolding, the approach provides minimal, progressive in-prompt hints rather than imposing a forced solution-path prefix.
+**Key Insight**: Inspired by the pedagogical theory of scaffolding, the approach provides minimal, progressive in-prompt hints rather than imposing a forced solution-path prefix.
 
 **Core Idea**: Rather than providing "rails" (prefixes), the method provides "signposts" (hints)—injecting hierarchical prompts so that the model generates correct solutions using its own policy, thereby avoiding off-policy issues while retaining exploratory freedom.
 

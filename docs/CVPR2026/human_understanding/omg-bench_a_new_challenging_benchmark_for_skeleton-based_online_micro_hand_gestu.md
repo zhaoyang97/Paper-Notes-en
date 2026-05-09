@@ -29,15 +29,15 @@ This paper introduces OMG-Bench, the first large-scale public benchmark for skel
 
 ## Background & Motivation
 
-**State of the Field**: With the maturation of hand pose estimation on head-mounted displays such as Meta Quest and PICO, skeleton-based gesture recognition has become increasingly important for VR/AR interaction. Existing research primarily focuses on macro gestures (large-amplitude movements), employing sliding-window classification or two-stage detection-classification pipelines.
+**Background**: With the maturation of hand pose estimation on head-mounted displays such as Meta Quest and PICO, skeleton-based gesture recognition has become increasingly important for VR/AR interaction. Existing research primarily focuses on macro gestures (large-amplitude movements), employing sliding-window classification or two-stage detection-classification pipelines.
 
 **Limitations of Prior Work**: (1) **Dataset issues**: Existing datasets are small in scale (e.g., SHREC'22 contains only 288 sequences and 1,152 instances), rely on outdated monocular hand pose estimators yielding poor skeleton quality, and exhibit insufficient temporal dynamics (with conspicuous pauses between gestures that do not reflect real continuous interaction). (2) **Absence of micro gesture resources**: Prolonged use of macro gestures causes arm muscle fatigue; micro gestures are better suited for extended interaction, yet no public skeleton-based micro gesture dataset exists. (3) **Algorithmic limitations**: Two-stage methods cannot be optimized end-to-end; CTC-based methods tend to produce blank predictions for weak signals; sliding windows are sensitive to hyperparameters, with non-overlapping windows risking gesture truncation and overlapping windows incurring redundant computation.
 
-**Root Cause**: Three fundamental challenges of micro gestures—subtle inter-class differences (e.g., thumb tip touching index fingertip vs. middle fingertip), rapid dynamics (average duration of only 0.57 seconds), and large variation in temporal length—render existing methods inadequate.
+**Key Challenge**: Three fundamental challenges of micro gestures—subtle inter-class differences (e.g., thumb tip touching index fingertip vs. middle fingertip), rapid dynamics (average duration of only 0.57 seconds), and large variation in temporal length—render existing methods inadequate.
 
-**Paper Goals**: (1) Construct a high-quality, large-scale micro gesture benchmark dataset; (2) design an end-to-end framework that unifies detection and classification, addressing window truncation and insufficient cross-window context.
+**Goal**: (1) Construct a high-quality, large-scale micro gesture benchmark dataset; (2) design an end-to-end framework that unifies detection and classification, addressing window truncation and insufficient cross-window context.
 
-**Starting Point**: On the data side, multi-view self-supervised hand pose estimation combined with a semi-automatic annotation pipeline ensures quality and scale. On the algorithm side, borrowing the query mechanism from object detection, learnable queries are used to unify detection and classification.
+**Key Insight**: On the data side, multi-view self-supervised hand pose estimation combined with a semi-automatic annotation pipeline ensures quality and scale. On the algorithm side, borrowing the query mechanism from object detection, learnable queries are used to unify detection and classification.
 
 **Core Idea**: Establish the first online micro gesture benchmark and propose a Hierarchical Memory-Augmented Transformer that maintains cross-window contextual continuity via frame-level and window-level memory banks, with position-aware queries implicitly encoding spatiotemporal gesture information.
 

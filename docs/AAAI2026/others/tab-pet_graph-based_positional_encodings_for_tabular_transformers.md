@@ -28,15 +28,15 @@ Tab-PET estimates a graph structure from inter-feature correlations in tabular d
 
 ## Background & Motivation
 
-**State of the Field**: Tabular data is one of the most prevalent data modalities in machine learning, where GBDTs (XGBoost, CatBoost) have long been dominant. In recent years, Transformer-based architectures such as TabTransformer, SAINT, and FT-Transformer have made notable progress on tabular tasks, yet they have not consistently surpassed GBDTs overall.
+**Background**: Tabular data is one of the most prevalent data modalities in machine learning, where GBDTs (XGBoost, CatBoost) have long been dominant. In recent years, Transformer-based architectures such as TabTransformer, SAINT, and FT-Transformer have made notable progress on tabular tasks, yet they have not consistently surpassed GBDTs overall.
 
 **Limitations of Prior Work**: Images possess spatial locality and text has sequential order—Transformers in these modalities can exploit PE to inject inductive biases. In contrast, tabular data features are **arbitrarily ordered and lack natural structural priors**. Existing tabular Transformers universally omit PE, reflecting a community consensus that "tabular data has no structure, hence PE is useless."
 
-**Root Cause**: Tabular data presents a triple challenge: (a) scarce samples, (b) high-dimensional heterogeneous features, and (c) absence of structural priors. Without PE, self-attention treats all features as an unordered set of fully equivalent tokens, failing to leverage latent inter-feature correlation structure to simplify the learning task.
+**Key Challenge**: Tabular data presents a triple challenge: (a) scarce samples, (b) high-dimensional heterogeneous features, and (c) absence of structural priors. Without PE, self-attention treats all features as an unordered set of fully equivalent tokens, failing to leverage latent inter-feature correlation structure to simplify the learning task.
 
-**Paper Goals**: Can meaningful positional encodings be constructed for tabular Transformers? Can PE genuinely improve generalization? If so, from what perspective should PE be constructed?
+**Goal**: Can meaningful positional encodings be constructed for tabular Transformers? Can PE genuinely improve generalization? If so, from what perspective should PE be constructed?
 
-**Starting Point**: The authors ground their approach in a theoretical analysis of **effective rank**, showing that PE can reduce the effective rank (intrinsic dimensionality) of CLS token output embeddings—equivalent to reducing the dimensionality of the learning problem and thus improving generalization. When PE aligns with the actual data structure, the reduction in effective rank is more pronounced.
+**Key Insight**: The authors ground their approach in a theoretical analysis of **effective rank**, showing that PE can reduce the effective rank (intrinsic dimensionality) of CLS token output embeddings—equivalent to reducing the dimensionality of the learning problem and thus improving generalization. When PE aligns with the actual data structure, the reduction in effective rank is more pronounced.
 
 **Core Idea**: Extract Laplacian eigenvectors from an estimated feature correlation graph as fixed PE, inject them into tabular Transformers, and exploit the effective-rank-reducing property of PE to strengthen generalization.
 

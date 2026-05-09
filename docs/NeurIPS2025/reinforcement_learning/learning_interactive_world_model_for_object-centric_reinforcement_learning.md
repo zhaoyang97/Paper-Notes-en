@@ -29,7 +29,7 @@ This paper proposes FIOC-WM, which learns the interaction structure among object
 
 ## Background & Motivation
 
-**State of the Field**: Existing world models for reinforcement learning learn state abstractions and dynamics from high-dimensional observations. However, most encode entire scenes into a monolithic latent vector, lacking structured modeling of objects and their interactions. Although Object-Centric RL decomposes states into individual object representations, interaction relations remain implicit—the model has no explicit knowledge of which objects interact and when.
+**Background**: Existing world models for reinforcement learning learn state abstractions and dynamics from high-dimensional observations. However, most encode entire scenes into a monolithic latent vector, lacking structured modeling of objects and their interactions. Although Object-Centric RL decomposes states into individual object representations, interaction relations remain implicit—the model has no explicit knowledge of which objects interact and when.
 
 **Limitations of Prior Work**: In realistic environments, physical interactions such as collision, stacking, and friction are the primary drivers of dynamics evolution. Without explicit interaction modeling, prediction accuracy is limited, and long-horizon tasks cannot be decomposed into structured interaction primitives for efficient planning and control. Moreover, each object's state can be further factored into static attributes (color, shape) and dynamic variables (position, velocity), a decomposition that reduces redundancy and focuses on the minimal sufficient information needed for control.
 

@@ -28,15 +28,15 @@ This paper proposes NCAL-R, which leverages the Neural Collapse (NC) geometry em
 
 ## Background & Motivation
 
-**State of the Field**: Active Learning (AL) reduces annotation costs by prioritizing the most informative samples. Mainstream strategies include uncertainty-based, diversity-based, and representativeness-based methods.
+**Background**: Active Learning (AL) reduces annotation costs by prioritizing the most informative samples. Mainstream strategies include uncertainty-based, diversity-based, and representativeness-based methods.
 
 **Limitations of Prior Work**: Traditional AL methods perform well under ideal conditions but face three challenges in realistic scenarios: (1) *Label noise*—annotators make mistakes, and AL heuristics (especially uncertainty-based ones) tend to repeatedly select mislabeled samples, amplifying errors; (2) *Distribution shift*—when training and test distributions differ, conventional selection strategies fail; (3) *Poor transferability*—many methods require task-specific tuning.
 
-**Root Cause**: Samples with high uncertainty may be genuinely informative, or they may simply be mislabeled or OOD. Conventional methods cannot distinguish "valuable uncertainty" from "harmful uncertainty."
+**Key Challenge**: Samples with high uncertainty may be genuinely informative, or they may simply be mislabeled or OOD. Conventional methods cannot distinguish "valuable uncertainty" from "harmful uncertainty."
 
-**Paper Goals**: How to select samples that reinforce inter-class separation and expose genuinely ambiguous regions when labels are unreliable and distribution shift may be present?
+**Goal**: How to select samples that reinforce inter-class separation and expose genuinely ambiguous regions when labels are unreliable and distribution shift may be present?
 
-**Starting Point**: In the terminal training phase, deep network features exhibit Neural Collapse (NC)—within-class features collapse to their class mean, and class means arrange into an equiangular tight frame. This structured geometric information provides a selection signal beyond traditional heuristics: samples that perturb inter-class geometry (high CMAP) are valuable, while samples whose features fluctuate strongly across training (high FF) signal true ambiguity.
+**Key Insight**: In the terminal training phase, deep network features exhibit Neural Collapse (NC)—within-class features collapse to their class mean, and class means arrange into an equiangular tight frame. This structured geometric information provides a selection signal beyond traditional heuristics: samples that perturb inter-class geometry (high CMAP) are valuable, while samples whose features fluctuate strongly across training (high FF) signal true ambiguity.
 
 **Core Idea**: Use the geometric structure of Neural Collapse to identify samples with structural influence on the feature space, replacing conventional uncertainty/diversity heuristics.
 

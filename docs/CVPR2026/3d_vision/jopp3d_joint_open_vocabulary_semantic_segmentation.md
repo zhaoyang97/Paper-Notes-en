@@ -29,7 +29,7 @@ This paper proposes JOPP-3D — the first open-vocabulary semantic segmentation 
 
 ## Background & Motivation
 
-**State of the Field**: 3D semantic segmentation relies on large-scale annotations and fixed category sets. Vision-language models such as CLIP excel at open-vocabulary 2D segmentation, but perform poorly when applied directly to panoramas (spherical distortion) and 3D point clouds (lack of pre-training).
+**Background**: 3D semantic segmentation relies on large-scale annotations and fixed category sets. Vision-language models such as CLIP excel at open-vocabulary 2D segmentation, but perform poorly when applied directly to panoramas (spherical distortion) and 3D point clouds (lack of pre-training).
 
 **Limitations of Prior Work**:
 
@@ -38,11 +38,11 @@ This paper proposes JOPP-3D — the first open-vocabulary semantic segmentation 
 3. Cross-modal alignment of 2D vision-language features to 3D is difficult — direct per-point CLIP encoding introduces substantial semantic noise.
 4. Joint open-vocabulary semantic segmentation of panoramas and point clouds has not been explored.
 
-**Root Cause**: Extending the capabilities of CLIP/SAM to both panoramas and 3D point clouds in a training-free manner is non-trivial, as each modality presents distinct geometric challenges.
+**Key Challenge**: Extending the capabilities of CLIP/SAM to both panoramas and 3D point clouds in a training-free manner is non-trivial, as each modality presents distinct geometric challenges.
 
-**Paper Goals**: To establish a unified framework for open-vocabulary semantic segmentation of both point clouds and panoramas simultaneously.
+**Goal**: To establish a unified framework for open-vocabulary semantic segmentation of both point clouds and panoramas simultaneously.
 
-**Starting Point**: Panoramas are projected onto the 20 tangent faces of a regular icosahedron to generate perspective views compatible with CLIP/SAM. 3D point clouds are reconstructed from these views, semantic alignment is performed at the 3D instance level, and results are back-projected to the panoramic domain.
+**Key Insight**: Panoramas are projected onto the 20 tangent faces of a regular icosahedron to generate perspective views compatible with CLIP/SAM. 3D point clouds are reconstructed from these views, semantic alignment is performed at the 3D instance level, and results are back-projected to the panoramic domain.
 
 **Core Idea**: Tangential decomposition → 3D instance extraction → mask-isolated CLIP semantic alignment → depth-correspondence panoramic back-projection.
 

@@ -29,15 +29,15 @@ PET-DINO builds a unified object detector supporting both text and visual prompt
 
 ## Background & Motivation
 
-**State of the Field**: Open-set object detection (OSOD) aims to recognize novel categories unseen during training. Text-prompt methods (e.g., Grounding DINO, GLIP) achieve zero-shot generalization by aligning visual features with pretrained text encoders. Visual-prompt methods (e.g., T-Rex2, CP-DETR, YOLOE) use visual representations of target objects as prompts to complement the limitations of text prompts.
+**Background**: Open-set object detection (OSOD) aims to recognize novel categories unseen during training. Text-prompt methods (e.g., Grounding DINO, GLIP) achieve zero-shot generalization by aligning visual features with pretrained text encoders. Visual-prompt methods (e.g., T-Rex2, CP-DETR, YOLOE) use visual representations of target objects as prompts to complement the limitations of text prompts.
 
 **Limitations of Prior Work**: (1) Text features often fail to effectively represent visual concepts in specialized domains or for complex objects, making accurate discrimination difficult; (2) long-tail categories lack sufficient image–text paired samples; (3) existing visual-prompt methods (T-Rex2, CP-DETR) rely on tightly coupled multimodal architectures and multi-stage training pipelines with long development cycles; (4) effective training strategies for data-driven OSOD models remain underexplored.
 
-**Root Cause**: Visual prompts inherently carry richer information than text descriptions, yet during training they are derived from the input image itself, limiting diversity — it is difficult to model cross-image and category-level global visual prompts, and offline pre-extraction during training is infeasible.
+**Key Challenge**: Visual prompts inherently carry richer information than text descriptions, yet during training they are derived from the input image itself, limiting diversity — it is difficult to model cross-image and category-level global visual prompts, and offline pre-extraction during training is infeasible.
 
-**Paper Goals**: (1) Efficiently extend an advanced text-prompt detector with visual prompt capability, rather than building a multimodal system from scratch; (2) design the first large-scale training strategy for dual-modality prompt detectors, enabling the model to simultaneously simulate diverse real-world usage scenarios during training.
+**Goal**: (1) Efficiently extend an advanced text-prompt detector with visual prompt capability, rather than building a multimodal system from scratch; (2) design the first large-scale training strategy for dual-modality prompt detectors, enabling the model to simultaneously simulate diverse real-world usage scenarios during training.
 
-**Starting Point**: An "inheritance-based" strategy — starting from a pretrained Grounding DINO, adding only a visual prompt generation module while sharing existing text-branch parameters, thereby reducing the development cycle.
+**Key Insight**: An "inheritance-based" strategy — starting from a pretrained Grounding DINO, adding only a visual prompt generation module while sharing existing text-branch parameters, thereby reducing the development cycle.
 
 **Core Idea**: Graft a visual prompt module onto a text-pretrained detector and enhance zero-shot detection capability through intra-batch parallel prompting and a dynamic memory bank prompt-enrichment training strategy.
 

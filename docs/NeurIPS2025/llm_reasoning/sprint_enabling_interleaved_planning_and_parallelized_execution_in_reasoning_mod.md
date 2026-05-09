@@ -28,15 +28,15 @@ By restructuring long chain-of-thought reasoning traces into interleaved plannin
 
 ## Background & Motivation
 
-**State of the Field**: Large reasoning models (LRMs) such as DeepSeek-R1 and OpenAI o1 solve complex reasoning tasks by generating long chains of thought, achieving high accuracy but incurring substantial inference latency—a single math problem may require thousands of tokens before an answer is produced.
+**Background**: Large reasoning models (LRMs) such as DeepSeek-R1 and OpenAI o1 solve complex reasoning tasks by generating long chains of thought, achieving high accuracy but incurring substantial inference latency—a single math problem may require thousands of tokens before an answer is produced.
 
 **Limitations of Prior Work**: Existing acceleration approaches either lack coordination (repeated sampling / self-consistency generates multiple independent trajectories without information sharing), rely on predefined search structures (Tree-of-Thought / Graph-of-Thought requires manually specified search patterns), or do not support multi-step dependent reasoning (Skeleton-of-Thought assumes semantic independence among sub-tasks, making it ineffective for mathematical reasoning where later steps depend on earlier computations).
 
-**Root Cause**: Reasoning accuracy demands long sequential chains of thought, yet many reasoning steps are mutually independent in practice—such as simultaneously attempting two solution strategies or independently computing different sub-parts of a complex problem. Existing methods do not enable models to autonomously discover and exploit these parallelization opportunities.
+**Key Challenge**: Reasoning accuracy demands long sequential chains of thought, yet many reasoning steps are mutually independent in practice—such as simultaneously attempting two solution strategies or independently computing different sub-parts of a complex problem. Existing methods do not enable models to autonomously discover and exploit these parallelization opportunities.
 
-**Paper Goals**: To enable reasoning models to autonomously identify parallelization opportunities within the reasoning process and reduce sequential token generation without sacrificing accuracy.
+**Goal**: To enable reasoning models to autonomously identify parallelization opportunities within the reasoning process and reduce sequential token generation without sacrificing accuracy.
 
-**Starting Point**: A careful analysis of R1 reasoning traces reveals that they contain steps such as reflection, task decomposition, and trial-and-error, many of which carry no dependency on one another. Identifying these independent steps and executing them in parallel can substantially shorten the "critical path" of reasoning.
+**Key Insight**: A careful analysis of R1 reasoning traces reveals that they contain steps such as reflection, task decomposition, and trial-and-error, many of which carry no dependency on one another. Identifying these independent steps and executing them in parallel can substantially shorten the "critical path" of reasoning.
 
 **Core Idea**: A data curation pipeline restructures sequential reasoning traces into DAG-structured parallel stages, and SFT teaches the model to autonomously perform interleaved planning and parallel execution at inference time.
 

@@ -28,15 +28,15 @@ This paper generalizes the EDLAE recommendation model's objective to a Decoupled
 
 ## Background & Motivation
 
-**State of the Field**: Linear autoencoder (LAE) recommendation models (e.g., EASE, EDLAE, ELSA) achieve performance comparable to or better than deep learning models in collaborative filtering tasks, owing to their simplicity and reproducibility via closed-form solutions. They learn an item-item similarity matrix $W \in \mathbb{R}^{n \times n}$ to reconstruct the user-item interaction matrix $R$.
+**Background**: Linear autoencoder (LAE) recommendation models (e.g., EASE, EDLAE, ELSA) achieve performance comparable to or better than deep learning models in collaborative filtering tasks, owing to their simplicity and reproducibility via closed-form solutions. They learn an item-item similarity matrix $W \in \mathbb{R}^{n \times n}$ to reconstruct the user-item interaction matrix $R$.
 
 **Limitations of Prior Work**: EDLAE improves training-test alignment by introducing dropout and an emphasis weight matrix $A$ (parameters $a$ and $b$). However, the original EDLAE derives a closed-form solution only for the special case $b=0$, limiting the model's expressive capacity.
 
-**Root Cause**: The solution space for $b>0$ may yield better solutions, but since the Hessian matrix $H^{(i)}$ varies with column index $i$, direct inversion incurs $O(n^4)$ complexity, making it computationally infeasible.
+**Key Challenge**: The solution space for $b>0$ may yield better solutions, but since the Hessian matrix $H^{(i)}$ varies with column index $i$, direct inversion incurs $O(n^4)$ complexity, making it computationally infeasible.
 
-**Paper Goals**: (a) Derive closed-form solutions for $b>0$; (b) reduce computational complexity to a practical level; (c) verify whether the expanded solution space enables discovery of better models.
+**Goal**: (a) Derive closed-form solutions for $b>0$; (b) reduce computational complexity to a practical level; (c) verify whether the expanded solution space enables discovery of better models.
 
-**Starting Point**: The EDLAE objective is reformulated in expectation form, decoupling the optimization of each column $W_{*i}$ into independent expected quadratic loss subproblems, yielding a unified closed-form solution framework.
+**Key Insight**: The EDLAE objective is reformulated in expectation form, decoupling the optimization of each column $W_{*i}$ into independent expected quadratic loss subproblems, yielding a unified closed-form solution framework.
 
 **Core Idea**: By generalizing EDLAE to the Decoupled Expected Quadratic Loss (DEQL), the paper derives closed-form solutions for all $b \geq 0$ in a unified manner, and applies the matrix inversion update theorem to reduce computation for $b>0$ to $O(n^3)$.
 

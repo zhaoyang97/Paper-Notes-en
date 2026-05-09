@@ -27,15 +27,15 @@ content_hash: d86830d8b3f947a9
 This paper proposes the Compositional Phase Diffusion framework, which employs SPDM and TPDM to handle semantic alignment and transition continuity, respectively, within the frequency-domain phase space established by ACT-PAE. The framework enables long-range compositional motion sequence generation and achieves state-of-the-art performance on BABEL-TEACH.
 
 ## Background & Motivation
-**State of the Field**: Current human motion generation models (e.g., MDM, MLD) excel at generating variable-length motion clips with a single semantic label, but exhibit significant issues in compositional long-sequence generation tasks—specifically, at the boundaries between consecutively executed semantic action segments.
+**Background**: Current human motion generation models (e.g., MDM, MLD) excel at generating variable-length motion clips with a single semantic label, but exhibit significant issues in compositional long-sequence generation tasks—specifically, at the boundaries between consecutively executed semantic action segments.
 
 **Limitations of Prior Work**: Directly concatenating independently generated motion clips produces motion discontinuities at transition boundaries, manifesting as abrupt stops, over-smoothing, and foot-sliding artifacts. Methods such as priorMDM introduce additional transition segments to smooth pose differences, but neglect the intrinsic kinematic properties of each clip.
 
-**Root Cause**: How can semantic alignment within each action segment be maintained while simultaneously ensuring kinematic continuity across adjacent segments?
+**Key Challenge**: How can semantic alignment within each action segment be maintained while simultaneously ensuring kinematic continuity across adjacent segments?
 
-**Paper Goals**: Jointly address semantic alignment and transition smoothness, supporting flexible compositional generation with arbitrary numbers of variable-length segments.
+**Goal**: Jointly address semantic alignment and transition smoothness, supporting flexible compositional generation with arbitrary numbers of variable-length segments.
 
-**Starting Point**: Perform diffusion in the motion frequency domain (phase parameter space) rather than in the raw pose space, leveraging the fact that phase representations naturally capture the periodicity and dynamics of motion.
+**Key Insight**: Perform diffusion in the motion frequency domain (phase parameter space) rather than in the raw pose space, leveraging the fact that phase representations naturally capture the periodicity and dynamics of motion.
 
 **Core Idea**: A Transformer-based periodic autoencoder encodes motions into unified phase parameters, after which two specialized diffusion modules—one for semantics and one for transitions—collaboratively denoise in the phase space.
 

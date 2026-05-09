@@ -29,15 +29,15 @@ This paper proposes an automated pipeline to extract precise bimanual affordance
 
 ## Background & Motivation
 
-**State of the Field**: Affordance grounding is a critical capability for robotic manipulation — robots must identify which regions of an object can be used for a specific task (e.g., where to grasp a bottle when pouring water). Existing methods typically rely on manually annotated datasets whose label quality resembles coarse object-part segmentation, lacking action-oriented precision.
+**Background**: Affordance grounding is a critical capability for robotic manipulation — robots must identify which regions of an object can be used for a specific task (e.g., where to grasp a bottle when pouring water). Existing methods typically rely on manually annotated datasets whose label quality resembles coarse object-part segmentation, lacking action-oriented precision.
 
 **Limitations of Prior Work**: (a) Existing affordance datasets (IIT-AFF, AGD20K, etc.) provide imprecise annotations that often degrade into rough object-part segmentation; (b) most methods are task-agnostic, predicting generic "hotspot" regions without considering task context; (c) bimanual affordance — an important class of interactions — is entirely overlooked.
 
-**Root Cause**: During hand-object interaction, the hand itself occludes the critical affordance region, making it difficult to extract precise contact areas directly from interaction images.
+**Key Challenge**: During hand-object interaction, the hand itself occludes the critical affordance region, making it difficult to extract precise contact areas directly from interaction images.
 
-**Paper Goals**: (a) How to automatically extract precise, task-oriented bimanual affordance segmentation masks from video; (b) how to train a model that predicts the interaction regions for each hand separately, conditioned on text prompts.
+**Goal**: (a) How to automatically extract precise, task-oriented bimanual affordance segmentation masks from video; (b) how to train a model that predicts the interaction regions for each hand separately, conditioned on text prompts.
 
-**Starting Point**: Leveraging video-level hand inpainting to first remove occluding hands and obtain a complete object view, then recovering precise hand-object contact regions via mask completion.
+**Key Insight**: Leveraging video-level hand inpainting to first remove occluding hands and obtain a complete object view, then recovering precise hand-object contact regions via mask completion.
 
 **Core Idea**: Precise affordance masks are automatically extracted via video hand inpainting combined with mask completion, enabling a VLM-based model for text-driven bimanual affordance prediction.
 

@@ -28,18 +28,18 @@ This paper proposes MAVias, an open-set visual bias mitigation framework that ex
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning models are prone to learning spurious correlations present in training data — for example, waterbirds consistently appearing against aquatic backgrounds, or blonde hair being predominantly associated with female subjects. Existing bias mitigation methods fall into two categories: Bias-Aware (BA) methods, which require annotated bias attributes, and Bias-Unaware (BU) methods, which derive pseudo-labels by training a bias proxy model.
+**Background**: Deep learning models are prone to learning spurious correlations present in training data — for example, waterbirds consistently appearing against aquatic backgrounds, or blonde hair being predominantly associated with female subjects. Existing bias mitigation methods fall into two categories: Bias-Aware (BA) methods, which require annotated bias attributes, and Bias-Unaware (BU) methods, which derive pseudo-labels by training a bias proxy model.
 
 **Limitations of Prior Work**:
    - BA methods rely on predefined, known bias labels and thus cannot scale to large-scale general-purpose datasets (e.g., ImageNet), where biases are diverse and unknown.
    - BU methods are effective only when bias is extremely salient (sufficient to train a proxy model) and cannot handle multi-attribute or unknown biases.
    - Neither category generalizes to open-set scenarios, where bias types are unknown in advance and their quantity is indeterminate.
 
-**Root Cause**: In real-world settings, bias operates at the instance level — each image may exhibit a distinct combination of task-irrelevant attributes — whereas existing methods are designed for dataset-level, single or few known biases.
+**Key Challenge**: In real-world settings, bias operates at the instance level — each image may exhibit a distinct combination of task-irrelevant attributes — whereas existing methods are designed for dataset-level, single or few known biases.
 
-**Paper Goals**: To automatically discover and mitigate an arbitrary number and type of visual biases in images without any predefined bias specification.
+**Goal**: To automatically discover and mitigate an arbitrary number and type of visual biases in images without any predefined bias specification.
 
-**Starting Point**: The paper leverages the complementary capabilities of foundation models — an image tagging model, an LLM, and a vision-language model — to automatically extract visual attributes, assess their relevance to the target class, and encode irrelevant attributes as bias signals for training.
+**Key Insight**: The paper leverages the complementary capabilities of foundation models — an image tagging model, an LLM, and a vision-language model — to automatically extract visual attributes, assess their relevance to the target class, and encode irrelevant attributes as bias signals for training.
 
 **Core Idea**: Foundation models are used to automatically discover instance-level open-set visual biases; the biases are encoded as vision-language embeddings and integrated into training via logit fusion to achieve bias-invariant learning.
 

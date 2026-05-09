@@ -29,15 +29,15 @@ This paper proposes HybridNorm, a hybrid normalization strategy that applies QKV
 
 ## Background & Motivation
 
-**State of the Field**: Pre-Norm facilitates gradient flow and fast convergence by emphasizing the identity path, yet achieves lower final performance than Post-Norm; Post-Norm offers stronger regularization and generalization but suffers from gradient instability.
+**Background**: Pre-Norm facilitates gradient flow and fast convergence by emphasizing the identity path, yet achieves lower final performance than Post-Norm; Post-Norm offers stronger regularization and generalization but suffers from gradient instability.
 
 **Limitations of Prior Work**: In Pre-Norm, the gradients of Q, K, and V are highly coupled at $\mathcal{O}(n)$, making it difficult to control anomalous growth in individual weights, which can trigger model collapse.
 
-**Root Cause**: Training stability (Pre-Norm) and final performance (Post-Norm) are mutually exclusive — existing methods are forced to choose one extreme.
+**Key Challenge**: Training stability (Pre-Norm) and final performance (Post-Norm) are mutually exclusive — existing methods are forced to choose one extreme.
 
-**Paper Goals**: To design a normalization strategy that simultaneously satisfies training stability, final performance, computational efficiency, and scalability.
+**Goal**: To design a normalization strategy that simultaneously satisfies training stability, final performance, computational efficiency, and scalability.
 
-**Starting Point**: Rather than mixing normalization across layers (e.g., Mix-LN), this work proposes fine-grained intra-layer mixing — QKV-Norm (Pre-Norm philosophy) for attention and Post-Norm (Post-Norm philosophy) for FFN.
+**Key Insight**: Rather than mixing normalization across layers (e.g., Mix-LN), this work proposes fine-grained intra-layer mixing — QKV-Norm (Pre-Norm philosophy) for attention and Post-Norm (Post-Norm philosophy) for FFN.
 
 **Core Idea**: Independent QKV normalization within attention decouples gradients, while post-FFN normalization enhances effective depth — forming an asymmetric intra-layer hybrid.
 

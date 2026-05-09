@@ -28,15 +28,15 @@ This paper proposes TabReX, a graph-reasoning-based referenceless evaluation fra
 
 ## Background & Motivation
 
-**State of the Field**: As LLMs are increasingly used to generate or transform structured outputs (e.g., converting reports into financial tables or synthesizing patient data), automatic evaluation of table quality has become a critical need. Existing evaluation metrics fall into several categories: n-gram metrics (BLEU, ROUGE), embedding-based metrics (BERTScore, BLEURT), token-level exact matching (Exact Match, PARENT), QA-based referenceless metrics (QuestEval), and recent LLM-judge metrics (TabEval, TabXEval).
+**Background**: As LLMs are increasingly used to generate or transform structured outputs (e.g., converting reports into financial tables or synthesizing patient data), automatic evaluation of table quality has become a critical need. Existing evaluation metrics fall into several categories: n-gram metrics (BLEU, ROUGE), embedding-based metrics (BERTScore, BLEURT), token-level exact matching (Exact Match, PARENT), QA-based referenceless metrics (QuestEval), and recent LLM-judge metrics (TabEval, TabXEval).
 
 **Limitations of Prior Work**: (1) N-gram and embedding metrics flatten tables into plain text, entirely ignoring row/column structure and unit semantics; (2) token-level methods cannot distinguish between harmless formatting adjustments and genuine factual errors; (3) QA-based metrics excessively penalize layout changes (e.g., row reordering); (4) most metrics require reference tables, limiting their generality; (5) existing benchmarks are small in scale and cover only limited perturbation types, preventing comprehensive robustness testing.
 
-**Root Cause**: Table evaluation must simultaneously account for structural fidelity and factual accuracy, while distinguishing data-preserving transformations (e.g., row reordering, unit conversion) from data-altering transformations (e.g., value tampering, row/column insertion or deletion). No existing metric performs well on both dimensions.
+**Key Challenge**: Table evaluation must simultaneously account for structural fidelity and factual accuracy, while distinguishing data-preserving transformations (e.g., row reordering, unit conversion) from data-altering transformations (e.g., value tampering, row/column insertion or deletion). No existing metric performs well on both dimensions.
 
-**Paper Goals**: Design a referenceless, attribute-driven, explainable table evaluation framework that provides cell-level error traceability and a tunable sensitivity–specificity trade-off.
+**Goal**: Design a referenceless, attribute-driven, explainable table evaluation framework that provides cell-level error traceability and a tunable sensitivity–specificity trade-off.
 
-**Starting Point**: Table evaluation is reformulated as a graph alignment problem — both the source text and the generated table can be represented as knowledge graph triples [subject, predicate, object], and aligning these triples enables precise localization of matched, missing, and spurious information.
+**Key Insight**: Table evaluation is reformulated as a graph alignment problem — both the source text and the generated table can be represented as knowledge graph triples [subject, predicate, object], and aligning these triples enables precise localization of matched, missing, and spurious information.
 
 **Core Idea**: Text2Graph and Table2Graph are used to unify both modalities into a shared triple space. LLM-guided graph alignment identifies correspondences and discrepancies, and an attribute-driven scoring function computes interpretable evaluation scores.
 

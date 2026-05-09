@@ -31,16 +31,16 @@ This paper discovers the *Feature Resonance* phenomenon—when optimizing the re
 
 ## Background & Motivation
 
-**State of the Field**: OOD node detection on graphs is a critical task for ensuring the deployment reliability of GNNs. Existing methods (MSP, Energy, KNN, NNGuide, etc.) fall into two broad categories: classifier-output-based (entropy/energy scores) and supervised-representation-based (KNN distance), both of which rely heavily on a pre-trained multi-class classifier.
+**Background**: OOD node detection on graphs is a critical task for ensuring the deployment reliability of GNNs. Existing methods (MSP, Energy, KNN, NNGuide, etc.) fall into two broad categories: classifier-output-based (entropy/energy scores) and supervised-representation-based (KNN distance), both of which rely heavily on a pre-trained multi-class classifier.
 
 **Limitations of Prior Work**:
 - **Strong label assumptions**: Multi-class labels must be available and the upstream task must be classification.
 - **Limited applicability**: Many real-world OOD detection scenarios do not satisfy the classification prerequisite—generative models, regression tasks, reinforcement learning, and one-class detection all lack multi-class labels.
 - **Severe under-exploration of unsupervised node-level OOD detection on graphs**: Only a handful of works such as EnergyDef exist, and there remains substantial room for performance improvement.
 
-**Root Cause**: Existing methods are coupled to classifier outputs and label spaces, making them inapplicable to label-free settings. Meanwhile, local connectivity structures among graph nodes encode rich distributional information. Exploiting this information without relying on labels is the core challenge.
+**Key Challenge**: Existing methods are coupled to classifier outputs and label spaces, making them inapplicable to label-free settings. Meanwhile, local connectivity structures among graph nodes encode rich distributional information. Exploiting this information without relying on labels is the core challenge.
 
-**Starting Point**: The paper shifts focus from label space to feature space, examining behavioral differences between ID and OOD nodes during representation optimization, and proposes an OOD detection method that is entirely independent of labels and upstream tasks.
+**Key Insight**: The paper shifts focus from label space to feature space, examining behavioral differences between ID and OOD nodes during representation optimization, and proposes an OOD detection method that is entirely independent of labels and upstream tasks.
 
 ---
 

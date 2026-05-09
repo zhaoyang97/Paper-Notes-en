@@ -29,15 +29,15 @@ This paper proposes SpreadsheetAgent, a two-stage multi-agent framework that ach
 
 ## Background & Motivation
 
-**State of the Field**: Spreadsheets are among the most widely used data formats in enterprise reporting, financial auditing, and scientific data management. Prior work on table understanding with LLMs—including Chain-of-Table, TableGPT, and SheetAgent—predominantly treats tables as plain text (Markdown/HTML/LaTeX), largely ignoring layout semantics.
+**Background**: Spreadsheets are among the most widely used data formats in enterprise reporting, financial auditing, and scientific data management. Prior work on table understanding with LLMs—including Chain-of-Table, TableGPT, and SheetAgent—predominantly treats tables as plain text (Markdown/HTML/LaTeX), largely ignoring layout semantics.
 
 **Limitations of Prior Work**: (1) Real-world spreadsheets contain rich visual cues such as hierarchical headers, multiple sheets, font colors, and merged cells that plain-text formats cannot fully capture; (2) practical spreadsheets are often large-scale (thousands of rows and columns), exceeding the effective context capacity of LLMs; (3) existing methods tend to lose structural information when loading an entire spreadsheet at once.
 
-**Root Cause**: The structural complexity and scale of real-world spreadsheets far exceed what LLMs can process in a single pass, making it difficult to faithfully preserve layout semantics within a limited context budget.
+**Key Challenge**: The structural complexity and scale of real-world spreadsheets far exceed what LLMs can process in a single pass, making it difficult to faithfully preserve layout semantics within a limited context budget.
 
-**Paper Goals**: To design a progressive reading-and-reasoning paradigm that incrementally parses spreadsheets through multi-agent collaboration.
+**Goal**: To design a progressive reading-and-reasoning paradigm that incrementally parses spreadsheets through multi-agent collaboration.
 
-**Starting Point**: An iterative extract-then-verify loop is adopted—an extraction agent incrementally parses local regions using three tools (code execution, vision, and LaTeX), while a verification agent cross-validates extraction fidelity through visual and LaTeX channels.
+**Key Insight**: An iterative extract-then-verify loop is adopted—an extraction agent incrementally parses local regions using three tools (code execution, vision, and LaTeX), while a verification agent cross-validates extraction fidelity through visual and LaTeX channels.
 
 **Core Idea**: YAML is used as an intermediate representation to preserve structural semantics; multi-format redundant verification reduces error propagation, enabling downstream reasoning to operate on faithful structured representations.
 

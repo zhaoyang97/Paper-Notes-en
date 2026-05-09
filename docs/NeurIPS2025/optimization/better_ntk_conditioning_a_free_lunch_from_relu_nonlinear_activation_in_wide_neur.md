@@ -28,18 +28,18 @@ This paper establishes a previously unnoticed "free" benefit of ReLU activation 
 
 ## Background & Motivation
 
-**State of the Field**: Nonlinear activation functions are widely regarded as key to enhancing the expressive power of neural networks — without nonlinearity, a multilayer network reduces to a linear model. NTK theory connects the training dynamics of wide networks to kernel methods, where the minimum eigenvalue (or condition number $\kappa$) of the NTK matrix directly governs the convergence rate of gradient descent.
+**Background**: Nonlinear activation functions are widely regarded as key to enhancing the expressive power of neural networks — without nonlinearity, a multilayer network reduces to a linear model. NTK theory connects the training dynamics of wide networks to kernel methods, where the minimum eigenvalue (or condition number $\kappa$) of the NTK matrix directly governs the convergence rate of gradient descent.
 
 **Limitations of Prior Work**:
    - Existing NTK analyses focus primarily on the order of eigenvalues or results under specific data distribution assumptions.
    - The precise effect of ReLU nonlinearity on the NTK condition number has not been directly analyzed — most work treats $\kappa$ as given and studies how to accelerate convergence thereafter.
    - The NTK condition number of a linear network equals that of the Gram matrix (potentially very large), but how activation functions alter this remains unclear.
 
-**Root Cause**: When a training set contains similar input pairs — as is almost always the case in real datasets — the NTK matrix of a linear network has near-zero minimum eigenvalues, yielding an extremely large condition number and very slow gradient descent. The question is whether nonlinearity can remedy this.
+**Key Challenge**: When a training set contains similar input pairs — as is almost always the case in real datasets — the NTK matrix of a linear network has near-zero minimum eigenvalues, yielding an extremely large condition number and very slow gradient descent. The question is whether nonlinearity can remedy this.
 
-**Paper Goals**: To prove, without any data distribution assumptions, that ReLU activation strictly improves the NTK condition number for any finite depth.
+**Goal**: To prove, without any data distribution assumptions, that ReLU activation strictly improves the NTK condition number for any finite depth.
 
-**Starting Point**: By comparing NTK matrices in two settings — with and without ReLU (i.e., linear networks) — the paper isolates the pure effect of nonlinear activation.
+**Key Insight**: By comparing NTK matrices in two settings — with and without ReLU (i.e., linear networks) — the paper isolates the pure effect of nonlinear activation.
 
 **Core Idea**: The piecewise linear nature of ReLU causes similar data points to "spread apart" in gradient space, raising the minimum eigenvalue of the NTK and thereby accelerating convergence at no additional cost.
 

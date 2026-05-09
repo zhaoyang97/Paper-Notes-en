@@ -28,15 +28,15 @@ This paper proposes ALPO (Adaptive Local Preference Optimization) for training e
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have approached human-level performance on general translation, yet domain-specific translation (legal, medical, subtitle) remains notably lacking in customization. Subtitle translation requires localized paraphrasing to convey the atmosphere, emotion, and tone of the source, whereas LLMs tend toward literal translation.
+**Background**: LLMs have approached human-level performance on general translation, yet domain-specific translation (legal, medical, subtitle) remains notably lacking in customization. Subtitle translation requires localized paraphrasing to convey the atmosphere, emotion, and tone of the source, whereas LLMs tend toward literal translation.
 
 **Limitations of Prior Work**: (1) LLM translations achieve high accuracy but lack expressiveness and vividness; (2) subtitle translation requires fine-grained alignment at the sentence-segment level, while PPO/DPO are outcome-supervised and optimize over the complete output—too coarse-grained and prone to gradient dilution; (3) no established evaluation framework or training data exists for subtitle translation.
 
-**Root Cause**: Subtitle translation inputs consist of multiple lines of subtitles with inter-line contextual dependencies, yet each line requires independent fine-grained preference alignment—a "local preference optimization" problem to which existing methods such as DPO do not directly apply.
+**Key Challenge**: Subtitle translation inputs consist of multiple lines of subtitles with inter-line contextual dependencies, yet each line requires independent fine-grained preference alignment—a "local preference optimization" problem to which existing methods such as DPO do not directly apply.
 
-**Paper Goals**: (a) Verify whether LLMs can reliably evaluate subtitle translation quality as a substitute for costly human annotation; (b) design a fine-grained preference optimization method enabling LLMs to acquire paraphrastic translation capabilities; (c) construct a multi-directional subtitle parallel corpus.
+**Goal**: (a) Verify whether LLMs can reliably evaluate subtitle translation quality as a substitute for costly human annotation; (b) design a fine-grained preference optimization method enabling LLMs to acquire paraphrastic translation capabilities; (c) construct a multi-directional subtitle parallel corpus.
 
-**Starting Point**: Three empirical findings drive the method design: (1) back-translation consistency is lowest for subtitle translation, indicating the highest degree of paraphrase; (2) reasoning-type LLMs (R1/GPT-5 Thinking) outperform chat-type LLMs (GPT-4o/Qwen-Max) in paraphrastic ability; (3) Spearman correlation between a 14B evaluator model and human annotators is $\geq 0.82$, supporting its use as a low-cost reward model.
+**Key Insight**: Three empirical findings drive the method design: (1) back-translation consistency is lowest for subtitle translation, indicating the highest degree of paraphrase; (2) reasoning-type LLMs (R1/GPT-5 Thinking) outperform chat-type LLMs (GPT-4o/Qwen-Max) in paraphrastic ability; (3) Spearman correlation between a 14B evaluator model and human annotators is $\geq 0.82$, supporting its use as a low-cost reward model.
 
 **Core Idea**: Achieve fine-grained vividness alignment for subtitle translation via sentence-segment-level sampling, LLM scoring, and adaptively weighted process-supervised DPO.
 

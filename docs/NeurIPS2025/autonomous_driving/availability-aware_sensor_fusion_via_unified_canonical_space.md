@@ -27,15 +27,15 @@ content_hash: 58122b27b66310d7
 This paper proposes ASF (Availability-aware Sensor Fusion), which maps Camera/LiDAR/4D Radar features into a shared space via Unified Canonical Projection (UCP), applies cross-sensor along-patch cross-attention (CASAP, complexity $O(N_qN_s)$ vs. $O(N_qN_sN_p)$) to automatically adapt to available sensors, and employs a Sensor Combination Loss (SCL) covering all 7 sensor subsets. ASF achieves AP_3D of 73.6% on K-Radar (surpassing SOTA by 20.1%), with only a 1.7% performance drop under sensor failure.
 
 ## Background & Motivation
-**State of the Field**: Multi-sensor fusion (Camera+LiDAR+Radar) has become mainstream in autonomous driving. Existing fusion methods fall into two categories: (a) Deep Coupling Fusion (DCF), which directly concatenates sensor features—simple and efficient but assumes all sensors are always available; and (b) Sensor-level Cross-attention Fusion (SCF), which applies cross-attention over per-sensor patches and can handle missing sensors, but incurs computational cost of $O(N_qN_sN_p)$.
+**Background**: Multi-sensor fusion (Camera+LiDAR+Radar) has become mainstream in autonomous driving. Existing fusion methods fall into two categories: (a) Deep Coupling Fusion (DCF), which directly concatenates sensor features—simple and efficient but assumes all sensors are always available; and (b) Sensor-level Cross-attention Fusion (SCF), which applies cross-attention over per-sensor patches and can handle missing sensors, but incurs computational cost of $O(N_qN_sN_p)$.
 
 **Limitations of Prior Work**: (a) DCF suffers severe performance degradation upon sensor failure and requires separate models for different sensor combinations; (b) SCF lacks a unified feature representation, resulting in inconsistent sensor features in the latent space, with computational cost exploding with the number of patches (e.g., CMT requires 8 A100 GPUs for training).
 
-**Root Cause**: Features extracted from heterogeneous sensors (2D RGB / 3D point clouds / 4D Radar tensors) are inherently inconsistent—the feature distributions for the same object differ substantially across sensors, making direct fusion both ineffective and brittle.
+**Key Challenge**: Features extracted from heterogeneous sensors (2D RGB / 3D point clouds / 4D Radar tensors) are inherently inconsistent—the feature distributions for the same object differ substantially across sensors, making direct fusion both ineffective and brittle.
 
-**Paper Goals**: To design a method that aligns sensor features in a **unified space**, while **automatically adapting** to sensor availability at minimal computational cost.
+**Goal**: To design a method that aligns sensor features in a **unified space**, while **automatically adapting** to sensor availability at minimal computational cost.
 
-**Starting Point**: Inspired by Mobileye's "True Redundancy" concept—sensors should operate independently yet complement each other through a canonical representation.
+**Key Insight**: Inspired by Mobileye's "True Redundancy" concept—sensors should operate independently yet complement each other through a canonical representation.
 
 **Core Idea**: UCP for unified feature space + CASAP performing attention only across sensors (not across patches) + SCL covering all sensor combinations during training, enabling robust and efficient availability-aware fusion.
 

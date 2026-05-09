@@ -29,15 +29,15 @@ To address the modality imbalance problem in dual-branch multi-modal 3D detector
 
 ## Background & Motivation
 
-**State of the Field**: Multi-modal 3D detection (LiDAR + Camera) has achieved strong performance on standard benchmarks, but suffers significant degradation under domain shift scenarios such as adverse weather and lighting changes.
+**Background**: Multi-modal 3D detection (LiDAR + Camera) has achieved strong performance on standard benchmarks, but suffers significant degradation under domain shift scenarios such as adverse weather and lighting changes.
 
 **Limitations of Prior Work**: (a) Under conditions such as rain or nighttime, different modalities degrade at different rates—rainy conditions lead to sparse LiDAR point clouds, while nighttime conditions deteriorate camera image quality; (b) in dual-branch detectors, the LiDAR branch dominates the detection process, causing the semantic information from the camera branch to be systematically underutilized.
 
-**Root Cause**: Pilot study analysis reveals that during training, the matching ratio between 3D queries and 2D queries reaches 37.5:1, leaving 2D queries with almost no supervision signal. Even when 2D detector proposal quality remains relatively high under cross-domain conditions (2D AP outperforms 3D projection), the 3D mAP of 2D queries is only 18.44% (vs. 67.75% for 3D queries).
+**Key Challenge**: Pilot study analysis reveals that during training, the matching ratio between 3D queries and 2D queries reaches 37.5:1, leaving 2D queries with almost no supervision signal. Even when 2D detector proposal quality remains relatively high under cross-domain conditions (2D AP outperforms 3D projection), the 3D mAP of 2D queries is only 18.44% (vs. 67.75% for 3D queries).
 
-**Paper Goals**: Rebalance modality utilization in dual-branch detectors so that the camera branch can contribute more effectively when LiDAR quality degrades.
+**Goal**: Rebalance modality utilization in dual-branch detectors so that the camera branch can contribute more effectively when LiDAR quality degrades.
 
-**Starting Point**: The problem is approached from three dimensions: supervision imbalance, inaccurate depth initialization, and over-reliance on LiDAR during the fusion stage.
+**Key Insight**: The problem is approached from three dimensions: supervision imbalance, inaccurate depth initialization, and over-reliance on LiDAR during the fusion stage.
 
 **Core Idea**: Systematically improve the competitiveness of 2D queries through decoupled supervision, geometric prior enhancement, and a complementary masking strategy.
 

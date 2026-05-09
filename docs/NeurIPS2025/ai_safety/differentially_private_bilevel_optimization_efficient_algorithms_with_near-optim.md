@@ -28,15 +28,15 @@ This paper systematically studies bilevel optimization under differential privac
 
 ## Background & Motivation
 
-**State of the Field**: Bilevel optimization (BLO) is widely applied in meta-learning, hyperparameter optimization, and adversarial training, where the outer objective depends on the optimal solution of an inner optimization problem — one problem is nested within another.
+**Background**: Bilevel optimization (BLO) is widely applied in meta-learning, hyperparameter optimization, and adversarial training, where the outer objective depends on the optimal solution of an inner optimization problem — one problem is nested within another.
 
 **Limitations of Prior Work**: Machine learning models may leak the privacy of training data, and differential privacy is the standard defense mechanism. While DP optimization has been well studied for single-level problems, DP theory for bilevel optimization remains severely underdeveloped — only two prior works exist, and they either consider only local DP or achieve non-convex rates that depend on the inner-level dimension.
 
-**Root Cause**: The nested structure of BLO prevents direct evaluation of the outer objective (the inner problem must first be solved), making classical DP mechanisms inapplicable. How function evaluation error affects privacy and utility is the central challenge.
+**Key Challenge**: The nested structure of BLO prevents direct evaluation of the outer objective (the inner problem must first be solved), making classical DP mechanisms inapplicable. How function evaluation error affects privacy and utility is the central challenge.
 
-**Paper Goals**: (a) What is the optimal rate for DP-ERM in convex BLO? (b) Can the existing inner-dimension-dependent convergence rates be improved in non-convex BLO?
+**Goal**: (a) What is the optimal rate for DP-ERM in convex BLO? (b) Can the existing inner-dimension-dependent convergence rates be improved in non-convex BLO?
 
-**Starting Point**: The exponential mechanism combined with log-concave sampling is employed for the convex setting; second-order approximate gradients with non-private inner solutions and sensitivity analysis are used for the non-convex setting.
+**Key Insight**: The exponential mechanism combined with log-concave sampling is employed for the convex setting; second-order approximate gradients with non-private inner solutions and sensitivity analysis are used for the non-convex setting.
 
 **Core Idea**: Rather than privatizing the inner solution $y$, the optimal inner variable is solved non-privately to high precision; Gaussian noise is then added to the outer approximate gradient, with DP guaranteed via sensitivity analysis, thereby eliminating dependence on the inner-level dimension.
 

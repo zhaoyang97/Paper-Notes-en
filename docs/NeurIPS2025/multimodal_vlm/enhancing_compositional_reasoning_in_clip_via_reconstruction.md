@@ -27,15 +27,15 @@ content_hash: 68b7c5f2736f6b31
 This paper proposes READ, a fine-tuning method that enhances the compositional reasoning capability of CLIP's text encoder via two auxiliary objectives: (1) token-level reconstruction, where a frozen decoder reconstructs alternative descriptions from text embeddings, and (2) sentence-level alignment, which enforces consistency among embeddings of paraphrases. READ achieves state-of-the-art performance on 5 compositional reasoning benchmarks, outperforming NegCLIP by 4.5% and FSC-CLIP by 4.1%.
 
 ## Background & Motivation
-**State of the Field**: VLMs such as CLIP, trained with contrastive objectives, perform poorly on compositional reasoning — they fail to distinguish "horse eating grass" from "grass eating horse," as contrastive training encourages the text encoder to focus on individual tokens (aligned with visual objects) while neglecting inter-token relations.
+**Background**: VLMs such as CLIP, trained with contrastive objectives, perform poorly on compositional reasoning — they fail to distinguish "horse eating grass" from "grass eating horse," as contrastive training encourages the text encoder to focus on individual tokens (aligned with visual objects) while neglecting inter-token relations.
 
 **Limitations of Prior Work**: (1) Hard-negative-based methods (e.g., NegCLIP) may lead models to exploit shortcuts specific to the negative sample format rather than achieving genuine compositional understanding; (2) existing auxiliary objectives either act jointly on both image and text encoders, or exclusively on the image encoder, overlooking that the text encoder is the primary bottleneck for compositional reasoning; (3) auxiliary objectives specifically designed for the text encoder are lacking.
 
-**Root Cause**: The nature of contrastive training (image-text alignment) encourages the text encoder to produce bag-of-words representations, whereas compositional reasoning requires understanding of structural relationships among tokens.
+**Key Challenge**: The nature of contrastive training (image-text alignment) encourages the text encoder to produce bag-of-words representations, whereas compositional reasoning requires understanding of structural relationships among tokens.
 
-**Paper Goals**: Improve compositional reasoning in CLIP through auxiliary training objectives applied to the text encoder.
+**Goal**: Improve compositional reasoning in CLIP through auxiliary training objectives applied to the text encoder.
 
-**Starting Point**: Two complementary objectives — reconstruction forces embeddings to retain inter-token relational information (otherwise alternative descriptions cannot be reconstructed), while alignment ensures that paraphrases with different surface forms yield consistent representations.
+**Key Insight**: Two complementary objectives — reconstruction forces embeddings to retain inter-token relational information (otherwise alternative descriptions cannot be reconstructed), while alignment ensures that paraphrases with different surface forms yield consistent representations.
 
 **Core Idea**: Compel the text encoder to encode inter-token relations via "alternative description reconstruction," and ensure semantic invariance via "paraphrase alignment."
 

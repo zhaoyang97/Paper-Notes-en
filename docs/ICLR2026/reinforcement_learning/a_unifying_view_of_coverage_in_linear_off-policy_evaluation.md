@@ -42,7 +42,7 @@ Under stronger assumptions (e.g., Bellman completeness), the notion of coverage 
 - Coverage definitions used across different analyses are mutually inconsistent and exhibit undesirable properties (e.g., not distribution-free, unable to recover standard definitions in special cases).
 - The lack of connections among definitions leads to a fragmented theoretical understanding.
 
-**Paper Goals**: To propose a unified coverage concept that yields tight finite-sample guarantees under minimal assumptions and gracefully recovers known standard coverage definitions under stronger assumptions.
+**Goal**: To propose a unified coverage concept that yields tight finite-sample guarantees under minimal assumptions and gracefully recovers known standard coverage definitions under stronger assumptions.
 
 ## Method
 

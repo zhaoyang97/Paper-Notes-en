@@ -28,15 +28,15 @@ FlowMoE proposes a unified pipeline scheduling framework that integrates MHA com
 
 ## Background & Motivation
 
-**State of the Field**: Large language models leverage Mixture-of-Experts (MoE) to scale parameter counts while controlling computational cost by activating only a subset of experts. Distributed MoE training employs expert parallelism, placing different experts on different GPUs and using all-to-all (A2A) communication to dispatch tokens and collect results.
+**Background**: Large language models leverage Mixture-of-Experts (MoE) to scale parameter counts while controlling computational cost by activating only a subset of experts. Distributed MoE training employs expert parallelism, placing different experts on different GPUs and using all-to-all (A2A) communication to dispatch tokens and collect results.
 
 **Limitations of Prior Work**: Existing pipeline scheduling methods (ScheMoE, Tutel, FasterMoE, PipeMoE, etc.) focus exclusively on overlapping expert computation with A2A communication within the MoE layer. However, empirical profiling reveals that MHA computation, gating, and all-reduce communication collectively account for 30–40% of per-iteration time (Table 1: 33.1% for GPT2-Tiny-MoE, 36.1% for DeepSeek-V2-S)—a portion entirely overlooked by prior work.
 
-**Root Cause**: Distributed MoE training faces three compounding challenges: (1) complex dependencies among MHA, gating, expert computation, A2A, and all-reduce; (2) coexistence of A2A and all-reduce communications competing for bandwidth; and (3) manual hyperparameter tuning in existing frameworks that hinders cross-hardware portability. Naively applying standard data-parallel all-reduce scheduling on top of expert parallelism is insufficient, as the presence of A2A communication fundamentally alters the scheduling landscape.
+**Key Challenge**: Distributed MoE training faces three compounding challenges: (1) complex dependencies among MHA, gating, expert computation, A2A, and all-reduce; (2) coexistence of A2A and all-reduce communications competing for bandwidth; and (3) manual hyperparameter tuning in existing frameworks that hinders cross-hardware portability. Naively applying standard data-parallel all-reduce scheduling on top of expert parallelism is insufficient, as the presence of A2A communication fundamentally alters the scheduling landscape.
 
-**Paper Goals**: Design a unified pipeline scheduling framework that simultaneously covers MHA computation, gating, expert computation, A2A communication, and all-reduce communication, with automatic adaptation to diverse hardware environments.
+**Goal**: Design a unified pipeline scheduling framework that simultaneously covers MHA computation, gating, expert computation, A2A communication, and all-reduce communication, with automatic adaptation to diverse hardware environments.
 
-**Starting Point**: Model all computation and communication tasks within an entire Transformer block (rather than only the MoE layer) as a dependency graph, enabling globally optimal scheduling, with Bayesian optimization to automatically tune all-reduce chunk sizes.
+**Key Insight**: Model all computation and communication tasks within an entire Transformer block (rather than only the MoE layer) as a dependency graph, enabling globally optimal scheduling, with Bayesian optimization to automatically tune all-reduce chunk sizes.
 
 **Core Idea**: Incorporate MHA and gating into a unified pipeline to overlap more computation; use priority-based scheduling to insert chunked all-reduce tensors into A2A communication gaps to maximize bandwidth utilization; and apply Bayesian optimization for automatic hyperparameter tuning.
 

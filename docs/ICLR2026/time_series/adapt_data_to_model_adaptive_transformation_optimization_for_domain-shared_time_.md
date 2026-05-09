@@ -28,15 +28,15 @@ This paper proposes TATO, a framework that automatically optimizes data preproce
 
 ## Background & Motivation
 
-**State of the Field**: Large time-series models (LTMs) such as Timer, Moirai, and Chronos have demonstrated zero-shot forecasting capabilities; however, their generalization performance under distribution shifts across different domains remains limited when deployed as frozen models.
+**Background**: Large time-series models (LTMs) such as Timer, Moirai, and Chronos have demonstrated zero-shot forecasting capabilities; however, their generalization performance under distribution shifts across different domains remains limited when deployed as frozen models.
 
 **Limitations of Prior Work**: The conventional approach of fine-tuning models for each new domain causes the number of model instances to grow linearly with the number of domains, incurring high computational costs and compromising generalization.
 
-**Root Cause**: LTMs must simultaneously satisfy two conflicting requirements—cross-domain generality and domain-specific accuracy. Fine-tuning improves domain-specific performance at the expense of general applicability.
+**Key Challenge**: LTMs must simultaneously satisfy two conflicting requirements—cross-domain generality and domain-specific accuracy. Fine-tuning improves domain-specific performance at the expense of general applicability.
 
-**Paper Goals**: Can one adapt LTMs to different domains solely by optimizing input data transformations, without modifying any model parameters?
+**Goal**: Can one adapt LTMs to different domains solely by optimizing input data transformations, without modifying any model parameters?
 
-**Starting Point**: The authors observe that simple data transformations (e.g., downsampling, outlier interpolation, differencing) can substantially improve LTM forecasting quality (see Figure 1 for three illustrative examples), suggesting that the bottleneck lies in the mismatch between data and model rather than insufficient model capacity.
+**Key Insight**: The authors observe that simple data transformations (e.g., downsampling, outlier interpolation, differencing) can substantially improve LTM forecasting quality (see Figure 1 for three illustrative examples), suggesting that the bottleneck lies in the mismatch between data and model rather than insufficient model capacity.
 
 **Core Idea**: The discovery of effective data transformations is formalized as a hyperparameter optimization problem, where Bayesian search automatically identifies the optimal preprocessing pipeline, enabling a single frozen model to adapt across multiple domains.
 

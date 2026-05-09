@@ -28,16 +28,16 @@ This work presents the first quantum algorithms for computing correlated equilib
 
 ## Background & Motivation
 
-**State of the Field**: Quantum algorithms for two-player zero-sum games have been extensively studied, achieving a $\sqrt{n}$ quantum speedup ($\tilde{O}(\sqrt{n}/\varepsilon^{2.5})$). Classical equilibrium computation for multi-player general-sum games is also well-established. However, quantum equilibrium computation for multi-player games remains entirely unexplored.
+**Background**: Quantum algorithms for two-player zero-sum games have been extensively studied, achieving a $\sqrt{n}$ quantum speedup ($\tilde{O}(\sqrt{n}/\varepsilon^{2.5})$). Classical equilibrium computation for multi-player general-sum games is also well-established. However, quantum equilibrium computation for multi-player games remains entirely unexplored.
 
 **Limitations of Prior Work**:
    - Nash equilibrium is PPAD-hard, motivating the study of the more tractable CE/CCE concepts.
    - The classical optimal CE query complexity is $\tilde{O}(mn(\log mn)^{O(1/\varepsilon)})$ (Peng–Rubinstein '23); classical CCE requires $\tilde{O}(mn/\varepsilon^2)$.
    - In multi-player settings, the joint action space of size $n^m$ causes naïve quantization to incur exponential QRAM overhead.
 
-**Root Cause**: Quantizing multi-scale MWU requires amplitude encoding of loss vectors. Standard methods demand a QRAM of size $\Omega(n^m)$ to store frequency tables — an exponential blowup.
+**Key Challenge**: Quantizing multi-scale MWU requires amplitude encoding of loss vectors. Standard methods demand a QRAM of size $\Omega(n^m)$ to store frequency tables — an exponential blowup.
 
-**Starting Point**: Design a unified QRAM that stores historical action samples (rather than frequency tables), and construct the amplitude encodings required by all MWU subroutines from a single QRAM.
+**Key Insight**: Design a unified QRAM that stores historical action samples (rather than frequency tables), and construct the amplitude encodings required by all MWU subroutines from a single QRAM.
 
 **Core Idea**: For CE, a quantum Gibbs sampler accelerates the exponential update steps in multi-scale MWU. For CCE, the ghost iteration technique extends the zero-sum quantum framework to the multi-player setting. A unified QRAM eliminates exponential overhead throughout.
 

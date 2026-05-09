@@ -28,15 +28,15 @@ This paper presents UniDex, a robot foundation suite comprising a large-scale da
 
 ## Background & Motivation
 
-1. **State of the Field**: Learning from Demonstrations is the dominant paradigm for visuomotor control. Vision-Language-Action (VLA) models perform well on tasks such as grasping, but most are designed for parallel grippers; foundation models for dexterous hands remain extremely scarce.
+1. **Background**: Learning from Demonstrations is the dominant paradigm for visuomotor control. Vision-Language-Action (VLA) models perform well on tasks such as grasping, but most are designed for parallel grippers; foundation models for dexterous hands remain extremely scarce.
 
 2. **Limitations of Prior Work**: Building foundation models for dexterous hands is significantly harder than for grippers, due to three challenges: (a) **Data scarcity**: Teleoperation data for dexterous hands is prohibitively expensive and difficult to collect at scale; (b) **Embodiment heterogeneity**: Dexterous hands vary widely (6–24 DoF, diverse kinematic structures), making data and policy transfer across hands difficult; (c) **High-dimensional control**: Dexterous hand action spaces are far higher-dimensional than grippers, requiring more expressive action representations and learning algorithms.
 
-3. **Root Cause**: Training dexterous hand policies requires large-scale, diverse data, yet teleoperation data is expensive and hand-specific. Humans naturally produce abundant manipulation data (egocentric videos), but a large kinematic and visual gap exists between human and robot hands.
+3. **Key Challenge**: Training dexterous hand policies requires large-scale, diverse data, yet teleoperation data is expensive and hand-specific. Humans naturally produce abundant manipulation data (egocentric videos), but a large kinematic and visual gap exists between human and robot hands.
 
-4. **Paper Goals**: (a) How to convert egocentric human videos into robot-executable dexterous hand trajectories? (b) How to design a unified action space that enables cross-hand transfer? (c) How to build a VLA foundation model for dexterous hands?
+4. **Goal**: (a) How to convert egocentric human videos into robot-executable dexterous hand trajectories? (b) How to design a unified action space that enables cross-hand transfer? (c) How to build a VLA foundation model for dexterous hands?
 
-5. **Starting Point**: Dexterous hands are designed to mimic human hands and share a functional correspondence with them. This correspondence is exploited to retarget human hand motion to robot hands, while visually masking the human hand and replacing it with a robot hand point cloud, substantially reducing the kinematic and visual domain gap.
+5. **Key Insight**: Dexterous hands are designed to mimic human hands and share a functional correspondence with them. This correspondence is exploited to retarget human hand motion to robot hands, while visually masking the human hand and replacing it with a robot hand point cloud, substantially reducing the kinematic and visual domain gap.
 
 6. **Core Idea**: A human-to-robot data conversion pipeline is used to construct a large-scale, multi-hand pretraining dataset. A functionally-aligned unified action space (FAAS) enables cross-hand transfer, and a 3D VLA foundation model (UniDex-VLA) is trained for general dexterous manipulation.
 

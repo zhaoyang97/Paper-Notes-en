@@ -27,15 +27,15 @@ This paper proposes LifeDialBench, a benchmark for evaluating memory capabilitie
 
 ## Background & Motivation
 
-**State of the Field**: Wearable devices such as Ray-Ban Meta smart glasses and Xiaomi AI Glasses now support always-on microphones capable of continuously recording ambient conversations, creating substantial opportunities for memory system applications. LLM-based memory systems typically consist of a memory manager, summarization agent, and retriever.
+**Background**: Wearable devices such as Ray-Ban Meta smart glasses and Xiaomi AI Glasses now support always-on microphones capable of continuously recording ambient conversations, creating substantial opportunities for memory system applications. LLM-based memory systems typically consist of a memory manager, summarization agent, and retriever.
 
 **Limitations of Prior Work**: Existing memory benchmarks focus primarily on online one-on-one chat or human–AI interactions, overlooking the unique demands of continuous lifelogs—multi-party interactions, casual and temporally ordered event streams, and simulated social networks. More critically, conventional offline evaluation protocols suffer from "temporal leakage," whereby systems are allowed to access the full dataset before answering any query, systematically overestimating real-world performance.
 
-**Root Cause**: Existing complex memory systems (e.g., graph-based or hierarchical approaches) introduce lossy compression through summarization and entity extraction, which may discard details that are critical in lifelog scenarios. However, due to the absence of rigorous online evaluation protocols, this information loss is obscured by temporal leakage in offline evaluation.
+**Key Challenge**: Existing complex memory systems (e.g., graph-based or hierarchical approaches) introduce lossy compression through summarization and entity extraction, which may discard details that are critical in lifelog scenarios. However, due to the absence of rigorous online evaluation protocols, this information loss is obscured by temporal leakage in offline evaluation.
 
-**Paper Goals**: (1) Construct a memory evaluation benchmark suited to continuous lifelog characteristics; (2) propose an online evaluation protocol that respects temporal causality; (3) reveal the true capabilities of existing memory systems.
+**Goal**: (1) Construct a memory evaluation benchmark suited to continuous lifelog characteristics; (2) propose an online evaluation protocol that respects temporal causality; (3) reveal the true capabilities of existing memory systems.
 
-**Starting Point**: Real-world egocentric video data from the EgoLife dataset (6 participants, 7 days) is used to construct authentic scenarios, while LLM-based simulation of one year of daily life extends the temporal scope. A strict online evaluation paradigm is adopted, in which information flows linearly along the timeline and the system may only use information available prior to each query timestamp.
+**Key Insight**: Real-world egocentric video data from the EgoLife dataset (6 participants, 7 days) is used to construct authentic scenarios, while LLM-based simulation of one year of daily life extends the temporal scope. A strict online evaluation paradigm is adopted, in which information flows linearly along the timeline and the system may only use information available prior to each query timestamp.
 
 **Core Idea**: Evaluating memory systems under strict temporal causality constraints reveals a counterintuitive finding—a simple RAG baseline outperforms all sophisticated dedicated memory systems, because preserving raw text is more important than lossy compression.
 

@@ -29,7 +29,7 @@ This paper proposes OracleFusion, a two-stage semantic typography framework. Sta
 
 ## Background & Motivation
 
-**State of the Field**: Oracle bone script (OBS) is one of the earliest writing systems, dating back approximately 3,000 years to the Shang Dynasty. Of the roughly 4,500 discovered OBS characters, only about 1,600 have been successfully deciphered, while nearly 3,000 remain undecoded.
+**Background**: Oracle bone script (OBS) is one of the earliest writing systems, dating back approximately 3,000 years to the Shang Dynasty. Of the roughly 4,500 discovered OBS characters, only about 1,600 have been successfully deciphered, while nearly 3,000 remain undecoded.
 
 **Complexity of Decipherment**: OBS decipherment requires integrating (1) compositional glyph analysis—reconstructing the scene represented by the ancient symbol, (2) contextual reasoning—inferring meaning from context, and (3) evolutionary tracing—identifying the corresponding modern Chinese character.
 
@@ -38,11 +38,11 @@ This paper proposes OracleFusion, a two-stage semantic typography framework. Sta
 - **GenOV**: Uses ControlNet to generate photorealistic images but fails to preserve glyph structural information.
 - **Word-As-Image**: A semantic typography approach that constrains only outer contours, performing poorly on complex OBS structures with multiple radicals.
 
-**Root Cause**:
+**Key Challenge**:
 - **(1)** How to systematically analyze OBS glyph structure and interpret the meaning of each component?
 - **(2)** How to reconstruct a semantic scene while preserving the original glyph structure?
 
-**Starting Point**: The paper recasts OBS decipherment as a "structurally constrained semantic typography" problem—analyzing glyph radicals → localizing key components → deforming radicals into semantically relevant graphics while preserving the overall glyph structure.
+**Key Insight**: The paper recasts OBS decipherment as a "structurally constrained semantic typography" problem—analyzing glyph radicals → localizing key components → deforming radicals into semantically relevant graphics while preserving the overall glyph structure.
 
 ## Method
 

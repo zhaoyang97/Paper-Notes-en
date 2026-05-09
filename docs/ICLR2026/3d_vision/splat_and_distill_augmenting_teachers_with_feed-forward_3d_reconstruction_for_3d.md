@@ -29,16 +29,16 @@ Within a student-teacher distillation framework, this work augments the teacher 
 
 ## Background & Motivation
 
-**State of the Field**: Vision foundation models (VFMs) such as DINOv2 are trained on large-scale 2D data via self-supervised distillation, achieving strong performance on 2D tasks such as semantic segmentation. However, these models inherently lack 3D awareness and perform poorly on tasks requiring understanding of three-dimensional geometry, such as depth estimation, surface normal prediction, and multi-view correspondence.
+**Background**: Vision foundation models (VFMs) such as DINOv2 are trained on large-scale 2D data via self-supervised distillation, achieving strong performance on 2D tasks such as semantic segmentation. However, these models inherently lack 3D awareness and perform poorly on tasks requiring understanding of three-dimensional geometry, such as depth estimation, surface normal prediction, and multi-view correspondence.
 
 **Limitations of Prior Work**:
 1. **FiT3D** lifts 2D features into a 3DGS representation via per-scene optimization and renders the results to generate training data for fine-tuning VFMs. However, because input features from different viewpoints are themselves inconsistent, the optimization produces a "least-squares compromise," resulting in semantic blurring and feature-averaging artifacts.
 2. **MEF** enforces feature consistency through multi-view correspondences, but relies solely on feature similarity constraints at corresponding points and cannot provide complete dense geometric understanding.
 3. Per-scene optimization methods are computationally expensive, require large Gaussian representations, and are difficult to scale.
 
-**Root Cause**: Equipping 2D features with 3D awareness requires constraining feature learning through multi-view 3D geometry; yet per-scene optimization is slow and introduces averaging artifacts due to inconsistent input features. Feed-forward reconstruction is fast but had previously been applied only to appearance reconstruction rather than semantic features.
+**Key Challenge**: Equipping 2D features with 3D awareness requires constraining feature learning through multi-view 3D geometry; yet per-scene optimization is slow and introduces averaging artifacts due to inconsistent input features. Feed-forward reconstruction is fast but had previously been applied only to appearance reconstruction rather than semantic features.
 
-**Paper Goals**: Within a student-teacher distillation framework, this work employs a frozen feed-forward 3D reconstruction model (MVSplat) as an augmentation component for the teacher. Teacher-extracted 2D features are upsampled in a mask-aware manner, attached to 3D Gaussians, rendered to the target viewpoint, and then processed via semantic blending to produce high-quality supervision signals. The student learns from a single 2D image to match the teacher's 3D-aware features, thereby acquiring geometric consistency. The teacher is iteratively updated via EMA, avoiding the static feature-averaging problem.
+**Goal**: Within a student-teacher distillation framework, this work employs a frozen feed-forward 3D reconstruction model (MVSplat) as an augmentation component for the teacher. Teacher-extracted 2D features are upsampled in a mask-aware manner, attached to 3D Gaussians, rendered to the target viewpoint, and then processed via semantic blending to produce high-quality supervision signals. The student learns from a single 2D image to match the teacher's 3D-aware features, thereby acquiring geometric consistency. The teacher is iteratively updated via EMA, avoiding the static feature-averaging problem.
 
 ## Method
 

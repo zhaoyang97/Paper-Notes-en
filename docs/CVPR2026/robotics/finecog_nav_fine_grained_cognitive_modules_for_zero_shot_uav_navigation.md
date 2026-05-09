@@ -28,11 +28,11 @@ This paper proposes FineCog-Nav, a zero-shot UAV vision-language navigation fram
 
 ## Background & Motivation
 
-1. **State of the Field**: UAV vision-language navigation (VLN) requires an agent to follow multi-step ambiguous instructions for long-range navigation in complex 3D environments from a first-person perspective. While zero-shot methods are relatively mature for ground-level VLN, UAV scenarios pose greater challenges due to continuous 3D motion, limited global perception, and weak landmark discriminability.
+1. **Background**: UAV vision-language navigation (VLN) requires an agent to follow multi-step ambiguous instructions for long-range navigation in complex 3D environments from a first-person perspective. While zero-shot methods are relatively mature for ground-level VLN, UAV scenarios pose greater challenges due to continuous 3D motion, limited global perception, and weak landmark discriminability.
 2. **Limitations of Prior Work**: Existing zero-shot methods rely heavily on large models (e.g., GPT-4V); replacing them with smaller models (e.g., LLaVA-7B) causes the success rate to plummet from 28.3% to 1.7%. Most methods employ generic prompts and loosely coupled module coordination, lacking critical components such as hierarchical planning, dynamic sub-goal extraction, and memory mechanisms.
-3. **Root Cause**: Complex UAV navigation demands deep collaboration among perception, reasoning, and decision-making, yet existing frameworks are either monolithic (one large model handles everything) or loosely coupled (insufficient inter-module interaction).
-4. **Paper Goals**: Design a training-free modular framework that achieves interpretable and generalizable UAV navigation through the collaboration of fine-grained cognitive modules.
-5. **Starting Point**: Rather than organizing modules by agent roles, the framework organizes them by cognitive function—each module corresponds to one aspect of human cognition (language, perception, attention, memory, imagination, reasoning, decision-making)—and they collaborate via structured input-output protocols.
+3. **Key Challenge**: Complex UAV navigation demands deep collaboration among perception, reasoning, and decision-making, yet existing frameworks are either monolithic (one large model handles everything) or loosely coupled (insufficient inter-module interaction).
+4. **Goal**: Design a training-free modular framework that achieves interpretable and generalizable UAV navigation through the collaboration of fine-grained cognitive modules.
+5. **Key Insight**: Rather than organizing modules by agent roles, the framework organizes them by cognitive function—each module corresponds to one aspect of human cognition (language, perception, attention, memory, imagination, reasoning, decision-making)—and they collaborate via structured input-output protocols.
 6. **Core Idea**: Fine-grained modularization of cognitive functions allows each module to be implemented with a moderate-scale model paired with role-specific prompts, eliminating dependence on extremely large models, while explicit cognitive dependencies provide interpretability.
 
 ## Method

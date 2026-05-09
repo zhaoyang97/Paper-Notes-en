@@ -28,11 +28,11 @@ To address poor subject consistency and insufficient text adherence in multi-sub
 
 ## Background & Motivation
 
-1. **State of the Field**: Single-subject personalized generation models (e.g., FLUX.1 Kontext, Qwen-Image-Edit) have demonstrated strong capabilities in generating subject-consistent images in novel scenes conditioned on reference images.
+1. **Background**: Single-subject personalized generation models (e.g., FLUX.1 Kontext, Qwen-Image-Edit) have demonstrated strong capabilities in generating subject-consistent images in novel scenes conditioned on reference images.
 2. **Limitations of Prior Work**: When scaling to multi-subject scenarios, existing models face two key challenges: (a) poor subject consistency—generated subjects are dissimilar to or entirely missing from the reference; and (b) poor text adherence—models fail to correctly bind attributes, e.g., given the prompt "dog wearing a chef's hat, cat wearing a scarf," the model may produce swapped attributes.
-3. **Root Cause**: Two underlying issues are identified: the absence of high-quality multi-subject training datasets (existing datasets such as OmniGen's X2I-subject-driven data focus primarily on faces with low general object consistency), and the lack of fine-grained post-training strategies (SFT optimizes only at the global image level and cannot guarantee per-subject consistency).
-4. **Paper Goals**: (1) How to construct large-scale, high-quality multi-subject training data? (2) How to achieve subject-level fine-grained alignment during training? (3) How to comprehensively evaluate multi-subject personalized generation?
-5. **Starting Point**: Leveraging existing strong single-subject personalization models (e.g., FLUX.1 Kontext) to "reverse-engineer" multi-subject data construction, and employing pairwise reward mechanisms within reinforcement learning to achieve subject-level fine-grained alignment.
+3. **Key Challenge**: Two underlying issues are identified: the absence of high-quality multi-subject training datasets (existing datasets such as OmniGen's X2I-subject-driven data focus primarily on faces with low general object consistency), and the lack of fine-grained post-training strategies (SFT optimizes only at the global image level and cannot guarantee per-subject consistency).
+4. **Goal**: (1) How to construct large-scale, high-quality multi-subject training data? (2) How to achieve subject-level fine-grained alignment during training? (3) How to comprehensively evaluate multi-subject personalized generation?
+5. **Key Insight**: Leveraging existing strong single-subject personalization models (e.g., FLUX.1 Kontext) to "reverse-engineer" multi-subject data construction, and employing pairwise reward mechanisms within reinforcement learning to achieve subject-level fine-grained alignment.
 6. **Core Idea**: Constructing multi-subject data using single-subject models, combined with post-training via Pairwise Subject-Consistency Rewards (PSR), to achieve scalable, high-quality multi-subject personalized generation.
 
 ## Method

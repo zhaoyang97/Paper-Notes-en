@@ -27,15 +27,15 @@ content_hash: a6e785253839bb6c
 This work proposes the D2E framework, demonstrating that desktop gaming interaction data can serve as an effective pretraining substrate for embodied AI. Through the OWA toolkit, 335 hours of human demonstrations are collected; a Generalist-IDM pseudo-annotates 1,000+ hours of YouTube gameplay videos; and VAPT transfer training yields a 1B-parameter model that achieves 96.6% on LIBERO manipulation and 83.3% on CANVAS navigation, matching or surpassing models 7× larger.
 
 ## Background & Motivation
-**State of the Field**: LLMs have achieved cross-task generalization by leveraging internet-scale text data, yet collecting physical trajectory data for embodied AI is prohibitively expensive—requiring specialized hardware, human operation, and complex annotation—leaving data scale far insufficient to drive comparable scaling.
+**Background**: LLMs have achieved cross-task generalization by leveraging internet-scale text data, yet collecting physical trajectory data for embodied AI is prohibitively expensive—requiring specialized hardware, human operation, and complex annotation—leaving data scale far insufficient to drive comparable scaling.
 
 **Limitations of Prior Work**: Existing robot datasets (e.g., DROID) are small-scale, domain-specific, and format-incompatible. VPT is confined to the single domain of Minecraft, and SIMA spans multiple games but relies on proprietary data.
 
-**Root Cause**: Embodied AI demands large-scale action-annotated data, yet physical data collection is not scalable; desktop interactions (keyboard and mouse) are abundant and standardized, but their transferability to physical robots remains an open question.
+**Key Challenge**: Embodied AI demands large-scale action-annotated data, yet physical data collection is not scalable; desktop interactions (keyboard and mouse) are abundant and standardized, but their transferability to physical robots remains an open question.
 
-**Paper Goals**: To establish a complete pipeline spanning desktop data collection, pseudo-annotation, and embodied task transfer validation.
+**Goal**: To establish a complete pipeline spanning desktop data collection, pseudo-annotation, and embodied task transfer validation.
 
-**Starting Point**: Gaming interactions exhibit complex sensorimotor patterns—navigation, manipulation, and planning—closely analogous to embodied AI challenges, and can be acquired at scale via YouTube.
+**Key Insight**: Gaming interactions exhibit complex sensorimotor patterns—navigation, manipulation, and planning—closely analogous to embodied AI challenges, and can be acquired at scale via YouTube.
 
 **Core Idea**: Desktop data constitutes a low-cost pretraining source for embodied AI; OWA collection + Generalist-IDM pseudo-annotation + VAPT transfer forms a complete pipeline.
 

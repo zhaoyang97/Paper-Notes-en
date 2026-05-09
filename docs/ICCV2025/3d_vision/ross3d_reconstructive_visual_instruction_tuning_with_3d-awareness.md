@@ -35,7 +35,7 @@ Ross3D introduces 3D-aware visual reconstruction pretraining tasks—cross-view 
 
 **Second contradiction**: Existing methods focus exclusively on input-level 3D representation design, an approach that is inherently limited. Specifically, prior methods fall into three categories: (a) fusing 3D point cloud features with 2D image features (e.g., ChatScene, LEO); (b) aggregating 2D features in 3D voxel space (e.g., LLaVA-3D); (c) treating multi-view images as video sequences (e.g., Video-3D-LLM). However, because LMMs carry an inherent inductive bias toward 2D data, input-level modifications alone cannot enable genuine 3D spatial understanding.
 
-**Starting Point**: Since input-level modifications are insufficient, the solution lies in output-level supervision. Ross3D proposes a novel perspective—introducing 3D-aware visual reconstruction supervision into the training pipeline by designing 3D-relevant pretext tasks that compel the model to learn 3D spatial relationships. The key insight is that rather than changing the input, 3D-aware reconstruction objectives are imposed on the visual output tokens, effectively "injecting" 3D understanding into the model's feature representations.
+**Key Insight**: Since input-level modifications are insufficient, the solution lies in output-level supervision. Ross3D proposes a novel perspective—introducing 3D-aware visual reconstruction supervision into the training pipeline by designing 3D-relevant pretext tasks that compel the model to learn 3D spatial relationships. The key insight is that rather than changing the input, 3D-aware reconstruction objectives are imposed on the visual output tokens, effectively "injecting" 3D understanding into the model's feature representations.
 
 ## Method
 

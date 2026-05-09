@@ -29,18 +29,18 @@ This paper proposes the Fixed-Point RNN framework, which parameterizes dense lin
 
 ## Background & Motivation
 
-**State of the Field**: Linear RNNs (e.g., Mamba), enabled by diagonal state transition matrices for efficient parallel training, have emerged as a mainstream alternative to Transformers. Theoretical work shows that diagonal structure severely limits state-tracking capacity, while dense transition matrices theoretically match the expressiveness of full nonlinear RNNs.
+**Background**: Linear RNNs (e.g., Mamba), enabled by diagonal state transition matrices for efficient parallel training, have emerged as a mainstream alternative to Transformers. Theoretical work shows that diagonal structure severely limits state-tracking capacity, while dense transition matrices theoretically match the expressiveness of full nonlinear RNNs.
 
 **Limitations of Prior Work**:
 - **Insufficient expressiveness of diagonal RNNs**: Mamba fails to learn state-tracking tasks such as $A_5$/$S_5$.
 - **Efficiency issues of dense RNNs**: Parameterizing $A_t \in \mathbb{R}^{d \times d}$ requires $O(d^3)$ time and $O(d^2)$ parameters.
 - **Limitations of structured approaches**: Methods such as DeltaProduct enhance expressiveness via Householder structure, but the choice of structure remains ad hoc.
 
-**Root Cause**: A fundamental trade-off between parallelism and expressiveness—diagonal RNNs are parallelizable but limited in expressiveness, while dense RNNs are expressive but not parallelizable. A systematic approach to navigate between them is lacking.
+**Key Challenge**: A fundamental trade-off between parallelism and expressiveness—diagonal RNNs are parallelizable but limited in expressiveness, while dense RNNs are expressive but not parallelizable. A systematic approach to navigate between them is lacking.
 
-**Paper Goals**: Design a general framework that allows models to **adaptively** trade off efficiency against expressiveness, rather than fixing the structure at design time.
+**Goal**: Design a general framework that allows models to **adaptively** trade off efficiency against expressiveness, rather than fixing the structure at design time.
 
-**Starting Point**: Drawing on ideas from Deep Equilibrium Models, dense RNNs are implicitly represented as fixed points of diagonal RNNs.
+**Key Insight**: Drawing on ideas from Deep Equilibrium Models, dense RNNs are implicitly represented as fixed points of diagonal RNNs.
 
 **Core Idea**: Dense RNNs are realized via fixed-point iteration of $h = f_\theta(x, h)$, alternating between channel mixing and sequence mixing, with the number of iterations adapting to task difficulty.
 

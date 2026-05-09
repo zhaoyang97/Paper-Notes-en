@@ -28,15 +28,15 @@ This paper proposes EB-JDAT, a framework that models the joint energy distributi
 
 ## Background & Motivation
 
-**State of the Field**: Joint Energy-based Models (JEM) unify classification and generation within a single framework and exhibit some inherent robustness; adversarial training (AT) is the most effective approach for improving robustness but sacrifices clean accuracy and lacks generative capability.
+**Background**: Joint Energy-based Models (JEM) unify classification and generation within a single framework and exhibit some inherent robustness; adversarial training (AT) is the most effective approach for improving robustness but sacrifices clean accuracy and lacks generative capability.
 
 **Limitations of Prior Work**: JEM's robustness falls far short of AT; AT substantially degrades clean accuracy (typically by 5–10%); no existing method simultaneously achieves high classification accuracy, adversarial robustness, and generation quality — a fundamental trilemma.
 
-**Root Cause**: AT introduces adversarial examples during training, causing the model to deviate from the true data manifold, while JEM does not explicitly model the adversarial distribution; each approach is thus inherently limited.
+**Key Challenge**: AT introduces adversarial examples during training, causing the model to deviate from the true data manifold, while JEM does not explicitly model the adversarial distribution; each approach is thus inherently limited.
 
-**Paper Goals**: Can a single model simultaneously achieve high accuracy, strong robustness, and good generative quality?
+**Goal**: Can a single model simultaneously achieve high accuracy, strong robustness, and good generative quality?
 
-**Starting Point**: The authors conduct a systematic **energy landscape analysis**, revealing that AT reduces the energy gap between clean and adversarial samples (the source of robustness), while JEM reduces the energy gap between clean and generated samples (the source of generative capability). Aligning the energy distributions of all three data types would unify the advantages of both approaches.
+**Key Insight**: The authors conduct a systematic **energy landscape analysis**, revealing that AT reduces the energy gap between clean and adversarial samples (the source of robustness), while JEM reduces the energy gap between clean and generated samples (the source of generative capability). Aligning the energy distributions of all three data types would unify the advantages of both approaches.
 
 **Core Idea**: By maximizing the joint probability $p_\theta(\mathbf{x}, \tilde{\mathbf{x}}, y)$ of clean and adversarial distributions, a min-max energy optimization explicitly aligns the energy distributions of all three data types.
 

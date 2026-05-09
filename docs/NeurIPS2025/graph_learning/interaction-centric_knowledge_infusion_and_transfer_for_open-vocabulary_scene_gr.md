@@ -34,9 +34,9 @@ Scene graph generation (SGG) aims to map images into structured semantic represe
 - **Knowledge infusion stage**: Using only object category names (e.g., "man", "surfboard") for localization makes it difficult to correctly associate interaction relations among the large number of candidate pairs, resulting in noisy pseudo supervision.
 - **Knowledge transfer stage**: Among numerous object query candidates, a non-interacting "man" query may be incorrectly matched to an annotated "man" participating in a "riding" relation, causing confusion in relation classification.
 
-**Root Cause**: How can the model distinguish between "interacting objects" and "non-interacting objects" across both stages?
+**Key Challenge**: How can the model distinguish between "interacting objects" and "non-interacting objects" across both stages?
 
-**Starting Point**: Transitioning from an object-centric paradigm to an interaction-centric paradigm by explicitly modeling interaction relations in both the knowledge infusion and transfer stages.
+**Key Insight**: Transitioning from an object-centric paradigm to an interaction-centric paradigm by explicitly modeling interaction relations in both the knowledge infusion and transfer stages.
 
 ## Method
 

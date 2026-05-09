@@ -27,15 +27,15 @@ content_hash: 7bf67e23499f828d
 This paper proposes Astra, a general interactive world model that enables action-conditioned long-horizon video prediction on top of a pretrained video diffusion model via an autoregressive denoising framework. Three key contributions are introduced: ACT-Adapter (action injection), noise-augmented history memory (to mitigate visual inertia), and Mixture of Action Experts (to unify heterogeneous action modalities). Astra achieves state-of-the-art fidelity and action-following capability across autonomous driving, robotic manipulation, and scene exploration scenarios.
 
 ## Background & Motivation
-**State of the Field**: Video diffusion models (e.g., Wan-2.1) can generate high-quality short videos but lack interactivity — they cannot dynamically adjust generation based on action inputs. A true world model must respond to arbitrary actions at any time step.
+**Background**: Video diffusion models (e.g., Wan-2.1) can generate high-quality short videos but lack interactivity — they cannot dynamically adjust generation based on action inputs. A true world model must respond to arbitrary actions at any time step.
 
 **Limitations of Prior Work**: (1) Standard T2V/I2V models generate fixed clips without long-horizon rollout; (2) hybrid autoregressive-diffusion methods suffer from error accumulation and temporal drift; (3) extending history context improves temporal consistency but weakens action responsiveness — the "visual inertia" problem; (4) real-world environments involve heterogeneous action modalities (camera poses, robot joints, keyboard commands) that are difficult for a single model to unify.
 
-**Root Cause**: A fundamental tension exists between long-horizon temporal consistency and action responsiveness — models tend to extrapolate smoothly from past frames while ignoring new action control signals.
+**Key Challenge**: A fundamental tension exists between long-horizon temporal consistency and action responsiveness — models tend to extrapolate smoothly from past frames while ignoring new action control signals.
 
-**Paper Goals**: To build a general world model capable of generating interactive long-horizon videos conditioned on diverse action types across multiple real-world scenarios.
+**Goal**: To build a general world model capable of generating interactive long-horizon videos conditioned on diverse action types across multiple real-world scenarios.
 
-**Starting Point**: Attach lightweight adapters to a pretrained video diffusion model for action injection, augment history frames with noise to mitigate visual inertia, and route heterogeneous actions through a Mixture of Experts.
+**Key Insight**: Attach lightweight adapters to a pretrained video diffusion model for action injection, augment history frames with noise to mitigate visual inertia, and route heterogeneous actions through a Mixture of Experts.
 
 **Core Idea**: Reduce the dominance of history frames via noise augmentation, inject action signals via adapters, and unify multimodal actions via MoE — transforming a video diffusion model into an interactive world model.
 

@@ -28,15 +28,15 @@ This paper proposes B2R (Boundary-to-Region), a framework that addresses the sym
 
 ## Background & Motivation
 
-**State of the Field**: Offline safe reinforcement learning aims to learn policies that satisfy safety constraints from static datasets. Decision Transformer (DT)-based methods have achieved promising results by reformulating RL as conditional sequence modeling.
+**Background**: Offline safe reinforcement learning aims to learn policies that satisfy safety constraints from static datasets. Decision Transformer (DT)-based methods have achieved promising results by reformulating RL as conditional sequence modeling.
 
 **Limitations of Prior Work**: Existing DT methods (e.g., CDT) treat return-to-go (RTG) and cost-to-go (CTG) as symmetric input tokens, overlooking their fundamental difference: RTG is a flexible performance objective, whereas CTG should serve as a rigid safety boundary.
 
-**Root Cause**: This symmetric treatment leads to two problems: (1) it is difficult to select an appropriate initial CTG value at deployment; (2) trajectories whose cumulative cost falls exactly near the safety threshold are sparse in the dataset, resulting in insufficient supervision signals.
+**Key Challenge**: This symmetric treatment leads to two problems: (1) it is difficult to select an appropriate initial CTG value at deployment; (2) trajectories whose cumulative cost falls exactly near the safety threshold are sparse in the dataset, resulting in insufficient supervision signals.
 
-**Paper Goals**: To design an asymmetric conditioning mechanism that treats CTG as a boundary constraint rather than a variable target, decoupling safety guarantees from reward optimization.
+**Goal**: To design an asymmetric conditioning mechanism that treats CTG as a boundary constraint rather than a variable target, decoupling safety guarantees from reward optimization.
 
-**Starting Point**: Uniformly realign the costs of all safe trajectories to the safety threshold, enabling the model to learn diverse behaviors across the entire safe region under a fixed boundary token.
+**Key Insight**: Uniformly realign the costs of all safe trajectories to the safety threshold, enabling the model to learn diverse behaviors across the entire safe region under a fixed boundary token.
 
 **Core Idea**: CTG Realignment converts sparse "boundary supervision" into dense "region supervision," allowing the model to learn from all behaviors within the safe region rather than only from the rare trajectories whose cost exactly equals the threshold.
 

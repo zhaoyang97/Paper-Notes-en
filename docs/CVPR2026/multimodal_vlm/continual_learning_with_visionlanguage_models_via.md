@@ -30,11 +30,11 @@ This paper proposes SeGP-CL, which constructs anchor samples at the semantic bou
 
 ### State of the Field
 
-**State of the Field**: Continual learning with VLMs (e.g., CLIP) is prone to catastrophic forgetting. The authors identify a key insight: the cross-modal geometric drift induced by forgetting is not uniformly distributed, but concentrates in "fragile neighborhoods" at the boundary between old and new semantics—where shared visual patterns are most susceptible to reinterpretation by new task text semantics. Using JSD to measure cross-modal distribution shift before and after incremental updates, the authors find that boundary regions exhibit significantly larger shifts than core regions. Existing methods either conservatively freeze parameters (L2P, DualPrompt) or apply reference-data distillation without sufficient targeting.
+**Background**: Continual learning with VLMs (e.g., CLIP) is prone to catastrophic forgetting. The authors identify a key insight: the cross-modal geometric drift induced by forgetting is not uniformly distributed, but concentrates in "fragile neighborhoods" at the boundary between old and new semantics—where shared visual patterns are most susceptible to reinterpretation by new task text semantics. Using JSD to measure cross-modal distribution shift before and after incremental updates, the authors find that boundary regions exhibit significantly larger shifts than core regions. Existing methods either conservatively freeze parameters (L2P, DualPrompt) or apply reference-data distillation without sufficient targeting.
 
 ### Limitations of Prior Work
 
-**Paper Goals**: How can the most fragile cross-modal semantic-geometric regions in VLM continual learning be precisely identified and preserved without access to old samples, while maintaining the stability of the text semantic reference coordinate system?
+**Goal**: How can the most fragile cross-modal semantic-geometric regions in VLM continual learning be precisely identified and preserved without access to old samples, while maintaining the stability of the text semantic reference coordinate system?
 
 ## Method
 

@@ -37,7 +37,7 @@ Concrete manifestations:
 - **Utility degradation**: InternVL2's performance on MM-Vet drops from 59.9% to 54.4% after adding Gaussian noise.
 - **Safety alignment collapse**: InternVL2's attack success rate on RealToxicityPrompts rises from 50.5% to 57.2% with only $\sigma=0.1$ Gaussian noise.
 
-**Root Cause**: Existing defense methods (e.g., VLGuard) focus solely on content-level safety data and overlook the fact that **noise perturbations alone can undermine safety alignment**. Although DiffPure can purify adversarial noise, it does not eliminate it entirely but instead converts it into a Gaussian distribution — which is naturally complementary to noise-augmented fine-tuning.
+**Key Challenge**: Existing defense methods (e.g., VLGuard) focus solely on content-level safety data and overlook the fact that **noise perturbations alone can undermine safety alignment**. Although DiffPure can purify adversarial noise, it does not eliminate it entirely but instead converts it into a Gaussian distribution — which is naturally complementary to noise-augmented fine-tuning.
 
 **Core Idea**: A **two-stage defense** — first immunize the VLM against Gaussian noise through noise-augmented safety fine-tuning, then leverage DiffPure to convert arbitrary adversarial perturbations into Gaussian-like noise, thereby defending against a broad spectrum of attacks.
 

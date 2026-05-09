@@ -29,15 +29,15 @@ This paper formally defines the novel task of estimating polarization components
 
 ## Background & Motivation
 
-**State of the Field**: Polarization images encode rich physical information inaccessible to standard RGB cameras — including birefringence, surface stress, roughness, and other material properties — making them valuable for CV tasks such as reflection separation, material classification, shadow removal, and 3D reconstruction. However, capturing polarization information requires specialized hardware (polarization cameras or rotating polarizers), which is costly and inconvenient.
+**Background**: Polarization images encode rich physical information inaccessible to standard RGB cameras — including birefringence, surface stress, roughness, and other material properties — making them valuable for CV tasks such as reflection separation, material classification, shadow removal, and 3D reconstruction. However, capturing polarization information requires specialized hardware (polarization cameras or rotating polarizers), which is costly and inconvenient.
 
 **Limitations of Prior Work**: The hardware barrier of polarization imaging severely restricts its widespread adoption. Existing polarization datasets are scarce, and no prior work has attempted to directly estimate polarization information from RGB images; this direction remains entirely unexplored.
 
-**Root Cause**: RGB images are ubiquitous but lack polarization information. The same RGB appearance may correspond to multiple polarization states, since RGB encodes only intensity and color, not the vectorial properties of light — making this estimation problem inherently ill-posed.
+**Key Challenge**: RGB images are ubiquitous but lack polarization information. The same RGB appearance may correspond to multiple polarization states, since RGB encodes only intensity and color, not the vectorial properties of light — making this estimation problem inherently ill-posed.
 
-**Paper Goals**: Can a neural network directly infer polarization Stokes components from RGB input? Which class of deep learning methods is better suited to this task? What is the performance gap between pretrained and from-scratch training?
+**Goal**: Can a neural network directly infer polarization Stokes components from RGB input? Which class of deep learning methods is better suited to this task? What is the performance gap between pretrained and from-scratch training?
 
-**Starting Point**: An RGB image corresponds to the total intensity component S₀ of the Stokes vector, which is physically related to S₁/S₂/S₃ through surface normals and material properties implicitly encoded in RGB. Pretrained models may have already learned visual priors relevant to polarization.
+**Key Insight**: An RGB image corresponds to the total intensity component S₀ of the Stokes vector, which is physically related to S₁/S₂/S₃ through surface normals and material properties implicitly encoded in RGB. Pretrained models may have already learned visual priors relevant to polarization.
 
 **Core Idea**: Formally define RGB-to-Polarization as a new task using Stokes parameters as a unified representation, and establish the first systematic benchmark for evaluating a diverse set of deep learning approaches.
 

@@ -27,15 +27,15 @@ content_hash: c4478ada88d5a1d1
 This work introduces SLAyiNG, the first explicitly annotated queer slang dataset, comprising 695 terms and nearly 200,000 usage instances. Inter-annotator agreement experiments (Krippendorff's $\alpha = 0.746$) demonstrate that reasoning models can serve as pre-screening tools but community-driven expert annotation remains indispensable.
 
 ## Background & Motivation
-**State of the Field**: LLM comprehension of slang is critical for user-facing applications. Prior work has established benchmarks for general slang detection and recognition (e.g., Mei et al. 2024; Sun et al. 2024), but queer slang has not received dedicated attention.
+**Background**: LLM comprehension of slang is critical for user-facing applications. Prior work has established benchmarks for general slang detection and recognition (e.g., Mei et al. 2024; Sun et al. 2024), but queer slang has not received dedicated attention.
 
 **Limitations of Prior Work**: Queer slang is severely underrepresented in LLM pre-training data, leading to two concrete problems: (1) queer slang is frequently misclassified as hate speech (e.g., "cunt" carries positive connotations in queer contexts); (2) prompts containing queer slang elicit more negative responses from LLMs.
 
-**Root Cause**: The absence of high-quality annotated benchmark datasets prevents systematic evaluation of queer slang detection and processing. Many terms (e.g., "mother," "read") possess non-queer senses, making sense disambiguation the primary annotation challenge.
+**Key Challenge**: The absence of high-quality annotated benchmark datasets prevents systematic evaluation of queer slang detection and processing. Many terms (e.g., "mother," "read") possess non-queer senses, making sense disambiguation the primary annotation challenge.
 
-**Paper Goals**: (1) Construct the first annotated dataset with explicit queer slang coverage; (2) evaluate the feasibility and limitations of state-of-the-art reasoning models as annotation tools.
+**Goal**: (1) Construct the first annotated dataset with explicit queer slang coverage; (2) evaluate the feasibility and limitations of state-of-the-art reasoning models as annotation tools.
 
-**Starting Point**: The work draws on queer linguistics, integrating multiple online resources (ontologies, Wiktionary, glossaries) to collect authentic usage instances and design a multi-stage human–machine collaborative annotation pipeline.
+**Key Insight**: The work draws on queer linguistics, integrating multiple online resources (ontologies, Wiktionary, glossaries) to collect authentic usage instances and design a multi-stage human–machine collaborative annotation pipeline.
 
 **Core Idea**: A pipeline combining multi-source crawling, LLM pre-screening, and community annotation to build the first queer slang sense disambiguation dataset.
 

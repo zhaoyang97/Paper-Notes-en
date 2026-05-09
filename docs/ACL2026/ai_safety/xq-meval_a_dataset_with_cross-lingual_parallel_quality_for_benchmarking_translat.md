@@ -29,15 +29,15 @@ This paper constructs XQ-MEval, the first translation evaluation benchmark with 
 
 ## Background & Motivation
 
-**State of the Field**: Evaluation of multilingual translation systems typically relies on automatic metrics (COMET, MetricX, etc.), with the standard practice of averaging metric scores across language directions as the system-level score. MQM human evaluation achieves cross-lingual comparability through standardized error categories and hierarchical penalty scoring.
+**Background**: Evaluation of multilingual translation systems typically relies on automatic metrics (COMET, MetricX, etc.), with the standard practice of averaging metric scores across language directions as the system-level score. MQM human evaluation achieves cross-lingual comparability through standardized error categories and hierarchical penalty scoring.
 
 **Limitations of Prior Work**: The averaging strategy implicitly assumes that different languages score on the same scale for similar errors, but in practice metrics may exhibit cross-lingual scoring bias — translations of the same quality receive different scores in different languages. For example, translations with the same major error receive significantly different COMET scores across languages.
 
-**Root Cause**: No benchmark dataset provides cross-lingual parallel quality instances, making it impossible to systematically quantify and verify scoring bias. Expert annotation costs are extremely high, limiting language coverage.
+**Key Challenge**: No benchmark dataset provides cross-lingual parallel quality instances, making it impossible to systematically quantify and verify scoring bias. Expert annotation costs are extremely high, limiting language coverage.
 
-**Paper Goals**: (1) Construct a cross-lingual parallel quality benchmark; (2) quantify cross-lingual scoring bias; (3) propose calibration strategies to improve fairness in multilingual evaluation.
+**Goal**: (1) Construct a cross-lingual parallel quality benchmark; (2) quantify cross-lingual scoring bias; (3) propose calibration strategies to improve fairness in multilingual evaluation.
 
-**Starting Point**: Automatically inject MQM-defined errors into high-quality reference translations, generating pseudo-translations with controllable quality through controlling error quantity, with native speaker filtering to ensure reliability.
+**Key Insight**: Automatically inject MQM-defined errors into high-quality reference translations, generating pseudo-translations with controllable quality through controlling error quantity, with native speaker filtering to ensure reliability.
 
 **Core Idea**: By injecting a controllable number of MQM errors into Flores high-quality translations, construct cross-lingual quality-parallel triplets (source, pseudo-translation, reference) so that cross-lingual comparisons are grounded in identical errors.
 

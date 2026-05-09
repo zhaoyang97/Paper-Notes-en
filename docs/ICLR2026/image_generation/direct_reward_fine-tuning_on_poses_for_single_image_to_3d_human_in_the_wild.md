@@ -28,13 +28,13 @@ This paper proposes DrPose, which applies direct reward fine-tuning to maximize 
 
 ## Background & Motivation
 
-**State of the Field**: Multi-view diffusion-based single-view 3D human reconstruction has become the dominant paradigm (e.g., PSHuman, Era3D), following the pipeline: single image → multi-view diffusion generation → explicit/implicit 3D reconstruction. The strong priors of diffusion models make them far superior to early PIFu-based methods in recovering texture details in occluded regions.
+**Background**: Multi-view diffusion-based single-view 3D human reconstruction has become the dominant paradigm (e.g., PSHuman, Era3D), following the pipeline: single image → multi-view diffusion generation → explicit/implicit 3D reconstruction. The strong priors of diffusion models make them far superior to early PIFu-based methods in recovering texture details in occluded regions.
 
 **Limitations of Prior Work**: When input images contain dynamic or highly challenging poses (e.g., breakdancing, acrobatics, extreme sports), multi-view diffusion models tend to generate images with severely unnatural human poses. The root cause is that available 3D human training datasets are small and narrowly distributed in pose space (THuman2.1 contains only 2,445 poses; CustomHumans contains only 647), lacking coverage of extreme poses.
 
-**Root Cause**: Collecting 3D human scan datasets is prohibitively expensive (requiring multi-view capture rigs, subject recruitment, and privacy considerations), making large-scale expansion difficult. In contrast, human motion capture data (e.g., the AIST subset of Motion-X) provides rich and diverse 3D pose sequences. However, a modality gap exists between the two: motion data contains only pose parameters, with no corresponding multi-view images.
+**Key Challenge**: Collecting 3D human scan datasets is prohibitively expensive (requiring multi-view capture rigs, subject recruitment, and privacy considerations), making large-scale expansion difficult. In contrast, human motion capture data (e.g., the AIST subset of Motion-X) provides rich and diverse 3D pose sequences. However, a modality gap exists between the two: motion data contains only pose parameters, with no corresponding multi-view images.
 
-**Starting Point**: Rather than relying on expensive 3D human assets, this work leverages motion datasets as pose supervision signals and aligns multi-view diffusion models via direct reward fine-tuning. The key contribution is a differentiable PoseScore reward function that quantifies the consistency between generated multi-view latent images and ground-truth 3D poses.
+**Key Insight**: Rather than relying on expensive 3D human assets, this work leverages motion datasets as pose supervision signals and aligns multi-view diffusion models via direct reward fine-tuning. The key contribution is a differentiable PoseScore reward function that quantifies the consistency between generated multi-view latent images and ground-truth 3D poses.
 
 **Core Idea**: By combining pose supervision from motion datasets with differentiable reward fine-tuning, the multi-view diffusion model learns to generate pose-accurate multi-view images even under challenging pose conditions.
 

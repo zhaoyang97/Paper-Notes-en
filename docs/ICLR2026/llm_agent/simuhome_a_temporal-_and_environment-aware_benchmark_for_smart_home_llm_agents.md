@@ -26,7 +26,7 @@ content_hash: 5134d621045958de
 This paper proposes SimuHome, a time-accelerated smart home simulator based on the Matter protocol along with a 600-episode benchmark. It is the first benchmark to simulate the continuous effects of device operations on environmental variables and to evaluate workflow scheduling capabilities. Results reveal that workflow scheduling remains the most challenging frontier for current LLM agents, including GPT-5.1.
 
 ## Background & Motivation
-**State of the Field**: Smart home agents (e.g., Amazon Alexa, Google Home) are among the earliest large-scale commercial tool agents, yet many everyday home requests still exceed their capabilities. Recent research leverages LLMs to build more capable smart home agents that must handle tasks ranging from simple commands to complex temporal coordination.
+**Background**: Smart home agents (e.g., Amazon Alexa, Google Home) are among the earliest large-scale commercial tool agents, yet many everyday home requests still exceed their capabilities. Recent research leverages LLMs to build more capable smart home agents that must handle tasks ranging from simple commands to complex temporal coordination.
 
 **Limitations of Prior Work**:
    - **No simulation of environmental dynamics**: Benchmarks such as HomeBench, Sasha, and SAGE do not simulate how device operations continuously affect environmental variables (e.g., temperature, humidity). Setting an air conditioner to 25°C does not instantly change the temperature—it decreases gradually, and agents need to observe this process.
@@ -34,11 +34,11 @@ This paper proposes SimuHome, a time-accelerated smart home simulator based on t
    - **No support for temporal scheduling evaluation**: Tasks such as "turn on the kitchen light after the dishwasher finishes" require querying remaining time, computing completion moments, and registering timed tasks—capabilities no existing benchmark evaluates.
    - **Static data is insufficient**: A single user request may admit multiple valid action sequences, which fixed annotations cannot cover. Agents need to operate in an interactive environment and verify outcomes.
 
-**Root Cause**: LLM agents need to perform complex temporal reasoning in dynamic, physically constrained environments, yet no suitable simulator or benchmark exists to train and evaluate such capabilities.
+**Key Challenge**: LLM agents need to perform complex temporal reasoning in dynamic, physically constrained environments, yet no suitable simulator or benchmark exists to train and evaluate such capabilities.
 
-**Paper Goals**: To construct a high-fidelity, interactive, time-accelerated smart home simulator and a systematic benchmark covering 6 query types (with feasible/infeasible variants).
+**Goal**: To construct a high-fidelity, interactive, time-accelerated smart home simulator and a systematic benchmark covering 6 query types (with feasible/infeasible variants).
 
-**Starting Point**: Device behavior is modeled based on the Matter protocol (the global smart home communication standard), ensuring that operational constraints in the simulator are consistent with real physical devices and enabling sim-to-real transfer.
+**Key Insight**: Device behavior is modeled based on the Matter protocol (the global smart home communication standard), ensuring that operational constraints in the simulator are consistent with real physical devices and enabling sim-to-real transfer.
 
 **Core Idea**: Matter protocol + tick-based deterministic environment simulation + time acceleration + 6 query types × feasible/infeasible variants = comprehensive evaluation of LLM agent capabilities in realistic smart home scenarios.
 

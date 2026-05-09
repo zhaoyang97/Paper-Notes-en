@@ -27,15 +27,15 @@ content_hash: cb0e70b6af1381e6
 BoltzNCE trains an Energy-Based Model (EBM) via a hybrid Score Matching + InfoNCE objective to approximate the likelihood of a Boltzmann Generator, eliminating expensive Jacobian trace computations. On alanine dipeptide conformation generation, it achieves a 100× inference speedup with a free energy error of only 0.02 $k_BT$.
 
 ## Background & Motivation
-**State of the Field**: Boltzmann Generators (BGs) are deep generative models designed to sample from Boltzmann distributions $p(x) \propto \exp(-E(x)/k_BT)$ defined by an energy function $E(x)$. Normalizing flow- and diffusion-based approaches can generate samples, but computing likelihoods requires expensive Jacobian determinants or trace estimation.
+**Background**: Boltzmann Generators (BGs) are deep generative models designed to sample from Boltzmann distributions $p(x) \propto \exp(-E(x)/k_BT)$ defined by an energy function $E(x)$. Normalizing flow- and diffusion-based approaches can generate samples, but computing likelihoods requires expensive Jacobian determinants or trace estimation.
 
 **Limitations of Prior Work**: Exact likelihood computation (e.g., the Hutchinson estimator for trace) is prohibitively slow at inference time — equivariant CNFs require 9.37 hours for alanine dipeptide — creating a bottleneck for applying BGs to free energy calculations and importance sampling.
 
-**Root Cause**: High sampling quality requires accurate flow/diffusion models, yet likelihood evaluation cost is independent of sampling quality: even when sampling is good, each likelihood evaluation remains expensive.
+**Key Challenge**: High sampling quality requires accurate flow/diffusion models, yet likelihood evaluation cost is independent of sampling quality: even when sampling is good, each likelihood evaluation remains expensive.
 
-**Paper Goals**: Decouple sampler quality from likelihood tractability by training a separate EBM to approximate the likelihood, thereby avoiding Jacobian computation entirely.
+**Goal**: Decouple sampler quality from likelihood tractability by training a separate EBM to approximate the likelihood, thereby avoiding Jacobian computation entirely.
 
-**Starting Point**: Decompose the BG pipeline into two stages — first train a Boltzmann Emulator via flow matching, then train an EBM to approximate its density using NCE combined with score matching.
+**Key Insight**: Decompose the BG pipeline into two stages — first train a Boltzmann Emulator via flow matching, then train an EBM to approximate its density using NCE combined with score matching.
 
 **Core Idea**: Use NCE-trained EBMs as fast likelihood surrogates for Boltzmann Generators, achieving a 100× inference speedup.
 

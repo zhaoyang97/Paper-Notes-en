@@ -28,14 +28,14 @@ Uni-DPO is proposed to unify dynamic reweighting of preference pairs via three c
 
 ## Background & Motivation
 
-**State of the Field**: DPO optimizes policies directly from preference data via implicit rewards, and has become a standard approach for LLM alignment. SimPO further simplifies this by removing the reference model.
+**Background**: DPO optimizes policies directly from preference data via implicit rewards, and has become a standard approach for LLM alignment. SimPO further simplifies this by removing the reference model.
 
 **Limitations of Prior Work**:
    - Standard DPO treats all preference pairs equally, despite large variance in data quality — high-quality pairs exhibit clear chosen/rejected distinctions, while low-quality pairs are noisy or ambiguous.
    - A mismatch exists between data quality and model learning state: high-quality pairs may already be well-learned, and over-emphasizing them leads to overfitting.
    - DPO lacks fine-grained external reward signals (unlike PPO/GRPO).
 
-**Root Cause**: How to dynamically reweight preference pairs by jointly considering both the intrinsic quality of data and the model's current learning state?
+**Key Challenge**: How to dynamically reweight preference pairs by jointly considering both the intrinsic quality of data and the model's current learning state?
 
 **Core Idea**: Quality weights differentiate high- and low-quality data; performance weights focus on hard samples; calibrated NLL loss prevents the probability of chosen responses from degrading.
 

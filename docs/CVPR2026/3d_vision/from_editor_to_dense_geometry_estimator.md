@@ -28,15 +28,15 @@ This paper systematically analyzes the fine-tuning behavior of image editing mod
 
 ## Background & Motivation
 
-1. **State of the Field**: Monocular dense geometry estimation (depth and normals) is a core task in 3D vision. Recent methods such as Marigold leverage pretrained generative priors from Stable Diffusion to achieve impressive zero-shot predictions with limited data. Another line of work, represented by the DepthAnything series, follows a data-driven approach, training general-purpose estimators on large-scale data (62.6M images).
+1. **Background**: Monocular dense geometry estimation (depth and normals) is a core task in 3D vision. Recent methods such as Marigold leverage pretrained generative priors from Stable Diffusion to achieve impressive zero-shot predictions with limited data. Another line of work, represented by the DepthAnything series, follows a data-driven approach, training general-purpose estimators on large-scale data (62.6M images).
 
 2. **Limitations of Prior Work**: Text-to-image generative models are designed to synthesize images from text; their internal features do not naturally align with geometric structure. Fine-tuning such models requires restructuring features from scratch, leading to unstable training and performance bottlenecks. Data-driven methods, while effective, are limited in generalizability due to their reliance on large-scale annotated data.
 
-3. **Root Cause**: Dense geometry estimation is inherently an image-to-image task, yet existing methods fine-tune T2I generative models — a fundamental mismatch between task paradigm and model paradigm.
+3. **Key Challenge**: Dense geometry estimation is inherently an image-to-image task, yet existing methods fine-tune T2I generative models — a fundamental mismatch between task paradigm and model paradigm.
 
-4. **Paper Goals**: (1) Verify whether image editing models are better suited than generative models for dense geometry estimation; (2) Address training objective, numerical precision, and computational efficiency issues encountered when adapting editing models into deterministic predictors.
+4. **Goal**: (1) Verify whether image editing models are better suited than generative models for dense geometry estimation; (2) Address training objective, numerical precision, and computational efficiency issues encountered when adapting editing models into deterministic predictors.
 
-5. **Starting Point**: The authors are motivated by the intuition that image editing models inherently understand the structure of input images while retaining the capabilities of generative models, making them more suitable for dense prediction than T2I models. This hypothesis is validated through systematic analysis of feature evolution and training dynamics.
+5. **Key Insight**: The authors are motivated by the intuition that image editing models inherently understand the structure of input images while retaining the capabilities of generative models, making them more suitable for dense prediction than T2I models. This hypothesis is validated through systematic analysis of feature evolution and training dynamics.
 
 6. **Core Idea**: Replace generative models with image editing models as the backbone for dense geometry estimation, and adapt the editor into an estimator via three technical contributions: consistent velocity flow matching, logarithmic quantization, and zero-cost joint estimation.
 

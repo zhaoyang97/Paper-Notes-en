@@ -28,15 +28,15 @@ This paper proposes QZO, a method that estimates gradients via zeroth-order pert
 
 ## Background & Motivation
 
-**State of the Field**: Fine-tuning LLMs requires storing weights, gradients, optimizer states, and activations — a typical 7B model demands 56 GB. Existing approaches compress individual components: LoRA reduces trainable parameters, GaLore compresses optimizer states, and MeZO eliminates gradient storage via zeroth-order optimization.
+**Background**: Fine-tuning LLMs requires storing weights, gradients, optimizer states, and activations — a typical 7B model demands 56 GB. Existing approaches compress individual components: LoRA reduces trainable parameters, GaLore compresses optimizer states, and MeZO eliminates gradient storage via zeroth-order optimization.
 
 **Limitations of Prior Work**: These methods address only part of the memory problem. Weights themselves remain a significant bottleneck — a 7B model in bfloat16 requires 14 GB — and even with MeZO eliminating gradients, 14 GB must still be allocated for weights. The most direct remedy is weight quantization (e.g., int4 requires only ~3.5 GB), but quantized weights are discrete and cannot be directly perturbed in zeroth-order schemes.
 
-**Root Cause**: Zeroth-order optimization requires perturbations in a continuous space, yet quantized weights are discrete; the estimated gradients are continuous and thus cannot directly update discrete weights without a dequantize–requantize cycle.
+**Key Challenge**: Zeroth-order optimization requires perturbations in a continuous space, yet quantized weights are discrete; the estimated gradients are continuous and thus cannot directly update discrete weights without a dequantize–requantize cycle.
 
-**Paper Goals**: Enable zeroth-order optimization on quantized models while maximizing memory compression across weights, gradients, and optimizer states simultaneously.
+**Goal**: Enable zeroth-order optimization on quantized models while maximizing memory compression across weights, gradients, and optimizer states simultaneously.
 
-**Starting Point**: Quantization can be expressed as $w = \Delta \cdot \bar{w}$, where $\Delta$ is a continuous scaling factor and $\bar{w}$ is a discrete integer. Perturbations can be applied to the continuous $\Delta$ while keeping $\bar{w}$ fixed.
+**Key Insight**: Quantization can be expressed as $w = \Delta \cdot \bar{w}$, where $\Delta$ is a continuous scaling factor and $\bar{w}$ is a discrete integer. Perturbations can be applied to the continuous $\Delta$ while keeping $\bar{w}$ fixed.
 
 **Core Idea**: Perturb continuous quantization scaling factors for zeroth-order gradient estimation, and control gradient variance via directional derivative clipping.
 

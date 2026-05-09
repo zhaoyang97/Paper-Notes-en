@@ -29,15 +29,15 @@ This paper presents PlanetAlign, a PyTorch-based network alignment benchmark lib
 
 ## Background & Motivation
 
-**State of the Field**: Network Alignment (NA) aims to discover node correspondences across different networks, serving as a critical foundation for downstream tasks such as cross-social-network user matching, protein homology discovery, knowledge graph fusion, and fraud detection. The field has developed three major categories of methods: consistency-based (e.g., IsoRank, FINAL), embedding-based (e.g., REGAL, BRIGHT), and optimal transport-based (e.g., PARROT, JOENA). However, systematic comparisons among these methods have been largely absent.
+**Background**: Network Alignment (NA) aims to discover node correspondences across different networks, serving as a critical foundation for downstream tasks such as cross-social-network user matching, protein homology discovery, knowledge graph fusion, and fraud detection. The field has developed three major categories of methods: consistency-based (e.g., IsoRank, FINAL), embedding-based (e.g., REGAL, BRIGHT), and optimal transport-based (e.g., PARROT, JOENA). However, systematic comparisons among these methods have been largely absent.
 
 **Limitations of Prior Work**: The five existing NA benchmarks/libraries (SGAPBSA, CAPABN, ASNets, NAB, OpenEA) all exhibit notable limitations: (1) datasets are confined to a single domain—SGAPBSA and CAPABN cover only biological networks, ASNets only social networks, and OpenEA only knowledge graphs; (2) method coverage is incomplete—none of the existing libraries includes the latest and best-performing OT-based methods; (3) evaluation dimensions are narrow—most assess only effectiveness while ignoring scalability and robustness, and inconsistent dataset splitting strategies hinder reproducibility.
 
-**Root Cause**: While the repertoire of NA methods has grown rapidly, the evaluation infrastructure has lagged far behind. Researchers report results under heterogeneous datasets, splitting strategies, and metrics, making fair performance comparisons impossible and impeding research progress.
+**Key Challenge**: While the repertoire of NA methods has grown rapidly, the evaluation infrastructure has lagged far behind. Researchers report results under heterogeneous datasets, splitting strategies, and metrics, making fair performance comparisons impossible and impeding research progress.
 
-**Paper Goals**: To construct a comprehensive, unified, and user-friendly NA benchmark library covering multi-domain datasets, multi-category methods, and multi-dimensional evaluation.
+**Goal**: To construct a comprehensive, unified, and user-friendly NA benchmark library covering multi-domain datasets, multi-category methods, and multi-dimensional evaluation.
 
-**Starting Point**: Drawing inspiration from successful benchmark library designs in CV/NLP (e.g., MMDetection, HuggingFace), this work addresses the fragmented evaluation landscape in NA research through unified API design, standardized data splitting, and reproducible evaluation pipelines.
+**Key Insight**: Drawing inspiration from successful benchmark library designs in CV/NLP (e.g., MMDetection, HuggingFace), this work addresses the fragmented evaluation landscape in NA research through unified API design, standardized data splitting, and reproducible evaluation pipelines.
 
 **Core Idea**: By constructing PlanetAlign—a unified benchmark library spanning 6 domains and 3 method categories—this work enables, for the first time, systematic and fair comparison of NA methods across four dimensions: effectiveness, scalability, robustness, and supervision sensitivity.
 

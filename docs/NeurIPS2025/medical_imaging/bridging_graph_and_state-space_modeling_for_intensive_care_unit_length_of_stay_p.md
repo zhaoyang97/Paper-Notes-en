@@ -28,15 +28,15 @@ This paper proposes S2G-Net, a dual-branch architecture that integrates Mamba st
 
 ## Background & Motivation
 
-**State of the Field**: ICU LOS prediction is critical for hospital resource allocation. Existing approaches fall into two categories: temporal models (LSTM, Transformer) that capture individual patient trajectories, and graph models (GCN, GAT) that capture inter-patient relationships.
+**Background**: ICU LOS prediction is critical for hospital resource allocation. Existing approaches fall into two categories: temporal models (LSTM, Transformer) that capture individual patient trajectories, and graph models (GCN, GAT) that capture inter-patient relationships.
 
 **Limitations of Prior Work**: Pure temporal models neglect clinical similarity between patients; pure graph models rely on single-view static graphs and cannot model multimodal heterogeneous clinical features; Transformer-based graph backbones (e.g., GraphGPS) suffer from quadratic complexity that hinders scaling to large clinical datasets.
 
-**Root Cause**: ICU data simultaneously exhibits long-range irregular temporal dependencies and multimodal inter-patient relationships, yet no unified modeling framework exists to address both.
+**Key Challenge**: ICU data simultaneously exhibits long-range irregular temporal dependencies and multimodal inter-patient relationships, yet no unified modeling framework exists to address both.
 
-**Paper Goals**: To simultaneously capture temporal dynamics and population-level relational structure within a single end-to-end framework while preserving computational efficiency and interpretability.
+**Goal**: To simultaneously capture temporal dynamics and population-level relational structure within a single end-to-end framework while preserving computational efficiency and interpretability.
 
-**Starting Point**: Mamba SSM processes long sequences in linear time and is complementary to multi-view GraphGPS — the former models patient state evolution along the time axis, while the latter models patient similarity across diagnostic, semantic, and administrative dimensions.
+**Key Insight**: Mamba SSM processes long sequences in linear time and is complementary to multi-view GraphGPS — the former models patient state evolution along the time axis, while the latter models patient similarity across diagnostic, semantic, and administrative dimensions.
 
 **Core Idea**: Dual-branch architecture + multi-view graph construction + replacing the Transformer global layer in GraphGPS with an SSM.
 

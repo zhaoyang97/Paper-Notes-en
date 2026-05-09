@@ -30,13 +30,13 @@ This work is the first to apply Sparse Autoencoders (SAEs) to a time series foun
 
 ## Background & Motivation
 
-**State of the Field**: Time series foundation models such as Chronos-T5, TimesFM, MOMENT, and Moirai demonstrate strong zero-shot forecasting performance, yet their internal representations have never been examined at the mechanistic level.
+**Background**: Time series foundation models such as Chronos-T5, TimesFM, MOMENT, and Moirai demonstrate strong zero-shot forecasting performance, yet their internal representations have never been examined at the mechanistic level.
 
 **Limitations of Prior Work**: SAEs have been successfully applied in NLP to decompose dense, superposed activations of language models into interpretable features (Bricken et al., 2023; Templeton et al., 2024), and circuit analysis has identified interpretable computational subgraphs. In contrast, time series interpretability research remains confined to post-hoc methods such as saliency maps, perturbation-based explanations, counterfactual approaches, and concept-based frameworks; only Kalnāre et al. (2025) conducted a preliminary mechanistic analysis on small classifiers, and no prior work has examined foundation models.
 
-**Root Cause**: The T5 architecture underlying Chronos is mature, SAE training protocols are well-established, and Chronos's discrete tokenization (4,096 bins) provides a natural unit of analysis—yet mechanistic interpretability tools have not been applied in this domain.
+**Key Challenge**: The T5 architecture underlying Chronos is mature, SAE training protocols are well-established, and Chronos's discrete tokenization (4,096 bins) provides a natural unit of analysis—yet mechanistic interpretability tools have not been applied in this domain.
 
-**Paper Goals**: This paper investigates whether SAE-learned features are causally relevant, whether a hierarchical structure exists across layers, and whether semantic richness is consistent with causal importance.
+**Goal**: This paper investigates whether SAE-learned features are causally relevant, whether a hierarchical structure exists across layers, and whether semantic richness is consistent with causal importance.
 
 ## Method
 

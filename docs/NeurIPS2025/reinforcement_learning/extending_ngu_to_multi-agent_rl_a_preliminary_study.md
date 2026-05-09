@@ -28,15 +28,15 @@ This paper extends the single-agent NGU (Never Give Up) algorithm to multi-agent
 
 ## Background & Motivation
 
-**State of the Field**: Reinforcement learning has achieved remarkable success on benchmarks such as Atari, yet methods like DQN perform poorly in sparse-reward environments (e.g., Montezuma's Revenge) due to insufficient exploration. The NGU algorithm addresses this by combining episodic novelty with intrinsic motivation, achieving state-of-the-art performance on single-agent sparse-reward tasks.
+**Background**: Reinforcement learning has achieved remarkable success on benchmarks such as Atari, yet methods like DQN perform poorly in sparse-reward environments (e.g., Montezuma's Revenge) due to insufficient exploration. The NGU algorithm addresses this by combining episodic novelty with intrinsic motivation, achieving state-of-the-art performance on single-agent sparse-reward tasks.
 
 **Limitations of Prior Work**: The sparse-reward problem is even more severe in multi-agent reinforcement learning (MARL), where agents must additionally contend with credit assignment, environmental non-stationarity, and coordinated exploration. Existing MARL exploration methods (e.g., EMC, MACE) typically introduce additional architectural complexity and computational overhead.
 
-**Root Cause**: Although sophisticated exploration mechanisms are effective in MARL, they generalize poorly, while the simpler and more powerful NGU framework has not been systematically adapted to multi-agent settings.
+**Key Challenge**: Although sophisticated exploration mechanisms are effective in MARL, they generalize poorly, while the simpler and more powerful NGU framework has not been systematically adapted to multi-agent settings.
 
-**Paper Goals**: Can the core exploration mechanisms of NGU be directly extended to MARL? How do three design choices—shared experience, shared novelty, and heterogeneous exploration parameters—affect performance?
+**Goal**: Can the core exploration mechanisms of NGU be directly extended to MARL? How do three design choices—shared experience, shared novelty, and heterogeneous exploration parameters—affect performance?
 
-**Starting Point**: The paper retains NGU's core components (embedding network, inverse dynamics model, episodic memory) while removing RND and UVFA to reduce computational cost, and directly evaluates the resulting approach in a MARL environment.
+**Key Insight**: The paper retains NGU's core components (embedding network, inverse dynamics model, episodic memory) while removing RND and UVFA to reduce computational cost, and directly evaluates the resulting approach in a MARL environment.
 
 **Core Idea**: Through ablation of three key design dimensions, the paper demonstrates that NGU combined with a shared replay buffer constitutes the most effective multi-agent exploration configuration.
 

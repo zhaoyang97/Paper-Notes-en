@@ -29,11 +29,11 @@ This paper proposes reMARL, a framework that leverages domain knowledge from ima
 
 ## Background & Motivation
 
-1. **State of the Field**: UAV swarm collision avoidance requires both safety and energy efficiency. Traditional approaches include Velocity Obstacle (VO), Artificial Potential Field (APF), and metaheuristic optimization. MARL methods such as COMA, VDN, and QMIX have also been widely explored in recent years.
+1. **Background**: UAV swarm collision avoidance requires both safety and energy efficiency. Traditional approaches include Velocity Obstacle (VO), Artificial Potential Field (APF), and metaheuristic optimization. MARL methods such as COMA, VDN, and QMIX have also been widely explored in recent years.
 2. **Limitations of Prior Work**: VO methods frequently alter velocity, leading to low energy efficiency; APF suffers from local optima; metaheuristic methods have excessively long reaction times unsuitable for real-time applications. Among MARL methods, observation-sharing schemes degrade in performance as swarm size grows, while credit assignment schemes (IGM assumption in VDN/QMIX) cause unbounded divergence and unpredictable behavior.
-3. **Root Cause**: How to achieve efficient cooperative collision avoidance for large-scale UAV swarms without relying on complex credit assignment or observation-sharing mechanisms.
-4. **Paper Goals**: To design a MARL framework scalable to large swarms, eliminating dependence on complex network architectures through domain-knowledge-driven reward functions.
-5. **Starting Point**: Inspired by the active contour model in image processing, the environment is modeled as a 2D potential field, and reward functions are designed to guide UAVs to fly along contour lines.
+3. **Key Challenge**: How to achieve efficient cooperative collision avoidance for large-scale UAV swarms without relying on complex credit assignment or observation-sharing mechanisms.
+4. **Goal**: To design a MARL framework scalable to large swarms, eliminating dependence on complex network architectures through domain-knowledge-driven reward functions.
+5. **Key Insight**: Inspired by the active contour model in image processing, the environment is modeled as a 2D potential field, and reward functions are designed to guide UAVs to fly along contour lines.
 6. **Core Idea**: The contour extraction concept from image processing is adopted to design MARL reward functions, allowing cooperative behavior to emerge naturally from individual reward maximization.
 
 ## Method

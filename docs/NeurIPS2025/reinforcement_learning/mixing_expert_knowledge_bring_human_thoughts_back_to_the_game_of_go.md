@@ -28,15 +28,15 @@ This paper proposes LoGos, which applies mixed-domain expert data (Go) and gener
 
 ## Background & Motivation
 
-**State of the Field**: Specialized AI systems such as AlphaGo/AlphaZero have long surpassed human performance in Go, yet general-purpose large language models (LLMs) perform extremely poorly on Go tasks, often falling below the level of amateur beginners.
+**Background**: Specialized AI systems such as AlphaGo/AlphaZero have long surpassed human performance in Go, yet general-purpose large language models (LLMs) perform extremely poorly on Go tasks, often falling below the level of amateur beginners.
 
 **Limitations of Prior Work**: Professional domains such as Go lack large-scale natural-language reasoning corpora (unlike mathematics or programming, which offer abundant human reasoning traces), making direct distillation or pretraining approaches largely ineffective.
 
-**Root Cause**: General-purpose LLMs possess strong reasoning and generalization abilities but lack domain-specific expertise, whereas specialized systems (e.g., KataGo) are highly capable yet can only produce structured predictions without natural-language reasoning.
+**Key Challenge**: General-purpose LLMs possess strong reasoning and generalization abilities but lack domain-specific expertise, whereas specialized systems (e.g., KataGo) are highly capable yet can only produce structured predictions without natural-language reasoning.
 
-**Paper Goals**: The paper investigates how to instill expert-level capabilities in domains such as Go into general-purpose LLMs while preserving their general reasoning ability.
+**Goal**: The paper investigates how to instill expert-level capabilities in domains such as Go into general-purpose LLMs while preserving their general reasoning ability.
 
-**Starting Point**: The approach leverages the large volume of existing structured Go data (game records annotated by KataGo), constructs synthetic training data via heuristic rules, and subsequently aligns reasoning with domain knowledge through RL self-exploration.
+**Key Insight**: The approach leverages the large volume of existing structured Go data (game records annotated by KataGo), constructs synthetic training data via heuristic rules, and subsequently aligns reasoning with domain knowledge through RL self-exploration.
 
 **Core Idea**: Mix domain-expert synthetic data with general CoT data for cold-start initialization, then apply GRPO to enable the model to self-discover natural-language reasoning strategies for Go.
 

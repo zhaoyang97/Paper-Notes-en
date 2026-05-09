@@ -29,15 +29,15 @@ This paper proposes an NNMF+CNN+diffusion defense framework for brain tumor MRI 
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning has achieved high accuracy in brain tumor MRI classification, with CNN-based methods reaching 97%+ classification precision. However, these models operate directly in high-dimensional image space, incurring large parameter counts and limited interpretability.
+**Background**: Deep learning has achieved high accuracy in brain tumor MRI classification, with CNN-based methods reaching 97%+ classification precision. However, these models operate directly in high-dimensional image space, incurring large parameter counts and limited interpretability.
 
 **Limitations of Prior Work**: DNNs are highly sensitive to adversarial perturbations—imperceptible input modifications can cause drastic drops in classification accuracy. In safety-critical applications such as medical diagnosis, this fragility is unacceptable. Existing adversarial defenses (e.g., adversarial training, input transformations) typically operate in the raw image space, imposing high computational cost and potentially sacrificing clean accuracy.
 
-**Root Cause**: Adversarial perturbations in high-dimensional image space are difficult to filter effectively due to the large attack surface. Dimensionality-reduced representations such as PCA reduce dimensions but lack interpretability and non-negativity constraints, making them unsuitable for medical images whose pixel values are naturally non-negative.
+**Key Challenge**: Adversarial perturbations in high-dimensional image space are difficult to filter effectively due to the large attack surface. Dimensionality-reduced representations such as PCA reduce dimensions but lack interpretability and non-negativity constraints, making them unsuitable for medical images whose pixel values are naturally non-negative.
 
-**Paper Goals**: (1) How to obtain compact, interpretable, and medically appropriate feature representations? (2) How to implement effective adversarial defense in feature space rather than image space? (3) How to substantially improve robust accuracy without significant loss of clean accuracy?
+**Goal**: (1) How to obtain compact, interpretable, and medically appropriate feature representations? (2) How to implement effective adversarial defense in feature space rather than image space? (3) How to substantially improve robust accuracy without significant loss of clean accuracy?
 
-**Starting Point**: NNMF is naturally suited for parts-based decomposition of non-negative data, compressing MRI images into a small number of interpretable basis components. Applying diffusion-denoising defense in a low-dimensional feature space is more efficient than in the original image space—forward diffusion injects structured noise to overwhelm adversarial perturbations, and a learned denoiser then recovers clean features.
+**Key Insight**: NNMF is naturally suited for parts-based decomposition of non-negative data, compressing MRI images into a small number of interpretable basis components. Applying diffusion-denoising defense in a low-dimensional feature space is more efficient than in the original image space—forward diffusion injects structured noise to overwhelm adversarial perturbations, and a learned denoiser then recovers clean features.
 
 **Core Idea**: NNMF compresses MRI images into interpretable low-rank features, within which a diffusion noise-injection and denoising mechanism provides lightweight yet effective adversarial defense.
 

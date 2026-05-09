@@ -28,15 +28,15 @@ This paper proposes two complementary metrics, RPS and AGS, to quantify distilla
 
 ## Background & Motivation
 
-**State of the Field**: The LLM agent landscape is experiencing a Cambrian explosion, with a growing number of high-performance agents emerging from diverse sources. Despite their varied origins, these models exhibit strikingly consistent behaviors in reasoning steps, tool-calling habits, and even failure modes, suggesting that many may be "distillation echoes" of a small number of dominant teacher models.
+**Background**: The LLM agent landscape is experiencing a Cambrian explosion, with a growing number of high-performance agents emerging from diverse sources. Despite their varied origins, these models exhibit strikingly consistent behaviors in reasoning steps, tool-calling habits, and even failure modes, suggesting that many may be "distillation echoes" of a small number of dominant teacher models.
 
 **Limitations of Prior Work**: Existing similarity metrics focus primarily on response-level similarity in static dialogues and fail to capture the dynamic nature of multi-step tool-use trajectories. More critically, they do not distinguish between *necessary behaviors* (actions required for task success) and *unnecessary behaviors* (actions reflecting a model's autonomous preferences), causing similarity scores to be inflated by the shared correct paths imposed by the task itself.
 
-**Root Cause**: Without distinguishing necessary from unnecessary behaviors, it is impossible to determine whether two models converge because only one correct path exists, or because one model is blindly imitating the other's habits — a fundamental obstacle to quantifying distillation effects.
+**Key Challenge**: Without distinguishing necessary from unnecessary behaviors, it is impossible to determine whether two models converge because only one correct path exists, or because one model is blindly imitating the other's habits — a fundamental obstacle to quantifying distillation effects.
 
-**Paper Goals**: To design a systematic framework that isolates unnecessary behavioral patterns and quantifies distillation-induced behavioral homogenization between agents along two dimensions: linguistic expression and tool operation.
+**Goal**: To design a systematic framework that isolates unnecessary behavioral patterns and quantifies distillation-induced behavioral homogenization between agents along two dimensions: linguistic expression and tool operation.
 
-**Starting Point**: The authors observe that many agents perform redundant tool calls (e.g., exhaustively trying all available tools even when the answer is obvious). These unnecessary behavioral choices serve as "behavioral fingerprints" for identifying whether a model has been distilled.
+**Key Insight**: The authors observe that many agents perform redundant tool calls (e.g., exhaustively trying all available tools even when the answer is obvious). These unnecessary behavioral choices serve as "behavioral fingerprints" for identifying whether a model has been distilled.
 
 **Core Idea**: By decomposing agent trajectories into necessary and unnecessary behaviors, the framework captures behavioral inheritance signals along two dimensions using RPS (Response Pattern Similarity) for linguistic expression and AGS (Action Graph Similarity) for tool-operation patterns.
 

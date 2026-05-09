@@ -27,13 +27,13 @@ This paper proposes AdaSFormer, a serialized Transformer framework for indoor Mo
 
 ## Background & Motivation
 
-**State of the Field**: Monocular semantic scene completion predicts complete 3D voxel occupancy and semantic labels from a single RGB image. While outdoor (autonomous driving) scenarios have received extensive attention, indoor MSSC remains more challenging due to complex spatial layouts and severe occlusion.
+**Background**: Monocular semantic scene completion predicts complete 3D voxel occupancy and semantic labels from a single RGB image. While outdoor (autonomous driving) scenarios have received extensive attention, indoor MSSC remains more challenging due to complex spatial layouts and severe occlusion.
 
 **Limitations of Prior Work**: Existing indoor methods predominantly rely on CNN architectures — limited local receptive fields prevent modeling long-range dependencies, and 3D convolutional kernels incur cubically growing computational overhead. Although Transformers can model global context, their direct application to dense 3D voxels imposes prohibitive computational and memory costs.
 
-**Root Cause**: Indoor scenes require strong global context reasoning (inferring geometry and semantics in occluded regions), yet the $O(N^2)$ complexity of Transformers becomes infeasible at high-resolution 3D voxel scales.
+**Key Challenge**: Indoor scenes require strong global context reasoning (inferring geometry and semantics in occluded regions), yet the $O(N^2)$ complexity of Transformers becomes infeasible at high-resolution 3D voxel scales.
 
-**Starting Point**: Serialized Transformers convert irregular 3D data into ordered sequences, reducing complexity to $O(N \cdot G)$ via local grouping. However, existing methods employ fixed grouping schemes that constrain the receptive field.
+**Key Insight**: Serialized Transformers convert irregular 3D data into ordered sequences, reducing complexity to $O(N \cdot G)$ via local grouping. However, existing methods employ fixed grouping schemes that constrain the receptive field.
 
 **Core Idea**: Introducing learnable offsets to adaptively adjust serialization starting points, allowing different layers to obtain different receptive fields and thus more flexible spatial representations.
 

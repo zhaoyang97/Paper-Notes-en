@@ -26,15 +26,15 @@ content_hash: ae76ed5e6d16a7c4
 This paper proposes H2Memory, a four-layer hierarchical heterogeneous memory structure (Log Graphs / Background Memory / Topic Outlines / Principles), validated on the PAL-Set dataset (100 users × 8.4 months of interaction), improving BLEU-1 on demand paraphrasing and solution recommendation tasks from 13.59 to 26.67.
 
 ## Background & Motivation
-**State of the Field**: Personalized dialogue systems must retain users' long-term preferences and history. Existing methods (RecurSum, MemoryBank, etc.) primarily rely on simple summarization-based memory.
+**Background**: Personalized dialogue systems must retain users' long-term preferences and history. Existing methods (RecurSum, MemoryBank, etc.) primarily rely on simple summarization-based memory.
 
 **Limitations of Prior Work**: (a) User preferences emerge from fragmented logs rather than explicit statements; (b) a single memory structure cannot simultaneously handle information at different granularities; (c) long-term personalized dialogue datasets are lacking.
 
-**Root Cause**: A semantic gap exists between users' daily behavioral logs (fragmented, implicit) and dialogue-level demands (structured, explicit).
+**Key Challenge**: A semantic gap exists between users' daily behavioral logs (fragmented, implicit) and dialogue-level demands (structured, explicit).
 
-**Paper Goals**: Construct multi-granularity memory from users' long-term logs and conversation history to support personalized assistants in demand understanding and solution recommendation.
+**Goal**: Construct multi-granularity memory from users' long-term logs and conversation history to support personalized assistants in demand understanding and solution recommendation.
 
-**Starting Point**: Four memory layers progressively aggregate information from raw logs to abstract principles, retrieving user information at different granularities from each layer.
+**Key Insight**: Four memory layers progressively aggregate information from raw logs to abstract principles, retrieving user information at different granularities from each layer.
 
 **Core Idea**: A hierarchical heterogeneous memory structure (Log Graphs → Background → Topics → Principles) progressively abstracts fragmented user behavior into retrievable personalized knowledge.
 

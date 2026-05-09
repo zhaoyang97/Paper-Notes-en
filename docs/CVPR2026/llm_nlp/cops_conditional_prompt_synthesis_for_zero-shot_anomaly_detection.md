@@ -27,11 +27,11 @@ content_hash: 3a2c5165ad8ec4b3
 CoPS is a framework that dynamically generates prompts through two visual conditioning mechanisms — Explicit State Token Synthesis (ESTS) and Implicit Category Token Sampling (ICTS) — combined with Spatially-Aware Global-local Alignment (SAGA), achieving zero-shot anomaly detection SOTA across 13 industrial and medical datasets.
 
 ## Background & Motivation
-1. **State of the Field**: Large-scale pre-trained vision-language models demonstrate strong cross-category generalization for zero-shot anomaly detection (ZSAD). Existing methods achieve cross-category anomaly detection by fine-tuning on a single auxiliary dataset.
+1. **Background**: Large-scale pre-trained vision-language models demonstrate strong cross-category generalization for zero-shot anomaly detection (ZSAD). Existing methods achieve cross-category anomaly detection by fine-tuning on a single auxiliary dataset.
 2. **Limitations of Prior Work**: (i) Static learnable tokens fail to capture the continuous and diverse patterns of normal and anomalous states, limiting generalization to unseen categories; (ii) Fixed text labels provide overly sparse category information, causing the model to overfit to specific semantic subspaces.
-3. **Root Cause**: While prompt learning eliminates the need for manual prompt design, its static nature and sparsity become generalization bottlenecks — normal/anomalous states are continuously variable, and the category label space itself is highly sparse.
-4. **Paper Goals**: Design a visual feature-conditioned dynamic prompt synthesis framework enabling prompts to adaptively model the state and category information of input images.
-5. **Starting Point**: Decompose prompts into three parts — context words, state words, and category words — where context words can be shared while the latter two need to be dynamically generated based on visual features.
+3. **Key Challenge**: While prompt learning eliminates the need for manual prompt design, its static nature and sparsity become generalization bottlenecks — normal/anomalous states are continuously variable, and the category label space itself is highly sparse.
+4. **Goal**: Design a visual feature-conditioned dynamic prompt synthesis framework enabling prompts to adaptively model the state and category information of input images.
+5. **Key Insight**: Decompose prompts into three parts — context words, state words, and category words — where context words can be shared while the latter two need to be dynamically generated based on visual features.
 6. **Core Idea**: Inject normal/anomalous prototypes from local features into state words (explicit), sample from global features via VAE into category words (implicit), achieving visually-conditioned dynamic prompt synthesis.
 
 ## Method

@@ -28,15 +28,15 @@ This work reinterprets the softmax-normalized attention matrix as the transition
 
 ## Background & Motivation
 
-**State of the Field**: Attention analysis relies on direct operations — row selection (which tokens a token attends to), column selection (which tokens attend to a given token), and summation (global aggregation). These capture only first-order/direct attention effects.
+**Background**: Attention analysis relies on direct operations — row selection (which tokens a token attends to), column selection (which tokens attend to a given token), and summation (global aggregation). These capture only first-order/direct attention effects.
 
 **Limitations of Prior Work**: Analogous to PageRank's insight into web hyperlinks — direct link counting is inferior to propagation-based importance estimation. Attention also exhibits indirect influence paths: token A attends to B, and B attends to C, yet direct operations cannot reveal the indirect relationship A→C.
 
-**Root Cause**: Row and column operations on the attention matrix are first-order and neglect higher-order indirect paths. A mathematical framework is needed to unify direct and indirect attention effects.
+**Key Challenge**: Row and column operations on the attention matrix are first-order and neglect higher-order indirect paths. A mathematical framework is needed to unify direct and indirect attention effects.
 
-**Paper Goals**: To provide a Markov chain-based framework for attention analysis that captures multi-order indirect dependencies and global token importance.
+**Goal**: To provide a Markov chain-based framework for attention analysis that captures multi-order indirect dependencies and global token importance.
 
-**Starting Point**: The softmax-normalized attention matrix naturally satisfies the definition of a Markov chain transition probability matrix (non-negative entries, rows summing to one), enabling direct reuse of Markov chain and PageRank theoretical tools.
+**Key Insight**: The softmax-normalized attention matrix naturally satisfies the definition of a Markov chain transition probability matrix (non-negative entries, rows summing to one), enabling direct reuse of Markov chain and PageRank theoretical tools.
 
 **Core Idea**: Attention matrix = DTMC transition matrix → Multi-hop propagation = $k$-th matrix power → Stationary vector = TokenRank (analogous to PageRank) → $\lambda_2$-weighted mixture of multiple heads.
 

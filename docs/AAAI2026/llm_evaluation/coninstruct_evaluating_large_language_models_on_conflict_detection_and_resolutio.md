@@ -29,15 +29,15 @@ This paper proposes ConInstruct, a benchmark for evaluating LLMs' ability to det
 
 ## Background & Motivation
 
-**State of the Field**: Instruction following is a core capability of LLMs. Existing research primarily evaluates model compliance with consistent instructions (e.g., verifiable instructions in IFEval, model-based evaluation in InfoBench) or studies instruction hierarchy adherence (system instructions taking priority over user instructions).
+**Background**: Instruction following is a core capability of LLMs. Existing research primarily evaluates model compliance with consistent instructions (e.g., verifiable instructions in IFEval, model-based evaluation in InfoBench) or studies instruction hierarchy adherence (system instructions taking priority over user instructions).
 
 **Limitations of Prior Work**: Prior work assumes all constraints within an instruction are consistent and non-conflicting. In practice, however, users frequently introduce conflicting constraints when writing complex, lengthy instructions—for example, simultaneously requiring "include a specific phrase" and "limit output to 50 words" when the phrase itself already exceeds that limit. LLM behavior under such scenarios has not been systematically studied.
 
-**Root Cause**: When an instruction contains mutually unsatisfiable constraints, the ideal behavior is to proactively notify the user of the conflict and request clarification. Whether models actually do so—and whether conflict awareness is reflected in their responses—remains an open question.
+**Key Challenge**: When an instruction contains mutually unsatisfiable constraints, the ideal behavior is to proactively notify the user of the conflict and request clarification. Whether models actually do so—and whether conflict awareness is reflected in their responses—remains an open question.
 
-**Paper Goals**: To systematically evaluate LLMs' conflict detection capability and conflict resolution behavior, filling the gap in instruction-following research under conflicting constraint scenarios.
+**Goal**: To systematically evaluate LLMs' conflict detection capability and conflict resolution behavior, filling the gap in instruction-following research under conflicting constraint scenarios.
 
-**Starting Point**: Constructing a benchmark dataset covering 6 constraint types and 9 conflict types, treating "whether a conflict can be detected" and "how the model responds upon detection" as two independent evaluation dimensions.
+**Key Insight**: Constructing a benchmark dataset covering 6 constraint types and 9 conflict types, treating "whether a conflict can be detected" and "how the model responds upon detection" as two independent evaluation dimensions.
 
 **Core Idea**: LLMs can generally detect conflicts in instructions but rarely notify users proactively—even the best-performing Claude-4.5-Sonnet does so explicitly in only 45% of cases.
 

@@ -29,15 +29,15 @@ FastJAM is a graph-based fast joint image alignment method that computes pairwis
 
 ## Background & Motivation
 
-**State of the Field**: Joint image alignment (JA) is a classical computer vision problem—given a collection of images from the same semantic category, the goal is to align them into a unified coordinate system such that semantically corresponding regions appear at the same spatial locations. This is useful for downstream tasks including object discovery, 3D reconstruction, and generative model pre-training. Several neural network-based methods have emerged in recent years: Neural Congealing (CVPR 2023) incorporates GANs into alignment, ASIC (ICCV 2023) performs alignment based on implicit templates, and SpaceJAM (ECCV 2024) introduces lightweight spatial transformations.
+**Background**: Joint image alignment (JA) is a classical computer vision problem—given a collection of images from the same semantic category, the goal is to align them into a unified coordinate system such that semantically corresponding regions appear at the same spatial locations. This is useful for downstream tasks including object discovery, 3D reconstruction, and generative model pre-training. Several neural network-based methods have emerged in recent years: Neural Congealing (CVPR 2023) incorporates GANs into alignment, ASIC (ICCV 2023) performs alignment based on implicit templates, and SpaceJAM (ECCV 2024) introduces lightweight spatial transformations.
 
 **Limitations of Prior Work**: These methods share three common drawbacks: (1) excessively long training times—Neural Congealing requires 78 minutes (8 GPUs) and ASIC requires 67 minutes (4 GPUs); (2) large model capacity—Neural Congealing has 28.7M parameters; and (3) all methods require regularization terms to constrain predicted transformations from becoming degenerate, introducing hyperparameters that require careful tuning.
 
-**Root Cause**: Existing methods treat joint alignment as an end-to-end optimization problem, where the transformation parameters for each image must be iteratively refined over thousands of iterations. This "heavy optimization" paradigm is inherently slow and sensitive to regularization hyperparameters.
+**Key Challenge**: Existing methods treat joint alignment as an end-to-end optimization problem, where the transformation parameters for each image must be iteratively refined over thousands of iterations. This "heavy optimization" paradigm is inherently slow and sensitive to regularization hyperparameters.
 
-**Paper Goals**: Can a non-iterative approach directly and efficiently infer joint alignment parameters from pairwise correspondences within an image collection?
+**Goal**: Can a non-iterative approach directly and efficiently infer joint alignment parameters from pairwise correspondences within an image collection?
 
-**Starting Point**: Pairwise keypoint matches between images naturally form a graph structure—keypoints are nodes and matches are edges. GNNs are well-suited to perform information propagation and aggregation over such graph structures, enabling one-shot inference of per-image transformation parameters from global correspondences.
+**Key Insight**: Pairwise keypoint matches between images naturally form a graph structure—keypoints are nodes and matches are edges. GNNs are well-suited to perform information propagation and aggregation over such graph structures, enabling one-shot inference of per-image transformation parameters from global correspondences.
 
 **Core Idea**: Reformulate joint alignment as a graph inference problem—pairwise matches → keypoint graph → GNN-predicted transformation parameters—coupled with an inverse-compositional loss that eliminates the need for regularization tuning.
 

@@ -27,15 +27,15 @@ content_hash: 4eb764e8ffd16317
 VipAct proposes a multi-agent collaboration framework that significantly improves VLM performance on fine-grained visual perception tasks through three-tier collaboration: an Orchestrator Agent (task analysis, planning, and coordination), specialized agents (captioning, comparison, and visual prompt interpretation), and vision expert models (depth estimation, object detection, segmentation, etc.). The framework improves accuracy on Blink from 63.74% (zero-shot GPT-4o) to 73.79%.
 
 ## Background & Motivation
-**State of the Field**: VLMs such as GPT-4o excel at general vision-language understanding tasks, but struggle with fine-grained visual perception tasks that require pixel-level analysis—such as line crossing detection, object boundary judgment, and depth comparison—despite these tasks being trivial for humans.
+**Background**: VLMs such as GPT-4o excel at general vision-language understanding tasks, but struggle with fine-grained visual perception tasks that require pixel-level analysis—such as line crossing detection, object boundary judgment, and depth comparison—despite these tasks being trivial for humans.
 
 **Limitations of Prior Work**: Existing solutions fall into two categories: (1) Visual programming methods (ViperGPT, VisProg) use LLMs to generate code that invokes visual tools, but rely on predefined tool sets, do not support visual prompts or multi-image input, and generalize poorly; (2) Text prompting methods (CoT, ToT) are effective on textual tasks but yield inconsistent results on fine-grained visual perception, as reasoning steps often become decoupled from visual content.
 
-**Root Cause**: VLMs inherently lack pixel-level visual analysis capability, yet simply invoking external tools sacrifices flexibility and global reasoning. There is a fundamental need to organically combine VLMs' planning and reasoning capabilities with the precise perceptual capabilities of specialized models.
+**Key Challenge**: VLMs inherently lack pixel-level visual analysis capability, yet simply invoking external tools sacrifices flexibility and global reasoning. There is a fundamental need to organically combine VLMs' planning and reasoning capabilities with the precise perceptual capabilities of specialized models.
 
-**Paper Goals**: How can VLMs achieve pixel-level fine-grained visual perception while retaining flexible reasoning ability?
+**Goal**: How can VLMs achieve pixel-level fine-grained visual perception while retaining flexible reasoning ability?
 
-**Starting Point**: Inspired by multi-agent collaboration in the LLM agent literature, the paper decomposes complex visual tasks across agents and tool models with distinct roles, with an Orchestrator Agent responsible for integrating evidence and performing final reasoning.
+**Key Insight**: Inspired by multi-agent collaboration in the LLM agent literature, the paper decomposes complex visual tasks across agents and tool models with distinct roles, with an Orchestrator Agent responsible for integrating evidence and performing final reasoning.
 
 **Core Idea**: Enhance VLM System-2 reasoning and fine-grained visual perception through multi-agent collaboration consisting of an orchestrator, specialized agents, and vision expert models.
 

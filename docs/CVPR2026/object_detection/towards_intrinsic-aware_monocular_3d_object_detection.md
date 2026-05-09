@@ -29,15 +29,15 @@ MonoIA proposes converting numerical camera intrinsics into language-guided sema
 
 ## Background & Motivation
 
-**State of the Field**: Monocular 3D object detection (Mono3D) infers 3D object positions and dimensions from a single RGB image, and is a critical task in autonomous driving and robotics. Transformer-based methods (MonoDETR, MonoDGP, MonoCoP) have achieved significant progress in recent years, but all assume identical camera intrinsics at training and test time.
+**Background**: Monocular 3D object detection (Mono3D) infers 3D object positions and dimensions from a single RGB image, and is a critical task in autonomous driving and robotics. Transformer-based methods (MonoDETR, MonoDGP, MonoCoP) have achieved significant progress in recent years, but all assume identical camera intrinsics at training and test time.
 
 **Limitations of Prior Work**: Existing state-of-the-art methods are highly sensitive to camera intrinsics. Performance degrades sharply when test images are captured with cameras of different focal lengths — for instance, MonoCoP performs well under its training focal length but suffers substantial accuracy drops under unseen focal lengths. In practice, camera intrinsics vary widely across vehicles and sensors, and the lack of cross-camera generalization severely limits real-world deployment.
 
-**Root Cause**: Changes in intrinsics represent not merely numerical differences but a form of *perceptual transformation* — variations in focal length alter the apparent size of objects, perspective relationships, and spatial geometry. However, existing methods feed intrinsics as raw scalars, making it difficult for networks to infer perceptual effects from limited supervision signals; models either ignore intrinsic cues or overfit to a small set of training values.
+**Key Challenge**: Changes in intrinsics represent not merely numerical differences but a form of *perceptual transformation* — variations in focal length alter the apparent size of objects, perspective relationships, and spatial geometry. However, existing methods feed intrinsics as raw scalars, making it difficult for networks to infer perceptual effects from limited supervision signals; models either ignore intrinsic cues or overfit to a small set of training values.
 
-**Paper Goals**: To design a unified intrinsic-aware framework that enables detectors to (1) understand the perceptual implications of intrinsic variations, (2) generalize zero-shot to unseen focal lengths, and (3) support joint training across multiple datasets.
+**Goal**: To design a unified intrinsic-aware framework that enables detectors to (1) understand the perceptual implications of intrinsic variations, (2) generalize zero-shot to unseen focal lengths, and (3) support joint training across multiple datasets.
 
-**Starting Point**: The key insight is that intrinsic variation is fundamentally a perceptual transformation rather than a numerical difference. Short focal lengths produce wide fields of view that emphasize global context, while long focal lengths compress perspective and magnify distant objects. Such perceptual effects can be precisely articulated in natural language.
+**Key Insight**: The key insight is that intrinsic variation is fundamentally a perceptual transformation rather than a numerical difference. Short focal lengths produce wide fields of view that emphasize global context, while long focal lengths compress perspective and magnify distant objects. Such perceptual effects can be precisely articulated in natural language.
 
 **Core Idea**: An LLM generates textual descriptions of the visual effects associated with each focal length, which are then encoded into semantic embeddings via CLIP. This reframes intrinsic modeling from numerical conditioning to semantic representation, enabling a deeper understanding of intrinsic variation.
 

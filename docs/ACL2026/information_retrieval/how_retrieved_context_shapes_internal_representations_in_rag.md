@@ -28,15 +28,15 @@ This paper systematically analyzes how retrieved documents influence the interna
 
 ## Background & Motivation
 
-**State of the Field**: RAG has become a mainstream approach for augmenting LLMs, improving factual accuracy by incorporating external documents at generation time. However, retrieved document sets typically contain a mixture of content with varying relevance and utility.
+**Background**: RAG has become a mainstream approach for augmenting LLMs, improving factual accuracy by incorporating external documents at generation time. However, retrieved document sets typically contain a mixture of content with varying relevance and utility.
 
 **Limitations of Prior Work**: (1) Existing RAG research primarily analyzes output behavior (accuracy, hallucination rate), making it impossible to distinguish whether performance changes stem from effective evidence integration, suppression of parametric knowledge, or the model's uncertainty response. (2) It remains unclear how retrieved documents are processed internally within LLMs—whether they are integrated into reasoning or ignored. (3) There is no systematic study of how different document types (relevant/distractor/random) affect internal representations.
 
-**Root Cause**: Observing RAG behavior solely at the output level is akin to treating the model as a black box—identical erroneous outputs may arise from entirely different internal processing mechanisms. Understanding RAG requires examination at the level of internal representations.
+**Key Challenge**: Observing RAG behavior solely at the output level is akin to treating the model as a black box—identical erroneous outputs may arise from entirely different internal processing mechanisms. Understanding RAG requires examination at the level of internal representations.
 
-**Paper Goals**: To systematically analyze how different types of retrieved documents influence LLM hidden states, and how changes in internal representations relate to downstream generation behavior.
+**Goal**: To systematically analyze how different types of retrieved documents influence LLM hidden states, and how changes in internal representations relate to downstream generation behavior.
 
-**Starting Point**: Controlled experiments are employed—fixing the RAG pipeline while systematically varying document relevance types (relevant/distractor/random) and quantity combinations, and comparing hidden representations with and without context.
+**Key Insight**: Controlled experiments are employed—fixing the RAG pipeline while systematically varying document relevance types (relevant/distractor/random) and quantity combinations, and comparing hidden representations with and without context.
 
 **Core Idea**: The influence of retrieved documents on LLM internal representations is far more subtle than what is observable at the output level—relevant documents barely alter representations (merely confirming existing knowledge), whereas random documents induce the largest representation drift (triggering refusal patterns).
 

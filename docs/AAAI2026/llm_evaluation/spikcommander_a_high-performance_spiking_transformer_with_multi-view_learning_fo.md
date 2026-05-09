@@ -29,11 +29,11 @@ This paper proposes SpikCommander, a fully spike-driven Transformer architecture
 
 ## Background & Motivation
 
-1. **State of the Field**: Spiking Neural Networks (SNNs) offer significant energy efficiency advantages due to their event-driven nature, making them well-suited for Speech Command Recognition (SCR) tasks. Spiking Transformers such as Spikformer and SDT have demonstrated progress on vision tasks.
+1. **Background**: Spiking Neural Networks (SNNs) offer significant energy efficiency advantages due to their event-driven nature, making them well-suited for Speech Command Recognition (SCR) tasks. Spiking Transformers such as Spikformer and SDT have demonstrated progress on vision tasks.
 2. **Limitations of Prior Work**: (a) Existing SNN speech models struggle to capture rich temporal dependencies and contextual information, constrained by the sparsity of binary spike representations; (b) most existing spiking self-attention mechanisms adopt global attention with $O(N^2)$ complexity, incurring high computational cost; (c) conventional channel-wise MLPs lack context refinement capability.
-3. **Root Cause**: The binary sparsity of spikes limits effective feature extraction, and conventional continuous-valued attention operations are poorly suited to the spike domain.
-4. **Paper Goals**: To design an efficient yet expressive fully spike-driven Transformer architecture specifically for speech command recognition.
-5. **Starting Point**: A multi-view learning framework that simultaneously captures complementary temporal information from three pathways: local (sliding window), global (long-range), and convolutional (shift-invariant).
+3. **Key Challenge**: The binary sparsity of spikes limits effective feature extraction, and conventional continuous-valued attention operations are poorly suited to the spike domain.
+4. **Goal**: To design an efficient yet expressive fully spike-driven Transformer architecture specifically for speech command recognition.
+5. **Key Insight**: A multi-view learning framework that simultaneously captures complementary temporal information from three pathways: local (sliding window), global (long-range), and convolutional (shift-invariant).
 6. **Core Idea**: A three-branch complementary temporal-aware attention mechanism combined with a selective context refinement MLP achieves rich temporal modeling under full spike-driven constraints.
 
 ## Method

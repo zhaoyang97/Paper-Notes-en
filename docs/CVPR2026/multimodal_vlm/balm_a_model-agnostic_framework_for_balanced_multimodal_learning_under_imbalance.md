@@ -28,7 +28,7 @@ BALM proposes a model-agnostic plug-and-play framework to address multimodal lea
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal learning (audio + visual + text) has achieved remarkable progress, yet sensor failures, recording noise, or data acquisition costs frequently result in **partial or complete modality absence** in practice.
+**Background**: Multimodal learning (audio + visual + text) has achieved remarkable progress, yet sensor failures, recording noise, or data acquisition costs frequently result in **partial or complete modality absence** in practice.
 
 **Imbalance Induced by Missing Modalities**:
 - **Shared Missing Rate (SMR)** assumption: all modalities are dropped with equal probability — an unrealistic simplification.

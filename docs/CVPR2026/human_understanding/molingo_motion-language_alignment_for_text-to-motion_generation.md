@@ -29,15 +29,15 @@ MoLingo achieves comprehensive state-of-the-art performance on text-to-human mot
 
 ## Background & Motivation
 
-**State of the Field**: Text-driven human motion generation is a key technology for computer animation, AR/VR, and human-computer interaction. Current mainstream approaches fall into two categories: (1) diffusion directly in pose space (e.g., MDM), and (2) encoding into a latent space prior to diffusion (e.g., MLD, MARDM). The latter further splits into compressing entire sequences into a single latent vector versus autoregressively generating multiple latent vectors.
+**Background**: Text-driven human motion generation is a key technology for computer animation, AR/VR, and human-computer interaction. Current mainstream approaches fall into two categories: (1) diffusion directly in pose space (e.g., MDM), and (2) encoding into a latent space prior to diffusion (e.g., MLD, MARDM). The latter further splits into compressing entire sequences into a single latent vector versus autoregressively generating multiple latent vectors.
 
 **Limitations of Prior Work**: Diffusion in pose space struggles with complex joint distributions and is prone to preserving mocap noise as artifacts. Single-vector latent diffusion discards important temporal details. VQ-based methods introduce quantization error by mapping continuous motion to a finite codebook, reducing the realism of fine-grained motion. Furthermore, existing text conditioning strategies—such as single-token conditioning or AdaLN modulation—have limited expressive capacity, constraining text–motion alignment quality.
 
-**Root Cause**: How can one construct a diffusion-friendly latent space in which semantically similar motions are geometrically proximate? How can text conditioning be injected more effectively so that generated motions are more faithful to textual descriptions?
+**Key Challenge**: How can one construct a diffusion-friendly latent space in which semantically similar motions are geometrically proximate? How can text conditioning be injected more effectively so that generated motions are more faithful to textual descriptions?
 
-**Paper Goals**: (1) What kind of latent space is best suited for motion diffusion? (2) How should text conditioning be injected most effectively?
+**Goal**: (1) What kind of latent space is best suited for motion diffusion? (2) How should text conditioning be injected most effectively?
 
-**Starting Point**: Inspired by works such as REPA in image generation, the paper trains a semantically aligned motion encoder using frame-level text labels, so that semantically similar latent vectors are closer in the latent space. It also finds that multi-token cross-attention substantially outperforms single-token conditioning.
+**Key Insight**: Inspired by works such as REPA in image generation, the paper trains a semantically aligned motion encoder using frame-level text labels, so that semantically similar latent vectors are closer in the latent space. It also finds that multi-token cross-attention substantially outperforms single-token conditioning.
 
 **Core Idea**: Align the semantic structure of the motion latent space using frame-level text labels, combined with multi-token cross-attention conditioning, and perform masked autoregressive rectified flow over the continuous latent space for motion generation.
 

@@ -28,15 +28,15 @@ To address class-level knowledge inconsistency during prompt communication in fe
 
 ## Background & Motivation
 
-**State of the Field**: Federated Continual Learning (FCL) requires distributed clients to learn from continuously arriving task data under privacy constraints. Prompt-based methods (e.g., CODAPrompt + FedAvg), which maintain task-specific prompts while freezing the pre-trained backbone, have shown strong performance in FCL.
+**Background**: Federated Continual Learning (FCL) requires distributed clients to learn from continuously arriving task data under privacy constraints. Prompt-based methods (e.g., CODAPrompt + FedAvg), which maintain task-specific prompts while freezing the pre-trained backbone, have shown strong performance in FCL.
 
 **Limitations of Prior Work**: Existing prompt-based FCL methods overlook **class-level knowledge consistency** during server-side prompt aggregation: (a) different clients hold heterogeneous data distributions for the same class (intra-class distribution gap), leading to semantically inconsistent representations; (b) inter-prompt class-wise relevance is ignored, causing irrelevant or even conflicting knowledge to be fused during aggregation.
 
-**Root Cause**: Lack of class-level consistency in prompt communication → knowledge conflicts among new prompts → interference with old prompts → simultaneously exacerbating spatial forgetting (across clients) and temporal forgetting (across tasks).
+**Key Challenge**: Lack of class-level consistency in prompt communication → knowledge conflicts among new prompts → interference with old prompts → simultaneously exacerbating spatial forgetting (across clients) and temporal forgetting (across tasks).
 
-**Paper Goals**: (a) How to compensate for intra-class distribution bias introduced by non-IID data at the client side? (b) How to perform precise prompt aggregation on the server side based on class-level relevance?
+**Goal**: (a) How to compensate for intra-class distribution bias introduced by non-IID data at the client side? (b) How to perform precise prompt aggregation on the server side based on class-level relevance?
 
-**Starting Point**: The problem is approached from the perspective of class-level knowledge coherence — applying distribution compensation at the data input level (LCDC) and class-aware weighting at the parameter aggregation level (CPA).
+**Key Insight**: The problem is approached from the perspective of class-level knowledge coherence — applying distribution compensation at the data input level (LCDC) and class-aware weighting at the parameter aggregation level (CPA).
 
 **Core Idea**: Estimate the global class distribution to compensate for local distribution bias, and employ a prompt-class affinity matrix for class-aware aggregation — a dual-pronged strategy to resolve knowledge conflicts in FCL.
 

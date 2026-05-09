@@ -29,15 +29,15 @@ This paper proposes the GGPT framework, which first obtains geometrically consis
 
 ## Background & Motivation
 
-**State of the Field**: Feed-forward 3D reconstruction networks (DUSt3R → MASt3R → VGGT) predict dense point maps and camera parameters in a single forward pass, offering fast inference and visually appealing results, yet they lack explicit multi-view constraints, leading to geometric inconsistencies—especially severe in out-of-distribution scenarios (medical, surgical, and human-body scenes).
+**Background**: Feed-forward 3D reconstruction networks (DUSt3R → MASt3R → VGGT) predict dense point maps and camera parameters in a single forward pass, offering fast inference and visually appealing results, yet they lack explicit multi-view constraints, leading to geometric inconsistencies—especially severe in out-of-distribution scenarios (medical, surgical, and human-body scenes).
 
 **Limitations of Prior Work**: (1) SfM is geometrically consistent but fragile under wide-baseline or sparse-view settings and recovers only sparse points; (2) prior geometry-guided methods rely on pseudo-GT SfM points or dense video sequences, which are unavailable in genuinely sparse settings; (3) existing refinement approaches operate in 2D image space (depth completion / image Transformers), inherently failing to achieve true cross-view consistency.
 
-**Root Cause**: Feed-forward methods produce dense but inconsistent reconstructions, while SfM yields consistent but sparse results. Existing approaches either depend on impractical GT guidance or perform 2D-space refinement that cannot guarantee 3D consistency.
+**Key Challenge**: Feed-forward methods produce dense but inconsistent reconstructions, while SfM yields consistent but sparse results. Existing approaches either depend on impractical GT guidance or perform 2D-space refinement that cannot guarantee 3D consistency.
 
-**Paper Goals**: Organically combine the geometric precision of SfM with the dense completeness of feed-forward networks in 3D space, enabling sparse-view 3D reconstruction refinement that generalizes across architectures without fine-tuning.
+**Goal**: Organically combine the geometric precision of SfM with the dense completeness of feed-forward networks in 3D space, enabling sparse-view 3D reconstruction refinement that generalizes across architectures without fine-tuning.
 
-**Starting Point**: A two-stage design—first obtaining genuine sparse geometry from input RGB via an improved SfM pipeline, then performing attention and residual correction directly in point-cloud space using a 3D Point Transformer.
+**Key Insight**: A two-stage design—first obtaining genuine sparse geometry from input RGB via an improved SfM pipeline, then performing attention and residual correction directly in point-cloud space using a 3D Point Transformer.
 
 **Core Idea**: Performing geometric fusion and refinement in 3D space rather than in 2D image space is the key to cross-domain generalization.
 

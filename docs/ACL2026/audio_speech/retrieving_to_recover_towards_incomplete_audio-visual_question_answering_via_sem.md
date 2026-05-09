@@ -29,15 +29,15 @@ This paper proposes the R2ScP framework, which shifts the missing-modality parad
 
 ## Background & Motivation
 
-**State of the Field**: Audio-visual question answering (AVQA) requires models to reason across visual, audio, and textual modalities to understand dynamic scenes. Existing methods typically assume complete availability of all modalities, causing severe performance degradation under practical conditions such as device failures, sensor occlusion, or data transmission interruptions.
+**Background**: Audio-visual question answering (AVQA) requires models to reason across visual, audio, and textual modalities to understand dynamic scenes. Existing methods typically assume complete availability of all modalities, causing severe performance degradation under practical conditions such as device failures, sensor occlusion, or data transmission interruptions.
 
 **Limitations of Prior Work**: The dominant approach to handling missing modalities relies on generative completion—synthesizing pseudo-features for the missing modality from available ones. However, generative models tend to produce representations of "common knowledge," i.e., generalized embeddings that lack fine-grained modality-specific information. For instance, when inferring missing audio from a concert's visual scene, a generative model may synthesize a generic "music" embedding while failing to capture the timbre of the specific instruments visible in the frame, thereby introducing semantic hallucinations and noise.
 
-**Root Cause**: Generative approaches inherently "imagine" missing information from available modalities, and their outputs are constrained by cross-modal shared knowledge, making it impossible to recover modality-specific unique information. This information loss directly impairs question answering tasks that demand precise reasoning.
+**Key Challenge**: Generative approaches inherently "imagine" missing information from available modalities, and their outputs are constrained by cross-modal shared knowledge, making it impossible to recover modality-specific unique information. This information loss directly impairs question answering tasks that demand precise reasoning.
 
-**Paper Goals**: To shift the missing-modality paradigm from generation to retrieval—recalling genuine, high-quality feature segments from a semantic database rather than synthesizing imperfect hallucinations.
+**Goal**: To shift the missing-modality paradigm from generation to retrieval—recalling genuine, high-quality feature segments from a semantic database rather than synthesizing imperfect hallucinations.
 
-**Starting Point**: The authors observe that real-world feature repositories contain abundant reusable modality-specific knowledge; the key challenge lies in accurate retrieval and denoising.
+**Key Insight**: The authors observe that real-world feature repositories contain abundant reusable modality-specific knowledge; the key challenge lies in accurate retrieval and denoising.
 
 **Core Idea**: Replace generative completion with cross-modal retrieval, and filter retrieval noise via a context-aware purification mechanism to preserve fine-grained, modality-specific knowledge.
 

@@ -28,15 +28,15 @@ This paper theoretically proves that fine-tuning weight deltas encode input cova
 
 ## Background & Motivation
 
-**State of the Field**: The pretrain-then-finetune paradigm produces a large number of task-specific models. Model merging aims to combine multiple expert models into a single unified model, avoiding costly multi-task retraining. Existing approaches fall into three categories: data-dependent (requiring original data), test-time adaptive (with high inference overhead), and data-free (most flexible).
+**Background**: The pretrain-then-finetune paradigm produces a large number of task-specific models. Model merging aims to combine multiple expert models into a single unified model, avoiding costly multi-task retraining. Existing approaches fall into three categories: data-dependent (requiring original data), test-time adaptive (with high inference overhead), and data-free (most flexible).
 
 **Limitations of Prior Work**: Data-free methods are the most practically valuable, yet approaches ranging from Task Arithmetic to TIES-Merging rely on heuristic operations in parameter space (sign alignment, pruning, etc.), addressing only the symptoms of interference rather than the root cause — differences in the statistical structure of task data distributions.
 
-**Root Cause**: The optimal merging formula $\bar{W} = (\sum_t W_t \Sigma_t)(\sum_t \Sigma_t)^{-1}$ requires the input covariance $\Sigma_t$ for each task, which is precisely unavailable in the data-free setting.
+**Key Challenge**: The optimal merging formula $\bar{W} = (\sum_t W_t \Sigma_t)(\sum_t \Sigma_t)^{-1}$ requires the input covariance $\Sigma_t$ for each task, which is precisely unavailable in the data-free setting.
 
-**Paper Goals**: To accurately estimate the input covariance for each task without any data access, thereby enabling theoretically grounded optimal model merging.
+**Goal**: To accurately estimate the input covariance for each task without any data access, thereby enabling theoretically grounded optimal model merging.
 
-**Starting Point**: The authors observe that the weight deltas $\Delta W_t$ produced by fine-tuning implicitly encode input covariance information — treating the rows of $\Delta W_t$ as independent samples, their empirical covariance is proportional to $\Sigma_t$.
+**Key Insight**: The authors observe that the weight deltas $\Delta W_t$ produced by fine-tuning implicitly encode input covariance information — treating the rows of $\Delta W_t$ as independent samples, their empirical covariance is proportional to $\Sigma_t$.
 
 **Core Idea**: Fine-tuning weight deltas themselves encode input covariance, enabling estimation and construction of a theoretically optimal closed-form merging solution without any data access.
 

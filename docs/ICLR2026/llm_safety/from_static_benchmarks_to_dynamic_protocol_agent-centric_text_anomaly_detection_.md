@@ -29,14 +29,14 @@ This paper proposes ATAD (Agent-Centric Text Anomaly Detection), which replaces 
 
 ## Background & Motivation
 
-**State of the Field**: Static benchmarks such as MMLU, GSM8K, and Big-Bench have long served as reliable indicators of model progress, but frontier LLMs have approached or surpassed human-level performance on most tasks.
+**Background**: Static benchmarks such as MMLU, GSM8K, and Big-Bench have long served as reliable indicators of model progress, but frontier LLMs have approached or surpassed human-level performance on most tasks.
 
 **Three Fatal Problems with Static Benchmarks**:
 - **Data Contamination**: Large-scale pretraining corpora frequently contain benchmark questions; incomplete decontamination allows models to memorize answers rather than perform genuine reasoning.
 - **Overfitting Loop**: Model developers may inadvertently tune toward benchmark-specific features, creating a feedback loop that inflates scores.
 - **Rapid Obsolescence**: Once a benchmark is "solved," the community must quickly produce replacements, forming a wasteful cycle.
 
-**Root Cause**: Evaluation must evolve dynamically to keep pace with model progress, yet constructing high-quality items is inherently difficult — increasing difficulty typically sacrifices clarity, while preserving clarity tends to yield overly simple items.
+**Key Challenge**: Evaluation must evolve dynamically to keep pace with model progress, yet constructing high-quality items is inherently difficult — increasing difficulty typically sacrifices clarity, while preserving clarity tends to yield overly simple items.
 
 **Why Text Anomaly Detection**: (a) requires cross-sentence logical reasoning; (b) resists pattern-matching shortcuts and training data leakage; (c) supports objective, fine-grained scoring.
 

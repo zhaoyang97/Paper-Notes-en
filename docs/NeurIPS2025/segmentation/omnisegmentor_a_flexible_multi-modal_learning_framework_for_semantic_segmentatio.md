@@ -28,15 +28,15 @@ OmniSegmentor constructs a large-scale ImageNeXt dataset encompassing 5 visual m
 
 ## Background & Motivation
 
-**State of the Field**: Multi-modal semantic segmentation (RGB + depth/thermal/LiDAR/event camera) has become a key direction for robust scene understanding. Existing methods such as CMX and CMNeXt integrate multi-modal information through cross-modal interaction and fusion.
+**Background**: Multi-modal semantic segmentation (RGB + depth/thermal/LiDAR/event camera) has become a key direction for robust scene understanding. Existing methods such as CMX and CMNeXt integrate multi-modal information through cross-modal interaction and fusion.
 
 **Limitations of Prior Work**: Most methods rely on RGB-pretrained or randomly initialized weights for supplementary modalities, resulting in a modality mismatch between the pretraining and fine-tuning stages. Although DFormer attempts to address this via RGB-D pretraining, it is modality-specific and cannot generalize to additional modalities.
 
-**Root Cause**: There is no large-scale multi-modal dataset to support general multi-modal pretraining, and simultaneously pretraining on all modalities is computationally prohibitive and optimization-unfriendly — experiments show that joint pretraining leads to convergence difficulties, with ImageNet Top-1 accuracy dropping from 81.4% to 79.9%.
+**Key Challenge**: There is no large-scale multi-modal dataset to support general multi-modal pretraining, and simultaneously pretraining on all modalities is computationally prohibitive and optimization-unfriendly — experiments show that joint pretraining leads to convergence difficulties, with ImageNet Top-1 accuracy dropping from 81.4% to 79.9%.
 
-**Paper Goals**: (a) How to construct a large-scale pretraining dataset covering multiple visual modalities? (b) How to conduct multi-modal pretraining efficiently? (c) How to flexibly deploy pretrained weights to diverse downstream multi-modal tasks?
+**Goal**: (a) How to construct a large-scale pretraining dataset covering multiple visual modalities? (b) How to conduct multi-modal pretraining efficiently? (c) How to flexibly deploy pretrained weights to diverse downstream multi-modal tasks?
 
-**Starting Point**: The authors observe that inputting all modalities simultaneously introduces optimization conflicts, while RGB remains the most critical modality. They therefore propose randomly selecting one supplementary modality per iteration to pair with RGB during pretraining, rather than processing all modalities jointly.
+**Key Insight**: The authors observe that inputting all modalities simultaneously introduces optimization conflicts, while RGB remains the most critical modality. They therefore propose randomly selecting one supplementary modality per iteration to pair with RGB during pretraining, rather than processing all modalities jointly.
 
 **Core Idea**: Pretraining on ImageNeXt (a 5-modality synthetic dataset) by randomly pairing RGB with one supplementary modality, followed by flexible fine-tuning via modality-specific MLPs that support arbitrary modality combinations.
 

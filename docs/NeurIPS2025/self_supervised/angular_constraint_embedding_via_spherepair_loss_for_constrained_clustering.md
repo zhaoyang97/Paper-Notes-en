@@ -29,15 +29,15 @@ This paper proposes the SpherePair loss function, which performs pairwise constr
 
 ## Background & Motivation
 
-**State of the Field**: Deep constrained clustering (DCC) improves unsupervised clustering by integrating domain knowledge in the form of pairwise constraints (must-link / cannot-link). Existing approaches fall into two categories: (1) end-to-end DCC, which introduces anchors to model clustering as a pseudo-classification task; and (2) deep constrained embedding, which learns constraint-aware representations before applying a clustering algorithm.
+**Background**: Deep constrained clustering (DCC) improves unsupervised clustering by integrating domain knowledge in the form of pairwise constraints (must-link / cannot-link). Existing approaches fall into two categories: (1) end-to-end DCC, which introduces anchors to model clustering as a pseudo-classification task; and (2) deep constrained embedding, which learns constraint-aware representations before applying a clustering algorithm.
 
 **Limitations of Prior Work**: End-to-end methods (e.g., VanillaDCC, VolMaxDCC, CIDEC) rely on anchors to indirectly infer global cluster assignments from local pairwise relations, but anchors may be misaligned with true cluster centers, and the number of clusters $K$ must be known in advance. Deep constrained embedding methods (e.g., AutoEmbedder, CPAC) learn representations in Euclidean space; however, because Euclidean distances are unbounded $[0, +\infty)$, margins must be set manually, and distance control between positive and negative pairs can be conflicting.
 
-**Root Cause**: Both the anchor mechanism in end-to-end methods and Euclidean distance in embedding methods suffer from fundamental deficiencies — the former requires global information but has access only to local constraints, while the latter's unbounded distance space leads to hyperparameter sensitivity and potential constraint conflicts.
+**Key Challenge**: Both the anchor mechanism in end-to-end methods and Euclidean distance in embedding methods suffer from fundamental deficiencies — the former requires global information but has access only to local constraints, while the latter's unbounded distance space leads to hyperparameter sensitivity and potential constraint conflicts.
 
-**Paper Goals**: (1) How can positive and negative constraints be encoded fairly without anchors? (2) How can the need for manual tuning of margins and embedding dimensions be eliminated? (3) How can the number of clusters be inferred without knowing $K$?
+**Goal**: (1) How can positive and negative constraints be encoded fairly without anchors? (2) How can the need for manual tuning of margins and embedding dimensions be eliminated? (3) How can the number of clusters be inferred without knowing $K$?
 
-**Starting Point**: The authors observe that angular space (cosine similarity) is naturally bounded $[0, \pi]$, and that the geometric properties of the hypersphere can guarantee equidistant cluster distributions without constraint conflicts.
+**Key Insight**: The authors observe that angular space (cosine similarity) is naturally bounded $[0, \pi]$, and that the geometric properties of the hypersphere can guarantee equidistant cluster distributions without constraint conflicts.
 
 **Core Idea**: Perform constraint embedding learning in angular space rather than Euclidean space, exploit the closedness of spherical geometry to eliminate constraint conflicts, and automatically determine optimal hyperparameters through theoretical derivation.
 

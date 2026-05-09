@@ -29,13 +29,13 @@ By training 457 models across diverse architectures, scales, and training data m
 
 ## Background & Motivation
 
-**State of the Field**: Mainstream VLMs (e.g., LLaVA, InternVL) adopt late-fusion architectures — a visual encoder (e.g., CLIP-ViT) and an LLM are pretrained independently and then connected via a connector for multimodal training. This paradigm offers high sample efficiency, but whether it holds an inherent architectural advantage remains an open question.
+**Background**: Mainstream VLMs (e.g., LLaVA, InternVL) adopt late-fusion architectures — a visual encoder (e.g., CLIP-ViT) and an LLM are pretrained independently and then connected via a connector for multimodal training. This paradigm offers high sample efficiency, but whether it holds an inherent architectural advantage remains an open question.
 
 **Limitations of Prior Work**: (1) The visual encoder in late-fusion architectures imposes fixed-resolution and aspect-ratio constraints, and coordinating multiple components increases engineering complexity. (2) Native Multimodal Models (NMMs), trained from scratch on all modalities jointly, lack systematic architectural comparisons and scaling law analyses. (3) The community has assumed late-fusion to be superior without sufficient empirical evidence.
 
-**Root Cause**: Under a fixed compute budget, which architecture — early-fusion or late-fusion — should NMMs adopt? How does scaling behavior differ across model sizes and data volumes?
+**Key Challenge**: Under a fixed compute budget, which architecture — early-fusion or late-fusion — should NMMs adopt? How does scaling behavior differ across model sizes and data volumes?
 
-**Starting Point**: A large-scale empirical study training 457 models covering diverse combinations of architecture, scale, data mixture, and MoE configuration, with quantitative conclusions derived by fitting scaling laws.
+**Key Insight**: A large-scale empirical study training 457 models covering diverse combinations of architecture, scale, data mixture, and MoE configuration, with quantitative conclusions derived by fitting scaling laws.
 
 ## Method
 

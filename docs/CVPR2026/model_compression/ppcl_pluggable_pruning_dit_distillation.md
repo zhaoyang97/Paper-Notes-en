@@ -29,15 +29,15 @@ This paper proposes PPCL, a structured pruning framework tailored for large-scal
 
 ## Background & Motivation
 
-**State of the Field**: State-of-the-art text-to-image (T2I) diffusion models have fully transitioned from UNet architectures to Multi-Modal Diffusion Transformers (MMDiT). While SDXL has 2.6B parameters, FLUX.1 reaches 12B and Qwen-Image reaches 20B (60 MMDiT blocks), greatly improving generation quality at the cost of substantially increased inference overhead.
+**Background**: State-of-the-art text-to-image (T2I) diffusion models have fully transitioned from UNet architectures to Multi-Modal Diffusion Transformers (MMDiT). While SDXL has 2.6B parameters, FLUX.1 reaches 12B and Qwen-Image reaches 20B (60 MMDiT blocks), greatly improving generation quality at the cost of substantially increased inference overhead.
 
 **Limitations of Prior Work**: (a) Existing structured pruning methods (e.g., TinyFusion, SnapFusion) primarily target UNet architectures and cannot be directly transferred to the dual-stream structure of MMDiT; (b) prior methods evaluate redundancy independently per layer (e.g., sensitivity analysis), overlooking functional coupling between adjacent layers in DiT; (c) in conventional sequential distillation, compression errors from early layers propagate and accumulate along the network, causing severe representational drift in the student model.
 
-**Root Cause**: Through experiments, the authors find that redundancy in DiT exhibits **depth-wise contiguity**—removing contiguous layers has less impact on performance than removing an equal number of non-contiguous layers. Existing pruning methods do not exploit this property.
+**Key Challenge**: Through experiments, the authors find that redundancy in DiT exhibits **depth-wise contiguity**—removing contiguous layers has less impact on performance than removing an equal number of non-contiguous layers. Existing pruning methods do not exploit this property.
 
-**Paper Goals**: To systematically identify contiguous redundant layer intervals in MMDiT and design a distillation scheme that avoids error accumulation, thereby preserving quality under high compression ratios.
+**Goal**: To systematically identify contiguous redundant layer intervals in MMDiT and design a distillation scheme that avoids error accumulation, thereby preserving quality under high compression ratios.
 
-**Starting Point**: Replace traditional layer importance estimation with layer *substitutability*—if the input-output mapping of a layer can be approximated by a linear transformation, that layer is functionally redundant with respect to its neighbors.
+**Key Insight**: Replace traditional layer importance estimation with layer *substitutability*—if the input-output mapping of a layer can be approximated by a linear transformation, that layer is functionally redundant with respect to its neighbors.
 
 **Core Idea**: In MMDiT, redundant layers are distributed contiguously along the depth dimension. They can be automatically localized and removed in segments via linear probes combined with CKA difference analysis, while non-sequential distillation eliminates error accumulation.
 

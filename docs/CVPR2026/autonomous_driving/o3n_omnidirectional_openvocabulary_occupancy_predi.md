@@ -29,15 +29,15 @@ O3N is the first purely vision-based, end-to-end omnidirectional open-vocabulary
 
 ## Background & Motivation
 
-**State of the Field**: 3D semantic occupancy prediction has become a core perception task in autonomous driving and embodied intelligence. Existing methods such as MonoScene, VoxFormer, and SGN have made significant progress under closed-set settings. Meanwhile, panoramic/omnidirectional images are increasingly adopted for scene understanding in embodied agents due to their single-frame 360° coverage.
+**Background**: 3D semantic occupancy prediction has become a core perception task in autonomous driving and embodied intelligence. Existing methods such as MonoScene, VoxFormer, and SGN have made significant progress under closed-set settings. Meanwhile, panoramic/omnidirectional images are increasingly adopted for scene understanding in embodied agents due to their single-frame 360° coverage.
 
 **Limitations of Prior Work**: (1) Existing 3D occupancy prediction methods are limited to narrow field-of-view inputs and predefined training category distributions, making them difficult to apply in open-world scenarios requiring comprehensive safety perception. (2) Severe geometric distortions and non-uniform sampling introduced by Equirectangular Projection (ERP) cause distant regions to occupy only a minimal portion of the image. (3) Ternary feature alignment among pixels, voxels, and text tends to overfit under imbalanced data distributions, causing novel-class semantic alignment to fail.
 
-**Root Cause**: A fundamental conflict exists between the geometric distortion characteristics of omnidirectional images and the precision requirements of open-vocabulary semantic alignment—ERP projection yields sparse pixels for distant regions, exacerbating the overfitting risk in cross-modal feature alignment.
+**Key Challenge**: A fundamental conflict exists between the geometric distortion characteristics of omnidirectional images and the precision requirements of open-vocabulary semantic alignment—ERP projection yields sparse pixels for distant regions, exacerbating the overfitting risk in cross-modal feature alignment.
 
-**Paper Goals**: Under omnidirectional visual input, the paper aims to simultaneously address three challenges: 360° spatial continuity modeling, open-vocabulary semantic generalization, and cross-modal feature alignment.
+**Goal**: Under omnidirectional visual input, the paper aims to simultaneously address three challenges: 360° spatial continuity modeling, open-vocabulary semantic generalization, and cross-modal feature alignment.
 
-**Starting Point**: (1) Adapt to panoramic geometry via polar spiral scanning; (2) construct voxel-text cost volumes to replace direct feature alignment; (3) bridge the modality gap through gradient-free random walks.
+**Key Insight**: (1) Adapt to panoramic geometry via polar spiral scanning; (2) construct voxel-text cost volumes to replace direct feature alignment; (3) bridge the modality gap through gradient-free random walks.
 
 **Core Idea**: Integrate the geometric properties of omnidirectional perception into the full pipeline of voxel representation, cost aggregation, and modality alignment, realizing the first omnidirectional open-vocabulary occupancy prediction framework.
 

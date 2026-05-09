@@ -28,15 +28,15 @@ This paper proposes NRT (Native Reasoning Training), a framework that treats rea
 
 ## Background & Motivation
 
-**State of the Field**: Current approaches to improving LLM reasoning follow two main paths—(a) SFT on human- or GPT-4-annotated reasoning chains (e.g., o1 reproductions), and (b) RL with external verifiers (RLVR), such as using final answer correctness as a reward for math problems. Both perform well in verifiable domains such as mathematics and code.
+**Background**: Current approaches to improving LLM reasoning follow two main paths—(a) SFT on human- or GPT-4-annotated reasoning chains (e.g., o1 reproductions), and (b) RL with external verifiers (RLVR), such as using final answer correctness as a reward for math problems. Both perform well in verifiable domains such as mathematics and code.
 
 **Limitations of Prior Work**: Many subject-area tasks (history, commonsense, open-domain QA, multi-hop reasoning) have answers that **cannot be programmatically verified**—no deterministic verifier can assess whether the reasoning process is correct. Such "unverifiable data" constitutes the majority of real-world applications, yet existing RLVR methods are inapplicable.
 
-**Root Cause**: Reasoning ability requires RL training; RL requires reward signals; traditional rewards come from external verifiers—but no such verifiers exist in unverifiable domains. The core question is how to train reasoning without external rewards.
+**Key Challenge**: Reasoning ability requires RL training; RL requires reward signals; traditional rewards come from external verifiers—but no such verifiers exist in unverifiable domains. The core question is how to train reasoning without external rewards.
 
-**Paper Goals**: Given only (question, answer) pairs—without reasoning demonstrations or external verifiers—how can one train an LLM to generate effective reasoning chains?
+**Goal**: Given only (question, answer) pairs—without reasoning demonstrations or external verifiers—how can one train an LLM to generate effective reasoning chains?
 
-**Starting Point**: Treating reasoning chains $z$ as **latent variables**—a good reasoning chain should increase the model's predicted probability of the correct answer $y^*$. The reward is defined as the token-level probability of the answer predicted by the model after reading the reasoning chain.
+**Key Insight**: Treating reasoning chains $z$ as **latent variables**—a good reasoning chain should increase the model's predicted probability of the correct answer $y^*$. The reward is defined as the token-level probability of the answer predicted by the model after reading the reasoning chain.
 
 **Core Idea**: Using "whether a reasoning chain helps the model better predict the answer" as an intrinsic reward, without relying on any external verification—the model acts simultaneously as reasoner and evaluator.
 

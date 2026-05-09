@@ -27,15 +27,15 @@ content_hash: 59168e72d76c9ffc
 This paper provides the first systematic formalization of the "Thought Leap" phenomenon in CoT reasoning chains, and proposes CoT-Bridge, a model that automatically detects and fills omitted intermediate steps. It achieves up to +5.87% improvement on NuminaMath and can serve as a plug-and-play module to enhance distillation and RL pipelines.
 
 ## Background & Motivation
-**State of the Field**: LLMs have achieved remarkable progress on mathematical tasks via Chain-of-Thought reasoning, and the quality of CoT datasets directly determines the performance ceiling of trained models.
+**Background**: LLMs have achieved remarkable progress on mathematical tasks via Chain-of-Thought reasoning, and the quality of CoT datasets directly determines the performance ceiling of trained models.
 
 **Limitations of Prior Work**: Existing CoT datasets (e.g., MetaMathQA, NuminaMath) widely exhibit the Thought Leap phenomenon — human experts tend to omit "obvious" intermediate steps when writing reasoning chains due to their background knowledge, resulting in incomplete reasoning traces.
 
-**Root Cause**: Steps omitted by human experts are trivial to them but constitute fatal cognitive gaps for LLMs — models cannot bridge these reasoning gaps via implicit knowledge, severely impairing generalization ability.
+**Key Challenge**: Steps omitted by human experts are trivial to them but constitute fatal cognitive gaps for LLMs — models cannot bridge these reasoning gaps via implicit knowledge, severely impairing generalization ability.
 
-**Paper Goals**: (a) How to automatically detect leap positions in reasoning chains? (b) How to generate high-quality intermediate bridging steps? (c) Can the completed data consistently improve downstream model performance?
+**Goal**: (a) How to automatically detect leap positions in reasoning chains? (b) How to generate high-quality intermediate bridging steps? (c) Can the completed data consistently improve downstream model performance?
 
-**Starting Point**: Through controlled experiments on MetaMathQA, the authors find that artificially introducing varying degrees of step omissions causes accuracy drops of up to 27.83% and significantly slower convergence, demonstrating that incomplete reasoning chains are more harmful than factual errors.
+**Key Insight**: Through controlled experiments on MetaMathQA, the authors find that artificially introducing varying degrees of step omissions causes accuracy drops of up to 27.83% and significantly slower convergence, demonstrating that incomplete reasoning chains are more harmful than factual errors.
 
 **Core Idea**: Train a dedicated Bridge model to detect reasoning leaps in CoT chains and automatically insert missing steps, thereby improving training data quality and downstream model reasoning capability.
 

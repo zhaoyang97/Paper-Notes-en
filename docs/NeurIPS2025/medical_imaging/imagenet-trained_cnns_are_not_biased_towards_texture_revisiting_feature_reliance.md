@@ -29,15 +29,15 @@ By proposing a systematic feature suppression framework—rather than cue-confli
 
 ## Background & Motivation
 
-**State of the Field**: The highly influential cue-conflict experiments of Geirhos et al. (2019) proposed that ImageNet-trained CNNs are inherently biased toward texture (the texture bias hypothesis), whereas humans rely more on shape. This conclusion has profoundly shaped subsequent research on model interpretability and robustness.
+**Background**: The highly influential cue-conflict experiments of Geirhos et al. (2019) proposed that ImageNet-trained CNNs are inherently biased toward texture (the texture bias hypothesis), whereas humans rely more on shape. This conclusion has profoundly shaped subsequent research on model interpretability and robustness.
 
 **Limitations of Prior Work**: The cue-conflict paradigm contains three critical methodological issues: (i) **features are not isolated**—color and local shape information are retained within texture cues; (ii) **texture signal overload**—texture covers not only the target region but also the background, creating spatially unbalanced signals; (iii) **human interface biases toward shape**—humans select categories via silhouette icons, potentially guiding shape-based responses.
 
-**Root Cause**: The widely accepted conclusion that "CNNs are texture-biased" may be an artifact of experimental design rather than an intrinsic property of CNNs.
+**Key Challenge**: The widely accepted conclusion that "CNNs are texture-biased" may be an artifact of experimental design rather than an intrinsic property of CNNs.
 
-**Paper Goals**: To propose an unbiased, domain-agnostic framework for evaluating feature reliance.
+**Goal**: To propose an unbiased, domain-agnostic framework for evaluating feature reliance.
 
-**Starting Point**: Shifting from "conflict-based preference" to "suppression-based reliance"—quantifying dependence by systematically suppressing a single feature type and measuring the resulting performance degradation.
+**Key Insight**: Shifting from "conflict-based preference" to "suppression-based reliance"—quantifying dependence by systematically suppressing a single feature type and measuring the resulting performance degradation.
 
 **Core Idea**: Feature reliance should be measured by the performance drop after removing the target feature, rather than by preference under conflicting stimuli.
 

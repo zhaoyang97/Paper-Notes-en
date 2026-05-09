@@ -28,15 +28,15 @@ This paper proposes Causal-Tune, a causality-driven VFM fine-tuning strategy tha
 
 ## Background & Motivation
 
-**State of the Field**: Vision foundation models (VFMs) such as DINOv2 and CLIP have demonstrated strong performance in domain generalized semantic segmentation (DGSS) through parameter-efficient fine-tuning (PEFT). Representative methods such as Rein refine feature maps by inserting trainable parameters between layers.
+**Background**: Vision foundation models (VFMs) such as DINOv2 and CLIP have demonstrated strong performance in domain generalized semantic segmentation (DGSS) through parameter-efficient fine-tuning (PEFT). Representative methods such as Rein refine feature maps by inserting trainable parameters between layers.
 
 **Limitations of Prior Work**: VFMs trained over extended large-scale pretraining produce feature artifacts that persist even after adapter-based fine-tuning (as visualized in Figure 1). Existing PEFT methods fine-tune features across all layers indiscriminately and are unable to suppress these redundant representations. Moreover, DGSS data contains both explicit (rain, snow, fog, night) and implicit (brightness, blur, noise, reflection) non-causal factors, with the latter largely overlooked.
 
-**Root Cause**: A fundamental tension exists between the powerful representational capacity of VFMs and their feature redundancy (artifacts)—artifacts encode domain-specific, non-causal information that impedes the exploitation of valuable cross-domain invariant representations.
+**Key Challenge**: A fundamental tension exists between the powerful representational capacity of VFMs and their feature redundancy (artifacts)—artifacts encode domain-specific, non-causal information that impedes the exploitation of valuable cross-domain invariant representations.
 
-**Paper Goals**: To identify and disentangle causal from non-causal components in VFM features from a causal perspective, preserving causal components while discarding non-causal ones during fine-tuning, thereby improving domain generalization.
+**Goal**: To identify and disentangle causal from non-causal components in VFM features from a causal perspective, preserving causal components while discarding non-causal ones during fine-tuning, thereby improving domain generalization.
 
-**Starting Point**: An empirical observation that non-causal factors (both explicit and implicit) are predominantly concentrated in the high- and low-frequency components of the DCT spectrum, while the intermediate frequency band retains cross-domain invariant structural and textural patterns (causal factors).
+**Key Insight**: An empirical observation that non-causal factors (both explicit and implicit) are predominantly concentrated in the high- and low-frequency components of the DCT spectrum, while the intermediate frequency band retains cross-domain invariant structural and textural patterns (causal factors).
 
 **Core Idea**: Apply DCT to transform per-layer VFM features into the frequency domain; use a Gaussian band-pass filter to separate causal from non-causal components; discard the non-causal components; refine the causal components in the frequency domain using causal-aware learnable tokens; and finally recover the spatial domain representation via iDCT.
 

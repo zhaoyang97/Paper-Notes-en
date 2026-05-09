@@ -29,11 +29,11 @@ This paper presents SceneScribe-1M — a large-scale multimodal video dataset co
 
 ## Background & Motivation
 
-1. **State of the Field**: The integration of 3D geometric perception and video synthesis is central to building World Foundation Models (WFMs). Existing datasets focus either on 3D understanding (e.g., RE10K, CO3Dv2) or video generation (e.g., Panda-70M, Koala-36M), leaving a gap for a unified resource supporting both directions.
+1. **Background**: The integration of 3D geometric perception and video synthesis is central to building World Foundation Models (WFMs). Existing datasets focus either on 3D understanding (e.g., RE10K, CO3Dv2) or video generation (e.g., Panda-70M, Koala-36M), leaving a gap for a unified resource supporting both directions.
 2. **Limitations of Prior Work**: (A) 3D perception datasets: synthetic data suffers from domain gaps, while real-data annotations are limited by computational cost and the constraints of SfM/SLAM, with dynamic scene annotations remaining small-scale; (B) Video generation datasets: provide rich semantic annotations but lack geometric annotations; (C) Concurrent works such as Sekai (~400 hours) and SpatialVID (lacking 3D point trajectories) are insufficient in either scale or annotation completeness.
-3. **Root Cause**: WFMs require simultaneous 3D geometric understanding and video generation capabilities, yet the two types of tasks demand data that differ substantially in scale and annotation type.
-4. **Paper Goals**: To construct a sufficiently large and comprehensively annotated video dataset that jointly supports 3D tasks — including depth estimation, scene reconstruction, and dynamic point tracking — as well as text/pose-conditioned video generation.
-5. **Starting Point**: Leveraging powerful proprietary models (Qwen2.5-VL-72B for semantics, MegaSaM for geometry, TAPIP3D for point trajectories) to perform large-scale parallel annotation on 1,000+ GPUs.
+3. **Key Challenge**: WFMs require simultaneous 3D geometric understanding and video generation capabilities, yet the two types of tasks demand data that differ substantially in scale and annotation type.
+4. **Goal**: To construct a sufficiently large and comprehensively annotated video dataset that jointly supports 3D tasks — including depth estimation, scene reconstruction, and dynamic point tracking — as well as text/pose-conditioned video generation.
+5. **Key Insight**: Leveraging powerful proprietary models (Qwen2.5-VL-72B for semantics, MegaSaM for geometry, TAPIP3D for point trajectories) to perform large-scale parallel annotation on 1,000+ GPUs.
 6. **Core Idea**: A carefully designed filtering and multi-model annotation pipeline that simultaneously acquires structured text descriptions, camera poses, temporally consistent depth maps, dynamic masks, and 3D point trajectories from one million open-domain videos.
 
 ## Method

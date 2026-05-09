@@ -29,11 +29,11 @@ This paper proposes Neural Exposure Fields (NExF), which achieves 3D-consistent 
 
 ## Background & Motivation
 
-**State of the Field**: Standard NeRF benchmarks exclude exposure variation, yet real-world scenes (e.g., mixed indoor/outdoor environments, windowed rooms) frequently exhibit strong exposure changes that severely degrade reconstruction quality.
+**Background**: Standard NeRF benchmarks exclude exposure variation, yet real-world scenes (e.g., mixed indoor/outdoor environments, windowed rooms) frequently exhibit strong exposure changes that severely degrade reconstruction quality.
 
 **Limitations of Prior Work**: HDRNeRF requires professional HDR post-processing software and performs tone mapping only at the 2D image level, resulting in color inconsistencies for the same 3D point across different views. GLO embeddings are robust to small exposure changes but fail under large variations.
 
-**Root Cause**: Conventional cameras select a single exposure per image (a 2D operation), whereas the ideal approach is to learn an optimal exposure per 3D point (a 3D operation).
+**Key Challenge**: Conventional cameras select a single exposure per image (a 2D operation), whereas the ideal approach is to learn an optimal exposure per 3D point (a 3D operation).
 
 **Core Idea**: Elevating exposure modeling from the 2D image level to the 3D point level, thereby ensuring that the same 3D point yields consistent color across all views.
 

@@ -28,15 +28,15 @@ By constructing the Isle-Brick-V2 benchmark using psychologically inspired contr
 
 ## Background & Motivation
 
-**State of the Field**: VLMs (GPT-4o, Gemini, Claude, etc.) demonstrate strong performance on visual tasks such as object recognition and counting, with several models claiming spatial understanding capabilities. Benchmarks such as 3D-PC have begun evaluating VLMs' perspective-taking abilities, but they largely rely on natural scenes that make variable control difficult.
+**Background**: VLMs (GPT-4o, Gemini, Claude, etc.) demonstrate strong performance on visual tasks such as object recognition and counting, with several models claiming spatial understanding capabilities. Benchmarks such as 3D-PC have begun evaluating VLMs' perspective-taking abilities, but they largely rely on natural scenes that make variable control difficult.
 
 **Limitations of Prior Work**: Existing VLM evaluations primarily focus on the "recognition" level (what can be seen), lacking systematic assessment of the "reasoning" level (how a scene appears from another's viewpoint). Natural-scene benchmarks are susceptible to data contamination and cannot precisely isolate failure factors (i.e., whether failures stem from recognition or reasoning).
 
-**Root Cause**: VLMs achieve near-perfect performance at the surface level of object recognition, yet exhibit significant performance degradation when spatial reasoning and perspective transformation are required. This reflects a deep mismatch between recognition and reasoning—models may rely on linguistic priors (e.g., defaulting to "facing East") rather than genuine visual-spatial reasoning.
+**Key Challenge**: VLMs achieve near-perfect performance at the surface level of object recognition, yet exhibit significant performance degradation when spatial reasoning and perspective transformation are required. This reflects a deep mismatch between recognition and reasoning—models may rely on linguistic priors (e.g., defaulting to "facing East") rather than genuine visual-spatial reasoning.
 
-**Paper Goals**: To systematically address whether VLMs can perform Visual Perspective Taking (VPT), and to isolate specific failure points through hierarchical diagnostic evaluation.
+**Goal**: To systematically address whether VLMs can perform Visual Perspective Taking (VPT), and to isolate specific failure points through hierarchical diagnostic evaluation.
 
-**Starting Point**: Drawing on two levels of VPT from psychology—Level-1 (understanding whether another agent can see an object) and Level-2 (adopting another's viewpoint to determine relative object positions)—the work designs minimal-contrast experiments in which only one cognitively relevant factor varies at a time.
+**Key Insight**: Drawing on two levels of VPT from psychology—Level-1 (understanding whether another agent can see an object) and Level-2 (adopting another's viewpoint to determine relative object positions)—the work designs minimal-contrast experiments in which only one cognitively relevant factor varies at a time.
 
 **Core Idea**: Using controlled LEGO scenes paired with seven hierarchically structured diagnostic questions, the work disentangles scene understanding, spatial reasoning, and perspective-taking as three distinct cognitive levels, thereby revealing systematic VPT deficiencies in VLMs.
 

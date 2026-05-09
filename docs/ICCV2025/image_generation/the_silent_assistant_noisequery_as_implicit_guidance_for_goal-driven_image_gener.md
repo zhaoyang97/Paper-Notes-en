@@ -29,18 +29,18 @@ This paper proposes NoiseQuery, a training-free T2I generation enhancement metho
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models have achieved remarkable success in T2I generation, yet still suffer from misalignment between generated content and text prompts. Existing enhancement methods include fine-tuning the UNet (DPO), enhancing text encoders (LaVi-Bridge), improving inference strategies (CFG++), and optimizing initial noise (ReNO). Noise optimization has recently attracted attention, as images generated from the same initial noise within a single model often exhibit high similarity.
+**Background**: Diffusion models have achieved remarkable success in T2I generation, yet still suffer from misalignment between generated content and text prompts. Existing enhancement methods include fine-tuning the UNet (DPO), enhancing text encoders (LaVi-Bridge), improving inference strategies (CFG++), and optimizing initial noise (ReNO). Noise optimization has recently attracted attention, as images generated from the same initial noise within a single model often exhibit high similarity.
 
 **Limitations of Prior Work**:
    - Existing noise optimization methods (e.g., ReNO) rely on iterative gradient back-propagation, incurring high computational cost (23.56s vs. baseline 0.072s) and numerical instability (gradient explosion)
    - These methods are typically designed for specific models and cannot be reused across models
    - Text prompts are naturally suited for expressing high-level semantics but offer weak control over low-level visual attributes (color, texture, sharpness, etc.), since text encoders such as CLIP primarily learn high-level semantics
 
-**Root Cause**: The initial noise has a substantial impact on generation outcomes—not only within a single model but also across models—yet existing methods either overlook this influence or exploit it at prohibitive cost. The key challenge is how to efficiently and universally leverage the generative tendency encoded in the initial noise.
+**Key Challenge**: The initial noise has a substantial impact on generation outcomes—not only within a single model but also across models—yet existing methods either overlook this influence or exploit it at prohibitive cost. The key challenge is how to efficiently and universally leverage the generative tendency encoded in the initial noise.
 
-**Paper Goals**: (a) Reveal the cross-model generative consistency phenomenon of initial noise and provide a theoretical explanation; (b) construct a reusable noise library for efficient noise retrieval; (c) leverage noise to control low-level visual attributes that are difficult to describe via text.
+**Goal**: (a) Reveal the cross-model generative consistency phenomenon of initial noise and provide a theoretical explanation; (b) construct a reusable noise library for efficient noise retrieval; (c) leverage noise to control low-level visual attributes that are difficult to describe via text.
 
-**Starting Point**: Analysis of the forward noising process in diffusion models shows that a finite-step noise scheduler cannot fully eliminate original image information—e.g., the final step of Stable Diffusion still retains $\sqrt{\bar\alpha_T} = 0.068265$ of the original signal. This causes models to "learn" to exploit residual signals in the noise as a shortcut during training. At inference, models continue to rely on this implicit knowledge to "interpret" pure Gaussian noise, making the initial noise a "silent assistant."
+**Key Insight**: Analysis of the forward noising process in diffusion models shows that a finite-step noise scheduler cannot fully eliminate original image information—e.g., the final step of Stable Diffusion still retains $\sqrt{\bar\alpha_T} = 0.068265$ of the original signal. This causes models to "learn" to exploit residual signals in the noise as a shortcut during training. At inference, models continue to rely on this implicit knowledge to "interpret" pure Gaussian noise, making the initial noise a "silent assistant."
 
 **Core Idea**: Unconditional generation (empty prompt) is used to reveal the implicit generative posterior of the initial noise. A large-scale noise library is pre-built and indexed with multi-granularity features; at inference time, the optimal noise is rapidly retrieved via feature matching, enabling dual control over both semantics and low-level attributes.
 

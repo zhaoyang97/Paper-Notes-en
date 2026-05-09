@@ -29,15 +29,15 @@ This paper proposes Lion, a framework that, for the first time, systematically e
 
 ## Background & Motivation
 
-1. **State of the Field**: Linear Transformers and state space models (SSMs) have emerged as efficient alternatives to softmax Transformers for causal sequence modeling, enabling parallel training via matrix multiplication and efficient inference in RNN form.
+1. **Background**: Linear Transformers and state space models (SSMs) have emerged as efficient alternatives to softmax Transformers for causal sequence modeling, enabling parallel training via matrix multiplication and efficient inference in RNN form.
 
 2. **Limitations of Prior Work**: Despite their success in causal tasks, linear Transformers still lack a unified framework for bidirectional sequence modeling. Existing bidirectional SSMs (e.g., Bi-Mamba, Vim) mostly apply causal formulations independently in the forward and backward directions (e.g., dual-scan), failing to exploit the natural prior of bidirectional modeling—that the entire sequence is available at both training and inference time.
 
-3. **Root Cause**: Bidirectional SSMs rely on chunked training for numerical stability (to avoid overflow/underflow from cumulative products of decay factors), making training significantly slower than softmax Transformers. Meanwhile, naively summing the outputs of two linear Transformers leads to "double counting" and attention imbalance.
+3. **Key Challenge**: Bidirectional SSMs rely on chunked training for numerical stability (to avoid overflow/underflow from cumulative products of decay factors), making training significantly slower than softmax Transformers. Meanwhile, naively summing the outputs of two linear Transformers leads to "double counting" and attention imbalance.
 
-4. **Paper Goals**: To construct a general framework that enables a broad class of linear Transformers to be efficiently applied to bidirectional sequence modeling.
+4. **Goal**: To construct a general framework that enables a broad class of linear Transformers to be efficiently applied to bidirectional sequence modeling.
 
-5. **Starting Point**: Starting from the decay mask of causal linear attention, a symmetric bidirectional mask $\mathbf{M}_{ij}$ is defined as the product of all decay factors between positions $i$ and $j$, from which three equivalent forms—full attention, RNN, and chunkwise parallel—are naturally derived.
+5. **Key Insight**: Starting from the decay mask of causal linear attention, a symmetric bidirectional mask $\mathbf{M}_{ij}$ is defined as the product of all decay factors between positions $i$ and $j$, from which three equivalent forms—full attention, RNN, and chunkwise parallel—are naturally derived.
 
 6. **Core Idea**: The decay mask of causal linear Transformers can be naturally generalized into a symmetric bidirectional mask. Through lower/upper triangular decomposition, an equivalent bidirectional RNN is obtained that can be trained stably without chunking.
 

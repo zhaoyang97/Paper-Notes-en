@@ -27,15 +27,15 @@ This paper proposes Force Prompting, which uses physical forces (local point for
 
 ## Background & Motivation
 
-**State of the Field**: Video generation models (Sora/CogVideoX/Wan2.1) have made substantial progress in visual quality and motion realism, but primarily rely on text and image inputs, lacking precise control over physical interactions. Existing controllable generation research focuses mainly on camera control and trajectory control.
+**Background**: Video generation models (Sora/CogVideoX/Wan2.1) have made substantial progress in visual quality and motion realism, but primarily rely on text and image inputs, lacking precise control over physical interactions. Existing controllable generation research focuses mainly on camera control and trajectory control.
 
 **Limitations of Prior Work**: (a) Trajectory control requires pre-specified per-frame pixel positions and cannot handle global phenomena (wind/fluid); (b) trajectories and forces are fundamentally different physical quantities—the same force produces different displacements for objects of different masses; (c) physics simulator-based methods require 3D geometry or running a simulator at inference time.
 
-**Root Cause**: Acquiring high-quality force–video paired training data is extremely difficult.
+**Key Challenge**: Acquiring high-quality force–video paired training data is extremely difficult.
 
-**Paper Goals**: To teach a pre-trained video generation model to understand force control signals using a minimal amount of synthetic physics simulation data.
+**Goal**: To teach a pre-trained video generation model to understand force control signals using a minimal amount of synthetic physics simulation data.
 
-**Starting Point**: It is hypothesized that state-of-the-art video models already encode strong priors about visual dynamics, and that synthetic data need only "activate" rather than "teach" the model.
+**Key Insight**: It is hypothesized that state-of-the-art video models already encode strong priors about visual dynamics, and that synthetic data need only "activate" rather than "teach" the model.
 
 **Core Idea**: Video generation models can learn force-conditioned generation from a very small amount of synthetic data and exhibit remarkable generalization across objects, materials, and geometries.
 

@@ -27,13 +27,13 @@ content_hash: 2a6293c53d658ffb
 This paper proposes a novel paradigm termed *in-place completion*, which extends pretrained object-level generative priors to the scene level, directly completing fragmented geometry at its original spatial location without explicit pose alignment. The authors also construct ARSG-110K, a 110K-scale scene-level dataset, and substantially outperform baselines such as MIDI and Gen3DSR.
 
 ## Background & Motivation
-**State of the Field**: Compositional 3D scene generation from a single image is a core task in robotics, AR/VR, and related domains.
+**Background**: Compositional 3D scene generation from a single image is a core task in robotics, AR/VR, and related domains.
 
 **Limitations of Prior Work — Two Main Paradigms**:
    - **Feed-forward generation** (e.g., MIDI, SceneGen): end-to-end efficient but poor generalization, with multi-instance attention complexity scaling quadratically with the number of objects.
    - **Divide-and-conquer** (e.g., Gen3DSR): generates or retrieves individual objects and optimizes pose alignment — good generalization but time-consuming optimization that accumulates errors.
 
-**Root Cause**: How can generalization be maintained while avoiding costly pose alignment?
+**Key Challenge**: How can generalization be maintained while avoiding costly pose alignment?
 
 **Key Observation**: Geometry estimation models can already accurately recover the 3D geometry of visible regions, which encodes both the spatial layout and the visible portion of each instance. This makes it possible to complete the invisible parts directly in place, without first generating and then aligning.
 

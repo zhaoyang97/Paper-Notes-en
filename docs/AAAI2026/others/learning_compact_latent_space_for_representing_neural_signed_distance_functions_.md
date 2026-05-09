@@ -36,9 +36,9 @@ Neural Signed Distance Functions (Neural SDFs) are a core approach to 3D shape r
 
 **Overfitting-based methods** (e.g., Instant-NGP, MosaicSDF): Volumetric grids or multi-resolution hash tables store spatial features, enabling the recovery of fine-grained details. However, these methods typically overfit to a single shape and lack a compact latent space for representing multiple shapes. When multiple shapes share a feature grid, unbalanced sampling across shapes causes mutual interference and introduces artifacts.
 
-**Root Cause**: Generalization capability and high-frequency detail recovery are fundamentally at odds. Generalization methods offer compact encoding but sacrifice detail; overfitting methods preserve detail but lack a shared representational space.
+**Key Challenge**: Generalization capability and high-frequency detail recovery are fundamentally at odds. Generalization methods offer compact encoding but sacrifice detail; overfitting methods preserve detail but lack a shared representational space.
 
-**Starting Point**: The paper combines the strengths of both paradigms — the generalization branch handles regions far from the surface (where reasonable SDF values can be produced without dense sampling), while the overfitting branch handles near-surface regions (with dense sampling to recover high-frequency details). Both branches share a single compact shape code $\mathbf{z}$.
+**Key Insight**: The paper combines the strengths of both paradigms — the generalization branch handles regions far from the surface (where reasonable SDF values can be produced without dense sampling), while the overfitting branch handles near-surface regions (with dense sampling to recover high-frequency details). Both branches share a single compact shape code $\mathbf{z}$.
 
 ## Method
 

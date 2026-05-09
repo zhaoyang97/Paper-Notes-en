@@ -31,8 +31,8 @@ This paper proposes REVERSE, the first framework to unify generation adjustment 
 
 - **Core Problem**: VLMs frequently produce hallucinations in visual understanding (e.g., describing non-existent objects or actions), posing significant risks in safety-critical scenarios such as autonomous driving and assistive technologies.
 - **Limitations of Prior Work**: Generation adjustment methods (VCD, OPERA, DoLA, etc.) modify decoding behavior but cannot correct erroneously generated tokens once produced; post-hoc verification methods (Woodpecker, LURE) rely on external models, involve complex pipelines, and tend to reject outputs rather than correct them.
-- **Root Cause**: No existing method can simultaneously generate, verify, and correct within a single model.
-- **Starting Point**: Introduce explicit confidence tokens to enable the VLM to self-annotate phrase-level hallucinations, combined with retrospective resampling for runtime self-correction.
+- **Key Challenge**: No existing method can simultaneously generate, verify, and correct within a single model.
+- **Key Insight**: Introduce explicit confidence tokens to enable the VLM to self-annotate phrase-level hallucinations, combined with retrospective resampling for runtime self-correction.
 
 ## Method
 

@@ -28,15 +28,15 @@ This paper proposes the first unified benchmark for PU learning and systematical
 
 ## Background & Motivation
 
-**State of the Field**: PU learning (binary classification with only positive and unlabeled samples) has seen a proliferation of algorithms in recent years, yet experimental setups remain highly inconsistent, making it difficult to determine which algorithm is superior.
+**Background**: PU learning (binary classification with only positive and unlabeled samples) has seen a proliferation of algorithms in recent years, yet experimental setups remain highly inconsistent, making it difficult to determine which algorithm is superior.
 
 **Limitations of Prior Work**: (a) Many algorithms rely on validation sets containing negative samples for model selection, which contradicts the fundamental PU learning assumption of no access to negatives; (b) PU learning encompasses one-sample (OS) and two-sample (TS) settings, and existing evaluations favor the OS setting while overlooking a critical distinction — in the OS setting, the class prior and marginal distribution of unlabeled data differ.
 
-**Root Cause**: TS algorithms assume unlabeled data follows the marginal distribution $p(x)$, but in the OS setting the density of unlabeled data is $\bar{p}(x) = \bar{\pi}p(x|y=+1) + (1-\bar{\pi})p(x|y=-1)$, where $\bar{\pi} \neq \pi$. This breaks the risk consistency of TS algorithms.
+**Key Challenge**: TS algorithms assume unlabeled data follows the marginal distribution $p(x)$, but in the OS setting the density of unlabeled data is $\bar{p}(x) = \bar{\pi}p(x|y=+1) + (1-\bar{\pi})p(x|y=-1)$, where $\bar{\pi} \neq \pi$. This breaks the risk consistency of TS algorithms.
 
-**Paper Goals**: To provide an accessible, realistic, and fair evaluation framework for PU learning.
+**Goal**: To provide an accessible, realistic, and fair evaluation framework for PU learning.
 
-**Starting Point**: (a) Deriving surrogate metrics computable solely from positive and unlabeled data via information theory; (b) Identifying the intra-dataset label shift problem and providing theoretical guarantees.
+**Key Insight**: (a) Deriving surrogate metrics computable solely from positive and unlabeled data via information theory; (b) Identifying the intra-dataset label shift problem and providing theoretical guarantees.
 
 **Core Idea**: Merging positive samples into the unlabeled set restores unbiasedness of the marginal distribution, eliminating the fairness gap between OS and TS settings with a single line of code.
 

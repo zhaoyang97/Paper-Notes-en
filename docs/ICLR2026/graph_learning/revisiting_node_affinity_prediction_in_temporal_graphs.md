@@ -28,15 +28,15 @@ This paper analyzes why simple heuristics (persistent forecasting, moving averag
 
 ## Background & Motivation
 
-**State of the Field**: Temporal graph node affinity prediction on CTDGs requires, given a query node $u$, predicting its affinity ranking with all other nodes at future timestamps. TGNNs such as TGN, TGAT, and DyGFormer achieve strong performance on link prediction tasks.
+**Background**: Temporal graph node affinity prediction on CTDGs requires, given a query node $u$, predicting its affinity ranking with all other nodes at future timestamps. TGNNs such as TGN, TGAT, and DyGFormer achieve strong performance on link prediction tasks.
 
 **Limitations of Prior Work**: Simple heuristics (persistent forecasting, moving average) consistently outperform all SOTA TGNNs on affinity prediction — a puzzling and largely unexplained phenomenon.
 
-**Root Cause**: Complex TGNN models fail to match even the simplest heuristics due to: insufficient expressiveness (nonlinear updates cannot maintain linear memory), loss function mismatch (cross-entropy is unsuitable for ranking), loss of global temporal dynamics from local neighborhood sampling, and information loss introduced by mini-batching.
+**Key Challenge**: Complex TGNN models fail to match even the simplest heuristics due to: insufficient expressiveness (nonlinear updates cannot maintain linear memory), loss function mismatch (cross-entropy is unsuitable for ranking), loss of global temporal dynamics from local neighborhood sampling, and information loss introduced by mini-batching.
 
-**Paper Goals**: (a) Provide a theoretical explanation for the deficiencies of TGNNs; (b) design a stronger architecture that generalizes the heuristics; (c) address the loss function mismatch.
+**Goal**: (a) Provide a theoretical explanation for the deficiencies of TGNNs; (b) design a stronger architecture that generalizes the heuristics; (c) address the loss function mismatch.
 
-**Starting Point**: Theorem 1 proves that heuristics (PF/EMA/SMA) are special cases of linear SSMs, while Theorem 2 shows that standard RNNs/LSTMs/GRUs cannot express even PF due to bounded outputs $\in (-1,1)$. This motivates designing architectures that maintain linear input-output mappings.
+**Key Insight**: Theorem 1 proves that heuristics (PF/EMA/SMA) are special cases of linear SSMs, while Theorem 2 shows that standard RNNs/LSTMs/GRUs cannot express even PF due to bounded outputs $\in (-1,1)$. This motivates designing architectures that maintain linear input-output mappings.
 
 **Core Idea**: NAViS = learnable linear SSM + virtual global state + LambdaLoss ranking loss. A gating mechanism ensures the output is a convex combination of inputs (linear), while gate values adapt based on the current event.
 

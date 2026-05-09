@@ -76,7 +76,7 @@ The paper adopts a **theoretical analysis + experimental validation** framework:
    - **Time dimension** (Theorem 4.4): The predictor $\boldsymbol\beta(t)$ initially **relies on minor coordinates** and gradually **shifts toward major coordinates** as training progresses.
    - **Initialization dimension** (Theorem 4.5): As the initialization scale increases, a similar transition from minor to major features is observed.
 
-   **Root Cause**: The gradient normalization factor in $\ell_2$-SAM amplifies small gradient coordinates during the perturbation step, causing the corresponding $\beta_j$ to grow faster in the early phase. As training continues, major coordinates eventually dominate due to their larger feature weights $\mu_j$, but this transition is gradual.
+   **Key Challenge**: The gradient normalization factor in $\ell_2$-SAM amplifies small gradient coordinates during the perturbation step, causing the corresponding $\beta_j$ to grow faster in the early phase. As training continues, major coordinates eventually dominate due to their larger feature weights $\mu_j$, but this transition is gradual.
 
 ### Rescaled Flow Technique
 

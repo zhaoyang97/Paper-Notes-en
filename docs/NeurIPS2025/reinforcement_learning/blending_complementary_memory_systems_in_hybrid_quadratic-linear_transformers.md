@@ -28,7 +28,7 @@ content_hash: 2794aeac66d65250
 This paper proposes Hybrid Quadratic-Linear Transformers (HQLT), which integrate KV-memory (softmax attention: precise retrieval but quadratic complexity) and FW-memory (DeltaNet/linear attention: linear complexity but coarse retrieval) as complementary memory systems. Three hybrid strategies are compared (Delayed-Streaming, Delayed-Chunk, and Synchronous), and the Synchronous variant is shown to be optimal across language modeling, retrieval, algorithmic reasoning, and RL tasks at 340M and 1.3B parameter scales.
 
 ## Background & Motivation
-**State of the Field**: Modern Transformers fall into two categories — Quadratic Transformers (QT, standard softmax attention) and Linear Transformers (LT, e.g., DeltaNet). Their computational properties are complementary yet each has fundamental limitations:
+**Background**: Modern Transformers fall into two categories — Quadratic Transformers (QT, standard softmax attention) and Linear Transformers (LT, e.g., DeltaNet). Their computational properties are complementary yet each has fundamental limitations:
    - QT achieves precise retrieval via softmax, but is constrained by quadratic complexity and requires a fixed maximum context window.
    - LT achieves linear complexity and supports arbitrarily long sequences via fast weight matrices; the DeltaNet variant additionally supports state tracking computations that QT cannot perform, but at the cost of retrieval precision.
 
@@ -36,9 +36,9 @@ This paper proposes Hybrid Quadratic-Linear Transformers (HQLT), which integrate
 
 **Biological Inspiration**: The brain integrates multiple memory mechanisms through Complementary Learning Systems (CLS) — the hippocampus handles episodic memory (precise but capacity-limited), while the cortex handles semantic memory (abstract but persistent). Analogously, KV-memory corresponds to precise short-term memory, and FW-memory corresponds to compressed long-term memory.
 
-**Root Cause**: Precise retrieval requires explicitly storing all key-value pairs (quadratic growth), while long-context processing requires a fixed-size compressed state (linear complexity); the two are fundamentally incompatible within a single system.
+**Key Challenge**: Precise retrieval requires explicitly storing all key-value pairs (quadratic growth), while long-context processing requires a fixed-size compressed state (linear complexity); the two are fundamentally incompatible within a single system.
 
-**Starting Point**: Rather than choosing between the two Transformer classes, the paper designs a hybrid architecture in which two memory systems serve complementary roles — the central question being when and how information is allocated to each system.
+**Key Insight**: Rather than choosing between the two Transformer classes, the paper designs a hybrid architecture in which two memory systems serve complementary roles — the central question being when and how information is allocated to each system.
 
 **Core Idea**: Construct a complementary memory system using DeltaNet's FW-memory and softmax KV-memory, and maximize their joint benefits through a synchronous input strategy.
 

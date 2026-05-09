@@ -29,18 +29,18 @@ This paper proposes the *extrinsic paradigm*, which fully decouples semantics fr
 
 ## Background & Motivation
 
-**State of the Field**: Open-vocabulary 3D scene understanding is a critical capability for autonomous driving and robotics. 3DGS has emerged as an ideal representational foundation due to its high-fidelity modeling and real-time rendering.
+**Background**: Open-vocabulary 3D scene understanding is a critical capability for autonomous driving and robotics. 3DGS has emerged as an ideal representational foundation due to its high-fidelity modeling and real-time rendering.
 
 **Limitations of Prior Work**: Dominant approaches adopt the *embedding paradigm*, which injects high-dimensional semantic features directly into each Gaussian point. This introduces three fundamental deficiencies:
    - **Geometry–semantic inconsistency**: The basic unit of semantics should be objects, not Gaussian points. "Neutral points" at object boundaries are forcibly assigned semantic labels, resulting in blurry boundaries.
    - **Semantic inflation**: Injecting GB-scale feature data imposes severe storage and downstream processing burdens (approximately 3 GB of CLIP features per scene).
    - **Semantic rigidity**: Each Gaussian can store only one feature vector, making it impossible to express polysemy (e.g., a "car window" is simultaneously a "window" and "part of a car").
 
-**Root Cause**: The embedding paradigm conflates semantics with geometry, yet the atomic units of geometry and semantics are fundamentally different (points vs. objects).
+**Key Challenge**: The embedding paradigm conflates semantics with geometry, yet the atomic units of geometry and semantics are fundamentally different (points vs. objects).
 
-**Paper Goals**: To achieve efficient, accurate, and polysemy-aware open-vocabulary 3D understanding without modifying the underlying geometry.
+**Goal**: To achieve efficient, accurate, and polysemy-aware open-vocabulary 3D understanding without modifying the underlying geometry.
 
-**Starting Point**: The paper proposes the extrinsic paradigm, in which semantics form an independent abstract index layer that *references* rather than *embeds* geometry.
+**Key Insight**: The paper proposes the extrinsic paradigm, in which semantics form an independent abstract index layer that *references* rather than *embeds* geometry.
 
 **Core Idea**: Replace per-point semantic embedding with multi-granularity object grouping, and replace high-dimensional visual features with VLM-generated text hypotheses.
 

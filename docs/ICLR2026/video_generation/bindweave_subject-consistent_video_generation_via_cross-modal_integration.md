@@ -27,18 +27,18 @@ content_hash: fbfcb48ef7706a37
 BindWeave replaces conventional shallow fusion mechanisms with a Multimodal Large Language Model (MLLM) to parse complex multi-subject textual instructions, generating subject-aware hidden states as conditioning signals for a DiT. Combined with CLIP semantic features and VAE fine-grained appearance features, it achieves high-fidelity, subject-consistent video generation.
 
 ## Background & Motivation
-**State of the Field**: DiT-based video generation models (Wan, HunyuanVideo, etc.) can produce high-quality long videos, yet precise control over subject identity and appearance remains insufficient.
+**Background**: DiT-based video generation models (Wan, HunyuanVideo, etc.) can produce high-quality long videos, yet precise control over subject identity and appearance remains insufficient.
 
 **Limitations of Prior Work**:
    - Existing S2V methods (Phantom, VACE, etc.) follow a "separate-then-fuse" shallow processing paradigm — independent encoders extract image and text features respectively, which are then combined via concatenation or cross-attention for late fusion.
    - This paradigm handles simple appearance-preservation instructions adequately, but fails to establish deep cross-modal semantic associations when prompts involve complex spatial relationships, temporal logic, or multi-subject interactions.
    - This results in identity confusion, action misalignment, and attribute blending.
 
-**Root Cause**: Complex semantics in text prompts (e.g., "Person A hands a gift to Person B") require deep cross-modal reasoning to be correctly interpreted, which shallow fusion cannot achieve.
+**Key Challenge**: Complex semantics in text prompts (e.g., "Person A hands a gift to Person B") require deep cross-modal reasoning to be correctly interpreted, which shallow fusion cannot achieve.
 
-**Paper Goals**: Establish deep semantic associations between textual commands and visual entities to accurately resolve the roles, attributes, and interactions of multiple subjects.
+**Goal**: Establish deep semantic associations between textual commands and visual entities to accurately resolve the roles, attributes, and interactions of multiple subjects.
 
-**Starting Point**: Leverage a pretrained MLLM as an "intelligent instruction parser" to perform deep cross-modal reasoning prior to generation.
+**Key Insight**: Leverage a pretrained MLLM as an "intelligent instruction parser" to perform deep cross-modal reasoning prior to generation.
 
 **Core Idea**: Replace shallow encoder fusion with the deep reasoning capability of an MLLM to generate conditioning signals that jointly encode subject identity and interaction relationships for guiding the DiT.
 

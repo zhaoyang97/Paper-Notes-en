@@ -29,15 +29,15 @@ This paper proposes RICE-NET, a multimodal 3D ResNet-18 that fuses longitudinal 
 
 ## Background & Motivation
 
-**State of the Field**: Post-operative radiotherapy is standard of care for glioblastoma (GBM). Follow-up MRI frequently reveals new contrast-enhancing lesions that must be distinguished between tumor recurrence and radiation-induced contrast enhancement (RICE). The two conditions are highly similar in MRI appearance, and current practice relies on complex, case-by-case evaluation by multidisciplinary tumor boards.
+**Background**: Post-operative radiotherapy is standard of care for glioblastoma (GBM). Follow-up MRI frequently reveals new contrast-enhancing lesions that must be distinguished between tumor recurrence and radiation-induced contrast enhancement (RICE). The two conditions are highly similar in MRI appearance, and current practice relies on complex, case-by-case evaluation by multidisciplinary tumor boards.
 
 **Limitations of Prior Work**: (1) Existing discrimination methods depend on diffusion MRI, which is not routinely acquired in clinical settings; (2) radiotherapy dose maps, increasingly discussed in tumor board meetings, have not been incorporated into automated classification models; (3) a systematic quantification of each modality's diagnostic contribution is lacking.
 
-**Root Cause**: RICE and recurrence are difficult to distinguish on standard MRI, while radiotherapy dose maps containing critical diagnostic information remain underutilized.
+**Key Challenge**: RICE and recurrence are difficult to distinguish on standard MRI, while radiotherapy dose maps containing critical diagnostic information remain underutilized.
 
-**Paper Goals**: To perform automated binary classification using clinically routine T1-weighted MRI (post-operative and event scans) together with radiotherapy dose maps, and to quantify the independent contribution of each modality.
+**Goal**: To perform automated binary classification using clinically routine T1-weighted MRI (post-operative and event scans) together with radiotherapy dose maps, and to quantify the independent contribution of each modality.
 
-**Starting Point**: The radiotherapy dose distribution map is introduced as an additional input channel, concatenated with longitudinal MRI channels and fed into a 3D convolutional network.
+**Key Insight**: The radiotherapy dose distribution map is introduced as an additional input channel, concatenated with longitudinal MRI channels and fed into a 3D convolutional network.
 
 **Core Idea**: The spatial distribution of radiotherapy dose is the strongest predictor for distinguishing RICE from recurrence, and its fusion with MRI further improves classification performance.
 

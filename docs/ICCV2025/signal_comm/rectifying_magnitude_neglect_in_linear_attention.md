@@ -29,12 +29,12 @@ This paper identifies that Linear Attention completely discards Query magnitude 
 
 ## Background & Motivation
 
-- **State of the Field**: The quadratic complexity $O(N^2)$ of Softmax Attention limits Vision Transformers in high-resolution visual tasks. Linear Attention reduces complexity to $O(N)$ via kernel function approximation, but suffers from notable performance degradation.
+- **Background**: The quadratic complexity $O(N^2)$ of Softmax Attention limits Vision Transformers in high-resolution visual tasks. Linear Attention reduces complexity to $O(N)$ via kernel function approximation, but suffers from notable performance degradation.
 - **Limitations of Prior Work**: Existing improvements (e.g., EfficientViT adding convolutions for local compensation, Flatten Transformer's focused linear attention) are largely heuristic patch-up strategies.
-- **Root Cause**: This paper analyzes the fundamental cause of the performance gap at the **mathematical formulation level**: in the Linear Attention formulation, the Query magnitude $\|\phi(Q_i)\|$ cancels out in the numerator and denominator (Eq. 4), leaving only the directional component $\vec{\alpha_i}$. This means:
+- **Key Challenge**: This paper analyzes the fundamental cause of the performance gap at the **mathematical formulation level**: in the Linear Attention formulation, the Query magnitude $\|\phi(Q_i)\|$ cancels out in the numerator and denominator (Eq. 4), leaving only the directional component $\vec{\alpha_i}$. This means:
   - Softmax Attention: increasing Query magnitude → sharper attention distribution (high-score Keys receive more attention)
   - Linear Attention: attention distribution remains unchanged regardless of Query magnitude variation
-- **Paper Goals**: This finding explains the long-standing issue of overly smooth attention scores and weak local perception in Linear Attention.
+- **Goal**: This finding explains the long-standing issue of overly smooth attention scores and weak local perception in Linear Attention.
 
 ## Method
 

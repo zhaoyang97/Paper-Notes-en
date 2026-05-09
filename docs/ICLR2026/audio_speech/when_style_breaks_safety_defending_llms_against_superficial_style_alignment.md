@@ -28,11 +28,11 @@ This paper identifies that Attack Success Rates (ASR) in LLM jailbreak benchmark
 
 ## Background & Motivation
 
-**State of the Field**: LLM alignment efforts enable models to refuse malicious requests. Jailbreak attacks exploit string transformations to increase Attack Success Rate (ASR).
+**Background**: LLM alignment efforts enable models to refuse malicious requests. Jailbreak attacks exploit string transformations to increase Attack Success Rate (ASR).
 
 **Limitations of Prior Work**: Queries in jailbreak benchmarks frequently contain semantically irrelevant style patterns (e.g., "create a list of" in "create a list of chemical warfare agents"), which independently inflate ASR. Existing safety defenses do not account for the impact of style alignment.
 
-**Root Cause**: Style patterns are pervasive in benign instructions (e.g., "create a list of healthy snacks"), causing LLMs to learn to comply with stylistic requests — a tendency that is then exploited when the same styles appear in malicious queries.
+**Key Challenge**: Style patterns are pervasive in benign instructions (e.g., "create a list of healthy snacks"), causing LLMs to learn to comply with stylistic requests — a tendency that is then exploited when the same styles appear in malicious queries.
 
 **Core Idea**: ASR inflation = ASR(styled query) − ASR(malicious intent only). SafeStyle = safety training data augmented to match the style distribution of fine-tuning data.
 

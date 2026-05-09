@@ -29,15 +29,15 @@ This work introduces dataset condensation to diffusion model training for the fi
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models have achieved remarkable results in image generation, but training costs are extremely high. For instance, SiT-XL/2 requires 7 million training steps on the full ImageNet (1.28 million images) to converge, consuming hundreds of GPU days. Recently, researchers have improved training efficiency from the model side (architectural improvements, attention optimization, representation alignment like REPA), but the possibility of directly reducing the training set scale from the data side remains largely unexplored.
+**Background**: Diffusion models have achieved remarkable results in image generation, but training costs are extremely high. For instance, SiT-XL/2 requires 7 million training steps on the full ImageNet (1.28 million images) to converge, consuming hundreds of GPU days. Recently, researchers have improved training efficiency from the model side (architectural improvements, attention optimization, representation alignment like REPA), but the possibility of directly reducing the training set scale from the data side remains largely unexplored.
 
 **Limitations of Prior Work**: Dataset Condensation (DC) is well-studied for discriminative models (e.g., SRe2L, RDED). However, applying these methods directly to diffusion model training leads to complete collapse, with FIDs as high as 80-166.
 
-**Root Cause**: Discriminative DC methods optimize for category-discriminative features rather than the pixel distribution of real images. The generated synthetic images lack sufficient structural and semantic fidelity to support the training requirements of generative models.
+**Key Challenge**: Discriminative DC methods optimize for category-discriminative features rather than the pixel distribution of real images. The generated synthetic images lack sufficient structural and semantic fidelity to support the training requirements of generative models.
 
-**Paper Goals**: Can a carefully designed dataset condensation strategy reduce training data to 0.8%-8% of the original size while maintaining or even exceeding the generation quality of diffusion models trained on the full dataset?
+**Goal**: Can a carefully designed dataset condensation strategy reduce training data to 0.8%-8% of the original size while maintaining or even exceeding the generation quality of diffusion models trained on the full dataset?
 
-**Starting Point**: The authors observe that diffusion models themselves can encode sample learning difficulty via denoising loss. Based on this, they propose using the diffusion model as a "scorer" to select the most informative training subset based on difficulty, then attaching rich semantic and visual priors to the selected samples.
+**Key Insight**: The authors observe that diffusion models themselves can encode sample learning difficulty via denoising loss. Based on this, they propose using the diffusion model as a "scorer" to select the most informative training subset based on difficulty, then attaching rich semantic and visual priors to the selected samples.
 
 **Core Idea**: Select a subset using interval sampling based on diffusion difficulty scores (Select), then enhance each sample with T5 text embeddings and DINOv2 visual features (Attach) to achieve efficient diffusion training under extreme data compression.
 

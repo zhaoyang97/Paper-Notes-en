@@ -29,13 +29,13 @@ This work addresses causal confusion in end-to-end autonomous driving by leverag
 
 ## Background & Motivation
 
-**State of the Field**: End-to-end autonomous driving systems perform well in open-loop evaluations but suffer significant performance degradation in closed-loop settings.
+**Background**: End-to-end autonomous driving systems perform well in open-loop evaluations but suffer significant performance degradation in closed-loop settings.
 
 **Limitations of Prior Work**: Causal confusion is the root cause—models fail to associate driving behavior with primary environmental factors and instead learn spurious correlations from noisy signals. Existing approaches focus primarily on input noise (e.g., sensor noise) while neglecting noise inherent in the supervision signal itself.
 
-**Root Cause**: The imitation learning paradigm over-relies on expert trajectories, which themselves contain substantial noise arising from driving style, temporal delays, and control errors.
+**Key Challenge**: The imitation learning paradigm over-relies on expert trajectories, which themselves contain substantial noise arising from driving style, temporal delays, and control errors.
 
-**Starting Point**: Rather than designing complex network architectures, this work proposes changing the source of the supervision signal—shifting from dependence on expert trajectories to reliance on perception outputs (lane centerlines and agent trajectories) to guide planning.
+**Key Insight**: Rather than designing complex network architectures, this work proposes changing the source of the supervision signal—shifting from dependence on expert trajectories to reliance on perception outputs (lane centerlines and agent trajectories) to guide planning.
 
 **Core Idea**: Positive constraints (MTPS/STPS) ensure correct fundamental driving behavior + negative constraints (NTPS) reinforce safe interaction = a complete causal reasoning framework.
 

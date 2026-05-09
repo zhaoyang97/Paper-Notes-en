@@ -26,18 +26,18 @@ content_hash: 9edeead904d71ac7
 This work presents ParallelPrompt, the first benchmark for intra-query parallelism, comprising structured decomposition annotations for 37,000+ real user prompts. It demonstrates that approximately 10% of user queries contain exploitable parallel structure, and that parallel execution can achieve up to 5.7× latency speedup with limited quality degradation.
 
 ## Background & Motivation
-**State of the Field**: LLM inference optimization has primarily focused on two levels — **token-level** techniques (speculative decoding, KV caching, etc.) and **request-level** techniques (batching, scheduling, etc.). A largely overlooked dimension is **intra-query parallelism**: many user prompts inherently contain multiple subtasks that can be executed independently.
+**Background**: LLM inference optimization has primarily focused on two levels — **token-level** techniques (speculative decoding, KV caching, etc.) and **request-level** techniques (batching, scheduling, etc.). A largely overlooked dimension is **intra-query parallelism**: many user prompts inherently contain multiple subtasks that can be executed independently.
 
 **Limitations of Prior Work**: Existing task decomposition methods (e.g., Skeleton-of-Thought, Tree-of-Problems) target synthetic scenarios or predefined patterns, and generalize poorly to the diverse parallel structures found in real user queries. More critically, no standardized benchmark dataset exists to quantify the potential of intra-query parallelism.
 
-**Root Cause**: Users frequently compose queries containing multiple independently processable subtasks (e.g., "translate the following 10 sentences," "analyze the pros and cons of these 5 books"), yet LLM serving systems process them serially as monolithic units. This "monolithic query" assumption wastes substantial parallelization opportunities.
+**Key Challenge**: Users frequently compose queries containing multiple independently processable subtasks (e.g., "translate the following 10 sentences," "analyze the pros and cons of these 5 books"), yet LLM serving systems process them serially as monolithic units. This "monolithic query" assumption wastes substantial parallelization opportunities.
 
-**Paper Goals**
+**Goal**
 - Construct the first intra-query parallelism benchmark from real user queries
 - Quantify the practical gains of parallelism (latency–quality trade-off)
 - Evaluate existing decomposition methods on real-world queries
 
-**Starting Point**: A multi-stage pipeline filters queries with decomposable structure from 1M+ real LLM conversation logs, extracts a structured schema (template + shared context + iterated data), and quantifies gains via parallel vs. serial execution.
+**Key Insight**: A multi-stage pipeline filters queries with decomposable structure from 1M+ real LLM conversation logs, extracts a structured schema (template + shared context + iterated data), and quantifies gains via parallel vs. serial execution.
 
 **Core Idea**: Approximately 10% of real user queries exhibit exploitable intra-query parallel structure, and simple schema-based decomposition can yield significant latency improvements.
 

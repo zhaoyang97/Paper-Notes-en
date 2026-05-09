@@ -29,7 +29,7 @@ This paper applies BN-LTE (Bayesian Network with Latent Time Embedding) to real-
 
 ## Background & Motivation
 
-**State of the Field**: Approximately $380 billion is invested annually in Alzheimer's disease (AD) research, yet clinical trials continue to fail. A fundamental reason is that the causal relationships among the thousands of pathways involved in AD remain poorly understood. Causal inference provides a powerful framework for elucidating these relationships.
+**Background**: Approximately $380 billion is invested annually in Alzheimer's disease (AD) research, yet clinical trials continue to fail. A fundamental reason is that the causal relationships among the thousands of pathways involved in AD remain poorly understood. Causal inference provides a powerful framework for elucidating these relationships.
 
 **Limitations of Prior Work**:
 - Most causal discovery methods assume a static causal graph, whereas the pathophysiological processes of AD are dynamically evolving—causal relationships differ across disease stages.
@@ -37,14 +37,14 @@ This paper applies BN-LTE (Bayesian Network with Latent Time Embedding) to real-
 - Individual rates of disease progression vary due to latent factors such as cognitive reserve, meaning chronological age does not equal disease stage.
 - The causal relationships between emerging plasma biomarkers NfL and GFAP and established AD markers (Aβ, pTau) remain unclear.
 
-**Root Cause**: Inter-individual variability in disease progression rates complicates time-series analysis—patients of the same age may be at entirely different disease stages. Cross-sectional data cannot directly capture disease dynamics.
+**Key Challenge**: Inter-individual variability in disease progression rates complicates time-series analysis—patients of the same age may be at entirely different disease stages. Cross-sectional data cannot directly capture disease dynamics.
 
-**Paper Goals**:
+**Goal**:
 - Infer a data-driven "pseudotime" to order patients along their disease progression trajectory.
 - Learn how causal relationships evolve as a function of pseudotime.
 - Integrate the dynamic causal interactions between novel and established biomarkers.
 
-**Starting Point**: The paper leverages the BN-LTE model (Zhou et al. 2023), treating pseudotime as a latent variable that modulates causal mechanisms, and infers dynamic causal graphs from cross-sectional ADNI data.
+**Key Insight**: The paper leverages the BN-LTE model (Zhou et al. 2023), treating pseudotime as a latent variable that modulates causal mechanisms, and infers dynamic causal graphs from cross-sectional ADNI data.
 
 **Core Idea**: Order patients using a latent pseudotime and learn a causal graph that evolves with disease progression, thereby revealing dynamic causal relationships among AD biomarkers.
 

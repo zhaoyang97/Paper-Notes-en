@@ -29,18 +29,18 @@ This paper proposes a graph neural network (GNN)-based method for learning spars
 
 ## Background & Motivation
 
-**State of the Field**: Solving symmetric positive definite (SPD) sparse linear systems $\mathbf{Ax} = \mathbf{b}$ is a core problem in scientific computing. The conjugate gradient (CG) method is the dominant iterative solver, but its convergence rate critically depends on preconditioning.
+**Background**: Solving symmetric positive definite (SPD) sparse linear systems $\mathbf{Ax} = \mathbf{b}$ is a core problem in scientific computing. The conjugate gradient (CG) method is the dominant iterative solver, but its convergence rate critically depends on preconditioning.
 
 **Limitations of Prior Work**:
 - Diagonal preconditioners: GPU-friendly but offer limited convergence improvement.
 - Incomplete Cholesky (IC): performs well on CPUs but requires triangular solves that are difficult to parallelize on GPUs.
 - Existing learning-based methods (GNN→IC): inherit the GPU parallelism bottleneck of triangular solves, and GNNs struggle to model long-range dependencies along the elimination tree.
 
-**Root Cause**: IC-type preconditioners yield fewer iterations but are GPU-inefficient (triangular solve bottleneck), while diagonal preconditioners are GPU-efficient but require many iterations.
+**Key Challenge**: IC-type preconditioners yield fewer iterations but are GPU-inefficient (triangular solve bottleneck), while diagonal preconditioners are GPU-efficient but require many iterations.
 
-**Paper Goals**: Construct a preconditioner that both effectively reduces the condition number and fully exploits GPU parallelism.
+**Goal**: Construct a preconditioner that both effectively reduces the condition number and fully exploits GPU parallelism.
 
-**Starting Point**: The paper targets SPAI, using $\mathbf{M}^{-1} = \mathbf{GG}^\top + \varepsilon\mathbf{I}$ directly as the preconditioner. Each CG step requires only two sparse matrix–vector multiplications (SpMV), making it inherently GPU-friendly.
+**Key Insight**: The paper targets SPAI, using $\mathbf{M}^{-1} = \mathbf{GG}^\top + \varepsilon\mathbf{I}$ directly as the preconditioner. Each CG step requires only two sparse matrix–vector multiplications (SpMV), making it inherently GPU-friendly.
 
 **Core Idea**: SPAI's locality (output at a node depends only on its two-hop neighborhood) is naturally compatible with GNN local message passing, making GNN-learned SPAI a more principled fit than GNN-learned IC.
 

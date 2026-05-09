@@ -29,15 +29,15 @@ This paper proposes RF-HGN, which constructs dense layer parameters via random f
 
 ## Background & Motivation
 
-**State of the Field**: Data-driven modeling of physical systems is a central challenge. Combining physical priors (e.g., Hamiltonian mechanics) with graph neural networks (GNNs) represents the dominant paradigm. Hamiltonian Graph Networks (HGN) encode the topology of N-body systems via graph structures and, together with Hamiltonian equation constraints, produce accurate, permutation-invariant dynamical predictions.
+**Background**: Data-driven modeling of physical systems is a central challenge. Combining physical priors (e.g., Hamiltonian mechanics) with graph neural networks (GNNs) represents the dominant paradigm. Hamiltonian Graph Networks (HGN) encode the topology of N-body systems via graph structures and, together with Hamiltonian equation constraints, produce accurate, permutation-invariant dynamical predictions.
 
 **Limitations of Prior Work**: Training graph networks is extremely slow. Backpropagation through GNNs involves irregular memory access and load imbalance, and physical models are sensitive to hyperparameters. When the model architecture incorporates a numerical integrator (e.g., Störmer-Verlet), training difficulty is further compounded. Among 15 commonly used optimizers (Adam, LBFGS, etc.), training on 3D lattice systems requires 23–96 seconds, far from meeting the demand for rapid prototyping of large-scale systems.
 
-**Root Cause**: Although the physical inductive biases of GNNs (graph structure + Hamiltonian constraints) improve model quality, these structural constraints render gradient-based iterative optimization more difficult and time-consuming. A fundamental tension exists between accuracy and training efficiency.
+**Key Challenge**: Although the physical inductive biases of GNNs (graph structure + Hamiltonian constraints) improve model quality, these structural constraints render gradient-based iterative optimization more difficult and time-consuming. A fundamental tension exists between accuracy and training efficiency.
 
-**Paper Goals**: (1) How to drastically accelerate HGN training without sacrificing accuracy? (2) How to incorporate random feature methods into graph networks while preserving physical invariances? (3) Can the trained model generalize zero-shot to systems far larger than those seen during training?
+**Goal**: (1) How to drastically accelerate HGN training without sacrificing accuracy? (2) How to incorporate random feature methods into graph networks while preserving physical invariances? (3) Can the trained model generalize zero-shot to systems far larger than those seen during training?
 
-**Starting Point**: Random feature methods have recently shown promise for approximating physical systems, yet have not been applied to graph networks. The key observation is that the HGN architecture can be decomposed into two parts—nonlinear dense layers and a linear output layer. If dense layer parameters can be determined by random sampling, training reduces to a convex linear least-squares problem.
+**Key Insight**: Random feature methods have recently shown promise for approximating physical systems, yet have not been applied to graph networks. The key observation is that the HGN architecture can be decomposed into two parts—nonlinear dense layers and a linear output layer. If dense layer parameters can be determined by random sampling, training reduces to a convex linear least-squares problem.
 
 **Core Idea**: Construct dense layer parameters of HGN via random feature sampling, transforming non-convex network training into convex linear system solving, thereby enabling gradient-free ultra-fast training.
 

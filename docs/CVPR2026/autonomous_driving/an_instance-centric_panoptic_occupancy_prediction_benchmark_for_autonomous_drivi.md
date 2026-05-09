@@ -28,13 +28,13 @@ This paper proposes ADMesh (a library of 15K+ high-quality 3D models) and CarlaO
 
 ## Background & Motivation
 
-**State of the Field**: 3D occupancy prediction is evolving from purely semantic occupancy toward fine-grained panoptic occupancy (joint semantic and instance prediction). Methods such as SparseOcc and PanoOcc have been proposed, but remain constrained by dataset quality.
+**Background**: 3D occupancy prediction is evolving from purely semantic occupancy toward fine-grained panoptic occupancy (joint semantic and instance prediction). Methods such as SparseOcc and PanoOcc have been proposed, but remain constrained by dataset quality.
 
 **Limitations of Prior Work**: (1) Existing datasets lack instance-level annotations—SparseOcc/PaSCo generate pseudo-panoptic labels via heuristics (3D box grouping/clustering), introducing boundary artifacts and instance overlaps; (2) Existing ground truth relies on LiDAR point cloud aggregation and voxelization, resulting in coarse resolution (0.2–0.5 m), incomplete geometry (only sensor-visible surfaces), and physical inconsistencies (holes and fractures); (3) No unified high-quality 3D model library exists—current resources are fragmented and platform-dependent.
 
-**Root Cause**: Panoptic occupancy prediction requires precise instance-level geometric annotations, yet the generation pipelines of existing datasets (LiDAR aggregation → voxelization) are fundamentally incapable of providing physically consistent and complete ground truth.
+**Key Challenge**: Panoptic occupancy prediction requires precise instance-level geometric annotations, yet the generation pipelines of existing datasets (LiDAR aggregation → voxelization) are fundamentally incapable of providing physically consistent and complete ground truth.
 
-**Starting Point**: Starting from 3D meshes rather than point clouds—meshes encode complete geometry and can be voxelized at arbitrary resolution.
+**Key Insight**: Starting from 3D meshes rather than point clouds—meshes encode complete geometry and can be voxelized at arbitrary resolution.
 
 **Core Idea**: Build a unified 3D model library (ADMesh) → reconstruct complete scene meshes via CARLA simulation → apply topology-aware voxelization to generate physically consistent panoptic occupancy labels.
 

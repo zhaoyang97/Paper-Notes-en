@@ -30,7 +30,7 @@ This paper proposes VasoMIM, a domain-specific self-supervised pre-training fram
 
 ## Background & Motivation
 
-**State of the Field**: Cardiovascular disease is the leading cause of death worldwide, and X-ray angiography serves as the clinical gold standard for diagnosis. Deep learning methods (e.g., UNet, Faster R-CNN) have achieved notable progress in vessel segmentation and stenosis detection, but are severely constrained by the scarcity of annotated data. Self-supervised learning (SSL) offers a promising solution; however, the field lacks dedicated SSL frameworks and large-scale datasets tailored to this modality.
+**Background**: Cardiovascular disease is the leading cause of death worldwide, and X-ray angiography serves as the clinical gold standard for diagnosis. Deep learning methods (e.g., UNet, Faster R-CNN) have achieved notable progress in vessel segmentation and stenosis detection, but are severely constrained by the scarcity of annotated data. Self-supervised learning (SSL) offers a promising solution; however, the field lacks dedicated SSL frameworks and large-scale datasets tailored to this modality.
 
 **Limitations of Prior Work**:
    - **Random masking strategies in generic MIM are ill-suited**: Vascular structures in angiograms are extremely sparse, occupying only a small fraction of the image. Random, attention-guided, or loss-guided masking predominantly covers background regions, causing models to learn background reconstruction rather than vessel features.

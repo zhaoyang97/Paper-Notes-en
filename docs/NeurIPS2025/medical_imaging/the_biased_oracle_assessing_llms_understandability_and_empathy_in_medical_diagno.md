@@ -28,15 +28,15 @@ This work systematically evaluates GPT-4o and Claude-3.7 on readability and empa
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have achieved diagnostic accuracy approaching or exceeding that of human physicians, yet the communicative quality of their diagnoses—whether patients can understand them and feel cared for—has rarely been systematically evaluated.
+**Background**: LLMs have achieved diagnostic accuracy approaching or exceeding that of human physicians, yet the communicative quality of their diagnoses—whether patients can understand them and feel cared for—has rarely been systematically evaluated.
 
 **Limitations of Prior Work**: Existing evaluations focus on accuracy and safety, neglecting patient-centered communication quality. The readability of medical advice directly affects patient adherence; content above an eighth-grade reading level renders it inaccessible to a large portion of patients.
 
-**Root Cause**: LLM-generated medical text may be clear and useful for highly educated patients, yet pose comprehension barriers for those with lower literacy or specific cultural backgrounds. Whether different demographic groups receive equally high-quality communication remains unknown.
+**Key Challenge**: LLM-generated medical text may be clear and useful for highly educated patients, yet pose comprehension barriers for those with lower literacy or specific cultural backgrounds. Whether different demographic groups receive equally high-quality communication remains unknown.
 
-**Paper Goals**: To systematically quantify the readability and empathy of LLM medical communication and detect biases along demographic dimensions (age, gender, region, and education level).
+**Goal**: To systematically quantify the readability and empathy of LLM medical communication and detect biases along demographic dimensions (age, gender, region, and education level).
 
-**Starting Point**: The study designs 156 synthetic prompts (demographic combinations × diagnostic scenarios), applies five readability metrics and a dual-dimension (affective/cognitive) empathy evaluation framework, and conducts cross-validation with LLM-as-Judge and human annotators.
+**Key Insight**: The study designs 156 synthetic prompts (demographic combinations × diagnostic scenarios), applies five readability metrics and a dual-dimension (affective/cognitive) empathy evaluation framework, and conducts cross-validation with LLM-as-Judge and human annotators.
 
 **Core Idea**: Using 156 synthetic scenarios × a dual evaluation framework (readability + empathy) × LLM-as-Judge cross-validation, the study systematically exposes above-standard readability and empathy bias in LLM medical communication.
 

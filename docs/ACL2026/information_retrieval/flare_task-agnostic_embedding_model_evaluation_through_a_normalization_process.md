@@ -28,15 +28,15 @@ This paper proposes FLARE, a label-free text embedding model evaluation framewor
 
 ## Background & Motivation
 
-**State of the Field**: The number of text embedding models (e.g., Qwen3 Embedding, Gemini Embedding) is growing rapidly, making it increasingly difficult to select the most suitable model for a given corpus. Standard approaches rely on annotated benchmarks such as MTEB, which require labeled data and are susceptible to benchmark contamination.
+**Background**: The number of text embedding models (e.g., Qwen3 Embedding, Gemini Embedding) is growing rapidly, making it increasingly difficult to select the most suitable model for a given corpus. Standard approaches rely on annotated benchmarks such as MTEB, which require labeled data and are susceptible to benchmark contamination.
 
 **Limitations of Prior Work**: (1) Annotated benchmarks are unavailable for proprietary domains, and benchmark leakage inflates reported scores; (2) label-free methods such as uniformity and IsoScore focus on geometric properties rather than semantic content; (3) EMIR-style methods use KDE or GMM for density estimation, which become statistically unreliable in high-dimensional spaces due to the curse of dimensionality.
 
-**Root Cause**: Label-free evaluation of embedding quality is necessary, yet existing density estimation methods are statistically unreliable in high-dimensional spaces.
+**Key Challenge**: Label-free evaluation of embedding quality is necessary, yet existing density estimation methods are statistically unreliable in high-dimensional spaces.
 
-**Paper Goals**: To design a label-free embedding evaluation framework that remains stable and reliable on high-dimensional embeddings.
+**Goal**: To design a label-free embedding evaluation framework that remains stable and reliable on high-dimensional embeddings.
 
-**Starting Point**: Exploit the exact log-likelihood estimation capability of normalizing flows to avoid distance-based density estimation.
+**Key Insight**: Exploit the exact log-likelihood estimation capability of normalizing flows to avoid distance-based density estimation.
 
 **Core Idea**: Replace KDE/GMM with normalizing flows to estimate informational sufficiency, shifting the estimation error from dependence on the ambient dimension to dependence on the intrinsic dimension of the data manifold.
 

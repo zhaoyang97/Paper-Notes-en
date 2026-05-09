@@ -28,15 +28,15 @@ This paper demonstrates that applying noise augmentation to latent variables dur
 
 ## Background & Motivation
 
-**State of the Field**: The information content (IC) / surprisal of music can be estimated via the negative log-likelihood of autoregressive models, and its correlation with human perception has been validated in behavioral and neuroscientific studies. Recent approaches compute IC using autoregressive diffusion models in the latent space of audio autoencoders.
+**Background**: The information content (IC) / surprisal of music can be estimated via the negative log-likelihood of autoregressive models, and its correlation with human perception has been validated in behavioral and neuroscientific studies. Recent approaches compute IC using autoregressive diffusion models in the latent space of audio autoencoders.
 
 **Limitations of Prior Work**: Diffusion models decode structures of different granularities at different noise levels — coarse structures are reconstructed before fine ones. However, standard autoencoder training does not guarantee that perceptually important information (e.g., pitch) is encoded in coarse structures, resulting in suboptimal IC estimation at intermediate noise levels.
 
-**Root Cause**: The spectral SNR characteristics of the diffusion process dictate a "coarse-before-fine" decoding order; yet if perceptually important features are distributed across all granularities, this property cannot be exploited to optimize surprisal estimation.
+**Key Challenge**: The spectral SNR characteristics of the diffusion process dictate a "coarse-before-fine" decoding order; yet if perceptually important features are distributed across all granularities, this property cannot be exploited to optimize surprisal estimation.
 
-**Paper Goals**: To explicitly align the latent space learned by the autoencoder with the perceptual hierarchy — placing the most perceptually important information in the coarsest structures.
+**Goal**: To explicitly align the latent space learned by the autoencoder with the perceptual hierarchy — placing the most perceptually important information in the coarsest structures.
 
-**Starting Point**: During training, latent variables are corrupted with noise of varying intensity and the model is required to reconstruct the original input; combined with a perceptual loss constraint, the encoder is forced to place information most critical to perceptual loss within coarse structures (those preserved under high SNR conditions).
+**Key Insight**: During training, latent variables are corrupted with noise of varying intensity and the model is required to reconstruct the original input; combined with a perceptual loss constraint, the encoder is forced to place information most critical to perceptual loss within coarse structures (those preserved under high SNR conditions).
 
 **Core Idea**: Noise-augmented training + perceptual loss = automatically pushing perceptually salient information into the coarse-grained structures of the latent space.
 

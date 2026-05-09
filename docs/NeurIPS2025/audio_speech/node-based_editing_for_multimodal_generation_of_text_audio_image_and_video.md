@@ -28,13 +28,13 @@ This paper proposes a node-graph-based story editing system that allows creators
 
 ## Background & Motivation
 
-**State of the Field**: Generative models such as Sora and DALL-E have lowered the barrier to content creation, yet current workflows primarily follow a single-round prompting paradigm.
+**Background**: Generative models such as Sora and DALL-E have lowered the barrier to content creation, yet current workflows primarily follow a single-round prompting paradigm.
 
 **Limitations of Prior Work**: (1) A single prompt is insufficient to express complex narrative intent; (2) full regeneration is inefficient; (3) linear editing interfaces cannot represent branching stories; (4) there is no mechanism to explore multiple narrative directions simultaneously.
 
-**Root Cause**: Powerful generation capability vs. impoverished interaction control — models can produce high-quality content, but creators lack fine-grained control over narrative structure.
+**Key Challenge**: Powerful generation capability vs. impoverished interaction control — models can produce high-quality content, but creators lack fine-grained control over narrative structure.
 
-**Starting Point**: A graph-based node representation makes narrative structure explicit; integrating a conversational interface with node-level editing balances control granularity.
+**Key Insight**: A graph-based node representation makes narrative structure explicit; integrating a conversational interface with node-level editing balances control granularity.
 
 ## Method
 

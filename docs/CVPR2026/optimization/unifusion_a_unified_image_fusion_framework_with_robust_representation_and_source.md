@@ -33,13 +33,13 @@ This paper proposes UniFusion, a unified image fusion framework that leverages t
 
 **Limitations of Prior Work**: Existing methods (CDDFuse, CoCoNet, LRRNet, etc.) are largely designed for specific fusion scenarios (infrared-visible, multi-exposure, multi-focus), employing task-customized CNN/AE/GAN architectures with limited generalization capability and poor adaptability to diverse fusion requirements.
 
-**State of the Field**: Recent Transformer-based architectures (SwinFusion), diffusion-model-based approaches, and methods such as TC-MoA have attempted to handle multiple tasks with a single model, yet are still constrained by two fundamental bottlenecks.
+**Background**: Recent Transformer-based architectures (SwinFusion), diffusion-model-based approaches, and methods such as TC-MoA have attempted to handle multiple tasks with a single model, yet are still constrained by two fundamental bottlenecks.
 
 **Bottleneck 1: Lack of modality-consistent feature extraction**—existing shared backbones fail to establish principled and robust unified encodings across heterogeneous signals (infrared thermal imaging vs. visible-light texture).
 
 **Bottleneck 2: Source information degradation during deep propagation**—modality-specific cues (e.g., visible-light texture, infrared radiation contrast) are progressively lost as features propagate through deep networks, leading to suboptimal fusion quality.
 
-**Starting Point**: Can the strong semantic priors of a large-scale self-supervised pretrained model (DINOv3), combined with explicit reconstruction constraints and an optimization decoupling strategy, simultaneously address both bottlenecks?
+**Key Insight**: Can the strong semantic priors of a large-scale self-supervised pretrained model (DINOv3), combined with explicit reconstruction constraints and an optimization decoupling strategy, simultaneously address both bottlenecks?
 
 ## Method
 

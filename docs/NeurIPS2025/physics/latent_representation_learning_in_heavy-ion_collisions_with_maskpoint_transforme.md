@@ -27,20 +27,20 @@ This work introduces a masked point cloud Transformer autoencoder to heavy-ion c
 
 ## Background & Motivation
 
-**State of the Field**: Relativistic heavy-ion collisions are the sole experimental means of studying QCD phase transitions and quark-gluon plasma (QGP) properties. Traditional analyses rely on hand-crafted observables (particle spectra, anisotropic flow, etc.), but these scalar quantities fail to fully exploit the information contained in high-dimensional final-state data.
+**Background**: Relativistic heavy-ion collisions are the sole experimental means of studying QCD phase transitions and quark-gluon plasma (QGP) properties. Traditional analyses rely on hand-crafted observables (particle spectra, anisotropic flow, etc.), but these scalar quantities fail to fully exploit the information contained in high-dimensional final-state data.
 
 **Limitations of Prior Work**:
    - Traditional observables are hand-selected and may miss physically important yet subtle data structures.
    - Deep learning methods such as PointNet have been preliminarily applied to collision data, but the representations they learn are essentially linear copies of individual physical observables (e.g., $\sigma_\eta$).
    - Systematic application of self-supervised pre-training in high-energy nuclear physics remains lacking.
 
-**Root Cause**: Final-state particle data constitute high-dimensional unordered point clouds. Capturing global inter-particle correlations is essential, yet PointNet's global pooling discards fine-grained interaction information between particles.
+**Key Challenge**: Final-state particle data constitute high-dimensional unordered point clouds. Capturing global inter-particle correlations is essential, yet PointNet's global pooling discards fine-grained interaction information between particles.
 
-**Paper Goals**:
+**Goal**:
    - Introduce a Transformer autoencoder to learn richer representations of collision events.
    - Verify whether self-supervised pre-training can capture nonlinear physical structures beyond individual observables.
 
-**Starting Point**: The three-momenta $(p_x, p_y, p_z)$ of final-state particles are treated as a 3D point cloud, leveraging mature masked point cloud modeling techniques from computer vision.
+**Key Insight**: The three-momenta $(p_x, p_y, p_z)$ of final-state particles are treated as a 3D point cloud, leveraging mature masked point cloud modeling techniques from computer vision.
 
 **Core Idea**: A self-supervised pre-trained Transformer autoencoder learns nonlinear physical features from heavy-ion collision point clouds, significantly outperforming the linear representations of PointNet.
 

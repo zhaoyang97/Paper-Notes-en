@@ -29,7 +29,7 @@ MaterialMVP is an end-to-end multi-view PBR texture generation model that decoup
 
 ## Background & Motivation
 
-**State of the Field**: PBR texture generation is a core task in 3D asset creation. Existing approaches fall into two categories: (1) SDS-based optimization methods (Text2Tex, Paint-it, etc.), which yield high quality but require minutes of inference; and (2) generative methods (SuperMat, RGB↔X), which are fast but limited to single-view inputs or lack precise cross-channel alignment.
+**Background**: PBR texture generation is a core task in 3D asset creation. Existing approaches fall into two categories: (1) SDS-based optimization methods (Text2Tex, Paint-it, etc.), which yield high quality but require minutes of inference; and (2) generative methods (SuperMat, RGB↔X), which are fast but limited to single-view inputs or lack precise cross-channel alignment.
 
 **Limitations of Prior Work**:
 

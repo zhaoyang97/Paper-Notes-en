@@ -29,11 +29,11 @@ This paper introduces the MV-3DRES task (language-guided 3D segmentation directl
 
 ## Background & Motivation
 
-1. **State of the Field**: 3D Referring Expression Segmentation (3DRES) has achieved strong results on dense, high-quality point clouds, with end-to-end methods such as RG-SAN reaching 44.6 mIoU.
+1. **Background**: 3D Referring Expression Segmentation (3DRES) has achieved strong results on dense, high-quality point clouds, with end-to-end methods such as RG-SAN reaching 44.6 mIoU.
 2. **Limitations of Prior Work**: Real-world devices such as robots, AR glasses, and smartphones typically capture only a few sparse RGB views, making dense point cloud acquisition infeasible. Existing 3DRES models suffer severe performance degradation when applied to noisy or incomplete point clouds reconstructed from sparse views.
-3. **Root Cause**: (a) Pure 2D methods cannot handle depth ordering, occlusion, or spatial relations (e.g., "in front of the chair"); (b) two-stage "reconstruct-then-segment" pipelines produce low-quality sparse point clouds in which target regions are severely degraded.
-4. **Paper Goals**: Define the MV-3DRES task—jointly recovering scene structure and segmenting target objects directly from sparse multiview RGB images and text queries.
-5. **Starting Point**: The paper identifies a **foreground gradient dilution (FGD)** problem in Dice loss under sparse 3D supervision, and proposes PVSO to transfer supervision to 2D view space.
+3. **Key Challenge**: (a) Pure 2D methods cannot handle depth ordering, occlusion, or spatial relations (e.g., "in front of the chair"); (b) two-stage "reconstruct-then-segment" pipelines produce low-quality sparse point clouds in which target regions are severely degraded.
+4. **Goal**: Define the MV-3DRES task—jointly recovering scene structure and segmenting target objects directly from sparse multiview RGB images and text queries.
+5. **Key Insight**: The paper identifies a **foreground gradient dilution (FGD)** problem in Dice loss under sparse 3D supervision, and proposes PVSO to transfer supervision to 2D view space.
 6. **Core Idea**: A frozen geometry branch provides structural priors; a trainable multimodal branch injects language guidance; and PVSO resolves instability caused by sparse foreground supervision.
 
 ## Method

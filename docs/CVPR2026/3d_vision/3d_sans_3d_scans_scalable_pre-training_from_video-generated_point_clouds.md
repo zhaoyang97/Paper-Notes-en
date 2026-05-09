@@ -28,11 +28,11 @@ This paper proposes LAM3C, a framework that, for the first time, demonstrates th
 
 ## Background & Motivation
 
-**State of the Field**: 2D visual foundation models (e.g., DINOv2) have achieved remarkable success by leveraging massive unlabeled image collections (1.7B+). In contrast, 3D data acquisition remains constrained by the high equipment and labor costs of 3D scanning — the largest existing indoor scene dataset contains only ~5K unique scenes.
+**Background**: 2D visual foundation models (e.g., DINOv2) have achieved remarkable success by leveraging massive unlabeled image collections (1.7B+). In contrast, 3D data acquisition remains constrained by the high equipment and labor costs of 3D scanning — the largest existing indoor scene dataset contains only ~5K unique scenes.
 
 **Limitations of Prior Work**: Even state-of-the-art 3D-SSL methods such as Sonata, which mix real and synthetic data, operate at a training scale of only ~140K samples (with merely 18K real 3D scans). This limited data scale prevents 3D-SSL from achieving success comparable to its 2D counterpart. The data bottleneck is the fundamental constraint on progress in 3D self-supervised learning.
 
-**Root Cause**: 3D scene data is scarce and expensive to acquire, yet 3D-SSL requires large-scale data to succeed in the same manner as 2D-SSL.
+**Key Challenge**: 3D scene data is scarce and expensive to acquire, yet 3D-SSL requires large-scale data to succeed in the same manner as 2D-SSL.
 
 **Key Observation**: Platforms such as YouTube host an abundance of indoor walkthrough videos (real-estate listings, apartment tours). Recent feed-forward 3D reconstruction models (e.g., π³ and VGGT) can infer 3D structure directly from multi-view images at quality comparable to traditional SfM/MVS pipelines.
 

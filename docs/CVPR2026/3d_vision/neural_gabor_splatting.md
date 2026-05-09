@@ -29,15 +29,15 @@ Neural Gabor Splatting embeds a lightweight MLP (SIREN architecture) into each G
 
 ## Background & Motivation
 
-**State of the Field**: 3D Gaussian Splatting (3DGS) has become the dominant method for novel view synthesis, owing to its explicit point-cloud representation that enables fast training, real-time rendering, and convenient editing. However, typical scenes require hundreds of thousands to millions of Gaussian primitives, incurring substantial memory overhead.
+**Background**: 3D Gaussian Splatting (3DGS) has become the dominant method for novel view synthesis, owing to its explicit point-cloud representation that enables fast training, real-time rendering, and convenient editing. However, typical scenes require hundreds of thousands to millions of Gaussian primitives, incurring substantial memory overhead.
 
 **Limitations of Prior Work**: Each Gaussian primitive can only represent a single color given a viewing direction. When scenes contain high-frequency details (e.g., checkerboard textures, hair, or regions with frequent color transitions), a large number of primitives is required to cover each color variation, causing the primitive count to grow dramatically.
 
-**Root Cause**: The limited expressive capacity of individual primitives is the fundamental source of storage overhead. Existing improvements each have their own constraints: 3D Gabor Splatting is restricted by the properties of the Gabor noise function, while textured Gaussians are limited by a preset texture resolution.
+**Key Challenge**: The limited expressive capacity of individual primitives is the fundamental source of storage overhead. Existing improvements each have their own constraints: 3D Gabor Splatting is restricted by the properties of the Gabor noise function, while textured Gaussians are limited by a preset texture resolution.
 
-**Paper Goals**: Enhance the expressive capacity of individual primitives so that fewer primitives suffice for high-quality high-frequency surface reconstruction.
+**Goal**: Enhance the expressive capacity of individual primitives so that fewer primitives suffice for high-quality high-frequency surface reconstruction.
 
-**Starting Point**: Inspired by neural texture and deferred rendering, the paper parameterizes the intra-primitive color variation with a small MLP, enabling a single primitive to represent arbitrarily complex local patterns.
+**Key Insight**: Inspired by neural texture and deferred rendering, the paper parameterizes the intra-primitive color variation with a small MLP, enabling a single primitive to represent arbitrarily complex local patterns.
 
 **Core Idea**: Each 2D Gaussian primitive is equipped with an independent lightweight SIREN MLP that takes local coordinates and viewing direction as input and outputs RGB color. The sinusoidal activations of SIREN naturally encode high-frequency signals without requiring additional positional encoding.
 

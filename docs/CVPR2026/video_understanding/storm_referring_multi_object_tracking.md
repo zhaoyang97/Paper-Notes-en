@@ -27,15 +27,15 @@ STORM is the first end-to-end multimodal large language model framework for Refe
 
 ## Background & Motivation
 
-**State of the Field**: Referring multi-object tracking requires models to track all targets matching a textual description in a video. Existing RMOT methods decompose target localization and tracking into separate modules and rely on external detectors.
+**Background**: Referring multi-object tracking requires models to track all targets matching a textual description in a video. Existing RMOT methods decompose target localization and tracking into separate modules and rely on external detectors.
 
 **Limitations of Prior Work**: (1) Training videos for RMOT are extremely scarce; (2) existing datasets contain ambiguous annotations and are domain-restricted; (3) modular approaches struggle to interpret complex referring expressions and reason over causal or relational dependencies.
 
-**Root Cause**: RMOT is a complex task requiring joint visual-language understanding and temporal tracking, yet annotation costs are prohibitively high, making it infeasible to obtain sufficient training data.
+**Key Challenge**: RMOT is a complex task requiring joint visual-language understanding and temporal tracking, yet annotation costs are prohibitively high, making it infeasible to obtain sufficient training data.
 
-**Paper Goals**: Unify localization and tracking, eliminate dependency on external modules, and address data scarcity.
+**Goal**: Unify localization and tracking, eliminate dependency on external modules, and address data scarcity.
 
-**Starting Point**: Drawing on the LLM pretraining paradigm of "learn foundational capabilities first, then fine-tune," RMOT is decomposed into two fundamental subtasks: image-level grounding and single-object tracking.
+**Key Insight**: Drawing on the LLM pretraining paradigm of "learn foundational capabilities first, then fine-tune," RMOT is decomposed into two fundamental subtasks: image-level grounding and single-object tracking.
 
 **Core Idea**: Task Composition Learning decomposes RMOT into data-rich subtasks, first acquiring grounding and tracking capabilities, then fine-tuning on a small amount of RMOT data.
 

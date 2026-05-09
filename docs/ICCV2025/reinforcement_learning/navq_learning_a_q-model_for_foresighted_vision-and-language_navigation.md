@@ -29,16 +29,16 @@ This paper proposes NavQ, a foresighted VLN agent that employs a Q-model to pred
 
 ## Background & Motivation
 
-**State of the Field**: Object-goal Vision-and-Language Navigation (VLN) requires an agent to navigate in real 3D environments based on target object descriptions. Existing methods (e.g., DUET, HAMT) primarily make single-step decisions conditioned on historical observations, lacking the ability to anticipate the future consequences of actions.
+**Background**: Object-goal Vision-and-Language Navigation (VLN) requires an agent to navigate in real 3D environments based on target object descriptions. Existing methods (e.g., DUET, HAMT) primarily make single-step decisions conditioned on historical observations, lacking the ability to anticipate the future consequences of actions.
 
 **Limitations of Prior Work**:
 - **Local methods** (e.g., synthesizing neighboring views via NeRF or diffusion models) predict only one step ahead and fail to capture long-range semantic information.
 - **World model methods** (e.g., DreamWalker) support multi-step rollouts but incur high computational cost, and predictions in RGB space are prone to distortion and overfitting.
 - Object-goal VLN is fundamentally a search problem; A* algorithms have demonstrated that a well-designed heuristic function (estimating future cost) can substantially improve search efficiency, yet effective future heuristics are lacking in the VLN literature.
 
-**Root Cause**: Long horizon vs. efficiency — how can long-range future information be obtained in a single pass without costly step-by-step rollouts?
+**Key Challenge**: Long horizon vs. efficiency — how can long-range future information be obtained in a single pass without costly step-by-step rollouts?
 
-**Starting Point**: Inspired by the Q-learning principle that Q-values accumulate future rewards, this work replaces scalar Q-values with Q-features — aggregated representations of future observations — while decoupling from reward functions so that the Q-model can be self-supervisedly pretrained on large amounts of unannotated trajectories.
+**Key Insight**: Inspired by the Q-learning principle that Q-values accumulate future rewards, this work replaces scalar Q-values with Q-features — aggregated representations of future observations — while decoupling from reward functions so that the Q-model can be self-supervisedly pretrained on large amounts of unannotated trajectories.
 
 ## Method
 

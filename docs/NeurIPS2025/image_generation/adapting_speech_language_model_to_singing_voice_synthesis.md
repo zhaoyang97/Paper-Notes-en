@@ -27,18 +27,18 @@ content_hash: 18c52fcfcef09934
 This paper adapts a 1.7B-parameter TTS-pretrained Speech Language Model to the Singing Voice Synthesis (SVS) task via score tokenization, multi-stream LM prediction, conditional flow matching refinement, and a vocoder. Using only 135 hours of synthesized singing data, the system achieves performance comparable to dedicated SVS systems.
 
 ## Background & Motivation
-**State of the Field**: Speech Language Models (SLMs) have emerged as a unified paradigm for speech tasks such as TTS, ASR, and speech enhancement, yet their generalization capability to singing voice synthesis remains unexplored.
+**Background**: Speech Language Models (SLMs) have emerged as a unified paradigm for speech tasks such as TTS, ASR, and speech enhancement, yet their generalization capability to singing voice synthesis remains unexplored.
 
 **Limitations of Prior Work**:
 - Public SVS datasets are extremely scarce due to copyright restrictions and high annotation costs, making it infeasible to train large models from scratch.
 - SVS inputs are structured musical scores (phonemes + pitch + duration), which are considerably more complex than the plain text inputs used in TTS.
 - Codec decoders pretrained on speech cannot faithfully resynthesize singing voice, imposing a hard performance ceiling.
 
-**Root Cause**: The generalization potential of large-scale SLMs versus the scarcity of SVS data.
+**Key Challenge**: The generalization potential of large-scale SLMs versus the scarcity of SVS data.
 
-**Paper Goals**: To investigate whether a TTS-pretrained SLM can be adapted to SVS at low cost.
+**Goal**: To investigate whether a TTS-pretrained SLM can be adapted to SVS at low cost.
 
-**Starting Point**: Tokenize the score-based conditions and incorporate them into the SLM vocabulary, then fine-tune the model and apply flow matching for acoustic refinement.
+**Key Insight**: Tokenize the score-based conditions and incorporate them into the SLM vocabulary, then fine-tune the model and apply flow matching for acoustic refinement.
 
 **Core Idea**: Leverage a TTS-pretrained SLM combined with flow matching refinement to address the low-resource challenge in singing voice synthesis.
 

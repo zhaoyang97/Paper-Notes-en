@@ -28,15 +28,15 @@ This paper introduces stochastic matrices and time-varying graphs as modeling to
 
 ## Background & Motivation
 
-**State of the Field**: Federated learning (FL) enables multiple clients to collaboratively train models without sharing raw data. FedAvg is the most widely used algorithm but suffers from fundamental convergence bias.
+**Background**: Federated learning (FL) enables multiple clients to collaboratively train models without sharing raw data. FedAvg is the most widely used algorithm but suffers from fundamental convergence bias.
 
 **Limitations of Prior Work**: (a) Multiple local update steps combined with non-i.i.d. data cause **client drift**—the fixed point of FedAvg deviates from the true global optimum, with bias $\|x^o - x^\star\|^2 = \Omega((\tau-1)\eta)\|x^\star\|^2$; (b) Arbitrary client participation introduces additional objective bias—the global model converges to a stationary point of a distorted objective weighted by participation probabilities, rather than the true optimum of problem (1); (c) Existing methods rely on **decaying learning rates** to mitigate bias, resulting in slower convergence.
 
-**Root Cause**: Under arbitrary (unknown) client participation probabilities, can one achieve exact convergence to the global optimum using a **constant learning rate**?
+**Key Challenge**: Under arbitrary (unknown) client participation probabilities, can one achieve exact convergence to the global optimum using a **constant learning rate**?
 
-**Paper Goals**: Design an FL algorithm that achieves exact convergence (at a linear rate) under arbitrary client participation, without requiring bounded heterogeneity assumptions or knowledge of participation probabilities.
+**Goal**: Design an FL algorithm that achieves exact convergence (at a linear rate) under arbitrary client participation, without requiring bounded heterogeneity assumptions or knowledge of participation probabilities.
 
-**Starting Point**: Unify the three core operations of FL (client participation, local updates, model aggregation) as stochastic matrix multiplications, and redesign the FL algorithm from the perspective of decentralized optimization.
+**Key Insight**: Unify the three core operations of FL (client participation, local updates, model aggregation) as stochastic matrix multiplications, and redesign the FL algorithm from the perspective of decentralized optimization.
 
 **Core Idea**: Model the pull operation with row-stochastic matrices and the push operation with column-stochastic matrices; employ a push-pull dual strategy to simultaneously eliminate client drift and participation bias.
 

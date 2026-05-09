@@ -28,15 +28,15 @@ This paper proposes a paired-task framework for jointly evaluating LLMs' literar
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly applied to creative tasks such as literary translation, with some studies claiming human-level performance. Nevertheless, translational creativity remains severely underexplored in large-scale evaluations.
+**Background**: LLMs are increasingly applied to creative tasks such as literary translation, with some studies claiming human-level performance. Nevertheless, translational creativity remains severely underexplored in large-scale evaluations.
 
 **Limitations of Prior Work**: (1) Existing literary translation evaluations focus primarily on accuracy and adequacy, almost entirely neglecting the creativity dimension; (2) Research on translational creativity is small in scale and costly, typically comparing only 1–2 traditional MT systems; (3) Comprehension ability is usually studied in isolation, whereas in professional translation it is tightly intertwined with creativity.
 
-**Root Cause**: LLMs can produce fluent, low-cost translations in large quantities, yet little is known about how they handle the creative challenges inherent to literary texts—does understanding the source text entail the ability to make creative translation choices?
+**Key Challenge**: LLMs can produce fluent, low-cost translations in large quantities, yet little is known about how they handle the creative challenges inherent to literary texts—does understanding the source text entail the ability to make creative translation choices?
 
-**Paper Goals**: To construct a scalable evaluation framework that jointly measures LLMs' source text comprehension and creative translation ability.
+**Goal**: To construct a scalable evaluation framework that jointly measures LLMs' source text comprehension and creative translation ability.
 
-**Starting Point**: Drawing on the translation studies concept of "units of creative potential" (UCPs), the framework focuses on segments involving metaphors, wordplay, cultural allusions, and similar phenomena that require creative handling.
+**Key Insight**: Drawing on the translation studies concept of "units of creative potential" (UCPs), the framework focuses on segments involving metaphors, wordplay, cultural allusions, and similar phenomena that require creative handling.
 
 **Core Idea**: A paired-task design is proposed—Task 1 assesses source text comprehension via statement verification, while Task 2 evaluates creative transfer through annotation of UCP translation techniques. Expert annotation is combined with LLM-as-Judge automatic evaluation to enable large-scale, scalable assessment.
 

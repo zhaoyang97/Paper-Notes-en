@@ -28,16 +28,16 @@ This paper proposes Reasoning Compiler, which models compiler optimization as a 
 
 ## Background & Motivation
 
-**State of the Field**: Large-scale model inference is computationally expensive, and compiler optimizations (tiling, fusion, vectorization, etc.) are critical acceleration techniques. Existing neural compilers (TVM, Ansor, etc.) explore the transformation space via evolutionary search or simulated annealing.
+**Background**: Large-scale model inference is computationally expensive, and compiler optimizations (tiling, fusion, vectorization, etc.) are critical acceleration techniques. Existing neural compilers (TVM, Ansor, etc.) explore the transformation space via evolutionary search or simulated annealing.
 
 **Limitations of Prior Work**:
    - Rule-based compilers rely on hand-crafted heuristics and overfit to specific workloads or hardware
    - Random search methods exhibit **low sampling efficiency**—they fail to exploit contextual dependencies among transformations
    - The space of transformation combinations grows exponentially and is highly interdependent (e.g., the benefit of loop tiling depends on whether fusion has been applied previously)
 
-**Root Cause**: Compiler transformations exhibit complex non-local interactions; blind search cannot effectively capture these contextual dependencies.
+**Key Challenge**: Compiler transformations exhibit complex non-local interactions; blind search cannot effectively capture these contextual dependencies.
 
-**Starting Point**: LLMs are naturally suited for contextual reasoning—given the current code state, transformation history, and performance feedback, an LLM can reason about which transformation to apply next.
+**Key Insight**: LLMs are naturally suited for contextual reasoning—given the current code state, transformation history, and performance feedback, an LLM can reason about which transformation to apply next.
 
 **Core Idea**: LLM-provided context-aware transformation proposals + MCTS-structured search = high-sampling-efficiency compiler optimization.
 

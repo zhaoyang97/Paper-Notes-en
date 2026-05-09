@@ -27,11 +27,11 @@ content_hash: 2ffb162858528a6a
 This paper proposes the STAR framework, which constructs a video analysis toolbox comprising 22 tools and enables an LLM to alternately invoke temporal and spatial tools to progressively localize a 3D Region of Interest (3D RoI) within videos, achieving improvements of 8.2% on VideoMME and 4.6% on LongVideoBench.
 
 ## Background & Motivation
-1. **State of the Field**: Two dominant paradigms exist for VideoQA — Video-LLMs suffer from inefficiency due to processing large numbers of frames; tool-augmented LLMs are limited by narrow tool coverage and insufficient scheduling.
+1. **Background**: Two dominant paradigms exist for VideoQA — Video-LLMs suffer from inefficiency due to processing large numbers of frames; tool-augmented LLMs are limited by narrow tool coverage and insufficient scheduling.
 2. **Limitations of Prior Work**: Existing tool-augmented approaches suffer from: (1) tools covering only a single dimension (temporal or spatial), (2) imbalanced tool quantity and diversity, and (3) lack of effective scheduling strategies leading to disordered tool chains.
-3. **Root Cause**: Jointly modeling intra-frame spatial relationships and cross-frame temporal dynamics is necessary, yet beyond the reach of existing methods.
-4. **Paper Goals**: To construct a comprehensive video toolbox and design an alternating spatiotemporal reasoning framework.
-5. **Starting Point**: The localization of key video regions is formulated as a progressive narrowing process over a 3D RoI.
+3. **Key Challenge**: Jointly modeling intra-frame spatial relationships and cross-frame temporal dynamics is necessary, yet beyond the reach of existing methods.
+4. **Goal**: To construct a comprehensive video toolbox and design an alternating spatiotemporal reasoning framework.
+5. **Key Insight**: The localization of key video regions is formulated as a progressive narrowing process over a 3D RoI.
 6. **Core Idea**: A spatiotemporally interleaved tool chain — alternately applying temporal tools to narrow the temporal scope and spatial tools to narrow the spatial scope.
 
 ## Method

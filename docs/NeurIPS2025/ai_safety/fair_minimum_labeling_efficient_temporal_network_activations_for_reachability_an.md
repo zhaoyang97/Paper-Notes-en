@@ -29,14 +29,14 @@ This paper introduces the Fair Minimum Labeling (FML) problem, which aims to des
 
 ## Background & Motivation
 
-**State of the Field**: Modern networked systems (federated learning, recommender systems, distributed sensor networks) operate under limited resources while needing to guarantee fairness among participants or data sources. Graph structures describe potential interactions, and the temporal dimension—when connections are activated—determines the actual flow of information, updates, and influence.
+**Background**: Modern networked systems (federated learning, recommender systems, distributed sensor networks) operate under limited resources while needing to guarantee fairness among participants or data sources. Graph structures describe potential interactions, and the temporal dimension—when connections are activated—determines the actual flow of information, updates, and influence.
 
 **Limitations of Prior Work**:
 - Existing fairness-aware graph mining methods (fair clustering, fair node embeddings, fair influence maximization) primarily target static graphs and do not address temporal interactions.
 - Research on temporal graph connectivity (the Minimum Labeling problem) focuses on global connectivity without considering group fairness constraints.
 - Simple heuristics may over-consume bottleneck resources or systematically neglect hard-to-reach nodes and minority groups.
 
-**Root Cause**: A formal framework is needed that simultaneously optimizes resource efficiency of temporal edge activations and group-fair reachability guarantees. FML fills the gap between fairness-aware graph optimization and temporal connectivity modeling.
+**Key Challenge**: A formal framework is needed that simultaneously optimizes resource efficiency of temporal edge activations and group-fair reachability guarantees. FML fills the gap between fairness-aware graph optimization and temporal connectivity modeling.
 
 ## Method
 

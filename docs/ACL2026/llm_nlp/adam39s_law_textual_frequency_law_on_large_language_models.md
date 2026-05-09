@@ -28,15 +28,15 @@ This paper proposes the Textual Frequency Law (TFL), which finds that when seman
 
 ## Background & Motivation
 
-**State of the Field**: Large language models have achieved remarkable progress on mathematical reasoning, machine translation, commonsense reasoning, and related tasks. Recent research highlights the critical role of data quality and quantity, yet the "frequency" dimension—how often a given expression appears in the training corpus—has rarely been explored.
+**Background**: Large language models have achieved remarkable progress on mathematical reasoning, machine translation, commonsense reasoning, and related tasks. Recent research highlights the critical role of data quality and quantity, yet the "frequency" dimension—how often a given expression appears in the training corpus—has rarely been explored.
 
 **Limitations of Prior Work**: Prior studies have shown that semantically equivalent prompts with different surface forms can produce large variations in LLM output quality, but no clear explanation has been offered for which factors drive this phenomenon. Moreover, when training resources are limited and multiple paraphrases are available, there is no principled guideline for selecting the best training data.
 
-**Root Cause**: LLMs encounter high-frequency expressions far more often during pre-training and should theoretically handle high-frequency inputs more competently, yet existing methods do not systematically exploit this intuition. Furthermore, because most LLM training corpora are proprietary, the exact pre-training frequency of any given sentence is inaccessible.
+**Key Challenge**: LLMs encounter high-frequency expressions far more often during pre-training and should theoretically handle high-frequency inputs more competently, yet existing methods do not systematically exploit this intuition. Furthermore, because most LLM training corpora are proprietary, the exact pre-training frequency of any given sentence is inaccessible.
 
-**Paper Goals**: (1) Verify whether high-frequency textual expressions genuinely outperform low-frequency ones; (2) design a method for estimating sentence frequency without accessing LLM training data; (3) propose a curriculum learning strategy that leverages frequency information to optimize fine-tuning order.
+**Goal**: (1) Verify whether high-frequency textual expressions genuinely outperform low-frequency ones; (2) design a method for estimating sentence frequency without accessing LLM training data; (3) propose a curriculum learning strategy that leverages frequency information to optimize fine-tuning order.
 
-**Starting Point**: Drawing from word-frequency effects in human cognitive research—where high-frequency words elicit stronger neural activation and easier semantic retrieval—the authors hypothesize that the same regularity applies to LLMs: high-frequency expressions are encountered more often during pre-training and are therefore more readily understood by the model.
+**Key Insight**: Drawing from word-frequency effects in human cognitive research—where high-frequency words elicit stronger neural activation and easier semantic retrieval—the authors hypothesize that the same regularity applies to LLMs: high-frequency expressions are encountered more often during pre-training and are therefore more readily understood by the model.
 
 **Core Idea**: Open-source corpus word frequencies are used to estimate sentence-level frequency, enabling selection of high-frequency paraphrases for prompting and fine-tuning. LLM-generated story completions are then used to distill improved frequency estimates. Finally, fine-tuning data are ordered from lowest to highest frequency for curriculum training.
 

@@ -35,9 +35,9 @@ Hallucination in LLMs is a central obstacle to their safe deployment—models ma
 
 **Internal representation-based methods** (e.g., SAPLMA, HaloScope, CED): train binary classifiers on LLM hidden-state representations, but are heavily dependent on predefined token positions.
 
-**Root Cause**: Most internal representation methods use representations at predefined token positions (e.g., the first, last, or second-to-last token) to train detectors. However, as shown in Figure 1, the positions carrying the richest hallucination signal vary substantially with response length and the distribution of hallucinated entities. Predefined positions thus miss the critical tokens where hallucination information concentrates.
+**Key Challenge**: Most internal representation methods use representations at predefined token positions (e.g., the first, last, or second-to-last token) to train detectors. However, as shown in Figure 1, the positions carrying the richest hallucination signal vary substantially with response length and the distribution of hallucinated entities. Predefined positions thus miss the critical tokens where hallucination information concentrates.
 
-**Starting Point**: Hallucinations typically occur at only a small number of token positions within a response (e.g., incorrect entity nouns), which naturally aligns with the MIL assumption—positive bags contain only a few positive instances, while all instances in negative bags are negative. Reformulating hallucination detection as a MIL problem enables the model to adaptively learn, during training, which tokens are most indicative of hallucination.
+**Key Insight**: Hallucinations typically occur at only a small number of token positions within a response (e.g., incorrect entity nouns), which naturally aligns with the MIL assumption—positive bags contain only a few positive instances, while all instances in negative bags are negative. Reformulating hallucination detection as a MIL problem enables the model to adaptively learn, during training, which tokens are most indicative of hallucination.
 
 ## Method
 

@@ -29,7 +29,7 @@ This paper proposes Ui2i, a model built upon CycleGAN that achieves high content
 
 ## Background & Motivation
 
-- **State of the Field**: In digital pathology and spatial proteomics, significant domain gaps exist across different staining protocols (H&E, IHC, IF), preventing segmentation models (e.g., StarDist) trained on one domain from generalizing directly to others. Acquiring annotations in new domains is prohibitively expensive, motivating the use of **image-to-image translation** for cross-domain adaptation.
+- **Background**: In digital pathology and spatial proteomics, significant domain gaps exist across different staining protocols (H&E, IHC, IF), preventing segmentation models (e.g., StarDist) trained on one domain from generalizing directly to others. Acquiring annotations in new domains is prohibitively expensive, motivating the use of **image-to-image translation** for cross-domain adaptation.
 
 - **Limitations of Prior Work**: Biomedical images impose strict requirements on content fidelity — nuclear shape, boundaries, cellular morphology, and spatial relationships must be precisely preserved, unlike natural scene translation where moderate distortion is acceptable. Although CycleGAN achieves unpaired translation via cycle-consistency loss, it suffers from two fundamental issues:
 
@@ -37,7 +37,7 @@ This paper proposes Ui2i, a model built upon CycleGAN that achieves high content
 
   - **Artifacts from feature normalization**: Instance Normalization causes the same local object to produce substantially different signal responses depending on global context, leading to "droplet-like" artifacts in translated images that are misidentified as false-positive nuclei.
 
-- **Paper Goals**: Eliminate feature normalization layers entirely, replacing them with **parameter-level approximate bidirectional spectral normalization**, combined with UNet skip connections and attention mechanisms to better preserve spatially local content features.
+- **Goal**: Eliminate feature normalization layers entirely, replacing them with **parameter-level approximate bidirectional spectral normalization**, combined with UNet skip connections and attention mechanisms to better preserve spatially local content features.
 
 ## Method
 

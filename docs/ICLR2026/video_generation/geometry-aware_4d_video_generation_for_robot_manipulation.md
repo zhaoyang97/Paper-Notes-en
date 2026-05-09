@@ -28,11 +28,11 @@ This paper proposes a geometry-aware 4D video generation framework that trains a
 
 ## Background & Motivation
 
-1. **State of the Field**: Video generation models (e.g., SVD) are increasingly used as visual dynamics models for robot planning. Approaches to extracting robot actions from predicted videos include inverse dynamics models, behavior cloning, and RGB-based pose tracking.
+1. **Background**: Video generation models (e.g., SVD) are increasingly used as visual dynamics models for robot planning. Approaches to extracting robot actions from predicted videos include inverse dynamics models, behavior cloning, and RGB-based pose tracking.
 2. **Limitations of Prior Work**: (1) Pixel-space video models excel at short-horizon motion but lack 3D structural understanding, leading to flickering, distortion, and object disappearance; (2) 3D-aware methods enforce geometric constraints but are restricted to simple static backgrounds and struggle to scale to complex multi-object scenes; (3) existing methods suffer significant performance degradation under novel camera viewpoints.
-3. **Root Cause**: Temporal consistency and 3D consistency are difficult to achieve simultaneously. Single-view prediction lacks geometric grounding, while multi-view methods either optimize temporal and spatial consistency separately or handle only single objects against white backgrounds.
-4. **Paper Goals**: How to generate 4D videos that are simultaneously temporally coherent and cross-view 3D consistent, and how to recover robot manipulation trajectories from them?
-5. **Starting Point**: Drawing inspiration from DUSt3R's cross-view pointmap alignment, this work adapts the idea to video generation by supervising the model during training to project pointmap predictions from one viewpoint into another viewpoint's coordinate system.
+3. **Key Challenge**: Temporal consistency and 3D consistency are difficult to achieve simultaneously. Single-view prediction lacks geometric grounding, while multi-view methods either optimize temporal and spatial consistency separately or handle only single objects against white backgrounds.
+4. **Goal**: How to generate 4D videos that are simultaneously temporally coherent and cross-view 3D consistent, and how to recover robot manipulation trajectories from them?
+5. **Key Insight**: Drawing inspiration from DUSt3R's cross-view pointmap alignment, this work adapts the idea to video generation by supervising the model during training to project pointmap predictions from one viewpoint into another viewpoint's coordinate system.
 6. **Core Idea**: Cross-view pointmap alignment serves as geometric supervision for training a video diffusion model to learn a shared 3D scene representation. At inference, the model generates cross-view consistent 4D videos without requiring camera pose inputs.
 
 ## Method

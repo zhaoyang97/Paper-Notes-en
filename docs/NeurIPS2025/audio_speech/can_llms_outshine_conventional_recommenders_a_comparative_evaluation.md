@@ -30,13 +30,13 @@ This paper proposes RecBench, a comprehensive evaluation framework that systemat
 
 ## Background & Motivation
 
-**State of the Field**: The integration of LLMs with recommender systems (LLM+RS) has attracted considerable research attention, giving rise to two paradigms: LLM-for-RS (LLMs as feature-enhancement plugins) and LLM-as-RS (LLMs serving directly as recommenders). The latter has demonstrated promise in cold-start and explainable recommendation scenarios, yet systematic evaluation remains lacking.
+**Background**: The integration of LLMs with recommender systems (LLM+RS) has attracted considerable research attention, giving rise to two paradigms: LLM-for-RS (LLMs as feature-enhancement plugins) and LLM-as-RS (LLMs serving directly as recommenders). The latter has demonstrated promise in cold-start and explainable recommendation scenarios, yet systematic evaluation remains lacking.
 
 **Limitations of Prior Work**: Existing benchmarks (LLMRec, PromptRec, OpenP5, etc.) suffer from three major deficiencies: (a) they evaluate only a single recommendation formulation (pair-wise or list-wise); (b) item representation forms are insufficiently covered, typically relying solely on text or unique IDs; and (c) the number of evaluated models is limited, with inference efficiency entirely overlooked.
 
 **Core Problem**: Does the accuracy advantage of LLMs on recommendation tasks sufficiently compensate for their substantial inference efficiency drawbacks? How do different item representation strategies affect LLM recommendation capability?
 
-**Starting Point**: The paper constructs RecBench, the most comprehensive LLM recommendation evaluation benchmark to date, simultaneously assessing both accuracy and efficiency across 4 item representations, 2 recommendation scenarios, 27 models, and 5 datasets.
+**Key Insight**: The paper constructs RecBench, the most comprehensive LLM recommendation evaluation benchmark to date, simultaneously assessing both accuracy and efficiency across 4 item representations, 2 recommendation scenarios, 27 models, and 5 datasets.
 
 ## Method
 

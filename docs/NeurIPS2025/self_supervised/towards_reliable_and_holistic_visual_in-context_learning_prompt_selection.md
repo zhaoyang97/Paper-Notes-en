@@ -27,13 +27,13 @@ content_hash: 812ad73dd1202ac2
 This paper proposes RH-Partial2Global, which for the first time employs Spearman rank correlation tests to demonstrate that the "similarity-first hypothesis" in VICL is statistically significant yet exhibits extremely weak correlation strength ($\bar{\rho} \approx 0.03\text{-}0.05$). By constructing reliable candidate sets via Jackknife conformal prediction and achieving comprehensive uniform pairwise preference sampling through covering designs, the method consistently outperforms state-of-the-art approaches across three visual tasks: segmentation, detection, and colorization.
 
 ## Background & Motivation
-**State of the Field**: Visual in-context learning (VICL) adapts visual foundation models to new tasks by providing a small number of in-context examples. The central challenge lies in selecting optimal in-context examples for each query. Existing methods (VPR, Partial2Global) formulate this as a global ranking problem.
+**Background**: Visual in-context learning (VICL) adapts visual foundation models to new tasks by providing a small number of in-context examples. The central challenge lies in selecting optimal in-context examples for each query. Existing methods (VPR, Partial2Global) formulate this as a global ranking problem.
 
 **Limitations of Prior Work**: (1) **The similarity-first hypothesis lacks rigorous justification** — both VPR and Partial2Global rely on the assumption that images with higher visual similarity to the query make better in-context examples, yet this assumption has never been formally validated; (2) **Partial2Global's random sampling strategy is flawed** — it shuffles the candidate set randomly to generate subsequences for local ranking, providing no guarantee that all pairwise relationships are covered ($K=50, k=5$ requires at least 130 subsequences to cover all pairs, whereas the original method uses only 50), and may produce redundant comparisons.
 
-**Root Cause**: How to construct a reliable and comprehensive in-context example selection pipeline without over-relying on the similarity assumption?
+**Key Challenge**: How to construct a reliable and comprehensive in-context example selection pipeline without over-relying on the similarity assumption?
 
-**Starting Point**: Apply conformal prediction theory to filter unreliable candidates (R), and apply covering design theory to guarantee the completeness of pairwise comparisons (H).
+**Key Insight**: Apply conformal prediction theory to filter unreliable candidates (R), and apply covering design theory to guarantee the completeness of pairwise comparisons (H).
 
 ## Method
 

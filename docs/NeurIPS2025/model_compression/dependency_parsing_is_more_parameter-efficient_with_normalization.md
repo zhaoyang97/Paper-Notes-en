@@ -28,15 +28,15 @@ This paper identifies that the lack of normalization in biaffine scoring for dep
 
 ## Background & Motivation
 
-**State of the Field**: The dominant approach to dependency parsing follows Dozat & Manning's biaffine classifier, which encodes tokens with a BiLSTM and computes biaffine scores over all word pairs to predict arcs and relations. Current state-of-the-art systems typically stack 3 BiLSTM layers with hidden dimension 400 and MLP dimension 500.
+**Background**: The dominant approach to dependency parsing follows Dozat & Manning's biaffine classifier, which encodes tokens with a BiLSTM and computes biaffine scores over all word pairs to predict arcs and relations. Current state-of-the-art systems typically stack 3 BiLSTM layers with hidden dimension 400 and MLP dimension 500.
 
 **Limitations of Prior Work**: The biaffine scoring operation $QK^\top$ is structurally identical to Transformer self-attention, yet the vast majority of dependency parsing work omits score normalization. The Transformer uses $1/\sqrt{d_k}$ scaling to control variance and prevent softmax saturation — this insight has been consistently overlooked in the dependency parsing community.
 
-**Root Cause**: Without normalization, high-variance inputs cause softmax outputs to become polarized, leading to gradient vanishing/exploding. Additional BiLSTM layers are then implicitly required for regularization. This means the extra parameters compensate for the missing normalization rather than capturing richer linguistic features.
+**Key Challenge**: Without normalization, high-variance inputs cause softmax outputs to become polarized, leading to gradient vanishing/exploding. Additional BiLSTM layers are then implicitly required for regularization. This means the extra parameters compensate for the missing normalization rather than capturing richer linguistic features.
 
-**Paper Goals**: To demonstrate that the absence of normalization causes overparameterization, and to provide both theoretical and empirical evidence that introducing normalization permits substantial parameter reduction.
+**Goal**: To demonstrate that the absence of normalization causes overparameterization, and to provide both theoretical and empirical evidence that introducing normalization permits substantial parameter reduction.
 
-**Starting Point**: The analysis draws on implicit regularization theory — gradient descent on deep linear networks reduces the effective rank of weight matrices, and lower-rank weights produce outputs with smaller variance. Deeper BiLSTMs thus act as implicit normalizers via rank reduction.
+**Key Insight**: The analysis draws on implicit regularization theory — gradient descent on deep linear networks reduces the effective rank of weight matrices, and lower-rank weights produce outputs with smaller variance. Deeper BiLSTMs thus act as implicit normalizers via rank reduction.
 
 **Core Idea**: Adding $a = 1/\sqrt{d}$ score scaling allows a 1-layer BiLSTM with a smaller parameter budget to match the performance of an unnormalized 3-layer BiLSTM, reducing parameter count by up to 85%.
 

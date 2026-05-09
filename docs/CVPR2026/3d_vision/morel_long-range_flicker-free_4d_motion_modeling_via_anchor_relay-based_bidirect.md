@@ -28,18 +28,18 @@ To address the challenges of memory explosion, temporal flickering, and occlusio
 
 ## Background & Motivation
 
-1. **State of the Field**: 3D Gaussian Splatting (3DGS) has become the dominant paradigm for novel view synthesis and has been naturally extended to 4D dynamic scenes. Existing 4DGS methods are broadly categorized into two groups: "global one-shot training" and "chunk-based training."
+1. **Background**: 3D Gaussian Splatting (3DGS) has become the dominant paradigm for novel view synthesis and has been naturally extended to 4D dynamic scenes. Existing 4DGS methods are broadly categorized into two groups: "global one-shot training" and "chunk-based training."
 
 2. **Limitations of Prior Work**:
     - **Global one-shot training** (e.g., 4DGS, MoDec-GS): All frames are optimized jointly, ensuring global temporal consistency, but GPU memory explodes for long videos as the number of high-dimensional Gaussians grows with sequence length.
     - **Chunk-based training** (e.g., GIFStream): Long videos are split into short segments trained independently, reducing memory overhead but introducing temporal discontinuities and appearance discontinuities at segment boundaries, i.e., "flickering" artifacts.
     - Sliding-window strategies only provide local patches and cannot guarantee global consistency; temporal Gaussian hierarchies achieve near-constant memory but at the cost of high system complexity.
 
-3. **Root Cause**: A fundamental tension in long-video modeling between global temporal consistency and bounded memory usage — smooth transitions must be maintained across thousands of frames without allowing memory to grow linearly with frame count.
+3. **Key Challenge**: A fundamental tension in long-video modeling between global temporal consistency and bounded memory usage — smooth transitions must be maintained across thousands of frames without allowing memory to grow linearly with frame count.
 
-4. **Paper Goals**: (a) bounded-memory long-range 4D modeling; (b) flicker-free temporal consistency; (c) efficient random temporal access; (d) no reliance on external cues such as optical flow.
+4. **Goal**: (a) bounded-memory long-range 4D modeling; (b) flicker-free temporal consistency; (c) efficient random temporal access; (d) no reliance on external cues such as optical flow.
 
-5. **Starting Point**: Inspired by the "keyframe + GOP" paradigm in video coding, keyframe anchors (KfA) are placed periodically along the time axis, enabling smooth transitions via bidirectional deformation and adaptive blending.
+5. **Key Insight**: Inspired by the "keyframe + GOP" paradigm in video coding, keyframe anchors (KfA) are placed periodically along the time axis, enabling smooth transitions via bidirectional deformation and adaptive blending.
 
 6. **Core Idea**: Replace global or chunk-based strategies with a keyframe anchor relay mechanism. Bidirectional deformations are learned between anchors and smooth blending is achieved via learnable opacity control, yielding memory-bounded, flicker-free long-range 4D reconstruction.
 

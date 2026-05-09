@@ -27,15 +27,15 @@ This paper analyzes Instant-NGP's multi-resolution hash encoding (MHE) through t
 
 ## Background & Motivation
 
-**State of the Field**: Multi-Resolution Hash Encoding (MHE) is the core innovation of Instant-NGP, providing efficient spatial parameterization for NeRF and SDF. However, its behavior is highly sensitive to hyperparameters (number of levels $L$, growth factor $b$, resolutions $N_{\max}/N_{\min}$, hash table size $T$), which are typically selected heuristically.
+**Background**: Multi-Resolution Hash Encoding (MHE) is the core innovation of Instant-NGP, providing efficient spatial parameterization for NeRF and SDF. However, its behavior is highly sensitive to hyperparameters (number of levels $L$, growth factor $b$, resolutions $N_{\max}/N_{\min}$, hash table size $T$), which are typically selected heuristically.
 
 **Limitations of Prior Work**: MHE lacks rigorous analysis from the perspective of physical systems. Fundamental questions remain unanswered: What is the shape of MHE's effective spatial kernel? What is its true resolution limit? How do hash collisions quantitatively degrade quality?
 
-**Root Cause**: The intuitive assumption that MHE resolution is determined by the finest level $N_{\max}$ is incorrect—optimization dynamics cause substantial spatial broadening, so the true resolution is far lower than $N_{\max}$.
+**Key Challenge**: The intuitive assumption that MHE resolution is determined by the finest level $N_{\max}$ is incorrect—optimization dynamics cause substantial spatial broadening, so the true resolution is far lower than $N_{\max}$.
 
-**Paper Goals**: To develop a rigorous physical analysis framework for understanding MHE's spatial behavior, thereby guiding hyperparameter selection and architectural improvement.
+**Goal**: To develop a rigorous physical analysis framework for understanding MHE's spatial behavior, thereby guiding hyperparameter selection and architectural improvement.
 
-**Starting Point**: By analogy with Green's functions in physical systems, the spatial characteristics of MHE—resolution, anisotropy, and collision noise—are characterized by measuring its response to a point source (i.e., its PSF).
+**Key Insight**: By analogy with Green's functions in physical systems, the spatial characteristics of MHE—resolution, anisotropy, and collision noise—are characterized by measuring its response to a point source (i.e., its PSF).
 
 **Core Idea**: The effective resolution of MHE is jointly determined by $N_{\text{avg}}$ and an empirical broadening factor $\beta_{\text{emp}}$, not by $N_{\max}$; grid-induced anisotropy can be eliminated through per-level coordinate rotations.
 

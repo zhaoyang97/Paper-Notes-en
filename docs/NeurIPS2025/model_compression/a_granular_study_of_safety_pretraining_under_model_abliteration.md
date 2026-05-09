@@ -28,15 +28,15 @@ This paper systematically investigates the effects of model abliteration—a inf
 
 ## Background & Motivation
 
-**State of the Field**: Current LLM safety alignment primarily relies on post-training methods such as RLHF, DPO, and constitutional AI to teach models to refuse harmful requests. Once open-source models are released, users can freely modify weights and inference code.
+**Background**: Current LLM safety alignment primarily relies on post-training methods such as RLHF, DPO, and constitutional AI to teach models to refuse harmful requests. Once open-source models are released, users can freely modify weights and inference code.
 
 **Limitations of Prior Work**: Prior research has demonstrated that (a) benign fine-tuning may inadvertently erase safety behaviors; (b) adversarial prompting can bypass defenses; and (c) refusal behavior concentrates in low-dimensional directions within activation space, making it susceptible to targeted removal.
 
-**Root Cause**: Model abliteration is an extremely lightweight attack—requiring only a linear projection at inference time, with no gradients or training data—that can disable a model's refusal capability, posing a serious security threat to the open-source model community.
+**Key Challenge**: Model abliteration is an extremely lightweight attack—requiring only a linear projection at inference time, with no gradients or training data—that can disable a model's refusal capability, posing a serious security threat to the open-source model community.
 
-**Paper Goals**: Which data-driven safety training strategies survive abliteration attacks? Specifically, which "safety ingredients" cause safety signals to be distributed more broadly and thus become harder to remove?
+**Goal**: Which data-driven safety training strategies survive abliteration attacks? Specifically, which "safety ingredients" cause safety signals to be distributed more broadly and thus become harder to remove?
 
-**Starting Point**: The paper exploits seven granular checkpoints of SmolLM2-1.7B released by the Safety Pretraining project—each isolating one safety data strategy—to construct paired before/after-attack comparison experiments.
+**Key Insight**: The paper exploits seven granular checkpoints of SmolLM2-1.7B released by the Safety Pretraining project—each isolating one safety data strategy—to construct paired before/after-attack comparison experiments.
 
 **Core Idea**: Through checkpoint-level analysis, the paper demonstrates that composite data safety strategies (filtering + rephrasing + tagging + refusals) are substantially more robust against activation editing attacks than single-strategy refusal training alone.
 

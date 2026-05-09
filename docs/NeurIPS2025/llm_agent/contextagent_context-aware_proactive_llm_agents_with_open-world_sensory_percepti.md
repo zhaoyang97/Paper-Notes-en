@@ -28,15 +28,15 @@ This paper proposes ContextAgent, the first LLM agent framework that leverages m
 
 ## Background & Motivation
 
-**State of the Field**: Current LLM agents predominantly operate in a "passive response" mode, executing tasks only upon explicit user instruction. A small number of pioneering works have attempted to build proactive agents, but these are largely confined to desktop UI environments (e.g., monitoring screenshots and keyboard inputs).
+**Background**: Current LLM agents predominantly operate in a "passive response" mode, executing tasks only upon explicit user instruction. A small number of pioneering works have attempted to build proactive agents, but these are largely confined to desktop UI environments (e.g., monitoring screenshots and keyboard inputs).
 
 **Limitations of Prior Work**: Existing proactive agents suffer from two major shortcomings: ① a narrow perceptual scope, limited to closed environments (desktop interfaces) and unable to perceive the open-world contexts of daily life; and ② limited functionality, relying on direct LLM inference to generate text replies without invoking external tools to provide richer services.
 
-**Root Cause**: Realizing a truly proactive personal assistant requires an agent to continuously perceive the surrounding environment through multiple senses (vision, hearing)—much like a human—and to understand user intent and deliver assistance automatically without requiring user action. Existing approaches fall critically short in both perceptual scope and service capability.
+**Key Challenge**: Realizing a truly proactive personal assistant requires an agent to continuously perceive the surrounding environment through multiple senses (vision, hearing)—much like a human—and to understand user intent and deliver assistance automatically without requiring user action. Existing approaches fall critically short in both perceptual scope and service capability.
 
-**Paper Goals**: This work investigates how an LLM agent can leverage multimodal sensory data from wearable devices (smart glasses, earphones, etc.) to understand user context and intent in an open-world setting, determine whether proactive assistance is warranted, and automatically invoke appropriate tools to fulfill that assistance.
+**Goal**: This work investigates how an LLM agent can leverage multimodal sensory data from wearable devices (smart glasses, earphones, etc.) to understand user context and intent in an open-world setting, determine whether proactive assistance is warranted, and automatically invoke appropriate tools to fulfill that assistance.
 
-**Starting Point**: The authors observe that devices such as smart glasses and earphones offer a hands-free interaction modality whose egocentric perspective is co-located with the user, making them ideal perceptual front-ends for proactive agents. Incorporating user persona information further enables personalized service decisions.
+**Key Insight**: The authors observe that devices such as smart glasses and earphones offer a hands-free interaction modality whose egocentric perspective is co-located with the user, making them ideal perceptual front-ends for proactive agents. Incorporating user persona information further enables personalized service decisions.
 
 **Core Idea**: Acquire multi-dimensional sensory context via wearable devices along with user persona, then employ a CoT fine-tuned LLM for "think-before-act" proactive reasoning and tool invocation.
 

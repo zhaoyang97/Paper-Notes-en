@@ -29,15 +29,15 @@ Proposes Misviz (2,604 real-world misleading visualizations) and Misviz-synth (5
 
 ## Background & Motivation
 
-**State of the Field**: Misleading visualizations are an important vehicle for disinformation on social media, distorting data through violations of chart design principles (e.g., truncated axes, 3D effects, inconsistent scale intervals), misleading readers into drawing incorrect conclusions. Prior research has shown both humans and MLLMs are susceptible to such deceptive visualizations.
+**Background**: Misleading visualizations are an important vehicle for disinformation on social media, distorting data through violations of chart design principles (e.g., truncated axes, 3D effects, inconsistent scale intervals), misleading readers into drawing incorrect conclusions. Prior research has shown both humans and MLLMs are susceptible to such deceptive visualizations.
 
 **Limitations of Prior Work**: Training and evaluation for automatically detecting misleading visualizations and identifying specific violation types is limited by the lack of large-scale, diverse, open datasets. Existing datasets are either small (150 images), not openly accessible, or cover only a few misleading types, limiting method comparability and research progress.
 
-**Root Cause**: Misleading features are often hidden in subtle visual details (e.g., axis scale intervals) and are highly diverse (the latest taxonomy identifies 70+ types), making automated detection extremely difficult.
+**Key Challenge**: Misleading features are often hidden in subtle visual details (e.g., axis scale intervals) and are highly diverse (the latest taxonomy identifies 70+ types), making automated detection extremely difficult.
 
-**Paper Goals**: Construct the first large-scale open benchmark for misleading visualizations and systematically evaluate the strengths and weaknesses of different detection methods.
+**Goal**: Construct the first large-scale open benchmark for misleading visualizations and systematically evaluate the strengths and weaknesses of different detection methods.
 
-**Starting Point**: Collect real charts from three sources (academic corpora, WTF Visualizations website, Reddit communities), combined with synthetic generation based on real data tables, to construct complementary benchmark pairs.
+**Key Insight**: Collect real charts from three sources (academic corpora, WTF Visualizations website, Reddit communities), combined with synthetic generation based on real data tables, to construct complementary benchmark pairs.
 
 **Core Idea**: Define misleading visualization detection as a multi-label classification problem and systematically compare three detection paths—zero-shot MLLMs, axis metadata-based rule checkers, and image-axis classifiers.
 

@@ -30,7 +30,7 @@ Real-world data science tasks involve complex web interactions: locating appropr
 
 **Data science benchmarks** (e.g., InfiAgent-DABench, DSBench) concentrate on static structured datasets and do not cover end-to-end workflows from data acquisition to analysis.
 
-**Root Cause**: Real data science workflows typically begin with web browsing and require navigating and synthesizing information across multiple websites — a critical step overlooked by existing benchmarks. For instance, BrowserUse achieves 80% on WebVoyager but only 15% on WebDS.
+**Key Challenge**: Real data science workflows typically begin with web browsing and require navigating and synthesizing information across multiple websites — a critical step overlooked by existing benchmarks. For instance, BrowserUse achieves 80% on WebVoyager but only 15% on WebDS.
 
 ## Method
 

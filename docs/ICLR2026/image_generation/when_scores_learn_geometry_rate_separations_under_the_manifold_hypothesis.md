@@ -31,15 +31,15 @@ Under the manifold hypothesis, this paper reveals a scale separation between geo
 
 ### State of the Field
 
-**State of the Field**: Score-based methods (diffusion models, Bayesian inverse problems, etc.) are conventionally interpreted as learning the data distribution in the low-noise limit $\sigma \to 0$. The manifold hypothesis — that data is supported on a low-dimensional manifold embedded in high-dimensional space — is widely adopted.
+**Background**: Score-based methods (diffusion models, Bayesian inverse problems, etc.) are conventionally interpreted as learning the data distribution in the low-noise limit $\sigma \to 0$. The manifold hypothesis — that data is supported on a low-dimensional manifold embedded in high-dimensional space — is widely adopted.
 
 **Limitations of Prior Work**: (1) Score estimation in the low-temperature limit is highly unstable, requiring substantial post-training engineering in practice; (2) existing theoretical analyses conflate geometric and distributional information within error bounds, without revealing any scale separation; (3) even with a well-approximated score, the recovered distribution on the manifold may be arbitrary.
 
-**Root Cause**: Distribution learning (exact recovery of $\mu_{\text{data}}$) requires score accuracy of $o(1)$, whereas practical score errors are typically far larger. Yet diffusion models still generate realistic samples — suggesting they may not truly learn the distribution.
+**Key Challenge**: Distribution learning (exact recovery of $\mu_{\text{data}}$) requires score accuracy of $o(1)$, whereas practical score errors are typically far larger. Yet diffusion models still generate realistic samples — suggesting they may not truly learn the distribution.
 
-**Paper Goals**: (1) Why do diffusion models remain effective under imperfect scores? (2) Can imperfect scores be leveraged for useful tasks such as uniform sampling?
+**Goal**: (1) Why do diffusion models remain effective under imperfect scores? (2) Can imperfect scores be leveraged for useful tasks such as uniform sampling?
 
-**Starting Point**: Perform an asymptotic expansion of the score function as $\sigma \to 0$, separating the geometric term (leading order, $\Theta(\sigma^{-2})$) from the distributional term (sub-leading order, $\Theta(1)$).
+**Key Insight**: Perform an asymptotic expansion of the score function as $\sigma \to 0$, separating the geometric term (leading order, $\Theta(\sigma^{-2})$) from the distributional term (sub-leading order, $\Theta(1)$).
 
 **Core Idea**: Geometric information in the score dominates distributional information by a factor of $\sigma^{-2}$; consequently, geometry learning tolerates errors as large as $o(\sigma^{-2})$, a far weaker requirement than the $o(1)$ accuracy needed for distribution learning.
 

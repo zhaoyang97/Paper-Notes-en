@@ -27,15 +27,15 @@ content_hash: 26b572ee98e0c1c8
 The first framework to incorporate the strong generative priors of FLUX (DiT) into drag editing. By replacing conventional point-level supervision with region-level affine supervision, combined with gradient-mask hard constraints and adapter-enhanced inversion, the method substantially improves drag editing quality.
 
 ## Background & Motivation
-**State of the Field**: Drag editing allows users to specify spatially local motions via interactive drag instructions, enabling fine-grained controllable image editing. However, existing methods are predominantly based on Stable Diffusion (UNet-based DDPM), and editing results frequently exhibit unnatural deformations and distortions.
+**Background**: Drag editing allows users to specify spatially local motions via interactive drag instructions, enabling fine-grained controllable image editing. However, existing methods are predominantly based on Stable Diffusion (UNet-based DDPM), and editing results frequently exhibit unnatural deformations and distortions.
 
 **Limitations of Prior Work**: The generative prior of SD is insufficiently strong to pull the optimized latent back onto the natural image manifold. Although DiT + Flow Matching models (e.g., SD3.5, FLUX) possess significantly stronger priors, drag editing has yet to benefit from them.
 
-**Root Cause**: Directly porting point-level drag frameworks to DiT yields poor results. The UNet bottleneck produces spatially compact, highly compressed features with wide receptive fields, whereas DiT features are finer-grained and spatially precise with narrow receptive fields, making single-point supervision semantically insufficient. Furthermore, FLUX is a CFG-distilled model prone to severe inversion drift, and conventional KV injection is inadequate for maintaining subject consistency.
+**Key Challenge**: Directly porting point-level drag frameworks to DiT yields poor results. The UNet bottleneck produces spatially compact, highly compressed features with wide receptive fields, whereas DiT features are finer-grained and spatially precise with narrow receptive fields, making single-point supervision semantically insufficient. Furthermore, FLUX is a CFG-distilled model prone to severe inversion drift, and conventional KV injection is inadequate for maintaining subject consistency.
 
-**Paper Goals**: How to effectively leverage DiT's strong priors for high-quality drag editing?
+**Goal**: How to effectively leverage DiT's strong priors for high-quality drag editing?
 
-**Starting Point**: Shift from point-level to region-level supervision, leveraging affine transformations to provide richer and more consistent feature supervision; simultaneously redesign background preservation and inversion enhancement strategies.
+**Key Insight**: Shift from point-level to region-level supervision, leveraging affine transformations to provide richer and more consistent feature supervision; simultaneously redesign background preservation and inversion enhancement strategies.
 
 **Core Idea**: Replace point-level motion supervision with region-level affine transformation supervision to unleash DiT's potential in drag editing.
 

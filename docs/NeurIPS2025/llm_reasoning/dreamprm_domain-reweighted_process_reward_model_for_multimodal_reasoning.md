@@ -27,15 +27,15 @@ content_hash: 93f29d82c6e61324
 DreamPRM is proposed to automatically learn domain weights for multimodal reasoning datasets via bi-level optimization, addressing the data quality imbalance in PRM training. It achieves 85.2% top-1 accuracy on the MathVista leaderboard using the o4-mini model.
 
 ## Background & Motivation
-**State of the Field**: Process Reward Models (PRMs) guide LLM reasoning through fine-grained evaluation of intermediate steps in reasoning chains, achieving notable success in the text domain. Extending PRMs to multimodal LLMs (MLLMs) is a natural next step.
+**Background**: Process Reward Models (PRMs) guide LLM reasoning through fine-grained evaluation of intermediate steps in reasoning chains, achieving notable success in the text domain. Extending PRMs to multimodal LLMs (MLLMs) is a natural next step.
 
 **Limitations of Prior Work**: Multimodal reasoning spans a broader task spectrum (science, geometry, charts, commonsense, etc.), leading to more severe train-test distribution shift and greater generalization difficulty. While large-scale, diverse datasets are necessary to ensure coverage, existing multimodal reasoning datasets suffer from severe quality imbalance—many contain uninformative modalities or overly simple questions.
 
-**Root Cause**: Training a generalizable PRM requires data covering multiple domains, yet naively mixing all datasets degrades PRM performance due to noise introduced by low-quality data.
+**Key Challenge**: Training a generalizable PRM requires data covering multiple domains, yet naively mixing all datasets degrades PRM performance due to noise introduced by low-quality data.
 
-**Paper Goals**: To automatically assign appropriate weights to multimodal reasoning datasets of varying quality, producing a more generalizable multimodal PRM.
+**Goal**: To automatically assign appropriate weights to multimodal reasoning datasets of varying quality, producing a more generalizable multimodal PRM.
 
-**Starting Point**: Drawing inspiration from domain reweighting techniques in pretraining (e.g., DoReMi), the paper introduces domain reweighting into PRM training and designs an aggregation function loss tailored to the reasoning setting.
+**Key Insight**: Drawing inspiration from domain reweighting techniques in pretraining (e.g., DoReMi), the paper introduces domain reweighting into PRM training and designs an aggregation function loss tailored to the reasoning setting.
 
 **Core Idea**: Bi-level optimization is used to automatically learn dataset weights, directing the PRM to focus on high-quality reasoning samples while discounting noisy data.
 

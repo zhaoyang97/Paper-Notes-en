@@ -28,15 +28,15 @@ OmniFC is proposed as a model-agnostic federated clustering framework that exact
 
 ## Background & Motivation
 
-**State of the Field**: Federated Clustering (FC) enables distributed clients to discover global cluster structures without sharing raw data. Existing methods design algorithm-specific proxy aggregation schemes—federated K-Means aggregates centroids, federated spectral clustering aggregates low-rank factors of kernel matrices, and federated NMF aggregates basis matrices.
+**Background**: Federated Clustering (FC) enables distributed clients to discover global cluster structures without sharing raw data. Existing methods design algorithm-specific proxy aggregation schemes—federated K-Means aggregates centroids, federated spectral clustering aggregates low-rank factors of kernel matrices, and federated NMF aggregates basis matrices.
 
 **Limitations of Prior Work**: (a) Proxy aggregation is computed from biased client data, inevitably introducing information loss under Non-IID settings and causing significant degradation in clustering performance—e.g., k-FED achieves a Kappa of only 0.43 on COIL-100 at $p=1.0$; (b) each method supports only a single clustering algorithm and inherits its inductive biases (e.g., compactness assumptions in KM, connectivity assumptions in SC), precluding applicability to arbitrary clustering methods.
 
-**Root Cause**: Existing FC methods represent "one-to-one" extensions (centralized → federated); supporting each additional clustering algorithm requires redesigning an entirely new aggregation scheme, making the paradigm fundamentally unscalable.
+**Key Challenge**: Existing FC methods represent "one-to-one" extensions (centralized → federated); supporting each additional clustering algorithm requires redesigning an entirely new aggregation scheme, making the paradigm fundamentally unscalable.
 
-**Paper Goals**: To construct a unified, model-agnostic framework that allows any centralized clustering method to be directly applied in federated settings while guaranteeing privacy and robustness to Non-IID data.
+**Goal**: To construct a unified, model-agnostic framework that allows any centralized clustering method to be directly applied in federated settings while guaranteeing privacy and robustness to Non-IID data.
 
-**Starting Point**: The key insight is that clustering fundamentally requires only the pairwise distance matrix $D \in \mathbb{R}^{n \times n}$ among samples. If the global distance matrix can be exactly reconstructed without leaking raw data, any centralized clustering algorithm can be directly applied to $D$.
+**Key Insight**: The key insight is that clustering fundamentally requires only the pairwise distance matrix $D \in \mathbb{R}^{n \times n}$ among samples. If the global distance matrix can be exactly reconstructed without leaking raw data, any centralized clustering algorithm can be directly applied to $D$.
 
 **Core Idea**: Lagrange coded computing is employed to achieve lossless and secure reconstruction of the global pairwise distance matrix, decoupling FC from "customizing aggregation per algorithm" to "reconstructing the distance matrix once and adapting to all algorithms."
 

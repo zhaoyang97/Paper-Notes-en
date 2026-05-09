@@ -28,15 +28,15 @@ This paper proposes CollabCoder, a plan-code co-evolution framework that employs
 
 ## Background & Motivation
 
-**State of the Field**: LLM-based code generation has evolved from direct generation to a two-stage "plan-then-code" paradigm: the first stage generates a plan and code, and the second stage performs refinement or debugging. Recent multi-agent frameworks such as MapCoder and CodeSIM decompose the generation process into iterative pipelines of retrieval, planning, and debugging.
+**Background**: LLM-based code generation has evolved from direct generation to a two-stage "plan-then-code" paradigm: the first stage generates a plan and code, and the second stage performs refinement or debugging. Recent multi-agent frameworks such as MapCoder and CodeSIM decompose the generation process into iterative pipelines of retrieval, planning, and debugging.
 
 **Limitations of Prior Work**: (1) Debugging is predominantly reactive and lacks an error attribution mechanism, often producing repetitive and ineffective modifications. (2) The planning module remains fixed throughout the debugging process and cannot adapt based on code revisions or intermediate feedback. (3) The effective reasoning complexity of existing systems is $O(nk)$, resulting in high computational overhead.
 
-**Root Cause**: When a code error originates from a logical mistake at the planning level, modifying only the code cannot address the root cause. However, existing methods cannot distinguish whether the error should be fixed in the plan or in the code.
+**Key Challenge**: When a code error originates from a logical mistake at the planning level, modifying only the code cannot address the root cause. However, existing methods cannot distinguish whether the error should be fixed in the plan or in the code.
 
-**Paper Goals**: To design a framework in which plans and code can co-evolve collaboratively, adaptively diagnosing the source of errors and selecting the appropriate repair strategy.
+**Goal**: To design a framework in which plans and code can co-evolve collaboratively, adaptively diagnosing the source of errors and selecting the appropriate repair strategy.
 
-**Starting Point**: Introduce a Collaborative Decision Module (CDM) that diagnoses errors from three complementary perspectives (plan analysis, code analysis, and plan-code alignment analysis), and a Reasoning Trajectory module (RT) that accumulates historical debugging experience.
+**Key Insight**: Introduce a Collaborative Decision Module (CDM) that diagnoses errors from three complementary perspectives (plan analysis, code analysis, and plan-code alignment analysis), and a Reasoning Trajectory module (RT) that accumulates historical debugging experience.
 
 **Core Idea**: Plans and code should co-evolve — debugging should not only fix the code but also revise the plan when necessary, and the debugging strategy should continuously learn from historical failures.
 

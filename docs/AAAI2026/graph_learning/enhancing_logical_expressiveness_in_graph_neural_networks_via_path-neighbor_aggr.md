@@ -29,11 +29,11 @@ PN-GNN proposes aggregating neighbor node embeddings along reasoning paths on to
 
 ## Background & Motivation
 
-**State of the Field**: GNNs have demonstrated strong performance in knowledge graph (KG) reasoning. Their expressiveness can be evaluated from two perspectives: the ability to distinguish non-isomorphic graphs (related to the WL test) and the ability to learn specific logical rule structures. R-GNNs (e.g., R-GCN, CompGCN) perform relation-aware message passing but have limited rule-learning capability; C-GNNs (e.g., NBFNet, RED-GNN) perform conditional message passing by marking the head entity, and are theoretically capable of learning all CML (Counting Modal Logic) formulas.
+**Background**: GNNs have demonstrated strong performance in knowledge graph (KG) reasoning. Their expressiveness can be evaluated from two perspectives: the ability to distinguish non-isomorphic graphs (related to the WL test) and the ability to learn specific logical rule structures. R-GNNs (e.g., R-GCN, CompGCN) perform relation-aware message passing but have limited rule-learning capability; C-GNNs (e.g., NBFNet, RED-GNN) perform conditional message passing by marking the head entity, and are theoretically capable of learning all CML (Counting Modal Logic) formulas.
 
 **Limitations of Prior Work**: The logical expressiveness of C-GNNs is equivalent to CML; however, CML cannot express certain important rule structures, most notably the U-structure—where two paths branch from the same intermediate node and then converge. C-GNNs cannot distinguish T-structures from U-structures, as both yield identical CML expressions.
 
-**Root Cause**: EL-GNN augments distinguishing ability by adding constant labels to nodes, enabling it to learn U-structures, but at the cost of reduced coverage—substituting variables with constants narrows the applicability of rules, weakening generalization, and making the approach difficult to apply in inductive settings.
+**Key Challenge**: EL-GNN augments distinguishing ability by adding constant labels to nodes, enabling it to learn U-structures, but at the cost of reduced coverage—substituting variables with constants narrows the applicability of rules, weakening generalization, and making the approach difficult to apply in inductive settings.
 
 ## Method
 

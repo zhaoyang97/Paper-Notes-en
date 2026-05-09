@@ -28,15 +28,15 @@ This paper identifies the "over-editing" problem in LLM-based code repair—wher
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have demonstrated strong performance in program repair. Existing training approaches (SFT and RL) typically optimize only for repair correctness, treating code repair as a pure correctness objective.
+**Background**: LLMs have demonstrated strong performance in program repair. Existing training approaches (SFT and RL) typically optimize only for repair correctness, treating code repair as a pure correctness objective.
 
 **Limitations of Prior Work**: (1) During GRPO training, as correctness improves, edit cost increases in tandem—models learn to "stumble upon" correct solutions through extensive modifications rather than developing precise repair capabilities. (2) Over-editing disrupts the original code structure, increasing the reviewer burden on developers. (3) Over-editing fails to localize bugs, limiting the practical effectiveness and maintainability of repairs.
 
-**Root Cause**: There exists a tension between repair correctness and edit minimality—optimizing solely for correctness causes models to take the "rewrite" shortcut rather than learning to understand and precisely localize bugs.
+**Key Challenge**: There exists a tension between repair correctness and edit minimality—optimizing solely for correctness causes models to take the "rewrite" shortcut rather than learning to understand and precisely localize bugs.
 
-**Paper Goals**: Design a Precise Repair framework that maximizes reuse of the original code while maintaining repair correctness.
+**Goal**: Design a Precise Repair framework that maximizes reuse of the original code while maintaining repair correctness.
 
-**Starting Point**: An observation that edit cost and correctness grow in tandem during GRPO training (Figure 2), indicating that edit constraints must be explicitly incorporated into the reward signal.
+**Key Insight**: An observation that edit cost and correctness grow in tandem during GRPO training (Figure 2), indicating that edit constraints must be explicitly incorporated into the reward signal.
 
 **Core Idea**: Edit-Aware GRPO (EA-GRPO)—edit penalties are applied to correct samples only when group-level accuracy exceeds a threshold, balancing correctness and edit minimality.
 

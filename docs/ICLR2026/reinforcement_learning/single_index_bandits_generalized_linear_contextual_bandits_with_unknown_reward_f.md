@@ -29,11 +29,11 @@ This paper introduces the Single Index Bandit (SIB) problem — extending genera
 
 ## Background & Motivation
 
-- **State of the Field**: Generalized linear bandits (GLB) are an important extension of contextual bandits and have been widely applied in recommendation systems, clinical trials, and precision medicine. However, all existing methods assume the reward function (link function) is known.
+- **Background**: Generalized linear bandits (GLB) are an important extension of contextual bandits and have been widely applied in recommendation systems, clinical trials, and precision medicine. However, all existing methods assume the reward function (link function) is known.
 - **Limitations of Prior Work**: Misspecification of the reward function causes existing GLB algorithms to fail entirely, potentially incurring linear regret. In practice, the underlying functional form is typically unknown and not identifiable.
-- **Root Cause**: Existing UCB and Thompson Sampling methods both require solving (quasi-)maximum likelihood estimators, which inherently depend on the explicit form of the reward function. Similarly, all existing theoretical analyses rely on vector-valued martingale concentration inequalities that explicitly involve the reward function — techniques that completely break down when the reward function is unknown.
-- **Paper Goals**: Design efficient bandit algorithms with sublinear regret guarantees when the reward function is entirely unknown.
-- **Starting Point**: Drawing on the single index model (SIM) from statistical learning, Stein's method is employed to bypass dependence on the functional form of the reward, enabling direct estimation of the unknown parameter direction.
+- **Key Challenge**: Existing UCB and Thompson Sampling methods both require solving (quasi-)maximum likelihood estimators, which inherently depend on the explicit form of the reward function. Similarly, all existing theoretical analyses rely on vector-valued martingale concentration inequalities that explicitly involve the reward function — techniques that completely break down when the reward function is unknown.
+- **Goal**: Design efficient bandit algorithms with sublinear regret guarantees when the reward function is entirely unknown.
+- **Key Insight**: Drawing on the single index model (SIM) from statistical learning, Stein's method is employed to bypass dependence on the functional form of the reward, enabling direct estimation of the unknown parameter direction.
 - **Core Idea**: Leveraging Stein's identity $\mathbb{E}[y_i S(x_i)] = \mu_* \theta_*$, the direction of $\theta_*$ can be estimated without knowledge of $f(\cdot)$, enabling robust optimization under unknown reward functions.
 
 ## Method

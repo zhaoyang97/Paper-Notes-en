@@ -29,14 +29,14 @@ Ours proposes coDrawAgents, an interactive multi-agent dialogue framework (Inter
 
 ## Background & Motivation
 
-**State of the Field**: Existing T2I models face three core challenges when handling complex scenes with multiple objects and attributes:
+**Background**: Existing T2I models face three core challenges when handling complex scenes with multiple objects and attributes:
 
 **Limitations of Prior Work**:
 - **Layout Complexity Explosion**: The complexity of relationships between objects in global layout planning is quadratic; a single planner struggles to capture all dependencies.
 - **Lack of Visual Context**: Most methods predict layouts in pure text space without reference to the actual image, leading to spatial implausibility.
 - **No Explicit Error Correction**: Diffusion models determine rough structures early in the denoising process; once spatial errors are introduced, they are difficult to fix.
 
-**Root Cause**: Existing solutions (including single-agent and fixed-pipeline multi-agent systems) lack closed-loop reasoning capabilities—they cannot form iterative feedback between planning, verification, and synthesis.
+**Key Challenge**: Existing solutions (including single-agent and fixed-pipeline multi-agent systems) lack closed-loop reasoning capabilities—they cannot form iterative feedback between planning, verification, and synthesis.
 
 ## Method
 

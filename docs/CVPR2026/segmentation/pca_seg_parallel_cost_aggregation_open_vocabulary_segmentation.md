@@ -29,11 +29,11 @@ PCA-Seg revisits the cost aggregation mechanism in open-vocabulary semantic and 
 
 ## Background & Motivation
 
-1. **State of the Field**: Open-vocabulary semantic and part segmentation (OSPS) methods (e.g., CAT-Seg, DeCLIP, PartCATSeg) typically construct cost volumes from CLIP visual-textual features and extract aligned information through serial spatial aggregation followed by category aggregation.
+1. **Background**: Open-vocabulary semantic and part segmentation (OSPS) methods (e.g., CAT-Seg, DeCLIP, PartCATSeg) typically construct cost volumes from CLIP visual-textual features and extract aligned information through serial spatial aggregation followed by category aggregation.
 2. **Limitations of Prior Work**: The cascaded behavior of spatial and category aggregation in serial architectures causes "knowledge interference" — performing spatial aggregation first distorts categorical semantics, and subsequent category aggregation further amplifies this bias, leading to misclassification (e.g., confusing a truck with a runway).
-3. **Root Cause**: Category-level semantics and spatial structural information should be represented along two independent dimensions, but serial processing causes the aggregation of one type of information to trigger a chain reaction in the other.
-4. **Paper Goals**: Design a parallel architecture in which the two aggregation operations run independently, eliminating knowledge interference while efficiently fusing the two knowledge streams.
-5. **Starting Point**: A naive parallelization baseline is found to slightly decrease performance by 0.2%, indicating that the key challenge lies in how to effectively integrate the two independently produced knowledge streams.
+3. **Key Challenge**: Category-level semantics and spatial structural information should be represented along two independent dimensions, but serial processing causes the aggregation of one type of information to trigger a chain reaction in the other.
+4. **Goal**: Design a parallel architecture in which the two aggregation operations run independently, eliminating knowledge interference while efficiently fusing the two knowledge streams.
+5. **Key Insight**: A naive parallelization baseline is found to slightly decrease performance by 0.2%, indicating that the key challenge lies in how to effectively integrate the two independently produced knowledge streams.
 6. **Core Idea**: Execute spatial and category aggregation in parallel → fuse via EPL multi-perspective integration → apply FOD orthogonality constraints to ensure knowledge diversity.
 
 ## Method

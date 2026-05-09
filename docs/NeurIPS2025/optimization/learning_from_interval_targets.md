@@ -31,9 +31,9 @@ This paper studies regression under interval-only supervision (lower and upper b
 
 **Limitations of Prior Work**: Cheng et al. (2023a) analyzed projection loss methods but relied on two strong assumptions: (a) realizability ($f^* \in \mathcal{F}$); and (b) ambiguity degree $< 1$ (i.e., the intersection of infinitely many intervals recovers the true label). However, for regression, even simple intervals of the form $[y-\epsilon, y+\epsilon]$ yield an ambiguity degree of exactly 1.
 
-**Root Cause**: (a) Prior results are asymptotic only, lacking finite-sample guarantees; (b) the role of smooth hypothesis classes in interval learning has not been sufficiently exploited.
+**Key Challenge**: (a) Prior results are asymptotic only, lacking finite-sample guarantees; (b) the role of smooth hypothesis classes in interval learning has not been sufficiently exploited.
 
-**Starting Point**: Smooth (Lipschitz) hypothesis classes prevent function values from varying too much at nearby inputs, enabling "denoising" of the original intervals — tightening wide intervals into narrower effective intervals (Fig. 2–3).
+**Key Insight**: Smooth (Lipschitz) hypothesis classes prevent function values from varying too much at nearby inputs, enabling "denoising" of the original intervals — tightening wide intervals into narrower effective intervals (Fig. 2–3).
 
 ## Method
 

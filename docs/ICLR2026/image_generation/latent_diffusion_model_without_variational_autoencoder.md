@@ -27,10 +27,10 @@ content_hash: ab395bb67b83bc5d
 This paper proposes SVG, which replaces the VAE latent space with frozen DINOv3 self-supervised features for diffusion model training. A lightweight residual encoder supplements fine-grained details, enabling faster training, more efficient inference, and a unified visual representation applicable across tasks.
 
 ## Background & Motivation
-- **State of the Field**: The VAE + Diffusion paradigm suffers from three fundamental limitations: training/inference inefficiency, poor quality under few-step sampling, and limited semantic discriminability of VAE features.
+- **Background**: The VAE + Diffusion paradigm suffers from three fundamental limitations: training/inference inefficiency, poor quality under few-step sampling, and limited semantic discriminability of VAE features.
 - **Limitations of Prior Work**: VAE latent spaces exhibit severe semantic entanglement (t-SNE visualizations show heavy class overlap), causing contradictory velocity field directions and necessitating more sampling steps. Existing acceleration methods (REPA, VA-VAE) improve training by aligning with VFM features but only address symptoms without fundamentally restructuring the latent space.
-- **Root Cause**: The lack of semantic discriminability in VAE latent spaces is the fundamental cause of slow convergence and inefficient sampling.
-- **Paper Goals**: To demonstrate that a semantically well-structured latent space can substantially accelerate diffusion training and reduce the required number of sampling steps.
+- **Key Challenge**: The lack of semantic discriminability in VAE latent spaces is the fundamental cause of slow convergence and inefficient sampling.
+- **Goal**: To demonstrate that a semantically well-structured latent space can substantially accelerate diffusion training and reduce the required number of sampling steps.
 
 ## Method
 

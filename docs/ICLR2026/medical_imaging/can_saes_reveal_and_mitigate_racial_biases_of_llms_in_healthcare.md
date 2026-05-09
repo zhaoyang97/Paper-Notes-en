@@ -28,15 +28,15 @@ This paper investigates whether Sparse Autoencoders (SAEs) can reveal and mitiga
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly deployed in healthcare settings (e.g., clinical note analysis, case generation), yet are known to exhibit racial biases—potentially producing systematically different risk assessments for Black patients.
+**Background**: LLMs are increasingly deployed in healthcare settings (e.g., clinical note analysis, case generation), yet are known to exhibit racial biases—potentially producing systematically different risk assessments for Black patients.
 
 **Limitations of Prior Work**: Existing bias detection relies on external benchmarks and cannot explain the internal mechanisms of bias. How do models internally represent racial information? Chain-of-thought (CoT) explanations are unfaithful—models claim not to use race, yet demonstrably do.
 
-**Root Cause**: SAEs offer fine-grained tools for analyzing LLM internal representations, but whether "detection" can be translated into "mitigation" remains unclear.
+**Key Challenge**: SAEs offer fine-grained tools for analyzing LLM internal representations, but whether "detection" can be translated into "mitigation" remains unclear.
 
-**Paper Goals**: (a) Can SAEs identify race-related features within LLMs? (b) Can ablating these features effectively reduce bias?
+**Goal**: (a) Can SAEs identify race-related features within LLMs? (b) Can ablating these features effectively reduce bias?
 
-**Starting Point**: Train racial probes using L1-regularized logistic regression on SAE activations to identify latent features predictive of race, then perform causal validation via steering and ablation.
+**Key Insight**: Train racial probes using L1-regularized logistic regression on SAE activations to identify latent features predictive of race, then perform causal validation via steering and ablation.
 
 **Core Idea**: SAEs can reveal the mechanism of bias (latent features associated with "Black" co-activate with stigmatizing terms such as incarceration, cocaine, and gunshot wounds), but ablating these features is insufficient to mitigate bias in complex clinical tasks.
 

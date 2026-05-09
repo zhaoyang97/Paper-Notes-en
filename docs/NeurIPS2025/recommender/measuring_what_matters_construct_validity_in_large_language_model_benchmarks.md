@@ -27,15 +27,15 @@ content_hash: f7ff57a48d875342
 This paper presents a systematic review of 445 LLM benchmark papers conducted by 29 experts, examining existing LLM evaluation benchmarks through the lens of construct validity across four dimensions — phenomenon definition, task design, scoring metrics, and conclusion claims — and proposes 8 actionable recommendations for improvement.
 
 ## Background & Motivation
-**State of the Field**: LLM evaluation is one of the most active research directions in AI, with a large number of benchmark papers published annually. The reliability of evaluation results directly determines the accuracy of assessments of model capabilities and the effectiveness of pre-deployment safety evaluations. In recent years, the number of benchmarks has grown exponentially, but quality varies considerably.
+**Background**: LLM evaluation is one of the most active research directions in AI, with a large number of benchmark papers published annually. The reliability of evaluation results directly determines the accuracy of assessments of model capabilities and the effectiveness of pre-deployment safety evaluations. In recent years, the number of benchmarks has grown exponentially, but quality varies considerably.
 
 **Limitations of Prior Work**: Many benchmarks attempt to measure abstract concepts such as "safety" and "robustness," yet their task designs and scoring mechanisms often fail to genuinely reflect the target phenomena. 47.8% of benchmarks exhibit disputed or insufficiently consensual definitions of what they measure; 27% rely on convenience sampling to obtain test instances.
 
-**Root Cause**: There exists a severe disconnect between the explosive growth in the number of LLM benchmarks and quality control — benchmarks are increasingly abundant, yet individual papers rarely provide adequate justification for why a given benchmark validly measures the intended capability. Only 53.4% of papers discuss construct validity.
+**Key Challenge**: There exists a severe disconnect between the explosive growth in the number of LLM benchmarks and quality control — benchmarks are increasingly abundant, yet individual papers rarely provide adequate justification for why a given benchmark validly measures the intended capability. Only 53.4% of papers discuss construct validity.
 
-**Paper Goals**: (1) Systematically identify common construct validity issues in LLM benchmark papers published at top NLP/ML venues; (2) quantify the prevalence of each issue; (3) propose actionable recommendations and a checklist for improvement.
+**Goal**: (1) Systematically identify common construct validity issues in LLM benchmark papers published at top NLP/ML venues; (2) quantify the prevalence of each issue; (3) propose actionable recommendations and a checklist for improvement.
 
-**Starting Point**: The authors draw on the construct validity framework from psychometrics, treating a benchmark as a chain of "phenomenon → task → metric → claim," and systematically examine validity issues that may arise at each stage.
+**Key Insight**: The authors draw on the construct validity framework from psychometrics, treating a benchmark as a chain of "phenomenon → task → metric → claim," and systematically examine validity issues that may arise at each stage.
 
 **Core Idea**: Apply the well-established construct validity framework from psychometrics to systematically audit the quality of LLM benchmarks, identify widespread methodological deficiencies, and distill 8 actionable recommendations for improvement.
 

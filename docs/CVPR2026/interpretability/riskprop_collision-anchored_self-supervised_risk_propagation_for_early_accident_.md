@@ -28,15 +28,15 @@ This paper proposes RiskProp, a collision-anchored self-supervised risk propagat
 
 ## Background & Motivation
 
-1. **State of the Field**: Accident Anticipation aims to estimate risk scores in real time from dashcam videos, triggering warnings when scores exceed a threshold. Existing methods formulate this as binary supervised learning—all frames in non-accident videos are labeled 0, while frames from the anomaly onset to the collision frame in accident videos are labeled 1.
+1. **Background**: Accident Anticipation aims to estimate risk scores in real time from dashcam videos, triggering warnings when scores exceed a threshold. Existing methods formulate this as binary supervised learning—all frames in non-accident videos are labeled 0, while frames from the anomaly onset to the collision frame in accident videos are labeled 1.
 
 2. **Limitations of Prior Work**: The binary label paradigm has a fundamental flaw—it forces the model to treat all pre-collision frames as equally risky, ignoring the progressive nature of risk escalation. Manual annotation of "anomaly onset" frames is subjective and inconsistent across annotators, producing noisy supervision signals.
 
-3. **Root Cause**: In real driving scenarios, risk increases continuously (e.g., rising slowly when a driver is distracted, or spiking sharply when a pedestrian suddenly appears), yet binary labels cannot capture these intermediate states or scene-dependent risk dynamics.
+3. **Key Challenge**: In real driving scenarios, risk increases continuously (e.g., rising slowly when a driver is distracted, or spiking sharply when a pedestrian suddenly appears), yet binary labels cannot capture these intermediate states or scene-dependent risk dynamics.
 
-4. **Paper Goals**: To learn temporally coherent and physically plausible risk evolution curves without relying on manually annotated anomaly onset frames, using only reliably annotated collision frames.
+4. **Goal**: To learn temporally coherent and physically plausible risk evolution curves without relying on manually annotated anomaly onset frames, using only reliably annotated collision frames.
 
-5. **Starting Point**: The authors identify two key observations: (1) future frames contain stronger collision evidence, making model predictions on future frames more accurate and suitable as pseudo-supervision for current frames; (2) pre-collision risk generally follows a non-decreasing trend.
+5. **Key Insight**: The authors identify two key observations: (1) future frames contain stronger collision evidence, making model predictions on future frames more accurate and suitable as pseudo-supervision for current frames; (2) pre-collision risk generally follows a non-decreasing trend.
 
 6. **Core Idea**: Using the collision frame as the sole anchor, risk signals are back-propagated via next-frame predictions as soft labels, combined with adaptive monotonicity constraints, enabling risk evolution modeling without manual annotations.
 

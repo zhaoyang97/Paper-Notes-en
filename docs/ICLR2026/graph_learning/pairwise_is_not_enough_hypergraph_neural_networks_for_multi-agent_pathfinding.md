@@ -30,7 +30,7 @@ This paper proposes HMAGAT, which replaces the pairwise message passing of GNNs 
 
 ### State of the Field
 
-**State of the Field**:
+**Background**:
 1. Multi-Agent Pathfinding (MAPF) requires multiple agents to reach their respective goals without collisions; optimal solving is NP-hard.
 2. Existing learning-based methods (GNNs, Transformers) model only pairwise interactions and fail to capture group dynamics arising from simultaneous multi-agent interactions.
 3. In high-density scenarios, attention dilution in GNNs is particularly severe: large numbers of irrelevant agents dilute the attention weights of critical interactions.

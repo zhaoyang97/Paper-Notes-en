@@ -29,15 +29,15 @@ CGHair is proposed, achieving over 200× compression of appearance parameters an
 
 ## Background & Motivation
 
-**State of the Field**: 3DGS-based hair reconstruction methods (e.g., GaussianHair) model strands via cylindrical Gaussian chains, enabling high-fidelity real-time rendering. However, dense hair modeling requires millions of Gaussian primitives, resulting in prohibitive storage and rendering costs.
+**Background**: 3DGS-based hair reconstruction methods (e.g., GaussianHair) model strands via cylindrical Gaussian chains, enabling high-fidelity real-time rendering. However, dense hair modeling requires millions of Gaussian primitives, resulting in prohibitive storage and rendering costs.
 
 **Limitations of Prior Work**: Methods such as GaussianHair assign independent spherical harmonic coefficients to each strand, ignoring the strong structural and appearance redundancy inherent in a given hairstyle, leading to severe parameter redundancy.
 
-**Root Cause**: High fidelity demands a large number of independent parameters, whereas practical deployment requires compact representations.
+**Key Challenge**: High fidelity demands a large number of independent parameters, whereas practical deployment requires compact representations.
 
-**Paper Goals**: To exploit the intrinsic structural similarity of hair and design a compact Gaussian hair representation.
+**Goal**: To exploit the intrinsic structural similarity of hair and design a compact Gaussian hair representation.
 
-**Starting Point**: Drawing inspiration from the "hair card" concept widely used in the game and film industries—clustering similar strands into cards and sharing textures among them.
+**Key Insight**: Drawing inspiration from the "hair card" concept widely used in the game and film industries—clustering similar strands into cards and sharing textures among them.
 
 **Core Idea**: Hierarchical clustering combined with a shared appearance codebook, simultaneously achieving strand-level fidelity and extreme compression.
 

@@ -29,10 +29,10 @@ This paper proposes a model-agnostic predictive framework that decomposes traini
 
 ## Background & Motivation
 
-- **State of the Field**: Learning rate schedules—particularly the annealing phase—significantly affect final performance in LLM training. Existing scaling laws (e.g., Chinchilla) primarily characterize the relationship between model size, training token count, and final loss, while neglecting training dynamics.
+- **Background**: Learning rate schedules—particularly the annealing phase—significantly affect final performance in LLM training. Existing scaling laws (e.g., Chinchilla) primarily characterize the relationship between model size, training token count, and final loss, while neglecting training dynamics.
 - **Limitations of Prior Work**: Identifying the optimal annealing strategy (annealing ratio, scheduler type, etc.) requires costly large-scale experiments. Even with identical total token counts, different training configurations yield substantially different loss curves, which existing frameworks cannot explain.
-- **Root Cause**: Prior forward–momentum scaling laws assume a fixed batch size; the forward term is not robust to batch size variation, and multiplicative momentum accumulation leads to numerical instability.
-- **Starting Point**: The paper identifies training steps (rather than token count) as a more reliable unit for tracking loss, and reformulates the forward effect and annealing momentum in integral form to eliminate batch-size sensitivity and enable cross-configuration transfer.
+- **Key Challenge**: Prior forward–momentum scaling laws assume a fixed batch size; the forward term is not robust to batch size variation, and multiplicative momentum accumulation leads to numerical instability.
+- **Key Insight**: The paper identifies training steps (rather than token count) as a more reliable unit for tracking loss, and reformulates the forward effect and annealing momentum in integral form to eliminate batch-size sensitivity and enable cross-configuration transfer.
 
 ## Method
 

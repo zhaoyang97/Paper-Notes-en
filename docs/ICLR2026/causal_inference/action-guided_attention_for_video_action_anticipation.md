@@ -28,15 +28,15 @@ This paper proposes an Action-Guided Attention (AGA) mechanism that uses the mod
 
 ## Background & Motivation
 
-**State of the Field**: Video action anticipation—predicting future actions from current frames—is an important task in computer vision, with Transformer architectures having become the dominant paradigm.
+**Background**: Video action anticipation—predicting future actions from current frames—is an important task in computer vision, with Transformer architectures having become the dominant paradigm.
 
 **Limitations of Prior Work**: Standard self-attention relies on dot products over pixel-level features, which lack the high-level semantics required for modeling future actions. This causes models to overfit to explicit visual cues in past frames rather than capturing latent intentions, resulting in significant performance degradation from validation to test sets.
 
-**Root Cause**: Action anticipation is inherently non-deterministic—identical past observations may lead to multiple future outcomes. Pixel-level attention is easily misled by visual noise and fails to model semantic dependencies between actions.
+**Key Challenge**: Action anticipation is inherently non-deterministic—identical past observations may lead to multiple future outcomes. Pixel-level attention is easily misled by visual noise and fails to model semantic dependencies between actions.
 
-**Paper Goals**: To design an attention mechanism that leverages high-level action semantics rather than low-level pixel features to guide sequence modeling.
+**Goal**: To design an attention mechanism that leverages high-level action semantics rather than low-level pixel features to guide sequence modeling.
 
-**Starting Point**: Using action prediction probabilities (rather than feature vectors) as Q/K, exploiting semantic correlations between actions to select relevant historical moments, followed by gated fusion with the current frame.
+**Key Insight**: Using action prediction probabilities (rather than feature vectors) as Q/K, exploiting semantic correlations between actions to select relevant historical moments, followed by gated fusion with the current frame.
 
 **Core Idea**: Using the model's own action prediction sequence to guide attention, focusing it on "semantically relevant past moments" rather than "visually similar past frames."
 

@@ -27,15 +27,15 @@ CAD-Recode frames 3D CAD reverse engineering as a point-cloud-to-Python-code tra
 
 ## Background & Motivation
 
-**State of the Field**: CAD reverse engineering aims to reconstruct parametric sketch-extrude operation sequences from 3D representations such as point clouds. Existing methods typically represent CAD sequences as discrete token sequences and predict them with autoregressive models.
+**Background**: CAD reverse engineering aims to reconstruct parametric sketch-extrude operation sequences from 3D representations such as point clouds. Existing methods typically represent CAD sequences as discrete token sequences and predict them with autoregressive models.
 
 **Limitations of Prior Work**: (1) Existing CAD sequence representations (e.g., command sequences) are unfriendly to pretrained models and require training from scratch; (2) generated sequences are not interpretable and difficult to edit downstream; (3) training data is limited (DeepCAD contains only ~18K samples).
 
-**Root Cause**: CAD sequences are inherently structured programs, yet existing methods treat them as arbitrary token sequences, failing to exploit the prior knowledge LLMs have acquired over structured code.
+**Key Challenge**: CAD sequences are inherently structured programs, yet existing methods treat them as arbitrary token sequences, failing to exploit the prior knowledge LLMs have acquired over structured code.
 
-**Paper Goals**: Represent CAD sequences as executable Python code and leverage LLMs' code understanding capabilities for improved point-cloud-to-CAD-code translation.
+**Goal**: Represent CAD sequences as executable Python code and leverage LLMs' code understanding capabilities for improved point-cloud-to-CAD-code translation.
 
-**Starting Point**: Pretrained LLMs have been extensively exposed to Python code; representing CAD operations in Python naturally exploits this prior.
+**Key Insight**: Pretrained LLMs have been extensively exposed to Python code; representing CAD operations in Python naturally exploits this prior.
 
 **Core Idea**: Use Python code as a unified representation of CAD sequences, and employ a pretrained LLM decoder with a lightweight point cloud projector for end-to-end point-cloud-to-CAD-code translation.
 

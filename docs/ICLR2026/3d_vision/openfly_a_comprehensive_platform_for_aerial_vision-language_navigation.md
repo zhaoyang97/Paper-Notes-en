@@ -30,7 +30,7 @@ This paper presents OpenFly, a comprehensive platform for aerial vision-language
 
 ## Background & Motivation
 
-**State of the Field**: VLN is a core task in embodied AI, requiring agents to navigate toward targets guided by language instructions and visual observations. Numerous indoor/ground-level datasets (R2R, RxR, TouchDown, VLN-CE, etc.) have driven methodological advances; however, VLN research for unmanned aerial vehicles (UAVs)—critical platforms for aerial photography, search-and-rescue, and cargo delivery—remains underdeveloped.
+**Background**: VLN is a core task in embodied AI, requiring agents to navigate toward targets guided by language instructions and visual observations. Numerous indoor/ground-level datasets (R2R, RxR, TouchDown, VLN-CE, etc.) have driven methodological advances; however, VLN research for unmanned aerial vehicles (UAVs)—critical platforms for aerial photography, search-and-rescue, and cargo delivery—remains underdeveloped.
 
 **Limitations of Prior Work**: AerialVLN and OpenUAV established preliminary aerial VLN datasets using AirSim and Unreal Engine simulators, yet they suffer from three fundamental challenges: limited data diversity, high collection cost, and small dataset scale.
 
@@ -40,7 +40,7 @@ This paper presents OpenFly, a comprehensive platform for aerial vision-language
 
 **Critically Insufficient Data Scale**: Current aerial VLN datasets contain only approximately 10K trajectories, far behind the robotics manipulation domain—Open X-Embodiment and EO-1 have collected over one million manipulation episodes—severely constraining model capacity.
 
-**Root Cause**: (1) Multi-rendering engine integration → addresses diversity; (2) fully automated pipeline → addresses cost; (3) 100K-scale dataset → addresses scale; (4) keyframe-aware model → addresses visual redundancy in long observation sequences.
+**Key Challenge**: (1) Multi-rendering engine integration → addresses diversity; (2) fully automated pipeline → addresses cost; (3) 100K-scale dataset → addresses scale; (4) keyframe-aware model → addresses visual redundancy in long observation sequences.
 
 ## Method
 

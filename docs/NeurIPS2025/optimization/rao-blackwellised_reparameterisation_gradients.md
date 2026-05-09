@@ -35,7 +35,7 @@ This paper proposes the R2-G2 estimator as a Rao-Blackwellised variant of repara
 
 ### Limitations of Prior Work
 
-**State of the Field**: Latent Gaussian variables are widely used in probabilistic machine learning, and gradient estimators are central to gradient-based optimisation. The reparameterisation trick has become the default choice for variational inference due to its simplicity and low variance.
+**Background**: Latent Gaussian variables are widely used in probabilistic machine learning, and gradient estimators are central to gradient-based optimisation. The reparameterisation trick has become the default choice for variational inference due to its simplicity and low variance.
 
 Core challenges:
 

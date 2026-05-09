@@ -31,9 +31,9 @@ LLaVA-LE is the first vision-language model tailored for lunar exploration. By c
 
 VLMs have made remarkable progress in natural image understanding, yet remain nearly absent in planetary science. The primary obstacle is the lack of large-scale, high-quality paired planetary image-text data. Existing lunar datasets are small, unimodal, and often contain synthetic data, making them unsuitable for training modern VLMs.
 
-**Root Cause**: Planetary remote sensing is fundamentally different from natural image understanding — lunar geological analysis requires joint reasoning across physical modalities (optical, gravity anomaly, topographic slope), whereas a single image provides only surface reflectance information, which is insufficient for understanding geological structure.
+**Key Challenge**: Planetary remote sensing is fundamentally different from natural image understanding — lunar geological analysis requires joint reasoning across physical modalities (optical, gravity anomaly, topographic slope), whereas a single image provides only surface reflectance information, which is insufficient for understanding geological structure.
 
-**Paper Goals**: To construct the first large-scale multimodal lunar dataset grounded in real NASA mission data, and to train a vision-language assistant capable of lunar geological description, geological question answering, and multimodal reasoning.
+**Goal**: To construct the first large-scale multimodal lunar dataset grounded in real NASA mission data, and to train a vision-language assistant capable of lunar geological description, geological question answering, and multimodal reasoning.
 
 ## Method
 

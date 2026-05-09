@@ -41,7 +41,7 @@ Classical federated learning (FL) assumes clients hold pre-collected datasets; h
 - Markovian SGD in the centralized setting has been studied, but federated work focuses on federated reinforcement learning (FRL) and is limited to convex objectives or linear function approximation.
 - Studies on streaming data in FL either assume adversarial environments or i.i.d. data streams.
 
-**Paper Goals**: To rigorously characterize the impact of Markovian sampling on FL convergence rates under non-convex smooth objectives, and to demonstrate that momentum can eliminate client drift without heterogeneity assumptions.
+**Goal**: To rigorously characterize the impact of Markovian sampling on FL convergence rates under non-convex smooth objectives, and to demonstrate that momentum can eliminate client drift without heterogeneity assumptions.
 
 ## Method
 

@@ -27,10 +27,10 @@ content_hash: 88637b9d65838028
 This paper presents DexVLG — the first large-scale vision-language-dexterous-grasp model. It introduces DexGraspNet 3.0, a dataset comprising 174K objects and 170M grasp poses with part-level semantic annotations. By combining a VLM encoder with a Flow Matching pose prediction head, DexVLG achieves over 76% zero-shot execution success in simulation and demonstrates semantically aligned dexterous grasping in the real world.
 
 ## Background & Motivation
-- **State of the Field**: Vision-Language-Action (VLA) models are advancing rapidly in robotics, but progress has been largely confined to simple parallel-jaw grippers due to the difficulty of data collection.
+- **Background**: Vision-Language-Action (VLA) models are advancing rapidly in robotics, but progress has been largely confined to simple parallel-jaw grippers due to the difficulty of data collection.
 - **Limitations of Prior Work**: Functional grasping with human-like dexterous hands — i.e., grasping specific object parts according to semantic instructions — remains severely understudied, lacking both large-scale training data and effective model architectures.
-- **Root Cause**: Dexterous hands have high degrees of freedom (>20 DoF), resulting in an enormous grasp pose space that makes it difficult for conventional methods to cover semantically aligned grasps across diverse objects and parts.
-- **Starting Point**: A data-driven approach: first generate large-scale, high-quality, semantically aligned dexterous grasp data, then train a large model to learn language-guided grasp pose prediction.
+- **Key Challenge**: Dexterous hands have high degrees of freedom (>20 DoF), resulting in an enormous grasp pose space that makes it difficult for conventional methods to cover semantically aligned grasps across diverse objects and parts.
+- **Key Insight**: A data-driven approach: first generate large-scale, high-quality, semantically aligned dexterous grasp data, then train a large model to learn language-guided grasp pose prediction.
 - **Core Idea**: Construct an ultra-large-scale part-level dexterous grasp dataset (DexGraspNet 3.0), leverage a VLM to interpret natural language instructions and RGBD inputs, and predict dexterous hand grasp poses via Flow Matching.
 
 ## Method

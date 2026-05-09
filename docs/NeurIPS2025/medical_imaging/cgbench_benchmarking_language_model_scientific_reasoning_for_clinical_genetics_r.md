@@ -28,15 +28,15 @@ This paper introduces CGBench, a clinical genetics benchmark grounded in ClinGen
 
 ## Background & Motivation
 
-**State of the Field**: Determining gene–disease associations (gene curation) and variant pathogenicity (variant curation) are core tasks in precision medicine within clinical genetics, traditionally requiring expert manual review of extensive scientific literature and assignment of evidence codes following ACMG/AMP guidelines.
+**Background**: Determining gene–disease associations (gene curation) and variant pathogenicity (variant curation) are core tasks in precision medicine within clinical genetics, traditionally requiring expert manual review of extensive scientific literature and assignment of evidence codes following ACMG/AMP guidelines.
 
 **Limitations of Prior Work**: Manual curation is labor-intensive, time-consuming, and prone to inconsistency. Existing LLM scientific benchmarks predominantly focus on narrow tasks such as multiple-choice questions and claim verification, failing to reflect the demands of real-world scientific literature synthesis and reasoning.
 
-**Root Cause**: Although LLM literature comprehension capabilities continue to improve, their performance on complex evidence synthesis tasks requiring adherence to precise, domain-specific guidelines remains unclear—particularly when handling highly customized instructions such as VCEP (Variant Curation Expert Panel) specifications.
+**Key Challenge**: Although LLM literature comprehension capabilities continue to improve, their performance on complex evidence synthesis tasks requiring adherence to precise, domain-specific guidelines remains unclear—particularly when handling highly customized instructions such as VCEP (Variant Curation Expert Panel) specifications.
 
-**Paper Goals**: To design a benchmark that reflects authentic scientific workflows and systematically evaluates LLM capabilities in literature-driven evidence extraction, strength assessment, and evidence classification.
+**Goal**: To design a benchmark that reflects authentic scientific workflows and systematically evaluates LLM capabilities in literature-driven evidence extraction, strength assessment, and evidence classification.
 
-**Starting Point**: Expert-annotated curation records from the ClinGen ERepo are directly leveraged to construct evaluation tasks, ensuring that ground truth derives from the highest-quality human expert review.
+**Key Insight**: Expert-annotated curation records from the ClinGen ERepo are directly leveraged to construct evaluation tasks, ensuring that ground truth derives from the highest-quality human expert review.
 
 **Core Idea**: Three tasks of progressively increasing difficulty are extracted from ClinGen's VCI and GCI, with an LM-as-Judge methodology employed to assess explanation quality.
 

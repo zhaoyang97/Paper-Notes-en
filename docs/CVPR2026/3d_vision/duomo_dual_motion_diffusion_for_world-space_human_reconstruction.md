@@ -35,9 +35,9 @@ Reconstructing human motion in world coordinates from monocular video is fundame
 
 **Lifting methods** (TRAM, PromptHMR + post-processing): These first estimate human pose in camera coordinates, then lift the result to world coordinates using estimated camera parameters. Camera-space estimation generalizes well (leveraging abundant 2D supervision), but the motion prior is inherently local and cannot guarantee global physical plausibility (e.g., foot skating, drift).
 
-**Root Cause**: Generalizability (from camera space) and global consistency (requiring world-space priors) are difficult to achieve simultaneously within a single model.
+**Key Challenge**: Generalizability (from camera space) and global consistency (requiring world-space priors) are difficult to achieve simultaneously within a single model.
 
-**Starting Point**: Rather than forcing a single end-to-end model to address both 2D-to-3D lifting and global consistency, the paper decomposes the problem into a two-stage generative process. Two core insights guide this design:
+**Key Insight**: Rather than forcing a single end-to-end model to address both 2D-to-3D lifting and global consistency, the paper decomposes the problem into a two-stage generative process. Two core insights guide this design:
 - **Connection mechanism**: The camera-space output is explicitly lifted to world coordinates via a known geometric transformation (camera pose), rather than requiring the model to implicitly learn this geometric relationship.
 - **World coordinate definition**: Instead of a fixed canonical coordinate system (which requires ground-plane alignment and is error-prone), the world coordinate system for each video is defined by the first-frame camera pose, allowing the model to denoise across diverse coordinate frames.
 

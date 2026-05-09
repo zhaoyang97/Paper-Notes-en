@@ -27,7 +27,7 @@ content_hash: 56603a849c3b0cb2
 A two-stage training framework is proposed: the first stage estimates the region of attraction (ROA) via Zubov-guided sampling and dynamic domain expansion, while the second stage refines the result through CEGIS-based counterexample-driven training. The framework jointly learns a neural network controller and a Lyapunov function, achieving ROA volumes 5 to $1.5 \times 10^5$ times larger than baselines and verification speeds 40–10000× faster than dReal.
 
 ## Background & Motivation
-**State of the Field**: Neural network-based control policies have demonstrated strong performance on complex systems, yet lack formal stability guarantees in safety-critical scenarios. Estimating the region of attraction (ROA) is a central approach for quantifying safety, typically achieved by searching for Lyapunov functions satisfying algebraic conditions.
+**Background**: Neural network-based control policies have demonstrated strong performance on complex systems, yet lack formal stability guarantees in safety-critical scenarios. Estimating the region of attraction (ROA) is a central approach for quantifying safety, typically achieved by searching for Lyapunov functions satisfying algebraic conditions.
 
 **Limitations of Prior Work**:
    - Existing methods typically employ **fixed training domains**, resulting in overly conservative ROA estimates.
@@ -35,11 +35,11 @@ A two-stage training framework is proposed: the first stage estimates the region
    - CEGIS methods depend on carefully tuned LQR/RL initialization and lack generalizability to new systems.
    - Formal verification of continuous-time systems relies on SMT solvers (e.g., dReal), which are extremely slow.
 
-**Root Cause**: Training domain selection and training data selection are the two key factors contributing to conservativeness, yet existing methods do not address both simultaneously.
+**Key Challenge**: Training domain selection and training data selection are the two key factors contributing to conservativeness, yet existing methods do not address both simultaneously.
 
-**Paper Goals**: (1) Design improved training sampling and domain selection strategies to reduce ROA estimation conservativeness; (2) Extend the α,β-CROWN verifier to support Jacobian operations for continuous-time systems.
+**Goal**: (1) Design improved training sampling and domain selection strategies to reduce ROA estimation conservativeness; (2) Extend the α,β-CROWN verifier to support Jacobian operations for continuous-time systems.
 
-**Starting Point**: Zubov's theorem provides a PDE characterization of the true ROA (where $W(x) \to 1$ at the ROA boundary), which can simultaneously guide data sampling (balanced sampling inside and outside the ROA) and domain updates (expansion along convergent trajectories).
+**Key Insight**: Zubov's theorem provides a PDE characterization of the true ROA (where $W(x) \to 1$ at the ROA boundary), which can simultaneously guide data sampling (balanced sampling inside and outside the ROA) and domain updates (expansion along convergent trajectories).
 
 **Core Idea**: Leverage Zubov's theorem to simultaneously guide training data sampling and dynamic training domain expansion, followed by CEGIS refinement to produce a formally verifiable controller.
 

@@ -29,7 +29,7 @@ This paper proposes LESA, a framework that employs KAN (Kolmogorov-Arnold Networ
 
 ## Background & Motivation
 
-**State of the Field**: The DiT architecture has demonstrated remarkable performance in image/video generation, yet the inference cost of deep Transformers combined with multi-step denoising is prohibitive. Feature caching, which exploits temporal redundancy between adjacent timesteps to accelerate inference, has emerged as a prominent research direction.
+**Background**: The DiT architecture has demonstrated remarkable performance in image/video generation, yet the inference cost of deep Transformers combined with multi-step denoising is prohibitive. Feature caching, which exploits temporal redundancy between adjacent timesteps to accelerate inference, has emerged as a prominent research direction.
 
 **Taxonomy of Existing Approaches**: (a) Cache-Then-Reuse — directly reusing features from the previous step (e.g., PAB, DBCache), which ignores temporal evolution and causes error accumulation; (b) Cache-Then-Forecast — predicting features via Taylor expansion (e.g., TaylorSeer, FORA), which assumes smooth and continuous feature evolution, yet the actual diffusion process is **stage-dependent**.
 

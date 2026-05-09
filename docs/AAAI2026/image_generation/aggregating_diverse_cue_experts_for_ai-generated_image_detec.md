@@ -30,7 +30,7 @@ This paper proposes the Multi-Cue Aggregation Network (MCAN), which unifies thre
 
 ### State of the Field
 
-**State of the Field**: With the rapid advancement of image generative models (GANs, diffusion models, etc.), detecting AI-generated images has become increasingly critical yet increasingly challenging.
+**Background**: With the rapid advancement of image generative models (GANs, diffusion models, etc.), detecting AI-generated images has become increasingly critical yet increasingly challenging.
 
 ### Limitations of Prior Work
 
@@ -38,7 +38,7 @@ This paper proposes the Multi-Cue Aggregation Network (MCAN), which unifies thre
 
 ### Root Cause
 
-**Root Cause**: Different cues exhibit complementary behavior across different scenarios — images with simple content that evade high-frequency detection may still be identifiable via semantic features, and vice versa.
+**Key Challenge**: Different cues exhibit complementary behavior across different scenarios — images with simple content that evade high-frequency detection may still be identifiable via semantic features, and vice versa.
 
 ### Resolution Approach
 
@@ -46,7 +46,7 @@ This paper proposes the Multi-Cue Aggregation Network (MCAN), which unifies thre
 
 ### Paper Goals
 
-**Paper Goals**: How can one effectively integrate complementary detection cues from the spatial, frequency, and chromaticity domains into a unified framework with strong generalization to unseen generative models?
+**Goal**: How can one effectively integrate complementary detection cues from the spatial, frequency, and chromaticity domains into a unified framework with strong generalization to unseen generative models?
 
 ## Method
 

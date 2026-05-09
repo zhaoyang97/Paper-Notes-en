@@ -29,15 +29,15 @@ This paper proposes AAPT (Autoregressive Adversarial Post-Training), which conve
 
 ## Background & Motivation
 
-**State of the Field**: Foundation models for video generation (e.g., Wan2.1, HunyuanVideo, Seaweed) can already produce high-quality short videos, but at prohibitive computational cost. Interactive video generation—as required by game engines and world simulators—demands real-time response to user inputs with continuous coherent output, imposing extremely stringent latency and throughput requirements.
+**Background**: Foundation models for video generation (e.g., Wan2.1, HunyuanVideo, Seaweed) can already produce high-quality short videos, but at prohibitive computational cost. Interactive video generation—as required by game engines and world simulators—demands real-time response to user inputs with continuous coherent output, imposing extremely stringent latency and throughput requirements.
 
 **Limitations of Prior Work**: (1) Diffusion models require multi-step denoising; even when distilled to 4–8 steps, they remain too slow. (2) Diffusion Forcing introduces causal attention and KV caching but is inefficient in one-step generation settings—each autoregressive step must process two frames (the current frame and a noisy frame). (3) Existing methods are trained on short windows (typically 5 seconds), and errors accumulate rapidly during long video generation. (4) CausVid (current SOTA) achieves only 640×352 resolution at 9.4fps on a single H100.
 
-**Root Cause**: Real-time interaction demands extremely low latency and high throughput, yet high-quality video generation is inherently compute-intensive. Teacher-forcing training induces a train-inference distribution mismatch, causing rapid error accumulation in autoregressive settings. Long continuous-shot training data (>10 seconds) is exceedingly rare in most datasets.
+**Key Challenge**: Real-time interaction demands extremely low latency and high throughput, yet high-quality video generation is inherently compute-intensive. Teacher-forcing training induces a train-inference distribution mismatch, causing rapid error accumulation in autoregressive settings. Long continuous-shot training data (>10 seconds) is exceedingly rare in most datasets.
 
-**Paper Goals**: (1) Achieve single-step, frame-by-frame real-time video generation. (2) Support minute-long streaming video generation without collapse. (3) Support interactive control (pose, camera).
+**Goal**: (1) Achieve single-step, frame-by-frame real-time video generation. (2) Support minute-long streaming video generation without collapse. (3) Support interactive control (pose, camera).
 
-**Starting Point**: Adversarial training is naturally suited to one-step generation (no paired targets required), and student-forcing is naturally realized within adversarial training—the generator's actual outputs are directly fed back as inputs for the next step, while the discriminator evaluates the entire generated sequence.
+**Key Insight**: Adversarial training is naturally suited to one-step generation (no paired targets required), and student-forcing is naturally realized within adversarial training—the generator's actual outputs are directly fed back as inputs for the next step, while the discriminator evaluates the entire generated sequence.
 
 **Core Idea**: Transform a video diffusion model into an autoregressive one-step generator through a three-stage pipeline—diffusion adaptation → consistency distillation → adversarial training—combined with student-forcing and long-video training techniques to address error accumulation and data scarcity.
 

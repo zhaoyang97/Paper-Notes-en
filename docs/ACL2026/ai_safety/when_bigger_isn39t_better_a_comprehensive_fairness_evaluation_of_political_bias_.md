@@ -29,15 +29,15 @@ This paper constructs FairNews, the first multi-document news summarization data
 
 ## Background & Motivation
 
-**State of the Field**: Multi-document news summarization systems are increasingly prevalent, helping readers quickly understand multi-source information. Existing research has identified position bias, entity bias, and gender bias in summaries, but systematic evaluation of political bias in the multi-document setting remains a gap.
+**Background**: Multi-document news summarization systems are increasingly prevalent, helping readers quickly understand multi-source information. Existing research has identified position bias, entity bias, and gender bias in summaries, but systematic evaluation of political bias in the multi-document setting remains a gap.
 
 **Limitations of Prior Work**: (1) Existing multi-document summarization datasets lack article-level political leaning labels, preventing systematic evaluation of fairness across the political spectrum; (2) existing evaluation methods lack a framework that simultaneously assesses multiple fairness dimensions; (3) the effectiveness of debiasing techniques (e.g., prompt engineering) for multi-document news summarization has not been explored.
 
-**Root Cause**: The common assumption that "larger models are fairer" does not hold — the relationship between fairness and model scale is more complex, with larger models potentially performing worse on certain dimensions.
+**Key Challenge**: The common assumption that "larger models are fairer" does not hold — the relationship between fairness and model scale is more complex, with larger models potentially performing worse on certain dimensions.
 
-**Paper Goals**: (1) Construct a multi-document summarization dataset with political labels; (2) establish a multi-dimensional fairness evaluation framework; (3) evaluate the relationship between model scale and fairness; (4) assess the effectiveness of various debiasing strategies.
+**Goal**: (1) Construct a multi-document summarization dataset with political labels; (2) establish a multi-dimensional fairness evaluation framework; (3) evaluate the relationship between model scale and fairness; (4) assess the effectiveness of various debiasing strategies.
 
-**Starting Point**: Use AllSides publisher bias ratings to annotate news articles with political leaning (left/center/right), and evaluate fairness through five complementary metrics at both coarse-grained and fine-grained levels.
+**Key Insight**: Use AllSides publisher bias ratings to annotate news articles with political leaning (left/center/right), and evaluate fairness through five complementary metrics at both coarse-grained and fine-grained levels.
 
 **Core Idea**: Fairness is multi-dimensional — neutralization, equal fairness, ratio fairness, entity coverage, and entity sentiment similarity each capture different aspects, and no single model or debiasing strategy can simultaneously optimize all dimensions.
 

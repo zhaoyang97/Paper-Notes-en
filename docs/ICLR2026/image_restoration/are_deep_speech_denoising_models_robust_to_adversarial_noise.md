@@ -29,13 +29,13 @@ This paper presents the first systematic evaluation of the robustness of four SO
 
 ## Background & Motivation
 
-**State of the Field**: Deep DNS models (e.g., Demucs, Full-SubNet+, FRCRN, MP-SENet) have achieved remarkable progress on objective metrics such as PESQ and STOI, and are widely deployed in communication devices including smartphones, video conferencing systems, and hearing aids. While these models perform well under standard conditions, their adversarial robustness remains almost entirely unstudied.
+**Background**: Deep DNS models (e.g., Demucs, Full-SubNet+, FRCRN, MP-SENet) have achieved remarkable progress on objective metrics such as PESQ and STOI, and are widely deployed in communication devices including smartphones, video conferencing systems, and hearing aids. While these models perform well under standard conditions, their adversarial robustness remains almost entirely unstudied.
 
 **Limitations of Prior Work**: (a) Adversarial robustness has been extensively studied in computer vision, but the speech denoising domain is largely unexplored — existing work covers only individual models or single attack types and lacks human perceptual validation; (b) DNS models are increasingly deployed in safety-critical scenarios (hearing aids, emergency communications), where silent adversarial attacks pose genuine threats; (c) conventional $L_p$-norm constraints are insufficient to guarantee perceptual imperceptibility in audio — the frequency and temporal masking properties of the human auditory system require psychoacoustic modeling.
 
-**Root Cause**: DNS models achieve ever-higher scores on standard benchmarks, yet it remains unclear whether small, inaudible perturbations can entirely destroy their denoising capability.
+**Key Challenge**: DNS models achieve ever-higher scores on standard benchmarks, yet it remains unclear whether small, inaudible perturbations can entirely destroy their denoising capability.
 
-**Starting Point**: Drawing on the psychoacoustic model used in MP3 encoding to constrain adversarial perturbations for imperceptibility, this work systematically evaluates the vulnerability of four representative DNS architectures under diverse acoustic conditions (SNR, reverberation, OTA).
+**Key Insight**: Drawing on the psychoacoustic model used in MP3 encoding to constrain adversarial perturbations for imperceptibility, this work systematically evaluates the vulnerability of four representative DNS architectures under diverse acoustic conditions (SNR, reverberation, OTA).
 
 **Core Idea**: Psychoacoustic masking-constrained PGD attacks are used to generate adversarial noise that is imperceptible to the human ear yet causes SOTA DNS models to output gibberish, with human listening experiments confirming the attack's effectiveness.
 

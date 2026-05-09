@@ -29,7 +29,7 @@ Uni-NTFM is grounded in first-principles neuroscience. It introduces a Heterogen
 
 ## Background & Motivation
 
-**State of the Field**: EEG foundation models have emerged as an active research direction over the past two years. Models such as LaBraM, EEGPT, and CBraMod have explored transferring pretraining paradigms from NLP and CV to the EEG domain, leveraging large-scale self-supervised learning to acquire generalizable representations.
+**Background**: EEG foundation models have emerged as an active research direction over the past two years. Models such as LaBraM, EEGPT, and CBraMod have explored transferring pretraining paradigms from NLP and CV to the EEG domain, leveraging large-scale self-supervised learning to acquire generalizable representations.
 
 **Limitations of Prior Work**: Existing EEG foundation models suffer from three fundamental architectural deficiencies:
 

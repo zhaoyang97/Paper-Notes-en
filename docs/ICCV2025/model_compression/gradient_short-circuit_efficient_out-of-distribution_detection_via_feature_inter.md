@@ -29,15 +29,15 @@ This paper identifies that ID samples exhibit consistent local gradient directio
 
 ## Background & Motivation
 
-**State of the Field**: Out-of-distribution (OOD) detection is critical for the safe deployment of deep learning models. Mainstream approaches include post-hoc methods based on softmax scores (MSP), energy functions (Energy Score), feature-space distances (Mahalanobis Distance), and gradient-based methods such as GradNorm and ODIN.
+**Background**: Out-of-distribution (OOD) detection is critical for the safe deployment of deep learning models. Mainstream approaches include post-hoc methods based on softmax scores (MSP), energy functions (Energy Score), feature-space distances (Mahalanobis Distance), and gradient-based methods such as GradNorm and ODIN.
 
 **Limitations of Prior Work**: Existing methods either require additional training data or outlier exposure, incur high computational costs (e.g., multiple forward or backward passes), or generalize poorly across different backbones and datasets. Gradient-based methods, while promising, typically demand expensive backpropagation, limiting practical deployment.
 
-**Root Cause**: How can gradient information be effectively leveraged to distinguish ID from OOD samples without incurring significant computational overhead? The computational bottleneck of existing gradient-based methods lies in the need for full backpropagation and potentially a second forward pass.
+**Key Challenge**: How can gradient information be effectively leveraged to distinguish ID from OOD samples without incurring significant computational overhead? The computational bottleneck of existing gradient-based methods lies in the need for full backpropagation and potentially a second forward pass.
 
-**Paper Goals**: To design a lightweight, inference-stage OOD detection method that exploits gradient information to intervene in feature space while avoiding costly second forward passes.
+**Goal**: To design a lightweight, inference-stage OOD detection method that exploits gradient information to intervene in feature space while avoiding costly second forward passes.
 
-**Starting Point**: The authors observe a key gradient phenomenon—for ID samples, the gradient directions that amplify the predicted class remain relatively consistent within a local neighborhood; for OOD samples, which lie outside the training distribution, gradient directions are disordered and even mutually contradictory. This discrepancy can be exploited for OOD detection.
+**Key Insight**: The authors observe a key gradient phenomenon—for ID samples, the gradient directions that amplify the predicted class remain relatively consistent within a local neighborhood; for OOD samples, which lie outside the training distribution, gradient directions are disordered and even mutually contradictory. This discrepancy can be exploited for OOD detection.
 
 **Core Idea**: Short-circuit the feature coordinates exploited by spurious gradients to inflate OOD confidence while leaving ID classification unaffected, and employ a local first-order approximation to estimate the modified output without a second forward pass.
 

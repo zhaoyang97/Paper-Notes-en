@@ -29,14 +29,14 @@ This paper proposes Fast3Dcache, a training-free geometry-aware caching framewor
 
 ## Background & Motivation
 
-1. **State of the Field**: Cache-based acceleration has achieved notable success in 2D image and video diffusion models by reusing intermediate computations from preceding timesteps to reduce redundant inference. Representative methods include various feature caching techniques.
+1. **Background**: Cache-based acceleration has achieved notable success in 2D image and video diffusion models by reusing intermediate computations from preceding timesteps to reduce redundant inference. Representative methods include various feature caching techniques.
 2. **Limitations of Prior Work**:
    - Directly transferring 2D caching strategies to 3D diffusion models severely disrupts geometric consistency;
    - Minor texture errors in 2D/video are perceptually negligible, whereas numerical errors in 3D voxel/point predictions directly affect topology and spatial integrity, leading to surface holes, geometric distortion, or non-manifold meshes;
    - Existing 3D acceleration methods (e.g., Hash3D) are not applicable to diffusion frameworks.
-3. **Root Cause**: 2D caching exploits perceptual redundancy, whereas 3D geometry demands strict numerical correctness—small accumulated errors can lead to topological catastrophe.
-4. **Paper Goals**: How to safely cache and reuse computations during 3D diffusion inference while maintaining geometric fidelity alongside acceleration?
-5. **Starting Point**: The paper analyzes the evolution of voxel occupancy fields during the sparse structure generation stage in the TRELLIS framework, revealing a three-phase stabilization pattern (unstable → log-linear decay → fine-tuning), and designs adaptive caching strategies accordingly.
+3. **Key Challenge**: 2D caching exploits perceptual redundancy, whereas 3D geometry demands strict numerical correctness—small accumulated errors can lead to topological catastrophe.
+4. **Goal**: How to safely cache and reuse computations during 3D diffusion inference while maintaining geometric fidelity alongside acceleration?
+5. **Key Insight**: The paper analyzes the evolution of voxel occupancy fields during the sparse structure generation stage in the TRELLIS framework, revealing a three-phase stabilization pattern (unstable → log-linear decay → fine-tuning), and designs adaptive caching strategies accordingly.
 6. **Core Idea**: By exploiting the predictable decay pattern of voxel state changes during 3D generation, the method dynamically determines *how many tokens to cache* (PCSC) and *which tokens to cache* (SSC), enabling geometry-aware acceleration.
 
 ## Method

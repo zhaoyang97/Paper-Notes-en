@@ -28,11 +28,11 @@ This work theoretically demonstrates that the statistical properties (variance a
 
 ## Background & Motivation
 
-**State of the Field**: Neuroscience experiments have shown that neural representations at the single-neuron level continuously change even when behavior and task performance remain stable — a phenomenon known as representational drift. Computational models have reproduced this phenomenon from multiple perspectives.
+**Background**: Neuroscience experiments have shown that neural representations at the single-neuron level continuously change even when behavior and task performance remain stable — a phenomenon known as representational drift. Computational models have reproduced this phenomenon from multiple perspectives.
 
 **Limitations of Prior Work**: The noise sources underlying drift remain unclear — they may stem from biological factors such as synaptic turnover, or from the sampling stochasticity inherent in online learning. Prior work has focused primarily on how SGD noise drives parameters toward flatter loss landscape regions, without systematically studying different architectures and learning rules or clarifying how data statistics relate to drift.
 
-**Root Cause**: Task-irrelevant stimuli are learned to be suppressed by the network (zero output), and intuitively should not affect representations. However, the nature of online learning means the network cannot fully ignore any part of the data distribution — even suppressed stimuli continue to update weights.
+**Key Challenge**: Task-irrelevant stimuli are learned to be suppressed by the network (zero output), and intuitively should not affect representations. However, the nature of online learning means the network cannot fully ignore any part of the data distribution — even suppressed stimuli continue to update weights.
 
 **Core Idea**: Task-irrelevant stimuli continuously perturb weights via a multiplicative coupling term in the learning update rule ($\Delta W^* = \eta \tilde{W} x_{||} x_\perp^T$), causing task-relevant representations to diffuse (drift) along the tangent space of the solution manifold.
 

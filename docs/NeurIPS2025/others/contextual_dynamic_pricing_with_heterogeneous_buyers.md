@@ -27,13 +27,13 @@ This paper presents the first systematic study of contextual dynamic pricing wit
 
 ## Background & Motivation
 
-**State of the Field**: In online contextual pricing, a seller sets price $p_t$ for a product based on a $d$-dimensional feature vector $u_t$, and a buyer purchases if their valuation $v_t = \langle \theta^*, u_t \rangle$ meets or exceeds $p_t$. Existing algorithms—based on multidimensional binary search or regression—uniformly assume homogeneous buyers sharing a single type $\theta^*$.
+**Background**: In online contextual pricing, a seller sets price $p_t$ for a product based on a $d$-dimensional feature vector $u_t$, and a buyer purchases if their valuation $v_t = \langle \theta^*, u_t \rangle$ meets or exceeds $p_t$. Existing algorithms—based on multidimensional binary search or regression—uniformly assume homogeneous buyers sharing a single type $\theta^*$.
 
 **Limitations of Prior Work**: (a) Binary search methods cannot handle type-varying feedback, as knowledge sets are corrupted by contradictory observations; (b) regression methods assume i.i.d. noise, whereas the randomness induced by heterogeneous types is context-dependent; (c) the regret of naively discretized EXP4 explodes due to the infinite action space.
 
-**Root Cause**: The buyer type $\theta_t$ is unobservable, making it impossible to associate feedback with the uncertainty set of a specific type. Moreover, the revenue function under pricing is discontinuous—a price increase of $\epsilon$ may cause the buyer to abandon the purchase entirely.
+**Key Challenge**: The buyer type $\theta_t$ is unobservable, making it impossible to associate feedback with the uncertainty set of a specific type. Moreover, the revenue function under pricing is discontinuous—a price increase of $\epsilon$ may cause the buyer to abandon the purchase entirely.
 
-**Starting Point**: The problem is formulated as learning the type distribution $D_\star \in \Delta(\Theta)$, exploiting the disagreement coefficient within the OPS framework to carefully control the exploration–exploitation tradeoff.
+**Key Insight**: The problem is formulated as learning the type distribution $D_\star \in \Delta(\Theta)$, exploiting the disagreement coefficient within the OPS framework to carefully control the exploration–exploitation tradeoff.
 
 ## Method
 

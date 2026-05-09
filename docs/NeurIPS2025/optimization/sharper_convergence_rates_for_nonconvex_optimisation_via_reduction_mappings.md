@@ -27,13 +27,13 @@ content_hash: 247d9ea01ca09e94
 This paper proposes the Reduction Mapping framework, which exploits the manifold structure of the optimal solution set (arising from over-parameterization or symmetry) to reparameterize the optimization problem, and proves that this improves curvature properties and theoretically accelerates the convergence of gradient-based methods.
 
 ## Background & Motivation
-**State of the Field**: In high-dimensional nonconvex optimization problems such as deep learning training, the set of minimizers typically forms a smooth manifold, arising from model over-parameterization or symmetry.
+**Background**: In high-dimensional nonconvex optimization problems such as deep learning training, the set of minimizers typically forms a smooth manifold, arising from model over-parameterization or symmetry.
 
 **Limitations of Prior Work**: Standard nonconvex optimization analyses focus on general convergence guarantees and overlook the acceleration potential offered by solution structure.
 
-**Root Cause**: Algorithms that exploit structural information empirically converge faster in practice, yet a unified theoretical explanation remains lacking.
+**Key Challenge**: Algorithms that exploit structural information empirically converge faster in practice, yet a unified theoretical explanation remains lacking.
 
-**Starting Point**: When the geometry of the optimal solution set is known, at least locally, a reduction mapping can reparameterize the problem to eliminate redundant directions.
+**Key Insight**: When the geometry of the optimal solution set is known, at least locally, a reduction mapping can reparameterize the problem to eliminate redundant directions.
 
 ## Method
 

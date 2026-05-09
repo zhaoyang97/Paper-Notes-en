@@ -27,15 +27,15 @@ content_hash: dc57cc1dba5fe1cb
 This paper diagnoses a fundamental flaw in GRPO with length penalties — correct but verbose responses may receive negative advantage values and thus be incorrectly penalized — and proposes DRPO, which decouples the reward signals for positive and negative samples to ensure length penalties are normalized only within the correct-response group. On a 1.5B model, DRPO achieves a 77% length reduction with only a 1.1% performance drop, compared to a 68% reduction with a 4.3% drop for the baseline.
 
 ## Background & Motivation
-**State of the Field**: Large reasoning models (e.g., DeepSeek-R1) acquire strong reasoning capabilities through GRPO training, but suffer from severe overthinking — even answering "2+3=?" requires generating ~1,000 tokens.
+**Background**: Large reasoning models (e.g., DeepSeek-R1) acquire strong reasoning capabilities through GRPO training, but suffer from severe overthinking — even answering "2+3=?" requires generating ~1,000 tokens.
 
 **Limitations of Prior Work**: Existing RL methods encourage concise reasoning by incorporating length penalties into the reward (e.g., RLOO-LP, ALP, HAPO), but almost universally lead to significant performance degradation.
 
-**Root Cause**: GRPO's group-relative advantage function, when combined with length penalties, can push the advantage of correct but verbose responses into negative territory — misleading the model into treating valid reasoning as a negative sample to be penalized. For example, among 6 responses where 3 are correct, the advantage of the third correct response can drop from +1 to −0.17 after applying a length penalty.
+**Key Challenge**: GRPO's group-relative advantage function, when combined with length penalties, can push the advantage of correct but verbose responses into negative territory — misleading the model into treating valid reasoning as a negative sample to be penalized. For example, among 6 responses where 3 are correct, the advantage of the third correct response can drop from +1 to −0.17 after applying a length penalty.
 
-**Paper Goals**: How can reasoning length be reduced while minimizing performance loss?
+**Goal**: How can reasoning length be reduced while minimizing performance loss?
 
-**Starting Point**: Decouple the computation of learning signals from the mixture of positive and negative samples — the length penalty for correct responses is normalized only within the correct-response group, never producing a negative learning signal.
+**Key Insight**: Decouple the computation of learning signals from the mixture of positive and negative samples — the length penalty for correct responses is normalized only within the correct-response group, never producing a negative learning signal.
 
 **Core Idea**: Decouple reward normalization for positive and negative samples so that length penalties attenuate (rather than reverse) the learning signal for correct responses.
 

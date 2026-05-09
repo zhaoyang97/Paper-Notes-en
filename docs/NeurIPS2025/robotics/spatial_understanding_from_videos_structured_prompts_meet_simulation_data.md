@@ -29,7 +29,7 @@ This paper proposes a two-pronged approach combining the SpatialMind structured 
 
 ## Background & Motivation
 
-- **State of the Field**: Visual-spatial understanding — inferring spatial relationships and layout among objects from visual input — is a foundational capability for applications such as robotic navigation, autonomous driving, and augmented reality. Although point clouds are the dominant representation for 3D scene understanding, their acquisition requires expensive sensors and incurs significant computational overhead. Consequently, researchers have begun exploring purely visual approaches based solely on scanned video.
+- **Background**: Visual-spatial understanding — inferring spatial relationships and layout among objects from visual input — is a foundational capability for applications such as robotic navigation, autonomous driving, and augmented reality. Although point clouds are the dominant representation for 3D scene understanding, their acquisition requires expensive sensors and incurs significant computational overhead. Consequently, researchers have begun exploring purely visual approaches based solely on scanned video.
 
 - **Limitations of Prior Work**: Two core challenges arise when performing 3D spatial reasoning from scanned video.
 
@@ -37,7 +37,7 @@ This paper proposes a two-pronged approach combining the SpatialMind structured 
 
   **Data scarcity**: Existing datasets are small in scale, lack diversity, and are derived entirely from real-world scene scans that are difficult to scale, limiting VLMs' ability to acquire robust spatial knowledge.
 
-- **Root Cause**: Existing 2D spatial understanding methods (e.g., SpatialVLM, SpatialBot) suffer significant performance degradation in complex 3D environments, while most 3D methods rely on point clouds, restricting their practicality and scalability. A scalable, vision-only approach for enhancing VLMs' spatial reasoning is therefore needed.
+- **Key Challenge**: Existing 2D spatial understanding methods (e.g., SpatialVLM, SpatialBot) suffer significant performance degradation in complex 3D environments, while most 3D methods rely on point clouds, restricting their practicality and scalability. A scalable, vision-only approach for enhancing VLMs' spatial reasoning is therefore needed.
 
 ## Method
 

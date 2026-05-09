@@ -28,7 +28,7 @@ AutoCut proposes an end-to-end advertisement video editing framework that unifie
 
 ## Background & Motivation
 
-**State of the Field**: Short-form video has become the dominant medium for digital advertising, yet the production pipeline—covering scripting, shooting, editing, and post-processing—remains costly and technically demanding.
+**Background**: Short-form video has become the dominant medium for digital advertising, yet the production pipeline—covering scripting, shooting, editing, and post-processing—remains costly and technically demanding.
 
 **Three Major Obstacles in Prior Work**:
    - **Loose multimodal coupling**: Weak alignment among video, audio, and text representations prevents unified reasoning.

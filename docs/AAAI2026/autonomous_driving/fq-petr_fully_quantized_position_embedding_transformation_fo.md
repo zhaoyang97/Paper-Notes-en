@@ -29,11 +29,11 @@ This work presents the first fully INT8-quantized deployment of PETR-series 3D d
 
 ### Limitations of Prior Work
 
-**Limitations of Prior Work**: **State of the Field**: PETR-series models are among the most prominent transformer-based multi-view 3D detectors, but their deployment on edge devices for autonomous driving is severely constrained by computation and memory bottlenecks. Directly quantizing PETR leads to catastrophic accuracy degradation (up to 20.8% mAP drop) due to two unique challenges: (1) the dynamic range of camera-ray position encodings (±130) is nearly two orders of magnitude larger than that of image features (±4), causing image features to be compressed into only 3–5 valid integer bins after fusion quantization; (2) nonlinear operations such as inverse-sigmoid introduce outliers, and excessively large softmax input ranges cause attention distortion after quantization.
+**Limitations of Prior Work**: **Background**: PETR-series models are among the most prominent transformer-based multi-view 3D detectors, but their deployment on edge devices for autonomous driving is severely constrained by computation and memory bottlenecks. Directly quantizing PETR leads to catastrophic accuracy degradation (up to 20.8% mAP drop) due to two unique challenges: (1) the dynamic range of camera-ray position encodings (±130) is nearly two orders of magnitude larger than that of image features (±4), causing image features to be compressed into only 3–5 valid integer bins after fusion quantization; (2) nonlinear operations such as inverse-sigmoid introduce outliers, and excessively large softmax input ranges cause attention distortion after quantization.
 
 ### Core Problem
 
-**Paper Goals**: The paper aims to design quantization-friendly 3D position encodings whose magnitude matches that of image features, while accurately and efficiently quantizing nonlinear operators (SiLU/GELU/Softmax), thereby enabling full-integer inference for PETR without accuracy loss.
+**Goal**: The paper aims to design quantization-friendly 3D position encodings whose magnitude matches that of image features, while accurately and efficiently quantizing nonlinear operators (SiLU/GELU/Softmax), thereby enabling full-integer inference for PETR without accuracy loss.
 
 ## Method
 

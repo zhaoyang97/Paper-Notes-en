@@ -20,15 +20,15 @@ This paper argues that existing image tampering detection benchmarks rely on coa
 
 ## Background & Motivation
 
-**State of the Field**: With the rapid advancement of generative AI (e.g., Qwen-Image, Gemini, GPT-image), fine-grained image tampering has become a serious threat to digital media authenticity. The dominant paradigm trains detectors on mask-annotated datasets and evaluates localization performance using metrics such as IoU and F1.
+**Background**: With the rapid advancement of generative AI (e.g., Qwen-Image, Gemini, GPT-image), fine-grained image tampering has become a serious threat to digital media authenticity. The dominant paradigm trains detectors on mask-annotated datasets and evaluates localization performance using metrics such as IoU and F1.
 
 **Limitations of Prior Work**: Virtually all existing benchmark datasets rely on object masks as ground-truth annotations. However, mask annotations are severely misaligned with actual edit signals: (1) a large proportion of pixels within the mask region are either unmodified or only minimally perturbed; (2) edit traces outside the mask (e.g., re-lighting, color bleeding, seam smoothing) are treated as "authentic" and thus ignored. This causes detectors to learn incorrect signals during training and produces inflated or deflated scores during evaluation.
 
-**Root Cause**: Generative model edits are not strictly confined to the predefined mask region—the mask serves as a "guidance region" rather than a "precise boundary." Mask-based supervision is therefore inherently a proxy supervision with a systematic bias relative to the true pixel-level edit trajectory.
+**Key Challenge**: Generative model edits are not strictly confined to the predefined mask region—the mask serves as a "guidance region" rather than a "precise boundary." Mask-based supervision is therefore inherently a proxy supervision with a systematic bias relative to the true pixel-level edit trajectory.
 
-**Paper Goals**: (1) Redefine the VLM image tampering task—moving from coarse region labels toward pixel-level, semantically-aware formulations; (2) construct a high-quality, large-scale pixel-level tampering benchmark; (3) design a training framework and evaluation protocol capable of simultaneously measuring localization precision and semantic understanding.
+**Goal**: (1) Redefine the VLM image tampering task—moving from coarse region labels toward pixel-level, semantically-aware formulations; (2) construct a high-quality, large-scale pixel-level tampering benchmark; (3) design a training framework and evaluation protocol capable of simultaneously measuring localization precision and semantic understanding.
 
-**Starting Point**: By computing per-pixel difference maps between original and tampered images, the authors demonstrate substantial inconsistencies (false positives and false negatives) between mask-annotated regions and truly changed regions, thereby establishing the fundamental deficiencies of mask-based annotation.
+**Key Insight**: By computing per-pixel difference maps between original and tampered images, the authors demonstrate substantial inconsistencies (false positives and false negatives) between mask-annotated regions and truly changed regions, thereby establishing the fundamental deficiencies of mask-based annotation.
 
 **Core Idea**: Replace mask annotations with pixel difference maps as ground truth, using an adjustable threshold $\tau$ to control edit sensitivity, realizing a paradigm shift "from masks to pixels and meaning."
 

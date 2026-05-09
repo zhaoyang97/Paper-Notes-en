@@ -28,15 +28,15 @@ This paper proposes Datalake Agent, an agentic NL2SQL system built on an interac
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have demonstrated strong performance in NL2SQL tasks; however, deploying them on enterprise-scale database collections requires injecting schema information from all databases into the prompt, resulting in extremely long prompts and high operational costs.
+**Background**: LLMs have demonstrated strong performance in NL2SQL tasks; however, deploying them on enterprise-scale database collections requires injecting schema information from all databases into the prompt, resulting in extremely long prompts and high operational costs.
 
 **Limitations of Prior Work**: (1) Research shows that GPT models degrade to near-random guessing on tabular data when prompts exceed 1,000 tokens; (2) most NL2SQL queries only require a subset of the available schemas, making the majority of meta-information redundant; (3) existing benchmarks (Bird, Spider) provide only relevant schemas, failing to reflect real-world enterprise scenarios.
 
-**Root Cause**: Providing all schema information to the LLM upfront is both costly and performance-degrading, yet the LLM has no prior knowledge of which databases or tables are relevant.
+**Key Challenge**: Providing all schema information to the LLM upfront is both costly and performance-degrading, yet the LLM has no prior knowledge of which databases or tables are relevant.
 
-**Paper Goals**: How can LLMs efficiently retrieve only the necessary schema information when operating over large-scale database collections?
+**Goal**: How can LLMs efficiently retrieve only the necessary schema information when operating over large-scale database collections?
 
-**Starting Point**: Design a hierarchical set of information-retrieval commands (database description → table enumeration → column details) that allow the LLM to progressively narrow its scope within an interactive loop.
+**Key Insight**: Design a hierarchical set of information-retrieval commands (database description → table enumeration → column details) that allow the LLM to progressively narrow its scope within an interactive loop.
 
 **Core Idea**: Replace one-shot schema dumping with an agentic interaction loop, enabling the LLM to act as an investigator that incrementally acquires, refines, and localizes the information it needs.
 

@@ -29,15 +29,15 @@ This paper introduces SciImpact — the first large-scale scientific impact pred
 
 ## Background & Motivation
 
-**State of the Field**: Scientific literature is growing exponentially, necessitating automated methods for assessing and predicting research impact. Existing work has focused primarily on citation count prediction.
+**Background**: Scientific literature is growing exponentially, necessitating automated methods for assessing and predicting research impact. Existing work has focused primarily on citation count prediction.
 
 **Limitations of Prior Work**: (1) Citation counts are only one proxy for impact and fail to capture other dimensions such as award recognition, public attention, and technology transfer; (2) existing datasets typically cover only computer science and biomedicine, lacking cross-disciplinary breadth; (3) no unified benchmark exists to support systematic multi-dimensional, multi-field comparison.
 
-**Root Cause**: Scientific impact is inherently multi-dimensional, yet evaluation benchmarks remain single-dimensional.
+**Key Challenge**: Scientific impact is inherently multi-dimensional, yet evaluation benchmarks remain single-dimensional.
 
-**Paper Goals**: Construct a unified prediction benchmark covering 7 impact dimensions across 19 academic disciplines.
+**Goal**: Construct a unified prediction benchmark covering 7 impact dimensions across 19 academic disciplines.
 
-**Starting Point**: Impact prediction is framed as contrastive pair classification (given two papers or artifacts, determine which has greater impact), integrating heterogeneous data sources (OpenAlex, Papers with Code, HuggingFace, SciSciNet).
+**Key Insight**: Impact prediction is framed as contrastive pair classification (given two papers or artifacts, determine which has greater impact), integrating heterogeneous data sources (OpenAlex, Papers with Code, HuggingFace, SciSciNet).
 
 **Core Idea**: Joint training across all dimensions via multi-task instruction fine-tuning enables small models to outperform large models on multi-dimensional impact prediction.
 

@@ -27,9 +27,9 @@ content_hash: d82ede5db88f9356
 This paper proposes Chiral Determinant Kernels (ChiDeK) to encode SE(3)-invariant chiral matrices, achieving for the first time a unified treatment of both central and axial chirality within a GNN framework. Combined with cross-attention for propagating stereochemical information, the method achieves >7% accuracy improvement on a newly constructed axial chirality benchmark.
 
 ## Background & Motivation
-- **State of the Field**: Chirality is a central concept in medicinal chemistry: enantiomers share the same chemical formula but have mirror-image 3D structures, and their biological activities can differ drastically (classic example: the R-enantiomer of thalidomide is a sedative, while the S-enantiomer is teratogenic).
+- **Background**: Chirality is a central concept in medicinal chemistry: enantiomers share the same chemical formula but have mirror-image 3D structures, and their biological activities can differ drastically (classic example: the R-enantiomer of thalidomide is a sedative, while the S-enantiomer is teratogenic).
 - **Limitations of Prior Work**: Existing GNN-based molecular representation methods focus primarily on **central chirality** (tetrahedral carbons), while **axial chirality** (arising from restricted rotation around biaryl bonds, etc.) is equally important in medicinal chemistry yet considerably harder to model. Traditional approaches encode chirality via CIP rules (R/S labels) or chiral volumes, and suffer from two drawbacks: (1) only central chirality is handled, ignoring axial chirality; (2) the chiral volume is an SE(3)-invariant scalar with limited information content.
-- **Paper Goals**: A unified framework is needed to capture both types of chirality while preserving SE(3) invariance.
+- **Goal**: A unified framework is needed to capture both types of chirality while preserving SE(3) invariance.
 
 ## Method
 

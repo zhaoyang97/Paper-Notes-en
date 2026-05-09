@@ -27,15 +27,15 @@ content_hash: e1b65265148f0164
 This paper proposes Traj-CoA, a multi-agent framework that employs a chain-of-agents architecture with an EHRMem long-term memory module to perform temporal reasoning over long, noisy longitudinal EHRs. The framework surpasses ML/DL/BERT/LLM baselines on zero-shot lung cancer risk prediction tasks (5-year EHR data, up to 160k tokens).
 
 ## Background & Motivation
-**State of the Field**: Longitudinal electronic health records (EHRs) contain rich temporal data suitable for patient trajectory modeling and clinical outcome prediction. LLMs have demonstrated promise in zero-shot clinical prediction, offering a potential alternative to methods that require complex feature engineering and task-specific training.
+**Background**: Longitudinal electronic health records (EHRs) contain rich temporal data suitable for patient trajectory modeling and clinical outcome prediction. LLMs have demonstrated promise in zero-shot clinical prediction, offering a potential alternative to methods that require complex feature engineering and task-specific training.
 
 **Limitations of Prior Work**: EHR data presents two core challenges: (1) **Extremely long contexts**: Patient histories spanning multiple years frequently exceed 128k tokens, surpassing the effective processing range of LLMs and causing the "lost-in-the-middle" problem; (2) **Inherent noise**: EHRs are designed for clinical care rather than research, and thus contain inconsistent formatting, entry errors, missing data, irregular sampling, and large volumes of irrelevant information that obscure key predictive signals.
 
-**Root Cause**: Existing LLM-based methods are limited to short EHRs (<16k tokens) or ICU data; temporal reasoning over long longitudinal EHRs exceeding 32k or even 128k tokens remains an open challenge. Naively expanding the context window degrades performance.
+**Key Challenge**: Existing LLM-based methods are limited to short EHRs (<16k tokens) or ICU data; temporal reasoning over long longitudinal EHRs exceeding 32k or even 128k tokens remains an open challenge. Naively expanding the context window degrades performance.
 
-**Paper Goals**: To perform effective temporal reasoning over extremely long and noisy longitudinal EHR data without any additional training (zero-shot).
+**Goal**: To perform effective temporal reasoning over extremely long and noisy longitudinal EHR data without any additional training (zero-shot).
 
-**Starting Point**: Drawing inspiration from the chain-of-agents multi-agent collaboration architecture, combined with an external long-term memory module specifically designed for EHRs, the paper decomposes long-context reasoning into a chain of short-context reasoning steps handled by cooperating agents.
+**Key Insight**: Drawing inspiration from the chain-of-agents multi-agent collaboration architecture, combined with an external long-term memory module specifically designed for EHRs, the paper decomposes long-context reasoning into a chain of short-context reasoning steps handled by cooperating agents.
 
 **Core Idea**: A chain of worker agents processes time-aware segmented EHR chunks sequentially; EHRMem retains key clinical events; a manager agent synthesizes summaries and memory to produce the final prediction.
 

@@ -28,15 +28,15 @@ content_hash: 4651d0234b87c3b4
 This paper identifies the root cause of inconsistent LLM responses to RL fine-tuning. Through per-step influence analysis, it reveals that RL effectiveness depends on (1) the distribution of rollout accuracy (moderate is optimal) and (2) data co-influence magnitude. The proposed BRIDGE method injects exploration/exploitation behaviors during SFT, boosting subsequent RL gains from 6% to 46.6%.
 
 ## Background & Motivation
-**State of the Field**: RL methods such as GRPO have achieved notable success in improving LLM reasoning (e.g., DeepSeek-R1, Qwen series), yet RL gains vary dramatically across models and datasets—sometimes +30%, other times merely +2%.
+**Background**: RL methods such as GRPO have achieved notable success in improving LLM reasoning (e.g., DeepSeek-R1, Qwen series), yet RL gains vary dramatically across models and datasets—sometimes +30%, other times merely +2%.
 
 **Limitations of Prior Work**: It remains unclear why some models are "ready" for RL fine-tuning while others are not. Existing work focuses on final outcomes without analyzing the learning dynamics at each step during RL. There is a lack of theoretical guidance on what properties of an SFT model make it most suitable for subsequent RL.
 
-**Root Cause**: RL requires models to explore (producing diverse rollouts), whereas SFT trains models to imitate fixed answers (lacking exploratory behavior). Post-SFT models may be "too confident," rendering the RL signal zero—there is no gradient when rollouts are uniformly correct or uniformly incorrect.
+**Key Challenge**: RL requires models to explore (producing diverse rollouts), whereas SFT trains models to imitate fixed answers (lacking exploratory behavior). Post-SFT models may be "too confident," rendering the RL signal zero—there is no gradient when rollouts are uniformly correct or uniformly incorrect.
 
-**Paper Goals**: (1) Theoretically analyze the conditions under which RL fine-tuning succeeds; (2) Design data augmentation strategies during the SFT stage to prepare models for RL.
+**Goal**: (1) Theoretically analyze the conditions under which RL fine-tuning succeeds; (2) Design data augmentation strategies during the SFT stage to prepare models for RL.
 
-**Starting Point**: Deriving an influence formula from the per-step influence of GRPO reveals that the key factor is $\alpha(1-\alpha)$ (where $\alpha$ denotes rollout accuracy)—moderate accuracy is optimal, since influence vanishes when accuracy is 0% or 100%.
+**Key Insight**: Deriving an influence formula from the per-step influence of GRPO reveals that the key factor is $\alpha(1-\alpha)$ (where $\alpha$ denotes rollout accuracy)—moderate accuracy is optimal, since influence vanishes when accuracy is 0% or 100%.
 
 **Core Idea**: Inject exploration behaviors ("Let me try this step first... that's wrong, let me try a different direction") and exploitation behaviors (subgoal decomposition) into SFT data, so that the rollout accuracy distribution falls within the optimal range for RL.
 

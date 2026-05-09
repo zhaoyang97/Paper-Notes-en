@@ -28,15 +28,15 @@ This paper systematically compares Enhanced RAG and Agentic RAG across four dime
 
 ## Background & Motivation
 
-**State of the Field**: RAG has evolved from a research concept into a core component of production-grade language systems. Naïve RAG (retrieve-then-generate) has several well-known limitations, giving rise to two improvement paradigms: Enhanced RAG (adding modules such as routing, rewriting, and reranking into a fixed pipeline) and Agentic RAG (an LLM agent autonomously orchestrates the entire workflow).
+**Background**: RAG has evolved from a research concept into a core component of production-grade language systems. Naïve RAG (retrieve-then-generate) has several well-known limitations, giving rise to two improvement paradigms: Enhanced RAG (adding modules such as routing, rewriting, and reranking into a fixed pipeline) and Agentic RAG (an LLM agent autonomously orchestrates the entire workflow).
 
 **Limitations of Prior Work**: Despite the rapid adoption of both paradigms, a systematic empirical comparison is lacking—under what conditions should one be preferred over the other? How do performance and cost trade off? Existing work either remains at the level of theoretical definitions or evaluates only a single configuration.
 
-**Root Cause**: Agentic RAG offers greater flexibility (dynamic decision-making, iterative retrieval), but it remains unclear whether this flexibility translates into tangible performance gains or whether the additional inference cost is justified.
+**Key Challenge**: Agentic RAG offers greater flexibility (dynamic decision-making, iterative retrieval), but it remains unclear whether this flexibility translates into tangible performance gains or whether the additional inference cost is justified.
 
-**Paper Goals**: To conduct controlled experiments across four dimensions (user intent handling, query rewriting, document list refinement, and underlying LLM variation) and quantify the performance and cost differences between the two paradigms.
+**Goal**: To conduct controlled experiments across four dimensions (user intent handling, query rewriting, document list refinement, and underlying LLM variation) and quantify the performance and cost differences between the two paradigms.
 
-**Starting Point**: The four known deficiencies of Naïve RAG are mapped to four evaluation dimensions, for each of which both an Enhanced and an Agentic implementation are designed and compared.
+**Key Insight**: The four known deficiencies of Naïve RAG are mapped to four evaluation dimensions, for each of which both an Enhanced and an Agentic implementation are designed and compared.
 
 **Core Idea**: Through rigorous controlled experimental design, the paper transforms the vague architectural choice of "Enhanced vs. Agentic RAG" into a quantifiable, dimension-wise decision guide.
 

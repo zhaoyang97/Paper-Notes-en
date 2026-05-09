@@ -27,14 +27,14 @@ content_hash: 5711db1ef29c06f3
 ActionMesh minimally extends a pretrained 3D diffusion model with a temporal axis (temporal 3D diffusion), then employs a temporal 3D autoencoder to convert independent shape sequences into topology-consistent animated meshes. The method generates production-quality animated 3D meshes from diverse inputs (video, text, or 3D mesh) in just 2 minutes, achieving state-of-the-art performance in both geometric accuracy and temporal consistency.
 
 ## Background & Motivation
-**State of the Field**: Automatic generation of animated 3D objects is a core demand in gaming, film, and AR/VR, yet existing methods suffer from three major limitations.
+**Background**: Automatic generation of animated 3D objects is a core demand in gaming, film, and AR/VR, yet existing methods suffer from three major limitations.
 
 **Limitations of Prior Work**:
    - **Input constraints**: Most methods are tied to specific input modalities and object categories.
    - **Slow speed**: They rely on per-scene optimization taking 30–45 minutes (DreamMesh4D, V2M4, LIM).
    - **Insufficient quality**: Results do not meet production standards (e.g., Gaussian Splatting lacks fixed topology and texture mapping support).
 
-**Root Cause**: How can one achieve fast, topology-consistent 4D generation without sacrificing quality?
+**Key Challenge**: How can one achieve fast, topology-consistent 4D generation without sacrificing quality?
 
 **Key Insight**: Inspired by early video generation models — a pretrained 3D diffusion model can be minimally extended with a temporal axis, reusing powerful 3D priors to compensate for the scarcity of 4D animation data.
 

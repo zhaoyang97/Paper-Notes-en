@@ -37,7 +37,7 @@ Visual diffusion models are typically trained at limited resolutions (e.g., SDXL
 - **DemoFusion**: Nearly eliminates local repetition by fusing local and global patches, but displaces the redundant signal to the background, causing small-object repetition.
 - **FouriScale**: Removes high-frequency signals in the frequency domain to eliminate all repetition, but aggressive frequency editing introduces color and texture anomalies.
 
-**Root Cause**: When a model generates content beyond its training resolution, high-frequency information inevitably increases, causing error accumulation and various forms of repetition. Existing methods each address part of the problem but introduce new side effects.
+**Key Challenge**: When a model generates content beyond its training resolution, high-frequency information inevitably increases, causing error accumulation and various forms of repetition. Existing methods each address part of the problem but introduce new side effects.
 
 **Core Idea**: Self-attention features extracted at different receptive field scales are complementary—global attention correctly aggregates the spatial locations of high-frequency signals, while local attention enhances local detail quality. Frequency-aware fusion can capture the advantages of both.
 

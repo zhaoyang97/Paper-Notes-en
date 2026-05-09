@@ -27,15 +27,15 @@ content_hash: e5344442c1390406
 This paper proposes the Adaptive Social Learning (ASL) framework, which defines four hierarchical reasoning modes (ranging from intuitive response to deep prospective reasoning) and introduces the AMPO algorithm (combining mode-level and sample-level advantage estimation) to enable LLM agents to adaptively switch reasoning depth according to social scenario complexity. ASL outperforms GPT-4o by 15.6% on social intelligence tasks, surpasses GRPO by 7.0%, and reduces token consumption by 32.8%.
 
 ## Background & Motivation
-**State of the Field**: LLM agents engaged in social interactions (negotiation, cooperation, etc.) must dynamically adjust reasoning depth; however, existing methods either perform no explicit reasoning (direct reply) or uniformly apply long chain-of-thought (CoT), resulting in overthinking or underthinking.
+**Background**: LLM agents engaged in social interactions (negotiation, cooperation, etc.) must dynamically adjust reasoning depth; however, existing methods either perform no explicit reasoning (direct reply) or uniformly apply long chain-of-thought (CoT), resulting in overthinking or underthinking.
 
 **Limitations of Prior Work**: Large reasoning models (o1, R1, QwQ, etc.) underperform GPT-4o on social tasks—they apply exhaustive reasoning indiscriminately, leading to overthinking, verbose reasoning chains, and weak goal awareness. Models trained with GRPO also tend to converge to a single reasoning mode (always using the deepest Mode 4).
 
-**Root Cause**: Social interaction is dynamic; different turns and scenarios require different reasoning depths. Simple scenarios (where both parties' goals are already met) require only intuitive responses, while complex scenarios (where conflicts remain unresolved) demand deep strategic deliberation. Yet existing RL methods (e.g., GRPO) estimate advantages in a mode-agnostic manner, making it impossible to learn such adaptive behavior.
+**Key Challenge**: Social interaction is dynamic; different turns and scenarios require different reasoning depths. Simple scenarios (where both parties' goals are already met) require only intuitive responses, while complex scenarios (where conflicts remain unresolved) demand deep strategic deliberation. Yet existing RL methods (e.g., GRPO) estimate advantages in a mode-agnostic manner, making it impossible to learn such adaptive behavior.
 
-**Paper Goals**: How can an LLM agent dynamically select appropriate reasoning depth based on context in social interactions, while maintaining both efficiency and effectiveness?
+**Goal**: How can an LLM agent dynamically select appropriate reasoning depth based on context in social interactions, while maintaining both efficiency and effectiveness?
 
-**Starting Point**: Drawing on the Hierarchical Cognitive Control Theory (HCCT) from cognitive science, the paper designs four levels of reasoning modes and augments GRPO with mode-level advantage estimation to guide mode selection.
+**Key Insight**: Drawing on the Hierarchical Cognitive Control Theory (HCCT) from cognitive science, the paper designs four levels of reasoning modes and augments GRPO with mode-level advantage estimation to guide mode selection.
 
 **Core Idea**: By combining hierarchical reasoning modes with mode-aware RL optimization (AMPO), the social agent learns to reason fast when appropriate and slow when necessary—an adaptive reasoning strategy.
 

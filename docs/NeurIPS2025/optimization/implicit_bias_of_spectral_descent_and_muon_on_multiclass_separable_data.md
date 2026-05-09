@@ -28,7 +28,7 @@ content_hash: 7067bcd709da8902
 This paper provides the first complete characterization of the implicit bias of Normalized Steepest Descent (NSD) and Normalized Momentum Descent (NMD) on multiclass linearly separable data: these algorithms converge to the maximum-margin solution under the corresponding $p$-norm at a rate of $\mathcal{O}(1/\sqrt{t})$, with Spectral Descent (spectral norm) and Muon as special cases, and further extended to Adam (max-norm margin).
 
 ## Background & Motivation
-**State of the Field**: Adam/AdamW are the de facto standard optimizers for large language model training. Muon orthogonalizes updates via Newton-Schulz iterations (i.e., spectral descent) and has demonstrated strong performance on NanoGPT, with recent extensions to large-scale LLM training.
+**Background**: Adam/AdamW are the de facto standard optimizers for large language model training. Muon orthogonalizes updates via Newton-Schulz iterations (i.e., spectral descent) and has demonstrated strong performance on NanoGPT, with recent extensions to large-scale LLM training.
 
 **Theoretical Gap**: Existing theoretical work on Spectral Descent / Muon has focused primarily on convergence rates (e.g., gradient norm decay in non-convex settings), leaving their implicit bias—i.e., which solutions are preferred in overparameterized models—largely unanalyzed.
 

@@ -35,9 +35,9 @@ Dense Video Captioning (DVC) aims to **simultaneously** perform temporal event l
 
 **Temporal redundancy**: Multiple queries tend to capture overlapping temporal intervals, generating redundant descriptions. As shown in Figure 1(a), the baseline model repeatedly detects the same temporal segment and produces identical captions, severely degrading localization precision and description diversity.
 
-**Root Cause**: Queries must simultaneously serve two heterogeneous tasks, yet the shared representation space causes conflicting optimization directions; additionally, the absence of explicit constraints on inter-query temporal relationships prevents overlap from being eliminated automatically.
+**Key Challenge**: Queries must simultaneously serve two heterogeneous tasks, yet the shared representation space causes conflicting optimization directions; additionally, the absence of explicit constraints on inter-query temporal relationships prevents overlap from being eliminated automatically.
 
-**Starting Point**: Rather than requiring a single query to serve dual roles, two independent sets of queries should "stay in their lanes"—localization queries focus on broad temporal context for boundary estimation, while caption queries focus on semantic details of key frames. Explicit loss designs further constrain query behavior: contrastive loss ensures cross-task consistency, and overlap loss penalizes temporal redundancy.
+**Key Insight**: Rather than requiring a single query to serve dual roles, two independent sets of queries should "stay in their lanes"—localization queries focus on broad temporal context for boundary estimation, while caption queries focus on semantic details of key frames. Explicit loss designs further constrain query behavior: contrastive loss ensures cross-task consistency, and overlap loss penalizes temporal redundancy.
 
 **Core Idea**: Eliminate multi-task interference in DVC via role-specific independent queries, and eliminate temporal redundancy via Overlap Suppression Loss.
 

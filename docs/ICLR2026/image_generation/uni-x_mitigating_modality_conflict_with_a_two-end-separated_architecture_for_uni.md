@@ -28,15 +28,15 @@ Uni-X proposes an X-shaped architecture with separated ends and a shared middle 
 
 ## Background & Motivation
 
-**State of the Field**: Unified Multimodal Models (UMMs) aim to support both image understanding and generation within a single framework. Autoregressive (AR) approaches tokenize visual content into a "foreign language" via VQ, yielding simple architectures but limited performance. More complex designs (e.g., MoT, AR+Diffusion hybrids, task-specific branches) improve performance at the cost of parameter sharing and scalability.
+**Background**: Unified Multimodal Models (UMMs) aim to support both image understanding and generation within a single framework. Autoregressive (AR) approaches tokenize visual content into a "foreign language" via VQ, yielding simple architectures but limited performance. More complex designs (e.g., MoT, AR+Diffusion hybrids, task-specific branches) improve performance at the cost of parameter sharing and scalability.
 
 **Limitations of Prior Work**: Fully shared Transformers suffer from severe gradient conflicts during joint training. This work is the first to transfer the concept of gradient conflict from multi-task learning to UMMs, revealing that visual and textual gradients conflict sharply in both shallow and deep layers.
 
-**Root Cause**: The conditional entropy of image token sequences is substantially higher than that of natural language (English, German, Chinese), implying that visual sequences are inherently harder to predict and require modeling longer-range spatial dependencies. When a shared Transformer processes both low-entropy text and high-entropy visual content, shallow and deep layers are forced to reconcile conflicting low-level distributions.
+**Key Challenge**: The conditional entropy of image token sequences is substantially higher than that of natural language (English, German, Chinese), implying that visual sequences are inherently harder to predict and require modeling longer-range spatial dependencies. When a shared Transformer processes both low-entropy text and high-entropy visual content, shallow and deep layers are forced to reconcile conflicting low-level distributions.
 
-**Paper Goals**: To effectively mitigate inter-modal gradient conflicts while preserving the simplicity of a purely autoregressive architecture.
+**Goal**: To effectively mitigate inter-modal gradient conflicts while preserving the simplicity of a purely autoregressive architecture.
 
-**Starting Point**: Empirical analysis of gradient conflicts reveals that conflict diminishes in intermediate layers (where abstract semantic alignment occurs), motivating a layer-wise structural design.
+**Key Insight**: Empirical analysis of gradient conflicts reveals that conflict diminishes in intermediate layers (where abstract semantic alignment occurs), motivating a layer-wise structural design.
 
 **Core Idea**: Shallow and deep layers handle modality-specific processing (accounting for differing low-level statistical distributions), while intermediate layers share parameters (leveraging high-level semantic alignment), forming an X-shaped separation–sharing architecture.
 

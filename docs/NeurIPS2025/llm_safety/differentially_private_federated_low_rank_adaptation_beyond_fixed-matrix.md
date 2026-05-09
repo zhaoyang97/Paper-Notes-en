@@ -29,17 +29,17 @@ This paper proposes FedASK, a framework that employs a **two-stage sketching pip
 
 ## Background & Motivation
 
-**State of the Field**: Federated Learning (FL) combined with LoRA has become the dominant paradigm for distributed fine-tuning of large language models (LLMs). LoRA efficiently adapts models by training low-rank matrices $A \in \mathbb{R}^{r \times n}$, $B \in \mathbb{R}^{m \times r}$ (where $r \ll \min(m,n)$), with the update $\Delta W = BA$.
+**Background**: Federated Learning (FL) combined with LoRA has become the dominant paradigm for distributed fine-tuning of large language models (LLMs). LoRA efficiently adapts models by training low-rank matrices $A \in \mathbb{R}^{r \times n}$, $B \in \mathbb{R}^{m \times r}$ (where $r \ll \min(m,n)$), with the update $\Delta W = BA$.
 
 **Limitations of Prior Work**: Applying differential privacy (DP) to federated LoRA faces a **fundamental dilemma**:
    - **Noising both matrices → noise amplification**: When DP noise is independently added to the gradients of A and B, the noise undergoes **quadratic amplification** in the product $\Delta W = BA$—producing a dominant term $\sigma^4 C^4 d_l^2 r$ in the expected noise power.
    - **Fixing one matrix → reduced learning capacity**: Existing methods (e.g., FFA-LoRA) fix A and train only B, avoiding quadratic noise but confining updates to a fixed subspace.
 
-**Root Cause**: A fundamental tension between privacy protection and model learning capacity—adding noise protects privacy but amplifies it, while fixing a matrix eliminates noise but sacrifices expressiveness.
+**Key Challenge**: A fundamental tension between privacy protection and model learning capacity—adding noise protects privacy but amplifies it, while fixing a matrix eliminates noise but sacrifices expressiveness.
 
-**Paper Goals**: Design a federated LoRA framework that effectively updates both A and B simultaneously under strong DP guarantees, balancing privacy, learning capacity, and communication efficiency.
+**Goal**: Design a federated LoRA framework that effectively updates both A and B simultaneously under strong DP guarantees, balancing privacy, learning capacity, and communication efficiency.
 
-**Starting Point**: Inspired by randomized SVD, the paper designs a two-stage projection pipeline in which clients transmit compressed representations rather than full matrices; the server then exactly reconstructs the global update from the privatized compressed representations via SVD and distributes it back to A and B.
+**Key Insight**: Inspired by randomized SVD, the paper designs a two-stage projection pipeline in which clients transmit compressed representations rather than full matrices; the server then exactly reconstructs the global update from the privatized compressed representations via SVD and distributes it back to A and B.
 
 **Core Idea**: DP-SGD is applied locally only to B (avoiding quadratic noise), while server-side SVD decomposition redistributes the learned knowledge to both global A and B—achieving privacy and dual-matrix updates simultaneously.
 

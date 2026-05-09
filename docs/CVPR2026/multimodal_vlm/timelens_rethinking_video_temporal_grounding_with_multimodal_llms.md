@@ -29,7 +29,7 @@ This paper systematically investigates the key factors for building video tempor
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs excel at "what" understanding but are critically deficient in "when" understanding. VTG — localizing temporal segments in a video given a text query — is the core task for establishing temporal awareness, yet research approaches are highly fragmented with no unified best practices.
+**Background**: MLLMs excel at "what" understanding but are critically deficient in "when" understanding. VTG — localizing temporal segments in a video given a text query — is the core task for establishing temporal awareness, yet research approaches are highly fragmented with no unified best practices.
 
 **Limitations of Prior Work**:
 
@@ -37,11 +37,11 @@ This paper systematically investigates the key factors for building video tempor
 2. Different open-source methods use heterogeneous training data and experimental setups, making fair comparison of design choices (e.g., temporal encoding, training strategies) infeasible.
 3. Training data (aggregated from multiple source datasets) exhibits even higher error rates than the evaluation benchmarks.
 
-**Root Cause**: Model rankings shift dramatically after benchmark correction — open-source models that outperform GPT-5 on the original benchmark are completely reversed after fixing — demonstrating that prior evaluation standards are unreliable.
+**Key Challenge**: Model rankings shift dramatically after benchmark correction — open-source models that outperform GPT-5 on the original benchmark are completely reversed after fixing — demonstrating that prior evaluation standards are unreliable.
 
-**Paper Goals**: Establish a reliable data foundation for VTG and systematically explore optimal algorithmic design principles.
+**Goal**: Establish a reliable data foundation for VTG and systematically explore optimal algorithmic design principles.
 
-**Starting Point**: Rather than introducing new complex methods, this work conducts incremental but necessary systematic baseline studies along two axes: data quality and algorithm design.
+**Key Insight**: Rather than introducing new complex methods, this work conducts incremental but necessary systematic baseline studies along two axes: data quality and algorithm design.
 
 **Core Idea**: Data quality refinement + interleaved textual timestamp encoding + thinking-free RLVR = a simple yet optimal solution for VTG.
 

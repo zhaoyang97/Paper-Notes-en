@@ -29,15 +29,15 @@ This paper proposes NeuroAdapter, which segments fMRI signals into independent t
 
 ## Background & Motivation
 
-**State of the Field**: Reconstructing visual stimuli from human fMRI activity is a central challenge in computational neuroscience. Dominant approaches adopt a two-stage pipeline—first mapping fMRI signals into the embedding space of pretrained vision-language models (e.g., CLIP, DINO), then using these embeddings to guide generative models such as Stable Diffusion. Representative works include Brain Diffuser, MindEye1, and DREAM.
+**Background**: Reconstructing visual stimuli from human fMRI activity is a central challenge in computational neuroscience. Dominant approaches adopt a two-stage pipeline—first mapping fMRI signals into the embedding space of pretrained vision-language models (e.g., CLIP, DINO), then using these embeddings to guide generative models such as Stable Diffusion. Representative works include Brain Diffuser, MindEye1, and DREAM.
 
 **Limitations of Prior Work**: Two-stage pipelines suffer from two fundamental issues. (1) **Information bottleneck**: The dimensionality and semantic coverage of intermediate embedding spaces are limited, potentially discarding rich low- and high-level neural information during mapping—reconstruction quality is thus bounded by fMRI-to-embedding alignment rather than the intrinsic information content of brain activity. (2) **Obscured interpretability**: The intermediate mapping severs the direct link between brain regions and generated outputs, making it impossible to trace "which brain regions drove which parts of the image," limiting the scientific utility of decoding methods in neuroscience research.
 
-**Root Cause**: Two-stage methods place "improving reconstruction quality" and "maintaining interpretability" in opposition—the introduction of embedding spaces improves generation quality at the cost of transparency in brain region attribution.
+**Key Challenge**: Two-stage methods place "improving reconstruction quality" and "maintaining interpretability" in opposition—the introduction of embedding spaces improves generation quality at the cost of transparency in brain region attribution.
 
-**Paper Goals**: (1) Design an end-to-end framework that maps directly from fMRI to images without any intermediate embedding space; (2) Achieve brain-region-level interpretability without sacrificing reconstruction quality—dynamically tracking each cortical region's contribution to the generation process.
+**Goal**: (1) Design an end-to-end framework that maps directly from fMRI to images without any intermediate embedding space; (2) Achieve brain-region-level interpretability without sacrificing reconstruction quality—dynamically tracking each cortical region's contribution to the generation process.
 
-**Starting Point**: Each brain region is treated as an independent token, and a diffusion model directly "attends" to these brain region tokens via cross-attention. This design naturally establishes a one-to-one correspondence between attention weights and brain regions, making the attention matrix itself the object of interpretability analysis.
+**Key Insight**: Each brain region is treated as an independent token, and a diffusion model directly "attends" to these brain region tokens via cross-attention. This design naturally establishes a one-to-one correspondence between attention weights and brain regions, making the attention matrix itself the object of interpretability analysis.
 
 **Core Idea**: Condition the diffusion model directly via cross-attention using brain-region-granularity tokens, making attention weights a natural carrier of interpretability.
 

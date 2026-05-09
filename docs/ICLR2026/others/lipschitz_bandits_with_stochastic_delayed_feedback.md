@@ -29,15 +29,15 @@ This paper provides the first systematic study of Lipschitz bandits over continu
 
 ## Background & Motivation
 
-**State of the Field**: Lipschitz bandits extend classical MAB to a continuous metric space $(\mathcal{A}, \mathcal{D})$, where the reward function $\mu$ satisfies a 1-Lipschitz condition. The classical Zooming algorithm achieves the optimal regret rate $\tilde{O}(T^{(d_z+1)/(d_z+2)})$ (with $d_z$ being the zooming dimension) via adaptive discretization in the delay-free setting. Delayed feedback has been extensively studied in MAB, linear bandits, and kernel bandits, yet the delayed feedback problem for Lipschitz bandits remains entirely unexplored.
+**Background**: Lipschitz bandits extend classical MAB to a continuous metric space $(\mathcal{A}, \mathcal{D})$, where the reward function $\mu$ satisfies a 1-Lipschitz condition. The classical Zooming algorithm achieves the optimal regret rate $\tilde{O}(T^{(d_z+1)/(d_z+2)})$ (with $d_z$ being the zooming dimension) via adaptive discretization in the delay-free setting. Delayed feedback has been extensively studied in MAB, linear bandits, and kernel bandits, yet the delayed feedback problem for Lipschitz bandits remains entirely unexplored.
 
 **Limitations of Prior Work**: (1) The combination of continuous arm spaces and delayed feedback introduces dual complexity — each sampled point represents a neighborhood region whose estimate depends on delayed observations. (2) The core analysis of the Zooming algorithm relies on the property that confidence radii shrink only upon pulling an arm; this property breaks under delay, since delayed rewards arriving between pulls also reduce confidence radii. (3) Delayed methods for finite-arm settings (e.g., Delayed-UCB1) do not involve covering arguments for continuous spaces and cannot be directly extended.
 
-**Root Cause**: How can efficient adaptive exploration over a continuous metric space be maintained when feedback is delayed and may be permanently absent?
+**Key Challenge**: How can efficient adaptive exploration over a continuous metric space be maintained when feedback is delayed and may be permanently absent?
 
-**Paper Goals**: To design Lipschitz bandit algorithms that achieve near-optimal regret under both bounded and unbounded stochastic delays, and to prove their optimality.
+**Goal**: To design Lipschitz bandit algorithms that achieve near-optimal regret under both bounded and unbounded stochastic delays, and to prove their optimality.
 
-**Starting Point**: The problem is decomposed into two sub-problems based on the support of the delay distribution — bounded delay is handled via "zooming + lazy update," while unbounded delay is handled via "phased accumulation of reliable feedback + elimination."
+**Key Insight**: The problem is decomposed into two sub-problems based on the support of the delay distribution — bounded delay is handled via "zooming + lazy update," while unbounded delay is handled via "phased accumulation of reliable feedback + elimination."
 
 **Core Idea**: For bounded delays, lazy updates control the rate at which confidence radii shrink; for unbounded delays, phased round-robin sampling and the delay quantile $Q(p)$ are used to relate the number of pulls to the number of observations, thereby recovering the optimal delay-free regret rate.
 

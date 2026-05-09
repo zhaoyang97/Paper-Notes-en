@@ -27,15 +27,15 @@ This paper proposes G-reasoner, which standardizes heterogeneous knowledge sourc
 
 ## Background & Motivation
 
-**State of the Field**: LLMs excel at reasoning but are constrained by static parametric knowledge. RAG augments LLMs with external knowledge. Graphs naturally model relational knowledge (knowledge graphs, document graphs, hierarchical graphs, etc.), and GraphRAG aims to combine both paradigms.
+**Background**: LLMs excel at reasoning but are constrained by static parametric knowledge. RAG augments LLMs with external knowledge. Graphs naturally model relational knowledge (knowledge graphs, document graphs, hierarchical graphs, etc.), and GraphRAG aims to combine both paradigms.
 
 **Limitations of Prior Work**: Existing GraphRAG methods are tailored to specific graph structures (knowledge graphs, document graphs, and hierarchical graphs each require distinct designs), rely on heuristic search (e.g., PageRank), or involve costly agent pipelines (multiple LLM calls), resulting in poor generalizability and low efficiency.
 
-**Root Cause**: Different knowledge sources require different graph structures, yet no unified framework exists that can adapt to diverse graph structures and perform efficient reasoning.
+**Key Challenge**: Different knowledge sources require different graph structures, yet no unified framework exists that can adapt to diverse graph structures and perform efficient reasoning.
 
-**Paper Goals**: Design a unified graph representation and reasoning framework that is compatible with multiple knowledge graph structures, efficient, and generalizable.
+**Goal**: Design a unified graph representation and reasoning framework that is compatible with multiple knowledge graph structures, efficient, and generalizable.
 
-**Starting Point**: Define a four-layer standardized graph structure, QuadGraph, and use a GNN-based graph foundation model for unified reasoning.
+**Key Insight**: Define a four-layer standardized graph structure, QuadGraph, and use a GNN-based graph foundation model for unified reasoning.
 
 **Core Idea**: Unify heterogeneous graphs into QuadGraph (attribute layer + knowledge graph layer + document layer + community layer), train a GFM to jointly reason over topology and semantics, and augment LLM generation.
 

@@ -28,15 +28,15 @@ TopLoRA analyzes the expressive capacity of LoRA from an input-output projection
 
 ## Background & Motivation
 
-**State of the Field**: LoRA enables parameter-efficient fine-tuning of large models via low-rank matrices $\Delta W = BA$. Existing improvements primarily focus on increasing rank—HiRA (Hadamard product), MELoRA (mini-ensemble stacking), and MoELoRA (mixture of experts).
+**Background**: LoRA enables parameter-efficient fine-tuning of large models via low-rank matrices $\Delta W = BA$. Existing improvements primarily focus on increasing rank—HiRA (Hadamard product), MELoRA (mini-ensemble stacking), and MoELoRA (mixture of experts).
 
 **Limitations of Prior Work**: In LoRA, all tokens share the same $\Delta W = BA$, i.e., the same input-output projection matrix $P = R_B L_A$. However, tokens differ substantially in semantics, and identical projection directions may encode entirely different information for different tokens, necessitating distinct processing.
 
-**Root Cause**: Increasing rank expands the dimensionality of the input/output space but incurs linear parameter growth; the expressive bottleneck from shared projections persists regardless of rank. Even at high rank, all tokens remain subject to the same mapping.
+**Key Challenge**: Increasing rank expands the dimensionality of the input/output space but incurs linear parameter growth; the expressive bottleneck from shared projections persists regardless of rank. Even at high rank, all tokens remain subject to the same mapping.
 
-**Paper Goals**: Learn distinct input-output projections for each token without increasing the LoRA rank.
+**Goal**: Learn distinct input-output projections for each token without increasing the LoRA rank.
 
-**Starting Point**: LoRA is decomposed via QR/LQ factorization into three components—input space $Q_A$, output space $Q_B$, and projection matrix $P = R_B L_A$. Rank determines the dimensionality of these spaces, while $P$ governs the mapping; projection should therefore be token-specific.
+**Key Insight**: LoRA is decomposed via QR/LQ factorization into three components—input space $Q_A$, output space $Q_B$, and projection matrix $P = R_B L_A$. Rank determines the dimensionality of these spaces, while $P$ governs the mapping; projection should therefore be token-specific.
 
 **Core Idea**: A lightweight projection network generates a diagonal matrix $\Sigma_X$ from each token $X$, modifying the projection as $P \to P_X = R_B \Sigma_X L_A$, thereby achieving token-adaptive input-output mapping.
 

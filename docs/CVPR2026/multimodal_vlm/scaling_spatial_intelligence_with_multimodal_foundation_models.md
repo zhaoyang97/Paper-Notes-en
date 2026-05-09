@@ -29,15 +29,15 @@ SenseNova-SI systematically constructs an 8M-scale diverse spatial dataset (Sens
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal foundation models (e.g., GPT-4V, Gemini, Qwen-VL) excel at visual understanding and text generation, yet exhibit notable deficiencies in spatial intelligence — including depth estimation, spatial relationship reasoning, 3D scene understanding, and perspective transformation reasoning.
+**Background**: Multimodal foundation models (e.g., GPT-4V, Gemini, Qwen-VL) excel at visual understanding and text generation, yet exhibit notable deficiencies in spatial intelligence — including depth estimation, spatial relationship reasoning, 3D scene understanding, and perspective transformation reasoning.
 
 **Limitations of Prior Work**: (1) Existing multimodal models perform significantly worse on spatial reasoning tasks than on general visual question answering, indicating insufficient spatial information in internet-scale training data; (2) No systematic spatial capability taxonomy exists to guide data construction; (3) The effects of data scaling on spatial intelligence, risks of overfitting, and language shortcut issues remain underexplored.
 
-**Root Cause**: The spatial intelligence deficiency in multimodal models stems from insufficient quantity and diversity of spatially-relevant training samples, rather than architectural limitations.
+**Key Challenge**: The spatial intelligence deficiency in multimodal models stems from insufficient quantity and diversity of spatially-relevant training samples, rather than architectural limitations.
 
-**Paper Goals**: To cultivate spatial intelligence in existing multimodal foundation models through large-scale data scaling, and to rigorously analyze the effects of data scale, diversity, overfitting risk, and related factors.
+**Goal**: To cultivate spatial intelligence in existing multimodal foundation models through large-scale data scaling, and to rigorously analyze the effects of data scale, diversity, overfitting risk, and related factors.
 
-**Starting Point**: Rather than modifying model architectures, the paper systematically constructs a large-scale dataset (8M samples) covering diverse spatial capabilities and leverages a data-driven approach to enhance spatial intelligence.
+**Key Insight**: Rather than modifying model architectures, the paper systematically constructs a large-scale dataset (8M samples) covering diverse spatial capabilities and leverages a data-driven approach to enhance spatial intelligence.
 
 **Core Idea**: Guided by a rigorous spatial capability taxonomy, an 8M-scale diverse spatial dataset is constructed to significantly improve spatial intelligence in existing foundation models via fine-tuning.
 

@@ -27,15 +27,15 @@ content_hash: f5903b43394d42e8
 This paper presents the first systematic evaluation of demographic fairness in face verification across 9 open-source MLLMs, measuring gender and ethnicity bias on the IJB-C and RFW benchmarks using 4 FMR-based fairness metrics, and finds that bias patterns in MLLMs differ substantially from those in traditional face recognition systems.
 
 ## Background & Motivation
-**State of the Field**: Multimodal large language models (MLLMs) have recently been explored for face verification—determining whether two faces belong to the same person via visual question answering. Unlike traditional embedding-based systems, MLLMs rely on general visual reasoning rather than task-specific training.
+**Background**: Multimodal large language models (MLLMs) have recently been explored for face verification—determining whether two faces belong to the same person via visual question answering. Unlike traditional embedding-based systems, MLLMs rely on general visual reasoning rather than task-specific training.
 
 **Limitations of Prior Work**: Demographic bias in traditional face recognition systems has been extensively studied (e.g., Buolamwini & Gebru reported higher error rates for darker-skinned women), yet the fairness of MLLMs as face verification systems remains **entirely unexplored**.
 
-**Root Cause**: MLLMs process faces in a fundamentally different manner from embedding-based systems (visual question answering vs. feature distance), making it unknown whether bias patterns from traditional systems carry over to MLLMs.
+**Key Challenge**: MLLMs process faces in a fundamentally different manner from embedding-based systems (visual question answering vs. feature distance), making it unknown whether bias patterns from traditional systems carry over to MLLMs.
 
-**Paper Goals**: Establish an evaluation benchmark for fairness in MLLM-based face verification, and identify and analyze bias patterns.
+**Goal**: Establish an evaluation benchmark for fairness in MLLM-based face verification, and identify and analyze bias patterns.
 
-**Starting Point**: Nine MLLMs are evaluated under standard face verification protocols (IJB-C, RFW) across 4 ethnicity groups and 2 gender groups using multi-dimensional fairness metrics.
+**Key Insight**: Nine MLLMs are evaluated under standard face verification protocols (IJB-C, RFW) across 4 ethnicity groups and 2 gender groups using multi-dimensional fairness metrics.
 
 **Core Idea**: Bias patterns in MLLMs differ from those in traditional systems—the most accurate model is not necessarily the fairest, and poorly performing models may appear fair due to uniformly high error rates across all groups.
 

@@ -33,7 +33,7 @@ Phase transitions (sudden drops) and extended plateaus in loss curves have been 
 
 ### Root Cause
 
-**Root Cause**: The plateau preceding a phase transition is assumed to represent "wasted computation"—but does the model actually learn nothing during this period?
+**Key Challenge**: The plateau preceding a phase transition is assumed to represent "wasted computation"—but does the model actually learn nothing during this period?
 
 ### Limitations of Prior Work
 
@@ -43,11 +43,11 @@ Phase transitions (sudden drops) and extended plateaus in loss curves have been 
 
 Discussions of emergent abilities lack mechanistic evidence from internal model representations.
 
-**Root Cause**: Constant loss $\neq$ constant learning—models may be accumulating intermediate representations not directly reflected in the loss.
+**Key Challenge**: Constant loss $\neq$ constant learning—models may be accumulating intermediate representations not directly reflected in the loss.
 
-**Paper Goals**: To demonstrate, via linear probing and ablation experiments, that substantive internal learning occurs during loss plateaus.
+**Goal**: To demonstrate, via linear probing and ablation experiments, that substantive internal learning occurs during loss plateaus.
 
-**Starting Point**: Linear probes are trained on the residual stream of 10 algorithmic tasks to detect "quiet features"—intermediate computational results learned before the loss drop occurs.
+**Key Insight**: Linear probes are trained on the residual stream of 10 algorithmic tasks to detect "quiet features"—intermediate computational results learned before the loss drop occurs.
 
 **Core Idea**: A loss plateau $\neq$ learning stagnation—models concurrently accumulate subroutines in the background, and the loss only drops once all subroutines are in place.
 

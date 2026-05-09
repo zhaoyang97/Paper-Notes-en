@@ -34,12 +34,12 @@ Human preference alignment for text-to-image (T2I) diffusion models has become a
 ### Limitations of Prior Work
 (1) **Frozen reference model restricts exploration** — Standard DPO keeps the reference model frozen to provide a stable KL-divergence anchor. However, in diffusion models this severely limits the exploration capacity of the policy model, as the multi-step denoising process accumulates bias from a frozen reference over long inference chains. (2) **Imbalanced reward scales across timesteps** — Signal strength varies drastically across denoising timesteps (weak signals at high-noise timesteps, strong signals at low-noise timesteps), yet existing methods treat all timesteps uniformly, causing training to be dominated by low-noise steps.
 
-**Root Cause**: Relaxing the reference model enhances exploration but destabilizes training; different timesteps require differentiated weighting but lack an adaptive mechanism.
+**Key Challenge**: Relaxing the reference model enhances exploration but destabilizes training; different timesteps require differentiated weighting but lack an adaptive mechanism.
 
 ### Paper Goals
 To enhance exploration capacity and timestep training balance in diffusion-based DPO while maintaining training stability.
 
-**Starting Point**: Design two orthogonal (non-interfering) plug-and-play strategies — dynamic reference model updating and timestep-aware loss weighting — that can be embedded into arbitrary preference optimization algorithms.
+**Key Insight**: Design two orthogonal (non-interfering) plug-and-play strategies — dynamic reference model updating and timestep-aware loss weighting — that can be embedded into arbitrary preference optimization algorithms.
 
 **Core Idea**: Address insufficient exploration via reference model regularization relaxation, and address reward imbalance via timestep-aware training; the two strategies are orthogonal and mutually complementary.
 

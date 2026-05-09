@@ -29,15 +29,15 @@ InFOM learns a latent intention encoder via variational inference and models int
 
 ## Background & Motivation
 
-**State of the Field**: The pre-train–fine-tune paradigm of foundation models has achieved remarkable success in NLP and CV, but remains an open problem in reinforcement learning. The core challenges lie in reasoning across time (actions have long-horizon dependencies) and identifying the diverse intentions of different users in offline datasets.
+**Background**: The pre-train–fine-tune paradigm of foundation models has achieved remarkable success in NLP and CV, but remains an open problem in reinforcement learning. The core challenges lie in reasoning across time (actions have long-horizon dependencies) and identifying the diverse intentions of different users in offline datasets.
 
 **Limitations of Prior Work**: Most existing RL pre-training methods overlook both the temporal and intentional dimensions. Behavioral cloning predicts actions without reasoning about long-term consequences; world models suffer from compounding errors that hinder long-horizon prediction; occupancy models (successor representations) can predict future state distributions but are difficult to train and ignore user intentions.
 
-**Root Cause**: Large-scale offline datasets are typically collected by multiple users performing different tasks, yet existing pre-training methods either ignore intentions (leading to mode averaging) or rely on discrete skills (limiting expressiveness), failing to exploit the heterogeneous structure in the data.
+**Key Challenge**: Large-scale offline datasets are typically collected by multiple users performing different tasks, yet existing pre-training methods either ignore intentions (leading to mode averaging) or rely on discrete skills (limiting expressiveness), failing to exploit the heterogeneous structure in the data.
 
-**Paper Goals**: To construct a probabilistic model that simultaneously captures (1) temporal information (long-horizon state visitation distributions) and (2) user intentions, enabling efficient RL pre-training and downstream fine-tuning.
+**Goal**: To construct a probabilistic model that simultaneously captures (1) temporal information (long-horizon state visitation distributions) and (2) user intentions, enabling efficient RL pre-training and downstream fine-tuning.
 
-**Starting Point**: Combining variational inference for learning latent intentions, an advanced generative model (flow matching) for modeling occupancy measures, and generalized policy improvement (GPI) to aggregate Q-functions across intentions for policy extraction.
+**Key Insight**: Combining variational inference for learning latent intentions, an advanced generative model (flow matching) for modeling occupancy measures, and generalized policy improvement (GPI) to aggregate Q-functions across intentions for policy extraction.
 
 **Core Idea**: A latent variable model encodes user intentions, while flow matching models intention-conditioned discounted state occupancy measures, enabling intention-aware long-horizon prediction and efficient policy extraction.
 

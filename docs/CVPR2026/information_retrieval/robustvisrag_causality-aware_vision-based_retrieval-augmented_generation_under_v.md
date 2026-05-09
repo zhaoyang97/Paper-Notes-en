@@ -26,18 +26,18 @@ content_hash: faa1ff23b9993e68
 This paper proposes RobustVisRAG, a causality-guided dual-path framework that decouples semantic–degradation entanglement in VisRAG by capturing degradation signals via a non-causal path and learning clean semantics via a causal path. Under real-world degradation conditions, the framework achieves improvements of 7.35%, 6.35%, and 12.40% in retrieval, generation, and end-to-end performance, respectively, while preserving performance on clean data.
 
 ## Background & Motivation
-**State of the Field**: VisRAG encodes document images directly with a VLM for retrieval and generation, avoiding OCR errors, and has become the dominant paradigm for document question answering.
+**Background**: VisRAG encodes document images directly with a VLM for retrieval and generation, avoiding OCR errors, and has become the dominant paradigm for document question answering.
 
 **Limitations of Prior Work**:
    - Both TextRAG and VisRAG suffer significant performance degradation under corrupted inputs (blur, noise, low light, shadow, etc.).
    - Semantic and degradation factors are entangled in the visual encoder of VisRAG: degradation distorts the embedding space, causing retrieval mismatches and generation instability.
    - Dual failure modes exist: corrupted representations may lead to incorrect document retrieval, and even when retrieval is correct, degradation can mislead generation.
 
-**Root Cause**: In the representation space of existing VLM encoders, the semantic factor $S$ and degradation factor $D$ are entangled. Since the observed image $X$ is a collider node of $S$ and $D$, conditioning on $Z$ opens the spurious path $S \leftrightarrow D$.
+**Key Challenge**: In the representation space of existing VLM encoders, the semantic factor $S$ and degradation factor $D$ are entangled. Since the observed image $X$ is a collider node of $S$ and $D$, conditioning on $Z$ opens the spurious path $S \leftrightarrow D$.
 
-**Paper Goals**: Enable VisRAG to remain robust under degraded inputs without additional inference cost and without compromising performance on clean inputs.
+**Goal**: Enable VisRAG to remain robust under degraded inputs without additional inference cost and without compromising performance on clean inputs.
 
-**Starting Point**: A structural causal model (SCM) is used to analyze how degradation propagates through VisRAG, and causal intervention (do-operator) is applied to block the non-causal path.
+**Key Insight**: A structural causal model (SCM) is used to analyze how degradation propagates through VisRAG, and causal intervention (do-operator) is applied to block the non-causal path.
 
 **Core Idea**: Learn a disentangled representation $Z = [Z_{sem}, Z_{deg}]$ such that the semantic component is invariant to degradation, equivalent to the causal intervention $P(A|do(D=d_0))$.
 

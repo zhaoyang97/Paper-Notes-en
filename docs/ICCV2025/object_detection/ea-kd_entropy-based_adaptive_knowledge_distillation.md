@@ -29,16 +29,16 @@ This paper proposes EA-KD, a plug-and-play knowledge distillation method based o
 
 ## Background & Motivation
 
-**State of the Field**: Knowledge distillation (KD) achieves model compression by training a small student model to mimic a large teacher model. Mainstream approaches are divided into logit-based methods (aligning softened probability distributions) and feature-based methods (aligning intermediate layer features). Recent advances include DKD, MLD, CTKD, and related variants.
+**Background**: Knowledge distillation (KD) achieves model compression by training a small student model to mimic a large teacher model. Mainstream approaches are divided into logit-based methods (aligning softened probability distributions) and feature-based methods (aligning intermediate layer features). Recent advances include DKD, MLD, CTKD, and related variants.
 
 **Limitations of Prior Work**:
    - **Drawback of uniform distillation**: Most KD methods treat all samples equally, ignoring the differences in learning value across samples. Intuitively, this is analogous to a teacher delivering the same depth of instruction to all students rather than focusing on critical knowledge points.
    - **Inherent bias of KLD**: The standard KLD loss naturally assigns larger loss values to low-entropy (simple/high-confidence) samples (when the student is initialized as a uniform distribution, KLD $\approx \log(C)$ for low-entropy teacher outputs, while KLD $\approx 0$ for high-entropy outputs), causing training to be dominated by simple samples and obscuring knowledge transfer from high-value samples.
    - **Value of high-entropy samples**: Experiments show that high-entropy samples reside near class decision boundaries in t-SNE visualizations and exhibit larger teacher–student accuracy gaps — precisely these difficult samples carry the most critical knowledge for learning.
 
-**Root Cause**: The distillation process should prioritize difficult and information-rich samples, yet the mathematical properties of current loss functions produce the opposite tendency.
+**Key Challenge**: The distillation process should prioritize difficult and information-rich samples, yet the mathematical properties of current loss functions produce the opposite tendency.
 
-**Starting Point**: Information-theoretic entropy is used as a measure of sample learning value, combining both the teacher's stable assessment and the student's dynamic evolution to adaptively adjust the distillation weight for each sample.
+**Key Insight**: Information-theoretic entropy is used as a measure of sample learning value, combining both the teacher's stable assessment and the student's dynamic evolution to adaptively adjust the distillation weight for each sample.
 
 **Core Idea**: An adaptive reweighting factor $w_{\text{EA}}$ based on teacher and student entropy that can be plugged into any KD framework in a drop-in fashion.
 

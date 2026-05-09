@@ -35,7 +35,7 @@ Large-scale acquisition and annotation of LiDAR data is prohibitively expensive.
 1. The generative and segmentation models are trained independently without shared representations, resulting in low training efficiency.
 2. Semantic maps are predicted post-hoc and cannot guide the generation of depth and reflectance during the diffusion process, leading to poor cross-modal consistency.
 
-**Starting Point**: The powerful feature learning capacity of diffusion models can be exploited to simultaneously predict semantic labels during denoising, and a closed-loop mechanism can allow semantic predictions to inversely guide geometric generation.
+**Key Insight**: The powerful feature learning capacity of diffusion models can be exploited to simultaneously predict semantic labels during denoising, and a closed-loop mechanism can allow semantic predictions to inversely guide geometric generation.
 
 ## Method
 

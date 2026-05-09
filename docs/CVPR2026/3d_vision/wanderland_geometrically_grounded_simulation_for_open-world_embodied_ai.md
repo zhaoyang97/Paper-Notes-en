@@ -30,13 +30,13 @@ This paper proposes Wanderland, a real-to-sim framework that uses a handheld mul
 
 ## Background & Motivation
 
-- **State of the Field**: Open-world embodied navigation is expanding from indoor settings to urban streets, campuses, and commercial areas, demanding simulation environments with large spatial scale, mixed indoor-outdoor coverage, high-fidelity sensor simulation, and reliable physical interaction.
+- **Background**: Open-world embodied navigation is expanding from indoor settings to urban streets, campuses, and commercial areas, demanding simulation environments with large spatial scale, mixed indoor-outdoor coverage, high-fidelity sensor simulation, and reliable physical interaction.
 
 - **Limitations of Prior Work**: Classic RGB-D datasets such as Matterport3D, ScanNet, and HM3D rely on tripod-mounted RGB-D capture, making them unsuitable for outdoor use due to sunlight interference and limited depth range; pose drift becomes severe in large-scale, low-texture environments. Video-based 3DGS approaches (e.g., Vid2Sim, GaussGym) suffer from three fundamental deficiencies: (a) purely RGB SfM/depth estimation yields non-metric poses, (b) collision meshes extracted from 3DGS opacity are fragmented and lack metric grounding, and (c) single-trajectory video leads to severe degradation in novel view rendering quality upon extrapolation. Furthermore, existing outdoor datasets lack high-accuracy geometric ground truth, hindering evaluation of reconstruction and NVS methods.
 
-- **Root Cause**: Video-based 3DGS environments may suffice for training but cannot serve as standardized, reproducible benchmarks for closed-loop evaluation due to unreliable geometry.
+- **Key Challenge**: Video-based 3DGS environments may suffice for training but cannot serve as standardized, reproducible benchmarks for closed-loop evaluation due to unreliable geometry.
 
-- **Paper Goals**: To construct a scalable real-to-sim pipeline and large-scale dataset that provides metric-accurate geometry and photorealistic rendering for open-world embodied AI research.
+- **Goal**: To construct a scalable real-to-sim pipeline and large-scale dataset that provides metric-accurate geometry and photorealistic rendering for open-world embodied AI research.
 
 ## Method
 

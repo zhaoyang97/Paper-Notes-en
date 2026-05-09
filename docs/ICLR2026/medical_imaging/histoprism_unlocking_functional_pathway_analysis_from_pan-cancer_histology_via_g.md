@@ -29,15 +29,15 @@ This paper proposes HistoPrism, an efficient Transformer architecture that injec
 
 ## Background & Motivation
 
-**State of the Field**: Spatial transcriptomics (ST) integrates high-resolution imaging with transcriptomic profiling to map gene expression distributions in situ within tissue sections. However, ST is costly, labor-intensive, and difficult to scale. Since H&E-stained whole-slide images (WSIs) are routinely acquired in clinical settings, computationally inferring gene expression from H&E images has become an active research direction.
+**Background**: Spatial transcriptomics (ST) integrates high-resolution imaging with transcriptomic profiling to map gene expression distributions in situ within tissue sections. However, ST is costly, labor-intensive, and difficult to scale. Since H&E-stained whole-slide images (WSIs) are routinely acquired in clinical settings, computationally inferring gene expression from H&E images has become an active research direction.
 
 **Limitations of Prior Work**: (1) Early methods (BLEEP, GraphST, TRIPLEX) rely on complex multi-stage pipelines employing contrastive learning (where negative sample definition is non-trivial) or multi-resolution feature engineering (which incurs high computational overhead). (2) Generative approaches (STEM, STFlow) model one-to-many mappings but are validated only on single cancer types and are computationally intensive. (3) STPath adopts BERT-style masked gene modeling to learn pan-cancer predictions across 38k genes, yet assumes that inter-gene correlations remain stable across tissue types—an assumption that may fail under the high heterogeneity of a pan-cancer setting—and its large model size demands substantial training and inference resources.
 
-**Root Cause**: Existing evaluation standards focus exclusively on Pearson correlation of top-N highly variable genes (HVGs), neglecting biological coherence at the functional pathway level. A model can achieve high HVG scores while failing to recover biologically meaningful coordinated expression patterns, thereby limiting its clinical translational value.
+**Key Challenge**: Existing evaluation standards focus exclusively on Pearson correlation of top-N highly variable genes (HVGs), neglecting biological coherence at the functional pathway level. A model can achieve high HVG scores while failing to recover biologically meaningful coordinated expression patterns, thereby limiting its clinical translational value.
 
-**Paper Goals**: (1) Design an efficient direct-mapping architecture to replace complex reconstruction-based methods. (2) Establish pathway-level evaluation criteria to measure the biological meaningfulness of predictions.
+**Goal**: (1) Design an efficient direct-mapping architecture to replace complex reconstruction-based methods. (2) Establish pathway-level evaluation criteria to measure the biological meaningfulness of predictions.
 
-**Starting Point**: The authors argue that gene expression prediction is fundamentally a modality translation task (image → expression) rather than a reconstruction task, making direct mapping more appropriate than an autoencoder framework. Evaluation should shift from isolated gene-level variance to functional pathway-level coherence.
+**Key Insight**: The authors argue that gene expression prediction is fundamentally a modality translation task (image → expression) rather than a reconstruction task, making direct mapping more appropriate than an autoencoder framework. Evaluation should shift from isolated gene-level variance to functional pathway-level coherence.
 
 **Core Idea**: Inject cancer-type conditioning via cross-attention, capture inter-patch context with a Transformer encoder, directly regress gene expression via an MLP head, and assess biological fidelity using the pathway-level GPC benchmark.
 

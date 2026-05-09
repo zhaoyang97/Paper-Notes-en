@@ -29,18 +29,18 @@ This work frames the selection of multiple reward models (RMs) as a contextual m
 
 ## Background & Motivation
 
-**State of the Field**: RLHF/DPO iterative training pipelines rely on RM scoring of LLM outputs to construct preference data. RewardBench provides a large pool of candidate RMs, yet the generalization of individual RMs across tasks and domains remains unknown.
+**Background**: RLHF/DPO iterative training pipelines rely on RM scoring of LLM outputs to construct preference data. RewardBench provides a large pool of candidate RMs, yet the generalization of individual RMs across tasks and domains remains unknown.
 
 **Limitations of Prior Work**:
    - **Single-RM risk**: A single RM may fail to generalize across all task domains, and prolonged use tends to induce reward hacking.
    - **Multi-RM ensemble inefficiency**: Simultaneously loading and running inference over multiple large models multiplies computational costs; moreover, preference conflicts among RMs (Qwen vs. OLMo agreement is only 0.43) introduce noise when naively aggregated.
    - **Manual selection is infeasible**: The space of RM combinations grows exponentially, making exhaustive search impractical.
 
-**Root Cause**: Diversity across multiple RMs is needed to avoid the limitations of any single RM, yet the computational overhead and signal conflicts of multi-RM usage degrade training quality.
+**Key Challenge**: Diversity across multiple RMs is needed to avoid the limitations of any single RM, yet the computational overhead and signal conflicts of multi-RM usage degrade training quality.
 
-**Paper Goals**: Design an efficient mechanism that automatically selects the most appropriate RM for each batch throughout training.
+**Goal**: Design an efficient mechanism that automatically selects the most appropriate RM for each batch throughout training.
 
-**Starting Point**: RM selection is analogous to the multi-armed bandit (MAB) problem—each RM is an "arm," and the LinUCB algorithm balances exploration (trying different RMs) with exploitation (using the known best RM).
+**Key Insight**: RM selection is analogous to the multi-armed bandit (MAB) problem—each RM is an "arm," and the LinUCB algorithm balances exploration (trying different RMs) with exploitation (using the known best RM).
 
 **Core Idea**: Select only one RM per training step to save computation, while using the MAB algorithm to ensure adaptive and globally optimal selection.
 

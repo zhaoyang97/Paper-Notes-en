@@ -28,15 +28,15 @@ This paper establishes the first sparse recovery guarantee for ReLU neural netwo
 
 ## Background & Motivation
 
-**State of the Field**: Large-scale neural networks achieve strong performance but demand substantial memory and computation. Post-training weights are typically highly compressible. The existence of high-performing sparse subnetworks is well-established (Lottery Ticket Hypothesis), yet efficient optimization of sparse networks remains an open challenge.
+**Background**: Large-scale neural networks achieve strong performance but demand substantial memory and computation. Post-training weights are typically highly compressible. The existence of high-performing sparse subnetworks is well-established (Lottery Ticket Hypothesis), yet efficient optimization of sparse networks remains an open challenge.
 
 **Limitations of Prior Work**: Existing methods are either memory-inefficient (e.g., IMP requires training a dense network first), yield suboptimal quality (e.g., initialization-based pruning), or lack theoretical guarantees (all existing methods are heuristic). Although the compressed sensing literature offers rich sparse recovery theory, it applies only to linear models.
 
-**Root Cause**: Sparse neural network optimization is a non-convex problem, and classical sparse recovery theory (requiring restricted isometry properties or strong convexity) does not directly extend to nonlinear ReLU networks.
+**Key Challenge**: Sparse neural network optimization is a non-convex problem, and classical sparse recovery theory (requiring restricted isometry properties or strong convexity) does not directly extend to nonlinear ReLU networks.
 
-**Paper Goals**: To provide theoretical guarantees for sparse ReLU MLP weight recovery, including unique identifiability and convergence guarantees for an efficient recovery algorithm.
+**Goal**: To provide theoretical guarantees for sparse ReLU MLP weight recovery, including unique identifiability and convergence guarantees for an efficient recovery algorithm.
 
-**Starting Point**: The paper exploits the convex reformulation theory for ReLU networks (Pilanci & Ergen, 2020) to transform non-convex sparse network optimization into a highly structured linear sensing problem, then applies sparse recovery guarantees for IHT.
+**Key Insight**: The paper exploits the convex reformulation theory for ReLU networks (Pilanci & Ergen, 2020) to transform non-convex sparse network optimization into a highly structured linear sensing problem, then applies sparse recovery guarantees for IHT.
 
 **Core Idea**: By convexifying sparse MLP training via gated ReLU reformulation, the problem is cast as a linear sparse recovery problem. The paper proves that the sensing matrix satisfies restricted strong convexity and smoothness, enabling IHT to exactly recover sparse weights.
 

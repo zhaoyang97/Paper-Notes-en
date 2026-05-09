@@ -27,15 +27,15 @@ content_hash: f297748cd758bf4e
 This paper proposes CKA-RL, which maintains a task-specific knowledge vector for each task and employs softmax-weighted dynamic knowledge adaptation along with an adaptive knowledge merging mechanism, achieving a 4.20% overall performance gain and 8.02% forward transfer improvement across three continual RL benchmarks.
 
 ## Background & Motivation
-**State of the Field**: Continual reinforcement learning (CRL) enables agents to sequentially learn multiple tasks in non-stationary environments. Existing approaches fall into four categories: regularization, experience replay, architectural expansion, and meta-learning.
+**Background**: Continual reinforcement learning (CRL) enables agents to sequentially learn multiple tasks in non-stationary environments. Existing approaches fall into four categories: regularization, experience replay, architectural expansion, and meta-learning.
 
 **Limitations of Prior Work**: (1) Cross-task conflict — different tasks may share structure but have incompatible objectives, causing direct knowledge reuse to introduce interference; (2) Catastrophic forgetting — learning new tasks overwrites previously acquired knowledge; (3) Scalability — memory and computation costs grow linearly with the number of tasks (e.g., CompoNet).
 
-**Root Cause**: How can an agent retain knowledge of past tasks while efficiently leveraging historical knowledge to accelerate learning on new tasks, without incurring linear memory growth with the number of tasks?
+**Key Challenge**: How can an agent retain knowledge of past tasks while efficiently leveraging historical knowledge to accelerate learning on new tasks, without incurring linear memory growth with the number of tasks?
 
-**Paper Goals**: To design a continual RL method that efficiently accumulates, reuses, and compresses historical knowledge.
+**Goal**: To design a continual RL method that efficiently accumulates, reuses, and compresses historical knowledge.
 
-**Starting Point**: Inspired by the concept of "task vectors" in model editing, the paper represents each task's learned parameter increment as a knowledge vector and dynamically combines historical knowledge vectors via learnable weights to adapt to new tasks.
+**Key Insight**: Inspired by the concept of "task vectors" in model editing, the paper represents each task's learned parameter increment as a knowledge vector and dynamically combines historical knowledge vectors via learnable weights to adapt to new tasks.
 
 **Core Idea**: A knowledge vector pool stores historical knowledge; softmax-weighted combinations adapt to new tasks; similar vectors are automatically merged to bound memory usage.
 

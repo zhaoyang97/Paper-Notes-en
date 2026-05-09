@@ -29,15 +29,15 @@ This paper develops a vision-based 3D surrogate modeling framework for data cent
 
 ## Background & Motivation
 
-**State of the Field**: Data centers are among the leading contributors to global energy consumption and carbon emissions. Effective thermal management not only prevents hardware failures due to overheating but also substantially reduces cooling energy costs. Accurate 3D temperature field modeling is essential for optimizing cooling strategies and workload distribution.
+**Background**: Data centers are among the leading contributors to global energy consumption and carbon emissions. Effective thermal management not only prevents hardware failures due to overheating but also substantially reduces cooling energy costs. Accurate 3D temperature field modeling is essential for optimizing cooling strategies and workload distribution.
 
 **Limitations of Prior Work**: Traditional computational fluid dynamics (CFD) solvers, while highly accurate, are computationally prohibitive—a single simulation may require hundreds of milliseconds to several hours, and demands expert-level effort to construct meshes and boundary conditions. This renders CFD infeasible for real-time control scenarios. Data centers must rapidly adjust cooling strategies in response to dynamically changing workloads, yet CFD is far too slow to meet this demand.
 
-**Root Cause**: A fundamental tension exists between accuracy and speed—precise 3D temperature field modeling requires solving complex coupled thermal-flow equations (accurate but slow), whereas real-time control demands millisecond-level responses (fast, but typically relying on oversimplified and inaccurate models).
+**Key Challenge**: A fundamental tension exists between accuracy and speed—precise 3D temperature field modeling requires solving complex coupled thermal-flow equations (accurate but slow), whereas real-time control demands millisecond-level responses (fast, but typically relying on oversimplified and inaccurate models).
 
-**Paper Goals**: (1) Construct a surrogate model capable of rapidly predicting 3D temperature fields in data centers; (2) maintain accuracy comparable to CFD solvers; (3) generalize across diverse data center configurations.
+**Goal**: (1) Construct a surrogate model capable of rapidly predicting 3D temperature fields in data centers; (2) maintain accuracy comparable to CFD solvers; (3) generalize across diverse data center configurations.
 
-**Starting Point**: The authors reformulate temperature field prediction as a "vision" problem—encoding the physical layout and operational parameters of a data center as a 3D voxel map, and leveraging well-established 3D architectures from computer vision for end-to-end learning.
+**Key Insight**: The authors reformulate temperature field prediction as a "vision" problem—encoding the physical layout and operational parameters of a data center as a 3D voxel map, and leveraging well-established 3D architectures from computer vision for end-to-end learning.
 
 **Core Idea**: A 3D voxelization representation uniformly encodes both the geometric structure and operational state of a data center, enabling real-time inference at CFD-level accuracy through modern deep learning architectures.
 

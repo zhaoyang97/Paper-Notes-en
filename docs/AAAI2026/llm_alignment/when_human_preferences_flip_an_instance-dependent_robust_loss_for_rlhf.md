@@ -28,13 +28,13 @@ To address the pervasive "preference flipping" problem in human preference annot
 
 ## Background & Motivation
 
-**State of the Field**: RLHF/DPO are the dominant paradigms for LLM alignment, yet they implicitly assume noise-free preference annotations. In practice, studies show that a flipping rate as low as 10% can degrade alignment performance by 30%.
+**Background**: RLHF/DPO are the dominant paradigms for LLM alignment, yet they implicitly assume noise-free preference annotations. In practice, studies show that a flipping rate as low as 10% can degrade alignment performance by 30%.
 
 **Limitations of Prior Work**: (a) Human preference annotations inevitably contain noise — environmental interference, distraction, or adversarial attacks can all induce label flips; (b) existing robust methods (cDPO, rDPO) assume a fixed global flipping rate independent of sample content, which is unrealistic, since ambiguous preference pairs are more susceptible to flipping than clear ones.
 
-**Root Cause**: The fixed flipping rate assumption applies uniform correction to all samples, failing to distinguish between "inherently ambiguous and flip-prone samples" and "clear samples that have been adversarially flipped."
+**Key Challenge**: The fixed flipping rate assumption applies uniform correction to all samples, failing to distinguish between "inherently ambiguous and flip-prone samples" and "clear samples that have been adversarially flipped."
 
-**Starting Point**: The annotation process is decomposed into two stages — Stage 1 annotates according to true human intent (BT model), and Stage 2 applies instance-dependent label corruption (flipping probability $\varepsilon_{\tilde{x}}$ correlated with sample content).
+**Key Insight**: The annotation process is decomposed into two stages — Stage 1 annotates according to true human intent (BT model), and Stage 2 applies instance-dependent label corruption (flipping probability $\varepsilon_{\tilde{x}}$ correlated with sample content).
 
 **Core Idea**: The likelihood function in the BT model loss is corrected using instance-dependent flipping probabilities, such that samples with high flipping probabilities are down-weighted or even subject to gradient reversal. A learnable flipping probability estimation module is jointly optimized with the LLM.
 

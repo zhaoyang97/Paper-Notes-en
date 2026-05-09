@@ -29,15 +29,15 @@ This paper presents the first systematic quantification of energy consumption an
 
 ## Background & Motivation
 
-**State of the Field**: Web Agents (e.g., OpenAI Operator, Google Project Mariner) are rapidly advancing, capable of autonomously browsing the web, filling forms, and comparing prices, representing a critical frontier in LLM applications.
+**Background**: Web Agents (e.g., OpenAI Operator, Google Project Mariner) are rapidly advancing, capable of autonomously browsing the web, filling forms, and comparing prices, representing a critical frontier in LLM applications.
 
 **Limitations of Prior Work**: Sustainability concerns are almost entirely overlooked in current Web Agent research — existing benchmarks focus exclusively on task completion rates (e.g., Step Success Rate) with no energy consumption metrics. End users are presented with a simple input interface and remain completely unaware of the substantial computational energy expenditure behind it.
 
-**Root Cause**: Differing design philosophies across Web Agents lead to energy consumption gaps exceeding 10×, yet this disparity is entirely opaque to end users. High energy consumption does not necessarily yield better performance.
+**Key Challenge**: Differing design philosophies across Web Agents lead to energy consumption gaps exceeding 10×, yet this disparity is entirely opaque to end users. High energy consumption does not necessarily yield better performance.
 
-**Paper Goals**: To quantify energy consumption differences across Web Agents, raise awareness of this issue's urgency within the research community and among users, and promote the integration of energy efficiency dimensions into evaluation standards.
+**Goal**: To quantify energy consumption differences across Web Agents, raise awareness of this issue's urgency within the research community and among users, and promote the integration of energy efficiency dimensions into evaluation standards.
 
-**Starting Point**: The analysis proceeds along two complementary axes — **empirical measurement** (directly benchmarking open-source Agents) and **theoretical estimation** (targeting Agents built on proprietary LLMs).
+**Key Insight**: The analysis proceeds along two complementary axes — **empirical measurement** (directly benchmarking open-source Agents) and **theoretical estimation** (targeting Agents built on proprietary LLMs).
 
 **Core Idea**: Establish a dual-track evaluation framework — directly measuring energy consumption on real GPUs via carbontracker for open-source Agents, and theoretically estimating energy based on model parameter scale and token counts for closed-source Agents — thereby providing a comprehensive picture of Web Agent energy consumption.
 

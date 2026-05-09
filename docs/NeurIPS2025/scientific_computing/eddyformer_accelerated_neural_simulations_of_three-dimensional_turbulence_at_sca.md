@@ -30,19 +30,19 @@ EddyFormer is a Transformer architecture based on the Spectral Element Method (S
 
 ### State of the Field
 
-**State of the Field**: Turbulence simulation requires $Re^{9/4}$ resolution for DNS, making it prohibitively expensive. LES resolves only large-scale structures and approximates small scales via theoretical models, but struggles with wall-bounded and anisotropic turbulence.
+**Background**: Turbulence simulation requires $Re^{9/4}$ resolution for DNS, making it prohibitively expensive. LES resolves only large-scale structures and approximates small scales via theoretical models, but struggles with wall-bounded and anisotropic turbulence.
 
 **Limitations of Prior Work**: (a) Neural operators such as FNO are difficult to scale to large turbulence problems; (b) the quadratic complexity of Transformers grows with mesh resolution; (c) most ML methods are validated only on 2D, small-scale flows.
 
-**Root Cause**: How can one preserve the high accuracy of spectral methods while efficiently capturing multi-scale interactions via attention mechanisms?
+**Key Challenge**: How can one preserve the high accuracy of spectral methods while efficiently capturing multi-scale interactions via attention mechanisms?
 
-**Starting Point**: SEM is adopted as the tokenization strategy: coarse elements serve as tokens, with spectral expansions within each element. The sequence length equals only the number of elements $N^3$, far smaller than the total number of modes $N^3 M^3$.
+**Key Insight**: SEM is adopted as the tokenization strategy: coarse elements serve as tokens, with spectral expansions within each element. The sequence length equals only the number of elements $N^3$, far smaller than the total number of modes $N^3 M^3$.
 
 **Core Idea**: SEM-based tokenization combined with a dual-stream LES/SGS architecture that explicitly encodes the multi-scale nature of turbulence into the model design.
 
 ### Mechanism
 
-**Paper Goals**: ### Overall Architecture
+**Goal**: ### Overall Architecture
 EddyFormer interpolates PDE initial conditions using SEM and splits them into a LES stream (global large-scale) and an SGS stream (local small-scale) processed in parallel, yielding the output $\mathbf{u} = \mathbf{u}_{LES} + \mathbf{u}_{SGS}$.
 
 ## Method

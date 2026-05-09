@@ -29,7 +29,7 @@ This paper proposes a Causal Information Bottleneck (CIB) theoretical framework 
 
 ## Background & Motivation
 
-**State of the Field**: Vision-language models (VLMs) have achieved remarkable progress in video understanding, yet remain constrained by input token budgets and the inherent temporal redundancy of video. Recent research has therefore focused on **keyframe selection** strategies that extract compact frame subsets to improve computational efficiency and reasoning accuracy.
+**Background**: Vision-language models (VLMs) have achieved remarkable progress in video understanding, yet remain constrained by input token budgets and the inherent temporal redundancy of video. Recent research has therefore focused on **keyframe selection** strategies that extract compact frame subsets to improve computational efficiency and reasoning accuracy.
 
 **Limitations of Prior Work**:
 
@@ -39,9 +39,9 @@ This paper proposes a Causal Information Bottleneck (CIB) theoretical framework 
 
 **Weak theoretical foundations**: Neither heuristic static selection nor agent-based interactive search is guided by a unified theoretical framework.
 
-**Root Cause**: Visual relevance $\neq$ causal necessity. A frame may be highly visually relevant to a question yet contribute nothing to reasoning (redundant frame), while another visually unremarkable frame may be indispensable for correct inference (causal frame).
+**Key Challenge**: Visual relevance $\neq$ causal necessity. A frame may be highly visually relevant to a question yet contribute nothing to reasoning (redundant frame), while another visually unremarkable frame may be indispensable for correct inference (causal frame).
 
-**Starting Point**: The paper revisits the concept of keyframes from a causal inference perspective. A keyframe should simultaneously satisfy two conditions — (1) **Predictive sufficiency**: the selected subset is sufficient for accurately inferring the answer; (2) **Causal necessity**: no frame in the subset can be removed without affecting the output. The classical IB is extended to a **Causal Information Bottleneck (CIB)**, and a selection policy is trained via reinforcement learning.
+**Key Insight**: The paper revisits the concept of keyframes from a causal inference perspective. A keyframe should simultaneously satisfy two conditions — (1) **Predictive sufficiency**: the selected subset is sufficient for accurately inferring the answer; (2) **Causal necessity**: no frame in the subset can be removed without affecting the output. The classical IB is extended to a **Causal Information Bottleneck (CIB)**, and a selection policy is trained via reinforcement learning.
 
 ## Method
 

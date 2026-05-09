@@ -28,17 +28,17 @@ This paper proposes Wiki-PRF, a three-stage (Processing–Retrieval–Filtering)
 
 ## Background & Motivation
 
-**State of the Field**: Knowledge-intensive visual question answering (KB-VQA) requires models to simultaneously understand image content and retrieve external knowledge. Retrieval-augmented generation (RAG) approaches have demonstrated significant progress on this task.
+**Background**: Knowledge-intensive visual question answering (KB-VQA) requires models to simultaneously understand image content and retrieve external knowledge. Retrieval-augmented generation (RAG) approaches have demonstrated significant progress on this task.
 
 **Limitations of Prior Work**:
 - **Coarse retrieval granularity**: Existing methods typically use whole-image visual features for retrieval. In complex scenes (e.g., a small statue beside a clock tower), global features are dominated by the primary object, leading to retrieval of substantial irrelevant information.
 - **Low filtering precision**: Passage-level re-ranking fails to remove irrelevant content within individual passages, leaving substantial noise in retrieved results.
 
-**Root Cause**: Fine-grained information extraction is needed for precise retrieval, while simultaneously filtering noise from large volumes of retrieved results.
+**Key Challenge**: Fine-grained information extraction is needed for precise retrieval, while simultaneously filtering noise from large volumes of retrieved results.
 
-**Paper Goals**: Design more precise multimodal retrieval and more effective result filtering mechanisms.
+**Goal**: Design more precise multimodal retrieval and more effective result filtering mechanisms.
 
-**Starting Point**: Enable the VLM to autonomously decide which visual tools (captioning, grounding, flipping) to apply to the input, and train it via RL to filter irrelevant information from retrieved results.
+**Key Insight**: Enable the VLM to autonomously decide which visual tools (captioning, grounding, flipping) to apply to the input, and train it via RL to filter irrelevant information from retrieved results.
 
 **Core Idea**: Train a VLM-PRF model using answer accuracy and format consistency as reward signals. Through GRPO, the model learns to flexibly invoke tools and efficiently filter information—marking the first application of RL to multimodal RAG.
 

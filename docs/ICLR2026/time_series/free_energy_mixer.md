@@ -28,15 +28,15 @@ This paper proposes Free Energy Mixer (FEM), which reframes attention value retr
 
 ## Background & Motivation
 
-**State of the Field**: The attention mechanism in Transformers stores all historical information losslessly via KV-cache, then reads values through a convex combination of probability weights—a pattern of "lossless storage but lossy processing." Existing improvements include sparse attention, low-rank projection, kernelized attention, linear RNN/SSM, and related approaches.
+**Background**: The attention mechanism in Transformers stores all historical information losslessly via KV-cache, then reads values through a convex combination of probability weights—a pattern of "lossless storage but lossy processing." Existing improvements include sparse attention, low-rank projection, kernelized attention, linear RNN/SSM, and related approaches.
 
 **Limitations of Prior Work**: The reading operation in standard attention applies identical weights to all value dimensions ($\mathbf{o}_t = \sum_i \alpha_{t,i} \mathbf{v}_i$), forcing the output to lie within the convex hull of the value vectors. This means **per-channel index selection is infeasible**—even when different channels need to retrieve information from different historical positions, a single attention head cannot accommodate this.
 
-**Root Cause**: $H$ attention heads provide at most $t^H$ head-level argmax patterns, far fewer than the $t^D$ patterns required for fully independent per-channel selection (when $H \ll D$). Increasing the number of heads narrows each head's width, and stacking more layers cannot recover the channel-level index information lost after the first convex mixing operation.
+**Key Challenge**: $H$ attention heads provide at most $t^H$ head-level argmax patterns, far fewer than the $t^D$ patterns required for fully independent per-channel selection (when $H \ll D$). Increasing the number of heads narrows each head's width, and stacking more layers cannot recover the channel-level index information lost after the first convex mixing operation.
 
-**Paper Goals**: How can attention be endowed with per-channel, value-aware selection capability without altering asymptotic complexity?
+**Goal**: How can attention be endowed with per-channel, value-aware selection capability without altering asymptotic complexity?
 
-**Starting Point**: Value retrieval is recast as a selection problem under information constraints—given a prior distribution $p_t$ (derived from Q/K), the goal is to find, for each channel $j$, a posterior distribution $q$ that maximizes expected utility while bounding the KL divergence from the prior. The solution to this variational problem takes exactly the log-sum-exp form.
+**Key Insight**: Value retrieval is recast as a selection problem under information constraints—given a prior distribution $p_t$ (derived from Q/K), the goal is to find, for each channel $j$, a posterior distribution $q$ that maximizes expected utility while bounding the KL divergence from the prior. The solution to this variational problem takes exactly the log-sum-exp form.
 
 **Core Idea**: Replace the linear readout in attention with free energy (log-sum-exp), introducing independent value-aware posterior selection for each value channel. This enables a smooth transition from average readout to per-channel hard selection without increasing asymptotic complexity.
 

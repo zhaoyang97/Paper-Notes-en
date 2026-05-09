@@ -28,15 +28,15 @@ To address the failure of standard conformal prediction under subpopulation shif
 
 ## Background & Motivation
 
-**State of the Field**: Conformal prediction (CP) provides uncertainty quantification for black-box ML models, guaranteeing marginal coverage under exchangeable data: $\Pr(Y_{\text{test}} \in C_\alpha(X_{\text{test}})) \geq 1-\alpha$.
+**Background**: Conformal prediction (CP) provides uncertainty quantification for black-box ML models, guaranteeing marginal coverage under exchangeable data: $\Pr(Y_{\text{test}} \in C_\alpha(X_{\text{test}})) \geq 1-\alpha$.
 
 **Limitations of Prior Work**: In practice, the subpopulation mixture of the test environment often differs from that of calibration data (subpopulation shift), causing standard CP to severely under- or over-cover in certain test environments. Existing solutions either require known distribution shifts (Tibshirani et al.), rely on worst-case thresholds (max CP, which severely over-covers), or demand perfect group labels (group-conditional CP).
 
-**Root Cause**: Group-conditional CP theoretically resolves subpopulation shift but requires precise group membership information. Theorem 2.1 proves that an imperfect domain classifier leads to severe degradation of coverage guarantees — if the classifier accuracy is $\gamma$, coverage can drop as low as $\max(0, \gamma - \alpha)$.
+**Key Challenge**: Group-conditional CP theoretically resolves subpopulation shift but requires precise group membership information. Theorem 2.1 proves that an imperfect domain classifier leads to severe degradation of coverage guarantees — if the classifier accuracy is $\gamma$, coverage can drop as low as $\max(0, \gamma - \alpha)$.
 
-**Paper Goals**: Design adaptive CP algorithms with theoretical guarantees when domain labels are unknown or imperfect.
+**Goal**: Design adaptive CP algorithms with theoretical guarantees when domain labels are unknown or imperfect.
 
-**Starting Point**: Rather than requiring a perfect domain classifier, the paper exploits weaker assumptions such as multicalibration and multiaccuracy to ensure coverage; one algorithm requires no domain classifier at all, relying solely on embedding similarity weighting.
+**Key Insight**: Rather than requiring a perfect domain classifier, the paper exploits weaker assumptions such as multicalibration and multiaccuracy to ensure coverage; one algorithm requires no domain classifier at all, relying solely on embedding similarity weighting.
 
 **Core Idea**: Use an imperfect domain classifier or embedding similarity to adaptively reweight calibration data, maintaining conformal prediction coverage guarantees under unknown subpopulation shifts.
 

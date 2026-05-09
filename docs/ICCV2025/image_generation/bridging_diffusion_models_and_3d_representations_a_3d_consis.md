@@ -30,11 +30,11 @@ content_hash: f2d222192ee64741
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: 3D scene reconstruction is fundamentally limited by the resolution of input images. Applying image SR frame-by-frame introduces inconsistent hallucinated details across views, causing blur and geometric artifacts after 3DGS training. Video SR implicitly models temporal consistency but does not guarantee 3D consistency. A framework is needed that explicitly leverages 3D representations to constrain multi-view consistency in diffusion-based SR.
+**Key Challenge**: **Background**: 3D scene reconstruction is fundamentally limited by the resolution of input images. Applying image SR frame-by-frame introduces inconsistent hallucinated details across views, causing blur and geometric artifacts after 3DGS training. Video SR implicitly models temporal consistency but does not guarantee 3D consistency. A framework is needed that explicitly leverages 3D representations to constrain multi-view consistency in diffusion-based SR.
 
 ### Mechanism
 
-**Paper Goals**: How can a diffusion model be exploited to generate high-quality SR details while simultaneously guaranteeing 3D structural consistency across views?
+**Goal**: How can a diffusion model be exploited to generate high-quality SR details while simultaneously guaranteeing 3D structural consistency across views?
 
 ## Method
 

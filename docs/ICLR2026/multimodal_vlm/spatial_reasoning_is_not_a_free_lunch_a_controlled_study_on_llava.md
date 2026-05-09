@@ -28,15 +28,15 @@ Through controlled experiments within the LLaVA framework, this paper systematic
 
 ## Background & Motivation
 
-**State of the Field**: Current VLMs (e.g., LLaVA, BLIP-2, Flamingo) almost universally rely on large-scale pretrained image encoders such as CLIP/SigLIP. Trained via global image-text alignment, these encoders are integrated into various multimodal systems and have driven significant progress on image captioning and VQA tasks.
+**Background**: Current VLMs (e.g., LLaVA, BLIP-2, Flamingo) almost universally rely on large-scale pretrained image encoders such as CLIP/SigLIP. Trained via global image-text alignment, these encoders are integrated into various multimodal systems and have driven significant progress on image captioning and VQA tasks.
 
 **Limitations of Prior Work**: Despite strong performance on general benchmarks, modern VLMs remain brittle on basic 2D spatial reasoning—frequently failing at tasks such as understanding relative positions, layout relationships, and counting. This failure is not merely a data issue; it is more fundamentally tied to two core design choices in current VLM pipelines: (1) reliance on CLIP-style encoders, and (2) flattening images into 1D token sequences with 1D positional encoding.
 
-**Root Cause**: CLIP-style encoders are optimized for global semantic alignment rather than structured spatial representations, focusing on *what* is in the image rather than *where* things are. Furthermore, the multimodal fusion stage forces 2D images into 1D sequences, discarding spatial structure along height and width dimensions. However, prior studies typically conflate data, model scale, and architecture, making it difficult to isolate which design factor causes spatial reasoning failures.
+**Key Challenge**: CLIP-style encoders are optimized for global semantic alignment rather than structured spatial representations, focusing on *what* is in the image rather than *where* things are. Furthermore, the multimodal fusion stage forces 2D images into 1D sequences, discarding spatial structure along height and width dimensions. However, prior studies typically conflate data, model scale, and architecture, making it difficult to isolate which design factor causes spatial reasoning failures.
 
-**Paper Goals**: (1) How much does the image encoder training objective affect spatial reasoning? (2) Can 2D positional encoding mitigate the loss of spatial information? (3) To what extent do these two factors explain observed spatial reasoning failures?
+**Goal**: (1) How much does the image encoder training objective affect spatial reasoning? (2) Can 2D positional encoding mitigate the loss of spatial information? (3) To what extent do these two factors explain observed spatial reasoning failures?
 
-**Starting Point**: Under the LLaVA-1.5 (7B) framework, the language model backbone and training procedure are held fixed while systematically replacing the image encoder (CLIP, SigLIP, SigLIP2, AIMv2) and positional encoding scheme (1D-RoPE vs. 2D-RoPE), constructing rigorously controlled comparative experiments.
+**Key Insight**: Under the LLaVA-1.5 (7B) framework, the language model backbone and training procedure are held fixed while systematically replacing the image encoder (CLIP, SigLIP, SigLIP2, AIMv2) and positional encoding scheme (1D-RoPE vs. 2D-RoPE), constructing rigorously controlled comparative experiments.
 
 **Core Idea**: With all other variables controlled, this work isolates the causal effects of image encoder training objectives and positional encoding structure on spatial reasoning in VLMs.
 

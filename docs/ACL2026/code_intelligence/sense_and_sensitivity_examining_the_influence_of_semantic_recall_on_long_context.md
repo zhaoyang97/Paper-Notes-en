@@ -28,15 +28,15 @@ This paper distinguishes between lexical recall (verbatim code retrieval) and se
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly deployed for tasks requiring comprehension of large codebases, and recent long-context techniques (FlashAttention, RoPE, etc.) enable models to process inputs of millions of tokens. However, a fundamental question remains unanswered: when models solve code understanding tasks, are they processing the concrete code in context or applying patterns memorized during pretraining?
+**Background**: LLMs are increasingly deployed for tasks requiring comprehension of large codebases, and recent long-context techniques (FlashAttention, RoPE, etc.) enable models to process inputs of millions of tokens. However, a fundamental question remains unanswered: when models solve code understanding tasks, are they processing the concrete code in context or applying patterns memorized during pretraining?
 
 **Limitations of Prior Work**: Existing Needle-in-a-Haystack (NIAH) benchmarks measure only lexical recall, while code understanding tasks such as output prediction exhibit low semantic recall sensitivity, allowing models to obtain correct answers via pattern-matching shortcuts and thereby concealing genuine semantic understanding failures. For instance, on the CRUXEval benchmark, removing 50% of code lines reduces model accuracy by only 44–60%, far less than the exponential degradation observed in a Python interpreter.
 
-**Root Cause**: Models can perfectly locate and verbatim reproduce code (lexical recall) yet fail to understand its runtime semantics (semantic recall). These two capabilities are decoupled, but existing benchmarks fail to distinguish between them effectively.
+**Key Challenge**: Models can perfectly locate and verbatim reproduce code (lexical recall) yet fail to understand its runtime semantics (semantic recall). These two capabilities are decoupled, but existing benchmarks fail to distinguish between them effectively.
 
-**Paper Goals**: To systematically investigate the differential behavior of lexical and semantic recall in long contexts, quantify the degree to which existing benchmarks underestimate semantic recall failures, and provide more sensitive evaluation tools.
+**Goal**: To systematically investigate the differential behavior of lexical and semantic recall in long contexts, quantify the degree to which existing benchmarks underestimate semantic recall failures, and provide more sensitive evaluation tools.
 
-**Starting Point**: The positional variation of code within long contexts is used as a diagnostic probe to systematically measure the degradation patterns of both recall capabilities as a function of position.
+**Key Insight**: The positional variation of code within long contexts is used as a diagnostic probe to systematically measure the degradation patterns of both recall capabilities as a function of position.
 
 **Core Idea**: The paper introduces the concept of *semantic recall sensitivity* to measure whether a task genuinely requires understanding of code semantics, and designs the SemTrace task to isolate semantic recall via unpredictable arithmetic operations, eliminating pattern-matching shortcuts.
 

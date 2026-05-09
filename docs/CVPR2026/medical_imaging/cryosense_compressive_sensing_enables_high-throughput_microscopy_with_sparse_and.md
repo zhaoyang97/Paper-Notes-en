@@ -28,15 +28,15 @@ This paper proposes cryoSENSE, the first computational framework for compressed 
 
 ## Background & Motivation
 
-**State of the Field**: Cryo-EM is a cornerstone technique in structural biology, yet modern direct electron detectors generate several gigabytes of data per second, far exceeding storage and transmission bandwidth. Current mitigation strategies include: (1) sub-frame summation, (2) shortening acquisition time followed by idle data transfer, and (3) post-acquisition compression — none of which resolves the real-time bandwidth bottleneck.
+**Background**: Cryo-EM is a cornerstone technique in structural biology, yet modern direct electron detectors generate several gigabytes of data per second, far exceeding storage and transmission bandwidth. Current mitigation strategies include: (1) sub-frame summation, (2) shortening acquisition time followed by idle data transfer, and (3) post-acquisition compression — none of which resolves the real-time bandwidth bottleneck.
 
 **Limitations of Prior Work**: The data deluge constrains practical throughput — instruments spend the majority of time waiting for data transfer rather than acquiring. Sub-frame summation sacrifices temporal resolution, while post-acquisition compression does not alleviate real-time bandwidth demands.
 
-**Root Cause**: Raw cryo-EM image data is highly structured (protein images reside on a low-dimensional manifold), yet existing workflows acquire and transmit data at full resolution, failing to exploit inherent redundancy.
+**Key Challenge**: Raw cryo-EM image data is highly structured (protein images reside on a low-dimensional manifold), yet existing workflows acquire and transmit data at full resolution, failing to exploit inherent redundancy.
 
-**Paper Goals**: Can compressive sensing be applied at the acquisition stage to reconstruct high-fidelity 2D particle images from undersampled measurements, thereby preserving 3D reconstruction resolution?
+**Goal**: Can compressive sensing be applied at the acquisition stage to reconstruct high-fidelity 2D particle images from undersampled measurements, thereby preserving 3D reconstruction resolution?
 
-**Starting Point**: The method exploits two forms of low-dimensional structure in cryo-EM images — (1) sparsity under predefined bases, and (2) residence on a low-dimensional manifold learnable by diffusion models — to design two complementary reconstruction strategies.
+**Key Insight**: The method exploits two forms of low-dimensional structure in cryo-EM images — (1) sparsity under predefined bases, and (2) residence on a low-dimensional manifold learnable by diffusion models — to design two complementary reconstruction strategies.
 
 **Core Idea**: Sparse priors + generative priors = complementary operating regimes for compressed cryo-EM imaging.
 

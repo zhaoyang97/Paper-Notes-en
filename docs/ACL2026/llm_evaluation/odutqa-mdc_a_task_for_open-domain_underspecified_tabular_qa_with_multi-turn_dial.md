@@ -28,15 +28,15 @@ This paper introduces the ODUTQA-MDC task and benchmark, the first systematic st
 
 ## Background & Motivation
 
-**State of the Field**: Large language models have driven advances in Tabular QA, with existing Text-to-SQL methods achieving strong performance on standard benchmarks such as Spider. Open-domain tabular QA further increases difficulty by requiring autonomous retrieval of relevant tables from large-scale databases.
+**Background**: Large language models have driven advances in Tabular QA, with existing Text-to-SQL methods achieving strong performance on standard benchmarks such as Spider. Open-domain tabular QA further increases difficulty by requiring autonomous retrieval of relevant tables from large-scale databases.
 
 **Limitations of Prior Work**: In real-world scenarios, user queries are frequently underspecified—containing spelling errors, vague expressions, or incomplete information. For example, a user may omit a city name (missing FROM clause), replace a precise column name with a vague description (ambiguous SELECT intent), or use abbreviations instead of full names (mismatched WHERE conditions). Such underspecification fundamentally impedes correct SQL generation.
 
-**Root Cause**: Existing studies either detect underspecification only in closed-domain settings without resolving it, or rely on statically pre-scripted dialogues (e.g., PRACTIQ), failing to capture the dynamic and unpredictable nature of real user interactions. There is a lack of appropriate datasets and evaluation frameworks for systematically studying the complete "detect–clarify–answer" pipeline.
+**Key Challenge**: Existing studies either detect underspecification only in closed-domain settings without resolving it, or rely on statically pre-scripted dialogues (e.g., PRACTIQ), failing to capture the dynamic and unpredictable nature of real user interactions. There is a lack of appropriate datasets and evaluation frameworks for systematically studying the complete "detect–clarify–answer" pipeline.
 
-**Paper Goals**: Define the ODUTQA-MDC task, construct the first comprehensive benchmark—including a large-scale dataset, fine-grained annotation scheme, and dynamic clarification interface—and propose a baseline system.
+**Goal**: Define the ODUTQA-MDC task, construct the first comprehensive benchmark—including a large-scale dataset, fine-grained annotation scheme, and dynamic clarification interface—and propose a baseline system.
 
-**Starting Point**: Underspecification is categorized according to SQL clause structure: table-scope ambiguity (FROM), query-intent ambiguity (SELECT), query-condition ambiguity (WHERE), and mixed types. This taxonomy naturally corresponds to different stages of the Text-to-SQL pipeline.
+**Key Insight**: Underspecification is categorized according to SQL clause structure: table-scope ambiguity (FROM), query-intent ambiguity (SELECT), query-condition ambiguity (WHERE), and mixed types. This taxonomy naturally corresponds to different stages of the Text-to-SQL pipeline.
 
 **Core Idea**: Construct a closed-loop evaluation pipeline of "detect–clarify–re-detect," enabling scalable multi-turn interaction evaluation through a dynamic user simulator, alongside the proposed MAIC-TQA multi-agent framework as a baseline.
 

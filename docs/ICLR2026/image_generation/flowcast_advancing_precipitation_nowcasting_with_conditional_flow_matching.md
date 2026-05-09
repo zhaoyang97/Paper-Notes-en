@@ -28,15 +28,15 @@ This work is the first to apply Conditional Flow Matching (CFM) as an end-to-end
 
 ## Background & Motivation
 
-**State of the Field**: Precipitation nowcasting is critical for flood prevention and operational decision-making. Deep learning approaches have evolved from deterministic RNN/Transformer models to probabilistic diffusion-based methods. Latent-space diffusion models such as PreDiff and LDCast represent the current state of the art, while CasCast—a hybrid deterministic–diffusion framework—achieves the strongest overall performance.
+**Background**: Precipitation nowcasting is critical for flood prevention and operational decision-making. Deep learning approaches have evolved from deterministic RNN/Transformer models to probabilistic diffusion-based methods. Latent-space diffusion models such as PreDiff and LDCast represent the current state of the art, while CasCast—a hybrid deterministic–diffusion framework—achieves the strongest overall performance.
 
 **Limitations of Prior Work**: Deterministic models optimized with MSE produce blurry predictions and fail to quantify uncertainty. Diffusion models require hundreds of iterative denoising steps, incurring substantial computational cost that is incompatible with time-sensitive applications (e.g., flash flood warnings) that demand rapid ensemble forecasting.
 
-**Root Cause**: There exists a fundamental trade-off between predictive accuracy and computational efficiency—diffusion models are accurate but slow at inference, whereas deterministic models are fast but produce oversmoothed outputs. A probabilistic forecasting method that is simultaneously fast and accurate is needed.
+**Key Challenge**: There exists a fundamental trade-off between predictive accuracy and computational efficiency—diffusion models are accurate but slow at inference, whereas deterministic models are fast but produce oversmoothed outputs. A probabilistic forecasting method that is simultaneously fast and accurate is needed.
 
-**Paper Goals**: To investigate whether CFM can replace diffusion models in this setting, achieving or exceeding predictive accuracy while drastically reducing the number of sampling steps.
+**Goal**: To investigate whether CFM can replace diffusion models in this setting, achieving or exceeding predictive accuracy while drastically reducing the number of sampling steps.
 
-**Starting Point**: The straight-line ODE trajectories of CFM are better suited for spatiotemporal prediction than the curved probability-flow paths of diffusion models. Although radar reflectivity distributions are multimodal, their strong temporal consistency makes linear interpolation a more stable prior.
+**Key Insight**: The straight-line ODE trajectories of CFM are better suited for spatiotemporal prediction than the curved probability-flow paths of diffusion models. Although radar reflectivity distributions are multimodal, their strong temporal consistency makes linear interpolation a more stable prior.
 
 **Core Idea**: The straight transport paths learned by CFM in latent space naturally align with the continuity of spatiotemporal data, enabling high-quality probabilistic forecasts with fewer steps.
 

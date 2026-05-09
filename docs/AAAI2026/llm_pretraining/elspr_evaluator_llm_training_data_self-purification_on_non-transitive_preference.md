@@ -28,15 +28,15 @@ ELSPR models pairwise preferences of LLM evaluators as tournament graphs, identi
 
 ## Background & Motivation
 
-**State of the Field**: LLM-as-judge has been widely adopted to evaluate other models. Pairwise comparison is a common paradigm, but it may produce non-transitive preferences (A>B, B>C, C>A).
+**Background**: LLM-as-judge has been widely adopted to evaluate other models. Pairwise comparison is a common paradigm, but it may produce non-transitive preferences (A>B, B>C, C>A).
 
 **Limitations of Prior Work**: (1) Non-transitive preferences undermine ranking reliability; (2) existing head-to-head evaluations neglect transitivity constraints; (3) the root cause of non-transitivity — low-quality or ambiguous training data — has not been systematically addressed.
 
-**Root Cause**: Ambiguous comparison pairs in training data cause evaluators to learn contradictory preference patterns.
+**Key Challenge**: Ambiguous comparison pairs in training data cause evaluators to learn contradictory preference patterns.
 
-**Paper Goals**: Automatically identify and remove training data that induces non-transitive preferences.
+**Goal**: Automatically identify and remove training data that induces non-transitive preferences.
 
-**Starting Point**: Modeling preferences as a graph-theoretic problem — tournament graphs combined with SCC analysis.
+**Key Insight**: Modeling preferences as a graph-theoretic problem — tournament graphs combined with SCC analysis.
 
 **Core Idea**: Non-transitive relations are identified via SCCs in tournament graphs, which are then reconstructed into DAGs to filter inconsistent training samples.
 

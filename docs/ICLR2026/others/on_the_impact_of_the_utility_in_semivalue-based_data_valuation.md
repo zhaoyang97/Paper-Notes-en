@@ -28,15 +28,15 @@ This paper introduces a geometric representation termed *spatial signature* to u
 
 ## Background & Motivation
 
-**State of the Field**: Semivalue-based data valuation is a mainstream approach to data quality assessment, employing solution concepts from cooperative game theory—such as the Shapley value, Beta Shapley, and Banzhaf value—to assign a value score to each data point that reflects its contribution to downstream ML tasks. These methods are widely used for identifying high-quality training samples, data cleansing, and fair data pricing.
+**Background**: Semivalue-based data valuation is a mainstream approach to data quality assessment, employing solution concepts from cooperative game theory—such as the Shapley value, Beta Shapley, and Banzhaf value—to assign a value score to each data point that reflects its contribution to downstream ML tasks. These methods are widely used for identifying high-quality training samples, data cleansing, and fair data pricing.
 
 **Limitations of Prior Work**: Computing semivalues requires a user-specified utility function, a choice that is inherently subjective. For instance, when training a cat-dog classifier, accuracy, precision, recall, F1, and AUROC are all plausible utilities, yet different choices may yield entirely different data rankings. Experiments conducted on 8 datasets reveal that, on the Titanic dataset under Shapley values, the rank correlation between accuracy and F1 is as low as $-0.19$, indicating severe ranking instability.
 
-**Root Cause**: Data valuation methods purport to objectively assess the importance of individual data points, yet their outputs are highly sensitive to the choice of utility function—a choice for which no uniquely correct answer exists. This leaves practitioners unable to determine whether their valuation results are trustworthy.
+**Key Challenge**: Data valuation methods purport to objectively assess the importance of individual data points, yet their outputs are highly sensitive to the choice of utility function—a choice for which no uniquely correct answer exists. This leaves practitioners unable to determine whether their valuation results are trustworthy.
 
-**Paper Goals**: (1) How can the problem of utility variation's impact on rankings be modeled in a unified manner? (2) How can this robustness be quantified? (3) How large are the robustness differences between semivalues (Shapley vs. Banzhaf), and why?
+**Goal**: (1) How can the problem of utility variation's impact on rankings be modeled in a unified manner? (2) How can this robustness be quantified? (3) How large are the robustness differences between semivalues (Shapley vs. Banzhaf), and why?
 
-**Starting Point**: The authors observe that, for any semivalue, the data value scores under all utility functions can be expressed as a linear functional in a low-dimensional space. This implies that ranking changes can be geometrized as variations in projection order induced by directional rotation on the unit circle—a concise and analytically tractable problem.
+**Key Insight**: The authors observe that, for any semivalue, the data value scores under all utility functions can be expressed as a linear functional in a low-dimensional space. This implies that ranking changes can be geometrized as variations in projection order induced by directional rotation on the unit circle—a concise and analytically tractable problem.
 
 **Core Idea**: Each data point is embedded into a two-dimensional space (the spatial signature) determined by the semivalue weights and the base utilities, transforming the question of ranking stability under utility variation into a geometric problem that admits precise measurement and comparison.
 

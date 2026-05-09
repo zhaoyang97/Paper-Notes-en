@@ -28,11 +28,11 @@ CLAY proposes a training-free conditional visual similarity computation method t
 
 ## Background & Motivation
 
-**State of the Field**: Image retrieval systems typically rely on fixed, singular similarity metrics. However, human perception of similarity is adaptive — when viewing the same image, one may attend to species, color, action, or other aspects depending on context.
+**Background**: Image retrieval systems typically rely on fixed, singular similarity metrics. However, human perception of similarity is adaptive — when viewing the same image, one may attend to species, color, action, or other aspects depending on context.
 
 **Limitations of Prior Work**: (1) Training-based methods require condition-specific model training and must recompute all database features when conditions change; (2) existing methods support only single-condition retrieval and cannot simultaneously specify multiple dimensions of interest; (3) training data requires paired images for each condition.
 
-**Root Cause**: Recomputing database embeddings upon condition changes incurs substantial computational overhead, yet different conditions inherently demand different similarity computation strategies.
+**Key Challenge**: Recomputing database embeddings upon condition changes incurs substantial computational overhead, yet different conditions inherently demand different similarity computation strategies.
 
 **Core Idea**: Decouple the conditioning process from visual feature extraction — keep visual embeddings fixed and dynamically modulate similarity in the comparison space according to text conditions.
 

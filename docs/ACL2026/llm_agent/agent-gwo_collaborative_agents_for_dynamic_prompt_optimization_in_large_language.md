@@ -29,15 +29,15 @@ This paper proposes Agent-GWO, which integrates the leader-follower hierarchy of
 
 ## Background & Motivation
 
-**State of the Field**: Prompting strategies such as Chain-of-Thought (CoT) have substantially improved LLM performance on complex reasoning tasks; however, high-quality reasoning still relies heavily on manually designed static prompts. Methods such as ToT, GoT, and AoT improve reasoning trajectories under fixed prompts but leave unresolved the inherent fragility of the prompts themselves.
+**Background**: Prompting strategies such as Chain-of-Thought (CoT) have substantially improved LLM performance on complex reasoning tasks; however, high-quality reasoning still relies heavily on manually designed static prompts. Methods such as ToT, GoT, and AoT improve reasoning trajectories under fixed prompts but leave unresolved the inherent fragility of the prompts themselves.
 
 **Limitations of Prior Work**: (1) Reasoning performance is highly sensitive to prompt wording, example ordering, and contextual perturbations, where minor changes can cause substantial performance degradation; (2) existing automatic prompt optimization methods typically employ single-agent local search and cannot simultaneously optimize both prompts and decoding hyperparameters; (3) the joint space of prompt templates and decoding configurations (temperature, top-p, repetition penalty, etc.) is vast, rendering manual trial-and-error extremely inefficient.
 
-**Root Cause**: Reasoning quality is jointly governed by both the prompt template and the decoding configuration, yet existing methods either optimize only the prompt (ignoring decoding settings) or tune only decoding parameters under a fixed prompt, lacking a unified optimization framework.
+**Key Challenge**: Reasoning quality is jointly governed by both the prompt template and the decoding configuration, yet existing methods either optimize only the prompt (ignoring decoding settings) or tune only decoding parameters under a fixed prompt, lacking a unified optimization framework.
 
-**Paper Goals**: Automatically discover more stable and task-adaptive prompt–decoding configuration pairs at inference time, without any additional training.
+**Goal**: Automatically discover more stable and task-adaptive prompt–decoding configuration pairs at inference time, without any additional training.
 
-**Starting Point**: Each agent is defined as a combination of a prompt template and decoding hyperparameters, recasting prompt optimization as a swarm intelligence optimization problem. GWO's inherent leader-follower hierarchical structure is well-suited to guiding collaborative population-based search.
+**Key Insight**: Each agent is defined as a combination of a prompt template and decoding hyperparameters, recasting prompt optimization as a swarm intelligence optimization problem. GWO's inherent leader-follower hierarchical structure is well-suited to guiding collaborative population-based search.
 
 **Core Idea**: The α/β/δ leader mechanism of GWO drives iterative optimization over a population of agents—each comprising a prompt and decoding parameters—where the three best-performing agents guide the update of the remaining agents, ultimately converging to a robust optimal inference configuration.
 

@@ -28,15 +28,15 @@ This paper proposes AVA-Bench, which decomposes the evaluation of vision foundat
 
 ## Background & Motivation
 
-**State of the Field**: Vision foundation models (e.g., DINOv2, CLIP, SAM) have proliferated rapidly. Evaluation approaches fall into two categories: task-specific evaluation (e.g., ImageNet classification, COCO detection) and general VQA evaluation (using an LLM as a universal head and testing on VQA benchmarks).
+**Background**: Vision foundation models (e.g., DINOv2, CLIP, SAM) have proliferated rapidly. Evaluation approaches fall into two categories: task-specific evaluation (e.g., ImageNet classification, COCO detection) and general VQA evaluation (using an LLM as a universal head and testing on VQA benchmarks).
 
 **Limitations of Prior Work**: General VQA evaluation has two blind spots: (i) the instruction fine-tuning data distribution is misaligned with the VQA test distribution, so failures may stem from data mismatch rather than insufficient visual ability; (ii) VQA questions typically require multiple visual abilities simultaneously, making it impossible to attribute errors to the absence of all required abilities versus only one critical one.
 
-**Root Cause**: Composite-task evaluation does not support ability attribution — when a VFM underperforms on VQA, the specific failing ability cannot be identified with existing methods.
+**Key Challenge**: Composite-task evaluation does not support ability attribution — when a VFM underperforms on VQA, the specific failing ability cannot be identified with existing methods.
 
-**Paper Goals**: To design a benchmark that isolates individual visual abilities for evaluation, while ensuring train/test distribution consistency to eliminate noise introduced by data mismatch.
+**Goal**: To design a benchmark that isolates individual visual abilities for evaluation, while ensuring train/test distribution consistency to eliminate noise introduced by data mismatch.
 
-**Starting Point**: Decompose complex visual reasoning into 14 "atomic visual abilities" (analogous to the periodic table of elements), evaluating each ability independently.
+**Key Insight**: Decompose complex visual reasoning into 14 "atomic visual abilities" (analogous to the periodic table of elements), evaluating each ability independently.
 
 **Core Idea**: Through atomic decomposition and distribution alignment, transform VFM evaluation from "speculative selection" to "principled engineering selection."
 

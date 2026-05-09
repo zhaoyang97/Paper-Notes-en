@@ -28,15 +28,15 @@ This paper proposes a multimodal Transformer encoder–decoder framework that ta
 
 ## Background & Motivation
 
-**State of the Field**: Modern large-scale cosmological surveys require vast ensembles of simulated universes for statistical inference. Hydrodynamical simulations accurately model galaxy formation, but a single run requires ~$2 \times 10^8$ CPU hours, making it infeasible to cover the parameter space.
+**Background**: Modern large-scale cosmological surveys require vast ensembles of simulated universes for statistical inference. Hydrodynamical simulations accurately model galaxy formation, but a single run requires ~$2 \times 10^8$ CPU hours, making it infeasible to cover the parameter space.
 
 **Limitations of Prior Work**: Dark matter-only N-body simulations are more than 100× faster, but yield only the dark matter distribution without galaxy information. Traditional approaches such as the Halo Occupation Distribution (HOD) paint galaxies via simple statistical mappings and fail to capture complex subgrid physical dependencies.
 
-**Root Cause**: Galaxy formation is inherently a stochastic process, requiring a generative model to capture the conditional probability distribution $P(\text{galaxies} \mid \text{DM fields}, \theta)$ rather than a deterministic mapping. Moreover, the number of galaxies itself depends on cosmological and astrophysical parameters and cannot be fixed a priori.
+**Key Challenge**: Galaxy formation is inherently a stochastic process, requiring a generative model to capture the conditional probability distribution $P(\text{galaxies} \mid \text{DM fields}, \theta)$ rather than a deterministic mapping. Moreover, the number of galaxies itself depends on cosmological and astrophysical parameters and cannot be fixed a priori.
 
-**Paper Goals**: To construct the first accelerated forward model capable of simultaneously learning the spatial distribution of galaxies, their physical properties (stellar mass, velocity, magnitude), and their dependence on cosmological and astrophysical parameters.
+**Goal**: To construct the first accelerated forward model capable of simultaneously learning the spatial distribution of galaxies, their physical properties (stellar mass, velocity, magnitude), and their dependence on cosmological and astrophysical parameters.
 
-**Starting Point**: The problem is formulated as "given 3D fields → generate a point cloud sequence," which naturally suits a multimodal Transformer encoder–decoder architecture.
+**Key Insight**: The problem is formulated as "given 3D fields → generate a point cloud sequence," which naturally suits a multimodal Transformer encoder–decoder architecture.
 
 **Core Idea**: Dark matter fields are encoded via CBAM + ViT, and a cross-attention decoder autoregressively produces a sequence of discretized galaxy tokens, enabling parameter-conditioned galaxy catalog generation.
 

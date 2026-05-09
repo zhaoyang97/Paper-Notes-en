@@ -28,15 +28,15 @@ This paper proposes Web-Shepherd, the first process reward model (PRM) specifica
 
 ## Background & Motivation
 
-**State of the Field**: MLLM-driven web navigation agents suffer from reliability issues, frequently falling into repetitive action loops and struggling with goal-directed planning across multiple steps.
+**Background**: MLLM-driven web navigation agents suffer from reliability issues, frequently falling into repetitive action loops and struggling with goal-directed planning across multiple steps.
 
 **Limitations of Prior Work**: ① Binary reward signals (success/failure) are sparse and yield low learning efficiency; ② Using GPT-4o as an evaluator is prohibitively expensive ($14,000 and 40 A100 hours to evaluate 812 queries), making it unsuitable for practical deployment.
 
-**Root Cause**: While process reward models (PRMs) have proven successful in mathematical reasoning, no dedicated PRM exists for web navigation. Outcome reward models (ORMs) are also ill-suited — users cannot be refunded after multiple failed flight bookings.
+**Key Challenge**: While process reward models (PRMs) have proven successful in mathematical reasoning, no dedicated PRM exists for web navigation. Outcome reward models (ORMs) are also ill-suited — users cannot be refunded after multiple failed flight bookings.
 
-**Paper Goals**: ① Construct a web navigation-specific PRM; ② Build training data and an evaluation benchmark; ③ Achieve low-cost, high-accuracy step-level reward evaluation.
+**Goal**: ① Construct a web navigation-specific PRM; ② Build training data and an evaluation benchmark; ③ Achieve low-cost, high-accuracy step-level reward evaluation.
 
-**Starting Point**: High-level user instructions are decomposed into structured sub-goals via checklists, making step-level reward evaluation more reliable and interpretable.
+**Key Insight**: High-level user instructions are decomposed into structured sub-goals via checklists, making step-level reward evaluation more reliable and interpretable.
 
 **Core Idea**: Checklist-based sub-goal decomposition combined with NTP-trained step-level reward modeling yields a low-cost, high-accuracy PRM for web agents.
 

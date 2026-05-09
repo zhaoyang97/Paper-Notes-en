@@ -28,15 +28,15 @@ This paper systematically evaluates the trade-off between safety (erasure succes
 
 ## Background & Motivation
 
-1.  **State of the Field**: Text-to-image diffusion models like Stable Diffusion have achieved great success in content creation, but their training data inevitably contains unsafe content (e.g., pornography, copyrighted material). Due to the high cost of retraining, post-hoc concept erasure methods have become the mainstream solution.
+1.  **Background**: Text-to-image diffusion models like Stable Diffusion have achieved great success in content creation, but their training data inevitably contains unsafe content (e.g., pornography, copyrighted material). Due to the high cost of retraining, post-hoc concept erasure methods have become the mainstream solution.
 
 2.  **Limitations of Prior Work**: Existing unlearning evaluation focuses almost exclusively on "erasure success rate"—whether the target concept is successfully suppressed. However, a model outputting purely black images could technically achieve a perfect erasure score, indicating that single-metric evaluation is inherently incomplete.
 
-3.  **Root Cause**: Erasure operations act on the model's shared semantic space (cross-attention subspace), while compositional generation (attribute binding, spatial relations, counting) relies precisely on these shared representations. Therefore, erasure targeted at specific concepts is likely to cause "collateral damage" to the model's compositional capabilities.
+3.  **Key Challenge**: Erasure operations act on the model's shared semantic space (cross-attention subspace), while compositional generation (attribute binding, spatial relations, counting) relies precisely on these shared representations. Therefore, erasure targeted at specific concepts is likely to cause "collateral damage" to the model's compositional capabilities.
 
-4.  **Paper Goals**: Systematically quantify the degree to which different unlearning methods affect compositional generation capabilities, revealing the trade-off between safety and utility.
+4.  **Goal**: Systematically quantify the degree to which different unlearning methods affect compositional generation capabilities, revealing the trade-off between safety and utility.
 
-5.  **Starting Point**: The authors argue that compositional ability is a proxy metric for model generative capacity—if unlearning breaks attribute binding (e.g., "green banana"), it suggests that the generative grammar itself has been damaged, not just a specific concept removed.
+5.  **Key Insight**: The authors argue that compositional ability is a proxy metric for model generative capacity—if unlearning breaks attribute binding (e.g., "green banana"), it suggests that the generative grammar itself has been damaged, not just a specific concept removed.
 
 6.  **Core Idea**: By using compositional benchmarks such as T2I-CompBench++ and GenEval, the paper reveals for the first time a consistent inverse relationship between safety and compositionality in concept erasure methods.
 

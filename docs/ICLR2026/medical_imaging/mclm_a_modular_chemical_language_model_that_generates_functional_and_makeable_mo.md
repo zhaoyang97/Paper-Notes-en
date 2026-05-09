@@ -28,15 +28,15 @@ This paper proposes mCLM (Modular Chemical Language Model), which represents mol
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have demonstrated the ability to understand chemical knowledge, yet remain limited in generating functional small molecules—generated molecules are typically incompatible with automated synthesis workflows.
+**Background**: LLMs have demonstrated the ability to understand chemical knowledge, yet remain limited in generating functional small molecules—generated molecules are typically incompatible with automated synthesis workflows.
 
 **Limitations of Prior Work**: Existing molecular generation methods rely on atom-level or fragment-level representations (e.g., SMILES). While the generated molecules may satisfy pharmacological objectives, they are rarely manufacturable through automated synthesis pipelines, creating a substantial gap between computational prediction and experimental validation.
 
-**Root Cause**: Molecular "function" (pharmacological activity, toxicity, etc.) and "makeability" (known synthesis routes, available building blocks) are two independent optimization objectives, and conventional methods focus only on the former.
+**Key Challenge**: Molecular "function" (pharmacological activity, toxicity, etc.) and "makeability" (known synthesis routes, available building blocks) are two independent optimization objectives, and conventional methods focus only on the former.
 
-**Paper Goals**: To enable LLMs to learn a novel molecular language such that generated molecules simultaneously exhibit optimized chemical function and guaranteed synthetic feasibility.
+**Goal**: To enable LLMs to learn a novel molecular language such that generated molecules simultaneously exhibit optimized chemical function and guaranteed synthetic feasibility.
 
-**Starting Point**: Molecules are represented as combinatorial sequences drawn from a predefined building block library, where each block corresponds to a chemically synthesizable fragment compatible with automated synthesis.
+**Key Insight**: Molecules are represented as combinatorial sequences drawn from a predefined building block library, where each block corresponds to a chemically synthesizable fragment compatible with automated synthesis.
 
 **Core Idea**: Replace conventional SMILES with a modular molecular language, allowing LLMs to search for functionally optimal molecules within a constrained synthetic space.
 

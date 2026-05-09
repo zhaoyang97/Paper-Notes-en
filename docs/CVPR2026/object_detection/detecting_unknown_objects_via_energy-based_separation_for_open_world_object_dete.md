@@ -27,15 +27,15 @@ content_hash: c82bc8437cb4a6aa
 This paper proposes DEUS, a framework that constructs orthogonal known/unknown subspaces via Simplex ETF and employs energy scores to guide feature separation (EUS), while mitigating cross-task interference between old and new categories through an Energy-based Known Distinction loss (EKD), achieving substantially improved unknown recall on OWOD benchmarks.
 
 ## Background & Motivation
-**State of the Field**: Open World Object Detection (OWOD) requires detectors to discover unknown objects while incrementally learning known categories. Existing methods assign pseudo-labels to background regions based on known-class predictions to facilitate unknown object discovery.
+**Background**: Open World Object Detection (OWOD) requires detectors to discover unknown objects while incrementally learning known categories. Existing methods assign pseudo-labels to background regions based on known-class predictions to facilitate unknown object discovery.
 
 **Limitations of Prior Work**: (1) Unknown discovery based on known-class predictions frequently selects partial regions of known objects or true background regions, resulting in poor pseudo-label quality; (2) existing energy-based methods operate solely within the known feature space and lack explicit modeling of unknown object representations; (3) memory replay alleviates catastrophic forgetting but introduces cross-task interference between old and new categories.
 
-**Root Cause**: Unknown objects lack supervision, making it challenging to learn discriminative unknown representations. Additionally, joint training of old and new categories in incremental learning leads to mutual interference.
+**Key Challenge**: Unknown objects lack supervision, making it challenging to learn discriminative unknown representations. Additionally, joint training of old and new categories in incremental learning leads to mutual interference.
 
-**Paper Goals**: To explicitly construct separated feature spaces for known and unknown objects, and to reduce cross-task interference between old and new categories during incremental learning.
+**Goal**: To explicitly construct separated feature spaces for known and unknown objects, and to reduce cross-task interference between old and new categories during incremental learning.
 
-**Starting Point**: Exploit the geometric properties of the Simplex ETF to construct two orthogonal subspaces, using energy scores to simultaneously guide feature separation in both spaces.
+**Key Insight**: Exploit the geometric properties of the Simplex ETF to construct two orthogonal subspaces, using energy scores to simultaneously guide feature separation in both spaces.
 
 **Core Idea**: Dual-subspace Energy-based Unknown Separation (EUS) combined with Energy-based Known Distinction (EKD) addresses the two core challenges of OWOD.
 

@@ -34,7 +34,7 @@ Large language models face a fundamental dilemma in multi-step reasoning tasks:
 
 **Limitations of Prior Work — SFT**: Supervised fine-tuning enforces token-level imitation of expert trajectories. For long and complex reasoning chains, this rigid imitation tends to cause overfitting and shallow reasoning behavior. Experiments show that direct SFT on the s1K dataset actually degrades performance (see Figure 1).
 
-**Root Cause**: Hard problems have limited data and complex reasoning chains, making SFT ineffective; yet the model cannot sample correct solutions, making RLVR equally ineffective. This is especially pronounced when training small open-source models.
+**Key Challenge**: Hard problems have limited data and complex reasoning chains, making SFT ineffective; yet the model cannot sample correct solutions, making RLVR equally ineffective. This is especially pronounced when training small open-source models.
 
 The authors define this problem regime as $\mathcal{D}_{\text{hard}}$—the set of problems on which the model's success rate across $k$ samples approaches zero. The goal of SRL is to provide effective learning signals within this hard regime.
 

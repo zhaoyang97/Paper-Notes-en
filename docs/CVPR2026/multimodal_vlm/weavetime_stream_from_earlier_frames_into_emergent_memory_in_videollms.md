@@ -29,18 +29,18 @@ This paper diagnoses the *Time-Agnosticism* problem in current Video-LLMs and pr
 
 ## Background & Motivation
 
-**State of the Field**: Modern visual understanding systems are increasingly deployed in streaming scenarios where frames arrive in real time (autonomous driving, human–computer interaction, live surveillance, etc.). Video-LLM-based approaches (e.g., LLaVA-Video, Qwen2-VL) perform well in offline settings but face fundamental challenges in streaming contexts.
+**Background**: Modern visual understanding systems are increasingly deployed in streaming scenarios where frames arrive in real time (autonomous driving, human–computer interaction, live surveillance, etc.). Video-LLM-based approaches (e.g., LLaVA-Video, Qwen2-VL) perform well in offline settings but face fundamental challenges in streaming contexts.
 
 **Limitations of Prior Work**:
 1. Current Video-LLMs suffer from **Time-Agnosticism**: they treat video as an unordered bag of evidence rather than a causally ordered sequence. Experiments show that shuffling video frame order has virtually no effect on model accuracy, and performance even improves on certain temporal tasks (whereas human performance drops sharply).
 2. Existing streaming methods (e.g., StreamBridge, VideoLLM-Online) either require large dedicated streaming datasets and costly training, or rely on customized memory mechanisms with limited effectiveness.
 3. Compressive memory (selecting/merging/discarding visual features) loses information; retrieval-based memory preserves information but suffers from unnecessary long-range reloading and loss of temporal focus.
 
-**Root Cause**: Video-LLMs lack genuine temporal understanding, and existing streaming enhancement methods cannot simultaneously achieve temporal awareness and efficient memory management.
+**Key Challenge**: Video-LLMs lack genuine temporal understanding, and existing streaming enhancement methods cannot simultaneously achieve temporal awareness and efficient memory management.
 
-**Paper Goals**: Address two coupled problems caused by Time-Agnosticism — **Temporal Order Ambiguity** and **Past-Current Focus Blindness**.
+**Goal**: Address two coupled problems caused by Time-Agnosticism — **Temporal Order Ambiguity** and **Past-Current Focus Blindness**.
 
-**Starting Point**: Teach temporal order first (during training), then exploit it (during inference) — "first teach order, then use order."
+**Key Insight**: Teach temporal order first (during training), then exploit it (during inference) — "first teach order, then use order."
 
 **Core Idea**: A lightweight temporal reconstruction auxiliary task enables the model to perceive frame order; uncertainty-driven coarse-to-fine retrieval then supports on-demand retrospection at inference time.
 

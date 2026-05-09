@@ -29,15 +29,15 @@ This paper models expert selection in MoE as a sequential decision problem and o
 
 ## Background & Motivation
 
-**State of the Field**: Mixture-of-Experts (MoE) reduces the computational cost of Transformers by sparsely activating a subset of parameters while maintaining high model capacity. MoE has recently been extended to vision-language models (VLMs) for efficient multimodal understanding. The standard practice is to greedily select experts layer-wise using deterministic top-K routing.
+**Background**: Mixture-of-Experts (MoE) reduces the computational cost of Transformers by sparsely activating a subset of parameters while maintaining high model capacity. MoE has recently been extended to vision-language models (VLMs) for efficient multimodal understanding. The standard practice is to greedily select experts layer-wise using deterministic top-K routing.
 
 **Limitations of Prior Work**: Deterministic top-K routing restricts exploration of diverse expert combinations and is prone to overfitting to a small subset of experts. Methods such as V-MoE introduce stochasticity by adding Gaussian noise to gating scores, but this heuristic perturbation only partially alleviates the problem without explicitly optimizing the expert selection "policy."
 
-**Root Cause**: Existing approaches are either deterministic (lacking exploration) or noise-based stochastic (lacking directional guidance), and neither truly learns an optimal expert routing policy. Expert routing is inherently a sequential decision problem, yet it has consistently been treated as a simple softmax + top-K operation.
+**Key Challenge**: Existing approaches are either deterministic (lacking exploration) or noise-based stochastic (lacking directional guidance), and neither truly learns an optimal expert routing policy. Expert routing is inherently a sequential decision problem, yet it has consistently been treated as a simple softmax + top-K operation.
 
-**Paper Goals**: (1) How can MoE routers learn better expert combinations? (2) How can routing policy exploration be conducted efficiently and stably in multimodal settings?
+**Goal**: (1) How can MoE routers learn better expert combinations? (2) How can routing policy exploration be conducted efficiently and stably in multimodal settings?
 
-**Starting Point**: Expert selection is explicitly modeled as a sequential decision problem. Reinforcement learning (GRPO) is employed to explore diverse expert combinations through multiple rollouts and to optimize the routing policy based on reward feedback. The observation that tokens from different modalities exhibit distinct expert preferences is leveraged as a prior to constrain the exploration space.
+**Key Insight**: Expert selection is explicitly modeled as a sequential decision problem. Reinforcement learning (GRPO) is employed to explore diverse expert combinations through multiple rollouts and to optimize the routing policy based on reward feedback. The observation that tokens from different modalities exhibit distinct expert preferences is leveraged as a prior to constrain the exploration space.
 
 **Core Idea**: Deterministic top-K routing is replaced by GRPO-based reinforcement learning. Token-GRPO and Gate-GRPO are jointly applied to optimize token generation and layer-wise expert selection policies, respectively, while modality-aware guidance is introduced to accelerate convergence.
 

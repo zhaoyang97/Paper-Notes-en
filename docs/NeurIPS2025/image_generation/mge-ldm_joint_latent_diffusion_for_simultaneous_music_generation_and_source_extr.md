@@ -29,11 +29,11 @@ This paper proposes MGE-LDM, the first model to simultaneously achieve music mix
 
 ## Background & Motivation
 
-- **State of the Field**: Music generation models have achieved remarkable progress, yet most can only generate a single mixture waveform and lack fine-grained control over individual instrument tracks. Obtaining individual tracks requires additional source separation techniques.
+- **Background**: Music generation models have achieved remarkable progress, yet most can only generate a single mixture waveform and lack fine-grained control over individual instrument tracks. Obtaining individual tracks requires additional source separation techniques.
 - **Limitations of Prior Work**: Recent works (MSDM, GMSDI, MSG-LD) attempt to jointly model multi-track audio within a unified diffusion framework, but suffer from two critical limitations:
   - **Reliance on predefined instrument categories**: only fixed instrument sets (e.g., bass, drums, guitar, piano) can be handled.
   - **Linear mixture assumption**: the mixture is assumed to be a linear superposition of individual sources—valid in the waveform domain, but inapplicable under the nonlinear encoder–decoder structure of latent diffusion models.
-- **Root Cause**: These limitations prevent existing methods from handling mixture generation and separation for arbitrary instruments.
+- **Key Challenge**: These limitations prevent existing methods from handling mixture generation and separation for arbitrary instruments.
 
 ## Method
 

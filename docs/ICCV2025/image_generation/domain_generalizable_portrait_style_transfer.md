@@ -28,7 +28,7 @@ DGPST proposes a diffusion-based portrait style transfer framework that establis
 
 ## Background & Motivation
 
-**State of the Field**: Portrait style transfer requires precise local tone adjustment across facial semantic regions (skin, lips, eyes, hair, background) while preserving subject identity and facial structure. Existing approaches include traditional handcrafted methods (Shih et al.), GAN-based methods (StyleGAN series), and diffusion-based methods.
+**Background**: Portrait style transfer requires precise local tone adjustment across facial semantic regions (skin, lips, eyes, hair, background) while preserving subject identity and facial structure. Existing approaches include traditional handcrafted methods (Shih et al.), GAN-based methods (StyleGAN series), and diffusion-based methods.
 
 **Limitations of Prior Work**:
 - **Traditional methods** (Shih, Chen et al.) rely on explicit semantic region alignment and are effective only when structural differences between input and reference are small; they cannot handle cross-domain scenarios (photo → cartoon).
@@ -36,11 +36,11 @@ DGPST proposes a diffusion-based portrait style transfer framework that establis
 - **Existing diffusion methods** (StyleID, IP-Adapter+ControlNet, InstantStyle+) primarily target artistic style transfer without considering semantic correspondence, resulting in poor semantic region alignment in portrait style transfer.
 - General-purpose style transfer methods perform poorly on portrait tasks that require fine-grained semantic alignment.
 
-**Root Cause**: Portrait style transfer simultaneously requires ① precise cross-domain semantic correspondence (eye-to-eye, lip-to-lip) and ② high-quality style transfer (tone, texture), yet existing methods fall short on one or both fronts.
+**Key Challenge**: Portrait style transfer simultaneously requires ① precise cross-domain semantic correspondence (eye-to-eye, lip-to-lip) and ② high-quality style transfer (tone, texture), yet existing methods fall short on one or both fronts.
 
-**Paper Goals**: Construct a portrait style transfer framework that, trained only on real photographs, generalizes to arbitrary domains (cartoon, sketch, anime, vintage photos).
+**Goal**: Construct a portrait style transfer framework that, trained only on real photographs, generalizes to arbitrary domains (cartoon, sketch, anime, vintage photos).
 
-**Starting Point**: Leverage the inherently cross-domain semantic understanding embedded in the feature space of pretrained diffusion models (Stable Diffusion) to establish dense correspondences; exploit wavelet decomposition to separate high- and low-frequency components for balancing content and style.
+**Key Insight**: Leverage the inherently cross-domain semantic understanding embedded in the feature space of pretrained diffusion models (Stable Diffusion) to establish dense correspondences; exploit wavelet decomposition to separate high- and low-frequency components for balancing content and style.
 
 **Core Idea**: Semantic correspondence via diffusion features → reference image warping → AdaIN-Wavelet latent space initialization → dual-conditional diffusion model generation.
 

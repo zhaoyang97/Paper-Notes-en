@@ -29,15 +29,15 @@ TRACED improves regret approximation in Unsupervised Environment Design (UED) by
 
 ## Background & Motivation
 
-**State of the Field**: UED is a co-evolutionary framework in which a teacher adaptively generates tasks with high learning potential while a student learns a robust policy. Existing methods (PLR⟂, ACCEL, etc.) measure learning potential via regret, but since the true optimal policy $\pi^*$ is unknown, only coarse proxies (PVL, MaxMC) are available.
+**Background**: UED is a co-evolutionary framework in which a teacher adaptively generates tasks with high learning potential while a student learns a robust policy. Existing methods (PLR⟂, ACCEL, etc.) measure learning potential via regret, but since the true optimal policy $\pi^*$ is unknown, only coarse proxies (PVL, MaxMC) are available.
 
 **Limitations of Prior Work**: (1) PVL approximates regret solely through value function error, ignoring the contribution of dynamics model mismatch to future returns. (2) Existing methods treat each task independently, without considering how training on one task affects performance on others.
 
-**Root Cause**: Regret = optimal return − current return, yet the optimal return is intractable. As a proxy, PVL primarily reflects value estimation error and fails to capture the contribution of transition prediction error to regret.
+**Key Challenge**: Regret = optimal return − current return, yet the optimal return is intractable. As a proxy, PVL primarily reflects value estimation error and fails to capture the contribution of transition prediction error to regret.
 
-**Paper Goals**: (1) Provide a more accurate regret approximation; (2) model inter-task transfer relationships for curriculum optimization.
+**Goal**: (1) Provide a more accurate regret approximation; (2) model inter-task transfer relationships for curriculum optimization.
 
-**Starting Point**: Starting from a decomposition of regret, the paper identifies a dynamics component within the future value gap that PVL does not cover, and supplements it with a Transition Prediction Loss (ATPL). Co-Learnability is further introduced to exploit correlations in regret changes across tasks.
+**Key Insight**: Starting from a decomposition of regret, the paper identifies a dynamics component within the future value gap that PVL does not cover, and supplements it with a Transition Prediction Loss (ATPL). Co-Learnability is further introduced to exploit correlations in regret changes across tasks.
 
 **Core Idea**: Augment PVL with ATPL to capture dynamics uncertainty, and incorporate Co-Learnability to quantify inter-task transfer benefits, forming a unified Task Priority score to guide curriculum design.
 

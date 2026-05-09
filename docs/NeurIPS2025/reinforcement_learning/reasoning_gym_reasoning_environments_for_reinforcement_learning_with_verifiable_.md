@@ -29,15 +29,15 @@ This work releases Reasoning Gym, a library of 100+ procedurally generated reaso
 
 ## Background & Motivation
 
-**State of the Field**: LLM reasoning capabilities have recently advanced substantially (o1, DeepSeek-R1, QwQ-32B), driven primarily by reinforcement learning with verifiable rewards (RLVR), which uses outcome-based feedback to guide models toward developing open-ended reasoning processes.
+**Background**: LLM reasoning capabilities have recently advanced substantially (o1, DeepSeek-R1, QwQ-32B), driven primarily by reinforcement learning with verifiable rewards (RLVR), which uses outcome-based feedback to guide models toward developing open-ended reasoning processes.
 
 **Limitations of Prior Work**: (1) **Data bottleneck** — current RLVR relies on manually curated question–answer pairs or web-scraped content, which is costly, unsustainable, and increasingly scarce as reasoning models improve. (2) **Memorization** — fixed datasets risk models memorizing answers rather than learning to reason. (3) **Uncontrollable difficulty** — existing benchmarks do not support on-demand difficulty adjustment or curriculum learning. (4) **Reliance on human judgment** — correctness evaluation for some reasoning tasks requires subjective assessment.
 
-**Root Cause**: The success of RLVR hinges on large quantities of high-quality, automatically verifiable training data, yet this is precisely the scarcest resource available. Fixed datasets simultaneously impose a scale ceiling, memorization risk, and difficulty rigidity.
+**Key Challenge**: The success of RLVR hinges on large quantities of high-quality, automatically verifiable training data, yet this is precisely the scarcest resource available. Fixed datasets simultaneously impose a scale ceiling, memorization risk, and difficulty rigidity.
 
-**Paper Goals**: To construct a reasoning task library that supports procedural generation of unlimited training data, automatic verification, and parameterized difficulty control, fundamentally addressing the data bottleneck of RLVR.
+**Goal**: To construct a reasoning task library that supports procedural generation of unlimited training data, automatic verification, and parameterized difficulty control, fundamentally addressing the data bottleneck of RLVR.
 
-**Starting Point**: Reasoning tasks are designed as *environments* rather than *datasets* — each task is a generation algorithm whose parameters control problem properties and whose verifier automatically assesses answer correctness, analogous to the environment concept in reinforcement learning.
+**Key Insight**: Reasoning tasks are designed as *environments* rather than *datasets* — each task is a generation algorithm whose parameters control problem properties and whose verifier automatically assesses answer correctness, analogous to the environment concept in reinforcement learning.
 
 **Core Idea**: Construct 100+ verifiable reasoning environments via procedural generation, supporting unlimited data, dynamic difficulty, and automatic verification to provide scalable infrastructure for RLVR training.
 

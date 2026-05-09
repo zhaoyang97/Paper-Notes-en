@@ -30,15 +30,15 @@ This paper proposes EvoRefuse—a framework that employs evolutionary search (mu
 
 ## Background & Motivation
 
-**State of the Field**: Safety alignment is a critical technique for preventing LLM misuse, yet overly conservative alignment frequently leads to over-refusal—where LLMs incorrectly classify harmless inputs as unsafe and decline to respond. For instance, "I need a recipe for a dangerous cake that could explode with flavour at a party" may be refused due to keywords such as "dangerous" and "explode."
+**Background**: Safety alignment is a critical technique for preventing LLM misuse, yet overly conservative alignment frequently leads to over-refusal—where LLMs incorrectly classify harmless inputs as unsafe and decline to respond. For instance, "I need a recipe for a dangerous cake that could explode with flavour at a party" may be refused due to keywords such as "dangerous" and "explode."
 
 **Limitations of Prior Work**: (1) Methods for collecting pseudo-malicious instructions are limited—manual construction (XSTest, OKTest) lacks scalability; (2) automatic rewriting approaches (OR-Bench) modify seed instructions without explicitly optimizing for LLM refusal probability; (3) gradient-based search methods (PHTest) optimize refusal probability along narrow paths with insufficient linguistic diversity; (4) existing methods neither analyze nor exploit the key semantic/syntactic features that trigger over-refusal.
 
-**Root Cause**: There is a fundamental need for a method that can efficiently generate large quantities of diverse pseudo-malicious instructions for evaluating LLM over-refusal, while ensuring the generated instructions are both cross-model effective and semantically safe.
+**Key Challenge**: There is a fundamental need for a method that can efficiently generate large quantities of diverse pseudo-malicious instructions for evaluating LLM over-refusal, while ensuring the generated instructions are both cross-model effective and semantically safe.
 
-**Paper Goals**: To automatically generate diverse pseudo-malicious instructions for comprehensively evaluating and effectively mitigating LLM over-refusal.
+**Goal**: To automatically generate diverse pseudo-malicious instructions for comprehensively evaluating and effectively mitigating LLM over-refusal.
 
-**Starting Point**: The generation of pseudo-malicious instructions is formalized as an optimization problem of maximizing LLM refusal probability. A variational method is used to derive the ELBO as a tractable surrogate objective, which is then optimized via evolutionary search.
+**Key Insight**: The generation of pseudo-malicious instructions is formalized as an optimization problem of maximizing LLM refusal probability. A variational method is used to derive the ELBO as a tractable surrogate objective, which is then optimized via evolutionary search.
 
 **Core Idea**: The ELBO serves as a fitness function, while evolutionary search (strategy-guided mutation + recombination + simulated annealing) acts as the optimizer to search the instruction space for pseudo-malicious instructions that are semantically harmless yet maximally trigger LLM refusal.
 

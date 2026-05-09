@@ -28,15 +28,15 @@ This paper systematically evaluates the memory utilization capabilities of LLM-d
 
 ## Background & Motivation
 
-**State of the Field**: LLM-driven embodied agents have achieved notable progress on traditional object rearrangement tasks; however, these tasks typically involve only single-turn interactions and static instructions, requiring no understanding of personalized user preferences or historical behaviors.
+**Background**: LLM-driven embodied agents have achieved notable progress on traditional object rearrangement tasks; however, these tasks typically involve only single-turn interactions and static instructions, requiring no understanding of personalized user preferences or historical behaviors.
 
 **Limitations of Prior Work**: Existing memory systems for embodied agents primarily focus on semantic memory (scene graphs, semantic maps) and procedural memory (skill libraries), while episodic memory is used merely as a passive task buffer or contextual history, lacking systematic evaluation of personalized knowledge extraction and utilization.
 
-**Root Cause**: Personalized user knowledge (e.g., "favorite mug," "morning routine") requires agents to extract information from past interactions and apply it flexibly to new tasks. However, agents face two critical bottlenecks: information overload (performance degrades as retrieved memories increase) and coordination failure (inability to simultaneously leverage multiple memory entries).
+**Key Challenge**: Personalized user knowledge (e.g., "favorite mug," "morning routine") requires agents to extract information from past interactions and apply it flexibly to new tasks. However, agents face two critical bottlenecks: information overload (performance degrades as retrieved memories increase) and coordination failure (inability to simultaneously leverage multiple memory entries).
 
-**Paper Goals**: 1) Systematically evaluate the memory utilization capabilities of embodied agents in personalized assistance tasks; 2) Diagnose critical bottlenecks in memory utilization; 3) Design improved memory architectures to support personalized tasks.
+**Goal**: 1) Systematically evaluate the memory utilization capabilities of embodied agents in personalized assistance tasks; 2) Diagnose critical bottlenecks in memory utilization; 3) Design improved memory architectures to support personalized tasks.
 
-**Starting Point**: The approach addresses two dimensions of memory utilization—object semantics (recognizing objects with personal significance) and user patterns (recalling sequential information within behavioral routines)—by constructing an end-to-end evaluation framework.
+**Key Insight**: The approach addresses two dimensions of memory utilization—object semantics (recognizing objects with personal significance) and user patterns (recalling sequential information within behavioral routines)—by constructing an end-to-end evaluation framework.
 
 **Core Idea**: By decoupling personalized knowledge management, a hierarchical knowledge graph-based user profile memory module is constructed to independently manage object semantic and user pattern information, thereby overcoming information overload and coordination failure in LLM episodic memory.
 

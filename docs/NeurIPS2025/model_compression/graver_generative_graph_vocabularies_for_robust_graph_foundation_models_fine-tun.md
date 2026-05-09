@@ -29,15 +29,15 @@ This paper proposes Graver, a framework that decouples ego-graphs to extract tra
 
 ## Background & Motivation
 
-**State of the Field**: Graph foundation models (GFMs) aim to achieve universal graph learning across domains and tasks via a pre-train-then-fine-tune paradigm. Prior methods such as GCOPE, MDGPT, and SAMGPT have made progress in multi-domain pre-training and cross-domain transfer.
+**Background**: Graph foundation models (GFMs) aim to achieve universal graph learning across domains and tasks via a pre-train-then-fine-tune paradigm. Prior methods such as GCOPE, MDGPT, and SAMGPT have made progress in multi-domain pre-training and cross-domain transfer.
 
 **Limitations of Prior Work**: Few-shot prompt fine-tuning of GFMs suffers from severe instability — performance and adaptation efficiency are highly sensitive to the random selection of support samples. When selected support nodes exhibit structural patterns consistent with the pre-training graphs (e.g., triangles), performance is strong; when patterns diverge (e.g., ladder structures), performance degrades significantly, resulting in high variance.
 
-**Root Cause**: Under few-shot settings with extremely limited labeled samples (e.g., one-shot), the model cannot adequately capture structural patterns of the target domain, while the transfer of pre-trained knowledge is further constrained by domain discrepancy.
+**Key Challenge**: Under few-shot settings with extremely limited labeled samples (e.g., one-shot), the model cannot adequately capture structural patterns of the target domain, while the transfer of pre-trained knowledge is further constrained by domain discrepancy.
 
-**Paper Goals**: How to achieve robust and efficient GFM fine-tuning under randomly sampled support sets?
+**Goal**: How to achieve robust and efficient GFM fine-tuning under randomly sampled support sets?
 
-**Starting Point**: Generative augmentation — leveraging "graph vocabularies" (transferable subgraph patterns) learned during pre-training to augment support samples, thereby reducing dependence on specific support selections.
+**Key Insight**: Generative augmentation — leveraging "graph vocabularies" (transferable subgraph patterns) learned during pre-training to augment support samples, thereby reducing dependence on specific support selections.
 
 **Core Idea**: Extract transferable subgraph vocabularies from pre-training graphs, model their distributions via graphon generators, and use MoE-CoE routing at fine-tuning time to embed relevant vocabularies into support samples for contextual augmentation.
 

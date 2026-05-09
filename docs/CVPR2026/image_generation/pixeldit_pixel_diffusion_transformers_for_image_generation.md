@@ -27,11 +27,11 @@ content_hash: b793ee0f16a6a6a9
 PixelDiT proposes a fully Transformer-based dual-level pixel-space diffusion model: a patch-level DiT captures global semantics while a pixel-level DiT refines textural details, achieving an FID of 1.61 on ImageNet without any VAE, and enabling direct text-to-image training at 1024-resolution in pixel space.
 
 ## Background & Motivation
-1. **State of the Field**: Latent-space diffusion is the dominant paradigm for DiT-based models; however, reliance on pretrained autoencoders introduces lossy reconstruction, limiting sampling fidelity and precluding joint optimization.
+1. **Background**: Latent-space diffusion is the dominant paradigm for DiT-based models; however, reliance on pretrained autoencoders introduces lossy reconstruction, limiting sampling fidelity and precluding joint optimization.
 2. **Limitations of Prior Work**: Pixel-space diffusion faces a fundamental challenge: models must simultaneously handle global semantics and high-frequency details. Aggressive patchification loses fine details, whereas small patches or long sequences lead to computational explosion.
-3. **Root Cause**: No efficient pixel modeling mechanism exists that can jointly capture global semantics and perform per-pixel updates.
-4. **Paper Goals**: Design a pure Transformer pixel-space diffusion model with explicitly structured pixel modeling.
-5. **Starting Point**: Decouple semantic learning from pixel-level updating into two hierarchical levels, each processed by Transformers operating at different granularities.
+3. **Key Challenge**: No efficient pixel modeling mechanism exists that can jointly capture global semantics and perform per-pixel updates.
+4. **Goal**: Design a pure Transformer pixel-space diffusion model with explicitly structured pixel modeling.
+5. **Key Insight**: Decouple semantic learning from pixel-level updating into two hierarchical levels, each processed by Transformers operating at different granularities.
 6. **Core Idea**: A patch-level pathway performs long-range semantic attention (coarse granularity), while a pixel-level pathway performs dense per-pixel modeling (fine granularity), connected via pixel-wise AdaLN and token compaction.
 
 ## Method

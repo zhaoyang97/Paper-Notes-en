@@ -35,7 +35,7 @@ This paper proposes ResponseRank, a method that robustly learns utility differen
 
 ### Limitations of Prior Work
 
-**Limitations of Prior Work**: **State of the Field**: Binary preference labels in RLHF (A is preferred over B) convey only the direction of preference, not its intensity. However, preference strength is critical for decision-making under uncertainty and for the generalization of preference models:
+**Limitations of Prior Work**: **Background**: Binary preference labels in RLHF (A is preferred over B) convey only the direction of preference, not its intensity. However, preference strength is critical for decision-making under uncertainty and for the generalization of preference models:
 
 **Information Loss**: "Strongly preferring apple" and "slightly preferring apple" are indistinguishable under binary annotation.
 

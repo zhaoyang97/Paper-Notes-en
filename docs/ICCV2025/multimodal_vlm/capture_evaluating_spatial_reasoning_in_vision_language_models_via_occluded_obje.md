@@ -27,11 +27,11 @@ content_hash: ec7a1bcec3c28b4e
 This paper introduces CAPTURe, a benchmark that evaluates spatial reasoning and world model construction in VLMs by requiring amodal counting of regularly arranged objects under occlusion. Results show that even the strongest model, GPT-4o, achieves a 14.75% counting error under occlusion, while humans perform nearly perfectly.
 
 ## Background & Motivation
-- **State of the Field**: VLMs have achieved remarkable progress across various visual reasoning tasks, yet whether they can understand occluded scenes and infer invisible objects as humans do remains an open question.
+- **Background**: VLMs have achieved remarkable progress across various visual reasoning tasks, yet whether they can understand occluded scenes and infer invisible objects as humans do remains an open question.
 - **Limitations of Prior Work**: (1) Existing VLM evaluations overlook occlusion reasoning; (2) amodal completion is typically assessed via pixel-level prediction, which is incompatible with text-output VLMs; (3) objective and quantifiable metrics for occlusion reasoning are lacking.
-- **Root Cause**: The human visual system effortlessly infers and counts objects behind occluders, but whether VLMs possess analogous world model capabilities is unknown.
-- **Paper Goals**: Design an objective and quantifiable benchmark for evaluating VLM occlusion reasoning.
-- **Starting Point**: Leverage regular spatial arrangements (e.g., grids, circles) so that counting under occlusion yields a uniquely determined answer, enabling counting accuracy as the evaluation metric.
+- **Key Challenge**: The human visual system effortlessly infers and counts objects behind occluders, but whether VLMs possess analogous world model capabilities is unknown.
+- **Goal**: Design an objective and quantifiable benchmark for evaluating VLM occlusion reasoning.
+- **Key Insight**: Leverage regular spatial arrangements (e.g., grids, circles) so that counting under occlusion yields a uniquely determined answer, enabling counting accuracy as the evaluation metric.
 - **Core Idea**: Pattern + Occlusion + Counting = measurable world model evaluation, simultaneously probing VLMs along three dimensions: pattern recognition, spatial reasoning, and counting.
 
 ## Method

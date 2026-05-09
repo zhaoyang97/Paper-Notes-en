@@ -28,15 +28,15 @@ This paper proposes Curriculum Abductive Learning (C-ABL), which partitions a kn
 
 ## Background & Motivation
 
-**State of the Field**: Abductive Learning (ABL) is a framework that integrates machine learning with logical reasoning. A learning model predicts symbolic concept labels from raw inputs, while a reasoning module generates candidate revised labels consistent with the knowledge base via abduction, which are then fed back to retrain the model. This loop enables the system to progressively align predictions with logical constraints.
+**Background**: Abductive Learning (ABL) is a framework that integrates machine learning with logical reasoning. A learning model predicts symbolic concept labels from raw inputs, while a reasoning module generates candidate revised labels consistent with the knowledge base via abduction, which are then fed back to retrain the model. This loop enables the system to progressively align predictions with logical constraints.
 
 **Limitations of Prior Work**: Due to the inherent uncertainty of abduction, the abduction search space $|\mathbb{S}|$ can grow exponentially (up to $N^m$, where $N$ is the number of concept labels and $m$ is the sequence length) as the knowledge base becomes more complex. A large number of "plausible but incorrect" candidate labels mislead training, causing the model to oscillate among different hypotheses, resulting in slow and unstable convergence.
 
-**Root Cause**: Existing methods (ABL, A3BL, etc.) focus on improving candidate selection strategies (consistency optimization), but when the search space itself is too large, even better selection strategies cannot address the fundamental bottleneck.
+**Key Challenge**: Existing methods (ABL, A3BL, etc.) focus on improving candidate selection strategies (consistency optimization), but when the search space itself is too large, even better selection strategies cannot address the fundamental bottleneck.
 
-**Paper Goals**: To actively manage and reduce the size of the abduction search space, rather than merely making better selections within a large space.
+**Goal**: To actively manage and reduce the size of the abduction search space, rather than merely making better selections within a large space.
 
-**Starting Point**: Many knowledge bases possess an inherent staged or hierarchical structure (e.g., simple foundational clauses vs. complex exception clauses in legal domains). This structure can be exploited to introduce the knowledge base in stages of increasing complexity.
+**Key Insight**: Many knowledge bases possess an inherent staged or hierarchical structure (e.g., simple foundational clauses vs. complex exception clauses in legal domains). This structure can be exploited to introduce the knowledge base in stages of increasing complexity.
 
 **Core Idea**: Partition the knowledge base into a sequence of sub-knowledge-bases of increasing complexity according to its dependency graph, and introduce them progressively during training, thereby substantially reducing the search space at each stage.
 

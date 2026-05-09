@@ -30,15 +30,15 @@ This work presents the first robustness extension evaluation of ZACH-ViT, a comp
 
 ## Background & Motivation
 
-**State of the Field**: Standard ViT designs explicitly encode spatial order via positional encoding (PE) and [CLS] tokens. However, in medical imaging, diagnostically relevant structures may be loosely distributed, spatially disordered, or highly variable across acquisition protocols. ZACH-ViT, as a compact permutation-invariant ViT, removes PE and the [CLS] token, replacing token aggregation with global average pooling. Its predecessor validated regime-dependent performance on clean data.
+**Background**: Standard ViT designs explicitly encode spatial order via positional encoding (PE) and [CLS] tokens. However, in medical imaging, diagnostically relevant structures may be loosely distributed, spatially disordered, or highly variable across acquisition protocols. ZACH-ViT, as a compact permutation-invariant ViT, removes PE and the [CLS] token, replacing token aggregation with global average pooling. Its predecessor validated regime-dependent performance on clean data.
 
 **Limitations of Prior Work**: (1) The original ZACH-ViT work evaluated only clean test set performance without examining robustness; (2) in clinical AI deployment, models encounter real-world perturbations such as acquisition device variation, compression artifacts, brightness/contrast shifts, and sensor noise; (3) for compact edge-deployment models, clean performance alone is insufficient to assess practical utility.
 
-**Root Cause**: The permutation-invariant design that removes positional encoding proves effective under clean evaluation, yet whether this inductive bias choice retains its advantage under real-world perturbations remains entirely unknown.
+**Key Challenge**: The permutation-invariant design that removes positional encoding proves effective under clean evaluation, yet whether this inductive bias choice retains its advantage under real-world perturbations remains entirely unknown.
 
-**Paper Goals**: To systematically evaluate the robustness of ZACH-ViT under common image corruptions and adversarial attacks, addressing the question of whether the clean-performance advantage of permutation-invariant ViTs extends to robustness.
+**Goal**: To systematically evaluate the robustness of ZACH-ViT under common image corruptions and adversarial attacks, addressing the question of whether the clean-performance advantage of permutation-invariant ViTs extends to robustness.
 
-**Starting Point**: Under a controlled MedMNIST few-shot setting, four compact backbone networks are evaluated with a standardized robustness protocol across four conditions (clean / mean corruption / mean FGSM / mean PGD), separating model behavior along three independent dimensions.
+**Key Insight**: Under a controlled MedMNIST few-shot setting, four compact backbone networks are evaluated with a standardized robustness protocol across four conditions (clean / mean corruption / mean FGSM / mean PGD), separating model behavior along three independent dimensions.
 
 **Core Idea**: Removing positional encoding reduces reliance on fragile spatial correlations; this design advantage persists not only under clean evaluation but also under real-world perturbations.
 

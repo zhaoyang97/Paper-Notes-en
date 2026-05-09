@@ -29,11 +29,11 @@ SGI organizes unstructured 2D Gaussian primitives via seed points and decodes th
 
 ## Background & Motivation
 
-1. **State of the Field**: 2D Gaussian splatting has emerged as a new paradigm for image representation, enabling efficient rendering on low-end devices. However, scaling to high resolutions requires millions of unstructured Gaussian primitives, resulting in slow convergence and parameter redundancy.
+1. **Background**: 2D Gaussian splatting has emerged as a new paradigm for image representation, enabling efficient rendering on low-end devices. However, scaling to high resolutions requires millions of unstructured Gaussian primitives, resulting in slow convergence and parameter redundancy.
 2. **Limitations of Prior Work**: Methods such as GaussianImage optimize each Gaussian independently without exploiting spatial locality—neighboring pixels typically share similar color and texture—leading to substantial parameter redundancy among adjacent primitives.
-3. **Root Cause**: Anchor-based methods (e.g., Scaffold-GS) achieve effective compression in 3D scenes, but direct transfer to 2D yields limited gains (only ~3%) due to already-removed parameters such as opacity.
-4. **Paper Goals**: Design a compact and efficient 2D Gaussian representation for high-resolution images.
-5. **Starting Point**: Introduce seed points to organize Gaussian primitives and perform entropy coding at the seed level for further compression.
+3. **Key Challenge**: Anchor-based methods (e.g., Scaffold-GS) achieve effective compression in 3D scenes, but direct transfer to 2D yields limited gains (only ~3%) due to already-removed parameters such as opacity.
+4. **Goal**: Design a compact and efficient 2D Gaussian representation for high-resolution images.
+5. **Key Insight**: Introduce seed points to organize Gaussian primitives and perform entropy coding at the seed level for further compression.
 6. **Core Idea**: Seed points + shared MLPs → structured Gaussians → entropy coding to remove residual redundancy → multi-scale fitting to accelerate optimization.
 
 ## Method

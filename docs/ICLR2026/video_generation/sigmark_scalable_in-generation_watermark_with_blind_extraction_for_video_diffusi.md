@@ -29,15 +29,15 @@ SIGMark proposes the first blind watermarking framework for modern video diffusi
 
 ## Background & Motivation
 
-**State of the Field**: Video diffusion models (e.g., HunyuanVideo, Wan-2.2) are advancing rapidly, making invisible watermarking a critical technique for protecting copyright and tracing harmful AI-generated content. Existing approaches fall into two categories: post-processing watermarking (which degrades video quality) and in-generation watermarking (theoretically lossless but with notable limitations).
+**Background**: Video diffusion models (e.g., HunyuanVideo, Wan-2.2) are advancing rapidly, making invisible watermarking a critical technique for protecting copyright and tracing harmful AI-generated content. Existing approaches fall into two categories: post-processing watermarking (which degrades video quality) and in-generation watermarking (theoretically lossless but with notable limitations).
 
 **Limitations of Prior Work**: Existing in-generation watermarking methods (e.g., VideoShield, VideoMark) are **non-blind** — extraction requires maintaining all message–key pairs and performing template matching, incurring costs that grow linearly with the number of users/requests and thus fail to scale to large platforms.
 
-**Root Cause**: Modern video diffusion models employ a causal 3D VAE that decodes a group of $d_t$ frames from a single temporal latent feature. Temporal perturbations (frame deletion, cropping) disrupt frame groupings, causing the VAE encoder to produce incorrect latent features and making watermark extraction **highly fragile to temporal distortions**.
+**Key Challenge**: Modern video diffusion models employ a causal 3D VAE that decodes a group of $d_t$ frames from a single temporal latent feature. Temporal perturbations (frame deletion, cropping) disrupt frame groupings, causing the VAE encoder to produce incorrect latent features and making watermark extraction **highly fragile to temporal distortions**.
 
-**Paper Goals**: (1) How to achieve blind watermark extraction with constant computational cost? (2) How to maintain temporal robustness under the causal 3D VAE?
+**Goal**: (1) How to achieve blind watermark extraction with constant computational cost? (2) How to maintain temporal robustness under the causal 3D VAE?
 
-**Starting Point**: Replace per-request key storage with globally shared frame-level PRC keys, and design an optical-flow segmentation plus sliding-window detection scheme to recover correct frame groupings.
+**Key Insight**: Replace per-request key storage with globally shared frame-level PRC keys, and design an optical-flow segmentation plus sliding-window detection scheme to recover correct frame groupings.
 
 **Core Idea**: Global frame-level pseudorandom coding enables blind extraction, while the SGO module recovers temporal ordering, reducing extraction complexity from linear to constant.
 

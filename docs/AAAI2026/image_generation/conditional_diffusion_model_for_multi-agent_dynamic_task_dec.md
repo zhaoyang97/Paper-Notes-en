@@ -28,13 +28,13 @@ This paper proposes CD3T, a two-level hierarchical MARL framework that employs a
 
 ## Background & Motivation
 
-**State of the Field**: In cooperative MARL, CTDE (Centralized Training with Decentralized Execution) addresses partial observability through value decomposition methods (VDN, QMIX, etc.). However, as the number of agents grows, the joint action space expands exponentially, making exploration of high-value states increasingly sparse.
+**Background**: In cooperative MARL, CTDE (Centralized Training with Decentralized Execution) addresses partial observability through value decomposition methods (VDN, QMIX, etc.). However, as the number of agents grows, the joint action space expands exponentially, making exploration of high-value states increasingly sparse.
 
 **Limitations of Prior Work**: Task decomposition—breaking complex tasks into subtasks—is a natural remedy, yet existing approaches (RODE using MLP-based action representations, GoMARL using grouping) suffer from insufficient representational capacity. Simple network architectures struggle to learn sufficiently discriminative subtask latent representations in high-dimensional continuous spaces.
 
-**Root Cause**: Subtask representations must simultaneously satisfy two requirements: (a) temporal stability (avoiding frequent switching); and (b) sufficient diversity (distinct subtasks must be meaningfully separable). Simple networks cannot satisfy both simultaneously.
+**Key Challenge**: Subtask representations must simultaneously satisfy two requirements: (a) temporal stability (avoiding frequent switching); and (b) sufficient diversity (distinct subtasks must be meaningfully separable). Simple networks cannot satisfy both simultaneously.
 
-**Starting Point**: Diffusion models are inherently suited for modeling stochastic processes via iterative denoising and possess strong representational capacity in high-dimensional continuous spaces, enabling the capture of multimodal distributions—which naturally corresponds to the distinct "behavioral modes" of different subtasks.
+**Key Insight**: Diffusion models are inherently suited for modeling stochastic processes via iterative denoising and possess strong representational capacity in high-dimensional continuous spaces, enabling the capture of multimodal distributions—which naturally corresponds to the distinct "behavioral modes" of different subtasks.
 
 **Core Idea**: A conditional diffusion model is used as a flexible feature extractor to learn semantic representations capturing the effect of actions on the environment; clustering then yields subtask assignments, and subtask representations are used to enhance credit assignment in value decomposition.
 

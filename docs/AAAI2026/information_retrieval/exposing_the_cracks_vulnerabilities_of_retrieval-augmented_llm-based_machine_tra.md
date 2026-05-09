@@ -26,15 +26,15 @@ content_hash: 52f48dd492733a20
 This work develops a controlled noise injection framework to systematically evaluate retrieval-augmented machine translation (REAL-MT), introduces two new metrics—Fidelity and CAR—and reveals across 10 language pairs × 4 noise types that models blindly adopt retrieved context even when it is contradictory (CAR remains 65–78%). Large reasoning models (LRMs) are found to be even more vulnerable by "rationalizing" erroneous context, and a fundamental trade-off exists between noise robustness and clean-context utilization.
 
 ## Background & Motivation
-**State of the Field**: Retrieval-augmented machine translation (REAL-MT) uses translation memories to assist LLM-based translation, yet retrieval quality cannot be guaranteed in real-world deployments.
+**Background**: Retrieval-augmented machine translation (REAL-MT) uses translation memories to assist LLM-based translation, yet retrieval quality cannot be guaranteed in real-world deployments.
 
 **Limitations of Prior Work**: (a) The vulnerability of REAL-MT to noisy retrieved results remains unclear; (b) metrics specifically designed to evaluate translation–context interaction are lacking; (c) it is unknown whether large reasoning models (e.g., Qwen3-8B) are more robust; (d) vulnerability in low-resource language pairs has not been investigated.
 
-**Root Cause**: LLM-based translation relies heavily on retrieved context—beneficial when correct, but over-reliance propagates errors under noise. Furthermore, improving noise robustness degrades utilization of correct context.
+**Key Challenge**: LLM-based translation relies heavily on retrieved context—beneficial when correct, but over-reliance propagates errors under noise. Furthermore, improving noise robustness degrades utilization of correct context.
 
-**Paper Goals**: Systematically quantify the noise vulnerability of REAL-MT and expose the fundamental trade-off therein.
+**Goal**: Systematically quantify the noise vulnerability of REAL-MT and expose the fundamental trade-off therein.
 
-**Starting Point**: Controlled noise injection—four semantic noise types simulating retrieval failures of varying severity.
+**Key Insight**: Controlled noise injection—four semantic noise types simulating retrieval failures of varying severity.
 
 **Core Idea**: LLM reliance on retrieved context is a double-edged sword; systematic noise analysis exposes the fundamental robustness–utilization trade-off.
 

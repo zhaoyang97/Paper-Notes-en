@@ -27,11 +27,11 @@ This paper proposes the INFEX framework, which executes a baseline algorithm (e.
 
 ## Background & Motivation
 
-**State of the Field**: In linear bandit problems, UCB and Thompson Sampling perform exploration at every step, yielding optimal theoretical guarantees with logarithmic or sublinear regret. At the other extreme, purely greedy policies require strong distributional assumptions (e.g., sufficient context diversity) to succeed, and typically incur linear regret in the fixed arm-set setting.
+**Background**: In linear bandit problems, UCB and Thompson Sampling perform exploration at every step, yielding optimal theoretical guarantees with logarithmic or sublinear regret. At the other extreme, purely greedy policies require strong distributional assumptions (e.g., sufficient context diversity) to succeed, and typically incur linear regret in the fixed arm-set setting.
 
 **Limitations of Prior Work**: Continuous exploration can be harmful or unethical in healthcare and safety-critical systems, while purely greedy strategies necessarily fail in the absence of context diversity. The intermediate regime—whether infrequent exploration suffices to guarantee near-optimal regret—has received little systematic study.
 
-**Root Cause**: The literature lacks a rigorous analytical framework characterizing how exploration frequency affects regret. $\epsilon$-greedy explores occasionally but achieves suboptimal regret of $O(T^{2/3})$; Explore-Then-Commit (ETC) separates phases but is likewise suboptimal.
+**Key Challenge**: The literature lacks a rigorous analytical framework characterizing how exploration frequency affects regret. $\epsilon$-greedy explores occasionally but achieves suboptimal regret of $O(T^{2/3})$; Explore-Then-Commit (ETC) separates phases but is likewise suboptimal.
 
 **Core Problem**: (a) Is per-step exploration necessary to achieve logarithmic regret? (b) What is the threshold lower bound on exploration frequency? (c) Can infrequent exploration simultaneously yield computational benefits?
 

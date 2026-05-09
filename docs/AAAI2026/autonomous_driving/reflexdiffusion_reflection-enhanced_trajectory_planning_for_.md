@@ -37,7 +37,7 @@ High lateral acceleration maneuvers (sharp curves, U-turns, high-curvature ramps
 - **Diffusion planners** (Diffusion Planner): Perform well in common scenarios but suffer from curvature-velocity decoupling in high lateral acceleration scenarios due to training data imbalance — planned curvature $\kappa$ and vehicle speed $v$ fail to satisfy the centripetal force constraint, resulting in a driving score of 0 in U-turn scenarios.
 - **Classifier Guidance**: Requires manually designed continuously differentiable guidance functions; multi-objective constraint design is complex and struggles with non-differentiable safety constraints.
 
-**Root Cause**: How can inference-stage compensation for training data sparsity enable diffusion models to generate safe trajectories near physical limits?
+**Key Challenge**: How can inference-stage compensation for training data sparsity enable diffusion models to generate safe trajectories near physical limits?
 
 ## Method
 

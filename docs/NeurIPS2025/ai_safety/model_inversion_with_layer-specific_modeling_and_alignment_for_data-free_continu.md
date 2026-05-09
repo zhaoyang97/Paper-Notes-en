@@ -29,7 +29,7 @@ This paper proposes Per-layer Model Inversion (PMI) for data-free continual lear
 
 ## Background & Motivation
 
-**State of the Field**: Continual Learning (CL) aims to enable models to retain performance on previous tasks while learning new ones. Conventional approaches rely on storing and replaying old data, which is often infeasible in practice due to privacy regulations (e.g., GDPR) or security constraints.
+**Background**: Continual Learning (CL) aims to enable models to retain performance on previous tasks while learning new ones. Conventional approaches rely on storing and replaying old data, which is often infeasible in practice due to privacy regulations (e.g., GDPR) or security constraints.
 
 **Data-Free Continual Learning**: Data-free CL performs incremental learning without retaining any historical data. The core idea is to synthesize pseudo-data from previously trained models via Model Inversion for replay purposes.
 
@@ -40,7 +40,7 @@ This paper proposes Per-layer Model Inversion (PMI) for data-free continual lear
 
 **Core Problem**: How can the quality of synthetic data be maintained while improving the efficiency of model inversion?
 
-**Starting Point**: Motivated by the faster convergence of single-layer optimization, the paper proposes a per-layer inversion strategy to initialize full-model inversion, and employs a probabilistic model to constrain the distribution of intermediate features.
+**Key Insight**: Motivated by the faster convergence of single-layer optimization, the paper proposes a per-layer inversion strategy to initialize full-model inversion, and employs a probabilistic model to constrain the distribution of intermediate features.
 
 ## Method
 

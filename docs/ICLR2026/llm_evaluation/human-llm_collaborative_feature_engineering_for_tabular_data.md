@@ -29,15 +29,15 @@ This paper proposes a human-LLM collaborative feature engineering framework that
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are widely adopted in tabular learning for automated feature engineering, leveraging semantic understanding to generate meaningful feature transformation operations (e.g., CAAFE, OCTree).
+**Background**: LLMs are widely adopted in tabular learning for automated feature engineering, leveraging semantic understanding to generate meaningful feature transformation operations (e.g., CAAFE, OCTree).
 
 **Limitations of Prior Work**: Existing methods use LLMs simultaneously as both proposers and selectors of feature operations, relying entirely on LLM-internal heuristics without calibrated estimates of operation utility and uncertainty. This leads to repeated exploration of low-gain operations and poor performance under limited iteration budgets.
 
-**Root Cause**: LLMs excel at generating diverse candidate feature transformations but are ill-suited for making optimal selections among them — a fundamental tension between strong proposal ability and weak selection ability.
+**Key Challenge**: LLMs excel at generating diverse candidate feature transformations but are ill-suited for making optimal selections among them — a fundamental tension between strong proposal ability and weak selection ability.
 
-**Paper Goals**: To decouple LLM-based operation proposal from selection, and to effectively integrate human expert knowledge into the selection process to improve feature engineering efficiency.
+**Goal**: To decouple LLM-based operation proposal from selection, and to effectively integrate human expert knowledge into the selection process to improve feature engineering efficiency.
 
-**Starting Point**: Drawing on Bayesian optimization, an explicit surrogate model replaces the LLM's implicit selection, and a selective human feedback mechanism is designed to control the cost of expert involvement.
+**Key Insight**: Drawing on Bayesian optimization, an explicit surrogate model replaces the LLM's implicit selection, and a selective human feedback mechanism is designed to control the cost of expert involvement.
 
 **Core Idea**: The LLM is responsible solely for proposing candidate feature operations; selection is guided by a UCB strategy over a Bayesian neural network, with human preference feedback selectively queried under high uncertainty.
 

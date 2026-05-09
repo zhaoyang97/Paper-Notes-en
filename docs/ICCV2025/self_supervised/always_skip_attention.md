@@ -30,21 +30,21 @@ This paper theoretically demonstrates that the self-attention mechanism in Visio
 
 ## Background & Motivation
 
-**State of the Field**: Vision Transformers (ViTs) have achieved remarkable success in computer vision tasks. Their core architecture consists of Self-Attention Blocks (SABs), feed-forward networks (FFNs), and skip connections. While skip connections are universally adopted as a standard component, a rigorous theoretical explanation for their role in ViTs has remained elusive.
+**Background**: Vision Transformers (ViTs) have achieved remarkable success in computer vision tasks. Their core architecture consists of Self-Attention Blocks (SABs), feed-forward networks (FFNs), and skip connections. While skip connections are universally adopted as a standard component, a rigorous theoretical explanation for their role in ViTs has remained elusive.
 
 **Limitations of Prior Work**:
    - The authors identify an intriguing, previously unreported empirical phenomenon: removing the skip connection from the SAB causes **catastrophic** performance collapse in ViTs (a 22% drop on CIFAR-10), whereas removing the FFN skip connection results in only a mild degradation (a 2% drop).
    - This asymmetric dependency does not exist in CNNs (e.g., ConvMixer)—removing skip connections has virtually no impact on CNN performance (±0.2%).
    - The only prior work attempting to train Transformers without skip connections required 5× more training time, and the underlying reason was left unexplained.
 
-**Root Cause**: Why is the self-attention mechanism so critically dependent on skip connections, while other components (FFN, convolution) are not? What is the fundamental mechanism at play?
+**Key Challenge**: Why is the self-attention mechanism so critically dependent on skip connections, while other components (FFN, convolution) are not? What is the fundamental mechanism at play?
 
-**Paper Goals**:
+**Goal**:
    - Provide a theoretical explanation for SAB's extreme reliance on skip connections.
    - Characterize the true role of skip connections within SABs.
    - Propose a novel method to improve ViT training based on these theoretical insights.
 
-**Starting Point**: The analysis is conducted through the lens of the matrix condition number, which measures the degree of ill-conditioning. A larger condition number implies a more ill-conditioned Jacobian matrix and less stable gradient-based training.
+**Key Insight**: The analysis is conducted through the lens of the matrix condition number, which measures the degree of ill-conditioning. A larger condition number implies a more ill-conditioned Jacobian matrix and less stable gradient-based training.
 
 **Core Idea**: The triple matrix multiplication structure inherent to self-attention causes the condition number of the output embeddings to grow as the **cube** of the input condition number, leading to intrinsic ill-conditioning. Skip connections serve precisely to regularize this condition number.
 

@@ -27,15 +27,15 @@ This paper proposes Intuitor, an RLIF method that replaces external verifiable r
 
 ## Background & Motivation
 
-**State of the Field**: RLVR (Reinforcement Learning with Verifiable Rewards) has become the dominant paradigm for enhancing LLM reasoning, as exemplified by DeepSeek-R1, which employs GRPO with exact answer matching as the reward signal.
+**Background**: RLVR (Reinforcement Learning with Verifiable Rewards) has become the dominant paradigm for enhancing LLM reasoning, as exemplified by DeepSeek-R1, which employs GRPO with exact answer matching as the reward signal.
 
 **Limitations of Prior Work**: (a) RLHF requires extensive human annotation, which is costly and prone to bias; (b) RLVR depends on domain-specific verifiers and ground-truth answers—mathematics requires expert annotation, while code requires test suites and execution environments—limiting its applicability in open-ended settings; (c) outcome-based verifiable rewards are difficult to transfer across domains.
 
-**Root Cause**: Improving reasoning capabilities requires RL training, yet the cost of acquiring high-quality reward signals constrains the applicable scope of RL.
+**Key Challenge**: Improving reasoning capabilities requires RL training, yet the cost of acquiring high-quality reward signals constrains the applicable scope of RL.
 
-**Paper Goals**: Can an LLM improve its reasoning ability relying solely on intrinsic signals, without any external verifier or ground-truth answer?
+**Goal**: Can an LLM improve its reasoning ability relying solely on intrinsic signals, without any external verifier or ground-truth answer?
 
-**Starting Point**: LLMs exhibit lower confidence on difficult problems and higher confidence when answering correctly—this intrinsic signal can serve as a training reward.
+**Key Insight**: LLMs exhibit lower confidence on difficult problems and higher confidence when answering correctly—this intrinsic signal can serve as a training reward.
 
 **Core Idea**: Replace the external reward in GRPO with the model's own self-certainty (mean $\text{KL}(\text{Uniform} \| p_{\text{model}})$) to achieve fully unsupervised improvement of reasoning capabilities.
 

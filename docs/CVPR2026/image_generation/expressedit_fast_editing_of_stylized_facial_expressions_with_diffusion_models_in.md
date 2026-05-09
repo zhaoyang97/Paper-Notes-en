@@ -29,14 +29,14 @@ This paper presents ExpressEdit, a fully open-source Photoshop plugin that achie
 
 ## Background & Motivation
 
-1. **State of the Field**: Facial expressions are a core element of visual storytelling. Current AI image editing models (e.g., FLUX.2, GPT, Grok, Nano Banana 2) can assist with expression generation and editing, but are primarily designed for photorealistic faces with insufficient support for stylized expressions in 2D/3D animated characters.
+1. **Background**: Facial expressions are a core element of visual storytelling. Current AI image editing models (e.g., FLUX.2, GPT, Grok, Nano Banana 2) can assist with expression generation and editing, but are primarily designed for photorealistic faces with insufficient support for stylized expressions in 2D/3D animated characters.
 2. **Limitations of Prior Work**:
    - High demands on textual descriptions — users must provide detailed expression prompts; otherwise, generated results lack diversity, imposing significant cognitive burden.
    - Commercial models introduce global noise and watermarks during editing; noise accumulates over multiple editing steps, leading to severe image degradation.
    - Poor integration with professional software such as Photoshop, causing resolution changes and pixel drift.
-3. **Root Cause**: Existing models cannot simultaneously maintain image quality and precisely control the size and position of facial elements, and inference speed is slow (mostly 7–50 seconds).
-4. **Paper Goals**: To achieve fast, noise-free, and iterative stylized expression editing within professional editing software.
-5. **Starting Point**: Leveraging the open-source diffusion model SPICE as the backend, combined with native Photoshop operations (Liquify, Selection, Scale) for precise spatial control, while constructing a database of 135 expression tags to lower the barrier to use.
+3. **Key Challenge**: Existing models cannot simultaneously maintain image quality and precisely control the size and position of facial elements, and inference speed is slow (mostly 7–50 seconds).
+4. **Goal**: To achieve fast, noise-free, and iterative stylized expression editing within professional editing software.
+5. **Key Insight**: Leveraging the open-source diffusion model SPICE as the backend, combined with native Photoshop operations (Liquify, Selection, Scale) for precise spatial control, while constructing a database of 135 expression tags to lower the barrier to use.
 6. **Core Idea**: Deeply integrating an open-source diffusion model backend with native Photoshop operations — using Canny edge control to eliminate pixel drift and a RAG-based expression tag system to enable fast, lossless stylized expression editing.
 
 ## Method

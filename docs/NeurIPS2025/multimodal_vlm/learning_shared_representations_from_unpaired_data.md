@@ -28,13 +28,13 @@ This paper proposes SUE (Spectral Universal Embedding), which is the first to de
 
 ## Background & Motivation
 
-**State of the Field**: Cross-modal shared representation learning is a central task in multimodal learning. Current state-of-the-art methods such as CLIP rely on massive paired datasets (400 million image–text pairs) for contrastive training.
+**Background**: Cross-modal shared representation learning is a central task in multimodal learning. Current state-of-the-art methods such as CLIP rely on massive paired datasets (400 million image–text pairs) for contrastive training.
 
 **Limitations of Prior Work**: Acquiring paired data is prohibitively expensive. In domains such as medical imaging, remote sensing, and speech processing, paired annotations require expert involvement or specialized equipment, making large-scale paired data practically infeasible. In contrast, unpaired data from individual modalities is comparatively abundant.
 
-**Root Cause**: The core supervisory signal in contrastive learning derives from pairing relationships; without pairs, cross-modal correspondence cannot be established. Intuitively, linking modalities without paired information seems impossible.
+**Key Challenge**: The core supervisory signal in contrastive learning derives from pairing relationships; without pairs, cross-modal correspondence cannot be established. Intuitively, linking modalities without paired information seems impossible.
 
-**Starting Point**: The authors introduce the concept of a *universal embedding*—if pretrained unimodal representations already encode semantic similarity well, then the random walk processes independently constructed from each modality should be highly similar. This similarity can be captured via spectral embeddings without any paired data.
+**Key Insight**: The authors introduce the concept of a *universal embedding*—if pretrained unimodal representations already encode semantic similarity well, then the random walk processes independently constructed from each modality should be highly similar. This similarity can be captured via spectral embeddings without any paired data.
 
 **Core Idea**: The diffusion operators of independent modalities share similar eigenfunctions (modality invariance), and spectral embeddings can extract this universal structure from unpaired data alone.
 

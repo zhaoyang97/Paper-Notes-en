@@ -28,18 +28,18 @@ This paper proposes UltraBreak, which combines a semantic adversarial objective 
 
 ## Background & Motivation
 
-**State of the Field**: VLM jailbreak attacks fall into two categories: manually crafted attacks (e.g., FigStep, which embeds harmful text into images) and gradient-based optimization methods (e.g., VAJM/UMK). Gradient-based methods can theoretically produce universal triggers, but in practice they severely overfit to a single white-box surrogate model.
+**Background**: VLM jailbreak attacks fall into two categories: manually crafted attacks (e.g., FigStep, which embeds harmful text into images) and gradient-based optimization methods (e.g., VAJM/UMK). Gradient-based methods can theoretically produce universal triggers, but in practice they severely overfit to a single white-box surrogate model.
 
 **Limitations of Prior Work**:
    - Universality: Existing gradient-based attacks are effective against a single target but fail to generalize across queries.
    - Transferability: Adversarial images optimized against a white-box surrogate do not transfer to black-box models.
    - Root cause: Cross-entropy loss produces a spiky loss landscape, and the sharp local minima found during optimization generalize poorly.
 
-**Root Cause**: The goal of attacking all queries and all models with a single image is fundamentally undermined by the overfitting induced by existing loss functions and optimization strategies.
+**Key Challenge**: The goal of attacking all queries and all models with a single image is fundamentally undermined by the overfitting induced by existing loss functions and optimization strategies.
 
-**Paper Goals**: Simultaneously achieve universality (a single image effective across all harmful queries) and transferability (across model architectures).
+**Goal**: Simultaneously achieve universality (a single image effective across all harmful queries) and transferability (across model architectures).
 
-**Starting Point**: The smoothness of the loss landscape governs generalization—replacing token-level cross-entropy with semantic-level cosine similarity yields a smoother landscape.
+**Key Insight**: The smoothness of the loss landscape governs generalization—replacing token-level cross-entropy with semantic-level cosine similarity yields a smoother landscape.
 
 **Core Idea**: Semantic loss smooths the loss landscape + input transformations produce invariant features = a single universal image for cross-model jailbreaking.
 

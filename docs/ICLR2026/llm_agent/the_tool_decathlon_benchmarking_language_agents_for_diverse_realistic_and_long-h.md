@@ -29,11 +29,11 @@ content_hash: 8f79275558b68d33
 This paper introduces Toolathlon, a language agent benchmark covering 32 software applications, 604 tools, and 108 tasks, emphasizing realistic and diverse environment states alongside long-horizon multi-step interactions (averaging ~20 tool calls per task). The strongest evaluated model, Claude-4.5-Sonnet, achieves only 38.6% task success rate.
 
 ## Background & Motivation
-**State of the Field**: Language agents are increasingly expected to complete complex, multi-step workflows across real-world applications—such as managing calendar-email coordination or monitoring databases to generate reports. This demands agents capable of tool discovery, multi-turn reasoning, state tracking, and cross-system coordination.
+**Background**: Language agents are increasingly expected to complete complex, multi-step workflows across real-world applications—such as managing calendar-email coordination or monitoring databases to generate reports. This demands agents capable of tool discovery, multi-turn reasoning, state tracking, and cross-system coordination.
 
 **Limitations of Prior Work**: Existing agent benchmarks suffer from three major shortcomings: (1) narrow application coverage, often focusing on a single tool or API; (2) overly simplified tasks solvable in one or two tool calls; and (3) unrealistic environment states that use blank or minimal initial conditions rather than the complex data found in real software. These limitations prevent meaningful evaluation of agents' real-world deployment capabilities.
 
-**Root Cause**: Researchers need reliable evaluations of agents' real-world performance, yet a substantial gap exists between the "toy-level" tasks in current benchmarks and genuine workflows. This disconnect causes benchmark scores to diverge from actual capability—agents perform well on simple benchmarks but fail frequently in realistic scenarios.
+**Key Challenge**: Researchers need reliable evaluations of agents' real-world performance, yet a substantial gap exists between the "toy-level" tasks in current benchmarks and genuine workflows. This disconnect causes benchmark scores to diverge from actual capability—agents perform well on simple benchmarks but fail frequently in realistic scenarios.
 
 **Opportunity from MCP**: The emergence of the Model Context Protocol (MCP) provides infrastructure for building standardized tool interfaces. Toolathlon constructs its tool layer atop high-quality MCP servers, some of which were implemented or revised by the authors themselves to ensure interface quality and consistency.
 

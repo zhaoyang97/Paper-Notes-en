@@ -28,15 +28,15 @@ This paper proposes EA-Agent, which decomposes entity alignment (EA) into a stru
 
 ## Background & Motivation
 
-**State of the Field**: Entity alignment is a foundational technique for knowledge fusion, aiming to identify nodes across different knowledge graphs that refer to the same real-world entity. Traditional approaches rely on knowledge representation learning (e.g., TransE, GCN-Align), but exhibit limited performance under noisy or sparsely supervised settings. Recent LLM-based methods (e.g., ChatEA, LLMEA) have improved performance by leveraging semantic understanding.
+**Background**: Entity alignment is a foundational technique for knowledge fusion, aiming to identify nodes across different knowledge graphs that refer to the same real-world entity. Traditional approaches rely on knowledge representation learning (e.g., TransE, GCN-Align), but exhibit limited performance under noisy or sparsely supervised settings. Recent LLM-based methods (e.g., ChatEA, LLMEA) have improved performance by leveraging semantic understanding.
 
 **Limitations of Prior Work**: (1) Existing LLM-based EA methods treat LLMs as black-box decision makers, lacking interpretability—it is difficult to determine which information is critical for alignment decisions; (2) directly feeding large numbers of attribute and relation triples leads to excessively long prompts and high inference costs; (3) many triples are redundant or noisy, which interferes with decision-making.
 
-**Root Cause**: There is a need to leverage LLMs' powerful semantic understanding while simultaneously addressing the issues of black-box opacity and efficiency under large-scale triple inputs.
+**Key Challenge**: There is a need to leverage LLMs' powerful semantic understanding while simultaneously addressing the issues of black-box opacity and efficiency under large-scale triple inputs.
 
-**Paper Goals**: To design a reasoning-driven agent framework that achieves interpretable, controllable, and efficient entity alignment through multi-step tool planning and execution.
+**Goal**: To design a reasoning-driven agent framework that achieves interpretable, controllable, and efficient entity alignment through multi-step tool planning and execution.
 
-**Starting Point**: EA is framed as a multi-step decision problem—first selecting the most informative triples, then making alignment decisions, and finally performing reflective verification under uncertainty.
+**Key Insight**: EA is framed as a multi-step decision problem—first selecting the most informative triples, then making alignment decisions, and finally performing reflective verification under uncertainty.
 
 **Core Idea**: A tool pool (attribute/relation triple selectors + alignment tool + reflector) + path planning + reward-guided offline policy optimization.
 

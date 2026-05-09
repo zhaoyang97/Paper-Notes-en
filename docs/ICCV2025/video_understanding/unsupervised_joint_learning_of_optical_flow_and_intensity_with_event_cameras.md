@@ -40,7 +40,7 @@ Yet existing methods treat these two tasks as **almost entirely separate**:
 
 This leads to two problems: (1) the inherent synergy between motion and appearance is left unexploited, and (2) cascading two independent models results in slow inference and error accumulation.
 
-**Paper Goals**: Design a unified unsupervised framework in which a single network simultaneously outputs optical flow and intensity images, fully exploiting their synergy through newly derived loss functions.
+**Goal**: Design a unified unsupervised framework in which a single network simultaneously outputs optical flow and intensity images, fully exploiting their synergy through newly derived loss functions.
 
 ## Method
 

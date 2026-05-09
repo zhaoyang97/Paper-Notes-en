@@ -29,15 +29,15 @@ This paper proposes a multi-task learning framework that jointly trains a COVID-
 
 ## Background & Motivation
 
-1. **State of the Field**: Deep learning has demonstrated strong performance in COVID-19 CT detection; however, most existing methods assume that training and test data originate from the same institution. In multi-center settings, domain shifts introduced by different scanners, imaging protocols, and patient populations substantially degrade model performance.
+1. **Background**: Deep learning has demonstrated strong performance in COVID-19 CT detection; however, most existing methods assume that training and test data originate from the same institution. In multi-center settings, domain shifts introduced by different scanners, imaging protocols, and patient populations substantially degrade model performance.
 
 2. **Limitations of Prior Work**: (1) Existing methods optimize a single COVID vs. non-COVID objective without awareness of data provenance, causing features to be biased toward the center contributing the most data. (2) Sample counts are unevenly distributed across centers (approximately 330 cases each for three centers and only 234 for one), further exacerbating this bias.
 
-3. **Root Cause**: In single-task training, the backbone is free to exploit institution-specific spurious features (e.g., reconstruction kernels, intensity distributions) to minimize the loss — features that completely fail to transfer across centers.
+3. **Key Challenge**: In single-task training, the backbone is free to exploit institution-specific spurious features (e.g., reconstruction kernels, intensity distributions) to minimize the loss — features that completely fail to transfer across centers.
 
-4. **Paper Goals**: To encourage the shared feature extractor to learn disease representations that are invariant across institutions, while preventing implicit bias induced by imbalanced source distributions.
+4. **Goal**: To encourage the shared feature extractor to learn disease representations that are invariant across institutions, while preventing implicit bias induced by imbalanced source distributions.
 
-5. **Starting Point**: Source hospital identification is introduced as an auxiliary task, compelling the backbone to simultaneously "understand" source-level differences, thereby learning disentangled representations that distinguish disease from provenance.
+5. **Key Insight**: Source hospital identification is introduced as an auxiliary task, compelling the backbone to simultaneously "understand" source-level differences, thereby learning disentangled representations that distinguish disease from provenance.
 
 6. **Core Idea**: A source classification head supervised by a logit-adjusted loss is appended alongside the disease detection head, forcing the backbone encoder to learn source-invariant features.
 

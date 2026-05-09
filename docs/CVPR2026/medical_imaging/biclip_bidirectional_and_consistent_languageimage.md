@@ -29,7 +29,7 @@ This paper proposes BiCLIP, a framework that introduces a Bidirectional Multimod
 
 ## Background & Motivation
 
-**State of the Field**: Medical image segmentation is a foundational task in computer-aided diagnosis. Multimodal vision-language methods have recently attracted attention by leveraging textual descriptions to enhance semantic understanding, yet their robustness under realistic clinical conditions—including label scarcity and acquisition degradation—remains insufficiently explored.
+**Background**: Medical image segmentation is a foundational task in computer-aided diagnosis. Multimodal vision-language methods have recently attracted attention by leveraging textual descriptions to enhance semantic understanding, yet their robustness under realistic clinical conditions—including label scarcity and acquisition degradation—remains insufficiently explored.
 
 **Limitations of Prior Work**:
 - Existing vision-language segmentation methods predominantly adopt unidirectional fusion—text conditions visual representations—while visual information cannot reciprocally correct text semantics. When image quality degrades, the mismatch between static text conditioning and low-quality images leads to reduced segmentation accuracy.

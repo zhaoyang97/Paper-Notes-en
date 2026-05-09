@@ -27,15 +27,15 @@ content_hash: 3c9abb643e87ebf9
 Watch & Learn proposes using an inverse dynamics model (IDM) to automatically convert YouTube tutorial videos into executable UI trajectory data (53K+ trajectories without manual annotation), enhancing CUA capabilities with +11.1% improvement for Qwen 2.5VL-7B and +3.8% for UI-TARS-1.5-7B on OSWorld.
 
 ## Background & Motivation
-**State of the Field**: Computer-using agents (CUA) require massive high-quality UI operation trajectory data for training, but manual annotation costs approximately $1.45/task.
+**Background**: Computer-using agents (CUA) require massive high-quality UI operation trajectory data for training, but manual annotation costs approximately $1.45/task.
 
 **Limitations of Prior Work**: (a) Manual annotation is not scalable; (b) heuristic parsing methods have low accuracy (TongUI: 72.3%); (c) YouTube tutorial videos are a rich but underutilized data source.
 
-**Root Cause**: The web contains vast tutorial videos demonstrating real computer operations, but no tool can accurately extract action sequences from videos.
+**Key Challenge**: The web contains vast tutorial videos demonstrating real computer operations, but no tool can accurately extract action sequences from videos.
 
-**Paper Goals**: Build a high-accuracy IDM that automatically extracts UI operation trajectories from videos, and validate that these trajectories effectively train CUAs.
+**Goal**: Build a high-accuracy IDM that automatically extracts UI operation trajectories from videos, and validate that these trajectories effectively train CUAs.
 
-**Starting Point**: Use a SigLIP-2 visual encoder + Transformer inverse dynamics model to infer user actions from consecutive screenshots.
+**Key Insight**: Use a SigLIP-2 visual encoder + Transformer inverse dynamics model to infer user actions from consecutive screenshots.
 
 **Core Idea**: An inverse dynamics model with 91.7% accuracy automatically annotates UI operations in YouTube tutorial videos, converting them into 53K executable trajectories.
 

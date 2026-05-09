@@ -28,15 +28,15 @@ This paper proposes performing spatial warping on ViT image tokens within MLLMs�
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal large language models demonstrate strong visual reasoning capabilities, yet remain highly vulnerable to viewpoint changes. Even with near-perfect depth estimation, integrating predicted depth into MLLMs fails to yield genuine 3D understanding. MLLMs fine-tuned specifically for spatial reasoning (e.g., SpatialReasoner) show only marginal improvements on viewpoint transformation tasks.
+**Background**: Multimodal large language models demonstrate strong visual reasoning capabilities, yet remain highly vulnerable to viewpoint changes. Even with near-perfect depth estimation, integrating predicted depth into MLLMs fails to yield genuine 3D understanding. MLLMs fine-tuned specifically for spatial reasoning (e.g., SpatialReasoner) show only marginal improvements on viewpoint transformation tasks.
 
 **Limitations of Prior Work**: The conventional approach transforms source images to target viewpoints via pixel-level warping; however, pixel-level operations are extremely sensitive to minor errors in depth maps—even small inaccuracies cause pronounced geometric distortions and semantic degradation (e.g., deformed books, blurred objects) after warping. Generative novel-view synthesis methods (e.g., GenWarp) can synthesize complete images but may hallucinate non-existent objects or omit existing ones.
 
-**Root Cause**: Viewpoint transformation requires some form of internal representational transformation of the scene, yet there exists a fundamental tension in choosing the granularity of that transformation—object-level representations are too coarse and lose spatial detail, while pixel-level representations are too fine-grained and overly sensitive to noise. An intermediate-granularity representation is needed.
+**Key Challenge**: Viewpoint transformation requires some form of internal representational transformation of the scene, yet there exists a fundamental tension in choosing the granularity of that transformation—object-level representations are too coarse and lose spatial detail, while pixel-level representations are too fine-grained and overly sensitive to noise. An intermediate-granularity representation is needed.
 
-**Paper Goals**: (1) Identify a viewpoint transformation representation robust to depth errors; (2) explore optimal warping strategies (forward/backward, nearest/adaptive); (3) construct a standardized benchmark for evaluating MLLMs' viewpoint reasoning capabilities.
+**Goal**: (1) Identify a viewpoint transformation representation robust to depth errors; (2) explore optimal warping strategies (forward/backward, nearest/adaptive); (3) construct a standardized benchmark for evaluating MLLMs' viewpoint reasoning capabilities.
 
-**Starting Point**: Inspired by the "mental imagery" theory in cognitive science—Shepard, Minsky, Pylyshyn, Hinton, and others proposed that mental images rely on "part-based structural descriptions" rather than holistic representations. Image tokens in ViT operate at exactly the intermediate granularity between pixels and objects, making them natural "part-level" representational units.
+**Key Insight**: Inspired by the "mental imagery" theory in cognitive science—Shepard, Minsky, Pylyshyn, Hinton, and others proposed that mental images rely on "part-based structural descriptions" rather than holistic representations. Image tokens in ViT operate at exactly the intermediate granularity between pixels and objects, making them natural "part-level" representational units.
 
 **Core Idea**: Elevate the viewpoint transformation operation from the pixel level to the token level, leveraging image tokens as robust semantic units for viewpoint transformation to enable nearby-viewpoint reasoning in MLLMs.
 

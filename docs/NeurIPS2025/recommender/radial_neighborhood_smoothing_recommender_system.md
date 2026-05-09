@@ -28,15 +28,15 @@ This paper proposes the Radial Neighborhood Estimator (RNE), which approximates 
 
 ## Background & Motivation
 
-**State of the Field**: Two dominant paradigms in recommender systems are matrix factorization (SVD/nuclear norm) and neighborhood methods (collaborative filtering). The former captures global latent factors but overlooks local patterns, while the latter leverages similar neighbors but is constrained by the number of co-rated items.
+**Background**: Two dominant paradigms in recommender systems are matrix factorization (SVD/nuclear norm) and neighborhood methods (collaborative filtering). The former captures global latent factors but overlooks local patterns, while the latter leverages similar neighbors but is constrained by the number of co-rated items.
 
 **Limitations of Prior Work**: (a) Collaborative filtering requires a sufficient number of co-rated items between two users to compute similarity, limiting its effectiveness on sparse data; (b) matrix factorization captures only global features, ignoring local neighborhood information and lacking interpretability; (c) new users/items with no interaction history suffer from the cold-start problem.
 
-**Root Cause**: Distances in the latent space are not directly observable. How can latent space distances be accurately estimated from a noisy, heavily incomplete observed rating matrix?
+**Key Challenge**: Distances in the latent space are not directly observable. How can latent space distances be accurately estimated from a noisy, heavily incomplete observed rating matrix?
 
-**Paper Goals**: Bridge the gap between latent factor distances and observed matrix distances, constructing more effective neighborhood sets for rating prediction.
+**Goal**: Bridge the gap between latent factor distances and observed matrix distances, constructing more effective neighborhood sets for rating prediction.
 
-**Starting Point**: Based on SVD decomposition, the paper proves that row/column L2 norms are equivalent to latent factor distances (Proposition 1), and corrects for noise-induced bias using empirical variance (Proposition 2), enabling estimation of latent space distances solely from observed values.
+**Key Insight**: Based on SVD decomposition, the paper proves that row/column L2 norms are equivalent to latent factor distances (Proposition 1), and corrects for noise-induced bias using empirical variance (Proposition 2), enabling estimation of latent space distances solely from observed values.
 
 **Core Idea**: Approximate latent space distances using noise-corrected row/column L2 distances of the observed matrix, construct radial neighborhoods, and perform predictions via kernel smoothing.
 

@@ -29,15 +29,15 @@ This paper proposes Fractional Diffusion Bridge Models (FDBM), which incorporate
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion bridge models construct stochastic interpolation paths between two distributions by conditioning stochastic processes, and are widely applied to paired/unpaired data translation tasks such as protein conformation prediction and image translation. Existing models uniformly employ standard Brownian motion (BM) as the driving noise.
+**Background**: Diffusion bridge models construct stochastic interpolation paths between two distributions by conditioning stochastic processes, and are widely applied to paired/unpaired data translation tasks such as protein conformation prediction and image translation. Existing models uniformly employ standard Brownian motion (BM) as the driving noise.
 
 **Limitations of Prior Work**: Standard BM is a Markov process with independent increments, and thus cannot capture **memory effects, long-range dependence, roughness, or anomalous diffusion** present in real data. For complex systems such as proteins, the assumption of temporally independent increments may lead to insufficient modeling.
 
-**Root Cause**: The motivation for choosing BM in existing work is mathematical convenience rather than physical fidelity — adopting a more expressive driving noise should better match the true data dynamics.
+**Key Challenge**: The motivation for choosing BM in existing work is mathematical convenience rather than physical fidelity — adopting a more expressive driving noise should better match the true data dynamics.
 
-**Paper Goals**: To introduce fractional Brownian motion (non-Markovian, with long-range correlations) into diffusion bridges while maintaining trainability and efficient inference.
+**Goal**: To introduce fractional Brownian motion (non-Markovian, with long-range correlations) into diffusion bridges while maintaining trainability and efficient inference.
 
-**Starting Point**: The paper exploits the Markovian approximation of fBM (MA-fBM), which approximates fBM via a linear superposition of $K$ Ornstein-Uhlenbeck (OU) processes, making the augmented system Markovian.
+**Key Insight**: The paper exploits the Markovian approximation of fBM (MA-fBM), which approximates fBM via a linear superposition of $K$ Ornstein-Uhlenbeck (OU) processes, making the augmented system Markovian.
 
 **Core Idea**: Replace BM-driven diffusion bridges with the Markovian approximation of fBM, using the Hurst exponent $H$ to flexibly control the properties of generated trajectories, improving performance in both paired and unpaired settings.
 

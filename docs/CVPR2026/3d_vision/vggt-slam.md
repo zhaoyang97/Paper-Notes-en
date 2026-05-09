@@ -29,11 +29,11 @@ VGGT-SLAM++ augments the VGGT feed-forward Transformer odometry with Digital Ele
 
 ## Background & Motivation
 
-1. **State of the Field**: Transformer-based feed-forward visual odometry systems (e.g., VGGT, DPV-SLAM) can rapidly predict camera poses and depth, but lack global consistency guarantees—without loop closure detection and back-end optimization, severe drift accumulates over long sequences.
+1. **Background**: Transformer-based feed-forward visual odometry systems (e.g., VGGT, DPV-SLAM) can rapidly predict camera poses and depth, but lack global consistency guarantees—without loop closure detection and back-end optimization, severe drift accumulates over long sequences.
 2. **Limitations of Prior Work**: (1) VGGT's Sim(3) odometry achieves a mean ATE of 81m on KITTI, far behind the classical ORB-SLAM2 at 55m; (2) classical SLAM methods (e.g., DROID-SLAM) have complete back-ends but rely on feature matching in the front-end, which may fail in complex scenes; (3) an efficient intermediate representation bridging Transformer front-ends and classical back-ends is lacking.
-3. **Root Cause**: Transformer front-ends are fast but lack global optimization; classical back-ends provide global optimization but have fragile front-ends. A scheme capable of bridging the two is needed.
-4. **Paper Goals**: To add a spatially corrective back-end to VGGT, achieving global consistency while preserving the high-speed inference of the front-end.
-5. **Starting Point**: The DEM is a compact 2.5D representation—a height map obtained by projecting 3D point clouds onto a ground plane—that retains geometric information while substantially compressing data volume, making it a natural intermediate representation for loop closure detection and spatial indexing.
+3. **Key Challenge**: Transformer front-ends are fast but lack global optimization; classical back-ends provide global optimization but have fragile front-ends. A scheme capable of bridging the two is needed.
+4. **Goal**: To add a spatially corrective back-end to VGGT, achieving global consistency while preserving the high-speed inference of the front-end.
+5. **Key Insight**: The DEM is a compact 2.5D representation—a height map obtained by projecting 3D point clouds onto a ground plane—that retains geometric information while substantially compressing data volume, making it a natural intermediate representation for loop closure detection and spatial indexing.
 6. **Core Idea**: DEM + DINOv2 embeddings for covisibility estimation → covisibility graph construction → pose graph optimization on the Sim(3) manifold.
 
 ## Method

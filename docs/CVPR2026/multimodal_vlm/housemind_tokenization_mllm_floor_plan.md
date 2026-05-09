@@ -28,15 +28,15 @@ This paper proposes HouseMind, a framework that discretizes architectural floor 
 
 ## Background & Motivation
 
-**State of the Field**: AI-assisted architectural floor plan design has seen diverse approaches including GANs, graph neural networks, and diffusion models. Recent LLM/MLLM-based paradigms, such as Tell2Design and ChatHouseDiffusion, have explored language-driven layout generation.
+**Background**: AI-assisted architectural floor plan design has seen diverse approaches including GANs, graph neural networks, and diffusion models. Recent LLM/MLLM-based paradigms, such as Tell2Design and ChatHouseDiffusion, have explored language-driven layout generation.
 
 **Limitations of Prior Work**: (1) Diffusion and autoregressive models treat layout generation as a purely visual process, lacking explicit room-instance-level reasoning; (2) large models largely operate as black boxes with poor spatial controllability; (3) understanding, generation, and editing cannot be unified; (4) high computational overhead makes local deployment impractical.
 
-**Root Cause**: Floor plan design requires joint processing of geometric and semantic information. Existing methods either excel at geometry but lack semantic reasoning, or possess language capabilities but sacrifice spatial precision.
+**Key Challenge**: Floor plan design requires joint processing of geometric and semantic information. Existing methods either excel at geometry but lack semantic reasoning, or possess language capabilities but sacrifice spatial precision.
 
-**Paper Goals**: To build an efficient, locally deployable unified framework that simultaneously supports spatial understanding, conditional generation, and controllable editing of floor plans.
+**Goal**: To build an efficient, locally deployable unified framework that simultaneously supports spatial understanding, conditional generation, and controllable editing of floor plans.
 
-**Starting Point**: The key breakthrough is identified at the representation level — using VQ-VAE to discretize floor plans into structured token sequences so that an LLM can process spatial layouts as it does language.
+**Key Insight**: The key breakthrough is identified at the representation level — using VQ-VAE to discretize floor plans into structured token sequences so that an LLM can process spatial layouts as it does language.
 
 **Core Idea**: A hierarchical VQ-VAE represents floor plans as discrete sequences of contour tokens and room instance tokens, enabling an MLLM to autoregressively unify all three design tasks.
 

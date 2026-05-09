@@ -33,9 +33,9 @@ Probabilistic models face a fundamental trade-off between expressiveness and inf
 - Nearly all work on PC expressive efficiency focuses on exact representation, whereas the goal in practical learning is to approximate, not exactly represent, data distributions.
 - Exact representation often requires exponential size blowup (e.g., from decomposable PCs to deterministic + decomposable PCs). A natural question arises: can allowing a small approximation error avoid such exponential blowup?
 
-**Root Cause**: Approximate modeling is practically relevant in two ways: (1) as a constraint on the hypothesis space of learning algorithms — if a PC family cannot approximate a target distribution within bounded error, any learning algorithm will fail; and (2) for approximate compilation of inference — compiling a Bayesian network approximately into a PC and then performing exact inference. The central question is whether approximate modeling is fundamentally "easier" than exact modeling.
+**Key Challenge**: Approximate modeling is practically relevant in two ways: (1) as a constraint on the hypothesis space of learning algorithms — if a PC family cannot approximate a target distribution within bounded error, any learning algorithm will fail; and (2) for approximate compilation of inference — compiling a Bayesian network approximately into a PC and then performing exact inference. The central question is whether approximate modeling is fundamentally "easier" than exact modeling.
 
-**Starting Point**: The paper adopts a computational complexity perspective, proving NP-hardness via SAT reductions and establishing exponential separations via the Sauerhoff function construction.
+**Key Insight**: The paper adopts a computational complexity perspective, proving NP-hardness via SAT reductions and establishing exponential separations via the Sauerhoff function construction.
 
 ## Method
 

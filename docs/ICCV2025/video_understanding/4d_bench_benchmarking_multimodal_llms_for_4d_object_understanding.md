@@ -29,15 +29,15 @@ This paper introduces 4D-Bench, the first benchmark for evaluating multi-modal l
 
 ## Background & Motivation
 
-1. **State of the Field**: MLLMs such as GPT-4o and Qwen2-VL have achieved remarkable progress in 2D image and video understanding, yet 4D (3D + time) object understanding remains almost entirely unevaluated in a systematic manner. 4D digital assets are increasingly important in digital twins, augmented reality, gaming, and related domains.
+1. **Background**: MLLMs such as GPT-4o and Qwen2-VL have achieved remarkable progress in 2D image and video understanding, yet 4D (3D + time) object understanding remains almost entirely unevaluated in a systematic manner. 4D digital assets are increasingly important in digital twins, augmented reality, gaming, and related domains.
 
 2. **Limitations of Prior Work**: No publicly available standardized benchmark exists for evaluating MLLMs on 4D object understanding. Existing 3D language understanding benchmarks (e.g., ScanQA) focus on static 3D scenes and ignore motion; 2D video benchmarks ignore multi-view understanding. Neither captures the joint multi-view spatial-temporal reasoning required for 4D object understanding.
 
-3. **Root Cause**: 4D object understanding demands simultaneous multi-view spatial reasoning (observing objects from multiple perspectives to resolve occlusion and ambiguity) and temporal reasoning (tracking dynamic changes over time), posing entirely new challenges to MLLMs trained solely on 2D images or videos. Furthermore, large-scale 4D–text paired data is extremely scarce, making direct training of 4D understanding models difficult.
+3. **Key Challenge**: 4D object understanding demands simultaneous multi-view spatial reasoning (observing objects from multiple perspectives to resolve occlusion and ambiguity) and temporal reasoning (tracking dynamic changes over time), posing entirely new challenges to MLLMs trained solely on 2D images or videos. Furthermore, large-scale 4D–text paired data is extremely scarce, making direct training of 4D understanding models difficult.
 
-4. **Paper Goals**: To construct a high-quality 4D object understanding benchmark that systematically evaluates the capabilities and shortcomings of existing MLLMs across multiple dimensions of 4D understanding, thereby providing directions for future improvement.
+4. **Goal**: To construct a high-quality 4D object understanding benchmark that systematically evaluates the capabilities and shortcomings of existing MLLMs across multiple dimensions of 4D understanding, thereby providing directions for future improvement.
 
-5. **Starting Point**: Rather than building a dedicated 4D understanding model, the paper leverages existing MLLM image/video understanding capabilities by rendering 4D objects as multi-view videos. The benchmark also incorporates synthetic counterfactual data (e.g., spiders with six legs) to test whether models genuinely understand the input rather than relying on prior knowledge.
+5. **Key Insight**: Rather than building a dedicated 4D understanding model, the paper leverages existing MLLM image/video understanding capabilities by rendering 4D objects as multi-view videos. The benchmark also incorporates synthetic counterfactual data (e.g., spiders with six legs) to test whether models genuinely understand the input rather than relying on prior knowledge.
 
 6. **Core Idea**: By designing questions that require joint multi-view and temporal reasoning, and by collecting high-quality human-annotated descriptions, the paper constructs a comprehensive benchmark capable of diagnosing MLLMs across multiple dimensions of 4D understanding: appearance, action, counting, spatial relationships, and temporal relationships.
 

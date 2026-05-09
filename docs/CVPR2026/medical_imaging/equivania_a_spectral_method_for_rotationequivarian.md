@@ -28,13 +28,13 @@ This paper proposes EquivAnIA, a spectral method that computes angular energy di
 
 ## Background & Motivation
 
-**State of the Field**: Extracting directional information from images is widely used in medical imaging (e.g., CT vessel orientation identification, fibrous tissue analysis) and scientific imaging. The core tool is the angular power spectral density (angular PSD), which integrates the 2D PSD over angles to obtain the energy distribution across orientations.
+**Background**: Extracting directional information from images is widely used in medical imaging (e.g., CT vessel orientation identification, fibrous tissue analysis) and scientific imaging. The core tool is the angular power spectral density (angular PSD), which integrates the 2D PSD over angles to obtain the energy distribution across orientations.
 
 **Limitations of Prior Work**: In practice, the PSD is estimated on a Cartesian grid, and the angular PSD is approximated via angular binning. Binning is **not numerically equivariant** under rotation — rotating an image does not cause the analysis result to shift accordingly. Grid-aligned directions (0°, 45°, 90°, etc.) contain more frequency points in their bins, introducing systematic bias. This is particularly problematic in applications requiring precise angular estimation, such as angular image registration.
 
-**Root Cause**: The discretization of the Cartesian frequency grid breaks the continuous rotational symmetry, causing binning-based methods to produce angle-dependent artifacts.
+**Key Challenge**: The discretization of the Cartesian frequency grid breaks the continuous rotational symmetry, causing binning-based methods to produce angle-dependent artifacts.
 
-**Paper Goals**: Design a rotation-equivariant analysis method satisfying $f(R_\alpha I) = \text{shift}_\alpha(f(I))$ — applying a rotation $\alpha$ to the image should cause the angular distribution to shift exactly by $\alpha$.
+**Goal**: Design a rotation-equivariant analysis method satisfying $f(R_\alpha I) = \text{shift}_\alpha(f(I))$ — applying a rotation $\alpha$ to the image should cause the angular distribution to shift exactly by $\alpha$.
 
 ## Method
 

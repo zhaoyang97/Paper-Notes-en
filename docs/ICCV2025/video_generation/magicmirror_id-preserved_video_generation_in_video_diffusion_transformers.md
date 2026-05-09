@@ -29,15 +29,15 @@ MagicMirror is the first framework to achieve zero-shot identity-preserving vide
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models have achieved remarkable success in text-to-image generation. Identity-preserving (ID-preserving) image generation methods such as PhotoMaker, InstantID, and PuLID have enabled the preservation of specific subject identities without fine-tuning. However, this capability remains underdeveloped in the video generation domain.
+**Background**: Diffusion models have achieved remarkable success in text-to-image generation. Identity-preserving (ID-preserving) image generation methods such as PhotoMaker, InstantID, and PuLID have enabled the preservation of specific subject identities without fine-tuning. However, this capability remains underdeveloped in the video generation domain.
 
 **Limitations of Prior Work**: Existing ID-preserving video generation methods exhibit two categories of limitations: (1) fine-tuning-based methods such as MagicMe require per-identity optimization, leading to low efficiency and poor generalizability; (2) inflated-UNet-based methods such as ID-Animator are constrained by the capacity of the backbone model, producing videos with limited motion dynamics where facial expressions are nearly static—essentially a "copy-paste" of the reference face with no natural facial movement. Another class of two-stage methods first generates a personalized reference image and then performs image-to-video (I2V) generation, resulting in poor identity stability over long sequences.
 
-**Root Cause**: State-of-the-art video generation models (e.g., CogVideoX) are built on full-attention DiT architectures, which are incompatible with the conventional cross-attention-based conditioning paradigm. DiTs employ layer-wise modulation rather than standalone cross-attention layers, making the integration of identity conditions non-trivial. Furthermore, high-quality identity–video paired training data is extremely scarce.
+**Key Challenge**: State-of-the-art video generation models (e.g., CogVideoX) are built on full-attention DiT architectures, which are incompatible with the conventional cross-attention-based conditioning paradigm. DiTs employ layer-wise modulation rather than standalone cross-attention layers, making the integration of identity conditions non-trivial. Furthermore, high-quality identity–video paired training data is extremely scarce.
 
-**Paper Goals**: To achieve tuning-free ID-preserving video generation on a Video DiT architecture while producing dynamic and natural facial motion.
+**Goal**: To achieve tuning-free ID-preserving video generation on a Video DiT architecture while producing dynamic and natural facial motion.
 
-**Starting Point**: Leverage the existing layer-wise modulation mechanism in CogVideoX to design a lightweight identity-conditioning adapter; address data scarcity through synthetic data construction and progressive training.
+**Key Insight**: Leverage the existing layer-wise modulation mechanism in CogVideoX to design a lightweight identity-conditioning adapter; address data scarcity through synthetic data construction and progressive training.
 
 **Core Idea**: Design a Conditioned Adaptive Normalization (CAN) module to predict identity-aware distribution shifts, combined with dual-branch facial feature extraction (high-level identity features + structural detail features), to enable efficient fusion of identity information within the DiT.
 

@@ -27,13 +27,13 @@ By reordering 2D image tokens into a 1D sequence via Hilbert space-filling curve
 
 ## Background & Motivation
 
-**State of the Field**: The global self-attention mechanism of Vision Transformers incurs $O(N^2)$ complexity, limiting their applicability to high-resolution images. Local attention variants (e.g., Swin's window attention, NAT's neighborhood attention) reduce this complexity and represent the mainstream approach.
+**Background**: The global self-attention mechanism of Vision Transformers incurs $O(N^2)$ complexity, limiting their applicability to high-resolution images. Local attention variants (e.g., Swin's window attention, NAT's neighborhood attention) reduce this complexity and represent the mainstream approach.
 
 **Limitations of Prior Work**: Although local attention reduces computation in theory, practical GPU efficiency depends critically on the underlying kernel implementation. The conventional row-major token ordering causes tokens within a 2D local window to be non-contiguous in 1D, resulting in numerous partial blocks under block-sparse attention frameworks such as FlexAttention, which require additional masking overhead and limit effective sparse acceleration.
 
-**Root Cause**: Block-sparse kernels skip empty blocks to accelerate computation, yet row-major window attention yields a low empty-block ratio (~87.5%) and many partial blocks, constraining achievable speedups.
+**Key Challenge**: Block-sparse kernels skip empty blocks to accelerate computation, yet row-major window attention yields a low empty-block ratio (~87.5%) and many partial blocks, constraining achievable speedups.
 
-**Starting Point**: The Hilbert curve possesses strong locality-preserving properties—points that are spatially adjacent in 2D remain proximate along the 1D curve. Reordering tokens by the Hilbert traversal makes tokens within a local window contiguous in 1D, dramatically increasing the empty-block ratio and reducing partial blocks.
+**Key Insight**: The Hilbert curve possesses strong locality-preserving properties—points that are spatially adjacent in 2D remain proximate along the 1D curve. Reordering tokens by the Hilbert traversal makes tokens within a local window contiguous in 1D, dramatically increasing the empty-block ratio and reducing partial blocks.
 
 **Core Idea**: Hilbert reordering compacts 2D local attention patterns into the 1D sequence, yielding more empty blocks and enabling more efficient block-sparse kernel execution.
 

@@ -27,15 +27,15 @@ This paper proposes AgentiQL, a multi-expert agent framework for Text-to-SQL: a 
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have significantly advanced NL2SQL capabilities, yet monolithic LLM architectures still struggle with complex reasoning and diverse schema handling. Static ensemble methods incur high computational overhead, and deploying large-scale LLMs remains costly in practice.
+**Background**: LLMs have significantly advanced NL2SQL capabilities, yet monolithic LLM architectures still struggle with complex reasoning and diverse schema handling. Static ensemble methods incur high computational overhead, and deploying large-scale LLMs remains costly in practice.
 
 **Limitations of Prior Work**: (1) Monolithic LLMs perform poorly on complex multi-table joins and nested aggregations; (2) existing systems lack interpretability—users cannot trace how SQL is generated; (3) serving large models (e.g., GPT-4) is costly and impractical for real-world deployment.
 
-**Root Cause**: Large models deliver strong performance but at high cost, while small models are economical but insufficient for complex queries.
+**Key Challenge**: Large models deliver strong performance but at high cost, while small models are economical but insufficient for complex queries.
 
-**Paper Goals**: Achieve large-model-level NL2SQL performance using a small model (14B parameters) through multi-expert collaboration, while maintaining interpretability and efficiency.
+**Goal**: Achieve large-model-level NL2SQL performance using a small model (14B parameters) through multi-expert collaboration, while maintaining interpretability and efficiency.
 
-**Starting Point**: Decompose SQL generation into three specialized components—reasoning (question decomposition), coding (sub-query generation), and refinement (column selection correction)—and use an adaptive router to select the execution path based on query complexity.
+**Key Insight**: Decompose SQL generation into three specialized components—reasoning (question decomposition), coding (sub-query generation), and refinement (column selection correction)—and use an adaptive router to select the execution path based on query complexity.
 
 **Core Idea**: Apply Divide-and-Merge to decompose complex SQL generation into sub-problem–sub-query pairs, combined with Column Selection refinement and Adaptive Routing, enabling a 14B open-source model to approach GPT-4-level performance.
 

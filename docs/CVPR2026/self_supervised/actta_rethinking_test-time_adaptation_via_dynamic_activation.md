@@ -28,13 +28,13 @@ This paper proposes AcTTA, a framework that for the first time treats activation
 
 ## Background & Motivation
 
-**State of the Field**: TTA mitigates performance degradation caused by domain shift by updating model parameters at inference time. Existing methods (TENT, EATA, SAR, DeYO, ROID, CMF, etc.) predominantly focus on updating the affine parameters $(\gamma, \beta)$ and running statistics of normalization layers.
+**Background**: TTA mitigates performance degradation caused by domain shift by updating model parameters at inference time. Existing methods (TENT, EATA, SAR, DeYO, ROID, CMF, etc.) predominantly focus on updating the affine parameters $(\gamma, \beta)$ and running statistics of normalization layers.
 
 **Limitations of Prior Work**: Activation functions—the core nonlinear components that shape the geometry of the feature space—have been entirely overlooked in TTA and have always been treated as fixed, immutable mappings. However, zero-centered activations such as ReLU/GELU may suppress informative features under domain shift (shifted feature values fall into the negative region and are truncated), leading to information loss and vanishing gradients.
 
-**Root Cause**: Domain shift causes BN's source-domain statistics to misalign with target features → normalized features are biased and truncated by zero-centered activations → information loss + vanishing gradients → adaptation becomes difficult.
+**Key Challenge**: Domain shift causes BN's source-domain statistics to misalign with target features → normalized features are biased and truncated by zero-centered activations → information loss + vanishing gradients → adaptation becomes difficult.
 
-**Starting Point**: In the broader TTA-adjacent literature, learnable activation functions such as PReLU, ACON, and PAU have demonstrated that even minor modifications to activation behavior can improve performance. Yet this flexibility has never been explored in TTA.
+**Key Insight**: In the broader TTA-adjacent literature, learnable activation functions such as PReLU, ACON, and PAU have demonstrated that even minor modifications to activation behavior can improve performance. Yet this flexibility has never been explored in TTA.
 
 **Core Idea**: Reparameterize activation functions into a learnable form — a center shift $c$ moves the activation boundary from zero to the actual mean of the shifted features, while asymmetric gradient scaling $\lambda_{pos}, \lambda_{neg}$ allows independent control of gradient magnitude in the positive and negative regions. The parameters are initialized to recover the original activation exactly, ensuring compatibility with pretrained weights.
 

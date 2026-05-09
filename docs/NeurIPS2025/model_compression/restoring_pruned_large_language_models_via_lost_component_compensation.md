@@ -31,14 +31,14 @@ RestoreLCC proposes a targeted recovery strategy for pruned LLMs: it uses contra
 
 LLM pruning methods (e.g., Wanda, SparseGPT, SlimGPT) are essential for reducing model size and accelerating inference, yet they inevitably cause performance degradation. Existing recovery methods primarily rely on parameter-efficient fine-tuning (PEFT), such as LoRA, to restore pruned model performance.
 
-**Root Cause**: PEFT methods like LoRA were originally designed for dense models to adapt to downstream tasks. When applied to pruned models, they overlook a key property specific to pruned models — the need to compensate for lost information — resulting in inefficient parameter search and suboptimal recovery.
+**Key Challenge**: PEFT methods like LoRA were originally designed for dense models to adapt to downstream tasks. When applied to pruned models, they overlook a key property specific to pruned models — the need to compensate for lost information — resulting in inefficient parameter search and suboptimal recovery.
 
 **Key Insight**: Information loss caused by pruning is reflected in attention head activations. By contrastively analyzing the activation differences between dense and pruned models, three observations emerge:
 1. Directly injecting the lost components back into pruned heads can substantially recover logit differences and final accuracy.
 2. Different attention heads vary greatly in importance and recovery behavior.
 3. Discriminative information may reside in minor components rather than principal ones.
 
-**Starting Point**: Rather than performing generic, undirected fine-tuning, the paper explicitly compensates for the critical information directions lost during pruning.
+**Key Insight**: Rather than performing generic, undirected fine-tuning, the paper explicitly compensates for the critical information directions lost during pruning.
 
 ## Method
 

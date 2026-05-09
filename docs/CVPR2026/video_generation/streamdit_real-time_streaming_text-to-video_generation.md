@@ -28,7 +28,7 @@ StreamDiT presents a complete streaming video generation pipeline—covering tra
 
 ## Background & Motivation
 
-1. **State of the Field**: State-of-the-art text-to-video (T2V) models (e.g., MovieGen, Hunyuan, Step-Video) are built on Diffusion Transformer (DiT) architectures with bidirectional attention, capable of generating high-quality short clips. However, they only support offline generation of fixed-length segments and cannot serve interactive or real-time applications.
+1. **Background**: State-of-the-art text-to-video (T2V) models (e.g., MovieGen, Hunyuan, Step-Video) are built on Diffusion Transformer (DiT) architectures with bidirectional attention, capable of generating high-quality short clips. However, they only support offline generation of fixed-length segments and cannot serve interactive or real-time applications.
 
 2. **Limitations of Prior Work**:
    - Increasing video length is prohibitively expensive due to the quadratic complexity of Transformers with respect to sequence length.
@@ -36,11 +36,11 @@ StreamDiT presents a complete streaming video generation pipeline—covering tra
    - Existing training-free streaming approaches (StreamDiffusion, FIFO-Diffusion) lack training support, limiting their generation quality.
    - Sampling distillation methods (step distillation, consistency distillation) cannot be directly applied to the non-standard setting of streaming denoising.
 
-3. **Root Cause**: Low latency (streaming output), high throughput (batch processing), and high quality (bidirectional attention) are difficult to achieve simultaneously. AR methods offer low latency at the cost of quality; bidirectional diffusion offers high quality but cannot produce streaming output.
+3. **Key Challenge**: Low latency (streaming output), high throughput (batch processing), and high quality (bidirectional attention) are difficult to achieve simultaneously. AR methods offer low latency at the cost of quality; bidirectional diffusion offers high quality but cannot produce streaming output.
 
-4. **Paper Goals**: Design a complete streaming video generation framework that is both trainable and distillable, achieving quality and real-time performance simultaneously.
+4. **Goal**: Design a complete streaming video generation framework that is both trainable and distillable, achieving quality and real-time performance simultaneously.
 
-5. **Starting Point**: Inspired by the diagonal denoising of FIFO-Diffusion, frames in the buffer are assigned different noise levels. A trainable scheme and mixed partitioning strategy are then introduced to close the quality gap.
+5. **Key Insight**: Inspired by the diagonal denoising of FIFO-Diffusion, frames in the buffer are assigned different noise levels. A trainable scheme and mixed partitioning strategy are then introduced to close the quality gap.
 
 6. **Core Idea**: A unified frame partitioning scheme subsumes uniform noise and progressive diagonal noise as special cases within a single framework. Mixed training improves temporal consistency, and customized multi-step distillation enables real-time inference.
 

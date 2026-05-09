@@ -28,18 +28,18 @@ This paper reveals an optimization conflict between modality encoders and fusion
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal learning leverages complementary information from multiple sensors (visual+audio, RGB+depth, etc.) to improve task performance. Research has focused on designing fusion techniques (tensor-based, attention-based, etc.). However, naively combining multiple modalities does not always yield the expected performance gains.
+**Background**: Multimodal learning leverages complementary information from multiple sensors (visual+audio, RGB+depth, etc.) to improve task performance. Research has focused on designing fusion techniques (tensor-based, attention-based, etc.). However, naively combining multiple modalities does not always yield the expected performance gains.
 
 **Limitations of Prior Work**:
    - Known issue: Multimodal models can underperform unimodal models (the "under-optimization" problem).
    - Existing explanation: The dominant modality suppresses optimization of weaker modalities ("modality imbalance"), motivating gradient modulation methods such as OGM, PMR, and AGM to amplify gradients for weaker modalities.
    - **Overlooked issue**: These methods focus solely on improving weaker modalities while ignoring the fact that **the dominant modality also underperforms its own unimodal baseline**. As shown in Fig. 1, audio (the dominant modality) performs worse in the multimodal model than in its unimodal counterpart.
 
-**Root Cause**: Why does the dominant modality also underperform in multimodal models? The existing "modality imbalance" explanation cannot answer this. The paper identifies the true cause: **the fusion module suppresses gradients propagated back to modality encoders**, and this suppression intensifies as training progresses.
+**Key Challenge**: Why does the dominant modality also underperform in multimodal models? The existing "modality imbalance" explanation cannot answer this. The paper identifies the true cause: **the fusion module suppresses gradients propagated back to modality encoders**, and this suppression intensifies as training progresses.
 
-**Paper Goals**: To explain and resolve the under-optimization of all modalities (including the dominant modality) in multimodal learning.
+**Goal**: To explain and resolve the under-optimization of all modalities (including the dominant modality) in multimodal learning.
 
-**Starting Point**: Through mathematical derivation, it is shown that in multimodal models, gradients propagated from the fusion module back to the encoders via the chain rule are diminished compared to those in unimodal models. Specifically, the fusion operation introduces a scaling factor such that $\|g_{\theta_1}^{Multi}\| < \|g_{\theta_1}^{Uni}\|$.
+**Key Insight**: Through mathematical derivation, it is shown that in multimodal models, gradients propagated from the fusion module back to the encoders via the chain rule are diminished compared to those in unimodal models. Specifically, the fusion operation introduces a scaling factor such that $\|g_{\theta_1}^{Multi}\| < \|g_{\theta_1}^{Uni}\|$.
 
 **Core Idea**: Cut the gradient path from the fusion module to the encoders, provide each encoder with an undisturbed optimization signal via independent unimodal losses, and simultaneously block the gradient from unimodal losses back to the fusion module to prevent reverse interference.
 

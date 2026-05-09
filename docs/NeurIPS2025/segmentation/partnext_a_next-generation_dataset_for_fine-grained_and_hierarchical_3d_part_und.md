@@ -29,18 +29,18 @@ This paper presents PartNeXt, a fine-grained hierarchical part annotation datase
 
 ## Background & Motivation
 
-**State of the Field**: The PartNet dataset has advanced 3D part-level understanding by providing 573K part annotations across 26K models and 24 categories.
+**Background**: The PartNet dataset has advanced 3D part-level understanding by providing 573K part annotations across 26K models and 24 categories.
 
 **Limitations of Prior Work**:
 - PartNet's annotation pipeline requires remeshing, which causes texture loss and geometric distortion in some objects, limiting the use of visual cues.
 - PartNet's annotation interface demands 3D modeling expertise (manually drawing curves to cut meshes and inspecting cross-sections), making it unsuitable for crowdsourced scaling.
 - Existing datasets have limited category coverage (24 categories) and predominantly consist of untextured geometry.
 
-**Root Cause**: A fundamental tension exists between the demand for high-quality fine-grained 3D part annotations and the need for scalable, accessible annotation pipelines.
+**Key Challenge**: A fundamental tension exists between the demand for high-quality fine-grained 3D part annotations and the need for scalable, accessible annotation pipelines.
 
-**Paper Goals**: To construct a high-quality, scalable next-generation 3D part annotation dataset alongside new evaluation benchmarks.
+**Goal**: To construct a high-quality, scalable next-generation 3D part annotation dataset alongside new evaluation benchmarks.
 
-**Starting Point**: Design a fully web-based crowdsourcing annotation interface combined with AI-assisted hierarchy definition and direct annotation on textured meshes.
+**Key Insight**: Design a fully web-based crowdsourcing annotation interface combined with AI-assisted hierarchy definition and direct annotation on textured meshes.
 
 **Core Idea**: Enable large-scale, fine-grained textured 3D part annotation through annotation tooling innovation and AI assistance.
 

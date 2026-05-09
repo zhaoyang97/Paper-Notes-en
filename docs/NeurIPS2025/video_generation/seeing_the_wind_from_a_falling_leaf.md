@@ -29,15 +29,15 @@ An end-to-end differentiable inverse graphics framework is proposed that jointly
 
 ## Background & Motivation
 
-1. **State of the Field**: Computer vision has long pursued motion modeling from video, yet the invisible physical interactions (forces) underlying motion remain largely unexplored. System identification methods only estimate a small number of physical parameters (e.g., mass, friction coefficients).
+1. **Background**: Computer vision has long pursued motion modeling from video, yet the invisible physical interactions (forces) underlying motion remain largely unexplored. System identification methods only estimate a small number of physical parameters (e.g., mass, friction coefficients).
 
 2. **Limitations of Prior Work**: Force estimation is far more challenging than physical parameter estimation — forces are full vectors that can exist throughout 3D space in dense and complex configurations. Time integration in physical simulators leads to gradient explosion/vanishing, making backpropagation unstable.
 
-3. **Root Cause**: Inferring invisible forces from visible motion is an ill-posed inverse problem with incomplete information. Conventional photometric loss provides insufficient gradients, and dense 3D scene flow is highly noisy.
+3. **Key Challenge**: Inferring invisible forces from visible motion is an ill-posed inverse problem with incomplete information. Conventional photometric loss provides insufficient gradients, and dense 3D scene flow is highly noisy.
 
-4. **Paper Goals**: Recover force fields driving object motion from video input alone, without manually specifying forces or environmental conditions.
+4. **Goal**: Recover force fields driving object motion from video input alone, without manually specifying forces or environmental conditions.
 
-5. **Starting Point**: Construct a fully differentiable "perception → physics → optimization" pipeline, replacing dense scene flow with sparse keypoint tracking to substantially reduce the optimization space dimensionality and stabilize gradients.
+5. **Key Insight**: Construct a fully differentiable "perception → physics → optimization" pipeline, replacing dense scene flow with sparse keypoint tracking to substantially reduce the optimization space dimensionality and stabilize gradients.
 
 6. **Core Idea**: 3D Gaussians (Lagrangian particles) + Causal Triplane (Eulerian force field) + MPM simulator + sparse tracking objective = an end-to-end differentiable pipeline from video to force fields.
 

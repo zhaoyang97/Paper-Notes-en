@@ -29,7 +29,7 @@ This paper proposes Generative Distribution Embeddings (GDE), which lifts autoen
 
 ## Background & Motivation
 
-**State of the Field**: Modern science, particularly computational biology, increasingly requires cross-scale reasoning where the unit of analysis is not an individual data point (e.g., a single cell) but rather the distribution to which data points belong (e.g., all cells from a patient). Kernel methods, Wasserstein-space approaches, and variational autoencoders each have their own limitations.
+**Background**: Modern science, particularly computational biology, increasingly requires cross-scale reasoning where the unit of analysis is not an individual data point (e.g., a single cell) but rather the distribution to which data points belong (e.g., all cells from a patient). Kernel methods, Wasserstein-space approaches, and variational autoencoders each have their own limitations.
 
 **Limitations of Prior Work**:
 - Traditional encoders operate on individual data points, discarding **population-level** signals.
@@ -37,11 +37,11 @@ This paper proposes Generative Distribution Embeddings (GDE), which lifts autoen
 - Methods such as Wasserstein Wormhole are restricted to sampling a fixed number of points.
 - Existing approaches lack the ability to decode back to a distribution from a distribution embedding.
 
-**Root Cause**: In hierarchical data (patient → cell → gene expression), unit-level noise is substantial (e.g., molecular undersampling), yet the signal of interest resides at the distribution level.
+**Key Challenge**: In hierarchical data (patient → cell → gene expression), unit-level noise is substantial (e.g., molecular undersampling), yet the signal of interest resides at the distribution level.
 
-**Paper Goals**: To construct a general framework capable of learning compact representations of distributions and resampling those distributions from the learned representations.
+**Goal**: To construct a general framework capable of learning compact representations of distributions and resampling those distributions from the learned representations.
 
-**Starting Point**: The autoencoder concept is lifted such that the encoder receives a set of samples (an empirical distribution) and the decoder is a conditional generative model (sampling conditioned on an embedding vector). A key constraint is that the encoder must be *distribution-invariant*.
+**Key Insight**: The autoencoder concept is lifted such that the encoder receives a set of samples (an empirical distribution) and the decoder is a conditional generative model (sampling conditioned on an embedding vector). A key constraint is that the encoder must be *distribution-invariant*.
 
 **Core Idea**: By combining a distribution-invariant encoder with a conditional generative model, any autoencoder framework can be lifted to the space of distributions, learning representations equivalent to predictive sufficient statistics.
 

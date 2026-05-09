@@ -28,15 +28,15 @@ This paper proposes AIR (Adaptive vIsual Reinforcement), a framework that reduce
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs (LLaVA, Qwen-VL, etc.) have achieved remarkable progress in vision-language reasoning, yet remain prone to "hallucinations"—generated text that is inconsistent with image content, such as describing non-existent objects or producing contradictions. Hallucination mitigation methods are broadly categorized into training-time (requiring additional annotations), post-processing (requiring external models), and inference-time approaches (e.g., contrastive decoding).
+**Background**: MLLMs (LLaVA, Qwen-VL, etc.) have achieved remarkable progress in vision-language reasoning, yet remain prone to "hallucinations"—generated text that is inconsistent with image content, such as describing non-existent objects or producing contradictions. Hallucination mitigation methods are broadly categorized into training-time (requiring additional annotations), post-processing (requiring external models), and inference-time approaches (e.g., contrastive decoding).
 
 **Limitations of Prior Work**: Recent visual reinforcement methods (e.g., MemVR) attempt to re-inject visual tokens into FFN layers during decoding to strengthen visual signals, but suffer from a critical flaw—**all visual tokens are injected indiscriminately**, causing redundant signals from background regions to interfere with the model's focus on salient regions, potentially introducing new hallucinations.
 
-**Root Cause**: The large number of visual tokens (e.g., 576 in LLaVA) contains substantial background-redundant tokens. Full injection introduces noise, while no injection leads to visual signal attenuation—a balance must be struck between "reinforcing visual signals" and "avoiding background interference."
+**Key Challenge**: The large number of visual tokens (e.g., 576 in LLaVA) contains substantial background-redundant tokens. Full injection introduces noise, while no injection leads to visual signal attenuation—a balance must be struck between "reinforcing visual signals" and "avoiding background interference."
 
-**Paper Goals**: Design a selective visual reinforcement mechanism that injects only the visual patches most relevant to the current generation step into the decoding process, strengthening critical visual cues while avoiding redundant interference.
+**Goal**: Design a selective visual reinforcement mechanism that injects only the visual patches most relevant to the current generation step into the decoding process, strengthening critical visual cues while avoiding redundant interference.
 
-**Starting Point**: The authors observe that similarity between hidden states and different visual tokens varies substantially—tokens corresponding to salient object regions exhibit high similarity while background tokens exhibit low similarity—motivating an adaptive selection strategy.
+**Key Insight**: The authors observe that similarity between hidden states and different visual tokens varies substantially—tokens corresponding to salient object regions exhibit high similarity while background tokens exhibit low similarity—motivating an adaptive selection strategy.
 
 **Core Idea**: Prototype-distance-based reduction is used to prune redundant visual tokens, and optimal transport is used to quantify patch–hidden-state alignment, with only highly aligned patches being injected.
 

@@ -28,13 +28,13 @@ MoPFormer is proposed to decompose wearable sensor signals into sequences of mot
 
 ## Background & Motivation
 
-**State of the Field**: Human activity recognition (HAR) using wearable sensors is widely applied in health monitoring and sports analysis; mainstream approaches employ CNNs or RNNs to process raw signals directly.
+**Background**: Human activity recognition (HAR) using wearable sensors is widely applied in health monitoring and sports analysis; mainstream approaches employ CNNs or RNNs to process raw signals directly.
 
 **Limitations of Prior Work**: (1) Raw signals contain substantial noise, and varying sampling rates hinder generalization; (2) CNNs struggle to capture long-range temporal dependencies; (3) standard Transformers adopt unreasonable tokenization strategies for HAR signals.
 
-**Root Cause**: The continuous nature of sensor signals conflicts with the discrete token format required by Transformers.
+**Key Challenge**: The continuous nature of sensor signals conflicts with the discrete token format required by Transformers.
 
-**Starting Point**: Human activities can be naturally decomposed into motion primitives (e.g., "raise arm," "take a step"), which serve as more semantically meaningful tokens for the Transformer.
+**Key Insight**: Human activities can be naturally decomposed into motion primitives (e.g., "raise arm," "take a step"), which serve as more semantically meaningful tokens for the Transformer.
 
 ## Method
 

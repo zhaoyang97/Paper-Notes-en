@@ -29,15 +29,15 @@ This paper proposes Ego2Web, the first benchmark that bridges egocentric video p
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal AI agents are advancing rapidly, evolving from simple conversational assistants toward systems capable of executing tasks in real web environments (e.g., shopping, searching, querying maps). Several web agent benchmarks already exist (e.g., WebArena, MiniWoB++, Mind2Web) for evaluating task completion in online environments.
+**Background**: Multimodal AI agents are advancing rapidly, evolving from simple conversational assistants toward systems capable of executing tasks in real web environments (e.g., shopping, searching, querying maps). Several web agent benchmarks already exist (e.g., WebArena, MiniWoB++, Mind2Web) for evaluating task completion in online environments.
 
 **Limitations of Prior Work**: Existing web agent benchmarks share a fundamental limitation—they focus exclusively on web-side interaction and perception, lacking any connection to the user's real physical environment. This means a critical scenario remains unevaluated: when an agent must first recognize objects in the user's surroundings via egocentric vision (e.g., AR glasses) and then complete related tasks online (e.g., spotting a snack and searching for it on Amazon). This ability to bridge "seeing" and "online execution" is a core requirement for future AI assistants.
 
-**Root Cause**: Current web agent evaluations only consider capabilities within the digital world, entirely ignoring an agent's ability to acquire visual cues from the physical world and translate them into digital actions. This leaves the true performance of current models on the complete "perceive → understand → act" pipeline unknown.
+**Key Challenge**: Current web agent evaluations only consider capabilities within the digital world, entirely ignoring an agent's ability to acquire visual cues from the physical world and translate them into digital actions. This leaves the true performance of current models on the complete "perceive → understand → act" pipeline unknown.
 
-**Paper Goals**: To construct a benchmark that integrates egocentric video perception with web action execution, systematically evaluating agents' visual understanding, task planning, and online interaction capabilities.
+**Goal**: To construct a benchmark that integrates egocentric video perception with web action execution, systematically evaluating agents' visual understanding, task planning, and online interaction capabilities.
 
-**Starting Point**: The paper leverages existing large-scale egocentric video datasets (e.g., Ego4D), combined with a VLM+LLM automated data generation pipeline and human verification, to construct high-quality video–web task pairs.
+**Key Insight**: The paper leverages existing large-scale egocentric video datasets (e.g., Ego4D), combined with a VLM+LLM automated data generation pipeline and human verification, to construct high-quality video–web task pairs.
 
 **Core Idea**: Visual evidence extracted from egocentric videos (e.g., brands, objects, actions) serves as grounding information, requiring agents to complete related tasks in real web environments, thereby evaluating agent capabilities that span the physical and digital worlds.
 

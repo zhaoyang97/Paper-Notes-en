@@ -27,15 +27,15 @@ content_hash: 5025c53a93de930e
 This paper proposes SAGA, a training-free method that learns prompt-aligned Gaussian distributions to improve semantic alignment in text-to-image generation models. Supporting both text and spatial conditioning, SAGA achieves substantial alignment gains on SD 1.4 and SD 3 (TIAM-3 improves from 8.4% to 50.7%).
 
 ## Background & Motivation
-**State of the Field**: T2I generation models (diffusion and flow matching) achieve high visual quality but struggle with precise prompt alignment.
+**Background**: T2I generation models (diffusion and flow matching) achieve high visual quality but struggle with precise prompt alignment.
 
 **Limitations of Prior Work**: (a) Catastrophic neglect — generated images omit key elements specified in the prompt; (b) Subject mixing — attributes of different entities are incorrectly merged; (c) Existing methods (e.g., GSN) adjust latent representations via point optimization, which may produce out-of-distribution samples and oversaturated outputs.
 
-**Root Cause**: Point optimization methods lack distributional guarantees and are prone to unnatural outputs; InitNO optimizes at initialization when semantic signals are insufficiently formed.
+**Key Challenge**: Point optimization methods lack distributional guarantees and are prone to unnatural outputs; InitNO optimizes at initialization when semantic signals are insufficiently formed.
 
-**Paper Goals**: Improve text alignment of T2I models without retraining, while supporting both diffusion and flow matching frameworks.
+**Goal**: Improve text alignment of T2I models without retraining, while supporting both diffusion and flow matching frameworks.
 
-**Starting Point**: Shift from single-point optimization to distribution learning — learn a conditional Gaussian distribution at an intermediate denoising step, where signals are partially formed but randomness is still preserved.
+**Key Insight**: Shift from single-point optimization to distribution learning — learn a conditional Gaussian distribution at an intermediate denoising step, where signals are partially formed but randomness is still preserved.
 
 **Core Idea**: Learn a conditional Gaussian distribution $q(z_t|y)$ to approximate the true distribution $p(z_t|y)$, optimizing the distributional mean $\tilde{\mu}_y$ to directly capture low-frequency image structure and avoid out-of-distribution sampling.
 

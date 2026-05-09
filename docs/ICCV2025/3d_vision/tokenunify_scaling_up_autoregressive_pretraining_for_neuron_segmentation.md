@@ -29,16 +29,16 @@ TokenUnify is proposed to unify three complementary learning objectives—random
 
 ## Background & Motivation
 
-**State of the Field**: Neuron segmentation from electron microscopy (EM) volumetric images is a critical step toward understanding neural circuits. EM data exhibits three distinctive characteristics: (1) high noise (from electron beam interactions), (2) anisotropic voxels (coarser z-axis resolution), and (3) extremely long-range spatial dependencies (spanning thousands of patches).
+**Background**: Neuron segmentation from electron microscopy (EM) volumetric images is a critical step toward understanding neural circuits. EM data exhibits three distinctive characteristics: (1) high noise (from electron beam interactions), (2) anisotropic voxels (coarser z-axis resolution), and (3) extremely long-range spatial dependencies (spanning thousands of patches).
 
 **Limitations of Prior Work**:
 - Contrastive learning (DINO v2) and masked reconstruction (MAE) yield strong representations but lack favorable scaling laws. The estimation error of MAE is $O(\sqrt{s \log p / n})$, with diminishing returns as model capacity grows.
 - Autoregressive methods (AIM, LVM) attempt to bridge the gap, but standard autoregressive error **accumulates linearly** as $O(K)$, which is highly unfavorable for long sequences (K can reach thousands in EM data).
 - Conventional vision models cannot effectively handle the long-range spatial continuity in EM data.
 
-**Root Cause**: Visual data structure is more complex than text—no single pretraining objective can simultaneously capture local spatial patterns, sequential dependencies, and global structure. The scaling laws that made autoregression successful in language have not transferred to vision.
+**Key Challenge**: Visual data structure is more complex than text—no single pretraining objective can simultaneously capture local spatial patterns, sequential dependencies, and global structure. The scaling laws that made autoregression successful in language have not transferred to vision.
 
-**Starting Point**: Grounded in an **information-theoretic** perspective, this work proves that three prediction tasks capture complementary aspects of visual data structure. It leverages Mamba's linear-complexity sequence modeling to handle long-sequence EM data and constructs a large-scale EM dataset with 1.2 billion annotated voxels.
+**Key Insight**: Grounded in an **information-theoretic** perspective, this work proves that three prediction tasks capture complementary aspects of visual data structure. It leverages Mamba's linear-complexity sequence modeling to handle long-sequence EM data and constructs a large-scale EM dataset with 1.2 billion annotated voxels.
 
 ## Method
 

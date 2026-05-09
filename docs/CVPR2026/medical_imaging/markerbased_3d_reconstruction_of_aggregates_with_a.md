@@ -36,7 +36,7 @@ Aggregates serve as a core skeletal material in construction and transportation 
 
 - **2D imaging methods**: Systems such as AIMS (Aggregate Imaging System) and E-UIAIA analyze only particle silhouettes, reducing three-dimensional morphology to two-dimensional projections and discarding substantial spatial information. Three-dimensional attributes such as flatness and ellipsoidal characteristics cannot be accurately retrieved from a single projection.
 - **3D scanning methods**: 3D laser scanners and X-ray Computed Tomography (CT) equipment can provide complete three-dimensional information, but are prohibitively expensive (on the order of hundreds of thousands of dollars), operationally complex, and unsuitable for field deployment.
-- **Root Cause**: Industry requires low-cost, easily deployable solutions that provide complete 3D morphological information, whereas existing methods suffer from either insufficient accuracy (2D) or excessive cost (3D scanning).
+- **Key Challenge**: Industry requires low-cost, easily deployable solutions that provide complete 3D morphological information, whereas existing methods suffer from either insufficient accuracy (2D) or excessive cost (3D scanning).
 
 ### Design Motivation
 

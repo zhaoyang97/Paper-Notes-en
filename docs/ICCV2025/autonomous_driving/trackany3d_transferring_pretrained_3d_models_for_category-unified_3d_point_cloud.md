@@ -29,15 +29,15 @@ TrackAny3D is the first work to transfer large-scale pretrained 3D models to cat
 
 ## Background & Motivation
 
-**State of the Field**: Mainstream 3D LiDAR single object tracking (SOT) methods follow a category-specific learning paradigm, training and evaluating dedicated models for each object category (car, pedestrian, cyclist, etc.), which yields strong per-category accuracy.
+**Background**: Mainstream 3D LiDAR single object tracking (SOT) methods follow a category-specific learning paradigm, training and evaluating dedicated models for each object category (car, pedestrian, cyclist, etc.), which yields strong per-category accuracy.
 
 **Limitations of Prior Work**: The category-specific paradigm is impractical for real-world deployment — it requires training and storing numerous category-dedicated networks with substantial computational overhead, and critically cannot generalize to unseen categories, which is a fundamental limitation for open-world applications. Experiments show that naively training existing methods (STNet, CXTrack, MBPTrack) in a unified multi-category setting leads to severe performance drops of 3.8%, 10.3%, and 14.2%, respectively.
 
-**Root Cause**: Objects across categories differ drastically in scale, motion patterns, and structural complexity (e.g., vehicles are large rigid objects while pedestrians are small non-rigid ones). This geometric heterogeneity makes it difficult for a single model to handle all categories simultaneously.
+**Key Challenge**: Objects across categories differ drastically in scale, motion patterns, and structural complexity (e.g., vehicles are large rigid objects while pedestrians are small non-rigid ones). This geometric heterogeneity makes it difficult for a single model to handle all categories simultaneously.
 
-**Paper Goals**: (1) How to learn category-agnostic yet geometry-aware representations without introducing manual biases? (2) How to transfer pretrained 3D models to the tracking task? (3) How to effectively model temporal information?
+**Goal**: (1) How to learn category-agnostic yet geometry-aware representations without introducing manual biases? (2) How to transfer pretrained 3D models to the tracking task? (3) How to effectively model temporal information?
 
-**Starting Point**: In 2D vision and NLP, pretrained models combined with PEFT have demonstrated strong generalization to downstream tasks. Pretrained 3D point cloud models (e.g., RECON, Point-MAE) have also emerged, yet remain largely unexplored in 3D SOT. The authors hypothesize that geometric priors from pretrained models can alleviate inter-category geometric discrepancies.
+**Key Insight**: In 2D vision and NLP, pretrained models combined with PEFT have demonstrated strong generalization to downstream tasks. Pretrained 3D point cloud models (e.g., RECON, Point-MAE) have also emerged, yet remain largely unexplored in 3D SOT. The authors hypothesize that geometric priors from pretrained models can alleviate inter-category geometric discrepancies.
 
 **Core Idea**: Freeze the parameters of a pretrained 3D model and adapt it via lightweight dual-path adapters, MoGE for adaptive expert activation, and learnable temporal tokens for propagating historical context — forming the first category-unified pretrained-transfer 3D tracking framework.
 

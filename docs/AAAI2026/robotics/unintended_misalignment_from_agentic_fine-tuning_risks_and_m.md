@@ -27,15 +27,15 @@ content_hash: 136392cf4736756e
 This paper demonstrates that fine-tuning LLMs on benign agentic data causes unintended safety misalignment (attack success rate increases by 32–38%), and proposes PING (Prefix Injection Guard)—an iterative generate-and-evaluate approach that automatically discovers natural language prefixes to guide fine-tuned agents toward refusing harmful requests, achieving an average refusal rate improvement of 66% (Web) and 44% (Code) while preserving task performance (degradation of only 1.8%).
 
 ## Background & Motivation
-**State of the Field**: LLM agents (e.g., web navigation, code generation) are enhanced for specific capabilities through task-specific fine-tuning, yet safety considerations during this process are frequently overlooked.
+**Background**: LLM agents (e.g., web navigation, code generation) are enhanced for specific capabilities through task-specific fine-tuning, yet safety considerations during this process are frequently overlooked.
 
 **Limitations of Prior Work**: Research in non-adversarial domains has shown that fine-tuning on benign data (e.g., math reasoning, medical knowledge) can increase harmfulness. The agentic setting, however, poses greater risks—agents are designed to *execute actions* rather than merely generate text, so a safety failure can directly result in harmful operations (e.g., downloading illegal files, deleting system files, spreading misinformation).
 
-**Root Cause**: Agentic fine-tuning optimizes for "better instruction-following and task execution," but this very capability improvement inherently weakens the ability to "refuse harmful instructions"—since training data consists entirely of task-execution demonstrations with no refusal examples.
+**Key Challenge**: Agentic fine-tuning optimizes for "better instruction-following and task execution," but this very capability improvement inherently weakens the ability to "refuse harmful instructions"—since training data consists entirely of task-execution demonstrations with no refusal examples.
 
-**Paper Goals**: (1) Verify and quantify the safety shift induced by agentic fine-tuning; (2) Propose a lightweight and effective mitigation method.
+**Goal**: (1) Verify and quantify the safety shift induced by agentic fine-tuning; (2) Propose a lightweight and effective mitigation method.
 
-**Starting Point**: The observation that LLM safety refusal behavior is highly dependent on the initial response tokens (e.g., "I cannot")—after fine-tuning, the probability of these safety patterns drops substantially. Injecting an appropriate prefix can therefore "reactivate" refusal behavior.
+**Key Insight**: The observation that LLM safety refusal behavior is highly dependent on the initial response tokens (e.g., "I cannot")—after fine-tuning, the probability of these safety patterns drops substantially. Injecting an appropriate prefix can therefore "reactivate" refusal behavior.
 
 **Core Idea**: Automatically generate and iteratively refine natural language prefixes using an LLM, prepending them to agent responses to restore refusal of harmful requests while preserving task capability.
 

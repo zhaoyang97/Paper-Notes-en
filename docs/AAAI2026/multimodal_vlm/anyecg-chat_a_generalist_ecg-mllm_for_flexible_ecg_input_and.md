@@ -29,7 +29,7 @@ This work constructs the anyECG dataset (covering three tasks: report generation
 ## Background & Motivation
 Existing ECG-MLLMs are primarily limited to: (1) single-task settings such as report generation or label classification; and (2) standard 12-lead, 10-second ECG inputs. These constraints fail to address two critical clinical needs: **home monitoring scenarios** requiring anomalous waveform localization from long-duration, few-lead ECGs, and **clinical practice** requiring longitudinal comparative analysis across multiple ECG recordings. Furthermore, existing ECG-QA datasets (single-task, single-ECG, short duration) are insufficiently challenging.
 
-**Root Cause**: While MLLMs are inherently capable of flexible multi-task processing, existing ECG-MLLMs have fallen far short of realizing this potential.
+**Key Challenge**: While MLLMs are inherently capable of flexible multi-task processing, existing ECG-MLLMs have fallen far short of realizing this potential.
 
 ## Core Problem
 **How to build a generalist ECG-MLLM that simultaneously supports report generation, second-level waveform localization, and multi-ECG comparison, while handling flexible inputs including variable-length, few-lead, and multi-ECG configurations?**

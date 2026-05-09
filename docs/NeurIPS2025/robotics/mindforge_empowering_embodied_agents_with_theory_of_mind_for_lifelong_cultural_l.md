@@ -28,15 +28,15 @@ MindForge introduces explicit Theory of Mind (ToM) representations, natural lang
 
 ## Background & Motivation
 
-**State of the Field**: LLM-based lifelong learning agents such as Voyager have demonstrated continuous exploration and skill acquisition in Minecraft, but rely heavily on GPT-4's code generation capabilities.
+**Background**: LLM-based lifelong learning agents such as Voyager have demonstrated continuous exploration and skill acquisition in Minecraft, but rely heavily on GPT-4's code generation capabilities.
 
 **Limitations of Prior Work**: When GPT-4 is replaced with open-source LLMs (Mistral-7B, Llama 3.1-8B), Voyager fails even at the most basic tasks such as collecting dirt (success rate of only 4–7%). Existing agents learn in isolation, overlooking the central role of social learning in human intelligence. PEFT fine-tuning is also ineffective—fine-tuning Mistral-7B on GPT-4 execution trajectories yields virtually no improvement in success rate.
 
-**Root Cause**: Open-source LLMs have insufficient code generation and commonsense reasoning capabilities, yet direct fine-tuning fails to effectively transfer structured knowledge. There is no mechanism to improve weaker models through interaction without gradient updates.
+**Key Challenge**: Open-source LLMs have insufficient code generation and commonsense reasoning capabilities, yet direct fine-tuning fails to effectively transfer structured knowledge. There is no mechanism to improve weaker models through interaction without gradient updates.
 
-**Paper Goals**: Enable capability-limited open-source LLM agents to improve through social interaction (dialogue with experts), and verify whether weak-weak collaboration can also produce emergent improvements.
+**Goal**: Enable capability-limited open-source LLM agents to improve through social interaction (dialogue with experts), and verify whether weak-weak collaboration can also produce emergent improvements.
 
-**Starting Point**: Drawing on cultural learning theory from developmental psychology—humans internalize skills by observing others' perspectives and inferring others' beliefs and intentions—the paper models this as explicit ToM reasoning plus natural language dialogue between agents.
+**Key Insight**: Drawing on cultural learning theory from developmental psychology—humans internalize skills by observing others' perspectives and inferring others' beliefs and intentions—the paper models this as explicit ToM reasoning plus natural language dialogue between agents.
 
 **Core Idea**: Equip agents with explicit ToM representations via BDI (Belief-Desire-Intention) causal templates, and implement social knowledge distillation through natural language dialogue, bridging the capability gap between open-source LLMs and GPT-4 without any gradient updates.
 

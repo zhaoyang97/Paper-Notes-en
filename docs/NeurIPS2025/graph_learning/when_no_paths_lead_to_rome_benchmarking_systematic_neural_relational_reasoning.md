@@ -29,18 +29,18 @@ This paper introduces the NoRA benchmark, which systematically breaks the assump
 
 ## Background & Motivation
 
-**State of the Field**: Systematic relational reasoning is a central challenge in designing models that can apply learned rules in a compositional manner. CLUTRR is the most widely used benchmark, focusing on family relationship reasoning. State-of-the-art methods include CTP (differentiable logic programming), R5/NCRL (path composition), Edge Transformer, and EpiGNN.
+**Background**: Systematic relational reasoning is a central challenge in designing models that can apply learned rules in a compositional manner. CLUTRR is the most widely used benchmark, focusing on family relationship reasoning. State-of-the-art methods include CTP (differentiable logic programming), R5/NCRL (path composition), Edge Transformer, and EpiGNN.
 
 **Limitations of Prior Work**:
 - All reasoning in CLUTRR can be reduced to **path composition**: answers are derived by composing relations along a single path connecting the source and target.
 - Many state-of-the-art model architectures hard-code a path bias (e.g., R5 and NCRL can only reason along paths).
 - STaR requires composing multiple paths but remains primarily path-based in its reasoning.
 
-**Root Cause**: Real-world relational reasoning often requires "detours"—using information not on the source-to-target path to draw conclusions. For example, knowing that Wes has "no daughters" (off-path information) is necessary to infer that Ann is Todd's maternal aunt. Existing benchmarks cannot test this capability.
+**Key Challenge**: Real-world relational reasoning often requires "detours"—using information not on the source-to-target path to draw conclusions. For example, knowing that Wes has "no daughters" (off-path information) is necessary to infer that Ann is Todd's maternal aunt. Existing benchmarks cannot test this capability.
 
-**Paper Goals**: To construct a benchmark that systematically challenges path bias, precisely quantify the difficulty of off-path reasoning, and drive the development of more general reasoning models.
+**Goal**: To construct a benchmark that systematically challenges path bias, precisely quantify the difficulty of off-path reasoning, and drive the development of more general reasoning models.
 
-**Starting Point**: Design a rich rule set incorporating gender-specific family relations, everyday relations (classmates, neighbors, etc.), and ambiguous facts, such that reasoning must involve off-path nodes and constraint disambiguation.
+**Key Insight**: Design a rich rule set incorporating gender-specific family relations, everyday relations (classmates, neighbors, etc.), and ambiguous facts, such that reasoning must involve off-path nodes and constraint disambiguation.
 
 **Core Idea**: NoRA breaks the path composition assumption by introducing off-path reasoning, ambiguity resolution, and multi-relational settings, thereby exposing the true bottleneck of systematic reasoning.
 

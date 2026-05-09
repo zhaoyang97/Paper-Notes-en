@@ -29,13 +29,13 @@ This work introduces WebDevJudge, a meta-evaluation benchmark that systematicall
 
 ## Background & Motivation
 
-**State of the Field**: The LLM-as-a-judge paradigm has emerged as a scalable alternative to human evaluation, demonstrating strong performance on well-defined tasks such as question answering and reasoning. As language agent capabilities grow, this paradigm is being extended from simple static tasks to complex real-world problems.
+**Background**: The LLM-as-a-judge paradigm has emerged as a scalable alternative to human evaluation, demonstrating strong performance on well-defined tasks such as question answering and reasoning. As language agent capabilities grow, this paradigm is being extended from simple static tasks to complex real-world problems.
 
 **Limitations of Prior Work**: Existing reliability validation of LLM-as-a-judge has focused on static final-output evaluation. Its reliability on open-ended tasks involving dynamic environments and complex interactions—such as web development—remains largely unexplored. Web development requires real-time interactive evaluation and is inherently open-ended, with no single ground-truth answer.
 
-**Root Cause**: The application scope of automated evaluators continues to expand, yet rigorous validation in complex interactive settings is severely lacking. Existing benchmarks (e.g., MT-Bench, with annotator agreement of only 63%) lack reliable ground truth.
+**Key Challenge**: The application scope of automated evaluators continues to expand, yet rigorous validation in complex interactive settings is severely lacking. Existing benchmarks (e.g., MT-Bench, with annotator agreement of only 63%) lack reliable ground truth.
 
-**Starting Point**: Using web development as a testbed, this paper introduces a query-based rubric tree for structured annotation, establishing high-quality preference labels (agreement >80%) while supporting both static (screenshot/code) and interactive (dynamic web environment) evaluation.
+**Key Insight**: Using web development as a testbed, this paper introduces a query-based rubric tree for structured annotation, establishing high-quality preference labels (agreement >80%) while supporting both static (screenshot/code) and interactive (dynamic web environment) evaluation.
 
 ## Method
 

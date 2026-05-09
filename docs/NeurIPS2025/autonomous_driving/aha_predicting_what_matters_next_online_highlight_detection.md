@@ -28,15 +28,15 @@ Aha proposes the first autoregressive framework for Online Highlight Detection (
 
 ## Background & Motivation
 
-**State of the Field** Highlight Detection (HD) aims to identify key segments from videos. Nearly all modern Transformer-based HD methods rely on offline, full-sequence access. Streaming Video-LLMs can process streaming video, but HD as an auxiliary function yields limited performance.
+**Background** Highlight Detection (HD) aims to identify key segments from videos. Nearly all modern Transformer-based HD methods rely on offline, full-sequence access. Streaming Video-LLMs can process streaming video, but HD as an auxiliary function yields limited performance.
 
 **Limitations of Prior Work** (1) Offline methods require complete videos and are unsuitable for real-time decision-making (autonomous driving / surveillance / search-and-rescue); (2) Existing Video-LLMs performing HD either require benchmark modification or post-processing smoothing that violates online constraints; (3) No robust method has been specifically designed for OHD.
 
-**Root Cause** Effective HD requires understanding of temporal context, yet online constraints mandate the exclusive use of past and current information — the central challenge is achieving high-accuracy frame-level scoring under strict causal constraints.
+**Key Challenge** Effective HD requires understanding of temporal context, yet online constraints mandate the exclusive use of past and current information — the central challenge is achieving high-accuracy frame-level scoring under strict causal constraints.
 
-**Paper Goals** Design a real-time, task-conditioned online highlight detection framework that uses neither future frames nor modifications to standard benchmarks.
+**Goal** Design a real-time, task-conditioned online highlight detection framework that uses neither future frames nor modifications to standard benchmarks.
 
-**Starting Point** Establish an autoregressive scoring framework that captures three complementary dimensions — "Is it relevant? Is it novel? Is it certain?" — via a decoupled multi-objective head, coupled with a task-aware memory mechanism for unbounded streaming inference.
+**Key Insight** Establish an autoregressive scoring framework that captures three complementary dimensions — "Is it relevant? Is it novel? Is it certain?" — via a decoupled multi-objective head, coupled with a task-aware memory mechanism for unbounded streaming inference.
 
 **Core Idea** Formalize online HD as an autoregressive multi-objective scoring problem, and employ Dynamic SinkCache to support unbounded-length inference with constant memory overhead.
 

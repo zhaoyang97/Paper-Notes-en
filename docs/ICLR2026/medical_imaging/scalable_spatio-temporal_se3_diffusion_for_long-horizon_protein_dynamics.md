@@ -28,15 +28,15 @@ This paper proposes STAR-MD, an SE(3)-equivariant causal diffusion Transformer t
 
 ## Background & Motivation
 
-**State of the Field**: Molecular dynamics (MD) simulation is the gold standard for studying protein dynamics, but requires femtosecond-level integration steps and is computationally prohibitive (microsecond-scale simulations demand $10^9$ steps). Recent generative models have been proposed to accelerate MD, including MDGen (diffusion model for 100 ns trajectories), AlphaFolding (multi-frame simultaneous generation), and ConfRover (autoregressive generation).
+**Background**: Molecular dynamics (MD) simulation is the gold standard for studying protein dynamics, but requires femtosecond-level integration steps and is computationally prohibitive (microsecond-scale simulations demand $10^9$ steps). Recent generative models have been proposed to accelerate MD, including MDGen (diffusion model for 100 ns trajectories), AlphaFolding (multi-frame simultaneous generation), and ConfRover (autoregressive generation).
 
 **Limitations of Prior Work**: (a) Existing methods are limited to short timescales (nanoseconds) and cannot scale to biologically relevant microsecond–millisecond regimes. (b) AlphaFold2-style Pairformer with triangular attention incurs $O(N^3L)$ cubic computational cost and $O(N^2L)$ KV-cache memory. (c) Existing architectures interleave spatial and temporal modules (space-then-time), limiting their capacity to capture non-separable spatio-temporal couplings. (d) Error accumulation in autoregressive generation of long trajectories is severe.
 
-**Root Cause**: Coarse-graining (per-residue representations instead of all-atom) renders protein dynamics non-Markovian (requiring historical memory), yet the computationally expensive pairwise feature processing obstructs modeling over longer historical contexts.
+**Key Challenge**: Coarse-graining (per-residue representations instead of all-atom) renders protein dynamics non-Markovian (requiring historical memory), yet the computationally expensive pairwise feature processing obstructs modeling over longer historical contexts.
 
-**Paper Goals**: Design a protein conformation generation model that efficiently handles spatio-temporal dependencies while stably generating microsecond-scale long trajectories.
+**Goal**: Design a protein conformation generation model that efficiently handles spatio-temporal dependencies while stably generating microsecond-scale long trajectories.
 
-**Starting Point**: The paper employs the Mori–Zwanzig formalism to theoretically establish that (a) coarse-graining necessitates historical memory (non-Markovian dynamics), and (b) removing pairwise features causes the memory kernel to "inflate" and become spatio-temporally non-separable — directly motivating the use of joint spatio-temporal attention.
+**Key Insight**: The paper employs the Mori–Zwanzig formalism to theoretically establish that (a) coarse-graining necessitates historical memory (non-Markovian dynamics), and (b) removing pairwise features causes the memory kernel to "inflate" and become spatio-temporally non-separable — directly motivating the use of joint spatio-temporal attention.
 
 **Core Idea**: Replace alternating spatial and temporal modules with joint spatio-temporal attention, combined with causal diffusion training and contextual noise perturbation, to enable scalable long-horizon protein dynamics generation.
 

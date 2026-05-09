@@ -28,15 +28,15 @@ This paper provides the first theoretical analysis of the "PCC plateau" phenomen
 
 ## Background & Motivation
 
-**State of the Field**: Attention mechanisms are widely applied to set-level regression tasks (e.g., computational pathology, video sentiment analysis, spatial transcriptomics), where each sample consists of multiple elements and element embeddings are aggregated via attention to predict a continuous target. The training objective typically adopts a joint MSE+PCC loss, simultaneously targeting the absolute magnitude and the rank/shape of predictions.
+**Background**: Attention mechanisms are widely applied to set-level regression tasks (e.g., computational pathology, video sentiment analysis, spatial transcriptomics), where each sample consists of multiple elements and element embeddings are aggregated via attention to predict a continuous target. The training objective typically adopts a joint MSE+PCC loss, simultaneously targeting the absolute magnitude and the rank/shape of predictions.
 
 **Limitations of Prior Work**: A **PCC plateau** frequently occurs during training—PCC stops improving and flattens at an early stage, even as MSE continues to decrease. Increasing the PCC loss weight $\lambda_{\text{PCC}}$ fails to resolve this issue. The phenomenon is particularly severe when intra-sample data are highly homogeneous.
 
-**Root Cause**:
+**Key Challenge**:
    - **Optimization perspective**: MSE optimization drives the predicted standard deviation $\sigma_{\hat{y}}$ toward the target standard deviation $\sigma_y$. Since the global scaling factor of the PCC gradient is proportional to $1/\sigma_{\hat{y}}$, the PCC gradient signal is suppressed as $\sigma_{\hat{y}}$ grows.
    - **Capacity perspective**: Softmax attention is a convex combination, constraining aggregated outputs to lie within the convex hull of intra-sample embeddings. The maximum achievable PCC improvement is therefore bounded by the convex hull radius.
 
-**Starting Point**: The authors begin from the widely observed but never theoretically explained phenomenon of PCC stagnation. They provide rigorous analyses from both the optimization dynamics and model capacity perspectives, and design targeted solutions grounded in these analyses.
+**Key Insight**: The authors begin from the widely observed but never theoretically explained phenomenon of PCC stagnation. They provide rigorous analyses from both the optimization dynamics and model capacity perspectives, and design targeted solutions grounded in these analyses.
 
 **Core Idea**: By theoretically revealing the dual bottleneck of PCC gradient suppression by MSE optimization and the convex hull constraint in attention regression, the paper proposes a three-pronged remedy—convex-hull extrapolation, dispersion-adaptive temperature, and gradient normalization—to break the plateau.
 

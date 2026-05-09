@@ -29,17 +29,17 @@ This paper proposes DeltaPhi, a framework that forgoes direct learning of the in
 
 ## Background & Motivation
 
-**State of the Field**: Neural operators (e.g., FNO, DeepONet) have achieved substantial progress in learning PDE solution operators, yet their performance is highly dependent on the amount of training data. In practical physics and engineering settings, acquiring high-quality numerical PDE solutions is prohibitively expensive, making data scarcity a central bottleneck.
+**Background**: Neural operators (e.g., FNO, DeepONet) have achieved substantial progress in learning PDE solution operators, yet their performance is highly dependent on the amount of training data. In practical physics and engineering settings, acquiring high-quality numerical PDE solutions is prohibitively expensive, making data scarcity a central bottleneck.
 
 **Limitations of Prior Work**: Existing approaches to mitigating data insufficiency fall into two main categories: (a) incorporating physical equations as soft constraints (e.g., PINN-based methods), which suffer from difficult PDE residual optimization and require knowledge of the exact equation form; and (b) data augmentation (e.g., rotation, flipping), where generic strategies struggle to preserve the physical consistency of PDE solutions.
 
-**Root Cause**: For well-posed PDE problems, solutions depend continuously on initial/boundary conditions: the closer two initial conditions, the closer their corresponding trajectories. This Lipschitz continuity $\|G(a_1) - G(a_2)\| \leq C\|a_1 - a_2\|$ provides a critical prior: **the difference (residual) between outputs corresponding to similar inputs is small and smooth, and thus easier to learn than the original mapping**.
+**Key Challenge**: For well-posed PDE problems, solutions depend continuously on initial/boundary conditions: the closer two initial conditions, the closer their corresponding trajectories. This Lipschitz continuity $\|G(a_1) - G(a_2)\| \leq C\|a_1 - a_2\|$ provides a critical prior: **the difference (residual) between outputs corresponding to similar inputs is small and smooth, and thus easier to learn than the original mapping**.
 
 **Residual vs. Direct Mapping**: Directly learning $a \mapsto u$ requires fitting a complex high-dimensional mapping, whereas learning the residual $\Delta u = G(a_i) - G(a_k)$ (where $a_k$ is a sample similar to $a_i$) yields a target of smaller magnitude and smoother variation, reducing the learning difficulty.
 
-**Paper Goals**: For $N$ training samples, conventional methods yield only $N$ input-output pairs. By pairing each sample with its $K$ nearest neighbors, DeltaPhi generates $K \times N$ residual training pairs, achieving combinatorial implicit data augmentation without any additional data collection.
+**Goal**: For $N$ training samples, conventional methods yield only $N$ input-output pairs. By pairing each sample with its $K$ nearest neighbors, DeltaPhi generates $K \times N$ residual training pairs, achieving combinatorial implicit data augmentation without any additional data collection.
 
-**Starting Point**: An ideal data-efficient approach should be a plug-and-play external framework compatible with arbitrary existing neural operator architectures, rather than being tied to a specific model design.
+**Key Insight**: An ideal data-efficient approach should be a plug-and-play external framework compatible with arbitrary existing neural operator architectures, rather than being tied to a specific model design.
 
 ## Method
 

@@ -28,15 +28,15 @@ This work presents Mina, a multilingual LLM-powered legal assistant for the Bang
 
 ## Background & Motivation
 
-**State of the Field**: Bangladesh's judicial system faces a backlog of 3.7–4.4 million cases, with only 2,100 judges (one per 90,000 people), civil disputes dragging on for decades, unregulated and expensive legal fees, and limited public legal aid funding.
+**Background**: Bangladesh's judicial system faces a backlog of 3.7–4.4 million cases, with only 2,100 judges (one per 90,000 people), civil disputes dragging on for decades, unregulated and expensive legal fees, and limited public legal aid funding.
 
 **Limitations of Prior Work**: (1) Existing AI legal assistants lack Bengali language support and are not adapted to Bangladeshi jurisdiction; (2) Bangladesh's legal system is rooted in colonial-era codes containing substantial Persian-origin terminology that English-dominant models cannot handle effectively; (3) Low-income populations face a triple barrier of complex legal language, opaque procedures, and high costs.
 
-**Root Cause**: A triple low-resource challenge spanning language, legal system, and infrastructure—scarce Bengali NLP tools, highly specialized and cross-lingual legal terminology, and a target user base with limited legal and digital literacy.
+**Key Challenge**: A triple low-resource challenge spanning language, legal system, and infrastructure—scarce Bengali NLP tools, highly specialized and cross-lingual legal terminology, and a target user base with limited legal and digital literacy.
 
-**Paper Goals**: To construct a localized, multilingual legal assistant capable of drafting legal documents, citing statutes, and translating complex legal language into plain Bengali explanations.
+**Goal**: To construct a localized, multilingual legal assistant capable of drafting legal documents, citing statutes, and translating complex legal language into plain Bengali explanations.
 
-**Starting Point**: Rather than pursuing innovation in a single module, the work combines proven components (multilingual embeddings, RAG, LangGraph agents) and deeply adapts them to the bilingual, low-resource legal environment.
+**Key Insight**: Rather than pursuing innovation in a single module, the work combines proven components (multilingual embeddings, RAG, LangGraph agents) and deeply adapts them to the bilingual, low-resource legal environment.
 
 **Core Idea**: A two-stage RAG pipeline (first retrieving act summaries, then retrieving specific provisions) combined with a custom legal dictionary and a multi-agent workflow to deliver jurisdiction-specific, precise legal answers.
 

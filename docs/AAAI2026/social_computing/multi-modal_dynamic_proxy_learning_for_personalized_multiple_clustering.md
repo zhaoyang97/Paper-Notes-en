@@ -28,7 +28,7 @@ This paper proposes the Multi-DProxy framework, which leverages learnable textua
 
 ## Background & Motivation
 
-**State of the Field**: Clustering is a cornerstone of unsupervised learning, aiming to discover latent data structures based on intrinsic similarity. Traditional clustering yields only a single partition, overlooking the inherent complexity that data can be meaningfully grouped from multiple perspectives. Multiple clustering seeks to discover complementary and diverse partitions; however, existing methods exhaustively enumerate all possible clusterings without regard to user interests, forcing users to manually sift through results—a significant practical bottleneck.
+**Background**: Clustering is a cornerstone of unsupervised learning, aiming to discover latent data structures based on intrinsic similarity. Traditional clustering yields only a single partition, overlooking the inherent complexity that data can be meaningfully grouped from multiple perspectives. Multiple clustering seeks to discover complementary and diverse partitions; however, existing methods exhaustively enumerate all possible clusterings without regard to user interests, forcing users to manually sift through results—a significant practical bottleneck.
 
 **Limitations of Prior Work**: Recent methods such as Multi-MaP and Multi-Sub exploit CLIP for proxy learning, using textual prompts to guide interest-biased embedding extraction. Nevertheless, these approaches suffer from two fundamental deficiencies:
 
@@ -36,9 +36,9 @@ This paper proposes the Multi-DProxy framework, which leverages learnable textua
 
 **Inflexible Feature Fusion**: Fixed fusion strategies (concatenation or simple averaging) ignore the continuously evolving feature interactions between modalities, yielding suboptimal joint representations.
 
-**Root Cause**: Users expect clustering results aligned with their interests via simple concept keywords (e.g., "color"), yet static textual proxies and fixed fusion strategies fail to capture dataset-specific semantic structure and dynamic cross-modal interactions.
+**Key Challenge**: Users expect clustering results aligned with their interests via simple concept keywords (e.g., "color"), yet static textual proxies and fixed fusion strategies fail to capture dataset-specific semantic structure and dynamic cross-modal interactions.
 
-**Starting Point**:
+**Key Insight**:
 - Replace static candidate words with **learnable** textual proxies
 - Employ a **gating mechanism** for adaptive cross-modal fusion
 - Use **iterative feedback** to allow the candidate set to evolve dynamically with the clustering structure

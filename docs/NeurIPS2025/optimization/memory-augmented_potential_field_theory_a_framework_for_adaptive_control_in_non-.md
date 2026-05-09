@@ -27,14 +27,14 @@ content_hash: 69a595c93b5ea902
 This paper proposes Memory-Augmented Potential Field Theory (MAPFT), which maintains a dynamic memory module within stochastic optimal control to detect and encode topological features of the state space (local minima, low-gradient regions, etc.), and adaptively reshapes the value function landscape to enable control in non-convex environments. On tasks such as Humanoid-v4, the method achieves a 27% improvement in cumulative reward over the best RL baseline (SAC), and raises the local optima escape rate from ~30% to ~72%.
 
 ## Background & Motivation
-**State of the Field**: MPPI (Model Predictive Path Integral) is a sampling-based stochastic optimal control method that handles nonlinear systems via Monte Carlo sampling and exponentially weighted averaging. It is widely applied in robot control, autonomous driving, and related domains.
+**Background**: MPPI (Model Predictive Path Integral) is a sampling-based stochastic optimal control method that handles nonlinear systems via Monte Carlo sampling and exponentially weighted averaging. It is widely applied in robot control, autonomous driving, and related domains.
 
 **Limitations of Prior Work**:
 - MPPI tends to get trapped in local optima under highly non-convex value function landscapes; increasing sampling noise only partially alleviates this issue and introduces control instability.
 - Traditional controllers lack "memory"—decisions are made solely based on the current state without learning from historical trajectories, leading to repeated entrapment in the same suboptimal regions.
 - Potential field methods possess theoretical elegance but are limited by their fixed, non-adaptive formulations.
 
-**Root Cause**: Non-convex value functions correspond to multi-attractor systems, requiring controllers to perceive the topological structure of the state space and traverse energy barriers—a capability absent in standard stochastic control methods.
+**Key Challenge**: Non-convex value functions correspond to multi-attractor systems, requiring controllers to perceive the topological structure of the state space and traverse energy barriers—a capability absent in standard stochastic control methods.
 
 **Core Idea**: Integrate "experiential memory" into control via potential fields—automatically detect topological features such as local minima, encode them as memory, and dynamically reshape the value function landscape through potential field correction terms.
 

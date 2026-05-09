@@ -27,15 +27,15 @@ content_hash: eb997a1c21b308e1
 This paper proposes KVComm, a framework that enables efficient inter-LLM communication via selective KV pair sharing. It identifies an "information concentration bias" in hidden states that renders them unsuitable for cross-model transfer, and designs a layer selection strategy combining attention importance scores with a Gaussian prior. Transmitting only 30% of layers suffices to outperform most baselines.
 
 ## Background & Motivation
-**State of the Field**: Multi-LLM collaboration requires efficient communication mechanisms; existing approaches transmit hidden states or the full KV cache.
+**Background**: Multi-LLM collaboration requires efficient communication mechanisms; existing approaches transmit hidden states or the full KV cache.
 
 **Limitations of Prior Work**: ① The last-token hidden state is most critical in deeper layers, yet transmitting it overwrites the receiver's own representations. ② Full KV cache transmission incurs prohibitive bandwidth costs.
 
-**Root Cause**: The fundamental tension between communication efficiency and information completeness.
+**Key Challenge**: The fundamental tension between communication efficiency and information completeness.
 
-**Paper Goals**: Identify the most suitable representation format and selection strategy for cross-LLM transfer.
+**Goal**: Identify the most suitable representation format and selection strategy for cross-LLM transfer.
 
-**Starting Point**: A systematic comparison of hidden states and KV pairs reveals that KV pairs are inherently more suitable—they can be selectively transmitted on a per-layer basis without overwriting the receiver's information.
+**Key Insight**: A systematic comparison of hidden states and KV pairs reveals that KV pairs are inherently more suitable—they can be selectively transmitted on a per-layer basis without overwriting the receiver's information.
 
 **Core Idea**: KV pairs constitute the optimal communication medium; selecting intermediate layers (richest in semantics) combined with high-attention layers yields the optimal subset.
 

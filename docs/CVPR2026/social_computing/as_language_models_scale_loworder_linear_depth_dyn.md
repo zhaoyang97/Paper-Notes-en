@@ -29,16 +29,16 @@ This work treats the layer-wise forward pass of a Transformer as a discrete-time
 
 ## Background & Motivation
 
-**State of the Field**: Activation steering has become a mainstream approach for controlling LLM behavior—injecting contrastive activation vectors at specific layers to modify attributes such as sentiment or toxicity. However, existing methods suffer from two major limitations: (1) the choice of intervention layer relies on heuristic per-layer scanning or fixed rules (e.g., "inject at the last layer"); (2) there is no theoretical guidance for allocating injection energy across layers in multi-layer interventions.
+**Background**: Activation steering has become a mainstream approach for controlling LLM behavior—injecting contrastive activation vectors at specific layers to modify attributes such as sentiment or toxicity. However, existing methods suffer from two major limitations: (1) the choice of intervention layer relies on heuristic per-layer scanning or fixed rules (e.g., "inject at the last layer"); (2) there is no theoretical guidance for allocating injection energy across layers in multi-layer interventions.
 
 **Limitations of Prior Work**:
 - The optimal intervention layer is task-dependent (middle layers are most effective for some tasks, later layers for others), making fixed rules universally suboptimal.
 - Brute-force per-layer scanning is costly for large models and cannot guide coordinated multi-layer interventions.
 - There is no systematic mathematical description of representation propagation along the depth dimension of Transformers.
 
-**Root Cause**: Transformers are high-dimensional nonlinear systems and are typically treated as black boxes. However, if each layer's transformation can be locally approximated by a low-dimensional linear model given a prompt context, intervention design can be transformed from heuristic search into an optimal control problem with an analytic solution.
+**Key Challenge**: Transformers are high-dimensional nonlinear systems and are typically treated as black boxes. However, if each layer's transformation can be locally approximated by a low-dimensional linear model given a prompt context, intervention design can be transformed from heuristic search into an optimal control problem with an analytic solution.
 
-**Starting Point**: Drawing on system identification methods from control theory—treating depth as discrete time and the last-token hidden state as the system state—the paper applies Jacobian linearization of layer-wise transformations under frozen context, followed by Krylov subspace dimensionality reduction, to obtain a compact low-order linear surrogate.
+**Key Insight**: Drawing on system identification methods from control theory—treating depth as discrete time and the last-token hidden state as the system state—the paper applies Jacobian linearization of layer-wise transformations under frozen context, followed by Krylov subspace dimensionality reduction, to obtain a compact low-order linear surrogate.
 
 ## Method
 

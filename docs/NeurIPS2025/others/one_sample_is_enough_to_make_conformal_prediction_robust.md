@@ -26,11 +26,11 @@ content_hash: 1794a406d5e01e88
 This paper proposes RCP1 (Robust Conformal Prediction with One sample), which certifies the conformal procedure itself rather than individual conformity scores. Requiring only a single randomly perturbed forward pass at inference, RCP1 yields smaller robust prediction sets than state-of-the-art methods that require 100 forward passes.
 
 ## Background & Motivation
-**State of the Field**: Conformal Prediction (CP) provides prediction sets with tunable probabilistic coverage guarantees for arbitrary black-box models. Robust CP (RCP) extends these guarantees to worst-case perturbations within a predefined radius.
+**Background**: Conformal Prediction (CP) provides prediction sets with tunable probabilistic coverage guarantees for arbitrary black-box models. Robust CP (RCP) extends these guarantees to worst-case perturbations within a predefined radius.
 
 **Limitations of Prior Work**: Randomized smoothing–based RCP methods require multiple forward passes per input (e.g., 100) to estimate smoothed conformity scores, incurring prohibitively high computational cost.
 
-**Root Cause**: A fundamental tension exists between robustness and computational efficiency — deterministic methods (e.g., RSCP+) produce overly large prediction sets, while smoothing-based methods (e.g., RSCP/SmoothFull) yield smaller sets at substantial computational expense.
+**Key Challenge**: A fundamental tension exists between robustness and computational efficiency — deterministic methods (e.g., RSCP+) produce overly large prediction sets, while smoothing-based methods (e.g., RSCP/SmoothFull) yield smaller sets at substantial computational expense.
 
 **Core Insight**: Even with a single randomly perturbed forward pass, the conformal prediction procedure itself already possesses a certain degree of robustness.
 

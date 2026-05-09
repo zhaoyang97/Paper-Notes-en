@@ -29,15 +29,15 @@ This paper proposes LivingSwap, the first video reference-guided face swapping m
 
 ## Background & Motivation
 
-1. **State of the Field**: Video face swapping is in high demand for film and television production. Existing methods fall into two categories: GAN-based methods process frames individually with strong identity injection capability but suffer from poor realism and temporal flickering; diffusion-based inpainting methods mask the original face region and regenerate it, achieving better temporal consistency but discarding original pixel information, leading to degraded fidelity (expressions, lighting, and subtle textures cannot be perfectly reconstructed).
+1. **Background**: Video face swapping is in high demand for film and television production. Existing methods fall into two categories: GAN-based methods process frames individually with strong identity injection capability but suffer from poor realism and temporal flickering; diffusion-based inpainting methods mask the original face region and regenerate it, achieving better temporal consistency but discarding original pixel information, leading to degraded fidelity (expressions, lighting, and subtle textures cannot be perfectly reconstructed).
 
 2. **Limitations of Prior Work**: Diffusion inpainting methods rely on external encoders to extract intermediate representations (e.g., landmarks, 3D faces), inevitably losing rich information from the source video. GAN-based methods, while capable of using full source frames to retain more detail, suffer from severe temporal inconsistency on long sequences. Recent reference-guided generation has achieved breakthroughs in image editing, enabling simultaneous editing flexibility and high-fidelity reconstruction.
 
-3. **Root Cause**: How can one stably and consistently inject the target identity while preserving the rich visual attributes of the source video (lighting, expression, subtle dynamics), in a manner applicable to long video scenarios?
+3. **Key Challenge**: How can one stably and consistently inject the target identity while preserving the rich visual attributes of the source video (lighting, expression, subtle dynamics), in a manner applicable to long video scenarios?
 
-4. **Paper Goals**: (1) Stable and consistent identity injection in long videos; (2) high-fidelity preservation of non-identity attributes (lighting, expression, background); (3) temporal consistency across video segments; (4) overcoming scarcity of training data.
+4. **Goal**: (1) Stable and consistent identity injection in long videos; (2) high-fidelity preservation of non-identity attributes (lighting, expression, background); (3) temporal consistency across video segments; (4) overcoming scarcity of training data.
 
-5. **Starting Point**: Drawing inspiration from reference-guided image editing — rather than masking the original face and inpainting, the source video is directly used as visual reference to guide the diffusion model. Long-video face swapping is decomposed into a controllable pipeline of keyframe editing → video reference completion → temporal stitching, with a pair reversal strategy to address training data scarcity.
+5. **Key Insight**: Drawing inspiration from reference-guided image editing — rather than masking the original face and inpainting, the source video is directly used as visual reference to guide the diffusion model. Long-video face swapping is decomposed into a controllable pipeline of keyframe editing → video reference completion → temporal stitching, with a pair reversal strategy to address training data scarcity.
 
 6. **Core Idea**: The source video itself serves as the reference to guide the diffusion model for face swapping. Keyframes provide identity conditioning, video references preserve non-identity details, temporal stitching handles long videos, and pair reversal resolves the training data problem.
 

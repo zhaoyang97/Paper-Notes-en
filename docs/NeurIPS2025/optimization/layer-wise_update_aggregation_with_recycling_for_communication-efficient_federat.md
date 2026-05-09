@@ -27,13 +27,13 @@ content_hash: e8f6890fffb7acda
 This paper proposes FedLUAR, which uses a gradient-to-weight ratio metric to identify low-priority layers and recycles their updates from the previous round (rather than discarding them), achieving accuracy nearly identical to FedAvg with only 17% communication overhead.
 
 ## Background & Motivation
-**State of the Field**: Communication overhead from model aggregation is a central bottleneck in federated learning (FL), a problem that worsens as model size increases.
+**Background**: Communication overhead from model aggregation is a central bottleneck in federated learning (FL), a problem that worsens as model size increases.
 
 **Limitations of Prior Work**: (a) Quantization methods (FedPAQ): uniformly reducing precision degrades the representation quality of all parameters; (b) Pruning methods (PruneFL): directly reducing parameter count impairs learning capacity; (c) Low-rank decomposition (FedPara): introduces additional computational overhead by increasing the number of network layers; (d) A common weakness — all these methods ultimately *discard* information.
 
 **Core Idea**: Layers with small gradient magnitudes are not necessarily less important to the model — the ratio of gradients to weights is the more relevant quantity. When gradients are large but weights are also large, the impact on layer outputs is limited.
 
-**Starting Point**: Rather than discarding updates from low-priority layers, recycling the updates from the previous round reduces communication without completely losing update information.
+**Key Insight**: Rather than discarding updates from low-priority layers, recycling the updates from the previous round reduces communication without completely losing update information.
 
 ## Method
 

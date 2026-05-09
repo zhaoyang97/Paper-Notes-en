@@ -28,7 +28,7 @@ This paper introduces MCMR (Multi-Conditional Multimodal Retrieval), a large-sca
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal retrieval has evolved from the global semantic alignment of the CLIP era to MLLM-based instruction-conditioned retrieval (e.g., VLM2Vec, GME, MM-Embed), yet evaluation benchmarks remain at the level of coarse-grained or single-condition matching.
+**Background**: Multimodal retrieval has evolved from the global semantic alignment of the CLIP era to MLLM-based instruction-conditioned retrieval (e.g., VLM2Vec, GME, MM-Embed), yet evaluation benchmarks remain at the level of coarse-grained or single-condition matching.
 
 **Limitations of Prior Work**:
 
@@ -37,11 +37,11 @@ This paper introduces MCMR (Multi-Conditional Multimodal Retrieval), a large-sca
 3. Multi-condition benchmarks such as MultiConIR operate exclusively in a text-only setting without cross-modal reasoning.
 4. MERIT introduces multimodal interleaved queries but relies on reference image comparisons and does not distinguish between visual and textual attribute sources.
 
-**Root Cause**: Existing benchmarks are either fine-grained but single-condition, or multi-condition but unimodal — none simultaneously satisfy all three dimensions of fine-grained attributes, multi-condition queries, and cross-modal evidence.
+**Key Challenge**: Existing benchmarks are either fine-grained but single-condition, or multi-condition but unimodal — none simultaneously satisfy all three dimensions of fine-grained attributes, multi-condition queries, and cross-modal evidence.
 
-**Paper Goals**: Construct a retrieval benchmark that genuinely tests cross-modal compositional reasoning ability.
+**Goal**: Construct a retrieval benchmark that genuinely tests cross-modal compositional reasoning ability.
 
-**Starting Point**: Enforce a "dual-evidence" constraint — each product must contain at least one attribute inferable only from images and one inferable only from text.
+**Key Insight**: Enforce a "dual-evidence" constraint — each product must contain at least one attribute inferable only from images and one inferable only from text.
 
 **Core Idea**: The dual-evidence design ensures that neither modality alone can resolve the task, thereby genuinely testing a model's cross-modal compositional reasoning capability.
 

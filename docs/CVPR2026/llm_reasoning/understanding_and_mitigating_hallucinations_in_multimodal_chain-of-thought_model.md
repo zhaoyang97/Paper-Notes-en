@@ -29,11 +29,11 @@ This paper systematically analyzes the causes of hallucinations in multimodal Co
 
 ## Background & Motivation
 
-1. **State of the Field**: Multimodal chain-of-thought (MCoT) models (e.g., R1-Onevision, PixelReasoner, GRIT) have substantially improved complex visual reasoning through explicit reasoning chains and have become the dominant paradigm for multimodal reasoning.
+1. **Background**: Multimodal chain-of-thought (MCoT) models (e.g., R1-Onevision, PixelReasoner, GRIT) have substantially improved complex visual reasoning through explicit reasoning chains and have become the dominant paradigm for multimodal reasoning.
 2. **Limitations of Prior Work**: MCoT models produce severe hallucinations during reasoning chain generation—generating textual descriptions that contradict visual content. Prior work (Liu et al., Tian et al.) attributes this to visual attention decay caused by longer reasoning chains, yet visual attention decay is a longstanding issue in traditional LVLMs and is not unique to MCoT.
-3. **Root Cause**: Traditional LVLMs employ implicit reasoning (direct answering), whereas MCoT models employ explicit reasoning (think before answering), representing a fundamentally different reasoning process. This raises the question of whether MCoT models have their own unique causes of hallucination.
-4. **Paper Goals**: (1) Identify hallucination causes specific to MCoT models; (2) Design training-free methods to locate and mitigate these hallucinations.
-5. **Starting Point**: Drawing on the cognitive science concept of "divergent vs. convergent thinking," the paper segments and annotates reasoning chains and finds that hallucinations are concentrated in divergent thinking steps (approximately 5× more frequent than in normal thinking steps).
+3. **Key Challenge**: Traditional LVLMs employ implicit reasoning (direct answering), whereas MCoT models employ explicit reasoning (think before answering), representing a fundamentally different reasoning process. This raises the question of whether MCoT models have their own unique causes of hallucination.
+4. **Goal**: (1) Identify hallucination causes specific to MCoT models; (2) Design training-free methods to locate and mitigate these hallucinations.
+5. **Key Insight**: Drawing on the cognitive science concept of "divergent vs. convergent thinking," the paper segments and annotates reasoning chains and finds that hallucinations are concentrated in divergent thinking steps (approximately 5× more frequent than in normal thinking steps).
 6. **Core Idea**: Visual entropy is used to quantify the model's internal confidence in visual input; high-entropy steps correspond to divergent thinking, and high-entropy tokens are dynamically penalized during decoding.
 
 ## Method

@@ -28,15 +28,15 @@ AVION proposes a knowledge distillation framework that uses LLM-generated semant
 
 ## Background & Motivation
 
-**State of the Field**: RS-specific VLMs such as RemoteCLIP and GeoRSCLIP perform well on downstream tasks, but full fine-tuning is expensive. PEFT methods (CoOp, MaPLe, etc.) adapt to new tasks by learning a small number of parameters.
+**Background**: RS-specific VLMs such as RemoteCLIP and GeoRSCLIP perform well on downstream tasks, but full fine-tuning is expensive. PEFT methods (CoOp, MaPLe, etc.) adapt to new tasks by learning a small number of parameters.
 
 **Limitations of Prior Work**: (1) **Semantic poverty** — RS datasets typically only have category name labels (e.g., "airport") and cannot describe the vast visual variations of the same category across different regions, seasons, and sensors; (2) **Visual rigidity** — most PEFT methods only update text-side prompts while freezing the visual encoder, unable to capture RS-specific overhead perspective and scale variation features.
 
-**Root Cause**: The gap between simple category names and the rich visual patterns of RS images, combined with the inability of frozen visual encoders to adapt to the RS domain.
+**Key Challenge**: The gap between simple category names and the rich visual patterns of RS images, combined with the inability of frozen visual encoders to adapt to the RS domain.
 
-**Paper Goals**: Simultaneously address semantic poverty and visual rigidity to make PEFT methods work effectively in RS scenarios.
+**Goal**: Simultaneously address semantic poverty and visual rigidity to make PEFT methods work effectively in RS scenarios.
 
-**Starting Point**: Leverage LLMs to generate rich category descriptions as textual supervision, and achieve robust adaptation through visual-textual-logit tri-aspect distillation constraints.
+**Key Insight**: Leverage LLMs to generate rich category descriptions as textual supervision, and achieve robust adaptation through visual-textual-logit tri-aspect distillation constraints.
 
 **Core Idea**: Use LLM-enriched text prototypes to solve semantic poverty, employ dual-side prompts + tri-aspect distillation to solve visual rigidity, and incur no additional overhead at inference through the teacher-student framework.
 

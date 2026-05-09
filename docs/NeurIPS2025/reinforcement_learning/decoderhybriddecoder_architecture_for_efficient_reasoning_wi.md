@@ -28,15 +28,15 @@ SambaY proposes the Gated Memory Unit (GMU) for sharing SSM token-mixing represe
 
 ## Background & Motivation
 
-**State of the Field**: Hybrid architectures combining SSMs/RNNs (e.g., Mamba) with Transformers (e.g., Samba, YOCO) have demonstrated the ability to significantly improve inference efficiency without sacrificing performance. YOCO achieves linear prefill complexity through a decoder-decoder structure that caches KV only once.
+**Background**: Hybrid architectures combining SSMs/RNNs (e.g., Mamba) with Transformers (e.g., Samba, YOCO) have demonstrated the ability to significantly improve inference efficiency without sacrificing performance. YOCO achieves linear prefill complexity through a decoder-decoder structure that caches KV only once.
 
 **Limitations of Prior Work**: YOCO's cross-decoder still employs full cross-attention layers, incurring $O(d_{kv} \cdot N)$ attention memory I/O cost during the **generation phase** (rather than the prefill phase). For the extremely long chain-of-thought sequences produced by modern reasoning LLMs (e.g., 32K tokens), this overhead becomes a new bottleneck.
 
-**Root Cause**: SSM layers naturally produce intermediate token-mixing representations that could be shared across layers, yet no prior work has explored leveraging such cross-layer representation sharing to reduce memory I/O during decoding.
+**Key Challenge**: SSM layers naturally produce intermediate token-mixing representations that could be shared across layers, yet no prior work has explored leveraging such cross-layer representation sharing to reduce memory I/O during decoding.
 
-**Paper Goals**: How can the memory I/O overhead of attention layers in the cross-decoder be reduced without sacrificing long-context retrieval capability?
+**Goal**: How can the memory I/O overhead of attention layers in the cross-decoder be reduced without sacrificing long-context retrieval capability?
 
-**Starting Point**: Design the GMU (Gated Memory Unit)—a simple gating mechanism that allows certain layers of the cross-decoder to directly reuse the token-mixing output $M^{(l')}$ from the last SSM layer of the self-decoder, applying channel-wise recalibration via a gating signal derived from the current layer's input.
+**Key Insight**: Design the GMU (Gated Memory Unit)—a simple gating mechanism that allows certain layers of the cross-decoder to directly reuse the token-mixing output $M^{(l')}$ from the last SSM layer of the self-decoder, applying channel-wise recalibration via a gating signal derived from the current layer's input.
 
 **Core Idea**: Replace half of the cross-attention layers with GMUs, reducing decoding memory I/O from linear $O(d_{kv} \cdot N)$ to constant $O(d_h)$, while enabling fine-grained reweighting of prior token-mixing representations through gating.
 

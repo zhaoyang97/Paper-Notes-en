@@ -28,15 +28,15 @@ This paper constructs a large-scale sketch-image-instruction triplet dataset, Sk
 
 ## Background & Motivation
 
-**State of the Field**: Large vision-language models (LVLMs) have achieved remarkable success on tasks such as VQA and document understanding, yet they rely almost exclusively on natural images and text. Hand-drawn sketches, as an intuitive visual communication medium, can effortlessly convey spatial layouts and shape information that is difficult to express in words, and transcend language barriers, making them a more universal communication tool.
+**Background**: Large vision-language models (LVLMs) have achieved remarkable success on tasks such as VQA and document understanding, yet they rely almost exclusively on natural images and text. Hand-drawn sketches, as an intuitive visual communication medium, can effortlessly convey spatial layouts and shape information that is difficult to express in words, and transcend language barriers, making them a more universal communication tool.
 
 **Limitations of Prior Work**: Existing open-source LVLMs (LLaVA, Qwen-VL, DeepSeek-VL2, etc.) almost completely fail to interpret rough hand-drawn sketches. As illustrated in Figure 1, even when a model can marginally recognize certain visual cues, it cannot leverage this information for downstream tasks such as detection or reasoning. Closed-source models (GPT-4o, Gemini) exhibit rudimentary sketch comprehension but suffer from weak multimodal grounding capabilities and remain inaccessible and non-interpretable.
 
-**Root Cause**: The absence of large-scale, open-source joint sketch-image-text training datasets. Existing sketch datasets (QuickDraw, Sketchy, TU-Berlin, etc.) either provide only category-level sketches without paired images, or target only a single task (SBIR), and universally lack text descriptions and question-answer pairs — which are essential for training LVLMs.
+**Key Challenge**: The absence of large-scale, open-source joint sketch-image-text training datasets. Existing sketch datasets (QuickDraw, Sketchy, TU-Berlin, etc.) either provide only category-level sketches without paired images, or target only a single task (SBIR), and universally lack text descriptions and question-answer pairs — which are essential for training LVLMs.
 
 **Core Problem**: Sketches are highly abstract and exhibit substantial variation (in style, cultural background, and drawing skill), creating a large domain gap with natural images. Enabling LVLMs to understand sketches requires addressing both the data scarcity and modality alignment challenges simultaneously.
 
-**Starting Point**:
+**Key Insight**:
 1. Constructing an automated sketch generation pipeline to produce instance-level sketches from large-scale image datasets at scale
 2. Designing a two-stage training strategy: large-scale sketch-image-text alignment pretraining followed by task-specific instruction fine-tuning
 3. The "Three Opens" principle: Open Weight, Open Data, and Open Vocabulary

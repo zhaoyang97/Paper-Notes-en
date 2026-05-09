@@ -29,15 +29,15 @@ This paper introduces the concept of compositional constraints to formalize safe
 
 ## Background & Motivation
 
-**State of the Field**: Embodied multi-agent systems are critical for solving complex real-world tasks such as industrial assembly, warehouse logistics, and collaborative transport. Single-agent embodied manipulation has achieved remarkable progress in recent years (e.g., ACT, Diffusion Policy), but research on multi-agent collaborative manipulation lags significantly behind.
+**Background**: Embodied multi-agent systems are critical for solving complex real-world tasks such as industrial assembly, warehouse logistics, and collaborative transport. Single-agent embodied manipulation has achieved remarkable progress in recent years (e.g., ACT, Diffusion Policy), but research on multi-agent collaborative manipulation lags significantly behind.
 
 **Limitations of Prior Work**: (1) **Lack of automated data collection**: The complexity of multi-agent systems makes manual teleoperation extremely difficult, while automated data generation methods lack guarantees of safety (e.g., robotic arm collisions, tool interference); (2) **Lack of benchmarks**: Existing embodied manipulation benchmarks (e.g., RLBench, ManiSkill) target single-agent settings, and multi-agent benchmarks are nearly absent; (3) **Insufficient constraint modeling for collaboration**: Multi-agent collaboration requires not only completing individual subtasks but also satisfying complex interaction constraints—spatial constraints (collision avoidance), temporal constraints (ordering), and cooperative constraints (synchronized actions).
 
-**Root Cause**: Multi-agent embodied systems require large amounts of high-quality training data, yet the complex constraints in multi-agent scenarios make automated data generation both difficult and unsafe.
+**Key Challenge**: Multi-agent embodied systems require large amounts of high-quality training data, yet the complex constraints in multi-agent scenarios make automated data generation both difficult and unsafe.
 
-**Paper Goals**: (1) Formalize a constraint framework for multi-agent collaboration; (2) Construct an automated data collection pipeline; (3) Provide the first multi-agent manipulation benchmark and explore learning approaches.
+**Goal**: (1) Formalize a constraint framework for multi-agent collaboration; (2) Construct an automated data collection pipeline; (3) Provide the first multi-agent manipulation benchmark and explore learning approaches.
 
-**Starting Point**: The authors observe that constraints in multi-agent collaboration can be decomposed into a set of primitive types (spatial, temporal, physical)—different tasks correspond to different combinations of these primitives.
+**Key Insight**: The authors observe that constraints in multi-agent collaboration can be decomposed into a set of primitive types (spatial, temporal, physical)—different tasks correspond to different combinations of these primitives.
 
 **Core Idea**: Decompose multi-agent collaboration constraints into composable primitive constraint types, design automated interfaces for each type, and automatically generate safe and efficient training data while evaluating multi-agent policies through constraint composition.
 

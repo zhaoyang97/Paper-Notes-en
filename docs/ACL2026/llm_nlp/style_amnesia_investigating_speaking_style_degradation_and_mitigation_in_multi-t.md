@@ -29,15 +29,15 @@ This paper identifies a phenomenon termed "style amnesia," in which spoken langu
 
 ## Background & Motivation
 
-**State of the Field**: Spoken language models (e.g., GPT-4o, Gemini Live, Qwen2.5-Omni) can follow user-specified speaking styles (emotion, accent, speech rate, etc.) in single-turn interactions, demonstrating impressive expressive capabilities.
+**Background**: Spoken language models (e.g., GPT-4o, Gemini Live, Qwen2.5-Omni) can follow user-specified speaking styles (emotion, accent, speech rate, etc.) in single-turn interactions, demonstrating impressive expressive capabilities.
 
 **Limitations of Prior Work**: Existing research focuses almost exclusively on single-turn evaluation, leaving style consistency across multi-turn conversations essentially unstudied. In practice, however, users set a style at the beginning of a conversation and expect the SLM to maintain it throughout the session without repeating instructions every turn.
 
-**Root Cause**: SLMs follow style instructions reasonably well in the first turn, but compliance drops sharply as the conversation progresses. The model does not truly "forget" the instruction—recall tests show it can accurately reproduce the instruction—yet it fails to execute what it remembers.
+**Key Challenge**: SLMs follow style instructions reasonably well in the first turn, but compliance drops sharply as the conversation progresses. The model does not truly "forget" the instruction—recall tests show it can accurately reproduce the instruction—yet it fails to execute what it remembers.
 
-**Paper Goals**: To systematically evaluate and analyze SLMs' ability to maintain speaking style across multi-turn dialogue, identify the root cause, and explore mitigation approaches.
+**Goal**: To systematically evaluate and analyze SLMs' ability to maintain speaking style across multi-turn dialogue, identify the root cause, and explore mitigation approaches.
 
-**Starting Point**: An end-to-end evaluation framework is constructed using a user simulator to conduct realistic interactive multi-turn conversations, measuring style compliance turn by turn.
+**Key Insight**: An end-to-end evaluation framework is constructed using a user simulator to conduct realistic interactive multi-turn conversations, measuring style compliance turn by turn.
 
 **Core Idea**: The fundamental cause of style amnesia is attention dilution—as conversation turns increase, the model's average attention weight on style-instruction tokens decays from ~8% to <0.6%, rather than reflecting a true loss of memory.
 

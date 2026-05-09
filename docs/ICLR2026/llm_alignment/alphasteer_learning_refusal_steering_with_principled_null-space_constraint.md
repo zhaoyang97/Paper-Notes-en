@@ -27,15 +27,15 @@ content_hash: baadd38968c4a223
 This paper proposes AlphaSteer, which learns a null-space-constrained transformation matrix to dynamically construct steering vectors that produce near-zero vectors for benign inputs (preserving utility) while reconstructing the refusal direction vector for malicious inputs (enhancing safety), providing theoretical guarantees for the decoupling of safety and utility.
 
 ## Background & Motivation
-**State of the Field**: Activation steering is an emerging approach to LLM safety enhancement. The core mechanism injects a "refusal direction vector" $\mathbf{r}$ into the model's internal activations at inference time, causing the model to refuse malicious prompts.
+**Background**: Activation steering is an emerging approach to LLM safety enhancement. The core mechanism injects a "refusal direction vector" $\mathbf{r}$ into the model's internal activations at inference time, causing the model to refuse malicious prompts.
 
 **Limitations of Prior Work**: Injecting the same $\mathbf{r}$ into all inputs causes excessive refusal of benign prompts, resulting in a safety–utility trade-off. Existing methods either perform vector calibration (e.g., Surgical uses PCA decomposition to subtract spurious refusal components) or apply conditional steering (e.g., CAST sets a threshold to steer only "malicious" activations), but both rely on heuristic designs without theoretical guarantees.
 
-**Root Cause**: Safety enhancement and utility preservation are fundamentally conflicting demands on the same steering operation—malicious activations need to be substantially altered while benign activations must remain unchanged, yet existing methods cannot guarantee this mathematically.
+**Key Challenge**: Safety enhancement and utility preservation are fundamentally conflicting demands on the same steering operation—malicious activations need to be substantially altered while benign activations must remain unchanged, yet existing methods cannot guarantee this mathematically.
 
-**Paper Goals**: (1) How can steering be made strictly non-interfering with benign activations? (2) How can steering reliably reconstruct the refusal direction for malicious activations?
+**Goal**: (1) How can steering be made strictly non-interfering with benign activations? (2) How can steering reliably reconstruct the refusal direction for malicious activations?
 
-**Starting Point**: The authors observe the mathematical properties of null spaces—if the row vectors of a transformation matrix lie in the null space of the benign activation matrix, the transformation necessarily produces a zero vector when applied to benign activations.
+**Key Insight**: The authors observe the mathematical properties of null spaces—if the row vectors of a transformation matrix lie in the null space of the benign activation matrix, the transformation necessarily produces a zero vector when applied to benign activations.
 
 **Core Idea**: Replace the fixed refusal direction vector with a learnable transformation matrix constrained to the null space, enabling adaptive steering for benign versus malicious inputs.
 

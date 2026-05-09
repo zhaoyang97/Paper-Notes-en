@@ -30,7 +30,7 @@ EI proposes injecting cross-modal semantic guidance (the [INT] token) **before**
 
 ## Background & Motivation
 
-**State of the Field**: Disease recognition from multimodal medical images (e.g., CFP+OCT fundus, dermoscopy+clinical photography, multi-view MRI) is an important task in computer vision. Existing methods (MM-MIL, CosCatNet, RadDiag, MMRAD) all follow a **fusion-after-UIE** paradigm—independently extracting unimodal features with dedicated encoders and subsequently fusing them via concatenation, weighted summation, or attention.
+**Background**: Disease recognition from multimodal medical images (e.g., CFP+OCT fundus, dermoscopy+clinical photography, multi-view MRI) is an important task in computer vision. Existing methods (MM-MIL, CosCatNet, RadDiag, MMRAD) all follow a **fusion-after-UIE** paradigm—independently extracting unimodal features with dedicated encoders and subsequently fusing them via concatenation, weighted summation, or attention.
 
 **Limitations of Prior Work (1) — Late Fusion**: During the UIE stage, all existing methods remain entirely unaware of other modalities, preventing UIE from leveraging complementary information. This contradicts clinical practice, where clinicians never interpret a single modality in isolation but rather form an initial hypothesis from one modality and use it to guide interpretation of another.
 

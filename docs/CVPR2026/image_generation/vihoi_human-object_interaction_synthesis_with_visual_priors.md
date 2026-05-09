@@ -29,15 +29,15 @@ This paper proposes ViHOI, a plug-and-play framework that leverages a VLM to ext
 
 ## Background & Motivation
 
-1. **State of the Field**: 3D human-object interaction (HOI) motion generation aims to synthesize realistic and physically plausible sequences of human-object interactions, with important applications in VR, animation, and robotics. Diffusion models have been widely adopted for HOI generation tasks in recent years.
+1. **Background**: 3D human-object interaction (HOI) motion generation aims to synthesize realistic and physically plausible sequences of human-object interactions, with important applications in VR, animation, and robotics. Diffusion models have been widely adopted for HOI generation tasks in recent years.
 
 2. **Limitations of Prior Work**: The generation quality of existing methods is constrained by the quality of conditioning signals. HOI involves continuous spatial state changes and plausible interaction relationships, yet textual annotations in datasets typically provide only abstract descriptions (e.g., "pick up a box"), lacking geometric and spatial priors regarding object shape, size, and body pose, forcing models to contend with a complex one-to-many learning problem.
 
-3. **Root Cause**: Existing enhancement strategies follow two lines: semantic augmentation (LLM-expanded text descriptions) and physical constraints (contact points, kinematic priors). The former still lacks structured knowledge to precisely couple motion with object geometry, while the latter tends to focus only on local interaction regions, neglecting the global dynamics and coherence of whole-body motion.
+3. **Key Challenge**: Existing enhancement strategies follow two lines: semantic augmentation (LLM-expanded text descriptions) and physical constraints (contact points, kinematic priors). The former still lacks structured knowledge to precisely couple motion with object geometry, while the latter tends to focus only on local interaction regions, neglecting the global dynamics and coherence of whole-body motion.
 
-4. **Paper Goals**: How to effectively exploit the rich visual interaction priors embedded in readily available 2D images—object shape, scale, and human-object spatial relationships—to enhance the fidelity and physical plausibility of HOI motion generation.
+4. **Goal**: How to effectively exploit the rich visual interaction priors embedded in readily available 2D images—object shape, scale, and human-object spatial relationships—to enhance the fidelity and physical plausibility of HOI motion generation.
 
-5. **Starting Point**: The authors argue that 2D images offer a rich set of visual interaction priors, including object shape, scale, and human-object spatial relationships. Employing a VLM to simultaneously extract image and text information naturally ensures semantic alignment between the two modalities.
+5. **Key Insight**: The authors argue that 2D images offer a rich set of visual interaction priors, including object shape, scale, and human-object spatial relationships. Employing a VLM to simultaneously extract image and text information naturally ensures semantic alignment between the two modalities.
 
 6. **Core Idea**: A VLM is used to extract decoupled visual and textual priors from 2D reference images; these are compressed via Q-Former and injected into a motion diffusion model. During training, GT motion renderings ensure semantic alignment; during inference, a text-to-image model synthesizes reference images to achieve generalization.
 

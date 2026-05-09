@@ -28,15 +28,15 @@ This paper systematically demonstrates that 90–95% of tokens in 3D point cloud
 
 ## Background & Motivation
 
-**State of the Field**: Transformer architectures — particularly Point Transformer v3 (PTv3) — have become the dominant backbone for 3D point cloud understanding, achieving state-of-the-art performance on semantic segmentation, object detection, and 3D reconstruction. PTv3 serializes point clouds into 1D sequences via space-filling curves and performs self-attention within local partitions.
+**Background**: Transformer architectures — particularly Point Transformer v3 (PTv3) — have become the dominant backbone for 3D point cloud understanding, achieving state-of-the-art performance on semantic segmentation, object detection, and 3D reconstruction. PTv3 serializes point clouds into 1D sequences via space-filling curves and performs self-attention within local partitions.
 
 **Limitations of Prior Work**: Despite architectural optimizations in PTv3 (serialization replacing KNN to reduce inference time by 28%, removal of relative positional encoding to save 26% compute), the model still processes a large number of redundant tokens in self-attention. Each partition uses 1024 tokens by default, and attention complexity scales as $\mathcal{O}(N^2)$, resulting in high FLOPs and memory consumption.
 
-**Root Cause**: It is widely assumed that dense tokenization is critical for 3D Transformer performance. In reality, 3D point cloud data is spatially sparse and fine-grained — neighboring points on the same object surface have highly similar features, leading to substantial redundancy.
+**Key Challenge**: It is widely assumed that dense tokenization is critical for 3D Transformer performance. In reality, 3D point cloud data is spatially sparse and fine-grained — neighboring points on the same object surface have highly similar features, leading to substantial redundancy.
 
-**Paper Goals**: (1) Quantify the degree of token redundancy in 3D point cloud Transformers; (2) Design efficient token merging strategies tailored to 3D data.
+**Goal**: (1) Quantify the degree of token redundancy in 3D point cloud Transformers; (2) Design efficient token merging strategies tailored to 3D data.
 
-**Starting Point**: The paper adapts token merging/pruning techniques from 2D vision Transformers to 3D point clouds, finding through experiments that generic methods can already merge 50% of tokens without accuracy drop. The authors then design a dedicated merging strategy exploiting 3D spatial locality and attention saliency to enable more aggressive compression (95–99%).
+**Key Insight**: The paper adapts token merging/pruning techniques from 2D vision Transformers to 3D point clouds, finding through experiments that generic methods can already merge 50% of tokens without accuracy drop. The authors then design a dedicated merging strategy exploiting 3D spatial locality and attention saliency to enable more aggressive compression (95–99%).
 
 **Core Idea**: 3D point cloud Transformers are severely over-tokenized; retaining only 5–10% of the most informative tokens is sufficient to maintain near-identical performance.
 

@@ -27,7 +27,7 @@ content_hash: 84258f5dceafdd48
 FedVTC proposes that, in model-heterogeneous federated learning, each client generates synthetic data via a Variational Transposed Convolution network (VTC) from aggregated feature distribution statistics to fine-tune the local model. Without requiring a public dataset, the method significantly improves generalization while reducing communication and memory overhead.
 
 ## Background & Motivation
-**State of the Field**: Data heterogeneity in federated learning leads to poor generalization of local models. Conventional methods improve this through regularization or weight adjustment, but uniformly assume homogeneous client model architectures.
+**Background**: Data heterogeneity in federated learning leads to poor generalization of local models. Conventional methods improve this through regularization or weight adjustment, but uniformly assume homogeneous client model architectures.
 
 **Limitations of Prior Work**:
 - Knowledge distillation methods require a public dataset, which is typically unavailable in practice.
@@ -35,11 +35,11 @@ FedVTC proposes that, in model-heterogeneous federated learning, each client gen
 - Prototype-sharing methods regularize only the feature extractor while neglecting the classification head.
 - Proxy-model methods incur high communication and memory overhead.
 
-**Root Cause**: Model heterogeneity precludes parameter sharing for aggregation, yet clients still need to benefit from global information to improve generalization.
+**Key Challenge**: Model heterogeneity precludes parameter sharing for aggregation, yet clients still need to benefit from global information to improve generalization.
 
-**Paper Goals**: Simultaneously debias both the feature extractor and the classification head without relying on a public dataset or sharing model parameters.
+**Goal**: Simultaneously debias both the feature extractor and the classification head without relying on a public dataset or sharing model parameters.
 
-**Starting Point**: Clients share only the statistics of the feature distribution (mean + covariance), which are then used to guide the generation of synthetic data for full-model fine-tuning.
+**Key Insight**: Clients share only the statistics of the feature distribution (mean + covariance), which are then used to guide the generation of synthetic data for full-model fine-tuning.
 
 **Core Idea**: Generate synthetic images from the global feature distribution via a variational transposed convolution network, and perform full-model fine-tuning on the local model to simultaneously debias both the feature extractor and the classification head.
 

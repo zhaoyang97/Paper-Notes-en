@@ -27,15 +27,15 @@ This paper proposes the Composite Reliability Score (CRS), which unifies calibra
 
 ## Background & Motivation
 
-**State of the Field**: Open-source LLMs are increasingly deployed in high-stakes domains such as healthcare, law, and finance, yet their reliability remains uncertain—models frequently exhibit overconfidence, fragility to input perturbations, and a lack of clear uncertainty estimates.
+**Background**: Open-source LLMs are increasingly deployed in high-stakes domains such as healthcare, law, and finance, yet their reliability remains uncertain—models frequently exhibit overconfidence, fragility to input perturbations, and a lack of clear uncertainty estimates.
 
 **Limitations of Prior Work**: Existing evaluations are fragmented—focusing either on accuracy alone or on only one of calibration or robustness—and thus fail to comprehensively characterize deployment reliability.
 
-**Root Cause**: A single metric (e.g., ECE or accuracy) can mask weaknesses along other dimensions; a model with high accuracy but poor calibration may be more dangerous in high-stakes settings than one with slightly lower accuracy but better calibration.
+**Key Challenge**: A single metric (e.g., ECE or accuracy) can mask weaknesses along other dimensions; a model with high accuracy but poor calibration may be more dangerous in high-stakes settings than one with slightly lower accuracy but better calibration.
 
-**Paper Goals**: Design a unified reliability measurement framework that simultaneously evaluates calibration, robustness, and uncertainty quantification.
+**Goal**: Design a unified reliability measurement framework that simultaneously evaluates calibration, robustness, and uncertainty quantification.
 
-**Starting Point**: Each of the three dimensions is normalized to $[0,1]$ and then combined via a weighted average—a simple yet effective approach for reflecting composite reliability.
+**Key Insight**: Each of the three dimensions is normalized to $[0,1]$ and then combined via a weighted average—a simple yet effective approach for reflecting composite reliability.
 
 **Core Idea**: $\text{CRS} = \alpha C + \beta R + \gamma U$, where $C$ = calibration score, $R$ = robustness score, $U$ = uncertainty quantification score.
 

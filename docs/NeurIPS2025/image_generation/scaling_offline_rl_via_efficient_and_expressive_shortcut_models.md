@@ -29,15 +29,15 @@ This paper proposes SORL, which leverages the self-consistency property of short
 
 ## Background & Motivation
 
-**State of the Field**: Offline reinforcement learning (Offline RL) trains agents from fixed datasets without online exploration. Diffusion models and Flow Matching, as powerful generative models, can capture multimodal behavior distributions.
+**Background**: Offline reinforcement learning (Offline RL) trains agents from fixed datasets without online exploration. Diffusion models and Flow Matching, as powerful generative models, can capture multimodal behavior distributions.
 
 **Limitations of Prior Work**: Applying diffusion/flow models to offline RL faces two key challenges: (a) the iterative noise sampling process complicates policy optimization, requiring backpropagation through multiple timesteps; and (b) inference efficiency is poor due to slow multi-step generation.
 
-**Root Cause**: Training efficiency demands fewer denoising steps (to avoid multi-step backpropagation), whereas modeling complex distributions requires more discretization steps for expressiveness. At inference time, some applications demand fast generation (e.g., autonomous driving) while others require precise actions (e.g., surgical robots).
+**Key Challenge**: Training efficiency demands fewer denoising steps (to avoid multi-step backpropagation), whereas modeling complex distributions requires more discretization steps for expressiveness. At inference time, some applications demand fast generation (e.g., autonomous driving) while others require precise actions (e.g., surgical robots).
 
-**Paper Goals**: How to maintain expressiveness while achieving efficient training, and support on-demand computational scaling at inference time?
+**Goal**: How to maintain expressiveness while achieving efficient training, and support on-demand computational scaling at inference time?
 
-**Starting Point**: The paper introduces shortcut models—a novel class of generative models capable of producing high-quality samples under arbitrary inference budgets. The key insight is to unify denoising processes of varying step counts into a single model via self-consistency.
+**Key Insight**: The paper introduces shortcut models—a novel class of generative models capable of producing high-quality samples under arbitrary inference budgets. The key insight is to unify denoising processes of varying step counts into a single model via self-consistency.
 
 **Core Idea**: By exploiting the self-consistency of shortcut models, SORL decouples the policy optimization steps, regularization steps, and inference steps within a single-stage training framework, enabling efficient training and flexible inference scaling.
 

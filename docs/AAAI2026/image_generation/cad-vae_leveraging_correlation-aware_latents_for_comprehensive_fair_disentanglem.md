@@ -29,15 +29,15 @@ CAD-VAE introduces a correlation-aware latent code to capture shared information
 ## Background & Motivation
 
 ### State of the Field
-**State of the Field**: Deep generative models (particularly VAEs) have achieved remarkable success in representation learning, yet they may inherit or amplify biases in training data—entanglement between sensitive attributes (e.g., gender, race) and target labels gives rise to fairness concerns. Existing fair disentanglement methods fall into two categories: invariant learning (removing sensitive attributes via adversarial training or regularization) and disentanglement methods (partitioning the latent space into target and sensitive codes in pursuit of statistical independence).
+**Background**: Deep generative models (particularly VAEs) have achieved remarkable success in representation learning, yet they may inherit or amplify biases in training data—entanglement between sensitive attributes (e.g., gender, race) and target labels gives rise to fairness concerns. Existing fair disentanglement methods fall into two categories: invariant learning (removing sensitive attributes via adversarial training or regularization) and disentanglement methods (partitioning the latent space into target and sensitive codes in pursuit of statistical independence).
 
 ### Limitations of Prior Work
 **Limitations of Prior Work**: (1) **The assumption of complete independence is unrealistic**—multiple studies (Jang & Wang 2024; Park et al. 2020) demonstrate that target and sensitive attributes are inherently correlated in real data (e.g., "beard" is associated with both gender and attractiveness), and enforcing complete independence inevitably sacrifices predictive accuracy; (2) **Causal graph methods require domain knowledge**—causal-graph-based disentanglement requires manually constructing causal structures, which are difficult to obtain in practice and erroneous assumptions can lead to worse outcomes; (3) **Indirect methods may leak information**—approaches such as FADES approximate conditional mutual information indirectly via group sampling, yielding limited control.
 
-**Root Cause**: A fundamental fairness–utility trade-off—the shared information between target and sensitive attributes is simultaneously a source of bias and a useful predictive signal, requiring fine-grained control rather than blunt removal.
+**Key Challenge**: A fundamental fairness–utility trade-off—the shared information between target and sensitive attributes is simultaneously a source of bias and a useful predictive signal, requiring fine-grained control rather than blunt removal.
 
 ### Paper Goals
-**Paper Goals**: To address the above core problem by proposing a novel approach that achieves significant improvements on key metrics.
+**Goal**: To address the above core problem by proposing a novel approach that achieves significant improvements on key metrics.
 
 **Core Idea**: CAD-VAE introduces a correlation-aware latent code to capture shared information between target and sensitive attributes, and achieves disentanglement by directly minimizing conditional mutual information.
 

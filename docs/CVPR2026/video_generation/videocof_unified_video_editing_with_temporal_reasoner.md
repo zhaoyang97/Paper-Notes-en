@@ -29,15 +29,15 @@ This paper proposes VideoCoF, a Chain-of-Thought-inspired "observe→reason→ed
 
 ## Background & Motivation
 
-1. **State of the Field**: Existing video editing methods fall into two categories — expert models (adapter + external mask, precise but task-specific and dependent on additional inputs) and unified temporal in-context learning models (concatenating source video tokens with noisy edit tokens along the temporal axis, mask-free but lacking explicit spatial cues).
+1. **Background**: Existing video editing methods fall into two categories — expert models (adapter + external mask, precise but task-specific and dependent on additional inputs) and unified temporal in-context learning models (concatenating source video tokens with noisy edit tokens along the temporal axis, mask-free but lacking explicit spatial cues).
 
 2. **Limitations of Prior Work**: Unified models suffer from weak instruction-region alignment due to the absence of explicit spatial guidance, resulting in poor accuracy in multi-instance recognition or spatial reasoning scenarios. Expert models, while precise, require user-provided masks or task-specific training and cannot handle diverse editing tasks in a unified manner.
 
-3. **Root Cause**: A fundamental trade-off between precision and unification — can a model simultaneously achieve the localization accuracy of expert models and the mask-free convenience of unified models?
+3. **Key Challenge**: A fundamental trade-off between precision and unification — can a model simultaneously achieve the localization accuracy of expert models and the mask-free convenience of unified models?
 
-4. **Paper Goals**: (1) How to achieve precise editing region localization without mask inputs; (2) How to handle multi-instance editing tasks within a unified framework; (3) How to generalize at inference time to videos longer than the training length.
+4. **Goal**: (1) How to achieve precise editing region localization without mask inputs; (2) How to handle multi-instance editing tasks within a unified framework; (3) How to generalize at inference time to videos longer than the training length.
 
-5. **Starting Point**: Drawing an analogy to Chain-of-Thought reasoning in LLMs, the paper advocates for "visual chain-of-reasoning" in video generation — predicting editing regions before executing edits. Prior work has demonstrated that video diffusion models (VDMs) possess inherent reasoning capabilities (e.g., solving visual puzzles), which can be elicited by explicitly modeling reasoning tokens.
+5. **Key Insight**: Drawing an analogy to Chain-of-Thought reasoning in LLMs, the paper advocates for "visual chain-of-reasoning" in video generation — predicting editing regions before executing edits. Prior work has demonstrated that video diffusion models (VDMs) possess inherent reasoning capabilities (e.g., solving visual puzzles), which can be elicited by explicitly modeling reasoning tokens.
 
 6. **Core Idea**: By inserting "reasoning frames" (grayscale-highlighted editing region latents) between source and edited video sequences, VideoCoF forces the diffusion model to "observe, then reason, then act," enabling mask-free precise video editing.
 

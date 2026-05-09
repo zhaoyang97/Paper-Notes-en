@@ -27,15 +27,15 @@ content_hash: a087c0c0497a7569
 The paper proposes CARE, a framework that first applies causal mediation analysis to precisely localize neurons and layers causally associated with unsafe behavior in VLMs (diagnosis), then constructs a dual-modal safety subspace via generalized eigendecomposition and projects activations onto it at inference time (repair), reducing attack success rates to below 10% with negligible loss of general capability.
 
 ## Background & Motivation
-**State of the Field**: Large vision-language models (LVLMs) demonstrate strong multimodal understanding, but remain vulnerable to jailbreak attacks—carefully crafted multimodal prompts that bypass safety alignment mechanisms.
+**Background**: Large vision-language models (LVLMs) demonstrate strong multimodal understanding, but remain vulnerable to jailbreak attacks—carefully crafted multimodal prompts that bypass safety alignment mechanisms.
 
 **Limitations of Prior Work**: (1) Input preprocessing and adversarial training are computationally expensive and may degrade general performance; (2) existing activation-level defenses (ASTRA, SPO-VLM) lack precise localization of unsafe components, rely on a single modality, and employ heuristic linear steering that distorts general representations.
 
-**Root Cause**: How to precisely localize components within a VLM that are causally responsible for unsafe behavior, and repair them without compromising general capability?
+**Key Challenge**: How to precisely localize components within a VLM that are causally responsible for unsafe behavior, and repair them without compromising general capability?
 
-**Paper Goals**: To establish a causally driven, nonlinear, dual-modal framework for VLM safety diagnosis and repair.
+**Goal**: To establish a causally driven, nonlinear, dual-modal framework for VLM safety diagnosis and repair.
 
-**Starting Point**: First perform causal localization (which layers/neurons lead to unsafe outputs), then apply subspace projection (project activations onto safe directions).
+**Key Insight**: First perform causal localization (which layers/neurons lead to unsafe outputs), then apply subspace projection (project activations onto safe directions).
 
 **Core Idea**: Diagnosis—causal mediation analysis localizes middle FFN layers → Repair—generalized eigendecomposition identifies the malicious subspace → Project activations onto its orthogonal complement.
 

@@ -30,15 +30,15 @@ This paper proposes VISER (Visual Input Structure for Enhanced Reasoning), which
 
 ## Background & Motivation
 
-**State of the Field**: LVLMs (e.g., GPT-4o, Claude 3.5 Sonnet) have approached or surpassed human performance in language reasoning, yet consistently underperform on visual reasoning tasks—seemingly straightforward tasks such as counting, visual search, scene description, and spatial relationship understanding remain error-prone.
+**Background**: LVLMs (e.g., GPT-4o, Claude 3.5 Sonnet) have approached or surpassed human performance in language reasoning, yet consistently underperform on visual reasoning tasks—seemingly straightforward tasks such as counting, visual search, scene description, and spatial relationship understanding remain error-prone.
 
 **Limitations of Prior Work**: The root cause of these visual reasoning failures can be attributed to the **binding problem** from cognitive science—the inability of models to reliably associate perceptual features (color, shape) with the correct visual objects. When multiple similar objects are present in a scene, features are easily confused across objects (illusory conjunctions), causing, for example, "red circle + green square" to be misperceived as "red square."
 
-**Root Cause**: Current LVLMs process visual features in parallel and lack a spatially-oriented serial attention mechanism. Attempts to guide reasoning through purely textual strategies (e.g., CoT prompting) are ineffective—once early tokens are generated based on entangled visual features, every subsequent reasoning step inherits the same binding errors. **Remediation at the language level cannot fix problems at the visual encoding level.**
+**Key Challenge**: Current LVLMs process visual features in parallel and lack a spatially-oriented serial attention mechanism. Attempts to guide reasoning through purely textual strategies (e.g., CoT prompting) are ineffective—once early tokens are generated based on entangled visual features, every subsequent reasoning step inherits the same binding errors. **Remediation at the language level cannot fix problems at the visual encoding level.**
 
-**Paper Goals**: To mitigate the binding problem in LVLMs and improve performance across multiple visual reasoning tasks through simple input-level interventions, without modifying model architecture or performing any training.
+**Goal**: To mitigate the binding problem in LVLMs and improve performance across multiple visual reasoning tasks through simple input-level interventions, without modifying model architecture or performing any training.
 
-**Starting Point**: Grounded in cognitive science and neuroscience. The human visual system operates in two modes: fast but imprecise parallel processing (System 1) and more accurate serial attention (System 2). Humans overcome the binding problem through serial attention. Neuroscientific research further shows that grid frameworks enhance visual recognition memory—providing a theoretical basis for adding structured lines to visual inputs.
+**Key Insight**: Grounded in cognitive science and neuroscience. The human visual system operates in two modes: fast but imprecise parallel processing (System 1) and more accurate serial attention (System 2). Humans overcome the binding problem through serial attention. Neuroscientific research further shows that grid frameworks enhance visual recognition memory—providing a theoretical basis for adding structured lines to visual inputs.
 
 **Core Idea**: Drawing a few horizontal lines on the image and instructing the model to "scan row by row"—this is the visual analogue of Chain-of-Thought, injecting inductive bias directly into the visual input rather than the language prompt.
 

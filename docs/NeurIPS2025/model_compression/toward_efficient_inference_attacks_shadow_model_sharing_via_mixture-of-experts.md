@@ -28,16 +28,16 @@ This paper proposes a Mixture-of-Experts (MoE)-based shadow model sharing framew
 
 ## Background & Motivation
 
-**State of the Field**: Privacy attacks such as membership inference attacks (MIA) and property inference attacks rely on training large numbers of shadow models to simulate the behavior of target models. Shadow models must be trained on data from similar distributions to learn patterns that distinguish member from non-member data points.
+**Background**: Privacy attacks such as membership inference attacks (MIA) and property inference attacks rely on training large numbers of shadow models to simulate the behavior of target models. Shadow models must be trained on data from similar distributions to learn patterns that distinguish member from non-member data points.
 
 **Limitations of Prior Work**:
 - Each attack task (membership inference, property inference, model inversion, etc.) typically requires training an **independent** set of shadow models, causing computational cost to scale linearly with the number of attack types.
 - Although different attacks have different objectives, they all share the underlying need to understand "how the model processes data"—this commonality has not been exploited.
 - In practical attack scenarios where an adversary may need to execute multiple inference attacks simultaneously, independently trained models are not scalable.
 
-**Root Cause**: Multiple attack tasks share the underlying knowledge of "understanding target model behavior," yet current methods learn this knowledge independently for each task.
+**Key Challenge**: Multiple attack tasks share the underlying knowledge of "understanding target model behavior," yet current methods learn this knowledge independently for each task.
 
-**Starting Point**: Employ an MoE architecture to allow multiple attack tasks to share a **backbone network** (encoding a common representation of target model output behavior), with each attack task requiring only a lightweight **expert module**.
+**Key Insight**: Employ an MoE architecture to allow multiple attack tasks to share a **backbone network** (encoding a common representation of target model output behavior), with each attack task requiring only a lightweight **expert module**.
 
 **Core Idea**: Train a universal shadow model backbone to capture general patterns of model behavior, then attach a small task-specific expert head for each task such as MIA and property inference.
 

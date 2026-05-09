@@ -28,18 +28,18 @@ This paper proposes Channel-wise Influence (ChInf)—the first influence functio
 
 ## Background & Motivation
 
-**State of the Field**: The importance of channels (variables) in MTS analysis is widely recognized. iTransformer models channel dependencies via attention, while PatchTST improves generalization through channel independence. However, these approaches are model-centric—they leverage channel information implicitly without explicitly quantifying each channel's contribution to model performance.
+**Background**: The importance of channels (variables) in MTS analysis is widely recognized. iTransformer models channel dependencies via attention, while PatchTST improves generalization through channel independence. However, these approaches are model-centric—they leverage channel information implicitly without explicitly quantifying each channel's contribution to model performance.
 
 **Limitations of Prior Work**:
 - Classical influence functions (Koh & Liang 2017) and TracIn are designed for entire data samples and cannot distinguish the contributions of individual channels in MTS.
 - TimeInf accounts for temporal dependencies but ignores the channel dimension, yielding suboptimal results on MTS anomaly detection and data pruning tasks.
 - No existing tool can answer: "Which channel is most important for model predictions?" or "Which channel is most anomalous?"
 
-**Root Cause**: Different channels in MTS carry heterogeneous information and exhibit complex correlations, yet existing influence functions cannot disentangle channel-level contributions—they treat all channels as a single sample when computing influence.
+**Key Challenge**: Different channels in MTS carry heterogeneous information and exhibit complex correlations, yet existing influence functions cannot disentangle channel-level contributions—they treat all channels as a single sample when computing influence.
 
-**Paper Goals**: (1) Define a channel-level influence function; (2) derive anomaly detection and channel pruning methods based on it.
+**Goal**: (1) Define a channel-level influence function; (2) derive anomaly detection and channel pruning methods based on it.
 
-**Starting Point**: Decompose the gradient inner product in TracIn from the full sample into a sum of per-channel gradient inner products, naturally yielding a channel influence matrix $M_{CInf}$.
+**Key Insight**: Decompose the gradient inner product in TracIn from the full sample into a sum of per-channel gradient inner products, naturally yielding a channel influence matrix $M_{CInf}$.
 
 **Core Idea**: Decompose influence functions from the sample level to the channel level; use channel self-influence for anomaly detection and channel influence ranking for data pruning.
 

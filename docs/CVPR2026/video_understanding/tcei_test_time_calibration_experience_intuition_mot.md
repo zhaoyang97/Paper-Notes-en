@@ -29,11 +29,11 @@ Inspired by Kahneman's dual-process theory, the TCEI framework proposes a test-t
 
 ## Background & Motivation
 
-1. **State of the Field**: Multi-object tracking (MOT) frequently encounters distribution shifts in appearance, motion patterns, and object categories between training and test data, degrading online inference performance. Test-time adaptation (TTA) is a promising paradigm for alleviating this issue.
+1. **Background**: Multi-object tracking (MOT) frequently encounters distribution shifts in appearance, motion patterns, and object categories between training and test data, degrading online inference performance. Test-time adaptation (TTA) is a promising paradigm for alleviating this issue.
 2. **Limitations of Prior Work**: Existing TTA methods primarily target static image tasks (classification, segmentation) and adapt using only intra-frame information, neglecting the inter-frame temporal consistency and identity association requirements of MOT. Backpropagation-based TTA methods also suffer from low computational efficiency and catastrophic forgetting.
-3. **Root Cause**: In MOT, intra-frame cues are needed to distinguish objects, while inter-frame temporal cues ensure ID consistency — both are equally important, yet existing TTA methods address only the former.
-4. **Paper Goals**: Design a forward-pass TTA method for MOT that leverages historically observed objects to provide temporal guidance for current ID association.
-5. **Starting Point**: Drawing an analogy to human dual-process decision-making — fast intuitive judgment (System 1) combined with slow, deliberative calibration (System 2).
+3. **Key Challenge**: In MOT, intra-frame cues are needed to distinguish objects, while inter-frame temporal cues ensure ID consistency — both are equally important, yet existing TTA methods address only the former.
+4. **Goal**: Design a forward-pass TTA method for MOT that leverages historically observed objects to provide temporal guidance for current ID association.
+5. **Key Insight**: Drawing an analogy to human dual-process decision-making — fast intuitive judgment (System 1) combined with slow, deliberative calibration (System 2).
 6. **Core Idea**: The intuitive system provides rapid predictions via transient memory of recent objects, while the experiential system calibrates inconsistencies in intuitive predictions using knowledge accumulated across all processed videos.
 
 ## Method

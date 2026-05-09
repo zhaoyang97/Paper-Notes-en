@@ -40,7 +40,7 @@ This paper proposes BecomingLit, a method that reconstructs high-fidelity, relig
 
 **Poor generalization of existing neural methods**: RGCA learns precomputed radiance transfer (PRT), which generalizes poorly to unseen illumination; it also relies on per-identity VAE expression spaces, preventing cross-identity reenactment.
 
-**Paper Goals**: Using a low-cost light stage consisting of 16 cameras and 40 LEDs, combined with the FLAME parametric model and a hybrid neural BRDF, the paper aims to match state-of-the-art quality at approximately one-tenth the cost while supporting monocular video-driven animation.
+**Goal**: Using a low-cost light stage consisting of 16 cameras and 40 LEDs, combined with the FLAME parametric model and a hybrid neural BRDF, the paper aims to match state-of-the-art quality at approximately one-tenth the cost while supporting monocular video-driven animation.
 
 ## Method
 

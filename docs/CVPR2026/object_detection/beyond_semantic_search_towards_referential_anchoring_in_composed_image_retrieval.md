@@ -27,13 +27,13 @@ content_hash: e82e31f730564dc9
 This paper proposes Object-Anchored Composed Image Retrieval (OACIR), a new task formulation, along with a large-scale benchmark OACIRR (160K+ quadruplets) and the AdaFocal framework. AdaFocal employs a context-aware attention modulator to adaptively enhance focus on anchored instance regions, substantially outperforming existing methods in instance-level retrieval fidelity.
 
 ## Background & Motivation
-**State of the Field**: Composed Image Retrieval (CIR) enables flexible retrieval via multimodal queries combining a reference image and modification text, with broad applications in e-commerce and interactive search.
+**Background**: Composed Image Retrieval (CIR) enables flexible retrieval via multimodal queries combining a reference image and modification text, with broad applications in e-commerce and interactive search.
 
 **Limitations of Prior Work**: CIR inherently prioritizes semantic matching, treating the reference image as only a coarse-grained visual anchor — making it **unable to reliably retrieve user-specified instances** in the presence of visually similar distractors.
 
 **Practical Need**: In scenarios such as digital memory retrieval and long-term identity tracking, ensuring **instance-level fidelity** is more critical than broad semantic alignment.
 
-**Root Cause**: The task requires simultaneously achieving (1) compositional reasoning over three information sources (anchored instance + global scene + text modification) and (2) precise discrimination of the target instance from a gallery dense with visually similar distractors.
+**Key Challenge**: The task requires simultaneously achieving (1) compositional reasoning over three information sources (anchored instance + global scene + text modification) and (2) precise discrimination of the target instance from a gallery dense with visually similar distractors.
 
 **Core Idea**: By combining explicit bounding-box visual anchoring with an adaptive attention enhancement mechanism, the approach elevates CIR from semantic-level to instance-level retrieval.
 

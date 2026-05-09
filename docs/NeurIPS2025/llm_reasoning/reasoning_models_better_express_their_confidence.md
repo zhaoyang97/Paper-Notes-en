@@ -29,15 +29,15 @@ content_hash: f999a2305073c461
 This paper systematically demonstrates that reasoning models (with extended CoT) exhibit significantly better confidence calibration than non-reasoning models, and identifies "slow-thinking" behaviors—exploring alternatives, backtracking, and verification—as the fundamental source of this calibration improvement.
 
 ## Background & Motivation
-**State of the Field**: LLMs are increasingly deployed in high-stakes decision-making scenarios, where the ability to accurately express uncertainty (i.e., confidence calibration) is critical for trustworthy AI deployment.
+**Background**: LLMs are increasingly deployed in high-stakes decision-making scenarios, where the ability to accurately express uncertainty (i.e., confidence calibration) is critical for trustworthy AI deployment.
 
 **Limitations of Prior Work**: Prior studies have identified overconfidence in verbalized confidence of LLMs, but these investigations largely target conventional (non-reasoning) models and have not systematically examined the calibration behavior of reasoning models.
 
 **Core Observation**: Reasoning models engage in explicit extended chain-of-thought before producing an answer, encompassing exploration, backtracking, and verification—a "slow-thinking" process that mirrors the human intuition of deliberating more carefully under uncertainty before committing to a response.
 
-**Paper Goals**: (1) Are reasoning models better calibrated than non-reasoning models? (2) What is the source of calibration improvement—differences in model capability or the slow-thinking process itself?
+**Goal**: (1) Are reasoning models better calibrated than non-reasoning models? (2) What is the source of calibration improvement—differences in model capability or the slow-thinking process itself?
 
-**Starting Point**: Six paired reasoning vs. non-reasoning models are compared on multiple knowledge QA benchmarks, with CoT unfolding analysis and ablation studies used to localize the source of calibration gains.
+**Key Insight**: Six paired reasoning vs. non-reasoning models are compared on multiple knowledge QA benchmarks, with CoT unfolding analysis and ablation studies used to localize the source of calibration gains.
 
 **Core Idea**: The slow-thinking process of reasoning models—exploring alternatives, backtracking, and self-verification—naturally enables models to more accurately perceive their own uncertainty.
 

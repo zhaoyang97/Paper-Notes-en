@@ -35,11 +35,11 @@ This paper proposes PANDA, an agentic AI engineer framework built upon MLLMs, wh
 
 **Limitations of Prior Work (Training-free)**: Although pre-trained LLMs/VLMs eliminate training, these methods still rely on manually designed preprocessing steps, prompt templates, rule management, and post-processing pipelines, resulting in static pipelines that lack adaptive capacity.
 
-**Root Cause**: Under complex conditions such as low resolution, poor illumination, high noise, and long-duration anomalies, conventional methods consistently fail.
+**Key Challenge**: Under complex conditions such as low resolution, poor illumination, high noise, and long-duration anomalies, conventional methods consistently fail.
 
 **Opportunity from the Agentic Paradigm**: Analogous to how human engineers systematically analyze problems, adapt to complex environments, and iteratively improve through tool use and accumulated experience, an agent framework can achieve autonomous perception, strategy formulation, reasoning, tool invocation, and self-improvement.
 
-**Paper Goals**: Realize Generalist VAD — automatically handling arbitrary scenes and anomaly types with zero training data and zero human intervention.
+**Goal**: Realize Generalist VAD — automatically handling arbitrary scenes and anomaly types with zero training data and zero human intervention.
 
 ## Method
 

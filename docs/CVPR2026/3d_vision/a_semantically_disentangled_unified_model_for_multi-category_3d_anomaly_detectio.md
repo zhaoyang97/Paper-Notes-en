@@ -27,7 +27,7 @@ content_hash: 1e00b4e7cfb53d4c
 This paper proposes SeDiR, a framework for semantically disentangled unified 3D anomaly detection, comprising three modules: Coarse-to-Fine Global Tokenization (CFGT), Category-Conditioned Contrastive Learning (C3L), and Geometry-Guided Decoder (GGD). SeDiR addresses the Inter-Category Entanglement (ICE) problem and outperforms the state of the art by 2.8% and 9.1% AUROC on Real3D-AD and Anomaly-ShapeNet, respectively.
 
 ## Background & Motivation
-**State of the Field**: 3D anomaly detection (3D-AD) aims to detect defects in 3D point clouds by training exclusively on normal data. Conventional approaches train a separate model per category, which incurs prohibitive maintenance costs in multi-category industrial settings.
+**Background**: 3D anomaly detection (3D-AD) aims to detect defects in 3D point clouds by training exclusively on normal data. Conventional approaches train a separate model per category, which incurs prohibitive maintenance costs in multi-category industrial settings.
 
 **Necessity of Unified Models**: A single model covering multiple categories reduces system redundancy and improves deployment efficiency. Methods such as MC3D-AD have explored this direction but with limited performance.
 

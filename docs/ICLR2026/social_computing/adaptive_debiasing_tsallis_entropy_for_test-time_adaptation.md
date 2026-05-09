@@ -28,15 +28,15 @@ This paper introduces Tsallis entropy (a generalization of Shannon entropy) into
 
 ## Background & Motivation
 
-**State of the Field**: TTA methods improve the out-of-distribution performance of VLMs such as CLIP by selecting high-confidence augmented views. Representative methods including TPT and Zero employ Shannon entropy to measure uncertainty and filter low-entropy views.
+**Background**: TTA methods improve the out-of-distribution performance of VLMs such as CLIP by selecting high-confidence augmented views. Representative methods including TPT and Zero employ Shannon entropy to measure uncertainty and filter low-entropy views.
 
 **Limitations of Prior Work**: CLIP is pre-trained on imbalanced web-crawled data, leading to overconfidence on head classes and underconfidence on tail classes. Shannon entropy applies a uniform formula $-p\log p$ to all classes, making it unable to distinguish the degree of bias across different classes. As a result, the entropy estimate itself is biased, which degrades the quality of high-confidence view selection.
 
-**Root Cause**: Shannon entropy assumes an unbiased probability distribution (the extensivity assumption), whereas CLIP's predictive distribution exhibits systematic bias (non-extensivity) that SE cannot characterize.
+**Key Challenge**: Shannon entropy assumes an unbiased probability distribution (the extensivity assumption), whereas CLIP's predictive distribution exhibits systematic bias (non-extensivity) that SE cannot characterize.
 
-**Paper Goals**: How can the influence of VLM prediction bias on entropy estimation be corrected during TTA?
+**Goal**: How can the influence of VLM prediction bias on entropy estimation be corrected during TTA?
 
-**Starting Point**: Tsallis entropy is a generalization of Shannon entropy that captures statistical dependencies among probability distributions via the non-extensive parameter $q$. When $q<1$, TE tends to select more reliable high-confidence views.
+**Key Insight**: Tsallis entropy is a generalization of Shannon entropy that captures statistical dependencies among probability distributions via the non-extensive parameter $q$. When $q<1$, TE tends to select more reliable high-confidence views.
 
 **Core Idea**: Replace Shannon entropy with Tsallis entropy for high-confidence view selection, and adaptively compute a debiasing parameter $q^l$ for each class.
 

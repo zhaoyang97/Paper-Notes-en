@@ -29,15 +29,15 @@ This work reformulates retrosynthesis planning as a worst-path optimisation prob
 
 ## Background & Motivation
 
-**State of the Field**: Retrosynthesis planning aims to decompose a target molecule step-by-step into purchasable building blocks, forming a synthesis tree. Single-step prediction accuracy has reached human-level performance, yet multi-step planning still relies on heuristic search methods (e.g., MCTS, A*) requiring hundreds of model calls, resulting in substantial computational cost.
+**Background**: Retrosynthesis planning aims to decompose a target molecule step-by-step into purchasable building blocks, forming a synthesis tree. Single-step prediction accuracy has reached human-level performance, yet multi-step planning still relies on heuristic search methods (e.g., MCTS, A*) requiring hundreds of model calls, resulting in substantial computational cost.
 
 **Limitations of Prior Work**: (1) Search-based methods (MCTS/Retro*) demand intensive real-time computation, with hundreds of model calls per molecule, limiting large-scale applicability. (2) Fine-tuning methods (e.g., PDVN) improve policies by imitating successful search trajectories, but the model adapts to the molecular distribution encountered during search rather than the direct inference distribution, leading to performance degradation without search. (3) Most critically, existing methods typically optimise the **average** performance across all paths, neglecting the **worst-case sensitivity** of synthesis trees: a single path that fails to reach purchasable building blocks invalidates the entire synthesis tree.
 
-**Root Cause**: Successful synthesis requires **all** leaf nodes to be purchasable compounds, yet existing optimisation objectives focus on average performance rather than the worst path.
+**Key Challenge**: Successful synthesis requires **all** leaf nodes to be purchasable compounds, yet existing optimisation objectives focus on average performance rather than the worst path.
 
-**Paper Goals**: Eliminate the need for search at inference time while guaranteeing high-quality synthesis routes — requiring both a more appropriate optimisation objective and a search-free policy improvement method.
+**Goal**: Eliminate the need for search at inference time while guaranteeing high-quality synthesis routes — requiring both a more appropriate optimisation objective and a search-free policy improvement method.
 
-**Starting Point**: Address the optimisation objective directly — model the "weakest link" as the worst path, replacing the average cumulative return with a discounted worst-path return.
+**Key Insight**: Address the optimisation objective directly — model the "weakest link" as the worst path, replacing the average cumulative return with a discounted worst-path return.
 
 **Core Idea**: A synthesis route is only as strong as its weakest path — worst-path optimisation directly improves the most failure-prone decomposition steps, coupled with self-imitation learning to enable search-free inference.
 

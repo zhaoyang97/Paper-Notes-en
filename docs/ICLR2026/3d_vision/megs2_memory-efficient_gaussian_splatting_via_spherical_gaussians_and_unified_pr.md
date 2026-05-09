@@ -28,13 +28,13 @@ This paper proposes MEGS2, a method that compresses 3DGS from the perspective of
 
 ## Background & Motivation
 
-**State of the Field**: 3DGS has become the dominant approach for novel view synthesis, but its high memory consumption severely limits deployment on edge devices. While many compression methods have been proposed, the vast majority focus on storage compression (file size) rather than rendering memory compression (VRAM).
+**Background**: 3DGS has become the dominant approach for novel view synthesis, but its high memory consumption severely limits deployment on edge devices. While many compression methods have been proposed, the vast majority focus on storage compression (file size) rather than rendering memory compression (VRAM).
 
 **Limitations of Prior Work**: (1) Neural compression / VQ / hash-grid methods (CompactGaussian / EAGLES / HAC++) achieve high storage compression ratios, but require full parameter decompression before rendering, often consuming more VRAM than vanilla 3DGS. (2) Primitive pruning methods (GaussianSpa / Mini-Splatting) can reduce VRAM but offer limited compression ratios — aggressive pruning severely degrades quality. (3) SH as a color representation is parameter-inefficient: high-order coefficients are numerous but poorly utilized.
 
-**Root Cause**: Rendering VRAM = number of primitives × per-primitive parameter count. Existing methods optimize only one of these two factors. Breaking the VRAM bottleneck requires simultaneously reducing both.
+**Key Challenge**: Rendering VRAM = number of primitives × per-primitive parameter count. Existing methods optimize only one of these two factors. Breaking the VRAM bottleneck requires simultaneously reducing both.
 
-**Starting Point**: SH are global basis functions that require many high-order coefficients to represent localized high-frequency details (sharp specular highlights). SG are local basis functions that efficiently model view-dependent appearance with a small number of lobes, where the lobe count is flexible — making them a natural fit for pruning.
+**Key Insight**: SH are global basis functions that require many high-order coefficients to represent localized high-frequency details (sharp specular highlights). SG are local basis functions that efficiently model view-dependent appearance with a small number of lobes, where the lobe count is flexible — making them a natural fit for pruning.
 
 **Core Idea**: Replace SH with prunable SG to reduce per-primitive parameter cost, then simultaneously prune primitive count and lobe count via unified constrained optimization, achieving VRAM-optimal resource allocation.
 

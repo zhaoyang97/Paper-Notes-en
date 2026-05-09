@@ -27,13 +27,13 @@ content_hash: 31b5cc497339ea4d
 This paper reformulates image restoration as a progressive video generation process. By leveraging the rich visual priors of a pretrained video model (Wan2.2-TI2V-5B), the proposed method achieves versatile all-in-one restoration across multiple degradation types using only 1,000 multi-task training samples (less than 2% of existing methods), surpassing specialized architectures trained on million-scale datasets.
 
 ## Background & Motivation
-**State of the Field**: Image restoration tasks (denoising, deblurring, dehazing, etc.) predominantly rely on task-specific models that require large-scale supervised data (>1M samples) to learn restoration mappings from scratch. All-in-One approaches (AirNet, PromptIR, FoundIR) unify multiple tasks but still demand massive datasets.
+**Background**: Image restoration tasks (denoising, deblurring, dehazing, etc.) predominantly rely on task-specific models that require large-scale supervised data (>1M samples) to learn restoration mappings from scratch. All-in-One approaches (AirNet, PromptIR, FoundIR) unify multiple tasks but still demand massive datasets.
 
 **Limitations of Prior Work**: Existing methods are decoupled from advances in large-scale generative models. Video generation models (Wan, HunyuanVideo) have acquired rich structural, semantic, and dynamic priors from vast training data, yet these priors remain unexploited for low-level vision tasks.
 
-**Root Cause**: Video generation models have learned powerful visual world models, while restoration methods continue to be trained from scratch — a substantial gap in prior utilization persists.
+**Key Challenge**: Video generation models have learned powerful visual world models, while restoration methods continue to be trained from scratch — a substantial gap in prior utilization persists.
 
-**Starting Point**: The paper observes that the restoration process is intrinsically a "progressive evolution from low quality to high quality," which naturally corresponds to the temporal evolution of video frames — enabling restoration to be modeled as a video generation problem.
+**Key Insight**: The paper observes that the restoration process is intrinsically a "progressive evolution from low quality to high quality," which naturally corresponds to the temporal evolution of video frames — enabling restoration to be modeled as a video generation problem.
 
 **Core Idea**: Each (LQ, HQ) pair is constructed as a pseudo-temporal sequence, allowing the video generation model to learn restoration trajectories rather than performing single-step regression.
 

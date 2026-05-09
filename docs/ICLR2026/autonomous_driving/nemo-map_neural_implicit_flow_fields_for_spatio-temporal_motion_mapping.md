@@ -28,15 +28,15 @@ NeMo-map is proposed as a continuous spatio-temporal dynamic map based on neural
 
 ## Background & Motivation
 
-**State of the Field**: Motion-on-demand (MoD) maps encode statistical motion patterns in the environment to assist robots navigating crowded scenes. Existing methods such as CLiFF-map and STeF-map fit local motion distributions on discrete grids.
+**Background**: Motion-on-demand (MoD) maps encode statistical motion patterns in the environment to assist robots navigating crowded scenes. Existing methods such as CLiFF-map and STeF-map fit local motion distributions on discrete grids.
 
 **Limitations of Prior Work**: Grid discretization leads to information loss and boundary discontinuities; time is typically segmented by hour, precluding smooth modeling of cross-period transitions; manual selection of grid resolution is environment-dependent.
 
-**Root Cause**: Discrete representations cannot query motion distributions at arbitrary spatio-temporal coordinates, and sparse regions require interpolation or imputation.
+**Key Challenge**: Discrete representations cannot query motion distributions at arbitrary spatio-temporal coordinates, and sparse regions require interpolation or imputation.
 
-**Paper Goals**: (a) Eliminate spatial discretization; (b) enable continuous and smooth querying over both space and time; (c) preserve the multimodal nature of motion directions.
+**Goal**: (a) Eliminate spatial discretization; (b) enable continuous and smooth querying over both space and time; (c) preserve the multimodal nature of motion directions.
 
-**Starting Point**: Model the mapping $(x, y, t) \to$ SWGMM parameters as a continuous function via neural implicit representations.
+**Key Insight**: Model the mapping $(x, y, t) \to$ SWGMM parameters as a continuous function via neural implicit representations.
 
 **Core Idea**: Use a learnable spatial feature grid + SIREN temporal encoding + MLP to directly output continuous spatio-temporal motion distribution parameters.
 

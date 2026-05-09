@@ -29,15 +29,15 @@ This work opens the "black box" of a state-of-the-art neural activity foundation
 
 ## Background & Motivation
 
-**State of the Field**: Neural foundation models (e.g., FNN) excel at fitting biological visual systems, yet their black-box nature limits mechanistic understanding of brain function.
+**Background**: Neural foundation models (e.g., FNN) excel at fitting biological visual systems, yet their black-box nature limits mechanistic understanding of brain function.
 
 **Limitations of Prior Work**: Existing evaluations primarily focus on unit-level output prediction accuracy, without examining whether internal representations correspond to those in biological systems.
 
-**Root Cause**: Even when a model achieves superior performance in predicting neural activity, its internal computational mechanisms may fundamentally differ from biological systems — high performance does not imply biological relevance.
+**Key Challenge**: Even when a model achieves superior performance in predicting neural activity, its internal computational mechanisms may fundamentally differ from biological systems — high performance does not imply biological relevance.
 
-**Paper Goals**: To systematically analyze the internal representations at each processing stage of FNN and assess their similarity to the biological visual system.
+**Goal**: To systematically analyze the internal representations at each processing stage of FNN and assess their similarity to the biological visual system.
 
-**Starting Point**: Characterizing each artificial neuron's temporal response properties "neuron by neuron" — akin to an electrophysiologist — to construct decoding and encoding manifolds.
+**Key Insight**: Characterizing each artificial neuron's temporal response properties "neuron by neuron" — akin to an electrophysiologist — to construct decoding and encoding manifolds.
 
 **Core Idea**: Jointly applying three complementary analysis techniques (decoding manifolds, encoding manifolds, decoding trajectories) to comprehensively evaluate the biological plausibility of a foundation model.
 

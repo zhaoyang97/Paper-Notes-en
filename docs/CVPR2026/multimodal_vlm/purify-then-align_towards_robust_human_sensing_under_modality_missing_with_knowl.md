@@ -29,15 +29,15 @@ This paper proposes PTA (Purify-then-Align), a framework that first *purifies* a
 
 ## Background & Motivation
 
-1. **State of the Field**: Multimodal human sensing—integrating depth cameras, LiDAR, WiFi, and other modalities—is a foundational technology for human-computer interaction and intelligent healthcare. Multimodal fusion helps overcome the limitations of individual sensors.
+1. **Background**: Multimodal human sensing—integrating depth cameras, LiDAR, WiFi, and other modalities—is a foundational technology for human-computer interaction and intelligent healthcare. Multimodal fusion helps overcome the limitations of individual sensors.
 
 2. **Limitations of Prior Work**: Two core challenges arise: (a) **Representation Gap**: Different sensors exhibit drastically different data representations (e.g., grid pixels in images vs. sparse point clouds in LiDAR), causing information loss when fused directly; (b) **Contamination Effect**: Low-quality or high-noise modalities corrupt high-quality ones during fusion, degrading overall performance.
 
-3. **Root Cause**: These two problems are **causally linked**—the contamination introduced by low-quality modalities fundamentally impedes the reduction of the representation gap across heterogeneous modalities. Existing approaches (generative reconstruction, shared representation learning, simple fusion, conventional knowledge distillation) each address only one aspect and ignore this causal chain.
+3. **Key Challenge**: These two problems are **causally linked**—the contamination introduced by low-quality modalities fundamentally impedes the reduction of the representation gap across heterogeneous modalities. Existing approaches (generative reconstruction, shared representation learning, simple fusion, conventional knowledge distillation) each address only one aspect and ignore this causal chain.
 
-4. **Paper Goals**: To construct a unified framework that first resolves the cause (Contamination Effect) and then the effect (Representation Gap), such that each unimodal encoder can operate independently while incorporating cross-modal knowledge.
+4. **Goal**: To construct a unified framework that first resolves the cause (Contamination Effect) and then the effect (Representation Gap), such that each unimodal encoder can operate independently while incorporating cross-modal knowledge.
 
-5. **Starting Point**: A teacher–student paradigm is adopted, where multimodal consensus serves as the teacher to guide each unimodal student. However, the teacher itself may be corrupted by noisy modalities; therefore, the teacher must first be *purified* (Purify) before it can be used to *align* the students (Align).
+5. **Key Insight**: A teacher–student paradigm is adopted, where multimodal consensus serves as the teacher to guide each unimodal student. However, the teacher itself may be corrupted by noisy modalities; therefore, the teacher must first be *purified* (Purify) before it can be used to *align* the students (Align).
 
 6. **Core Idea**: Meta-learning-based adaptive weighting addresses modality contamination on the teacher side; diffusion-model-based knowledge distillation addresses representation alignment on the student side.
 

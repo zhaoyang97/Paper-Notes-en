@@ -29,15 +29,15 @@ This paper proposes FreeCus, a completely training-free subject-driven customiza
 
 ## Background & Motivation
 
-**State of the Field**: With breakthroughs in text-to-image (T2I) diffusion models, particularly the emergence of the Flux family of Diffusion Transformers, subject-driven customization has become a prominent research direction—given a subject from a reference image, the goal is to generate images that preserve the subject's identity in new text-described scenes.
+**Background**: With breakthroughs in text-to-image (T2I) diffusion models, particularly the emergence of the Flux family of Diffusion Transformers, subject-driven customization has become a prominent research direction—given a subject from a reference image, the goal is to generate images that preserve the subject's identity in new text-described scenes.
 
 **Limitations of Prior Work**: Existing approaches fall into two categories: (1) per-subject optimization methods (e.g., DreamBooth, Textual Inversion) require fine-tuning for each new subject, making them time-consuming and unscalable; (2) encoder-based methods (e.g., IP-Adapter, ELITE) require pre-training dedicated subject feature extraction encoders on large-scale datasets. Both categories depend on training steps, fundamentally limiting flexibility and deployment efficiency in practical applications.
 
-**Root Cause**: Modern Diffusion Transformers (e.g., the Flux family) have already learned rich visual-semantic correspondences during pre-training and theoretically possess the potential for zero-shot subject synthesis, yet existing methods fail to fully exploit this intrinsic capability and instead rely on external training to compensate.
+**Key Challenge**: Modern Diffusion Transformers (e.g., the Flux family) have already learned rich visual-semantic correspondences during pre-training and theoretically possess the potential for zero-shot subject synthesis, yet existing methods fail to fully exploit this intrinsic capability and instead rely on external training to compensate.
 
-**Paper Goals**: Design a truly training-free framework that achieves high-quality subject customization by manipulating internal attention mechanisms and feature representations of DiT, without any additional training or fine-tuning.
+**Goal**: Design a truly training-free framework that achieves high-quality subject customization by manipulating internal attention mechanisms and feature representations of DiT, without any additional training or fine-tuning.
 
-**Starting Point**: The authors find that the attention structure of DiT encodes information about subject layout and fine-grained features—by appropriately sharing attention features from a reference image during generation, subject identity can be "injected" into new scenes.
+**Key Insight**: The authors find that the attention structure of DiT encodes information about subject layout and fine-grained features—by appropriately sharing attention features from a reference image during generation, subject identity can be "injected" into new scenes.
 
 **Core Idea**: A three-pronged training-free strategy is proposed: (1) pivotal attention sharing to transfer subject layout, (2) upgraded dynamic shifting for fine-grained feature extraction, and (3) MLLM-enhanced cross-modal semantic representation—collectively activating DiT's zero-shot customization capability.
 

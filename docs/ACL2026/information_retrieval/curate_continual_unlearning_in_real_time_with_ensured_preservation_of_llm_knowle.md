@@ -27,15 +27,15 @@ CURaTE proposes a behavioral unlearning framework based on sentence embedding ma
 
 ## Background & Motivation
 
-**State of the Field**: LLM unlearning methods primarily include parameter-modifying approaches such as Gradient Ascent (GA), Gradient Difference (GradDiff), and Preference Optimization (PO/NPO), as well as continual unlearning methods such as GUARD, O3, and UniErase.
+**Background**: LLM unlearning methods primarily include parameter-modifying approaches such as Gradient Ascent (GA), Gradient Difference (GradDiff), and Preference Optimization (PO/NPO), as well as continual unlearning methods such as GUARD, O3, and UniErase.
 
 **Limitations of Prior Work**: All weight-modifying methods suffer from catastrophic forgetting—as unlearning requests accumulate, model performance on the retain set degrades sharply. Furthermore, existing methods require a training or optimization process to handle each unlearning request, causing sensitive information to remain accessible throughout that period.
 
-**Root Cause**: Unlearning demands "behavioral change" while weight modification inevitably causes "knowledge loss"—these two objectives are fundamentally in conflict within the parameter space.
+**Key Challenge**: Unlearning demands "behavioral change" while weight modification inevitably causes "knowledge loss"—these two objectives are fundamentally in conflict within the parameter space.
 
-**Paper Goals**: Achieve real-time, continual unlearning without modifying LLM weights, supporting an arbitrary number of sequential unlearning requests without degrading model utility.
+**Goal**: Achieve real-time, continual unlearning without modifying LLM weights, supporting an arbitrary number of sequential unlearning requests without degrading model utility.
 
-**Starting Point**: Redefine the unlearning objective—relaxing "parametric unlearning" (erasing knowledge) to "behavioral unlearning" (preventing the output of flagged information)—thereby opening up a solution space that does not require weight modification.
+**Key Insight**: Redefine the unlearning objective—relaxing "parametric unlearning" (erasing knowledge) to "behavioral unlearning" (preventing the output of flagged information)—thereby opening up a solution space that does not require weight modification.
 
 **Core Idea**: Train a task-agnostic sentence embedder for semantic similarity judgment—if a query is sufficiently similar to an unlearning request, the system refuses to answer; otherwise, normal generation proceeds.
 

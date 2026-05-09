@@ -34,7 +34,7 @@ Sdirt proposes a ray-tracing-based dual-pixel (DP) image simulation framework th
     - **Calibration-based simulators** (Xin et al., Li et al.): require extensive real-camera calibration time, suffer from interpolation errors at discrete calibration points, and generalize poorly to other lenses.
     - **Model-based simulators** (DDDNet, Pan et al., Punnappurath et al.): compute DP PSFs using ideal optical models but neglect lens aberrations and sensor phase-splitting properties.
     - As illustrated in the paper, the CoC-simulated DP PSF from the ideal thin-lens model exhibits a significant domain gap relative to real PSFs.
-- **Root Cause**: Existing model-based simulators violate real optical propagation laws, causing models trained on simulated DP images to generalize poorly to real DP data.
+- **Key Challenge**: Existing model-based simulators violate real optical propagation laws, causing models trained on simulated DP images to generalize poorly to real DP data.
 - **Design Motivation**: Accurately simulate DP PSFs that encode aberrations and phase information via ray tracing, so as to fundamentally reduce the sim-to-real domain gap.
 
 ## Method

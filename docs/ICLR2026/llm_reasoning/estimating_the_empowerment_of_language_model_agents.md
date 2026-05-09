@@ -31,10 +31,10 @@ This paper proposes EELMA, an algorithm that leverages *empowerment* from inform
 
 ## Background & Motivation
 
-- **State of the Field**: Current LM agent evaluation relies primarily on goal-centric benchmarks, which require extensive manual task design, are costly to scale, and are blind to capability gains outside their coverage — posing risks for AI safety.
+- **Background**: Current LM agent evaluation relies primarily on goal-centric benchmarks, which require extensive manual task design, are costly to scale, and are blind to capability gains outside their coverage — posing risks for AI safety.
 - **Limitations of Prior Work**: As LM agents increasingly engage in long-horizon, multi-turn interactions via tools such as search engines, APIs, and operating systems, milestone-based evaluation methods fail to capture agents' true capabilities in open-ended environments.
 - **Core Idea**: Empowerment in information theory measures an agent's influence over future states and is theoretically related to a lower bound on expected returns under arbitrary random goals, making it a natural candidate for a goal-agnostic capability metric.
-- **Root Cause**: Classical empowerment estimation methods are computationally prohibitive and cannot be applied directly in high-dimensional text spaces, necessitating a new scalable algorithm.
+- **Key Challenge**: Classical empowerment estimation methods are computationally prohibitive and cannot be applied directly in high-dimensional text spaces, necessitating a new scalable algorithm.
 
 ## Method
 

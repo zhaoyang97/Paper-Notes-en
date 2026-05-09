@@ -28,7 +28,7 @@ A practical method is proposed for estimating camera spectral sensitivity using 
 
 ## Background & Motivation
 
-**State of the Field**: Camera spectral sensitivity characterizes the camera's response to incident light at different wavelengths, and serves as a foundation for computer vision tasks such as color correction, illumination estimation, and material analysis. Accurate spectral sensitivity calibration is essential for color-faithful imaging.
+**Background**: Camera spectral sensitivity characterizes the camera's response to incident light at different wavelengths, and serves as a foundation for computer vision tasks such as color correction, illumination estimation, and material analysis. Accurate spectral sensitivity calibration is essential for color-faithful imaging.
 
 **Limitations of Prior Work**:
    - **Traditional instrument-based methods**: Rely on precision equipment such as narrowband filters or monochromators, which are costly and time-consuming.
@@ -36,11 +36,11 @@ A practical method is proposed for estimating camera spectral sensitivity using 
    - **Existing diffraction grating methods**: Require additional captures of calibrated reference targets to estimate grating efficiency, necessitating multiple scene changes and light sources, resulting in a complex workflow.
    - **Exif metadata methods**: Rely solely on camera metadata and cannot account for external factors such as lens filters; white balance ambiguity is also present.
 
-**Root Cause**: A diffraction grating separates light of different wavelengths to distinct spatial positions, theoretically enabling high-wavelength-resolution sensitivity estimation. However, the grating efficiency (non-uniform attenuation across wavelengths) is unknown, and prior methods require additional reference targets to calibrate it.
+**Key Challenge**: A diffraction grating separates light of different wavelengths to distinct spatial positions, theoretically enabling high-wavelength-resolution sensitivity estimation. However, the grating efficiency (non-uniform attenuation across wavelengths) is unknown, and prior methods require additional reference targets to calibrate it.
 
-**Paper Goals**: Can camera spectral sensitivity and grating efficiency be jointly estimated, without prior knowledge of grating efficiency, solely from captures of a light source with known spectrum passed through a diffraction grating?
+**Goal**: Can camera spectral sensitivity and grating efficiency be jointly estimated, without prior knowledge of grating efficiency, solely from captures of a light source with known spectrum passed through a diffraction grating?
 
-**Starting Point**: By employing basis function representations, the originally bilinear problem (sensitivity × grating efficiency) is reformulated as a linear system admitting a closed-form solution.
+**Key Insight**: By employing basis function representations, the originally bilinear problem (sensitivity × grating efficiency) is reformulated as a linear system admitting a closed-form solution.
 
 ## Method
 

@@ -29,15 +29,15 @@ This paper proposes Foresight Policy Optimization (FoPO), which introduces a for
 
 ## Background & Motivation
 
-**State of the Field**: While LLMs have made substantial progress in reasoning tasks such as mathematical and logical reasoning, their capacity for strategic reasoning in multi-agent settings — i.e., anticipating opponent behavior and making optimal decisions accordingly — remains insufficient. Existing reasoning enhancement methods (CoT, search-based approaches, graph-structured frameworks) each have their strengths, but none explicitly model *foresight*, which is the core characteristic of strategic reasoning.
+**Background**: While LLMs have made substantial progress in reasoning tasks such as mathematical and logical reasoning, their capacity for strategic reasoning in multi-agent settings — i.e., anticipating opponent behavior and making optimal decisions accordingly — remains insufficient. Existing reasoning enhancement methods (CoT, search-based approaches, graph-structured frameworks) each have their strengths, but none explicitly model *foresight*, which is the core characteristic of strategic reasoning.
 
 **Limitations of Prior Work**: (1) Standard RL methods such as PPO optimize only the agent's own policy without accounting for opponent responses — each update is isolated and lacks anticipation of future opponent behavior. (2) Existing game datasets (e.g., chess, poker) involve domain complexity far exceeding strategic reasoning itself, making controlled study difficult. (3) Opponent modeling methods from game theory (e.g., LOLA) require computing second-order information (mixed Hessians), which is computationally infeasible for large models.
 
-**Root Cause**: The essence of strategic reasoning is *foresight* — anticipating how an opponent will act and how one's own actions will influence the opponent. However, existing RL optimization frameworks treat the agent and opponent as independent processes, lacking this coupling.
+**Key Challenge**: The essence of strategic reasoning is *foresight* — anticipating how an opponent will act and how one's own actions will influence the opponent. However, existing RL optimization frameworks treat the agent and opponent as independent processes, lacking this coupling.
 
-**Paper Goals**: Design a computationally efficient foresight policy optimization method that allows LLMs to explicitly account for opponent responses during strategy updates, and construct game datasets suitable for controlled study.
+**Goal**: Design a computationally efficient foresight policy optimization method that allows LLMs to explicitly account for opponent responses during strategy updates, and construct game datasets suitable for controlled study.
 
-**Starting Point**: Drawing on opponent modeling principles from game theory, the paper embeds the effect of opponent strategy changes on the agent's value as a gradient correction term in PPO's update formula, avoiding second-order computation through gradient truncation.
+**Key Insight**: Drawing on opponent modeling principles from game theory, the paper embeds the effect of opponent strategy changes on the agent's value as a gradient correction term in PPO's update formula, avoiding second-order computation through gradient truncation.
 
 **Core Idea**: A *foresight correction term* is added to the standard PPO update, coupling two factors: (1) the influence of the agent's actions on the opponent's learning gradient (*influence*), and (2) the sensitivity of the agent's objective to changes in the opponent's policy (*sensitivity*), thereby enabling explicit anticipation of future opponent behavior.
 

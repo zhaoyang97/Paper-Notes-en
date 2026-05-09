@@ -28,11 +28,11 @@ This paper proposes KeyDiff — an attention-score-free KV cache eviction strate
 
 ## Background & Motivation
 
-**State of the Field**: KV cache is a standard technique for accelerating LLM inference, but its memory footprint grows linearly with context length. Existing cache eviction methods (H2O, TOVA, SnapKV, StreamingLLM) assess token importance via attention scores and evict less important KV pairs.
+**Background**: KV cache is a standard technique for accelerating LLM inference, but its memory footprint grows linearly with context length. Existing cache eviction methods (H2O, TOVA, SnapKV, StreamingLLM) assess token importance via attention scores and evict less important KV pairs.
 
 **Limitations of Prior Work**: In resource-constrained environments (e.g., edge devices), block-wise inference is required — the prompt is split into small chunks processed sequentially. Existing attention-score-based eviction methods degrade severely in this setting, as each block can only observe attention weights over local tokens and cannot anticipate which tokens will be important in future blocks; eviction errors accumulate and propagate across blocks.
 
-**Root Cause**: Attention scores are query-dependent. In block-wise inference, they can only be computed based on local queries within the current block, making eviction decisions myopic.
+**Key Challenge**: Attention scores are query-dependent. In block-wise inference, they can only be computed based on local queries within the current block, making eviction decisions myopic.
 
 **Key Observation**: Keys with low cosine similarity to other keys (i.e., geometrically unique keys) tend to receive high attention scores. This property is entirely intrinsic to the keys themselves, independent of the query, and thus remains valid in block-wise settings.
 

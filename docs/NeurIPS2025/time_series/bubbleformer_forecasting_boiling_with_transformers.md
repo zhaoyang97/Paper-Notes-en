@@ -30,7 +30,7 @@ This paper proposes BubbleFormer, a Transformer architecture based on decomposed
 
 ### State of the Field
 
-**State of the Field**: Boiling heat transfer is one of the most complex multiphase flow phenomena in engineering (nuclear cooling, electronics thermal management, chemical processes). Traditional numerical simulations (e.g., VOF/Level-Set) are computationally prohibitive—a single simulation requires supercomputing-level resources—severely limiting design space exploration.
+**Background**: Boiling heat transfer is one of the most complex multiphase flow phenomena in engineering (nuclear cooling, electronics thermal management, chemical processes). Traditional numerical simulations (e.g., VOF/Level-Set) are computationally prohibitive—a single simulation requires supercomputing-level resources—severely limiting design space exploration.
 
 ### Limitations of Prior Work
 
@@ -38,17 +38,17 @@ This paper proposes BubbleFormer, a Transformer architecture based on decomposed
 
 ### Root Cause
 
-**Root Cause**: Deep learning surrogate models (FNO, U-Net, etc.) are effective for single-phase or simple multiphase flows, but spontaneous bubble nucleation in boiling—where new bubbles appear at random locations and times—remains extremely difficult to predict.
+**Key Challenge**: Deep learning surrogate models (FNO, U-Net, etc.) are effective for single-phase or simple multiphase flows, but spontaneous bubble nucleation in boiling—where new bubbles appear at random locations and times—remains extremely difficult to predict.
 
 ### Mechanism
 
 **Mechanism**: Existing surrogate models are mostly designed for short-term extrapolation and exhibit poor long-term stability.
 
-**Root Cause**: Boiling involves both continuous flow field dynamics (amenable to PDE learning) and discrete stochastic events (bubble birth/merging/departure). The coupling of these two regimes causes standard spatiotemporal extrapolation to fail.
+**Key Challenge**: Boiling involves both continuous flow field dynamics (amenable to PDE learning) and discrete stochastic events (bubble birth/merging/departure). The coupling of these two regimes causes standard spatiotemporal extrapolation to fail.
 
-**Paper Goals**: Design a spatiotemporal prediction model capable of simultaneously handling continuous physical fields and discrete stochastic events (spontaneous nucleation).
+**Goal**: Design a spatiotemporal prediction model capable of simultaneously handling continuous physical fields and discrete stochastic events (spontaneous nucleation).
 
-**Starting Point**: FiLM conditioning (Feature-wise Linear Modulation) is used to inject physical parameters; decomposed spatiotemporal attention reduces computational complexity; frequency-aware scaling addresses multi-scale physics.
+**Key Insight**: FiLM conditioning (Feature-wise Linear Modulation) is used to inject physical parameters; decomposed spatiotemporal attention reduces computational complexity; frequency-aware scaling addresses multi-scale physics.
 
 **Core Idea**: Decomposed spatiotemporal attention + FiLM physical conditioning + BubbleML 2.0 high-fidelity data = boiling prediction including spontaneous nucleation.
 

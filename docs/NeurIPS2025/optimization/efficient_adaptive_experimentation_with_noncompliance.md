@@ -29,20 +29,20 @@ This paper proposes AMRIV — the first semiparametrically efficient, multiply r
 
 ## Background & Motivation
 
-**State of the Field**: Adaptive experimentation efficiently estimates treatment effects by adjusting allocation strategies based on accumulated data, and has been formally recognized by the FDA. Adaptive ATE estimation with direct treatment assignment is already supported by mature tools (A2IPW, Neyman allocation, etc.).
+**Background**: Adaptive experimentation efficiently estimates treatment effects by adjusting allocation strategies based on accumulated data, and has been formally recognized by the FDA. Adaptive ATE estimation with direct treatment assignment is already supported by mature tools (A2IPW, Neyman allocation, etc.).
 
 **Limitations of Prior Work**: In many real-world settings, **treatment cannot be directly assigned** and can only be **encouraged via instrumental variables (IVs)**. Examples include:
    - TripAdvisor experiments: the registration interface can be randomized (IV), but whether a user subscribes (treatment) is voluntary.
    - Clinical trials: a physician can recommend a drug (IV), but patient adherence (treatment) is uncontrolled.
    - **Noncompliance** causes misalignment between treatment and IV, leading to bias in conventional methods.
 
-**Root Cause**:
+**Key Challenge**:
    - Theory for adaptive experimentation is mature in **direct assignment** settings, but nearly absent when **only the IV is assignable and treatment is endogenous**.
    - Existing IV methods (DeepIV, MRIV, etc.) are either non-adaptive or do not pursue semiparametric efficiency.
 
-**Paper Goals**: To bring the full modern semiparametric toolkit — efficient influence functions, adaptive policy learning, robust imputation estimation, and anytime-valid inference — into the adaptive IV setting with noncompliance.
+**Goal**: To bring the full modern semiparametric toolkit — efficient influence functions, adaptive policy learning, robust imputation estimation, and anytime-valid inference — into the adaptive IV setting with noncompliance.
 
-**Starting Point**: Building on the unconfounded compliance assumption and multiply robust influence functions of Wang & Tchetgen Tchetgen, extended to the adaptive setting.
+**Key Insight**: Building on the unconfounded compliance assumption and multiply robust influence functions of Wang & Tchetgen Tchetgen, extended to the adaptive setting.
 
 **Core Idea**: Derive the semiparametric efficiency bound and optimal allocation strategy for adaptive experiments with IVs, and construct a sequential estimator that achieves this bound.
 

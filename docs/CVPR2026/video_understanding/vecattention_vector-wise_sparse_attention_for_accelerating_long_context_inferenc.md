@@ -28,11 +28,11 @@ This paper identifies a strong "vertical vector" sparsity pattern in the attenti
 
 ## Background & Motivation
 
-1. **State of the Field**: Video understanding and generation models operate on extremely long token sequences (17K–119K), making attention computation the primary inference bottleneck. Sparse attention methods (e.g., FlexPrefill, XAttention) accelerate inference by skipping unimportant attention computations.
+1. **Background**: Video understanding and generation models operate on extremely long token sequences (17K–119K), making attention computation the primary inference bottleneck. Sparse attention methods (e.g., FlexPrefill, XAttention) accelerate inference by skipping unimportant attention computations.
 2. **Limitations of Prior Work**: Existing methods rely on coarse-grained sparsity patterns (e.g., block-level, row-level), which reduce computational complexity at the cost of accuracy—since important and unimportant tokens may coexist within a single block or row, coarse-grained skipping discards critical information.
-3. **Root Cause**: Finer granularity preserves more important information but incurs greater selection overhead—the communication and computation costs of token-level selection may negate the speedup gains.
-4. **Paper Goals**: Identify the accuracy-efficiency optimal sparsity granularity and design efficient selection and computation kernels to match.
-5. **Starting Point**: A systematic analysis of sparsity structures in video attention maps reveals a "vertical vector" pattern—important KV tokens tend to be important across all query heads, appearing as consistently bright columns. This structural property enables efficient selection via query pooling.
+3. **Key Challenge**: Finer granularity preserves more important information but incurs greater selection overhead—the communication and computation costs of token-level selection may negate the speedup gains.
+4. **Goal**: Identify the accuracy-efficiency optimal sparsity granularity and design efficient selection and computation kernels to match.
+5. **Key Insight**: A systematic analysis of sparsity structures in video attention maps reveals a "vertical vector" pattern—important KV tokens tend to be important across all query heads, appearing as consistently bright columns. This structural property enables efficient selection via query pooling.
 6. **Core Idea**: Vector-level granularity ($P_q=64$) + minS filtering (more efficient than topK) + TilingSelect (fusing selection into GEMM to reduce HBM access).
 
 ## Method

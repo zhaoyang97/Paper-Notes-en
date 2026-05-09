@@ -28,15 +28,15 @@ content_hash: c1d5a829b6f4ac7b
 This paper proposes *scattering* as a novel inductive bias for anomaly detection — anomalous samples are more dispersed than normal samples in the high-dimensional representation space. A dual-encoder architecture (temporal + topological) combined with hyperspherical scattering center constraints and contrastive fusion is used to learn joint temporal-topological representations, achieving best performance in 15/24 settings across 6 industrial IoT datasets.
 
 ## Background & Motivation
-**State of the Field**: Multivariate time series anomaly detection (MTSAD) is a core task in industrial IoT. Existing methods fall into three categories: reconstruction-based (AE, VAE), forecasting-based, and contrastive learning.
+**Background**: Multivariate time series anomaly detection (MTSAD) is a core task in industrial IoT. Existing methods fall into three categories: reconstruction-based (AE, VAE), forecasting-based, and contrastive learning.
 
 **Limitations of Prior Work**: (a) Temporal dynamics and inter-variable topological structure are typically modeled separately, lacking joint modeling; (b) anomaly definitions usually rely on high reconstruction or prediction error, which are indirect proxies for the true nature of anomalies; (c) reconstruction-based methods may reconstruct anomalies when overfitted to normal data (the generalization–memorization tension).
 
-**Root Cause**: There is a need for an inductive bias that more directly reflects the intrinsic nature of anomalies — rather than "poor reconstruction = anomaly," a representation-space characterization of anomalies is needed.
+**Key Challenge**: There is a need for an inductive bias that more directly reflects the intrinsic nature of anomalies — rather than "poor reconstruction = anomaly," a representation-space characterization of anomalies is needed.
 
-**Paper Goals**: To propose *scattering* as the core anomaly signal — anomalous samples are more scattered in the representation space (farther from the center), while normal samples cluster near the scattering center.
+**Goal**: To propose *scattering* as the core anomaly signal — anomalous samples are more scattered in the representation space (farther from the center), while normal samples cluster near the scattering center.
 
-**Starting Point**: It is observed that anomalies exhibit higher dispersion in both the temporal and topological views. Information bottleneck theory is used to show that maximizing the cross-view conditional mutual information $I(Z_T; Z_G | G)$ improves cross-view consistency, thereby strengthening the scattering signal.
+**Key Insight**: It is observed that anomalies exhibit higher dispersion in both the temporal and topological views. Information bottleneck theory is used to show that maximizing the cross-view conditional mutual information $I(Z_T; Z_G | G)$ improves cross-view consistency, thereby strengthening the scattering signal.
 
 **Core Idea**: Anomaly = high scattering on the hypersphere (far from the center) + temporal-topological contrastive fusion to amplify the scattering signal.
 

@@ -31,7 +31,7 @@ This paper proposes StRap, a framework that constructs a multi-dimensional patte
 
 ### State of the Field
 
-**State of the Field**: Spatio-temporal graph neural networks (STGNNs) have achieved notable success in domains such as traffic forecasting and climate prediction, yet face severe generalization challenges under **streaming data** settings.
+**Background**: Spatio-temporal graph neural networks (STGNNs) have achieved notable success in domains such as traffic forecasting and climate prediction, yet face severe generalization challenges under **streaming data** settings.
 
 ### Limitations of Prior Work
 
@@ -39,11 +39,11 @@ This paper proposes StRap, a framework that constructs a multi-dimensional patte
 
 ### Root Cause
 
-**Root Cause**: Limitations of existing approaches:
+**Key Challenge**: Limitations of existing approaches:
 
 ### Starting Point
 
-**Starting Point**: Backbone methods (direct application / retraining): catastrophic forgetting.
+**Key Insight**: Backbone methods (direct application / retraining): catastrophic forgetting.
 
 ### Supplementary Notes
 

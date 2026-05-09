@@ -28,18 +28,18 @@ This paper proposes MCTS-SQL, enabling lightweight LLMs (e.g., Qwen-1.5B) to ach
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-SQL is a core NLP task. Recent large models (GPT-4, Gemini) have achieved SOTA performance, but rely on tens or hundreds of billions of parameters or expensive APIs.
+**Background**: Text-to-SQL is a core NLP task. Recent large models (GPT-4, Gemini) have achieved SOTA performance, but rely on tens or hundreds of billions of parameters or expensive APIs.
 
 **Limitations of Prior Work**:
 - Small models (<3B) produce poor SQL in a single pass — difficulty understanding user intent, incorrect schema selection, and frequent syntax errors.
 - Edge device deployment demands cost efficiency — large model APIs are infeasible.
 - Existing methods insufficiently exploit the capabilities of small models.
 
-**Root Cause**: A single-pass generation from a small model is insufficient, but iterative search and refinement can compensate — requiring an efficient search strategy.
+**Key Challenge**: A single-pass generation from a small model is insufficient, but iterative search and refinement can compensate — requiring an efficient search strategy.
 
-**Paper Goals**: Enable a 1.5B-parameter model to achieve large-model-level Text-to-SQL performance through MCTS-based search.
+**Goal**: Enable a 1.5B-parameter model to achieve large-model-level Text-to-SQL performance through MCTS-based search.
 
-**Starting Point**: MCTS is naturally suited for SQL generation — SQL has explicit correctness verification (execution result matching), which can serve as the reward signal for search.
+**Key Insight**: MCTS is naturally suited for SQL generation — SQL has explicit correctness verification (execution result matching), which can serve as the reward signal for search.
 
 **Core Idea**: Schema pruning + initial generation + MCTS refinement + prefix caching = strong Text-to-SQL for small models.
 

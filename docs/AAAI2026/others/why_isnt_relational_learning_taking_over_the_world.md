@@ -28,15 +28,15 @@ This position paper systematically analyzes why relational learning has failed t
 
 ## Background & Motivation
 
-1. **State of the Field**: Contemporary AI is dominated by text and image models (e.g., GPT, Stable Diffusion), which model pixels, tokens, and phonemes. Yet the real world consists of entities (objects, events), their attributes, and their relations—not the surface forms of these media.
+1. **Background**: Contemporary AI is dominated by text and image models (e.g., GPT, Stable Diffusion), which model pixels, tokens, and phonemes. Yet the real world consists of entities (objects, events), their attributes, and their relations—not the surface forms of these media.
 
 2. **Limitations of Prior Work**: Relational learning (also known as Statistical Relational AI) studies how to learn predictive models from entities, attributes, and relations. Nearly all of the most valuable corporate data resides in spreadsheets and relational databases—filled with product IDs, student IDs, transaction numbers, and similar identifiers—rather than in text or image form. Nevertheless, relational learning has not received commensurate attention in industry or academia.
 
-3. **Root Cause**: Relational data constitutes the most pervasive and valuable form of data, yet relational learning research and application remain far below their potential. The reasons extend beyond technical difficulty to systemic problems in dataset construction, evaluation methodology, and fundamental modeling assumptions within the research community.
+3. **Key Challenge**: Relational data constitutes the most pervasive and valuable form of data, yet relational learning research and application remain far below their potential. The reasons extend beyond technical difficulty to systemic problems in dataset construction, evaluation methodology, and fundamental modeling assumptions within the research community.
 
-4. **Paper Goals**: To diagnose the underlying reasons why relational learning has not entered the mainstream and to chart directions for future research.
+4. **Goal**: To diagnose the underlying reasons why relational learning has not entered the mainstream and to chart directions for future research.
 
-5. **Starting Point**: A systematic critical analysis along four dimensions: datasets, training methodology, evaluation metrics, and forward-looking requirements.
+5. **Key Insight**: A systematic critical analysis along four dimensions: datasets, training methodology, evaluation metrics, and forward-looking requirements.
 
 6. **Core Idea**: For relational learning to fulfill its potential, the field requires more realistic datasets, more principled evaluation methods, correct treatment of missing data and negative examples, and probabilistic predictions oriented toward downstream decision-making.
 

@@ -30,7 +30,7 @@ This paper proposes UNCHA, a framework that models the semantic representativene
 
 ### Limitations of Prior Work
 
-**Limitations of Prior Work**: **State of the Field**: VLMs such as CLIP struggle to capture hierarchical relationships (e.g., part-whole, parent-child structures) in Euclidean space, and exhibit bias in multi-object compositional scenes.
+**Limitations of Prior Work**: **Background**: VLMs such as CLIP struggle to capture hierarchical relationships (e.g., part-whole, parent-child structures) in Euclidean space, and exhibit bias in multi-object compositional scenes.
 
 Hyperbolic VLMs (e.g., MERU, ATMG, HyCoCLIP) better preserve hierarchical structures via the negative curvature and exponential volume growth of hyperbolic space. However, existing methods do not model the varying semantic representativeness of different parts with respect to the whole — a crop containing the core object of a scene is more representative of the whole than a background crop.
 

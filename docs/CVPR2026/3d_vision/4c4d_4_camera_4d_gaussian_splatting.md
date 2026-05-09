@@ -27,11 +27,11 @@ content_hash: b763f704be2f644e
 This paper proposes the 4C4D framework, which employs a Neural Decaying Function to adaptively control Gaussian opacity decay, addressing the geometry–appearance learning imbalance in sparse-view (only 4 cameras) 4D Gaussian Splatting, and achieves state-of-the-art performance across multiple benchmarks.
 
 ## Background & Motivation
-**State of the Field**: Novel view synthesis for 4D dynamic scenes typically requires dense camera arrays (tens to hundreds of cameras), severely limiting practical deployment. 3DGS/4DGS perform well under dense-view settings.
+**Background**: Novel view synthesis for 4D dynamic scenes typically requires dense camera arrays (tens to hundreds of cameras), severely limiting practical deployment. 3DGS/4DGS perform well under dense-view settings.
 
 **Limitations of Prior Work**: Under extremely sparse views (e.g., 4 cameras), 4DGS fails significantly. The root cause is an **optimization bias**: fitting appearance (color) is relatively easy, whereas recovering accurate geometry (depth) under insufficient supervision is extremely difficult. Existing Gaussian formulations cannot balance the two objectives.
 
-**Root Cause**: Insufficient spatial supervision under sparse views → inadequate geometry learning → overfitting to training-view appearance → severe artifacts in novel views.
+**Key Challenge**: Insufficient spatial supervision under sparse views → inadequate geometry learning → overfitting to training-view appearance → severe artifacts in novel views.
 
 **Key Observation**: 4DGS can accurately reproduce appearance at training viewpoints but produces severely degraded depth geometry (see Fig. 3), indicating that the problem lies in optimization bias rather than model capacity.
 

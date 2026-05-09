@@ -29,7 +29,7 @@ This paper reframes knowledge editing as a novel LLM security threat termed *Edi
 
 ### State of the Field
 
-**State of the Field**: Open-source LLMs (e.g., Llama, DeepSeek) are becoming increasingly prevalent, allowing users to freely modify and upload models to communities such as HuggingFace. LLMs have thus emerged as a new channel for information dissemination.
+**Background**: Open-source LLMs (e.g., Llama, DeepSeek) are becoming increasingly prevalent, allowing users to freely modify and upload models to communities such as HuggingFace. LLMs have thus emerged as a new channel for information dissemination.
 
 ### Limitations of Prior Work
 
@@ -37,7 +37,7 @@ This paper reframes knowledge editing as a novel LLM security threat termed *Edi
 
 ### Root Cause
 
-**Root Cause**: However, knowledge editing techniques may equally be exploited maliciously—adversaries could inject harmful information into LLMs via editing operations and subsequently upload the tampered models to open-source communities.
+**Key Challenge**: However, knowledge editing techniques may equally be exploited maliciously—adversaries could inject harmful information into LLMs via editing operations and subsequently upload the tampered models to open-source communities.
 
 ### Approach
 
@@ -45,7 +45,7 @@ This paper reframes knowledge editing as a novel LLM security threat termed *Edi
 
 ### Paper Goals
 
-**Paper Goals**: This paper introduces the concept of **Editing Attack**, redefining knowledge editing as a security threat to LLMs, and focuses on two core risk categories:
+**Goal**: This paper introduces the concept of **Editing Attack**, redefining knowledge editing as a security threat to LLMs, and focuses on two core risk categories:
 
 1. **Misinformation Injection**: Whether misleading information can be implanted in LLMs via editing attacks, including common-sense misinformation (e.g., "vaccines contain microchips") and long-tail misinformation (domain-specific, e.g., "osteoblasts impede myelination").
 2. **Bias Injection**: Whether biased statements (e.g., gender or racial bias) can be injected, and further, whether injecting a single biased statement can compromise the overall fairness of the LLM.

@@ -29,15 +29,15 @@ This paper presents PSDesigner, an automated graphic design system that simulate
 
 ## Background & Motivation
 
-1. **State of the Field**: Graphic design plays a critical role in e-commerce and advertising. Existing automated approaches fall into two categories: (a) text-to-image models (e.g., FLUX, Glyph-Byt5) that generate design images; and (b) MLLM-driven methods (e.g., LaDeCo, COLE) that directly generate editable design files in JSON format.
+1. **Background**: Graphic design plays a critical role in e-commerce and advertising. Existing automated approaches fall into two categories: (a) text-to-image models (e.g., FLUX, Glyph-Byt5) that generate design images; and (b) MLLM-driven methods (e.g., LaDeCo, COLE) that directly generate editable design files in JSON format.
 
 2. **Limitations of Prior Work**: Text-to-image methods produce non-editable outputs with inaccurate text rendering (particularly for Chinese); MLLM-based methods group layers by predefined categories (underlay/text) and predict all attributes in a single pass, resulting in an unintuitive design process with limited flexibility.
 
-3. **Root Cause**: Existing methods significantly oversimplify professional design workflows — (a) grouping by category is less intuitive than grouping by visual concept; (b) one-shot prediction of all layer attributes lacks the flexibility of progressive design; (c) only simple layer hierarchies and a limited set of attribute types are supported, falling far short of production-level design requirements.
+3. **Key Challenge**: Existing methods significantly oversimplify professional design workflows — (a) grouping by category is less intuitive than grouping by visual concept; (b) one-shot prediction of all layer attributes lacks the flexibility of progressive design; (c) only simple layer hierarchies and a limited set of attribute types are supported, falling far short of production-level design requirements.
 
-4. **Paper Goals**: To construct an automated design system that simulates the workflow of human designers, handles complex PSD layer hierarchies (averaging 48.35 layers), supports diverse layer types and 60+ attribute types, and generates editable, professional-grade PSD files.
+4. **Goal**: To construct an automated design system that simulates the workflow of human designers, handles complex PSD layer hierarchies (averaging 48.35 layers), supports diverse layer types and 60+ attribute types, and generates editable, professional-grade PSD files.
 
-5. **Starting Point**: By observing how human designers work — first collecting thematic assets, then iteratively integrating resources grouped by visual concept, and refining defects after each integration step — the paper formalizes this process as a tool-call prediction problem for VLMs.
+5. **Key Insight**: By observing how human designers work — first collecting thematic assets, then iteratively integrating resources grouped by visual concept, and refining defects after each integration step — the paper formalizes this process as a tool-call prediction problem for VLMs.
 
 6. **Core Idea**: Graphic design is modeled as a sequential tool-call prediction task for VLMs, with SFT and GRPO training enabling the model to learn iterative asset integration and defect correction operations.
 

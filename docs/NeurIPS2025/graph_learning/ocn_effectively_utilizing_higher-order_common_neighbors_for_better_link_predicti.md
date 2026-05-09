@@ -27,15 +27,15 @@ content_hash: 303c0e5f06ec2119
 This paper identifies redundancy and over-smoothing issues in higher-order common neighbors (CN) for link prediction, and proposes orthogonalization (Gram-Schmidt to remove inter-order linear dependence) combined with normalization (dividing by path count, a generalized resource allocation heuristic) as a solution. The method achieves an average improvement of 7.7% in HR@100 across 7 datasets, with a 13.3% gain on the DDI dataset.
 
 ## Background & Motivation
-**State of the Field**: Link prediction is a core task in graph learning. Common neighbors (CN) serve as a classic strong baseline — the more neighbors two nodes share, the more likely an edge exists between them. Higher-order CNs (reachable via 2-hop, 3-hop paths) can capture structural information at greater distances.
+**Background**: Link prediction is a core task in graph learning. Common neighbors (CN) serve as a classic strong baseline — the more neighbors two nodes share, the more likely an edge exists between them. Higher-order CNs (reachable via 2-hop, 3-hop paths) can capture structural information at greater distances.
 
 **Limitations of Prior Work**: (a) CNs of different orders are highly redundant — 2-hop and 1-hop CN counts are strongly correlated, yielding diminishing returns when combined; (b) higher-order CNs cause over-smoothing — CN features at the 3-hop level and beyond become nearly identical across different node pairs, losing discriminability due to excessively broad neighborhood coverage.
 
-**Root Cause**: Higher-order CNs theoretically contain richer structural information, yet redundancy and over-smoothing limit or even harm their practical utility.
+**Key Challenge**: Higher-order CNs theoretically contain richer structural information, yet redundancy and over-smoothing limit or even harm their practical utility.
 
-**Paper Goals**: Design a method that extracts **incremental information independent of lower-order CNs** from higher-order CNs, while controlling over-smoothing.
+**Goal**: Design a method that extracts **incremental information independent of lower-order CNs** from higher-order CNs, while controlling over-smoothing.
 
-**Starting Point**: A signal processing perspective — treating CNs of different orders as signals, orthogonalization extracts the independent component of each order; normalization (dividing by path count) controls the divergence of higher-order signals.
+**Key Insight**: A signal processing perspective — treating CNs of different orders as signals, orthogonalization extracts the independent component of each order; normalization (dividing by path count) controls the divergence of higher-order signals.
 
 **Core Idea**: Gram-Schmidt orthogonalization + path normalization = extracting clean, incremental link prediction signals from higher-order CNs.
 

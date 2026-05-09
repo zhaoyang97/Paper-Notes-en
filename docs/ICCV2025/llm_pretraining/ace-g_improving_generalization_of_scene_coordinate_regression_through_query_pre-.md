@@ -29,15 +29,15 @@ ACE-G decomposes a scene coordinate regressor (SCR) into a general-purpose Trans
 
 ## Background & Motivation
 
-**State of the Field**: Scene coordinate regression (SCR) is a class of learning-based visual relocalization methods, with the ACE series as a prominent representative. SCR methods can estimate camera poses of query images with high accuracy after only a few minutes of scene-specific training, offering clear advantages in computational efficiency.
+**Background**: Scene coordinate regression (SCR) is a class of learning-based visual relocalization methods, with the ACE series as a prominent representative. SCR methods can estimate camera poses of query images with high accuracy after only a few minutes of scene-specific training, offering clear advantages in computational efficiency.
 
 **Limitations of Prior Work**: SCR methods generalize far worse than traditional feature-matching methods. When imaging conditions of query images (e.g., illumination, viewpoint, seasonal changes) differ substantially from training views, SCR models suffer severe performance degradation or complete failure.
 
-**Root Cause**: The training objective of the SCR framework fundamentally encodes information from training views into the regressor's weights—the regressor deliberately overfits to training views. This means insufficient generalization in SCR is an inherent design-level flaw rather than a simple matter of insufficient training. The regressor simultaneously plays the roles of "scene understanding" and "map memorization," making it impossible to independently optimize generalization.
+**Key Challenge**: The training objective of the SCR framework fundamentally encodes information from training views into the regressor's weights—the regressor deliberately overfits to training views. This means insufficient generalization in SCR is an inherent design-level flaw rather than a simple matter of insufficient training. The regressor simultaneously plays the roles of "scene understanding" and "map memorization," making it impossible to independently optimize generalization.
 
-**Paper Goals**: (1) Break the coupling between the regressor and the map representation in SCR; (2) Enable the regressor to acquire cross-scene generalization through pre-training; (3) Improve robustness to unseen conditions without significantly increasing computational overhead.
+**Goal**: (1) Break the coupling between the regressor and the map representation in SCR; (2) Enable the regressor to acquire cross-scene generalization through pre-training; (3) Improve robustness to unseen conditions without significantly increasing computational overhead.
 
-**Starting Point**: The authors observe that if "scene understanding capability" and "scene memory" are separated, the former can be obtained through large-scale pre-training while the latter is stored as compact scene encodings. This is analogous to the paradigm of pre-trained language models with retrieval augmentation in NLP.
+**Key Insight**: The authors observe that if "scene understanding capability" and "scene memory" are separated, the former can be obtained through large-scale pre-training while the latter is stored as compact scene encodings. This is analogous to the paradigm of pre-trained language models with retrieval augmentation in NLP.
 
 **Core Idea**: Replace the "scene-specific coordinate regressor" with a "general-purpose Transformer + scene-specific map code," and explicitly train the Transformer during pre-training to generalize from mapping images to unseen query images.
 

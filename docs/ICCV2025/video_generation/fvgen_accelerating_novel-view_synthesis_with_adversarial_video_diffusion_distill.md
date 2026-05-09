@@ -29,15 +29,15 @@ This paper proposes FVGen, a framework that distills a multi-step video diffusio
 
 ## Background & Motivation
 
-**State of the Field**: NeRF- and 3D Gaussian Splatting-based novel-view synthesis achieves high-quality 3D scene reconstruction under dense viewpoint inputs, but suffers from artifacts under sparse-view settings (2–5 input images). Recent work has employed video diffusion models (VDMs) for sparse-view synthesis—by generating continuous view sequences between input views to fill unobserved regions. For example, ViewCrafter leverages DUSt3R to construct initial point clouds for guiding VDM-based novel-view generation.
+**Background**: NeRF- and 3D Gaussian Splatting-based novel-view synthesis achieves high-quality 3D scene reconstruction under dense viewpoint inputs, but suffers from artifacts under sparse-view settings (2–5 input images). Recent work has employed video diffusion models (VDMs) for sparse-view synthesis—by generating continuous view sequences between input views to fill unobserved regions. For example, ViewCrafter leverages DUSt3R to construct initial point clouds for guiding VDM-based novel-view generation.
 
 **Limitations of Prior Work**: The core bottleneck of VDMs is **extremely slow sampling**—ViewCrafter requires approximately 13.2 seconds to generate 16 frames (50 denoising steps), making VDM-based methods impractical for real-time 3D reconstruction, dynamic scene reconstruction, or large-scale scenes requiring numerous novel views. Diffusion distillation methods (e.g., DMD, DMD2) perform well in the image domain but suffer from severe **training instability and mode collapse** when directly applied to multi-view video generation, likely because multi-view video datasets are far smaller than general-purpose video datasets.
 
-**Root Cause**: VDMs achieve excellent quality in sparse-view synthesis but are prohibitively slow; distillation-based acceleration is a natural solution, yet existing distillation methods are unstable on small-scale multi-view data. The DMD loss is fundamentally a reverse KL divergence minimization, and the mode-seeking property of reverse KL easily causes the student to capture only a subset of the teacher's distribution modes.
+**Key Challenge**: VDMs achieve excellent quality in sparse-view synthesis but are prohibitively slow; distillation-based acceleration is a natural solution, yet existing distillation methods are unstable on small-scale multi-view data. The DMD loss is fundamentally a reverse KL divergence minimization, and the mode-seeking property of reverse KL easily causes the student to capture only a subset of the teacher's distribution modes.
 
-**Paper Goals**: Design a stable and efficient video diffusion distillation framework that compresses the 50-step ViewCrafter into a 4-step student model without degrading visual quality.
+**Goal**: Design a stable and efficient video diffusion distillation framework that compresses the 50-step ViewCrafter into a 4-step student model without degrading visual quality.
 
-**Starting Point**: The authors identify two key observations: (1) initializing the student model with a GAN objective is more effective and faster than the conventional ODE solver + regression loss approach; (2) "softening" the reverse KL divergence preserves the mode-seeking property while avoiding mode collapse.
+**Key Insight**: The authors identify two key observations: (1) initializing the student model with a GAN objective is more effective and faster than the conventional ODE solver + regression loss approach; (2) "softening" the reverse KL divergence preserves the mode-seeking property while avoiding mode collapse.
 
 **Core Idea**: First initialize the student model via GAN adversarial training (with the teacher as discriminator), then refine distribution matching using a softened reverse KL divergence—a two-stage training pipeline that enables stable and efficient 4-step video generation.
 

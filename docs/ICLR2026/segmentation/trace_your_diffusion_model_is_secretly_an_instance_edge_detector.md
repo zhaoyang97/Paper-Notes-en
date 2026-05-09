@@ -29,15 +29,15 @@ This work identifies an "Instance Emergence Point" (IEP) in the denoising trajec
 
 ## Background & Motivation
 
-**State of the Field**: Instance and panoptic segmentation have long relied on dense annotations (masks/boxes/points), which are costly and suffer from inter-annotator inconsistency. Unsupervised approaches (e.g., MaskCut) cluster ViT semantic features, but ViTs are optimized for cross-image semantic similarity rather than intra-image instance separation, frequently merging adjacent objects of the same class or fragmenting a single instance. Weakly supervised methods require at least point annotations to distinguish instances.
+**Background**: Instance and panoptic segmentation have long relied on dense annotations (masks/boxes/points), which are costly and suffer from inter-annotator inconsistency. Unsupervised approaches (e.g., MaskCut) cluster ViT semantic features, but ViTs are optimized for cross-image semantic similarity rather than intra-image instance separation, frequently merging adjacent objects of the same class or fragmenting a single instance. Weakly supervised methods require at least point annotations to distinguish instances.
 
 **Limitations of Prior Work**: (1) Unsupervised methods depend on self-supervised ViT features that are insufficient at the instance level—merging neighboring same-class objects is a fundamental failure mode; (2) depth-assisted approaches (CutS3D) fail on adjacent objects at similar depths; (3) tag-level weak supervision already approaches fully supervised accuracy in semantic segmentation (99% on VOC), yet bridging from semantic to panoptic segmentation still requires point or box annotations.
 
-**Root Cause**: Semantic features excel at "knowing what" but struggle at "telling who from whom"—instance separation requires a fundamentally different signal source.
+**Key Challenge**: Semantic features excel at "knowing what" but struggle at "telling who from whom"—instance separation requires a fundamentally different signal source.
 
-**Paper Goals**: To identify an annotation-free, instance-level signal that complements semantic features for instance separation.
+**Goal**: To identify an annotation-free, instance-level signal that complements semantic features for instance separation.
 
-**Starting Point**: Diffusion models progressively evolve from noise → instance structure → semantic content during denoising—at specific timesteps, self-attention transiently but clearly encodes instance boundaries.
+**Key Insight**: Diffusion models progressively evolve from noise → instance structure → semantic content during denoising—at specific timesteps, self-attention transiently but clearly encodes instance boundaries.
 
 **Core Idea**: The self-attention of diffusion models is a hidden instance edge annotator—sharp divergence changes in attention distributions across boundaries constitute the instance boundary signal.
 

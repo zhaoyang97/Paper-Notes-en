@@ -27,15 +27,15 @@ This paper proposes AuthGR, the first framework to systematically integrate docu
 
 ## Background & Motivation
 
-**State of the Field**: Generative Information Retrieval (GenIR) reformulates retrieval as a text generation task that directly generates document identifiers (DocIDs). It has seen widespread adoption in industrial settings such as e-commerce search, food delivery, and financial services. However, existing methods primarily optimize for semantic relevance.
+**Background**: Generative Information Retrieval (GenIR) reformulates retrieval as a text generation task that directly generates document identifiers (DocIDs). It has seen widespread adoption in industrial settings such as e-commerce search, food delivery, and financial services. However, existing methods primarily optimize for semantic relevance.
 
 **Limitations of Prior Work**: In high-stakes domains such as health and finance, optimizing solely for semantic relevance may rank unverified personal blogs (e.g., health influencers) on par with official medical associations. Integrating authority into GenIR poses three challenges: (1) *defining authority*—textual cues alone cannot distinguish trustworthy sources from well-disguised promotional sites; (2) *learning authority*—injecting authority awareness without degrading semantic relevance is non-trivial; (3) *deployment*—directly replacing existing rankers is impractical.
 
-**Root Cause**: A highly relevant document is not necessarily a trustworthy one. In high-stakes domains, surfacing unreliable information can have serious consequences, yet existing GenIR systems have no mechanism to distinguish authoritative sources from non-authoritative ones.
+**Key Challenge**: A highly relevant document is not necessarily a trustworthy one. In high-stakes domains, surfacing unreliable information can have serious consequences, yet existing GenIR systems have no mechanism to distinguish authoritative sources from non-authoritative ones.
 
-**Paper Goals**: Design the first authority-aware GenIR framework that prioritizes trustworthy documents while preserving relevance.
+**Goal**: Design the first authority-aware GenIR framework that prioritizes trustworthy documents while preserving relevance.
 
-**Starting Point**: (1) Use a VLM to simulate human multimodal judgment of webpage authority (textual content + visual design + advertisement distribution); (2) Apply GRPO preference optimization to teach the model to favor high-authority documents among candidates; (3) Deploy collaboratively with existing rankers via a hybrid ensemble pipeline.
+**Key Insight**: (1) Use a VLM to simulate human multimodal judgment of webpage authority (textual content + visual design + advertisement distribution); (2) Apply GRPO preference optimization to teach the model to favor high-authority documents among candidates; (3) Deploy collaboratively with existing rankers via a hybrid ensemble pipeline.
 
 **Core Idea**: Authority scores serve as reward signals for GRPO, enabling the generative retrieval model to learn a preference for authoritative sources while maintaining semantic relevance.
 

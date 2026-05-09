@@ -28,15 +28,15 @@ This paper proposes a kernel surrogate model (KernelSM) for task attribution. By
 
 ## Background & Motivation
 
-**State of the Field**: Modern AI systems (e.g., LLMs) are trained simultaneously on diverse tasks. Quantifying the contribution of each training task to a target task (task attribution) is a central problem in interpretability. Existing approaches include leave-one-out (LOO) retraining (exact but computationally infeasible), influence functions (requiring Hessian computation), and linear surrogate models (fitting a linear function via random subset sampling).
+**Background**: Modern AI systems (e.g., LLMs) are trained simultaneously on diverse tasks. Quantifying the contribution of each training task to a target task (task attribution) is a central problem in interpretability. Existing approaches include leave-one-out (LOO) retraining (exact but computationally infeasible), influence functions (requiring Hessian computation), and linear surrogate models (fitting a linear function via random subset sampling).
 
 **Limitations of Prior Work**: Linear surrogate models can only capture first-order additive effects and fail to express nonlinear interactions among tasks—such as synergistic effects (joint training on two tasks outperforms the sum of individual contributions), adversarial effects, and XOR-type effects. These interactions are particularly pronounced for training samples near decision boundaries.
 
-**Root Cause**: Stronger surrogate models (e.g., kernel methods) require evaluating model performance $F(\mathbf{s})$ on more subsets, each demanding a full retraining—making the computational cost comparable to LOO.
+**Key Challenge**: Stronger surrogate models (e.g., kernel methods) require evaluating model performance $F(\mathbf{s})$ on more subsets, each demanding a full retraining—making the computational cost comparable to LOO.
 
-**Paper Goals**: (1) Provide a unified analysis of the relationship between linear surrogates and influence functions; (2) Design surrogate models capable of capturing nonlinear task interactions; (3) Enable efficient estimation without repeated retraining.
+**Goal**: (1) Provide a unified analysis of the relationship between linear surrogates and influence functions; (2) Design surrogate models capable of capturing nonlinear task interactions; (3) Enable efficient estimation without repeated retraining.
 
-**Starting Point**: The paper first uses a second-order Taylor expansion to prove that linear surrogates $\approx$ influence functions (when second-order interactions are small), thereby exposing the limitations of linear surrogates. It then upgrades the surrogate model with an RBF kernel and employs a first-order gradient approximation to avoid repeated retraining.
+**Key Insight**: The paper first uses a second-order Taylor expansion to prove that linear surrogates $\approx$ influence functions (when second-order interactions are small), thereby exposing the limitations of linear surrogates. It then upgrades the surrogate model with an RBF kernel and employs a first-order gradient approximation to avoid repeated retraining.
 
 **Core Idea**: Efficiently construct kernel surrogate models via gradient-projection-based first-order approximation, capturing nonlinear task interactions with less than 2% relative error.
 

@@ -28,15 +28,15 @@ DARE-bench is a large-scale verifiable benchmark for data science tasks, compris
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly deployed as data science agents (data loading, transformation, and modeling), yet existing benchmarks (DS-1000, DSBench, MLE-bench, etc.) suffer from significant shortcomings: most evaluate only final answer accuracy while ignoring process fidelity; verifiable ground truth is absent; task scales are small (hundreds of instances); and no training data is provided.
+**Background**: LLMs are increasingly deployed as data science agents (data loading, transformation, and modeling), yet existing benchmarks (DS-1000, DSBench, MLE-bench, etc.) suffer from significant shortcomings: most evaluate only final answer accuracy while ignoring process fidelity; verifiable ground truth is absent; task scales are small (hundreds of instances); and no training data is provided.
 
 **Limitations of Prior Work**: (a) Lack of standardized process-aware evaluation—whether the agent truly follows the specified DS pipeline; (b) scarcity of accurately annotated training data, limiting applicability of SFT and RL; (c) existing benchmarks are predominantly sourced from Kaggle competitions, resulting in narrow domain coverage (e.g., missing time-series forecasting).
 
-**Root Cause**: Evaluating process fidelity requires deterministic ground truth, yet DS tasks are inherently stochastic and environment-dependent. How can process evaluation be made verifiable?
+**Key Challenge**: Evaluating process fidelity requires deterministic ground truth, yet DS tasks are inherently stochastic and environment-dependent. How can process evaluation be made verifiable?
 
-**Paper Goals**: (a) Construct a large-scale, verifiable, training-ready DS benchmark; (b) cover two complementary capabilities—instruction following and ML modeling; (c) support RLVR (reinforcement learning with verifiable rewards) training.
+**Goal**: (a) Construct a large-scale, verifiable, training-ready DS benchmark; (b) cover two complementary capabilities—instruction following and ML modeling; (c) support RLVR (reinforcement learning with verifiable rewards) training.
 
-**Starting Point**: The high reproducibility of data science workflows is leveraged—by controlling random seeds and providing explicit instructions, faithful execution of a process yields deterministic outputs, enabling outcome-based verification of process fidelity.
+**Key Insight**: The high reproducibility of data science workflows is leveraged—by controlling random seeds and providing explicit instructions, faithful execution of a process yields deterministic outputs, enabling outcome-based verification of process fidelity.
 
 **Core Idea**: Through engineered determinism (fixed seeds + sandboxed execution + reference solutions + verifiable ground truth), DS process evaluation is transformed into automatically verifiable, outcome-based assessment.
 

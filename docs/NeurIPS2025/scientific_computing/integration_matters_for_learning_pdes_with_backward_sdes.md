@@ -28,15 +28,15 @@ This paper identifies the root cause of why standard BSDE methods underperform P
 
 ## Background & Motivation
 
-**State of the Field**: Two major deep learning approaches exist for solving high-dimensional PDEs: PINNs (directly minimizing PDE residuals) and BSDE methods (reformulating PDEs as forward-backward SDEs and simulating trajectories). BSDE methods have natural advantages for problems with underlying dynamics, such as stochastic optimal control.
+**Background**: Two major deep learning approaches exist for solving high-dimensional PDEs: PINNs (directly minimizing PDE residuals) and BSDE methods (reformulating PDEs as forward-backward SDEs and simulating trajectories). BSDE methods have natural advantages for problems with underlying dynamics, such as stochastic optimal control.
 
 **Limitations of Prior Work**: Empirically, BSDE methods perform significantly worse than PINNs, yet the underlying reason has remained unclear. Prior work [33] proposed a hybrid interpolation loss to narrow the gap, but introduced hyperparameters requiring tuning without explaining the root cause.
 
-**Root Cause**: When the standard BSDE discretizes the one-step consistency loss using Euler-Maruyama (EM) integration, it introduces an **irreducible bias term** independent of the step size $\tau$: $\text{Bias}(\theta) = \frac{1}{2T}\int_0^T \mathbb{E}\text{tr}((H \cdot \nabla^2 u_\theta)^2)dt$, causing the optimization objective to deviate from the true solution.
+**Key Challenge**: When the standard BSDE discretizes the one-step consistency loss using Euler-Maruyama (EM) integration, it introduces an **irreducible bias term** independent of the step size $\tau$: $\text{Bias}(\theta) = \frac{1}{2T}\int_0^T \mathbb{E}\text{tr}((H \cdot \nabla^2 u_\theta)^2)dt$, causing the optimization objective to deviate from the true solution.
 
-**Paper Goals**: (1) Identify the root cause of the BSDE vs. PINNs performance gap; (2) Propose a bias-free integration scheme.
+**Goal**: (1) Identify the root cause of the BSDE vs. PINNs performance gap; (2) Propose a bias-free integration scheme.
 
-**Starting Point**: Reinterpreting the BSDE as a Stratonovich SDE (rather than an Itô SDE) and applying stochastic Heun integration (which converges to the Stratonovich solution) to eliminate the bias.
+**Key Insight**: Reinterpreting the BSDE as a Stratonovich SDE (rather than an Itô SDE) and applying stochastic Heun integration (which converges to the Stratonovich solution) to eliminate the bias.
 
 **Core Idea**: Replace Itô + EM integration with Stratonovich + Heun integration to eliminate the discretization bias in the BSDE loss.
 

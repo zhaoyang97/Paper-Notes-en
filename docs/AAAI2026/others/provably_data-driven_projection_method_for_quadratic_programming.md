@@ -162,10 +162,10 @@ This paper extends data-driven projection matrix learning from LP to convex QP b
 
 ## Background & Motivation
 
-1. **State of the Field**: Solving large-scale LP/QP is a central problem in operations research. Projection methods accelerate solving via dimensionality reduction—learning a projection matrix $\boldsymbol{P} \in \mathbb{R}^{n \times k}$ (with $k \ll n$) to map the high-dimensional problem to a lower-dimensional space.
+1. **Background**: Solving large-scale LP/QP is a central problem in operations research. Projection methods accelerate solving via dimensionality reduction—learning a projection matrix $\boldsymbol{P} \in \mathbb{R}^{n \times k}$ (with $k \ll n$) to map the high-dimensional problem to a lower-dimensional space.
 2. **Limitations of Prior Work**: Sakaue et al. established generalization guarantees for data-driven LP projection matrix learning, but QP optimal solutions are not restricted to vertices of the feasible polytope (unlike LP), making direct extension fundamentally geometrically challenging.
-3. **Root Cause**: LP optimal solutions lie at vertices and can be analyzed via vertex enumeration of the piecewise structure of the optimal value function; QP optimal solutions can lie anywhere inside the feasible region, precluding direct enumeration.
-4. **Starting Point**: Apply Carathéodory's theorem to confine QP solutions within feasible regions corresponding to special active sets, then construct a GJ algorithm via the unrolled active set method.
+3. **Key Challenge**: LP optimal solutions lie at vertices and can be analyzed via vertex enumeration of the piecewise structure of the optimal value function; QP optimal solutions can lie anywhere inside the feasible region, precluding direct enumeration.
+4. **Key Insight**: Apply Carathéodory's theorem to confine QP solutions within feasible regions corresponding to special active sets, then construct a GJ algorithm via the unrolled active set method.
 
 ## Method
 

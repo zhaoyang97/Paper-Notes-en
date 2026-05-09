@@ -29,15 +29,15 @@ This paper proposes SPASM, a stability-centric persona-driven multi-turn dialogu
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are widely deployed in multi-turn interactive scenarios such as tutoring, support, and counseling. LLM-LLM dialogue simulation is an effective approach for generating large-scale training/evaluation data, offering lower costs and better controllability compared to human collection.
+**Background**: LLMs are widely deployed in multi-turn interactive scenarios such as tutoring, support, and counseling. LLM-LLM dialogue simulation is an effective approach for generating large-scale training/evaluation data, offering lower costs and better controllability compared to human collection.
 
 **Limitations of Prior Work**: LLM-LLM long conversations accumulate identity-related failures—persona drift (agents gradually deviate from assigned identities), role confusion, and echo effects (one agent gradually mimics another's language and stance). These issues intensify as dialogues lengthen, causing generated conversations to no longer correspond to intended settings and contaminating synthetic datasets.
 
-**Root Cause**: Naive dialogue history concatenation is the root problem—the same utterance may occupy different relative roles (user vs assistant) for different agents, leading to role confusion and feedback loops.
+**Key Challenge**: Naive dialogue history concatenation is the root problem—the same utterance may occupy different relative roles (user vs assistant) for different agents, leading to role confusion and feedback loops.
 
-**Paper Goals**: Design a "stability-first" dialogue simulation framework that ensures long-term role consistency without modifying model weights.
+**Goal**: Design a "stability-first" dialogue simulation framework that ensures long-term role consistency without modifying model weights.
 
-**Starting Point**: Address the problem by changing the **representation method** of dialogue history rather than the model itself—store dialogue history in a perspective-neutral format and deterministically project it to each agent's egocentric view during generation.
+**Key Insight**: Address the problem by changing the **representation method** of dialogue history rather than the model itself—store dialogue history in a perspective-neutral format and deterministically project it to each agent's egocentric view during generation.
 
 **Core Idea**: Egocentric Context Projection (ECP): Store dialogue history in $(speaker\_id, content)$ format, and during generation use role relabeling operator $\Psi_i$ to map speaker labels to SELF/PARTNER, ensuring each agent always views the dialogue from its own perspective.
 

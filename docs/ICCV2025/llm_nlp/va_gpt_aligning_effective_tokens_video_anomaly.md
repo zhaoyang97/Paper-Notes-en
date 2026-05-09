@@ -28,7 +28,7 @@ This paper proposes VA-GPT, a multimodal large language model for video anomaly 
 
 ## Background & Motivation
 
-**State of the Field**: Traditional video anomaly detection methods are inherently closed-set detection and classification problems, struggling to handle unseen anomaly types with limited vocabulary. Recent MLLMs, while possessing strong comprehension capabilities, lack sufficient precision in processing anomalous events.
+**Background**: Traditional video anomaly detection methods are inherently closed-set detection and classification problems, struggling to handle unseen anomaly types with limited vocabulary. Recent MLLMs, while possessing strong comprehension capabilities, lack sufficient precision in processing anomalous events.
 
 **Limitations of Prior Work**: Anomalous events are sparse in both space and time—only small regions within a few frames contain anomaly-relevant information. Existing video MLLMs treat all visual tokens equally, and the resulting redundant tokens interfere with anomaly localization and description.
 

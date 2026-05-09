@@ -28,15 +28,15 @@ This paper proposes Bispectral Optimal Transport (BOT), which replaces the cost 
 
 ## Background & Motivation
 
-**State of the Field**: Optimal transport (OT) is widely used in machine learning for distribution alignment, with applications in transfer learning, domain adaptation, and generative modeling. Standard discrete OT computes transport plans based on pairwise geometric distances (e.g., L2) between samples.
+**Background**: Optimal transport (OT) is widely used in machine learning for distribution alignment, with applications in transfer learning, domain adaptation, and generative modeling. Standard discrete OT computes transport plans based on pairwise geometric distances (e.g., L2) between samples.
 
 **Limitations of Prior Work**: In settings with inherent symmetries (e.g., image rotation), OT based on raw features may match images according to orientation rather than object shape — i.e., the transport plan is sensitive to nuisance variation and ignores the intrinsic semantic structure of the data.
 
-**Root Cause**: A transport plan is needed that simultaneously eliminates nuisance introduced by symmetry transformations (e.g., differing rotation angles) and retains discriminative information (e.g., object shape). Simple invariant features such as the power spectrum can remove group actions but sacrifice structural information.
+**Key Challenge**: A transport plan is needed that simultaneously eliminates nuisance introduced by symmetry transformations (e.g., differing rotation angles) and retains discriminative information (e.g., object shape). Simple invariant features such as the power spectrum can remove group actions but sacrifice structural information.
 
-**Paper Goals**: How can symmetry awareness be encoded into OT so that transport plans are invariant to group actions yet selectively sensitive to signal structure?
+**Goal**: How can symmetry awareness be encoded into OT so that transport plans are invariant to group actions yet selectively sensitive to signal structure?
 
-**Starting Point**: The bispectrum is the lowest-order complete invariant in group Fourier analysis — it jointly encodes signal structure and group invariance, removing variation due to group actions and nothing else.
+**Key Insight**: The bispectrum is the lowest-order complete invariant in group Fourier analysis — it jointly encodes signal structure and group invariance, removing variation due to group actions and nothing else.
 
 **Core Idea**: Replace raw features in the OT cost matrix with bispectral representations, yielding transport plans that are invariant to symmetry transformations while retaining discriminative information.
 

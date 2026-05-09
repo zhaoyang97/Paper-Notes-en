@@ -30,7 +30,7 @@ This paper proposes VIST3A, a framework that seamlessly connects the latent spac
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-3D generation has become an active research frontier. Early SDS-based methods (e.g., DreamFusion) require slow per-scene optimization; multi-stage pipelines (image generation followed by 3D lifting) suffer from error accumulation and engineering complexity; the latest trend is end-to-end latent diffusion models (LDMs) that directly generate 3D representations.
+**Background**: Text-to-3D generation has become an active research frontier. Early SDS-based methods (e.g., DreamFusion) require slow per-scene optimization; multi-stage pipelines (image generation followed by 3D lifting) suffer from error accumulation and engineering complexity; the latest trend is end-to-end latent diffusion models (LDMs) that directly generate 3D representations.
 
 **LDM Approach**: These methods repurpose pretrained 2D image/video model priors, fine-tune them into multi-view latent generators, and train VAE-style decoders to decode latents into 3D representations such as 3DGS.
 

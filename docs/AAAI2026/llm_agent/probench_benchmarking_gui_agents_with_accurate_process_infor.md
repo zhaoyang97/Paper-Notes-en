@@ -28,15 +28,15 @@ ProBench is proposed as the first mobile GUI Agent benchmark that evaluates both
 
 ## Background & Motivation
 
-**State of the Field**: GUI Agent benchmarks (AndroidWorld, AndroidLab, etc.) can evaluate agents executing GUI tasks on real devices, but nearly all assessments examine only the final screen state to determine task completion.
+**Background**: GUI Agent benchmarks (AndroidWorld, AndroidLab, etc.) can evaluate agents executing GUI tasks on real devices, but nearly all assessments examine only the final screen state to determine task completion.
 
 **Limitations of Prior Work**: Evaluating solely the final state leads to "false successes." For example, in the task "buy the cheapest wireless mouse," if an agent selects an item without sorting by price, the final screen still shows a purchase confirmation and is mistakenly marked as success. Critical intermediate steps (e.g., "sort by price") are simply invisible on the final page.
 
-**Root Cause**: GUI tasks are inherently multi-step sequential operations, and not all critical information is present on the last few pages. The few works that attempt process-level evaluation (SPA-BENCH, A3) either require manual annotation of intermediate states (not scalable) or rely on LLM-based decomposition (insufficiently accurate).
+**Key Challenge**: GUI tasks are inherently multi-step sequential operations, and not all critical information is present on the last few pages. The few works that attempt process-level evaluation (SPA-BENCH, A3) either require manual annotation of intermediate states (not scalable) or rely on LLM-based decomposition (insufficiently accurate).
 
-**Paper Goals**: How to automatically and accurately capture operational process information so that GUI Agent evaluation accounts for both final outcomes and critical intermediate steps?
+**Goal**: How to automatically and accurately capture operational process information so that GUI Agent evaluation accounts for both final outcomes and critical intermediate steps?
 
-**Starting Point**: Design a Process Provider to automatically supply process information via two optional approaches — (a) parsing the page hierarchy to obtain action descriptions; (b) using an MLLM to compare pre- and post-action screenshots to identify changes.
+**Key Insight**: Design a Process Provider to automatically supply process information via two optional approaches — (a) parsing the page hierarchy to obtain action descriptions; (b) using an MLLM to compare pre- and post-action screenshots to identify changes.
 
 **Core Idea**: Distinguish between State-related Tasks (evaluated by final state only) and Process-related Tasks (requiring inspection of critical intermediate actions), with the Process Provider automatically supplying accurate process information.
 

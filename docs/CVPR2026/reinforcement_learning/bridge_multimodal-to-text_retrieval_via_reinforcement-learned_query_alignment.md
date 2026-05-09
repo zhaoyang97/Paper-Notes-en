@@ -26,15 +26,15 @@ content_hash: 08b6ba441d6d2bf5
 This paper proposes BRIDGE, a system that distills noisy multimodal queries into retrieval-optimized pure-text queries via FORGE (an RL-trained query alignment model), paired with LENS, a reasoning-enhanced retriever. BRIDGE achieves 29.7 nDCG@10 on MM-BRIGHT, and as a plug-in further improves Nomic-Vision to 33.3, surpassing the best text-only retriever.
 
 ## Background & Motivation
-**State of the Field**: Dense retrieval is well-established in text-only settings (BEIR 59.0 nDCG@10), and multimodal encoders (CLIP, Nomic-Vision, VLM2Vec) are advancing, yet they perform poorly on reasoning-intensive multimodal retrieval.
+**Background**: Dense retrieval is well-established in text-only settings (BEIR 59.0 nDCG@10), and multimodal encoders (CLIP, Nomic-Vision, VLM2Vec) are advancing, yet they perform poorly on reasoning-intensive multimodal retrieval.
 
 **Limitations of Prior Work**: The MM-BRIGHT benchmark reveals a counterintuitive phenomenon — the best multimodal retriever, Nomic-Vision (27.6), underperforms even the best text-only retriever (32.2). Existing approaches focus on improving the retriever side (larger encoders, contrastive training, LLM reranking), yet all accept noisy queries as fixed input.
 
-**Root Cause**: The bottleneck lies in the query rather than the retriever — raw multimodal queries entangle image descriptions, conversational noise, and retrieval intent, systematically degrading embedding similarity. No visual encoding capability can compensate for poor query quality.
+**Key Challenge**: The bottleneck lies in the query rather than the retriever — raw multimodal queries entangle image descriptions, conversational noise, and retrieval intent, systematically degrading embedding similarity. No visual encoding capability can compensate for poor query quality.
 
-**Paper Goals**: To restructure queries prior to retrieval, transforming them from "noisy multimodal inputs" into "retrieval-optimized pure-text queries."
+**Goal**: To restructure queries prior to retrieval, transforming them from "noisy multimodal inputs" into "retrieval-optimized pure-text queries."
 
-**Starting Point**: Query-side alignment (rather than retriever-side improvement), with RL directly optimizing downstream retrieval quality.
+**Key Insight**: Query-side alignment (rather than retriever-side improvement), with RL directly optimizing downstream retrieval quality.
 
 **Core Idea**: The modality gap in multimodal retrieval is fundamentally a query representation problem rather than a model capability problem. FORGE learns via RL to "bridge" the user's multimodal expression and the input format required by the retriever.
 

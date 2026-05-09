@@ -27,15 +27,15 @@ content_hash: ae7cc73750518cb6
 This paper presents the first systematic analysis of conditional embeddings in diffusion Transformers, revealing extreme angular similarity (inter-class cosine similarity >99%) and dimensional sparsity (only 1–2% of dimensions carry semantic information). Pruning 2/3 of low-magnitude dimensions leaves generation quality virtually unchanged, exposing a hidden semantic bottleneck in conditional embeddings.
 
 ## Background & Motivation
-**State of the Field**: Transformer-based diffusion models such as DiT, SiT, and REPA inject conditioning signals (embeddings of class labels and timesteps) via AdaLN, achieving state-of-the-art generation performance.
+**Background**: Transformer-based diffusion models such as DiT, SiT, and REPA inject conditioning signals (embeddings of class labels and timesteps) via AdaLN, achieving state-of-the-art generation performance.
 
 **Limitations of Prior Work**: Despite being a core component of diffusion Transformers, the internal structure and semantic encoding of conditional embeddings remain almost entirely unexplored—no prior work has analyzed what these embeddings actually look like.
 
-**Root Cause**: The conditional embeddings of 1,000 classes in a 1,152-dimensional space are highly similar (cosine similarity >99%), yet models still correctly distinguish classes to generate high-quality images. This contradiction—"nearly identical vectors producing entirely different images"—demands explanation.
+**Key Challenge**: The conditional embeddings of 1,000 classes in a 1,152-dimensional space are highly similar (cosine similarity >99%), yet models still correctly distinguish classes to generate high-quality images. This contradiction—"nearly identical vectors producing entirely different images"—demands explanation.
 
-**Paper Goals**: To systematically understand how diffusion Transformers encode and utilize conditioning signals.
+**Goal**: To systematically understand how diffusion Transformers encode and utilize conditioning signals.
 
-**Starting Point**: Directly analyzing learned conditioning vectors by measuring cosine similarity, dimensional participation rates, and variance distributions, then validating which dimensions matter through pruning experiments.
+**Key Insight**: Directly analyzing learned conditioning vectors by measuring cosine similarity, dimensional participation rates, and variance distributions, then validating which dimensions matter through pruning experiments.
 
 **Core Idea**: Diffusion Transformers compress semantic information into a small number of "head" dimensions of the conditional embedding, while the remaining majority of "tail" dimensions are redundant.
 

@@ -27,14 +27,14 @@ content_hash: db48ff5a953d8ecd
 AAA-Gaussians proposes a unified 3D Gaussian rasterization framework that simultaneously addresses the three persistent problems of 3DGS—aliasing, projection distortion, and popping artifacts—through an adaptive 3D smoothing filter, view-space perspective-correct bounding computation, and frustum-based 3D culling, all within a single framework. The method substantially outperforms competing approaches under out-of-distribution viewpoint evaluation while maintaining real-time rendering performance.
 
 ## Background & Motivation
-- **State of the Field**: 3D Gaussian Splatting (3DGS) has fundamentally transformed inverse rendering by enabling real-time rendering through efficient rasterization. However, the original 3DGS employs an affine approximation when projecting 3D Gaussians to 2D splats, which introduces several categories of artifacts.
+- **Background**: 3D Gaussian Splatting (3DGS) has fundamentally transformed inverse rendering by enabling real-time rendering through efficient rasterization. However, the original 3DGS employs an affine approximation when projecting 3D Gaussians to 2D splats, which introduces several categories of artifacts.
 - **Three Core Artifact Categories**:
     - (1) **Projection Distortion**: Approximating 3D Gaussians as 2D splats produces cloud-like distortions at large FOVs and near image borders.
     - (2) **Aliasing Artifacts**: Discrepancies between training and test resolutions cause flickering and undersampling.
     - (3) **Popping/Flickering Artifacts**: Imprecision in global depth sorting causes abrupt changes in blending order during camera rotation.
 - **Fragmentation of Existing Solutions**: StopThePop addresses sorting, Mip-Splatting addresses aliasing, and 3D evaluation methods address distortion—yet no single method handles all three simultaneously. Some approaches introduce new problems while solving one (e.g., 3D evaluation is incompatible with 2D anti-aliasing filters).
-- **Root Cause**: 3D evaluation (computing Gaussian contributions along rays) avoids projection distortion, but existing 3D anti-aliasing schemes and 2D bounding computation methods conflict with this approach, incur performance penalties, or introduce new artifacts.
-- **Starting Point**: This work advocates treating the 3D nature of Gaussians comprehensively throughout the entire 3DGS rendering pipeline—performing anti-aliasing, bounding, culling, and sorting entirely in 3D.
+- **Key Challenge**: 3D evaluation (computing Gaussian contributions along rays) avoids projection distortion, but existing 3D anti-aliasing schemes and 2D bounding computation methods conflict with this approach, incur performance penalties, or introduce new artifacts.
+- **Key Insight**: This work advocates treating the 3D nature of Gaussians comprehensively throughout the entire 3DGS rendering pipeline—performing anti-aliasing, bounding, culling, and sorting entirely in 3D.
 
 ## Method
 

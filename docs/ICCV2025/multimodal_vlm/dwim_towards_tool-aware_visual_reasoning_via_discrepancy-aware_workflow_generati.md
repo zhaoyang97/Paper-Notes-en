@@ -29,15 +29,15 @@ This paper proposes the DWIM framework, which employs a discrepancy-aware workfl
 
 ## Background & Motivation
 
-**State of the Field**: Visual Reasoning (VR) is a key task for enabling human-like visual understanding in models. Compositional VR methods have become mainstream in recent years, leveraging the reasoning capabilities of LLMs to decompose complex visual problems into multiple sub-steps and invoke external tools (e.g., object detectors, OCR, depth estimators) for stepwise solving, outperforming end-to-end approaches.
+**Background**: Visual Reasoning (VR) is a key task for enabling human-like visual understanding in models. Compositional VR methods have become mainstream in recent years, leveraging the reasoning capabilities of LLMs to decompose complex visual problems into multiple sub-steps and invoke external tools (e.g., object detectors, OCR, depth estimators) for stepwise solving, outperforming end-to-end approaches.
 
 **Limitations of Prior Work**: Frozen LLMs lack awareness of visual reasoning tools—they do not know what tools can do, when to invoke which tool, or whether the results returned by tools are reliable. This leads to workflows containing numerous invalid or erroneous tool calls, constituting a significant performance bottleneck.
 
-**Root Cause**: Although fine-tuning can teach LLMs tool usage in other domains (e.g., code generation, mathematical reasoning), visual reasoning presents a triple challenge: (1) limited training data—high-quality visual reasoning workflow data is scarce; (2) imperfect tools—external tools themselves introduce errors, reducing data collection efficiency; and (3) noisy workflows—collected workflows contain numerous erroneous steps, and direct fine-tuning causes the model to learn bad habits.
+**Key Challenge**: Although fine-tuning can teach LLMs tool usage in other domains (e.g., code generation, mathematical reasoning), visual reasoning presents a triple challenge: (1) limited training data—high-quality visual reasoning workflow data is scarce; (2) imperfect tools—external tools themselves introduce errors, reducing data collection efficiency; and (3) noisy workflows—collected workflows contain numerous erroneous steps, and direct fine-tuning causes the model to learn bad habits.
 
-**Paper Goals**: To endow LLMs with tool-aware capability, enabling correct tool usage in visual reasoning while addressing poor training data quality and high workflow noise.
+**Goal**: To endow LLMs with tool-aware capability, enabling correct tool usage in visual reasoning while addressing poor training data quality and high workflow noise.
 
-**Starting Point**: The authors observe that not every step in a workflow is worth learning—some tool calls are correct and effective, while others are erroneous. The key lies in distinguishing "good actions" from "bad actions" within a workflow and learning only the effective portions.
+**Key Insight**: The authors observe that not every step in a workflow is worth learning—some tool calls are correct and effective, while others are erroneous. The key lies in distinguishing "good actions" from "bad actions" within a workflow and learning only the effective portions.
 
 **Core Idea**: A two-stage solution is proposed—first, a discrepancy-aware strategy generates high-quality training workflows (filtering out unreliable ones); then, instruct-masking fine-tuning ensures the model clones only effective actions (skipping erroneous steps in the workflow).
 

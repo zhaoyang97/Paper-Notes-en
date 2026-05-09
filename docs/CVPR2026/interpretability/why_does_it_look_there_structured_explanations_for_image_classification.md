@@ -28,16 +28,16 @@ This paper proposes the I2X framework, which transforms unstructured explainabil
 
 ## Background & Motivation
 
-**State of the Field**: XAI methods primarily produce three types of outputs — saliency maps (GradCAM), concept vectors (TCAV), and counterfactual examples. These constitute **unstructured explainability**, indicating only "where the model looks" without revealing "how the model organizes this information for reasoning."
+**Background**: XAI methods primarily produce three types of outputs — saliency maps (GradCAM), concept vectors (TCAV), and counterfactual examples. These constitute **unstructured explainability**, indicating only "where the model looks" without revealing "how the model organizes this information for reasoning."
 
 **Limitations of Prior Work**:
    - Existing methods provide fragmented explanations and cannot answer "why the model attends to a particular region" or "how the model makes decisions across classes."
    - Some methods leverage auxiliary models such as GPT/CLIP to describe model behavior, but such explanations are not faithful to the original model and may introduce hallucinations.
    - The dynamic process by which a model progressively constructs its decision strategy during training remains entirely opaque.
 
-**Root Cause**: Interpretability ≠ Explainability — the former describes phenomena, while the latter requires structured attribution.
+**Key Challenge**: Interpretability ≠ Explainability — the former describes phenomena, while the latter requires structured attribution.
 
-**Starting Point**: Model decisions are not static; during training, the model progressively establishes associations between prototype evidence and confidence. Tracking this process enables the construction of structured explanations.
+**Key Insight**: Model decisions are not static; during training, the model progressively establishes associations between prototype evidence and confidence. Tracking this process enables the construction of structured explanations.
 
 **Core Idea**: By tracking the mapping between prototype intensity changes and confidence changes across training checkpoints, unstructured explanations are elevated to structured explanations.
 

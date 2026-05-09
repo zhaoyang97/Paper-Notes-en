@@ -35,7 +35,7 @@ UNIStainNet is proposed as the first method to inject dense spatial tokens from 
     - Contrastive learning methods (ASP, ODA-GAN) mitigate misalignment via feature engineering, but the generators themselves do not leverage pathological priors.
     - Optimal transport methods (SIM-GAN, USI-GAN) rely on progressively stacked multi-stage feature engineering.
     - All existing methods train **separate models for each stain type**.
-- **Starting Point**: Directly modulating the generator using dense spatial tokens from a frozen UNI foundation model, without complex feature engineering.
+- **Key Insight**: Directly modulating the generator using dense spatial tokens from a frozen UNI foundation model, without complex feature engineering.
 
 ## Method
 

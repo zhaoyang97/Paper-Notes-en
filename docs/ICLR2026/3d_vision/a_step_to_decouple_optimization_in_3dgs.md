@@ -28,15 +28,15 @@ This paper provides an in-depth analysis of two overlooked coupling issues in 3D
 
 ## Background & Motivation
 
-**State of the Field**: 3DGS directly inherits the Adam optimizer and synchronous update strategy from deep learning, updating all primitives (including those invisible from the current viewpoint) simultaneously.
+**Background**: 3DGS directly inherits the Adam optimizer and synchronous update strategy from deep learning, updating all primitives (including those invisible from the current viewpoint) simultaneously.
 
 **Limitations of Prior Work**: (a) Update-step coupling: zero gradients for invisible primitives still trigger momentum rescaling and implicit updates, degrading efficiency and performance; (b) Gradient coupling: regularization loss and photometric loss are entangled in Adam's adaptive gradient, making regularization strength uncontrollable — either too strong or too weak. Sparse Adam improves efficiency but at the cost of performance.
 
-**Root Cause**: Primitive optimization in 3DGS fundamentally differs from weight optimization in DNNs — each attribute carries physical meaning and each primitive has a different importance, yet existing optimizers do not account for these distinctions.
+**Key Challenge**: Primitive optimization in 3DGS fundamentally differs from weight optimization in DNNs — each attribute carries physical meaning and each primitive has a different importance, yet existing optimizers do not account for these distinctions.
 
-**Paper Goals**: To understand and decouple the optimization coupling in 3DGS, and to design a more principled optimization strategy.
+**Goal**: To understand and decouple the optimization coupling in 3DGS, and to design a more principled optimization strategy.
 
-**Starting Point**: Decompose Adam's behavior in 3DGS into three components (Sparse Adam, Re-State Regularization, and Decoupled Attribute Regularization), study each independently, and then recombine them.
+**Key Insight**: Decompose Adam's behavior in 3DGS into three components (Sparse Adam, Re-State Regularization, and Decoupled Attribute Regularization), study each independently, and then recombine them.
 
 **Core Idea**: Import the decoupling philosophy of AdamW into 3DGS, replacing coupled regularization with an adaptive form $\nabla\mathcal{R}/\sqrt{\hat{v}}$ so that regularization strength automatically adjusts according to each primitive's optimization state.
 

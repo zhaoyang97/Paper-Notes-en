@@ -29,7 +29,7 @@ This work presents the first systematic study on how referring expressions (REs)
 
 ## Background & Motivation
 
-**State of the Field**: LLM-driven robot task planning (e.g., SayCan, ProgPrompt, DAG-Plan) has achieved notable progress, yet all such approaches rest on an idealized assumption that user instructions are clear, complete, and unambiguous. In practice, however, human language is inherently vague.
+**Background**: LLM-driven robot task planning (e.g., SayCan, ProgPrompt, DAG-Plan) has achieved notable progress, yet all such approaches rest on an idealized assumption that user instructions are clear, complete, and unambiguous. In practice, however, human language is inherently vague.
 
 **Limitations of Prior Work**: Real users—especially the elderly, children, and individuals with Alzheimer's disease—frequently issue instructions containing implicit referring expressions, such as using "it" instead of "pot" or "that heavy thing" instead of "frying pan." Linguistic studies indicate that approximately 20% of expressions in news text are descriptive (implicit REs), with the proportion being even higher in everyday conversation. These user groups are precisely those who most need robotic assistance.
 

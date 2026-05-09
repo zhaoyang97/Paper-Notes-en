@@ -32,7 +32,7 @@ This paper proposes the Bounded Attention Prefix Oracle (BAPO) computational fra
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: **Systematic failures in LLM global reasoning**: Transformer-based LLMs consistently fail on tasks requiring integration of information across large portions of the input (e.g., graph reachability, variable tracking, majority vote aggregation), even at large model scales.
+**Key Challenge**: **Background**: **Systematic failures in LLM global reasoning**: Transformer-based LLMs consistently fail on tasks requiring integration of information across large portions of the input (e.g., graph reachability, variable tracking, majority vote aggregation), even at large model scales.
 
 **Limitations of Prior Work**: Existing work largely documents these failures empirically, lacking a formal framework to explain why certain tasks are hard while others are not, or to predict which problem classes LLMs will fail on.
 

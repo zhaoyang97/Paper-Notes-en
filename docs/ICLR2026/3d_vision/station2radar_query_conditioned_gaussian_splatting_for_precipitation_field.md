@@ -28,15 +28,15 @@ This paper proposes Query-Conditioned Gaussian Splatting (QCGS), the first metho
 
 ## Background & Motivation
 
-**State of the Field**: Precipitation forecasting relies on heterogeneous data sources — weather radars offer high accuracy but limited geographic coverage and high maintenance costs; weather stations provide precise point measurements but are extremely sparse; satellites offer high-resolution wide-area coverage but cannot directly retrieve rainfall estimates. Most existing deep learning precipitation methods (e.g., ConvLSTM, diffusion models) treat radar as the primary input.
+**Background**: Precipitation forecasting relies on heterogeneous data sources — weather radars offer high accuracy but limited geographic coverage and high maintenance costs; weather stations provide precise point measurements but are extremely sparse; satellites offer high-resolution wide-area coverage but cannot directly retrieve rainfall estimates. Most existing deep learning precipitation methods (e.g., ConvLSTM, diffusion models) treat radar as the primary input.
 
 **Limitations of Prior Work**: Radar networks are unavailable across much of the world, particularly in developing countries, limiting the applicability of radar-centric approaches. Conventional radar-free methods rely primarily on classical interpolation techniques (Barnes, Kriging), which spread station observations onto a grid using fixed Gaussian weights. These methods severely blur precipitation boundaries and are highly sensitive to station density. Satellite-direct estimation methods (e.g., Sat2Radar) suffer from systematic bias and produce fixed-resolution outputs.
 
-**Root Cause**: Accurate precipitation field reconstruction simultaneously requires: (1) ground-truth anchoring accuracy (available only from stations), (2) spatially continuous coverage (available only from satellites), and (3) resolution flexibility (absent from all existing methods). No prior framework unifies these three properties.
+**Key Challenge**: Accurate precipitation field reconstruction simultaneously requires: (1) ground-truth anchoring accuracy (available only from stations), (2) spatially continuous coverage (available only from satellites), and (3) resolution flexibility (absent from all existing methods). No prior framework unifies these three properties.
 
-**Paper Goals**: How can satellite imagery and sparse AWS observations be fused — without relying on radar — to generate high-resolution, structurally coherent, continuous precipitation fields?
+**Goal**: How can satellite imagery and sparse AWS observations be fused — without relying on radar — to generate high-resolution, structurally coherent, continuous precipitation fields?
 
-**Starting Point**: The authors observe that classical Gaussian-weighted interpolation is mathematically equivalent to a special case of Gaussian Splatting — traditional interpolation uses fixed isotropic kernels, whereas GS allows learnable anisotropic kernels, adaptive amplitudes, and resolution-agnostic rendering. This observation bridges classical meteorological methods with emerging computer vision techniques.
+**Key Insight**: The authors observe that classical Gaussian-weighted interpolation is mathematically equivalent to a special case of Gaussian Splatting — traditional interpolation uses fixed isotropic kernels, whereas GS allows learnable anisotropic kernels, adaptive amplitudes, and resolution-agnostic rendering. This observation bridges classical meteorological methods with emerging computer vision techniques.
 
 **Core Idea**: Combine 2D Gaussian Splatting with implicit neural representations, conditioning on satellite features to predict adaptive Gaussian parameters, and selectively render only within precipitation support regions, enabling efficient, resolution-flexible precipitation field generation.
 

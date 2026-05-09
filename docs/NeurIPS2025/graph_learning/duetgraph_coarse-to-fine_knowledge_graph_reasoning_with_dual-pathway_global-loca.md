@@ -28,17 +28,17 @@ DuetGraph proposes a dual-pathway (message passing + global attention) parallel 
 
 ## Background & Motivation
 
-**State of the Field**: Knowledge graph (KG) reasoning aims to complete missing entities or relations. Mainstream approaches include message-passing networks (capturing local neighborhoods) and Transformers (capturing global dependencies). Recent leading methods (e.g., KnowFormer) stack both within a single stage to exploit local and global information simultaneously.
+**Background**: Knowledge graph (KG) reasoning aims to complete missing entities or relations. Mainstream approaches include message-passing networks (capturing local neighborhoods) and Transformers (capturing global dependencies). Recent leading methods (e.g., KnowFormer) stack both within a single stage to exploit local and global information simultaneously.
 
 **Limitations of Prior Work**: The single-pathway stacking design causes **score over-smoothing**—scores of correct and incorrect answers converge (as shown in Figure 1, a large fraction of incorrect entities receive scores close to the correct answer across most baselines), degrading reasoning quality.
 
-**Root Cause**:
+**Key Challenge**:
    - **Challenge 1**: Stacking message-passing layers and attention layers individually already exacerbates over-smoothing; concatenating both compounds these effects further.
    - **Challenge 2**: Single-stage models have limited discriminative capacity, as one-shot reasoning cannot effectively distinguish among candidate entities.
 
-**Paper Goals**: Simultaneously mitigate both sources of over-smoothing—information mixing (Challenge 1) and insufficient single-stage discrimination (Challenge 2).
+**Goal**: Simultaneously mitigate both sources of over-smoothing—information mixing (Challenge 1) and insufficient single-stage discrimination (Challenge 2).
 
-**Starting Point**: **Decouple** local/global information processing into two independent pathways rather than stacking them; decompose inference into two stages: coarse-grained filtering followed by fine-grained discrimination.
+**Key Insight**: **Decouple** local/global information processing into two independent pathways rather than stacking them; decompose inference into two stages: coarse-grained filtering followed by fine-grained discrimination.
 
 **Core Idea**: Replace stacking with separation via dual-pathway fusion, combined with coarse-to-fine two-stage reasoning, to address score over-smoothing in KG reasoning from both architectural and inference-strategy perspectives.
 

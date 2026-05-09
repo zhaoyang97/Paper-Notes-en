@@ -28,13 +28,13 @@ This paper proposes Concept-Aware LoRA (CA-LoRA), which automatically identifies
 
 ## Background & Motivation
 
-**State of the Field**: Semantic segmentation requires large amounts of pixel-level annotated data, which is costly to obtain. Leveraging T2I generative models to synthesize training data has emerged as an effective strategy for alleviating data scarcity.
+**Background**: Semantic segmentation requires large amounts of pixel-level annotated data, which is costly to obtain. Leveraging T2I generative models to synthesize training data has emerged as an effective strategy for alleviating data scarcity.
 
 **Limitations of Prior Work**: Segmentation dataset generation faces two key challenges: (1) generated samples must be aligned with the target domain (e.g., driving viewpoint, urban style); and (2) generated samples must go beyond the training data by being informative and diverse. Methods trained solely on target-domain data achieve domain alignment but lack diversity; methods that directly employ pretrained T2I models are diverse but domain-misaligned.
 
-**Root Cause**: Applying LoRA fine-tuning to a T2I model can achieve domain alignment, but leads to overfitting and memorization of training data—because LoRA simultaneously learns all concepts (viewpoint, style, object shape, layout, etc.), thereby limiting diversity.
+**Key Challenge**: Applying LoRA fine-tuning to a T2I model can achieve domain alignment, but leads to overfitting and memorization of training data—because LoRA simultaneously learns all concepts (viewpoint, style, object shape, layout, etc.), thereby limiting diversity.
 
-**Starting Point**: Domain alignment typically requires learning only a specific concept (e.g., viewpoint or style), not all concepts simultaneously.
+**Key Insight**: Domain alignment typically requires learning only a specific concept (e.g., viewpoint or style), not all concepts simultaneously.
 
 **Core Idea**: Automatically measure each layer's sensitivity to a specific concept (concept awareness), and apply LoRA only to the top-$k$% most sensitive layers, freezing the remainder to retain pretrained knowledge.
 

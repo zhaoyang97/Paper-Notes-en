@@ -29,15 +29,15 @@ This paper systematically compares 6 commonly used persona prompting strategies 
 
 ## Background & Motivation
 
-**State of the Field**: Sociodemographic personalization in LLMs is increasingly prevalent — adjusting responses based on gender, race, or age has been shown to improve helpfulness. Researchers use synthetic "personas" to study bias in such personalization.
+**Background**: Sociodemographic personalization in LLMs is increasingly prevalent — adjusting responses based on gender, race, or age has been shown to improve helpfulness. Researchers use synthetic "personas" to study bias in such personalization.
 
 **Limitations of Prior Work**: (1) Existing studies typically adopt a single prompting strategy to convey persona information, ignoring LLMs' sensitivity to prompt variation; (2) Different prompting strategies differ substantially in external validity — explicitly stating "you are talking to a woman" is rare in real interactions; (3) It remains unclear whether different prompting strategies lead to different bias conclusions.
 
-**Root Cause**: The choice of prompting strategy may determine the research conclusion — if one strategy reveals bias while another does not, which finding is more credible?
+**Key Challenge**: The choice of prompting strategy may determine the research conclusion — if one strategy reveals bias while another does not, which finding is more credible?
 
-**Paper Goals**: Systematically evaluate how the choice of prompting strategy affects findings on personalization bias, and provide methodological guidance for future research.
+**Goal**: Systematically evaluate how the choice of prompting strategy affects findings on personalization bias, and provide methodological guidance for future research.
 
-**Starting Point**: Design a flexible evaluation framework covering three major categories of prompting strategies (name-based, explicit-mention, and conversation-history), each with two variants, and compare them across multiple models and tasks.
+**Key Insight**: Design a flexible evaluation framework covering three major categories of prompting strategies (name-based, explicit-mention, and conversation-history), each with two variants, and compare them across multiple models and tasks.
 
 **Core Idea**: Prompting strategy is a hidden degree of freedom in personalization research — different strategies yield correlated average effects but significantly different bias magnitudes; implicit strategies with higher external validity should be prioritized.
 

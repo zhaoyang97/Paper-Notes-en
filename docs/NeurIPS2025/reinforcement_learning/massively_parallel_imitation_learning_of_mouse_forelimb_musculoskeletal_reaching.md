@@ -29,16 +29,16 @@ content_hash: 1835ac85ef394d49
 This work presents MIMIC-MJX, a massively parallel imitation learning pipeline for mouse forelimb musculoskeletal simulation. Leveraging JAX-accelerated PPO at 1.2 million steps/second across thousands of parallel environments, the pipeline trains physically-informed imitation learning policies. The study demonstrates that control cost regularization enables simulated muscle activity to better predict real EMG signals, and employs a Takens-theorem-based nonlinear dynamical systems approach to predict muscle activation from joint kinematics.
 
 ## Background & Motivation
-**State of the Field**: Understanding brain–body interaction—specifically the sensorimotor transformations underlying embodied control—is a central goal of neuroscience. Motor control research has historically relied on kinematic observations alone to infer neural mechanisms, largely neglecting the underlying musculoskeletal dynamics and physical constraints.
+**Background**: Understanding brain–body interaction—specifically the sensorimotor transformations underlying embodied control—is a central goal of neuroscience. Motor control research has historically relied on kinematic observations alone to infer neural mechanisms, largely neglecting the underlying musculoskeletal dynamics and physical constraints.
 
 **Limitations of Prior Work**:
 - Dynamical parameters are difficult to measure directly in experiment, particularly in small animals such as mice.
 - Existing simulation platforms are computationally prohibitive, precluding large-scale parameter searches and high-throughput experimentation.
 - High-fidelity musculoskeletal models of the mouse forelimb are scarce, and available models lack systematic validation against EMG data.
 
-**Root Cause**: A comprehensive understanding of embodied control requires simultaneously modeling behavioral dynamics, biomechanics, and neural circuit architecture; however, conventional simulation speeds render such integrative modeling infeasible.
+**Key Challenge**: A comprehensive understanding of embodied control requires simultaneously modeling behavioral dynamics, biomechanics, and neural circuit architecture; however, conventional simulation speeds render such integrative modeling infeasible.
 
-**Starting Point**: Recent work (Aldarondo et al., 2024) demonstrated that physically constrained imitation learning can reproduce experimentally observed motor behaviors and predict real neural activity. Replicating this paradigm for the mouse forelimb, combined with GPU-accelerated high-throughput training, would enable systematic investigation of how physical constraints shape control strategies.
+**Key Insight**: Recent work (Aldarondo et al., 2024) demonstrated that physically constrained imitation learning can reproduce experimentally observed motor behaviors and predict real neural activity. Replicating this paradigm for the mouse forelimb, combined with GPU-accelerated high-throughput training, would enable systematic investigation of how physical constraints shape control strategies.
 
 **Core Idea**: JAX + MuJoCo-MJX massively parallel imitation learning + physics-informed regularization = efficient and biologically plausible mouse forelimb musculoskeletal simulation.
 

@@ -28,7 +28,7 @@ This paper introduces SpatiaLab, a real-world spatial reasoning benchmark compri
 
 ## Background & Motivation
 
-**State of the Field**: Spatial reasoning is a foundational cognitive ability for humans and is critical to robotics, autonomous driving, and AR/VR. While VLMs have made progress in multimodal representation and language grounding, spatial judgment in real-world environments remains fragile.
+**Background**: Spatial reasoning is a foundational cognitive ability for humans and is critical to robotics, autonomous driving, and AR/VR. While VLMs have made progress in multimodal representation and language grounding, spatial judgment in real-world environments remains fragile.
 
 **Limitations of Prior Work**:
    - Existing spatial reasoning benchmarks are overly simplified: most focus on binary spatial relations, coarse depth categorization, or synthetic/puzzle-style scenes.
@@ -36,15 +36,15 @@ This paper introduces SpatiaLab, a real-world spatial reasoning benchmark compri
    - Critical challenges such as occlusion reasoning, cross-view scale consistency, and path planning under partial observability are severely undersampled.
    - Models that perform well on synthetic benchmarks such as ScanQA and BLINK frequently fail in real-world settings.
 
-**Root Cause**: Humans seamlessly integrate multidimensional spatial information—relative position, depth, orientation, scale, navigation, and 3D geometry—whereas VLMs fall far short of human performance on any single dimension, let alone joint multi-dimensional reasoning.
+**Key Challenge**: Humans seamlessly integrate multidimensional spatial information—relative position, depth, orientation, scale, navigation, and 3D geometry—whereas VLMs fall far short of human performance on any single dimension, let alone joint multi-dimensional reasoning.
 
-**Paper Goals**:
+**Goal**:
    - Construct a real-world benchmark covering all core axes of spatial reasoning.
    - Employ dual-format evaluation (MCQ and open-ended) to avoid format bias.
    - Evaluate 25+ VLMs and establish a human baseline.
    - Conduct in-depth failure analysis and provide actionable directions for improvement.
 
-**Starting Point**: Drawing from cognitive psychology's taxonomy of spatial cognition, the paper systematically decomposes spatial reasoning into $6 \times 5 = 30$ fine-grained task types, constructing the benchmark from real photographs rather than synthetic data.
+**Key Insight**: Drawing from cognitive psychology's taxonomy of spatial cognition, the paper systematically decomposes spatial reasoning into $6 \times 5 = 30$ fine-grained task types, constructing the benchmark from real photographs rather than synthetic data.
 
 **Core Idea**: SpatiaLab employs dual-format evaluation across 30 real-world spatial reasoning tasks to systematically expose fundamental deficiencies of VLMs in depth perception, occlusion reasoning, navigation planning, and 3D geometry.
 

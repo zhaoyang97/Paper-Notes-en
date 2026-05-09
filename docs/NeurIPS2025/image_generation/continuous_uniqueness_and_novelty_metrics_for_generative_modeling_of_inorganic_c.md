@@ -30,7 +30,7 @@ This paper identifies four critical flaws in the widely adopted discrete distanc
 
 ## Background & Motivation
 
-**State of the Field**: Machine learning generative models (CDVAE, DiffCSP, MatterGen, etc.) enable rapid sampling of novel crystal structures from chemical space. The core evaluation metrics for these models are uniqueness (diversity among generated samples) and novelty (deviation from training data), both of which rely on a distance function defined between crystal structures.
+**Background**: Machine learning generative models (CDVAE, DiffCSP, MatterGen, etc.) enable rapid sampling of novel crystal structures from chemical space. The core evaluation metrics for these models are uniqueness (diversity among generated samples) and novelty (deviation from training data), both of which rely on a distance function defined between crystal structures.
 
 **Limitations of Prior Work**: The most commonly used distance function $d_{\text{smat}}$ (pymatgen's StructureMatcher) suffers from four key problems:
    - **(a) Discreteness**: Returns only 0/1, precluding quantification of structural similarity—whereas physical properties vary continuously with crystal structure.
@@ -38,7 +38,7 @@ This paper identifies four critical flaws in the widely adopted discrete distanc
    - **(c) Lack of Lipschitz continuity**: Small perturbations to atomic coordinates can cause discontinuous changes in the primitive cell, leading to abrupt jumps in the distance value.
    - **(d) Non-permutation-invariance**: The uniqueness score depends on the generation order—the same set of samples may yield different scores under different orderings.
 
-**Root Cause**: The unreliability of current evaluation metrics may lead to erroneous assessments of generative model capability. For example, a model that generates large numbers of physically unreasonable yet compositionally diverse structures may receive high scores under discrete metrics.
+**Key Challenge**: The unreliability of current evaluation metrics may lead to erroneous assessments of generative model capability. For example, a model that generates large numbers of physically unreasonable yet compositionally diverse structures may receive high scores under discrete metrics.
 
 ## Method
 

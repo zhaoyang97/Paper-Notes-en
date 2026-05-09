@@ -31,7 +31,7 @@ This paper proposes FIPER, a framework for runtime failure prediction in generat
 
 ## Background & Motivation
 
-**State of the Field**: Generative imitation learning methods—including diffusion policy and flow matching—have achieved remarkable progress in recent years, enabling robots to perform complex long-horizon manipulation tasks. By learning multimodal conditional action distributions, these approaches demonstrate strong task generalization.
+**Background**: Generative imitation learning methods—including diffusion policy and flow matching—have achieved remarkable progress in recent years, enabling robots to perform complex long-horizon manipulation tasks. By learning multimodal conditional action distributions, these approaches demonstrate strong task generalization.
 
 **Limitations of Prior Work**:
 - Distribution shifts at deployment (unseen environments, lighting changes, object position variations) or accumulated action errors can lead to unpredictable and dangerous behavior.
@@ -40,11 +40,11 @@ This paper proposes FIPER, a framework for runtime failure prediction in generat
 - Many methods rely on failure data collection, which is both unsafe and impractical in real-world settings.
 - Existing uncertainty measures fail to properly handle the **multimodal action distributions** of generative policies.
 
-**Root Cause**: Safe deployment requires precise runtime failure prediction, yet no single signal source—observation or action alone—can reliably distinguish genuine failure precursors from situations the policy can handle.
+**Key Challenge**: Safe deployment requires precise runtime failure prediction, yet no single signal source—observation or action alone—can reliably distinguish genuine failure precursors from situations the policy can handle.
 
-**Paper Goals**: To provide an early failure prediction mechanism for generative robot policies at runtime, without requiring failure data, while minimizing false positives on benign OOD situations.
+**Goal**: To provide an early failure prediction mechanism for generative robot policies at runtime, without requiring failure data, while minimizing false positives on benign OOD situations.
 
-**Starting Point**: Based on the observation that *failures are typically accompanied by both unfamiliar observations and incoherent actions*, the paper designs a dual-metric detection framework that only triggers an alarm when both signals are simultaneously anomalous.
+**Key Insight**: Based on the observation that *failures are typically accompanied by both unfamiliar observations and incoherent actions*, the paper designs a dual-metric detection framework that only triggers an alarm when both signals are simultaneously anomalous.
 
 **Core Idea**: Combining observation-space OOD detection with action-space uncertainty quantification in a complementary, noise-reducing fashion, with conformal prediction for threshold calibration, to achieve runtime failure prediction requiring no failure data.
 

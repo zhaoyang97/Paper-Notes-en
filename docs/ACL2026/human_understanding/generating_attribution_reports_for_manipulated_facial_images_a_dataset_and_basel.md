@@ -29,15 +29,15 @@ The paper proposes the Forgery Attribution Report Generation task, constructs th
 
 ## Background & Motivation
 
-**State of the Field**: Advanced generative models such as diffusion models have greatly enhanced the realism of synthetic images. Facial manipulation detection research has evolved from binary classification to fine-grained forgery localization.
+**Background**: Advanced generative models such as diffusion models have greatly enhanced the realism of synthetic images. Facial manipulation detection research has evolved from binary classification to fine-grained forgery localization.
 
 **Limitations of Prior Work**: (1) Binary classification only outputs a verdict without providing semantic understanding; (2) Pixel-level masks can localize tampered regions but treat all tampered pixels equally, failing to distinguish subtle from obvious manipulations or explain the cause and nature of tampering; (3) As modern forgeries become increasingly realistic, masks cannot provide descriptive evidence for human reviewers.
 
-**Root Cause**: Existing methods answer "where was it tampered" but fail to answer "why it is considered tampered" and "what are the specific manifestations of tampering."
+**Key Challenge**: Existing methods answer "where was it tampered" but fail to answer "why it is considered tampered" and "what are the specific manifestations of tampering."
 
-**Paper Goals**: Define the forgery attribution report generation task—simultaneously localizing tampered regions (Where) and generating natural language explanations based on the editing process (Why), providing explainable multimodal forensics.
+**Goal**: Define the forgery attribution report generation task—simultaneously localizing tampered regions (Where) and generating natural language explanations based on the editing process (Why), providing explainable multimodal forensics.
 
-**Starting Point**: Leverage the forgery process itself to generate pixel-perfect ground-truth masks (no manual mask annotation needed), combined with a human-in-the-loop pipeline for writing text descriptions to construct a high-quality dataset.
+**Key Insight**: Leverage the forgery process itself to generate pixel-perfect ground-truth masks (no manual mask annotation needed), combined with a human-in-the-loop pipeline for writing text descriptions to construct a high-quality dataset.
 
 **Core Idea**: Through a shared encoder that learns unified forgery-aware multimodal representations, simultaneously driving a mask decoder (localization) and a large language model (explanation), achieving synergistic enhancement between localization and explanation.
 

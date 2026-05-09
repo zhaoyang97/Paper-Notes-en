@@ -27,15 +27,15 @@ content_hash: c34ce170bb394aef
 This paper proposes ∇-Reasoner, which upgrades inference-time search from zeroth-order (sampling + evaluation) to first-order (gradient descent). By applying Differentiable Textual Optimization (DTO) in the token logits space—jointly leveraging reward gradients and LLM likelihood—the framework iteratively refines the decoding strategy, achieving 10–40% accuracy gains on mathematical reasoning tasks while reducing model calls by 10–40%.
 
 ## Background & Motivation
-**State of the Field**: Inference-time compute scaling has emerged as a critical approach to enhancing LLM reasoning. Existing methods such as Best-of-N, Self-Consistency, Tree-of-Thought, and RAP improve answer quality through repeated sampling and evaluation.
+**Background**: Inference-time compute scaling has emerged as a critical approach to enhancing LLM reasoning. Existing methods such as Best-of-N, Self-Consistency, Tree-of-Thought, and RAP improve answer quality through repeated sampling and evaluation.
 
 **Limitations of Prior Work**: These methods are fundamentally **zeroth-order searches**—they exploit only the scalar reward value to filter candidates, entirely ignoring gradient direction information. As the search space grows exponentially with sequence length, undirected search becomes inefficient, and performance saturates as the computational budget increases.
 
-**Root Cause**: Reward models are inherently differentiable (transformer-based classifiers), making gradient information readily available yet completely unused. Zeroth-order methods fail to exploit the structural information embedded in the reward landscape.
+**Key Challenge**: Reward models are inherently differentiable (transformer-based classifiers), making gradient information readily available yet completely unused. Zeroth-order methods fail to exploit the structural information embedded in the reward landscape.
 
-**Paper Goals**: How can reward gradients be leveraged at inference time to efficiently guide LLM outputs toward high-reward regions while preserving generation fluency?
+**Goal**: How can reward gradients be leveraged at inference time to efficiently guide LLM outputs toward high-reward regions while preserving generation fluency?
 
-**Starting Point**: LLM reasoning is reformulated as a continuous optimization problem—performing gradient descent in the token logits space, with a straight-through estimator bridging the discrete and continuous domains.
+**Key Insight**: LLM reasoning is reformulated as a continuous optimization problem—performing gradient descent in the token logits space, with a straight-through estimator bridging the discrete and continuous domains.
 
 **Core Idea**: Replace zeroth-order search with first-order gradient descent for test-time policy optimization, jointly maximizing reward and LLM likelihood in the logits space.
 

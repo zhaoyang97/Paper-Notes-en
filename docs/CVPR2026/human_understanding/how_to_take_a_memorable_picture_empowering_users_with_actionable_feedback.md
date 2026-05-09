@@ -27,15 +27,15 @@ content_hash: 5195a8a3a765d145
 This paper defines a novel task of memorability feedback (MemFeed) and proposes MemCoach — a training-free, activation-steering approach for MLLMs. Via a teacher-student strategy, memorability-aware knowledge is injected into the model's activation space, enabling the MLLM to generate natural-language actionable suggestions that improve photo memorability.
 
 ## Background & Motivation
-**State of the Field**: Image memorability (the probability of being remembered) has been established as a predictable and quantifiable intrinsic property of images. Existing research follows two lines: prediction (regressing memorability scores) and generation (automatically editing images to enhance memorability).
+**Background**: Image memorability (the probability of being remembered) has been established as a predictable and quantifiable intrinsic property of images. Existing research follows two lines: prediction (regressing memorability scores) and generation (automatically editing images to enhance memorability).
 
 **Limitations of Prior Work**: Prediction models only report numerical scores, providing no actionable value to users; generation models directly modify images, depriving users of control. When taking photos, users need specific suggestions on "how to improve this shot," not scores or automatic edits.
 
-**Root Cause**: Even humans cannot accurately judge what makes an image memorable. Although MLLMs possess strong reasoning capabilities, experiments demonstrate that they have virtually no understanding of memorability (Spearman correlation ≈ 0).
+**Key Challenge**: Even humans cannot accurately judge what makes an image memorable. Although MLLMs possess strong reasoning capabilities, experiments demonstrate that they have virtually no understanding of memorability (Spearman correlation ≈ 0).
 
-**Paper Goals**: To enable MLLMs — which inherently lack memorability understanding — to generate effective memorability-enhancing suggestions.
+**Goal**: To enable MLLMs — which inherently lack memorability understanding — to generate effective memorability-enhancing suggestions.
 
-**Starting Point**: Exploit the differences between photos of varying memorability captured in the same scene, and distill memorability-aware activation direction vectors from a teacher model.
+**Key Insight**: Exploit the differences between photos of varying memorability captured in the same scene, and distill memorability-aware activation direction vectors from a teacher model.
 
 **Core Idea**: Through activation steering, shift the student model's activations toward a memorability-aware feedback direction at inference time, without any training.
 

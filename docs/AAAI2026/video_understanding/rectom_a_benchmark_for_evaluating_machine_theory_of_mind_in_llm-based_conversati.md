@@ -29,7 +29,7 @@ This paper introduces RecToM, the first human-annotated benchmark for evaluating
 
 ## Background & Motivation
 
-**State of the Field**: Large language models (LLMs) are transforming conversational recommender systems (CRS), demonstrating remarkable capabilities in instruction understanding, reasoning, and human-computer interaction. Effective recommendation dialogue depends on the ability to infer and reason about users' mental states (e.g., desires, intentions, beliefs)—a cognitive capacity referred to in cognitive science as **Theory of Mind (ToM)**.
+**Background**: Large language models (LLMs) are transforming conversational recommender systems (CRS), demonstrating remarkable capabilities in instruction understanding, reasoning, and human-computer interaction. Effective recommendation dialogue depends on the ability to infer and reason about users' mental states (e.g., desires, intentions, beliefs)—a cognitive capacity referred to in cognitive science as **Theory of Mind (ToM)**.
 
 **Limitations of Prior Work**:
 
@@ -39,9 +39,9 @@ This paper introduces RecToM, the first human-annotated benchmark for evaluating
 
 **CRS-specific challenges are unmodeled**: Recommendation dialogues exhibit unique characteristics—asymmetric roles (recommender vs. seeker), hierarchical intentions (coarse/fine-grained), multi-dimensional beliefs (multiple aspects jointly determining attitude), and concurrent desires (simultaneously holding different preferences toward multiple recommended items)—none of which are captured by general-purpose ToM benchmarks.
 
-**Root Cause**: There is no effective evaluation framework to assess whether LLMs in CRS can genuinely understand users' mental states and make strategic decisions accordingly.
+**Key Challenge**: There is no effective evaluation framework to assess whether LLMs in CRS can genuinely understand users' mental states and make strategic decisions accordingly.
 
-**Starting Point**: Drawing on the BDI (Belief-Desire-Intention) cognitive model, the paper constructs a comprehensive ToM evaluation benchmark covering both cognitive inference and behavioral prediction within real recommendation dialogues.
+**Key Insight**: Drawing on the BDI (Belief-Desire-Intention) cognitive model, the paper constructs a comprehensive ToM evaluation benchmark covering both cognitive inference and behavioral prediction within real recommendation dialogues.
 
 ## Method
 

@@ -28,15 +28,15 @@ To address the challenge of coupled degradations (low contrast, blur, and noise)
 
 ## Background & Motivation
 
-**State of the Field**: Thermal infrared imaging detects thermal radiation from objects (8–14 μm wavelength), operates independently of external light sources, and penetrates smoke and occlusions, making it widely applicable to object detection, semantic segmentation, and autonomous driving. Existing TIR enhancement methods are predominantly designed for individual degradation types—denoising, deblurring, and contrast enhancement are each handled independently.
+**Background**: Thermal infrared imaging detects thermal radiation from objects (8–14 μm wavelength), operates independently of external light sources, and penetrates smoke and occlusions, making it widely applicable to object detection, semantic segmentation, and autonomous driving. Existing TIR enhancement methods are predominantly designed for individual degradation types—denoising, deblurring, and contrast enhancement are each handled independently.
 
 **Limitations of Prior Work**: (a) Single-degradation methods cannot handle composite degradation scenarios, as real-world TIR images typically exhibit simultaneous noise, blur, and low contrast; (b) All-in-one (AIO) restoration methods designed for visible-light images (e.g., PromptIR, DA-CLIP) perform poorly when directly applied to TIR, as the imaging models and degradation patterns of infrared and visible-light modalities are fundamentally different; (c) Existing TIR datasets are limited in scene diversity, resolution, and scale, and lack coverage of multiple degradation types.
 
-**Root Cause**: TIR degradations follow a physically grounded cascaded structure (low contrast → blur → noise), yet existing methods neither model this cascade ordering nor distinguish between single and composite degradation scenarios.
+**Key Challenge**: TIR degradations follow a physically grounded cascaded structure (low contrast → blur → noise), yet existing methods neither model this cascade ordering nor distinguish between single and composite degradation scenarios.
 
-**Paper Goals**: (a) How can a single model handle multiple TIR degradations and their composite combinations? (b) How can the model be made aware of both degradation type and scene type? (c) How can a sufficiently large and diverse TIR benchmark be constructed?
+**Goal**: (a) How can a single model handle multiple TIR degradations and their composite combinations? (b) How can the model be made aware of both degradation type and scene type? (c) How can a sufficiently large and diverse TIR benchmark be constructed?
 
-**Starting Point**: Grounded in the physical imaging process of TIR, degradations are decomposed into a three-step cascade (contrast degradation → blur → noise). A prompt mechanism is employed to distinguish degradation type and scene type, and degradations are progressively removed in reverse order.
+**Key Insight**: Grounded in the physical imaging process of TIR, degradations are decomposed into a three-step cascade (contrast degradation → blur → noise). A prompt mechanism is employed to distinguish degradation type and scene type, and degradations are progressively removed in reverse order.
 
 **Core Idea**: Unified All-in-One TIR image enhancement is achieved through dual-prompt (degradation type + scene type) fusion for feature modulation, combined with selective progressive training for reverse-order degradation removal.
 

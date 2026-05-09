@@ -29,11 +29,11 @@ This paper proposes FedTSP, which leverages pre-trained language models (PLMs) t
 
 ## Background & Motivation
 
-1. **State of the Field**: Federated Prototype Learning (FedPL) aligns client representations by sharing global prototypes to mitigate data heterogeneity, and prototype quality directly determines performance.
+1. **Background**: Federated Prototype Learning (FedPL) aligns client representations by sharing global prototypes to mitigate data heterogeneity, and prototype quality directly determines performance.
 2. **Limitations of Prior Work**: Methods such as AlignFed and FedNH pursue maximum inter-class prototype separation (uniformly distributed on a hypersphere), which destroys inter-class semantic relationships. For example, "horse" and "dog" should be more similar to each other than "horse" and "truck."
-3. **Root Cause**: Enlarging prototype distances enhances class discrimination but inevitably disrupts semantic structure, which is critical for model generalization.
-4. **Paper Goals**: Construct prototypes that both preserve semantic relationships and maintain sufficient discriminability.
-5. **Starting Point**: Exploit the rich semantic knowledge encoded in PLMs to build prototypes, thereby injecting semantic structure into federated learning.
+3. **Key Challenge**: Enlarging prototype distances enhances class discrimination but inevitably disrupts semantic structure, which is critical for model generalization.
+4. **Goal**: Construct prototypes that both preserve semantic relationships and maintain sufficient discriminability.
+5. **Key Insight**: Exploit the rich semantic knowledge encoded in PLMs to build prototypes, thereby injecting semantic structure into federated learning.
 6. **Core Idea**: Use an LLM to generate class descriptions, encode them into text prototypes via a PLM, and employ learnable prompts to bridge the image–text modality gap.
 
 ## Method

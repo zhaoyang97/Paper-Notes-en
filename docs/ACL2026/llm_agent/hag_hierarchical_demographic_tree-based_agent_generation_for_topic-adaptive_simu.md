@@ -28,15 +28,15 @@ This paper proposes HAG, a framework that formalizes population-level agent gene
 
 ## Background & Motivation
 
-**State of the Field**: Agent-Based Modeling (ABM) is increasingly important in computational social science, economic modeling, and personalized recommendation. These simulation systems rely heavily on user agents to simulate preferences and interaction behaviors, and agent quality directly determines the fidelity of the simulation system.
+**Background**: Agent-Based Modeling (ABM) is increasingly important in computational social science, economic modeling, and personalized recommendation. These simulation systems rely heavily on user agents to simulate preferences and interaction behaviors, and agent quality directly determines the fidelity of the simulation system.
 
 **Limitations of Prior Work**: Existing agent generation methods fall into two categories: (1) data retrieval-based methods that construct agent pools from real user logs, but are inherently static and cannot adapt to unseen or data-scarce topics; (2) LLM-based generation methods that produce agent personas via predefined schemas or textual reasoning, but lack explicit modeling of the joint distribution over multi-dimensional attributes — independently generating each agent causes the population distribution to deviate from reality.
 
-**Root Cause**: No existing method simultaneously achieves topic-adaptive macro-level population distribution modeling and sociologically valid micro-level individual attribute consistency. Independently generated agents may exhibit attribute contradictions (e.g., mismatched age and occupation), while static retrieval cannot cover emerging topics.
+**Key Challenge**: No existing method simultaneously achieves topic-adaptive macro-level population distribution modeling and sociologically valid micro-level individual attribute consistency. Independently generated agents may exhibit attribute contradictions (e.g., mismatched age and occupation), while static retrieval cannot cover emerging topics.
 
-**Paper Goals**: Design a population-level agent generation framework that simultaneously satisfies macro-level distributional alignment and micro-level individual consistency.
+**Goal**: Design a population-level agent generation framework that simultaneously satisfies macro-level distributional alignment and micro-level individual consistency.
 
-**Starting Point**: The authors observe that demographic structure is topic-dependent (e.g., user population distributions differ greatly between technology discussions and eldercare discussions), and therefore formulate population generation as a hierarchical conditional probability inference problem.
+**Key Insight**: The authors observe that demographic structure is topic-dependent (e.g., user population distributions differ greatly between technology discussions and eldercare discussions), and therefore formulate population generation as a hierarchical conditional probability inference problem.
 
 **Core Idea**: A world knowledge model (WKM) is used to construct a topic-adaptive demographic distribution tree in a top-down manner, capturing the joint distribution over multi-dimensional attributes via hierarchical conditional probabilities, followed by real-data instantiation combined with LLM augmentation to generate the final population.
 

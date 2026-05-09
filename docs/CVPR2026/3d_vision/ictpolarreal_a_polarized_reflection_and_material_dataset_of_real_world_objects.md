@@ -29,15 +29,15 @@ This paper presents ICTPolarReal, the first large-scale real-world polarized ref
 
 ## Background & Motivation
 
-**State of the Field**: Inverse rendering (intrinsic image decomposition) seeks to factorize images into albedo, illumination, and specular components. Recent diffusion-based methods (e.g., RGB2X, Diffusion Renderer) have achieved notable progress, but rely heavily on synthetic datasets (e.g., Objaverse, Hypersim) for training.
+**Background**: Inverse rendering (intrinsic image decomposition) seeks to factorize images into albedo, illumination, and specular components. Recent diffusion-based methods (e.g., RGB2X, Diffusion Renderer) have achieved notable progress, but rely heavily on synthetic datasets (e.g., Objaverse, Hypersim) for training.
 
 **Limitations of Prior Work**: Although visually plausible, synthetic data is constrained by simplified illumination models and limited material fidelity. Commonly used shading models employ analytic BRDFs or sparse-sample approximations of bidirectional reflectance, neglecting effects such as multiple scattering, polarization, and subsurface transport that are ubiquitous in real objects. Consequently, models trained solely on synthetic data generalize poorly to real illumination and real photographs.
 
-**Root Cause**: A lack of real-world reflectance measurement data. Existing real-world datasets either provide photographs under varying illumination without intrinsic decomposition annotations (Multi-Illumination), are restricted to planar samples and two viewpoints (OpenSVBRDF), or cover only a very limited number of objects and lighting patterns (Open Illumination), making them unsuitable for supervising deep material decomposition networks.
+**Key Challenge**: A lack of real-world reflectance measurement data. Existing real-world datasets either provide photographs under varying illumination without intrinsic decomposition annotations (Multi-Illumination), are restricted to planar samples and two viewpoints (OpenSVBRDF), or cover only a very limited number of objects and lighting patterns (Open Illumination), making them unsuitable for supervising deep material decomposition networks.
 
-**Paper Goals**: (1) Construct a large-scale real-world reflectance dataset spanning diverse material categories with ground-truth diffuse/specular separation; (2) Verify whether training on real measured data substantially improves inverse rendering and relighting models in real-world scenarios.
+**Goal**: (1) Construct a large-scale real-world reflectance dataset spanning diverse material categories with ground-truth diffuse/specular separation; (2) Verify whether training on real measured data substantially improves inverse rendering and relighting models in real-world scenarios.
 
-**Starting Point**: Leveraging polarization optics—cross-polarized and parallel-polarized filters physically separate diffuse and specular reflectance. Malus's law guarantees accurate extraction of both reflection components under specific polarization configurations.
+**Key Insight**: Leveraging polarization optics—cross-polarized and parallel-polarized filters physically separate diffuse and specular reflectance. Malus's law guarantees accurate extraction of both reflection components under specific polarization configurations.
 
 **Core Idea**: Employ a polarized Light Stage system to perform large-scale measurements of real objects, yielding the first real-world material dataset capable of directly supervising deep inverse rendering models.
 

@@ -28,15 +28,15 @@ This paper is the first to formally define the Widget-to-Code task, constructing
 
 ## Background & Motivation
 
-1. **State of the Field**: UI-to-Code (UI2Code) is a key direction in automated front-end development, aiming to generate executable code from visual designs. With advances in multimodal large language models (MLLMs), the field has shifted from rule-based/supervised pipelines to MLLM-driven approaches. Existing work primarily targets web and mobile UIs, which benefit from rich hierarchical context and available annotated data.
+1. **Background**: UI-to-Code (UI2Code) is a key direction in automated front-end development, aiming to generate executable code from visual designs. With advances in multimodal large language models (MLLMs), the field has shifted from rule-based/supervised pipelines to MLLM-driven approaches. Existing work primarily targets web and mobile UIs, which benefit from rich hierarchical context and available annotated data.
 
 2. **Limitations of Prior Work**: Widgets (small UI components such as weather cards and calendar widgets) represent a distinct class of micro-interfaces—they are compact, context-free, and convey information through dense typography and icons under strict spatial constraints. However, widget designs are proprietary, with no publicly available source code, annotations, or (image, code) paired datasets. Existing UI2Code methods optimized for web/mobile UIs transfer poorly to widgets.
 
-3. **Root Cause**: Widgets exhibit high visual complexity (containing icons, data visualizations, and artistic color schemes) while being extremely spatially compact, with no available training supervision. Although general-purpose MLLMs outperform specialized UI2Code methods, they still produce visually inconsistent and structurally unreliable code—content overflow, size mismatches, and color deviation are pervasive issues.
+3. **Key Challenge**: Widgets exhibit high visual complexity (containing icons, data visualizations, and artistic color schemes) while being extremely spatially compact, with no available training supervision. Although general-purpose MLLMs outperform specialized UI2Code methods, they still produce visually inconsistent and structurally unreliable code—content overflow, size mismatches, and color deviation are pervasive issues.
 
-4. **Paper Goals**: (a) Formally define the Widget2Code task and establish evaluation standards; (b) bridge the gap between pixel-level perception and geometry-aware code generation; (c) establish a unified baseline framework and infrastructure.
+4. **Goal**: (a) Formally define the Widget2Code task and establish evaluation standards; (b) bridge the gap between pixel-level perception and geometry-aware code generation; (c) establish a unified baseline framework and infrastructure.
 
-5. **Starting Point**: At the perception level—decompose widgets into atomic components following Apple widget design principles; at the system level—design a widget-specific DSL and compiler to replace direct generation of verbose code.
+5. **Key Insight**: At the perception level—decompose widgets into atomic components following Apple widget design principles; at the system level—design a widget-specific DSL and compiler to replace direct generation of verbose code.
 
 6. **Core Idea**: By combining component decomposition via a Perceptual Agent with a DSL intermediate representation in WidgetFactory, widget reconstruction is transformed from end-to-end MLLM code generation into a structured, controllable pipeline.
 

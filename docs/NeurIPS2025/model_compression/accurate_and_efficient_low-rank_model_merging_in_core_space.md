@@ -28,15 +28,15 @@ This paper proposes the Core Space Merging framework, which performs model mergi
 
 ## Background & Motivation
 
-**State of the Field**: As model scale grows, parameter-efficient fine-tuning (PEFT) methods such as LoRA have become mainstream. Model merging aims to combine multiple task-specific LoRA adapters into a single multi-task model without additional training.
+**Background**: As model scale grows, parameter-efficient fine-tuning (PEFT) methods such as LoRA have become mainstream. Model merging aims to combine multiple task-specific LoRA adapters into a single multi-task model without additional training.
 
 **Limitations of Prior Work**: (a) Directly applying Task Arithmetic to LoRA matrices yields poor results due to misaligned bases across tasks; (b) KnOTS performs merging in an aligned space but requires SVD over full-size matrices, incurring $O(n^3 T^2)$ complexity that is prohibitive for large models; (c) Advanced merging methods (TSV, Iso-C) operating in the full space are equally expensive.
 
-**Root Cause**: Efficient merging (direct full-space Task Arithmetic) sacrifices accuracy, while accurate merging (KnOTS + TSV) forfeits the computational efficiency advantage of low-rank LoRA representations.
+**Key Challenge**: Efficient merging (direct full-space Task Arithmetic) sacrifices accuracy, while accurate merging (KnOTS + TSV) forfeits the computational efficiency advantage of low-rank LoRA representations.
 
-**Paper Goals**: Achieve high-accuracy LoRA model merging while preserving the computational efficiency of the low-rank structure.
+**Goal**: Achieve high-accuracy LoRA model merging while preserving the computational efficiency of the low-rank structure.
 
-**Starting Point**: The observation that LoRA updates across all tasks share a common subspace — identifying a reference basis for this subspace and performing merging within it.
+**Key Insight**: The observation that LoRA updates across all tasks share a common subspace — identifying a reference basis for this subspace and performing merging within it.
 
 **Core Idea**: Merge within the Core Space — a common reference basis space spanned by the SVDs of the LoRA low-rank matrices — whose dimensionality is only $Tr \times Tr$, with strictly zero information loss.
 

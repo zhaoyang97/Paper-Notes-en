@@ -29,15 +29,15 @@ This paper unifies structured pruning and model folding under an orthogonal proj
 
 ## Background & Motivation
 
-**State of the Field**: Calibration-free post-training structured compression is a critical requirement for model deployment. The dominant approach is magnitude-based structured pruning, which removes neurons, channels, or filters according to weight magnitude. Model folding has recently been proposed as an alternative, achieving compression by clustering similar weights and binding them together.
+**Background**: Calibration-free post-training structured compression is a critical requirement for model deployment. The dominant approach is magnitude-based structured pruning, which removes neurons, channels, or filters according to weight magnitude. Model folding has recently been proposed as an alternative, achieving compression by clustering similar weights and binding them together.
 
 **Limitations of Prior Work**: (1) Pruning zeroes out weights directly, causing large parameter perturbations and functional drift; (2) folding as an alternative lacks theoretical grounding, and the conditions under which it outperforms pruning remain unclear; (3) a unified comparative framework for the two approaches is absent.
 
-**Root Cause**: Pruning removes weights via coordinate-aligned projection in parameter space, discarding directional information, whereas folding preserves merged directions but lacks theoretical guarantees quantifying the benefit of this preservation.
+**Key Challenge**: Pruning removes weights via coordinate-aligned projection in parameter space, discarding directional information, whereas folding preserves merged directions but lacks theoretical guarantees quantifying the benefit of this preservation.
 
-**Paper Goals**: Establish a unified projection-theoretic framework for pruning and folding, and rigorously prove the superiority of folding in terms of parameter reconstruction and functional preservation.
+**Goal**: Establish a unified projection-theoretic framework for pruning and folding, and rigorously prove the superiority of folding in terms of parameter reconstruction and functional preservation.
 
-**Starting Point**: Both compression methods are treated as orthogonal projections in parameter space—pruning corresponds to a coordinate-aligned subspace and folding corresponds to a clustering-structured subspace.
+**Key Insight**: Both compression methods are treated as orthogonal projections in parameter space—pruning corresponds to a coordinate-aligned subspace and folding corresponds to a clustering-structured subspace.
 
 **Core Idea**: Pruning is a coordinate projection $\mathbf{C}_p = \begin{pmatrix} I & 0 \\ 0 & 0 \end{pmatrix}$, while folding is a clustering projection $\mathbf{C}_f = \mathbf{U}_f(\mathbf{U}_f^\top \mathbf{U}_f)^{-1}\mathbf{U}_f^\top$. The latter retains more directional information in parameter space, yielding a smaller reconstruction error $\|\mathbf{W} - \mathbf{W}_f\|_F^2 \leq \|\mathbf{W} - \mathbf{W}_p\|_F^2$.
 

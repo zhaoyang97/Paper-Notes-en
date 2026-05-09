@@ -29,15 +29,15 @@ This paper proposes Moto, a framework that encodes inter-frame visual motion fro
 
 ## Background & Motivation
 
-**State of the Field**: Large language models (LLMs) have achieved remarkable success in NLP through large-scale autoregressive pre-training. The robotics field has long been constrained by the high cost of action-annotated data. Video data contains rich interaction knowledge and is easy to acquire, yet effectively leveraging it for pre-training robot policies remains an open problem.
+**Background**: Large language models (LLMs) have achieved remarkable success in NLP through large-scale autoregressive pre-training. The robotics field has long been constrained by the high cost of action-annotated data. Video data contains rich interaction knowledge and is easy to acquire, yet effectively leveraging it for pre-training robot policies remains an open problem.
 
 **Limitations of Prior Work**: Prior video pre-training methods (e.g., GR-1, MT-R3M) focus primarily on visual features of static frames, emphasizing frame-level details while neglecting inter-frame dynamics. These approaches typically require additional input modalities (e.g., gripper RGB, proprioception) to compensate for missing motion information. Existing VLAs (e.g., RT-2-X, OpenVLA) either require extremely large parameter counts (55B) or rely on action labels in pre-training data.
 
-**Root Cause**: Video data is abundant but lacks action labels, while robot action data is scarce but annotated — the central challenge is how to exploit the vast motion knowledge in videos to improve robot policy learning under action-label scarcity.
+**Key Challenge**: Video data is abundant but lacks action labels, while robot action data is scarce but annotated — the central challenge is how to exploit the vast motion knowledge in videos to improve robot policy learning under action-label scarcity.
 
-**Paper Goals**: To identify an effective representation that encodes motion knowledge from video into sequences amenable to autoregressive pre-training, and that can be seamlessly transferred to downstream robot control.
+**Goal**: To identify an effective representation that encodes motion knowledge from video into sequences amenable to autoregressive pre-training, and that can be seamlessly transferred to downstream robot control.
 
-**Starting Point**: Humans learn new skills by observing dynamic environmental changes, focusing on "motion" rather than static visual details. Motion information is closely related to low-level actions and is hardware-agnostic, facilitating cross-embodiment transfer.
+**Key Insight**: Humans learn new skills by observing dynamic environmental changes, focusing on "motion" rather than static visual details. Motion information is closely related to low-level actions and is hardware-agnostic, facilitating cross-embodiment transfer.
 
 **Core Idea**: A VQ-VAE encodes inter-frame motion information into discrete Latent Motion Tokens, which serve as a "motion language" for GPT-style autoregressive pre-training. A co-fine-tuning strategy then seamlessly converts the learned motion priors into real robot actions.
 

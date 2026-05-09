@@ -30,15 +30,15 @@ This paper theoretically proves that the InfoNCE loss induces representations to
 
 ### State of the Field
 
-**State of the Field**: Contrastive learning methods (SimCLR, MoCo, CLIP, etc.) train encoders using the InfoNCE loss, balancing positive-pair alignment and representation uniformity. Recent empirical observations indicate that contrastive representations approximately follow a Gaussian distribution.
+**Background**: Contrastive learning methods (SimCLR, MoCo, CLIP, etc.) train encoders using the InfoNCE loss, balancing positive-pair alignment and representation uniformity. Recent empirical observations indicate that contrastive representations approximately follow a Gaussian distribution.
 
 **Limitations of Prior Work**: Although many practical works have already exploited the approximate Gaussianity of contrastive representations (e.g., for classification, uncertainty estimation, and anomaly detection), a theoretical explanation for why InfoNCE produces Gaussian structure is lacking.
 
-**Root Cause**: The Gaussian assumption is widely adopted without theoretical justification.
+**Key Challenge**: The Gaussian assumption is widely adopted without theoretical justification.
 
-**Paper Goals**: To provide a population-level explanation for why InfoNCE yields Gaussian-distributed representations.
+**Goal**: To provide a population-level explanation for why InfoNCE yields Gaussian-distributed representations.
 
-**Starting Point**: The Maxwell–Poincaré spherical central limit theorem — fixed-dimensional projections of the uniform distribution on a high-dimensional sphere converge to a Gaussian.
+**Key Insight**: The Maxwell–Poincaré spherical central limit theorem — fixed-dimensional projections of the uniform distribution on a high-dimensional sphere converge to a Gaussian.
 
 **Core Idea**: InfoNCE drives representations to be uniformly distributed on the hypersphere, and projections of a high-dimensional spherical uniform distribution converge asymptotically to a Gaussian.
 

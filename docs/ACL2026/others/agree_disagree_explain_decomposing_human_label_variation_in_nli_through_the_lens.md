@@ -27,15 +27,15 @@ This paper extends the LiTEx reasoning taxonomy from "label-consistent, explanat
 
 ## Background & Motivation
 
-**State of the Field**: Annotator disagreement is pervasive in NLI datasets, and understanding such disagreement is critical for building reliable NLU systems. Explanation-based approaches reveal the nature of disagreement by analyzing the reasoning behind annotator decisions.
+**Background**: Annotator disagreement is pervasive in NLI datasets, and understanding such disagreement is critical for building reliable NLU systems. Explanation-based approaches reveal the nature of disagreement by analyzing the reasoning behind annotator decisions.
 
 **Limitations of Prior Work**: The LiTEx taxonomy categorizes free-text explanations into 8 reasoning strategies, but has previously only been applied to within-label variation — cases where labels agree but explanations differ — leaving label-level inconsistency unaddressed.
 
-**Root Cause**: Label inconsistency may conceal reasoning consistency (the same reasoning leading to different labels), while label consistency may conceal reasoning disagreement (different reasoning coincidentally yielding the same label). Examining labels alone fails to reveal the true cognitive source of disagreement.
+**Key Challenge**: Label inconsistency may conceal reasoning consistency (the same reasoning leading to different labels), while label consistency may conceal reasoning disagreement (different reasoning coincidentally yielding the same label). Examining labels alone fails to reveal the true cognitive source of disagreement.
 
-**Paper Goals**: Extend LiTEx to label variation settings and analyze NLI annotation variation along three dimensions: NLI labels, reasoning categories, and explanation text similarity.
+**Goal**: Extend LiTEx to label variation settings and analyze NLI annotation variation along three dimensions: NLI labels, reasoning categories, and explanation text similarity.
 
-**Starting Point**: LiTEx categories are annotated on two NLI datasets with explanations — LiveNLI and VariErr — and individual annotator label and reasoning strategy preferences are tracked.
+**Key Insight**: LiTEx categories are annotated on two NLI datasets with explanations — LiveNLI and VariErr — and individual annotator label and reasoning strategy preferences are tracked.
 
 **Core Idea**: Reasoning category agreement better reflects the semantic similarity between explanations than label agreement does, suggesting that the reasoning process deserves more attention than the final label.
 

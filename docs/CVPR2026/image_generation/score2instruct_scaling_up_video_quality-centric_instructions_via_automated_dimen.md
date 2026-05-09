@@ -28,15 +28,15 @@ Score2Instruct proposes SIG, a fully automated video quality instruction generat
 
 ## Background & Motivation
 
-**State of the Field**: Traditional Video Quality Assessment (VQA) methods use deep learning to regress a single overall quality score (MOS). However, such a scalar cannot capture complex multi-dimensional quality issues in video (e.g., noise, motion blur, flicker). The emergence of LMMs has made it possible to produce quality justifications in natural language.
+**Background**: Traditional Video Quality Assessment (VQA) methods use deep learning to regress a single overall quality score (MOS). However, such a scalar cannot capture complex multi-dimensional quality issues in video (e.g., noise, motion blur, flicker). The emergence of LMMs has made it possible to produce quality justifications in natural language.
 
 **Limitations of Prior Work**: (1) Existing quality instruction data generation relies heavily on human subjective evaluation — Q-Instruct, for instance, required 39 experts to write 58K descriptions for 18,973 images, which is time-consuming and costly. (2) Data generation depends on closed-source APIs (e.g., GPT-4), limiting scalability and reproducibility. (3) Most prior work focuses on Image Quality Assessment (IQA), lacking deep understanding of video-specific temporal factors (e.g., flicker, motion blur). (4) Existing methods cannot endow models with both precise scoring and quality reasoning capabilities simultaneously.
 
-**Root Cause**: High-quality video quality instruction data requires both rich dimensional coverage (beyond a single overall score) and a scalable generation approach (without reliance on human labor or closed-source systems). These two requirements were previously at odds — the richer the dimensions, the more expert annotation is needed.
+**Key Challenge**: High-quality video quality instruction data requires both rich dimensional coverage (beyond a single overall score) and a scalable generation approach (without reliance on human labor or closed-source systems). These two requirements were previously at odds — the richer the dimensions, the more expert annotation is needed.
 
-**Paper Goals**: (1) Design a fully automated video quality instruction generation pipeline; (2) Cover 14 quality dimensions and aggregate them via cognitive reasoning; (3) Simultaneously improve model scoring accuracy and reasoning/explanation capability.
+**Goal**: (1) Design a fully automated video quality instruction generation pipeline; (2) Cover 14 quality dimensions and aggregate them via cognitive reasoning; (3) Simultaneously improve model scoring accuracy and reasoning/explanation capability.
 
-**Starting Point**: The paper leverages existing professional video quality assessment models (deployed on practical video processing platforms) to automatically score quality dimensions, maps continuous scores to ITU-standard 5-level textual ratings, and then uses hierarchical CoT to simulate the reasoning process of the Human Visual System (HVS), generating complete quality descriptions.
+**Key Insight**: The paper leverages existing professional video quality assessment models (deployed on practical video processing platforms) to automatically score quality dimensions, maps continuous scores to ITU-standard 5-level textual ratings, and then uses hierarchical CoT to simulate the reasoning process of the Human Visual System (HVS), generating complete quality descriptions.
 
 **Core Idea**: Replace human annotation with automated quality dimension scoring, and replace closed-source LLM generation with hierarchical CoT for quality reasoning, thereby enabling large-scale, low-cost construction of video quality instruction data.
 

@@ -28,15 +28,15 @@ This paper identifies a phenomenon termed "representation entanglement" in diffu
 
 ## Background & Motivation
 
-1. **State of the Field**: Diffusion models perform well on class-balanced data, but real-world data frequently follows long-tailed distributions.
+1. **Background**: Diffusion models perform well on class-balanced data, but real-world data frequently follows long-tailed distributions.
 
 2. **Limitations of Prior Work**: Under long-tailed distributions, diffusion models produce poor-quality and low-diversity outputs for tail classes, exhibiting a "feature borrowing" problem in which tail-class samples manifest head-class features.
 
-3. **Root Cause**: Existing methods (CBDM, T2H, DiffROP) primarily operate in image space or external latent spaces, and do not address the intra-network class entanglement occurring within the denoising network's internal latent space.
+3. **Key Challenge**: Existing methods (CBDM, T2H, DiffROP) primarily operate in image space or external latent spaces, and do not address the intra-network class entanglement occurring within the denoising network's internal latent space.
 
-4. **Paper Goals**: To identify and resolve representation entanglement within the internal latent space of diffusion models.
+4. **Goal**: To identify and resolve representation entanglement within the internal latent space of diffusion models.
 
-5. **Starting Point**: The output of the U-Net bottleneck layer carries rich semantic information and is the critical site at which representation entanglement arises.
+5. **Key Insight**: The output of the U-Net bottleneck layer carries rich semantic information and is the critical site at which representation entanglement arises.
 
 6. **Core Idea**: A lightweight projection head is appended to the U-Net bottleneck layer, and a supervised contrastive loss is applied to encourage class separation—intervening directly at the location where representation entanglement occurs.
 

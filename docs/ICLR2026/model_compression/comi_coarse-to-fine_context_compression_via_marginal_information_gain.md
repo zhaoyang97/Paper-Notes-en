@@ -28,15 +28,15 @@ This paper proposes COMI, a coarse-to-fine adaptive context compression framewor
 
 ## Background & Motivation
 
-**State of the Field**: Techniques such as RAG increase LLM input length, leading to high computational costs and information redundancy. Context compression methods fall into two categories: task-agnostic (global compression without considering the query) and task-aware (retaining query-relevant content).
+**Background**: Techniques such as RAG increase LLM input length, leading to high computational costs and information redundancy. Context compression methods fall into two categories: task-agnostic (global compression without considering the query) and task-aware (retaining query-relevant content).
 
 **Limitations of Prior Work**: (a) Task-agnostic methods ignore the query and inevitably lose relevant information under high compression ratios; (b) Task-aware methods rely solely on "relevance" as the compression criterion — retained tokens tend to be highly similar (redundant). Empirically, only 0.75% of tokens account for 99% of attention weights, and the cosine similarity among these tokens exceeds 0.6; (c) High redundancy may mislead LLMs into generating incorrect outputs ("relevant does not imply correct").
 
-**Root Cause**: Retaining tokens purely by relevance preserves large amounts of "relevant but redundant" content, resulting in insufficient diversity after compression. Existing dynamic compression rate allocation schemes either apply fixed linear rules or rely solely on relevance, none of which account for semantic redundancy.
+**Key Challenge**: Retaining tokens purely by relevance preserves large amounts of "relevant but redundant" content, resulting in insufficient diversity after compression. Existing dynamic compression rate allocation schemes either apply fixed linear rules or rely solely on relevance, none of which account for semantic redundancy.
 
-**Paper Goals**: To simultaneously optimize relevance and diversity under high compression ratios — retaining information that is both query-relevant and mutually non-redundant.
+**Goal**: To simultaneously optimize relevance and diversity under high compression ratios — retaining information that is both query-relevant and mutually non-redundant.
 
-**Starting Point**: Define Marginal Information Gain MIG = relevance − redundancy as a unified metric to guide coarse-grained group budget allocation and fine-grained token merging.
+**Key Insight**: Define Marginal Information Gain MIG = relevance − redundancy as a unified metric to guide coarse-grained group budget allocation and fine-grained token merging.
 
 **Core Idea**: Use MIG (query cosine similarity minus the maximum similarity to other tokens) to drive a two-stage compression pipeline — dynamic compression rate allocation across groups, followed by MIG-weighted token merging within groups.
 

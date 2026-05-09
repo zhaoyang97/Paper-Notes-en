@@ -29,7 +29,7 @@ SceneTransporter reformulates open-world structured 3D scene generation as a glo
 
 ## Background & Motivation
 
-**State of the Field**: High-quality 3D scene generation is a cornerstone of immersive technology and embodied AI. However, most existing scene generators produce monolithic meshes that cannot be directly used in downstream tasks—material assignment, physical simulation, asset retrieval, and fine-grained editing all require explicit instance-level object-context decomposition.
+**Background**: High-quality 3D scene generation is a cornerstone of immersive technology and embodied AI. However, most existing scene generators produce monolithic meshes that cannot be directly used in downstream tasks—material assignment, physical simulation, asset retrieval, and fine-grained editing all require explicit instance-level object-context decomposition.
 
 **Limitations of Prior Work**:
 
@@ -37,11 +37,11 @@ SceneTransporter reformulates open-world structured 3D scene generation as a glo
 2. **End-to-end compositional generation fails in open-world settings**: Methods such as PartPacker and PartCrafter perform well at object-level part generation but exhibit two pathological failure modes when generalized to complex open-world scenes:
    - **Structural Mispartition**: Semantic instances fail to form disjoint parts, with a single object's geometry scattered across multiple part-tokens.
    - **Geometric Redundancy**: Multiple latents compete to describe the same spatial region, causing overlaps.
-3. **Root Cause**: Unconstrained soft attention cannot establish globally consistent patch-to-part assignments.
+3. **Key Challenge**: Unconstrained soft attention cannot establish globally consistent patch-to-part assignments.
 
 **Core Problem**: Part-level generators implicitly encode correct instance grouping information in their features (recoverable via debiased clustering), yet the models themselves lack structural constraints to make these associations explicit.
 
-**Paper Goals**: Introduce an optimal transport framework to impose explicit global assignment constraints—the OT marginal constraints prevent feature entanglement, coverage budget constraints prevent part-token information starvation, and edge regularization prevents cross-boundary leakage.
+**Goal**: Introduce an optimal transport framework to impose explicit global assignment constraints—the OT marginal constraints prevent feature entanglement, coverage budget constraints prevent part-token information starvation, and edge regularization prevents cross-boundary leakage.
 
 ## Method
 

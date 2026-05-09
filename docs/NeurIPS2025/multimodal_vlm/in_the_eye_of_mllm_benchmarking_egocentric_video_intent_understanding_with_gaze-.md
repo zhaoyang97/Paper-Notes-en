@@ -14,15 +14,15 @@ This paper proposes the EgoGazeVQA benchmark and three gaze-guided prompting str
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal large language models (MLLMs) have achieved remarkable progress on video understanding tasks. Egocentric video, naturally aligned with the user's perspective, is considered an ideal medium for building proactive, personalized AI assistants.
+**Background**: Multimodal large language models (MLLMs) have achieved remarkable progress on video understanding tasks. Egocentric video, naturally aligned with the user's perspective, is considered an ideal medium for building proactive, personalized AI assistants.
 
 **Limitations of Prior Work**: Existing egocentric video QA benchmarks (e.g., QaEgo4D, EgoSchema, EgoTextVQA) rely solely on global visual frame information, entirely neglecting eye-gaze signals—a core cue that reflects user attention and intent. MLLMs perform substantially below human level when reasoning about users' spatial and temporal intentions.
 
-**Root Cause**: MLLMs construct visual tokens from global frames, which provides broad contextual coverage but fails to capture the wearer's explicit attention signal directed at specific objects or regions, leading to frequent failures on questions that require understanding "what the user is looking at."
+**Key Challenge**: MLLMs construct visual tokens from global frames, which provides broad contextual coverage but fails to capture the wearer's explicit attention signal directed at specific objects or regions, leading to frequent failures on questions that require understanding "what the user is looking at."
 
-**Paper Goals**: (1) A benchmark for egocentric video intent understanding that integrates gaze signals is lacking; (2) effective methods for leveraging gaze signals to enhance MLLM intent understanding are lacking.
+**Goal**: (1) A benchmark for egocentric video intent understanding that integrates gaze signals is lacking; (2) effective methods for leveraging gaze signals to enhance MLLM intent understanding are lacking.
 
-**Starting Point**: Video clips with gaze data are extracted from three large-scale datasets—Ego4D, EgoExo4D, and EGTEA Gaze+. High-quality QA pairs are constructed via MLLM-assisted generation followed by human review, and multiple gaze-guided prompting strategies are designed.
+**Key Insight**: Video clips with gaze data are extracted from three large-scale datasets—Ego4D, EgoExo4D, and EGTEA Gaze+. High-quality QA pairs are constructed via MLLM-assisted generation followed by human review, and multiple gaze-guided prompting strategies are designed.
 
 **Core Idea**: Eye-gaze signals, as direct indicators of user intent, can be effectively injected into MLLMs through textual, visual, and salience-map prompting forms, significantly improving egocentric video intent understanding.
 

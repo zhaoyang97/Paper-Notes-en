@@ -29,7 +29,7 @@ Echoless-LP eliminates training label leakage (the echo effect) caused by multi-
 
 ## Background & Motivation
 
-**State of the Field**: Heterogeneous Graph Neural Networks (HGNNs) are widely used for deep learning on heterogeneous graphs. End-to-end HGNNs (e.g., RGCN, HAN) require repeated message passing and are inefficient on large-scale graphs. Pre-computation methods perform message passing only once during preprocessing, generate regular tensors, and train an MLP in mini-batches, substantially improving efficiency.
+**Background**: Heterogeneous Graph Neural Networks (HGNNs) are widely used for deep learning on heterogeneous graphs. End-to-end HGNNs (e.g., RGCN, HAN) require repeated message passing and are inefficient on large-scale graphs. Pre-computation methods perform message passing only once during preprocessing, generate regular tensors, and train an MLP in mini-batches, substantially improving efficiency.
 
 **Limitations of Prior Work**: Label-based pre-computation methods suffer from training label leakage—during multi-hop message passing, a node's own label information propagates back to itself (the echo effect). At training time, the encoder relies on leaked self-label information, but test nodes carry no labels, leading to poor generalization.
 

@@ -30,15 +30,15 @@ Through systematic mechanistic interpretability analysis, this paper reveals tha
 
 ## Background & Motivation
 
-**State of the Field**: Post-training quantization (PTQ) is a key technique for efficient LLM deployment. 4-bit quantization is widely regarded as the optimal balance between accuracy and compression, while 2-bit quantization typically triggers a catastrophic "performance cliff"—accuracy plummeting to near zero.
+**Background**: Post-training quantization (PTQ) is a key technique for efficient LLM deployment. 4-bit quantization is widely regarded as the optimal balance between accuracy and compression, while 2-bit quantization typically triggers a catastrophic "performance cliff"—accuracy plummeting to near zero.
 
 **Limitations of Prior Work**: Existing research concentrates on three directions: (1) macro-level evaluation (measuring the degree of performance degradation); (2) algorithmic improvements (outlier suppression, rotation matrices, and other numerical optimizations); and (3) preliminary mechanistic exploration (layer/component sensitivity analysis). All three share the limitation of treating quantization damage as a "numerical problem" without probing why internal model mechanisms fail.
 
-**Root Cause**: Is the catastrophic failure at 2-bit a quantitative accumulation of 4-bit degradation, or does it represent a qualitative transition? If qualitative, it implies that all current numerically-oriented repair strategies are fundamentally misguided for 2-bit quantization.
+**Key Challenge**: Is the catastrophic failure at 2-bit a quantitative accumulation of 4-bit degradation, or does it represent a qualitative transition? If qualitative, it implies that all current numerically-oriented repair strategies are fundamentally misguided for 2-bit quantization.
 
-**Paper Goals**: To reveal intrinsic mechanistic differences underlying quantization failures through systematic mechanistic interpretability analysis (layer-wise information flow, causal pathways, component functionality, and representation space), and to validate that different failure modes correspond to different repair strategies.
+**Goal**: To reveal intrinsic mechanistic differences underlying quantization failures through systematic mechanistic interpretability analysis (layer-wise information flow, causal pathways, component functionality, and representation space), and to validate that different failure modes correspond to different repair strategies.
 
-**Starting Point**: The authors draw an analogy to signal processing—is the signal weakened by noise (degradation), or is the computation pipeline itself broken (collapse)?
+**Key Insight**: The authors draw an analogy to signal processing—is the signal weakened by noise (degradation), or is the computation pipeline itself broken (collapse)?
 
 **Core Idea**: The failures of 4-bit and 2-bit quantization differ not in degree but in kind. Signal degradation can be recovered through targeted training-free repair, whereas computation collapse requires structural reconstruction (e.g., fine-tuning)—a distinction that constitutes the strongest evidence for differentiating the two modes.
 

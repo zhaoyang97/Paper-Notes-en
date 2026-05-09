@@ -28,21 +28,21 @@ This paper proposes SpikeSR, the first attention-based spiking neural network (S
 
 ## Background & Motivation
 
-**State of the Field**: High-resolution remote sensing images (RSI) are critical for downstream tasks, yet sensor-imposed resolution limits remain a fundamental constraint. Deep learning-based SR methods (CNN/Transformer) have achieved notable progress but incur substantial computational overhead, making large-scale deployment in remote sensing scenarios difficult.
+**Background**: High-resolution remote sensing images (RSI) are critical for downstream tasks, yet sensor-imposed resolution limits remain a fundamental constraint. Deep learning-based SR methods (CNN/Transformer) have achieved notable progress but incur substantial computational overhead, making large-scale deployment in remote sensing scenarios difficult.
 
 **Limitations of Prior Work**:
    - CNN-based SR methods (EDSR, RCAN, etc.) focus on network design but exhibit high computational complexity, particularly in exhaustive non-local modeling operations;
    - Transformer-based SR methods (SwinIR, HiT-SR, etc.) offer global modeling capacity but still carry large parameter counts and FLOPs;
    - SNNs, as third-generation neural networks, offer inherent energy efficiency advantages but remain almost entirely unexplored for pixel-level regression tasks such as SR.
 
-**Root Cause**: The binary spike signals of SNNs inevitably cause per-pixel information loss (spiking degradation), and insufficiently optimized membrane potential dynamics limit the representational capacity of SNNs for SR.
+**Key Challenge**: The binary spike signals of SNNs inevitably cause per-pixel information loss (spiking degradation), and insufficiently optimized membrane potential dynamics limit the representational capacity of SNNs for SR.
 
-**Paper Goals**:
+**Goal**:
    - Introduce SNNs into remote sensing SR to leverage their energy efficiency advantages
    - Optimize membrane potentials via attention mechanisms to enhance SNN representational capacity
    - Achieve or surpass ANN-level performance while maintaining low FLOPs
 
-**Starting Point**: A key observation—even in severely degraded remote sensing images, LIF neurons maintain vigorous membrane potential fluctuations (active learning state), suggesting that SNNs possess an inherent sensitivity to high-frequency information (Figure 1a).
+**Key Insight**: A key observation—even in severely degraded remote sensing images, LIF neurons maintain vigorous membrane potential fluctuations (active learning state), suggesting that SNNs possess an inherent sensitivity to high-frequency information (Figure 1a).
 
 **Core Idea**: Regulate SNN membrane potentials through attention mechanisms (temporal-channel and deformable spatial), enabling spiking neural networks to achieve state-of-the-art performance in remote sensing SR for the first time with greater efficiency.
 

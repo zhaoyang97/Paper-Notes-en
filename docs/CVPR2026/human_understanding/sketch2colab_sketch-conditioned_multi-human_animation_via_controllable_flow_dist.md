@@ -29,15 +29,15 @@ This paper proposes Sketch2Colab, which distills a sketch-driven diffusion prior
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models have demonstrated strong performance in single-person motion generation, with mature solutions for text-, trajectory-, and style-conditioned control. Collaborative multi-person–object scenarios (e.g., two people carrying a table together) remain an open challenge; representative work COLLAGE has made preliminary progress via LLM planning combined with latent diffusion.
+**Background**: Diffusion models have demonstrated strong performance in single-person motion generation, with mature solutions for text-, trajectory-, and style-conditioned control. Collaborative multi-person–object scenarios (e.g., two people carrying a table together) remain an open challenge; representative work COLLAGE has made preliminary progress via LLM planning combined with latent diffusion.
 
 **Limitations of Prior Work**: (1) Text as a control channel is too coarse—temporal ordering and spatial layout are difficult to express precisely; (2) achieving accurate constraint compliance in diffusion models under strong multi-entity constraints requires expensive posterior guidance or dedicated control modules, leading to slow and unstable sampling; (3) multi-entity interaction involves discrete events (contact, grasping, handover) that are difficult to model with purely continuous flows.
 
-**Root Cause**: Sketches provide spatiotemporal control signals that are more precise than text, yet extending sketch-based constraints to multi-person–object scenarios faces: keyframe misalignment, multi-agent phase drift, and difficulty optimizing discrete contact/handover states.
+**Key Challenge**: Sketches provide spatiotemporal control signals that are more precise than text, yet extending sketch-based constraints to multi-person–object scenarios faces: keyframe misalignment, multi-agent phase drift, and difficulty optimizing discrete contact/handover states.
 
-**Paper Goals**: How to generate coordinated multi-human–object 3D motion sequences from storyboard sketches (keyframe poses, joint trajectories, and object paths)?
+**Goal**: How to generate coordinated multi-human–object 3D motion sequences from storyboard sketches (keyframe poses, joint trajectories, and object paths)?
 
-**Starting Point**: Diffusion-to-rectified-flow distillation for fast and stable sampling + energy guidance for precise constraint enforcement + CTMC for discrete contact event modeling.
+**Key Insight**: Diffusion-to-rectified-flow distillation for fast and stable sampling + energy guidance for precise constraint enforcement + CTMC for discrete contact event modeling.
 
 **Core Idea**: Distill a diffusion teacher into a rectified flow student; use differentiable energy functions in dual spaces (raw motion space and latent space) to guide constraint compliance; use CTMC to schedule discrete interaction events that modulate the continuous flow.
 

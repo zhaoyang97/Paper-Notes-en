@@ -29,15 +29,15 @@ SAUCE leverages sparse autoencoders (SAEs) to identify and selectively suppress 
 
 ## Background & Motivation
 
-**State of the Field**: As VLMs (e.g., LLaVA, LLaMA-Vision) are increasingly deployed, the ability to make models "forget" specific concepts—such as harmful or copyrighted content—has become critically important. Existing VLM unlearning methods largely inherit techniques developed for LLMs.
+**Background**: As VLMs (e.g., LLaVA, LLaMA-Vision) are increasingly deployed, the ability to make models "forget" specific concepts—such as harmful or copyrighted content—has become critically important. Existing VLM unlearning methods largely inherit techniques developed for LLMs.
 
 **Limitations of Prior Work**: Current unlearning approaches rely predominantly on weight update strategies, suffering from two core issues: (1) they require large annotated forget sets, which are costly to obtain; and (2) they operate at too coarse a granularity, often causing excessive forgetting that significantly degrades model utility on unrelated tasks.
 
-**Root Cause**: There is a fundamental trade-off between unlearning precision and model utility. Weight-update-based methods cannot precisely localize which neurons or features encode a target concept, and thus can only perform coarse-grained adjustments across the entire parameter space.
+**Key Challenge**: There is a fundamental trade-off between unlearning precision and model utility. Weight-update-based methods cannot precisely localize which neurons or features encode a target concept, and thus can only perform coarse-grained adjustments across the entire parameter space.
 
-**Paper Goals**: To design a fine-grained concept unlearning method that requires neither weight modification nor large annotated datasets, and that can be applied on-demand at inference time.
+**Goal**: To design a fine-grained concept unlearning method that requires neither weight modification nor large annotated datasets, and that can be applied on-demand at inference time.
 
-**Starting Point**: SAEs can decompose high-dimensional dense representations into high-dimensional sparse, semantically interpretable features. If the feature dimensions most relevant to a target concept can be identified via an SAE, those dimensions can be selectively suppressed at inference time.
+**Key Insight**: SAEs can decompose high-dimensional dense representations into high-dimensional sparse, semantically interpretable features. If the feature dimensions most relevant to a target concept can be identified via an SAE, those dimensions can be selectively suppressed at inference time.
 
 **Core Idea**: SAEs decompose VLM intermediate-layer representations into interpretable sparse features. Correlation analysis then localizes the key features of a target concept, which are selectively modified at inference time to achieve unlearning—without altering model weights, only intervening in feature propagation during inference.
 

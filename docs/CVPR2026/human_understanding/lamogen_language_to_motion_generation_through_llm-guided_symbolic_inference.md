@@ -29,15 +29,15 @@ This paper proposes LabanLite, a symbolic motion representation, and the LaMoGen
 
 ## Background & Motivation
 
-**State of the Field**: Text-driven human motion generation (Text-to-Motion) has made significant progress in recent years. Mainstream methods rely on text-motion joint embedding spaces and generate motion sequences via diffusion models or autoregressive Transformers. Representative works include MDM, ReMoDiff, MoDiff, CoMo, and MotionGPT.
+**Background**: Text-driven human motion generation (Text-to-Motion) has made significant progress in recent years. Mainstream methods rely on text-motion joint embedding spaces and generate motion sequences via diffusion models or autoregressive Transformers. Representative works include MDM, ReMoDiff, MoDiff, CoMo, and MotionGPT.
 
 **Limitations of Prior Work**: Joint-embedding-based methods perform poorly on **temporal precision** and **fine-grained semantics**. For example, given the instruction "Walk forward in 5 steps and then walk backward in 3 steps," existing methods typically generate a generic "walking forward" motion without accurately reflecting step counts or temporal ordering. Furthermore, these methods lack **interpretability**—generated results are black-box outputs that users cannot inspect or edit at intermediate stages.
 
-**Root Cause**: There is a fundamental gap between the high-level semantic structure of language descriptions (which explicitly encode body parts, directions, temporal ordering, and repetition counts) and the continuity and opacity of motion embedding spaces. Prior attempts to decompose text into body-part-level tokens (e.g., CoMo's Posescript) encode only static poses and lack the expressiveness needed to represent motion transitions and temporal dynamics.
+**Key Challenge**: There is a fundamental gap between the high-level semantic structure of language descriptions (which explicitly encode body parts, directions, temporal ordering, and repetition counts) and the continuity and opacity of motion embedding spaces. Prior attempts to decompose text into body-part-level tokens (e.g., CoMo's Posescript) encode only static poses and lack the expressiveness needed to represent motion transitions and temporal dynamics.
 
-**Paper Goals**: To establish an interpretable and editable intermediate symbolic representation that enables LLMs to autonomously compose motion sequences through symbolic reasoning, while ensuring precision in temporal structure, body-part coordination, and language alignment.
+**Goal**: To establish an interpretable and editable intermediate symbolic representation that enables LLMs to autonomously compose motion sequences through symbolic reasoning, while ensuring precision in temporal structure, body-part coordination, and language alignment.
 
-**Starting Point**: Inspiration is drawn from the Labanotation dance notation system, which encodes movement attributes—including body parts, directions, levels, and durations—in symbolic form, and is inherently interpretable and structured. The authors accordingly design LabanLite as a "symbolic bridge" connecting language and motion.
+**Key Insight**: Inspiration is drawn from the Labanotation dance notation system, which encodes movement attributes—including body parts, directions, levels, and durations—in symbolic form, and is inherently interpretable and structured. The authors accordingly design LabanLite as a "symbolic bridge" connecting language and motion.
 
 **Core Idea**: Complex motions are decomposed into sequences of Laban symbols; the LLM reasons and plans in the symbolic space; a decoder then reconstructs continuous motion trajectories from the symbols.
 

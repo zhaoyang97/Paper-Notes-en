@@ -29,21 +29,21 @@ This paper formalizes offline domain randomization (ODR) as a maximum likelihood
 
 ## Background & Motivation
 
-**State of the Field**: Reinforcement learning agents frequently suffer performance degradation when deployed from simulation to the real world—the so-called "sim-to-real gap." Domain Randomization (DR) is the dominant approach to address this issue: physical parameters (mass, friction coefficients, sensor noise, etc.) are randomly sampled during training to construct a diverse family of simulators, endowing the policy with robustness to environmental variation. DR has enabled zero-shot transfer in quadrotor flight, dexterous manipulation, legged locomotion, and other tasks.
+**Background**: Reinforcement learning agents frequently suffer performance degradation when deployed from simulation to the real world—the so-called "sim-to-real gap." Domain Randomization (DR) is the dominant approach to address this issue: physical parameters (mass, friction coefficients, sensor noise, etc.) are randomly sampled during training to construct a diverse family of simulators, endowing the policy with robustness to environmental variation. DR has enabled zero-shot transfer in quadrotor flight, dexterous manipulation, legged locomotion, and other tasks.
 
 **Limitations of Prior Work**:
    - **Inefficiency of Uniform DR (UDR)**: The standard practice applies broad uniform priors over physical parameters, but the theoretical analysis of Chen et al. (2022) shows that the sim-to-real gap of UDR scales as $O(M^3 \log(MH))$ with respect to the number of candidate simulators $M$—performance guarantees deteriorate rapidly as the simulator count grows.
    - **Neglect of available real-world data**: UDR makes no use of offline data already collected from the real system to guide the choice of parameter distribution.
    - **Lack of theoretical foundation**: Although ODR methods (e.g., DROPO, DROID, BayesSim) demonstrate substantial empirical advantages, it remains theoretically unknown (i) whether the fitted distribution converges to the true dynamics as data grows, and (ii) how much improvement is achieved relative to UDR.
 
-**Root Cause**: ODR performs well empirically, yet lacks statistical guarantees—it is unclear under what conditions offline data can reliably guide the selection of the domain randomization distribution.
+**Key Challenge**: ODR performs well empirically, yet lacks statistical guarantees—it is unclear under what conditions offline data can reliably guide the selection of the domain randomization distribution.
 
-**Paper Goals**:
+**Goal**:
    - Prove weak consistency of the ODR estimator (convergence in probability to the true parameter).
    - Prove strong consistency of the ODR estimator (almost sure convergence).
    - Analyze the practicality of each assumption and provide relaxed variants.
 
-**Starting Point**: ODR is treated as maximum likelihood estimation (MLE) over a parameterized simulator family, and classical statistical tools—uniform laws of large numbers in the Glivenko–Cantelli sense, the Borel–Cantelli lemma, etc.—are employed to establish rigorous convergence proofs.
+**Key Insight**: ODR is treated as maximum likelihood estimation (MLE) over a parameterized simulator family, and classical statistical tools—uniform laws of large numbers in the Glivenko–Cantelli sense, the Borel–Cantelli lemma, etc.—are employed to establish rigorous convergence proofs.
 
 **Core Idea**: ODR is essentially a parameterized MLE problem that admits provable statistical consistency under mild assumptions, providing a solid theoretical explanation for its empirical success.
 

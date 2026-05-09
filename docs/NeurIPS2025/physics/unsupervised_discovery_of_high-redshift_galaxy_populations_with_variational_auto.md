@@ -27,20 +27,20 @@ A variational autoencoder (VAE) is applied to unsupervised clustering of 2,743 J
 
 ## Background & Motivation
 
-**State of the Field**: Since its launch in 2021, JWST has fundamentally transformed our understanding of galaxy formation in the early universe. Its near-infrared spectroscopic capability captures redshifted UV/optical light from galaxies formed within the first few hundred million years after the Big Bang. A large volume of public spectroscopic data is now available, yet analysis still relies heavily on manual visual inspection to identify galaxies of interest.
+**Background**: Since its launch in 2021, JWST has fundamentally transformed our understanding of galaxy formation in the early universe. Its near-infrared spectroscopic capability captures redshifted UV/optical light from galaxies formed within the first few hundred million years after the Big Bang. A large volume of public spectroscopic data is now available, yet analysis still relies heavily on manual visual inspection to identify galaxies of interest.
 
 **Limitations of Prior Work**:
    - Manual classification does not scale as the volume of public data grows rapidly;
    - Supervised methods require large annotated datasets, whereas labeled examples of rare high-redshift galaxies are extremely scarce;
    - VAEs had previously only been applied to low-redshift galaxy spectra from ground-based telescopes and had never been used on JWST high-redshift spectra.
 
-**Root Cause**: It is necessary to automatically discover rare yet astrophysically important galaxy populations from large volumes of high-dimensional spectral data in the absence of prior labels.
+**Key Challenge**: It is necessary to automatically discover rare yet astrophysically important galaxy populations from large volumes of high-dimensional spectral data in the absence of prior labels.
 
-**Paper Goals**:
+**Goal**:
    - Establish an unsupervised pipeline to automatically discover and classify high-redshift galaxy populations from public JWST spectra;
    - Substantially expand the known sample sizes of rare galaxy types.
 
-**Starting Point**: VAE learning of compact and interpretable latent representations, combined with UMAP dimensionality reduction and GMM clustering, forms an end-to-end unsupervised discovery pipeline.
+**Key Insight**: VAE learning of compact and interpretable latent representations, combined with UMAP dimensionality reduction and GMM clustering, forms an end-to-end unsupervised discovery pipeline.
 
 **Core Idea**: An unsupervised VAE-plus-clustering pipeline is applied for the first time to JWST high-redshift spectra, automatically discovering and substantially expanding the sample sizes of five astrophysically critical galaxy populations.
 

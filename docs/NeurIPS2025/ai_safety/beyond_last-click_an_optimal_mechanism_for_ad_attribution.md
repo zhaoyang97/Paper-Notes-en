@@ -28,15 +28,15 @@ This paper analyzes the strategic manipulation vulnerabilities of the Last-Click
 
 ## Background & Motivation
 
-**State of the Field**: Ad attribution determines "which platform's advertisement caused a user conversion." The industry standard is Last-Click attribution, which assigns conversion credit to the platform whose ad was clicked last by the user.
+**Background**: Ad attribution determines "which platform's advertisement caused a user conversion." The industry standard is Last-Click attribution, which assigns conversion credit to the platform whose ad was clicked last by the user.
 
 **Limitations of Prior Work**: In redirect-less tracking, platforms can strategically falsify interaction timestamps—reporting their own click time as later in order to claim Last-Click credit. Existing systems lack defenses against such manipulation.
 
-**Root Cause**: The Last-Click mechanism incentivizes platforms to report false (later) timestamps—the later the reported time, the more likely a platform is to receive attribution credit, causing all platforms to tend toward misreporting.
+**Key Challenge**: The Last-Click mechanism incentivizes platforms to report false (later) timestamps—the later the reported time, the more likely a platform is to receive attribution credit, causing all platforms to tend toward misreporting.
 
-**Paper Goals**: Design an attribution mechanism that eliminates platforms' incentive to falsify timestamps—i.e., one that is strategically safe (DSIC).
+**Goal**: Design an attribution mechanism that eliminates platforms' incentive to falsify timestamps—i.e., one that is strategically safe (DSIC).
 
-**Starting Point**: Peer validation—each platform's attribution credit does not depend on its own report, but only on the reports of other platforms. This is analogous to peer review, where a paper's score is not determined by its authors.
+**Key Insight**: Peer validation—each platform's attribution credit does not depend on its own report, but only on the reports of other platforms. This is analogous to peer review, where a paper's score is not determined by its authors.
 
 **Core Idea**: Each platform's credit = whether other platforms' reports validate that platform's interaction → misreporting one's own data yields no benefit = DSIC.
 

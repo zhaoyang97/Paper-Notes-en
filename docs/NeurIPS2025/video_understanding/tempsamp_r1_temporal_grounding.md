@@ -28,15 +28,15 @@ This paper proposes TempSamp-R1, a mixed-policy reinforcement fine-tuning framew
 
 ## Background & Motivation
 
-1. **State of the Field**: MLLMs excel at general video understanding but still struggle with temporal grounding tasks, which require precise comprehension of spatiotemporal relationships in long videos.
+1. **Background**: MLLMs excel at general video understanding but still struggle with temporal grounding tasks, which require precise comprehension of spatiotemporal relationships in long videos.
 
 2. **Limitations of Prior Work**: SFT-based methods overfit to static timestamp annotations and lack flexible temporal reasoning. GRPO's on-policy sampling is inefficient in large temporal search spaces, making it difficult to find temporally precise solutions.
 
-3. **Root Cause**: GRPO uses ground truth only for computing IoU rewards, rather than treating it as a dynamic learning resource; additionally, high rewards from off-policy solutions introduce bias in advantage estimation.
+3. **Key Challenge**: GRPO uses ground truth only for computing IoU rewards, rather than treating it as a dynamic learning resource; additionally, high rewards from off-policy solutions introduce bias in advantage estimation.
 
-4. **Paper Goals**: Design a more stable and efficient RL fine-tuning framework that fully leverages annotation information to guide policy learning.
+4. **Goal**: Design a more stable and efficient RL fine-tuning framework that fully leverages annotation information to guide policy learning.
 
-5. **Starting Point**: Incorporate ground truth directly as an off-policy solution in policy optimization, while addressing the reward distribution bias this introduces.
+5. **Key Insight**: Incorporate ground truth directly as an off-policy solution in policy optimization, while addressing the reward distribution bias this introduces.
 
 6. **Core Idea**: Mixed-policy sampling + nonlinear soft advantage estimation + hybrid CoT training.
 

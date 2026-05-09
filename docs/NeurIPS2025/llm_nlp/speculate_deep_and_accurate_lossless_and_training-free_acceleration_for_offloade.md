@@ -29,15 +29,15 @@ This paper proposes SubSpec, a plug-and-play lossless and training-free accelera
 
 ## Background & Motivation
 
-**State of the Field**: As LLM scale continues to grow, deploying these models on consumer-grade GPUs faces severe memory constraints. Two main strategies exist: model compression (quantization/pruning) and parameter offloading (storing some weights on CPU/disk).
+**Background**: As LLM scale continues to grow, deploying these models on consumer-grade GPUs faces severe memory constraints. Two main strategies exist: model compression (quantization/pruning) and parameter offloading (storing some weights on CPU/disk).
 
 **Limitations of Prior Work**: Model compression may degrade generation quality; parameter offloading preserves quality but results in extremely slow inference — each forward pass requires transferring large amounts of weights from the CPU, making I/O bandwidth a serious bottleneck. Speculative decoding has been seen as a promising direction for accelerating offloaded inference: a fast small draft model generates multiple candidate tokens, which are then verified in parallel by the target LLM in a single forward pass, thereby reducing the number of forward passes that involve offloaded weight transfers.
 
-**Root Cause**: Existing speculative decoding methods face two fundamental limitations: (1) they rely on pretrained small-model weights from the same family, requiring additional alignment training for custom-trained models; (2) insufficient alignment between the draft and target models leads to limited token acceptance lengths (typically only 3–5 tokens), resulting in suboptimal speedups.
+**Key Challenge**: Existing speculative decoding methods face two fundamental limitations: (1) they rely on pretrained small-model weights from the same family, requiring additional alignment training for custom-trained models; (2) insufficient alignment between the draft and target models leads to limited token acceptance lengths (typically only 3–5 tokens), resulting in suboptimal speedups.
 
-**Paper Goals**: How to construct a draft model that is highly aligned with the target LLM without any training, so that speculative decoding achieves far greater speedups in the parameter offloading setting than existing methods.
+**Goal**: How to construct a draft model that is highly aligned with the target LLM without any training, so that speculative decoding achieves far greater speedups in the parameter offloading setting than existing methods.
 
-**Starting Point**: Since high alignment is required, the best source for a draft model is the target model itself. By applying low-bit quantization to offloaded layers to generate "substitute layers," and by sharing non-offloaded layers and KV-Cache, the prediction consistency between draft and target can be maximized.
+**Key Insight**: Since high alignment is required, the best source for a draft model is the target model itself. By applying low-bit quantization to offloaded layers to generate "substitute layers," and by sharing non-offloaded layers and KV-Cache, the prediction consistency between draft and target can be maximized.
 
 **Core Idea**: Use a quantized version of the target LLM itself as the draft model rather than an independent small model, fundamentally resolving the alignment problem.
 

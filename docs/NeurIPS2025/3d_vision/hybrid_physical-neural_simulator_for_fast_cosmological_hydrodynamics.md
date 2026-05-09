@@ -28,15 +28,15 @@ This paper proposes a hybrid physical-neural cosmological simulator that handles
 
 ## Background & Motivation
 
-**State of the Field**: Large-scale cosmic structure analysis aims to constrain fundamental cosmological parameters. Field-level inference leverages the full spatial information encoded in the cosmic density and velocity fields to jointly constrain cosmological parameters and initial conditions. Because the parameter space of initial conditions is extremely high-dimensional, inference requires gradient-based sampling methods (e.g., Hamiltonian Monte Carlo), which in turn demand differentiable forward models.
+**Background**: Large-scale cosmic structure analysis aims to constrain fundamental cosmological parameters. Field-level inference leverages the full spatial information encoded in the cosmic density and velocity fields to jointly constrain cosmological parameters and initial conditions. Because the parameter space of initial conditions is extremely high-dimensional, inference requires gradient-based sampling methods (e.g., Hamiltonian Monte Carlo), which in turn demand differentiable forward models.
 
 **Limitations of Prior Work**: The majority of matter in the universe is dark matter, whose purely gravitational dynamics can be efficiently solved with differentiable PM methods. However, modern observations now probe small scales where contributions from ordinary (baryonic) matter (gas) must be accounted for, and hydrodynamical simulations of gas (e.g., full Euler equation solvers) are computationally prohibitive. Existing approaches are either physically complete but expensive (diffHydro), analytically approximate but limited in accuracy (HPM/HYPER), or lack self-consistent temporal evolution due to their post-processing nature (EGD).
 
-**Root Cause**: There is a need for a forward model of joint gas–dark matter co-evolution that is simultaneously differentiable (to support gradient-based sampling), efficient (to avoid full hydrodynamics), and accurate (to match reference simulations).
+**Key Challenge**: There is a need for a forward model of joint gas–dark matter co-evolution that is simultaneously differentiable (to support gradient-based sampling), efficient (to avoid full hydrodynamics), and accurate (to match reference simulations).
 
-**Paper Goals**: To construct a solver-in-the-loop hybrid simulator that retains a physics-driven gravitational solver while replacing expensive hydrodynamics computations with a data-driven neural network.
+**Goal**: To construct a solver-in-the-loop hybrid simulator that retains a physics-driven gravitational solver while replacing expensive hydrodynamics computations with a data-driven neural network.
 
-**Starting Point**: The observation that dark matter constitutes the bulk of cosmic matter and already admits an efficient differentiable solver, while gas physics can be regarded as a "correction term" to gravitational dynamics. The gas pressure field is parameterized by a neural network as a function of local physical quantities (density, velocity divergence, velocity dispersion, etc.) and is embedded within the PM solver for joint temporal evolution.
+**Key Insight**: The observation that dark matter constitutes the bulk of cosmic matter and already admits an efficient differentiable solver, while gas physics can be regarded as a "correction term" to gravitational dynamics. The gas pressure field is parameterized by a neural network as a function of local physical quantities (density, velocity divergence, velocity dispersion, etc.) and is embedded within the PM solver for joint temporal evolution.
 
 **Core Idea**: Gravity solved by physics + gas pressure learned by a neural network = an efficient, differentiable hybrid cosmological simulator.
 

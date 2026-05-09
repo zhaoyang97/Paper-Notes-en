@@ -28,15 +28,15 @@ This paper proposes ReACT, which shifts controllable model merging from paramete
 
 ## Background & Motivation
 
-**State of the Field**: Model merging combines multiple task-specific models into a single generalist model, avoiding costly multi-task retraining. Existing approaches include weight averaging, Task Arithmetic, TIES-Merging, and AdaMerging, among others.
+**Background**: Model merging combines multiple task-specific models into a single generalist model, avoiding costly multi-task retraining. Existing approaches include weight averaging, Task Arithmetic, TIES-Merging, and AdaMerging, among others.
 
 **Limitations of Prior Work**: Conventional methods produce static "one-size-fits-all" models that offer no user control over performance trade-offs across tasks. Although Pareto Merging (PM) and MAP achieve controllable merging, both rely on a compile-then-query paradigm—PM requires complex iterative training, while MAP employs evolutionary search whose complexity grows exponentially with the number of tasks.
 
-**Root Cause**: Controllable merging methods perform expensive multi-objective optimization in parameter space; any change to the task set requires restarting the process from scratch, making practical deployment prohibitively costly.
+**Key Challenge**: Controllable merging methods perform expensive multi-objective optimization in parameter space; any change to the task set requires restarting the process from scratch, making practical deployment prohibitively costly.
 
-**Paper Goals**: How can preference-aware model generation be achieved with minimal computational overhead?
+**Goal**: How can preference-aware model generation be achieved with minimal computational overhead?
 
-**Starting Point**: The authors observe that performance degradation after model merging stems fundamentally from a **global linear distortion** (rotation + scaling) in representation space, rather than complex nonlinear deformation.
+**Key Insight**: The authors observe that performance degradation after model merging stems fundamentally from a **global linear distortion** (rotation + scaling) in representation space, rather than complex nonlinear deformation.
 
 **Core Idea**: Construct a linear correction mapping in representation space, derive a closed-form Pareto-optimal solution, and bypass all iterative optimization.
 

@@ -29,18 +29,18 @@ This paper analyzes the GRPO objective and reveals two inherent issues: difficul
 
 ## Background & Motivation
 
-**State of the Field**: The success of DeepSeek-R1 has established GRPO as the core RL training algorithm for large reasoning models (LRMs). Numerous GRPO-based improvements have emerged, including DAPO (decoupled clipping), Dr. GRPO (removing variance normalization), and GPG (simplified REINFORCE).
+**Background**: The success of DeepSeek-R1 has established GRPO as the core RL training algorithm for large reasoning models (LRMs). Numerous GRPO-based improvements have emerged, including DAPO (decoupled clipping), Dr. GRPO (removing variance normalization), and GPG (simplified REINFORCE).
 
 **Limitations of Prior Work**:
 - **Difficulty Bias**: The group relative advantage in GRPO assigns each question a weight $\omega(q) = \sqrt{p(q)(1-p(q))}$, which approaches zero when $p(q) \approx 0$ (too hard) or $p(q) \approx 1$ (too easy), causing the model to effectively ignore these questions. Dr. GRPO's correction only changes the weight to $p(q)(1-p(q))$, mitigating but not eliminating the problem.
 - **Entropy Instability**: GRPO's clipping operation leads to entropy collapse (the policy degenerates into deterministic outputs too quickly), while DAPO's decoupled clipping causes entropy explosion (outputs become highly stochastic).
 - **Data Imbalance**: For hard questions where $p(q) \ll 1$, negative samples vastly outnumber positive ones; naive AUC-based optimization overlooks the importance of top-ranked negative samples.
 
-**Root Cause**: Existing GRPO variants apply patches to the original framework (modifying clipping parameters, removing normalization, etc.) rather than principled redesign.
+**Key Challenge**: Existing GRPO variants apply patches to the original framework (modifying clipping parameters, removing normalization, etc.) rather than principled redesign.
 
-**Paper Goals**: To design an optimization framework from scratch that does not inherit GRPO's limitations and simultaneously addresses difficulty bias, entropy instability, and data imbalance.
+**Goal**: To design an optimization framework from scratch that does not inherit GRPO's limitations and simultaneously addresses difficulty bias, entropy instability, and data imbalance.
 
-**Starting Point**: Decomposing the GRPO objective under a binary reward setting reveals that it is essentially a discriminative objective with difficulty-biased weights—increasing scores for correct answers and decreasing scores for incorrect ones—which is closely related to the classical discriminative learning framework of AUC maximization.
+**Key Insight**: Decomposing the GRPO objective under a binary reward setting reveals that it is essentially a discriminative objective with difficulty-biased weights—increasing scores for correct answers and decreasing scores for incorrect ones—which is closely related to the classical discriminative learning framework of AUC maximization.
 
 **Core Idea**: Replace GRPO's group relative objective with a clip-free discriminative learning objective, substitute KL regularization with constrained optimization for training stability, and apply DRO to handle the imbalance between positive and negative samples in rollouts.
 

@@ -29,15 +29,15 @@ This paper proposes OptScale, a probabilistic optimality framework that models t
 
 ## Background & Motivation
 
-**State of the Field**: Inference-time scaling has become a mainstream technique for enhancing LLM reasoning capabilities. By generating multiple candidate answers in parallel and selecting the best, it can significantly improve performance on tasks such as mathematical reasoning.
+**Background**: Inference-time scaling has become a mainstream technique for enhancing LLM reasoning capabilities. By generating multiple candidate answers in parallel and selecting the best, it can significantly improve performance on tasks such as mathematical reasoning.
 
 **Limitations of Prior Work**: Existing methods suffer from a severe efficiency bottleneck—the number of candidate solutions scales linearly with computational cost, and token consumption grows linearly with the sampling count $N$, leading to wasteful use of computational resources. Existing dynamic allocation strategies rely on heuristic rules and lack a rigorous mathematical foundation.
 
-**Root Cause**: Inference accuracy calls for as many samples as possible, yet computational budgets are limited. Simple problems do not require many samples, while extremely difficult problems may remain unsolvable regardless of how many are drawn. How can the optimal number of samples be determined theoretically?
+**Key Challenge**: Inference accuracy calls for as many samples as possible, yet computational budgets are limited. Simple problems do not require many samples, while extremely difficult problems may remain unsolvable regardless of how many are drawn. How can the optimal number of samples be determined theoretically?
 
-**Paper Goals**: To establish a probabilistic theoretical foundation for inference-time scaling, derive a closed-form solution for the optimal sampling count, and implement an efficient, practical adaptive sampling algorithm.
+**Goal**: To establish a probabilistic theoretical foundation for inference-time scaling, derive a closed-form solution for the optimal sampling count, and implement an efficient, practical adaptive sampling algorithm.
 
-**Starting Point**: The Best-of-N selection process is formalized as a probability distribution problem, and extreme value distribution theory is applied to derive the optimal sampling count $N^*$.
+**Key Insight**: The Best-of-N selection process is formalized as a probability distribution problem, and extreme value distribution theory is applied to derive the optimal sampling count $N^*$.
 
 **Core Idea**: Verifier scores follow an estimable probability distribution. By leveraging extreme value theory, the minimum number of samples required to meet a target performance level and confidence threshold can be derived analytically.
 

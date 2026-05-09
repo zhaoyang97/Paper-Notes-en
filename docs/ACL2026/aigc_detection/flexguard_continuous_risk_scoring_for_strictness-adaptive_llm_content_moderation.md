@@ -29,15 +29,15 @@ FlexGuard outputs continuous risk scores (0-100) instead of binary safe/unsafe j
 
 ## Background & Motivation
 
-**State of the Field**: LLM content moderation models (LlamaGuard, WildGuard, etc.) have evolved through multiple generations and are widely used to detect harmful content in user inputs and model outputs. The vast majority of existing moderation models define content moderation as a fixed binary classification task.
+**Background**: LLM content moderation models (LlamaGuard, WildGuard, etc.) have evolved through multiple generations and are widely used to detect harmful content in user inputs and model outputs. The vast majority of existing moderation models define content moderation as a fixed binary classification task.
 
 **Limitations of Prior Work**: Enforcement strictness—the degree to which a platform is conservative about "harmful"—varies significantly across platforms and time periods. For example, platform X allows appropriately labeled adult content, while certain Reddit communities require all-ages content. Binary moderation models are implicitly bound to the safety definition of their training data and cannot adapt to changing strictness requirements, leading to inconsistent cross-strictness performance: Qwen3Guard drops 19.2% from strict to loose in prompt moderation.
 
-**Root Cause**: The "safe/unsafe" boundary in moderation decisions is not fixed but varies with deployment context, yet existing models and benchmarks assume a single fixed safety definition.
+**Key Challenge**: The "safe/unsafe" boundary in moderation decisions is not fixed but varies with deployment context, yet existing models and benchmarks assume a single fixed safety definition.
 
-**Paper Goals**: (1) Build a benchmark (FlexBench) that evaluates moderation models under different strictness levels; (2) design a moderation model (FlexGuard) that adapts to strictness changes.
+**Goal**: (1) Build a benchmark (FlexBench) that evaluates moderation models under different strictness levels; (2) design a moderation model (FlexGuard) that adapts to strictness changes.
 
-**Starting Point**: Replace binary classification with continuous risk scoring so that strictness adaptation reduces to simple threshold selection. Use rubric-guided distillation to obtain continuous labels, then optimize score-severity alignment via GRPO reinforcement learning.
+**Key Insight**: Replace binary classification with continuous risk scoring so that strictness adaptation reduces to simple threshold selection. Use rubric-guided distillation to obtain continuous labels, then optimize score-severity alignment via GRPO reinforcement learning.
 
 **Core Idea**: Calibrated continuous risk scores + deployment-time threshold selection = strictness-adaptive moderation.
 
@@ -166,15 +166,15 @@ FlexGuard proposes an LLM moderation model that outputs continuous risk scores (
 
 ## Background & Motivation
 
-**State of the Field**: LLM content moderation models (LlamaGuard, WildGuard, etc.) have evolved through multiple generations and are widely used to detect harmful content in user inputs and model outputs. The vast majority of existing moderation models define content moderation as a fixed binary classification task.
+**Background**: LLM content moderation models (LlamaGuard, WildGuard, etc.) have evolved through multiple generations and are widely used to detect harmful content in user inputs and model outputs. The vast majority of existing moderation models define content moderation as a fixed binary classification task.
 
 **Limitations of Prior Work**: Enforcement strictness — the degree to which a platform is conservative about what counts as "harmful" — varies significantly across platforms and over time. For example, platform X allows appropriately labeled adult content, while certain Reddit communities require all-ages content. Binary moderation models are implicitly tied to the safety definition of their training data and cannot adapt to changing strictness requirements, leading to inconsistent cross-strictness performance: Qwen3Guard drops 19.2% from strict to loose in prompt moderation.
 
-**Root Cause**: The "safe/unsafe" boundary of moderation decisions is not fixed but varies with deployment contexts, yet existing models and benchmarks all assume a single fixed safety definition.
+**Key Challenge**: The "safe/unsafe" boundary of moderation decisions is not fixed but varies with deployment contexts, yet existing models and benchmarks all assume a single fixed safety definition.
 
-**Paper Goals**: (1) Build a benchmark (FlexBench) that can evaluate moderation models across different strictness levels; (2) design a moderation model (FlexGuard) that can adapt to strictness changes.
+**Goal**: (1) Build a benchmark (FlexBench) that can evaluate moderation models across different strictness levels; (2) design a moderation model (FlexGuard) that can adapt to strictness changes.
 
-**Starting Point**: Replace binary classification with continuous risk scoring, so strictness adaptation reduces to a simple threshold selection problem. Acquire continuous labels through rubric-guided distillation, then optimize score-severity consistency via GRPO reinforcement learning.
+**Key Insight**: Replace binary classification with continuous risk scoring, so strictness adaptation reduces to a simple threshold selection problem. Acquire continuous labels through rubric-guided distillation, then optimize score-severity consistency via GRPO reinforcement learning.
 
 **Core Idea**: Calibrated continuous risk scores + deployment-time threshold selection = strictness-adaptive moderation.
 

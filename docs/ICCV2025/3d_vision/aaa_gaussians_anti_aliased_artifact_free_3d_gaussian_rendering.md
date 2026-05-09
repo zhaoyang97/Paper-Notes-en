@@ -29,15 +29,15 @@ This paper proposes AAA-Gaussians, which systematically addresses aliasing, proj
 
 ## Background & Motivation
 
-1. **State of the Field**: 3D Gaussian Splatting (3DGS) has attracted broad interest due to its real-time rendering capability and high-quality image synthesis. However, vanilla 3DGS approximates 3D Gaussians as 2D splats for rendering, a simplification that introduces various artifacts under non-standard camera configurations such as large FOV and VR scenarios.
+1. **Background**: 3D Gaussian Splatting (3DGS) has attracted broad interest due to its real-time rendering capability and high-quality image synthesis. However, vanilla 3DGS approximates 3D Gaussians as 2D splats for rendering, a simplification that introduces various artifacts under non-standard camera configurations such as large FOV and VR scenarios.
 
 2. **Limitations of Prior Work**: 3DGS exhibits four categories of artifacts: (1) deformation artifacts caused by the affine projection approximation, particularly at image borders and under large FOV; (2) aliasing artifacts arising from changes in viewing distance; (3) pop-in artifacts when Gaussians extend beyond the view frustum; and (4) popping artifacts due to the simplification of global depth sorting. Although prior works address these issues individually, they either incur significant performance penalties or resolve only a subset of the problems.
 
-3. **Root Cause**: 2D splat evaluation is fast but inaccurate, while 3D ray tracing is accurate but slow and requires additional acceleration structures. Recent hybrid 2D/3D methods evaluate Gaussians in 3D but still rely on screen-space computations (e.g., 2D bounding boxes, 2D anti-aliasing filters), making them susceptible to artifacts under out-of-distribution viewpoints.
+3. **Key Challenge**: 2D splat evaluation is fast but inaccurate, while 3D ray tracing is accurate but slow and requires additional acceleration structures. Recent hybrid 2D/3D methods evaluate Gaussians in 3D but still rely on screen-space computations (e.g., 2D bounding boxes, 2D anti-aliasing filters), making them susceptible to artifacts under out-of-distribution viewpoints.
 
-4. **Paper Goals**: To enforce the 3D nature of 3D Gaussians at every stage of the rendering pipeline, fundamentally eliminating all categories of artifacts while retaining the efficiency advantages of rasterization.
+4. **Goal**: To enforce the 3D nature of 3D Gaussians at every stage of the rendering pipeline, fundamentally eliminating all categories of artifacts while retaining the efficiency advantages of rasterization.
 
-5. **Starting Point**: The authors observe that the fundamental issue with existing methods is that certain pipeline stages still operate in 2D screen space. Processing entirely in 3D space—covering bounding, culling, anti-aliasing, and evaluation—can unify the resolution of all artifacts.
+5. **Key Insight**: The authors observe that the fundamental issue with existing methods is that certain pipeline stages still operate in 2D screen space. Processing entirely in 3D space—covering bounding, culling, anti-aliasing, and evaluation—can unify the resolution of all artifacts.
 
 6. **Core Idea**: An adaptive 3D smoothing filter is proposed to replace the 2D Mip filter; view-space bounding replaces screen-space bounding; frustum-based culling replaces 2D tile culling—together constituting the first fully artifact-free 3DGS rendering framework.
 

@@ -29,15 +29,15 @@ HiFICL reframes the ICL approximation problem through rigorous attention formula
 
 ## Background & Motivation
 
-1. **State of the Field**: In-context learning (ICL) is a key capability of large multimodal models (LMMs), enabling task adaptation from a handful of demonstrations without parameter updates. However, in multimodal settings, the high token cost of visual inputs leads to substantial computational overhead, and ICL performance is highly sensitive to example selection and ordering.
+1. **Background**: In-context learning (ICL) is a key capability of large multimodal models (LMMs), enabling task adaptation from a handful of demonstrations without parameter updates. However, in multimodal settings, the high token cost of visual inputs leads to substantial computational overhead, and ICL performance is highly sensitive to example selection and ordering.
 
 2. **Limitations of Prior Work**: To address these issues, the dominant approach is "ICL approximation" — learning a shift vector to distill the ICL effect. Representative methods such as Task Vector, LIVE, and MimIC model the ICL effect as a linear translation of hidden state representations. However, these methods rest on a theoretically imprecise assumption: they approximate the indirect outcome of ICL rather than its fundamental mechanism.
 
-3. **Root Cause**: Mechanistic interpretability research has demonstrated that ICL is not a simple global shift, but a complex pattern-matching and retrieval process executed by specialized circuits (e.g., Induction Heads), involving highly nonlinear transformations of the representation space. There is a fundamental contradiction between the linear shift assumption and the nonlinear nature of ICL.
+3. **Key Challenge**: Mechanistic interpretability research has demonstrated that ICL is not a simple global shift, but a complex pattern-matching and retrieval process executed by specialized circuits (e.g., Induction Heads), involving highly nonlinear transformations of the representation space. There is a fundamental contradiction between the linear shift assumption and the nonlinear nature of ICL.
 
-4. **Paper Goals**: (a) How to faithfully model the true mechanism of ICL rather than approximating its indirect effects? (b) How to design a fine-tuning method that is both dynamic and parameter-efficient?
+4. **Goal**: (a) How to faithfully model the true mechanism of ICL rather than approximating its indirect effects? (b) How to design a fine-tuning method that is both dynamic and parameter-efficient?
 
-5. **Starting Point**: The authors return to the attention formula itself and derive a precise mathematical decomposition of the ICL effect — it is not an externally added vector, but a dynamic weighted mixture of the standard self-attention output and the in-context value matrix. The correct target for ICL approximation should therefore be the direct parameterization of its "source" $(K_D, V_D)$, rather than approximating its "effect."
+5. **Key Insight**: The authors return to the attention formula itself and derive a precise mathematical decomposition of the ICL effect — it is not an externally added vector, but a dynamic weighted mixture of the standard self-attention output and the in-context value matrix. The correct target for ICL approximation should therefore be the direct parameterization of its "source" $(K_D, V_D)$, rather than approximating its "effect."
 
 6. **Core Idea**: Rather than indirectly fitting a shift vector, HiFICL directly injects learnable low-rank virtual key-value pairs into the attention module to simulate ICL demonstrations, faithfully preserving the nonlinear dynamics of the attention mechanism.
 

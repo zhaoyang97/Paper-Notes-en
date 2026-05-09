@@ -27,13 +27,13 @@ This paper provides the first proof that mini-batch Adam exhibits a different im
 
 ## Background & Motivation
 
-**State of the Field**: The implicit bias of optimization algorithms determines which global optimum is selected in overparameterized models. GD converges to the $\ell_2$ maximum-margin solution, and full-batch Adam converges to the $\ell_\infty$ maximum-margin solution. SGD does not alter GD's bias (any batch size converges to $\ell_2$).
+**Background**: The implicit bias of optimization algorithms determines which global optimum is selected in overparameterized models. GD converges to the $\ell_2$ maximum-margin solution, and full-batch Adam converges to the $\ell_\infty$ maximum-margin solution. SGD does not alter GD's bias (any batch size converges to $\ell_2$).
 
 **Limitations of Prior Work**: Existing analyses of Adam's implicit bias are confined to the full-batch setting. Practical training uses mini-batches, yet it is unclear whether mini-batching alters Adam's $\ell_\infty$ bias. Intuition from SGD suggests the bias should be invariant to batch size—but is this true for Adam?
 
-**Root Cause**: Experiments reveal that mini-batch Adam (batch size = 1) on Gaussian data converges to a direction closer to the $\ell_2$ maximum margin, which is markedly different from full-batch Adam and stands in sharp contrast to the behavior of SGD.
+**Key Challenge**: Experiments reveal that mini-batch Adam (batch size = 1) on Gaussian data converges to a direction closer to the $\ell_2$ maximum margin, which is markedly different from full-batch Adam and stands in sharp contrast to the behavior of SGD.
 
-**Starting Point**: By analyzing the asymptotic form of the epoch-wise updates of per-sample Adam (Inc-Adam), the paper shows that the preconditioner tracks a weighted sum of per-sample squared gradients (rather than the squared full-batch gradient), fundamentally altering its adaptive properties.
+**Key Insight**: By analyzing the asymptotic form of the epoch-wise updates of per-sample Adam (Inc-Adam), the paper shows that the preconditioner tracks a weighted sum of per-sample squared gradients (rather than the squared full-batch gradient), fundamentally altering its adaptive properties.
 
 ## Method
 

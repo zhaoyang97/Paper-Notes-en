@@ -29,15 +29,15 @@ This paper proposes GenCP, which reformulates coupled multiphysics simulation as
 
 ## Background & Motivation
 
-**State of the Field**: Coupled multiphysics simulation (e.g., fluid-structure interaction (FSI), nuclear-thermal coupling) is central to engineering applications. Numerical approaches fall into two categories: monolithic coupling (high accuracy but prohibitively expensive) and partitioned coupling (practical but prone to convergence instability). Surrogate models and neural operators can accelerate simulation, yet most require coupled solution data for training, which is far more costly to obtain than decoupled data (over 5× more expensive).
+**Background**: Coupled multiphysics simulation (e.g., fluid-structure interaction (FSI), nuclear-thermal coupling) is central to engineering applications. Numerical approaches fall into two categories: monolithic coupling (high accuracy but prohibitively expensive) and partitioned coupling (practical but prone to convergence instability). Surrogate models and neural operators can accelerate simulation, yet most require coupled solution data for training, which is far more costly to obtain than decoupled data (over 5× more expensive).
 
 **Limitations of Prior Work**: (1) Surrogate model approaches approximate coupled solutions via Gauss-Seidel/ADMM iterative inference, but struggle with complex spatiotemporal dynamics (failing to capture high-frequency, high-dimensional, and stochastic behavior); (2) Existing generative approaches either handle single-physics fields only, or learn directly from coupled data, overlooking the challenge of learning coupled physics from decoupled data; (3) M2PDE embeds coupling iterations into each diffusion step but lacks theoretical guarantees.
 
-**Root Cause**: Acquiring coupled training data in engineering practice is extremely expensive, whereas decoupled data is readily available. The fundamental challenge is: how to learn from decoupled data and generate high-fidelity coupled solutions at inference time?
+**Key Challenge**: Acquiring coupled training data in engineering practice is extremely expensive, whereas decoupled data is readily available. The fundamental challenge is: how to learn from decoupled data and generate high-fidelity coupled solutions at inference time?
 
-**Paper Goals**: To develop a framework that learns coupled physics from decoupled training data while ensuring high fidelity, high efficiency, and high reliability (the "3H" criteria).
+**Goal**: To develop a framework that learns coupled physics from decoupled training data while ensuring high fidelity, high efficiency, and high reliability (the "3H" criteria).
 
-**Starting Point**: Coupled physics simulation is reformulated as the evolution of probability densities in function space. Flow matching is used to learn conditional velocity fields (decoupled training), and operator splitting synthesizes coupled inference within the flow steps. The theoretical foundation is established via the weak form of the continuity equation and Lie-Trotter splitting.
+**Key Insight**: Coupled physics simulation is reformulated as the evolution of probability densities in function space. Flow matching is used to learn conditional velocity fields (decoupled training), and operator splitting synthesizes coupled inference within the flow steps. The theoretical foundation is established via the weak form of the continuity equation and Lie-Trotter splitting.
 
 **Core Idea**: In probability space, operator splitting composes conditionally learned flows into coupled inference, which is physically equivalent to iteratively solving coupled fields in a noisy latent space.
 

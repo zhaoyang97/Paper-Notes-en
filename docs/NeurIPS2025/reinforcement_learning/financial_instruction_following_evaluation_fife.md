@@ -29,15 +29,15 @@ FIFE is a challenging instruction-following benchmark for financial analysis tas
 
 ## Background & Motivation
 
-**State of the Field**: Language models have achieved considerable maturity in general-purpose instruction following, and benchmarks such as IFEval are widely used to assess this capability. However, the financial domain demands extremely high precision—incorrect numeric formatting, omitted risk disclosures, and non-compliant regulatory statements can all carry serious consequences.
+**Background**: Language models have achieved considerable maturity in general-purpose instruction following, and benchmarks such as IFEval are widely used to assess this capability. However, the financial domain demands extremely high precision—incorrect numeric formatting, omitted risk disclosures, and non-compliant regulatory statements can all carry serious consequences.
 
 **Limitations of Prior Work**: Existing instruction-following benchmarks (e.g., IFEval) are primarily designed for general tasks and lack finance-specific constraints. Financial analysis involves a large number of domain-specific requirements: LaTeX formulations for Black-76 option pricing, specific numeric formats for VaR calculations, particular numbering conventions for Rule 10b-5 compliance disclosures, and so forth. These constraints are often mutually dependent, forming chain-like structures—yet no existing benchmark systematically evaluates model performance under such complex constraint regimes.
 
-**Root Cause**: The requirements for instruction following in finance far exceed those of general domains, while existing evaluation tools fall well short of meeting this need. General-purpose benchmarks cannot capture finance-specific constraint types, leading to distorted assessments of model capability in financial settings.
+**Key Challenge**: The requirements for instruction following in finance far exceed those of general domains, while existing evaluation tools fall well short of meeting this need. General-purpose benchmarks cannot capture finance-specific constraint types, leading to distorted assessments of model capability in financial settings.
 
-**Paper Goals**: To construct a challenging financial instruction-following benchmark that (1) incorporates domain-specific constraints spanning multiple financial sub-domains; (2) provides a chainable, automated verification system; and (3) supplies fine-grained reward signals to support RL training.
+**Goal**: To construct a challenging financial instruction-following benchmark that (1) incorporates domain-specific constraints spanning multiple financial sub-domains; (2) provides a chainable, automated verification system; and (3) supplies fine-grained reward signals to support RL training.
 
-**Starting Point**: Deep customization of the IFEval framework for the financial domain—designing 40+ finance-specific instruction checkers covering a broad range of scenarios from equity analysis and derivatives pricing to compliance reporting and ESG assessment. Each checker can be applied independently or chained together to form complex, multi-constraint prompts.
+**Key Insight**: Deep customization of the IFEval framework for the financial domain—designing 40+ finance-specific instruction checkers covering a broad range of scenarios from equity analysis and derivatives pricing to compliance reporting and ESG assessment. Each checker can be applied independently or chained together to form complex, multi-constraint prompts.
 
 **Core Idea**: Construct a high-difficulty benchmark using 40+ chainable, finance-specific verifiable constraints, providing precise reward signals for RL training in the financial domain.
 

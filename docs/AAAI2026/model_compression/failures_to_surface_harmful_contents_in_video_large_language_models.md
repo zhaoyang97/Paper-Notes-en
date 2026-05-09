@@ -29,7 +29,7 @@ This paper presents the first systematic security analysis of VideoLLMs, identif
 ## Background & Motivation
 VideoLLMs are increasingly deployed for video understanding tasks, generating concise textual summaries that enable users to rely on automatic outputs while browsing video streams. This "watch + read" hybrid consumption mode concentrates semantic trust in the VideoLLM's output.
 
-**Root Cause**: When harmful content is embedded in a video — whether as full-frame insertions or small corner patches — current state-of-the-art VideoLLMs almost never mention such content in their outputs, even though human viewers can perceive it clearly. This creates a "semantic blind spot": harmful content is visible in the video yet absent from the summary.
+**Key Challenge**: When harmful content is embedded in a video — whether as full-frame insertions or small corner patches — current state-of-the-art VideoLLMs almost never mention such content in their outputs, even though human viewers can perceive it clearly. This creates a "semantic blind spot": harmful content is visible in the video yet absent from the summary.
 
 **Three Structural Flaws**:
 
@@ -39,7 +39,7 @@ VideoLLMs are increasingly deployed for video understanding tasks, generating co
 
 **Modality Fusion Imbalance**: Language priors dominate the attention budget, causing visual cues to be suppressed during generation even when captured by the encoder.
 
-**Starting Point**: The three identified flaws are exploited to design zero-query black-box attacks that quantify the harmful content omission rate of VideoLLMs.
+**Key Insight**: The three identified flaws are exploited to design zero-query black-box attacks that quantify the harmful content omission rate of VideoLLMs.
 
 ## Method
 

@@ -29,7 +29,7 @@ This paper presents the first systematic study of design principles for syntheti
 
 ## Background & Motivation
 
-**State of the Field**: Since the seminal work of TabPFN, In-Context Learning (ICL)-based tabular foundation models (TFMs) have challenged traditional machine learning paradigms. These models are pretrained entirely on synthetic data yet achieve strong performance across diverse real-world datasets.
+**Background**: Since the seminal work of TabPFN, In-Context Learning (ICL)-based tabular foundation models (TFMs) have challenged traditional machine learning paradigms. These models are pretrained entirely on synthetic data yet achieve strong performance across diverse real-world datasets.
 
 **Paradigm Shift**: The focus of tabular ML has shifted from model architecture design to the design of synthetic datasets (i.e., prior distributions). Models no longer require exposure to any real-world data and can generalize using moderate-sized in-context samples.
 
@@ -40,7 +40,7 @@ This paper presents the first systematic study of design principles for syntheti
 
 **Core Problem**: How can synthetic priors be quantitatively evaluated and selected to maximize the generalization capability of TFMs?
 
-**Starting Point**: The paper systematizes the prior design problem by proposing three key evaluation dimensions (diversity, distinctiveness, and real-world performance), and uses these to select and mix an optimal prior combination.
+**Key Insight**: The paper systematizes the prior design problem by proposing three key evaluation dimensions (diversity, distinctiveness, and real-world performance), and uses these to select and mix an optimal prior combination.
 
 ## Method
 

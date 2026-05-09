@@ -29,15 +29,15 @@ This paper proposes AdaBet, a gradient-free layer selection method grounded in a
 
 ## Background & Motivation
 
-**State of the Field**: The demand for fine-tuning deep neural networks on edge devices (smartphones, IoT, embedded systems) is growing rapidly, yet such devices are severely constrained in memory and compute, rendering full fine-tuning infeasible.
+**Background**: The demand for fine-tuning deep neural networks on edge devices (smartphones, IoT, embedded systems) is growing rapidly, yet such devices are severely constrained in memory and compute, rendering full fine-tuning infeasible.
 
 **Limitations of Prior Work**: (1) Conventional transfer learning freezes most layers and trains only the final few, a heuristic that ignores the potential need to adapt intermediate layers to new tasks. (2) Fisher Information-based layer selection requires backpropagation and labeled data, making it inapplicable in label-free or privacy-sensitive scenarios. (3) Structured pruning (PruneTrain) and elastic training (ElasticTrainer) reduce computation but still rely on gradient information.
 
-**Root Cause**: Measuring each layer's "importance" to a new task requires costly metrics (Fisher information, gradient norms), all of which depend on backpropagation—the very bottleneck one seeks to avoid. Using expensive operations to decide how to save cost is fundamentally contradictory.
+**Key Challenge**: Measuring each layer's "importance" to a new task requires costly metrics (Fisher information, gradient norms), all of which depend on backpropagation—the very bottleneck one seeks to avoid. Using expensive operations to decide how to save cost is fundamentally contradictory.
 
-**Paper Goals**: Determine which layers most need updating using only a forward pass, without any labels, gradients, or backpropagation.
+**Goal**: Determine which layers most need updating using only a forward pass, without any labels, gradients, or backpropagation.
 
-**Starting Point**: Leveraging topological data analysis (TDA), the paper characterizes each layer's activation space through its topological structure—specifically the presence of 1-dimensional loop structures—as a proxy for feature complexity and entanglement.
+**Key Insight**: Leveraging topological data analysis (TDA), the paper characterizes each layer's activation space through its topological structure—specifically the presence of 1-dimensional loop structures—as a proxy for feature complexity and entanglement.
 
 **Core Idea**: High $b_1$ (many 1-dimensional loops) $\Rightarrow$ entangled activation manifold $\Rightarrow$ misalignment between pre-trained features and the new task $\Rightarrow$ update required; Low $b_1$ (few loops) $\Rightarrow$ approximately linearly separable $\Rightarrow$ features can be reused $\Rightarrow$ freeze.
 

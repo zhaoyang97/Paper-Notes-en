@@ -31,7 +31,7 @@ This paper proposes AffPCL, a personalized collaborative learning framework that
 
 ### State of the Field
 
-**State of the Field**: Multi-agent learning faces a fundamental tension: **collaboration efficiency vs. personalization needs**. In the presence of heterogeneity, the unified solution pursued by Federated Learning (FL) may be suboptimal or even irrelevant for individual agents. This issue is widespread in practice:
+**Background**: Multi-agent learning faces a fundamental tension: **collaboration efficiency vs. personalization needs**. In the presence of heterogeneity, the unified solution pursued by Federated Learning (FL) may be suboptimal or even irrelevant for individual agents. This issue is widespread in practice:
 
 ### Limitations of Prior Work
 
@@ -39,7 +39,7 @@ This paper proposes AffPCL, a personalized collaborative learning framework that
 
 ### Root Cause
 
-**Root Cause**: Autonomous driving requires adaptation to local traffic conditions.
+**Key Challenge**: Autonomous driving requires adaptation to local traffic conditions.
 
 ### Solution Direction
 

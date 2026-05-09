@@ -26,15 +26,15 @@ content_hash: 34d4f79c2d91ec90
 This paper proposes the CogQA benchmark dataset and a multi-class probing framework to systematically analyze cognitive functional specialization of attention heads in LLMs. The study reveals that cognitive heads exhibit sparsity, universality, and hierarchical functional organization; ablating cognitive heads significantly degrades reasoning performance, while amplifying them improves accuracy.
 
 ## Background & Motivation
-**State of the Field**: LLMs demonstrate strong performance across diverse NLP tasks, yet their internal mechanisms remain opaque. Prior work suggests that attention heads may assume specific functions (e.g., information retrieval, answer consistency), but these findings are largely confined to simple tasks.
+**Background**: LLMs demonstrate strong performance across diverse NLP tasks, yet their internal mechanisms remain opaque. Prior work suggests that attention heads may assume specific functions (e.g., information retrieval, answer consistency), but these findings are largely confined to simple tasks.
 
 **Limitations of Prior Work**: A systematic framework for aligning internal LLM components with cognitive functions is lacking. Existing studies are limited to single-function analyses (e.g., retrieval heads) and cannot capture many-to-many relationships between heads and functions.
 
-**Root Cause**: Chain-of-thought (CoT) prompting improves LLM reasoning, implying the existence of activatable specialized components within models; however, benchmarks and methods to identify and validate these components are absent.
+**Key Challenge**: Chain-of-thought (CoT) prompting improves LLM reasoning, implying the existence of activatable specialized components within models; however, benchmarks and methods to identify and validate these components are absent.
 
-**Paper Goals**: (1) Do attention heads in LLMs exhibit cognitive functional specialization? (2) Are specialization patterns consistent across different models? (3) What is the causal contribution of these heads to reasoning tasks?
+**Goal**: (1) Do attention heads in LLMs exhibit cognitive functional specialization? (2) Are specialization patterns consistent across different models? (3) What is the causal contribution of these heads to reasoning tasks?
 
-**Starting Point**: Drawing an analogy to cognitive division of labor in the human brain (e.g., the frontal lobe for knowledge recall, Wernicke's area for semantic processing), the paper hypothesizes that LLM attention heads exhibit a similar division of function.
+**Key Insight**: Drawing an analogy to cognitive division of labor in the human brain (e.g., the frontal lobe for knowledge recall, Wernicke's area for semantic processing), the paper hypothesizes that LLM attention heads exhibit a similar division of function.
 
 **Core Idea**: Probing functional specialization patterns of attention heads via CoT sub-questions annotated with cognitive function labels.
 

@@ -30,13 +30,13 @@ This paper proposes DINO-Foresight, which forecasts future-frame feature evoluti
 
 ## Background & Motivation
 
-**State of the Field**: Future scene prediction is critical for autonomous driving and robotics. Existing approaches fall into two categories: (a) pixel-level prediction—computationally expensive and focused on irrelevant details; (b) latent-space generative methods—using VAE latents for diffusion/autoregressive prediction, but VAE latents lack semantic alignment and cannot be directly used for downstream scene understanding.
+**Background**: Future scene prediction is critical for autonomous driving and robotics. Existing approaches fall into two categories: (a) pixel-level prediction—computationally expensive and focused on irrelevant details; (b) latent-space generative methods—using VAE latents for diffusion/autoregressive prediction, but VAE latents lack semantic alignment and cannot be directly used for downstream scene understanding.
 
 **Limitations of Prior Work**: (a) VAE latents lack semantic content, requiring reconstruction back to RGB before applying task heads; (b) each downstream task requires an independently trained prediction model (PFA, F2MF, etc. are not scalable); (c) world models such as VISTA have 2.5B parameters and extremely slow inference.
 
-**Root Cause**: Autonomous driving decision systems require semantic scene understanding (object locations and categories), not low-level appearance reconstruction. Existing methods waste model capacity modeling irrelevant low-level details.
+**Key Challenge**: Autonomous driving decision systems require semantic scene understanding (object locations and categories), not low-level appearance reconstruction. Existing methods waste model capacity modeling irrelevant low-level details.
 
-**Starting Point**: VFM features (e.g., DINOv2) are inherently rich in semantics and support multi-task heads. Directly predicting the temporal evolution of VFM features bypasses RGB reconstruction and enables future-frame understanding.
+**Key Insight**: VFM features (e.g., DINOv2) are inherently rich in semantics and support multi-task heads. Directly predicting the temporal evolution of VFM features bypasses RGB reconstruction and enables future-frame understanding.
 
 **Core Idea**: Rather than predicting future RGB frames or VAE latents, DINO-Foresight predicts the temporal evolution of DINOv2 features. The VFM feature space is treated as a semantically rich high-dimensional latent space; after prediction, off-the-shelf task heads can be attached directly for various dense prediction tasks.
 

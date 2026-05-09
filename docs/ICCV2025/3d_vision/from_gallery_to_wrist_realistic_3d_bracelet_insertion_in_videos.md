@@ -30,7 +30,7 @@ This paper proposes a hybrid pipeline for realistically inserting 3D bracelets i
 
 ## Background & Motivation
 
-**Root Cause**: Inserting 3D objects into video requires simultaneously satisfying two conflicting constraints:
+**Key Challenge**: Inserting 3D objects into video requires simultaneously satisfying two conflicting constraints:
 
 **Temporal Consistency**: The inserted object must not flicker or abruptly change between frames; motion, viewpoint changes, and occlusions must all be handled correctly.
 
@@ -41,7 +41,7 @@ This paper proposes a hybrid pipeline for realistically inserting 3D bracelets i
 - **2D diffusion model approaches** (AnyV2V, ReVideo, ConsistI2V): These propagate edits made on the first frame using methods such as AnyDoor and can produce high visual quality, but 2D references lack the information necessary to synthesize consistent novel views, resulting in flickering and identity inconsistencies when the object moves or the viewpoint changes.
 - **Traditional 3D rendering approaches**: AR pipelines naturally maintain temporal consistency but struggle to accurately model complex environmental lighting interactions, yielding unrealistic renderings that lack shadows, exhibit unnatural highlights, and fail to blend with the background.
 
-**Starting Point**: The bracelet is an ideal research subject — it involves complex dynamic highlights (metallic/gemstone reflections), rapid and varied wrist motion, frequent occlusion changes (e.g., fingers occluding the bracelet), and places extremely high demands on both temporal consistency and illumination accuracy.
+**Key Insight**: The bracelet is an ideal research subject — it involves complex dynamic highlights (metallic/gemstone reflections), rapid and varied wrist motion, frequent occlusion changes (e.g., fingers occluding the bracelet), and places extremely high demands on both temporal consistency and illumination accuracy.
 
 ## Method
 

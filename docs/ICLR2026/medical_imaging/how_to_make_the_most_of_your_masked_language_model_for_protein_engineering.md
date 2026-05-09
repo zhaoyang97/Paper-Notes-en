@@ -28,15 +28,15 @@ This work proposes a temperature-annealed stochastic beam search (SBS) sampling 
 
 ## Background & Motivation
 
-**State of the Field**: A large number of protein language models (e.g., ESM-2, AbLang2) have been released and are widely used for iterative optimization of therapeutic antibodies—given a seed sequence, a model generates mutant candidates, which are experimentally tested before the next round. However, research on how to efficiently sample high-quality sequences from MLMs remains extremely limited.
+**Background**: A large number of protein language models (e.g., ESM-2, AbLang2) have been released and are widely used for iterative optimization of therapeutic antibodies—given a seed sequence, a model generates mutant candidates, which are experimentally tested before the next round. However, research on how to efficiently sample high-quality sequences from MLMs remains extremely limited.
 
 **Limitations of Prior Work**: (1) The dominant MLM sampling paradigm is "mutation-centric" (e.g., denoising sampling, Gibbs sampling), masking and filling positions one at a time, with a computational cost of $O(EL^3)$, and empirically tending to produce low-quality sequences; (2) existing methods struggle to integrate non-differentiable scoring functions (e.g., OASis immunogenicity scores, isoelectric point); (3) systematic evaluation of MLM sampling algorithms—particularly with in vitro validation—is nearly nonexistent.
 
-**Root Cause**: The mutation-centric sampling paradigm restricts decisions to individual positions, preventing the use of full-sequence information for global assessment, while the $O(EL^3)$ computational complexity limits candidate diversity.
+**Key Challenge**: The mutation-centric sampling paradigm restricts decisions to individual positions, preventing the use of full-sequence information for global assessment, while the $O(EL^3)$ computational complexity limits candidate diversity.
 
-**Paper Goals**: How can high-likelihood, diverse, and seed-proximal mutant sequences be efficiently sampled from an MLM? How can multiple scoring functions (differentiable or not) be flexibly integrated for multi-objective optimization? What combination of model and sampling strategy is most effective for practical antibody optimization?
+**Goal**: How can high-likelihood, diverse, and seed-proximal mutant sequences be efficiently sampled from an MLM? How can multiple scoring functions (differentiable or not) be flexibly integrated for multi-objective optimization? What combination of model and sampling strategy is most effective for practical antibody optimization?
 
-**Starting Point**: Shifting MLM sampling from "mutation-centric" to "sequence-centric"—rather than having the model generate mutations position by position, the model evaluates the PLL of complete sequences, transforming the problem into a search problem. A key observation is that once the PLL of a sequence is computed, the PLLs of all its single-site neighbors are obtained almost for free.
+**Key Insight**: Shifting MLM sampling from "mutation-centric" to "sequence-centric"—rather than having the model generate mutations position by position, the model evaluates the PLL of complete sequences, transforming the problem into a search problem. A key observation is that once the PLL of a sequence is computed, the PLLs of all its single-site neighbors are obtained almost for free.
 
 **Core Idea**: By exploiting a wild-type marginal approximation, the approximate PLL of the entire 1-edit neighborhood is obtained at negligible additional cost from a single PLL computation, converting MLM sampling into an efficient stochastic beam search.
 

@@ -26,10 +26,10 @@ content_hash: 125e45ef7bfcb5dd
 AdaDrive presents the first LLM-augmented autonomous driving framework with an adaptive slow-fast architecture. Two adaptive connectors dynamically determine *when to activate the LLM* (Connector-W) and *how much the LLM contributes* (Connector-H), achieving SOTA performance on language-grounded driving benchmarks (driving score 80.9%) while reducing inference latency to 189ms and GPU memory to 6.79GB.
 
 ## Background & Motivation
-- **State of the Field**: LLMs can provide high-level reasoning and decision-making capabilities for autonomous driving, yet efficient integration remains an open problem.
+- **Background**: LLMs can provide high-level reasoning and decision-making capabilities for autonomous driving, yet efficient integration remains an open problem.
 - **First-generation methods** (LMDrive, AD-H): Synchronous architectures where the LLM participates at every step—precise in reasoning but with high latency and memory overhead, precluding real-time deployment.
 - **Second-generation methods** (AsyncDriver, DriveVLM): Asynchronous architectures with fixed-frequency LLM activation—reduced overhead but unable to adapt to dynamic driving scenarios. The LLM may not be invoked during emergencies, yet wastes computation in simple scenarios.
-- **Root Cause**: High-frequency LLM activation ensures performance but incurs unacceptable latency; low-frequency fixed activation misses critical scenarios and lacks flexibility.
+- **Key Challenge**: High-frequency LLM activation ensures performance but incurs unacceptable latency; low-frequency fixed activation misses critical scenarios and lacks flexibility.
 - **Key Insights**: (1) LLM activation should be scene-complexity-driven rather than fixed-frequency; (2) the LLM's contribution should not be a binary all-or-nothing decision—continuous weighted fusion (e.g., weight 0.7) outperforms full-weight fusion (1.0), as validated experimentally (Table 4: ID#3 vs. ID#4).
 
 ## Method

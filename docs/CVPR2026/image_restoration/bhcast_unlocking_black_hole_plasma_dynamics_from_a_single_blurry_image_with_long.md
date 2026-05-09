@@ -27,11 +27,11 @@ content_hash: 129f861527eac4a5
 BHCast takes a single blurry EHT black hole image as input, employs a U-Net dynamics surrogate model for super-resolution combined with long-term autoregressive forecasting (stable over 100 steps), extracts physical features (pattern speed, pitch angle, etc.) from the predicted plasma dynamics, and infers black hole spin and inclination via XGBoost. Effectiveness is also demonstrated on real M87* observational images.
 
 ## Background & Motivation
-**State of the Field**: The Event Horizon Telescope (EHT) captured the first black hole image, but is limited to ~20 μas resolution, yielding only static blurry snapshots with no direct access to plasma dynamics.
+**Background**: The Event Horizon Telescope (EHT) captured the first black hole image, but is limited to ~20 μas resolution, yielding only static blurry snapshots with no direct access to plasma dynamics.
 
 **Limitations of Prior Work**: Interpreting EHT images requires comparison against GRMHD (General Relativistic Magnetohydrodynamics) simulations, yet a single simulation run takes weeks on supercomputers, making large-scale parameter space exploration infeasible.
 
-**Root Cause**: Two compounding challenges exist: (1) recovering lost high-frequency information from resolution-limited images (super-resolution); (2) key dynamical indicators require stable **long-horizon predictions** (300 $GM c^{-3}$+) for accurate measurement.
+**Key Challenge**: Two compounding challenges exist: (1) recovering lost high-frequency information from resolution-limited images (super-resolution); (2) key dynamical indicators require stable **long-horizon predictions** (300 $GM c^{-3}$+) for accurate measurement.
 
 **Core Idea**: The ill-posed astrophysical inverse problem is reformulated as a "predict-then-infer" pipeline — neural surrogate models replace expensive GRMHD simulations, and the attractor theory of dissipative dynamical systems enables self-correcting super-resolution.
 

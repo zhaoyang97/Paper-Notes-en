@@ -28,15 +28,15 @@ This paper proposes a unified spatiotemporal token compression method that joint
 
 ## Background & Motivation
 
-1. **State of the Field**: Video-LLMs (e.g., LLaVA-OneVision-7B) achieve strong performance on complex video understanding tasks, but generate 196 visual tokens per frame — accumulating to 6,272 tokens for a 32-frame video — with substantial redundancy, leading to high inference latency and memory consumption.
+1. **Background**: Video-LLMs (e.g., LLaVA-OneVision-7B) achieve strong performance on complex video understanding tasks, but generate 196 visual tokens per frame — accumulating to 6,272 tokens for a 32-frame video — with substantial redundancy, leading to high inference latency and memory consumption.
 
 2. **Limitations of Prior Work**: Existing training-free video token compression methods fall into three categories: spatial pruning (VisionZip, PruMerge), temporal pruning (DyCoke, TempMe), and staged spatiotemporal methods (FastVid, HoliTom). These methods typically adopt two-stage strategies (temporal-then-spatial or spatial-then-temporal) with independent scoring, implicitly assuming that spatial and temporal redundancy are separable.
 
-3. **Root Cause**: At ultra-low retention rates (≤5%), the spatiotemporal separability assumption breaks down. Staged decision-making leads to imbalanced spatiotemporal resource allocation — retaining non-critical tokens while discarding critical ones. For example, FastVid retains only 83.3% of original performance at 2% retention. Moreover, intra-LLM pruning methods (e.g., FastV, PDrop) rely solely on the last token's attention weights for selection, introducing positional bias and weakening the semantic influence of critical query tokens.
+3. **Key Challenge**: At ultra-low retention rates (≤5%), the spatiotemporal separability assumption breaks down. Staged decision-making leads to imbalanced spatiotemporal resource allocation — retaining non-critical tokens while discarding critical ones. For example, FastVid retains only 83.3% of original performance at 2% retention. Moreover, intra-LLM pruning methods (e.g., FastV, PDrop) rely solely on the last token's attention weights for selection, introducing positional bias and weakening the semantic influence of critical query tokens.
 
-4. **Paper Goals**: (a) How to globally allocate spatiotemporal tokens under a unified budget to maximize information contribution while minimizing redundancy? (b) How to further compress tokens inside the LLM based on query relevance?
+4. **Goal**: (a) How to globally allocate spatiotemporal tokens under a unified budget to maximize information contribution while minimizing redundancy? (b) How to further compress tokens inside the LLM based on query relevance?
 
-5. **Starting Point**: Reframe token compression as a global spatiotemporal token allocation problem rather than a staged independent process. Jointly evaluate all tokens using attention weights and semantic similarity.
+5. **Key Insight**: Reframe token compression as a global spatiotemporal token allocation problem rather than a staged independent process. Jointly evaluate all tokens using attention weights and semantic similarity.
 
 6. **Core Idea**: Replace two-stage compression with a unified global retention pool; use dual criteria of contribution and redundancy for token selection; apply DPC-KNN clustering-based merging on the recycle pool; and introduce text-aware merging inside the LLM — achieving efficient compression at ultra-low retention rates.
 

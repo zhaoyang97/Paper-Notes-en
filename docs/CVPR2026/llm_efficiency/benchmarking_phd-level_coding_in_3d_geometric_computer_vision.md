@@ -28,13 +28,13 @@ The first PhD-level code generation benchmark for 3D geometric computer vision, 
 
 ## Background & Motivation
 
-**State of the Field**: AI-assisted programming has reshaped software practices and research workflows, but existing models still struggle with complex 3D geometric vision code. If models could reliably write such code, 3D vision research would be fundamentally transformed (automated prototyping, accelerated research cycles, democratized algorithm development).
+**Background**: AI-assisted programming has reshaped software practices and research workflows, but existing models still struggle with complex 3D geometric vision code. If models could reliably write such code, 3D vision research would be fundamentally transformed (automated prototyping, accelerated research cycles, democratized algorithm development).
 
 **Limitations of Prior Work**: (1) Existing code benchmarks (HumanEval/MBPP/SWE-bench) do not cover 3D geometric implementations—they target general software engineering or competitive programming; (2) Scientific 3D vision code requires mathematically precise geometric operators, physical modeling, and multi-view reasoning—far beyond general-purpose capabilities; (3) Paper-to-code long-context scientific understanding remains an open problem.
 
-**Root Cause**: LLMs can generate general-purpose code but cannot reliably implement core functions in 3D geometric vision—how large is this gap? Where are the bottlenecks?
+**Key Challenge**: LLMs can generate general-purpose code but cannot reliably implement core functions in 3D geometric vision—how large is this gap? Where are the bottlenecks?
 
-**Starting Point**: Simulating real research scenarios—giving models paper text plus function skeletons, requiring implementation completion, with automatic evaluation via unit tests.
+**Key Insight**: Simulating real research scenarios—giving models paper text plus function skeletons, requiring implementation completion, with automatic evaluation via unit tests.
 
 **Core Idea**: (1) Extract core functions from official repositories of 2025 top-venue papers; (2) Automated tool nomination plus manual curation to ensure quality; (3) Diverse boundary tests covering geometric degenerate configurations; (4) Two-level capability taxonomy for evaluation.
 

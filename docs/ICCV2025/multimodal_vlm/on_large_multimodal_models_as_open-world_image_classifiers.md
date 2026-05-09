@@ -38,7 +38,7 @@ Traditional image classification requires a predefined set of categories (closed
 - Different but reasonable levels of granularity (e.g., *dog* vs. *pug*)
 - Literally correct but semantically erroneous matches (e.g., *can* spuriously matching *trash can*)
 
-**Paper Goals**: To provide the first large-scale, multi-dimensional benchmark for evaluating LMMs on open-world classification, analyze error patterns through multiple metrics, and offer directional guidance for future research.
+**Goal**: To provide the first large-scale, multi-dimensional benchmark for evaluating LMMs on open-world classification, analyze error patterns through multiple metrics, and offer directional guidance for future research.
 
 ## Method
 

@@ -28,15 +28,15 @@ This paper proposes L-GMVAE (Label-Conditional Gaussian Mixture VAE) and the LAP
 
 ## Background & Motivation
 
-**State of the Field**: Counterfactual explanations (CEs) provide algorithmic recourse to individuals affected by automated decisions (e.g., how to change one's profile after a loan rejection). Ideal CEs must satisfy validity, proximity, plausibility (on-manifold), and diversity.
+**Background**: Counterfactual explanations (CEs) provide algorithmic recourse to individuals affected by automated decisions (e.g., how to change one's profile after a loan rejection). Ideal CEs must satisfy validity, proximity, plausibility (on-manifold), and diversity.
 
 **Limitations of Prior Work**: Most existing methods address these properties in isolation, making it difficult to simultaneously guarantee multiple forms of robustness (input-perturbation robustness, model-change robustness) within a single framework. VAE-based approaches are typically unconditional, ignoring classifier label information and requiring complex latent-space search procedures.
 
-**Root Cause**: How can one simultaneously satisfy the multi-dimensional requirements of CEs — valid yet plausible, proximate yet robust, diverse yet stable?
+**Key Challenge**: How can one simultaneously satisfy the multi-dimensional requirements of CEs — valid yet plausible, proximate yet robust, diverse yet stable?
 
-**Paper Goals**: To design a unified framework that generates CEs satisfying validity, proximity, plausibility, diversity, input robustness, and model robustness simultaneously.
+**Goal**: To design a unified framework that generates CEs satisfying validity, proximity, plausibility, diversity, input robustness, and model robustness simultaneously.
 
-**Starting Point**: Identify a diverse set of prototypical recourse targets in the target class, then guide all CEs to converge toward these points. These prototypes are learned naturally via a label-conditional GMM in the VAE latent space.
+**Key Insight**: Identify a diverse set of prototypical recourse targets in the target class, then guide all CEs to converge toward these points. These prototypes are learned naturally via a label-conditional GMM in the VAE latent space.
 
 **Core Idea**: Partition GMVAE clusters by class label (K/L clusters per class); the decoded cluster centers serve as valid, plausible, and robust CE targets. Linear interpolation in the latent space from the input representation to the target center yields a sequence of CE candidates along a path.
 

@@ -29,15 +29,15 @@ This paper proposes CoDial, a framework that converts predefined dialogue flows 
 
 ## Background & Motivation
 
-**State of the Field**: Task-oriented dialogue (TOD) systems need to generalize across different tasks. Data-driven approaches struggle to transfer to unseen tasks; schema-based methods improve generalization by decoupling language understanding from task logic, but rely on neural or generative models for schema parsing, lacking interpretability.
+**Background**: Task-oriented dialogue (TOD) systems need to generalize across different tasks. Data-driven approaches struggle to transfer to unseen tasks; schema-based methods improve generalization by decoupling language understanding from task logic, but rely on neural or generative models for schema parsing, lacking interpretability.
 
 **Limitations of Prior Work**: (1) Neural network-based schema methods are opaque, preventing users from understanding how schemas influence dialogue behavior; (2) Methods like AnyTOD achieve interpretability through programmatic implementation but require users to possess programming skills to manually write policy programs, raising technical barriers; (3) Interpretability is particularly critical in high-risk domains such as legal and medical applications.
 
-**Root Cause**: Existing TOD systems face a tradeoff between generalization capability and interpretability—neural methods have generalization but lack interpretability, while programmatic methods are interpretable but require programming expertise.
+**Key Challenge**: Existing TOD systems face a tradeoff between generalization capability and interpretability—neural methods have generalization but lack interpretability, while programmatic methods are interpretable but require programming expertise.
 
-**Paper Goals**: Design a TOD framework that requires neither training data nor manual programming, automatically converting dialogue flows into executable LLM guardrail programs to provide interpretable and controllable dialogue behavior at inference time.
+**Goal**: Design a TOD framework that requires neither training data nor manual programming, automatically converting dialogue flows into executable LLM guardrail programs to provide interpretable and controllable dialogue behavior at inference time.
 
-**Starting Point**: Reposition LLM guardrails as the foundation for defining TOD system behavior, leveraging LLM code generation capabilities to automatically convert dialogue flows into guardrail code.
+**Key Insight**: Reposition LLM guardrails as the foundation for defining TOD system behavior, leveraging LLM code generation capabilities to automatically convert dialogue flows into guardrail code.
 
 **Core Idea**: Dialogue flow → Heterogeneous graph (CHIEF) → Guardrail code (Colang) → Executable TOD system, with the entire pipeline automated and inherently interpretable.
 

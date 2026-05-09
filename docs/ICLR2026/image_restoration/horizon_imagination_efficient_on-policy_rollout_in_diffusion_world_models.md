@@ -28,15 +28,15 @@ This paper proposes Horizon Imagination (HI), which samples actions at an interm
 
 ## Background & Motivation
 
-**State of the Field**: World models learn environment dynamics to generate simulated data. Diffusion world models (e.g., DIAMOND) have attracted attention for their superior generation fidelity, but their multi-step denoising overhead is substantial.
+**Background**: World models learn environment dynamics to generate simulated data. Diffusion world models (e.g., DIAMOND) have attracted attention for their superior generation fidelity, but their multi-step denoising overhead is substantial.
 
 **Limitations of Prior Work**: On-policy imagination requires sampling actions from the current policy after each frame is generated, imposing a strictly sequential dependency that precludes exploitation of diffusion models' parallel denoising capabilities.
 
-**Root Cause**: Diffusion models offer high generation quality at significant computational cost, and the sequential nature of on-policy RL further amplifies this problem.
+**Key Challenge**: Diffusion models offer high generation quality at significant computational cost, and the sequential nature of on-policy RL further amplifies this problem.
 
-**Paper Goals**: Substantially reduce the computational overhead of diffusion world models while preserving the quality of on-policy imagination.
+**Goal**: Substantially reduce the computational overhead of diffusion world models while preserving the quality of on-policy imagination.
 
-**Starting Point**: The observation that actions can be sampled at intermediate denoising steps, embedding policy selection within the diffusion process.
+**Key Insight**: The observation that actions can be sampled at intermediate denoising steps, embedding policy selection within the diffusion process.
 
 **Core Idea**: Perform action sampling mid-denoising (rather than after completion), enabling the first half of multi-frame imagination's denoising to proceed fully in parallel.
 

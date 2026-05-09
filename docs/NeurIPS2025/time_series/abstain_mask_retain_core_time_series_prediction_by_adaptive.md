@@ -28,7 +28,7 @@ This paper reveals a counter-intuitive phenomenon in time series forecasting —
 
 ## Background & Motivation
 
-**State of the Field**: Mainstream time series forecasting models follow the "long-sequence information gain hypothesis," assuming that longer historical inputs provide richer temporal dependency information.
+**Background**: Mainstream time series forecasting models follow the "long-sequence information gain hypothesis," assuming that longer historical inputs provide richer temporal dependency information.
 
 **Limitations of Prior Work**: Experiments reveal a counter-intuitive phenomenon: appropriately truncating the input sequence (e.g., masking the first $k$ time steps) reduces prediction MSE on over 50% of samples. This indicates that existing models learn substantial redundant features (noise and irrelevant fluctuations) during training — features that not only fail to improve performance but actively interfere with the extraction of effective signals.
 

@@ -31,7 +31,7 @@ Under the online learning and regret minimization framework, this paper systemat
 
 ### Limitations of Prior Work
 
-**Limitations of Prior Work**: **State of the Field**: Uniform-price auctions and discriminatory auctions are the most widely used multi-unit auction mechanisms in electricity markets and treasury auctions. Both share identical allocation rules—goods are allocated to the highest bidders—differing only in their pricing rules.
+**Limitations of Prior Work**: **Background**: Uniform-price auctions and discriminatory auctions are the most widely used multi-unit auction mechanisms in electricity markets and treasury auctions. Both share identical allocation rules—goods are allocated to the highest bidders—differing only in their pricing rules.
 
 Traditional comparisons of these two auction formats focus on equilibrium analyses of efficiency, revenue, and social welfare. However, when auctions are repeated, participants can leverage online learning techniques to progressively optimize their strategies. This paper proposes a novel comparative perspective: **measuring the difficulty of learning to bid via regret**, thereby quantifying the intrinsic learning complexity differences between the two auction formats.
 

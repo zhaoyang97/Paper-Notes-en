@@ -27,15 +27,15 @@ This paper proposes the Adjoint Schrödinger Bridge Sampler (ASBS), which reinte
 
 ## Background & Motivation
 
-**State of the Field**: Sampling from the Boltzmann distribution $\nu(x) \propto e^{-E(x)}$ is a core problem in computational science (Bayesian inference, statistical physics, chemistry). Traditional MCMC methods suffer from slow mixing and expensive energy evaluations. Recent diffusion samplers learn an SDE drift $u_t^\theta$ to transport samples toward the target distribution.
+**Background**: Sampling from the Boltzmann distribution $\nu(x) \propto e^{-E(x)}$ is a core problem in computational science (Bayesian inference, statistical physics, chemistry). Traditional MCMC methods suffer from slow mixing and expensive energy evaluations. Recent diffusion samplers learn an SDE drift $u_t^\theta$ to transport samples toward the target distribution.
 
 **Limitations of Prior Work**: Since the Boltzmann distribution is only accessible through its unnormalized energy function without explicit samples, prior matching-based diffusion samplers (PDDS, iDEM) rely on importance-weighted estimation of target samples, incurring significant computational overhead. Adjoint Sampling (AS) avoids importance weights via Adjoint Matching, but is restricted by the memoryless condition—requiring the source distribution to be a Dirac delta $\mu(x) = \delta$.
 
-**Root Cause**: The memoryless condition excludes useful source distributions such as Gaussian and harmonic priors. While non-memoryless processes are known to improve transport efficiency, existing methods either require memorylessness or rely on expensive non-matching approaches.
+**Key Challenge**: The memoryless condition excludes useful source distributions such as Gaussian and harmonic priors. While non-memoryless processes are known to improve transport efficiency, existing methods either require memorylessness or rely on expensive non-matching approaches.
 
-**Paper Goals**: Learn a diffusion sampler using a scalable matching objective, without requiring the memoryless condition or importance weight estimation.
+**Goal**: Learn a diffusion sampler using a scalable matching objective, without requiring the memoryless condition or importance weight estimation.
 
-**Starting Point**: The optimality conditions of the Schrödinger Bridge problem are recast as an SOC problem, and a corrector function $\nabla \log \hat{\varphi}_1$ is introduced to eliminate the initial-value bias induced by non-memoryless source distributions.
+**Key Insight**: The optimality conditions of the Schrödinger Bridge problem are recast as an SOC problem, and a corrector function $\nabla \log \hat{\varphi}_1$ is introduced to eliminate the initial-value bias induced by non-memoryless source distributions.
 
 **Core Idea**: By alternately optimizing Adjoint Matching (learning drift $u$) and Corrector Matching (learning debiasing corrector $h$), the procedure is equivalent to the IPF algorithm and converges to the global optimum of the Schrödinger Bridge.
 

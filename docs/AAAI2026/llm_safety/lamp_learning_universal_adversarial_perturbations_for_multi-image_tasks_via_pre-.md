@@ -30,7 +30,7 @@ This paper proposes LAMP, a black-box Universal Adversarial Perturbation (UAP) l
 
 ### State of the Field
 
-**State of the Field**: Multimodal large language models (MLLMs) now support multi-image inputs (e.g., comparison, reasoning, temporal understanding), yet their adversarial robustness in such settings remains largely unexplored.
+**Background**: Multimodal large language models (MLLMs) now support multi-image inputs (e.g., comparison, reasoning, temporal understanding), yet their adversarial robustness in such settings remains largely unexplored.
 
 ### Limitations of Prior Work
 
@@ -38,11 +38,11 @@ This paper proposes LAMP, a black-box Universal Adversarial Perturbation (UAP) l
 
 ### Root Cause
 
-**Root Cause**: In real-world scenarios (e.g., images on social media processed by MLLMs), attackers cannot control the number or order of images received by the model. Existing single-image UAP methods therefore exhibit limited effectiveness in multi-image settings.
+**Key Challenge**: In real-world scenarios (e.g., images on social media processed by MLLMs), attackers cannot control the number or order of images received by the model. Existing single-image UAP methods therefore exhibit limited effectiveness in multi-image settings.
 
 ### Solution
 
-**Paper Goals**: How can one learn a small, fixed set of Universal Adversarial Perturbations under a black-box setting such that they effectively attack multi-image MLLMs, even when the attacker has no control over the number or order of images at inference time?
+**Goal**: How can one learn a small, fixed set of Universal Adversarial Perturbations under a black-box setting such that they effectively attack multi-image MLLMs, even when the attacker has no control over the number or order of images at inference time?
 
 ## Method
 

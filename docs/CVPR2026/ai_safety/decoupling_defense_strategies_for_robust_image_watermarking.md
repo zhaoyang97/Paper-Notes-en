@@ -29,7 +29,7 @@ AdvMark proposes a two-stage decoupled defense framework: Stage 1 Encoder Advers
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning image watermarking (DL watermarking) embeds information into images via an encoder and extracts it via a decoder, and has become a core technology for copyright protection and content tracing. Attack methods have escalated in recent years, forming a triple threat.
+**Background**: Deep learning image watermarking (DL watermarking) embeds information into images via an encoder and extracts it via a decoder, and has become a core technology for copyright protection and content tracing. Attack methods have escalated in recent years, forming a triple threat.
 
 **Triple Threat**:
 - **Adversarial Attack**: e.g., WEvade, which causes the decoder to extract incorrect information via imperceptible perturbations, with no visible change to the image.

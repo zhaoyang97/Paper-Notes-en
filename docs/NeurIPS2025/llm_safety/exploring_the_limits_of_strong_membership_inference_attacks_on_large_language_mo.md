@@ -29,18 +29,18 @@ This work presents the first extension of strong membership inference attacks (L
 
 ## Background & Motivation
 
-**State of the Field**: Membership inference attacks (MIAs) are a central methodology for evaluating privacy leakage in machine learning models. The strongest MIAs (e.g., LiRA) require training large numbers of reference models, which is computationally prohibitive at the scale of LLMs. As a result, prior work either employs **weak attacks** (which do not train reference models, such as fine-tuning attacks) or runs strong attacks on **small models**.
+**Background**: Membership inference attacks (MIAs) are a central methodology for evaluating privacy leakage in machine learning models. The strongest MIAs (e.g., LiRA) require training large numbers of reference models, which is computationally prohibitive at the scale of LLMs. As a result, prior work either employs **weak attacks** (which do not train reference models, such as fine-tuning attacks) or runs strong attacks on **small models**.
 
 **Limitations of Prior Work**:
    - Weak attacks have been shown to be **brittle** — often performing no better than random guessing
    - Insights from strong attacks on small models **do not generalize** to modern LLMs
    - The true performance ceiling of the strongest MIAs on pre-trained LLMs remains unknown
 
-**Root Cause**: Is the inefficacy of weak attacks caused by the absence of reference models, or does MIA face **fundamental difficulty** on LLMs? This question has not been answered.
+**Key Challenge**: Is the inefficacy of weak attacks caused by the absence of reference models, or does MIA face **fundamental difficulty** on LLMs? This question has not been answered.
 
-**Paper Goals**: Through large-scale computational investment, establish the first benchmark for strong MIAs on pre-trained LLMs and answer the above question.
+**Goal**: Through large-scale computational investment, establish the first benchmark for strong MIAs on pre-trained LLMs and answer the above question.
 
-**Starting Point**: Train 4,000+ GPT-2 reference models (10M to 1B parameters) using the C4 dataset (50M+ samples, three orders of magnitude larger than prior work), and systematically run LiRA attacks.
+**Key Insight**: Train 4,000+ GPT-2 reference models (10M to 1B parameters) using the C4 dataset (50M+ samples, three orders of magnitude larger than prior work), and systematically run LiRA attacks.
 
 **Core Idea**: Commit unprecedented computational resources to establish, for the first time, a performance baseline for strong MIAs at LLM scale, and introduce the *flip rate* metric to expose per-sample decision instability masked by aggregate metrics.
 

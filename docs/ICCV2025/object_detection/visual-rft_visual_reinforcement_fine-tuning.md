@@ -28,15 +28,15 @@ Visual-RFT extends the Reinforcement Learning with Verifiable Rewards (RLVR) par
 
 ## Background & Motivation
 
-**State of the Field**: OpenAI o1 and DeepSeek R1 have demonstrated the powerful capabilities of large reasoning models fine-tuned via Reinforcement Learning with Verifiable Rewards (RLVR). A key advantage of RFT is data efficiency—unlike SFT, which requires large amounts of high-quality annotated data, RFT learns through trial and error and can achieve strong domain-specific performance with minimal samples.
+**Background**: OpenAI o1 and DeepSeek R1 have demonstrated the powerful capabilities of large reasoning models fine-tuned via Reinforcement Learning with Verifiable Rewards (RLVR). A key advantage of RFT is data efficiency—unlike SFT, which requires large amounts of high-quality annotated data, RFT learns through trial and error and can achieve strong domain-specific performance with minimal samples.
 
 **Limitations of Prior Work**: The prevailing assumption is that RFT is applicable only to tasks with clearly verifiable answers (e.g., correctness of math solutions or code test cases). For visual perception tasks such as detection and classification, whose outputs are bounding box coordinates or category labels, designing verifiable rewards is non-trivial. Consequently, RL in LVLM post-training has primarily been used to reduce hallucinations rather than to improve visual perception.
 
-**Root Cause**: The SFT paradigm is data-hungry—it requires large amounts of high-quality labeled data to "imitate" correct answers. In data-scarce scenarios (e.g., medical imaging, rare species), SFT under few-shot conditions may even degrade performance.
+**Key Challenge**: The SFT paradigm is data-hungry—it requires large amounts of high-quality labeled data to "imitate" correct answers. In data-scarce scenarios (e.g., medical imaging, rare species), SFT under few-shot conditions may even degrade performance.
 
-**Paper Goals**: To demonstrate that RFT is extensible to visual perception tasks; to design verifiable reward functions for various visual tasks; and to surpass SFT under limited data conditions.
+**Goal**: To demonstrate that RFT is extensible to visual perception tasks; to design verifiable reward functions for various visual tasks; and to surpass SFT under limited data conditions.
 
-**Starting Point**: Although visual perception tasks differ from mathematics in output format, they share objective evaluation criteria—detection IoU and classification matching—which can serve as the basis for verifiable rewards.
+**Key Insight**: Although visual perception tasks differ from mathematics in output format, they share objective evaluation criteria—detection IoU and classification matching—which can serve as the basis for verifiable rewards.
 
 **Core Idea**: Design task-specific verifiable reward functions for visual perception tasks, transfer the R1-style RLVR paradigm to the visual domain, and enable data-efficient visual fine-tuning.
 

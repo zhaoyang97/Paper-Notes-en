@@ -29,15 +29,15 @@ This paper constructs the first benchmark for detecting LLM-generated classical 
 
 ## Background & Motivation
 
-**State of the Field**: LLM capabilities in text generation have extended to literary creation, including classical Chinese poetry. AI-generated poems have sparked widespread debates about creative authenticity and ethics on literary platforms, with multiple poetry journals publicly condemning unlabeled AI submissions.
+**Background**: LLM capabilities in text generation have extended to literary creation, including classical Chinese poetry. AI-generated poems have sparked widespread debates about creative authenticity and ethics on literary platforms, with multiple poetry journals publicly condemning unlabeled AI submissions.
 
 **Limitations of Prior Work**: Existing AI-generated text detection research primarily focuses on modern languages and contemporary genres, without addressing the special domain of classical Chinese poetry. General detection methods face three challenges in this domain: (1) Classical poetry has strict prosodic rules (tonal patterns, rhyme, parallelism), making it difficult for detectors to determine whether these patterns stem from human adherence to poetic tradition or AI imitation of learned patterns; (2) Classical poetry shares an extensive imagery system, causing significant vocabulary distribution overlap between human and AI; (3) Classical poetry employs flexible part-of-speech conversion and syntactic inversion, deviating from modern Chinese grammar and further increasing detection difficulty.
 
-**Root Cause**: The highly formalized constraints of classical poetry make AI-generated and human-created works highly similar in surface features, rendering traditional detection methods based on statistical features or language model perplexity ineffective.
+**Key Challenge**: The highly formalized constraints of classical poetry make AI-generated and human-created works highly similar in surface features, rendering traditional detection methods based on statistical features or language model perplexity ineffective.
 
-**Paper Goals**: Construct the first detection benchmark specifically targeting LLM-generated classical Chinese poetry, systematically evaluate the capability boundaries of existing detection methods, and provide data and experimental foundations for detection research in this domain.
+**Goal**: Construct the first detection benchmark specifically targeting LLM-generated classical Chinese poetry, systematically evaluate the capability boundaries of existing detection methods, and provide data and experimental foundations for detection research in this domain.
 
-**Starting Point**: Systematically evaluate detection methods along two dimensions: text granularity (single-poem vs. multi-poem) and generation strategy (direct generation vs. deliberative refinement), while exploring the dual role of LLMs as both generators and zero-shot detectors.
+**Key Insight**: Systematically evaluate detection methods along two dimensions: text granularity (single-poem vs. multi-poem) and generation strategy (direct generation vs. deliberative refinement), while exploring the dual role of LLMs as both generators and zero-shot detectors.
 
 **Core Idea**: The strict formal constraints of classical poetry effectively mask AI generation's statistical traces, rendering existing detectors nearly ineffective, necessitating dedicated benchmarks and methods.
 
@@ -165,15 +165,15 @@ This paper constructs the first detection benchmark for LLM-generated classical 
 
 ## Background & Motivation
 
-**State of the Field**: LLM capabilities in text generation have expanded to literary creation, including classical Chinese poetry. AI-generated poems have sparked widespread debates about creative authenticity and ethics on literary platforms, with multiple poetry journals publicly condemning unlabeled AI submissions.
+**Background**: LLM capabilities in text generation have expanded to literary creation, including classical Chinese poetry. AI-generated poems have sparked widespread debates about creative authenticity and ethics on literary platforms, with multiple poetry journals publicly condemning unlabeled AI submissions.
 
 **Limitations of Prior Work**: Existing AI-generated text detection research primarily focuses on modern languages and contemporary genres, without addressing the specialized domain of classical Chinese poetry. General detection methods face three challenges in this domain: (1) Classical poetry follows strict tonal and rhythmic rules (level/oblique tones, rhyme schemes, parallelism), making it difficult for detectors to determine whether these regularities stem from human poetic tradition or AI pattern mimicry; (2) Classical poetry shares extensive imagery systems, causing significant vocabulary overlap between human and AI; (3) Classical poetry features flexible part-of-speech conversion and inverted syntax, deviating from modern Chinese grammar and further increasing detection difficulty.
 
-**Root Cause**: The highly formalized constraints of classical poetry make AI-generated and human-created works highly similar in surface features, rendering traditional detection methods based on statistical features or language model perplexity ineffective.
+**Key Challenge**: The highly formalized constraints of classical poetry make AI-generated and human-created works highly similar in surface features, rendering traditional detection methods based on statistical features or language model perplexity ineffective.
 
-**Paper Goals**: Construct the first detection benchmark specifically targeting LLM-generated classical Chinese poetry, systematically evaluate capability boundaries of existing detection methods, and provide data and experimental foundations for future research.
+**Goal**: Construct the first detection benchmark specifically targeting LLM-generated classical Chinese poetry, systematically evaluate capability boundaries of existing detection methods, and provide data and experimental foundations for future research.
 
-**Starting Point**: Systematically evaluate detection methods along two dimensions—text granularity (single-poem vs. multi-poem) and generation strategy (direct generation vs. deliberation-refined)—while exploring LLMs' dual roles as generators and zero-shot detectors.
+**Key Insight**: Systematically evaluate detection methods along two dimensions—text granularity (single-poem vs. multi-poem) and generation strategy (direct generation vs. deliberation-refined)—while exploring LLMs' dual roles as generators and zero-shot detectors.
 
 **Core Idea**: The strict formal constraints of classical poetry effectively mask AI-generated statistical traces, rendering existing detectors nearly ineffective. Dedicated benchmarks and methods are needed.
 

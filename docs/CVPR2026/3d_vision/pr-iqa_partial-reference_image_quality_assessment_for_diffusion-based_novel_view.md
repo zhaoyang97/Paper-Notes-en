@@ -29,15 +29,15 @@ This paper proposes PR-IQA, a cross-reference image quality assessment method th
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models are increasingly important for sparse-view novel view synthesis (NVS)—they can generate pseudo-ground-truth images to compensate for missing viewpoints in 3D reconstruction pipelines such as 3DGS. However, diffusion-generated images frequently contain photometric and geometric inconsistencies, and using them directly as supervision degrades reconstruction quality.
+**Background**: Diffusion models are increasingly important for sparse-view novel view synthesis (NVS)—they can generate pseudo-ground-truth images to compensate for missing viewpoints in 3D reconstruction pipelines such as 3DGS. However, diffusion-generated images frequently contain photometric and geometric inconsistencies, and using them directly as supervision degrades reconstruction quality.
 
 **Limitations of Prior Work**: Full-reference IQA (FR-IQA, e.g., PSNR/SSIM/LPIPS) requires pixel-aligned ground-truth images, which are unavailable in NVS settings. No-reference IQA (NR-IQA) requires no reference but struggles to capture high-level geometric inconsistencies in diffusion-generated images. Cross-reference IQA (CR-IQA) leverages reference images from different poses, but existing methods either perform only patch-level similarity matching (e.g., CrossScore using SSIM) without semantic understanding, or are effective only in overlapping regions (e.g., MEt3R), leaving evaluation blind spots.
 
-**Root Cause**: CR-IQA faces a dilemma—geometrically aligned overlapping regions yield reliable quality estimates, whereas non-overlapping regions cannot be directly evaluated. Simple patch-similarity methods do not require overlap but are low in accuracy; geometry-consistent methods are accurate but lack full coverage.
+**Key Challenge**: CR-IQA faces a dilemma—geometrically aligned overlapping regions yield reliable quality estimates, whereas non-overlapping regions cannot be directly evaluated. Simple patch-similarity methods do not require overlap but are low in accuracy; geometry-consistent methods are accurate but lack full coverage.
 
-**Paper Goals**: Design a CR-IQA method that simultaneously exploits the geometric reliability of overlapping regions and the contextual reasoning capability for non-overlapping regions, producing dense quality maps over the entire image.
+**Goal**: Design a CR-IQA method that simultaneously exploits the geometric reliability of overlapping regions and the contextual reasoning capability for non-overlapping regions, producing dense quality maps over the entire image.
 
-**Starting Point**: The quality assessment of non-overlapping regions is reformulated as a "quality map completion" problem—analogous to image inpainting, but completing quality scores rather than pixel values. Cross-view context provided by reference images guides the completion process.
+**Key Insight**: The quality assessment of non-overlapping regions is reformulated as a "quality map completion" problem—analogous to image inpainting, but completing quality scores rather than pixel values. Cross-view context provided by reference images guides the completion process.
 
 **Core Idea**: Reliable local quality maps are first computed in overlapping regions, then a reference-conditioned cross-attention network completes the local quality into a full-image dense quality map, achieving full-reference-level accuracy without ground-truth images.
 

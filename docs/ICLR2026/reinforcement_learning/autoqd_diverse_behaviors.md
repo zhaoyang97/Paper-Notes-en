@@ -28,15 +28,15 @@ This paper proposes AutoQD, which automatically generates behavior descriptors b
 
 ## Background & Motivation
 
-1. **State of the Field**: Quality-Diversity (QD) optimization aims to find collections of policies that are both high-performing and behaviorally diverse, with demonstrated success in robotic locomotion and game content generation.
+1. **Background**: Quality-Diversity (QD) optimization aims to find collections of policies that are both high-performing and behaviorally diverse, with demonstrated success in robotic locomotion and game content generation.
 
 2. **Limitations of Prior Work**: QD algorithms rely heavily on manually designed behavior descriptors (e.g., foot contact patterns for bipedal robots), requiring substantial domain expertise, and predefined diversity dimensions may miss interesting behavioral variants.
 
-3. **Root Cause**: Existing unsupervised QD methods (e.g., AURORA) learn behavior spaces via autoencoder-based state reconstruction but lack a theoretical connection to policy behavior. Skill discovery methods in RL (e.g., DIAYN) require a preset number of skills and do not optimize task reward.
+3. **Key Challenge**: Existing unsupervised QD methods (e.g., AURORA) learn behavior spaces via autoencoder-based state reconstruction but lack a theoretical connection to policy behavior. Skill discovery methods in RL (e.g., DIAYN) require a preset number of skills and do not optimize task reward.
 
-4. **Paper Goals**: Provide a theoretically grounded method for automatically generating behavior descriptors without domain knowledge or a predefined number of skills.
+4. **Goal**: Provide a theoretically grounded method for automatically generating behavior descriptors without domain knowledge or a predefined number of skills.
 
-5. **Starting Point**: Under standard assumptions, there is a bijection between a policy and its occupancy measure; thus the occupancy measure is a complete characterization of policy behavior.
+5. **Key Insight**: Under standard assumptions, there is a bijection between a policy and its occupancy measure; thus the occupancy measure is a complete characterization of policy behavior.
 
 6. **Core Idea**: Embed occupancy measures using random Fourier features so that embedding distances approximate the MMD distance, then apply PCA to obtain low-dimensional behavior descriptors.
 

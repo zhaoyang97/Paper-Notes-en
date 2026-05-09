@@ -28,15 +28,15 @@ GLINT decomposes Gaussian representations into three components — interface, t
 
 ## Background & Motivation
 
-**State of the Field**: 3D Gaussian Splatting (3DGS) has become the dominant paradigm for 3D reconstruction, owing to its real-time rendering capability and high visual fidelity. Subsequent works have improved geometric accuracy (e.g., 2DGS, PGSR with planar Gaussian constraints) and non-Lambertian appearance modeling (e.g., GaussianShader, EnvGS with reflection decomposition).
+**Background**: 3D Gaussian Splatting (3DGS) has become the dominant paradigm for 3D reconstruction, owing to its real-time rendering capability and high visual fidelity. Subsequent works have improved geometric accuracy (e.g., 2DGS, PGSR with planar Gaussian constraints) and non-Lambertian appearance modeling (e.g., GaussianShader, EnvGS with reflection decomposition).
 
 **Limitations of Prior Work**: The core alpha-blending mechanism of 3DGS is fundamentally incapable of handling transparent surfaces. In transparent scenes — such as architectural glass, display cabinets, and windows — a single pixel receives superimposed radiance from both reflected and transmitted components originating at different physical locations. To render realistic transmission, Gaussians positioned at glass surfaces must be assigned very low opacity or be pruned, which causes the loss of geometric information for the glass. Conversely, high opacity treats the glass as an opaque occluder, blocking background transmission. This constitutes the "transparency–depth dilemma."
 
-**Root Cause**: Alpha-blending couples geometry and appearance within a single compositing stream — the same opacity parameter simultaneously governs geometric presence and radiance contribution, which is fundamentally contradictory for transparent objects (geometrically present, yet optically transmissive).
+**Key Challenge**: Alpha-blending couples geometry and appearance within a single compositing stream — the same opacity parameter simultaneously governs geometric presence and radiance contribution, which is fundamentally contradictory for transparent objects (geometrically present, yet optically transmissive).
 
-**Paper Goals**: (1) How to decouple the geometry and appearance of transparent surfaces within the Gaussian splatting framework? (2) How to jointly reconstruct transmitted and reflected radiance without manual segmentation masks? (3) How to scale to scene-level complex transparent structures?
+**Goal**: (1) How to decouple the geometry and appearance of transparent surfaces within the Gaussian splatting framework? (2) How to jointly reconstruct transmitted and reflected radiance without manual segmentation masks? (3) How to scale to scene-level complex transparent structures?
 
-**Starting Point**: Existing methods are either object-centric and require segmentation masks (TransparentGS, TSGS), or handle only reflection without transmission (EnvGS, DeferredGS). The authors propose explicitly decomposing the scene into three functional sets: the first-visible interface, transmission geometry, and reflective environment, each represented and optimized by an independent Gaussian set.
+**Key Insight**: Existing methods are either object-centric and require segmentation masks (TransparentGS, TSGS), or handle only reflection without transmission (EnvGS, DeferredGS). The authors propose explicitly decomposing the scene into three functional sets: the first-visible interface, transmission geometry, and reflective environment, each represented and optimized by an independent Gaussian set.
 
 **Core Idea**: Decompose the Gaussian splatting representation into interface/transmission/reflection components, and implement physically consistent transparent radiance transport via a hybrid rasterization+ray-tracing pipeline.
 

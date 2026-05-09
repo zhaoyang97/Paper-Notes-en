@@ -29,15 +29,15 @@ This paper proposes STEP-HRL, which introduces a local progress module to iterat
 
 ## Background & Motivation
 
-**State of the Field**: LLM agents have demonstrated strong capabilities in interactive decision-making tasks. Reinforcement learning provides a principled mechanism for improving agents through environment interaction and reward feedback. Existing LLM agents predominantly adopt a "history-conditioned" paradigm, where policies condition on ever-growing historical sequences.
+**Background**: LLM agents have demonstrated strong capabilities in interactive decision-making tasks. Reinforcement learning provides a principled mechanism for improving agents through environment interaction and reward feedback. Existing LLM agents predominantly adopt a "history-conditioned" paradigm, where policies condition on ever-growing historical sequences.
 
 **Limitations of Prior Work**: (1) The quadratic complexity of attention mechanisms makes reasoning over long histories computationally expensive; (2) unfiltered history accumulates redundant or irrelevant information that may obscure decision-critical signals; (3) existing HRL methods introduce temporal abstraction but still condition both high- and low-level policies on cumulative histories, inheriting the long-context dependency problem.
 
-**Root Cause**: History conditioning is a modeling choice rather than a necessity of RL — conflating long-horizon decision-making with long-context reasoning introduces unnecessary computational overhead and reasoning noise.
+**Key Challenge**: History conditioning is a modeling choice rather than a necessity of RL — conflating long-horizon decision-making with long-context reasoning introduces unnecessary computational overhead and reasoning noise.
 
-**Paper Goals**: Design a progress-based rather than history-based HRL framework in which policies rely solely on single-step transitions for decision-making.
+**Goal**: Design a progress-based rather than history-based HRL framework in which policies rely solely on single-step transitions for decision-making.
 
-**Starting Point**: The sequence of completed subtasks naturally constitutes a compact summary of global progress; the remaining challenge is how to compactly represent the local interaction history within each subtask.
+**Key Insight**: The sequence of completed subtasks naturally constitutes a compact summary of global progress; the remaining challenge is how to compactly represent the local interaction history within each subtask.
 
 **Core Idea**: Introduce a local progress policy $\pi_\theta^p$ that iteratively compresses the intra-subtask interaction history into a compact textual representation at each step. The low-level policy conditions only on the current subtask, local progress, and current observation, eliminating dependence on the full history.
 

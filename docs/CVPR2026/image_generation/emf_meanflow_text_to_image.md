@@ -29,15 +29,15 @@ This work is the first to extend the MeanFlow framework from class-label conditi
 
 ## Background & Motivation
 
-**State of the Field**: MeanFlow is a theoretically grounded flow matching acceleration method that learns the mean velocity field between two time points to enable one-step generation, achieving results on par with standard multi-step models for ImageNet class-conditional generation. Subsequent works improving training strategies and architectures have also focused primarily on the class-conditional setting.
+**Background**: MeanFlow is a theoretically grounded flow matching acceleration method that learns the mean velocity field between two time points to enable one-step generation, achieving results on par with standard multi-step models for ImageNet class-conditional generation. Subsequent works improving training strategies and architectures have also focused primarily on the class-conditional setting.
 
 **Limitations of Prior Work**: Extending MeanFlow from discrete class labels to flexible text inputs appears straightforward but is in practice highly non-trivial. Naively plugging an LLM-based text encoder into the MeanFlow framework with standard training strategies yields disappointing results. The numerical stability of the JVP term has repeatedly been identified as the primary bottleneck for scaling consistency-type methods to large-scale T2I generation.
 
-**Root Cause**: Class labels are discrete and easily distinguishable conditioning signals, whereas text conditions are continuous and semantically complex. Under extremely few-step (e.g., one-step) inference, the model has almost no opportunity to correct semantic errors through iterative denoising, imposing stringent quality requirements on the conditioning signal.
+**Key Challenge**: Class labels are discrete and easily distinguishable conditioning signals, whereas text conditions are continuous and semantically complex. Under extremely few-step (e.g., one-step) inference, the model has almost no opportunity to correct semantic errors through iterative denoising, imposing stringent quality requirements on the conditioning signal.
 
-**Paper Goals**: (1) Understand why certain text encoders fail in the few-step setting; (2) Identify key properties that high-quality text representations must possess; (3) Leverage these findings to build the first effective text-conditioned MeanFlow generation model.
+**Goal**: (1) Understand why certain text encoders fail in the few-step setting; (2) Identify key properties that high-quality text representations must possess; (3) Leverage these findings to build the first effective text-conditioned MeanFlow generation model.
 
-**Starting Point**: The authors compare different text encoders under limited inference steps, finding that the BLIP3o-NEXT encoder maintains basic semantic integrity even at one step, whereas the SANA-1.5 encoder exhibits severe semantic degradation in the few-step regime.
+**Key Insight**: The authors compare different text encoders under limited inference steps, finding that the BLIP3o-NEXT encoder maintains basic semantic integrity even at one step, whereas the SANA-1.5 encoder exhibits severe semantic degradation in the few-step regime.
 
 **Core Idea**: High-quality text representations require two essential properties — *discriminability* (distinguishing fine-grained semantic differences) and *disentanglement* (preserving the linguistic structure of text). Only encoders with both properties can construct reliable velocity field directions, enabling few-step or even one-step generation.
 

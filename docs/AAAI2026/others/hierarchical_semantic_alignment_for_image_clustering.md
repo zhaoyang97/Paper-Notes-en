@@ -27,15 +27,15 @@ By combining two complementary semantic sources — noun-level (WordNet) and cap
 
 ## Background & Motivation
 
-**State of the Field**: Image clustering has evolved from contrastive learning and self-supervised methods toward leveraging external textual semantics. SIC employs WordNet nouns, while TAC combines noun embeddings with image embeddings.
+**Background**: Image clustering has evolved from contrastive learning and self-supervised methods toward leveraging external textual semantics. SIC employs WordNet nouns, while TAC combines noun embeddings with image embeddings.
 
 **Limitations of Prior Work**: Relying solely on nouns introduces two problems — polysemy (e.g., "crane" can refer to a bird or a machine) and insufficient granularity (e.g., "spaniel" cannot distinguish between different dog breeds).
 
-**Root Cause**: Nouns provide high-level category information but lack attribute-level detail; a single semantic type is insufficient for disambiguation.
+**Key Challenge**: Nouns provide high-level category information but lack attribute-level detail; a single semantic type is insufficient for disambiguation.
 
-**Paper Goals**: Construct a more precise external semantic space to guide image clustering.
+**Goal**: Construct a more precise external semantic space to guide image clustering.
 
-**Starting Point**: Nouns (categories) and captions (attributes) are complementary — nouns encode "what it is," while captions encode "what it looks like."
+**Key Insight**: Nouns (categories) and captions (attributes) are complementary — nouns encode "what it is," while captions encode "what it looks like."
 
 **Core Idea**: Combine WordNet nouns and Flickr captions, construct a dual semantic space via OT alignment, and adaptively fuse the two sources.
 

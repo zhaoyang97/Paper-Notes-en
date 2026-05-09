@@ -28,17 +28,17 @@ Shuffle-R1 is proposed as an RL training framework that addresses two key effici
 
 ## Background & Motivation
 
-**State of the Field**: Reinforcement learning (RL) has become the dominant post-training paradigm for enhancing reasoning capabilities in LLMs and MLLMs. Works such as DeepSeek-R1 leverage verifiable outcome reward signals and have achieved notable progress in mathematical reasoning and code generation. RL has also been extended to multimodal settings, encompassing visual reasoning, object detection, and video understanding.
+**Background**: Reinforcement learning (RL) has become the dominant post-training paradigm for enhancing reasoning capabilities in LLMs and MLLMs. Works such as DeepSeek-R1 leverage verifiable outcome reward signals and have achieved notable progress in mathematical reasoning and code generation. RL has also been extended to multimodal settings, encompassing visual reasoning, object detection, and video understanding.
 
 **Limitations of Prior Work**: Two overlooked efficiency issues exist in current RL training pipelines:
    - **Advantage Collapsing**: The advantage values of most rollouts within a batch concentrate near zero, resulting in extremely weak gradient signals; informative trajectories are drowned out by a large number of uninformative ones.
    - **Rollout Silencing**: As training progresses, the proportion of rollouts contributing non-zero gradients continuously declines (easy questions have converged while hard questions remain unsolved), leading to wasted computation.
 
-**Root Cause**: The static sampling paradigm treats all trajectories equally and cannot distinguish which data warrants parameter updates. Increasing the number of rollouts partially alleviates the issue but incurs linearly growing computational cost without addressing the root cause.
+**Key Challenge**: The static sampling paradigm treats all trajectories equally and cannot distinguish which data warrants parameter updates. Increasing the number of rollouts partially alleviates the issue but incurs linearly growing computational cost without addressing the root cause.
 
-**Paper Goals**: To dynamically filter informative trajectories and optimize batch composition without significantly increasing computational overhead, thereby improving gradient signal quality and computational efficiency during RL training.
+**Goal**: To dynamically filter informative trajectories and optimize batch composition without significantly increasing computational overhead, thereby improving gradient signal quality and computational efficiency during RL training.
 
-**Starting Point**: Approaching the problem from the data side, the framework shifts the focus of RL training from "how to update" to "what data to update with," designing adaptive trajectory selection and batch reorganization mechanisms.
+**Key Insight**: Approaching the problem from the data side, the framework shifts the focus of RL training from "how to update" to "what data to update with," designing adaptive trajectory selection and batch reorganization mechanisms.
 
 **Core Idea**: High-contrast trajectory pairs are selected via pairwise sampling, and training batches are reshuffled according to advantage values to amplify critical signals, realizing dynamic data priority scheduling.
 

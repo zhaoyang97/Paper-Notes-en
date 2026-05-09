@@ -28,15 +28,15 @@ This paper introduces FeatureBench—a benchmark for feature-level software deve
 
 ## Background & Motivation
 
-**State of the Field**: LLM-driven coding agents (Claude Code, Qwen Code, etc.) are transitioning from assistive tools to autonomous developers. SWE-bench is the most widely used evaluation benchmark, but resolution rates have rapidly risen from <10% to >70%, leaving it with insufficient discriminative power.
+**Background**: LLM-driven coding agents (Claude Code, Qwen Code, etc.) are transitioning from assistive tools to autonomous developers. SWE-bench is the most widely used evaluation benchmark, but resolution rates have rapidly risen from <10% to >70%, leaving it with insufficient discriminative power.
 
 **Limitations of Prior Work**: (a) SWE-bench focuses predominantly on single-PR bug fixes (78–82% of tasks), averaging only 32.8 lines of code across 1.7 files—far from representative of real-world feature development complexity; (b) feature development typically spans multiple PRs distributed across a project timeline, which PR-based collection methods cannot fully capture; (c) many benchmarks rely on manual annotation or cannot be automatically scaled and updated.
 
-**Root Cause**: Agents are approaching saturation on bug fixing, yet the core of real-world software development is feature implementation—requiring global architectural understanding, cross-file dependency management, and substantial code generation. This capability is entirely unaddressed by existing benchmarks.
+**Key Challenge**: Agents are approaching saturation on bug fixing, yet the core of real-world software development is feature implementation—requiring global architectural understanding, cross-file dependency management, and substantial code generation. This capability is entirely unaddressed by existing benchmarks.
 
-**Paper Goals**: (a) Construct a benchmark targeting feature-level development; (b) provide an automated, scalable task collection toolkit; (c) ensure execution-based evaluation (rather than LLM-as-judge).
+**Goal**: (a) Construct a benchmark targeting feature-level development; (b) provide an automated, scalable task collection toolkit; (c) ensure execution-based evaluation (rather than LLM-as-judge).
 
-**Starting Point**: Reverse-tracing from unit tests—by executing F2P tests and dynamically tracking the dependency graph, the framework automatically identifies feature-related code and extracts it from the codebase as the portion to be implemented.
+**Key Insight**: Reverse-tracing from unit tests—by executing F2P tests and dynamically tracking the dependency graph, the framework automatically identifies feature-related code and extracts it from the codebase as the portion to be implemented.
 
 **Core Idea**: Test-driven feature extraction—starting from unit tests, the runtime dependency graph is traced to automatically isolate complete feature implementations from the repository as tasks for the agent to complete.
 

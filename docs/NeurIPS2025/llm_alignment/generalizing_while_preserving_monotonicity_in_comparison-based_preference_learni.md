@@ -33,9 +33,9 @@ Preference learning (e.g., RLHF, DPO) is fundamental to LLM alignment, yet these
 
 A minimal example illustrates this: given a linear model $\beta \in \mathbb{R}^2$ and item embeddings $x_a=(1,0)$, $x_b=(2,0)$, the comparison $a \succ b$ pushes $\beta_1$ downward (since $x_{a1} < x_{b1}$), which in turn lowers $a$'s score $\beta^T x_a = \beta_1$. More critically, the score of a third item $c$ with embedding $(0,1)$ is entirely unaffected.
 
-- **State of the Field**: Classical **(Generalized) Bradley-Terry (GBT)** models guarantee monotonicity but cannot generalize—items never compared always receive a score of zero. Linear/nonlinear models with embeddings (including RLHF/DPO) can generalize but **cannot guarantee monotonicity**.
-- **Root Cause**: The tension between expressivity through embeddings and the structural constraints required for monotonicity.
-- **Paper Goals**: Design a preference learning algorithm that achieves both generalization and monotonicity.
+- **Background**: Classical **(Generalized) Bradley-Terry (GBT)** models guarantee monotonicity but cannot generalize—items never compared always receive a score of zero. Linear/nonlinear models with embeddings (including RLHF/DPO) can generalize but **cannot guarantee monotonicity**.
+- **Key Challenge**: The tension between expressivity through embeddings and the structural constraints required for monotonicity.
+- **Goal**: Design a preference learning algorithm that achieves both generalization and monotonicity.
 
 ## Method
 

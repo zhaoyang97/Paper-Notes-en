@@ -27,11 +27,11 @@ content_hash: 4b14b1dff2a904cc
 This paper identifies the "identity crisis" in text-to-image models for multi-person scene generation — manifesting as duplicated faces and identity merging — and proposes the DisCo framework. By combining a compositional reward function with GRPO-based reinforcement learning fine-tuning of a flow-matching model, DisCo achieves 98.6% unique face accuracy, surpassing closed-source models including GPT-Image-1.
 
 ## Background & Motivation
-1. **State of the Field**: Current text-to-image models (e.g., FLUX, SD3.5) achieve high quality in single-person generation but exhibit severe deficiencies in multi-person scenes.
+1. **Background**: Current text-to-image models (e.g., FLUX, SD3.5) achieve high quality in single-person generation but exhibit severe deficiencies in multi-person scenes.
 2. **Limitations of Prior Work**: Multi-person generation frequently suffers from three problems — duplicated faces (different individuals sharing the same face), identity merging (features of multiple people conflated), and incorrect person counts (number of generated persons mismatching the prompt). Identity differentiation remains insufficient even when overall image quality is high.
-3. **Root Cause**: Existing methods and RL fine-tuning works primarily optimize for aesthetics, text alignment, and human preference, without explicitly optimizing identity diversity — especially cross-sample identity diversity.
-4. **Paper Goals**: (a) intra-image identity repetition; (b) cross-sample identity repetition; (c) person count accuracy; (d) preservation of image quality.
-5. **Starting Point**: The authors find that optimizing only intra-image diversity leads to "global diversity collapse" — repeated identities migrate from within a single image to across different images. This key finding motivates the design of group-level rewards.
+3. **Key Challenge**: Existing methods and RL fine-tuning works primarily optimize for aesthetics, text alignment, and human preference, without explicitly optimizing identity diversity — especially cross-sample identity diversity.
+4. **Goal**: (a) intra-image identity repetition; (b) cross-sample identity repetition; (c) person count accuracy; (d) preservation of image quality.
+5. **Key Insight**: The authors find that optimizing only intra-image diversity leads to "global diversity collapse" — repeated identities migrate from within a single image to across different images. This key finding motivates the design of group-level rewards.
 6. **Core Idea**: The identity crisis in multi-person generation is addressed through the GRPO reinforcement learning framework and a carefully designed four-component compositional reward (intra-image diversity + cross-sample diversity + count control + quality preservation), requiring no ground-truth data annotation.
 
 ## Method

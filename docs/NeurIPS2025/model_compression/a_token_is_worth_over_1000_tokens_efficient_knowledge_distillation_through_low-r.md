@@ -28,13 +28,13 @@ This paper proposes Low-Rank Clone (LRC), which compresses teacher weights into 
 
 ## Background & Motivation
 
-**State of the Field**: Training high-performance small language models (SLMs) remains extremely costly; for instance, Llama-3.2-3B requires 9T tokens and Qwen3-1.7B requires 36T tokens. Knowledge distillation is a key approach to accelerating this process.
+**Background**: Training high-performance small language models (SLMs) remains extremely costly; for instance, Llama-3.2-3B requires 9T tokens and Qwen3-1.7B requires 36T tokens. Knowledge distillation is a key approach to accelerating this process.
 
 **Limitations of Prior Work**: (a) **Information loss**: Hard pruning permanently removes neurons/layers, discarding valuable information from the teacher (LLM-Pruner drops from 63.25 to 48.98 after 50% pruning); (b) **Inefficient alignment**: Feature-based distillation requires additional projection matrices to align intermediate representations of different dimensions, which are difficult to learn effectively during training; (c) **Wasted activations**: Existing methods primarily align attention scores while neglecting the information-rich FFN activations.
 
-**Root Cause**: How to maximize knowledge transfer from teacher to student under an extremely limited training budget?
+**Key Challenge**: How to maximize knowledge transfer from teacher to student under an extremely limited training budget?
 
-**Starting Point**: Rather than training the student's original weights directly, the method trains a set of low-rank projection matrices that temporarily generate student weights from teacher weights at each forward pass.
+**Key Insight**: Rather than training the student's original weights directly, the method trains a set of low-rank projection matrices that temporarily generate student weights from teacher weights at each forward pass.
 
 **Core Idea**: Low-rank projection matrices simultaneously achieve soft pruning (weight compression) and alignment (the same matrices both generate weights and align activations), thereby eliminating information loss and alignment overhead.
 

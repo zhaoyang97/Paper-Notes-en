@@ -29,15 +29,15 @@ This paper systematically analyzes, from both theoretical (SNR attenuation, mutu
 
 ## Background & Motivation
 
-**State of the Field**: Robust invisible watermarking constitutes a core infrastructure for copyright protection and content provenance. Deep learning watermarking systems (StegaStamp, TrustMark, VINE) achieve 99%+ bit accuracy under conventional post-processing through end-to-end training with differentiable noise layers (JPEG, scaling, cropping).
+**Background**: Robust invisible watermarking constitutes a core infrastructure for copyright protection and content provenance. Deep learning watermarking systems (StegaStamp, TrustMark, VINE) achieve 99%+ bit accuracy under conventional post-processing through end-to-end training with differentiable noise layers (JPEG, scaling, cropping).
 
 **Limitations of Prior Work**: Diffusion-based editing methods (InstructPix2Pix, DragDiffusion, TF-ICON, etc.) introduce fundamentally different image transformations—injecting substantial Gaussian noise and then progressively denoising via powerful generative priors. Watermarks, being low-amplitude structured perturbations, are treated by the denoiser as "unnatural residuals" and removed, even when the user has no intention of erasing them.
 
-**Root Cause**: Watermarking requires signals to persist in the pixel or frequency domain, yet the core mechanism of diffusion denoising is precisely to contract perturbations that deviate from the natural image manifold—a fundamental information-theoretic conflict.
+**Key Challenge**: Watermarking requires signals to persist in the pixel or frequency domain, yet the core mechanism of diffusion denoising is precisely to contract perturbations that deviate from the natural image manifold—a fundamental information-theoretic conflict.
 
-**Paper Goals**: Under what conditions does non-adversarial diffusion editing inadvertently destroy robust watermark recovery, and what are the underlying theoretical mechanisms?
+**Goal**: Under what conditions does non-adversarial diffusion editing inadvertently destroy robust watermark recovery, and what are the underlying theoretical mechanisms?
 
-**Starting Point**: Diffusion editing is modeled as a Markov kernel, and a closed-loop theoretical explanation is established across four levels—SNR attenuation → mutual information lower bound → Fano's inequality → denoising contraction—complemented by a standardized DEW-ST evaluation protocol.
+**Key Insight**: Diffusion editing is modeled as a Markov kernel, and a closed-loop theoretical explanation is established across four levels—SNR attenuation → mutual information lower bound → Fano's inequality → denoising contraction—complemented by a standardized DEW-ST evaluation protocol.
 
 **Core Idea**: Diffusion editing acts as an information bottleneck: it exponentially attenuates watermark SNR during forward noising and contracts watermark residuals deviating from the manifold during reverse denoising, rendering recovery information-theoretically impossible.
 

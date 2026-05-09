@@ -28,15 +28,15 @@ This paper proposes treating action duration as an additional optimization varia
 
 ## Background & Motivation
 
-**State of the Field**: Continuous systems are commonly approximated in discrete time, where a small simulation step $\delta_t$ requires a long planning horizon $D$, imposing substantial computational burden on CEM/MPPI.
+**Background**: Continuous systems are commonly approximated in discrete time, where a small simulation step $\delta_t$ requires a long planning horizon $D$, imposing substantial computational burden on CEM/MPPI.
 
 **Limitations of Prior Work**: The optimal frame-skip value varies across environments. While model-free RL has explored learning frame-skip, this problem remains unaddressed in planning and MBRL. Long rollouts also exacerbate compounding errors.
 
-**Root Cause**: Small $\delta_t$ ensures accuracy but enlarges the search space; large frame-skip reduces search complexity but sacrifices flexibility.
+**Key Challenge**: Small $\delta_t$ ensures accuracy but enlarges the search space; large frame-skip reduces search complexity but sacrifices flexibility.
 
-**Paper Goals**: Enable the planner to jointly optimize actions and duration $\delta t_k \in [\delta t_{\min}, \delta t_{\max}]$ at each step.
+**Goal**: Enable the planner to jointly optimize actions and duration $\delta t_k \in [\delta t_{\min}, \delta t_{\max}]$ at each step.
 
-**Starting Point**: Treat $\delta t$ as a continuous optimization variable, with MAB automatically selecting $\delta t_{\max}$.
+**Key Insight**: Treat $\delta t$ as a continuous optimization variable, with MAB automatically selecting $\delta t_{\max}$.
 
 **Core Idea**: Action duration as a planner optimization variable, combined with a learned temporally-extended dynamics model and MAB-based automatic range selection.
 

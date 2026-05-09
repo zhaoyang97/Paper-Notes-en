@@ -28,15 +28,15 @@ This paper proposes a Decomposition-then-Evaluation paradigm and the EVIAN frame
 
 ## Background & Motivation
 
-**State of the Field**: Large Vision-Language Models (LVLMs) rely on Visual Instruction Tuning (VIT) to align visual perception with language understanding, yet the quality of training data varies considerably.
+**Background**: Large Vision-Language Models (LVLMs) rely on Visual Instruction Tuning (VIT) to align visual perception with language understanding, yet the quality of training data varies considerably.
 
 **Limitations of Prior Work**: (1) Large-scale data synthesis (e.g., LLaVA-Instruct-150K) improves instruction following but introduces noise; (2) existing filtering methods (e.g., CLIP score) employ coarse-grained, single-dimensional scoring that cannot detect subtle semantic defects such as logical fallacies and factual errors; (3) the LLM-as-a-Judge paradigm suffers from bias, instability, and reasoning shortcuts.
 
-**Root Cause**: Existing data filtering compresses multiple error types into a single opaque score, making it impossible to distinguish between visual misrepresentation, factual inaccuracy, and reasoning defects.
+**Key Challenge**: Existing data filtering compresses multiple error types into a single opaque score, making it impossible to distinguish between visual misrepresentation, factual inaccuracy, and reasoning defects.
 
-**Paper Goals**: To construct an explainable, fine-grained data auditing framework that decomposes responses into verifiable cognitive components for multi-dimensional evaluation.
+**Goal**: To construct an explainable, fine-grained data auditing framework that decomposes responses into verifiable cognitive components for multi-dimensional evaluation.
 
-**Starting Point**: Responses are treated as composite structures consisting of visual descriptions, subjective reasoning, and factual claims, rather than indivisible text blocks.
+**Key Insight**: Responses are treated as composite structures consisting of visual descriptions, subjective reasoning, and factual claims, rather than indivisible text blocks.
 
 **Core Idea**: By decomposing the complex auditing task into verifiable sub-tasks targeting distinct cognitive components, data quality assessment can be made more precise than coarse-grained scoring, with logical coherence identified as the most critical factor in data quality.
 

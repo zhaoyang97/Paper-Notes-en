@@ -29,15 +29,15 @@ This paper formulates open-set future scene dynamics prediction as stepwise reas
 
 ## Background & Motivation
 
-**State of the Field**: Most future prediction methods rely on dense video or latent-space prediction, expending substantial model capacity on appearance rather than underlying motion trajectories, making large-scale exploration of future hypotheses computationally prohibitive.
+**Background**: Most future prediction methods rely on dense video or latent-space prediction, expending substantial model capacity on appearance rather than underlying motion trajectories, making large-scale exploration of future hypotheses computationally prohibitive.
 
 **Limitations of Prior Work**: (1) Dense video generation methods incur a "visual tax" — every pixel must be rendered before motion can be reasoned about; (2) single-step prediction methods fail in long-horizon scenarios involving multiple contacts; (3) physics engine methods cannot generalize to open-set motion.
 
-**Root Cause**: Real-world dynamics are highly complex and stochastic — a large number of possible futures must be considered, yet dense prediction renders such exploration computationally infeasible.
+**Key Challenge**: Real-world dynamics are highly complex and stochastic — a large number of possible futures must be considered, yet dense prediction renders such exploration computationally infeasible.
 
-**Paper Goals**: Achieve open-set, stepwise, and massively parallelizable motion prediction without incurring the visual tax.
+**Goal**: Achieve open-set, stepwise, and massively parallelizable motion prediction without incurring the visual tax.
 
-**Starting Point**: Analogous to human cognition — we do not "paint" pictures of the future but instead track meaningful changes. Sparsity is leveraged to make future foresight tractable.
+**Key Insight**: Analogous to human cognition — we do not "paint" pictures of the future but instead track meaningful changes. Sparsity is leveraged to make future foresight tractable.
 
 **Core Idea**: Motion prediction is modeled as a stepwise autoregressive diffusion process over user-defined sparse point trajectories.
 

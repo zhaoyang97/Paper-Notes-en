@@ -27,13 +27,13 @@ content_hash: 716cd617987ecd70
 This paper proposes LabUtopia — a high-fidelity simulation and hierarchical benchmark suite for scientific laboratory environments. It comprises the LabSim simulator with chemical reaction modeling, LabScene for procedural laboratory scene generation, and LabBench, a five-level benchmark spanning atomic operations to long-horizon mobile manipulation. The suite reveals significant bottlenecks in existing imitation learning methods with respect to long-horizon experimental workflows and object generalization.
 
 ## Background & Motivation
-**State of the Field**: Self-driving laboratories (SDLs) can accelerate scientific discovery, but existing systems are constrained by predefined protocols and hardware dependencies, lacking a general-purpose platform for training and evaluating embodied agents.
+**Background**: Self-driving laboratories (SDLs) can accelerate scientific discovery, but existing systems are constrained by predefined protocols and hardware dependencies, lacking a general-purpose platform for training and evaluating embodied agents.
 
 **Limitations of Prior Work**: Mainstream simulators (AI2-THOR, OmniGibson, ManiSkill3) focus on household or industrial environments, cannot model chemical reaction dynamics (color changes, product formation, etc.), and lack laboratory-grade assets and evaluation protocols.
 
-**Root Cause**: Laboratory manipulation is substantially more complex than household manipulation — it involves perception of physicochemical changes, multi-step long-horizon planning, and precise instrument control, all of which demand dedicated simulation and benchmarking infrastructure.
+**Key Challenge**: Laboratory manipulation is substantially more complex than household manipulation — it involves perception of physicochemical changes, multi-step long-horizon planning, and precise instrument control, all of which demand dedicated simulation and benchmarking infrastructure.
 
-**Starting Point**: Construct an integrated simulation–scene–benchmark platform to fill the gap in embodied AI for scientific experimentation.
+**Key Insight**: Construct an integrated simulation–scene–benchmark platform to fill the gap in embodied AI for scientific experimentation.
 
 **Core Idea**: High-fidelity chemical reaction simulation + procedural laboratory scene generation + five-level hierarchical benchmark = a complete testbed for scientific embodied AI.
 

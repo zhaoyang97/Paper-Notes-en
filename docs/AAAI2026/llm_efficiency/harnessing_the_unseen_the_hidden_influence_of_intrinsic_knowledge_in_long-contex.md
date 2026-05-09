@@ -28,21 +28,21 @@ This paper presents the first systematic study of how parametric knowledge influ
 
 ## Background & Motivation
 
-**State of the Field**: LCLMs can now process contexts ranging from 128K to 1M tokens. Existing benchmarks (NIAH, RULER, InfiniteBench, HELMET, etc.) primarily assess the model's ability to retrieve and utilize information from external contexts (extrinsic retrieval ability), while largely neglecting the role of knowledge encoded in model parameters (parametric knowledge) during generation.
+**Background**: LCLMs can now process contexts ranging from 128K to 1M tokens. Existing benchmarks (NIAH, RULER, InfiniteBench, HELMET, etc.) primarily assess the model's ability to retrieve and utilize information from external contexts (extrinsic retrieval ability), while largely neglecting the role of knowledge encoded in model parameters (parametric knowledge) during generation.
 
 **Limitations of Prior Work**:
 - **Underestimation of parametric knowledge**: Existing NIAH tests deliberately use fictitious information to avoid interference from parametric knowledge, yet in real-world applications the interaction between parametric knowledge and external context is unavoidable.
 - **Side effects of improving extrinsic retrieval**: Position encoding improvements such as STRING enhance context retrieval for long-context scenarios, but their impact on parametric knowledge utilization remains unknown.
 - **Blind spots in evaluation**: All current long-context benchmarks assess only one capability, failing to reflect a model's ability to synthesize information from both knowledge sources.
 
-**Root Cause**: A potential trade-off exists between extrinsic retrieval ability and parametric recall ability—strengthening the former may suppress the latter—yet existing evaluations entirely overlook this tension.
+**Key Challenge**: A potential trade-off exists between extrinsic retrieval ability and parametric recall ability—strengthening the former may suppress the latter—yet existing evaluations entirely overlook this tension.
 
-**Paper Goals**:
+**Goal**:
 - Verify the significance of parametric knowledge in long-context generation and how its influence varies with context length.
 - Reveal the trade-off between extrinsic retrieval ability and parametric recall ability.
 - Design a new benchmark capable of jointly evaluating both capabilities.
 
-**Starting Point**: The paper approaches the problem from the perspective of knowledge conflict, constructing datasets where parametric knowledge either aligns with or conflicts with the external context, and employing controlled experiments to expose the interaction between the two knowledge sources.
+**Key Insight**: The paper approaches the problem from the perspective of knowledge conflict, constructing datasets where parametric knowledge either aligns with or conflicts with the external context, and employing controlled experiments to expose the interaction between the two knowledge sources.
 
 **Core Idea**: Parametric knowledge influence in long-context models grows as context length increases; improving extrinsic retrieval suppresses parametric recall; and Hybrid NIAH is needed to jointly evaluate both capabilities.
 

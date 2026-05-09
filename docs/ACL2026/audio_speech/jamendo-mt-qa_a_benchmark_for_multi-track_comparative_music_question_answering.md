@@ -29,15 +29,15 @@ This paper introduces Jamendo-MT-QA, a multi-track comparative music question an
 
 ## Background & Motivation
 
-**State of the Field**: Music question answering (Music-QA) research has primarily focused on single-track understanding tasks such as tag prediction, caption generation, and classification. However, listeners frequently describe music in comparative terms (e.g., "this track is darker than the previous one"), and no existing benchmark systematically evaluates cross-track comparative reasoning.
+**Background**: Music question answering (Music-QA) research has primarily focused on single-track understanding tasks such as tag prediction, caption generation, and classification. However, listeners frequently describe music in comparative terms (e.g., "this track is darker than the previous one"), and no existing benchmark systematically evaluates cross-track comparative reasoning.
 
 **Limitations of Prior Work**: (1) Single-track benchmarks may be driven by textual cues rather than genuine audio perception; (2) although audio-language models (e.g., CLAP, MU-LLaMA) perform well on single-track tasks, there is no evaluation of their multi-track comparative reasoning capabilities; (3) no dataset specifically targeting music comparative reasoning exists.
 
-**Root Cause**: Existing Music-QA benchmarks cannot distinguish whether a model truly understands audio content or relies on textual shortcuts, nor can they assess cross-track relational reasoning ability.
+**Key Challenge**: Existing Music-QA benchmarks cannot distinguish whether a model truly understands audio content or relies on textual shortcuts, nor can they assess cross-track relational reasoning ability.
 
-**Paper Goals**: To construct a systematic multi-track comparative QA benchmark that evaluates and exposes the shortcomings of existing models.
+**Goal**: To construct a systematic multi-track comparative QA benchmark that evaluates and exposes the shortcomings of existing models.
 
-**Starting Point**: Building upon the Jamendo-QA dataset, LLM-assisted generation is used to produce three types of comparative questions (yes/no, short-answer, sentence-level), with quality control performed via human evaluation and LLM-as-a-Judge.
+**Key Insight**: Building upon the Jamendo-QA dataset, LLM-assisted generation is used to produce three types of comparative questions (yes/no, short-answer, sentence-level), with quality control performed via human evaluation and LLM-as-a-Judge.
 
 **Core Idea**: A high-quality comparative QA benchmark is constructed through a four-stage LLM-assisted pipeline: music captioning → single-track QA expansion → multi-track comparative QA generation → quality filtering.
 

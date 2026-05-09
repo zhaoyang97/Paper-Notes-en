@@ -29,15 +29,15 @@ This paper proposes UniComp, a video token compression framework grounded in inf
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal large language models face severe computational bottlenecks when processing video—32 frames can generate thousands of visual tokens. Existing compression methods such as VisionZip and HoliTom rely primarily on attention scores for importance estimation and token selection.
+**Background**: Multimodal large language models face severe computational bottlenecks when processing video—32 frames can generate thousands of visual tokens. Existing compression methods such as VisionZip and HoliTom rely primarily on attention scores for importance estimation and token selection.
 
 **Limitations of Prior Work**: Attention-based methods suffer from three issues: (1) saliency bias causes selected tokens to be highly redundant with each other; (2) fine-grained details tend to be overlooked; (3) information loss becomes severe under aggressive compression ratios. Moreover, FastVid and HoliTom require tuning 5+ hyperparameters, while DyCoke and similar methods require modifications to the internal attention layers of the LLM, making cross-architecture transfer difficult.
 
-**Root Cause**: High attention score does not imply informational uniqueness. Highly attended tokens may be mutually similar, and retaining them does not maximize information fidelity. The essence of compression should be preserving irreplaceable information, not the most salient.
+**Key Challenge**: High attention score does not imply informational uniqueness. Highly attended tokens may be mutually similar, and retaining them does not maximize information fidelity. The essence of compression should be preserving irreplaceable information, not the most salient.
 
-**Paper Goals**: Given a limited computational budget, select a token subset that best represents the overall visual information, such that the information of discarded tokens can be reconstructed from the retained ones.
+**Goal**: Given a limited computational budget, select a token subset that best represents the overall visual information, such that the information of discarded tokens can be reconstructed from the retained ones.
 
-**Starting Point**: The problem is formulated from an information-theoretic perspective, modeling compression as minimizing the conditional entropy $H(\mathcal{X}|\mathcal{S})$, and deriving a theoretical connection between reconstruction error upper bounds and token uniqueness.
+**Key Insight**: The problem is formulated from an information-theoretic perspective, modeling compression as minimizing the conditional entropy $H(\mathcal{X}|\mathcal{S})$, and deriving a theoretical connection between reconstruction error upper bounds and token uniqueness.
 
 **Core Idea**: Replace attention scores with "informational uniqueness" measured by cosine distance as the token importance criterion, and achieve information-optimal compression via greedy selection combined with neighborhood fusion.
 

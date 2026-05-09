@@ -29,16 +29,16 @@ This paper is the first to formally define the Noise-Aware Generalization (NAG) 
 
 ## Background & Motivation
 
-**State of the Field**: Domain Generalization (DG) methods train models to generalize from multiple source domains to unseen target domains by learning domain-invariant features; Learning with Noisy Labels (LNL) methods improve model performance by detecting and handling noisy labels. Both fields have achieved significant progress, but have typically been studied in isolation.
+**Background**: Domain Generalization (DG) methods train models to generalize from multiple source domains to unseen target domains by learning domain-invariant features; Learning with Noisy Labels (LNL) methods improve model performance by detecting and handling noisy labels. Both fields have achieved significant progress, but have typically been studied in isolation.
 
 **Limitations of Prior Work**:
 1. **DG methods ignore label noise**: Label noise is prevalent in real-world datasets (including DG benchmarks themselves), yet DG methods suffer severe performance degradation in its presence.
 2. **LNL methods disregard domain shift**: LNL methods detect noise within a single domain, but when applied to multi-domain data, they misidentify domain shift as label noise, leading to overfitting on "easy-to-learn" domains.
 3. **Domain shift and noise shift are hard to disentangle**: When analyzing via feature distances or loss values, distributional shifts caused by domain shift and label noise are highly overlapping in feature space (as shown in Figure 1).
 
-**Root Cause**: The core assumption of LNL noise detection — "noisy samples are far from class centers" — breaks down in multi-domain settings, because domain shift makes the source of distributional deviation (noise vs. domain) indistinguishable via simple feature distances. Naively combining DG and LNL methods also fails to resolve this, as more than 20% of support vectors fall in the overlapping region of the two types of shift, and these samples are critical to the decision boundary.
+**Key Challenge**: The core assumption of LNL noise detection — "noisy samples are far from class centers" — breaks down in multi-domain settings, because domain shift makes the source of distributional deviation (noise vs. domain) indistinguishable via simple feature distances. Naively combining DG and LNL methods also fails to resolve this, as more than 20% of support vectors fall in the overlapping region of the two types of shift, and these samples are critical to the decision boundary.
 
-**Paper Goals**: This paper defines the NAG (Noise-Aware Generalization) problem and designs DL4ND (Domain Labels for Noise Detection). The core insight is that **noisy samples that appear similar within a single domain reveal discrepancies under cross-domain comparison** — because spurious correlations within a domain (e.g., color) do not persist across domains, forcing the model to rely on intrinsic features. DL4ND constructs $(class, domain)$ proxy representations from high-confidence, low-loss samples, then re-labels high-loss samples via cross-domain comparison.
+**Goal**: This paper defines the NAG (Noise-Aware Generalization) problem and designs DL4ND (Domain Labels for Noise Detection). The core insight is that **noisy samples that appear similar within a single domain reveal discrepancies under cross-domain comparison** — because spurious correlations within a domain (e.g., color) do not persist across domains, forcing the model to rely on intrinsic features. DL4ND constructs $(class, domain)$ proxy representations from high-confidence, low-loss samples, then re-labels high-loss samples via cross-domain comparison.
 
 ## Method
 

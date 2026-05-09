@@ -28,15 +28,15 @@ This paper proposes Flow2GAN, a two-stage training framework that first employs 
 
 ## Background & Motivation
 
-**State of the Field**: Audio generation is dominated by two paradigms — GANs (e.g., HiFi-GAN, BigVGAN), which capture multi-granularity audio details via carefully designed discriminators and enable single-step efficient inference, and diffusion/Flow Matching models, which offer stable training and high generation quality but require multi-step sampling.
+**Background**: Audio generation is dominated by two paradigms — GANs (e.g., HiFi-GAN, BigVGAN), which capture multi-granularity audio details via carefully designed discriminators and enable single-step efficient inference, and diffusion/Flow Matching models, which offer stable training and high generation quality but require multi-step sampling.
 
 **Limitations of Prior Work**: GAN training converges slowly and is prone to mode collapse; diffusion-based methods incur high computational cost due to multi-step inference. Existing acceleration approaches (distillation, consistency training, etc.) often sacrifice quality or require expensive retraining.
 
-**Root Cause**: The unique properties of audio signals pose additional challenges for Flow Matching — (a) silence regions and zero-energy frequency bins require precise noise cancellation, making velocity estimation difficult; (b) MSE loss treats all regions uniformly, which misaligns with auditory perception where errors in quiet regions are more perceptible.
+**Key Challenge**: The unique properties of audio signals pose additional challenges for Flow Matching — (a) silence regions and zero-energy frequency bins require precise noise cancellation, making velocity estimation difficult; (b) MSE loss treats all regions uniformly, which misaligns with auditory perception where errors in quiet regions are more perceptible.
 
-**Paper Goals**: To simultaneously achieve the stable training properties of FM and the efficient few-step inference capability of GANs, while optimizing the FM training objective for audio-specific characteristics.
+**Goal**: To simultaneously achieve the stable training properties of FM and the efficient few-step inference capability of GANs, while optimizing the FM training objective for audio-specific characteristics.
 
-**Starting Point**: Reformulating the FM objective from velocity estimation to endpoint estimation to avoid difficulty in velocity estimation over silent regions; introducing spectral energy-adaptive loss scaling; and applying GAN fine-tuning to accelerate inference.
+**Key Insight**: Reformulating the FM objective from velocity estimation to endpoint estimation to avoid difficulty in velocity estimation over silent regions; introducing spectral energy-adaptive loss scaling; and applying GAN fine-tuning to accelerate inference.
 
 **Core Idea**: Improved FM for pre-training (endpoint estimation + energy-adaptive loss scaling) followed by GAN fine-tuning for few-step high-fidelity generation.
 

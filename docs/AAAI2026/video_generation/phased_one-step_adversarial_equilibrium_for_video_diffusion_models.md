@@ -29,11 +29,11 @@ This paper proposes V-PAE (Video Phased Adversarial Equilibrium), a two-phase di
 
 ## Background & Motivation
 
-1. **State of the Field**: Video diffusion models (e.g., Wan2.1-I2V-14B) have achieved remarkable fidelity, but generating a 5-second video requires 50 iterative steps and approximately 15 minutes on 8×H20 GPUs, incurring prohibitive computational costs.
+1. **Background**: Video diffusion models (e.g., Wan2.1-I2V-14B) have achieved remarkable fidelity, but generating a 5-second video requires 50 iterative steps and approximately 15 minutes on 8×H20 GPUs, incurring prohibitive computational costs.
 2. **Limitations of Prior Work**: Existing video distillation methods are largely direct adaptations of image distillation techniques (e.g., LCM, DMD2, ADD), and suffer from two fundamental limitations: (a) inability to distill large-scale (>10B) video models to a single step; and (b) poor generalization to conditional tasks, causing semantic degradation and condition-frame collapse in image-to-video (I2V) generation.
-3. **Root Cause**: One-step adversarial distillation requires generating video directly from Gaussian noise, yet the distributional gap between generated and real videos is so large that the discriminator receives trivially easy gradients, leading to training instability. Existing methods (e.g., DMD2, ADD) train only in the high-SNR regime, mismatched with the low-SNR sampling distribution.
-4. **Paper Goals**: How to achieve high-quality one-step distillation on large-scale video models? How to maintain video–image subject consistency in I2V tasks?
-5. **Starting Point**: The distillation process is decomposed into two phases—first narrowing the distributional gap via VSD (priming), then performing adversarial distillation on the better-aligned distribution (equilibrium)—while reusing generator parameters as the discriminator backbone to reduce memory overhead.
+3. **Key Challenge**: One-step adversarial distillation requires generating video directly from Gaussian noise, yet the distributional gap between generated and real videos is so large that the discriminator receives trivially easy gradients, leading to training instability. Existing methods (e.g., DMD2, ADD) train only in the high-SNR regime, mismatched with the low-SNR sampling distribution.
+4. **Goal**: How to achieve high-quality one-step distillation on large-scale video models? How to maintain video–image subject consistency in I2V tasks?
+5. **Key Insight**: The distillation process is decomposed into two phases—first narrowing the distributional gap via VSD (priming), then performing adversarial distillation on the better-aligned distribution (equilibrium)—while reusing generator parameters as the discriminator backbone to reduce memory overhead.
 6. **Core Idea**: The phased optimization strategy ensures that adversarial distillation is conducted after distribution alignment, avoiding the suboptimal optimization directions introduced by simultaneously mixing multiple losses.
 
 ## Method

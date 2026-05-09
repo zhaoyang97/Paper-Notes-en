@@ -30,15 +30,15 @@ This paper proposes ABIDE (Argumentative BIas Detection by DEbate), which constr
 
 ## Background & Motivation
 
-**State of the Field**: As AI becomes increasingly pervasive in society, fairness concerns have grown in importance. Numerous bias detection methods have been proposed, yet most overlook the need for transparency. Explainability is a core requirement for algorithmic fairness.
+**Background**: As AI becomes increasingly pervasive in society, fairness concerns have grown in importance. Numerous bias detection methods have been proposed, yet most overlook the need for transparency. Explainability is a core requirement for algorithmic fairness.
 
 **Limitations of Prior Work**: (1) Most existing bias detection methods operate as black boxes, providing no explanation of the sources or reasoning behind detected biases; (2) the few interpretable methods that exist offer explanations that are insufficiently structured to support in-depth debate; (3) existing debate-based approaches are unstructured—debates merely supply information to other entities, and the outcomes are not faithfully explained by the debate itself.
 
-**Root Cause**: There is a need for a method that can both accurately detect bias and transparently expose the underlying reasoning process.
+**Key Challenge**: There is a need for a method that can both accurately detect bias and transparently expose the underlying reasoning process.
 
-**Paper Goals**: To design an argumentation-centric bias detection framework in which the detection process itself constitutes an interpretable debate.
+**Goal**: To design an argumentation-centric bias detection framework in which the detection process itself constitutes an interpretable debate.
 
-**Starting Point**: Leveraging argument schemes from formal argumentation and the gradual semantics of QBAFs to map bias evidence onto attack/support relations in an argumentation graph.
+**Key Insight**: Leveraging argument schemes from formal argumentation and the gradual semantics of QBAFs to map bias evidence onto attack/support relations in an argumentation graph.
 
 **Core Idea**: Model bias detection as neighborhood-level debate combined with cross-neighborhood evidence aggregation, with results computed automatically via QBAF semantics, achieving full transparency.
 

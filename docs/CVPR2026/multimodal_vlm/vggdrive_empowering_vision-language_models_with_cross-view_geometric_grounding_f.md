@@ -27,15 +27,15 @@ content_hash: 7acc3e631e5d3d43
 This paper proposes VGGDrive, a framework that injects cross-view geometric perception into VLMs via a frozen 3D visual foundation model (VGGT). A plug-and-play CVGE module is designed to hierarchically and adaptively fuse 3D features into the 2D visual embeddings at each VLM layer, achieving significant performance gains across five autonomous driving benchmarks.
 
 ## Background & Motivation
-**State of the Field**: VLMs, endowed with rich world knowledge and reasoning capabilities, have provided powerful scene understanding and decision-making support for autonomous driving systems, with Vision-Language-Action (VLA) models emerging as a prominent research direction.
+**Background**: VLMs, endowed with rich world knowledge and reasoning capabilities, have provided powerful scene understanding and decision-making support for autonomous driving systems, with Vision-Language-Action (VLA) models emerging as a prominent research direction.
 
 **Limitations of Prior Work**: VLMs inherently lack cross-view geometric modeling capabilities for the 3D physical world, which directly limits their performance on autonomous driving tasks requiring fine-grained spatial perception (e.g., Qwen2.5-VL performs poorly on driving benchmarks).
 
-**Root Cause**: Some methods attempt to teach VLMs spatial concepts via QA data construction, yet fail to endow models with geometric priors at a fundamental level. Others attach independent action decoders on top of VLMs for trajectory prediction, thereby decoupling scene understanding from decision-making.
+**Key Challenge**: Some methods attempt to teach VLMs spatial concepts via QA data construction, yet fail to endow models with geometric priors at a fundamental level. Others attach independent action decoders on top of VLMs for trajectory prediction, thereby decoupling scene understanding from decision-making.
 
-**Paper Goals**: To effectively inject the cross-view geometric modeling capabilities of a mature 3D foundation model (VGGT) into VLMs, addressing their inherent spatial perception deficiencies.
+**Goal**: To effectively inject the cross-view geometric modeling capabilities of a mature 3D foundation model (VGGT) into VLMs, addressing their inherent spatial perception deficiencies.
 
-**Starting Point**: Rather than teaching VLMs to understand space, directly and deeply fusing VGGT's 3D geometric features into the VLM's 2D visual representations through hierarchical injection—rather than simple concatenation or addition—achieves genuine geometric grounding.
+**Key Insight**: Rather than teaching VLMs to understand space, directly and deeply fusing VGGT's 3D geometric features into the VLM's 2D visual representations through hierarchical injection—rather than simple concatenation or addition—achieves genuine geometric grounding.
 
 **Core Idea**: A hierarchical adaptive injection mechanism fuses 3D features from a frozen VGGT layer-by-layer into the VLM's 2D visual embeddings, establishing true geometric grounding.
 

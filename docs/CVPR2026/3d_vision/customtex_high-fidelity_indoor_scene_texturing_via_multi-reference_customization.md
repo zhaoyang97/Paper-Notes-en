@@ -29,7 +29,7 @@ CustomTex is a framework that achieves high-fidelity, instance-controllable text
 ## Background & Motivation
 Generating realistic textures for 3D indoor scenes is fundamental to VR/AR, architectural visualization, and film production. **Limitations of prior work**: (1) **Text-driven methods** (SceneTex, TEXture, etc.) suffer from semantic ambiguity and cannot convey precise visual characteristics (e.g., fabric patterns, wood grain, wallpaper designs); (2) single-reference-image conditioning provides only coarse global control; (3) texture quality is insufficient — results are blurry and artifact-prone, and diffusion models tend to absorb lighting information from training data, producing **baked-in shading** that is incompatible with relighting under different illumination conditions.
 
-**Root Cause**: Semantic control and pixel quality are entangled within the diffusion process — InstanceTex supports multi-text instance-level control but remains constrained by text precision and output quality. **Starting Point**: The paper replaces text with multiple reference images (one per instance) and decouples "semantic generation" from "pixel enhancement" into two independent distillation processes, unified under the VSD framework.
+**Key Challenge**: Semantic control and pixel quality are entangled within the diffusion process — InstanceTex supports multi-text instance-level control but remains constrained by text precision and output quality. **Key Insight**: The paper replaces text with multiple reference images (one per instance) and decouples "semantic generation" from "pixel enhancement" into two independent distillation processes, unified under the VSD framework.
 
 ## Method
 

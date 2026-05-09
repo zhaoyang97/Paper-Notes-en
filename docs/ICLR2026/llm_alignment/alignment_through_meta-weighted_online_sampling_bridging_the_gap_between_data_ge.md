@@ -28,15 +28,15 @@ This paper proposes MetaAPO, a framework that employs a lightweight meta-learner
 
 ## Background & Motivation
 
-**State of the Field**: Offline preference optimization methods such as DPO are simple and efficient, but the distribution mismatch (OOD problem) between offline data and the dynamically evolving policy limits alignment quality. Online methods such as Online DPO mitigate this mismatch via on-policy sampling, yet they overlook the value of high-quality offline data.
+**Background**: Offline preference optimization methods such as DPO are simple and efficient, but the distribution mismatch (OOD problem) between offline data and the dynamically evolving policy limits alignment quality. Online methods such as Online DPO mitigate this mismatch via on-policy sampling, yet they overlook the value of high-quality offline data.
 
 **Limitations of Prior Work**: (a) Offline methods are constrained by fixed data distributions; (b) online methods are costly and suffer from limited diversity due to reliance on the current policy's capabilities; (c) hybrid methods rely on heuristic or static thresholds for data selection, ignoring the interaction between data sampling and the optimization process.
 
-**Root Cause**: Offline data is efficient and diverse but distributionally misaligned, whereas online data is distributionally aligned but lacks diversity and quality. A principled mechanism to dynamically balance the two according to the model's current state is absent.
+**Key Challenge**: Offline data is efficient and diverse but distributionally misaligned, whereas online data is distributionally aligned but lacks diversity and quality. A principled mechanism to dynamically balance the two according to the model's current state is absent.
 
-**Paper Goals**: To design an adaptive framework that tightly couples data generation with preference optimization, enabling the model itself to determine which samples require online re-sampling and what relative weight to assign to offline versus online data.
+**Goal**: To design an adaptive framework that tightly couples data generation with preference optimization, enabling the model itself to determine which samples require online re-sampling and what relative weight to assign to offline versus online data.
 
-**Starting Point**: A meta-learner maps the DPO preference score of each sample to a scalar weight. Low weights trigger online re-sampling, while high weights retain offline data—the same weight governs both sampling decisions and training.
+**Key Insight**: A meta-learner maps the DPO preference score of each sample to a scalar weight. Low weights trigger online re-sampling, while high weights retain offline data—the same weight governs both sampling decisions and training.
 
 **Core Idea**: A single meta-learner simultaneously serves as an alignment-gap estimator and a sample-weight assigner, tightly coupling online sampling with preference optimization.
 

@@ -29,18 +29,18 @@ JanusDNA is proposed as the first bidirectional DNA foundation model, combining 
 
 ## Background & Motivation
 
-**State of the Field**: Large language models are being applied to DNA sequence modeling, yet direct transfer faces unique challenges—handling long-range dependencies in ultra-long sequences (>10k base pairs) while requiring bidirectional understanding.
+**Background**: Large language models are being applied to DNA sequence modeling, yet direct transfer faces unique challenges—handling long-range dependencies in ultra-long sequences (>10k base pairs) while requiring bidirectional understanding.
 
 **Limitations of Prior Work**:
    - **Sequence length vs. resolution trade-off**: Attention mechanisms struggle with long sequences; k-mer tokenization expands the context window but sacrifices resolution (losing SNP information).
    - **Unidirectional understanding**: Decoder-based models (HyenaDNA, Evo) support only unidirectional context, whereas many regulatory elements (e.g., bidirectional promoters) require bidirectional modeling.
    - **Training inefficiency**: MLM (BERT-style) involves only ~15% of tokens in loss computation, which is extremely inefficient for long-sequence training.
 
-**Root Cause**: An inherent trade-off exists between bidirectional understanding capability (MLM) and training efficiency (autoregressive).
+**Key Challenge**: An inherent trade-off exists between bidirectional understanding capability (MLM) and training efficiency (autoregressive).
 
-**Paper Goals**: To construct an efficient bidirectional DNA foundation model that simultaneously handles long sequences and maintains high training efficiency.
+**Goal**: To construct an efficient bidirectional DNA foundation model that simultaneously handles long sequences and maintains high training efficiency.
 
-**Starting Point**: Design a novel pretraining paradigm (Janus Modeling) in which all tokens contribute to loss computation (as in autoregressive training) while preserving bidirectional understanding (as in MLM).
+**Key Insight**: Design a novel pretraining paradigm (Janus Modeling) in which all tokens contribute to loss computation (as in autoregressive training) while preserving bidirectional understanding (as in MLM).
 
 **Core Idea**: Achieve full-token-loss bidirectional pretraining through independent bidirectional encoding combined with a carefully designed attention mask fusion mechanism.
 

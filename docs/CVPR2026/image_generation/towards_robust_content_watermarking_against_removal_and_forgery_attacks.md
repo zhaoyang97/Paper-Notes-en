@@ -29,11 +29,11 @@ This paper proposes ISTS, an instance-specific two-sided detection watermarking 
 
 ## Background & Motivation
 
-1. **State of the Field**: Content watermarking (e.g., Tree-Ring) has been widely studied in text-to-image diffusion models, embedding identity markers into the latent space during generation to verify image provenance. These methods exhibit strong robustness against common image transformations (rotation, cropping, compression, etc.).
+1. **Background**: Content watermarking (e.g., Tree-Ring) has been widely studied in text-to-image diffusion models, embedding identity markers into the latent space during generation to verify image provenance. These methods exhibit strong robustness against common image transformations (rotation, cropping, compression, etc.).
 2. **Limitations of Prior Work**: Recent studies (Müller et al., Yang et al., Jain et al.) reveal that existing watermarks are highly vulnerable to removal and forgery attacks—post-removal detection AUC drops below 0.1 (e.g., Gaussian-Shading), while post-forgery AUC approaches 1.0 (watermarks can be trivially forged). This means watermarks can be both erased and fabricated, seriously undermining the reliability of copyright protection.
-3. **Root Cause**: Existing methods employ static, uniform watermark patterns (e.g., Tree-Ring injects fixed ring patterns at the center of Fourier space), whose consistency inadvertently leaks structural features, enabling attackers to extract or replicate watermarks using surrogate models.
-4. **Paper Goals**: To design a watermarking scheme that is robust against both removal and forgery attacks.
-5. **Starting Point**: The key insight is that "static watermarks = information leakage." If the watermark pattern and injection parameters differ for each image, attackers cannot extract generalizable watermark features from a single or small number of reference images.
+3. **Key Challenge**: Existing methods employ static, uniform watermark patterns (e.g., Tree-Ring injects fixed ring patterns at the center of Fourier space), whose consistency inadvertently leaks structural features, enabling attackers to extract or replicate watermarks using surrogate models.
+4. **Goal**: To design a watermarking scheme that is robust against both removal and forgery attacks.
+5. **Key Insight**: The key insight is that "static watermarks = information leakage." If the watermark pattern and injection parameters differ for each image, attackers cannot extract generalizable watermark features from a single or small number of reference images.
 6. **Core Idea**: Instance-specific dynamic watermarking (semantics-guided selection of injection timestep and location) combined with two-sided detection (jointly examining both forward and inverse latent representations to block reverse optimization attack paths).
 
 ## Method

@@ -29,15 +29,15 @@ This paper introduces the correlation dimension from fractal geometry into LLM a
 
 ## Background & Motivation
 
-**State of the Field**: LLM evaluation primarily relies on two categories of metrics: local text attribute-based measures (e.g., n-gram frequency, Rep-N deduplication), which are interpretable but fail to capture deep semantic structure; and global measures (e.g., average perplexity, BERTScore), which provide holistic assessments but lack interpretability and sensitivity to local texture. A gap exists between "local interpretability" and "global comprehensiveness."
+**Background**: LLM evaluation primarily relies on two categories of metrics: local text attribute-based measures (e.g., n-gram frequency, Rep-N deduplication), which are interpretable but fail to capture deep semantic structure; and global measures (e.g., average perplexity, BERTScore), which provide holistic assessments but lack interpretability and sensitivity to local texture. A gap exists between "local interpretability" and "global comprehensiveness."
 
 **Limitations of Prior Work**: Perplexity is the most widely used LLM evaluation metric, yet it has fundamental blind spots. A model may achieve low perplexity while still producing degenerate text exhibiting repetition, incoherence, or blandness. More critically, perplexity is insensitive to rare tokens (whose gradients are proportional to frequency) and cannot distinguish between "genuine contextual understanding" and "statistically driven generation."
 
-**Root Cause**: LLMs operate through token-by-token prediction, yet their emergent higher-order capabilities — such as reasoning and planning — imply complex nonlinear hierarchical mechanisms. Existing evaluation metrics either focus on the micro level (token-level) or the macro level (global), lacking a bridging measure that connects micro-level recursive structure to macro-level textual complexity.
+**Key Challenge**: LLMs operate through token-by-token prediction, yet their emergent higher-order capabilities — such as reasoning and planning — imply complex nonlinear hierarchical mechanisms. Existing evaluation metrics either focus on the micro level (token-level) or the macro level (global), lacking a bridging measure that connects micro-level recursive structure to macro-level textual complexity.
 
-**Paper Goals**: To propose a computationally efficient, theoretically grounded LLM evaluation metric that simultaneously reflects local recursion and global complexity.
+**Goal**: To propose a computationally efficient, theoretically grounded LLM evaluation metric that simultaneously reflects local recursion and global complexity.
 
-**Starting Point**: Natural language exhibits statistical self-similarity across multiple linguistic levels (lexical, syntactic, semantic) — analogous to fractal structures. The correlation dimension is a classical tool for measuring such self-similarity and can be computed by analyzing the distance distribution among next-token probability vectors.
+**Key Insight**: Natural language exhibits statistical self-similarity across multiple linguistic levels (lexical, syntactic, semantic) — analogous to fractal structures. The correlation dimension is a classical tool for measuring such self-similarity and can be computed by analyzing the distance distribution among next-token probability vectors.
 
 **Core Idea**: Use the correlation dimension of the next-token log-probability vector sequence to quantify the hierarchical complexity perceived by LLMs, thereby addressing the blind spots of perplexity.
 

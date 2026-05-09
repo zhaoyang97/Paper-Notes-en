@@ -29,15 +29,15 @@ Speed3R introduces a trainable dual-branch Global Sparse Attention (GSA) mechani
 
 ## Background & Motivation
 
-**State of the Field**: Recent feed-forward 3D reconstruction models (VGGT, $\pi^3$) can jointly infer dense geometry and camera poses in a single forward pass, bypassing the multi-stage pipelines of classical SfM/MVS.
+**Background**: Recent feed-forward 3D reconstruction models (VGGT, $\pi^3$) can jointly infer dense geometry and camera poses in a single forward pass, bypassing the multi-stage pipelines of classical SfM/MVS.
 
 **Limitations of Prior Work**: These models rely on dense global attention, whose computational cost scales as $O(n^2)$ with the number of tokens. Inference speed becomes a severe bottleneck at large view counts or high resolutions — for example, $\pi^3$ requires **202 seconds** to process 1024 images.
 
-**Root Cause**: Training-free approaches such as FastVGGT (token merge-unmerge) and Block-Sparse VGGT (top-k attention) cannot be optimized end-to-end, and aggressive pruning leads to significant accuracy degradation.
+**Key Challenge**: Training-free approaches such as FastVGGT (token merge-unmerge) and Block-Sparse VGGT (top-k attention) cannot be optimized end-to-end, and aggressive pruning leads to significant accuracy degradation.
 
 **Core Insight**: The classical SfM intuition — that sparse keypoints suffice for robust pose estimation — has not yet been fully exploited by feed-forward methods.
 
-**Paper Goals**: Motivated by both SfM and sparse attention in LLMs (NSA, MOBA), this work designs end-to-end trainable sparse attention and transfers dense model performance via knowledge distillation.
+**Goal**: Motivated by both SfM and sparse attention in LLMs (NSA, MOBA), this work designs end-to-end trainable sparse attention and transfers dense model performance via knowledge distillation.
 
 ## Method
 

@@ -27,13 +27,13 @@ content_hash: 038c61c70f1d86bf
 This paper proposes TrustBench, a dual-mode framework: (1) **Benchmark Mode** — combines traditional metrics with LLM-as-a-Judge to evaluate 8 trust dimensions and learns a calibration mapping from agent confidence to actual accuracy; (2) **Verification Mode** — computes trust scores in real time after an agent formulates an action but before execution, blocking 87% of harmful actions with latency below 200ms, with specialization achieved through domain plugins (medical/financial/QA).
 
 ## Background & Motivation
-**State of the Field**: Frameworks such as AgentBench evaluate task completion ability, while TrustLLM and HELM assess LLM trustworthiness; however, all of these operate as post-hoc evaluations. SafeAgentBench finds that agents reject only 5–10% of clearly dangerous tasks. Constitutional AI requires model retraining.
+**Background**: Frameworks such as AgentBench evaluate task completion ability, while TrustLLM and HELM assess LLM trustworthiness; however, all of these operate as post-hoc evaluations. SafeAgentBench finds that agents reject only 5–10% of clearly dangerous tasks. Constitutional AI requires model retraining.
 
 **Limitations of Prior Work**: (a) Existing frameworks are all "post-hoc evaluations" — problems are discovered only after harmful actions have already been executed; (b) general-purpose frameworks overlook domain-specific trust requirements (medical contexts require citation of trusted sources; financial contexts require compliance checks); (c) traditional metrics such as ROUGE cannot assess reasoning quality, particularly for agentic tasks without deterministic answers.
 
-**Root Cause**: Agents are shifting from "generating text" to "executing actions" that directly affect users and environments, yet trust verification remains at the text-evaluation stage — the "evaluate-then-fail" paradigm is unacceptable in high-stakes scenarios.
+**Key Challenge**: Agents are shifting from "generating text" to "executing actions" that directly affect users and environments, yet trust verification remains at the text-evaluation stage — the "evaluate-then-fail" paradigm is unacceptable in high-stakes scenarios.
 
-**Starting Point**: Embedding trust verification into the agent execution loop, intervening at the critical decision point after action formulation but before execution.
+**Key Insight**: Embedding trust verification into the agent execution loop, intervening at the critical decision point after action formulation but before execution.
 
 **Core Idea**: Trust verification transitions from an external evaluation to a built-in component of the agent execution loop — analogous to runtime assertions in software engineering.
 

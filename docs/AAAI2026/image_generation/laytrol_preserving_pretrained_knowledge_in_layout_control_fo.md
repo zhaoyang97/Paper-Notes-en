@@ -30,11 +30,11 @@ Laytrol achieves high-quality layout-to-image generation on FLUX by initializing
 
 ### State of the Field
 
-**State of the Field**: As MM-DiT architectures (e.g., SD3, FLUX) emerge as state-of-the-art T2I models, enabling spatial layout control on these models has become a critical challenge. Existing layout-to-image methods (GLIGEN, MIGC, SiamLayout) typically train new control modules from scratch, resulting in low visual quality and stylistic inconsistency with the base model. Two root causes are identified: (1) training datasets (COCO/LAION) suffer from distribution shift relative to the base model's pretraining data; and (2) control modules trained from scratch cannot inherit pretrained knowledge.
+**Background**: As MM-DiT architectures (e.g., SD3, FLUX) emerge as state-of-the-art T2I models, enabling spatial layout control on these models has become a critical challenge. Existing layout-to-image methods (GLIGEN, MIGC, SiamLayout) typically train new control modules from scratch, resulting in low visual quality and stylistic inconsistency with the base model. Two root causes are identified: (1) training datasets (COCO/LAION) suffer from distribution shift relative to the base model's pretraining data; and (2) control modules trained from scratch cannot inherit pretrained knowledge.
 
 ### Paper Goals
 
-**Paper Goals**: The paper aims to incorporate layout control capabilities into MM-DiT (FLUX) while maximally preserving the pretrained model's image generation quality and style. The core challenge lies in adapting ControlNet-style parameter copying to layout conditions—whose token structure (text + coordinates) is fundamentally different from pixel-level conditions (e.g., depth maps, edge maps) and cannot be simply added.
+**Goal**: The paper aims to incorporate layout control capabilities into MM-DiT (FLUX) while maximally preserving the pretrained model's image generation quality and style. The core challenge lies in adapting ControlNet-style parameter copying to layout conditions—whose token structure (text + coordinates) is fundamentally different from pixel-level conditions (e.g., depth maps, edge maps) and cannot be simply added.
 
 ## Method
 

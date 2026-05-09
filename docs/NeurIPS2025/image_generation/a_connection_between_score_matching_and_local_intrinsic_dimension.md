@@ -28,17 +28,17 @@ This paper proves that the lower bound of the denoising score matching (DSM) los
 
 ## Background & Motivation
 
-**State of the Field**: Local intrinsic dimension (LID) is a fundamental quantity in signal processing and learning theory, governing data compressibility and learning efficiency. Estimating LID for high-dimensional complex data has historically been challenging. Recent work has shown that diffusion models can capture LID through spectral analysis of score estimates or noise-sensitivity of density estimates, giving rise to methods such as FLIPD and Normal Bundle.
+**Background**: Local intrinsic dimension (LID) is a fundamental quantity in signal processing and learning theory, governing data compressibility and learning efficiency. Estimating LID for high-dimensional complex data has historically been challenging. Recent work has shown that diffusion models can capture LID through spectral analysis of score estimates or noise-sensitivity of density estimates, giving rise to methods such as FLIPD and Normal Bundle.
 
 **Limitations of Prior Work**: Existing parametric LID estimation methods are computationally expensive—FLIPD requires divergence computation (involving gradients), while the Normal Bundle method demands a large number of forward passes, limiting applicability in memory- and compute-constrained settings.
 
-**Root Cause**: There is an inherent trade-off between LID estimation accuracy and computational efficiency: accurate methods are expensive, while simple methods lack precision.
+**Key Challenge**: There is an inherent trade-off between LID estimation accuracy and computational efficiency: accurate methods are expensive, while simple methods lack precision.
 
-**Paper Goals**
+**Goal**
    - Is there a precise mathematical relationship between DSM loss and LID?
    - Can DSM loss be used directly as a more efficient LID estimator?
 
-**Starting Point**: The analysis departs from information theory (entropy power inequality), examining how denoising error behaves differently along the tangent and normal spaces of the manifold, and proving that the lower bound of DSM loss equals LID.
+**Key Insight**: The analysis departs from information theory (entropy power inequality), examining how denoising error behaves differently along the tangent and normal spaces of the manifold, and proving that the lower bound of DSM loss equals LID.
 
 **Core Idea**: Noise along the tangent directions of the manifold is unpredictable (contributing MSE ≥ 1 per dimension), while noise along the normal directions can be perfectly denoised (contributing MSE = 0). Consequently, the lower bound of the DSM loss equals the dimension of the tangent space, i.e., the LID.
 

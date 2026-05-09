@@ -34,9 +34,9 @@ Designing, training, and validating deep learning models incurs substantial cost
 - Backdoor-based watermarking methods inherently alter the model's response to natural images by manipulating training data, introducing uncontrollable risks.
 - Existing methods lack provable false positive rate guarantees.
 
-**Root Cause**: How can reliable model protection be achieved without retraining, while simultaneously providing theoretical guarantees?
+**Key Challenge**: How can reliable model protection be achieved without retraining, while simultaneously providing theoretical guarantees?
 
-**Starting Point**: Inspired by stealth attacks, the work exploits the concentration properties of feature spaces in modern models to implant highly selective detector neurons via direct weight modification.
+**Key Insight**: Inspired by stealth attacks, the work exploits the concentration properties of feature spaces in modern models to implant highly selective detector neurons via direct weight modification.
 
 **Core Idea**: By implanting a randomly sampled detector neuron into the model and leveraging the high-dimensional concentration phenomenon of the feature space, the neuron is ensured to respond negligibly to natural inputs. A trigger input that strongly activates it can be obtained via optimization, enabling training-free staining and locking.
 

@@ -28,7 +28,7 @@ This paper identifies sparse perception patterns in SAM2 analogous to biological
 
 ## Background & Motivation
 
-**State of the Field**: SAM2 achieves outstanding performance in video object segmentation (VOS) through its streaming memory mechanism, but the high computational cost of its large-scale visual backbone and per-frame memory interaction precludes real-time video processing.
+**Background**: SAM2 achieves outstanding performance in video object segmentation (VOS) through its streaming memory mechanism, but the high computational cost of its large-scale visual backbone and per-frame memory interaction precludes real-time video processing.
 
 **Limitations of Prior Work**: EdgeTAM achieves edge-level efficiency via knowledge distillation into a lightweight model combined with a spatial perceiver for memory compression, but incurs high training cost and notable performance degradation. General token merging methods such as ToMe are incompatible with SAM2's hierarchical window attention architecture and suffer severe accuracy degradation on segmentation tasks.
 
@@ -36,7 +36,7 @@ This paper identifies sparse perception patterns in SAM2 analogous to biological
    - **Encoder–Decoder Attention Mismatch**: The prompt-to-image attention in the mask decoder is highly concentrated on foreground objects and potential distractors, whereas the upstream image encoder, unaware of prompt intent, distributes attention broadly, resulting in substantial wasted computation on background regions.
    - **Temporal Consistency in Memory Frame Sparsity**: During memory attention, when the same memory frame is repeatedly queried by different query frames, attention consistently concentrates on the same small subset of tokens (cosine similarity approaching 1), making full-token recomputation entirely unnecessary.
 
-**Starting Point**: Accelerate SAM2 in a post-training manner without modifying its architecture, exploiting its inherent sparsity to maximize compatibility and deployment convenience.
+**Key Insight**: Accelerate SAM2 in a post-training manner without modifying its architecture, exploiting its inherent sparsity to maximize compatibility and deployment convenience.
 
 ## Method
 

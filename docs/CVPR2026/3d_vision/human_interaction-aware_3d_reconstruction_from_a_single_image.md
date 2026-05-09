@@ -27,11 +27,11 @@ content_hash: 2cbf97fdc927d141
 This paper proposes HUG3D, a framework that achieves high-fidelity textured 3D reconstruction of interacting multiple persons from a single image via perspective-to-orthographic view transformation, a group-instance multi-view diffusion model, and physics-aware geometry reconstruction, outperforming existing methods across CD/P2S/NC and other metrics.
 
 ## Background & Motivation
-1. **State of the Field**: Single-person 3D reconstruction has seen significant progress (SIFU/SiTH/PSHuman, etc.), but these methods focus exclusively on individual subjects and cannot handle multi-person interaction scenarios.
+1. **Background**: Single-person 3D reconstruction has seen significant progress (SIFU/SiTH/PSHuman, etc.), but these methods focus exclusively on individual subjects and cannot handle multi-person interaction scenarios.
 2. **Limitations of Prior Work**: Multi-person scenes present three core challenges: (1) geometric complexity and perspective distortion—large depth variation in multi-person scenes invalidates the orthographic assumption; (2) lack of interaction awareness—independently reconstructing each person leads to physically implausible limb penetration and unnatural proximity; (3) missing geometry and texture in occluded regions—inter-person occlusion causes loss of critical body part information.
-3. **Root Cause**: Existing methods treat each person independently, entirely ignoring group context and interaction priors, whereas physical plausibility in multi-person interaction (contact, penetration avoidance) requires global information.
-4. **Paper Goals**: To reconstruct high-fidelity textured 3D models of multi-person interaction scenes from a single image while guaranteeing physical plausibility.
-5. **Starting Point**: Simultaneously exploiting group-level and instance-level information—implicitly learning interaction priors via diffusion models and explicitly enforcing contact and penetration avoidance via physical constraints.
+3. **Key Challenge**: Existing methods treat each person independently, entirely ignoring group context and interaction priors, whereas physical plausibility in multi-person interaction (contact, penetration avoidance) requires global information.
+4. **Goal**: To reconstruct high-fidelity textured 3D models of multi-person interaction scenes from a single image while guaranteeing physical plausibility.
+5. **Key Insight**: Simultaneously exploiting group-level and instance-level information—implicitly learning interaction priors via diffusion models and explicitly enforcing contact and penetration avoidance via physical constraints.
 6. **Core Idea**: A dual-level group/instance multi-view diffusion model for occlusion completion, combined with physics-based geometry optimization to ensure interaction plausibility.
 
 ## Method

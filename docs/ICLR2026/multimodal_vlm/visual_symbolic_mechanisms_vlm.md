@@ -28,15 +28,15 @@ This paper discovers that VLMs internally develop a three-stage symbolic process
 
 ## Background & Motivation
 
-**State of the Field**: VLMs use compositional representations (e.g., "red" + "square") to efficiently encode visual scenes. Emergent binding IDs—content-agnostic symbolic indices for tracking entity-attribute bindings—have been discovered in language models.
+**Background**: VLMs use compositional representations (e.g., "red" + "square") to efficiently encode visual scenes. Emergent binding IDs—content-agnostic symbolic indices for tracking entity-attribute bindings—have been discovered in language models.
 
 **Limitations of Prior Work**: VLMs perform poorly on tasks requiring precise binding (counting, visual search, visual analogy), such as distinguishing "red square + blue circle" from "blue square + red circle." This is the classic **binding problem**. Whether VLMs internally exhibit symbolic processing mechanisms analogous to those in text-only LMs remains unknown.
 
-**Root Cause**: Compositional representations inherently require solving the binding problem—assigning the correct features to the correct objects. Many "puzzling" VLM failures (e.g., counting errors) are fundamentally binding failures, yet the internal mechanisms underlying these failures are not understood.
+**Key Challenge**: Compositional representations inherently require solving the binding problem—assigning the correct features to the correct objects. Many "puzzling" VLM failures (e.g., counting errors) are fundamentally binding failures, yet the internal mechanisms underlying these failures are not understood.
 
-**Paper Goals**: (a) Do VLMs use symbol-like mechanisms for visual binding? (b) What are these mechanisms specifically? (c) Can binding errors be traced to failures in these mechanisms?
+**Goal**: (a) Do VLMs use symbol-like mechanisms for visual binding? (b) What are these mechanisms specifically? (c) Can binding errors be traced to failures in these mechanisms?
 
-**Starting Point**: Drawing on the discovery of binding IDs in text-only LMs and the visual indexing theory from cognitive science (Pylyshyn, 2001), the paper hypothesizes that VLMs may use **spatial position** as a content-agnostic index to bind object features.
+**Key Insight**: Drawing on the discovery of binding IDs in text-only LMs and the visual indexing theory from cognitive science (Pylyshyn, 2001), the paper hypothesizes that VLMs may use **spatial position** as a content-agnostic index to bind object features.
 
 **Core Idea**: VLMs develop three types of attention heads (ID retrieval, ID selection, feature retrieval) that use spatial position as a symbolic variable to index and retrieve visual object features.
 

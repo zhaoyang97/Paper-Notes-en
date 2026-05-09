@@ -30,11 +30,11 @@ This paper presents EvReID, the first large-scale RGB-Event person re-identifica
 
 ### State of the Field
 
-**State of the Field**: RGB camera-based person ReID faces persistent challenges in illumination variation, motion blur, and privacy protection.
+**Background**: RGB camera-based person ReID faces persistent challenges in illumination variation, motion blur, and privacy protection.
 
 ### Root Cause
 
-**Root Cause**: Although event cameras offer advantages such as low power consumption, high dynamic range, and freedom from motion blur, existing event-based ReID datasets are extremely small in scale (Event-ReID contains only 33 identities / 16,000 samples), making it infeasible to evaluate real-world performance and generalization capability.
+**Key Challenge**: Although event cameras offer advantages such as low power consumption, high dynamic range, and freedom from motion blur, existing event-based ReID datasets are extremely small in scale (Event-ReID contains only 33 identities / 16,000 samples), making it infeasible to evaluate real-world performance and generalization capability.
 
 ### Limitations of Prior Work
 
@@ -42,7 +42,7 @@ This paper presents EvReID, the first large-scale RGB-Event person re-identifica
 
 ### Starting Point
 
-**Paper Goals**: How to construct a large-scale, real-world RGB-Event person ReID benchmark dataset, and design a ReID framework that effectively exploits multimodal visual features alongside pedestrian attribute semantics?
+**Goal**: How to construct a large-scale, real-world RGB-Event person ReID benchmark dataset, and design a ReID framework that effectively exploits multimodal visual features alongside pedestrian attribute semantics?
 
 ## Method
 

@@ -27,17 +27,17 @@ content_hash: 2d155a88e209d2db
 This paper theoretically proves that representation-level graph prompts are essentially equivalent to linear probes, and on this basis proposes UniPrompt—an input-level method based on a learnable kNN topological prompt graph. By fusing the prompt graph with the original graph via a bootstrapping strategy, UniPrompt consistently outperforms existing graph prompt learning methods on both in-domain and cross-domain few-shot node classification.
 
 ## Background & Motivation
-**State of the Field**: Graph Prompt Learning (GPL) is an emerging paradigm for adapting pretrained graph models to downstream tasks—freezing the pretrained graph encoder parameters and training only a lightweight prompt module. Existing GPL methods are categorized into three types by prompt position: input-level (feature/edge prompts), layer-level (injecting prompts at each layer), and representation-level (adding prompt tokens or prototype subgraphs to encoder outputs).
+**Background**: Graph Prompt Learning (GPL) is an emerging paradigm for adapting pretrained graph models to downstream tasks—freezing the pretrained graph encoder parameters and training only a lightweight prompt module. Existing GPL methods are categorized into three types by prompt position: input-level (feature/edge prompts), layer-level (injecting prompts at each layer), and representation-level (adding prompt tokens or prototype subgraphs to encoder outputs).
 
 **Limitations of Prior Work**:
 - **Unclear mechanisms**: Why do prompts at different positions work? Performance varies widely across methods, yet a unified understanding is lacking.
 - **Poor adaptability**: Most GPL methods suffer significant performance degradation when the pretrained model is changed, sometimes performing even worse than simple linear probing (fine-tuning only the classification head). This is especially pronounced in cross-domain settings (e.g., homophilic → heterophilic graphs).
 
-**Root Cause**: GPL methods claim to better preserve pretrained knowledge than fine-tuning, yet experiments suggest that many GPL methods may only be performing classification head adaptation, without genuinely "unleashing" the pretrained model's capability.
+**Key Challenge**: GPL methods claim to better preserve pretrained knowledge than fine-tuning, yet experiments suggest that many GPL methods may only be performing classification head adaptation, without genuinely "unleashing" the pretrained model's capability.
 
-**Paper Goals**: (1) Clarify the underlying mechanisms of different types of graph prompts; (2) Propose a universal GPL method that performs stably across arbitrary pretrained models, including cross-domain and heterophilic graph settings.
+**Goal**: (1) Clarify the underlying mechanisms of different types of graph prompts; (2) Propose a universal GPL method that performs stably across arbitrary pretrained models, including cross-domain and heterophilic graph settings.
 
-**Starting Point**: Through theoretical analysis, the paper proves that representation-level prompts are equivalent to linear probes, and thereby proposes the design principle that "prompts should focus on unleashing pretrained model capability (input-level), while the classification head handles downstream task adaptation."
+**Key Insight**: Through theoretical analysis, the paper proves that representation-level prompts are equivalent to linear probes, and thereby proposes the design principle that "prompts should focus on unleashing pretrained model capability (input-level), while the classification head handles downstream task adaptation."
 
 **Core Idea**: Use a learnable kNN topological prompt graph to modify the input graph structure and release the capability of the frozen pretrained model, while using a linear classification head to adapt to the downstream task.
 

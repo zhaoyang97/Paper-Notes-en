@@ -29,11 +29,11 @@ Inspired by the dual-system model of human decision-making, this paper proposes 
 
 ## Background & Motivation
 
-1. **State of the Field**: Multi-Object Tracking (MOT) is a fundamental computer vision task with applications in intelligent surveillance, autonomous driving, and beyond. Distribution shifts—in appearance, motion patterns, and object categories—degrade the performance of trained models in new scenes.
+1. **Background**: Multi-Object Tracking (MOT) is a fundamental computer vision task with applications in intelligent surveillance, autonomous driving, and beyond. Distribution shifts—in appearance, motion patterns, and object categories—degrade the performance of trained models in new scenes.
 2. **Limitations of Prior Work**: Existing test-time adaptation (TTA) methods are primarily designed for static image tasks and operate at the frame level, neglecting the temporal consistency and identity association that are critical in MOT.
-3. **Root Cause**: Intra-frame cues help distinguish objects within a single frame, while inter-frame temporal cues ensure identity consistency across frames—existing TTA methods only address the former.
-4. **Paper Goals**: Design a test-time adaptation framework tailored for MOT that addresses both intra-frame discrimination and inter-frame consistency.
-5. **Starting Point**: Emulate the human dual-process cognitive model—an intuition system (fast but coarse) and an experience system (slow but accurate).
+3. **Key Challenge**: Intra-frame cues help distinguish objects within a single frame, while inter-frame temporal cues ensure identity consistency across frames—existing TTA methods only address the former.
+4. **Goal**: Design a test-time adaptation framework tailored for MOT that addresses both intra-frame discrimination and inter-frame consistency.
+5. **Key Insight**: Emulate the human dual-process cognitive model—an intuition system (fast but coarse) and an experience system (slow but accurate).
 6. **Core Idea**: The intuition system performs rapid matching via instantaneous memory; the experience system calibrates predictions using accumulated history. Confident samples serve as self-training priors, and uncertain samples serve as reflective cases.
 
 ## Method

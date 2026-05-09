@@ -28,15 +28,15 @@ CNNs trained on LLM attention weights are used to evaluate the alignment between
 
 ## Background & Motivation
 
-**State of the Field**: LLMs verbatim memorize substantial portions of training data, raising privacy and legal concerns. Prashanth et al. proposed a four-class taxonomy (Non-memorized/Recite/Reconstruct/Recollect) that distinguishes memorization types using high-level features such as perplexity and token frequency.
+**Background**: LLMs verbatim memorize substantial portions of training data, raising privacy and legal concerns. Prashanth et al. proposed a four-class taxonomy (Non-memorized/Recite/Reconstruct/Recollect) that distinguishes memorization types using high-level features such as perplexity and token frequency.
 
 **Limitations of Prior Work**: Existing taxonomies are defined based on high-level semantic features but have not been validated as reflecting distinct internal attention mechanisms. CNN classification experiments reveal frequent misclassification.
 
-**Root Cause**: The Recollect class (low-frequency memorization) does not correspond to a distinctive attention pattern; many samples should instead be assigned to Recite or Reconstruct.
+**Key Challenge**: The Recollect class (low-frequency memorization) does not correspond to a distinctive attention pattern; many samples should instead be assigned to Recite or Reconstruct.
 
-**Paper Goals**: To identify a memorization taxonomy that is genuinely aligned with the attention mechanisms of LLMs.
+**Goal**: To identify a memorization taxonomy that is genuinely aligned with the attention mechanisms of LLMs.
 
-**Starting Point**: Taxonomy evaluation is reformulated as a classification task — a well-defined taxonomy should enable a CNN to readily distinguish attention weight patterns across classes.
+**Key Insight**: Taxonomy evaluation is reformulated as a classification task — a well-defined taxonomy should enable a CNN to readily distinguish attention weight patterns across classes.
 
 **Core Idea**: CNN classification performance serves as a proxy for taxonomy quality, enabling a systematic search over 54 candidate taxonomies to identify the optimal one.
 

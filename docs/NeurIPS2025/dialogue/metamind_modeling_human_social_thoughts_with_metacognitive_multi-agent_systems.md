@@ -29,15 +29,15 @@ This paper proposes MetaMind — a multi-agent framework inspired by psychologic
 
 ## Background & Motivation
 
-**State of the Field**: Human everyday conversation is laden with implicit intent — unstated emotions, implied expectations, and veiled suggestions. Humans navigate these latent meanings through Theory of Mind (ToM), reasoning about others' beliefs, desires, emotions, and intentions.
+**Background**: Human everyday conversation is laden with implicit intent — unstated emotions, implied expectations, and veiled suggestions. Humans navigate these latent meanings through Theory of Mind (ToM), reasoning about others' beliefs, desires, emotions, and intentions.
 
 **Limitations of Prior Work**: Although LLMs excel at semantic understanding tasks, they fall significantly short in social reasoning scenarios involving indirect speech, implicit emotions, and culturally sensitive contexts, often defaulting to literal interpretations.
 
 **Limitations of Prior Work**: Existing approaches have attempted to inject social behavior through static role-playing prompting or RLHF fine-tuning; however, these methods optimize for surface-level statistical alignment and treat social reasoning as a single-step prediction problem, failing to capture the multi-stage cognitive processes characteristic of human reasoning.
 
-**Root Cause**: Human social reasoning is a layered process — interpretation → reflection → adaptation (metacognition) — yet existing systems lack this structured, iterative reasoning capability.
+**Key Challenge**: Human social reasoning is a layered process — interpretation → reflection → adaptation (metacognition) — yet existing systems lack this structured, iterative reasoning capability.
 
-**Paper Goals**: Drawing from psychological metacognition theory, this work decomposes social reasoning into three collaborative stages, endowing LLMs with human-like hierarchical reasoning capabilities.
+**Goal**: Drawing from psychological metacognition theory, this work decomposes social reasoning into three collaborative stages, endowing LLMs with human-like hierarchical reasoning capabilities.
 
 **Core Idea**: MetaMind is designed as a three-stage multi-agent framework — first reasoning about mental states, then refining hypotheses under social norm constraints, and finally generating and verifying responses.
 

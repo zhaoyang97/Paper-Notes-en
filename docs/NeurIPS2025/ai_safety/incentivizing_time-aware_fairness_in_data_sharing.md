@@ -29,15 +29,15 @@ This paper proposes a time-aware data sharing framework that introduces new ince
 
 ## Background & Motivation
 
-**State of the Field**: In collaborative machine learning (CML), aggregating data from multiple parties leads to improved model performance. Existing frameworks such as Shapley value-based methods have established incentive mechanisms including fairness and individual rationality to encourage participation.
+**Background**: In collaborative machine learning (CML), aggregating data from multiple parties leads to improved model performance. Existing frameworks such as Shapley value-based methods have established incentive mechanisms including fairness and individual rationality to encourage participation.
 
 **Limitations of Prior Work**: All existing frameworks assume that all participants join the collaboration simultaneously. In practice, however, participants may join at different times due to data cleaning delays, legal barriers, or information asymmetry. Existing frameworks thus provide no incentive for participants to contribute data early.
 
-**Root Cause**: Traditional fairness requires that "participants contributing data of equal value receive equal rewards," whereas a time-aware perspective demands that "earlier joiners receive higher rewards"—these two requirements are inherently in conflict.
+**Key Challenge**: Traditional fairness requires that "participants contributing data of equal value receive equal rewards," whereas a time-aware perspective demands that "earlier joiners receive higher rewards"—these two requirements are inherently in conflict.
 
-**Paper Goals**: To design reward mechanisms that simultaneously satisfy fairness and incentivize early participation.
+**Goal**: To design reward mechanisms that simultaneously satisfy fairness and incentivize early participation.
 
-**Starting Point**: Starting from cooperative game theory, the paper introduces a temporal dimension to redefine incentive conditions and constructs a compatible mathematical framework.
+**Key Insight**: Starting from cooperative game theory, the paper introduces a temporal dimension to redefine incentive conditions and constructs a compatible mathematical framework.
 
 **Core Idea**: Early joiners bear greater risk and facilitate the participation of fence-sitters, and should therefore receive higher rewards. The conflict between fairness and time-aware incentives is resolved by conditioning fairness on the premise of simultaneous joining.
 

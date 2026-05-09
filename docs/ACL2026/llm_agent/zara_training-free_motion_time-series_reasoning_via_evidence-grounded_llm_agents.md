@@ -29,15 +29,15 @@ This paper proposes ZARA, a knowledge- and retrieval-augmented multi-agent frame
 
 ## Background & Motivation
 
-**State of the Field**: Human Activity Recognition (HAR) is a core technology for digital health, adaptive interfaces, and related applications. Mainstream approaches rely on task-specific deep neural networks trained under fixed sensor configurations and predefined activity categories.
+**Background**: Human Activity Recognition (HAR) is a core technology for digital health, adaptive interfaces, and related applications. Mainstream approaches rely on task-specific deep neural networks trained under fixed sensor configurations and predefined activity categories.
 
 **Limitations of Prior Work**: Existing methods face three major bottlenecks: (1) poor generalization—adapting to new users or hardware requires costly model retraining; (2) limited training-free adaptation—time-series foundation models such as Moment and Mantis provide transferable representations but still require training task-specific classification heads, while contrastive learning methods like UniMTS struggle to distinguish fine-grained activities under frozen-parameter settings; (3) lack of interpretability—most methods output only class predictions without any transparent reasoning process.
 
-**Root Cause**: Although LLMs possess strong open-set reasoning capabilities, feeding raw numerical time series directly into an LLM leads to hallucination and weak grounding, because LLMs cannot intuitively understand physical dynamics from raw numerical streams.
+**Key Challenge**: Although LLMs possess strong open-set reasoning capabilities, feeding raw numerical time series directly into an LLM leads to hallucination and weak grounding, because LLMs cannot intuitively understand physical dynamics from raw numerical streams.
 
-**Paper Goals**: To construct a fully training-free HAR framework capable of generalizing across users and datasets while providing interpretable reasoning.
+**Goal**: To construct a fully training-free HAR framework capable of generalizing across users and datasets while providing interpretable reasoning.
 
-**Starting Point**: The authors observe that, just as RAG in NLP relies on high-quality document corpora, RAG for HAR requires a domain-specific knowledge base that converts the implicit statistical patterns of how physical movements manifest in sensor data into verifiable natural-language priors (e.g., "running exhibits higher variance in vertical acceleration than walking").
+**Key Insight**: The authors observe that, just as RAG in NLP relies on high-quality document corpora, RAG for HAR requires a domain-specific knowledge base that converts the implicit statistical patterns of how physical movements manifest in sensor data into verifiable natural-language priors (e.g., "running exhibits higher variance in vertical acceleration than walking").
 
 **Core Idea**: Distill the statistical characteristics of sensor signals into pairwise textual knowledge bases, and combine class-conditional retrieval with hierarchical multi-agent reasoning to achieve evidence-grounded, training-free activity recognition.
 

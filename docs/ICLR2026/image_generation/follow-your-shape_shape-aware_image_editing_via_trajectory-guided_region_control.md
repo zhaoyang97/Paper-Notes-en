@@ -27,18 +27,18 @@ content_hash: 46ba763f5a93aa12
 This paper proposes Follow-Your-Shape, a training-free and mask-free shape-aware editing framework. It constructs a Trajectory Divergence Map (TDM) by computing token-level velocity discrepancies between inversion and editing trajectories to precisely localize editing regions, and employs a staged KV injection strategy to achieve large-scale shape transformations while strictly preserving the background.
 
 ## Background & Motivation
-**State of the Field**: Diffusion/Flow model-based image editing performs well on general tasks but frequently fails at structural editing involving large-scale shape transformations—either failing to achieve the target shape change or corrupting non-edited regions.
+**Background**: Diffusion/Flow model-based image editing performs well on general tasks but frequently fails at structural editing involving large-scale shape transformations—either failing to achieve the target shape change or corrupting non-edited regions.
 
 **Limitations of Prior Work**: Existing region control strategies suffer from fundamental drawbacks:
    - External binary masks: overly rigid and ill-suited for fine-grained boundaries
    - Cross-attention map inference: noisy and unstable, unreliable under large deformations
    - Unconditional KV injection: globally preserves structure but suppresses the intended edit
 
-**Root Cause**: A fundamental tension between edit controllability and content preservation—enabling a Flow model to precisely modify the shape of a target region without affecting surrounding areas.
+**Key Challenge**: A fundamental tension between edit controllability and content preservation—enabling a Flow model to precisely modify the shape of a target region without affecting surrounding areas.
 
-**Paper Goals**: How to achieve precise, large-scale shape editing without training or external masks?
+**Goal**: How to achieve precise, large-scale shape editing without training or external masks?
 
-**Starting Point**: From a dynamical systems perspective—editing regions can be localized by measuring the degree of divergence between denoising trajectories under source and target conditions.
+**Key Insight**: From a dynamical systems perspective—editing regions can be localized by measuring the degree of divergence between denoising trajectories under source and target conditions.
 
 **Core Idea**: Automatically localize editing regions by comparing velocity field discrepancies under source and target prompts, and leverage staged KV injection to achieve stable, shape-aware editing.
 

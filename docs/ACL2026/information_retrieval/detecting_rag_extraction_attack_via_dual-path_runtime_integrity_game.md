@@ -27,15 +27,15 @@ This paper proposes CanaryRAG, a RAG runtime defense mechanism inspired by stack
 
 ## Background & Motivation
 
-**State of the Field**: RAG systems augment LLMs with external knowledge bases and have been widely deployed in enterprise assistants, customer support, and agentic workflows. Knowledge bases typically contain high-value proprietary assets that constitute the core competitive advantage of commercial RAG systems.
+**Background**: RAG systems augment LLMs with external knowledge bases and have been widely deployed in enterprise assistants, customer support, and agentic workflows. Knowledge bases typically contain high-value proprietary assets that constitute the core competitive advantage of commercial RAG systems.
 
 **Limitations of Prior Work**: (1) RAG systems are vulnerable to knowledge base extraction — adversarial prompts can induce models to output retrieved private content, and research has shown that attackers can adaptively reconstruct knowledge bases through black-box prompt interactions. (2) Existing defenses are fundamentally **passive** (raising reconstruction cost without actively detecting attackers), **intrusive** (requiring modifications to the retrieval or indexing components of the RAG pipeline), and remain vulnerable to strong adaptive attacks.
 
-**Root Cause**: Detecting knowledge base leakage is inherently difficult — normal RAG responses also consume retrieved content, and semantic similarity alone cannot distinguish "legitimate use" from "unauthorized disclosure," since the difference lies in intent rather than observable semantics.
+**Key Challenge**: Detecting knowledge base leakage is inherently difficult — normal RAG responses also consume retrieved content, and semantic similarity alone cannot distinguish "legitimate use" from "unauthorized disclosure," since the difference lies in intent rather than observable semantics.
 
-**Paper Goals**: Address the RAG knowledge base leakage problem from a detection (rather than prevention) perspective, and design a plug-and-play, model-agnostic runtime detection mechanism.
+**Goal**: Address the RAG knowledge base leakage problem from a detection (rather than prevention) perspective, and design a plug-and-play, model-agnostic runtime detection mechanism.
 
-**Starting Point**: The design is inspired by stack canaries in software security — canaries do not prevent attacks but provide reliable signals that an attack has occurred. RAG extraction attacks are reframed as runtime integrity violations.
+**Key Insight**: The design is inspired by stack canaries in software security — canaries do not prevent attacks but provide reliable signals that an attack has occurred. RAG extraction attacks are reframed as runtime integrity violations.
 
 **Core Idea**: Inject non-semantic canary tokens into retrieved chunks, and employ dual-path parallel monitoring — the target path (canary tokens should not appear in the output) and the Oracle path (canary tokens should be elicitable). Any path deviating from expected behavior signals an attack.
 

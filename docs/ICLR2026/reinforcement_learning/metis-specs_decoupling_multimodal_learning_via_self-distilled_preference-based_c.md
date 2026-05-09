@@ -29,15 +29,15 @@ This paper proposes SPECS, a three-stage cold-start framework that (1) generates
 
 ## Background & Motivation
 
-**State of the Field**: Inspired by DeepSeek-R1, a growing body of "MLLM-r1" works applies RL (particularly GRPO) to vision-language models to enhance reasoning. The standard training paradigm follows: cold start (SFT) → RL fine-tuning.
+**Background**: Inspired by DeepSeek-R1, a growing body of "MLLM-r1" works applies RL (particularly GRPO) to vision-language models to enhance reasoning. The standard training paradigm follows: cold start (SFT) → RL fine-tuning.
 
 **Limitations of Prior Work**: (1) SFT-based cold start couples reasoning paradigms, task solutions, and output formats into a single learning objective, leading to instruction-style overfitting and weakened OOD generalization; (2) distillation from an external teacher model can degrade performance when the capability gap between teacher and student is too large; (3) SFT-based cold start is inconsistent with subsequent RL training objectives (SFT maximizes log-likelihood vs. RL optimizes rewards), undermining training stability.
 
-**Root Cause**: When the cold start phase learns too "deeply" (simultaneously acquiring format and reasoning content), the model overfits to the training distribution, thereby restricting the exploration space and generalization capacity available to subsequent RL.
+**Key Challenge**: When the cold start phase learns too "deeply" (simultaneously acquiring format and reasoning content), the model overfits to the training distribution, thereby restricting the exploration space and generalization capacity available to subsequent RL.
 
-**Paper Goals**: Design a cold-start strategy better suited for subsequent RL training — one that restricts cold start to learning "shallow" format/structural conventions while reserving "deep" reasoning capability acquisition for the RL stage.
+**Goal**: Design a cold-start strategy better suited for subsequent RL training — one that restricts cold start to learning "shallow" format/structural conventions while reserving "deep" reasoning capability acquisition for the RL stage.
 
-**Starting Point**: A Generalization Factor (GF) metric is proposed to quantify the generalization ability of different cold-start methods. Empirical analysis reveals that DPO-based cold start generalizes better than SFT-based cold start, motivating the design of a decoupled learning framework.
+**Key Insight**: A Generalization Factor (GF) metric is proposed to quantify the generalization ability of different cold-start methods. Empirical analysis reveals that DPO-based cold start generalizes better than SFT-based cold start, motivating the design of a decoupled learning framework.
 
 **Core Idea**: The cold start employs DPO exclusively for format alignment (where both chosen and rejected responses are correct but differ in format), while reasoning capability is delegated to RL — decoupling learning objectives to avoid the overfitting pitfalls of SFT.
 

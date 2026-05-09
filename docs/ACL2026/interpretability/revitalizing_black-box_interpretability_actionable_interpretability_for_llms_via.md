@@ -28,15 +28,15 @@ This paper proposes a proxy-model-based black-box interpretability framework tha
 
 ## Background & Motivation
 
-**State of the Field**: Post-hoc explanations serve not only as transparency tools but also as drivers of model optimization (e.g., prompt debugging and data cleaning). However, closed-source models (e.g., GPT-4o, Google Gemini) block access to internal representations, making model-agnostic methods (e.g., LIME, SHAP) the only viable option. These methods rely on extensive perturbation sampling—generating a single LIME explanation typically requires 1,000 queries, and generating explanations over a validation set of 50 samples demands 50,000 queries, costing over \$100.
+**Background**: Post-hoc explanations serve not only as transparency tools but also as drivers of model optimization (e.g., prompt debugging and data cleaning). However, closed-source models (e.g., GPT-4o, Google Gemini) block access to internal representations, making model-agnostic methods (e.g., LIME, SHAP) the only viable option. These methods rely on extensive perturbation sampling—generating a single LIME explanation typically requires 1,000 queries, and generating explanations over a validation set of 50 samples demands 50,000 queries, costing over \$100.
 
 **Limitations of Prior Work**: (1) A cost–utility dilemma: the upfront cost of generating explanations exceeds the potential gains of the optimization tasks they are meant to support, rendering these powerful tools practically unusable; (2) existing acceleration methods (e.g., amortized explainers, feature reduction) are orthogonal to the proposed approach but fail to exploit inter-LLM homogeneity; (3) white-box explanation methods require access to internal model representations and are thus inapplicable to closed-source models.
 
-**Root Cause**: Model-agnostic explanations can theoretically guide LLM optimization, but their reliance on large numbers of queries to expensive models makes them practically infeasible—creating a fundamental utility dilemma in which explanation costs exceed optimization benefits.
+**Key Challenge**: Model-agnostic explanations can theoretically guide LLM optimization, but their reliance on large numbers of queries to expensive models makes them practically infeasible—creating a fundamental utility dilemma in which explanation costs exceed optimization benefits.
 
-**Paper Goals**: (1) Propose an economically viable proxy explanation framework that replaces expensive models with cheap models for explanation generation; (2) ensure the reliability of proxy explanations through a statistical validation mechanism; (3) demonstrate the practical utility of proxy explanations in downstream optimization tasks.
+**Goal**: (1) Propose an economically viable proxy explanation framework that replaces expensive models with cheap models for explanation generation; (2) ensure the reliability of proxy explanations through a statistical validation mechanism; (3) demonstrate the practical utility of proxy explanations in downstream optimization tasks.
 
-**Starting Point**: The framework is grounded in inter-LLM homogeneity—different LLMs tend to exhibit similar behaviors on similar inputs, implying that small models can locally approximate the decision boundaries of large models ("inferring the whole from a part").
+**Key Insight**: The framework is grounded in inter-LLM homogeneity—different LLMs tend to exhibit similar behaviors on similar inputs, implying that small models can locally approximate the decision boundaries of large models ("inferring the whole from a part").
 
 **Core Idea**: Use cheap local/open-source models as proxies to generate perturbation-based explanations. A two-level statistical screening mechanism (task-level + instance-level) ensures that proxy explanations are deployed only when they are sufficiently reliable, with fallback to the expensive oracle model otherwise.
 

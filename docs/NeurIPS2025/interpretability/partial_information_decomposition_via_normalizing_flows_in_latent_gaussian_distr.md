@@ -28,15 +28,15 @@ Two complementary tools are proposed: Thin-PID is an efficient Gaussian PID algo
 
 ## Background & Motivation
 
-**State of the Field**: Partial Information Decomposition (PID) is an information-theoretic framework for quantifying multi-source information interactions. It decomposes the total mutual information of two sources $X_1, X_2$ about a target $Y$ into four non-negative components: redundant information $R$ (shared by both), unique information $U_1, U_2$ (exclusive to each), and synergistic information $S$ (only available when both are combined). PID has been applied in multimodal learning to understand modality interactions.
+**Background**: Partial Information Decomposition (PID) is an information-theoretic framework for quantifying multi-source information interactions. It decomposes the total mutual information of two sources $X_1, X_2$ about a target $Y$ into four non-negative components: redundant information $R$ (shared by both), unique information $U_1, U_2$ (exclusive to each), and synergistic information $S$ (only available when both are combined). PID has been applied in multimodal learning to understand modality interactions.
 
 **Limitations of Prior Work**: Computing PID requires solving an optimization problem over the set of joint distributions satisfying marginal constraints. This is feasible for discrete small-scale data (via CVX), but practically impossible for continuous high-dimensional data, where even estimating mutual information and entropy is extremely challenging. The BATCH method uses neural network parameterization but achieves poor accuracy. Tilde-PID is restricted to Gaussian distributions without proof of optimality.
 
-**Root Cause**: A fundamental gap exists between the theoretical elegance of PID and its computational infeasibility — while PID can precisely quantify modality interactions in theory, in practice it is limited to discrete low-dimensional data.
+**Key Challenge**: A fundamental gap exists between the theoretical elegance of PID and its computational infeasibility — while PID can precisely quantify modality interactions in theory, in practice it is limited to discrete low-dimensional data.
 
-**Paper Goals**: (1) Prove the optimality of the joint Gaussian solution in Gaussian PID; (2) Design an algorithm more efficient than Tilde-PID; (3) Generalize to non-Gaussian high-dimensional continuous data.
+**Goal**: (1) Prove the optimality of the joint Gaussian solution in Gaussian PID; (2) Design an algorithm more efficient than Tilde-PID; (3) Generalize to non-Gaussian high-dimensional continuous data.
 
-**Starting Point**: Two key insights — PID under Gaussian distributions admits a closed-form solution and can be computed efficiently; the invertibility of normalizing flows preserves mutual information, enabling transformation to Gaussian space prior to PID computation.
+**Key Insight**: Two key insights — PID under Gaussian distributions admits a closed-form solution and can be computed efficiently; the invertibility of normalizing flows preserves mutual information, enabling transformation to Gaussian space prior to PID computation.
 
 **Core Idea**: Transform data to Gaussian via normalizing flows, then efficiently compute PID in the Gaussian space.
 

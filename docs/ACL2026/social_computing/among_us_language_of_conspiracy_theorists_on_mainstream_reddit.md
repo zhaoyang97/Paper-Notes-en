@@ -29,15 +29,15 @@ Analyzing 500 million Reddit comments over 10 years of longitudinal data, this s
 
 ## Background & Motivation
 
-**State of the Field**: Conspiracy theories are not merely fringe beliefs—they are associated with vaccine hesitancy, public health risks, and even threats to democratic institutions (e.g., the 2021 Capitol incident). Existing research primarily focuses on detecting conspiracy theory content while neglecting how conspiracy theory believers express themselves in mainstream spaces.
+**Background**: Conspiracy theories are not merely fringe beliefs—they are associated with vaccine hesitancy, public health risks, and even threats to democratic institutions (e.g., the 2021 Capitol incident). Existing research primarily focuses on detecting conspiracy theory content while neglecting how conspiracy theory believers express themselves in mainstream spaces.
 
 **Limitations of Prior Work**: (1) It is known that conspiracy theorists use specific rhetorical styles and vocabulary, but it remains unclear whether these patterns are confined to conspiracy spaces or permeate mainstream communication; (2) Existing detection methods mostly focus on content-level features (e.g., topic words), neglecting language style features independent of discussion topics.
 
-**Root Cause**: Do conspiracy theorists possess a "conspiracy mindset" (monological worldview) that pervades all their communication, or can they fully adapt to different communities' linguistic norms?
+**Key Challenge**: Do conspiracy theorists possess a "conspiracy mindset" (monological worldview) that pervades all their communication, or can they fully adapt to different communities' linguistic norms?
 
-**Paper Goals**: Systematically examine the linguistic distinguishability of conspiracy community users in mainstream spaces using large-scale longitudinal data.
+**Goal**: Systematically examine the linguistic distinguishability of conspiracy community users in mainstream spaces using large-scale longitudinal data.
 
-**Starting Point**: Use LIWC-22 psycholinguistic features (rather than topic words) to construct user language profiles, training separate classifiers for each of 22 mainstream communities.
+**Key Insight**: Use LIWC-22 psycholinguistic features (rather than topic words) to construct user language profiles, training separate classifiers for each of 22 mainstream communities.
 
 **Core Idea**: Conspiracy theory users' language is indeed distinguishable, but the distinguishing patterns are highly community-dependent—no single global model can capture these patterns, requiring community-specific analysis.
 
@@ -159,15 +159,15 @@ Analyzing 500 million Reddit comments over 10 years of longitudinal data, this s
 
 ## Background & Motivation
 
-**State of the Field**: Conspiracy theories are not merely fringe beliefs—they are linked to vaccine hesitancy, public health risks, and even threats to democratic institutions (e.g., the 2021 Capitol incident). Existing research primarily focuses on detecting conspiracy content but ignores how conspiracy believers express themselves in mainstream spaces.
+**Background**: Conspiracy theories are not merely fringe beliefs—they are linked to vaccine hesitancy, public health risks, and even threats to democratic institutions (e.g., the 2021 Capitol incident). Existing research primarily focuses on detecting conspiracy content but ignores how conspiracy believers express themselves in mainstream spaces.
 
 **Limitations of Prior Work**: (1) It is known that conspiracy theorists use specific rhetorical styles and vocabulary, but it is unclear whether these patterns are confined to conspiracy spaces or permeate mainstream communication; (2) Existing detection methods mostly focus on content-level features (e.g., topic words) while ignoring stylistic linguistic features independent of discussion topics.
 
-**Root Cause**: Do conspiracy theorists possess a "conspiratorial mindset" (monological worldview) that permeates all their communication, or can they fully adapt to different communities' linguistic norms?
+**Key Challenge**: Do conspiracy theorists possess a "conspiratorial mindset" (monological worldview) that permeates all their communication, or can they fully adapt to different communities' linguistic norms?
 
-**Paper Goals**: Use large-scale longitudinal data to systematically test the linguistic distinguishability of conspiracy community users in mainstream spaces.
+**Goal**: Use large-scale longitudinal data to systematically test the linguistic distinguishability of conspiracy community users in mainstream spaces.
 
-**Starting Point**: Use LIWC-22 psycholinguistic features (rather than topic words) to build user linguistic profiles, training separate classifiers on 22 mainstream communities.
+**Key Insight**: Use LIWC-22 psycholinguistic features (rather than topic words) to build user linguistic profiles, training separate classifiers on 22 mainstream communities.
 
 **Core Idea**: Conspiracy users' language is indeed distinguishable, but the distinguishing patterns are highly community-dependent—no single global model can capture these patterns; community-specific analysis is required.
 

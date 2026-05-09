@@ -28,15 +28,15 @@ This paper proposes the Adaptive Frontier Exploration on Graphs (AFEG) framework
 
 ## Background & Motivation
 
-**State of the Field**: Network-based disease testing (e.g., HIV contact tracing) requires sequentially selecting nodes for testing on social/sexual contact networks, where test results from observed nodes update infection probabilities for their neighbors. The WHO recommends network-based testing strategies to reach undiagnosed populations.
+**Background**: Network-based disease testing (e.g., HIV contact tracing) requires sequentially selecting nodes for testing on social/sexual contact networks, where test results from observed nodes update infection probabilities for their neighbors. The WHO recommends network-based testing strategies to reach undiagnosed populations.
 
 **Limitations of Prior Work**: Directly modeling the problem as an MDP leads to an exponentially large state space; adaptive submodular optimization is inapplicable since marginal gains in disease testing may be increasing rather than diminishing; existing graph-based active search methods lack frontier constraints and theoretical guarantees.
 
-**Root Cause**: Real-world testing is subject to a "frontier constraint"—only neighbors of already-tested nodes can be tested next (analogous to contact tracing)—yet designing an optimal policy under this constraint is highly non-trivial.
+**Key Challenge**: Real-world testing is subject to a "frontier constraint"—only neighbors of already-tested nodes can be tested next (analogous to contact tracing)—yet designing an optimal policy under this constraint is highly non-trivial.
 
-**Paper Goals**: How can graph nodes be adaptively selected under frontier constraints to maximize discounted cumulative reward?
+**Goal**: How can graph nodes be adaptively selected under frontier constraints to maximize discounted cumulative reward?
 
-**Starting Point**: AFEG is formulated as a branching bandit problem, leveraging the optimality theory of the Gittins index.
+**Key Insight**: AFEG is formulated as a branching bandit problem, leveraging the optimality theory of the Gittins index.
 
 **Core Idea**: AFEG on forest graphs can be exactly reduced to a branching bandit problem, for which the Gittins index policy is provably optimal and efficiently computable.
 

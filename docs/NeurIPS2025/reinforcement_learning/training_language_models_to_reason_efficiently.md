@@ -27,15 +27,15 @@ By incorporating a length penalty term into the RL reward—multiplying the corr
 
 ## Background & Motivation
 
-**State of the Field**: Reasoning models (o1, R1) substantially improve reasoning capabilities through long CoT, but at high inference cost—the quadratic complexity of Transformer attention makes the computational cost of long CoT grow rapidly.
+**Background**: Reasoning models (o1, R1) substantially improve reasoning capabilities through long CoT, but at high inference cost—the quadratic complexity of Transformer attention makes the computational cost of long CoT grow rapidly.
 
 **Limitations of Prior Work**: (1) Reasoning models severely "overthink" on simple problems (e.g., computing 1+1 requires a full page of CoT); (2) directly constraining length via prompt instructions is ineffective (distilled reasoning models do not follow length constraints); (3) existing compression methods (SFT on shortest correct solutions, DPO) underperform RL-based approaches and lack controllability.
 
-**Root Cause**: Token usage must be reduced without sacrificing reasoning quality, yet naive truncation leads to incomplete reasoning, and prompt-based control is ineffective for reasoning models.
+**Key Challenge**: Token usage must be reduced without sacrificing reasoning quality, yet naive truncation leads to incomplete reasoning, and prompt-based control is ineffective for reasoning models.
 
-**Paper Goals**: How can reasoning models be systematically trained to reach correct answers using fewer tokens, while retaining the ability to spend more tokens on harder problems?
+**Goal**: How can reasoning models be systematically trained to reach correct answers using fewer tokens, while retaining the ability to spend more tokens on harder problems?
 
-**Starting Point**: Introduce a length regularization term into the RL reward function, applying length penalties exclusively to **correct responses** (incorrect responses always receive a reward of 0), with per-prompt normalization to avoid over-penalizing harder problems.
+**Key Insight**: Introduce a length regularization term into the RL reward function, applying length penalties exclusively to **correct responses** (incorrect responses always receive a reward of 0), with per-prompt normalization to avoid over-penalizing harder problems.
 
 **Core Idea**: Multiply the correctness reward by a length discount $(1 - \alpha \cdot f(\text{len}))$, using $\alpha$ to smoothly control the efficiency–accuracy trade-off, encouraging the model to be more concise on simple problems while maintaining deep reasoning on difficult ones.
 

@@ -27,15 +27,15 @@ content_hash: a32a293af78cd03e
 This paper identifies four failure scenarios in multi-object generation (similar shapes/textures, dissimilar background biases, many objects), constructs directional separation vectors to modify three types of CLIP text embeddings (semantic token / EOT / pooled), achieves a 16–25% improvement in success rate and a 3–12% reduction in mixing rate on SDXL, with inference speed close to baseline (~4× faster than Attend-and-Excite).
 
 ## Background & Motivation
-**State of the Field**: T2I diffusion models frequently suffer from object neglect and object mixing in multi-object generation. Existing approaches fall into two categories — latent modification methods (Attend-and-Excite, CONFORM) require iterative gradient updates and are 4–5× slower at inference; text embedding modification methods (TEBOpt) are fast but limited in effectiveness.
+**Background**: T2I diffusion models frequently suffer from object neglect and object mixing in multi-object generation. Existing approaches fall into two categories — latent modification methods (Attend-and-Excite, CONFORM) require iterative gradient updates and are 4–5× slower at inference; text embedding modification methods (TEBOpt) are fast but limited in effectiveness.
 
 **Limitations of Prior Work**: The CLIP text encoder uses a causal masking mechanism, causing information from earlier tokens to "leak" into the embeddings of later tokens, entangling multi-object information in the embedding space.
 
-**Root Cause**: Latent modification methods are effective but slow; embedding modification methods are fast but limited — a method that is both fast and effective in embedding space is needed.
+**Key Challenge**: Latent modification methods are effective but slow; embedding modification methods are fast but limited — a method that is both fast and effective in embedding space is needed.
 
-**Paper Goals**: (a) Systematically identify the key failure scenarios in multi-object generation; (b) effectively reduce object neglect and mixing through embedding-space operations without modifying the generation process.
+**Goal**: (a) Systematically identify the key failure scenarios in multi-object generation; (b) effectively reduce object neglect and mixing through embedding-space operations without modifying the generation process.
 
-**Starting Point**: Two key observations — CLIP's causal masking causes information entanglement, and differences between CLIP embeddings encode directional information. Based on these, "separation vectors" are constructed to push apart different objects in the embedding space.
+**Key Insight**: Two key observations — CLIP's causal masking causes information entanglement, and differences between CLIP embeddings encode directional information. Based on these, "separation vectors" are constructed to push apart different objects in the embedding space.
 
 **Core Idea**: For each object pair, compute a separation vector (directional difference), adaptively weight it by visual similarity between objects, and add it to three types of CLIP embeddings to achieve object separation.
 

@@ -28,15 +28,15 @@ This paper proposes OmniDiagram, a unified diagram code generation framework cov
 
 ## Background & Motivation
 
-**State of the Field**: The paradigm of programmable diagram generation is evolving rapidly and plays a critical role in structured visualization. Multimodal large language models have made it possible to directly process unstructured diagrams (e.g., PNG raster images) and generate executable code. However, existing methods are typically limited to a single task or a small number of programming languages.
+**Background**: The paradigm of programmable diagram generation is evolving rapidly and plays a critical role in structured visualization. Multimodal large language models have made it possible to directly process unstructured diagrams (e.g., PNG raster images) and generate executable code. However, existing methods are typically limited to a single task or a small number of programming languages.
 
 **Limitations of Prior Work**: (1) StarFlow supports only JSON output and ignores diverse diagram languages; JanusCoder attempts to unify text-to-code and diagram-to-code but relies solely on SFT, limiting visual alignment and code execution robustness. (2) Methods that combine RL with visual feedback (e.g., MSRL, RLRF) target only specific image-to-code tasks and lack cross-task flexibility. (3) Existing visual feedback approaches either rely on fixed prompt templates (constrained by the evaluation model's capability and susceptible to prompt hacking) or compute global visual similarity (biased toward surface structural similarity while neglecting fine-grained details).
 
-**Root Cause**: Diagram code generation must simultaneously ensure code logical correctness and post-rendering visual fidelity, yet existing RL reward mechanisms struggle to uniformly verify critical structural details across heterogeneous tasks — the structural diversity of Text-to-Code precludes a single reference image, and the non-bijectivity of Diagram-to-Code means different code can produce visually identical outputs.
+**Key Challenge**: Diagram code generation must simultaneously ensure code logical correctness and post-rendering visual fidelity, yet existing RL reward mechanisms struggle to uniformly verify critical structural details across heterogeneous tasks — the structural diversity of Text-to-Code precludes a single reference image, and the non-bijectivity of Diagram-to-Code means different code can produce visually identical outputs.
 
-**Paper Goals**: To build a unified framework covering multiple diagram languages and task modalities, and to design an RL reward mechanism capable of uniformly evaluating visual fidelity across tasks.
+**Goal**: To build a unified framework covering multiple diagram languages and task modalities, and to design an RL reward mechanism capable of uniformly evaluating visual fidelity across tasks.
 
-**Starting Point**: Drawing inspiration from the metacognitive review process humans employ in complex construction tasks — assessing structural and semantic constraints through targeted questioning rather than holistic similarity judgments.
+**Key Insight**: Drawing inspiration from the metacognitive review process humans employ in complex construction tasks — assessing structural and semantic constraints through targeted questioning rather than holistic similarity judgments.
 
 **Core Idea**: The Viva (Visual Interrogation Verifies All) mechanism — task-specific visual questions are generated offline for each training sample; during online training, a reward model answers these questions based on rendered images to evaluate visual fidelity, providing fine-grained intermediate scoring feedback.
 

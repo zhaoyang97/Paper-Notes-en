@@ -28,11 +28,11 @@ This paper proposes VTG, a unified video transition generation framework built u
 
 ## Background & Motivation
 
-1. **State of the Field**: Transition video generation encompasses object morphing (DiffMorpher), video frame interpolation (RIFE, etc.), and scene transition (SEINE), yet each method targets a specific task with no unified framework.
+1. **Background**: Transition video generation encompasses object morphing (DiffMorpher), video frame interpolation (RIFE, etc.), and scene transition (SEINE), yet each method targets a specific task with no unified framework.
 2. **Limitations of Prior Work**: (1) Image morphing methods (e.g., DiffMorpher) produce discontinuous static images rather than temporally coherent frames; (2) video frame interpolation yields unnatural transitions under large content discrepancies; (3) existing frameworks address either morphing/motion prediction or scene transitions, but not both.
-3. **Root Cause**: High-quality transitions must simultaneously satisfy four criteria: semantic similarity, input fidelity, inter-frame smoothness, and text alignment. Random latent initialization in I2V diffusion models causes inter-frame "flickering," and support for only forward motion prediction creates asymmetry between forward and backward inputs.
-4. **Paper Goals**: Can a general-purpose transition generator be designed to handle object morphing, concept blending, motion prediction, and scene transitions in a unified manner?
-5. **Starting Point**: Three complementary designs are introduced on top of an I2V diffusion model: interpolation-based initialization (handling large content discrepancies), bidirectional motion (eliminating directional asymmetry), and representation alignment (enhancing fidelity).
+3. **Key Challenge**: High-quality transitions must simultaneously satisfy four criteria: semantic similarity, input fidelity, inter-frame smoothness, and text alignment. Random latent initialization in I2V diffusion models causes inter-frame "flickering," and support for only forward motion prediction creates asymmetry between forward and backward inputs.
+4. **Goal**: Can a general-purpose transition generator be designed to handle object morphing, concept blending, motion prediction, and scene transitions in a unified manner?
+5. **Key Insight**: Three complementary designs are introduced on top of an I2V diffusion model: interpolation-based initialization (handling large content discrepancies), bidirectional motion (eliminating directional asymmetry), and representation alignment (enhancing fidelity).
 6. **Core Idea**: Unify four transition task categories via spherical interpolation of noise + LoRA fusion + text SLERP, while bidirectional motion fine-tuning eliminates directional bias.
 
 ## Method

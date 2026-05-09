@@ -30,7 +30,7 @@ VoiceCloak is a proactive defense framework against diffusion-based voice clonin
 
 ### State of the Field
 
-**State of the Field**: Diffusion models have produced highly realistic speech synthesis in the voice cloning domain, while simultaneously introducing severe security risks of malicious forgery. Existing proactive defense methods (Attack-VC, VoicePrivacy, VoiceGuard) are primarily designed for traditional VC architectures (autoregressive/VAE, etc.) and perform poorly against DM-based VC.
+**Background**: Diffusion models have produced highly realistic speech synthesis in the voice cloning domain, while simultaneously introducing severe security risks of malicious forgery. Existing proactive defense methods (Attack-VC, VoicePrivacy, VoiceGuard) are primarily designed for traditional VC architectures (autoregressive/VAE, etc.) and perform poorly against DM-based VC.
 
 ### Limitations of Prior Work
 
@@ -38,11 +38,11 @@ VoiceCloak is a proactive defense framework against diffusion-based voice clonin
 
 ### Root Cause
 
-**Root Cause**: Effective defense requires simultaneously achieving two objectives—identity obfuscation (making the cloned voice dissimilar to the original speaker) and quality degradation (making the cloned voice sound unnatural)—yet these objectives target different vulnerabilities within DMs (speaker embedding vs. denoising trajectory vs. U-Net semantic features), which single-point attack methods cannot cover simultaneously.
+**Key Challenge**: Effective defense requires simultaneously achieving two objectives—identity obfuscation (making the cloned voice dissimilar to the original speaker) and quality degradation (making the cloned voice sound unnatural)—yet these objectives target different vulnerabilities within DMs (speaker embedding vs. denoising trajectory vs. U-Net semantic features), which single-point attack methods cannot cover simultaneously.
 
 ### Paper Goals
 
-**Paper Goals**: To design a systematic multi-dimensional adversarial perturbation framework that applies targeted interference across different vulnerability dimensions of DMs. **Starting Point**: Four complementary attack strategies are designed from the perspectives of psychoacoustics (opposite-gender centroid guidance), attention context distribution, score function analysis, and U-Net semantic features. **Core Idea**: Rather than attacking a single component of the DM, two groups of loss functions are designed from the dual defense objectives of identity and quality, covering multiple vulnerability dimensions of DMs to form a synergistic defense.
+**Goal**: To design a systematic multi-dimensional adversarial perturbation framework that applies targeted interference across different vulnerability dimensions of DMs. **Key Insight**: Four complementary attack strategies are designed from the perspectives of psychoacoustics (opposite-gender centroid guidance), attention context distribution, score function analysis, and U-Net semantic features. **Core Idea**: Rather than attacking a single component of the DM, two groups of loss functions are designed from the dual defense objectives of identity and quality, covering multiple vulnerability dimensions of DMs to form a synergistic defense.
 
 ## Method
 

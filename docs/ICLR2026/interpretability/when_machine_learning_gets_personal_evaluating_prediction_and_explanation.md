@@ -29,15 +29,15 @@ This paper proposes a unified framework to quantify the impact of model personal
 
 ## Background & Motivation
 
-**State of the Field**: In high-stakes domains such as healthcare, ML models are increasingly personalized by incorporating individual attributes (e.g., gender, race). Users may reasonably expect that sharing personal information will yield more accurate diagnoses and clearer explanations. Yet this assumption has rarely been rigorously validated.
+**Background**: In high-stakes domains such as healthcare, ML models are increasingly personalized by incorporating individual attributes (e.g., gender, race). Users may reasonably expect that sharing personal information will yield more accurate diagnoses and clearer explanations. Yet this assumption has rarely been rigorously validated.
 
 **Limitations of Prior Work**: (1) The effects of personalization on prediction and explanation may be inconsistent — improved predictions do not necessarily imply improved explanations; (2) sensitive attributes may amplify biases (e.g., the racially biased health algorithm identified by Obermeyer et al.); (3) existing theoretical frameworks (the BoP framework of Monteiro Paes et al., 2022) are restricted to binary classification with binary costs, and do not cover regression or explanation quality.
 
-**Root Cause**: The benefit of personalization must be validated at the group level (no group should be harmed), yet the statistical validity of such validation is fundamentally limited by finite sample sizes — the more personal attributes (and thus groups) there are, the fewer samples per group and the less reliable the tests become.
+**Key Challenge**: The benefit of personalization must be validated at the group level (no group should be harmed), yet the statistical validity of such validation is fundamentally limited by finite sample sizes — the more personal attributes (and thus groups) there are, the fewer samples per group and the less reliable the tests become.
 
-**Paper Goals**: (1) How are the effects of personalization on prediction and explanation related or separable? (2) Under a given dataset, when can the benefit of personalization be reliably tested and when can it not? (3) How large must group sample sizes be to detect an effect of a given magnitude?
+**Goal**: (1) How are the effects of personalization on prediction and explanation related or separable? (2) Under a given dataset, when can the benefit of personalization be reliably tested and when can it not? (3) How large must group sample sizes be to detect an effect of a given magnitude?
 
-**Starting Point**: The BoP framework is generalized to arbitrary cost functions (including continuous regression losses and explanation quality metrics), minimax hypothesis testing lower bounds are derived, and actionable guidelines for experimental design are provided.
+**Key Insight**: The BoP framework is generalized to arbitrary cost functions (including continuous regression losses and explanation quality metrics), minimax hypothesis testing lower bounds are derived, and actionable guidelines for experimental design are provided.
 
 **Core Idea**: The personalization gains for prediction and explanation can be decoupled, and in many practical scenarios certain gains are statistically untestable — a finding that fundamentally limits the practical utility of personalization.
 

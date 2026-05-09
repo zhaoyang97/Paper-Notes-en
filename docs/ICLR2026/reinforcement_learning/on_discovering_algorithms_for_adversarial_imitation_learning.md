@@ -29,16 +29,16 @@ This paper proposes DAIL — the first meta-learned adversarial imitation learni
 
 ## Background & Motivation
 
-**State of the Field**: Adversarial imitation learning (AIL) is the most effective imitation learning paradigm under limited expert demonstrations. Inspired by GANs, AIL formalizes the learning process as an adversarial game between a discriminator (distinguishing expert from policy trajectories) and a policy (generating trajectories close to the expert). From a divergence minimization perspective, AIL naturally decomposes into two stages: (1) **Density Ratio (DR) Estimation** — the discriminator estimates the occupancy ratio $\frac{\rho_E}{\rho_\pi}$ of state-action pairs under the expert vs. policy; (2) **Reward Assignment (RA)** — mapping the density ratio to a scalar reward signal for policy optimization.
+**Background**: Adversarial imitation learning (AIL) is the most effective imitation learning paradigm under limited expert demonstrations. Inspired by GANs, AIL formalizes the learning process as an adversarial game between a discriminator (distinguishing expert from policy trajectories) and a policy (generating trajectories close to the expert). From a divergence minimization perspective, AIL naturally decomposes into two stages: (1) **Density Ratio (DR) Estimation** — the discriminator estimates the occupancy ratio $\frac{\rho_E}{\rho_\pi}$ of state-action pairs under the expert vs. policy; (2) **Reward Assignment (RA)** — mapping the density ratio to a scalar reward signal for policy optimization.
 
 **Limitations of Prior Work**:
 - AIL training is unstable, suffering from GAN-like training difficulties — gradient signal quality directly affects policy improvement.
 - Substantial research has focused on improving discriminator training in stage (1) (e.g., C-GAIL, Diffusion-Reward), while the RA function in stage (2) has been largely neglected.
 - Existing RA functions (GAIL's softplus, AIRL's log-ratio, FAIRL's exponential decay) are all manually derived from $f$-divergence theory, relying on human intuition and potentially being far from optimal.
 
-**Root Cause**: Manually designed RA functions face a fundamental tension between theoretical elegance and practical training stability — GAIL over-rewards low-quality state-action pairs, FAIRL's exponential decay leads to unstable training, and AIRL's negative rewards induce premature termination.
+**Key Challenge**: Manually designed RA functions face a fundamental tension between theoretical elegance and practical training stability — GAIL over-rewards low-quality state-action pairs, FAIRL's exponential decay leads to unstable training, and AIRL's negative rewards induce premature termination.
 
-**Paper Goals**: Rather than manual design, DAIL uses LLM-guided evolutionary search to directly discover optimal RA functions from a performance-driven perspective, enabling meta-learning of AIL algorithms.
+**Goal**: Rather than manual design, DAIL uses LLM-guided evolutionary search to directly discover optimal RA functions from a performance-driven perspective, enabling meta-learning of AIL algorithms.
 
 ## Method
 

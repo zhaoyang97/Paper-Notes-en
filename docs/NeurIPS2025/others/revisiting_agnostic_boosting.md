@@ -34,7 +34,7 @@ This paper proposes a new agnostic boosting algorithm that substantially improve
 
 ### Limitations of Prior Work
 
-**State of the Field**: Boosting is a fundamental method in statistical learning that converts weak learners into strong learners. In the **realizable** setting (where a perfect classifier exists in the hypothesis class), the theory of boosting is well established. However, in the **agnostic** setting (where no assumption is made on the relationship between label distributions and the hypothesis class), the statistical properties of weak-to-strong learning remain insufficiently understood.
+**Background**: Boosting is a fundamental method in statistical learning that converts weak learners into strong learners. In the **realizable** setting (where a perfect classifier exists in the hypothesis class), the theory of boosting is well established. However, in the **agnostic** setting (where no assumption is made on the relationship between label distributions and the hypothesis class), the statistical properties of weak-to-strong learning remain insufficiently understood.
 
 Core problems:
 

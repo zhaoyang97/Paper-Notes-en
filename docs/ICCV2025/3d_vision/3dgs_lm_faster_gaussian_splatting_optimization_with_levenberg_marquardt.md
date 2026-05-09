@@ -29,15 +29,15 @@ This paper proposes 3DGS-LM, which replaces the ADAM optimizer in 3D Gaussian Sp
 
 ## Background & Motivation
 
-1. **State of the Field**: 3D Gaussian Splatting (3DGS) is one of the most popular novel view synthesis methods, representing scenes as a set of 3D Gaussians via a differentiable rasterizer, enabling real-time rendering and high-quality image synthesis. Existing acceleration methods primarily focus on reducing the number of Gaussians (e.g., improved densification strategies) and accelerating the rasterizer implementation.
+1. **Background**: 3D Gaussian Splatting (3DGS) is one of the most popular novel view synthesis methods, representing scenes as a set of 3D Gaussians via a differentiable rasterizer, enabling real-time rendering and high-quality image synthesis. Existing acceleration methods primarily focus on reducing the number of Gaussians (e.g., improved densification strategies) and accelerating the rasterizer implementation.
 
 2. **Limitations of Prior Work**: Despite numerous improvements to rasterization and densification, 3DGS optimization still requires thousands of gradient descent iterations to converge, potentially taking up to an hour on high-resolution real-world datasets. All existing methods rely on ADAM, a first-order optimizer, to fit Gaussian parameters, which constitutes the primary bottleneck in training time.
 
-3. **Root Cause**: First-order optimizers such as ADAM are straightforward to implement but yield limited update quality per iteration, requiring a large number of iterations to converge. In traditional 3D reconstruction tasks such as RGB-D fusion, second-order methods like Gauss-Newton / Levenberg-Marquardt converge in orders-of-magnitude fewer iterations. However, directly applying LM to 3DGS poses severe memory and computational challenges, as the Jacobian matrix is too large to store explicitly.
+3. **Key Challenge**: First-order optimizers such as ADAM are straightforward to implement but yield limited update quality per iteration, requiring a large number of iterations to converge. In traditional 3D reconstruction tasks such as RGB-D fusion, second-order methods like Gauss-Newton / Levenberg-Marquardt converge in orders-of-magnitude fewer iterations. However, directly applying LM to 3DGS poses severe memory and computational challenges, as the Jacobian matrix is too large to store explicitly.
 
-4. **Paper Goals**: Design an efficient LM optimizer to replace ADAM in 3DGS, significantly reducing optimization time while maintaining reconstruction quality.
+4. **Goal**: Design an efficient LM optimizer to replace ADAM in 3DGS, significantly reducing optimization time while maintaining reconstruction quality.
 
-5. **Starting Point**: The authors observe that LM converges extremely fast (only 5–10 iterations) given a good initialization, and therefore propose a two-stage strategy: first use ADAM for densification and coarse optimization, then apply LM for rapid convergence to the final result.
+5. **Key Insight**: The authors observe that LM converges extremely fast (only 5–10 iterations) given a good initialization, and therefore propose a two-stage strategy: first use ADAM for densification and coarse optimization, then apply LM for rapid convergence to the final result.
 
 6. **Core Idea**: Solve the normal equations in a matrix-free manner via the Preconditioned Conjugate Gradient (PCG) algorithm, and design a cache-driven per-pixel-per-splat parallelization scheme to efficiently compute Jacobian-vector products.
 

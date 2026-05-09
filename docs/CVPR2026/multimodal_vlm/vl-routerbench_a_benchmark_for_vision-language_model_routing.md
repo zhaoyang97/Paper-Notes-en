@@ -27,15 +27,15 @@ content_hash: ae5fb5785b686d75
 This paper introduces VL-RouterBench, the first systematic routing benchmark for vision-language models, encompassing 14 datasets, 17 candidate models, and 519,180 sample-model pairs. It evaluates 10 routing methods and reveals a significant gap between the current best router and the ideal Oracle.
 
 ## Background & Motivation
-**State of the Field**: Multi-model routing has evolved from an engineering optimization into a critical infrastructure component. Different VLMs vary substantially in inference cost and capability, and no single model can simultaneously ensure performance and efficiency across all query types. Routing research in the LLM domain has matured (RouterBench, RouterEval, RouterArena, etc.), yet a systematic benchmark for VLM routing remains absent.
+**Background**: Multi-model routing has evolved from an engineering optimization into a critical infrastructure component. Different VLMs vary substantially in inference cost and capability, and no single model can simultaneously ensure performance and efficiency across all query types. Routing research in the LLM domain has matured (RouterBench, RouterEval, RouterArena, etc.), yet a systematic benchmark for VLM routing remains absent.
 
 **Limitations of Prior Work**: VLM routing faces several unique challenges: (a) highly diverse task types (VQA, visual reasoning, chart OCR, etc.), each emphasizing different capabilities; (b) multimodal fusion mechanisms remain an open problem, with large variation across VLMs in modality interaction and semantic representation; (c) vision-modality-specific issues such as visual semantic density and cross-modal alignment.
 
-**Root Cause**: Existing LLM routing benchmarks focus on text-only routing and cannot be directly adapted to VLM scenarios — defining "what constitutes an optimal routing decision" for VLMs within a unified framework is substantially harder.
+**Key Challenge**: Existing LLM routing benchmarks focus on text-only routing and cannot be directly adapted to VLM scenarios — defining "what constitutes an optimal routing decision" for VLMs within a unified framework is substantially harder.
 
-**Paper Goals**: Construct a VLM-dedicated routing benchmark that provides a unified pipeline for data preparation, training, and evaluation, thereby promoting reproducibility and comparability in VLM routing research.
+**Goal**: Construct a VLM-dedicated routing benchmark that provides a unified pipeline for data preparation, training, and evaluation, thereby promoting reproducibility and comparability in VLM routing research.
 
-**Starting Point**: Build quality-cost matrices from raw VLM inference and scoring logs, and design an accuracy-cost-aware soft-label training strategy.
+**Key Insight**: Build quality-cost matrices from raw VLM inference and scoring logs, and design an accuracy-cost-aware soft-label training strategy.
 
 **Core Idea**: Establish the first VLM routing benchmark covering 30,540 samples × 17 models, providing a complete pipeline from data preparation through training to evaluation.
 

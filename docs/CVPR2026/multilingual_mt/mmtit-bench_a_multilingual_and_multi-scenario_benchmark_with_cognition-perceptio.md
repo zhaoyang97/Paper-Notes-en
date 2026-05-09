@@ -28,11 +28,11 @@ This paper constructs MMTIT-Bench, a multilingual multi-scenario text-image tran
 
 ## Background & Motivation
 
-1. **State of the Field**: Text-image machine translation (TIMT) aims to directly translate textual content embedded in images. With the advancement of VLLMs, end-to-end TIMT has replaced the traditional OCR+NMT cascade pipeline; however, existing research primarily focuses on English-Chinese pairs and evaluates mostly on simple scenarios such as digital documents.
+1. **Background**: Text-image machine translation (TIMT) aims to directly translate textual content embedded in images. With the advancement of VLLMs, end-to-end TIMT has replaced the traditional OCR+NMT cascade pipeline; however, existing research primarily focuses on English-Chinese pairs and evaluates mostly on simple scenarios such as digital documents.
 2. **Limitations of Prior Work**: (1) No evaluation benchmark covers multiple languages and diverse scenarios — the largest existing dataset (MTIT6) covers only 4 languages in limited scene types; (2) chain-of-thought (CoT) reasoning paradigms tailored for TIMT remain underdeveloped — existing methods either cascade OCR with translation or rely solely on linguistic reasoning, neglecting visual cognition.
-3. **Root Cause**: VLLMs perform well on high-resource languages but their robustness on low-resource languages and complex visual scenes (menus, posters, street views) remains unknown, and no suitable benchmark exists for systematic evaluation.
-4. **Paper Goals**: (1) Construct a TIMT benchmark covering multiple languages and scenarios; (2) design a reasoning data paradigm suitable for TIMT.
-5. **Starting Point**: Simulate the human translation process — first understand the scene (cognition) → recognize text (perception) → reason through translation (reasoning) — and design structured CoT supervision accordingly.
+3. **Key Challenge**: VLLMs perform well on high-resource languages but their robustness on low-resource languages and complex visual scenes (menus, posters, street views) remains unknown, and no suitable benchmark exists for systematic evaluation.
+4. **Goal**: (1) Construct a TIMT benchmark covering multiple languages and scenarios; (2) design a reasoning data paradigm suitable for TIMT.
+5. **Key Insight**: Simulate the human translation process — first understand the scene (cognition) → recognize text (perception) → reason through translation (reasoning) — and design structured CoT supervision accordingly.
 6. **Core Idea**: Guide end-to-end text-image translation using a three-stage structured reasoning chain: Cognition → Perception → Reasoning.
 
 ## Method

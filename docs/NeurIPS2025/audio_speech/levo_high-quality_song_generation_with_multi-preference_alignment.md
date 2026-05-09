@@ -29,7 +29,7 @@ This paper proposes LeVo, a song generation framework that employs a language mo
 
 ## Background & Motivation
 
-**State of the Field**: Advances in LLMs and audio language models have accelerated progress in lyrics-to-song generation. Jukebox pioneered the paradigm of predicting mixed tokens with language models; YuE introduced dual-track (vocal + accompaniment) token prediction; SongGen explored interleaved prediction patterns. Industrial systems (Suno, Mureka, Udio) have demonstrated strong results but remain technically closed.
+**Background**: Advances in LLMs and audio language models have accelerated progress in lyrics-to-song generation. Jukebox pioneered the paradigm of predicting mixed tokens with language models; YuE introduced dual-track (vocal + accompaniment) token prediction; SongGen explored interleaved prediction patterns. Industrial systems (Suno, Mureka, Udio) have demonstrated strong results but remain technically closed.
 
 **Limitations of Prior Work**:
    - Mixed-token methods have limited vocabularies and cannot fully capture complex vocal-accompaniment combinations, constraining audio quality.
@@ -37,11 +37,11 @@ This paper proposes LeVo, a song generation framework that employs a language mo
    - Interleaved prediction patterns drastically increase sequence length, limiting scalability and long-form song generation.
    - Inconsistent data quality and unreliable music annotations constrain training effectiveness.
 
-**Root Cause**: Mixed tokens ensure harmony but limit audio quality; dual-track tokens offer better audio quality but suffer from poor harmony. Scarcity of high-quality data further restricts musicality and instruction-following capability.
+**Key Challenge**: Mixed tokens ensure harmony but limit audio quality; dual-track tokens offer better audio quality but suffer from poor harmony. Scarcity of high-quality data further restricts musicality and instruction-following capability.
 
-**Paper Goals**: Simultaneously optimize song generation in terms of audio quality, musicality, instruction-following capability, and vocal-accompaniment harmony.
+**Goal**: Simultaneously optimize song generation in terms of audio quality, musicality, instruction-following capability, and vocal-accompaniment harmony.
 
-**Starting Point**: Parallel modeling of mixed tokens and dual-track tokens, combined with modular progressive training and multi-preference DPO alignment.
+**Key Insight**: Parallel modeling of mixed tokens and dual-track tokens, combined with modular progressive training and multi-preference DPO alignment.
 
 **Core Idea**: Mixed tokens govern global harmony while dual-track tokens refine audio quality; the two operate in parallel without interfering with each other.
 

@@ -39,7 +39,7 @@ Deep learning classifiers trained with empirical risk minimization (ERM) often i
 
 **Resampling/reweighting methods**: simple and effective, yet performance is constrained — models still preferentially learn "shortcut features" under strong spurious correlations.
 
-**Root Cause**: ERM optimizes average performance and naturally favors shortcut features predictive for the majority of samples. Even with balanced resampling, models tend to learn spurious features first.
+**Key Challenge**: ERM optimizes average performance and naturally favors shortcut features predictive for the majority of samples. Even with balanced resampling, models tend to learn spurious features first.
 
 **Core Idea**: From a model optimization perspective, the gradient difference between two batches with differing degrees of spurious correlation defines a "debiasing direction." The target gradient is set as a **linear extrapolation** along this direction. Tuning the extrapolation factor $\beta$ flexibly optimizes either Group-Balanced Accuracy or Worst-Group Accuracy.
 

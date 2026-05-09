@@ -27,15 +27,15 @@ content_hash: 6787deef981e0138
 This paper exposes the "shallow alignment" problem in mainstream LLM unlearning methods — rather than truly erasing target knowledge, these methods generate "spurious unlearning neurons" that suppress its expression, allowing the knowledge to be readily recovered via subsequent fine-tuning. The proposed method, Ssiuu, employs attribution-guided regularization to prevent the growth of negative influence, achieving robust unlearning.
 
 ## Background & Motivation
-**State of the Field**: LLM training data may contain private information, and machine unlearning methods aim to remove specific knowledge from model parameters. Mainstream approaches include Gradient Ascent (GA), Gradient Difference (GD), DPO, NPO, and RMU.
+**Background**: LLM training data may contain private information, and machine unlearning methods aim to remove specific knowledge from model parameters. Mainstream approaches include Gradient Ascent (GA), Gradient Difference (GD), DPO, NPO, and RMU.
 
 **Limitations of Prior Work**: Prior studies have observed that unlearned models are vulnerable to knowledge recovery via prompt-based attacks or continued training, yet the underlying reasons remain unclear.
 
-**Root Cause**: Unlearning methods prevent the model from outputting target knowledge, but the question is whether the knowledge is truly forgotten or merely concealed. If the original neurons encoding the knowledge remain intact and only new suppressive neurons are introduced, the knowledge has not been erased.
+**Key Challenge**: Unlearning methods prevent the model from outputting target knowledge, but the question is whether the knowledge is truly forgotten or merely concealed. If the original neurons encoding the knowledge remain intact and only new suppressive neurons are introduced, the knowledge has not been erased.
 
-**Paper Goals**: (1) Diagnose whether unlearning constitutes "erasure" or "hiding"; (2) Design a method that genuinely erases knowledge.
+**Goal**: (1) Diagnose whether unlearning constitutes "erasure" or "hiding"; (2) Design a method that genuinely erases knowledge.
 
-**Starting Point**: Attribution methods are used to quantify the change in each neuron's positive/negative contribution to target knowledge — positive influence should decrease (knowledge erased) while negative influence should not increase (no spurious suppression).
+**Key Insight**: Attribution methods are used to quantify the change in each neuron's positive/negative contribution to target knowledge — positive influence should decrease (knowledge erased) while negative influence should not increase (no spurious suppression).
 
 **Core Idea**: Existing unlearning methods increase negative influence rather than reducing positive influence ("hiding" rather than "erasing"). Ssiuu achieves genuine unlearning by regularizing against the growth of negative influence.
 

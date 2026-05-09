@@ -28,15 +28,15 @@ This paper proposes Uni-CoT, a hierarchical macro-micro reasoning framework that
 
 ## Background & Motivation
 
-**State of the Field**: CoT reasoning has been extensively validated for pure-text LLMs, but multimodal (text + vision) CoT remains in its early stages. Existing multimodal reasoning methods either rely solely on textual CoT while ignoring intermediate visual artifacts, or adopt pipeline-style loosely coupled MLLMs with external image generators.
+**Background**: CoT reasoning has been extensively validated for pure-text LLMs, but multimodal (text + vision) CoT remains in its early stages. Existing multimodal reasoning methods either rely solely on textual CoT while ignoring intermediate visual artifacts, or adopt pipeline-style loosely coupled MLLMs with external image generators.
 
 **Limitations of Prior Work**: (a) Pure-text RL reasoning methods perform poorly on visually grounded tasks (e.g., geometry, navigation); (b) Interleaved text-image sequences are extremely long (~10,000 tokens per step), making naive autoregressive modeling with $O(T^2)$ complexity intractable; (c) Long interleaved sequences lead to training instability.
 
-**Root Cause**: Multimodal reasoning requires generating intermediate visual states to support inference (e.g., puzzle solving requires observing intermediate results), yet each visual state consumes thousands of tokens, rendering standard CoT computationally and practically infeasible in multimodal settings.
+**Key Challenge**: Multimodal reasoning requires generating intermediate visual states to support inference (e.g., puzzle solving requires observing intermediate results), yet each visual state consumes thousands of tokens, rendering standard CoT computationally and practically infeasible in multimodal settings.
 
-**Paper Goals**: How to efficiently realize interleaved text-vision CoT reasoning?
+**Goal**: How to efficiently realize interleaved text-vision CoT reasoning?
 
-**Starting Point**: A hierarchical design — the macro level handles task planning (attending only to sub-goal descriptions), while the micro level handles sub-task execution (MDP-style, attending only to adjacent states), with attention masks restricting the visible context to reduce computation.
+**Key Insight**: A hierarchical design — the macro level handles task planning (attending only to sub-goal descriptions), while the micro level handles sub-task execution (MDP-style, attending only to adjacent states), with attention masks restricting the visible context to reduce computation.
 
 **Core Idea**: Macro-micro hierarchy + MDP self-reflection + attention masking = multimodal CoT with linear complexity.
 

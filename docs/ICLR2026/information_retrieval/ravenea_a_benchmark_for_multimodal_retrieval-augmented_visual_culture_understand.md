@@ -27,15 +27,15 @@ This paper introduces Ravenea, the first benchmark for evaluating multimodal ret
 
 ## Background & Motivation
 
-**State of the Field**: VLMs perform well on general vision-language tasks but fall short in understanding cultural nuances—such as the ritual significance of traditional attire or region-specific symbols and customs. While RAG has been shown to effectively enhance cultural understanding in text-only settings, its application to multimodal cultural scenarios remains largely unexplored.
+**Background**: VLMs perform well on general vision-language tasks but fall short in understanding cultural nuances—such as the ritual significance of traditional attire or region-specific symbols and customs. While RAG has been shown to effectively enhance cultural understanding in text-only settings, its application to multimodal cultural scenarios remains largely unexplored.
 
 **Limitations of Prior Work**: (a) Existing multimodal cultural datasets primarily test VLMs' memorized cultural knowledge rather than their ability to understand culture in realistic scenarios. (b) It is unclear whether current multimodal retrievers can reliably retrieve culturally relevant documents. (c) VLM performance varies dramatically across countries and cultures, reflecting a pronounced cultural bias toward Western cultures.
 
-**Root Cause**: VLMs are increasingly deployed in culturally sensitive contexts such as education and assistive technologies, yet their cultural blind spots risk causing misunderstanding or reinforcing cultural bias—and no systematic benchmark exists to evaluate and address this capability.
+**Key Challenge**: VLMs are increasingly deployed in culturally sensitive contexts such as education and assistive technologies, yet their cultural blind spots risk causing misunderstanding or reinforcing cultural bias—and no systematic benchmark exists to evaluate and address this capability.
 
-**Paper Goals**: (a) Construct a benchmark specifically designed to evaluate multimodal RAG for cultural understanding; (b) assess the cultural retrieval capability of existing retrievers; (c) quantify the gains that RAG provides to VLMs on cultural understanding tasks.
+**Goal**: (a) Construct a benchmark specifically designed to evaluate multimodal RAG for cultural understanding; (b) assess the cultural retrieval capability of existing retrievers; (c) quantify the gains that RAG provides to VLMs on cultural understanding tasks.
 
-**Starting Point**: Building on two existing cultural datasets, CVQA and CCUB, the authors perform BM25-based initial retrieval followed by human re-ranking annotation, attaching culturally relevant Wikipedia documents to each image and constructing a retrieval-augmented evaluation pipeline.
+**Key Insight**: Building on two existing cultural datasets, CVQA and CCUB, the authors perform BM25-based initial retrieval followed by human re-ranking annotation, attaching culturally relevant Wikipedia documents to each image and constructing a retrieval-augmented evaluation pipeline.
 
 **Core Idea**: By constructing a multimodal RAG benchmark grounded in human-annotated culturally relevant documents, the paper reveals substantial improvements in VLM cultural understanding enabled by culture-aware retrieval.
 

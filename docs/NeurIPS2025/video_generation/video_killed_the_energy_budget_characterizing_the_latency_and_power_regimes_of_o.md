@@ -29,15 +29,15 @@ This paper presents a systematic analysis of latency and energy consumption for 
 
 ## Background & Motivation
 
-1. **State of the Field**: T2V generation has advanced rapidly, from closed-source systems such as Sora and Veo to open-source models including WAN2.1 and CogVideoX. These models are transitioning from research prototypes to production use cases, increasingly deployed in creative tools and video synthesis APIs.
+1. **Background**: T2V generation has advanced rapidly, from closed-source systems such as Sora and Veo to open-source models including WAN2.1 and CogVideoX. These models are transitioning from research prototypes to production use cases, increasingly deployed in creative tools and video synthesis APIs.
 
 2. **Limitations of Prior Work**: Most T2V evaluations focus exclusively on perceptual quality metrics (FID, motion smoothness, etc.) while neglecting latency and energy efficiency. Generating a few seconds of coherent video requires dozens of denoising steps, high resolution, and hundreds of frames, incurring substantial energy costs. Prior work is limited to a single model, Open-Sora, evaluated only on 2-second 240p videos.
 
-3. **Root Cause**: While T2V model quality continues to improve, the computational cost and environmental impact remain poorly understood — making it impossible to reason about principled quality-sustainability trade-offs.
+3. **Key Challenge**: While T2V model quality continues to improve, the computational cost and environmental impact remain poorly understood — making it impossible to reason about principled quality-sustainability trade-offs.
 
-4. **Paper Goals**: To systematically quantify how latency and energy consumption of T2V models scale with key parameters: resolution, frame count, and number of denoising steps.
+4. **Goal**: To systematically quantify how latency and energy consumption of T2V models scale with key parameters: resolution, frame count, and number of denoising steps.
 
-5. **Starting Point**: T2V inference is modeled as a compute-bound process. The paper decomposes per-operator FLOPs, derives closed-form scaling laws, and validates them empirically.
+5. **Key Insight**: T2V inference is modeled as a compute-bound process. The paper decomposes per-operator FLOPs, derives closed-form scaling laws, and validates them empirically.
 
 6. **Core Idea**: T2V inference is dominated by DiT self-attention — latency and energy grow quadratically with spatial/temporal dimensions and linearly with denoising steps, with cross-model energy differences reaching up to 3000×.
 

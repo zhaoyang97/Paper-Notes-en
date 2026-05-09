@@ -29,15 +29,15 @@ ETHICMIND proposes an inference-time risk-aware alignment framework that jointly
 
 ## Background & Motivation
 
-**State of the Field**: Dialogue systems are increasingly deployed in sensitive scenarios such as mental health, education, and social care. Existing research treats empathetic dialogue (identifying and responding to emotional states) and ethical safety (preventing harmful outputs) as two separate problems—empathetic systems (e.g., EmpatheticDialogues) focus on emotional responses, while safety systems (e.g., RLHF, red teaming) focus on avoiding harmful generation.
+**Background**: Dialogue systems are increasingly deployed in sensitive scenarios such as mental health, education, and social care. Existing research treats empathetic dialogue (identifying and responding to emotional states) and ethical safety (preventing harmful outputs) as two separate problems—empathetic systems (e.g., EmpatheticDialogues) focus on emotional responses, while safety systems (e.g., RLHF, red teaming) focus on avoiding harmful generation.
 
 **Limitations of Prior Work**: These two dimensions often create tension in actual conversations. Highly empathetic responses may inadvertently validate harmful beliefs or inappropriate behaviors (e.g., over-empathizing with suicidal users while neglecting intervention); strict safety enforcement may produce emotionally detached, condescending replies (e.g., directly preaching "this is wrong" to morally confused users), damaging trust and engagement.
 
-**Root Cause**: Existing dialogue systems lack mechanisms to dynamically adjust ethical and emotional alignment during conversation evolution—they either always prioritize empathy or always prioritize safety, unable to flexibly balance based on changing dialogue context.
+**Key Challenge**: Existing dialogue systems lack mechanisms to dynamically adjust ethical and emotional alignment during conversation evolution—they either always prioritize empathy or always prioritize safety, unable to flexibly balance based on changing dialogue context.
 
-**Paper Goals**: Formalize ethical-emotional alignment as an explicit turn-by-turn decision problem, jointly considering ethical risks and emotional states at each conversation turn to adaptively adjust response strategies.
+**Goal**: Formalize ethical-emotional alignment as an explicit turn-by-turn decision problem, jointly considering ethical risks and emotional states at each conversation turn to adaptively adjust response strategies.
 
-**Starting Point**: Rather than modifying model parameters, introduce a structured analyze-plan-generate three-stage process at inference time, transforming alignment reasoning from implicit (relying on internal model representations) to explicit (externalized as interpretable analysis and strategies).
+**Key Insight**: Rather than modifying model parameters, introduce a structured analyze-plan-generate three-stage process at inference time, transforming alignment reasoning from implicit (relying on internal model representations) to explicit (externalized as interpretable analysis and strategies).
 
 **Core Idea**: By explicitly separating reasoning (risk + emotion analysis), strategy planning (selecting communication approaches), and reply generation into three stages, enable dialogue systems to make adaptive alignment decisions at each turn based on ethical risk levels and user emotional states.
 

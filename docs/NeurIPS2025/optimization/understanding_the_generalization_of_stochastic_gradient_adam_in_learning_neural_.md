@@ -28,13 +28,13 @@ content_hash: be1d7d9ec7a2f59c
 This work presents the first theoretical analysis of the generalization behavior of mini-batch Adam. It proves that large-batch Adam/AdamW converges to solutions with high test error even with weight decay, whereas small-batch variants achieve near-zero test error through a combination of implicit regularization from stochastic gradients and explicit regularization from weight decay. Moreover, the effective weight decay upper bound for Adam is strictly smaller than that for AdamW.
 
 ## Background & Motivation
-**State of the Field**: Adam is the most widely used optimizer in deep learning (e.g., GPT, LLaMA, and DeepSeek all rely on Adam), yet most theoretical analyses are restricted to the full-batch setting, whereas practical usage involves stochastic (mini-batch) Adam.
+**Background**: Adam is the most widely used optimizer in deep learning (e.g., GPT, LLaMA, and DeepSeek all rely on Adam), yet most theoretical analyses are restricted to the full-batch setting, whereas practical usage involves stochastic (mini-batch) Adam.
 
 **Limitations of Prior Work**: Unlike SGD, stochastic Adam does not converge to its full-batch counterpart as the learning rate approaches zero—a property unique to Adam. Zou et al. (2023b) showed that full-batch Adam generalizes poorly even with regularization, but this does not necessarily imply the same for mini-batch Adam used in practice.
 
-**Root Cause**: Why does mini-batch Adam (small batch) perform well in practice while theoretical analysis (full-batch) predicts poor generalization? How does batch size affect Adam's generalization?
+**Key Challenge**: Why does mini-batch Adam (small batch) perform well in practice while theoretical analysis (full-batch) predicts poor generalization? How does batch size affect Adam's generalization?
 
-**Starting Point**: The analysis is conducted on a two-layer overparameterized CNN with a signal-noise patch data model, examining the convergence and generalization of large-batch and small-batch Adam/AdamW separately.
+**Key Insight**: The analysis is conducted on a two-layer overparameterized CNN with a signal-noise patch data model, examining the convergence and generalization of large-batch and small-batch Adam/AdamW separately.
 
 **Core Idea**: The stochastic gradient noise induced by small batches suppresses Adam's rate of overfitting to noise patches, while weight decay further suppresses residual noise components; the two mechanisms act synergistically to ensure convergence to solutions dominated by true features.
 

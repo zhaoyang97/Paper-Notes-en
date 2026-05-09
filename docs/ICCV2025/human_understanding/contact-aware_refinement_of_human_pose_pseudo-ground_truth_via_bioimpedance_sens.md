@@ -31,7 +31,7 @@ This paper proposes BioTUCH, a framework that detects self-contact events via wr
 
 ### Limitations of Prior Work
 
-**Limitations of Prior Work**: **State of the Field**: 3D human pose estimation performs poorly in self-contact scenarios (e.g., hand-to-face, clasped hands), primarily due to two reasons:
+**Limitations of Prior Work**: **Background**: 3D human pose estimation performs poorly in self-contact scenarios (e.g., hand-to-face, clasped hands), primarily due to two reasons:
 
 **Depth ambiguity**: Contact along the camera optical axis is difficult to disambiguate in monocular RGB, causing hands to appear to "float" in front of surfaces they should be touching.
 

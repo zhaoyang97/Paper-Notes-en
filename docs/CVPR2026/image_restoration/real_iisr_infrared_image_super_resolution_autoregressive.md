@@ -29,11 +29,11 @@ This paper proposes Real-IISR, a unified autoregressive framework that addresses
 
 ## Background & Motivation
 
-1. **State of the Field**: Visible-image super-resolution has seen remarkable progress, yet infrared imaging exhibits unique degradations—spatially varying blur, unstable thermal boundaries, and temperature-dependent radiometric drift—caused by longer wavelengths and weaker atmospheric scattering.
+1. **Background**: Visible-image super-resolution has seen remarkable progress, yet infrared imaging exhibits unique degradations—spatially varying blur, unstable thermal boundaries, and temperature-dependent radiometric drift—caused by longer wavelengths and weaker atmospheric scattering.
 2. **Limitations of Prior Work**: Existing IISR methods are trained on synthetic datasets (downsampled IVIF datasets) and thus fail to capture real infrared degradations. Diffusion models are further limited in IISR by stochastic sampling and the absence of infrared-specific degradation priors.
-3. **Root Cause**: (1) The lack of a real infrared degradation dataset; (2) the absence of infrared-aware degradation modeling—thermal radiation intensity does not correspond to structural edges, and non-uniform degradation introduces quantization bias.
-4. **Paper Goals**: Simultaneously address both the dataset and methodological gaps in real-world IISR.
-5. **Starting Point**: Exploit the temperature–brightness monotonicity of infrared imaging as a physical constraint.
+3. **Key Challenge**: (1) The lack of a real infrared degradation dataset; (2) the absence of infrared-aware degradation modeling—thermal radiation intensity does not correspond to structural edges, and non-uniform degradation introduces quantization bias.
+4. **Goal**: Simultaneously address both the dataset and methodological gaps in real-world IISR.
+5. **Key Insight**: Exploit the temperature–brightness monotonicity of infrared imaging as a physical constraint.
 6. **Core Idea**: Dual thermal-structure guidance + degradation-adaptive codebook + thermal order preservation loss.
 
 ## Method

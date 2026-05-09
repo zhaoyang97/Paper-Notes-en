@@ -29,15 +29,15 @@ This paper proposes the SA-MCQ diagnostic framework to reveal the phenomenon of 
 
 ## Background & Motivation
 
-**State of the Field**: LLMs encode world knowledge in their parameters as parametric memory, but inevitably inherit outdated and erroneous information from training corpora. Knowledge editing techniques aim to precisely modify specific internal memory states without retraining. Recent editors have demonstrated high success rates on standard benchmarks.
+**Background**: LLMs encode world knowledge in their parameters as parametric memory, but inevitably inherit outdated and erroneous information from training corpora. Knowledge editing techniques aim to precisely modify specific internal memory states without retraining. Recent editors have demonstrated high success rates on standard benchmarks.
 
 **Limitations of Prior Work**: Existing evaluation frameworks primarily rely on Exact Match to assess editing success, only checking whether the model can reproduce the target token under a specific prompt. Whether such surface-level textual consistency truly reflects internal memory reconfiguration remains unclear. Teacher forcing evaluation further inflates success rates by guiding outputs through correct token prefixes.
 
-**Root Cause**: High benchmark scores may represent mere "surface compliance" — editors achieve high scores by mimicking target outputs, while the model's internal beliefs are not structurally overwritten. When the evaluation paradigm shifts from generative to discriminative (forcing the model to choose among options), the modified memory may fail entirely.
+**Key Challenge**: High benchmark scores may represent mere "surface compliance" — editors achieve high scores by mimicking target outputs, while the model's internal beliefs are not structurally overwritten. When the evaluation paradigm shifts from generative to discriminative (forcing the model to choose among options), the modified memory may fail entirely.
 
-**Paper Goals**: Design a diagnostic framework capable of distinguishing "genuine memory modification" from "surface compliance," and reveal the true efficacy of knowledge editing.
+**Goal**: Design a diagnostic framework capable of distinguishing "genuine memory modification" from "surface compliance," and reveal the true efficacy of knowledge editing.
 
-**Starting Point**: Require edited models to answer multiple-choice questions (MCQs) rather than generate open-ended responses — MCQs force models to actively adjudicate among competing options, bypassing the rote-memorization bias inherent in generative evaluation.
+**Key Insight**: Require edited models to answer multiple-choice questions (MCQs) rather than generate open-ended responses — MCQs force models to actively adjudicate among competing options, bypassing the rote-memorization bias inherent in generative evaluation.
 
 **Core Idea**: Force models into discriminative self-assessment via Self-Assessment MCQ (SA-MCQ), and systematically detect the authenticity and robustness of edited memories under in-context learning settings.
 

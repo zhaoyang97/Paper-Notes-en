@@ -29,11 +29,11 @@ This paper presents RobotSeg, the first foundation model supporting both image a
 
 ## Background & Motivation
 
-1. **State of the Field**: Robot segmentation is a fundamental capability in robotic perception, with applications in visual servoing (VLA systems), cross-embodiment data augmentation, sim-to-real transfer, and safety monitoring. Existing approaches either rely on language-conditioned segmentation (CLIPSeg/LISA/EVF-SAM) or employ SAM 2 with general-purpose prompted segmentation.
+1. **Background**: Robot segmentation is a fundamental capability in robotic perception, with applications in visual servoing (VLA systems), cross-embodiment data augmentation, sim-to-real transfer, and safety monitoring. Existing approaches either rely on language-conditioned segmentation (CLIPSeg/LISA/EVF-SAM) or employ SAM 2 with general-purpose prompted segmentation.
 2. **Limitations of Prior Work**: (a) Robots exhibit highly diverse morphologies (Franka/Fanuc/Sawyer/UR5, etc.) and their appearance can be easily confused with the background; (b) articulated structures are complex, causing existing models to frequently produce fragmented segmentation; (c) drastic shape changes during manipulation lead to temporal inconsistency. While SAM 2 offers strong general capabilities, it lacks structural priors for articulated robots, depends on manual prompts, and requires per-frame annotation.
-3. **Root Cause**: Robot segmentation simultaneously demands structure-awareness (articulated geometry), autonomy (no manual prompts), and annotation efficiency (high cost of large-scale video labeling) — three requirements that existing methods fail to address jointly.
-4. **Paper Goals**: To build a dedicated model and dataset enabling structure-aware, automatic, and label-efficient video robot segmentation.
-5. **Starting Point**: Targeted enhancement of SAM 2 — injecting structural priors via Canny edges and multi-scale perception, generating automatic prompts via a learnable token bank with historical clustering, and achieving first-frame-only supervision via cyclic, semantic, and patch consistency.
+3. **Key Challenge**: Robot segmentation simultaneously demands structure-awareness (articulated geometry), autonomy (no manual prompts), and annotation efficiency (high cost of large-scale video labeling) — three requirements that existing methods fail to address jointly.
+4. **Goal**: To build a dedicated model and dataset enabling structure-aware, automatic, and label-efficient video robot segmentation.
+5. **Key Insight**: Targeted enhancement of SAM 2 — injecting structural priors via Canny edges and multi-scale perception, generating automatic prompts via a learnable token bank with historical clustering, and achieving first-frame-only supervision via cyclic, semantic, and patch consistency.
 6. **Core Idea**: Graft three modules specifically tailored to robot characteristics (structural awareness, automatic prompting, and label efficiency) onto SAM 2, achieving state-of-the-art robot segmentation with only 41M parameters.
 
 ## Method

@@ -27,15 +27,15 @@ content_hash: 3281567557f77e40
 This paper proposes Detail-Aligned VAE (DA-VAE), which introduces structured latent representations (base + detail channels) with an alignment loss to achieve a 4× compression ratio increase over pretrained VAEs without retraining diffusion models from scratch, requiring only 5 H100-days to adapt SD3.5 for 1024×1024 image generation.
 
 ## Background & Motivation
-**State of the Field**: Current Diffusion Transformers (DiTs) have achieved state-of-the-art text-to-image quality, but the quadratic computational cost of self-attention with respect to token count makes high-resolution generation prohibitively expensive.
+**Background**: Current Diffusion Transformers (DiTs) have achieved state-of-the-art text-to-image quality, but the quadratic computational cost of self-attention with respect to token count makes high-resolution generation prohibitively expensive.
 
 **Limitations of Prior Work**: High-compression-rate tokenizers (e.g., DC-AE, f=32) reduce token counts but produce high-dimensional latent spaces lacking meaningful structure, making downstream diffusion training difficult and requiring both the tokenizer and diffusion model to be trained from scratch at great cost.
 
-**Root Cause**: Increasing the channel count $C$ to compensate for higher spatial downsampling rates $f$ destabilizes diffusion training; incorporating auxiliary tasks such as semantic alignment requires full retraining from scratch.
+**Key Challenge**: Increasing the channel count $C$ to compensate for higher spatial downsampling rates $f$ destabilizes diffusion training; incorporating auxiliary tasks such as semantic alignment requires full retraining from scratch.
 
-**Paper Goals**: How can the compression ratio of a pretrained VAE be increased while maintaining generation quality, without retraining the diffusion model from scratch?
+**Goal**: How can the compression ratio of a pretrained VAE be increased while maintaining generation quality, without retraining the diffusion model from scratch?
 
-**Starting Point**: The pretrained diffusion model already possesses a structured low-dimensional latent space. By introducing a "base + detail" scale-space structure along the channel dimension, additional channels can encode high-resolution details, and an alignment loss can enforce the new channels to inherit the structure of the original space.
+**Key Insight**: The pretrained diffusion model already possesses a structured low-dimensional latent space. By introducing a "base + detail" scale-space structure along the channel dimension, additional channels can encode high-resolution details, and an alignment loss can enforce the new channels to inherit the structure of the original space.
 
 **Core Idea**: The pretrained VAE's first $C$ channels are kept fixed, while $D$ additional channels encoding high-resolution details are introduced. A detail-alignment loss combined with a warm-start fine-tuning strategy enables diffusion model adaptation at minimal cost.
 

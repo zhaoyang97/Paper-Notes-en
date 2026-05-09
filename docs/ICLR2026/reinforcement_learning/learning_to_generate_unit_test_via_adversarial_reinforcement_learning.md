@@ -28,13 +28,13 @@ This paper proposes UTRL, a framework that iteratively trains a unit test genera
 
 ## Background & Motivation
 
-**State of the Field**: Unit testing is a core software engineering practice. High-quality tests are used for best-of-N sampling and as reward functions in RLVR. LLMs have been applied to automate test generation, but methods for training LLMs to generate high-quality tests remain underdeveloped.
+**Background**: Unit testing is a core software engineering practice. High-quality tests are used for best-of-N sampling and as reward functions in RLVR. LLMs have been applied to automate test generation, but methods for training LLMs to generate high-quality tests remain underdeveloped.
 
 **Limitations of Prior Work**: (1) SFT requires annotated instruction–test pairs, which are expensive to obtain and difficult to scale across domains; (2) evaluating test quality is itself an open problem with no unique ground truth; (3) defining verifiable rewards for test generation is non-trivial — unlike code generation, there is no clear pass/fail signal.
 
-**Root Cause**: A method is needed to train a test generator without test annotations, yet defining a reward signal for "good tests" requires some form of reference standard.
+**Key Challenge**: A method is needed to train a test generator without test annotations, yet defining a reward signal for "good tests" requires some form of reference standard.
 
-**Starting Point**: Given a dataset of instruction–code pairs, the ability to distinguish LLM-generated code from correct solutions can serve as a proxy for test quality — good tests should expose bugs in LLM-generated code.
+**Key Insight**: Given a dataset of instruction–code pairs, the ability to distinguish LLM-generated code from correct solutions can serve as a proxy for test quality — good tests should expose bugs in LLM-generated code.
 
 **Core Idea**: The test generator is rewarded for catching bugs in the code generator's outputs, while the code generator is rewarded for passing the tests. The two models co-evolve adversarially.
 

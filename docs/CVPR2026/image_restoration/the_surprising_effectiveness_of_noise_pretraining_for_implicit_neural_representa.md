@@ -29,15 +29,15 @@ Through systematic experimental analysis, this paper demonstrates that pretraini
 
 ## Background & Motivation
 
-**State of the Field**: Implicit Neural Representations (INRs) use MLPs to map spatial coordinates to signal values, and are widely applied in compression, inverse imaging, and neural rendering. The convergence performance of INRs is highly dependent on parameter initialization strategies—data-driven methods (e.g., meta-learning, Strainer) have been shown to significantly outperform standard random initialization.
+**Background**: Implicit Neural Representations (INRs) use MLPs to map spatial coordinates to signal values, and are widely applied in compression, inverse imaging, and neural rendering. The convergence performance of INRs is highly dependent on parameter initialization strategies—data-driven methods (e.g., meta-learning, Strainer) have been shown to significantly outperform standard random initialization.
 
 **Limitations of Prior Work**: Despite the effectiveness of data-driven initialization, the fundamental reasons for their success remain unclear—do they encode classical statistical signal priors, or more complex data-specific features? This ambiguity limits their applicability in domains such as scientific imaging where domain data is scarce.
 
-**Root Cause**: Data-driven initialization requires prior access to real signals, yet many application domains (e.g., scientific imaging) lack sufficient domain data. Understanding the underlying mechanism of successful initialization could reveal efficient alternatives that do not rely on real data.
+**Key Challenge**: Data-driven initialization requires prior access to real signals, yet many application domains (e.g., scientific imaging) lack sufficient domain data. Understanding the underlying mechanism of successful initialization could reveal efficient alternatives that do not rely on real data.
 
-**Paper Goals**: (1) What level of signal properties accounts for the performance gains of data-driven INR initialization? (2) Can noise without real data substitute for data-driven initialization? (3) How do different types of noise pretraining differently affect signal fitting and inverse problem solving?
+**Goal**: (1) What level of signal properties accounts for the performance gains of data-driven INR initialization? (2) Can noise without real data substitute for data-driven initialization? (3) How do different types of noise pretraining differently affect signal fitting and inverse problem solving?
 
-**Starting Point**: Inspired by work on noise pretraining for visual classification networks, the paper pretrains INRs on various categories of noise and uses controlled experiments to reveal the underlying mechanisms of successful initialization—each noise category has precisely defined properties that serve as control variables for analysis.
+**Key Insight**: Inspired by work on noise pretraining for visual classification networks, the paper pretrains INRs on various categories of noise and uses controlled experiments to reveal the underlying mechanisms of successful initialization—each noise category has precisely defined properties that serve as control variables for analysis.
 
 **Core Idea**: By replacing real data with noise for INR pretraining, the paper finds that unstructured noise excels at signal fitting while spectral noise achieves the best overall balance, enabling efficient INR initialization without any real data.
 

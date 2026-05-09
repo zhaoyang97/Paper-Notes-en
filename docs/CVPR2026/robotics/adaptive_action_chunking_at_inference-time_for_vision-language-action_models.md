@@ -28,13 +28,13 @@ This paper proposes Adaptive Action Chunking (AAC), a strategy that leverages ac
 
 ## Background & Motivation
 
-**State of the Field**: Action chunking — executing a sequence of actions as a unit without intermediate replanning — is a key technique for improving robotic manipulation in VLA models. Current mainstream VLA models (GR00T N1.5, π0, SmolVLA) all adopt fixed chunk sizes.
+**Background**: Action chunking — executing a sequence of actions as a unit without intermediate replanning — is a key technique for improving robotic manipulation in VLA models. Current mainstream VLA models (GR00T N1.5, π0, SmolVLA) all adopt fixed chunk sizes.
 
 **Limitations of Prior Work**: (1) Large chunks → poor responsiveness, unable to adapt to new observations in time; (2) Small chunks → mode-jumping, causing jitter from inter-chunk discontinuities; (3) **The optimal chunk size varies across tasks** (experiments show that for the same model, the optimal chunk size ranges from 4 to 16 across different RoboCasa tasks). Existing methods such as ACT apply EMA smoothing and BID searches for the optimal chunk, but both use a fixed size.
 
-**Root Cause**: A dynamic balance between consistency (large chunks) and reactivity (small chunks) is needed, yet fixed chunk sizes cannot achieve this.
+**Key Challenge**: A dynamic balance between consistency (large chunks) and reactivity (small chunks) is needed, yet fixed chunk sizes cannot achieve this.
 
-**Starting Point**: Action entropy reflects prediction uncertainty — low entropy → high reliability → larger chunks are feasible; high entropy → low reliability → smaller chunks with frequent replanning are preferred.
+**Key Insight**: Action entropy reflects prediction uncertainty — low entropy → high reliability → larger chunks are feasible; high entropy → low reliability → smaller chunks with frequent replanning are preferred.
 
 **Core Idea**: Compute the average action entropy corresponding to different chunk sizes, then identify the point of maximum discrete difference to determine the optimal chunk size.
 

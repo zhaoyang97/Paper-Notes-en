@@ -28,15 +28,15 @@ This paper proposes EvoEmpirBench (EEB), comprising two dynamic interactive benc
 
 ## Background & Motivation
 
-**State of the Field**: Existing LLM reasoning benchmarks (BIG-Bench, PlanBench, etc.) are primarily built on static datasets, making them susceptible to data contamination and subject to rapid performance saturation. Game-based benchmarks (SmartPlay, GameArena) are more engaging, but tend to feature static environments, shallow interactions, or evaluation of only specific capabilities.
+**Background**: Existing LLM reasoning benchmarks (BIG-Bench, PlanBench, etc.) are primarily built on static datasets, making them susceptible to data contamination and subject to rapid performance saturation. Game-based benchmarks (SmartPlay, GameArena) are more engaging, but tend to feature static environments, shallow interactions, or evaluation of only specific capabilities.
 
 **Limitations of Prior Work**: Real-world reasoning requires long-horizon planning in partially observable, dynamically changing environments — each action alters the environment state, requiring agents to continuously update their understanding and strategies. Existing benchmarks rarely evaluate all three dimensions simultaneously: partial observability + dynamic environment + long-horizon reasoning.
 
-**Root Cause**: The conventional paradigm of "collect data → offline training" is ill-suited for dynamic environments, whereas human learning adapts to new situations through continuous abstraction and rule induction (experience → verification → truth). LLM agents lack analogous online learning mechanisms.
+**Key Challenge**: The conventional paradigm of "collect data → offline training" is ill-suited for dynamic environments, whereas human learning adapts to new situations through continuous abstraction and rule induction (experience → verification → truth). LLM agents lack analogous online learning mechanisms.
 
-**Paper Goals**: (a) Construct a genuinely dynamic, partially observable reasoning benchmark; (b) Design a human cognition-inspired online learning framework that enables agents to improve continuously without parameter updates.
+**Goal**: (a) Construct a genuinely dynamic, partially observable reasoning benchmark; (b) Design a human cognition-inspired online learning framework that enables agents to improve continuously without parameter updates.
 
-**Starting Point**: Two carefully designed games (maze + Match-2) serve as test environments — each action modifies the environment, and agents can only observe local information. The three-agent collaborative framework is designed based on the principle of human "experiential learning."
+**Key Insight**: Two carefully designed games (maze + Match-2) serve as test environments — each action modifies the environment, and agents can only observe local information. The three-agent collaborative framework is designed based on the principle of human "experiential learning."
 
 **Core Idea**: Replace offline training with a cognitive cycle of "subjective experience → verification → truth induction" to enable parameter-free continual learning in dynamic environments.
 

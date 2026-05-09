@@ -29,15 +29,15 @@ This paper proposes LAPS (Latent Action-based Primitive Segmentation), a pipelin
 
 ## Background & Motivation
 
-**State of the Field**: VLA (Vision-Language-Action) models such as GR00T and AgiBot GO-1 rely on large-scale pre-segmented, action-annotated video data for pre-training, yet acquiring such data is extremely costly and typically requires teleoperation-based collection.
+**Background**: VLA (Vision-Language-Action) models such as GR00T and AgiBot GO-1 rely on large-scale pre-segmented, action-annotated video data for pre-training, yet acquiring such data is extremely costly and typically requires teleoperation-based collection.
 
 **Limitations of Prior Work**: (1) Industrial environments contain abundant unannotated continuous video streams, but methods for automatically extracting structured action data are lacking; (2) existing unsupervised segmentation methods (ABD, OTAS) rely on pixel-level or optical-flow change detection and are sensitive to non-semantic physical variations such as illumination changes.
 
-**Root Cause**: VLA pre-training requires short video clips that are pre-segmented and action-annotated, whereas industrial videos are continuous, unsegmented long streams — this data-processing bottleneck impedes the scaled deployment of industrial VLAs.
+**Key Challenge**: VLA pre-training requires short video clips that are pre-segmented and action-annotated, whereas industrial videos are continuous, unsegmented long streams — this data-processing bottleneck impedes the scaled deployment of industrial VLAs.
 
-**Paper Goals**: How can a finite, enumerable set of action primitives be automatically discovered from continuous industrial video streams?
+**Goal**: How can a finite, enumerable set of action primitives be automatically discovered from continuous industrial video streams?
 
-**Starting Point**: Rather than performing segmentation in pixel or optical-flow space, the problem is shifted to the latent action space — a Motion Tokenizer is trained to encode motion dynamics, and an energy metric is defined in its latent space to detect semantic action boundaries.
+**Key Insight**: Rather than performing segmentation in pixel or optical-flow space, the problem is shifted to the latent action space — a Motion Tokenizer is trained to encode motion dynamics, and an energy metric is defined in its latent space to detect semantic action boundaries.
 
 **Core Idea**: Shifting from "visual change detection" to "behavioral intent change detection" — Latent Action Energy remains persistently high during action execution and drops to a low level upon action completion, naturally corresponding to semantic boundaries.
 

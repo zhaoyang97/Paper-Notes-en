@@ -28,15 +28,15 @@ STRIDE reformulates model explanation as an orthogonal functional decomposition 
 
 ## Background & Motivation
 
-**State of the Field**: Mainstream XAI methods (e.g., SHAP, LIME, IG) compress each feature's influence into a single scalar $\phi_i$. The Shapley value framework provides axiomatically fair attribution, and optimized algorithms such as TreeSHAP enable efficient computation for specific model families, establishing the de facto standard in practice.
+**Background**: Mainstream XAI methods (e.g., SHAP, LIME, IG) compress each feature's influence into a single scalar $\phi_i$. The Shapley value framework provides axiomatically fair attribution, and optimized algorithms such as TreeSHAP enable efficient computation for specific model families, establishing the de facto standard in practice.
 
 **Limitations of Prior Work**: Scalar attribution suffers from two fundamental flaws. First, **limited expressiveness**: compressing complex nonlinear feature effects into a single number cannot answer "how does a feature influence predictions"—only "which feature matters." Synergy and redundancy among features are entirely obscured. Second, **high computational cost**: exact Shapley value computation requires enumerating $2^d$ feature subsets, leading to exponential complexity; practitioners must rely on approximations.
 
-**Root Cause**: The XAI community faces a fundamental dilemma—either use scalar attribution for efficient but coarse explanations (answering "what matters"), or use functional decomposition for detailed but expensive explanations (answering "how it matters"). No prior framework simultaneously provides both at practical computational efficiency.
+**Key Challenge**: The XAI community faces a fundamental dilemma—either use scalar attribution for efficient but coarse explanations (answering "what matters"), or use functional decomposition for detailed but expensive explanations (answering "how it matters"). No prior framework simultaneously provides both at practical computational efficiency.
 
-**Paper Goals**: (1) How to efficiently compute functional decompositions without enumerating $2^d$ subsets? (2) How to recover orthogonal functional components while remaining model-agnostic? (3) How to quantitatively demonstrate the "functional necessity" of interaction effects rather than merely observing correlations?
+**Goal**: (1) How to efficiently compute functional decompositions without enumerating $2^d$ subsets? (2) How to recover orthogonal functional components while remaining model-agnostic? (3) How to quantitatively demonstrate the "functional necessity" of interaction effects rather than merely observing correlations?
 
-**Starting Point**: The authors observe that Hoeffding's functional ANOVA decomposition and reproducing kernel Hilbert space (RKHS) theory can be combined—by defining recursively centered kernel functions, orthogonal subspaces corresponding to each feature subset can be constructed, from which functional components are recovered via analytic projection. The key insight is that the Möbius inversion structure of centered kernels enables decomposition without subset enumeration.
+**Key Insight**: The authors observe that Hoeffding's functional ANOVA decomposition and reproducing kernel Hilbert space (RKHS) theory can be combined—by defining recursively centered kernel functions, orthogonal subspaces corresponding to each feature subset can be constructed, from which functional components are recovered via analytic projection. The key insight is that the Möbius inversion structure of centered kernels enables decomposition without subset enumeration.
 
 **Core Idea**: Construct orthogonal subspaces via recursively centered kernels in RKHS, upgrading model explanation from scalar attribution to orthogonal functional decomposition without subset enumeration.
 

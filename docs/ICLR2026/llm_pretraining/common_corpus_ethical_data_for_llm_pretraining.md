@@ -29,14 +29,14 @@ content_hash: 30af317004b785fb
 This work constructs Common Corpus — the largest legally licensed LLM pre-training dataset at approximately 2 trillion tokens — spanning 6 major collections (government, culture, science, code, web, and semantic), covering multiple languages including low-resource ones. All data originates from copyright-free or permissively licensed sources, accompanied by complete data provenance and a multi-stage filtering pipeline. The dataset has been adopted by industry leaders including Anthropic.
 
 ## Background & Motivation
-**State of the Field**: LLM pre-training requires trillion-token-scale data (recent models such as DeepSeek v3 and Llama 4 use 14–36T tokens), yet mainstream datasets (The Pile, RefinedWeb, C4) extensively incorporate copyrighted content.
+**Background**: LLM pre-training requires trillion-token-scale data (recent models such as DeepSeek v3 and Llama 4 use 14–36T tokens), yet mainstream datasets (The Pile, RefinedWeb, C4) extensively incorporate copyrighted content.
 
 **Limitations of Prior Work**:
    - **Escalating legal risk**: The NYT lawsuit against OpenAI, EU AI Act legislation, and the fact that 45% of C4 content is now restricted from crawling under ToS.
    - **Damage to open science**: Key resources such as Books3, LAION, and the MATH benchmark have been successively taken down due to DMCA challenges and litigation — rendering prior research irreproducible.
    - **Insufficient compliant datasets**: C4C (228B tokens, English only), KL3M (1.2T tokens, US administrative text only), Common Pile (1T tokens, English only) — all limited in scale or language coverage.
 
-**Root Cause**: Training powerful LLMs requires massive data, yet compliant data falls far short in scale; compliant data for multilingual and low-resource languages is even more scarce.
+**Key Challenge**: Training powerful LLMs requires massive data, yet compliant data falls far short in scale; compliant data for multilingual and low-resource languages is even more scarce.
 
 **Core Idea**: Systematically collect and filter approximately 2T tokens from copyright-free or permissively licensed sources (government documents, public-domain literature, open-access scientific papers, open-source code, Creative Commons web content) to establish open scientific infrastructure for AI training data.
 

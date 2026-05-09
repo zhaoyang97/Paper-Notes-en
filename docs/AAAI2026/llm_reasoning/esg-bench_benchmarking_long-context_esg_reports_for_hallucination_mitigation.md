@@ -28,18 +28,18 @@ This paper constructs ESG-Bench — 270 manually annotated QA pairs from 94 real
 
 ## Background & Motivation
 
-**State of the Field**: ESG (Environmental, Social, and Governance) reports have become a legal requirement in regions such as the EU, yet individual reports can span hundreds of pages containing complex narratives, tables, and figures. LLMs are increasingly employed for automated ESG report analysis.
+**Background**: ESG (Environmental, Social, and Governance) reports have become a legal requirement in regions such as the EU, yet individual reports can span hundreds of pages containing complex narratives, tables, and figures. LLMs are increasingly employed for automated ESG report analysis.
 
 **Limitations of Prior Work**:
 - LLMs are prone to hallucination on long-context ESG reports — fabricating non-existent environmental metrics or governance claims.
 - Hallucinations are particularly dangerous in high-stakes compliance scenarios, where erroneous ESG data may lead to flawed investment decisions and legal liability.
 - No dedicated long-context QA benchmark exists for the ESG domain.
 
-**Root Cause**: ESG report analysis requires precise fact extraction from hundreds of pages and correct abstention (e.g., "not mentioned in the report"), yet LLMs tend to fabricate answers rather than acknowledge uncertainty.
+**Key Challenge**: ESG report analysis requires precise fact extraction from hundreds of pages and correct abstention (e.g., "not mentioned in the report"), yet LLMs tend to fabricate answers rather than acknowledge uncertainty.
 
-**Paper Goals**: Construct a long-context QA benchmark for the ESG domain and develop effective hallucination mitigation methods.
+**Goal**: Construct a long-context QA benchmark for the ESG domain and develop effective hallucination mitigation methods.
 
-**Starting Point**: A three-stage progressive approach — from basic SFT → CoT Prompting → CoT Fine-tuning — incrementally training models to answer correctly and abstain appropriately in ESG scenarios.
+**Key Insight**: A three-stage progressive approach — from basic SFT → CoT Prompting → CoT Fine-tuning — incrementally training models to answer correctly and abstain appropriately in ESG scenarios.
 
 **Core Idea**: 4-step CoT (extract topic → search report → assess answerability → generate answer) combined with grounded supervision = ESG long-context hallucination mitigation.
 

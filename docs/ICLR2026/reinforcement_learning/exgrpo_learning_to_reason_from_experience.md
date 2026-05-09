@@ -28,15 +28,15 @@ This paper presents the first systematic study of what types of reasoning experi
 
 ## Background & Motivation
 
-**State of the Field**: RLVR (Reinforcement Learning with Verifiable Rewards) has become a core paradigm for enhancing LLM reasoning capabilities, with on-policy methods such as GRPO being the dominant approach. During training, models generate large volumes of reasoning trajectories (experiences).
+**Background**: RLVR (Reinforcement Learning with Verifiable Rewards) has become a core paradigm for enhancing LLM reasoning capabilities, with on-policy methods such as GRPO being the dominant approach. During training, models generate large volumes of reasoning trajectories (experiences).
 
 **Limitations of Prior Work**: Standard on-policy training discards rollout experiences after a single gradient update, leading to wasted computational resources and training instability. Although experience replay has been extensively studied in traditional RL, the fundamental question of what experiences are most valuable in large-model RLVR settings remains underexplored.
 
-**Root Cause**: The vast amount of collected experience is not uniformly valuable — some problems are too easy (providing no learning signal), others too hard (introducing excessive noise); some trajectories reason correctly, while others arrive at correct answers through flawed reasoning. Identifying and exploiting high-value experiences is therefore critical.
+**Key Challenge**: The vast amount of collected experience is not uniformly valuable — some problems are too easy (providing no learning signal), others too hard (introducing excessive noise); some trajectories reason correctly, while others arrive at correct answers through flawed reasoning. Identifying and exploiting high-value experiences is therefore critical.
 
-**Paper Goals**: (1) What constitutes valuable reasoning experience? (2) How can such experiences be systematically managed and reused?
+**Goal**: (1) What constitutes valuable reasoning experience? (2) How can such experiences be systematically managed and reused?
 
-**Starting Point**: A systematic analysis of experience value along two dimensions — problem difficulty and trajectory entropy. The study finds that medium-difficulty problems (accuracy 25%–75%) provide the strongest optimization signal, and low-entropy trajectories correspond to higher-quality reasoning chains.
+**Key Insight**: A systematic analysis of experience value along two dimensions — problem difficulty and trajectory entropy. The study finds that medium-difficulty problems (accuracy 25%–75%) provide the strongest optimization signal, and low-entropy trajectories correspond to higher-quality reasoning chains.
 
 **Core Idea**: Manage experiences via difficulty-based bucketing, and prioritize sampling of medium-difficulty, low-entropy trajectories for mixed on-policy/off-policy optimization.
 

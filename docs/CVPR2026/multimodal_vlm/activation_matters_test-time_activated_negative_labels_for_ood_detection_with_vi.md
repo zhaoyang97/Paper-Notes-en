@@ -27,7 +27,7 @@ content_hash: ae41d5e8936665d3
 This paper proposes TANL (Test-time Activated Negative Labels), which dynamically evaluates the "activation degree" of negative labels on OOD samples at test time to identify the most effective negative labels. Combined with an activation-aware scoring function, TANL reduces FPR95 from 17.5% to 9.8% on the ImageNet benchmark, while remaining entirely training-free and test-time efficient.
 
 ## Background & Motivation
-**State of the Field**: OOD detection is a core problem in AI safety. VLM-based methods (e.g., CLIP) detect OOD samples by introducing "negative labels"—text labels semantically distant from in-distribution (ID) categories—where samples with high similarity to negative labels are more likely to be OOD.
+**Background**: OOD detection is a core problem in AI safety. VLM-based methods (e.g., CLIP) detect OOD samples by introducing "negative labels"—text labels semantically distant from in-distribution (ID) categories—where samples with high similarity to negative labels are more likely to be OOD.
 
 **Key Problem — "Low-Activation Negative Labels"**:
    - Methods such as NegLabel select words from a corpus that are maximally distant from ID labels as negative labels.

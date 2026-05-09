@@ -29,13 +29,13 @@ This paper presents the first systematic study of the Mandela effect (collective
 
 ## Background & Motivation
 
-**State of the Field**: LLM-driven multi-agent systems are widely applied to complex tasks (e.g., public policy analysis, social governance, contract review), with a core advantage in simulating social dynamics such as discussion and consensus building.
+**Background**: LLM-driven multi-agent systems are widely applied to complex tasks (e.g., public policy analysis, social governance, contract review), with a core advantage in simulating social dynamics such as discussion and consensus building.
 
 **Limitations of Prior Work**: Prior research has focused on individual agent errors (hallucinations) or simple conformity behavior, overlooking the distinctive characteristics of **collective cognitive bias** in multi-agent systems. The Mandela effect—shared false memories among a group—involves persuasive false evidence propagating through interactions and being internalized as persistent memory, which is fundamentally different from one-time hallucinations or short-term compliance.
 
-**Root Cause**: Existing work treats hallucinations as stateless, one-shot failures, ignoring the process by which social interaction can **consolidate false beliefs into long-term memory**. A standardized benchmark for evaluating this phenomenon is lacking.
+**Key Challenge**: Existing work treats hallucinations as stateless, one-shot failures, ignoring the process by which social interaction can **consolidate false beliefs into long-term memory**. A standardized benchmark for evaluating this phenomenon is lacking.
 
-**Paper Goals**: Construct the ManBench benchmark with 4 categories of Mandela-effect-susceptible tasks (4,838 questions total), design 5 interaction protocols (varying group composition and memory time scale) to inject and measure collective false memory, and propose prompt-level (cognitive anchoring, source scrutiny) and model-level (SFT alignment) mitigation strategies.
+**Goal**: Construct the ManBench benchmark with 4 categories of Mandela-effect-susceptible tasks (4,838 questions total), design 5 interaction protocols (varying group composition and memory time scale) to inject and measure collective false memory, and propose prompt-level (cognitive anchoring, source scrutiny) and model-level (SFT alignment) mitigation strategies.
 
 ## Method
 

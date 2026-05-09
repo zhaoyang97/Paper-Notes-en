@@ -28,15 +28,15 @@ This paper is the first to introduce distributional adversarial attacks into the
 
 ## Background & Motivation
 
-**State of the Field**: Deep Hedging (Buehler et al., 2019) parameterizes hedging strategies with neural networks and trains them by minimizing risk measures, and has been widely adopted in industry. Training data is drawn from stochastic model simulations or historical observations.
+**Background**: Deep Hedging (Buehler et al., 2019) parameterizes hedging strategies with neural networks and trains them by minimizing risk measures, and has been widely adopted in industry. Training data is drawn from stochastic model simulations or historical observations.
 
 **Limitations of Prior Work**: Model misspecification between the training distribution and the deployment distribution is pervasive; even small distributional shifts can cause severe degradation in hedging performance. Existing robust methods only perturb terminal distributions or randomize model parameters, lacking systematic analysis of distributional robustness.
 
-**Root Cause**: The deep hedging loss (combining a neural network policy with a risk measure) is highly non-convex, whereas the tractability results for standard Wasserstein DRO rely on convexity assumptions and are therefore inapplicable here.
+**Key Challenge**: The deep hedging loss (combining a neural network policy with a risk measure) is highly non-convex, whereas the tractability results for standard Wasserstein DRO rely on convexity assumptions and are therefore inapplicable here.
 
-**Paper Goals**: (a) Quantify the vulnerability of deep hedging to distribution shift; (b) design computationally tractable distributional adversarial attack methods; (c) improve robustness via adversarial training.
+**Goal**: (a) Quantify the vulnerability of deep hedging to distribution shift; (b) design computationally tractable distributional adversarial attack methods; (c) improve robustness via adversarial training.
 
-**Starting Point**: Extend pointwise adversarial attacks (FGSM/PGD) to the distributional level by leveraging sensitivity analysis for Wasserstein DRO (Bartl et al., 2021) to obtain a tractable first-order approximation.
+**Key Insight**: Extend pointwise adversarial attacks (FGSM/PGD) to the distributional level by leveraging sensitivity analysis for Wasserstein DRO (Bartl et al., 2021) to obtain a tractable first-order approximation.
 
 **Core Idea**: Realize distributional adversarial attacks via projected gradient descent on a Wasserstein ball, and incorporate adversarial examples into the training loop to improve the robustness of deep hedging.
 

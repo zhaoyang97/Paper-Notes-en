@@ -29,15 +29,15 @@ This paper proposes ConlangCrafter, a multi-hop LLM pipeline that decomposes con
 
 ## Background & Motivation
 
-**State of the Field**: Constructed languages (conlangs) such as Esperanto and Elvish play important roles in art, philosophy, and international communication. Foundation models have achieved revolutionary creative generation in text, images, and other domains.
+**Background**: Constructed languages (conlangs) such as Esperanto and Elvish play important roles in art, philosophy, and international communication. Foundation models have achieved revolutionary creative generation in text, images, and other domains.
 
 **Limitations of Prior Work**: (1) Creating constructed languages is extremely time-consuming — designers may spend years or even decades to achieve the scope and complexity of natural languages; (2) LLMs struggle to generate internally consistent complex language systems in a single prompt; (3) LLMs tend to produce outputs lacking typological diversity (Hopkins and Renda 2023), generating languages that are too similar; (4) there is no automated framework for evaluating computational constructed language quality — no ground-truth exists.
 
-**Root Cause**: LLMs possess metalinguistic reasoning capabilities, but directly generating complete language descriptions leads to internal contradictions and insufficient diversity — the various levels of language (phonology, grammar, lexicon) are interdependent and require staged construction.
+**Key Challenge**: LLMs possess metalinguistic reasoning capabilities, but directly generating complete language descriptions leads to internal contradictions and insufficient diversity — the various levels of language (phonology, grammar, lexicon) are interdependent and require staged construction.
 
-**Paper Goals**: (1) Investigate whether LLMs can generate internally consistent and typologically diverse language systems; (2) propose scalable automatic evaluation metrics; (3) explore applications of computational constructed languages in creative assistance, game generation, etc.
+**Goal**: (1) Investigate whether LLMs can generate internally consistent and typologically diverse language systems; (2) propose scalable automatic evaluation metrics; (3) explore applications of computational constructed languages in creative assistance, game generation, etc.
 
-**Starting Point**: Drawing on language typology and language documentation practices, decomposing language descriptions into phonology → grammar → lexicon layers, constructing each layer through multi-step prompting, injecting typological diversity via RNG, and ensuring consistency via self-refinement.
+**Key Insight**: Drawing on language typology and language documentation practices, decomposing language descriptions into phonology → grammar → lexicon layers, constructing each layer through multi-step prompting, injecting typological diversity via RNG, and ensuring consistency via self-refinement.
 
 **Core Idea**: Model constructed language generation as a multi-hop reasoning task — each language level is a reasoning step, maintaining a dynamically updateable "language sketch" memory store to accumulate and harmonize linguistic knowledge.
 

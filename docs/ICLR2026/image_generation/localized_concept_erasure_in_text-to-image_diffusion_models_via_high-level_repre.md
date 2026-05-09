@@ -29,15 +29,15 @@ HiRM introduces a concept erasure strategy that decouples the update location fr
 
 ## Background & Motivation
 
-**State of the Field**: Concept erasure methods are broadly divided into training-based approaches (fine-tuning the U-Net, e.g., ESD, SalUn, MACE) and training-free approaches (closed-form editing or prompt manipulation, e.g., UCE, RECE, SAFREE). Both categories primarily modify the U-Net/denoiser.
+**Background**: Concept erasure methods are broadly divided into training-based approaches (fine-tuning the U-Net, e.g., ESD, SalUn, MACE) and training-free approaches (closed-form editing or prompt manipulation, e.g., UCE, RECE, SAFREE). Both categories primarily modify the U-Net/denoiser.
 
 **Limitations of Prior Work**: Modifying the U-Net is computationally expensive and tends to degrade the generation quality of unrelated concepts. Training-free methods struggle to balance erasure effectiveness with concept preservation.
 
-**Root Cause**: Causal tracing by Basu et al. identifies the first layer of the CLIP text encoder as the causal state for visual attributes, suggesting that direct intervention at this point should be feasible. However, directly editing early layers (e.g., Diff-QuickFix) performs poorly on abstract concepts (e.g., NSFW/nudity) and degrades overall model quality, because early-layer representations form a "bag of concepts" — modifications at this level inadvertently affect all shared low-level features.
+**Key Challenge**: Causal tracing by Basu et al. identifies the first layer of the CLIP text encoder as the causal state for visual attributes, suggesting that direct intervention at this point should be feasible. However, directly editing early layers (e.g., Diff-QuickFix) performs poorly on abstract concepts (e.g., NSFW/nudity) and degrades overall model quality, because early-layer representations form a "bag of concepts" — modifications at this level inadvertently affect all shared low-level features.
 
-**Paper Goals**: To achieve precise concept erasure within the text encoder, simultaneously satisfying: (a) effective erasure of both concrete concepts (styles/objects) and abstract concepts (nudity); (b) preservation of generation quality for non-target concepts; (c) computational efficiency and cross-architecture transferability.
+**Goal**: To achieve precise concept erasure within the text encoder, simultaneously satisfying: (a) effective erasure of both concrete concepts (styles/objects) and abstract concepts (nudity); (b) preservation of generation quality for non-target concepts; (c) computational efficiency and cross-architecture transferability.
 
-**Starting Point**: Toker et al. show that coherent high-level semantic representations emerge only in the final few layers, while early layers encode dispersed low-level features. This motivates decoupling the update location from the supervision location — applying gradient updates at the first layer (where the causal state resides) while defining the erasure loss at the final layer (where high-level semantics are formed).
+**Key Insight**: Toker et al. show that coherent high-level semantic representations emerge only in the final few layers, while early layers encode dispersed low-level features. This motivates decoupling the update location from the supervision location — applying gradient updates at the first layer (where the causal state resides) while defining the erasure loss at the final layer (where high-level semantics are formed).
 
 **Core Idea**: By updating only the first-layer weights, HiRM remotely misdirects the high-level semantic representations of target concepts at the final layer, achieving precisely localized concept erasure.
 

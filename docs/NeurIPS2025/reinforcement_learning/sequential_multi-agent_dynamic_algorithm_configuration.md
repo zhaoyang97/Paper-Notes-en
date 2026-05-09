@@ -28,11 +28,11 @@ This paper proposes Seq-MADAC, a framework that models multi-hyperparameter dyna
 
 ## Background & Motivation
 
-**State of the Field**: Dynamic Algorithm Configuration (DAC) applies RL to dynamically adjust hyperparameters during algorithm execution, demonstrating superiority over static configuration. Multi-agent DAC (MADAC) further handles multiple heterogeneous hyperparameters.
+**Background**: Dynamic Algorithm Configuration (DAC) applies RL to dynamically adjust hyperparameters during algorithm execution, demonstrating superiority over static configuration. Multi-agent DAC (MADAC) further handles multiple heterogeneous hyperparameters.
 
 **Limitations of Prior Work**: Many algorithms exhibit inherent sequential dependencies among hyperparameters (e.g., selecting an operator type before setting its parameters), yet MADAC assumes parameter independence. CANDID DAC attempts to address this via SAQL but suffers from credit assignment and convergence issues.
 
-**Root Cause**: Inter-parameter dependencies introduce large numbers of illegal combinations in the joint action space; ignoring these dependencies leads to inefficient exploration.
+**Key Challenge**: Inter-parameter dependencies introduce large numbers of illegal combinations in the joint action space; ignoring these dependencies leads to inefficient exploration.
 
 **Core Idea**: The problem is modeled as a sequential MMDP in which each subsequent agent observes the actions of preceding agents, enabling differentiated credit assignment through advantage decomposition.
 

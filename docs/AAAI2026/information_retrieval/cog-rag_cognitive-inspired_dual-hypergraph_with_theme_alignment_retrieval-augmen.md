@@ -26,18 +26,18 @@ content_hash: 327540910ce2204c
 This paper proposes Cog-RAG, which constructs a dual-hypergraph index comprising a theme hypergraph and an entity hypergraph to simulate the human "top-down" cognitive process via a two-stage retrieval strategy (theme first, then details), achieving global-to-local semantic alignment for generation.
 
 ## Background & Motivation
-**State of the Field**: RAG mitigates hallucinations in LLMs by incorporating external knowledge, and has been widely applied to tasks such as question answering and document understanding. Existing methods predominantly adopt flat chunk-based retrieval (matching queries to document chunks via vector similarity), which fails to capture semantic dependencies and hierarchical structures across chunks.
+**Background**: RAG mitigates hallucinations in LLMs by incorporating external knowledge, and has been widely applied to tasks such as question answering and document understanding. Existing methods predominantly adopt flat chunk-based retrieval (matching queries to document chunks via vector similarity), which fails to capture semantic dependencies and hierarchical structures across chunks.
 
 **Limitations of Prior Work**:
    - **Flat Retrieval**: Splitting documents into chunks and matching via vector similarity discards inter-chunk associations and semantic hierarchy, resulting in fragmented retrieved content.
    - **Graph-Enhanced RAG** (e.g., GraphRAG, LightRAG): Models relationships between entities using knowledge graphs, but is limited to **low-order pairwise relations** and cannot capture higher-order associations among multiple entities.
    - **Existing Hypergraph Methods** (e.g., Hyper-RAG): Although hyperedges are used to model multi-entity relations, these approaches focus only on intra-chunk entity-level representations and **lack global thematic organization and cross-chunk alignment**.
 
-**Root Cause**: Current graph/hypergraph approaches either only model local entity relations (lacking global themes) or perform theme discovery via community clustering (causing information loss due to discrete partitioning). No existing method can **simultaneously model global thematic structure and fine-grained high-order entity relations**.
+**Key Challenge**: Current graph/hypergraph approaches either only model local entity relations (lacking global themes) or perform theme discovery via community clustering (causing information loss due to discrete partitioning). No existing method can **simultaneously model global thematic structure and fine-grained high-order entity relations**.
 
-**Paper Goals**: Design a RAG framework that unifies global theme indexing and fine-grained entity indexing, enabling hierarchical retrieval and generation from macro to micro levels.
+**Goal**: Design a RAG framework that unifies global theme indexing and fine-grained entity indexing, enabling hierarchical retrieval and generation from macro to micro levels.
 
-**Starting Point**: Simulating the **top-down cognitive pattern** humans employ when handling complex problems—first identifying core themes to establish a global semantic scaffold, then recalling and integrating details guided by thematic cues.
+**Key Insight**: Simulating the **top-down cognitive pattern** humans employ when handling complex problems—first identifying core themes to establish a global semantic scaffold, then recalling and integrating details guided by thematic cues.
 
 **Core Idea**: Construct a dual-hypergraph index using a theme hypergraph and an entity hypergraph, and realize global-to-local semantic alignment through a two-stage cognitive-inspired retrieval strategy of "theme activation → detail recall."
 

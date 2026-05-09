@@ -29,15 +29,15 @@ This paper proposes a multimodal approach combining facial visual features, VLM-
 
 ## Background & Motivation
 
-**State of the Field**: Continuous emotion recognition under in-the-wild conditions is an important research problem in artificial intelligence. Valence reflects the pleasantness of an emotional state, while arousal reflects its intensity; together they constitute a continuous dimensional representation of affect. The ABAW Challenge series is a benchmark competition in this field, now in its 10th edition.
+**Background**: Continuous emotion recognition under in-the-wild conditions is an important research problem in artificial intelligence. Valence reflects the pleasantness of an emotional state, while arousal reflects its intensity; together they constitute a continuous dimensional representation of affect. The ABAW Challenge series is a benchmark competition in this field, now in its 10th edition.
 
 **Limitations of Prior Work**: Existing methods primarily rely on fusing facial visual and audio features, with insufficient utilization of behavioral contextual information such as body pose, gestures, and scene context. Although vision-language models (VLMs) have demonstrated strong performance across various visual tasks, they have not been fully exploited for continuous VA estimation.
 
-**Root Cause**: Single-modality information is insufficient to accurately capture complex emotional expressions; existing multimodal fusion strategies inadequately model asymmetric cross-modal interactions.
+**Key Challenge**: Single-modality information is insufficient to accurately capture complex emotional expressions; existing multimodal fusion strategies inadequately model asymmetric cross-modal interactions.
 
-**Paper Goals**: To leverage VLMs for extracting behavioral description embeddings and to design effective multimodal fusion strategies that integrate facial, audio, and behavioral information for continuous VA estimation.
+**Goal**: To leverage VLMs for extracting behavioral description embeddings and to design effective multimodal fusion strategies that integrate facial, audio, and behavioral information for continuous VA estimation.
 
-**Starting Point**: Qwen3-VL-4B-Instruct is introduced to extract behavioral semantic embeddings from video, combined with GRADA facial features and WavLM audio features, and two distinct fusion schemes are explored.
+**Key Insight**: Qwen3-VL-4B-Instruct is introduced to extract behavioral semantic embeddings from video, combined with GRADA facial features and WavLM audio features, and two distinct fusion schemes are explored.
 
 **Core Idea**: VLM-derived behavioral description embeddings serve as a third modality, integrated via directed cross-modal mixture-of-experts fusion and a reliability-aware audio-visual fusion strategy for VA estimation.
 

@@ -28,15 +28,15 @@ This paper proposes V-Nutri, the first framework to leverage process information
 
 ## Background & Motivation
 
-**State of the Field**: Visual nutrition estimation methods primarily rely on single images of the final dish to predict caloric content and nutritional composition, as exemplified by works such as Nutrition5K and Im2Calories.
+**Background**: Visual nutrition estimation methods primarily rely on single images of the final dish to predict caloric content and nutritional composition, as exemplified by works such as Nutrition5K and Im2Calories.
 
 **Limitations of Prior Work**: Single final-dish images are inherently information-limited: nutritionally significant ingredients such as oils, sauces, and dairy products are absorbed, melted, or visually integrated into the finished dish during cooking, making accurate estimation from appearance alone difficult.
 
-**Root Cause**: Nutritionally critical information progressively "disappears" during the cooking process, yet existing methods exploit only the final state, which retains the least information.
+**Key Challenge**: Nutritionally critical information progressively "disappears" during the cooking process, yet existing methods exploit only the final state, which retains the least information.
 
-**Paper Goals**: To investigate whether process information embedded in cooking videos can provide complementary evidence for dish-level nutrition estimation.
+**Goal**: To investigate whether process information embedded in cooking videos can provide complementary evidence for dish-level nutrition estimation.
 
-**Starting Point**: Egocentric cooking videos preserve complete temporal nutritional evidence—ingredient identity, addition events, and intermediate states—and the increasing availability of wearable cameras makes this direction increasingly practical.
+**Key Insight**: Egocentric cooking videos preserve complete temporal nutritional evidence—ingredient identity, addition events, and intermediate states—and the increasing availability of wearable cameras makes this direction increasingly practical.
 
 **Core Idea**: A keyframe selection module locates nutritionally information-dense moments (e.g., ingredient additions) within long videos, which are then fused with the final dish image to improve nutrition estimation accuracy.
 

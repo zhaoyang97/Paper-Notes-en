@@ -27,15 +27,15 @@ content_hash: 99f4cb0836d16be5
 This paper proposes MAoP (Multiple Aspects of Planning), a framework that endows LLMs with "wide-horizon thinking" by having a strategist perform multi-aspect pre-planning and routing into a coherent blueprint, enabling the planner to conduct in-depth per-aspect analysis in parallel. Coupled with the Travel-Sim causal simulation benchmark, MAoP substantially outperforms CoT and decomposition-based methods on travel planning tasks; a distilled 3B model achieves a PER of 66.9%.
 
 ## Background & Motivation
-**State of the Field**: LLMs perform well on simple reasoning and planning in controlled environments, but real-world planning tasks such as travel planning involve deep interactions among multidimensional constraints—budget, time, personal preferences, transportation modes, physical condition, and more—which existing methods struggle to handle.
+**Background**: LLMs perform well on simple reasoning and planning in controlled environments, but real-world planning tasks such as travel planning involve deep interactions among multidimensional constraints—budget, time, personal preferences, transportation modes, physical condition, and more—which existing methods struggle to handle.
 
 **Long-Horizon vs. Wide-Horizon**: Conventional reasoning emphasizes "long-horizon thinking"—deep inference along a single trajectory (e.g., chain-of-thought logic in mathematical proofs). Real-world planning, however, demands "wide-horizon thinking"—simultaneously integrating multiple heterogeneous information sources and parallel constraints. Task decomposition methods such as Plan-and-Solve remain fundamentally linear and sequential, failing to capture inter-constraint interactions and dependencies.
 
 **Limitations of Prior Work**: Existing benchmarks such as TravelPlanner and ChinaTravel evaluate plan quality solely via static constraint pass rates, ignoring the causal dependencies that arise during travel—for example, excessive fatigue on day one can cascade and compromise the feasibility of subsequent itineraries, an effect that static metrics cannot capture.
 
-**Root Cause**: Existing methods apply deep, long-chain reasoning strategies to a problem that inherently requires breadth-first integration; both chain-of-thought reasoning and task decomposition exhibit structural limitations in this setting.
+**Key Challenge**: Existing methods apply deep, long-chain reasoning strategies to a problem that inherently requires breadth-first integration; both chain-of-thought reasoning and task decomposition exhibit structural limitations in this setting.
 
-**Starting Point**: Preliminary experiments reveal that even a naive aspect-aware decomposition significantly outperforms CoT, yet it suffers from three deficiencies: aspects are treated independently without cross-aspect correlation, the approach relies on carefully hand-crafted prompts, and it scales poorly at inference time.
+**Key Insight**: Preliminary experiments reveal that even a naive aspect-aware decomposition significantly outperforms CoT, yet it suffers from three deficiencies: aspects are treated independently without cross-aspect correlation, the approach relies on carefully hand-crafted prompts, and it scales poorly at inference time.
 
 **Core Idea**: A strategist performs multi-aspect pre-planning and routes the results into a coherent blueprint; a planner then conducts focused, in-depth analysis aspect by aspect following the blueprint, achieving wide-horizon reasoning with inference-time scaling.
 

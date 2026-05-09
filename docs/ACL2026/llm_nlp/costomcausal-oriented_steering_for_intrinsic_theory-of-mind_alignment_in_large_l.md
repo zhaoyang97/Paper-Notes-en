@@ -28,15 +28,15 @@ This paper proposes CoSToM, a framework that first applies causal tracing to ide
 
 ## Background & Motivation
 
-**State of the Field**: Theory of Mind (ToM)—the capacity to understand others' beliefs, desires, and intentions—is a hallmark of human social intelligence. LLMs perform reasonably well on standard ToM benchmarks, yet research shows they struggle to generalize to task-specific scenarios and rely on carefully engineered prompts to simulate ToM reasoning.
+**Background**: Theory of Mind (ToM)—the capacity to understand others' beliefs, desires, and intentions—is a hallmark of human social intelligence. LLMs perform reasonably well on standard ToM benchmarks, yet research shows they struggle to generalize to task-specific scenarios and rely on carefully engineered prompts to simulate ToM reasoning.
 
 **Limitations of Prior Work**: A critical "internal knowledge–external behavior" misalignment exists: LLMs can correctly answer ToM questions (e.g., inferring a user wants firewood) yet generate incoherent proposals in actual negotiations (e.g., offering water instead of firewood). Once explicit instructions such as "infer and respond" are removed, models fail to externalize their internally encoded mental-state knowledge into behavior.
 
-**Root Cause**: The ToM capabilities exhibited by LLMs may not constitute stable intrinsic cognition, but rather transient simulations triggered by instructions—knowledge is internally present but cannot spontaneously manifest as behavior.
+**Key Challenge**: The ToM capabilities exhibited by LLMs may not constitute stable intrinsic cognition, but rather transient simulations triggered by instructions—knowledge is internally present but cannot spontaneously manifest as behavior.
 
-**Paper Goals**: (1) Determine whether LLMs genuinely possess ToM-related internal representations; (2) identify which layers house these representations; (3) assess whether intervening on these representations can improve downstream dialogue quality.
+**Goal**: (1) Determine whether LLMs genuinely possess ToM-related internal representations; (2) identify which layers house these representations; (3) assess whether intervening on these representations can improve downstream dialogue quality.
 
-**Starting Point**: The work adopts a mechanistic interpretability perspective, using causal tracing to localize ToM features and activation steering to actively intervene on them.
+**Key Insight**: The work adopts a mechanistic interpretability perspective, using causal tracing to localize ToM features and activation steering to actively intervene on them.
 
 **Core Idea**: A frozen probe decoder is used as a differentiable validator; the ToM alignment loss is backpropagated into the encoder's ToM-critical layers via a gradient bridge mechanism, updating only the LoRA adapters installed in those shallow layers.
 

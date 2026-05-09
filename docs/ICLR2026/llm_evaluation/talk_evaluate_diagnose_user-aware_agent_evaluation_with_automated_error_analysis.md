@@ -29,11 +29,11 @@ This paper proposes TED (Talk, Evaluate, Diagnose), a framework that achieves us
 
 ## Background & Motivation
 
-- **State of the Field**: LLM agents are increasingly deployed to automate diverse workflows, yet evaluation frameworks remain fragmented—each domain relies on its own methodology (database queries, regex matching, etc.) to determine task success.
+- **Background**: LLM agents are increasingly deployed to automate diverse workflows, yet evaluation frameworks remain fragmented—each domain relies on its own methodology (database queries, regex matching, etc.) to determine task success.
 - **Limitations of Prior Work**: (1) No unified cross-domain evaluation methodology exists; (2) the effect of user personas on agent behavior is not systematically considered; (3) evaluation stops at metric reporting, lacking diagnosis and actionable improvement guidance.
-- **Root Cause**: Agent behavior is heavily shaped by user interaction, yet user personas are left uncontrolled during evaluation.
-- **Paper Goals**: Construct a unified, user-aware, and diagnosable agent evaluation framework.
-- **Starting Point**: A three-stage unification of Talk (user simulation) + Evaluate (assessment) + Diagnose (diagnosis).
+- **Key Challenge**: Agent behavior is heavily shaped by user interaction, yet user personas are left uncontrolled during evaluation.
+- **Goal**: Construct a unified, user-aware, and diagnosable agent evaluation framework.
+- **Key Insight**: A three-stage unification of Talk (user simulation) + Evaluate (assessment) + Diagnose (diagnosis).
 - **Core Idea**: Effective agent evaluation requires not only correctness, but also conversation quality, efficiency, and systematic error diagnosis.
 
 ## Method

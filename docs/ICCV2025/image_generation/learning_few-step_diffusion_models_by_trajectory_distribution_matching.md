@@ -35,7 +35,7 @@ Accelerating diffusion model sampling is critical for efficient deployment of AI
 
 **Trajectory Distillation methods** (e.g., Progressive Distillation, Consistency Models): simulate teacher ODE trajectories at the instance level and support multi-step sampling, but **instance-level trajectory matching imposes high demands on model capacity**, and numerical errors from solving the teacher ODE propagate to the student.
 
-**Root Cause**: Distribution matching discards intermediate trajectory information, while trajectory distillation suffers from the difficulty of instance-level matching.
+**Key Challenge**: Distribution matching discards intermediate trajectory information, while trajectory distillation suffers from the difficulty of instance-level matching.
 
 **Core Idea of TDM**: Match trajectories at the **distributional level** rather than at the instance level. This non-trivially unifies the advantages of both paradigms—leveraging trajectory information for fine-grained knowledge transfer while reducing learning difficulty through distribution-level alignment.
 

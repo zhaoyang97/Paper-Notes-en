@@ -29,15 +29,15 @@ ssCDL converts triple confidence scores from scalars into Gaussian confidence di
 
 ## Background & Motivation
 
-**State of the Field**: Uncertain knowledge graphs (UKGs) associate each triple with a confidence score in $[0, 1]$, providing more precise knowledge representations than deterministic knowledge graphs. Representative UKGs include NELL, ConceptNet, and Probase. Existing UKG completion methods (UKGE, PASSLEAF, BEUrRE, UPGAT, etc.) perform link prediction and confidence prediction via embedding learning.
+**Background**: Uncertain knowledge graphs (UKGs) associate each triple with a confidence score in $[0, 1]$, providing more precise knowledge representations than deterministic knowledge graphs. Representative UKGs include NELL, ConceptNet, and Probase. Existing UKG completion methods (UKGE, PASSLEAF, BEUrRE, UPGAT, etc.) perform link prediction and confidence prediction via embedding learning.
 
 **Limitations of Prior Work**: The confidence score distribution in real-world UKGs is severely imbalanced. In NELL, for instance, nearly all stored triples have confidence scores above 0.9, since low-confidence triples are typically regarded as erroneous and excluded from storage. Training embeddings on such skewed data causes models to be strongly biased toward the high-confidence regime, yielding poor predictions on low-confidence samples.
 
-**Root Cause**: Embedding learning requires sufficient samples across different confidence levels, yet the intrinsic nature of UKGs results in an extreme scarcity of low-confidence data. Two challenges arise: Challenge 1 — how to extract supervisory signals for unseen confidence values from the existing imbalanced labeled data; Challenge 2 — how to generate reliable confidence labels for unlabeled triples produced by negative sampling.
+**Key Challenge**: Embedding learning requires sufficient samples across different confidence levels, yet the intrinsic nature of UKGs results in an extreme scarcity of low-confidence data. Two challenges arise: Challenge 1 — how to extract supervisory signals for unseen confidence values from the existing imbalanced labeled data; Challenge 2 — how to generate reliable confidence labels for unlabeled triples produced by negative sampling.
 
-**Paper Goals**: To address both challenges simultaneously by augmenting labeled data and expanding unlabeled data, thereby improving UKG embedding quality on two fronts.
+**Goal**: To address both challenges simultaneously by augmenting labeled data and expanding unlabeled data, thereby improving UKG embedding quality on two fronts.
 
-**Starting Point**: Confidence is inherently a fuzzy concept (0.77 and 0.78 are not fundamentally distinct). Inspired by label distribution learning in facial age estimation, the paper extends a single scalar confidence to a Gaussian distribution.
+**Key Insight**: Confidence is inherently a fuzzy concept (0.77 and 0.78 are not fundamentally distinct). Inspired by label distribution learning in facial age estimation, the paper extends a single scalar confidence to a Gaussian distribution.
 
 **Core Idea**: Transform triple confidence into a Gaussian distribution to introduce neighboring confidence signals (addressing Challenge 1), and use meta self-training to generate reliable pseudo confidence distributions for negative samples (addressing Challenge 2).
 

@@ -29,16 +29,16 @@ This paper proposes 3D4D, an interactive 4D visualization framework integrating 
 
 ## Background & Motivation
 
-**State of the Field**: Advances in generative models and multimodal learning have made text-driven 4D content generation feasible; however, a significant gap remains between generating 4D content and interactively exploring it.
+**Background**: Advances in generative models and multimodal learning have made text-driven 4D content generation feasible; however, a significant gap remains between generating 4D content and interactively exploring it.
 
 **Limitations of Prior Work**:
 - Traditional WebGL frameworks are constrained by high computational cost, high latency, and poor scalability when handling real-time 4D rendering and fine-grained temporal navigation.
 - Existing 4D generation systems (e.g., SV4D, 4D-fy) produce 4D content but do not support real-time interactive editing.
 - No system seamlessly integrates high-performance rendering with user interaction capabilities.
 
-**Root Cause**: A fundamental tension exists between rendering quality and real-time interactivity in 4D scenes — high-quality rendering demands substantial computational resources, while interactivity requires low latency.
+**Key Challenge**: A fundamental tension exists between rendering quality and real-time interactivity in 4D scenes — high-quality rendering demands substantial computational resources, while interactivity requires low latency.
 
-**Starting Point**: Drawing inspiration from human peripheral vision, the paper employs a VLM to identify semantically important regions and adaptively allocate rendering resources, thereby reducing computational overhead while maintaining perceptual quality.
+**Key Insight**: Drawing inspiration from human peripheral vision, the paper employs a VLM to identify semantically important regions and adaptively allocate rendering resources, thereby reducing computational overhead while maintaining perceptual quality.
 
 ## Method
 

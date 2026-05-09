@@ -29,15 +29,15 @@ This paper constructs a longitudinal writing dataset spanning 12 years and disco
 
 ## Background & Motivation
 
-**State of the Field**: Large language models are widely used in content generation, dialogue systems, and synthetic training data production. Current LLM deployment paradigms are stateless—each generation is an independent response without retaining historical memory.
+**Background**: Large language models are widely used in content generation, dialogue systems, and synthetic training data production. Current LLM deployment paradigms are stateless—each generation is an independent response without retaining historical memory.
 
 **Limitations of Prior Work**: Human writing is inherently longitudinal—an author's style, cognitive state, and emotional expression naturally evolve over time. However, existing LLM generation paradigms assume that independently sampled documents can adequately approximate human writing distributions, an assumption that has never been systematically verified.
 
-**Root Cause**: LLMs perform excellently on static quality metrics (e.g., semantic preservation, fluency), but may systematically lose the inherent longitudinal structure of human writing in the temporal dimension. This loss poses risks for downstream applications requiring temporal consistency (e.g., synthetic training data, authorship attribution, mental health trajectory modeling).
+**Key Challenge**: LLMs perform excellently on static quality metrics (e.g., semantic preservation, fluency), but may systematically lose the inherent longitudinal structure of human writing in the temporal dimension. This loss poses risks for downstream applications requiring temporal consistency (e.g., synthetic training data, authorship attribution, mental health trajectory modeling).
 
-**Paper Goals**: Answer two core questions—(1) Can LLMs reproduce human temporal structure over long time spans? (2) If differences exist, which temporal dynamics of human writing are systematically lost or flattened?
+**Goal**: Answer two core questions—(1) Can LLMs reproduce human temporal structure over long time spans? (2) If differences exist, which temporal dynamics of human writing are systematically lost or flattened?
 
-**Starting Point**: The authors approach from psycholinguistics and computational stylistics, treating writing as a longitudinal process and quantifying temporal structure through drift and variance—two complementary metrics across semantic, lexical, and cognitive-emotional representation spaces.
+**Key Insight**: The authors approach from psycholinguistics and computational stylistics, treating writing as a longitudinal process and quantifying temporal structure through drift and variance—two complementary metrics across semantic, lexical, and cognitive-emotional representation spaces.
 
 **Core Idea**: LLM-generated text exhibits "temporal flattening"—showing high diversity in lexical space but significantly lower temporal drift and fluctuation in semantic and cognitive-emotional spaces compared to humans, persisting under both instance-wise and history-augmented conditions.
 
@@ -164,15 +164,15 @@ This paper constructs a longitudinal writing dataset spanning 12 years and disco
 
 ## Background & Motivation
 
-**State of the Field**: Large language models are widely used for content generation, dialogue systems, and synthetic training data production. The current LLM deployment paradigm is stateless—each generation produces an independent response without retaining historical memory.
+**Background**: Large language models are widely used for content generation, dialogue systems, and synthetic training data production. The current LLM deployment paradigm is stateless—each generation produces an independent response without retaining historical memory.
 
 **Limitations of Prior Work**: Human writing is inherently longitudinal—an author's style, cognitive state, and emotional expression naturally evolve over time. However, the existing LLM generation paradigm assumes that independently sampled documents can adequately approximate the distribution of human writing. This assumption has never been systematically verified.
 
-**Root Cause**: LLMs perform well on static quality metrics (e.g., semantic preservation, fluency), but may systematically lose the inherent longitudinal structure of human writing in the temporal dimension. This loss poses risks for downstream applications requiring temporal consistency (e.g., synthetic training data, authorship attribution, mental health trajectory modeling).
+**Key Challenge**: LLMs perform well on static quality metrics (e.g., semantic preservation, fluency), but may systematically lose the inherent longitudinal structure of human writing in the temporal dimension. This loss poses risks for downstream applications requiring temporal consistency (e.g., synthetic training data, authorship attribution, mental health trajectory modeling).
 
-**Paper Goals**: Answer two core questions—(1) Can LLMs reproduce human temporal structure over long time spans? (2) If differences exist, which temporal dynamics of human writing are systematically lost or flattened?
+**Goal**: Answer two core questions—(1) Can LLMs reproduce human temporal structure over long time spans? (2) If differences exist, which temporal dynamics of human writing are systematically lost or flattened?
 
-**Starting Point**: The authors approach from psycholinguistics and computational stylistics, treating writing as a longitudinal process, quantifying temporal structure through drift and variance—two complementary metrics across three representation spaces: semantic, lexical, and cognitive-emotional.
+**Key Insight**: The authors approach from psycholinguistics and computational stylistics, treating writing as a longitudinal process, quantifying temporal structure through drift and variance—two complementary metrics across three representation spaces: semantic, lexical, and cognitive-emotional.
 
 **Core Idea**: LLM-generated text exhibits "temporal flattening"—showing high diversity in lexical space but significantly lower temporal drift and fluctuation in semantic and cognitive-emotional spaces compared to humans, and this difference persists with or without historical conditioning.
 

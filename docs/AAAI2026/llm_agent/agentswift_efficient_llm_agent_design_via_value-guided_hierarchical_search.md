@@ -27,21 +27,21 @@ content_hash: c5d8dcd4515778a7
 This paper proposes AgentSwift, a framework that automatically discovers high-performance LLM agent designs through a hierarchical search space (jointly optimizing agentic workflows and functional components), a lightweight value model for predicting agent performance, and an uncertainty-guided MCTS search strategy, achieving an average improvement of 8.34% across 7 benchmarks.
 
 ## Background & Motivation
-**State of the Field**: LLM agents have demonstrated strong capabilities across diverse tasks, yet agent design remains heavily reliant on human expertise—from workflow organization to the selection and configuration of functional components such as memory, planning, and tool use, all of which require substantial domain knowledge and iterative tuning.
+**Background**: LLM agents have demonstrated strong capabilities across diverse tasks, yet agent design remains heavily reliant on human expertise—from workflow organization to the selection and configuration of functional components such as memory, planning, and tool use, all of which require substantial domain knowledge and iterative tuning.
 
 **Limitations of Prior Work**: Existing automated agent design methods suffer from three main problems:
    - **Restricted search space**: Methods such as AFlow and ADAS optimize only agentic workflow structures without considering functional components like memory, planning, or tool use, and thus cannot discover complete agent architectures.
    - **High evaluation cost**: Each new agent candidate requires a full benchmark run (e.g., evaluating a CoT agent on ALFWorld costs approximately \$60), causing significant resource waste on low-quality candidates.
    - **Low search efficiency**: Existing search strategies (e.g., AFlow's local optimization) are prone to getting trapped in local optima when navigating large design spaces.
 
-**Root Cause**: The fundamental tension between the combinatorial explosion of the design space (workflow × memory × tool × planning) and the high cost of individual evaluations makes exhaustive search infeasible, while local search tends to overlook high-quality designs.
+**Key Challenge**: The fundamental tension between the combinatorial explosion of the design space (workflow × memory × tool × planning) and the high cost of individual evaluations makes exhaustive search infeasible, while local search tends to overlook high-quality designs.
 
-**Paper Goals**:
+**Goal**:
    - How to construct a unified search space that encompasses both workflows and functional components?
    - How to replace expensive real evaluations with low-cost surrogates?
    - How to efficiently navigate a vast search space?
 
-**Starting Point**: Drawing inspiration from performance predictors in Neural Architecture Search (NAS)—where training a performance prediction model to substitute full training evaluations has proven highly effective—since agent design is structurally analogous to NAS.
+**Key Insight**: Drawing inspiration from performance predictors in Neural Architecture Search (NAS)—where training a performance prediction model to substitute full training evaluations has proven highly effective—since agent design is structurally analogous to NAS.
 
 **Core Idea**: Formalize agent design as a hierarchical search problem over workflows and functional components, employ a lightweight value model for low-cost evaluation, and use uncertainty-guided MCTS for efficient search.
 

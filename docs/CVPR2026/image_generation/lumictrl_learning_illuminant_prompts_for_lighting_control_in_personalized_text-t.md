@@ -29,15 +29,15 @@ This paper identifies a semantic gap in T2I model text encoders that prevents un
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion model-based text-to-image (T2I) generation has reached high quality. Lighting is a key factor influencing image aesthetics and atmosphere — software such as Photoshop provides standard presets including daylight, tungsten, and fluorescent. T2I personalization methods (Textual Inversion, DreamBooth, Custom Diffusion) can learn new concepts from a few images, but tend to entangle lighting information from the training images.
+**Background**: Diffusion model-based text-to-image (T2I) generation has reached high quality. Lighting is a key factor influencing image aesthetics and atmosphere — software such as Photoshop provides standard presets including daylight, tungsten, and fluorescent. T2I personalization methods (Textual Inversion, DreamBooth, Custom Diffusion) can learn new concepts from a few images, but tend to entangle lighting information from the training images.
 
 **Limitations of Prior Work**: Through systematic experiments, the authors reveal a fundamental issue — the text encoder of T2I models suffers from an **illumination semantic gap**: standard lighting terms (e.g., "tungsten") do not cluster with illumination concepts, and Kelvin temperature values (e.g., "2850K") are treated as ordinary numbers rather than photometric quantities. This is confirmed via t-SNE visualization and silhouette coefficient analysis across four CLIP encoders. As a result, regardless of how lighting instructions are written in prompts, generated images consistently favor a default daylight prior.
 
-**Root Cause**: T2I models are visually lighting-aware, yet their text encoders lack the capacity to map lighting terminology to visual illumination variation. Existing post-processing methods (IC-Light, Instruct Pix2Pix) either destroy background structure or introduce artifacts.
+**Key Challenge**: T2I models are visually lighting-aware, yet their text encoders lack the capacity to map lighting terminology to visual illumination variation. Existing post-processing methods (IC-Light, Instruct Pix2Pix) either destroy background structure or introduce artifacts.
 
-**Paper Goals**: How can T2I models accept lighting conditions directly via text prompts while preserving subject identity and spatial structure?
+**Goal**: How can T2I models accept lighting conditions directly via text prompts while preserving subject identity and spatial structure?
 
-**Starting Point**: Since standard lighting terminology is not properly understood in text space, LumiCtrl learns illumination prompts from scratch — using physics-based lighting augmentation as training signal, ControlNet to decouple lighting from structure, and masked loss to focus learning on foreground illumination.
+**Key Insight**: Since standard lighting terminology is not properly understood in text space, LumiCtrl learns illumination prompts from scratch — using physics-based lighting augmentation as training signal, ControlNet to decouple lighting from structure, and masked loss to focus learning on foreground illumination.
 
 **Core Idea**: By learning new text token embeddings corresponding to standard lighting conditions, precise lighting control is embedded directly into the prompt space of T2I generation.
 

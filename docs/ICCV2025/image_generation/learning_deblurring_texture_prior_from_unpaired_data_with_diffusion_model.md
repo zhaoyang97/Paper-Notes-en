@@ -29,15 +29,15 @@ TP-Diff is the first work to introduce diffusion models into unpaired image debl
 
 ## Background & Motivation
 
-**State of the Field**: Image deblurring is a classic low-level vision task. Supervised methods rely on synthetic blurry–sharp paired data and achieve strong performance but generalize poorly to real-world scenarios. Real paired data (e.g., acquired via dual-camera systems) is expensive to collect and subject to camera-specific bias. Learning deblurring directly from unpaired data is therefore of greater practical value.
+**Background**: Image deblurring is a classic low-level vision task. Supervised methods rely on synthetic blurry–sharp paired data and achieve strong performance but generalize poorly to real-world scenarios. Real paired data (e.g., acquired via dual-camera systems) is expensive to collect and subject to camera-specific bias. Learning deblurring directly from unpaired data is therefore of greater practical value.
 
 **Limitations of Prior Work**: Existing unsupervised deblurring methods fall into three main paradigms: (1) prior-based methods struggle to handle diverse blur types with a single prior; (2) reblurring-augmentation methods depend on pretrained supervised models; (3) CycleGAN-based methods learn mappings by constructing blurry–sharp cycles but ignore the spatial diversity of blur, making them prone to overfitting a single blur template. A common weakness across all paradigms is the inability to effectively model spatially varying complex blur patterns found in real-world images.
 
-**Root Cause**: Under the unpaired setting, pixel-level supervision is absent, making it difficult for models to learn spatially discriminative deblurring strategies—the model must "know" that different regions exhibit blur of different degrees and types, and restore texture accordingly.
+**Key Challenge**: Under the unpaired setting, pixel-level supervision is absent, making it difficult for models to learn spatially discriminative deblurring strategies—the model must "know" that different regions exhibit blur of different degrees and types, and restore texture accordingly.
 
-**Paper Goals**: To enable a diffusion model to learn spatially varying texture priors from unpaired data, and to use those priors to guide the deblurring network toward region-adaptive texture restoration.
+**Goal**: To enable a diffusion model to learn spatially varying texture priors from unpaired data, and to use those priors to guide the deblurring network toward region-adaptive texture restoration.
 
-**Starting Point**: Diffusion models excel at modeling complex data distributions. Rather than directly generating sharp images with a diffusion model (which tends to introduce artifacts), the authors train the diffusion model to generate an intermediate representation—a texture prior—that encodes the texture information each region should possess, which a dedicated deblurring network then uses to complete the final deblurring.
+**Key Insight**: Diffusion models excel at modeling complex data distributions. Rather than directly generating sharp images with a diffusion model (which tends to introduce artifacts), the authors train the diffusion model to generate an intermediate representation—a texture prior—that encodes the texture information each region should possess, which a dedicated deblurring network then uses to complete the final deblurring.
 
 **Core Idea**: A memory-augmented encoder extracts texture priors from unpaired sharp images; a diffusion model is trained to generate these priors from noise; and an adaptive-filtering Transformer exploits the priors to remove spatially varying blur.
 

@@ -29,11 +29,11 @@ This paper proposes a novel matrix factorization method based on logarithmic per
 
 ## Background & Motivation
 
-- **State of the Field**: Differentially private continual counting refers to maintaining an accurate running sum over a sensitive data stream. This problem has broad applications in privacy-preserving optimization (e.g., federated learning, private gradient descent), online learning, and streaming data analysis. Large-scale private deployments such as Google's private next-word prediction and Smart Select models rely on this primitive.
+- **Background**: Differentially private continual counting refers to maintaining an accurate running sum over a sensitive data stream. This problem has broad applications in privacy-preserving optimization (e.g., federated learning, private gradient descent), online learning, and streaming data analysis. Large-scale private deployments such as Google's private next-word prediction and Smart Select models rely on this primitive.
 
 - **Limitations of Prior Work**: Matrix factorization-based algorithms—particularly the $M_{\text{count}}^{1/2}$ factorization—have substantially improved the privacy–utility trade-off over classical binary tree mechanisms. However, these state-of-the-art algorithms share a fundamental assumption: **the input size $n$ must be known in advance.** While this assumption is natural in model training scenarios, it is unrealistic in applications such as public health surveillance. Apple's deployment of differentially private user data collection is a notable example: due to this limitation, only single-day privacy could be guaranteed, causing cumulative privacy loss to grow without bound over time—illustrating the practical impact of the unbounded input problem.
 
-- **Root Cause**: All existing solutions face a fundamental trilemma:
+- **Key Challenge**: All existing solutions face a fundamental trilemma:
   - **Doubling trick**: Preserves asymptotic performance but causes non-smooth error growth.
   - **Fixed budget**: Maintains performance and smoothness but is not truly unbounded—computation halts once the privacy budget is exhausted.
   - **Independent noise**: Naturally unbounded and smooth, but error is highly suboptimal.

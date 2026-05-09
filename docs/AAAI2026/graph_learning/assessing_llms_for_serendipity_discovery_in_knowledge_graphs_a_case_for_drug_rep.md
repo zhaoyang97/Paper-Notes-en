@@ -29,12 +29,12 @@ This paper proposes SerenQA, the first framework to formally define the serendip
 
 ## Background & Motivation
 
-- **State of the Field**: Existing LLM-augmented KGQA systems focus on returning highly relevant yet predictable answers, lacking the ability to discover unexpected but valuable connections.
+- **Background**: Existing LLM-augmented KGQA systems focus on returning highly relevant yet predictable answers, lacking the ability to discover unexpected but valuable connections.
 - **Scientific significance of serendipity**: Many major breakthroughs in the history of science originated from serendipitous discoveries (e.g., penicillin). Enabling LLMs to mine surprising findings from existing knowledge bases is a key step toward truly AI-driven scientific discovery.
 - **Demand for drug repurposing**: Drug repurposing—identifying new indications for existing drugs—is a core task in medical research and naturally suits serendipity as an application scenario. For example, Journavx, the first non-opioid drug for severe acute pain, achieves analgesia via a novel mechanism (NaV1.8 sodium channel), representing a canonical case of serendipitous discovery.
 - **Limitations of Prior Work**: Existing serendipity research (in recommender systems and web search) relies primarily on subjective human annotation or LLM self-evaluation, lacking interpretable, scalable, and reproducible quantification methods.
 - **Evaluation gap**: The community lacks a dedicated benchmark dataset and systematic evaluation scheme for serendipitous discovery capabilities in scientific KGQA.
-- **Root Cause**: Serendipity itself is a composite experience of relevance, novelty, and unexpectedness. Discovering genuinely novel and surprising answers while maintaining query relevance poses both theoretical and practical challenges.
+- **Key Challenge**: Serendipity itself is a composite experience of relevance, novelty, and unexpectedness. Discovering genuinely novel and surprising answers while maintaining query relevance poses both theoretical and practical challenges.
 
 ## Method
 

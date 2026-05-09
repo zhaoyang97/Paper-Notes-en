@@ -28,15 +28,15 @@ This paper proves from an information-geometric perspective that DPO is fundamen
 
 ## Background & Motivation
 
-**State of the Field**: DPO simplifies the two-stage RLHF pipeline (reward model training followed by RL policy optimization) into a single-stage supervised learning procedure. By substituting the closed-form solution of the KL-regularized optimal policy into the reward learning objective, DPO directly optimizes the policy on preference data. This approach has been widely adopted in both industry and the open-source community.
+**Background**: DPO simplifies the two-stage RLHF pipeline (reward model training followed by RL policy optimization) into a single-stage supervised learning procedure. By substituting the closed-form solution of the KL-regularized optimal policy into the reward learning objective, DPO directly optimizes the policy on preference data. This approach has been widely adopted in both industry and the open-source community.
 
 **Limitations of Prior Work**: DPO's derivation rests on the assumption of a **tabular policy class**—i.e., the policy class contains all possible conditional probability distributions. In practice, however, real LLMs are parameterized policy classes (Transformer with finite parameters), where the parameter dimension satisfies $d \ll m = |\mathcal{S}| \cdot |\mathcal{A}|$. Under this setting, it remains unclear whether DPO's claimed equivalence to RLHF still holds.
 
-**Root Cause**: DPO's implicit reward function $r_\theta^\beta(s,a) = \beta \log \frac{\pi_\theta(a|s)}{\pi_{\theta_0}(a|s)}$ forms a $d$-dimensional manifold $\mathcal{R}^\beta \subset \mathbb{R}^m$, while the true reward $r^*$ generally does not lie on this manifold ($r^* \notin \mathcal{R}^\beta$). This means DPO performs a **misspecified statistical estimation**, whose outcome is strongly dependent on the distribution of the preference data.
+**Key Challenge**: DPO's implicit reward function $r_\theta^\beta(s,a) = \beta \log \frac{\pi_\theta(a|s)}{\pi_{\theta_0}(a|s)}$ forms a $d$-dimensional manifold $\mathcal{R}^\beta \subset \mathbb{R}^m$, while the true reward $r^*$ generally does not lie on this manifold ($r^* \notin \mathcal{R}^\beta$). This means DPO performs a **misspecified statistical estimation**, whose outcome is strongly dependent on the distribution of the preference data.
 
-**Paper Goals**: (a) Characterize the precise geometric behavior of DPO under parameterized policies; (b) demonstrate concrete failure modes induced by misspecification (preference reversal and reward degradation); (c) design a principled remedy.
+**Goal**: (a) Characterize the precise geometric behavior of DPO under parameterized policies; (b) demonstrate concrete failure modes induced by misspecification (preference reversal and reward degradation); (c) design a principled remedy.
 
-**Starting Point**: The paper reinterprets DPO loss minimization as a weighted KL projection of the true reward onto the implicit reward manifold (Proposition 1), and then analyzes the geometric properties of this projection via local linearization, revealing how the projection outcome is influenced by the data distribution.
+**Key Insight**: The paper reinterprets DPO loss minimization as a weighted KL projection of the true reward onto the implicit reward manifold (Proposition 1), and then analyzes the geometric properties of this projection via local linearization, revealing how the projection outcome is influenced by the data distribution.
 
 **Core Idea**: DPO constitutes a restricted projection in reward space; introducing auxiliary variables along the null space of the policy gradient matrix expands the search to the full reward space, eliminating misspecification.
 

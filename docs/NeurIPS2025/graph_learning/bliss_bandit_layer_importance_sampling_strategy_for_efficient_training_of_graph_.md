@@ -28,18 +28,18 @@ This paper proposes BLISS, which formulates layer-wise neighbor sampling in GNNs
 
 ## Background & Motivation
 
-**State of the Field**: Training GNNs on large graphs suffers from the neighborhood explosion problem — recursive aggregation at each layer causes the receptive field to grow exponentially. Common solutions involve neighbor sampling, categorized into three types: node-wise (GraphSAGE), layer-wise (FastGCN/LADIES), and subgraph-based (ClusterGCN/GraphSAINT).
+**Background**: Training GNNs on large graphs suffers from the neighborhood explosion problem — recursive aggregation at each layer causes the receptive field to grow exponentially. Common solutions involve neighbor sampling, categorized into three types: node-wise (GraphSAGE), layer-wise (FastGCN/LADIES), and subgraph-based (ClusterGCN/GraphSAINT).
 
 **Limitations of Prior Work**:
 - Node-wise sampling introduces redundancy (the same node is repeatedly sampled for different targets)
 - Existing layer-wise samplers (LADIES, LABOR) rely on static sampling distributions that cannot adapt to shifting node importance during training
 - BS-GNN applies bandits to node-wise sampling but does not extend to the layer-wise setting
 
-**Root Cause**: A dynamic balance must be struck between sampling efficiency (fewer samples reduce computation) and representation quality (more informative samples reduce variance), yet this balance shifts continuously throughout training.
+**Key Challenge**: A dynamic balance must be struck between sampling efficiency (fewer samples reduce computation) and representation quality (more informative samples reduce variance), yet this balance shifts continuously throughout training.
 
-**Paper Goals**: To dynamically learn per-neighbor importance within the layer-wise sampling framework and adjust sampling probabilities accordingly.
+**Goal**: To dynamically learn per-neighbor importance within the layer-wise sampling framework and adjust sampling probabilities accordingly.
 
-**Starting Point**: Each edge is treated as an "arm"; the variance contribution of a node's representation serves as the reward; the EXP3 bandit algorithm adapts the sampling strategy online.
+**Key Insight**: Each edge is treated as an "arm"; the variance contribution of a node's representation serves as the reward; the EXP3 bandit algorithm adapts the sampling strategy online.
 
 **Core Idea**: Layer-wise sampling + EXP3 bandit = adaptive neighbor importance sampling.
 

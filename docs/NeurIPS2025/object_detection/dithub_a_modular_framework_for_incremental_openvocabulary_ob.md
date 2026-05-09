@@ -30,15 +30,15 @@ DitHub reformulates the incremental adaptation problem in open-vocabulary object
 
 ## Background & Motivation
 
-**State of the Field**: Open-vocabulary object detectors (e.g., Grounding DINO) generalize to arbitrary categories via text prompts, yet efficient incremental learning strategies remain necessary when handling rare categories or continuously adapting across diverse specialized domains. Methods such as ZiRa have begun exploring Incremental Vision-Language Object Detection (IVLOD), achieving competitive results on ODinW-13.
+**Background**: Open-vocabulary object detectors (e.g., Grounding DINO) generalize to arbitrary categories via text prompts, yet efficient incremental learning strategies remain necessary when handling rare categories or continuously adapting across diverse specialized domains. Methods such as ZiRa have begun exploring Incremental Vision-Language Object Detection (IVLOD), achieving competitive results on ODinW-13.
 
 **Limitations of Prior Work**: Existing incremental adaptation methods adopt a "monolithic" strategy — all new knowledge is compressed into a single weight set. This leads to: (1) difficulty selectively updating knowledge for specific categories without affecting others; (2) knowledge of rare categories being diluted within unified weights; (3) inability to gracefully update corresponding knowledge when the same category appears across different domains (e.g., RGB vs. thermal imaging).
 
-**Root Cause**: Incremental detection requires simultaneously achieving "category specialization" and "cross-category/cross-domain composition," yet monolithic weight architectures inherently couple all category knowledge together, making selective updating and composition extremely difficult.
+**Key Challenge**: Incremental detection requires simultaneously achieving "category specialization" and "cross-category/cross-domain composition," yet monolithic weight architectures inherently couple all category knowledge together, making selective updating and composition extremely difficult.
 
-**Paper Goals**: To achieve incremental adaptation to new domains/categories in open-vocabulary detection while supporting: (1) selective updating of previously learned categories; (2) flexible composition of cross-domain modules; (3) effective preservation of zero-shot capability.
+**Goal**: To achieve incremental adaptation to new domains/categories in open-vocabulary detection while supporting: (1) selective updating of previously learned categories; (2) flexible composition of cross-domain modules; (3) effective preservation of zero-shot capability.
 
-**Starting Point**: Drawing from Modular Deep Learning and borrowing the concept of version control systems (Git), each category's knowledge is encapsulated as an independent LoRA module, and detection knowledge is managed in the same manner as code branches.
+**Key Insight**: Drawing from Modular Deep Learning and borrowing the concept of version control systems (Git), each category's knowledge is encapsulated as an independent LoRA module, and detection knowledge is managed in the same manner as code branches.
 
 **Core Idea**: An independent LoRA A matrix is maintained per category as an "expert branch," while the B matrix is shared to ensure memory efficiency. A warmup→branch→fetch→merge pipeline enables scalable incremental detection.
 

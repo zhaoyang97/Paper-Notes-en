@@ -28,11 +28,11 @@ This paper proposes Causal-VidSyn, a diffusion model that achieves causal entity
 
 ## Background & Motivation
 
-1. **State of the Field**: Video diffusion models (e.g., CogVideoX, StoryDiffusion) have achieved remarkable progress in general-purpose video generation, yet they are primarily designed for normal scenes and exhibit limited capability in generating egocentric traffic accident videos.
+1. **Background**: Video diffusion models (e.g., CogVideoX, StoryDiffusion) have achieved remarkable progress in general-purpose video generation, yet they are primarily designed for normal scenes and exhibit limited capability in generating egocentric traffic accident videos.
 2. **Limitations of Prior Work**: State-of-the-art video diffusion models fail to accurately identify causal entities and their accident-related behaviors when generating accident videos. For instance, CogVideoX can generate a motorcycle under the text edit "pedestrian → motorcycle collision" but fails to depict the actual collision; Abductive-OAVD cannot generate the target object at all.
-3. **Root Cause**: Causal entities in accident scenes are typically small and the scene changes rapidly, making it extremely difficult to identify target objects and their subtle behaviors from an ego-vehicle perspective. Existing diffusion models lack domain knowledge to understand accident causality.
-4. **Paper Goals**: (1) How to precisely localize causal entities within video diffusion? (2) How to enable diffusion models to understand accident causality so as to faithfully respond to counterfactual text edits?
-5. **Starting Point**: Two key information cues are incorporated — accident cause–collision textual descriptions (providing information on participants and improper behaviors) and driver gaze points (providing direct visual attention cues).
+3. **Key Challenge**: Causal entities in accident scenes are typically small and the scene changes rapidly, making it extremely difficult to identify target objects and their subtle behaviors from an ego-vehicle perspective. Existing diffusion models lack domain knowledge to understand accident causality.
+4. **Goal**: (1) How to precisely localize causal entities within video diffusion? (2) How to enable diffusion models to understand accident causality so as to faithfully respond to counterfactual text edits?
+5. **Key Insight**: Two key information cues are incorporated — accident cause–collision textual descriptions (providing information on participants and improper behaviors) and driver gaze points (providing direct visual attention cues).
 6. **Core Idea**: By combining accident-reason answering and gaze-conditioned token selection, the 3D-UNet backbone is made causally aware, enabling precise identification and generation of causal entities reflecting accident causality during the diffusion process.
 
 ## Method

@@ -29,15 +29,15 @@ This paper proposes anGPT (Approximately Normalized GPT), which exploits the con
 
 ## Background & Motivation
 
-**State of the Field**: Deep Transformer training relies heavily on normalization and regularization techniques (LayerNorm / RMSNorm / QK-Norm) to ensure stability, requiring the tuning of numerous hyperparameters including weight decay coefficients and learning rate warmup steps.
+**Background**: Deep Transformer training relies heavily on normalization and regularization techniques (LayerNorm / RMSNorm / QK-Norm) to ensure stability, requiring the tuning of numerous hyperparameters including weight decay coefficients and learning rate warmup steps.
 
 **Limitations of Prior Work**: nGPT constrains all parameters and representations strictly to a hypersphere, which greatly accelerates convergence but introduces additional normalization layers, increasing training runtime by approximately 9% and inference by approximately 3%. The computational cost of exact normalization is non-negligible for large models.
 
-**Root Cause**: There is an inherent trade-off between the convergence acceleration brought by normalization and the computational overhead of normalization itself. The ideal scenario would be to retain the benefits of normalization (stabilizing input scale, preventing residual stream norm explosion) while avoiding expensive per-sample normalization operations.
+**Key Challenge**: There is an inherent trade-off between the convergence acceleration brought by normalization and the computational overhead of normalization itself. The ideal scenario would be to retain the benefits of normalization (stabilizing input scale, preventing residual stream norm explosion) while avoiding expensive per-sample normalization operations.
 
-**Paper Goals**: (a) Can a cheaper approach achieve the effect of "approximate normalization"? (b) Can weight decay and learning rate warmup be simultaneously eliminated?
+**Goal**: (a) Can a cheaper approach achieve the effect of "approximate normalization"? (b) Can weight decay and learning rate warmup be simultaneously eliminated?
 
-**Starting Point**: The Concentration of Measure phenomenon in high-dimensional spaces — when the dimension $d$ is sufficiently large, the values of Lipschitz functions on a hypersphere concentrate tightly around their expected values. Vector norms can therefore be approximated by an input-independent constant factor.
+**Key Insight**: The Concentration of Measure phenomenon in high-dimensional spaces — when the dimension $d$ is sufficiently large, the values of Lipschitz functions on a hypersphere concentrate tightly around their expected values. Vector norms can therefore be approximated by an input-independent constant factor.
 
 **Core Idea**: Replace per-sample exact normalization with an input-independent scalar normalization factor $\nu$, combined with a parameter norm constraint ($\|w\|_2 \leq 1$), to construct a Transformer in a "compact space" that obtains the convergence advantages of normalization without additional normalization layers.
 

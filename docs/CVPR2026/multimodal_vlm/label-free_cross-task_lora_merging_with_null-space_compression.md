@@ -35,7 +35,7 @@ Existing gradient-guided merging methods (e.g., AdaMerging) use output entropy m
 1. **Inapplicable to regression tasks**: Entropy is only meaningful for classification; tasks such as depth estimation and surface normal prediction cannot leverage this signal.
 2. **Not scalable to LLMs/VLMs**: Entropy must be computed at every generated token, incurring a cost that grows linearly with sequence length.
 
-**Root Cause**: A merging signal is needed that applies to both classification and regression tasks without relying on output logits.
+**Key Challenge**: A merging signal is needed that applies to both classification and regression tasks without relying on output logits.
 
 **Key Observation**: During LoRA fine-tuning, the null space of the down-projection matrix $\mathbf{A}$ is systematically compressed — i.e., an increasing proportion of input activations fall within the adapter's projection subspace. This **null-space compression** is strongly negatively correlated with task performance, making it a task-agnostic merging signal.
 

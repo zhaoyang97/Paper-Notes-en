@@ -30,7 +30,7 @@ This paper proposes ByteFlow Net, a tokenizer-free hierarchical byte-level langu
 
 ### Starting Point
 
-**Paper Goals**: **State of the Field**: 1. Modern LLMs rely on fixed BPE tokenizers that operate at a fixed granularity once trained.
+**Goal**: **Background**: 1. Modern LLMs rely on fixed BPE tokenizers that operate at a fixed granularity once trained.
 2. Fixed tokenization leads to brittle behavior in counting, arithmetic, structured data, and multilingual settings.
 3. Tokenization is the only non-learnable stage in the pipeline, breaking end-to-end modeling.
 4. Existing tokenizer-free approaches include pure byte-level models (computationally expensive due to long sequences) and heuristic chunking methods (fixed stride/whitespace boundaries with strong inductive bias).

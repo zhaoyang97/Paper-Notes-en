@@ -29,13 +29,13 @@ This work constructs a medical coding benchmark based on an extract-retrieve-sel
 
 ## Background & Motivation
 
-**State of the Field**: Medical coding is the task of mapping clinical expressions to standardized classification systems (e.g., ICD-10, ICPC-2), which constitutes an extreme multi-label classification (XMC) problem. Traditional approaches are time-consuming and error-prone.
+**Background**: Medical coding is the task of mapping clinical expressions to standardized classification systems (e.g., ICD-10, ICPC-2), which constitutes an extreme multi-label classification (XMC) problem. Traditional approaches are time-consuming and error-prone.
 
 **Limitations of Prior Work**: ICPC-2 contains approximately 1,300 categories with severe class imbalance; existing automated coding methods predominantly target ICD, with limited research addressing ICPC-2 for primary care settings.
 
-**Root Cause**: Direct LLM-based coding is prone to hallucination (generating non-existent codes), whereas retrieval-augmented approaches can constrain the output space.
+**Key Challenge**: Direct LLM-based coding is prone to hallucination (generating non-existent codes), whereas retrieval-augmented approaches can constrain the output space.
 
-**Starting Point**: The problem is decomposed into three stages—extract, retrieve, and select. This paper focuses on evaluating the select stage: given retrieved candidates, can an LLM correctly identify the appropriate ICPC-2 code?
+**Key Insight**: The problem is decomposed into three stages—extract, retrieve, and select. This paper focuses on evaluating the select stage: given retrieved candidates, can an LLM correctly identify the appropriate ICPC-2 code?
 
 ## Method
 

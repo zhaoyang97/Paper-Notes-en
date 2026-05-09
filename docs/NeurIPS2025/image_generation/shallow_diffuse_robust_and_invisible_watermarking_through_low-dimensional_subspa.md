@@ -29,16 +29,16 @@ This paper proposes Shallow Diffuse, a method that exploits the local linearity 
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion model-driven commercial AI-generated content (e.g., Stable Diffusion, DALL-E, Imagen) has raised three major security concerns: (1) AI-generated misinformation threatens social stability; (2) training data memorization leads to copyright infringement; (3) iterative training on AI-generated content causes model collapse. Watermarking is a critical technique for identifying and tracing AI-generated content.
+**Background**: Diffusion model-driven commercial AI-generated content (e.g., Stable Diffusion, DALL-E, Imagen) has raised three major security concerns: (1) AI-generated misinformation threatens social stability; (2) training data memorization leads to copyright infringement; (3) iterative training on AI-generated content causes model collapse. Watermarking is a critical technique for identifying and tracing AI-generated content.
 
 **Limitations of Prior Work**:
 - Traditional watermarking methods (DWT, RivaGAN, etc.) are primarily designed for post-processing scenarios and offer insufficient robustness.
 - Diffusion model-based methods (Tree-Ring, RingID) embed watermarks in the low-frequency Fourier components of the initial noise, which substantially distorts the Gaussian noise distribution and degrades generation fidelity.
 - Existing methods either support only the server-side scenario (requiring control over the initial seed) or only the user-side scenario (post-processing embedding), failing to address both simultaneously.
 
-**Root Cause**: Robustness demands a strong watermark signal, while fidelity demands minimal modification to the image — these two objectives are fundamentally in tension.
+**Key Challenge**: Robustness demands a strong watermark signal, while fidelity demands minimal modification to the image — these two objectives are fundamentally in tension.
 
-**Starting Point**: The paper exploits the low-rank property of the PMP's Jacobian at intermediate timesteps, where most of the watermark energy falls into the null space of the Jacobian. This decouples the watermark from the sampling process — the watermark leaves the predicted $\hat{x}_0$ nearly unchanged (ensuring fidelity) while being fully preserved in $x_t$ (ensuring detectability).
+**Key Insight**: The paper exploits the low-rank property of the PMP's Jacobian at intermediate timesteps, where most of the watermark energy falls into the null space of the Jacobian. This decouples the watermark from the sampling process — the watermark leaves the predicted $\hat{x}_0$ nearly unchanged (ensuring fidelity) while being fully preserved in $x_t$ (ensuring detectability).
 
 ## Method
 

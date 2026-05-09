@@ -29,7 +29,7 @@ This paper proposes HyperKKL, which uses a hypernetwork to encode exogenous inpu
 
 ## Background & Motivation
 
-**State of the Field**: State estimation—reconstructing the full internal state of a dynamical system from partially observable measurements—is a fundamental problem in control and engineering. The KKL (Kazantzis-Kravaris/Luenberger) observer achieves state estimation by immersing a nonlinear dynamical system into a higher-dimensional stable linear latent space, and theoretically guarantees global convergence under the backward distinguishability condition.
+**Background**: State estimation—reconstructing the full internal state of a dynamical system from partially observable measurements—is a fundamental problem in control and engineering. The KKL (Kazantzis-Kravaris/Luenberger) observer achieves state estimation by immersing a nonlinear dynamical system into a higher-dimensional stable linear latent space, and theoretically guarantees global convergence under the backward distinguishability condition.
 
 **Limitations of Prior Work**:
 
@@ -37,13 +37,13 @@ This paper proposes HyperKKL, which uses a hypernetwork to encode exogenous inpu
 - Recent neural network-based approaches (PINNs, autoencoders, etc.) can approximately solve these mappings, but nearly all target **autonomous systems** (no external input $u(t)$)
 - Real-world systems are almost never autonomous—robots receive motor commands, biological systems respond to external stimuli, and industrial processes are subject to time-varying disturbances
 
-**Root Cause**: When extending to non-autonomous systems, the transformation mapping $\mathcal{T}$ must become input-dependent as $\mathcal{T}(x, t)$, satisfying the time-varying PDE:
+**Key Challenge**: When extending to non-autonomous systems, the transformation mapping $\mathcal{T}$ must become input-dependent as $\mathcal{T}(x, t)$, satisfying the time-varying PDE:
 
 $$\frac{\partial \mathcal{T}}{\partial x}(x,t) f(x, u(t)) + \frac{\partial \mathcal{T}}{\partial t}(x,t) = A \mathcal{T}(x,t) + B h(x)$$
 
 The additional temporal partial derivative term $\frac{\partial \mathcal{T}}{\partial t}$ couples the transformation with the temporal evolution of the input, rendering static mappings insufficient. Existing learning methods either require retraining for each input scenario or online gradient updates, severely limiting practical applicability.
 
-**Paper Goals**: HyperKKL encodes the history of the input signal into an instantaneous perturbation of the observer parameters via a hypernetwork, enabling inference-time adaptation to different exogenous input conditions without retraining or online optimization.
+**Goal**: HyperKKL encodes the history of the input signal into an instantaneous perturbation of the observer parameters via a hypernetwork, enabling inference-time adaptation to different exogenous input conditions without retraining or online optimization.
 
 ## Method
 

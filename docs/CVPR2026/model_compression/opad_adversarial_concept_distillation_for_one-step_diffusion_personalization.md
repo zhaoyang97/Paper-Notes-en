@@ -27,11 +27,11 @@ content_hash: cb8c836298898653
 OPAD is the first work to address one-step diffusion model personalization (1-SDP). It achieves reliable single-step personalized generation via joint teacher–student training, alignment losses, and adversarial supervision, and further proposes a collaborative learning stage in which the efficient student generation is fed back to improve the teacher.
 
 ## Background & Motivation
-1. **State of the Field**: Text-to-image (T2I) personalized generation has achieved notable success, yet adapted models suffer from slow inference. Distillation-based acceleration techniques can reduce the sampling steps to as few as one.
+1. **Background**: Text-to-image (T2I) personalized generation has achieved notable success, yet adapted models suffer from slow inference. Distillation-based acceleration techniques can reduce the sampling steps to as few as one.
 2. **Limitations of Prior Work**: Directly applying conventional personalization methods to one-step diffusion models leads to severe failure — Textual Inversion cannot learn text tokens, Custom Diffusion degrades generation quality, and IP-Adapter generalizes poorly to one-step models.
-3. **Root Cause**: Three core challenges arise: (i) *student inadaptability* — one-step models cannot independently learn text tokens effectively; (ii) *inefficiency* — the sequential paradigm of first fine-tuning the teacher then distilling is computationally expensive; (iii) *teacher unreliability* — the teacher itself may fail to learn certain concepts adequately.
-4. **Paper Goals**: To realize, for the first time, reliable personalization of one-step diffusion models while preserving single-step efficient inference and faithfully reproducing target concepts.
-5. **Starting Point**: Rather than sequential distillation, the paper adopts joint teacher–student optimization and introduces adversarial supervision to compensate for teacher deficiencies.
+3. **Key Challenge**: Three core challenges arise: (i) *student inadaptability* — one-step models cannot independently learn text tokens effectively; (ii) *inefficiency* — the sequential paradigm of first fine-tuning the teacher then distilling is computationally expensive; (iii) *teacher unreliability* — the teacher itself may fail to learn certain concepts adequately.
+4. **Goal**: To realize, for the first time, reliable personalization of one-step diffusion models while preserving single-step efficient inference and faithfully reproducing target concepts.
+5. **Key Insight**: Rather than sequential distillation, the paper adopts joint teacher–student optimization and introduces adversarial supervision to compensate for teacher deficiencies.
 6. **Core Idea**: The teacher and student share a text encoder and are trained jointly; the student is guided by both an alignment loss (matching teacher outputs) and an adversarial loss (matching the real image distribution).
 
 ## Method

@@ -28,15 +28,15 @@ AcuRank maintains a probability distribution over document relevance via a Bayes
 
 ## Background & Motivation
 
-**State of the Field**: Modern information retrieval pipelines (e.g., web search, RAG systems) typically employ a fast first-stage retriever such as BM25 to obtain a candidate set, followed by LLM-based listwise reranking to improve top-$k$ precision. Due to LLM context length constraints, reranking can only be performed over small subsets (typically 20 documents), requiring multiple calls whose results must be aggregated.
+**Background**: Modern information retrieval pipelines (e.g., web search, RAG systems) typically employ a fast first-stage retriever such as BM25 to obtain a candidate set, followed by LLM-based listwise reranking to improve top-$k$ precision. Due to LLM context length constraints, reranking can only be performed over small subsets (typically 20 documents), requiring multiple calls whose results must be aggregated.
 
 **Limitations of Prior Work**: Dominant strategies—Sliding Windows and TourRank—both allocate a fixed computation budget, assigning an identical number of reranker calls to every query regardless of its difficulty. This leads to over-computation on easy queries and under-computation on hard ones, with no mechanism to leverage intermediate signals for dynamic adjustment.
 
-**Root Cause**: Fixed-computation strategies treat all queries uniformly, yet query difficulty varies enormously (as evidenced by the wide WIG distribution). Documents ranked low in early rounds have no opportunity for recovery, even when the initial judgment was based on limited or noisy context.
+**Key Challenge**: Fixed-computation strategies treat all queries uniformly, yet query difficulty varies enormously (as evidenced by the wide WIG distribution). Documents ranked low in early rounds have no opportunity for recovery, even when the initial judgment was based on limited or noisy context.
 
-**Paper Goals**: The paper seeks a method to dynamically determine *which* documents to rerank and *how many* times, based on per-query and per-document ranking uncertainty, simultaneously improving accuracy and reducing unnecessary computation.
+**Goal**: The paper seeks a method to dynamically determine *which* documents to rerank and *how many* times, based on per-query and per-document ranking uncertainty, simultaneously improving accuracy and reducing unnecessary computation.
 
-**Starting Point**: The paper draws on TrueSkill—a Bayesian framework originally developed for multiplayer game rating—modeling document relevance as Gaussian distributions, quantifying uncertainty via ranking probabilities, and using these signals to guide selective reranking and adaptive termination.
+**Key Insight**: The paper draws on TrueSkill—a Bayesian framework originally developed for multiplayer game rating—modeling document relevance as Gaussian distributions, quantifying uncertainty via ranking probabilities, and using these signals to guide selective reranking and adaptive termination.
 
 **Core Idea**: Document relevance is represented as a probability distribution rather than a point estimate. Computation is invested only in documents with uncertain rankings, and Bayesian belief updates drive iterative refinement until convergence.
 

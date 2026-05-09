@@ -28,13 +28,13 @@ This work provides the first convergence guarantees for the Muon optimizer as it
 
 ## Background & Motivation
 
-**State of the Field**: The Muon optimizer updates matrix parameters by orthogonalizing the momentum matrix—rather than vectorizing it as Adam does—and has demonstrated strong empirical performance in LLM training. In practice, it employs Newton-Schulz (NS) iterations to approximate the polar decomposition, avoiding the costly SVD.
+**Background**: The Muon optimizer updates matrix parameters by orthogonalizing the momentum matrix—rather than vectorizing it as Adam does—and has demonstrated strong empirical performance in LLM training. In practice, it employs Newton-Schulz (NS) iterations to approximate the polar decomposition, avoiding the costly SVD.
 
 **Limitations of Prior Work**: Existing theoretical analyses of Muon (Shen et al.; Li & Hong) replace NS with exact SVD—yet SVD is never used in practice. It remains unclear how the NS approximation error affects convergence, and how many NS steps suffice.
 
-**Root Cause**: Muon with only a few NS steps achieves SVD-level performance empirically (with superior wall-clock time), yet no theoretical framework covers this regime—practice has far outpaced theory.
+**Key Challenge**: Muon with only a few NS steps achieves SVD-level performance empirically (with superior wall-clock time), yet no theoretical framework covers this regime—practice has far outpaced theory.
 
-**Starting Point**: Directly analyze the polar decomposition approximation error $\varepsilon_q$ induced by NS iterations, and prove that it decays doubly exponentially in the number of steps.
+**Key Insight**: Directly analyze the polar decomposition approximation error $\varepsilon_q$ induced by NS iterations, and prove that it decays doubly exponentially in the number of steps.
 
 **Core Idea**: The NS approximation error $\varepsilon_q$ decays doubly exponentially → a few NS steps suffice to bring Muon's convergence rate to the SVD level → each step costs far less than SVD → superior wall-clock time.
 

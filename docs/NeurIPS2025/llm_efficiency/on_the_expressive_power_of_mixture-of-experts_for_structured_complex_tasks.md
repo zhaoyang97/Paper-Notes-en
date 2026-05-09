@@ -32,17 +32,17 @@ This paper presents the first systematic analysis of MoE expressive power on str
 
 ## Background & Motivation
 
-**State of the Field**: MoE has become a core architectural component of modern LLMs (Mixtral, Switch Transformer, DeepSeek, Phi-3), achieving strong performance on diverse complex tasks including mathematical reasoning, code generation, and language understanding. However, a theoretical explanation for why MoE efficiently models complex tasks remains lacking.
+**Background**: MoE has become a core architectural component of modern LLMs (Mixtral, Switch Transformer, DeepSeek, Phi-3), achieving strong performance on diverse complex tasks including mathematical reasoning, code generation, and language understanding. However, a theoretical explanation for why MoE efficiently models complex tasks remains lacking.
 
 **Limitations of Prior Work**:
    - Prior theoretical work has focused on training dynamics (Chen et al. 2022), the benefits of routing mechanisms (Dikkala et al. 2023), or sparse activation equivalence (Baykal et al. 2022), without studying the expressive power of MoE for structured complex functions.
    - While approximation theory for dense networks (functions on manifolds, compositionally sparse functions) is well-developed, the theoretical advantages of the MoE architecture have not been formally characterized.
 
-**Root Cause**: MoE activates only $K$ experts at a time (typically $K=1$), with far lower parameter utilization than dense networks, yet matches or surpasses dense network performance. What is the theoretical origin of this efficiency advantage?
+**Key Challenge**: MoE activates only $K$ experts at a time (typically $K=1$), with far lower parameter utilization than dense networks, yet matches or surpasses dense network performance. What is the theoretical origin of this efficiency advantage?
 
-**Paper Goals**: How strong is the approximation capacity of MoE under two common structural priors (low-dimensionality and sparsity)? What are the respective roles of depth and the number of experts?
+**Goal**: How strong is the approximation capacity of MoE under two common structural priors (low-dimensionality and sparsity)? What are the respective roles of depth and the number of experts?
 
-**Starting Point**: Starting from classical approximation theory, the paper analyzes the $L_\infty$ approximation error of the MoE network class $\mathcal{H}_{l,m}^{L,E}$ for target functions.
+**Key Insight**: Starting from classical approximation theory, the paper analyzes the $L_\infty$ approximation error of the MoE network class $\mathcal{H}_{l,m}^{L,E}$ for target functions.
 
 **Core Idea**: MoE naturally decomposes a complex approximation problem into "multiple localized simple subproblems + assignment of inputs to experts"—experts solve local subproblems, and the gating network performs the assignment.
 

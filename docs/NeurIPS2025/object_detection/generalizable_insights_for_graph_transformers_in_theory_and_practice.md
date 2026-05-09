@@ -28,21 +28,21 @@ This paper proposes the Generalized-Distance Transformer (GDT), a graph Transfor
 
 ## Background & Motivation
 
-**State of the Field**: Graph Transformers (GTs) have achieved success in protein folding, weather forecasting, robotics, and other domains, yet existing architectures vary significantly in attention mechanisms, positional encodings (PEs), and expressiveness. GTs can be viewed as generalizations of standard Transformers—the causal mask in LLMs is essentially a GT on directed acyclic graphs.
+**Background**: Graph Transformers (GTs) have achieved success in protein folding, weather forecasting, robotics, and other domains, yet existing architectures vary significantly in attention mechanisms, positional encodings (PEs), and expressiveness. GTs can be viewed as generalizations of standard Transformers—the causal mask in LLMs is essentially a GT on directed acyclic graphs.
 
 **Limitations of Prior Work**:
 - Expressiveness is tied to specific architectures: existing theoretical results rely on modified attention mechanisms (e.g., the specialized attention in Graphormer-GD) and cannot be generalized to standard Transformers.
 - Evaluation scale is limited: most GTs are evaluated on small datasets, where implementation-level noise may dominate performance differences.
 - Graph-specific attention: most GTs employ non-standard attention, making it difficult to draw generalizable conclusions.
 
-**Root Cause**: How can one achieve theoretical expressiveness equivalent to specialized attention mechanisms while maintaining compatibility with standard attention? In other words, can the expressiveness of a GT be fully controlled through PE selection alone?
+**Key Challenge**: How can one achieve theoretical expressiveness equivalent to specialized attention mechanisms while maintaining compatibility with standard attention? In other words, can the expressiveness of a GT be fully controlled through PE selection alone?
 
-**Paper Goals**:
+**Goal**:
 - Design a general-purpose GT using standard attention whose theoretical expressiveness matches GD-WL.
 - Systematically compare the empirical performance of different PEs in large-scale experiments.
 - Verify whether GTs can learn transferable representations.
 
-**Starting Point**: The Lindemann–Weierstrass theorem (a classical result in number theory concerning the linear independence of exponentials over algebraic numbers) is leveraged to prove that standard softmax attention can realize injective encoding of multisets—the key bottleneck for GD-WL equivalence.
+**Key Insight**: The Lindemann–Weierstrass theorem (a classical result in number theory concerning the linear independence of exponentials over algebraic numbers) is leveraged to prove that standard softmax attention can realize injective encoding of multisets—the key bottleneck for GD-WL equivalence.
 
 **Core Idea**: Standard softmax attention + appropriate PE = GD-WL-equivalent expressiveness; the expressiveness of a GT can be fully decoupled into a PE selection problem.
 

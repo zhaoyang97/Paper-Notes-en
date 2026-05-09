@@ -28,17 +28,17 @@ VideoStir proposes a structured and intent-aware RAG framework for long video un
 
 ## Background & Motivation
 
-**State of the Field**: Long video understanding is a core frontier task in multimodal intelligence. Current methods either extend context windows with uniform sampling—risking the omission of critical details or being overwhelmed by redundant information—or apply RAG to retrieve key segments and compress the context.
+**Background**: Long video understanding is a core frontier task in multimodal intelligence. Current methods either extend context windows with uniform sampling—risking the omission of critical details or being overwhelmed by redundant information—or apply RAG to retrieve key segments and compress the context.
 
 **Limitations of Prior Work**:
 - **Spatio-temporal structure decoupling**: Existing RAG methods flatten videos into independent segments, destroying the inherent spatio-temporal structure and preventing the association of contextually related events dispersed across different time points.
 - **Insufficient intent modeling**: Mainstream methods rely on contrastive embeddings such as CLIP to compute semantic similarity, which can only match content that "looks similar" rather than content that is "truly important for answering the query's intent" (e.g., for the query "What does the recorder do with the printer?", semantic retrieval selects frames showing the printer rather than scenes relevant to the actual purpose).
 
-**Root Cause**: Flattened retrieval decouples spatio-temporal context that should remain connected, causing contextually associated evidence to be missed; semantic matching favors surface-level similarity, overlooking intent-relevant but semantically non-overlapping key cues.
+**Key Challenge**: Flattened retrieval decouples spatio-temporal context that should remain connected, causing contextually associated evidence to be missed; semantic matching favors surface-level similarity, overlooking intent-relevant but semantically non-overlapping key cues.
 
-**Paper Goals**: To improve long video RAG along two dimensions — (1) from flat to structured: reconstructing the spatio-temporal topology of videos; (2) from semantic to intent-aware: moving beyond surface semantic matching to model the alignment between query intent and visual cues.
+**Goal**: To improve long video RAG along two dimensions — (1) from flat to structured: reconstructing the spatio-temporal topology of videos; (2) from semantic to intent-aware: moving beyond surface semantic matching to model the alignment between query intent and visual cues.
 
-**Starting Point**: Analogous to human episodic memory — first coarsely locating relevant episodes (clip retrieval), then finely examining details (frame retrieval). Graph structure is used at the clip level to preserve spatio-temporal associations, and MLLM-based reasoning is applied at the frame level to assess intent relevance.
+**Key Insight**: Analogous to human episodic memory — first coarsely locating relevant episodes (clip retrieval), then finely examining details (frame retrieval). Graph structure is used at the clip level to preserve spatio-temporal associations, and MLLM-based reasoning is applied at the frame level to assess intent relevance.
 
 **Core Idea**: Videos are modeled as spatio-temporal graphs (nodes = semantically coherent clips, edges = temporal proximity / spatial similarity). Multi-hop traversal aggregates structured evidence, followed by a distillation-trained intent relevance scorer for fine-grained frame-level filtering.
 

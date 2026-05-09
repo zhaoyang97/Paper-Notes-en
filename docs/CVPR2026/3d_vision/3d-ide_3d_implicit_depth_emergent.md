@@ -27,7 +27,7 @@ content_hash: 40ec83b346abe42c
 This paper proposes the Implicit Geometry Emergence Principle (IGEP), which employs a lightweight geometric validator and a global 3D teacher for privileged supervision during training, enabling the visual encoder to acquire 3D perception from RGB video input alone. The approach incurs zero latency overhead at inference time and surpasses comparable methods on multiple 3D scene understanding benchmarks.
 
 ## Background & Motivation
-**State of the Field**: Applying MLLMs to 3D scene understanding is an active research direction. Existing methods primarily follow two technical routes for injecting geometric awareness.
+**Background**: Applying MLLMs to 3D scene understanding is an active research direction. Existing methods primarily follow two technical routes for injecting geometric awareness.
 
 **Limitations of Prior Work (trilemma)**:
 - **Explicit 3D coordinate injection** (e.g., Video-3D LLM): relies on depth maps and camera poses as 3D inputs, requiring 3D sensors at inference; coordinate downsampling and voxelization introduce a "dual information loss."

@@ -28,15 +28,15 @@ Starting from the informational needs of educational assessment stakeholders, th
 
 ## Background & Motivation
 
-**State of the Field**: The field has accumulated substantial work, yet critical gaps remain.
+**Background**: The field has accumulated substantial work, yet critical gaps remain.
 
 **Limitations of Prior Work**: Existing methods fail to adequately address the core problem, exhibiting limitations in accuracy, scalability, or applicability.
 
-**Root Cause**: The fundamental tension lies in the mismatch between implicit assumptions of prevailing paradigms and real-world requirements.
+**Key Challenge**: The fundamental tension lies in the mismatch between implicit assumptions of prevailing paradigms and real-world requirements.
 
-**Paper Goals**: To propose a novel framework/method/benchmark that systematically addresses the aforementioned problems.
+**Goal**: To propose a novel framework/method/benchmark that systematically addresses the aforementioned problems.
 
-**Starting Point**: Drawing on unique observations or theoretical insights to identify new avenues for problem resolution.
+**Key Insight**: Drawing on unique observations or theoretical insights to identify new avenues for problem resolution.
 
 **Core Idea**: Employing innovative technical means to resolve the central contradiction.
 

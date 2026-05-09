@@ -29,11 +29,11 @@ This paper proposes PhysGen, a unified framework that integrates physical constr
 
 ## Background & Motivation
 
-1. **State of the Field**: 3D generative models (3DShape2VecSet, Dora, Hunyuan3D, etc.) are capable of producing visually high-quality 3D objects, yet this realism is limited to appearance.
+1. **Background**: 3D generative models (3DShape2VecSet, Dora, Hunyuan3D, etc.) are capable of producing visually high-quality 3D objects, yet this realism is limited to appearance.
 2. **Limitations of Prior Work**: Objects in engineering design—such as automobiles and aircraft—have shapes that are strongly governed by physical constraints (aerodynamic efficiency). Existing methods are entirely physics-unaware: generated cars may have wheels embedded in the chassis, or chairs with topologically invalid legs incapable of bearing load.
-3. **Root Cause**: (a) Existing 3D VAEs encode only geometric information, making physical properties unrecoverable from the latent space; (b) post-hoc optimization methods (e.g., TripOptimizer) that apply physical gradient updates in latent space lack awareness of the shape manifold, often causing irreversible geometric distortion; (c) injecting physical gradients into early diffusion steps is unreliable, as physical estimation on highly noisy samples is inaccurate.
-4. **Paper Goals**: To effectively integrate physics guidance into the 3D shape generation pipeline so that outputs simultaneously satisfy geometric plausibility and physical efficiency.
-5. **Starting Point**: Unify physics guidance and shape generation within an alternating update framework—Flow Matching maintains geometric manifold consistency, while physics refinement drives physical objectives—executed in alternation rather than sequentially.
+3. **Key Challenge**: (a) Existing 3D VAEs encode only geometric information, making physical properties unrecoverable from the latent space; (b) post-hoc optimization methods (e.g., TripOptimizer) that apply physical gradient updates in latent space lack awareness of the shape manifold, often causing irreversible geometric distortion; (c) injecting physical gradients into early diffusion steps is unreliable, as physical estimation on highly noisy samples is inaccurate.
+4. **Goal**: To effectively integrate physics guidance into the 3D shape generation pipeline so that outputs simultaneously satisfy geometric plausibility and physical efficiency.
+5. **Key Insight**: Unify physics guidance and shape generation within an alternating update framework—Flow Matching maintains geometric manifold consistency, while physics refinement drives physical objectives—executed in alternation rather than sequentially.
 6. **Core Idea**: A jointly learned geometry–physics VAE latent space, combined with alternating physics-regularized Flow Matching and directional-force physics refinement, enables the generation of engineering-viable 3D shapes.
 
 ## Method

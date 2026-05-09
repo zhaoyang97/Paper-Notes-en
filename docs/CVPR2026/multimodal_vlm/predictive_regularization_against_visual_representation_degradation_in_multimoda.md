@@ -28,11 +28,11 @@ This paper systematically diagnoses visual representation degradation in MLLMs a
 
 ## Background & Motivation
 
-1. **State of the Field**: The dominant MLLM architecture consists of a visual encoder, a projection layer, and an LLM, trained entirely with a language modeling objective (next-token prediction). Visual representations are progressively transformed within the LLM to serve the final text generation task.
+1. **Background**: The dominant MLLM architecture consists of a visual encoder, a projection layer, and an LLM, trained entirely with a language modeling objective (next-token prediction). Visual representations are progressively transformed within the LLM to serve the final text generation task.
 2. **Limitations of Prior Work**: Prior work has focused primarily on the functional role of visual features in cross-modal tasks (e.g., how they facilitate question answering), while overlooking a critical question: what cost does purely language-driven training impose on the intrinsic quality of visual representations?
-3. **Root Cause**: MLLM training lacks direct visual supervision signals. Under a single text-generation objective, the model sacrifices visual fidelity to optimize language capability. Linear classification performance on intermediate-layer visual representations degrades significantly relative to the input layer, and patch-level semantic boundaries become blurred—this constitutes "visual representation degradation."
-4. **Paper Goals**: (1) Systematically quantify and explain the phenomenon and mechanism of visual degradation in MLLMs; (2) Design a lightweight method to mitigate degradation without interfering with language capability.
-5. **Starting Point**: Inspired by the theory of Predictive Coding—efficient neural systems should continuously predict their own low-level signals to maintain a coherent world model. The authors recontextualize this principle as a regularizer.
+3. **Key Challenge**: MLLM training lacks direct visual supervision signals. Under a single text-generation objective, the model sacrifices visual fidelity to optimize language capability. Linear classification performance on intermediate-layer visual representations degrades significantly relative to the input layer, and patch-level semantic boundaries become blurred—this constitutes "visual representation degradation."
+4. **Goal**: (1) Systematically quantify and explain the phenomenon and mechanism of visual degradation in MLLMs; (2) Design a lightweight method to mitigate degradation without interfering with language capability.
+5. **Key Insight**: Inspired by the theory of Predictive Coding—efficient neural systems should continuously predict their own low-level signals to maintain a coherent world model. The authors recontextualize this principle as a regularizer.
 6. **Core Idea**: A lightweight prediction head is used to train the degraded intermediate-layer visual features of the LLM to predict the initial input visual features, thereby anchoring the visual fidelity of intermediate representations via "visual self-prediction" regularization.
 
 ## Method

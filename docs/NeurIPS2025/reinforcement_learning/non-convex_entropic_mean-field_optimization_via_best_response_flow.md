@@ -29,15 +29,15 @@ This work extends Best Response Flow from convex functional optimization to the 
 
 ## Background & Motivation
 
-**State of the Field**: Functional minimization over spaces of probability measures arises broadly in machine learning, including mean-field neural network training and policy optimization in reinforcement learning. Existing works have studied convex functionals via Best Response Flow, Wasserstein gradient flows, and related methods.
+**Background**: Functional minimization over spaces of probability measures arises broadly in machine learning, including mean-field neural network training and policy optimization in reinforcement learning. Existing works have studied convex functionals via Best Response Flow, Wasserstein gradient flows, and related methods.
 
 **Limitations of Prior Work**: Existing convergence guarantees all require the objective functional $F$ to be convex. In practice, softmax policy parameterization introduces a normalization constant, causing $F(\nu) = V_\tau^{\pi_\nu}(\gamma)$ to violate convexity, which renders standard mean-field optimization theory inapplicable.
 
-**Root Cause**: A fundamental tension exists between the convexity assumption and the non-convexity induced by softmax parameterization — real-world problems are inherently non-convex, yet the available theoretical tools require convexity.
+**Key Challenge**: A fundamental tension exists between the convexity assumption and the non-convexity induced by softmax parameterization — real-world problems are inherently non-convex, yet the available theoretical tools require convexity.
 
-**Paper Goals**: To prove that Best Response Flow converges to a global optimum for non-convex objective functionals under an appropriate choice of regularization.
+**Goal**: To prove that Best Response Flow converges to a global optimum for non-convex objective functionals under an appropriate choice of regularization.
 
-**Starting Point**: Establish precise relationships among the degree of non-convexity, the regularization parameter $\sigma$, and the tail behavior of the reference measure, thereby characterizing how regularization can compensate for non-convexity.
+**Key Insight**: Establish precise relationships among the degree of non-convexity, the regularization parameter $\sigma$, and the tail behavior of the reference measure, thereby characterizing how regularization can compensate for non-convexity.
 
 **Core Idea**: Non-convexity can be "cured" by sufficient entropic regularization — the key condition $\sigma > 2C_F + e(e+1)L_F \int |x| e^{-U^\xi(x)} dx$ provides a quantitative link between regularization strength and the degree of non-convexity.
 

@@ -28,15 +28,15 @@ This paper proposes CORE, a framework that encodes legitimate tool-calling paths
 
 ## Background & Motivation
 
-**State of the Field**: LLM agents execute real-world tasks through sequences of function calls (API invocations, IoT control, robotic manipulation, etc.). Existing benchmarks (e.g., BFCL) judge agents primarily by whether the final state is correct—reaching the desired terminal state counts as "success."
+**Background**: LLM agents execute real-world tasks through sequences of function calls (API invocations, IoT control, robotic manipulation, etc.). Existing benchmarks (e.g., BFCL) judge agents primarily by whether the final state is correct—reaching the desired terminal state counts as "success."
 
 **Limitations of Prior Work**: Final-state evaluation is severely insufficient: (a) agents that reach a correct terminal state via dangerous intermediate calls are still deemed successful (e.g., a robotic arm grasps the correct object but collides with others in the process); (b) redundant or inefficient paths receive the same score as optimal ones; (c) the "compensating pair" problem—an agent first errs then self-corrects, yielding a correct final state despite potentially harmful intermediate states (e.g., a mistaken fund transfer followed by reversal, where a network failure could leave the system stuck in the erroneous state); (d) unobservable harms—sensor granularity may be insufficient to detect harmful operations that leave correct terminal readings.
 
-**Root Cause**: In edge deployments (robotics, power grids, IoT), *how* an agent achieves a goal matters as much as *whether* it achieves it, yet existing evaluation attends only to the latter.
+**Key Challenge**: In edge deployments (robotics, power grids, IoT), *how* an agent achieves a goal matters as much as *whether* it achieves it, yet existing evaluation attends only to the latter.
 
-**Paper Goals**: Establish an evaluation framework based on execution paths rather than final states, quantifying the correctness, safety, and efficiency of agent behavior.
+**Goal**: Establish an evaluation framework based on execution paths rather than final states, quantifying the correctness, safety, and efficiency of agent behavior.
 
-**Starting Point**: Agent tasks are modeled as DFAs—each prompt induces a set of legitimate tool-calling paths (golden paths), against which the agent's actual execution path is compared.
+**Key Insight**: Agent tasks are modeled as DFAs—each prompt induces a set of legitimate tool-calling paths (golden paths), against which the agent's actual execution path is compared.
 
 **Core Idea**: Encode the space of legitimate execution paths for a task using a DFA, and evaluate full-path quality across five complementary metrics from distinct dimensions.
 

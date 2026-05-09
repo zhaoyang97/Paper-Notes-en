@@ -27,15 +27,15 @@ This paper proposes GateRA, which introduces a lightweight token-aware gating mo
 
 ## Background & Motivation
 
-**State of the Field**: PEFT methods (LoRA, DoRA, HiRA) efficiently fine-tune large models via low-rank adaptation matrices, but apply uniform adaptation intensity across all tokens without distinguishing whether adaptation is needed.
+**Background**: PEFT methods (LoRA, DoRA, HiRA) efficiently fine-tune large models via low-rank adaptation matrices, but apply uniform adaptation intensity across all tokens without distinguishing whether adaptation is needed.
 
 **Limitations of Prior Work**: Knowledge well-captured during pre-training (e.g., semantics of common vocabulary) requires little adjustment, whereas task-specific knowledge (e.g., domain-specific terminology, reasoning steps) demands stronger adaptation. A uniform intensity either under-adapts the model or unnecessarily overwrites pre-trained knowledge.
 
-**Root Cause**: Adaptation intensity in PEFT should be token-dependent, yet existing methods lack this fine-grained control.
+**Key Challenge**: Adaptation intensity in PEFT should be token-dependent, yet existing methods lack this fine-grained control.
 
-**Paper Goals**: Achieve token-level adaptive modulation with negligible additional parameters.
+**Goal**: Achieve token-level adaptive modulation with negligible additional parameters.
 
-**Starting Point**: Insert a sigmoid gate $g(x)$ into HiRA's multiplicative low-rank update, yielding $W' = (g(x) \cdot AB + 1) \cdot W_0$.
+**Key Insight**: Insert a sigmoid gate $g(x)$ into HiRA's multiplicative low-rank update, yielding $W' = (g(x) \cdot AB + 1) \cdot W_0$.
 
 **Core Idea**: Use a lightweight gate to realize "adapt more for tokens that need it, and preserve pre-trained weights for those that do not."
 

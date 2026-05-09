@@ -29,11 +29,11 @@ This paper proposes FinPercep-RM, a fine-grained perceptual reward model that pr
 
 ## Background & Motivation
 
-1. **State of the Field**: Diffusion-based Real-ISR methods leverage powerful generative priors to synthesize rich textures, and RLHF has been adopted to further optimize perceptual quality.
+1. **Background**: Diffusion-based Real-ISR methods leverage powerful generative priors to synthesize rich textures, and RLHF has been adopted to further optimize perceptual quality.
 2. **Limitations of Prior Work**: Typical IQA models (CLIP-IQA, MANIQA) output only global scores and are insensitive to local fine-grained distortions — subtle artifacts receive spuriously high rewards (reward hacking), causing local artifacts and unrealistic "painterly" appearances in generated results.
-3. **Root Cause**: Simple global IQA rewards are stable but converge to suboptimal solutions (hacking); FinPercep-RM is robust but its spatially complex reward signal destabilizes policy learning — a dilemma between stability and robustness.
-4. **Paper Goals**: Design a reward model capable of diagnosing *where* defects occur as well as assessing *how good* the quality is, while resolving training instability.
-5. **Starting Point**: An encoder-decoder architecture that jointly outputs a global score and a degradation heatmap, with curriculum learning to progressively introduce complex rewards.
+3. **Key Challenge**: Simple global IQA rewards are stable but converge to suboptimal solutions (hacking); FinPercep-RM is robust but its spatially complex reward signal destabilizes policy learning — a dilemma between stability and robustness.
+4. **Goal**: Design a reward model capable of diagnosing *where* defects occur as well as assessing *how good* the quality is, while resolving training instability.
+5. **Key Insight**: An encoder-decoder architecture that jointly outputs a global score and a degradation heatmap, with curriculum learning to progressively introduce complex rewards.
 6. **Core Idea**: Couple the global score with the degradation map — the global score is computed via modulation by the degradation map, making it inherently sensitive to local defects.
 
 ## Method

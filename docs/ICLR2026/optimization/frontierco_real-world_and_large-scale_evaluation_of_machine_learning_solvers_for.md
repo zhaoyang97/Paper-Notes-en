@@ -27,15 +27,15 @@ content_hash: 7dafedabc177a540
 FrontierCO is a large-scale, real-world benchmark covering 8 categories of combinatorial optimization problems (TSP, MIS, CVRP, etc.), evaluating 16 ML solvers (neural methods + LLM agents) against state-of-the-art classical solvers. The benchmark reveals that ML methods remain significantly behind classical approaches on structurally complex and extremely large-scale instances, though they show potential to surpass classical methods in certain scenarios.
 
 ## Background & Motivation
-**State of the Field**: ML for combinatorial optimization (CO) has advanced rapidly in recent years, encompassing end-to-end neural solvers (GNN, RL, diffusion models) and LLM agent methods (FunSearch, ReEvo, etc.), which have demonstrated promising results on small-scale synthetic benchmarks.
+**Background**: ML for combinatorial optimization (CO) has advanced rapidly in recent years, encompassing end-to-end neural solvers (GNN, RL, diffusion models) and LLM agent methods (FunSearch, ReEvo, etc.), which have demonstrated promising results on small-scale synthetic benchmarks.
 
 **Limitations of Prior Work**: Three major limitations exist: ① **Scale**: most evaluations are conducted on toy-level instances (e.g., TSP ≤ 10K nodes), whereas real-world applications require handling millions of nodes; ② **Authenticity**: synthetic datasets fail to capture the structural diversity of real-world instances (e.g., non-Euclidean graphs, competition-grade irregular instances); ③ **Coverage**: a unified evaluation protocol across problem types is lacking.
 
-**Root Cause**: The apparent "progress" of ML methods on synthetic benchmarks may stem from the simplicity and regularity of those problems rather than genuine methodological effectiveness. Validation under real-world structure and extreme scale is therefore necessary.
+**Key Challenge**: The apparent "progress" of ML methods on synthetic benchmarks may stem from the simplicity and regularity of those problems rather than genuine methodological effectiveness. Validation under real-world structure and extreme scale is therefore necessary.
 
-**Paper Goals**: To provide a rigorous, real-world-grounded CO benchmark suite that enables unified evaluation of ML solvers against classical state-of-the-art solvers.
+**Goal**: To provide a rigorous, real-world-grounded CO benchmark suite that enables unified evaluation of ML solvers against classical state-of-the-art solvers.
 
-**Starting Point**: Real-world instances are collected from competition repositories (DIMACS, TSPLib, PACE Challenge) and partitioned into two test sets—easy (solvable with existing methods) and hard (open problems)—scaling up to 10 million nodes for TSP and 8 million nodes for MIS.
+**Key Insight**: Real-world instances are collected from competition repositories (DIMACS, TSPLib, PACE Challenge) and partitioned into two test sets—easy (solvable with existing methods) and hard (open problems)—scaling up to 10 million nodes for TSP and 8 million nodes for MIS.
 
 **Core Idea**: Progress in ML for CO must be validated under real-world structure and extreme scale, rather than measured solely by performance on synthetic data.
 

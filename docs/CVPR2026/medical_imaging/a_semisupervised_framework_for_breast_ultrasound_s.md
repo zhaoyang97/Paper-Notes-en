@@ -30,7 +30,7 @@ Simple appearance descriptions (e.g., "dark oval") are used to drive Grounding D
 
 ## Background & Motivation
 
-**State of the Field**: Breast ultrasound (BUS) segmentation is a critical step in early breast cancer diagnosis. Fully supervised deep learning methods have achieved strong performance, but rely on large amounts of pixel-level annotations that are costly and require expert radiologists.
+**Background**: Breast ultrasound (BUS) segmentation is a critical step in early breast cancer diagnosis. Fully supervised deep learning methods have achieved strong performance, but rely on large amounts of pixel-level annotations that are costly and require expert radiologists.
 
 **Limitations of Prior Work**:
 
@@ -38,11 +38,11 @@ Simple appearance descriptions (e.g., "dark oval") are used to drive Grounding D
 2. Mainstream strong-weak data augmentation strategies are designed for RGB natural images and are ill-suited for grayscale, speckle-noisy ultrasound images.
 3. While VLMs (Grounding DINO + SAM) can provide external pseudo-labels, medical-term prompts (e.g., "tumor," "high density") yield unstable zero-shot localization due to the absence of medical-domain semantics in VLMs.
 
-**Root Cause**: High-quality external pseudo-labels are needed under sparse annotation, yet VLMs perform poorly when prompted with medical terminology.
+**Key Challenge**: High-quality external pseudo-labels are needed under sparse annotation, yet VLMs perform poorly when prompted with medical terminology.
 
-**Paper Goals**: To obtain structurally consistent BUS pseudo-labels in a training-free manner and to effectively leverage them within a dual-teacher framework.
+**Goal**: To obtain structurally consistent BUS pseudo-labels in a training-free manner and to effectively leverage them within a dual-teacher framework.
 
-**Starting Point**: BUS lesions exhibit consistent visual characteristics—dark, oval or round regions. Replacing medical terminology with simple natural-language appearance descriptions bypasses the domain gap and enables cross-domain transfer.
+**Key Insight**: BUS lesions exhibit consistent visual characteristics—dark, oval or round regions. Replacing medical terminology with simple natural-language appearance descriptions bypasses the domain gap and enables cross-domain transfer.
 
 **Core Idea**: Appearance descriptions rather than medical terms drive VLM-based pseudo-label generation, which are subsequently refined through dual-teacher fusion and reverse contrastive learning.
 

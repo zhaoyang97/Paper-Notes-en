@@ -29,15 +29,15 @@ This paper proposes COACH — a reconfigurable multi-agent framework built on a 
 
 ## Background & Motivation
 
-**State of the Field**: Sports video analysis requires multi-level temporal understanding spanning from the micro scale (strokes, rallies) to the macro scale (match-level tactics). While video-language models such as BLIP-2 and Video-LLaVA have advanced general video understanding, they perform poorly on long-duration, hierarchically structured content.
+**Background**: Sports video analysis requires multi-level temporal understanding spanning from the micro scale (strokes, rallies) to the macro scale (match-level tactics). While video-language models such as BLIP-2 and Video-LLaVA have advanced general video understanding, they perform poorly on long-duration, hierarchically structured content.
 
 **Limitations of Prior Work**: End-to-end single-model approaches suffer from three key problems: (a) *high redundancy cost* — each application requires an independent model and training pipeline with no component reuse; (b) *single temporal scale lock-in* — models trained at the rally level cannot transfer to match-level understanding; (c) *opaque reasoning* — decision processes are hidden, making them difficult to interpret, verify, or extend with new reasoning modules.
 
-**Root Cause**: Sports video analysis simultaneously demands fine-grained short-term reasoning (per-rally QA) and long-horizon global integration (match summarization), yet existing models can only address one of these dimensions.
+**Key Challenge**: Sports video analysis simultaneously demands fine-grained short-term reasoning (per-rally QA) and long-horizon global integration (match summarization), yet existing models can only address one of these dimensions.
 
-**Paper Goals**: To construct a flexible, scalable, and interpretable cross-task intelligent sports video analysis system.
+**Goal**: To construct a flexible, scalable, and interpretable cross-task intelligent sports video analysis system.
 
-**Starting Point**: Each agent is designed as an independent "cognitive tool"; an adaptive pipeline is built through iterative invocation and flexible composition, rather than training a single end-to-end model.
+**Key Insight**: Each agent is designed as an independent "cognitive tool"; an adaptive pipeline is built through iterative invocation and flexible composition, rather than training a single end-to-end model.
 
 **Core Idea**: All agents share a single backbone model. Through "structured CoT fine-tuning," distinct "multi-persona reasoning modes" are induced within the same model weights, with behavioral separation achieved via instruction conditioning and role-specific chain-of-thought templates.
 

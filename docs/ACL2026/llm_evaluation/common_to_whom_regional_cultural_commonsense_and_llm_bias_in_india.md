@@ -29,15 +29,15 @@ This paper introduces Indica, the first benchmark for evaluating LLM performance
 
 ## Background & Motivation
 
-**State of the Field**: Cultural commonsense benchmarks (e.g., CultureBank, CulturalBench) have begun addressing cross-cultural variation, but treat nations as culturally monolithic entities, assuming uniform cultural practices within a country.
+**Background**: Cultural commonsense benchmarks (e.g., CultureBank, CulturalBench) have begun addressing cross-cultural variation, but treat nations as culturally monolithic entities, assuming uniform cultural practices within a country.
 
 **Limitations of Prior Work**: (1) Existing benchmarks evaluate cultural commonsense at the national level, ignoring sub-national cultural diversity. (2) Existing Indian NLP benchmarks focus on factual knowledge from textbooks and examinations, treating Indian culture as a single homogeneous entity. (3) LLMs may exhibit systematic bias toward certain regions within culturally diverse countries, yet no tool exists to detect this.
 
-**Root Cause**: In a country like India—with 28 states, 8 union territories, and 22 official languages—"cultural commonsense" cannot be nationally uniform. Yet LLMs must implicitly make regional choices when generating cultural information, and these implicit choices may reflect geographic biases in training data.
+**Key Challenge**: In a country like India—with 28 states, 8 union territories, and 22 official languages—"cultural commonsense" cannot be nationally uniform. Yet LLMs must implicitly make regional choices when generating cultural information, and these implicit choices may reflect geographic biases in training data.
 
-**Paper Goals**: (1) Quantify the degree of regional variation in Indian cultural commonsense. (2) Evaluate LLM accuracy on region-specific cultural knowledge. (3) Detect implicit regional bias in LLMs when geographic context is absent.
+**Goal**: (1) Quantify the degree of regional variation in Indian cultural commonsense. (2) Evaluate LLM accuracy on region-specific cultural knowledge. (3) Detect implicit regional bias in LLMs when geographic context is absent.
 
-**Starting Point**: Eight everyday cultural domains are designed based on the Outline of Cultural Materials (OCM) anthropological taxonomy. Human-annotated answers are collected from five Indian regions to construct a region-specific cultural commonsense benchmark.
+**Key Insight**: Eight everyday cultural domains are designed based on the Outline of Cultural Materials (OCM) anthropological taxonomy. Human-annotated answers are collected from five Indian regions to construct a region-specific cultural commonsense benchmark.
 
 **Core Idea**: Cultural commonsense in a multicultural country is primarily regional rather than national; LLMs exhibit systematic geographic bias when handling such knowledge.
 

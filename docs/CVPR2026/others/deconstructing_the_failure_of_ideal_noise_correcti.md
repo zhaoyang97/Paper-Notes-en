@@ -29,11 +29,11 @@ Through three complementary levels of analysis — macroscopic convergence state
 
 ### State of the Field
 
-**State of the Field**: The noise transition matrix $T$ is the theoretical cornerstone of Learning with Noisy Labels (LNL), and Forward Correction (FC) is its most classical instantiation, theoretically guaranteed to asymptotically recover the Bayes-optimal classifier of the clean distribution. The community has long attributed FC's poor practical performance to inaccurate estimation of $T$, assuming that a perfect $T$ would resolve the issue. However, experiments on CIFAR-10/100 with an oracle $T$ reveal that although FC exhibits an accuracy peak in early training, performance ultimately collapses to the same level as the No Correction (NC) baseline as training continues. This indicates that the problem lies not in $T$ estimation but in structural deficiencies of the correction objective itself.
+**Background**: The noise transition matrix $T$ is the theoretical cornerstone of Learning with Noisy Labels (LNL), and Forward Correction (FC) is its most classical instantiation, theoretically guaranteed to asymptotically recover the Bayes-optimal classifier of the clean distribution. The community has long attributed FC's poor practical performance to inaccurate estimation of $T$, assuming that a perfect $T$ would resolve the issue. However, experiments on CIFAR-10/100 with an oracle $T$ reveal that although FC exhibits an accuracy peak in early training, performance ultimately collapses to the same level as the No Correction (NC) baseline as training continues. This indicates that the problem lies not in $T$ estimation but in structural deficiencies of the correction objective itself.
 
 ### Starting Point
 
-**Paper Goals**: FC is asymptotically consistent in theory, yet is overwhelmingly outperformed in practice by sample-selection methods such as DivideMix and Co-teaching. The community attributes this failure to $T$ estimation error; however, this paper proves that FC fails even with an oracle $T$ — implying that understanding and repairing noise correction methods requires going beyond $T$ estimation.
+**Goal**: FC is asymptotically consistent in theory, yet is overwhelmingly outperformed in practice by sample-selection methods such as DivideMix and Co-teaching. The community attributes this failure to $T$ estimation error; however, this paper proves that FC fails even with an oracle $T$ — implying that understanding and repairing noise correction methods requires going beyond $T$ estimation.
 
 ## Method
 

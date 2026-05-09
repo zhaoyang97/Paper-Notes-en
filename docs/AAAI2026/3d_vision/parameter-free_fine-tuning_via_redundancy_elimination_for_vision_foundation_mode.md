@@ -39,7 +39,7 @@ Vision Foundation Models (VFMs) such as SAM and DINOv2, trained on large-scale d
 - Channel 216 zeroed: mIoU improves (50.6 → 52.7), indicating the channel is even harmful.
 - Channels 175/19/189 zeroed: mIoU drops, indicating these channels are beneficial for the task.
 
-**Root Cause**: Among the general features learned by VFMs on large-scale data, many are irrelevant or even detrimental to specific downstream tasks. This redundancy arises because the model must generalize across a large variety of tasks.
+**Key Challenge**: Among the general features learned by VFMs on large-scale data, many are irrelevant or even detrimental to specific downstream tasks. This redundancy arises because the model must generalize across a large variety of tasks.
 
 **Core Problem**: Can downstream tasks be addressed without modifying any model parameters—solely by selecting, reusing, and enhancing existing features?
 

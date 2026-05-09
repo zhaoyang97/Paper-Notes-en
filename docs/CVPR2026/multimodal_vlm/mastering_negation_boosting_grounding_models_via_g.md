@@ -27,15 +27,15 @@ content_hash: eb2ab02ac7f8093f
 This paper constructs D-Negation, the first visual grounding dataset with paired positive/negative semantic descriptions (14K images, 140K annotations), and proposes Grouped Opposition-Based Learning (GOBL), an efficient fine-tuning mechanism with two opposition-based loss functions—PNC and TSO. By tuning fewer than 10% of model parameters, GOBL improves Grounding DINO and APE by up to 5.7 mAP on negation-semantic benchmarks while simultaneously boosting performance on affirmative semantics.
 
 ## Background & Motivation
-**State of the Field**: Visual grounding models such as GLIP, Grounding DINO, and APE have achieved notable results on affirmative semantic descriptions, yet nearly all training data consists exclusively of positive-form text.
+**Background**: Visual grounding models such as GLIP, Grounding DINO, and APE have achieved notable results on affirmative semantic descriptions, yet nearly all training data consists exclusively of positive-form text.
 
 **Limitations of Prior Work**: (a) Models largely ignore negation semantics—given "the cat not in black," a model may directly localize a black cat; (b) high-quality training data containing negation is absent; (c) understanding negation requires reasoning about absence, which is harder than reasoning about presence.
 
-**Root Cause**: Negation is a fundamental component of natural language, yet neither training data nor loss functions in current vision-language models explicitly model the opposition between positive and negative semantics, causing fusion modules to conflate the two.
+**Key Challenge**: Negation is a fundamental component of natural language, yet neither training data nor loss functions in current vision-language models explicitly model the opposition between positive and negative semantics, causing fusion modules to conflate the two.
 
-**Paper Goals**: (a) Construct a dataset with paired positive/negative semantic annotations; (b) design an efficient fine-tuning strategy that exploits semantic opposition.
+**Goal**: (a) Construct a dataset with paired positive/negative semantic annotations; (b) design an efficient fine-tuning strategy that exploits semantic opposition.
 
-**Starting Point**: Human understanding of negation is implicitly contrastive—imagining "a cat without stripes" first evokes a striped cat, which is then excluded. This observation motivates an opposition-based learning mechanism.
+**Key Insight**: Human understanding of negation is implicitly contrastive—imagining "a cat without stripes" first evokes a striped cat, which is then excluded. This observation motivates an opposition-based learning mechanism.
 
 **Core Idea**: A semantic opposition network is constructed from four annotation types—P+/P−/N+/N−—and two opposition-constraint losses targeting the fusion module are introduced, enabling the model to explicitly distinguish *what something is* from *what it is not*.
 

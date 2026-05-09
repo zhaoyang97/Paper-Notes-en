@@ -29,11 +29,11 @@ Inspired by the hippocampus–neocortex interaction in the human brain, this pap
 
 ## Background & Motivation
 
-**State of the Field**: Traditional deep RL algorithms are designed for single-task settings. When confronted with a sequential stream of tasks, they must balance plasticity (rapid adaptation to new tasks) and stability (retention of prior knowledge).
+**Background**: Traditional deep RL algorithms are designed for single-task settings. When confronted with a sequential stream of tasks, they must balance plasticity (rapid adaptation to new tasks) and stability (retention of prior knowledge).
 
 **Limitations of Prior Work**: Existing continual RL methods largely rely on heuristics or independent designs from disparate perspectives, lacking a unified theoretical framework to analyze when knowledge transfer is beneficial and how forgetting can be quantified.
 
-**Root Cause**: Direct fine-tuning leads to negative transfer and performance degradation when tasks differ substantially, whereas training from scratch (reset) fails to exploit previously accumulated knowledge.
+**Key Challenge**: Direct fine-tuning leads to negative transfer and performance degradation when tasks differ substantially, whereas training from scratch (reset) fails to exploit previously accumulated knowledge.
 
 **Neuroscientific Motivation**: In the human brain, the hippocampus rapidly encodes new experiences while the neocortex performs gradual knowledge consolidation. This division of labor provides a biological basis for algorithm design.
 

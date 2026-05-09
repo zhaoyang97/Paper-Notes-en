@@ -32,9 +32,9 @@ LLMs have demonstrated strong code generation capabilities; however, external li
 
 **Limitations of Prior Work**: (1) SFT directly fine-tunes models to memorize new API knowledge, but the high frequency of API updates makes continuous fine-tuning costly and prone to catastrophic forgetting; (2) placing update documentation in the prompt (akin to RAG) avoids parameter modification but yields limited improvements—models exhibit a "laziness" tendency, preferring to rely on internal parametric knowledge over external documentation when the two conflict.
 
-**Root Cause**: The conflict between stale parametric knowledge and fresh knowledge provided in the prompt. Models inherently trust their own parameters, causing them to generate code using outdated APIs even when complete update documentation is supplied.
+**Key Challenge**: The conflict between stale parametric knowledge and fresh knowledge provided in the prompt. Models inherently trust their own parameters, causing them to generate code using outdated APIs even when complete update documentation is supplied.
 
-**Starting Point**: Since the problem is not that models are unaware of new APIs, but rather that they are unwilling to exploit new information in the prompt, reinforcement learning is used to cultivate the habit of "respecting external knowledge in the prompt." This mirrors the learning pattern of human programmers—first learning an older version, then migrating code to a newer version upon reading release notes.
+**Key Insight**: Since the problem is not that models are unaware of new APIs, but rather that they are unwilling to exploit new information in the prompt, reinforcement learning is used to cultivate the habit of "respecting external knowledge in the prompt." This mirrors the learning pattern of human programmers—first learning an older version, then migrating code to a newer version upon reading release notes.
 
 ## Method
 

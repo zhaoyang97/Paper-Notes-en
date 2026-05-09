@@ -31,7 +31,7 @@ This paper proposes C-Nav, a continual object navigation framework that employs 
 
 ## Background & Motivation
 
-**State of the Field**: Object navigation (ObjectNav) is a fundamental capability for embodied intelligence. Current SOTA methods (OVRL-V2, PIRLNav, NavID, etc.) rely on pretrained visual encoders and large-scale demonstration trajectories, assuming all target categories are provided at once during training.
+**Background**: Object navigation (ObjectNav) is a fundamental capability for embodied intelligence. Current SOTA methods (OVRL-V2, PIRLNav, NavID, etc.) rely on pretrained visual encoders and large-scale demonstration trajectories, assuming all target categories are provided at once during training.
 
 **Open-World Requirements**: In real-world deployments, robots must continuously encounter new object categories and changing environments, demanding incremental learning capabilities. However, existing methods suffer an average success rate drop of approximately **40%** when sequentially learning new categories, indicating severe catastrophic forgetting.
 
@@ -41,7 +41,7 @@ This paper proposes C-Nav, a continual object navigation framework that employs 
 
 **Research Gap**: While continual learning has been extensively studied in single-modal tasks such as image classification, it has **not been systematically investigated** in object navigation, which requires long-horizon sequential decision-making and multimodal fusion. A standardized evaluation benchmark is also lacking.
 
-**Starting Point**: The paper models keyframe selection as an **outlier detection problem** in feature space, storing only the deep features of semantically salient frames (rather than raw images), while using a dual-path mechanism to independently stabilize the encoder and decoder, achieving continual navigation at minimal storage cost.
+**Key Insight**: The paper models keyframe selection as an **outlier detection problem** in feature space, storing only the deep features of semantically salient frames (rather than raw images), while using a dual-path mechanism to independently stabilize the encoder and decoder, achieving continual navigation at minimal storage cost.
 
 ## Method
 

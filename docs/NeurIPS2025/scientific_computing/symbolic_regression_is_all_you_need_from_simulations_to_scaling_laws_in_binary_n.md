@@ -29,13 +29,13 @@ This work applies Symbolic Regression (SR) to automatically discover analytic ca
 
 ## Background & Motivation
 
-**State of the Field**: Binary neutron star (BNS) mergers are the primary sources of both gravitational waves and electromagnetic counterparts (kilonovae). Kilonova luminosity is jointly determined by the dynamical ejecta mass $M_{\text{dyn}}$ and the post-merger accretion disk mass $M_{\text{disk}}$; accurate modeling of these quantities is essential for inferring the neutron star equation of state (EoS).
+**Background**: Binary neutron star (BNS) mergers are the primary sources of both gravitational waves and electromagnetic counterparts (kilonovae). Kilonova luminosity is jointly determined by the dynamical ejecta mass $M_{\text{dyn}}$ and the post-merger accretion disk mass $M_{\text{disk}}$; accurate modeling of these quantities is essential for inferring the neutron star equation of state (EoS).
 
 **Limitations of Prior Work**: Establishing the relationship between $M_{\text{disk}}$ and source parameters (masses, compactnesses, tidal deformabilities) relies on numerical relativity (NR) simulations, which are extremely computationally expensive and highly sensitive to the EoS. Parametric fitting formulae have been proposed by Radice18, Coughlin19, Dietrich20, Krüger20, and Lund25, among others, yet inter-model discrepancies frequently exceed reported uncertainties, and extrapolation beyond the calibration range often yields unphysical results.
 
-**Root Cause**: Existing formulae are highly sensitive to microphysics and EoS choices. Commonly used dynamical ejecta models fail for systems such as GW190425, and conventional black-box machine learning models, while potentially more accurate, lack interpretability and generalize poorly outside the training domain.
+**Key Challenge**: Existing formulae are highly sensitive to microphysics and EoS choices. Commonly used dynamical ejecta models fail for systems such as GW190425, and conventional black-box machine learning models, while potentially more accurate, lack interpretability and generalize poorly outside the training domain.
 
-**Paper Goals**: Symbolic regression can autonomously explore both model structure and parameter space to discover compact, interpretable analytic expressions that simultaneously achieve high accuracy and physical interpretability.
+**Goal**: Symbolic regression can autonomously explore both model structure and parameter space to discover compact, interpretable analytic expressions that simultaneously achieve high accuracy and physical interpretability.
 
 ## Method
 

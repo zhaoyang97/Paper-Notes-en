@@ -29,15 +29,15 @@ This work introduces MEDISEG, a medication image instance segmentation dataset (
 
 ## Background & Motivation
 
-**State of the Field**: Medication errors and adverse drug events (ADEs) pose serious threats to patient safety — ADEs accounted for 8.9% of AEMT-related deaths between 1980 and 2014, with the rate continuing to rise. More than one-third of adults aged 75–85 take five or more prescription medications daily. AI-based pill recognition is a promising solution, yet progress is constrained by the quality of available datasets.
+**Background**: Medication errors and adverse drug events (ADEs) pose serious threats to patient safety — ADEs accounted for 8.9% of AEMT-related deaths between 1980 and 2014, with the rate continuing to rise. More than one-third of adults aged 75–85 take five or more prescription medications daily. AI-based pill recognition is a promising solution, yet progress is constrained by the quality of available datasets.
 
 **Limitations of Prior Work**: Existing pill datasets suffer from three major shortcomings: (1) NIH Pillbox (the largest, with 133K images) was discontinued in 2021 and lacks instance segmentation annotations; (2) CURE provides partial instance segmentation annotations that are incomplete and include synthetic images; (3) all existing datasets predominantly feature single-pill images captured in controlled environments, failing to reflect real-world scenarios such as dosette boxes with multiple overlapping pills.
 
-**Root Cause**: In clinical and home settings, pills are routinely arranged in stacked, multi-pill configurations inside dosette boxes, requiring instance-level segmentation to distinguish individual pills — yet existing datasets consist almost exclusively of single-pill images.
+**Key Challenge**: In clinical and home settings, pills are routinely arranged in stacked, multi-pill configurations inside dosette boxes, requiring instance-level segmentation to distinguish individual pills — yet existing datasets consist almost exclusively of single-pill images.
 
-**Paper Goals**: To construct a pill image dataset that encompasses realistic multi-pill scenarios (overlap, occlusion, dosette boxes) with complete instance segmentation annotations, and to validate its contribution to few-shot generalization.
+**Goal**: To construct a pill image dataset that encompasses realistic multi-pill scenarios (overlap, occlusion, dosette boxes) with complete instance segmentation annotations, and to validate its contribution to few-shot generalization.
 
-**Starting Point**: The dataset is designed from clinical needs — dosette boxes naturally produce multi-pill overlap and occlusion, while visually similar pill classes are deliberately selected to increase recognition difficulty.
+**Key Insight**: The dataset is designed from clinical needs — dosette boxes naturally produce multi-pill overlap and occlusion, while visually similar pill classes are deliberately selected to increase recognition difficulty.
 
 **Core Idea**: Construct an instance segmentation dataset covering real-world multi-pill scenarios (occlusion/overlap/dosette boxes), and demonstrate that scene complexity — rather than sheer data volume — is the key factor for few-shot generalization.
 

@@ -30,13 +30,13 @@ For bilevel optimization problems with coupled linear constraints in the lower-l
 
 ## Background & Motivation
 
-- **State of the Field**: Bilevel optimization (BLO) underpins a broad range of ML problems, including hyperparameter optimization, data cleaning, meta-learning, neural architecture search, and reinforcement learning, where the upper-level objective depends on the optimal solution of a lower-level problem.
+- **Background**: Bilevel optimization (BLO) underpins a broad range of ML problems, including hyperparameter optimization, data cleaning, meta-learning, neural architecture search, and reinforcement learning, where the upper-level objective depends on the optimal solution of a lower-level problem.
 
 - **Limitations of Prior Work**: Existing work predominantly addresses unconstrained BLO, whereas practical applications—such as distributed optimization, SVM hyperparameter tuning, adversarial training, and traffic network design—frequently involve lower-level problems with coupled constraints $\mathcal{Y}(x) = \{y \mid Bx + Ay - b \leq 0\}$. The corresponding theory and algorithms remain far from mature. Implicit gradient methods (Tsaknakis et al., Khanduri et al., Xu & Zhu) can handle constrained BLO but require computing lower-level Hessian matrices, incurring prohibitive cost at scale. Among existing first-order approaches, Kwon et al. (2023b) handles only $x$-independent constraints and requires a projection at each step, while Jiang et al. (2024a) supports coupled constraints but relies on double- or triple-loop structures with complexity $O(\epsilon^{-3}\log\epsilon^{-1})$ or $O(\epsilon^{-5}\log\epsilon^{-1})$, which are difficult to implement.
 
-- **Root Cause**: Prior work (Kwon, Jiang) does not establish non-asymptotic error bounds between the value-function reformulation $\Phi_\delta$ and the original objective $\Phi$ under coupled constraints, leaving the theoretical justification of the reformulation incomplete.
+- **Key Challenge**: Prior work (Kwon, Jiang) does not establish non-asymptotic error bounds between the value-function reformulation $\Phi_\delta$ and the original objective $\Phi$ under coupled constraints, leaving the theoretical justification of the reformulation incomplete.
 
-- **Paper Goals**: To develop a single-loop, Hessian-free first-order algorithm for linearly constrained BLO that achieves $O(\epsilon^{-3})$ iteration complexity, thereby resolving an open question in the field.
+- **Goal**: To develop a single-loop, Hessian-free first-order algorithm for linearly constrained BLO that achieves $O(\epsilon^{-3})$ iteration complexity, thereby resolving an open question in the field.
 
 ## Method
 

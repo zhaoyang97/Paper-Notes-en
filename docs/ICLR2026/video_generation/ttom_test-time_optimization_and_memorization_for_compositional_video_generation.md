@@ -28,15 +28,15 @@ This paper proposes TTOM, a framework that aligns attention maps of video genera
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-video (T2V) models perform well on single-object scenarios but suffer from severe misalignment in compositional scenes involving multiple objects, attributes, motions, and spatial relationships. Existing methods leverage LLMs to generate spatiotemporal layouts and guide generation by modifying latent variables or attention maps.
+**Background**: Text-to-video (T2V) models perform well on single-object scenarios but suffer from severe misalignment in compositional scenes involving multiple objects, attributes, motions, and spatial relationships. Existing methods leverage LLMs to generate spatiotemporal layouts and guide generation by modifying latent variables or attention maps.
 
 **Limitations of Prior Work**: (a) Direct manipulation of latent variables or attention maps disrupts feature distributions, causing flickering and collapse; (b) each sample is processed independently without leveraging historical context; (c) interventions optimized for one sample do not generalize to others.
 
-**Root Cause**: Fine-grained control over compositional layouts is required, yet such control must not corrupt the feature distribution of the pre-trained model.
+**Key Challenge**: Fine-grained control over compositional layouts is required, yet such control must not corrupt the feature distribution of the pre-trained model.
 
-**Paper Goals**: Achieve model-agnostic compositional layout alignment at test time while reusing historical optimization results.
+**Goal**: Achieve model-agnostic compositional layout alignment at test time while reusing historical optimization results.
 
-**Starting Point**: Rather than modifying latent variables, the approach inserts and optimizes new parameters to align attention with the target layout, then stores the optimized parameters in memory for future reuse.
+**Key Insight**: Rather than modifying latent variables, the approach inserts and optimizes new parameters to align attention with the target layout, then stores the optimized parameters in memory for future reuse.
 
 **Core Idea**: Optimize parameters instead of latent variables to achieve layout alignment, and accumulate cross-sample knowledge via parameter memorization.
 

@@ -29,10 +29,10 @@ This paper reveals that pretrained time series foundation models (TSFMs) exhibit
 
 ## Background & Motivation
 
-- **State of the Field**: TSFMs such as TimesFM, Moirai, and Time-MoE acquire strong zero-shot forecasting capabilities through large-scale pretraining.
+- **Background**: TSFMs such as TimesFM, Moirai, and Time-MoE acquire strong zero-shot forecasting capabilities through large-scale pretraining.
 - **Limitations of Prior Work**: Surprisingly, even after fine-tuning, TSFMs fail to consistently outperform small specialized models trained from scratch, such as PatchTST.
-- **Root Cause**: Empirical analysis reveals two key properties of TSFMs. (1) *Attention head output sparsity*: up to 50% of attention heads produce outputs whose relative residual norm is below 1%, contributing negligibly to predictions. (2) *FFN activation sparsity*: up to 60% of FFN intermediate channels are never activated (activation probability < 5%). Critically, sparsity patterns vary across datasets—Weather and ETTm1 exhibit distinct activation patterns—indicating that TSFMs have learned to selectively activate sub-networks for different tasks. Conventional fine-tuning preserves the full architecture and updates all parameters, potentially disrupting these valuable task-relevant substructures.
-- **Paper Goals**: Propose a structured pruning–based specialization paradigm that removes task-irrelevant parameters before fine-tuning, enabling better downstream adaptation with fewer parameters.
+- **Key Challenge**: Empirical analysis reveals two key properties of TSFMs. (1) *Attention head output sparsity*: up to 50% of attention heads produce outputs whose relative residual norm is below 1%, contributing negligibly to predictions. (2) *FFN activation sparsity*: up to 60% of FFN intermediate channels are never activated (activation probability < 5%). Critically, sparsity patterns vary across datasets—Weather and ETTm1 exhibit distinct activation patterns—indicating that TSFMs have learned to selectively activate sub-networks for different tasks. Conventional fine-tuning preserves the full architecture and updates all parameters, potentially disrupting these valuable task-relevant substructures.
+- **Goal**: Propose a structured pruning–based specialization paradigm that removes task-irrelevant parameters before fine-tuning, enabling better downstream adaptation with fewer parameters.
 
 ## Method
 

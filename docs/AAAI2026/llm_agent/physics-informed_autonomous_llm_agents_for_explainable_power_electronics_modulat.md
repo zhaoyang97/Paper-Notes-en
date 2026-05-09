@@ -27,15 +27,15 @@ content_hash: db3a53f5d60144ad
 This paper proposes PHIA, a system in which an LLM planner collects design requirements via a chat interface and autonomously coordinates a physics-informed neural network surrogate model (hierarchical PINN) with optimization algorithms to iteratively generate power converter modulation designs, achieving a 63.2% reduction in MAE, a 33× speedup in design time, and usability validated by 20 domain experts.
 
 ## Background & Motivation
-**State of the Field**: As renewable energy systems scale up, modulation design for power converters in power electronics systems (PES) becomes increasingly complex. Existing AI-assisted approaches include XGBoost surrogate models combined with differential evolution optimization and offline Q-learning training.
+**Background**: As renewable energy systems scale up, modulation design for power converters in power electronics systems (PES) becomes increasingly complex. Existing AI-assisted approaches include XGBoost surrogate models combined with differential evolution optimization and offline Q-learning training.
 
 **Limitations of Prior Work**: (a) Training is data-intensive, requiring large-scale simulation or hardware experimental data collection; (b) Computation is costly, with high energy consumption for large model training and inference; (c) Black-box opacity severely limits industrial adoption; (d) Methods are tailored to specific modulation strategies or preset objectives with poor scalability; (e) Significant manual involvement is required throughout the design process.
 
-**Root Cause**: Industrial modulation design must simultaneously satisfy explainability, scalability, and low human intervention requirements, yet existing AI methods fall short on all three fronts.
+**Key Challenge**: Industrial modulation design must simultaneously satisfy explainability, scalability, and low human intervention requirements, yet existing AI methods fall short on all three fronts.
 
-**Paper Goals**: Given the operating conditions, modulation strategy, and performance objectives of a power converter, automatically generate optimal modulation parameters in a process that is explainable, easy to configure, and low in data requirements.
+**Goal**: Given the operating conditions, modulation strategy, and performance objectives of a power converter, automatically generate optimal modulation parameters in a process that is explainable, easy to configure, and low in data requirements.
 
-**Starting Point**: An LLM serves as the planner to handle natural-language requirements, while a physics-informed neural network acts as an efficient surrogate model to replace costly simulation or hardware experiments.
+**Key Insight**: An LLM serves as the planner to handle natural-language requirements, while a physics-informed neural network acts as an efficient surrogate model to replace costly simulation or hardware experiments.
 
 **Core Idea**: The LLM handles requirement understanding and workflow planning; the PINN handles physics modeling and performance prediction; the optimization algorithm handles parameter search — the three components collaborate in a division of labor to realize end-to-end automated design.
 

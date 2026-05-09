@@ -29,11 +29,11 @@ RAM proposes a unified multi-person 3D motion recovery framework integrating a m
 
 ## Background & Motivation
 
-1. **State of the Field**: Monocular video-based multi-person 3D motion recovery is an active research area, with representative methods including 4DHuman (HMR2.0 + PHALP tracking) and CoMotion (end-to-end joint optimization).
+1. **Background**: Monocular video-based multi-person 3D motion recovery is an active research area, with representative methods including 4DHuman (HMR2.0 + PHALP tracking) and CoMotion (end-to-end joint optimization).
 2. **Limitations of Prior Work**: (1) Existing tracking methods rely on 2D appearance features and Hungarian matching, making them sensitive to fast motion, heavy occlusion, and viewpoint changes, leading to frequent ID switches; (2) once identity continuity is broken, 3D motion sequences become inconsistent; (3) the absence of memory-based motion priors during occlusion or fast motion results in discontinuous reconstruction.
-3. **Root Cause**: Unstable tracking triggers redundant detections and repeated re-initialization, degrading reconstruction accuracy and hindering real-time performance.
-4. **Paper Goals**: To build a real-time, robust multi-person 3D motion recovery system.
-5. **Starting Point**: Combining SAM2's strong segmentation capability with motion priors, using Kalman filtering to provide motion-aware identity association.
+3. **Key Challenge**: Unstable tracking triggers redundant detections and repeated re-initialization, degrading reconstruction accuracy and hindering real-time performance.
+4. **Goal**: To build a real-time, robust multi-person 3D motion recovery system.
+5. **Key Insight**: Combining SAM2's strong segmentation capability with motion priors, using Kalman filtering to provide motion-aware identity association.
 6. **Core Idea**: SegFollow provides stable tracking → T-HMR leverages temporal memory to improve reconstruction consistency → Predictor estimates poses during occlusion → Combiner fuses reconstruction and prediction outputs.
 
 ## Method

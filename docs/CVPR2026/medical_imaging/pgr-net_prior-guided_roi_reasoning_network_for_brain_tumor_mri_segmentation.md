@@ -29,15 +29,15 @@ PGR-Net proposes an explicit ROI-aware brain tumor MRI segmentation network that
 
 ## Background & Motivation
 
-**State of the Field**: Brain tumor MRI segmentation is a foundational task for clinical diagnosis and radiotherapy target delineation. Segmentation accuracy has steadily improved, progressing from UNet to TransUNet, Swin UNETR, and SSM-based methods such as Mamba-UNet.
+**Background**: Brain tumor MRI segmentation is a foundational task for clinical diagnosis and radiotherapy target delineation. Segmentation accuracy has steadily improved, progressing from UNet to TransUNet, Swin UNETR, and SSM-based methods such as Mamba-UNet.
 
 **Limitations of Prior Work**: Brain tumors exhibit severe **spatial sparsity** in MRI — the average tumor region in BraTS2023 accounts for only approximately 10.7% of the full image (roughly 2,740 pixels in a 160×160 slice). This causes models to be dominated by background features in early training; even after roughly localizing the tumor, a substantial proportion of computation is still spent on healthy tissue. Existing models generally assume a uniform lesion distribution and overlook the clinically well-established spatial distribution patterns of brain tumors.
 
-**Root Cause**: Tumors in the brain follow recognizable spatial distribution patterns — centers are predominantly concentrated at the frontal-temporal junction, while occipital occurrences are rare. Existing segmentation networks ignore these priors and allocate computation uniformly across the entire image, representing a significant waste. The few methods that introduce hard ROI guidance suffer from poor generalizability due to their inability to capture distributional patterns.
+**Key Challenge**: Tumors in the brain follow recognizable spatial distribution patterns — centers are predominantly concentrated at the frontal-temporal junction, while occipital occurrences are rare. Existing segmentation networks ignore these priors and allocate computation uniformly across the entire image, representing a significant waste. The few methods that introduce hard ROI guidance suffer from poor generalizability due to their inability to capture distributional patterns.
 
-**Paper Goals**: (1) Model tumor location and scale priors from data statistics; (2) leverage these priors for progressive hierarchical ROI selection; (3) embed learnable spatial guidance at each network layer to focus on lesions and suppress background.
+**Goal**: (1) Model tumor location and scale priors from data statistics; (2) leverage these priors for progressive hierarchical ROI selection; (3) embed learnable spatial guidance at each network layer to focus on lesions and suppress background.
 
-**Starting Point**: The authors observe that the spatial distribution of brain tumors exhibits statistical regularity (evidenced by analyzing lesion center and scale distributions in the training set). A ROI prior template set $\{(r_i, c_i)\}$ can therefore be extracted from the training set and explicitly injected into the network to direct computation toward regions of interest.
+**Key Insight**: The authors observe that the spatial distribution of brain tumors exhibits statistical regularity (evidenced by analyzing lesion center and scale distributions in the training set). A ROI prior template set $\{(r_i, c_i)\}$ can therefore be extracted from the training set and explicitly injected into the network to direct computation toward regions of interest.
 
 **Core Idea**: Construct a data-driven tumor spatial prior template set, and realize globally-to-locally ROI-aware segmentation within a RetNet backbone through hierarchical Top-K ROI selection combined with Window Gaussian-Spatial decay guidance maps.
 

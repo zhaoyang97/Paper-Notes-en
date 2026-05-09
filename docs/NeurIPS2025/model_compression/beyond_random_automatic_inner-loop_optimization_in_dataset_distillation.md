@@ -27,15 +27,15 @@ content_hash: 3cdd85caccbb8386
 This paper proposes AT-BPTT (Adaptive Truncation BPTT), which partitions DNN training into early/middle/late stages and adaptively adjusts truncation strategies and window sizes accordingly. The method achieves average accuracy gains of 3–17% on CIFAR-10/100/Tiny-ImageNet/ImageNet-1K, while delivering 3.9× speedup and 63% memory reduction.
 
 ## Background & Motivation
-**State of the Field**: Dataset Distillation (DD) aims to compress a large dataset into a compact synthetic dataset such that models trained on the synthetic set approximate the performance of those trained on the full set. Mainstream methods include gradient matching (DC/DSA), trajectory matching (MTT), and distribution matching (DM).
+**Background**: Dataset Distillation (DD) aims to compress a large dataset into a compact synthetic dataset such that models trained on the synthetic set approximate the performance of those trained on the full set. Mainstream methods include gradient matching (DC/DSA), trajectory matching (MTT), and distribution matching (DM).
 
 **Limitations of Prior Work**: Trajectory matching methods (MTT/FTD/DATM) require unrolling $T$ training steps via BPTT to optimize the synthetic data. Full unrolling incurs prohibitive computational and memory costs, so in practice **random truncation** (RaT-BPTT) is employed, unrolling only a randomly selected subset of $S$ steps. However, random selection disregards the heterogeneous learning dynamics across different training stages.
 
-**Root Cause**: DNN training exhibits distinct phases—coarse-grained feature learning in the early stage, discriminative feature learning in the middle stage, and fine-grained adjustment in the late stage. Random truncation treats all stages uniformly and cannot align with this non-uniform learning dynamics.
+**Key Challenge**: DNN training exhibits distinct phases—coarse-grained feature learning in the early stage, discriminative feature learning in the middle stage, and fine-grained adjustment in the late stage. Random truncation treats all stages uniformly and cannot align with this non-uniform learning dynamics.
 
-**Paper Goals**: Design a truncation strategy that adaptively aligns with the learning stages of DNN training, improving distillation quality while maintaining computational efficiency.
+**Goal**: Design a truncation strategy that adaptively aligns with the learning stages of DNN training, improving distillation quality while maintaining computational efficiency.
 
-**Starting Point**: Gradient norms vary non-uniformly throughout training—large in the early stage (when basic features are acquired) and small in the late stage (during fine-tuning). This observation motivates adaptive allocation of truncation positions and window sizes.
+**Key Insight**: Gradient norms vary non-uniformly throughout training—large in the early stage (when basic features are acquired) and small in the late stage (during fine-tuning). This observation motivates adaptive allocation of truncation positions and window sizes.
 
 **Core Idea**: Adaptively select BPTT truncation positions based on gradient norms (prioritizing high-gradient steps early and low-gradient steps late), dynamically adjust the unrolling window width, and employ low-rank Hessian approximation to reduce computational cost.
 

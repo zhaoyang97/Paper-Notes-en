@@ -27,13 +27,13 @@ This paper proposes the Continuous Thought Machine (CTM), which generates neuron
 
 ## Background & Motivation
 
-**State of the Field**: Modern neural networks deliberately abstract away the precise timing and interaction complexity of biological neurons in pursuit of large-scale training efficiency. In standard MLPs and Transformers, neurons execute simple activation functions and lack independent temporal processing capabilities.
+**Background**: Modern neural networks deliberately abstract away the precise timing and interaction complexity of biological neurons in pursuit of large-scale training efficiency. In standard MLPs and Transformers, neurons execute simple activation functions and lack independent temporal processing capabilities.
 
 **Limitations of Prior Work**: (a) Deep learning lacks the flexibility, efficiency, and common sense of human cognition—properties that may be related to temporal processing; (b) adaptive computation requires auxiliary halting modules (e.g., PonderNet/ACT); (c) recurrent networks possess sequential processing ability, but their state representations are static snapshots rather than dynamic temporal patterns.
 
-**Root Cause**: Neural timing is critical in biological brains (temporal coding, synchrony, oscillations) yet is entirely absent in AI. Reintroducing the temporal dimension may unlock missing cognitive capabilities.
+**Key Challenge**: Neural timing is critical in biological brains (temporal coding, synchrony, oscillations) yet is entirely absent in AI. Reintroducing the temporal dimension may unlock missing cognitive capabilities.
 
-**Starting Point**: The paper designs a novel architecture with neuron-level temporal processing and synchrony-based representations within a gradient-differentiable framework, striking a balance between biological plausibility and computational feasibility.
+**Key Insight**: The paper designs a novel architecture with neuron-level temporal processing and synchrony-based representations within a gradient-differentiable framework, striking a balance between biological plausibility and computational feasibility.
 
 ## Method
 

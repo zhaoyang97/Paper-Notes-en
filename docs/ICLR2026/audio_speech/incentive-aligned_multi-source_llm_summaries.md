@@ -35,9 +35,9 @@ This paper introduces the Truthful Text Summarization (TTS) framework, which inc
 
 **Incentive misalignment**: Existing RAG pipelines focus on technical summarization quality optimization (e.g., self-critique, LLM-as-judge) without accounting for the strategic behavior of content creators—if manipulation yields greater exposure at low cost, information sources are incentivized to fabricate content.
 
-**Root Cause**: Achieving simultaneous technical robustness (filtering bad sources) and incentive robustness (making truthful reporting a Nash equilibrium) without access to ground-truth labels.
+**Key Challenge**: Achieving simultaneous technical robustness (filtering bad sources) and incentive robustness (making truthful reporting a Nash equilibrium) without access to ground-truth labels.
 
-**Starting Point**: Drawing on peer prediction mechanisms from game theory, which operate without ground-truth labels, using informative agreement among sources to assess reliability.
+**Key Insight**: Drawing on peer prediction mechanisms from game theory, which operate without ground-truth labels, using informative agreement among sources to assess reliability.
 
 ## Method
 

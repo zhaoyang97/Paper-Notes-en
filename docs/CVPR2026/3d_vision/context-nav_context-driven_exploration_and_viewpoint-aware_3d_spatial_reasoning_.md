@@ -29,15 +29,15 @@ Context-Nav elevates the contextual information embedded in long-form textual de
 
 ## Background & Motivation
 
-**State of the Field**: Text-guided instance navigation (TGIN) requires an agent to locate a specific object instance in a 3D environment based on free-form textual descriptions, necessitating disambiguation among multiple same-category distractors. Existing approaches fall into three categories: RL-trained methods (data-hungry and fragile under distribution shift), zero-shot modular methods (suffering from viewpoint bias in matching), and interactive methods (relying on human Q&A, which is impractical).
+**Background**: Text-guided instance navigation (TGIN) requires an agent to locate a specific object instance in a 3D environment based on free-form textual descriptions, necessitating disambiguation among multiple same-category distractors. Existing approaches fall into three categories: RL-trained methods (data-hungry and fragile under distribution shift), zero-shot modular methods (suffering from viewpoint bias in matching), and interactive methods (relying on human Q&A, which is impractical).
 
 **Limitations of Prior Work**: All existing methods **underutilize the value of textual descriptions**. Most systems reduce rich descriptions to sets of object labels or structured representations, leveraging contextual cues only during a final verification stage. However, environmental context in descriptions (e.g., "in the kitchen, near the staircase") provides strong constraints that can substantially narrow the search space.
 
-**Root Cause**: Spatial relations (e.g., "to the left," "in front of") are observer-dependent, yet existing methods either ignore this viewpoint dependency or apply viewpoint-agnostic heuristics when evaluating spatial predicates.
+**Key Challenge**: Spatial relations (e.g., "to the left," "in front of") are observer-dependent, yet existing methods either ignore this viewpoint dependency or apply viewpoint-agnostic heuristics when evaluating spatial predicates.
 
-**Paper Goals**: (a) How can the full contextual description be leveraged to guide exploration? (b) How can viewpoint ambiguity in spatial relations be addressed?
+**Goal**: (a) How can the full contextual description be leveraged to guide exploration? (b) How can viewpoint ambiguity in spatial relations be addressed?
 
-**Starting Point**: The paper reframes contextual information from "match-then-verify" to "context-driven exploration"—first navigating to regions semantically consistent with the entire description, then applying 3D spatial reasoning for precise verification.
+**Key Insight**: The paper reframes contextual information from "match-then-verify" to "context-driven exploration"—first navigating to regions semantically consistent with the entire description, then applying 3D spatial reasoning for precise verification.
 
 **Core Idea**: A dense text-image alignment score computed via GOAL-CLIP constructs a value map for frontier selection (exploration prior), while viewpoint sampling combined with reference-frame alignment enables verification of arbitrary spatial relation predicates (geometric verification).
 

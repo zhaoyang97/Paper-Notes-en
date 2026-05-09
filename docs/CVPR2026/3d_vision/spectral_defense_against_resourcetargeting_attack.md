@@ -29,15 +29,15 @@ This paper proposes the first frequency-domain defense framework against resourc
 
 ## Background & Motivation
 
-**State of the Field**: 3DGS adaptively densifies and prunes Gaussian primitives to match scene complexity, and has become the dominant paradigm for real-time 3D reconstruction. The Poison-Splat attack reveals a new threat surface: by injecting imperceptible perturbations into training images (constrained within an $\epsilon$-ball), it constructs a max-min bi-level optimization that induces excessive densification in 3DGS, causing GPU memory explosion and rendering slowdown.
+**Background**: 3DGS adaptively densifies and prunes Gaussian primitives to match scene complexity, and has become the dominant paradigm for real-time 3D reconstruction. The Poison-Splat attack reveals a new threat surface: by injecting imperceptible perturbations into training images (constrained within an $\epsilon$-ball), it constructs a max-min bi-level optimization that induces excessive densification in 3DGS, causing GPU memory explosion and rendering slowdown.
 
 **Limitations of Prior Work**: (1) Image smoothing destroys genuine fine-grained structures; (2) uniform Gaussian thresholding (UT) fails to generalize across scenes — too aggressive for some, too lenient for others; (3) efficiency-oriented pruning methods (LightGaussian/PUP/MaskGaussian) are designed for compression rather than robustness, and cannot distinguish adversarial Gaussians from real details when supervised by poisoned views.
 
-**Root Cause**: Attack perturbations are visually imperceptible in pixel space but exhibit two characteristic fingerprints in the frequency domain — **anomalous high-frequency amplification** and **directional anisotropy**. Spatial-domain defenses cannot capture these covert spectral distortions, causing the optimizer to misinterpret noise patterns as fine structures, triggering unstable Gaussian over-growth.
+**Key Challenge**: Attack perturbations are visually imperceptible in pixel space but exhibit two characteristic fingerprints in the frequency domain — **anomalous high-frequency amplification** and **directional anisotropy**. Spatial-domain defenses cannot capture these covert spectral distortions, causing the optimizer to misinterpret noise patterns as fine structures, triggering unstable Gaussian over-growth.
 
-**Paper Goals**: To design a defense mechanism from a frequency-domain perspective that selectively suppresses attack-induced Gaussian over-growth without compromising genuine scene structures.
+**Goal**: To design a defense mechanism from a frequency-domain perspective that selectively suppresses attack-induced Gaussian over-growth without compromising genuine scene structures.
 
-**Starting Point**: A mathematical connection is established between the Gaussian covariance matrix and its frequency response — the smaller the minimum eigenvalue of the covariance, the weaker the high-frequency attenuation and the stronger the high-frequency response. This provides a theoretical basis for distinguishing attack noise from genuine scene detail.
+**Key Insight**: A mathematical connection is established between the Gaussian covariance matrix and its frequency response — the smaller the minimum eigenvalue of the covariance, the weaker the high-frequency attenuation and the stronger the high-frequency response. This provides a theoretical basis for distinguishing attack noise from genuine scene detail.
 
 **Core Idea**: The root cause of the attack lies in spectral behavior rather than spatial structure — a 3D frequency filter selectively prunes anomalous high-frequency Gaussians, while a 2D anisotropy regularization constrains the directional high-frequency distribution of rendered images.
 

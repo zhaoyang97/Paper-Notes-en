@@ -29,15 +29,15 @@ This paper proposes DDIM Inversion Attack (DIA), which disrupts the image editin
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models, particularly DDIM-based models, have emerged as powerful tools for image generation and editing. The deterministic inversion of DDIM allows real images to be mapped back into latent space, enabling downstream editing operations such as style transfer and attribute manipulation.
+**Background**: Diffusion models, particularly DDIM-based models, have emerged as powerful tools for image generation and editing. The deterministic inversion of DDIM allows real images to be mapped back into latent space, enabling downstream editing operations such as style transfer and attribute manipulation.
 
 **Limitations of Prior Work**: This powerful editing capability is exploited by malicious actors to generate misinformation and deepfake content, posing serious threats to privacy and copyright. Existing defenses such as AdvDM and Photoguard can partially disrupt the diffusion process, yet their optimization objectives are misaligned with the iterative denoising trajectory at inference time, resulting in limited protection.
 
-**Root Cause**: The perturbation direction optimized by existing defenses during training does not correspond to the actual trajectory traversed by DDIM inversion at test time. AdvDM targets the single-step denoising process, while Photoguard targets the encoder output; both neglect the multi-step deterministic inversion that is central to DDIM-based editing.
+**Key Challenge**: The perturbation direction optimized by existing defenses during training does not correspond to the actual trajectory traversed by DDIM inversion at test time. AdvDM targets the single-step denoising process, while Photoguard targets the encoder output; both neglect the multi-step deterministic inversion that is central to DDIM-based editing.
 
-**Paper Goals**: To design an adversarial attack method that directly targets the DDIM inversion trajectory, causing severe distortion in protected images after the inversion–editing pipeline and thereby preventing malicious editing.
+**Goal**: To design an adversarial attack method that directly targets the DDIM inversion trajectory, causing severe distortion in protected images after the inversion–editing pipeline and thereby preventing malicious editing.
 
-**Starting Point**: The authors observe that DDIM inversion is a deterministic multi-step process in which errors introduced at early steps accumulate and propagate along the trajectory. Adding imperceptible perturbations to the input image to deviate the entire inversion trajectory from its normal path can fundamentally undermine subsequent editing operations.
+**Key Insight**: The authors observe that DDIM inversion is a deterministic multi-step process in which errors introduced at early steps accumulate and propagate along the trajectory. Adding imperceptible perturbations to the input image to deviate the entire inversion trajectory from its normal path can fundamentally undermine subsequent editing operations.
 
 **Core Idea**: Adversarial perturbations are optimized to attack the complete DDIM inversion trajectory rather than a single denoising step or encoder output, achieving defense objectives that are closely aligned with the actual inference procedure.
 

@@ -28,15 +28,15 @@ content_hash: 0b10c2d2d88080ed
 This work mathematically "glues" an LLM and a probabilistic programming language (PPL/Stan) into a joint distribution $p(z,x,m|t) = p(m|t)_{\text{LLM}} \cdot p(z,x|m)_{\text{PPL}}$. Given only an informal problem description and data, the system automatically samples candidate formal models from the LLM, performs Bayesian inference within each model, and produces a marginal-likelihood-weighted model average — requiring no user-written probabilistic model.
 
 ## Background & Motivation
-**State of the Field**: Bayesian inference requires users to specify formal models (e.g., prior distributions, likelihood functions), which demands substantial statistical expertise. LLMs can interpret natural-language descriptions but cannot perform rigorous probabilistic inference. Probabilistic programming languages (Stan, Pyro) support rigorous inference but require formal model specifications as input.
+**Background**: Bayesian inference requires users to specify formal models (e.g., prior distributions, likelihood functions), which demands substantial statistical expertise. LLMs can interpret natural-language descriptions but cannot perform rigorous probabilistic inference. Probabilistic programming languages (Stan, Pyro) support rigorous inference but require formal model specifications as input.
 
 **Limitations of Prior Work**: The traditional Bayesian workflow requires a statistician to (1) understand the problem, (2) manually construct a model, (3) write PPL code, (4) run inference, and (5) diagnose and iterate. Steps 2–3 constitute the primary bottleneck. Existing LLM-for-statistics approaches merely prompt LLMs to generate code, without incorporating the LLM's uncertainty over model space into a statistical framework.
 
-**Root Cause**: While LLMs can infer modeling intent from natural language, their model outputs are merely code strings rather than components of a probability distribution. The key challenge is how to make the LLM's model selection an organic part of the Bayesian framework.
+**Key Challenge**: While LLMs can infer modeling intent from natural language, their model outputs are merely code strings rather than components of a probability distribution. The key challenge is how to make the LLM's model selection an organic part of the Bayesian framework.
 
-**Paper Goals**: To develop a mathematically rigorous framework that unifies the model-generation capability of LLMs with the inference capability of PPLs into a single Bayesian inference problem.
+**Goal**: To develop a mathematically rigorous framework that unifies the model-generation capability of LLMs with the inference capability of PPLs into a single Bayesian inference problem.
 
-**Starting Point**: Treating the LLM as a prior $p(m|t)$ over model space, with the PPL handling the likelihood and posterior given a specific model. The joint distribution naturally defines model averaging.
+**Key Insight**: Treating the LLM as a prior $p(m|t)$ over model space, with the PPL handling the likelihood and posterior given a specific model. The joint distribution naturally defines model averaging.
 
 **Core Idea**: LLM as model prior + PPL as within-model inference = a complete Bayesian inference system, requiring only natural-language input from the user.
 

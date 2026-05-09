@@ -29,18 +29,18 @@ This paper proposes Cago, a method that dynamically tracks an agent's attainment
 
 ## Background & Motivation
 
-**State of the Field**: Imitation learning trains agents from expert demonstrations via methods such as behavioral cloning (BC), GAIL, and inverse reinforcement learning, yet significant challenges remain for long-horizon complex tasks.
+**Background**: Imitation learning trains agents from expert demonstrations via methods such as behavioral cloning (BC), GAIL, and inverse reinforcement learning, yet significant challenges remain for long-horizon complex tasks.
 
 **Limitations of Prior Work**:
 - BC suffers from compounding errors.
 - Distribution-matching methods (e.g., GAIL) perform "flat matching" in early training, failing to distinguish between mastered and unmastered segments.
 - Reverse curriculum methods require resetting the agent to arbitrary states along demonstrations, which is unrealistic in real-world settings where quantities such as joint velocities are difficult to reproduce precisely.
 
-**Root Cause**: Existing methods do not account for the dynamic evolution of agent capability—they lack awareness of which portions of a task have been mastered and which remain challenging.
+**Key Challenge**: Existing methods do not account for the dynamic evolution of agent capability—they lack awareness of which portions of a task have been mastered and which remain challenging.
 
-**Paper Goals**: Construct an adaptive learning curriculum aligned with the agent's capability without requiring resets to arbitrary intermediate states.
+**Goal**: Construct an adaptive learning curriculum aligned with the agent's capability without requiring resets to arbitrary intermediate states.
 
-**Starting Point**: Demonstrations are treated as structured roadmaps rather than direct imitation targets; the agent's current capability ceiling is continuously monitored to select intermediate goals.
+**Key Insight**: Demonstrations are treated as structured roadmaps rather than direct imitation targets; the agent's current capability ceiling is continuously monitored to select intermediate goals.
 
 **Core Idea**: Observation visit frequency is used to track the capability frontier, and goals that lie just beyond the agent's current capability are sampled to guide Go-Explore-style exploration.
 

@@ -31,11 +31,11 @@ This paper challenges the default practice of averaging 80 templates in open-voc
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: OVSS methods (e.g., MaskCLIP/NACLIP/CLIP-DINOiser) default to averaging embeddings from CLIP's original 80 ImageNet templates (e.g., "a photo of \<class\>", "a sketch of \<class\>") to construct text classifiers. This practice has been carried over from CLIP's zero-shot classification without systematic investigation at the segmentation level. **Core Finding**: For each class, certain single-template classifiers outperform the 80-template averaged classifier — these are the "class-experts."
+**Key Challenge**: **Background**: OVSS methods (e.g., MaskCLIP/NACLIP/CLIP-DINOiser) default to averaging embeddings from CLIP's original 80 ImageNet templates (e.g., "a photo of \<class\>", "a sketch of \<class\>") to construct text classifiers. This practice has been carried over from CLIP's zero-shot classification without systematic investigation at the segmentation level. **Core Finding**: For each class, certain single-template classifiers outperform the 80-template averaged classifier — these are the "class-experts."
 
 ### Mechanism
 
-**Paper Goals**: (1) How to identify class-expert templates per class without labels or training? (2) How to effectively fuse predictions from multiple experts into a final segmentation output?
+**Goal**: (1) How to identify class-expert templates per class without labels or training? (2) How to effectively fuse predictions from multiple experts into a final segmentation output?
 
 ## Method
 

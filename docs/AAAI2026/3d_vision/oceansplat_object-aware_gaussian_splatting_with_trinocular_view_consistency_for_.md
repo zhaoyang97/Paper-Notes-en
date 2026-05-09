@@ -37,9 +37,9 @@ Underwater scene reconstruction is essential for marine robotics tasks such as s
 
 **3DGS-based methods** (SeaSplat, WaterSplatting, etc.): while rendering is fast, **medium intensity is often absorbed into the 3D Gaussians**, leading to extensive floating artifacts, entanglement between 3D Gaussians and the scattering medium, and degraded reconstruction quality.
 
-**Root Cause**: In scattering media, view-dependent sampling in alpha-blending leads to multi-view inconsistency, causing 3D Gaussians to erroneously represent the water volume itself rather than scene objects, producing floating artifacts.
+**Key Challenge**: In scattering media, view-dependent sampling in alpha-blending leads to multi-view inconsistency, causing 3D Gaussians to erroneously represent the water volume itself rather than scene objects, producing floating artifacts.
 
-**Starting Point**:
+**Key Insight**:
 - Drawing on the advantage of multi-baseline stereo over single-baseline, the paper extends binocular consistency to **trinocular consistency** (horizontal + vertical virtual viewpoints), providing orthogonal constraints.
 - Self-supervised depth priors are generated via triangulation between virtual viewpoints.
 - **Depth-aware alpha adjustment** suppresses 3D Gaussians in medium regions during early training.

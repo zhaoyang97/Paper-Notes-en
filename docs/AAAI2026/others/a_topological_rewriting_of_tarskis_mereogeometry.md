@@ -29,13 +29,13 @@ This work extends the λ-MM library within the Coq theorem prover to recast Tars
 
 ## Background & Motivation
 
-**State of the Field**: In qualitative spatial reasoning (QSR), the combination of mereology and topology forms the foundation of spatial theories such as RCC8 and contact algebras. These theories follow Whitehead's point-free geometry, substituting "regions" for "points" as the primitive entities.
+**Background**: In qualitative spatial reasoning (QSR), the combination of mereology and topology forms the foundation of spatial theories such as RCC8 and contact algebras. These theories follow Whitehead's point-free geometry, substituting "regions" for "points" as the primitive entities.
 
 **Limitations of Prior Work**: Existing approaches face multiple challenges: (1) the ontological status of boundaries is ambiguous (spatial objects or abstract entities?); (2) decidability questions remain unresolved; (3) insufficient reasoning mechanisms limit the practical utility of spatial representations; (4) naively mapping part–whole relations into first-order logic results in limited expressive power.
 
-**Root Cause**: Qualitative spatial models based on Goodman-style mereology and pseudo-topology lack genuine Euclidean geometry and a complete topological space, and thus cannot support advanced geometric reasoning. While Tarski's solid geometry defines solids, balls, and interior points, it lacks a formal bridge to modern topology.
+**Key Challenge**: Qualitative spatial models based on Goodman-style mereology and pseudo-topology lack genuine Euclidean geometry and a complete topological space, and thus cannot support advanced geometric reasoning. While Tarski's solid geometry defines solids, balls, and interior points, it lacks a formal bridge to modern topology.
 
-**Starting Point**: The paper leverages the existing λ-MM Coq library—an implementation of Leśniewski's mereology based on inductive type theory—to construct algebraic topological relations on top of it, proving that the mereological structure itself entails a topology, and formalizing Tarski's geometry as a subspace of that topology.
+**Key Insight**: The paper leverages the existing λ-MM Coq library—an implementation of Leśniewski's mereology based on inductive type theory—to construct algebraic topological relations on top of it, proving that the mereological structure itself entails a topology, and formalizing Tarski's geometry as a subspace of that topology.
 
 **Core Idea**: Proving that mereological classes are equivalent to regular open sets, thereby constructing a complete topological space from within mereology itself, without appealing to set theory.
 

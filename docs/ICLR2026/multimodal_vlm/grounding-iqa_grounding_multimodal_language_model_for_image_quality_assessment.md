@@ -28,15 +28,15 @@ This paper integrates spatial grounding (referring + grounding) with image quali
 
 ## Background & Motivation
 
-**State of the Field**: IQA has evolved from traditional metrics (PSNR/SSIM) to multimodal LLM-based semantic IQA (e.g., Q-Instruct), enabling natural language quality descriptions.
+**Background**: IQA has evolved from traditional metrics (PSNR/SSIM) to multimodal LLM-based semantic IQA (e.g., Q-Instruct), enabling natural language quality descriptions.
 
 **Limitations of Prior Work**: Existing IQA methods only produce image-level quality descriptions (e.g., "the image is generally blurry") without identifying which specific regions exhibit which quality issues. For complex images with spatially varying quality, such global descriptions are insufficiently granular.
 
-**Root Cause**: IQA requires fine-grained spatial localization capabilities, yet existing IQA datasets lack spatial annotations, and the spatial perception capacity of MLLMs remains underutilized for low-level vision tasks.
+**Key Challenge**: IQA requires fine-grained spatial localization capabilities, yet existing IQA datasets lack spatial annotations, and the spatial perception capacity of MLLMs remains underutilized for low-level vision tasks.
 
-**Paper Goals**: (a) Construct an IQA dataset with spatial annotations; (b) train an MLLM to perform quality assessment and spatial grounding jointly.
+**Goal**: (a) Construct an IQA dataset with spatial annotations; (b) train an MLLM to perform quality assessment and spatial grounding jointly.
 
-**Starting Point**: Two new sub-tasks are defined—GIQA-Description (quality descriptions with bounding boxes) and GIQA-VQA (quality QA with spatial information).
+**Key Insight**: Two new sub-tasks are defined—GIQA-Description (quality descriptions with bounding boxes) and GIQA-VQA (quality QA with spatial information).
 
 **Core Idea**: Enable IQA models to not only state "the image is blurry" but also specify "the billiard table region (bbox) is sharp, while the background region (bbox) is blurry."
 

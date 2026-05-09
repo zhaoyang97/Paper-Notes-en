@@ -28,15 +28,15 @@ This paper proposes Concept-TRAK, which extends influence functions from image-l
 
 ## Background & Motivation
 
-**State of the Field**: Data attribution methods (TRAK, D-TRAK, DAS) employ influence functions to estimate the contribution of training samples to generated images, serving applications in copyright detection, data valuation, and model debugging. However, existing methods perform attribution at the whole-image level—identifying training samples that influence an entire generated image.
+**Background**: Data attribution methods (TRAK, D-TRAK, DAS) employ influence functions to estimate the contribution of training samples to generated images, serving applications in copyright detection, data valuation, and model debugging. However, existing methods perform attribution at the whole-image level—identifying training samples that influence an entire generated image.
 
 **Limitations of Prior Work**: Practical requirements demand concept-level attribution. For example, when generating "a pencil sketch of Pikachu," the copyright holder (Nintendo) cares about the training sources of the "Pikachu" concept, not the "pencil sketch" style. Whole-image attribution tends to return stylistically similar but conceptually irrelevant images.
 
-**Root Cause**: Both the utility loss and the training loss in influence functions are based on standard denoising objectives—they capture directions of overall reconstruction quality rather than concept-specific directions. New loss function designs are needed to isolate concept-specific influences.
+**Key Challenge**: Both the utility loss and the training loss in influence functions are based on standard denoising objectives—they capture directions of overall reconstruction quality rather than concept-specific directions. New loss function designs are needed to isolate concept-specific influences.
 
-**Paper Goals**: To define and implement concept-level data attribution—quantifying each training sample's contribution to a diffusion model's ability to learn a specific concept (style, object, or attribute).
+**Goal**: To define and implement concept-level data attribution—quantifying each training sample's contribution to a diffusion model's ability to learn a specific concept (style, object, or attribute).
 
-**Starting Point**: A geometric motivation: concept-relevant directions correspond to tangent vectors of the data manifold in the diffusion model's latent space. The reward optimization gradient $\nabla_{x_t} R(x_t)$ serves as a concept-specific guidance direction, pointing precisely to concept-enriched regions within the tangent space.
+**Key Insight**: A geometric motivation: concept-relevant directions correspond to tangent vectors of the data manifold in the diffusion model's latent space. The reward optimization gradient $\nabla_{x_t} R(x_t)$ serves as a concept-specific guidance direction, pointing precisely to concept-enriched regions within the tangent space.
 
 **Core Idea**: Use DPS reward gradients as the training loss (capturing the influence direction of training samples) and CFG guidance as the utility loss (capturing the target concept direction). Their inner product within the influence function framework measures each training sample's contribution to concept learning.
 

@@ -29,16 +29,16 @@ This paper proposes IonCast, a framework comprising a GraphCast-based GNN model 
 
 ## Background & Motivation
 
-1. **State of the Field**: The ionosphere (~50–1500 km altitude) is a critical region of near-Earth space whose disturbances directly degrade GNSS accuracy, high-frequency communications, and aviation operations. As societal dependence on space-based infrastructure deepens, accurate ionospheric forecasting becomes increasingly important.
+1. **Background**: The ionosphere (~50–1500 km altitude) is a critical region of near-Earth space whose disturbances directly degrade GNSS accuracy, high-frequency communications, and aviation operations. As societal dependence on space-based infrastructure deepens, accurate ionospheric forecasting becomes increasingly important.
 
 2. **Limitations of Prior Work**:
     - Empirical models such as IRI and physics-based models such as GITM have well-documented inherent limitations.
     - Existing ML approaches are largely confined to classical methods (XGBoost, MLP) or cover only narrow geographic regions (e.g., BiLSTM applied solely to the Chinese region).
     - No advanced ML architecture simultaneously handles heterogeneous multi-source data, operates at global scale, and delivers reliable long-horizon forecasts.
 
-3. **Root Cause**: The rapid growth of high-quality ionospheric observations stands in contrast to the absence of ML frameworks capable of genuinely exploiting multi-source heterogeneous data for global forecasting.
+3. **Key Challenge**: The rapid growth of high-quality ionospheric observations stands in contrast to the absence of ML frameworks capable of genuinely exploiting multi-source heterogeneous data for global forecasting.
 
-4. **Starting Point**: Drawing on the success of GraphCast in numerical weather prediction, the paper adapts graph neural network architectures to the task of ionospheric dynamics forecasting.
+4. **Key Insight**: Drawing on the success of GraphCast in numerical weather prediction, the paper adapts graph neural network architectures to the task of ionospheric dynamics forecasting.
 
 5. **Core Idea**: A GraphCast-style GNN operates on a spherical mesh to fuse multi-source space weather data and autoregressively forecast global TEC.
 

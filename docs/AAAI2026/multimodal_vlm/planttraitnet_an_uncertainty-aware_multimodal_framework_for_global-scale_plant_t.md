@@ -33,7 +33,7 @@ Global plant trait maps (e.g., leaf nitrogen content, plant height) are fundamen
 
 **Limitations of Prior Work**: (1) Citizen science data lack direct trait annotations and provide only species labels; (2) weak labels obtained by matching species names to the TRY database are highly noisy; (3) image quality is highly variable (feature noise); (4) prior work has focused primarily on single-task models that do not exploit inter-trait correlations; (5) existing global trait maps have limited accuracy.
 
-**Starting Point**: The paper integrates citizen science imagery with computer vision and geospatial AI, extracting features via visual foundation models, encoding 3D structural information via depth foundation models, and encoding geospatial context via climate foundation models. Uncertainty-guided data cleaning is employed to handle noise, enabling scalable and more accurate global trait mapping.
+**Key Insight**: The paper integrates citizen science imagery with computer vision and geospatial AI, extracting features via visual foundation models, encoding 3D structural information via depth foundation models, and encoding geospatial context via climate foundation models. Uncertainty-guided data cleaning is employed to handle noise, enabling scalable and more accurate global trait mapping.
 
 ## Method
 

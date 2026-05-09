@@ -29,7 +29,7 @@ This paper proposes Motion Prior Distillation (MPD), an inference-time distillat
 
 ## Background & Motivation
 
-**State of the Field**: Advances in I2V diffusion models have extended frame interpolation beyond traditional optical flow methods to semantic-level "generative inbetweening."
+**Background**: Advances in I2V diffusion models have extended frame interpolation beyond traditional optical flow methods to semantic-level "generative inbetweening."
 
 **Mechanism of Time Reversal Sampling**: Start and end frames are used to condition forward and backward denoising paths respectively, whose intermediate frames are then merged.
 

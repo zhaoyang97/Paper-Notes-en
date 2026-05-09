@@ -29,15 +29,15 @@ This paper proposes ResearchBench, the first large-scale benchmark for evaluatin
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have demonstrated potential in assisting scientific research, yet no systematic benchmark exists for evaluating their ability to discover valid novel hypotheses.
+**Background**: LLMs have demonstrated potential in assisting scientific research, yet no systematic benchmark exists for evaluating their ability to discover valid novel hypotheses.
 
 **Limitations of Prior Work**: (1) No dedicated benchmark for scientific discovery exists—existing benchmarks (Chatbot Arena, MixEval) assess general capabilities rather than discovery ability. (2) IdeaBench covers only biomedical hypothesis generation and does not evaluate the full set of discovery subtasks. (3) DiscoveryBench and ScienceAgentBench focus on specific subtasks (e.g., code writing) without analyzing the fundamental decomposition of scientific discovery.
 
-**Root Cause**: The perceived indivisibility of the scientific discovery process makes evaluation difficult—what is needed is a theoretically "sufficient" decomposition of subtasks such that perfectly solving them is equivalent to perfectly solving the overall discovery task.
+**Key Challenge**: The perceived indivisibility of the scientific discovery process makes evaluation difficult—what is needed is a theoretically "sufficient" decomposition of subtasks such that perfectly solving them is equivalent to perfectly solving the overall discovery task.
 
-**Paper Goals**: Construct the first interdisciplinary, large-scale benchmark for scientific discovery capability, grounded in a theoretically sufficient subtask decomposition.
+**Goal**: Construct the first interdisciplinary, large-scale benchmark for scientific discovery capability, grounded in a theoretically sufficient subtask decomposition.
 
-**Starting Point**: Drawing on cognitive science—creative ideas typically arise from associative combinations of two seemingly unrelated pieces of knowledge—the paper decomposes hypothesis generation into inspiration retrieval → hypothesis composition → hypothesis ranking.
+**Key Insight**: Drawing on cognitive science—creative ideas typically arise from associative combinations of two seemingly unrelated pieces of knowledge—the paper decomposes hypothesis generation into inspiration retrieval → hypothesis composition → hypothesis ranking.
 
 **Core Idea**: Most hypotheses $h = f(b, i_1, ..., i_k)$ can be viewed as combinations of research background $b$ and inspirational knowledge $i$. This motivates a decomposition into three independently evaluable subtasks; perfectly solving these three subtasks is equivalent to perfectly solving the discovery task.
 

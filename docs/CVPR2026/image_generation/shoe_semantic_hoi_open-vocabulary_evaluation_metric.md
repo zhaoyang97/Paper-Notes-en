@@ -29,11 +29,11 @@ This paper proposes SHOE, an evaluation framework that decomposes HOI prediction
 
 ## Background & Motivation
 
-1. **State of the Field**: Human-Object Interaction (HOI) detection is a fundamental task in visual understanding. The standard evaluation metric is mAP, which relies on exact categorical matching between predictions and ground-truth labels.
+1. **Background**: Human-Object Interaction (HOI) detection is a fundamental task in visual understanding. The standard evaluation metric is mAP, which relies on exact categorical matching between predictions and ground-truth labels.
 2. **Limitations of Prior Work**: mAP treats HOI categories as discrete labels, causing semantically similar but lexically different predictions (e.g., "lean on couch" vs. "sit on couch") to be counted as errors. Furthermore, dataset annotations are incomplete, so reasonable but unannotated predictions are penalized as false positives.
-3. **Root Cause**: As VLMs and MLLMs advance, models can generate open-vocabulary predictions beyond fixed label sets, yet existing evaluation protocols cannot fairly assess the quality of such flexible outputs.
-4. **Paper Goals**: Design a semantically aware, flexible evaluation framework that supports graded matching for open-vocabulary HOI predictions.
-5. **Starting Point**: Decompose HOI into two independent components—verb and object—and compute semantic similarity for each using the averaged scores from multiple LLMs, thereby avoiding the combinatorial explosion of full HOI-pair comparisons.
+3. **Key Challenge**: As VLMs and MLLMs advance, models can generate open-vocabulary predictions beyond fixed label sets, yet existing evaluation protocols cannot fairly assess the quality of such flexible outputs.
+4. **Goal**: Design a semantically aware, flexible evaluation framework that supports graded matching for open-vocabulary HOI predictions.
+5. **Key Insight**: Decompose HOI into two independent components—verb and object—and compute semantic similarity for each using the averaged scores from multiple LLMs, thereby avoiding the combinatorial explosion of full HOI-pair comparisons.
 6. **Core Idea**: Achieve decomposed, flexible HOI matching evaluation via WordNet sense disambiguation combined with multi-LLM semantic scoring.
 
 ## Method

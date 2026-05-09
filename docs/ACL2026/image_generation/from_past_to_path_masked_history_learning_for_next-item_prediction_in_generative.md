@@ -29,15 +29,15 @@ This paper proposes Masked History Learning (MHL), a training framework that int
 
 ## Background & Motivation
 
-**State of the Field**: Generative recommendation is an emerging paradigm that encodes items as semantic ID sequences and leverages pretrained language models (e.g., T5) or LLMs to directly generate item identifiers, offering advantages in flexibility and scalability.
+**Background**: Generative recommendation is an emerging paradigm that encodes items as semantic ID sequences and leverages pretrained language models (e.g., T5) or LLMs to directly generate item identifiers, offering advantages in flexibility and scalability.
 
 **Limitations of Prior Work**: Existing generative recommendation models (TIGER, HSTU, RPG, etc.) almost exclusively rely on autoregressive next-item prediction training. This "left-to-right" paradigm is inherently biased toward local context and fails to capture deep historical dependencies and complex user intents within behavioral paths. Models excel at local prediction but lack global understanding, making them susceptible to noise and short-term biases (short-term myopia problem).
 
-**Root Cause**: When recent interaction history is truncated, existing SOTA models experience performance collapse (e.g., after a photography enthusiast sequentially purchases camera, tripod, camera bag, and lens, the model focuses only on "lens" to predict lens accessories, ignoring that "camera body" is the true intent driving subsequent storage card purchases).
+**Key Challenge**: When recent interaction history is truncated, existing SOTA models experience performance collapse (e.g., after a photography enthusiast sequentially purchases camera, tripod, camera bag, and lens, the model focuses only on "lens" to predict lens accessories, ignoring that "camera body" is the true intent driving subsequent storage card purchases).
 
-**Paper Goals**: Enable generative recommendation models to not only learn "what's next" but also understand "why this purchase path formed."
+**Goal**: Enable generative recommendation models to not only learn "what's next" but also understand "why this purchase path formed."
 
-**Starting Point**: Drawing inspiration from masked language modeling in NLP, introduce history reconstruction as an auxiliary task during autoregressive training.
+**Key Insight**: Drawing inspiration from masked language modeling in NLP, introduce history reconstruction as an auxiliary task during autoregressive training.
 
 **Core Idea**: Jointly optimize two objectives—next-item prediction and masked history reconstruction—by using information entropy to guide the selection of the most informative historical positions for masking, and employing curriculum learning to smoothly transition from historical understanding to future prediction.
 

@@ -28,13 +28,13 @@ This work deconstructs the internal representations of LLM safety alignment from
 
 ## Background & Motivation
 
-**State of the Field**: LLMs trained with safety alignment techniques such as RLHF learn to refuse harmful requests, yet alignment does not truly erase harmful capabilities — it merely suppresses them. White-box jailbreak attacks exploit the model's internal states to bypass safety mechanisms.
+**Background**: LLMs trained with safety alignment techniques such as RLHF learn to refuse harmful requests, yet alignment does not truly erase harmful capabilities — it merely suppresses them. White-box jailbreak attacks exploit the model's internal states to bypass safety mechanisms.
 
 **Limitations of Prior Work**: Mainstream activation-level attack methods (e.g., Directional Ablation by Arditi et al.) model the safety mechanism as a single linear direction in activation space — obtained by computing the mean difference between activations of harmful and benign prompts. However, this single direction conflates two distinct neural processes.
 
-**Root Cause**: Intervening along a single direction lacks precision — it may simultaneously disrupt both the detection capability and the execution capability, resulting in incoherent outputs or incomplete safety bypass.
+**Key Challenge**: Intervening along a single direction lacks precision — it may simultaneously disrupt both the detection capability and the execution capability, resulting in incoherent outputs or incomplete safety bypass.
 
-**Starting Point**: The authors hypothesize that the safety mechanism is composed of two functionally independent directions — a **harm detection direction** (by which the model identifies whether a request is harmful) and a **refusal execution direction** (by which the model carries out the refusal response) — each requiring a distinct intervention strategy.
+**Key Insight**: The authors hypothesize that the safety mechanism is composed of two functionally independent directions — a **harm detection direction** (by which the model identifies whether a request is harmful) and a **refusal execution direction** (by which the model carries out the refusal response) — each requiring a distinct intervention strategy.
 
 **Core Idea**: These two directions are extracted via SVD combined with classifier-guided sparsification. The refusal execution direction is then suppressed via adaptive projection elimination (removing the capacity to execute refusals), while the harm detection direction is suppressed via direct steering (suppressing the perception of harm). The two steps are applied jointly to achieve precise jailbreaking.
 

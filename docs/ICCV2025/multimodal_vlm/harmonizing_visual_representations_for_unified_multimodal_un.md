@@ -29,15 +29,15 @@ This work identifies that the encoder of masked autoregressive (MAR) models inhe
 
 ## Background & Motivation
 
-**State of the Field**: Unifying image generation and understanding has become a key direction for next-generation multimodal intelligence. Existing approaches either loosely couple diffusion models with MLLMs (weak interaction), or unify visual representations through VQ discretization or VAE encoding (tight coupling).
+**Background**: Unifying image generation and understanding has become a key direction for next-generation multimodal intelligence. Existing approaches either loosely couple diffusion models with MLLMs (weak interaction), or unify visual representations through VQ discretization or VAE encoding (tight coupling).
 
 **Limitations of Prior Work**: (1) VQGAN and VAE encoders are pretrained primarily for pixel-level reconstruction and lack high-level semantics, performing significantly worse than CLIP/SigLIP encoders on understanding tasks; (2) Methods such as Janus employ separate encoders for generation and understanding — effective, but at the cost of abandoning the cross-task synergy potential of a unified representation; (3) ViLA-U attempts joint training of contrastive alignment and reconstruction on VQ tokens, but struggles to balance semantic alignment with pixel fidelity.
 
-**Root Cause**: Understanding requires coarse-grained, high-level semantics, while generation requires fine-grained pixel features — how can a single encoder satisfy both heterogeneous demands simultaneously?
+**Key Challenge**: Understanding requires coarse-grained, high-level semantics, while generation requires fine-grained pixel features — how can a single encoder satisfy both heterogeneous demands simultaneously?
 
-**Paper Goals**: To identify a visual representation that naturally accommodates both generation and understanding, and to construct a truly unified framework with a shared encoder.
+**Goal**: To identify a visual representation that naturally accommodates both generation and understanding, and to construct a truly unified framework with a shared encoder.
 
-**Starting Point**: Masked image modeling (MIM) learns rich semantics through mask-and-reconstruct pretraining; MAR extends MIM to autoregressive generation — its encoder may inherently possess dual capabilities.
+**Key Insight**: Masked image modeling (MIM) learns rich semantics through mask-and-reconstruct pretraining; MAR extends MIM to autoregressive generation — its encoder may inherently possess dual capabilities.
 
 **Core Idea**: The "learning to understand through generation" property of the MAR encoder makes it an ideal candidate for a unified encoder — understanding capability emerges as a byproduct of generative pretraining.
 

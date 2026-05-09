@@ -28,13 +28,13 @@ This paper provides a theoretical explanation for why conventional entropy regul
 
 ## Background & Motivation
 
-**State of the Field**: Policy gradient methods (PPO/GRPO/DAPO) dominate LLM-RL. In traditional RL, entropy regularization (SAC/A3C/PPO) prevents premature convergence by maintaining policy stochasticity, with notable success.
+**Background**: Policy gradient methods (PPO/GRPO/DAPO) dominate LLM-RL. In traditional RL, entropy regularization (SAC/A3C/PPO) prevents premature convergence by maintaining policy stochasticity, with notable success.
 
 **Limitations of Prior Work**: Empirical findings show that entropy regularization yields almost no gain in LLM-RL. Cui et al. observed that varying entropy coefficients has negligible impact on validation accuracy — a striking contrast to its effectiveness in robotics and game-playing RL.
 
-**Root Cause**: Although entropy regularization offers optimization advantages (improved convergence) in theory, the bias it introduces, $O(H\log\frac{|\mathcal{A}|}{|\mathcal{A}_H^*(s_0)|^{1/H}})$, grows dramatically with the action space size $|\mathcal{A}|$ and the sparsity of optimal actions. With LLM vocabularies of ~100K tokens and extremely sparse optimal tokens, this bias far exceeds any optimization gain.
+**Key Challenge**: Although entropy regularization offers optimization advantages (improved convergence) in theory, the bias it introduces, $O(H\log\frac{|\mathcal{A}|}{|\mathcal{A}_H^*(s_0)|^{1/H}})$, grows dramatically with the action space size $|\mathcal{A}|$ and the sparsity of optimal actions. With LLM vocabularies of ~100K tokens and extremely sparse optimal tokens, this bias far exceeds any optimization gain.
 
-**Starting Point**: Since entropy computed over the full vocabulary incurs prohibitively large bias, the paper proposes computing a clamped entropy over a smaller, plausible token subspace — encouraging exploration only among reasonable candidates rather than across the entire vocabulary.
+**Key Insight**: Since entropy computed over the full vocabulary incurs prohibitively large bias, the paper proposes computing a clamped entropy over a smaller, plausible token subspace — encouraging exploration only among reasonable candidates rather than across the entire vocabulary.
 
 ## Method
 

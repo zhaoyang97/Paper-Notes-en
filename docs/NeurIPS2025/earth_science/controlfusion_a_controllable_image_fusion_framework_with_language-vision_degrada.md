@@ -27,16 +27,16 @@ This paper proposes ControlFusion, a controllable infrared-visible image fusion 
 
 ## Background & Motivation
 
-**State of the Field**: Infrared-visible image fusion (IVIF) integrates thermal information and texture details, with broad applications in security, military detection, and autonomous driving. Existing methods encompass CNN/AE/GAN/Transformer/diffusion model architectures.
+**Background**: Infrared-visible image fusion (IVIF) integrates thermal information and texture details, with broad applications in security, military detection, and autonomous driving. Existing methods encompass CNN/AE/GAN/Transformer/diffusion model architectures.
 
 **Limitations of Prior Work**:
    - Degradation-robust methods rely on **simple data construction strategies**, resulting in a domain gap between synthetic and real images.
    - Existing methods handle only **single-type degradations** and cannot address compound degradations in real-world scenarios (e.g., simultaneous low-light, noise, and blur).
    - There is a lack of **degradation severity modeling**, causing sharp performance drops as degradation intensifies; personalized user requirements also cannot be accommodated.
 
-**Root Cause**: Real-world degradations vary widely in type and severity combinations, making fixed fusion networks inflexible.
+**Key Challenge**: Real-world degradations vary widely in type and severity combinations, making fixed fusion networks inflexible.
 
-**Starting Point**: Construct a physics-based degradation imaging model to reduce the synthetic-real domain gap; use language prompts for explicit modeling of degradation type and severity; and employ a visual adapter for automatic degradation awareness.
+**Key Insight**: Construct a physics-based degradation imaging model to reduce the synthetic-real domain gap; use language prompts for explicit modeling of degradation type and severity; and employ a visual adapter for automatic degradation awareness.
 
 **Core Idea**: Language prompts specify degradation type/severity + visual adapter automatically perceives degradation → dynamic modulation of feature restoration and fusion.
 

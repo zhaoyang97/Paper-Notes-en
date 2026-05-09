@@ -26,7 +26,7 @@ This paper proposes SplatTalk, a framework that leverages generalizable 3D Gauss
 
 ### Limitations of Prior Work
 
-**State of the Field**: Language-guided 3D scene understanding is critical for applications such as robotics and AR/VR. Existing approaches face three key challenges:
+**Background**: Language-guided 3D scene understanding is critical for applications such as robotics and AR/VR. Existing approaches face three key challenges:
 
 **Scarcity of 3D data**: Compared to 2D, language-annotated 3D data is extremely limited, constraining the development of 3D LMMs.
 

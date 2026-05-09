@@ -27,10 +27,10 @@ content_hash: 653bbd610798599a
 This paper proposes the Information-Estimation Metric (IEM), a novel distance function induced by the geometry of the data probability density. IEM measures the distance between signals by comparing their score vector fields at multiple noise levels. Without any supervised training, IEM achieves perceptual judgment prediction performance competitive with fully supervised methods.
 
 ## Background & Motivation
-- **State of the Field**: Distance functions are fundamental tools in science and engineering, yet no precise mathematical definition exists for the perceptual distance between natural signals such as images.
+- **Background**: Distance functions are fundamental tools in science and engineering, yet no precise mathematical definition exists for the perceptual distance between natural signals such as images.
 - **Limitations of Prior Work**: The best-performing perceptual metrics (LPIPS, DISTS) rely on human-annotated data for training, which is costly and yields limited interpretability.
-- **Root Cause**: Information-theoretic quantities (e.g., mutual information) are insensitive to the global geometry of the density, whereas estimation-theoretic quantities (e.g., denoising error) are directly tied to density geometry.
-- **Paper Goals**: The relationship between denoising error and the score function (Tweedie–Miyasawa formula) is foundational to diffusion models. This paper investigates whether this relationship can be exploited to construct a principled perceptual metric.
+- **Key Challenge**: Information-theoretic quantities (e.g., mutual information) are insensitive to the global geometry of the density, whereas estimation-theoretic quantities (e.g., denoising error) are directly tied to density geometry.
+- **Goal**: The relationship between denoising error and the score function (Tweedie–Miyasawa formula) is foundational to diffusion models. This paper investigates whether this relationship can be exploited to construct a principled perceptual metric.
 
 ## Method
 

@@ -29,15 +29,15 @@ This paper identifies that existing CLIP few-shot classification benchmarks cons
 
 ## Background & Motivation
 
-**State of the Field**: CLIP has demonstrated strong zero-shot and few-shot transfer capabilities through large-scale vision-language pretraining. A substantial body of work—CoOp, Tip-Adapter, CLIP-Adapter, TaskRes, and others—has reported significant performance gains on standard datasets such as ImageNet, Flowers102, and EuroSAT.
+**Background**: CLIP has demonstrated strong zero-shot and few-shot transfer capabilities through large-scale vision-language pretraining. A substantial body of work—CoOp, Tip-Adapter, CLIP-Adapter, TaskRes, and others—has reported significant performance gains on standard datasets such as ImageNet, Flowers102, and EuroSAT.
 
 **Limitations of Prior Work**: All of these methods are evaluated on the same standard few-shot datasets. However, a critical and overlooked issue is that CLIP has very likely encountered the images in these datasets—or their variants—during pretraining. This implies that CLIP's classification capability on these datasets is not purely derived from generalizing from few-shot examples, but is partially attributable to pretraining memorization. Such evaluation is therefore a "partially transductive" setting rather than a genuinely "inductive" one.
 
-**Root Cause**: The benchmarks purport to measure the ability to generalize inductively from a small number of labeled examples, yet the pretraining memorization of the backbone model substantially contaminates the evaluation results, rendering method comparisons unfair and failing to reflect genuine generalization to truly unseen data.
+**Key Challenge**: The benchmarks purport to measure the ability to generalize inductively from a small number of labeled examples, yet the pretraining memorization of the backbone model substantially contaminates the evaluation results, rendering method comparisons unfair and failing to reflect genuine generalization to truly unseen data.
 
-**Paper Goals**: (1) Quantify the impact of pretraining memorization on few-shot evaluation; (2) provide an evaluation framework that eliminates this bias; (3) re-evaluate existing methods under the new inductive setting and propose a stronger baseline.
+**Goal**: (1) Quantify the impact of pretraining memorization on few-shot evaluation; (2) provide an evaluation framework that eliminates this bias; (3) re-evaluate existing methods under the new inductive setting and propose a stronger baseline.
 
-**Starting Point**: The authors introduce machine unlearning to selectively cause CLIP to "forget" knowledge of target datasets without full retraining, thereby constructing a truly inductive evaluation baseline.
+**Key Insight**: The authors introduce machine unlearning to selectively cause CLIP to "forget" knowledge of target datasets without full retraining, thereby constructing a truly inductive evaluation baseline.
 
 **Core Idea**: Machine unlearning is used to simulate an environment in which CLIP has never encountered the target dataset, enabling re-evaluation of few-shot methods under this controlled condition to reveal their true generalization capability.
 

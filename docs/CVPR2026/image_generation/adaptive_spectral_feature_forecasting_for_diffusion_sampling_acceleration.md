@@ -29,16 +29,16 @@ Ours proposes Spectrum, a global spectral domain feature forecasting method base
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models (especially Diffusion Transformers) generate high-quality images/videos, but inference requires dozens to hundreds of denoiser forward passes, which is computationally expensive.  
+**Background**: Diffusion models (especially Diffusion Transformers) generate high-quality images/videos, but inference requires dozens to hundreds of denoiser forward passes, which is computationally expensive.  
 **Limitations of Prior Work**: Among existing acceleration schemes, **feature caching** avoids extra training by caching features at selected timesteps and reusing them in subsequent steps to skip expensive computations.  
 
 However, existing caching methods rely on **local approximation**:
 - **Naive reusing**: Directly copying the most recently cached features, which oversimplifies temporal dynamics.
 - **TaylorSeer**: Local forecasting based on discrete Taylor expansion, but its error grows at a rate of $((j-k)\delta_t)^{P+1}$—**the larger the step size, the larger the error**, leading to severe quality degradation at high acceleration ratios.
 
-**Root Cause**: High acceleration ratios require large skipping intervals, and the error of local predictors exacerbates precisely during large intervals. The authors identify the worst-case error of Taylor predictors through theoretical analysis and point out their fundamental limitation: the inability to capture the global long-range dynamics of the sampling trajectory.
+**Key Challenge**: High acceleration ratios require large skipping intervals, and the error of local predictors exacerbates precisely during large intervals. The authors identify the worst-case error of Taylor predictors through theoretical analysis and point out their fundamental limitation: the inability to capture the global long-range dynamics of the sampling trajectory.
 
-**Starting Point**: **Shifting from local approximation in the time domain to global modeling in the frequency domain**. Each feature channel of the denoiser output is treated as a function of time and approximated globally using Chebyshev polynomials—a set of orthogonal bases with excellent numerical properties—thereby breaking the error bottleneck of local forecasting.
+**Key Insight**: **Shifting from local approximation in the time domain to global modeling in the frequency domain**. Each feature channel of the denoiser output is treated as a function of time and approximated globally using Chebyshev polynomials—a set of orthogonal bases with excellent numerical properties—thereby breaking the error bottleneck of local forecasting.
 
 ## Method
 

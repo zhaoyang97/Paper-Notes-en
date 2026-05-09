@@ -30,15 +30,15 @@ This paper demonstrates that applying causal masking directly to spatial data (c
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are typically trained on sequential text with causal (autoregressive) masking. However, many real-world data sources possess inherent spatial structure (e.g., chessboards, molecules, images), and linearizing them into 1D sequences may discard spatial relationships.
+**Background**: LLMs are typically trained on sequential text with causal (autoregressive) masking. However, many real-world data sources possess inherent spatial structure (e.g., chessboards, molecules, images), and linearizing them into 1D sequences may discard spatial relationships.
 
 **Limitations of Prior Work**: (a) It remains unclear whether causal masking remains effective on spatial data; (b) linearization approaches (e.g., PGN move records) discard immediate spatial information; (c) bidirectional attention is theoretically better suited for spatial data but incurs higher training complexity.
 
-**Root Cause**: Causal masking inherently assumes a 1D sequential structure, whereas spatial data is 2D/3D — the central challenge is how to exploit spatial structure while retaining the causal masking training paradigm.
+**Key Challenge**: Causal masking inherently assumes a 1D sequential structure, whereas spatial data is 2D/3D — the central challenge is how to exploit spatial structure while retaining the causal masking training paradigm.
 
-**Paper Goals**: To compare spatial encoding (FEN board states) versus sequential encoding (PGN moves) under causal and bidirectional masking.
+**Goal**: To compare spatial encoding (FEN board states) versus sequential encoding (PGN moves) under causal and bidirectional masking.
 
-**Starting Point**: Chess serves as a controlled testbed — FEN encoding preserves the spatial board structure, while PGN encoding is a conventional linearized sequence. ChessBench provides 15 billion Stockfish-annotated positions.
+**Key Insight**: Chess serves as a controlled testbed — FEN encoding preserves the spatial board structure, while PGN encoding is a conventional linearized sequence. ChessBench provides 15 billion Stockfish-annotated positions.
 
 **Core Idea**: Spatial encoding (FEN) + causal masking outperforms sequential encoding (PGN) + causal masking, indicating that preserving spatial structure matters more than the choice of masking strategy.
 

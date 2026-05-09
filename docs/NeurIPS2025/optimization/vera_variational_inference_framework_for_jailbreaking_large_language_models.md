@@ -30,7 +30,7 @@ This paper formalizes black-box LLM jailbreaking as a variational inference prob
 
 ### State of the Field
 
-**State of the Field**: Existing black-box jailbreak methods rely on genetic algorithms or search procedures, requiring separate optimization for each target behavior at high computational cost.
+**Background**: Existing black-box jailbreak methods rely on genetic algorithms or search procedures, requiring separate optimization for each target behavior at high computational cost.
 
 ### Limitations of Prior Work
 
@@ -38,11 +38,11 @@ This paper formalizes black-box LLM jailbreaking as a variational inference prob
 
 ### Root Cause
 
-**Root Cause**: A single successful attack is insufficient to comprehensively assess model vulnerabilities; diverse attacks are needed to cover the full landscape of weaknesses.
+**Key Challenge**: A single successful attack is insufficient to comprehensively assess model vulnerabilities; diverse attacks are needed to cover the full landscape of weaknesses.
 
 ### Starting Point
 
-**Starting Point**: There is a lack of a principled, distribution-level framework for understanding and generating adversarial prompts.
+**Key Insight**: There is a lack of a principled, distribution-level framework for understanding and generating adversarial prompts.
 
 ## Method
 

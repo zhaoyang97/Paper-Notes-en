@@ -28,15 +28,15 @@ This paper proposes a Semantic Discrete Encoding (SDE) visual tokenizer that aug
 
 ## Background & Motivation
 
-**State of the Field**: Unified multimodal understanding and generation is a critical research direction for VLMs. Existing unified models (e.g., Chameleon, Show-o, Emu3) employ visual tokenizers such as VQGAN to convert images into discrete tokens, which are then jointly processed with text tokens via next-token prediction. However, VQGAN focuses exclusively on low-level pixel information (reconstruction loss), yielding discrete tokens that lack semantic content.
+**Background**: Unified multimodal understanding and generation is a critical research direction for VLMs. Existing unified models (e.g., Chameleon, Show-o, Emu3) employ visual tokenizers such as VQGAN to convert images into discrete tokens, which are then jointly processed with text tokens via next-token prediction. However, VQGAN focuses exclusively on low-level pixel information (reconstruction loss), yielding discrete tokens that lack semantic content.
 
 **Limitations of Prior Work**: (1) A large semantic gap exists between VQGAN tokens and language tokens, causing unified models to underperform specialist models significantly on understanding tasks. (2) Models like Chameleon require training the LLM from scratch, imposing prohibitive data and compute requirements. (3) VILA-U attempts to align semantics by jointly training contrastive and reconstruction losses, but suffers from severe loss conflicts that hinder convergence.
 
-**Root Cause**: Visual tokens must simultaneously satisfy two conflicting requirements—preserving low-level pixel information for image reconstruction/generation while carrying high-level semantic information for understanding. VQGAN addresses only the former, CLIP only the latter, and naively combining them (as in VILA-U) leads to conflicts.
+**Key Challenge**: Visual tokens must simultaneously satisfy two conflicting requirements—preserving low-level pixel information for image reconstruction/generation while carrying high-level semantic information for understanding. VQGAN addresses only the former, CLIP only the latter, and naively combining them (as in VILA-U) leads to conflicts.
 
-**Paper Goals**: Design a visual tokenizer whose discrete codes retain image reconstruction capability while encoding rich semantic information, thereby reducing the training difficulty of unified VLMs.
+**Goal**: Design a visual tokenizer whose discrete codes retain image reconstruction capability while encoding rich semantic information, thereby reducing the training difficulty of unified VLMs.
 
-**Starting Point**: Rather than relying on contrastive learning (which causes VILA-U's problems), the proposed approach extracts semantic features using a pretrained SigLIP image encoder and fuses them into the encoding process, with two decoder branches—a semantic decoder (reconstructing SigLIP features) and an image decoder (reconstructing pixels)—jointly supervising the tokenizer.
+**Key Insight**: Rather than relying on contrastive learning (which causes VILA-U's problems), the proposed approach extracts semantic features using a pretrained SigLIP image encoder and fuses them into the encoding process, with two decoder branches—a semantic decoder (reconstructing SigLIP features) and an image decoder (reconstructing pixels)—jointly supervising the tokenizer.
 
 **Core Idea**: Fuse SigLIP semantic features into the visual quantization process and train the visual tokenizer with dual branches (semantic reconstruction + image reconstruction), so that discrete codes inherently encode semantic information.
 

@@ -37,7 +37,7 @@ Large vision models (e.g., CLIP-ViT-L, VLMs) have demonstrated strong perception
 - **AD-H**: The LLM outputs high-level planning commands to a smaller model for execution, but the large model similarly cannot respond at every frame.
 - **LeapAD**: A memory bank stores large-model inference results for retrieval when needed, but memory bank management is difficult in dynamic environments and generalizes poorly.
 
-**Root Cause**: In existing dual-system methods, large-model inference results are available only at certain frames, and the system relies solely on the small model most of the time. This means that in frames where the large model is "absent," the system forfeits the performance gains the large model would otherwise provide.
+**Key Challenge**: In existing dual-system methods, large-model inference results are available only at certain frames, and the system relies solely on the small model most of the time. This means that in frames where the large model is "absent," the system forfeits the performance gains the large model would otherwise provide.
 
 **ETA's Key Insight**: Transfer the dense computation of the large model on the current frame **to preceding time steps**, and process multiple frames simultaneously via **batch inference**—so that large-model features are available at every frame. The core idea is to trade spatial complexity for temporal complexity.
 

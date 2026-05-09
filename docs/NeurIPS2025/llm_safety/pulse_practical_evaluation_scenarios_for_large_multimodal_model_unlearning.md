@@ -29,11 +29,11 @@ This paper proposes the PULSE evaluation protocol, which assesses existing unlea
 
 ## Background & Motivation
 
-- **State of the Field**: As large language models (LLMs) and LMMs become increasingly prevalent, training data may contain personal privacy information and copyright-protected content, making unlearning techniques a growing area of concern. Several unlearning methods have been proposed (e.g., GA, NPO, SIU), and evaluation benchmarks such as TOFU and MUSE exist for LLMs.
+- **Background**: As large language models (LLMs) and LMMs become increasingly prevalent, training data may contain personal privacy information and copyright-protected content, making unlearning techniques a growing area of concern. Several unlearning methods have been proposed (e.g., GA, NPO, SIU), and evaluation benchmarks such as TOFU and MUSE exist for LLMs.
 - **Limitations of Prior Work**: The LMM unlearning field lacks a practical evaluation framework. The only existing LMM unlearning benchmark, MLLMU-Bench, suffers from two critical limitations:
   1. **Only considers fine-tuning knowledge forgetting**: It evaluates only the forgetting of knowledge acquired during the most recent fine-tuning phase, without assessing forgetting of knowledge obtained during pretraining—yet in practice, information subject to deletion requests is very likely to have been learned during pretraining.
   2. **Only considers single-round unlearning**: In reality, unlearning requests arrive continuously (e.g., different users submitting data deletion requests over time), requiring multiple sequential unlearning operations on the same model.
-- **Paper Goals**: PULSE is designed specifically to address these two critical evaluation gaps.
+- **Goal**: PULSE is designed specifically to address these two critical evaluation gaps.
 
 ## Method
 

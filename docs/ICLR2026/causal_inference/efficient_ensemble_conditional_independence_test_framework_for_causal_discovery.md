@@ -29,18 +29,18 @@ This paper proposes E-CIT (Ensemble Conditional Independence Test), a framework 
 
 ## Background & Motivation
 
-**State of the Field**: Constraint-based causal discovery methods (e.g., the PC algorithm) rely on numerous conditional independence tests (CITs) to determine causal graph structure. KCIT (kernel-based CIT) is among the most popular approaches, but incurs $O(n^3)$ time complexity with respect to sample size.
+**Background**: Constraint-based causal discovery methods (e.g., the PC algorithm) rely on numerous conditional independence tests (CITs) to determine causal graph structure. KCIT (kernel-based CIT) is among the most popular approaches, but incurs $O(n^3)$ time complexity with respect to sample size.
 
 **Limitations of Prior Work**:
 - The high computational cost of individual CITs is the primary bottleneck in causal discovery, not the number of tests performed.
 - Existing acceleration methods (RCIT, FastKCIT) are tailored specifically to KCIT and do not constitute general-purpose frameworks.
 - Shah & Peters (2018) proved that no single CIT is uniformly powerful across all conditional dependence structures — making a general acceleration framework more valuable than improving any single method.
 
-**Root Cause**: Large samples are necessary to ensure test power, yet the high complexity of CITs renders large-sample computation infeasible.
+**Key Challenge**: Large samples are necessary to ensure test power, yet the high complexity of CITs renders large-sample computation infeasible.
 
-**Paper Goals**: Design a general, plug-and-play framework applicable to any CIT method to reduce computational overhead while preserving statistical power.
+**Goal**: Design a general, plug-and-play framework applicable to any CIT method to reduce computational overhead while preserving statistical power.
 
-**Starting Point**: Drawing inspiration from ensemble learning — data are partitioned into fixed-size subsets, tests are performed independently, and the resulting p-values are aggregated. The key innovation lies in the aggregation step: the closure property of stable distributions is exploited to design a p-value combination method with guaranteed consistency.
+**Key Insight**: Drawing inspiration from ensemble learning — data are partitioned into fixed-size subsets, tests are performed independently, and the resulting p-values are aggregated. The key innovation lies in the aggregation step: the closure property of stable distributions is exploited to design a p-value combination method with guaranteed consistency.
 
 **Core Idea**: Divide-and-conquer + stable distribution p-value aggregation = a linear-complexity acceleration framework for arbitrary CITs.
 

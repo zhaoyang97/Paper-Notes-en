@@ -29,15 +29,15 @@ This paper introduces ContrAR, the first benchmark for contradictory virtual con
 
 ## Background & Motivation
 
-**State of the Field**: In AR systems such as Meta Quest 3, multiple applications simultaneously render virtual content, and users rely on this virtual information for decision-making (e.g., navigation, safety inspection). Existing AR content analysis focuses primarily on rendering quality (low-level metrics such as lighting consistency and depth alignment), leaving semantic consistency analysis largely unexplored.
+**Background**: In AR systems such as Meta Quest 3, multiple applications simultaneously render virtual content, and users rely on this virtual information for decision-making (e.g., navigation, safety inspection). Existing AR content analysis focuses primarily on rendering quality (low-level metrics such as lighting consistency and depth alignment), leaving semantic consistency analysis largely unexplored.
 
 **Limitations of Prior Work**: (1) Malicious applications can inject information that is semantically contradictory to other virtual content (e.g., an arrow pointing left while text reads "turn right"), misleading users and potentially endangering safety. (2) VLMs perform well on general semantic reasoning but have not been systematically evaluated in AR mixed-reality scenarios. (3) No standardized benchmark dataset exists for measuring VLM detection capability against AR contradiction attacks.
 
-**Root Cause**: Semantic contradiction detection in AR scenes requires multimodal reasoning—recognizing both the visual and textual meaning of virtual content and inferring their logical consistency—yet existing evaluations are confined to natural images and text, leaving a significant gap with the dynamic mixed-reality environment of AR.
+**Key Challenge**: Semantic contradiction detection in AR scenes requires multimodal reasoning—recognizing both the visual and textual meaning of virtual content and inferring their logical consistency—yet existing evaluations are confined to natural images and text, leaving a significant gap with the dynamic mixed-reality environment of AR.
 
-**Paper Goals**: Formally define the threat model for contradictory virtual content attacks in AR, construct a standard benchmark dataset, and systematically evaluate the detection capability and real-time performance of mainstream VLMs.
+**Goal**: Formally define the threat model for contradictory virtual content attacks in AR, construct a standard benchmark dataset, and systematically evaluate the detection capability and real-time performance of mainstream VLMs.
 
-**Starting Point**: The paper models AR semantic contradiction detection as a multimodal reasoning task for VLMs, constructs a standardized evaluation benchmark from videos recorded on a real HMD device, and provides the first capability profile of VLMs in this domain.
+**Key Insight**: The paper models AR semantic contradiction detection as a multimodal reasoning task for VLMs, constructs a standardized evaluation benchmark from videos recorded on a real HMD device, and provides the first capability profile of VLMs in this domain.
 
 **Core Idea**: For the first time, a real AR video benchmark is used to systematically reveal the capability boundaries of VLMs in contradictory virtual content detection and to characterize the accuracy–latency trade-off.
 

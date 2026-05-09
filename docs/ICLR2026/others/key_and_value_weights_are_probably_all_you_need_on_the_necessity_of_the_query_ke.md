@@ -29,13 +29,13 @@ This paper theoretically demonstrates that the Query/Key/Value weight triplet in
 
 ### State of the Field
 
-**State of the Field**: Transformer training and deployment are resource-intensive, motivating various architectural optimizations (quantization, efficient attention, weight sharing, normalization simplification). Recent work shows that normalization layers and attention parameters can be rearranged or simplified.
+**Background**: Transformer training and deployment are resource-intensive, motivating various architectural optimizations (quantization, efficient attention, weight sharing, normalization simplification). Recent work shows that normalization layers and attention parameters can be rearranged or simplified.
 
 **Limitations of Prior Work**: It remains unclear whether the attention mechanism is over-parameterized and whether all three of the Q/K/V weights are necessary. Graef (2024) proved that both Q and O are redundant in settings without skip connections or normalization, but this does not cover practical architectures.
 
-**Root Cause**: Attention output depends on the input only through the products $XW_Q$, $XW_K$, $XW_V$ — a scaling construction can propagate a basis transformation from one layer to the next, making $W_Q = I_d$ theoretically lossless.
+**Key Challenge**: Attention output depends on the input only through the products $XW_Q$, $XW_K$, $XW_V$ — a scaling construction can propagate a basis transformation from one layer to the next, making $W_Q = I_d$ theoretically lossless.
 
-**Starting Point**: Theory-first approach → progressive proofs (single-layer / multi-layer / skip connections / weight sharing) → empirical validation on GPT.
+**Key Insight**: Theory-first approach → progressive proofs (single-layer / multi-layer / skip connections / weight sharing) → empirical validation on GPT.
 
 ## Method
 

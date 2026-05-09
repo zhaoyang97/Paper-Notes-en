@@ -29,15 +29,15 @@ This paper identifies that representations learned by Masked Image Modeling (MIM
 
 ## Background & Motivation
 
-**State of the Field**: Masked Image Modeling (MIM) has become the dominant paradigm for self-supervised visual representation learning. Methods such as MAE, BEiT, and iBOT train ViT encoders by masking portions of input image patches and requiring the model to reconstruct them, achieving strong performance on downstream tasks including classification, detection, and segmentation.
+**Background**: Masked Image Modeling (MIM) has become the dominant paradigm for self-supervised visual representation learning. Methods such as MAE, BEiT, and iBOT train ViT encoders by masking portions of input image patches and requiring the model to reconstruct them, achieving strong performance on downstream tasks including classification, detection, and segmentation.
 
 **Limitations of Prior Work**: Despite excelling after fine-tuning, MIM representations exhibit notably weaker performance than contrastive learning methods (e.g., DINO, CLIP) in direct-use settings such as zero-shot transfer and linear probing. This suggests that MIM representations contain information that is irrelevant or even harmful to downstream semantic tasks.
 
-**Root Cause**: The MIM training objective—pixel-level or token-level reconstruction—inherently compels the model to encode substantial low-level visual information (texture, color distribution, edge patterns, etc.). Although such non-semantic information facilitates reconstruction, it acts as noise during semantic understanding and degrades performance on classification and retrieval tasks at inference time.
+**Key Challenge**: The MIM training objective—pixel-level or token-level reconstruction—inherently compels the model to encode substantial low-level visual information (texture, color distribution, edge patterns, etc.). Although such non-semantic information facilitates reconstruction, it acts as noise during semantic understanding and degrades performance on classification and retrieval tasks at inference time.
 
-**Paper Goals**: (1) Quantitatively measure the amount of non-semantic information embedded in MIM representations; (2) Propose a simple and efficient method to suppress non-semantic components directly from representations without retraining.
+**Goal**: (1) Quantitatively measure the amount of non-semantic information embedded in MIM representations; (2) Propose a simple and efficient method to suppress non-semantic components directly from representations without retraining.
 
-**Starting Point**: The authors observe that applying PCA to patch-level representations of real images and synthetically constructed "non-semantic" images (e.g., random textures, color noise—images that preserve low-level statistical properties but contain no semantic content) reveals high alignment between the two sets along certain principal component directions. These shared directions encode non-semantic information.
+**Key Insight**: The authors observe that applying PCA to patch-level representations of real images and synthetically constructed "non-semantic" images (e.g., random textures, color noise—images that preserve low-level statistical properties but contain no semantic content) reveals high alignment between the two sets along certain principal component directions. These shared directions encode non-semantic information.
 
 **Core Idea**: PCA is used to identify the principal component directions of non-semantic information, and patch representations are projected onto their orthogonal complement (i.e., these directions are removed), yielding purified semantic representations—this constitutes the SOAP method.
 

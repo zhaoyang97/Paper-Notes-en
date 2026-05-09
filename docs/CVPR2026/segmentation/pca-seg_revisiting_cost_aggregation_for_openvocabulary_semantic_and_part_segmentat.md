@@ -29,11 +29,11 @@ PCA-Seg proposes a Parallel Cost Aggregation (PCA) paradigm to replace the conve
 
 ## Background & Motivation
 
-1. **State of the Field**: Open-vocabulary semantic and part segmentation (OSPS) leverages the powerful vision-language alignment of models such as CLIP to enable segmentation of arbitrary categories. Mainstream methods (e.g., CAT-Seg, DeCLIP, PartCATSeg) extract image-text alignment cues from cost volumes.
+1. **Background**: Open-vocabulary semantic and part segmentation (OSPS) leverages the powerful vision-language alignment of models such as CLIP to enable segmentation of arbitrary categories. Mainstream methods (e.g., CAT-Seg, DeCLIP, PartCATSeg) extract image-text alignment cues from cost volumes.
 2. **Limitations of Prior Work**: Existing methods adopt a serial architecture—performing spatial aggregation before categorical aggregation (or vice versa)—which causes knowledge interference between category-level semantics and spatial context. For instance, spatial aggregation may distort the semantics of a "truck" category, and subsequent categorical aggregation further amplifies the deviation, leading to misclassification.
-3. **Root Cause**: The cascaded behavior in serial architectures means that aggregating one type of information triggers a chain reaction in the other, making mutual contamination of the two knowledge streams inevitable.
-4. **Paper Goals**: Design a parallel architecture that allows the two aggregation operations to function independently, while addressing the challenge of efficiently integrating the resulting separate knowledge streams.
-5. **Starting Point**: Empirical observation shows that a naive parallel implementation (a single convolution capturing both types of information simultaneously) actually degrades performance by 0.2%, indicating that a carefully designed integration mechanism is necessary.
+3. **Key Challenge**: The cascaded behavior in serial architectures means that aggregating one type of information triggers a chain reaction in the other, making mutual contamination of the two knowledge streams inevitable.
+4. **Goal**: Design a parallel architecture that allows the two aggregation operations to function independently, while addressing the challenge of efficiently integrating the resulting separate knowledge streams.
+5. **Key Insight**: Empirical observation shows that a naive parallel implementation (a single convolution capturing both types of information simultaneously) actually degrades performance by 0.2%, indicating that a carefully designed integration mechanism is necessary.
 6. **Core Idea**: Parallel aggregation + multi-expert parser for multi-perspective fusion + orthogonal decoupling to eliminate redundancy.
 
 ## Method

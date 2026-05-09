@@ -31,15 +31,15 @@ This paper proposes MergeBarrier, a plug-and-play defense method that disrupts l
 
 ### State of the Field
 
-**State of the Field**: Model merging has become an increasingly popular technique for efficiently expanding LLM capabilities. By integrating multiple expert models, practitioners can obtain combined abilities without additional data collection or high-end GPUs.
+**Background**: Model merging has become an increasingly popular technique for efficiently expanding LLM capabilities. By integrating multiple expert models, practitioners can obtain combined abilities without additional data collection or high-end GPUs.
 
 **Limitations of Prior Work**: Model merging introduces a novel intellectual property threat — "model merging theft." Free-riders can unauthorized merge restricted open-source models into their own for commercial purposes, and existing passive methods such as watermarking and fingerprinting may not survive the merging process, making post-hoc attribution difficult.
 
-**Root Cause**: Existing approaches fail to simultaneously satisfy three critical properties: (1) actively preventing unauthorized merging (rather than detecting it after the fact); (2) compatibility with general open-source environments (no additional authorization components required); and (3) high security with negligible performance degradation. Passive methods cannot prevent merging; authorization-based methods are incompatible with open-source release; and simulator-based methods sacrifice either security or utility.
+**Key Challenge**: Existing approaches fail to simultaneously satisfy three critical properties: (1) actively preventing unauthorized merging (rather than detecting it after the fact); (2) compatibility with general open-source environments (no additional authorization components required); and (3) high security with negligible performance degradation. Passive methods cannot prevent merging; authorization-based methods are incompatible with open-source release; and simulator-based methods sacrifice either security or utility.
 
-**Paper Goals**: This work formally defines the model merging theft defense problem for the first time and designs an active defense scheme satisfying all three properties above.
+**Goal**: This work formally defines the model merging theft defense problem for the first time and designs an active defense scheme satisfying all three properties above.
 
-**Starting Point**: The approach targets the underlying mechanism of model merging — linear mode connectivity (LMC). Homologous models share a low-loss basin and can thus be smoothly interpolated and merged. Disrupting this connectivity causes the merged model to suffer significant performance degradation.
+**Key Insight**: The approach targets the underlying mechanism of model merging — linear mode connectivity (LMC). Homologous models share a low-loss basin and can thus be smoothly interpolated and merged. Disrupting this connectivity causes the merged model to suffer significant performance degradation.
 
 **Core Idea**: Protected models are moved out of the low-loss basin via mathematically equivalent weight transformations, such that linear interpolation paths between the protected model and its homologous counterparts traverse high-loss regions, rendering the merged result non-functional. Since the transformations are mathematically equivalent, the protected model's functionality remains intact when used in isolation.
 

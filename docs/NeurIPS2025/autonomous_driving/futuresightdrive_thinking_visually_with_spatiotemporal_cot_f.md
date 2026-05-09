@@ -31,7 +31,7 @@ FSDrive enables VLAs to "think visually" — first acting as a world model to ge
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: Most existing VLA-based autonomous driving models employ textual CoT (e.g., scene descriptions, coordinate strings) as intermediate reasoning steps, but this introduces critical issues:
+**Key Challenge**: **Background**: Most existing VLA-based autonomous driving models employ textual CoT (e.g., scene descriptions, coordinate strings) as intermediate reasoning steps, but this introduces critical issues:
 
 1. **Modality Gap**: Compressing continuous visual information into discrete text is lossy, discarding fine-grained spatio-temporal relationships.
 2. **Semantic Discontinuity**: Coordinates and scene relations expressed in text form a modality gap with the original visual input.

@@ -28,11 +28,11 @@ This paper proposes a semi-supervised HDR reconstruction framework that evaluate
 
 ## Background & Motivation
 
-1. **State of the Field**: Reconstructing ghost-free HDR images from multi-exposure LDR image sets is a key task in computational photography. Learning-based methods (e.g., GFHDR, SAFNet) have achieved notable progress but require paired LDR–HDR data.
+1. **Background**: Reconstructing ghost-free HDR images from multi-exposure LDR image sets is a key task in computational photography. Learning-based methods (e.g., GFHDR, SAFNet) have achieved notable progress but require paired LDR–HDR data.
 2. **Limitations of Prior Work**: High-quality HDR ground truth requires expensive professional equipment or strictly controlled scene motion, making large-scale collection difficult. Annotation-efficient methods such as FSHDR suffer from domain gaps due to synthetic LDR generation; SMAE's adaptive pseudo-label selection relies on reference image similarity and ignores saturated regions, and the teacher–student gap is insufficient.
-3. **Root Cause**: Pseudo labels inevitably contain ghosting or noise artifacts. If the student learns from these errors, **confirmation bias** arises; yet aggressively discarding pseudo labels leads to insufficient training data.
-4. **Paper Goals**: How to train high-quality HDR reconstruction models with limited HDR ground truth? How to effectively identify reliable regions within pseudo HDR labels?
-5. **Starting Point**: An uncertainty estimation branch is introduced that models predictions as Gaussian distributions and ground truth as Dirac delta functions. Per-pixel uncertainty scores are learned via KL divergence and used to filter unreliable regions at two levels of granularity.
+3. **Key Challenge**: Pseudo labels inevitably contain ghosting or noise artifacts. If the student learns from these errors, **confirmation bias** arises; yet aggressively discarding pseudo labels leads to insufficient training data.
+4. **Goal**: How to train high-quality HDR reconstruction models with limited HDR ground truth? How to effectively identify reliable regions within pseudo HDR labels?
+5. **Key Insight**: An uncertainty estimation branch is introduced that models predictions as Gaussian distributions and ground truth as Dirac delta functions. Per-pixel uncertainty scores are learned via KL divergence and used to filter unreliable regions at two levels of granularity.
 6. **Core Idea**: A learnable uncertainty map evaluates per-pixel reliability of pseudo HDR labels, enabling unreliable regions to be masked at both the patch and pixel levels.
 
 ## Method

@@ -28,13 +28,13 @@ This paper studies a novel threat in RL—behavior-targeted attacks (where an ad
 
 ## Background & Motivation
 
-**State of the Field**: Existing adversarial attack research in RL primarily focuses on reward-minimization attacks—making the victim perform as poorly as possible. Defense methods such as ATLA and SA-PPO are also designed with this threat model in mind.
+**Background**: Existing adversarial attack research in RL primarily focuses on reward-minimization attacks—making the victim perform as poorly as possible. Defense methods such as ATLA and SA-PPO are also designed with this threat model in mind.
 
 **Limitations of Prior Work**: A more dangerous attack paradigm exists—behavior-targeted attacks—where the adversary does not cause the victim to fail outright, but instead steers it toward executing specific behaviors (e.g., rerouting an autonomous vehicle to a particular store). Existing behavior-targeted attacks (PA-AD, Targeted PGD) require white-box access to the victim policy, which is impractical in realistic settings. Moreover, no defense method has been specifically designed against this attack class.
 
-**Root Cause**: How can behavior-targeted attacks be carried out without accessing the internals of the victim policy? How can a defense be designed that resists behavior-targeted attacks without excessively sacrificing original task performance?
+**Key Challenge**: How can behavior-targeted attacks be carried out without accessing the internals of the victim policy? How can a defense be designed that resists behavior-targeted attacks without excessively sacrificing original task performance?
 
-**Starting Point**: Behavior-targeted attacks are reformulated as a cumulative reward maximization problem within an MDP (Theorem 5.1), such that the victim policy is naturally embedded in the environment dynamics, eliminating the need for white-box access.
+**Key Insight**: Behavior-targeted attacks are reformulated as a cumulative reward maximization problem within an MDP (Theorem 5.1), such that the victim policy is naturally embedded in the environment dynamics, eliminating the need for white-box access.
 
 **Core Idea**: On the attack side, MDP reformulation converts white-box requirements into a black-box problem. On the defense side, temporally discounted robust training prioritizes the protection of early-step decisions.
 

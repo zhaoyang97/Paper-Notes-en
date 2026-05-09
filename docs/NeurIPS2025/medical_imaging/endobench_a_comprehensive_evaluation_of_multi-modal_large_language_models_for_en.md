@@ -35,7 +35,7 @@ This paper introduces EndoBench, the first comprehensive MLLM evaluation benchma
 
 **Real-World Clinical Requirements**: In practice, clinicians operate across multiple modalities (gastroscopy / colonoscopy / capsule endoscopy / surgical endoscopy) and require multi-level competencies ranging from anatomical recognition to surgical intervention. Existing benchmarks are insufficient to measure whether MLLMs possess such comprehensive capabilities.
 
-**Root Cause**: Despite the rapid development of MLLMs in endoscopy, the evaluation ecosystem remains fragmented and incomplete, failing to accurately reflect clinical utility.
+**Key Challenge**: Despite the rapid development of MLLMs in endoscopy, the evaluation ecosystem remains fragmented and incomplete, failing to accurately reflect clinical utility.
 
 ## Method
 

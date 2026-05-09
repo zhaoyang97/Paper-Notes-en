@@ -27,11 +27,11 @@ content_hash: 8d228be58c3b8e9e
 PoseGen achieves dual condition injection (token-level appearance + channel-level pose) via in-context LoRA finetuning, and proposes a segmented interleaved generation strategy (KV sharing + pose-aware frame interpolation) to generate high-fidelity long human videos using only 33 hours of training data.
 
 ## Background & Motivation
-1. **State of the Field**: Controllable video generation based on diffusion models has made significant progress, yet serious challenges remain in identity preservation, motion accuracy, and video duration.
+1. **Background**: Controllable video generation based on diffusion models has made significant progress, yet serious challenges remain in identity preservation, motion accuracy, and video duration.
 2. **Limitations of Prior Work**: (i) Identity drift: character appearance degrades over time; (ii) Imprecise motion: accurate motion control often introduces visual artifacts; (iii) Duration constraints: most methods are limited to short clips under 10 seconds, with long-form generation causing severe cumulative errors.
-3. **Root Cause**: Existing methods either require large-scale private datasets (>10K hours) or rely on complex architectural designs (e.g., dedicated pose encoders), making it difficult to balance efficiency, data requirements, and generation quality.
-4. **Paper Goals**: Design an efficient, low-data framework for long human video generation while maintaining identity consistency and motion accuracy.
-5. **Starting Point**: Leverage the parameter efficiency of LoRA to achieve dual condition injection with minimal architectural modification; design a long video generation strategy that requires no architectural changes.
+3. **Key Challenge**: Existing methods either require large-scale private datasets (>10K hours) or rely on complex architectural designs (e.g., dedicated pose encoders), making it difficult to balance efficiency, data requirements, and generation quality.
+4. **Goal**: Design an efficient, low-data framework for long human video generation while maintaining identity consistency and motion accuracy.
+5. **Key Insight**: Leverage the parameter efficiency of LoRA to achieve dual condition injection with minimal architectural modification; design a long video generation strategy that requires no architectural changes.
 6. **Core Idea**: A dual conditioning mechanism that injects appearance along the token dimension and pose along the channel dimension, combined with KV-sharing-based segmented interleaved generation for long video synthesis.
 
 ## Method

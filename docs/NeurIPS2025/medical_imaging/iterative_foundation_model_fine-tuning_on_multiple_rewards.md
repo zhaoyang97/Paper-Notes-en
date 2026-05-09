@@ -29,17 +29,17 @@ This paper proposes IterativeRS (Iterative Rewarded Soups), which alternates bet
 
 ## Background & Motivation
 
-**State of the Field**: RLHF fine-tuning of foundation models has become a standard pipeline, yet real-world applications typically involve multiple evaluation objectives (e.g., toxicity vs. helpfulness in text generation, or multiple molecular properties in drug design).
+**Background**: RLHF fine-tuning of foundation models has become a standard pipeline, yet real-world applications typically involve multiple evaluation objectives (e.g., toxicity vs. helpfulness in text generation, or multiple molecular properties in drug design).
 
 **Limitations of Prior Work**:
    - **MORLHF** (reward combination): Combines multiple rewards into a single scalar, failing to learn objective-specific skills and exhibiting high performance variance across objectives.
    - **Rewarded Soups** (expert merging): Trains independent experts per objective and then linearly combines them; performance degrades when expert policies diverge significantly.
 
-**Root Cause**: A fundamental tension exists between objective-specific learning (which requires policy divergence) and policy consistency (which requires policy convergence).
+**Key Challenge**: A fundamental tension exists between objective-specific learning (which requires policy divergence) and policy consistency (which requires policy convergence).
 
-**Paper Goals**: To design a flexible multi-objective fine-tuning algorithm that preserves objective-specific learning capacity while controlling divergence among expert policies.
+**Goal**: To design a flexible multi-objective fine-tuning algorithm that preserves objective-specific learning capacity while controlling divergence among expert policies.
 
-**Starting Point**: Treating independent fine-tuning and policy merging as two adjustable extremes, and smoothly interpolating between them by controlling the merging frequency $m$.
+**Key Insight**: Treating independent fine-tuning and policy merging as two adjustable extremes, and smoothly interpolating between them by controlling the merging frequency $m$.
 
 **Core Idea**: Every $m$ steps, the expert policies of all objectives are merged, and training resumes from the merged checkpoint — MORLHF ($m=1$) and Rewarded Soups ($m=T$) are two limiting special cases.
 

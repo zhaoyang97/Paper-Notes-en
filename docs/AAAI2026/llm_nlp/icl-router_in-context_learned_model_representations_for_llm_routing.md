@@ -29,7 +29,7 @@ This paper proposes ICL-Router, a two-stage training framework (query reconstruc
 
 ## Background & Motivation
 
-**State of the Field**: Different LLMs excel at different tasks (e.g., DeepSeek at reasoning, Qwen at coding). Model routing dynamically assigns queries to the most suitable model to maximize overall performance, and has become an important research direction for multi-model collaboration.
+**Background**: Different LLMs excel at different tasks (e.g., DeepSeek at reasoning, Qwen at coding). Model routing dynamically assigns queries to the most suitable model to maximize overall performance, and has become an important research direction for multi-model collaboration.
 
 **Limitations of Prior Work**:
    - **RouterDC**: Trains query and model embeddings via dual contrastive learning, but assumes a fixed model pool; adding new models requires retraining the router.
@@ -37,11 +37,11 @@ This paper proposes ICL-Router, a two-stage training framework (query reconstruc
    - **MODEL-SAT**: Describes models using manually designed "capability instructions," avoiding retraining but requiring human-crafted instructions per benchmark and relying on prior knowledge.
    - Core issue: Model representations are overly simplistic (fixed embeddings or handcrafted descriptions) and lack scalability.
 
-**Root Cause**: LLMs are released at a rapid pace, so routing methods must incorporate new models at low cost; yet accurate capability representations require large-scale evaluation—creating an efficiency–accuracy tension.
+**Key Challenge**: LLMs are released at a rapid pace, so routing methods must incorporate new models at low cost; yet accurate capability representations require large-scale evaluation—creating an efficiency–accuracy tension.
 
-**Paper Goals**: Develop a scalable routing framework that can incorporate new models without retraining the router.
+**Goal**: Develop a scalable routing framework that can incorporate new models without retraining the router.
 
-**Starting Point**: Represent model capability profiles as in-context vectors—a model's performance (correct/incorrect) across diverse queries can serve as in-context demonstrations, condensed into compact vectors for the router, rather than training dedicated embeddings per model.
+**Key Insight**: Represent model capability profiles as in-context vectors—a model's performance (correct/incorrect) across diverse queries can serve as in-context demonstrations, condensed into compact vectors for the router, rather than training dedicated embeddings per model.
 
 **Core Idea**: Two-stage training—first train a projector and router to understand vector representations of queries (via a reconstruction task to align the semantic space), then use each model's performance on a query set (query vectors + correct/incorrect labels) as in-context vectors to train the router to predict model–query compatibility. A new model only needs to be evaluated on a small query set to obtain its capability profile.
 

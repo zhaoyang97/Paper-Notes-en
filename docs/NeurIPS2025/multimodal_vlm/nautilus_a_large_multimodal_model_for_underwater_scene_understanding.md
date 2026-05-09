@@ -29,15 +29,15 @@ This paper presents Nautilus, the first large multimodal model supporting eight 
 
 ## Background & Motivation
 
-**State of the Field**: Underwater scene understanding is critical for ocean exploration, encompassing multi-granularity tasks such as object detection, counting, and image captioning. Existing underwater methods are predominantly designed for single tasks, while general-purpose LMMs perform poorly when directly applied to underwater scenes.
+**Background**: Underwater scene understanding is critical for ocean exploration, encompassing multi-granularity tasks such as object detection, counting, and image captioning. Existing underwater methods are predominantly designed for single tasks, while general-purpose LMMs perform poorly when directly applied to underwater scenes.
 
 **Limitations of Prior Work**: (1) General LMMs suffer from an aerial-to-underwater domain shift; (2) underwater light scattering and absorption cause severe image degradation; (3) large-scale multi-task instruction tuning datasets for underwater scenarios are absent.
 
-**Root Cause**: Underwater scenes require comprehensive understanding at multiple granularities (image-level, region-level, and object-level), yet both the data and effective mechanisms for handling underwater degradation are lacking.
+**Key Challenge**: Underwater scenes require comprehensive understanding at multiple granularities (image-level, region-level, and object-level), yet both the data and effective mechanisms for handling underwater degradation are lacking.
 
-**Paper Goals**: Construct NautData, an underwater instruction tuning dataset covering eight tasks, and design an LMM capable of explicitly handling underwater image degradation.
+**Goal**: Construct NautData, an underwater instruction tuning dataset covering eight tasks, and design an LMM capable of explicitly handling underwater image degradation.
 
-**Starting Point**: Leverage prior knowledge from the physical underwater imaging model to perform image enhancement in feature space rather than pixel space.
+**Key Insight**: Leverage prior knowledge from the physical underwater imaging model to perform image enhancement in feature space rather than pixel space.
 
 **Core Idea**: Quantify backscatter influence via the dark pixel prior and recover light absorption attenuation using depth information, yielding a plug-and-play visual feature enhancement module.
 

@@ -28,15 +28,15 @@ This paper proposes TPA, a framework that mathematically decomposes the generati
 
 ## Background & Motivation
 
-**State of the Field**: RAG mitigates LLM hallucinations by retrieving external knowledge, but models may still ignore or misinterpret retrieved information. Existing detection methods either rely on heuristic proxy signals (e.g., consistency checking, semantic entropy) or focus on binary conflicts between FFN and RAG context.
+**Background**: RAG mitigates LLM hallucinations by retrieving external knowledge, but models may still ignore or misinterpret retrieved information. Existing detection methods either rely on heuristic proxy signals (e.g., consistency checking, semantic entropy) or focus on binary conflicts between FFN and RAG context.
 
 **Limitations of Prior Work**: (1) Proxy-signal methods measure only the "symptoms" of hallucination (e.g., output variance, surface-level confidence) without addressing architectural root causes, and fail on confidently incorrect outputs. (2) Prior internal-analysis work (e.g., ReDeEP) considers only the binary FFN-vs-RAG conflict, neglecting the influence of other critical components such as LayerNorm and the user query.
 
-**Root Cause**: A high FFN contribution to token probability does not always indicate hallucination — it is normal for function words (e.g., "the", "of") but highly suspicious for named entities. Existing methods cannot distinguish this grammatical difference.
+**Key Challenge**: A high FFN contribution to token probability does not always indicate hallucination — it is normal for function words (e.g., "the", "of") but highly suspicious for named entities. Existing methods cannot distinguish this grammatical difference.
 
-**Paper Goals**: To establish a complete token probability attribution framework covering all additive components of the Transformer, and to capture grammatical-dimension anomalies by incorporating POS information.
+**Goal**: To establish a complete token probability attribution framework covering all additive components of the Transformer, and to capture grammatical-dimension anomalies by incorporating POS information.
 
-**Starting Point**: The additive structure of the Transformer residual stream is exploited to precisely decompose final token probabilities into incremental contributions from each component.
+**Key Insight**: The additive structure of the Transformer residual stream is exploited to precisely decompose final token probabilities into incremental contributions from each component.
 
 **Core Idea**: Token probability = Initial Embedding contribution + per-layer Attention contributions + per-layer FFN contributions + Final LayerNorm adjustment. Attention contributions are further allocated to four sources (Query / RAG / Past / Self) via attention weights, and features are formed by aggregating these attributions by POS category.
 

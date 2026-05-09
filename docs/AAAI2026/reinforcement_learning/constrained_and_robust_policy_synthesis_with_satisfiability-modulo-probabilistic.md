@@ -29,15 +29,15 @@ This paper proposes the first framework capable of efficiently computing robust 
 
 ## Background & Motivation
 
-**State of the Field**: Computing optimal reward policies for a given finite MDP is fundamental to applications in planning, controller synthesis, and verification. Standard methods such as value iteration and policy iteration can find optimal policies in polynomial time. However, practical applications impose additional requirements: policies must remain performant under perturbations of MDP parameters (robustness), and their representation or implementation cost must satisfy extra structural constraints.
+**Background**: Computing optimal reward policies for a given finite MDP is fundamental to applications in planning, controller synthesis, and verification. Standard methods such as value iteration and policy iteration can find optimal policies in polynomial time. However, practical applications impose additional requirements: policies must remain performant under perturbations of MDP parameters (robustness), and their representation or implementation cost must satisfy extra structural constraints.
 
 **Limitations of Prior Work**: (1) Robust policy synthesis must account for uncertainty sets over MDP parameters, extending a single optimization problem into a min-max problem over the entire uncertainty set, significantly increasing computational complexity. (2) Structural constraints—such as memory size limits, determinism requirements, state aggregation, or cost budgets—transform the problem from continuous optimization to combinatorial optimization. (3) Existing methods typically handle only specific types of constraints or robustness requirements, lacking a unified framework.
 
-**Root Cause**: A fundamental tension exists between flexibility and efficiency—frameworks expressive enough to handle arbitrary constraints are generally computationally inefficient, while efficient methods are typically limited to specific problem fragments.
+**Key Challenge**: A fundamental tension exists between flexibility and efficiency—frameworks expressive enough to handle arbitrary constraints are generally computationally inefficient, while efficient methods are typically limited to specific problem fragments.
 
-**Paper Goals**: To design a policy synthesis framework that simultaneously achieves flexibility (supporting arbitrary structural constraints expressible in first-order theories) and efficiency (through tight integration of SAT solving and probabilistic model checking).
+**Goal**: To design a policy synthesis framework that simultaneously achieves flexibility (supporting arbitrary structural constraints expressible in first-order theories) and efficiency (through tight integration of SAT solving and probabilistic model checking).
 
-**Starting Point**: Drawing inspiration from SMT (Satisfiability Modulo Theories), the authors decompose constrained policy synthesis into two components: a SAT solver handles the combinatorial constraint portion, while a probabilistic model checking algorithm handles MDP analysis, with the two components interacting tightly through conflict-driven learning.
+**Key Insight**: Drawing inspiration from SMT (Satisfiability Modulo Theories), the authors decompose constrained policy synthesis into two components: a SAT solver handles the combinatorial constraint portion, while a probabilistic model checking algorithm handles MDP analysis, with the two components interacting tightly through conflict-driven learning.
 
 **Core Idea**: Construct a Satisfiability-Modulo-Probabilistic-Model-Checking (SM-PMC) framework that fuses the combinatorial search capability of SAT solvers with the MDP analysis capability of probabilistic model checkers, enabling flexible and efficient constrained/robust policy synthesis.
 

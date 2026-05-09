@@ -29,13 +29,13 @@ This paper proposes QSTar, a framework that embeds query guidance throughout the
 
 ## Background & Motivation
 
-**State of the Field**: Audio-visual question answering requires joint understanding of auditory, visual, and textual information, making it substantially more challenging than purely visual QA, as acoustic cues are often more critical than visual ones in many scenarios.
+**Background**: Audio-visual question answering requires joint understanding of auditory, visual, and textual information, making it substantially more challenging than purely visual QA, as acoustic cues are often more critical than visual ones in many scenarios.
 
 **Limitations of Prior Work**: Existing AVQA methods (e.g., PSTP, APL) primarily focus on visual information processing, treating audio merely as a supplement to video analysis, leaving its unique frequency-domain characteristics underexploited.
 
-**Root Cause**: Textual question information is typically fused only at the final reasoning stage via simple multiplication, causing audio-visual representations to lack semantic specificity.
+**Key Challenge**: Textual question information is typically fused only at the final reasoning stage via simple multiplication, causing audio-visual representations to lack semantic specificity.
 
-**Starting Point**: Orchestral instruments (e.g., flute, clarinet) may produce highly subtle visual cues (minimal playing motion), yet exhibit markedly different spectral characteristics (harmonic distributions, overtone structures). Frequency-domain analysis is therefore essential for timbre discrimination.
+**Key Insight**: Orchestral instruments (e.g., flute, clarinet) may produce highly subtle visual cues (minimal playing motion), yet exhibit markedly different spectral characteristics (harmonic distributions, overtone structures). Frequency-domain analysis is therefore essential for timbre discrimination.
 
 **Core Problem**: In polyphonic scenarios where multiple instruments play simultaneously, temporal or spatial features alone are insufficient to effectively distinguish individual instrument contributions.
 

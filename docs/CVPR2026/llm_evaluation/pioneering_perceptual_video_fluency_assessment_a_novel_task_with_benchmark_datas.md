@@ -29,15 +29,15 @@ This paper formally separates Video Fluency Assessment (VFA) from conventional V
 
 ## Background & Motivation
 
-**State of the Field**: Video Quality Assessment (VQA) is the dominant paradigm for quantifying subjective video perception, with models such as Fast-VQA and DOVER being widely adopted. Existing VQA approaches jointly assess spatial quality (noise, color, etc.) and temporal quality (motion consistency, frame continuity, etc.) in a holistic manner.
+**Background**: Video Quality Assessment (VQA) is the dominant paradigm for quantifying subjective video perception, with models such as Fast-VQA and DOVER being widely adopted. Existing VQA approaches jointly assess spatial quality (noise, color, etc.) and temporal quality (motion consistency, frame continuity, etc.) in a holistic manner.
 
 **Limitations of Prior Work**: Through pilot experiments, the authors demonstrate that predictions from existing VQA models are strongly biased toward spatial quality, while their capacity to assess the temporal dimension — i.e., fluency — is severely lacking. Consequently, VQA scores fail to effectively guide temporally oriented downstream tasks such as adaptive frame-rate coding and frame interpolation.
 
-**Root Cause**: The spatial–temporal entanglement inherent in VQA models substantially dilutes the fluency signal. Although the human visual system is more sensitive to temporal distortions than to spatial ones, model outputs exhibit precisely the opposite behavior. Three fundamental factors underlie this problem: (1) the absence of an independent fluency scoring standard; (2) the lack of a large-scale fluency-annotated dataset; and (3) the absence of model architectures specifically designed for fluency assessment.
+**Key Challenge**: The spatial–temporal entanglement inherent in VQA models substantially dilutes the fluency signal. Although the human visual system is more sensitive to temporal distortions than to spatial ones, model outputs exhibit precisely the opposite behavior. Three fundamental factors underlie this problem: (1) the absence of an independent fluency scoring standard; (2) the lack of a large-scale fluency-annotated dataset; and (3) the absence of model architectures specifically designed for fluency assessment.
 
-**Paper Goals**: To formalize VFA as an independent perceptual task; to construct the first fluency scoring standard and dataset, FluVid; and to design a fluency-aware baseline model, FluNet.
+**Goal**: To formalize VFA as an independent perceptual task; to construct the first fluency scoring standard and dataset, FluVid; and to design a fluency-aware baseline model, FluNet.
 
-**Starting Point**: Drawing on visual psychophysics and cognitive science, perceptual fluency is determined by three core video components — foreground, background, and camera motion. Meanwhile, the primary bottlenecks of existing methods are insufficient input frame count and inadequate inter-frame interaction.
+**Key Insight**: Drawing on visual psychophysics and cognitive science, perceptual fluency is determined by three core video components — foreground, background, and camera motion. Meanwhile, the primary bottlenecks of existing methods are insufficient input frame count and inadequate inter-frame interaction.
 
 **Core Idea**: A channel-compression combined with temporal-dimension permutation self-attention mechanism (T-PSA) substantially expands the temporal window while keeping computation tractable, coupled with a self-supervised ranking training strategy that enables the model to perceive fluency differences.
 

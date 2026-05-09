@@ -29,15 +29,15 @@ This paper proposes Quant Experts (QE), a token-aware adaptive quantization erro
 
 ## Background & Motivation
 
-1. **State of the Field**: Post-training quantization (PTQ) is the dominant approach for compressing large-scale vision-language models, reducing computation and memory overhead by mapping weights and activations to low-bit representations. Existing methods such as SmoothQuant, AWQ, and GPTQ primarily rely on statically identifying sensitive/outlier channels and compensating quantization errors globally.
+1. **Background**: Post-training quantization (PTQ) is the dominant approach for compressing large-scale vision-language models, reducing computation and memory overhead by mapping weights and activations to low-bit representations. Existing methods such as SmoothQuant, AWQ, and GPTQ primarily rely on statically identifying sensitive/outlier channels and compensating quantization errors globally.
 
 2. **Limitations of Prior Work**: These methods assume channel importance is fixed, estimating a static set of channel scaling factors or low-rank reconstruction matrices from calibration data and applying them uniformly across all input tokens. However, in multimodal settings, the distribution of channel importance varies substantially across modalities and even across tokens within the same modality.
 
-3. **Root Cause**: The authors empirically identify two key observations: (1) the positions of important channels shift significantly across modalities and tokens — even within the same modality, semantic and contextual differences cause activation distributions to vary, leading to dynamic migration of important channels; (2) the occurrence frequency of important channels follows a highly skewed distribution — only a small fraction of channels appear stably across most tokens (token-independent), while the majority of important channels activate only for specific tokens (token-dependent).
+3. **Key Challenge**: The authors empirically identify two key observations: (1) the positions of important channels shift significantly across modalities and tokens — even within the same modality, semantic and contextual differences cause activation distributions to vary, leading to dynamic migration of important channels; (2) the occurrence frequency of important channels follows a highly skewed distribution — only a small fraction of channels appear stably across most tokens (token-independent), while the majority of important channels activate only for specific tokens (token-dependent).
 
-4. **Paper Goals**: To simultaneously compensate for globally stable channel errors and dynamically varying local channel errors during quantization.
+4. **Goal**: To simultaneously compensate for globally stable channel errors and dynamically varying local channel errors during quantization.
 
-5. **Starting Point**: Partition important channels into two groups based on occurrence frequency, and handle each with a different type of expert — shared experts for global errors and routed experts for token-dependent local errors.
+5. **Key Insight**: Partition important channels into two groups based on occurrence frequency, and handle each with a different type of expert — shared experts for global errors and routed experts for token-dependent local errors.
 
 6. **Core Idea**: Introduce the MoE paradigm into quantization error compensation, achieving token-level adaptive quantization error reconstruction through a combination of shared and routed experts.
 

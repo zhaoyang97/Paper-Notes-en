@@ -32,13 +32,13 @@ From a statistical decision theory perspective, this paper proves that Transform
 
 ### State of the Field
 
-1. **State of the Field**: ICL enables Transformers to adapt to new tasks without weight updates, yet the underlying algorithmic mechanism remains contested — whether it reduces to simple retrieval/averaging or constructs a principled learning algorithm.
+1. **Background**: ICL enables Transformers to adapt to new tasks without weight updates, yet the underlying algorithmic mechanism remains contested — whether it reduces to simple retrieval/averaging or constructs a principled learning algorithm.
 
 2. **Prior Progress**: Under synthetic settings, Transformers have been shown to recover classical algorithms such as linear regression and decision trees, but these studies focus largely on asymptotic convergence for regression problems without precisely characterizing the decision rule at each episode.
 
-3. **Root Cause**: The "ICL as gradient descent" hypothesis explains how performance improves with more demonstrations but does not guarantee statistical optimality. The core question is whether ICL performs similarity matching (kernel smoothing) or dynamically constructs a **task-adaptive statistical estimator**.
+3. **Key Challenge**: The "ICL as gradient descent" hypothesis explains how performance improves with more demonstrations but does not guarantee statistical optimality. The core question is whether ICL performs similarity matching (kernel smoothing) or dynamically constructs a **task-adaptive statistical estimator**.
 
-4. **Starting Point**: This paper adopts a statistical decision theory perspective and frames the problem as **binary hypothesis testing**, where the optimal decision rule is fully characterized by the Neyman-Pearson lemma. In this setting, recovering the log-likelihood ratio (LLR) up to a monotone transformation is equivalent to optimal prediction — providing a rare **known ground truth** for interpretability research.
+4. **Key Insight**: This paper adopts a statistical decision theory perspective and frames the problem as **binary hypothesis testing**, where the optimal decision rule is fully characterized by the Neyman-Pearson lemma. In this setting, recovering the log-likelihood ratio (LLR) up to a monotone transformation is equivalent to optimal prediction — providing a rare **known ground truth** for interpretability research.
 
 5. **Novel Design**: Two discrimination tasks requiring different geometric structures (linear vs. nonlinear) are constructed to test whether models infer and apply the correct sufficient statistic from context rather than relying on fixed heuristics.
 

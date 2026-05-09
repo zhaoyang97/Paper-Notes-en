@@ -29,15 +29,15 @@ PointTPA is a framework that generates input-customized network parameters at in
 
 ## Background & Motivation
 
-**State of the Field**: Scene-level point cloud understanding (e.g., indoor semantic segmentation) is a core task in 3D vision. With the emergence of powerful pre-trained backbones such as Point Transformer v3 (PTv3) and Sonata, the natural paradigm has become "pre-train then fine-tune." PEFT methods (e.g., LoRA, Adapter, VPT) have been transferred from NLP and 2D vision to the 3D point cloud domain, aiming to adapt pre-trained models with a minimal number of trainable parameters.
+**Background**: Scene-level point cloud understanding (e.g., indoor semantic segmentation) is a core task in 3D vision. With the emergence of powerful pre-trained backbones such as Point Transformer v3 (PTv3) and Sonata, the natural paradigm has become "pre-train then fine-tune." PEFT methods (e.g., LoRA, Adapter, VPT) have been transferred from NLP and 2D vision to the 3D point cloud domain, aiming to adapt pre-trained models with a minimal number of trainable parameters.
 
 **Limitations of Prior Work**: (1) Existing PEFT methods—including 3D-specific approaches such as DAPT, PointGST, and IDPT—rely on **static parameters** at inference time: all test samples share the same set of adaptation parameters, with no capacity for dynamic adjustment to scene-specific characteristics. (2) Scene-level point clouds are inherently challenging because geometric complexity, category distribution, and spatial layout vary enormously across scenes—some are dominated by large planar surfaces (e.g., empty conference rooms), while others contain dense, cluttered objects (e.g., disordered kitchens). (3) Static parameters exhibit suboptimal adaptability under such high inter-scene variability, since a single fixed set of parameters cannot simultaneously be optimal for both simple and complex scenes.
 
-**Root Cause**: PEFT methods seek to approximate full fine-tuning performance with a small number of parameters, yet the inherent rigidity of static parameters prevents a compact parameter set from covering the full distribution of scene variability. Resolving this tension requires making the parameters themselves a function of the input.
+**Key Challenge**: PEFT methods seek to approximate full fine-tuning performance with a small number of parameters, yet the inherent rigidity of static parameters prevents a compact parameter set from covering the full distribution of scene variability. Resolving this tension requires making the parameters themselves a function of the input.
 
-**Paper Goals**: To design a test-time parameter adaptation mechanism that dynamically adjusts network parameters according to the characteristics of each input scene while maintaining a minimal parameter overhead.
+**Goal**: To design a test-time parameter adaptation mechanism that dynamically adjusts network parameters according to the characteristics of each input scene while maintaining a minimal parameter overhead.
 
-**Starting Point**: The authors observe that scene-level point clouds can be decomposed into locally coherent patches—points within each patch share similar geometric and semantic properties. Generating customized network weights for each patch enables fine-grained adaptation at the local level while preserving parameter efficiency through weight-sharing mechanisms.
+**Key Insight**: The authors observe that scene-level point clouds can be decomposed into locally coherent patches—points within each patch share similar geometric and semantic properties. Generating customized network weights for each patch enables fine-grained adaptation at the local level while preserving parameter efficiency through weight-sharing mechanisms.
 
 **Core Idea**: A Dynamic Parameter Projector generates patch-specific network weight deltas conditioned on each input patch's features, realizing per-scene parameter adaptation at inference time.
 

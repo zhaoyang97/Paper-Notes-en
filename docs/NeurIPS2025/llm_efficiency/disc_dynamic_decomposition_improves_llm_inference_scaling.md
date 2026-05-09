@@ -28,15 +28,15 @@ DISC proposes a dynamic decomposition algorithm that automatically and recursive
 
 ## Background & Motivation
 
-**State of the Field**: Test-time compute has become the dominant paradigm for enhancing LLM reasoning. Existing methods typically decompose a problem into steps and then sample and select at each step (e.g., Best-of-N, Tree of Thoughts, MCTS).
+**Background**: Test-time compute has become the dominant paradigm for enhancing LLM reasoning. Existing methods typically decompose a problem into steps and then sample and select at each step (e.g., Best-of-N, Tree of Thoughts, MCTS).
 
 **Limitations of Prior Work**: The granularity of problem decomposition is usually **statically predefined** — either token-level (too fine, search is too slow), line/sentence-level (too coarse, may skip critical decision points), or full-sequence generation (unable to leverage intermediate step information). These static strategies cannot adaptively allocate compute: they waste computation on steps that are easy for the LLM while under-sampling at difficult steps.
 
-**Root Cause**: Coarse-grained step decomposition is fast but may miss the optimal solution; fine-grained decomposition is precise but extremely slow to search. Manually designed decomposition rules lack generality, and the critical decision points for autoregressive LLMs (e.g., pivot words like "which" or "therefore") are often not intuitively predictable by humans.
+**Key Challenge**: Coarse-grained step decomposition is fast but may miss the optimal solution; fine-grained decomposition is precise but extremely slow to search. Manually designed decomposition rules lack generality, and the critical decision points for autoregressive LLMs (e.g., pivot words like "which" or "therefore") are often not intuitively predictable by humans.
 
-**Paper Goals**: How to automatically and dynamically determine step granularity at inference time, efficiently allocating reasoning compute without requiring manual design, domain knowledge, or process reward models?
+**Goal**: How to automatically and dynamically determine step granularity at inference time, efficiently allocating reasoning compute without requiring manual design, domain knowledge, or process reward models?
 
-**Starting Point**: Exploit the LLM's own sampling statistics — if the z-score of the reward distribution when continuing from a given prefix is low (i.e., there is a higher probability of sampling a better result), the prefix is promising and should be accepted for continuation; otherwise, reduce the step granularity (shrink to a shorter prefix) for finer-grained search.
+**Key Insight**: Exploit the LLM's own sampling statistics — if the z-score of the reward distribution when continuing from a given prefix is low (i.e., there is a higher probability of sampling a better result), the prefix is promising and should be accepted for continuation; otherwise, reduce the step granularity (shrink to a shorter prefix) for finer-grained search.
 
 **Core Idea**: Use z-scores to compare sampled reward distributions across different prefixes, dynamically deciding whether to accept (take a large step forward) or reject (shrink to a smaller step), thereby achieving adaptive decomposition of reasoning steps.
 

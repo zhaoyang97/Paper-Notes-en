@@ -28,15 +28,15 @@ This paper proposes MALMAS, a memory-augmented LLM-based multi-agent system for 
 
 ## Background & Motivation
 
-**State of the Field**: Automated feature generation is a critical component of AutoML, aiming to construct high-quality features from raw tabular data. Traditional methods (e.g., DFS, OpenFE) rely on predefined operator libraries for combinatorial search, while recent LLM-based approaches (e.g., CAAFE) incorporate semantic information to guide feature transformations, albeit with remaining limitations.
+**Background**: Automated feature generation is a critical component of AutoML, aiming to construct high-quality features from raw tabular data. Traditional methods (e.g., DFS, OpenFE) rely on predefined operator libraries for combinatorial search, while recent LLM-based approaches (e.g., CAAFE) incorporate semantic information to guide feature transformations, albeit with remaining limitations.
 
 **Limitations of Prior Work**: (1) Traditional methods are constrained by fixed operator sets and cannot leverage task semantics, resulting in a narrow search space. (2) LLM-based methods, while introducing semantic signals, depend on a single generation strategy with rigid thinking patterns, leaving feature space exploration still limited. (3) More critically, existing LLM-based methods lack feedback mechanisms from downstream learning objectives—the generation process is decoupled from model performance, yielding only inefficient trial-and-error exploration.
 
-**Root Cause**: A fundamental tension exists between the high dimensionality and diversity of the feature space and the limited exploratory capacity of a single agent, compounded by the absence of a closed "generate→evaluate→optimize" loop.
+**Key Challenge**: A fundamental tension exists between the high dimensionality and diversity of the feature space and the limited exploratory capacity of a single agent, compounded by the absence of a closed "generate→evaluate→optimize" loop.
 
-**Paper Goals**: To design a multi-agent collaborative, memory-driven automated feature generation framework that (1) broadly explores the feature space through role specialization, and (2) accumulates experience and adjusts strategies across iterations via multi-tier memory.
+**Goal**: To design a multi-agent collaborative, memory-driven automated feature generation framework that (1) broadly explores the feature space through role specialization, and (2) accumulates experience and adjusts strategies across iterations via multi-tier memory.
 
-**Starting Point**: Drawing from a taxonomy of "golden features" in feature engineering practice, the paper designs specialized agents along three orthogonal dimensions (transformation complexity, data scope, and data-type dependency), and introduces a three-tier experience system comprising procedural memory (what was done), feedback memory (how effective it was), and conceptual memory (why it worked).
+**Key Insight**: Drawing from a taxonomy of "golden features" in feature engineering practice, the paper designs specialized agents along three orthogonal dimensions (transformation complexity, data scope, and data-type dependency), and introduces a three-tier experience system comprising procedural memory (what was done), feedback memory (how effective it was), and conceptual memory (why it worked).
 
 **Core Idea**: Decompose feature generation into parallel exploration by multiple specialized agents, dynamic scheduling by a Router Agent, and iterative optimization driven by three-tier memory.
 

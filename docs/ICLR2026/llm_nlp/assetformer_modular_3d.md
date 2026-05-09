@@ -28,15 +28,15 @@ This paper proposes AssetFormer, an autoregressive Transformer-based framework f
 
 ## Background & Motivation
 
-1. **State of the Field**: Existing 3D generation methods adopt representations such as voxels, point clouds, neural fields, and meshes, yet face challenges in professional game production and UGC scenarios, including insufficient quality, large file sizes, and high barriers for non-expert users.
+1. **Background**: Existing 3D generation methods adopt representations such as voxels, point clouds, neural fields, and meshes, yet face challenges in professional game production and UGC scenarios, including insufficient quality, large file sizes, and high barriers for non-expert users.
 
 2. **Limitations of Prior Work**: Traditional 3D generation methods output dense meshes that are difficult to integrate directly into game engines; publicly available training data for modular 3D assets is absent; existing mesh generation methods such as MeshGPT require complex graph encoders.
 
-3. **Root Cause**: The game industry widely adopts modular design based on CSG principles, yet automated modular asset generation remains virtually unexplored.
+3. **Key Challenge**: The game industry widely adopts modular design based on CSG principles, yet automated modular asset generation remains virtually unexplored.
 
-4. **Paper Goals**: Construct a framework capable of automatically generating modular 3D assets from text descriptions.
+4. **Goal**: Construct a framework capable of automatically generating modular 3D assets from text descriptions.
 
-5. **Starting Point**: Modular assets are inherently sequences of discrete elements—each primitive carries category, rotation, and position attributes—making them well-suited for autoregressive modeling.
+5. **Key Insight**: Modular assets are inherently sequences of discrete elements—each primitive carries category, rotation, and position attributes—making them well-suited for autoregressive modeling.
 
 6. **Core Idea**: Treat 3D modular assets as ordered token sequences, determine the optimal ordering via graph traversal, and perform next-token prediction with a decoder-only Transformer.
 

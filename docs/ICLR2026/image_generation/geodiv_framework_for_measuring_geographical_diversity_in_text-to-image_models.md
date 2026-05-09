@@ -27,10 +27,10 @@ content_hash: 0ce0264db4d9bb00
 This paper proposes GeoDiv, a framework that leverages the world knowledge embedded in LLMs and VLMs to systematically evaluate the geographical diversity of T2I models along two dimensions — the Socioeconomic Visual Index (SEVI) and the Visual Diversity Index (VDI) — revealing systematic impoverishment biases in model outputs for countries such as India and Nigeria.
 
 ## Background & Motivation
-- **State of the Field**: T2I models (e.g., Stable Diffusion, FLUX.1) are widely deployed in commercial applications, yet their generated outputs frequently lack geographical diversity and perpetuate stereotypical depictions of different regions.
+- **Background**: T2I models (e.g., Stable Diffusion, FLUX.1) are widely deployed in commercial applications, yet their generated outputs frequently lack geographical diversity and perpetuate stereotypical depictions of different regions.
 - **Limitations of Prior Work**: Existing diversity metrics either rely on annotated datasets (e.g., GeoDE) or focus solely on low-level visual similarity (e.g., Vendi-Score), failing to capture the multidimensional nature of geographical diversity in an interpretable manner.
-- **Root Cause**: Geographical diversity spans multiple dimensions — economic, environmental, and cultural — which cannot be comprehensively captured by a single metric; moreover, existing approaches have limited capacity for fine-grained bias detection at the country level.
-- **Starting Point**: Exploit the implicit world knowledge of LLMs/VLMs to design an interpretable and automated evaluation framework.
+- **Key Challenge**: Geographical diversity spans multiple dimensions — economic, environmental, and cultural — which cannot be comprehensively captured by a single metric; moreover, existing approaches have limited capacity for fine-grained bias detection at the country level.
+- **Key Insight**: Exploit the implicit world knowledge of LLMs/VLMs to design an interpretable and automated evaluation framework.
 - **Core Idea**: Decompose geographical diversity into four interpretable dimensions — Affluence and Maintenance (constituting SEVI) and Entity Appearance and Background Appearance (constituting VDI) — and quantify diversity using Hill Numbers.
 
 ## Method

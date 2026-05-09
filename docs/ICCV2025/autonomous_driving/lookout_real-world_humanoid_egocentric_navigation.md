@@ -29,15 +29,15 @@ LookOut proposes predicting future 6D head pose sequences (translation + rotatio
 
 ## Background & Motivation
 
-**State of the Field**: Egocentric navigation has attracted broad research interest in recent years, spanning vision-and-language navigation (VLN), robot social navigation, and human motion forecasting. VLN focuses on goal localization and long-horizon path planning, typically in static simulated environments; robot social navigation targets wheeled or legged robots whose action and observation spaces differ substantially from those of humanoids.
+**Background**: Egocentric navigation has attracted broad research interest in recent years, spanning vision-and-language navigation (VLN), robot social navigation, and human motion forecasting. VLN focuses on goal localization and long-horizon path planning, typically in static simulated environments; robot social navigation targets wheeled or legged robots whose action and observation spaces differ substantially from those of humanoids.
 
 **Limitations of Prior Work**: (1) **Absence of humanoid navigation methods for dynamic environments** — existing egocentric navigation works such as EgoNav and EgoCast assume static environments and cannot handle dynamic obstacles such as pedestrians and vehicles; (2) **Neglect of head rotation as a key navigational behavior** — humans look left and right before crossing streets and glance downward when descending steps; this "active information gathering" behavior is critical for safe navigation, yet existing methods predict only displacement trajectories without modeling head rotation; (3) **Lack of scalable data collection pipelines** — deploying real humanoid robots for data collection is prohibitively expensive, and traditional sensor suites are bulky and conspicuous.
 
-**Root Cause**: Safe human-like navigation requires simultaneously understanding static environment geometry, dynamic obstacle motion, and active information gathering strategies, yet existing methods typically address only one of these aspects.
+**Key Challenge**: Safe human-like navigation requires simultaneously understanding static environment geometry, dynamic obstacle motion, and active information gathering strategies, yet existing methods typically address only one of these aspects.
 
-**Paper Goals**: Three sub-problems: (1) predicting collision-free future trajectories in dynamic environments; (2) modeling head rotation to learn active information gathering behaviors; (3) designing a low-cost data collection pipeline to support large-scale training data acquisition.
+**Goal**: Three sub-problems: (1) predicting collision-free future trajectories in dynamic environments; (2) modeling head rotation to learn active information gathering behaviors; (3) designing a low-cost data collection pipeline to support large-scale training data acquisition.
 
-**Starting Point**: Project Aria glasses (lightweight, unobtrusive, easy to deploy) are used to collect real-world navigation data, and the problem is formulated as "predicting future 6D head pose sequences from egocentric video with known poses."
+**Key Insight**: Project Aria glasses (lightweight, unobtrusive, easy to deploy) are used to collect real-world navigation data, and the problem is formulated as "predicting future 6D head pose sequences from egocentric video with known poses."
 
 **Core Idea**: Backproject DINO semantic features into 3D voxel space, temporally aggregate them into a BEV representation, and jointly address dynamic obstacle avoidance and active information gathering behavior prediction.
 

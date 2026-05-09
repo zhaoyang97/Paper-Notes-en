@@ -27,15 +27,15 @@ content_hash: b0437e76abc4317c
 Proposes CaReFlow, the first work to utilize rectified flow for multimodal distribution mapping to bridge the modality gap: it enables source modality data points to observe the global distribution of the target modality through one-to-many mapping, applies different alignment intensities to modality pairs with varying correlation via adaptive relaxed alignment, and ensures no information loss after mapping through cyclic rectified flow. It achieves SOTA on multiple multimodal affective computing benchmarks even with simple concatenation fusion.
 
 ## Background & Motivation
-**State of the Field**: Multimodal Affective Computing (MAC) requires fusing visual, acoustic, and language modalities to analyze human emotional states. The core challenge lies in the vast differences in feature distributions across modalities (the modality gap), which often results in simple multimodal concatenation performing worse than unimodal language models.
+**Background**: Multimodal Affective Computing (MAC) requires fusing visual, acoustic, and language modalities to analyze human emotional states. The core challenge lies in the vast differences in feature distributions across modalities (the modality gap), which often results in simple multimodal concatenation performing worse than unimodal language models.
 
 **Limitations of Prior Work**: Existing methods for bridging the modality gap (e.g., contrastive learning, GANs, diffusion models) mostly employ one-to-one alignment—pushing each source modality data point towards a single fixed target point. This presents two issues: (a) too few paired data points per sample lead to insufficient alignment; (b) source modality data points cannot see the overall distribution of the target modality, leading to less robust alignment.
 
-**Root Cause**: One-to-one mapping limits the source modality's perception of the target modality's global distribution. If one-to-many mapping (like vanilla rectified flow) is used directly, it creates ambiguous flow directions (each source point matching multiple target points) and requires multiple recursive training rounds to learn straight trajectories.
+**Key Challenge**: One-to-one mapping limits the source modality's perception of the target modality's global distribution. If one-to-many mapping (like vanilla rectified flow) is used directly, it creates ambiguous flow directions (each source point matching multiple target points) and requires multiple recursive training rounds to learn straight trajectories.
 
-**Paper Goals**: (a) How to let the source modality perceive the global distribution of the target modality? (b) How to avoid ambiguity in one-to-many mapping? (c) How to prevent source modality information loss during the mapping process?
+**Goal**: (a) How to let the source modality perceive the global distribution of the target modality? (b) How to avoid ambiguity in one-to-many mapping? (c) How to prevent source modality information loss during the mapping process?
 
-**Starting Point**: Rectified flow naturally maps one distribution to another, and the learned trajectories are straight (simulatable with few Euler steps). The authors observe that the training process of rectified flow is inherently one-to-many—randomly sampling distribution pairs for training—which happens to expose global distribution information.
+**Key Insight**: Rectified flow naturally maps one distribution to another, and the learned trajectories are straight (simulatable with few Euler steps). The authors observe that the training process of rectified flow is inherently one-to-many—randomly sampling distribution pairs for training—which happens to expose global distribution information.
 
 **Core Idea**: Use rectified flow for modality distribution mapping, solve the ambiguity problem through adaptive relaxed alignment, and preserve source modality information via cyclic flows.
 

@@ -28,15 +28,15 @@ To address "small-magnitude point anomalies" and "slowly rising anomalies" that 
 
 ## Background & Motivation
 
-**State of the Field**: Univariate time series (UTS) anomaly detection is a core task in cloud services, IoT, and system monitoring. Mainstream methods are broadly categorized as reconstruction-based (e.g., VAE) and prediction-based (e.g., Transformer/LSTM).
+**Background**: Univariate time series (UTS) anomaly detection is a core task in cloud services, IoT, and system monitoring. Mainstream methods are broadly categorized as reconstruction-based (e.g., VAE) and prediction-based (e.g., Transformer/LSTM).
 
 **Limitations of Prior Work**: Through reproduction of state-of-the-art methods including FCVAE, KAN-AD, and TFAD, two anomaly types are found to be particularly difficult to detect: (1) *small-magnitude point anomalies*, where brief minor spikes appear normal within longer windows; and (2) *slowly rising anomalies*, where segment-level deviations gradually diverge from periodic patterns.
 
-**Root Cause**: Anomaly judgment depends on local context rather than absolute values; a change of the same magnitude may be normal or anomalous depending on context. Existing methods either focus solely on frequency components (ignoring local dependencies) or rely exclusively on temporal information (ignoring periodic evolution).
+**Key Challenge**: Anomaly judgment depends on local context rather than absolute values; a change of the same magnitude may be normal or anomalous depending on context. Existing methods either focus solely on frequency components (ignoring local dependencies) or rely exclusively on temporal information (ignoring periodic evolution).
 
-**Paper Goals**: Three challenges are addressed: (1) capturing local trends rather than absolute values; (2) modeling the dynamic evolution of periodicity rather than treating it as static; and (3) learning normal patterns from data containing anomalies and noise.
+**Goal**: Three challenges are addressed: (1) capturing local trends rather than absolute values; (2) modeling the dynamic evolution of periodicity rather than treating it as static; and (3) learning normal patterns from data containing anomalies and noise.
 
-**Starting Point**: Combining time-domain and frequency-domain representations, with a dual-branch LSTM architecture to separately handle periodic evolution and local trend variation.
+**Key Insight**: Combining time-domain and frequency-domain representations, with a dual-branch LSTM architecture to separately handle periodic evolution and local trend variation.
 
 **Core Idea**: Jointly model periodic evolution and local trends via a dual-branch LSTM operating in both the time and frequency domains, augmented by wavelet noise decomposition, to achieve precise detection of subtle anomalies.
 

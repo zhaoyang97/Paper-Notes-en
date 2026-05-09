@@ -29,15 +29,15 @@ Through large-scale experiments (15 LLMs × 8 tasks, 72K candidate solutions), t
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly embedded in evolutionary search loops as black-box optimizers—iteratively proposing candidate solutions, receiving feedback, and refining solutions across domains such as prompt optimization, scientific discovery, and combinatorial optimization.
+**Background**: LLMs are increasingly embedded in evolutionary search loops as black-box optimizers—iteratively proposing candidate solutions, receiving feedback, and refining solutions across domains such as prompt optimization, scientific discovery, and combinatorial optimization.
 
 **Limitations of Prior Work**: Despite the notable empirical gains demonstrated by LLM-guided evolutionary workflows, the mechanisms driving these improvements remain poorly understood. Even under strictly controlled optimization loops, selection rules, and evaluation functions, different LLMs exhibit markedly different optimization trajectories and final performance.
 
-**Root Cause**: Intuitively, greater novelty/diversity should facilitate exploration of a broader search space and thus yield better solutions. In practice, however, exploration in LLM-driven evolution is not blind randomness—the semantic priors of LLMs already constrain mutation directions, so the classical equation "more novelty = better exploration" no longer holds.
+**Key Challenge**: Intuitively, greater novelty/diversity should facilitate exploration of a broader search space and thus yield better solutions. In practice, however, exploration in LLM-driven evolution is not blind randomness—the semantic priors of LLMs already constrain mutation directions, so the classical equation "more novelty = better exploration" no longer holds.
 
-**Paper Goals**: To understand what makes an LLM a good optimizer—whether performance differences reflect underlying capability or more subtle exploration-exploitation dynamics that emerge during search.
+**Goal**: To understand what makes an LLM a good optimizer—whether performance differences reflect underlying capability or more subtle exploration-exploitation dynamics that emerge during search.
 
-**Starting Point**: Rather than examining only final outcomes, this work analyzes complete optimization trajectories—how search proceeds in semantic space, when breakthroughs occur, and how spatial geometry evolves over time.
+**Key Insight**: Rather than examining only final outcomes, this work analyzes complete optimization trajectories—how search proceeds in semantic space, when breakthroughs occur, and how spatial geometry evolves over time.
 
 **Core Idea**: Effective LLM optimizers are "local refiners"—their trajectories progressively concentrate in high-performance regions of semantic space, consistently producing small but steady improvements—rather than "global explorers" that achieve high novelty but drift aimlessly.
 

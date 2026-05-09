@@ -30,13 +30,13 @@ This paper proposes SceneAssistant—a VLM agentic framework driven purely by vi
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-3D scene generation methods fall into three categories: (1) data-driven methods (3D-FRONT, ATISS, etc.) constrained to specific indoor categories; (2) procedural methods (Infinigen, ProcTHOR) requiring complex scripts or templates; (3) LLM-based methods (Holodeck, SceneWeaver, LayoutVLM) that leverage LLM reasoning to generate spatial constraints and optimize layouts via solvers.
+**Background**: Text-to-3D scene generation methods fall into three categories: (1) data-driven methods (3D-FRONT, ATISS, etc.) constrained to specific indoor categories; (2) procedural methods (Infinigen, ProcTHOR) requiring complex scripts or templates; (3) LLM-based methods (Holodeck, SceneWeaver, LayoutVLM) that leverage LLM reasoning to generate spatial constraints and optimize layouts via solvers.
 
 **Limitations of Prior Work**: LLM-based methods rely on predefined spatial relation primitives (e.g., "on," "face_to," "in front of"), which are domain-specific (typically for indoor scenes). When user descriptions involve complex spatial configurations beyond predefined vocabulary, the optimization process fails or yields suboptimal layouts. Most methods are open-loop—once a layout is generated, it is not corrected based on rendered results.
 
 **Key Observation**: Modern VLMs (pretrained on internet-scale data) already possess **latent spatial perception and planning capabilities**. These capabilities can be elicited and exploited through carefully designed operation interfaces, rather than being replaced by external optimization or predefined templates.
 
-**Starting Point**: Rather than treating 3D scene generation as a constraint satisfaction problem, this work simulates the workflow of a human 3D designer—observe → reason → act → observe → iteratively refine. A comprehensive Action API keeps the VLM operating within its "optimal reasoning range," while a visual feedback closed loop provides self-correction capability.
+**Key Insight**: Rather than treating 3D scene generation as a constraint satisfaction problem, this work simulates the workflow of a human 3D designer—observe → reason → act → observe → iteratively refine. A comprehensive Action API keeps the VLM operating within its "optimal reasoning range," while a visual feedback closed loop provides self-correction capability.
 
 ## Method
 

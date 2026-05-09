@@ -27,15 +27,15 @@ This paper proposes SOSecure, a training-free inference-time safety mechanism th
 
 ## Background & Motivation
 
-**State of the Field**: LLM-based code generation tools (e.g., GitHub Copilot, ChatGPT, Cursor) have been widely deployed in real-world development workflows, substantially improving developer productivity. However, these models pose serious trustworthiness concerns in security-sensitive contexts—training data contains numerous outdated or unsafe coding patterns, causing models to repeatedly reproduce known CWE vulnerabilities.
+**Background**: LLM-based code generation tools (e.g., GitHub Copilot, ChatGPT, Cursor) have been widely deployed in real-world development workflows, substantially improving developer productivity. However, these models pose serious trustworthiness concerns in security-sensitive contexts—training data contains numerous outdated or unsafe coding patterns, causing models to repeatedly reproduce known CWE vulnerabilities.
 
 **Limitations of Prior Work**: The dominant approach to addressing code security is fine-tuning or retraining, which is costly and difficult to update frequently. Programming languages, libraries, and frameworks evolve rapidly (e.g., TensorFlow frequently deprecates unsafe APIs), and static training snapshots cannot keep pace with evolving security standards. More critically, developers tend to over-trust LLM-generated code, integrating it directly into production systems without adequate security review.
 
-**Root Cause**: LLMs possess the ability to generate syntactically correct and functionally complete code, but lack transparent security reasoning capabilities—they cannot explain why a given pattern is unsafe, nor proactively adapt to newly discovered vulnerabilities. A fundamental tension exists between the cost of retraining and the rate at which security knowledge evolves.
+**Key Challenge**: LLMs possess the ability to generate syntactically correct and functionally complete code, but lack transparent security reasoning capabilities—they cannot explain why a given pattern is unsafe, nor proactively adapt to newly discovered vulnerabilities. A fundamental tension exists between the cost of retraining and the rate at which security knowledge evolves.
 
-**Paper Goals**: (1) How can code generation safety be improved without retraining the model? (2) How can continuously evolving community security knowledge compensate for the model's static knowledge? (3) How can an interpretable, adaptable inference-time safety intervention mechanism be designed?
+**Goal**: (1) How can code generation safety be improved without retraining the model? (2) How can continuously evolving community security knowledge compensate for the model's static knowledge? (3) How can an interpretable, adaptable inference-time safety intervention mechanism be designed?
 
-**Starting Point**: The authors observe that the Stack Overflow community has accumulated rich security discussions over more than a decade—developers explain in comments why code is unsafe and suggest safer alternatives. This human-authored, explanatory knowledge represents the "why" layer of security reasoning that is absent from LLM training data.
+**Key Insight**: The authors observe that the Stack Overflow community has accumulated rich security discussions over more than a decade—developers explain in comments why code is unsafe and suggest safer alternatives. This human-authored, explanatory knowledge represents the "why" layer of security reasoning that is absent from LLM training data.
 
 **Core Idea**: Use BM25 to retrieve relevant security warnings from a Stack Overflow discussion knowledge base for generated code, and use these as inference-time context to guide the LLM to autonomously revise unsafe code.
 

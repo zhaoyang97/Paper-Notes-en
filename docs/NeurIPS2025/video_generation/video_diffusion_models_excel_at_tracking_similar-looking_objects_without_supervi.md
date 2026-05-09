@@ -29,15 +29,15 @@ This paper reveals that pretrained video diffusion models naturally learn motion
 
 ## Background & Motivation
 
-1. **State of the Field**: Video label propagation — transferring first-frame annotations to subsequent frames — is a core task in video understanding. Supervised methods (e.g., SAM2) perform well but require extensive annotations. Self-supervised methods learn frame representations for pixel-level matching.
+1. **Background**: Video label propagation — transferring first-frame annotations to subsequent frames — is a core task in video understanding. Supervised methods (e.g., SAM2) perform well but require extensive annotations. Self-supervised methods learn frame representations for pixel-level matching.
 
 2. **Limitations of Prior Work**: Existing self-supervised tracking methods over-rely on appearance features — tracking fails when multiple objects look similar (e.g., two deer, two balls of the same color). Even methods trained with temporal signals (e.g., cycle-consistency) still use 2D image encoders to process each frame independently at inference, discarding inter-frame motion information.
 
-3. **Root Cause**: Appearance features serve as a shortcut for distinguishing objects of different categories, but become an obstacle when distinguishing similar-looking objects of the same category. Motion is the only reliable discriminative cue, yet existing methods fail to exploit it effectively.
+3. **Key Challenge**: Appearance features serve as a shortcut for distinguishing objects of different categories, but become an obstacle when distinguishing similar-looking objects of the same category. Motion is the only reliable discriminative cue, yet existing methods fail to exploit it effectively.
 
-4. **Paper Goals**: Achieve robust tracking of similar-looking objects without any tracking annotations.
+4. **Goal**: Achieve robust tracking of similar-looking objects without any tracking annotations.
 
-5. **Starting Point**: Pretrained video diffusion models must implicitly model inter-frame dynamics to generate coherent videos — their internal features can be directly leveraged as motion-aware representations without any tracking-specific training.
+5. **Key Insight**: Pretrained video diffusion models must implicitly model inter-frame dynamics to generate coherent videos — their internal features can be directly leveraged as motion-aware representations without any tracking-specific training.
 
 6. **Core Idea**: Video diffusion models naturally encode motion information during high-noise denoising stages (since appearance is no longer visible), and these features can directly distinguish objects that look identical but move differently.
 

@@ -28,15 +28,15 @@ ScaleEdit is the first work to formally define the high-resolution image editing
 
 ## Background & Motivation
 
-1. **State of the Field**: Text-driven image editing methods (e.g., Step1X-Edit, ICEdit, KV-Edit, Nano Banana) have achieved impressive results at low resolutions (≤1K), but are constrained by the input resolution of pretrained models and cannot directly handle larger images.
+1. **Background**: Text-driven image editing methods (e.g., Step1X-Edit, ICEdit, KV-Edit, Nano Banana) have achieved impressive results at low resolutions (≤1K), but are constrained by the input resolution of pretrained models and cannot directly handle larger images.
 
 2. **Limitations of Prior Work**: A naive solution is to perform low-resolution editing followed by super-resolution; however, super-resolution methods cannot recover the micro-level textural details present in the source image, since the editing process is never conditioned on the high-resolution source—detail information is lost during downsampling and cannot be reconstructed from the low-resolution edited result.
 
-3. **Root Cause**: High-resolution editing requires simultaneously preserving semantic correctness and fine-grained texture fidelity, yet pretrained generative models operate at a fixed resolution (typically $512^2$), making direct high-resolution inference infeasible.
+3. **Key Challenge**: High-resolution editing requires simultaneously preserving semantic correctness and fine-grained texture fidelity, yet pretrained generative models operate at a fixed resolution (typically $512^2$), making direct high-resolution inference infeasible.
 
-4. **Paper Goals**: How can the strong priors of low-resolution editing methods be leveraged while faithfully preserving the fine-grained details present in the high-resolution source image?
+4. **Goal**: How can the strong priors of low-resolution editing methods be leveraged while faithfully preserving the fine-grained details present in the high-resolution source image?
 
-5. **Starting Point**: The key observation is that the low-resolution and high-resolution diffusion trajectories share a learnable mapping in the intermediate feature space of the diffusion process. A lightweight feature transfer function can learn this mapping and inject high-resolution details into the low-resolution editing result.
+5. **Key Insight**: The key observation is that the low-resolution and high-resolution diffusion trajectories share a learnable mapping in the intermediate feature space of the diffusion process. A lightweight feature transfer function can learn this mapping and inject high-resolution details into the low-resolution editing result.
 
 6. **Core Idea**: A learnable 1×1 convolution is used as the feature transfer function to inject fine-grained details from the high-resolution source image into the generation trajectory of the low-resolution editing result during the reverse diffusion process. Non-overlapping patch synchronization is applied to eliminate boundary artifacts.
 

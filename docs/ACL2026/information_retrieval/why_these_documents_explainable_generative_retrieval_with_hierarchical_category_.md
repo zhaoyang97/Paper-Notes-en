@@ -27,15 +27,15 @@ This paper proposes HyPE, a generative retrieval framework that first generates 
 
 ## Background & Motivation
 
-**State of the Field** Generative Retrieval (GR) responds to queries by directly decoding document identifiers (docids) via a single generative model, enabling end-to-end optimization and reducing reliance on external indexes. Existing methods have explored two major classes of docid design: semantic (numeric clustering-based indexes) and lexical (titles, keywords, substrings).
+**Background** Generative Retrieval (GR) responds to queries by directly decoding document identifiers (docids) via a single generative model, enabling end-to-end optimization and reducing reliance on external indexes. Existing methods have explored two major classes of docid design: semantic (numeric clustering-based indexes) and lexical (titles, keywords, substrings).
 
 **Limitations of Prior Work** Neither semantic nor lexical docids can answer the question "why was this document retrieved?" For instance, given the document "Dubai," different queries may focus on "Dubai economy" or "Dubai government," yet the retrieval system returns the same docid regardless, offering no explanation of how the retrieval decision corresponds to query intent.
 
-**Root Cause** Explainability is critical in retrieval—the absence of explanations undermines user trust and hinders exploratory search. However, existing explainable retrieval methods are either limited to keyword attribution (lacking sufficient semantic context) or rely on LLMs to generate natural language explanations (incurring high inference latency, unsuitable for real-time retrieval).
+**Key Challenge** Explainability is critical in retrieval—the absence of explanations undermines user trust and hinders exploratory search. However, existing explainable retrieval methods are either limited to keyword attribution (lacking sufficient semantic context) or rely on LLMs to generate natural language explanations (incurring high inference latency, unsuitable for real-time retrieval).
 
-**Paper Goals** To design an explainable generative retrieval framework that provides clear and meaningful explanations during the retrieval process without sacrificing—and ideally improving—retrieval performance.
+**Goal** To design an explainable generative retrieval framework that provides clear and meaningful explanations during the retrieval process without sacrificing—and ideally improving—retrieval performance.
 
-**Starting Point** The paper leverages structured hierarchical category paths (e.g., the Wikipedia category tree) as the explanation medium, generating coarse-to-fine semantic category paths prior to decoding docids. This both explains retrieval decisions and guides the model toward more relevant documents through a coarse-to-fine reasoning process.
+**Key Insight** The paper leverages structured hierarchical category paths (e.g., the Wikipedia category tree) as the explanation medium, generating coarse-to-fine semantic category paths prior to decoding docids. This both explains retrieval decisions and guides the model toward more relevant documents through a coarse-to-fine reasoning process.
 
 **Core Idea** Hierarchical category paths represent a "just right" form of explanation—more semantically structured than keywords, yet more compact and efficient than natural language (averaging only 13.5 tokens vs. 61 tokens for natural language), and capable of producing different explanatory paths for the same document under different queries.
 

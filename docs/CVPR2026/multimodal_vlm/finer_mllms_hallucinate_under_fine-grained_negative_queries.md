@@ -27,15 +27,15 @@ content_hash: 80f3d21d7b7a9c05
 This paper identifies that MLLMs suffer a dramatic increase in hallucination rates under fine-grained negative queries (queries involving multiple objects/attributes/relations with only one subtle error), proposes the FINER benchmark and FINER-Tuning (based on DPO), achieving up to 24.2% improvement on InternVL3.5-14B.
 
 ## Background & Motivation
-**State of the Field**: Hallucination in MLLMs has been extensively studied; existing benchmarks (POPE, DASH, AMBER) primarily focus on coarse-grained queries, such as whether a single object exists.
+**Background**: Hallucination in MLLMs has been extensively studied; existing benchmarks (POPE, DASH, AMBER) primarily focus on coarse-grained queries, such as whether a single object exists.
 
 **Limitations of Prior Work**: Queries in real-world scenarios are often fine-grained—involving multiple objects, attributes, and relations. The more fine-grained the query, the more easily the model is misled by "mostly correct" content into answering "yes."
 
-**Root Cause**: There is a strong positive correlation between query granularity and hallucination rate. InternVL3.5-14B achieves approximately 80% accuracy at granularity level 1, which drops sharply to approximately 20% at levels 5–7.
+**Key Challenge**: There is a strong positive correlation between query granularity and hallucination rate. InternVL3.5-14B achieves approximately 80% accuracy at granularity level 1, which drops sharply to approximately 20% at levels 5–7.
 
-**Paper Goals**: (a) Systematically investigate hallucination behavior under fine-grained negative queries; (b) propose a training method that effectively mitigates fine-grained hallucinations.
+**Goal**: (a) Systematically investigate hallucination behavior under fine-grained negative queries; (b) propose a training method that effectively mitigates fine-grained hallucinations.
 
-**Starting Point**: Simulating the human sentence construction process (object → attribute → relation), the paper constructs progressively fine-grained negative queries to systematically expose hallucinations.
+**Key Insight**: Simulating the human sentence construction process (object → attribute → relation), the paper constructs progressively fine-grained negative queries to systematically expose hallucinations.
 
 **Core Idea**: A scene-graph-driven approach is used to construct a fine-grained negative query benchmark, combined with DPO training to teach the model to detect subtle errors in queries.
 

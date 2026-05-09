@@ -27,15 +27,15 @@ content_hash: 21f57b17a5b55ac1
 BayesMM proposes a training-free dynamic Bayesian distribution learning framework that models textual and geometric modalities as Gaussian distributions and automatically balances modality weights via Bayesian model averaging, achieving robust test-time adaptation across multiple point cloud benchmarks with an average improvement exceeding 4%.
 
 ## Background & Motivation
-**State of the Field**: Large multimodal 3D vision-language models (e.g., ULIP-2, Uni3D) achieve strong zero-shot generalization through contrastive pre-training, yet suffer notable performance degradation under distribution shift.
+**Background**: Large multimodal 3D vision-language models (e.g., ULIP-2, Uni3D) achieve strong zero-shot generalization through contrastive pre-training, yet suffer notable performance degradation under distribution shift.
 
 **Limitations of Prior Work**:
    - Cache-based test-time adaptation (TTA) methods maintain sample caches of limited capacity, where sample replacement leads to progressive information loss;
    - Fusion of zero-shot and cached logits relies on empirically tuned hyperparameters ($\lambda$, $\gamma$), lacking theoretical grounding, resulting in unstable adaptation.
 
-**Root Cause**: How to continuously exploit statistical information from all historical samples at test time while fusing different modalities in a principled manner?
+**Key Challenge**: How to continuously exploit statistical information from all historical samples at test time while fusing different modalities in a principled manner?
 
-**Starting Point**: Model textual and geometric features of each class as Gaussian distributions, and automatically balance the contributions of both modalities within a Bayesian framework.
+**Key Insight**: Model textual and geometric features of each class as Gaussian distributions, and automatically balance the contributions of both modalities within a Bayesian framework.
 
 **Core Idea**: Replace discrete caches with distributions and replace heuristic fusion with Bayesian model averaging, enabling continuous, stable, training-free test-time adaptation.
 

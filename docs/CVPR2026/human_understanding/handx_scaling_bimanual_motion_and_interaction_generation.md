@@ -28,15 +28,15 @@ This work introduces HandX—a unified bimanual motion generation infrastructure
 
 ## Background & Motivation
 
-**State of the Field**: Whole-body human motion generation has achieved significant progress (e.g., MDM, MotionDiffuse), yet nearly all methods treat the hands as rigid end-effectors, lacking fine-grained finger joint representations. Hand-specific datasets and evaluation metrics are equally scarce—existing data either omit hand details (HumanML3D, InterAct) or are confined to object manipulation scenarios (ARCTIC, H2O), with coarse annotation granularity.
+**Background**: Whole-body human motion generation has achieved significant progress (e.g., MDM, MotionDiffuse), yet nearly all methods treat the hands as rigid end-effectors, lacking fine-grained finger joint representations. Hand-specific datasets and evaluation metrics are equally scarce—existing data either omit hand details (HumanML3D, InterAct) or are confined to object manipulation scenarios (ARCTIC, H2O), with coarse annotation granularity.
 
 **Limitations of Prior Work**: (1) Absence of high-fidelity motion data capturing fine finger dynamics and bimanual coordination; (2) heterogeneous skeleton definitions, frame rates, and annotation protocols across data sources that preclude straightforward merging; (3) prohibitive cost of large-scale manual annotation; (4) lack of evaluation metrics that measure hand motion fidelity and bimanual coordination quality.
 
-**Root Cause**: Generating realistic bimanual motion demands large volumes of high-quality data with fine-grained annotations, yet high-quality data capture is expensive, manual annotation does not scale, and no unified evaluation framework exists.
+**Key Challenge**: Generating realistic bimanual motion demands large volumes of high-quality data with fine-grained annotations, yet high-quality data capture is expensive, manual annotation does not scale, and no unified evaluation framework exists.
 
-**Paper Goals**: Establish a unified infrastructure spanning data, annotation, and evaluation to support high-quality bimanual motion generation research.
+**Goal**: Establish a unified infrastructure spanning data, annotation, and evaluation to support high-quality bimanual motion generation research.
 
-**Starting Point**: A three-pronged strategy of integration, self-capture, and automatic annotation to address the data problem, complemented by benchmarking two generation paradigms to study scaling behavior.
+**Key Insight**: A three-pronged strategy of integration, self-capture, and automatic annotation to address the data problem, complemented by benchmarking two generation paradigms to study scaling behavior.
 
 **Core Idea**: Build a large-scale bimanual motion infrastructure by (1) consolidating existing datasets, (2) collecting new motion capture data, and (3) applying a decoupled LLM-based automatic annotation strategy—while empirically validating clear scaling trends.
 

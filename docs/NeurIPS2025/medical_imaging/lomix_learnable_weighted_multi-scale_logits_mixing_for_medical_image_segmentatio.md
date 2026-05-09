@@ -28,15 +28,15 @@ LoMix introduces a Combinatorial Mutation Module (CMM) that generates "mutant" l
 
 ## Background & Motivation
 
-**State of the Field**: U-shaped segmentation networks (UNet, TransUNet, etc.) produce multiple logits outputs at different scales across decoder layers. The standard practice is to use only the last layer (LL) output or apply uniform-weight deep supervision (DS).
+**Background**: U-shaped segmentation networks (UNet, TransUNet, etc.) produce multiple logits outputs at different scales across decoder layers. The standard practice is to use only the last layer (LL) output or apply uniform-weight deep supervision (DS).
 
 **Limitations of Prior Work**: (a) Single-output strategies discard complementary information from intermediate layers; (b) uniform deep supervision weights are suboptimal across anatomical structures—small and large organs require information at different scales; (c) manual weight tuning is time-consuming and non-transferable.
 
-**Root Cause**: Multi-scale logits carry complementary information (coarse scales provide large-region context; fine scales capture precise boundaries), yet no effective mixing mechanism exists in prior work.
+**Key Challenge**: Multi-scale logits carry complementary information (coarse scales provide large-region context; fine scales capture precise boundaries), yet no effective mixing mechanism exists in prior work.
 
-**Paper Goals**: Automatically learn the optimal fusion strategy and weights for multi-scale logits.
+**Goal**: Automatically learn the optimal fusion strategy and weights for multi-scale logits.
 
-**Starting Point**: Drawing on differentiable NAS search—parameterizing all possible fusion strategies and weights into a differentiable search space for end-to-end learning.
+**Key Insight**: Drawing on differentiable NAS search—parameterizing all possible fusion strategies and weights into a differentiable search space for end-to-end learning.
 
 **Core Idea**: 4 fusion operators × all scale subset combinations = a "mutant" logits pool → Softplus learnable weights for end-to-end optimal mixing.
 

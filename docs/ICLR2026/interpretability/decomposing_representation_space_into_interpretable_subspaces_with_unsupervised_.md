@@ -27,14 +27,14 @@ content_hash: 85964beb76b994a4
 This paper proposes NDM (Neighbor Distance Minimization), an unsupervised method that discovers interpretable, non-basis-aligned subspaces in neural network representation spaces by minimizing intra-subspace neighbor distances. On GPT-2, it achieves an average Gini coefficient of 0.71 (indicating highly concentrated information); on Qwen2.5-1.5B, it identifies separated subspaces for routing parametric knowledge versus in-context knowledge.
 
 ## Background & Motivation
-**State of the Field**: Mechanistic interpretability research aims to understand the internal mechanisms of neural networks. The basic units of analysis include: component-level (attention heads/MLPs), sparse feature-level (SAE), and subspace-level (DAS). Each has limitations: information transmitted between components is difficult to interpret; SAE produces input-dependent circuits; DAS requires manually specified causal models.
+**Background**: Mechanistic interpretability research aims to understand the internal mechanisms of neural networks. The basic units of analysis include: component-level (attention heads/MLPs), sparse feature-level (SAE), and subspace-level (DAS). Each has limitations: information transmitted between components is difficult to interpret; SAE produces input-dependent circuits; DAS requires manually specified causal models.
 
 **Limitations of Prior Work**:
 - **SAE's single-dimensional perspective**: assumes concepts align to individual basis vectors (1D features), yet concepts such as "knowledge type" or "syntactic role" may be distributed across multi-dimensional subspaces (Multi-Dimensional Superposition Hypothesis).
 - **DAS requires supervision**: requires human-designed abstract causal models to search for subspaces, making it fundamentally hypothesis verification rather than structure discovery.
 - No unsupervised method exists to automatically discover "natural" partitions of representation space.
 
-**Root Cause**: If mutually exclusive feature groups are compressed into orthogonal subspaces (superposition within groups, orthogonality between groups), how can these subspaces be identified without knowledge of the true features?
+**Key Challenge**: If mutually exclusive feature groups are compressed into orthogonal subspaces (superposition within groups, orthogonality between groups), how can these subspaces be identified without knowledge of the true features?
 
 **Core Idea**: Mutually exclusive feature groups produce "sparse" projections within their subspace (data points concentrate along a few directions) → small neighbor distances. Incorrect partitions mix features from different groups → data points spread across the entire subspace → large neighbor distances. Therefore, minimizing intra-subspace neighbor distances = finding the correct partition.
 

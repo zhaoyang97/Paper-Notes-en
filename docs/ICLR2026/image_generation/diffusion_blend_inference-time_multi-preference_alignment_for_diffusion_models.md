@@ -28,15 +28,15 @@ This paper proposes Diffusion Blend, which achieves multi-preference alignment a
 
 ## Background & Motivation
 
-**State of the Field**: RL fine-tuning of diffusion models typically fixes a single reward function and KL regularization weight $\alpha$. Once fine-tuned, the model is locked to a specific $(r, \alpha)$ configuration and cannot adapt to varying user preferences.
+**Background**: RL fine-tuning of diffusion models typically fixes a single reward function and KL regularization weight $\alpha$. Once fine-tuned, the model is locked to a specific $(r, \alpha)$ configuration and cannot adapt to varying user preferences.
 
 **Limitations of Prior Work**: (a) Users may require different trade-offs among aesthetics, semantic consistency, and human preference, necessitating a separate fine-tuned model for each preference combination—at prohibitive cost; (b) KL regularization that is too weak leads to reward hacking, while too strong regularization yields insufficient alignment, and the optimal value requires grid search; (c) Rewarded Soup (linear interpolation in weight space) is too coarse, and guidance-based methods require differentiable rewards and incur large computational cost.
 
-**Root Cause**: Deployment-time flexibility in preferences versus the rigidity of fine-tuning. How can arbitrary preference combinations be accommodated at inference time without retraining?
+**Key Challenge**: Deployment-time flexibility in preferences versus the rigidity of fine-tuning. How can arbitrary preference combinations be accommodated at inference time without retraining?
 
-**Paper Goals**: Given $m$ models each fine-tuned on a distinct base reward, generate images aligned to $r(w) = \sum w_i r_i$ at inference time according to user-specified weights $w$, while supporting dynamic adjustment of KL regularization strength.
+**Goal**: Given $m$ models each fine-tuned on a distinct base reward, generate images aligned to $r(w) = \sum w_i r_i$ at inference time according to user-specified weights $w$, while supporting dynamic adjustment of KL regularization strength.
 
-**Starting Point**: Starting from the backward SDE perspective of diffusion models, the paper proves that the drift term $f^{(r,\alpha)}$ of an aligned model can be decomposed into a pretrained drift plus a control term. By approximating the control term via a Jensen gap linearization, the backward SDE admits a linear blending scheme.
+**Key Insight**: Starting from the backward SDE perspective of diffusion models, the paper proves that the drift term $f^{(r,\alpha)}$ of an aligned model can be decomposed into a pretrained drift plus a control term. By approximating the control term via a Jensen gap linearization, the backward SDE admits a linear blending scheme.
 
 **Core Idea**: The backward SDE drift of a reward-aligned diffusion model can be linearly combined to approximate the alignment effect of any linear combination of rewards.
 

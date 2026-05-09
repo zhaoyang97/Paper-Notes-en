@@ -29,15 +29,15 @@ This paper investigates the relationship between discourse-level salient entitie
 
 ## Background & Motivation
 
-**State of the Field**: The Uniform Information Density (UID) hypothesis posits that speakers tend to distribute information evenly across discourse, keeping surprisal approximately constant. However, multiple studies have identified systematic deviations—phonological constraints (high surprisal at word onsets), syntactic constraints, and discourse-structural constraints produce local non-uniformities through "competing pressures."
+**Background**: The Uniform Information Density (UID) hypothesis posits that speakers tend to distribute information evenly across discourse, keeping surprisal approximately constant. However, multiple studies have identified systematic deviations—phonological constraints (high surprisal at word onsets), syntactic constraints, and discourse-structural constraints produce local non-uniformities through "competing pressures."
 
 **Limitations of Prior Work**: (1) Prior UID research has largely overlooked the relative salience of discourse participants—i.e., which entities are the "protagonists" of a text. (2) Existing findings on whether salient entities are more or less predictable are contradictory. (3) Multiple factors (grammatical role, recency, referential form, etc.) affect entity predictability, making it difficult to isolate salience effects in naturalistic contexts.
 
-**Root Cause**: On one hand, salient entities are more predictable due to repeated mention; on the other hand, as primary information carriers they may convey higher information content. How do these two effects interact at the discourse level?
+**Key Challenge**: On one hand, salient entities are more predictable due to repeated mention; on the other hand, as primary information carriers they may convey higher information content. How do these two effects interact at the discourse level?
 
-**Paper Goals**: To systematically investigate, for the first time, the relationship between global entity salience and surprisal—distinguishing between the surprisal of entities themselves and the influence of entities on the surprisal of surrounding content.
+**Goal**: To systematically investigate, for the first time, the relationship between global entity salience and surprisal—distinguishing between the surprisal of entities themselves and the influence of entities on the surprisal of surrounding content.
 
-**Starting Point**: The study leverages the manual annotations of the GUM-SAGE dataset (salience scores based on summary agreement) and the typological diversity of 16 genres, combined with a minimal-pair prompting method to control for confounds.
+**Key Insight**: The study leverages the manual annotations of the GUM-SAGE dataset (salience scores based on summary agreement) and the typological diversity of 16 genres, combined with a minimal-pair prompting method to control for confounds.
 
 **Core Idea**: Globally salient entities function as "anchor points"—they carry more information themselves (high surprisal), but substantially reduce uncertainty in subsequent content by establishing topic expectations, creating local surprisal "valleys."
 

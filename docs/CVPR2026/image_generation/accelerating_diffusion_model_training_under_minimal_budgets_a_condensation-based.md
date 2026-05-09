@@ -29,15 +29,15 @@ This paper proposes D2C (Diffusion Dataset Condensation)—the first dataset con
 
 ## Background & Motivation
 
-**State of the Field**: Current diffusion models (DiT, SiT, etc.) typically require millions of images and millions of training iterations; for instance, SiT-XL/2 on ImageNet needs 7M steps, and REPA still requires 4M steps, consuming hundreds of GPU·hours.
+**Background**: Current diffusion models (DiT, SiT, etc.) typically require millions of images and millions of training iterations; for instance, SiT-XL/2 on ImageNet needs 7M steps, and REPA still requires 4M steps, consuming hundreds of GPU·hours.
 
 **Limitations of Prior Work**: Existing dataset distillation/condensation methods (e.g., SRe2L, RDED, Herding, K-Center) are almost exclusively designed for discriminative tasks such as classification, and perform extremely poorly when directly transferred to diffusion model training (RDED yields FID of 166.2 on DiT-L/2).
 
-**Root Cause**: Pixel-level distillation methods synthesize images biased toward category-discriminative features while lacking preservation of distributional diversity and semantic structure, leading to generation quality collapse and unstable convergence. Discriminative features ≠ generative features.
+**Key Challenge**: Pixel-level distillation methods synthesize images biased toward category-discriminative features while lacking preservation of distributional diversity and semantic structure, leading to generation quality collapse and unstable convergence. Discriminative features ≠ generative features.
 
-**Paper Goals**: Systematically construct a compact, information-rich data subset tailored for diffusion model training from the data perspective, a direction that has been largely unexplored.
+**Goal**: Systematically construct a compact, information-rich data subset tailored for diffusion model training from the data perspective, a direction that has been largely unexplored.
 
-**Starting Point**: Simple pruning strategies (random sampling, geometric methods like K-Center/Herding) cannot perform difficulty-aware selection suited to diffusion denoising characteristics.
+**Key Insight**: Simple pruning strategies (random sampling, geometric methods like K-Center/Herding) cannot perform difficulty-aware selection suited to diffusion denoising characteristics.
 
 **Core Idea**: A two-stage pipeline—**Select** (difficulty-aware interval sampling) + **Attach** (dual semantic and visual information injection)—to build a compact yet maximally informative training subset for diffusion models.
 

@@ -28,18 +28,18 @@ Two training-free post-processing projection methods are proposed—nonlinear LB
 
 ## Background & Motivation
 
-**State of the Field**: Neural PDE solvers (e.g., FNO, DeepONet) can rapidly predict PDE solutions, yet their outputs frequently violate the physical constraints of the governing equations—even when performing well on standard metrics, the predicted solutions may fail to satisfy fundamental physical laws such as mass conservation, momentum conservation, and incompressibility.
+**Background**: Neural PDE solvers (e.g., FNO, DeepONet) can rapidly predict PDE solutions, yet their outputs frequently violate the physical constraints of the governing equations—even when performing well on standard metrics, the predicted solutions may fail to satisfy fundamental physical laws such as mass conservation, momentum conservation, and incompressibility.
 
 **Limitations of Prior Work**:
    - **Physics-Informed methods** (e.g., PINN/PINO): Incorporate PDE residual penalty terms into the loss function, which complicates training, leads to unstable convergence, and provides no precise control over the degree of constraint satisfaction.
    - **Architecture enforcement methods**: Guarantee certain constraints (e.g., zero divergence) through network design, but at the cost of reduced model expressiveness and requiring custom architectures for each constraint type.
    - **Auxiliary network methods**: Introduce additional networks to learn constraints, increasing training overhead and hyperparameter tuning burden.
 
-**Root Cause**: Constraints arising from dynamical PDEs are inherently nonlinear and induce long-range temporal dependencies—constraint violations at one time step propagate along the entire trajectory through time evolution. Existing methods either handle only simple linear constraints (e.g., divergence-free) or cannot guarantee strict satisfaction.
+**Key Challenge**: Constraints arising from dynamical PDEs are inherently nonlinear and induce long-range temporal dependencies—constraint violations at one time step propagate along the entire trajectory through time evolution. Existing methods either handle only simple linear constraints (e.g., divergence-free) or cannot guarantee strict satisfaction.
 
-**Paper Goals**: After a neural solver has been trained, how can its outputs be post-hoc projected onto the feasible manifold satisfying nonlinear dynamical PDE constraints, without any network retraining.
+**Goal**: After a neural solver has been trained, how can its outputs be post-hoc projected onto the feasible manifold satisfying nonlinear dynamical PDE constraints, without any network retraining.
 
-**Starting Point**: The constraint enforcement problem is reformulated as a numerical optimization problem—the neural network prediction serves as an initial guess, and a classical optimization algorithm (LBFGS) or linearized projection is used to find the solution closest to the prediction that satisfies the PDE constraints.
+**Key Insight**: The constraint enforcement problem is reformulated as a numerical optimization problem—the neural network prediction serves as an initial guess, and a classical optimization algorithm (LBFGS) or linearized projection is used to find the solution closest to the prediction that satisfies the PDE constraints.
 
 **Core Idea**: Rather than approximately satisfying physical constraints during training, numerically project predictions onto the constraint manifold after inference via optimization.
 

@@ -27,18 +27,18 @@ content_hash: 3795b2b8504dddcb
 This paper proposes PanoVGGT, a permutation-equivariant Transformer framework that jointly predicts camera poses, depth maps, and globally consistent 3D point clouds from one or more unordered panoramic images in a single feed-forward pass. The paper also contributes PanoCity — a large-scale dataset comprising over 120,000 outdoor panoramic images.
 
 ## Background & Motivation
-**State of the Field**: Feed-forward 3D reconstruction models such as DUSt3R, VGGT, and $\pi^3$ have achieved remarkable success on perspective images, jointly inferring depth, pose, and 3D structure in a single forward pass.
+**Background**: Feed-forward 3D reconstruction models such as DUSt3R, VGGT, and $\pi^3$ have achieved remarkable success on perspective images, jointly inferring depth, pose, and 3D structure in a single forward pass.
 
 **Limitations of Prior Work**:
    - These models are fundamentally built on the pinhole projection assumption; applying them directly to equirectangular panoramic images introduces seam artifacts, inconsistent parallax, and geometric drift.
    - Decomposing panoramas into multiple perspective crops and stitching the results introduces additional artifacts.
    - Existing panoramic datasets suffer from insufficient scale, incomplete annotations, and inadequate viewpoint overlap.
 
-**Root Cause**: Panoramic images exhibit non-pinhole distortion and spherical geometry, rendering the position encodings, data augmentation strategies, and geometric reasoning of existing feed-forward models inapplicable.
+**Key Challenge**: Panoramic images exhibit non-pinhole distortion and spherical geometry, rendering the position encodings, data augmentation strategies, and geometric reasoning of existing feed-forward models inapplicable.
 
-**Paper Goals**: (a) Extend the feed-forward 3D reconstruction paradigm to the panoramic image domain; (b) construct a sufficiently large panoramic dataset to support training.
+**Goal**: (a) Extend the feed-forward 3D reconstruction paradigm to the panoramic image domain; (b) construct a sufficiently large panoramic dataset to support training.
 
-**Starting Point**: Enable the Transformer to perform effective geometric reasoning in the spherical domain through spherical-aware position encoding and $SO(3)$ rotation augmentation.
+**Key Insight**: Enable the Transformer to perform effective geometric reasoning in the spherical domain through spherical-aware position encoding and $SO(3)$ rotation augmentation.
 
 **Core Idea**: Extend the feed-forward reconstruction paradigm of VGGT/$\pi^3$ to panoramic imagery via spherical position encoding, three-axis rotation augmentation, and a stochastic anchoring strategy.
 

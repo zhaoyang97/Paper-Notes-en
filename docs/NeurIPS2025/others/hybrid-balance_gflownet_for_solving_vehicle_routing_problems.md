@@ -30,7 +30,7 @@ This paper proposes the Hybrid-Balance GFlowNet (HBG) framework, which for the f
 
 ### State of the Field
 
-**State of the Field**: The Vehicle Routing Problem (VRP) is a core optimization problem in logistics and transportation. Traditional heuristic methods rely on hand-crafted rules and exhibit limited adaptability.
+**Background**: The Vehicle Routing Problem (VRP) is a core optimization problem in logistics and transportation. Traditional heuristic methods rely on hand-crafted rules and exhibit limited adaptability.
 
 ### Limitations of Prior Work
 
@@ -38,11 +38,11 @@ This paper proposes the Hybrid-Balance GFlowNet (HBG) framework, which for the f
 
 ### Root Cause
 
-**Root Cause**: Existing GFlowNet-based VRP solvers (AGFN, GFACS) rely solely on Trajectory Balance (TB) for global optimization, neglecting local optimization signals.
+**Key Challenge**: Existing GFlowNet-based VRP solvers (AGFN, GFACS) rely solely on Trajectory Balance (TB) for global optimization, neglecting local optimization signals.
 
 ### Starting Point
 
-**Starting Point**: TB's limitation: when an entire route has high cost, even high-quality local transitions (e.g., W→X→Y) receive weak training signals due to poor global reward.
+**Key Insight**: TB's limitation: when an entire route has high cost, even high-quality local transitions (e.g., W→X→Y) receive weak training signals due to poor global reward.
 
 ### Supplementary Note
 

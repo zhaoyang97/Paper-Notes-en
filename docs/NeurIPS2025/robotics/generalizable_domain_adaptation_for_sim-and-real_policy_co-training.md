@@ -27,13 +27,13 @@ content_hash: d86f0a6dd852c7c9
 This paper proposes a sim-and-real policy co-training framework based on Unbalanced Optimal Transport (UOT), which aligns the joint observation-action distribution (rather than only the marginal observation distribution), and incorporates a temporally aligned sampling strategy to handle data imbalance, achieving a 30% improvement in OOD generalization on robotic manipulation tasks.
 
 ## Background & Motivation
-**State of the Field**: Behavior cloning (BC) requires large amounts of costly real-world demonstrations, while simulators can generate data at low cost but suffer from visual/sensor gaps between simulation and reality.
+**Background**: Behavior cloning (BC) requires large amounts of costly real-world demonstrations, while simulators can generate data at low cost but suffer from visual/sensor gaps between simulation and reality.
 
 **Limitations of Prior Work**: Naively mixing sim and real data for co-training lacks explicit feature-space constraints, leading to severe performance degradation in OOD scenarios; marginal distribution alignment methods such as MMD are too coarse and disrupt task-relevant feature structure.
 
-**Root Cause**: Simulated data is abundant but distribution-mismatched, real data is scarce but distribution-accurate, and the two sources are severely imbalanced in quantity ($N_{sim} \gg N_{real}$).
+**Key Challenge**: Simulated data is abundant but distribution-mismatched, real data is scarce but distribution-accurate, and the two sources are severely imbalanced in quantity ($N_{sim} \gg N_{real}$).
 
-**Starting Point**: Align the joint observation-action distribution via optimal transport rather than aligning observations alone, thereby preserving action-relevant feature structure.
+**Key Insight**: Align the joint observation-action distribution via optimal transport rather than aligning observations alone, thereby preserving action-relevant feature structure.
 
 **Core Idea**: Apply unbalanced OT to handle partial overlap and data imbalance between sim and real joint distributions, augmented with DTW-based temporal alignment sampling to improve mini-batch quality.
 

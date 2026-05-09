@@ -29,15 +29,15 @@ This paper systematically investigates the trade-off between visual tokenizer co
 
 ## Background & Motivation
 
-**State of the Field**: Modern image generation methods commonly adopt a two-stage training pipeline: Stage 1 trains an auto-encoder (e.g., VQGAN) to compress images into a latent space; Stage 2 trains a generative model (e.g., an autoregressive Transformer) to learn the latent distribution. Consequently, the tokenizer design in Stage 1 profoundly affects the generation performance of Stage 2.
+**Background**: Modern image generation methods commonly adopt a two-stage training pipeline: Stage 1 trains an auto-encoder (e.g., VQGAN) to compress images into a latent space; Stage 2 trains a generative model (e.g., an autoregressive Transformer) to learn the latent distribution. Consequently, the tokenizer design in Stage 1 profoundly affects the generation performance of Stage 2.
 
 **Limitations of Prior Work**: The optimization objectives of Stage 1 and Stage 2 are fundamentally misaligned—Stage 1 pursues reconstruction quality (low rFID), yet better reconstruction does not necessarily yield better generation (low gFID). Prior works have sporadically observed this phenomenon (e.g., enlarging the codebook unexpectedly degrades generation quality), but a systematic quantitative framework for understanding this trade-off has been lacking.
 
-**Root Cause**: A three-way rate-distortion-generation trade-off exists. At one extreme, no compression yields perfect reconstruction but a hard-to-learn latent distribution; at the other, extreme compression produces a simple distribution but poor reconstruction. The optimal operating point depends on Stage 2 model capacity—an interaction that has not been rigorously studied.
+**Key Challenge**: A three-way rate-distortion-generation trade-off exists. At one extreme, no compression yields perfect reconstruction but a hard-to-learn latent distribution; at the other, extreme compression produces a simple distribution but poor reconstruction. The optimal operating point depends on Stage 2 model capacity—an interaction that has not been rigorously studied.
 
-**Paper Goals**: (1) How does compression level affect the generation performance of Stage 2 models at different scales? (2) Given a fixed compute budget, what is the optimal compression-generation configuration? (3) Can Stage 1 tokenizers be designed to directly optimize Stage 2 generation performance?
+**Goal**: (1) How does compression level affect the generation performance of Stage 2 models at different scales? (2) Given a fixed compute budget, what is the optimal compression-generation configuration? (3) Can Stage 1 tokenizers be designed to directly optimize Stage 2 generation performance?
 
-**Starting Point**: Scaling laws are adopted as an analytical tool to systematically study this trade-off across five orders of magnitude in compute and two orders of magnitude in model scale. CRT is then designed to inject Stage 2's autoregressive inductive bias into Stage 1.
+**Key Insight**: Scaling laws are adopted as an analytical tool to systematically study this trade-off across five orders of magnitude in compute and two orders of magnitude in model scale. CRT is then designed to inject Stage 2's autoregressive inductive bias into Stage 1.
 
 **Core Idea**: By incorporating a lightweight causal Transformer prediction loss into tokenizer training, the resulting tokens are naturally better suited for autoregressive modeling—trading "worse reconstruction" for "better generation."
 

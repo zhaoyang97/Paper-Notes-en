@@ -28,15 +28,15 @@ This paper analyzes modality competition in multimodal classification from an in
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal learning acquires more robust representations by fusing different modalities (e.g., audio + visual, text + image). The dominant paradigm is joint learning, where a shared prediction head classifies over all modality features simultaneously.
+**Background**: Multimodal learning acquires more robust representations by fusing different modalities (e.g., audio + visual, text + image). The dominant paradigm is joint learning, where a shared prediction head classifies over all modality features simultaneously.
 
 **Limitations of Prior Work**: Joint learning suffers from *modality competition*—certain modalities converge faster (e.g., audio), suppressing others (e.g., visual), such that the multimodal model can underperform the best unimodal model. Existing balancing methods such as OGM-GE (gradient modulation) and AGM (adaptive gradients) alleviate but do not fundamentally resolve the problem of "modality laziness."
 
-**Root Cause**: Joint learning maximizes $I(y; z^{(a)}, z^{(v)}) = I(y; z^{(a)}) + I(y; z^{(v)}|z^{(a)})$. Once the audio encoder has captured sufficient information ($I(y; z^{(a)}) \approx H(y)$), the upper bound of the conditional mutual information $I(y; z^{(v)}|z^{(a)})$ approaches zero, leaving no learning signal for the visual encoder. The optimization objective itself causes the dominant modality to crowd out the weaker one.
+**Key Challenge**: Joint learning maximizes $I(y; z^{(a)}, z^{(v)}) = I(y; z^{(a)}) + I(y; z^{(v)}|z^{(a)})$. Once the audio encoder has captured sufficient information ($I(y; z^{(a)}) \approx H(y)$), the upper bound of the conditional mutual information $I(y; z^{(v)}|z^{(a)})$ approaches zero, leaving no learning signal for the visual encoder. The optimization objective itself causes the dominant modality to crowd out the weaker one.
 
-**Paper Goals**: How to design a loss function that (1) avoids modality competition by enabling each modality to independently learn sufficient information, (2) exploits cross-modal interaction without completely isolating modalities as in pure unimodal learning, and (3) requires no additional hyperparameters or architectural modifications?
+**Goal**: How to design a loss function that (1) avoids modality competition by enabling each modality to independently learn sufficient information, (2) exploits cross-modal interaction without completely isolating modalities as in pure unimodal learning, and (3) requires no additional hyperparameters or architectural modifications?
 
-**Starting Point**: From an information-theoretic perspective, the authors observe that Total Correlation naturally decomposes into three terms corresponding to joint learning, unimodal learning, and cross-modal alignment—precisely covering the individual strengths of existing methods.
+**Key Insight**: From an information-theoretic perspective, the authors observe that Total Correlation naturally decomposes into three terms corresponding to joint learning, unimodal learning, and cross-modal alignment—precisely covering the individual strengths of existing methods.
 
 **Core Idea**: Replace mutual information with Total Correlation as the optimization objective. Maximizing $\text{TC}(z^{(a)}, z^{(v)}, y)$ simultaneously achieves joint learning, unimodal learning, and cross-modal alignment without any additional hyperparameters.
 

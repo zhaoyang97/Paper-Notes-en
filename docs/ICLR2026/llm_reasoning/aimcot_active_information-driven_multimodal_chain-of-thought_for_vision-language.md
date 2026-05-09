@@ -27,15 +27,15 @@ content_hash: f6eb980ae983b401
 AIMCoT reframes visual information selection in multimodal CoT from "passively attending to high-attention regions" to "actively seeking regions of maximal information gain." Three collaborative modules — CAG (Context-enhanced Attention-map Generation), AVP (Active Visual Probing), and DAT (Dynamic Attention-shifting Trigger) — constitute a training-free, plug-and-play framework that outperforms ICoT by 18.25% on LLaVA-W (0-shot).
 
 ## Background & Motivation
-**State of the Field**: Interleaved-modal CoT methods (e.g., ICoT) enhance VLM reasoning by alternately inserting text and visual patches into the reasoning chain, representing a frontier direction in multimodal reasoning.
+**Background**: Interleaved-modal CoT methods (e.g., ICoT) enhance VLM reasoning by alternately inserting text and visual patches into the reasoning chain, representing a frontier direction in multimodal reasoning.
 
 **Limitations of Prior Work**: Existing methods rely on a "passive" strategy — selecting the Top-K regions with the highest attention scores and inserting them at newline positions. Experiments reveal three issues: (1) high-attention regions are frequently redundant or introduce noise; (2) attention maps miss critical visual details, especially when text-vision granularity is mismatched; (3) inserting visual information at newline positions lacks theoretical justification.
 
-**Root Cause**: Attention maps reflect token relevance rather than "information useful for answering the question," yet existing methods conflate the two. Passive Top-K selection has no explicit objective and is fundamentally undirected.
+**Key Challenge**: Attention maps reflect token relevance rather than "information useful for answering the question," yet existing methods conflate the two. Passive Top-K selection has no explicit objective and is fundamentally undirected.
 
-**Paper Goals**: (1) How to obtain reliable attention maps? (2) How to actively select visual regions most helpful for answering? (3) When is the optimal moment to insert visual information?
+**Goal**: (1) How to obtain reliable attention maps? (2) How to actively select visual regions most helpful for answering? (3) When is the optimal moment to insert visual information?
 
-**Starting Point**: Grounded in Information Foraging Theory, the paper reframes region selection as an information-gain maximization problem.
+**Key Insight**: Grounded in Information Foraging Theory, the paper reframes region selection as an information-gain maximization problem.
 
 **Core Idea**: Replace attention-score-driven passive selection with information-gain-driven active probing, enabling VLMs to "actively seek the regions they most need to observe."
 

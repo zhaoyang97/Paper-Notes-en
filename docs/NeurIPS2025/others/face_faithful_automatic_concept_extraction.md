@@ -28,13 +28,13 @@ This paper proposes FACE, a framework that incorporates a KL divergence regulari
 
 ## Background & Motivation
 
-**State of the Field**: Concept-based explanation methods (e.g., TCAV, ACE, CRAFT, ICE) aim to explain model decisions using human-interpretable high-level concepts (e.g., "fur," "ears"), offering greater intuitiveness than pixel-level attribution.
+**Background**: Concept-based explanation methods (e.g., TCAV, ACE, CRAFT, ICE) aim to explain model decisions using human-interpretable high-level concepts (e.g., "fur," "ears"), offering greater intuitiveness than pixel-level attribution.
 
 **Limitations of Prior Work**: (a) TCAV requires manually annotated concept datasets and scales poorly; (b) unsupervised methods such as ACE/ICE/CRAFT discover concepts via clustering or NMF over encoder activations, but focus solely on reconstruction error while ignoring classifier behavior; (c) standard NMF tends to capture high-variance directions rather than class-discriminative ones, potentially causing reconstructed activations to yield entirely different predictions.
 
-**Root Cause**: A small reconstruction error $\|\mathbf{A} - \mathbf{UW}^\top\|_F^2$ does not imply prediction fidelity. Even when the error in activation space is minimal, the nonlinear amplification through the classifier head $h$ and softmax can cause the predicted distribution to deviate substantially from the original.
+**Key Challenge**: A small reconstruction error $\|\mathbf{A} - \mathbf{UW}^\top\|_F^2$ does not imply prediction fidelity. Even when the error in activation space is minimal, the nonlinear amplification through the classifier head $h$ and softmax can cause the predicted distribution to deviate substantially from the original.
 
-**Paper Goals**: Introduce a KL divergence regularization term into the NMF objective to directly constrain consistency between the classifier output distributions of the original and reconstructed activations.
+**Goal**: Introduce a KL divergence regularization term into the NMF objective to directly constrain consistency between the classifier output distributions of the original and reconstructed activations.
 
 ## Method
 

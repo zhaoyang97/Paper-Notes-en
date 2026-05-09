@@ -28,15 +28,15 @@ This paper provides an exact characterization of the expressive power of Transfo
 
 ## Background & Motivation
 
-**State of the Field**: Transformers have inherent computational limitations — fixed-depth Transformers are confined to $\mathsf{TC}^0$, the class of highly parallelizable problems. Chain-of-Thought (CoT) reasoning can extend beyond $\mathsf{TC}^0$, but at the cost of sequential decoding, sacrificing parallelism.
+**Background**: Transformers have inherent computational limitations — fixed-depth Transformers are confined to $\mathsf{TC}^0$, the class of highly parallelizable problems. Chain-of-Thought (CoT) reasoning can extend beyond $\mathsf{TC}^0$, but at the cost of sequential decoding, sacrificing parallelism.
 
 **Limitations of Prior Work**: Although CoT is expressively powerful, it is slow at inference time. The question remains whether there exist inference-time computation methods that extend the expressive power of Transformers without increasing parameters and while preserving parallelism.
 
-**Root Cause**: It was previously known that padded Transformers have an upper bound of $\mathsf{TC}^0$, but whether the entire class $\mathsf{TC}^0$ is achievable (i.e., whether the lower bound matches) remained an open problem.
+**Key Challenge**: It was previously known that padded Transformers have an upper bound of $\mathsf{TC}^0$, but whether the entire class $\mathsf{TC}^0$ is achievable (i.e., whether the lower bound matches) remained an open problem.
 
-**Paper Goals**: (a) Precisely characterize the expressive power of padded Transformers; (b) Understand how the combination of padding and looping systematically extends Transformer capabilities.
+**Goal**: (a) Precisely characterize the expressive power of padded Transformers; (b) Understand how the combination of padding and looping systematically extends Transformer capabilities.
 
-**Starting Point**: Rather than following the standard $\mathsf{FO}[\mathsf{M}, \mathsf{bit}]$ route (where the `bit` predicate is difficult to simulate in Transformers), this work employs $\mathsf{FO}+\mathsf{M}^2$ — first-order logic with pairwise majority quantifiers — which is equivalent to $\mathsf{TC}^0$ but does not require `bit`.
+**Key Insight**: Rather than following the standard $\mathsf{FO}[\mathsf{M}, \mathsf{bit}]$ route (where the `bit` predicate is difficult to simulate in Transformers), this work employs $\mathsf{FO}+\mathsf{M}^2$ — first-order logic with pairwise majority quantifiers — which is equivalent to $\mathsf{TC}^0$ but does not require `bit`.
 
 **Core Idea**: A set of $n^k$ padding tokens provides the Transformer with sufficient "storage space" to enumerate all $n^k$ assignments of $k$ variables, thereby enabling the resolution of arbitrary $\mathsf{FO}+\mathsf{M}^2$ formulas.
 

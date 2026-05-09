@@ -28,15 +28,15 @@ This paper introduces GlobalLies—a multilingual parallel dataset comprising 44
 
 ## Background & Motivation
 
-**State of the Field**: The powerful writing capabilities of LLMs have lowered the barrier for malicious actors to produce and disseminate misinformation at scale. Prior work has examined LLM compliance with misinformation in medical and U.S. political domains, but has largely been confined to English and Western contexts.
+**Background**: The powerful writing capabilities of LLMs have lowered the barrier for malicious actors to produce and disseminate misinformation at scale. Prior work has examined LLM compliance with misinformation in medical and U.S. political domains, but has largely been confined to English and Western contexts.
 
 **Limitations of Prior Work**: (1) LLM safety alignment varies greatly across languages—strongest in English, nearly absent in low-resource languages; (2) models selectively refuse or comply with the same false claim depending on the country or figure involved (e.g., refusing for British politicians but complying for Lebanese ones); (3) existing safety classifiers (e.g., Llama Guard) lack effective misinformation detection categories and exhibit large cross-lingual performance gaps.
 
-**Root Cause**: LLMs are a powerful dual-use technology—capable of supporting legitimate writing as well as being exploited for large-scale misinformation dissemination. Existing safety measures offer unequal protection across languages and regions, creating structural inequalities in global information security.
+**Key Challenge**: LLMs are a powerful dual-use technology—capable of supporting legitimate writing as well as being exploited for large-scale misinformation dissemination. Existing safety measures offer unequal protection across languages and regions, creating structural inequalities in global information security.
 
-**Paper Goals**: To systematically investigate global bias patterns in LLM-generated misinformation, evaluate the effectiveness of existing safeguards, and provide data resources for developing more equitable mitigation strategies.
+**Goal**: To systematically investigate global bias patterns in LLM-generated misinformation, evaluate the effectiveness of existing safeguards, and provide data resources for developing more equitable mitigation strategies.
 
-**Starting Point**: Constructing a globally scaled multilingual parallel dataset and precisely measuring behavioral biases in LLMs by controlling for variables (identical content, varying language/country).
+**Key Insight**: Constructing a globally scaled multilingual parallel dataset and precisely measuring behavioral biases in LLMs by controlling for variables (identical content, varying language/country).
 
 **Core Idea**: LLMs' propensity to propagate misinformation is not random but is systematically correlated with the target country's Human Development Index (HDI) and the resource level of the prompt language—Western countries and high-resource languages receive substantially better protection.
 

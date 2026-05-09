@@ -28,15 +28,15 @@ This paper proposes VideoAuto-R1, an on-demand reasoning framework for video und
 
 ## Background & Motivation
 
-1. **State of the Field**: Chain-of-Thought (CoT) reasoning has become the dominant approach for enhancing video understanding in multimodal large language models. Models such as Video-R1, Time-R1, and VideoChat-R1 are trained via GRPO-based reinforcement learning to perform step-by-step reasoning before answering. These methods have proven highly effective on symbolic tasks such as mathematics and programming.
+1. **Background**: Chain-of-Thought (CoT) reasoning has become the dominant approach for enhancing video understanding in multimodal large language models. Models such as Video-R1, Time-R1, and VideoChat-R1 are trained via GRPO-based reinforcement learning to perform step-by-step reasoning before answering. These methods have proven highly effective on symbolic tasks such as mathematics and programming.
 
 2. **Limitations of Prior Work**: (a) Video understanding is inherently more dependent on visual perception than step-by-step reasoning; once perception is accurate, subsequent symbolic reasoning tends to be shallow. (b) Forcing all samples to undergo CoT reasoning results in substantial redundant tokens (Video-R1 averages 386 tokens), significantly increasing latency and inference cost. (c) Surprisingly, for RL-trained video reasoning models, direct answering matches or even outperforms CoT on multiple benchmarks.
 
-3. **Root Cause**: CoT reasoning incurs computational overhead with limited benefit in video understanding. It is redundant or even detrimental on perception-intensive tasks (e.g., object/action recognition), and provides meaningful gains only on a small subset of tasks requiring multi-step derivation (e.g., physics/math reasoning in VideoMMMU).
+3. **Key Challenge**: CoT reasoning incurs computational overhead with limited benefit in video understanding. It is redundant or even detrimental on perception-intensive tasks (e.g., object/action recognition), and provides meaningful gains only on a small subset of tasks requiring multi-step derivation (e.g., physics/math reasoning in VideoMMMU).
 
-4. **Paper Goals**: To design a video understanding model capable of adaptively deciding whether reasoning is needed—answering simple questions directly and invoking CoT only for complex ones.
+4. **Goal**: To design a video understanding model capable of adaptively deciding whether reasoning is needed—answering simple questions directly and invoking CoT only for complex ones.
 
-5. **Starting Point**: The authors systematically demonstrate the performance gap between direct answering and CoT mode in existing video reasoning models (Video-R1, Time-R1, VideoChat-R1) via Table 1, finding that CoT even degrades accuracy on VideoMME and LongVideoBench. This observation provides strong motivation for on-demand reasoning.
+5. **Key Insight**: The authors systematically demonstrate the performance gap between direct answering and CoT mode in existing video reasoning models (Video-R1, Time-R1, VideoChat-R1) via Table 1, finding that CoT even degrades accuracy on VideoMME and LongVideoBench. This observation provides strong motivation for on-demand reasoning.
 
 6. **Core Idea**: During training, the model is trained to generate both a direct answer and a reasoning-augmented answer (dual-answer GRPO). During inference, the token-level confidence of the first answer determines whether to continue generating a reasoning chain, enabling adaptive auto-thinking.
 

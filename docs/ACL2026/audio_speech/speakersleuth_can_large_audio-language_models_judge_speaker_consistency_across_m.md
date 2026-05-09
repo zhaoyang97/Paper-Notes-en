@@ -29,18 +29,18 @@ SpeakerSleuth introduces the first benchmark (1,818 instances) for evaluating LA
 
 ## Background & Motivation
 
-**State of the Field**: Speech synthesis technology can now generate naturalistic human speech and is widely deployed in voice assistants, podcasts, film dubbing, and dialogue agents. Maintaining speaker identity consistency across multi-turn dialogues—timbre, pitch, and voice quality—is a fundamental requirement.
+**Background**: Speech synthesis technology can now generate naturalistic human speech and is widely deployed in voice assistants, podcasts, film dubbing, and dialogue agents. Maintaining speaker identity consistency across multi-turn dialogues—timbre, pitch, and voice quality—is a fundamental requirement.
 
 **Limitations of Prior Work**:
 - Even state-of-the-art speech synthesis models suffer from speaker confusion, timbre drift, and voice quality variation.
 - Existing evaluation methods compute pairwise similarity via embedding models, which cannot holistically assess consistency across an entire dialogue and require manual threshold tuning.
 - Although LALMs can process an entire dialogue in one pass and directly produce a judgment, whether their acoustic discrimination capability is reliable remains entirely unknown.
 
-**Root Cause**: LALMs are theoretically capable of serving as comprehensive audio-language judges, yet no systematic benchmark exists to assess whether they possess reliable acoustic discrimination capability, particularly in multi-turn dialogue settings.
+**Key Challenge**: LALMs are theoretically capable of serving as comprehensive audio-language judges, yet no systematic benchmark exists to assess whether they possess reliable acoustic discrimination capability, particularly in multi-turn dialogue settings.
 
-**Paper Goals**: Construct a benchmark to systematically evaluate both LALMs and embedding-based methods on speaker consistency judgment in multi-turn dialogues, and to reveal their strengths, weaknesses, and fundamental limitations.
+**Goal**: Construct a benchmark to systematically evaluate both LALMs and embedding-based methods on speaker consistency judgment in multi-turn dialogues, and to reveal their strengths, weaknesses, and fundamental limitations.
 
-**Starting Point**: Three progressively challenging tasks are designed—detection (consistent or not) → localization (which turn is inconsistent) → discrimination (comparison and ranking of variants)—to comprehensively assess acoustic discrimination capability at different granularities.
+**Key Insight**: Three progressively challenging tasks are designed—detection (consistent or not) → localization (which turn is inconsistent) → discrimination (comparison and ranking of variants)—to comprehensively assess acoustic discrimination capability at different granularities.
 
 **Core Idea**: A controlled experimental design (identical dialogue content × three scenarios: fully consistent / gender-switched / similar-speaker substitution) isolates acoustic factors for systematic evaluation, thereby exposing the modality bias of LALMs.
 

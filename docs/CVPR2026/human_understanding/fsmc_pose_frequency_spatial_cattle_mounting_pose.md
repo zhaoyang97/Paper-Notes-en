@@ -29,11 +29,11 @@ FSMC-Pose presents a lightweight cattle mounting pose estimation framework tailo
 
 ## Background & Motivation
 
-1. **State of the Field**: Animal pose estimation has largely adopted methods developed for human pose estimation (bottom-up/top-down), yet the complexity of agricultural environments makes direct deployment of these approaches challenging.
+1. **Background**: Animal pose estimation has largely adopted methods developed for human pose estimation (bottom-up/top-down), yet the complexity of agricultural environments makes direct deployment of these approaches challenging.
 2. **Limitations of Prior Work**: Mounting behavior is a key visual indicator of estrus in cows; however, farm scenes present significant challenges including cluttered backgrounds, severe inter-animal occlusion, and confusion caused by similar coat colors. Public datasets for cattle mounting pose are also lacking.
-3. **Root Cause**: During estrus, cattle tend to congregate, making mounting scenes denser than typical farm settings. Intertwined limbs lead to identity confusion, while real-time monitoring requirements demand low computational cost.
-4. **Paper Goals**: To achieve accurate mounting pose estimation in dense, cluttered real-world farm environments while maintaining lightweight computation.
-5. **Starting Point**: The paper addresses background interference, scale variation, and occlusion through three complementary perspectives: frequency-domain enhancement for foreground-background separation, multiscale receptive field aggregation, and spatial-channel self-calibration.
+3. **Key Challenge**: During estrus, cattle tend to congregate, making mounting scenes denser than typical farm settings. Intertwined limbs lead to identity confusion, while real-time monitoring requirements demand low computational cost.
+4. **Goal**: To achieve accurate mounting pose estimation in dense, cluttered real-world farm environments while maintaining lightweight computation.
+5. **Key Insight**: The paper addresses background interference, scale variation, and occlusion through three complementary perspectives: frequency-domain enhancement for foreground-background separation, multiscale receptive field aggregation, and spatial-channel self-calibration.
 6. **Core Idea**: Wavelet-based frequency-domain processing enhances the separability of cattle from backgrounds; multi-receptive-field aggregation handles keypoint scale variation; a self-calibration branch corrects structural misalignment caused by occlusion.
 
 ## Method

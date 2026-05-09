@@ -29,11 +29,11 @@ This paper proposes SkeletonContext, a framework that recovers the missing envir
 
 ## Background & Motivation
 
-1. **State of the Field**: Zero-shot skeleton-based action recognition (ZSSAR) identifies unseen action categories by aligning skeleton features with text embeddings in a shared space. Existing methods primarily focus on improving skeleton encoders, data augmentation, or external knowledge augmentation.
+1. **Background**: Zero-shot skeleton-based action recognition (ZSSAR) identifies unseen action categories by aligning skeleton features with text embeddings in a shared space. Existing methods primarily focus on improving skeleton encoders, data augmentation, or external knowledge augmentation.
 2. **Limitations of Prior Work**: Skeleton sequences contain only joint coordinates, lacking contextual cues such as objects and environments. The skeletal motions of "typing on a keyboard" and "writing on paper" are highly similar, yet cannot be distinguished without the context of "keyboard" and "paper."
-3. **Root Cause**: Skeleton modality inherently lacks contextual information, while semantic descriptions are rich in such context. This fundamental semantic gap makes direct alignment between the two modalities limited in effectiveness.
-4. **Paper Goals**: Inject language-driven contextual semantics into skeleton representations to bridge the semantic gap in cross-modal alignment.
-5. **Starting Point**: Use an LLM to generate structured contextual descriptions (environment + used object + target object), then train the model to "reconstruct" these contexts from skeleton motion, enabling the skeleton encoder itself to acquire context-aware representations.
+3. **Key Challenge**: Skeleton modality inherently lacks contextual information, while semantic descriptions are rich in such context. This fundamental semantic gap makes direct alignment between the two modalities limited in effectiveness.
+4. **Goal**: Inject language-driven contextual semantics into skeleton representations to bridge the semantic gap in cross-modal alignment.
+5. **Key Insight**: Use an LLM to generate structured contextual descriptions (environment + used object + target object), then train the model to "reconstruct" these contexts from skeleton motion, enabling the skeleton encoder itself to acquire context-aware representations.
 6. **Core Idea**: Train the skeleton encoder to infer contextual semantics (e.g., interacted objects and environments) from motion patterns via masked reconstruction.
 
 ## Method

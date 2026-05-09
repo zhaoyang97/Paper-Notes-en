@@ -27,7 +27,7 @@ content_hash: 505ecdfedb421c86
 TOFA is a federated learning framework that adapts CLIP via hierarchical Bayesian inference of personalized visual prototype distributions, globally aligned LLM-based text augmentation, and adaptive modality fusion — achieving training-free, single-round communication adaptation that outperforms one-shot baselines and even some multi-round training methods across 9 datasets.
 
 ## Background & Motivation
-**State of the Field**: Adapting VLMs such as CLIP in federated learning (FL) has attracted growing attention. Existing approaches primarily rely on prompt learning (PromptFL, pFedPrompt) or fine-tuning for downstream task adaptation, but require multiple rounds of client–server communication.
+**Background**: Adapting VLMs such as CLIP in federated learning (FL) has attracted growing attention. Existing approaches primarily rely on prompt learning (PromptFL, pFedPrompt) or fine-tuning for downstream task adaptation, but require multiple rounds of client–server communication.
 
 **Limitations of Prior Work**:
    - **High communication overhead**: Multi-round interaction incurs substantial communication costs and demands long-term system stability.
@@ -35,11 +35,11 @@ TOFA is a federated learning framework that adapts CLIP via hierarchical Bayesia
    - **One-shot methods ill-suited for VLMs**: Existing one-shot FL methods (e.g., FedLPA, FENS) are designed for traditional models and do not effectively leverage the multimodal information in VLMs.
    - **Data heterogeneity**: Non-IID data distributions cause misalignment between local and global optimization objectives.
 
-**Root Cause**: How to fully exploit the multimodal information of VLMs while handling data heterogeneity under the strict constraints of zero training and a single communication round.
+**Key Challenge**: How to fully exploit the multimodal information of VLMs while handling data heterogeneity under the strict constraints of zero training and a single communication round.
 
-**Paper Goals**: Design a training-free, one-shot FL framework for high-quality VLM adaptation.
+**Goal**: Design a training-free, one-shot FL framework for high-quality VLM adaptation.
 
-**Starting Point**: Extract complementary information from two parallel pipelines — a visual pipeline using Bayesian inference for personalized prototypes, and a textual pipeline using LLM augmentation with global alignment for robust text representations.
+**Key Insight**: Extract complementary information from two parallel pipelines — a visual pipeline using Bayesian inference for personalized prototypes, and a textual pipeline using LLM augmentation with global alignment for robust text representations.
 
 **Core Idea**: Combine hierarchical Bayesian inference for personalized visual distribution estimation, LLM-augmented text with global alignment, and confidence-based modality fusion to achieve training-free, single-round VLM adaptation in FL.
 

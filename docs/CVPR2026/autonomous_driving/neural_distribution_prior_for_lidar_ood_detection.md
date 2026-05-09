@@ -29,15 +29,15 @@ NDP introduces a learnable neural distribution prior module to model the distrib
 
 ## Background & Motivation
 
-**State of the Field**: LiDAR perception is critical for autonomous driving, yet current models operate under a closed-set assumption and cannot recognize unexpected OOD objects (e.g., fallen branches, construction machinery, road debris), which may lead to severe safety consequences.
+**Background**: LiDAR perception is critical for autonomous driving, yet current models operate under a closed-set assumption and cannot recognize unexpected OOD objects (e.g., fallen branches, construction machinery, road debris), which may lead to severe safety consequences.
 
 **Limitations of Prior Work**: LiDAR data exhibits severe class imbalance — roads and buildings account for the majority of point clouds, while traffic participants such as cyclists are extremely sparse. Existing OOD scoring functions assume uniform class distributions and thus fail on imbalanced data.
 
-**Root Cause**: Static OOD scoring overfits to frequent classes and fails on tail classes; dataset-level class priors are insufficient to correct the bias introduced by class imbalance in LiDAR data.
+**Key Challenge**: Static OOD scoring overfits to frequent classes and fails on tail classes; dataset-level class priors are insufficient to correct the bias introduced by class imbalance in LiDAR data.
 
-**Paper Goals**: Design a learnable OOD scoring mechanism that adapts to class imbalance, and generate diverse auxiliary OOD samples for robust training.
+**Goal**: Design a learnable OOD scoring mechanism that adapts to class imbalance, and generate diverse auxiliary OOD samples for robust training.
 
-**Starting Point**: Rather than relying on static scoring, learn the distributional patterns of network predictions; simultaneously leverage Perlin noise to synthesize OOD samples directly from training data.
+**Key Insight**: Rather than relying on static scoring, learn the distributional patterns of network predictions; simultaneously leverage Perlin noise to synthesize OOD samples directly from training data.
 
 **Core Idea**: NDP dynamically captures the logit distribution patterns of training data via an attention mechanism and corrects class-dependent confidence bias.
 

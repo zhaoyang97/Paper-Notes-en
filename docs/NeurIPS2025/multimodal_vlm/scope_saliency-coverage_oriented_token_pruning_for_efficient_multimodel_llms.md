@@ -28,15 +28,15 @@ This paper proposes SCOPE, a visual token pruning strategy that jointly models s
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs encode images into large numbers of visual tokens (e.g., 576 or 2000+), which are fed into the LLM alongside text tokens. The quadratic complexity of self-attention results in substantial computational overhead.
+**Background**: MLLMs encode images into large numbers of visual tokens (e.g., 576 or 2000+), which are fed into the LLM alongside text tokens. The quadratic complexity of self-attention results in substantial computational overhead.
 
 **Limitations of Prior Work**: Saliency-based pruning methods (e.g., FastV, SparseVLM, VisionZip) retain only the tokens with the highest attention scores, which introduces two problems:
    - **Semantic incompleteness**: High-saliency tokens tend to cluster around a few objects, losing contextual information (e.g., answering "where is the cat" requires both the cat and its surrounding environment).
    - **Skewed attention distribution**: Only a small fraction of tokens receive high attention; the remaining tokens have nearly uniform attention scores, making it difficult to distinguish informative tokens from redundant ones.
 
-**Root Cause**: Prioritizing saliency leads to selected tokens with high semantic overlap, resulting in low coverage.
+**Key Challenge**: Prioritizing saliency leads to selected tokens with high semantic overlap, resulting in low coverage.
 
-**Starting Point**: Drawing on the coverage function concept from submodular optimization, the paper proposes a selection strategy that jointly considers saliency and coverage.
+**Key Insight**: Drawing on the coverage function concept from submodular optimization, the paper proposes a selection strategy that jointly considers saliency and coverage.
 
 ## Method
 

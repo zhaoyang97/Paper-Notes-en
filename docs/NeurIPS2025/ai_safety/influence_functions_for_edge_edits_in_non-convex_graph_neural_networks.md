@@ -29,15 +29,15 @@ This paper proposes influence functions for edge edits applicable to non-convex 
 
 ## Background & Motivation
 
-**State of the Field**: The influence of individual edges on GNN behavior remains poorly understood; characterizing edge contributions is critical for interpretability and robustness. Influence functions offer an efficient means of estimating the effect of removing training data on model behavior without retraining.
+**Background**: The influence of individual edges on GNN behavior remains poorly understood; characterizing edge contributions is critical for interpretability and robustness. Influence functions offer an efficient means of estimating the effect of removing training data on model behavior without retraining.
 
 **Limitations of Prior Work**: Existing graph influence functions (GIF) rely on strict convexity assumptions (which real-world GNNs naturally violate), consider only edge deletion while ignoring edge insertion, and fail to capture changes in message propagation paths induced by edge edits.
 
-**Root Cause**: Standard influence functions require strict loss convexity, yet common GNN architectures are inherently non-convex; furthermore, edge edits alter the GNN's computational graph structure, whereas conventional influence functions model only parameter changes.
+**Key Challenge**: Standard influence functions require strict loss convexity, yet common GNN architectures are inherently non-convex; furthermore, edge edits alter the GNN's computational graph structure, whereas conventional influence functions model only parameter changes.
 
-**Paper Goals**: To design accurate influence functions for edge edits in non-convex GNNs, supporting both deletion and insertion while explicitly modeling message propagation effects.
+**Goal**: To design accurate influence functions for edge edits in non-convex GNNs, supporting both deletion and insertion while explicitly modeling message propagation effects.
 
-**Starting Point**: A combination of the proximal Bregman response function (PBRF) and chain-rule decomposition, factoring the influence into a parameter shift term and a message propagation term.
+**Key Insight**: A combination of the proximal Bregman response function (PBRF) and chain-rule decomposition, factoring the influence into a parameter shift term and a message propagation term.
 
 **Core Idea**: Relax the convexity assumption via an edge-edit PBRF, and decompose the influence function into parameter shift and message propagation components, providing a unified treatment of both edge deletion and insertion.
 

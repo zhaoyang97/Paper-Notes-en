@@ -38,9 +38,9 @@ Work zones represent an important yet severely neglected long-tail scenario in a
 
 **Incomplete annotation**: Existing datasets provide only a limited set of object categories (e.g., traffic cones) and lack work-zone-specific objects (e.g., arrow boards, temporary traffic signs), fine-grained annotations (sign text and graphics), scene descriptions, and drivable path labels.
 
-**Root Cause**: Work zones are critical to safe autonomous driving, yet neither existing datasets nor current models can meet the perception and navigation demands of such environments.
+**Key Challenge**: Work zones are critical to safe autonomous driving, yet neither existing datasets nor current models can meet the perception and navigation demands of such environments.
 
-**Starting Point**: Drawing on human cognition, the paper decomposes work zone understanding into four levels — Recognize, Observe, Analyze, and Drive — forming the ROAD cognitive framework, which guides systematic data collection and benchmark construction.
+**Key Insight**: Drawing on human cognition, the paper decomposes work zone understanding into four levels — Recognize, Observe, Analyze, and Drive — forming the ROAD cognitive framework, which guides systematic data collection and benchmark construction.
 
 ## Method
 

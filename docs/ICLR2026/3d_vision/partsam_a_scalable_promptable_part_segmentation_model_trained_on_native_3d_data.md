@@ -28,15 +28,15 @@ This paper proposes PartSAM, the first promptable part segmentation model traine
 
 ## Background & Motivation
 
-**State of the Field**: 3D part segmentation is a classical problem in computer vision. Early methods trained on closed-set datasets such as ShapeNet-Part and PartNet, limiting generalization to open-world scenarios. Recent approaches (e.g., SAMPart3D, PartField) leverage 2D priors from SAM via multi-view lifting.
+**Background**: 3D part segmentation is a classical problem in computer vision. Early methods trained on closed-set datasets such as ShapeNet-Part and PartNet, limiting generalization to open-world scenarios. Recent approaches (e.g., SAMPart3D, PartField) leverage 2D priors from SAM via multi-view lifting.
 
 **Limitations of Prior Work**: (1) 2D→3D lifting discards internal structural information, restricting understanding to object surfaces; (2) clustering-based methods (e.g., PartField) lack interactive controllability; (3) training data bottleneck — large-scale 3D part annotations are scarce; (4) heavy reliance on mesh connectivity causes performance collapse on AI-generated shapes.
 
-**Root Cause**: How can one train a model that supports flexible interaction and understands 3D internal structures, given the absence of large-scale 3D part annotations?
+**Key Challenge**: How can one train a model that supports flexible interaction and understands 3D internal structures, given the absence of large-scale 3D part annotations?
 
-**Paper Goals**: Construct large-scale native 3D part data (5M+ pairs), design a novel architecture that exploits both 2D priors and 3D knowledge, and achieve SAM-style interactive and automatic part segmentation.
+**Goal**: Construct large-scale native 3D part data (5M+ pairs), design a novel architecture that exploits both 2D priors and 3D knowledge, and achieve SAM-style interactive and automatic part segmentation.
 
-**Starting Point**: A dual-channel design — a frozen SAM channel retains 2D knowledge, while a learnable channel adapts to native 3D annotations.
+**Key Insight**: A dual-channel design — a frozen SAM channel retains 2D knowledge, while a learnable channel adapts to native 3D annotations.
 
 **Core Idea**: A dual-branch triplane encoder combined with a SAM-style decoder is trained on millions of native 3D part annotations, enabling the first promptable part segmentation model that genuinely understands 3D internal structures.
 

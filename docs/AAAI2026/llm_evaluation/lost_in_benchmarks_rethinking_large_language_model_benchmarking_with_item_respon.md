@@ -28,18 +28,18 @@ This paper proposes PSN-IRT (Pseudo-Siamese Network for IRT), an enhanced Item R
 
 ## Background & Motivation
 
-**State of the Field**: LLM evaluation predominantly relies on average-score rankings on benchmarks (e.g., MMLU, HumanEval), yet different leaderboards produce inconsistent rankings, and performance gaps among top models are too small to be meaningfully distinguished.
+**Background**: LLM evaluation predominantly relies on average-score rankings on benchmarks (e.g., MMLU, HumanEval), yet different leaderboards produce inconsistent rankings, and performance gaps among top models are too small to be meaningfully distinguished.
 
 **Limitations of Prior Work**:
 - Different benchmarks can yield entirely divergent rankings for the same set of models — raising the question of whether such signals reflect genuine capability differences or merely noise.
 - Current benchmarks treat all items with equal weight, ignoring item quality — easy and hard items contribute identically to the final score.
 - No systematic tooling exists to diagnose the quality of benchmarks themselves (saturation, discrimination, contamination).
 
-**Root Cause**: Benchmarks are supposed to serve as objective measuring instruments, yet the quality of the instruments themselves has never been systematically audited.
+**Key Challenge**: Benchmarks are supposed to serve as objective measuring instruments, yet the quality of the instruments themselves has never been systematically audited.
 
-**Paper Goals**: To audit the item quality of LLM benchmarks using IRT, and to establish more reliable ability estimation and model ranking.
+**Goal**: To audit the item quality of LLM benchmarks using IRT, and to establish more reliable ability estimation and model ranking.
 
-**Starting Point**: Deeply customizing Item Response Theory (IRT) from educational measurement for LLM evaluation — learning model ability and item parameters end-to-end via a deep pseudo-siamese network.
+**Key Insight**: Deeply customizing Item Response Theory (IRT) from educational measurement for LLM evaluation — learning model ability and item parameters end-to-end via a deep pseudo-siamese network.
 
 **Core Idea**: PSN-IRT = dual network (model ability + item parameters) $\times$ 4PL IRT formula $\rightarrow$ benchmark quality auditing + reliable ranking.
 

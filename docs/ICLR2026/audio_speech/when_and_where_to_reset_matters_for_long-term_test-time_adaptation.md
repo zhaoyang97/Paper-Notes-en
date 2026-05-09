@@ -29,15 +29,15 @@ ASR proposes an adaptive selective reset scheme that uses prediction concentrati
 
 ## Background & Motivation
 
-**State of the Field**: Continual test-time adaptation (TTA) updates models on non-stationary domain streams, but long-term adaptation leads to error accumulation and model collapse — where the model predicts only a small number of classes for all inputs.
+**Background**: Continual test-time adaptation (TTA) updates models on non-stationary domain streams, but long-term adaptation leads to error accumulation and model collapse — where the model predicts only a small number of classes for all inputs.
 
 **Limitations of Prior Work**: (1) Methods such as RDumb apply full resets at fixed intervals, which are unrelated to actual collapse risk — resets occur either too early (wasting adaptation knowledge) or too late (allowing deep error accumulation); (2) full resets catastrophically discard all temporally accumulated knowledge; (3) each reset is followed by significant performance drops and recovery delays.
 
-**Root Cause**: Resetting too frequently leads to insufficient adaptation; resetting too infrequently allows irreversible collapse. Full resets cause knowledge loss; no resets allow error accumulation.
+**Key Challenge**: Resetting too frequently leads to insufficient adaptation; resetting too infrequently allows irreversible collapse. Full resets cause knowledge loss; no resets allow error accumulation.
 
-**Paper Goals**: (1) *When*: how to dynamically detect when collapse risk is high? (2) *Where*: how to select which layers to reset in order to minimize knowledge loss? (3) How to recover critical knowledge from reset layers?
+**Goal**: (1) *When*: how to dynamically detect when collapse risk is high? (2) *Where*: how to select which layers to reset in order to minimize knowledge loss? (3) How to recover critical knowledge from reset layers?
 
-**Starting Point**: Prediction concentration is used as a proxy for collapse risk, and the hierarchical structure of deep networks — where label noise corruption begins near the output layers — informs the reset scope.
+**Key Insight**: Prediction concentration is used as a proxy for collapse risk, and the hierarchical structure of deep networks — where label noise corruption begins near the output layers — informs the reset scope.
 
 **Core Idea**: Deviation of prediction concentration from a long-term baseline triggers resets; layers are progressively reset from the output end according to collapse severity; Fisher information-weighted regularization recovers critical knowledge from reset layers.
 

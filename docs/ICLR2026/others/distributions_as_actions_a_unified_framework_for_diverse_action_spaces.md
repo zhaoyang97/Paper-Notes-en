@@ -26,18 +26,18 @@ content_hash: c50efc598650c28e
 DA-AC proposes treating the parameters of an action distribution (e.g., softmax probabilities or Gaussian mean/variance) as the agent's output "actions," relocating the action sampling process to the environment side. This enables a unified deterministic policy gradient framework for discrete, continuous, and hybrid action spaces. The approach is theoretically proven to achieve strictly lower variance than LR and RP estimators, and attains competitive or state-of-the-art performance across 40+ environments.
 
 ## Background & Motivation
-**State of the Field**: Current RL algorithms are tightly coupled to action space types — DQN/DSAC for discrete, DDPG/TD3/SAC for continuous, and specialized algorithms such as PADDPG for hybrid action spaces. The architectural divergence across estimator types makes it difficult to design general-purpose algorithms that operate across domains.
+**Background**: Current RL algorithms are tightly coupled to action space types — DQN/DSAC for discrete, DDPG/TD3/SAC for continuous, and specialized algorithms such as PADDPG for hybrid action spaces. The architectural divergence across estimator types makes it difficult to design general-purpose algorithms that operate across domains.
 
 **Limitations of Prior Work**:
    - The Likelihood Ratio (LR) estimator is general but suffers from high variance, requiring careful baseline design.
    - DPG/RP estimators exhibit low variance but are restricted to continuous action spaces.
    - Hybrid action spaces (combining discrete and continuous dimensions) require additional engineering effort.
 
-**Root Cause**: Low-variance gradient estimators such as DPG/RP require continuous action spaces — yet achieving low variance on discrete action spaces remains an open challenge.
+**Key Challenge**: Low-variance gradient estimators such as DPG/RP require continuous action spaces — yet achieving low variance on discrete action spaces remains an open challenge.
 
-**Paper Goals**: Design a unified actor-critic algorithm that operates over arbitrary action space types with theoretical guarantees of low variance.
+**Goal**: Design a unified actor-critic algorithm that operates over arbitrary action space types with theoretical guarantees of low variance.
 
-**Starting Point**: Reconsidering the agent-environment boundary — the agent's "action" need not be the raw action defined by the environment; it can instead be the **distribution parameters**. A policy can typically be decomposed into $\bar{\pi}_\theta$ (mapping states to distribution parameters) and $f$ (sampling from the distribution). By relocating $f$ to the environment side, the agent's action space becomes the continuous parameter space $\mathcal{U}$, regardless of the original action space type.
+**Key Insight**: Reconsidering the agent-environment boundary — the agent's "action" need not be the raw action defined by the environment; it can instead be the **distribution parameters**. A policy can typically be decomposed into $\bar{\pi}_\theta$ (mapping states to distribution parameters) and $f$ (sampling from the distribution). By relocating $f$ to the environment side, the agent's action space becomes the continuous parameter space $\mathcal{U}$, regardless of the original action space type.
 
 **Core Idea**: Distributions-as-Actions — distribution parameters serve as actions, and sampling is treated as part of the environment.
 

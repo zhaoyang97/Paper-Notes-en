@@ -28,15 +28,15 @@ This paper proposes PMI (Proximal-Mean Inversion) and mimic-CFG, two training-fr
 
 ## Background & Motivation
 
-**State of the Field**: Rectified Flow (RF) models (e.g., FLUX, Wan) have emerged as strong alternatives to conventional diffusion models. Their approximately constant velocity fields enable faster and more stable sampling, and their training-free inversion capability supports downstream tasks such as reconstruction and editing.
+**Background**: Rectified Flow (RF) models (e.g., FLUX, Wan) have emerged as strong alternatives to conventional diffusion models. Their approximately constant velocity fields enable faster and more stable sampling, and their training-free inversion capability supports downstream tasks such as reconstruction and editing.
 
 **Limitations of Prior Work**: Approximation errors during inversion inevitably accumulate across timesteps. Theory shows that ODE mappings in high-dimensional spaces are intrinsically unstable—the probability that the geometric mean instability coefficient exceeds 1 approaches 1 as dimensionality grows—so small perturbations in latent space can cause large reconstruction errors. Existing methods such as RF-Solver and FireFlow mitigate this by increasing the number of steps/NFEs, at high computational cost.
 
-**Root Cause**: Higher inversion accuracy requires more steps (and thus more computation), yet practical applications demand efficiency with fewer steps. Perturbations in the velocity field are amplified by instability during inversion, yet eliminating perturbations entirely is infeasible.
+**Key Challenge**: Higher inversion accuracy requires more steps (and thus more computation), yet practical applications demand efficiency with fewer steps. Perturbations in the velocity field are amplified by instability during inversion, yet eliminating perturbations entirely is infeasible.
 
-**Paper Goals**: To stabilize the velocity field during inversion without increasing NFEs.
+**Goal**: To stabilize the velocity field during inversion without increasing NFEs.
 
-**Starting Point**: The RF training objective yields an approximately constant velocity field; therefore, a sliding mean of historical velocities can serve as a stable reference direction. Proximal optimization pulls the current velocity toward this mean while constraining the correction step to lie within a spherically Gaussian region derived from theoretical analysis.
+**Key Insight**: The RF training objective yields an approximately constant velocity field; therefore, a sliding mean of historical velocities can serve as a stable reference direction. Proximal optimization pulls the current velocity toward this mean while constraining the correction step to lie within a spherically Gaussian region derived from theoretical analysis.
 
 **Core Idea**: Stabilize RF inversion via proximal gradient correction toward the historical mean of the velocity field; during editing, apply mimic-CFG—a velocity projection–interpolation scheme—to balance editing strength and structural preservation.
 

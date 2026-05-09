@@ -28,15 +28,15 @@ ViStoryBench constructs a comprehensive benchmark comprising 80 multi-style stor
 
 ## Background & Motivation
 
-**State of the Field**: Story visualization aims to generate a sequence of visually consistent images from narrative text and character reference images. Recent advances in diffusion and autoregressive models have driven rapid progress, yielding training-free methods such as StoryDiffusion, UNO, and USO, as well as LLM-based multi-stage pipelines including MMStoryAgent and MovieAgent.
+**Background**: Story visualization aims to generate a sequence of visually consistent images from narrative text and character reference images. Recent advances in diffusion and autoregressive models have driven rapid progress, yielding training-free methods such as StoryDiffusion, UNO, and USO, as well as LLM-based multi-stage pipelines including MMStoryAgent and MovieAgent.
 
 **Limitations of Prior Work**: Existing benchmarks suffer from three major shortcomings: (1) test scenarios are overly simplistic, typically limited to short text prompts or single-image generation, failing to capture the complexity of real narratives; (2) character reference images are absent, precluding evaluation of character consistency; (3) evaluation metrics are insufficiently comprehensive, relying on general-purpose metrics such as FID and CLIP-Score while ignoring story-visualization-specific dimensions such as character matching accuracy, style consistency, and copy-paste behavior.
 
-**Root Cause**: Story visualization is inherently a multi-dimensional problem requiring simultaneous preservation of character identity, stylistic coherence, narrative alignment, and visual aesthetics. Existing evaluation frameworks cannot systematically measure these dimensions, undermining the credibility of cross-method comparisons.
+**Key Challenge**: Story visualization is inherently a multi-dimensional problem requiring simultaneous preservation of character identity, stylistic coherence, narrative alignment, and visual aesthetics. Existing evaluation frameworks cannot systematically measure these dimensions, undermining the credibility of cross-method comparisons.
 
-**Paper Goals**: (1) Construct a diverse dataset of story scripts paired with character reference images; (2) design an automated metric suite covering multiple critical dimensions; (3) conduct comparative evaluation of a large number of methods within a unified framework.
+**Goal**: (1) Construct a diverse dataset of story scripts paired with character reference images; (2) design an automated metric suite covering multiple critical dimensions; (3) conduct comparative evaluation of a large number of methods within a unified framework.
 
-**Starting Point**: The authors take "real narrative scenarios" as their starting point, collecting 80 story excerpts from literature, film, and folklore across 10 visual styles. LLMs are used to assist in generating structured scripts (including scene descriptions, character actions, and shot designs), followed by human review.
+**Key Insight**: The authors take "real narrative scenarios" as their starting point, collecting 80 story excerpts from literature, film, and folklore across 10 visual styles. LLMs are used to assist in generating structured scripts (including scene descriptions, character actions, and shot designs), followed by human review.
 
 **Core Idea**: Construct the first comprehensive story visualization benchmark encompassing multiple styles, characters, and metrics to systematically reveal the strengths and weaknesses of existing methods.
 

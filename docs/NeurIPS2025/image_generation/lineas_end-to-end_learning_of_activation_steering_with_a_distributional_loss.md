@@ -29,18 +29,18 @@ This paper proposes LinEAS (Linear End-to-end Activation Steering), which jointl
 
 ## Background & Motivation
 
-**State of the Field**: Deployed generative models (LLMs and T2I) require efficient behavioral control mechanisms—toxicity reduction, style transfer, concept erasure, etc. Existing alignment methods (RLHF, LoRA) are computationally expensive and demand large annotated datasets.
+**Background**: Deployed generative models (LLMs and T2I) require efficient behavioral control mechanisms—toxicity reduction, style transfer, concept erasure, etc. Existing alignment methods (RLHF, LoRA) are computationally expensive and demand large annotated datasets.
 
 **Limitations of Prior Work**:
    - Paired-data methods (CAA, ReFT) require counterfactual data, which is unavailable in many settings.
    - Layer-wise independent optimization methods (ITI-c, Lin-AcT) ignore cross-layer interactions, leading to causal inconsistency—interventions at one layer cause unexpected shifts in downstream layers.
    - There is no automatic mechanism to select which layers and neurons to intervene upon.
 
-**Root Cause**: A fundamental trade-off exists between steering effectiveness and model utility—excessive intervention degrades general capabilities, while insufficient intervention yields weak effects.
+**Key Challenge**: A fundamental trade-off exists between steering effectiveness and model utility—excessive intervention degrades general capabilities, while insufficient intervention yields weak effects.
 
-**Paper Goals**: Achieve precise, low-cost activation steering using a minimal number of unpaired samples (32 source + 32 target).
+**Goal**: Achieve precise, low-cost activation steering using a minimal number of unpaired samples (32 source + 32 target).
 
-**Starting Point**: Activation steering is framed as an optimal transport problem—all affine transformations across layers are jointly optimized using a global distributional loss.
+**Key Insight**: Activation steering is framed as an optimal transport problem—all affine transformations across layers are jointly optimized using a global distributional loss.
 
 **Core Idea**: Jointly optimize coordinate-wise affine mappings across all layers so that source-distribution activations are aligned to the target distribution at every layer, with sparse regularization automatically selecting critical neurons.
 

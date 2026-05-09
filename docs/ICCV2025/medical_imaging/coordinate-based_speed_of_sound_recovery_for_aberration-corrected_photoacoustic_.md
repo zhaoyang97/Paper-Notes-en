@@ -38,7 +38,7 @@ However, conventional reconstruction algorithms (e.g., delay-and-sum DAS, filter
 - **Computationally expensive joint reconstruction**: APACT (current SOTA) performs exhaustive search over wavefront coefficients, requiring 23 minutes per sample; moreover, its simplified wavefront model cannot handle global image scaling.
 - **Supervised learning is infeasible**: PACT is a relatively new imaging modality, and large-scale real datasets with paired measurements, ground-truth aberrations, and IP/SOS labels are unavailable; domain shift is also a serious concern.
 
-**Root Cause**: Accurate SOS information is essential for high-quality imaging, yet acquiring SOS is both costly and difficult. This paper addresses the problem by parameterizing SOS using coordinate-based representations (pixel grid / neural field) and optimizing via a differentiable physical model in a self-supervised manner, requiring no external training data.
+**Key Challenge**: Accurate SOS information is essential for high-quality imaging, yet acquiring SOS is both costly and difficult. This paper addresses the problem by parameterizing SOS using coordinate-based representations (pixel grid / neural field) and optimizing via a differentiable physical model in a self-supervised manner, requiring no external training data.
 
 ## Method
 

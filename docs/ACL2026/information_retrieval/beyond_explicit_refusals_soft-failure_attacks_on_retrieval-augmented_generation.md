@@ -28,15 +28,15 @@ This paper formally defines the "soft-failure" threat in RAG systems (generating
 
 ## Background & Motivation
 
-**State of the Field**: RAG systems rely on external corpora to improve factual accuracy, which creates a critical dependency on corpus integrity. Existing attack research primarily focuses on knowledge poisoning (inducing incorrect outputs) and availability attacks (inducing explicit refusals).
+**Background**: RAG systems rely on external corpora to improve factual accuracy, which creates a critical dependency on corpus integrity. Existing attack research primarily focuses on knowledge poisoning (inducing incorrect outputs) and availability attacks (inducing explicit refusals).
 
 **Limitations of Prior Work**: Existing jamming attacks induce "hard failures" (e.g., explicit refusals) that are overly conspicuous, manifesting as visible rejection responses and anomalous textual statistical features (e.g., high perplexity), making them readily detectable by anomaly-based defenses.
 
-**Root Cause**: A more covert threat exists—"soft failure"—where the model produces fluent, coherent, but substantively uninformative responses that neither trigger refusal keyword detection nor exhibit perplexity anomalies, yet fundamentally undermine the core value of RAG.
+**Key Challenge**: A more covert threat exists—"soft failure"—where the model produces fluent, coherent, but substantively uninformative responses that neither trigger refusal keyword detection nor exhibit perplexity anomalies, yet fundamentally undermine the core value of RAG.
 
-**Paper Goals**: Formally define the soft-failure threat and develop an automated black-box attack framework to empirically validate its severity.
+**Goal**: Formally define the soft-failure threat and develop an automated black-box attack framework to empirically validate its severity.
 
-**Starting Point**: Exploiting LLM safety alignment mechanisms—alignment training inclines models toward "hedging" under uncertainty, and attackers can manufacture artificial ambiguity to trigger this conservative behavior.
+**Key Insight**: Exploiting LLM safety alignment mechanisms—alignment training inclines models toward "hedging" under uncertainty, and attackers can manufacture artificial ambiguity to trigger this conservative behavior.
 
 **Core Idea**: Adversarial documents are decomposed into a query anchor + retrieval hook + semantic payload; evolutionary optimization refines the payload to elicit low-utility but highly fluent responses.
 

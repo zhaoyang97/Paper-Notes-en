@@ -28,15 +28,15 @@ This work introduces OmniFood8K, a multimodal Chinese food nutrition dataset com
 
 ## Background & Motivation
 
-**State of the Field**: Food nutrition estimation is critical for public health, and deep learning methods have shown promise in automatically recognizing food and estimating its weight, volume, and nutritional content.
+**Background**: Food nutrition estimation is critical for public health, and deep learning methods have shown promise in automatically recognizing food and estimating its weight, volume, and nutritional content.
 
 **Limitations of Prior Work**: (1) *Data limitation*: Existing datasets are heavily biased toward Western cuisines with insufficient coverage of Chinese food. (2) *Algorithm limitation*: State-of-the-art methods rely on depth cameras to obtain depth information, whereas food photographs in everyday scenarios are typically captured with RGB cameras only.
 
-**Root Cause**: Depth information is essential for accurate food volume and nutrition estimation, yet real-world deployment scenarios typically provide only RGB images.
+**Key Challenge**: Depth information is essential for accurate food volume and nutrition estimation, yet real-world deployment scenarios typically provide only RGB images.
 
-**Paper Goals**: (1) Construct a comprehensive multimodal food dataset covering Chinese cuisine. (2) Propose an end-to-end nutrition prediction framework that requires only a single RGB image.
+**Goal**: (1) Construct a comprehensive multimodal food dataset covering Chinese cuisine. (2) Propose an end-to-end nutrition prediction framework that requires only a single RGB image.
 
-**Starting Point**: A pretrained depth estimation model is employed to predict depth from RGB images; an adapter corrects the predicted depth, and frequency-domain fusion replaces the need for actual depth sensors.
+**Key Insight**: A pretrained depth estimation model is employed to predict depth from RGB images; an adapter corrects the predicted depth, and frequency-domain fusion replaces the need for actual depth sensors.
 
 **Core Idea**: Predict depth map → adapter correction → frequency-aligned fusion of RGB and depth features → mask-aware prediction.
 

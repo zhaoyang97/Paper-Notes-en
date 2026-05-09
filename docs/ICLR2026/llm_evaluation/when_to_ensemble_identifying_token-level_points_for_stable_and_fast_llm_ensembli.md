@@ -28,15 +28,15 @@ This paper proposes SAFE (Stable And Fast LLM Ensembling), which selectively ens
 
 ## Background & Motivation
 
-**State of the Field**: Probability-level LLM ensembling (aggregating next-token probability distributions) is an effective approach for leveraging complementary strengths across models. Existing methods such as UniTE and GaC perform well on short-answer tasks (multiple choice, direct answer) but degrade or collapse in long-sequence generation (CoT reasoning).
+**Background**: Probability-level LLM ensembling (aggregating next-token probability distributions) is an effective approach for leveraging complementary strengths across models. Existing methods such as UniTE and GaC perform well on short-answer tasks (multiple choice, direct answer) but degrade or collapse in long-sequence generation (CoT reasoning).
 
 **Limitations of Prior Work**: **(1) OOV-like token problem**—when the token selected during ensembling does not conform to the tokenization scheme of a participating model, that model is forced to predict over an illegal prefix, corrupting its probability distribution and generating erroneous tokens (e.g., "Sofia" may be split as "So"+"fia" by one model but treated as a single token by another; "So" then becomes an OOV-like token for the latter, causing garbled output such as "Ã"). Such errors accumulate and amplify over long sequences. **(2) Efficiency problem**—ensembling at every token requires cross-vocabulary alignment, with overhead scaling linearly with sequence length.
 
-**Root Cause**: UniTE ensembles at every token; under CoT generation, accuracy on MATH500 drops catastrophically from 72.4% to 59.6%, and to 43.4% on EXAONE+Qwen2.5. Ensembling can perform worse than a single model.
+**Key Challenge**: UniTE ensembles at every token; under CoT generation, accuracy on MATH500 drops catastrophically from 72.4% to 59.6%, and to 43.4% on EXAONE+Qwen2.5. Ensembling can perform worse than a single model.
 
-**Paper Goals**: In long-sequence generation, **when** (i.e., at which token positions) should ensembling be performed to achieve both stability and efficiency?
+**Goal**: In long-sequence generation, **when** (i.e., at which token positions) should ensembling be performed to achieve both stability and efficiency?
 
-**Starting Point**: Two key factors determine where ensembling should occur: (i) whether tokenization boundaries are aligned (to avoid OOV-like contamination), and (ii) whether models share sufficient consensus in their probability distributions (to skip unnecessary ensembling). Inspired by speculative decoding, a drafter–verifier architecture is adopted to reduce the number of autoregressive forward passes.
+**Key Insight**: Two key factors determine where ensembling should occur: (i) whether tokenization boundaries are aligned (to avoid OOV-like contamination), and (ii) whether models share sufficient consensus in their probability distributions (to skip unnecessary ensembling). Inspired by speculative decoding, a drafter–verifier architecture is adopted to reduce the number of autoregressive forward passes.
 
 **Core Idea**: Not every token requires ensembling; ensembling only at positions that are tokenization-safe and where model disagreement exists simultaneously improves both stability and efficiency.
 

@@ -28,15 +28,15 @@ This paper investigates how to leverage the conditioning mechanisms of pretraine
 
 ## Background & Motivation
 
-1. **State of the Field**: Pretrained visual representations (e.g., CLIP, VC-1, MVP) have become the standard paradigm for imitation learning—frozen pretrained encoders extract visual features, and downstream policy networks learn the mapping from features to actions. Meanwhile, diffusion models (e.g., Stable Diffusion) have demonstrated strong representational capacity in visual perception tasks such as semantic segmentation and depth estimation, with text conditioning enabling task adaptability.
+1. **Background**: Pretrained visual representations (e.g., CLIP, VC-1, MVP) have become the standard paradigm for imitation learning—frozen pretrained encoders extract visual features, and downstream policy networks learn the mapping from features to actions. Meanwhile, diffusion models (e.g., Stable Diffusion) have demonstrated strong representational capacity in visual perception tasks such as semantic segmentation and depth estimation, with text conditioning enabling task adaptability.
 
 2. **Limitations of Prior Work**: (a) Frozen visual representations are task-agnostic—the same representation exhibits large performance variance across different control tasks, requiring per-task manual selection; (b) fine-tuning visual encoders leads to severe overfitting due to the limited data available in imitation learning; (c) text conditioning proves effective in visual perception tasks (e.g., describing objects in an image improves semantic segmentation in VPD), but yields marginal or even harmful results when directly applied to control environments.
 
-3. **Root Cause**: A significant domain gap exists between control environments and the training data (web images) of diffusion models, causing text-image grounding to fail. Additionally, control tasks consist of dynamic video streams rather than static images, requiring fine-grained per-frame conditioning rather than global descriptions.
+3. **Key Challenge**: A significant domain gap exists between control environments and the training data (web images) of diffusion models, causing text-image grounding to fail. Additionally, control tasks consist of dynamic video streams rather than static images, requiring fine-grained per-frame conditioning rather than global descriptions.
 
-4. **Paper Goals**: How to design conditioning mechanisms for diffusion models that are suited to robotic control, enabling task-adaptive visual representations without fine-tuning the model itself?
+4. **Goal**: How to design conditioning mechanisms for diffusion models that are suited to robotic control, enabling task-adaptive visual representations without fine-tuning the model itself?
 
-5. **Starting Point**: By analyzing cross-attention maps, the authors identify a grounding failure of text conditioning in control environments—for instance, the word "cheetah" fails to produce correct attention on MuJoCo-rendered cheetahs. The conditioning mechanism should therefore (a) adapt to the control environment and (b) incorporate per-frame visual information.
+5. **Key Insight**: By analyzing cross-attention maps, the authors identify a grounding failure of text conditioning in control environments—for instance, the word "cheetah" fails to produce correct attention on MuJoCo-rendered cheetahs. The conditioning mechanism should therefore (a) adapt to the control environment and (b) incorporate per-frame visual information.
 
 6. **Core Idea**: Replace text conditioning with learnable task prompts to adapt to the control environment, and introduce per-frame visual prompts derived from a visual encoder to capture dynamic details. Both components are learned end-to-end via a behavior cloning objective.
 

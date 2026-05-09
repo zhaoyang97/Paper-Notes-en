@@ -28,17 +28,17 @@ This paper proposes CompactFusion, a framework that eliminates communication red
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models (e.g., FLUX.1 with 12B parameters) are scaling rapidly, making real-time inference on a single GPU infeasible. Multi-device parallel inference has become a necessity, and the dominant parallelism strategies (Sequence Parallel, Patch Parallel) require exchanging large activation tensors across devices.
+**Background**: Diffusion models (e.g., FLUX.1 with 12B parameters) are scaling rapidly, making real-time inference on a single GPU infeasible. Multi-device parallel inference has become a necessity, and the dominant parallelism strategies (Sequence Parallel, Patch Parallel) require exchanging large activation tensors across devices.
 
 **Limitations of Prior Work**: (a) Interconnect bandwidth growth lags far behind compute growth (A100→H100: 6× compute increase vs. only 1.5× NVLink bandwidth increase), making communication a bottleneck; (b) Standard patch parallelism for FLUX.1 requires transmitting ~60 GB of activations per image per GPU, consuming over 45% of inference time on PCIe; (c) Existing methods (DistriFusion, PipeFusion) use "displaced parallelism" to overlap communication with computation by reusing stale activations from the previous step, but suffer from notable quality degradation, undiminished data volume, and integration complexity.
 
-**Root Cause**: Activations in adjacent diffusion steps are highly similar (temporal redundancy), yet existing methods still transmit full activations—masking redundancy through overlapping rather than eliminating it.
+**Key Challenge**: Activations in adjacent diffusion steps are highly similar (temporal redundancy), yet existing methods still transmit full activations—masking redundancy through overlapping rather than eliminating it.
 
-**Paper Goals**
+**Goal**
 - How to genuinely reduce communication volume rather than merely hiding communication latency?
 - How to maintain high generation quality under aggressive compression?
 
-**Starting Point**: Since the activation differences (residuals) between adjacent steps are far smaller than the activations themselves, compressing residuals achieves higher compression ratios with lower error than compressing full activations—eliminating redundancy rather than concealing it.
+**Key Insight**: Since the activation differences (residuals) between adjacent steps are far smaller than the activations themselves, compressing residuals achieves higher compression ratios with lower error than compressing full activations—eliminating redundancy rather than concealing it.
 
 **Core Idea**: Transmit the "activation delta" (residual) rather than the full activation. The small magnitude of residuals leads to low compression error, enabling aggressive compression exceeding 100× while preserving quality.
 

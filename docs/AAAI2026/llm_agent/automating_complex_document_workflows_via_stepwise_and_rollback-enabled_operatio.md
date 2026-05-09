@@ -29,10 +29,10 @@ This paper proposes AutoDW, a framework that automates complex document workflow
 
 ## Background & Motivation
 
-- **State of the Field**: LLMs have demonstrated automation capabilities in code generation, data science, and web tasks, yet long-chain workflow automation for document processing (Word editing, format conversion, etc.) remains challenging. Existing document agents perform poorly—e.g., GPT-4 in PPTC achieves only a 6% session completion rate.
+- **Background**: LLMs have demonstrated automation capabilities in code generation, data science, and web tasks, yet long-chain workflow automation for document processing (Word editing, format conversion, etc.) remains challenging. Existing document agents perform poorly—e.g., GPT-4 in PPTC achieves only a 6% session completion rate.
 - **Limitations of Prior Work**: Real-world document workflows involve multi-step, interdependent instructions (e.g., "set table header → fill second row → merge cells"). Existing agents generate all API calls at once via a predefined plan without adapting to evolving document states, causing cascading failures whenever a single step errs.
-- **Root Cause**: A fundamental gap exists between the ambiguity of natural-language instructions (e.g., "add a header" may correspond to multiple APIs) and the precision required by document operations (API parameters must exactly match the current document state).
-- **Starting Point**: Decompose workflows into atomic operations executed and verified step by step, coupled with a two-layer rollback mechanism for automatic error correction to prevent error cascades.
+- **Key Challenge**: A fundamental gap exists between the ambiguity of natural-language instructions (e.g., "add a header" may correspond to multiple APIs) and the precision required by document operations (API parameters must exactly match the current document state).
+- **Key Insight**: Decompose workflows into atomic operations executed and verified step by step, coupled with a two-layer rollback mechanism for automatic error correction to prevent error cascades.
 
 ## Method
 

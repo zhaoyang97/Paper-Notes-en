@@ -29,15 +29,15 @@ This paper proposes FactoST-v2, a factorized spatio-temporal foundation model fr
 
 ## Background & Motivation
 
-**State of the Field**: Spatio-temporal (ST) foundation models aim to learn universal representations from multi-domain data to enable generalizable cross-dataset forecasting. Existing approaches such as UniST and OpenCity adopt a joint spatio-temporal pre-training paradigm.
+**Background**: Spatio-temporal (ST) foundation models aim to learn universal representations from multi-domain data to enable generalizable cross-dataset forecasting. Existing approaches such as UniST and OpenCity adopt a joint spatio-temporal pre-training paradigm.
 
 **Limitations of Prior Work**: Joint pre-training faces the challenge of "pattern mismatch" — temporal dynamics exhibit cross-domain invariance (periodicity, trends, etc.), whereas spatial correlations are highly topology-dependent (road networks vs. power grids). Forcing joint modeling incurs quadratic complexity $\mathcal{O}(N^2T^2)$ and negative transfer.
 
-**Root Cause**: Temporal and spatial patterns are fundamentally different in nature — temporal patterns are domain-invariant while spatial patterns are domain-specific — yet existing methods compel both to be learned jointly.
+**Key Challenge**: Temporal and spatial patterns are fundamentally different in nature — temporal patterns are domain-invariant while spatial patterns are domain-specific — yet existing methods compel both to be learned jointly.
 
-**Paper Goals**: To design an ST foundation model framework that achieves both generalizability and efficiency.
+**Goal**: To design an ST foundation model framework that achieves both generalizability and efficiency.
 
-**Starting Point**: The authors propose the "pattern factorization hypothesis" — effective spatio-temporal generalization requires decoupling domain-invariant temporal dynamics from domain-specific spatial context.
+**Key Insight**: The authors propose the "pattern factorization hypothesis" — effective spatio-temporal generalization requires decoupling domain-invariant temporal dynamics from domain-specific spatial context.
 
 **Core Idea**: Pre-train a universal temporal backbone first, then inject spatial awareness via lightweight adapters, enabling cross-domain transfer with linear complexity.
 

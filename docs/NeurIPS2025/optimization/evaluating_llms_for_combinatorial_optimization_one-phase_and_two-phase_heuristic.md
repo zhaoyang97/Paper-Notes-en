@@ -28,15 +28,15 @@ This paper proposes a systematic evaluation framework combining LLMs with evolut
 
 ## Background & Motivation
 
-**State of the Field**: The evaluation of LLMs is expanding beyond traditional NLP tasks into specialized domains such as mathematical reasoning and algorithm design. The 2D Bin-Packing Problem (2D-BPP) is a classical NP-hard combinatorial optimization problem requiring rectangular items to be packed into the minimum number of fixed-size bins.
+**Background**: The evaluation of LLMs is expanding beyond traditional NLP tasks into specialized domains such as mathematical reasoning and algorithm design. The 2D Bin-Packing Problem (2D-BPP) is a classical NP-hard combinatorial optimization problem requiring rectangular items to be packed into the minimum number of fixed-size bins.
 
 **Limitations of Prior Work**: (a) Traditional heuristics such as Finite First-Fit (FFF) and Hybrid First-Fit (HFF) are efficient but yield solutions of limited quality; (b) Prior work such as FunSearch has demonstrated the potential of LLMs to generate high-performance heuristics within evolutionary loops, yet a **systematic evaluation framework** for quantifying LLM capabilities in such tasks remains absent.
 
-**Root Cause**: It remains unclear how to systematically evaluate whether LLMs genuinely understand complex algorithmic constraints, whether they can continuously improve solution quality, and what the quantitative gap is relative to traditional methods.
+**Key Challenge**: It remains unclear how to systematically evaluate whether LLMs genuinely understand complex algorithmic constraints, whether they can continuously improve solution quality, and what the quantitative gap is relative to traditional methods.
 
-**Paper Goals**: To establish a structured methodology for evaluating the effectiveness of LLMs in combinatorial optimization, encompassing evaluation metrics, iterative procedures, and baseline comparisons.
+**Goal**: To establish a structured methodology for evaluating the effectiveness of LLMs in combinatorial optimization, encompassing evaluation metrics, iterative procedures, and baseline comparisons.
 
-**Starting Point**: Inspired by FunSearch, the paper introduces an "island model" evolutionary loop — LLM generation → correctness verification → scoring → clustering (islands) → feedback-driven refinement.
+**Key Insight**: Inspired by FunSearch, the paper introduces an "island model" evolutionary loop — LLM generation → correctness verification → scoring → clustering (islands) → feedback-driven refinement.
 
 **Core Idea**: An iterative evolutionary framework enables LLMs to automatically generate, evaluate, and improve heuristics for 2D-BPP, with multi-dimensional metrics used to systematically assess their optimization capability.
 

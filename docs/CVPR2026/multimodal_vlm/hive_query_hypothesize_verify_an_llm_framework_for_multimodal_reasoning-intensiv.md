@@ -29,15 +29,15 @@ HIVE is a plug-and-play multimodal retrieval framework that improves nDCG@10 fro
 
 ## Background & Motivation
 
-1. **State of the Field**: Dense retrieval (bi-encoder) is the dominant paradigm for large-scale information retrieval, achieving strong performance on factual benchmarks such as BEIR (nDCG@10 of 59.0). However, performance drops sharply to 18.3 on reasoning-intensive queries (e.g., the BRIGHT benchmark). Recent work such as DiVeR mitigates this through reasoning-aware fine-tuning, iterative query expansion, and hybrid reranking, but is limited to the text-only setting.
+1. **Background**: Dense retrieval (bi-encoder) is the dominant paradigm for large-scale information retrieval, achieving strong performance on factual benchmarks such as BEIR (nDCG@10 of 59.0). However, performance drops sharply to 18.3 on reasoning-intensive queries (e.g., the BRIGHT benchmark). Recent work such as DiVeR mitigates this through reasoning-aware fine-tuning, iterative query expansion, and hybrid reranking, but is limited to the text-only setting.
 
 2. **Limitations of Prior Work**: Real-world queries increasingly contain images (error screenshots, scientific diagrams, circuit schematics, etc.). The MM-BRIGHT benchmark shows that the SOTA multimodal retrieval model achieves only 27.6 nDCG@10 — even worse than text-only retrievers (32.2). Incorporating visual information actually hurts performance. The root cause is that embedding models perform superficial semantic matching and cannot reason about what image content implies for document relevance.
 
-3. **Root Cause**: Standard multimodal retrievers compute relevance as $\text{score}(q,d) = \cos(\phi(q_t, q_v), \psi(d))$, but this formulation has no mechanism to reason about "what the query image implies." For example, given a circuit diagram paired with the text query "LED not lighting up," the retrieval system must understand circuit topology to find relevant documents — a capability beyond embedding similarity.
+3. **Key Challenge**: Standard multimodal retrievers compute relevance as $\text{score}(q,d) = \cos(\phi(q_t, q_v), \psi(d))$, but this formulation has no mechanism to reason about "what the query image implies." For example, given a circuit diagram paired with the text query "LED not lighting up," the retrieval system must understand circuit topology to find relevant documents — a capability beyond embedding similarity.
 
-4. **Paper Goals**: (a) How can visual reasoning be injected into retrieval without retraining models? (b) How can the gap between embedding matching and reasoning-intensive retrieval be bridged?
+4. **Goal**: (a) How can visual reasoning be injected into retrieval without retraining models? (b) How can the gap between embedding matching and reasoning-intensive retrieval be bridged?
 
-5. **Starting Point**: After observing initial retrieval results, an LLM can precisely identify which visual and logical dimensions are needed by the query but not covered by the retriever, enabling the generation of targeted compensatory queries. This mirrors how a human expert reformulates a query upon receiving unsatisfactory search results.
+5. **Key Insight**: After observing initial retrieval results, an LLM can precisely identify which visual and logical dimensions are needed by the query but not covered by the retriever, enabling the generation of targeted compensatory queries. This mirrors how a human expert reformulates a query upon receiving unsatisfactory search results.
 
 6. **Core Idea**: Use the LLM as a "visual reasoning mediator" that generates compensatory queries between two retrieval rounds to explicitly capture visual-logical associations that the retriever cannot, followed by verification reranking to filter noise.
 

@@ -29,15 +29,15 @@ This paper introduces ENC-Bench, the first professional-grade benchmark for Elec
 
 ## Background & Motivation
 
-**State of the Field**: Maritime shipping accounts for over 90% of global trade, and Electronic Navigational Charts (ENCs) have been mandated by the International Maritime Organization for commercial vessels. The maritime AI market is projected to reach $4.13 billion. MLLMs have demonstrated strong performance on general visual understanding tasks, yet their actual capabilities in specialized professional domains remain largely unknown.
+**Background**: Maritime shipping accounts for over 90% of global trade, and Electronic Navigational Charts (ENCs) have been mandated by the International Maritime Organization for commercial vessels. The maritime AI market is projected to reach $4.13 billion. MLLMs have demonstrated strong performance on general visual understanding tasks, yet their actual capabilities in specialized professional domains remain largely unknown.
 
 **Limitations of Prior Work**: Existing benchmarks address statistical charts (ChartQA), documents (DocVQA), and geographic reasoning (MapQA), but none specifically targets ENCs — safety-critical professional charts that employ standardized vector symbology (IHO S-57), scale-dependent rendering, and multi-constraint spatial geometry.
 
-**Root Cause**: ENCs encode navigational regulations, water depths, and routing constraints in ways fundamentally different from natural images or statistical charts — requiring standardized symbol interpretation, spherical geodetic coordinate computation, and multi-constraint safety decision-making — none of which general-purpose MLLMs have been trained on.
+**Key Challenge**: ENCs encode navigational regulations, water depths, and routing constraints in ways fundamentally different from natural images or statistical charts — requiring standardized symbol interpretation, spherical geodetic coordinate computation, and multi-constraint safety decision-making — none of which general-purpose MLLMs have been trained on.
 
-**Paper Goals**: To systematically evaluate whether current MLLMs can reliably interpret ENCs, and to quantify the practical capability boundaries of these models in the specialized maritime domain.
+**Goal**: To systematically evaluate whether current MLLMs can reliably interpret ENCs, and to quantify the practical capability boundaries of these models in the specialized maritime domain.
 
-**Starting Point**: The evaluation framework is designed to mirror the cognitive workflow of a licensed mariner, spanning from symbol recognition to safety-critical decision-making in a hierarchical manner.
+**Key Insight**: The evaluation framework is designed to mirror the cognitive workflow of a licensed mariner, spanning from symbol recognition to safety-critical decision-making in a hierarchical manner.
 
 **Core Idea**: Construct a three-level hierarchical ENC benchmark (Perception → Spatial Reasoning → Decision-Making) to rigorously evaluate MLLM performance in maritime safety-critical scenarios for the first time.
 

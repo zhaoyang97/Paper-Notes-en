@@ -28,10 +28,10 @@ This paper proposes D2S-VSE, a two-stage training framework that addresses the i
 
 ## Background & Motivation
 
-- **State of the Field**: Conventional visual semantic embedding (VSE) models learn a joint embedding space for cross-modal retrieval.
+- **Background**: Conventional visual semantic embedding (VSE) models learn a joint embedding space for cross-modal retrieval.
 - **Limitations of Prior Work**: Existing methods overlook the information density gap between modalities: images carry rich visual details (high information capacity), whereas dataset captions are typically short (low information capacity). Methods that learn multiple embeddings to cover diverse perspectives remain limited in per-embedding information capacity and are susceptible to false negatives with partial semantic overlap.
-- **Root Cause**: The asymmetric information capacity between visual and textual representations degrades retrieval quality.
-- **Paper Goals**: Learn visual semantic embeddings with higher information capacity for both modalities.
+- **Key Challenge**: The asymmetric information capacity between visual and textual representations degrades retrieval quality.
+- **Goal**: Learn visual semantic embeddings with higher information capacity for both modalities.
 
 ## Method
 

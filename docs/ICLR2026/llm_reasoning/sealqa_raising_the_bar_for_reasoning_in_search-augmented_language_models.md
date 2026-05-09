@@ -30,13 +30,13 @@ This paper introduces SealQA, a challenging benchmark with three variants (Seal-
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have entered a new paradigm of test-time scaling, where reasoning models can decompose problems, decide when to search, and integrate retrieved content into reasoning chains. State-of-the-art models already exceed 90% accuracy on traditional benchmarks such as MMLU, rendering existing evaluations largely saturated.
+**Background**: LLMs have entered a new paradigm of test-time scaling, where reasoning models can decompose problems, decide when to search, and integrate retrieved content into reasoning chains. State-of-the-art models already exceed 90% accuracy on traditional benchmarks such as MMLU, rendering existing evaluations largely saturated.
 
 **Limitations of Prior Work**: Most evaluations of search-augmented LLMs focus on short, factoid queries where top-ranked results directly answer the question, requiring only shallow comprehension. This fails to reflect the messy nature of real-world search, where returned documents may be outdated, misleading, or superficially relevant but practically useless.
 
-**Root Cause**: Real-world information retrieval demands deep reasoning to filter inconsistent information, reconcile contradictions, and identify credible signals — challenges that existing benchmarks cannot simulate, partly because such datasets are difficult to curate and validate at scale.
+**Key Challenge**: Real-world information retrieval demands deep reasoning to filter inconsistent information, reconcile contradictions, and identify credible signals — challenges that existing benchmarks cannot simulate, partly because such datasets are difficult to curate and validate at scale.
 
-**Paper Goals**: The paper proposes SealQA, a small yet extremely challenging benchmark where each question is carefully designed by NLP researchers and subjected to multiple rounds of rigorous review, specifically targeting ambiguous, conflicting, and noisy search results. Three variants are included to cover different dimensions of search-augmented reasoning.
+**Goal**: The paper proposes SealQA, a small yet extremely challenging benchmark where each question is carefully designed by NLP researchers and subjected to multiple rounds of rigorous review, specifically targeting ambiguous, conflicting, and noisy search results. Three variants are included to cover different dimensions of search-augmented reasoning.
 
 ## Method
 

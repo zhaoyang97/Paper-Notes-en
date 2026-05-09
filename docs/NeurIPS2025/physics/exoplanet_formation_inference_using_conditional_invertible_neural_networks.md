@@ -27,15 +27,15 @@ A conditional invertible neural network (cINN) trained on 15,777 synthetic plane
 
 ## Background & Motivation
 
-**State of the Field**: Understanding the origins of exoplanets requires tracing formation parameters from observed planetary properties. Direct MCMC approaches are infeasible — a single run of a global planet formation model takes days to months.
+**Background**: Understanding the origins of exoplanets requires tracing formation parameters from observed planetary properties. Direct MCMC approaches are infeasible — a single run of a global planet formation model takes days to months.
 
 **Limitations of Prior Work**: (a) Physical models are computationally prohibitive for large-scale Bayesian inference; (b) gravitational chaos among planets renders the parameter-to-observable mapping stochastic; (c) data are sparse in the high-dimensional parameter space (disk mass, viscosity, dust-to-gas ratio, inner edge, etc.).
 
-**Root Cause**: Accurate probabilistic inference is required, yet physical models cannot be run at scale.
+**Key Challenge**: Accurate probabilistic inference is required, yet physical models cannot be run at scale.
 
-**Paper Goals**: Train a fast surrogate model on a limited synthetic dataset to enable practical Bayesian inference of planet formation parameters.
+**Goal**: Train a fast surrogate model on a limited synthetic dataset to enable practical Bayesian inference of planet formation parameters.
 
-**Starting Point**: cINNs provide exact invertible mappings — the forward pass maps parameters to a standard Gaussian latent space conditioned on observables, while the inverse pass samples the posterior, naturally supporting probabilistic inference.
+**Key Insight**: cINNs provide exact invertible mappings — the forward pass maps parameters to a standard Gaussian latent space conditioned on observables, while the inverse pass samples the posterior, naturally supporting probabilistic inference.
 
 **Core Idea**: Use a cINN as a surrogate for the planet formation physical model. Individual planets extracted from multi-planet systems are treated as separate training samples to increase data diversity, enabling millisecond-scale probabilistic parameter inference.
 

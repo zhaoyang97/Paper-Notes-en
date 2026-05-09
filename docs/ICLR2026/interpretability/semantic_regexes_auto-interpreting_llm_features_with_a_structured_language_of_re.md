@@ -28,7 +28,7 @@ This paper proposes **Semantic Regexes**, a structured language for automaticall
 
 ## Background & Motivation
 
-**State of the Field**:
+**Background**:
 - Methods such as sparse autoencoders (SAEs) can extract monosemantic features from LLMs.
 - Automated interpretability pipelines use LLMs to translate these features into human-readable descriptions.
 - Such descriptions help researchers understand what concepts a model encodes and enable feature circuit tracing.
@@ -39,7 +39,7 @@ This paper proposes **Semantic Regexes**, a structured language for automaticall
 - **Ambiguity**: Natural language is inherently ambiguous, which hinders analysis tasks that require compositional reasoning.
 - **Manual re-annotation**: Even in recent feature circuit work, researchers must still manually re-label features.
 
-**Root Cause**:
+**Key Challenge**:
 - A well-defined grammar and semantics reduce ambiguity.
 - Compositional rules enable precise expressions ranging from simple to complex.
 - Uniform expression facilitates comparison and aggregation across features.

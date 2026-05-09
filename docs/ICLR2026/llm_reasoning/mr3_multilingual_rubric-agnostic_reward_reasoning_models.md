@@ -28,7 +28,7 @@ This paper introduces mR3, a family of multilingual rubric-agnostic reward reaso
 
 ## Background & Motivation
 
-**State of the Field**: The LLM-as-judge evaluation paradigm has been widely adopted in English settings, but support for non-English languages remains extremely limited. Existing reward models (e.g., ArmoRM, RM-R1) focus almost exclusively on English, while multilingual evaluation models (e.g., m-Prometheus) cover only 6 languages and lack systematic study of training strategies.
+**Background**: The LLM-as-judge evaluation paradigm has been widely adopted in English settings, but support for non-English languages remains extremely limited. Existing reward models (e.g., ArmoRM, RM-R1) focus almost exclusively on English, while multilingual evaluation models (e.g., m-Prometheus) cover only 6 languages and lack systematic study of training strategies.
 
 **Limitations of Prior Work**:
    - Existing reward models exhibit significant accuracy degradation in non-English settings
@@ -36,15 +36,15 @@ This paper introduces mR3, a family of multilingual rubric-agnostic reward reaso
    - Multilingual evaluation lacks a standardized framework; existing work supports only pair-wise comparison, without point-wise or binary evaluation
    - There is no systematic investigation into how to construct high-quality training data for multilingual reward models, including what languages to use for instructions, rubrics, and reasoning chains
 
-**Root Cause**: Multilingual evaluation requires both strong reasoning ability and cross-lingual knowledge transfer, yet existing models' reasoning capabilities degrade substantially in non-English languages. How to simultaneously improve both under limited multilingual data conditions remains an open challenge.
+**Key Challenge**: Multilingual evaluation requires both strong reasoning ability and cross-lingual knowledge transfer, yet existing models' reasoning capabilities degrade substantially in non-English languages. How to simultaneously improve both under limited multilingual data conditions remains an open challenge.
 
-**Paper Goals**:
+**Goal**:
    - Design a multilingual reward reasoning model covering 72 languages
    - Systematically study optimal combinations of instruction language, reasoning language, and target language
    - Explore data selection and curriculum learning strategies
    - Support point-wise, pair-wise, and binary evaluation paradigms
 
-**Starting Point**: Rather than training conventional scalar reward models, this work trains generative reward models that produce reasoning traces alongside scores, improving evaluation interpretability and cross-lingual robustness through explicit reasoning.
+**Key Insight**: Rather than training conventional scalar reward models, this work trains generative reward models that produce reasoning traces alongside scores, improving evaluation interpretability and cross-lingual robustness through explicit reasoning.
 
 **Core Idea**: Construct a 72-language alignment dataset (100K samples) via GPT-OSS-120B distillation combined with difficulty filtering and curriculum learning, training generative reward reasoning models that outperform the teacher model despite having far fewer parameters.
 

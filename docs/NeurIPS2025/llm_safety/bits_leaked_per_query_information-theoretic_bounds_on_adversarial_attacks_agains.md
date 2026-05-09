@@ -28,18 +28,18 @@ This paper models adversarial attacks on LLMs as an information channel problem 
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are subject to a variety of adversarial attacks — system prompt extraction, jailbreaking, and post-unlearning re-learning attacks. For transparency, many LLM services expose chain-of-thought (CoT) reasoning or token probabilities (logits), but these signals can potentially be exploited by adversaries.
+**Background**: LLMs are subject to a variety of adversarial attacks — system prompt extraction, jailbreaking, and post-unlearning re-learning attacks. For transparency, many LLM services expose chain-of-thought (CoT) reasoning or token probabilities (logits), but these signals can potentially be exploited by adversaries.
 
 **Limitations of Prior Work**:
    - Attack evaluation is purely empirical — plotting "success rate vs. query count" curves without a theoretical optimum for reference
    - Defenders cannot quantify "how much additional security risk does exposing CoT introduce compared to exposing only answer tokens"
    - Attackers cannot determine how far their methods are from the theoretical limit
 
-**Root Cause**: There is a fundamental trade-off between transparency (exposing more signals improves interpretability and user experience) and security (exposing more signals accelerates attacks), yet no theoretical framework exists to quantify this trade-off.
+**Key Challenge**: There is a fundamental trade-off between transparency (exposing more signals improves interpretability and user experience) and security (exposing more signals accelerates attacks), yet no theoretical framework exists to quantify this trade-off.
 
-**Paper Goals**: Establish theoretical lower bounds on "what the strongest attacker can achieve given a fixed information leakage rate," enabling defenders to principally control the level of transparency.
+**Goal**: Establish theoretical lower bounds on "what the strongest attacker can achieve given a fixed information leakage rate," enabling defenders to principally control the level of transparency.
 
-**Starting Point**: Model each LLM query as an information channel (input = adversarial prompt, output = observable signal, latent variable = attack target attribute), quantify per-query leakage via mutual information, and derive information-theoretic lower bounds on query complexity.
+**Key Insight**: Model each LLM query as an information channel (input = adversarial prompt, output = observable signal, latent variable = attack target attribute), quantify per-query leakage via mutual information, and derive information-theoretic lower bounds on query complexity.
 
 **Core Idea**: LLM security = information channel problem; query complexity satisfies $N \geq \log(1/\varepsilon) / I(Z;T)$.
 

@@ -28,15 +28,15 @@ RDVQ introduces a differentiable relaxation over the codebook distribution, enab
 
 ## Background & Motivation
 
-**State of the Field**: Learned image compression predominantly relies on scalar quantization (SQ), where differentiable approximations (e.g., additive noise or STE) allow gradient backpropagation to the encoder, enabling end-to-end rate-distortion optimization. Vector quantization (VQ) preserves richer structural information and perceptual quality, making it particularly suitable for extremely low bitrates.
+**Background**: Learned image compression predominantly relies on scalar quantization (SQ), where differentiable approximations (e.g., additive noise or STE) allow gradient backpropagation to the encoder, enabling end-to-end rate-distortion optimization. Vector quantization (VQ) preserves richer structural information and perceptual quality, making it particularly suitable for extremely low bitrates.
 
 **Limitations of Prior Work**: The discrete nearest-neighbor assignment in VQ blocks gradient flow from the rate loss to the encoder. The encoder-induced implicit prior distribution cannot be directly optimized by the rate objective, leading to a fundamental decoupling between representation learning and the entropy model.
 
-**Root Cause**: While VQ offers advantages in reconstruction quality, it cannot support end-to-end rate-distortion joint optimization as SQ does; bitrate control must rely on heuristics such as codebook size adjustment and selective transmission.
+**Key Challenge**: While VQ offers advantages in reconstruction quality, it cannot support end-to-end rate-distortion joint optimization as SQ does; bitrate control must rely on heuristics such as codebook size adjustment and selective transmission.
 
-**Paper Goals**: Restore a differentiable gradient path from the rate objective to the encoder in VQ-based compression, achieving true end-to-end rate-distortion optimization.
+**Goal**: Restore a differentiable gradient path from the rate objective to the encoder in VQ-based compression, achieving true end-to-end rate-distortion optimization.
 
-**Starting Point**: Replace hard nearest-neighbor assignment with a distance-aware soft distribution, used exclusively in the rate estimation branch, while reconstruction continues to use standard hard quantization.
+**Key Insight**: Replace hard nearest-neighbor assignment with a distance-aware soft distribution, used exclusively in the rate estimation branch, while reconstruction continues to use standard hard quantization.
 
 **Core Idea**: During training, a softmax-relaxed codebook distribution is used to estimate the rate, enabling rate gradients to flow to the encoder; at inference, the system reverts to standard hard VQ, maintaining full compatibility.
 

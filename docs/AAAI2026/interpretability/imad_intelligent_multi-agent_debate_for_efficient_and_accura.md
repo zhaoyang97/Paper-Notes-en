@@ -26,15 +26,15 @@ content_hash: 85bc7f0b28e2ada7
 iMAD proposes a framework for selectively triggering multi-agent debate (MAD): a single agent first generates a structured response with self-critique, from which 41 interpretable linguistic/semantic features are extracted; a lightweight MLP classifier trained with the FocusCal loss then determines whether to trigger MAD. Across 6 QA/VQA benchmarks, iMAD reduces token overhead by up to 92% while improving accuracy by up to 13.5%.
 
 ## Background & Motivation
-**State of the Field**: Multi-Agent Debate (MAD) is an effective approach to enhancing LLM reasoning—multiple agents reason independently, critique each other, and correct errors through structured discussion.
+**Background**: Multi-Agent Debate (MAD) is an effective approach to enhancing LLM reasoning—multiple agents reason independently, critique each other, and correct errors through structured discussion.
 
 **Limitations of Prior Work**: MAD suffers from two critical problems: (1) **Massive token overhead**—MAD consumes 3–5× more tokens than a single agent, as each agent requires independent queries and iterative discussion rounds; (2) **Not always beneficial**—experiments show that MAD corrects errors (✗→✓) in only 5–19% of cases (e.g., only 4.9% on OKVQA). In the majority of cases, debate is either redundant (the answer was already correct), ineffective (errors cannot be corrected through debate), or even harmful (correct answers are overturned).
 
-**Root Cause**: MAD improves average accuracy, but this gain stems from a small fraction of recoverable cases. Triggering MAD on all queries wastes tokens and may degrade accuracy. A mechanism is needed to "selectively" trigger MAD only when it is likely to be beneficial.
+**Key Challenge**: MAD improves average accuracy, but this gain stems from a small fraction of recoverable cases. Triggering MAD on all queries wastes tokens and may degrade accuracy. A mechanism is needed to "selectively" trigger MAD only when it is likely to be beneficial.
 
-**Paper Goals**: When should multi-agent debate be triggered?—making efficient debate-triggering decisions in a zero-shot setting.
+**Goal**: When should multi-agent debate be triggered?—making efficient debate-triggering decisions in a zero-shot setting.
 
-**Starting Point**: Naive confidence scores are unreliable (LLMs are frequently overconfident, assigning high scores even to incorrect answers). Richer hesitation signals—hedging, contradictions, shallow reasoning—must be extracted from LLM responses, and a calibrated loss function must be used to learn generalizable behavioral patterns.
+**Key Insight**: Naive confidence scores are unreliable (LLMs are frequently overconfident, assigning high scores even to incorrect answers). Richer hesitation signals—hedging, contradictions, shallow reasoning—must be extracted from LLM responses, and a calibrated loss function must be used to learn generalizable behavioral patterns.
 
 **Core Idea**: Use self-critique prompting to elicit hesitation signals, extract 41 features, and train a lightweight classifier with the FocusCal loss to selectively trigger MAD.
 

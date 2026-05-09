@@ -27,15 +27,15 @@ This paper proposes Adaptive Originality Filtering (AOF)—a semantic rejection-
 
 ## Background & Motivation
 
-**State of the Field**: LLMs underperform on creative multilingual tasks such as riddle generation—standard prompting strategies (zero-shot, few-shot, CoT) tend to produce templated and repetitive outputs, with particularly poor cultural adaptation in non-English languages.
+**Background**: LLMs underperform on creative multilingual tasks such as riddle generation—standard prompting strategies (zero-shot, few-shot, CoT) tend to produce templated and repetitive outputs, with particularly poor cultural adaptation in non-English languages.
 
 **Limitations of Prior Work**: Existing evaluation metrics (BLEU, BERTScore, perplexity) fail to capture the core dimensions of creative quality—novelty, cultural relevance, and richness of rhetorical devices. Riddles require metaphor, misdirection, and cultural resonance, none of which fall within the scope of standard metrics.
 
-**Root Cause**: LLM pretraining data is skewed toward high-frequency patterns; creative generation demands deviation from these patterns (greater novelty), yet excessive deviation may compromise fluency and answer alignment.
+**Key Challenge**: LLM pretraining data is skewed toward high-frequency patterns; creative generation demands deviation from these patterns (greater novelty), yet excessive deviation may compromise fluency and answer alignment.
 
-**Paper Goals**: How can LLMs be guided to generate more novel, diverse, and culturally adapted multilingual riddles? How should the quality of such creative generation be evaluated?
+**Goal**: How can LLMs be guided to generate more novel, diverse, and culturally adapted multilingual riddles? How should the quality of such creative generation be evaluated?
 
-**Starting Point**: Enforce novelty within the generation loop through semantic filtering (rejection sampling), while designing a composite metric to balance four quality dimensions.
+**Key Insight**: Enforce novelty within the generation loop through semantic filtering (rejection sampling), while designing a composite metric to balance four quality dimensions.
 
 **Core Idea**: Detect semantic proximity among LLM outputs, reject candidates that are too similar to existing riddles, and thereby compel the model to produce more original content.
 

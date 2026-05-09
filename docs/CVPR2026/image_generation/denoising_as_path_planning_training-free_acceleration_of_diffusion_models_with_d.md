@@ -34,7 +34,7 @@ Inference overhead for diffusion models (especially DiT architectures) is high. 
 - **Local Adaptive Scheduling** (e.g., TeaCache/AdaCache): Greedy, short-sighted decisions may skip crucial steps, causing irreversible drift and error accumulation.
 - Both strategies overlook the global structure of the denoising trajectory.
 
-**Root Cause**: Optimal acceleration requires a global perspective—considering the entire denoising trajectory and planning sampling steps holistically.
+**Key Challenge**: Optimal acceleration requires a global perspective—considering the entire denoising trajectory and planning sampling steps holistically.
 
 ## Method
 

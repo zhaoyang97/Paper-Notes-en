@@ -29,13 +29,13 @@ EagleVision is a dual-stage framework in which the macro-perception stage employ
 
 ## Background & Motivation
 
-**State of the Field**: Video spatial reasoning (distance estimation, direction judgment, layout understanding) requires integrating geometric cues across multiple viewpoints. Existing MLLMs are constrained by fixed token budgets and rely on uniform frame sampling, with no ability to request new viewpoints during inference.
+**Background**: Video spatial reasoning (distance estimation, direction judgment, layout understanding) requires integrating geometric cues across multiple viewpoints. Existing MLLMs are constrained by fixed token budgets and rely on uniform frame sampling, with no ability to request new viewpoints during inference.
 
 **Limitations of Prior Work**: (1) Uniform sampling guarantees neither semantic relevance nor viewpoint diversity—critical geometric parallax frames may be entirely missed; (2) once initial frames are fixed, the model cannot request additional viewpoints upon discovering insufficient evidence mid-reasoning; (3) collecting multi-step spatial reasoning annotations is impractical—supervision must come from answer-level signals.
 
 **Three Core Research Challenges**: (a) Initial frame selection must balance semantic relevance and viewpoint diversity; (b) spatial hypotheses must be verified in a shared 3D coordinate system, requiring abstract spatial queries to be mapped to concrete frame retrieval; (c) human-annotated CoT trajectories are unavailable.
 
-**Starting Point**: Extending the "thinking with images" paradigm from single-image (crop/zoom) to multi-view 3D spatial reasoning.
+**Key Insight**: Extending the "thinking with images" paradigm from single-image (crop/zoom) to multi-view 3D spatial reasoning.
 
 **Core Idea**: BEV-grounded pose querying—the model predicts a pose on the BEV plane to retrieve the nearest real frame, alternating with textual reasoning to form a closed loop.
 

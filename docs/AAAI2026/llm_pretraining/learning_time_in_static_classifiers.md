@@ -29,13 +29,13 @@ This paper proposes the Support-Exemplar-Query (SEQ) learning framework, which i
 
 ## Background & Motivation
 
-**State of the Field**: Existing classifiers typically assume i.i.d. data and disregard temporal structure. However, in real-world scenarios such as surveillance, medical imaging, and robotics, visual data evolves gradually over time—through changes in pose, illumination, object state, and so on.
+**Background**: Existing classifiers typically assume i.i.d. data and disregard temporal structure. However, in real-world scenarios such as surveillance, medical imaging, and robotics, visual data evolves gradually over time—through changes in pose, illumination, object state, and so on.
 
 **Limitations of Prior Work**: While sequence models such as RNNs, LSTMs, and Transformers can model temporal dependencies, they introduce architectural complexity, require dense temporal annotations, and degrade in performance under label-scarce settings.
 
-**Root Cause**: Temporal reasoning ability is commonly assumed to require sequence-based architectures, yet many scenarios feature data with inherent temporal structure that static classifiers cannot exploit.
+**Key Challenge**: Temporal reasoning ability is commonly assumed to require sequence-based architectures, yet many scenarios feature data with inherent temporal structure that static classifiers cannot exploit.
 
-**Starting Point**: The authors raise a key question—**can standard feed-forward classifiers acquire temporal reasoning ability by changing the supervision signal (i.e., the loss function) alone, without any architectural modification?**
+**Key Insight**: The authors raise a key question—**can standard feed-forward classifiers acquire temporal reasoning ability by changing the supervision signal (i.e., the loss function) alone, without any architectural modification?**
 
 **Core Idea**: Temporal reasoning is achieved purely through loss function design by constructing temporally augmented sequences, class-level temporal prototypes, and soft DTW alignment.
 

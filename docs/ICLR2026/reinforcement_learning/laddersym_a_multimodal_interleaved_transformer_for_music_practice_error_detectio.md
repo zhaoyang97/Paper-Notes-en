@@ -28,13 +28,13 @@ This paper proposes the LadderSym architecture for music practice error detectio
 
 ## Background & Motivation
 
-**State of the Field**: Music practice error detection compares a practice recording against a reference score to identify missed, extra, and wrong notes. Early methods rely on DTW-based explicit alignment (sensitive to timing deviations), while Polytune, which performs latent-space alignment using a Transformer, represents the current SOTA.
+**Background**: Music practice error detection compares a practice recording against a reference score to identify missed, extra, and wrong notes. Early methods rely on DTW-based explicit alignment (sensitive to timing deviations), while Polytune, which performs latent-space alignment using a Transformer, represents the current SOTA.
 
 **Limitations of Prior Work**: (1) Polytune employs late fusion (joint encoding only at the final layer), and attention map analysis reveals insufficient cross-stream alignment; (2) the score is input solely as synthesized audio, causing spectral overlap ambiguity during polyphonic passages, which particularly harms missed-note detection.
 
-**Root Cause**: Early fusion (single encoder) improves alignment but constrains asymmetric feature extraction due to parameter sharing; late fusion preserves independent processing but sacrifices alignment capacity. Alignment and feature extraction must be decoupled.
+**Key Challenge**: Early fusion (single encoder) improves alignment but constrains asymmetric feature extraction due to parameter sharing; late fusion preserves independent processing but sacrifices alignment capacity. Alignment and feature extraction must be decoupled.
 
-**Starting Point**: (1) Design a Ladder encoder that applies bidirectional cross-attention alignment at every layer while ViT blocks independently perform feature extraction; (2) introduce symbolic scores as decoder prompts to reduce audio ambiguity.
+**Key Insight**: (1) Design a Ladder encoder that applies bidirectional cross-attention alignment at every layer while ViT blocks independently perform feature extraction; (2) introduce symbolic scores as decoder prompts to reduce audio ambiguity.
 
 ## Method
 

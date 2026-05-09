@@ -26,15 +26,15 @@ content_hash: 9c9a2998845c10d9
 This paper proposes Skills Scaling Laws (Sloth), which assumes that LLM performance is driven by low-dimensional latent skills (e.g., reasoning, instruction following). By exploiting inter-benchmark correlations, Sloth constructs scaling laws that generalize across model families, enabling prediction of large-model performance on multiple benchmarks using only a small amount of family-specific data.
 
 ## Background & Motivation
-**State of the Field**: Traditional scaling laws (e.g., Chinchilla) predict loss rather than benchmark accuracy, and generalize poorly across model families.
+**Background**: Traditional scaling laws (e.g., Chinchilla) predict loss rather than benchmark accuracy, and generalize poorly across model families.
 
 **Limitations of Prior Work**: Intra-family scaling laws require training models of varying sizes (typically 3–5), which is costly; cross-family scaling laws suffer from poor accuracy.
 
-**Root Cause**: Ignoring family information leads to inaccuracy; incorporating family information introduces too many parameters, requiring large amounts of training data.
+**Key Challenge**: Ignoring family information leads to inaccuracy; incorporating family information introduces too many parameters, requiring large amounts of training data.
 
-**Paper Goals**: Predict the performance of larger models in a given family across multiple benchmarks using minimal family-specific data (even a single model).
+**Goal**: Predict the performance of larger models in a given family across multiple benchmarks using minimal family-specific data (even a single model).
 
-**Starting Point**: Scores across different benchmarks are correlated, as they all reflect underlying "skills"; this correlation can be leveraged to reduce the number of parameters.
+**Key Insight**: Scores across different benchmarks are correlated, as they all reflect underlying "skills"; this correlation can be leveraged to reduce the number of parameters.
 
 **Core Idea**: Scaling laws are formulated in a low-dimensional "skill space" rather than directly in benchmark space, with parameters shared via factor analysis.
 

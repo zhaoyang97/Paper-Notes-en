@@ -29,16 +29,16 @@ By exploiting the temporal invariance of background structure in fixed-view vide
 
 ## Background & Motivation
 
-**State of the Field**: Language-guided video object grounding (referring) has become a core technology for surveillance, behavior analysis, and related applications. Existing methods (MTTR, ReferFormer, OnlineRefer, etc.) are primarily designed for short-horizon scenarios, assuming targets are visible in most frames and maintaining identity consistency through inter-frame appearance propagation.
+**Background**: Language-guided video object grounding (referring) has become a core technology for surveillance, behavior analysis, and related applications. Existing methods (MTTR, ReferFormer, OnlineRefer, etc.) are primarily designed for short-horizon scenarios, assuming targets are visible in most frames and maintaining identity consistency through inter-frame appearance propagation.
 
 **Limitations of Prior Work**: In long-duration fixed-view videos (e.g., surveillance cameras, average length >120 s), targets frequently become occluded, exit the field of view, and re-enter. Existing methods face three critical problems:
    - **Semantic memory loss**: When a target is invisible, the semantic memory in framewise pipelines is interrupted, preventing re-association upon target re-entry.
    - **Appearance drift**: Over long time spans, illumination changes and pose variations render appearance features unreliable, causing pure ReID-based appearance matching to drift.
    - **Near-semantic interference**: Distractors with similar appearance (e.g., pedestrians wearing similar clothing) are incorrectly identified during target absence.
 
-**Root Cause**: Existing methods anchor semantic alignment entirely to the target's own appearance features. Once the target is invisible, the "text–target" semantic chain breaks. Yet the background structure in fixed-view videos is stable—a fact that has been entirely overlooked.
+**Key Challenge**: Existing methods anchor semantic alignment entirely to the target's own appearance features. Once the target is invisible, the "text–target" semantic chain breaks. Yet the background structure in fixed-view videos is stable—a fact that has been entirely overlooked.
 
-**Starting Point**: Fixed camera → invariant background layout → a set of spatial anchors can be distilled from the background → text queries are aligned to these anchors → even when the target disappears, the "text–scene" spatial memory remains persistently valid → the spatial prior enables rapid re-capture upon target re-entry.
+**Key Insight**: Fixed camera → invariant background layout → a set of spatial anchors can be distilled from the background → text queries are aligned to these anchors → even when the target disappears, the "text–scene" spatial memory remains persistently valid → the spatial prior enables rapid re-capture upon target re-entry.
 
 **Core Idea**: **Compensate for the temporal variability of target appearance with the temporal invariance of background structure**—upgrading referring from "finding the target" to "localizing the spatial region corresponding to the query within a scene coordinate system."
 

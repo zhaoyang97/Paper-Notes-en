@@ -28,15 +28,15 @@ This paper systematically analyzes how Frontier Safety Policies (FSPs) can be in
 
 ## Background & Motivation
 
-**State of the Field**: China's senior leadership has repeatedly emphasized the importance of AI emergency preparedness in recent years. The April 2025 Politburo study session, the State Council's security white paper, and TC260's *Guidelines for Security Emergency Response of Generative AI Services* collectively indicate that China is incorporating AI safety emergency management into its national emergency governance system. Internationally, the EU AI Act, California SB 53, and New York's RAISE Act are establishing analogous frameworks.
+**Background**: China's senior leadership has repeatedly emphasized the importance of AI emergency preparedness in recent years. The April 2025 Politburo study session, the State Council's security white paper, and TC260's *Guidelines for Security Emergency Response of Generative AI Services* collectively indicate that China is incorporating AI safety emergency management into its national emergency governance system. Internationally, the EU AI Act, California SB 53, and New York's RAISE Act are establishing analogous frameworks.
 
 **Limitations of Prior Work**: Although the general structure of the four-phase emergency response framework (prevention and preparedness, monitoring and early warning, response and rescue, recovery and reconstruction) has been established, the concrete technical implementation of the first two phases remains underdeveloped. Existing regulations—such as the *Interim Measures* and GB/T 45654-2025—primarily address content safety and general service security, and do not yet systematically cover catastrophic risks such as weapons of mass destruction (WMDs) or loss-of-control scenarios.
 
-**Root Cause**: Catastrophic AI risks are characterized by unprecedented novelty and uncertainty, yet China possesses a mature emergency management architecture. The central challenge is how to integrate the emerging international frontier AI safety practices (e.g., FSPs) with China's institutional strengths.
+**Key Challenge**: Catastrophic AI risks are characterized by unprecedented novelty and uncertainty, yet China possesses a mature emergency management architecture. The central challenge is how to integrate the emerging international frontier AI safety practices (e.g., FSPs) with China's institutional strengths.
 
-**Paper Goals**: To analyze how the FSP model can provide concrete technical implementation pathways for the first two proactive phases—prevention and early warning—of China's AI emergency response framework.
+**Goal**: To analyze how the FSP model can provide concrete technical implementation pathways for the first two proactive phases—prevention and early warning—of China's AI emergency response framework.
 
-**Starting Point**: The authors observe that the core elements of FSPs (dangerous capability evaluations, tiered thresholds, and pre-established safety measures) closely correspond to the prevention and early warning phases of China's emergency response framework, and that major global AI companies and governments are converging toward similar safety mechanisms.
+**Key Insight**: The authors observe that the core elements of FSPs (dangerous capability evaluations, tiered thresholds, and pre-established safety measures) closely correspond to the prevention and early warning phases of China's emergency response framework, and that major global AI companies and governments are converging toward similar safety mechanisms.
 
 **Core Idea**: The FSP "evaluation–threshold–contingency plan" model is the most viable candidate for implementing the first two phases of China's AI emergency response framework.
 

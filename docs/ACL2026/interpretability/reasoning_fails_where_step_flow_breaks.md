@@ -27,15 +27,15 @@ This paper proposes Step-Saliency, a diagnostic tool that identifies two depth-c
 
 ## Background & Motivation
 
-**State of the Field** Large reasoning models (LRMs) achieve strong performance on mathematics, science, and coding tasks by generating long chains of thought (CoT), yet their behavior remains unstable and difficult to interpret. Most existing analysis tools operate at the token level, producing dense and noisy signals over long reasoning trajectories that fail to capture inter-step dependencies.
+**Background** Large reasoning models (LRMs) achieve strong performance on mathematics, science, and coding tasks by generating long chains of thought (CoT), yet their behavior remains unstable and difficult to interpret. Most existing analysis tools operate at the token level, producing dense and noisy signals over long reasoning trajectories that fail to capture inter-step dependencies.
 
 **Limitations of Prior Work** Current interpretability methods fall into two categories: attention analysis and gradient saliency analysis. Attention weights do not necessarily faithfully reflect prediction-driving factors; gradient saliency is more faithful to the model's actual computation but is noisy over long sequences and difficult to aggregate across positions. The core issue is not a lack of signals, but rather the absence of readable units aligned with reasoning steps.
 
-**Root Cause** When a model makes an error, it is impossible to attribute the final mistake to a specific step in the internal reasoning trajectory — token-level saliency maps are too dense to intuitively reveal information flow breakdowns between steps.
+**Key Challenge** When a model makes an error, it is impossible to attribute the final mistake to a specific step in the internal reasoning trajectory — token-level saliency maps are too dense to intuitively reveal information flow breakdowns between steps.
 
-**Paper Goals** To design a step-level diagnostic tool that tracks inter-step influence relationships across network depths, and to devise test-time interventions based on the diagnostic results to repair information flow.
+**Goal** To design a step-level diagnostic tool that tracks inter-step influence relationships across network depths, and to devise test-time interventions based on the diagnostic results to repair information flow.
 
-**Starting Point** Token-level attention-gradient influence scores are aggregated to the step level via mean pooling, forming a compact step-to-step saliency map, which is then analyzed layer by layer to compare correct and incorrect reasoning trajectories.
+**Key Insight** Token-level attention-gradient influence scores are aggregated to the step level via mean pooling, forming a compact step-to-step saliency map, which is then analyzed layer by layer to compare correct and incorrect reasoning trajectories.
 
 **Core Idea** The root cause of erroneous reasoning lies in information flow breakdowns — shallow layers over-attend to the current step (Shallow Lock-in), while deep layers progressively lose attention to the thinking segments (Deep Decay). Targeted interventions applied separately to shallow and deep layers can repair these information flow defects.
 

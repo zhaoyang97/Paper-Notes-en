@@ -29,13 +29,13 @@ This paper is the first to formalize the problem of minimizing polarization and 
 
 ## Background & Motivation
 
-**State of the Field**: Social media can exacerbate opinion polarization and societal fragmentation. The Friedkin-Johnsen (FJ) model is a classical framework for studying opinion dynamics: each agent's expressed opinion is a weighted average of its internal opinion and its neighbors' expressed opinions, converging to a unique equilibrium $\bm{z}^* = (\mathbf{I} + \mathbf{L})^{-1}\bm{s}$, where $\mathbf{L}$ is the graph Laplacian and $\bm{s}$ is the vector of internal opinions.
+**Background**: Social media can exacerbate opinion polarization and societal fragmentation. The Friedkin-Johnsen (FJ) model is a classical framework for studying opinion dynamics: each agent's expressed opinion is a weighted average of its internal opinion and its neighbors' expressed opinions, converging to a unique equilibrium $\bm{z}^* = (\mathbf{I} + \mathbf{L})^{-1}\bm{s}$, where $\mathbf{L}$ is the graph Laplacian and $\bm{s}$ is the vector of internal opinions.
 
 **Limitations of Prior Work**: Musco et al. (2018) pioneered the study of minimizing polarization and disagreement at the FJ equilibrium, but assumed complete knowledge of all agents' internal opinions. In practice, obtaining internal opinions is costly—potentially requiring extensive user surveys or behavioral analysis—and may be infeasible under privacy constraints.
 
-**Root Cause**: Several works have relaxed this assumption—covering binary internal opinions (Chen et al., 2018), SDP upper-bound optimization (Chaitanya et al., 2024), and inference with limited queries (Cinus et al., 2025)—yet none addresses the truly online setting where internal opinions are entirely unknown and unqueryable, and learning must proceed solely from scalar feedback (polarization + disagreement values) observed after each intervention.
+**Key Challenge**: Several works have relaxed this assumption—covering binary internal opinions (Chen et al., 2018), SDP upper-bound optimization (Chaitanya et al., 2024), and inference with limited queries (Cinus et al., 2025)—yet none addresses the truly online setting where internal opinions are entirely unknown and unqueryable, and learning must proceed solely from scalar feedback (polarization + disagreement values) observed after each intervention.
 
-**Paper Goals**: The paper formalizes the problem as Online Polarization and Disagreement Minimization (OPD-Min), establishing a key connection between social media algorithmic intervention and multi-armed bandit theory. By exploiting the rank-one structure of the objective $f(\mathbf{X}) = \langle \bm{s}\bm{s}^\top, \mathbf{X} \rangle$, it designs an efficient low-rank matrix bandit algorithm.
+**Goal**: The paper formalizes the problem as Online Polarization and Disagreement Minimization (OPD-Min), establishing a key connection between social media algorithmic intervention and multi-armed bandit theory. By exploiting the rank-one structure of the objective $f(\mathbf{X}) = \langle \bm{s}\bm{s}^\top, \mathbf{X} \rangle$, it designs an efficient low-rank matrix bandit algorithm.
 
 ## Method
 

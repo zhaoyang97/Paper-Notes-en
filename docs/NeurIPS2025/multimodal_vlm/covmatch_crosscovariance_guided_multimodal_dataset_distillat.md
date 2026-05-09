@@ -28,15 +28,15 @@ content_hash: bf1f938d597dd158
 This paper proposes CovMatch, which reduces the bi-level optimization of multimodal contrastive learning to a closed-form cross-covariance matrix alignment problem, enabling for the first time joint optimization of both image and text encoders for multimodal dataset distillation. Using only 500 synthetic image-text pairs, CovMatch achieves a mean retrieval recall of 38.4 on Flickr30K (+6.8% over SOTA LoRS), substantially outperforming frozen-text-encoder approaches in extremely data-efficient settings.
 
 ## Background & Motivation
-**State of the Field**: Dataset distillation aims to synthesize a small number of samples for efficient model training. Mature methods exist for unimodal (image classification) distillation, but multimodal (CLIP-style contrastive learning) distillation faces unique challenges.
+**Background**: Dataset distillation aims to synthesize a small number of samples for efficient model training. Mature methods exist for unimodal (image classification) distillation, but multimodal (CLIP-style contrastive learning) distillation faces unique challenges.
 
 **Limitations of Prior Work**: (a) Cross-modal alignment must be learned—synthetic image-text pairs must be individually meaningful and maintain correct correspondence; (b) the computational cost of large encoders renders bi-level optimization infeasible—prior methods (e.g., LoRS) **freeze the text encoder** and optimize only the image encoder and projection layers, severely limiting semantic alignment capacity.
 
-**Root Cause**: The bi-level optimization of multimodal distillation (inner loop: train the model on synthetic data; outer loop: evaluate on real data and update synthetic data) is computationally infeasible due to the gradient unrolling required over encoders. Freezing the text encoder is a compromise that yields poor performance.
+**Key Challenge**: The bi-level optimization of multimodal distillation (inner loop: train the model on synthetic data; outer loop: evaluate on real data and update synthetic data) is computationally infeasible due to the gradient unrolling required over encoders. Freezing the text encoder is a compromise that yields poor performance.
 
-**Paper Goals**: Find a computationally feasible way to involve both image and text encoders in the distillation optimization.
+**Goal**: Find a computationally feasible way to involve both image and text encoders in the distillation optimization.
 
-**Starting Point**: After linearly approximating the InfoNCE loss, the inner-loop solution of the bi-level optimization admits a **closed form**—the optimal projection depends solely on the cross-covariance matrix of the synthetic data. The distillation objective thus reduces to aligning the cross-covariance matrices of real and synthetic data.
+**Key Insight**: After linearly approximating the InfoNCE loss, the inner-loop solution of the bi-level optimization admits a **closed form**—the optimal projection depends solely on the cross-covariance matrix of the synthetic data. The distillation objective thus reduces to aligning the cross-covariance matrices of real and synthetic data.
 
 **Core Idea**: Reduce the bi-level optimization of multimodal distillation to cross-covariance matrix matching plus intra-modal feature matching, eliminating the need for gradient unrolling and enabling joint optimization of both encoders for the first time.
 

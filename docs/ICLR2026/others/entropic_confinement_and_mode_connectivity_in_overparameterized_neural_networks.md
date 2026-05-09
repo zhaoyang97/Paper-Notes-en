@@ -27,15 +27,15 @@ This paper reveals that systematic growth of curvature along low-loss paths gene
 
 ## Background & Motivation
 
-**State of the Field**: Different minima of overparameterized neural networks can be connected via low-loss paths (mode connectivity), yet SGD training rarely explores intermediate points along these paths; once convergence to a minimum is achieved, the optimizer remains there.
+**Background**: Different minima of overparameterized neural networks can be connected via low-loss paths (mode connectivity), yet SGD training rarely explores intermediate points along these paths; once convergence to a minimum is achieved, the optimizer remains there.
 
 **Limitations of Prior Work**: Mode connectivity implies the loss landscape is not rugged and that flat paths connect minima—yet optimizers exhibit "confined" behavior, constituting an apparent paradox that existing theory cannot adequately explain.
 
-**Root Cause**: Focusing solely on loss values (energy) neglects implicit forces arising from curvature variation—analogous to entropic forces in statistical physics—which bias noisy optimization dynamics toward flatter regions.
+**Key Challenge**: Focusing solely on loss values (energy) neglects implicit forces arising from curvature variation—analogous to entropic forces in statistical physics—which bias noisy optimization dynamics toward flatter regions.
 
-**Paper Goals**: Why are energetically connected minima dynamically disconnected? How does curvature vary along low-loss paths? How do entropic and energy barriers evolve relative to each other during training?
+**Goal**: Why are energetically connected minima dynamically disconnected? How does curvature vary along low-loss paths? How do entropic and energy barriers evolve relative to each other during training?
 
-**Starting Point**: Drawing on the effective potential of Brownian motion in statistical physics, the work treats SGD noise as an effective temperature and analyzes how curvature variation constrains optimization trajectories through entropic forces.
+**Key Insight**: Drawing on the effective potential of Brownian motion in statistical physics, the work treats SGD noise as an effective temperature and analyzes how curvature variation constrains optimization trajectories through entropic forces.
 
 **Core Idea**: Systematic curvature increase along low-loss connecting paths produces entropic barriers that confine noisy optimization dynamics near minima, even when the energy path is entirely flat.
 

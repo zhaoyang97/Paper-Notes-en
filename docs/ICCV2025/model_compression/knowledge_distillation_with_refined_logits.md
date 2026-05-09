@@ -39,7 +39,7 @@ Existing correction methods (LA, RC, LR) attempt to rectify teacher logits using
 
 However, through a toy example (Figure 1), this paper clearly demonstrates the fatal flaw of these approaches: **swap/augmentation operations destroy inter-class correlations**. For instance, if an image depicts a "lion" but the teacher predicts "forest," the swap operation severely disrupts the ranking of "lion" and "tiger" (highly correlated classes), impeding the transfer of "dark knowledge" (semantic relationships between classes).
 
-- **Root Cause**: How to correct teacher mispredictions while preserving valuable inter-class correlation information.
+- **Key Challenge**: How to correct teacher mispredictions while preserving valuable inter-class correlation information.
 
 - **Core Idea**: Refine teacher knowledge into two complementary forms — (1) **Sample Confidence**: transmit only the teacher's confidence level for a given sample, without forcing the student to replicate incorrect class rankings; (2) **Masked Correlation**: dynamically mask potentially erroneous portions of the teacher's predictions (classes ranked higher than the ground-truth class), preserving correlations among the remaining classes. The more errors the teacher makes, the more classes are masked, and the less knowledge is transferred — but no incorrect information is propagated.
 

@@ -28,7 +28,7 @@ This paper proposes Flux — a data augmentation tool that enables flexible vide
 
 ## Background & Motivation
 
-**State of the Field**: Video representation learning is a foundational task in computer vision, critical for multimodal LLMs and embodied AI. Current mainstream methods operate on fixed spatiotemporal sampling grids (e.g., 8 frames × 224²) with a fixed number of tokens, leading to substantial redundancy during both training and deployment.
+**Background**: Video representation learning is a foundational task in computer vision, critical for multimodal LLMs and embodied AI. Current mainstream methods operate on fixed spatiotemporal sampling grids (e.g., 8 frames × 224²) with a fixed number of tokens, leading to substantial redundancy during both training and deployment.
 
 **Limitations of Prior Work**:
    - **Redundancy from fixed sampling**: Videos contain abundant spatiotemporal redundancy; many tokens extracted via fixed sampling carry low information content.
@@ -36,11 +36,11 @@ This paper proposes Flux — a data augmentation tool that enables flexible vide
    - **Limited token reduction**: Existing token pruning/merging methods perform poorly at high reduction ratios, and the strategies themselves introduce computational overhead.
    - **Incomplete flexible training methods**: ResFormer and FFN address spatial or temporal flexibility independently, without jointly handling both dimensions, and neither has been validated in large-scale pretraining.
 
-**Root Cause**: How can a single model simultaneously satisfy deployment requirements under diverse computational budgets? Simply reducing frames or resolution is suboptimal — for a given token budget, the goal should be to select the most information-maximizing token set.
+**Key Challenge**: How can a single model simultaneously satisfy deployment requirements under diverse computational budgets? Simply reducing frames or resolution is suboptimal — for a given token budget, the goal should be to select the most information-maximizing token set.
 
-**Paper Goals**: Propose the Token Optimization paradigm — under a given token budget, select the optimal token set from better-sampled video to maximize information.
+**Goal**: Propose the Token Optimization paradigm — under a given token budget, select the optimal token set from better-sampled video to maximize information.
 
-**Starting Point**: Combine flexible sampling and token selection as training-time data augmentation, enabling the model to naturally adapt to various resolutions and token counts. A test-time Token Optimization strategy is also introduced to identify the optimal sampling-selection combination.
+**Key Insight**: Combine flexible sampling and token selection as training-time data augmentation, enabling the model to naturally adapt to various resolutions and token counts. A test-time Token Optimization strategy is also introduced to identify the optimal sampling-selection combination.
 
 **Core Idea**: Use flexible sampling and group-dynamic token selection as zero-cost training augmentation, enabling video models to identify the optimal token set via Token Optimization across all computational budgets.
 

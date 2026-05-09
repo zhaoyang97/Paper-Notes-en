@@ -28,15 +28,15 @@ To address the deployment demands of the billion-scale 3D reconstruction model V
 
 ## Background & Motivation
 
-**State of the Field**: VGGT is a unified 3D reconstruction model with 1.2B parameters that performs depth estimation, point map regression, camera pose prediction, and point tracking in a single forward pass. Despite its outstanding performance, its computational and memory overhead is substantial, limiting practical deployment.
+**Background**: VGGT is a unified 3D reconstruction model with 1.2B parameters that performs depth estimation, point map regression, camera pose prediction, and point tracking in a single forward pass. Despite its outstanding performance, its computational and memory overhead is substantial, limiting practical deployment.
 
 **Limitations of Prior Work**: While PTQ is well-established for LLMs and 2D vision models, applying it to VGGT introduces two unique challenges: (1) data-independent special tokens (camera/register tokens) induce extreme heavy-tailed activation distributions; (2) the semantic complexity of 3D multi-view data makes calibration sample selection highly unstable.
 
-**Root Cause**: Special tokens are a critical design element for VGGT's multi-task reasoning, yet the distributional gap between these tokens and regular image tokens causes quantization bits to be wasted on outliers.
+**Key Challenge**: Special tokens are a critical design element for VGGT's multi-task reasoning, yet the distributional gap between these tokens and regular image tokens causes quantization bits to be wasted on outliers.
 
-**Paper Goals**: Design a VGGT-specific PTQ scheme that preserves reconstruction accuracy under low-bit quantization.
+**Goal**: Design a VGGT-specific PTQ scheme that preserves reconstruction accuracy under low-bit quantization.
 
-**Starting Point**: Distribution analysis reveals that special tokens are the root cause of heavy tails, and inter-frame relationships in multi-view data are the key structural factor for calibration.
+**Key Insight**: Distribution analysis reveals that special tokens are the root cause of heavy tails, and inter-frame relationships in multi-view data are the key structural factor for calibration.
 
 **Core Idea**: Global Hadamard rotation disperses the spikes from special tokens, followed by local channel-wise smoothing to reduce residual variance after rotation, combined with frame-aware diverse sampling to construct a robust calibration set.
 

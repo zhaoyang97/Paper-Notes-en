@@ -29,15 +29,15 @@ This paper systematically investigates the design space and scaling properties o
 
 ## Background & Motivation
 
-**State of the Field**: The dominant MLLM paradigm adopts compositional training — independently pre-training a visual encoder and an LLM, then aligning them through multimodal fine-tuning.
+**Background**: The dominant MLLM paradigm adopts compositional training — independently pre-training a visual encoder and an LLM, then aligning them through multimodal fine-tuning.
 
 **Limitations of Prior Work**: Compositional training makes it difficult to explore joint scaling properties of the visual and language components, and vision-language alignment is constrained by the limitations of separate training.
 
-**Root Cause**: Native MLLMs (end-to-end training) exhibit greater potential for favorable scaling laws, yet existing studies evaluate them primarily under the assumption of unlimited resources, leaving their practical feasibility under data- and compute-constrained settings largely unexplored.
+**Key Challenge**: Native MLLMs (end-to-end training) exhibit greater potential for favorable scaling laws, yet existing studies evaluate them primarily under the assumption of unlimited resources, leaving their practical feasibility under data- and compute-constrained settings largely unexplored.
 
-**Paper Goals**: Can native MLLMs match or even surpass the performance ceiling of top-tier compositional MLLMs under realistic data constraints?
+**Goal**: Can native MLLMs match or even surpass the performance ceiling of top-tier compositional MLLMs under realistic data constraints?
 
-**Starting Point**: Systematically explore key architectural choices for native MLLMs (LLM initialization, MoE, visual encoder design) and the joint scaling laws of the vision-language components.
+**Key Insight**: Systematically explore key architectural choices for native MLLMs (LLM initialization, MoE, visual encoder design) and the joint scaling laws of the vision-language components.
 
 **Core Idea**: The optimal parameter count of the visual encoder grows log-linearly with the LLM parameter count; the two must be scaled jointly to achieve optimal performance.
 

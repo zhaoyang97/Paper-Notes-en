@@ -28,15 +28,15 @@ VFScale proposes a test-time scalable diffusion model that requires no external 
 
 ## Background & Motivation
 
-**State of the Field**: Inspired by human System 2 thinking, LLMs achieve strong performance on complex reasoning tasks via Chain-of-Thought. Diffusion models, with their iterative refinement process, are also well-suited for reasoning tasks, but their performance degrades sharply when problem difficulty exceeds the training distribution.
+**Background**: Inspired by human System 2 thinking, LLMs achieve strong performance on complex reasoning tasks via Chain-of-Thought. Diffusion models, with their iterative refinement process, are also well-suited for reasoning tasks, but their performance degrades sharply when problem difficulty exceeds the training distribution.
 
 **Limitations of Prior Work**: (1) Simply increasing the number of sampling steps quickly saturates (Du et al. 2024); (2) test-time scaling via increased sample count relies on external verifiers for dense scoring signals, which are difficult to obtain for reasoning tasks; (3) humans can perform introspective reasoning without external feedback, a capability that existing methods lack.
 
-**Root Cause**: A diffusion model's energy function can inherently serve as a verifier (since the score function is the negative gradient of the energy), but existing energy landscapes are of insufficient quality — low energy does not necessarily correspond to high-quality solutions (poor performance–energy consistency).
+**Key Challenge**: A diffusion model's energy function can inherently serve as a verifier (since the score function is the negative gradient of the energy), but existing energy landscapes are of insufficient quality — low energy does not necessarily correspond to high-quality solutions (poor performance–energy consistency).
 
-**Paper Goals**: How can the diffusion model's intrinsic energy function replace an external verifier to enable verifier-free test-time scaling?
+**Goal**: How can the diffusion model's intrinsic energy function replace an external verifier to enable verifier-free test-time scaling?
 
-**Starting Point**: A two-pronged approach — improving the energy landscape on the training side, and improving search efficiency on the inference side.
+**Key Insight**: A two-pronged approach — improving the energy landscape on the training side, and improving search efficiency on the inference side.
 
 **Core Idea**: Aligning the monotonic relationship between energy values and sample quality via the MRNCL loss, and balancing exploration and exploitation during denoising via hMCTS.
 

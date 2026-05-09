@@ -29,15 +29,15 @@ This paper proposes EBMC, a two-stage framework that first improves the represen
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal Sentiment Analysis (MSA) infers sentiment by fusing textual, acoustic, and visual signals, and a large body of work has explored representation learning and multimodal fusion strategies.
+**Background**: Multimodal Sentiment Analysis (MSA) infers sentiment by fusing textual, acoustic, and visual signals, and a large body of work has explored representation learning and multimodal fusion strategies.
 
 **Limitations of Prior Work**: The textual modality consistently dominates prediction, while acoustic and visual signals are underweighted due to weaker or noisier sentiment cues. The dominant modality accumulates larger gradients and reinforces its own representations, leaving weak modalities insufficiently updated — a "Matthew effect" in multimodal learning.
 
-**Root Cause**: Modality competition progressively marginalizes weaker modalities, especially under noisy or real-world conditions. Existing methods implicitly assume all modalities are equally reliable.
+**Key Challenge**: Modality competition progressively marginalizes weaker modalities, especially under noisy or real-world conditions. Existing methods implicitly assume all modalities are equally reliable.
 
-**Paper Goals**: (1) Enhance the representation quality of weak modalities; (2) balance modality contributions to prevent competitive suppression; (3) maintain robustness under missing-modality scenarios.
+**Goal**: (1) Enhance the representation quality of weak modalities; (2) balance modality contributions to prevent competitive suppression; (3) maintain robustness under missing-modality scenarios.
 
-**Starting Point**: An enhance-then-balance two-stage paradigm — first strengthen weak modalities, then ensure that strong modalities do not suppress weaker ones.
+**Key Insight**: An enhance-then-balance two-stage paradigm — first strengthen weak modalities, then ensure that strong modalities do not suppress weaker ones.
 
 **Core Idea**: Stage I enhances weak modalities through disentanglement and compensation; Stage II employs an energy-based model to coordinate gradients and instance-aware trust distillation to dynamically adjust fusion weights.
 

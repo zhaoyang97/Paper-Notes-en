@@ -46,7 +46,7 @@ CLIP is pre-trained on web-scale data and exhibits preference toward certain cla
 
 In federated settings, clients have heterogeneous label distributions (label skew), causing divergent model update directions. Naively averaging prompt parameters introduces conflicts and degrades performance.
 
-**Starting Point**:
+**Key Insight**:
 1. Each client estimates its local pseudo label distribution → the server globally reassigns labels → achieving cross-class balance.
 2. Exploiting the characteristic difference between visual and text prompts—visual prompts are similar across clients (learning generic image representations), while text prompts diverge significantly (encoding class-specific knowledge)→ aggregate only visual prompts.
 

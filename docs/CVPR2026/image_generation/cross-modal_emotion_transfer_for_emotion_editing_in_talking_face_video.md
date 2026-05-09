@@ -28,15 +28,15 @@ This paper proposes C-MET (Cross-Modal Emotion Transfer), which models the mappi
 
 ## Background & Motivation
 
-**State of the Field**: Emotional talking face generation is a core application of generative models, aiming to convert neutral talking videos into videos with target emotions. Existing methods are categorized into three types based on emotion source: label-driven, speech-driven, and image-driven.
+**Background**: Emotional talking face generation is a core application of generative models, aiming to convert neutral talking videos into videos with target emotions. Existing methods are categorized into three types based on emotion source: label-driven, speech-driven, and image-driven.
 
 **Limitations of Prior Work**: (1) Label-driven methods support only predefined discrete emotion categories (e.g., 8 basic emotions) and cannot represent complex or nuanced emotions; (2) In speech-driven methods, emotion and linguistic content are entangled and cannot be disentangled; (3) Image-driven methods require high-quality frontal reference images, and reference data for extended emotions (e.g., sarcasm) is difficult to obtain.
 
-**Root Cause**: How to leverage rich speech emotion information to drive facial expression generation without collecting additional annotated data, especially for extended emotions unseen during training?
+**Key Challenge**: How to leverage rich speech emotion information to drive facial expression generation without collecting additional annotated data, especially for extended emotions unseen during training?
 
-**Paper Goals**: Achieve cross-modal (speech→visual) emotion transfer while supporting zero-shot generation of extended emotions.
+**Goal**: Achieve cross-modal (speech→visual) emotion transfer while supporting zero-shot generation of extended emotions.
 
-**Starting Point**: Rather than directly predicting facial expressions, the paper learns the mapping of "emotion semantic vectors"—defined as the difference between two emotion embeddings—between the speech space and the visual space.
+**Key Insight**: Rather than directly predicting facial expressions, the paper learns the mapping of "emotion semantic vectors"—defined as the difference between two emotion embeddings—between the speech space and the visual space.
 
 **Core Idea**: Emotion Semantic Vector = target emotion embedding − input emotion embedding; a cross-modal Transformer learns the mapping from speech semantic vectors to visual semantic vectors.
 

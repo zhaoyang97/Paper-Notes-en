@@ -28,11 +28,11 @@ This paper systematically studies the $F_\beta$ score family as a ranking tradeo
 
 ## Background & Motivation
 
-1. **State of the Field**: Precision and Recall are the most fundamental evaluation metrics for classification tasks, yet neither is sufficient on its own. Their weighted harmonic mean, the $F_\beta$ score, is widely adopted. In practice, $F_1$ (equal weighting) is the most common choice; Google Scholar records approximately 315,000 papers using the F-measure, and roughly 10% of CVPR 2025 papers employ $F_1$.
+1. **Background**: Precision and Recall are the most fundamental evaluation metrics for classification tasks, yet neither is sufficient on its own. Their weighted harmonic mean, the $F_\beta$ score, is widely adopted. In practice, $F_1$ (equal weighting) is the most common choice; Google Scholar records approximately 315,000 papers using the F-measure, and roughly 10% of CVPR 2025 papers employ $F_1$.
 2. **Limitations of Prior Work**: Although $F_\beta$ numerically interpolates between Precision and Recall, it has never been rigorously examined whether the ranking induced by $F_1$ constitutes an optimal tradeoff between the Precision ranking and the Recall ranking. In particular, as the class prior $\pi_+ \to 0$, all $F_\beta$ scores degenerate into rankings that mimic Precision while ignoring Recall.
-3. **Root Cause**: $F_1$ is assumed by default to be a "balanced" tradeoff, yet the choice $\beta = 1$ lacks any ranking-theoretic justification — a single fixed $\beta$ cannot provide an optimal ranking across all class priors.
-4. **Paper Goals**: (a) Do the rankings induced by $F_\beta$ form a meaningful path? (b) Is $F_1$ an optimal ranking tradeoff? (c) How can the optimal $\beta$ be found?
-5. **Starting Point**: The Kendall rank correlation/distance framework is adopted to measure distances between rankings, and the search for an optimal tradeoff is formalized as a Fréchet variance minimization problem.
+3. **Key Challenge**: $F_1$ is assumed by default to be a "balanced" tradeoff, yet the choice $\beta = 1$ lacks any ranking-theoretic justification — a single fixed $\beta$ cannot provide an optimal ranking across all class priors.
+4. **Goal**: (a) Do the rankings induced by $F_\beta$ form a meaningful path? (b) Is $F_1$ an optimal ranking tradeoff? (c) How can the optimal $\beta$ be found?
+5. **Key Insight**: The Kendall rank correlation/distance framework is adopted to measure distances between rankings, and the search for an optimal tradeoff is formalized as a Fréchet variance minimization problem.
 6. **Core Idea**: The manifold of rankings induced by $F_\beta$ constitutes a geodesic between the Precision and Recall rankings, and the optimal $\beta^2$ equals the median of the $\vartheta$ values computed over all pairs of performances.
 
 ## Method

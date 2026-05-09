@@ -29,16 +29,16 @@ This paper proposes a multi-modal semantic perturbation framework for detecting 
 
 ## Background & Motivation
 
-**State of the Field**: VLMs (e.g., LLaVA, Qwen2-VL) achieve impressive results on benchmarks such as MMStar and RealWorldQA, but their training data are typically proprietary, internet-scale corpora. This raises a critical concern: performance inflation caused by test-set leakage—models may have memorized evaluation questions rather than acquiring genuine visual reasoning capabilities.
+**Background**: VLMs (e.g., LLaVA, Qwen2-VL) achieve impressive results on benchmarks such as MMStar and RealWorldQA, but their training data are typically proprietary, internet-scale corpora. This raises a critical concern: performance inflation caused by test-set leakage—models may have memorized evaluation questions rather than acquiring genuine visual reasoning capabilities.
 
 **Limitations of Prior Work**:
 1. **LLM detection methods are unreliable for VLMs**: Text-based perturbations (e.g., option shuffling, n-gram detection) do not alter visual features, so VLMs can still answer correctly via image memorization.
 2. **Lack of systematic study**: The effectiveness of detection methods across different contamination strategies (standard fine-tuning vs. LoRA, varying epoch counts) has never been comprehensively evaluated.
 3. **No existing method satisfies all three requirements simultaneously**: practicality (no clean reference model needed), reliability (consistent detection across training strategies), and consistency (detection signal correlates with contamination degree).
 
-**Root Cause**: VLMs are multimodal—perturbing only the text is insufficient (the model can answer from visual memory), and perturbing only the answer choices is insufficient (the model may rely on option position)—both image and text semantics must be perturbed simultaneously to break memorization.
+**Key Challenge**: VLMs are multimodal—perturbing only the text is insufficient (the model can answer from visual memory), and perturbing only the answer choices is insufficient (the model may rely on option position)—both image and text semantics must be perturbed simultaneously to break memorization.
 
-**Paper Goals**: Generate semantically perturbed image-question pairs that preserve overall composition while modifying answer-relevant semantic elements. Contaminated models fail on these pairs due to memorized image-text associations; clean models succeed through genuine reasoning. Contamination is detected by comparing model performance on original versus perturbed benchmarks.
+**Goal**: Generate semantically perturbed image-question pairs that preserve overall composition while modifying answer-relevant semantic elements. Contaminated models fail on these pairs due to memorized image-text associations; clean models succeed through genuine reasoning. Contamination is detected by comparing model performance on original versus perturbed benchmarks.
 
 ## Method
 

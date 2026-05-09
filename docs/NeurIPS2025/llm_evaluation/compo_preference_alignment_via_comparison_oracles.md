@@ -28,15 +28,15 @@ To address likelihood displacement and verbosity caused by noisy preference pair
 
 ## Background & Motivation
 
-**State of the Field**: Direct preference alignment methods (DPO and its variants) have been widely adopted for LLM alignment due to their simplicity and efficiency. DPO optimizes a policy by maximizing the log-likelihood margin between preferred and dispreferred responses.
+**Background**: Direct preference alignment methods (DPO and its variants) have been widely adopted for LLM alignment due to their simplicity and efficiency. DPO optimizes a policy by maximizing the log-likelihood margin between preferred and dispreferred responses.
 
 **Limitations of Prior Work**: DPO exhibits two critical failure modes: (a) **Likelihood displacement**: the absolute probability of preferred responses decreases during training, with probability mass shifting to semantically opposite responses (e.g., from "No" to "Yes"), potentially causing originally safe models to become unsafe; (b) **Verbosity**: models tend to generate longer responses that are not necessarily better. Both issues are primarily caused by noisy preference pairs—when preferred and dispreferred responses are highly similar, the DPO surrogate objective fails to extract meaningful information.
 
-**Root Cause**: Noisy preference pairs (similar response pairs) do contain useful information, but the log-likelihood margin surrogate objective of DPO cannot effectively extract it. Simply discarding noisy data (e.g., via CHES score filtering) wastes potentially valuable signal.
+**Key Challenge**: Noisy preference pairs (similar response pairs) do contain useful information, but the log-likelihood margin surrogate objective of DPO cannot effectively extract it. Simply discarding noisy data (e.g., via CHES score filtering) wastes potentially valuable signal.
 
-**Paper Goals**: To design a method that extracts useful alignment signals from noisy preference pairs without relying on an indirect surrogate objective.
+**Goal**: To design a method that extracts useful alignment signals from noisy preference pairs without relying on an indirect surrogate objective.
 
-**Starting Point**: Drawing on the concept of **comparison oracles** from optimization theory—which require only a binary judgment of "is A better or worse than B?" without needing objective function values or gradients—the paper treats preference pairs as outputs of a comparison oracle and uses the binary comparison signal to directly guide parameter updates.
+**Key Insight**: Drawing on the concept of **comparison oracles** from optimization theory—which require only a binary judgment of "is A better or worse than B?" without needing objective function values or gradients—the paper treats preference pairs as outputs of a comparison oracle and uses the binary comparison signal to directly guide parameter updates.
 
 **Core Idea**: Rather than defining an explicit surrogate objective, ComPO treats preference pairs as comparison oracle outputs and employs zeroth-order optimization to directly guide model parameters toward higher preferred likelihood and lower dispreferred likelihood.
 

@@ -29,18 +29,18 @@ Video Motion Graphs proposes a retrieval-augmented generation system for human m
 
 ## Background & Motivation
 
-**State of the Field**: Human motion video generation follows two main paradigms: (1) generative methods synthesize all pixels directly from conditional inputs, offering flexibility but susceptible to artifacts such as limb distortion; (2) retrieval-based methods leverage real frames from reference videos to guarantee quality, but require a frame interpolation model to smooth transitions.
+**Background**: Human motion video generation follows two main paradigms: (1) generative methods synthesize all pixels directly from conditional inputs, offering flexibility but susceptible to artifacts such as limb distortion; (2) retrieval-based methods leverage real frames from reference videos to guarantee quality, but require a frame interpolation model to smooth transitions.
 
 **Limitations of Prior Work**:
 - Generative methods, even with DiT architectures (e.g., SVD), still struggle to avoid structural errors in hands and faces.
 - Existing retrieval-based methods (GVR, TANGO) are designed exclusively for conversational gesture synthesis and rely on linear motion blending, making them unable to handle complex dynamic motions such as dance.
 - Linear interpolation provides a reasonable approximation for only 78% of mild gesture motions, but is feasible for only 17% of complex dance motions.
 
-**Root Cause**: Retrieval-based methods enjoy a natural quality advantage by directly using real frames, but their frame interpolation module becomes the bottleneck—existing approaches cannot handle large-amplitude, nonlinear motions.
+**Key Challenge**: Retrieval-based methods enjoy a natural quality advantage by directly using real frames, but their frame interpolation module becomes the bottleneck—existing approaches cannot handle large-amplitude, nonlinear motions.
 
-**Paper Goals**: Design a general human motion video generation system that supports multiple conditioning inputs (music, speech, action labels) while ensuring both texture quality and motion trajectory accuracy.
+**Goal**: Design a general human motion video generation system that supports multiple conditioning inputs (music, speech, action labels) while ensuring both texture quality and motion trajectory accuracy.
 
-**Starting Point**: Replace linear blending with a Motion Diffusion Model to generate motion guidance, and adopt a progressive condition training strategy to resolve identity consistency issues.
+**Key Insight**: Replace linear blending with a Motion Diffusion Model to generate motion guidance, and adopt a progressive condition training strategy to resolve identity consistency issues.
 
 **Core Idea**: Dual-branch frame interpolation—a Motion Diffusion Model ensures correct skeletal motion trajectories, while a diffusion-based VFI ensures video texture quality; the two branches are integrated via progressive condition training.
 

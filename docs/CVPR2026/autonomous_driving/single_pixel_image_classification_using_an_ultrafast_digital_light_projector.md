@@ -29,15 +29,15 @@ This paper employs a microLED-on-CMOS digital light projector to realize ultrafa
 
 ## Background & Motivation
 
-**State of the Field**: Machine vision is a core technology in autonomous driving and related domains; however, the bandwidth of conventional digital cameras becomes a bottleneck in high-speed scenarios. Single-pixel imaging (SPI) can substantially reduce hardware complexity by using a single-point detector with structured illumination patterns, yet it is constrained by the mechanical refresh rate of DMDs (~10⁴ fps).
+**Background**: Machine vision is a core technology in autonomous driving and related domains; however, the bandwidth of conventional digital cameras becomes a bottleneck in high-speed scenarios. Single-pixel imaging (SPI) can substantially reduce hardware complexity by using a single-point detector with structured illumination patterns, yet it is constrained by the mechanical refresh rate of DMDs (~10⁴ fps).
 
 **Limitations of Prior Work**: The limited switching speed of DMDs restricts SPI image generation rates to ~10² Hz, comparable to ordinary CMOS cameras. Although compressive sensing (CS) can reduce the number of required patterns, it sacrifices image quality. Moreover, most existing SPI classification work remains at the simulation stage.
 
-**Root Cause**: High-speed real-time image classification demands rapid encoding, yet conventional spatial light modulators (DMDs) offer insufficient switching speeds. Simultaneously, adequate classification accuracy must be maintained under extremely limited sampling.
+**Key Challenge**: High-speed real-time image classification demands rapid encoding, yet conventional spatial light modulators (DMDs) offer insufficient switching speeds. Simultaneously, adequate classification accuracy must be maintained under extremely limited sampling.
 
-**Paper Goals**: To realize kHz-level single-pixel image classification in a genuine optical experiment, bypassing image reconstruction and performing classification directly from temporal measurement sequences.
+**Goal**: To realize kHz-level single-pixel image classification in a genuine optical experiment, bypassing image reconstruction and performing classification directly from temporal measurement sequences.
 
-**Starting Point**: A microLED-on-CMOS digital light projector is adopted in place of a DMD, increasing pattern switching speed by approximately 100×, and combined with minimal ML models to enable real-time high-speed classification.
+**Key Insight**: A microLED-on-CMOS digital light projector is adopted in place of a DMD, increasing pattern switching speed by approximately 100×, and combined with minimal ML models to enable real-time high-speed classification.
 
 **Core Idea**: A microLED array projects Hadamard patterns onto target objects at 330,000 fps; a single-pixel detector captures the resulting time series of light intensities, which are then classified directly in the temporal domain without image reconstruction.
 

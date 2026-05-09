@@ -29,7 +29,7 @@ This paper theoretically analyzes how training data properties affect test-time 
 
 ## Background & Motivation
 
-**State of the Field**: Test-time scaling (e.g., OpenAI o1, DeepSeek R1) enhances reasoning by allocating more computation at inference time to generate longer CoTs, achieving notable success on mathematical competitions and coding tasks.
+**Background**: Test-time scaling (e.g., OpenAI o1, DeepSeek R1) enhances reasoning by allocating more computation at inference time to generate longer CoTs, achieving notable success on mathematical competitions and coding tasks.
 
 **Core Problem**: Despite strong empirical performance, it remains unclear under what conditions training data supports test-time scaling — specifically:
    - Does increasing test-time compute **always** improve downstream reasoning performance?
@@ -38,7 +38,7 @@ This paper theoretically analyzes how training data properties affect test-time 
 
 **Limitations of Prior Work**: Prior studies on training data diversity and difficulty are largely empirical and lack a rigorous theoretical framework explaining the mechanism of test-time scaling.
 
-**Starting Point**: The paper addresses these three questions both theoretically and empirically within the in-context learning framework for linear regression.
+**Key Insight**: The paper addresses these three questions both theoretically and empirically within the in-context learning framework for linear regression.
 
 ## Method
 

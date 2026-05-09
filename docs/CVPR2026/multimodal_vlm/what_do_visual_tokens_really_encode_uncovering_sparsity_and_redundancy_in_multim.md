@@ -27,15 +27,15 @@ content_hash: b523de97ee1751d1
 This paper proposes EmbedLens, a probing tool for systematically analyzing the internal structure of visual tokens in MLLMs. It reveals that visual tokens fall into three categories—sink, dead, and alive (approximately 40% are uninformative)—that alive tokens already encode rich semantics before entering the LLM (a "pre-linguistic" property), and that intra-LLM visual computation is redundant for most tasks, such that direct mid-layer injection suffices.
 
 ## Background & Motivation
-**State of the Field**: MLLMs map patch embeddings from visual encoders such as CLIP into the LLM embedding space via projection layers, achieving notable progress on vision-language tasks. However, the structured organization and processing of visual tokens inside the LLM remain poorly understood.
+**Background**: MLLMs map patch embeddings from visual encoders such as CLIP into the LLM embedding space via projection layers, achieving notable progress on vision-language tasks. However, the structured organization and processing of visual tokens inside the LLM remain poorly understood.
 
 **Limitations of Prior Work**: Contrastive pretraining encourages global image-text alignment, whereas LLMs process inputs as sequences of local patch-level tokens. This mismatch creates a critical gap: how is globally aligned semantic information distributed across local tokens? Do all patches carry meaningful semantics?
 
-**Root Cause**: Existing analysis methods (e.g., LogitLens using the unembedding matrix) cannot distinguish whether semantics are intrinsic to the visual encoder/projection layer or injected by the language backbone.
+**Key Challenge**: Existing analysis methods (e.g., LogitLens using the unembedding matrix) cannot distinguish whether semantics are intrinsic to the visual encoder/projection layer or injected by the language backbone.
 
-**Paper Goals**: (a) The semantic organization of visual tokens at the input layer; (b) how much information alive tokens carry before entering the LLM; (c) the necessity and optimal depth of intra-LLM visual computation.
+**Goal**: (a) The semantic organization of visual tokens at the input layer; (b) how much information alive tokens carry before entering the LLM; (c) the necessity and optimal depth of intra-LLM visual computation.
 
-**Starting Point**: EmbedLens is proposed to probe token semantics directly in the input embedding space, avoiding confounds introduced by subsequent layer transformations.
+**Key Insight**: EmbedLens is proposed to probe token semantics directly in the input embedding space, avoiding confounds introduced by subsequent layer transformations.
 
 **Core Idea**: Visual tokens exhibit a tripartite sink/dead/alive structure; alive tokens are already "pre-linguistic," and intra-LLM visual computation is largely redundant.
 

@@ -29,15 +29,15 @@ This paper proposes Mutual Pair Merging (MPM), a parameter-free, training-free t
 
 ## Background & Motivation
 
-1. **State of the Field**: Vision Transformers deliver strong performance in semantic segmentation, but the $O(N^2)$ complexity of self-attention causes inference costs to scale rapidly with resolution. Reducing sequence length (token reduction) is a natural acceleration strategy, with existing approaches including token pruning/selection (DynamicViT, EViT) and token aggregation/merging (ToMe, ALGM).
+1. **Background**: Vision Transformers deliver strong performance in semantic segmentation, but the $O(N^2)$ complexity of self-attention causes inference costs to scale rapidly with resolution. Reducing sequence length (token reduction) is a natural acceleration strategy, with existing approaches including token pruning/selection (DynamicViT, EViT) and token aggregation/merging (ToMe, ALGM).
 
 2. **Limitations of Prior Work**: (a) Most token reduction methods target classification, whereas segmentation requires reconstructing dense, pixel-aligned features, imposing stricter constraints on token reduction; (b) existing methods commonly report FLOPs or theoretical speedups, but on modern accelerators (e.g., GPUs with FlashAttention), the overhead of merging operations may offset or even reverse expected gains; (c) many methods require fine-tuning or additional trainable parameters, hindering plug-and-play deployment.
 
-3. **Root Cause**: Token reduction theoretically reduces computation, but (a) segmentation requires reconstructing the full token sequence for the decoder; (b) on highly optimized GPU kernels, the additional overhead of merging operations can erase speedup benefits; (c) variable-length sequences require padding, which negatively impacts batched throughput.
+3. **Key Challenge**: Token reduction theoretically reduces computation, but (a) segmentation requires reconstructing the full token sequence for the decoder; (b) on highly optimized GPU kernels, the additional overhead of merging operations can erase speedup benefits; (c) variable-length sequences require padding, which negatively impacts batched throughput.
 
-4. **Paper Goals**: Design a training-free, segmentation-specific token merging method that achieves genuine wall-clock speedups end-to-end, while honestly quantifying actual latency inclusive of merging overhead.
+4. **Goal**: Design a training-free, segmentation-specific token merging method that achieves genuine wall-clock speedups end-to-end, while honestly quantifying actual latency inclusive of merging overhead.
 
-5. **Starting Point**: Adopt the simplest possible design—mutual nearest-neighbor pairing and mean fusion—to minimize overhead; control the speed–accuracy trade-off via discrete insertion positions (rather than continuous thresholds or retention rates); and store merge maps for exact reconstruction.
+5. **Key Insight**: Adopt the simplest possible design—mutual nearest-neighbor pairing and mean fusion—to minimize overhead; control the speed–accuracy trade-off via discrete insertion positions (rather than continuous thresholds or retention rates); and store merge maps for exact reconstruction.
 
 6. **Core Idea**: Identify mutually nearest-neighbor token pairs in feature space via cosine similarity and merge them by averaging; use an integer merge map for gather-based exact reconstruction, allowing segmentation decoders to operate without any modification.
 

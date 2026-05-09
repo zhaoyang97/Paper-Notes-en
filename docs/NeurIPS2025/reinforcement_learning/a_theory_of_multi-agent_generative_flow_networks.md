@@ -28,17 +28,17 @@ This paper proposes a theoretical framework for Multi-Agent Generative Flow Netw
 
 ## Background & Motivation
 
-**State of the Field**: GFlowNet is a generative model that learns stochastic policies via flow matching losses, sampling objects with probabilities proportional to their rewards. Unlike RL, which pursues a single maximum-reward policy, GFlowNet maintains diversity. However, existing GFlowNet theory and algorithms are limited to single-agent settings.
+**Background**: GFlowNet is a generative model that learns stochastic policies via flow matching losses, sampling objects with probabilities proportional to their rewards. Unlike RL, which pursues a single maximum-reward policy, GFlowNet maintains diversity. However, existing GFlowNet theory and algorithms are limited to single-agent settings.
 
 **Limitations of Prior Work**: (a) Existing GFlowNets cannot support multi-agent systems — multi-agent settings require a joint action space whose complexity grows exponentially with the number of agents. (b) Multi-agent RL (MARL) enables cooperative decision-making but tends to collapse to a single optimal policy, precluding diverse sampling. (c) Existing distributed GFlowNets (e.g., Meta-GFlowNet) require all agents to share the same observations and goals, making them inapplicable to partially observable multi-agent problems.
 
-**Root Cause**: Centralized training (CFN) is accurate but suffers from exponential joint action space complexity $O(|A|^N)$; independent training (IFN) is efficient but faces non-stationarity due to spurious local rewards (each agent's local reward is influenced by other agents' actions), leading to mode collapse.
+**Key Challenge**: Centralized training (CFN) is accurate but suffers from exponential joint action space complexity $O(|A|^N)$; independent training (IFN) is efficient but faces non-stationarity due to spurious local rewards (each agent's local reward is influenced by other agents' actions), leading to mode collapse.
 
-**Paper Goals**
+**Goal**
 - How to establish a theoretical framework for multi-agent GFlowNets?
 - How to design GFlowNet algorithms that realize CTDE (Centralized Training with Decentralized Execution)?
 
-**Starting Point**: Drawing an analogy to value decomposition methods in MARL (VDN, QMIX), the paper decomposes the global flow function into a product of local flows and establishes a theoretical connection between global and local flow matching constraints via the "local-global principle."
+**Key Insight**: Drawing an analogy to value decomposition methods in MARL (VDN, QMIX), the paper decomposes the global flow function into a product of local flows and establishes a theoretical connection between global and local flow matching constraints via the "local-global principle."
 
 **Core Idea**: The flow of a global GFlowNet can be decomposed into the product of local GFlowNet flows for each agent, such that training local models under global flow matching constraints is both theoretically sound and enables CTDE.
 

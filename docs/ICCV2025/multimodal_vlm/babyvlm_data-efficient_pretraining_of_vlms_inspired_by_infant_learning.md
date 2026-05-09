@@ -28,11 +28,11 @@ Inspired by the efficient learning capabilities of human infants, this paper pro
 
 ## Background & Motivation
 
-- **State of the Field**: Training large-scale vision-language models (e.g., LLaVA, CLIP) requires massive datasets and expensive compute, often demanding thousands of GPU hours — a barrier for independent researchers.
+- **Background**: Training large-scale vision-language models (e.g., LLaVA, CLIP) requires massive datasets and expensive compute, often demanding thousands of GPU hours — a barrier for independent researchers.
 - **Limitations of Prior Work**: (1) The infant-inspired SAYCam dataset records only a subset of infants' daily experiences, offering limited coverage. (2) Existing benchmarks are either too simple (e.g., Labeled-S evaluates only classification) or misaligned with training data domains (e.g., VQA and Winoground are designed for large models), failing to accurately measure the developmental alignment of compact models.
-- **Root Cause**: A gap exists between infant-inspired VLM training and evaluation — current data and benchmarks do not faithfully reflect the learning environment of infants.
-- **Paper Goals**: Convert large-scale generic data into infant-learning-compatible formats via "child-directed transformation," and design diverse evaluation tasks aligned with the training domain to fill this gap.
-- **Starting Point**: Human infants rapidly acquire complex cognitive and perceptual abilities from highly limited sensory input, suggesting that carefully curated small-scale data can also yield effective representations.
+- **Key Challenge**: A gap exists between infant-inspired VLM training and evaluation — current data and benchmarks do not faithfully reflect the learning environment of infants.
+- **Goal**: Convert large-scale generic data into infant-learning-compatible formats via "child-directed transformation," and design diverse evaluation tasks aligned with the training domain to fill this gap.
+- **Key Insight**: Human infants rapidly acquire complex cognitive and perceptual abilities from highly limited sensory input, suggesting that carefully curated small-scale data can also yield effective representations.
 
 ## Method
 

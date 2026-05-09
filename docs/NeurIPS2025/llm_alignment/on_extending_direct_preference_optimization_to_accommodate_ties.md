@@ -29,15 +29,15 @@ This paper replaces the Bradley-Terry preference model in DPO with the Rao-Kuppe
 
 ## Background & Motivation
 
-**State of the Field**: DPO is built on the Bradley-Terry model, which requires each training pair to have a clear winner: $y_w \succ y_l$. In practice (e.g., Llama 3, Qwen2), preference pairs that annotators find difficult to distinguish—so-called "tie" pairs—are frequently discarded.
+**Background**: DPO is built on the Bradley-Terry model, which requires each training pair to have a clear winner: $y_w \succ y_l$. In practice (e.g., Llama 3, Qwen2), preference pairs that annotators find difficult to distinguish—so-called "tie" pairs—are frequently discarded.
 
 **Limitations of Prior Work**: Discarding tie data is wasteful—such data is expensive to collect and carries genuine information (the fact that two responses are of comparable quality is itself a preference signal). Naively treating tie data as random wins/losses in DPO degrades performance.
 
-**Root Cause**: The Bradley-Terry model admits only two outcomes ($y_i$ wins or $y_j$ wins), leaving no probability mass for ties. When $\lambda_i \neq \lambda_j$, the model always favors the stronger candidate.
+**Key Challenge**: The Bradley-Terry model admits only two outcomes ($y_i$ wins or $y_j$ wins), leaving no probability mass for ties. When $\lambda_i \neq \lambda_j$, the model always favors the stronger candidate.
 
-**Paper Goals**: Enable DPO to correctly utilize tie data without discarding it or incurring performance degradation.
+**Goal**: Enable DPO to correctly utilize tie data without discarding it or incurring performance degradation.
 
-**Starting Point**: Classical paired comparison theory already offers solutions—Rao-Kupper (1967) and Davidson (1970) proposed Bradley-Terry extensions that accommodate ties, and these can be directly embedded into the DPO framework.
+**Key Insight**: Classical paired comparison theory already offers solutions—Rao-Kupper (1967) and Davidson (1970) proposed Bradley-Terry extensions that accommodate ties, and these can be directly embedded into the DPO framework.
 
 **Core Idea**: Replace DPO's Bradley-Terry model with tie-aware preference models from classical statistics, so that the optimization objective increases the reward margin for win/loss pairs and drives the reward margin toward zero for tie pairs.
 

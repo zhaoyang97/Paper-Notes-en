@@ -29,15 +29,15 @@ This paper proposes FlexiMMT, the first I2V framework supporting implicit multi-
 
 ## Background & Motivation
 
-1. **State of the Field**: Motion transfer is an important direction in controllable video generation, aiming to capture motion dynamics from reference videos and apply them to target subjects. Existing methods fall into two categories: explicit (pose/optical flow/trajectory) and implicit (encoding motion embeddings from reference videos). Implicit methods learn motion representations from reference videos via trainable motion tokens.
+1. **Background**: Motion transfer is an important direction in controllable video generation, aiming to capture motion dynamics from reference videos and apply them to target subjects. Existing methods fall into two categories: explicit (pose/optical flow/trajectory) and implicit (encoding motion embeddings from reference videos). Implicit methods learn motion representations from reference videos via trainable motion tokens.
 
 2. **Limitations of Prior Work**: Nearly all existing implicit motion transfer methods handle only single-object single-motion scenarios. When multiple objects with different motion patterns are present in a scene, existing methods cannot independently assign different motions to different objects.
 
-3. **Root Cause**: When multiple sets of motion tokens are directly injected into 3D full-attention layers, all token interactions are globally entangled — motion tokens of one object interfere with video tokens of other objects, causing motion confusion and erroneous transfer.
+3. **Key Challenge**: When multiple sets of motion tokens are directly injected into 3D full-attention layers, all token interactions are globally entangled — motion tokens of one object interfere with video tokens of other objects, causing motion confusion and erroneous transfer.
 
-4. **Paper Goals**: To achieve independent multi-object motion transfer in I2V generation, allowing each object to move according to its designated reference video.
+4. **Goal**: To achieve independent multi-object motion transfer in I2V generation, allowing each object to move according to its designated reference video.
 
-5. **Starting Point**: Performing motion decoupling at the attention level — constraining motion and text tokens to interact only with video tokens of their corresponding objects via object-specific masks.
+5. **Key Insight**: Performing motion decoupling at the attention level — constraining motion and text tokens to interact only with video tokens of their corresponding objects via object-specific masks.
 
 6. **Core Idea**: Employ masked attention to achieve motion decoupling, ensuring each object "sees" only its own motion signal and textual description.
 

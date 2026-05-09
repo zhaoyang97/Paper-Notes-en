@@ -28,15 +28,15 @@ Inspired by the depth-first search (DFS) algorithm, DeepTraverse is a visual bac
 
 ## Background & Motivation
 
-**State of the Field**: Visual backbone networks (CNN/ViT) typically adopt uniformly cascaded layer-by-layer structures that implicitly abstract features stage by stage. Lightweight networks such as MobileNet, ShuffleNet, and GhostNet reduce FLOPs by optimizing convolutional operators.
+**Background**: Visual backbone networks (CNN/ViT) typically adopt uniformly cascaded layer-by-layer structures that implicitly abstract features stage by stage. Lightweight networks such as MobileNet, ShuffleNet, and GhostNet reduce FLOPs by optimizing convolutional operators.
 
 **Limitations of Prior Work**: The feature abstraction pathways of conventional networks lack an explicit iterative refinement mechanism — increasing depth linearly increases parameter count, while adding attention introduces additional computation. A paradigm for "strategically exploring the feature space" is absent.
 
-**Root Cause**: Deeper feature refinement requires more parameters, yet resource-constrained scenarios cannot afford this. A fundamental trade-off exists between parameter efficiency and representational depth.
+**Key Challenge**: Deeper feature refinement requires more parameters, yet resource-constrained scenarios cannot afford this. A fundamental trade-off exists between parameter efficiency and representational depth.
 
-**Paper Goals**: To achieve deep feature refinement under an extremely low parameter budget, breaking the linear relationship between depth and parameter count.
+**Goal**: To achieve deep feature refinement under an extremely low parameter budget, breaking the linear relationship between depth and parameter count.
 
-**Starting Point**: Inspiration is drawn from the classical DFS algorithm — DFS systematically explores along a path in depth before backtracking to evaluate and collect information. This "explore-evaluate-adjust" paradigm is embedded into the network architecture.
+**Key Insight**: Inspiration is drawn from the classical DFS algorithm — DFS systematically explores along a path in depth before backtracking to evaluate and collect information. This "explore-evaluate-adjust" paradigm is embedded into the network architecture.
 
 **Core Idea**: A parameter-sharing recursive module simulates DFS's deep exploration (multiple iterations without increasing parameters), while channel attention simulates DFS's backtracking evaluation (dynamically re-weighting feature channels).
 

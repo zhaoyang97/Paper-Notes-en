@@ -30,11 +30,11 @@ This paper proposes a framework for training 3D diffusion models with 2D image s
 
 ### Limitations of Prior Work
 
-**State of the Field**: In 3D reconstruction, deterministic feed-forward models (e.g., Splatter Image, Flash3D) are constrained by the inherent ambiguity of 2D-to-3D mappings, leading to blurry predictions. While 3D diffusion models can capture distributional diversity, conventional training requires denoising and supervision to reside in the same modality—necessitating large amounts of 3D data, which are extremely scarce in practice. Training a 3D diffusion model using only 2D images remains a critically underexplored problem.
+**Background**: In 3D reconstruction, deterministic feed-forward models (e.g., Splatter Image, Flash3D) are constrained by the inherent ambiguity of 2D-to-3D mappings, leading to blurry predictions. While 3D diffusion models can capture distributional diversity, conventional training requires denoising and supervision to reside in the same modality—necessitating large amounts of 3D data, which are extremely scarce in practice. Training a 3D diffusion model using only 2D images remains a critically underexplored problem.
 
 ### Root Cause
 
-**Paper Goals**: How can a diffusion model operating in 3D space be trained without 3D ground truth? The core challenge is that standard diffusion training requires noisy samples and supervision signals to share the same modality, whereas here denoising occurs in 3D while supervision is available only as 2D images.
+**Goal**: How can a diffusion model operating in 3D space be trained without 3D ground truth? The core challenge is that standard diffusion training requires noisy samples and supervision signals to share the same modality, whereas here denoising occurs in 3D while supervision is available only as 2D images.
 
 ## Method
 

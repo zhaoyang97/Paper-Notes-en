@@ -29,15 +29,15 @@ This paper proposes LightMem, a lightweight LLM agent memory system driven by mu
 
 ## Background & Motivation
 
-**State of the Field**: LLM-driven agents excel at long-term dialogue, multi-step reasoning, and task interaction, but are constrained by context window limits, necessitating external memory to maintain cross-turn consistency. Existing memory systems fall into two categories: retrieval-based external memory (e.g., MemoryBank, ReadAgent), which is efficient but susceptible to retrieval noise and unstable accuracy; and LLM-driven memory operation systems (e.g., A-MEM, HiAgent), which achieve higher accuracy but incur significant cumulative latency from repeated large model invocations.
+**Background**: LLM-driven agents excel at long-term dialogue, multi-step reasoning, and task interaction, but are constrained by context window limits, necessitating external memory to maintain cross-turn consistency. Existing memory systems fall into two categories: retrieval-based external memory (e.g., MemoryBank, ReadAgent), which is efficient but susceptible to retrieval noise and unstable accuracy; and LLM-driven memory operation systems (e.g., A-MEM, HiAgent), which achieve higher accuracy but incur significant cumulative latency from repeated large model invocations.
 
 **Limitations of Prior Work**: (1) Retrieval-based methods are limited by simplistic query construction and candidate filtering, introducing retrieval noise that destabilizes answer accuracy. (2) LLM-driven methods accumulate non-trivial runtime overhead through repeated model calls during long-term interaction. (3) Existing systems lack explicit online/offline decoupling, making it difficult to optimize the trade-off between efficiency and effectiveness.
 
-**Root Cause**: High-frequency online memory operations demand low latency and controllability, yet improving memory accuracy typically requires stronger model reasoning capacity. Incorporating heavy abstraction and consolidation operations into the online path severely degrades response speed.
+**Key Challenge**: High-frequency online memory operations demand low latency and controllability, yet improving memory accuracy typically requires stronger model reasoning capacity. Incorporating heavy abstraction and consolidation operations into the online path severely degrades response speed.
 
-**Paper Goals**: To design a lightweight memory system that delegates high-frequency online memory operations to specialized SLMs while deferring heavy abstraction and consolidation to offline processing, achieving efficient and accurate memory retrieval under a constrained computational budget.
+**Goal**: To design a lightweight memory system that delegates high-frequency online memory operations to specialized SLMs while deferring heavy abstraction and consolidation to offline processing, achieving efficient and accurate memory retrieval under a constrained computational budget.
 
-**Starting Point**: Recent advances in SLMs have enabled them to reliably handle structured decision tasks—such as intent routing, query construction, and semantic filtering—where predictable behavior and low overhead are prioritized over maximal generative capacity.
+**Key Insight**: Recent advances in SLMs have enabled them to reliably handle structured decision tasks—such as intent routing, query construction, and semantic filtering—where predictable behavior and low overhead are prioritized over maximal generative capacity.
 
 **Core Idea**: Multiple specialized SLMs collaboratively handle online memory operations (query parsing, retrieval, writing), while heavy consolidation is delegated to an offline large model, achieving an optimal balance between efficiency and effectiveness.
 

@@ -28,15 +28,15 @@ Inspired by Schutz's philosophical theory of relevance, this paper proposes ITEM
 
 ## Background & Motivation
 
-**State of the Field**: In RAG settings, LLMs operate under limited input bandwidth, necessitating the prioritization of high-utility (rather than merely high-relevance) retrieved documents. Relevance measures whether a document is *about* the topic, whereas utility measures whether it *helps answer* the question.
+**Background**: In RAG settings, LLMs operate under limited input bandwidth, necessitating the prioritization of high-utility (rather than merely high-relevance) retrieved documents. Relevance measures whether a document is *about* the topic, whereas utility measures whether it *helps answer* the question.
 
 **Limitations of Prior Work**: (1) Existing RAG approaches primarily optimize for topical relevance while neglecting the higher standard of utility; (2) Zhang et al. introduced LLM-based utility judgment but only conducted preliminary exploration; (3) the three RAG components (retrieval, judgment, generation) are typically optimized independently, lacking joint enhancement.
 
-**Root Cause**: Topically relevant documents are not necessarily useful—a document discussing the same topic but containing no specific answer is relevant yet unhelpful. Existing methods struggle to distinguish between the two.
+**Key Challenge**: Topically relevant documents are not necessarily useful—a document discussing the same topic but containing no specific answer is relevant yet unhelpful. Existing methods struggle to distinguish between the two.
 
-**Paper Goals**: Improve LLM utility judgment through iterative interaction among the three RAG components.
+**Goal**: Improve LLM utility judgment through iterative interaction among the three RAG components.
 
-**Starting Point**: The paper maps RAG onto Schutz's philosophical "system of relevances"—topical relevance, interpretational relevance (utility), and motivational relevance (answer) correspond to three cognitive levels that can mutually reinforce one another.
+**Key Insight**: The paper maps RAG onto Schutz's philosophical "system of relevances"—topical relevance, interpretational relevance (utility), and motivational relevance (answer) correspond to three cognitive levels that can mutually reinforce one another.
 
 **Core Idea**: The three RAG components reflect three cognitive levels of LLMs in question answering (aboutness → value → answer), and iterating among them enables mutual enhancement.
 

@@ -29,9 +29,9 @@ This paper introduces LUMINA, a multi-vendor full-field digital mammography (FFD
 
 ## Background & Motivation
 
-- **State of the Field**: Existing public mammography datasets (e.g., CBIS-DDSM, INbreast) suffer from notable deficiencies in scale, clinical annotation completeness, and vendor diversity. CBIS-DDSM is derived from legacy screen-film mammography (SFM) scans, while INbreast contains only 115 patients.
+- **Background**: Existing public mammography datasets (e.g., CBIS-DDSM, INbreast) suffer from notable deficiencies in scale, clinical annotation completeness, and vendor diversity. CBIS-DDSM is derived from legacy screen-film mammography (SFM) scans, while INbreast contains only 115 patients.
 - **Limitations of Prior Work**: Multi-vendor acquisition systems differ in energy settings (high/low energy) and vendor-specific processing pipelines, resulting in substantial domain shift in image appearance and intensity distributions. Consequently, models generalize poorly across vendors.
-- **Paper Goals**: (1) Construct an FFDM benchmark dataset that emphasizes vendor diversity and energy metadata; (2) propose a model-agnostic foreground histogram harmonization method to eliminate vendor/energy-induced domain shift.
+- **Goal**: (1) Construct an FFDM benchmark dataset that emphasizes vendor diversity and energy metadata; (2) propose a model-agnostic foreground histogram harmonization method to eliminate vendor/energy-induced domain shift.
 
 ## Method
 

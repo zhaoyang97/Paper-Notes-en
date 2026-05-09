@@ -29,15 +29,15 @@ FlexiCodec is proposed as a dynamic frame rate merging strategy guided by ASR fe
 
 ## Background & Motivation
 
-**State of the Field**: Neural audio codecs (e.g., EnCodec, DAC, SpeechTokenizer) serve as foundational components for speech language models, compressing speech into discrete tokens compatible with the AR LLM paradigm. However, mainstream codecs operate at frame rates ≥50 Hz, requiring 50+ tokens per second of speech—a severe mismatch with the ~4.5 Hz frame rate of text.
+**Background**: Neural audio codecs (e.g., EnCodec, DAC, SpeechTokenizer) serve as foundational components for speech language models, compressing speech into discrete tokens compatible with the AR LLM paradigm. However, mainstream codecs operate at frame rates ≥50 Hz, requiring 50+ tokens per second of speech—a severe mismatch with the ~4.5 Hz frame rate of text.
 
 **Limitations of Prior Work**: High frame rates introduce two problems: (1) the quadratic complexity of attention leads to substantial computational overhead; (2) the text-speech modality frame rate mismatch degrades LLM performance. Although Mimi and DualCodec reduce the frame rate to 12.5 Hz, a significant gap from text's 4.5 Hz remains, and research on codecs below 12.5 Hz is nearly absent.
 
-**Root Cause**: Directly pushing existing codecs to ultra-low frame rates (<12.5 Hz) results in severe semantic information loss. Experiments show that DualCodec's RVQ-1 WER surges from 5.93% to 31.5% when the frame rate is reduced from 12.5 Hz to 6.25 Hz. The underlying causes are: (a) insufficient disentanglement of semantic and acoustic information, forcing a trade-off between the two under the limited information capacity at low frame rates; and (b) fixed-rate downsampling discards transient speech details, while natural speech phonemes and syllables inherently occur at dynamic rates.
+**Key Challenge**: Directly pushing existing codecs to ultra-low frame rates (<12.5 Hz) results in severe semantic information loss. Experiments show that DualCodec's RVQ-1 WER surges from 5.93% to 31.5% when the frame rate is reduced from 12.5 Hz to 6.25 Hz. The underlying causes are: (a) insufficient disentanglement of semantic and acoustic information, forcing a trade-off between the two under the limited information capacity at low frame rates; and (b) fixed-rate downsampling discards transient speech details, while natural speech phonemes and syllables inherently occur at dynamic rates.
 
-**Paper Goals**: To achieve both semantic integrity and high audio reconstruction quality at frame rates as low as 6.25 Hz or below, while supporting controllable frame rates at inference time.
+**Goal**: To achieve both semantic integrity and high audio reconstruction quality at frame rates as low as 6.25 Hz or below, while supporting controllable frame rates at inference time.
 
-**Starting Point**: (a) Dynamic frame rates—allocating more frames to information-dense regions and merging frames in sparse regions (silence, long vowels); (b) replacing SSL features with ASR features to provide more concentrated semantic information; (c) a single model supporting continuously controllable frame rates from 3 to 12.5 Hz.
+**Key Insight**: (a) Dynamic frame rates—allocating more frames to information-dense regions and merging frames in sparse regions (silence, long vowels); (b) replacing SSL features with ASR features to provide more concentrated semantic information; (c) a single model supporting continuously controllable frame rates from 3 to 12.5 Hz.
 
 **Core Idea**: Leveraging cosine similarity between pretrained ASR feature frames to dynamically merge semantically similar frames, enabling content-adaptive low frame rate speech encoding.
 

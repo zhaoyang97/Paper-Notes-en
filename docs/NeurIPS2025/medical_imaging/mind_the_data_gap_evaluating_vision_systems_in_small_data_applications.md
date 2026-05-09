@@ -29,15 +29,15 @@ This paper systematically compares MLLMs (e.g., Gemini, Qwen2.5-VL) and vision e
 
 ## Background & Motivation
 
-**State of the Field**: Current AI evaluation practices are heavily skewed—either toward zero-/few-shot settings (0–5 examples) or large-scale datasets (>10K examples). Through a manual survey of evaluation tasks used in recent vision and language research (covering methods such as CLIP, DINOv2, Gemini, and Phi-4), the authors find virtually no evaluation tasks in the 10–1000 training sample range, exposing a clear "data gap."
+**Background**: Current AI evaluation practices are heavily skewed—either toward zero-/few-shot settings (0–5 examples) or large-scale datasets (>10K examples). Through a manual survey of evaluation tasks used in recent vision and language research (covering methods such as CLIP, DINOv2, Gemini, and Phi-4), the authors find virtually no evaluation tasks in the 10–1000 training sample range, exposing a clear "data gap."
 
 **Limitations of Prior Work**: This gap corresponds precisely to a large class of real-world applications—ecological monitoring requiring biologist-annotated species, medical diagnosis relying on expert annotations, and industrial inspection requiring domain knowledge. Such scenarios typically yield only tens to thousands of labeled samples, falling neither in the zero-shot nor the large-scale regime. Whether MLLMs optimized for zero-shot transfer are genuinely useful in these settings has never been systematically validated.
 
-**Root Cause**: The few-shot prompting mechanism of MLLMs fundamentally places labeled samples into the context window as demonstrations, yet the information utilization efficiency of in-context attention differs fundamentally from that of explicit classifiers (e.g., SVMs) operating in feature space. As available labeled samples grow from a handful to several hundred, the scaling behavior of the two paradigms may diverge substantially.
+**Key Challenge**: The few-shot prompting mechanism of MLLMs fundamentally places labeled samples into the context window as demonstrations, yet the information utilization efficiency of in-context attention differs fundamentally from that of explicit classifiers (e.g., SVMs) operating in feature space. As available labeled samples grow from a handful to several hundred, the scaling behavior of the two paradigms may diverge substantially.
 
-**Paper Goals**: To conduct the first systematic comparison of MLLMs and vision encoder methods in the small data regime (10–1000 labeled samples), revealing their respective scaling characteristics.
+**Goal**: To conduct the first systematic comparison of MLLMs and vision encoder methods in the small data regime (10–1000 labeled samples), revealing their respective scaling characteristics.
 
-**Starting Point**: The NeWT (Natural World Tasks) benchmark is selected as the evaluation platform—comprising 164 ecological binary classification tasks, each with only 200–400 labeled samples, naturally situated within the small data regime.
+**Key Insight**: The NeWT (Natural World Tasks) benchmark is selected as the evaluation platform—comprising 164 ecological binary classification tasks, each with only 200–400 labeled samples, naturally situated within the small data regime.
 
 **Core Idea**: Leverage the NeWT benchmark with training subsets spanning from zero to the full dataset to compare the scaling behavior of MLLMs and vision + SVM approaches in the small data regime.
 

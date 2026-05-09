@@ -29,17 +29,17 @@ This paper proposes RoMA — the first self-supervised autoregressive pre-traini
 
 ## Background & Motivation
 
-- **State of the Field**: Remote sensing foundation models (RSFMs) have advanced rapidly, predominantly relying on ViT-based self-supervised pre-training paradigms such as MAE. However, the self-attention mechanism in ViT incurs **quadratic complexity**, creating severe computational bottlenecks when processing high-resolution remote sensing images — for instance, 4000×4000 pixel images from the DOTA dataset generate an enormous number of tokens.
+- **Background**: Remote sensing foundation models (RSFMs) have advanced rapidly, predominantly relying on ViT-based self-supervised pre-training paradigms such as MAE. However, the self-attention mechanism in ViT incurs **quadratic complexity**, creating severe computational bottlenecks when processing high-resolution remote sensing images — for instance, 4000×4000 pixel images from the DOTA dataset generate an enormous number of tokens.
 
 - **Limitations of Prior Work**: The Mamba architecture, with its **linear complexity**, has emerged as a promising alternative and has demonstrated efficient inference on remote sensing downstream tasks. Nevertheless, existing remote sensing Mamba applications are confined to small-scale supervised training, failing to harness the potential of large-scale unlabeled remote sensing data.
 
-- **Root Cause**: Applying autoregressive pre-training to remote sensing Mamba presents three unique challenges:
+- **Key Challenge**: Applying autoregressive pre-training to remote sensing Mamba presents three unique challenges:
 
   - **Sparse and unevenly distributed information**: Foreground objects are sparsely distributed against complex backgrounds in remote sensing imagery (e.g., aircraft on airport runways).
   - **Arbitrary orientation**: Objects captured from a nadir viewpoint can appear at any orientation, unlike natural images constrained by gravity.
   - **Extreme scale variation**: Object scales in remote sensing imagery span several orders of magnitude, from buildings to vehicles.
 
-- **Paper Goals**: Furthermore, whether Mamba autoregressive pre-training can yield consistent performance gains with increasing data volume and model scale — analogous to ViT+MAE — remains an unvalidated open question.
+- **Goal**: Furthermore, whether Mamba autoregressive pre-training can yield consistent performance gains with increasing data volume and model scale — analogous to ViT+MAE — remains an unvalidated open question.
 
 ## Method
 

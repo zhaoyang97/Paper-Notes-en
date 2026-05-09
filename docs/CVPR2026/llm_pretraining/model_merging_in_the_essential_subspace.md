@@ -28,15 +28,15 @@ ESM constructs an "essential subspace" via PCA on activation shifts induced by p
 
 ## Background & Motivation
 
-**State of the Field**: Model merging fuses multiple expert models fine-tuned from the same pretrained checkpoint into a single multi-task model without retraining. Recent SVD-based methods (TSV-M, Iso-CTS) achieve good results by truncating task matrices via SVD to reduce interference.
+**Background**: Model merging fuses multiple expert models fine-tuned from the same pretrained checkpoint into a single multi-task model without retraining. Recent SVD-based methods (TSV-M, Iso-CTS) achieve good results by truncating task matrices via SVD to reduce interference.
 
 **Limitations of Prior Work**: SVD decomposition minimizes the Frobenius norm reconstruction error of parameter matrix $\Delta W$, but ignores the input feature distribution. The truncation error is $\sum_{i=k+1}^r \sigma_i^2 \cdot \mathbb{E}[(v_i^\top x)^2]$—even if $\sigma_i$ is small, truncation causes severe functional loss when inputs have large projections along $v_i$.
 
-**Root Cause**: The SVD subspace is misaligned with the task's feature space, causing low-rank merging to discard functionally important directions. Moreover, when merging many tasks, noise parameters may overwhelm critical knowledge.
+**Key Challenge**: The SVD subspace is misaligned with the task's feature space, causing low-rank merging to discard functionally important directions. Moreover, when merging many tasks, noise parameters may overwhelm critical knowledge.
 
-**Paper Goals**: (1) Construct a more essential, feature-distribution-aligned low-rank subspace; (2) amplify high-SNR parameters and suppress noise during merging.
+**Goal**: (1) Construct a more essential, feature-distribution-aligned low-rank subspace; (2) amplify high-SNR parameters and suppress noise during merging.
 
-**Starting Point**: Instead of decomposing parameter matrices directly, perform PCA on the **activation shifts** $\Delta O = X_{\text{proxy}} \Delta W^\top$ induced by parameter updates, obtaining principal directions directly relevant to task functionality. Additionally, parameter norms correlate highly with directional importance.
+**Key Insight**: Instead of decomposing parameter matrices directly, perform PCA on the **activation shifts** $\Delta O = X_{\text{proxy}} \Delta W^\top$ induced by parameter updates, obtaining principal directions directly relevant to task functionality. Additionally, parameter norms correlate highly with directional importance.
 
 **Core Idea**: Perform low-rank decomposition and merging in the principal component space of activation shifts (rather than the singular value space of parameters), and use polarized scaling to amplify consensus signals.
 

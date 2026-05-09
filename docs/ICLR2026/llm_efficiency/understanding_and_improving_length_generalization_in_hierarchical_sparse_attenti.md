@@ -28,15 +28,15 @@ This paper systematically dissects chunk-based sparse attention architectures, i
 
 ## Background & Motivation
 
-**State of the Field**: The demand for long-context processing in LLMs continues to grow, with the $O(n^2)$ complexity of standard Transformers and length extrapolation failures serving as core bottlenecks. Sliding window attention and SSMs address efficiency via fixed-size memory but sacrifice global information access.
+**Background**: The demand for long-context processing in LLMs continues to grow, with the $O(n^2)$ complexity of standard Transformers and length extrapolation failures serving as core bottlenecks. Sliding window attention and SSMs address efficiency via fixed-size memory but sacrifice global information access.
 
 **Limitations of Prior Work**: (a) Sliding window attention is restricted to local context; (b) SSMs compress history into a fixed state, creating an information bottleneck; (c) existing chunk-based sparse attention methods (e.g., Landmark Attention, NSA) exhibit some extrapolation capability, but accuracy on complex retrieval tasks degrades significantly with length, and **no systematic analysis has clarified which design factors are critical for success**.
 
-**Root Cause**: Ideal length extrapolation requires two properties: (1) stable perplexity on longer sequences, and (2) effective utilization of the full context — existing methods struggle to satisfy both simultaneously.
+**Key Challenge**: Ideal length extrapolation requires two properties: (1) stable perplexity on longer sequences, and (2) effective utilization of the full context — existing methods struggle to satisfy both simultaneously.
 
-**Paper Goals**: Systematically identify which architectural components drive extreme length generalization in chunk-based sparse attention, and establish a new state of the art based on these findings.
+**Goal**: Systematically identify which architectural components drive extreme length generalization in chunk-based sparse attention, and establish a new state of the art based on these findings.
 
-**Starting Point**: Unify existing methods under a common framework and decompose the contribution of each component through large-scale ablation experiments.
+**Key Insight**: Unify existing methods under a common framework and decompose the contribution of each component through large-scale ablation experiments.
 
 **Core Idea**: A nonlinear encoder learns effective chunk representations for retrieval; a bypassing residual path prevents global information from being overwritten by local residual streams; enforced sparsity during training bridges the train-test distribution gap — all three components are indispensable.
 

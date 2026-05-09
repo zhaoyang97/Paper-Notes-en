@@ -32,7 +32,7 @@ This paper studies pursuit-evasion games with heterogeneous speeds involving mul
 
 ### State of the Field
 
-**State of the Field**: Multi-agent pursuit-evasion is a classical problem in multi-agent systems and game theory, with broad applications in military interception, search and rescue, robotic encirclement, and UAV coordination. The main limitations of existing methods are:
+**Background**: Multi-agent pursuit-evasion is a classical problem in multi-agent systems and game theory, with broad applications in military interception, search and rescue, robotic encirclement, and UAV coordination. The main limitations of existing methods are:
 
 1. **Homogeneity assumption**: Most methods assume identical pursuer speeds and cannot handle heterogeneous scenarios where different platforms (ground vehicles, UAVs, speedboats) operate at vastly different speeds.
 2. **High computational cost**: Methods based on numerical optimization or Hamilton-Jacobi reachability analysis incur high computational complexity, making them unsuitable for real-time embedded control.
@@ -42,7 +42,7 @@ The Apollonius circle—the geometric locus of points reachable simultaneously b
 
 ### Starting Point
 
-**Paper Goals**: **How can multiple pursuers with heterogeneous speeds cooperatively minimize the evader's safe reachable region? Can closed-form optimal control laws be derived to support real-time decision-making?**
+**Goal**: **How can multiple pursuers with heterogeneous speeds cooperatively minimize the evader's safe reachable region? Can closed-form optimal control laws be derived to support real-time decision-making?**
 
 ## Method
 

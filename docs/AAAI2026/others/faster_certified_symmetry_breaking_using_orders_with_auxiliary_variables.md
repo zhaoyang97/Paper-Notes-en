@@ -29,7 +29,7 @@ By introducing auxiliary variables to encode lexicographic order in place of lar
 
 ## Background & Motivation
 
-- **State of the Field**: Symmetry breaking is a key technique in combinatorial solving to avoid redundant exploration of equivalent search spaces.
+- **Background**: Symmetry breaking is a key technique in combinatorial solving to avoid redundant exploration of equivalent search spaces.
 - **Limitations of Prior Work**: The SAT community emphasizes provable correctness—solvers in competitions must produce machine-verifiable proofs. Certified symmetry breaking has long been an open challenge: the DRAT format cannot handle multiple symmetries. Bogaerts et al. (2023) proposed a fully general method based on pseudo-Boolean inequalities, but it encodes lexicographic order using large integers $\sum_{i=1}^n 2^{n-i}x_i \leq \sum_{i=1}^n 2^{n-i}y_i$, where coefficients require $n^2$ bits, resulting in linear overhead in proof generation and costly arbitrary-precision arithmetic during verification.
 
 ## Core Problem

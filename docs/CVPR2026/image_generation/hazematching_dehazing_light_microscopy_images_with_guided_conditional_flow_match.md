@@ -28,15 +28,15 @@ This paper proposes HazeMatching, a guided conditional flow matching (Guided CFM
 
 ## Background & Motivation
 
-**State of the Field**: In fluorescence microscopy, widefield microscopes are cost-effective and easy to use but collect substantial out-of-focus light, resulting in blurry (hazy) images. Confocal microscopes physically filter out-of-focus light via pinholes to obtain sharp images but are significantly more expensive. Computational dehazing aims to recover confocal-quality images from widefield acquisitions using algorithmic methods. Existing approaches fall into two categories: deterministic point predictors (U-Net/RCAN, trained with MSE loss) and generative posterior models (diffusion models/flow matching).
+**Background**: In fluorescence microscopy, widefield microscopes are cost-effective and easy to use but collect substantial out-of-focus light, resulting in blurry (hazy) images. Confocal microscopes physically filter out-of-focus light via pinholes to obtain sharp images but are significantly more expensive. Computational dehazing aims to recover confocal-quality images from widefield acquisitions using algorithmic methods. Existing approaches fall into two categories: deterministic point predictors (U-Net/RCAN, trained with MSE loss) and generative posterior models (diffusion models/flow matching).
 
 **Limitations of Prior Work**: Deterministic methods optimize for fidelity (high PSNR) but produce over-smoothed predictions that lose fine structural detail. GAN-based methods yield perceptually realistic results but are prone to hallucinating non-existent structures. Existing CFM methods (e.g., SIFM) require a known degradation operator $m(x_1)$ and noise level $\sigma$, which are unavailable in microscopy where the degradation process is unknown and noise properties (Poisson noise, signal-dependent) vary considerably.
 
-**Root Cause**: The perception-distortion trade-off — optimizing for data fidelity (low MSE) leads to over-smoothed predictions, while optimizing for perceptual quality (low LPIPS/FID) may introduce hallucinated structures. In scientific imaging, fidelity is critical (biological structures must not be hallucinated), yet among methods of comparable fidelity, maximal perceptual quality is desirable.
+**Key Challenge**: The perception-distortion trade-off — optimizing for data fidelity (low MSE) leads to over-smoothed predictions, while optimizing for perceptual quality (low LPIPS/FID) may introduce hallucinated structures. In scientific imaging, fidelity is critical (biological structures must not be hallucinated), yet among methods of comparable fidelity, maximal perceptual quality is desirable.
 
-**Paper Goals**: How to recover both faithful and perceptually realistic results from hazy microscopy images without requiring an explicit degradation operator, while providing reliable uncertainty estimates.
+**Goal**: How to recover both faithful and perceptually realistic results from hazy microscopy images without requiring an explicit degradation operator, while providing reliable uncertainty estimates.
 
-**Starting Point**: Extend the conditional flow matching framework into a guided variant conditioned on degraded observations (hazy images), allowing the velocity field to jointly depend on the current interpolated state and the degraded input, thereby enabling data-driven transport mapping.
+**Key Insight**: Extend the conditional flow matching framework into a guided variant conditioned on degraded observations (hazy images), allowing the velocity field to jointly depend on the current interpolated state and the degraded input, thereby enabling data-driven transport mapping.
 
 **Core Idea**: Explicitly incorporate the degraded observation as an additional conditioning input (via channel concatenation) into the CFM velocity field, achieving guided generative dehazing without any knowledge of the degradation operator.
 

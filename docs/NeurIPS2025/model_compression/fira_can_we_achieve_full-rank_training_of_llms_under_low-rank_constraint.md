@@ -37,7 +37,7 @@ The primary memory bottleneck in LLM training stems from optimizer states: train
 
 **ReLoRA**: Attempts to approximate full-rank updates through multiple successive low-rank updates, but still requires a full-rank warm-up phase and cannot achieve fully memory-efficient training.
 
-**Root Cause**: Low-rank constraints reduce memory ↔ full-rank training preserves performance. Can both be achieved simultaneously?
+**Key Challenge**: Low-rank constraints reduce memory ↔ full-rank training preserves performance. Can both be achieved simultaneously?
 
 **Core difficulty**: Out-of-subspace gradients $(G_t - P_t R_t)$ lack corresponding optimizer states for Adam correction. Naively adding them back (as in GaLore-add) is equivalent to applying SGD to this component, which performs poorly and introduces gradient inconsistency.
 

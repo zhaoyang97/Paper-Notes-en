@@ -28,15 +28,15 @@ MuCo proposes a multi-turn dialogue-based contrastive learning framework that le
 
 ## Background & Motivation
 
-**State of the Field**: Universal Multimodal Embedding Models are built upon multimodal large language models (MLLMs) and typically employ contrastive learning to align query-target pair representations across modalities. These models have achieved notable success in tasks such as image-text retrieval and visual question answering retrieval.
+**Background**: Universal Multimodal Embedding Models are built upon multimodal large language models (MLLMs) and typically employ contrastive learning to align query-target pair representations across modalities. These models have achieved notable success in tasks such as image-text retrieval and visual question answering retrieval.
 
 **Limitations of Prior Work**: Existing methods are built on a single-turn paradigm, in which each query-target pair is treated as an independent data point. This gives rise to two core problems: (1) computational inefficiency, as each pair requires a separate forward pass; and (2) failure to capture the latent contextual relationships among multiple queries associated with the same context (e.g., the same image).
 
-**Root Cause**: MLLMs inherently possess multi-turn dialogue capabilities, yet existing multimodal embedding training paradigms make no use of this property. The single-turn paradigm limits the effective batch size and prevents the model from capturing shared contextual information across multiple semantic dimensions associated with the same image.
+**Key Challenge**: MLLMs inherently possess multi-turn dialogue capabilities, yet existing multimodal embedding training paradigms make no use of this property. The single-turn paradigm limits the effective batch size and prevents the model from capturing shared contextual information across multiple semantic dimensions associated with the same image.
 
-**Paper Goals**: To design a training framework capable of processing multiple groups of query-target pairs associated with the same image in a single forward pass, extracting multiple embedding representations simultaneously, thereby amplifying the effective batch size and enhancing the coherence of cross-modal representations.
+**Goal**: To design a training framework capable of processing multiple groups of query-target pairs associated with the same image in a single forward pass, extracting multiple embedding representations simultaneously, thereby amplifying the effective batch size and enhancing the coherence of cross-modal representations.
 
-**Starting Point**: The authors observe that MLLMs natively support multi-turn dialogue at inference time, with each turn's response conditioned on a shared context. By treating each query-target pair in embedding learning as one turn of a dialogue, multiple embeddings can be extracted within a single forward pass.
+**Key Insight**: The authors observe that MLLMs natively support multi-turn dialogue at inference time, with each turn's response conditioned on a shared context. By treating each query-target pair in embedding learning as one turn of a dialogue, multiple embeddings can be extracted within a single forward pass.
 
 **Core Idea**: Upgrade contrastive learning from the "independent single-turn" paradigm to a "multi-turn dialogue" paradigm—encoding multiple associated queries and targets jointly within a single MLLM forward pass while sharing image context representations, thereby achieving simultaneous gains in training efficiency and representation quality.
 

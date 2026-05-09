@@ -29,15 +29,15 @@ This paper demonstrates that norm-based memorization detection metrics are valid
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models inadvertently memorize exact copies of training samples, raising concerns about data privacy, copyright, and evaluation bias. Memorization detection has become an important research direction.
+**Background**: Diffusion models inadvertently memorize exact copies of training samples, raising concerns about data privacy, copyright, and evaluation bias. Memorization detection has become an important research direction.
 
 **Limitations of Prior Work**: Mainstream methods (Wen et al., Jeon et al.) detect memorization via the norm of the score difference $\|s_\theta^\Delta(\mathbf{x}_t, t, c)\|$, which essentially measures the overall curvature (Hessian trace) of the log-probability.
 
-**Root Cause**: Norm-based metrics implicitly assume that the log-probability distribution is isotropic (i.e., Hessian $\propto \mathbf{I}$, with uniform curvature in all directions). However, experiments show that in low-noise regimes the log-probability is in fact anisotropic (eigenvalue variance of the Hessian increases sharply), rendering norms unable to distinguish memorized from non-memorized samples (KL divergence drops from 0.166 under isotropy to 0.022 under anisotropy).
+**Key Challenge**: Norm-based metrics implicitly assume that the log-probability distribution is isotropic (i.e., Hessian $\propto \mathbf{I}$, with uniform curvature in all directions). However, experiments show that in low-noise regimes the log-probability is in fact anisotropic (eigenvalue variance of the Hessian increases sharply), rendering norms unable to distinguish memorized from non-memorized samples (KL divergence drops from 0.166 under isotropy to 0.022 under anisotropy).
 
-**Paper Goals**: Accurately detect memorization even in anisotropic regimes, without requiring expensive denoising steps.
+**Goal**: Accurately detect memorization even in anisotropic regimes, without requiring expensive denoising steps.
 
-**Starting Point**: Analysis of the directional relationship between conditional and unconditional scores in low-noise anisotropic regimes reveals that guidance vectors of memorized samples are highly aligned with the unconditional score.
+**Key Insight**: Analysis of the directional relationship between conditional and unconditional scores in low-noise anisotropic regimes reveals that guidance vectors of memorized samples are highly aligned with the unconditional score.
 
 **Core Idea**: The signature of memorization in anisotropic regimes is angular alignment rather than norm spikes. A weighted combination of an "isotropic norm + anisotropic cosine similarity" enables efficient, denoising-free memorization detection.
 

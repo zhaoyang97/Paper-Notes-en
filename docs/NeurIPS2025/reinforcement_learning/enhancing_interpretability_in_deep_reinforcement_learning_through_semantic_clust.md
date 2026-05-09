@@ -28,15 +28,15 @@ This paper proposes a Semantic Clustering Module (SCM) that combines a Feature D
 
 ## Background & Motivation
 
-**State of the Field**: Deep reinforcement learning (DRL) has been widely applied in robotics, games, and related domains, yet its "black-box" decision-making process lacks interpretability. Semantic clustering has been thoroughly studied in NLP (Word2Vec, GloVe) and CV (image feature spaces), but remains underexplored in DRL.
+**Background**: Deep reinforcement learning (DRL) has been widely applied in robotics, games, and related domains, yet its "black-box" decision-making process lacks interpretability. Semantic clustering has been thoroughly studied in NLP (Word2Vec, GloVe) and CV (image feature spaces), but remains underexplored in DRL.
 
 **Limitations of Prior Work**: (a) Prior work (Mnih et al. 2015, Zahavy et al. 2016) analyzed DRL features using t-SNE only on fixed-scene Atari games, making it impossible to distinguish whether clusters arise from pixel similarity or semantic understanding; (b) t-SNE results are unstable—highly sensitive to initialization, random seeds, and sample size; (c) t-SNE lacks an automatic clustering mechanism and requires substantial manual annotation.
 
-**Root Cause**: Understanding the internal semantic organization of DRL models requires stable, automated clustering methods, yet existing visualization tools do not satisfy these requirements.
+**Key Challenge**: Understanding the internal semantic organization of DRL models requires stable, automated clustering methods, yet existing visualization tools do not satisfy these requirements.
 
-**Paper Goals**: (a) Verify whether DRL inherently possesses semantic clustering capability, ruling out pixel-similarity confounds; (b) provide a stable alternative to t-SNE as an analytical tool; (c) develop policy analysis methods grounded in clustering results.
+**Goal**: (a) Verify whether DRL inherently possesses semantic clustering capability, ruling out pixel-similarity confounds; (b) provide a stable alternative to t-SNE as an analytical tool; (c) develop policy analysis methods grounded in clustering results.
 
-**Starting Point**: Procgen is used instead of Atari—its procedurally generated levels ensure scene diversity, so if clustering persists, it reflects genuine semantic understanding rather than pixel memorization. The discrete encoding mechanism of VQ-VAE is repurposed as an online clustering tool.
+**Key Insight**: Procgen is used instead of Atari—its procedurally generated levels ensure scene diversity, so if clustering persists, it reflects genuine semantic understanding rather than pixel memorization. The discrete encoding mechanism of VQ-VAE is repurposed as an online clustering tool.
 
 **Core Idea**: The codebook of an adapted VQ-VAE serves as online clustering centroids, trained end-to-end with the DRL agent to simultaneously improve clustering quality and maintain policy performance.
 

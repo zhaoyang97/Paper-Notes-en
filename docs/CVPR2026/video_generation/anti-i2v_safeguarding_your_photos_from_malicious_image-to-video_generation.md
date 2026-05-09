@@ -27,16 +27,16 @@ content_hash: 64181637317e10c6
 Anti-I2V proposes a defense method against malicious image-to-video generation. By optimizing perturbations in both L\*a\*b\* color space and the frequency domain, and designing Internal Representation Collapse (IRC) and Anchor (IRA) losses to disrupt semantic feature propagation within the denoising network, the method achieves state-of-the-art protection across three architecturally distinct models: CogVideoX, DynamiCrafter, and Open-Sora.
 
 ## Background & Motivation
-**State of the Field**: Video diffusion models (VDMs) are advancing rapidly. Models such as CogVideoX and Open-Sora can generate realistic videos from a single image and a text prompt, introducing severe risks of deepfake misuse.
+**Background**: Video diffusion models (VDMs) are advancing rapidly. Models such as CogVideoX and Open-Sora can generate realistic videos from a single image and a text prompt, introducing severe risks of deepfake misuse.
 
 **Limitations of Prior Work**:
    - Existing defenses primarily target text-to-image generation or specific architectures (e.g., SVD), with limited validation on large-scale DiT/MMDiT models;
    - RGB-space perturbations are easily eliminated during multi-step denoising, resulting in insufficient robustness;
    - Most methods only attack the final output (VAE encoding or the tail of the denoising network), neglecting intermediate feature propagation.
 
-**Root Cause**: VDMs possess larger capacity and stronger temporal modeling; conventional perturbation strategies struggle to effectively interfere with them—necessitating deeper disruption strategies.
+**Key Challenge**: VDMs possess larger capacity and stronger temporal modeling; conventional perturbation strategies struggle to effectively interfere with them—necessitating deeper disruption strategies.
 
-**Starting Point**: A two-pronged approach—optimizing perturbations in a more robust non-RGB space, while identifying semantically rich layers within the network and selectively disrupting their feature propagation.
+**Key Insight**: A two-pronged approach—optimizing perturbations in a more robust non-RGB space, while identifying semantically rich layers within the network and selectively disrupting their feature propagation.
 
 **Core Idea**: L\*a\*b\* + frequency-domain dual-space perturbation + deep-to-shallow feature collapse + cross-layer semantic anchoring = effective attack against large-scale VDMs.
 

@@ -27,15 +27,15 @@ content_hash: a3e593d370cfdadc
 Drawing on Cognitive Load Theory (CLT) from psychology, this work decomposes the complexity of tool-use tasks into intrinsic load (structural complexity of the solution path) and extraneous load (ambiguity of problem formulation). It constructs ToolLoad-Bench, a benchmark with parametrically adjustable cognitive load, and employs an exponential decay model $\text{Acc} \approx e^{-(k \cdot CL + b)}$ to precisely characterize the capability boundaries of different agents.
 
 ## Background & Motivation
-**State of the Field**: Tool use is a core capability of LLM agents, and benchmarks such as the Berkeley Function Calling Leaderboard are widely adopted. Existing benchmarks provide final accuracy rankings but do not analyze when or why tasks fail.
+**Background**: Tool use is a core capability of LLM agents, and benchmarks such as the Berkeley Function Calling Leaderboard are widely adopted. Existing benchmarks provide final accuracy rankings but do not analyze when or why tasks fail.
 
 **Limitations of Prior Work**: Current evaluations are "black boxes"—they reveal what a model can do, but not where its cognitive bottlenecks lie. The lack of fine-grained decomposition of task difficulty makes it impossible to diagnose specific failure modes (e.g., whether failure stems from structural complexity or problem ambiguity).
 
-**Root Cause**: The ultimate goal of evaluation should go beyond ranking; it should characterize each model's "capability boundary"—the complexity level at which performance begins to degrade significantly. However, "complexity" is inherently multi-dimensional and cannot be captured by a single metric.
+**Key Challenge**: The ultimate goal of evaluation should go beyond ranking; it should characterize each model's "capability boundary"—the complexity level at which performance begins to degrade significantly. However, "complexity" is inherently multi-dimensional and cannot be captured by a single metric.
 
-**Paper Goals**: To provide a principled framework that quantifies the complexity of tool-use tasks into measurable components, and uses a statistically validated model to characterize the capability limits of each agent.
+**Goal**: To provide a principled framework that quantifies the complexity of tool-use tasks into measurable components, and uses a statistically validated model to characterize the capability limits of each agent.
 
-**Starting Point**: The paper maps CLT—originally grounded in the limited capacity of human working memory—onto LLM reasoning: the model's computational context and reasoning capacity are analogized to human working memory, with cognitive load quantifying the demand a task places on "reasoning capacity."
+**Key Insight**: The paper maps CLT—originally grounded in the limited capacity of human working memory—onto LLM reasoning: the model's computational context and reasoning capacity are analogized to human working memory, with cognitive load quantifying the demand a task places on "reasoning capacity."
 
 **Core Idea**: Leverage the intrinsic/extraneous load decomposition from CLT to quantify the complexity of tool-use tasks, and use an exponential decay model to precisely map the capability boundary of each agent.
 

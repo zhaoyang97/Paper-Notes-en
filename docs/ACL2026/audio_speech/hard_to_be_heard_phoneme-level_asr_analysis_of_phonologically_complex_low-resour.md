@@ -32,15 +32,15 @@ This paper presents a phoneme-level ASR analysis of two extremely phonologically
 
 ## Background & Motivation
 
-**State of the Field**: ASR research is predominantly focused on high-resource languages and evaluated at the word or character level. Systematic ASR benchmarks and phoneme-level behavioral analyses are lacking for typologically extreme languages. Archi has 16 vowels and 73–81 consonant phonemes (one of the largest consonant inventories among non-click languages), while Rutul also features a large consonant inventory and distinctive articulations.
+**Background**: ASR research is predominantly focused on high-resource languages and evaluated at the word or character level. Systematic ASR benchmarks and phoneme-level behavioral analyses are lacking for typologically extreme languages. Archi has 16 vowels and 73–81 consonant phonemes (one of the largest consonant inventories among non-click languages), while Rutul also features a large consonant inventory and distinctive articulations.
 
 **Limitations of Prior Work**: (1) No established ASR benchmarks or standardized resources exist for Archi or Rutul; (2) existing ASR studies rarely analyze behavior at the phoneme level, particularly for phonologically complex languages; (3) original annotations heterogeneously mix IPA, romanization, and Cyrillic scripts, making them unsuitable for direct training use; (4) it remains unclear whether ASR errors stem from phonological complexity or data scarcity.
 
-**Root Cause**: When a language simultaneously exhibits extreme phonological complexity and extreme data scarcity, which factor should ASR failures be attributed to? If complexity is the issue, better model architectures are needed; if data is the issue, more data collection is required.
+**Key Challenge**: When a language simultaneously exhibits extreme phonological complexity and extreme data scarcity, which factor should ASR failures be attributed to? If complexity is the issue, better model architectures are needed; if data is the issue, more data collection is required.
 
-**Paper Goals**: To compile standardized ASR resources for Archi and Kina Rutul, systematically evaluate multiple state-of-the-art models, and reveal the true sources of errors through phoneme-level analysis.
+**Goal**: To compile standardized ASR resources for Archi and Kina Rutul, systematically evaluate multiple state-of-the-art models, and reveal the true sources of errors through phoneme-level analysis.
 
-**Starting Point**: Using the phoneme as the unit of analysis, the paper establishes a quantitative functional relationship between phoneme recognition performance and training frequency.
+**Key Insight**: Using the phoneme as the unit of analysis, the paper establishes a quantitative functional relationship between phoneme recognition performance and training frequency.
 
 **Core Idea**: Phoneme recognition F1 follows an S-shaped (logistic) function of log training frequency—near zero for extremely rare phonemes, rising sharply once a threshold is reached, and saturating at high frequencies—indicating that data scarcity is the primary bottleneck rather than phonological complexity.
 

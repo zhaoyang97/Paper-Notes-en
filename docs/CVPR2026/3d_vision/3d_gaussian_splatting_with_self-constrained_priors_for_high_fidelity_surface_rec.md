@@ -28,13 +28,13 @@ This paper proposes Self-Constrained Priors (SCP), which construct a TSDF distan
 
 ## Background & Motivation
 
-**State of the Field**: 3DGS surpasses NeRF in both rendering speed and visual fidelity for novel view synthesis, yet its geometric reconstruction accuracy remains notably lacking. Existing methods either apply multi-view consistency constraints on depth, use implicit fields to regularize Gaussian motion, or rely on data-driven pretrained priors.
+**Background**: 3DGS surpasses NeRF in both rendering speed and visual fidelity for novel view synthesis, yet its geometric reconstruction accuracy remains notably lacking. Existing methods either apply multi-view consistency constraints on depth, use implicit fields to regularize Gaussian motion, or rely on data-driven pretrained priors.
 
 **Limitations of Prior Work**: These strategies either cannot directly impose constraints on 3D Gaussians or cannot operate in a geometry-aware, adaptive manner. Methods relying on external priors generalize poorly to complex or unseen scenes, leading to artifacts and degraded geometric quality.
 
-**Root Cause**: High rendering quality demands high-degree-of-freedom Gaussian representations, whereas geometric accuracy requires strict geometric constraints. The core challenge is how to balance these two objectives without relying on external priors.
+**Key Challenge**: High rendering quality demands high-degree-of-freedom Gaussian representations, whereas geometric accuracy requires strict geometric constraints. The core challenge is how to balance these two objectives without relying on external priors.
 
-**Starting Point**: The paper observes that depth maps rendered from the current Gaussians inherently encode surface estimation information, which can be fused into a TSDF distance field as a "self-constrained prior," eliminating the need for external data-driven priors.
+**Key Insight**: The paper observes that depth maps rendered from the current Gaussians inherently encode surface estimation information, which can be fused into a TSDF distance field as a "self-constrained prior," eliminating the need for external data-driven priors.
 
 **Core Idea**: A TSDF distance field is automatically generated from rendered depth maps to define a narrow band near the surface. Three geometric constraints are applied to Gaussians within this band. The prior is periodically updated and the band progressively narrowed to achieve coarse-to-fine optimization.
 

@@ -30,13 +30,13 @@ DRIFT-Net is a dual-branch neural operator that addresses autoregressive drift c
 
 ### State of the Field
 
-**State of the Field**: Most PDE foundation models employ multi-scale window self-attention, which is computationally efficient but propagates global dependencies only gradually through deep stacking and window shifting.
+**Background**: Most PDE foundation models employ multi-scale window self-attention, which is computationally efficient but propagates global dependencies only gradually through deep stacking and window shifting.
 
 **Limitations of Prior Work**: The locality of window attention weakens global spectral coupling, leading to drift in closed-loop rollouts; purely spectral operators (e.g., FNO) over-emphasize low frequencies.
 
-**Root Cause**: The inherent trade-off between global coupling and local detail fidelity.
+**Key Challenge**: The inherent trade-off between global coupling and local detail fidelity.
 
-**Paper Goals**: Enhance global spectral coupling while preserving high-frequency details.
+**Goal**: Enhance global spectral coupling while preserving high-frequency details.
 
 **Core Idea**: Learnable low-frequency linear mixing + radial gating bandwidth fusion + frequency-weighted loss.
 

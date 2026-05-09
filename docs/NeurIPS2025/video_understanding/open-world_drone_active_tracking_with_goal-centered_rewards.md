@@ -29,17 +29,17 @@ This paper introduces DAT, the first open-world drone active tracking benchmark 
 
 ## Background & Motivation
 
-**State of the Field**: Visual Active Tracking (VAT) aims to autonomously follow targets by controlling a motion system, with broad applications in drone surveillance and security. RL-based VAT methods integrate visual tracking and control into a unified framework, eliminating the need for manual annotation and additional tuning required by pipeline-based approaches.
+**Background**: Visual Active Tracking (VAT) aims to autonomously follow targets by controlling a motion system, with broad applications in drone surveillance and security. RL-based VAT methods integrate visual tracking and control into a unified framework, eliminating the need for manual annotation and additional tuning required by pipeline-based approaches.
 
 **Limitations of Prior Work**:
 - **Lack of unified benchmarks**: Existing scenarios exhibit low complexity, neglect tracker dynamics, or rely on overly simplified models, making them insufficient for validating algorithm performance. Prior methods employ rule-based target management, which is far from human-like behavior.
 - **Complex interference in open-world settings**: Large-scale dynamic environments involve frequent occlusions and distractors. Prior methods capture images only from a fixed horizontal viewpoint, limiting perceptual and motion range.
 
-**Root Cause**: Real-world drone tracking must operate in complex open-world environments, yet neither existing simulation environments nor reward designs meet this requirement—distance-based rewards become misleading under top-down viewpoints.
+**Key Challenge**: Real-world drone tracking must operate in complex open-world environments, yet neither existing simulation environments nor reward designs meet this requirement—distance-based rewards become misleading under top-down viewpoints.
 
-**Paper Goals**: (1) Construct a realistic and comprehensive drone active tracking benchmark; (2) Design reward functions and efficient training strategies applicable to non-fixed viewpoints.
+**Goal**: (1) Construct a realistic and comprehensive drone active tracking benchmark; (2) Design reward functions and efficient training strategies applicable to non-fixed viewpoints.
 
-**Starting Point**: Drawing from projective geometry, a deviation metric-based reward function is designed to replace Euclidean distance rewards, combined with curriculum learning.
+**Key Insight**: Drawing from projective geometry, a deviation metric-based reward function is designed to replace Euclidean distance rewards, combined with curriculum learning.
 
 **Core Idea**: Replace Euclidean distance with a normalized deviation metric based on image-center projection, enabling rewards to correctly reflect target position under arbitrary viewpoints.
 

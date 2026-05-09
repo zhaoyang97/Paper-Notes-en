@@ -29,15 +29,15 @@ BoundRL redefines structured text segmentation as a boundary generation task —
 
 ## Background & Motivation
 
-**State of the Field**: Text segmentation divides text into semantically coherent segments, widely used in document understanding, QA retrieval, and prompt optimization. Traditional methods segment at sentence or paragraph levels, but structured text (e.g., LLM prompts) contains code snippets, JSON formats, and placeholders that do not conform to traditional sentence/paragraph structures.
+**Background**: Text segmentation divides text into semantically coherent segments, widely used in document understanding, QA retrieval, and prompt optimization. Traditional methods segment at sentence or paragraph levels, but structured text (e.g., LLM prompts) contains code snippets, JSON formats, and placeholders that do not conform to traditional sentence/paragraph structures.
 
 **Limitations of Prior Work**: (1) Traditional sentence/paragraph-level segmentation methods are inapplicable to structured text; (2) Token-level sequence labeling produces overly fragmented results; (3) Boundary classification requires classifying every token, with excessive computation; (4) Existing LLM methods (e.g., generating each segment's complete text) face high inference cost and hallucination risk.
 
-**Root Cause**: Structured text requires token-level fine-grained segmentation, but methods generating complete segment text have inference costs that scale linearly with input length and inevitably introduce hallucination.
+**Key Challenge**: Structured text requires token-level fine-grained segmentation, but methods generating complete segment text have inference costs that scale linearly with input length and inevitably introduce hallucination.
 
-**Paper Goals**: Design an efficient token-level structured text segmentation method that achieves both low inference cost and high segmentation quality.
+**Goal**: Design an efficient token-level structured text segmentation method that achieves both low inference cost and high segmentation quality.
 
-**Starting Point**: Transform the segmentation problem into boundary generation — only generate each segment's start token sequence and label, then locate these tokens in the original text to reconstruct complete segments.
+**Key Insight**: Transform the segmentation problem into boundary generation — only generate each segment's start token sequence and label, then locate these tokens in the original text to reconstruct complete segments.
 
 **Core Idea**: By generating only "localization information" (start tokens) rather than "content information" (complete text), output complexity is reduced from O(|d|) to O(n) (n being the number of segments), while customized RLVR training overcomes SFT limitations.
 

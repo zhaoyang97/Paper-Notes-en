@@ -29,15 +29,15 @@ This work introduces the first structured taxonomy of legal relations in Chinese
 
 ## Background & Motivation
 
-**State of the Field**: Legal relations are the fundamental unit of analysis in Chinese civil cases, referring to relationships between individuals as regulated by legal norms. Legal practitioners routinely rely on legal relations for legal information retrieval, statute prediction, and case outcome analysis. However, legal relations have long been neglected in the legal AI literature, particularly in the context of Chinese civil law where systematic study is lacking.
+**Background**: Legal relations are the fundamental unit of analysis in Chinese civil cases, referring to relationships between individuals as regulated by legal norms. Legal practitioners routinely rely on legal relations for legal information retrieval, statute prediction, and case outcome analysis. However, legal relations have long been neglected in the legal AI literature, particularly in the context of Chinese civil law where systematic study is lacking.
 
 **Limitations of Prior Work**: Existing information extraction in legal AI primarily targets factual entities (e.g., persons, objects, contracts) or general social relations (e.g., employment, ownership), overlooking legal relations as a distinct concept rooted in statutory rules and judicial practice rather than ordinary semantic associations in natural language. Moreover, legal relations are almost never explicitly stated in judicial decisions and must typically be inferred from factual descriptions. Existing legal relation schemas tend to be coarse-grained, operating only at the level of broad categories of civil rights and obligations.
 
-**Root Cause**: The absence of a fine-grained, structured legal relation taxonomy and high-quality annotated data prevents systematic evaluation and improvement of AI models' capacity for legal relation understanding.
+**Key Challenge**: The absence of a fine-grained, structured legal relation taxonomy and high-quality annotated data prevents systematic evaluation and improvement of AI models' capacity for legal relation understanding.
 
-**Paper Goals**: (1) Establish the first comprehensive legal relation taxonomy covering Chinese civil law; (2) define the legal relation extraction task and construct an expert-annotated benchmark dataset; (3) evaluate the legal relation extraction capabilities of leading LLMs; (4) validate the utility of legal relation information for downstream tasks.
+**Goal**: (1) Establish the first comprehensive legal relation taxonomy covering Chinese civil law; (2) define the legal relation extraction task and construct an expert-annotated benchmark dataset; (3) evaluate the legal relation extraction capabilities of leading LLMs; (4) validate the utility of legal relation information for downstream tasks.
 
-**Starting Point**: Starting from jurisprudential theory and combining judicial practice with expert guidance, the authors first construct the taxonomy and then proceed to computational annotation and evaluation, balancing legal rigor with AI practicality.
+**Key Insight**: Starting from jurisprudential theory and combining judicial practice with expert guidance, the authors first construct the taxonomy and then proceed to computational annotation and evaluation, balancing legal rigor with AI practicality.
 
 ## Method
 

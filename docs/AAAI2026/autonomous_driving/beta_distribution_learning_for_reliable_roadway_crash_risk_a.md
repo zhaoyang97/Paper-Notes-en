@@ -29,15 +29,15 @@ A geospatial deep learning framework based on Beta distribution learning is prop
 
 ## Background & Motivation
 
-**State of the Field**: Road traffic crashes cause over 1.3 million deaths annually worldwide, with economic losses reaching up to 3% of GDP. Traditional traffic safety research typically analyzes driving behavior, road infrastructure, traffic patterns, and weather in isolation, overlooking the complex spatial interactions among multiple factors.
+**Background**: Road traffic crashes cause over 1.3 million deaths annually worldwide, with economic losses reaching up to 3% of GDP. Traditional traffic safety research typically analyzes driving behavior, road infrastructure, traffic patterns, and weather in isolation, overlooking the complex spatial interactions among multiple factors.
 
 **Limitations of Prior Work**: Existing DNN-based risk estimators produce point estimates without conveying model uncertainty; modern DNNs are generally miscalibrated, with predicted confidence mismatched to actual accuracy. Crash data is extremely sparse (the annual crash rate for 25m² road segments in the U.S. is approximately 0.1%), making traditional estimation methods highly unreliable.
 
-**Root Cause**: Safety-critical applications require models that are both (a) high-recall—dangerous areas must not be missed—and (b) well-calibrated—predicted confidence must faithfully reflect correctness probability. Point estimates cannot distinguish between "certain low risk" and "uncertain moderate risk."
+**Key Challenge**: Safety-critical applications require models that are both (a) high-recall—dangerous areas must not be missed—and (b) well-calibrated—predicted confidence must faithfully reflect correctness probability. Point estimates cannot distinguish between "certain low risk" and "uncertain moderate risk."
 
-**Paper Goals**: Starting from satellite imagery, learn a crash fatality risk assessment model that is accurate, well-calibrated, and capable of outputting a complete probability distribution.
+**Goal**: Starting from satellite imagery, learn a crash fatality risk assessment model that is accurate, well-calibrated, and capable of outputting a complete probability distribution.
 
-**Starting Point**: Risk estimation is framed as a Beta probability distribution learning problem, exploiting the natural $[0,1]$ support and flexible shape parameters of the Beta distribution to represent both risk and uncertainty.
+**Key Insight**: Risk estimation is framed as a Beta probability distribution learning problem, exploiting the natural $[0,1]$ support and flexible shape parameters of the Beta distribution to represent both risk and uncertainty.
 
 **Core Idea**: By predicting the parameters $(\alpha, \beta)$ of a Beta distribution rather than a single risk value, geometric information from data augmentation is converted into structured probabilistic supervision signals, enabling uncertainty-aware assessment of crash risk.
 

@@ -29,15 +29,15 @@ This paper systematically evaluates the robustness of four open-source function-
 
 ## Background & Motivation
 
-**State of the Field**: Function-calling capabilities enable LLMs to interact with external tools, extending their utility beyond text generation. With the proliferation of protocols such as A2A and MCP, agentic applications are becoming increasingly prevalent.
+**Background**: Function-calling capabilities enable LLMs to interact with external tools, extending their utility beyond text generation. With the proliferation of protocols such as A2A and MCP, agentic applications are becoming increasingly prevalent.
 
 **Limitations of Prior Work**: Function-calling capability does not guarantee robustness against adversarial attacks; even with defenses in place, models may still be induced to invoke malicious functions. Existing research has primarily demonstrated attack feasibility on closed-source models, leaving a systematic evaluation of open-source models largely absent.
 
-**Root Cause**: Open-source function-calling models must expose tool implementation details (e.g., source code), creating a unique attack surface that does not exist in closed-source models. Meanwhile, existing defense mechanisms suffer from high false-positive rates and other practical deployment challenges.
+**Key Challenge**: Open-source function-calling models must expose tool implementation details (e.g., source code), creating a unique attack surface that does not exist in closed-source models. Meanwhile, existing defense mechanisms suffer from high false-positive rates and other practical deployment challenges.
 
-**Paper Goals**: To systematically evaluate the security of open-source function-calling models, quantify attack success rates (ASR) and defense effectiveness, and provide empirical evidence to guide the design of more secure agentic systems.
+**Goal**: To systematically evaluate the security of open-source function-calling models, quantify attack success rates (ASR) and defense effectiveness, and provide empirical evidence to guide the design of more secure agentic systems.
 
-**Starting Point**: Adopting a blue-team (defender) perspective, the paper simultaneously implements attacks and defenses within a unified end-to-end evaluation framework, with particular focus on novel attack vectors introduced by tool implementation visibility.
+**Key Insight**: Adopting a blue-team (defender) perspective, the paper simultaneously implements attacks and defenses within a unified end-to-end evaluation framework, with particular focus on novel attack vectors introduced by tool implementation visibility.
 
 **Core Idea**: The visibility of tool implementations creates a unique attack surface for adversaries (e.g., Renaming Tool Poisoning), while current defense solutions—both preventive and reactive—fail to provide comprehensive protection, necessitating multi-layered, combined defenses.
 

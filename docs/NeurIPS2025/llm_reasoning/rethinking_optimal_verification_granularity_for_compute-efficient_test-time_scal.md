@@ -28,15 +28,15 @@ This paper proposes Variable Granularity Search (VG-Search), which unifies Beam 
 
 ## Background & Motivation
 
-**State of the Field**: Test-time scaling (TTS) improves LLM performance by allocating additional computation at inference time. Sampling-based methods (Beam Search, Best-of-N) employ verifiers (PRMs) to guide search. The current standard practice is to invoke the verifier at every generation step, typically delimited by newlines.
+**Background**: Test-time scaling (TTS) improves LLM performance by allocating additional computation at inference time. Sampling-based methods (Beam Search, Best-of-N) employ verifiers (PRMs) to guide search. The current standard practice is to invoke the verifier at every generation step, typically delimited by newlines.
 
 **Limitations of Prior Work**: (a) PRM score differences between consecutive steps are negligible in more than 50% of cases (score gap < 1%), indicating substantial redundancy in per-step verification; (b) verifier call latency constitutes an increasingly large fraction of total inference time, becoming a computational bottleneck.
 
-**Root Cause**: High verification frequency yields precise search but is computationally expensive; low frequency is cheaper but misses opportunities for error correction. The prevailing fixed setting of $g=1$ is heuristic and not necessarily optimal.
+**Key Challenge**: High verification frequency yields precise search but is computationally expensive; low frequency is cheaper but misses opportunities for error correction. The prevailing fixed setting of $g=1$ is heuristic and not necessarily optimal.
 
-**Paper Goals**: (1) Systematically study how verification granularity affects the accuracy–compute trade-off; (2) design an adaptive strategy for dynamically selecting the optimal $g$.
+**Goal**: (1) Systematically study how verification granularity affects the accuracy–compute trade-off; (2) design an adaptive strategy for dynamically selecting the optimal $g$.
 
-**Starting Point**: Drawing an analogy to the infinite monkey theorem — the verification frequency $g$ controls the timing of error pruning. Too frequent wastes computation; too sparse misses correction opportunities. An optimal equilibrium point exists that depends on generator capability and task difficulty.
+**Key Insight**: Drawing an analogy to the infinite monkey theorem — the verification frequency $g$ controls the timing of error pruning. Too frequent wastes computation; too sparse misses correction opportunities. An optimal equilibrium point exists that depends on generator capability and task difficulty.
 
 **Core Idea**: The verifier need not be invoked at every step. Strong generators on easy tasks benefit from sparse verification, whereas weak generators on hard tasks require frequent verification.
 

@@ -37,9 +37,9 @@ Vision-language models (VLMs), endowed with rich world knowledge acquired from l
 
 **Excessive extraction time**: Expensive 6D pose estimation is applied even to simple tasks that only require centroid points.
 
-**Root Cause**: Task complexity determines the type and granularity of spatial representation required, yet stronger representational capacity typically entails higher system runtime cost. How can a balance between representational capacity and efficiency be achieved?
+**Key Challenge**: Task complexity determines the type and granularity of spatial representation required, yet stronger representational capacity typically entails higher system runtime cost. How can a balance between representational capacity and efficiency be achieved?
 
-**Starting Point**: The paper enables VLMs to autonomously determine what level of spatial representation each object requires at each task stage, and dynamically invokes the corresponding extraction tool. The CoG method is designed to explicitly guide the VLM's stage-wise reasoning process, ensuring reasoning stability.
+**Key Insight**: The paper enables VLMs to autonomously determine what level of spatial representation each object requires at each task stage, and dynamically invokes the corresponding extraction tool. The CoG method is designed to explicitly guide the VLM's stage-wise reasoning process, ensuring reasoning stability.
 
 ## Method
 

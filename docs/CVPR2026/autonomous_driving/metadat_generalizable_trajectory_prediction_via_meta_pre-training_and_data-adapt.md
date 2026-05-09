@@ -29,7 +29,7 @@ This paper proposes the MetaDAT framework, which obtains a model initialization 
 
 ## Background & Motivation
 
-**State of the Field**: Data-driven trajectory prediction methods (e.g., ForecastMAE) achieve strong performance on pre-collected datasets, but suffer significant degradation at test time when facing distribution shifts (e.g., changes in road structure, interaction patterns, or driving styles), posing safety risks.
+**Background**: Data-driven trajectory prediction methods (e.g., ForecastMAE) achieve strong performance on pre-collected datasets, but suffer significant degradation at test time when facing distribution shifts (e.g., changes in road structure, interaction patterns, or driving styles), posing safety risks.
 
 **Unique Advantage of Test-Time Training (TTT)**: Trajectory prediction has a natural "self-labeling" property — observations at the current timestep serve as ground-truth labels for past predictions. This enables online model updating using real observations at test time, without requiring additional annotation.
 

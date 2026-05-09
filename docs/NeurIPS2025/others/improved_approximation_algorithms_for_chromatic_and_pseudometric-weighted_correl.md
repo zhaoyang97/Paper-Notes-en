@@ -30,7 +30,7 @@ For two important generalizations of Correlation Clustering—Chromatic CC and p
 
 ### Limitations of Prior Work
 
-**State of the Field**: Classical Correlation Clustering (CC) assigns each edge a "+" or "−" label and seeks a node partition minimizing disagreements. However, real-world edge relationships are more complex:
+**Background**: Classical Correlation Clustering (CC) assigns each edge a "+" or "−" label and seeks a node partition minimizing disagreements. However, real-world edge relationships are more complex:
 
 1. **Chromatic CC (CCC)**: Edges carry multiple semantic colors (e.g., "colleague/classmate/family" in social networks), each cluster must be assigned a single color, and the goal is to minimize the number of color-mismatched edges. The previous best approximation ratio was **2.5** by Xiu et al.
 2. **Pseudometric-weighted CC**: Edge weights satisfy the triangle inequality, and the goal is to minimize weighted disagreements. The previous best result was a **6-approximation**.

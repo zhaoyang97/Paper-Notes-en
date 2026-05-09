@@ -29,15 +29,15 @@ This paper proposes REL, a three-channel depth representation based on cylindric
 
 ## Background & Motivation
 
-**State of the Field**: Panoramic semantic segmentation (PASS) aims at full scene understanding from a 360°×180° ultra-wide field of view and is widely applied in autonomous driving, AR/VR, and related domains. Dominant approaches adopt Equirectangular Projection (ERP) to convert spherical data into 2D images for processing.
+**Background**: Panoramic semantic segmentation (PASS) aims at full scene understanding from a 360°×180° ultra-wide field of view and is widely applied in autonomous driving, AR/VR, and related domains. Dominant approaches adopt Equirectangular Projection (ERP) to convert spherical data into 2D images for processing.
 
 **Limitations of Prior Work**: The HHA representation widely used in RGB-D methods has two critical shortcomings: (a) the second degree of freedom of the surface normal direction (lateral azimuth) is absent, leading to incomplete geometric information; (b) HHA computation relies on camera pose and intrinsics (e.g., focal length), making it inconvenient for processing pure image data.
 
-**Root Cause**: ERP-projected panoramic images exhibit large distortion and local feature variation across regions, yet existing multimodal fusion strategies apply the same fusion scheme globally, lacking region-adaptive capability. Moreover, cylindrical unrolling disrupts the continuity of scene structure.
+**Key Challenge**: ERP-projected panoramic images exhibit large distortion and local feature variation across regions, yet existing multimodal fusion strategies apply the same fusion scheme globally, lacking region-adaptive capability. Moreover, cylindrical unrolling disrupts the continuity of scene structure.
 
-**Paper Goals**: Design a more complete panoramic depth representation and achieve region-adaptive multimodal fusion to improve the accuracy and robustness of panoramic semantic segmentation.
+**Goal**: Design a more complete panoramic depth representation and achieve region-adaptive multimodal fusion to improve the accuracy and robustness of panoramic semantic segmentation.
 
-**Starting Point**: Exploit the cylindrical geometry inherent to ERP projection to design a three-channel cylindrical-coordinate-based representation (REL), and achieve spherically-aware region-level adaptive fusion by sampling overlapping regions on the lateral surface of the cylinder.
+**Key Insight**: Exploit the cylindrical geometry inherent to ERP projection to design a three-channel cylindrical-coordinate-based representation (REL), and achieve spherically-aware region-level adaptive fusion by sampling overlapping regions on the lateral surface of the cylinder.
 
 **Core Idea**: Use cylindrical coordinates $\rho\theta z$ to fully encode 3D position and surface normal direction (REL), and employ Spherical Dynamic Mixture-of-Experts Fusion (SMMF) to apply different fusion strategies for different regions.
 

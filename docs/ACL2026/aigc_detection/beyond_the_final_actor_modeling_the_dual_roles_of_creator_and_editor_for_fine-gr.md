@@ -28,15 +28,15 @@ This paper proposes RACE (Rhetorical Analysis for Creator-Editor Modeling), whic
 
 ## Background & Motivation
 
-**State of the Field**: LLM-generated text detection primarily focuses on binary classification (human-written vs. LLM-written), with recent work introducing a third "mixed text" category for three-class settings.
+**Background**: LLM-generated text detection primarily focuses on binary classification (human-written vs. LLM-written), with recent work introducing a third "mixed text" category for three-class settings.
 
 **Limitations of Prior Work**: Even three-class classification is insufficiently fine-grained—"LLM-polished human text" and "human-rewritten LLM text" have completely different policy implications in practical governance. The former is typically viewed as legitimate writing assistance, while the latter represents evasion of detection and academic misconduct. However, both fall under "mixed text," making them indistinguishable using unified features in traditional methods.
 
-**Root Cause**: The creator-editor collaboration patterns differ fundamentally between these two hybrid types: LLM-polished human text = human logical framework + LLM expressive style; human-rewritten LLM text = LLM logical framework + human surface perturbations. Unified features struggle to capture these separated dual traces.
+**Key Challenge**: The creator-editor collaboration patterns differ fundamentally between these two hybrid types: LLM-polished human text = human logical framework + LLM expressive style; human-rewritten LLM text = LLM logical framework + human surface perturbations. Unified features struggle to capture these separated dual traces.
 
-**Paper Goals**: Design a detection framework capable of separately modeling "creator" and "editor" contributions to achieve reliable fine-grained four-class detection.
+**Goal**: Design a detection framework capable of separately modeling "creator" and "editor" contributions to achieve reliable fine-grained four-class detection.
 
-**Starting Point**: Creator identity is deeply embedded in the text's logical organization and argument progression (humans use hierarchical reasoning, LLMs tend toward linear narratives), while editor influence primarily manifests in surface linguistic expression. RST precisely separates these two levels.
+**Key Insight**: Creator identity is deeply embedded in the text's logical organization and argument progression (humans use hierarchical reasoning, LLMs tend toward linear narratives), while editor influence primarily manifests in surface linguistic expression. RST precisely separates these two levels.
 
 **Core Idea**: Parse text using RST to obtain a rhetorical relation tree, convert it into a logic graph to characterize the creator's cognitive fingerprint, while using EDU-level semantic representations to capture the editor's linguistic style.
 

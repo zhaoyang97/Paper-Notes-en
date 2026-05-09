@@ -27,13 +27,13 @@ content_hash: 2d2e23cb06cd931e
 This paper provides rigorous theoretical proof via a similarity graph model that *difficult examples* (cross-class sample pairs with high similarity) hurt unsupervised contrastive learning — they strictly worsen the generalization error bound. Three theoretically grounded mitigation strategies are proposed: removing difficult examples, adjusting margins, and temperature scaling. On TinyImageNet, the approach yields up to a 10.42% improvement in linear probing accuracy. This finding is counterintuitive: while "more data is better" is a common principle in deep learning, carefully removing difficult examples in contrastive learning is in fact beneficial.
 
 ## Background & Motivation
-**State of the Field**: Contrastive learning methods (SimCLR, MoCo) have achieved remarkable success in unsupervised representation learning, yet performance varies substantially across datasets with little theoretical explanation. Joshi & Mirzasoleiman (2023) observed that difficult examples contribute the least in contrastive learning but did not identify the possibility of performance improvement through their removal.
+**Background**: Contrastive learning methods (SimCLR, MoCo) have achieved remarkable success in unsupervised representation learning, yet performance varies substantially across datasets with little theoretical explanation. Joshi & Mirzasoleiman (2023) observed that difficult examples contribute the least in contrastive learning but did not identify the possibility of performance improvement through their removal.
 
 **Limitations of Prior Work**: Hard negative samples (samples that are highly similar to positives but belong to different classes) are generally considered beneficial in *supervised* contrastive learning due to stronger gradient signals. Their effect in the *unsupervised* setting remains unclear, particularly since no labels are available to distinguish hard positives from hard negatives.
 
-**Root Cause**: Deep learning models typically benefit from more training data (lower sampling error), yet the authors find that removing certain samples in contrastive learning actually improves performance — a counterintuitive result.
+**Key Challenge**: Deep learning models typically benefit from more training data (lower sampling error), yet the authors find that removing certain samples in contrastive learning actually improves performance — a counterintuitive result.
 
-**Paper Goals**: To theoretically explain why difficult examples harm unsupervised contrastive learning performance and to provide principled remedies.
+**Goal**: To theoretically explain why difficult examples harm unsupervised contrastive learning performance and to provide principled remedies.
 
 **Core Idea**: Through a similarity graph model, the paper rigorously proves that the presence of cross-class difficult examples increases the generalization bound on linear probing error, and proposes three strategies — removal, margin adjustment, and temperature scaling — to address this.
 

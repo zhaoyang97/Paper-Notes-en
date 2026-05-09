@@ -28,15 +28,15 @@ A two-stage video moment retrieval framework is proposed: the first stage employ
 
 ## Background & Motivation
 
-1. **State of the Field**: Video Moment Retrieval (VMR) aims to localize temporal segments in untrimmed videos that semantically correspond to a text query. Existing methods primarily rely on natural language queries (NLQ) or static image augmentation (e.g., ICQ using DALL-E-generated images), and employ Transformer architectures for cross-modal fusion.
+1. **Background**: Video Moment Retrieval (VMR) aims to localize temporal segments in untrimmed videos that semantically correspond to a text query. Existing methods primarily rely on natural language queries (NLQ) or static image augmentation (e.g., ICQ using DALL-E-generated images), and employ Transformer architectures for cross-modal fusion.
 
 2. **Limitations of Prior Work**: Pure text queries tend to introduce temporal ambiguity when handling complex queries with multiple verbs. For example, "Adams walks into the room and hands coffee to Park" requires understanding the sequential relationship between "walking" and "handing," yet text descriptions lack dynamic cues. Static image augmentation improves semantic expressiveness but fails to convey dynamic motion information—generated images omit the temporal progression of actions (e.g., entering the room → approaching → reaching out to hand coffee), leading to grounding errors.
 
-3. **Root Cause**: Multi-verb queries require explicit temporal dynamic cues (motion cues), which neither text nor static images can provide. Furthermore, incorporating generated videos extends the input sequence, making the quadratic complexity of Transformers a critical bottleneck.
+3. **Key Challenge**: Multi-verb queries require explicit temporal dynamic cues (motion cues), which neither text nor static images can provide. Furthermore, incorporating generated videos extends the input sequence, making the quadratic complexity of Transformers a critical bottleneck.
 
-4. **Paper Goals**: (a) How to generate auxiliary information with rich temporal dynamics for queries? (b) How to efficiently fuse generated priors with long video sequences?
+4. **Goal**: (a) How to generate auxiliary information with rich temporal dynamics for queries? (b) How to efficiently fuse generated priors with long video sequences?
 
-5. **Starting Point**: A text-to-video diffusion model (CogVideoX) is leveraged to generate short videos as temporal priors, capturing implicit motion information; Mamba (SSM) replaces Transformers to enable linear-time complexity for long-sequence modeling.
+5. **Key Insight**: A text-to-video diffusion model (CogVideoX) is leveraged to generate short videos as temporal priors, capturing implicit motion information; Mamba (SSM) replaces Transformers to enable linear-time complexity for long-sequence modeling.
 
 6. **Core Idea**: Dynamic videos rather than static images are generated as temporal priors for query augmentation, and a multimodal-controlled Mamba network efficiently fuses text, generated videos, and target videos for precise temporal grounding.
 

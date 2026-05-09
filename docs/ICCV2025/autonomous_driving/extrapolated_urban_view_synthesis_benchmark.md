@@ -33,7 +33,7 @@ This paper presents the first Extrapolated Urban View Synthesis (EUVS) benchmark
     - Existing evaluations almost exclusively conduct interpolation tests between highly correlated training and test viewpoints, resulting in near-identical training/test distributions.
     - A small number of studies have attempted extrapolated view synthesis (e.g., GGS, VEGS, FreeSim), but the absence of real-world ground-truth data limits them to qualitative analysis only.
     - Prior methods focus on a single difficulty level, with no systematic multi-level evaluation framework.
-- **Paper Goals**: To construct a standardized, multi-difficulty extrapolated NVS benchmark that enables comprehensive quantitative and qualitative evaluation using real-world data, thereby promoting the development of more robust NVS methods.
+- **Goal**: To construct a standardized, multi-difficulty extrapolated NVS benchmark that enables comprehensive quantitative and qualitative evaluation using real-world data, thereby promoting the development of more robust NVS methods.
 
 ## Method
 

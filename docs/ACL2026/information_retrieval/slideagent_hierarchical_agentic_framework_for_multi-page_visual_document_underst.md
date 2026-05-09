@@ -28,13 +28,13 @@ This paper proposes SlideAgent, a hierarchical agentic framework that constructs
 
 ## Background & Motivation
 
-**State of the Field**: Multi-page visual documents — such as financial reports, academic presentations, and technical manuals — are pervasive in high-stakes domains including finance, science, and education. These documents convey information not only through text but also through page layout, icons, color coding, and cross-page references.
+**Background**: Multi-page visual documents — such as financial reports, academic presentations, and technical manuals — are pervasive in high-stakes domains including finance, science, and education. These documents convey information not only through text but also through page layout, icons, color coding, and cross-page references.
 
 **Limitations of Prior Work**: Current multimodal large language models (MLLMs) face three key challenges when processing multi-page visual documents: (1) **Insufficient fine-grained reasoning** — MLLMs tend to process each page holistically, overlooking element-level details such as specific data segments within charts; (2) **Lack of domain-specific visual semantics** — pretraining predominantly on natural images leaves models ill-equipped to interpret specialized charts, icon semantics, and spatial layouts in documents; (3) **Metadata dependency** — many systems rely on clean document metadata (e.g., annotated chart positions, hierarchical labels) that is frequently absent or corrupted in practice.
 
-**Root Cause**: MLLMs may fail when reasoning over a full page holistically (e.g., miscounting categories in a chart), yet succeed when the relevant chart is cropped and presented in isolation — indicating that the model possesses the requisite reasoning capacity but lacks an effective mechanism for fine-grained information extraction.
+**Key Challenge**: MLLMs may fail when reasoning over a full page holistically (e.g., miscounting categories in a chart), yet succeed when the relevant chart is cropped and presented in isolation — indicating that the model possesses the requisite reasoning capacity but lacks an effective mechanism for fine-grained information extraction.
 
-**Paper Goals**: To construct a general-purpose agentic framework that requires no document metadata, handles multi-page multimodal documents, and achieves precise document understanding through hierarchical knowledge construction and selective agent activation.
+**Goal**: To construct a general-purpose agentic framework that requires no document metadata, handles multi-page multimodal documents, and achieves precise document understanding through hierarchical knowledge construction and selective agent activation.
 
 **Core Idea**: Inspired by human information processing, the framework decomposes document understanding into three levels — global (overall theme), page (per-page features and cross-page relations), and element (fine-grained parsing of charts, text blocks, and icons) — with dedicated agents at each level operating collaboratively across knowledge construction and reasoning phases.
 

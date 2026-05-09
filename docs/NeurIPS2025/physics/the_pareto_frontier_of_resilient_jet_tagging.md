@@ -27,15 +27,15 @@ This work systematically evaluates the AUC–resilience trade-off across multipl
 
 ## Background & Motivation
 
-**State of the Field**: Jet tagging is a core task in LHC data analysis, and state-of-the-art architectures based on Transformers and GNNs (e.g., ParT) substantially outperform traditional methods in AUC.
+**Background**: Jet tagging is a core task in LHC data analysis, and state-of-the-art architectures based on Transformers and GNNs (e.g., ParT) substantially outperform traditional methods in AUC.
 
 **Limitations of Prior Work**: Optimizing solely for AUC leads to selecting architectures with strong model dependence—these models may learn simulator-specific artifacts rather than genuine physical structure. ATLAS has found that classifiers are more sensitive to physics modeling uncertainties than to detector effects.
 
-**Root Cause**: The community treats AUC as the sole optimization objective ("when a measure becomes a target, it ceases to be a good measure"), neglecting classifier robustness across different Monte Carlo generators.
+**Key Challenge**: The community treats AUC as the sole optimization objective ("when a measure becomes a target, it ceases to be a good measure"), neglecting classifier robustness across different Monte Carlo generators.
 
-**Paper Goals**: Quantify the trade-off between AUC and resilience, and demonstrate that low-resilience models introduce bias in real physics analyses.
+**Goal**: Quantify the trade-off between AUC and resilience, and demonstrate that low-resilience models introduce bias in real physics analyses.
 
-**Starting Point**: Resilience is measured as the percentage difference in AUC between training on Pythia-8 and testing on Herwig-7.
+**Key Insight**: Resilience is measured as the percentage difference in AUC between training on Pythia-8 and testing on Herwig-7.
 
 **Core Idea**: Construct a Pareto frontier of AUC vs. resilience, showing that complex models occupy the high-AUC/low-resilience corner while simpler models such as EFN and expert features occupy the low-AUC/high-resilience corner. Knowledge distillation is shown to be incapable of pushing beyond this frontier.
 

@@ -29,15 +29,15 @@ SLICE is a semantic watermarking framework that decomposes image semantics into 
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion model watermarking has evolved from post-processing (HiNet) → model fine-tuning (Stable Signature) → training-free noise-space injection (Tree-Ring, Gaussian Shading). SEAL further introduced semantic awareness, making detection dependent on image content rather than fixed global patterns.
+**Background**: Diffusion model watermarking has evolved from post-processing (HiNet) → model fine-tuning (Stable Signature) → training-free noise-space injection (Tree-Ring, Gaussian Shading). SEAL further introduced semantic awareness, making detection dependent on image content rather than fixed global patterns.
 
 **Limitations of Prior Work**: Existing semantic watermarking methods (e.g., SEAL) rely on a single global semantic binding. The CSI attack demonstrates that adversaries can perform locally coherent semantic edits (e.g., modifying only the subject) to circumvent global watermark verification, achieving an ASR as high as 81%. Content-agnostic watermarks (Tree-Ring, etc.) collapse almost entirely under generative forgery attacks (100% ASR).
 
-**Root Cause**: Image semantics are not a monolithic whole but are composed of partially independent semantic factors. Global binding cannot distinguish cases where "the overall semantics appear consistent but a specific local factor has been maliciously altered."
+**Key Challenge**: Image semantics are not a monolithic whole but are composed of partially independent semantic factors. Global binding cannot distinguish cases where "the overall semantics appear consistent but a specific local factor has been maliciously altered."
 
-**Paper Goals**: (1) How to bind watermarks to fine-grained semantic factors rather than global semantics? (2) How to enable not only tamper detection but also tamper localization? (3) How to provide formal theoretical security guarantees?
+**Goal**: (1) How to bind watermarks to fine-grained semantic factors rather than global semantics? (2) How to enable not only tamper detection but also tamper localization? (3) How to provide formal theoretical security guarantees?
 
-**Starting Point**: Exploit the spatial decomposability of the diffusion model's latent space—different spatial regions can independently carry watermark signals for distinct semantics.
+**Key Insight**: Exploit the spatial decomposability of the diffusion model's latent space—different spatial regions can independently carry watermark signals for distinct semantics.
 
 **Core Idea**: Decouple image semantics into four factors and bind each independently to a separate spatial partition of the noise latent space, so that a local semantic edit causes verification failure only in the corresponding partition, enabling tamper localization.
 

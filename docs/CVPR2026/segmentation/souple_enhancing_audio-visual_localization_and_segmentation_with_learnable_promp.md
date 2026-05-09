@@ -29,15 +29,15 @@ This paper proposes SouPLe (Sound-aware Prompt Learning), which replaces fixed t
 
 ## Background & Motivation
 
-**State of the Field**: Audio-visual sound source localization aims to identify sounding objects within visual scenes. Mainstream approaches leverage audio-visual correspondence for self-supervised learning within contrastive learning frameworks. Recently, ACL-SSL achieved notable progress by utilizing pretrained CLIP to convert audio signals into tokens compatible with the CLIP text encoder.
+**Background**: Audio-visual sound source localization aims to identify sounding objects within visual scenes. Mainstream approaches leverage audio-visual correspondence for self-supervised learning within contrastive learning frameworks. Recently, ACL-SSL achieved notable progress by utilizing pretrained CLIP to convert audio signals into tokens compatible with the CLIP text encoder.
 
 **Limitations of Prior Work**: ACL-SSL suffers from two key issues in its use of the fixed prompt "a photo of a $[V_A]$": (1) when the classification token $[CLS]$ is replaced by the audio embedding token $[V_A]$, $[V_A]$ lacks semantic information for integration with visual content; (2) the fixed tokens "a photo of a" have no meaningful semantic connection to $[V_A]$, causing localization failures in certain scenarios.
 
-**Root Cause**: CLIP's text encoder is designed to process natural language descriptions, whereas audio embedding tokens are not natural language. Wrapping them with semantically empty fixed prompts creates an inherent modality mismatch that limits the quality of audio-visual cross-modal alignment.
+**Key Challenge**: CLIP's text encoder is designed to process natural language descriptions, whereas audio embedding tokens are not natural language. Wrapping them with semantically empty fixed prompts creates an inherent modality mismatch that limits the quality of audio-visual cross-modal alignment.
 
-**Paper Goals**: To provide better context for audio embedding tokens within the CLIP framework, enabling more effective alignment with visual features for accurate sound source localization and segmentation.
+**Goal**: To provide better context for audio embedding tokens within the CLIP framework, enabling more effective alignment with visual features for accurate sound source localization and segmentation.
 
-**Starting Point**: Inspired by CoCoOp, the paper reframes prompt engineering as a prompt learning problem—allowing prompt tokens to be adaptively generated from input image features rather than relying on fixed, manually designed prompts.
+**Key Insight**: Inspired by CoCoOp, the paper reframes prompt engineering as a prompt learning problem—allowing prompt tokens to be adaptively generated from input image features rather than relying on fixed, manually designed prompts.
 
 **Core Idea**: Replace fixed text prompts with learnable context tokens conditioned on image features, enabling audio embedding tokens to achieve better semantic alignment within a rich, visually conditioned context.
 

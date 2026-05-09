@@ -27,13 +27,13 @@ content_hash: 5865e6ccb072ec6a
 This paper proposes the FOND framework (Free energy Online Natural-gradient Dynamics), which derives spiking neural network inference dynamics from first principles via free energy minimization, and implements iPVAE (iterative Poisson VAE). iPVAE outperforms standard VAEs and predictive coding models in reconstruction–sparsity trade-off, biological plausibility, and OOD generalization.
 
 ## Background & Motivation
-**State of the Field**: Variational inference in machine learning (ELBO maximization) and neuroscience (free energy minimization) share mathematically equivalent formulations (ELBO = $-\mathcal{F}$), yet this equivalence has not yielded concrete, first-principles-driven algorithm or architecture designs.
+**Background**: Variational inference in machine learning (ELBO maximization) and neuroscience (free energy minimization) share mathematically equivalent formulations (ELBO = $-\mathcal{F}$), yet this equivalence has not yielded concrete, first-principles-driven algorithm or architecture designs.
 
 **Limitations of Prior Work**: (a) Standard VAEs employ amortized inference (single encoder forward pass), which is inconsistent with the iterative/recurrent processing observed in the brain; (b) Predictive coding (PC) is iterative but communicates via continuous membrane potentials, inconsistent with the discrete spike-based communication of real neurons; (c) Existing models typically derive an architecture first and interpret it post hoc as variational inference, lacking a prescriptive methodology that derives architectures from theory.
 
-**Root Cause**: How can variational inference principles be translated into neural network architectures that are simultaneously computationally efficient and biologically plausible?
+**Key Challenge**: How can variational inference principles be translated into neural network architectures that are simultaneously computationally efficient and biologically plausible?
 
-**Starting Point**: Following the spirit of the Bayesian Learning Rule, the paper treats distribution choice and parameterization as flexible design choices, while prescribing natural-gradient updates, online belief propagation, and iterative refinement as fixed components, deriving the architecture top-down.
+**Key Insight**: Following the spirit of the Bayesian Learning Rule, the paper treats distribution choice and parameterization as flexible design choices, while prescribing natural-gradient updates, online belief propagation, and iterative refinement as fixed components, deriving the architecture top-down.
 
 **Core Idea**: By choosing Poisson distributions for the posterior and prior, using membrane potentials as dynamical variables, and performing natural gradient descent on the free energy, the framework naturally derives spiking network dynamics comprising three terms: feedforward drive, recurrent explaining away, and steady-state leak.
 

@@ -27,11 +27,11 @@ content_hash: 7702d59aee72b7f1
 This paper proposes EgoThinker, which constructs the large-scale egocentric video reasoning dataset EgoRe-5M (with causal CoT annotations and hand-object grounding labels) and adopts a two-stage training paradigm (SFT + GRPO reinforcement fine-tuning) to endow MLLMs with robust egocentric reasoning, hand-object grounding, and temporal localization capabilities, achieving state-of-the-art performance across multiple egocentric benchmarks.
 
 ## Background & Motivation
-1. **State of the Field**: MLLMs excel at third-person visual reasoning but lack embodied cognitive understanding from an egocentric perspective.
+1. **Background**: MLLMs excel at third-person visual reasoning but lack embodied cognitive understanding from an egocentric perspective.
 2. **Limitations of Prior Work**: Existing egocentric datasets (e.g., Ego4D) lack explicit reasoning chains, temporal span annotations, and fine-grained hand-object grounding data.
-3. **Root Cause**: Egocentric reasoning requires inferring the unseen camera-wearer's intent and actions, rather than merely recognizing visible events.
-4. **Paper Goals**: Equip MLLMs with comprehensive capabilities for egocentric reasoning, precise hand-object grounding, and long-range temporal understanding.
-5. **Starting Point**: Construct large-scale causal CoT-annotated data and adopt a two-stage training paradigm (SFT to establish foundations + RFT to reinforce grounding).
+3. **Key Challenge**: Egocentric reasoning requires inferring the unseen camera-wearer's intent and actions, rather than merely recognizing visible events.
+4. **Goal**: Equip MLLMs with comprehensive capabilities for egocentric reasoning, precise hand-object grounding, and long-range temporal understanding.
+5. **Key Insight**: Construct large-scale causal CoT-annotated data and adopt a two-stage training paradigm (SFT to establish foundations + RFT to reinforce grounding).
 6. **Core Idea**: Mine egocentric data at scale from web videos such as HowTo100M, construct causal reasoning QA pairs, and apply GRPO to reinforce spatio-temporal grounding.
 
 ## Method

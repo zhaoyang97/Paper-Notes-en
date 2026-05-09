@@ -29,15 +29,15 @@ This paper introduces VIKI-Bench, the first hierarchical benchmark for embodied 
 
 ## Background & Motivation
 
-**State of the Field**: Coordinating multiple embodied agents to accomplish cooperative tasks in dynamic environments is a core challenge in AI. Recent work has leveraged LLMs for multi-agent planning, and a growing body of research has begun exploring VLMs for visually grounded multi-agent cooperation.
+**Background**: Coordinating multiple embodied agents to accomplish cooperative tasks in dynamic environments is a core challenge in AI. Recent work has leveraged LLMs for multi-agent planning, and a growing body of research has begun exploring VLMs for visually grounded multi-agent cooperation.
 
 **Limitations of Prior Work**: (1) Existing VLM-based multi-agent approaches support only a single robot morphology, lacking support for heterogeneous agents—robots of different types with distinct capabilities. (2) No systematic evaluation benchmark exists: current benchmarks either omit multi-agent settings, visual reasoning, or heterogeneous morphologies. (3) Pure LLM methods lack grounded visual perception, while pure RL methods lack high-level semantic reasoning.
 
-**Root Cause**: Effective multi-agent cooperation simultaneously requires visual perception (understanding the current scene), semantic reasoning (planning tasks), and cooperative strategy (role assignment and conflict avoidance). Existing methods typically address only one or two of these aspects.
+**Key Challenge**: Effective multi-agent cooperation simultaneously requires visual perception (understanding the current scene), semantic reasoning (planning tasks), and cooperative strategy (role assignment and conflict avoidance). Existing methods typically address only one or two of these aspects.
 
-**Paper Goals**: (1) Construct a structured benchmark that systematically evaluates the full pipeline of multi-agent cooperation, from perception to planning to execution. (2) Develop a unified framework that leverages VLMs' visual reasoning capabilities and further optimizes cooperative strategies via RL.
+**Goal**: (1) Construct a structured benchmark that systematically evaluates the full pipeline of multi-agent cooperation, from perception to planning to execution. (2) Develop a unified framework that leverages VLMs' visual reasoning capabilities and further optimizes cooperative strategies via RL.
 
-**Starting Point**: The multi-agent cooperation problem is decomposed into three hierarchical levels—activation, planning, and perception—each independently evaluable, together forming a complete pyramid of cooperative capabilities.
+**Key Insight**: The multi-agent cooperation problem is decomposed into three hierarchical levels—activation, planning, and perception—each independently evaluable, together forming a complete pyramid of cooperative capabilities.
 
 **Core Idea**: Address visually grounded cooperation among heterogeneous embodied agents through a hierarchical benchmark and a two-stage VLM-RL framework that first learns structured reasoning formats and then optimizes cooperative strategies via RL.
 

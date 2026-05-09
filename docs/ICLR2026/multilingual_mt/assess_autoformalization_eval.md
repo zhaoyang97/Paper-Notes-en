@@ -27,15 +27,15 @@ This paper proposes the ASSESS framework and the TransTED Similarity metric, whi
 
 ## Background & Motivation
 
-1. **State of the Field**: Autoformalization — converting natural language mathematical propositions into formal languages such as Lean — has advanced rapidly, while evaluation metrics have lagged significantly behind.
+1. **Background**: Autoformalization — converting natural language mathematical propositions into formal languages such as Lean — has advanced rapidly, while evaluation metrics have lagged significantly behind.
 
 2. **Limitations of Prior Work**: String-based methods (e.g., BLEU) ignore semantics, treating $a+b$ and $b+a$ as distinct; proof-based methods provide no graded feedback when proofs fail; LLM-as-Judge approaches are costly and non-reproducible.
 
-3. **Root Cause**: There is a need for an automated evaluation metric that simultaneously captures semantic equivalence and structural similarity.
+3. **Key Challenge**: There is a need for an automated evaluation metric that simultaneously captures semantic equivalence and structural similarity.
 
-4. **Paper Goals**: Design a reproducible, CPU-only evaluation metric that balances semantic and structural information.
+4. **Goal**: Design a reproducible, CPU-only evaluation metric that balances semantic and structural information.
 
-5. **Starting Point**: Leverage the Lean Language Server to parse formal statements into operator trees (OPTs) and introduce semantic transformations into the tree edit distance computation.
+5. **Key Insight**: Leverage the Lean Language Server to parse formal statements into operator trees (OPTs) and introduce semantic transformations into the tree edit distance computation.
 
 6. **Core Idea**: TransTED = TED + semantic transformation search, treating logically equivalent expressions as having distance zero.
 

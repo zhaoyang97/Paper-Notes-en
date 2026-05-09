@@ -32,7 +32,7 @@ The core challenge in multimodal representation learning is acquiring joint cros
 - **Hub-based methods** (ImageBind, LanguageBind, etc.): Use one modality as a reference space, offering scalability but unable to model direct dependencies between non-hub modalities.
 - **Higher-order methods** (Symile, TRIANGLE, GRAM): Attempt to model higher-order dependencies, but Symile and TRIANGLE require all modalities to be present at inference, making them incompatible with standard 1→1 retrieval.
 
-**Root Cause**: Much real-world information is complementary in nature (a song = melody + lyrics; a 3D design = sketch + text), and pairwise contrastive learning alone cannot capture XOR-type synergistic information.
+**Key Challenge**: Much real-world information is complementary in nature (a song = melody + lyrics; a 3D design = sketch + text), and pairwise contrastive learning alone cannot capture XOR-type synergistic information.
 
 ## Method
 

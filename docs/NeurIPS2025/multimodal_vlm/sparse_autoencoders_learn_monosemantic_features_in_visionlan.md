@@ -29,15 +29,15 @@ This paper extends sparse autoencoders (SAEs) to vision-language models (e.g., C
 
 ## Background & Motivation
 
-**State of the Field**: SAEs have recently achieved notable success in LLM interpretability research by decomposing high-dimensional representations into monosemantic atomic features, enabling researchers to understand and control model behavior. However, their application to vision-language models (VLMs) remains limited to preliminary explorations such as interpretable classification or cross-model concept discovery.
+**Background**: SAEs have recently achieved notable success in LLM interpretability research by decomposing high-dimensional representations into monosemantic atomic features, enabling researchers to understand and control model behavior. However, their application to vision-language models (VLMs) remains limited to preliminary explorations such as interpretable classification or cross-model concept discovery.
 
 **Limitations of Prior Work**: Neurons in VLMs such as CLIP are typically polysemantic—a single neuron responds strongly to multiple unrelated concepts (e.g., mobile phones and rulers). This polysemanticity severely impedes understanding of the model's internal mechanisms. More critically, no quantitative metric exists to systematically evaluate the monosemanticity achieved by SAEs on visual tasks.
 
-**Root Cause**: Although SAEs should theoretically decompose polysemantic neurons into monosemantic representations, the absence of appropriate evaluation criteria prevents systematic comparison of different SAE architectures and makes it impossible to verify whether the decomposed representations align with human perception.
+**Key Challenge**: Although SAEs should theoretically decompose polysemantic neurons into monosemantic representations, the absence of appropriate evaluation criteria prevents systematic comparison of different SAE architectures and makes it impossible to verify whether the decomposed representations align with human perception.
 
-**Paper Goals**: (1) How can monosemanticity of SAE neurons in VLMs be quantitatively measured? (2) Which SAE design factors contribute most to monosemanticity? (3) Can monosemantic neurons be used to steer the outputs of multimodal large language models?
+**Goal**: (1) How can monosemanticity of SAE neurons in VLMs be quantitatively measured? (2) Which SAE design factors contribute most to monosemanticity? (3) Can monosemantic neurons be used to steer the outputs of multimodal large language models?
 
-**Starting Point**: Images differ from text—a single image can directly activate neurons without requiring context. The semantic similarity among highly activated images can therefore serve as a natural basis for evaluating neuron monosemanticity.
+**Key Insight**: Images differ from text—a single image can directly activate neurons without requiring context. The semantic similarity among highly activated images can therefore serve as a natural basis for evaluating neuron monosemanticity.
 
 **Core Idea**: Propose an activation-weighted image similarity metric—the MonoSemanticity score—to systematically evaluate SAE monosemanticity on VLMs, and leverage monosemantic neurons to enable unsupervised concept-level steering of multimodal LLMs.
 

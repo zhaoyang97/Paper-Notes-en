@@ -27,15 +27,15 @@ content_hash: c608f8a1885425f9
 This paper proposes AgentDAM, the first benchmark for end-to-end evaluation of data minimization compliance by AI agents in real web environments. It comprises 246 tasks spanning Reddit, GitLab, and Shopping platforms, and finds that leading models such as GPT-4o exhibit privacy leakage rates of 36–46% without mitigation, while a CoT-based privacy prompt reduces leakage rates to 6–8%.
 
 ## Background & Motivation
-**State of the Field**: Autonomous AI agents (e.g., web navigation agents) are advancing rapidly, capable of completing complex tasks such as paying bills and managing schedules on behalf of users. These tasks inevitably require access to sensitive user information (e.g., credit card numbers, email contents).
+**Background**: Autonomous AI agents (e.g., web navigation agents) are advancing rapidly, capable of completing complex tasks such as paying bills and managing schedules on behalf of users. These tasks inevitably require access to sensitive user information (e.g., credit card numbers, email contents).
 
 **Limitations of Prior Work**: Existing privacy evaluation methods are predominantly **probing-based** — directly asking an LLM whether sharing a piece of information is appropriate in a given scenario. This only tests the LLM's privacy reasoning capability and does not reflect agent behavior during actual multi-step web task execution.
 
-**Root Cause**: Agents require access to sensitive user data to complete tasks, yet must also adhere to the principle of data minimization — using only information strictly necessary for task completion without leaking irrelevant sensitive data. Existing evaluations are either not end-to-end (probing only) or conducted in simulated environments (lacking realism).
+**Key Challenge**: Agents require access to sensitive user data to complete tasks, yet must also adhere to the principle of data minimization — using only information strictly necessary for task completion without leaking irrelevant sensitive data. Existing evaluations are either not end-to-end (probing only) or conducted in simulated environments (lacking realism).
 
-**Paper Goals**: How can one evaluate end-to-end whether AI agents comply with the data minimization principle in real web environments?
+**Goal**: How can one evaluate end-to-end whether AI agents comply with the data minimization principle in real web environments?
 
-**Starting Point**: Fully controllable real web environments (Reddit/GitLab/Shopping) are constructed based on WebArena/VisualWebArena. Tasks are designed to contain both relevant and irrelevant sensitive information, and LLM-as-a-judge is used to automatically detect privacy leakage in agent trajectories.
+**Key Insight**: Fully controllable real web environments (Reddit/GitLab/Shopping) are constructed based on WebArena/VisualWebArena. Tasks are designed to contain both relevant and irrelevant sensitive information, and LLM-as-a-judge is used to automatically detect privacy leakage in agent trajectories.
 
 **Core Idea**: Evaluate agents' actual data usage behavior during real web interactions, rather than merely testing their privacy-related reasoning and judgment.
 

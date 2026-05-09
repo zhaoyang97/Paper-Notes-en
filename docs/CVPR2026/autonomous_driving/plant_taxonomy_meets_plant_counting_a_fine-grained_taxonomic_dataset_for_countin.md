@@ -29,15 +29,15 @@ This paper introduces TPC-268, the first large-scale plant counting dataset inte
 
 ## Background & Motivation
 
-**State of the Field**: Visual counting has advanced rapidly over the past decade, but has primarily focused on rigid objects such as crowds and vehicles. The emergence of class-agnostic counting (CAC) enables models to generalize to unseen categories, yet existing CAC datasets (e.g., FSC-147) lack fine-grained categorical complexity.
+**Background**: Visual counting has advanced rapidly over the past decade, but has primarily focused on rigid objects such as crowds and vehicles. The emergence of class-agnostic counting (CAC) enables models to generalize to unseen categories, yet existing CAC datasets (e.g., FSC-147) lack fine-grained categorical complexity.
 
 **Limitations of Prior Work**: Plant counting differs fundamentally from general object counting — plants exhibit non-rigid morphology, dramatic morphological changes across growth stages, phenotypic plasticity, and enormous species diversity organized via taxonomic hierarchies. Crowd counting models need only distinguish "person" from "background," whereas plant counting systems must learn to discriminate subtle textural differences across hundreds of species. Existing plant counting datasets from plant science are small in scale, species-limited, and devoid of taxonomic information.
 
-**Root Cause**: The taxonomic hierarchy of plants provides a natural visual similarity prior (e.g., congeners sharing leaf morphology), yet existing counting methods entirely disregard this structured information. Furthermore, the "one model per species" paradigm is fundamentally unscalable given the vast species space of the plant kingdom.
+**Key Challenge**: The taxonomic hierarchy of plants provides a natural visual similarity prior (e.g., congeners sharing leaf morphology), yet existing counting methods entirely disregard this structured information. Furthermore, the "one model per species" paradigm is fundamentally unscalable given the vast species space of the plant kingdom.
 
-**Paper Goals**: To construct the first large-scale plant counting benchmark dataset integrating taxonomic hierarchy, providing a biologically grounded evaluation platform for CAC research in the plant domain.
+**Goal**: To construct the first large-scale plant counting benchmark dataset integrating taxonomic hierarchy, providing a biologically grounded evaluation platform for CAC research in the plant domain.
 
-**Starting Point**: Combining hierarchical taxonomic classification (kingdom → species) with instance-level point annotations, and using taxonomic distance to define data splits, ensuring that model generalization is evaluated across genuine cross-species gaps.
+**Key Insight**: Combining hierarchical taxonomic classification (kingdom → species) with instance-level point annotations, and using taxonomic distance to define data splits, ensuring that model generalization is evaluated across genuine cross-species gaps.
 
 **Core Idea**: By constructing a large-scale plant counting dataset with complete Linnaean taxonomic hierarchy annotations, this work elevates CAC generalization evaluation from simple "unseen categories" to biologically meaningful "cross-taxonomic-gap" generalization.
 

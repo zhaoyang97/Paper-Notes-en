@@ -39,7 +39,7 @@ Key insight: ambiguous negatives ("half-true, half-false"—e.g., captions that 
 
 ### Starting Point
 
-**Paper Goals**: How to **systematically exploit** near-boundary negatives in multimodal alignment to improve fine-grained discriminative ability without additional annotation?
+**Goal**: How to **systematically exploit** near-boundary negatives in multimodal alignment to improve fine-grained discriminative ability without additional annotation?
 
 ## Method
 

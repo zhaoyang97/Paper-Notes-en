@@ -29,13 +29,13 @@ This paper proposes IDFace, a homomorphic encryption (HE)-based face template pr
 
 ## Background & Motivation
 
-**State of the Field**: Face recognition systems (FRS) are widely deployed in airports, checkpoints, and other high-security scenarios. With the emergence of privacy regulations such as GDPR, secure storage of face templates has become increasingly critical. Multiple studies have demonstrated that face images can be reconstructed from unprotected templates — even without knowledge of internal model parameters — and can be leveraged for identity impersonation attacks against commercial systems.
+**Background**: Face recognition systems (FRS) are widely deployed in airports, checkpoints, and other high-security scenarios. With the emergence of privacy regulations such as GDPR, secure storage of face templates has become increasingly critical. Multiple studies have demonstrated that face images can be reconstructed from unprotected templates — even without knowledge of internal model parameters — and can be leveraged for identity impersonation attacks against commercial systems.
 
 **Limitations of Prior Work**: Homomorphic encryption (HE) theoretically supports arbitrary computation over encrypted data, but HE is fundamentally designed for algebraic operations over polynomial rings, whereas face templates are real-valued vectors ($d=512$) residing on a hypersphere. Naively combining HE with FRS yields prohibitively low efficiency — prior HE-based schemes are hundreds of times slower than unprotected retrieval, rendering them infeasible for million-scale identity databases.
 
-**Root Cause**: The bit-width of HE message slots far exceeds what is required to represent template values (2048-bit slots vs. 16-bit template values), causing significant spatial waste and unnecessary computational overhead. Moreover, multiplication in the encrypted domain is far more costly than addition.
+**Key Challenge**: The bit-width of HE message slots far exceeds what is required to represent template values (2048-bit slots vs. 16-bit template values), causing significant spatial waste and unnecessary computational overhead. Moreover, multiplication in the encrypted domain is far more costly than addition.
 
-**Starting Point**: To address the fundamental mismatch between HE and face templates, the paper proposes two complementary techniques: (1) transforming real-valued unit vectors into ternary vectors $\{-1,0,1\}^d$, reducing inner-product computation to pure addition and eliminating encrypted-domain multiplications entirely; and (2) exploiting the fact that each transformed component requires only 1 bit to pack multiple templates into a single message slot, maximizing SIMD utilization.
+**Key Insight**: To address the fundamental mismatch between HE and face templates, the paper proposes two complementary techniques: (1) transforming real-valued unit vectors into ternary vectors $\{-1,0,1\}^d$, reducing inner-product computation to pure addition and eliminating encrypted-domain multiplications entirely; and (2) exploiting the fact that each transformed component requires only 1 bit to pack multiple templates into a single message slot, maximizing SIMD utilization.
 
 ## Method
 

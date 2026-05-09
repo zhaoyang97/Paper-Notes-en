@@ -27,15 +27,15 @@ content_hash: a4517cff839632aa
 This work reveals that VLMs inherently favor semantic plausibility over authenticity (CLIP cosine similarity for forged images reaches 96–99%), and proposes IFDL-VLM, which decouples detection/localization from language explanation into two stages: Stage-1 employs ViT+SAM for detection and localization, and Stage-2 feeds the resulting mask as auxiliary input to a VLM to enhance interpretability. The method achieves state-of-the-art performance across 9 benchmarks.
 
 ## Background & Motivation
-**State of the Field**: In the AIGC era, image forgery detection and localization (IFDL) faces highly realistic synthetic images and hybrid forgeries (AI-generated content combined with traditional editing and post-processing), rendering conventional artifact-based methods increasingly ineffective. Recent approaches such as SIDA and FakeShield integrate VLMs (CLIP+LLM+SAM) into end-to-end pipelines to improve interpretability.
+**Background**: In the AIGC era, image forgery detection and localization (IFDL) faces highly realistic synthetic images and hybrid forgeries (AI-generated content combined with traditional editing and post-processing), rendering conventional artifact-based methods increasingly ineffective. Recent approaches such as SIDA and FakeShield integrate VLMs (CLIP+LLM+SAM) into end-to-end pipelines to improve interpretability.
 
 **Limitations of Prior Work**: (1) The CLIP visual encoder in VLMs is pre-trained on large-scale natural images with an objective of semantic alignment rather than authenticity discrimination. (2) As long as a forged image is "semantically coherent," CLIP features remain nearly unchanged — cosine similarity stays at 96.3% after object replacement and 98.5% after object insertion. (3) End-to-end training propagates CLIP's semantic bias directly into the detection and localization modules, yielding performance inferior to dedicated models.
 
-**Root Cause**: A fundamental conflict exists between VLMs' pursuit of "semantic plausibility" and IFDL's requirement to "perceive inauthenticity."
+**Key Challenge**: A fundamental conflict exists between VLMs' pursuit of "semantic plausibility" and IFDL's requirement to "perceive inauthenticity."
 
-**Paper Goals**: To answer two questions — does VLM prior knowledge genuinely benefit IFDL (no), and can detection/localization results in turn help VLMs generate better explanations (yes)?
+**Goal**: To answer two questions — does VLM prior knowledge genuinely benefit IFDL (no), and can detection/localization results in turn help VLMs generate better explanations (yes)?
 
-**Starting Point**: Fully decouple detection/localization from language explanation, using dedicated ViT+SAM for the former and feeding the localization mask back to the VLM as explicit forgery concept encoding.
+**Key Insight**: Fully decouple detection/localization from language explanation, using dedicated ViT+SAM for the former and feeding the localization mask back to the VLM as explicit forgery concept encoding.
 
 **Core Idea**: Rather than involving VLMs in detection and localization (where they underperform), the proposed approach lets detection results inform VLMs about what to explain — a task at which VLMs excel.
 

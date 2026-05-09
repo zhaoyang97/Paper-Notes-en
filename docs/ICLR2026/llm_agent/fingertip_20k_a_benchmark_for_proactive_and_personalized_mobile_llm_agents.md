@@ -28,15 +28,15 @@ FingerTip 20K collects 21,437 interaction records from 95 users during real-worl
 
 ## Background & Motivation
 
-**State of the Field**: Mobile GUI agents leverage MLLMs to interpret screenshots and UI trees for automated smartphone operation. Existing agents follow a fully passive paradigm—they act only upon receiving explicit instructions and ignore user preferences during execution.
+**Background**: Mobile GUI agents leverage MLLMs to interpret screenshots and UI trees for automated smartphone operation. Existing agents follow a fully passive paradigm—they act only upon receiving explicit instructions and ignore user preferences during execution.
 
 **Limitations of Prior Work**: (a) Users must formulate detailed instructions for every intent, increasing cognitive load. (b) Users sometimes cannot articulate latent needs clearly (e.g., wanting to read news during a commute without explicitly stating so). (c) Different users may follow substantially different action sequences to accomplish the same task (e.g., some prefer searching for apps, others prefer scrolling), yet existing agents make no such distinction. (d) Tasks in existing datasets are either author-defined or LLM-generated, failing to reflect authentic daily usage patterns.
 
-**Root Cause**: Achieving proactive and personalized behavior requires long-term interaction data that includes user context (time, location, profile) and history—yet existing datasets treat each record in isolation, lacking temporal correlation and contextual information.
+**Key Challenge**: Achieving proactive and personalized behavior requires long-term interaction data that includes user context (time, location, profile) and history—yet existing datasets treat each record in isolation, lacking temporal correlation and contextual information.
 
-**Paper Goals**: (a) Construct a real-world mobile interaction dataset enriched with user context. (b) Define two new evaluation tracks: proactive task suggestion and personalized task execution.
+**Goal**: (a) Construct a real-world mobile interaction dataset enriched with user context. (b) Define two new evaluation tracks: proactive task suggestion and personalized task execution.
 
-**Starting Point**: Recruit 95 users to record one month of daily smartphone operations on their own devices via a dedicated app—each genuine intent triggers logging of intent text, action sequence, screenshots, location, and timestamp, forming temporally correlated long-term usage data.
+**Key Insight**: Recruit 95 users to record one month of daily smartphone operations on their own devices via a dedicated app—each genuine intent triggers logging of intent text, action sequence, screenshots, location, and timestamp, forming temporally correlated long-term usage data.
 
 **Core Idea**: Continuously collect context-rich interaction data from users' daily smartphone usage, and use this data to evaluate agents' proactive suggestion and personalized execution capabilities.
 

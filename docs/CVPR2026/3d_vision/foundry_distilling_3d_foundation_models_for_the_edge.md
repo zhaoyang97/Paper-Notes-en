@@ -29,15 +29,15 @@ This paper proposes the Foundation Model Distillation (FMD) paradigm and the Fou
 
 ## Background & Motivation
 
-**State of the Field**: Foundation models pre-trained via self-supervised learning (SSL) have become powerful general-purpose feature extractors, demonstrating particular strength in the 3D point cloud domain (e.g., Point-BERT, Point-JEPA), with broad applications in robotics, autonomous driving, and AR/VR. These models acquire strong generalization to diverse downstream tasks through pre-training on large-scale unlabeled data.
+**Background**: Foundation models pre-trained via self-supervised learning (SSL) have become powerful general-purpose feature extractors, demonstrating particular strength in the 3D point cloud domain (e.g., Point-BERT, Point-JEPA), with broad applications in robotics, autonomous driving, and AR/VR. These models acquire strong generalization to diverse downstream tasks through pre-training on large-scale unlabeled data.
 
 **Limitations of Prior Work**: These foundation models are extremely large (hundreds of millions of parameters with quadratic attention complexity) and cannot be deployed on edge devices such as robots or AR headsets. Even modern GPUs may run out of memory when processing medium-scale point clouds of 300K points. Although existing knowledge distillation (KD) methods can produce efficient student models, they yield "expert models" that excel at specific tasks but lose the task-agnostic generality that is central to foundation models.
 
-**Root Cause**: Standard knowledge distillation trains students on task-specific logits, producing students that inherit only the teacher's behavior on that task and lack cross-task transferability. This contradicts the core value of foundation models—universal representation capability. An ideal distillation approach should preserve the teacher's entire representation space rather than only its outputs on a specific task.
+**Key Challenge**: Standard knowledge distillation trains students on task-specific logits, producing students that inherit only the teacher's behavior on that task and lack cross-task transferability. This contradicts the core value of foundation models—universal representation capability. An ideal distillation approach should preserve the teacher's entire representation space rather than only its outputs on a specific task.
 
-**Paper Goals**: To design a novel distillation paradigm that compresses large SSL foundation models into compact, efficient, and faithful surrogate models while preserving their universal representation capability.
+**Goal**: To design a novel distillation paradigm that compresses large SSL foundation models into compact, efficient, and faithful surrogate models while preserving their universal representation capability.
 
-**Starting Point**: Rather than directly performing feature mimicry of the teacher's embeddings, the method employs an information bottleneck to force the student to learn compact basis vectors of the teacher's latent space—first compressing into a small number of SuperTokens, then reconstructing the teacher's complete token-level representations from them.
+**Key Insight**: Rather than directly performing feature mimicry of the teacher's embeddings, the method employs an information bottleneck to force the student to learn compact basis vectors of the teacher's latent space—first compressing into a small number of SuperTokens, then reconstructing the teacher's complete token-level representations from them.
 
 **Core Idea**: Replace "mimicry" with "compress-and-reconstruct," so that the student learns not a specific output of the teacher but a set of basis vectors that can efficiently represent the teacher's entire latent space.
 

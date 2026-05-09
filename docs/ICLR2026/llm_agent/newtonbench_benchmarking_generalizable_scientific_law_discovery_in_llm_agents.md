@@ -28,7 +28,7 @@ This paper proposes NewtonBench, a benchmark for LLM-based scientific law discov
 
 ## Background & Motivation
 
-**State of the Field**: LLM-driven scientific discovery is an emerging frontier, yet existing benchmarks (e.g., SRBench) face a "methodological trilemma"—scientific relevance, scalability, and anti-memorization cannot be simultaneously satisfied.
+**Background**: LLM-driven scientific discovery is an emerging frontier, yet existing benchmarks (e.g., SRBench) face a "methodological trilemma"—scientific relevance, scalability, and anti-memorization cannot be simultaneously satisfied.
 
 **Limitations of Prior Work**:
 - Most existing benchmarks involve static function fitting without interactive exploration
@@ -36,11 +36,11 @@ This paper proposes NewtonBench, a benchmark for LLM-based scientific law discov
 - Real physical equations may be memorized by LLMs from training data
 - Systematic evaluation across levels of system complexity is absent
 
-**Root Cause**: Satisfying scientific grounding, anti-memorization, and scalability simultaneously is inherently contradictory—directly using real laws risks memorization, while fully synthetic laws lose scientific meaning.
+**Key Challenge**: Satisfying scientific grounding, anti-memorization, and scalability simultaneously is inherently contradictory—directly using real laws risks memorization, while fully synthetic laws lose scientific meaning.
 
-**Paper Goals**: Resolve the trilemma via counterfactual law shifts and construct an interactive scientific discovery benchmark.
+**Goal**: Resolve the trilemma via counterfactual law shifts and construct an interactive scientific discovery benchmark.
 
-**Starting Point**: Systematically mutate the expression trees of known physical laws (operator/constant mutations) to generate laws that are scientifically grounded yet never encountered by LLMs.
+**Key Insight**: Systematically mutate the expression trees of known physical laws (operator/constant mutations) to generate laws that are scientifically grounded yet never encountered by LLMs.
 
 **Core Idea**: Generate counterfactual physical laws through expression tree mutation combined with an interactive experimental environment, forming the first scalable, memorization-resistant scientific discovery benchmark.
 

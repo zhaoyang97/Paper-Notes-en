@@ -28,14 +28,14 @@ TI-DPO is proposed, which precisely quantifies each token's contribution to pref
 
 ## Background & Motivation
 
-**State of the Field**: DPO optimizes preferences at the sequence level, ignoring the differential importance of individual tokens. Existing token-level methods (TDPO/TIS-DPO) assess importance via probability surrogates, which introduce bias.
+**Background**: DPO optimizes preferences at the sequence level, ignoring the differential importance of individual tokens. Existing token-level methods (TDPO/TIS-DPO) assess importance via probability surrogates, which introduce bias.
 
 **Limitations of Prior Work**:
    - DPO's coarse-grained optimization is sensitive to data noise and suffers from severe distribution shift
    - Probability surrogates in existing token-level methods yield inconsistent outputs
    - The binary "good/bad" contrastive framework cannot finely adjust generation behavior in a continuous semantic space
 
-**Root Cause**: Simultaneously identifying critical tokens precisely and guiding preference adjustment in a continuous space are both required.
+**Key Challenge**: Simultaneously identifying critical tokens precisely and guiding preference adjustment in a continuous space are both required.
 
 **Core Idea**: Gradient attribution to localize critical tokens + Gaussian prior to correct positional bias + triplet loss for continuous-space guidance
 

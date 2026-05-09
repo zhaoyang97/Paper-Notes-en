@@ -29,15 +29,15 @@ HippoMM maps three core hippocampal cognitive mechanisms—pattern separation (e
 
 ## Background & Motivation
 
-1. **State of the Field**: Current multimodal models face three key challenges in long video understanding: (1) inability to efficiently memorize continuous content spanning hours; (2) inability to reconstruct complete experiences from partial sensory cues (e.g., a sound); and (3) inability to extract persistent abstract knowledge from transient perception. The human hippocampus naturally addresses all three challenges.
+1. **Background**: Current multimodal models face three key challenges in long video understanding: (1) inability to efficiently memorize continuous content spanning hours; (2) inability to reconstruct complete experiences from partial sensory cues (e.g., a sound); and (3) inability to extract persistent abstract knowledge from transient perception. The human hippocampus naturally addresses all three challenges.
 
 2. **Limitations of Prior Work**: Existing methods either scale model size or design complex architectures to handle long videos (e.g., VideoLLaMA, Qwen2.5-Omni), but lack explicit memory mechanisms. These models can only process pre-segmented clips and cannot form episodic memories from continuous streams or perform cross-modal pattern completion (e.g., recalling a visual scene upon hearing applause).
 
-3. **Root Cause**: Existing benchmarks (e.g., MLVU, Video-MME) evaluate comprehension of already-presented content rather than memory formation and associative recall. No standard evaluation protocol exists for cross-modal associative recall.
+3. **Key Challenge**: Existing benchmarks (e.g., MLVU, Video-MME) evaluate comprehension of already-presented content rather than memory formation and associative recall. No standard evaluation protocol exists for cross-modal associative recall.
 
-4. **Paper Goals**: (a) How to construct episodic memory from continuous audiovisual streams? (b) How to enable cross-modal pattern completion (a cue from one modality triggers recall in another)? (c) How to balance accuracy and efficiency?
+4. **Goal**: (a) How to construct episodic memory from continuous audiovisual streams? (b) How to enable cross-modal pattern completion (a cue from one modality triggers recall in another)? (c) How to balance accuracy and efficiency?
 
-5. **Starting Point**: The biological hippocampus addresses these problems through pattern separation in the dentate gyrus (DG), auto-associative pattern completion in CA3, and memory consolidation in CA1. The authors directly map these three mechanisms to algorithmic implementations.
+5. **Key Insight**: The biological hippocampus addresses these problems through pattern separation in the dentate gyrus (DG), auto-associative pattern completion in CA3, and memory consolidation in CA1. The authors directly map these three mechanisms to algorithmic implementations.
 
 6. **Core Idea**: Map the hippocampal "segmentation–consolidation–retrieval" cognitive pipeline to a computational architecture of "content-adaptive segmentation → similarity-filtered compression → confidence-gated hierarchical retrieval" for episodic memory understanding of long audiovisual content.
 

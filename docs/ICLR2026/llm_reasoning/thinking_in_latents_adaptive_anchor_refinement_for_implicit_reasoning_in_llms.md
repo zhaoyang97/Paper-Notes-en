@@ -29,13 +29,13 @@ This paper proposes AdaAnchor, a latent-space reasoning framework that appends l
 
 ## Background & Motivation
 
-**State of the Field**: Chain-of-Thought (CoT) reasoning has become the standard paradigm for eliciting multi-step reasoning in LLMs, yielding significant gains on mathematical reasoning tasks. However, generating long intermediate reasoning chains increases output length and inference cost, which is particularly pronounced in high-concurrency deployment scenarios.
+**Background**: Chain-of-Thought (CoT) reasoning has become the standard paradigm for eliciting multi-step reasoning in LLMs, yielding significant gains on mathematical reasoning tasks. However, generating long intermediate reasoning chains increases output length and inference cost, which is particularly pronounced in high-concurrency deployment scenarios.
 
 **Limitations of Prior Work**: Latent-space reasoning approaches (e.g., Coconut, iCoT distillation) attempt to shift reasoning into hidden representations and output answers only, but most rely on a **fixed number of latent iteration steps**—introducing a hyperparameter that requires tuning across models and datasets, wasting compute on easy instances and potentially undercomputing on hard ones.
 
-**Root Cause**: Token-level CoT = high accuracy + high token cost; latent-space reasoning = low token cost + inflexible fixed steps. The core challenge is achieving **instance-level adaptive compute allocation** while keeping output token counts low.
+**Key Challenge**: Token-level CoT = high accuracy + high token cost; latent-space reasoning = low token cost + inflexible fixed steps. The core challenge is achieving **instance-level adaptive compute allocation** while keeping output token counts low.
 
-**Starting Point**: The authors propose using a set of learnable "anchor vectors" as explicit latent reasoning states, refined through repeated forward passes, with cosine distance changes between anchor states monitored as a convergence signal—stopping upon convergence to naturally allocate compute on demand.
+**Key Insight**: The authors propose using a set of learnable "anchor vectors" as explicit latent reasoning states, refined through repeated forward passes, with cosine distance changes between anchor states monitored as a convergence signal—stopping upon convergence to naturally allocate compute on demand.
 
 **Distinction from Soft Prompts / Prefix Tuning**: Conventional soft prompts are fixed at inference time; AdaAnchor's anchor vectors are **iteratively rewritten** during inference, acting as persistent latent memory across iterations.
 

@@ -28,15 +28,15 @@ AVerImaTeC introduces the first image-text fact-checking dataset with complete e
 
 ## Background & Motivation
 
-**State of the Field**: Text-based fact-checking has established benchmarks such as FEVER and AVeriTeC, yet image-text fact-checking lacks a benchmark with evidence annotation. Existing multimodal datasets either rely on synthetic claims or provide no evidence reasoning paths.
+**Background**: Text-based fact-checking has established benchmarks such as FEVER and AVeriTeC, yet image-text fact-checking lacks a benchmark with evidence annotation. Existing multimodal datasets either rely on synthetic claims or provide no evidence reasoning paths.
 
 **Limitations of Prior Work**: (a) Datasets without evidence annotation can only train verdict classifiers (whether something is false) rather than reasoning systems (why it is false); (b) synthetic claims do not reflect the dissemination patterns of real misinformation; (c) temporal leakage — using evidence published after the fact-check article constitutes an unfair advantage.
 
-**Root Cause**: Effective fact-checking requires a reasoning path (QA chain → verdict), yet annotating such paths is extremely costly — each claim requires multiple rounds of verification and at least three annotators.
+**Key Challenge**: Effective fact-checking requires a reasoning path (QA chain → verdict), yet annotating such paths is extremely costly — each claim requires multiple rounds of verification and at least three annotators.
 
-**Paper Goals**: Construct an image-text fact-checking dataset with complete reasoning paths, advancing the field from verdict classification to evidence-based reasoning.
+**Goal**: Construct an image-text fact-checking dataset with complete reasoning paths, advancing the field from verdict classification to evidence-based reasoning.
 
-**Starting Point**: A 5-stage annotation pipeline ensures the sufficiency and consistency of reasoning paths — Phases 3 and 5 employ independent annotators who judge solely from QA pairs (without access to the original content), verifying whether the reasoning path is self-contained.
+**Key Insight**: A 5-stage annotation pipeline ensures the sufficiency and consistency of reasoning paths — Phases 3 and 5 employ independent annotators who judge solely from QA pairs (without access to the original content), verifying whether the reasoning path is self-contained.
 
 **Core Idea**: Real image-text claims + QA reasoning path annotation + dual sufficiency review + temporally constrained evidence + MLLM baseline system = the first complete benchmark for image-text fact-checking.
 

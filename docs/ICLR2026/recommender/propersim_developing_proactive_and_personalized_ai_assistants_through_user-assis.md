@@ -29,7 +29,7 @@ This paper proposes ProPerSim, a simulation framework that models daily behavior
 
 ## Background & Motivation
 
-**State of the Field**: LLM-based assistants are evolving in two separate directions: proactive recommendation and personalization. Proactive Agent (Lu et al., 2024) explores proactive recommendations without accounting for individual preferences, while personalization methods (e.g., RLHF) adapt to users but still require user-initiated interaction.
+**Background**: LLM-based assistants are evolving in two separate directions: proactive recommendation and personalization. Proactive Agent (Lu et al., 2024) explores proactive recommendations without accounting for individual preferences, while personalization methods (e.g., RLHF) adapt to users but still require user-initiated interaction.
 
 **Limitations of Prior Work**:
 - Proactivity alone → recommending a steakhouse to a vegetarian (Figure 1), with mismatches in both timing and content relative to personal preferences
@@ -37,11 +37,11 @@ This paper proposes ProPerSim, a simulation framework that models daily behavior
 - Large-scale collection of real behavioral data faces prohibitive costs and privacy challenges; human subject experiments are extremely expensive
 - Existing proactive research is event-driven (triggered only when a user performs some action), leaving time-based continuous monitoring unexplored
 
-**Root Cause**: Learning "when to recommend" and "what to recommend" simultaneously requires large-scale user–assistant interaction data, yet collecting such data in practice is infeasible.
+**Key Challenge**: Learning "when to recommend" and "what to recommend" simultaneously requires large-scale user–assistant interaction data, yet collecting such data in practice is infeasible.
 
-**Paper Goals**: Unify proactivity and personalization within a simulation environment to develop AI assistants that adapt to individual users over time.
+**Goal**: Unify proactivity and personalization within a simulation environment to develop AI assistants that adapt to individual users over time.
 
-**Starting Point**: Simulate realistic user behavior with LLM-based user agents equipped with rich Big Five personality-grounded personas, collect preference data within the simulation, and apply DPO training.
+**Key Insight**: Simulate realistic user behavior with LLM-based user agents equipped with rich Big Five personality-grounded personas, collect preference data within the simulation, and apply DPO training.
 
 **Core Idea**: Generative Agents for user simulation + personalized rubric-based evaluation + DPO preference learning → a continuously improving proactive and personalized closed loop.
 

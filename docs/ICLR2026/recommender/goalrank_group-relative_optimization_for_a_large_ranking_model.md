@@ -27,15 +27,15 @@ content_hash: 336ae25bc472f624
 This paper theoretically proves that for any Multi-Generator-Evaluator (Multi-G-E) ranking system, there exists a larger generator-only model that approximates the optimal policy with smaller error and satisfies scaling laws. Based on this, GoalRank is proposed—a framework that uses a reward model to construct a group-relative reference policy for training a large generator-only ranking model, achieving significant improvements over SOTA in online A/B testing.
 
 ## Background & Motivation
-**State of the Field**: The ranking stage of recommender systems selects an ordered list of length $L$ from $N$ candidates (a $P(N,L)$ combinatorial space). The dominant paradigm is the Generator-Evaluator (G-E) two-stage framework: a generator produces candidate lists, and an evaluator selects the best one.
+**Background**: The ranking stage of recommender systems selects an ordered list of length $L$ from $N$ candidates (a $P(N,L)$ combinatorial space). The dominant paradigm is the Generator-Evaluator (G-E) two-stage framework: a generator produces candidate lists, and an evaluator selects the best one.
 
 **Limitations of Prior Work**: The gains from increasing the number of generators or using multi-generator ensembles saturate rapidly (Fig. 1d). The two-stage paradigm introduces cross-stage inconsistency and engineering complexity.
 
-**Root Cause**: The policy space of two-stage methods is constrained to mixtures of $k$ small generators, whereas the scaling law of end-to-end large models suggests that a single, larger model may perform better.
+**Key Challenge**: The policy space of two-stage methods is constrained to mixtures of $k$ small generators, whereas the scaling law of end-to-end large models suggests that a single, larger model may perform better.
 
-**Paper Goals**: (1) Can a generator-only model theoretically outperform Multi-G-E? (2) How should such a large ranking model be trained?
+**Goal**: (1) Can a generator-only model theoretically outperform Multi-G-E? (2) How should such a large ranking model be trained?
 
-**Starting Point**: Theorem 1 proves that a larger generator-only model has strictly smaller approximation error than any finite Multi-G-E system, and this error approaches zero as the model scales.
+**Key Insight**: Theorem 1 proves that a larger generator-only model has strictly smaller approximation error than any finite Multi-G-E system, and this error approaches zero as the model scales.
 
 **Core Idea**: A reward model is used to construct a group-relative softmax reference policy over groups of candidate lists, and a large ranking model is trained via cross-entropy to approximate the optimal policy.
 

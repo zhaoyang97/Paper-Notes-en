@@ -28,18 +28,18 @@ FedALT is proposed to maintain a trainable Individual LoRA (updated locally) and
 
 ## Background & Motivation
 
-**State of the Field**: Federated LoRA fine-tuning has become the dominant paradigm for privacy-preserving LLM adaptation. Methods such as FedIT follow the FedAvg framework—aggregating local LoRAs and reinitializing local training from the aggregated model each round. FedDPA introduces dual global+local LoRA components but still relies on FedAvg.
+**Background**: Federated LoRA fine-tuning has become the dominant paradigm for privacy-preserving LLM adaptation. Methods such as FedIT follow the FedAvg framework—aggregating local LoRAs and reinitializing local training from the aggregated model each round. FedDPA introduces dual global+local LoRA components but still relies on FedAvg.
 
 **Limitations of Prior Work**:
    - **Harmful cross-client interference**: When client tasks are heterogeneous (e.g., text summarization vs. sentiment analysis), FedAvg aggregation cancels out the progress each client achieves through local fine-tuning.
    - **Lack of effective global-local balancing**: Methods such as FedDPA combine global and local LoRAs with fixed weights, unable to dynamically adapt to different inputs.
    - Empirical evidence: FedIT underperforms pure local fine-tuning on Commonsense Reasoning and Text Classification.
 
-**Root Cause**: How can useful knowledge from other clients be leveraged while preventing aggregation from destroying local adaptation?
+**Key Challenge**: How can useful knowledge from other clients be leveraged while preventing aggregation from destroying local adaptation?
 
-**Paper Goals**: Design a personalized federated LoRA fine-tuning method that departs from the FedAvg paradigm.
+**Goal**: Design a personalized federated LoRA fine-tuning method that departs from the FedAvg paradigm.
 
-**Starting Point**: Local training is no longer initialized from the aggregated model. Each client continues learning from its own previously trained local model, while global knowledge is injected through a frozen "rest-of-world" LoRA and dynamically weighted per input via an adaptive mixer.
+**Key Insight**: Local training is no longer initialized from the aggregated model. Each client continues learning from its own previously trained local model, while global knowledge is injected through a frozen "rest-of-world" LoRA and dynamically weighted per input via an adaptive mixer.
 
 **Core Idea**: A frozen RoW LoRA provides global knowledge; a trainable Individual LoRA handles local adaptation; an MoE mixer dynamically balances the two—completely avoiding FedAvg aggregation interference.
 

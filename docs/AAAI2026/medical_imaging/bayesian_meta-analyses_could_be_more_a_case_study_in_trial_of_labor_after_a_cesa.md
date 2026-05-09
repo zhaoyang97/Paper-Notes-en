@@ -30,12 +30,12 @@ This paper proposes a hierarchical Bayesian meta-analysis framework that models 
 
 ## Background & Motivation
 
-- **State of the Field**: Traditional fixed-effect and random-effect meta-analyses assume that prior studies have accurately captured all relevant variables; when information is systematically missing, reliable conclusions cannot be drawn.
+- **Background**: Traditional fixed-effect and random-effect meta-analyses assume that prior studies have accurately captured all relevant variables; when information is systematically missing, reliable conclusions cannot be drawn.
 - **Limitations of Prior Work**: Obstetrics is among the least funded medical fields, with underrepresentation of minority populations and low statistical power, leading to insufficient research on conditions affecting women.
 - **TOLAC Clinical Context**: The global cesarean rate rose from 12.1% in 2000 to 21.1% in 2015, reaching 31.7% in the United States in 2019. Successful vaginal birth after cesarean (VBAC) yields fewer complications, yet failed TOLAC carries higher risk than elective repeat cesarean.
 - **Confounding Role of Bishop Score**: Clinicians select between Pitocin (high Bishop score) and mechanical dilation (low Bishop score) based on the Bishop score, which simultaneously influences treatment assignment and delivery outcome. However, no prior study has recorded this variable.
-- **Root Cause**: Sensitivity analysis methods such as E-values require prior knowledge of the confounder's effect size; since the marginal effect of the Bishop score is unknown, these methods cannot be directly applied.
-- **Paper Goals**: To assess the safety of mechanical dilation under incomplete data conditions, and to provide an evidence base for initiating randomized controlled trials (RCTs).
+- **Key Challenge**: Sensitivity analysis methods such as E-values require prior knowledge of the confounder's effect size; since the marginal effect of the Bishop score is unknown, these methods cannot be directly applied.
+- **Goal**: To assess the safety of mechanical dilation under incomplete data conditions, and to provide an evidence base for initiating randomized controlled trials (RCTs).
 
 ## Method
 

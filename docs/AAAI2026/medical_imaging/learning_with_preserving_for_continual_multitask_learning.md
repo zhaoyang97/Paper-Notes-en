@@ -29,13 +29,13 @@ This paper proposes the Learning with Preserving (LwP) framework, which maintain
 
 ## Background & Motivation
 
-**State of the Field**: In safety-critical applications such as autonomous driving and medical imaging, AI systems must continuously learn new tasks over a shared data stream (e.g., first learning traffic sign detection, then pedestrian classification). This constitutes the CMTL paradigm—sequentially learning multiple tasks over the same input domain.
+**Background**: In safety-critical applications such as autonomous driving and medical imaging, AI systems must continuously learn new tasks over a shared data stream (e.g., first learning traffic sign detection, then pedestrian classification). This constitutes the CMTL paradigm—sequentially learning multiple tasks over the same input domain.
 
 **Limitations of Prior Work**: Conventional continual learning (CL) methods (EWC, SI, ER, etc.) are primarily designed for task-incremental learning and rely on parameter isolation or replay buffers to prevent forgetting. Under CMTL settings, these methods learn fragmented, task-specific features, leading to: (1) interference between task features; (2) failure to establish a unified representation beneficial to multitask learning; and (3) performance that falls below independently trained single-task baselines.
 
-**Root Cause**: The isolation strategies of CL fundamentally conflict with the unified representation requirements of MTL—the very mechanisms used to protect prior task knowledge (e.g., parameter freezing, replay) obstruct the formation of cross-task shared representations.
+**Key Challenge**: The isolation strategies of CL fundamentally conflict with the unified representation requirements of MTL—the very mechanisms used to protect prior task knowledge (e.g., parameter freezing, replay) obstruct the formation of cross-task shared representations.
 
-**Starting Point**: The paper shifts from protecting task outputs to preserving the geometric structure of the representation space. The key insight is that if pairwise distances between data points in the latent space are preserved, any learning problem defined on that space retains its optimal solution (proved via RKHS equivalence).
+**Key Insight**: The paper shifts from protecting task outputs to preserving the geometric structure of the representation space. The key insight is that if pairwise distances between data points in the latent space are preserved, any learning problem defined on that space retains its optimal solution (proved via RKHS equivalence).
 
 **Core Idea**: Regularize the shared representation space with a dynamically weighted pairwise distance preservation loss, so that learning new tasks does not disrupt the geometric relationships encoded by prior tasks.
 

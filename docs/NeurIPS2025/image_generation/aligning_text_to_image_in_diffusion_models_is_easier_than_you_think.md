@@ -28,15 +28,15 @@ This paper proposes SoftREPA — a lightweight contrastive fine-tuning strategy 
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-image diffusion models (SD, FLUX, etc.) incorporate text conditioning into image generation via cross-attention or self-attention, yet residual misalignment between text and image representations persists — generated images may omit key attributes, colors, or quantities described in the text prompt.
+**Background**: Text-to-image diffusion models (SD, FLUX, etc.) incorporate text conditioning into image generation via cross-attention or self-attention, yet residual misalignment between text and image representations persists — generated images may omit key attributes, colors, or quantities described in the text prompt.
 
 **Limitations of Prior Work**: Existing approaches such as preference optimization (DPO) require curated human preference datasets and incur substantial training overhead. Representation alignment methods such as REPA only align internal image representations with external visual encoders, without directly improving text-image alignment.
 
-**Root Cause**: Standard T2I training uses only positive pairs (matched image-text pairs) to minimize the denoising loss, which is suboptimal from a representation alignment perspective — it lacks contrastive signals from negative pairs to distinguish between different text conditions.
+**Key Challenge**: Standard T2I training uses only positive pairs (matched image-text pairs) to minimize the denoising loss, which is suboptimal from a representation alignment perspective — it lacks contrastive signals from negative pairs to distinguish between different text conditions.
 
-**Paper Goals**: How can one improve text-image alignment in a pretrained T2I model with minimal additional parameters and computational overhead?
+**Goal**: How can one improve text-image alignment in a pretrained T2I model with minimal additional parameters and computational overhead?
 
-**Starting Point**: The denoising loss is reinterpreted as a logit (conditional likelihood), upon which an InfoNCE-style contrastive learning loss is constructed. This is combined with the soft token concept from prompt tuning to enable lightweight fine-tuning.
+**Key Insight**: The denoising loss is reinterpreted as a logit (conditional likelihood), upon which an InfoNCE-style contrastive learning loss is constructed. This is combined with the soft token concept from prompt tuning to enable lightweight fine-tuning.
 
 **Core Idea**: Treat the denoising loss as a logit for contrastive learning + train only soft text tokens = substantially improved text-image alignment with fewer than 1M parameters.
 

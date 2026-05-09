@@ -26,7 +26,7 @@ content_hash: 186cffdb7285599f
 This paper proposes sAwMIL (Sparse-Aware Multiple Instance Learning), a three-class probing framework that combines MIL and conformal prediction to classify LLM internal activations into true/false/neither, revealing that truth and falsity signals are not encoded as simple bidirectional opposites but as distributed representations spanning a multi-dimensional subspace.
 
 ## Background & Motivation
-**State of the Field**: Existing veracity probing methods (e.g., mean-difference, CCS, TTPD) separate "true" and "false" directions in LLM internal activations via linear probes, performing binary classification based on the last-token representation.
+**Background**: Existing veracity probing methods (e.g., mean-difference, CCS, TTPD) separate "true" and "false" directions in LLM internal activations via linear probes, performing binary classification based on the last-token representation.
 
 **Limitations of Prior Work**:
    - They assume symmetric encoding of truth and falsity ($P(\phi|K_\mathcal{M}) = 1 - P(\neg\phi|K_\mathcal{M})$), an assumption unsupported by empirical evidence.
@@ -35,9 +35,9 @@ This paper proposes sAwMIL (Sparse-Aware Multiple Instance Learning), a three-cl
    - Output scores are uncalibrated and cannot serve as reliable confidence estimates.
    - Binary classification (true/false) cannot handle cases where the model does not know.
 
-**Root Cause**: Binary logic fails to accurately characterize the internal knowledge states of LLMs — a model may regard a statement as neither true nor false.
+**Key Challenge**: Binary logic fails to accurately characterize the internal knowledge states of LLMs — a model may regard a statement as neither true nor false.
 
-**Starting Point**: Introduce three-valued logic (true/false/neither) and apply a MIL mechanism to attend to the most informative tokens in a sentence, rather than defaulting to the last token.
+**Key Insight**: Introduce three-valued logic (true/false/neither) and apply a MIL mechanism to attend to the most informative tokens in a sentence, rather than defaulting to the last token.
 
 **Core Idea**: Multiple instance learning enables probes to automatically discover token positions that carry veracity signals within a sentence; conformal prediction is used to quantify uncertainty, yielding a three-class classification scheme.
 

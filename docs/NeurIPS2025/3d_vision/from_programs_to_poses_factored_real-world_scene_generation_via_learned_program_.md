@@ -29,15 +29,15 @@ This paper proposes FactoredScenes, which decomposes real-world 3D scene generat
 
 ## Background & Motivation
 
-**State of the Field**: Existing 3D scene generation methods (autoregressive ATISS, diffusion-based DiffuScene, LLM-based LayoutGPT, etc.) predominantly generate axis-aligned bounding boxes, ignoring object orientation and failing to capture the appearance of "lived-in" scenes.
+**Background**: Existing 3D scene generation methods (autoregressive ATISS, diffusion-based DiffuScene, LLM-based LayoutGPT, etc.) predominantly generate axis-aligned bounding boxes, ignoring object orientation and failing to capture the appearance of "lived-in" scenes.
 
 **Limitations of Prior Work**: (a) Real-world scene data is scarce (ScanNet contains only 707 scenes), making it infeasible to directly learn the full distribution; (b) existing methods handle only axis-aligned layouts, yet in real scenes chairs face tables and monitors face seats — pose variation is central to the sense of inhabitation; (c) LLM-based generation relies on manually designed domain languages that are difficult to generalize flexibly.
 
-**Root Cause**: Scenes exhibit both high-level structure (chairs arranged around a table) and noisy pose variation (each chair oriented slightly differently), requiring simultaneous modeling of structure and variation under severe data scarcity.
+**Key Challenge**: Scenes exhibit both high-level structure (chairs arranged around a table) and noisy pose variation (each chair oriented slightly differently), requiring simultaneous modeling of structure and variation under severe data scarcity.
 
-**Paper Goals**: Learn to generate ScanNet-quality 3D scenes with realistic object orientations from limited real-world data.
+**Goal**: Learn to generate ScanNet-quality 3D scenes with realistic object orientations from limited real-world data.
 
-**Starting Point**: Decompose the problem into "structure" (programs learned from large-scale synthetic data) and "variation" (poses learned from limited real data), applying different data sources and methods to different sub-problems.
+**Key Insight**: Decompose the problem into "structure" (programs learned from large-scale synthetic data) and "variation" (poses learned from limited real data), applying different data sources and methods to different sub-problems.
 
 **Core Idea**: Synthetic data for structural program learning + LLM for layout generation + real data for pose learning = factored real-world scene generation.
 

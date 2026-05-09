@@ -27,11 +27,11 @@ content_hash: e7d35fc96e6467b9
 This paper proposes RICL (Retrospective In-Context Learning), which estimates the advantage function by comparing the log-probability difference of an LLM policy before and after an in-context update. This approach converts sparse environment feedback into dense training signals, enabling efficient temporal credit assignment, and achieves comparable convergence performance to traditional RL methods on BabyAI tasks with substantially higher sample efficiency.
 
 ## Background & Motivation
-1. **State of the Field**: Online learning for LLM agents relies on environment feedback, but informative feedback is often sparse; in multi-step settings, a sequence of correct actions is required before any reward is received.
+1. **Background**: Online learning for LLM agents relies on environment feedback, but informative feedback is often sparse; in multi-step settings, a sequence of correct actions is required before any reward is received.
 2. **Limitations of Prior Work**: Sparse feedback increases learning complexity and instability. Training value functions from scratch suffers from poor sample efficiency and limited generalization.
-3. **Root Cause**: How can the pre-trained knowledge of LLMs be leveraged to perform temporal credit assignment efficiently?
-4. **Paper Goals**: To exploit the in-context learning capability of LLMs to convert sparse rewards into dense advantage functions.
-5. **Starting Point**: The log-probability difference before and after an in-context update implicitly encodes advantage function information.
+3. **Key Challenge**: How can the pre-trained knowledge of LLMs be leveraged to perform temporal credit assignment efficiently?
+4. **Goal**: To exploit the in-context learning capability of LLMs to convert sparse rewards into dense advantage functions.
+5. **Key Insight**: The log-probability difference before and after an in-context update implicitly encodes advantage function information.
 6. **Core Idea**: A theorem establishes that $\beta \log \frac{\pi'(a|s)}{\pi_0(a|s)} \propto A_r^{\pi_0}(s,a)$, i.e., the log-probability ratio between two policies is proportional to the advantage function.
 
 ## Method

@@ -35,7 +35,7 @@ A reinforcement learning-trained preamble generator is used to inflate the evalu
 
 ### Starting Point
 
-**Paper Goals**: **State of the Field**: LLM-as-a-Judge has become the dominant framework for evaluating LLM capabilities—leveraging a powerful LLM as a judge to predict human preferences. However, this framework is susceptible to malicious exploitation:
+**Goal**: **Background**: LLM-as-a-Judge has become the dominant framework for evaluating LLM capabilities—leveraging a powerful LLM as a judge to predict human preferences. However, this framework is susceptible to malicious exploitation:
 
 **Gamability**: LLM outputs can be adversarially optimized to satisfy the judge model.
 

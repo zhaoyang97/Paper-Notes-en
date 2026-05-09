@@ -29,7 +29,7 @@ VLBiMan is proposed as a framework that decomposes a single demonstration into i
 
 ## Background & Motivation
 
-**State of the Field**: Bimanual robotic manipulation is a core challenge in embodied intelligence. Dominant approaches based on VLA models (ALOHA, π0, RDT-1B) train end-to-end policies from large-scale teleoperation demonstrations, demonstrating impressive performance on long-horizon tasks.
+**Background**: Bimanual robotic manipulation is a core challenge in embodied intelligence. Dominant approaches based on VLA models (ALOHA, π0, RDT-1B) train end-to-end policies from large-scale teleoperation demonstrations, demonstrating impressive performance on long-horizon tasks.
 
 **Limitations of Prior Work**:
 - VLA models require hundreds to thousands of teleoperation demonstrations; bimanual teleoperation is more difficult than single-arm (14-dimensional action space), making data collection prohibitively expensive.
@@ -37,11 +37,11 @@ VLBiMan is proposed as a framework that decomposes a single demonstration into i
 - Zero-shot methods (e.g., ReKep) rely on LLMs for task decomposition and prompt engineering, which is fragile and unreliable.
 - One-shot imitation learning has been explored for single-arm settings, but the synchronous/asynchronous coordination complexity of bimanual tasks is substantially higher.
 
-**Root Cause**: Achieving broad generalization from minimal demonstrations requires identifying *what is invariant* and *what must be adapted* in manipulation tasks — a separation made harder by the coordination constraints inherent to bimanual tasks.
+**Key Challenge**: Achieving broad generalization from minimal demonstrations requires identifying *what is invariant* and *what must be adapted* in manipulation tasks — a separation made harder by the coordination constraints inherent to bimanual tasks.
 
-**Paper Goals**: How can reusable bimanual manipulation skills be extracted from a single human demonstration and generalized to novel scenes (new positions, new object instances, new robot platforms)?
+**Goal**: How can reusable bimanual manipulation skills be extracted from a single human demonstration and generalized to novel scenes (new positions, new object instances, new robot platforms)?
 
-**Starting Point**: **"What matters more than How"** — rather than imitating the precise execution postures, the framework captures and reproduces relative spatial relationships between objects. In a pouring task, for instance, the key factor is the relative pose between the cup and the bottle, not the specific arm trajectory.
+**Key Insight**: **"What matters more than How"** — rather than imitating the precise execution postures, the framework captures and reproduces relative spatial relationships between objects. In a pouring task, for instance, the key factor is the relative pose between the cup and the bottle, not the specific arm trajectory.
 
 **Core Idea**: Decompose a demonstration into *invariant sub-skills* (directly reusable) and *adaptable sub-skills* (re-synthesized after VLM anchoring), enabling generalization from one demonstration to many scenarios.
 

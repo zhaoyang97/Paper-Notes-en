@@ -29,15 +29,15 @@ This paper proposes REBMBO, a framework that unifies Gaussian Processes (local m
 
 ## Background & Motivation
 
-**State of the Field**: Bayesian Optimization (BO) is the dominant approach for optimizing expensive black-box functions, centered on a GP surrogate model paired with an acquisition function (e.g., UCB, EI). Notable extensions include TuRBO (local trust regions), BALLET-ICI (alternating global/local GPs), and EARL-BO (RL-assisted multi-step BO).
+**Background**: Bayesian Optimization (BO) is the dominant approach for optimizing expensive black-box functions, centered on a GP surrogate model paired with an acquisition function (e.g., UCB, EI). Notable extensions include TuRBO (local trust regions), BALLET-ICI (alternating global/local GPs), and EARL-BO (RL-assisted multi-step BO).
 
 **Limitations of Prior Work**: Standard BO suffers from severe one-step myopia—optimizing only the expected gain of the current step while neglecting long-term exploration strategies. In high-dimensional or multi-modal settings, this leads to rapid convergence to local optima.
 
-**Root Cause**: GPs excel at local uncertainty modeling but lack global structural information; multi-step look-ahead methods (e.g., 2-step EI, Knowledge Gradient) are computationally expensive yet still limited in horizon; RL-integrated approaches (e.g., EARL-BO) rely on local posteriors and lack global signals.
+**Key Challenge**: GPs excel at local uncertainty modeling but lack global structural information; multi-step look-ahead methods (e.g., 2-step EI, Knowledge Gradient) are computationally expensive yet still limited in horizon; RL-integrated approaches (e.g., EARL-BO) rely on local posteriors and lack global signals.
 
-**Paper Goals**: Simultaneously address insufficient global exploration and one-step myopia by integrating global structural information and multi-step planning capability into the BO framework.
+**Goal**: Simultaneously address insufficient global exploration and one-step myopia by integrating global structural information and multi-step planning capability into the BO framework.
 
-**Starting Point**: Introduce an EBM to learn a global energy landscape supplementing GP's local modeling, and formulate each BO step as an MDP solved via PPO for adaptive multi-step look-ahead.
+**Key Insight**: Introduce an EBM to learn a global energy landscape supplementing GP's local modeling, and formulate each BO step as an MDP solved via PPO for adaptive multi-step look-ahead.
 
 **Core Idea**: The EBM provides information on "which regions are globally promising," the GP provides "how certain local estimates are," and PPO performs multi-step planning to leverage both.
 

@@ -28,13 +28,13 @@ The first systematic security analysis of LLM-based multi-agent software develop
 
 ## Background & Motivation
 
-**State of the Field**: LLM-based multi-agent software development systems (e.g., ChatDev, MetaGPT, AgentVerse) enable non-technical users to generate complete software via natural language and have attracted widespread attention.
+**Background**: LLM-based multi-agent software development systems (e.g., ChatDev, MetaGPT, AgentVerse) enable non-technical users to generate complete software via natural language and have attracted widespread attention.
 
 **Limitations of Prior Work**: The security of these systems remains almost entirely unstudied—existing work focuses only on single-agent code security or general LLM agent benchmarks, without systematically analyzing the security risks of end-to-end multi-agent software development systems.
 
-**Root Cause**: The powerful capabilities of multi-agent systems are a double-edged sword—they can produce high-quality software but may equally be exploited to generate software containing hidden malicious code. Two threat vectors exist: malicious users inducing benign agents to generate harmful code, or benign users interacting with compromised agents.
+**Key Challenge**: The powerful capabilities of multi-agent systems are a double-edged sword—they can produce high-quality software but may equally be exploited to generate software containing hidden malicious code. Two threat vectors exist: malicious users inducing benign agents to generate harmful code, or benign users interacting with compromised agents.
 
-**Starting Point**: Two threat scenarios are defined (MU-BA and BU-MA), 12 attack behaviors spanning 5 major malware families are designed, and systematic evaluation is conducted across three mainstream frameworks.
+**Key Insight**: Two threat scenarios are defined (MU-BA and BU-MA), 12 attack behaviors spanning 5 major malware families are designed, and systematic evaluation is conducted across three mainstream frameworks.
 
 **Core Idea**: The first systematic attack-and-defense study of LLM-based multi-agent software development systems—combining IMBIA implicit malicious injection with Adv-IMBIA adversarial prompt-based defense.
 

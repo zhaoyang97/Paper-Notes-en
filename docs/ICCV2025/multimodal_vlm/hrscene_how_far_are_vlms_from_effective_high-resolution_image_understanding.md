@@ -37,7 +37,7 @@ High-resolution image (HRI) understanding is critical in domains such as patholo
 
 **Insufficient diagnostics**: Existing multimodal NIAH tests primarily address long-context text or low-resolution multi-image settings, lacking diagnostics for regional utilization in HRI.
 
-**Paper Goals**: To construct a **unified, comprehensive, and practical** HRI benchmark that systematically evaluates VLMs' high-resolution understanding capabilities and identifies their core deficiencies.
+**Goal**: To construct a **unified, comprehensive, and practical** HRI benchmark that systematically evaluates VLMs' high-resolution understanding capabilities and identifies their core deficiencies.
 
 ## Method
 

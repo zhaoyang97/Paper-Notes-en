@@ -28,13 +28,13 @@ Through controlled experiments, this paper demonstrates that even given a perfec
 
 ## Background & Motivation
 
-**State of the Field**: Learning with noisy labels (LNL) is a fundamental challenge, as annotation errors introduced by human or automated labeling inevitably bias model training and degrade generalization.
+**Background**: Learning with noisy labels (LNL) is a fundamental challenge, as annotation errors introduced by human or automated labeling inevitably bias model training and degrade generalization.
 
 **Limitations of Prior Work**: Forward/backward correction methods based on the noise transition matrix $T$ are theoretically guaranteed to be asymptotically consistent, converging to the optimal clean-data classifier. However, in practice, these theoretically principled methods are consistently outperformed by empirically-driven sample selection approaches such as Co-teaching and DivideMix. The prevailing explanation in the community has long attributed this gap to inaccurate estimation of $T$.
 
-**Root Cause**: Through controlled experiments using an oracle $T$ (i.e., the perfect transition matrix), this paper observes that FC still exhibits a characteristic "rise-then-collapse" failure pattern, which conclusively refutes the hypothesis that estimation error in $T$ is the sole bottleneck.
+**Key Challenge**: Through controlled experiments using an oracle $T$ (i.e., the perfect transition matrix), this paper observes that FC still exhibits a characteristic "rise-then-collapse" failure pattern, which conclusively refutes the hypothesis that estimation error in $T$ is the sole bottleneck.
 
-**Paper Goals**: Rather than proposing new correction heuristics, this work aims to provide a comprehensive theoretical analysis that systematically explains why these principled methods fail even under ideal conditions.
+**Goal**: Rather than proposing new correction heuristics, this work aims to provide a comprehensive theoretical analysis that systematically explains why these principled methods fail even under ideal conditions.
 
 ## Method
 

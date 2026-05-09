@@ -39,7 +39,7 @@ In high-stakes domains such as healthcare, finance, and autonomous driving, mode
 
 **Core Problem**: For a finite model trained on finite data, which aspects of the learning setup truly determine the distance between the accuracy–coverage curve and the oracle upper bound?
 
-**Starting Point**: The paper transforms this qualitative question into a quantitative diagnostic—defining a coverage-uniform selective classification gap $\Delta(c)$ and decomposing it into five measurable, improvable error terms.
+**Key Insight**: The paper transforms this qualitative question into a quantitative diagnostic—defining a coverage-uniform selective classification gap $\Delta(c)$ and decomposing it into five measurable, improvable error terms.
 
 ## Method
 

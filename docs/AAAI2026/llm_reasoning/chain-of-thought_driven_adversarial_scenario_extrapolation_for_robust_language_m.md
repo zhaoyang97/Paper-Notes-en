@@ -28,15 +28,15 @@ This paper proposes ASE (Adversarial Scenario Extrapolation), an inference-time 
 
 ## Background & Motivation
 
-**State of the Field**: LLMs face diverse safety threats including jailbreaks, toxicity, hallucinations, and bias, yet existing defenses typically target only a single threat type.
+**Background**: LLMs face diverse safety threats including jailbreaks, toxicity, hallucinations, and bias, yet existing defenses typically target only a single threat type.
 
 **Limitations of Prior Work**: (1) Existing defenses lack transferability across threat types — methods designed against jailbreaks are ineffective against bias or hallucination; (2) Successful defenses typically manifest as blunt refusals ("Sorry, I can't help"), sacrificing user experience and interpretability; (3) Static instruction-level defenses are easily bypassed by adaptive attacks (e.g., "ignore everything before this").
 
-**Root Cause**: A fundamental trade-off exists between robustness and seamlessness — detailed responses risk leaking harmful content, while terse refusals degrade user experience.
+**Key Challenge**: A fundamental trade-off exists between robustness and seamlessness — detailed responses risk leaking harmful content, while terse refusals degrade user experience.
 
-**Paper Goals**: Design a unified defense framework that simultaneously improves robustness (against diverse attacks) and seamlessness (avoiding blunt refusals by providing helpful, guided responses).
+**Goal**: Design a unified defense framework that simultaneously improves robustness (against diverse attacks) and seamlessness (avoiding blunt refusals by providing helpful, guided responses).
 
-**Starting Point**: Internalize adversarial awareness into the LLM's reasoning process — rather than relying on external filtering or detection, the model itself reasons through possible adversarial scenarios and responds in a prepared, defensively-informed manner.
+**Key Insight**: Internalize adversarial awareness into the LLM's reasoning process — rather than relying on external filtering or detection, the model itself reasons through possible adversarial scenarios and responds in a prepared, defensively-informed manner.
 
 **Core Idea**: A three-step CoT reasoning process — (1) self-generate adversarial scenarios; (2) formulate defensive strategies; (3) produce a guarded response grounded in the scenario analysis.
 

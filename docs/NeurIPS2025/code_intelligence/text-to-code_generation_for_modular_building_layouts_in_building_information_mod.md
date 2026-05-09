@@ -27,7 +27,7 @@ This paper proposes Text2MBL, a framework that translates natural language descr
 
 ## Background & Motivation
 
-**State of the Field**: Modular construction prefabricates standardized 3D volumetric units in factories for on-site assembly, representing a growing trend in the construction industry. BIM (Building Information Modeling) is a core digital tool throughout the building lifecycle, encoding semantically rich structural information. Text-driven design has recently emerged as a new research direction.
+**Background**: Modular construction prefabricates standardized 3D volumetric units in factories for on-site assembly, representing a growing trend in the construction industry. BIM (Building Information Modeling) is a core digital tool throughout the building lifecycle, encoding semantically rich structural information. Text-driven design has recently emerged as a new research direction.
 
 **Limitations of Prior Work**:
    - Existing text-to-layout methods (e.g., Tell2Design, Text2BIM) output coordinate sequences or pixel images; coordinate-based methods suffer sharp performance degradation as the number of components increases, since LLMs must perform complex spatial geometric reasoning.
@@ -35,11 +35,11 @@ This paper proposes Text2MBL, a framework that translates natural language descr
    - The three-level hierarchy unique to modular construction (Module → Unit → Room) is far more complex than conventional layouts, which existing methods cannot handle.
    - An output format compatibility gap exists between conceptual design and construction workflows.
 
-**Root Cause**: LLMs excel at sequence generation but are poor at spatial geometric reasoning; modular construction demands precise hierarchical constraints and geometric consistency — a representation is needed that reduces spatial reasoning to sequence understanding.
+**Key Challenge**: LLMs excel at sequence generation but are poor at spatial geometric reasoning; modular construction demands precise hierarchical constraints and geometric consistency — a representation is needed that reduces spatial reasoning to sequence understanding.
 
-**Paper Goals**: (1) Design a code-driven MBL representation that allows LLMs to generate high-level semantic action sequences rather than low-level coordinates; (2) construct the first text–BIM code paired dataset; (3) demonstrate that the code paradigm significantly outperforms the coordinate paradigm.
+**Goal**: (1) Design a code-driven MBL representation that allows LLMs to generate high-level semantic action sequences rather than low-level coordinates; (2) construct the first text–BIM code paired dataset; (3) demonstrate that the code paradigm significantly outperforms the coordinate paradigm.
 
-**Starting Point**: Leveraging BIM's inherently object-oriented nature, layout generation is abstracted as a series of code operations (creating modules, splitting, merging, assigning rooms, etc.), each encapsulating the underlying geometric logic. This allows LLMs to focus on semantic understanding rather than coordinate derivation.
+**Key Insight**: Leveraging BIM's inherently object-oriented nature, layout generation is abstracted as a series of code operations (creating modules, splitting, merging, assigning rooms, etc.), each encapsulating the underlying geometric logic. This allows LLMs to focus on semantic understanding rather than coordinate derivation.
 
 **Core Idea**: Use object-oriented code as an intermediate representation, reformulating the text-to-BIM-layout problem as a sequence-to-sequence code generation task.
 

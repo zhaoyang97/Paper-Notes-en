@@ -28,10 +28,10 @@ This paper systematically analyzes the refusal calibration problem in RAG models
 
 ## Background & Motivation
 
-- **State of the Field**: RAG systems augment LLMs by retrieving external documents, while refusal post-training teaches models to proactively decline answering under uncertainty. Both techniques are widely adopted but have rarely been studied jointly.
+- **Background**: RAG systems augment LLMs by retrieving external documents, while refusal post-training teaches models to proactively decline answering under uncertainty. Both techniques are widely adopted but have rarely been studied jointly.
 - **Limitations of Prior Work**: When all retrieved documents are irrelevant, RALMs with refusal training tend to reject all queries—even when the model's parametric knowledge (internal knowledge) is sufficient for a correct answer. This "over-refusal" phenomenon has been largely overlooked.
-- **Root Cause**: Improving refusal rates does not equate to improving calibration quality. Existing refusal training methods (e.g., R-tuning) may in fact exacerbate over-refusal. The fundamental issue is a calibration imbalance between the model's internal knowledge and externally retrieved knowledge.
-- **Starting Point**: The paper categorizes RALM knowledge sources into four quadrants (internal knowledge present/absent × external knowledge present/absent) and systematically investigates refusal behavior and uncertainty calibration across different knowledge states.
+- **Key Challenge**: Improving refusal rates does not equate to improving calibration quality. Existing refusal training methods (e.g., R-tuning) may in fact exacerbate over-refusal. The fundamental issue is a calibration imbalance between the model's internal knowledge and externally retrieved knowledge.
+- **Key Insight**: The paper categorizes RALM knowledge sources into four quadrants (internal knowledge present/absent × external knowledge present/absent) and systematically investigates refusal behavior and uncertainty calibration across different knowledge states.
 
 ## Method
 

@@ -28,21 +28,21 @@ This paper presents ChronoGraph — the first real-world microservice dataset th
 
 ## Background & Motivation
 
-**State of the Field**: In large-scale microservice systems, forecasting short-to-medium-term evolution of service metrics is critical for alerting, auto-scaling, and capacity planning. Existing graph-based time series benchmark datasets are predominantly drawn from traffic (e.g., METR-LA) and air quality domains, and have been widely adopted in time series forecasting research.
+**Background**: In large-scale microservice systems, forecasting short-to-medium-term evolution of service metrics is critical for alerting, auto-scaling, and capacity planning. Existing graph-based time series benchmark datasets are predominantly drawn from traffic (e.g., METR-LA) and air quality domains, and have been widely adopted in time series forecasting research.
 
 **Limitations of Prior Work**:
    - Traffic and air quality datasets are univariate and lack anomaly annotations;
    - Industrial control datasets such as SWaT and WADI provide anomaly labels and are multivariate, but only supply process diagrams rather than true adjacency matrices;
    - No existing dataset simultaneously provides **multivariate time series + explicit dependency graphs + anomaly labels**.
 
-**Root Cause**: The absence of real graph structures forces existing forecasting and anomaly detection methods to either process each series independently (topology-agnostic) or learn dense implicit graphs (e.g., fully connected attention, top-$k$ similarity graphs). Such data-driven graphs may be inconsistent with the true service topology.
+**Key Challenge**: The absence of real graph structures forces existing forecasting and anomaly detection methods to either process each series independently (topology-agnostic) or learn dense implicit graphs (e.g., fully connected attention, top-$k$ similarity graphs). Such data-driven graphs may be inconsistent with the true service topology.
 
-**Paper Goals**:
+**Goal**:
    - Provide a multivariate time series dataset with a real service dependency graph, enabling the community to evaluate topology-aware methods;
    - Annotate real operational incidents to support anomaly detection evaluation on genuine failures;
    - Identify, through benchmarking, the dimensions along which existing methods fall short.
 
-**Starting Point**: Six months of production telemetry from a large enterprise microservice platform, comprising ~700 service nodes, inter-service call edges, and 17 manually annotated anomaly segments.
+**Key Insight**: Six months of production telemetry from a large enterprise microservice platform, comprising ~700 service nodes, inter-service call edges, and 17 manually annotated anomaly segments.
 
 **Core Idea**: Construct the first benchmark that jointly provides multivariate time series, a real service dependency graph, and anomaly labels within a single dataset, filling a critical data gap in graph-aware temporal modeling.
 

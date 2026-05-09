@@ -26,7 +26,7 @@ AgentGL is the first RL-based agentic graph learning (AGL) framework that enable
 
 ## Background & Motivation
 
-**Root Cause**: Evidence on graphs is multi-scale — some clues exist in tight local neighborhoods, others emerge only from broader structural patterns. Agents must decide "where to go next" in a combinatorial space while avoiding redundant or uninformative regions. Effective graph reasoning requires multi-step exploration, but labeled search trajectories are extremely scarce.
+**Key Challenge**: Evidence on graphs is multi-scale — some clues exist in tight local neighborhoods, others emerge only from broader structural patterns. Agents must decide "where to go next" in a combinatorial space while avoiding redundant or uninformative regions. Effective graph reasoning requires multi-step exploration, but labeled search trajectories are extremely scarce.
 
 **Core Idea**: Drive LLM agents with RL to learn graph-native search strategies, using search-constrained thinking to suppress over-retrieval and graph-conditioned curriculum learning to stabilize long-horizon policy optimization.
 

@@ -29,15 +29,15 @@ This paper systematically demonstrates that image token representations in VLMs 
 
 ## Background & Motivation
 
-**State of the Field**: VLMs achieve multimodal reasoning by combining visual encoders with LLMs, yet propagating dense image tokens through deep Transformer layers incurs substantial computational overhead. Recent work suggests that visual signals may be inefficiently utilized in multimodal tasks.
+**Background**: VLMs achieve multimodal reasoning by combining visual encoders with LLMs, yet propagating dense image tokens through deep Transformer layers incurs substantial computational overhead. Recent work suggests that visual signals may be inefficiently utilized in multimodal tasks.
 
 **Limitations of Prior Work**: Whether visual tokens continue to provide meaningful representational transformations in the deeper layers of VLMs remains unclear. Prior work has largely assumed visual redundancy and designed pruning mechanisms accordingly, without a systematic understanding of representational dynamics.
 
-**Root Cause**: VLMs apply uniform depth of processing to both image and text tokens, yet the representational evolution patterns of the two modalities may be fundamentally different.
+**Key Challenge**: VLMs apply uniform depth of processing to both image and text tokens, yet the representational evolution patterns of the two modalities may be fundamentally different.
 
-**Paper Goals**: To systematically analyze the evolution, interchangeability, task dependence, and recoverability of image tokens in VLMs from a representational perspective.
+**Goal**: To systematically analyze the evolution, interchangeability, task dependence, and recoverability of image tokens in VLMs from a representational perspective.
 
-**Starting Point**: Three metrics — matrix entropy, intrinsic dimensionality, and trajectory curvature — are used to trace representational structure evolution across models ranging from 3B to 72B parameters.
+**Key Insight**: Three metrics — matrix entropy, intrinsic dimensionality, and trajectory curvature — are used to trace representational structure evolution across models ranging from 3B to 72B parameters.
 
 **Core Idea**: Image representations rapidly converge to a bounded-complexity region in shallow layers, with deeper processing primarily preserving rather than reconstructing visual information.
 

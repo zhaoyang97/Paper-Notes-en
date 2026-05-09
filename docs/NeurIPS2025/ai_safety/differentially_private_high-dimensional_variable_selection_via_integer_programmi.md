@@ -28,15 +28,15 @@ This paper proposes two pure differentially private sparse variable selection me
 
 ## Background & Motivation
 
-**State of the Field**: High-dimensional sparse variable selection (Best Subset Selection, BSS) is a classical problem in statistics, aiming to minimize a loss function subject to the constraint that the $\ell_0$-norm of the coefficients does not exceed $s$. Recent advances in MIP techniques have enabled non-private BSS to be solved efficiently at the scale of millions of variables.
+**Background**: High-dimensional sparse variable selection (Best Subset Selection, BSS) is a classical problem in statistics, aiming to minimize a loss function subject to the constraint that the $\ell_0$-norm of the coefficients does not exceed $s$. Recent advances in MIP techniques have enabled non-private BSS to be solved efficiently at the scale of millions of variables.
 
 **Limitations of Prior Work**: Existing DP variable selection methods either rely on Lasso (with support recovery probability that does not tend to one), require enumeration over all $\binom{p}{s}$ feasible support sets (exponential complexity, not scalable), or only provide approximate DP guarantees.
 
-**Root Cause**: The exponential mechanism for variable selection requires traversing an exponentially large output space, making both computation and sampling infeasible.
+**Key Challenge**: The exponential mechanism for variable selection requires traversing an exponentially large output space, making both computation and sampling infeasible.
 
-**Paper Goals**: Design scalable pure DP variable selection algorithms that leverage MIP techniques to avoid exhaustive enumeration of all support sets.
+**Goal**: Design scalable pure DP variable selection algorithms that leverage MIP techniques to avoid exhaustive enumeration of all support sets.
 
-**Starting Point**: The key observation is that candidate sets far from the optimal support incur large objective values and thus carry negligible probability mass under the exponential mechanism. Consequently, it suffices to compute the exact objective values for only the top $R$ optimal support sets, using a lower bound for all others.
+**Key Insight**: The key observation is that candidate sets far from the optimal support incur large objective values and thus carry negligible probability mass under the exponential mechanism. Consequently, it suffices to compute the exact objective values for only the top $R$ optimal support sets, using a lower bound for all others.
 
 **Core Idea**: Use a MIP solver to efficiently identify the top $R$ optimal support sets, substitute the objective value of the $R$-th support set as a lower bound for all remaining sets, and construct a truncated exponential mechanism to achieve pure DP.
 

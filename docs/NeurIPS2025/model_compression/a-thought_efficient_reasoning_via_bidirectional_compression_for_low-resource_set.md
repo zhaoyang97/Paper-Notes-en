@@ -28,13 +28,13 @@ This paper proposes A*-Thought, a CoT compression framework based on the A* sear
 
 ## Background & Motivation
 
-**State of the Field**: Large Reasoning Models (LRMs) such as o1, R1, and QwQ achieve strong reasoning capabilities via long chain-of-thought (CoT), but their verbose reasoning traces incur substantial inference overhead, severely limiting deployment in resource-constrained settings.
+**Background**: Large Reasoning Models (LRMs) such as o1, R1, and QwQ achieve strong reasoning capabilities via long chain-of-thought (CoT), but their verbose reasoning traces incur substantial inference overhead, severely limiting deployment in resource-constrained settings.
 
 **Limitations of Prior Work**: (a) Existing long-to-short methods commonly assume "overthinking" and attempt to compress CoT directly, often at the cost of performance degradation; (b) prompt-based methods (e.g., CoD) yield imprecise compression; (c) training-based methods (e.g., TokenSkip) require additional training with limited effectiveness; (d) no unified framework exists for systematically identifying the optimal subset from an exponentially large search space.
 
-**Root Cause**: Not all steps in a CoT are equally important, yet identifying which steps are necessary and which are dispensable is a combinatorial explosion problem—$N$ steps yield $2^N$ possible subsets.
+**Key Challenge**: Not all steps in a CoT are equally important, yet identifying which steps are necessary and which are dispensable is a combinatorial explosion problem—$N$ steps yield $2^N$ possible subsets.
 
-**Starting Point**: CoT compression is formalized as a search problem, with the A* algorithm applied to efficiently search over ranked reasoning steps.
+**Key Insight**: CoT compression is formalized as a search problem, with the A* algorithm applied to efficiently search over ranked reasoning steps.
 
 **Core Idea**: Bidirectional Importance Scoring (considering each step's relevance to both the question and the answer) combined with A* search (current path quality + estimated cost to reach the correct answer) to find the shortest valid reasoning path in a vast search space.
 

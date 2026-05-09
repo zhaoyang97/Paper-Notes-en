@@ -27,15 +27,15 @@ content_hash: c7c099839c7cec52
 The first systematic large-scale quantitative study on the relationship between input-based explanations and fairness: explanations can effectively detect biased predictions and serve as training regularizers to reduce bias, but cannot be reliably used for automatic fair model selection.
 
 ## Background & Motivation
-**State of the Field**: NLP models in sensitive tasks such as hate speech detection often reproduce or amplify social biases present in training data. Explainability is widely regarded as a key enabler of fairness—if explanations can reveal that a model relies on sensitive features (e.g., race- or gender-related tokens), such reliance can be detected and constrained.
+**Background**: NLP models in sensitive tasks such as hate speech detection often reproduce or amplify social biases present in training data. Explainability is widely regarded as a key enabler of fairness—if explanations can reveal that a model relies on sensitive features (e.g., race- or gender-related tokens), such reliance can be detected and constrained.
 
 **Limitations of Prior Work**: (a) Some studies question the faithfulness of explanation methods, as they do not necessarily reflect the true decision process. (b) Reducing reliance on sensitive features may simultaneously degrade both performance and fairness. (c) Models can be deliberately trained to conceal their use of sensitive features from explanations. Existing research is largely qualitative or limited in scale.
 
-**Root Cause**: The relationship between explainability and fairness is oversimplified—the assumption that "explanations reveal bias → bias can be eliminated" lacks large-scale quantitative validation.
+**Key Challenge**: The relationship between explainability and fairness is oversimplified—the assumption that "explanations reveal bias → bias can be eliminated" lacks large-scale quantitative validation.
 
-**Paper Goals**: Three research questions: (RQ1) Can explanations detect biased predictions? (RQ2) Can explanations select fair models? (RQ3) Can explanations reduce bias during training?
+**Goal**: Three research questions: (RQ1) Can explanations detect biased predictions? (RQ2) Can explanations select fair models? (RQ3) Can explanations reduce bias during training?
 
-**Starting Point**: Large-scale experiments on hate speech detection using 16 explanation methods × encoder/decoder models × multiple debiasing techniques × two datasets.
+**Key Insight**: Large-scale experiments on hate speech detection using 16 explanation methods × encoder/decoder models × multiple debiasing techniques × two datasets.
 
 **Core Idea**: Input attribution explanations are effective for bias detection and training-time debiasing, but unreliable for model selection—the relationship between explainability and fairness is task-specific and sensitive to method choice.
 

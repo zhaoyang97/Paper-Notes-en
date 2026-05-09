@@ -27,15 +27,15 @@ content_hash: 99457cad8c3bb4a2
 This paper proposes URBAN, a multi-view multi-output GNN model that jointly leverages sparse but unbiased government inspection rating data and dense but biased crowdsourced report data to predict the true latent state of urban incidents. Validated on 9.6M+ reports and 1M+ inspections in New York City, the model achieves a 5.3× higher prediction correlation than using report data alone.
 
 ## Background & Motivation
-**State of the Field**: Urban management requires knowledge of which neighborhoods suffer from potholes, rat infestations, and similar incidents in order to allocate resources effectively. GNNs have been widely adopted for urban spatiotemporal prediction.
+**Background**: Urban management requires knowledge of which neighborhoods suffer from potholes, rat infestations, and similar incidents in order to allocate resources effectively. GNNs have been widely adopted for urban spatiotemporal prediction.
 
 **Limitations of Prior Work**: Both available data sources are individually flawed—(a) government inspection ratings are unbiased but extremely sparse (e.g., NYC streets are inspected only once per year); (b) crowdsourced reports are dense but exhibit systematic bias (higher-income communities report at higher rates, and reporting propensity varies across neighborhoods under identical conditions).
 
-**Root Cause**: Training solely on report data yields biased predictions, while training solely on ratings faces severe sparsity. A fundamental identifiability problem exists between the two sources: does a high report count reflect a genuine problem or a community's greater tendency to report?
+**Key Challenge**: Training solely on report data yields biased predictions, while training solely on ratings faces severe sparsity. A fundamental identifiability problem exists between the two sources: does a high report count reflect a genuine problem or a community's greater tendency to report?
 
-**Paper Goals**: (a) Jointly leverage both data sources to predict true incident states; (b) quantify demographic bias present in crowdsourced reports.
+**Goal**: (a) Jointly leverage both data sources to predict true incident states; (b) quantify demographic bias present in crowdsourced reports.
 
-**Starting Point**: Ratings and reports are modeled as different observations of a shared latent ground-truth state. A GNN learns node embeddings to capture spatial correlations, while type embeddings capture inter-incident-type associations.
+**Key Insight**: Ratings and reports are modeled as different observations of a shared latent ground-truth state. A GNN learns node embeddings to capture spatial correlations, while type embeddings capture inter-incident-type associations.
 
 **Core Idea**: A multi-output loss function bridges the sparse unbiased rating view and the dense biased report view, enabling the GNN to simultaneously estimate the true latent state and the reporting bias.
 

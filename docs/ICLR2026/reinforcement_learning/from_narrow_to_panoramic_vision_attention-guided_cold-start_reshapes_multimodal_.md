@@ -28,15 +28,15 @@ This work discovers that the reasoning performance of multimodal LLMs is highly 
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal LLMs (e.g., Qwen2.5-VL) have achieved significant progress on reasoning tasks, yet their reasoning processes are often "visually lazy"—models tend to attend to system tokens rather than visual tokens.
+**Background**: Multimodal LLMs (e.g., Qwen2.5-VL) have achieved significant progress on reasoning tasks, yet their reasoning processes are often "visually lazy"—models tend to attend to system tokens rather than visual tokens.
 
 **Limitations of Prior Work**: After multimodal cold-start training, the Visual Attention Score (VAS) of models does not improve and may even decline. VAS measures the proportion of attention that reasoning tokens allocate to visual tokens; a low VAS indicates that the model fails to sufficiently utilize image information during reasoning.
 
-**Root Cause**: "Lazy Attention Localization"—models learn to exploit cues from text descriptions and system instructions to shortcut reasoning, rather than genuinely attending to key information in the image.
+**Key Challenge**: "Lazy Attention Localization"—models learn to exploit cues from text descriptions and system instructions to shortcut reasoning, rather than genuinely attending to key information in the image.
 
-**Paper Goals**: How can models be compelled to increase attention to visual tokens during both the cold-start and RL training stages?
+**Goal**: How can models be compelled to increase attention to visual tokens during both the cold-start and RL training stages?
 
-**Starting Point**: The observation that VAS is positively correlated with reasoning performance ($r=0.96$), motivating the direct optimization of VAS as a training signal.
+**Key Insight**: The observation that VAS is positively correlated with reasoning performance ($r=0.96$), motivating the direct optimization of VAS as a training signal.
 
 **Core Idea**: Apply explicit supervision at the attention level—enhancing image attention while suppressing system-token attention—to force the model to "look back at the image."
 

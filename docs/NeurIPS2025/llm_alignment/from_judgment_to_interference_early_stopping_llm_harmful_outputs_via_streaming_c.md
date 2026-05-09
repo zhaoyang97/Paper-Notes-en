@@ -28,13 +28,13 @@ This paper proposes the Streaming Content Monitor (SCM)—the first harmful cont
 
 ## Background & Motivation
 
-**State of the Field**: LLM service providers typically deploy content moderators as external safety guardrails alongside safety alignment (e.g., OpenAI Moderation API, LlamaGuard). However, existing moderators adopt a "full-response detection" paradigm—they must wait until the LLM has generated a complete response before making a harmfulness judgment.
+**Background**: LLM service providers typically deploy content moderators as external safety guardrails alongside safety alignment (e.g., OpenAI Moderation API, LlamaGuard). However, existing moderators adopt a "full-response detection" paradigm—they must wait until the LLM has generated a complete response before making a harmfulness judgment.
 
 **Limitations of Prior Work**: (a) Full-response detection introduces high latency—harmful content has already been fully generated and exposed to users before being intercepted; (b) Existing partial detection solutions (e.g., ProtectAI, GuardrailsAI) directly apply full-detection models to incomplete outputs, resulting in a train-inference gap; (c) These approaches require re-encoding all previously generated tokens at every decoding step, incurring significant redundant computation.
 
-**Root Cause**: Earlier detection is better for user experience, but incomplete information makes accurate judgment harder—creating a fundamental tension between latency and detection accuracy.
+**Key Challenge**: Earlier detection is better for user experience, but incomplete information makes accurate judgment harder—creating a fundamental tension between latency and detection accuracy.
 
-**Starting Point**: Design data and model architectures natively tailored for streaming detection—FineHarm provides token-level supervision, and SCM is trained from the outset to make judgments based on incomplete semantic content.
+**Key Insight**: Design data and model architectures natively tailored for streaming detection—FineHarm provides token-level supervision, and SCM is trained from the outset to make judgments based on incomplete semantic content.
 
 ## Method
 

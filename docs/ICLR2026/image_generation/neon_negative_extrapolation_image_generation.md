@@ -28,15 +28,15 @@ Neon is proposed as a post-processing method requiring <1% additional training c
 
 ## Background & Motivation
 
-**State of the Field**: Scaling generative models is constrained by the scarcity of high-quality training data. Self-training with synthetically generated data is an intuitive solution, but leads to **Model Autophagy Disorder (MAD) / Model Collapse**—rapid degradation in sample quality and diversity.
+**Background**: Scaling generative models is constrained by the scarcity of high-quality training data. Self-training with synthetically generated data is an intuitive solution, but leads to **Model Autophagy Disorder (MAD) / Model Collapse**—rapid degradation in sample quality and diversity.
 
 **Limitations of Prior Work**: (a) SIMS requires 2× inference NFE and large numbers of synthetic samples (100K) with significant additional training compute (20%); (b) DDO requires multiple rounds of iteration (16 rounds × 50K samples); (c) existing methods lack a unified theoretical explanation for why self-training degrades and how degradation can be exploited.
 
-**Root Cause**: Self-training degradation appears wasteful, yet the degradation direction itself carries information—if the direction of degradation can be understood, it can be exploited in reverse.
+**Key Challenge**: Self-training degradation appears wasteful, yet the degradation direction itself carries information—if the direction of degradation can be understood, it can be exploited in reverse.
 
-**Paper Goals**: Can the degradation signal from self-training be transformed into a self-improvement signal, with theoretical guarantees?
+**Goal**: Can the degradation signal from self-training be transformed into a self-improvement signal, with theoretical guarantees?
 
-**Starting Point**: The authors observe that mode-seeking samplers (temperature <1, top-k, finite-step ODE solvers) bias synthetic data toward high-probability regions of the model distribution, causing the population gradients of synthetic and real data to be **anti-aligned** ($\cos\varphi < 0$). Consequently, reversing the self-training gradient is equivalent to optimizing toward the real data distribution.
+**Key Insight**: The authors observe that mode-seeking samplers (temperature <1, top-k, finite-step ODE solvers) bias synthetic data toward high-probability regions of the model distribution, causing the population gradients of synthetic and real data to be **anti-aligned** ($\cos\varphi < 0$). Consequently, reversing the self-training gradient is equivalent to optimizing toward the real data distribution.
 
 **Core Idea**: Self-training degrades the model, but the direction of degradation is precisely the opposite of the direction of improvement; therefore, negative extrapolation along that direction improves the model.
 

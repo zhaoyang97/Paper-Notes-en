@@ -27,15 +27,15 @@ content_hash: 80dbe7a7ee5d394a
 This paper proposes VIP (Value Iteration via PINN), the first framework to apply Physics-Informed Neural Networks (PINNs) for solving HJB PDEs in continuous-time multi-agent reinforcement learning. A Value Gradient Iteration (VGI) module is introduced to iteratively refine value gradients. VIP consistently outperforms both discrete-time and continuous-time baselines on continuous-time MPE and MuJoCo multi-agent tasks.
 
 ## Background & Motivation
-**State of the Field**: Most RL methods operate under a discrete-time framework with fixed time-step Bellman updates, yet many real-world scenarios (autonomous driving, robotic control, trading) are inherently continuous-time, involving high-frequency or irregularly spaced decisions.
+**Background**: Most RL methods operate under a discrete-time framework with fixed time-step Bellman updates, yet many real-world scenarios (autonomous driving, robotic control, trading) are inherently continuous-time, involving high-frequency or irregularly spaced decisions.
 
 **Limitations of Prior Work**: Discrete-time RL faces two fundamental issues when approximating continuous-time processes: (1) coarse time steps lead to non-smooth controllers and suboptimal behavior; (2) fine time steps cause an explosion in the number of states and iteration steps. As $\Delta t \to 0$, the Bellman operator may become ill-conditioned, with TD targets dominated by approximation noise.
 
-**Root Cause**: Continuous-time RL (CTRL) avoids time-discretization issues by replacing Bellman recursion with HJB PDEs, but existing CTRL work is almost exclusively limited to single-agent settings. In multi-agent scenarios, solving the HJB equation becomes extremely challenging due to the curse of dimensionality (state space grows exponentially with the number of agents) and non-stationarity (other agents learn simultaneously).
+**Key Challenge**: Continuous-time RL (CTRL) avoids time-discretization issues by replacing Bellman recursion with HJB PDEs, but existing CTRL work is almost exclusively limited to single-agent settings. In multi-agent scenarios, solving the HJB equation becomes extremely challenging due to the curse of dimensionality (state space grows exponentially with the number of agents) and non-stationarity (other agents learn simultaneously).
 
-**Paper Goals**: How to extend HJB-based continuous-time RL to cooperative multi-agent settings?
+**Goal**: How to extend HJB-based continuous-time RL to cooperative multi-agent settings?
 
-**Starting Point**: Approximate the viscosity solution of the HJB equation using PINNs (to overcome the curse of dimensionality), and introduce a VGI module to ensure accurate value gradients (addressing the inability of PINN residual losses alone to guarantee gradient accuracy).
+**Key Insight**: Approximate the viscosity solution of the HJB equation using PINNs (to overcome the curse of dimensionality), and introduce a VGI module to ensure accurate value gradients (addressing the inability of PINN residual losses alone to guarantee gradient accuracy).
 
 **Core Idea**: A dual-pronged PINN + VGI approach for accurately learning value functions and their gradients in continuous-time multi-agent systems.
 

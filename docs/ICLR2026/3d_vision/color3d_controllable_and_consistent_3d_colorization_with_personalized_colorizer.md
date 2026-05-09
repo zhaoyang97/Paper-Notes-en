@@ -28,21 +28,21 @@ Color3D introduces a paradigm of "colorize one key view → fine-tune a personal
 
 ## Background & Motivation
 
-**State of the Field**: 3DGS/NeRF enables high-quality novel view synthesis, yet reconstructing colorful 3D scenes from grayscale inputs remains challenging. 2D image colorization is mature (supporting language-guided, reference-guided, and automatic modes), but directly colorizing multiple views leads to severe cross-view color inconsistency.
+**Background**: 3DGS/NeRF enables high-quality novel view synthesis, yet reconstructing colorful 3D scenes from grayscale inputs remains challenging. 2D image colorization is mature (supporting language-guided, reference-guided, and automatic modes), but directly colorizing multiple views leads to severe cross-view color inconsistency.
 
 **Limitations of Prior Work**:
    - Existing 3D colorization methods (ChromaDistill, ColorNeRF) enforce consistency by averaging cross-view color variations, which dilutes palette richness and produces desaturated, tonally flat results.
    - Smoothing color variations makes results unpredictable, sacrificing user controllability.
    - Existing methods handle only static scenes; controllable colorization of dynamic scenes remains entirely unexplored.
 
-**Root Cause**: A fundamental trade-off among cross-view consistency, color richness, and controllability — averaging strategies guarantee consistency at the cost of the latter two.
+**Key Challenge**: A fundamental trade-off among cross-view consistency, color richness, and controllability — averaging strategies guarantee consistency at the cost of the latter two.
 
-**Paper Goals**:
+**Goal**:
    - Unify controllable colorization of static and dynamic 3D scenes.
    - Maintain color richness while ensuring cross-view and cross-temporal consistency.
    - Support plug-and-play integration of arbitrary 2D colorization models.
 
-**Starting Point**: The core insight is that only one key view needs to be colorized; a scene-specific colorizer is then fine-tuned to learn a deterministic color mapping for that view. Through the inductive bias of the colorizer, identical content across different viewpoints is mapped to identical colors.
+**Key Insight**: The core insight is that only one key view needs to be colorized; a scene-specific colorizer is then fine-tuned to learn a deterministic color mapping for that view. Through the inductive bias of the colorizer, identical content across different viewpoints is mapped to identical colors.
 
 **Core Idea**: Reduce 3D colorization to "single-image colorization + personalized colorizer color propagation," naturally guaranteeing cross-view and cross-temporal consistency by learning a scene-specific one-to-one color mapping.
 

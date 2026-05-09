@@ -28,15 +28,15 @@ Grounded in Neural Collapse theory, this paper replaces dynamic classifiers with
 
 ## Background & Motivation
 
-**State of the Field**: Continual Generalized Category Discovery (C-GCD) requires models to recognize novel categories from continuously arriving unlabeled data while retaining performance on old categories. Existing methods such as Happy employ entropy regularization and prototype replay, while MetaGCD adopts meta-learning.
+**Background**: Continual Generalized Category Discovery (C-GCD) requires models to recognize novel categories from continuously arriving unlabeled data while retaining performance on old categories. Existing methods such as Happy employ entropy regularization and prototype replay, while MetaGCD adopts meta-learning.
 
 **Limitations of Prior Work**: Existing C-GCD frameworks rely on dynamically optimized classifier heads or class prototypes, giving rise to two core issues: (1) catastrophic forgetting—new-class training overwrites prior knowledge; and (2) category confusion—the absence of geometric constraints leads to ambiguous decision boundaries among similar categories.
 
-**Root Cause**: Dynamic classifier updates cause inconsistent optimization objectives across sessions, as the model must simultaneously learn new categories and retain old ones while the optimization target itself keeps shifting.
+**Key Challenge**: Dynamic classifier updates cause inconsistent optimization objectives across sessions, as the model must simultaneously learn new categories and retain old ones while the optimization target itself keeps shifting.
 
-**Paper Goals**: Can a geometrically optimal, unified structure be predefined so that all categories are always aligned toward fixed directions?
+**Goal**: Can a geometrically optimal, unified structure be predefined so that all categories are always aligned toward fixed directions?
 
-**Starting Point**: The Neural Collapse phenomenon indicates that well-trained classifiers ultimately organize features into an ETF structure, where class means are maximally separated and intra-class variance approaches zero.
+**Key Insight**: The Neural Collapse phenomenon indicates that well-trained classifiers ultimately organize features into an ETF structure, where class means are maximally separated and intra-class variance approaches zero.
 
 **Core Idea**: Use a fixed ETF classifier as a global geometric anchor, aligning features from all sessions to predefined optimal directions.
 

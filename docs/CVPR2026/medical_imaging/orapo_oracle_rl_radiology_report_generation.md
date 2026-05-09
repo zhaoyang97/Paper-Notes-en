@@ -28,15 +28,15 @@ content_hash: aca27e392a1df106
 OraPO is proposed as an adaptive hybrid RL framework combining GRPO and DPO for data-efficient radiology report generation. It dynamically switches between GRPO and DPO via Zero-Reward Rate detection, and employs a FactScore-based clinical fact-level reward. Using only 1K samples (vs. 227K for baselines), OraPO achieves state-of-the-art clinical F1 scores of 0.341/0.357 on CheXpert Plus and MIMIC-CXR.
 
 ## Background & Motivation
-**State of the Field**: Mainstream radiology report generation (RRG) relies on multi-stage training, large-scale paired corpora, and large backbone models, incurring substantial computational and data costs.
+**Background**: Mainstream radiology report generation (RRG) relies on multi-stage training, large-scale paired corpora, and large backbone models, incurring substantial computational and data costs.
 
 **Limitations of Prior Work**: (a) Vanilla GRPO fails on RRG — approximately 30% of rollout groups receive all-zero rewards, leading to gradient vanishing and wasted computation; (b) designing sentence-level rewards that capture clinical accuracy rather than surface similarity is difficult; (c) large-scale annotated data is hard to acquire.
 
-**Root Cause**: GRPO generates numerous zero-reward groups when early outputs are highly uncertain, and these failed explorations are entirely wasted; a mechanism is needed to convert failed rollouts into useful learning signals.
+**Key Challenge**: GRPO generates numerous zero-reward groups when early outputs are highly uncertain, and these failed explorations are entirely wasted; a mechanism is needed to convert failed rollouts into useful learning signals.
 
-**Paper Goals**: (a) Achieve state-of-the-art report generation with minimal data (1K samples); (b) design rewards that capture clinical factual correctness; (c) resolve the GRPO zero-reward problem.
+**Goal**: (a) Achieve state-of-the-art report generation with minimal data (1K samples); (b) design rewards that capture clinical factual correctness; (c) resolve the GRPO zero-reward problem.
 
-**Starting Point**: Monitor the Zero-Reward Rate and automatically switch to DPO when ZRR is high — using ground-truth reports as positives and failed rollouts as negatives, thereby converting wasted exploration into preference learning signals.
+**Key Insight**: Monitor the Zero-Reward Rate and automatically switch to DPO when ZRR is high — using ground-truth reports as positives and failed rollouts as negatives, thereby converting wasted exploration into preference learning signals.
 
 **Core Idea**: Use EMA-smoothed ZRR to detect GRPO failure moments, dynamically incorporate DPO to convert failed rollouts into preference pairs, and apply atomic fact-level rewards to capture clinical correctness.
 

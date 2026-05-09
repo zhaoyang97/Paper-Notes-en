@@ -28,15 +28,15 @@ This paper establishes a data reconstruction law in random feature models from i
 
 ## Background & Motivation
 
-**State of the Field**: It is known that neural networks can interpolate (memorize labels) when $p \gg n$; classical theory equates memorization with label fitting.
+**Background**: It is known that neural networks can interpolate (memorize labels) when $p \gg n$; classical theory equates memorization with label fitting.
 
 **Limitations of Prior Work**: There is no theoretical characterization of reconstructing training data from model parameters (as opposed to merely fitting labels). Empirical observations suggest that larger models are easier to reconstruct from, yet no rigorous parameter-count threshold theory exists. Data extraction attacks on foundation models (e.g., GPT-4, Stable Diffusion) expose privacy risks, making it urgent to understand the conditions under which reconstruction is feasible.
 
-**Root Cause**: Label fitting requires $p \geq n$ degrees of freedom ($n$ equations), whereas data reconstruction requires recovering the entire $d \times n$ input matrix, intuitively demanding $p \geq dn$ degrees of freedom — yet this claim has lacked formal proof.
+**Key Challenge**: Label fitting requires $p \geq n$ degrees of freedom ($n$ equations), whereas data reconstruction requires recovering the entire $d \times n$ input matrix, intuitively demanding $p \geq dn$ degrees of freedom — yet this claim has lacked formal proof.
 
-**Paper Goals**: Establish a parameter-count threshold theory for data reconstruction, answering the question "how large must a model be to memorize training data (rather than merely memorizing labels)?"
+**Goal**: Establish a parameter-count threshold theory for data reconstruction, answering the question "how large must a model be to memorize training data (rather than merely memorizing labels)?"
 
-**Starting Point**: Develop theory on the analytically tractable random feature (RF) model, deriving sufficient conditions for reconstruction via properties of subspaces in feature space, then empirically validate generalization to deep networks.
+**Key Insight**: Develop theory on the analytically tractable random feature (RF) model, deriving sufficient conditions for reconstruction via properties of subspaces in feature space, then empirically validate generalization to deep networks.
 
 **Core Idea**: Data reconstruction exhibits a phase transition at $p \approx dn$ — reconstruction is impossible below this threshold and training data can be fully recovered from model parameters above it.
 

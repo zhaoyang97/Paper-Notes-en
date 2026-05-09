@@ -29,13 +29,13 @@ This paper proposes MAQ (Motion-Action Quantization), a method that discretizes 
 
 ## Background & Motivation
 
-**State of the Field**: Although RL agents can match or surpass human performance on many tasks, their behavioral patterns often differ markedly from human behavior—exhibiting jittery, unnatural, and incoherent actions.
+**Background**: Although RL agents can match or surpass human performance on many tasks, their behavioral patterns often differ markedly from human behavior—exhibiting jittery, unnatural, and incoherent actions.
 
 **Limitations of Prior Work**: (1) Continuous action spaces allow agents to exploit physical singularities; (2) reward shaping can only indirectly guide behavioral patterns; (3) imitation learning requires large amounts of expert data and generalizes poorly.
 
-**Root Cause**: The tension between high task performance and human-like behavior—optimizing for reward tends to produce non-human behavioral strategies.
+**Key Challenge**: The tension between high task performance and human-like behavior—optimizing for reward tends to produce non-human behavioral strategies.
 
-**Starting Point**: Human motion can be decomposed into a finite set of motion primitives (e.g., walking, reaching); constraining the agent's action space to combinations of these primitives naturally induces human-like behavior.
+**Key Insight**: Human motion can be decomposed into a finite set of motion primitives (e.g., walking, reaching); constraining the agent's action space to combinations of these primitives naturally induces human-like behavior.
 
 **Core Idea**: VQ-VAE learns human motion primitives → trajectory optimization is performed in the quantized space → the agent is compelled to adopt human-like action patterns.
 

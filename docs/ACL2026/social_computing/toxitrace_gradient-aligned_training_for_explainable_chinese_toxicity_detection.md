@@ -29,18 +29,18 @@ ToxiTrace proposes an explainable Chinese toxicity detection method for BERT-cla
 
 ## Background & Motivation
 
-**State of the Field**: Existing Chinese toxicity detection methods primarily target sentence-level classification and have achieved strong performance through pre-trained language models (e.g., RoBERTa, MacBERT) and large language models.
+**Background**: Existing Chinese toxicity detection methods primarily target sentence-level classification and have achieved strong performance through pre-trained language models (e.g., RoBERTa, MacBERT) and large language models.
 
 **Limitations of Prior Work**:
 - Most methods only perform sentence-level classification and cannot pinpoint which specific spans within a sentence are toxic, lacking explainability
 - Chinese uses character-level tokenization, causing gradient/attention attribution signals to fragment across individual characters and fail to form human-readable contiguous spans
 - LLMs have strong explanation capabilities but underperform encoders in direct classification and incur high inference costs
 
-**Root Cause**: Encoder models are accurate classifiers but poor explainers (fragmented attributions), while LLMs excel at explanation but are weak classifiers with slow inference—the strengths of both cannot be combined.
+**Key Challenge**: Encoder models are accurate classifiers but poor explainers (fragmented attributions), while LLMs excel at explanation but are weak classifiers with slow inference—the strengths of both cannot be combined.
 
-**Paper Goals**: Maintain efficient encoder inference while enabling the model to both classify accurately and extract contiguous, readable toxic spans as explanations.
+**Goal**: Maintain efficient encoder inference while enabling the model to both classify accurately and extract contiguous, readable toxic spans as explanations.
 
-**Starting Point**: By explicitly constraining gradient signals during training, the encoder's token-level attributions naturally focus on toxic evidence, enabling direct contiguous span extraction from saliency maps at inference time.
+**Key Insight**: By explicitly constraining gradient signals during training, the encoder's token-level attributions naturally focus on toxic evidence, enabling direct contiguous span extraction from saliency maps at inference time.
 
 **Core Idea**: Elevate gradient attribution from "post-hoc explanation" to "training objective"—use LLM-generated weak annotations to guide gradients toward toxic tokens while sharpening the toxic/non-toxic semantic boundary through contrastive learning.
 

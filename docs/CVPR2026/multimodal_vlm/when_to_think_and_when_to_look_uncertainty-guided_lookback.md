@@ -28,15 +28,15 @@ This paper presents the first systematic analysis of the effect of test-time thi
 
 ## Background & Motivation
 
-1. **State of the Field**: Test-time thinking (generating explicit chains of thought at inference time) has demonstrated strong performance on LLMs. Recent LVLM families such as InternVL3.5 and Qwen3-VL have begun offering thinking modes (e.g., `<think>` tokens) and report state-of-the-art results on benchmarks including MMMU.
+1. **Background**: Test-time thinking (generating explicit chains of thought at inference time) has demonstrated strong performance on LLMs. Recent LVLM families such as InternVL3.5 and Qwen3-VL have begun offering thinking modes (e.g., `<think>` tokens) and report state-of-the-art results on benchmarks including MMMU.
 
 2. **Limitations of Prior Work**: Although thinking modes are broadly beneficial, no prior work has systematically studied when they help or hurt visual reasoning. In practice, a "long-wrong" phenomenon frequently occurs: the model generates an extended reasoning chain yet produces an incorrect answer, because the chain gradually drifts away from the image content and degenerates into pure textual speculation.
 
-3. **Root Cause**: Thinking modes genuinely help reasoning-intensive STEM problems, but are harmful for tasks requiring visual recognition or retrieval—such as literature, history, and art—because verbose reasoning chains introduce noise rather than useful inference steps. At a deeper level, existing thinking modes apply uniform "deep thinking" to all questions without adaptive control.
+3. **Key Challenge**: Thinking modes genuinely help reasoning-intensive STEM problems, but are harmful for tasks requiring visual recognition or retrieval—such as literature, history, and art—because verbose reasoning chains introduce noise rather than useful inference steps. At a deeper level, existing thinking modes apply uniform "deep thinking" to all questions without adaptive control.
 
-4. **Paper Goals**: (a) When does thinking benefit visual reasoning? (b) How should one trade off reasoning breadth (number of samples) versus depth (thinking mode)? (c) Can thinking be adaptively controlled to improve visual perception?
+4. **Goal**: (a) When does thinking benefit visual reasoning? (b) How should one trade off reasoning breadth (number of samples) versus depth (thinking mode)? (c) Can thinking be adaptively controlled to improve visual perception?
 
-5. **Starting Point**: Token-level perplexity contrastive experiments (real image vs. noisy image vs. no image) reveal that correct reasoning trajectories contain frequent "lookback" phrases (explicit references back to the image), whereas incorrect trajectories lack such visual anchoring. This motivates mining two phrase sets: pause/uncertainty phrases (indicating drift) and lookback phrases (re-anchoring to the image).
+5. **Key Insight**: Token-level perplexity contrastive experiments (real image vs. noisy image vs. no image) reveal that correct reasoning trajectories contain frequent "lookback" phrases (explicit references back to the image), whereas incorrect trajectories lack such visual anchoring. This motivates mining two phrase sets: pause/uncertainty phrases (indicating drift) and lookback phrases (re-anchoring to the image).
 
 6. **Core Idea**: Automatically inject visual re-inspection prompts when uncertainty signals appear in the reasoning chain, converting "blind deep thinking" into "on-demand image lookback."
 

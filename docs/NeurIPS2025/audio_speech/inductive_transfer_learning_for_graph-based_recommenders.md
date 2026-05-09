@@ -29,18 +29,18 @@ This paper proposes NBF-Rec, a graph-based recommendation model built upon the N
 
 ## Background & Motivation
 
-**State of the Field**: Graph neural network-based recommender systems (e.g., LightGCN) perform well within a single domain, but are primarily trained in a transductive manner and cannot generalize to new users, new items, or new datasets.
+**Background**: Graph neural network-based recommender systems (e.g., LightGCN) perform well within a single domain, but are primarily trained in a transductive manner and cannot generalize to new users, new items, or new datasets.
 
 **Limitations of Prior Work**:
    - Existing cross-domain recommendation methods assume overlapping users or items between the source and target domains, limiting their applicability.
    - Methods based on adversarial training, contrastive disentanglement, and meta-learning still rely on aligned entity spaces or domain-specific supervision.
    - Large-scale pre-trained models (P5, GPTRec) require substantial pre-training and inference resources, and depend on textual or visual side information.
 
-**Root Cause**: Transfer learning has become standard practice in NLP and CV, yet it remains largely unexplored in graph-based recommendation—particularly in scenarios with completely disjoint users and items.
+**Key Challenge**: Transfer learning has become standard practice in NLP and CV, yet it remains largely unexplored in graph-based recommendation—particularly in scenarios with completely disjoint users and items.
 
-**Paper Goals**: Enable inductive transfer learning across user-item graphs with fully disjoint entities, supporting both zero-shot recommendation and fine-tuning adaptation.
+**Goal**: Enable inductive transfer learning across user-item graphs with fully disjoint entities, supporting both zero-shot recommendation and fine-tuning adaptation.
 
-**Starting Point**: The path-aggregation message-passing mechanism of NBFNet is leveraged to dynamically compute node representations (rather than pre-learned embeddings), thereby achieving inductive generalization; edge feature encoding is integrated to enhance the capture of interaction-level information.
+**Key Insight**: The path-aggregation message-passing mechanism of NBFNet is leveraged to dynamically compute node representations (rather than pre-learned embeddings), thereby achieving inductive generalization; edge feature encoding is integrated to enhance the capture of interaction-level information.
 
 **Core Idea**: Rather than learning node-specific parameters, the model learns the message-passing process itself, enabling generalization to entirely unseen user-item graphs.
 

@@ -29,18 +29,18 @@ This paper proposes Neural MJD, which parameterizes a non-stationary Merton Jump
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning methods for time series (Transformers, SSMs, etc.) achieve strong performance on standard benchmarks, but are fundamentally deterministic models or black-box probabilistic models that lack explicit modeling of the underlying stochastic process.
+**Background**: Deep learning methods for time series (Transformers, SSMs, etc.) achieve strong performance on standard benchmarks, but are fundamentally deterministic models or black-box probabilistic models that lack explicit modeling of the underlying stochastic process.
 
 **Limitations of Prior Work**:
    - Real-world time series frequently exhibit a mixture of **continuous trends and abrupt jumps** (e.g., stock prices surging or crashing due to breaking news, retail revenue spiking due to promotions).
    - Classical statistical models (MJD, Lévy processes) assume independent stationary increments, making them unable to handle non-stationarity or capture multivariate dependencies.
    - Deep learning methods lack explicit jump modeling, while generative models (e.g., diffusion models) are computationally expensive and do not directly model abrupt changes.
 
-**Root Cause**: Classical jump diffusion theory is mathematically elegant but has fixed parameters → real-world data requires time-varying parameters; deep learning is flexible but lacks mathematical structure → the two must be integrated.
+**Key Challenge**: Classical jump diffusion theory is mathematically elegant but has fixed parameters → real-world data requires time-varying parameters; deep learning is flexible but lacks mathematical structure → the two must be integrated.
 
-**Paper Goals**: Design a time series forecasting model that possesses an explicit SDE mathematical form (interpretable and amenable to probabilistic inference) while flexibly learning time-varying parameters via neural networks.
+**Goal**: Design a time series forecasting model that possesses an explicit SDE mathematical form (interpretable and amenable to probabilistic inference) while flexibly learning time-varying parameters via neural networks.
 
-**Starting Point**: Replace the fixed parameters $\{\mu, \sigma, \lambda, \nu, \gamma\}$ of classical MJD with time-varying parameters $\{\mu_t, \sigma_t, \lambda_t, \nu_t, \gamma_t\}$ predicted by a neural network, preserving the mathematical structure of the SDE framework.
+**Key Insight**: Replace the fixed parameters $\{\mu, \sigma, \lambda, \nu, \gamma\}$ of classical MJD with time-varying parameters $\{\mu_t, \sigma_t, \lambda_t, \nu_t, \gamma_t\}$ predicted by a neural network, preserving the mathematical structure of the SDE framework.
 
 **Core Idea**: A neural network conditioned on historical data and context predicts all future SDE parameters in a single forward pass, enabling scalable learning of non-stationary jump diffusion.
 

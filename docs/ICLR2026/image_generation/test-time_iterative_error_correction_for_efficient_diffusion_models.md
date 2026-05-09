@@ -31,7 +31,7 @@ This paper proposes IEC (Iterative Error Correction), a plug-and-play test-time 
 
 ### State of the Field
 
-**State of the Field**: Efficient diffusion models (via quantization, feature caching, etc.) face significant challenges after deployment:
+**Background**: Efficient diffusion models (via quantization, feature caching, etc.) face significant challenges after deployment:
 
 **Approximation errors are unavoidable**: Errors introduced by quantization and caching accumulate exponentially across timesteps.
 
@@ -43,7 +43,7 @@ This paper proposes IEC (Iterative Error Correction), a plug-and-play test-time 
 
 ### Root Cause
 
-**Root Cause**: The original full-precision weights may no longer be accessible.
+**Key Challenge**: The original full-precision weights may no longer be accessible.
 
 ### Solution Direction
 

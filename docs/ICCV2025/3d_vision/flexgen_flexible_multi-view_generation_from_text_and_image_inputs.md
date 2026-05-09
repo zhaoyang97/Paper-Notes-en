@@ -37,9 +37,9 @@ Multi-view diffusion models (e.g., Zero123++, SyncDreamer, Wonder3D) have demons
 - *Text annotations lacking 3D information*: Cap3D generates per-view captions with BLIP-2 and aggregates them via GPT-4, but the results tend to be high-level summaries that lack local detail and 3D spatial relationships. This stems from two issues: BLIP-2 produces only global descriptions, and single-view information is both redundant and incomplete.
 - *Single-modality control*: Instant3D supports text-to-3D but only text conditioning, offering insufficient flexibility.
 
-**Root Cause**: Text is the most natural control modality for users and can convey rich semantic and spatial relational information. However, how to generate text annotations with sufficient 3D-aware information for 3D objects, and how to effectively fuse image and text control signals within a multi-view diffusion model, remain open problems.
+**Key Challenge**: Text is the most natural control modality for users and can convey rich semantic and spatial relational information. However, how to generate text annotations with sufficient 3D-aware information for 3D objects, and how to effectively fuse image and text control signals within a multi-view diffusion model, remain open problems.
 
-**Starting Point**: (1) Exploit GPT-4V's strong visual reasoning ability to generate global-local 3D-aware text annotations from tiled four-view orthographic images; (2) Design an adaptive dual-control module that enables joint image-text control while supporting three inference modes—image-only, text-only, and joint—via a condition switcher.
+**Key Insight**: (1) Exploit GPT-4V's strong visual reasoning ability to generate global-local 3D-aware text annotations from tiled four-view orthographic images; (2) Design an adaptive dual-control module that enables joint image-text control while supporting three inference modes—image-only, text-only, and joint—via a condition switcher.
 
 ## Method
 

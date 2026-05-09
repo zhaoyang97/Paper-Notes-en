@@ -28,13 +28,13 @@ This paper proposes the ViZer framework, which improves the image captioning cap
 
 ## Background & Motivation
 
-**State of the Field**: Vision-language models (VLMs) have achieved impressive performance after large-scale image-text pretraining, yet their reliance on annotated data limits scalability and leaves vast quantities of unlabeled image data unexploited. This annotation scarcity not only constrains the training scope but also results in a **persistent misalignment** between visual encoders and language models—manifesting as hallucinations, factually incorrect captions, and inconsistent multimodal reasoning even in state-of-the-art systems.
+**Background**: Vision-language models (VLMs) have achieved impressive performance after large-scale image-text pretraining, yet their reliance on annotated data limits scalability and leaves vast quantities of unlabeled image data unexploited. This annotation scarcity not only constrains the training scope but also results in a **persistent misalignment** between visual encoders and language models—manifesting as hallucinations, factually incorrect captions, and inconsistent multimodal reasoning even in state-of-the-art systems.
 
 **Limitations of Prior Work**: Advances in representation learning (e.g., JEPA, DINO) have demonstrated that more robust and generalizable features can be learned through predictive latent-space modeling without relying on pixel reconstruction or dense supervision. However, these methods are primarily oriented toward visual representation learning and do not directly address the generation of grounded captions or the synchronization of cross-modal semantics.
 
-**Root Cause**: Current alignment strategies—such as CLIP's contrastive learning and Q-Former's learnable queries—are typically fixed during pretraining and **do not continuously adjust alignment** when integrated with downstream LLMs. This leaves a representational gap: visual and language models are individually powerful, but their latent spaces are never directly co-adapted.
+**Key Challenge**: Current alignment strategies—such as CLIP's contrastive learning and Q-Former's learnable queries—are typically fixed during pretraining and **do not continuously adjust alignment** when integrated with downstream LLMs. This leaves a representational gap: visual and language models are individually powerful, but their latent spaces are never directly co-adapted.
 
-**Starting Point**: ViZer asks: *Can actively aligning visual and language representations during training improve VLM performance without any annotated data?* This is not a simple self-supervised feature learning approach, but rather a direct optimization of cross-modal alignment in service of generative image captioning.
+**Key Insight**: ViZer asks: *Can actively aligning visual and language representations during training improve VLM performance without any annotated data?* This is not a simple self-supervised feature learning approach, but rather a direct optimization of cross-modal alignment in service of generative image captioning.
 
 ## Method
 

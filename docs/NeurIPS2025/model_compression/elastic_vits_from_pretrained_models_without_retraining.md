@@ -28,15 +28,15 @@ SnapViT proposes a post-training structured pruning method that combines a local
 
 ## Background & Motivation
 
-**State of the Field**: Powerful vision foundation models are typically released in only a few fixed sizes (e.g., DINOv3 from 21M to 6.7B parameters), forcing users to select "the largest model that fits within their constraints," which frequently leads to suboptimal deployment.
+**Background**: Powerful vision foundation models are typically released in only a few fixed sizes (e.g., DINOv3 from 21M to 6.7B parameters), forcing users to select "the largest model that fits within their constraints," which frequently leads to suboptimal deployment.
 
 **Limitations of Prior Work**: (a) Knowledge distillation requires a predefined target architecture and typically non-public pretraining data; (b) elastic inference methods (Matryoshka/Matformer) require nested structures to be designed during pretraining and cannot be applied to existing models; (c) existing pruning methods target specific computational budgets and tasks, generally require retraining, and can only optimize a single sparsity level per run.
 
-**Root Cause**: Diagonal (or block-diagonal/K-FAC) Hessian approximations capture only local, intra-layer dependencies, neglecting cross-module correlations between layers—while the full Hessian contains $N^2$ elements and is computationally intractable.
+**Key Challenge**: Diagonal (or block-diagonal/K-FAC) Hessian approximations capture only local, intra-layer dependencies, neglecting cross-module correlations between layers—while the full Hessian contains $N^2$ elements and is computationally intractable.
 
-**Paper Goals**: Extract a family of sub-networks spanning continuous sparsity levels from any pretrained ViT, without retraining, without labels, and at minimal computational cost.
+**Goal**: Extract a family of sub-networks spanning continuous sparsity levels from any pretrained ViT, without retraining, without labels, and at minimal computational cost.
 
-**Starting Point**: Decompose the Hessian into a local term (diagonal approximation via self-supervised gradients) and a global term (cross-module correlations learned by an evolutionary algorithm), combining both into a unified pruning score.
+**Key Insight**: Decompose the Hessian into a local term (diagonal approximation via self-supervised gradients) and a global term (cross-module correlations learned by an evolutionary algorithm), combining both into a unified pruning score.
 
 **Core Idea**: Self-supervised gradients provide local sensitivity estimates; the xNES evolutionary algorithm learns global cross-module correlations—together they yield an elastic model covering all sparsity levels in a single run.
 

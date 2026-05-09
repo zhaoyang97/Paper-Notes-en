@@ -28,15 +28,15 @@ This paper proposes RoboPARA, a two-stage framework that optimizes task parallel
 
 ## Background & Motivation
 
-**State of the Field**: LLM-driven dual-arm robot task planning approaches (e.g., RoCo, FLTRNN) have made notable progress, yet these methods primarily optimize task success rate and completion time, mostly producing plans that execute sequentially on a single arm.
+**Background**: LLM-driven dual-arm robot task planning approaches (e.g., RoCo, FLTRNN) have made notable progress, yet these methods primarily optimize task success rate and completion time, mostly producing plans that execute sequentially on a single arm.
 
 **Limitations of Prior Work**: Existing methods overlook inter-arm parallelism — when a task requires only one arm, the other remains completely idle. This leaves the collaborative potential of dual-arm systems underutilized and leads to low execution efficiency.
 
-**Root Cause**: Dual-arm parallel planning must simultaneously handle task dependencies (certain steps must execute in order) and parallelization opportunities (independent steps can be assigned concurrently to both arms), constituting a combinatorial optimization problem.
+**Key Challenge**: Dual-arm parallel planning must simultaneously handle task dependencies (certain steps must execute in order) and parallelization opportunities (independent steps can be assigned concurrently to both arms), constituting a combinatorial optimization problem.
 
-**Paper Goals**: Maximize parallel utilization of both arms while preserving task correctness, thereby reducing overall execution time.
+**Goal**: Maximize parallel utilization of both arms while preserving task correctness, thereby reducing overall execution time.
 
-**Starting Point**: Drawing inspiration from everyday human behavior — boiling water while brushing teeth — the paper models task dependencies via a DAG (Directed Acyclic Graph) and then applies a graph-traversal scheduling algorithm to maximize parallelism.
+**Key Insight**: Drawing inspiration from everyday human behavior — boiling water while brushing teeth — the paper models task dependencies via a DAG (Directed Acyclic Graph) and then applies a graph-traversal scheduling algorithm to maximize parallelism.
 
 **Core Idea**: Decouple dual-arm task planning into two stages — "LLM generates dependency graph → scheduling algorithm maximizes parallelism" — allowing the LLM to focus on understanding task semantics rather than directly planning parallel execution.
 

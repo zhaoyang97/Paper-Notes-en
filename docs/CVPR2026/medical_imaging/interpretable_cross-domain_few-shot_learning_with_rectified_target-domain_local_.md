@@ -29,10 +29,10 @@ This paper identifies and addresses the degradation of local feature alignment i
 
 ## Background & Motivation
 
-- **State of the Field**: Vision-language models such as CLIP provide a strong foundation for cross-domain few-shot learning.
+- **Background**: Vision-language models such as CLIP provide a strong foundation for cross-domain few-shot learning.
 - **Limitations of Prior Work**: After fine-tuning on target domains, models struggle to focus on fine-grained visual cues (e.g., ground-glass opacities and local nodules in chest X-rays). Although CLIP can roughly cover all salient regions in the source domain, local patch-text alignment degrades far more severely than global alignment after domain transfer.
-- **Root Cause**: Quantitative analysis measures global alignment score $\text{A}_g$ and local alignment score $\text{A}_l$, revealing that the drop in $\text{A}_l$ is significantly larger than that in $\text{A}_g$ on cross-domain tasks, confirming that domain shift and data scarcity disproportionately harm local feature alignment.
-- **Paper Goals**: This degradation is especially critical in domains requiring fine-grained recognition such as medical diagnosis—subtle textures or density variations indicative of pneumonia appear in only a few patches, yet model heatmaps can only coarsely outline body contours.
+- **Key Challenge**: Quantitative analysis measures global alignment score $\text{A}_g$ and local alignment score $\text{A}_l$, revealing that the drop in $\text{A}_l$ is significantly larger than that in $\text{A}_g$ on cross-domain tasks, confirming that domain shift and data scarcity disproportionately harm local feature alignment.
+- **Goal**: This degradation is especially critical in domains requiring fine-grained recognition such as medical diagnosis—subtle textures or density variations indicative of pneumonia appear in only a few patches, yet model heatmaps can only coarsely outline body contours.
 
 ## Method
 

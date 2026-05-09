@@ -29,7 +29,7 @@ This paper presents Lumosaic, an active hyperspectral video system that synchron
 
 ## Background & Motivation
 
-**State of the Field**: Hyperspectral imaging (HSI) captures multi-band reflectance and finds wide application in material classification, physiological monitoring, and spectral relighting. Traditional scanning-based HSI achieves high spectral fidelity but is slow. Snapshot HSI systems (CASSI, DOE, MSFA) enable single-frame acquisition but suffer from low light efficiency and severe motion artifacts. Active HSI exploits programmable light sources to encode spectra along temporal or spatial dimensions, improving photon utilization.
+**Background**: Hyperspectral imaging (HSI) captures multi-band reflectance and finds wide application in material classification, physiological monitoring, and spectral relighting. Traditional scanning-based HSI achieves high spectral fidelity but is slow. Snapshot HSI systems (CASSI, DOE, MSFA) enable single-frame acquisition but suffer from low light efficiency and severe motion artifacts. Active HSI exploits programmable light sources to encode spectra along temporal or spatial dimensions, improving photon utilization.
 
 **Limitations of Prior Work**:
 
@@ -37,11 +37,11 @@ This paper presents Lumosaic, an active hyperspectral video system that synchron
 2. Existing active systems (e.g., LED time-division multiplexing, structured light projection) apply fine control along only a single dimension, leading to inter-frame spectral misalignment in dynamic scenes.
 3. Even when rolling shutters enable within-frame spectral multiplexing, fast motion still produces rolling shutter distortion.
 
-**Root Cause**: Hyperspectral video demands simultaneous spectral resolution, light efficiency, and temporal sampling density — requirements that neither passive nor active prior systems can jointly satisfy.
+**Key Challenge**: Hyperspectral video demands simultaneous spectral resolution, light efficiency, and temporal sampling density — requirements that neither passive nor active prior systems can jointly satisfy.
 
-**Paper Goals**: To achieve compact, motion-robust, real-time hyperspectral video acquisition.
+**Goal**: To achieve compact, motion-robust, real-time hyperspectral video acquisition.
 
-**Starting Point**: Coupling the per-pixel, high-speed modulation capability of CEP sensors with time-varying narrowband LED illumination to jointly encode spatial, temporal, and spectral information within a single frame.
+**Key Insight**: Coupling the per-pixel, high-speed modulation capability of CEP sensors with time-varying narrowband LED illumination to jointly encode spatial, temporal, and spectral information within a single frame.
 
 **Core Idea**: By combining per-pixel exposure control from a CEP camera with time-varying LED illumination, the system constructs dense spatial–spectral–temporal mosaic codes within each frame, with all signal integration performed entirely on-chip.
 

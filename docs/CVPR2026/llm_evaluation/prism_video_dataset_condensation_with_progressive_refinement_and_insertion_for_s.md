@@ -29,15 +29,15 @@ This paper proposes PRISM, a holistic video dataset condensation method that beg
 
 ## Background & Motivation
 
-1. **State of the Field**: Dataset distillation/condensation aims to synthesize a compact set far smaller than the original dataset such that models trained on it approach the performance of models trained on the full data. This field is well-studied in the image domain (DC, DSA, DM, MTT, etc.) but nearly unexplored for video — with only one prior work, Wang et al.
+1. **Background**: Dataset distillation/condensation aims to synthesize a compact set far smaller than the original dataset such that models trained on it approach the performance of models trained on the full data. This field is well-studied in the image domain (DC, DSA, DM, MTT, etc.) but nearly unexplored for video — with only one prior work, Wang et al.
 
 2. **Limitations of Prior Work**: The sole prior work decomposes video into "static content" (frozen pretrained images) and "dynamic motion" (auxiliary signals) optimized in two separate stages. This decomposition strategy is fundamentally flawed — in real-world actions, content and motion are **inseparable**. For instance, a frame of two hands coming together in a clapping action is visually identical to a frame of two hands beginning to separate, yet the two belong to entirely different motion trajectories.
 
-3. **Root Cause**: Video data contains substantial temporal redundancy (adjacent frames are highly similar), yet prior methods use a fixed number of frames (e.g., 16) per synthetic video, wasting storage on simple motions and potentially underrepresenting complex ones.
+3. **Key Challenge**: Video data contains substantial temporal redundancy (adjacent frames are highly similar), yet prior methods use a fixed number of frames (e.g., 16) per synthetic video, wasting storage on simple motions and potentially underrepresenting complex ones.
 
-4. **Paper Goals**: (a) Design a holistic video condensation method that preserves content–motion coupling integrity; (b) adaptively allocate representational capacity — using more frames only where needed, while simple motions are adequately represented via linear interpolation.
+4. **Goal**: (a) Design a holistic video condensation method that preserves content–motion coupling integrity; (b) adaptively allocate representational capacity — using more frames only where needed, while simple motions are adequately represented via linear interpolation.
 
-5. **Starting Point**: The authors build on a key assumption — simple or low-speed motions can be effectively approximated by linear interpolation. Thus, it suffices to identify frames where linear interpolation **fails** (i.e., nonlinear spatiotemporal transition points) and promote them to keyframes. These frames are identified via gradient direction conflicts: if the gradient of an intermediate frame is in the opposite direction to those of its two neighboring keyframes, optimizing the keyframes cannot reduce the loss at that intermediate frame.
+5. **Key Insight**: The authors build on a key assumption — simple or low-speed motions can be effectively approximated by linear interpolation. Thus, it suffices to identify frames where linear interpolation **fails** (i.e., nonlinear spatiotemporal transition points) and promote them to keyframes. These frames are identified via gradient direction conflicts: if the gradient of an intermediate frame is in the opposite direction to those of its two neighboring keyframes, optimizing the keyframes cannot reduce the loss at that intermediate frame.
 
 6. **Core Idea**: Starting from the minimal set of temporal anchors (first and last frames), PRISM adaptively inserts keyframes during training by detecting negative cosine similarity between intermediate-frame gradients and those of adjacent keyframes, realizing an "allocate frames on demand" paradigm for video condensation.
 

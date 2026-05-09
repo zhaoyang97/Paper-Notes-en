@@ -34,10 +34,10 @@ This work reveals that the weight space of two-layer quadratic-activation networ
 
 ## Background & Motivation
 
-- **State of the Field**: Large language models frequently make surprising errors on elementary reasoning tasks (e.g., the reversal curse), and the nature of reasoning capability remains an open question.
+- **Background**: Large language models frequently make surprising errors on elementary reasoning tasks (e.g., the reversal curse), and the nature of reasoning capability remains an open question.
 - **Limitations of Prior Work**: Modular addition prediction ($a+b \mod d$) is a canonical probe for studying reasoning; it is structurally simple yet exhibits complex learning phenomena such as grokking. Prior work identified that trained networks employ Fourier basis representations and hand-crafted analytic solutions, but lacked a unified theoretical framework to explain and generalize these findings. Gromov (2023) required an infinite-width assumption, inconsistent with finite-width training in practice. Furthermore, no theoretical explanation was provided for why gradient descent converges to low-order Fourier solutions rather than memorization solutions.
-- **Root Cause**: The internal algebraic structure of the weight space during training had never been explored; geometric deep learning exploits data symmetry but does not open the black box to analyze the weight space itself.
-- **Paper Goals**: Establish a systematic algebraic framework that explains the emergence of Fourier solutions, generalizes analytic constructions to finite-width networks, and connects solution structure to gradient dynamics.
+- **Key Challenge**: The internal algebraic structure of the weight space during training had never been explored; geometric deep learning exploits data symmetry but does not open the black box to analyze the weight space itself.
+- **Goal**: Establish a systematic algebraic framework that explains the emergence of Fourier solutions, generalizes analytic constructions to finite-width networks, and connects solution structure to gradient dynamics.
 
 ## Method
 

@@ -28,15 +28,15 @@ This paper proposes DLWM, a two-stage Gaussian-centric self-supervised pre-train
 
 ## Background & Motivation
 
-**State of the Field**: In vision-based autonomous driving, Gaussian-centric representations (e.g., GaussianFormer) provide comprehensive yet sparse scene descriptions via 3D semantic Gaussians, offering a superior expressiveness-efficiency trade-off over dense BEV and sparse query methods for perception/prediction/planning. However, reliance on large-scale manual annotations limits scalable deployment.
+**Background**: In vision-based autonomous driving, Gaussian-centric representations (e.g., GaussianFormer) provide comprehensive yet sparse scene descriptions via 3D semantic Gaussians, offering a superior expressiveness-efficiency trade-off over dense BEV and sparse query methods for perception/prediction/planning. However, reliance on large-scale manual annotations limits scalable deployment.
 
 **Limitations of Prior Work**: (a) MAE-style pre-training does not explicitly learn 3D geometry; (b) rendering-based pre-training (UniPAD/ViDAR) depends on LiDAR depth supervision; (c) latent world models have been applied to motion planning but remain unexplored for perception and prediction tasks; (d) Gaussian queries lack one-to-one cross-frame correspondence (permutation equivariance), precluding direct temporal feature supervision.
 
-**Root Cause**: How to design a unified self-supervised pre-training framework for the full lifecycle (perception + prediction + planning) of Gaussian-centric models? And in which representation space should temporal prediction be performed?
+**Key Challenge**: How to design a unified self-supervised pre-training framework for the full lifecycle (perception + prediction + planning) of Gaussian-centric models? And in which representation space should temporal prediction be performed?
 
-**Paper Goals**: To design a comprehensive self-supervised pre-training scheme for Gaussian-centric autonomous driving, covering 3D occupancy perception, 4D occupancy prediction, and motion planning.
+**Goal**: To design a comprehensive self-supervised pre-training scheme for Gaussian-centric autonomous driving, covering 3D occupancy perception, 4D occupancy prediction, and motion planning.
 
-**Starting Point**: BEV rasterization is leveraged as a bridge from Gaussian queries to dense representations — BEV features preserve height information and maintain explicit inter-frame spatial correspondence, elegantly resolving the permutation equivariance challenge.
+**Key Insight**: BEV rasterization is leveraged as a bridge from Gaussian queries to dense representations — BEV features preserve height information and maintain explicit inter-frame spatial correspondence, elegantly resolving the permutation equivariance challenge.
 
 **Core Idea**: Stage 1 learns Gaussian representations (via self-supervised reconstruction) → Stage 2 learns temporal evolution (dual latent world models serving perception/prediction and planning respectively).
 
@@ -158,7 +158,7 @@ This paper proposes DLWM, a holistic Gaussian-centric pre-training paradigm base
 
 ## Background & Motivation
 
-1. **State of the Field**: In vision-based autonomous driving, 3D Gaussian representations achieve a better expressiveness-efficiency trade-off than BEV or sparse query methods across perception/prediction/planning multi-task settings. However, reliance on large-scale annotations limits scalable deployment.
+1. **Background**: In vision-based autonomous driving, 3D Gaussian representations achieve a better expressiveness-efficiency trade-off than BEV or sparse query methods across perception/prediction/planning multi-task settings. However, reliance on large-scale annotations limits scalable deployment.
 2. **Limitations of Prior Work**: (1) MAE-style pre-training does not explicitly learn 3D geometry; (2) rendering-based pre-training (UniPAD/ViDAR) requires LiDAR depth; (3) latent world models have proven effective for planning but **remain unexplored for perception/prediction**; (4) the permutation equivariance of Gaussian queries — independently initialized across frames with no one-to-one correspondence — makes direct feature supervision infeasible.
 3. **Key Breakthrough**: Transforming Gaussian queries into dense grid representations via BEV rasterization → height information is preserved and inter-frame spatial correspondence is well-defined → this serves as a viable latent space for temporal supervision in the world model.
 4. **Core Idea**: Two stages — Stage 1 learns Gaussian spatial representations (via rendering reconstruction) → Stage 2 trains dual world models: (a) Gaussian-flow-guided → perception/prediction; (b) ego-trajectory-guided → planning.

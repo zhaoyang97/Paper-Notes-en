@@ -29,15 +29,15 @@ This paper proposes a lightweight Temporal Gated Adapter (T-Gated Adapter) that 
 
 ## Background & Motivation
 
-**State of the Field**: Vision-language models (VLMs) such as CLIPSeg enable zero-shot/few-shot segmentation via text prompts, making them highly attractive for medical imaging where annotations are scarce. Conventional fully supervised 3D architectures (U-Net, nnU-Net, Swin UNETR) achieve high in-domain accuracy but require extensive dense voxel-level annotations and are constrained to fixed organ taxonomies.
+**Background**: Vision-language models (VLMs) such as CLIPSeg enable zero-shot/few-shot segmentation via text prompts, making them highly attractive for medical imaging where annotations are scarce. Conventional fully supervised 3D architectures (U-Net, nnU-Net, Swin UNETR) achieve high in-domain accuracy but require extensive dense voxel-level annotations and are constrained to fixed organ taxonomies.
 
 **Limitations of Prior Work**: VLMs are inherently 2D models, whereas CT/MRI data are 3D volumetric. The prevailing approach decomposes 3D volumes into 2D axial slices for independent processing. However, this slice-by-slice inference discards critical volumetric context: (1) anatomical continuity across adjacent slices is ignored, leading to inconsistent segmentation results between slices (e.g., false-positive pancreas predictions on slices where it is absent); (2) the absence of a cross-slice validation mechanism prevents the model from leveraging the important prior that "the target structure does not appear in neighboring slices" to suppress noisy predictions.
 
-**Root Cause**: There exists a fundamental domain gap between the powerful semantic generalization capability of VLMs (derived from billions of images during CLIP pretraining) and the volumetric continuity requirements of 3D medical imaging.
+**Key Challenge**: There exists a fundamental domain gap between the powerful semantic generalization capability of VLMs (derived from billions of images during CLIP pretraining) and the volumetric continuity requirements of 3D medical imaging.
 
-**Paper Goals**: How can volumetric (3D) context be injected in a lightweight manner—without modifying the underlying VLM—to bridge the gap between 2D foundation models and 3D medical imaging?
+**Goal**: How can volumetric (3D) context be injected in a lightweight manner—without modifying the underlying VLM—to bridge the gap between 2D foundation models and 3D medical imaging?
 
-**Starting Point**: Rather than retraining a 3D model, the authors design a temporal adapter that operates purely at the token level, enabling each spatial token to attend to tokens at the same position in neighboring slices. This allows the model to learn the pattern: "if the corresponding position in neighboring slices shows no evidence of the target structure, suppress the current prediction."
+**Key Insight**: Rather than retraining a 3D model, the authors design a temporal adapter that operates purely at the token level, enabling each spatial token to attend to tokens at the same position in neighboring slices. This allows the model to learn the pattern: "if the corresponding position in neighboring slices shows no evidence of the target structure, suppress the current prediction."
 
 **Core Idea**: Inject temporal attention over a 5-slice context window into CLIP visual token representations, combined with an adaptive gate to balance temporal fusion and single-slice features, achieving lightweight 3D-aware VLM segmentation.
 

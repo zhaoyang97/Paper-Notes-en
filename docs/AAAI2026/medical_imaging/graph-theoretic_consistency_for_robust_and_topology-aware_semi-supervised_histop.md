@@ -29,15 +29,15 @@ This paper proposes TGC (Topology Graph Consistency), a framework that introduce
 
 ## Background & Motivation
 
-**State of the Field**: Semantic segmentation is critical in computational pathology for accurately delineating glands, tubular structures, and other tissue regions from whole slide images (WSIs). However, dense pixel-level annotation in pathology is extremely costly, requiring expert pathologists to label images pixel by pixel—far more expensive than annotating natural images.
+**Background**: Semantic segmentation is critical in computational pathology for accurately delineating glands, tubular structures, and other tissue regions from whole slide images (WSIs). However, dense pixel-level annotation in pathology is extremely costly, requiring expert pathologists to label images pixel by pixel—far more expensive than annotating natural images.
 
 **Limitations of Prior Work**: Semi-supervised semantic segmentation (SSSS) methods typically rely on pixel-level consistency (e.g., mean teacher, consistency regularization) to exploit unlabeled data. In histopathology images, however, pixel-level consistency suffers from two critical problems: (1) noisy pseudo-labels are propagated and amplified during consistency training; and (2) generated segmentation masks are often fragmented or topologically invalid—e.g., glands are split into multiple disconnected fragments, or adjacent glands are erroneously merged.
 
-**Root Cause**: Pixel-level constraints focus on local accuracy while neglecting global topology. A segmentation mask may appear acceptable at the pixel level yet be entirely incorrect in terms of topological structure—such as producing disconnected glandular structures or spurious ring-shaped regions—whereas topological correctness is essential for downstream pathological analysis.
+**Key Challenge**: Pixel-level constraints focus on local accuracy while neglecting global topology. A segmentation mask may appear acceptable at the pixel level yet be entirely incorrect in terms of topological structure—such as producing disconnected glandular structures or spurious ring-shaped regions—whereas topological correctness is essential for downstream pathological analysis.
 
-**Paper Goals**: To introduce global topological constraints into semi-supervised histopathology segmentation, ensuring that segmentation results are not only pixel-accurate but also topologically correct.
+**Goal**: To introduce global topological constraints into semi-supervised histopathology segmentation, ensuring that segmentation results are not only pixel-accurate but also topologically correct.
 
-**Starting Point**: The authors model segmentation predictions and reference annotations as graph structures, and then enforce topological consistency using graph-theoretic tools—specifically Laplacian spectra, connected components, and adjacency relations.
+**Key Insight**: The authors model segmentation predictions and reference annotations as graph structures, and then enforce topological consistency using graph-theoretic tools—specifically Laplacian spectra, connected components, and adjacency relations.
 
 **Core Idea**: Replace (or supplement) pixel-level consistency with graph-theoretic constraints—learning topologically correct segmentation by aligning topological statistics between the prediction graph and the reference graph.
 

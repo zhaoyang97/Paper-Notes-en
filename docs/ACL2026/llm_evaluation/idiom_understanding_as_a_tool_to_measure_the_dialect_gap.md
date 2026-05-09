@@ -28,15 +28,15 @@ Three new French idiom understanding benchmark datasets are proposed — QFrCoRE
 
 ## Background & Motivation
 
-**State of the Field**: Idiom understanding and dialect understanding are each well-established benchmark domains in NLP. LLMs perform well on standard French (Parisian French), yet their capabilities on other French dialects remain largely unexplored.
+**Background**: Idiom understanding and dialect understanding are each well-established benchmark domains in NLP. LLMs perform well on standard French (Parisian French), yet their capabilities on other French dialects remain largely unexplored.
 
 **Limitations of Prior Work**: (1) Existing idiom datasets predominantly focus on a single standard language variety, lacking dialectal coverage. (2) Although the dialect gap has been studied in languages such as Arabic and Bengali, local idioms have not been used as probes for dialectal comprehension. (3) Model proficiency on a prestige dialect does not guarantee understanding of regionally specific expressions.
 
-**Root Cause**: While the grammar and syntax of a dialect can be approximately inferred from the standard language, dialectal idioms originate from local culture and history and cannot be derived from standard-language training data, constituting an intrinsic challenge for dialect understanding.
+**Key Challenge**: While the grammar and syntax of a dialect can be approximately inferred from the standard language, dialectal idioms originate from local culture and history and cannot be derived from standard-language training data, constituting an intrinsic challenge for dialect understanding.
 
-**Paper Goals**: (1) Construct idiom understanding benchmarks for both Quebec French and standard French. (2) Use dialectal idioms as a tool to quantify the dialect gap in LLMs.
+**Goal**: (1) Construct idiom understanding benchmarks for both Quebec French and standard French. (2) Use dialectal idioms as a tool to quantify the dialect gap in LLMs.
 
-**Starting Point**: Idiom understanding and dialect understanding are combined by exploiting the fact that dialectal idioms are culturally specific artifacts that cannot be generalized from standard-language training, making idiom understanding performance gaps a direct reflection of dialect capability gaps.
+**Key Insight**: Idiom understanding and dialect understanding are combined by exploiting the fact that dialectal idioms are culturally specific artifacts that cannot be generalized from standard-language training, making idiom understanding performance gaps a direct reflection of dialect capability gaps.
 
 **Core Idea**: Local idiom understanding is used as a probe for dialectal competence, and paired standard/dialectal idiom benchmarks are constructed to quantify the dialect gap.
 

@@ -27,15 +27,15 @@ content_hash: 747a34344f31f4c1
 To address the "dual miscalibration" problem in prompt-tuned CLIP (underconfidence on base classes and overconfidence on novel classes), this paper proposes two complementary regularizers — mean-variance margin regularization and text moment-matching loss — as plug-and-play modules that consistently reduce ECE across 7 prompt tuning methods and 11 datasets.
 
 ## Background & Motivation
-**State of the Field**: Prompt tuning is the dominant paradigm for adapting CLIP to downstream tasks, achieving parameter-efficient fine-tuning by learning a small number of prompt tokens. It improves accuracy on base classes while preserving zero-shot generalization to novel classes.
+**Background**: Prompt tuning is the dominant paradigm for adapting CLIP to downstream tasks, achieving parameter-efficient fine-tuning by learning a small number of prompt tokens. It improves accuracy on base classes while preserving zero-shot generalization to novel classes.
 
 **Limitations of Prior Work**: Existing prompt tuning methods focus almost exclusively on accuracy, neglecting confidence calibration. A mismatch between predicted confidence and actual accuracy leads to unreliable decision-making, which is particularly harmful in safety-critical applications such as autonomous driving and medical imaging.
 
-**Root Cause**: Prompt tuning induces "dual miscalibration" — logit margin shrinkage on base classes causes underconfidence, while margin inflation on novel classes causes overconfidence. Existing post-hoc calibration methods (e.g., temperature scaling in DAC) cannot constrain how prompt tuning reshapes the embedding space, and may introduce embedding collapse or clustering artifacts.
+**Key Challenge**: Prompt tuning induces "dual miscalibration" — logit margin shrinkage on base classes causes underconfidence, while margin inflation on novel classes causes overconfidence. Existing post-hoc calibration methods (e.g., temperature scaling in DAC) cannot constrain how prompt tuning reshapes the embedding space, and may introduce embedding collapse or clustering artifacts.
 
-**Paper Goals**: To simultaneously address base-class underconfidence and novel-class overconfidence at training time without sacrificing accuracy.
+**Goal**: To simultaneously address base-class underconfidence and novel-class overconfidence at training time without sacrificing accuracy.
 
-**Starting Point**: Analysis reveals a correlation pattern between margin variability and ECE — negative for base classes and positive for novel classes.
+**Key Insight**: Analysis reveals a correlation pattern between margin variability and ECE — negative for base classes and positive for novel classes.
 
 **Core Idea**: Stabilize the logit distribution by maximizing mean margin and minimizing margin variance, while preserving CLIP's semantic geometry by matching the first- and second-order moments of tuned and frozen text embeddings.
 

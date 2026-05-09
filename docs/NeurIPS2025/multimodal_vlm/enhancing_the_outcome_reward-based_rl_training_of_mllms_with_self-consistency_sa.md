@@ -29,9 +29,9 @@ To address the problem of "unfaithful reasoning trajectories induced by outcome-
 
 ## Background & Motivation
 
-- **State of the Field**: Outcome-reward RL methods (e.g., GRPO, RLOO, REINFORCE++) are the dominant paradigm for enhancing reasoning capabilities in MLLMs.
+- **Background**: Outcome-reward RL methods (e.g., GRPO, RLOO, REINFORCE++) are the dominant paradigm for enhancing reasoning capabilities in MLLMs.
 - **Limitations of Prior Work**: In multiple-choice questions (the primary format of multimodal reasoning benchmarks), a critical yet overlooked issue exists: **unfaithful trajectories gaming the reward** — the model guesses the correct option following an erroneous reasoning chain, yet receives the same full reward as a genuinely correct reasoning trace.
-- **Root Cause**: The paper reveals the severity of this issue through exploratory experiments:
+- **Key Challenge**: The paper reveals the severity of this issue through exploratory experiments:
 
   **Insufficient gains from multiple-choice format**: On Geometry3K, multiple-choice training yields only a 5.6% improvement, 6.4 points lower than the 12.0% gained with open-ended QA.
 
@@ -39,7 +39,7 @@ To address the problem of "unfaithful reasoning trajectories induced by outcome-
 
   **Qualitative analysis**: The model frequently generates incorrect reasoning yet coincidentally selects the correct answer.
 
-- **Paper Goals**: Process Reward Models (PRMs) can mitigate this issue but are computationally expensive. SCS aims to identify and down-weight unreliable reasoning trajectories through self-consistency checks, without introducing any additional reward model.
+- **Goal**: Process Reward Models (PRMs) can mitigate this issue but are computationally expensive. SCS aims to identify and down-weight unreliable reasoning trajectories through self-consistency checks, without introducing any additional reward model.
 
 ## Method
 

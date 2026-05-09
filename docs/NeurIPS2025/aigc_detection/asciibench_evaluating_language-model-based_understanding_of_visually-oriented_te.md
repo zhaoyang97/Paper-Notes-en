@@ -29,15 +29,15 @@ This paper introduces ASCIIBench, the first publicly available benchmark for ASC
 
 ## Background & Motivation
 
-**State of the Field**: Large language models exhibit emergent capabilities such as reasoning and fluent text generation as scale increases; GPT-4 can even generate and edit TikZ drawings. Nevertheless, these models continue to struggle with tasks requiring precise spatial and positional reasoning.
+**Background**: Large language models exhibit emergent capabilities such as reasoning and fluent text generation as scale increases; GPT-4 can even generate and edit TikZ drawings. Nevertheless, these models continue to struggle with tasks requiring precise spatial and positional reasoning.
 
 **Limitations of Prior Work**: No standardized benchmark exists specifically for evaluating LLMs' spatial understanding. Although BIG-bench includes an ASCII word recognition task and ASCIIEval has conducted similar explorations, these resources are either limited in scope or not publicly released. ASCII art occupies a unique intersection of text and vision, naturally occurring within LLM pretraining distributions and natively aligned with tokenization schemes, making it an ideal evaluation vehicle that requires no additional adaptation.
 
-**Root Cause**: In ASCII art, characters serve as "visual primitives" rather than semantic tokens and demand strict structural regularity (akin to tabular data), which fundamentally conflicts with LLMs' semantic processing nature. Models must comprehend the spatial arrangement of characters in two-dimensional space rather than merely their textual meaning.
+**Key Challenge**: In ASCII art, characters serve as "visual primitives" rather than semantic tokens and demand strict structural regularity (akin to tabular data), which fundamentally conflicts with LLMs' semantic processing nature. Models must comprehend the spatial arrangement of characters in two-dimensional space rather than merely their textual meaning.
 
-**Paper Goals**: (1) Construct a high-quality, publicly available ASCII art benchmark dataset; (2) systematically evaluate diverse LLMs and multimodal models along both classification and generation dimensions; (3) analyze the applicability of existing evaluation metrics—particularly CLIP—to the ASCII domain.
+**Goal**: (1) Construct a high-quality, publicly available ASCII art benchmark dataset; (2) systematically evaluate diverse LLMs and multimodal models along both classification and generation dimensions; (3) analyze the applicability of existing evaluation metrics—particularly CLIP—to the ASCII domain.
 
-**Starting Point**: ASCII art is selected as a distinctive "symbolic visual modality" that is simultaneously amenable to text processing and demands visual-spatial understanding, thereby probing the limits of both text-only and multimodal models.
+**Key Insight**: ASCII art is selected as a distinctive "symbolic visual modality" that is simultaneously amenable to text processing and demands visual-spatial understanding, thereby probing the limits of both text-only and multimodal models.
 
 **Core Idea**: ASCII art serves as a stress test for LLMs' spatial reasoning and multimodal representation capabilities.
 

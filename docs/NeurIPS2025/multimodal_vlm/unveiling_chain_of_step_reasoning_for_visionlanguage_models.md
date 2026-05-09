@@ -29,15 +29,15 @@ This paper proposes the Chain-of-Step (CoS) reasoning framework, which decompose
 
 ## Background & Motivation
 
-**State of the Field**: Chain-of-Thought reasoning has achieved remarkable success in the LLM domain, with OpenAI-o1 and DeepSeek-R1 demonstrating substantial reasoning gains through large-scale RL combined with CoT. The VLM community is actively exploring CoT reasoning (e.g., LLaVA-CoT, Insight-V, URSA), but the field remains largely at a coarse-grained stage.
+**Background**: Chain-of-Thought reasoning has achieved remarkable success in the LLM domain, with OpenAI-o1 and DeepSeek-R1 demonstrating substantial reasoning gains through large-scale RL combined with CoT. The VLM community is actively exploring CoT reasoning (e.g., LLaVA-CoT, Insight-V, URSA), but the field remains largely at a coarse-grained stage.
 
 **Limitations of Prior Work**: Current VLM CoT reasoning outputs consist of unstructured monolithic "thought" blocks—lacking uniform format and clear step boundaries—resulting in two core problems: (1) reasoning processes tend to become verbose and disorganized, hampering systematic structured reasoning; and (2) the quality of intermediate reasoning steps cannot be evaluated, leaving both RL training and inference-time scaling without effective reward signals.
 
-**Root Cause**: PRMs in the LLM domain (e.g., Math-Shepherd, Let's Verify Step by Step) have demonstrated the value of step-level rewards, but applying them to VLMs presents two non-trivial challenges: how to define a "step" (decomposing the reasoning chain into logically coherent, progressive units) and how to evaluate a "step" (providing fine-grained step-level reward signals).
+**Key Challenge**: PRMs in the LLM domain (e.g., Math-Shepherd, Let's Verify Step by Step) have demonstrated the value of step-level rewards, but applying them to VLMs presents two non-trivial challenges: how to define a "step" (decomposing the reasoning chain into logically coherent, progressive units) and how to evaluate a "step" (providing fine-grained step-level reward signals).
 
-**Paper Goals**: To establish a complete step-level reasoning framework for VLMs, encompassing the definition of structured reasoning formats, SFT data construction, process reward model training, and RL training and inference-time scaling based on fine-grained rewards.
+**Goal**: To establish a complete step-level reasoning framework for VLMs, encompassing the definition of structured reasoning formats, SFT data construction, process reward model training, and RL training and inference-time scaling based on fine-grained rewards.
 
-**Starting Point**: The framework begins with structured design of the reasoning chain, using special tokens to delineate step boundaries. A Reflection component is introduced at each step to anchor reasoning to visual content and mitigate hallucinations, ensuring stable and parseable step segmentation that provides a solid foundation for PRM training and RL.
+**Key Insight**: The framework begins with structured design of the reasoning chain, using special tokens to delineate step boundaries. A Reflection component is introduced at each step to anchor reasoning to visual content and mitigate hallucinations, ensuring stable and parseable step segmentation that provides a solid foundation for PRM training and RL.
 
 **Core Idea**: By structuring VLM reasoning chains into evaluable discrete steps and training a PRM to provide step-level fine-grained rewards, both RL training and inference-time scaling can benefit from intermediate step quality.
 

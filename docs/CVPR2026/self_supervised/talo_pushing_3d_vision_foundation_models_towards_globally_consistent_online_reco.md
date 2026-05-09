@@ -29,15 +29,15 @@ This paper proposes TALO, a high-degrees-of-freedom alignment framework based on
 
 ## Background & Motivation
 
-**State of the Field**: 3DVFMs such as VGGT, π³, and MapAnything can reconstruct key 3D properties (intrinsics, poses, dense geometry) from uncalibrated images via a single forward pass, demonstrating strong generalization. However, these models are predominantly designed for offline settings. When deployed in online scenarios such as autonomous driving, each temporal window (submap) is inferred independently, making cross-submap consistency difficult to guarantee.
+**Background**: 3DVFMs such as VGGT, π³, and MapAnything can reconstruct key 3D properties (intrinsics, poses, dense geometry) from uncalibrated images via a single forward pass, demonstrating strong generalization. However, these models are predominantly designed for offline settings. When deployed in online scenarios such as autonomous driving, each temporal window (submap) is inferred independently, making cross-submap consistency difficult to guarantee.
 
 **Limitations of Prior Work**: VGGT-Long employs 7-DOF Sim(3) alignment, while VGGT-SLAM uses 15-DOF SL(4) alignment. However, Sim(3) cannot handle spatially varying nonlinear geometric distortions, and SL(4) is highly unstable in outdoor multi-camera settings, with divergence occurring in over 60% of scenes. Both methods perform only pairwise alignment between adjacent submaps, precluding global consistency.
 
-**Root Cause**: Prediction errors from foundation models are spatially non-uniform (e.g., different cameras exhibit opposing depth scale biases), so a single global linear transformation cannot simultaneously correct all regions. The underconstrained nature of SL(4) makes it extremely sensitive to geometric noise, frequently producing physically implausible poses (e.g., severely tilted buildings).
+**Key Challenge**: Prediction errors from foundation models are spatially non-uniform (e.g., different cameras exhibit opposing depth scale biases), so a single global linear transformation cannot simultaneously correct all regions. The underconstrained nature of SL(4) makes it extremely sensitive to geometric noise, frequently producing physically implausible poses (e.g., severely tilted buildings).
 
-**Paper Goals**: To correct spatially varying geometric inconsistencies of 3DVFMs in an online setting in a flexible manner, while remaining robust to noise.
+**Goal**: To correct spatially varying geometric inconsistencies of 3DVFMs in an online setting in a flexible manner, while remaining robust to noise.
 
-**Starting Point**: Thin Plate Spline (TPS) is employed to provide a higher-degrees-of-freedom nonlinear deformation field, combined with globally propagated control points to capture long-range information, and point-agnostic submap registration to replace alignment based on noisy point clouds.
+**Key Insight**: Thin Plate Spline (TPS) is employed to provide a higher-degrees-of-freedom nonlinear deformation field, combined with globally propagated control points to capture long-range information, and point-agnostic submap registration to replace alignment based on noisy point clouds.
 
 **Core Idea**: Replace conventional Sim(3)/SL(4) global transformations with a TPS deformation field and global control point propagation to achieve flexible correction of spatially varying distortions in online 3D reconstruction.
 

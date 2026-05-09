@@ -28,7 +28,7 @@ This paper proposes MLE-Live — the first real-time evaluation framework simula
 ## Background & Motivation
 LLM-based ML agents have demonstrated significant potential for automating ML engineering. MLAB adopts ReAct-style structured decision-making, AIDE employs tree search for exploration, and AutoKaggle introduces multi-agent specialization. These systems have shown progress on Kaggle-style competitions.
 
-**Root Cause**: Existing agents operate in **isolated environments** — relying solely on internal memory and trial-and-error exploration — while completely ignoring a critical component of real-world ML workflows: **community knowledge sharing**. In real data science competitions and research, participants frequently learn from public discussions, shared notebooks, and community insights. Current agents, unable to leverage such dynamic external context, tend to converge to repetitive strategies and hit performance ceilings.
+**Key Challenge**: Existing agents operate in **isolated environments** — relying solely on internal memory and trial-and-error exploration — while completely ignoring a critical component of real-world ML workflows: **community knowledge sharing**. In real data science competitions and research, participants frequently learn from public discussions, shared notebooks, and community insights. Current agents, unable to leverage such dynamic external context, tend to converge to repetitive strategies and hit performance ceilings.
 
 **Two Key Problems**:
 1. How to evaluate an agent's ability to leverage collective knowledge? (→ MLE-Live benchmark)

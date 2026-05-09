@@ -35,7 +35,7 @@ The Combinatorial Semi-Bandit (CMAB) is a generalization of the classical multi-
 
 **Limitations of Prior Work**: Cuvelier et al. proposed approximation-based methods to reduce computational complexity, but introduced a trade-off between regret and computation — achieving optimal regret requires increasingly precise approximations, potentially leading to unbounded computation time. Combes et al. heuristically use $O(\log T)$ oracle calls but provide no theoretical regret guarantees.
 
-**Starting Point**: Drawing on ideas from batch learning, the paper designs epoch-based oracle query strategies that concentrate oracle calls at critical time points and reuse decisions from the previous round for the majority of steps. The core idea is to optimize oracle efficiency along two dimensions: adaptive complexity (number of sequential query rounds) and query complexity (total number of queries).
+**Key Insight**: Drawing on ideas from batch learning, the paper designs epoch-based oracle query strategies that concentrate oracle calls at critical time points and reuse decisions from the previous round for the majority of steps. The core idea is to optimize oracle efficiency along two dimensions: adaptive complexity (number of sequential query rounds) and query complexity (total number of queries).
 
 ## Method
 

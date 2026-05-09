@@ -31,7 +31,7 @@ This paper proposes Guard, a lightweight robustification framework that improves
 
 ### State of the Field
 
-**State of the Field**: The online caching problem requires minimizing cache misses under a cache of size $k$. Learning-augmented caching algorithms leverage ML predictions to guide eviction decisions, facing an inherent consistency–robustness tradeoff:
+**Background**: The online caching problem requires minimizing cache misses under a cache of size $k$. Learning-augmented caching algorithms leverage ML predictions to guide eviction decisions, facing an inherent consistency–robustness tradeoff:
 
 ### Limitations of Prior Work
 
@@ -39,7 +39,7 @@ This paper proposes Guard, a lightweight robustification framework that improves
 
 ### Root Cause
 
-**Root Cause**: **Robustness**: performance does not degrade arbitrarily when predictions are severely inaccurate.
+**Key Challenge**: **Robustness**: performance does not degrade arbitrarily when predictions are severely inaccurate.
 
 Challenges with existing approaches:
 

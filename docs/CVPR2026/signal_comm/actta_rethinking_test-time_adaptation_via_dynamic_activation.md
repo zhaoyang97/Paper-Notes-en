@@ -28,15 +28,15 @@ This paper proposes AcTTA, a test-time adaptation framework based on dynamic act
 
 ## Background & Motivation
 
-1. **State of the Field**: Test-time adaptation (TTA) is an important paradigm for addressing the mismatch between deployment environments and training distributions. Existing TTA methods primarily focus on adjusting affine parameters and recalibrating running statistics of normalization layers; methods such as TENT, EATA, and SAR all center their adaptation mechanisms on normalization layers.
+1. **Background**: Test-time adaptation (TTA) is an important paradigm for addressing the mismatch between deployment environments and training distributions. Existing TTA methods primarily focus on adjusting affine parameters and recalibrating running statistics of normalization layers; methods such as TENT, EATA, and SAR all center their adaptation mechanisms on normalization layers.
 
 2. **Limitations of Prior Work**: This normalization-centric perspective overlooks a critical component—the activation function. As the nonlinear core of a network, activation functions fundamentally shape the geometry of the feature space and determine how the model responds to input variations. Yet in TTA, activation functions have consistently been treated as fixed nonlinear mappings and have never been incorporated into the adaptation process.
 
-3. **Root Cause**: Under distribution shift, the source-domain statistics stored in BN layers no longer align with target-domain features, producing biased feature representations. When these biased features pass through zero-centered activation functions (e.g., ReLU, GELU), useful signals may be suppressed below the activation boundary, leading to information loss and vanishing gradients. This "zero-center rigidity" is a key factor limiting adaptation effectiveness.
+3. **Key Challenge**: Under distribution shift, the source-domain statistics stored in BN layers no longer align with target-domain features, producing biased feature representations. When these biased features pass through zero-centered activation functions (e.g., ReLU, GELU), useful signals may be suppressed below the activation boundary, leading to information loss and vanishing gradients. This "zero-center rigidity" is a key factor limiting adaptation effectiveness.
 
-4. **Paper Goals**: The paper seeks to make activation functions themselves adaptable components within TTA by: (1) adjusting gradient behavior to maintain learning flow; (2) shifting activation boundaries to align with new feature centers; and (3) preserving compatibility with source-domain pretrained representations.
+4. **Goal**: The paper seeks to make activation functions themselves adaptable components within TTA by: (1) adjusting gradient behavior to maintain learning flow; (2) shifting activation boundaries to align with new feature centers; and (3) preserving compatibility with source-domain pretrained representations.
 
-5. **Starting Point**: The authors observe that outside of TTA, learnable or modulatable activation functions (e.g., PReLU, ACON, PAU) have demonstrated that even subtle modifications to activation behavior can improve performance and training stability—indicating that activation functions possess inherent learnable flexibility.
+5. **Key Insight**: The authors observe that outside of TTA, learnable or modulatable activation functions (e.g., PReLU, ACON, PAU) have demonstrated that even subtle modifications to activation behavior can improve performance and training stability—indicating that activation functions possess inherent learnable flexibility.
 
 6. **Core Idea**: Transform activation functions from fixed components into adaptive participants—by parameterizing the activation center and asymmetric slopes, enabling the network to self-correct internal biases at inference time.
 

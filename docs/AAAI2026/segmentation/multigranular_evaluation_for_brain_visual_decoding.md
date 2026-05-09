@@ -36,7 +36,7 @@ Second, **lack of neuroscientific grounding** — human visual perception is hie
 
 Third, **absence of diagnostic capacity** — black-box single-score metrics cannot inform researchers where reconstruction fails: incorrect object categories, wrong attributes, or implausible spatial relations.
 
-The paper's **Starting Point** is to design a unified evaluation framework, BASIC, that simultaneously covers low-level structural and high-level semantic aspects with multigranular diagnostic capability, applicable to all stimulus–neuroimaging modality combinations.
+The paper's **Key Insight** is to design a unified evaluation framework, BASIC, that simultaneously covers low-level structural and high-level semantic aspects with multigranular diagnostic capability, applicable to all stimulus–neuroimaging modality combinations.
 
 ## Method
 

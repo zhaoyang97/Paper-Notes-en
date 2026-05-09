@@ -29,15 +29,15 @@ This paper proposes GODD (Geometric OOD Diffusion Model), which captures distrib
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning-based 3D molecule generation is a frontier direction in drug discovery. Diffusion models (e.g., EDM, GeoDiff) have demonstrated strong capabilities in 3D molecule generation, producing molecular geometries that conform to chemical rules.
+**Background**: Deep learning-based 3D molecule generation is a frontier direction in drug discovery. Diffusion models (e.g., EDM, GeoDiff) have demonstrated strong capabilities in 3D molecule generation, producing molecular geometries that conform to chemical rules.
 
 **Limitations of Prior Work**: (1) 3D molecule generation models typically assume that training and test data share the same distribution; however, in drug design, target molecules often differ significantly from the training distribution—for instance, requiring the generation of molecules with novel scaffolds or functional groups. (2) This out-of-distribution (OOD) generation problem is particularly acute in molecular design, as valuable novel drug molecules are, almost by definition, "previously unseen." (3) Existing OOD molecule generation research has focused primarily on property shifts (e.g., generating molecules with higher activity) while neglecting structural shifts (e.g., generating molecules with different scaffolds), the latter being a more fundamental and challenging problem.
 
-**Root Cause**: Data-scarce regions are precisely where generative models are most needed for exploration, yet models cannot effectively generate in those regions due to the lack of training data—a chicken-and-egg dilemma.
+**Key Challenge**: Data-scarce regions are precisely where generative models are most needed for exploration, yet models cannot effectively generate in those regions due to the lack of training data—a chicken-and-egg dilemma.
 
-**Paper Goals**: (1) Train a generative model on data-rich molecular distributions. (2) Enable the model to generalize to data-scarce molecular distributions. (3) Handle structural-level distribution shifts (rather than property shifts alone).
+**Goal**: (1) Train a generative model on data-rich molecular distributions. (2) Enable the model to generalize to data-scarce molecular distributions. (3) Handle structural-level distribution shifts (rather than property shifts alone).
 
-**Starting Point**: The authors observe that although different molecular distributions vary greatly in their specific structures, their distributional priors can be encoded as structural-grained representations. By learning prior representations that distinguish different distributions, a diffusion model can be guided to generate toward a target distribution even when that distribution has almost no training data.
+**Key Insight**: The authors observe that although different molecular distributions vary greatly in their specific structures, their distributional priors can be encoded as structural-grained representations. By learning prior representations that distinguish different distributions, a diffusion model can be guided to generate toward a target distribution even when that distribution has almost no training data.
 
 **Core Idea**: An equivariant asymmetric autoencoder is used to extract "distributional structural priors." A small number of samples from the target distribution encode its prior features, which are then injected into the diffusion denoising process to guide generation toward sparse regions of the target distribution.
 

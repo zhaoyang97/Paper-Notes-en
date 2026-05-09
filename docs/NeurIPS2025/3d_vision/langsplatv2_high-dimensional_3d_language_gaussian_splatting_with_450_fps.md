@@ -29,15 +29,15 @@ By treating each 3D Gaussian as a sparse code over a global dictionary, LangSpla
 
 ## Background & Motivation
 
-**State of the Field**: 3D language fields sit at the intersection of vision-language models and 3D environment modeling. LangSplat made significant progress by embedding CLIP features into 3D Gaussian Splatting, achieving a 199× speedup over LERF.
+**Background**: 3D language fields sit at the intersection of vision-language models and 3D environment modeling. LangSplat made significant progress by embedding CLIP features into 3D Gaussian Splatting, achieving a 199× speedup over LERF.
 
 **Limitations of Prior Work**: LangSplat still falls short of real-time inference (8.2 FPS). Its heavyweight MLP decoder accounts for 97.1% of total inference time, severely limiting applications in AR, robotics, and related domains.
 
-**Root Cause**: CLIP features are 512-dimensional high-dimensional vectors; direct splatting is prohibitively expensive (1536-dim is 15× slower than 3-dim). However, compressing features to low dimensions via an encoder-decoder introduces a heavy MLP bottleneck.
+**Key Challenge**: CLIP features are 512-dimensional high-dimensional vectors; direct splatting is prohibitively expensive (1536-dim is 15× slower than 3-dim). However, compressing features to low dimensions via an encoder-decoder introduces a heavy MLP bottleneck.
 
-**Paper Goals**: Eliminate the decoder bottleneck and achieve real-time splatting of high-dimensional features.
+**Goal**: Eliminate the decoder bottleneck and achieve real-time splatting of high-dimensional features.
 
-**Starting Point**: The observation that millions of Gaussians in a scene encode only a limited number of distinct semantic concepts, making sparse coding a natural and efficient representation.
+**Key Insight**: The observation that millions of Gaussians in a scene encode only a limited number of distinct semantic concepts, making sparse coding a natural and efficient representation.
 
 **Core Idea**: The language feature of each Gaussian is a sparse linear combination of K basis vectors from a global codebook; sparse coefficients are rendered in place of high-dimensional features.
 

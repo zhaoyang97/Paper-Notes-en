@@ -28,15 +28,15 @@ This paper presents DeepPersona, a two-stage taxonomy-guided synthetic persona g
 
 ## Background & Motivation
 
-**State of the Field**: Using LLMs to generate synthetic personas has been widely adopted in personalized assistants, social behavior simulation, role-playing agents, and alignment research. PersonaHub can generate up to one billion brief persona descriptions.
+**Background**: Using LLMs to generate synthetic personas has been widely adopted in personalized assistants, social behavior simulation, role-playing agents, and alignment research. PersonaHub can generate up to one billion brief persona descriptions.
 
 **Limitations of Prior Work**: Existing synthetic personas are extremely shallow—typically containing fewer than 30 manually defined attributes or a few lines of templated description, lacking depth, diversity, and authenticity. Directly scaling with LLMs leads to insufficient diversity, stereotypical biases, and overly optimistic tendencies.
 
-**Root Cause**: **Depth** is the critical bottleneck for narratively coherent personas. Existing methods can scale in quantity and diversity, but attribute depth consistently remains in the single-to-double-digit range, failing to capture the rich complexity of real human individuals.
+**Key Challenge**: **Depth** is the critical bottleneck for narratively coherent personas. Existing methods can scale in quantity and diversity, but attribute depth consistently remains in the single-to-double-digit range, failing to capture the rich complexity of real human individuals.
 
-**Paper Goals**: To build a scalable, data-driven method that simultaneously achieves (a) broad attribute coverage ($k > 10^2$ attributes); (b) diversity (free of stereotypes); and (c) internal consistency.
+**Goal**: To build a scalable, data-driven method that simultaneously achieves (a) broad attribute coverage ($k > 10^2$ attributes); (b) diversity (free of stereotypes); and (c) internal consistency.
 
-**Starting Point**: Extract attributes from real user self-disclosure conversations to construct a taxonomy, then use the taxonomy to guide progressive sampling rather than directly prompting LLMs to generate personas.
+**Key Insight**: Extract attributes from real user self-disclosure conversations to construct a taxonomy, then use the taxonomy to guide progressive sampling rather than directly prompting LLMs to generate personas.
 
 **Core Idea**: A data-driven 8,000+ node attribute taxonomy guides progressive sampling, transforming LLMs from "free generation" to "structured slot-filling," achieving both depth and diversity in synthetic personas.
 

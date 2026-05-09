@@ -30,13 +30,13 @@ This paper proposes two multi-agent online coordination algorithms, MA-SPL and M
 
 ### State of the Field
 
-**State of the Field**: Multi-agent online coordination (MA-OC) requires multiple distributed agents to collaboratively maximize time-varying set-function objectives (e.g., UAV target tracking, area monitoring) in an online manner. Existing methods are mostly restricted to submodular objective functions.
+**Background**: Multi-agent online coordination (MA-OC) requires multiple distributed agents to collaboratively maximize time-varying set-function objectives (e.g., UAV target tracking, area monitoring) in an online manner. Existing methods are mostly restricted to submodular objective functions.
 
 **Limitations of Prior Work**: (a) The standard multilinear extension guarantees lossless rounding only for submodular functions and fails for non-submodular ones; (b) weakly submodular and $\alpha$-weakly DR-submodular functions have never been studied in online settings.
 
-**Root Cause**: How can provable approximation guarantees be achieved for objectives beyond submodularity under decentralized, local-feedback-only constraints?
+**Key Challenge**: How can provable approximation guarantees be achieved for objectives beyond submodularity under decentralized, local-feedback-only constraints?
 
-**Starting Point**: Design a *policy-based continuous extension* that guarantees lossless rounding for arbitrary set functions (not limited to submodular ones), bypassing the dependence of the multilinear extension on submodularity.
+**Key Insight**: Design a *policy-based continuous extension* that guarantees lossless rounding for arbitrary set functions (not limited to submodular ones), bypassing the dependence of the multilinear extension on submodularity.
 
 **Core Idea**: Optimize policy parameters in continuous space; convert discrete optimization into continuous optimization via a novel continuous extension, then recover discrete solutions through lossless rounding.
 

@@ -29,15 +29,15 @@ Constructs the first large-scale dataset Persona-E2 linking personality traits (
 
 ## Background & Motivation
 
-**State of the Field**: Affective computing research primarily focuses on emotions expressed by authors in text, while neglecting reader-perspective emotional assessment. Existing datasets mostly aggregate annotations into single labels, masking emotional diversity arising from personality differences across individuals.
+**Background**: Affective computing research primarily focuses on emotions expressed by authors in text, while neglecting reader-perspective emotional assessment. Existing datasets mostly aggregate annotations into single labels, masking emotional diversity arising from personality differences across individuals.
 
 **Limitations of Prior Work**: Role-playing LLMs attempt to simulate personalized responses by injecting personality traits into prompts, but they often exhibit "personality illusion"—merely imitating surface linguistic styles rather than truly adopting personality-based cognitive appraisal patterns. More critically, real human data is lacking to verify whether LLMs genuinely capture personality-driven emotional diversity.
 
-**Root Cause**: Cognitive appraisal theory indicates that emotions arise from individualized appraisal processes influenced by goals and personality traits, but the NLP field lacks benchmark datasets systematically linking personality traits with emotional responses. LLM-generated pseudo-labels cannot substitute for real human data for validation.
+**Key Challenge**: Cognitive appraisal theory indicates that emotions arise from individualized appraisal processes influenced by goals and personality traits, but the NLP field lacks benchmark datasets systematically linking personality traits with emotional responses. LLM-generated pseudo-labels cannot substitute for real human data for validation.
 
-**Paper Goals**: Construct a dataset with real personality annotations for reader emotional responses, enabling (1) analysis of how personality influences emotional appraisal, (2) evaluation of LLM ability to simulate personality-shaped emotions, (3) investigation of whether LLMs can generate psychologically plausible reasoning.
+**Goal**: Construct a dataset with real personality annotations for reader emotional responses, enabling (1) analysis of how personality influences emotional appraisal, (2) evaluation of LLM ability to simulate personality-shaped emotions, (3) investigation of whether LLMs can generate psychologically plausible reasoning.
 
-**Starting Point**: Have real annotators with measured personality traits (MBTI + Big Five) annotate emotional responses to events across news, social media, and life narratives, with 36 annotations per event ensuring dense personality diversity coverage.
+**Key Insight**: Have real annotators with measured personality traits (MBTI + Big Five) annotate emotional responses to events across news, social media, and life narratives, with 36 annotations per event ensuring dense personality diversity coverage.
 
 **Core Idea**: Through real personality assessment + dense annotation (36 people/event) + cross-domain event coverage, construct the first personality-event-emotion benchmark dataset to systematically evaluate personality's influence on emotional appraisal and LLMs' simulation capability.
 

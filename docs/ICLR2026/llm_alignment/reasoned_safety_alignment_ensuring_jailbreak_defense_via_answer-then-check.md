@@ -28,18 +28,18 @@ This paper proposes an Answer-Then-Check strategy: the model first generates an 
 
 ## Background & Motivation
 
-**State of the Field**: LLM safety alignment employs SFT/RLHF and related methods to train models to refuse harmful requests. However, jailbreak attacks continue to evolve, circumventing safety mechanisms through role-playing (PAP), template mutation (GPTFuzzer), and iterative optimization (PAIR/TAP).
+**Background**: LLM safety alignment employs SFT/RLHF and related methods to train models to refuse harmful requests. However, jailbreak attacks continue to evolve, circumventing safety mechanisms through role-playing (PAP), template mutation (GPTFuzzer), and iterative optimization (PAIR/TAP).
 
 **Limitations of Prior Work**:
    - Current alignment methods follow a "judge-then-answer" paradigm—the model decides whether to refuse or comply upon seeing a query, yet malicious intent may be deeply concealed at that stage.
    - Post-hoc detection methods (e.g., LlamaGuard) can only issue flat refusals and cannot provide empathetic safety responses to sensitive queries (e.g., self-harm).
    - Inference-time defense strategies (e.g., prompt engineering) are limited in effectiveness because models lack sufficient familiarity with safety policies.
 
-**Root Cause**: Malicious intent can be deeply disguised at the query level and is difficult to detect; however, once the model attempts to generate a response, harmful content is inevitably exposed—a critical asymmetry.
+**Key Challenge**: Malicious intent can be deeply disguised at the query level and is difficult to detect; however, once the model attempts to generate a response, harmful content is inevitably exposed—a critical asymmetry.
 
-**Paper Goals**: Exploit this asymmetry to design a defense: allow the model to first answer (exposing intent) and then check (identifying risk).
+**Goal**: Exploit this asymmetry to design a defense: allow the model to first answer (exposing intent) and then check (identifying risk).
 
-**Starting Point**: Leverage Long Chain-of-Thought reasoning; during the `<think>` phase, generate an answer summary and analyze safety before presenting only verified content to the user.
+**Key Insight**: Leverage Long Chain-of-Thought reasoning; during the `<think>` phase, generate an answer summary and analyze safety before presenting only verified content to the user.
 
 **Core Idea**: Attempting to answer first surfaces malicious intent, which is then scrutinized against a safety policy—yielding logical immunity to jailbreak attacks.
 

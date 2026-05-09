@@ -29,15 +29,15 @@ This paper proposes SolverLLM, a training-free framework that treats the mathema
 
 ## Background & Motivation
 
-**State of the Field**: Solving optimization problems involves three stages—problem formulation (natural language → mathematical modeling), code generation (mathematical model → executable code), and program execution (invoking solvers such as Gurobi/Pyomo). Problem formulation requires both domain knowledge and mathematical programming expertise, making it the central bottleneck for automation. LLMs offer a promising avenue for automating this process.
+**Background**: Solving optimization problems involves three stages—problem formulation (natural language → mathematical modeling), code generation (mathematical model → executable code), and program execution (invoking solvers such as Gurobi/Pyomo). Problem formulation requires both domain knowledge and mathematical programming expertise, making it the central bottleneck for automation. LLMs offer a promising avenue for automating this process.
 
 **Limitations of Prior Work**: Existing approaches fall into two categories. Prompting-based methods (Chain-of-Experts, OptiMUS) rely on multi-agent collaboration but are highly sensitive to prompt design and generalize poorly to unfamiliar problem types. Learning-based methods (ORLM, LLMOPT) acquire domain capabilities via supervised fine-tuning but depend heavily on large-scale annotated data, struggle with cross-domain generalization, and incur high training costs.
 
-**Root Cause**: A fundamental tension exists among generality, high performance, and low training cost—prompting-based methods are training-free but performance-limited, while fine-tuned methods perform well but lack generality. The challenge is to achieve high performance and cross-domain generalization simultaneously without any training.
+**Key Challenge**: A fundamental tension exists among generality, high performance, and low training cost—prompting-based methods are training-free but performance-limited, while fine-tuned methods perform well but lack generality. The challenge is to achieve high performance and cross-domain generalization simultaneously without any training.
 
-**Paper Goals**: Replace training-time computation with test-time computation by constructing a general framework that improves optimization problem modeling quality through structured search at inference time, without requiring additional training.
+**Goal**: Replace training-time computation with test-time computation by constructing a general framework that improves optimization problem modeling quality through structured search at inference time, without requiring additional training.
 
-**Starting Point**: Test-time scaling has demonstrated performance gains on tasks such as mathematical reasoning by allocating more inference computation. The modeling process for optimization problems is naturally suited to structured search—it can be decomposed into multiple semantic elements (type, sets, parameters, variables, objective, constraints), enabling layer-by-layer search for the optimal formulation.
+**Key Insight**: Test-time scaling has demonstrated performance gains on tasks such as mathematical reasoning by allocating more inference computation. The modeling process for optimization problems is naturally suited to structured search—it can be decomposed into multiple semantic elements (type, sets, parameters, variables, objective, constraints), enabling layer-by-layer search for the optimal formulation.
 
 **Core Idea**: Treat the mathematical modeling of optimization problems as a search problem, explore the six-element formulation space with an enhanced MCTS, and guide the search direction via reasoning signal feedback and uncertainty estimation.
 

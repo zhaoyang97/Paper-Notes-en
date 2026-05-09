@@ -29,15 +29,15 @@ PanoAffordanceNet introduces a novel task of holistic affordance grounding in 36
 
 ## Background & Motivation
 
-**State of the Field**: Visual affordance research aims to localize interactive regions on objects, serving as a bridge between visual perception and physical manipulation. Existing methods have evolved from fully supervised to weakly supervised approaches (LOCATE/WSMA), and further to foundation-model-driven open-vocabulary methods (OOAL/AffordanceLLM). However, nearly all are validated on object-centric paradigms and limited-field-of-view images.
+**Background**: Visual affordance research aims to localize interactive regions on objects, serving as a bridge between visual perception and physical manipulation. Existing methods have evolved from fully supervised to weakly supervised approaches (LOCATE/WSMA), and further to foundation-model-driven open-vocabulary methods (OOAL/AffordanceLLM). However, nearly all are validated on object-centric paradigms and limited-field-of-view images.
 
 **Limitations of Prior Work**: (1) Service robots operate in 360° physical spaces, yet existing methods process only perspective images with restricted fields of view (FOV), creating a mismatch with the 360° action space; (2) Directly applying perspective methods to panoramic images causes severe performance degradation — equirectangular projection (ERP) introduces significant geometric distortion (polar stretching), non-uniform sampling results in sparse and scattered affordance region distributions, and precise alignment of abstract affordance semantics with multi-scale regions is extremely difficult.
 
-**Root Cause**: Panoramic images are not merely an extension of the field of view — they fundamentally alter the spatial distribution of features. The triple challenges of latitude-dependent ERP distortion, fragmented affordance region distribution, and semantic drift under weak supervision are deeply intertwined and entirely beyond the reach of existing methods.
+**Key Challenge**: Panoramic images are not merely an extension of the field of view — they fundamentally alter the spatial distribution of features. The triple challenges of latitude-dependent ERP distortion, fragmented affordance region distribution, and semantic drift under weak supervision are deeply intertwined and entirely beyond the reach of existing methods.
 
-**Paper Goals**: (1) How to preserve local interaction details and global affordance structure under ERP distortion; (2) How to recover continuous and complete affordance regions from sparse, fragmented initial activations; (3) How to precisely align semantics and visual regions under extremely sparse (one-shot) annotations.
+**Goal**: (1) How to preserve local interaction details and global affordance structure under ERP distortion; (2) How to recover continuous and complete affordance regions from sparse, fragmented initial activations; (3) How to precisely align semantics and visual regions under extremely sparse (one-shot) annotations.
 
-**Starting Point**: The problem is decomposed into three independent channels: spectrum-domain processing for distortion (high-frequency and low-frequency correction separately), spherical topology-domain processing for fragmentation (self-similarity propagation), and contrastive learning-domain processing for semantic drift (region–text alignment).
+**Key Insight**: The problem is decomposed into three independent channels: spectrum-domain processing for distortion (high-frequency and low-frequency correction separately), spherical topology-domain processing for fragmentation (self-similarity propagation), and contrastive learning-domain processing for semantic drift (region–text alignment).
 
 **Core Idea**: A three-stage design combining spectral distortion correction, spherical densification, and multi-level constraints enables one-shot holistic affordance grounding in 360° indoor environments.
 

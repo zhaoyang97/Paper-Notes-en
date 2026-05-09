@@ -28,15 +28,15 @@ This paper introduces EgoGazeVQA, the first egocentric video question answering 
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs have achieved significant progress in video understanding; however, existing benchmarks are predominantly based on third-person perspectives and cannot directly capture user attention focus or behavioral intent.
+**Background**: MLLMs have achieved significant progress in video understanding; however, existing benchmarks are predominantly based on third-person perspectives and cannot directly capture user attention focus or behavioral intent.
 
 **Limitations of Prior Work**: Existing egocentric video QA benchmarks (e.g., QaEgo4D, EgoSchema) overlook a critical first-person signal — gaze. Gaze directly reflects user attention and intent, and the majority of user queries are fundamentally dependent on what the user is looking at.
 
-**Root Cause**: MLLMs construct visual tokens from global image frames, providing broad context while failing to capture the explicit intent signals of the camera wearer, making it difficult for models to accurately infer what the user is viewing or intending to do.
+**Key Challenge**: MLLMs construct visual tokens from global image frames, providing broad context while failing to capture the explicit intent signals of the camera wearer, making it difficult for models to accurately infer what the user is viewing or intending to do.
 
-**Paper Goals**: To construct the first egocentric VQA benchmark that integrates gaze data, and to evaluate whether MLLMs can leverage gaze information to enhance understanding of user intent.
+**Goal**: To construct the first egocentric VQA benchmark that integrates gaze data, and to evaluate whether MLLMs can leverage gaze information to enhance understanding of user intent.
 
-**Starting Point**: Gaze coordinate information is incorporated into MLLM prompts via three distinct modalities — textual, visual markers, and salience maps.
+**Key Insight**: Gaze coordinate information is incorporated into MLLM prompts via three distinct modalities — textual, visual markers, and salience maps.
 
 **Core Idea**: Gaze signals represent a critically missing modality for understanding user intent in egocentric video; gaze-guided prompting can substantially compensate for MLLMs' deficiencies in intent understanding.
 

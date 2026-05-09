@@ -26,7 +26,7 @@ content_hash: bb3d42fc4380ff2a
 AnyDoc proposes a general-purpose document generation framework based on a unified HTML/CSS representation. It constructs a 265K-document dataset, DocHTML, via an automated data synthesis pipeline, and fine-tunes a multimodal large language model through SFT and Height-Aware Reinforcement Learning (HARL). The framework surpasses baselines including GPT-4o on three tasks: intent-to-document, document de-rendering, and element-to-document generation.
 
 ## Background & Motivation
-**State of the Field**: Various document types (resumes, presentations, reports, etc.) are widely used in everyday workflows, and manually designing high-quality documents requires balancing structure, layout, visual, and stylistic principles. Automated document generation has attracted increasing research attention in recent years.
+**Background**: Various document types (resumes, presentations, reports, etc.) are widely used in everyday workflows, and manually designing high-quality documents requires balancing structure, layout, visual, and stylistic principles. Automated document generation has attracted increasing research attention in recent years.
 
 **Limitations of Prior Work**:
    - **Limited applicability**: Most methods target a single document category (e.g., advertisements, slides, infographics) and struggle to generalize to unseen categories.
@@ -35,9 +35,9 @@ AnyDoc proposes a general-purpose document generation framework based on a unifi
      - Flat coordinate sequences (JSON): require extensive coordinate computation for complex documents and fail to capture hierarchical structure.
    - **Data scarcity**: Manually crafting documents is costly; existing datasets are small-scale (e.g., Crello with only 20K samples) and cover few categories.
 
-**Root Cause**: How to simultaneously achieve category generalizability, structural editability, and data sufficiency?
+**Key Challenge**: How to simultaneously achieve category generalizability, structural editability, and data sufficiency?
 
-**Starting Point**: Introducing HTML/CSS as a unified document representation—naturally hierarchical, expressive layout mechanisms (flexbox/grid), and amenable to large-scale synthesis.
+**Key Insight**: Introducing HTML/CSS as a unified document representation—naturally hierarchical, expressive layout mechanisms (flexbox/grid), and amenable to large-scale synthesis.
 
 **Core Idea**: Unified HTML/CSS representation + automated data synthesis pipeline + HARL to address overflow = general-purpose, high-quality document generation.
 

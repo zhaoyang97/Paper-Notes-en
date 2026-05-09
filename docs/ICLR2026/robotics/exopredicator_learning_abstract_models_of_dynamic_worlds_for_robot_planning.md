@@ -31,7 +31,7 @@ This paper proposes ExoPredicator, a framework that jointly learns symbolic stat
 
 ### Limitations of Prior Work
 
-**Limitations of Prior Work**: **State of the Field**: 1. In long-horizon embodied planning, the world changes not only due to agent actions but also through **exogenous processes** (e.g., water heating, domino cascades) that unfold concurrently with agent actions.
+**Limitations of Prior Work**: **Background**: 1. In long-horizon embodied planning, the world changes not only due to agent actions but also through **exogenous processes** (e.g., water heating, domino cascades) that unfold concurrently with agent actions.
 2. Existing abstract world models (e.g., STRIPS) assume instantaneous actions and cannot model delayed effects or autonomous exogenous processes.
 3. Classical PDDL does not directly support exogenous processes (requiring the PDDL+ extension), and suffers from combinatorial explosion when discretizing time.
 4. VLM/VLA models lack compositional world models and generalize poorly to novel tasks.

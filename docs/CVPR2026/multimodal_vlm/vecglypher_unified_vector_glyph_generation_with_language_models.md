@@ -27,15 +27,15 @@ content_hash: 7b87e5328b601212
 VecGlypher is proposed as the first unified language model for text- and image-guided vector glyph generation. Through a two-stage training pipeline (large-scale SVG syntax learning followed by expert-annotated alignment), it autoregressively generates editable SVG paths directly, without rasterization intermediate steps or vectorization post-processing.
 
 ## Background & Motivation
-**State of the Field**: Vector glyphs are the atomic units of digital typography. However, existing learning-based methods remain predominantly image-guided — generating vector outlines for unseen characters given a few reference glyph images — and rely on carefully prepared reference sheets and raster-to-vector post-processing.
+**Background**: Vector glyphs are the atomic units of digital typography. However, existing learning-based methods remain predominantly image-guided — generating vector outlines for unseen characters given a few reference glyph images — and rely on carefully prepared reference sheets and raster-to-vector post-processing.
 
 **Limitations of Prior Work**: (a) Image-guided methods require users to first create or collect reference glyphs, which is a bottleneck for non-expert users; (b) rasterization intermediate steps introduce vectorization artifacts that degrade editability; (c) general-purpose SVG generation LLMs fail entirely on glyph generation, as fonts impose extremely strict requirements on coordinate precision, topological correctness, and stylistic consistency.
 
-**Root Cause**: Natural language is a more accessible interface for font design, and SVG paths are inherently text sequences well-suited for language modeling — yet this requires (a) large-scale font training data to teach models how to "draw" characters, and (b) typography-aware data engineering for coordinate normalization and path canonicalization.
+**Key Challenge**: Natural language is a more accessible interface for font design, and SVG paths are inherently text sequences well-suited for language modeling — yet this requires (a) large-scale font training data to teach models how to "draw" characters, and (b) typography-aware data engineering for coordinate normalization and path canonicalization.
 
-**Paper Goals**: To support both text descriptions and image references as conditions within a single multimodal LLM, directly generating high-fidelity, editable SVG glyphs.
+**Goal**: To support both text descriptions and image references as conditions within a single multimodal LLM, directly generating high-fidelity, editable SVG glyphs.
 
-**Starting Point**: A two-stage training strategy — first learning to draw SVGs on large-scale noisy fonts, then learning instruction-following on small-scale expert-annotated fonts.
+**Key Insight**: A two-stage training strategy — first learning to draw SVGs on large-scale noisy fonts, then learning instruction-following on small-scale expert-annotated fonts.
 
 **Core Idea**: Glyph generation is formulated as a multimodal language modeling problem. The model learns SVG syntax from 39K Envato fonts and style alignment from 2.5K Google Fonts, producing correct SVG paths in a single forward pass.
 

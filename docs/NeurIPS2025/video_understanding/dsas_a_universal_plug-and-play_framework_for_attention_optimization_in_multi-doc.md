@@ -28,15 +28,15 @@ This paper proposes Dual-Stage Adaptive Sharpening (DSAS), a training-free plug-
 
 ## Background & Motivation
 
-**State of the Field**: The context windows of Transformer-based LLMs have been extended to 128K or even 1M tokens, theoretically enabling multi-document QA. However, naively concatenating multiple documents causes attention dilution, where critical cross-document dependencies are overwhelmed by irrelevant tokens.
+**Background**: The context windows of Transformer-based LLMs have been extended to 128K or even 1M tokens, theoretically enabling multi-document QA. However, naively concatenating multiple documents causes attention dilution, where critical cross-document dependencies are overwhelmed by irrelevant tokens.
 
 **Limitations of Prior Work**: (a) Insufficient long-range dependency modeling — the RULER benchmark reveals that LLMs perform poorly on compositional reasoning tasks; StreamingLLM truncates global interactions, sacrificing cross-document reasoning. (b) "Lost-in-the-middle" — LLMs exhibit degraded ability to process information in the middle of long inputs; methods such as LongAlign require additional training.
 
-**Root Cause**: A general, training-free solution that requires no architectural modifications is lacking.
+**Key Challenge**: A general, training-free solution that requires no architectural modifications is lacking.
 
-**Paper Goals**: Design a training-free attention score adjustment mechanism that automatically identifies key passages, strengthens their information flow, and suppresses interference.
+**Goal**: Design a training-free attention score adjustment mechanism that automatically identifies key passages, strengthens their information flow, and suppresses interference.
 
-**Starting Point**: The authors first conduct an information flow analysis, identifying two findings: (a) inter-layer information flow exhibits a two-stage pattern, and (b) information flow from key passages is significantly higher in correctly answered instances.
+**Key Insight**: The authors first conduct an information flow analysis, identifying two findings: (a) inter-layer information flow exhibits a two-stage pattern, and (b) information flow from key passages is significantly higher in correctly answered instances.
 
 **Core Idea**: Quantify passage importance via layer-wise attention score analysis and dynamically adjust the attention matrix to enhance multi-document QA without any training.
 

@@ -28,15 +28,15 @@ This paper proposes CountVid, a model, and the VideoCount benchmark, presenting 
 
 ## Background & Motivation
 
-**State of the Field**: Object counting is a fundamental task in computer vision. Existing methods primarily focus on single-frame image counting (e.g., density map regression, few-shot counting), while video counting remains largely unexplored. Counting in videos presents unique challenges: objects appear repeatedly across frames, may reappear after occlusion, and are difficult to distinguish from visually similar neighbors in crowded scenes. Naively taking the per-frame maximum count leads to severe overcounting.
+**Background**: Object counting is a fundamental task in computer vision. Existing methods primarily focus on single-frame image counting (e.g., density map regression, few-shot counting), while video counting remains largely unexplored. Counting in videos presents unique challenges: objects appear repeatedly across frames, may reappear after occlusion, and are difficult to distinguish from visually similar neighbors in crowded scenes. Naively taking the per-frame maximum count leads to severe overcounting.
 
 **Limitations of Prior Work**: (1) No systematic video counting methodology exists—existing literature typically approaches video counting via tracking, which depends on detectors constrained to categories seen during training. (2) No standardized evaluation benchmark or dataset is available. (3) Open-world requirements are unmet—users should be able to specify arbitrary target categories via natural language or example images rather than predefined class sets.
 
-**Root Cause**: Image counting models do not handle temporal consistency (i.e., they cannot determine whether the same object across two frames is the same instance), while tracking models require detection outputs and are restricted to closed category sets. A solution that combines the strengths of both paradigms is needed.
+**Key Challenge**: Image counting models do not handle temporal consistency (i.e., they cannot determine whether the same object across two frames is the same instance), while tracking models require detection outputs and are restricted to closed category sets. A solution that combines the strengths of both paradigms is needed.
 
-**Paper Goals**: To formally define the open-world video counting task and propose an automated video counting system that supports target specification via text or image descriptions.
+**Goal**: To formally define the open-world video counting task and propose an automated video counting system that supports target specification via text or image descriptions.
 
-**Starting Point**: Leveraging two recent breakthroughs—powerful open-world image counting models (e.g., CounTR, GroundingDINO) and promptable video segmentation models (e.g., SAM 2)—and composing them into a unified pipeline.
+**Key Insight**: Leveraging two recent breakthroughs—powerful open-world image counting models (e.g., CounTR, GroundingDINO) and promptable video segmentation models (e.g., SAM 2)—and composing them into a unified pipeline.
 
 **Core Idea**: First, an image counting model detects and localizes target objects on keyframes; then, a promptable video segmentation and tracking model propagates the detections temporally; finally, cross-frame instance association and deduplication yield a unique instance count.
 

@@ -31,11 +31,11 @@ This paper is the first to formally define the HDR Dynamic Novel View Synthesis 
 
 ### State of the Field
 
-**State of the Field**: Existing novel view synthesis methods are constrained by two assumptions: **static scenes** and **low dynamic range (LDR) inputs**.
+**Background**: Existing novel view synthesis methods are constrained by two assumptions: **static scenes** and **low dynamic range (LDR) inputs**.
 
 ### Root Cause
 
-**Root Cause**: **Dynamic Novel View Synthesis (DNVS)** can handle time-varying scenes (e.g., moving objects, changing illumination), but is limited to LDR images, losing information in over-/under-exposed regions under high-contrast conditions (direct sunlight, low-light environments).
+**Key Challenge**: **Dynamic Novel View Synthesis (DNVS)** can handle time-varying scenes (e.g., moving objects, changing illumination), but is limited to LDR images, losing information in over-/under-exposed regions under high-contrast conditions (direct sunlight, low-light environments).
 
 ### Limitations of Prior Work
 
@@ -43,13 +43,13 @@ This paper is the first to formally define the HDR Dynamic Novel View Synthesis 
 
 ### Starting Point
 
-**Starting Point**: **Real-world demand**: HDR scenes in the real world are inherently dynamic—containing moving objects, changing illumination, and transient phenomena. Existing methods cannot simultaneously handle dynamic geometry and HDR radiance reconstruction.
+**Key Insight**: **Real-world demand**: HDR scenes in the real world are inherently dynamic—containing moving objects, changing illumination, and transient phenomena. Existing methods cannot simultaneously handle dynamic geometry and HDR radiance reconstruction.
 
 Although HDR-HexPlane preliminarily explores dynamic HDR reconstruction, it never carefully evaluates HDR output quality nor validates on real-world scenes, leaving substantial gaps.
 
 ### Paper Goals
 
-**Paper Goals**: **HDR Dynamic Novel View Synthesis (HDR DNVS)**: Given sparse, time-varying multi-exposure LDR inputs, learn an HDR 4D radiance field model $\mathcal{F}_h$ capable of rendering temporally consistent HDR images at arbitrary timestamps $t'$ and viewpoints $V'$. The core challenges are:
+**Goal**: **HDR Dynamic Novel View Synthesis (HDR DNVS)**: Given sparse, time-varying multi-exposure LDR inputs, learn an HDR 4D radiance field model $\mathcal{F}_h$ capable of rendering temporally consistent HDR images at arbitrary timestamps $t'$ and viewpoints $V'$. The core challenges are:
 
 1. Jointly modeling continuously evolving scene structure and HDR radiance
 2. Complex spatiotemporal inconsistencies caused by non-rigid motion and temporal variation

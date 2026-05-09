@@ -29,15 +29,15 @@ This paper proposes HiSo (Hessian-informed Scalar-only communication), which lev
 
 ## Background & Motivation
 
-**State of the Field**: Federated LLM fine-tuning faces a severe communication bottleneck — FedAvg requires approximately 1–5 TB of communication per client for OPT-1.3B. DeComFL exploits scalar-seed representations of zeroth-order gradients to achieve dimension-free communication (TB → KB), but suffers from extremely slow convergence.
+**Background**: Federated LLM fine-tuning faces a severe communication bottleneck — FedAvg requires approximately 1–5 TB of communication per client for OPT-1.3B. DeComFL exploits scalar-seed representations of zeroth-order gradients to achieve dimension-free communication (TB → KB), but suffers from extremely slow convergence.
 
 **Limitations of Prior Work**: ZO-SGD estimates gradients using isotropic random directions ($u \sim \mathcal{N}(0, I)$), completely ignoring the heterogeneous curvature of LLM parameter spaces — high- and low-curvature directions are searched with equal weight, resulting in large gradient estimation variance and a convergence rate of $\mathcal{O}(\sqrt{Ld/mR})$ that depends on both dimension $d$ and Lipschitz constant $L$. Conventional Hessian preconditioning requires $O(d)$ or $O(d^2)$ communication, directly breaking the scalar communication framework.
 
-**Root Cause**: Curvature information can significantly accelerate convergence (as demonstrated by Adam and second-order methods), yet transmitting any Hessian-related information within a scalar communication framework incurs linear or quadratic overhead — fundamentally contradicting the goal of dimension-free communication.
+**Key Challenge**: Curvature information can significantly accelerate convergence (as demonstrated by Adam and second-order methods), yet transmitting any Hessian-related information within a scalar communication framework incurs linear or quadratic overhead — fundamentally contradicting the goal of dimension-free communication.
 
-**Paper Goals**: How can Hessian information be exploited to accelerate convergence in federated zeroth-order optimization while strictly maintaining scalar communication (i.e., transmitting only a single gradient scalar $g$ and a random seed per round)?
+**Goal**: How can Hessian information be exploited to accelerate convergence in federated zeroth-order optimization while strictly maintaining scalar communication (i.e., transmitting only a single gradient scalar $g$ and a random seed per round)?
 
-**Starting Point**: The key observation is that the globally aggregated zeroth-order gradient update $\Delta x_r$ can already be reconstructed from scalars (as used in the model reconstruction step), so a diagonal Hessian approximation can be computed via Adam-style EMA from these existing variables at zero additional communication cost.
+**Key Insight**: The key observation is that the globally aggregated zeroth-order gradient update $\Delta x_r$ can already be reconstructed from scalars (as used in the model reconstruction step), so a diagonal Hessian approximation can be computed via Adam-style EMA from these existing variables at zero additional communication cost.
 
 **Core Idea**: The random perturbation directions are warped by the inverse square root of the Hessian to concentrate search along high-curvature directions, while the Hessian itself is computed for free from the existing global gradient scalars — achieving curvature-accelerated optimization with zero additional communication overhead.
 

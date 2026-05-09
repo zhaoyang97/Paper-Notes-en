@@ -28,15 +28,15 @@ This work constructs AFD-Instruction, the first large-scale antibody functional 
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have been widely applied to protein understanding (e.g., Mol-Instructions, InstructProtein); however, antibodies—a specialized class of proteins with significant therapeutic value—lack dedicated sequence-function alignment datasets.
+**Background**: LLMs have been widely applied to protein understanding (e.g., Mol-Instructions, InstructProtein); however, antibodies—a specialized class of proteins with significant therapeutic value—lack dedicated sequence-function alignment datasets.
 
 **Limitations of Prior Work**: (a) Existing protein language models (PLMs) are trained on raw sequences in an unsupervised manner, lacking functional supervision signals; (b) although the OAS database contains millions of antibody sequences, the vast majority carry no functional annotations; (c) general-purpose LLMs cannot interpret antibody sequences, while PLMs cannot process natural language—creating a modality gap between the two.
 
-**Root Cause**: The core value of antibodies lies in their functionality (target binding, neutralization activity, etc.), yet sequence-function paired data remains extremely scarce.
+**Key Challenge**: The core value of antibodies lies in their functionality (target binding, neutralization activity, etc.), yet sequence-function paired data remains extremely scarce.
 
-**Paper Goals**: To construct the first large-scale instruction dataset that systematically aligns antibody sequences with natural-language functional descriptions, enabling LLMs to infer function from sequence and to generate sequences under functional constraints.
+**Goal**: To construct the first large-scale instruction dataset that systematically aligns antibody sequences with natural-language functional descriptions, enabling LLMs to infer function from sequence and to generate sequences under functional constraints.
 
-**Starting Point**: A multi-agent extraction pipeline is applied to ~4,000 publications to derive antibody-function pairs, which are subsequently expanded into instruction-response pairs via a self-questioning strategy.
+**Key Insight**: A multi-agent extraction pipeline is applied to ~4,000 publications to derive antibody-function pairs, which are subsequently expanded into instruction-response pairs via a self-questioning strategy.
 
 **Core Idea**: A literature-level multi-agent system combined with a self-questioning strategy is used to mine sequence-function pairs at scale from published antibody research, yielding an instruction dataset covering both understanding and design tasks.
 

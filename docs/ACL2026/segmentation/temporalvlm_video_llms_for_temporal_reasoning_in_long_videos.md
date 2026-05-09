@@ -29,15 +29,15 @@ This paper proposes TemporalVLM, which extracts local fine-grained temporal feat
 
 ## Background & Motivation
 
-**State of the Field**: Video LLMs achieve video understanding by combining video encoders with LLMs. Existing methods typically map videos to a fixed number of tokens, causing performance degradation on long videos, and encode frames and timestamps separately, leading to poor temporal reasoning.
+**Background**: Video LLMs achieve video understanding by combining video encoders with LLMs. Existing methods typically map videos to a fixed number of tokens, causing performance degradation on long videos, and encode frames and timestamps separately, leading to poor temporal reasoning.
 
 **Limitations of Prior Work**: (1) Treating the entire video as a single segment with fixed token count loses fine-grained information for long videos; (2) Using pooling or query aggregation for global features fails to capture long-range temporal dependencies; (3) Separate encoding of frames and timestamps produces time-insensitive representations.
 
-**Root Cause**: Temporal reasoning in long videos requires both local fine-grained understanding (precise localization of individual events) and global semantic understanding (temporal relationships between events), but existing architectures cannot address both simultaneously.
+**Key Challenge**: Temporal reasoning in long videos requires both local fine-grained understanding (precise localization of individual events) and global semantic understanding (temporal relationships between events), but existing architectures cannot address both simultaneously.
 
-**Paper Goals**: Design a "coarse-to-fine" video encoder that simultaneously extracts time-aware local features and global features.
+**Goal**: Design a "coarse-to-fine" video encoder that simultaneously extracts time-aware local features and global features.
 
-**Starting Point**: Segment long videos into multiple short clips, extract local features at the clip level with a time-aware encoder, then aggregate global features across clips using BiLSTM — combining clip-level granularity with sequence-level long-range modeling.
+**Key Insight**: Segment long videos into multiple short clips, extract local features at the clip level with a time-aware encoder, then aggregate global features across clips using BiLSTM — combining clip-level granularity with sequence-level long-range modeling.
 
 **Core Idea**: Overlapping sliding windows + fusion module for time-aware local encoding, BiLSTM for bidirectional long-range aggregation — the first introduction of LSTM into Video LLMs.
 

@@ -23,15 +23,15 @@ This work treats amino acid sequences as a "second language" for LLMs. By constr
 
 ## Background & Motivation
 
-**State of the Field**: Protein function understanding is dominated by two paradigms: (1) protein representation learning—self-supervised pre-training on amino acid sequences followed by task-specific decoders; and (2) protein–language alignment—establishing mappings between sequences and text via contrastive learning or multimodal LLMs. Both paradigms require large-scale training data, substantial computational resources, and task-specific fine-tuning.
+**Background**: Protein function understanding is dominated by two paradigms: (1) protein representation learning—self-supervised pre-training on amino acid sequences followed by task-specific decoders; and (2) protein–language alignment—establishing mappings between sequences and text via contrastive learning or multimodal LLMs. Both paradigms require large-scale training data, substantial computational resources, and task-specific fine-tuning.
 
 **Limitations of Prior Work**: Embeddings from protein representation learning require an additional "translator" to produce human-readable explanations; protein–language alignment depends on large-scale paired data and must be re-fine-tuned whenever the downstream objective changes. Both lines of work are constrained in generalizability and scalability.
 
-**Root Cause**: Protein sequences are intrinsically "language-like" (fixed character set, compositional structure, contextual semantics), yet existing methods have not genuinely exploited this analogy—they still treat protein sequences as an independent modality rather than a language that LLMs can directly "read."
+**Key Challenge**: Protein sequences are intrinsically "language-like" (fixed character set, compositional structure, contextual semantics), yet existing methods have not genuinely exploited this analogy—they still treat protein sequences as an independent modality rather than a language that LLMs can directly "read."
 
-**Paper Goals**: To design a **training-free** framework that enables general-purpose LLMs to understand the functional meaning of protein sequences solely through in-context examples.
+**Goal**: To design a **training-free** framework that enables general-purpose LLMs to understand the functional meaning of protein sequences solely through in-context examples.
 
-**Starting Point**: The work draws on the cognitive science principles of **second language acquisition**—humans learning a new language rely on prior knowledge of their native language and infer word meanings through repeated encounters in context. LLMs can "acquire" protein language in the same manner.
+**Key Insight**: The work draws on the cognitive science principles of **second language acquisition**—humans learning a new language rely on prior knowledge of their native language and infer word meanings through repeated encounters in context. LLMs can "acquire" protein language in the same manner.
 
 **Core Idea**: Construct a protein–natural language **bilingual dataset** (79,926 QA pairs), design an **adaptive context construction mechanism** (dual-criterion retrieval based on sequence homology and text similarity), and enable LLMs to perform protein reasoning through in-context examples.
 

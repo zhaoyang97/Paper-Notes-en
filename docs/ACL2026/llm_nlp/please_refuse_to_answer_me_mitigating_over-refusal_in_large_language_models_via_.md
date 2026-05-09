@@ -29,15 +29,15 @@ This paper proposes AdaCD (Adaptive Contrastive Decoding), which extracts a refu
 
 ## Background & Motivation
 
-**State of the Field**: Safety-aligned LLMs frequently exhibit over-refusal, rejecting queries that contain sensitive keywords but are otherwise benign.
+**Background**: Safety-aligned LLMs frequently exhibit over-refusal, rejecting queries that contain sensitive keywords but are otherwise benign.
 
 **Limitations of Prior Work**: (1) Training-based methods rely on scarce over-refusal training data; (2) steering vector approaches require full knowledge of the model architecture and additional precomputation; (3) existing contrastive decoding methods adopt an all-or-nothing strategy—either always amplifying or always suppressing refusal—making it impossible to improve both dimensions simultaneously.
 
-**Root Cause**: In over-refusal scenarios, non-refusal tokens remain in the candidate list yet the model systematically fails to select them—the model can identify alternative options but lacks effective guidance to choose them.
+**Key Challenge**: In over-refusal scenarios, non-refusal tokens remain in the candidate list yet the model systematically fails to select them—the model can identify alternative options but lacks effective guidance to choose them.
 
-**Paper Goals**: Design an adaptive contrastive decoding strategy that suppresses refusal tokens in over-refusal scenarios while amplifying them in malicious scenarios.
+**Goal**: Design an adaptive contrastive decoding strategy that suppresses refusal tokens in over-refusal scenarios while amplifying them in malicious scenarios.
 
-**Starting Point**: Use an extreme safety prompt to maximally elicit refusal behavior, leveraging this as an anchor for extracting the refusal token distribution.
+**Key Insight**: Use an extreme safety prompt to maximally elicit refusal behavior, leveraging this as an anchor for extracting the refusal token distribution.
 
 **Core Idea**: Dynamically switch decoding modes via an agreement ratio and adaptive confidence constraint—high agreement triggers addition of the refusal distribution; low agreement triggers subtraction.
 

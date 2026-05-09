@@ -29,13 +29,13 @@ This paper proposes LLM-Filter, which reprograms a large language model (LLM) as
 
 ## Background & Motivation
 
-**State of the Field**: State estimation (Bayesian filtering) is a core problem in robotics, meteorology, transportation, and related domains. Classical approaches such as the Kalman Filter and particle filters rely on hand-crafted system models.
+**Background**: State estimation (Bayesian filtering) is a core problem in robotics, meteorology, transportation, and related domains. Classical approaches such as the Kalman Filter and particle filters rely on hand-crafted system models.
 
 **Limitations of Prior Work**: Learning-based filters achieve high accuracy but are trained for specific systems and require retraining upon system changes. Gaussian filters incur large errors in high-dimensional non-Gaussian settings, while particle filters are computationally expensive.
 
-**Root Cause**: High accuracy demands system-specific training, whereas generalization requires cross-system capability.
+**Key Challenge**: High accuracy demands system-specific training, whereas generalization requires cross-system capability.
 
-**Starting Point**: The pre-trained knowledge and in-context learning ability of LLMs are exploited to reformulate state estimation as a token prediction task, with SaP guiding the LLM to understand different dynamical systems.
+**Key Insight**: The pre-trained knowledge and in-context learning ability of LLMs are exploited to reformulate state estimation as a token prediction task, with SaP guiding the LLM to understand different dynamical systems.
 
 **Core Idea**: The core layers of the LLM are frozen; only the input embedding and output projection are trained. System information is conveyed via SaP text descriptions to enable cross-system generalization.
 

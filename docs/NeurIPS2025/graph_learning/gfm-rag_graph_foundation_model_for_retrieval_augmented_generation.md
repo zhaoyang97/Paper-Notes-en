@@ -28,15 +28,15 @@ This paper proposes GFM-RAG, the first graph foundation model-driven retrieval-a
 
 ## Background & Motivation
 
-**State of the Field**: RAG is the dominant paradigm for injecting external knowledge into LLMs. Traditional RAG encodes documents as independent vectors for retrieval, which performs poorly on multi-hop questions requiring cross-document reasoning. GraphRAG methods (e.g., HippoRAG, LightRAG) explicitly model inter-knowledge relationships via graph structures.
+**Background**: RAG is the dominant paradigm for injecting external knowledge into LLMs. Traditional RAG encodes documents as independent vectors for retrieval, which performs poorly on multi-hop questions requiring cross-document reasoning. GraphRAG methods (e.g., HippoRAG, LightRAG) explicitly model inter-knowledge relationships via graph structures.
 
 **Limitations of Prior Work**: (a) Traditional vector retrieval fails to capture complex inter-document relationships; (b) multi-step retrieval methods (e.g., IRCoT) improve performance through iterative LLM reasoning but incur prohibitive computational overhead (several seconds per query); (c) existing GraphRAG methods (e.g., HippoRAG using Personalized PageRank) rely heavily on graph structure, which is often noisy and incomplete; (d) existing GNN-based methods require training from scratch for each new dataset, lacking generalizability.
 
-**Root Cause**: How can multi-hop reasoning capability be achieved within a single-step retrieval while maintaining cross-dataset generalizability?
+**Key Challenge**: How can multi-hop reasoning capability be achieved within a single-step retrieval while maintaining cross-dataset generalizability?
 
-**Paper Goals**: To design a transferable Graph Foundation Model (GFM) that performs multi-hop reasoning retrieval in a single forward pass and generalizes directly to unseen datasets after pretraining.
+**Goal**: To design a transferable Graph Foundation Model (GFM) that performs multi-hop reasoning retrieval in a single forward pass and generalizes directly to unseen datasets after pretraining.
 
-**Starting Point**: The multi-hop message passing of a query-dependent GNN is theoretically equivalent to multi-hop logical reasoning on graphs. By mapping queries, entities, and relations into a unified semantic space, the model becomes universally applicable across different graphs.
+**Key Insight**: The multi-hop message passing of a query-dependent GNN is theoretically equivalent to multi-hop logical reasoning on graphs. By mapping queries, entities, and relations into a unified semantic space, the model becomes universally applicable across different graphs.
 
 **Core Idea**: A unified semantic space combined with query-dependent message-passing GNN is pretrained on large-scale KGs to produce a cross-dataset transferable graph foundation model retriever.
 

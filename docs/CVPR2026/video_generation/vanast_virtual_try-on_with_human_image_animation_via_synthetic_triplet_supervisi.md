@@ -29,11 +29,11 @@ Vanast proposes a unified framework that simultaneously performs garment transfe
 
 ## Background & Motivation
 
-1. **State of the Field**: Virtual try-on (VTON) and human image animation are core demands in e-commerce and social media. Existing approaches handle the two tasks in a two-stage pipeline — first generating a static dressed image via CatVTON/OmniTry, then animating it with StableAnimator.
+1. **Background**: Virtual try-on (VTON) and human image animation are core demands in e-commerce and social media. Existing approaches handle the two tasks in a two-stage pipeline — first generating a static dressed image via CatVTON/OmniTry, then animating it with StableAnimator.
 2. **Limitations of Prior Work**: Two-stage methods suffer from severe error accumulation: (1) identity drift — the animation stage loses identity information established during garment transfer; (2) garment distortion — clothing details deform during animation; (3) front-back inconsistency — the appearance of garments breaks across opposite views.
-3. **Root Cause**: A single-stage unified model must simultaneously learn two fundamentally different transformations — garment transfer and animation — yet paired triplet training data (person + garment + motion sequence) is scarce.
-4. **Paper Goals**: Construct a large-scale triplet dataset and train a single-stage unified model.
-5. **Starting Point**: Compensate for the scarcity of real triplet data through synthetic data, built via three strategies: diffusion-based inpainting, in-the-wild video garment extraction, and studio capture.
+3. **Key Challenge**: A single-stage unified model must simultaneously learn two fundamentally different transformations — garment transfer and animation — yet paired triplet training data (person + garment + motion sequence) is scarce.
+4. **Goal**: Construct a large-scale triplet dataset and train a single-stage unified model.
+5. **Key Insight**: Compensate for the scarcity of real triplet data through synthetic data, built via three strategies: diffusion-based inpainting, in-the-wild video garment extraction, and studio capture.
 6. **Core Idea**: The Dual Module architecture adds a Human Animation Module (HAM) and a Garment Transfer Module (GTM) in parallel on top of a frozen video DiT backbone, achieving unified generation through weighted residual connections.
 
 ## Method

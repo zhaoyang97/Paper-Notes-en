@@ -34,7 +34,7 @@ This paper proposes Dropout Decoding — a training-free inference-time method t
 
 **Transferring the Dropout Idea**: Traditional dropout applies random masking to model parameters during training to prevent overfitting, but applying parameter-level dropout to pretrained LVLMs is infeasible. The authors propose transferring the core idea of dropout from parameter space to input token space — selectively masking visual input tokens at inference time to reduce over-reliance on noisy visual tokens by introducing stochasticity into the decoding context.
 
-**Starting Point**: The approach exploits a latent capability of the LVLM text decoder — the hidden representations of visual tokens at the top decoder layer inherently encode textual semantic information. By projecting visual tokens into the text vocabulary space, a "textualized" interpretation of each visual token can be obtained, enabling uncertainty quantification. Epistemic uncertainty (reflecting insufficient model knowledge) is particularly well-suited for identifying critical visual tokens that are informative yet prone to misinterpretation.
+**Key Insight**: The approach exploits a latent capability of the LVLM text decoder — the hidden representations of visual tokens at the top decoder layer inherently encode textual semantic information. By projecting visual tokens into the text vocabulary space, a "textualized" interpretation of each visual token can be obtained, enabling uncertainty quantification. Epistemic uncertainty (reflecting insufficient model knowledge) is particularly well-suited for identifying critical visual tokens that are informative yet prone to misinterpretation.
 
 ## Method
 

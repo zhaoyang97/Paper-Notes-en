@@ -28,15 +28,15 @@ This paper proposes Affectron, a framework that achieves diverse and emotionally
 
 ## Background & Motivation
 
-**State of the Field**: Nonverbal vocalizations (NVs), such as laughter, sighs, and crying, are critical means of conveying emotion in expressive speech synthesis. Existing expressive TTS systems primarily adopt two paradigms: label-controlled TTS (manually inserting NV labels to control type and position) and spontaneous-style TTS (implicitly predicting NVs from contextual cues).
+**Background**: Nonverbal vocalizations (NVs), such as laughter, sighs, and crying, are critical means of conveying emotion in expressive speech synthesis. Existing expressive TTS systems primarily adopt two paradigms: label-controlled TTS (manually inserting NV labels to control type and position) and spontaneous-style TTS (implicitly predicting NVs from contextual cues).
 
 **Limitations of Prior Work**: Label-controlled approaches rely on alignment annotations or NV detection models, whose biases and error propagation lead to temporal inconsistencies in NV placement. Spontaneous-style approaches are constrained by the irreproducibility of proprietary datasets. Publicly available NV corpora are overwhelmingly biased toward basic types (e.g., breath and laughter) and suffer from acoustic artifacts, making fine-grained NV variant modeling (e.g., distinguishing chuckles, giggles, and snickers) infeasible.
 
-**Root Cause**: The fundamental bottleneck is the absence of large-scale, diverse, high-quality public NV corpora. While neural codec language models (NCLMs) can generate natural speech from low-quality data, they are primarily designed for voice cloning and lack fine-grained prosodic control over NV variants.
+**Key Challenge**: The fundamental bottleneck is the absence of large-scale, diverse, high-quality public NV corpora. While neural codec language models (NCLMs) can generate natural speech from low-quality data, they are primarily designed for voice cloning and lack fine-grained prosodic control over NV variants.
 
-**Paper Goals**: To achieve emotionally consistent and contextually aligned diverse NV generation on small-scale open-source disentangled corpora, where linguistic speech and NVs are recorded separately.
+**Goal**: To achieve emotionally consistent and contextually aligned diverse NV generation on small-scale open-source disentangled corpora, where linguistic speech and NVs are recorded separately.
 
-**Starting Point**: The authors observe that affective attributes typically transition gradually rather than abruptly between adjacent utterance segments—segments with shorter temporal gaps exhibit smaller emotional angular distances. Consequently, positions with minimal emotional change serve as natural anchor points for NV insertion.
+**Key Insight**: The authors observe that affective attributes typically transition gradually rather than abruptly between adjacent utterance segments—segments with shorter temporal gaps exhibit smaller emotional angular distances. Consequently, positions with minimal emotional change serve as natural anchor points for NV insertion.
 
 **Core Idea**: Design training-time NV augmentation strategies that select appropriate NV types via affective embedding matching and determine appropriate insertion positions via emotional angular distance routing, then fine-tune a pretrained VoiceCraft model on the augmented samples.
 

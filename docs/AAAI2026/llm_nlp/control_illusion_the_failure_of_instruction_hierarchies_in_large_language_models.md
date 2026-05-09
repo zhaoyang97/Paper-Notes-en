@@ -27,15 +27,15 @@ content_hash: 7707cf86810ad516
 This paper systematically demonstrates that the system/user prompt separation mechanism in current LLMs **fails to establish reliable instruction priority**, and finds that social hierarchy priors acquired during pretraining (authority, expertise, consensus) exert stronger control over model behavior than explicit system/user role markers.
 
 ## Background & Motivation
-**State of the Field**: The system/user separation paradigm is widely adopted in mainstream LLM deployments, where developers set high-priority instructions via system prompts and users interact through user prompts. OpenAI and others explicitly state that system instructions should take precedence over user instructions.
+**Background**: The system/user separation paradigm is widely adopted in mainstream LLM deployments, where developers set high-priority instructions via system prompts and users interact through user prompts. OpenAI and others explicitly state that system instructions should take precedence over user instructions.
 
 **Limitations of Prior Work**: Although this hierarchical assumption is broadly accepted, it lacks systematic empirical validation. Prompt injection attacks have shown that users can bypass system-level constraints, yet no prior work has quantitatively assessed how well models enforce instruction hierarchies under simple, verifiable formatting conflicts.
 
-**Root Cause**: Models perform well when following instructions in isolation (74–91%), but under conflicting instructions, system/user separation entirely fails to establish reliable priority — the average **primary constraint compliance rate is only 9.6–45.8%**.
+**Key Challenge**: Models perform well when following instructions in isolation (74–91%), but under conflicting instructions, system/user separation entirely fails to establish reliable priority — the average **primary constraint compliance rate is only 9.6–45.8%**.
 
-**Paper Goals**: To systematically evaluate LLMs' ability to enforce instruction hierarchies, quantify failure modes, and identify what factors genuinely influence model priority decisions.
+**Goal**: To systematically evaluate LLMs' ability to enforce instruction hierarchies, quantify failure modes, and identify what factors genuinely influence model priority decisions.
 
-**Starting Point**: The authors design mutually exclusive, programmatically verifiable constraint pairs (uppercase/lowercase, English/French, long/short, etc.) and test priority behavior across 6 mainstream LLMs under varied configurations.
+**Key Insight**: The authors design mutually exclusive, programmatically verifiable constraint pairs (uppercase/lowercase, English/French, long/short, etc.) and test priority behavior across 6 mainstream LLMs under varied configurations.
 
 **Core Idea**: The system/user role separation in LLMs constitutes a "control illusion" — social hierarchy priors implicitly acquired during pretraining more effectively govern model behavior than role markers introduced via post-training.
 

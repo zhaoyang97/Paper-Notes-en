@@ -31,7 +31,7 @@ This paper proposes approximating POMDPs as finite-state Superstate MDPs (where 
 
 Partially Observable Markov Decision Processes (POMDPs) serve as a general framework for decision-making under uncertainty, with broad applications in autonomous driving, medical diagnosis, and game playing. However, solving POMDPs faces fundamental challenges:
 
-**Root Cause**: POMDPs can be converted into fully observable MDPs via belief states, but belief states are continuous distributions that grow with history length, leading to PSPACE-complete computational complexity.
+**Key Challenge**: POMDPs can be converted into fully observable MDPs via belief states, but belief states are continuous distributions that grow with history length, leading to PSPACE-complete computational complexity.
 
 **Limitations of Prior Work**:
 - History-based methods (Loch & Singh, Littman) are effective in practice but lack rigorous theoretical performance guarantees

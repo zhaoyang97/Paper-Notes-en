@@ -28,7 +28,7 @@ This paper proves that, under generic non-degeneracy assumptions, standard two-l
 
 ## Background & Motivation
 
-**State of the Field**: The Multi-Index model $f^*(\bm{x})=g^*(\bm{U}\bm{x})$ is a standard framework for studying representation learning, where the output depends on the input only through its projection onto a low-dimensional subspace. Information-theoretic lower bounds require $\Theta(d)$ samples, and polynomial-time spectral algorithms are known to attain this bound.
+**Background**: The Multi-Index model $f^*(\bm{x})=g^*(\bm{U}\bm{x})$ is a standard framework for studying representation learning, where the output depends on the input only through its projection onto a low-dimensional subspace. Information-theoretic lower bounds require $\Theta(d)$ samples, and polynomial-time spectral algorithms are known to attain this bound.
 
 **Limitations of Prior Work**:
    - Single-index models ($r=1$) are well understood theoretically, but guarantees for neural network learning of Multi-Index models ($r>1$) remain extremely limited.
@@ -36,9 +36,9 @@ This paper proves that, under generic non-degeneracy assumptions, standard two-l
    - Arnaboldi et al. address only a special subclass with staircase structure, far from the general case.
    - The concurrent work of Mousavi-Hosseini & Wu (2026) achieves only weak recovery of partial feature directions and cannot guarantee full subspace recovery.
 
-**Root Cause**: Information theory guarantees that $\Theta(d)$ samples suffice, and spectral methods achieve this bound—yet whether **neural networks** trained via standard gradient descent can attain the same complexity remained unproven.
+**Key Challenge**: Information theory guarantees that $\Theta(d)$ samples suffice, and spectral methods achieve this bound—yet whether **neural networks** trained via standard gradient descent can attain the same complexity remained unproven.
 
-**Starting Point**: By analyzing gradient descent dynamics under small initialization, the paper identifies that the inner-layer weights implicitly perform a power iteration procedure, analogous to spectral initialization on the local Hessian. Critically, the number of training steps must be carefully calibrated: too few steps leave sample noise unreduced; too many cause all neurons to align with the leading eigenvector direction, losing coverage of non-dominant subspace directions.
+**Key Insight**: By analyzing gradient descent dynamics under small initialization, the paper identifies that the inner-layer weights implicitly perform a power iteration procedure, analogous to spectral initialization on the local Hessian. Critically, the number of training steps must be carefully calibrated: too few steps leave sample noise unreduced; too many cause all neurons to align with the leading eigenvector direction, losing coverage of non-dominant subspace directions.
 
 **Core Idea**: Gradient descent on neural networks implicitly performs "power iteration with early stopping"—an appropriate number of training steps suffices to suppress finite-sample noise while preserving subspace diversity, thereby approaching the information-theoretic optimum.
 

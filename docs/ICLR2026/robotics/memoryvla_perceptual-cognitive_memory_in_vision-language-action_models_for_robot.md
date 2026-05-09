@@ -28,13 +28,13 @@ Inspired by the dual-memory system in cognitive science, this paper proposes Mem
 
 ## Background & Motivation
 
-**State of the Field**: VLA models (OpenVLA, π₀, CogACT) have achieved significant progress in robotic manipulation, but mainstream approaches rely solely on current observations and ignore temporal dependencies, leading to poor performance on long-horizon tasks. For example, in the Push Buttons task, visual observations are nearly identical before and after pressing, making it impossible to determine whether an action has been completed.
+**Background**: VLA models (OpenVLA, π₀, CogACT) have achieved significant progress in robotic manipulation, but mainstream approaches rely solely on current observations and ignore temporal dependencies, leading to poor performance on long-horizon tasks. For example, in the Push Buttons task, visual observations are nearly identical before and after pressing, making it impossible to determine whether an action has been completed.
 
 **Limitations of Prior Work**: (1) Concatenating multiple frames leads to quadratic self-attention complexity and distribution mismatch with single-frame pretraining; (2) RoboFlamingo compresses history with LSTM, losing fine-grained information; (3) TraceVLA draws trajectories, losing semantic details; (4) UniVLA appends past actions as chain-of-thought rather than genuine memory utilization.
 
-**Root Cause**: Robotic manipulation is inherently non-Markovian (past actions influence future decisions), yet current VLA models are Markovian (conditioned on the current frame only).
+**Key Challenge**: Robotic manipulation is inherently non-Markovian (past actions influence future decisions), yet current VLA models are Markovian (conditioned on the current frame only).
 
-**Starting Point**: In cognitive science, humans handle manipulation tasks through working memory (short-term) combined with episodic memory (long-term, comprising verbatim perceptual details and gist-level semantics). Accordingly, PCMB is designed to store memory at two levels: perceptual detail and cognitive semantics.
+**Key Insight**: In cognitive science, humans handle manipulation tasks through working memory (short-term) combined with episodic memory (long-term, comprising verbatim perceptual details and gist-level semantics). Accordingly, PCMB is designed to store memory at two levels: perceptual detail and cognitive semantics.
 
 ## Method
 

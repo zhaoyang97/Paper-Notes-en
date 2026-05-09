@@ -31,7 +31,7 @@ This paper proposes SlotCurri, a reconstruction-guided slot-count curriculum lea
 
 Video object-centric learning (VOCL) aims to decompose raw videos into compact object slot representations, providing foundations for downstream tasks such as scene understanding and video segmentation. However, existing methods suffer from severe **over-fragmentation**:
 
-- **Root Cause**: Models are implicitly encouraged to exploit all available slots to minimize the reconstruction objective — larger slot budgets generally yield better reconstruction quality, causing multiple slots to collaboratively represent a single object.
+- **Key Challenge**: Models are implicitly encouraged to exploit all available slots to minimize the reconstruction objective — larger slot budgets generally yield better reconstruction quality, causing multiple slots to collaboratively represent a single object.
 - **Practical Harm**: A single object is split across multiple slots, breaking the one-to-one correspondence between slots and objects, and degrading interpretability and computational efficiency.
 - **Limitations of Prior Work**: SOLV adopts a produce-then-merge strategy, but the merging stage can fail (contrastive learning has already pushed slots toward encoding distinct representations).
 

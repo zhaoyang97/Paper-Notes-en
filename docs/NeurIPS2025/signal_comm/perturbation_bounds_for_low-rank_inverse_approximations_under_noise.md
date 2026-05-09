@@ -29,15 +29,15 @@ This work derives the first non-asymptotic spectral norm perturbation bounds for
 
 ## Background & Motivation
 
-1. **State of the Field**: Low-rank matrix approximation is a foundational tool in machine learning and scientific computing. The inverse $A^{-1}$ of a large symmetric matrix $A$ is commonly approximated by its low-rank surrogate $A_p^{-1}$, with widespread applications in kernel methods, Gaussian processes, and covariance inference.
+1. **Background**: Low-rank matrix approximation is a foundational tool in machine learning and scientific computing. The inverse $A^{-1}$ of a large symmetric matrix $A$ is commonly approximated by its low-rank surrogate $A_p^{-1}$, with widespread applications in kernel methods, Gaussian processes, and covariance inference.
 
 2. **Limitations of Prior Work**: In practice, only a noisy observation $\tilde{A} = A + E$ is available. Classical perturbation theory (Neumann expansion) provides bounds only for the full inverse $\|A^{-1} - \tilde{A}^{-1}\|$, without accounting for the effect of truncation to rank $p$. Bounds derived from the Eckart–Young–Mirsky theorem (the EYM-N bound) contain a constant term $2/\lambda_{n-p}$ that does not vanish even as $\|E\| \to 0$.
 
-3. **Root Cause**: It remains unclear how the error in low-rank inverse approximation depends on the noise level $\|E\|$, the eigengap $\delta_{n-p}$, and the spectral decay, in an interacting manner. Classical bounds are overly pessimistic and do not distinguish spectral structure.
+3. **Key Challenge**: It remains unclear how the error in low-rank inverse approximation depends on the noise level $\|E\|$, the eigengap $\delta_{n-p}$, and the spectral decay, in an interacting manner. Classical bounds are overly pessimistic and do not distinguish spectral structure.
 
-4. **Paper Goals**: Derive tight, spectrally adaptive, non-asymptotic bounds for $\|(\tilde{A}^{-1})_p - A_p^{-1}\|$.
+4. **Goal**: Derive tight, spectrally adaptive, non-asymptotic bounds for $\|(\tilde{A}^{-1})_p - A_p^{-1}\|$.
 
-5. **Starting Point**: Apply contour integration techniques to the non-entire function $f(z) = 1/z$ (previously restricted to entire functions such as the matrix exponential), and reduce higher-order terms to first order via contour bootstrapping.
+5. **Key Insight**: Apply contour integration techniques to the non-entire function $f(z) = 1/z$ (previously restricted to entire functions such as the matrix exponential), and reduce higher-order terms to first order via contour bootstrapping.
 
 6. **Core Idea**: Design carefully chosen contours encircling the smallest $p$ eigenvalues, and exploit perturbation control of Riesz projectors to obtain tight bounds that depend on the eigengap and noise alignment.
 

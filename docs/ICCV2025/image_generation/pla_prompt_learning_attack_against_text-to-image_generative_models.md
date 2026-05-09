@@ -29,15 +29,15 @@ This paper proposes PLA (Prompt Learning Attack), a gradient-driven adversarial 
 
 ## Background & Motivation
 
-**State of the Field**: T2I models (e.g., Stable Diffusion, DALL·E 3) have been widely adopted for artistic creation and content generation, yet they face the risk of misuse for generating NSFW (Not-Safe-For-Work) content. To mitigate this, developers deploy two categories of safety mechanisms: prompt filters (blocking inputs via sensitive keyword lists) and post-hoc safety checkers (detecting inappropriate content in generated images).
+**Background**: T2I models (e.g., Stable Diffusion, DALL·E 3) have been widely adopted for artistic creation and content generation, yet they face the risk of misuse for generating NSFW (Not-Safe-For-Work) content. To mitigate this, developers deploy two categories of safety mechanisms: prompt filters (blocking inputs via sensitive keyword lists) and post-hoc safety checkers (detecting inappropriate content in generated images).
 
 **Limitations of Prior Work**: Existing black-box attack methods (e.g., SneakyPrompt) predominantly rely on word-substitution strategies, seeking replacement tokens within a constrained search space to evade prompt filters. The limited search space, however, leads to suboptimal attack success rates. Gradient-driven optimization offers stronger capability, but cannot be directly applied in black-box settings where internal model parameters are inaccessible.
 
-**Root Cause**: Black-box T2I models not only conceal their internal architectures and parameters, but their safety mechanisms also interrupt the forward pass upon detecting NSFW content, returning a blank (black) image. This renders conventional gradient estimation methods based on model outputs ineffective, as black images yield zero gradients.
+**Key Challenge**: Black-box T2I models not only conceal their internal architectures and parameters, but their safety mechanisms also interrupt the forward pass upon detecting NSFW content, returning a blank (black) image. This renders conventional gradient estimation methods based on model outputs ineffective, as black images yield zero gradients.
 
-**Paper Goals**: (a) How to enable effective gradient-driven adversarial prompt learning under a black-box setting? (b) How to address the gradient vanishing problem caused by safety mechanisms returning black images?
+**Goal**: (a) How to enable effective gradient-driven adversarial prompt learning under a black-box setting? (b) How to address the gradient vanishing problem caused by safety mechanisms returning black images?
 
-**Starting Point**: The paper exploits the sensitive information embedded in target prompts as semantic guidance, uses an auxiliary model without safety mechanisms to generate target images, and constructs a differentiable training objective via multimodal (text–image and image–image) similarity.
+**Key Insight**: The paper exploits the sensitive information embedded in target prompts as semantic guidance, uses an auxiliary model without safety mechanisms to generate target images, and constructs a differentiable training objective via multimodal (text–image and image–image) similarity.
 
 **Core Idea**: PLA retains the semantic intent of target prompts through sensitive knowledge encoding, and combines multimodal CLIP-based losses with an improved zeroth-order gradient optimization strategy to train a prompt encoder that generates adversarial prompts capable of bypassing dual safety mechanisms in black-box settings.
 

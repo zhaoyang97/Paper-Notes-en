@@ -29,15 +29,15 @@ MoSA decomposes human video generation into a **structure generation** stage (a 
 
 ## Background & Motivation
 
-**State of the Field**: Current general-purpose video generation models (HunyuanVideo, CogVideoX, Wan 2.1, etc.) achieve high visual quality on natural scenes but frequently produce structural artifacts—limb distortion and unnatural motion—when generating human videos. Methods specialized for human video (e.g., the AnimateAnyone series) are mostly limited to faces/upper bodies or require additional pose-driving inputs, making them ill-suited for complex full-body motion.
+**Background**: Current general-purpose video generation models (HunyuanVideo, CogVideoX, Wan 2.1, etc.) achieve high visual quality on natural scenes but frequently produce structural artifacts—limb distortion and unnatural motion—when generating human videos. Methods specialized for human video (e.g., the AnimateAnyone series) are mostly limited to faces/upper bodies or require additional pose-driving inputs, making them ill-suited for complex full-body motion.
 
 **Limitations of Prior Work**: First, reconstruction objectives based on pure noise denoising inherently favor appearance fidelity over structural consistency—models tend to "look good" while producing physically implausible motion. Second, some methods attempt to generate 2D skeleton sequences directly as guidance, but 2D representations lack depth information under occlusion, leading to structural errors such as interpenetrating legs. Third, skeletons are sparse keypoint representations; even when correctly generated, they provide limited control over subsequent pixel-level appearance generation.
 
-**Root Cause**: Human appearance and motion carry fundamentally different signals—appearance requires pixel-level texture detail, while motion must satisfy physical and anatomical constraints. Existing methods couple both within the same generation process, forcing an inherent trade-off.
+**Key Challenge**: Human appearance and motion carry fundamentally different signals—appearance requires pixel-level texture detail, while motion must satisfy physical and anatomical constraints. Existing methods couple both within the same generation process, forcing an inherent trade-off.
 
-**Paper Goals**: (1) How to generate physically plausible complex human motion? (2) How to make sparse skeleton signals effectively guide dense pixel generation? (3) How to model human–environment contact interactions?
+**Goal**: (1) How to generate physically plausible complex human motion? (2) How to make sparse skeleton signals effectively guide dense pixel generation? (3) How to model human–environment contact interactions?
 
-**Starting Point**: The authors observe that human motion has strong priors in 3D space (large-scale MoCap datasets), while appearance is well-suited for pretrained DiT-based generation. The problem is therefore decomposed into two stages: first leveraging 3D priors to generate structurally sound motion sequences, then generating appearance conditioned on the skeletons. Motion plausibility is guaranteed by the 3D Transformer; visual quality is guaranteed by the DiT.
+**Key Insight**: The authors observe that human motion has strong priors in 3D space (large-scale MoCap datasets), while appearance is well-suited for pretrained DiT-based generation. The problem is therefore decomposed into two stages: first leveraging 3D priors to generate structurally sound motion sequences, then generating appearance conditioned on the skeletons. Motion plausibility is guaranteed by the 3D Transformer; visual quality is guaranteed by the DiT.
 
 **Core Idea**: Generate physically plausible skeleton sequences in 3D space using motion priors, then propagate the sparse skeleton guidance to the full motion region via the HADC module to guide the DiT in generating high-fidelity appearance.
 

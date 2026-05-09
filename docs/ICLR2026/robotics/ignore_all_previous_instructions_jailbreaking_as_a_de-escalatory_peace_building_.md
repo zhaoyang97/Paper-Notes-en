@@ -28,15 +28,15 @@ This paper proposes reframing the jailbreaking of LLM-driven social media propag
 
 ## Background & Motivation
 
-**State of the Field**: Social media platforms are widely exploited for political mobilization and opinion manipulation. Malicious actors leverage platform algorithms to amplify polarizing narratives and manufacture the illusion of consensus. The advent of LLMs has dramatically lowered the cost of automated content generation while increasing its scale and quality, rendering human–bot distinctions nearly imperceptible.
+**Background**: Social media platforms are widely exploited for political mobilization and opinion manipulation. Malicious actors leverage platform algorithms to amplify polarizing narratives and manufacture the illusion of consensus. The advent of LLMs has dramatically lowered the cost of automated content generation while increasing its scale and quality, rendering human–bot distinctions nearly imperceptible.
 
 **Limitations of Prior Work**: Platform-level content moderation is severely inadequate—enforcement is slow, resources are scarce (e.g., Facebook had only two Burmese-language moderators reviewing hate speech during the Myanmar conflict), and algorithmic moderation systems struggle to handle novel context-dependent abuses. OpenAI has documented at least five state-sponsored LLM influence operations (two from Russia, one each from China, Iran, and Israel) targeting public opinion on issues such as the Ukraine war, the Gaza conflict, and Indian elections. Social media companies (e.g., X/Twitter) have continuously downsized their safety and moderation teams in recent years.
 
-**Root Cause**: LLM-driven bots manufacture the illusion of "collective intent" through mass posting—users misinterpret frequency and repetition as consensus and inevitability, and hostile language as collective adversarial intent. Reduced platform moderation investment perpetuates the problem.
+**Key Challenge**: LLM-driven bots manufacture the illusion of "collective intent" through mass posting—users misinterpret frequency and repetition as consensus and inevitability, and hostile language as collective adversarial intent. Reduced platform moderation investment perpetuates the problem.
 
-**Paper Goals**: Against the backdrop of failing platform moderation, this paper explores spontaneous, decentralized user-level resistance—shifting the focus from "what platforms should do" to "what users can do."
+**Goal**: Against the backdrop of failing platform moderation, this paper explores spontaneous, decentralized user-level resistance—shifting the focus from "what platforms should do" to "what users can do."
 
-**Starting Point**: The authors observed that users on social media have already begun spontaneously using prompt injection to expose LLM bots (e.g., the widely circulated "cupcake recipe" incident on Reddit), which inspired theorizing this behavior as a peace-building practice. This "in-the-wild" user behavior already exists; the paper's contribution is to provide it with a theoretical framework.
+**Key Insight**: The authors observed that users on social media have already begun spontaneously using prompt injection to expose LLM bots (e.g., the widely circulated "cupcake recipe" incident on Reddit), which inspired theorizing this behavior as a peace-building practice. This "in-the-wild" user behavior already exists; the paper's contribution is to provide it with a theoretical framework.
 
 **Core Idea**: Jailbreaking is not an attack but a low-risk, publicly transparent civic de-escalation tool—it achieves de-escalation by altering users' *perception* of disinformation rather than suppressing the information itself. This framework bridges a technical concept from security research into the field of peace and conflict studies.
 

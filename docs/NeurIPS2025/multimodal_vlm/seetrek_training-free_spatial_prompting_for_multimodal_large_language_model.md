@@ -28,15 +28,15 @@ This paper proposes See&Trek, a training-free and GPU-free spatial prompting fra
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal large language models (MLLMs) have achieved remarkable progress on image understanding and VQA tasks, yet spatial reasoning remains a critical weakness, particularly in scenarios involving object localization, motion prediction, and physical interaction.
+**Background**: Multimodal large language models (MLLMs) have achieved remarkable progress on image understanding and VQA tasks, yet spatial reasoning remains a critical weakness, particularly in scenarios involving object localization, motion prediction, and physical interaction.
 
 **Limitations of Prior Work**: Current MLLMs commonly adopt uniform temporal sampling strategies (e.g., extracting 8 or 32 frames) when processing video, which introduces two fundamental problems:
    - **Visual Homogeneity**: Uniform sampling tends to select frames with few salient features (e.g., walls, ceilings), reducing the signal-to-noise ratio of input frames.
    - **Unknown Motion**: Relying solely on sampled frames without explicit ego-motion information prevents the model from inferring object motion and displacement, forcing it to rely on commonsense priors acquired during pretraining.
 
-**Root Cause**: Spatial reasoning requires rich visual semantics and explicit motion information, yet existing pipelines lack both.
+**Key Challenge**: Spatial reasoning requires rich visual semantics and explicit motion information, yet existing pipelines lack both.
 
-**Starting Point**: Leveraging off-the-shelf perception models (YOLO) and visual odometry (VO) to inject spatial cues into MLLMs **without any training**.
+**Key Insight**: Leveraging off-the-shelf perception models (YOLO) and visual odometry (VO) to inject spatial cues into MLLMs **without any training**.
 
 **Core Idea**: Visual diversity is increased through maximum semantic richness sampling, while camera trajectory is recovered via motion reconstruction and encoded onto keyframes.
 

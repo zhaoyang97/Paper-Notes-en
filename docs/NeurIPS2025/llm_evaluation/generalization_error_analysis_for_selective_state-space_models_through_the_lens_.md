@@ -28,13 +28,13 @@ This work unrolls selective SSMs (Mamba) into an attention-equivalent form and d
 
 ## Background & Motivation
 
-**State of the Field**: Selective SSMs such as Mamba are competitive with Transformers on a variety of sequence tasks, yet a rigorous theoretical generalization analysis remains absent.
+**Background**: Selective SSMs such as Mamba are competitive with Transformers on a variety of sequence tasks, yet a rigorous theoretical generalization analysis remains absent.
 
 **Limitations of Prior Work**: Generalization theory for LTI SSMs relies on control-theoretic tools (impulse response $\ell_1$ norm, transfer function $H_2$ norm), which do not apply to the nonlinear, input-dependent dynamics of selective SSMs. Meanwhile, covering number theory for Transformers is relatively mature but cannot be directly applied to the recurrent structure of SSMs.
 
-**Root Cause**: Selective SSMs combine the recurrent structure of RNNs (requiring control over state matrix growth) with the input-dependent projections of attention ($W_B, W_C$ analogous to key-query), necessitating a unified analytical framework.
+**Key Challenge**: Selective SSMs combine the recurrent structure of RNNs (requiring control over state matrix growth) with the input-dependent projections of attention ($W_B, W_C$ analogous to key-query), necessitating a unified analytical framework.
 
-**Starting Point**: The selective SSM recurrence is unrolled into an attention-like form, enabling a two-level covering construction — state matrices are covered using RNN-style tools, while input projections are covered using Transformer-style tools.
+**Key Insight**: The selective SSM recurrence is unrolled into an attention-like form, enabling a two-level covering construction — state matrices are covered using RNN-style tools, while input projections are covered using Transformer-style tools.
 
 **Core Idea**: The spectral abscissa $s_A$ of the continuous-time state matrix determines whether the generalization bound is independent of sequence length.
 

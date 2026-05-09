@@ -28,11 +28,11 @@ This paper identifies two fundamental conflicts between the causal mask in LLM d
 
 ## Background & Motivation
 
-1. **State of the Field**: 3D scene-language understanding aims to jointly interpret 3D environments and natural language, serving as a foundation for robot navigation and embodied agents. Recent object-centric 3D LLM frameworks (e.g., Chat-Scene) decompose 3D scenes into object proposal sets, representing each object with identifier tokens and instance-level 3D/2D features, and perform reasoning via an LLM.
+1. **Background**: 3D scene-language understanding aims to jointly interpret 3D environments and natural language, serving as a foundation for robot navigation and embodied agents. Recent object-centric 3D LLM frameworks (e.g., Chat-Scene) decompose 3D scenes into object proposal sets, representing each object with identifier tokens and instance-level 3D/2D features, and perform reasoning via an LLM.
 2. **Limitations of Prior Work**: Progress in existing methods has focused primarily on input representation (how to encode 3D scenes), while decoder architecture remains largely unexplored. Current methods directly adopt the causal mask from language modeling, which introduces two fundamental conflicts.
-3. **Root Cause**: (a) **Order bias**: the causal mask imposes sequential dependencies on tokens, yet objects in a 3D scene are intrinsically orderless—organized by spatial relationships rather than input order. This forced ordering causes the model to learn spurious order-dependent correlations. (b) **Instruction isolation**: the causal mask prevents object tokens from attending to instruction tokens located later in the sequence (given the input order [system, objects, instruction]), forcing the model to process the entire 3D scene before integrating the user instruction, resulting in an inefficient reasoning pathway.
-4. **Paper Goals**: (1) How to eliminate spurious sequential dependencies among objects? (2) How to allow objects to be aware of instruction context during encoding? (3) Can these issues be resolved through simple mask modification rather than architectural redesign?
-5. **Starting Point**: The paper targets the overlooked dimension of attention masking. When humans understand 3D scenes, they group objects by spatial proximity and focus on relevant regions guided by language instructions—these two cognitive principles are encoded as attention masks.
+3. **Key Challenge**: (a) **Order bias**: the causal mask imposes sequential dependencies on tokens, yet objects in a 3D scene are intrinsically orderless—organized by spatial relationships rather than input order. This forced ordering causes the model to learn spurious order-dependent correlations. (b) **Instruction isolation**: the causal mask prevents object tokens from attending to instruction tokens located later in the sequence (given the input order [system, objects, instruction]), forcing the model to process the entire 3D scene before integrating the user instruction, resulting in an inefficient reasoning pathway.
+4. **Goal**: (1) How to eliminate spurious sequential dependencies among objects? (2) How to allow objects to be aware of instruction context during encoding? (3) Can these issues be resolved through simple mask modification rather than architectural redesign?
+5. **Key Insight**: The paper targets the overlooked dimension of attention masking. When humans understand 3D scenes, they group objects by spatial proximity and focus on relevant regions guided by language instructions—these two cognitive principles are encoded as attention masks.
 6. **Core Idea**: Replace the causal constraint between objects with a geometry-adaptive mask (modeling local relationships based on spatial density rather than token order), and apply an instruction-aware mask to allow object tokens to directly attend to instruction tokens.
 
 ## Method
@@ -136,17 +136,17 @@ Component ablation (Chat-Scene):
 
 ## Background & Motivation
 
-1. **State of the Field**: 3D scene-language understanding aims to jointly interpret 3D environments and natural language, serving as the foundation for applications such as robot navigation and embodied intelligence. Recent work adopts object-centric 3D LLM frameworks (e.g., Chat-Scene) that decompose 3D scenes into object proposals and perform reasoning via an LLM.
+1. **Background**: 3D scene-language understanding aims to jointly interpret 3D environments and natural language, serving as the foundation for applications such as robot navigation and embodied intelligence. Recent work adopts object-centric 3D LLM frameworks (e.g., Chat-Scene) that decompose 3D scenes into object proposals and perform reasoning via an LLM.
 
 2. **Limitations of Prior Work**: Existing methods invest heavily in optimizing input representations (how to construct 3D scene representations), while decoder design remains almost entirely unexplored, with the standard causal mask from language modeling applied directly.
 
-3. **Root Cause**: The causal mask introduces two fundamental conflicts with the intrinsic properties of 3D scenes:
+3. **Key Challenge**: The causal mask introduces two fundamental conflicts with the intrinsic properties of 3D scenes:
     - **Order bias**: The causal mask enforces sequential dependencies on object tokens (earlier objects cannot see later ones), yet objects in a 3D scene have no intrinsic ordering—they are organized by spatial relationships, not input order.
     - **Restricted interaction**: The causal mask prevents object tokens from accessing instruction tokens (since instructions appear after objects in the sequence), forcing the model to process the entire 3D scene without knowledge of the user's task.
 
-4. **Paper Goals**: Design decoder attention masks adapted to the spatial structure of 3D scenes, eliminating the order bias and interaction restrictions introduced by the causal mask.
+4. **Goal**: Design decoder attention masks adapted to the spatial structure of 3D scenes, eliminating the order bias and interaction restrictions introduced by the causal mask.
 
-5. **Starting Point**: Inspired by human cognition—humans understand 3D scenes by grouping objects via spatial proximity and directing visual attention based on language cues.
+5. **Key Insight**: Inspired by human cognition—humans understand 3D scenes by grouping objects via spatial proximity and directing visual attention based on language cues.
 
 6. **Core Idea**: Replace the causal mask with spatially adaptive attention masks that allow 3D LLMs to process objects according to spatial relationships rather than token order.
 

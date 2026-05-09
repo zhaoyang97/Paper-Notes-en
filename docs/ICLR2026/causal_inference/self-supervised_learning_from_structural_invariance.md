@@ -28,15 +28,15 @@ This paper proposes AdaSSL, which introduces latent variables to model condition
 
 ## Background & Motivation
 
-**State of the Field**: Joint-embedding SSL methods (e.g., SimCLR, BYOL) learn representations by encouraging similarity between positive pair embeddings, typically relying on hand-crafted data augmentations to construct semantically related pairs.
+**Background**: Joint-embedding SSL methods (e.g., SimCLR, BYOL) learn representations by encouraging similarity between positive pair embeddings, typically relying on hand-crafted data augmentations to construct semantically related pairs.
 
 **Limitations of Prior Work**: Hand-crafted augmentations (cropping, color jitter) cannot precisely simulate real-world variation factors, may discard fine-grained information, require modality-specific heuristics, and differ from natural distribution shifts. Naturally paired data (e.g., adjacent video frames, image-text pairs) better reflects real-world variation, but introduces complex conditional distributions $p(\mathbf{z}^+|\mathbf{z})$—heteroscedastic and multimodal—which existing SSL methods cannot model.
 
-**Root Cause**: InfoNCE's dot-product similarity implicitly assumes a vMF distribution (isotropic noise), and AnInfoNCE extends this to anisotropic but still constant noise. However, Proposition 2.1 theoretically establishes that even when noise in the latent space is isotropic, mapping to the normalized embedding space inevitably induces heteroscedasticity—a necessary consequence of geometric mismatch.
+**Key Challenge**: InfoNCE's dot-product similarity implicitly assumes a vMF distribution (isotropic noise), and AnInfoNCE extends this to anisotropic but still constant noise. However, Proposition 2.1 theoretically establishes that even when noise in the latent space is isotropic, mapping to the normalized embedding space inevitably induces heteroscedasticity—a necessary consequence of geometric mismatch.
 
-**Paper Goals**: Enable SSL to flexibly model arbitrarily complex conditional distributions $p(\mathbf{z}^+|\mathbf{z})$ while keeping the similarity function simple.
+**Goal**: Enable SSL to flexibly model arbitrarily complex conditional distributions $p(\mathbf{z}^+|\mathbf{z})$ while keeping the similarity function simple.
 
-**Starting Point**: Inspired by JEPA, a latent variable $\mathbf{r}$ is introduced to capture predictive uncertainty, decomposing the complex conditional distribution into two steps: first sampling $\mathbf{r}$ (e.g., camera motion, actions), then predicting $\mathbf{z}^+$ with a simple model.
+**Key Insight**: Inspired by JEPA, a latent variable $\mathbf{r}$ is introduced to capture predictive uncertainty, decomposing the complex conditional distribution into two steps: first sampling $\mathbf{r}$ (e.g., camera motion, actions), then predicting $\mathbf{z}^+$ with a simple model.
 
 **Core Idea**: Via the chain rule of mutual information $I(f(\mathbf{x}); f(\mathbf{x}^+)) = I(f(\mathbf{x}), \mathbf{r}; f(\mathbf{x}^+)) - I(\mathbf{r}; f(\mathbf{x}^+)|f(\mathbf{x}))$, the first term is optimized with an extended InfoNCE (simple similarity + latent variable), and the second term is regularized with KL divergence to prevent $\mathbf{r}$ from encoding shortcuts.
 

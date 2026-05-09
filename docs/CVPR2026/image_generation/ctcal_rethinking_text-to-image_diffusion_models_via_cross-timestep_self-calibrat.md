@@ -28,15 +28,15 @@ This paper proposes CTCal (Cross-Timestep Self-Calibration), which leverages rel
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models dominate text-to-image generation, yet precise text-image alignment—especially for compositional generation with complex prompts—remains an open challenge.
+**Background**: Diffusion models dominate text-to-image generation, yet precise text-image alignment—especially for compositional generation with complex prompts—remains an open challenge.
 
 **Limitations of Prior Work**: (1) Conventional diffusion losses provide only implicit supervision, making it difficult to capture fine-grained text-image correspondences; (2) inference-time optimization methods (e.g., Attend-and-Excite) exhibit poor generalization and do not scale; (3) at large timesteps, severe noise degrades cross-attention map quality, preventing correct alignment—a critical bottleneck for generation quality.
 
-**Root Cause**: At small timesteps, text-image alignment is reliable but "too easy"; at large timesteps, alignment is poor but "critical" (determining generation quality in the early stages of inference).
+**Key Challenge**: At small timesteps, text-image alignment is reliable but "too easy"; at large timesteps, alignment is poor but "critical" (determining generation quality in the early stages of inference).
 
-**Paper Goals**: How to provide explicit supervision for establishing correct text-image correspondences at large timesteps in diffusion models?
+**Goal**: How to provide explicit supervision for establishing correct text-image correspondences at large timesteps in diffusion models?
 
-**Starting Point**: **Key Observation**—for the same image-text-noise triplet, cross-attention maps extracted at different timesteps during training differ dramatically in quality: maps at small timesteps closely match the true image structure and semantics, while those at large timesteps are entirely degraded.
+**Key Insight**: **Key Observation**—for the same image-text-noise triplet, cross-attention maps extracted at different timesteps during training differ dramatically in quality: maps at small timesteps closely match the true image structure and semantics, while those at large timesteps are entirely degraded.
 
 **Core Idea**: Use reliable attention maps from small timesteps as a "teacher" to calibrate attention maps at large timesteps (the "student"), enabling the model to supervise itself.
 

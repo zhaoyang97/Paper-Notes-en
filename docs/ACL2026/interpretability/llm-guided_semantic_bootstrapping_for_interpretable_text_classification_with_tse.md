@@ -28,15 +28,15 @@ This paper proposes an LLM-guided semantic bootstrapping framework that leverage
 
 ## Background & Motivation
 
-**State of the Field**: The Tsetlin Machine (TM) has attracted attention in interpretable NLP due to its clause-level transparency, and has been applied to document classification, sentiment analysis, and related tasks. Pre-trained language models such as BERT provide powerful semantic representations but at high computational cost and with limited transparency.
+**Background**: The Tsetlin Machine (TM) has attracted attention in interpretable NLP due to its clause-level transparency, and has been applied to document classification, sentiment analysis, and related tasks. Pre-trained language models such as BERT provide powerful semantic representations but at high computational cost and with limited transparency.
 
 **Limitations of Prior Work**: (1) TMs rely on Boolean bag-of-words (BoW) representations and cannot generalize across semantically similar but lexically distinct expressions unless they appear explicitly in training data; (2) augmenting TM inputs with Word2Vec or GloVe provides only limited semantic alignment; (3) BERT achieves strong performance but lacks decision traceability in high-stakes domains such as law and medicine.
 
-**Root Cause**: There is a fundamental tension between symbolic interpretability and semantic generalization — BoW representations guarantee transparency but sacrifice semantic understanding, whereas embedding-based representations capture semantics but lose interpretability.
+**Key Challenge**: There is a fundamental tension between symbolic interpretability and semantic generalization — BoW representations guarantee transparency but sacrifice semantic understanding, whereas embedding-based representations capture semantics but lose interpretability.
 
-**Paper Goals**: To transfer LLM semantic knowledge into TMs in symbolic form, without introducing embedding layers or runtime LLM calls.
+**Goal**: To transfer LLM semantic knowledge into TMs in symbolic form, without introducing embedding layers or runtime LLM calls.
 
-**Starting Point**: LLMs are used to generate interpretable sub-intents (e.g., *positive_due_to_plot*) and corresponding synthetic data, bridging the semantic gap through symbolic augmentation rather than embedding augmentation.
+**Key Insight**: LLMs are used to generate interpretable sub-intents (e.g., *positive_due_to_plot*) and corresponding synthetic data, bridging the semantic gap through symbolic augmentation rather than embedding augmentation.
 
 **Core Idea**: The LLM does not participate in classification inference; instead, it acts as a "semantic teacher" during offline training, providing symbolic semantic priors to the TM via sub-intent decomposition and curriculum-based data generation.
 

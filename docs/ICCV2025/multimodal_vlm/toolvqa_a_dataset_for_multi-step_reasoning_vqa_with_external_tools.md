@@ -38,7 +38,7 @@ Integrating external tools into large foundation models (LFMs) is a key directio
 
 **High annotation cost**: Manually annotated datasets (e.g., GAIA with only 500 samples) are difficult to scale.
 
-**Paper Goals**: To construct a large-scale, scalable dataset that simultaneously satisfies real-world scenarios and real-world queries, bridging the gap between synthetic data and authentic tool use.
+**Goal**: To construct a large-scale, scalable dataset that simultaneously satisfies real-world scenarios and real-world queries, bridging the gap between synthetic data and authentic tool use.
 
 Advantages over existing datasets (Table 1): ToolVQA is the only large-scale dataset that simultaneously supports multimodal input, real-world scenarios/queries, evaluable answers, and high reasoning complexity (2.38).
 

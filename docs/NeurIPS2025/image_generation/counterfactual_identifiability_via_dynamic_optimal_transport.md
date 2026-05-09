@@ -28,13 +28,13 @@ This paper leverages dynamic optimal transport (dynamic OT) theory to resolve—
 
 ## Background & Motivation
 
-**State of the Field**: Deep generative models (VAEs, diffusion models, flows) are increasingly used to parameterize structural causal models (SCMs) for counterfactual inference, but these approaches lack identifiability guarantees—multiple observationally equivalent models can yield different counterfactual answers from the same observed data.
+**Background**: Deep generative models (VAEs, diffusion models, flows) are increasingly used to parameterize structural causal models (SCMs) for counterfactual inference, but these approaches lack identifiability guarantees—multiple observationally equivalent models can yield different counterfactual answers from the same observed data.
 
 **Limitations of Prior Work**: (a) Pearl emphasizes that counterfactual queries must satisfy identifiability requirements to support reliable causal claims; (b) classical symbolic identification methods (Tian & Pearl; Shpitser & Pearl) have not been extended to high-dimensional variables; (c) Nasr-Esfahany et al. (2023) established counterfactual identifiability for bijective mechanisms, but how to generalize the monotonicity condition to multivariate variables ($d>1$) in the Markovian setting remained an open problem.
 
-**Root Cause**: In the multivariate setting, bijectivity alone is insufficient to guarantee counterfactual identifiability—due to rotational symmetry, infinitely many bijective mechanisms can generate the same observational distribution. A correct multivariate generalization of monotonicity is needed to break this symmetry.
+**Key Challenge**: In the multivariate setting, bijectivity alone is insufficient to guarantee counterfactual identifiability—due to rotational symmetry, infinitely many bijective mechanisms can generate the same observational distribution. A correct multivariate generalization of monotonicity is needed to break this symmetry.
 
-**Starting Point**: The paper exploits Brenier's theorem—under standard regularity conditions, the optimal transport map $T = \nabla \phi$ is unique and monotone (given as the gradient of a convex function). This is connected to causal mechanisms in SCMs to show that OT flow mechanisms naturally satisfy the monotonicity required for multivariate counterfactual identifiability.
+**Key Insight**: The paper exploits Brenier's theorem—under standard regularity conditions, the optimal transport map $T = \nabla \phi$ is unique and monotone (given as the gradient of a convex function). This is connected to causal mechanisms in SCMs to show that OT flow mechanisms naturally satisfy the monotonicity required for multivariate counterfactual identifiability.
 
 ## Method
 

@@ -29,15 +29,15 @@ AHS overcomes the limitations of self-supervised training by using a head reenac
 
 ## Background & Motivation
 
-**State of the Field**: Head Swapping aims to seamlessly integrate a source image's head onto a target image's body while reenacting the target's head pose and expression. It holds significant application value in fashion design, virtual character customization, and digital marketing.
+**Background**: Head Swapping aims to seamlessly integrate a source image's head onto a target image's body while reenacting the target's head pose and expression. It holds significant application value in fashion design, virtual character customization, and digital marketing.
 
 **Limitations of Prior Work**: Existing methods face three core issues: (1) Most methods are trained only on face-cropped data, limiting them to frontal views and unable to handle diverse head orientations; (2) The lack of ground truth data necessitates self-supervised training, leading to poor generalization in expression and pose variations; (3) High variability in hair length and style requires the model to consider a wider spatial range, making it much harder than face swapping.
 
-**Root Cause**: Self-supervised training (self-reconstruction) restricts the model to seeing source and target images in the same pose, failing to learn cross-pose and cross-expression head swapping capabilities. Additionally, head sizes and hairstyles of the source and target can vary significantly.
+**Key Challenge**: Self-supervised training (self-reconstruction) restricts the model to seeing source and target images in the same pose, failing to learn cross-pose and cross-expression head swapping capabilities. Additionally, head sizes and hairstyles of the source and target can vary significantly.
 
-**Paper Goals**: Design a zero-shot head swapping method capable of effectively handling diverse head orientations, expressions, and hairstyles in full-body images.
+**Goal**: Design a zero-shot head swapping method capable of effectively handling diverse head orientations, expressions, and hairstyles in full-body images.
 
-**Starting Point**: Utilize an animatable head avatar model to generate synthetic data with different head poses and expressions as training augmentations to break the constraints of self-supervised training.
+**Key Insight**: Utilize an animatable head avatar model to generate synthetic data with different head poses and expressions as training augmentations to break the constraints of self-supervised training.
 
 **Core Idea**: Use GAGAvatar to generate synthetic augmentation data for head reenactment, allowing the model to encounter cross-pose/cross-expression head swapping scenarios during training, thereby enhancing zero-shot generalization.
 

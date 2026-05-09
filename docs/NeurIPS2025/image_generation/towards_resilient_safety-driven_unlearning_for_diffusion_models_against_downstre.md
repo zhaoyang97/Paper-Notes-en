@@ -29,13 +29,13 @@ This paper proposes ResAlign, a framework that leverages Moreau envelope approxi
 
 ## Background & Motivation
 
-- **State of the Field**: Text-to-image (T2I) diffusion models (e.g., Stable Diffusion), trained on large-scale web-crawled data, inevitably acquire the ability to generate harmful content (e.g., sexually explicit images). Safety-driven unlearning methods (e.g., ESD, SafeGen, AdvUnlearn) suppress unsafe generation by modifying model parameters, achieving preliminary success.
+- **Background**: Text-to-image (T2I) diffusion models (e.g., Stable Diffusion), trained on large-scale web-crawled data, inevitably acquire the ability to generate harmful content (e.g., sexually explicit images). Safety-driven unlearning methods (e.g., ESD, SafeGen, AdvUnlearn) suppress unsafe generation by modifying model parameters, achieving preliminary success.
 
 - **Limitations of Prior Work**: Safety-unlearned models **recover harmful capabilities after downstream fine-tuning**. More critically, the paper's experiments reveal that **even fine-tuning on entirely benign data** causes existing SOTA unlearning methods to regress to unsafe levels approaching those of the original, unmodified model. This implies that even ordinary users with no malicious intent — who merely wish to personalize the model — may inadvertently restore its harmful behaviors.
 
-- **Root Cause**: Existing unlearning methods optimize safety only at the current parameter state (Eq. 2), while the parameter-space neighborhood surrounding the unlearned model may remain "toxic." Parameter drift induced by fine-tuning, even along benign directions, can push the model into these toxic regions.
+- **Key Challenge**: Existing unlearning methods optimize safety only at the current parameter state (Eq. 2), while the parameter-space neighborhood surrounding the unlearned model may remain "toxic." Parameter drift induced by fine-tuning, even along benign directions, can push the model into these toxic regions.
 
-- **Paper Goals**: Unlearning should not only suppress harmful behaviors in the current state but should also **explicitly minimize the degree of harmful capability recovery after fine-tuning**. The key challenge is computational: since fine-tuning is a multi-step optimization process, how can one efficiently compute the gradient of "post-fine-tuning harmfulness with respect to current parameters"?
+- **Goal**: Unlearning should not only suppress harmful behaviors in the current state but should also **explicitly minimize the degree of harmful capability recovery after fine-tuning**. The key challenge is computational: since fine-tuning is a multi-step optimization process, how can one efficiently compute the gradient of "post-fine-tuning harmfulness with respect to current parameters"?
 
 ## Method
 

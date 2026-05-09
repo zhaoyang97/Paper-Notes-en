@@ -27,15 +27,15 @@ content_hash: 84a87512169b7a86
 VP-Bench introduces the first systematic two-stage benchmark for evaluating MLLMs' understanding of visual prompts (VPs): Stage 1 covers 30K+ images across 8 VP shape types × 355 attribute combinations to assess VP perception ability, while Stage 2 evaluates the practical effectiveness of VPs on 6 downstream tasks. Experiments on 28 MLLMs reveal the critical impact of VP shape selection on model performance.
 
 ## Background & Motivation
-**State of the Field**: When humans wish to direct MLLMs' attention to specific regions in an image, they naturally employ visual prompts (VPs) such as bounding boxes, arrows, and circled annotations. Such usage is increasingly common in interactive AI applications.
+**Background**: When humans wish to direct MLLMs' attention to specific regions in an image, they naturally employ visual prompts (VPs) such as bounding boxes, arrows, and circled annotations. Such usage is increasingly common in interactive AI applications.
 
 **Limitations of Prior Work**: Existing VP-related benchmarks (e.g., ViP-Bench with only 303 images; SoV with only 119 images) are too small in scale with limited VP type coverage. They neither systematically study the effect of VP shape/attribute choices on model performance nor evaluate the practical effectiveness of VPs on downstream tasks.
 
-**Root Cause**: Different VP shapes (bounding box vs. scribble vs. point marker) and attributes (color/thickness/style) vary greatly in perceptibility to MLLMs, yet no systematic study exists to guide practitioners on "which VP to use."
+**Key Challenge**: Different VP shapes (bounding box vs. scribble vs. point marker) and attributes (color/thickness/style) vary greatly in perceptibility to MLLMs, yet no systematic study exists to guide practitioners on "which VP to use."
 
-**Paper Goals**: Systematically evaluate MLLMs' VP perception capabilities and the impact of VPs on downstream tasks.
+**Goal**: Systematically evaluate MLLMs' VP perception capabilities and the impact of VPs on downstream tasks.
 
-**Starting Point**: VP shapes are categorized into 8 types (tag/bbox/arrow/mask/contour/oval/point/scribble), each further decomposed by attributes (color/line width/vertex shape, etc.), forming the most comprehensive VP evaluation framework to date.
+**Key Insight**: VP shapes are categorized into 8 types (tag/bbox/arrow/mask/contour/oval/point/scribble), each further decomposed by attributes (color/line width/vertex shape, etc.), forming the most comprehensive VP evaluation framework to date.
 
 **Core Idea**: Systematically evaluate VP understanding capabilities of 28 MLLMs using 34K+ images across 355 VP attribute combinations.
 

@@ -27,15 +27,15 @@ This work applies linear probing to analyze how LLMs internally represent rhetor
 
 ## Background & Motivation
 
-**State of the Field**: Rhetorical questions are a prevalent figure of speech in everyday communication, used to express stance, challenge, or persuade rather than to genuinely seek information. Computational linguistics research on RQs has largely focused on classification and detection tasks, training classifiers with explicit labels.
+**Background**: Rhetorical questions are a prevalent figure of speech in everyday communication, used to express stance, challenge, or persuade rather than to genuinely seek information. Computational linguistics research on RQs has largely focused on classification and detection tasks, training classifiers with explicit labels.
 
 **Limitations of Prior Work**: Although LLMs routinely generate and interpret RQs in practice, virtually no research has examined how models internally represent rhetorical intent. Existing work prioritizes predictive accuracy while overlooking representational understanding.
 
-**Root Cause**: A natural assumption is that if RQs can be detected by a linear probe, the model must encode a single "rhetorical question direction." However, if RQs serve distinct rhetorical functions across contexts—such as discourse-level stance expression versus syntactic-level interrogative marking—this single-direction assumption may be an oversimplification.
+**Key Challenge**: A natural assumption is that if RQs can be detected by a linear probe, the model must encode a single "rhetorical question direction." However, if RQs serve distinct rhetorical functions across contexts—such as discourse-level stance expression versus syntactic-level interrogative marking—this single-direction assumption may be an oversimplification.
 
-**Paper Goals**: To systematically address three questions: (1) At which layers does the RQ signal emerge? (2) Do different probing methods yield consistent results? (3) Are probe directions aligned when transferred across datasets?
+**Goal**: To systematically address three questions: (1) At which layers does the RQ signal emerge? (2) Do different probing methods yield consistent results? (3) Are probe directions aligned when transferred across datasets?
 
-**Starting Point**: The paper analyzes the internal representations of Qwen3-32B and Llama-3.3-70B on two social media datasets using multiple linear probes (diffMean, logistic regression, SVM), examining not only classification accuracy but also directional alignment and rank consistency across probes.
+**Key Insight**: The paper analyzes the internal representations of Qwen3-32B and Llama-3.3-70B on two social media datasets using multiple linear probes (diffMean, logistic regression, SVM), examining not only classification accuracy but also directional alignment and rank consistency across probes.
 
 **Core Idea**: RQs are *heterogeneously encoded* in LLM representations—captured by multiple misaligned linear directions reflecting distinct rhetorical phenomena rather than a single shared dimension.
 

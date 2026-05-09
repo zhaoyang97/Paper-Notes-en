@@ -29,13 +29,13 @@ This paper proposes 4DGT — a 4D Gaussian-based Transformer model trained entir
 
 ### Root Cause
 
-**State of the Field**: Dynamic 3D scene reconstruction is a core task in computer vision. Existing approaches fall into two main categories: (1) **Optimization-based methods** such as Shape-of-Motion, which require hours of per-scene optimization and cannot scale to long videos or real-time applications; (2) **Feed-forward methods** such as L4GM and StaticLRM, which offer fast inference but typically require multi-view inputs or synthetic training data, limiting their effectiveness on complex real-world dynamic scenes.
+**Background**: Dynamic 3D scene reconstruction is a core task in computer vision. Existing approaches fall into two main categories: (1) **Optimization-based methods** such as Shape-of-Motion, which require hours of per-scene optimization and cannot scale to long videos or real-time applications; (2) **Feed-forward methods** such as L4GM and StaticLRM, which offer fast inference but typically require multi-view inputs or synthetic training data, limiting their effectiveness on complex real-world dynamic scenes.
 
 **Limitations of Prior Work**: Existing feed-forward methods do not adequately model the temporal dimension of scene elements — static backgrounds and dynamic foregrounds have different temporal lifespans, objects may appear and disappear, and traditional 3D Gaussian representations lack temporal modeling capacity. Furthermore, as the number of input frames grows, the spatial-temporal token count explodes, creating memory and efficiency bottlenecks during training and inference.
 
 ### Paper Goals
 
-**Paper Goals**: How to design a feed-forward dynamic scene reconstruction model that: (1) can be trained on real-world monocular videos without relying on synthetic data; (2) uniformly models static and dynamic components with their varying temporal lifespans; and (3) remains efficient when processing long video sequences?
+**Goal**: How to design a feed-forward dynamic scene reconstruction model that: (1) can be trained on real-world monocular videos without relying on synthetic data; (2) uniformly models static and dynamic components with their varying temporal lifespans; and (3) remains efficient when processing long video sequences?
 
 ## Method
 

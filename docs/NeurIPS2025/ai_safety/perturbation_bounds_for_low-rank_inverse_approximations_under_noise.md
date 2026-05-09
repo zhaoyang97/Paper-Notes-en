@@ -27,9 +27,9 @@ content_hash: ee5ea95078e2a6f1
 This paper provides the first non-asymptotic spectral norm perturbation bounds for low-rank inverse approximations $\|(\tilde{A}^{-1})_p - A_p^{-1}\|$ under additive noise. Using contour integration techniques, sharp bounds are derived that depend on the eigengap, spectral decay, and noise alignment, improving upon classical full-inverse bounds by up to a factor of $\sqrt{n}$.
 
 ## Background & Motivation
-**State of the Field**: Low-rank pseudoinverses are widely used to accelerate inverse matrix approximations in ML, optimization, and scientific computing. Classical perturbation theory provides bounds only for the full inverse $\|A^{-1} - \tilde{A}^{-1}\|$.
+**Background**: Low-rank pseudoinverses are widely used to accelerate inverse matrix approximations in ML, optimization, and scientific computing. Classical perturbation theory provides bounds only for the full inverse $\|A^{-1} - \tilde{A}^{-1}\|$.
 
-**Root Cause**: Classical bounds ignore the structure introduced by truncation to rank $p$, neglect the interaction between noise and the eigengap, and frequently yield overly pessimistic estimates.
+**Key Challenge**: Classical bounds ignore the structure introduced by truncation to rank $p$, neglect the interaction between noise and the eigengap, and frequently yield overly pessimistic estimates.
 
 **Core Idea**: Contour integration techniques are applied to perform a local resolvent expansion of the non-entire function $f(z) = 1/z$, enabling precise control of Riesz projection perturbations near the smallest eigenvalues.
 

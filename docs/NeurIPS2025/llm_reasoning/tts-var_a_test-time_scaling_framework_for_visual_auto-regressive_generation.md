@@ -28,13 +28,13 @@ This paper proposes TTS-VAR — the first test-time scaling framework specifical
 
 ## Background & Motivation
 
-**State of the Field**: Test-time scaling (TTS) has achieved remarkable success in LLMs (e.g., CoT, tree search) and has also been explored as a path searching problem in diffusion models. However, VAR (Visual Auto-Regressive) models — which generate images by progressively predicting the "next scale" in a coarse-to-fine multi-scale manner — still lack a dedicated TTS framework.
+**Background**: Test-time scaling (TTS) has achieved remarkable success in LLMs (e.g., CoT, tree search) and has also been explored as a path searching problem in diffusion models. However, VAR (Visual Auto-Regressive) models — which generate images by progressively predicting the "next scale" in a coarse-to-fine multi-scale manner — still lack a dedicated TTS framework.
 
 **Limitations of Prior Work**: (a) TTS methods for diffusion models cannot be directly transferred — additional inference steps break the KV Cache mechanism in VAR, causing exponential complexity growth; (b) Applying reward functions at early VAR scales leads to misjudgments, as the consistency between early intermediate images and final image quality is very low, potentially eliminating promising candidates prematurely; (c) Simple Best-of-N strategies are inefficient.
 
-**Root Cause**: The causal generation nature of VAR — once a token is generated it cannot be modified and directly affects all subsequent tokens — makes early decisions critical, yet early scales are difficult to evaluate accurately.
+**Key Challenge**: The causal generation nature of VAR — once a token is generated it cannot be modified and directly affects all subsequent tokens — makes early decisions critical, yet early scales are difficult to evaluate accurately.
 
-**Starting Point**: Exploit the inherent structure of VAR's multi-scale generation: early scales encode structural information (layout/composition) while late scales encode fine details, and apply distinct strategies accordingly.
+**Key Insight**: Exploit the inherent structure of VAR's multi-scale generation: early scales encode structural information (layout/composition) while late scales encode fine details, and apply distinct strategies accordingly.
 
 **Core Idea**: Maintain diversity via clustering at early scales (without scoring), and select the optimal candidate via reward at late scales (where consistency is high), coupled with adaptive descending batch sizes to fully exploit the low cost of early scales.
 

@@ -31,7 +31,7 @@ This paper proposes SafeFlowMatcher, a safe planning framework that integrates f
 
 ### State of the Field
 
-**State of the Field**: Generative model-based path planning faces two major challenges:
+**Background**: Generative model-based path planning faces two major challenges:
 
 **Lack of Safety**: The sampling dynamics of diffusion/flow matching models are governed by implicitly learned rules, which may produce trajectories that violate safety constraints.
 
@@ -45,7 +45,7 @@ Issues with existing safe planning methods:
 
 ### Root Cause
 
-**Root Cause**: Certification methods **(e.g., SafeDiffuser)** impose constraints on intermediate latent states, leading to **semantic misalignment**—certification concerns the executed trajectory, yet constraints are applied to intermediate states that are never executed. This **distorts the learned flow** and creates **local traps** (trajectories become stuck near obstacle boundaries and fail to reach the goal).
+**Key Challenge**: Certification methods **(e.g., SafeDiffuser)** impose constraints on intermediate latent states, leading to **semantic misalignment**—certification concerns the executed trajectory, yet constraints are applied to intermediate states that are never executed. This **distorts the learned flow** and creates **local traps** (trajectories become stuck near obstacle boundaries and fail to reach the goal).
 
 ## Method
 

@@ -28,11 +28,11 @@ This paper proposes TTSG, a modular framework that leverages LLMs to convert fre
 
 ## Background & Motivation
 
-1. **State of the Field**: Traffic scene datasets such as nuScenes and Waymo provide rich driving logs but are constrained by safety and controllability. Simulators like CARLA and MetaDrive support customizable scenes yet rely on random sampling or trajectory replay.
+1. **Background**: Traffic scene datasets such as nuScenes and Waymo provide rich driving logs but are constrained by safety and controllability. Simulators like CARLA and MetaDrive support customizable scenes yet rely on random sampling or trajectory replay.
 2. **Limitations of Prior Work**: Methods such as LCTGen and ChatScene either require structured inputs and cannot handle free-form text, or demand that users manually specify spawn points and map locations, while neglecting environmental conditions (traffic lights, weather, etc.).
-3. **Root Cause**: How to generate spatially valid and semantically coherent traffic layouts directly from unstructured natural language, without relying on predefined routes or spawn points.
-4. **Paper Goals**: A training-free modular framework that generates realistic traffic scenes directly from natural language.
-5. **Starting Point**: Employing the LLM as a general-purpose planner within a controlled pipeline rather than as an end-to-end generator.
+3. **Key Challenge**: How to generate spatially valid and semantically coherent traffic layouts directly from unstructured natural language, without relying on predefined routes or spawn points.
+4. **Goal**: A training-free modular framework that generates realistic traffic scenes directly from natural language.
+5. **Key Insight**: Employing the LLM as a general-purpose planner within a controlled pipeline rather than as an end-to-end generator.
 6. **Core Idea**: A plan-aware road ranking algorithm ensures consistency between agent actions and road geometry.
 
 ## Method

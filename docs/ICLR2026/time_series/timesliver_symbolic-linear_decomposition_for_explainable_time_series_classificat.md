@@ -30,7 +30,7 @@ TimeSliver is an explainability-driven deep learning framework that jointly leve
 
 ### State of the Field
 
-**State of the Field**: DL models (CNN/LSTM/Transformer) achieve strong classification performance but lack interpretability. Explainability is critical for high-stakes applications (healthcare/finance/law).
+**Background**: DL models (CNN/LSTM/Transformer) achieve strong classification performance but lack interpretability. Explainability is critical for high-stakes applications (healthcare/finance/law).
 
 ### Limitations of Prior Work
 
@@ -38,7 +38,7 @@ TimeSliver is an explainability-driven deep learning framework that jointly leve
 
 ### Root Cause
 
-**Root Cause**: (2) Attention weights in Transformers are not faithful proxies for true attribution.
+**Key Challenge**: (2) Attention weights in Transformers are not faithful proxies for true attribution.
 
 ### Resolution Direction
 
@@ -48,7 +48,7 @@ TimeSliver is an explainability-driven deep learning framework that jointly leve
 
 **Additional Notes**: (4) Inability to distinguish positive from negative attribution — i.e., whether a segment "pushes toward" or "pushes away from" the predicted class.
 
-**Starting Point**: Design an intrinsically interpretable architecture in which linear combination guarantees that attributions are directly computable without relying on post-hoc methods.
+**Key Insight**: Design an intrinsically interpretable architecture in which linear combination guarantees that attributions are directly computable without relying on post-hoc methods.
 
 ## Method
 

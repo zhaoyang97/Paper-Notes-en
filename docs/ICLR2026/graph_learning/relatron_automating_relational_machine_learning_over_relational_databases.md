@@ -28,15 +28,15 @@ This work systematically compares relational deep learning (RDL/GNN) and deep fe
 
 ## Background & Motivation
 
-**State of the Field**: Predictive modeling over relational databases (RDB) follows two main paradigms: DFS (programmatically composing aggregation primitives to generate feature tables, then applying a tabular learner) and RDL (end-to-end training of GNNs on heterogeneous entity–relation graphs). Both outperform relation-agnostic baselines.
+**Background**: Predictive modeling over relational databases (RDB) follows two main paradigms: DFS (programmatically composing aggregation primitives to generate feature tables, then applying a tabular learner) and RDL (end-to-end training of GNNs on heterogeneous entity–relation graphs). Both outperform relation-agnostic baselines.
 
 **Limitations of Prior Work**: It remains entirely unknown which paradigm is superior in which setting. Practitioners lack principled guidance for choosing between DFS and RDL. Validation performance is often an unreliable proxy for model selection — more extensive search can actually lead to worse test performance (the "over-tuning" effect).
 
-**Root Cause**: (a) No single architecture dominates across all tasks; (b) there is a substantial gap between the configuration selected by validation and the test-optimal configuration, particularly when temporal splits introduce distribution shift.
+**Key Challenge**: (a) No single architecture dominates across all tasks; (b) there is a substantial gap between the configuration selected by validation and the test-optimal configuration, particularly when temporal splits introduce distribution shift.
 
-**Paper Goals**: Given an RDB task, automatically select between RDL and DFS and determine the specific architecture configuration.
+**Goal**: Given an RDB task, automatically select between RDL and DFS and determine the specific architecture configuration.
 
-**Starting Point**: A large-scale architecture search is conducted to build a "performance bank," followed by analysis of the factors driving the RDL–DFS performance gap. RDB task homophily and training scale emerge as key predictors.
+**Key Insight**: A large-scale architecture search is conducted to build a "performance bank," followed by analysis of the factors driving the RDL–DFS performance gap. RDB task homophily and training scale emerge as key predictors.
 
 **Core Idea**: High homophily → linear aggregation in DFS suffices; low homophily → nonlinear aggregation in RDL is advantageous. A meta-classifier is trained on task embeddings (homophily + affinity + scale) to enable automatic macro- and micro-architecture selection.
 

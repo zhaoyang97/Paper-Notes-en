@@ -27,15 +27,15 @@ This paper applies activation steering to mitigate content effects in LLMs — t
 
 ## Background & Motivation
 
-**State of the Field**: LLMs exhibit strong commonsense reasoning capabilities but suffer from "content effects" in formal logical reasoning — when syllogism content aligns with world knowledge (e.g., "All students read; some readers are professors; therefore some students are professors"), models are more inclined to judge it as logically valid, even when it is not. This mirrors content bias observed in human cognition.
+**Background**: LLMs exhibit strong commonsense reasoning capabilities but suffer from "content effects" in formal logical reasoning — when syllogism content aligns with world knowledge (e.g., "All students read; some readers are professors; therefore some students are professors"), models are more inclined to judge it as logically valid, even when it is not. This mirrors content bias observed in human cognition.
 
 **Limitations of Prior Work**: (a) Chain-of-thought prompting improves reasoning but cannot eliminate content effect bias; (b) fine-tuning is costly and cannot fully debias models; (c) neurosymbolic approaches require integration of external symbolic solvers, increasing system complexity.
 
-**Root Cause**: Formal reasoning requires that validity depend solely on logical form, not content. However, world knowledge acquired during pretraining "contaminates" the formal reasoning process, causing believable but logically invalid arguments to be incorrectly accepted.
+**Key Challenge**: Formal reasoning requires that validity depend solely on logical form, not content. However, world knowledge acquired during pretraining "contaminates" the formal reasoning process, causing believable but logically invalid arguments to be incorrectly accepted.
 
-**Paper Goals**: (a) Identify which internal layers of LLMs encode formal validity and content believability; (b) reduce the influence of content on formal reasoning through inference-time activation intervention.
+**Goal**: (a) Identify which internal layers of LLMs encode formal validity and content believability; (b) reduce the influence of content on formal reasoning through inference-time activation intervention.
 
-**Starting Point**: Activation steering is an inference-time technique that requires no model retraining; it modulates model behavior by adding or subtracting "steering vectors" to internal activations. The authors proceed progressively from probing → static steering → conditional steering.
+**Key Insight**: Activation steering is an inference-time technique that requires no model retraining; it modulates model behavior by adding or subtracting "steering vectors" to internal activations. The authors proceed progressively from probing → static steering → conditional steering.
 
 **Core Idea**: This work is the first to apply activation steering to content effect mitigation. It finds that static contrastive steering is effective for most but not all models, and proposes K-CAST — a fine-grained kNN-based conditional steering method — to handle unresponsive models.
 

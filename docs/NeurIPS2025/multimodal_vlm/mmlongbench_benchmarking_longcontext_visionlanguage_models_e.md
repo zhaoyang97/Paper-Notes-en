@@ -27,7 +27,7 @@ content_hash: 3cffad7ee42a0061
 This paper introduces MMLongBench, the first comprehensive benchmark for evaluating long-context vision-language models (LCVLMs), comprising 13,331 samples spanning 5 downstream task categories, mixed image types, and 5 standardized input length levels (8K–128K tokens). Evaluation of 46 models reveals that single-task performance is a weak proxy for overall capability, and that stronger reasoning ability positively correlates with long-context performance.
 
 ## Background & Motivation
-**State of the Field**: The context windows of VLMs have been extended to 128K+ tokens (e.g., GPT-4o, Gemini-2.5), giving rise to long-context VLMs (LCVLMs) capable of processing hundreds of images and thousands of interleaved text tokens. However, evaluation benchmarks have lagged significantly behind.
+**Background**: The context windows of VLMs have been extended to 128K+ tokens (e.g., GPT-4o, Gemini-2.5), giving rise to long-context VLMs (LCVLMs) capable of processing hundreds of images and thousands of interleaved text tokens. However, evaluation benchmarks have lagged significantly behind.
 
 **Limitations of Prior Work**:
 - **Limited task coverage**: Existing benchmarks focus on a single task type (e.g., MM-NIAH targets only needle-in-a-haystack retrieval; MMLongBench-Doc covers only document VQA), and no single task can reflect overall long-context capability.
@@ -35,11 +35,11 @@ This paper introduces MMLongBench, the first comprehensive benchmark for evaluat
 - **Inconsistent input length definitions**: Different benchmarks define "length" differently—some by image count, others by token count—and most provide only a single length level.
 - **Absence of important tasks**: Practically relevant scenarios such as Visual RAG, many-shot ICL, and summarization are entirely absent from prior benchmarks.
 
-**Root Cause**: Model developers need to identify performance strengths and weaknesses across specific length levels and task types, yet existing benchmarks do not support such fine-grained analysis.
+**Key Challenge**: Model developers need to identify performance strengths and weaknesses across specific length levels and task types, yet existing benchmarks do not support such fine-grained analysis.
 
-**Paper Goals**: To construct a unified evaluation benchmark covering multiple task types, image modalities, and length levels.
+**Goal**: To construct a unified evaluation benchmark covering multiple task types, image modalities, and length levels.
 
-**Starting Point**: A unified cross-modal token counting scheme (vision patches + text tokens), combined with 5 standardized length levels and 5 downstream task categories.
+**Key Insight**: A unified cross-modal token counting scheme (vision patches + text tokens), combined with 5 standardized length levels and 5 downstream task categories.
 
 **Core Idea**: Provide the missing evaluation infrastructure for LCVLMs through unified length control and diverse task coverage.
 

@@ -33,7 +33,7 @@ Underwater image enhancement (UIE) is a critical preprocessing step in marine ex
 
 **Limitations of Prior Work**: Existing UIE methods are "semantically blind"—they pursue globally uniform enhancement without distinguishing semantic foreground regions (e.g., marine organisms, artifacts) from non-focal regions (e.g., background water), such that the induced distribution shift may actually harm downstream detection and segmentation models. Early semantic guidance approaches rely on pixel-level annotations, which are extremely scarce in underwater scenarios, while VLM-based global text prompts (e.g., "a clear underwater photo") remain one-size-fits-all strategies incapable of fine-grained, content-aware enhancement.
 
-**Starting Point**: The paper exploits the open-world understanding capability of VLMs to automatically generate image-content-relevant textual descriptions, then employs a text-image alignment model to map semantics back to spatial locations, producing pixel-level semantic guidance maps. These maps are injected into the enhancement network's decoder via a dual mechanism, enabling the network to "know what to prioritize during restoration."
+**Key Insight**: The paper exploits the open-world understanding capability of VLMs to automatically generate image-content-relevant textual descriptions, then employs a text-image alignment model to map semantics back to spatial locations, producing pixel-level semantic guidance maps. These maps are injected into the enhancement network's decoder via a dual mechanism, enabling the network to "know what to prioritize during restoration."
 
 ## Method
 

@@ -29,7 +29,7 @@ This paper proposes Sequential Bandits, an online learning method based on neura
 
 ## Background & Motivation
 
-**State of the Field**: As the number of LLMs proliferates (including custom assistants on platforms such as OpenAI/Azure), selecting the best LLM for a specific task has become a critical challenge. Different LLMs exhibit substantial performance variation across tasks, and naively choosing the largest model is both expensive and potentially suboptimal.
+**Background**: As the number of LLMs proliferates (including custom assistants on platforms such as OpenAI/Azure), selecting the best LLM for a specific task has become a critical challenge. Different LLMs exhibit substantial performance variation across tasks, and naively choosing the largest model is both expensive and potentially suboptimal.
 
 **Challenges of Pipeline Tasks**: Many complex tasks must be decomposed into subtasks (e.g., medical report → summarization → diagnosis), each of which may be handled by a different LLM. Key difficulties include:
    - **Cascading dependencies** between subtasks: the output quality of a preceding LLM affects the input and performance of subsequent LLMs
@@ -42,7 +42,7 @@ This paper proposes Sequential Bandits, an online learning method based on neura
    - **Standard contextual bandits**: do not support sequential dependencies between subtasks
    - **Combinatorial bandits**: select all arms simultaneously and cannot make decisions after observing intermediate results
 
-**Starting Point**: Online learning combined with sequential bandits — training an independent neural network for each (subtask, LLM) pair, leveraging UCB-based exploration–exploitation trade-off, with an added cost penalty term.
+**Key Insight**: Online learning combined with sequential bandits — training an independent neural network for each (subtask, LLM) pair, leveraging UCB-based exploration–exploitation trade-off, with an added cost penalty term.
 
 ## Method
 

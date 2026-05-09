@@ -28,15 +28,15 @@ This paper proposes the Dual-Flow framework, which leverages the forward ODE flo
 
 ## Background & Motivation
 
-**State of the Field**: Adversarial attacks are broadly categorized as instance-specific or instance-agnostic. Instance-agnostic methods learn perturbations at the data distribution level, yielding better black-box transferability. Generative model-based methods are further divided into single-target (requiring one model per target class) and multi-target (a single conditional model attacks all classes).
+**Background**: Adversarial attacks are broadly categorized as instance-specific or instance-agnostic. Instance-agnostic methods learn perturbations at the data distribution level, yielding better black-box transferability. Generative model-based methods are further divided into single-target (requiring one model per target class) and multi-target (a single conditional model attacks all classes).
 
 **Limitations of Prior Work**: Multi-target generative attacks suffer from low transfer success rates due to limited model capacity; existing diffusion model-based attacks are instance-specific (requiring target model gradients at inference time); the theoretical justification for choosing ODE vs. SDE sampling is lacking.
 
-**Root Cause**: During reverse flow training, the true distribution at intermediate timesteps is inaccessible (the forward ODE trajectory is in-the-wild), making standard diffusion training algorithms inapplicable.
+**Key Challenge**: During reverse flow training, the true distribution at intermediate timesteps is inaccessible (the forward ODE trajectory is in-the-wild), making standard diffusion training algorithms inapplicable.
 
-**Paper Goals**: (a) How can diffusion models be leveraged for instance-agnostic multi-target attacks? (b) How can the reverse flow be trained without access to intermediate distributions?
+**Goal**: (a) How can diffusion models be leveraged for instance-agnostic multi-target attacks? (b) How can the reverse flow be trained without access to intermediate distributions?
 
-**Starting Point**: The attack is decomposed into two flows — a forward flow (a pretrained diffusion model generates a perturbed distribution) and a reverse flow (fine-tuned LoRA maps it back to the constrained space).
+**Key Insight**: The attack is decomposed into two flows — a forward flow (a pretrained diffusion model generates a perturbed distribution) and a reverse flow (fine-tuned LoRA maps it back to the constrained space).
 
 **Core Idea**: The forward ODE of a pretrained diffusion model produces intermediate representations, which are then mapped back into $\ell_\infty$-constrained adversarial examples via a LoRA-fine-tuned velocity function. Cascading optimization progressively improves attack effectiveness.
 

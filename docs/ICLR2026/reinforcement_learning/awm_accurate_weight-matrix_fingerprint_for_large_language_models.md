@@ -27,15 +27,15 @@ content_hash: dbb9410c8e58d857
 AWM is a training-free LLM weight-matrix fingerprinting method that recovers permutation and sign-flip transformations in the embedding layer via the Linear Assignment Problem (LAP), and then applies unbiased CKA to neutralize orthogonal transformations in Q/K matrices. It achieves perfect AUC (1.0) on 150 LLM pairs, is robust to six categories of post-training (SFT, continued pretraining up to 5.5T tokens, RL, multimodal extension, pruning, and upcycling), and completes within 30 seconds.
 
 ## Background & Motivation
-**State of the Field**: LLM training is prohibitively expensive, making intellectual property protection critical. A key need is to determine whether a suspect model was trained from scratch or derived from an existing foundation model.
+**Background**: LLM training is prohibitively expensive, making intellectual property protection critical. A key need is to determine whether a suspect model was trained from scratch or derived from an existing foundation model.
 
 **Limitations of Prior Work**: Models frequently undergo extensive post-training (SFT, continued pretraining, RL, multimodal extension, pruning, upcycling), causing substantial parameter drift. Watermarking methods require additional training and degrade model performance. Existing fingerprinting methods such as HuRef are not robust to continued pretraining, while REEF suffers from high false positive rates.
 
-**Root Cause**: Adversaries can obscure model provenance by scaling, permuting, pruning, or even rotating weight matrices—yet these manipulations must preserve model performance. The challenge is to extract invariant fingerprints that exploit precisely these constraints.
+**Key Challenge**: Adversaries can obscure model provenance by scaling, permuting, pruning, or even rotating weight matrices—yet these manipulations must preserve model performance. The challenge is to extract invariant fingerprints that exploit precisely these constraints.
 
-**Paper Goals**: Design a fingerprinting method that is robust to all common post-training procedures and weight manipulations, while maintaining a low false positive rate and high computational efficiency.
+**Goal**: Design a fingerprinting method that is robust to all common post-training procedures and weight manipulations, while maintaining a low false positive rate and high computational efficiency.
 
-**Starting Point**: A systematic analysis of the constraints that Transformer components (residual connections, RMSNorm, RoPE) impose on weight manipulations. The paper proves that, under the requirement of preserving model outputs, Q/K matrices can only undergo specific transformation forms (permutation + sign-flip + orthogonal transformation + error), and then eliminates these transformations in a targeted manner.
+**Key Insight**: A systematic analysis of the constraints that Transformer components (residual connections, RMSNorm, RoPE) impose on weight manipulations. The paper proves that, under the requirement of preserving model outputs, Q/K matrices can only undergo specific transformation forms (permutation + sign-flip + orthogonal transformation + error), and then eliminates these transformations in a targeted manner.
 
 **Core Idea**: By analyzing the structural constraints that the Transformer architecture imposes on weight manipulations, AWM derives a fingerprinting scheme that is theoretically immune to all feasible manipulations.
 

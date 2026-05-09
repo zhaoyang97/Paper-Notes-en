@@ -29,13 +29,13 @@ This paper reveals that enhancing visual discriminability during VLM fine-tuning
 
 ## Background & Motivation
 
-**State of the Field**: The Source-Free CDFSL setting involves target domains (e.g., medical or remote sensing images) with only a handful of labeled samples and no access to source-domain data, requiring direct fine-tuning of pretrained VLMs.
+**Background**: The Source-Free CDFSL setting involves target domains (e.g., medical or remote sensing images) with only a handful of labeled samples and no access to source-domain data, requiring direct fine-tuning of pretrained VLMs.
 
 **Limitations of Prior Work**: VLMs such as CLIP and SigLIP perform classification by computing cosine similarity between image and text features, making cross-modal alignment quality the decisive performance factor. While conventional wisdom in visual models holds that more discriminative visual features lead to better classification, the authors find that in VLM-based SF-CDFSL, increasing visual discriminability actually reduces cross-modal classification accuracy. Moreover, existing methods — including prompt learning (CoOp/MaPLe), adapters (LP++/LDC), and LoRA fine-tuning — all overlook the shortcut effect of visual learning.
 
-**Root Cause**: The cross-entropy loss $\mathcal{L}_{\text{vlm}}$ encompasses two optimization directions: visual learning and cross-modal learning. Visual learning can reduce the loss without improving cross-modal alignment, acting analogously to a bypass valve in a dual-valve drainage system that diverts resources away from the intended channel.
+**Key Challenge**: The cross-entropy loss $\mathcal{L}_{\text{vlm}}$ encompasses two optimization directions: visual learning and cross-modal learning. Visual learning can reduce the loss without improving cross-modal alignment, acting analogously to a bypass valve in a dual-valve drainage system that diverts resources away from the intended channel.
 
-**Paper Goals**: To identify and mitigate the discriminability trap by suppressing visual learning shortcuts and explicitly guiding cross-modal alignment during VLM fine-tuning for SF-CDFSL.
+**Goal**: To identify and mitigate the discriminability trap by suppressing visual learning shortcuts and explicitly guiding cross-modal alignment during VLM fine-tuning for SF-CDFSL.
 
 ## Method
 

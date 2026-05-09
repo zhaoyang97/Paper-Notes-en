@@ -29,15 +29,15 @@ MOMO is the first foundation model for Mars remote sensing. It independently pre
 
 ## Background & Motivation
 
-**State of the Field**: Foundation models in Earth observation (EO) have exceeded 150 models (SatMAE, CROMA, Prithvi, etc.), achieving broad success in applications such as food security and disaster response. Mars orbital satellites similarly collect systematic observations of planetary surfaces, yet no foundation model specifically designed for Mars remote sensing has existed. Researchers continue to rely on ImageNet pre-trained models for Mars-related tasks.
+**Background**: Foundation models in Earth observation (EO) have exceeded 150 models (SatMAE, CROMA, Prithvi, etc.), achieving broad success in applications such as food security and disaster response. Mars orbital satellites similarly collect systematic observations of planetary surfaces, yet no foundation model specifically designed for Mars remote sensing has existed. Researchers continue to rely on ImageNet pre-trained models for Mars-related tasks.
 
 **Limitations of Prior Work**: (1) EO foundation models cannot be directly transferred to Mars: differences in atmospheric conditions, illumination, surface materials, and sensor characteristics lead to large distribution gaps. (2) Mars sensors vary enormously: HiRISE at 0.25 m/pixel, CTX at 5 m/pixel, and THEMIS at 100 m/pixel; spatial coverage also differs significantly (CTX covers ~100%, HiRISE less than 3%). (3) Conventional multi-sensor fusion approaches (e.g., channel stacking, heterogeneous joint training) are infeasible or non-scalable for Mars data.
 
-**Root Cause**: Mars multi-sensor data spans a 400× range in spatial resolution (0.25 m to 100 m), exhibits vast differences in coverage, and lacks spatiotemporally aligned co-observations. Conventional channel stacking or joint training either requires data alignment or necessitates full retraining when new sensors are added.
+**Key Challenge**: Mars multi-sensor data spans a 400× range in spatial resolution (0.25 m to 100 m), exhibits vast differences in coverage, and lacks spatiotemporally aligned co-observations. Conventional channel stacking or joint training either requires data alignment or necessitates full retraining when new sensors are added.
 
-**Paper Goals**: How to efficiently build a unified Mars multi-sensor foundation model that surpasses ImageNet and EO pre-training across diverse Mars remote sensing tasks.
+**Goal**: How to efficiently build a unified Mars multi-sensor foundation model that surpasses ImageNet and EO pre-training across diverse Mars remote sensing tasks.
 
-**Starting Point**: Rather than mixing heterogeneous data directly, each sensor's MAE is trained independently, followed by parameter merging via task arithmetic. The key insight is that merging at the final checkpoint may be unstable due to differing training trajectories across sensors. The EVL strategy is proposed to align training stages prior to merging.
+**Key Insight**: Rather than mixing heterogeneous data directly, each sensor's MAE is trained independently, followed by parameter merging via task arithmetic. The key insight is that merging at the final checkpoint may be unstable due to differing training trajectories across sensors. The EVL strategy is proposed to align training stages prior to merging.
 
 **Core Idea**: Independent MAE pre-training per sensor + validation-loss-aligned checkpoint selection strategy + task arithmetic model merging = the first foundation model for Mars remote sensing.
 

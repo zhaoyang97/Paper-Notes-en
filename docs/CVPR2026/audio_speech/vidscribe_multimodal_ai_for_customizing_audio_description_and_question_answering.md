@@ -29,11 +29,11 @@ ViDscribe is a web-based platform that leverages a multimodal large language mod
 
 ## Background & Motivation
 
-1. **State of the Field**: Audio description is a critical assistive technology that helps BLV users understand the visual content of videos. Traditional human-authored AD is expensive, time-consuming, and requires specialized expertise, leaving the vast majority of online videos undescribed. Recent advances in MLLMs have made automatic AD generation increasingly feasible.
+1. **Background**: Audio description is a critical assistive technology that helps BLV users understand the visual content of videos. Traditional human-authored AD is expensive, time-consuming, and requires specialized expertise, leaving the vast majority of online videos undescribed. Recent advances in MLLMs have made automatic AD generation increasingly feasible.
 2. **Limitations of Prior Work**: Existing AI-AD systems adopt a one-size-fits-all strategy that fails to accommodate the diverse needs and preferences of BLV users. Evaluations are typically conducted in controlled, short-term laboratory settings, lacking longitudinal usage data.
-3. **Root Cause**: BLV users' needs vary according to degree of visual impairment, viewing context, and content type, yet existing systems cannot dynamically adapt their description strategies.
-4. **Paper Goals**: To build an AI-AD platform supporting user customization and interactive VQA, and to validate its value through a longitudinal study.
-5. **Starting Point**: The system offers six customization options (frequency, length, focus, subjectivity, color, and free text) together with real-time VQA functionality.
+3. **Key Challenge**: BLV users' needs vary according to degree of visual impairment, viewing context, and content type, yet existing systems cannot dynamically adapt their description strategies.
+4. **Goal**: To build an AI-AD platform supporting user customization and interactive VQA, and to validate its value through a longitudinal study.
+5. **Key Insight**: The system offers six customization options (frequency, length, focus, subjectivity, color, and free text) together with real-time VQA functionality.
 6. **Core Idea**: Translate MLLM capabilities into controllable parameters, enabling BLV users to adjust AD generation strategies according to personal preference.
 
 ## Method

@@ -28,15 +28,15 @@ This paper proposes RAGen, a scalable and modular data generation framework that
 
 ## Background & Motivation
 
-**State of the Field**: RAG (Retrieval-Augmented Generation) has become the predominant paradigm for integrating LLMs into domain-specific workflows, providing models with contextual information through external retrieval. However, directly applying general-purpose RAG pipelines to new domains frequently leads to suboptimal performance.
+**Background**: RAG (Retrieval-Augmented Generation) has become the predominant paradigm for integrating LLMs into domain-specific workflows, providing models with contextual information through external retrieval. However, directly applying general-purpose RAG pipelines to new domains frequently leads to suboptimal performance.
 
 **Limitations of Prior Work**: (1) General-purpose retrievers and generators are not aligned with domain-specific terminology and data distributions; (2) RAG adaptation requires high-quality domain-specific training data, yet manual annotation is prohibitively expensive; (3) Existing data generation methods (AutoRAG, LlamaIndex) follow a single-chunk question generation paradigm—generating questions from individual text chunks—resulting in shallow, localized questions that lack cross-concept reasoning capability; (4) Methods such as RAFT optimize for individual components and are tightly coupled to specific training paradigms.
 
-**Root Cause**: The critical bottleneck in RAG adaptation lies not in model architecture or training objectives, but in upstream data supply—specifically, the absence of high-quality, cross-concept, multi-cognitive-level domain-specific training data.
+**Key Challenge**: The critical bottleneck in RAG adaptation lies not in model architecture or training objectives, but in upstream data supply—specifically, the absence of high-quality, cross-concept, multi-cognitive-level domain-specific training data.
 
-**Paper Goals**: To design a data-centric framework that automatically generates high-quality QAC datasets from raw documents, suitable for multi-component RAG adaptation (embedding models + LLMs).
+**Goal**: To design a data-centric framework that automatically generates high-quality QAC datasets from raw documents, suitable for multi-component RAG adaptation (embedding models + LLMs).
 
-**Starting Point**: Rather than operating at the chunk level, the framework begins from document-level concepts, assembles cross-chunk evidence into "question stems," applies Bloom's Taxonomy to guide question generation across different cognitive levels, and pairs each question with carefully constructed positive, negative, and distracting contexts.
+**Key Insight**: Rather than operating at the chunk level, the framework begins from document-level concepts, assembles cross-chunk evidence into "question stems," applies Bloom's Taxonomy to guide question generation across different cognitive levels, and pairs each question with carefully constructed positive, negative, and distracting contexts.
 
 **Core Idea**: High-quality RAG training data should be cross-concept, cross-chunk, and span multiple cognitive levels—rather than being mechanically generated as shallow QA pairs from individual text chunks.
 

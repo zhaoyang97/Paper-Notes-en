@@ -29,15 +29,15 @@ This position paper systematically surveys 1,400+ papers to argue that current L
 
 ## Background & Motivation
 
-**State of the Field**: MAS LLMs have grown explosively in recent years, with applications spanning software engineering, multi-robot planning, data analysis, scientific reasoning, and social simulation. Frameworks such as AutoGen, MetaAgent, and CAMEL have proliferated rapidly.
+**Background**: MAS LLMs have grown explosively in recent years, with applications spanning software engineering, multi-robot planning, data analysis, scientific reasoning, and social simulation. Frameworks such as AutoGen, MetaAgent, and CAMEL have proliferated rapidly.
 
 **Limitations of Prior Work**: The field has extensively borrowed MAS terminology—"agent," "collaboration," "emergence"—without genuinely engaging with foundational MAS theory. This has led to a series of fundamental problems: LLMs are pretrained in isolation to respond to user requests and have never been trained to interact with other agents; environment design is built entirely around LLMs, neglecting their inherent limitations (hallucination, non-determinism, absence of long-term memory); communication relies on natural language, an expensive and ambiguous medium; and claims of emergent behavior are largely based on observational descriptions rather than quantitative metrics.
 
-**Root Cause**: MAS has accumulated over 40 years of theoretical and practical development since the 1980s–90s, yet builders of current MAS LLMs rarely reference this body of work in their framework designs. For instance, agent frameworks released by Google, Anthropic, Microsoft, and OpenAI cite only ML research while ignoring decades of MAS literature.
+**Key Challenge**: MAS has accumulated over 40 years of theoretical and practical development since the 1980s–90s, yet builders of current MAS LLMs rarely reference this body of work in their framework designs. For instance, agent frameworks released by Google, Anthropic, Microsoft, and OpenAI cite only ML research while ignoring decades of MAS literature.
 
-**Paper Goals**: To systematically analyze the gap between MAS LLMs and classical MAS, identify overlooked core issues, and propose constructive research directions for each.
+**Goal**: To systematically analyze the gap between MAS LLMs and classical MAS, identify overlooked core issues, and propose constructive research directions for each.
 
-**Starting Point**: Classical MAS theory serves as the benchmark, and current practice is examined along four dimensions: social intelligence, environment design, coordination and communication, and emergent behavior. The authors are CS and MAS researchers from Oxford, KCL, and Sussex with deep backgrounds in traditional MAS.
+**Key Insight**: Classical MAS theory serves as the benchmark, and current practice is examined along four dimensions: social intelligence, environment design, coordination and communication, and emergent behavior. The authors are CS and MAS researchers from Oxford, KCL, and Sussex with deep backgrounds in traditional MAS.
 
 **Core Idea**: Most LLM systems that claim to be "multi-agent" lack genuine multi-agent properties; the community should return to MAS foundations to avoid redundant effort.
 

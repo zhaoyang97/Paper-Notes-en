@@ -31,7 +31,7 @@ This paper proposes PhysioLatent, a framework that encodes input facial videos i
 
 ## Background & Motivation
 
-**State of the Field**: Remote photoplethysmography (rPPG) enables contactless heart rate extraction from facial videos and is a key technology for remote health monitoring. However, this also implies that sensitive physiological information is invisibly embedded in facial videos, where it can be extracted by algorithms for covert health inference, emotion surveillance, and biometric profiling.
+**Background**: Remote photoplethysmography (rPPG) enables contactless heart rate extraction from facial videos and is a key technology for remote health monitoring. However, this also implies that sensitive physiological information is invisibly embedded in facial videos, where it can be extracted by algorithms for covert health inference, emotion surveillance, and biometric profiling.
 
 **Limitations of Prior Work**:
 
@@ -40,11 +40,11 @@ This paper proposes PhysioLatent, a framework that encodes input facial videos i
 3. Pixel-space methods such as PulseEdit suffer from low temporal coherency.
 4. No existing method can precisely modify heart rate to a specified target value (e.g., fixing HR to a constant for anonymization).
 
-**Root Cause**: The rPPG signal is embedded in subtle skin color variations (<1% change in pixel values), invisible to the human eye yet extractable by algorithms—precise modification of this "invisible" signal is required without affecting visual appearance.
+**Key Challenge**: The rPPG signal is embedded in subtle skin color variations (<1% change in pixel values), invisible to the human eye yet extractable by algorithms—precise modification of this "invisible" signal is required without affecting visual appearance.
 
-**Paper Goals**: To construct a controllable video physiological signal editing framework capable of precisely modifying heart rate to an arbitrary target value while maintaining high visual fidelity.
+**Goal**: To construct a controllable video physiological signal editing framework capable of precisely modifying heart rate to an arbitrary target value while maintaining high visual fidelity.
 
-**Starting Point**: Performing heart rate editing in the 3D VAE latent space—leveraging the compactness of the latent space for precise modulation, compatibility with video generation pipelines, and spatiotemporal fusion layers for capturing the periodic characteristics of rPPG.
+**Key Insight**: Performing heart rate editing in the 3D VAE latent space—leveraging the compactness of the latent space for precise modulation, compatibility with video generation pipelines, and spatiotemporal fusion layers for capturing the periodic characteristics of rPPG.
 
 **Core Idea**: 3D VAE latent space editing + AdaLN temporal attention conditioning + FiLM decoder fine-tuning = precise and controllable heart rate modification.
 

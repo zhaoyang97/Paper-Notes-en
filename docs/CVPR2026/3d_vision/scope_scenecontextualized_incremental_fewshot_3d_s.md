@@ -28,15 +28,15 @@ This paper proposes SCOPE, a plug-and-play framework that leverages a class-agno
 
 ## Background & Motivation
 
-**State of the Field**: Fully supervised 3D point cloud segmentation requires dense point-level annotations and operates over a fixed label space, whereas in practical deployment new categories emerge continuously with only sparse annotations available. Existing paradigms (few-shot / class-incremental / generalized few-shot) each address only a subset of these challenges.
+**Background**: Fully supervised 3D point cloud segmentation requires dense point-level annotations and operates over a fixed label space, whereas in practical deployment new categories emerge continuously with only sparse annotations available. Existing paradigms (few-shot / class-incremental / generalized few-shot) each address only a subset of these challenges.
 
 **Limitations of Prior Work**: (1) Few-shot methods cannot retain previously learned knowledge; (2) Class-incremental methods require sufficient supervision and degrade sharply under sparse annotation; (3) Generalized few-shot methods support only a single round of updates; (4) Directly adapting 2D incremental few-shot methods to 3D yields poor results—suffering from either severe forgetting or insufficiently discriminative prototypes.
 
-**Root Cause**: Under extremely limited annotations, how can one learn sufficiently discriminative novel-class prototypes without forgetting previously acquired knowledge?
+**Key Challenge**: Under extremely limited annotations, how can one learn sufficiently discriminative novel-class prototypes without forgetting previously acquired knowledge?
 
-**Paper Goals**: Incremental few-shot point cloud segmentation (IFS-PCS) for 3D scenes: supporting multi-stage sequential learning of new categories with only $K$ annotated samples per stage.
+**Goal**: Incremental few-shot point cloud segmentation (IFS-PCS) for 3D scenes: supporting multi-stage sequential learning of new categories with only $K$ annotated samples per stage.
 
-**Starting Point**: Background regions of base training scenes implicitly contain object structures belonging to novel classes—regions coarsely labeled as "background" in fact carry transferable object-level semantic information.
+**Key Insight**: Background regions of base training scenes implicitly contain object structures belonging to novel classes—regions coarsely labeled as "background" in fact carry transferable object-level semantic information.
 
 **Core Idea**: A class-agnostic segmentation model is used to mine pseudo-instances from background regions to construct a prototype bank, which is then selectively fused into sparse few-shot prototypes via an attention mechanism.
 

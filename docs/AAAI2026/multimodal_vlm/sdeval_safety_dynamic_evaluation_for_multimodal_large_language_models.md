@@ -29,16 +29,16 @@ This paper proposes SDEval, the first safety dynamic evaluation framework for ML
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs have achieved remarkable progress in multimodal understanding, yet they also pose risks of generating harmful content. The community has established multiple safety evaluation benchmarks (MLLMGuard, VLSBench, MMSafetyBench, etc.) to assess models' resistance to harmful outputs.
+**Background**: MLLMs have achieved remarkable progress in multimodal understanding, yet they also pose risks of generating harmful content. The community has established multiple safety evaluation benchmarks (MLLMGuard, VLSBench, MMSafetyBench, etc.) to assess models' resistance to harmful outputs.
 
 **Limitations of Prior Work**:
 (1) **Severe data leakage** — most safety benchmarks are aggregated from open-source datasets and are likely included in MLLM training corpora, leading to inflated evaluation results;
 (2) **Fixed complexity of static datasets** — manually constructed benchmarks cannot keep pace with the rapid advancement of MLLMs, making it difficult to precisely assess model performance ceilings;
 (3) **Continuously evolving attack methods** — novel jailbreak attacks emerge persistently, and fixed benchmarks cannot timely cover emerging risks.
 
-**Root Cause**: Existing dynamic evaluation methods (e.g., DyVal) target capability assessment only and are ill-suited for open-ended safety evaluation scenarios, while also neglecting the capability–safety trade-off.
+**Key Challenge**: Existing dynamic evaluation methods (e.g., DyVal) target capability assessment only and are ill-suited for open-ended safety evaluation scenarios, while also neglecting the capability–safety trade-off.
 
-**Starting Point**: Design a general and flexible safety dynamic evaluation framework that can generate unlimited variant samples with adjustable complexity and reduced data contamination from any original benchmark.
+**Key Insight**: Design a general and flexible safety dynamic evaluation framework that can generate unlimited variant samples with adjustable complexity and reduced data contamination from any original benchmark.
 
 ## Method
 

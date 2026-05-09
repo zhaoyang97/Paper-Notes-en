@@ -28,15 +28,15 @@ This paper analyzes the energy landscape to reveal the complementarity between a
 
 ## Background & Motivation
 
-**State of the Field**: Classifiers face a trilemma among accuracy, robustness, and generative capability. Adversarial training (AT) methods such as PGD/TRADES are the most effective for robustness but sacrifice clean accuracy and offer no generative ability. Joint Energy-based Models (JEM) reinterpret the softmax logits as an EBM to unify classification and generation, yet fall far short of AT in adversarial robustness.
+**Background**: Classifiers face a trilemma among accuracy, robustness, and generative capability. Adversarial training (AT) methods such as PGD/TRADES are the most effective for robustness but sacrifice clean accuracy and offer no generative ability. Joint Energy-based Models (JEM) reinterpret the softmax logits as an EBM to unify classification and generation, yet fall far short of AT in adversarial robustness.
 
 **Limitations of Prior Work**: (1) AT methods are robust but suffer a 5–10% drop in clean accuracy and possess no generative capability; (2) JEM achieves classification and generation jointly but achieves far lower adversarial robustness than AT; (3) augmenting AT with additional generated data (e.g., 1M diffusion images) can improve robustness but incurs prohibitive computational cost (1000+ GPU hours) and still provides no generative capability.
 
-**Root Cause**: AT and JEM each address only two dimensions of the trilemma and cannot be unified. The fundamental issue is that both model the data distribution incompletely—AT focuses solely on $p(y|\tilde{x})$, while JEM focuses solely on $p(x,y)$.
+**Key Challenge**: AT and JEM each address only two dimensions of the trilemma and cannot be unified. The fundamental issue is that both model the data distribution incompletely—AT focuses solely on $p(y|\tilde{x})$, while JEM focuses solely on $p(x,y)$.
 
-**Paper Goals**: To achieve high classification accuracy, adversarial robustness, and generative capability simultaneously within a single model, thereby breaking the trilemma.
+**Goal**: To achieve high classification accuracy, adversarial robustness, and generative capability simultaneously within a single model, thereby breaking the trilemma.
 
-**Starting Point**: Diagnosis from an energy distribution perspective—AT causes the clean and adversarial energy distributions to overlap (Tab. 1: AT mean difference 1.46 vs. 10.18 for a standard model); JEM causes the clean and generated energy distributions to overlap. Aligning all three energy distributions would unify all three capabilities.
+**Key Insight**: Diagnosis from an energy distribution perspective—AT causes the clean and adversarial energy distributions to overlap (Tab. 1: AT mean difference 1.46 vs. 10.18 for a standard model); JEM causes the clean and generated energy distributions to overlap. Aligning all three energy distributions would unify all three capabilities.
 
 **Core Idea**: Model the joint distribution of clean and adversarial examples, $p(\mathbf{x}, \tilde{\mathbf{x}}, y)$, and use min-max energy optimization to pull adversarial examples from high-energy regions back to low-energy regions, while simultaneously maintaining generative sampling and classification training.
 

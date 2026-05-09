@@ -28,15 +28,15 @@ This paper proposes BadThink — the first training-time backdoor attack targeti
 
 ## Background & Motivation
 
-**State of the Field**: CoT reasoning has become a core capability-enhancement paradigm for LLMs, widely deployed in applications such as mathematical reasoning and scientific question answering.
+**Background**: CoT reasoning has become a core capability-enhancement paradigm for LLMs, widely deployed in applications such as mathematical reasoning and scientific question answering.
 
 **Limitations of Prior Work**: Existing attacks on LLMs primarily focus on manipulating final outputs (i.e., producing incorrect answers), while the reasoning process itself as an attack surface has been largely overlooked. Current reasoning efficiency attacks (e.g., OVERTHINK) operate via inference-time prompt injection — embedding decoy problems into retrieved documents — which is fragile, easily defended, and does not modify model parameters.
 
-**Root Cause**: The computational cost of CoT reasoning is directly proportional to reasoning chain length, yet existing security evaluations only assess answer correctness without inspecting reasoning efficiency — creating a covert attack window in which computational overhead can be dramatically increased without affecting answer quality.
+**Key Challenge**: The computational cost of CoT reasoning is directly proportional to reasoning chain length, yet existing security evaluations only assess answer correctness without inspecting reasoning efficiency — creating a covert attack window in which computational overhead can be dramatically increased without affecting answer quality.
 
-**Paper Goals**: To design a training-time backdoor attack that (1) generates extremely verbose yet semantically coherent reasoning chains upon trigger activation; (2) preserves answer correctness; (3) exhibits normal behavior in the absence of triggers; and (4) remains stealthy against detection methods.
+**Goal**: To design a training-time backdoor attack that (1) generates extremely verbose yet semantically coherent reasoning chains upon trigger activation; (2) preserves answer correctness; (3) exhibits normal behavior in the absence of triggers; and (4) remains stealthy against detection methods.
 
-**Starting Point**: Treating "overthinking" as a malicious objective rather than an efficiency problem to be mitigated. Data poisoning is used to embed verbose reasoning behavior into model weights, activated via stylistic trigger phrases rather than lexical tokens.
+**Key Insight**: Treating "overthinking" as a malicious objective rather than an efficiency problem to be mitigated. Data poisoning is used to embed verbose reasoning behavior into model weights, activated via stylistic trigger phrases rather than lexical tokens.
 
 **Core Idea**: High-quality verbose reasoning prefixes are generated through LLM-based iterative optimization to construct poisoned data for fine-tuning, causing the model to produce semantically coherent but excessively long reasoning chains upon trigger activation.
 

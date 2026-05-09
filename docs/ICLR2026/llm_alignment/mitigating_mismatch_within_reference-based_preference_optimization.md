@@ -28,14 +28,14 @@ content_hash: 682591a41aedab6c
 This paper identifies the *premature satisfaction* problem in DPO — when the reference policy assigns lower probability to chosen than to rejected responses (~45% of pairs), DPO's gradient is unnecessarily attenuated by the pessimistic reference signal, even when the policy is still incorrect (i.e., $\Delta_\theta < 0$). The paper proposes HyPO (a one-line code change: clipping the reference margin via $\max(0, \Delta_{ref})$), achieving a 41.2% relative improvement over DPO on AlpacaEval 2.0.
 
 ## Background & Motivation
-**State of the Field**: DPO optimizes preferences via the relative margin $\Delta_\theta - \Delta_{ref}$, where $\Delta_{ref}$ is the log-probability difference between chosen and rejected responses under the reference policy. This implements a proximal constraint for KL regularization, stabilizing training.
+**Background**: DPO optimizes preferences via the relative margin $\Delta_\theta - \Delta_{ref}$, where $\Delta_{ref}$ is the log-probability difference between chosen and rejected responses under the reference policy. This implements a proximal constraint for KL regularization, stabilizing training.
 
 **Limitations of Prior Work**:
 - **Train–inference mismatch**: DPO training optimizes the relative margin $\Delta_\theta - \Delta_{ref}$, whereas inference relies solely on the absolute margin $\Delta_\theta$. Studies show that after DPO training, the agreement rate between implicit reward ranking and likelihood ranking is only ~50%.
 - **Two opposing remedies**: (a) Reference-free methods (SimPO, ORPO) remove the reference to resolve mismatch but sacrifice stability signals; (b) Stronger-reference methods (TR-DPO) reduce pessimistic cases but cannot eliminate them.
 - **Pessimistic reference problem**: Even with the strongest reference (e.g., a SimPO-aligned model), ~45% of pairs still exhibit $\Delta_{ref} < 0$ (i.e., the reference favors rejected over chosen), representing an unavoidable structural upper bound.
 
-**Root Cause**: The reference provides stability but introduces mismatch; removing the reference eliminates mismatch but sacrifices stability. Must these two objectives be mutually exclusive?
+**Key Challenge**: The reference provides stability but introduces mismatch; removing the reference eliminates mismatch but sacrifices stability. Must these two objectives be mutually exclusive?
 
 **Core Idea**: Conditionally use the reference — apply it normally when it is optimistic ($\Delta_{ref} \geq 0$, preserving stability), and treat it as neutral when it is pessimistic ($\Delta_{ref} < 0$, falling back to the absolute margin) — thus achieving the best of both worlds.
 

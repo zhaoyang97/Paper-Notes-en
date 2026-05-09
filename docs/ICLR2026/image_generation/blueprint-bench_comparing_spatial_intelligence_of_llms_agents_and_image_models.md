@@ -30,15 +30,15 @@ Blueprint-Bench evaluates AI spatial reasoning through the task of "generating 2
 
 ## Background & Motivation
 
-**State of the Field**: LLMs continue to demonstrate emergent capabilities beyond their training scope, and next-generation image generation models (GPT-Image, NanoBanana/Gemini 2.5 Flash Image) are beginning to exhibit reasoning abilities (e.g., solving geometry problems). Nevertheless, the "intelligence" of image generation models lacks quantitative evaluation—GPT-Image was released without a single quantitative chart.
+**Background**: LLMs continue to demonstrate emergent capabilities beyond their training scope, and next-generation image generation models (GPT-Image, NanoBanana/Gemini 2.5 Flash Image) are beginning to exhibit reasoning abilities (e.g., solving geometry problems). Nevertheless, the "intelligence" of image generation models lacks quantitative evaluation—GPT-Image was released without a single quantitative chart.
 
 **Limitations of Prior Work**: (1) LLM benchmarks focus on text, code, and mathematics, with no systematic benchmark for spatial reasoning; (2) the ARC benchmark features inputs (grid patterns) and tasks that are both out-of-distribution for LLMs, making it impossible to distinguish between "failing to understand the input" and "failing to perform the task"; (3) no evaluation framework exists for cross-architecture comparison of intelligence across LLMs, image models, and agents.
 
-**Root Cause**: Apartment photographs as inputs are fully within the training distribution of modern multimodal models, yet inferring a floorplan from photographs requires genuine spatial reasoning—deducing room layout, understanding connectivity, and maintaining consistent scale—a task models have not been trained to perform. This "in-distribution input + out-of-distribution task" design enables precise localization of spatial reasoning deficiencies.
+**Key Challenge**: Apartment photographs as inputs are fully within the training distribution of modern multimodal models, yet inferring a floorplan from photographs requires genuine spatial reasoning—deducing room layout, understanding connectivity, and maintaining consistent scale—a task models have not been trained to perform. This "in-distribution input + out-of-distribution task" design enables precise localization of spatial reasoning deficiencies.
 
-**Paper Goals**: To introduce the first quantitative benchmark capable of cross-architecture comparison of spatial intelligence (LLMs / image generation models / agents), while providing the first quantitative intelligence evaluation tool for image generation models.
+**Goal**: To introduce the first quantitative benchmark capable of cross-architecture comparison of spatial intelligence (LLMs / image generation models / agents), while providing the first quantitative intelligence evaluation tool for image generation models.
 
-**Starting Point**: The benchmark is designed to be model-agnostic: any system capable of generating an image from a sequence of images may participate (LLMs generate SVG which is then rasterized; image models generate directly; agents iteratively write and execute code within a Docker environment).
+**Key Insight**: The benchmark is designed to be model-agnostic: any system capable of generating an image from a sequence of images may participate (LLMs generate SVG which is then rasterized; image models generate directly; agents iteratively write and execute code within a Docker environment).
 
 **Core Idea**: By means of a benchmark where inputs are in-distribution but the task is out-of-distribution, the work quantitatively reveals—for the first time—systematic deficiencies in AI spatial reasoning: most state-of-the-art models perform at or below a random baseline.
 

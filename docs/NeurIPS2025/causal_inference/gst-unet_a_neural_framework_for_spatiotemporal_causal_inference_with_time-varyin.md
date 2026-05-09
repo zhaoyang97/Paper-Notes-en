@@ -27,7 +27,7 @@ content_hash: 49a341df3bbed16b
 This paper proposes GST-UNet, which integrates a U-Net spatiotemporal encoder with iterative G-computation to estimate location-specific conditional average potential outcomes (CAPOs) from a **single spatiotemporal observational trajectory**. The framework simultaneously handles interference, spatial confounding, temporal carry-over effects, and time-varying confounding, and is validated on a real-world causal analysis of wildfire smoke effects on respiratory hospitalization rates in California.
 
 ## Background & Motivation
-**State of the Field**: Causal effect estimation from spatiotemporal observational data is critical in public health, environmental science, and policy evaluation, where randomized experiments are typically infeasible, necessitating causal inference from observational data.
+**Background**: Causal effect estimation from spatiotemporal observational data is critical in public health, environmental science, and policy evaluation, where randomized experiments are typically infeasible, necessitating causal inference from observational data.
 
 **Limitations of Prior Work**:
    - **Classical methods** (DID, Synthetic Control, MSM) rely on strong assumptions such as parallel trends and no-interference, and cannot handle spatial spillover effects.
@@ -35,11 +35,11 @@ This paper proposes GST-UNet, which integrates a U-Net spatiotemporal encoder wi
    - **Longitudinal causal inference methods** (MSM, G-computation, and RNN/Transformer-based extensions) assume independent time series (e.g., distinct patients) and cannot model cross-unit interactions.
    - **Existing spatiotemporal causal models** (e.g., Tec et al.) address only static exposures and do not handle time-varying confounding or interference.
 
-**Root Cause**: Spatiotemporal data simultaneously exhibit ① spatial interference (interventions in neighboring units affect local outcomes), ② spatial confounding, ③ temporal carry-over effects, and ④ time-varying confounding (covariates influenced by past interventions that in turn affect future interventions), with typically only a **single spatiotemporal trajectory** available.
+**Key Challenge**: Spatiotemporal data simultaneously exhibit ① spatial interference (interventions in neighboring units affect local outcomes), ② spatial confounding, ③ temporal carry-over effects, and ④ time-varying confounding (covariates influenced by past interventions that in turn affect future interventions), with typically only a **single spatiotemporal trajectory** available.
 
-**Paper Goals**: To simultaneously address all four challenges under a single spatiotemporal trajectory and provide theoretically guaranteed causal effect estimates.
+**Goal**: To simultaneously address all four challenges under a single spatiotemporal trajectory and provide theoretically guaranteed causal effect estimates.
 
-**Starting Point**: Combining classical iterative G-computation (recursive regression to eliminate time-varying confounding) with U-Net spatiotemporal representation learning, and exploiting a representation-based time invariance assumption to pool training samples from a single trajectory.
+**Key Insight**: Combining classical iterative G-computation (recursive regression to eliminate time-varying confounding) with U-Net spatiotemporal representation learning, and exploiting a representation-based time invariance assumption to pool training samples from a single trajectory.
 
 **Core Idea**: Learn a time-invariant history embedding $\phi(H_{1:t}, A_t)$ such that, conditioned on this embedding, the transition distribution is independent of $t$. This renders the single trajectory decomposable into exchangeable prefix segments, enabling iterative G-computation to recursively eliminate time-varying confounding.
 

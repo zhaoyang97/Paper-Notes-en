@@ -27,18 +27,18 @@ content_hash: 7b25653e9863f7a0
 This paper proposes R²VLM, a recurrent reasoning framework that processes local video segments sequentially, maintains a dynamically updated CoT record tracking task decomposition and completion status, and leverages a multi-dimensional RL reward scheme to achieve state-of-the-art performance in long-horizon embodied task progress estimation. The framework additionally supports downstream applications including policy learning, reward modeling, and proactive assistance.
 
 ## Background & Motivation
-**State of the Field**: Embodied agents require accurate estimation of execution progress over multi-step, long-horizon tasks to support long-range planning and context-aware decision-making.
+**Background**: Embodied agents require accurate estimation of execution progress over multi-step, long-horizon tasks to support long-range planning and context-aware decision-making.
 
 **Limitations of Prior Work**:
    - Methods such as GVL and ROVER exploit VLMs' video understanding capabilities and large context windows while neglecting their reasoning potential.
    - Processing long video trajectories (often thousands of frames) incurs prohibitive computational overhead, making real-time deployment impractical.
    - Tasks involving multiple temporally dependent subtasks demand reasoning capabilities to align visual observations with logical dependencies.
 
-**Root Cause**: Full-video processing is computationally prohibitive, whereas local segment processing lacks global context; video understanding alone is insufficient to handle complex temporal-logical dependencies.
+**Key Challenge**: Full-video processing is computationally prohibitive, whereas local segment processing lacks global context; video understanding alone is insufficient to handle complex temporal-logical dependencies.
 
-**Paper Goals**: Efficient, accurate, and interpretable estimation of long-horizon embodied task progress.
+**Goal**: Efficient, accurate, and interpretable estimation of long-horizon embodied task progress.
 
-**Starting Point**: Emulating human cognition — "observe a segment, reason about it, and retain key information" — by recurrently processing video segments while maintaining structured memory.
+**Key Insight**: Emulating human cognition — "observe a segment, reason about it, and retain key information" — by recurrently processing video segments while maintaining structured memory.
 
 **Core Idea**: Recurrent reasoning combined with a dynamic CoT as a cross-timestep memory carrier, avoiding full-video processing while preserving global context.
 

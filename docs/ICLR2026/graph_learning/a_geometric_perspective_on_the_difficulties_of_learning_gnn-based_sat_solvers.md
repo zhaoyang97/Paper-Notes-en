@@ -28,15 +28,15 @@ This paper proves, from the geometric perspective of graph Ricci curvature, that
 
 ## Background & Motivation
 
-**State of the Field**: GNNs serve as learnable SAT solvers by performing message passing on the bipartite graph representation of logical formulas to solve Boolean satisfiability problems.
+**Background**: GNNs serve as learnable SAT solvers by performing message passing on the bipartite graph representation of logical formulas to solve Boolean satisfiability problems.
 
 **Limitations of Prior Work**: GNN solvers suffer severe performance degradation on harder, more constrained SAT instances (e.g., as $k$ increases), yet a theoretical explanation for this degradation has been lacking.
 
-**Root Cause**: The difficulty of SAT problems is closely tied to long-range dependencies (constraint relationships between distant variables), while the message-passing mechanism of GNNs is inherently limited by oversquashing when handling such dependencies—information from exponentially growing neighborhoods must be compressed into fixed-dimensional embeddings.
+**Key Challenge**: The difficulty of SAT problems is closely tied to long-range dependencies (constraint relationships between distant variables), while the message-passing mechanism of GNNs is inherently limited by oversquashing when handling such dependencies—information from exponentially growing neighborhoods must be compressed into fixed-dimensional embeddings.
 
-**Paper Goals**: To provide a geometry-based theoretical explanation for why GNN-based SAT solvers underperform on difficult instances.
+**Goal**: To provide a geometry-based theoretical explanation for why GNN-based SAT solvers underperform on difficult instances.
 
-**Starting Point**: Balanced Forman Curvature (BFC) is employed as a graph-geometric tool to establish a theoretical chain linking SAT problem difficulty → graph curvature → GNN oversquashing.
+**Key Insight**: Balanced Forman Curvature (BFC) is employed as a graph-geometric tool to establish a theoretical chain linking SAT problem difficulty → graph curvature → GNN oversquashing.
 
 **Core Idea**: The BFC of random k-SAT bipartite graphs converges in probability to $2/k - 2$ (strongly negative curvature) in the hard limit ($\alpha \to \infty$), which directly induces GNN oversquashing and constitutes the geometric root cause of solver performance degradation.
 

@@ -31,8 +31,8 @@ This paper proposes a zero-shot multi-agent pipeline comprising five role-based 
 
 - **Core Problem**: Formative feedback is one of the most effective interventions for improving learning outcomes (effect size up to 0.7), yet in large-enrollment courses, instructors cannot respond individually to every student's reflection text. This feedback gap disproportionately affects students from disadvantaged backgrounds.
 - **Limitations of Prior Work**: While LLMs can process text at superhuman speed, they (1) tend to overemphasize surface-level expression in the absence of instructor-designed rubrics; and (2) existing LLM-based scoring systems focus primarily on score agreement while neglecting fairness and the pedagogical value of feedback.
-- **Root Cause**: No prior system has integrated stable rubric-based scoring, bias-aware feedback generation, and explicit fairness evaluation into an end-to-end pipeline.
-- **Starting Point**: A multi-agent role decomposition approach realizes a complete pipeline covering scoring, equity auditing, metacognitive prompting, aggregation, and self-verification, while introducing the cross-ability fairness metric $\Delta_{\text{MAE}}$ to constrain scoring bias.
+- **Key Challenge**: No prior system has integrated stable rubric-based scoring, bias-aware feedback generation, and explicit fairness evaluation into an end-to-end pipeline.
+- **Key Insight**: A multi-agent role decomposition approach realizes a complete pipeline covering scoring, equity auditing, metacognitive prompting, aggregation, and self-verification, while introducing the cross-ability fairness metric $\Delta_{\text{MAE}}$ to constrain scoring bias.
 
 ## Method
 

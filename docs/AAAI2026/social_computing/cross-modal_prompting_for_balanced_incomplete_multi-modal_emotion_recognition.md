@@ -28,18 +28,18 @@ This paper proposes Cross-modal Prompting (ComP), which addresses the modality i
 
 ## Background & Motivation
 
-**State of the Field**: Multi-modal Emotion Recognition (MER) leverages multi-source information such as audio, text, and video, but modality missing is common in real-world scenarios (e.g., audio unavailability due to background noise, or speech recognition failure).
+**Background**: Multi-modal Emotion Recognition (MER) leverages multi-source information such as audio, text, and video, but modality missing is common in real-world scenarios (e.g., audio unavailability due to background noise, or speech recognition failure).
 
 **Limitations of Prior Work**:
    - **Modality performance gap**: Recognition capabilities vary substantially across modalities.
    - **Modality under-optimization**: Some modalities perform worse after joint multi-modal training than when trained independently.
    - Existing IMER methods either reconstruct missing data (costly and not necessarily helpful) or learn unified representations while ignoring modality imbalance.
 
-**Root Cause**: How to simultaneously handle modality incompleteness and modality imbalance under missing-modality conditions?
+**Key Challenge**: How to simultaneously handle modality incompleteness and modality imbalance under missing-modality conditions?
 
-**Paper Goals**: Jointly address missing-modality handling and modality balance through cross-modal prompt learning.
+**Goal**: Jointly address missing-modality handling and modality balance through cross-modal prompt learning.
 
-**Starting Point**: Rather than recovering missing data, each modality's information is compressed into prompts that are propagated to other modalities to enhance task-relevant consistent information, while dynamic scheduling achieves balance.
+**Key Insight**: Rather than recovering missing data, each modality's information is compressed into prompts that are propagated to other modalities to enhance task-relevant consistent information, while dynamic scheduling achieves balance.
 
 **Core Idea**: Progressive prompt generation compresses cross-modal consistent information; a knowledge propagation module enhances task-relevant features of each modality — augmenting rather than reconstructing.
 

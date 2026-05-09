@@ -29,15 +29,15 @@ This paper proposes an instruction-referencing-based defense against prompt inje
 
 ## Background & Motivation
 
-**State of the Field**: The powerful instruction-following capability of LLMs, combined with their inability to distinguish instructions from data content, makes them vulnerable to prompt injection attacks. Adversaries embed malicious instructions into data content (e.g., web pages, user inputs) to mislead LLMs into executing unintended tasks.
+**Background**: The powerful instruction-following capability of LLMs, combined with their inability to distinguish instructions from data content, makes them vulnerable to prompt injection attacks. Adversaries embed malicious instructions into data content (e.g., web pages, user inputs) to mislead LLMs into executing unintended tasks.
 
 **Limitations of Prior Work**: Existing defenses—whether based on prompt engineering or fine-tuning—mostly attempt to suppress the LLM's tendency to follow injected instructions. However, experiments show that suppressing instruction-following is extremely difficult, as models inherently "want" to execute any instruction they encounter.
 
-**Root Cause**: The fundamental difficulty lies in the LLM's inability to distinguish "legitimate instructions" from "injected instructions"—both are formally identical, and any content-based discrimination is easily bypassed.
+**Key Challenge**: The fundamental difficulty lies in the LLM's inability to distinguish "legitimate instructions" from "injected instructions"—both are formally identical, and any content-based discrimination is easily bypassed.
 
-**Paper Goals**: Design a defense that leverages rather than suppresses the LLM's instruction-following capability.
+**Goal**: Design a defense that leverages rather than suppresses the LLM's instruction-following capability.
 
-**Starting Point**: Analysis of successful attack cases reveals that LLMs sometimes reference the instruction being executed within their response (e.g., "For the second instruction..."). If an LLM consistently references the instruction it is executing, responses to injected instructions can be filtered out using this referencing information.
+**Key Insight**: Analysis of successful attack cases reveals that LLMs sometimes reference the instruction being executed within their response (e.g., "For the second instruction..."). If an LLM consistently references the instruction it is executing, responses to injected instructions can be filtered out using this referencing information.
 
 **Core Idea**: Prompt the LLM to produce (answer, instruction reference) pairs, then filter out responses whose references do not match the original instruction—transforming "suppressing instruction-following" into "leveraging instruction-following for filtering."
 

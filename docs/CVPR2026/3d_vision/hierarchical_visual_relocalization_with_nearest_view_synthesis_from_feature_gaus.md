@@ -29,15 +29,15 @@ SplatHLoc proposes a hierarchical visual relocalization framework based on Featu
 
 ## Background & Motivation
 
-1. **State of the Field**: Visual relocalization aims to estimate the 6-DoF camera pose within a known scene and serves as a foundation for robotics navigation, AR, and autonomous driving. Mainstream approaches fall into three categories: structure-based methods (SfM point cloud + PnP), regression-based methods (direct pose or scene coordinate regression), and rendering-based methods (NeRF/GS-guided rendering). Among these, hierarchical methods such as HLoc have been widely adopted due to their modular design and scalability to large scenes.
+1. **Background**: Visual relocalization aims to estimate the 6-DoF camera pose within a known scene and serves as a foundation for robotics navigation, AR, and autonomous driving. Mainstream approaches fall into three categories: structure-based methods (SfM point cloud + PnP), regression-based methods (direct pose or scene coordinate regression), and rendering-based methods (NeRF/GS-guided rendering). Among these, hierarchical methods such as HLoc have been widely adopted due to their modular design and scalability to large scenes.
 
 2. **Limitations of Prior Work**: Hierarchical methods rely on feature matching against retrieved database images. However, uneven database image distribution leaves certain regions sparsely observed, causing large viewpoint discrepancies between retrieved images and the query, which leads to unreliable matching. Rendering-based methods can synthesize novel viewpoints but often produce artifacts such as floaters, making features extracted from rendered images unstable for matching.
 
-3. **Root Cause**: A feature gap exists between rendered features (directly rendered via FGS) and features extracted by image encoders. Rendered features carry multi-view prior knowledge and are suitable for coarse-level matching, but domain discrepancy with query features makes them unsuitable for precise pixel-level matching. Existing methods such as STDLoc overlook this asymmetry.
+3. **Key Challenge**: A feature gap exists between rendered features (directly rendered via FGS) and features extracted by image encoders. Rendered features carry multi-view prior knowledge and are suitable for coarse-level matching, but domain discrepancy with query features makes them unsuitable for precise pixel-level matching. Existing methods such as STDLoc overlook this asymmetry.
 
-4. **Paper Goals**: (1) Address the large viewpoint discrepancy caused by sparse database images; (2) bridge the feature gap between rendered and query features.
+4. **Goal**: (1) Address the large viewpoint discrepancy caused by sparse database images; (2) bridge the feature gap between rendered and query features.
 
-5. **Starting Point**: The authors observe that FGS-rendered features perform better in the coarse matching stage (due to multi-view prior knowledge and reduced error accumulation), while features extracted by image encoders are more effective in the fine matching stage (due to their ability to model precise geometric relationships).
+5. **Key Insight**: The authors observe that FGS-rendered features perform better in the coarse matching stage (due to multi-view prior knowledge and reduced error accumulation), while features extracted by image encoders are more effective in the fine matching stage (due to their ability to model precise geometric relationships).
 
 6. **Core Idea**: Combine adaptive viewpoint retrieval using FGS to synthesize virtual near-view references with a hybrid matching strategy—rendered features for coarse matching and a semi-dense matcher for fine matching—simultaneously addressing sparse observation and the feature gap.
 

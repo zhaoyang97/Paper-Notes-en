@@ -29,15 +29,15 @@ This paper formalizes the Adversarial Environment Injection (AEI) threat model, 
 
 ## Background & Motivation
 
-**State of the Field**: Tool-augmented LLM agents rely on external tools such as search engines and citation indices to ground their generated content. RAG security has become an active research area, with existing work focusing on prompt injection and corpus poisoning as content-level attacks.
+**Background**: Tool-augmented LLM agents rely on external tools such as search engines and citation indices to ground their generated content. RAG security has become an active research area, with existing work focusing on prompt injection and corpus poisoning as content-level attacks.
 
 **Limitations of Prior Work**: (1) Existing evaluations focus solely on whether agents can correctly use tools, never considering what happens when tools lie — a fundamental trust gap; (2) RAG poisoning research covers only half the attack surface (content level), neglecting structural attacks; (3) A standardized, reproducible adversarial robustness testing framework is lacking.
 
-**Root Cause**: The correct behavior for reducing hallucination (deferring to external information) is precisely what increases adversarial vulnerability — the "grounding paradox." Agents accept the reality presented by their environment and lack independent verification channels, akin to Truman living in a fabricated world.
+**Key Challenge**: The correct behavior for reducing hallucination (deferring to external information) is precisely what increases adversarial vulnerability — the "grounding paradox." Agents accept the reality presented by their environment and lack independent verification channels, akin to Truman living in a fabricated world.
 
-**Paper Goals**: (1) Formalize the complete attack surface facing tool-using agents; (2) Distinguish between two orthogonal attack dimensions — cognitive and navigational; (3) Quantify the independence of these two dimensions.
+**Goal**: (1) Formalize the complete attack surface facing tool-using agents; (2) Distinguish between two orthogonal attack dimensions — cognitive and navigational; (3) Quantify the independence of these two dimensions.
 
-**Starting Point**: The paper draws an analogy to *The Truman Show* — agents accept tool-returned content as reality, and adversaries construct a false world via a "Man-in-the-Tool" proxy. Depth attacks constitute an entirely new attack category: they do not require agents to believe false information, only to become trapped in navigational loops.
+**Key Insight**: The paper draws an analogy to *The Truman Show* — agents accept tool-returned content as reality, and adversaries construct a false world via a "Man-in-the-Tool" proxy. Depth attacks constitute an entirely new attack category: they do not require agents to believe false information, only to become trapped in navigational loops.
 
 **Core Idea**: AEI is decomposed into breadth attacks (cognitive drift) and depth attacks (policy collapse), which exploit fundamentally different mechanisms — the former attacks belief updating, the latter attacks navigational planning — such that defense against one provides no protection against the other.
 

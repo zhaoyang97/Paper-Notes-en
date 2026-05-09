@@ -28,15 +28,15 @@ This paper proposes 3DGEER, a framework that derives a closed-form solution for 
 
 ## Background & Motivation
 
-**State of the Field**: 3D Gaussian Splatting (3DGS) achieves efficient rendering by projecting 3D Gaussians onto 2D Gaussians via EWA splatting, striking a favorable balance between quality and efficiency in narrow-FoV scenarios.
+**Background**: 3D Gaussian Splatting (3DGS) achieves efficient rendering by projecting 3D Gaussians onto 2D Gaussians via EWA splatting, striking a favorable balance between quality and efficiency in narrow-FoV scenarios.
 
 **Limitations of Prior Work**: EWA splatting relies on a first-order Taylor expansion for linear approximation; under wide-FoV settings (e.g., fisheye cameras with 180° FoV), severe nonlinear distortion causes significant degradation in reconstruction quality. Existing fisheye extensions (FisheyeGS, GS++) remain constrained by projection approximations. Ray tracing methods (EVER, 3DGRT), while free of projection error, rely on BVH traversal, resulting in low frame rates. The hybrid method 3DGUT still introduces errors and grid-line artifacts through Unscented Transform approximations in the association stage.
 
-**Root Cause**: The true projection of a 3D Gaussian under a nonlinear camera model is not a symmetric 2D Gaussian; any method relying on linear projection geometry inevitably introduces approximation errors. Meanwhile, accurate ray tracing methods cannot achieve real-time efficiency due to the algorithmic complexity and poor parallelizability of BVH.
+**Key Challenge**: The true projection of a 3D Gaussian under a nonlinear camera model is not a symmetric 2D Gaussian; any method relying on linear projection geometry inevitably introduces approximation errors. Meanwhile, accurate ray tracing methods cannot achieve real-time efficiency due to the algorithmic complexity and poor parallelizability of BVH.
 
-**Paper Goals**: (a) How to obtain an exact closed-form solution for integrating Gaussian density along a ray? (b) How to perform accurate and efficient ray–particle association without BVH? (c) How to unify the representation of arbitrary-FoV cameras and improve reconstruction quality?
+**Goal**: (a) How to obtain an exact closed-form solution for integrating Gaussian density along a ray? (b) How to perform accurate and efficient ray–particle association without BVH? (c) How to unify the representation of arbitrary-FoV cameras and improve reconstruction quality?
 
-**Starting Point**: Starting from first principles, the paper maps each anisotropic Gaussian to a canonical coordinate system where it becomes isotropic, derives a closed-form integral, solves the association problem at the frustum level rather than in screen space, and designs equal-angle sampling to replace conventional projection.
+**Key Insight**: Starting from first principles, the paper maps each anisotropic Gaussian to a canonical coordinate system where it becomes isotropic, derives a closed-form integral, solves the association problem at the frustum level rather than in screen space, and designs equal-angle sampling to replace conventional projection.
 
 **Core Idea**: By leveraging canonical coordinate transformation for exact closed-form transmittance, frustum-level PBF association, and BEAP unified projection, 3DGEER is the first method to simultaneously achieve geometric exactness and real-time efficiency for Gaussian rendering under arbitrary camera models.
 

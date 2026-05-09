@@ -29,15 +29,15 @@ This paper systematically compares 14 LLMs as pragmatic listeners (judging pragm
 
 ## Background & Motivation
 
-**State of the Field**: LLM language capability evaluation typically adopts two paradigms: generative tasks (model as "speaker") and judgment tasks (model as "listener"/judge). The LLM-as-a-judge paradigm is increasingly popular, with models serving as substitutes for human annotators.
+**Background**: LLM language capability evaluation typically adopts two paradigms: generative tasks (model as "speaker") and judgment tasks (model as "listener"/judge). The LLM-as-a-judge paradigm is increasingly popular, with models serving as substitutes for human annotators.
 
 **Limitations of Prior Work**: (1) These two evaluation roles have rarely been directly compared—researchers implicitly assume that success in one role reflects overall language competence; (2) psycholinguistic research shows that human language comprehension and production are related but distinct tasks, and successful comprehension does not guarantee successful production; (3) the reliability of LLM-as-a-judge has not been systematically validated in the pragmatic domain.
 
-**Root Cause**: If a model can correctly judge the pragmatic appropriateness of a response (listener role), does it follow that it can also generate pragmatically appropriate responses itself (speaker role)?
+**Key Challenge**: If a model can correctly judge the pragmatic appropriateness of a response (listener role), does it follow that it can also generate pragmatically appropriate responses itself (speaker role)?
 
-**Paper Goals**: To directly compare LLMs' pragmatic judgment (listener) and pragmatic generation (speaker) capabilities on the same set of items, and to examine whether the two are consistent.
+**Goal**: To directly compare LLMs' pragmatic judgment (listener) and pragmatic generation (speaker) capabilities on the same set of items, and to examine whether the two are consistent.
 
-**Starting Point**: Drawing on classic findings of comprehension–production asymmetries in psycholinguistics, the authors design parallel listener/speaker prompts using identical underlying test items, enabling rigorous item-level comparison.
+**Key Insight**: Drawing on classic findings of comprehension–production asymmetries in psycholinguistics, the authors design parallel listener/speaker prompts using identical underlying test items, enabling rigorous item-level comparison.
 
 **Core Idea**: Pragmatic judgment and pragmatic generation are partially dissociated capabilities in current LLMs—"knowing what is right" does not equal "doing it right," and LLM judges may be fundamentally "hypocritical."
 

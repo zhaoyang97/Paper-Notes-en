@@ -27,11 +27,11 @@ This work presents the first systematic comparison of hallucination patterns bet
 
 ## Background & Motivation
 
-**State of the Field**: dLLMs as a non-autoregressive generation paradigm are rapidly emerging, with LLaDA, Dream, and SDAR achieving comparable performance to AR-LLMs on general benchmarks. Theoretically, dLLMs' global planning and bidirectional visibility could mitigate the "snowball effect" and "reversal curse" found in AR models.
+**Background**: dLLMs as a non-autoregressive generation paradigm are rapidly emerging, with LLaDA, Dream, and SDAR achieving comparable performance to AR-LLMs on general benchmarks. Theoretically, dLLMs' global planning and bidirectional visibility could mitigate the "snowball effect" and "reversal curse" found in AR models.
 
-**Root Cause**: dLLMs' global context planning theoretically should reduce hallucination (enabling backtracking), but diffusion's inherent noise may exacerbate it — which effect dominates lacks empirical evidence.
+**Key Challenge**: dLLMs' global context planning theoretically should reduce hallucination (enabling backtracking), but diffusion's inherent noise may exacerbate it — which effect dominates lacks empirical evidence.
 
-**Starting Point**: Design two carefully controlled paired comparisons — (I) architecture-aligned (LLaDA-8B vs LLaMA-3-8B) and (II) parameter-aligned (Dream-7B vs Qwen2.5-7B, Dream initialized directly from Qwen weights) — to maximally isolate the generation mechanism's impact.
+**Key Insight**: Design two carefully controlled paired comparisons — (I) architecture-aligned (LLaDA-8B vs LLaMA-3-8B) and (II) parameter-aligned (Dream-7B vs Qwen2.5-7B, Dream initialized directly from Qwen weights) — to maximally isolate the generation mechanism's impact.
 
 ## Method
 

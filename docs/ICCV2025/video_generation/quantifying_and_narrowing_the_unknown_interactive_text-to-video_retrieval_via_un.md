@@ -28,11 +28,11 @@ This paper proposes UMIVR, a framework that explicitly quantifies three types of
 
 ## Background & Motivation
 
-1. **State of the Field**: Text-to-video retrieval (TVR) has evolved from attention mechanisms to vision-language pretraining, with methods such as CLIP4Clip and HunYuan continuously advancing performance. Interactive retrieval systems refine user intent through clarification questions.
+1. **Background**: Text-to-video retrieval (TVR) has evolved from attention mechanisms to vision-language pretraining, with methods such as CLIP4Clip and HunYuan continuously advancing performance. Interactive retrieval systems refine user intent through clarification questions.
 2. **Limitations of Prior Work**: TVR faces three categories of uncertainty: (1) textual ambiguity—queries that are vague, incomplete, or polysemous; (2) mapping uncertainty—even unambiguous queries may match multiple visually similar videos; (3) frame uncertainty—low-quality frames caused by motion blur or defocus that obscure critical visual cues. Existing interactive methods rely on heuristic question generation without explicitly quantifying these uncertainties.
-3. **Root Cause**: Different types of uncertainty require distinct intervention strategies, yet prior methods apply homogeneous strategies to heterogeneous uncertainties.
-4. **Paper Goals**: How to explicitly quantify different types of uncertainty and adaptively generate the most effective clarification questions accordingly?
-5. **Starting Point**: Each of the three uncertainty types is mapped to a computable mathematical measure (semantic entropy, JS divergence, and image quality assessment), all without requiring any training.
+3. **Key Challenge**: Different types of uncertainty require distinct intervention strategies, yet prior methods apply homogeneous strategies to heterogeneous uncertainties.
+4. **Goal**: How to explicitly quantify different types of uncertainty and adaptively generate the most effective clarification questions accordingly?
+5. **Key Insight**: Each of the three uncertainty types is mapped to a computable mathematical measure (semantic entropy, JS divergence, and image quality assessment), all without requiring any training.
 6. **Core Idea**: Semantic entropy quantifies textual ambiguity, JS divergence quantifies mapping uncertainty, and temporal quality frame sampling mitigates frame uncertainty; these measures jointly drive hierarchical, adaptive clarification question generation.
 
 ## Method

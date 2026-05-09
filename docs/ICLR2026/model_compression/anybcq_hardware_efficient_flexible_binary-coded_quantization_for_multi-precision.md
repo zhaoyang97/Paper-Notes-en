@@ -28,15 +28,15 @@ This paper proposes AnyBCQ, a multi-precision LLM quantization framework based o
 
 ## Background & Motivation
 
-**State of the Field**: Multi-precision LLM frameworks allow a single model to dynamically select precision at runtime according to SLOs. Any-Precision LLM is the current state of the art but relies on non-uniform quantization (clustering-based), requiring lookup tables and bit-transpose operations.
+**Background**: Multi-precision LLM frameworks allow a single model to dynamically select precision at runtime according to SLOs. Any-Precision LLM is the current state of the art but relies on non-uniform quantization (clustering-based), requiring lookup tables and bit-transpose operations.
 
 **Limitations of Prior Work**: (a) Non-uniform quantization cannot be computed directly on bit-planes, incurring additional transpose and lookup overhead. (b) Existing multi-precision methods suffer accuracy collapse at very low bit-widths (e.g., 2-bit), limiting practical use to 3–4-bit regimes. (c) Storing multiple independent precision models incurs large memory overhead (9.85 GB for LLaMA-3.1-8B vs. 4.99 GB for AnyBCQ).
 
-**Root Cause**: Non-uniform quantization offers strong representational capacity but is ill-suited for hardware acceleration (due to lookup tables); BCQ is naturally hardware-friendly but conventionally supports only fixed precision.
+**Key Challenge**: Non-uniform quantization offers strong representational capacity but is ill-suited for hardware acceleration (due to lookup tables); BCQ is naturally hardware-friendly but conventionally supports only fixed precision.
 
-**Paper Goals**: Extend BCQ to a multi-precision setting, enabling dynamic precision switching while preserving hardware efficiency.
+**Goal**: Extend BCQ to a multi-precision setting, enabling dynamic precision switching while preserving hardware efficiency.
 
-**Starting Point**: BCQ represents weights as a linear combination of binary bit-planes, $\hat{W} = \sum_i \alpha_i B_i$. Inference at $p$-bit precision corresponds exactly to computing over $p$ bit-planes, making BCQ a natural fit for multi-precision deployment.
+**Key Insight**: BCQ represents weights as a linear combination of binary bit-planes, $\hat{W} = \sum_i \alpha_i B_i$. Inference at $p$-bit precision corresponds exactly to computing over $p$ bit-planes, making BCQ a natural fit for multi-precision deployment.
 
 **Core Idea**: Freeze low-precision bit-planes, append new bit-planes from residuals, and optimize only the scaling factors, achieving progressive precision expansion.
 

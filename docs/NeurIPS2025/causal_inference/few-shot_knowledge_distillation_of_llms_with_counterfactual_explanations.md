@@ -29,16 +29,16 @@ This paper proposes CoD (Counterfactual-explanation-infused Distillation), which
 
 ## Background & Motivation
 
-**State of the Field**: Knowledge distillation (KD) is the predominant approach for compressing large teacher LLMs into smaller student models. Task-aware KD further enables selective knowledge transfer targeting specific downstream tasks.
+**Background**: Knowledge distillation (KD) is the predominant approach for compressing large teacher LLMs into smaller student models. Task-aware KD further enables selective knowledge transfer targeting specific downstream tasks.
 
 **Limitations of Prior Work**:
 - Existing task-aware distillation methods (KD/LWD/TED) all assume access to sufficient labeled data;
 - In few-shot settings, sparse data points cannot uniquely determine the teacher's decision boundary—multiple distinct student decision surfaces can fit the same sparse set of points (unfaithful distillation);
 - Data selection strategies for distillation remain severely understudied, especially under few-shot settings.
 
-**Root Cause**: Under extremely limited data budgets, how can the student faithfully replicate the teacher's decision boundary?
+**Key Challenge**: Under extremely limited data budgets, how can the student faithfully replicate the teacher's decision boundary?
 
-**Starting Point**: Counterfactual explanations (CFEs) naturally reside near decision boundaries—they represent the minimal perturbation inputs that flip model predictions. Such samples can precisely supplement information in high-uncertainty regions.
+**Key Insight**: Counterfactual explanations (CFEs) naturally reside near decision boundaries—they represent the minimal perturbation inputs that flip model predictions. Such samples can precisely supplement information in high-uncertainty regions.
 
 **Mechanism**: Using half the budget on original samples and the other half on their corresponding CFEs (with total budget unchanged) characterizes the teacher's decision surface more accurately than using all original samples.
 

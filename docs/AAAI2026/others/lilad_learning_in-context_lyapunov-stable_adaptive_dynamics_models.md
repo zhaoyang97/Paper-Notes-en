@@ -28,16 +28,16 @@ This paper proposes LILAD, a framework that leverages the in-context learning (I
 
 ## Background & Motivation
 
-**State of the Field**: System identification aims to approximate dynamical systems from trajectory data. Neural networks are widely used due to their strong expressiveness, but they typically provide no guarantees on physical properties (e.g., stability) and assume stationary systems.
+**Background**: System identification aims to approximate dynamical systems from trajectory data. Neural networks are widely used due to their strong expressiveness, but they typically provide no guarantees on physical properties (e.g., stability) and assume stationary systems.
 
 **Limitations of Prior Work**:
    - Stability-constrained methods (e.g., Lyapunov-constrained neural networks) assume fixed system parameters and cannot handle non-stationary dynamics.
    - Adaptive methods (e.g., meta-learning, ICL) optimize solely for prediction accuracy without guaranteeing stability of the learned model.
    - When system parameters change, retraining a stable model is prohibitively expensive for time-sensitive, safety-critical applications.
 
-**Root Cause**: Stability and adaptability have been studied independently, with no unified framework guaranteeing both simultaneously.
+**Key Challenge**: Stability and adaptability have been studied independently, with no unified framework guaranteeing both simultaneously.
 
-**Starting Point**: The prompt mechanism of ICL is exploited for zero-shot adaptation, while adversarial training jointly learns a Lyapunov function to enforce stability.
+**Key Insight**: The prompt mechanism of ICL is exploited for zero-shot adaptation, while adversarial training jointly learns a Lyapunov function to enforce stability.
 
 **Core Idea**: A GPT-2-based ICL framework jointly trains a dynamics model $G_\theta$ and a Lyapunov function $V_\phi$, and computes a state-dependent decay factor $\gamma(x)$ via bisection to strictly enforce stability.
 

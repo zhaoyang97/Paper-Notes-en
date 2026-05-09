@@ -29,15 +29,15 @@ DiZiNER simulates the pilot annotation workflow in human labeling pipelines by e
 
 ## Background & Motivation
 
-**State of the Field**: Large language models (LLMs) have demonstrated remarkable progress on named entity recognition (NER) through zero-shot and few-shot learning. However, state-of-the-art NER systems still rely heavily on human-annotated data, and a substantial performance gap remains between zero-shot approaches and supervised fine-tuning methods (approximately −32.0 F1 on average).
+**Background**: Large language models (LLMs) have demonstrated remarkable progress on named entity recognition (NER) through zero-shot and few-shot learning. However, state-of-the-art NER systems still rely heavily on human-annotated data, and a substantial performance gap remains between zero-shot approaches and supervised fine-tuning methods (approximately −32.0 F1 on average).
 
 **Limitations of Prior Work**: LLMs exhibit persistent systematic error patterns in NER, falling into three main categories: (1) difficulty following complex annotation guidelines; (2) ambiguity in entity boundary detection; and (3) frequent entity type confusion. Existing solutions such as instruction tuning, open NER frameworks, and large-scale synthetic data generation have achieved partial improvements, but the gap with supervised methods remains significant.
 
-**Root Cause**: Existing zero-shot NER methods lack an effective mechanism to systematically identify and correct systematic error patterns in LLM annotations. Single-model instruction optimization is constrained by the model's own biases and cannot transcend its inherent capability limitations.
+**Key Challenge**: Existing zero-shot NER methods lack an effective mechanism to systematically identify and correct systematic error patterns in LLM annotations. Single-model instruction optimization is constrained by the model's own biases and cannot transcend its inherent capability limitations.
 
-**Paper Goals**: To design a zero-shot NER framework that requires no parameter updates, automatically discovers and corrects systematic annotation errors in LLMs, and narrows the performance gap between zero-shot and supervised approaches.
+**Goal**: To design a zero-shot NER framework that requires no parameter updates, automatically discovers and corrects systematic annotation errors in LLMs, and narrows the performance gap between zero-shot and supervised approaches.
 
-**Starting Point**: The authors observe that error patterns in LLM-based NER bear strong resemblance to annotation inconsistencies encountered in the early stages of human labeling. In human annotation, the pilot annotation workflow—where multiple annotators label independently, a supervisor analyzes disagreements, and guidelines are updated accordingly—has proven effective in resolving such issues.
+**Key Insight**: The authors observe that error patterns in LLM-based NER bear strong resemblance to annotation inconsistencies encountered in the early stages of human labeling. In human annotation, the pilot annotation workflow—where multiple annotators label independently, a supervisor analyzes disagreements, and guidelines are updated accordingly—has proven effective in resolving such issues.
 
 **Core Idea**: Multiple heterogeneous LLMs are used to simulate annotators, while a stronger LLM simulates the supervisor. By analyzing inter-model disagreements to iteratively refine NER task instructions, the framework continuously improves zero-shot NER performance without any parameter updates.
 

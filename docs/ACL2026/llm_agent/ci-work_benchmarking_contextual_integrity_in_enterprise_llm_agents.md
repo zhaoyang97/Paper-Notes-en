@@ -29,15 +29,15 @@ CI-Work is an enterprise-scenario benchmark grounded in Contextual Integrity (CI
 
 ## Background & Motivation
 
-**State of the Field**: LLM agents are increasingly integrated into enterprise workflows, accessing internal data such as emails and meeting notes to execute complex tasks, substantially improving productivity.
+**Background**: LLM agents are increasingly integrated into enterprise workflows, accessing internal data such as emails and meeting notes to execute complex tasks, substantially improving productivity.
 
 **Limitations of Prior Work**: Existing privacy benchmarks (ConfAide, PrivacyLens, CIMemories, etc.) predominantly target everyday personal-assistant scenarios and fail to capture the complexity of enterprise environments: (1) they evaluate single information flows in isolation, overlooking the concurrent and intertwined nature of multiple flows in organizations; (2) their evaluation contexts are simple and isolated, unable to measure an agent's capacity to distinguish *necessary* from *sensitive* information under dense retrieval conditions; (3) they rely on simplified contexts or short attribute lists that cannot reproduce the scale and density of real enterprise data.
 
-**Root Cause**: The core capability of enterprise LLM agents—retrieving and utilizing internal data—is precisely what makes them potential conduits for sensitive information leakage; higher task utility tends to co-occur with more frequent privacy violations.
+**Key Challenge**: The core capability of enterprise LLM agents—retrieving and utilizing internal data—is precisely what makes them potential conduits for sensitive information leakage; higher task utility tends to co-occur with more frequent privacy violations.
 
-**Paper Goals**: Construct an enterprise-grade benchmark grounded in CI theory to systematically evaluate the privacy-utility tradeoff of LLM agents in high-fidelity enterprise workflows.
+**Goal**: Construct an enterprise-grade benchmark grounded in CI theory to systematically evaluate the privacy-utility tradeoff of LLM agents in high-fidelity enterprise workflows.
 
-**Starting Point**: Enterprise information flows are categorized along five organizational communication directions (downward, upward, lateral, diagonal, and external). Each benchmark instance includes a dense retrieval context composed of a *necessary set* and a *sensitive set*.
+**Key Insight**: Enterprise information flows are categorized along five organizational communication directions (downward, upward, lateral, diagonal, and external). Each benchmark instance includes a dense retrieval context composed of a *necessary set* and a *sensitive set*.
 
 **Core Idea**: Enterprise privacy is not a matter of simple information blocking; it requires precise discrimination between necessary and sensitive information under dense retrieval conditions—a challenge that current models have not solved, and one that worsens as model scale increases.
 

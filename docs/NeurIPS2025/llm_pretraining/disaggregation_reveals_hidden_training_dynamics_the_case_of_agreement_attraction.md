@@ -29,15 +29,15 @@ This paper disaggregates language model performance on subject-verb agreement ta
 
 ## Background & Motivation
 
-**State of the Field**: Large language models generally produce grammatically correct text and perform well on basic grammatical tasks such as subject-verb agreement. The linguistic competence of LLMs is widely acknowledged. Nevertheless, even large models such as Chinchilla frequently fail on more challenging grammatical tasks, suggesting that models may be learning increasingly complex heuristics rather than fully generalizable grammatical rules.
+**Background**: Large language models generally produce grammatically correct text and perform well on basic grammatical tasks such as subject-verb agreement. The linguistic competence of LLMs is widely acknowledged. Nevertheless, even large models such as Chinchilla frequently fail on more challenging grammatical tasks, suggesting that models may be learning increasingly complex heuristics rather than fully generalizable grammatical rules.
 
 **Limitations of Prior Work**: Existing evaluations of grammatical competence typically report aggregate scores across all conditions, masking substantial variation across individual conditions. For instance, language models perform worse on sentences containing attractor nouns — particularly when the attractor's number mismatches the subject — analogous to the agreement attraction effect observed in humans. These fine-grained patterns are averaged away in aggregate scores. Moreover, little research has examined how grammatical competence develops incrementally throughout training.
 
-**Root Cause**: Aggregate metrics suggest "slow, gradual" learning, but this may conceal rapid and non-monotonic underlying dynamics.
+**Key Challenge**: Aggregate metrics suggest "slow, gradual" learning, but this may conceal rapid and non-monotonic underlying dynamics.
 
-**Paper Goals**: By disaggregating performance across experimental conditions (subject number, presence/absence of attractors, and attractor match/mismatch) and examining multiple checkpoints throughout training, this paper aims to reveal the true dynamics of grammatical learning in language models.
+**Goal**: By disaggregating performance across experimental conditions (subject number, presence/absence of attractors, and attractor match/mismatch) and examining multiple checkpoints throughout training, this paper aims to reveal the true dynamics of grammatical learning in language models.
 
-**Starting Point**: The paper draws on classic psycholinguistic paradigms — analyzing error patterns and developmental trajectories — treating the training process of language models as analogous to human language acquisition, and conducting comparative analyses across experimental conditions.
+**Key Insight**: The paper draws on classic psycholinguistic paradigms — analyzing error patterns and developmental trajectories — treating the training process of language models as analogous to human language acquisition, and conducting comparative analyses across experimental conditions.
 
 **Core Idea**: Disaggregating grammatical evaluation datasets by condition and tracking per-condition performance across training checkpoints exposes multi-phase "hidden breakthroughs" that aggregate metrics conceal.
 

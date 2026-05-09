@@ -28,15 +28,15 @@ ShowTable introduces a novel task termed *creative table visualization* (generat
 
 ## Background & Motivation
 
-1. **State of the Field**: Image generation models have achieved high quality in general-purpose scenarios, and recent research has progressively shifted toward more complex structured generation tasks such as poster design and text rendering. Nevertheless, data-driven visualization—e.g., generating charts or infographics from tabular data—remains a significant challenge for existing models.
+1. **Background**: Image generation models have achieved high quality in general-purpose scenarios, and recent research has progressively shifted toward more complex structured generation tasks such as poster design and text rendering. Nevertheless, data-driven visualization—e.g., generating charts or infographics from tabular data—remains a significant challenge for existing models.
 
 2. **Limitations of Prior Work**: When a markdown table is directly used as a prompt, generation models tend to *render the table as text* rather than *visualize the underlying data*. Existing unified models achieve near-zero Data Accuracy scores (e.g., Bagel: 0.1; Blip3o-Next: 0.4), failing to correctly map data values to visual elements such as bar heights or pie-chart angles.
 
-3. **Root Cause**: Creative table visualization demands two seemingly conflicting capabilities—creative aesthetic design (requiring freedom) and strict data-fidelity mapping (requiring precision). Generative models excel at the former but frequently fail at the latter.
+3. **Key Challenge**: Creative table visualization demands two seemingly conflicting capabilities—creative aesthetic design (requiring freedom) and strict data-fidelity mapping (requiring precision). Generative models excel at the former but frequently fail at the latter.
 
-4. **Paper Goals**: To enable generative models to accurately and aesthetically visualize structured tabular data as infographics, while automatically detecting and correcting generation errors.
+4. **Goal**: To enable generative models to accurately and aesthetically visualize structured tabular data as infographics, while automatically detecting and correcting generation errors.
 
-5. **Starting Point**: MLLMs are leveraged for reasoning and planning (rewriting) and for error auditing (reflection), while diffusion models handle execution (generation and refinement), forming an iterative self-correction loop. Dedicated modules are trained separately to address the two identified bottlenecks.
+5. **Key Insight**: MLLMs are leveraged for reasoning and planning (rewriting) and for error auditing (reflection), while diffusion models handle execution (generation and refinement), forming an iterative self-correction loop. Dedicated modules are trained separately to address the two identified bottlenecks.
 
 6. **Core Idea**: A collaborative paradigm of *MLLM coordination + diffusion model execution* realizes high-fidelity infographic generation from tables through a Rewriting → Generation → Reflection → Refinement self-correction cycle.
 

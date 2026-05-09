@@ -26,13 +26,13 @@ This paper presents the first systematic study of $(k,z)$-clustering coreset con
 
 ## Background & Motivation
 
-**State of the Field**: Coresets are a fundamental data compression tool for clustering problems — a weighted subset $S \subseteq P$ satisfying $\text{cost}_z(S, C) \in (1 \pm \varepsilon)\text{cost}_z(P, C)$ for all center sets $C$. The noiseless setting has a rich theory with optimal size bounds.
+**Background**: Coresets are a fundamental data compression tool for clustering problems — a weighted subset $S \subseteq P$ satisfying $\text{cost}_z(S, C) \in (1 \pm \varepsilon)\text{cost}_z(P, C)$ for all center sets $C$. The noiseless setting has a rich theory with optimal size bounds.
 
 **Limitations of Prior Work**: Real-world data is almost always corrupted by noise (sensor errors, privacy mechanisms, transmission distortion), yet existing coreset constructions **rely entirely on noiseless assumptions**. The fundamental question of how a coreset built from noisy data $\hat{P}$ guarantees quality with respect to the true data $P$ has remained largely unaddressed.
 
-**Root Cause**: (a) The true data $P$ is unobservable, precluding direct quality evaluation; (b) noise uniformly inflates clustering costs, making the traditional metric $\mathsf{Err}$ overly pessimistic; (c) noise may alter cluster assignments of individual points.
+**Key Challenge**: (a) The true data $P$ is unobservable, precluding direct quality evaluation; (b) noise uniformly inflates clustering costs, making the traditional metric $\mathsf{Err}$ overly pessimistic; (c) noise may alter cluster assignments of individual points.
 
-**Starting Point**: The paper introduces the approximation-ratio metric $\mathsf{Err}_\alpha$, which focuses on relative performance within the neighborhood of optimal center sets, rendering it naturally immune to the uniform cost inflation induced by noise.
+**Key Insight**: The paper introduces the approximation-ratio metric $\mathsf{Err}_\alpha$, which focuses on relative performance within the neighborhood of optimal center sets, rendering it naturally immune to the uniform cost inflation induced by noise.
 
 ## Method
 

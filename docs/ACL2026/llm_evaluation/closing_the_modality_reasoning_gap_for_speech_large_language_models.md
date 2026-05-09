@@ -29,15 +29,15 @@ This paper proposes TARS (Trajectory Alignment for Reasoning in Speech), a reinf
 
 ## Background & Motivation
 
-**State of the Field**: Speech Large Language Models (Speech LLMs) have made remarkable progress, adopting a three-stage architecture of speech encoder + adapter + text LLM to leverage the reasoning capabilities of text LLMs for speech inputs.
+**Background**: Speech Large Language Models (Speech LLMs) have made remarkable progress, adopting a three-stage architecture of speech encoder + adapter + text LLM to leverage the reasoning capabilities of text LLMs for speech inputs.
 
 **Limitations of Prior Work**: Reasoning performance under speech input is significantly weaker than under text input, a phenomenon termed the "modality reasoning gap." (1) Input-side fusion methods (e.g., training adapters with frozen LLMs) achieve only superficial alignment, as subtle representation differences are amplified across Transformer layers; (2) Output-side supervision methods (e.g., knowledge distillation) enforce token-level matching in an offline manner, but strict matching is an unattainable target given that the speech-conditioned distribution differs from text, and exposure bias is a persistent issue.
 
-**Root Cause**: The underlying logical reasoning process should be modality-invariant, yet existing methods either align only input representations or enforce output alignment offline, neither of which effectively guides the alignment of reasoning trajectories themselves.
+**Key Challenge**: The underlying logical reasoning process should be modality-invariant, yet existing methods either align only input representations or enforce output alignment offline, neither of which effectively guides the alignment of reasoning trajectories themselves.
 
-**Paper Goals**: Design an online policy optimization framework that simultaneously aligns internal representations and external behaviors under both speech and text conditions, thereby eliminating the modality reasoning gap.
+**Goal**: Design an online policy optimization framework that simultaneously aligns internal representations and external behaviors under both speech and text conditions, thereby eliminating the modality reasoning gap.
 
-**Starting Point**: Leveraging the GRPO reinforcement learning framework with text-conditioned reasoning trajectories as a moving reference, the paper designs asymmetric rewards: for speech completions, the model jointly optimizes task accuracy, representation alignment, and behavior alignment; for text completions, only accuracy is optimized.
+**Key Insight**: Leveraging the GRPO reinforcement learning framework with text-conditioned reasoning trajectories as a moving reference, the paper designs asymmetric rewards: for speech completions, the model jointly optimizes task accuracy, representation alignment, and behavior alignment; for text completions, only accuracy is optimized.
 
 **Core Idea**: Through online policy exploration and dense alignment rewards, the speech modality co-evolves with continuously improving text reasoning capabilities, avoiding the exposure bias inherent in offline supervision.
 

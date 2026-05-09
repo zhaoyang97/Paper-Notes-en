@@ -29,15 +29,15 @@ This paper proposes NeuralOS, a dual-component architecture combining an RNN-bas
 
 ## Background & Motivation
 
-**State of the Field**: Generative models have evolved from text and image generation to video generation and interactive virtual environment simulation (e.g., game world models such as GameGen and Oasis). These advances suggest that computational interfaces may shift from hand-crafted programming toward fully generative paradigms.
+**Background**: Generative models have evolved from text and image generation to video generation and interactive virtual environment simulation (e.g., game world models such as GameGen and Oasis). These advances suggest that computational interfaces may shift from hand-crafted programming toward fully generative paradigms.
 
 **Limitations of Prior Work**: Existing interactive world models primarily target video games and rely on short context windows, since game states can typically be inferred from recent frames. OS interfaces, however, are fundamentally different: (1) state transitions involve long delays (e.g., launching Firefox may take ~30 frames); (2) the user action space is enormous (mouse positions form a large pixel-level discrete space); (3) long-term state memory is required (hidden windows, prior interactions, etc.).
 
-**Root Cause**: OS interfaces must respond immediately to unpredictable user inputs that frequently cause abrupt visual changes (e.g., launching a new application), in sharp contrast to the smooth and predictable transitions found in video generation. A model must simultaneously maintain precise state tracking and high-quality visual rendering.
+**Key Challenge**: OS interfaces must respond immediately to unpredictable user inputs that frequently cause abrupt visual changes (e.g., launching a new application), in sharp contrast to the smooth and predictable transitions found in video generation. A model must simultaneously maintain precise state tracking and high-quality visual rendering.
 
-**Paper Goals**: Can neural generative models simulate the graphical interface of an operating system end-to-end? This entails precise cursor modeling, long-term state tracking, and complex interactions such as application launching and closing.
+**Goal**: Can neural generative models simulate the graphical interface of an operating system end-to-end? This entails precise cursor modeling, long-term state tracking, and complex interactions such as application launching and closing.
 
-**Starting Point**: Drawing inspiration from the functional separation between the OS kernel (state management) and desktop rendering (GUI output), the paper designs a dual-module architecture of RNN (state tracking) + diffusion renderer (frame generation), coupled with a multi-stage training strategy.
+**Key Insight**: Drawing inspiration from the functional separation between the OS kernel (state management) and desktop rendering (GUI output), the paper designs a dual-module architecture of RNN (state tracking) + diffusion renderer (frame generation), coupled with a multi-stage training strategy.
 
 **Core Idea**: A hierarchical RNN tracks system state, a diffusion model renders interface frames, and multi-stage training enables the neural network to learn to simulate an operating system.
 

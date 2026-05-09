@@ -28,13 +28,13 @@ This paper proposes AceSearcher—a collaborative self-play framework in which a
 
 ## Background & Motivation
 
-**State of the Field**: RAG has become the standard approach for compensating for LLMs' knowledge gaps, but most RAG methods address only simple single-hop retrieval scenarios.
+**Background**: RAG has become the standard approach for compensating for LLMs' knowledge gaps, but most RAG methods address only simple single-hop retrieval scenarios.
 
 **Limitations of Prior Work**: Complex reasoning tasks require (a) multi-hop retrieval to gather multiple evidence pieces and (b) reasoning to integrate information and generate answers. Existing methods either rely on powerful closed-source LLMs with multi-turn prompting (high cost), employ online RL training (memory-intensive), or perform supervised fine-tuning solely on QA data (limited generalization).
 
-**Root Cause**: Multi-hop retrieval requires knowing *what to search for* (question decomposition), and once results are retrieved, strong reasoning is also needed—these two capabilities are tightly coupled yet are handled separately by existing approaches.
+**Key Challenge**: Multi-hop retrieval requires knowing *what to search for* (question decomposition), and once results are retrieved, strong reasoning is also needed—these two capabilities are tightly coupled yet are handled separately by existing approaches.
 
-**Starting Point**: Train a single model to learn both roles—decomposer and solver—improving each other through collaborative self-play.
+**Key Insight**: Train a single model to learn both roles—decomposer and solver—improving each other through collaborative self-play.
 
 **Core Idea**: The quality of the decomposer is measured by the solver's accuracy, while the quality of the solver is measured by final-answer match—requiring no intermediate step annotations.
 

@@ -27,15 +27,15 @@ content_hash: fde90cb1f73c1b45
 This paper defines and investigates the novel problem of Semi-Supervised Multimodal Domain Generalization (SSMDG), and proposes a unified framework integrating consensus-driven pseudo-labeling, disagreement-aware regularization, and cross-modal prototype alignment to achieve cross-domain generalization of multimodal models under limited annotation.
 
 ## Background & Motivation
-**State of the Field**: Multimodal Domain Generalization (MMDG) assumes all source domain data are labeled; Semi-Supervised Multimodal Learning (SSML) exploits unlabeled data but ignores domain shift; Semi-Supervised Domain Generalization (SSDG) addresses domain shift but is restricted to unimodal inputs. Each direction addresses only part of the problem.
+**Background**: Multimodal Domain Generalization (MMDG) assumes all source domain data are labeled; Semi-Supervised Multimodal Learning (SSML) exploits unlabeled data but ignores domain shift; Semi-Supervised Domain Generalization (SSDG) addresses domain shift but is restricted to unimodal inputs. Each direction addresses only part of the problem.
 
 **Limitations of Prior Work**: In real-world scenarios, three challenges arise simultaneously—multimodal data, scarce labels, and domain shift. MMDG methods cannot leverage large amounts of unlabeled data; SSML methods assume identical training and test distributions; SSDG methods cannot exploit cross-modal complementarity.
 
-**Root Cause**: (a) How to obtain reliable pseudo labels under low confidence and inter-modal disagreement; (b) how to learn representations that are simultaneously invariant to modality and domain under limited supervision.
+**Key Challenge**: (a) How to obtain reliable pseudo labels under low confidence and inter-modal disagreement; (b) how to learn representations that are simultaneously invariant to modality and domain under limited supervision.
 
-**Paper Goals**: Establish an SSMDG benchmark and design a unified framework that jointly addresses pseudo-label reliability and domain-modality invariant representation learning.
+**Goal**: Establish an SSMDG benchmark and design a unified framework that jointly addresses pseudo-label reliability and domain-modality invariant representation learning.
 
-**Starting Point**: The consensus between fusion predictions and unimodal predictions is leveraged to filter reliable pseudo labels, while class prototypes serve as semantic anchors across domains and modalities.
+**Key Insight**: The consensus between fusion predictions and unimodal predictions is leveraged to filter reliable pseudo labels, while class prototypes serve as semantic anchors across domains and modalities.
 
 **Core Idea**: Achieve robust generalization on sparsely labeled multimodal multi-domain data through consensus-driven pseudo-label filtering and cross-modal prototype alignment.
 

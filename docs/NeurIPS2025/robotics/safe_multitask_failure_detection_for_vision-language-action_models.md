@@ -28,15 +28,15 @@ SAFE identifies consistent "failure regions" in the internal feature space of VL
 
 ## Background & Motivation
 
-**State of the Field**: VLA models (e.g., OpenVLA, π₀) achieve only 30–60% zero-shot success rates on unseen tasks. Real-world deployment requires automated in-execution failure detection to trigger human intervention or retry mechanisms.
+**Background**: VLA models (e.g., OpenVLA, π₀) achieve only 30–60% zero-shot success rates on unseen tasks. Real-world deployment requires automated in-execution failure detection to trigger human intervention or retry mechanisms.
 
 **Limitations of Prior Work**: Existing failure detectors are task-specific—requiring failure rollout data for each new task. Token-uncertainty methods (logit-based) perform poorly on VLAs (ROC-AUC 45–60%). Action-consistency methods (STAC) demand 10× inference time.
 
-**Root Cause**: VLA models are designed for open-world tasks, making it infeasible to pre-collect failure data for every possible task. What is needed is a failure detector trained on seen tasks that generalizes to new ones.
+**Key Challenge**: VLA models are designed for open-world tasks, making it infeasible to pre-collect failure data for every possible task. What is needed is a failure detector trained on seen tasks that generalizes to new ones.
 
-**Paper Goals**: Train efficient failure detectors that generalize across tasks without requiring any data collection for new tasks.
+**Goal**: Train efficient failure detectors that generalize across tasks without requiring any data collection for new tasks.
 
-**Starting Point**: In the final-layer hidden states of VLAs, the feature distributions of successful and failed trajectories exhibit consistent separation patterns across different tasks. A simple MLP/LSTM can learn this "failure region" and generalize accordingly.
+**Key Insight**: In the final-layer hidden states of VLAs, the feature distributions of successful and failed trajectories exhibit consistent separation patterns across different tasks. A simple MLP/LSTM can learn this "failure region" and generalize accordingly.
 
 **Core Idea**: Train lightweight failure detectors (MLP/LSTM) on the last-layer hidden states of the VLA, combined with FCP-based threshold calibration, to achieve real-time, multitask-generalizable failure detection.
 

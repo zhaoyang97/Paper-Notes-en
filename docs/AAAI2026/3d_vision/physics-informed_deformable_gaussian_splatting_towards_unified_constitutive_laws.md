@@ -28,15 +28,15 @@ Each 3D Gaussian is treated as a Lagrangian material point. A time-evolving mate
 
 ## Background & Motivation
 
-**State of the Field**: 3DGS has become the dominant approach for dynamic novel-view synthesis owing to its explicit representation and real-time rendering capability. Dynamic modeling strategies include incremental methods (DynamicGS), deformation-field methods (D-3DGS, Grid4D), and low-rank decomposition methods (SC-GS), with 4D decomposed hash encoding enabling efficient spatiotemporal representation.
+**Background**: 3DGS has become the dominant approach for dynamic novel-view synthesis owing to its explicit representation and real-time rendering capability. Dynamic modeling strategies include incremental methods (DynamicGS), deformation-field methods (D-3DGS, Grid4D), and low-rank decomposition methods (SC-GS), with 4D decomposed hash encoding enabling efficient spatiotemporal representation.
 
 **Limitations of Prior Work**: Existing methods reduce motion to rigid-body transformations, ignoring the material-specific constitutive laws governing different substances (fluids, elastic bodies, cloth, etc. exhibit fundamentally different motion patterns). Relying solely on 2D visual supervision (RGB loss) is insufficient to constrain the physical state of 3D particles, causing Gaussian particles to deviate from physically plausible motion modes.
 
-**Root Cause**: Purely data-driven deformation fields lack physical inductive bias and cannot distinguish the motion laws of different materials (fluid vs. elastic solid vs. rigid body). Existing physics-embedding methods (PhysGaussian, PINNs-based approaches) depend on strict boundary conditions, fixed material properties, or RGB-D/multi-view inputs, precluding generalization to monocular dynamic scenes.
+**Key Challenge**: Purely data-driven deformation fields lack physical inductive bias and cannot distinguish the motion laws of different materials (fluid vs. elastic solid vs. rigid body). Existing physics-embedding methods (PhysGaussian, PINNs-based approaches) depend on strict boundary conditions, fixed material properties, or RGB-D/multi-view inputs, precluding generalization to monocular dynamic scenes.
 
-**Paper Goals**: (1) How to model the positions and time-varying deformations of Gaussian particles without prior knowledge of particle motion? (2) What boundary conditions or alternative supervision signals enable physically consistent and generalizable dynamic material modeling?
+**Goal**: (1) How to model the positions and time-varying deformations of Gaussian particles without prior knowledge of particle motion? (2) What boundary conditions or alternative supervision signals enable physically consistent and generalizable dynamic material modeling?
 
-**Starting Point**: Starting from Lagrangian mechanics, the Cauchy momentum equation is adopted as a unified constitutive law. Each particle's velocity and stress are independently predicted by a time-evolving material field. Optical flow decomposition provides motion flow as pseudo ground truth to guide velocity field convergence.
+**Key Insight**: Starting from Lagrangian mechanics, the Cauchy momentum equation is adopted as a unified constitutive law. Each particle's velocity and stress are independently predicted by a time-evolving material field. Optical flow decomposition provides motion flow as pseudo ground truth to guide velocity field convergence.
 
 **Core Idea**: Embed the Cauchy momentum equation from continuum mechanics into the 3DGS framework; each Gaussian particle evolves as a Lagrangian material point within a time-evolving material field, with dual supervision from physics residuals and optical flow alignment achieving cross-material generalization.
 

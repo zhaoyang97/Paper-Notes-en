@@ -29,15 +29,15 @@ This paper proposes a training-free, annotation-free debiasing method for VLMs t
 
 ## Background & Motivation
 
-**State of the Field**: VLMs such as CLIP, trained on massive web-scale image–text pairs, achieve strong performance on zero-shot classification, image–text retrieval, and text-to-image generation, but inevitably inherit social biases from training data (e.g., "nurse" is anomalously similar to "female" while "doctor" is anomalously similar to "male").
+**Background**: VLMs such as CLIP, trained on massive web-scale image–text pairs, achieve strong performance on zero-shot classification, image–text retrieval, and text-to-image generation, but inevitably inherit social biases from training data (e.g., "nurse" is anomalously similar to "female" while "doctor" is anomalously similar to "male").
 
 **Limitations of Prior Work**: Existing debiasing methods suffer from multiple limitations: they require training auxiliary networks (DeAR, FairerCLIP, PromptArray), depend on sensitive-attribute annotations (SFID, CLIP-clip), address only a single modality (SANER and BiasedPrompt debias text only), apply to only a single downstream task (PRISM targets zero-shot classification only), and cannot guarantee that utility does not degrade significantly after debiasing.
 
-**Root Cause**: There is an inherent trade-off between fairness and utility—removing sensitive-attribute information may simultaneously harm semantic content. Prior methods project onto the entire subspace $\mathcal{S}$, which contains not only attribute information but also semantic content (e.g., "doctor") that should be preserved, resulting in over-debiasing.
+**Key Challenge**: There is an inherent trade-off between fairness and utility—removing sensitive-attribute information may simultaneously harm semantic content. Prior methods project onto the entire subspace $\mathcal{S}$, which contains not only attribute information but also semantic content (e.g., "doctor") that should be preserved, resulting in over-debiasing.
 
-**Paper Goals**: To design a unified debiasing framework that simultaneously satisfies: training-free, annotation-free, dual-modality debiasing, multi-task applicability, and provably bounded utility loss.
+**Goal**: To design a unified debiasing framework that simultaneously satisfies: training-free, annotation-free, dual-modality debiasing, multi-task applicability, and provably bounded utility loss.
 
-**Starting Point**: The paper formalizes the debiasing problem as an optimization on the unit hypersphere by exploiting the geometric structure of the cross-modal embedding space, and reduces the high-dimensional search space to two dimensions via orthogonal decomposition.
+**Key Insight**: The paper formalizes the debiasing problem as an optimization on the unit hypersphere by exploiting the geometric structure of the cross-modal embedding space, and reduces the high-dimensional search space to two dimensions via orthogonal decomposition.
 
 **Core Idea**: Project only onto the **attribute subspace** $\mathcal{A}$ (spanned by inter-group difference directions) rather than the entire group prototype subspace $\mathcal{S}$, thereby removing bias while preserving semantic content. A minimax problem is then solved via Chebyshev scalarization to obtain a closed-form optimal solution robust to arbitrary fairness–utility weighting.
 

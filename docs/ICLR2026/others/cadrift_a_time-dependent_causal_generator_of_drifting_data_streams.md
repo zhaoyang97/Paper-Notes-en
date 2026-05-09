@@ -27,15 +27,15 @@ This paper proposes CaDrift, a time-dependent synthetic data stream generation f
 
 ## Background & Motivation
 
-**State of the Field**: Concept drift is a core challenge in data stream mining—data distributions change over time, requiring models to continuously adapt. Evaluating adaptive learning algorithms demands synthetic benchmark data with controllable drift events.
+**Background**: Concept drift is a core challenge in data stream mining—data distributions change over time, requiring models to continuously adapt. Evaluating adaptive learning algorithms demands synthetic benchmark data with controllable drift events.
 
 **Limitations of Prior Work**: Existing synthetic generators (e.g., SEA, Sine, RandomRBF) rely on linear or probabilistic functions and produce essentially i.i.d. samples—even when drift events are present, there is no temporal correlation between consecutive samples. This is fundamentally inconsistent with real-world data streams such as IoT sensor data or financial time series.
 
-**Root Cause**: Real-world data streams exhibit two critical properties: (a) variables are related through causal mechanisms rather than mere correlations, and (b) consecutive samples exhibit serial correlation. Existing generators satisfy neither property.
+**Key Challenge**: Real-world data streams exhibit two critical properties: (a) variables are related through causal mechanisms rather than mere correlations, and (b) consecutive samples exhibit serial correlation. Existing generators satisfy neither property.
 
-**Paper Goals**: To design a synthetic data stream generator that simultaneously incorporates causal structure and temporal dependence while supporting multiple controllable drift types.
+**Goal**: To design a synthetic data stream generator that simultaneously incorporates causal structure and temporal dependence while supporting multiple controllable drift types.
 
-**Starting Point**: The causal graph structure of SCMs is combined with EWMA smoothing and autoregressive noise, naturally introducing temporal dependence along the causal propagation chain; different types of drift are produced by modifying the SCM's mapping functions.
+**Key Insight**: The causal graph structure of SCMs is combined with EWMA smoothing and autoregressive noise, naturally introducing temporal dependence along the causal propagation chain; different types of drift are produced by modifying the SCM's mapping functions.
 
 **Core Idea**: Temporal dynamics (EWMA + AR noise) are superimposed on the SCM causal graph, and controllable drift is achieved by modifying mapping functions—realizing, for the first time, a unified framework combining causal structure, temporal dependence, and controllable drift in data stream generation.
 

@@ -29,15 +29,15 @@ This paper proposes a virtual multiplex staining framework based on a marker-wis
 
 ## Background & Motivation
 
-**State of the Field**: Histopathological analysis relies on H&E staining as the gold standard, supplemented by immunohistochemistry (IHC) for molecular information. Multiplex immunofluorescence (mIF) / multiplex immunohistochemistry (mIHC) imaging has recently emerged as a technique capable of visualizing multiple biomarkers within a single tissue section, providing a more comprehensive view of the tumor microenvironment. However, multiplex imaging protocols are complex and costly, limiting large-scale adoption.
+**Background**: Histopathological analysis relies on H&E staining as the gold standard, supplemented by immunohistochemistry (IHC) for molecular information. Multiplex immunofluorescence (mIF) / multiplex immunohistochemistry (mIHC) imaging has recently emerged as a technique capable of visualizing multiple biomarkers within a single tissue section, providing a more comprehensive view of the tumor microenvironment. However, multiplex imaging protocols are complex and costly, limiting large-scale adoption.
 
 **Limitations of Prior Work**: (1) Most existing H&E image repositories lack corresponding multiplex staining images, precluding retrospective multimodal analysis. (2) Existing virtual staining methods either require training a separate model per marker (e.g., pix2pix), which scales poorly, or support only 2–3 markers (e.g., HEMIT supports 3, VIMs supports 2), far below the demands of practical multiplex imaging. (3) Independent training across methods precludes cross-channel knowledge sharing, wasting complementary information.
 
-**Root Cause**: Multiplex imaging involves a large number of marker types (practical applications often require 18 or more), yet existing methods either necessitate training separate models per marker (computationally infeasible) or rely on text conditioning (whose discriminative capacity degrades as the number of markers increases), making them fundamentally non-scalable.
+**Key Challenge**: Multiplex imaging involves a large number of marker types (practical applications often require 18 or more), yet existing methods either necessitate training separate models per marker (computationally infeasible) or rely on text conditioning (whose discriminative capacity degrades as the number of markers increases), making them fundamentally non-scalable.
 
-**Paper Goals**: (1) How to generate a large variety of marker images using a single model? (2) How to address color distortion caused by distributional differences in pixel values across markers? (3) How to achieve high generation quality while enabling efficient inference?
+**Goal**: (1) How to generate a large variety of marker images using a single model? (2) How to address color distortion caused by distributional differences in pixel values across markers? (3) How to achieve high generation quality while enabling efficient inference?
 
-**Starting Point**: The paper leverages the strong generative prior of pretrained Stable Diffusion, replacing text conditioning with marker one-hot embeddings to enable scalable multi-marker discrimination, and decouples multi-target generation from color fidelity via two-stage training.
+**Key Insight**: The paper leverages the strong generative prior of pretrained Stable Diffusion, replacing text conditioning with marker one-hot embeddings to enable scalable multi-marker discrimination, and decouples multi-target generation from color fidelity via two-stage training.
 
 **Core Idea**: Condition a pretrained LDM with marker one-hot embeddings to achieve scalable multi-marker generation, then apply pixel-level fine-tuning to optimize color fidelity and enable single-step inference.
 

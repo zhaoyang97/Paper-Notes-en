@@ -28,13 +28,13 @@ This work conducts the first speech-based Turing test on 9 state-of-the-art spee
 
 ## Background & Motivation
 
-**State of the Field**: S2S systems (e.g., GPT-4o, Gemini-2.5-Pro) are rapidly advancing, enabling direct voice-based interaction. Existing evaluations focus primarily on speech comprehension and reasoning tasks, while the question of whether these systems converse in a human-like manner remains largely unaddressed.
+**Background**: S2S systems (e.g., GPT-4o, Gemini-2.5-Pro) are rapidly advancing, enabling direct voice-based interaction. Existing evaluations focus primarily on speech comprehension and reasoning tasks, while the question of whether these systems converse in a human-like manner remains largely unaddressed.
 
 **Limitations of Prior Work**: (1) Text-based Turing tests are ill-suited for speech, as they do not account for acoustic naturalness and emotional expression; (2) existing speech benchmarks evaluate task-oriented capabilities (e.g., ASR, emotion recognition) rather than human-likeness; (3) no standardized methodology exists for assessing human-likeness in S2S systems.
 
-**Root Cause**: High scores on task-oriented benchmarks do not imply human-like speech—models may approach human-level understanding while exhibiting clearly machine-like expressive styles.
+**Key Challenge**: High scores on task-oriented benchmarks do not imply human-like speech—models may approach human-level understanding while exhibiting clearly machine-like expressive styles.
 
-**Starting Point**: Directly applying the Turing test—having human judges determine whether they are speaking with a human or a machine—and using an 18-dimensional diagnostic framework to identify the reasons for failure.
+**Key Insight**: Directly applying the Turing test—having human judges determine whether they are speaking with a human or a machine—and using an 18-dimensional diagnostic framework to identify the reasons for failure.
 
 ## Method
 

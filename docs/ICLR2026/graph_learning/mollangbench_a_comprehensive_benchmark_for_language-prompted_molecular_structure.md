@@ -29,15 +29,15 @@ This paper introduces MolLangBench, a benchmark constructed via automated tools 
 
 ## Background & Motivation
 
-**State of the Field**: Recent work has extensively explored molecule-language alignment, but these approaches typically target downstream chemical tasks (e.g., property prediction, reaction prediction) directly, bypassing fundamental structure-level capabilities. Analogous to the success of vision-language modeling—where VLMs align text with visually observable content—current molecular-language models attempt to align symbolic molecular structures with unobservable chemical properties, a mismatch that makes alignment considerably more difficult.
+**Background**: Recent work has extensively explored molecule-language alignment, but these approaches typically target downstream chemical tasks (e.g., property prediction, reaction prediction) directly, bypassing fundamental structure-level capabilities. Analogous to the success of vision-language modeling—where VLMs align text with visually observable content—current molecular-language models attempt to align symbolic molecular structures with unobservable chemical properties, a mismatch that makes alignment considerably more difficult.
 
 **Limitations of Prior Work**: (1) No benchmark systematically evaluates AI capabilities in basic molecular structure operations (recognition, editing, generation); (2) existing molecular benchmarks focus on high-level tasks (drug design, property prediction) while neglecting the prerequisite—whether models truly "understand" molecular structure; (3) existing datasets vary in quality and may contain ambiguities and uncertainties.
 
-**Root Cause**: If AI cannot reliably perform basic molecular structure recognition and manipulation, more complex chemical reasoning tasks (drug discovery, materials design) cannot be trusted. The chemist's workflow invariably begins with structural understanding.
+**Key Challenge**: If AI cannot reliably perform basic molecular structure recognition and manipulation, more complex chemical reasoning tasks (drug discovery, materials design) cannot be trusted. The chemist's workflow invariably begins with structural understanding.
 
-**Paper Goals**: To provide the first systematic, high-quality evaluation tool for fundamental molecule-language capabilities.
+**Goal**: To provide the first systematic, high-quality evaluation tool for fundamental molecule-language capabilities.
 
-**Starting Point**: Grounded in the actual chemist workflow—first recognize structure, then manipulate structure, then generate structure—yielding a three-tier progressive task design.
+**Key Insight**: Grounded in the actual chemist workflow—first recognize structure, then manipulate structure, then generate structure—yielding a three-tier progressive task design.
 
 **Core Idea**: Evaluate AI's fundamental molecular structure capabilities using deterministic, unambiguous, high-quality data, thereby exposing deficiencies in current models.
 

@@ -28,15 +28,15 @@ This paper presents VerseCrafter, a video world model based on a unified 4D geom
 
 ## Background & Motivation
 
-1. **State of the Field**: Video world models aim to simulate dynamic real-world environments. Recent approaches condition video generation on text, actions, or camera trajectories. Camera control methods such as CameraCtrl and MotionCtrl achieve viewpoint control via Plücker embeddings or 3D prior injection. Object motion control has primarily relied on 2D cues including trajectory points, optical flow, masks, and 2D bounding boxes.
+1. **Background**: Video world models aim to simulate dynamic real-world environments. Recent approaches condition video generation on text, actions, or camera trajectories. Camera control methods such as CameraCtrl and MotionCtrl achieve viewpoint control via Plücker embeddings or 3D prior injection. Object motion control has primarily relied on 2D cues including trajectory points, optical flow, masks, and 2D bounding boxes.
 
 2. **Limitations of Prior Work**: (a) 2D control signals are not robust under large viewpoint changes and lack 3D awareness; (b) more advanced 3D signals such as 3D bounding boxes are overly rigid, SMPL-X is limited to human bodies, and sparse 3D trajectories are often noisy and incomplete; (c) existing control spaces are fragmented—camera and object motion are not defined in a unified coordinate system and cannot be jointly controlled.
 
-3. **Root Cause**: An ideal world model should simulate the complete 4D spatiotemporal space, yet videos only capture 2D projections. A compact, editable, and category-agnostic 4D geometric state representation is needed to unify camera and multi-object motion control.
+3. **Key Challenge**: An ideal world model should simulate the complete 4D spatiotemporal space, yet videos only capture 2D projections. A compact, editable, and category-agnostic 4D geometric state representation is needed to unify camera and multi-object motion control.
 
-4. **Paper Goals**: (a) Design a unified 4D geometric control representation; (b) achieve disentangled control of camera and multi-object motion in a shared world coordinate system; (c) construct large-scale training data.
+4. **Goal**: (a) Design a unified 4D geometric control representation; (b) achieve disentangled control of camera and multi-object motion in a shared world coordinate system; (c) construct large-scale training data.
 
-5. **Starting Point**: 3D Gaussian distributions are used to describe the probabilistic 3D occupancy of objects—the mean defines the motion path, and the covariance captures spatial extent and orientation—naturally supporting soft, flexible, and category-agnostic object modeling.
+5. **Key Insight**: 3D Gaussian distributions are used to describe the probabilistic 3D occupancy of objects—the mean defines the motion path, and the covariance captures spatial extent and orientation—naturally supporting soft, flexible, and category-agnostic object modeling.
 
 6. **Core Idea**: A unified 4D geometric state is constructed from a static background point cloud and per-object 3D Gaussian trajectories in a shared world coordinate system. These are rendered into multi-channel control maps and fed through a GeoAdapter to drive a frozen video diffusion model.
 

@@ -28,7 +28,7 @@ This paper introduces a novel task of decoding open-ended information seeking go
 
 ## Background & Motivation
 
-**State of the Field**: Eye tracking is a core methodology for studying reading cognition; however, existing work primarily focuses on general "reading for comprehension" scenarios, neglecting the more prevalent information-seeking reading that occurs in everyday life.
+**Background**: Eye tracking is a core methodology for studying reading cognition; however, existing work primarily focuses on general "reading for comprehension" scenarios, neglecting the more prevalent information-seeking reading that occurs in everyday life.
 
 **Limitations of Prior Work**: Existing cognitive state decoding work distinguishes only a small number of predefined reading modes (e.g., skimming vs. careful reading) and cannot handle open-ended, text-specific information seeking goals.
 

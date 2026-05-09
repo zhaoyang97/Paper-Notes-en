@@ -35,7 +35,7 @@ Remote sensing (RS) vision-language models (e.g., RemoteCLIP, GeoRSCLIP) exhibit
 
 **Visual Rigidity**: Most PEFT methods update only the text encoder while freezing the visual encoder, preventing the model from capturing RS-specific scale variations and cross-source heterogeneity.
 
-**Starting Point**: Using large language models to generate rich category descriptions as teacher signals while injecting learnable prompts on both the visual and textual sides, achieving efficient adaptation through tri-aspect alignment distillation.
+**Key Insight**: Using large language models to generate rich category descriptions as teacher signals while injecting learnable prompts on both the visual and textual sides, achieving efficient adaptation through tri-aspect alignment distillation.
 
 **Core Idea**: LLM-enhanced text prototypes serve as the teacher to guide tri-aspect distillation alignment for a student model with visual-textual dual-side prompt learning.
 

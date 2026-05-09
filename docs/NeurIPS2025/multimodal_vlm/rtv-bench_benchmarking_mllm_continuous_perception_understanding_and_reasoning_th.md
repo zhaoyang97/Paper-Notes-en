@@ -14,15 +14,15 @@ This paper proposes RTV-Bench, a benchmark comprising 552 videos and 4,608 QA pa
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal large language models (MLLMs) have advanced rapidly in visual perception, understanding, and reasoning. Video-LLM research has expanded from short clips to long-form content, with growing integration of multimodal signals such as video, audio, and subtitles.
+**Background**: Multimodal large language models (MLLMs) have advanced rapidly in visual perception, understanding, and reasoning. Video-LLM research has expanded from short clips to long-form content, with growing integration of multimodal signals such as video, audio, and subtitles.
 
 **Limitations of Prior Work**: Existing video benchmarks (e.g., Video-MME, MVBench) are primarily designed for offline evaluation using static QA pairs, and are thus unable to assess models' real-time responsiveness to continuous dynamic video streams. While VStream, StreamingBench, and OVOBench offer improvements, they remain insufficient in evaluating real-time responsiveness—neglecting models' ability to capture transitions and instantaneous details in sequentially arriving visual inputs.
 
-**Root Cause**: Real-time video scenarios require models to continuously maintain coherent understanding and update their internal states as visual scenes evolve, yet the prevailing "single-question, single-answer" static evaluation paradigm in existing benchmarks cannot effectively assess this continuous analysis capability.
+**Key Challenge**: Real-time video scenarios require models to continuously maintain coherent understanding and update their internal states as visual scenes evolve, yet the prevailing "single-question, single-answer" static evaluation paradigm in existing benchmarks cannot effectively assess this continuous analysis capability.
 
-**Paper Goals**: To construct a fine-grained real-time video analysis benchmark that systematically evaluates MLLMs' continuous perception, understanding, and reasoning capabilities in dynamic video streams.
+**Goal**: To construct a fine-grained real-time video analysis benchmark that systematically evaluates MLLMs' continuous perception, understanding, and reasoning capabilities in dynamic video streams.
 
-**Starting Point**: The paper approaches the problem from three dimensions: (1) multi-timestamp QA, where the same conceptual question has different correct answers at different time points; (2) a hierarchical question structure that progressively increases in difficulty; and (3) a multidimensional evaluation framework covering 8 dimensions for fine-grained diagnosis.
+**Key Insight**: The paper approaches the problem from three dimensions: (1) multi-timestamp QA, where the same conceptual question has different correct answers at different time points; (2) a hierarchical question structure that progressively increases in difficulty; and (3) a multidimensional evaluation framework covering 8 dimensions for fine-grained diagnosis.
 
 **Core Idea**: By designing questions whose correct answers change over time, the benchmark directly tests models' sensitivity to dynamic state transitions and their ability to continuously track evolving content.
 

@@ -29,7 +29,7 @@ An ultrafast microLED-on-CMOS digital light projector (330 kfps global shutter) 
 
 ## Background & Motivation
 
-**State of the Field**: Single-pixel imaging (SPI) replaces array sensors with structured illumination and a single-point detector, enabling simple hardware that operates across arbitrary spectral bands (infrared, THz, etc.). Conventional pattern generators based on DMDs are limited to approximately $10^4$ fps by mechanical tilting; recent microLED arrays improve switching speed by roughly two orders of magnitude.
+**Background**: Single-pixel imaging (SPI) replaces array sensors with structured illumination and a single-point detector, enabling simple hardware that operates across arbitrary spectral bands (infrared, THz, etc.). Conventional pattern generators based on DMDs are limited to approximately $10^4$ fps by mechanical tilting; recent microLED arrays improve switching speed by roughly two orders of magnitude.
 
 **Limitations of Prior Work**:
 
@@ -37,11 +37,11 @@ An ultrafast microLED-on-CMOS digital light projector (330 kfps global shutter) 
 2. The conventional SPI pipeline of reconstructing an image before classification introduces unnecessary latency, and reconstruction itself is a computational bottleneck.
 3. The mechanical switching speed of DMDs constrains real-time applications (practical image generation rates $\lesssim 10^2$ Hz).
 
-**Root Cause**: SPI information acquisition is inherently a spatio-temporal transform (2D space → 1D time series). Whether the reconstruction step is truly necessary remains an open question.
+**Key Challenge**: SPI information acquisition is inherently a spatio-temporal transform (2D space → 1D time series). Whether the reconstruction step is truly necessary remains an open question.
 
-**Paper Goals**: Experimentally validate ultrafast SPIC in a real free-space optical system, completely bypassing image reconstruction.
+**Goal**: Experimentally validate ultrafast SPIC in a real free-space optical system, completely bypassing image reconstruction.
 
-**Starting Point**: Leverage the ultrafast switching capability of microLEDs to project Hadamard patterns and directly classify the photodetector time series.
+**Key Insight**: Leverage the ultrafast switching capability of microLEDs to project Hadamard patterns and directly classify the photodetector time series.
 
 **Core Idea**: Exploit a microLED ultrafast projector to achieve sub-millisecond Hadamard encoding, then directly classify the single-pixel detector time series without image reconstruction.
 

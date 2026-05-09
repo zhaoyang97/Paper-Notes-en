@@ -35,15 +35,15 @@ This paper proposes CRTR (Contrastive Representations for Temporal Reasoning), w
 
 ### State of the Field
 
-**State of the Field**: Temporal contrastive learning (e.g., CRL) is used to learn state representations, where positive pairs consist of temporally adjacent states within a trajectory and negative pairs are drawn from different trajectories.
+**Background**: Temporal contrastive learning (e.g., CRL) is used to learn state representations, where positive pairs consist of temporally adjacent states within a trajectory and negative pairs are drawn from different trajectories.
 
 ### Root Cause
 
-**Root Cause**: A critical failure mode arises in Sokoban, where different trajectories have different wall layouts (context). CRL exploits these wall layouts rather than temporal structure to distinguish positive from negative pairs, causing all states within the same trajectory to be encoded into nearly identical representations (t-SNE visualizations show trajectories collapsing into tight clusters).
+**Key Challenge**: A critical failure mode arises in Sokoban, where different trajectories have different wall layouts (context). CRL exploits these wall layouts rather than temporal structure to distinguish positive from negative pairs, causing all states within the same trajectory to be encoded into nearly identical representations (t-SNE visualizations show trajectories collapsing into tight clusters).
 
 ### Starting Point
 
-**Starting Point**: As a result, CRL representations fail to reflect temporal distances between states and are therefore unsuitable for planning.
+**Key Insight**: As a result, CRL representations fail to reflect temporal distances between states and are therefore unsuitable for planning.
 
 ## Method
 

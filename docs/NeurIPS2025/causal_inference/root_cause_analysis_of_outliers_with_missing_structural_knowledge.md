@@ -26,18 +26,18 @@ content_hash: 871aabb144b021a5
 Two simple and efficient algorithms are proposed for root cause analysis using only **marginal anomaly scores**: SMOOTH TRAVERSAL (known causal graph — finds the node with the largest score jump along causal paths) and SCORE ORDERING (unknown causal graph — ranks nodes by score and returns the top-$k$). Both algorithms provide nonparametric probabilistic guarantees under polytree structure and operate on a single anomalous sample.
 
 ## Background & Motivation
-**State of the Field**: Root cause analysis (RCA) is widely applied in cloud service monitoring, industrial fault diagnosis, healthcare, and related domains. From a causal perspective, RCA is framed as identifying which causal mechanism has undergone a soft intervention.
+**Background**: Root cause analysis (RCA) is widely applied in cloud service monitoring, industrial fault diagnosis, healthcare, and related domains. From a causal perspective, RCA is framed as identifying which causal mechanism has undergone a soft intervention.
 
 **Limitations of Prior Work**:
    - Most methods assume access to or estimation of the post-intervention distribution, yet in practice only a **single anomalous sample** is often available.
    - Even without relying on multiple samples, conventional methods require estimating **conditional probabilities $P(X_i | PA_i)$**, which is statistically ill-posed in high-dimensional or low-density regions.
    - Traversal-based methods require manually specifying an anomaly threshold and lack theoretical guarantees.
 
-**Root Cause**: The core tension lies in performing theoretically guaranteed root cause analysis under minimal information — a single anomalous sample and a potentially unknown causal graph.
+**Key Challenge**: The core tension lies in performing theoretically guaranteed root cause analysis under minimal information — a single anomalous sample and a potentially unknown causal graph.
 
-**Paper Goals**: Avoid conditional probability estimation and identify a single root cause using only marginal anomaly scores $S(x_i)$.
+**Goal**: Avoid conditional probability estimation and identify a single root cause using only marginal anomaly scores $S(x_i)$.
 
-**Starting Point**: Exploit the mathematical properties of information-theoretic (IT) anomaly scores to prove that "anomalies rarely cause larger anomalies" along causal paths.
+**Key Insight**: Exploit the mathematical properties of information-theoretic (IT) anomaly scores to prove that "anomalies rarely cause larger anomalies" along causal paths.
 
 **Core Idea**: In a polytree causal graph, differences between marginal anomaly scores can substitute for conditional anomaly scores to test whether a causal mechanism has been disrupted.
 

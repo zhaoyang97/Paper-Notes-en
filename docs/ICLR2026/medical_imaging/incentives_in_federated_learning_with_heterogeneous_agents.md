@@ -28,15 +28,15 @@ This paper analyzes incentive problems in heterogeneous federated learning from 
 
 ## Background & Motivation
 
-**State of the Field**: Federated learning improves sample efficiency by pooling data across multiple agents, but contributing model updates incurs computational, bandwidth, and privacy costs for each participant.
+**Background**: Federated learning improves sample efficiency by pooling data across multiple agents, but contributing model updates incurs computational, bandwidth, and privacy costs for each participant.
 
 **Limitations of Prior Work**: Existing FL research primarily focuses on algorithmic aspects (how to aggregate, how to handle heterogeneity) while largely neglecting the strategic behavior of participants — rational agents may choose to free-ride or contribute only minimal data.
 
-**Root Cause**: In heterogeneous settings, each agent has a different data distribution and cares about model performance on its own data. This means different agents derive different benefits from cooperation — agents with similar distributions enjoy stronger mutual benefit, while those with large distributional divergence may gain little from collaboration.
+**Key Challenge**: In heterogeneous settings, each agent has a different data distribution and cares about model performance on its own data. This means different agents derive different benefits from cooperation — agents with similar distributions enjoy stronger mutual benefit, while those with large distributional divergence may gain little from collaboration.
 
-**Paper Goals**: Under heterogeneous data distributions and PAC accuracy objectives, how should incentive mechanisms be designed so that the FL game admits a stable equilibrium?
+**Goal**: Under heterogeneous data distributions and PAC accuracy objectives, how should incentive mechanisms be designed so that the FL game admits a stable equilibrium?
 
-**Starting Point**: FL is modeled as a strategic game in which each agent chooses the number of samples to contribute to maximize its own utility (PAC accuracy minus contribution cost); the existence and computational complexity of Nash equilibria are then analyzed.
+**Key Insight**: FL is modeled as a strategic game in which each agent chooses the number of samples to contribute to maximize its own utility (PAC accuracy minus contribution cost); the existence and computational complexity of Nash equilibria are then analyzed.
 
 **Core Idea**: Heterogeneous federated learning is formalized as a game under PAC accuracy objectives; pure-strategy Nash equilibria are shown to exist and to be approximately computable via linear programming.
 

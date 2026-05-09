@@ -27,18 +27,18 @@ By decoupling the filtering capability of a lightweight Flash model from the rea
 
 ## Background & Motivation
 
-**State of the Field**: RAG faces information retrieval challenges in open-domain settings, where standard vector similarity search is prone to retrieving irrelevant content.
+**Background**: RAG faces information retrieval challenges in open-domain settings, where standard vector similarity search is prone to retrieving irrelevant content.
 
 **Limitations of Prior Work**:
    - Retrieved documents contain substantial irrelevant information (garbage in, garbage out)
    - Generated answers are misaligned with user intent
    - Performance degrades when handling post-knowledge-cutoff data
 
-**Root Cause**: Simultaneous optimization of retrieval precision, generation quality, and computational cost is inherently difficult.
+**Key Challenge**: Simultaneous optimization of retrieval precision, generation quality, and computational cost is inherently difficult.
 
-**Paper Goals**: Achieve high-quality content retrieval and answer generation in open-domain RAG.
+**Goal**: Achieve high-quality content retrieval and answer generation in open-domain RAG.
 
-**Starting Point**: Adopt a cascaded model strategy that employs a lightweight Flash model for semantic filtering and a high-capability Pro model for reasoning.
+**Key Insight**: Adopt a cascaded model strategy that employs a lightweight Flash model for semantic filtering and a high-capability Pro model for reasoning.
 
 **Core Idea**: A multi-stage pipeline system that incrementally integrates query optimization, hierarchical filtering, two-pass generation, and citation verification.
 

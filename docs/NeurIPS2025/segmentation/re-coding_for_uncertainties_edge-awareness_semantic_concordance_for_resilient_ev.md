@@ -29,13 +29,13 @@ This paper proposes the Edge-awareness Semantic Concordance (ESC) framework, whi
 
 ## Background & Motivation
 
-**State of the Field**: Under extreme conditions (low illumination, severe motion blur), RGB information degrades significantly. Event cameras provide complementary information via high dynamic range and high temporal resolution.
+**Background**: Under extreme conditions (low illumination, severe motion blur), RGB information degrades significantly. Event cameras provide complementary information via high dynamic range and high temporal resolution.
 
 **Limitations of Prior Work**: Event and RGB modalities are fundamentally heterogeneous—feature-level mismatches and degraded optimization are critical issues. Existing multimodal methods rely on naive fusion strategies that cannot handle modality imbalance or modality failure.
 
-**Root Cause**: Establishing a unified representation space between two fundamentally different modalities remains an open challenge.
+**Key Challenge**: Establishing a unified representation space between two fundamentally different modalities remains an open challenge.
 
-**Starting Point**: Event data is empirically observed to concentrate at semantic edge regions (statistically verified), while RGB gradients also reveal edge cues—semantic edges thus serve as a natural shared intermediate representation for both modalities.
+**Key Insight**: Event data is empirically observed to concentrate at semantic edge regions (statistically verified), while RGB gradients also reveal edge cues—semantic edges thus serve as a natural shared intermediate representation for both modalities.
 
 **Core Idea**: A VQ-VAE-based edge dictionary (discrete latent space) is constructed to enable bidirectional feature transformation and distribution alignment via re-coding.
 

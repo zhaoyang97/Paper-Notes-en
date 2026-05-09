@@ -29,15 +29,15 @@ This paper proposes SPECTRA, a supervision-free framework that enables small vis
 
 ## Background & Motivation
 
-**State of the Field**: Small vision-language models (SVLMs, e.g., Qwen2.5-VL-7B) are well-suited as agent controllers due to low latency and deployment cost, but lag behind larger models in long-horizon reasoning, fine-grained visual perception, and tool orchestration. Existing improvement approaches follow two paradigms: (1) trajectory fine-tuning—supervised fine-tuning on synthetic tool-calling data (e.g., MM-Traj from T3-Agent), yielding ~20% gains; (2) reinforcement learning—e.g., Tool-R1 optimizes tool-calling sampling efficiency via RL.
+**Background**: Small vision-language models (SVLMs, e.g., Qwen2.5-VL-7B) are well-suited as agent controllers due to low latency and deployment cost, but lag behind larger models in long-horizon reasoning, fine-grained visual perception, and tool orchestration. Existing improvement approaches follow two paradigms: (1) trajectory fine-tuning—supervised fine-tuning on synthetic tool-calling data (e.g., MM-Traj from T3-Agent), yielding ~20% gains; (2) reinforcement learning—e.g., Tool-R1 optimizes tool-calling sampling efficiency via RL.
 
 **Limitations of Prior Work**: (1) Trajectory fine-tuning relies on expensive synthetic supervision data (typically distilled from large models), limiting scalability and generalization; (2) existing methods optimize tool-calling reasoning without directly improving visual perception—tool use and visual understanding remain decoupled; (3) no metric exists to evaluate tool effectiveness without annotated trajectory labels—existing Tool Accuracy requires ground-truth trajectories.
 
-**Root Cause**: Teaching SVLMs effective multi-step tool calling requires high-quality supervised trajectories, yet obtaining such trajectories is itself costly and limits generalization. Can a model learn effective tool-use strategies from scratch (cold-start) through environment feedback alone?
+**Key Challenge**: Teaching SVLMs effective multi-step tool calling requires high-quality supervised trajectories, yet obtaining such trajectories is itself costly and limits generalization. Can a model learn effective tool-use strategies from scratch (cold-start) through environment feedback alone?
 
-**Paper Goals**: (1) Design a supervision-free agent policy optimization method that bypasses dependence on supervised trajectories; (2) improve SVLM visual perception via structured rollout constraints; (3) propose a ground-truth-free metric for tool effectiveness evaluation.
+**Goal**: (1) Design a supervision-free agent policy optimization method that bypasses dependence on supervised trajectories; (2) improve SVLM visual perception via structured rollout constraints; (3) propose a ground-truth-free metric for tool effectiveness evaluation.
 
-**Starting Point**: The authors observe that the "visual blindness" of SVLMs can be alleviated by enforcing a structured tool-call → observation → perception sequence, anchoring reasoning to visual evidence obtained via tools rather than reasoning directly from raw images. This topological constraint can serve as a structural prior for RL.
+**Key Insight**: The authors observe that the "visual blindness" of SVLMs can be alleviated by enforcing a structured tool-call → observation → perception sequence, anchoring reasoning to visual evidence obtained via tools rather than reasoning directly from raw images. This topological constraint can serve as a structural prior for RL.
 
 **Core Idea**: Combine GRPO reinforcement learning with soft structured rollout topological constraints and multi-objective rewards (correctness + structural integrity + tool utility), enabling SVLMs to autonomously discover tool-driven visual reasoning strategies under cold-start conditions.
 

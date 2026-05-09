@@ -31,7 +31,7 @@ This paper proposes Temporal Prototype Learning (TPL), a prototype-based video s
 
 ### State of the Field
 
-**State of the Field**: Synchronizing multiple cameras capturing the same scene is relatively straightforward, typically requiring only a simple temporal offset.
+**Background**: Synchronizing multiple cameras capturing the same scene is relatively straightforward, typically requiring only a simple temporal offset.
 
 ### Limitations of Prior Work
 
@@ -39,7 +39,7 @@ This paper proposes Temporal Prototype Learning (TPL), a prototype-based video s
 
 ### Root Cause
 
-**Root Cause**: Different subjects and backgrounds.
+**Key Challenge**: Different subjects and backgrounds.
 
 ### Solution Direction
 

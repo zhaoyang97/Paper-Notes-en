@@ -29,9 +29,9 @@ This paper proposes StreamForest, an architecture that adaptively organizes stre
 
 ## Background & Motivation
 
-- **State of the Field**: Multimodal large language models (MLLMs) have achieved remarkable progress in offline video understanding, yet face two major challenges in real-time streaming scenarios: (1) the memory burden of storing historical features from continuously arriving frames; and (2) insufficient capacity for real-time spatiotemporal reasoning.
+- **Background**: Multimodal large language models (MLLMs) have achieved remarkable progress in offline video understanding, yet face two major challenges in real-time streaming scenarios: (1) the memory burden of storing historical features from continuously arriving frames; and (2) insufficient capacity for real-time spatiotemporal reasoning.
 - **Limitations of Prior Work**: Existing streaming video processing strategies exhibit clear deficiencies. Sampling-stage compression (e.g., aggressively discarding frames) sacrifices fine-grained spatiotemporal reasoning; storage-stage compression (merging frames based on inter-frame similarity) tends to miss critical foreground actions due to background noise, and excessive local merging introduces spatiotemporal irregularities.
-- **Starting Point**: The paper addresses memory management at the semantic event level — decomposing video into event segments and constructing hierarchical event tree structures. A multi-dimensional penalty function guides adaptive merging to preserve semantic richness while controlling memory overhead. A fine-grained spatiotemporal window is further introduced to focus on detailed visual features at the current timestep.
+- **Key Insight**: The paper addresses memory management at the semantic event level — decomposing video into event segments and constructing hierarchical event tree structures. A multi-dimensional penalty function guides adaptive merging to preserve semantic richness while controlling memory overhead. A fine-grained spatiotemporal window is further introduced to focus on detailed visual features at the current timestep.
 
 ## Method
 

@@ -29,15 +29,15 @@ This paper proposes TopoMaskV3, which upgrades the mask-based road topology unde
 
 ## Background & Motivation
 
-1. **State of the Field**: Road topology understanding requires not only detecting static road elements such as lane lines, but also inferring complex relationships among them (e.g., connectivity, merging/diverging, traffic signal associations). Mainstream methods adopt end-to-end transformers to predict vectorized representations in the form of parametric Bézier curves (TopoMLP), path-level predictions (LaneGAP), or rasterization-based masks (TopoMaskV2).
+1. **Background**: Road topology understanding requires not only detecting static road elements such as lane lines, but also inferring complex relationships among them (e.g., connectivity, merging/diverging, traffic signal associations). Mainstream methods adopt end-to-end transformers to predict vectorized representations in the form of parametric Bézier curves (TopoMLP), path-level predictions (LaneGAP), or rasterization-based masks (TopoMaskV2).
 
 2. **Limitations of Prior Work**: TopoMaskV2 introduced a mask-based paradigm that generates centerlines from rasterized masks, encoding flow direction via four-direction labels. However, it suffers from two critical limitations: (1) rasterization-to-vectorization introduces discretization artifacts, as real centerlines rarely align with grid centers; and (2) the model only supports 2D output, lacking height prediction. These limitations force TopoMaskV2 to fuse with a parametric Bézier head to remain competitive.
 
-3. **Root Cause**: A deeper issue concerns evaluation fairness. The existing OpenLane-V2 benchmark adopts a temporal split (reasonable for dynamic objects), but roads are static; the training and test sets share significant geographic overlap, allowing models to achieve high scores by "memorizing the map" rather than learning genuine generalization.
+3. **Key Challenge**: A deeper issue concerns evaluation fairness. The existing OpenLane-V2 benchmark adopts a temporal split (reasonable for dynamic objects), but roads are static; the training and test sets share significant geographic overlap, allowing models to achieve high scores by "memorizing the map" rather than learning genuine generalization.
 
-4. **Paper Goals**: (1) Upgrade the mask paradigm into a standalone 3D predictor; (2) Establish a rigorous benchmark for evaluating road topology generalization.
+4. **Goal**: (1) Upgrade the mask paradigm into a standalone 3D predictor; (2) Establish a rigorous benchmark for evaluating road topology generalization.
 
-5. **Starting Point**: Predict, for each BEV grid cell, the offset to the nearest centerline point and the corresponding height value, fundamentally addressing discretization errors and the 2D limitation.
+5. **Key Insight**: Predict, for each BEV grid cell, the offset to the nearest centerline point and the corresponding height value, fundamentally addressing discretization errors and the 2D limitation.
 
 6. **Core Idea**: Sub-grid precision correction via dense offset fields combined with 3D lifting via dense height maps, alongside a geographically non-overlapping benchmark for fair generalization evaluation.
 

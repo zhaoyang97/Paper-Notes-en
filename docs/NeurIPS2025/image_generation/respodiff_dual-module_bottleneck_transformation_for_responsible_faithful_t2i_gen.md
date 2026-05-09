@@ -44,9 +44,9 @@ T2I models such as Stable Diffusion, SDXL, and FLUX achieve high generation qual
 
 **Latent injection methods** (e.g., SDisc): Lack explicit reference to neutral denoising latents during bottleneck-space manipulation, resulting in insufficient control precision.
 
-**Root Cause**: Existing methods tend to sacrifice semantic fidelity and image quality when improving fairness or safety. Achieving responsible generation without compromising generation quality is the central challenge.
+**Key Challenge**: Existing methods tend to sacrifice semantic fidelity and image quality when improving fairness or safety. Achieving responsible generation without compromising generation quality is the central challenge.
 
-**Starting Point**: The paper introduces a **dual-path transformation** at the UNet bottleneck layer (demonstrated to be a semantic latent space): one path steers generation toward a target concept (e.g., "female"), while the other maintains consistency with the original diffusion trajectory, with the two paths mutually constraining each other.
+**Key Insight**: The paper introduces a **dual-path transformation** at the UNet bottleneck layer (demonstrated to be a semantic latent space): one path steers generation toward a target concept (e.g., "female"), while the other maintains consistency with the original diffusion trajectory, with the two paths mutually constraining each other.
 
 ## Method
 

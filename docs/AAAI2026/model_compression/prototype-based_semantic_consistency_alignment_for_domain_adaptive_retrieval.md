@@ -42,7 +42,7 @@ A fundamental tension exists between the semantic predictions of pseudo-labels a
 
 ### Paper Goals & Starting Point
 
-**Paper Goals**: Design a framework that adaptively evaluates pseudo-label reliability by jointly leveraging geometric neighborhood structure and semantic predictions. **Starting Point**: Replace pair-wise alignment with class-level semantic connections established via orthogonal prototypes, and compare geometric distances against semantic predictions in prototype space to dynamically adjust label weights. **Core Idea**: After correcting pseudo-labels through geometric-semantic consistency alignment, perform hash encoding on reconstructed features rather than raw features, fundamentally improving encoding quality.
+**Goal**: Design a framework that adaptively evaluates pseudo-label reliability by jointly leveraging geometric neighborhood structure and semantic predictions. **Key Insight**: Replace pair-wise alignment with class-level semantic connections established via orthogonal prototypes, and compare geometric distances against semantic predictions in prototype space to dynamically adjust label weights. **Core Idea**: After correcting pseudo-labels through geometric-semantic consistency alignment, perform hash encoding on reconstructed features rather than raw features, fundamentally improving encoding quality.
 
 ## Method
 

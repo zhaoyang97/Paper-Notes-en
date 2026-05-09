@@ -30,7 +30,7 @@ This paper identifies the fundamental reasons why existing training-free diffusi
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-image diffusion models (Stable Diffusion, Flux, etc.) have been explored for discriminative tasks given their powerful image generation capabilities. One line of research focuses on "training-free diffusion segmentation" — directly leveraging cross-attention maps from pretrained diffusion models for semantic segmentation without additional training.
+**Background**: Text-to-image diffusion models (Stable Diffusion, Flux, etc.) have been explored for discriminative tasks given their powerful image generation capabilities. One line of research focuses on "training-free diffusion segmentation" — directly leveraging cross-attention maps from pretrained diffusion models for semantic segmentation without additional training.
 
 **Core Premise and Expectation**: Training-free diffusion segmentation methods are grounded in the generative power of diffusion models. Intuitively, stronger generative models should yield better segmentation results — i.e., segmentation performance should scale with generative capability.
 

@@ -28,15 +28,15 @@ This paper proposes SphereDiff, which defines a spherical latent representation 
 
 ## Background & Motivation
 
-**State of the Field**: AR/VR applications demand high-quality 360° panoramic content. Panoramas are typically represented using equirectangular projection (ERP), which maps the spherical surface to a 2D rectangle. Existing methods fall into two categories: (1) fine-tuning diffusion models on ERP datasets (e.g., PanFusion, 360DVD), which are constrained by limited data and suffer from severe distortion near the poles; (2) tuning-free methods based on MultiDiffusion (e.g., DynamicScaler), which still operate in the ERP latent space and produce discontinuities at the poles.
+**Background**: AR/VR applications demand high-quality 360° panoramic content. Panoramas are typically represented using equirectangular projection (ERP), which maps the spherical surface to a 2D rectangle. Existing methods fall into two categories: (1) fine-tuning diffusion models on ERP datasets (e.g., PanFusion, 360DVD), which are constrained by limited data and suffer from severe distortion near the poles; (2) tuning-free methods based on MultiDiffusion (e.g., DynamicScaler), which still operate in the ERP latent space and produce discontinuities at the poles.
 
 **Limitations of Prior Work**: The fundamental issue with ERP is its non-uniform distribution—latent variable density near the poles is far greater than near the equator, causing severe distortion and artifacts at high latitudes. Fine-tuning approaches are limited by the scarcity of text–ERP paired data and cannot fully adapt; tuning-free methods, despite leveraging MultiDiffusion, introduce discontinuous seams during ERP–perspective projection conversion due to interpolation or sampling issues.
 
-**Root Cause**: Standard diffusion models are trained in perspective space, whereas 360° panorama generation requires operating on a sphere. ERP as an intermediate representation introduces inherent distribution shift and polar distortion that is difficult to resolve fundamentally, whether through fine-tuning or tuning-free approaches.
+**Key Challenge**: Standard diffusion models are trained in perspective space, whereas 360° panorama generation requires operating on a sphere. ERP as an intermediate representation introduces inherent distribution shift and polar distortion that is difficult to resolve fundamentally, whether through fine-tuning or tuning-free approaches.
 
-**Paper Goals**: To design a genuinely tuning-free framework that operates in spherical space, fundamentally eliminating ERP distortion while leveraging state-of-the-art pretrained diffusion models to generate seamless panoramas.
+**Goal**: To design a genuinely tuning-free framework that operates in spherical space, fundamentally eliminating ERP distortion while leveraging state-of-the-art pretrained diffusion models to generate seamless panoramas.
 
-**Starting Point**: Latent variables are uniformly sampled on the sphere using a Fibonacci Lattice, ensuring that each viewing direction encompasses approximately equal numbers of latent variables. Spherical MultiDiffusion is then extended to denoise these uniformly distributed spherical latent variables.
+**Key Insight**: Latent variables are uniformly sampled on the sphere using a Fibonacci Lattice, ensuring that each viewing direction encompasses approximately equal numbers of latent variables. Spherical MultiDiffusion is then extended to denoise these uniformly distributed spherical latent variables.
 
 **Core Idea**: Define a spherical latent space (each latent variable paired with spherical coordinates), use dynamic sampling to discretize continuous spherical projected latents onto a 2D grid for compatibility with standard diffusion models, and apply distortion-aware weighted averaging to mitigate residual distortion from the spherical-to-perspective projection.
 

@@ -30,15 +30,15 @@ Paper Copilot is constructed as a persistent digital archive and analysis platfo
 
 ## Background & Motivation
 
-**State of the Field**: Submission volumes at top AI/ML venues now exceed 10,000 per year (ICLR 2025: 11,672), placing unprecedented pressure on peer review. Some venues (ICLR/NeurIPS) adopt open review via OpenReview, while most (CVPR/AAAI/ICCV) remain closed. Review dimensions have also expanded from a single score to multi-dimensional assessments covering soundness, correctness, novelty, and contribution.
+**Background**: Submission volumes at top AI/ML venues now exceed 10,000 per year (ICLR 2025: 11,672), placing unprecedented pressure on peer review. Some venues (ICLR/NeurIPS) adopt open review via OpenReview, while most (CVPR/AAAI/ICCV) remain closed. Review dimensions have also expanded from a single score to multi-dimensional assessments covering soundness, correctness, novelty, and contribution.
 
 **Limitations of Prior Work**: (1) Review data is fragmented across social platforms such as Twitter, Reddit, Zhihu, and Xiaohongshu; (2) OpenReview overwrites earlier review versions—score histories during the rebuttal period constitute an irrecoverable information loss; (3) cross-venue and longitudinal comparisons of review standards lack a unified data source and toolset; (4) during the rebuttal window (only 1–2 weeks), authors lack statistical reference points to assess their score levels and the potential value of rebuttal.
 
-**Root Cause**: The review process is central to research transparency, yet existing infrastructure cannot support systematic tracking of review dynamics or longitudinal analysis.
+**Key Challenge**: The review process is central to research transparency, yet existing infrastructure cannot support systematic tracking of review dynamics or longitudinal analysis.
 
-**Paper Goals**: To construct a unified platform for review data collection, archiving, and analysis that supports cross-venue longitudinal studies and real-time score dynamics tracking.
+**Goal**: To construct a unified platform for review data collection, archiving, and analysis that supports cross-venue longitudinal studies and real-time score dynamics tracking.
 
-**Starting Point**: A tri-source hybrid data strategy maximizes coverage, while real-time snapshot archiving preserves otherwise irrecoverable historical data.
+**Key Insight**: A tri-source hybrid data strategy maximizes coverage, while real-time snapshot archiving preserves otherwise irrecoverable historical data.
 
 **Core Idea**: Consolidate scattered, ephemeral AI conference review information into a persistent, structured, and analyzable digital archive—establishing a "meta-scientific infrastructure" for the peer review process.
 

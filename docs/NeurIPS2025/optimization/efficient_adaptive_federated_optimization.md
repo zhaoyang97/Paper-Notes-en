@@ -28,15 +28,15 @@ FedAda2/FedAda2++ proposes efficient server–client joint adaptive optimization
 
 ## Background & Motivation
 
-**State of the Field**: In federated learning, adaptive optimizers (Adam, AdaGrad) can accelerate convergence and improve accuracy. Adaptivity can be applied server-side (e.g., FedAdam), client-side, or jointly on both ends. Joint adaptivity has been shown to yield the best performance.
+**Background**: In federated learning, adaptive optimizers (Adam, AdaGrad) can accelerate convergence and improve accuracy. Adaptivity can be applied server-side (e.g., FedAdam), client-side, or jointly on both ends. Joint adaptivity has been shown to yield the best performance.
 
 **Limitations of Prior Work**: A naïve implementation of joint adaptivity requires the server to transmit the global preconditioner (e.g., second-moment statistics) to clients at each communication round, incurring (a) doubled communication overhead—per-round transmission increases from $2d$ to $3d$ (where $d$ is the model dimension); and (b) increased client memory—clients must maintain local preconditioners.
 
-**Root Cause**: Joint adaptivity improves performance, but its communication and memory costs conflict with the resource-constrained environments typical of cross-device federated learning.
+**Key Challenge**: Joint adaptivity improves performance, but its communication and memory costs conflict with the resource-constrained environments typical of cross-device federated learning.
 
-**Paper Goals**: To retain the benefits of joint adaptivity while eliminating the associated communication and memory overhead.
+**Goal**: To retain the benefits of joint adaptivity while eliminating the associated communication and memory overhead.
 
-**Starting Point**: A simple yet unverified idea—initializing local preconditioners from zero at each round, without transmitting the global preconditioner from the server. This paper provides the first formal convergence guarantees for this strategy.
+**Key Insight**: A simple yet unverified idea—initializing local preconditioners from zero at each round, without transmitting the global preconditioner from the server. This paper provides the first formal convergence guarantees for this strategy.
 
 **Core Idea**: Zero-initializing client local preconditioners, with optional SM3-based memory compression, suffices to achieve convergence and performance equivalent to costly joint adaptivity.
 

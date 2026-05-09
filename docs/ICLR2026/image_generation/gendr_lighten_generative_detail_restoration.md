@@ -28,9 +28,9 @@ GenDR is proposed as a lightweight single-step diffusion super-resolution model 
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion model-based real-world super-resolution (SR) has achieved remarkable progress, substantially outperforming GAN-based methods in quality, yet suffers from slow inference speed and bottlenecks in detail fidelity.
+**Background**: Diffusion model-based real-world super-resolution (SR) has achieved remarkable progress, substantially outperforming GAN-based methods in quality, yet suffers from slow inference speed and bottlenecks in detail fidelity.
 
-**Root Cause**: T2I and SR tasks exhibit a fundamental objective divergence — T2I generates complete images from noise and requires multi-step inference with a low-dimensional latent space (4-channel VAE to reduce generation difficulty), whereas SR only needs to supplement high-frequency details with fewer diffusion steps but requires a larger latent space (16-channel VAE) to preserve input information.
+**Key Challenge**: T2I and SR tasks exhibit a fundamental objective divergence — T2I generates complete images from noise and requires multi-step inference with a low-dimensional latent space (4-channel VAE to reduce generation difficulty), whereas SR only needs to supplement high-frequency details with fewer diffusion steps but requires a larger latent space (16-channel VAE) to preserve input information.
 
 **Limitations of Prior Work**: Accelerating inference (e.g., OSEDiff single-step distillation) leads to significant quality degradation, while improving quality (e.g., DreamClear using PixArt-α + ControlNet) introduces enormous computational overhead, resulting in a quality–efficiency dilemma.
 
@@ -38,7 +38,7 @@ GenDR is proposed as a lightweight single-step diffusion super-resolution model 
 
 **Distillation Method Deficiencies**: Existing score distillation methods (VSD/SiD) are designed for T2I; directly applying them to SR leads to quality and content inconsistencies due to training distribution mismatch and over-reliance on imperfect score functions.
 
-**Starting Point**: SR tasks require a customized foundation model (16-channel + appropriate scale of 0.9B) + a customized distillation method (CiD incorporating SR priors) + a minimalist inference pipeline.
+**Key Insight**: SR tasks require a customized foundation model (16-channel + appropriate scale of 0.9B) + a customized distillation method (CiD incorporating SR priors) + a minimalist inference pipeline.
 
 ## Method
 

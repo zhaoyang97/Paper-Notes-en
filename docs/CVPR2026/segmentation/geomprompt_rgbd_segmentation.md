@@ -28,11 +28,11 @@ GeomPrompt learns lightweight geometric prompt modules for frozen RGB-D segmenta
 
 ## Background & Motivation
 
-**State of the Field**: RGB-D semantic segmentation improves performance by fusing depth information, but in real-world deployments depth sensors frequently fail, produce incomplete data, or suffer from severe noise (e.g., reflective/transparent surfaces, sensor malfunctions).
+**Background**: RGB-D semantic segmentation improves performance by fusing depth information, but in real-world deployments depth sensors frequently fail, produce incomplete data, or suffer from severe noise (e.g., reflective/transparent surfaces, sensor malfunctions).
 
 **Limitations of Prior Work**: (1) Distilling depth as privileged information into RGB still requires depth supervision; (2) using monocular depth estimation as a proxy requires additional models and targets depth reconstruction rather than segmentation optimization; (3) lightweight solutions specifically addressing "how to maintain segmentation performance under missing or degraded depth" are lacking.
 
-**Root Cause**: RGB-D segmenters expect depth inputs to provide geometric priors, yet at deployment depth may be unavailable or unreliable. The key question is whether one can learn a "good enough" geometric signal to satisfy the segmenter without actually reconstructing depth.
+**Key Challenge**: RGB-D segmenters expect depth inputs to provide geometric priors, yet at deployment depth may be unavailable or unreliable. The key question is whether one can learn a "good enough" geometric signal to satisfy the segmenter without actually reconstructing depth.
 
 **Core Idea**: Learn "task-driven geometric prompts" rather than "reconstruct depth"—train the prompt generation module using only the segmentation loss, allowing it to automatically discover the geometric signal most useful for segmentation.
 

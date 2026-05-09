@@ -28,15 +28,15 @@ This paper proposes a multi-level task-profile-guided data synthesis framework t
 
 ## Background & Motivation
 
-**State of the Field**: LLM routing aims to select the optimal model from a candidate pool for each user query in order to balance performance and cost. Mainstream approaches are divided into classification-based (directly predicting the best model) and regression-based (predicting cost and performance to maximize a utility function) methods, typically training a small router (e.g., BERT) on in-domain data.
+**Background**: LLM routing aims to select the optimal model from a candidate pool for each user query in order to balance performance and cost. Mainstream approaches are divided into classification-based (directly predicting the best model) and regression-based (predicting cost and performance to maximize a utility function) methods, typically training a small router (e.g., BERT) on in-domain data.
 
 **Limitations of Prior Work**: (1) Real-world deployments frequently encounter cold-start scenarios where no in-domain labeled data is available for training the router; (2) pre-trained routers generalize poorly across domains and can even underperform simple rule-based baselines (e.g., Adaptive LLM); (3) using LLMs directly for model selection is unreliable, as accurately characterizing the capability boundaries of each candidate model is difficult.
 
-**Root Cause**: LLM routing depends on labeled data, which is unavailable in cold-start scenarios; meanwhile, distribution shift across domains renders cross-domain trained routers ineffective.
+**Key Challenge**: LLM routing depends on labeled data, which is unavailable in cold-start scenarios; meanwhile, distribution shift across domains renders cross-domain trained routers ineffective.
 
-**Paper Goals**: (1) Design a data synthesis approach that requires no human annotation to approximate the query distribution at test time; (2) build a task-type-aware router to enhance cross-domain robustness.
+**Goal**: (1) Design a data synthesis approach that requires no human annotation to approximate the query distribution at test time; (2) build a task-type-aware router to enhance cross-domain robustness.
 
-**Starting Point**: The observation that LLM cost and performance are intrinsically correlated with task category and difficulty—different task types and difficulty levels impose substantially different demands on models. This motivates organizing synthetic data via a hierarchical task taxonomy and incorporating implicit task-type information into routing.
+**Key Insight**: The observation that LLM cost and performance are intrinsically correlated with task category and difficulty—different task types and difficulty levels impose substantially different demands on models. This motivates organizing synthetic data via a hierarchical task taxonomy and incorporating implicit task-type information into routing.
 
 **Core Idea**: Guide synthetic data generation with a hierarchical task taxonomy (domain → subcategory → difficulty), and model task type as a latent variable within a regression-based routing framework.
 

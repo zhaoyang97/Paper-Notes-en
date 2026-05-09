@@ -29,7 +29,7 @@ This paper proposes an Alignment-aware Masked Learning (AML) strategy that quant
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: 1. Referring Image Segmentation (RIS) requires accurately segmenting target objects in images based on natural language expressions, relying on fine-grained cross-modal alignment.
+**Key Challenge**: **Background**: 1. Referring Image Segmentation (RIS) requires accurately segmenting target objects in images based on natural language expressions, relying on fine-grained cross-modal alignment.
 2. RIS training typically provides only a single annotated target per sample, resulting in sparse supervision signals.
 3. Understanding expressions such as "the giraffe closest to the person" requires reasoning about spatial relationships among other objects in the visual context.
 4. Existing methods (LAVT/CARIS/DETRIS) enhance alignment through complex fusion modules, but applying loss over all pixels introduces unreliable gradients.

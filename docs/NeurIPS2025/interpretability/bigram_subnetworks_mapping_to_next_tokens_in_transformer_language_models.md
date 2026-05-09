@@ -26,13 +26,13 @@ content_hash: 719cfa13e33fb486
 Using continuous sparsification, the authors identify bigram subnetworks containing only ~10M parameters within Transformer language models. These subnetworks are concentrated in the first MLP layer, suffice to reproduce bigram predictions ($r>0.95$), and cause dramatic performance degradation when ablated — demonstrating that they constitute minimal next-token prediction circuits that are both necessary and sufficient in language models.
 
 ## Background & Motivation
-**State of the Field**: Mechanistic interpretability research has uncovered specific circuits such as induction heads and name mover heads, but these circuits typically cover only particular behaviors. A "minimal base circuit" defined over the entire input space — serving as a foundation for studying more complex circuits — has been lacking.
+**Background**: Mechanistic interpretability research has uncovered specific circuits such as induction heads and name mover heads, but these circuits typically cover only particular behaviors. A "minimal base circuit" defined over the entire input space — serving as a foundation for studying more complex circuits — has been lacking.
 
 **Limitations of Prior Work**: Circuit studies generally verify only **necessity** (behavior disappears after ablation) but not **sufficiency** (whether the circuit alone can sustain the behavior). Verifying sufficiency requires composing the target circuit on top of some already-understood minimal circuit, yet what that minimal circuit should be has remained unclear.
 
-**Root Cause**: It is known that Transformers overfit bigram distributions in the early stages of pretraining, but it is unclear whether bigram information remains encoded in model parameters even after the model later diverges from bigram predictions — and if so, in what form.
+**Key Challenge**: It is known that Transformers overfit bigram distributions in the early stages of pretraining, but it is unclear whether bigram information remains encoded in model parameters even after the model later diverges from bigram predictions — and if so, in what form.
 
-**Starting Point**: Bigram prediction $P(w_i|w_{i-1})$ is the simplest non-trivial next-token prediction, defined over the entire input space. A subnetwork that implements bigram prediction would serve as an ideal foundation for studying more complex circuits.
+**Key Insight**: Bigram prediction $P(w_i|w_{i-1})$ is the simplest non-trivial next-token prediction, defined over the entire input space. A subnetwork that implements bigram prediction would serve as an ideal foundation for studying more complex circuits.
 
 **Core Idea**: Continuous sparsification is applied to frozen LLMs to search for parameter masks, yielding subnetworks that occupy only 0.17% of parameters yet achieve a bigram correlation of $r=0.96$, concentrated primarily in the first MLP layer.
 

@@ -28,15 +28,15 @@ AttentionPredictor is the first learning-based method that directly predicts att
 
 ## Background & Motivation
 
-**State of the Field** The KV cache is the primary memory bottleneck in long-context LLM inference (a 7B model requires 72 GB at 128K context length). Sparse attention methods compress the cache by retaining only "critical tokens."
+**Background** The KV cache is the primary memory bottleneck in long-context LLM inference (a 7B model requires 72 GB at 128K context length). Sparse attention methods compress the cache by retaining only "critical tokens."
 
 **Limitations of Prior Work** (1) Heuristic methods (H2O, SnapKV) use static rules to assess token importance and fail to capture dynamic attention changes; (2) learning-based methods (SeerAttention) require training a separate model per layer (101 MB in total) and do not directly model the attention score distribution.
 
-**Root Cause** Attention patterns exhibit complex dynamic temporal characteristics (re-access, sequential, seasonal), yet existing approaches either rely on simple heuristics (insufficient accuracy) or learning methods that encode only keys/hidden states (insufficiently direct).
+**Key Challenge** Attention patterns exhibit complex dynamic temporal characteristics (re-access, sequential, seasonal), yet existing approaches either rely on simple heuristics (insufficient accuracy) or learning methods that encode only keys/hidden states (insufficiently direct).
 
-**Paper Goals** Directly predict the attention score distribution at the next step to precisely identify critical tokens and achieve high compression ratios.
+**Goal** Directly predict the attention score distribution at the next step to precisely identify critical tokens and achieve high compression ratios.
 
-**Starting Point** Attention scores exhibit predictable spatiotemporal regularities along the time axis—arising from query self-similarity and the intrinsic properties of positional encodings—and can be formulated as a 2D time series prediction problem.
+**Key Insight** Attention scores exhibit predictable spatiotemporal regularities along the time axis—arising from query self-similarity and the intrinsic properties of positional encodings—and can be formulated as a 2D time series prediction problem.
 
 **Core Idea** Formalize KV cache compression as a 2D temporal prediction problem over attention scores, replacing heuristic rules with a lightweight CNN predictor to identify critical tokens.
 

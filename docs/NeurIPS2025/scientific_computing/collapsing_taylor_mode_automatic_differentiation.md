@@ -28,18 +28,18 @@ This paper proposes a *collapsing* optimization technique for Taylor mode automa
 
 ## Background & Motivation
 
-**State of the Field**: Scientific machine learning (SciML) requires extensive computation of partial differential equation operators such as the Laplacian $\nabla^2 u$ and divergence $\nabla \cdot \mathbf{F}$. The dominant approach computes high-order derivatives via nested backpropagation—applying reverse-mode AD once to obtain first-order derivatives, then again to obtain second-order derivatives.
+**Background**: Scientific machine learning (SciML) requires extensive computation of partial differential equation operators such as the Laplacian $\nabla^2 u$ and divergence $\nabla \cdot \mathbf{F}$. The dominant approach computes high-order derivatives via nested backpropagation—applying reverse-mode AD once to obtain first-order derivatives, then again to obtain second-order derivatives.
 
 **Limitations of Prior Work**:
    - Nested backpropagation incurs high computational cost: each additional order of differentiation requires an additional backward pass over the entire computation graph, severely limiting the practicality of SciML.
    - Nested backpropagation demands substantial memory, as intermediate activations must be retained.
    - Recent methods such as the forward Laplacian and randomized Taylor mode AD improve forward-pass efficiency but have not fully addressed the redundant computation inherent in Taylor mode itself.
 
-**Root Cause**: SciML requires efficient computation of high-order derivatives in PDE operators, yet these operators typically require only **linear combinations** of derivatives (e.g., the Laplacian is the sum of second-order derivatives along each coordinate direction). Standard Taylor mode computes all individual high-order derivative components independently before summing, introducing substantial redundancy.
+**Key Challenge**: SciML requires efficient computation of high-order derivatives in PDE operators, yet these operators typically require only **linear combinations** of derivatives (e.g., the Laplacian is the sum of second-order derivatives along each coordinate direction). Standard Taylor mode computes all individual high-order derivative components independently before summing, introducing substantial redundancy.
 
-**Paper Goals**: Identify and eliminate redundancy in Taylor mode AD when evaluating linear PDE operators, and achieve meaningful acceleration through graph rewriting.
+**Goal**: Identify and eliminate redundancy in Taylor mode AD when evaluating linear PDE operators, and achieve meaningful acceleration through graph rewriting.
 
-**Starting Point**: For linear PDE operators, only a weighted sum of derivative components is ultimately needed. Propagating this summation operation earlier in the computation graph avoids the wasteful pattern of computing each component independently and then aggregating.
+**Key Insight**: For linear PDE operators, only a weighted sum of derivative components is ultimately needed. Propagating this summation operation earlier in the computation graph avoids the wasteful pattern of computing each component independently and then aggregating.
 
 **Core Idea**: *Collapse* linear combinations (summations) of derivatives into the Taylor mode propagation process by rewriting the computation graph, thereby eliminating redundant computation.
 

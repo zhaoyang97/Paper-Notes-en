@@ -27,14 +27,14 @@ This paper presents DefenderBench, an open-source modular toolkit for systematic
 
 ## Background & Motivation
 
-**State of the Field**: LLM agents have demonstrated strong capabilities in software development, document translation, and fact-checking, yet their evaluation in the cybersecurity domain remains insufficient. Existing security benchmarks (Cybench for CTF, CyberMetric for knowledge QA, CyberSecEval for code vulnerabilities) each focus on a single task type.
+**Background**: LLM agents have demonstrated strong capabilities in software development, document translation, and fact-checking, yet their evaluation in the cybersecurity domain remains insufficient. Existing security benchmarks (Cybench for CTF, CyberMetric for knowledge QA, CyberSecEval for code vulnerabilities) each focus on a single task type.
 
 **Limitations of Prior Work**:
 - Lack of a **unified** comprehensive evaluation platform covering offensive, defensive, and knowledge-understanding tasks
 - Different works employ different evaluation frameworks, making fair cross-model comparisons difficult
 - Most existing benchmarks are costly and hard to reproduce
 
-**Starting Point**: Construct a **practical, open-source, modular** one-stop evaluation toolkit that enables researchers to fairly assess LLM agents on cybersecurity tasks at low cost.
+**Key Insight**: Construct a **practical, open-source, modular** one-stop evaluation toolkit that enables researchers to fairly assess LLM agents on cybersecurity tasks at low cost.
 
 ## Method
 

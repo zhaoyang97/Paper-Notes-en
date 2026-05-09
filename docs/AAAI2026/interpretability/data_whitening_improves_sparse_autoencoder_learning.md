@@ -30,9 +30,9 @@ Sparse autoencoders (SAEs) have become a central tool in mechanistic interpretab
 
 **Limitations of Prior Work**: SAE training remains challenging — the optimization landscape is complex, and obtaining features that are both interpretable and faithful to the original representations requires careful hyperparameter tuning. Existing approaches (Top-K, Gated, JumpReLU, etc.) improve architectures and sparsity strategies but all operate on correlated data, leaving the structure of the activation space unchanged.
 
-**Root Cause**: On non-whitened data, regions of high sparsity and regions of high feature recovery quality are misaligned — pursuing sparsity does not necessarily yield interpretable features.
+**Key Challenge**: On non-whitened data, regions of high sparsity and regions of high feature recovery quality are misaligned — pursuing sparsity does not necessarily yield interpretable features.
 
-**Starting Point**: The authors draw inspiration from classical sparse coding and neuroscience — in the visual system, the retina performs early decorrelation to improve feature separability. PCA whitening, a standard preprocessing step in classical sparse coding, has been overlooked in modern SAE training.
+**Key Insight**: The authors draw inspiration from classical sparse coding and neuroscience — in the visual system, the retina performs early decorrelation to improve feature separability. PCA whitening, a standard preprocessing step in classical sparse coding, has been overlooked in modern SAE training.
 
 **Core Idea**: Apply PCA whitening as a preprocessing step for SAE training, removing correlations and equalizing variance in the activations so that sparsity and feature interpretability become aligned.
 

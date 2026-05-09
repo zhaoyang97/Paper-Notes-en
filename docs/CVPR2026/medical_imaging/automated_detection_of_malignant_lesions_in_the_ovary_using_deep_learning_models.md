@@ -37,9 +37,9 @@ Ovarian cancer is the 7th most common cancer among women worldwide and one of th
 
 **Tissue biopsy**: The gold standard for diagnosis, but invasive and time-consuming
 
-**Root Cause**: **A non-invasive, rapid, and accurate detection method is needed to reduce delayed diagnosis rates for ovarian cancer.** While deep learning has demonstrated strong performance in medical imaging-assisted diagnosis in recent years, its application in the ovarian cancer domain remains relatively limited.
+**Key Challenge**: **A non-invasive, rapid, and accurate detection method is needed to reduce delayed diagnosis rates for ovarian cancer.** While deep learning has demonstrated strong performance in medical imaging-assisted diagnosis in recent years, its application in the ovarian cancer domain remains relatively limited.
 
-**Starting Point**: On the publicly available Mendeley ovarian cancer histopathology dataset, this paper systematically compares multiple CNN variants, identifies the optimal model, and applies explainable AI (XAI) to reveal the model's decision rationale, thereby enhancing clinical trustworthiness.
+**Key Insight**: On the publicly available Mendeley ovarian cancer histopathology dataset, this paper systematically compares multiple CNN variants, identifies the optimal model, and applies explainable AI (XAI) to reveal the model's decision rationale, thereby enhancing clinical trustworthiness.
 
 ## Method
 

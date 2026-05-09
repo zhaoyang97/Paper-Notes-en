@@ -36,7 +36,7 @@ Latent variable models (LVMs) reveal intrinsic associations between neural activ
 
 **Limitations of Prior Work — Visual-specific properties underutilized**: Visual neural activity contains both stimulus-related and internal-state components, which existing methods do not specifically address.
 
-**Root Cause**: When mice passively observe natural scenes or videos, the neural dynamics in the visual cortex are driven by two factors:
+**Key Challenge**: When mice passively observe natural scenes or videos, the neural dynamics in the visual cortex are driven by two factors:
 - **External visual stimuli**: Scene or movie frame content
 - **Internal states**: Attention, arousal level, etc., which may exert an even greater influence on neural activity than the visual stimuli themselves.
 

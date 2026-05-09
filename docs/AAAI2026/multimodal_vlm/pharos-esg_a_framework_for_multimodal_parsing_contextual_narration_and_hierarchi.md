@@ -28,7 +28,7 @@ This paper proposes Pharos-ESG, a unified framework for structured parsing of ES
 
 ## Background & Motivation
 
-**State of the Field**: ESG (Environmental, Social, and Governance) principles are reshaping global financial governance, transitioning from voluntary disclosure to mandatory reporting and emerging as a critical infrastructure connecting corporations, investors, and regulators. ESG reports serve as the primary medium for assessing corporate ESG performance.
+**Background**: ESG (Environmental, Social, and Governance) principles are reshaping global financial governance, transitioning from voluntary disclosure to mandatory reporting and emerging as a critical infrastructure connecting corporations, investors, and regulators. ESG reports serve as the primary medium for assessing corporate ESG performance.
 
 **Limitations of Prior Work**: ESG reports are typically published as visually dense, long-form PDFs, presenting two key technical challenges:
 
@@ -41,7 +41,7 @@ This paper proposes Pharos-ESG, a unified framework for structured parsing of ES
 - **General-purpose document parsers** (MinerU, Docling, Marker): Designed for regularly structured formats such as academic papers and legal contracts, these tools suffer severe performance degradation on the irregular layouts of ESG reports.
 - **General-purpose multimodal models** (GPT-4o, Gemini): Prone to hallucination and computationally expensive when reconstructing implicit hierarchies in lengthy, weakly structured documents.
 
-**Starting Point**: This work designs a unified framework tailored to the specific characteristics of ESG reports, achieving structured parsing along four dimensions—reading order → hierarchical structure → multimodal content → financial labels. It also releases the first large-scale public ESG report dataset to address the gap in data resources.
+**Key Insight**: This work designs a unified framework tailored to the specific characteristics of ESG reports, achieving structured parsing along four dimensions—reading order → hierarchical structure → multimodal content → financial labels. It also releases the first large-scale public ESG report dataset to address the gap in data resources.
 
 ## Method
 

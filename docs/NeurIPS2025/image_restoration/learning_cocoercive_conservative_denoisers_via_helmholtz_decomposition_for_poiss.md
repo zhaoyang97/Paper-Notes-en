@@ -28,15 +28,15 @@ This paper introduces the concept of Cocoercive Conservative (CoCo) denoisers an
 
 ## Background & Motivation
 
-**State of the Field**: Plug-and-Play (PnP) methods replace the proximal operator in variational models with deep denoisers and have achieved impressive results across various image inverse problems. Standard convergence analyses rely on conditions such as convexity/smoothness of the data fidelity term and non-expansiveness of the denoiser.
+**Background**: Plug-and-Play (PnP) methods replace the proximal operator in variational models with deep denoisers and have achieved impressive results across various image inverse problems. Standard convergence analyses rely on conditions such as convexity/smoothness of the data fidelity term and non-expansiveness of the denoiser.
 
 **Limitations of Prior Work**: In Poisson inverse problems (low-light imaging, low-dose CT, etc.), the data fidelity term $G(u)=\lambda\langle 1, Ku - f\log Ku\rangle$ is neither strongly convex nor smooth, so traditional PnP convergence conditions are not satisfied. Furthermore, non-expansive or residual non-expansive constraints, while sufficient for convergence, severely limit denoiser performance — the larger the noise level, the more pronounced the performance degradation.
 
-**Root Cause**: Convergence requires the denoiser to satisfy Lipschitz conditions (e.g., non-expansiveness), yet stronger such constraints lead to worse denoising performance. For the denoiser to act as a proximal operator, conservativeness is also required; existing approaches either explicitly construct potential functions at the cost of reduced performance (e.g., GS-DRUNet), or fail to guarantee the proximal operator property.
+**Key Challenge**: Convergence requires the denoiser to satisfy Lipschitz conditions (e.g., non-expansiveness), yet stronger such constraints lead to worse denoising performance. For the denoiser to act as a proximal operator, conservativeness is also required; existing approaches either explicitly construct potential functions at the cost of reduced performance (e.g., GS-DRUNet), or fail to guarantee the proximal operator property.
 
-**Paper Goals**: (a) Identify a Lipschitz condition weaker than non-expansiveness that still guarantees the proximal operator property; (b) promote conservativeness by directly regularizing the denoiser rather than explicitly constructing a potential function.
+**Goal**: (a) Identify a Lipschitz condition weaker than non-expansiveness that still guarantees the proximal operator property; (b) promote conservativeness by directly regularizing the denoiser rather than explicitly constructing a potential function.
 
-**Starting Point**: Two mathematical tools are employed: cocoerciveness (a relaxation of the Lipschitz condition) and Helmholtz decomposition (decomposing a vector field into a conservative field and a Hamiltonian field).
+**Key Insight**: Two mathematical tools are employed: cocoerciveness (a relaxation of the Lipschitz condition) and Helmholtz decomposition (decomposing a vector field into a conservative field and a Hamiltonian field).
 
 **Core Idea**: $\gamma$-cocoerciveness + conservativeness $\Rightarrow$ proximal operator property; moreover, when $\gamma < 0.5$ the denoiser may be expansive, breaking the non-expansiveness barrier.
 

@@ -35,7 +35,7 @@ This paper incorporates response time information from user decision-making into
 
 ### Root Cause
 
-**State of the Field**: Binary preference data has become a central signal for fine-tuning foundation models (e.g., RLHF), yet temporal information embedded in the user decision process—such as response/reaction time—is typically discarded. Intuitively, a rapid choice (e.g., apple vs. orange) suggests stronger preference, while hesitation implies that the two options differ only marginally.
+**Background**: Binary preference data has become a central signal for fine-tuning foundation models (e.g., RLHF), yet temporal information embedded in the user decision process—such as response/reaction time—is typically discarded. Intuitively, a rapid choice (e.g., apple vs. orange) suggests stronger preference, while hesitation implies that the two options differ only marginally.
 
 **Limitations of Prior Work**:
 

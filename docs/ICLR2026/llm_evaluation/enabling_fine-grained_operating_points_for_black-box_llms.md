@@ -28,15 +28,15 @@ This paper identifies that verbalized probabilities from black-box LLMs produce 
 
 ## Background & Motivation
 
-**State of the Field**: When deploying LLMs as classifiers, practitioners must select an appropriate operating point on the precision-recall curve. A common approach is to prompt the LLM to output a verbalized probability in $[0,1]$ as a confidence score.
+**Background**: When deploying LLMs as classifiers, practitioners must select an appropriate operating point on the precision-recall curve. A common approach is to prompt the LLM to output a verbalized probability in $[0,1]$ as a confidence score.
 
 **Limitations of Prior Work**: LLMs exhibit a severe "rounding bias"—their output probabilities concentrate on a small set of values such as 0, 0.5, 0.85, 0.9, and 0.95 (with a tendency to end in 0 or 5), yielding PR/ROC curves with only a handful of discrete points and preventing fine-grained threshold control.
 
-**Root Cause**: The coarse spacing on the PR curve forces practitioners to choose between either high-precision/low-recall or low-precision/high-recall operating points, with no fine-grained trade-off available at deployment time.
+**Key Challenge**: The coarse spacing on the PR curve forces practitioners to choose between either high-precision/low-recall or low-precision/high-recall operating points, with no fine-grained trade-off available at deployment time.
 
-**Paper Goals**: How can black-box LLM probability outputs be made continuous without substantially increasing the number of API calls?
+**Goal**: How can black-box LLM probability outputs be made continuous without substantially increasing the number of API calls?
 
-**Starting Point**: Inject parameterized noise onto discrete probabilities, effectively "diffusing" the discrete distribution into a continuous one.
+**Key Insight**: Inject parameterized noise onto discrete probabilities, effectively "diffusing" the discrete distribution into a continuous one.
 
 **Core Idea**: Breaking rounding bias through noise injection—expanding the number of unique probability values from 16 to 20,000+ while preserving ranking performance.
 

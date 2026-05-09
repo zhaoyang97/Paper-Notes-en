@@ -28,17 +28,17 @@ This paper proposes DP-AG (Action-Guided Diffusion Policy), which uses the Vecto
 
 ## Background & Motivation
 
-**State of the Field**: In imitation learning (IL), Diffusion Policy (DP) achieves state-of-the-art performance in robotic manipulation by modeling action distributions via diffusion denoising. However, DP and related methods **decouple** perception from action — observation features remain static throughout a single action sequence generation.
+**Background**: In imitation learning (IL), Diffusion Policy (DP) achieves state-of-the-art performance in robotic manipulation by modeling action distributions via diffusion denoising. However, DP and related methods **decouple** perception from action — observation features remain static throughout a single action sequence generation.
 
 **Limitations of Prior Work**: Static feature encoding is "frozen" during the entire action sequence generation, ignoring intermediate feedback during action production. Unlike humans, such methods cannot dynamically adjust their understanding of the environment based on the actions being executed. This results in less coherent and smooth action sequences, especially in dynamic environments.
 
-**Root Cause**: The denoising process of diffusion policies already contains rich intermediate action information (per-step noise predictions), yet this information is never used to refine perceptual representations. The perception-action relationship is unidirectional (perception → action), lacking the action → perception feedback loop.
+**Key Challenge**: The denoising process of diffusion policies already contains rich intermediate action information (per-step noise predictions), yet this information is never used to refine perceptual representations. The perception-action relationship is unidirectional (perception → action), lacking the action → perception feedback loop.
 
-**Paper Goals**
+**Goal**
 - How to establish a bidirectional closed loop between perception and action?
 - How to leverage intermediate noise predictions within the diffusion process to dynamically update observation features?
 
-**Starting Point**: Inspired by human perception-action coupling ("Act to See, See to Act"), the VJP of the diffusion noise prediction with respect to latent features is used as a "structured stochastic force" to drive latent feature evolution, enabling perceptual representations to co-evolve with action refinement.
+**Key Insight**: Inspired by human perception-action coupling ("Act to See, See to Act"), the VJP of the diffusion noise prediction with respect to latent features is used as a "structured stochastic force" to drive latent feature evolution, enabling perceptual representations to co-evolve with action refinement.
 
 **Core Idea**: Drive the SDE-based evolution of latent observation features using the VJP of the diffusion policy's noise prediction, thereby closing the perception-action loop.
 

@@ -29,15 +29,15 @@ This paper proposes PA-Tool, a training-free tool schema optimization method tha
 
 ## Background & Motivation
 
-**State of the Field**: Tool-augmented language models have become core components of modern AI systems. With the growth of multi-agent architectures, there is increasing demand to deploy small language models (SLMs, typically ≤8B parameters) for subtasks such as tool selection (identifying the correct API) and parameter identification (supplying correct arguments).
+**Background**: Tool-augmented language models have become core components of modern AI systems. With the growth of multi-agent architectures, there is increasing demand to deploy small language models (SLMs, typically ≤8B parameters) for subtasks such as tool selection (identifying the correct API) and parameter identification (supplying correct arguments).
 
 **Limitations of Prior Work**: SLMs perform substantially worse than large models on tool-use tasks. A common failure mode is *schema misalignment*: even when the correct tool is provided in context, the model hallucinates plausible-sounding but nonexistent tool names. This suggests that when confronted with unfamiliar schemas, models fall back on naming conventions internalized during pretraining.
 
-**Root Cause**: Existing approaches either train models to accommodate arbitrary schemas—requiring large amounts of data and risking catastrophic forgetting—or improve tool documentation and interaction history indirectly without addressing the fundamental naming mismatch at the schema level. Training-based methods are costly and unscalable, while training-free methods do not tackle the root cause of naming misalignment.
+**Key Challenge**: Existing approaches either train models to accommodate arbitrary schemas—requiring large amounts of data and risking catastrophic forgetting—or improve tool documentation and interaction history indirectly without addressing the fundamental naming mismatch at the schema level. Training-based methods are costly and unscalable, while training-free methods do not tackle the root cause of naming misalignment.
 
-**Paper Goals**: To propose a training-free method that adapts tool schemas to match a model's pretrained knowledge, rather than training the model to adapt to schemas.
+**Goal**: To propose a training-free method that adapts tool schemas to match a model's pretrained knowledge, rather than training the model to adapt to schemas.
 
-**Starting Point**: The paper borrows the concept of *peakedness* from data contamination detection—patterns seen frequently during pretraining produce highly concentrated output distributions. This signal is used to identify naming patterns that are "familiar" to the model.
+**Key Insight**: The paper borrows the concept of *peakedness* from data contamination detection—patterns seen frequently during pretraining produce highly concentrated output distributions. This signal is used to identify naming patterns that are "familiar" to the model.
 
 **Core Idea**: Rather than training SLMs to adapt to unfamiliar tool schemas, adapt the schemas to align with the model's pretrained knowledge—by generating multiple candidate names, computing peakedness, and selecting the candidate with the highest peakedness as the one most familiar to the model.
 

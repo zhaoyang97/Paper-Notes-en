@@ -29,15 +29,15 @@ This paper proposes HSI-Detect, a two-stage deepfake detection framework that fi
 
 ## Background & Motivation
 
-**State of the Field**: The rapid advancement of generative adversarial networks (GANs) and diffusion models has made it increasingly easy to synthesize highly realistic facial images and videos. DeepFake technology is not only exploited for entertainment and creative media but also misused for disinformation, identity impersonation, and political manipulation. Robust and generalizable detection methods have become an urgent research priority.
+**Background**: The rapid advancement of generative adversarial networks (GANs) and diffusion models has made it increasingly easy to synthesize highly realistic facial images and videos. DeepFake technology is not only exploited for entertainment and creative media but also misused for disinformation, identity impersonation, and political manipulation. Robust and generalizable detection methods have become an urgent research priority.
 
 **Limitations of Prior Work**: Existing deepfake detectors primarily rely on RGB images, analyzing only three broadband spectral channels. While RGB is well-suited for visualization, it compresses a large amount of fine-grained spectral information present in natural images, causing subtle artifacts introduced by generative models to be averaged out. These artifacts often reside in narrow spectral bands or specific frequency ranges, making RGB-based detectors prone to misdetection and poor cross-dataset generalization.
 
-**Root Cause**: The three-channel RGB representation constitutes an information bottleneck — generative models cannot perfectly replicate the statistical properties of natural images across all spectral bands during synthesis, yet this inconsistency becomes exceedingly faint after RGB compression, making it difficult for detectors to capture.
+**Key Challenge**: The three-channel RGB representation constitutes an information bottleneck — generative models cannot perfectly replicate the statistical properties of natural images across all spectral bands during synthesis, yet this inconsistency becomes exceedingly faint after RGB compression, making it difficult for detectors to capture.
 
-**Paper Goals**: (1) Break through the information bottleneck of the three-channel RGB representation; (2) amplify generative artifacts via hyperspectral reconstruction; (3) perform more robust detection in the hyperspectral domain.
+**Goal**: (1) Break through the information bottleneck of the three-channel RGB representation; (2) amplify generative artifacts via hyperspectral reconstruction; (3) perform more robust detection in the hyperspectral domain.
 
-**Starting Point**: Inspired by the successful application of hyperspectral imaging in remote sensing and environmental monitoring, the authors hypothesize that deepfake detection can similarly benefit from hyperspectral representations — artifacts introduced by generative models may be more pronounced in certain narrow spectral bands.
+**Key Insight**: Inspired by the successful application of hyperspectral imaging in remote sensing and environmental monitoring, the authors hypothesize that deepfake detection can similarly benefit from hyperspectral representations — artifacts introduced by generative models may be more pronounced in certain narrow spectral bands.
 
 **Core Idea**: Upsample RGB images to a 31-channel hyperspectral representation, leveraging the expanded spectral information to expose generative artifacts invisible in RGB, and subsequently perform classification-based detection in the hyperspectral domain.
 

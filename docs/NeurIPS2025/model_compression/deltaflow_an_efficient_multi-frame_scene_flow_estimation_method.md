@@ -28,15 +28,15 @@ This paper proposes DeltaFlow (ΔFlow), which extracts motion cues via inter-fra
 
 ## Background & Motivation
 
-**State of the Field**: Scene flow estimation predicts the 3D motion of each point between consecutive point cloud frames. Mainstream methods voxelize point clouds and fuse temporal information either by concatenating multi-frame features along the channel dimension or by constructing 4D spatiotemporal voxels.
+**Background**: Scene flow estimation predicts the 3D motion of each point between consecutive point cloud frames. Mainstream methods voxelize point clouds and fuse temporal information either by concatenating multi-frame features along the channel dimension or by constructing 4D spatiotemporal voxels.
 
 **Limitations of Prior Work**: (1) Concatenation-based methods cause the channel dimension to grow linearly with the number of frames, increasing memory and computational overhead; (2) 4D methods introduce an additional temporal dimension, leading to similarly linear input growth; (3) class imbalance (pedestrians/cyclists are far fewer than vehicles) and intra-instance motion inconsistency further limit performance.
 
-**Root Cause**: While leveraging more historical frames improves accuracy, the computational cost of existing approaches scales linearly or super-linearly with frame count, making extension to long temporal sequences infeasible. Feature concatenation and stacking both "accumulate" temporal information, whereas scene flow is fundamentally concerned with "change."
+**Key Challenge**: While leveraging more historical frames improves accuracy, the computational cost of existing approaches scales linearly or super-linearly with frame count, making extension to long temporal sequences infeasible. Feature concatenation and stacking both "accumulate" temporal information, whereas scene flow is fundamentally concerned with "change."
 
-**Paper Goals**: (1) Efficiently exploit multi-frame information without increasing computational cost; (2) Address class imbalance and intra-instance motion consistency.
+**Goal**: (1) Efficiently exploit multi-frame information without increasing computational cost; (2) Address class imbalance and intra-instance motion consistency.
 
-**Starting Point**: Scene flow estimation is inherently about identifying "what changes." Computing inter-frame differences of voxel features (Δ scheme) naturally focuses on changing regions, and the resulting difference features maintain a constant size regardless of the number of frames.
+**Key Insight**: Scene flow estimation is inherently about identifying "what changes." Computing inter-frame differences of voxel features (Δ scheme) naturally focuses on changing regions, and the resulting difference features maintain a constant size regardless of the number of frames.
 
 **Core Idea**: Replace feature concatenation and 4D stacking with weighted inter-frame differences to encode temporal motion cues, supplemented by a category-balanced loss and an instance consistency loss to improve estimation quality for dynamic objects.
 

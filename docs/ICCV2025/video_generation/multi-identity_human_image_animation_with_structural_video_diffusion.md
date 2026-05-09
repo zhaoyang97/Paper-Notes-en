@@ -28,11 +28,11 @@ This paper proposes the Structural Video Diffusion framework, which maintains mu
 
 ## Background & Motivation
 
-1. **State of the Field**: Human image animation, represented by Animate Anyone, MagicAnimate, and CamAnimate, employs pose-guided diffusion models to generate high-fidelity human videos from single images.
+1. **Background**: Human image animation, represented by Animate Anyone, MagicAnimate, and CamAnimate, employs pose-guided diffusion models to generate high-fidelity human videos from single images.
 2. **Limitations of Prior Work**: Existing methods focus on single-person animation and perform poorly in multi-identity scenarios (multi-person interaction, human–object interaction)—they cannot associate correct appearance–pose pairs and lack modeling of 3D spatial relationships. Identity confusion arises during two-person dancing, and held objects become blurry, floating, or disappear.
-3. **Root Cause**: (1) Multi-person scenes require trackable identity-specific features to maintain appearance consistency, yet existing frameworks lack an identity-discrimination mechanism; (2) pose guidance alone is insufficient to model the 3D spatial relationships in human–object interactions.
-4. **Paper Goals**: How to preserve each person's appearance consistency in multi-person scenes? How to model complex 3D human–object interactions?
-5. **Starting Point**: Designing identity embeddings inspired by DETR's learnable query paradigm; jointly predicting RGB + depth + normal as implicit 3D structural supervision.
+3. **Key Challenge**: (1) Multi-person scenes require trackable identity-specific features to maintain appearance consistency, yet existing frameworks lack an identity-discrimination mechanism; (2) pose guidance alone is insufficient to model the 3D spatial relationships in human–object interactions.
+4. **Goal**: How to preserve each person's appearance consistency in multi-person scenes? How to model complex 3D human–object interactions?
+5. **Key Insight**: Designing identity embeddings inspired by DETR's learnable query paradigm; jointly predicting RGB + depth + normal as implicit 3D structural supervision.
 6. **Core Idea**: Mask-guided identity embeddings associate each person's appearance with their pose, while joint RGB/depth/normal learning enables the model to understand 3D spatial interactions.
 
 ## Method

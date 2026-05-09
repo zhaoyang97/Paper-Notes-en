@@ -28,15 +28,15 @@ KoCo-Bench introduces the first code benchmark with an explicit domain knowledge
 
 ## Background & Motivation
 
-**State of the Field**: LLMs perform well on general programming tasks, but domain-specific software development requires specialized domain knowledge (APIs, rules, constraints, etc.). Domain specialization methods (SFT, RAG, kNN-LM) have been employed to help LLMs learn and utilize domain knowledge.
+**Background**: LLMs perform well on general programming tasks, but domain-specific software development requires specialized domain knowledge (APIs, rules, constraints, etc.). Domain specialization methods (SFT, RAG, kNN-LM) have been employed to help LLMs learn and utilize domain knowledge.
 
 **Limitations of Prior Work**: Existing domain-specific code benchmarks (e.g., EvoCodeBench, DomainEval) evaluate only what LLMs already know, not how they acquire and apply new knowledge. They provide test sets without explicit knowledge corpora, making it impossible to support research on domain knowledge learning and modeling.
 
-**Root Cause**: Research on domain specialization methods requires benchmarks to evaluate effectiveness, yet existing benchmarks lack a knowledge corpus component, preventing the systematic development of this research direction.
+**Key Challenge**: Research on domain specialization methods requires benchmarks to evaluate effectiveness, yet existing benchmarks lack a knowledge corpus component, preventing the systematic development of this research direction.
 
-**Paper Goals**: Construct a complete benchmark comprising a knowledge corpus and a test set to support evaluation of domain specialization methods in realistic software development settings.
+**Goal**: Construct a complete benchmark comprising a knowledge corpus and a test set to support evaluation of domain specialization methods in realistic software development settings.
 
-**Starting Point**: Leveraging the natural ecosystem of software frameworks—frameworks come with documentation, source code, and examples (knowledge corpus), while projects built on these frameworks serve as evaluation tasks—forming a complete pipeline from knowledge acquisition to knowledge application.
+**Key Insight**: Leveraging the natural ecosystem of software frameworks—frameworks come with documentation, source code, and examples (knowledge corpus), while projects built on these frameworks serve as evaluation tasks—forming a complete pipeline from knowledge acquisition to knowledge application.
 
 **Core Idea**: Using 11 emerging frameworks released after 2024 as the foundation, the benchmark constructs a multi-source knowledge corpus (documentation + source code + examples), paired with multi-granularity code generation tasks (function-level to project-level, with unit/integration tests) and domain knowledge comprehension QA, simulating the realistic scenario of developers working with unfamiliar frameworks.
 

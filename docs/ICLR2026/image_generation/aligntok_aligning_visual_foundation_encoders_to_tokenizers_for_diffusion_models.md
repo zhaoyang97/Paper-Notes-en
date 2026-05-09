@@ -26,15 +26,15 @@ content_hash: c4fe0274c48368d0
 This paper proposes AlignTok, which aligns pretrained visual foundation encoders (e.g., DINOv2) into continuous tokenizers for diffusion models. Through a three-stage alignment strategy—semantic latent space establishment → perceptual detail supplementation → decoder refinement—AlignTok constructs a semantically rich latent space, achieving gFID 1.90 on ImageNet 256×256 in only 64 epochs, converging faster and yielding better generation quality than VAEs trained from scratch.
 
 ## Background & Motivation
-**State of the Field**: Latent diffusion models (LDMs) rely on VAEs as tokenizers to define the latent space. Standard VAEs are trained with reconstruction loss combined with mild KL regularization, resulting in latent spaces dominated by low-level details.
+**Background**: Latent diffusion models (LDMs) rely on VAEs as tokenizers to define the latent space. Standard VAEs are trained with reconstruction loss combined with mild KL regularization, resulting in latent spaces dominated by low-level details.
 
 **Limitations of Prior Work**: (1) VAE encoders learn semantics from scratch indirectly (solely through reconstruction loss), leading to unpredictable latent space structure; (2) semantic regularization methods (e.g., VA-VAE) incorporate alignment losses with pretrained encoders during training, but the encoder still must learn semantic structure from scratch.
 
-**Root Cause**: Learning semantics is fundamentally harder than learning reconstruction. When training from scratch, the encoder must simultaneously handle semantic structure and reconstruction details, with the two objectives competing against each other.
+**Key Challenge**: Learning semantics is fundamentally harder than learning reconstruction. When training from scratch, the encoder must simultaneously handle semantic structure and reconstruction details, with the two objectives competing against each other.
 
-**Paper Goals**: How to construct a tokenizer that is both semantically rich (beneficial for diffusion) and capable of high-quality reconstruction?
+**Goal**: How to construct a tokenizer that is both semantically rich (beneficial for diffusion) and capable of high-quality reconstruction?
 
-**Starting Point**: Rather than learning semantics from scratch, directly leverage existing pretrained encoders. The key challenge is that pretrained encoders lack reconstruction capability—requiring alignment rather than regularization.
+**Key Insight**: Rather than learning semantics from scratch, directly leverage existing pretrained encoders. The key challenge is that pretrained encoders lack reconstruction capability—requiring alignment rather than regularization.
 
 **Core Idea**: Instead of training the encoder to learn semantics from scratch (regularization), directly align a pretrained encoder that already possesses semantic representations (alignment).
 

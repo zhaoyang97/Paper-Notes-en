@@ -28,15 +28,15 @@ content_hash: 1566c74f4889d4b3
 This paper introduces BLINK-Twice, a vision-centric reasoning benchmark comprising 345 visually challenging images, 103 adversarial samples, 896 VQA pairs, and 1,725 annotated reasoning steps. Through seven categories of visual illusion scenarios, it evaluates the "you see but do not observe" reasoning capability of MLLMs. The strongest model, Gemini-2.5 Pro, achieves only 26.9% G-Acc, suggesting that multi-round image observation and active visual interaction are promising directions for improvement.
 
 ## Background & Motivation
-**State of the Field**: MLLMs have advanced rapidly on VQA and image understanding tasks, while reasoning-augmented models (o1, DeepSeek-R1, QVQ) have introduced chain-of-thought (CoT) mechanisms.
+**Background**: MLLMs have advanced rapidly on VQA and image understanding tasks, while reasoning-augmented models (o1, DeepSeek-R1, QVQ) have introduced chain-of-thought (CoT) mechanisms.
 
 **Limitations of Prior Work**: Existing reasoning benchmarks (MMMU, MathVista, OlympiadBench) are centered on textual knowledge and mathematical reasoning, where visual inputs serve merely as auxiliary context and can often be replaced by text descriptions. These benchmarks evaluate linguistic knowledge and logical reasoning rather than reasoning grounded in visual content.
 
-**Root Cause**: Models can "see" (perceive) but fail to "observe" (reason)—performance degrades significantly in scenarios requiring inference about true situations from visual details, such as optical illusions, forced perspective, and occlusion-induced misjudgments.
+**Key Challenge**: Models can "see" (perceive) but fail to "observe" (reason)—performance degrades significantly in scenarios requiring inference about true situations from visual details, such as optical illusions, forced perspective, and occlusion-induced misjudgments.
 
-**Paper Goals**: To design a reasoning benchmark where answers must be derived from visual image content rather than prior knowledge.
+**Goal**: To design a reasoning benchmark where answers must be derived from visual image content rather than prior knowledge.
 
-**Starting Point**: Naturally deceptive images such as visual illusions require models to first identify the misleading appearance and then reason from fine-grained details to the true situation, perfectly instantiating the distinction between "seeing" and "understanding."
+**Key Insight**: Naturally deceptive images such as visual illusions require models to first identify the misleading appearance and then reason from fine-grained details to the true situation, perfectly instantiating the distinction between "seeing" and "understanding."
 
 **Core Idea**: Construct a visual reasoning evaluation spanning from "See" to "Observe" using seven categories of visually challenging images, natural adversarial samples, and annotated reasoning chains.
 

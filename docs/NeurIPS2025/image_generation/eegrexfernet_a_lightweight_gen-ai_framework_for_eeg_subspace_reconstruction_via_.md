@@ -28,15 +28,15 @@ This paper proposes EEGReXferNet, a lightweight generative AI framework that ach
 
 ## Background & Motivation
 
-**State of the Field**: EEG is the gold standard for non-invasive brain activity monitoring, but it suffers from extremely low signal-to-noise ratio and is severely contaminated by artifacts such as ocular, muscular, and power-line interference. Traditional methods such as ICA require manual intervention, while ASR suppresses anomalous variance in principal component space but may discard critical neural features.
+**Background**: EEG is the gold standard for non-invasive brain activity monitoring, but it suffers from extremely low signal-to-noise ratio and is severely contaminated by artifacts such as ocular, muscular, and power-line interference. Traditional methods such as ICA require manual intervention, while ASR suppresses anomalous variance in principal component space but may discard critical neural features.
 
 **Limitations of Prior Work**: (a) BSS methods such as ICA require manual selection of artifact components, making them unsuitable for real-time BCI; (b) adaptive filtering approaches (e.g., H-Infinity) require reference noise signals, limiting their applicability; (c) existing VAE/GAN-based methods typically neglect spatial channel relationships, employ overly heavy encoder-decoder architectures, exhibit weak time-frequency coupling, and lack consistent mappings across consecutive sliding windows.
 
-**Root Cause**: There is a fundamental tension between the need for a lightweight and efficient model (to meet real-time BCI requirements) and the need to fully exploit spatial, temporal, and spectral information simultaneously, while also generalizing across subjects.
+**Key Challenge**: There is a fundamental tension between the need for a lightweight and efficient model (to meet real-time BCI requirements) and the need to fully exploit spatial, temporal, and spectral information simultaneously, while also generalizing across subjects.
 
-**Paper Goals**: To design a lightweight generative framework that integrates spatial channel neighborhood information, band-specific encoding, and a dynamic latent space, and to achieve robust EEG subspace reconstruction via cross-subject transfer learning.
+**Goal**: To design a lightweight generative framework that integrates spatial channel neighborhood information, band-specific encoding, and a dynamic latent space, and to achieve robust EEG subspace reconstruction via cross-subject transfer learning.
 
-**Starting Point**: The paper exploits the volume conduction property of EEG (whereby signals from adjacent channels are highly correlated), reformulating the problem of reconstructing a target channel as one of predicting and reconstructing from neighboring channels.
+**Key Insight**: The paper exploits the volume conduction property of EEG (whereby signals from adjacent channels are highly correlated), reformulating the problem of reconstructing a target channel as one of predicting and reconstructing from neighboring channels.
 
 **Core Idea**: By combining neighborhood channel inputs, band-specific convolutional encoding/decoding, dynamic sliding-window latent statistics, and reference scaling, the framework constructs a VAE variant that is approximately 45% lighter and enables real-time cross-subject EEG reconstruction.
 

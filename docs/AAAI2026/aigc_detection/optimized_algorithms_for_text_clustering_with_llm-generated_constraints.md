@@ -28,15 +28,15 @@ This paper proposes the LSCK-HC framework, which leverages LLMs to generate set-
 
 ## Background & Motivation
 
-**State of the Field**: Short text clustering (STC) is a foundational NLP task in which k-means and its variants are widely employed. To improve clustering quality, semi-supervised methods introduce must-link (ML) and cannot-link (CL) pairwise constraints as background knowledge. Recent work has explored using LLMs to automatically generate such constraints via in-context learning.
+**Background**: Short text clustering (STC) is a foundational NLP task in which k-means and its variants are widely employed. To improve clustering quality, semi-supervised methods introduce must-link (ML) and cannot-link (CL) pairwise constraints as background knowledge. Recent work has explored using LLMs to automatically generate such constraints via in-context learning.
 
 **Limitations of Prior Work**: (1) Traditional constraint generation relies on costly expert annotation or existing labels; (2) Generating pairwise constraints with LLMs (e.g., the FSC method) demands a large number of queries (tens of thousands), incurring high cost with limited improvement; (3) LLM-generated constraints may contain errors, yet existing clustering algorithms are not designed to account for the specific characteristics of LLM outputs.
 
-**Root Cause**: Pairwise constraints are highly query-inefficient—each LLM call assesses the relationship between only two points, and covering a sufficient portion of the data requires an exponentially large number of queries. Furthermore, the balance between hard constraint satisfaction and soft constraint penalization has not been optimized for the error characteristics of LLM outputs.
+**Key Challenge**: Pairwise constraints are highly query-inefficient—each LLM call assesses the relationship between only two points, and covering a sufficient portion of the data requires an exponentially large number of queries. Furthermore, the balance between hard constraint satisfaction and soft constraint penalization has not been optimized for the error characteristics of LLM outputs.
 
-**Paper Goals**: (1) Reduce the query cost of LLM-based constraint generation; (2) Improve the accuracy of generated constraints; (3) Design clustering algorithms tolerant of erroneous constraints.
+**Goal**: (1) Reduce the query cost of LLM-based constraint generation; (2) Improve the accuracy of generated constraints; (3) Design clustering algorithms tolerant of erroneous constraints.
 
-**Starting Point**: Extend the constraint format from pairwise to set-form—a single LLM query can generate multiple relational constraints—and distinguish hard from soft constraints via a confidence threshold.
+**Key Insight**: Extend the constraint format from pairwise to set-form—a single LLM query can generate multiple relational constraints—and distinguish hard from soft constraints via a confidence threshold.
 
 **Core Idea**: Replace pairwise constraints with set-form constraints to improve query efficiency, and employ penalty-based local search to tolerate errors in LLM-generated constraints.
 

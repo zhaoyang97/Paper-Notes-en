@@ -29,11 +29,11 @@ FlowComposer is the first work to introduce Flow Matching into Compositional Zer
 
 ## Background & Motivation
 
-1. **State of the Field**: CZSL aims to recognize unseen attribute-object compositions by recombining seen primitive attributes and objects. Dominant approaches leverage vision-language models such as CLIP with parameter-efficient fine-tuning (PEFT) via prompt learning.
+1. **Background**: CZSL aims to recognize unseen attribute-object compositions by recombining seen primitive attributes and objects. Dominant approaches leverage vision-language models such as CLIP with parameter-efficient fine-tuning (PEFT) via prompt learning.
 2. **Limitations of Prior Work**: Existing methods suffer from two fundamental deficiencies: (1) *implicit composition construction*—compositions are formed merely through token-level concatenation rather than explicit operations in the embedding space, causing the embeddings of unseen compositions to drift from image embeddings; and (2) *residual feature entanglement*—visual disentanglers cannot strictly separate attribute and object features, leading to cross-branch information leakage.
-3. **Root Cause**: These two deficiencies cause existing methods to overfit seen compositions, exhibiting a strong seen-bias where accuracy on seen compositions increases during training while accuracy on unseen compositions continuously declines.
-4. **Paper Goals**: To design a framework that performs explicit compositional operations in the embedding space, and simultaneously converts imperfect disentanglement into useful supervision.
-5. **Starting Point**: The velocity fields of Flow Matching inherently support composition and decomposition—primitive flows can be learned and their velocity fields subsequently combined.
+3. **Key Challenge**: These two deficiencies cause existing methods to overfit seen compositions, exhibiting a strong seen-bias where accuracy on seen compositions increases during training while accuracy on unseen compositions continuously declines.
+4. **Goal**: To design a framework that performs explicit compositional operations in the embedding space, and simultaneously converts imperfect disentanglement into useful supervision.
+5. **Key Insight**: The velocity fields of Flow Matching inherently support composition and decomposition—primitive flows can be learned and their velocity fields subsequently combined.
 6. **Core Idea**: Two Flow Matching models are trained separately to learn attribute and object transport flows; a Composer network then combines their velocity fields to realize explicit composition in the embedding space.
 
 ## Method

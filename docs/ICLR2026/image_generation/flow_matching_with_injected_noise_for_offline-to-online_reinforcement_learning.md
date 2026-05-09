@@ -28,15 +28,15 @@ By injecting controllable noise into flow matching training to broaden policy co
 
 ## Background & Motivation
 
-**State of the Field**: Generative models (diffusion / flow matching) excel as policy representations in offline RL due to their ability to model multimodal distributions. Flow Q-Learning (FQL) has demonstrated the effectiveness of flow-matching policies in offline settings.
+**Background**: Generative models (diffusion / flow matching) excel as policy representations in offline RL due to their ability to model multimodal distributions. Flow Q-Learning (FQL) has demonstrated the effectiveness of flow-matching policies in offline settings.
 
 **Limitations of Prior Work**: Policies pre-trained offline are over-constrained to the dataset distribution, resulting in insufficient exploration during online fine-tuning. Existing methods such as FQL treat online fine-tuning as a straightforward continuation of offline pre-training without dedicated exploration mechanisms. In the antmaze-giant task, the FQL agent almost exclusively follows the upper path present in the dataset to reach the goal, completely ignoring other viable routes.
 
-**Root Cause**: Offline RL requires conservative constraints to avoid out-of-distribution actions, whereas the online phase demands broad exploration beyond data coverage. These two phases impose fundamentally opposing requirements on the policy distribution.
+**Key Challenge**: Offline RL requires conservative constraints to avoid out-of-distribution actions, whereas the online phase demands broad exploration beyond data coverage. These two phases impose fundamentally opposing requirements on the policy distribution.
 
-**Paper Goals**: How can a policy learn action coverage broader than the dataset during offline pre-training—without augmenting the dataset—and effectively leverage this diversity during online fine-tuning?
+**Goal**: How can a policy learn action coverage broader than the dataset during offline pre-training—without augmenting the dataset—and effectively leverage this diversity during online fine-tuning?
 
-**Starting Point**: Standard flow matching with $\sigma_{\min}=0$ collapses the conditional probability path onto individual data points, limiting coverage. Injecting controlled noise into flow matching can expand the variance of the conditional probability path.
+**Key Insight**: Standard flow matching with $\sigma_{\min}=0$ collapses the conditional probability path onto individual data points, limiting coverage. Injecting controlled noise into flow matching can expand the variance of the conditional probability path.
 
 **Core Idea**: Inject noise into the flow matching objective to enlarge the policy support set, and employ entropy-guided sampling to adaptively balance exploration and exploitation during the online phase.
 

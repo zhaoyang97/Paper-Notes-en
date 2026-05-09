@@ -28,15 +28,15 @@ This paper presents the first systematic evaluation of LVLMs' ability to recogni
 
 ## Background & Motivation
 
-**State of the Field**: LVLMs such as GPT-4o, Gemini, and Claude are widely deployed in multimodal RAG pipelines, web agents, and search engines, where they inevitably encounter copyrighted content (book excerpts, news articles, song lyrics, code documentation, etc.). Yet these models' ability to recognize and comply with copyright has received almost no systematic study.
+**Background**: LVLMs such as GPT-4o, Gemini, and Claude are widely deployed in multimodal RAG pipelines, web agents, and search engines, where they inevitably encounter copyrighted content (book excerpts, news articles, song lyrics, code documentation, etc.). Yet these models' ability to recognize and comply with copyright has received almost no systematic study.
 
 **Limitations of Prior Work**: While LVLMs perform reasonably well at refusing direct infringement requests (e.g., "write me a passage from Harry Potter"), when copyrighted content appears as an image in context—such as a scanned book page retrieved via RAG—models reproduce, translate, or paraphrase the content without hesitation, even when a "©" copyright notice is clearly visible in the image.
 
-**Root Cause**: Safety alignment in existing LVLMs primarily targets coarse-grained risks such as violence and explicit content, with little copyright awareness. Furthermore, copyright law is complex—varying by material type, jurisdiction, and fair use exceptions—making naive fine-tuning prone to over-refusal.
+**Key Challenge**: Safety alignment in existing LVLMs primarily targets coarse-grained risks such as violence and explicit content, with little copyright awareness. Furthermore, copyright law is complex—varying by material type, jurisdiction, and fair use exceptions—making naive fine-tuning prone to over-refusal.
 
-**Paper Goals**: Three research questions are addressed—RQ1: How do LVLMs comply with copyright in multimodal contexts? RQ2: Do copyright notices affect model behavior? RQ3: How can LVLM copyright compliance be improved?
+**Goal**: Three research questions are addressed—RQ1: How do LVLMs comply with copyright in multimodal contexts? RQ2: Do copyright notices affect model behavior? RQ3: How can LVLM copyright compliance be improved?
 
-**Starting Point**: Copyrighted content is rendered as images (simulating RAG/screenshot scenarios), and LVLM behavior is evaluated across four infringement scenarios—reproduction, extraction, paraphrasing, and translation—under conditions with and without copyright notices.
+**Key Insight**: Copyrighted content is rendered as images (simulating RAG/screenshot scenarios), and LVLM behavior is evaluated across four infringement scenarios—reproduction, extraction, paraphrasing, and translation—under conditions with and without copyright notices.
 
 **Core Idea**: Construct a large-scale copyright compliance benchmark and propose the tool-augmented CopyGuard defense framework (OCR + search-based copyright verification + query risk analysis + compliance reminding).
 

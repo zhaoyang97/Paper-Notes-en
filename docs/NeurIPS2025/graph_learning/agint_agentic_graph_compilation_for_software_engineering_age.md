@@ -29,15 +29,15 @@ This paper proposes Agint, a graph compiler that progressively compiles natural 
 
 ## Background & Motivation
 
-**State of the Field**: LLM coding agents (e.g., Codex, AlphaCode) can generate code from natural language, and multi-agent frameworks (ChatDev, MetaGPT) further enable multi-role collaborative development. However, in practical software engineering these systems still suffer from syntax errors, hallucinations, and training distribution bias, requiring extensive manual correction.
+**Background**: LLM coding agents (e.g., Codex, AlphaCode) can generate code from natural language, and multi-agent frameworks (ChatDev, MetaGPT) further enable multi-role collaborative development. However, in practical software engineering these systems still suffer from syntax errors, hallucinations, and training distribution bias, requiring extensive manual correction.
 
 **Limitations of Prior Work**: Existing code generation agents face a trilemma: (1) context management difficulty — performance degrades over long contexts and project-specific references are easily lost; (2) reliability–speed tradeoff — large models are reliable but slow, while small models are fast but unstable, especially for structured output and domain-specific tasks; (3) multi-agent concurrency issues — concurrent edits introduce race conditions and cascading errors, with no reliable coordination mechanism. More fundamentally, software engineering is not just code — it also requires data organization, API integration, and workflow orchestration, which existing agents cannot handle in a unified manner.
 
-**Root Cause**: The fundamental issue is that existing systems treat code generation as "text generation" rather than a "compilation problem." Single-pass generation is brittle and non-reproducible, lacking the type safety, incremental refinement, and optimization capabilities of traditional compilers.
+**Key Challenge**: The fundamental issue is that existing systems treat code generation as "text generation" rather than a "compilation problem." Single-pass generation is brittle and non-reproducible, lacking the type safety, incremental refinement, and optimization capabilities of traditional compilers.
 
-**Paper Goals**: (1) How can compiler techniques be introduced into AI code generation? (2) How can progressive development with executable intermediate states be supported? (3) How can heterogeneous tasks (code/data/workflow) be orchestrated in a unified manner?
+**Goal**: (1) How can compiler techniques be introduced into AI code generation? (2) How can progressive development with executable intermediate states be supported? (3) How can heterogeneous tasks (code/data/workflow) be orchestrated in a unified manner?
 
-**Starting Point**: The authors observe that traditional compiler intermediate representations (IRs), type systems, and optimization passes are naturally suited to address reliability issues in code generation, while DAG structures can decompose complex tasks into parallelizable subgraphs, and locality-preserving transformations avoid global context overhead.
+**Key Insight**: The authors observe that traditional compiler intermediate representations (IRs), type systems, and optimization passes are naturally suited to address reliability issues in code generation, while DAG structures can decompose complex tasks into parallelizable subgraphs, and locality-preserving transformations avoid global context overhead.
 
 **Core Idea**: Redefine AI code generation as a graph compilation problem, achieving progressive refinement through a six-level type system where each intermediate representation is independently executable and testable.
 

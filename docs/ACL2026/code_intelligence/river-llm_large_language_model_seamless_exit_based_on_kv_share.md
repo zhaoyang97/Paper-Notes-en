@@ -27,15 +27,15 @@ This paper proposes River-LLM, a training-free framework that addresses the KV C
 
 ## Background & Motivation
 
-**State of the Field**: Early Exit is a mainstream approach for dynamic inference acceleration in LLMs, reducing computation by dynamically skipping redundant layers based on input complexity. Prior methods such as SkipDecode (monotonically decreasing exit), EE-LLM (batch recomputation), CALM (state propagation), and D-LLM (KV masking) have each attempted to address this problem from different angles.
+**Background**: Early Exit is a mainstream approach for dynamic inference acceleration in LLMs, reducing computation by dynamically skipping redundant layers based on input complexity. Prior methods such as SkipDecode (monotonically decreasing exit), EE-LLM (batch recomputation), CALM (state propagation), and D-LLM (KV masking) have each attempted to address this problem from different angles.
 
 **Limitations of Prior Work**: In decoder-only architectures, the efficiency of Early Exit is severely bottlenecked by the **KV Cache absence problem**. When a token exits early, the skipped layers cannot provide the necessary historical KV states for subsequent tokens. Empirical analysis in this paper shows that although theoretically more than 50% of tokens can exit at early layers, the actual wall-clock speedup is negligible.
 
-**Root Cause**: The four existing KV recovery strategies all have fundamental drawbacks: batch recomputation introduces significant latency overhead; monotonically decreasing exit severely limits exit flexibility; state propagation sacrifices accuracy for speed; and KV masking leads to severe accuracy degradation. No existing method can simultaneously satisfy "per-token free exit" and "KV integrity."
+**Key Challenge**: The four existing KV recovery strategies all have fundamental drawbacks: batch recomputation introduces significant latency overhead; monotonically decreasing exit severely limits exit flexibility; state propagation sacrifices accuracy for speed; and KV masking leads to severe accuracy degradation. No existing method can simultaneously satisfy "per-token free exit" and "KV integrity."
 
-**Paper Goals**: To design a "Seamless Exit" mechanism enabling individual tokens to exit independently at any layer (free granularity), while KV caches for skipped layers are automatically populated as a byproduct of exit path execution (intrinsic KV integrity), requiring no post-exit recovery or recomputation.
+**Goal**: To design a "Seamless Exit" mechanism enabling individual tokens to exit independently at any layer (free granularity), while KV caches for skipped layers are automatically populated as a byproduct of exit path execution (intrinsic KV integrity), requiring no post-exit recovery or recomputation.
 
-**Starting Point**: Inspired by research on KV cache redundancy, the authors find that lightweight quantized exit layers can replicate the KV generation of backbone decoders at minimal overhead, "substituting" for skipped layers to complete KV population. The cosine similarity between KV outputs of exit layers and backbone layers remains above 0.97.
+**Key Insight**: Inspired by research on KV cache redundancy, the authors find that lightweight quantized exit layers can replicate the KV generation of backbone decoders at minimal overhead, "substituting" for skipped layers to complete KV population. The cosine similarity between KV outputs of exit layers and backbone layers remains above 0.97.
 
 **Core Idea**: Construct a lightweight "Exit River" (KV-Shared Exit River) with a one-to-one mapping to the backbone decoder, using 4-bit quantized weights to accelerate token throughput through the exit channel (2.4× throughput gain), while naturally generating KV caches compatible with the backbone.
 

@@ -29,7 +29,7 @@ This paper introduces MENTAT—an evaluation dataset designed and annotated by 9
 
 ## Background & Motivation
 
-**State of the Field**: Medical AI evaluation has predominantly relied on licensure exam questions (MedQA, MMLU-Med, etc.), emphasizing factual knowledge recall. In psychiatry, however, diagnosis and management depend heavily on subjective judgment and interpersonal interaction, and standardized exam performance correlates only weakly with real-world clinical competence.
+**Background**: Medical AI evaluation has predominantly relied on licensure exam questions (MedQA, MMLU-Med, etc.), emphasizing factual knowledge recall. In psychiatry, however, diagnosis and management depend heavily on subjective judgment and interpersonal interaction, and standardized exam performance correlates only weakly with real-world clinical competence.
 
 **Limitations of Prior Work**:
 
@@ -41,7 +41,7 @@ This paper introduces MENTAT—an evaluation dataset designed and annotated by 9
 
 4. Most existing datasets are generated with LM assistance (e.g., MedS-bench via web scraping and LM synthesis), introducing known quality and contamination concerns.
 
-**Root Cause**: There is a need for a psychiatric AI evaluation dataset that is entirely designed by human experts, captures genuine clinical ambiguity, and enables systematic assessment of demographic bias.
+**Key Challenge**: There is a need for a psychiatric AI evaluation dataset that is entirely designed by human experts, captures genuine clinical ambiguity, and enables systematic assessment of demographic bias.
 
 ## Method
 

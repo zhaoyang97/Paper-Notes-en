@@ -29,15 +29,15 @@ This paper proposes UME-R1, the first framework to explore a reasoning-driven ge
 
 ## Background & Motivation
 
-**State of the Field**: MLLM-based embedding models (e.g., VLM2Vec, MM-Embed) have achieved notable progress on multimodal embedding tasks, substantially outperforming traditional dual-encoder vision-language models such as CLIP. Concurrently, large reasoning models (LRMs) represented by DeepSeek-R1 have demonstrated breakthroughs on complex reasoning tasks.
+**Background**: MLLM-based embedding models (e.g., VLM2Vec, MM-Embed) have achieved notable progress on multimodal embedding tasks, substantially outperforming traditional dual-encoder vision-language models such as CLIP. Concurrently, large reasoning models (LRMs) represented by DeepSeek-R1 have demonstrated breakthroughs on complex reasoning tasks.
 
 **Limitations of Prior Work**: Existing MLLM-based multimodal embedding models are fundamentally discriminative — they directly encode inputs and extract the hidden state of the last token as the embedding, without generating any new tokens. This prevents them from benefiting from reasoning-driven generative paradigms. While some works (e.g., CAFe) incorporate next-token prediction loss during training to preserve generative capacity, inference remains discriminative.
 
-**Root Cause**: A fundamental gap exists between reasoning capability and embedding quality — embedding tasks lack verification mechanisms with ground-truth answers analogous to mathematics, making it difficult to directly apply reinforcement learning to optimize embedding models.
+**Key Challenge**: A fundamental gap exists between reasoning capability and embedding quality — embedding tasks lack verification mechanisms with ground-truth answers analogous to mathematics, making it difficult to directly apply reinforcement learning to optimize embedding models.
 
-**Paper Goals**: How can multimodal embedding models operate under a generative paradigm, enabling them to reason before generating higher-quality embeddings? How can RL be successfully applied to embedding tasks that lack ground-truth answers?
+**Goal**: How can multimodal embedding models operate under a generative paradigm, enabling them to reason before generating higher-quality embeddings? How can RL be successfully applied to embedding tasks that lack ground-truth answers?
 
-**Starting Point**: Unify embedding tasks under a generative paradigm where the model first generates a reasoning process and summary, and subsequently produces embeddings conditioned on this context. RL optimization is enabled through a composite reward combining ranking score and similarity margin.
+**Key Insight**: Unify embedding tasks under a generative paradigm where the model first generates a reasoning process and summary, and subsequently produces embeddings conditioned on this context. RL optimization is enabled through a composite reward combining ranking score and similarity margin.
 
 **Core Idea**: The embedding model first engages in deliberate reasoning before producing representations; RL continuously improves reasoning quality, realizing inference-time scaling for embedding tasks.
 

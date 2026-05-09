@@ -29,15 +29,15 @@ This paper proposes Foresight, a training-free adaptive layer reuse framework th
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion Transformers (DiTs) have become the dominant architecture for text-to-video generation, with models such as OpenSora, CogVideoX, and HunyuanVideo all built upon spatiotemporal DiT backbones. However, the $O(L^2)$ complexity of self-attention grows rapidly with resolution and frame count, and the typical requirement of 30–50 denoising steps results in prohibitively high inference latency.
+**Background**: Diffusion Transformers (DiTs) have become the dominant architecture for text-to-video generation, with models such as OpenSora, CogVideoX, and HunyuanVideo all built upon spatiotemporal DiT backbones. However, the $O(L^2)$ complexity of self-attention grows rapidly with resolution and frame count, and the typical requirement of 30–50 denoising steps results in prohibitively high inference latency.
 
 **Limitations of Prior Work**: Feature caching is a training-free acceleration technique that reduces computation by reusing intermediate features across adjacent denoising steps. However, existing methods (Static, PAB, Δ-DiT, T-GATE, TeaCache) all adopt **static strategies**—applying uniform reuse across all layers at fixed intervals—ignoring the substantial variation in reuse potential across layers, prompts, and configurations.
 
-**Root Cause**: By analyzing spatial feature MSE heatmaps across 28 DiT layers in OpenSora, the authors identify three critical observations: (1) early layers exhibit small feature changes and are safe to reuse, while later layers exhibit large changes and suffer significant quality degradation under aggressive reuse; (2) prompts depicting fast-changing scenes have substantially lower reuse potential than those depicting static scenes; (3) changing resolution from 240p to 720p noticeably alters the MSE patterns of the same layers. Static methods cannot adapt to any of these variations.
+**Key Challenge**: By analyzing spatial feature MSE heatmaps across 28 DiT layers in OpenSora, the authors identify three critical observations: (1) early layers exhibit small feature changes and are safe to reuse, while later layers exhibit large changes and suffer significant quality degradation under aggressive reuse; (2) prompts depicting fast-changing scenes have substantially lower reuse potential than those depicting static scenes; (3) changing resolution from 240p to 720p noticeably alters the MSE patterns of the same layers. Static methods cannot adapt to any of these variations.
 
-**Paper Goals**: To make adaptive per-step, per-layer decisions of "reuse or recompute" so as to achieve a superior Pareto frontier between speed and quality.
+**Goal**: To make adaptive per-step, per-layer decisions of "reuse or recompute" so as to achieve a superior Pareto frontier between speed and quality.
 
-**Starting Point**: Use statistical measures of feature MSE as the reuse criterion. Per-layer thresholds are automatically learned during a warmup phase and compared against at runtime, requiring no training or architectural modification.
+**Key Insight**: Use statistical measures of feature MSE as the reuse criterion. Per-layer thresholds are automatically learned during a warmup phase and compared against at runtime, requiring no training or architectural modification.
 
 **Core Idea**: Replace static reuse intervals with dynamic per-layer MSE thresholds, enabling each layer at each step to independently decide whether to reuse cached features.
 

@@ -28,15 +28,15 @@ PhaSR introduces a dual-level physically aligned prior framework: at the global 
 
 ## Background & Motivation
 
-**State of the Field**: Shadow removal is a fundamental computer vision task. The core challenge lies in accurately distinguishing shadows from intrinsically dark object regions and performing physically plausible color correction. Learning-based approaches have progressed from CNNs to Transformers to diffusion models, but most are evaluated only on single-source direct-illumination benchmarks.
+**Background**: Shadow removal is a fundamental computer vision task. The core challenge lies in accurately distinguishing shadows from intrinsically dark object regions and performing physically plausible color correction. Learning-based approaches have progressed from CNNs to Transformers to diffusion models, but most are evaluated only on single-source direct-illumination benchmarks.
 
 **Limitations of Prior Work**: (1) Relying solely on RGB cues causes shadows to be confused with intrinsic material properties, resulting in color distortion near texture boundaries. (2) Existing methods perform well on single-source benchmarks but generalize poorly to multi-source indoor ambient lighting scenarios characterized by color shifts and diffuse indirect illumination. (3) Conventional encoder-decoder architectures fail to effectively propagate physical priors; uniform feature fusion ignores spatially varying degradation characteristics, leading to edge blurring.
 
-**Root Cause**: Prior misalignment. Geometric features (local shading variations, surface normals) are sensitive to illumination geometry but noisy, while semantic features (object categories, materials) are stable across illumination conditions but spatially coarse. Without proper alignment, geometric noise corrupts semantic consistency, or semantic over-smoothing erases illumination boundaries — a problem particularly severe under indirect illumination.
+**Key Challenge**: Prior misalignment. Geometric features (local shading variations, surface normals) are sensitive to illumination geometry but noisy, while semantic features (object categories, materials) are stable across illumination conditions but spatially coarse. Without proper alignment, geometric noise corrupts semantic consistency, or semantic over-smoothing erases illumination boundaries — a problem particularly severe under indirect illumination.
 
-**Paper Goals**: (1) Suppression of global color bias; (2) Resolution of cross-modal conflicts between geometric and semantic priors; (3) Generalization from single-source to multi-source lighting scenarios.
+**Goal**: (1) Suppression of global color bias; (2) Resolution of cross-modal conflicts between geometric and semantic priors; (3) Generalization from single-source to multi-source lighting scenarios.
 
-**Starting Point**: Unifying the problem from an "alignment" perspective — global-level alignment (PAN for illumination-reflectance decomposition) and local-level alignment (GSRA using differential attention to reconcile geometry and semantics).
+**Key Insight**: Unifying the problem from an "alignment" perspective — global-level alignment (PAN for illumination-reflectance decomposition) and local-level alignment (GSRA using differential attention to reconcile geometry and semantics).
 
 **Core Idea**: Through dual-level physically aligned priors — global parameter-free Retinex normalization combined with local differential attention cross-modal correction — the shadow removal system generalizes from single-source to complex multi-source lighting scenes.
 

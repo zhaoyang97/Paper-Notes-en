@@ -28,15 +28,15 @@ AdaRHD is the first adaptive algorithm for Riemannian bilevel optimization (RBO)
 
 ## Background & Motivation
 
-**State of the Field**: Riemannian bilevel optimization (RBO) finds broad applications in machine learning, including hyperparameter optimization on SPD manifolds and robust PCA on Stiefel manifolds. Existing methods such as RHGD require prior knowledge of strong convexity constants, Lipschitz continuity bounds, and manifold curvature parameters to determine step sizes.
+**Background**: Riemannian bilevel optimization (RBO) finds broad applications in machine learning, including hyperparameter optimization on SPD manifolds and robust PCA on Stiefel manifolds. Existing methods such as RHGD require prior knowledge of strong convexity constants, Lipschitz continuity bounds, and manifold curvature parameters to determine step sizes.
 
 **Limitations of Prior Work**: These parameters are difficult to estimate in practice, particularly under non-Euclidean geometry. Incorrect step size choices cause RHGD to fail entirely—in experiments, step sizes of 5, 1, and 0.5 lead to divergence—whereas AdaRHD converges across a step size range of 0.2 to 20.
 
-**Root Cause**: While adaptive methods (e.g., AdaGrad) have been developed for bilevel optimization in Euclidean spaces, the geometric structures of Riemannian manifolds—geodesics, parallel transport, exponential maps—substantially complicate adaptive step size design.
+**Key Challenge**: While adaptive methods (e.g., AdaGrad) have been developed for bilevel optimization in Euclidean spaces, the geometric structures of Riemannian manifolds—geodesics, parallel transport, exponential maps—substantially complicate adaptive step size design.
 
-**Paper Goals**: Design a Riemannian bilevel optimization algorithm that requires no hyperparameter tuning while maintaining the same convergence rate as methods with known parameters.
+**Goal**: Design a Riemannian bilevel optimization algorithm that requires no hyperparameter tuning while maintaining the same convergence rate as methods with known parameters.
 
-**Starting Point**: Extend the AdaGrad-Norm strategy to three-level nested optimization on Riemannian manifolds.
+**Key Insight**: Extend the AdaGrad-Norm strategy to three-level nested optimization on Riemannian manifolds.
 
 **Core Idea**: Inverse cumulative gradient norm adaptive step sizes + three-stage pipeline (lower-level RGD → linear system CG → upper-level hypergradient descent) = parameter-free Riemannian bilevel optimization.
 

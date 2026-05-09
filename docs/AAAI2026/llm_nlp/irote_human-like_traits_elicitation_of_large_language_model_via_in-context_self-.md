@@ -29,16 +29,16 @@ This paper proposes IROTE, an in-context self-reflective optimization method gro
 
 ## Background & Motivation
 
-**State of the Field**: Having been trained on massive human-generated corpora, LLMs exhibit a certain capacity to manifest specific human traits (personality, values, etc.) through prompting, and are widely applied in personalized dialogue, social simulation, and multi-agent systems. Existing methods fall into two categories: training-based (RLHF-SFT, reinforcement learning fine-tuning) and training-free (ICL in-context learning, role prompting).
+**Background**: Having been trained on massive human-generated corpora, LLMs exhibit a certain capacity to manifest specific human traits (personality, values, etc.) through prompting, and are widely applied in personalized dialogue, social simulation, and multi-agent systems. Existing methods fall into two categories: training-based (RLHF-SFT, reinforcement learning fine-tuning) and training-free (ICL in-context learning, role prompting).
 
 **Limitations of Prior Work (Surface Elicitation Problem)**: Existing ICL-based elicitation methods suffer from a **surface elicitation** challenge—LLMs merely mimic shallow linguistic patterns in the prompt rather than genuinely internalizing the target trait. This manifests as:
    - Strong performance on simple questionnaires but inability to maintain consistent trait expression in complex open-ended tasks
    - Severe performance degradation on smaller models
    - High sensitivity to prompt wording (e.g., a mere phrasing difference between MFQ and MFQ-2 causes significant performance swings)
 
-**Root Cause**: The ICL demonstrations relied upon by existing methods (e.g., questionnaire responses or demographic descriptions) are overly surface-level and lack deep understanding of the essence of traits. Although lengthy backstories are informationally rich, they contain substantial irrelevant noise that distracts attention. What is needed is a prompt format that is simultaneously compact and profound.
+**Key Challenge**: The ICL demonstrations relied upon by existing methods (e.g., questionnaire responses or demographic descriptions) are overly surface-level and lack deep understanding of the essence of traits. Although lengthy backstories are informationally rich, they contain substantial irrelevant noise that distracts attention. What is needed is a prompt format that is simultaneously compact and profound.
 
-**Starting Point**: Inspired by the psychological theory of "self-reflective identity processing"—human traits are formed through active self-reflection on identity-relevant experiences. Providing an LLM with a passage of self-perceived experiential reflection may activate its internal trait associations more effectively than simple role descriptions.
+**Key Insight**: Inspired by the psychological theory of "self-reflective identity processing"—human traits are formed through active self-reflection on identity-relevant experiences. Providing an LLM with a passage of self-perceived experiential reflection may activate its internal trait associations more effectively than simple role descriptions.
 
 **Core Idea**: Automatically generate and optimize a brief textual "self-reflection" (e.g., "I maintain team harmony by mediating conflicts") using an information bottleneck-style objective that simultaneously optimizes **evocativeness** (maximizing mutual information between behavior and target trait) and **compactness** (removing redundancy via Total Correlation). This enables stable cross-task, cross-model trait elicitation without fine-tuning.
 

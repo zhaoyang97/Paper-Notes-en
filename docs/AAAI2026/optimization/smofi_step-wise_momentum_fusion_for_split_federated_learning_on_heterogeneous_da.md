@@ -30,7 +30,7 @@ This paper proposes SMoFi, a framework that synchronizes the momentum buffers of
 
 ### State of the Field
 
-**State of the Field**: Split Federated Learning (Split FL) partitions a model into a client-side and a server-side component, leveraging the server's computational power to share the training workload — making it particularly suitable for resource-constrained edge devices. In the SFLV1 framework, the server maintains multiple surrogate models trained in parallel, which are aggregated at the end of each communication round. Existing methods such as FedAvg, FedProx, FedAvgM, and SlowMo address data heterogeneity by modifying loss functions or improving aggregation strategies.
+**Background**: Split Federated Learning (Split FL) partitions a model into a client-side and a server-side component, leveraging the server's computational power to share the training workload — making it particularly suitable for resource-constrained edge devices. In the SFLV1 framework, the server maintains multiple surrogate models trained in parallel, which are aggregated at the end of each communication round. Existing methods such as FedAvg, FedProx, FedAvgM, and SlowMo address data heterogeneity by modifying loss functions or improving aggregation strategies.
 
 ### Limitations of Prior Work
 
@@ -38,11 +38,11 @@ This paper proposes SMoFi, a framework that synchronizes the momentum buffers of
 
 ### Root Cause
 
-**Root Cause**: While momentum (SGDM) improves final model accuracy, it paradoxically slows convergence under non-IID data — because momentum helps each local model converge more effectively toward its own local optimum, amplifying the divergence of update directions. Transforming momentum from a "decelerating factor" into a tool for accelerating convergence is therefore a key challenge.
+**Key Challenge**: While momentum (SGDM) improves final model accuracy, it paradoxically slows convergence under non-IID data — because momentum helps each local model converge more effectively toward its own local optimum, amplifying the divergence of update directions. Transforming momentum from a "decelerating factor" into a tool for accelerating convergence is therefore a key challenge.
 
 ### Approach
 
-**Paper Goals**: To exploit the natural advantage of Split FL, where the server directly controls the surrogate models, by imposing consistency constraints at every SGD step rather than between communication rounds. **Starting Point**: Synchronize the momentum buffers of all surrogate models on the server side at each step, guiding all models to update in a globally consistent direction. **Core Idea**: Step-wise momentum fusion replaces each model's local momentum with a globally aligned average momentum, requiring zero client-side modifications and incurring zero additional communication overhead.
+**Goal**: To exploit the natural advantage of Split FL, where the server directly controls the surrogate models, by imposing consistency constraints at every SGD step rather than between communication rounds. **Key Insight**: Synchronize the momentum buffers of all surrogate models on the server side at each step, guiding all models to update in a globally consistent direction. **Core Idea**: Step-wise momentum fusion replaces each model's local momentum with a globally aligned average momentum, requiring zero client-side modifications and incurring zero additional communication overhead.
 
 ## Method
 

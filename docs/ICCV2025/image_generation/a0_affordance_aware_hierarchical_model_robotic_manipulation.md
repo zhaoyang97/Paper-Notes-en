@@ -28,7 +28,7 @@ This paper proposes A₀, an affordance-aware hierarchical diffusion model that 
 
 ## Background & Motivation
 
-**State of the Field**: Robotic manipulation approaches fall into two categories: modular methods (leveraging visual foundation models) and end-to-end VLA methods (directly generating actions).
+**Background**: Robotic manipulation approaches fall into two categories: modular methods (leveraging visual foundation models) and end-to-end VLA methods (directly generating actions).
 
 **Limitations of Prior Work**: Modular methods lack deep understanding of object spatial affordances; end-to-end methods generate actions without understanding spatial positions, leading to poor performance on complex manipulations (e.g., wiping whiteboards, stacking objects).
 

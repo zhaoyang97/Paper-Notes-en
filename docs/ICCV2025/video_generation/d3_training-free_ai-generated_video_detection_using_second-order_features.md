@@ -30,7 +30,7 @@ Drawing from second-order control systems in Newtonian mechanics, this paper ide
 
 ## Background & Motivation
 
-**State of the Field**: With the rapid advancement of video generation models such as Sora, Pika, and Gen-2, the proliferation of high-fidelity AI-generated videos has triggered a serious social trust crisis (e.g., the Taylor Swift deepfake incident). Detecting AI-generated videos has become an urgent need.
+**Background**: With the rapid advancement of video generation models such as Sora, Pika, and Gen-2, the proliferation of high-fidelity AI-generated videos has triggered a serious social trust crisis (e.g., the Taylor Swift deepfake incident). Detecting AI-generated videos has become an urgent need.
 
 **Limitations of Prior Work**:
    - **Traditional deepfake detection**: Focuses on facial forgeries (e.g., Deepfakes), relying on face-specific artifacts (e.g., keypoint distortion, head pose inconsistency), and cannot generalize to general-purpose videos.
@@ -39,14 +39,14 @@ Drawing from second-order control systems in Newtonian mechanics, this paper ide
      - Limited generalization to new generators
      - Lack of interpretability — no theoretical basis for analyzing temporal artifacts at a physical level
 
-**Root Cause**: Although the quality of generated videos continues to improve, existing detection methods lack deep theoretical analysis of temporal artifacts, relying on data-driven black-box classifiers with insufficient generalization to new generators and poor interpretability.
+**Key Challenge**: Although the quality of generated videos continues to improve, existing detection methods lack deep theoretical analysis of temporal artifacts, relying on data-driven black-box classifiers with insufficient generalization to new generators and poor interpretability.
 
-**Paper Goals**:
+**Goal**:
    - Analyze the fundamental differences between AI-generated and real videos from a physics-theoretic perspective
    - Design a training-free detection method that does not depend on any generated video training data
    - Achieve strong cross-generator generalization
 
-**Starting Point**: Second-order position control systems in Newtonian mechanics. Real-world object motion follows the second-order differential equation $A_2 \ddot{x}(t) + A_1 \dot{x}(t) + A_0 x(t) = u(t)$ (inertia, damping, elasticity). The authors hypothesize that video generation models cannot accurately fit the second-order dynamics of the real world. Visualization experiments on optical flow differences confirm that real videos exhibit chaotic and varied second-order features ("optical flow acceleration"), whereas generated videos show very flat and uniform second-order features.
+**Key Insight**: Second-order position control systems in Newtonian mechanics. Real-world object motion follows the second-order differential equation $A_2 \ddot{x}(t) + A_1 \dot{x}(t) + A_0 x(t) = u(t)$ (inertia, damping, elasticity). The authors hypothesize that video generation models cannot accurately fit the second-order dynamics of the real world. Visualization experiments on optical flow differences confirm that real videos exhibit chaotic and varied second-order features ("optical flow acceleration"), whereas generated videos show very flat and uniform second-order features.
 
 **Core Idea**: Compute the standard deviation of the second-order central difference of inter-frame features as the detection statistic — real videos exhibit high fluctuation (high standard deviation), while AI-generated videos are flat (low standard deviation).
 

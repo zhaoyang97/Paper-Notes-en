@@ -26,18 +26,18 @@ content_hash: 79560e4f259bd029
 Pixel2Phys is proposed as a multi-agent collaborative framework built upon MLLMs, employing four agents — Plan, Variable, Equation, and Experiment — in an iterative hypothesize-verify-refine loop to automatically discover interpretable governing equations from raw videos, achieving a 45.35% improvement in extrapolation accuracy over baselines.
 
 ## Background & Motivation
-**State of the Field**: Discovering physical laws from observational data is a central goal of scientific intelligence. Traditional approaches rely on manual extraction of physical quantities followed by symbolic regression, which is labor-intensive and slow.
+**Background**: Discovering physical laws from observational data is a central goal of scientific intelligence. Traditional approaches rely on manual extraction of physical quantities followed by symbolic regression, which is labor-intensive and slow.
 
 **Limitations of Prior Work**:
    - Supervised equation prediction models require scarce equation-video paired data and generalize poorly.
    - Unsupervised latent-space methods (Autoencoder + symbolic regression) have their latent spaces determined by the reconstruction objective, making it easy for physically irrelevant factors (texture, lighting) to contaminate the representation.
    - Directly prompting MLLMs primarily retrieves prior knowledge from training corpora and struggles to derive new laws from raw visual data.
 
-**Root Cause**: Variable extraction and equation discovery are mutually dependent in a chicken-and-egg cycle — a clean variable space requires knowledge of the dynamics, while discovering dynamics requires a clean variable space.
+**Key Challenge**: Variable extraction and equation discovery are mutually dependent in a chicken-and-egg cycle — a clean variable space requires knowledge of the dynamics, while discovering dynamics requires a clean variable space.
 
-**Paper Goals**: Simultaneously discover physical variables $z(t)$ and governing equations $f$, i.e., $\frac{dz}{dt} = f(z(t))$.
+**Goal**: Simultaneously discover physical variables $z(t)$ and governing equations $f$, i.e., $\frac{dz}{dt} = f(z(t))$.
 
-**Starting Point**: Emulate the collaborative workflow of human scientists — observe, hypothesize, experiment, refine — by constructing an iterative multi-agent framework.
+**Key Insight**: Emulate the collaborative workflow of human scientists — observe, hypothesize, experiment, refine — by constructing an iterative multi-agent framework.
 
 **Core Idea**: Coordinate four specialized agents via MLLMs for iterative scientific reasoning, breaking the circular dependency between variable extraction and equation discovery.
 

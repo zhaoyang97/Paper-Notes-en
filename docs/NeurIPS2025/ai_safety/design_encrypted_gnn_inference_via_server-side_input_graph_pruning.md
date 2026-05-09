@@ -28,15 +28,15 @@ This paper proposes DESIGN, a framework that accelerates FHE-based GNN inference
 
 ## Background & Motivation
 
-**State of the Field**: GNNs have demonstrated strong performance in recommendation systems, bioinformatics, social networks, and other domains. However, processing sensitive graph data (user profiles, financial transactions, social relationships) poses serious privacy risks. Fully Homomorphic Encryption (FHE) enables direct computation over encrypted data and is thus an ideal privacy-preserving solution.
+**Background**: GNNs have demonstrated strong performance in recommendation systems, bioinformatics, social networks, and other domains. However, processing sensitive graph data (user profiles, financial transactions, social relationships) poses serious privacy risks. Fully Homomorphic Encryption (FHE) enables direct computation over encrypted data and is thus an ideal privacy-preserving solution.
 
 **Limitations of Prior Work**: Fundamental operations under FHE—especially homomorphic multiplication—are orders of magnitude slower than their plaintext counterparts. Existing FHE GNN methods (CryptoGCN, LinGCN, Penguin) focus primarily on optimizing internal model structure (e.g., sparse adjacency matrices, simplified activation functions), while overlooking redundancy in the input graph itself: not all nodes and edges are equally important.
 
-**Root Cause**: Three fundamental challenges exist: (a) plaintext graph metrics are inaccessible during online pruning in the encrypted domain; (b) existing methods apply uniform-degree polynomial activations across all nodes, where high-degree nodes inflate overall cost while low-degree nodes waste precision; (c) any optimization must be architecture-agnostic and generalizable.
+**Key Challenge**: Three fundamental challenges exist: (a) plaintext graph metrics are inaccessible during online pruning in the encrypted domain; (b) existing methods apply uniform-degree polynomial activations across all nodes, where high-degree nodes inflate overall cost while low-degree nodes waste precision; (c) any optimization must be architecture-agnostic and generalizable.
 
-**Paper Goals**: To enable adaptive server-side processing of input graphs under FHE constraints by (a) logically pruning unimportant nodes and edges, and (b) assigning polynomial activations of varying degrees to nodes of differing importance.
+**Goal**: To enable adaptive server-side processing of input graphs under FHE constraints by (a) logically pruning unimportant nodes and edges, and (b) assigning polynomial activations of varying degrees to nodes of differing importance.
 
-**Starting Point**: Node degree is used as an FHE-friendly importance metric (requiring only addition), and multi-level importance masks are generated via approximate homomorphic comparison to guide pruning and adaptive activation assignment.
+**Key Insight**: Node degree is used as an FHE-friendly importance metric (requiring only addition), and multi-level importance masks are generated via approximate homomorphic comparison to guide pruning and adaptive activation assignment.
 
 **Core Idea**: Compute importance scores from node degrees on the encrypted graph → generate multi-level masks via homomorphic comparison → drive graph pruning and adaptive polynomial activation degree allocation via the masks.
 

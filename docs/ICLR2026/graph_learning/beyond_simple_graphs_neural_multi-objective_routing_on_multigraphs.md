@@ -28,15 +28,15 @@ This paper presents GMS, the first neural combinatorial optimization routing met
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning-based combinatorial optimization solvers have made significant progress on vehicle routing problems (VRPs). Existing methods (Kool et al., POMO, MatNet, etc.) match or even surpass classical heuristics on TSP and CVRP. However, all existing neural solvers assume problems are defined on **simple graphs**—i.e., at most one edge between each pair of nodes.
+**Background**: Deep learning-based combinatorial optimization solvers have made significant progress on vehicle routing problems (VRPs). Existing methods (Kool et al., POMO, MatNet, etc.) match or even surpass classical heuristics on TSP and CVRP. However, all existing neural solvers assume problems are defined on **simple graphs**—i.e., at most one edge between each pair of nodes.
 
 **Limitations of Prior Work**: In the real world, multigraphs are more accurate representations—multiple edges with different attributes (e.g., different travel times and distances) may exist between the same pair of nodes. Operations research has shown that multigraph modeling can yield 5–10% cost improvements, yet existing neural methods cannot handle multigraphs for two reasons: (i) Transformer encoders are not suited to encoding multigraph structures; (ii) decoding must simultaneously select both node ordering **and** edges, whereas existing methods only select nodes.
 
-**Root Cause**: Routing on multigraphs is substantially more complex than on simple graphs—one must decide not only the visitation order of nodes but also which edge to take between each pair. In a multi-objective setting, different edges offer different trade-offs across objectives, making it impossible to determine the optimal edge selection a priori.
+**Key Challenge**: Routing on multigraphs is substantially more complex than on simple graphs—one must decide not only the visitation order of nodes but also which edge to take between each pair. In a multi-objective setting, different edges offer different trade-offs across objectives, making it impossible to determine the optimal edge selection a priori.
 
-**Paper Goals**: How to design a neural routing solver that handles multigraph inputs while supporting multi-objective optimization.
+**Goal**: How to design a neural routing solver that handles multigraph inputs while supporting multi-objective optimization.
 
-**Starting Point**: The authors propose two complementary strategies—(1) direct edge-level autoregressive construction on the multigraph; (2) a learned pruning strategy that simplifies the multigraph into a simple graph before node-level routing. Both variants use the Graph Edge Attention Network (GREAT) to process multigraph structures.
+**Key Insight**: The authors propose two complementary strategies—(1) direct edge-level autoregressive construction on the multigraph; (2) a learned pruning strategy that simplifies the multigraph into a simple graph before node-level routing. Both variants use the Graph Edge Attention Network (GREAT) to process multigraph structures.
 
 **Core Idea**: Encode multigraph edge embeddings via a GNN, then achieve multi-objective multigraph routing through either edge-level autoregression or a dual-head decoder combining non-autoregressive pruning with autoregressive routing.
 

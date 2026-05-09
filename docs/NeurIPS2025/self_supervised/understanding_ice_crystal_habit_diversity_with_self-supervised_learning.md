@@ -28,15 +28,15 @@ This paper presents the first application of self-supervised learning (SSL) to l
 
 ## Background & Motivation
 
-**State of the Field**: Clouds represent one of the largest sources of uncertainty in climate models, and ice-containing clouds are particularly difficult to model due to the high diversity of ice crystal habits. The microphysical properties of ice crystals govern particle–radiation interactions and aerodynamics, thereby influencing global radiative forcing, precipitation, and the spatiotemporal distribution of clouds across multiple scales.
+**Background**: Clouds represent one of the largest sources of uncertainty in climate models, and ice-containing clouds are particularly difficult to model due to the high diversity of ice crystal habits. The microphysical properties of ice crystals govern particle–radiation interactions and aerodynamics, thereby influencing global radiative forcing, precipitation, and the spatiotemporal distribution of clouds across multiple scales.
 
 **Limitations of Prior Work**: Research on ice crystal habits has primarily relied on millions of images captured by Cloud Particle Imagers (CPI). Conventional approaches extract geometric features (e.g., aspect ratio, circularity) via image processing techniques, or apply supervised machine learning for classification. However, these methods suffer from two fundamental problems: (1) they require extensive manual annotation at high cost; and (2) they depend on predefined habit categories, rendering them unable to capture continuous morphological variation and intra-class diversity.
 
-**Root Cause**: Ice crystal habits are intrinsically continuously distributed, yet existing analytical methods either rely on discrete categories or require expensive manual annotation, fundamentally limiting the understanding of habit diversity.
+**Key Challenge**: Ice crystal habits are intrinsically continuously distributed, yet existing analytical methods either rely on discrete categories or require expensive manual annotation, fundamentally limiting the understanding of habit diversity.
 
-**Paper Goals**: How can meaningful representations of ice crystal habits be learned without manual annotation? How can the morphological diversity of ice crystals be quantified in a data-driven manner?
+**Goal**: How can meaningful representations of ice crystal habits be learned without manual annotation? How can the morphological diversity of ice crystals be quantified in a data-driven manner?
 
-**Starting Point**: The authors observe that CPI images exhibit a natural clustering structure governed by ice crystal habit, which closely aligns with the assumptions of clustering-based SSL methods (the DINO family). This motivates the use of SSL to learn physically meaningful representations without any labels.
+**Key Insight**: The authors observe that CPI images exhibit a natural clustering structure governed by ice crystal habit, which closely aligns with the assumptions of clustering-based SSL methods (the DINO family). This motivates the use of SSL to learn physically meaningful representations without any labels.
 
 **Core Idea**: Apply DINO-family self-supervised ViTs pre-trained on a large-scale CPI dataset to learn continuous latent representations of ice crystal habits, replacing conventional discrete classification and geometric feature extraction pipelines.
 

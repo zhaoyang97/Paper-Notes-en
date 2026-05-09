@@ -29,11 +29,11 @@ E-RayZer is the first truly self-supervised feed-forward 3D Gaussian reconstruct
 
 ## Background & Motivation
 
-- **State of the Field**: Self-supervised pre-training has driven rapid progress in foundation models for text, 2D images, and video. However, learning 3D-aware representations from multi-view images remains severely underexplored.
+- **Background**: Self-supervised pre-training has driven rapid progress in foundation models for text, 2D images, and video. However, learning 3D-aware representations from multi-view images remains severely underexplored.
 - **Limitations of Prior Work**: Dominant 3D vision models rely on pseudo-labels from SfM systems (e.g., COLMAP) for fully supervised training, which is inherently inefficient, imprecise, and unscalable. The predecessor RayZer attempts self-supervised 3D learning via latent-space novel view synthesis, but suffers from a fundamental flaw: its three modules—camera estimation, implicit scene reconstruction, and Transformer-based rendering—are jointly learned in latent space without 3D inductive bias. This allows the model to achieve high-quality synthesis through "shortcut solutions" such as video interpolation. The resulting pose space is neither interpretable nor physically meaningful, as evidenced by near-zero pose estimation accuracy (RPA@5° ≈ 0).
-- **Root Cause**: Without geometric grounding, latent-space self-supervised models can bypass genuine 3D understanding via frame-order interpolation.
-- **Paper Goals**: Introduce physically meaningful 3D inductive bias into self-supervised multi-view learning while preserving scalability.
-- **Starting Point**: Replace implicit representations with explicit 3D Gaussians to force the model to reason about true 3D geometry through differentiable physical rendering, and design a fine-grained curriculum learning strategy to address the convergence difficulties introduced by explicit 3D.
+- **Key Challenge**: Without geometric grounding, latent-space self-supervised models can bypass genuine 3D understanding via frame-order interpolation.
+- **Goal**: Introduce physically meaningful 3D inductive bias into self-supervised multi-view learning while preserving scalability.
+- **Key Insight**: Replace implicit representations with explicit 3D Gaussians to force the model to reason about true 3D geometry through differentiable physical rendering, and design a fine-grained curriculum learning strategy to address the convergence difficulties introduced by explicit 3D.
 
 ## Method
 

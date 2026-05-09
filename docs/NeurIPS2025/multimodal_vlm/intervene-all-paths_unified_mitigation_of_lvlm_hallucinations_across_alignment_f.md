@@ -28,13 +28,13 @@ This paper proposes AllPath, a multi-path hallucination intervention framework g
 
 ## Background & Motivation
 
-**State of the Field**: LVLM hallucination mitigation methods fall broadly into two categories — contrastive decoding methods (VCD, ICD) that reduce language bias by calibrating output distributions, and intervention methods (PAI, AD-HH) that directly manipulate attention weights/heads to enhance visual grounding or suppress text-dominant behavior.
+**Background**: LVLM hallucination mitigation methods fall broadly into two categories — contrastive decoding methods (VCD, ICD) that reduce language bias by calibrating output distributions, and intervention methods (PAI, AD-HH) that directly manipulate attention weights/heads to enhance visual grounding or suppress text-dominant behavior.
 
 **Limitations of Prior Work**: Each existing method typically intervenes on only a single causal path — PAI targets only the image→output-text path, while AD-HH targets only the input-text→output-text path — causing each to excel on only a subset of benchmarks (PAI performs well on CHAIR but moderately on POPE; VCD exhibits the opposite pattern).
 
-**Root Cause**: Hallucinations arise not from a single path but from the interaction of multiple paths. More critically, **LVLMs rely on different causal paths for different question-answer formats (binary / multiple-choice / open-ended description)**, making single-path intervention insufficient to cover all scenarios.
+**Key Challenge**: Hallucinations arise not from a single path but from the interaction of multiple paths. More critically, **LVLMs rely on different causal paths for different question-answer formats (binary / multiple-choice / open-ended description)**, making single-path intervention insufficient to cover all scenarios.
 
-**Starting Point**: Starting from the Transformer causal architecture, the paper systematically analyzes all possible information propagation paths and designs targeted key-head identification and intervention methods for each.
+**Key Insight**: Starting from the Transformer causal architecture, the paper systematically analyzes all possible information propagation paths and designs targeted key-head identification and intervention methods for each.
 
 **Core Idea**: A multi-path framework with adaptive path-selection intervention, requiring only a single forward pass to score all heads.
 

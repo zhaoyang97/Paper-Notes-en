@@ -29,7 +29,7 @@ This paper proposes WEARec, a model that employs Dynamic Frequency Filtering (DF
 
 ## Background & Motivation
 
-**State of the Field**: Sequential recommendation captures dynamic user preferences by analyzing historical interaction sequences. Frequency-domain methods (FMLPRec, BSARec, SLIME4Rec, etc.) leverage the Fourier transform to decompose user behavior sequences into frequency components, effectively capturing periodic patterns that are difficult to identify in the time domain, and have emerged as an efficient alternative to self-attention.
+**Background**: Sequential recommendation captures dynamic user preferences by analyzing historical interaction sequences. Frequency-domain methods (FMLPRec, BSARec, SLIME4Rec, etc.) leverage the Fourier transform to decompose user behavior sequences into frequency components, effectively capturing periodic patterns that are difficult to identify in the time domain, and have emerged as an efficient alternative to self-attention.
 
 **Limitation 1 — Static Filters Ignore Personalization**: Existing frequency-domain methods apply fixed static filters uniformly across all user sequences. However, experiments reveal that different users are driven by entirely different frequency components — some users' behaviors are dominated by low-frequency long-term preferences, while others are driven by high-frequency short-term interests (confirmed by counting the number of users independently driven by each frequency component).
 

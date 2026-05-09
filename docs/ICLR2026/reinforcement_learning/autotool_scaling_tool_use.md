@@ -27,15 +27,15 @@ This paper proposes AutoTool, which addresses reasoning collapse in direct RL tr
 
 ## Background & Motivation
 
-1. **State of the Field**: Integration of LLMs with external tools is a key capability for AI agents. RLVR (Reinforcement Learning with Verifiable Rewards) has successfully enabled test-time scaling on math and code tasks, but its effectiveness in tool use remains unvalidated.
+1. **Background**: Integration of LLMs with external tools is a key capability for AI agents. RLVR (Reinforcement Learning with Verifiable Rewards) has successfully enabled test-time scaling on math and code tasks, but its effectiveness in tool use remains unvalidated.
 
 2. **Limitations of Prior Work**: (1) Direct RL training in tool-use settings leads to "reasoning collapse" — the model fails to sufficiently extend its reasoning length to solve complex problems; (2) Distilled models generate lengthy reasoning for all problems, wasting substantial tokens on simple queries.
 
-3. **Root Cause**: While RL training on math tasks naturally increases reasoning length, it shortens reasoning length in tool-use tasks. The root cause is that low entropy causes the model to prematurely converge to short-reasoning strategies.
+3. **Key Challenge**: While RL training on math tasks naturally increases reasoning length, it shortens reasoning length in tool-use tasks. The root cause is that low entropy causes the model to prematurely converge to short-reasoning strategies.
 
-4. **Paper Goals**: Design a training method that automatically selects reasoning modes based on problem difficulty — extended thinking for complex problems and direct answers for simple ones.
+4. **Goal**: Design a training method that automatically selects reasoning modes based on problem difficulty — extended thinking for complex problems and direct answers for simple ones.
 
-5. **Starting Point**: The paper identifies a strong positive correlation between low information entropy and reasoning collapse, while also finding that a naive entropy constraint is extremely sensitive to its coefficient.
+5. **Key Insight**: The paper identifies a strong positive correlation between low information entropy and reasoning collapse, while also finding that a naive entropy constraint is extremely sensitive to its coefficient.
 
 6. **Core Idea**: Decouple the policy losses for long and short reasoning, applying an adaptive entropy constraint to long reasoning to maintain exploration capability, while applying a fixed constraint to short reasoning to prevent over-exploration.
 

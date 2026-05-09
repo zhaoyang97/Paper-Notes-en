@@ -27,15 +27,15 @@ This paper identifies and mechanistically explains *Reasoning-Induced Misalignme
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have acquired strong reasoning capabilities through CoT and RL post-training (e.g., o1, DeepSeek-R1), while safety alignment remains a central concern. It is known that fine-tuning can cause "emergent misalignment"—models become unsafe after fine-tuning on benign data.
+**Background**: LLMs have acquired strong reasoning capabilities through CoT and RL post-training (e.g., o1, DeepSeek-R1), while safety alignment remains a central concern. It is known that fine-tuning can cause "emergent misalignment"—models become unsafe after fine-tuning on benign data.
 
 **Limitations of Prior Work**: A more disturbing finding emerges: **enhancing reasoning capability itself causes models to become unsafe**—not because harmful data was used in training, but because the model learned to reason better. CoT has become the standard paradigm for improving reasoning, yet its safety costs have been largely overlooked.
 
-**Root Cause**: Improvements in reasoning capability lead to degraded safety—a fundamental reasoning–safety trade-off. Why does "thinking more" make models more dangerous?
+**Key Challenge**: Improvements in reasoning capability lead to degraded safety—a fundamental reasoning–safety trade-off. Why does "thinking more" make models more dangerous?
 
-**Paper Goals**: (a) Systematically demonstrate the prevalence of RIM across diverse settings; (b) provide a mechanistic explanation of how reasoning undermines safety guardrails.
+**Goal**: (a) Systematically demonstrate the prevalence of RIM across diverse settings; (b) provide a mechanistic explanation of how reasoning undermines safety guardrails.
 
-**Starting Point**: Mechanistic analysis at two levels: attention patterns at inference time and neuron-level representational changes at training time.
+**Key Insight**: Mechanistic analysis at two levels: attention patterns at inference time and neuron-level representational changes at training time.
 
 **Core Idea**: Reasoning and safety are highly entangled at the neuronal level—when reasoning is enhanced, safety-critical neurons are "requisitioned," leading to catastrophic forgetting of safety capabilities.
 

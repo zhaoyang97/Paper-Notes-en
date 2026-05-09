@@ -29,15 +29,15 @@ Proposes the CHEEM framework that leverages hierarchical exploration-exploitatio
 
 ## Background & Motivation
 
-**State of the Field**: ViT-based continual learning has made progress, primarily divided into prompt-based methods (frozen backbone + learned prompts) and parameter-adjustment methods (adapters/masks).
+**Background**: ViT-based continual learning has made progress, primarily divided into prompt-based methods (frozen backbone + learned prompts) and parameter-adjustment methods (adapters/masks).
 
 **Limitations of Prior Work**: (a) Prompt-based methods maintain stability but lack plasticity—frozen backbones cannot adapt to tasks significantly different from pretraining; (b) Parameter-adjustment methods apply uniform operations per layer, ignoring variations in task difficulty/similarity—simple tasks do not need all layers, while difficult tasks may need entirely new layers.
 
-**Root Cause**: Existing methods fix or incrementally increase computation regardless of task difficulty—they lack Skip (simplifying the model for easy tasks) and New (introducing entirely new layers for highly dissimilar tasks) operations.
+**Key Challenge**: Existing methods fix or incrementally increase computation regardless of task difficulty—they lack Skip (simplifying the model for easy tasks) and New (introducing entirely new layers for highly dissimilar tasks) operations.
 
-**Paper Goals**: Learn task-aware dynamic model architectures that automatically allocate Reuse/Adapt/New/Skip operations across layers.
+**Goal**: Learn task-aware dynamic model architectures that automatically allocate Reuse/Adapt/New/Skip operations across layers.
 
-**Starting Point**: Formulate continual learning as a continual memory learning problem, composed of internal parametric memory (NAS-driven dynamic backbone) and external centroid memory (task ID inference).
+**Key Insight**: Formulate continual learning as a continual memory learning problem, composed of internal parametric memory (NAS-driven dynamic backbone) and external centroid memory (task ID inference).
 
 **Core Idea**: Hierarchical exploration-exploitation (HEE) NAS sampling that automatically selects layer operations based on task similarity.
 

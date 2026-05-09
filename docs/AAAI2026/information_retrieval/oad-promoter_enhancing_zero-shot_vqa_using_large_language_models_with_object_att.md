@@ -27,7 +27,7 @@ This paper proposes OAD-Promoter, a framework comprising three collaborative mod
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have become a critical tool for handling knowledge-intensive questions in VQA tasks. Existing LLM-based KBVQA methods (PICa, Prophet, Img2LLM, etc.) have achieved notable results in both few-shot and zero-shot settings.
+**Background**: LLMs have become a critical tool for handling knowledge-intensive questions in VQA tasks. Existing LLM-based KBVQA methods (PICa, Prophet, Img2LLM, etc.) have achieved notable results in both few-shot and zero-shot settings.
 
 **Core Limitation — Language Bias**: Language bias is a persistent problem in VQA. For instance, the dominant answer to "What color...bananas?" in training data is "yellow," and models tend to exploit such superficial correlations rather than genuinely understanding the image. This issue exists not only in conventional VQA models but is **equally severe in LLM-based approaches**, as LLMs inevitably learn spurious correlations (shortcut learning) during large-scale pretraining.
 

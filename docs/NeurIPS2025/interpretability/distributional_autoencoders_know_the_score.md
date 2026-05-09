@@ -27,15 +27,15 @@ This paper establishes rigorous theoretical guarantees for the Distributional Pr
 
 ## Background & Motivation
 
-**State of the Field**: Autoencoders are a cornerstone of unsupervised learning, yet classical variants (AE, VAE) learn only point-estimate reconstructions and offer no guarantees on conditional distributions. DPA is an energy-score-based variant that trains a decoder to match the full conditional distribution of data given a code (the Oracle Reconstructed Distribution, ORD), while the encoder minimizes residual variability—analogous to PCA in a nonlinear setting.
+**Background**: Autoencoders are a cornerstone of unsupervised learning, yet classical variants (AE, VAE) learn only point-estimate reconstructions and offer no guarantees on conditional distributions. DPA is an energy-score-based variant that trains a decoder to match the full conditional distribution of data given a code (the Oracle Reconstructed Distribution, ORD), while the encoder minimizes residual variability—analogous to PCA in a nonlinear setting.
 
 **Limitations of Prior Work**: Despite strong empirical performance—disentangling factors of variation and estimating intrinsic dimensionality—DPA lacked precise theoretical justification. The original paper provided only empirical observations and did not explain why DPA level sets align with the gradient of the data density.
 
-**Root Cause**: Distributional learning and dimensionality reduction are typically conflicting objectives—compressing information inevitably discards distributional detail. It is unclear how a single model can provably achieve both simultaneously.
+**Key Challenge**: Distributional learning and dimensionality reduction are typically conflicting objectives—compressing information inevitably discards distributional detail. It is unclear how a single model can provably achieve both simultaneously.
 
-**Paper Goals**: (a) Characterize the precise relationship between DPA level-set geometry and the score function; (b) Explain why latent coordinates beyond the manifold dimension carry no additional information.
+**Goal**: (a) Characterize the precise relationship between DPA level-set geometry and the score function; (b) Explain why latent coordinates beyond the manifold dimension carry no additional information.
 
-**Starting Point**: Starting from the first variation of the encoder's optimization objective, the paper derives balance equations that establish a pointwise correspondence between level-set normals and the score.
+**Key Insight**: Starting from the first variation of the encoder's optimization objective, the paper derives balance equations that establish a pointwise correspondence between level-set normals and the score.
 
 **Core Idea**: The optimal DPA encoder's level sets are aligned with the data score in the normal space; latent variables beyond intrinsic dimensionality are conditionally independent of the data; a single model simultaneously and provably learns the distribution and the intrinsic dimensionality.
 

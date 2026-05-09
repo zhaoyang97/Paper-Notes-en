@@ -154,7 +154,7 @@ This paper proposes CodeDance, which uses executable code as a general-purpose s
 
 ## Background & Motivation
 
-1. **State of the Field**: o3 demonstrates the ability to "think with tools"—alternating between reasoning and tool use. However, existing open-source methods either rely solely on textual CoT, use fixed schemas (predicting only bbox coordinates), or operate as single-step pipelines.
+1. **Background**: o3 demonstrates the ability to "think with tools"—alternating between reasoning and tool use. However, existing open-source methods either rely solely on textual CoT, use fixed schemas (predicting only bbox coordinates), or operate as single-step pipelines.
 2. **Key Gap**: (1) Pure textual CoT cannot dynamically interact with visual inputs or verify intermediate results; (2) Fixed schemas limit flexibility and composability; (3) o3 is a closed black-box system.
 3. **Core Idea**: Code is the most universal "tool-calling language"—CodeDance enables the MLLM to generate and execute Python code to orchestrate diverse tools, compute intermediate results, and render visual artifacts. RL training reveals **emergent behaviors** (novel tool-calling patterns, compositions, and cross-task transfer not seen during training).
 

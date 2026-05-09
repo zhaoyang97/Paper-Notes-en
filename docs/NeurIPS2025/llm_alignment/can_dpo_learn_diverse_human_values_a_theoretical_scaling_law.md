@@ -29,15 +29,15 @@ This paper establishes a theoretical generalization framework for DPO under dive
 
 ## Background & Motivation
 
-**State of the Field**: DPO has become one of the standard methods for LLM alignment, widely adopted by GPT-4, Claude, Llama, and others. Most theoretical analyses assume that preference data is homogeneous and drawn from a unified reward distribution.
+**Background**: DPO has become one of the standard methods for LLM alignment, widely adopted by GPT-4, Claude, Llama, and others. Most theoretical analyses assume that preference data is homogeneous and drawn from a unified reward distribution.
 
 **Limitations of Prior Work**: Real-world society consists of diverse values—different cultures, personalities, political stances, and moral beliefs give rise to fundamentally distinct preferences. Current DPO practice typically mixes these diverse preferences into a single training dataset, yet a theoretical understanding is lacking: how does value diversity affect generalization performance, and how much data is needed to align $K$ distinct values?
 
-**Root Cause**: Intuitively, more values make learning harder, but what is the precise statistical relationship? Existing generalization theories either assume models are trained to near-optimality (overparameterized regime) or are independent of the training process, neither of which matches the practical setting of LLM fine-tuning that runs for only a few epochs.
+**Key Challenge**: Intuitively, more values make learning harder, but what is the precise statistical relationship? Existing generalization theories either assume models are trained to near-optimality (overparameterized regime) or are independent of the training process, neither of which matches the practical setting of LLM fine-tuning that runs for only a few epochs.
 
-**Paper Goals**: To provide, for the first time, rigorous generalization guarantees and a scaling law for DPO under a finite-gradient-step, multi-value clustering setting.
+**Goal**: To provide, for the first time, rigorous generalization guarantees and a scaling law for DPO under a finite-gradient-step, multi-value clustering setting.
 
-**Starting Point**: The paper leverages the linear representation hypothesis—distinct human values are represented along approximately orthogonal directions in the LLM embedding space. Preference data is modeled as a mixture of $K$ pairs of Gaussian clusters, where each pair corresponds to the aligned/misaligned samples for one value.
+**Key Insight**: The paper leverages the linear representation hypothesis—distinct human values are represented along approximately orthogonal directions in the LLM embedding space. Preference data is modeled as a mixture of $K$ pairs of Gaussian clusters, where each pair corresponds to the aligned/misaligned samples for one value.
 
 **Core Idea**: By tracking the gradient-flow dynamics of the reward margin (the log-likelihood difference between preferred and non-preferred responses) for each sample during DPO training, the paper derives a precise scaling of generalization error with respect to $K$ and per-class sample count $Q$: $\mathcal{R}(\mathcal{P}) \leq 2KQ^2 e^{-Q/45}$.
 

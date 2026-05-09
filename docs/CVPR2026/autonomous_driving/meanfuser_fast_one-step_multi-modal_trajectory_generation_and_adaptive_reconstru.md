@@ -28,15 +28,15 @@ MeanFuser is an end-to-end autonomous driving framework that replaces discrete t
 
 ## Background & Motivation
 
-**State of the Field**: End-to-end autonomous driving learns directly from sensor inputs to planning trajectories. Methods such as TransFuser, UniAD, and VAD perform well with unimodal trajectory prediction but fail to capture the inherently multi-modal nature of driving behavior. VADv2 and Hydra-MDP introduce trajectory vocabulary to predict probability distributions, but a fixed vocabulary involves a trade-off between efficiency and robustness. DiffusionDrive and GoalFlow bring generative models into trajectory planning; however, the former requires multi-step sampling and the latter relies on discrete anchors.
+**Background**: End-to-end autonomous driving learns directly from sensor inputs to planning trajectories. Methods such as TransFuser, UniAD, and VAD perform well with unimodal trajectory prediction but fail to capture the inherently multi-modal nature of driving behavior. VADv2 and Hydra-MDP introduce trajectory vocabulary to predict probability distributions, but a fixed vocabulary involves a trade-off between efficiency and robustness. DiffusionDrive and GoalFlow bring generative models into trajectory planning; however, the former requires multi-step sampling and the latter relies on discrete anchors.
 
 **Limitations of Prior Work**: (1) **Inherent limitations of discrete anchor vocabularies** — a vocabulary must be large enough to cover the trajectory distribution at test time, yet large vocabularies slow down inference. When test scenarios fall outside the predefined anchor distribution, all proposals deviate from the optimal trajectory. (2) **Computational overhead of multi-step sampling** — flow matching requires multiple ODE solver steps (e.g., GoalFlow needs 5 steps) to achieve optimal performance, and the ODE solver introduces numerical errors that curve the sampling path. (3) **Mode collapse from standard Gaussian noise** — vanilla methods sample from a standard Gaussian, leading to insufficient trajectory diversity.
 
-**Root Cause**: How can multi-modal driving behavior be effectively modeled without relying on a fixed discrete vocabulary, while maintaining high inference efficiency?
+**Key Challenge**: How can multi-modal driving behavior be effectively modeled without relying on a fixed discrete vocabulary, while maintaining high inference efficiency?
 
-**Paper Goals**: (1) Eliminate dependence on discrete trajectory vocabularies; (2) achieve high-quality one-step sampling; (3) handle cases where all sampled proposals are suboptimal.
+**Goal**: (1) Eliminate dependence on discrete trajectory vocabularies; (2) achieve high-quality one-step sampling; (3) handle cases where all sampled proposals are suboptimal.
 
-**Starting Point**: Introduce the MeanFlow Identity into end-to-end planning. MeanFlow directly models the mean velocity field between the noise distribution and the trajectory distribution rather than the instantaneous velocity field, enabling exact single-step sampling without numerical error. A Gaussian mixture model is used as the prior distribution, with each component capturing one driving mode.
+**Key Insight**: Introduce the MeanFlow Identity into end-to-end planning. MeanFlow directly models the mean velocity field between the noise distribution and the trajectory distribution rather than the instantaneous velocity field, enabling exact single-step sampling without numerical error. A Gaussian mixture model is used as the prior distribution, with each component capturing one driving mode.
 
 **Core Idea**: Replace anchors with Gaussian mixture noise, replace multi-step ODE solving with MeanFlow, and replace score-based selection with an adaptive reconstruction module — three complementary designs for fast and robust multi-modal trajectory planning.
 

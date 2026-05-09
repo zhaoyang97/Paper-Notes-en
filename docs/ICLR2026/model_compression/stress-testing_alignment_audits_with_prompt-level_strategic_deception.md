@@ -28,15 +28,15 @@ This paper constructs an automated prompt-level red-teaming pipeline (powered by
 
 ## Background & Motivation
 
-**State of the Field**: Alignment auditing aims to robustly identify hidden behaviors in models that may strategically conceal their objectives. Existing methods include black-box approaches (assistant prefill, user persona sampling) and white-box approaches (SAE feature description, token embedding similarity).
+**Background**: Alignment auditing aims to robustly identify hidden behaviors in models that may strategically conceal their objectives. Existing methods include black-box approaches (assistant prefill, user persona sampling) and white-box approaches (SAE feature description, token embedding similarity).
 
 **Limitations of Prior Work**: (1) Prior evaluations only train models to refuse queries or to resist specific attacks—no method-aware adversarial evaluation has been conducted; (2) previous stress tests (Li et al. 2025) examined only black-box methods on in-context model organisms, without addressing white-box auditing; (3) a genuinely dangerous misaligned model should simultaneously possess situational awareness (knowledge of auditing methods), strategic reasoning (ability to design evasion strategies), and hidden goals (motivation to evade audits).
 
-**Root Cause**: Auditing methods claim robustness against strategic adversaries, yet have never been validated under method-aware adversarial conditions.
+**Key Challenge**: Auditing methods claim robustness against strategic adversaries, yet have never been validated under method-aware adversarial conditions.
 
-**Paper Goals**: To systematically evaluate whether existing black-box and white-box alignment auditing methods remain effective against models equipped with situational awareness and strategic reasoning.
+**Goal**: To systematically evaluate whether existing black-box and white-box alignment auditing methods remain effective against models equipped with situational awareness and strategic reasoning.
 
-**Starting Point**: A red-teaming LLM (Claude Opus 4.5) generates system prompts to augment the deceptive capabilities of fine-tuned model organisms—offering a low-cost simulation of high-capability threat models.
+**Key Insight**: A red-teaming LLM (Claude Opus 4.5) generates system prompts to augment the deceptive capabilities of fine-tuned model organisms—offering a low-cost simulation of high-capability threat models.
 
 **Core Idea**: Prompt-level deception strategies alone are sufficient to defeat current black-box and white-box auditing methods—truly misaligned models could potentially do even better.
 

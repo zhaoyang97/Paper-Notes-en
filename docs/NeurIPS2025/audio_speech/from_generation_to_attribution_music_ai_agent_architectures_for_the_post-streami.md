@@ -29,7 +29,7 @@ This paper proposes a content-based Music AI Agent architecture that decomposes 
 
 ## Background & Motivation
 
-**State of the Field**: Generative AI is reshaping music creation, but its rapid growth has exposed structural deficiencies in attribution, copyright management, and economic models. Unlike previous media transformations (from live performance to recording, downloading, and streaming), AI disrupts the entire music lifecycle—the boundaries between creation, distribution, and monetization are thoroughly dissolved.
+**Background**: Generative AI is reshaping music creation, but its rapid growth has exposed structural deficiencies in attribution, copyright management, and economic models. Unlike previous media transformations (from live performance to recording, downloading, and streaming), AI disrupts the entire music lifecycle—the boundaries between creation, distribution, and monetization are thoroughly dissolved.
 
 **Limitations of Prior Work**: Current streaming systems (e.g., Spotify, Apple Music) suffer from opaque and highly centralized royalty distribution, unable to handle the complexity introduced by AI-driven large-scale music production. Specifically:
 
@@ -37,7 +37,7 @@ This paper proposes a content-based Music AI Agent architecture that decomposes 
 2. **Outdated Royalty Models**: Existing play-count-based royalty distribution cannot accommodate AI-collaborative creation scenarios.
 3. **Scale Challenges**: AI can generate music content at scale and speed that existing systems cannot efficiently handle.
 
-**Root Cause**: A system-level solution is needed to embed attribution mechanisms into the AI music creation pipeline at the architectural level, rather than applying remedies after the fact.
+**Key Challenge**: A system-level solution is needed to embed attribution mechanisms into the AI music creation pipeline at the architectural level, rather than applying remedies after the fact.
 
 ## Method
 

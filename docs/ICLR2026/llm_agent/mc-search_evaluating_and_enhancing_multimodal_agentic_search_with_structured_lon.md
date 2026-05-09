@@ -27,15 +27,15 @@ content_hash: 8cb4c108d08f9300
 This paper proposes MC-Search, the first benchmark for agentic multimodal RAG, comprising 3,333 high-quality samples (averaging 3.7 hops) across 5 reasoning topology types. The benchmark employs HAVE verification to ensure the necessity of each reasoning step, and introduces the Search-Align process-supervised fine-tuning framework, which substantially improves retrieval planning in open-source models (Qwen2.5-VL-7B F1 +13.7).
 
 ## Background & Motivation
-**State of the Field**: Multimodal large language models (MLLMs) are evolving from fixed retrieve-then-generate paradigms toward more complex agentic multimodal retrieval-augmented generation (MM-RAG), requiring models to iteratively decompose queries, adaptively retrieve across modalities, and integrate multimodal evidence.
+**Background**: Multimodal large language models (MLLMs) are evolving from fixed retrieve-then-generate paradigms toward more complex agentic multimodal retrieval-augmented generation (MM-RAG), requiring models to iteratively decompose queries, adaptively retrieve across modalities, and integrate multimodal evidence.
 
 **Limitations of Prior Work**: Existing MM-RAG benchmarks exhibit three critical limitations: (a) most adopt simple QA formats that compress multimodal evidence into text-only pipelines (e.g., MRAG); (b) evaluation is restricted to shallow 1–2-hop retrieval without long reasoning chains (e.g., Dyn-VQA); (c) step-level annotations and explicit reasoning topologies are absent, precluding analysis of modality roles during reasoning.
 
-**Root Cause**: Real-world queries are typically ambiguous and complex, demanding multi-step, cross-modal, knowledge-intensive reasoning. Yet no suitable benchmark exists to evaluate whether MLLMs can perform long-chain, structured multimodal search reasoning.
+**Key Challenge**: Real-world queries are typically ambiguous and complex, demanding multi-step, cross-modal, knowledge-intensive reasoning. Yet no suitable benchmark exists to evaluate whether MLLMs can perform long-chain, structured multimodal search reasoning.
 
-**Paper Goals**: (a) Construct the first multimodal agentic RAG benchmark supporting long reasoning chains (≥4 hops); (b) provide step-level annotations and diverse reasoning topologies; (c) design process-level evaluation metrics; (d) leverage verified reasoning chains to improve open-source models.
+**Goal**: (a) Construct the first multimodal agentic RAG benchmark supporting long reasoning chains (≥4 hops); (b) provide step-level annotations and diverse reasoning topologies; (c) design process-level evaluation metrics; (d) leverage verified reasoning chains to improve open-source models.
 
-**Starting Point**: The authors build multimodal knowledge clusters from Wikipedia, define 5 representative reasoning topology structures (serial/parallel, image-initiated/text-initiated/multi-image fork, etc.), and apply HAVE filtering to ensure each reasoning step is both necessary and non-redundant.
+**Key Insight**: The authors build multimodal knowledge clusters from Wikipedia, define 5 representative reasoning topology structures (serial/parallel, image-initiated/text-initiated/multi-image fork, etc.), and apply HAVE filtering to ensure each reasoning step is both necessary and non-redundant.
 
 **Core Idea**: Long-chain multi-hop reasoning + 5 reasoning topologies + HAVE verification + process-level metrics + Search-Align fine-tuning = comprehensive evaluation and improvement of agentic MM-RAG.
 

@@ -34,11 +34,11 @@ This paper proposes QiMeng-SALV, a signal-aware learning method that extracts fu
 
 ### State of the Field
 
-**State of the Field**: Existing RL methods rely on code structural similarity as rewards; however, a given functionality can be correctly implemented in multiple structurally distinct ways.
+**Background**: Existing RL methods rely on code structural similarity as rewards; however, a given functionality can be correctly implemented in multiple structurally distinct ways.
 
 ### Root Cause
 
-**Root Cause**: Using functional correctness as a reward is more principled, yet insufficient training data during the SFT stage makes it difficult for models to generate entirely correct modules.
+**Key Challenge**: Using functional correctness as a reward is more principled, yet insufficient training data during the SFT stage makes it difficult for models to generate entirely correct modules.
 
 ### Solution
 

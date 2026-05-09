@@ -28,13 +28,13 @@ This paper analyzes the root cause of instability in cascaded image restoration 
 
 ## Background & Motivation
 
-**State of the Field**: Object detection under adverse conditions typically adopts a "restore-then-detect" cascaded pipeline, yet the effectiveness of such cascades remains limited.
+**Background**: Object detection under adverse conditions typically adopts a "restore-then-detect" cascaded pipeline, yet the effectiveness of such cascades remains limited.
 
 **Limitations of Prior Work**: Minor noise introduced by the restoration network is amplified within the detection network, leading to unstable predictions. Although methods such as adversarial training and feature enhancement have been proposed, the functional mismatch between restoration and detection networks remains underexplored.
 
-**Root Cause**: Restoration networks perform smooth, continuous pixel-level transformations (low Lipschitz constant), whereas detection networks exhibit discontinuous decision boundaries (high Lipschitz constant, nearly an order of magnitude larger). This discrepancy is amplified when the two are cascaded.
+**Key Challenge**: Restoration networks perform smooth, continuous pixel-level transformations (low Lipschitz constant), whereas detection networks exhibit discontinuous decision boundaries (high Lipschitz constant, nearly an order of magnitude larger). This discrepancy is amplified when the two are cascaded.
 
-**Paper Goals**: To understand the root cause of instability through Lipschitz continuity analysis and to design a method that harmonizes the functional behaviors of the two tasks.
+**Goal**: To understand the root cause of instability through Lipschitz continuity analysis and to design a method that harmonizes the functional behaviors of the two tasks.
 
 **Core Idea**: The low-Lipschitz property of image restoration is exploited as a regularization signal. By sharing the backbone, restoration learning is directly integrated into the detector's feature space, thereby reducing the Lipschitz constant of the detection network.
 

@@ -28,15 +28,15 @@ Through theoretical analysis and empirical experiments, this paper demonstrates 
 
 ## Background & Motivation
 
-**State of the Field**: Influence functions are a key tool for measuring the impact of training data on model decisions (TracIn, DataInf, Cosine, etc.). Due to the massive parameter counts of modern LLMs, influence is typically computed over a subset of layers for practical feasibility.
+**Background**: Influence functions are a key tool for measuring the impact of training data on model decisions (TracIn, DataInf, Cosine, etc.). Due to the massive parameter counts of modern LLMs, influence is typically computed over a subset of layers for practical feasibility.
 
 **Limitations of Prior Work**: Yeh et al. (2022) concluded, based on the "cancellation effect" hypothesis, that the first layer (word embedding) is most suitable for influence estimation. However, this conclusion was validated only on small-scale models (RoBERTa) with a single method (TracIn), and the reliability of the cancellation effect itself has never been rigorously examined.
 
-**Root Cause**: The cancellation effect metric $C(W)$ aggregates the norms of parameter subsets to measure gradient cancellation, but this aggregation can mask extreme cancellation at individual parameters, making the metric an unreliable predictor of a layer's actual influence performance. Moreover, standard mean aggregation may reduce discriminative ability due to cancellation effects across layers.
+**Key Challenge**: The cancellation effect metric $C(W)$ aggregates the norms of parameter subsets to measure gradient cancellation, but this aggregation can mask extreme cancellation at individual parameters, making the metric an unreliable predictor of a layer's actual influence performance. Moreover, standard mean aggregation may reduce discriminative ability due to cancellation effects across layers.
 
-**Paper Goals**: (RQ1) Is the cancellation effect reliable? (RQ2) Which layers are best suited for influence estimation? (RQ3) How can influence scores be better aggregated across layers? (RQ4) Does a proxy metric exist that can evaluate influence methods without retraining?
+**Goal**: (RQ1) Is the cancellation effect reliable? (RQ2) Which layers are best suited for influence estimation? (RQ3) How can influence scores be better aggregated across layers? (RQ4) Does a proxy metric exist that can evaluate influence methods without retraining?
 
-**Starting Point**: The paper begins by theoretically constructing a counterexample to the cancellation effect, then conducts large-scale experiments across multiple models and datasets to systematically evaluate layer selection and aggregation strategies.
+**Key Insight**: The paper begins by theoretically constructing a counterexample to the cancellation effect, then conducts large-scale experiments across multiple models and datasets to systematically evaluate layer selection and aggregation strategies.
 
 **Core Idea**: Intermediate attention layers are more suitable than embedding layers for influence estimation; Vote aggregation substantially outperforms mean aggregation; and NDR serves as a reliable proxy metric that requires no retraining.
 

@@ -37,7 +37,7 @@ Existing visual representation learning methods fall into two major paradigms:
 
 Video constitutes the largest source of big data on the internet, and its temporal structure is naturally suited to autoregressive modeling. However, prior visual autoregressive works (e.g., iGPT) operate at the pixel level, incurring prohibitive computational costs and limited scalability.
 
-The **Starting Point** of Toto is to discretize video frames into visual token sequences via a tokenizer, then perform causal next-token prediction analogously to language model training. This enables images and videos to be jointly trained under a unified format, leveraging mature training techniques and scaling insights from the language modeling community.
+The **Key Insight** of Toto is to discretize video frames into visual token sequences via a tokenizer, then perform causal next-token prediction analogously to language model training. This enables images and videos to be jointly trained under a unified format, leveraging mature training techniques and scaling insights from the language modeling community.
 
 ## Method
 

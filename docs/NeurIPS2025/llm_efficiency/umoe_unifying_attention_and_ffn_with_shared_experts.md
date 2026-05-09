@@ -29,15 +29,15 @@ By reformulating the multi-head attention mechanism, this work reveals that atte
 
 ## Background & Motivation
 
-**State of the Field**: Sparse MoE is the dominant paradigm for scaling LLM capacity. Two main lines of research exist: FFN-MoE (Switch Transformer, DeepSeek-MoE), which replaces FFN layers with MoE, and Attention-MoE (MoA, SwitchHead), which replaces attention layers with MoE. These two lines have developed independently, employing different expert designs.
+**Background**: Sparse MoE is the dominant paradigm for scaling LLM capacity. Two main lines of research exist: FFN-MoE (Switch Transformer, DeepSeek-MoE), which replaces FFN layers with MoE, and Attention-MoE (MoA, SwitchHead), which replaces attention layers with MoE. These two lines have developed independently, employing different expert designs.
 
 **Limitations of Prior Work**: Attention-MoE consistently underperforms FFN-MoE — under matched parameter and compute budgets, both MoA and SwitchHead fall short of fine-grained FFN-MoE. The performance gap stems from two factors: (a) the structural difference between attention and FFN layers leads to divergent expert designs; (b) introducing sparsity into attention-MoE requires sacrificing the expressiveness of standard attention (e.g., MoA must share K/V projections, limiting per-head independence).
 
-**Root Cause**: Attention appears to involve multiple projections and softmax nonlinearity, making it structurally distinct from the "two-layer matrix multiplication" of FFN. The question is whether an equivalent reformulation exists that unifies the two.
+**Key Challenge**: Attention appears to involve multiple projections and softmax nonlinearity, making it structurally distinct from the "two-layer matrix multiplication" of FFN. The question is whether an equivalent reformulation exists that unifies the two.
 
-**Paper Goals**: (a) Can attention be restructured to expose an FFN-like internal structure? (b) Can the same expert design serve both attention and FFN layers, enabling parameter sharing?
+**Goal**: (a) Can attention be restructured to expose an FFN-like internal structure? (b) Can the same expert design serve both attention and FFN layers, enabling parameter sharing?
 
-**Starting Point**: After decomposing $W_o$ per head in multi-head attention, the order of matrix multiplication is rearranged — token mixing (weighted aggregation) is performed first, followed by the $W_v W_o$ projection. This transforms the "projection component" of attention into the same two-layer structure as FFN.
+**Key Insight**: After decomposing $W_o$ per head in multi-head attention, the order of matrix multiplication is rearranged — token mixing (weighted aggregation) is performed first, followed by the $W_v W_o$ projection. This transforms the "projection component" of attention into the same two-layer structure as FFN.
 
 **Core Idea**: Attention = token mixing + FFN-like expert processing. FFN = self-attention (identity attention matrix) + FFN-like expert processing. The two differ only in the token mixing operation, and experts can therefore be shared.
 

@@ -29,7 +29,7 @@ This paper proposes MASS (Meta-Adaptation with Self-Synthesis), a framework that
 
 ## Background & Motivation
 
-**State of the Field**: Deployed LLMs are static and unable to adapt to new tasks or domains. Test-time training (TTT) addresses this by performing gradient updates at inference time, but naïve implementations (e.g., LoRA updates on generic data) tend to introduce distribution shift and degrade performance. Methods such as Self-Instruct and STaR enable models to self-generate synthetic data, yet cannot determine which samples are truly beneficial for the target task.
+**Background**: Deployed LLMs are static and unable to adapt to new tasks or domains. Test-time training (TTT) addresses this by performing gradient updates at inference time, but naïve implementations (e.g., LoRA updates on generic data) tend to introduce distribution shift and degrade performance. Methods such as Self-Instruct and STaR enable models to self-generate synthetic data, yet cannot determine which samples are truly beneficial for the target task.
 
 **Limitations of Prior Work**:
 
@@ -38,9 +38,9 @@ This paper proposes MASS (Meta-Adaptation with Self-Synthesis), a framework that
 3. No end-to-end learning framework exists to jointly optimize "what data to generate → how to filter → how to update"
 4. High-quality task-specific supervision is scarce, necessitating data-efficient adaptation strategies
 
-**Root Cause**: While models are capable of self-generating training data, they lack the means to determine what data is actually useful. What is needed is "learning to learn"—meta-learning how to generate and select optimal adaptation data.
+**Key Challenge**: While models are capable of self-generating training data, they lack the means to determine what data is actually useful. What is needed is "learning to learn"—meta-learning how to generate and select optimal adaptation data.
 
-**Paper Goals**: This paper formulates test-time adaptation as a bilevel optimization problem: the inner loop performs SFT LoRA updates on self-generated, weighted data, while the outer loop optimizes the data generation and scoring modules via meta-gradients.
+**Goal**: This paper formulates test-time adaptation as a bilevel optimization problem: the inner loop performs SFT LoRA updates on self-generated, weighted data, while the outer loop optimizes the data generation and scoring modules via meta-gradients.
 
 ## Method
 

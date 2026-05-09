@@ -31,11 +31,11 @@ This paper proposes ScleraGluNet, which captures scleral blood vessel photograph
 
 **Limitations of Prior Work**: The 537 million diabetic patients worldwide require frequent blood glucose monitoring. Laboratory tests (FPG, HbA1c) are accurate but require venipuncture, making daily self-monitoring impractical. Fingerstick sampling is painful and carries infection risk, leading to poor adherence. Continuous glucose monitoring (CGM) is convenient but requires subcutaneous sensor implantation at considerable cost. Non-invasive blood glucose monitoring thus represents a major unmet clinical need.
 
-**State of the Field**: Chronic hyperglycemia induces microvascular remodeling—including changes in vessel diameter, increased tortuosity, and perfusion abnormalities—making scleral vasculature a natural metabolic window. Compared to retinal imaging, which requires a specialized fundus camera, **scleral/conjunctival vessel imaging requires only a standard anterior-segment camera**, lowering equipment costs and simplifying operation, making it suitable for telemedicine and large-scale screening. Prior OCTA studies have confirmed the association between scleral microvasculature and diabetes.
+**Background**: Chronic hyperglycemia induces microvascular remodeling—including changes in vessel diameter, increased tortuosity, and perfusion abnormalities—making scleral vasculature a natural metabolic window. Compared to retinal imaging, which requires a specialized fundus camera, **scleral/conjunctival vessel imaging requires only a standard anterior-segment camera**, lowering equipment costs and simplifying operation, making it suitable for telemedicine and large-scale screening. Prior OCTA studies have confirmed the association between scleral microvasculature and diabetes.
 
-**Root Cause**: (1) Existing methods rely on a single gaze direction, yet diabetes-induced microvascular changes are spatially heterogeneous—the degree of vascular abnormality differs across the superior, inferior, nasal, and temporal sclera—so single-view acquisition misses critical information; (2) the complementary relationships among multi-view features have not been adequately exploited.
+**Key Challenge**: (1) Existing methods rely on a single gaze direction, yet diabetes-induced microvascular changes are spatially heterogeneous—the degree of vascular abnormality differs across the superior, inferior, nasal, and temporal sclera—so single-view acquisition misses critical information; (2) the complementary relationships among multi-view features have not been adequately exploited.
 
-**Paper Goals**: The core idea is to achieve **full scleral coverage through multi-directional acquisition combined with a deep multi-view fusion architecture**.
+**Goal**: The core idea is to achieve **full scleral coverage through multi-directional acquisition combined with a deep multi-view fusion architecture**.
 
 ## Method
 

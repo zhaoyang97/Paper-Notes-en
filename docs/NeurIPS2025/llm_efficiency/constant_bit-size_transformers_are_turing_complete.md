@@ -27,15 +27,15 @@ content_hash: fc516acff5246a70
 This paper provides the first proof that a Transformer with constant bit-size precision and a fixed number of parameters — permitting only context window growth — is Turing complete. It establishes the exact complexity equivalence WINDOW[s(n)] = SPACE[s(n)], demonstrating that expanding the context window, rather than model size, suffices for universal computation.
 
 ## Background & Motivation
-**State of the Field**: CoT-based Transformers have been shown to be Turing complete; however, all prior proofs require the model's bit-size to grow with input length — either precision must scale as $O(\log t(n))$ bits, or the embedding dimension must scale as $O(\log t(n))$.
+**Background**: CoT-based Transformers have been shown to be Turing complete; however, all prior proofs require the model's bit-size to grow with input length — either precision must scale as $O(\log t(n))$ bits, or the embedding dimension must scale as $O(\log t(n))$.
 
 **Limitations of Prior Work**: Bit-size growing with input length implies that processing longer inputs requires larger models, posing a principled obstacle for AGI systems pursuing lifelong learning, where input length grows unboundedly as the system interacts with an ever-expanding environment.
 
-**Root Cause**: Is scaling model precision or parameters a necessary condition for handling longer inputs?
+**Key Challenge**: Is scaling model precision or parameters a necessary condition for handling longer inputs?
 
-**Paper Goals**: To prove that model bit-size need not grow, and that expanding the context window alone suffices to simulate arbitrary Turing machines.
+**Goal**: To prove that model bit-size need not grow, and that expanding the context window alone suffices to simulate arbitrary Turing machines.
 
-**Starting Point**: The behavior of a Post Machine — a queue-based Turing-equivalent model — exhibits a natural structural correspondence with Transformer autoregressive decoding, wherein the context window can be viewed as a queue.
+**Key Insight**: The behavior of a Post Machine — a queue-based Turing-equivalent model — exhibits a natural structural correspondence with Transformer autoregressive decoding, wherein the context window can be viewed as a queue.
 
 **Core Idea**: Turing completeness is achieved by constructing a constant-precision single-layer Transformer that simulates a Post Machine (queue automaton) rather than a conventional Turing machine.
 

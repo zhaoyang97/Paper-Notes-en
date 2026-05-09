@@ -29,15 +29,15 @@ This paper proposes ACAM-KD, which introduces two modules — Student-Teacher Cr
 
 ## Background & Motivation
 
-1. **State of the Field**: Knowledge distillation (KD) is a mainstream technique for model compression. Feature distillation is particularly well-suited for dense prediction tasks such as detection and segmentation, as it preserves spatial information by transferring intermediate feature representations.
+1. **Background**: Knowledge distillation (KD) is a mainstream technique for model compression. Feature distillation is particularly well-suited for dense prediction tasks such as detection and segmentation, as it preserves spatial information by transferring intermediate feature representations.
 
 2. **Limitations of Prior Work**: Existing feature distillation methods rely on fixed, teacher-driven feature selection strategies. FKD uses high-attention regions of the teacher; FGD combines ground-truth bounding boxes with global context; MasKD employs teacher features to offline-learn token-based masks. These approaches share common issues: (1) masks remain identical across epochs for the same image, ignoring student progress; (2) regions deemed important by the teacher are not necessarily what the student currently needs most; (3) only the spatial dimension is considered, neglecting the channel dimension.
 
-3. **Root Cause**: Through visualization, the authors observe a striking phenomenon — at epoch 12, the student's attention focuses on foreground objects better than the teacher's, yet by epoch 24, the student is forced to regress toward the same fixed attention pattern as the teacher. This suggests that fixed teacher-driven distillation may in fact constrain or even harm student learning.
+3. **Key Challenge**: Through visualization, the authors observe a striking phenomenon — at epoch 12, the student's attention focuses on foreground objects better than the teacher's, yet by epoch 24, the student is forced to regress toward the same fixed attention pattern as the teacher. This suggests that fixed teacher-driven distillation may in fact constrain or even harm student learning.
 
-4. **Paper Goals**: To design an adaptive, dynamically evolving distillation masking mechanism that adjusts the distillation focus regions in real time based on the interactive state between student and teacher.
+4. **Goal**: To design an adaptive, dynamically evolving distillation masking mechanism that adjusts the distillation focus regions in real time based on the interactive state between student and teacher.
 
-5. **Starting Point**: Distillation should be a collaborative process between student and teacher rather than unilateral instruction from the teacher. Cross-attention between their features produces masks that naturally reflect the joint state of both parties.
+5. **Key Insight**: Distillation should be a collaborative process between student and teacher rather than unilateral instruction from the teacher. Cross-attention between their features produces masks that naturally reflect the joint state of both parties.
 
 6. **Core Idea**: Cross-attention fusion — with teacher features as queries and student features as keys/values — produces a student-teacher interaction feature, upon which learnable selection units dynamically generate dual-dimensional (spatial and channel) distillation masks.
 

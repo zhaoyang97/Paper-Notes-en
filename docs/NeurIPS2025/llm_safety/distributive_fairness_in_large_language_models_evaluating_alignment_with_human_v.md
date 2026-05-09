@@ -28,15 +28,15 @@ This paper systematically evaluates the distributive fairness preferences of sev
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly deployed in social and economic decision-making contexts, and their potential as social planners has attracted considerable attention. Distributive fairness—how to equitably allocate resources among multiple individuals—is a central concern in social science and algorithmic decision-making.
+**Background**: LLMs are increasingly deployed in social and economic decision-making contexts, and their potential as social planners has attracted considerable attention. Distributive fairness—how to equitably allocate resources among multiple individuals—is a central concern in social science and algorithmic decision-making.
 
 **Limitations of Prior Work**: Existing studies have focused primarily on LLM behavior in game-theoretic settings (e.g., prisoner's dilemma, ultimatum game), leaving fairness in non-strategic resource allocation (i.e., the social planner role) largely unexplored.
 
-**Root Cause**: Fairness itself lacks a unified definition—equality (EQ), envy-freeness (EF), and Rawlsian maximin (RMM) can conflict with one another. It remains unclear whether LLMs' preference ordering aligns with that of humans.
+**Key Challenge**: Fairness itself lacks a unified definition—equality (EQ), envy-freeness (EF), and Rawlsian maximin (RMM) can conflict with one another. It remains unclear whether LLMs' preference ordering aligns with that of humans.
 
-**Paper Goals**: Do LLMs align with human values in resource allocation? Which fairness axioms govern their behavior? What are the sources of misalignment?
+**Goal**: Do LLMs align with human values in resource allocation? Which fairness axioms govern their behavior? What are the sources of misalignment?
 
-**Starting Point**: The paper draws on the classic human experiment dataset from Herreiner & Puppe (2010), designing allocation instances involving indivisible goods (with and without money) to construct tradeoff scenarios between fairness and efficiency.
+**Key Insight**: The paper draws on the classic human experiment dataset from Herreiner & Puppe (2010), designing allocation instances involving indivisible goods (with and without money) to construct tradeoff scenarios between fairness and efficiency.
 
 **Core Idea**: Humans prioritize equality (EQ), whereas LLMs prioritize economic efficiency (PO/USW) and envy-freeness (EF). However, when LLMs select from predefined options rather than generating allocations freely, GPT-4o and Claude correctly identify the fairest allocation in the majority of cases.
 

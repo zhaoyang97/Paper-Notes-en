@@ -29,11 +29,11 @@ This paper proposes Dita (Diffusion Transformer Policy), which, unlike prior met
 
 ## Background & Motivation
 
-- **State of the Field**: Generalist robot policies have advanced through pretraining on large-scale cross-embodiment datasets such as OXE.
+- **Background**: Generalist robot policies have advanced through pretraining on large-scale cross-embodiment datasets such as OXE.
 - **Limitations of Prior Work**: (1) Discretized actions (e.g., OpenVLA) limit adaptability to heterogeneous action spaces; (2) methods using MLP or small DiT diffusion heads (e.g., Octo, π₀) lack sufficient expressiveness under the diversity of large-scale data; (3) denoising on embeddings discards visual details from historical observations.
-- **Root Cause**: Heterogeneous cross-embodiment action spaces conflict with the need for a unified policy representation.
-- **Paper Goals**: Design an expressive, scalable generalist robot policy architecture.
-- **Starting Point**: Place action denoising directly inside a causal Transformer that interacts with visual tokens.
+- **Key Challenge**: Heterogeneous cross-embodiment action spaces conflict with the need for a unified policy representation.
+- **Goal**: Design an expressive, scalable generalist robot policy architecture.
+- **Key Insight**: Place action denoising directly inside a causal Transformer that interacts with visual tokens.
 - **Core Idea**: Action denoising should not operate on compressed embeddings but should instead perform in-context attention directly over raw visual patch tokens.
 
 ## Method

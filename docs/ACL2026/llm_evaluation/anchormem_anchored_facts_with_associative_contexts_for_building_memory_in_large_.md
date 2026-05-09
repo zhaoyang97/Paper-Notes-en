@@ -29,15 +29,15 @@ This paper proposes AnchorMem, a memory framework inspired by the Proustian phen
 
 ## Background & Motivation
 
-**State of the Field**: LLMs require memory systems to leverage historical experience in long-term multi-turn interactions. Existing approaches fall into two main categories: generative memory systems (A-Mem, Mem0), which integrate new information through frequent rewriting, and graph-indexing methods (GraphRAG, HippoRAG 2), which structure knowledge via entity-relation graphs.
+**Background**: LLMs require memory systems to leverage historical experience in long-term multi-turn interactions. Existing approaches fall into two main categories: generative memory systems (A-Mem, Mem0), which integrate new information through frequent rewriting, and graph-indexing methods (GraphRAG, HippoRAG 2), which structure knowledge via entity-relation graphs.
 
 **Limitations of Prior Work**: Generative memory systems suffer from "context blurring"—frequent rewriting dilutes or loses the nuanced context of original interactions. Graph-indexing methods suffer from "spurious connections"—high-frequency but semantically general entities (e.g., "oil") create misleading bridges that cause retrieval paths to incorrectly conflate unrelated events.
 
-**Root Cause**: There exists a fundamental tension between fine-grained retrieval (requiring precise retrieval units) and contextual integrity (requiring preservation of original interaction context). Existing methods either sacrifice contextual fidelity for retrieval efficiency or introduce noisy connections through over-structuring.
+**Key Challenge**: There exists a fundamental tension between fine-grained retrieval (requiring precise retrieval units) and contextual integrity (requiring preservation of original interaction context). Existing methods either sacrifice contextual fidelity for retrieval efficiency or introduce noisy connections through over-structuring.
 
-**Paper Goals**: Design a memory framework that achieves precise atomic-level retrieval while preserving the integrity of original interaction context.
+**Goal**: Design a memory framework that achieves precise atomic-level retrieval while preserving the integrity of original interaction context.
 
-**Starting Point**: Inspired by the "Proustian phenomenon" in cognitive science—whereby a specific sensory cue triggers complete episodic recall—the paper explicitly decouples retrieval anchors from generation contexts.
+**Key Insight**: Inspired by the "Proustian phenomenon" in cognitive science—whereby a specific sensory cue triggers complete episodic recall—the paper explicitly decouples retrieval anchors from generation contexts.
 
 **Core Idea**: Extract atomic facts as retrieval anchors, preserve original interactions as immutable context, and establish cross-memory logical connections through an associative event graph.
 

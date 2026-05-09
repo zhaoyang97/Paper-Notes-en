@@ -28,15 +28,15 @@ This paper proposes the AWN framework, which automatically learns the unbounded 
 
 ## Background & Motivation
 
-**State of the Field**: For nearly 70 years, layer widths in neural networks have relied on manual selection or hyperparameter search (grid search/NAS), remaining a fundamental open problem in deep learning.
+**Background**: For nearly 70 years, layer widths in neural networks have relied on manual selection or hyperparameter search (grid search/NAS), remaining a fundamental open problem in deep learning.
 
 **Limitations of Prior Work**: The search space for width as a hyperparameter grows exponentially with depth; in practice, the simplified strategy of using the same width for all layers is commonly adopted. For foundation models with billions of parameters, the computational cost of hyperparameter tuning is entirely prohibitive.
 
-**Root Cause**: Networks need to be "wide enough" to learn good representations, yet "too wide" wastes resources. Existing methods either search over a fixed width space (NAS) or require separate training-pruning pipelines (pruning/distillation).
+**Key Challenge**: Networks need to be "wide enough" to learn good representations, yet "too wide" wastes resources. Existing methods either search over a fixed width space (NAS) or require separate training-pruning pipelines (pruning/distillation).
 
-**Paper Goals**: Can each layer's width automatically grow or shrink via gradient descent in a single training run, without requiring a predefined upper bound?
+**Goal**: Can each layer's width automatically grow or shrink via gradient descent in a single training run, without requiring a predefined upper bound?
 
-**Starting Point**: A latent variable $\lambda_\ell$ is introduced to control the truncation width of each layer, and a monotonically decreasing importance distribution imposes an ordering on neurons—lower-index neurons are more important, higher-index neurons less so, and newly added neurons naturally occupy low-importance positions.
+**Key Insight**: A latent variable $\lambda_\ell$ is introduced to control the truncation width of each layer, and a monotonically decreasing importance distribution imposes an ordering on neurons—lower-index neurons are more important, higher-index neurons less so, and newly added neurons naturally occupy low-importance positions.
 
 **Core Idea**: Width learning is formalized as a variational inference problem, jointly optimizing width parameters and network weights through an ELBO objective.
 

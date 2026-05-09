@@ -30,18 +30,18 @@ This paper systematically evaluates vanilla KAN as a drop-in replacement for MLP
 
 ## Background & Motivation
 
-**State of the Field**: Hard-Constrained Recurrent Physics-Informed Neural Networks (HRPINN) embed known physics into a recurrent integrator, leaving the neural network to learn only the residual dynamics — this ensures physical consistency and has been validated in cyber-physical systems. Meanwhile, Kolmogorov-Arnold Networks (KAN), grounded in the Kolmogorov-Arnold representation theorem, decompose multivariate functions into sums of univariate functions $\Phi(\mathbf{x}) = \sum_q \phi_q(\sum_p \psi_{q,p}(x_p))$, replacing MLP's fixed activation functions with learnable B-splines, and have shown promise in scientific ML.
+**Background**: Hard-Constrained Recurrent Physics-Informed Neural Networks (HRPINN) embed known physics into a recurrent integrator, leaving the neural network to learn only the residual dynamics — this ensures physical consistency and has been validated in cyber-physical systems. Meanwhile, Kolmogorov-Arnold Networks (KAN), grounded in the Kolmogorov-Arnold representation theorem, decompose multivariate functions into sums of univariate functions $\Phi(\mathbf{x}) = \sum_q \phi_q(\sum_p \psi_{q,p}(x_p))$, replacing MLP's fixed activation functions with learnable B-splines, and have shown promise in scientific ML.
 
 **Limitations of Prior Work**:
 - KAN has demonstrated symbolic discovery potential in Neural ODE and gray-box settings (KAN-ODEs, SKANODEs), but these works operate in unconstrained continuous ODE formulations.
 - No prior work has tested KAN within hard-constrained recurrent architectures — recurrent settings accumulate errors over time, imposing stricter stability requirements.
 - KAN's additive inductive bias ($\phi(x) + \phi(v)$) is theoretically well-suited for separable physical laws, but whether this holds in practice remains an open question.
 
-**Root Cause**: KAN's additive structure is naturally aligned with additively separable functions, yet many physical laws contain multiplicatively coupled terms (e.g., Van der Pol's $(1-x^2)v$). While KAN can theoretically represent multiplication through deep composition ($xy = \frac{1}{4}((x+y)^2 - (x-y)^2)$), this requires deeper layers — and whether deep KAN remains stable under recurrent error accumulation is unknown.
+**Key Challenge**: KAN's additive structure is naturally aligned with additively separable functions, yet many physical laws contain multiplicatively coupled terms (e.g., Van der Pol's $(1-x^2)v$). While KAN can theoretically represent multiplication through deep composition ($xy = \frac{1}{4}((x+y)^2 - (x-y)^2)$), this requires deeper layers — and whether deep KAN remains stable under recurrent error accumulation is unknown.
 
-**Paper Goals**: To establish a baseline empirical evaluation of vanilla KAN within hard-constrained recurrent physics-informed architectures.
+**Goal**: To establish a baseline empirical evaluation of vanilla KAN within hard-constrained recurrent physics-informed architectures.
 
-**Starting Point**: Two classical oscillators with contrasting residual structures are selected — Duffing (univariate polynomial) and Van der Pol (multiplicative coupling) — as boundary test cases for additive separability.
+**Key Insight**: Two classical oscillators with contrasting residual structures are selected — Duffing (univariate polynomial) and Van der Pol (multiplicative coupling) — as boundary test cases for additive separability.
 
 **Core Idea**: Through carefully controlled experimental design, reveal the practical success boundary of KAN's additive inductive bias under recurrent physical constraints.
 

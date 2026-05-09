@@ -29,11 +29,11 @@ This paper proposes the HeadHunter framework and SoftPAG method, refining the gr
 
 ## Background & Motivation
 
-- **State of the Field**: Classifier-Free Guidance (CFG) is central to generation quality in diffusion models, yet it suffers from two major limitations: (1) it is only applicable to conditional generation and cannot be used in unconditional settings (e.g., inverse problems); and (2) it tends to reduce diversity and cause oversaturation.
+- **Background**: Classifier-Free Guidance (CFG) is central to generation quality in diffusion models, yet it suffers from two major limitations: (1) it is only applicable to conditional generation and cannot be used in unconditional settings (e.g., inverse problems); and (2) it tends to reduce diversity and cause oversaturation.
 
 - **Limitations of Prior Work**: Attention perturbation guidance methods (e.g., PAG) offer an alternative by constructing an implicit weak model through perturbing attention layers. However, existing approaches lack a principled answer to a fundamental question — **where perturbation should be applied**.
 
-- **Root Cause**: This challenge stems from architectural differences. **U-Net** has a well-defined bottleneck (the middle block) responsible for global semantics, making the perturbation location straightforward. **Diffusion Transformers (DiT)**, by contrast, lack a coarse-to-fine hierarchical structure, and semantic processing is distributed more uniformly across all layers.
+- **Key Challenge**: This challenge stems from architectural differences. **U-Net** has a well-defined bottleneck (the middle block) responsible for global semantics, making the perturbation location straightforward. **Diffusion Transformers (DiT)**, by contrast, lack a coarse-to-fine hierarchical structure, and semantic processing is distributed more uniformly across all layers.
 
 - **Core Idea**: The key insight arises from a simple yet profound experiment: applying PAG perturbation to individual attention heads in DiT yields visually distinct effects — some heads enhance dark tones, others alter geometric structure, and still others affect color palette. This demonstrates that attention heads are a more meaningful unit of perturbation than entire layers.
 

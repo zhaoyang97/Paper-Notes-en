@@ -28,7 +28,7 @@ This paper proposes AIM, a training-free adaptive inference method for multimoda
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal LLMs rely on large numbers of visual tokens (up to thousands for video), incurring substantial computational overhead that limits real-time deployment and long-video processing.
+**Background**: Multimodal LLMs rely on large numbers of visual tokens (up to thousands for video), incurring substantial computational overhead that limits real-time deployment and long-video processing.
 
 **Limitations of Prior Work**: Methods such as FastV and PDrop prune only at specific LLM layers, lacking flexibility; LLaVA-Prumerge operates only before the LLM. None can adaptively accommodate varying computational budgets.
 

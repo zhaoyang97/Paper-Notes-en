@@ -29,15 +29,15 @@ This paper proposes EquaCode, a multi-strategy jailbreak method that decomposes 
 
 ### State of the Field
 
-**State of the Field**: LLM safety alignment primarily defends against natural language inputs, leaving significant vulnerabilities in non-natural-language domains (mathematics, code).
+**Background**: LLM safety alignment primarily defends against natural language inputs, leaving significant vulnerabilities in non-natural-language domains (mathematics, code).
 
 **Limitations of Prior Work**: (a) White-box attacks require model gradients and are impractical; (b) Black-box attacks (GCG, AutoDAN) require multiple iterations; (c) Single-domain attacks (equation-only or code-only) achieve limited success rates.
 
-**Root Cause**: The very capabilities of LLMs in mathematical reasoning and code completion become weaknesses for bypassing safety alignment—safety training is concentrated on natural language.
+**Key Challenge**: The very capabilities of LLMs in mathematical reasoning and code completion become weaknesses for bypassing safety alignment—safety training is concentrated on natural language.
 
-**Paper Goals**: To expose cross-domain security vulnerabilities in LLMs and achieve high-success-rate black-box jailbreaks in a single query.
+**Goal**: To expose cross-domain security vulnerabilities in LLMs and achieve high-success-rate black-box jailbreaks in a single query.
 
-**Starting Point**: Exploiting the synergy between two non-natural-language domains—equations and code—where equations structure the malicious query as a variable-solving problem and code wraps the equation as a functional completion task.
+**Key Insight**: Exploiting the synergy between two non-natural-language domains—equations and code—where equations structure the malicious query as a variable-solving problem and code wraps the equation as a functional completion task.
 
 **Core Idea**: The cross-domain combination of the equation domain and the code domain produces a synergistic amplification effect that breaks through the protections of natural language safety alignment.
 

@@ -38,7 +38,7 @@ When humans imagine a "bird," a typical small bird (like a sparrow) comes to min
 - **Dataset Distillation Methods** (D4M, MGD3): Optimized for downstream tasks; the resulting prototypes are unnatural or inconsistent.
 - **Selective Methods**: Select representative samples from a set, but the total number of samples is finite and cannot transcend existing generations.
 
-**Root Cause**: The semantic information of diffusion models is **distributed across the entire denoising trajectory**—from early coarse-grained layouts to late fine-grained details—making simple averaging at a single level impossible.
+**Key Challenge**: The semantic information of diffusion models is **distributed across the entire denoising trajectory**—from early coarse-grained layouts to late fine-grained details—making simple averaging at a single level impossible.
 
 ## Method
 

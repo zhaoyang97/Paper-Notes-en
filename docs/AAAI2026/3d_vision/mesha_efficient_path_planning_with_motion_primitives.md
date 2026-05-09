@@ -30,15 +30,15 @@ This paper proposes MeshA*, an algorithm that reformulates lattice-based path pl
 
 ## Background & Motivation
 
-**State of the Field**: Lattice-based planning with motion primitives is one of the dominant approaches to mobile robot motion planning. It composes paths from precomputed kinematically feasible trajectory segments and uses A* to search for optimal paths in a discretized $(x, y, \theta)$ state space.
+**Background**: Lattice-based planning with motion primitives is one of the dominant approaches to mobile robot motion planning. It composes paths from precomputed kinematically feasible trajectory segments and uses A* to search for optimal paths in a discretized $(x, y, \theta)$ state space.
 
 **Limitations of Prior Work**: When the number of motion primitives is large—as is common in practice—the branching factor of A* on the lattice graph becomes substantial. Each expansion requires collision checking and cost evaluation for all applicable primitives, incurring significant computational overhead. Even with lazy collision checking, extracting and rolling back large numbers of invalid states in cluttered environments wastes considerable time.
 
-**Root Cause**: Lattice-based search operates at the granularity of individual primitives, where each primitive spans multiple grid cells. Even if a primitive becomes infeasible at its very first cell due to an obstacle, the planner cannot reject it until the full primitive is processed—making the search granularity too coarse for early pruning.
+**Key Challenge**: Lattice-based search operates at the granularity of individual primitives, where each primitive spans multiple grid cells. Even if a primitive becomes infeasible at its very first cell due to an obstacle, the planner cannot reject it until the full primitive is processed—making the search granularity too coarse for early pruning.
 
-**Paper Goals**: To reduce the computational cost of lattice-based planning without sacrificing completeness or optimality, enabling faster path planning.
+**Goal**: To reduce the computational cost of lattice-based planning without sacrificing completeness or optimality, enabling faster path planning.
 
-**Starting Point**: The search granularity is refined from the primitive level to the grid cell level. During search, the planner advances cell by cell while tracking which primitives still pass through the current cell, enabling (a) fine-grained pruning—unpromising directions can be identified before a primitive completes—and (b) merging of primitives that share initial cells, reducing the effective branching factor.
+**Key Insight**: The search granularity is refined from the primitive level to the grid cell level. During search, the planner advances cell by cell while tracking which primitives still pass through the current cell, enabling (a) fine-grained pruning—unpromising directions can be identified before a primitive completes—and (b) merging of primitives that share initial cells, reducing the effective branching factor.
 
 **Core Idea**: Define an *extended cell* $u = (i, j, \Psi)$, where $\Psi$ records all primitives passing through cell $(i, j)$ along with their current step indices in the collision trajectory. Successor relations are defined at the cell level—primitives sharing the same next cell are merged into a single successor node, with zero cost for non-terminal steps and primitive cost for terminal steps.
 

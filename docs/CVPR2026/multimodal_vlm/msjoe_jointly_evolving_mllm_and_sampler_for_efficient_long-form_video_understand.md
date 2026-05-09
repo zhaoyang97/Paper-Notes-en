@@ -28,15 +28,15 @@ This paper proposes MSJoE, a framework that jointly evolves an MLLM and a lightw
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs perform well on short video understanding, but in long-video scenarios, visual context grows linearly while attention computation scales quadratically. Uniform sampling is both inefficient and prone to missing key events. CLIP-similarity-based sampling methods (e.g., Q-Frame, AKS) have emerged as alternatives.
+**Background**: MLLMs perform well on short video understanding, but in long-video scenarios, visual context grows linearly while attention computation scales quadratically. Uniform sampling is both inefficient and prone to missing key events. CLIP-similarity-based sampling methods (e.g., Q-Frame, AKS) have emerged as alternatives.
 
 **Limitations of Prior Work**: Three critical issues arise — (Q1) Is the question alone sufficient to retrieve all relevant frames? (Insufficient information: questions are often interrogative and lack visual cues.) (Q2) How should similarity scores be converted into sampling weights? (Naïve top-$k$ selection results in redundant frames.) (Q3) Can the MLLM and sampler truly collaborate without joint evolution? (Existing methods freeze the MLLM while training the sampler, lacking bidirectional adaptation.)
 
-**Root Cause**: The sampler and MLLM are optimized independently — the sampler is unaware of what visual evidence the MLLM requires, and the MLLM does not adapt to the sparse frame distribution produced by the sampler.
+**Key Challenge**: The sampler and MLLM are optimized independently — the sampler is unaware of what visual evidence the MLLM requires, and the MLLM does not adapt to the sparse frame distribution produced by the sampler.
 
-**Paper Goals**: Achieve joint evolution of the sampler and MLLM, enabling the MLLM to learn to generate sampling-guiding queries while adapting to sparse keyframe inputs.
+**Goal**: Achieve joint evolution of the sampler and MLLM, enabling the MLLM to learn to generate sampling-guiding queries while adapting to sparse keyframe inputs.
 
-**Starting Point**: RL (GRPO + REINFORCE) provides zero-shot feedback signals to optimize both components simultaneously.
+**Key Insight**: RL (GRPO + REINFORCE) provides zero-shot feedback signals to optimize both components simultaneously.
 
 **Core Idea**: The MLLM first reasons over multiple visual queries → CLIP constructs a query-frame similarity matrix → a lightweight 1D U-Net learns sampling weights → selected keyframes are fed back to the MLLM for answer generation → end-to-end RL joint training.
 

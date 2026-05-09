@@ -29,15 +29,15 @@ This paper proposes in/out-degree sheaf Laplacians defined on directed graphs fo
 
 ## Background & Motivation
 
-**State of the Field**: Sheaf Neural Networks (SNNs) generalize the diffusion mechanism of GNNs by defining cellular sheaves over graphs, and have been shown to handle heterophilic tasks while alleviating oversmoothing.
+**Background**: Sheaf Neural Networks (SNNs) generalize the diffusion mechanism of GNNs by defining cellular sheaves over graphs, and have been shown to handle heterophilic tasks while alleviating oversmoothing.
 
 **Limitations of Prior Work**: Classical SNNs are defined on undirected graphs, preventing nodes from independently choosing to "only propagate" or "only receive" information. If a node $i$ wishes to block all incoming neighbor information, it must set all associated restriction maps to zero ($\mathcal{F}_{i \unlhd e}=0$), which simultaneously cuts off $i$'s ability to propagate information outward.
 
-**Root Cause**: The sheaf Laplacian structure in SNNs conflates PROPAGATE with LISTEN, making it impossible to fully decouple the four cooperative behaviors (STANDARD / LISTEN / PROPAGATE / ISOLATE).
+**Key Challenge**: The sheaf Laplacian structure in SNNs conflates PROPAGATE with LISTEN, making it impossible to fully decouple the four cooperative behaviors (STANDARD / LISTEN / PROPAGATE / ISOLATE).
 
-**Paper Goals**: To enable nodes in SNNs to independently decide whether to propagate and/or receive information, realizing genuine cooperative behavior and better mitigating oversquashing.
+**Goal**: To enable nodes in SNNs to independently decide whether to propagate and/or receive information, realizing genuine cooperative behavior and better mitigating oversquashing.
 
-**Starting Point**: Splitting each undirected edge into a pair of directed edges, and defining cellular sheaves along with their in/out-degree sheaf Laplacians on the resulting directed graph.
+**Key Insight**: Splitting each undirected edge into a pair of directed edges, and defining cellular sheaves along with their in/out-degree sheaf Laplacians on the resulting directed graph.
 
 **Core Idea**: By separating source maps $\mathbf{S}_i$ and target maps $\mathbf{T}_i$ via the sheaf Laplacian on directed graphs, each node can independently control the flow of information into and out of itself.
 

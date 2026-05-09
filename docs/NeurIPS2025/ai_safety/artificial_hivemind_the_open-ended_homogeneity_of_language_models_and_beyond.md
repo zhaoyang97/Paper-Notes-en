@@ -29,15 +29,15 @@ This work constructs the Infinity-Chat dataset (26K open-ended real user queries
 
 ## Background & Motivation
 
-**State of the Field**: LLMs demonstrate strong capabilities in creative content generation (e.g., story writing, brainstorming, advice-giving), yet outputs obtained through repeated sampling tend to be highly similar. Such homogenization may gradually "homogenize" human thought through prolonged exposure.
+**Background**: LLMs demonstrate strong capabilities in creative content generation (e.g., story writing, brainstorming, advice-giving), yet outputs obtained through repeated sampling tend to be highly similar. Such homogenization may gradually "homogenize" human thought through prolonged exposure.
 
 **Limitations of Prior Work**: Methods for evaluating LM output diversity are extremely limited—existing work focuses only on narrow tasks (e.g., random number generation, name generation) or repeated sampling from a single model, lacking systematic evaluation of multi-model output diversity under real-world open-ended queries.
 
-**Root Cause**: LLM training—especially the RLHF/DPO alignment phase—encourages models to converge toward "canonical answers." However, open-ended questions have no single correct answer, and excessive convergence implies a loss of diversity in the answer space.
+**Key Challenge**: LLM training—especially the RLHF/DPO alignment phase—encourages models to converge toward "canonical answers." However, open-ended questions have no single correct answer, and excessive convergence implies a loss of diversity in the answer space.
 
-**Paper Goals**: (1) Construct the first large-scale open-ended query dataset for diversity evaluation; (2) systematically quantify intra-model and inter-model homogenization in LMs; (3) study individual preference variation among humans on open-ended content and its impact on automatic evaluation.
+**Goal**: (1) Construct the first large-scale open-ended query dataset for diversity evaluation; (2) systematically quantify intra-model and inter-model homogenization in LMs; (3) study individual preference variation among humans on open-ended content and its impact on automatic evaluation.
 
-**Starting Point**: Real user–LM interaction logs are collected to source open-ended queries, a taxonomic framework for open-ended questions is established, and large-scale cross-annotation is used to uncover the idiosyncratic nature of human preferences.
+**Key Insight**: Real user–LM interaction logs are collected to source open-ended queries, a taxonomic framework for open-ended questions is established, and large-scale cross-annotation is used to uncover the idiosyncratic nature of human preferences.
 
 **Core Idea**: LMs are not only repetitive within a single model (intra-model), but are also highly similar across different models (inter-model), forming an "Artificial Hivemind"—a phenomenon that existing automatic evaluators fail to detect.
 

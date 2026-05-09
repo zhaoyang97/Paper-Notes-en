@@ -28,18 +28,18 @@ This paper proposes LLMTM — the first comprehensive benchmark for evaluating L
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have been applied to various graph reasoning tasks (node classification, link prediction, etc.), but their application to temporal analysis of dynamic graphs remains largely unexplored. Temporal motifs — interaction patterns occurring in a specific order within a short time window — are fundamental building blocks of dynamic graphs and capture real-time anomalies and unique phenomena.
+**Background**: LLMs have been applied to various graph reasoning tasks (node classification, link prediction, etc.), but their application to temporal analysis of dynamic graphs remains largely unexplored. Temporal motifs — interaction patterns occurring in a specific order within a short time window — are fundamental building blocks of dynamic graphs and capture real-time anomalies and unique phenomena.
 
 **Limitations of Prior Work**:
    - No benchmark specifically evaluates LLM capabilities on temporal motif analysis
    - It is unclear whether LLMs can understand the temporal ordering of events and structural patterns
    - No query routing strategy tailored to graph structural properties exists — applying heavy agents to simple queries is wasteful
 
-**Root Cause**: Temporal motif analysis requires simultaneous understanding of graph structure and temporal order, yet LLMs inherently process serialized text — effectively encoding spatiotemporal graph information into text remains a core challenge.
+**Key Challenge**: Temporal motif analysis requires simultaneous understanding of graph structure and temporal order, yet LLMs inherently process serialized text — effectively encoding spatiotemporal graph information into text remains a core challenge.
 
-**Paper Goals**: (a) Establish an LLM evaluation benchmark for temporal motifs; (b) Design an efficient query routing strategy.
+**Goal**: (a) Establish an LLM evaluation benchmark for temporal motifs; (b) Design an efficient query routing strategy.
 
-**Starting Point**: Six task categories covering different aspects of motif analysis (recognition / counting / temporal reasoning / node role identification / evolution patterns / anomaly detection), combined with structure-aware intelligent routing.
+**Key Insight**: Six task categories covering different aspects of motif analysis (recognition / counting / temporal reasoning / node role identification / evolution patterns / anomaly detection), combined with structure-aware intelligent routing.
 
 **Core Idea**: A 6-task × 9-motif-type benchmark + Structure-Aware Dispatcher = efficient LLM-based analysis on temporal graphs.
 

@@ -28,17 +28,17 @@ This paper proposes DRL-CoLA, a dual-agent DQN algorithm that adaptively configu
 
 ## Background & Motivation
 
-1. **State of the Field**: Next-generation wireless communications must support mission-critical applications such as remote surgery and autonomous driving, requiring packet error rates as low as $10^{-5}$–$10^{-7}$ and end-to-end latency on the order of milliseconds. Cooperative relay communication (two-hop transmission) is a key technique for improving reliability.
+1. **Background**: Next-generation wireless communications must support mission-critical applications such as remote surgery and autonomous driving, requiring packet error rates as low as $10^{-5}$–$10^{-7}$ and end-to-end latency on the order of milliseconds. Cooperative relay communication (two-hop transmission) is a key technique for improving reliability.
 2. **Limitations of Prior Work**:
    - Existing two-hop transmission schemes are predominantly one-shot: a decoding failure at either hop results in packet loss, and they assume globally known CSI for both hops—an overhead incompatible with URLLC latency budgets.
    - ARQ retransmission protocols improve reliability at the cost of increased latency; 5G NR features such as AMC, flexible numerology, and mini-slots have previously been optimized in isolation rather than jointly exploited.
    - No prior work has studied the impact of ARQ retransmission on reliability in two-hop relay systems under strict latency constraints.
-3. **Root Cause**: In two-hop transmission, the total end-to-end delay $\mathcal{T}$ is a random variable depending on channel fading and the number of retransmissions. Its distribution is analytically intractable, making it infeasible for conventional optimization methods to enforce the constraint $\mathcal{T} \le T_{\text{th}}$.
-4. **Paper Goals**:
+3. **Key Challenge**: In two-hop transmission, the total end-to-end delay $\mathcal{T}$ is a random variable depending on channel fading and the number of retransmissions. Its distribution is analytically intractable, making it infeasible for conventional optimization methods to enforce the constraint $\mathcal{T} \le T_{\text{th}}$.
+4. **Goal**:
    - Jointly optimize numerology $\mu$, mini-slot size $N_{\text{sym}}$, and MCS index $I_{\text{MCS}}$ at each (re)transmission attempt for both hops.
    - Maximize the end-to-end successful delivery probability while satisfying strict latency constraints.
    - Rely solely on local CSI and ARQ feedback, without requiring global CSI.
-5. **Starting Point**: The adaptive two-hop transmission problem is formulated as an MDP, with the source node and relay node acting as two independent agents that each learn a delay-aware transmission policy.
+5. **Key Insight**: The adaptive two-hop transmission problem is formulated as an MDP, with the source node and relay node acting as two independent agents that each learn a delay-aware transmission policy.
 6. **Core Idea**: A dual-agent DQN framework learns distributed per-hop transmission parameter configuration policies, using the delay outage rate (DOR) as a cross-hop coordination signal to achieve URLLC without global CSI.
 
 ## Method

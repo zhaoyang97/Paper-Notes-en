@@ -37,7 +37,7 @@ This paper presents a systematic study of activation sparsity in modern LLMs (GL
    - **Approximate sparsification approaches** lack the principled guarantees of ReLU's exact zeros, require threshold calibration, and may overfit to the calibration set.
    - Different methods target the input, gate, or intermediate activations of FFN layers without unified design guidance.
 
-**Paper Goals**: To establish a universal, simple, training-free framework for systematically studying and exploiting activation sparsity in modern LLMs.
+**Goal**: To establish a universal, simple, training-free framework for systematically studying and exploiting activation sparsity in modern LLMs.
 
 ## Method
 

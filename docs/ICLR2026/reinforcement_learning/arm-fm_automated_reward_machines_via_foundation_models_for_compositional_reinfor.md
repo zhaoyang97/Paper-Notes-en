@@ -30,15 +30,15 @@ This paper proposes ARM-FM, a framework that leverages foundation models (e.g., 
 
 ### State of the Field
 
-**State of the Field**: The central bottleneck in RL is reward function design — sparse reward signals are insufficient, while dense rewards require expert hand-engineering and are prone to exploitation. Reward Machines (RMs) decompose tasks into sequences of subgoals using finite automata, which is theoretically elegant but requires manual expert design in practice.
+**Background**: The central bottleneck in RL is reward function design — sparse reward signals are insufficient, while dense rewards require expert hand-engineering and are prone to exploitation. Reward Machines (RMs) decompose tasks into sequences of subgoals using finite automata, which is theoretically elegant but requires manual expert design in practice.
 
 **Limitations of Prior Work**: (a) Manual RM design is costly, limiting widespread adoption; (b) Foundation models excel at task decomposition but struggle to produce structured reward signals usable by RL; (c) Existing FM-RL integrations (e.g., Eureka/Motif) output opaque reward models that lack compositionality and interpretability.
 
-**Root Cause**: FMs possess high-level reasoning capabilities but lack low-level control understanding required by RL, while RL agents have low-level control capabilities but lack high-level task understanding — a structured interface bridging the two is needed.
+**Key Challenge**: FMs possess high-level reasoning capabilities but lack low-level control understanding required by RL, while RL agents have low-level control capabilities but lack high-level task understanding — a structured interface bridging the two is needed.
 
-**Paper Goals**: Automatically generate interpretable, compositional reward specifications (RMs) using FMs, while supporting cross-task skill sharing and generalization.
+**Goal**: Automatically generate interpretable, compositional reward specifications (RMs) using FMs, while supporting cross-task skill sharing and generalization.
 
-**Starting Point**: The automaton structure of RMs naturally aligns with the code generation capabilities of FMs (generating states, transition functions, and label functions), while natural language descriptions of RM states can connect different tasks via embedding spaces.
+**Key Insight**: The automaton structure of RMs naturally aligns with the code generation capabilities of FMs (generating states, transition functions, and label functions), while natural language descriptions of RM states can connect different tasks via embedding spaces.
 
 **Core Idea**: Have FMs generate "Language-Aligned Reward Machines" (LARMs) — automating RM design while constructing a shareable skill space via language embeddings.
 

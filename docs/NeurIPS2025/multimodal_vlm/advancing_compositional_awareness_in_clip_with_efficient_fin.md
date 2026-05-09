@@ -29,15 +29,15 @@ This paper proposes CLIC, which concatenates two images to form a composite scen
 
 ## Background & Motivation
 
-**State of the Field**: Vision-language models such as CLIP excel at zero-shot classification and retrieval, yet exhibit significant deficiencies in compositional reasoning. These models tend to learn bag-of-words representations and fail to distinguish "a person in a red shirt riding a grey horse" from "a person in a grey shirt riding a red horse." Several methods (NegCLIP, DAC, TripletCLIP, SVLC) have attempted to improve compositionality by introducing hard negatives.
+**Background**: Vision-language models such as CLIP excel at zero-shot classification and retrieval, yet exhibit significant deficiencies in compositional reasoning. These models tend to learn bag-of-words representations and fail to distinguish "a person in a red shirt riding a grey horse" from "a person in a grey shirt riding a red horse." Several methods (NegCLIP, DAC, TripletCLIP, SVLC) have attempted to improve compositionality by introducing hard negatives.
 
 **Limitations of Prior Work**: The recent SugarCrepe++ benchmark exposes an inconvenient truth: methods previously reported to improve compositionality (e.g., DAC achieving 89.4% on SugarCrepe) perform even worse than the pretrained CLIP on SugarCrepe++ (DAC drops to 53.7%). This indicates that these methods merely learn lexical sensitivity—detecting surface-level token changes—rather than genuinely understanding semantic differences. Furthermore, methods that improve compositionality typically degrade retrieval performance, despite the intuition that stronger compositional understanding should benefit retrieval.
 
-**Root Cause**: Compositional fine-tuning methods overfit to specific hard negative patterns of particular benchmarks (e.g., fixed swaps of colors or actions), yielding limited gains in genuine semantic understanding. Moreover, aggressive hard negative training tends to corrupt the general-purpose representations learned during CLIP pretraining.
+**Key Challenge**: Compositional fine-tuning methods overfit to specific hard negative patterns of particular benchmarks (e.g., fixed swaps of colors or actions), yielding limited gains in genuine semantic understanding. Moreover, aggressive hard negative training tends to corrupt the general-purpose representations learned during CLIP pretraining.
 
-**Paper Goals**: How can CLIP's compositional reasoning be improved without sacrificing—or even while enhancing—its retrieval performance?
+**Goal**: How can CLIP's compositional reasoning be improved without sacrificing—or even while enhancing—its retrieval performance?
 
-**Starting Point**: Rather than generating hard negatives for individual images, CLIC creates a composite scene by concatenating two images and naturally derives hard negatives through cross-image lexical swapping, while leveraging multiple captions per image to construct diverse positive samples that reinforce semantic invariance.
+**Key Insight**: Rather than generating hard negatives for individual images, CLIC creates a composite scene by concatenating two images and naturally derives hard negatives through cross-image lexical swapping, while leveraging multiple captions per image to construct diverse positive samples that reinforce semantic invariance.
 
 **Core Idea**: Image concatenation + cross-image lexical swapping = low-cost, high-diversity training data for compositional learning.
 

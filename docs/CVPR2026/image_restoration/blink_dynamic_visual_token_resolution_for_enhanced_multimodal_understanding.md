@@ -27,15 +27,15 @@ content_hash: 7d46fd2374bc2bb1
 This paper proposes Blink, a framework that dynamically expands and discards visual tokens across different Transformer layers of an MLLM — simulating the human "rapid blinking" scanning process — to adaptively enhance visual perception within a single forward pass, improving LLaVA-1.5 performance across multiple multimodal benchmarks.
 
 ## Background & Motivation
-**State of the Field**: Multimodal large language models (MLLMs) have achieved remarkable progress on vision-language tasks (e.g., LLaVA, Qwen-VL), yet their visual perception capability remains insufficient and prone to hallucinations.
+**Background**: Multimodal large language models (MLLMs) have achieved remarkable progress on vision-language tasks (e.g., LLaVA, Qwen-VL), yet their visual perception capability remains insufficient and prone to hallucinations.
 
 **Limitations of Prior Work**: Existing MLLMs process visual inputs using conventional LLM architectures, lacking explicit exploitation of salient visual regions. Post-processing methods (e.g., identifying salient regions followed by cropping and re-inference) are computationally inefficient and can only focus on a single region at a time.
 
-**Root Cause**: Humans perceive visual scenes through a dynamic "scan–focus–shift" process, whereas MLLMs treat all visual tokens uniformly and cannot simulate cross-layer attention shifts.
+**Key Challenge**: Humans perceive visual scenes through a dynamic "scan–focus–shift" process, whereas MLLMs treat all visual tokens uniformly and cannot simulate cross-layer attention shifts.
 
-**Paper Goals**: How can an MLLM's visual perception capability be dynamically enhanced within a single forward pass?
+**Goal**: How can an MLLM's visual perception capability be dynamically enhanced within a single forward pass?
 
-**Starting Point**: A pilot study first uncovers two key insights — (a) different layers attend to different visual regions, and (b) allocating additional computation to high-attention tokens improves perception — which then motivate the design of the dynamic framework.
+**Key Insight**: A pilot study first uncovers two key insights — (a) different layers attend to different visual regions, and (b) allocating additional computation to high-attention tokens improves perception — which then motivate the design of the dynamic framework.
 
 **Core Idea**: Leveraging the non-uniform distribution of attention maps, the framework dynamically decides at each layer whether to expand (via super-resolution enhancement) or discard visual tokens, thereby simulating the human "scan–focus–shift" cognitive process.
 

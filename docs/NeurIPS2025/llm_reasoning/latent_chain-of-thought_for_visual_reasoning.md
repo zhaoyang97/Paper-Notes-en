@@ -28,7 +28,7 @@ content_hash: dbb94a767737c10a
 This paper reformulates visual CoT reasoning as a posterior inference problem and proposes LaCoT, a training framework based on amortized variational inference (AVI) comprising reference-guided GFlowNet fine-tuning (RGFN), token-level reward approximation, and Bayesian inference scaling (BiN). On Qwen2.5-VL 3B/7B, LaCoT outperforms GRPO by 10.6% and achieves open-source state-of-the-art across seven visual reasoning benchmarks.
 
 ## Background & Motivation
-**State of the Field**: Visual chain-of-thought (CoT) reasoning is central to improving the interpretability and reliability of large vision-language models (LVLMs), yet existing training methods exhibit pronounced generalization bottlenecks.
+**Background**: Visual chain-of-thought (CoT) reasoning is central to improving the interpretability and reliability of large vision-language models (LVLMs), yet existing training methods exhibit pronounced generalization bottlenecks.
 
 **Limitations of Prior Work**:
 - *SFT*: Supervised fine-tuning relies on teacher-forcing log-likelihood, which merely imitates reference reasoning chains without exploration capacity.

@@ -27,15 +27,15 @@ This paper proposes HistLens, a framework that leverages sparse autoencoders (SA
 
 ## Background & Motivation
 
-**State of the Field**: Computational diachronic semantics and discourse analysis have made significant advances in recent years, encompassing lexical semantic change detection, topic evolution modeling, and stance and framing analysis. However, integrating these methods into a scalable, comparable, and interpretable paradigm for studying conceptual semantic evolution remains challenging.
+**Background**: Computational diachronic semantics and discourse analysis have made significant advances in recent years, encompassing lexical semantic change detection, topic evolution modeling, and stance and framing analysis. However, integrating these methods into a scalable, comparable, and interpretable paradigm for studying conceptual semantic evolution remains challenging.
 
 **Limitations of Prior Work**: (1) Insufficient scalability and comparability — a large body of work focuses on single concepts or single corpora, making it difficult to directly compare analytical results across different concepts and sources, and unable to address core questions such as "do multiple concepts co-evolve?"; (2) Inadequate characterization of implicit concepts — existing methods rely on keywords and surface co-occurrence patterns, failing to capture concepts that are not explicitly mentioned but expressed through stable discourse patterns, leading to misinterpretation of conceptual change as lexical substitution.
 
-**Root Cause**: Research on conceptual evolution requires balancing interpretability, comparability, and the capture of implicit expression, yet existing computational methods cannot simultaneously satisfy all three requirements.
+**Key Challenge**: Research on conceptual evolution requires balancing interpretability, comparability, and the capture of implicit expression, yet existing computational methods cannot simultaneously satisfy all three requirements.
 
-**Paper Goals**: To construct a unified, multi-concept, multi-corpus conceptual history analysis framework grounded in an interpretable sparse feature space.
+**Goal**: To construct a unified, multi-concept, multi-corpus conceptual history analysis framework grounded in an interpretable sparse feature space.
 
-**Starting Point**: SAEs are employed to decompose the hidden representations of LLMs into interpretable semantic basis vectors, recasting concept queries as a problem of tracking the activation dynamics of these basis vectors. Different concepts are anchored in the same coordinate system, enabling natural cross-concept comparability.
+**Key Insight**: SAEs are employed to decompose the hidden representations of LLMs into interpretable semantic basis vectors, recasting concept queries as a problem of tracking the activation dynamics of these basis vectors. Different concepts are anchored in the same coordinate system, enabling natural cross-concept comparability.
 
 **Core Idea**: Conceptual evolution is modeled as the activation reorganization of interpretable basis vectors within a shared SAE semantic space — concepts do not simply appear or disappear, but rather undergo a reweighting of their internal semantic components under historical pressures.
 

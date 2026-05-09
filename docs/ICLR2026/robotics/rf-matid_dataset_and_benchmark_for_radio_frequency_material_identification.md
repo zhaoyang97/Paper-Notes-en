@@ -28,15 +28,15 @@ This paper introduces RF-MatID, the first open-source large-scale RF material id
 
 ## Background & Motivation
 
-**State of the Field**: Material identification is a fundamental capability for embodied AI, currently dominated by optical sensors (cameras, hyperspectral imaging). RF-based methods exploit electromagnetic wave–material interactions to reveal intrinsic material properties (permittivity, conductivity, etc.), operating independently of illumination conditions and visual appearance.
+**Background**: Material identification is a fundamental capability for embodied AI, currently dominated by optical sensors (cameras, hyperspectral imaging). RF-based methods exploit electromagnetic wave–material interactions to reveal intrinsic material properties (permittivity, conductivity, etc.), operating independently of illumination conditions and visual appearance.
 
 **Limitations of Prior Work**: (1) All existing RF material datasets are proprietary, hindering fair algorithmic comparison; (2) COTS sensor frequency bands are narrow and fragmented (e.g., 77–81 GHz only), precluding systematic cross-band evaluation; (3) systematic evaluation of geometric perturbations (angle and distance variation) is absent, leaving real-world deployment robustness uncertain.
 
-**Root Cause**: Despite theoretical advantages of RF methods (strong penetration, illumination independence), the lack of research infrastructure (datasets and benchmarks) severely impedes the development and evaluation of learning-based approaches.
+**Key Challenge**: Despite theoretical advantages of RF methods (strong penetration, illumination independence), the lack of research infrastructure (datasets and benchmarks) severely impedes the development and evaluation of learning-based approaches.
 
-**Paper Goals**: Construct the first open-source, wide-band, geometrically diverse RF material identification dataset and establish a complete benchmarking framework.
+**Goal**: Construct the first open-source, wide-band, geometrically diverse RF material identification dataset and establish a complete benchmarking framework.
 
-**Starting Point**: A custom UWB-mmWave sensing platform with continuous frequency coverage from 4 to 43.5 GHz is developed to systematically collect RF responses of 16 materials across varying distances (200–2000 mm) and angles (0–10°).
+**Key Insight**: A custom UWB-mmWave sensing platform with continuous frequency coverage from 4 to 43.5 GHz is developed to systematically collect RF responses of 16 materials across varying distances (200–2000 mm) and angles (0–10°).
 
 **Core Idea**: Enable standardized learning-based research in RF material identification through the first open-source wide-band RF dataset and systematic benchmark.
 

@@ -28,17 +28,17 @@ This paper proposes AIM, a top-down learnable binary masking mechanism for self-
 
 ## Background & Motivation
 
-**State of the Field**: Deep neural networks achieve strong performance on classification tasks, yet frequently exploit spurious features for decision-making — for instance, on the WaterBirds dataset, models learn to classify birds based on background context (water vs. land) rather than the birds themselves, leading to severe performance degradation under distribution shift.
+**Background**: Deep neural networks achieve strong performance on classification tasks, yet frequently exploit spurious features for decision-making — for instance, on the WaterBirds dataset, models learn to classify birds based on background context (water vs. land) rather than the birds themselves, leading to severe performance degradation under distribution shift.
 
 **Limitations of Prior Work**: Ensuring that models make correct predictions for the right reasons typically requires additional supervision such as bounding boxes, segmentation masks, or attention guidance maps — all of which are costly to obtain and potentially imperfect. The few annotation-free approaches either require iterative expert model selection or yield limited improvements.
 
-**Root Cause**: DNNs simultaneously learn genuine and spurious features during training (a key finding from Kirichenko et al. 2022), yet a lightweight mechanism that enables models to autonomously distinguish and prioritize genuine features without external supervision has been lacking.
+**Key Challenge**: DNNs simultaneously learn genuine and spurious features during training (a key finding from Kirichenko et al. 2022), yet a lightweight mechanism that enables models to autonomously distinguish and prioritize genuine features without external supervision has been lacking.
 
-**Paper Goals**
+**Goal**
 - Given only image-level class labels, how can a model automatically discover and focus on spatially discriminative features?
 - How can the model's decision process become inherently interpretable, rather than relying on post-hoc attribution methods?
 
-**Starting Point**: The central hypothesis is that when a model is constrained to retain only a subset of spatial features prior to classification, it will preferentially select the most reliable — i.e., genuinely discriminative — features. This contrasts with bottom-up layer-wise masking, which tends to produce fully active masks and requires additional sparsity regularization losses.
+**Key Insight**: The central hypothesis is that when a model is constrained to retain only a subset of spatial features prior to classification, it will preferentially select the most reliable — i.e., genuinely discriminative — features. This contrasts with bottom-up layer-wise masking, which tends to produce fully active masks and requires additional sparsity regularization losses.
 
 **Core Idea**: A top-down learnable binary masking mechanism (inspired by the FPN architecture) performs self-supervised spatial feature selection across multi-scale feature maps, naturally producing sparse masks that filter out spurious features.
 

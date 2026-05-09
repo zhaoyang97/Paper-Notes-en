@@ -27,15 +27,15 @@ CW-GRPO reframes process supervision as "advantage redistribution": a LLM judge 
 
 ## Background & Motivation
 
-**State of the Field**: Search agents (e.g., Search-R1, R1-Searcher) enhance LLM factual reliability through iterative retrieval of external evidence. Training paradigms fall into two categories: process supervision (turn-level rewards + PPO) and outcome supervision (final-answer reward + GRPO).
+**Background**: Search agents (e.g., Search-R1, R1-Searcher) enhance LLM factual reliability through iterative retrieval of external evidence. Training paradigms fall into two categories: process supervision (turn-level rewards + PPO) and outcome supervision (final-answer reward + GRPO).
 
 **Limitations of Prior Work**: Process supervision requires learning a value function for turn-level reward estimation, but the diversity of intermediate states leads to unstable estimates and brittle training. Outcome supervision (GRPO) is stable but yields sparse reward signals—assigning equal credit to all search turns in a successful trajectory without distinguishing pivotal from redundant searches.
 
-**Root Cause**: Process supervision is fine-grained but unstable; outcome supervision is stable but coarse-grained—a balance between the two is needed.
+**Key Challenge**: Process supervision is fine-grained but unstable; outcome supervision is stable but coarse-grained—a balance between the two is needed.
 
-**Paper Goals**: Achieve turn-level credit assignment while preserving the training stability of GRPO.
+**Goal**: Achieve turn-level credit assignment while preserving the training stability of GRPO.
 
-**Starting Point**: Rather than directly optimizing process rewards, the method uses process signals to modulate (rescale) outcome advantages—treating process supervision as an advantage redistribution problem.
+**Key Insight**: Rather than directly optimizing process rewards, the method uses process signals to modulate (rescale) outcome advantages—treating process supervision as an advantage redistribution problem.
 
 **Core Idea**: A LLM judge evaluates the retrieval utility $u$ and reasoning correctness $v$ of each turn → a conjunctive contribution score $p = u \cdot v$ → outcome advantages are redistributed to high-contribution turns via temperature-controlled softmax.
 

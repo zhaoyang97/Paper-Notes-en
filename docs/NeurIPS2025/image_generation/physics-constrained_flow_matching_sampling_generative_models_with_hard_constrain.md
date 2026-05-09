@@ -40,7 +40,7 @@ Limitations of existing methods:
 
 **PDM** projects onto the constraint manifold at every step, over-constraining the sampling trajectory for nonlinear or global constraints.
 
-**Root Cause**: The sampling process of generative models is inherently stochastic and progressive, while constraints need only be exactly satisfied at the final denoised solution. PCFM's key insight is that one can "look ahead" to the terminal state, project it onto the constraint manifold, and "look back" to the current step — simultaneously achieving constraint satisfaction and alignment with the generative flow.
+**Key Challenge**: The sampling process of generative models is inherently stochastic and progressive, while constraints need only be exactly satisfied at the final denoised solution. PCFM's key insight is that one can "look ahead" to the terminal state, project it onto the constraint manifold, and "look back" to the current step — simultaneously achieving constraint satisfaction and alignment with the generative flow.
 
 ## Method
 

@@ -30,12 +30,12 @@ This paper reconstructs the SNR metric by introducing omnidirectional phase deri
 
 ### Limitations of Prior Work
 
-**State of the Field**: Signal-to-noise ratio (SNR) has long served as a fundamental objective metric for evaluating quality in audio generation tasks. However, a growing body of research demonstrates that SNR and its variants (segSNR, SI-SNR, etc.) exhibit low correlation with perceptual metrics such as PESQ and UTMOS, leading to their gradual marginalization. Meanwhile, MCD and M-STFT, which share similar mathematical forms, remain mainstream metrics. This contradiction motivates the authors to pose two questions:
+**Background**: Signal-to-noise ratio (SNR) has long served as a fundamental objective metric for evaluating quality in audio generation tasks. However, a growing body of research demonstrates that SNR and its variants (segSNR, SI-SNR, etc.) exhibit low correlation with perceptual metrics such as PESQ and UTMOS, leading to their gradual marginalization. Meanwhile, MCD and M-STFT, which share similar mathematical forms, remain mainstream metrics. This contradiction motivates the authors to pose two questions:
 
 1. **Why does SNR fail?** By expanding SNR from the time domain to the time-frequency domain, the authors find that SNR implicitly couples amplitude and phase measurements. Residuals in the magnitude spectrum exhibit clear structure, whereas residuals in the phase spectrum present uninformative noise patterns, indicating that conventional instantaneous phase (IP) distance measurement is inherently unreliable.
 2. **How can SNR be fixed?** Phase derivatives—instantaneous frequency (IF) and group delay (GD)—exhibit clearer structure than instantaneous phase and can be used as substitutes for IP in computing phase distances.
 
-### **Paper Goals**:
+### **Goal**:
 - Inaccurate phase distance measurement in SNR is the key factor causing its inconsistency with human auditory perception.
 - The phase spectrum is unreliable for direct distance computation due to its wrapping property (range restricted to $[-\pi, \pi)$) and high sensitivity to waveform shifts.
 - The sign of the correlation term $C$ in the SNR formula flips near $\theta - \hat{\theta} \approx \pm\pi/2$, causing numerical oscillations and making SNR overly sensitive to phase errors.

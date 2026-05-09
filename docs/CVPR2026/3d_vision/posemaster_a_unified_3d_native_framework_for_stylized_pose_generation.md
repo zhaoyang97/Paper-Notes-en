@@ -28,15 +28,15 @@ PoseMaster proposes a 3D native framework that unifies pose stylization and 3D g
 
 ## Background & Motivation
 
-**State of the Field**: 3D pose stylization aims to generate 3D assets that strictly follow a target pose while preserving character identity. Mainstream approaches adopt a cascade pipeline: a 2D foundation model (e.g., ControlNet) generates a pose-stylized image from a 2D skeleton map, which is then lifted into a 3D asset by a reconstruction model (e.g., LRM). Representative methods include CharacterGen, StdGen, and SKDream.
+**Background**: 3D pose stylization aims to generate 3D assets that strictly follow a target pose while preserving character identity. Mainstream approaches adopt a cascade pipeline: a 2D foundation model (e.g., ControlNet) generates a pose-stylized image from a 2D skeleton map, which is then lifted into a 3D asset by a reconstruction model (e.g., LRM). Representative methods include CharacterGen, StdGen, and SKDream.
 
 **Limitations of Prior Work**: (1) **Unavoidable error propagation**: artifacts, occlusions, and inconsistencies introduced in the 2D generation stage are directly amplified during 3D reconstruction, causing geometric distortion. (2) **Inherent ambiguity in 2D skeleton maps**: 2D projection discards critical depth information and spatial relationships, making it impossible to resolve self-occlusions or complex topological structures, which severely limits the accuracy of the final 3D pose — a single 2D pose can correspond to infinitely many 3D configurations.
 
-**Root Cause**: Existing methods fundamentally operate by "manipulating pose in 2D space and then attempting to recover 3D," but 2D manipulation inherently discards 3D information that cannot be recovered during the lifting stage. What is needed is direct pose control in 3D space.
+**Key Challenge**: Existing methods fundamentally operate by "manipulating pose in 2D space and then attempting to recover 3D," but 2D manipulation inherently discards 3D information that cannot be recovered during the lifting stage. What is needed is direct pose control in 3D space.
 
-**Paper Goals**: (1) Eliminate error accumulation caused by 2D-to-3D cascades; (2) Provide unambiguous 3D spatial pose control; (3) Address the scarcity of large-scale Image-Skeleton-Mesh training data.
+**Goal**: (1) Eliminate error accumulation caused by 2D-to-3D cascades; (2) Provide unambiguous 3D spatial pose control; (3) Address the scarcity of large-scale Image-Skeleton-Mesh training data.
 
-**Starting Point**: Inject 3D skeletons directly as conditioning signals into a 3D native generation pipeline, using a single unified end-to-end model to simultaneously perform pose stylization and 3D geometry generation.
+**Key Insight**: Inject 3D skeletons directly as conditioning signals into a 3D native generation pipeline, using a single unified end-to-end model to simultaneously perform pose stylization and 3D geometry generation.
 
 **Core Idea**: Replace 2D skeletons with 3D skeletons as pose conditions, and achieve end-to-end pose stylization within a 3D native generation framework, eliminating cascade errors.
 

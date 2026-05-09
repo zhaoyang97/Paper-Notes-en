@@ -26,13 +26,13 @@ This paper is the first to eliminate the dependency of the robust geometric medi
 
 ## Background & Motivation
 
-**State of the Field**: The geometric median (Fermat-Weber problem) occupies a central role in computational geometry. Its robust variant allows removing $m$ outliers to resist noise or adversarial perturbations, with the objective function $\text{cost}^{(m)}(P, c) = \min_{|L|=m} \sum_{p \in P \setminus L} \|p - c\|$.
+**Background**: The geometric median (Fermat-Weber problem) occupies a central role in computational geometry. Its robust variant allows removing $m$ outliers to resist noise or adversarial perturbations, with the objective function $\text{cost}^{(m)}(P, c) = \min_{|L|=m} \sum_{p \in P \setminus L} \|p - c\|$.
 
 **Limitations of Prior Work**: All known coreset constructions include an $O(m)$ term, since existing methods retain all outlier points in the coreset. When $m = \Theta(n)$ (e.g., the PageBlocks dataset with $m \approx 0.1n$), the coreset loses its compression utility.
 
 **Core Problem**: Can the $O(m)$ term in coreset size be eliminated? Prior results seemed to suggest otherwise, given an existing $\Omega(m)$ lower bound—however, this bound relies on the extreme case $m = n-1$.
 
-**Starting Point**: This paper proves that $n - m = \Omega(n)$ is both necessary and sufficient for eliminating the $O(m)$ term, and proposes a new algorithm along with a novel non-componentwise error analysis under this condition.
+**Key Insight**: This paper proves that $n - m = \Omega(n)$ is both necessary and sufficient for eliminating the $O(m)$ term, and proposes a new algorithm along with a novel non-componentwise error analysis under this condition.
 
 ## Method
 

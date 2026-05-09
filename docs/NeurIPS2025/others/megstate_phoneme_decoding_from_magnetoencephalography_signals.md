@@ -30,7 +30,7 @@ This paper proposes MEGState, an architecture combining multi-resolution convolu
 
 ### Limitations of Prior Work
 
-**State of the Field**: Decoding speech representations from brain activity is of significant importance for restoring communicative ability in individuals with paralysis or severe speech disorders. Invasive brain-computer interfaces (e.g., ECoG) have demonstrated continuous speech reconstruction with word error rates below 5%; however, their reliance on neurosurgical implantation limits scalability and clinical viability.
+**Background**: Decoding speech representations from brain activity is of significant importance for restoring communicative ability in individuals with paralysis or severe speech disorders. Invasive brain-computer interfaces (e.g., ECoG) have demonstrated continuous speech reconstruction with word error rates below 5%; however, their reliance on neurosurgical implantation limits scalability and clinical viability.
 
 Magnetoencephalography (MEG), as a non-invasive alternative, offers a safe and repeatable means of detecting speech-related neural activity, yet faces three major challenges:
 
@@ -40,7 +40,7 @@ Magnetoencephalography (MEG), as a non-invasive alternative, offers a safe and r
 
 **Sparse neural representations**: Speech information is sparsely encoded in MEG signals.
 
-**Paper Goals**: The paper is motivated by the need to design an architecture capable of simultaneously capturing fine-grained local temporal dynamics and long-range temporal dependencies to overcome the above challenges.
+**Goal**: The paper is motivated by the need to design an architecture capable of simultaneously capturing fine-grained local temporal dynamics and long-range temporal dependencies to overcome the above challenges.
 
 ## Method
 

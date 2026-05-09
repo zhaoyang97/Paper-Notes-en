@@ -29,15 +29,15 @@ HERBench is a video question answering benchmark specifically designed for multi
 
 ## Background & Motivation
 
-1. **State of the Field**: Video-LLMs (e.g., GPT-4o, Gemini, Qwen2.5-VL) have achieved strong scores on existing VideoQA benchmarks, suggesting rapid progress in video understanding capabilities.
+1. **Background**: Video-LLMs (e.g., GPT-4o, Gemini, Qwen2.5-VL) have achieved strong scores on existing VideoQA benchmarks, suggesting rapid progress in video understanding capabilities.
 
 2. **Limitations of Prior Work**: Recent auditing studies reveal that high scores often stem from language priors or single-cue shortcuts rather than genuine temporal reasoning. Models can answer questions by observing a single frame or exploiting linguistic bias, and existing benchmarks fail to distinguish "true video understanding" from "shortcut exploitation."
 
-3. **Root Cause**: Existing VideoQA benchmarks permit single-cue shortcuts—one key frame or textual common sense suffices to answer the question—making it impossible to determine whether models genuinely possess the ability to integrate multiple pieces of evidence across time.
+3. **Key Challenge**: Existing VideoQA benchmarks permit single-cue shortcuts—one key frame or textual common sense suffices to answer the question—making it impossible to determine whether models genuinely possess the ability to integrate multiple pieces of evidence across time.
 
-4. **Paper Goals**: (1) Design a benchmark that structurally requires multi-evidence integration ($\ge 3$ dispersed cues); (2) Propose the quantitative MRFS metric to measure "evidential demand"; (3) Diagnose specific failure modes of current Video-LLMs—distinguishing frame selection failures from evidence fusion failures.
+4. **Goal**: (1) Design a benchmark that structurally requires multi-evidence integration ($\ge 3$ dispersed cues); (2) Propose the quantitative MRFS metric to measure "evidential demand"; (3) Diagnose specific failure modes of current Video-LLMs—distinguishing frame selection failures from evidence fusion failures.
 
-5. **Starting Point**: The authors define the concept of *Evidential Requirement* (ER)—the minimum number of non-redundant visual evidence pieces needed to answer a question. By enforcing $\text{ER} \ge 3$, single-cue shortcuts are fundamentally eliminated, making multi-evidence reasoning an unavoidable requirement.
+5. **Key Insight**: The authors define the concept of *Evidential Requirement* (ER)—the minimum number of non-redundant visual evidence pieces needed to answer a question. By enforcing $\text{ER} \ge 3$, single-cue shortcuts are fundamentally eliminated, making multi-evidence reasoning an unavoidable requirement.
 
 6. **Core Idea**: Through structural design, each question requires at least three temporally dispersed visual cues. Combined with the MRFS metric for quantifying frame-fusion difficulty, the benchmark systematically exposes Video-LLMs' dual deficiencies in frame retrieval and evidence fusion.
 

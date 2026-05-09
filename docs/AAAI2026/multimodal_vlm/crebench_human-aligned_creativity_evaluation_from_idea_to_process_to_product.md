@@ -28,18 +28,18 @@ This paper proposes CreBench, a multimodal creativity evaluation benchmark cover
 
 ## Background & Motivation
 
-**State of the Field**: MLLMs have achieved substantial progress on objective tasks such as visual question answering and image captioning. However, creativity is a highly abstract, subjective, and multi-dimensional human cognitive ability, and existing MLLMs remain far from aligned with human judgment in this regard.
+**Background**: MLLMs have achieved substantial progress on objective tasks such as visual question answering and image captioning. However, creativity is a highly abstract, subjective, and multi-dimensional human cognitive ability, and existing MLLMs remain far from aligned with human judgment in this regard.
 
 **Limitations of Prior Work**:
 - No benchmark specifically targeting creativity evaluation exists.
 - Existing metrics (BLEU, CIDEr, CLIPScore) fail to capture creativity dimensions such as novelty and utility.
 - Prior creativity-related datasets have limited coverage (no multimodal data, no process data, no human feedback).
 
-**Root Cause**: The open-ended and subjective nature of creativity makes automated evaluation extremely difficult, yet this is precisely the core capability AI systems need to develop.
+**Key Challenge**: The open-ended and subjective nature of creativity makes automated evaluation extremely difficult, yet this is precisely the core capability AI systems need to develop.
 
-**Paper Goals**: To construct a multi-dimensional, human-aligned creativity evaluation benchmark along with a corresponding dataset and expert model.
+**Goal**: To construct a multi-dimensional, human-aligned creativity evaluation benchmark along with a corresponding dataset and expert model.
 
-**Starting Point**: Drawing from cognitive science and design theory, creativity is decomposed into three dimensions—idea → process → product—with 12 fine-grained metrics: originality, appropriateness, immersion, divergence, structuring, evaluation, elaboration, effectiveness, aesthetics, novelty, manufacturability, and systemic complexity.
+**Key Insight**: Drawing from cognitive science and design theory, creativity is decomposed into three dimensions—idea → process → product—with 12 fine-grained metrics: originality, appropriateness, immersion, divergence, structuring, evaluation, elaboration, effectiveness, aesthetics, novelty, manufacturability, and systemic complexity.
 
 **Core Idea**: Construct a human-aligned multi-dimensional creativity evaluation benchmark, and train CreExpert via expert annotation combined with GPT-4o-based instruction generation.
 

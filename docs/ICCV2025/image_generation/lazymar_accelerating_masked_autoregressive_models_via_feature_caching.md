@@ -28,15 +28,15 @@ LazyMAR addresses the inference efficiency bottleneck of Masked Autoregressive (
 
 ## Background & Motivation
 
-**State of the Field**: Autoregressive (AR) image generation models (e.g., VQGAN+Transformer) generate images token by token, but sequential dependencies limit efficiency. Masked Autoregressive (MAR) models (e.g., MaskGIT, MAR) accelerate generation by predicting multiple masked tokens in parallel, while maintaining or surpassing the generation quality of AR models.
+**Background**: Autoregressive (AR) image generation models (e.g., VQGAN+Transformer) generate images token by token, but sequential dependencies limit efficiency. Masked Autoregressive (MAR) models (e.g., MaskGIT, MAR) accelerate generation by predicting multiple masked tokens in parallel, while maintaining or surpassing the generation quality of AR models.
 
 **Limitations of Prior Work**: MAR models employ bidirectional attention, which allows parallel decoding of multiple tokens but requires simultaneous access to all tokens, making traditional KV Cache inapplicable. KV Cache works for AR models because, under causal attention, the KV representations of previously generated tokens remain unchanged. Under MAR's bidirectional attention, every token's representation may change as new tokens are decoded, rendering traditional KV Cache entirely ineffective. This leaves MAR's inference efficiency surprisingly below expectations.
 
-**Root Cause**: The parallel decoding advantage of MAR is offset by cache invalidation under bidirectional attention, necessitating novel caching mechanisms tailored to MAR.
+**Key Challenge**: The parallel decoding advantage of MAR is offset by cache invalidation under bidirectional attention, necessitating novel caching mechanisms tailored to MAR.
 
-**Paper Goals**: Design caching mechanisms adapted to MAR models that substantially accelerate inference while preserving generation quality.
+**Goal**: Design caching mechanisms adapted to MAR models that substantially accelerate inference while preserving generation quality.
 
-**Starting Point**: By analyzing computational redundancy in the MAR decoding process, the authors identify two key redundancies: (a) the features of most tokens remain nearly unchanged across adjacent decoding steps (token redundancy); (b) the residual between conditional and unconditional outputs in classifier-free guidance changes minimally between adjacent steps (condition redundancy).
+**Key Insight**: By analyzing computational redundancy in the MAR decoding process, the authors identify two key redundancies: (a) the features of most tokens remain nearly unchanged across adjacent decoding steps (token redundancy); (b) the residual between conditional and unconditional outputs in classifier-free guidance changes minimally between adjacent steps (condition redundancy).
 
 **Core Idea**: Exploit token redundancy and condition redundancy in the MAR decoding process to design token cache and condition cache, enabling training-free, plug-and-play acceleration.
 

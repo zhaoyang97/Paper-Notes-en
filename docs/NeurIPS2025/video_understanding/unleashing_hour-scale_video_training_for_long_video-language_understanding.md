@@ -29,15 +29,15 @@ This work constructs VideoMarathon, the first large-scale hour-level video instr
 
 ## Background & Motivation
 
-**State of the Field**: Recent Video-LMMs have achieved notable progress on video QA and video summarization tasks, yet training data predominantly consists of short clips (average under 1 minute). Existing datasets such as LLaVA-Video-178K have an average video duration of only 0.6 minutes.
+**Background**: Recent Video-LMMs have achieved notable progress on video QA and video summarization tasks, yet training data predominantly consists of short clips (average under 1 minute). Existing datasets such as LLaVA-Video-178K have an average video duration of only 0.6 minutes.
 
 **Limitations of Prior Work**: Evaluation benchmarks (e.g., LVBench with an average of 67 minutes, Video-MME with an average of 17 minutes) require models to comprehend hour-scale videos, whereas models are trained exclusively on short clips of a few minutes, resulting in a severe train–test length mismatch. Existing approaches (e.g., uniform sampling of 64 frames) incur substantial information loss when processing long videos.
 
-**Root Cause**: The absence of high-quality long-video instruction-following data, combined with existing models' inability to efficiently handle the massive token count of hour-scale videos. GPU memory constraints prevent models from directly consuming all visual tokens produced by 1-FPS sampling over thousands of frames.
+**Key Challenge**: The absence of high-quality long-video instruction-following data, combined with existing models' inability to efficiently handle the massive token count of hour-scale videos. GPU memory constraints prevent models from directly consuming all visual tokens produced by 1-FPS sampling over thousands of frames.
 
-**Paper Goals**: (1) Construct large-scale long-video training data; (2) Design a model architecture that exploits complete video context under limited computational budget.
+**Goal**: (1) Construct large-scale long-video training data; (2) Design a model architecture that exploits complete video context under limited computational budget.
 
-**Starting Point**: Drawing inspiration from the human memory system—selectively retaining and recalling critical information while systematically discarding redundancy—the work designs a memory augmentation mechanism that balances token compression with information preservation.
+**Key Insight**: Drawing inspiration from the human memory system—selectively retaining and recalling critical information while systematically discarding redundancy—the work designs a memory augmentation mechanism that balances token compression with information preservation.
 
 **Core Idea**: A hierarchical video captioning pipeline generates large-scale long-video QA data; a memory repository caches full video features, which are then compressed via a forgetting mechanism and enriched through cross-attention, enabling learnable token compression.
 

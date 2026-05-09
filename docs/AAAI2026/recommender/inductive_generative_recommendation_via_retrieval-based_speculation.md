@@ -29,15 +29,15 @@ This paper identifies a critical limitation of Generative Recommendation (GR) mo
 
 ## Background & Motivation
 
-**State of the Field**: Generative Recommendation (GR) is an emerging paradigm that tokenizes items into discrete tokens and autoregressively generates the next token sequence as a recommendation. This paradigm has the potential to surpass traditional transductive approaches and, in theory, could even generate new items directly from semantics.
+**Background**: Generative Recommendation (GR) is an emerging paradigm that tokenizes items into discrete tokens and autoregressively generates the next token sequence as a recommendation. This paradigm has the potential to surpass traditional transductive approaches and, in theory, could even generate new items directly from semantics.
 
 **Limitations of Prior Work**: The authors empirically demonstrate that GR models predominantly generate items seen during training and are nearly incapable of recommending unseen items. This is because GR models learn token sequences that are tightly bound to item IDs in the training set, and thus fail to generalize to token combinations corresponding to new items — severely limiting their applicability in cold-start and dynamic catalog scenarios.
 
-**Root Cause**: GR models excel at ranking known items (strong transductive ability) but lack the capacity to recommend new items (weak inductive ability). In practice, item catalogs are continuously updated with new arrivals.
+**Key Challenge**: GR models excel at ranking known items (strong transductive ability) but lack the capacity to recommend new items (weak inductive ability). In practice, item catalogs are continuously updated with new arrivals.
 
-**Paper Goals**: To enable GR models to recommend new items in an inductive setting while preserving their strong ranking ability over known items.
+**Goal**: To enable GR models to recommend new items in an inductive setting while preserving their strong ranking ability over known items.
 
-**Starting Point**: Inspired by speculative decoding in LLMs — where a small, flexible "drafter" rapidly proposes candidates and a large, precise "verifier" filters them — the drafter here leverages inductive ability to propose new items, while the GR model acts as a verifier exploiting its ranking capability to select the best recommendation.
+**Key Insight**: Inspired by speculative decoding in LLMs — where a small, flexible "drafter" rapidly proposes candidates and a large, precise "verifier" filters them — the drafter here leverages inductive ability to propose new items, while the GR model acts as a verifier exploiting its ranking capability to select the best recommendation.
 
 **Core Idea**: Address the inductive limitation of GR models via a drafter-verifier speculative paradigm — the drafter is responsible for "discovering" new items while the GR verifier handles "ranking," with the two components complementing each other.
 

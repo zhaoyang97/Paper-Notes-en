@@ -34,11 +34,11 @@ This paper proposes the FEAT framework, which employs stochastic interpolants to
 
 ### State of the Field
 
-**State of the Field**: Classical methods (FEP, BAR, TI) rely on equilibrium sampling or intermediate systems, and fail in high-dimensional spaces where distributional overlap is insufficient.
+**Background**: Classical methods (FEP, BAR, TI) rely on equilibrium sampling or intermediate systems, and fail in high-dimensional spaces where distributional overlap is insufficient.
 
 ### Root Cause
 
-**Root Cause**: The Jarzynski equality introduces non-equilibrium trajectories, but the resulting estimators suffer from high variance.
+**Key Challenge**: The Jarzynski equality introduces non-equilibrium trajectories, but the resulting estimators suffer from high variance.
 
 ### Solution Direction
 

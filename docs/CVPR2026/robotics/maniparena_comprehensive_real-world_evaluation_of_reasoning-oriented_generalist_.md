@@ -29,15 +29,15 @@ ManipArena proposes a standardized real-world robot manipulation evaluation fram
 
 ## Background & Motivation
 
-1. **State of the Field**: VLA (Vision-Language-Action) models and world models represent two dominant paradigms in generalist robot intelligence, demonstrating promise in manipulation, mobile manipulation, and long-horizon tasks.
+1. **Background**: VLA (Vision-Language-Action) models and world models represent two dominant paradigms in generalist robot intelligence, demonstrating promise in manipulation, mobile manipulation, and long-horizon tasks.
 
 2. **Limitations of Prior Work**: Existing evaluations are heavily concentrated in simulation environments (RLBench, LIBERO, CALVIN, etc.), which offer controllability and reproducibility but fail to capture the "reality gap" introduced by perceptual noise, complex contact dynamics, system latency, and hardware constraints in real deployment. Meanwhile, real-world evaluations remain highly fragmented—different researchers use different robot platforms and environments, making cross-study comparisons unfair and difficult to reproduce.
 
-3. **Root Cause**: Simulation success rates are unreliable predictors of real-world performance, while existing real-world evaluations lack standardized protocols.
+3. **Key Challenge**: Simulation success rates are unreliable predictors of real-world performance, while existing real-world evaluations lack standardized protocols.
 
-4. **Paper Goals**: To construct a standardized evaluation framework bridging simulation and real execution, supporting fair and reproducible assessment of reasoning-intensive manipulation tasks.
+4. **Goal**: To construct a standardized evaluation framework bridging simulation and real execution, supporting fair and reproducible assessment of reasoning-intensive manipulation tasks.
 
-5. **Starting Point**: Five core design principles—reasoning-oriented tasks, multi-level generalization, mobile manipulation, rich sensory diagnostics, and Real2Sim synchronization.
+5. **Key Insight**: Five core design principles—reasoning-oriented tasks, multi-level generalization, mobile manipulation, rich sensory diagnostics, and Real2Sim synchronization.
 
 6. **Core Idea**: Combine a green-screen controlled environment, systematic diversity design, and hierarchical OOD evaluation to build the first standardized real-world benchmark for reasoning-oriented robot manipulation.
 

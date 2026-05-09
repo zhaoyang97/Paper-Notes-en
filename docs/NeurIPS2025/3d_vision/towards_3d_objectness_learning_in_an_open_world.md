@@ -39,9 +39,9 @@ This paper proposes OP3Det, a class-agnostic open-world 3D detector that require
 
 **Scarcity of 3D data**: 3D point cloud datasets are far more limited in scale and category coverage compared to their 2D counterparts.
 
-**Root Cause**: How can a detector learn generalizable *3D objectness* under severely limited 3D annotation categories, enabling it to discover objects of arbitrary classes?
+**Key Challenge**: How can a detector learn generalizable *3D objectness* under severely limited 3D annotation categories, enabling it to discover objects of arbitrary classes?
 
-**Starting Point**: Given that large-scale pretrained 2D foundation models (e.g., SAM) exhibit strong zero-shot generalization, their capabilities can be transferred to the 3D domain to learn open-world 3D objectness. The core ideas are: (1) use SAM for class-agnostic 3D object discovery to augment training data, and (2) design a cross-modal MoE to dynamically fuse multi-modal features for learning generalizable 3D objectness.
+**Key Insight**: Given that large-scale pretrained 2D foundation models (e.g., SAM) exhibit strong zero-shot generalization, their capabilities can be transferred to the 3D domain to learn open-world 3D objectness. The core ideas are: (1) use SAM for class-agnostic 3D object discovery to augment training data, and (2) design a cross-modal MoE to dynamically fuse multi-modal features for learning generalizable 3D objectness.
 
 ## Method
 

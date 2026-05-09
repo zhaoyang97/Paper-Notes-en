@@ -30,7 +30,7 @@ To address background distraction in few-shot action recognition (FSAR) for wide
 
 ### Limitations of Prior Work
 
-**State of the Field**: Few-shot action recognition (FSAR) classifies unseen action categories from only a handful of video samples. Wide-angle videos (FoV > 80°) can provide scene context (e.g., "climbing wall" or "construction site") that helps distinguish visually similar actions. However, approximately 35% of samples in mainstream FSAR benchmarks are wide-angle videos, and this setting remains underexplored.
+**Background**: Few-shot action recognition (FSAR) classifies unseen action categories from only a handful of video samples. Wide-angle videos (FoV > 80°) can provide scene context (e.g., "climbing wall" or "construction site") that helps distinguish visually similar actions. However, approximately 35% of samples in mainstream FSAR benchmarks are wide-angle videos, and this setting remains underexplored.
 
 Wide-angle videos introduce two core challenges for FSAR: (1) **Insufficient subject saliency** — subjects occupy a smaller proportion of wide-angle frames, causing global modeling methods such as RWKV to capture abundant secondary background information (e.g., "snow") rather than the key subject (e.g., "athlete"), resulting in a foreground–background inversion; (2) **Temporal relationship degradation** — many frames in wide-angle videos share similar backgrounds, obscuring the progression of subject actions, while RWKV lacks the capacity to reconstruct such degraded temporal relationships.
 
@@ -38,7 +38,7 @@ Existing methods perform well under standard viewpoints but rarely address both 
 
 ### Root Cause
 
-**Paper Goals**: How can background distraction in wide-angle few-shot action recognition be effectively mitigated to address both insufficient subject saliency and temporal relationship degradation?
+**Goal**: How can background distraction in wide-angle few-shot action recognition be effectively mitigated to address both insufficient subject saliency and temporal relationship degradation?
 
 ## Method
 

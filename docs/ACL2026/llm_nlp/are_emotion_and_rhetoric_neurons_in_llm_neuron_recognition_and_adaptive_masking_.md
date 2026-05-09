@@ -29,15 +29,15 @@ This paper systematically investigates the representational mechanisms of emotio
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly capable of emotion understanding and rhetorical generation. Existing improvements rely primarily on external optimization (prompt engineering, fine-tuning), with insufficient exploration of internal representational mechanisms. The limited neuron-level studies focus exclusively on emotion neurons, neglecting rhetoric neurons and their interplay with emotion.
+**Background**: LLMs are increasingly capable of emotion understanding and rhetorical generation. Existing improvements rely primarily on external optimization (prompt engineering, fine-tuning), with insufficient exploration of internal representational mechanisms. The limited neuron-level studies focus exclusively on emotion neurons, neglecting rhetoric neurons and their interplay with emotion.
 
 **Limitations of Prior Work**: Conventional neuron validation methods (zero-forcing, mean substitution) exhibit counter-intuitive behavior on emotion and rhetoric tasks — masking highly relevant target neurons paradoxically increases task accuracy rather than decreasing it, rendering reliable causal validation infeasible.
 
-**Root Cause**: While neuron intervention is desirable for verifying and steering emotion/rhetoric expression, existing masking methods are unreliable. Zero-forcing may trigger functional compensation (complementary neuron clusters taking over), while mean substitution fails to genuinely disrupt the specific representations encoded by core neurons.
+**Key Challenge**: While neuron intervention is desirable for verifying and steering emotion/rhetoric expression, existing masking methods are unreliable. Zero-forcing may trigger functional compensation (complementary neuron clusters taking over), while mean substitution fails to genuinely disrupt the specific representations encoded by core neurons.
 
-**Paper Goals**: (1) Systematically identify neurons associated with 6 emotion and 4 rhetoric categories; (2) propose a reliable causal validation method; (3) achieve targeted steering and cross-signal enhancement.
+**Goal**: (1) Systematically identify neurons associated with 6 emotion and 4 rhetoric categories; (2) propose a reliable causal validation method; (3) achieve targeted steering and cross-signal enhancement.
 
-**Starting Point**: Building on the differential activation of neurons, the paper designs decay-based masking rather than zero-forcing, coupled with feedback optimization to ensure reliable masking outcomes.
+**Key Insight**: Building on the differential activation of neurons, the paper designs decay-based masking rather than zero-forcing, coupled with feedback optimization to ensure reliable masking outcomes.
 
 **Core Idea**: Replace conventional hard masking with adaptive masking (dynamic selection + decay masking + feedback optimization) to achieve reliable neuron function validation and intervention.
 

@@ -27,15 +27,15 @@ This paper studies the problem of modifying description logic concepts in respon
 
 ## Background & Motivation
 
-**State of the Field**: Belief revision is a central problem in AI and knowledge representation. Classical belief revision theory (the AGM framework) primarily addresses knowledge change at the propositional logic level. Description Logic (DL), as the foundational formalism for ontologies and the Semantic Web, requires analogous knowledge update operations at the concept level.
+**Background**: Belief revision is a central problem in AI and knowledge representation. Classical belief revision theory (the AGM framework) primarily addresses knowledge change at the propositional logic level. Description Logic (DL), as the foundational formalism for ontologies and the Semantic Web, requires analogous knowledge update operations at the concept level.
 
 **Limitations of Prior Work**: Existing work on belief revision in description logics has focused mainly on changes to TBoxes (terminological components) and ABoxes (assertional components). A systematic theoretical framework for modifying concepts themselves — i.e., DL formulas — in response to new model evidence is lacking. In particular, there is no principled account of how to minimally revise a concept when newly observed individuals (pointed interpretations) are inconsistent with it.
 
-**Root Cause**: Intuitively, revision might be decomposed as "first remove, then add," but the authors demonstrate that this intuition is incorrect — revision cannot be reduced to a simple composition of eviction followed by reception. This reveals an intrinsic complexity in model change for description logic concepts.
+**Key Challenge**: Intuitively, revision might be decomposed as "first remove, then add," but the authors demonstrate that this intuition is incorrect — revision cannot be reduced to a simple composition of eviction followed by reception. This reveals an intrinsic complexity in model change for description logic concepts.
 
-**Paper Goals**: (1) Formalize the problem of model change for DL concepts; (2) Define three basic change operations and study their interrelationships; (3) Establish compatibility results for two important DL fragments, EL and ALC.
+**Goal**: (1) Formalize the problem of model change for DL concepts; (2) Define three basic change operations and study their interrelationships; (3) Establish compatibility results for two important DL fragments, EL and ALC.
 
-**Starting Point**: Adopting a model-theoretic perspective, the paper models concept change as adjustments to the set of pointed interpretations accepted by a concept, drawing on the AGM postulate tradition from classical belief revision theory.
+**Key Insight**: Adopting a model-theoretic perspective, the paper models concept change as adjustments to the set of pointed interpretations accepted by a concept, drawing on the AGM postulate tradition from classical belief revision theory.
 
 **Core Idea**: The problem of DL concept change is decomposed into three atomic operations (eviction/reception/revision). The paper proves the irreducibility of revision and establishes realizability conditions for these operations in EL and ALC.
 

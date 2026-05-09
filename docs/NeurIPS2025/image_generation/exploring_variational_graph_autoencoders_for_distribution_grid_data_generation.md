@@ -29,15 +29,15 @@ This paper systematically evaluates four variational graph autoencoder (VGAE) de
 
 ## Background & Motivation
 
-**State of the Field**: The rapid proliferation of distributed energy resources (PV, batteries, EVs) poses voltage stability and operational challenges in distribution grids, creating urgent demand for data-driven methods to support grid planning and control. However, utilities are reluctant to share real grid data due to security and privacy concerns, severely impeding the application of machine learning in this domain.
+**Background**: The rapid proliferation of distributed energy resources (PV, batteries, EVs) poses voltage stability and operational challenges in distribution grids, creating urgent demand for data-driven methods to support grid planning and control. However, utilities are reluctant to share real grid data due to security and privacy concerns, severely impeding the application of machine learning in this domain.
 
 **Limitations of Prior Work**: Existing synthetic grid generation relies primarily on statistical models and heuristic optimization algorithms, both of which introduce excessive simplifying assumptions and fail to capture the diversity, dynamics, and complex interdependencies of real grids. Existing ML-based approaches (e.g., FeederGAN, DeepGDL) suffer from limited generalizability and lack of open-source code, resulting in an absence of reproducible baselines.
 
-**Root Cause**: The unavailability of real distribution grid data conflicts with the need for large, diverse training datasets in downstream ML research. A generative model is needed that can produce structurally realistic synthetic grids while adapting to varying scales and topologies.
+**Key Challenge**: The unavailability of real distribution grid data conflicts with the need for large, diverse training datasets in downstream ML research. A generative model is needed that can produce structurally realistic synthetic grids while adapting to varying scales and topologies.
 
-**Paper Goals**: (1) Systematically evaluate the feasibility of the VGAE framework for distribution grid topology generation; (2) compare the expressive capacity of different decoders; (3) identify generalization bottlenecks when scaling from small benchmarks to large-scale real-world grids.
+**Goal**: (1) Systematically evaluate the feasibility of the VGAE framework for distribution grid topology generation; (2) compare the expressive capacity of different decoders; (3) identify generalization bottlenecks when scaling from small benchmarks to large-scale real-world grids.
 
-**Starting Point**: VGAE is selected as the backbone framework due to its probabilistic latent space and modular decoder design. By comparing four decoders across two datasets with markedly different structural characteristics, the study quantitatively delineates the upper and lower bounds of generation quality.
+**Key Insight**: VGAE is selected as the backbone framework due to its probabilistic latent space and modular decoder design. By comparing four decoders across two datasets with markedly different structural characteristics, the study quantitatively delineates the upper and lower bounds of generation quality.
 
 **Core Idea**: Employ VGAE with multiple GNN-based decoders to generate synthetic distribution grid topologies, and expose their limitations in realistic scenarios through structural and spectral evaluation metrics.
 

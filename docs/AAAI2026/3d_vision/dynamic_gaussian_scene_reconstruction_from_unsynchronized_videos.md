@@ -28,15 +28,15 @@ This paper proposes a coarse-to-fine temporal alignment module that can be plugg
 
 ## Background & Motivation
 
-**State of the Field**: 4D Gaussian Splatting (4DGS) is the dominant approach for dynamic scene reconstruction, achieving real-time rendering and high-fidelity reconstruction via explicit Gaussian primitives. Representative methods include 4DGaussians, SC-GS, and RT4DGS.
+**Background**: 4D Gaussian Splatting (4DGS) is the dominant approach for dynamic scene reconstruction, achieving real-time rendering and high-fidelity reconstruction via explicit Gaussian primitives. Representative methods include 4DGaussians, SC-GS, and RT4DGS.
 
 **Limitations of Prior Work**: These methods uniformly assume that multi-view cameras are strictly time-synchronized—i.e., all cameras trigger simultaneously at each timestamp. In practice, however, independently operated cameras (consumer cameras, smartphones, GoPros, etc.) inevitably exhibit temporal offsets ranging from milliseconds to seconds due to the absence of a unified clock, network latency, and manual operation.
 
-**Root Cause**: When a model attempts to fuse views captured at physically different moments to reconstruct a single logical timestamp, rapidly moving objects exhibit significant positional discrepancies across views, producing severe artifacts such as ghosting and motion blur. These inconsistent observations mislead the 4DGS optimization process, causing it to incorrectly attribute temporal errors to spatial geometry or appearance deficiencies.
+**Key Challenge**: When a model attempts to fuse views captured at physically different moments to reconstruct a single logical timestamp, rapidly moving objects exhibit significant positional discrepancies across views, producing severe artifacts such as ghosting and motion blur. These inconsistent observations mislead the 4DGS optimization process, causing it to incorrectly attribute temporal errors to spatial geometry or appearance deficiencies.
 
-**Paper Goals**: To achieve high-quality 4D dynamic scene reconstruction from unsynchronized multi-view videos without requiring dedicated synchronization hardware.
+**Goal**: To achieve high-quality 4D dynamic scene reconstruction from unsynchronized multi-view videos without requiring dedicated synchronization hardware.
 
-**Starting Point**: Explicitly incorporating the unknown temporal offset of each camera into the optimization objective, and estimating temporal misalignment through a two-stage decomposition into coarse frame-level offsets and fine sub-frame offsets.
+**Key Insight**: Explicitly incorporating the unknown temporal offset of each camera into the optimization objective, and estimating temporal misalignment through a two-stage decomposition into coarse frame-level offsets and fine sub-frame offsets.
 
 **Core Idea**: Design a coarse-to-fine plug-and-play temporal alignment module that combines LoFTR-based feature matching for coarse alignment with learnable parameters for fine alignment, jointly optimized end-to-end with the 4DGS framework.
 

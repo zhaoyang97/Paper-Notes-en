@@ -28,7 +28,7 @@ This paper proposes Decomate, an interactive system that leverages multimodal la
 
 ## Background & Motivation
 
-**State of the Field**: SVG animation is an important yet technically demanding skill in UI/UX design. Designers must switch between multiple platforms, manually edit code, or rely on developers to implement motion effects, resulting in workflows that lack flexibility and fine-grained control.
+**Background**: SVG animation is an important yet technically demanding skill in UI/UX design. Designers must switch between multiple platforms, manually edit code, or rely on developers to implement motion effects, resulting in workflows that lack flexibility and fine-grained control.
 
 **Limitations of Prior Work** (derived from interviews with 11 professional designers):
    - **(a) Time constraints**: Animation is frequently deprioritized due to tight schedules; many designers have little opportunity to explore and integrate motion effects.
@@ -37,7 +37,7 @@ This paper proposes Decomate, an interactive system that leverages multimodal la
 
 **Limitations of Prior Work**: Tools such as Keyframer support natural language–driven SVG animation generation but assume well-structured SVG input (with explicit class labels and groupings), whereas real-world design assets are typically flat and disorganized.
 
-**Root Cause**: A significant gap exists between designers' creative intent (e.g., "make the wings flap slowly") and the underlying technical implementation (e.g., splitting SVG paths and writing keyframe animations).
+**Key Challenge**: A significant gap exists between designers' creative intent (e.g., "make the wings flap slowly") and the underlying technical implementation (e.g., splitting SVG paths and writing keyframe animations).
 
 ## Method
 

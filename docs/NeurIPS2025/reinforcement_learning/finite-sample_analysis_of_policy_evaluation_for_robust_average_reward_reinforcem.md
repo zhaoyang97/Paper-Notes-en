@@ -28,15 +28,15 @@ This work provides the first finite-sample complexity analysis for policy evalua
 
 ## Background & Motivation
 
-**State of the Field**: Robust RL addresses the sim-to-real gap and related challenges by performing worst-case optimization over uncertainty sets on transition probabilities. In the discounted reward setting, the robust Bellman operator naturally enjoys a contraction property under the sup-norm due to the discount factor $\gamma < 1$, and finite-sample analyses are relatively mature.
+**Background**: Robust RL addresses the sim-to-real gap and related challenges by performing worst-case optimization over uncertainty sets on transition probabilities. In the discounted reward setting, the robust Bellman operator naturally enjoys a contraction property under the sup-norm due to the discount factor $\gamma < 1$, and finite-sample analyses are relatively mature.
 
 **Limitations of Prior Work**: The average reward setting is better suited for applications requiring long-term sustained efficiency (e.g., queuing systems, inventory management, network control). However, **even the non-robust average reward Bellman operator fails to be a contraction under any norm**, rendering standard fixed-point iteration analysis inapplicable. As a result, existing work on robust average reward RL provides only asymptotic convergence guarantees (based on ODE analysis), without finite-sample complexity bounds.
 
-**Root Cause**: The natural contraction mechanism provided by $\gamma < 1$ in the discounted setting is entirely absent in the average reward setting. The min operation introduced by robustness further compounds the analytical difficulty—contraction must be established simultaneously across all transition models in the uncertainty set.
+**Key Challenge**: The natural contraction mechanism provided by $\gamma < 1$ in the discounted setting is entirely absent in the average reward setting. The min operation introduced by robustness further compounds the analytical difficulty—contraction must be established simultaneously across all transition models in the uncertainty set.
 
-**Paper Goals**: (a) In what sense does the robust average reward Bellman operator admit a contraction? (b) How can one estimate the support functions involving nonlinear worst-case transition effects with finite samples? (c) What is the resulting sample complexity?
+**Goal**: (a) In what sense does the robust average reward Bellman operator admit a contraction? (b) How can one estimate the support functions involving nonlinear worst-case transition effects with finite samples? (c) What is the resulting sample complexity?
 
-**Starting Point**: The paper treats the worst-case transition matrices across all uncertainty sets as a family of linear maps, exploits the fact that their joint spectral radius is strictly less than 1, and constructs an extremal norm—from which a semi-norm enabling one-step contraction is derived.
+**Key Insight**: The paper treats the worst-case transition matrices across all uncertainty sets as a family of linear maps, exploits the fact that their joint spectral radius is strictly less than 1, and constructs an extremal norm—from which a semi-norm enabling one-step contraction is derived.
 
 **Core Idea**: A semi-norm is constructed via extremal norm combined with quotient-space correction to prove contraction of the robust Bellman operator, and truncated MLMC is employed to achieve finite-sample policy evaluation.
 

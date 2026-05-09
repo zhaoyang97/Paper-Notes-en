@@ -29,15 +29,15 @@ This paper proposes MapGCLR, a geospatial contrastive learning strategy that enf
 
 ## Background & Motivation
 
-**State of the Field**: Online HD map construction has emerged as a scalable alternative to offline HD maps for autonomous driving. Methods such as MapTR, MapTRv2, and MapTracker predict vectorized map elements (lane lines, road boundaries, etc.) in real time from 360° visual inputs, yet these supervised approaches still rely on large volumes of annotated data.
+**Background**: Online HD map construction has emerged as a scalable alternative to offline HD maps for autonomous driving. Methods such as MapTR, MapTRv2, and MapTracker predict vectorized map elements (lane lines, road boundaries, etc.) in real time from 360° visual inputs, yet these supervised approaches still rely on large volumes of annotated data.
 
 **Limitations of Prior Work**: (1) HD map annotation is extremely costly, requiring specialized sensor platforms and partial human labeling; (2) existing semi-supervised methods (PseudoMapTrainer, Lilja et al.) depend on pseudo-label generation and are primarily designed for semantic segmentation rather than vectorized prediction; (3) the geospatial consistency inherent in multi-traversal data has not been adequately exploited.
 
-**Root Cause**: Annotation cost is the primary bottleneck for online HD map construction. Autonomous vehicles naturally accumulate large volumes of unlabeled multi-traversal data during routine operation—the central question is how to leverage this freely available resource.
+**Key Challenge**: Annotation cost is the primary bottleneck for online HD map construction. Autonomous vehicles naturally accumulate large volumes of unlabeled multi-traversal data during routine operation—the central question is how to leverage this freely available resource.
 
-**Paper Goals**: To improve BEV feature representation quality by exploiting geospatial consistency in unlabeled multi-traversal data, thereby enhancing online vectorized HD map construction under limited annotation budgets.
+**Goal**: To improve BEV feature representation quality by exploiting geospatial consistency in unlabeled multi-traversal data, thereby enhancing online vectorized HD map construction under limited annotation budgets.
 
-**Starting Point**: BEV grid cells corresponding to the same geographic location across different traversals serve as a natural self-supervised signal, replacing manually designed image augmentations.
+**Key Insight**: BEV grid cells corresponding to the same geographic location across different traversals serve as a natural self-supervised signal, replacing manually designed image augmentations.
 
 **Core Idea**: The same geographic location observed in different traversals should yield consistent BEV features—this constraint is used as the objective for contrastive learning.
 

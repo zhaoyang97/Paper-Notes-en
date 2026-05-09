@@ -27,15 +27,15 @@ content_hash: d41e252074064fde
 This paper proposes HiVid, the first framework to leverage LLMs as human proxies for generating content importance weights for video chunks. Through a Perception module (sliding-window scoring), a Ranking module (LLM-guided merge sort to eliminate scoring bias), and a Prediction module (multimodal time series forecasting with adaptive latency), HiVid enables content-aware streaming, achieving an 11.5% improvement in VOD PLCC, a 26% gain in live streaming prediction, and a 14.7% improvement in human MOS correlation.
 
 ## Background & Motivation
-**State of the Field**: Content-aware video streaming assigns higher bitrates to more important chunks via $QoE = \sum_i w_i \cdot q_i$. Existing approaches include CV-based highlight detection models (DETR, VASNet, etc.) and human crowdsourced annotation (SENSEI).
+**Background**: Content-aware video streaming assigns higher bitrates to more important chunks via $QoE = \sum_i w_i \cdot q_i$. Existing approaches include CV-based highlight detection models (DETR, VASNet, etc.) and human crowdsourced annotation (SENSEI).
 
 **Limitations of Prior Work**: CV models suffer from insufficient semantic understanding and poor generalization; large video understanding models (VideoLLaMA3, VILA) exhibit severe hallucination on subjective scoring tasks; human annotation is prohibitively expensive (78 min / $100 per video) and infeasible for live streaming scenarios.
 
-**Root Cause**: A weight generation approach that simultaneously achieves accuracy (semantic understanding) and efficiency (real-time + low cost) is lacking.
+**Key Challenge**: A weight generation approach that simultaneously achieves accuracy (semantic understanding) and efficiency (real-time + low cost) is lacking.
 
-**Paper Goals**: Three challenges: (1) LLMs cannot directly process video and are subject to token limits; (2) local scores within sliding windows are inconsistent across windows; (3) live streaming requires real-time inference but LLM latency is nondeterministic.
+**Goal**: Three challenges: (1) LLMs cannot directly process video and are subject to token limits; (2) local scores within sliding windows are inconsistent across windows; (3) live streaming requires real-time inference but LLM latency is nondeterministic.
 
-**Starting Point**: Using LLMs as "human proxies" for zero-shot subjective reasoning, bypassing token limits through windowing and context summarization.
+**Key Insight**: Using LLMs as "human proxies" for zero-shot subjective reasoning, bypassing token limits through windowing and context summarization.
 
 **Core Idea**: LLM perception + merge-sort debiasing + multimodal predictive adaptive latency = end-to-end content-aware streaming.
 

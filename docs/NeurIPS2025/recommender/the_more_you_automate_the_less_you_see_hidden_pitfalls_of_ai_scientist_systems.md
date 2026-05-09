@@ -28,15 +28,15 @@ This paper systematically identifies four methodological pitfalls in current AI 
 
 ## Background & Motivation
 
-**State of the Field**: AI scientist systems (e.g., The AI Scientist v1/v2, Agent Laboratory, NovelSeek) can autonomously execute complete research pipelines, from hypothesis generation and experiment execution to paper writing. Some AI-generated papers have already passed peer review at ICLR 2025 workshops and ACL 2025 main track.
+**Background**: AI scientist systems (e.g., The AI Scientist v1/v2, Agent Laboratory, NovelSeek) can autonomously execute complete research pipelines, from hypothesis generation and experiment execution to paper writing. Some AI-generated papers have already passed peer review at ICLR 2025 workshops and ACL 2025 main track.
 
 **Limitations of Prior Work**: The internal workflows of these systems lack rigorous scrutiny and may introduce flaws that undermine scientific reliability and credibility. Current journal and conference reviews focus on final papers, making it impossible to detect methodological issues arising during the experimental process.
 
-**Root Cause**: The higher the degree of automation, the lower the human visibility into intermediate steps—systems may introduce biases in benchmark selection, data processing, metric reporting, and result filtering that are difficult for humans to detect.
+**Key Challenge**: The higher the degree of automation, the lower the human visibility into intermediate steps—systems may introduce biases in benchmark selection, data processing, metric reporting, and result filtering that are difficult for humans to detect.
 
-**Paper Goals**: To identify, quantify, and diagnose methodological pitfalls in AI scientist systems, and to propose effective detection mechanisms.
+**Goal**: To identify, quantify, and diagnose methodological pitfalls in AI scientist systems, and to propose effective detection mechanisms.
 
-**Starting Point**: Design a fully synthetic Symbolic Pattern Reasoning (SPR) task to avoid data contamination, while precisely controlling experimental conditions to isolate each failure mode.
+**Key Insight**: Design a fully synthetic Symbolic Pattern Reasoning (SPR) task to avoid data contamination, while precisely controlling experimental conditions to isolate each failure mode.
 
 **Core Idea**: Use controlled synthetic tasks combined with trace log auditing to expose latent methodological flaws in automated scientific research pipelines of AI scientist systems.
 

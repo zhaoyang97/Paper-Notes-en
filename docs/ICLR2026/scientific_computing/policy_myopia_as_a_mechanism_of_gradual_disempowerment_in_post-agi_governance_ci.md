@@ -28,15 +28,15 @@ This paper argues that policy myopia is not an attention-allocation problem but 
 
 ## Background & Motivation
 
-**State of the Field**: Existing AI governance frameworks treat policy myopia as an "attention allocation" problem — decision-makers prioritize high-salience, low-consequence issues while neglecting low-salience, high-consequence structural risks. Mainstream solutions include attention management, influence-weighted budgets, and contestability mechanisms.
+**Background**: Existing AI governance frameworks treat policy myopia as an "attention allocation" problem — decision-makers prioritize high-salience, low-consequence issues while neglecting low-salience, high-consequence structural risks. Mainstream solutions include attention management, influence-weighted budgets, and contestability mechanisms.
 
 **Limitations of Prior Work**: (1) Existing governance proposals assume that human institutional capacity remains adequate after AGI deployment, yet policy myopia itself is precisely what erodes this capacity. (2) Treating policy myopia as a "symptom" to be fixed rather than a systemic "mechanism" overlooks its self-reinforcing nature. (3) Coupling among economic, political, and cultural systems causes cascading amplification of the problem across domains.
 
-**Root Cause**: Governance mitigation measures (e.g., contestability registries, transparency chains) themselves require the very institutional capacity they are meant to protect — yet that capacity is being eroded by the myopia mechanism. This creates a fatal self-referential paradox: human capacity is needed to protect human capacity, but protection mechanisms are most needed precisely when capacity is at its weakest.
+**Key Challenge**: Governance mitigation measures (e.g., contestability registries, transparency chains) themselves require the very institutional capacity they are meant to protect — yet that capacity is being eroded by the myopia mechanism. This creates a fatal self-referential paradox: human capacity is needed to protect human capacity, but protection mechanisms are most needed precisely when capacity is at its weakest.
 
-**Paper Goals**: How does policy myopia escalate from a mere attention problem to a systemic mechanism of human disempowerment? How do the three core mechanisms couple and cascade across systems? Why are standard mitigation measures destined to fail? What governance architecture can preserve human agency?
+**Goal**: How does policy myopia escalate from a mere attention problem to a systemic mechanism of human disempowerment? How do the three core mechanisms couple and cascade across systems? Why are standard mitigation measures destined to fail? What governance architecture can preserve human agency?
 
-**Starting Point**: Reconceptualizing policy myopia as a *vector* of disempowerment rather than a bias to be corrected, and constructing a coupled dynamical systems model to analyze the interactions among three self-reinforcing mechanisms.
+**Key Insight**: Reconceptualizing policy myopia as a *vector* of disempowerment rather than a bias to be corrected, and constructing a coupled dynamical systems model to analyze the interactions among three self-reinforcing mechanisms.
 
 **Core Idea**: Policy myopia is the primary mechanism of gradual human disempowerment in post-AGI governance — through the causal chain of salience capture → capability atrophy → value lock-in, it renders human institutional participation structurally infeasible, without malicious intent or abrupt transition.
 

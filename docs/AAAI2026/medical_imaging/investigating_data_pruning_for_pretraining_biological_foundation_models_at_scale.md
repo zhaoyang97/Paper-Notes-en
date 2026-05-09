@@ -30,7 +30,7 @@ This paper proposes a post-hoc data pruning framework based on influence functio
 
 ## Background & Motivation
 
-**State of the Field**: Biological foundation models (BioFMs) such as RNA-FM (23M RNA sequences) and ESM (2.78B protein sequences) have demonstrated strong performance on structure prediction and functional annotation tasks, yet their training costs are prohibitively high (RNA-FM: 8×A100 GPUs, 30 days), severely limiting reproducibility and accessibility for academic laboratories.
+**Background**: Biological foundation models (BioFMs) such as RNA-FM (23M RNA sequences) and ESM (2.78B protein sequences) have demonstrated strong performance on structure prediction and functional annotation tasks, yet their training costs are prohibitively high (RNA-FM: 8×A100 GPUs, 30 days), severely limiting reproducibility and accessibility for academic laboratories.
 
 **Gap in Data Pruning for Biological Domains**:
 - Extensive data pruning work exists in CV/NLP, but pruning for BioFM pretraining remains largely unexplored.
@@ -40,7 +40,7 @@ This paper proposes a post-hoc data pruning framework based on influence functio
 
 **Core Problem**: Can a post-hoc method identify the most informative training subset without accessing the full training process?
 
-**Starting Point**: Leverage influence function theory to approximate full-dataset curvature information on a small subset, enabling efficient estimation of per-sample importance.
+**Key Insight**: Leverage influence function theory to approximate full-dataset curvature information on a small subset, enabling efficient estimation of per-sample importance.
 
 ## Method
 

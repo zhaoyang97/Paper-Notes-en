@@ -29,15 +29,15 @@ This paper proposes CUBE (Control-based Unified B-spline Encoding), a hybrid geo
 
 ## Background & Motivation
 
-**State of the Field**: 3D face representation is dominated by three paradigms: 3D Morphable Models (3DMMs) provide compact, disentangled linear spaces but lack fine detail; nonlinear neural models improve flexibility but sacrifice interpretability and local control; implicit representations offer high detail but lack semantic correspondence and require costly isosurface extraction.
+**Background**: 3D face representation is dominated by three paradigms: 3D Morphable Models (3DMMs) provide compact, disentangled linear spaces but lack fine detail; nonlinear neural models improve flexibility but sacrifice interpretability and local control; implicit representations offer high detail but lack semantic correspondence and require costly isosurface extraction.
 
 **Limitations of Prior Work**: 3DMMs are constrained by fixed topology and low-dimensional parameter spaces, making them unable to capture subject-specific high-frequency details. Neural models lack local editing capability. Implicit models are incompatible with standard graphics pipelines.
 
-**Root Cause**: Local controllability, geometric expressiveness, and computational efficiency are inherently difficult to achieve simultaneously in a single representation.
+**Key Challenge**: Local controllability, geometric expressiveness, and computational efficiency are inherently difficult to achieve simultaneously in a single representation.
 
-**Paper Goals**: To design a hybrid face representation that combines the local control properties of B-splines with the expressive power of neural networks.
+**Goal**: To design a hybrid face representation that combines the local control properties of B-splines with the expressive power of neural networks.
 
-**Starting Point**: Replace the conventional 3D control points of B-spline volumes with high-dimensional learnable control features, and supplement high-frequency detail via a lightweight MLP.
+**Key Insight**: Replace the conventional 3D control points of B-spline volumes with high-dimensional learnable control features, and supplement high-frequency detail via a lightweight MLP.
 
 **Core Idea**: A high-dimensional control feature lattice (e.g., $8\times8\times8$) defines a continuous mapping from the parametric domain to Euclidean space; the B-spline basis provides local support, enabling local editing.
 

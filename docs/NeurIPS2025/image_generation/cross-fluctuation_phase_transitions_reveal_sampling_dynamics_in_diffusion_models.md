@@ -32,15 +32,15 @@ Drawing on fluctuation theory from statistical physics, this work proposes a fra
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models have become foundational to generative systems, demonstrating strong performance in image synthesis, 3D scene generation, audio, and molecular structure generation. However, their sampling process remains a black box—each step mixes thousands of values in ways that are difficult to predict.
+**Background**: Diffusion models have become foundational to generative systems, demonstrating strong performance in image synthesis, 3D scene generation, audio, and molecular structure generation. However, their sampling process remains a black box—each step mixes thousands of values in ways that are difficult to predict.
 
 **Limitations of Prior Work**: Existing methods lack a principled understanding of when "successful" and "failed" sampling trajectories diverge, and hyperparameter tuning (e.g., the time window for conditional guidance) typically relies on expensive grid search.
 
-**Root Cause**: The internal dynamics of diffusion model sampling lack interpretability tools—it is unclear at which timestep the generation paths of different classes or events become statistically distinguishable.
+**Key Challenge**: The internal dynamics of diffusion model sampling lack interpretability tools—it is unclear at which timestep the generation paths of different classes or events become statistically distinguishable.
 
-**Paper Goals**: To provide a systematic framework for detecting statistical distinguishability transition points (phase transitions) between different "events" (e.g., different classes) during the diffusion process, and to leverage these transition points to directly optimize sampling.
+**Goal**: To provide a systematic framework for detecting statistical distinguishability transition points (phase transitions) between different "events" (e.g., different classes) during the diffusion process, and to leverage these transition points to directly optimize sampling.
 
-**Starting Point**: Fluctuation theory from statistical physics is introduced into the analysis of diffusion models, treating sampling dynamics as a phase transition from Gaussian noise to the target distribution.
+**Key Insight**: Fluctuation theory from statistical physics is introduced into the analysis of diffusion models, treating sampling dynamics as a phase transition from Gaussian noise to the target distribution.
 
 **Core Idea**: Different events undergo discrete merging/splitting phase transitions along diffusion trajectories at discontinuities of $n$-th order cross-fluctuations; detecting these phase transitions directly informs sampling strategies.
 

@@ -31,7 +31,7 @@ This paper proposes CPNN, which constructs cell-type prototypes from publicly av
 
 Directly predicting gene expression from whole slide images (WSI) is an important low-cost alternative to RNA sequencing. Existing methods fall into two categories: slide-level (bulk transcriptomics, using MIL architectures) and patch-level (spatial transcriptomics, using Transformers/GNNs). However, both approaches learn only at the aggregated level, **without explicitly modeling the data generative process of gene expression**—that is, observed expression is actually aggregated from the expression of individual underlying cells.
 
-**Root Cause**: Single-cell RNA-seq data provides cell-level expression information, but it is noisy, subject to batch effects, and lacks corresponding pathology images, preventing its direct use in WSI regression.
+**Key Challenge**: Single-cell RNA-seq data provides cell-level expression information, but it is noisy, subject to batch effects, and lacks corresponding pathology images, preventing its direct use in WSI regression.
 
 **Core Idea**: Extract stable **cell-type prototypes** (mean expression profiles per cell type) from single-cell data, and use these prototypes as prior constraints on the prediction space. The model estimates cell-type composition weights for each patch from the image, then obtains gene expression predictions via matrix multiplication of weights and prototypes.
 

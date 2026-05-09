@@ -31,11 +31,11 @@ To address the error accumulation caused by SAM 2's greedy selection strategy in
 
 ### Limitations of Prior Work
 
-**State of the Field**: SAM 2 is currently the most powerful foundational model for video object segmentation, with its memory module as a core design — leveraging memories from previous frames to prompt segmentation in the current frame. However, SAM 2 employs a greedy strategy: only the single mask with the highest predicted IoU is stored in memory per frame. While this works adequately in simple scenarios, once an incorrect mask is selected during occlusion or object reappearance, the error propagates through memory to all subsequent frames ("error accumulation"), causing irrecoverable tracking loss. This problem worsens with video length — SAM 2's performance degrades significantly in the later segments of long videos.
+**Background**: SAM 2 is currently the most powerful foundational model for video object segmentation, with its memory module as a core design — leveraging memories from previous frames to prompt segmentation in the current frame. However, SAM 2 employs a greedy strategy: only the single mask with the highest predicted IoU is stored in memory per frame. While this works adequately in simple scenarios, once an incorrect mask is selected during occlusion or object reappearance, the error propagates through memory to all subsequent frames ("error accumulation"), causing irrecoverable tracking loss. This problem worsens with video length — SAM 2's performance degrades significantly in the later segments of long videos.
 
 ### Root Cause
 
-**Paper Goals**: How to resolve error accumulation caused by greedy memory selection in SAM 2 — without retraining — so that it maintains stable segmentation tracking in complex scenarios such as long videos and frequent occlusions.
+**Goal**: How to resolve error accumulation caused by greedy memory selection in SAM 2 — without retraining — so that it maintains stable segmentation tracking in complex scenarios such as long videos and frequent occlusions.
 
 ## Method
 

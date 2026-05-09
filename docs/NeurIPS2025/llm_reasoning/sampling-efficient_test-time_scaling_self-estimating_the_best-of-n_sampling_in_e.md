@@ -28,15 +28,15 @@ This paper proposes Self-Truncation Best-of-N (ST-BoN), a decoding method that l
 
 ## Background & Motivation
 
-**State of the Field**: Best-of-N (BoN) sampling is a widely adopted test-time scaling strategy—N candidate responses are generated and the best is selected via a reward model or self-consistency. BoN effectively exploits high-quality solutions in the model's distribution.
+**Background**: Best-of-N (BoN) sampling is a widely adopted test-time scaling strategy—N candidate responses are generated and the best is selected via a reward model or self-consistency. BoN effectively exploits high-quality solutions in the model's distribution.
 
 **Limitations of Prior Work**: (a) Generating N complete samples requires substantial GPU memory due to linear KV cache growth, constraining the feasible value of N; (b) reward models (RMs) consume additional memory and inference time, and training strong RMs is costly with limited generalizability. Existing improvements (e.g., FastRM, TreeBoN) address only one of these challenges.
 
-**Root Cause**: The efficiency bottleneck of BoN stems from two implicit assumptions—complete generation of all N samples and external RM scoring—raising the question of whether the most promising sample can be identified much earlier.
+**Key Challenge**: The efficiency bottleneck of BoN stems from two implicit assumptions—complete generation of all N samples and external RM scoring—raising the question of whether the most promising sample can be identified much earlier.
 
-**Paper Goals**: To autonomously identify the most promising sample at early decoding steps and truncate the rest, without any external reward model.
+**Goal**: To autonomously identify the most promising sample at early decoding steps and truncate the rest, without any external reward model.
 
-**Starting Point**: The core insight of self-consistency is that "if multiple reasoning paths converge to the same answer, that answer is more reliable." If early hidden-state consistency already predicts final consistency, truncation can be applied at early steps.
+**Key Insight**: The core insight of self-consistency is that "if multiple reasoning paths converge to the same answer, that answer is more reliable." If early hidden-state consistency already predicts final consistency, truncation can be applied at early steps.
 
 **Core Idea**: Measure inter-sample consistency using Chain-of-Embedding (CoE) features derived from the LLM's own hidden states, predict the final best sample at the first divergence point, and truncate all others.
 

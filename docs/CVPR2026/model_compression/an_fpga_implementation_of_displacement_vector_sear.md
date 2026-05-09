@@ -29,15 +29,15 @@ This paper presents the first FPGA hardware acceleration architecture for the In
 
 ## Background & Motivation
 
-**State of the Field**: JPEG XS is an image compression standard targeting low latency and low complexity, applicable to scenarios such as remote desktop and KVM. Intra Pattern Copy (IPC) is an encoding tool within this standard that performs intra-frame prediction in the wavelet domain to reduce spatial redundancy in screen content.
+**Background**: JPEG XS is an image compression standard targeting low latency and low complexity, applicable to scenarios such as remote desktop and KVM. Intra Pattern Copy (IPC) is an encoding tool within this standard that performs intra-frame prediction in the wavelet domain to reduce spatial redundancy in screen content.
 
 **Limitations of Prior Work**: The displacement vector (DV) search module in IPC requires exhaustive evaluation of all candidate offsets to select the optimal prediction reference, imposing extremely high computational demands. Although numerous motion estimation hardware implementations exist for H.264/HEVC, these designs operate in the pixel domain and are incompatible with the wavelet-domain group-based prediction pipeline of JPEG XS.
 
-**Root Cause**: There is a fundamental tension between the high computational complexity of DV search and the low-latency requirements of JPEG XS. Wavelet coefficients are organized into IPC Groups and Units with highly irregular access patterns, and conventional memory layouts result in high control complexity and poor bandwidth utilization.
+**Key Challenge**: There is a fundamental tension between the high computational complexity of DV search and the low-latency requirements of JPEG XS. Wavelet coefficients are organized into IPC Groups and Units with highly irregular access patterns, and conventional memory layouts result in high control complexity and poor bandwidth utilization.
 
-**Paper Goals**: To design an FPGA implementation of DV search that enables efficient hardware deployment of IPC.
+**Goal**: To design an FPGA implementation of DV search that enables efficient hardware deployment of IPC.
 
-**Starting Point**: A four-stage pipeline and optimized memory organization are designed specifically for the group-based prediction flow inherent to IPC.
+**Key Insight**: A four-stage pipeline and optimized memory organization are designed specifically for the group-based prediction flow inherent to IPC.
 
 **Core Idea**: Efficient hardware deployment of JPEG XS IPC is achieved through IPC Group-aligned memory organization and a four-stage pipelined DV comparison architecture.
 

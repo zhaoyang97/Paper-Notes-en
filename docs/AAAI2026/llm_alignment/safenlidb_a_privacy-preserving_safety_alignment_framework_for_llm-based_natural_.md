@@ -29,18 +29,18 @@ This paper proposes SafeNlidb, a framework that jointly optimizes safety reasoni
 
 ## Background & Motivation
 
-**State of the Field**: LLM-driven NLIDB systems—enabling natural language to SQL query to database interaction via protocols such as MCP—are rapidly gaining adoption, significantly lowering the barrier for non-technical users to access data. However, security concerns are growing, as LLMs may inadvertently execute unsafe instructions, leading to SQL injection, unauthorized access, and sensitive information leakage.
+**Background**: LLM-driven NLIDB systems—enabling natural language to SQL query to database interaction via protocols such as MCP—are rapidly gaining adoption, significantly lowering the barrier for non-technical users to access data. However, security concerns are growing, as LLMs may inadvertently execute unsafe instructions, leading to SQL injection, unauthorized access, and sensitive information leakage.
 
 **Limitations of Prior Work**:
    - **Direct attacks** (e.g., "query all students' disability information") are relatively easy to detect via rule-based or keyword filtering.
    - **Inference-based attacks** represent a genuine threat: adversaries issue multiple seemingly innocuous queries to gradually reconstruct sensitive information (e.g., first querying "the number of students with learning disabilities whose names begin with B," then querying "students named Bob," and cross-referencing to infer that Bob has a learning disability).
    - The three existing solution categories each have shortcomings: differential privacy degrades SQL accuracy; rule-based methods cannot handle complex inference attacks and suffer from high false-positive rates; LLM agent methods struggle to balance security and usability.
 
-**Root Cause**: Safety detection and SQL generation are coupled dual objectives—over-protection causes legitimate queries to be rejected (false positives), while insufficient protection leads to privacy leakage. The covert, multi-turn nature of inference attacks makes this balance particularly difficult to achieve.
+**Key Challenge**: Safety detection and SQL generation are coupled dual objectives—over-protection causes legitimate queries to be rejected (false positives), while insufficient protection leads to privacy leakage. The covert, multi-turn nature of inference attacks makes this balance particularly difficult to achieve.
 
-**Paper Goals**: To construct an end-to-end privacy-safety alignment framework that enables LLMs to dynamically assess privacy leakage risk across multi-turn interactions while performing NL-to-SQL translation, achieving a unified balance between security and utility.
+**Goal**: To construct an end-to-end privacy-safety alignment framework that enables LLMs to dynamically assess privacy leakage risk across multi-turn interactions while performing NL-to-SQL translation, achieving a unified balance between security and utility.
 
-**Starting Point**: The paper integrates safety reasoning and SQL generation into a unified "Hybrid Chain-of-Thought" (H-CoT), and simultaneously improves both capabilities without mutual interference through alternating preference optimization.
+**Key Insight**: The paper integrates safety reasoning and SQL generation into a unified "Hybrid Chain-of-Thought" (H-CoT), and simultaneously improves both capabilities without mutual interference through alternating preference optimization.
 
 **Core Idea**: An automated three-stage design: (1) automatically discovering safety constraints from database schemas; (2) systematically generating malicious/benign interaction pairs based on causal relationships between SQL syntax and safety constraints; and (3) eliminating multi-preference conflicts via reasoning warm-up followed by alternating DPO.
 

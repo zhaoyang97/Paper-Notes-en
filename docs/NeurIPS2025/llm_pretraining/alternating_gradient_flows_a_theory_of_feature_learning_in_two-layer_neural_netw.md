@@ -30,15 +30,15 @@ This paper proposes the Alternating Gradient Flow (AGF) theoretical framework to
 
 ### State of the Field
 
-**State of the Field**: "Saddle-to-saddle" dynamics have been empirically observed in neural network training—the loss stagnates near saddle points and then drops sharply, repeating in alternation. This suggests that networks learn distinct features incrementally.
+**Background**: "Saddle-to-saddle" dynamics have been empirically observed in neural network training—the loss stagnates near saddle points and then drops sharply, repeating in alternation. This suggests that networks learn distinct features incrementally.
 
 **Limitations of Prior Work**: (a) NTK theory neglects feature learning—linear approximations do not explain saddle escape; (b) mean-field theory is too complex to yield clear intuition; (c) a unified mathematical framework for feature learning across diverse architectures (linear networks, Transformers, MLPs) remains lacking.
 
-**Root Cause**: The incremental nature of feature learning (one feature at a time) appears to contradict the continuity of gradient descent (all parameters updated simultaneously)—why does continuous optimization produce discrete learning steps?
+**Key Challenge**: The incremental nature of feature learning (one feature at a time) appears to contradict the continuity of gradient descent (all parameters updated simultaneously)—why does continuous optimization produce discrete learning steps?
 
-**Paper Goals**: To provide a unified mathematical framework explaining stepwise feature learning across different architectures.
+**Goal**: To provide a unified mathematical framework explaining stepwise feature learning across different architectures.
 
-**Starting Point**: Neurons are categorized as either "dormant" (weights near zero) or "active" (weights large). Training proceeds as alternating optimization between these two groups—dormant neurons search for the most valuable new features (utility maximization), while active neurons adjust weights to minimize residuals (cost minimization).
+**Key Insight**: Neurons are categorized as either "dormant" (weights near zero) or "active" (weights large). Training proceeds as alternating optimization between these two groups—dormant neurons search for the most valuable new features (utility maximization), while active neurons adjust weights to minimize residuals (cost minimization).
 
 **Core Idea**: Utility maximization for dormant neurons (directional dynamics, finding feature directions) + cost minimization for active neurons (radial dynamics, adjusting weight magnitudes) = stepwise saddle-to-saddle feature learning.
 

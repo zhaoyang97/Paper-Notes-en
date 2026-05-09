@@ -29,10 +29,10 @@ This paper applies the LLM-as-Judge paradigm to Gherkin acceptance test coverage
 
 ## Background & Motivation
 
-- **State of the Field**: Software test coverage evaluation has traditionally relied on code instrumentation tools (JaCoCo, coverage.py, etc.), which measure only structural coverage (line coverage, branch coverage) and cannot assess semantic completeness—i.e., whether tests adequately cover business requirements, edge cases, and error conditions.
+- **Background**: Software test coverage evaluation has traditionally relied on code instrumentation tools (JaCoCo, coverage.py, etc.), which measure only structural coverage (line coverage, branch coverage) and cannot assess semantic completeness—i.e., whether tests adequately cover business requirements, edge cases, and error conditions.
 - **Limitations of Prior Work**: Manual expert review is not scalable at the pace of modern CI/CD pipelines. Although LLM-as-Judge has been successfully applied to text generation evaluation, systematic assessment of its use in software testing remains absent—particularly regarding operational reliability (e.g., first-attempt success rate) and cost-effectiveness beyond raw accuracy.
-- **Root Cause**: Larger models may be more accurate but are costly and subject to API instability, whereas smaller models are cheaper but potentially less precise. The key challenge lies in identifying the optimal balance among all three dimensions.
-- **Starting Point**: The paper constructs a benchmark of 100 expert-annotated Gherkin test scripts, introduces novel metrics—ECR@1 (Evaluation Completion Rate at first attempt) and reliability-adjusted cost—and conducts a three-dimensional systematic evaluation across 20 model configurations.
+- **Key Challenge**: Larger models may be more accurate but are costly and subject to API instability, whereas smaller models are cheaper but potentially less precise. The key challenge lies in identifying the optimal balance among all three dimensions.
+- **Key Insight**: The paper constructs a benchmark of 100 expert-annotated Gherkin test scripts, introduces novel metrics—ECR@1 (Evaluation Completion Rate at first attempt) and reliability-adjusted cost—and conducts a three-dimensional systematic evaluation across 20 model configurations.
 
 ## Method
 

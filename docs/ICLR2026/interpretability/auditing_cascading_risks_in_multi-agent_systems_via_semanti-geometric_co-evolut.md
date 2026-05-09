@@ -26,15 +26,15 @@ content_hash: 05bb07a2260ac25a
 This paper proposes SCCAL, a framework that models semantic–geometric co-evolution in multi-agent systems (MAS) by coupling semantic flow with the Ollivier–Ricci curvature (ORC) of interaction graphs. The joint prediction residual between the two modalities serves as an early warning signal for cascading risks, enabling anomaly detection several rounds before semantic violations become observable.
 
 ## Background & Motivation
-**State of the Field**: LLM-based multi-agent systems (MAS) have evolved from static question answering toward complex, self-evolving collaboration, and are widely applied to long-horizon task decomposition.
+**Background**: LLM-based multi-agent systems (MAS) have evolved from static question answering toward complex, self-evolving collaboration, and are widely applied to long-horizon task decomposition.
 
 **Limitations of Prior Work**: Current safety auditing relies primarily on per-message semantic content filtering (e.g., toxicity detection, jailbreak detection), which is inherently **reactive**—by the time a semantic violation becomes visible, the collaborative dynamics of the system have often already irreversibly collapsed.
 
-**Root Cause**: Cascading risks (hallucination cascades, collusion, role misalignment) are emergent properties of interaction dynamics, not isolated semantic violations. Early messages may appear semantically fluent and compliant, while the underlying interaction structure has already been distorted.
+**Key Challenge**: Cascading risks (hallucination cascades, collusion, role misalignment) are emergent properties of interaction dynamics, not isolated semantic violations. Early messages may appear semantically fluent and compliant, while the underlying interaction structure has already been distorted.
 
-**Paper Goals**: To detect precursors of cascading risks from structural changes in agent interactions, before semantic violations become manifest.
+**Goal**: To detect precursors of cascading risks from structural changes in agent interactions, before semantic violations become manifest.
 
-**Starting Point**: Analogous to how physical systems accumulate structural stress before catastrophic failure, MAS interactions exhibit topological distortions (e.g., information bottlenecks, excessive redundancy) prior to semantic collapse.
+**Key Insight**: Analogous to how physical systems accumulate structural stress before catastrophic failure, MAS interactions exhibit topological distortions (e.g., information bottlenecks, excessive redundancy) prior to semantic collapse.
 
 **Core Idea**: MAS safety auditing is formulated as a trajectory stability problem on a semantic–geometric coupled manifold. Ollivier–Ricci curvature quantifies the local geometry of the interaction graph, and an alert is triggered when the consistency between semantic flow and geometric evolution is broken.
 

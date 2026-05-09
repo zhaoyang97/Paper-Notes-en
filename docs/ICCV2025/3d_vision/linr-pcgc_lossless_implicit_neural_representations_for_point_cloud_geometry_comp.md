@@ -29,18 +29,18 @@ LINR-PCGC proposes the first implicit neural representation (INR)-based method f
 
 ## Background & Motivation
 
-**State of the Field**: Point cloud compression methods fall into two categories: traditional approaches (G-PCC, V-PCC) and AI-driven approaches (PCGCv2, SparsePCGC). Traditional methods rely on hand-crafted tools and parameters, while AI-based methods exploit neural networks to model spatial correlations and achieve state-of-the-art compression performance.
+**Background**: Point cloud compression methods fall into two categories: traditional approaches (G-PCC, V-PCC) and AI-driven approaches (PCGCv2, SparsePCGC). Traditional methods rely on hand-crafted tools and parameters, while AI-based methods exploit neural networks to model spatial correlations and achieve state-of-the-art compression performance.
 
 **Limitations of Prior Work**:
 - AI-based methods are heavily dependent on training data distributions; distribution shift leads to significant performance degradation (e.g., SparsePCGC underperforms G-PCC on MVUB).
 - INR methods address the distribution dependency issue by overfitting to target data, but face two challenges: (1) the decoder network parameters must be encoded into the bitstream, constraining network size and fitting capacity; (2) overfitting is time-consuming.
 - Existing INR methods are limited to lossy compression; no INR solution for lossless compression exists.
 
-**Root Cause**: A fundamental tension exists between compression efficiency and distribution generalizability in AI-based methods, and between generalizability and network capacity/coding efficiency in INR methods.
+**Key Challenge**: A fundamental tension exists between compression efficiency and distribution generalizability in AI-based methods, and between generalizability and network capacity/coding efficiency in INR methods.
 
-**Paper Goals**: How to achieve lossless point cloud geometry compression within an INR framework while controlling decoder size and encoding time?
+**Goal**: How to achieve lossless point cloud geometry compression within an INR framework while controlling decoder size and encoding time?
 
-**Starting Point**: The paper draws inspiration from the Group of Pictures (GoP) concept in video coding — adjacent frames share a single lightweight decoder network to amortize parameter overhead; the overfitted network from the previous GoP initializes the next GoP to accelerate convergence.
+**Key Insight**: The paper draws inspiration from the Group of Pictures (GoP) concept in video coding — adjacent frames share a single lightweight decoder network to amortize parameter overhead; the overfitted network from the previous GoP initializes the next GoP to accelerate convergence.
 
 **Core Idea**: Reduce parameter overhead via GoP-level network sharing + achieve efficient lossless compression via multi-scale SparseConv child node prediction + save approximately 65% of encoding time through an initialization strategy.
 

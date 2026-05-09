@@ -28,15 +28,15 @@ This paper proposes CometNet, which extracts recurrently occurring "contextual m
 
 ## Background & Motivation
 
-**State of the Field**: Long-term time series forecasting (LTSF) is a core task in data science. Mainstream approaches include Transformer-based models (PatchTST, iTransformer) and MLP-based models (DLinear, TimeMixer++), all of which operate within a fixed look-back window.
+**Background**: Long-term time series forecasting (LTSF) is a core task in data science. Mainstream approaches include Transformer-based models (PatchTST, iTransformer) and MLP-based models (DLinear, TimeMixer++), all of which operate within a fixed look-back window.
 
 **Limitations of Prior Work**: **Receptive field bottleneck** — models can only learn from a window of length $L$ and cannot capture long-range dependencies beyond the window. Gradient backpropagation is confined to a single window, even when sliding windows traverse the entire sequence during training. Simply enlarging the window not only incurs $O(L^2)$ computational complexity but also buries meaningful temporal dependencies in historical noise.
 
-**Root Cause**: Long-range context is necessary for long-term forecasting, yet directly enlarging the window is both costly and yields diminishing returns.
+**Key Challenge**: Long-range context is necessary for long-term forecasting, yet directly enlarging the window is both costly and yields diminishing returns.
 
-**Paper Goals**: To provide the model with long-range contextual information beyond the look-back window without increasing window size.
+**Goal**: To provide the model with long-range contextual information beyond the look-back window without increasing window size.
 
-**Starting Point**: Real-world time series are governed by periodic "contextual motifs" — such as factory production cycles or seasonal climate patterns — that recur across thousands of time steps. Extracting these motifs and using them to guide prediction is a natural and principled approach.
+**Key Insight**: Real-world time series are governed by periodic "contextual motifs" — such as factory production cycles or seasonal climate patterns — that recur across thousands of time steps. Extracting these motifs and using them to guide prediction is a natural and principled approach.
 
 **Core Idea**: Mine recurrent contextual motifs from the full history to build a motif library; at inference time, dynamically match the current window to the most relevant motifs via MoE routing to inject long-range context.
 

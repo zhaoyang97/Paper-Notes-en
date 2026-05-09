@@ -27,15 +27,15 @@ This work presents the first application of simulation-based inference (SBI) to 
 
 ## Background & Motivation
 
-**State of the Field**: Neutrino experiments require precise simulations of neutrino–nucleus interactions; however, the underlying theoretical understanding remains incomplete, and simulators rely on semi-empirical approximations. Experimental collaborations typically tune the physical parameters of simulators such as GENIE to reference data in order to obtain reliable predictions.
+**Background**: Neutrino experiments require precise simulations of neutrino–nucleus interactions; however, the underlying theoretical understanding remains incomplete, and simulators rely on semi-empirical approximations. Experimental collaborations typically tune the physical parameters of simulators such as GENIE to reference data in order to obtain reliable predictions.
 
 **Limitations of Prior Work**: (a) Conventional tuning methods employ simple likelihood fits, but MicroBooNE encountered pathological results in initial attempts and was forced to discard inter-bin correlations in T2K data; (b) direct MCMC is infeasible — a single GENIE simulation can take days to months; (c) next-generation experiments such as DUNE will face larger parameter spaces and more complex datasets.
 
-**Root Cause**: Accurate probabilistic inference with uncertainty quantification is required, yet physical simulators are expensive and the parameter space is high-dimensional.
+**Key Challenge**: Accurate probabilistic inference with uncertainty quantification is required, yet physical simulators are expensive and the parameter space is high-dimensional.
 
-**Paper Goals**: To validate whether SBI combined with NPE can replace traditional likelihood fitting and achieve amortized inference at low training cost.
+**Goal**: To validate whether SBI combined with NPE can replace traditional likelihood fitting and achieve amortized inference at low training cost.
 
-**Starting Point**: The MicroBooNE Tune — a 4-parameter tuning problem with known results — serves as the test scenario, with SBI correctness verified on mock data.
+**Key Insight**: The MicroBooNE Tune — a 4-parameter tuning problem with known results — serves as the test scenario, with SBI correctness verified on mock data.
 
 **Core Idea**: An embedding network compresses the 58-dimensional histogram into a 24-dimensional summary feature, which is then fed into a Masked Autoregressive Flow for NPE; a single training run supports unlimited fast inference.
 

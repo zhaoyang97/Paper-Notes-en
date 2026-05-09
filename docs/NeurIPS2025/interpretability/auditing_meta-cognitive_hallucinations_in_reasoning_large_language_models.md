@@ -27,15 +27,15 @@ This paper systematically audits the generation and propagation mechanisms of ha
 
 ## Background & Motivation
 
-**State of the Field**: Reasoning large language models (e.g., DeepSeek-R1, O1) have substantially improved multi-step reasoning through long CoT and self-reflection mechanisms, yet these same mechanisms render hallucinations more covert—reasoning traces appear coherent while factual errors accumulate silently across multiple steps.
+**Background**: Reasoning large language models (e.g., DeepSeek-R1, O1) have substantially improved multi-step reasoning through long CoT and self-reflection mechanisms, yet these same mechanisms render hallucinations more covert—reasoning traces appear coherent while factual errors accumulate silently across multiple steps.
 
 **Limitations of Prior Work**: (1) Existing hallucination detection methods (perplexity, hidden-state analysis, self-verification) are surface-level and do not analyze how hallucinations arise and propagate within reasoning chains; (2) circuit tracing requires access to model parameters and is inapplicable to black-box models; (3) controlled experimental environments for systematically studying hallucinations are lacking.
 
-**Root Cause**: The reflection mechanism of RLLMs is designed to correct errors, yet in practice it may amplify them—because the model's metacognitive confidence is decoupled from factual correctness (high confidence does not imply correctness).
+**Key Challenge**: The reflection mechanism of RLLMs is designed to correct errors, yet in practice it may amplify them—because the model's metacognitive confidence is decoupled from factual correctness (high confidence does not imply correctness).
 
-**Paper Goals**: (1) How can hallucinations be reproduced and categorized in a controlled environment? (2) How does the reflection mechanism interact with hallucinations? (3) Can interventions effectively correct hallucinations? (4) Are existing detection methods reliable?
+**Goal**: (1) How can hallucinations be reproduced and categorized in a controlled environment? (2) How does the reflection mechanism interact with hallucinations? (3) Can interventions effectively correct hallucinations? (4) Are existing detection methods reliable?
 
-**Starting Point**: A controlled knowledge domain based on RFC documents is constructed; hallucinations are categorized into Type I (seen during training but not learned) and Type II (unseen during training). CoT traces are audited with respect to knowledge flow, reflection patterns, and metacognitive confidence to analyze hallucination mechanisms.
+**Key Insight**: A controlled knowledge domain based on RFC documents is constructed; hallucinations are categorized into Type I (seen during training but not learned) and Type II (unseen during training). CoT traces are audited with respect to knowledge flow, reflection patterns, and metacognitive confidence to analyze hallucination mechanisms.
 
 **Core Idea**: Interpretable long-chain hallucination attribution is achieved under a black-box setting through CoT trace auditing, revealing the dual role of the reflection mechanism in hallucination propagation.
 

@@ -31,7 +31,7 @@ PTQ4ARVG is proposed as the first systematic PTQ framework for autoregressive vi
 
 ### Limitations of Prior Work
 
-**State of the Field**: Autoregressive visual generation models (VAR, RAR, PAR, MAR) have surpassed diffusion models in image generation quality, yet suffer from large model sizes (2–3B parameters) and slow inference (PAR-3B takes >3 seconds per image). Quantization is an effective acceleration technique, but applying existing methods to ARVG introduces three unique challenges:
+**Background**: Autoregressive visual generation models (VAR, RAR, PAR, MAR) have surpassed diffusion models in image generation quality, yet suffer from large model sizes (2–3B parameters) and slow inference (PAR-3B takes >3 seconds per image). Quantization is an effective acceleration technique, but applying existing methods to ARVG introduces three unique challenges:
 
 **Channel-wise severe outliers**: Activations modulated by AdaLN exhibit extreme inter-channel range disparities.
 

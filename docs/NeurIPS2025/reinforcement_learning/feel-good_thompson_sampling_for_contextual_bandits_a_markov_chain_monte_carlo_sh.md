@@ -28,15 +28,15 @@ This paper presents the first systematic empirical evaluation of Feel-Good Thomp
 
 ## Background & Motivation
 
-**State of the Field**: Thompson Sampling (TS) is among the most popular exploration-exploitation algorithms for contextual bandits, valued for its practicality and ease of implementation. However, in high-dimensional settings, TS suffers from insufficient exploration, achieving a theoretical regret of $O(d\sqrt{dT})$, which falls short of the information-theoretic lower bound $\Omega(d\sqrt{T})$.
+**Background**: Thompson Sampling (TS) is among the most popular exploration-exploitation algorithms for contextual bandits, valued for its practicality and ease of implementation. However, in high-dimensional settings, TS suffers from insufficient exploration, achieving a theoretical regret of $O(d\sqrt{dT})$, which falls short of the information-theoretic lower bound $\Omega(d\sqrt{T})$.
 
 **Limitations of Prior Work**: FG-TS (Zhang, 2022) introduces an optimistic bias by adding a "feel-good bonus" to the likelihood, enforcing more aggressive exploration and achieving optimal $O(d\sqrt{T})$ regret in the linear setting. However, its theoretical analysis assumes exact posteriors, whereas large-scale or neural network settings require approximate posteriors (e.g., MCMC). **The behavior of FG-TS under approximate posteriors remains entirely unknown.**
 
-**Root Cause**: Optimistic bias aids exploration under exact posteriors, but when posterior sampling itself is noisy, this bias may amplify errors — the compounding of two noise sources can degrade decision quality.
+**Key Challenge**: Optimistic bias aids exploration under exact posteriors, but when posterior sampling itself is noisy, this bias may amplify errors — the compounding of two noise sources can degrade decision quality.
 
-**Paper Goals**: How does approximate posterior inference affect the performance of FG-TS? Under what conditions does FG-TS outperform or underperform standard TS? How do hyperparameters such as bonus magnitude, prior strength, and preconditioning interact?
+**Goal**: How does approximate posterior inference affect the performance of FG-TS? Under what conditions does FG-TS outperform or underperform standard TS? How do hyperparameters such as bonus magnitude, prior strength, and preconditioning interact?
 
-**Starting Point**: A spectrum from exact to coarse posteriors is constructed — linear (closed-form posterior) → logistic (near-Gaussian) → neural (highly nonlinear) — with systematic comparison across multiple MCMC samplers.
+**Key Insight**: A spectrum from exact to coarse posteriors is constructed — linear (closed-form posterior) → logistic (near-Gaussian) → neural (highly nonlinear) — with systematic comparison across multiple MCMC samplers.
 
 **Core Idea**: The first systematic FG-TS benchmark, revealing that the trade-off between bonus magnitude and posterior accuracy is the decisive factor governing performance.
 

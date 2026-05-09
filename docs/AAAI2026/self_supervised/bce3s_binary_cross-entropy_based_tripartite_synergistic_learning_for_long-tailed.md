@@ -28,15 +28,15 @@ BCE3S is proposed, a binary cross-entropy (BCE)-based tripartite synergistic lea
 
 ## Background & Motivation
 
-**State of the Field**: Long-tailed recognition (LTR) is a fundamental problem, as real-world data distributions are typically highly imbalanced, with head classes containing far more samples than tail classes. Existing methods predominantly build on cross-entropy (CE) loss, supplemented by rebalancing techniques such as resampling, reweighting, and logit adjustment.
+**Background**: Long-tailed recognition (LTR) is a fundamental problem, as real-world data distributions are typically highly imbalanced, with head classes containing far more samples than tail classes. Existing methods predominantly build on cross-entropy (CE) loss, supplemented by rebalancing techniques such as resampling, reweighting, and logit adjustment.
 
 **Limitations of Prior Work**: The Softmax denominator in CE loss couples the imbalanced logits $\{\bm{w}_j^T\bm{x}+b_j\}$ across all classes, causing the imbalance effects of head classes to be repeatedly injected into feature learning. Even with auxiliary techniques such as contrastive learning and fixed ETF classifiers, this intrinsic limitation of CE remains fundamentally unaddressed.
 
-**Root Cause**: LTR requires simultaneously satisfying three objectives: (a) features with high intra-class compactness and inter-class separability, (b) uniformly separable classifier vectors, and (c) proper alignment between features and classifiers. Existing methods lack a unified framework to jointly optimize all three objectives, and the Softmax coupling in CE limits the synergistic effectiveness of individual optimization modules.
+**Key Challenge**: LTR requires simultaneously satisfying three objectives: (a) features with high intra-class compactness and inter-class separability, (b) uniformly separable classifier vectors, and (c) proper alignment between features and classifiers. Existing methods lack a unified framework to jointly optimize all three objectives, and the Softmax coupling in CE limits the synergistic effectiveness of individual optimization modules.
 
-**Paper Goals**: Design a unified tripartite synergistic learning (TSL) paradigm that jointly optimizes feature–classifier joint learning, feature contrastive learning, and classifier uniformity learning, while replacing CE (Softmax) with BCE (Sigmoid) to decouple imbalanced logits.
+**Goal**: Design a unified tripartite synergistic learning (TSL) paradigm that jointly optimizes feature–classifier joint learning, feature contrastive learning, and classifier uniformity learning, while replacing CE (Softmax) with BCE (Sigmoid) to decouple imbalanced logits.
 
-**Starting Point**: Prior work has demonstrated that BCE holds greater potential than CE for LTR (Cui et al. 2019), yet this potential has not been fully explored. The authors provide an in-depth gradient-based explanation of BCE's advantages—Sigmoid decouples each class's logit into an independent channel, avoiding the coupled amplification effect of Softmax.
+**Key Insight**: Prior work has demonstrated that BCE holds greater potential than CE for LTR (Cui et al. 2019), yet this potential has not been fully explored. The authors provide an in-depth gradient-based explanation of BCE's advantages—Sigmoid decouples each class's logit into an independent channel, avoiding the coupled amplification effect of Softmax.
 
 **Core Idea**: Replace CE (Softmax coupling) with BCE (Sigmoid decoupling) and unify joint learning, contrastive learning, and classifier uniformity learning into a cohesive tripartite framework for long-tailed recognition.
 
@@ -133,15 +133,15 @@ BCE3S replaces CE (Softmax) with BCE (Sigmoid) as the unified basis for triparti
 
 ## Background & Motivation
 
-1. **State of the Field**: In LTR, head classes contain far more samples than tail classes. Mainstream approaches include resampling, reweighting, decoupled training, and contrastive learning, most of which are built upon the CE loss framework.
+1. **Background**: In LTR, head classes contain far more samples than tail classes. Mainstream approaches include resampling, reweighting, decoupled training, and contrastive learning, most of which are built upon the CE loss framework.
 
 2. **Limitations of Prior Work**: CE's Softmax couples the inner products of $K$ classes in the denominator—$\text{Softmax}(z_i) = \frac{\exp(z_i)}{\sum_j \exp(z_j)}$—such that under class imbalance, head-class classifier vectors yield larger logits that dominate the denominator gradient, systematically suppressing feature learning for tail classes.
 
-3. **Root Cause**: Softmax normalization causes each class's gradient to depend not only on its own logit but also on all other classes' classifier vectors—this coupling amplifies bias under imbalance.
+3. **Key Challenge**: Softmax normalization causes each class's gradient to depend not only on its own logit but also on all other classes' classifier vectors—this coupling amplifies bias under imbalance.
 
-4. **Paper Goals**: Fundamentally eliminate inter-class coupling interference in long-tailed learning at the loss function level.
+4. **Goal**: Fundamentally eliminate inter-class coupling interference in long-tailed learning at the loss function level.
 
-5. **Starting Point**: Replace CE (Softmax) with BCE (Sigmoid)—Sigmoid computes push/pull forces independently for each class without coupling others.
+5. **Key Insight**: Replace CE (Softmax) with BCE (Sigmoid)—Sigmoid computes push/pull forces independently for each class without coupling others.
 
 6. **Core Idea**: BCE's Sigmoid decouples inter-class interactions, making pull/pull forces independent of class frequency, fundamentally mitigating long-tailed bias.
 

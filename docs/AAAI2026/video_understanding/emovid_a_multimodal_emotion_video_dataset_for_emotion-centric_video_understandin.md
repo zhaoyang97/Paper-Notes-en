@@ -40,7 +40,7 @@ Existing video emotion datasets suffer from the following limitations:
 
 **Unsuitability for generative tasks**: Existing datasets are primarily designed for emotion recognition and lack sufficient visual diversity.
 
-**Root Cause**: Emotion is critically important in video creation, yet no benchmark dataset or evaluation protocol suited to creative scenarios exists. EmoVid fills this gap by covering three artistic video types: animation, film clips, and emoji stickers.
+**Key Challenge**: Emotion is critically important in video creation, yet no benchmark dataset or evaluation protocol suited to creative scenarios exists. EmoVid fills this gap by covering three artistic video types: animation, film clips, and emoji stickers.
 
 ## Method
 

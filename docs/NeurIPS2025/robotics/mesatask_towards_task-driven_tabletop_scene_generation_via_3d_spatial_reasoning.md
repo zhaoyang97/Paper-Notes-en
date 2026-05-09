@@ -29,13 +29,13 @@ This paper proposes the MesaTask framework, which decomposes task descriptions i
 
 ## Background & Motivation
 
-**State of the Field**: Robotic manipulation requires diverse tabletop scenes for policy training, yet traditional approaches rely on hand-designed or purely random layouts, making it difficult to achieve both diversity and physical plausibility.
+**Background**: Robotic manipulation requires diverse tabletop scenes for policy training, yet traditional approaches rely on hand-designed or purely random layouts, making it difficult to achieve both diversity and physical plausibility.
 
 **Limitations of Prior Work**: Existing LLM-based scene generation methods (e.g., LayoutGPT) exhibit limited zero-shot capability and struggle to model complex inter-object relationships such as stacking and containment. Image reconstruction methods are severely affected by occlusion.
 
-**Root Cause**: A substantial gap exists between high-level task descriptions and concrete 3D layouts — how does "prepare a dinner" translate into precise 3D positions and orientations of tableware and food?
+**Key Challenge**: A substantial gap exists between high-level task descriptions and concrete 3D layouts — how does "prepare a dinner" translate into precise 3D positions and orientations of tableware and food?
 
-**Starting Point**: The Spatial Reasoning Chain decomposes the problem into a CoT pipeline: object reasoning → attribute description → spatial relationships → scene graph → 3D coordinates.
+**Key Insight**: The Spatial Reasoning Chain decomposes the problem into a CoT pipeline: object reasoning → attribute description → spatial relationships → scene graph → 3D coordinates.
 
 **Core Idea**: SFT injects spatial reasoning capability, and DPO eliminates collisions and task misalignment.
 

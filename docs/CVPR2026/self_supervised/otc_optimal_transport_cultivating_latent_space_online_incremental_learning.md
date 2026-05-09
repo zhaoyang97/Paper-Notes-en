@@ -29,11 +29,11 @@ This paper proposes an online mixture model framework driven by optimal transpor
 
 ## Background & Motivation
 
-1. **State of the Field**: Online Class-Incremental Learning (OCIL) is one of the most challenging continual learning scenarios — data distributions shift dynamically, the model can only be updated once per data batch, and no task ID is available at inference time. Existing methods typically employ a single classification head or a single centroid to represent each class.
+1. **Background**: Online Class-Incremental Learning (OCIL) is one of the most challenging continual learning scenarios — data distributions shift dynamically, the model can only be updated once per data batch, and no task ID is available at inference time. Existing methods typically employ a single classification head or a single centroid to represent each class.
 2. **Limitations of Prior Work**: A single adaptive centroid fails to capture the multimodal nature of a class data stream (a class may comprise multiple clusters); while GMM-based methods use multiple centroids, these are fixed after training and not updated online.
-3. **Root Cause**: The backbone network continuously adapts to new data, causing feature drift, whereas fixed centroids cannot track this drift — a significant shift exists between latent representations at training and inference time.
-4. **Paper Goals**: Dynamically update multiple centroids during online learning while preserving inter-class separability and intra-class compactness.
-5. **Starting Point**: Replace the conventional EM algorithm with OT theory, leveraging its continuity and geometric sensitivity. OT is differentiable, numerically stable, and respects the geometric structure of data.
+3. **Key Challenge**: The backbone network continuously adapts to new data, causing feature drift, whereas fixed centroids cannot track this drift — a significant shift exists between latent representations at training and inference time.
+4. **Goal**: Dynamically update multiple centroids during online learning while preserving inter-class separability and intra-class compactness.
+5. **Key Insight**: Replace the conventional EM algorithm with OT theory, leveraging its continuity and geometric sensitivity. OT is differentiable, numerically stable, and respects the geometric structure of data.
 6. **Core Idea**: Minimize the distance between the empirical distribution and a GMM using the entropy-regularized dual form of the Wasserstein distance; centroids are updated online via gradient descent, and Gumbel-Softmax enables differentiable sampling of mixture proportions.
 
 ## Method

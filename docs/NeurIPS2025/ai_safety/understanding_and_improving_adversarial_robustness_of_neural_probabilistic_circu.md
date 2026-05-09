@@ -33,7 +33,7 @@ This paper theoretically establishes that the adversarial robustness of Neural P
 
 Nevertheless, the attribute recognition model in NPC remains a black-box neural network, making it susceptible to **adversarial attacks**—imperceptible input perturbations that manipulate attribute predictions and thereby affect final classification.
 
-**Root Cause**: The estimation error in NPC is compositional (errors from each module accumulate linearly). Is adversarial robustness similarly compositional? If not, can a more robust inference scheme be designed?
+**Key Challenge**: The estimation error in NPC is compositional (errors from each module accumulate linearly). Is adversarial robustness similarly compositional? If not, can a more robust inference scheme be designed?
 
 **Key Findings**: The adversarial robustness of NPC depends solely on the attribute recognition model; incorporating the probabilistic circuit yields robustness "for free" (in contrast to conventional CBMs, where the linear layer degrades robustness). This insight motivates the design of RNPC for further robustness improvement.
 

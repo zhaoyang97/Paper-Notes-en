@@ -28,10 +28,10 @@ This paper systematically uncovers the internal mechanism underlying LLM failure
 
 ## Background & Motivation
 
-- **State of the Field**: Chain-of-Thought (CoT) reasoning has become the standard paradigm for LLMs to solve complex problems, yet performance degrades sharply when the number of reasoning steps required at test time exceeds the training distribution (reasoning hop generalization).
+- **Background**: Chain-of-Thought (CoT) reasoning has become the standard paradigm for LLMs to solve complex problems, yet performance degrades sharply when the number of reasoning steps required at test time exceeds the training distribution (reasoning hop generalization).
 - **Limitations of Prior Work**: For example, 3×8-digit multiplication and 2×2-digit multiplication require the same multiplication skill, yet performance degrades significantly in the multi-hop version. Existing methods either require post-training on downstream data (Hu et al., 2025) or architectural modifications (Fan et al., 2025, looped transformer), and cannot compatibly enhance the reasoning capabilities of off-the-shelf LLMs.
-- **Root Cause**: The internal mechanisms underlying reasoning hop generalization failures are poorly understood — existing interpretability tools are primarily designed for simple local prediction tasks (e.g., factual recall, simple arithmetic) and cannot be directly applied to long-chain CoT reasoning involving hundreds of tokens.
-- **Starting Point**: The paper adopts an error-centric perspective, first systematically identifying critical error types and their corresponding token positions, then employing mechanistic analysis tools (Logit Lens, Knockout, circuit analysis) to investigate internal mechanisms.
+- **Key Challenge**: The internal mechanisms underlying reasoning hop generalization failures are poorly understood — existing interpretability tools are primarily designed for simple local prediction tasks (e.g., factual recall, simple arithmetic) and cannot be directly applied to long-chain CoT reasoning involving hundreds of tokens.
+- **Key Insight**: The paper adopts an error-centric perspective, first systematically identifying critical error types and their corresponding token positions, then employing mechanistic analysis tools (Logit Lens, Knockout, circuit analysis) to investigate internal mechanisms.
 - **Core Idea**: LLMs simultaneously harbor correct and erroneous reasoning trajectories, driven by distinct sets of attention heads. Erroneous processing heads (ep heads) cause reasoning failures by amplifying erroneous signals and suppressing correct ones; deactivating these ep heads restores correct predictions.
 
 ## Method

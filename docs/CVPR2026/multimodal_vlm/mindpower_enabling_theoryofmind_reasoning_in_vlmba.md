@@ -29,15 +29,15 @@ MindPower proposes a robot-centric Theory-of-Mind (ToM) reasoning framework that
 
 ## Background & Motivation
 
-**State of the Field**: The embodied agent field is advancing rapidly — PaLM-E, RoboBench, and Smart-Help have realized task decomposition and execution. VLMs (GPT-4o, Gemini, Qwen-VL) perform well at the perception level but remain weak at inferring human intent and providing proactive assistance. Existing ToM benchmarks (MuMA-ToM, MMToM-QA) only evaluate inference of mental states of characters observed in videos.
+**Background**: The embodied agent field is advancing rapidly — PaLM-E, RoboBench, and Smart-Help have realized task decomposition and execution. VLMs (GPT-4o, Gemini, Qwen-VL) perform well at the perception level but remain weak at inferring human intent and providing proactive assistance. Existing ToM benchmarks (MuMA-ToM, MMToM-QA) only evaluate inference of mental states of characters observed in videos.
 
 **Limitations of Prior Work**: (1) Existing VLM-based agents can only execute explicit instructions and lack the ability to infer human beliefs, desires, and intentions; (2) existing ToM benchmarks adopt a "role-centric" perspective — inferring the mental states of video characters without involving the agent's own viewpoint or requiring the generation of decisions and actions; (3) VLMs at the perception level are susceptible to scene bias (e.g., predicting "cleaning" upon observing a kitchen rather than reasoning about actual intent).
 
-**Root Cause**: An agent must understand "what others are thinking" in order to offer proactive assistance, yet must simultaneously reason from its own perspective — e.g., "I know the apple is actually in the refrigerator, even though Alice believes it is on the table." Neither existing benchmarks nor methods have established this dual-perspective reasoning loop.
+**Key Challenge**: An agent must understand "what others are thinking" in order to offer proactive assistance, yet must simultaneously reason from its own perspective — e.g., "I know the apple is actually in the refrigerator, even though Alice believes it is on the table." Neither existing benchmarks nor methods have established this dual-perspective reasoning loop.
 
-**Paper Goals**: Enable embodied agents to infer human mental states (beliefs, desires, intentions) from their own perspective and thereby produce proactive decisions and actions.
+**Goal**: Enable embodied agents to infer human mental states (beliefs, desires, intentions) from their own perspective and thereby produce proactive decisions and actions.
 
-**Starting Point**: Systematically introduce the cognitive-science BDI (Belief-Desire-Intention) framework into embodied agents, constructing a three-level six-layer continuous reasoning hierarchy, and optimize reasoning consistency through a structured reward function (Mind-Reward) via reinforcement learning.
+**Key Insight**: Systematically introduce the cognitive-science BDI (Belief-Desire-Intention) framework into embodied agents, constructing a three-level six-layer continuous reasoning hierarchy, and optimize reasoning consistency through a structured reward function (Mind-Reward) via reinforcement learning.
 
 **Core Idea**: Connect perception to action via a robot-centric BDI reasoning hierarchy of three levels and six layers, and optimize the consistency of the reasoning chain through GRPO using an atomic-action-matching Mind-Reward.
 

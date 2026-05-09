@@ -29,15 +29,15 @@ This paper proposes the XLSR-MamBo framework, systematically exploring four topo
 
 ## Background & Motivation
 
-**State of the Field**: Audio deepfake detection (ADD) has evolved from hand-crafted features to end-to-end architectures. XLSR as a frontend feature extractor paired with attention-based classifiers like Conformer is the mainstream approach. Recently, state space models (SSMs) such as Mamba have attracted interest due to their linear complexity.
+**Background**: Audio deepfake detection (ADD) has evolved from hand-crafted features to end-to-end architectures. XLSR as a frontend feature extractor paired with attention-based classifiers like Conformer is the mainstream approach. Recently, state space models (SSMs) such as Mamba have attracted interest due to their linear complexity.
 
 **Limitations of Prior Work**: Pure causal SSMs are unidirectional, making it difficult to capture the content-based retrieval capability needed for global frequency-domain forgery traces. Existing bidirectional Mamba extensions rely on heuristic dual-branch strategies (e.g., forward-backward concatenation), introducing structural redundancy. Transformer's quadratic complexity limits efficiency on long sequences.
 
-**Root Cause**: SSMs excel at efficient temporal compression and local high-frequency artifact capture, while Attention excels at global association and content retrieval — deepfake signals manifest simultaneously as local high-frequency artifacts and global spectral inconsistencies, and neither mechanism alone suffices.
+**Key Challenge**: SSMs excel at efficient temporal compression and local high-frequency artifact capture, while Attention excels at global association and content retrieval — deepfake signals manifest simultaneously as local high-frequency artifacts and global spectral inconsistencies, and neither mechanism alone suffices.
 
-**Paper Goals**: Systematically explore the optimal topology combinations of SSM-Attention hybrid architectures in ADD and evaluate the impact of depth scaling on performance stability.
+**Goal**: Systematically explore the optimal topology combinations of SSM-Attention hybrid architectures in ADD and evaluate the impact of depth scaling on performance stability.
 
-**Starting Point**: Inspired by hybrid architectures in LLMs such as Jamba and Zamba, but with customized exploration for the ADD task, particularly introducing Hydra (a native bidirectional SSM) to replace heuristic bidirectional strategies.
+**Key Insight**: Inspired by hybrid architectures in LLMs such as Jamba and Zamba, but with customized exploration for the ADD task, particularly introducing Hydra (a native bidirectional SSM) to replace heuristic bidirectional strategies.
 
 **Core Idea**: The complementarity of SSM and Attention (temporal compression vs. content retrieval) is particularly important in ADD; Hydra's native bidirectional parameterization is more elegant than dual-branch strategies; and increasing SSM stacking depth N mitigates performance instability.
 

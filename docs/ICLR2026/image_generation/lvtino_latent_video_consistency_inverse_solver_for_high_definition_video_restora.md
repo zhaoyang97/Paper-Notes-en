@@ -29,15 +29,15 @@ This paper proposes LVTINO, the first zero-shot video inverse problem solver bui
 
 ## Background & Motivation
 
-**State of the Field**: Computational imaging increasingly leverages generative diffusion models to address challenging image inverse problems (e.g., super-resolution, deblurring, inpainting). State-of-the-art zero-shot image inverse problem solvers exploit distilled text-to-image latent diffusion models (LDMs) as priors, achieving unprecedented accuracy and perceptual quality while maintaining high computational efficiency.
+**Background**: Computational imaging increasingly leverages generative diffusion models to address challenging image inverse problems (e.g., super-resolution, deblurring, inpainting). State-of-the-art zero-shot image inverse problem solvers exploit distilled text-to-image latent diffusion models (LDMs) as priors, achieving unprecedented accuracy and perceptual quality while maintaining high computational efficiency.
 
 **Limitations of Prior Work**: Extending these image-level advances to high-definition video restoration poses significant challenges. Video restoration requires not only recovering fine spatial details but also capturing subtle inter-frame temporal dependencies. Naively applying image LDM-based inverse solvers frame-by-frame yields temporally inconsistent reconstructions—each frame is generated independently, and cross-frame stochasticity causes flickering and incoherence. Furthermore, diffusion-based inverse solvers typically require a large number of NFEs and automatic differentiation, making them computationally inefficient.
 
-**Root Cause**: Video restoration must simultaneously optimize two competing objectives—spatial detail fidelity and temporal consistency. Image priors offer high spatial quality but lack temporal modeling; video diffusion models provide temporal modeling but incur prohibitive NFE costs and are difficult to condition for inverse problems.
+**Key Challenge**: Video restoration must simultaneously optimize two competing objectives—spatial detail fidelity and temporal consistency. Image priors offer high spatial quality but lack temporal modeling; video diffusion models provide temporal modeling but incur prohibitive NFE costs and are difficult to condition for inverse problems.
 
-**Paper Goals**: Design an efficient, plug-and-play video inverse problem solver that (1) leverages a video generative prior (rather than an image prior) to ensure temporal consistency, (2) achieves reconstruction with minimal NFEs while maintaining measurement consistency, and (3) requires no automatic differentiation through the degradation operator.
+**Goal**: Design an efficient, plug-and-play video inverse problem solver that (1) leverages a video generative prior (rather than an image prior) to ensure temporal consistency, (2) achieves reconstruction with minimal NFEs while maintaining measurement consistency, and (3) requires no automatic differentiation through the degradation operator.
 
-**Starting Point**: Video Consistency Models (VCMs) distill video latent diffusion models into fast generators that naturally capture temporal causality and require only a small number of sampling steps. Using VCMs as priors for video inverse problems simultaneously addresses both temporal consistency and computational efficiency.
+**Key Insight**: Video Consistency Models (VCMs) distill video latent diffusion models into fast generators that naturally capture temporal causality and require only a small number of sampling steps. Using VCMs as priors for video inverse problems simultaneously addresses both temporal consistency and computational efficiency.
 
 **Core Idea**: Inject autodifferentiation-free measurement consistency constraints into the few-step VCM sampling process, realizing the first zero-shot video inverse problem solver built upon a video prior.
 

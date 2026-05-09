@@ -29,7 +29,7 @@ ForestPersons is the first large-scale benchmark dataset specifically designed f
 
 ## Background & Motivation
 
-**State of the Field**: UAVs have been widely deployed in SAR operations, enabling rapid coverage of large open areas. With advances in hardware miniaturization and SLAM technology, MAVs are now capable of safe navigation and exploration in GPS-denied forest environments.
+**Background**: UAVs have been widely deployed in SAR operations, enabling rapid coverage of large open areas. With advances in hardware miniaturization and SLAM technology, MAVs are now capable of safe navigation and exploration in GPS-denied forest environments.
 
 **Limitations of Prior Work**:
 
@@ -37,9 +37,9 @@ ForestPersons is the first large-scale benchmark dataset specifically designed f
 2. **Scene Bias**: Ground-level person detection datasets (COCO, CrowdHuman, CityPersons) primarily cover standing or walking individuals in urban environments, which differs substantially from forest SAR scenarios — cases such as lying down, sitting, and vegetation occlusion are rarely represented.
 3. **Missing Annotations**: No existing dataset simultaneously provides occlusion-level and pose annotations, preventing systematic evaluation of detection capability under varying difficulty conditions.
 
-**Root Cause**: The missing persons most critical to detect in forest SAR operations are precisely those in scenarios least covered by existing datasets — beneath the forest canopy, occluded by vegetation, and in non-standing poses.
+**Key Challenge**: The missing persons most critical to detect in forest SAR operations are precisely those in scenarios least covered by existing datasets — beneath the forest canopy, occluded by vegetation, and in non-standing poses.
 
-**Paper Goals**: Construct ForestPersons, the first large-scale benchmark dataset focused on under-canopy person detection, simulating the low-altitude MAV perspective and supplemented with semantic annotations for pose and visibility, to support the development of detection models suited to real SAR scenarios.
+**Goal**: Construct ForestPersons, the first large-scale benchmark dataset focused on under-canopy person detection, simulating the low-altitude MAV perspective and supplemented with semantic annotations for pose and visibility, to support the development of detection models suited to real SAR scenarios.
 
 ## Method
 

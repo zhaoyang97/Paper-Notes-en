@@ -29,7 +29,7 @@ This paper proposes two complementary modules — Region-Aware Prompt Augmentati
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-image diffusion models (e.g., Stable Diffusion) achieve high generation quality but suffer from severe training data memorization — models may reproduce training images verbatim or imitate training samples at the style level, posing risks of copyright infringement and privacy leakage.
+**Background**: Text-to-image diffusion models (e.g., Stable Diffusion) achieve high generation quality but suffer from severe training data memorization — models may reproduce training images verbatim or imitate training samples at the style level, posing risks of copyright infringement and privacy leakage.
 
 **Limitations of Prior Work**:
 
@@ -37,11 +37,11 @@ This paper proposes two complementary modules — Region-Aware Prompt Augmentati
 2. Individual detection metrics (SSIM/LPIPS/CLIP cosine) each exhibit directional bias — LPIPS favors texture, ORB favors keypoints, SSIM favors structure — making them unable to distinguish exact copying from style imitation.
 3. Large-scale annotated datasets targeting copy behavior in diffusion models are lacking for training dedicated detectors.
 
-**Root Cause**: Large model capacity + strong text–image alignment + excessive reliance on caption–image pairs during training → memorization is a training-time problem, yet existing mitigation strategies operate exclusively at inference time.
+**Key Challenge**: Large model capacity + strong text–image alignment + excessive reliance on caption–image pairs during training → memorization is a training-time problem, yet existing mitigation strategies operate exclusively at inference time.
 
-**Paper Goals**: An end-to-end solution that mitigates memorization at training time and reliably detects and classifies copy behavior at evaluation time.
+**Goal**: An end-to-end solution that mitigates memorization at training time and reliably detects and classifies copy behavior at evaluation time.
 
-**Starting Point**: Break the one-to-one caption dependency during training via object-detector-driven semantic prompt augmentation; perform robust copy detection at inference time via multimodal attention fusion.
+**Key Insight**: Break the one-to-one caption dependency during training via object-detector-driven semantic prompt augmentation; perform robust copy detection at inference time via multimodal attention fusion.
 
 **Core Idea**: Replace fixed captions with region-aware prompt variants during training, and replace single-metric detection with three-stream attention fusion.
 

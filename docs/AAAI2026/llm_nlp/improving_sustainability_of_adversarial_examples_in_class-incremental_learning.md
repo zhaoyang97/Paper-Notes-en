@@ -29,10 +29,10 @@ This paper proposes the SAE framework to address the degradation of adversarial 
 
 ## Background & Motivation
 
-- **State of the Field**: Current AEs are typically crafted against static models. However, with the growing adoption of CIL, models are no longer static—the continual introduction of new class data causes significant domain drift in the decision boundaries of old classes.
+- **Background**: Current AEs are typically crafted against static models. However, with the growing adoption of CIL, models are no longer static—the continual introduction of new class data causes significant domain drift in the decision boundaries of old classes.
 - **Limitations of Prior Work**: Experiments show that adding as few as 30 new classes (ResNet-32 on CIFAR-100) causes the success rate of SOTA attacks to drop substantially. Semantic-level attacks fall below 20% success rate after more than 30 incremental classes.
-- **Root Cause**: Domain drift alters the direction and magnitude of perturbations required to move inputs toward the target domain, causing old AEs to either misclassify into unintended classes or degrade into benign noise. Optimizing AEs solely on gradients from the initial CIL model leads to overfitting.
-- **Starting Point**: CLIP is leveraged to provide universal semantic "anchors" for target classes, combined with CIL model gradients for directional correction, while semantically confusing samples are filtered out.
+- **Key Challenge**: Domain drift alters the direction and magnitude of perturbations required to move inputs toward the target domain, causing old AEs to either misclassify into unintended classes or degrade into benign noise. Optimizing AEs solely on gradients from the initial CIL model leads to overfitting.
+- **Key Insight**: CLIP is leveraged to provide universal semantic "anchors" for target classes, combined with CIL model gradients for directional correction, while semantically confusing samples are filtered out.
 
 ## Method
 

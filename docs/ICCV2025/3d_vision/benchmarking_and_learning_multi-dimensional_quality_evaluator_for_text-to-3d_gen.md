@@ -33,7 +33,7 @@ Text-to-3D generation has advanced considerably in recent years, yet evaluation 
 
 **Metric Limitations**: Existing automatic metrics (CLIPScore, BLIPScore, etc.) assess only text–3D alignment while neglecting critical dimensions such as geometric quality and texture detail. Human evaluators dynamically shift attention according to the evaluation dimension, a behavior that single-metric approaches cannot replicate.
 
-**Root Cause**: Directly training a multi-head regression network (one head per dimension) fails to exploit the differential perceptual rules across evaluation dimensions. The proposed approach addresses this by employing a **hypernetwork that dynamically generates the weights of the mapping function conditioned on the target evaluation dimension**, simulating the human behavior of switching decision processes across dimensions.
+**Key Challenge**: Directly training a multi-head regression network (one head per dimension) fails to exploit the differential perceptual rules across evaluation dimensions. The proposed approach addresses this by employing a **hypernetwork that dynamically generates the weights of the mapping function conditioned on the target evaluation dimension**, simulating the human behavior of switching decision processes across dimensions.
 
 ## Method
 

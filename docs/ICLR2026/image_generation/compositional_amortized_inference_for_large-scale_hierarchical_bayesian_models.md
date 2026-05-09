@@ -28,15 +28,15 @@ This paper extends compositional score matching (CSM) to hierarchical Bayesian m
 
 ## Background & Motivation
 
-**State of the Field**: Amortized Bayesian inference (ABI) uses neural networks to learn a universal posterior function, enabling zero-latency sampling after training. However, scaling ABI to hierarchical models remains a major challenge, as training requires simulating complete "dataset-of-datasets" for each batch, incurring substantial computational cost.
+**Background**: Amortized Bayesian inference (ABI) uses neural networks to learn a universal posterior function, enabling zero-latency sampling after training. However, scaling ABI to hierarchical models remains a major challenge, as training requires simulating complete "dataset-of-datasets" for each batch, incurring substantial computational cost.
 
 **Limitations of Prior Work**: (a) Direct ABI requires simulating $J$ groups of data (where $J$ can reach hundreds of thousands), demanding tens of thousands of simulations per batch; (b) existing CSM methods become numerically unstable when the number of groups $J > 100$—the cumulative composition of scores compounds approximation errors, causing divergent sampling; (c) MCMC methods (e.g., NUTS) are also infeasible for large-scale hierarchical models.
 
-**Root Cause**: The divide-and-conquer strategy of CSM makes training efficient (single-group simulation), but inference requires composing $J$ score estimates—a process that becomes numerically explosive as $J$ grows. More data groups → more accumulated score terms → more severe compounding of approximation errors.
+**Key Challenge**: The divide-and-conquer strategy of CSM makes training efficient (single-group simulation), but inference requires composing $J$ score estimates—a process that becomes numerically explosive as $J$ grows. More data groups → more accumulated score terms → more severe compounding of approximation errors.
 
-**Paper Goals**: Enable CSM to remain numerically stable at scales of hundreds of thousands of data groups, realizing amortized inference for large-scale hierarchical models.
+**Goal**: Enable CSM to remain numerically stable at scales of hundreds of thousands of data groups, realizing amortized inference for large-scale hierarchical models.
 
-**Starting Point**: Introduce an error-damping bridging density that attenuates the influence of composed scores in high-noise regimes and recovers full accumulation in low-noise regimes, combined with a mini-batch estimator to address memory constraints.
+**Key Insight**: Introduce an error-damping bridging density that attenuates the influence of composed scores in high-noise regimes and recovers full accumulation in low-noise regimes, combined with a mini-batch estimator to address memory constraints.
 
 **Core Idea**: Modulate the accumulation rate of composed scores along the diffusion trajectory via a time-varying damping function $d(t)$—damping in high-noise regions (preventing divergence) and recovering in low-noise regions (preserving correctness).
 

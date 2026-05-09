@@ -29,10 +29,10 @@ This paper proposes an Adversarial Distribution Matching (ADM) framework that re
 
 ## Background & Motivation
 
-- **State of the Field**: Distribution Matching Distillation (DMD) is a powerful approach to compressing pretrained diffusion models into efficient few-step generators.
+- **Background**: Distribution Matching Distillation (DMD) is a powerful approach to compressing pretrained diffusion models into efficient few-step generators.
 - **Limitations of Prior Work**: DMD relies on reverse KL divergence minimization, which carries a risk of mode collapse due to its zero-forcing property — the model tends to concentrate probability mass on a few dominant modes. DMD2 mitigates this with a GAN regularizer but does not address the root cause.
-- **Root Cause**: One-step distillation suffers from elevated risks of gradient explosion/vanishing, attributed not merely to approximation errors in the fake score estimator but primarily to insufficient support overlap between the student and teacher distributions.
-- **Paper Goals**: Develop a framework that bypasses the limitations of predefined divergences by learning an implicit, data-driven discrepancy measure; additionally, improve initialization for one-step distillation to resolve the support overlap problem.
+- **Key Challenge**: One-step distillation suffers from elevated risks of gradient explosion/vanishing, attributed not merely to approximation errors in the fake score estimator but primarily to insufficient support overlap between the student and teacher distributions.
+- **Goal**: Develop a framework that bypasses the limitations of predefined divergences by learning an implicit, data-driven discrepancy measure; additionally, improve initialization for one-step distillation to resolve the support overlap problem.
 
 ## Method
 

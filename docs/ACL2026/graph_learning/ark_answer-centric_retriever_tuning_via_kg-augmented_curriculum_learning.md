@@ -26,7 +26,7 @@ ARK filters positive samples through three-dimensional answer sufficiency scorin
 
 ## Background & Motivation
 
-**Root Cause**: The gap between retriever training objective (query-document similarity) and RAG's ultimate goal (generating correct answers).
+**Key Challenge**: The gap between retriever training objective (query-document similarity) and RAG's ultimate goal (generating correct answers).
 
 **Core Idea**: Use KG subgraph-generated augmented queries to mine progressively difficult hard negatives through curriculum contrastive learning, teaching the retriever to distinguish "sufficient" from "seemingly relevant but insufficient" evidence.
 

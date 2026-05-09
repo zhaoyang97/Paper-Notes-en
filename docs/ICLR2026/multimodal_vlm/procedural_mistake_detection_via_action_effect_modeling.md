@@ -28,15 +28,15 @@ This paper proposes a dual-branch multimodal supervision framework for action ef
 
 ## Background & Motivation
 
-**State of the Field**: Procedural mistake detection aims to identify whether an operator has correctly executed steps from egocentric video (e.g., adding the wrong seasoning while cooking). Existing methods primarily focus on the execution process of actions (how-to-do), but neglect the consequences of those actions (what-happened-after).
+**Background**: Procedural mistake detection aims to identify whether an operator has correctly executed steps from egocentric video (e.g., adding the wrong seasoning while cooking). Existing methods primarily focus on the execution process of actions (how-to-do), but neglect the consequences of those actions (what-happened-after).
 
 **Limitations of Prior Work**: Modeling only the action process fails to distinguish cases where "the correct action was performed but the outcome was wrong." For instance, the act of "flipping" looks identical in execution, yet if the food is burnt afterward, the step is erroneous.
 
-**Root Cause**: Whether an action is correct depends on its outcome, which is reflected in changes to object states and spatial relations after action completion. This requires understanding the causal "before-after" relationship.
+**Key Challenge**: Whether an action is correct depends on its outcome, which is reflected in changes to object states and spatial relations after action completion. This requires understanding the causal "before-after" relationship.
 
-**Paper Goals**: How can action effects (object state changes + spatial relation changes) be effectively modeled to enhance mistake detection?
+**Goal**: How can action effects (object state changes + spatial relation changes) be effectively modeled to enhance mistake detection?
 
-**Starting Point**: Extract object state and spatial relation information from effect frames (key frames after action completion), and learn effect representations through visual and textual dual-path multimodal supervision.
+**Key Insight**: Extract object state and spatial relation information from effect frames (key frames after action completion), and learn effect representations through visual and textual dual-path multimodal supervision.
 
 **Core Idea**: Select the effect frame that best reflects the action outcome, extract visual and textual representations of object states and spatial relations from it, and distill these into learnable effect tokens via alignment learning.
 

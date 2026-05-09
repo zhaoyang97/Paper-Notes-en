@@ -28,15 +28,15 @@ ArtLLM formulates articulated object generation as a language generation problem
 
 ## Background & Motivation
 
-**State of the Field**: Interactive digital environments (games, robotics, simulation) rely on articulated 3D objects whose functionality derives from part geometry and kinematic structure. Existing methods suffer from fundamental limitations.
+**Background**: Interactive digital environments (games, robotics, simulation) rely on articulated 3D objects whose functionality derives from part geometry and kinematic structure. Existing methods suffer from fundamental limitations.
 
 **Limitations of Prior Work**:
 - **Optimization-based reconstruction methods** (PARIS, VideoArtGS, ArtGS): require slow per-object joint fitting and typically handle only single-joint simple objects.
 - **Retrieval-based assembly methods** (SINGAPO, CAGE, URDFormer): assemble objects from fixed part libraries, resulting in high geometric redundancy and poor generalization.
 
-**Root Cause**: General-purpose 3D generative models (Trellis, Hunyuan3D) can produce high-quality geometry, and part-level generation (XPart, OmniPart) has also advanced. However, these models **lack understanding of kinematic structure**—generated parts have no notion of how they should move, leading to a fundamental disconnect between geometry and motion.
+**Key Challenge**: General-purpose 3D generative models (Trellis, Hunyuan3D) can produce high-quality geometry, and part-level generation (XPart, OmniPart) has also advanced. However, these models **lack understanding of kinematic structure**—generated parts have no notion of how they should move, leading to a fundamental disconnect between geometry and motion.
 
-**Starting Point**: A **unified solution that jointly understands geometry and articulation** is needed. LLMs are naturally suited to handle variable-length structured sequences; their sequence modeling and reasoning capabilities can be leveraged to autoregressively predict articulation blueprints.
+**Key Insight**: A **unified solution that jointly understands geometry and articulation** is needed. LLMs are naturally suited to handle variable-length structured sequences; their sequence modeling and reasoning capabilities can be leveraged to autoregressively predict articulation blueprints.
 
 **Core Idea**: Discretize URDF articulation structures into token sequences and train a 3D LLM to autoregressively generate a unified blueprint of "part layouts + kinematic joints" from point clouds, which then drives a part generation model to synthesize geometry.
 

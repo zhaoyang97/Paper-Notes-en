@@ -29,15 +29,15 @@ This paper proposes a VLM-driven semantic-sensitive learning strategy that lever
 
 ## Background & Motivation
 
-**State of the Field**: Underwater image enhancement (UIE) has seen substantial progress through deep learning methods, with notable gains on perceptual metrics such as PSNR and SSIM. However, a troubling "enhancement paradox" has emerged: images with higher visual quality do not necessarily benefit downstream object detection or semantic segmentation, and can even degrade task performance.
+**Background**: Underwater image enhancement (UIE) has seen substantial progress through deep learning methods, with notable gains on perceptual metrics such as PSNR and SSIM. However, a troubling "enhancement paradox" has emerged: images with higher visual quality do not necessarily benefit downstream object detection or semantic segmentation, and can even degrade task performance.
 
 **Limitations of Prior Work**: Existing UIE methods are inherently "semantically blind," applying uniform global enhancement across all image regions without distinguishing semantic foreground (e.g., marine organisms, artificial objects) from background (e.g., water body). This one-size-fits-all strategy introduces imperceptible artifacts or distribution shifts that disrupt the semantic cues relied upon by downstream models. Early semantic-guided methods require high-quality pixel-level annotations to train segmentation models—annotations that are extremely scarce in underwater scenes. VLM-guided approaches based on global text prompts (e.g., "a clear underwater photo") circumvent pixel annotations but remain style-level global guidance, incapable of fine-grained content-aware enhancement.
 
-**Root Cause**: A fundamental conflict exists between UIE's pursuit of global visual quality and downstream tasks' need to preserve the semantic features of key objects.
+**Key Challenge**: A fundamental conflict exists between UIE's pursuit of global visual quality and downstream tasks' need to preserve the semantic features of key objects.
 
-**Paper Goals**: To endow UIE with content-awareness, restoring visual quality while preserving—or even strengthening—the semantic features of critical objects, so that enhanced results serve both human perception and machine cognition simultaneously.
+**Goal**: To endow UIE with content-awareness, restoring visual quality while preserving—or even strengthening—the semantic features of critical objects, so that enhanced results serve both human perception and machine cognition simultaneously.
 
-**Starting Point**: The open-world understanding capability of VLMs is exploited to automatically identify key objects in the image and generate spatially-grounded semantic guidance maps, which are then injected into the UIE decoder via a dual-guidance mechanism (structural guidance + explicit supervision).
+**Key Insight**: The open-world understanding capability of VLMs is exploited to automatically identify key objects in the image and generate spatially-grounded semantic guidance maps, which are then injected into the UIE decoder via a dual-guidance mechanism (structural guidance + explicit supervision).
 
 **Core Idea**: Use a VLM to tell the enhancement network *what is in the image*, BLIP to indicate *where it is*, and cross-attention combined with an alignment loss to specify *where to focus enhancement efforts*.
 

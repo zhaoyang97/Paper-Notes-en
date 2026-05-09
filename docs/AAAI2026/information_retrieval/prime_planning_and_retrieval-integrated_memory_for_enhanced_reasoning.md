@@ -27,18 +27,18 @@ Inspired by dual-process cognitive theory, PRIME is a multi-agent reasoning fram
 
 ## Background & Motivation
 
-**State of the Field**: LLM reasoning enhancement methods include CoT, RAG, and agent frameworks, among others. However, most approaches uniformly apply slow reasoning to all questions, wasting computational resources.
+**Background**: LLM reasoning enhancement methods include CoT, RAG, and agent frameworks, among others. However, most approaches uniformly apply slow reasoning to all questions, wasting computational resources.
 
 **Limitations of Prior Work**:
    - Simple questions do not require deep reasoning—invoking System 2 for "What is the capital of France?" is wasteful.
    - Existing RAG methods lack explicit planning—what to retrieve and when to retrieve it are left unaddressed.
    - Single-agent reasoning lacks specialization—the same model must simultaneously handle search, reasoning, and verification.
 
-**Root Cause**: Deep reasoning is effective but expensive—intelligent selection of when to activate it is required.
+**Key Challenge**: Deep reasoning is effective but expensive—intelligent selection of when to activate it is required.
 
-**Paper Goals**: Design a multi-agent framework that adaptively triggers deep reasoning.
+**Goal**: Design a multi-agent framework that adaptively triggers deep reasoning.
 
-**Starting Point**: Kahneman's dual-process theory—System 1 for fast intuition, System 2 for slow analysis—with a Reflection Agent deciding when to switch.
+**Key Insight**: Kahneman's dual-process theory—System 1 for fast intuition, System 2 for slow analysis—with a Reflection Agent deciding when to switch.
 
 **Core Idea**: System 1 fast answering + Reflection self-evaluation + System 2 six-agent deep reasoning = efficient and accurate inference.
 

@@ -28,13 +28,13 @@ This paper proposes FedLEASE, which addresses two critical challenges in federat
 
 ## Background & Motivation
 
-**State of the Field**: Federated Learning (FL) enables privacy-preserving distributed LLM fine-tuning, while LoRA provides a parameter-efficient fine-tuning paradigm. However, a single shared LoRA module struggles to handle heterogeneous data across clients spanning different tasks and domains.
+**Background**: Federated Learning (FL) enables privacy-preserving distributed LLM fine-tuning, while LoRA provides a parameter-efficient fine-tuning paradigm. However, a single shared LoRA module struggles to handle heterogeneous data across clients spanning different tasks and domains.
 
 **Limitations of Prior Work**: (a) Existing methods such as FedIT and FedSA have all clients share a single LoRA module, which performs poorly under task heterogeneity; (b) assigning a dedicated LoRA to each client leads to redundancy and eliminates cross-client knowledge sharing; (c) LoRA-MoE approaches require manually specifying a fixed top-$k$ expert count, whereas the optimal $k$ differs across clients.
 
-**Root Cause**: Too few experts (one shared) fail to capture domain diversity, while too many experts (one per client) introduce redundancy and performance degradation.
+**Key Challenge**: Too few experts (one shared) fail to capture domain diversity, while too many experts (one per client) introduce redundancy and performance degradation.
 
-**Starting Point**: Two key observations motivate this work — (a) cosine similarity of B matrices reflects task similarity (A matrices do not); (b) different clients require different numbers of experts.
+**Key Insight**: Two key observations motivate this work — (a) cosine similarity of B matrices reflects task similarity (A matrices do not); (b) different clients require different numbers of experts.
 
 **Core Idea**: Use B-matrix clustering to determine the number of experts and their assignment, and use an expanded routing space to allow each client to adaptively decide how many experts to employ.
 

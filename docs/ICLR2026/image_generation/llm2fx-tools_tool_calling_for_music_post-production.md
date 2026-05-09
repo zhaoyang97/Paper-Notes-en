@@ -27,10 +27,10 @@ content_hash: dc7a202d975d791a
 This paper proposes LLM2Fx-Tools, the first framework that applies LLM tool calling to audio effect modules. It leverages a multimodal LLM to understand audio inputs, employs CoT reasoning to select effect types, determine processing order, and estimate parameters, enabling interpretable and controllable music post-production.
 
 ## Background & Motivation
-- **State of the Field**: Audio effects (Fx) processing is central to music post-production but demands substantial domain expertise.
+- **Background**: Audio effects (Fx) processing is central to music post-production but demands substantial domain expertise.
 - **Limitations of Prior Work**: Existing Fx-chain estimation methods suffer from three key limitations: gradient-based methods require differentiable modules; regression-based methods operate under fixed configurations without dynamic effect selection; and none provide user-interpretable explanations.
-- **Root Cause**: LLM capabilities in instruction following, CoT reasoning, and tool calling offer new opportunities to address flexibility and interpretability challenges. The prior LLM2Fx work supported only single effects (EQ and reverb) without explicit tool calling or CoT.
-- **Paper Goals**: Develop a flexible, interpretable Fx-chain estimation framework based on LLM tool calling.
+- **Key Challenge**: LLM capabilities in instruction following, CoT reasoning, and tool calling offer new opportunities to address flexibility and interpretability challenges. The prior LLM2Fx work supported only single effects (EQ and reverb) without explicit tool calling or CoT.
+- **Goal**: Develop a flexible, interpretable Fx-chain estimation framework based on LLM tool calling.
 
 ## Method
 

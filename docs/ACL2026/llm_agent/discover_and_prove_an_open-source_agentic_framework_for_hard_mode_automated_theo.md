@@ -24,15 +24,15 @@ DAP introduces the concept of Hard Mode ATP (where AI must independently discove
 
 ## Background & Motivation
 
-**State of the Field**: Automated Theorem Proving (ATP) has advanced rapidly, with Seed-Prover approaching saturation on MiniF2F. However, existing benchmarks predominantly adopt "Easy Mode" — embedding the final answer directly into formal statements — which reduces task difficulty, since human competitors must discover answers on their own.
+**Background**: Automated Theorem Proving (ATP) has advanced rapidly, with Seed-Prover approaching saturation on MiniF2F. However, existing benchmarks predominantly adopt "Easy Mode" — embedding the final answer directly into formal statements — which reduces task difficulty, since human competitors must discover answers on their own.
 
 **Limitations of Prior Work**: (1) Easy Mode substantially reduces problem difficulty — for many competition problems, discovering the answer is the primary challenge, while the subsequent proof is comparatively straightforward once the answer is known; (2) Some formal statements are not fully aligned with the original problem semantics — e.g., only one direction of an implication is proved when the original requires a biconditional; (3) LLMs achieve over 80% answer accuracy in informal reasoning, yet formal provers succeed on fewer than 10% of problems, revealing a substantial capability gap.
 
-**Root Cause**: Easy Mode causes ATP benchmarks to overestimate AI mathematical capability by omitting the "discovery" phase, which is the most challenging aspect of human mathematical problem solving.
+**Key Challenge**: Easy Mode causes ATP benchmarks to overestimate AI mathematical capability by omitting the "discovery" phase, which is the most challenging aspect of human mathematical problem solving.
 
-**Paper Goals**: (1) Establish fairer Hard Mode ATP benchmarks; (2) Design a framework capable of handling Hard Mode problems.
+**Goal**: (1) Establish fairer Hard Mode ATP benchmarks; (2) Design a framework capable of handling Hard Mode problems.
 
-**Starting Point**: Decompose Hard Mode problems into two steps — first use informal LLM reasoning to discover the answer (Discovery), then use a formal prover to construct the proof (Proving) — mirroring the workflow of human mathematicians.
+**Key Insight**: Decompose Hard Mode problems into two steps — first use informal LLM reasoning to discover the answer (Discovery), then use a formal prover to construct the proof (Proving) — mirroring the workflow of human mathematicians.
 
 **Core Idea**: Decouple "answer discovery" from "proof construction" — leveraging the strong informal reasoning capability of LLMs to compensate for the limitations of formal provers.
 

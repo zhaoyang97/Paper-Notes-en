@@ -28,15 +28,15 @@ This paper formalizes diffusion model sampling acceleration as a global path pla
 
 ## Background & Motivation
 
-1. **State of the Field**: Diffusion models, particularly DiT-based architectures, have achieved remarkable success in image and video generation. However, the substantial computational overhead of multi-step iterative sampling severely hinders practical deployment. Caching-based methods have attracted considerable attention as training-free acceleration solutions—their core idea is to reuse or predict intermediate features that are highly similar across adjacent timesteps.
+1. **Background**: Diffusion models, particularly DiT-based architectures, have achieved remarkable success in image and video generation. However, the substantial computational overhead of multi-step iterative sampling severely hinders practical deployment. Caching-based methods have attracted considerable attention as training-free acceleration solutions—their core idea is to reuse or predict intermediate features that are highly similar across adjacent timesteps.
 
 2. **Limitations of Prior Work**: Existing caching methods suffer from two fundamental problems: (1) **Fixed scheduling strategies** (e.g., DeepCache) ignore local feature dynamics and introduce severe deviation at critical transition regions; (2) **Locally adaptive strategies** (e.g., TeaCache, SpeCa) make greedy, myopic decisions that may skip critical timesteps, leading to irreversible trajectory drift and error accumulation.
 
-3. **Root Cause**: The pivotal decision in caching acceleration—"at which timesteps to perform full computation, and at which to use cached predictions"—is intrinsically a global optimization problem. Yet all existing methods make this decision locally, completely ignoring the global structure of the denoising trajectory.
+3. **Key Challenge**: The pivotal decision in caching acceleration—"at which timesteps to perform full computation, and at which to use cached predictions"—is intrinsically a global optimization problem. Yet all existing methods make this decision locally, completely ignoring the global structure of the denoising trajectory.
 
-4. **Paper Goals**: Design a globally optimal sampling schedule such that, given a fixed computational budget of $K$ steps, the selected sequence of key timesteps minimizes the total deviation along the entire denoising trajectory.
+4. **Goal**: Design a globally optimal sampling schedule such that, given a fixed computational budget of $K$ steps, the selected sequence of key timesteps minimizes the total deviation along the entire denoising trajectory.
 
-5. **Starting Point**: The authors observe that the shape of the denoising trajectory is largely independent of the generated content and is primarily determined by the diffusion model itself. This property enables precomputing the optimal schedule on a small set of calibration samples and applying it to arbitrary inputs.
+5. **Key Insight**: The authors observe that the shape of the denoising trajectory is largely independent of the generated content and is primarily determined by the diffusion model itself. This property enables precomputing the optimal schedule on a small set of calibration samples and applying it to arbitrary inputs.
 
 6. **Core Idea**: Reformulate diffusion sampling acceleration as a path planning problem, capture the path-dependent nature of skip-step errors via a 3D Path-Aware Cost Tensor, and solve for the globally optimal schedule exactly using dynamic programming.
 

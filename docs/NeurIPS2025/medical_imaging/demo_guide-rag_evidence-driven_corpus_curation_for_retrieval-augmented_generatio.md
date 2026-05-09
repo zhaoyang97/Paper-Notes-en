@@ -28,7 +28,7 @@ This paper systematically evaluates six RAG corpus configurations for Long COVID
 
 ## Background & Motivation
 
-**State of the Field**: AI chatbots are rapidly being adopted in clinical medicine; however, designing effective clinical decision support AI for complex, heterogeneous, and evidence-limited emerging diseases such as Long COVID poses significant challenges.
+**Background**: AI chatbots are rapidly being adopted in clinical medicine; however, designing effective clinical decision support AI for complex, heterogeneous, and evidence-limited emerging diseases such as Long COVID poses significant challenges.
 
 **Limitations of Prior Work**:
    - Pure LLMs without retrieval are prone to hallucination and citation errors.
@@ -36,9 +36,9 @@ This paper systematically evaluates six RAG corpus configurations for Long COVID
    - Relying solely on a single clinical guideline is overly narrow and fails to capture rapidly evolving research evidence.
    - Existing medical QA benchmarks predominantly use multiple-choice formats, which are inadequate for evaluating clinical decision support capabilities.
 
-**Root Cause**: In emerging disease settings characterized by rapidly evolving evidence and lack of consensus, there exists a fundamental tension between retrieval scope that is too narrow (missing evolving evidence) and too broad (introducing noise).
+**Key Challenge**: In emerging disease settings characterized by rapidly evolving evidence and lack of consensus, there exists a fundamental tension between retrieval scope that is too narrow (missing evolving evidence) and too broad (introducing noise).
 
-**Starting Point**: Using Long COVID as a case study, the paper systematically compares the effect of different corpus curation strategies on RAG performance.
+**Key Insight**: Using Long COVID as a case study, the paper systematically compares the effect of different corpus curation strategies on RAG performance.
 
 **Core Idea**: Combining clinical guidelines with a small number of high-quality systematic reviews (GS-4) achieves an optimal balance between narrow consensus documents and unfiltered primary literature.
 

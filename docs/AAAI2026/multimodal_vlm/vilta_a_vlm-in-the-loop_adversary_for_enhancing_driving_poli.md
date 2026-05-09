@@ -27,15 +27,15 @@ content_hash: f7bc097ece7cedf0
 VILTA embeds a VLM (Gemini-2.5-Flash) directly into the RL training loop for autonomous driving. Via a Vision-Language-Editing (VLE) paradigm, the VLM edits the future trajectories of surrounding vehicles to generate challenging hazardous scenarios. The resulting driving policy achieves a 13.3% improvement in route completion rate and a 28.5% reduction in collision rate on CARLA challenging scenarios.
 
 ## Background & Motivation
-**State of the Field**: Safe deployment of autonomous driving systems is severely hindered by the long-tail problem — extreme hazardous scenarios are exceedingly rare in real-world driving data, causing AD models to perform poorly on these corner cases.
+**Background**: Safe deployment of autonomous driving systems is severely hindered by the long-tail problem — extreme hazardous scenarios are exceedingly rare in real-world driving data, causing AD models to perform poorly on these corner cases.
 
 **Limitations of Prior Work**: Existing approaches fall into two categories: (1) safety-critical scenario generation (offline generation not used for training); and (2) closed-loop learning (generated scenarios used for training, but relying on rule-based / resampling / offline generative models with insufficient diversity). While recent work has employed VLMs to analyze scenes and guide downstream models for trajectory generation, this two-stage approach limits the generative potential of VLMs.
 
-**Root Cause**: VLMs possess strong generalization and reasoning capabilities, yet existing methods use them only for high-level description or analysis before delegating actual generation to downstream models — the diversity of the final trajectories is therefore capped by the generalization ability of those downstream models.
+**Key Challenge**: VLMs possess strong generalization and reasoning capabilities, yet existing methods use them only for high-level description or analysis before delegating actual generation to downstream models — the diversity of the final trajectories is therefore capped by the generalization ability of those downstream models.
 
-**Paper Goals**: How can the generative capacity of VLMs be fully leveraged to create diverse and highly challenging adversarial driving scenarios that are integrated into the training loop?
+**Goal**: How can the generative capacity of VLMs be fully leveraged to create diverse and highly challenging adversarial driving scenarios that are integrated into the training loop?
 
-**Starting Point**: Drawing inspiration from the image editing domain — rather than generating trajectories from scratch (which tends to produce implausible results), the VLM **edits** a rule-generated base trajectory to make it more challenging while preserving kinematic plausibility.
+**Key Insight**: Drawing inspiration from the image editing domain — rather than generating trajectories from scratch (which tends to produce implausible results), the VLM **edits** a rule-generated base trajectory to make it more challenging while preserving kinematic plausibility.
 
 **Core Idea**: The VLM directly edits surrounding vehicle trajectories within the training loop to create adversarial scenarios, replacing the indirect two-stage generation pipeline.
 

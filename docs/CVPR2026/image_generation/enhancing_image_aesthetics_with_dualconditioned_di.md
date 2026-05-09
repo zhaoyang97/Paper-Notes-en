@@ -29,15 +29,15 @@ DIAE proposes a Multimodal Aesthetic Perception (MAP) module to convert vague ae
 
 ## Background & Motivation
 
-**State of the Field**: Image aesthetic enhancement requires models to possess aesthetic perception capabilities to identify deficiencies in color, composition, and lighting for corresponding editing. While diffusion models have succeeded in image editing, existing methods focus on semantic editing and lack aesthetic perception.
+**Background**: Image aesthetic enhancement requires models to possess aesthetic perception capabilities to identify deficiencies in color, composition, and lighting for corresponding editing. While diffusion models have succeeded in image editing, existing methods focus on semantic editing and lack aesthetic perception.
 
 **Limitations of Prior Work**: (1) **Difficulty in understanding aesthetic instructions**—evaluations like "low saturation" or "rule of thirds" are highly abstract, and simple text encoders cannot translate them into generative directions; (2) **Lack of training data**—enhancement requires "perfectly paired" images with identical content but different aesthetic quality, which is extremely costly to annotate.
 
-**Root Cause**: Aesthetics is a high-level human visual capability influenced by culture and experience, lacking paired data for supervised learning. Artificial degradations (blur, noise) in quality assessment datasets reflect technical quality rather than aesthetics.
+**Key Challenge**: Aesthetics is a high-level human visual capability influenced by culture and experience, lacking paired data for supervised learning. Artificial degradations (blur, noise) in quality assessment datasets reflect technical quality rather than aesthetics.
 
-**Paper Goals**: (1) Enable diffusion models to understand and execute vague aesthetic instructions; (2) Train aesthetic enhancement models without perfectly paired data.
+**Goal**: (1) Enable diffusion models to understand and execute vague aesthetic instructions; (2) Train aesthetic enhancement models without perfectly paired data.
 
-**Starting Point**: Decomposing aesthetic perception into color and structure dimensions, using HSV color maps and HED contour maps as visual representations combined with text descriptions. For data, weakly supervised training is conducted using "imperfectly paired" images with same semantics but different aesthetics.
+**Key Insight**: Decomposing aesthetic perception into color and structure dimensions, using HSV color maps and HED contour maps as visual representations combined with text descriptions. For data, weakly supervised training is conducted using "imperfectly paired" images with same semantics but different aesthetics.
 
 **Core Idea**: Materialize vague aesthetic instructions using multimodal visual representations (HSV + contour) and achieve weakly supervised enhancement using "imperfectly paired" data with a dual-branch supervision framework.
 

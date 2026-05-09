@@ -28,15 +28,15 @@ This paper proposes Capsule Prompt-Tuning (CaPT), identifying that existing task
 
 ## Background & Motivation
 
-**State of the Field**: Prompt-based learning is a mainstream parameter-efficient fine-tuning (PEFT) approach that prepends learnable soft prompts to the input to adapt LLMs to downstream tasks. Existing methods typically require grid search for the optimal prompt length and often rely on a large number of prompts.
+**Background**: Prompt-based learning is a mainstream parameter-efficient fine-tuning (PEFT) approach that prepends learnable soft prompts to the input to adapt LLMs to downstream tasks. Existing methods typically require grid search for the optimal prompt length and often rely on a large number of prompts.
 
 **Limitations of Prior Work**: (1) Existing soft prompts are task-aware (identical across all instances) and lack instance-aware information, limiting adaptability to diverse inputs. (2) A key preliminary finding: task-specific soft prompts fail to interact strongly with input tokens — they predominantly attend to each other while largely ignoring critical tokens in the input.
 
-**Root Cause**: Although soft prompts are designed as "instructions" to guide generation, at the attention level they form a self-enclosed cluster that does not effectively interact with the input content.
+**Key Challenge**: Although soft prompts are designed as "instructions" to guide generation, at the attention level they form a self-enclosed cluster that does not effectively interact with the input content.
 
-**Paper Goals**: How can prompts be made to genuinely interact with the input? Is it possible to achieve better performance with a single prompt?
+**Goal**: How can prompts be made to genuinely interact with the input? Is it possible to achieve better performance with a single prompt?
 
-**Starting Point**: The discovery of the "attention anchor" phenomenon — placing instance-aware tokens at the beginning of the sequence preserves strong attention toward critical structural information and enables active interaction with all input tokens.
+**Key Insight**: The discovery of the "attention anchor" phenomenon — placing instance-aware tokens at the beginning of the sequence preserves strong attention toward critical structural information and enables active interaction with all input tokens.
 
 **Core Idea**: Replace multiple purely task-aware prompts with a single capsule prompt that encodes both instance-aware and task-aware information, serving as an attention anchor to drive input interaction.
 

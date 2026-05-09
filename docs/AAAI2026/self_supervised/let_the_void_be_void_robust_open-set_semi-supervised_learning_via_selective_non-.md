@@ -29,15 +29,15 @@ This paper proposes SkipAlign, a framework that introduces a third "skip" operat
 
 ## Background & Motivation
 
-**State of the Field**: Standard semi-supervised learning (SSL) assumes all unlabeled data belong to known classes, yet in practice unlabeled data are open-set and may contain out-of-distribution (OOD) samples. Open-set SSL (OSSL) must simultaneously improve ID classification accuracy and detect OOD samples.
+**Background**: Standard semi-supervised learning (SSL) assumes all unlabeled data belong to known classes, yet in practice unlabeled data are open-set and may contain out-of-distribution (OOD) samples. Open-set SSL (OSSL) must simultaneously improve ID classification accuracy and detect OOD samples.
 
 **Limitations of Prior Work**: Existing methods fall into two extremes. (a) **Aggressive approaches** (SCOMatch, ProSub) compress all OOD samples into a single synthetic class or an ID subspace, causing geometric collapse and overfitting to seen OOD samples, which fails to generalize to unseen OOD. (b) **Conservative approaches** (SSB) discard low-confidence samples entirely, discarding valuable geometric cues.
 
-**Root Cause**: The OOD space is inherently vast and heterogeneous, yet training only exposes a limited set of OOD samples. Forcing OOD alignment to a fixed location (aggressive) introduces bias, while discarding uncertain samples (conservative) wastes information.
+**Key Challenge**: The OOD space is inherently vast and heterogeneous, yet training only exposes a limited set of OOD samples. Forcing OOD alignment to a fixed location (aggressive) introduces bias, while discarding uncertain samples (conservative) wastes information.
 
-**Paper Goals**: To achieve generalizable detection of unseen OOD samples without forcing OOD alignment or discarding uncertain samples.
+**Goal**: To achieve generalizable detection of unseen OOD samples without forcing OOD alignment or discarding uncertain samples.
 
-**Starting Point**: The embedding space is conceptualized as a universe in which ID classes form compact "galaxies" and OOD samples inhabit the "interstellar void." By applying only mild repulsion—rather than alignment—to uncertain samples, the void is allowed to remain void.
+**Key Insight**: The embedding space is conceptualized as a universe in which ID classes form compact "galaxies" and OOD samples inhabit the "interstellar void." By applying only mild repulsion—rather than alignment—to uncertain samples, the void is allowed to remain void.
 
 **Core Idea**: Introduce a "skip" operation alongside pull and push: uncertain samples are not attracted toward any prototype but receive non-selective angular repulsion, preserving the natural diversity and dispersion of OOD samples.
 

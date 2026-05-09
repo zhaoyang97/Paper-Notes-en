@@ -27,15 +27,15 @@ This paper proposes a CAD program data augmentation paradigm inspired by industr
 
 ## Background & Motivation
 
-**State of the Field**: CAD program generation (e.g., DeepCAD, GenCAD, CAD-MLLM) is an important direction in 3D design automation, with recent progress accelerated by combining Python scripting libraries (CadQuery, Build123d) with LLMs.
+**Background**: CAD program generation (e.g., DeepCAD, GenCAD, CAD-MLLM) is an important direction in 3D design automation, with recent progress accelerated by combining Python scripting libraries (CadQuery, Build123d) with LLMs.
 
 **Limitations of Prior Work**: Existing public CAD program datasets (DeepCAD, ABC, etc.) almost exclusively contain primitive operations such as sketch-extrude, producing geometries dominated by planes, cylinders, and other standard primitives, with virtually no B-Spline freeform surfaces—far removed from industrial-grade CAD designs.
 
-**Root Cause**: CAD data annotation requires domain experts, and data is siloed across different CAD tools, making large-scale collection difficult. Even when image-conditioned generation is employed (GenCAD, CAD-MLLM), the conditioning images themselves originate from simple datasets, creating a hard ceiling on geometric distribution complexity.
+**Key Challenge**: CAD data annotation requires domain experts, and data is siloed across different CAD tools, making large-scale collection difficult. Even when image-conditioned generation is employed (GenCAD, CAD-MLLM), the conditioning images themselves originate from simple datasets, creating a hard ceiling on geometric distribution complexity.
 
-**Paper Goals**: To enable LLMs to generate CAD programs containing complex organic shapes (B-Spline surfaces/curves) for high-quality data augmentation.
+**Goal**: To enable LLMs to generate CAD programs containing complex organic shapes (B-Spline surfaces/curves) for high-quality data augmentation.
 
-**Starting Point**: The actual workflow of industrial designers—first selecting a reference surface (typically a B-Spline freeform surface), then building the model upon it incrementally, so that the geometric characteristics of all subsequent operations are influenced by the curvature of the reference surface.
+**Key Insight**: The actual workflow of industrial designers—first selecting a reference surface (typically a B-Spline freeform surface), then building the model upon it incrementally, so that the geometric characteristics of all subsequent operations are influenced by the curvature of the reference surface.
 
 **Core Idea**: A B-Spline reference surface program expressed as a Python script, combined with a natural-language design procedure description, is used as the LLM prompt to guide the generation of CAD programs with industrial-grade geometric complexity.
 

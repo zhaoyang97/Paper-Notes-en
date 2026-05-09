@@ -28,15 +28,15 @@ This paper introduces PETS-5k, the largest PET segmentation dataset to date (5,7
 
 ## Background & Motivation
 
-**State of the Field**: Positron emission tomography (PET) is a critical molecular imaging modality that reveals in vivo metabolic processes via radiotracers (e.g., 18F-FDG), and is widely used for tumor detection, treatment response assessment, and efficacy monitoring. In recent years, segmentation foundation models exemplified by SAM have demonstrated powerful general-purpose segmentation capabilities on natural images.
+**Background**: Positron emission tomography (PET) is a critical molecular imaging modality that reveals in vivo metabolic processes via radiotracers (e.g., 18F-FDG), and is widely used for tumor detection, treatment response assessment, and efficacy monitoring. In recent years, segmentation foundation models exemplified by SAM have demonstrated powerful general-purpose segmentation capabilities on natural images.
 
 **Limitations of Prior Work**: PET images differ fundamentally from structural modalities such as CT and MRI — they suffer from low resolution, severe partial volume effects, poor contrast, and blurred boundaries. Directly applying SAM to PET images yields poor results. Existing medical SAM adaptation works (e.g., MedSAM, SAMed) almost exclusively focus on CT and MRI, entirely neglecting PET as a molecular imaging modality.
 
-**Root Cause**: (a) Large-scale annotated PET segmentation datasets are lacking; existing datasets are small in scale and limited in target coverage. (b) Low PET image quality leads to inconsistent annotation quality, with high-quality and noisy annotations intermixed. (c) 3D volumetric information is critical for PET segmentation, yet SAM is a 2D architecture.
+**Key Challenge**: (a) Large-scale annotated PET segmentation datasets are lacking; existing datasets are small in scale and limited in target coverage. (b) Low PET image quality leads to inconsistent annotation quality, with high-quality and noisy annotations intermixed. (c) 3D volumetric information is critical for PET segmentation, yet SAM is a 2D architecture.
 
-**Paper Goals**: (a) Construct a large-scale PET segmentation dataset; (b) design a 3D foundation model architecture tailored to PET characteristics; (c) achieve robust training under inconsistent annotation quality.
+**Goal**: (a) Construct a large-scale PET segmentation dataset; (b) design a 3D foundation model architecture tailored to PET characteristics; (c) achieve robust training under inconsistent annotation quality.
 
-**Starting Point**: The authors observe that the distinctive properties of PET images (low contrast, weak boundaries, 3D volumetric structure) necessitate a modality-specific foundation model design rather than simple fine-tuning of general-purpose models. Meanwhile, identifying noisy annotations via confidence learning and applying self-correction enables effective utilization of both high-quality and low-quality data.
+**Key Insight**: The authors observe that the distinctive properties of PET images (low contrast, weak boundaries, 3D volumetric structure) necessitate a modality-specific foundation model design rather than simple fine-tuning of general-purpose models. Meanwhile, identifying noisy annotations via confidence learning and applying self-correction enables effective utilization of both high-quality and low-quality data.
 
 **Core Idea**: Construct the largest PET dataset + 3D SAM architecture + Cross-Prompt Confidence Learning to build the first universal promptable segmentation foundation model for PET imaging.
 

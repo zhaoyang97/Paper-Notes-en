@@ -27,15 +27,15 @@ content_hash: b61c061f6e7a329f
 This paper provides a systematic analysis of the respective contributions of prompt design and topology design in multi-agent systems (MAS), finding that prompt optimization is the single most critical factor—a single agent with optimized prompts can outperform complex multi-agent topologies. The paper proposes Mass, a three-stage framework (block-level prompt → topology → workflow-level prompt) that achieves state-of-the-art performance across 8 benchmarks.
 
 ## Background & Motivation
-**State of the Field**: Multi-agent systems (MAS) organize multiple LLM agents through topologies such as Debate, Reflect, and Aggregate. Recent work has explored automated MAS design methods, including ADAS and AFlow.
+**Background**: Multi-agent systems (MAS) organize multiple LLM agents through topologies such as Debate, Reflect, and Aggregate. Recent work has explored automated MAS design methods, including ADAS and AFlow.
 
 **Limitations of Prior Work**: It remains unclear whether MAS performance gains stem from multi-agent topologies or from better prompts. Many complex topologies actually degrade performance, yet the underlying reasons are not well understood.
 
-**Root Cause**: The benefit of increasing agent count and topology complexity is uncertain—sometimes helpful, sometimes harmful.
+**Key Challenge**: The benefit of increasing agent count and topology complexity is uncertain—sometimes helpful, sometimes harmful.
 
-**Paper Goals**: ① Quantify the relative contributions of prompts vs. topologies; ② Design a unified automated framework that jointly optimizes both.
+**Goal**: ① Quantify the relative contributions of prompts vs. topologies; ② Design a unified automated framework that jointly optimizes both.
 
-**Starting Point**: Controlled variable analysis—first optimizing prompts in isolation, then layering topology search on top.
+**Key Insight**: Controlled variable analysis—first optimizing prompts in isolation, then layering topology search on top.
 
 **Core Idea**: Prompt optimization >> topology selection; however, joint optimization of both > either alone.
 

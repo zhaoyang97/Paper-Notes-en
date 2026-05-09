@@ -23,15 +23,15 @@ COMPASS constructs conformal prediction intervals by applying linear perturbatio
 
 ## Background & Motivation
 
-**State of the Field**: In medical image segmentation, clinical value typically lies not in pixel-level accuracy but in **downstream metrics** derived from segmentations (e.g., organ area/volume and other radiomics indices). Conformal Prediction (CP) is a distribution-free uncertainty quantification framework that provides statistical guarantees for predictions.
+**Background**: In medical image segmentation, clinical value typically lies not in pixel-level accuracy but in **downstream metrics** derived from segmentations (e.g., organ area/volume and other radiomics indices). Conformal Prediction (CP) is a distribution-free uncertainty quantification framework that provides statistical guarantees for predictions.
 
 **Limitations of Prior Work**: (1) Pixel-level CP methods (e.g., those generating pixel-wise prediction sets) provide guarantees misaligned with the scalar metrics that clinicians actually care about; (2) treating the segmentation–metric pipeline as a black box and applying CP directly to the scalar output (Split CP) yields aligned but **inefficient** intervals (too wide), as it ignores the inductive biases of the neural network.
 
-**Root Cause**: Feature CP (FCP) has been shown to produce tighter intervals by operating in the semantic feature space, but FCP requires solving a complex adversarial optimization problem in high-dimensional feature spaces, which is **computationally infeasible** for the feature dimensions typical of CNNs and Transformers.
+**Key Challenge**: Feature CP (FCP) has been shown to produce tighter intervals by operating in the semantic feature space, but FCP requires solving a complex adversarial optimization problem in high-dimensional feature spaces, which is **computationally infeasible** for the feature dimensions typical of CNNs and Transformers.
 
-**Paper Goals**: Design a computationally feasible Feature CP method that leverages intermediate representations of segmentation networks to generate **efficient** (narrow) and **valid** (coverage-guaranteed) prediction intervals for downstream clinical metrics.
+**Goal**: Design a computationally feasible Feature CP method that leverages intermediate representations of segmentation networks to generate **efficient** (narrow) and **valid** (coverage-guaranteed) prediction intervals for downstream clinical metrics.
 
-**Starting Point**: Rather than searching over the full-dimensional feature space, the method exploits the **Jacobian of the target metric with respect to features** to identify a low-dimensional sensitive subspace, restricting perturbations to that direction.
+**Key Insight**: Rather than searching over the full-dimensional feature space, the method exploits the **Jacobian of the target metric with respect to features** to identify a low-dimensional sensitive subspace, restricting perturbations to that direction.
 
 **Core Idea**: The Jacobian of the target metric is computed with respect to intermediate-layer features of the segmentation network. PCA extracts the principal directions as perturbation axes; linear perturbation along these directions monotonically changes the metric. Consequently, the prediction interval requires only two forward passes (positive/negative endpoints), enabling efficient construction of nested prediction intervals.
 

@@ -39,7 +39,7 @@ SingRef6D is a lightweight 6D pose estimation pipeline requiring only a single R
 
 **Lack of geometric information in RGB methods**: Matching performance degrades under low-light and texture-less conditions.
 
-**Root Cause**: How can robust 6D pose estimation be achieved for challenging surface conditions (transparent, reflective) under the constraint of minimal reference input (a single RGB image)?
+**Key Challenge**: How can robust 6D pose estimation be achieved for challenging surface conditions (transparent, reflective) under the constraint of minimal reference input (a single RGB image)?
 
 This work draws inspiration from the human visual system—humans efficiently estimate object pose without CAD models or binocular vision, relying instead on cognitive depth perception and shape understanding. SingRef6D emulates this mechanism by learning depth priors to implicitly expand the reference space.
 

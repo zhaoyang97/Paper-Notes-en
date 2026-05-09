@@ -28,11 +28,11 @@ KEC leverages LLMs to construct hierarchical concept-attribute structured textua
 
 ## Background & Motivation
 
-**State of the Field**: Image clustering has evolved from geometric priors → deep representation learning → vision-language model-assisted paradigms. VLMs such as CLIP have made it possible to inject textual knowledge into clustering.
+**Background**: Image clustering has evolved from geometric priors → deep representation learning → vision-language model-assisted paradigms. VLMs such as CLIP have made it possible to inject textual knowledge into clustering.
 
 **Limitations of Prior Work**: Existing methods either employ VLMs to generate per-image captions (computationally expensive) or select shallow nouns from WordNet (semantically redundant and inconsistent in granularity). Naively introducing textual knowledge can even degrade clustering performance.
 
-**Root Cause**: Visually similar but semantically distinct categories (e.g., Akita Inu vs. Shiba Inu) cannot be distinguished by class names alone; discriminative attributes (leg length, tail curvature, ear posture) are required. However, acquiring such attributes demands domain expertise and is difficult to automate.
+**Key Challenge**: Visually similar but semantically distinct categories (e.g., Akita Inu vs. Shiba Inu) cannot be distinguished by class names alone; discriminative attributes (leg length, tail curvature, ear posture) are required. However, acquiring such attributes demands domain expertise and is difficult to automate.
 
 **Core Idea**: Use LLMs to distill abstract concepts from redundant nouns, then automatically extract intra-concept and inter-concept discriminative attributes, constructing hierarchical knowledge for feature enhancement.
 

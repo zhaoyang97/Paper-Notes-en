@@ -28,13 +28,13 @@ This paper proposes Prune4Web, a programmatic DOM pruning approach that achieves
 
 ## Background & Motivation
 
-**State of the Field**: Web Agents must comprehend webpage DOM structures to execute actions, but modern webpages typically contain 1–100K tokens in the DOM, causing token truncation and attention dilution when fed directly into LLMs.
+**Background**: Web Agents must comprehend webpage DOM structures to execute actions, but modern webpages typically contain 1–100K tokens in the DOM, causing token truncation and attention dilution when fed directly into LLMs.
 
 **Limitations of Prior Work**: Existing approaches either truncate the DOM directly (losing critical elements), employ standalone ranking/filtering models (high training cost, poor generalization), or rely on LLMs to perform Top-N selection (ineffective for small models).
 
-**Root Cause**: There is a fundamental tension between preserving key interactive elements and drastically reducing DOM size. LLMs excel at semantic understanding but struggle with large-scale structured data; heuristic rules are fast but lack semantic comprehension. How can the strengths of both be combined?
+**Key Challenge**: There is a fundamental tension between preserving key interactive elements and drastically reducing DOM size. LLMs excel at semantic understanding but struggle with large-scale structured data; heuristic rules are fast but lack semantic comprehension. How can the strengths of both be combined?
 
-**Starting Point**: Rather than having the LLM process the DOM directly, the key insight is to have the LLM **generate the parameters of a DOM-processing program**—specifically, a keyword-weight dictionary consumed by a fixed scoring function template that performs multi-tier, multi-match-type element scoring.
+**Key Insight**: Rather than having the LLM process the DOM directly, the key insight is to have the LLM **generate the parameters of a DOM-processing program**—specifically, a keyword-weight dictionary consumed by a fixed scoring function template that performs multi-tier, multi-match-type element scoring.
 
 **Core Idea**: LLM generates keyword parameters for the scoring function (controllable) + fixed template performs multi-tier weighted matching (efficient) = programmatic DOM pruning.
 

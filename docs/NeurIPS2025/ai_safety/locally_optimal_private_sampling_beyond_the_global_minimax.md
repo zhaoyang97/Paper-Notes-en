@@ -29,15 +29,15 @@ Under local differential privacy (LDP), this paper proposes a **local minimax** 
 
 ## Background & Motivation
 
-**State of the Field**: Local differential privacy (LDP) allows users to randomize data on-device before sharing, eliminating the need to trust a central server. It has been widely deployed by Google, Apple, and Microsoft. Private sampling refers to the task of generating a single sample from a distribution $P$ subject to LDP constraints.
+**Background**: Local differential privacy (LDP) allows users to randomize data on-device before sharing, eliminating the need to trust a central server. It has been widely deployed by Google, Apple, and Microsoft. Private sampling refers to the task of generating a single sample from a distribution $P$ subject to LDP constraints.
 
 **Limitations of Prior Work**: Park et al. (NeurIPS'24) established a global minimax framework that finds the worst-case optimal sampler. However, the global minimax criterion is **overly pessimistic**—it assumes the adversary may select an arbitrary distribution, whereas real-world data distributions are unlikely to be worst-case (degenerate) distributions.
 
-**Root Cause**: The global minimax optimal sampler applies a uniform transformation across all input distributions and cannot exploit the practical prior knowledge that the data distribution lies near a known reference distribution, leading to suboptimal privacy–utility tradeoffs.
+**Key Challenge**: The global minimax optimal sampler applies a uniform transformation across all input distributions and cannot exploit the practical prior knowledge that the data distribution lies near a known reference distribution, leading to suboptimal privacy–utility tradeoffs.
 
-**Paper Goals**: Establish a **local minimax** framework—when the data distribution $P$ is known to reside near a known public distribution $P_0$, can better private samplers be designed?
+**Goal**: Establish a **local minimax** framework—when the data distribution $P$ is known to reside near a known public distribution $P_0$, can better private samplers be designed?
 
-**Starting Point**: The neighborhood $N_\gamma(P_0) = \{P: E_\gamma(P\|P_0) = E_\gamma(P_0\|P) = 0\}$ is defined via the $E_\gamma$-divergence (hockey-stick divergence), and the minimax optimal sampler is derived under this constraint. A key observation is that **the local minimax risk equals the global minimax risk restricted to distributions within the neighborhood**.
+**Key Insight**: The neighborhood $N_\gamma(P_0) = \{P: E_\gamma(P\|P_0) = E_\gamma(P_0\|P) = 0\}$ is defined via the $E_\gamma$-divergence (hockey-stick divergence), and the minimax optimal sampler is derived under this constraint. A key observation is that **the local minimax risk equals the global minimax risk restricted to distributions within the neighborhood**.
 
 **Core Idea**: Extend the global minimax framework from pure LDP to functional LDP, then show that the locally minimax optimal sampler is the global optimal sampler restricted to the $P_0$-neighborhood, yielding a closed-form solution that is independent of the choice of $f$-divergence.
 

@@ -30,13 +30,13 @@ This paper proposes an adaptively coordinated multi-agent LLM framework that ach
 
 ## Background & Motivation
 
-**State of the Field**: Multi-agent LLM systems have emerged as a powerful paradigm for tackling complex multi-step tasks. Frameworks such as AutoGPT, CAMEL, and MetaGPT introduce role assignment and conversational collaboration, while LangGraph formalizes workflows using graph structures.
+**Background**: Multi-agent LLM systems have emerged as a powerful paradigm for tackling complex multi-step tasks. Frameworks such as AutoGPT, CAMEL, and MetaGPT introduce role assignment and conversational collaboration, while LangGraph formalizes workflows using graph structures.
 
 **Limitations of Prior Work**: Most existing multi-agent frameworks rely on static designs—fixed role assignments, linear task flows, and limited interaction protocols. This severely constrains performance on high-ambiguity tasks such as compliance analysis of financial documents: static agent teams cannot revise prior assumptions upon discovering new information, nor can they perform cross-agent verification.
 
-**Root Cause**: Efficiency demands parallel processing, whereas quality demands adaptive scheduling; static pipelines are efficient but brittle, while dynamic collaboration is flexible but complex. The key challenge lies in achieving adaptive quality assurance without sacrificing efficiency.
+**Key Challenge**: Efficiency demands parallel processing, whereas quality demands adaptive scheduling; static pipelines are efficient but brittle, while dynamic collaboration is flexible but complex. The key challenge lies in achieving adaptive quality assurance without sacrificing efficiency.
 
-**Starting Point**: The paper introduces a competitive parallel evaluation mechanism—on high-ambiguity tasks, multiple agents independently attempt the same subtask, and an evaluator selects the best output. Combined with dynamic routing and bidirectional feedback, this forms a comprehensive adaptive coordination framework.
+**Key Insight**: The paper introduces a competitive parallel evaluation mechanism—on high-ambiguity tasks, multiple agents independently attempt the same subtask, and an evaluator selects the best output. Combined with dynamic routing and bidirectional feedback, this forms a comprehensive adaptive coordination framework.
 
 ## Method
 

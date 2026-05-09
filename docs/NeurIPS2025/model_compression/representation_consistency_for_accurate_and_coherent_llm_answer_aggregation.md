@@ -28,16 +28,16 @@ This paper proposes Representation Consistency (RC), which improves answer aggre
 
 ## Background & Motivation
 
-**State of the Field**: Test-time scaling is an important paradigm for improving LLM performance. Self-Consistency (SC) is the most popular approach—sampling multiple reasoning paths and taking a majority vote.
+**Background**: Test-time scaling is an important paradigm for improving LLM performance. Self-Consistency (SC) is the most popular approach—sampling multiple reasoning paths and taking a majority vote.
 
 **Limitations of Prior Work**:
 - SC considers only the frequency of final answers, entirely ignoring the rich reasoning information encoded in the model's **internal activations**.
 - When two answers have similar frequencies (near-tie), SC's tie-breaking strategy is unreliable.
 - Prompt rephrasing can increase reasoning diversity but also introduces inconsistent reasoning for the same question—existing methods cannot distinguish "consistent diversity" from "inconsistent diversity."
 
-**Root Cause**: Multiple reasoning paths may "coincidentally" reach the same answer while their underlying reasoning processes are inconsistent—in such cases, the answer is less reliable than one supported by consistent reasoning processes.
+**Key Challenge**: Multiple reasoning paths may "coincidentally" reach the same answer while their underlying reasoning processes are inconsistent—in such cases, the answer is less reliable than one supported by consistent reasoning processes.
 
-**Starting Point**: Using intermediate-layer activations (residual stream) as "fingerprints" of the reasoning process.
+**Key Insight**: Using intermediate-layer activations (residual stream) as "fingerprints" of the reasoning process.
 
 **Core Idea**: If multiple reasoning paths arrive at answer A with highly similar internal activations (high consistency), it indicates the model reached A through **coherent and consistent** reasoning, making it more trustworthy than answer B with inconsistent activations.
 

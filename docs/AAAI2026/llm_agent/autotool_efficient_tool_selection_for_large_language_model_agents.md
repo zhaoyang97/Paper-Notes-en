@@ -29,9 +29,9 @@ This paper proposes AutoTool, a graph-based tool selection framework that exploi
 
 ## Background & Motivation
 
-1. **State of the Field**: LLM agents have become powerful tools for automating complex tasks; frameworks such as ReAct drive multi-step decision-making through think–act–observe cycles.
+1. **Background**: LLM agents have become powerful tools for automating complex tasks; frameworks such as ReAct drive multi-step decision-making through think–act–observe cycles.
 2. **Limitations of Prior Work**: Existing frameworks rely on LLM inference at every step for tool selection, incurring high computational overhead and latency, particularly in multi-step tasks with numerous LLM calls.
-3. **Root Cause**: Not every decision step requires the full reasoning capacity of an LLM; many tool invocations occur in highly patterned contexts, making current approaches an over-reliance on LLM inference.
+3. **Key Challenge**: Not every decision step requires the full reasoning capacity of an LLM; many tool invocations occur in highly patterned contexts, making current approaches an over-reliance on LLM inference.
 4. **Key Observation**: The authors identify the phenomenon of **tool usage inertia**—tool invocations follow predictable sequential patterns. For example, in ScienceWorld, `go_to` is followed by `look_around` in 88.7% of cases.
 5. **Theoretical Validation**: A $k$-th order Markov chain analysis shows that conditional entropy decreases from 3.50 bits (0th order) to 2.52 bits (1st order) to 1.93 bits (2nd order), with likelihood ratio tests yielding $p < .001$, confirming sequential dependency.
 6. **Core Idea**: A graph structure captures statistical regularities in tool invocations; tools are selected directly under high-confidence conditions, with fallback to LLM inference when uncertainty is high.

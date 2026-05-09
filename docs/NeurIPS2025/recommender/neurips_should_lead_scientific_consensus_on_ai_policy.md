@@ -29,15 +29,15 @@ This position paper argues that NeurIPS should proactively assume the role of fa
 
 ## Background & Motivation
 
-**State of the Field**: Governments worldwide are actively formulating AI policies (e.g., the EU's mandatory requirements vs. the US's voluntary frameworks), yet policy design for AI as a transformative technology requires rigorous scientific evidence and consensus as foundations. Evidence production in AI research is already abundant (NeurIPS 2025 received over 25,000 submissions), yet critical information remains unclear.
+**Background**: Governments worldwide are actively formulating AI policies (e.g., the EU's mandatory requirements vs. the US's voluntary frameworks), yet policy design for AI as a transformative technology requires rigorous scientific evidence and consensus as foundations. Evidence production in AI research is already abundant (NeurIPS 2025 received over 25,000 submissions), yet critical information remains unclear.
 
 **Limitations of Prior Work**: The authors decompose scientifically-driven AI policymaking into three sub-problems: (i) evidence generation, (ii) evidence synthesis, and (iii) scientific consensus. NeurIPS plays a central role in evidence generation and participates to some extent in evidence synthesis (e.g., publishing surveys and meta-analyses), but is **entirely absent** from scientific consensus formation.
 
-**Root Cause**: Despite the increasingly profound societal impact of AI and policymakers' urgent need for scientific consensus to guide legislation (e.g., the EU AI Act requires model evaluations against the "state of the art"), no formal mechanism for AI policy scientific consensus formation currently exists. This stands in stark contrast to climate science, where the IPCC has operated for 37 years and produced six assessment reports.
+**Key Challenge**: Despite the increasingly profound societal impact of AI and policymakers' urgent need for scientific consensus to guide legislation (e.g., the EU AI Act requires model evaluations against the "state of the art"), no formal mechanism for AI policy scientific consensus formation currently exists. This stands in stark contrast to climate science, where the IPCC has operated for 37 years and produced six assessment reports.
 
-**Paper Goals**: To argue that NeurIPS is the optimal venue for advancing scientific consensus formation in AI policy, and to propose concrete pilot initiatives.
+**Goal**: To argue that NeurIPS is the optimal venue for advancing scientific consensus formation in AI policy, and to propose concrete pilot initiatives.
 
-**Starting Point**: Drawing from multidisciplinary consensus literature spanning sociology, philosophy, political science, and economics, combined with lessons from the IPCC, the paper designs a consensus-formation framework applicable to the AI policy domain.
+**Key Insight**: Drawing from multidisciplinary consensus literature spanning sociology, philosophy, political science, and economics, combined with lessons from the IPCC, the paper designs a consensus-formation framework applicable to the AI policy domain.
 
 **Core Idea**: Leveraging its unparalleled convening power and reputation, NeurIPS should actively catalyze scientific consensus in AI policy in the same way the IPCC has led consensus in climate science.
 

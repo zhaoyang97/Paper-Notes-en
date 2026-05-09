@@ -27,15 +27,15 @@ content_hash: e556f702c2425ee2
 This paper proposes RefTool, a framework that automatically creates executable Python tools from external reference materials (e.g., textbooks, knowledge snippets), addressing the failure of existing tool creation methods that rely on LLMs' intrinsic knowledge in specialized domains. RefTool achieves an average improvement of 12.3% over prior methods on causal reasoning, physics, and chemistry tasks.
 
 ## Background & Motivation
-**State of the Field**: LLM tool creation enables models to dynamically generate and invoke tools during inference, offering greater flexibility than predefined toolsets. Existing methods (e.g., CRAFT, TroVE) rely on the intrinsic knowledge of LLMs to generate tools.
+**Background**: LLM tool creation enables models to dynamically generate and invoke tools during inference, offering greater flexibility than predefined toolsets. Existing methods (e.g., CRAFT, TroVE) rely on the intrinsic knowledge of LLMs to generate tools.
 
 **Limitations of Prior Work**: LLMs' intrinsic knowledge is unreliable in specialized domains (causal reasoning, quantum physics, organic chemistry), leading to generated tools that contain erroneous formulas or logic.
 
-**Root Cause**: Tool creation requires precise domain knowledge, whereas LLMs' knowledge in specialized fields may be inaccurate or incomplete.
+**Key Challenge**: Tool creation requires precise domain knowledge, whereas LLMs' knowledge in specialized fields may be inaccurate or incomplete.
 
-**Paper Goals**: How can external authoritative reference materials (textbooks) be leveraged as knowledge sources to guide tool creation?
+**Goal**: How can external authoritative reference materials (textbooks) be leveraged as knowledge sources to guide tool creation?
 
-**Starting Point**: Exploit the natural chapter–section structure of textbooks to organize tools hierarchically, extracting executable Python functions from each section.
+**Key Insight**: Exploit the natural chapter–section structure of textbooks to organize tools hierarchically, extracting executable Python functions from each section.
 
 **Core Idea**: Reference materials → tool creation + hierarchical toolbox → hierarchical retrieval → reasoning.
 

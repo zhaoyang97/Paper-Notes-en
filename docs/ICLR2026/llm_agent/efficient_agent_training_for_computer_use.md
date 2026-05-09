@@ -28,15 +28,15 @@ PC Agent-E uses only 312 human-annotated Windows operation trajectories. Via the
 
 ## Background & Motivation
 
-**State of the Field**: Computer use agents represent a critical direction in current AI research, with the goal of enabling models to operate computers through GUIs (clicking, typing, navigating) as humans do. Mainstream approaches fall into two categories: modular multi-agent workflows and native agent models. The latter (e.g., Claude Computer Use, OpenAI Operator) has become the dominant paradigm due to its flexibility and optimizability.
+**Background**: Computer use agents represent a critical direction in current AI research, with the goal of enabling models to operate computers through GUIs (clicking, typing, navigating) as humans do. Mainstream approaches fall into two categories: modular multi-agent workflows and native agent models. The latter (e.g., Claude Computer Use, OpenAI Operator) has become the dominant paradigm due to its flexibility and optimizability.
 
 **Limitations of Prior Work**: Open-source models lag far behind closed-source systems (e.g., Claude 3.7 Sonnet) on computer use tasks, with the core bottleneck being the **extreme scarcity of high-quality trajectory data**. Existing data synthesis methods either rely on large-scale human annotation or sample complete trajectories end-to-end from stronger models. The latter suffers from error accumulation and is slow due to the need for online interaction with VM environments.
 
-**Root Cause**: How can maximal computer use capability be obtained from minimal human annotation? Training directly on human trajectories yields limited results (single-path supervision), while end-to-end distillation is inefficient and produces unstable quality (900 hours vs. 3 hours).
+**Key Challenge**: How can maximal computer use capability be obtained from minimal human annotation? Training directly on human trajectories yields limited results (single-path supervision), while end-to-end distillation is inefficient and produces unstable quality (900 hours vs. 3 hours).
 
-**Paper Goals**: (a) How can a small amount of human-annotated data be utilized efficiently? (b) How can error accumulation in end-to-end distillation be avoided? (c) How can open-source models reach closed-source performance levels?
+**Goal**: (a) How can a small amount of human-annotated data be utilized efficiently? (b) How can error accumulation in end-to-end distillation be avoided? (c) How can open-source models reach closed-source performance levels?
 
-**Starting Point**: Inspired by data synthesis techniques from reasoning models such as DeepSeek-R1, the authors observe that computer use tasks naturally admit multiple valid execution paths — at any given timestep, several reasonable action choices may exist. Human trajectories can therefore serve as environment snapshots, allowing a strong model to synthesize alternative actions at each step without requiring online environment interaction.
+**Key Insight**: Inspired by data synthesis techniques from reasoning models such as DeepSeek-R1, the authors observe that computer use tasks naturally admit multiple valid execution paths — at any given timestep, several reasonable action choices may exist. Human trajectories can therefore serve as environment snapshots, allowing a strong model to synthesize alternative actions at each step without requiring online environment interaction.
 
 **Core Idea**: Use environment snapshots from human trajectories as anchors, and have frontier models synthesize diverse action decisions offline at each step to augment trajectory data, enabling data-efficient training.
 

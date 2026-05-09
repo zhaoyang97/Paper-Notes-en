@@ -30,7 +30,7 @@ This paper proposes a hybrid neural network architecture combining convolutional
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: One of the central goals of observational cosmology is to infer the late-time matter density field in the local universe. Dark matter is invisible and must be probed indirectly, e.g., via galaxy peculiar velocities. Traditional linear reconstruction methods (e.g., Wiener filtering) are effective at large scales but fail to fully exploit the dense information available in modern datasets at nonlinear scales. While pure convolutional networks offer improvements, voxelizing radial velocities before passing them to a CNN discards small-scale information. This paper proposes using a DeepSets point cloud network to directly process local collections of dark matter halos in high-density regions, thereby recovering small-scale features.
+**Key Challenge**: **Background**: One of the central goals of observational cosmology is to infer the late-time matter density field in the local universe. Dark matter is invisible and must be probed indirectly, e.g., via galaxy peculiar velocities. Traditional linear reconstruction methods (e.g., Wiener filtering) are effective at large scales but fail to fully exploit the dense information available in modern datasets at nonlinear scales. While pure convolutional networks offer improvements, voxelizing radial velocities before passing them to a CNN discards small-scale information. This paper proposes using a DeepSets point cloud network to directly process local collections of dark matter halos in high-density regions, thereby recovering small-scale features.
 
 ## Method
 

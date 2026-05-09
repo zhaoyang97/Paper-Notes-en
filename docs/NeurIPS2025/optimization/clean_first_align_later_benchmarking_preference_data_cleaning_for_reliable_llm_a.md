@@ -29,7 +29,7 @@ This paper introduces PrefCleanBench, the first comprehensive benchmark for syst
 
 ## Background & Motivation
 
-**State of the Field**: Human feedback plays a central role in LLM alignment—whether for training reward models in RLHF or for direct optimization algorithms such as DPO. All such approaches rely on high-quality preference data (i.e., chosen/rejected pairs). Mainstream alignment methods include DPO, CPO, KTO, IPO, SLiC, rDPO, ORPO, AOT, and others.
+**Background**: Human feedback plays a central role in LLM alignment—whether for training reward models in RLHF or for direct optimization algorithms such as DPO. All such approaches rely on high-quality preference data (i.e., chosen/rejected pairs). Mainstream alignment methods include DPO, CPO, KTO, IPO, SLiC, rDPO, ORPO, AOT, and others.
 
 **Limitations of Prior Work**:
    - Human feedback is inherently noisy and inconsistent, with disagreements among annotators and varying annotation quality.
@@ -37,15 +37,15 @@ This paper introduces PrefCleanBench, the first comprehensive benchmark for syst
    - Although various automated data cleaning methods have been proposed, they are scattered across different papers without a unified evaluation framework.
    - The effectiveness of different cleaning methods varies across settings, and no systematic comparative study exists.
 
-**Root Cause**: Numerous data cleaning methods exist without a unified evaluation standard—each claims effectiveness, but under what conditions, for which models, and for which algorithms remains unclear.
+**Key Challenge**: Numerous data cleaning methods exist without a unified evaluation standard—each claims effectiveness, but under what conditions, for which models, and for which algorithms remains unclear.
 
-**Paper Goals**:
+**Goal**:
    - Establish a unified evaluation protocol for preference data cleaning.
    - Systematically compare 13 cleaning methods.
    - Identify key factors that determine cleaning success.
    - Assess the generalizability of cleaning methods across datasets, models, and algorithms.
 
-**Starting Point**: Adopting a benchmark perspective, this work does not propose new cleaning methods but instead conducts a fair and comprehensive comparison of existing approaches.
+**Key Insight**: Adopting a benchmark perspective, this work does not propose new cleaning methods but instead conducts a fair and comprehensive comparison of existing approaches.
 
 **Core Idea**: Establish PrefCleanBench, the first standardized benchmark for preference data cleaning in LLM alignment, and employ controlled experiments to reveal the critical role of data quality in alignment.
 

@@ -45,7 +45,7 @@ Weight binarization is a powerful strategy for reducing the complexity of large 
    - Problem: latent weights introduce additional complexity and memory overhead, severely limiting efficiency gains
    - The representational capacity of binary weights is inherently limited (each weight has only two states: +1/−1)
 
-**Root Cause**: Post-training methods are too coarse; training-aware methods are too cumbersome. Can one finetune directly in the Boolean domain **without full-precision latent weights**?
+**Key Challenge**: Post-training methods are too coarse; training-aware methods are too cumbersome. Can one finetune directly in the Boolean domain **without full-precision latent weights**?
 
 ## Method
 

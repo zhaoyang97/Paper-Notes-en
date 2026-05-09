@@ -27,13 +27,13 @@ content_hash: 5240b2c94c05f443
 This paper proposes SciNO (Score-informed Neural Operator), a probabilistic generative model designed in a smooth function space that stably approximates the log-density Hessian diagonal to improve ordering-based causal discovery, achieving a 42.7% reduction in order divergence on synthetic graphs and 31.5% on real-world data.
 
 ## Background & Motivation
-**State of the Field**: Ordering-based causal discovery identifies the topological order of a causal graph to anchor causal structure, serving as a scalable alternative to combinatorial search methods.
+**Background**: Ordering-based causal discovery identifies the topological order of a causal graph to anchor causal structure, serving as a scalable alternative to combinatorial search methods.
 
 **Limitations of Prior Work**: Under the additive noise model (ANM) assumption, causal ordering methods require accurate estimation of the log-density Hessian diagonal. Stein gradient estimation is computationally expensive and memory-intensive, while diffusion-model-based approaches suffer from instability in second-order derivatives.
 
-**Root Cause**: Accurate estimation of the Hessian diagonal is necessary, yet existing methods are either prohibitively expensive or numerically unstable.
+**Key Challenge**: Accurate estimation of the Hessian diagonal is necessary, yet existing methods are either prohibitively expensive or numerically unstable.
 
-**Starting Point**: Design a probabilistic model in a smooth function space that preserves structural information while stably approximating the Hessian.
+**Key Insight**: Design a probabilistic model in a smooth function space that preserves structural information while stably approximating the Hessian.
 
 ## Method
 

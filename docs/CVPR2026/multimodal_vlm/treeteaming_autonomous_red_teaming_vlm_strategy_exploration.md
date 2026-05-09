@@ -29,11 +29,11 @@ This paper proposes TreeTeaming, an autonomous red-teaming framework that transf
 
 ## Background & Motivation
 
-1. **State of the Field**: As VLMs grow more capable, their safety has attracted increasing attention. Red-teaming is a critical methodology for systematically identifying model vulnerabilities.
+1. **Background**: As VLMs grow more capable, their safety has attracted increasing attention. Red-teaming is a critical methodology for systematically identifying model vulnerabilities.
 2. **Limitations of Prior Work**: Existing methods are constrained by predefined strategies — whether fixed prompt templates, typographic obfuscation, or fixed image patterns — and can only optimize within a known strategy space, failing to discover novel attack vectors.
-3. **Root Cause**: Even methods with feedback mechanisms (e.g., TRUST-VLM) can only refine test cases within a predefined framework; the strategies themselves still require manual design.
-4. **Paper Goals**: To automate the discovery of attack strategies themselves, rather than merely automating the execution of known strategies.
-5. **Starting Point**: Starting from a single seed example, a complete strategy system is grown through hierarchical exploration over a tree structure.
+3. **Key Challenge**: Even methods with feedback mechanisms (e.g., TRUST-VLM) can only refine test cases within a predefined framework; the strategies themselves still require manual design.
+4. **Goal**: To automate the discovery of attack strategies themselves, rather than merely automating the execution of known strategies.
+5. **Key Insight**: Starting from a single seed example, a complete strategy system is grown through hierarchical exploration over a tree structure.
 6. **Core Idea**: A strategy orchestrator autonomously decides whether to "deepen promising attack paths" or "explore new strategy branches," thereby constructing a strategy tree.
 
 ## Method

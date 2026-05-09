@@ -28,13 +28,13 @@ This paper identifies that existing AGI scores rely on arithmetic averaging, whi
 
 ## Background & Motivation
 
-**State of the Field**: Hendrycks et al. define an AGI score as the arithmetic mean of scores across 10 cognitive domains based on the CHC (Cattell-Horn-Carroll) theory of cognitive abilities. GPT-4 scores 27% and GPT-5 scores 58% under this scheme. However, arithmetic averaging implicitly encodes a **compensatory assumption**—strong reasoning can compensate for weak memory.
+**Background**: Hendrycks et al. define an AGI score as the arithmetic mean of scores across 10 cognitive domains based on the CHC (Cattell-Horn-Carroll) theory of cognitive abilities. GPT-4 scores 27% and GPT-5 scores 58% under this scheme. However, arithmetic averaging implicitly encodes a **compensatory assumption**—strong reasoning can compensate for weak memory.
 
 **Limitations of Prior Work**: Psychometric evidence from CHC theory argues against compensability: cognitive abilities are interdependent (reasoning relies on working memory; perception constrains abstraction), and extreme imbalance typically indicates dysfunction rather than high intelligence.
 
-**Root Cause**: Systems theory supports a bottleneck effect—the overall capability of a complex system is constrained by its weakest component (limiting-factor dynamics), which simple summation cannot capture.
+**Key Challenge**: Systems theory supports a bottleneck effect—the overall capability of a complex system is constrained by its weakest component (limiting-factor dynamics), which simple summation cannot capture.
 
-**Paper Goals**: General intelligence should exhibit **coherent sufficiency**—all critical capabilities meeting a balanced threshold—rather than excelling in isolated domains.
+**Goal**: General intelligence should exhibit **coherent sufficiency**—all critical capabilities meeting a balanced threshold—rather than excelling in isolated domains.
 
 ## Method
 

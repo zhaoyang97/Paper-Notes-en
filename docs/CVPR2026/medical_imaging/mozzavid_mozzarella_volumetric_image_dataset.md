@@ -29,15 +29,15 @@ This paper introduces MozzaVID — a mozzarella cheese microstructure volumetric
 
 ## Background & Motivation
 
-1. **State of the Field**: Volumetric images (3D CT, MRI, etc.) are widely used in medicine, materials science, and food science, with growing interest in deep learning for these domains. In the 2D domain, standard benchmarks such as MNIST (60K images) and ImageNet (14M images) have driven substantial architectural innovation.
+1. **Background**: Volumetric images (3D CT, MRI, etc.) are widely used in medicine, materials science, and food science, with growing interest in deep learning for these domains. In the 2D domain, standard benchmarks such as MNIST (60K images) and ImageNet (14M images) have driven substantial architectural innovation.
 
 2. **Limitations of Prior Work**: Volumetric datasets suffer from critical shortcomings — (a) **insufficient scale**: the largest volumetric datasets (e.g., BugNIST with 9,154 samples, PN9 with 8,798) are far smaller than 2D datasets; (b) **poor accessibility**: many medical datasets require registration, data-use agreements, or direct contact with curators; (c) **overly specialized tasks**: most datasets target specific diagnostic problems and are unsuitable as general-purpose benchmarks; (d) **lack of classification-oriented benchmarks**: the majority of volumetric datasets focus on segmentation or detection with few classification targets.
 
-3. **Root Cause**: The absence of a large-scale, general-purpose volumetric benchmark prevents 3D deep learning researchers from comparing architectures under a unified standard, as is routinely done in 2D. Consequently, new models are often evaluated on a single specialized dataset, limiting generalizability and cross-study comparability. Many 3D methods simply adapt 2D architectures to 3D, potentially missing opportunities for volumetric-specific optimization.
+3. **Key Challenge**: The absence of a large-scale, general-purpose volumetric benchmark prevents 3D deep learning researchers from comparing architectures under a unified standard, as is routinely done in 2D. Consequently, new models are often evaluated on a single specialized dataset, limiting generalizability and cross-study comparability. Many 3D methods simply adapt 2D architectures to 3D, potentially missing opportunities for volumetric-specific optimization.
 
-4. **Paper Goals**: To create a large-scale, clean, multipurpose, and publicly available volumetric image classification benchmark that closes the scale gap between 2D and 3D datasets.
+4. **Goal**: To create a large-scale, clean, multipurpose, and publicly available volumetric image classification benchmark that closes the scale gap between 2D and 3D datasets.
 
-5. **Starting Point**: The microstructure of mozzarella cheese is anisotropic and highly disordered — properties that allow arbitrary sub-volume extraction without introducing bias. This enables derivation of up to 37,824 samples from 591 original scans, a unique advantage offered by food microstructure.
+5. **Key Insight**: The microstructure of mozzarella cheese is anisotropic and highly disordered — properties that allow arbitrary sub-volume extraction without introducing bias. This enables derivation of up to 37,824 samples from 591 original scans, a unique advantage offered by food microstructure.
 
 6. **Core Idea**: By exploiting the disorder and divisibility of mozzarella microstructure, the authors construct an unprecedented-scale 3D classification benchmark (37K+ volumes) and simultaneously validate the indispensability of 3D representations for volumetric tasks.
 

@@ -30,7 +30,7 @@ This paper discovers that the association matrix between upstream sample forgett
 
 ### State of the Field
 
-**State of the Field**: Continual fine-tuning of LLMs leads to forgetting of upstream knowledge (catastrophic forgetting), a core challenge inherited from continual learning. Existing mitigation methods primarily rely on random replay of past samples, regularization (EWC, L2), or parameter isolation; however, none of these approaches characterize *what* the model will specifically forget.
+**Background**: Continual fine-tuning of LLMs leads to forgetting of upstream knowledge (catastrophic forgetting), a core challenge inherited from continual learning. Existing mitigation methods primarily rely on random replay of past samples, regularization (EWC, L2), or parameter isolation; however, none of these approaches characterize *what* the model will specifically forget.
 
 ### Limitations of Prior Work
 
@@ -38,11 +38,11 @@ This paper discovers that the association matrix between upstream sample forgett
 
 ### Root Cause
 
-**Root Cause**: If one could predict which upstream samples will be forgotten after learning a new task, targeted replay would become possible—but this requires understanding the structure of forgetting. By constructing a forgetting matrix $Z$ of $M$ tasks × $N$ samples to analyze its complexity: if $Z$ is full-rank, forgetting is unpredictable; if low-rank, a simple latent structure exists that can be exploited.
+**Key Challenge**: If one could predict which upstream samples will be forgotten after learning a new task, targeted replay would become possible—but this requires understanding the structure of forgetting. By constructing a forgetting matrix $Z$ of $M$ tasks × $N$ samples to analyze its complexity: if $Z$ is full-rank, forgetting is unpredictable; if low-rank, a simple latent structure exists that can be exploited.
 
 ### Starting Point
 
-**Paper Goals**: To quantitatively analyze the rank structure of the forgetting matrix and establish a forgetting prediction model. **Starting Point**: Forgetting prediction is framed as analogous to collaborative filtering in recommender systems—tasks as users, samples as items, and forgetting as ratings. **Core Idea**: The forgetting matrix is low-rank → apply matrix completion (MF/KNN) to predict forgetting induced by new tasks → guide selective replay.
+**Goal**: To quantitatively analyze the rank structure of the forgetting matrix and establish a forgetting prediction model. **Key Insight**: Forgetting prediction is framed as analogous to collaborative filtering in recommender systems—tasks as users, samples as items, and forgetting as ratings. **Core Idea**: The forgetting matrix is low-rank → apply matrix completion (MF/KNN) to predict forgetting induced by new tasks → guide selective replay.
 
 ## Method
 

@@ -28,13 +28,13 @@ content_hash: 0e001113c44a313f
 This paper proves that applying GD with large stepsizes (entering the Edge of Stability regime) to $\ell_2$-regularized logistic regression on linearly separable data accelerates the step complexity from the classical $\widetilde{O}(\kappa)$ to $\widetilde{O}(\sqrt{\kappa})$, matching the acceleration rate of Nesterov momentum in the small-regularization regime.
 
 ## Background & Motivation
-**State of the Field**: $\ell_2$-regularized logistic regression is a classical strongly convex optimization problem. Standard GD with small stepsizes monotonically decreases the objective, achieving step complexity $O(\kappa \ln(1/\varepsilon))$, which is known to be accelerable to $O(\sqrt{\kappa} \ln(1/\varepsilon))$ via Nesterov momentum.
+**Background**: $\ell_2$-regularized logistic regression is a classical strongly convex optimization problem. Standard GD with small stepsizes monotonically decreases the objective, achieving step complexity $O(\kappa \ln(1/\varepsilon))$, which is known to be accelerable to $O(\sqrt{\kappa} \ln(1/\varepsilon))$ via Nesterov momentum.
 
 **Limitations of Prior Work**: Wu et al. (2024) demonstrated that large-stepsize GD can accelerate unregularized logistic regression, but their analysis relies on the special structure where the minimizer lies at infinity. Whether large stepsizes retain an acceleration effect for strongly convex problems with finite minimizers remained unknown.
 
-**Root Cause**: (a) With regularization, the minimizer is finite, and excessively large stepsizes can cause instability and divergence; (b) prior results are valid only for optimization error $\varepsilon < 1/n$, whereas statistical error is typically $\gg 1/n$.
+**Key Challenge**: (a) With regularization, the minimizer is finite, and excessively large stepsizes can cause instability and divergence; (b) prior results are valid only for optimization error $\varepsilon < 1/n$, whereas statistical error is typically $\gg 1/n$.
 
-**Starting Point**: The paper analyzes the two-phase behavior of GD in the Edge of Stability (EoS) regime—an initial phase of non-monotone oscillation followed by a stable phase of exponential convergence.
+**Key Insight**: The paper analyzes the two-phase behavior of GD in the Edge of Stability (EoS) regime—an initial phase of non-monotone oscillation followed by a stable phase of exponential convergence.
 
 ## Method
 

@@ -27,11 +27,11 @@ content_hash: e6cad573d8ac5e2c
 This paper formally defines the problem of relational visual similarity — the intrinsic relational or functional correspondence between two images, as opposed to surface-level attribute similarity — constructs a 114K anonymous-description dataset, trains the relsim model, and reveals fundamental deficiencies in existing similarity metrics (CLIP, DINO, etc.) for capturing relational similarity.
 
 ## Background & Motivation
-1. **State of the Field**: Visual similarity is a foundational capability in computer vision. Existing methods (LPIPS, CLIP, DINO, etc.) focus on attribute similarity — matching at the pixel, semantic, or descriptive level.
+1. **Background**: Visual similarity is a foundational capability in computer vision. Existing methods (LPIPS, CLIP, DINO, etc.) focus on attribute similarity — matching at the pixel, semantic, or descriptive level.
 2. **Limitations of Prior Work**: These methods fail to recognize relational similarity — for example, the stages of a burning match and the ripening stages of a banana share the same "temporal gradual change" logic, yet are entirely dissimilar in terms of attributes.
-3. **Root Cause**: Cognitive science regards attribute similarity and relational similarity as two core pillars of human perception, yet visual computing has entirely neglected the latter. Relational similarity is considered a key cognitive ability that distinguishes humans from other species.
-4. **Paper Goals**: To formalize relational visual similarity as a measurable problem and to construct models capable of capturing relational structure.
-5. **Starting Point**: Inspired by cognitive science — humans identify relational similarity through conceptual abstraction mediated by language or prior knowledge. Accordingly, the paper introduces "anonymous descriptions" (describing intrinsic logic rather than concrete objects) as the bridge linking relationally similar images.
+3. **Key Challenge**: Cognitive science regards attribute similarity and relational similarity as two core pillars of human perception, yet visual computing has entirely neglected the latter. Relational similarity is considered a key cognitive ability that distinguishes humans from other species.
+4. **Goal**: To formalize relational visual similarity as a measurable problem and to construct models capable of capturing relational structure.
+5. **Key Insight**: Inspired by cognitive science — humans identify relational similarity through conceptual abstraction mediated by language or prior knowledge. Accordingly, the paper introduces "anonymous descriptions" (describing intrinsic logic rather than concrete objects) as the bridge linking relationally similar images.
 6. **Core Idea**: Define anonymous descriptions (e.g., "the change of {subject} over time"), train a model to generate such descriptions, and use them to bring images sharing the same relational logic closer together in representation space.
 
 ## Method

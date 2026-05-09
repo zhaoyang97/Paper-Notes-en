@@ -28,11 +28,11 @@ This paper proposes DUET-VLM, a dual-stage visual token compression framework. S
 
 ## Background & Motivation
 
-1. **State of the Field**: VLMs (e.g., LLaVA, InternVL) rely on large numbers of visual tokens to convey image information to the LLM, yet visual tokens exhibit severe redundancy—many tokens correspond to background or repetitive texture regions rather than semantically critical content.
+1. **Background**: VLMs (e.g., LLaVA, InternVL) rely on large numbers of visual tokens to convey image information to the LLM, yet visual tokens exhibit severe redundancy—many tokens correspond to background or repetitive texture regions rather than semantically critical content.
 2. **Limitations of Prior Work**: Existing token compression methods are **unilateral**—they either compress only on the visual encoder side (VisionZip, HiRED) or only on the LLM side (FastV, PyramidDrop), and cannot leverage information from both sides for optimal compression.
-3. **Root Cause**: Vision-only methods lack text-guided signals and cannot determine which visual tokens are truly relevant to the current query; language-only methods can only perform post-hoc processing within the LLM, having already wasted computation in earlier layers.
-4. **Paper Goals**: To design a unified dual-stage framework that performs complementary token compression within both the visual encoder and the LLM, applicable to both training and inference.
-5. **Starting Point**: Stage 1 uses V2V self-attention among visual tokens for coarse-grained compression; Stage 2 uses T2V cross-attention from text to visual tokens for fine-grained pruning.
+3. **Key Challenge**: Vision-only methods lack text-guided signals and cannot determine which visual tokens are truly relevant to the current query; language-only methods can only perform post-hoc processing within the LLM, having already wasted computation in earlier layers.
+4. **Goal**: To design a unified dual-stage framework that performs complementary token compression within both the visual encoder and the LLM, applicable to both training and inference.
+5. **Key Insight**: Stage 1 uses V2V self-attention among visual tokens for coarse-grained compression; Stage 2 uses T2V cross-attention from text to visual tokens for fine-grained pruning.
 6. **Core Idea**: The V2V stage preserves spatial context via attention-guided local cluster aggregation (local clustering with fixed window width $w$ rather than global averaging); the T2V stage progressively drops low-relevance visual tokens through hierarchical pruning.
 
 ## Method

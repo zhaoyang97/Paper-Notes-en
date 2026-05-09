@@ -29,15 +29,15 @@ This paper proposes RESBev, a plug-and-play robustness enhancement framework for
 
 ## Background & Motivation
 
-**State of the Field**: BEV perception is a core representation for autonomous driving. LSS-based methods (BEVFusion, BEVFormer, FIERY, etc.) achieve strong results on benchmarks such as nuScenes. However, these models are extremely fragile in real-world deployment—under natural corruptions (fog, darkness, snow, camera failure, frame loss) or adversarial attacks (FGSM, PGD, C&W), IoU can plummet from 33 to 9.
+**Background**: BEV perception is a core representation for autonomous driving. LSS-based methods (BEVFusion, BEVFormer, FIERY, etc.) achieve strong results on benchmarks such as nuScenes. However, these models are extremely fragile in real-world deployment—under natural corruptions (fog, darkness, snow, camera failure, frame loss) or adversarial attacks (FGSM, PGD, C&W), IoU can plummet from 33 to 9.
 
 **Limitations of Prior Work**: Existing defense strategies suffer from three major limitations: (1) multi-modal fusion relies on expensive LiDAR sensors and assumes redundant sensors remain reliable; (2) simple temporal aggregation cannot filter adversarial perturbations, since adversarial features are numerically nearly indistinguishable from clean features; (3) adversarial training only defends against seen attack types and fails to generalize; (4) most methods are tightly coupled to specific architectures.
 
-**Root Cause**: Adversarial attacks generate feature-space perturbations with extremely low MSE yet catastrophic semantic impact—simple attention-based aggregation cannot distinguish adversarially corrupted features from clean ones. A mechanism is needed to "bypass" the corrupted current observation and generate a clean prior from historical information.
+**Key Challenge**: Adversarial attacks generate feature-space perturbations with extremely low MSE yet catastrophic semantic impact—simple attention-based aggregation cannot distinguish adversarially corrupted features from clean ones. A mechanism is needed to "bypass" the corrupted current observation and generate a clean prior from historical information.
 
-**Paper Goals**: To develop a lightweight, general, and generalizable BEV robustness enhancement solution that can be inserted into any LSS-based model and simultaneously handles both natural corruptions and adversarial attacks.
+**Goal**: To develop a lightweight, general, and generalizable BEV robustness enhancement solution that can be inserted into any LSS-based model and simultaneously handles both natural corruptions and adversarial attacks.
 
-**Starting Point**: Driving scenes exhibit strong temporal consistency—the BEV state of the current frame can be reasonably predicted from historical frames and ego-motion. The robustness problem is thus reformulated as a temporal prediction problem: a world model generates an "expected state" from historical clean frames, which is then selectively fused with the actual (potentially corrupted) observation.
+**Key Insight**: Driving scenes exhibit strong temporal consistency—the BEV state of the current frame can be reasonably predicted from historical frames and ego-motion. The robustness problem is thus reformulated as a temporal prediction problem: a world model generates an "expected state" from historical clean frames, which is then selectively fused with the actual (potentially corrupted) observation.
 
 **Core Idea**: A latent-space world model predicts a clean BEV semantic prior for the current frame, which is then fused with the corrupted current observation via gated cross-attention to achieve adaptive recovery from arbitrary perturbation types.
 

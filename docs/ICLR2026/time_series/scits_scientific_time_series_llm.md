@@ -29,15 +29,15 @@ This paper proposes SciTS—a scientific time series benchmark spanning 12 scien
 
 ## Background & Motivation
 
-**State of the Field**: The scientific reasoning capabilities of LLMs have attracted considerable attention, yet time series—a fundamental modality of scientific data—remain largely overlooked. Existing multimodal LLMs either encode numerical sequences as text (resulting in excessively long sequences) or convert them to images (sacrificing numerical precision), neither of which is adequate for comprehensive scientific time series understanding.
+**Background**: The scientific reasoning capabilities of LLMs have attracted considerable attention, yet time series—a fundamental modality of scientific data—remain largely overlooked. Existing multimodal LLMs either encode numerical sequences as text (resulting in excessively long sequences) or convert them to images (sacrificing numerical precision), neither of which is adequate for comprehensive scientific time series understanding.
 
 **Limitations of Prior Work**: Existing unified time series models typically focus on a single task type, such as forecasting or analysis. More critically, they are primarily trained and evaluated on periodic commercial data (weather, traffic, finance), leaving their effectiveness on aperiodic, highly heterogeneous scientific signals (gravitational waves, EEG, bioacoustics) largely unknown.
 
-**Root Cause**: Scientific time series exhibit extreme diversity—sampling frequencies range from daily to MHz, lengths from a few points to millions, dimensionality from univariate to 58 channels, and tasks from classification to synthesis. Existing models and benchmarks cannot accommodate this diversity.
+**Key Challenge**: Scientific time series exhibit extreme diversity—sampling frequencies range from daily to MHz, lengths from a few points to millions, dimensionality from univariate to 58 channels, and tasks from classification to synthesis. Existing models and benchmarks cannot accommodate this diversity.
 
-**Paper Goals**: (1) Construct the most comprehensive benchmark for scientific time series; (2) Systematically evaluate 17 SOTA models on scientific time series tasks; (3) Propose TimeOmni as a working example to explore the key ingredients for LLMs to handle scientific time series.
+**Goal**: (1) Construct the most comprehensive benchmark for scientific time series; (2) Systematically evaluate 17 SOTA models on scientific time series tasks; (3) Propose TimeOmni as a working example to explore the key ingredients for LLMs to handle scientific time series.
 
-**Starting Point**: Scientific time series (astronomical light curves, seismic waveforms, EEG, etc.) are fundamentally different from those in commercial domains, necessitating dedicated benchmarks and methods. General-purpose LLMs may generalize more effectively than specialized time series models.
+**Key Insight**: Scientific time series (astronomical light curves, seismic waveforms, EEG, etc.) are fundamentally different from those in commercial domains, necessitating dedicated benchmarks and methods. General-purpose LLMs may generalize more effectively than specialized time series models.
 
 **Core Idea**: Build the large-scale SciTS benchmark for comprehensive evaluation, and propose TimeOmni as an exploratory solution—employing multi-patch expert routing to adaptively select patch sizes for signals of varying scales, while unifying understanding and generation tasks under a single framework.
 

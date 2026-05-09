@@ -28,15 +28,15 @@ mmWalk constructs the first multi-modal multi-view dataset for walking assistanc
 
 ## Background & Motivation
 
-**State of the Field**: Walking assistance for BLV individuals relies on AI systems capable of understanding complex outdoor scenes. Existing datasets are predominantly for indoor or driving scenarios and lack multi-modal data captured from pedestrian, guide-dog, and drone perspectives.
+**Background**: Walking assistance for BLV individuals relies on AI systems capable of understanding complex outdoor scenes. Existing datasets are predominantly for indoor or driving scenarios and lack multi-modal data captured from pedestrian, guide-dog, and drone perspectives.
 
 **Limitations of Prior Work**: Although VLMs perform well on general VQA tasks, their capabilities on walking-safety-critical tasks—such as detecting uneven surfaces, assessing road-crossing risks, and identifying navigation landmarks—have never been systematically evaluated.
 
-**Root Cause**: Collecting real-world BLV walking data faces ethical and privacy barriers (e.g., GDPR), and annotation is difficult. A compliant and controllable data generation approach is therefore needed.
+**Key Challenge**: Collecting real-world BLV walking data faces ethical and privacy barriers (e.g., GDPR), and annotation is difficult. A compliant and controllable data generation approach is therefore needed.
 
-**Paper Goals**: Construct a systematic benchmark to evaluate the walking assistance capabilities of VLMs and identify safety blind spots in current models.
+**Goal**: Construct a systematic benchmark to evaluate the walking assistance capabilities of VLMs and identify safety blind spots in current models.
 
-**Starting Point**: Use the CARLA simulator to generate multi-modal (RGB / depth / semantic segmentation) × multi-view (pedestrian / guide-dog / drone) walking scenes, and design 9 categories of VQA questions spanning 3 difficulty levels.
+**Key Insight**: Use the CARLA simulator to generate multi-modal (RGB / depth / semantic segmentation) × multi-view (pedestrian / guide-dog / drone) walking scenes, and design 9 categories of VQA questions spanning 3 difficulty levels.
 
 **Core Idea**: Generate compliant multi-view walking data via CARLA simulation, design a hierarchical VQA benchmark to systematically evaluate VLM walking assistance capabilities, and expose critical deficiencies in safety-critical tasks.
 

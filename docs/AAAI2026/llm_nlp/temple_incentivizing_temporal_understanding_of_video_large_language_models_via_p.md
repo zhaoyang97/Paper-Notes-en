@@ -28,13 +28,13 @@ This paper proposes TEMPLE, which significantly enhances the temporal reasoning 
 
 ## Background & Motivation
 
-**State of the Field**: Video LLMs have achieved remarkable success under the large-scale pretraining + SFT paradigm, yet continue to underperform on temporal reasoning. Preliminary analysis reveals that Qwen2-VL-7B achieves only 74.4% precision and 35.0% recall in detailed captioning, missing numerous events and introducing hallucinations.
+**Background**: Video LLMs have achieved remarkable success under the large-scale pretraining + SFT paradigm, yet continue to underperform on temporal reasoning. Preliminary analysis reveals that Qwen2-VL-7B achieves only 74.4% precision and 35.0% recall in detailed captioning, missing numerous events and introducing hallucinations.
 
 **Limitations of Prior Work**: (a) Temporal information is scarce in video datasets — many videos are relatively static, with weak temporal correspondence in video-text pairs; (b) both pretraining and SFT rely on next-token prediction, which does not explicitly enforce dynamic temporal understanding; (c) models frequently overlook subtle temporal details and over-rely on local visual/textual cues.
 
-**Root Cause**: High-quality temporal annotations for video are prohibitively expensive, yet SFT requires near-perfect labels; DPO requires only relative comparisons and is thus better suited for video tasks.
+**Key Challenge**: High-quality temporal annotations for video are prohibitively expensive, yet SFT requires near-perfect labels; DPO requires only relative comparisons and is thus better suited for video tasks.
 
-**Starting Point**: (a) Temporal preference pairs are automatically generated via video perturbation (frame dropping, shuffling, and temporal reversal), eliminating the need for manual annotation; (b) DPO is placed before rather than after SFT (reversing the conventional order), establishing temporal understanding prior to instruction-following learning.
+**Key Insight**: (a) Temporal preference pairs are automatically generated via video perturbation (frame dropping, shuffling, and temporal reversal), eliminating the need for manual annotation; (b) DPO is placed before rather than after SFT (reversing the conventional order), establishing temporal understanding prior to instruction-following learning.
 
 **Core Idea**: A three-stage automated pipeline for temporal preference data generation, combined with Progressive Pre-SFT Alignment (easy-to-hard curriculum learning with DPO preceding SFT).
 

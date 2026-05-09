@@ -28,7 +28,7 @@ This paper proposes EinFields, the first framework to apply neural implicit repr
 
 ## Background & Motivation
 
-**State of the Field**: General relativity (GR) describes gravity as the curvature of four-dimensional spacetime, governed by the Einstein field equations (EFEs). Exact solutions exist only for idealized scenarios, making numerical relativity (NR) indispensable for simulating astrophysical events such as black hole mergers and gravitational waves. NR is among the most computationally intensive domains in scientific computing, requiring petabyte-scale storage and supercomputer-level parallelism.
+**Background**: General relativity (GR) describes gravity as the curvature of four-dimensional spacetime, governed by the Einstein field equations (EFEs). Exact solutions exist only for idealized scenarios, making numerical relativity (NR) indispensable for simulating astrophysical events such as black hole mergers and gravitational waves. NR is among the most computationally intensive domains in scientific computing, requiring petabyte-scale storage and supercomputer-level parallelism.
 
 **Limitations of Prior Work**:
 - NR simulations produce **petabyte-scale data**, posing severe storage and distribution challenges.
@@ -36,15 +36,15 @@ This paper proposes EinFields, the first framework to apply neural implicit repr
 - Higher-order FD stencils improve accuracy but increase communication overhead.
 - Discrete representations cannot be queried at arbitrary resolution, and derivative computation is limited by truncation error.
 
-**Root Cause**: The physics of GR is fully encoded in the metric tensor and its first two derivatives, yet conventional methods discretize continuous tensor fields for storage, incurring enormous storage overhead and loss of derivative accuracy.
+**Key Challenge**: The physics of GR is fully encoded in the metric tensor and its first two derivatives, yet conventional methods discretize continuous tensor fields for storage, incurring enormous storage overhead and loss of derivative accuracy.
 
-**Paper Goals**:
+**Goal**:
 - Compress NR simulation data to manageable storage sizes.
 - Provide a continuous, mesh-free representation with unlimited resolution.
 - Obtain high-accuracy tensor derivatives (Christoffel symbols, Riemann tensor, etc.) via automatic differentiation.
 - Support downstream physical tasks (geodesics, curvature diagnostics, gravitational wave extraction).
 
-**Starting Point**: This work generalizes neural fields from computer vision (NeRF/SDF, etc.) to physical tensor fields, introducing the concept of "neural tensor fields"—MLPs that fit the 10 independent components of the metric tensor.
+**Key Insight**: This work generalizes neural fields from computer vision (NeRF/SDF, etc.) to physical tensor fields, introducing the concept of "neural tensor fields"—MLPs that fit the 10 independent components of the metric tensor.
 
 **Core Idea**: Represent the four-dimensional spacetime metric tensor field with a compact neural implicit network (<2M parameters, ~7 MiB), combined with Sobolev training and automatic differentiation, simultaneously achieving 4000× compression and a 10$^5$× improvement in derivative accuracy.
 

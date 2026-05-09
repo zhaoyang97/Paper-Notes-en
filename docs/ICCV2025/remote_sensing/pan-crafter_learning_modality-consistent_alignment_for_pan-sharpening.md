@@ -39,7 +39,7 @@ Pan-sharpening in remote sensing aims to fuse high-resolution panchromatic (PAN,
 
 **Diffusion models yield high quality but are too slow**: PanDiff and TMDiff have inference times of 2.955s and 9.997s respectively, making deployment impractical.
 
-**Starting Point**: Design a bidirectional alignment mechanism—aligning PAN structure to MS texture (for HRMS reconstruction) and, conversely, aligning MS texture to PAN structure (via PAN back-reconstruction as auxiliary self-supervision)—forming a "modality-consistent" constraint.
+**Key Insight**: Design a bidirectional alignment mechanism—aligning PAN structure to MS texture (for HRMS reconstruction) and, conversely, aligning MS texture to PAN structure (via PAN back-reconstruction as auxiliary self-supervision)—forming a "modality-consistent" constraint.
 
 ## Method
 

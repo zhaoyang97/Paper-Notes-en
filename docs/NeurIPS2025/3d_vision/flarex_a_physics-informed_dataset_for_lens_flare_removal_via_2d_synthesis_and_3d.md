@@ -28,15 +28,15 @@ This paper proposes the FlareX dataset, generated through three stages—paramet
 
 ## Background & Motivation
 
-**State of the Field**: Lens flare produced under strong lighting conditions causes color shifts and information loss, degrading downstream vision tasks. Deep learning approaches rely on large-scale paired datasets to train flare removal models, yet acquiring paired data in the real world is extremely difficult.
+**Background**: Lens flare produced under strong lighting conditions causes color shifts and information loss, degrading downstream vision tasks. Deep learning approaches rely on large-scale paired datasets to train flare removal models, yet acquiring paired data in the real world is extremely difficult.
 
 **Limitations of Prior Work**: Existing datasets (Wu et al., Flare7K, Flare7K++) primarily synthesize flare by overlaying handcrafted 2D flare templates onto background images, suffering from two core problems: (a) limited template variety (3–35 categories), insufficient to cover the diverse flare patterns encountered in the real world; and (b) physically ungrounded synthesis, where random overlaying yields unnatural flare brightness and position.
 
-**Root Cause**: The physical implausibility and insufficient pattern diversity of training data limit model generalization to real scenes, particularly for reflective flare and off-screen light sources.
+**Key Challenge**: The physical implausibility and insufficient pattern diversity of training data limit model generalization to real scenes, particularly for reflective flare and off-screen light sources.
 
-**Paper Goals**: (a) How to generate more diverse flare templates? (b) How to ensure that the brightness distribution of synthesized images conforms to physical laws? (c) How to obtain a reliable real-world test set?
+**Goal**: (a) How to generate more diverse flare templates? (b) How to ensure that the brightness distribution of synthesized images conforms to physical laws? (c) How to obtain a reliable real-world test set?
 
-**Starting Point**: The Blender 3D physics engine is employed to simulate flare formation, and the illumination law is introduced to quantify the relationship between the light source and the lens.
+**Key Insight**: The Blender 3D physics engine is employed to simulate flare formation, and the illumination law is introduced to quantify the relationship between the light source and the lens.
 
 **Core Idea**: Combine parameterized templates, illumination-law-guided 2D synthesis, and 3D physics-based rendering to construct a diverse and physically realistic lens flare dataset.
 

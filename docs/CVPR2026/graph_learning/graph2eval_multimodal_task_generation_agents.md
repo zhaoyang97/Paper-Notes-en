@@ -29,18 +29,18 @@ This paper proposes Graph2Eval, a framework that leverages knowledge graphs cons
 
 ## Background & Motivation
 
-**State of the Field**: As multimodal LLM-driven agents continue to advance in autonomy and generalization, rigorously evaluating their true capabilities has become increasingly important. Existing evaluation approaches rely primarily on static datasets (e.g., GAIA, MiniWoB++, Mind2Web) or environments requiring extensive human annotation (e.g., OSWorld, AndroidWorld).
+**Background**: As multimodal LLM-driven agents continue to advance in autonomy and generalization, rigorously evaluating their true capabilities has become increasingly important. Existing evaluation approaches rely primarily on static datasets (e.g., GAIA, MiniWoB++, Mind2Web) or environments requiring extensive human annotation (e.g., OSWorld, AndroidWorld).
 
 **Limitations of Prior Work**:
 1. Static datasets cannot distinguish genuine generalization from memorization, and scale poorly.
 2. Existing LLM-based synthesis methods (e.g., TaskCraft) lack explicit entity-relation modeling, resulting in tasks with poor semantic consistency and solvability.
 3. Web interaction task generation methods depend on static data and predefined page relationships, limiting transferability to dynamic web scenarios.
 
-**Root Cause**: How to automatically generate semantically consistent, solvable, and diverse agent evaluation tasks without extensive human annotation.
+**Key Challenge**: How to automatically generate semantically consistent, solvable, and diverse agent evaluation tasks without extensive human annotation.
 
-**Paper Goals**: To construct an automated, scalable, and semantically grounded agent task generation framework covering both document understanding and web interaction scenarios.
+**Goal**: To construct an automated, scalable, and semantically grounded agent task generation framework covering both document understanding and web interaction scenarios.
 
-**Starting Point**: Treating knowledge graphs (KGs) as structured task spaces, using entities and relations within the graph to constrain task generation and ensure semantic consistency and solvability.
+**Key Insight**: Treating knowledge graphs (KGs) as structured task spaces, using entities and relations within the graph to constrain task generation and ensure semantic consistency and solvability.
 
 **Core Idea**: Encode entity relationships in data via knowledge graphs, and automatically produce high-quality agent evaluation tasks through subgraph sampling and template-driven generation mechanisms.
 

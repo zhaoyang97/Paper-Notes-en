@@ -28,15 +28,15 @@ content_hash: a4275fe9e5ca4364
 This paper proposes replacing handcrafted priors (GP kernels, IS Gaussian assumptions) with the learned prior of the foundation model TabPFN, enabling zero-hyperparameter multi-PVT-corner yield analysis. On industrial-grade SRAM benchmarks, the method achieves state-of-the-art accuracy (MRE as low as 0.11%) while reducing verification cost by more than 10×.
 
 ## Background & Motivation
-**State of the Field**: Modern integrated circuits must be validated across 25+ Process-Voltage-Temperature (PVT) corners, each requiring more than $10^4$ Monte Carlo simulations. The total cost of $O(K \times N)$ leads to weeks of computation time.
+**Background**: Modern integrated circuits must be validated across 25+ Process-Voltage-Temperature (PVT) corners, each requiring more than $10^4$ Monte Carlo simulations. The total cost of $O(K \times N)$ leads to weeks of computation time.
 
 **Limitations of Prior Work**: Acceleration methods have advanced along two tracks, both hitting fundamental walls: (1) **Importance Sampling (IS) methods** such as MNIS achieve full automation but are constrained by a "model capacity barrier"—their Gaussian assumptions cannot capture nonlinear failure regions, imposing a hard accuracy ceiling; (2) **Surrogate model methods** such as GP, deep kernels, and normalizing flows overcome this capacity limitation but introduce a "tuning barrier"—each circuit requires hours of hyperparameter optimization (kernel selection, architecture search), and ±20% hyperparameter perturbation causes error to swing from 19% to 111%, which is unacceptable in industrial practice.
 
-**Root Cause**: A fundamental tension between expressiveness and automation—simple models enable automation but limit accuracy, while complex models improve accuracy but demand extensive tuning.
+**Key Challenge**: A fundamental tension between expressiveness and automation—simple models enable automation but limit accuracy, while complex models improve accuracy but demand extensive tuning.
 
-**Paper Goals**: Eliminate per-circuit hyperparameter tuning entirely while retaining high model expressiveness for nonlinear failure boundary modeling.
+**Goal**: Eliminate per-circuit hyperparameter tuning entirely while retaining high model expressiveness for nonlinear failure boundary modeling.
 
-**Starting Point**: Replace engineered priors with meta-learned priors. After pre-training on millions of regression tasks, TabPFN adapts to new circuits via in-context learning (a single forward pass)—no gradient descent, no hyperparameter optimization, no retraining required.
+**Key Insight**: Replace engineered priors with meta-learned priors. After pre-training on millions of regression tasks, TabPFN adapts to new circuits via in-context learning (a single forward pass)—no gradient descent, no hyperparameter optimization, no retraining required.
 
 **Core Idea**: TabPFN's learned prior + joint multi-corner modeling + active learning = zero-tuning, high-accuracy multi-corner yield analysis.
 

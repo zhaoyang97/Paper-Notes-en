@@ -28,15 +28,15 @@ This paper proposes MimiCAT, a cascade Transformer framework that learns flexibl
 
 ## Background & Motivation
 
-1. **State of the Field**: 3D pose transfer aims to apply the pose of a source character to a target character while preserving the target's geometric identity and the source's pose information. Existing methods are mostly limited to structurally similar characters (e.g., humanoid to robot), achieving transfer through learned one-to-one correspondences at the keypoint or vertex level.
+1. **Background**: 3D pose transfer aims to apply the pose of a source character to a target character while preserving the target's geometric identity and the source's pose information. Existing methods are mostly limited to structurally similar characters (e.g., humanoid to robot), achieving transfer through learned one-to-one correspondences at the keypoint or vertex level.
 
 2. **Limitations of Prior Work**: When the body structures of source and target characters differ drastically (e.g., humanoid to bird), one-to-one mappings fail entirely. How should two arms correspond to two wings? Furthermore, existing methods predominantly rely on human motion datasets (e.g., AMASS), producing out-of-distribution and unnatural deformations on non-humanoid characters.
 
-3. **Root Cause**: Characters across different categories have fundamentally different skeletal structures, keypoint counts, and rotation patterns, making traditional one-to-one keypoint mappings incapable of expressing the complex many-to-many correspondences involved. There is also a lack of large-scale datasets encompassing multi-type character animations.
+3. **Key Challenge**: Characters across different categories have fundamentally different skeletal structures, keypoint counts, and rotation patterns, making traditional one-to-one keypoint mappings incapable of expressing the complex many-to-many correspondences involved. There is also a lack of large-scale datasets encompassing multi-type character animations.
 
-4. **Paper Goals**: (a) How to establish flexible correspondences between characters with vastly different structures? (b) How to obtain sufficiently diverse cross-category motion data for training? (c) How to ensure that generated pose transformations are physically plausible?
+4. **Goal**: (a) How to establish flexible correspondences between characters with vastly different structures? (b) How to obtain sufficiently diverse cross-category motion data for training? (c) How to ensure that generated pose transformations are physically plausible?
 
-5. **Starting Point**: The authors observe that skeletal keypoints typically carry semantic labels (e.g., "limbs" can correspond to human "arms" and bird "wings"). Leveraging this semantic information circumvents the need for manual correspondence annotation; CLIP-encoded text labels can be used to generate many-to-many soft correspondence pseudo-labels.
+5. **Key Insight**: The authors observe that skeletal keypoints typically carry semantic labels (e.g., "limbs" can correspond to human "arms" and bird "wings"). Leveraging this semantic information circumvents the need for manual correspondence annotation; CLIP-encoded text labels can be used to generate many-to-many soft correspondence pseudo-labels.
 
 6. **Core Idea**: Cross-category 3D pose transfer is achieved by combining semantic keypoint label-driven soft correspondence learning, a shape-aware cascade Transformer, and the million-scale multi-category motion dataset PokeAnimDB.
 

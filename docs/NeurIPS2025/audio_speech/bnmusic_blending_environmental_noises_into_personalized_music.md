@@ -28,15 +28,15 @@ This paper proposes BNMusic, a two-stage framework that blends environmental noi
 
 ## Background & Motivation
 
-**State of the Field**: In public environments such as subways and elevators, people are frequently disturbed by persistent ambient noise. Active Noise Cancellation (ANC) is effective but requires personal devices, making it unsuitable for group settings. Traditional acoustic masking demands high volume and often fails to align the masker with the noise.
+**Background**: In public environments such as subways and elevators, people are frequently disturbed by persistent ambient noise. Active Noise Cancellation (ANC) is effective but requires personal devices, making it unsuitable for group settings. Traditional acoustic masking demands high volume and often fails to align the masker with the noise.
 
 **Limitations of Prior Work**: (1) ANC is limited to individual use and cannot serve groups; (2) misalignment between masker and noise (e.g., beat mismatch) in traditional masking necessitates excessively high volume for effectiveness; (3) existing music generation models perform poorly on noisy inputs, as they are trained on clean audio.
 
-**Root Cause**: Effectively reducing noise perception at a comfortable volume requires the masker (music) to be aligned with the noise in both rhythm and spectral characteristics.
+**Key Challenge**: Effectively reducing noise perception at a comfortable volume requires the masker (music) to be aligned with the noise in both rhythm and spectral characteristics.
 
-**Paper Goals**: Given environmental noise and a user text prompt, generate music whose rhythm and spectral features are aligned with the noise, so that the noise is perceptually absorbed into the music.
+**Goal**: Given environmental noise and a user text prompt, generate music whose rhythm and spectral features are aligned with the noise, so that the noise is perceptually absorbed into the music.
 
-**Starting Point**: The framework draws on psychoacoustic auditory masking theory — when the frequency-temporal characteristics of music are aligned with the noise, effective masking can be achieved at a lower signal-to-noise ratio. Mel-spectrogram-domain image generation techniques (inpainting/outpainting) are leveraged to produce such aligned music.
+**Key Insight**: The framework draws on psychoacoustic auditory masking theory — when the frequency-temporal characteristics of music are aligned with the noise, effective masking can be achieved at a lower signal-to-noise ratio. Mel-spectrogram-domain image generation techniques (inpainting/outpainting) are leveraged to produce such aligned music.
 
 **Core Idea**: The high-energy regions of the noise spectrogram serve as a "canvas." Spectrogram outpainting extends musical patterns around these regions, inpainting then reconstructs the high-energy regions, and adaptive amplification further enhances the masking effect.
 

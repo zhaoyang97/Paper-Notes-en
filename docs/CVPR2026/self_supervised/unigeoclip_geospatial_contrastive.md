@@ -28,11 +28,11 @@ UniGeoCLIP is the first to align five complementary geospatial modalities (aeria
 
 ## Background & Motivation
 
-**State of the Field**: Geospatial representation learning encompasses three paradigms — embedding fields (coordinates → vectors), multimodal fusion (multi-sensor → single representation), and contrastive alignment (e.g., GeoCLIP/SatCLIP aligning coordinates with satellite imagery).
+**Background**: Geospatial representation learning encompasses three paradigms — embedding fields (coordinates → vectors), multimodal fusion (multi-sensor → single representation), and contrastive alignment (e.g., GeoCLIP/SatCLIP aligning coordinates with satellite imagery).
 
 **Limitations of Prior Work**: (1) Embedding fields are static snapshots that cannot model dynamics; (2) fusion models compress all modalities into a single representation, precluding cross-modal retrieval and comparison; (3) existing contrastive methods align only two modalities (typically coordinates + satellite imagery), neglecting text, street-view, and terrain modalities.
 
-**Root Cause**: Different geospatial modalities provide complementary information (aerial imagery for layout, street-view for facades, terrain for elevation, text for semantic description), yet no framework exists to unify them in a shared space.
+**Key Challenge**: Different geospatial modalities provide complementary information (aerial imagery for layout, street-view for facades, terrain for elevation, text for semantic description), yet no framework exists to unify them in a shared space.
 
 **Core Idea**: All-to-all contrastive learning — five modalities are contrasted against one another (without a central pivot), constructing a truly unified embedding space. A novel multi-scale coordinate encoder further overcomes the expressive bottleneck of raw coordinate embeddings.
 

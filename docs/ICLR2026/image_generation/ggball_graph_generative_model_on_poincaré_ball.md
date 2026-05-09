@@ -27,10 +27,10 @@ content_hash: 00469fe2ac488e2e
 This paper proposes GGBall, the first graph generation framework operating entirely on the Poincaré ball model. By combining a hyperbolic vector-quantized variational autoencoder (HVQVAE) with a Riemannian flow matching prior, GGBall achieves state-of-the-art performance on both hierarchical and molecular graph generation, reducing the average generation error by 18% on hierarchical graph benchmarks.
 
 ## Background & Motivation
-- **State of the Field**: Graph generation is a core task in molecular design, materials discovery, and related domains. Existing methods (e.g., DiGress, GDSS) primarily operate in Euclidean space or discrete graph space.
+- **Background**: Graph generation is a core task in molecular design, materials discovery, and related domains. Existing methods (e.g., DiGress, GDSS) primarily operate in Euclidean space or discrete graph space.
 - **Limitations of Prior Work**: Euclidean latent spaces are inherently ill-suited for capturing hierarchical structures and power-law degree distributions in graph data, leading to distortion of community structures and parent–child relationships.
-- **Root Cause**: There is a geometric mismatch between the combinatorial, hierarchical nature of graphs and the linearly growing volume of Euclidean space.
-- **Starting Point**: The exponential volume growth of hyperbolic space naturally accommodates hierarchical structures (Gromov's theorem).
+- **Key Challenge**: There is a geometric mismatch between the combinatorial, hierarchical nature of graphs and the linearly growing volume of Euclidean space.
+- **Key Insight**: The exponential volume growth of hyperbolic space naturally accommodates hierarchical structures (Gromov's theorem).
 - **Core Idea**: The standard Euclidean latent-space generation pipeline is fully reformulated in hyperbolic space, representing graph topology uniformly via node-level latent variables.
 
 ## Method

@@ -29,15 +29,15 @@ This paper introduces CoRe, a high-quality benchmark comprising 12,553 manually 
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have been widely applied to software engineering tasks including code generation (HumanEval), program repair (SWE-Bench), and vulnerability detection. Success on these tasks implicitly relies on deep understanding of program semantics, such as value propagation, control flow, and inter-element dependency relationships. Recent work has also explored using LLMs directly as static analyzers (e.g., LLMDFA, IRIS).
+**Background**: LLMs have been widely applied to software engineering tasks including code generation (HumanEval), program repair (SWE-Bench), and vulnerability detection. Success on these tasks implicitly relies on deep understanding of program semantics, such as value propagation, control flow, and inter-element dependency relationships. Recent work has also explored using LLMs directly as static analyzers (e.g., LLMDFA, IRIS).
 
 **Limitations of Prior Work**: Existing benchmarks primarily evaluate final output correctness in an end-to-end manner—whether code is repaired or whether generated code passes tests—without directly assessing a model's ability to reason about program semantics. Dynamic trace prediction work (e.g., CRUXEval) focuses only on runtime behavior under specific inputs, neglecting unexecuted branches and static semantic properties.
 
-**Root Cause**: Although LLMs exhibit acceptable performance on downstream tasks, whether their underlying program semantic reasoning capabilities sufficiently support these tasks remains unknown. There is a lack of targeted, fine-grained evaluation methods to diagnose models' reasoning weaknesses.
+**Key Challenge**: Although LLMs exhibit acceptable performance on downstream tasks, whether their underlying program semantic reasoning capabilities sufficiently support these tasks remains unknown. There is a lack of targeted, fine-grained evaluation methods to diagnose models' reasoning weaknesses.
 
-**Paper Goals**: To design a benchmark that directly evaluates the core code reasoning capabilities of LLMs, covering three fundamental static analysis tasks, and providing finer-grained diagnostic information than end-to-end evaluations.
+**Goal**: To design a benchmark that directly evaluates the core code reasoning capabilities of LLMs, covering three fundamental static analysis tasks, and providing finer-grained diagnostic information than end-to-end evaluations.
 
-**Starting Point**: The paper is grounded in three fundamental concepts from program analysis—data dependency (def-use chains), control dependency (execution path guards), and information flow (explicit and implicit propagation)—to construct a multi-task benchmark spanning C/C++, Java, and Python.
+**Key Insight**: The paper is grounded in three fundamental concepts from program analysis—data dependency (def-use chains), control dependency (execution path guards), and information flow (explicit and implicit propagation)—to construct a multi-task benchmark spanning C/C++, Java, and Python.
 
 **Core Idea**: Rather than indirectly inferring capabilities from end-to-end results, CoRe directly examines whether LLMs have mastered the fundamental skills of code semantic reasoning—dependency relation reasoning in static analysis.
 

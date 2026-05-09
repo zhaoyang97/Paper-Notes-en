@@ -34,7 +34,7 @@ LLMs are increasingly applied in law enforcement (traffic accident analysis, aut
 - **Practical risks**: LLM-generated responses may not be legally "incorrect," yet direct deployment without validation can lead to serious consequences such as unlawful arrests and improper evidence collection.
 - **Known bias issues**: LLM dispatch recommendations have been shown to exhibit geographic and racial biases.
 
-**Root Cause**: No systematic LLM evaluation framework specifically designed for the policing domain exists. Existing benchmarks (BLEU, ROUGE, multiple-choice) cannot assess reasoning quality or operational compliance in policing scenarios.
+**Key Challenge**: No systematic LLM evaluation framework specifically designed for the policing domain exists. Existing benchmarks (BLEU, ROUGE, multiple-choice) cannot assess reasoning quality or operational compliance in policing scenarios.
 
 **Core Idea**: Establish PAS, a five-stage scalable evaluation framework that uses real policing scenarios as evaluation vehicles and employs a police expert-validated metric selection process to identify indicators that genuinely reflect task quality in law enforcement.
 

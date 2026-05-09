@@ -29,9 +29,9 @@ This paper presents the first systematic study of privacy leakage risks arising 
 
 ## Background & Motivation
 
-- **State of the Field**: The emergence of multimodal large reasoning models such as OpenAI o3 and Gemini 2.5 Pro has endowed models with the ability to infer high-level semantic information from visual inputs. While valuable for applications such as navigation and augmented reality, this capability introduces serious location-related privacy leakage risks. Under GDPR and CCPA, geolocation data is classified as personal information, and precise geolocation is further classified as "sensitive personal information."
+- **Background**: The emergence of multimodal large reasoning models such as OpenAI o3 and Gemini 2.5 Pro has endowed models with the ability to infer high-level semantic information from visual inputs. While valuable for applications such as navigation and augmented reality, this capability introduces serious location-related privacy leakage risks. Under GDPR and CCPA, geolocation data is classified as personal information, and precise geolocation is further classified as "sensitive personal information."
 - **Limitations of Prior Work**: Existing research has three primary limitations: (1) it focuses primarily on geolocalization performance rather than privacy leakage risk per se; (2) datasets largely feature "benign" scenes such as public landmarks, lacking privacy-sensitive scenarios; and (3) low-resolution Google Street View images are used, failing to reflect the quality of real user-generated content.
-- **Paper Goals**: This paper aims to close this gap by systematically studying the location inference capabilities of MLRMs in privacy-sensitive scenarios.
+- **Goal**: This paper aims to close this gap by systematically studying the location inference capabilities of MLRMs in privacy-sensitive scenarios.
 
 ## Method
 

@@ -33,7 +33,7 @@ Automated decision-making systems are widely deployed in domains such as credit 
 
 Existing research on recourse fairness suffers from three core problems: (1) **Neglecting classifier decision behavior**—computing equal mean recourse costs only for rejected individuals ignores that groups with higher rejection rates bear a disproportionately greater overall recourse burden; (2) **Ignoring ground-truth labels**—failing to distinguish individuals who *should have been accepted but were incorrectly rejected* from those who were legitimately rejected, where the former are compelled to alter their features due to a systemic error; (3) **Gap metrics may mask unfairness**—a zero gap between two groups' social burdens does not imply fairness, as both groups may be suffering equally high burdens.
 
-- **Starting Point**: Reframing fairness from gap minimization to a Rawlsian minimax perspective that focuses on the worst-off group's social burden, and proposing MISOB, a lightweight training method that requires no sensitive attributes.
+- **Key Insight**: Reframing fairness from gap minimization to a Rawlsian minimax perspective that focuses on the worst-off group's social burden, and proposing MISOB, a lightweight training method that requires no sensitive attributes.
 
 ## Method
 

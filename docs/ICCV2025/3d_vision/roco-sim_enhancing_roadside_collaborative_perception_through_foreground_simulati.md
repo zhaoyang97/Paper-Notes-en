@@ -28,15 +28,15 @@ RoCo-Sim is proposed as the first simulation framework for roadside collaborativ
 
 ## Background & Motivation
 
-**State of the Field**: Roadside collaborative perception enhances vehicles' environmental understanding by enabling multiple roadside units to share perceptual data. Existing methods focus on model architecture design but perform poorly on recent datasets.
+**Background**: Roadside collaborative perception enhances vehicles' environmental understanding by enabling multiple roadside units to share perceptual data. Existing methods focus on model architecture design but perform poorly on recent datasets.
 
 **Limitations of Prior Work**: (1) Calibration of fixed roadside cameras is difficult and drifts over time; (2) prolonged intervals without passing vehicles result in sparse information density; (3) ensuring multi-view annotation consistency is challenging and data collection costs are high. Existing simulation methods (NeRF/3DGS) fail to reconstruct scenes under the sparse fixed viewpoints typical of roadside setups, while diffusion-based methods cannot guarantee multi-view consistency.
 
-**Root Cause**: Roadside perception models lack sufficient high-quality training data, and existing simulation methods are ill-suited for fixed-viewpoint roadside scenes.
+**Key Challenge**: Roadside perception models lack sufficient high-quality training data, and existing simulation methods are ill-suited for fixed-viewpoint roadside scenes.
 
-**Paper Goals**: To build the first roadside simulation framework that generates multi-view consistent, information-dense synthetic training data from single real images.
+**Goal**: To build the first roadside simulation framework that generates multi-view consistent, information-dense synthetic training data from single real images.
 
-**Starting Point**: Rather than adopting the scene reconstruction paradigm of NeRF/3DGS, the paper establishes a 3D-to-2D mapping via a 3D asset library, rendering digital vehicles onto real backgrounds — ensuring 3D consistency without requiring multi-view training data.
+**Key Insight**: Rather than adopting the scene reconstruction paradigm of NeRF/3DGS, the paper establishes a 3D-to-2D mapping via a 3D asset library, rendering digital vehicles onto real backgrounds — ensuring 3D consistency without requiring multi-view training data.
 
 **Core Idea**: Extrinsic optimization ensures accurate projection → an occlusion-aware sampler places assets appropriately in 3D space → DepthSAM models foreground-background occlusion relationships → style-transfer post-processing ensures photorealism. The entire pipeline can be deployed to new scenes without any training.
 

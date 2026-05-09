@@ -29,7 +29,7 @@ This paper introduces R-AVST, the first fine-grained spatio-temporal reasoning d
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal large language models (MLLMs) have advanced rapidly in video understanding, with models such as InternVL-2.5, Qwen2.5-VL, and VideoLLaMA3 demonstrating strong capabilities. However, existing research focuses predominantly on **simple video scenarios**, failing to reflect the complexity and diversity of real-world audio-visual events.
+**Background**: Multimodal large language models (MLLMs) have advanced rapidly in video understanding, with models such as InternVL-2.5, Qwen2.5-VL, and VideoLLaMA3 demonstrating strong capabilities. However, existing research focuses predominantly on **simple video scenarios**, failing to reflect the complexity and diversity of real-world audio-visual events.
 
 **Limitations of Prior Work**:
 
@@ -37,9 +37,9 @@ This paper introduces R-AVST, the first fine-grained spatio-temporal reasoning d
 
 **Model level**: Models such as LLaVA-ST and GroundingGPT have progressively extended spatio-temporal modeling but rely on large-scale high-quality annotated data and lack sufficient exploratory capacity. RL-based models including VideoChat-R1 and Video-R1 have begun leveraging GRPO to enhance reasoning, yet their reward designs offer limited support for audio-visual spatio-temporal reasoning and lack task formulations targeting complex audio-visual scenarios.
 
-**Root Cause**: The absence of a dataset that simultaneously provides **fine-grained spatio-temporal annotations** and **rich audio-visual event coverage** hampers the development of video understanding models capable of spatio-temporal reasoning in realistic, complex scenarios.
+**Key Challenge**: The absence of a dataset that simultaneously provides **fine-grained spatio-temporal annotations** and **rich audio-visual event coverage** hampers the development of video understanding models capable of spatio-temporal reasoning in realistic, complex scenarios.
 
-**Starting Point**: The paper addresses this gap from an audio-visual perspective by constructing the first audio-visual reasoning dataset with fine-grained spatio-temporal annotations, and adopts a rule-based reward GRPO training paradigm to directly optimize behavioral policy without intermediate supervision signals.
+**Key Insight**: The paper addresses this gap from an audio-visual perspective by constructing the first audio-visual reasoning dataset with fine-grained spatio-temporal annotations, and adopts a rule-based reward GRPO training paradigm to directly optimize behavioral policy without intermediate supervision signals.
 
 ## Method
 

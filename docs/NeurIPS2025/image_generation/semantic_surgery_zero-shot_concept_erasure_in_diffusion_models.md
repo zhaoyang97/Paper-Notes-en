@@ -39,7 +39,7 @@ Text-to-image diffusion models (e.g., Stable Diffusion) pose risks of generating
 
 - **Parameter modification methods** (ESD, UCE, MACE, Receler, etc.): Fine-tune or edit model weights to "forget" concepts, but suffer from catastrophic forgetting that degrades general generation capability; establish static defenses with poor robustness to concept variants (e.g., paraphrased prompts); and exhibit cumulative interference in multi-concept erasure settings.
 - **Existing inference-time methods** (SLD, SAFREE, etc.): Operate at the token level or at intermediate diffusion stages, but self-attention mechanisms spread target concept semantics across the entire token sequence, rendering local token-level interventions insufficient; furthermore, they fail to address concept "resurrection" caused by U-Net priors.
-- **Root Cause**: How to simultaneously achieve erasure completeness and locality under a zero-shot/inference-time strategy while maintaining robustness to prompt variants.
+- **Key Challenge**: How to simultaneously achieve erasure completeness and locality under a zero-shot/inference-time strategy while maintaining robustness to prompt variants.
 
 ### Core Idea
 

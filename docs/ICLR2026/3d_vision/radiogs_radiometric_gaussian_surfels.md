@@ -29,15 +29,15 @@ RadioGS introduces a radiometric consistency loss that minimizes the residual be
 
 ## Background & Motivation
 
-**State of the Field**: Inverse rendering based on Gaussian Splatting has advanced rapidly, efficiently recovering geometry, materials, and lighting from multi-view images. However, accurately decomposing global illumination effects—especially indirect illumination and inter-surface reflections—remains a core challenge.
+**Background**: Inverse rendering based on Gaussian Splatting has advanced rapidly, efficiently recovering geometry, materials, and lighting from multi-view images. However, accurately decomposing global illumination effects—especially indirect illumination and inter-surface reflections—remains a core challenge.
 
 **Limitations of Prior Work**: Existing methods handle indirect illumination in two main ways: (1) treating indirect radiance as a learnable residual (e.g., R3DG, GS-IR), where unconstrained optimization leads to ambiguous decomposition of lighting and materials; (2) querying indirect radiance from pre-trained NVS Gaussian primitives (e.g., IRGS, SVG-IR), where pre-training is supervised only for training viewpoints, making radiance queried from unobserved directions potentially incorrect.
 
-**Root Cause**: NVS training constrains the radiance of Gaussians only in camera-visible directions, whereas indirect illumination requires querying radiance from arbitrary directions (including inter-surface reflection directions). The lack of supervision for unobserved directions leads to inaccurate indirect radiance, causing lighting to be incorrectly baked into surface materials.
+**Key Challenge**: NVS training constrains the radiance of Gaussians only in camera-visible directions, whereas indirect illumination requires querying radiance from arbitrary directions (including inter-surface reflection directions). The lack of supervision for unobserved directions leads to inaccurate indirect radiance, causing lighting to be incorrectly baked into surface materials.
 
-**Paper Goals**: To provide a physics-based constraint that enables Gaussian surfels to obtain correct radiance values even in unobserved directions, thereby accurately modeling indirect illumination and inter-surface reflections.
+**Goal**: To provide a physics-based constraint that enables Gaussian surfels to obtain correct radiance values even in unobserved directions, thereby accurately modeling indirect illumination and inter-surface reflections.
 
-**Starting Point**: Drawing inspiration from self-training radiance caches—iteratively minimizing the rendering equation residual to drive Gaussian primitive radiance toward physically correct solutions.
+**Key Insight**: Drawing inspiration from self-training radiance caches—iteratively minimizing the rendering equation residual to drive Gaussian primitive radiance toward physically correct solutions.
 
 **Core Idea**: Radiometric consistency enforces that the learned radiance $L_\mathbf{G}$ of each Gaussian surfel agrees with its physically rendered radiance $L_\mathbf{G}^{PBR}$ derived from the rendering equation, forming a self-correcting loop: reconstruction supervision from camera viewpoints propagates to indirect illumination terms, while physical rendering in turn constrains radiance in unobserved directions.
 

@@ -28,15 +28,15 @@ This paper presents PIArena, a unified and extensible evaluation platform for pr
 
 ## Background & Motivation
 
-**State of the Field**: Prompt injection attacks are ranked by OWASP as the top security risk for LLM-based applications. Adversaries embed malicious instructions into contextual inputs (e.g., web pages, documents) to manipulate the backend LLM into executing attacker-desired tasks rather than user-intended ones. Prior work has proposed various attack strategies (heuristic and optimization-based) and defenses (detection-based and prevention-based).
+**Background**: Prompt injection attacks are ranked by OWASP as the top security risk for LLM-based applications. Adversaries embed malicious instructions into contextual inputs (e.g., web pages, documents) to manipulate the backend LLM into executing attacker-desired tasks rather than user-intended ones. Prior work has proposed various attack strategies (heuristic and optimization-based) and defenses (detection-based and prevention-based).
 
 **Limitations of Prior Work**: (1) No unified platform exists — different attacks, defenses, and benchmarks are implemented with heterogeneous configurations, precluding fair comparison. (2) Evaluations are insufficiently comprehensive — many defenses are assessed under narrow benchmark-attack combinations and later shown to be ineffective in alternative settings. (3) Attacks are overly static — all existing benchmarks use fixed-template attacks that fail to reflect real-world scenarios where adversaries iteratively refine their injections based on defense feedback.
 
-**Root Cause**: The absence of a unified evaluation ecosystem causes the true robustness of defenses to be overestimated — high performance reported under favorable evaluation conditions does not generalize to more diverse tasks or adaptive attack settings.
+**Key Challenge**: The absence of a unified evaluation ecosystem causes the true robustness of defenses to be overestimated — high performance reported under favorable evaluation conditions does not generalize to more diverse tasks or adaptive attack settings.
 
-**Paper Goals**: (1) Build a unified platform enabling plug-and-play evaluation of attacks, defenses, and benchmarks. (2) Design adaptive attack methods to assess the genuine robustness of defenses. (3) Comprehensively expose the limitations of existing defenses.
+**Goal**: (1) Build a unified platform enabling plug-and-play evaluation of attacks, defenses, and benchmarks. (2) Design adaptive attack methods to assess the genuine robustness of defenses. (3) Comprehensively expose the limitations of existing defenses.
 
-**Starting Point**: The paper elevates evaluation from isolated experiments to a platform ecosystem, providing standardized data formats, unified interfaces, and an extensible architecture that lowers the barrier for researchers to integrate and compare methods.
+**Key Insight**: The paper elevates evaluation from isolated experiments to a platform ecosystem, providing standardized data formats, unified interfaces, and an extensible architecture that lowers the barrier for researchers to integrate and compare methods.
 
 **Core Idea**: Unified platform + adaptive attacks + diverse realistic injection tasks = comprehensive stress testing of defense robustness.
 

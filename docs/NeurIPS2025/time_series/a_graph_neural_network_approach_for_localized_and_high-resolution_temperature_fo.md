@@ -28,15 +28,15 @@ This paper proposes a GCN-GRU hybrid framework for community-scale (2.5 km) high
 
 ## Background & Motivation
 
-**State of the Field**: Approximately 490,000 deaths per year are attributed to heat-wave-related causes globally. Current operational weather forecasting systems operate at 10–30 km resolution, insufficient to capture microscale extreme events such as urban heat islands. ML weather models (GraphCast, FourCastNet) focus on global scales, leaving local high-resolution forecasting underdeveloped.
+**Background**: Approximately 490,000 deaths per year are attributed to heat-wave-related causes globally. Current operational weather forecasting systems operate at 10–30 km resolution, insufficient to capture microscale extreme events such as urban heat islands. ML weather models (GraphCast, FourCastNet) focus on global scales, leaving local high-resolution forecasting underdeveloped.
 
 **Limitations of Prior Work**: NWP models are computationally expensive and resolution-limited; global ML models are not applicable at community scale (2.5 km); marginalized communities most in need of fine-grained warnings fall precisely in the blind spots of coarse-resolution models.
 
-**Root Cause**: Climate equity demands fine-grained forecasting, yet the most vulnerable regions in the Global South have the least data and the most limited computational resources.
+**Key Challenge**: Climate equity demands fine-grained forecasting, yet the most vulnerable regions in the Global South have the least data and the most limited computational resources.
 
-**Paper Goals**: Construct a lightweight, high-resolution (2.5 km, hourly) temperature forecasting model to serve as a foundation for localized heat wave warnings.
+**Goal**: Construct a lightweight, high-resolution (2.5 km, hourly) temperature forecasting model to serve as a foundation for localized heat wave warnings.
 
-**Starting Point**: GNNs are naturally suited to capturing neighborhood interactions over spatial grids; GRUs capture temporal dependencies. NOAA URMA 2.5 km analysis data are used as inputs.
+**Key Insight**: GNNs are naturally suited to capturing neighborhood interactions over spatial grids; GRUs capture temporal dependencies. NOAA URMA 2.5 km analysis data are used as inputs.
 
 **Core Idea**: A compact regional GCN-GRU model can deliver accurate community-scale temperature forecasts, and can be extended to data-scarce regions via transfer learning.
 

@@ -29,15 +29,15 @@ This paper proposes SDF-Net, a physics-guided structure-aware disentangled featu
 
 ## Background & Motivation
 
-**State of the Field**: Optical and SAR sensors are complementary in maritime surveillance — optical imagery provides high-resolution visual detail while SAR enables all-weather, all-day observation. Cross-modal ship ReID is a fundamental task for fusing these two heterogeneous data sources. Existing methods fall into three categories: implicit attention-based alignment (TransOSS), statistical/generative alignment (CycleGAN), and handcrafted geometric descriptors (HOPC).
+**Background**: Optical and SAR sensors are complementary in maritime surveillance — optical imagery provides high-resolution visual detail while SAR enables all-weather, all-day observation. Cross-modal ship ReID is a fundamental task for fusing these two heterogeneous data sources. Existing methods fall into three categories: implicit attention-based alignment (TransOSS), statistical/generative alignment (CycleGAN), and handcrafted geometric descriptors (HOPC).
 
 **Limitations of Prior Work**: Optical and SAR imagery exhibit severe nonlinear radiometric distortion (NRD) — passive visible-light reflection versus active microwave backscattering results in completely different textural appearances for the same target. Implicit alignment methods ignore physical priors; generative synthesis introduces artifacts and incurs high cost; person ReID assumptions about deformable bodies do not apply to rigid ship structures.
 
-**Root Cause**: Ships are rigid bodies whose geometric structure remains stable across modalities, yet texture is highly modality-dependent. Existing methods attempt to align all features without distinguishing structure from texture.
+**Key Challenge**: Ships are rigid bodies whose geometric structure remains stable across modalities, yet texture is highly modality-dependent. Existing methods attempt to align all features without distinguishing structure from texture.
 
-**Paper Goals**: To explicitly exploit geometric structure as a physics-grounded "anchor" for cross-modal association, enforcing strict structural consistency while tolerating modality-specific appearance variation.
+**Goal**: To explicitly exploit geometric structure as a physics-grounded "anchor" for cross-modal association, enforcing strict structural consistency while tolerating modality-specific appearance variation.
 
-**Starting Point**: Gradient energy is extracted from intermediate-layer features — abstract enough to filter low-level noise (e.g., SAR speckle) while preserving spatial topological information. At the terminal layer, shared and modality-specific features are disentangled and fused via additive residuals to maintain discriminability.
+**Key Insight**: Gradient energy is extracted from intermediate-layer features — abstract enough to filter low-level noise (e.g., SAR speckle) while preserving spatial topological information. At the terminal layer, shared and modality-specific features are disentangled and fused via additive residuals to maintain discriminability.
 
 **Core Idea**: Use intermediate-layer gradient energy statistics as scale-invariant structural descriptors to enforce cross-modal geometric consistency, while disentangling and fusing modality-invariant and modality-specific features at the terminal layer.
 

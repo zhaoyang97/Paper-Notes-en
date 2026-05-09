@@ -29,15 +29,15 @@ This paper proposes RLVRR, a framework that extends RLVR (reinforcement learning
 
 ## Background & Motivation
 
-**State of the Field**: RLVR approaches (e.g., DeepSeek-R1, GRPO) have achieved remarkable success in mathematics and code generation by providing reward signals through verification of final answer correctness—a single "verifiable dot." RLHF employs preference reward models to guide alignment in open-ended generation tasks.
+**Background**: RLVR approaches (e.g., DeepSeek-R1, GRPO) have achieved remarkable success in mathematics and code generation by providing reward signals through verification of final answer correctness—a single "verifiable dot." RLHF employs preference reward models to guide alignment in open-ended generation tasks.
 
 **Limitations of Prior Work**: (a) RLVR cannot be directly applied to open-ended generation—open-ended responses have no unique correct answer, making single-point verification inapplicable; (b) reward models in RLHF are prone to reward hacking (overfitting to surface features), require large-scale preference annotation data, and incur high training costs with instability.
 
-**Root Cause**: Open-ended generation requires simultaneous evaluation across multiple quality dimensions (content completeness, format, style), yet lacks deterministic verification signals analogous to mathematical answers.
+**Key Challenge**: Open-ended generation requires simultaneous evaluation across multiple quality dimensions (content completeness, format, style), yet lacks deterministic verification signals analogous to mathematical answers.
 
-**Paper Goals**: Design a method that automatically extracts multi-dimensional verifiable signals from reference answers, enabling the RLVR paradigm to generalize to open-ended generation.
+**Goal**: Design a method that automatically extracts multi-dimensional verifiable signals from reference answers, enabling the RLVR paradigm to generalize to open-ended generation.
 
-**Starting Point**: Reference answers are treated as a "source of rules"—analogous to how mathematical reasoning derives rules from ground truth, high-quality references are used to extract ordered linguistic signals (reward chains), upgrading single-point supervision to chain-based supervision.
+**Key Insight**: Reference answers are treated as a "source of rules"—analogous to how mathematical reasoning derives rules from ground truth, high-quality references are used to extract ordered linguistic signals (reward chains), upgrading single-point supervision to chain-based supervision.
 
 **Core Idea**: Decompose reference answers into keywords (content) and Python verification functions (style), using rule-based rewards along these two verifiable dimensions to replace reward models.
 

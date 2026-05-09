@@ -28,15 +28,15 @@ This paper proposes the Reward Feature Model (RFM), which learns shared reward f
 
 ## Background & Motivation
 
-**State of the Field**: RLHF trains a single reward function $r_\theta(x,y)$, implicitly assuming that all users share the same preference or that an average preference is a sufficient proxy.
+**Background**: RLHF trains a single reward function $r_\theta(x,y)$, implicitly assuming that all users share the same preference or that an average preference is a sufficient proxy.
 
 **Limitations of Prior Work**: When user preferences are highly divergent, a single reward model is extremely inefficient — a response preferred by 51% of users may be entirely unsatisfactory to the remaining 49%. Existing personalization methods based on nonlinear MLP adaptation suffer from severe overfitting under low-data regimes.
 
-**Root Cause**: How can limited data be used to simultaneously learn a generalizable reward representation and enable rapid adaptation to individual user preferences? Theoretically: should one increase the number of annotators or the number of annotations per person?
+**Key Challenge**: How can limited data be used to simultaneously learn a generalizable reward representation and enable rapid adaptation to individual user preferences? Theoretically: should one increase the number of annotators or the number of annotations per person?
 
-**Paper Goals**: Design a provably effective personalized reward modeling framework and provide theoretical guidance for data collection.
+**Goal**: Design a provably effective personalized reward modeling framework and provide theoretical guidance for data collection.
 
-**Starting Point**: Assuming each user's preference can be decomposed as a linear combination of shared features, the adaptation phase reduces to convex optimization — inherently suited to low-data settings. PAC learning theory is applied to rigorously analyze how error scales with $m$ and $n$.
+**Key Insight**: Assuming each user's preference can be decomposed as a linear combination of shared features, the adaptation phase reduces to convex optimization — inherently suited to low-data settings. PAC learning theory is applied to rigorously analyze how error scales with $m$ and $n$.
 
 **Core Idea**: A shared neural network learns reward features while linear weights handle personalization. Both theory and experiments demonstrate that "diverse annotators outperform deep annotation."
 

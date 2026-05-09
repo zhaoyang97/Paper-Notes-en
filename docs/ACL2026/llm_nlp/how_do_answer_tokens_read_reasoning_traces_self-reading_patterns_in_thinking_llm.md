@@ -29,15 +29,15 @@ This paper identifies a "benign self-reading" pattern in reasoning LLMs (e.g., D
 
 ## Background & Motivation
 
-**State of the Field**: Reasoning LLMs (e.g., DeepSeek-R1, GPT-5, Gemini 3) generate reasoning traces before producing answers (delimited by `</think>`). Activation steering has been shown to control the behavior of reasoning traces, such as compressing redundant output and inducing verification and backtracking.
+**Background**: Reasoning LLMs (e.g., DeepSeek-R1, GPT-5, Gemini 3) generate reasoning traces before producing answers (delimited by `</think>`). Activation steering has been shown to control the behavior of reasoning traces, such as compressing redundant output and inducing verification and backtracking.
 
 **Limitations of Prior Work**: Existing work primarily focuses on shaping the reasoning traces themselves, leaving unclear how answer tokens "read" and integrate reasoning traces to produce reliable outputs. How answer tokens navigate noise and exploit critical information in reasoning chains spanning thousands of tokens remains an open question.
 
-**Root Cause**: Reasoning traces contain both critical reasoning steps and exploratory attempts alongside redundant content. Answer tokens must engage in "selective reading," yet it remains unknown how the model achieves this or how reading patterns relate to correctness.
+**Key Challenge**: Reasoning traces contain both critical reasoning steps and exploratory attempts alongside redundant content. Answer tokens must engage in "selective reading," yet it remains unknown how the model achieves this or how reading patterns relate to correctness.
 
-**Paper Goals**: (1) Understand how answer tokens read reasoning traces; (2) establish the association between self-reading patterns and correctness; (3) leverage self-reading quality signals for training-free steering.
+**Goal**: (1) Understand how answer tokens read reasoning traces; (2) establish the association between self-reading patterns and correctness; (3) leverage self-reading quality signals for training-free steering.
 
-**Starting Point**: Analyze the attention distribution of answer tokens over reasoning tokens—trajectories and concentration points of the attention centroid reveal the model's "reading strategy."
+**Key Insight**: Analyze the attention distribution of answer tokens over reasoning tokens—trajectories and concentration points of the attention centroid reveal the model's "reading strategy."
 
 **Core Idea**: Benign self-reading constitutes a behavioral signature of internal certainty: the model has committed to a solution path and relies on a small number of key reasoning steps as evidence for answer generation. Forward drift of the attention centroid reflects "control" (advancing along the selected branch), while sustained focus on semantic anchors reflects "monitoring" (repeatedly verifying evidence).
 

@@ -29,11 +29,11 @@ This paper reveals the limitations of VPT from a Mixture-of-Experts (MoE) perspe
 
 ## Background & Motivation
 
-- **State of the Field**: Visual Prompt Tuning (VPT) appends learnable prompt tokens to ViT inputs for parameter-efficient fine-tuning and has become a prominent branch of PEFT methods.
+- **Background**: Visual Prompt Tuning (VPT) appends learnable prompt tokens to ViT inputs for parameter-efficient fine-tuning and has become a prominent branch of PEFT methods.
 - **Limitations of Prior Work**: The theoretical understanding of VPT remains shallow. Le et al. (2024) established a connection between attention mechanisms and MoE, showing that each attention head can be interpreted as a combination of MoE models, and that VPT corresponds to adding new prompt experts to these MoEs.
-- **Root Cause**: Through the MoE lens, pretrained experts $f_j(\bm{X}) = W_m^{V\top} \bm{x}_j$ are linear functions of the input $\bm{X}$, whereas prompt experts $f_{N+j'}(\bm{X}) = W_m^{V\top} \bm{p}_{j'}$ are fixed constant vectors independent of the input. This asymmetry in expressiveness limits VPT's adaptation capacity.
-- **Paper Goals**: To enhance the functional expressiveness of prompt experts while maintaining parameter efficiency.
-- **Starting Point**: Design an input-adaptive prompt generation mechanism that retains a simple functional form amenable to theoretical analysis.
+- **Key Challenge**: Through the MoE lens, pretrained experts $f_j(\bm{X}) = W_m^{V\top} \bm{x}_j$ are linear functions of the input $\bm{X}$, whereas prompt experts $f_{N+j'}(\bm{X}) = W_m^{V\top} \bm{p}_{j'}$ are fixed constant vectors independent of the input. This asymmetry in expressiveness limits VPT's adaptation capacity.
+- **Goal**: To enhance the functional expressiveness of prompt experts while maintaining parameter efficiency.
+- **Key Insight**: Design an input-adaptive prompt generation mechanism that retains a simple functional form amenable to theoretical analysis.
 - **Core Idea**: Aggregate global features via token-wise projectors and generate adaptive prompts via a shared MLP projector, upgrading prompt experts from constant functions to nonlinear functions of the input.
 
 ## Method

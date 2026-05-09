@@ -38,7 +38,7 @@ For computing the John ellipsoid of a symmetric convex polytope $P = \{x \in \ma
 
 **Computational Bottleneck**: Each iteration requires computing quadratic forms $a^\top B^{-1} a$ where $B$ is a weighted version of $A^\top A$. The standard approach via Cholesky decomposition costs $O(nd^2)$.
 
-**Paper Goals**: Exploit matrix structure (sparsity or small treewidth) to break the $O(nd^2)$ barrier.
+**Goal**: Exploit matrix structure (sparsity or small treewidth) to break the $O(nd^2)$ barrier.
 
 ## Method
 

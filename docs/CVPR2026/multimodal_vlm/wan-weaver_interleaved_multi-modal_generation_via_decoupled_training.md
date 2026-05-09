@@ -29,11 +29,11 @@ Wan-Weaver proposes a decoupled architecture consisting of a planner (VLM) and a
 
 ## Background & Motivation
 
-1. **State of the Field**: Interleaved multi-modal generation requires models to produce coherent content with interleaved text and images (e.g., illustrated tutorials, story visualization) following user instructions. GPT-4o+DALL-E3 leads via a pipeline approach, while open-source alternatives (Anole, Emu3) lag significantly behind.
+1. **Background**: Interleaved multi-modal generation requires models to produce coherent content with interleaved text and images (e.g., illustrated tutorials, story visualization) following user instructions. GPT-4o+DALL-E3 leads via a pipeline approach, while open-source alternatives (Anole, Emu3) lag significantly behind.
 2. **Limitations of Prior Work**: (1) High-quality real interleaved data is extremely scarce—web-crawled image-text data suffers from low quality and copyright risks; (2) Joint training of text understanding and image generation causes mutual interference, with generation training degrading comprehension; (3) Visual consistency across long sequences is difficult to maintain—characters generated earlier tend to change appearance later.
-3. **Root Cause**: Interleaved generation simultaneously demands *planning capability* (deciding when to insert images and formulating their descriptions) and *visual consistency* (maintaining character/style coherence across multiple images), yet the two require fundamentally different training signals and data.
-4. **Paper Goals**: Independently optimize planning and visualization through decoupled training, and substitute scarce real interleaved data with synthetic textual-proxy data.
-5. **Starting Point**: Decompose interleaved generation into two independently trainable sub-tasks—the planner only needs to learn "where to insert images and what to describe," which can be trained on purely textual proxy data; the visualizer only needs to learn "how to generate consistent images given a description and reference images."
+3. **Key Challenge**: Interleaved generation simultaneously demands *planning capability* (deciding when to insert images and formulating their descriptions) and *visual consistency* (maintaining character/style coherence across multiple images), yet the two require fundamentally different training signals and data.
+4. **Goal**: Independently optimize planning and visualization through decoupled training, and substitute scarce real interleaved data with synthetic textual-proxy data.
+5. **Key Insight**: Decompose interleaved generation into two independently trainable sub-tasks—the planner only needs to learn "where to insert images and what to describe," which can be trained on purely textual proxy data; the visualizer only needs to learn "how to generate consistent images given a description and reference images."
 6. **Core Idea**: Decoupled Training + textual-proxy data + Dense Prompt Context Window (DPCW) attention mechanism.
 
 ## Method

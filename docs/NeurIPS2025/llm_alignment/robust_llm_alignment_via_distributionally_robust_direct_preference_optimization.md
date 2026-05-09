@@ -27,15 +27,15 @@ This paper proposes two robust DPO variants—WDPO (Wasserstein) and KLDPO (KL d
 
 ## Background & Motivation
 
-**State of the Field**: RLHF/DPO assumes that training preference data is representative of true user preferences; however, real-world deployment involves users whose preferences vary substantially across geographic, demographic, and cultural dimensions.
+**Background**: RLHF/DPO assumes that training preference data is representative of true user preferences; however, real-world deployment involves users whose preferences vary substantially across geographic, demographic, and cultural dimensions.
 
 **Limitations of Prior Work**: Standard DPO is highly vulnerable to distribution shift—performance degrades sharply when test-time user preferences deviate from the training distribution. Additional challenges include reward hacking and the diversity of human preferences.
 
-**Root Cause**: Static training data cannot capture the dynamic and diverse nature of real-world preference distributions; worst-case guarantees are needed rather than average-case performance.
+**Key Challenge**: Static training data cannot capture the dynamic and diverse nature of real-world preference distributions; worst-case guarantees are needed rather than average-case performance.
 
-**Paper Goals**: ① Can DRO mitigate distribution shift in DPO? ② Can theoretical convergence guarantees be established? ③ How can scalable algorithms be designed?
+**Goal**: ① Can DRO mitigate distribution shift in DPO? ② Can theoretical convergence guarantees be established? ③ How can scalable algorithms be designed?
 
-**Starting Point**: DRO has been successfully applied in supervised learning and offline RL, making it a natural candidate for preference optimization in the DPO setting.
+**Key Insight**: DRO has been successfully applied in supervised learning and offline RL, making it a natural candidate for preference optimization in the DPO setting.
 
 **Core Idea**: A worst-case DRO objective is wrapped around the standard DPO objective, modeling preference distribution shift via Wasserstein or KL uncertainty sets.
 

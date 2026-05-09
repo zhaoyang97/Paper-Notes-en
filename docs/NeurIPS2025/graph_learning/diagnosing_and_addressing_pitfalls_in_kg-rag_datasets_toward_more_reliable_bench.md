@@ -28,13 +28,13 @@ A systematic audit of 16 KGQA datasets reveals an average factual correctness of
 
 ## Background & Motivation
 
-**State of the Field**: Knowledge graph question answering (KGQA) and KG-augmented RAG (KG-RAG) are active research directions, with canonical datasets such as WebQSP and CWQ widely adopted for evaluation. Reported Hit@1 scores on these benchmarks have been steadily climbing.
+**Background**: Knowledge graph question answering (KGQA) and KG-augmented RAG (KG-RAG) are active research directions, with canonical datasets such as WebQSP and CWQ widely adopted for evaluation. Reported Hit@1 scores on these benchmarks have been steadily climbing.
 
 **Limitations of Prior Work**: A systematic audit reveals serious quality issues in these canonical datasets—annotated answers are incorrect, outdated, or incomplete (Freebase is no longer maintained), questions are ambiguous or overly simple, and exact match (EM) evaluation is overly strict. WebQSP achieves a factual correctness rate of only 52%, and MetaQA only 20%.
 
-**Root Cause**: Evaluating on incorrectly annotated data means that a model reporting 97% Hit@1 may be genuinely correct only 48% of the time—rendering progress assessments across the KGQA community potentially unreliable.
+**Key Challenge**: Evaluating on incorrectly annotated data means that a model reporting 97% Hit@1 may be genuinely correct only 48% of the time—rendering progress assessments across the KGQA community potentially unreliable.
 
-**Paper Goals**: (a) Quantify and categorize quality issues in existing datasets; (b) construct a high-quality, verifiable KGQA benchmark.
+**Goal**: (a) Quantify and categorize quality issues in existing datasets; (b) construct a high-quality, verifiable KGQA benchmark.
 
 **Core Idea**: LLM-guided subgraph expansion generates multi-hop questions → SPARQL-based automatic answer verification → KGQAGen-10k with 96.3% accuracy.
 

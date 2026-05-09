@@ -27,18 +27,18 @@ content_hash: 333dd83736af78ce
 This paper proposes M²-Miner, the first MCTS-based automatic data mining framework for mobile GUI agents. Through the collaboration of three agents—InferAgent, OrchestraAgent, and JudgeAgent—it achieves a 64× improvement in mining efficiency, enriches intent diversity via an intent recycling strategy, and trains a GUI agent that achieves state-of-the-art performance on multiple benchmarks.
 
 ## Background & Motivation
-**State of the Field**: GUI agents automate software interactions by interpreting user intents and executing action sequences on graphical interfaces, representing a prominent research direction in both academia and industry. High-quality intent–trajectory training data is the core dependency of current GUI agents.
+**Background**: GUI agents automate software interactions by interpreting user intents and executing action sequences on graphical interfaces, representing a prominent research direction in both academia and industry. High-quality intent–trajectory training data is the core dependency of current GUI agents.
 
 **Limitations of Prior Work**:
    - **High cost**: Manual annotation (e.g., AITW, AndroidControl) requires hours per sample, with costs as high as $0.36/image.
    - **Low quality**: Both manually annotated and automatically mined data frequently contain redundant steps, ambiguous intent descriptions, and biased action paths.
    - **Low diversity**: Existing datasets adopt an intent-to-flat-trajectory structure, recording only a single successful path per intent, resulting in monotonic intent types.
 
-**Root Cause**: Manual annotation is quality-controllable but not scalable, while existing automated mining methods (e.g., AgentQ based on vanilla MCTS, OS-Genesis based on rule-driven exploration) suffer from low efficiency, are limited to web environments, or produce only single trajectories.
+**Key Challenge**: Manual annotation is quality-controllable but not scalable, while existing automated mining methods (e.g., AgentQ based on vanilla MCTS, OS-Genesis based on rule-driven exploration) suffer from low efficiency, are limited to web environments, or produce only single trajectories.
 
-**Paper Goals**: How to automatically mine high-quality, high-diversity mobile GUI interaction trajectory data at low cost?
+**Goal**: How to automatically mine high-quality, high-diversity mobile GUI interaction trajectory data at low cost?
 
-**Starting Point**: The paper introduces MCTS into mobile GUI data mining, but vanilla MCTS suffers from extremely low efficiency due to random expansion. The authors observe that: (a) the expansion phase requires intelligent guidance rather than random exploration; (b) the simulation phase can replace rollouts with process rewards; (c) non-primary paths in the search tree contain additional valuable intent–trajectory pairs.
+**Key Insight**: The paper introduces MCTS into mobile GUI data mining, but vanilla MCTS suffers from extremely low efficiency due to random expansion. The authors observe that: (a) the expansion phase requires intelligent guidance rather than random exploration; (b) the simulation phase can replace rollouts with process rewards; (c) non-primary paths in the search tree contain additional valuable intent–trajectory pairs.
 
 **Core Idea**: MCTS + three-agent collaboration (guided expansion + accelerated ranking + process evaluation) + intent recycling = efficient, high-quality, and high-diversity GUI data mining.
 

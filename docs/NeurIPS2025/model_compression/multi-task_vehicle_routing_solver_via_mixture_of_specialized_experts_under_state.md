@@ -32,15 +32,15 @@ This paper proposes the **State-Decomposable MDP (SDMDP)** framework, which refo
 
 ## Background & Motivation
 
-**State of the Field**: The Vehicle Routing Problem (VRP) is a classic combinatorial optimization problem. Real-world applications involve numerous variants (capacity constraints, open routes, backhaul pickup, time windows, distance limits, etc.), and neural solvers have demonstrated strong performance on individual VRP variants.
+**Background**: The Vehicle Routing Problem (VRP) is a classic combinatorial optimization problem. Real-world applications involve numerous variants (capacity constraints, open routes, backhaul pickup, time windows, distance limits, etc.), and neural solvers have demonstrated strong performance on individual VRP variants.
 
 **Limitations of Prior Work**: Specialized neural solvers require training from scratch for each VRP variant, incurring prohibitive costs. While unified solvers can handle multiple variants simultaneously, they fail to exploit the **combinatorial structure** of VRP variants—each variant is derived from shared base VRP components.
 
-**Root Cause**: The number of VRP variants grows exponentially with attribute combinations (5 base constraints yield 16 variants), and existing fine-tuning/adapter methods do not scale efficiently; unified models, meanwhile, fail to leverage the specialized knowledge of base solvers.
+**Key Challenge**: The number of VRP variants grows exponentially with attribute combinations (5 base constraints yield 16 variants), and existing fine-tuning/adapter methods do not scale efficiently; unified models, meanwhile, fail to leverage the specialized knowledge of base solvers.
 
-**Paper Goals**: To enable unified solvers to be aware of the shared component nature among VRP variants, and to actively reuse specialized solvers trained on base VRP variants.
+**Goal**: To enable unified solvers to be aware of the shared component nature among VRP variants, and to actively reuse specialized solvers trained on base VRP variants.
 
-**Starting Point**: Starting from the decomposition of MDP state spaces, the paper proves that the optimality of base policies can be transferred to a unified policy.
+**Key Insight**: Starting from the decomposition of MDP state spaces, the paper proves that the optimality of base policies can be transferred to a unified policy.
 
 **Core Idea**: The VRP state space is decomposed into a Cartesian product of base state spaces; frozen LoRA base experts combined with an adaptive gating mechanism mix policies in the latent space.
 

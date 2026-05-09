@@ -28,11 +28,11 @@ This paper proposes Spike Imaging Velocimetry (SIV), the first systematic applic
 
 ## Background & Motivation
 
-1. **State of the Field**: Particle Image Velocimetry (PIV) is a widely adopted non-intrusive imaging technique in fluid mechanics that captures velocity distributions by tracking the displacement of tracer particles. Learning-based PIV methods built on optical flow networks (e.g., RAFT-PIV) have achieved significant progress.
+1. **Background**: Particle Image Velocimetry (PIV) is a widely adopted non-intrusive imaging technique in fluid mechanics that captures velocity distributions by tracking the displacement of tracer particles. Learning-based PIV methods built on optical flow networks (e.g., RAFT-PIV) have achieved significant progress.
 2. **Limitations of Prior Work**: (a) Conventional cameras have limited temporal resolution, causing accuracy degradation due to large inter-frame displacements in high-speed fluid scenarios; (b) sparse regions without tracer particles yield discrete signals, yet a continuous flow field must still be estimated; (c) small-scale vortices and unstructured patterns in turbulence further complicate estimation; (d) performance gains in existing PIV networks primarily stem from advances in optical flow architectures, lacking designs tailored to fluid characteristics.
-3. **Root Cause**: High-speed turbulence simultaneously demands high temporal resolution (to reduce inter-frame displacement) and high dynamic range (to handle uneven illumination), requirements that conventional cameras cannot satisfy concurrently.
-4. **Paper Goals**: Exploit the ultra-high temporal resolution (20,000 Hz) and high dynamic range of spike cameras to resolve the hardware bottleneck, while designing a dedicated network tailored to fluid properties.
-5. **Starting Point**: Spike cameras asynchronously accumulate photons and output binary spike streams, making them naturally suited for high-speed motion scenarios. Graph neural networks are employed to aggregate context over fluid topology, and multi-scale velocity refinement addresses small-scale vortices.
+3. **Key Challenge**: High-speed turbulence simultaneously demands high temporal resolution (to reduce inter-frame displacement) and high dynamic range (to handle uneven illumination), requirements that conventional cameras cannot satisfy concurrently.
+4. **Goal**: Exploit the ultra-high temporal resolution (20,000 Hz) and high dynamic range of spike cameras to resolve the hardware bottleneck, while designing a dedicated network tailored to fluid properties.
+5. **Key Insight**: Spike cameras asynchronously accumulate photons and output binary spike streams, making them naturally suited for high-speed motion scenarios. Graph neural networks are employed to aggregate context over fluid topology, and multi-scale velocity refinement addresses small-scale vortices.
 6. **Core Idea**: Spike cameras resolve the hardware bottleneck; fluid-aware graph encoders and multi-scale refinement resolve the algorithmic bottleneck.
 
 ## Method

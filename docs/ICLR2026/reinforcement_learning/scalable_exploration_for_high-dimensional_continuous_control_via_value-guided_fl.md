@@ -28,7 +28,7 @@ This paper proposes Qflex (Q-guided Flow Exploration), a scalable RL method for 
 
 ## Background & Motivation
 
-**State of the Field**: Controlling high-dimensional dynamical systems (e.g., full-body musculoskeletal models, multi-legged robots) is a core challenge for RL. Action spaces can reach hundreds of dimensions, rendering standard Gaussian exploration severely ineffective.
+**Background**: Controlling high-dimensional dynamical systems (e.g., full-body musculoskeletal models, multi-legged robots) is a core challenge for RL. Action spaces can reach hundreds of dimensions, rendering standard Gaussian exploration severely ineffective.
 
 **Limitations of Prior Work**:
 - (1) Gaussian noise exploration suffers exponentially declining coverage as dimensionality grows, sharply degrading sample efficiency.
@@ -36,7 +36,7 @@ This paper proposes Qflex (Q-guided Flow Exploration), a scalable RL method for 
 - (3) Diffusion/flow policies address multimodality but rely on isotropic initial distributions, remaining inefficient in high dimensions.
 - (4) 700 muscle actuators far exceed the operational range of existing methods.
 
-**Starting Point**: Q-function-guided probability flow aligns exploration with task-relevant directions while preserving the original high-dimensional action space.
+**Key Insight**: Q-function-guided probability flow aligns exploration with task-relevant directions while preserving the original high-dimensional action space.
 
 ## Method
 

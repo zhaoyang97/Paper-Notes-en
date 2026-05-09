@@ -29,15 +29,15 @@ This work introduces MimeQA, the first nonverbal social reasoning benchmark buil
 
 ## Background & Motivation
 
-**State of the Field**: Socially intelligent AI is increasingly important, yet existing research focuses predominantly on purely linguistic data and tasks (e.g., social dialogue, QA), or on multimodal data dominated by language. VideoLLMs achieve strong performance on benchmarks such as Ego4D and Video-MME.
+**Background**: Socially intelligent AI is increasingly important, yet existing research focuses predominantly on purely linguistic data and tasks (e.g., social dialogue, QA), or on multimodal data dominated by language. VideoLLMs achieve strong performance on benchmarks such as Ego4D and Video-MME.
 
 **Limitations of Prior Work**: (i) Existing benchmarks rely heavily on the language modality, treating nonverbal signals (body language, gestures, facial expressions) as secondary information; (ii) this leads to progress in language understanding while nonverbal social understanding remains severely underdeveloped; (iii) some benchmarks can be solved reasonably well even without video input, indicating severe language bias.
 
-**Root Cause**: Genuine social intelligence requires understanding both verbal and nonverbal signals simultaneously, yet current models and evaluation frameworks are overwhelmingly language-centric, lacking effective means to measure nonverbal social cognition.
+**Key Challenge**: Genuine social intelligence requires understanding both verbal and nonverbal signals simultaneously, yet current models and evaluation frameworks are overwhelmingly language-centric, lacking effective means to measure nonverbal social cognition.
 
-**Paper Goals**: How can AI models' nonverbal social reasoning capabilities be systematically evaluated?
+**Goal**: How can AI models' nonverbal social reasoning capabilities be systematically evaluated?
 
-**Starting Point**: Mime performance videos—an art form that conveys meaning exclusively through gesture and movement, completely independent of language—serve as the evaluation medium.
+**Key Insight**: Mime performance videos—an art form that conveys meaning exclusively through gesture and movement, completely independent of language—serve as the evaluation medium.
 
 **Core Idea**: Mime performances inherently exclude linguistic cues, compelling AI models to rely purely on their understanding of human body movement, gesture, and social interaction to answer questions.
 

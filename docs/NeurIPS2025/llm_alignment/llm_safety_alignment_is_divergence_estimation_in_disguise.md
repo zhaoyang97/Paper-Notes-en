@@ -29,15 +29,15 @@ This paper establishes a unified theoretical framework demonstrating that alignm
 
 ## Background & Motivation
 
-**State of the Field**: Mainstream LLM safety alignment methods include RLHF, DPO, KTO, and BCO, yet a unified theoretical explanation connecting these approaches is lacking. Prior work has observed that aligned models exhibit clearly separated clusters for safe and harmful prompts in their latent spaces.
+**Background**: Mainstream LLM safety alignment methods include RLHF, DPO, KTO, and BCO, yet a unified theoretical explanation connecting these approaches is lacking. Prior work has observed that aligned models exhibit clearly separated clusters for safe and harmful prompts in their latent spaces.
 
 **Limitations of Prior Work**: This "separation effect" has been leveraged in attack and defense strategies, but its root cause remains unclear—whether it is an incidental phenomenon or an intrinsic consequence of alignment. Systematic theoretical analysis of the connections among different alignment methods is also absent.
 
-**Root Cause**: All existing alignment methods aim to make models prefer safe responses, yet a unified perspective for understanding their shared mechanism, explaining the separation phenomenon, and guiding the design of new methods is missing.
+**Key Challenge**: All existing alignment methods aim to make models prefer safe responses, yet a unified perspective for understanding their shared mechanism, explaining the separation phenomenon, and guiding the design of new methods is missing.
 
-**Paper Goals**: ① Why does alignment lead to latent-space separation? ② What is the unified mathematical nature of different alignment methods? ③ Can this understanding guide the design of better alignment methods?
+**Goal**: ① Why does alignment lead to latent-space separation? ② What is the unified mathematical nature of different alignment methods? ③ Can this understanding guide the design of better alignment methods?
 
-**Starting Point**: Reinterpreting alignment losses as variational problems in divergence estimation, where different divergences (TV, JS, KL) correspond to different alignment methods.
+**Key Insight**: Reinterpreting alignment losses as variational problems in divergence estimation, where different divergences (TV, JS, KL) correspond to different alignment methods.
 
 **Core Idea**: Alignment ≈ divergence estimation; separation is a natural consequence of divergence estimation; KL divergence is most sensitive to large distributional shifts and is therefore best suited for safety alignment.
 

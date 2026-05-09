@@ -29,15 +29,15 @@ This paper presents MSTAR, the first multi-query scene text retrieval method tha
 
 ## Background & Motivation
 
-**State of the Field**: Scene Text Retrieval aims to search for images containing relevant text from an image collection given a query, with broad applications in signature retrieval, keyframe extraction, and related tasks. Significant progress has been made in recent years with the aid of accurate text localization.
+**Background**: Scene Text Retrieval aims to search for images containing relevant text from an image collection given a query, with broad applications in signature retrieval, keyframe extraction, and related tasks. Significant progress has been made in recent years with the aid of accurate text localization.
 
 **Limitations of Prior Work**: (1) Existing methods typically require expensive bounding box annotations (at word level, text-line level, etc.) for training; (2) most methods adopt customized retrieval strategies that struggle to handle multiple query types (word, phrase, combined, and semantic) in a unified manner.
 
-**Root Cause**: Vision-language models (VLMs) demonstrate strong performance under large-scale box-free pretraining, yet tend to focus on salient visual concepts while neglecting fine-grained scene text instances (e.g., small text within images).
+**Key Challenge**: Vision-language models (VLMs) demonstrate strong performance under large-scale box-free pretraining, yet tend to focus on salient visual concepts while neglecting fine-grained scene text instances (e.g., small text within images).
 
-**Paper Goals**: To achieve scene text retrieval without bounding box supervision while unifying multiple query types.
+**Goal**: To achieve scene text retrieval without bounding box supervision while unifying multiple query types.
 
-**Starting Point**: Leveraging the attention mechanism of VLMs, the model progressively transfers focus from high-attention regions to overlooked regions via Attention Recycling.
+**Key Insight**: Leveraging the attention mechanism of VLMs, the model progressively transfers focus from high-attention regions to overlooked regions via Attention Recycling.
 
 **Core Idea**: Progressively masking high-attention regions forces the model to attend to non-salient text, while style instructions unify multiple query types.
 

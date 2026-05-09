@@ -28,15 +28,15 @@ This paper proposes CrossTrainer, a method that discovers sport-agnostic skill a
 
 ## Background & Motivation
 
-**State of the Field**: Video-based skill assessment aims to score athletic performance and identify areas for improvement. Existing methods (e.g., ExpertAF, Stream-VLM) are trained and evaluated within a single sport or action category and rely heavily on expert-level annotations.
+**Background**: Video-based skill assessment aims to score athletic performance and identify areas for improvement. Existing methods (e.g., ExpertAF, Stream-VLM) are trained and evaluated within a single sport or action category and rely heavily on expert-level annotations.
 
 **Limitations of Prior Work**: (a) While approximately 8,000 sports exist globally, only a small fraction have sufficient annotated data — long-tail sports are severely underrepresented; (b) expert annotation is expensive and does not scale; (c) all existing methods assume that training and testing occur within the same sport, precluding cross-sport generalization.
 
-**Root Cause**: Conventional action understanding seeks invariance to execution differences (recognizing *what* is being done), whereas skill assessment must be sensitive to exactly those differences (capturing *how* it is done) — yet the evaluation dimensions of different sports appear superficially incompatible.
+**Key Challenge**: Conventional action understanding seeks invariance to execution differences (recognizing *what* is being done), whereas skill assessment must be sensitive to exactly those differences (capturing *how* it is done) — yet the evaluation dimensions of different sports appear superficially incompatible.
 
-**Paper Goals**: To construct a sport-agnostic video representation that enables a model trained on data-rich sports to transfer to novel sports in a zero-shot setting.
+**Goal**: To construct a sport-agnostic video representation that enables a model trained on data-rich sports to transfer to novel sports in a zero-shot setting.
 
-**Starting Point**: Cognitive science research demonstrates that motor skills transfer across sports (e.g., basketball players make better decisions in soccer than tennis players do), implying the existence of shared underlying skill dimensions. This work is the first to translate that intuition into a functioning video model.
+**Key Insight**: Cognitive science research demonstrates that motor skills transfer across sports (e.g., basketball players make better decisions in soccer than tennis players do), implying the existence of shared underlying skill dimensions. This work is the first to translate that intuition into a functioning video model.
 
 **Core Idea**: Learn a set of sport-agnostic *skill attributes* (e.g., balance, control, coordination) as intermediate representations, decomposing skill assessment into sport-generic and sport-specific components.
 

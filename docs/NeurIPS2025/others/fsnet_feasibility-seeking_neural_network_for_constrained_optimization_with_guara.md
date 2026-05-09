@@ -34,7 +34,7 @@ Using ML methods as fast surrogates for constrained optimization has become a pr
 - **Penalty methods**: Provide no feasibility guarantees and often yield severely infeasible solutions.
 - **Projection methods**: Theoretically feasible but projection onto general constraint sets is costly.
 - **Iterative methods** (DC3, ENFORCE): Handle equality and inequality constraints separately without unified guarantees.
-- **Root Cause**: The fundamental trade-off between speed and feasibility.
+- **Key Challenge**: The fundamental trade-off between speed and feasibility.
 
 ## Method
 

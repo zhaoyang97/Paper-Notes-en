@@ -28,9 +28,9 @@ This work formulates zero-shot anomaly generation as a text-guided localized sty
 
 ## Background & Motivation
 
-**State of the Field**: Real anomaly images are extremely scarce and highly diverse in industrial anomaly detection. Existing anomaly generation methods suffer from three major limitations: (1) heuristic methods (CutPaste, DRAEM, etc.) generate anomalies lacking visual realism; (2) diffusion-based methods (AnoDiff, AnomalyAny, etc.) produce more realistic results but require large numbers of normal images and impose heavy computational costs (>1B parameters); (3) few-shot methods still require a small set of real anomaly images, which are costly to collect.
+**Background**: Real anomaly images are extremely scarce and highly diverse in industrial anomaly detection. Existing anomaly generation methods suffer from three major limitations: (1) heuristic methods (CutPaste, DRAEM, etc.) generate anomalies lacking visual realism; (2) diffusion-based methods (AnoDiff, AnomalyAny, etc.) produce more realistic results but require large numbers of normal images and impose heavy computational costs (>1B parameters); (3) few-shot methods still require a small set of real anomaly images, which are costly to collect.
 
-**Starting Point**: Style transfer is naturally suited for anomaly generation—it can modify local visual attributes while preserving the overall image content. However, it has never been applied to anomaly generation prior to this work.
+**Key Insight**: Style transfer is naturally suited for anomaly generation—it can modify local visual attributes while preserving the overall image content. However, it has never been applied to anomaly generation prior to this work.
 
 ## Core Problem
 **How to generate visually realistic and semantically aligned localized anomaly images in a zero-shot, lightweight setting, using only a single normal image and a text description (object category + defect type)?**

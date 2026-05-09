@@ -29,15 +29,15 @@ ReHARK is a four-stage refinement pipeline that constructs hybrid semantic-visua
 
 ## Background & Motivation
 
-**State of the Field**: Vision-language models such as CLIP exhibit strong zero-shot capabilities, yet still require adaptation for specific downstream tasks. Training-free methods like Tip-Adapter avoid fine-tuning via cache mechanisms, but are essentially local Nadaraya-Watson (NW) estimators.
+**Background**: Vision-language models such as CLIP exhibit strong zero-shot capabilities, yet still require adaptation for specific downstream tasks. Training-free methods like Tip-Adapter avoid fine-tuning via cache mechanisms, but are essentially local Nadaraya-Watson (NW) estimators.
 
 **Limitations of Prior Work**: Local NW estimators suffer from boundary bias and lack global structural regularization. ProKeR introduces RKHS-based global regularization but remains limited in the extreme 1-shot regime, where a single visual sample fails to capture domain-specific nuances.
 
-**Root Cause**: With only one visual sample available, how can one balance the retention of pretrained knowledge (stability) with adaptation to new tasks (plasticity)?
+**Key Challenge**: With only one visual sample available, how can one balance the retention of pretrained knowledge (stability) with adaptation to new tasks (plasticity)?
 
-**Paper Goals**: (1) How to construct a more robust initial prior than pure visual features? (2) How to mitigate distribution shift between the support and query sets? (3) How to handle heterogeneous feature geometries across datasets?
+**Goal**: (1) How to construct a more robust initial prior than pure visual features? (2) How to mitigate distribution shift between the support and query sets? (3) How to handle heterogeneous feature geometries across datasets?
 
-**Starting Point**: A single visual sample is insufficient for robust adaptation; it is necessary to introduce complementary priors from textual knowledge (CLIP + GPT-3) and visual prototypes, while employing multi-scale kernels to capture feature geometry at different scales.
+**Key Insight**: A single visual sample is insufficient for robust adaptation; it is necessary to introduce complementary priors from textual knowledge (CLIP + GPT-3) and visual prototypes, while employing multi-scale kernels to capture feature geometry at different scales.
 
 **Core Idea**: Fuse CLIP zero-shot weights, GPT-3 dense semantic descriptions, and visual class prototypes into a hybrid prior, then perform global kernel ridge regression adaptation in RKHS via multi-scale RBF kernel integration.
 

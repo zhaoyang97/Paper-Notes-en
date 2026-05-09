@@ -29,15 +29,15 @@ This paper introduces ReTraceQA, the first reasoning process evaluation benchmar
 
 ## Background & Motivation
 
-**State of the Field**: Small language models (SLMs, ≤10B parameters) achieve increasingly strong performance on commonsense reasoning benchmarks. However, current evaluation practices rely almost entirely on final answer correctness—a prediction is deemed correct as long as it matches the gold answer, with no consideration of whether the underlying reasoning is sound.
+**Background**: Small language models (SLMs, ≤10B parameters) achieve increasingly strong performance on commonsense reasoning benchmarks. However, current evaluation practices rely almost entirely on final answer correctness—a prediction is deemed correct as long as it matches the gold answer, with no consideration of whether the underlying reasoning is sound.
 
 **Limitations of Prior Work**: (1) Models can arrive at correct answers via invalid reasoning paths (e.g., shortcut reasoning or accidental correctness from flawed premises), causing answer-only evaluation to artificially inflate performance metrics. (2) Existing reasoning process evaluation benchmarks (ProcessBench, MR-Ben, etc.) focus on mathematics and science, leaving commonsense reasoning process evaluation entirely unaddressed. (3) Process reward models (PRMs) and LLM judges have primarily been used for Best-of-N selection to optimize performance, rather than to examine whether correct answers are obtained through valid reasoning paths.
 
-**Root Cause**: There is a substantial gap between the high benchmark scores achieved by SLMs and their true reasoning capabilities—answer correctness does not imply reasoning correctness, yet current evaluation frameworks cannot distinguish between the two.
+**Key Challenge**: There is a substantial gap between the high benchmark scores achieved by SLMs and their true reasoning capabilities—answer correctness does not imply reasoning correctness, yet current evaluation frameworks cannot distinguish between the two.
 
-**Paper Goals**: To construct the first step-level reasoning process evaluation benchmark for commonsense reasoning, quantify the degree to which answer-only evaluation overestimates SLM capabilities, and assess the performance of LLM judges and PRMs in the commonsense reasoning domain.
+**Goal**: To construct the first step-level reasoning process evaluation benchmark for commonsense reasoning, quantify the degree to which answer-only evaluation overestimates SLM capabilities, and assess the performance of LLM judges and PRMs in the commonsense reasoning domain.
 
-**Starting Point**: The paper focuses on *process errors*—instances where the answer is correct but the reasoning is flawed—and establishes a gold standard through expert annotation, which is then used to measure the reliability of automated evaluation methods.
+**Key Insight**: The paper focuses on *process errors*—instances where the answer is correct but the reasoning is flawed—and establishes a gold standard through expert annotation, which is then used to measure the reliability of automated evaluation methods.
 
 **Core Idea**: Seven SLMs generate chain-of-thought reasoning traces across four commonsense reasoning datasets. Three PhD-level experts annotate each trace with step-level error locations and error categories (Misinterpretation / Hallucination / Reasoning), producing a 2,421-instance benchmark. LLM judges and PRMs are then evaluated under both reference-free and reference-based settings.
 

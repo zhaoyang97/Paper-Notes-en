@@ -29,7 +29,7 @@ This paper proposes HierarchicalPrune, which exploits the hierarchical functiona
 ## Background & Motivation
 State-of-the-art text-to-image diffusion models such as SD3.5 and FLUX have reached parameter scales of 8–11B. While their image quality far surpasses earlier models like SDXL and SD1.5, the enormous model size poses serious deployment challenges.
 
-**Root Cause**: Although quantitative metrics (e.g., GenEval) suggest that smaller models such as SANA-Sprint-1.6B (2B parameters) perform competitively, user evaluations on the Artificial Analysis leaderboard reveal a **perceptual quality gap between small and large models that quantitative metrics fail to capture**. Deploying large models in resource-constrained settings therefore remains an essential need.
+**Key Challenge**: Although quantitative metrics (e.g., GenEval) suggest that smaller models such as SANA-Sprint-1.6B (2B parameters) perform competitively, user evaluations on the Artificial Analysis leaderboard reveal a **perceptual quality gap between small and large models that quantitative metrics fail to capture**. Deploying large models in resource-constrained settings therefore remains an essential need.
 
 **Limitations of Prior Work**:
 1. **Reducing sampling steps and efficient operators**: improve speed only, without reducing memory.

@@ -28,15 +28,15 @@ This paper identifies a vicious cycle between the encoder (producing sharp but n
 
 ## Background & Motivation
 
-**State of the Field**: Object-Centric Learning (OCL) aims to unsupervisedly decompose videos into per-object representations (slots). Mainstream methods adopt a slot attention + reconstruction paradigm, and recent works leverage DINOv2 features to improve object segmentation quality.
+**Background**: Object-Centric Learning (OCL) aims to unsupervisedly decompose videos into per-object representations (slots). Mainstream methods adopt a slot attention + reconstruction paradigm, and recent works leverage DINOv2 features to improve object segmentation quality.
 
 **Limitations of Prior Work**: A vicious cycle exists between the encoder and decoder — (a) the encoder (DINOv2) produces attention maps that are sharp but contaminated by high-frequency noise, posing an ill-posed reconstruction task for the decoder and yielding blurry reconstruction masks; (b) the MSE reconstruction loss acts as a low-pass filter, feeding back gradients to the encoder that lack high-frequency information and thus fail to suppress noise.
 
-**Root Cause**: The encoder's noise problem and the decoder's blurriness problem mutually reinforce each other — neither party can learn from the other without being misled by the other's deficiencies.
+**Key Challenge**: The encoder's noise problem and the decoder's blurriness problem mutually reinforce each other — neither party can learn from the other without being misled by the other's deficiencies.
 
-**Paper Goals**: To break the vicious cycle between the encoder and decoder so that each component reinforces rather than degrades the other.
+**Goal**: To break the vicious cycle between the encoder and decoder so that each component reinforces rather than degrades the other.
 
-**Starting Point**: Exploit the complementary strengths of the encoder and decoder — the encoder's attention maps have sharp boundaries despite being noisy, while the decoder's reconstruction masks are spatially consistent despite being blurry — and design a cross-directional contrastive learning objective that allows each to compensate for the other's weaknesses.
+**Key Insight**: Exploit the complementary strengths of the encoder and decoder — the encoder's attention maps have sharp boundaries despite being noisy, while the decoder's reconstruction masks are spatially consistent despite being blurry — and design a cross-directional contrastive learning objective that allows each to compensate for the other's weaknesses.
 
 **Core Idea**: Use the decoder's spatially consistent masks to "denoise" the encoder's attention, while using the encoder's sharp attention to "deblur" the decoder's reconstruction, forming a virtuous cycle.
 

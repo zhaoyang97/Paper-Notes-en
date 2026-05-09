@@ -28,18 +28,18 @@ This paper systematically evaluates LLM "scoping" methods—restricting deployed
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are deployed in task-specific scenarios (e.g., shopping assistants, coding assistants) but continue to respond to arbitrary queries (e.g., writing poems, answering physics questions). Safety alignment addresses the rejection of harmful content but does not address the rejection of benign yet out-of-scope content.
+**Background**: LLMs are deployed in task-specific scenarios (e.g., shopping assistants, coding assistants) but continue to respond to arbitrary queries (e.g., writing poems, answering physics questions). Safety alignment addresses the rejection of harmful content but does not address the rejection of benign yet out-of-scope content.
 
 **Limitations of Prior Work**:
    - Existing safety alignment only rejects harmful requests, not out-of-scope ones—a shopping chatbot should not answer astrophysics questions.
    - There is no systematic comparative evaluation of methods for restricting LLMs to specific tasks.
    - The effect of training data diversity on scoping performance remains entirely unexplored.
 
-**Root Cause**: The generality of LLMs is a strength (they can comprehend any query), yet deployment requires scope restriction—the challenge is how to reliably reject out-of-domain queries while preserving in-domain capability.
+**Key Challenge**: The generality of LLMs is a strength (they can comprehend any query), yet deployment requires scope restriction—the challenge is how to reliably reject out-of-domain queries while preserving in-domain capability.
 
-**Paper Goals**: Systematically evaluate five scoping methods to identify best practices and key influencing factors.
+**Goal**: Systematically evaluate five scoping methods to identify best practices and key influencing factors.
 
-**Starting Point**: Scoping is formulated as a dual task of classification and generation—the model must not only reject out-of-domain queries but also maintain high-quality responses within the domain.
+**Key Insight**: Scoping is formulated as a dual task of classification and generation—the model must not only reject out-of-domain queries but also maintain high-quality responses within the domain.
 
 **Core Idea**: Scoping effectiveness depends on training data diversity—SFT is preferred under high diversity, CB under low diversity, and their combination yields the most robust performance.
 

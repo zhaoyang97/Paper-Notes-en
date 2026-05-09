@@ -29,15 +29,15 @@ This paper proposes SignThought, a reasoning-driven gloss-free sign language tra
 
 ## Background & Motivation
 
-**State of the Field**: Sign language translation has progressively evolved from gloss-based cascade methods toward gloss-free end-to-end video-to-text approaches.
+**Background**: Sign language translation has progressively evolved from gloss-based cascade methods toward gloss-free end-to-end video-to-text approaches.
 
 **Limitations of Prior Work**: Existing models implicitly assume that sign language video segments can be directly mapped to spoken language vocabulary; however, a large portion of sign language meaning is conveyed through classifiers, spatial grammar, and movement-modulated productive forms, for which no fixed lexical correspondences exist.
 
-**Root Cause**: SLT is fundamentally a cross-modal reasoning problem rather than simple alignment — meaning is distributed across a continuous video stream and requires temporal reasoning for correct interpretation.
+**Key Challenge**: SLT is fundamentally a cross-modal reasoning problem rather than simple alignment — meaning is distributed across a continuous video stream and requires temporal reasoning for correct interpretation.
 
-**Paper Goals**: Introduce an explicit intermediate semantic representation (latent chain-of-thought) to establish a traceable reasoning bridge between video encoding and text decoding.
+**Goal**: Introduce an explicit intermediate semantic representation (latent chain-of-thought) to establish a traceable reasoning bridge between video encoding and text decoding.
 
-**Starting Point**: Analogous to CoT, but realized in a continuous latent space rather than a discrete text space — learnable thought slots distill semantics from video.
+**Key Insight**: Analogous to CoT, but realized in a continuous latent space rather than a discrete text space — learnable thought slots distill semantics from video.
 
 **Core Idea**: $K$ ordered latent thought slots iteratively extract semantics via causal self-attention and Sinkhorn-routed cross-attention, forming a directed thought chain; a dual-stream decoder first queries the thought chain for semantic planning, then retrieves evidence from the video.
 

@@ -28,15 +28,15 @@ This paper reveals the "aggregation masking" phenomenon in OOD generalization be
 
 ## Background & Motivation
 
-**State of the Field**: The OOD generalization literature has observed accuracy-on-the-line (AoTL)—on DomainBed/WILDS benchmarks, models with higher ID accuracy also tend to achieve higher OOD accuracy. This is commonly interpreted as evidence that spurious correlations are not a serious concern.
+**Background**: The OOD generalization literature has observed accuracy-on-the-line (AoTL)—on DomainBed/WILDS benchmarks, models with higher ID accuracy also tend to achieve higher OOD accuracy. This is commonly interpreted as evidence that spurious correlations are not a serious concern.
 
 **Limitations of Prior Work**: (a) AoTL holds only when aggregating over all OOD samples; (b) when large subgroups are sensitive to spurious features, their effects are diluted by "clean" samples; (c) existing subset discovery methods require explicit group metadata.
 
-**Root Cause**: AoTL may be an aggregation artifact rather than a genuine positive signal—on certain subgroups, models that achieve higher ID accuracy may rely more heavily on spurious features, leading to worse OOD performance.
+**Key Challenge**: AoTL may be an aggregation artifact rather than a genuine positive signal—on certain subgroups, models that achieve higher ID accuracy may rely more heavily on spurious features, leading to worse OOD performance.
 
-**Paper Goals**: To demonstrate that aggregate evaluation masks the harm of spurious correlations and to provide a method for discovering the hidden failure subsets.
+**Goal**: To demonstrate that aggregate evaluation masks the harm of spurious correlations and to provide a method for discovering the hidden failure subsets.
 
-**Starting Point**: The problem of OOD subset selection is formulated as an optimization problem—minimizing the Pearson correlation between ID and OOD accuracy over a selected subset.
+**Key Insight**: The problem of OOD subset selection is formulated as an optimization problem—minimizing the Pearson correlation between ID and OOD accuracy over a selected subset.
 
 **Core Idea**: Gradient-based optimization selects accuracy-on-the-inverse-line subsets from OOD data, revealing generalization failures concealed by aggregation.
 

@@ -28,7 +28,7 @@ This paper proposes DiffWind, a physics-constrained differentiable framework tha
 
 ## Background & Motivation
 
-**State of the Field**: Modeling object dynamics from video observations has been extensively studied, including dynamic scene reconstruction based on NeRF and 3D Gaussian Splatting (3DGS). However, these methods primarily focus on object motion itself or simple interactions, and research on modeling complex deformations driven by invisible external forces—such as wind—remains very limited.
+**Background**: Modeling object dynamics from video observations has been extensively studied, including dynamic scene reconstruction based on NeRF and 3D Gaussian Splatting (3DGS). However, these methods primarily focus on object motion itself or simple interactions, and research on modeling complex deformations driven by invisible external forces—such as wind—remains very limited.
 
 **Limitations of Prior Work**:
    - **Wind is invisible**: Unlike contact forces with well-defined contact points, wind forces are continuously distributed in space and vary over time, making direct observation from video impossible.
@@ -36,11 +36,11 @@ This paper proposes DiffWind, a physics-constrained differentiable framework tha
    - **Complex deformation**: Wind-driven objects (e.g., flags, leaves, cloth) undergo complex non-rigid deformations that are difficult to describe with simple motion models.
    - **Existing dynamic scene reconstruction methods** (e.g., Dynamic 3DGS) only fit appearance changes without modeling the underlying physical forces, and thus cannot generalize to novel wind conditions or support forward simulation.
 
-**Root Cause**: Recovering wind-driven object dynamics from video requires simultaneously estimating the invisible wind force field and the physical response of the object—a highly under-constrained inverse problem. Data fitting alone (e.g., 3DGS) can reconstruct appearance but fails to capture the underlying physical laws, precluding simulation and generalization.
+**Key Challenge**: Recovering wind-driven object dynamics from video requires simultaneously estimating the invisible wind force field and the physical response of the object—a highly under-constrained inverse problem. Data fitting alone (e.g., 3DGS) can reconstruct appearance but fails to capture the underlying physical laws, precluding simulation and generalization.
 
-**Paper Goals**: To propose a unified framework that recovers both wind force fields and object motion from video while ensuring physical validity, and that supports downstream applications such as forward simulation and wind retargeting.
+**Goal**: To propose a unified framework that recovers both wind force fields and object motion from video while ensuring physical validity, and that supports downstream applications such as forward simulation and wind retargeting.
 
-**Starting Point**: The paper combines physical simulation primitives (particle system + MPM) with neural rendering (3DGS + differentiable rendering) in a differentiable pipeline to optimize wind force fields from video via backpropagation, while enforcing LBM fluid dynamics constraints to ensure the recovered wind field satisfies physical laws.
+**Key Insight**: The paper combines physical simulation primitives (particle system + MPM) with neural rendering (3DGS + differentiable rendering) in a differentiable pipeline to optimize wind force fields from video via backpropagation, while enforcing LBM fluid dynamics constraints to ensure the recovered wind field satisfies physical laws.
 
 **Core Idea**: Differentiable rendering provides appearance supervision + MPM provides physics-based dynamics modeling + LBM provides fluid physics constraints = physically consistent reconstruction of wind–object interaction from video.
 

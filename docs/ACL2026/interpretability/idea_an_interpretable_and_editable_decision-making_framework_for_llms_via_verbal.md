@@ -28,15 +28,15 @@ This paper proposes IDEA, a framework that extracts LLM decision knowledge into 
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly deployed in automated decision-making scenarios, yet their application in high-stakes domains such as financial investment and loan approval remains constrained by a fundamental "trust deficit"—stakeholders cannot reliably verify, audit, or intervene in the decision process.
+**Background**: LLMs are increasingly deployed in automated decision-making scenarios, yet their application in high-stakes domains such as financial investment and loan approval remains constrained by a fundamental "trust deficit"—stakeholders cannot reliably verify, audit, or intervene in the decision process.
 
 **Limitations of Prior Work**: Existing methods fall short along three dimensions: (1) probability estimates produced by LLMs are overconfident and poorly calibrated; (2) generated explanations tend to be post-hoc rationalizations rather than faithful reflections of internal reasoning; and (3) no quantitative framework exists for precisely incorporating expert knowledge into decisions—prompt-based instructions alone cannot guarantee compliant behavior. For instance, ranking and scoring the same options can yield inconsistent orderings, and explicit instructions to exclude a factor do not reliably prevent it from influencing predictions.
 
-**Root Cause**: There is a fundamental internal-external misalignment in LLMs. Logit-based methods conflate next-token confidence with decision uncertainty and remain black-box; DeLLMa relies on LLMs to directly produce precise numeric values, precisely what LLMs are unreliable at; BIRD assumes factor independence and uses a fixed verbal-to-numeric mapping, sacrificing calibration accuracy and the natural correlations among factors.
+**Key Challenge**: There is a fundamental internal-external misalignment in LLMs. Logit-based methods conflate next-token confidence with decision uncertainty and remain black-box; DeLLMa relies on LLMs to directly produce precise numeric values, precisely what LLMs are unreliable at; BIRD assumes factor independence and uses a fixed verbal-to-numeric mapping, sacrificing calibration accuracy and the natural correlations among factors.
 
-**Paper Goals**: To construct a decision framework that simultaneously satisfies three properties—calibrated probability estimates, semantic interpretability, and quantitative human-AI collaboration (i.e., precise parameter editing).
+**Goal**: To construct a decision framework that simultaneously satisfies three properties—calibrated probability estimates, semantic interpretability, and quantitative human-AI collaboration (i.e., precise parameter editing).
 
-**Starting Point**: The authors identify two key observations: (i) although LLMs cannot reliably produce precise numeric probabilities, they can generate decision-relevant factors from broad world knowledge; and (ii) LLMs express verbal probability phrases (e.g., "likely," "unlikely") more consistently than precise numeric values, because such phrases appear far more frequently in pretraining corpora.
+**Key Insight**: The authors identify two key observations: (i) although LLMs cannot reliably produce precise numeric probabilities, they can generate decision-relevant factors from broad world knowledge; and (ii) LLMs express verbal probability phrases (e.g., "likely," "unlikely") more consistently than precise numeric values, because such phrases appear far more frequently in pretraining corpora.
 
 **Core Idea**: Rather than making the LLM's internal reasoning process transparent, IDEA extracts its knowledge into an inherently transparent form—an interpretable parametric model over a semantic factor space—and employs an EM algorithm to jointly learn the verbal-to-numeric mapping and the decision parameters.
 

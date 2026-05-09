@@ -28,15 +28,15 @@ This paper proposes SDM (Similarity-Distance-Magnitude) activations as a more ro
 
 ## Background & Motivation
 
-**State of the Field**: The parameter non-identifiability of neural language models (multiple parameter configurations can yield the same output distribution) makes direct parameter interpretation extremely difficult. Softmax is the most widely used final-layer activation, converting logits into a probability distribution. Existing uncertainty quantification methods span Bayesian (e.g., variational inference), frequentist (e.g., conformal prediction), and empirical approaches (e.g., temperature scaling), yet the prevalence of high-confidence errors and hallucinations in LLMs indicates fundamental shortcomings in these methods.
+**Background**: The parameter non-identifiability of neural language models (multiple parameter configurations can yield the same output distribution) makes direct parameter interpretation extremely difficult. Softmax is the most widely used final-layer activation, converting logits into a probability distribution. Existing uncertainty quantification methods span Bayesian (e.g., variational inference), frequentist (e.g., conformal prediction), and empirical approaches (e.g., temperature scaling), yet the prevalence of high-confidence errors and hallucinations in LLMs indicates fundamental shortcomings in these methods.
 
 **Limitations of Prior Work**: Softmax captures only one dimension—Magnitude (distance to the decision boundary)—through the relative magnitudes of logits. It ignores two critical epistemic signals: (1) whether the model's prediction is consistent with correct prediction patterns in the training set (Similarity); and (2) whether the input lies within the coverage of the training distribution (Distance). This causes models to produce high-confidence predictions even for out-of-distribution inputs.
 
-**Root Cause**: Effective predictive uncertainty requires decomposing the sources of epistemic uncertainty, but softmax's single temperature parameter $\tau$ cannot achieve instance-level multi-dimensional uncertainty representation—$\tau$ is a global hyperparameter, and instance-level variation is determined solely by logit magnitudes.
+**Key Challenge**: Effective predictive uncertainty requires decomposing the sources of epistemic uncertainty, but softmax's single temperature parameter $\tau$ cannot achieve instance-level multi-dimensional uncertainty representation—$\tau$ is a global hyperparameter, and instance-level variation is determined solely by logit magnitudes.
 
-**Paper Goals**: Design a new activation function that explicitly decomposes and integrates epistemic uncertainty signals along the Similarity, Distance, and Magnitude dimensions, providing a more reliable foundation for selective classification.
+**Goal**: Design a new activation function that explicitly decomposes and integrates epistemic uncertainty signals along the Similarity, Distance, and Magnitude dimensions, providing a more reliable foundation for selective classification.
 
-**Starting Point**: The method exploits the capacity of neural networks as implicit instance-based metric learners, constructing a compact representation space via an exemplar adaptor (1-D CNN adapter) on top of frozen pretrained LM hidden states, from which Similarity and Distance signals are extracted.
+**Key Insight**: The method exploits the capacity of neural networks as implicit instance-based metric learners, constructing a compact representation space via an exemplar adaptor (1-D CNN adapter) on top of frozen pretrained LM hidden states, from which Similarity and Distance signals are extracted.
 
 **Core Idea**: Replace softmax's fixed base $e$ with a data-driven base $(2+q)$ (dependent on Similarity), and replace the fixed temperature $\tau$ with an instance-level Distance $d$—so that the activation output directly encodes epistemic uncertainty along all three dimensions.
 

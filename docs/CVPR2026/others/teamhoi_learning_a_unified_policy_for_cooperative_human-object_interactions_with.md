@@ -28,13 +28,13 @@ TeamHOI proposes a framework using a Transformer-based decentralized policy netw
 
 ## Background & Motivation
 
-**State of the Field**: Physics-based humanoid control has made significant progress in single-agent behaviors (locomotion, grasping, manipulation), but many real-world tasks (e.g., carrying large heavy objects) require multi-agent coordination of physical actions—a scenario existing frameworks struggle to handle.
+**Background**: Physics-based humanoid control has made significant progress in single-agent behaviors (locomotion, grasping, manipulation), but many real-world tasks (e.g., carrying large heavy objects) require multi-agent coordination of physical actions—a scenario existing frameworks struggle to handle.
 
 **Limitations of Prior Work**: Most existing methods employ fixed-size input MLP policy networks, constraining policies to a fixed team size (e.g., SMPLOlympics only supports fixed small teams) and preventing flexible adaptation to varying numbers of collaborators. Methods such as CooHOI do not model inter-agent perception at all, relying solely on shared object dynamics as an implicit communication channel, and therefore fail to capture the essential nature of human cooperation—continuously perceiving teammates and dynamically adjusting behavior. Moreover, multi-person collaborative motion capture data is nearly nonexistent, and directly using single-person reference motions severely limits the diversity of learnable cooperative behaviors and constrains cooperation patterns to only front-back lifting. CooHOI also requires pre-specified contact points for each agent (oracle assignment), preventing agents from autonomously inferring appropriate positions for stable carrying.
 
-**Root Cause**: The combination of fixed-capacity network architectures, absence of inter-agent perception, and scarcity of multi-person motion reference data fundamentally limits the scalability and behavioral diversity of existing cooperative HOI systems.
+**Key Challenge**: The combination of fixed-capacity network architectures, absence of inter-agent perception, and scarcity of multi-person motion reference data fundamentally limits the scalability and behavioral diversity of existing cooperative HOI systems.
 
-**Paper Goals**: To develop a single unified policy that (1) generalizes across arbitrary team sizes, (2) enables agents to autonomously determine formation without oracle assignment, (3) produces diverse and physically realistic cooperative behaviors from limited single-person reference data.
+**Goal**: To develop a single unified policy that (1) generalizes across arbitrary team sizes, (2) enables agents to autonomously determine formation without oracle assignment, (3) produces diverse and physically realistic cooperative behaviors from limited single-person reference data.
 
 ## Method
 

@@ -27,15 +27,15 @@ STaPLe proposes a posterior-regularized Monte Carlo EM algorithm that enables sm
 
 ## Background & Motivation
 
-**State of the Field**: Frameworks such as Constitutional AI rely on manually curated static constitutions to guide model behavior, requiring experts to enumerate all possible behavioral guidelines in advance. RLHF depends on human-annotated preference pairs to distinguish good from bad responses.
+**Background**: Frameworks such as Constitutional AI rely on manually curated static constitutions to guide model behavior, requiring experts to enumerate all possible behavioral guidelines in advance. RLHF depends on human-annotated preference pairs to distinguish good from bad responses.
 
 **Limitations of Prior Work**: (a) Static constitutions cannot cover emerging scenarios and edge cases, making maintenance costly; (b) differences between chosen and rejected responses in preference pairs are often multi-dimensional and cannot be captured by a single label; (c) small models (7–8B) have weak self-correction capabilities, and direct prompting for self-reflection is of limited effectiveness.
 
-**Root Cause**: Model improvement requires explicit behavioral guidance along well-defined dimensions, yet manually enumerating these dimensions is both expensive and incomplete.
+**Key Challenge**: Model improvement requires explicit behavioral guidance along well-defined dimensions, yet manually enumerating these dimensions is both expensive and incomplete.
 
-**Paper Goals**: Automatically discover principles that guide improvement from the model's own generations, and train the model to invoke these principles at inference time for autonomous self-correction.
+**Goal**: Automatically discover principles that guide improvement from the model's own generations, and train the model to invoke these principles at inference time for autonomous self-correction.
 
-**Starting Point**: Treat "principles" as latent variables bridging initial responses and target responses, and iteratively discover and learn them via the EM algorithm.
+**Key Insight**: Treat "principles" as latent variables bridging initial responses and target responses, and iteratively discover and learn them via the EM algorithm.
 
 **Core Idea**: Principles sampled by the model itself—answering "why is response B better than response A"—serve as latent variables bridging initial generations and gold responses. After iterative EM learning, the model can automatically invoke principles for introspective self-improvement.
 

@@ -27,15 +27,15 @@ content_hash: f5c6048c3686c887
 This paper proposes a unified self-distillation framework for directly learning flow maps (the generalized form of consistency models). By exploiting the tangent condition, any distillation scheme is converted into a direct training algorithm that requires no pretrained teacher. Three algorithm families are derived (Eulerian / Lagrangian / Progressive), among which the Lagrangian method avoids spatial gradients and bootstrapping, achieving the most stable training and best performance.
 
 ## Background & Motivation
-**State of the Field**: Flow- and diffusion-based generative models have achieved state-of-the-art results in vision, language, and protein structure prediction, but inference requires repeated ODE/SDE solving, incurring substantial computational cost that limits real-time applications.
+**Background**: Flow- and diffusion-based generative models have achieved state-of-the-art results in vision, language, and protein structure prediction, but inference requires repeated ODE/SDE solving, incurring substantial computational cost that limits real-time applications.
 
 **Need for Accelerated Inference**: Consistency models learn flow maps (solution operators of probability flow equations) to enable one- or few-step sampling, accelerating inference by 10–100×. However, existing methods lack a unified mathematical formulation and suffer from training instability and high engineering complexity.
 
 **Distillation vs. Direct Training**: Distillation methods (e.g., progressive distillation) require a two-stage pipeline—first training a teacher, then a student—where student performance is bounded by teacher quality. Direct training methods (e.g., consistency training) face optimization instability and require carefully designed annealing schedules and gradient clipping.
 
-**Root Cause**: The absence of a unified mathematical framework for efficiently learning flow maps causes existing methods to appear as disconnected algorithms with unclear design principles.
+**Key Challenge**: The absence of a unified mathematical framework for efficiently learning flow maps causes existing methods to appear as disconnected algorithms with unclear design principles.
 
-**Starting Point**: The paper exploits the tangent condition—that the time derivative of the flow map on the diagonal $s=t$ recovers the velocity field $b_t$—to convert distillation schemes into self-distillation, training a single network to jointly learn the velocity field and the flow map.
+**Key Insight**: The paper exploits the tangent condition—that the time derivative of the flow map on the diagonal $s=t$ recovers the velocity field $b_t$—to convert distillation schemes into self-distillation, training a single network to jointly learn the velocity field and the flow map.
 
 ## Core Problem
 - **Does a principled methodology for flow map training exist that is as clean as standard flow matching?**

@@ -29,9 +29,9 @@ This paper proposes Elsa, a method that directly solves sparsity-constrained opt
 
 ## Background & Motivation
 
-- **State of the Field**: Large language models are prohibitively large, imposing substantial memory, compute, and energy demands that severely hinder broad deployment.
+- **Background**: Large language models are prohibitively large, imposing substantial memory, compute, and energy demands that severely hinder broad deployment.
 - **Limitations of Prior Work**: Existing LLM pruning methods (SparseGPT, Wanda, ALPS, etc.) suffer sharp performance degradation beyond 50–60% sparsity, a phenomenon known as the "sparsity wall."
-- **Root Cause**: Current methods rely on surrogate objectives formulated as layer-wise reconstruction error minimization, which introduces three critical flaws:
+- **Key Challenge**: Current methods rely on surrogate objectives formulated as layer-wise reconstruction error minimization, which introduces three critical flaws:
   1. **Accumulated approximation error**: Layer-wise solutions cannot achieve zero reconstruction error; small errors propagate across layers and cause catastrophic performance collapse.
   2. **Global suboptimality**: Independent per-layer optimization restricts the search space, and earlier layers cannot be adjusted in light of subsequent layers.
   3. **Surrogate objective bias**: Minimizing the reconstruction error $\tilde{f}$ is not equivalent to minimizing the true language modeling objective $f$.

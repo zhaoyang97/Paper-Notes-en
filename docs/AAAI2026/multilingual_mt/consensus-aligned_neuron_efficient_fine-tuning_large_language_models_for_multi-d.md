@@ -43,9 +43,9 @@ Adapter-based methods introduce separate modules for each domain, leading to par
 
 In-context learning (ICL) relies on high-quality in-domain examples and performs poorly for MDMT.
 
-**Root Cause**: Can a PEFT method be designed that introduces no additional parameters and avoids inter-domain interference?
+**Key Challenge**: Can a PEFT method be designed that introduces no additional parameters and avoids inter-domain interference?
 
-**Starting Point**: Inspired by neuroscience — consensus-based communication enhances neural alignment among group members. By analogy, neurons in LLMs that consistently encode translation knowledge across domains should exist. The goal is to identify and fine-tune only these neurons.
+**Key Insight**: Inspired by neuroscience — consensus-based communication enhances neural alignment among group members. By analogy, neurons in LLMs that consistently encode translation knowledge across domains should exist. The goal is to identify and fine-tune only these neurons.
 
 **Core Idea**: Use mutual information to measure the association between neuron importance and domain labels, select neurons with high MI across all domains as "consensus-aligned neurons," and fine-tune only these neurons.
 

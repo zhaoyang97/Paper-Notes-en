@@ -27,15 +27,15 @@ content_hash: 015728550e7d525e
 This paper proposes DeepSynth, a benchmark comprising 120 real-world information synthesis tasks spanning 7 domains and 67 countries (averaging 5.5 hours of expert annotation per task). The benchmark requires agents to collect information from multiple web sources and perform structured reasoning. The strongest current agent (o3-deep-research) achieves only 8.97 F1 / 17.5% LLM-Judge, exposing a critical gap in LLM agents' information synthesis capabilities.
 
 ## Background & Motivation
-**State of the Field**: LLM agents have advanced rapidly in tool use (web browsing, code execution, data analysis), yet existing benchmarks primarily evaluate shallow fact retrieval or single-source information lookup.
+**Background**: LLM agents have advanced rapidly in tool use (web browsing, code execution, data analysis), yet existing benchmarks primarily evaluate shallow fact retrieval or single-source information lookup.
 
 **Limitations of Prior Work**: Existing benchmarks suffer from three issues: (1) most focus on shallow retrieval tasks (e.g., GAIA) that do not require cross-source synthesis; (2) most rely on English and well-known single sources such as Wikipedia; (3) they fail to cover globally diverse information sources and languages.
 
-**Root Cause**: Real-world information synthesis tasks require collecting structured and unstructured data from multiple sources and performing complex analyses (trend detection, correlation analysis, anomaly detection, etc.)—capabilities that existing benchmarks cannot assess.
+**Key Challenge**: Real-world information synthesis tasks require collecting structured and unstructured data from multiple sources and performing complex analyses (trend detection, correlation analysis, anomaly detection, etc.)—capabilities that existing benchmarks cannot assess.
 
-**Paper Goals**: Construct a benchmark for evaluating agents' deep information synthesis capabilities, where task answers cannot be retrieved directly but must be derived through multi-step reasoning and cross-source synthesis.
+**Goal**: Construct a benchmark for evaluating agents' deep information synthesis capabilities, where task answers cannot be retrieved directly but must be derived through multi-step reasoning and cross-source synthesis.
 
-**Starting Point**: Grounded in realistic scenarios (16 domain experts, averaging 5.5 hours per task), the construction pipeline proceeds from source selection → hypothesis formulation → validation and analysis → question generation, ensuring answers are non-memorizable and require genuine synthesis reasoning.
+**Key Insight**: Grounded in realistic scenarios (16 domain experts, averaging 5.5 hours per task), the construction pipeline proceeds from source selection → hypothesis formulation → validation and analysis → question generation, ensuring answers are non-memorizable and require genuine synthesis reasoning.
 
 **Core Idea**: Build a realistic benchmark requiring "deep research" capabilities that reveals the substantial gap in current agents' information synthesis performance.
 

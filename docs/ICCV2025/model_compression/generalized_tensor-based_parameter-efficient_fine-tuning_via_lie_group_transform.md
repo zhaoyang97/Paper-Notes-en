@@ -29,9 +29,9 @@ This paper proposes LieRA, which leverages Lie group theory to generalize matrix
 
 ## Background & Motivation
 
-- **State of the Field**: Existing PEFT methods (LoRA and its variants) are primarily designed for two-dimensional matrices (linear layers) and face structural degradation when applied to high-dimensional parameter spaces (e.g., four-dimensional convolutional kernels). Naively reshaping LoRA's low-rank updates into convolutional kernel shapes destroys spatial locality—adjacent elements in the matrix may correspond to spatially distant positions in the kernel after reshaping.
+- **Background**: Existing PEFT methods (LoRA and its variants) are primarily designed for two-dimensional matrices (linear layers) and face structural degradation when applied to high-dimensional parameter spaces (e.g., four-dimensional convolutional kernels). Naively reshaping LoRA's low-rank updates into convolutional kernel shapes destroys spatial locality—adjacent elements in the matrix may correspond to spatially distant positions in the kernel after reshaping.
 - **Limitations of Prior Work**: Many vision foundation models (e.g., ConvNeXt, Stable Diffusion) rely heavily on convolution operations, yet no unified approach exists for fine-tuning such models without disrupting high-dimensional parameter structures.
-- **Root Cause**: Rather than designing ad hoc strategies for each type of high-dimensional parameter, a principled unified framework for generalizing existing matrix-level PEFT methods to higher-dimensional spaces is needed.
+- **Key Challenge**: Rather than designing ad hoc strategies for each type of high-dimensional parameter, a principled unified framework for generalizing existing matrix-level PEFT methods to higher-dimensional spaces is needed.
 
 ## Method
 

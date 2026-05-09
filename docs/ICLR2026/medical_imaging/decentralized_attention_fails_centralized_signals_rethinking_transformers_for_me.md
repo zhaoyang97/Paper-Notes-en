@@ -28,15 +28,15 @@ This paper proposes the TeCh framework, whose core contribution is the CoTAR (Co
 
 ## Background & Motivation
 
-**State of the Field**: Medical time series analysis (EEG/ECG) requires modeling two critical patterns simultaneously — temporal dependencies (temporal dynamics within a single channel) and channel dependencies (interactions across multiple channels). Recent Transformers such as Medformer and PatchTST have excelled at temporal dependency modeling, but channel dependency modeling remains a significant weakness.
+**Background**: Medical time series analysis (EEG/ECG) requires modeling two critical patterns simultaneously — temporal dependencies (temporal dynamics within a single channel) and channel dependencies (interactions across multiple channels). Recent Transformers such as Medformer and PatchTST have excelled at temporal dependency modeling, but channel dependency modeling remains a significant weakness.
 
 **Limitations of Prior Work**: Standard Transformer attention is "decentralized" — each token directly interacts with all other tokens (peer-to-peer). However, medical signals are inherently "centralized": EEG is centrally governed by thalamo-cortical circuits, and ECG is uniformly coordinated by the sinoatrial node. This structural mismatch causes attention mechanisms to dilute the dominant patterns driven by central control.
 
-**Root Cause**: The problem is not that attention is insufficiently powerful, but that its decentralized architecture is fundamentally mismatched with centrally organized signals. When every channel can be directly influenced by noisy channels, centrally coordinated signal patterns become obscured.
+**Key Challenge**: The problem is not that attention is insufficiently powerful, but that its decentralized architecture is fundamentally mismatched with centrally organized signals. When every channel can be directly influenced by noisy channels, centrally coordinated signal patterns become obscured.
 
-**Paper Goals**: (a) Design a channel interaction mechanism that matches the centralized structure of physiological signals; (b) reduce computational complexity from quadratic to linear; (c) adaptively handle the varying importance of temporal and channel dependencies across different datasets.
+**Goal**: (a) Design a channel interaction mechanism that matches the centralized structure of physiological signals; (b) reduce computational complexity from quadratic to linear; (c) adaptively handle the varying importance of temporal and channel dependencies across different datasets.
 
-**Starting Point**: Inspired by the star topology in distributed systems — traditional P2P communication is inefficient, and establishing a central server to aggregate and distribute information is more efficient and reliable. By analogy to medical signals, a single "core token" is introduced to proxy all inter-channel communication.
+**Key Insight**: Inspired by the star topology in distributed systems — traditional P2P communication is inefficient, and establishing a central server to aggregate and distribute information is more efficient and reliable. By analogy to medical signals, a single "core token" is introduced to proxy all inter-channel communication.
 
 **Core Idea**: Replace peer-to-peer attention with a global core token proxy — all channels first aggregate into the core token, which then redistributes information back to each channel, simulating the signal propagation pattern of the central nervous system.
 

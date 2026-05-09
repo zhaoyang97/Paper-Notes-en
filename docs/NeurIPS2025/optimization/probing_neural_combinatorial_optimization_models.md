@@ -35,7 +35,7 @@ NCO methods have achieved near-optimal or even superior performance compared to 
 
 **Limitations of Existing Approaches**: Traditional interpretability methods such as gradient attribution, visualization, and neuron ablation each have significant shortcomings. Gradient attribution only reveals output sensitivity to inputs and cannot expose how knowledge is encoded in hidden representations; neuron ablation lacks statistical rigor.
 
-**Starting Point**: This paper draws inspiration from the probing methodology that has proven successful in NLP — if a simple linear model can accurately predict certain knowledge from model embeddings, that knowledge is considered to be encoded in the representations. However, unlike NLP, combinatorial optimization lacks naturally defined sub-tasks, necessitating the deliberate design of probe tasks. The paper further proposes CS-Probing, which obtains deeper insights by analyzing the absolute values and statistical significance of linear probe coefficients.
+**Key Insight**: This paper draws inspiration from the probing methodology that has proven successful in NLP — if a simple linear model can accurately predict certain knowledge from model embeddings, that knowledge is considered to be encoded in the representations. However, unlike NLP, combinatorial optimization lacks naturally defined sub-tasks, necessitating the deliberate design of probe tasks. The paper further proposes CS-Probing, which obtains deeper insights by analyzing the absolute values and statistical significance of linear probe coefficients.
 
 ## Method
 

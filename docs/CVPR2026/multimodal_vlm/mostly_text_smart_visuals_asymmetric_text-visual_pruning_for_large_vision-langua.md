@@ -28,15 +28,15 @@ MoT probe experiments reveal asymmetric pruning sensitivity between the text and
 
 ## Background & Motivation
 
-**State of the Field**: LVLMs have enormous parameter counts, making weight pruning an effective approach for reducing deployment costs. SparseGPT and Wanda perform well on text-only LLMs, with the latter evaluating importance via weight magnitude × activation norm. However, direct application to LVLMs yields suboptimal results.
+**Background**: LVLMs have enormous parameter counts, making weight pruning an effective approach for reducing deployment costs. SparseGPT and Wanda perform well on text-only LLMs, with the latter evaluating importance via weight magnitude × activation norm. However, direct application to LVLMs yields suboptimal results.
 
 **Limitations of Prior Work**: Existing LVLM pruning methods (e.g., TAMP), while multimodal-aware, still process text and visual tokens within a unified framework, ignoring fundamental behavioral differences between the two modalities under pruning: (1) text and visual activations occupy distinct cluster regions in representation space (t-SNE visualization); (2) pruning masks derived from text-only vs. visual-only calibration exhibit a wide IoU distribution.
 
-**Root Cause**: Modality-agnostic calibration strategies dilute the linguistic signals necessary to protect text-related weights.
+**Key Challenge**: Modality-agnostic calibration strategies dilute the linguistic signals necessary to protect text-related weights.
 
-**Paper Goals**: How to design calibration strategies that account for the distinct sensitivities of different modality pathways?
+**Goal**: How to design calibration strategies that account for the distinct sensitivities of different modality pathways?
 
-**Starting Point**: Explicitly decouple text and visual pathways via a Mixture-of-Transformer (MoT) analysis probe to independently investigate their respective pruning sensitivities.
+**Key Insight**: Explicitly decouple text and visual pathways via a Mixture-of-Transformer (MoT) analysis probe to independently investigate their respective pruning sensitivities.
 
 **Core Idea**: The text pathway is calibrated using all text tokens (preserving sensitivity), while the visual pathway requires only a small number of high-saliency visual tokens as a supplement (exploiting redundancy).
 

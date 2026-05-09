@@ -26,7 +26,7 @@ content_hash: 1d805e99a76a2e2a
 This paper organizes all hidden-layer activations of an LLM into an "activation tensor" (layers × tokens × hidden dimension), treats it analogously to an image, and processes it with a ViT-based architecture (ACT-ViT) that supports joint training across multiple LLMs. The method consistently outperforms conventional probing approaches across 15 LLM–dataset combinations and demonstrates strong zero-shot/few-shot transfer to unseen datasets and unseen LLMs.
 
 ## Background & Motivation
-**State of the Field**: Among methods for detecting LLM hallucinations, probing classifiers—linear classifiers trained on hidden representations—represent an efficient white-box approach. However, conventional probing operates on isolated single-layer, single-token positions, requiring prior selection of the optimal layer and token position.
+**Background**: Among methods for detecting LLM hallucinations, probing classifiers—linear classifiers trained on hidden representations—represent an efficient white-box approach. However, conventional probing operates on isolated single-layer, single-token positions, requiring prior selection of the optimal layer and token position.
 
 **Limitations of Prior Work**:
 - **Non-fixed signal location**: The optimal probing position varies substantially across samples, datasets, and LLMs—Mistral's optimal position is (layer 14, token 0), whereas Qwen's optimal position lies at the last few tokens of the final layers.

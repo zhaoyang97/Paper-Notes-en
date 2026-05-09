@@ -29,15 +29,15 @@ This paper proposes ProtoSR, which employs an LLM-driven pipeline to mine templa
 
 ## Background & Motivation
 
-**State of the Field**: Radiology reports are the primary means of clinical communication in diagnostic imaging. While free-text reports offer flexibility, they suffer from stylistic inconsistency, incomplete coverage, and poor standardizability. Structured reporting (SR) addresses these issues through predefined fields and standardized options, yet its automation lags far behind free-text generation.
+**Background**: Radiology reports are the primary means of clinical communication in diagnostic imaging. While free-text reports offer flexibility, they suffer from stylistic inconsistency, incomplete coverage, and poor standardizability. Structured reporting (SR) addresses these issues through predefined fields and standardized options, yet its automation lags far behind free-text generation.
 
 **Limitations of Prior Work**: Fine-grained SR templates contain numerous rare attributes (e.g., lesion location, appearance, severity), while structured annotation datasets are extremely limited. Rad-ReStruct contains only 3,597 samples, and L3-level long-tail attributes (477 questions) have almost no sufficient supervision. General-purpose medical VLMs (MedGemma, CheXagent), though capable of diverse tasks, still underperform specialized models on fine-grained SR.
 
-**Root Cause**: Structured annotations are scarce, yet free-text reports are abundant. MIMIC-CXR contains over 220,000 chest X-ray–free-text report pairs implicitly encoding rich fine-grained imaging information, but stylistic and lexical differences make direct mapping to a strict SR taxonomy difficult.
+**Key Challenge**: Structured annotations are scarce, yet free-text reports are abundant. MIMIC-CXR contains over 220,000 chest X-ray–free-text report pairs implicitly encoding rich fine-grained imaging information, but stylistic and lexical differences make direct mapping to a strict SR taxonomy difficult.
 
-**Paper Goals**: How can the implicit knowledge embedded in large-scale free-text reports be systematically converted into template-aligned structured signals to enhance fine-grained attribute prediction under data scarcity?
+**Goal**: How can the implicit knowledge embedded in large-scale free-text reports be systematically converted into template-aligned structured signals to enhance fine-grained attribute prediction under data scarcity?
 
-**Starting Point**: Instruction-tuned LLMs now enable large-scale automated extraction. By automatically mapping finding-attribute information from free text to SR template label spaces, visual prototypes (representing typical imaging characteristics for each label) can be constructed, and prototype retrieval during inference provides a "data-driven second opinion."
+**Key Insight**: Instruction-tuned LLMs now enable large-scale automated extraction. By automatically mapping finding-attribute information from free text to SR template label spaces, visual prototypes (representing typical imaging characteristics for each label) can be constructed, and prototype retrieval during inference provides a "data-driven second opinion."
 
 **Core Idea**: Use LLMs to mine a template-aligned visual prototype knowledge base from free-text reports, then augment fine-grained structured reporting predictions via prototype-conditioned logit residual correction.
 

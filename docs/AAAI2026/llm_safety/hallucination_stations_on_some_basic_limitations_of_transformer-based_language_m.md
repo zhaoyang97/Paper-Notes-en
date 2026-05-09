@@ -29,15 +29,15 @@ This paper employs computational complexity theory to demonstrate that the per-s
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have been widely deployed across diverse domains; however, hallucination—the generation of false, inaccurate, or nonsensical content—remains a central obstacle to reliable deployment. Simultaneously, the rise of Agentic AI has extended LLMs from information provision to the autonomous execution of real-world tasks (e.g., financial transactions, booking services, legal document processing).
+**Background**: LLMs have been widely deployed across diverse domains; however, hallucination—the generation of false, inaccurate, or nonsensical content—remains a central obstacle to reliable deployment. Simultaneously, the rise of Agentic AI has extended LLMs from information provision to the autonomous execution of real-world tasks (e.g., financial transactions, booking services, legal document processing).
 
 **Limitations of Prior Work**: (1) Understanding of hallucination has largely remained empirical (attributed to insufficient data or distribution shift), lacking a fundamental explanation from computational theory; (2) proposals to have one agent verify another agent's output have not been subjected to rigorous theoretical scrutiny; (3) reasoning models (e.g., o3, R1) are widely assumed to overcome hallucination, yet no formal justification exists.
 
-**Root Cause**: The reasoning capacity of LLMs is bounded by the computational complexity of their architecture, while real-world tasks can be arbitrarily complex. This intrinsic gap implies that certain hallucinations are unavoidable.
+**Key Challenge**: The reasoning capacity of LLMs is bounded by the computational complexity of their architecture, while real-world tasks can be arbitrarily complex. This intrinsic gap implies that certain hallucinations are unavoidable.
 
-**Paper Goals**: To rigorously establish, from a computational complexity perspective, the capability upper bound of LLMs, and to demonstrate that hallucination constitutes a fundamental architectural limitation.
+**Goal**: To rigorously establish, from a computational complexity perspective, the capability upper bound of LLMs, and to demonstrate that hallucination constitutes a fundamental architectural limitation.
 
-**Starting Point**: LLM inference is treated as a deterministic computational process, and classical results from complexity theory—specifically the Time Hierarchy Theorem—are leveraged to prove the existence of infinitely many tasks that exceed this computational capacity.
+**Key Insight**: LLM inference is treated as a deterministic computational process, and classical results from complexity theory—specifically the Time Hierarchy Theorem—are leveraged to prove the existence of infinitely many tasks that exceed this computational capacity.
 
 **Core Idea**: LLM computation is subject to a hard upper bound of $O(N^2 \cdot d)$; tasks exceeding this complexity will inevitably cause hallucination—not as a flaw, but as a theorem.
 

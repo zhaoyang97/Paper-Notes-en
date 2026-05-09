@@ -28,15 +28,15 @@ TpsGPT fine-tunes a distilled ProtGPT2 Tiny (38.9M parameters) on 79K terpene sy
 
 ## Background & Motivation
 
-**State of the Field**: Terpene synthases (TPS) are a key enzyme family catalyzing the biosynthesis of terpene scaffolds. Terpenes constitute the largest class of natural products (>76,000 compounds), encompassing important pharmaceuticals such as the anticancer drug Taxol. Chemical synthesis of terpenes is costly and multi-step; leveraging TPS enzymes in synthetic biology offers a far more efficient alternative.
+**Background**: Terpene synthases (TPS) are a key enzyme family catalyzing the biosynthesis of terpene scaffolds. Terpenes constitute the largest class of natural products (>76,000 compounds), encompassing important pharmaceuticals such as the anticancer drug Taxol. Chemical synthesis of terpenes is costly and multi-step; leveraging TPS enzymes in synthetic biology offers a far more efficient alternative.
 
 **Limitations of Prior Work**: (a) **Directed evolution** is the dominant enzyme engineering approach but is prohibitively expensive (on the order of hundreds of thousands of dollars), slow, and yields sequences highly similar to natural proteins, thereby failing to explore the vast sequence space. (b) Computational approaches such as HMMER can only discover naturally occurring TPS sequences and cannot design novel enzymes. (c) Structure-guided design methods (e.g., RFdiffusion) require detailed knowledge of catalytic sites, which is impractical for TPS given the complexity of its functional mechanism.
 
-**Root Cause**: TPS is an underrepresented enzyme family with only 1,125 experimentally validated sequences, yet its sequence space is enormous. Existing methods either cannot explore novel sequences (database mining), impose prohibitive costs (directed evolution), or require unavailable structural knowledge (structure-based design).
+**Key Challenge**: TPS is an underrepresented enzyme family with only 1,125 experimentally validated sequences, yet its sequence space is enormous. Existing methods either cannot explore novel sequences (database mining), impose prohibitive costs (directed evolution), or require unavailable structural knowledge (structure-based design).
 
-**Paper Goals**: To generate functional TPS enzymes de novo from sequence data alone—without structural knowledge—at low computational cost.
+**Goal**: To generate functional TPS enzymes de novo from sequence data alone—without structural knowledge—at low computational cost.
 
-**Starting Point**: Protein language models (PLMs) have been shown to generate valid proteins within specific families through fine-tuning. However, existing PLM fine-tuning approaches typically require large family-level datasets and conditioning labels. The authors begin with 1,125 seed sequences, mine 79K homologous TPS sequences, and fine-tune a lightweight model (ProtGPT2 Tiny, 38.9M parameters) to reduce cost.
+**Key Insight**: Protein language models (PLMs) have been shown to generate valid proteins within specific families through fine-tuning. However, existing PLM fine-tuning approaches typically require large family-level datasets and conditioning labels. The authors begin with 1,125 seed sequences, mine 79K homologous TPS sequences, and fine-tune a lightweight model (ProtGPT2 Tiny, 38.9M parameters) to reduce cost.
 
 **Core Idea**: Carefully curated enzyme-family-specific dataset + distilled PLM fine-tuning + multi-stage computational filtering = low-cost functional enzyme de novo design.
 

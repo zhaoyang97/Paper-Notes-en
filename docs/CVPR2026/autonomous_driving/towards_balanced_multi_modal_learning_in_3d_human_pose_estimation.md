@@ -29,15 +29,15 @@ To address the modality imbalance problem in multi-modal 3D human pose estimatio
 
 ## Background & Motivation
 
-**State of the Field**: 3D HPE is an important topic in computer vision. Traditional methods rely primarily on RGB images but are limited in occlusion and privacy-sensitive scenarios. Non-intrusive sensors such as LiDAR, millimeter-wave radar (mmWave), and WiFi have recently attracted increasing attention, and multi-modal fusion has emerged as an effective strategy for improving the robustness of 3D HPE.
+**Background**: 3D HPE is an important topic in computer vision. Traditional methods rely primarily on RGB images but are limited in occlusion and privacy-sensitive scenarios. Non-intrusive sensors such as LiDAR, millimeter-wave radar (mmWave), and WiFi have recently attracted increasing attention, and multi-modal fusion has emerged as an effective strategy for improving the robustness of 3D HPE.
 
 **Limitations of Prior Work**: When multiple modalities are trained jointly, a "modality imbalance" phenomenon arises—dominant modalities rich in information (e.g., RGB, LiDAR) drive the optimization direction and suppress the learning of weaker modalities (e.g., mmWave, WiFi). Experiments show that fusing all four modalities (MPJPE 53.87 mm) actually underperforms fusing only RGB+LiDAR (52.93 mm), demonstrating the existence of modality competition.
 
-**Root Cause**: Existing modality balancing methods (e.g., OGM-GE, AGM) are primarily designed for classification tasks and rely on cross-entropy loss or auxiliary unimodal branches, making them unsuitable for regression tasks. They either overlook the intrinsic differences in information capacity across modalities or introduce additional learnable parameters that increase model complexity.
+**Key Challenge**: Existing modality balancing methods (e.g., OGM-GE, AGM) are primarily designed for classification tasks and rely on cross-entropy loss or auxiliary unimodal branches, making them unsuitable for regression tasks. They either overlook the intrinsic differences in information capacity across modalities or introduce additional learnable parameters that increase model complexity.
 
-**Paper Goals**: The paper aims to quantify the contribution of each modality and dynamically regulate the learning speed of each modality—without increasing model complexity—so that dominant modalities do not excessively suppress the optimization of weaker ones.
+**Goal**: The paper aims to quantify the contribution of each modality and dynamically regulate the learning speed of each modality—without increasing model complexity—so that dominant modalities do not excessively suppress the optimization of weaker ones.
 
-**Starting Point**: Shapley values from cooperative game theory are introduced for modality contribution evaluation in regression tasks, and the parameter importance information provided by the Fisher information matrix (FIM) is used to adaptively constrain parameter updates in each modality encoder.
+**Key Insight**: Shapley values from cooperative game theory are introduced for modality contribution evaluation in regression tasks, and the parameter importance information provided by the Fisher information matrix (FIM) is used to adaptively constrain parameter updates in each modality encoder.
 
 **Core Idea**: Shapley values are used to detect modality imbalance, and FIM-weighted weight constraint losses are applied to slow down the learning of dominant modalities in the early training phase, thereby achieving balanced multi-modal learning without introducing additional parameters.
 

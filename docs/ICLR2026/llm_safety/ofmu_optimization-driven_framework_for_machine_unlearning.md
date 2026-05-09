@@ -28,14 +28,14 @@ This work formulates machine unlearning as a bilevel optimization problem: the i
 
 ## Background & Motivation
 
-**State of the Field**: LLMs require on-demand forgetting of specific knowledge (GDPR compliance, copyright, outdated information), yet retraining from scratch is impractical. Existing approaches fall into input-level (refusal strategies), data-level (auxiliary data construction), and model-level (parameter modification) categories.
+**Background**: LLMs require on-demand forgetting of specific knowledge (GDPR compliance, copyright, outdated information), yet retraining from scratch is impractical. Existing approaches fall into input-level (refusal strategies), data-level (auxiliary data construction), and model-level (parameter modification) categories.
 
 **Limitations of Prior Work**:
    - Input-level methods are fragile and can be bypassed by adversarial prompts.
    - Model-level methods rely on static weight balancing between forgetting and retention objectives, lacking dynamic adaptability.
    - GradAscent/GradDiff are destructive on hard-to-forget samples—sample difficulty and utility loss are strongly coupled.
 
-**Root Cause**: When forgetting gradients and retain gradients are correlated, improving forgetting inevitably degrades retention.
+**Key Challenge**: When forgetting gradients and retain gradients are correlated, improving forgetting inevitably degrades retention.
 
 **Core Idea**: Bilevel optimization + gradient decorrelation = forgetting without harming retention.
 

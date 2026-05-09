@@ -28,7 +28,7 @@ SubspaceAD demonstrates that fitting a single PCA model on features from a stron
 
 ## Background & Motivation
 
-**State of the Field**: Mainstream industrial anomaly detection methods fall into three categories — reconstruction-based (learning to reconstruct normal samples), memory bank-based (storing normal features for nearest-neighbor retrieval), and VLM-based (leveraging CLIP and similar models for text-guided detection).
+**Background**: Mainstream industrial anomaly detection methods fall into three categories — reconstruction-based (learning to reconstruct normal samples), memory bank-based (storing normal features for nearest-neighbor retrieval), and VLM-based (leveraging CLIP and similar models for text-guided detection).
 
 **Limitations of Prior Work**:
    - Reconstruction-based methods require training, hyperparameter tuning, and balancing reconstruction quality against anomaly sensitivity.
@@ -36,9 +36,9 @@ SubspaceAD demonstrates that fitting a single PCA model on features from a stron
    - VLM-based methods rely on prompt tuning, auxiliary datasets, or domain-specific textual priors.
    - All three categories are growing increasingly complex (multi-stage training, data augmentation, hyperparameter tuning), making deployment difficult.
 
-**Root Cause**: Given that visual foundation models such as DINOv2 already produce sufficiently powerful feature representations, the necessity of such complex downstream pipelines warrants scrutiny.
+**Key Challenge**: Given that visual foundation models such as DINOv2 already produce sufficiently powerful feature representations, the necessity of such complex downstream pipelines warrants scrutiny.
 
-**Starting Point**: A classical statistical principle — anomalies (outliers) manifest as reconstruction residuals that deviate from the principal component subspace of normal data.
+**Key Insight**: A classical statistical principle — anomalies (outliers) manifest as reconstruction residuals that deviate from the principal component subspace of normal data.
 
 **Core Idea**: Frozen DINOv2-G features + a single PCA fit of the normal subspace = training-free anomaly detection.
 

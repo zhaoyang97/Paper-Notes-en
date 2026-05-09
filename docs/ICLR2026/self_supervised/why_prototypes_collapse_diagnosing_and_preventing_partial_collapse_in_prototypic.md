@@ -27,15 +27,15 @@ This paper diagnoses that the root cause of partial prototype collapse in protot
 
 ## Background & Motivation
 
-**State of the Field**: Prototypical SSL frameworks (DINO, DINOv2, CARP, etc.) employ learnable prototype vectors as clustering anchors to guide representations into semantically consistent regions, and have recently achieved performance comparable to language-supervised approaches.
+**Background**: Prototypical SSL frameworks (DINO, DINOv2, CARP, etc.) employ learnable prototype vectors as clustering anchors to guide representations into semantically consistent regions, and have recently achieved performance comparable to language-supervised approaches.
 
 **Limitations of Prior Work**: Several methods suffer from severe **partial prototype collapse**, where a large number of prototypes converge to nearly identical representations. DINO retains only 1.5% unique prototypes, while DINOv2's instance head exhibits 98% collapse. In practice, over-parameterization is the only available mitigation strategy.
 
-**Root Cause**: Prototypes are designed to provide diverse targets for guiding rich representations, yet collapse renders them redundant, directly contradicting their intended purpose.
+**Key Challenge**: Prototypes are designed to provide diverse targets for guiding rich representations, yet collapse renders them redundant, directly contradicting their intended purpose.
 
-**Paper Goals**: (1) Systematically diagnose the root cause of collapse; (2) Design a principled solution.
+**Goal**: (1) Systematically diagnose the root cause of collapse; (2) Design a principled solution.
 
-**Starting Point**: The observation that CAPI maintains 99.9% unique prototypes through partially decoupled teacher prototype updates motivates the hypothesis that joint optimization is the root cause.
+**Key Insight**: The observation that CAPI maintains 99.9% unique prototypes through partially decoupled teacher prototype updates motivates the hypothesis that joint optimization is the root cause.
 
 **Core Idea**: Fully decouple prototype estimation from encoder optimization—estimating prototypes via an independent online GMM while training the encoder with a consistency loss—thereby eliminating the incentive for shortcut learning.
 

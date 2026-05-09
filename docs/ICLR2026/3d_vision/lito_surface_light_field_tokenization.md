@@ -28,13 +28,13 @@ LiTo encodes surface light fields into compact sets of latent vectors to jointly
 
 ## Background & Motivation
 
-**State of the Field**: 3D latent representation methods fall into two categories — geometry-only representations (3DShape2VecSet / TripoSG / ShapeTokens) model shape without appearance; geometry-plus-appearance representations (TRELLIS / 3DTopia-XL) incorporate appearance but support only view-independent diffuse color.
+**Background**: 3D latent representation methods fall into two categories — geometry-only representations (3DShape2VecSet / TripoSG / ShapeTokens) model shape without appearance; geometry-plus-appearance representations (TRELLIS / 3DTopia-XL) incorporate appearance but support only view-independent diffuse color.
 
 **Limitations of Prior Work**: (1) Geometry-only methods cannot render photorealistic 3D content due to the absence of color, material, and lighting effects. (2) TRELLIS includes appearance but relies on mean pooling of DINOv2 features, discarding viewing direction information and thus failing to model view-dependent effects such as specular highlights and Fresnel reflectance. (3) 3DTopia-XL models PBR materials but requires a preprocessing step to optimize primitive representations from meshes.
 
-**Root Cause**: Real-world object appearance depends strongly on the viewing angle (metallic reflections, Fresnel effects, etc.), yet existing 3D latent representations discard directional information. Modeling view-dependent effects requires encoding the surface light field — not only surface position and color, but also the viewing direction.
+**Key Challenge**: Real-world object appearance depends strongly on the viewing angle (metallic reflections, Fresnel effects, etc.), yet existing 3D latent representations discard directional information. Modeling view-dependent effects requires encoding the surface light field — not only surface position and color, but also the viewing direction.
 
-**Starting Point**: RGB-D multi-view images constitute discrete samples of a surface light field — each pixel provides a tuple of (surface point position, viewing direction, color). The method randomly subsamples these light field observations as input, uses an encoder to interpolate, and outputs via a third-order spherical harmonic Gaussian decoder.
+**Key Insight**: RGB-D multi-view images constitute discrete samples of a surface light field — each pixel provides a tuple of (surface point position, viewing direction, color). The method randomly subsamples these light field observations as input, uses an encoder to interpolate, and outputs via a third-order spherical harmonic Gaussian decoder.
 
 **Core Idea**: Randomly subsampled surface light field observations are encoded into compact latent tokens, and a dual-branch decoder (flow-matching geometry + spherical harmonic Gaussian appearance) enables a unified 3D representation capturing both geometry and view-dependent appearance.
 

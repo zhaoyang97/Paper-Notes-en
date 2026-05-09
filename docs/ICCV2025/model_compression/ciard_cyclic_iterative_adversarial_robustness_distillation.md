@@ -31,7 +31,7 @@ This paper proposes CIARD, which addresses the optimization objective conflict b
 
 ### State of the Field
 
-**State of the Field**: Deploying efficient yet robust models on edge devices is a practical necessity. Knowledge distillation (KD) enables compression from teacher to student, but conventional KD does not account for robustness. Adversarial training (AT) enhances robustness but is less effective for small models. Adversarial robustness distillation (ARD) combines both approaches.
+**Background**: Deploying efficient yet robust models on edge devices is a practical necessity. Knowledge distillation (KD) enables compression from teacher to student, but conventional KD does not account for robustness. Adversarial training (AT) enhances robustness but is less effective for small models. Adversarial robustness distillation (ARD) combines both approaches.
 
 Two key challenges in dual-teacher ARD:
 1. **Optimization objective conflict**: The clean teacher focuses on clean accuracy while the robust teacher focuses on adversarial robustness, making it difficult for the student to reconcile both objectives.
@@ -39,7 +39,7 @@ Two key challenges in dual-teacher ARD:
 
 ### Starting Point
 
-**Paper Goals**: How to simultaneously improve the student's adversarial robustness and clean accuracy within a dual-teacher ARD framework?
+**Goal**: How to simultaneously improve the student's adversarial robustness and clean accuracy within a dual-teacher ARD framework?
 
 ## Method
 

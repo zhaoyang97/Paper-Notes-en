@@ -29,15 +29,15 @@ Under the $\alpha$-symmetric $(L_0,L_1)$-Lipschitz condition (a relaxation of th
 
 ## Background & Motivation
 
-**State of the Field**: The extragradient (EG) method is a classical algorithm for solving variational inequalities and root-finding problems $F(x_*) = 0$, widely applied in min-max optimization (GAN training, distributionally robust optimization, multi-agent games). Existing convergence theory almost universally relies on the $L$-Lipschitz assumption $\|F(x) - F(y)\| \leq L\|x-y\|$ on the operator $F$.
+**Background**: The extragradient (EG) method is a classical algorithm for solving variational inequalities and root-finding problems $F(x_*) = 0$, widely applied in min-max optimization (GAN training, distributionally robust optimization, multi-agent games). Existing convergence theory almost universally relies on the $L$-Lipschitz assumption $\|F(x) - F(y)\| \leq L\|x-y\|$ on the operator $F$.
 
 **Limitations of Prior Work**: (a) The $L$-Lipschitz assumption is overly restrictive for many problems — for instance, $F(x) = x^2$ does not satisfy a Lipschitz condition for any finite $L$; (b) the $(L_0, L_1)$-smoothness assumption $\|\nabla^2 f(x)\| \leq L_0 + L_1\|\nabla f(x)\|$ introduced by Zhang et al. (2020) for minimization has been empirically validated on LSTMs and Transformers, yet has not been extended to the EG method and variational inequality settings.
 
-**Root Cause**: For non-Lipschitz operators (e.g., cubic min-max problems), the Jacobian norm $\|\mathbf{J}(x)\|$ grows with $\|F(x)\|$, and constant step size EG may diverge — adaptive step sizes are needed, but no theoretical framework exists.
+**Key Challenge**: For non-Lipschitz operators (e.g., cubic min-max problems), the Jacobian norm $\|\mathbf{J}(x)\|$ grows with $\|F(x)\|$, and constant step size EG may diverge — adaptive step sizes are needed, but no theoretical framework exists.
 
-**Paper Goals**: To establish a complete convergence theory for EG under the $\alpha$-symmetric $(L_0,L_1)$-Lipschitz condition (covering strongly monotone, monotone, and weak Minty problem classes) and to design a corresponding adaptive step size scheme.
+**Goal**: To establish a complete convergence theory for EG under the $\alpha$-symmetric $(L_0,L_1)$-Lipschitz condition (covering strongly monotone, monotone, and weak Minty problem classes) and to design a corresponding adaptive step size scheme.
 
-**Starting Point**: By exploiting the equivalent characterization $\|\mathbf{J}(x)\| \leq L_0 + L_1\|F(x)\|^\alpha$ (Theorem 2.1), the paper designs adaptive step sizes inversely proportional to $\|F(x_k)\|^\alpha$.
+**Key Insight**: By exploiting the equivalent characterization $\|\mathbf{J}(x)\| \leq L_0 + L_1\|F(x)\|^\alpha$ (Theorem 2.1), the paper designs adaptive step sizes inversely proportional to $\|F(x_k)\|^\alpha$.
 
 **Core Idea**: The step size is inversely proportional to the current operator norm $\|F(x_k)\|^\alpha$, automatically shrinking when far from the solution (ensuring stability) and growing when close to the solution (accelerating convergence).
 

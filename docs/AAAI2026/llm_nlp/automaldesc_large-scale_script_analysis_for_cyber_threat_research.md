@@ -30,15 +30,15 @@ This paper proposes AutoMalDesc, an automated static analysis framework that emp
 
 ### State of the Field
 
-**State of the Field**: Cybersecurity requires static analysis of malicious scripts with natural language explanations. Existing approaches rely on YARA rules and sandbox detonation, which offer limited coverage and depend heavily on human experts.
+**Background**: Cybersecurity requires static analysis of malicious scripts with natural language explanations. Existing approaches rely on YARA rules and sandbox detonation, which offer limited coverage and depend heavily on human experts.
 
 **Limitations of Prior Work**: (1) Expert annotation is prohibitively costly and difficult to scale across the large volume of variants spanning five scripting languages; (2) General-purpose LLMs exhibit insufficient understanding of malware behavior (the base model achieves only 52.7% on Batch script detection); (3) Large-scale, high-quality datasets of malicious script descriptions are lacking.
 
-**Root Cause**: High-quality annotated data is scarce, yet robust malware analysis models require large and diverse training sets.
+**Key Challenge**: High-quality annotated data is scarce, yet robust malware analysis models require large and diverse training sets.
 
-**Paper Goals**: Overcome the annotation bottleneck using a small seed set combined with a self-paced training strategy.
+**Goal**: Overcome the annotation bottleneck using a small seed set combined with a self-paced training strategy.
 
-**Starting Point**: Sandbox behavioral reports serve as a knowledge bridge, converting runtime behavior into training signals.
+**Key Insight**: Sandbox behavioral reports serve as a knowledge bridge, converting runtime behavior into training signals.
 
 **Core Idea**: Beginning from 900 expert-annotated seeds, iterative self-paced learning progressively expands the training set to over 100K high-quality malicious script analysis examples.
 

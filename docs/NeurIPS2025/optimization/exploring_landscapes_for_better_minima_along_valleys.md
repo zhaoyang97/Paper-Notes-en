@@ -28,15 +28,15 @@ This paper proposes an optimizer adapter "E" that incorporates an exponential mo
 
 ## Background & Motivation
 
-**State of the Field**: Nearly all gradient-based optimizers (SGD, Adam, etc.) cease searching once a local minimum is reached. Relying solely on local information provides no guarantee that the found minimum is the lowest or the most generalizable.
+**Background**: Nearly all gradient-based optimizers (SGD, Adam, etc.) cease searching once a local minimum is reached. Relying solely on local information provides no guarantee that the found minimum is the lowest or the most generalizable.
 
 **Limitations of Prior Work**: (a) Traditional optimizers become "trapped" at local minima and cannot continue exploring the valley structure of the loss landscape. (b) Large-batch training is the most direct approach to fully utilizing GPU parallelism, but suffers from the challenge of "fewer update steps"—achieving comparable test accuracy to small-batch training with far fewer parameter updates. (c) Existing learning rate scaling rules (linear scaling $\eta_k \propto |\mathcal{Z}_k|$, square-root scaling) are constrained by task-dependent critical thresholds at very large batch sizes.
 
-**Root Cause**: In the loss landscape, optimizers must macroscopically be "captured" by large-scale valleys (walking along them) while microscopically escaping small-scale sharp minima—a duality that traditional optimizers address only partially.
+**Key Challenge**: In the loss landscape, optimizers must macroscopically be "captured" by large-scale valleys (walking along them) while microscopically escaping small-scale sharp minima—a duality that traditional optimizers address only partially.
 
-**Paper Goals**: To design an optimizer that continues exploring along valleys after reaching a local minimum, thereby finding lower and flatter minima.
+**Goal**: To design an optimizer that continues exploring along valleys after reaching a local minimum, thereby finding lower and flatter minima.
 
-**Starting Point**: The observation that $-\nabla\|\nabla f(\theta_k)\|^2 = -2\mathbf{H}_k \bar{\mathbf{g}}_k \approx \bar{\mathbf{g}}_k - \bar{\mathbf{g}}_{k-1}$ reveals that the gradient difference direction naturally possesses the property of repelling sharp minima and being attracted to flat ones.
+**Key Insight**: The observation that $-\nabla\|\nabla f(\theta_k)\|^2 = -2\mathbf{H}_k \bar{\mathbf{g}}_k \approx \bar{\mathbf{g}}_k - \bar{\mathbf{g}}_{k-1}$ reveals that the gradient difference direction naturally possesses the property of repelling sharp minima and being attracted to flat ones.
 
 **Core Idea**: Augmenting the optimizer's gradient with the term $\alpha \cdot \text{EMA}(\mathbf{g}_k - \mathbf{g}_{k-1})$ to microscopically repel sharp minima and macroscopically track valleys.
 

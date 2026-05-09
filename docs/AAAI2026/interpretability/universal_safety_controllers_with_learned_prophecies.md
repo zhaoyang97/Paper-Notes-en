@@ -28,11 +28,11 @@ This paper proposes UCLearn, which learns CTL (Computation Tree Logic) formulas 
 
 ## Background & Motivation
 
-1. **State of the Field**: Reactive synthesis and supervisory control aim to automatically construct correct-by-design controllers from temporal logic specifications. Traditional approaches require composing specification automata with concrete plant models, suffering from severe state-space explosion.
+1. **Background**: Reactive synthesis and supervisory control aim to automatically construct correct-by-design controllers from temporal logic specifications. Traditional approaches require composing specification automata with concrete plant models, suffering from severe state-space explosion.
 2. **Limitations of Prior Work**: Although the previously proposed Universal Safety Controller (USC) framework enables synthesis independent of the plant, its core component—the prophecy—is represented using tree automata, which incurs prohibitively high computational and verification costs and is difficult to interpret.
-3. **Root Cause**: USCs must precisely characterize "under what plant behaviors a given control output is correct," yet the exact representation (tree automata) is impractical, while simpler representations may forfeit correctness guarantees.
-4. **Paper Goals**: To find a computationally efficient and human-readable prophecy representation while preserving correctness guarantees.
-5. **Starting Point**: CTL formulas are used in place of tree automata as the representation of prophecies; a learning algorithm infers CTL formulas from a small set of representative plants that can separate correct from incorrect control outputs.
+3. **Key Challenge**: USCs must precisely characterize "under what plant behaviors a given control output is correct," yet the exact representation (tree automata) is impractical, while simpler representations may forfeit correctness guarantees.
+4. **Goal**: To find a computationally efficient and human-readable prophecy representation while preserving correctness guarantees.
+5. **Key Insight**: CTL formulas are used in place of tree automata as the representation of prophecies; a learning algorithm infers CTL formulas from a small set of representative plants that can separate correct from incorrect control outputs.
 6. **Core Idea**: Rather than precisely characterizing all possible plant behaviors, it suffices to learn a CTL formula from a small number of samples that adequately separates correct and incorrect control decisions.
 
 ## Method

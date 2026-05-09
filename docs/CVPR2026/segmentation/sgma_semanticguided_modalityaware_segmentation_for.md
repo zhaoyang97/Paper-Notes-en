@@ -29,15 +29,15 @@ This paper proposes SGMA—a Semantic-Guided Modality-Aware segmentation framewo
 
 ## Background & Motivation
 
-**State of the Field**: Remote sensing multimodal segmentation integrates complementary information from RGB, DSM, NIR, SAR, and other sources. However, in real-world systems, sensor failures or incomplete coverage frequently lead to missing modalities, giving rise to the Incomplete Multimodal Semantic Segmentation (IMSS) problem. Existing approaches include modality dropout (M3L), MAE-based pretraining (IMLT), and contrastive alignment (MAGIC).
+**Background**: Remote sensing multimodal segmentation integrates complementary information from RGB, DSM, NIR, SAR, and other sources. However, in real-world systems, sensor failures or incomplete coverage frequently lead to missing modalities, giving rise to the Incomplete Multimodal Semantic Segmentation (IMSS) problem. Existing approaches include modality dropout (M3L), MAE-based pretraining (IMLT), and contrastive alignment (MAGIC).
 
 **Limitations of Prior Work**: IMSS simultaneously faces three intertwined challenges: (1) **Modality imbalance**: strong modalities such as RGB suppress vulnerable modalities such as DSM, NIR, and SAR; (2) **Intra-class variance**: buildings of the same category exhibit large variation in scale, orientation, and shape in remote sensing imagery, with small buildings yielding sparse features; (3) **Cross-modal heterogeneity**: rooftops and ground surfaces appear similarly colored in RGB but differ in DSM elevation, while grassland and bare ground share similar elevation in DSM but differ in RGB color—semantic cues conflict across modalities.
 
-**Root Cause**: Contrastive alignment (IMLT/MAGIC) forces all modalities into a shared space, discarding modality-specific discriminative information; dropout strategies increase exposure to missing modalities but do not selectively reinforce learning for vulnerable modalities; no existing method addresses all three challenges simultaneously.
+**Key Challenge**: Contrastive alignment (IMLT/MAGIC) forces all modalities into a shared space, discarding modality-specific discriminative information; dropout strategies increase exposure to missing modalities but do not selectively reinforce learning for vulnerable modalities; no existing method addresses all three challenges simultaneously.
 
-**Paper Goals**: Achieve balanced multimodal learning, reduced intra-class variance, and reconciled cross-modal inconsistency simultaneously under arbitrary modality-missing scenarios.
+**Goal**: Achieve balanced multimodal learning, reduced intra-class variance, and reconciled cross-modal inconsistency simultaneously under arbitrary modality-missing scenarios.
 
-**Starting Point**: Global semantic prototypes serve as cross-modal "intermediate anchors"—compressing dense pixel representations into class-level semantic representations to reduce intra-class variance, while using prototype–feature alignment to measure modality reliability for adaptive fusion, and employing reliability-inverted sampling to prioritize training on vulnerable modalities.
+**Key Insight**: Global semantic prototypes serve as cross-modal "intermediate anchors"—compressing dense pixel representations into class-level semantic representations to reduce intra-class variance, while using prototype–feature alignment to measure modality reliability for adaptive fusion, and employing reliability-inverted sampling to prioritize training on vulnerable modalities.
 
 **Core Idea**: Semantic prototypes jointly address intra-class variance (by providing class-level consistent representations) and cross-modal heterogeneity (through adaptive weighting). Their byproduct—modality reliability scores—drives the sampling strategy to resolve modality imbalance.
 

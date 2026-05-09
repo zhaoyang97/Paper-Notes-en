@@ -29,15 +29,15 @@ Grounded in the Riesz representation theorem, this work approximates infinite-di
 
 ## Background & Motivation
 
-**State of the Field**: Neural PDE solvers (FNO, U-Net, etc.) have achieved notable progress in parametric PDE solving, yet the vast majority operate within a Newtonian framework—directly predicting the next-step state or time derivative—without exploiting the conservation structure inherent in physical systems.
+**Background**: Neural PDE solvers (FNO, U-Net, etc.) have achieved notable progress in parametric PDE solving, yet the vast majority operate within a Newtonian framework—directly predicting the next-step state or time derivative—without exploiting the conservation structure inherent in physical systems.
 
 **Limitations of Prior Work**: Hamiltonian Neural Networks (HNNs) have demonstrated the ability to enforce conservation laws in discrete particle systems, but HNNs are limited to finite-dimensional settings (e.g., $N$-body problems), where the Hamiltonian is a function $\mathcal{H}(\mathbf{q}, \mathbf{p}): \mathbb{R}^{2n} \to \mathbb{R}$. Most practical PDEs, however, describe continuous fields (fluids, waves, elasticity) and require **infinite-dimensional** Hamiltonian mechanics, in which the Hamiltonian is a functional $\mathcal{H}[u]: \mathcal{F}(\Omega) \to \mathbb{R}$ and evolution is governed by the functional derivative $\delta\mathcal{H}/\delta u$.
 
-**Root Cause**: Extending the Hamiltonian framework to PDEs presents two fundamental challenges: (a) one must approximate a mapping from a function space to a scalar (a functional), for which traditional neural networks are not designed; and (b) the approximated functional must admit accurate functional derivatives to drive the temporal evolution via Hamilton's equations.
+**Key Challenge**: Extending the Hamiltonian framework to PDEs presents two fundamental challenges: (a) one must approximate a mapping from a function space to a scalar (a functional), for which traditional neural networks are not designed; and (b) the approximated functional must admit accurate functional derivatives to drive the temporal evolution via Hamilton's equations.
 
-**Paper Goals**: Design a neural network architecture capable of learning Hamiltonian functionals and accurately computing their functional derivatives, thereby constructing a neural PDE solver that respects the Hamiltonian structure.
+**Goal**: Design a neural network architecture capable of learning Hamiltonian functionals and accurately computing their functional derivatives, thereby constructing a neural PDE solver that respects the Hamiltonian structure.
 
-**Starting Point**: The **Riesz representation theorem** from functional analysis—any continuous linear functional can be expressed as an inner product $\mathcal{H}[u] = \langle u, \kappa_\theta \rangle$—reduces the problem of functional approximation to one of function approximation, the latter being a natural strength of neural networks.
+**Key Insight**: The **Riesz representation theorem** from functional analysis—any continuous linear functional can be expressed as an inner product $\mathcal{H}[u] = \langle u, \kappa_\theta \rangle$—reduces the problem of functional approximation to one of function approximation, the latter being a natural strength of neural networks.
 
 **Core Idea**: Approximate the Hamiltonian functional via an integral kernel parameterized by a neural field; obtain functional derivatives through automatic differentiation; and construct a conservation-respecting PDE solver.
 

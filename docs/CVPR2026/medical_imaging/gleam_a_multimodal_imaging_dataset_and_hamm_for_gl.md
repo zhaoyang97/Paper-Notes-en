@@ -29,15 +29,15 @@ This paper presents GLEAM, the first publicly available trimodal glaucoma datase
 
 ## Background & Motivation
 
-**State of the Field**: Glaucoma is one of the leading causes of irreversible blindness worldwide, affecting approximately 70 million individuals. Clinical diagnosis relies on the integrated interpretation of multiple examinations: fundus imaging for optic disc morphology, OCT for retinal nerve fiber layer (RNFL) thickness measurement, and visual field testing for functional impairment assessment. Computer-aided diagnosis (CAD) systems have made steady progress over the past decade.
+**Background**: Glaucoma is one of the leading causes of irreversible blindness worldwide, affecting approximately 70 million individuals. Clinical diagnosis relies on the integrated interpretation of multiple examinations: fundus imaging for optic disc morphology, OCT for retinal nerve fiber layer (RNFL) thickness measurement, and visual field testing for functional impairment assessment. Computer-aided diagnosis (CAD) systems have made steady progress over the past decade.
 
 **Limitations of Prior Work**: Existing public datasets suffer from three key deficiencies: (1) most are unimodal (fundus or OCT only), lacking modality diversity; (2) classification granularity is coarse, typically limited to binary normal/glaucoma labels, insufficient to support staging-based treatment; (3) sample sizes are limited or datasets are not publicly released. Existing multimodal datasets such as GAMMA contain only 200 bimodal cases.
 
-**Root Cause**: Clinicians routinely integrate findings from three distinct examinations for cross-validation and holistic judgment, yet there is a lack of corresponding datasets and fusion frameworks to support automated diagnostic research.
+**Key Challenge**: Clinicians routinely integrate findings from three distinct examinations for cross-validation and holistic judgment, yet there is a lack of corresponding datasets and fusion frameworks to support automated diagnostic research.
 
-**Paper Goals**: (1) Construct the first publicly available trimodal, four-stage annotated, high-quality glaucoma dataset; (2) design an effective self-supervised multimodal fusion framework to fully exploit complementary inter-modal information.
+**Goal**: (1) Construct the first publicly available trimodal, four-stage annotated, high-quality glaucoma dataset; (2) design an effective self-supervised multimodal fusion framework to fully exploit complementary inter-modal information.
 
-**Starting Point**: Emulating the clinical reasoning of ophthalmologists—first assessing the quality and reliability of each modality, then cross-validating structural-functional consistency.
+**Key Insight**: Emulating the clinical reasoning of ophthalmologists—first assessing the quality and reliability of each modality, then cross-validating structural-functional consistency.
 
 **Core Idea**: Multi-head gating mechanisms simulate clinician assessment of modality reliability; relational graph attention simulates cross-modal cross-validation; both are embedded within a CNN masked autoencoder for self-supervised pretraining.
 

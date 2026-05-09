@@ -29,7 +29,7 @@ This paper proposes StEvo-Bench, a benchmark comprising 225 tasks across 6 evolu
 
 ## Background & Motivation
 
-**State of the Field**: Video world models (Veo 3, Sora 2 Pro, Genie 3, etc.) simulate the world by generating pixel frames and can already produce visually realistic dynamic scenes. In the real world, physical processes (e.g., water poured into a glass, ice melting) evolve continuously regardless of whether they are observed.
+**Background**: Video world models (Veo 3, Sora 2 Pro, Genie 3, etc.) simulate the world by generating pixel frames and can already produce visually realistic dynamic scenes. In the real world, physical processes (e.g., water poured into a glass, ice melting) evolve continuously regardless of whether they are observed.
 
 **Limitations of Prior Work**:
 
@@ -37,11 +37,11 @@ This paper proposes StEvo-Bench, a benchmark comprising 225 tasks across 6 evolu
 2. Consistency benchmarks (WorldScore, MIND) evaluate only memory of static scenes.
 3. No existing benchmark evaluates whether states evolve correctly during unobserved intervals—yet this is the key capability distinguishing a world model from a video generator.
 
-**Root Cause**: As world models are required to generate larger worlds and support longer interactions, the majority of the generated world is **unobserved** at any given moment. A model that fails to correctly evolve state during unobserved intervals does not deserve to be called a world model.
+**Key Challenge**: As world models are required to generate larger worlds and support longer interactions, the majority of the generated world is **unobserved** at any given moment. A model that fails to correctly evolve state during unobserved intervals does not deserve to be called a world model.
 
-**Paper Goals**: Design a benchmark that quantitatively evaluates a model's ability to decouple state evolution from observation, and comprehensively diagnose failure modes in current models.
+**Goal**: Design a benchmark that quantitatively evaluates a model's ability to decouple state evolution from observation, and comprehensively diagnose failure modes in current models.
 
-**Starting Point**: Decompose evaluation into two stages—control success (observation control + action control) and evolution success (state progression + physical plausibility + consistency)—and construct 5 specialized binary VLM verifiers for automated assessment.
+**Key Insight**: Decompose evaluation into two stages—control success (observation control + action control) and evolution success (state progression + physical plausibility + consistency)—and construct 5 specialized binary VLM verifiers for automated assessment.
 
 **Core Idea**: By inserting occlusions or moving the camera away during an ongoing evolution process, test whether video world models can correctly advance physical processes even when they are out of sight.
 

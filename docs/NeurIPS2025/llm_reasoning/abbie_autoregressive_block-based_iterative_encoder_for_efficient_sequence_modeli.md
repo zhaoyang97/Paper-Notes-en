@@ -28,15 +28,15 @@ This paper proposes AbbIE, an architecture that recursively iterates the interme
 
 ## Background & Motivation
 
-**State of the Field**: Transformer performance has traditionally been improved by scaling model parameters and training data (scaling laws). Test-time scaling has recently emerged as a new direction, but existing recurrent Transformers (e.g., Geiping et al. 2025) require training with many iterations and are typically limited to specific tasks.
+**Background**: Transformer performance has traditionally been improved by scaling model parameters and training data (scaling laws). Test-time scaling has recently emerged as a new direction, but existing recurrent Transformers (e.g., Geiping et al. 2025) require training with many iterations and are typically limited to specific tasks.
 
 **Limitations of Prior Work**: (1) GPU memory growth lags behind compute growth, constraining model scale expansion; (2) existing recurrent Transformers incur high training costs (requiring many iterations) and cannot serve as general-purpose replacements for standard Transformers; (3) most recurrent methods fail to generalize beyond the number of training iterations at inference time (upward generalization failure).
 
-**Root Cause**: How can Transformers be endowed with test-time compute scaling capability without substantially increasing training cost?
+**Key Challenge**: How can Transformers be endowed with test-time compute scaling capability without substantially increasing training cost?
 
-**Paper Goals**: Design a recurrent Transformer such that: (a) it is equivalent to a standard Transformer at a single iteration; (b) it requires only 2 training iterations; (c) it can scale to an arbitrary number of inference iterations with continuously improving performance.
+**Goal**: Design a recurrent Transformer such that: (a) it is equivalent to a standard Transformer at a single iteration; (b) it requires only 2 training iterations; (c) it can scale to an arbitrary number of inference iterations with continuously improving performance.
 
-**Starting Point**: The authors observe that the residual stream of a Transformer naturally injects original input information into every layer, which may be sufficient to achieve Path Independence (convergence to a fixed point), enabling recursive iteration without additional projection matrices.
+**Key Insight**: The authors observe that the residual stream of a Transformer naturally injects original input information into every layer, which may be sufficient to achieve Path Independence (convergence to a fixed point), enabling recursive iteration without additional projection matrices.
 
 **Core Idea**: The Transformer is partitioned into Head–Body–Tail segments; only the Body is iteratively applied. An inter-iteration residual connection ensures convergence, and only 2 training iterations are needed to achieve upward generalization at inference time.
 

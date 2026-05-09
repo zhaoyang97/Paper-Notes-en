@@ -29,7 +29,7 @@ SwiftTS is proposed as the first model selection framework for time series pre-t
 
 ## Background & Motivation
 
-**State of the Field**: Time series foundation models (TimesFM, MOIRAI, Chronos, etc.) have proliferated rapidly, spanning encoder-only, decoder-only, and encoder-decoder paradigms. No single model is optimal across all tasks — given a new dataset, which model should be selected? Fine-tuning each candidate is prohibitively expensive (reaching $3.46 \times 10^6$ seconds on the Traffic dataset).
+**Background**: Time series foundation models (TimesFM, MOIRAI, Chronos, etc.) have proliferated rapidly, spanning encoder-only, decoder-only, and encoder-decoder paradigms. No single model is optimal across all tasks — given a new dataset, which model should be selected? Fine-tuning each candidate is prohibitively expensive (reaching $3.46 \times 10^6$ seconds on the Traffic dataset).
 
 **Limitations of Prior Work**:
 - Existing model selection methods (RankME, LogME, LEEP, etc.) are primarily designed for CV → they do not account for temporal dependencies or sequential patterns.
@@ -37,11 +37,11 @@ SwiftTS is proposed as the first model selection framework for time series pre-t
 - Time series pre-trained models are highly heterogeneous in architecture and training paradigm → no unified feature extractor is applicable.
 - The performance of a single model can vary significantly across different forecasting horizons → existing methods neglect the horizon dimension.
 
-**Root Cause**: Model selection requires understanding "whether a given dataset and model are compatible," yet (1) different models lack comparable feature representations, and (2) the compatibility relationship varies with the forecasting horizon.
+**Key Challenge**: Model selection requires understanding "whether a given dataset and model are compatible," yet (1) different models lack comparable feature representations, and (2) the compatibility relationship varies with the forecasting horizon.
 
-**Paper Goals**: How can the optimal pre-trained model be efficiently selected for a new dataset × new horizon without executing any candidate model?
+**Goal**: How can the optimal pre-trained model be efficiently selected for a new dataset × new horizon without executing any candidate model?
 
-**Starting Point**: Learn matching patterns from historical (dataset × model × horizon) performance triplets → learn-to-rank rather than feature analysis → use independent encoders to represent data and models separately → match via attention mechanisms.
+**Key Insight**: Learn matching patterns from historical (dataset × model × horizon) performance triplets → learn-to-rank rather than feature analysis → use independent encoders to represent data and models separately → match via attention mechanisms.
 
 **Core Idea**: Cast the model selection problem as "learning to find matches between data and model embeddings" via meta-learning.
 

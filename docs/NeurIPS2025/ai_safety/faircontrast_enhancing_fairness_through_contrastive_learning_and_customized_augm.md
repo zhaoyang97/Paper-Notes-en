@@ -29,7 +29,7 @@ FairContrast proposes a fair contrastive learning framework for tabular data. By
 
 ## Background & Motivation
 
-**State of the Field**: Deep learning models tend to inherit social biases present in training data, resulting in unfair treatment of groups defined by sensitive attributes. Classic examples include recidivism prediction models exhibiting racial bias and hiring models discriminating against female candidates. Representation learning, particularly contrastive learning, has demonstrated strong robustness and generalization in CV and NLP domains.
+**Background**: Deep learning models tend to inherit social biases present in training data, resulting in unfair treatment of groups defined by sensitive attributes. Classic examples include recidivism prediction models exhibiting racial bias and hiring models discriminating against female candidates. Representation learning, particularly contrastive learning, has demonstrated strong robustness and generalization in CV and NLP domains.
 
 **Limitations of Prior Work**:
    - State-of-the-art contrastive learning methods for tabular data (VIME, SCARF) do not account for fairness, and the learned representations still encode sensitive attribute bias.

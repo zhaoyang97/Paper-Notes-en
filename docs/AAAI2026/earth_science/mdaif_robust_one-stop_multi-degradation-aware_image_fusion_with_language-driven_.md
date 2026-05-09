@@ -28,18 +28,18 @@ This paper proposes MdaIF, a framework that leverages a vision-language model (V
 
 ## Background & Motivation
 
-**State of the Field**: Infrared-visible image fusion (IVF) aims to integrate infrared thermal radiation information with visible-light texture details. Existing methods have evolved from CNN/GAN-based approaches to Transformers and diffusion models, but most assume high-quality visible images.
+**Background**: Infrared-visible image fusion (IVF) aims to integrate infrared thermal radiation information with visible-light texture details. Existing methods have evolved from CNN/GAN-based approaches to Transformers and diffusion models, but most assume high-quality visible images.
 
 **Limitations of Prior Work**:
    - Under adverse weather conditions (haze, rain, snow), visible images suffer severe degradation, making direct fusion ineffective.
    - Cascaded pipelines (restoration followed by fusion) introduce feature misalignment and error accumulation.
    - Existing degradation-aware fusion methods (Text-IF, MMAIF) rely on fixed degradation-type annotations as prompts and employ a single static network for all degradation conditions.
 
-**Root Cause**: Different degradation types (micron-scale water droplets in haze, millimeter-scale raindrops in rain, ice crystals in snow) correspond to fundamentally distinct atmospheric scattering models, which a fixed network architecture cannot effectively capture. For example, transmission maps effective for dehazing fail in deraining scenarios.
+**Key Challenge**: Different degradation types (micron-scale water droplets in haze, millimeter-scale raindrops in rain, ice crystals in snow) correspond to fundamentally distinct atmospheric scattering models, which a fixed network architecture cannot effectively capture. For example, transmission maps effective for dehazing fail in deraining scenarios.
 
-**Paper Goals**: To adaptively handle infrared-degraded visible image fusion across multiple adverse weather conditions without relying on ground-truth degradation type labels.
+**Goal**: To adaptively handle infrared-degraded visible image fusion across multiple adverse weather conditions without relying on ground-truth degradation type labels.
 
-**Starting Point**: Leveraging VLM scene-understanding capabilities to automatically identify degradation types and extract semantic priors, which then guide MoE-based expert selection for handling different degradations.
+**Key Insight**: Leveraging VLM scene-understanding capabilities to automatically identify degradation types and extract semantic priors, which then guide MoE-based expert selection for handling different degradations.
 
 **Core Idea**: VLM provides degradation-aware semantic priors → semantic priors guide channel attention modulation via prototype decomposition → modulated features and semantic priors jointly guide MoE routing to select degradation-specific experts for fusion.
 

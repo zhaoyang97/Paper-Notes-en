@@ -27,15 +27,15 @@ This paper extends CopulaGNN from the node level to the edge level for link sign
 
 ## Background & Motivation
 
-**State of the Field**: Link sign prediction in signed graphs—determining whether an edge represents a positive or negative relationship—is an important graph learning task. Existing signed graph neural network (SGNN) methods rely on auxiliary structures such as structural balance theory or separate treatment of positive and negative edges to handle the violation of the homophily assumption caused by negative edges.
+**Background**: Link sign prediction in signed graphs—determining whether an edge represents a positive or negative relationship—is an important graph learning task. Existing signed graph neural network (SGNN) methods rely on auxiliary structures such as structural balance theory or separate treatment of positive and negative edges to handle the violation of the homophily assumption caused by negative edges.
 
 **Limitations of Prior Work**: Auxiliary structures increase architectural complexity, slow down convergence, and can lead to inefficient memory usage. While CopulaGNN can model inter-node statistical dependencies, extending it to the edge level introduces memory bottlenecks of $O(|V|^4)$ for the correlation matrix and $O(n^3)$ computational cost for matrix inversion.
 
-**Root Cause**: Directly modeling the edge–edge correlation matrix ($n \times n$, where $n$ is the number of edges) is infeasible in terms of both parameter count and computation, yet ignoring inter-edge dependencies discards important structural information.
+**Key Challenge**: Directly modeling the edge–edge correlation matrix ($n \times n$, where $n$ is the number of edges) is infeasible in terms of both parameter count and computation, yet ignoring inter-edge dependencies discards important structural information.
 
-**Paper Goals**: Efficiently model inter-edge correlations on signed graphs for link sign prediction.
+**Goal**: Efficiently model inter-edge correlations on signed graphs for link sign prediction.
 
-**Starting Point**: (a) Replace the explicit correlation matrix with a low-rank Gramian structure to reduce parameters; (b) apply the Woodbury identity to convert large matrix inversions into small matrix inversions during inference.
+**Key Insight**: (a) Replace the explicit correlation matrix with a low-rank Gramian structure to reduce parameters; (b) apply the Woodbury identity to convert large matrix inversions into small matrix inversions during inference.
 
 **Core Idea**: Factorize the correlation matrix as the Gramian of edge embeddings, $\mathbf{R} = \nu(\mathbf{QQ}^\top + \epsilon \mathbf{I})$, reducing memory from $O(n^2)$ to $O(nd)$ and matrix inversion during inference from $O(n^3)$ to $O(d^3)$.
 

@@ -27,15 +27,15 @@ Multi-step retrieval is formulated as an MDP and solved via value-based RL (soft
 
 ## Background & Motivation
 
-**State of the Field**: Long-context multi-step retrieval is a central challenge in RAG. Existing approaches fall into two categories: (a) fine-tuning LLMs to generate search queries (Search-R1, R1-Searcher), which requires 8×A100 GPUs and is restricted to open-source LLMs; and (b) fine-tuning retrievers (Beam-Retriever) via supervised learning, which generalizes poorly.
+**Background**: Long-context multi-step retrieval is a central challenge in RAG. Existing approaches fall into two categories: (a) fine-tuning LLMs to generate search queries (Search-R1, R1-Searcher), which requires 8×A100 GPUs and is restricted to open-source LLMs; and (b) fine-tuning retrievers (Beam-Retriever) via supervised learning, which generalizes poorly.
 
 **Limitations of Prior Work**: (a) LLM fine-tuning methods incur prohibitive computational costs and cannot be applied to closed-source LLMs; (b) Beam-Retriever relies on SFT and generalizes poorly to out-of-distribution data and ultra-long contexts; (c) existing retrievers cannot perform temporal reasoning (e.g., "what happened before event X?").
 
-**Root Cause**: Multi-step retrieval requires dynamically deciding what to retrieve next based on previously retrieved content—a sequential decision-making problem. Yet existing methods either rely on expensive LLMs for decision-making or apply simple SFT with insufficient exploration capacity.
+**Key Challenge**: Multi-step retrieval requires dynamically deciding what to retrieve next based on previously retrieved content—a sequential decision-making problem. Yet existing methods either rely on expensive LLMs for decision-making or apply simple SFT with insufficient exploration capacity.
 
-**Paper Goals**: Design a lightweight, general, and generalizable multi-step retrieval agent that (a) modifies only the embedder without touching the LLM; (b) trains via RL rather than SFT; (c) supports temporal reasoning; and (d) generalizes from short training contexts to long inference contexts.
+**Goal**: Design a lightweight, general, and generalizable multi-step retrieval agent that (a) modifies only the embedder without touching the LLM; (b) trains via RL rather than SFT; (c) supports temporal reasoning; and (d) generalizes from short training contexts to long inference contexts.
 
-**Starting Point**: The Q-function is designed as an inner product in embedding space—consistent with the similarity search paradigm of retrieval, theoretically proven to be a universal approximator, and enabling efficient inference without per-candidate transformer forward passes.
+**Key Insight**: The Q-function is designed as an inner product in embedding space—consistent with the similarity search paradigm of retrieval, theoretically proven to be a universal approximator, and enabling efficient inference without per-candidate transformer forward passes.
 
 **Core Idea**: Fine-tune an embedder via RL to learn sequential decision-making in retrieval space, with the inner-product Q-function ensuring both computational efficiency and theoretical soundness.
 

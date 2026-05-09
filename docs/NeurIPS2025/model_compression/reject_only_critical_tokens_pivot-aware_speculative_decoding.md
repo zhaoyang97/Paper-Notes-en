@@ -33,9 +33,9 @@ Autoregressive generation in large language models proceeds token by token seria
 
 The acceptance probability in SD is $\min(1, \frac{p_{\text{target}}(x)}{p_{\text{draft}}(x)})$, meaning that any distributional discrepancy between draft and target leads to rejections, even when those tokens have no impact on final output quality.
 
-**Root Cause**: In practice, users care about output utility (e.g., code correctness, mathematical answer accuracy) rather than sampling distributions. The example in Figure 1 clearly illustrates this: SD rejects a large number of tokens (highlighted in blue), yet only a single token correction (2→1) is needed to obtain the correct answer.
+**Key Challenge**: In practice, users care about output utility (e.g., code correctness, mathematical answer accuracy) rather than sampling distributions. The example in Figure 1 clearly illustrates this: SD rejects a large number of tokens (highlighted in blue), yet only a single token correction (2→1) is needed to obtain the correct answer.
 
-**Starting Point**: This paper relaxes the SD optimization objective from *matching the target distribution* to *matching the target utility*, rejecting only those tokens that genuinely cause utility degradation (pivot tokens), while accepting all other tokens regardless of whether standard SD would reject them.
+**Key Insight**: This paper relaxes the SD optimization objective from *matching the target distribution* to *matching the target utility*, rejecting only those tokens that genuinely cause utility degradation (pivot tokens), while accepting all other tokens regardless of whether standard SD would reject them.
 
 ## Method
 

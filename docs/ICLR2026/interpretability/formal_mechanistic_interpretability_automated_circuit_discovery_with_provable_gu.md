@@ -26,15 +26,15 @@ content_hash: 7842156acdba9c18
 This paper introduces neural network (NN) verification into mechanistic interpretability, proposing the first circuit discovery framework with provable guarantees: input robustness guarantees circuit faithfulness over continuous input domains, patching robustness guarantees circuit consistency over continuous patching domains, and a four-level minimality hierarchy (quasi → local → subset → cardinal) is formalized. A monotonicity theory unifies all three types of guarantees.
 
 ## Background & Motivation
-**State of the Field**: Circuit discovery in mechanistic interpretability (MI) aims to identify subgraphs (circuits) that drive specific model behaviors. Methods such as ACDC and edge attribution patching have made progress, but all rely on heuristics or sampling-based approximations.
+**Background**: Circuit discovery in mechanistic interpretability (MI) aims to identify subgraphs (circuits) that drive specific model behaviors. Methods such as ACDC and edge attribution patching have made progress, but all rely on heuristics or sampling-based approximations.
 
 **Limitations of Prior Work**: Evaluating circuit faithfulness via sampling is fundamentally flawed—even if a circuit is faithful at all sampled points, small input perturbations can break consistency. This is unacceptable in safety-critical settings. Furthermore, the notion of "minimality" remains loosely defined, and the minimality level achieved by different algorithms has not been formally discussed.
 
-**Root Cause**: Circuit discovery simultaneously requires faithfulness guarantees over continuous domains (rather than discrete points), circuits that are as small as possible (for interpretability), and the choice of patching strategy (zero/mean/sampling) itself introduces additional uncertainty.
+**Key Challenge**: Circuit discovery simultaneously requires faithfulness guarantees over continuous domains (rather than discrete points), circuits that are as small as possible (for interpretability), and the choice of patching strategy (zero/mean/sampling) itself introduces additional uncertainty.
 
-**Paper Goals**: (1) How to guarantee circuit faithfulness over continuous input domains? (2) How to guarantee circuit consistency over continuous patching domains? (3) How to formalize and pursue different levels of minimality?
+**Goal**: (1) How to guarantee circuit faithfulness over continuous input domains? (2) How to guarantee circuit consistency over continuous patching domains? (3) How to formalize and pursue different levels of minimality?
 
-**Starting Point**: Leveraging NN verification tools such as α-β-CROWN, the paper places the circuit and the original model side by side via Siamese encoding, reducing circuit faithfulness to verifiable input-output constraints.
+**Key Insight**: Leveraging NN verification tools such as α-β-CROWN, the paper places the circuit and the original model side by side via Siamese encoding, reducing circuit faithfulness to verifiable input-output constraints.
 
 **Core Idea**: Replace sampling with NN verifiers to prove circuit faithfulness over continuous domains, and unify input robustness, patching robustness, and minimality guarantees through a monotonicity theory.
 

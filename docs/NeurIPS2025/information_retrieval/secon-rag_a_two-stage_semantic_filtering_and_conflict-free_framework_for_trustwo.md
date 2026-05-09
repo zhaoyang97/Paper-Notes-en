@@ -27,7 +27,7 @@ This paper proposes SeCon-RAG, a two-stage defense framework. The first stage em
 
 ## Background & Motivation
 
-**State of the Field**: RAG has become a mainstream paradigm for enhancing LLM factual accuracy by incorporating external documents. However, RAG systems are highly dependent on external corpora, making them inherently vulnerable to corpus poisoning and retrieval contamination attacks.
+**Background**: RAG has become a mainstream paradigm for enhancing LLM factual accuracy by incorporating external documents. However, RAG systems are highly dependent on external corpora, making them inherently vulnerable to corpus poisoning and retrieval contamination attacks.
 
 **Limitations of Prior Work**:
    - Existing defenses such as TrustRAG apply clustering to detect poisoned documents, but rely solely on statistical features in vector space, constituting coarse-grained filtering that tends to incorrectly remove legitimate documents whose topics overlap with adversarial ones.
@@ -35,11 +35,11 @@ This paper proposes SeCon-RAG, a two-stage defense framework. The first stage em
    - Methods such as AstuteRAG use heuristic rules to fuse internal and external knowledge but do not resolve semantic conflicts among retrieved documents or between documents and the model's parametric knowledge.
    - Explicit detection and filtering of conflicting information is absent at the inference stage.
 
-**Root Cause**: Aggressive filtering risks losing valuable information and reducing recall, whereas lenient filtering retains poisoned content and reduces reliability—a fundamental trade-off between information preservation and security filtering.
+**Key Challenge**: Aggressive filtering risks losing valuable information and reducing recall, whereas lenient filtering retains poisoned content and reduces reliability—a fundamental trade-off between information preservation and security filtering.
 
-**Paper Goals**: (1) Replace coarse-grained statistical filtering with fine-grained semantic information to precisely identify poisoned documents; (2) Introduce conflict detection at the inference stage to ensure that final generation is grounded in consistent and trustworthy knowledge.
+**Goal**: (1) Replace coarse-grained statistical filtering with fine-grained semantic information to precisely identify poisoned documents; (2) Introduce conflict detection at the inference stage to ensure that final generation is grounded in consistent and trustworthy knowledge.
 
-**Starting Point**: The paper introduces a structured semantic extraction module, EIRE, which extracts entity, intent, and relation triples from documents to construct semantic graphs. Semantic graphs of clean documents exhibit dense and connected structures, whereas those of poisoned documents are sparse and fragmented—a structural discrepancy that enables precise identification.
+**Key Insight**: The paper introduces a structured semantic extraction module, EIRE, which extracts entity, intent, and relation triples from documents to construct semantic graphs. Semantic graphs of clean documents exhibit dense and connected structures, whereas those of poisoned documents are sparse and fragmented—a structural discrepancy that enables precise identification.
 
 **Core Idea**: Incorporate structured semantic information (entity-intent-relation) into both the retrieval and inference stages of RAG defense, enabling fine-grained poisoning detection and conflict resolution.
 

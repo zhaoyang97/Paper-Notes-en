@@ -29,15 +29,15 @@ This paper proposes ReDi (Representation Diffusion), a framework that jointly mo
 
 ## Background & Motivation
 
-**State of the Field**: Latent diffusion models (LDMs) are the dominant approach for high-quality image generation, while self-supervised representation learning methods (e.g., DINOv2) excel at semantic understanding. Although each paradigm has its strengths, they have long remained separate — LDM internal features lack semantic grounding, while DINOv2 has no generative capability.
+**Background**: Latent diffusion models (LDMs) are the dominant approach for high-quality image generation, while self-supervised representation learning methods (e.g., DINOv2) excel at semantic understanding. Although each paradigm has its strengths, they have long remained separate — LDM internal features lack semantic grounding, while DINOv2 has no generative capability.
 
 **Limitations of Prior Work**: REPA (Yu et al., 2025) first demonstrated that aligning the internal representations of a diffusion model with DINOv2 can simultaneously improve generation quality and training efficiency. However, REPA requires additional distillation losses (contrastive/MSE) to align intermediate features, resulting in a complex training objective.
 
-**Root Cause**: How can one elegantly achieve both high-quality image generation and semantic representation learning within a single model, without introducing complex distillation mechanisms?
+**Key Challenge**: How can one elegantly achieve both high-quality image generation and semantic representation learning within a single model, without introducing complex distillation mechanisms?
 
-**Paper Goals**: To propose a more direct alternative to REPA — rather than aligning representations, the diffusion model is trained to jointly generate both images and semantic features.
+**Goal**: To propose a more direct alternative to REPA — rather than aligning representations, the diffusion model is trained to jointly generate both images and semantic features.
 
-**Starting Point**: DINOv2 semantic features are treated as a "second modality" on par with VAE latents, jointly denoised within the same diffusion process.
+**Key Insight**: DINOv2 semantic features are treated as a "second modality" on par with VAE latents, jointly denoised within the same diffusion process.
 
 **Core Idea**: Instead of indirectly aligning the internal representations of a diffusion model, the model is trained to directly learn to generate semantic features — joint modeling naturally forces the model to integrate low-level visual and high-level semantic information during generation.
 

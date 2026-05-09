@@ -28,13 +28,13 @@ Addressing the limitation of existing steering methods that rely on fixed direct
 
 ## Background & Motivation
 
-**State of the Field**: Steering guides model behavior by applying linear offsets to the latent representations of LLMs/MLLMs, serving as a lightweight post-hoc control mechanism. Mainstream approaches (e.g., CAA/mean-steering) compute the mean difference between positive and negative behavior representations as a fixed steering vector applied uniformly to all inputs.
+**Background**: Steering guides model behavior by applying linear offsets to the latent representations of LLMs/MLLMs, serving as a lightweight post-hoc control mechanism. Mainstream approaches (e.g., CAA/mean-steering) compute the mean difference between positive and negative behavior representations as a fixed steering vector applied uniformly to all inputs.
 
 **Limitations of Prior Work**: The fatal flaw of fixed steering vectors is that **the instantiation of desired behavior is input-dependent**. For instance, a safe response to an illegal activity query should be a refusal, whereas a safe response to a medical consultation should recommend seeking expert advice. These two "safe" behaviors are fundamentally different and cannot be captured by a single fixed vector.
 
-**Root Cause**: The ideal input-specific steering vector (P2S) requires knowledge of the desired output content to be computed — yet at inference time, the very reason steering is needed is that the answer is unknown, creating a chicken-and-egg problem.
+**Key Challenge**: The ideal input-specific steering vector (P2S) requires knowledge of the desired output content to be computed — yet at inference time, the very reason steering is needed is that the answer is unknown, creating a chicken-and-egg problem.
 
-**Starting Point**: Although the desired answer is unavailable at inference time, contrastive prompts from training data can be used to construct P2S vectors as "teacher signals," after which a minimal network is trained to predict these vectors from the input context.
+**Key Insight**: Although the desired answer is unavailable at inference time, contrastive prompts from training data can be used to construct P2S vectors as "teacher signals," after which a minimal network is trained to predict these vectors from the input context.
 
 **Core Idea**: A 2-layer MLP predicts input-specific steering vectors from intermediate-layer representations of the input, translating the theoretical advantages of P2S into the practically deployable L2S method.
 

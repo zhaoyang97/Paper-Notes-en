@@ -29,15 +29,15 @@ This paper proposes "Visual Thoughts" as a unified framework for interpreting th
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal CoT (MCoT) for large vision-language models (LVLMs) encompasses two major paradigms: (1) T-MCoT (Textual MCoT), which accepts multimodal inputs and produces purely textual reasoning steps; and (2) I-MCoT (Interleaved MCoT), which generates reasoning outputs interleaving text and images. Both paradigms have their proponents—some argue that I-MCoT better mirrors human cognition, while others find T-MCoT superior in mathematical settings.
+**Background**: Multimodal CoT (MCoT) for large vision-language models (LVLMs) encompasses two major paradigms: (1) T-MCoT (Textual MCoT), which accepts multimodal inputs and produces purely textual reasoning steps; and (2) I-MCoT (Interleaved MCoT), which generates reasoning outputs interleaving text and images. Both paradigms have their proponents—some argue that I-MCoT better mirrors human cognition, while others find T-MCoT superior in mathematical settings.
 
 **Limitations of Prior Work**: No unified explanation exists for the effectiveness of these two paradigms. In particular, it remains unclear: (1) why different MCoT paradigms work; (2) which paradigm is preferable under what conditions; and (3) what the underlying mechanism is by which MCoT improves reasoning. No single framework addresses all these questions simultaneously.
 
-**Root Cause**: T-MCoT and I-MCoT each excel on different tasks, yet a theoretical framework to explain this divergence—and to guide paradigm selection—is lacking.
+**Key Challenge**: T-MCoT and I-MCoT each excel on different tasks, yet a theoretical framework to explain this divergence—and to guide paradigm selection—is lacking.
 
-**Paper Goals**: To provide a unified perspective for understanding how different MCoT paradigms enhance multimodal reasoning in LVLMs.
+**Goal**: To provide a unified perspective for understanding how different MCoT paradigms enhance multimodal reasoning in LVLMs.
 
-**Starting Point**: Drawing an analogy from computer systems—raw images resemble external storage (requiring reprocessing on each access), while visual thoughts resemble a cache (distilling critical visual information for fast retrieval).
+**Key Insight**: Drawing an analogy from computer systems—raw images resemble external storage (requiring reprocessing on each access), while visual thoughts resemble a cache (distilling critical visual information for fast retrieval).
 
 **Core Idea**: The central value of MCoT lies in generating "visual thoughts"—distilling and caching task-relevant visual information into the reasoning chain, thereby reducing dependence on raw images and enabling more efficient and deeper subsequent reasoning.
 

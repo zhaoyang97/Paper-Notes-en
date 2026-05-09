@@ -27,15 +27,15 @@ This paper proposes Linear Gradient Matching, a dataset distillation method for 
 
 ## Background & Motivation
 
-**State of the Field**: Dataset distillation aims to synthesize a minimal set of images such that models trained from scratch on them can match the performance of training on the full dataset. Existing methods (DC, MTT, DM, etc.) are designed for randomly initialized models trained from scratch.
+**Background**: Dataset distillation aims to synthesize a minimal set of images such that models trained from scratch on them can match the performance of training on the full dataset. Existing methods (DC, MTT, DM, etc.) are designed for randomly initialized models trained from scratch.
 
 **Limitations of Prior Work**: The dominant vision paradigm has shifted from training from scratch to pre-trained large models with downstream fine-tuning or linear probing. Existing distillation methods are not designed for this paradigm and cannot exploit the advantages of pre-trained features.
 
-**Root Cause**: Traditional distillation requires backpropagation through the entire network (e.g., MTT), which causes severe memory and stability issues for large models. Moreover, distilled images tend to overfit severely to a single architecture and fail to transfer across models.
+**Key Challenge**: Traditional distillation requires backpropagation through the entire network (e.g., MTT), which causes severe memory and stability issues for large models. Moreover, distilled images tend to overfit severely to a single architecture and fail to transfer across models.
 
-**Paper Goals**: (1) Design an efficient distillation method tailored to pre-trained self-supervised models; (2) Enable distilled images to transfer across model architectures.
+**Goal**: (1) Design an efficient distillation method tailored to pre-trained self-supervised models; (2) Enable distilled images to transfer across model architectures.
 
-**Starting Point**: Since the downstream task only trains a linear classifier, distillation need only perform matching in the gradient space of the linear layer—substantially reducing optimization complexity. Inspired by the Platonic Representation Hypothesis, different pre-trained models learn similar representations, suggesting that distilled images may generalize across models.
+**Key Insight**: Since the downstream task only trains a linear classifier, distillation need only perform matching in the gradient space of the linear layer—substantially reducing optimization complexity. Inspired by the Platonic Representation Hypothesis, different pre-trained models learn similar representations, suggesting that distilled images may generalize across models.
 
 **Core Idea**: Synthesize images by matching only the gradients of a linear classifier in the pre-trained feature space, combined with pyramid reparameterization and differentiable augmentation to enable cross-model transfer.
 

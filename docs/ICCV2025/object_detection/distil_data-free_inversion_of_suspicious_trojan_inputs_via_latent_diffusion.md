@@ -41,7 +41,7 @@ Deep neural networks face serious threats from trojan (backdoor) attacks: advers
 
 **Core Insight**: Trojan models exhibit **stronger transferability** than clean models with respect to specific shortcut patterns—because backdoored networks are explicitly trained to associate triggers with target classes. If these shortcuts can be extracted, the transferability gap can be used to distinguish trojan models from clean ones.
 
-**Starting Point**: Shift the search space from pixel space to the **latent space of a pretrained diffusion model**, leveraging the image manifold constraint imposed by the diffusion model to avoid degenerate adversarial solutions, while injecting uniform noise at each step to disrupt fragile adversarial optima.
+**Key Insight**: Shift the search space from pixel space to the **latent space of a pretrained diffusion model**, leveraging the image manifold constraint imposed by the diffusion model to avoid degenerate adversarial solutions, while injecting uniform noise at each step to disrupt fragile adversarial optima.
 
 ## Method
 

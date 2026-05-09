@@ -29,7 +29,7 @@ This paper systematically investigates the over-reliance of preference models on
 
 ## Background & Motivation
 
-**State of the Field**: Language models are increasingly used as proxies for human preference judgments—both as reward models in RLHF and as automated evaluators (LLM-as-a-Judge).
+**Background**: Language models are increasingly used as proxies for human preference judgments—both as reward models in RLHF and as automated evaluators (LLM-as-a-Judge).
 
 **Limitations of Prior Work**:
    - Preference models exhibit systematic **miscalibration**: they favor surface-level features (e.g., length, list formatting) over substantive quality.
@@ -37,11 +37,11 @@ This paper systematically investigates the over-reliance of preference models on
    - When used as evaluators, they distort evaluation conclusions.
    - Prior studies document individual biases in isolation, lacking a **systematic causal analysis** of the training data artifacts → model miscalibration pipeline.
 
-**Root Cause**: Bias features in training data have only a weak correlation with human preference labels (average $r_{human} = -0.12$), yet models develop a strong positive correlation with these features (average $r_{model} = +0.36$)—models amplify weak spurious signals present in the data.
+**Key Challenge**: Bias features in training data have only a weak correlation with human preference labels (average $r_{human} = -0.12$), yet models develop a strong positive correlation with these features (average $r_{model} = +0.36$)—models amplify weak spurious signals present in the data.
 
-**Paper Goals**: ① Quantify the degree of miscalibration in preference models across five dimensions; ② Trace biases back to training data; ③ Propose a simple and effective remedy.
+**Goal**: ① Quantify the degree of miscalibration in preference models across five dimensions; ② Trace biases back to training data; ③ Propose a simple and effective remedy.
 
-**Starting Point**: A **causal inference** approach is adopted—constructing counterfactual pairs (via the RATE protocol) to experimentally isolate the effect of each bias feature, rather than relying on simple correlation analysis.
+**Key Insight**: A **causal inference** approach is adopted—constructing counterfactual pairs (via the RATE protocol) to experimentally isolate the effect of each bias feature, rather than relying on simple correlation analysis.
 
 **Core Idea**: Quantify biases via counterfactual pairs, trace root causes through training data analysis, and remedy miscalibration via counterfactual data augmentation.
 

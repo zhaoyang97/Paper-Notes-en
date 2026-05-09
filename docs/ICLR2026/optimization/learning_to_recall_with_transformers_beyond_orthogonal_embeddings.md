@@ -31,7 +31,7 @@ This paper analyzes the "early phase" of empirical gradient descent for a single
 
 ### Root Cause
 
-**State of the Field**: Large language models (LLMs) excel at tasks requiring knowledge storage and retrieval, such as factual recall and question answering. The Transformer architecture is central to this capability, encoding information during training and retrieving it at inference time.
+**Background**: Large language models (LLMs) excel at tasks requiring knowledge storage and retrieval, such as factual recall and question answering. The Transformer architecture is central to this capability, encoding information during training and retrieving it at inference time.
 
 Understanding how Transformers learn memorization and retrieval patterns is an important direction in deep learning theory. Existing theoretical analyses are largely conducted under the following idealized assumptions:
 
@@ -41,7 +41,7 @@ Understanding how Transformers learn memorization and retrieval patterns is an i
 
 In realistic settings, models are trained via **empirical gradient descent** on **finite datasets** with **randomly initialized, non-orthogonal embeddings**. Non-orthogonality introduces inter-token interference, fundamentally altering the learning dynamics and the scaling behavior of storage capacity.
 
-**Paper Goals**: To precisely analyze the memory-retrieval capability of Transformers under these more realistic conditions.
+**Goal**: To precisely analyze the memory-retrieval capability of Transformers under these more realistic conditions.
 
 ## Method
 

@@ -27,15 +27,15 @@ content_hash: a3c6c71821bd9591
 This paper formalizes multi-store retrieval in memory-augmented agents as a cost-sensitive store routing problem, demonstrates that selective retrieval can reduce context tokens by 62% while improving QA accuracy (86% vs. 81%) over exhaustive retrieval, and proposes a semantics-based heuristic routing baseline.
 
 ## Background & Motivation
-**State of the Field**: Memory-augmented agents (e.g., MemGPT) typically maintain multiple specialized stores — short-term memory (STM, current conversation), a summary store (Summary, compressed user facts), long-term memory (LTM, historical conversation summaries), and episodic memory (Episodic, raw transcripts). However, most systems retrieve from all stores for every query.
+**Background**: Memory-augmented agents (e.g., MemGPT) typically maintain multiple specialized stores — short-term memory (STM, current conversation), a summary store (Summary, compressed user facts), long-term memory (LTM, historical conversation summaries), and episodic memory (Episodic, raw transcripts). However, most systems retrieve from all stores for every query.
 
 **Limitations of Prior Work**: Exhaustive retrieval incurs two costs: ① computational waste (querying stores that cannot contain the answer); and ② accuracy degradation (irrelevant/noisy context reduces the signal-to-noise ratio, forcing the model to locate the answer within large amounts of irrelevant text, especially in long-context settings).
 
-**Root Cause**: More context ≠ better performance. In long-context settings, interference from irrelevant stores actively misleads the model — for instance, outdated information in LTM may conflict with up-to-date information in Summary, and the model may erroneously select the stale version.
+**Key Challenge**: More context ≠ better performance. In long-context settings, interference from irrelevant stores actively misleads the model — for instance, outdated information in LTM may conflict with up-to-date information in Summary, and the model may erroneously select the stale version.
 
-**Paper Goals**: To determine *which stores to search* before retrieval, decouple store selection from intra-store ranking, and make the accuracy–cost tradeoff explicit.
+**Goal**: To determine *which stores to search* before retrieval, decouple store selection from intra-store ranking, and make the accuracy–cost tradeoff explicit.
 
-**Starting Point**: Inspired by federated search in information retrieval and the episodic-vs-semantic memory taxonomy in cognitive science, the paper routes queries to stores according to their distinct semantic roles.
+**Key Insight**: Inspired by federated search in information retrieval and the episodic-vs-semantic memory taxonomy in cognitive science, the paper routes queries to stores according to their distinct semantic roles.
 
 **Core Idea**: The routing decision is a first-class component of memory-augmented agent design, not an afterthought. It is formalized as $\pi^*(q) = \arg\max_{G \subseteq \mathcal{S}} [\mathbb{E}[\text{Acc}(q,G)] - \lambda \sum_{s \in G} c_s]$.
 

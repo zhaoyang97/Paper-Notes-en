@@ -29,7 +29,7 @@ Through an observational study (18 open-source RPT models) and an interventional
 
 ## Background & Motivation
 
-**State of the Field**: RPT (particularly RLVR) has recently achieved remarkable progress in mathematical and code reasoning — Gemini 3 Pro reaches 100% on AIME 2025, Claude Opus 4.5 reaches 81% on SWE-bench, and GPT-5.2-Pro reaches 93.2% on GPQA Diamond. These models are typically post-trained on mixed multi-domain data.
+**Background**: RPT (particularly RLVR) has recently achieved remarkable progress in mathematical and code reasoning — Gemini 3 Pro reaches 100% on AIME 2025, Claude Opus 4.5 reaches 81% on SWE-bench, and GPT-5.2-Pro reaches 93.2% on GPQA Diamond. These models are typically post-trained on mixed multi-domain data.
 
 **Core Problem**: Do the reasoning gains brought by RPT generalize broadly across domains, as pretraining does? Existing work almost exclusively evaluates RPT models within their training domains, lacking systematic cross-domain analysis.
 

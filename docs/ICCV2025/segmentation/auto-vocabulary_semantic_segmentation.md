@@ -29,15 +29,15 @@ This paper introduces Auto-Vocabulary Semantic Segmentation (AVS), a new task in
 
 ## Background & Motivation
 
-**State of the Field**: Semantic segmentation has evolved from closed-set (fixed categories) to open-vocabulary segmentation (OVS), where VLMs such as CLIP enable handling of arbitrarily specified text categories. Nevertheless, OVS still requires a "human in the loop"—users must either specify the vocabulary at inference time or the method implicitly encodes a fixed set of output categories through training on manually annotated datasets.
+**Background**: Semantic segmentation has evolved from closed-set (fixed categories) to open-vocabulary segmentation (OVS), where VLMs such as CLIP enable handling of arbitrarily specified text categories. Nevertheless, OVS still requires a "human in the loop"—users must either specify the vocabulary at inference time or the method implicitly encodes a fixed set of output categories through training on manually annotated datasets.
 
 **Limitations of Prior Work**: (a) Manual specification of which categories to segment is required for each image, limiting scalability. (b) Consider a kitchen robot that must distinguish among various tools and ingredients—providing category names before every grasp is impractical. (c) Text-query-based methods (e.g., LISA) require multiple inference passes for multi-category scenes, resulting in extremely poor efficiency.
 
-**Root Cause**: VLMs (CLIP, BLIP) are trained on image-level features and lack the capacity for fine-grained local region reasoning, making precise segmentation boundaries difficult to obtain directly. Moreover, having a model automatically determine "what should be segmented" is a strictly harder problem than "segmenting a specified category."
+**Key Challenge**: VLMs (CLIP, BLIP) are trained on image-level features and lack the capacity for fine-grained local region reasoning, making precise segmentation boundaries difficult to obtain directly. Moreover, having a model automatically determine "what should be segmented" is a strictly harder problem than "segmenting a specified category."
 
-**Paper Goals**: (a) Eliminate human intervention from the segmentation pipeline by enabling the model to autonomously identify all relevant categories in an image. (b) Evaluate the correspondence between automatically generated categories and annotated categories—synonymy and hierarchical relationships make discrete category comparison non-trivial.
+**Goal**: (a) Eliminate human intervention from the segmentation pipeline by enabling the model to autonomously identify all relevant categories in an image. (b) Evaluate the correspondence between automatically generated categories and annotated categories—synonymy and hierarchical relationships make discrete category comparison non-trivial.
 
-**Starting Point**: BLIP patch embeddings inherently encode local semantic information, which can be clustered and decoded into textual descriptions—effectively automating local image captioning—after which the generated category names drive an OVS segmenter.
+**Key Insight**: BLIP patch embeddings inherently encode local semantic information, which can be clustered and decoded into textual descriptions—effectively automating local image captioning—after which the generated category names drive an OVS segmenter.
 
 **Core Idea**: Cluster BLIP features and decode them to generate an image-specific vocabulary, then feed this vocabulary as a self-guided input to an OVS model to achieve semantic segmentation without human intervention.
 

@@ -28,7 +28,7 @@ This paper addresses posterior collapse in Variational Preference Learning (VPL)
 
 ## Background & Motivation
 
-**State of the Field**: Unified reward models assume consistent preferences across all users, yet real-world user preferences exhibit significant diversity. VPL models user-specific preferences via latent variables.
+**Background**: Unified reward models assume consistent preferences across all users, yet real-world user preferences exhibit significant diversity. VPL models user-specific preferences via latent variables.
 
 **Limitations of Prior Work**: Under sparse data combined with a strong decoder, VPL's latent variables suffer from posterior collapse — the latent variable is entirely ignored and the model degenerates into a single reward model.
 

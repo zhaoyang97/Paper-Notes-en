@@ -29,15 +29,15 @@ LUSD addresses the failure modes of existing score distillation methods in image
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion models have demonstrated strong generative prior capabilities for text-guided image editing. Recent work has introduced score distillation techniques that leverage pretrained text-to-image diffusion models for training-free image editing. Representative methods include DDS (Delta Denoising Score) and PDS (Posterior Distillation Sampling).
+**Background**: Diffusion models have demonstrated strong generative prior capabilities for text-guided image editing. Recent work has introduced score distillation techniques that leverage pretrained text-to-image diffusion models for training-free image editing. Representative methods include DDS (Delta Denoising Score) and PDS (Posterior Distillation Sampling).
 
 **Limitations of Prior Work**: Score distillation-based methods frequently fail on tasks such as object insertion. Specifically, edited results either fail to correctly insert the target object (low prompt fidelity) or introduce excessive modifications to background regions (poor background preservation). It is observed that gradient magnitudes and spatial distributions vary significantly across different input images and editing targets, making hyperparameter tuning highly input-dependent or even infeasible.
 
-**Root Cause**: During score distillation, gradient updates are spatially non-uniform—the gradient signals received by editing regions and background regions differ substantially, and this disparity pattern is inconsistent across samples. This input-specificity prevents a single hyperparameter configuration from generalizing across different editing scenarios.
+**Key Challenge**: During score distillation, gradient updates are spatially non-uniform—the gradient signals received by editing regions and background regions differ substantially, and this disparity pattern is inconsistent across samples. This input-specificity prevents a single hyperparameter configuration from generalizing across different editing scenarios.
 
-**Paper Goals**: To design a robust score distillation method that operates stably across diverse editing tasks and input images without requiring input-specific hyperparameter tuning.
+**Goal**: To design a robust score distillation method that operates stably across diverse editing tasks and input images without requiring input-specific hyperparameter tuning.
 
-**Starting Point**: Through a thorough analysis of gradient properties in existing methods, the authors identify that the root cause lies in instability along two dimensions: spatial distribution and magnitude of gradients. The proposed modifications are therefore motivated from a gradient processing perspective.
+**Key Insight**: Through a thorough analysis of gradient properties in existing methods, the authors identify that the root cause lies in instability along two dimensions: spatial distribution and magnitude of gradients. The proposed modifications are therefore motivated from a gradient processing perspective.
 
 **Core Idea**: Constrain the spatial distribution of gradients via attention-based spatial regularization, and stabilize gradient magnitudes via gradient filtering-normalization, enabling score distillation to operate reliably across diverse editing scenarios.
 

@@ -28,15 +28,15 @@ This paper proposes the Shadow-informed Pose Feature (SiPF) and the RIAttnConv o
 
 ## Background & Motivation
 
-**State of the Field**: The mainstream paradigm in rotation-invariant (RI) 3D point cloud learning replaces raw coordinates with handcrafted local geometric features (e.g., PPF, RI tensors) to ensure invariance under arbitrary rotations. Representative methods include PaRI-Conv, RISurConv, and PaRot.
+**Background**: The mainstream paradigm in rotation-invariant (RI) 3D point cloud learning replaces raw coordinates with handcrafted local geometric features (e.g., PPF, RI tensors) to ensure invariance under arbitrary rotations. Representative methods include PaRI-Conv, RISurConv, and PaRot.
 
 **Limitations of Prior Work**: These methods achieve rotation invariance by discarding absolute coordinate information, but at the cost of losing global pose context. This causes geometrically similar but spatially distinct parts (e.g., the left and right wings of an airplane) to produce identical feature representations.
 
-**Root Cause**: The paper formally defines the "Wing-tip Feature Collapse" phenomenon: for symmetric points $p_{\text{left}}$ and $p_{\text{right}}$, since their local neighborhoods satisfy $\Omega(p_{\text{right}}) = \Omega(p_{\text{left}}) R_{\text{sym}}$, any RI function must yield $f(p_{\text{left}}) = f(p_{\text{right}})$. This is a fundamental limitation of finite receptive fields.
+**Key Challenge**: The paper formally defines the "Wing-tip Feature Collapse" phenomenon: for symmetric points $p_{\text{left}}$ and $p_{\text{right}}$, since their local neighborhoods satisfy $\Omega(p_{\text{right}}) = \Omega(p_{\text{left}}) R_{\text{sym}}$, any RI function must yield $f(p_{\text{left}}) = f(p_{\text{right}})$. This is a fundamental limitation of finite receptive fields.
 
-**Paper Goals**: To inject global pose information while preserving rotation invariance, enabling the model to distinguish geometrically similar but spatially distinct structures.
+**Goal**: To inject global pose information while preserving rotation invariance, enabling the model to distinguish geometrically similar but spatially distinct structures.
 
-**Starting Point**: A "shadow" reference point is introduced for each point — projected to a new location via a learned shared rotation matrix — serving as a globally consistent anchor that encodes relative positional information.
+**Key Insight**: A "shadow" reference point is introduced for each point — projected to a new location via a learned shared rotation matrix — serving as a globally consistent anchor that encodes relative positional information.
 
 **Core Idea**: A global rotation learned via Bingham distribution generates "shadow points," which are encoded into local PPF features to form SiPF. Combined with an attention-based convolution operator, this enables rotation-invariant learning with global pose awareness.
 

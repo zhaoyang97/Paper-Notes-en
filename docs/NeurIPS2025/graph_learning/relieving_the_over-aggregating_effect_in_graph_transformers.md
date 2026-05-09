@@ -28,15 +28,15 @@ This paper identifies the *over-aggregating* phenomenon in Graph Transformers—
 
 ## Background & Motivation
 
-**State of the Field**: Graph Transformers leverage global attention mechanisms to capture long-range dependencies among nodes, overcoming the over-smoothing and over-squashing limitations of traditional GNNs. To handle large-scale graphs, two primary approaches exist: sparse attention and linear attention.
+**Background**: Graph Transformers leverage global attention mechanisms to capture long-range dependencies among nodes, overcoming the over-smoothing and over-squashing limitations of traditional GNNs. To handle large-scale graphs, two primary approaches exist: sparse attention and linear attention.
 
 **Limitations of Prior Work**: Linear attention methods (e.g., Performer, SGFormer, Polynormer) preserve a global receptive field but suffer from severe information dilution—when all nodes participate in aggregation, attention scores tend toward uniformity (high attention entropy), preventing target nodes from distinguishing informative messages.
 
-**Root Cause**: In global attention computation, the more nodes involved, the more uniform the attention scores become (Theorem 3.1 proves that the entropy lower bound increases monotonically with $n$), causing critical messages to be diluted (over-aggregating). Sparse attention mitigates this issue but at the cost of a reduced receptive field.
+**Key Challenge**: In global attention computation, the more nodes involved, the more uniform the attention scores become (Theorem 3.1 proves that the entropy lower bound increases monotonically with $n$), causing critical messages to be diluted (over-aggregating). Sparse attention mitigates this issue but at the cost of a reduced receptive field.
 
-**Paper Goals**: Alleviate over-aggregating while preserving a global receptive field.
+**Goal**: Alleviate over-aggregating while preserving a global receptive field.
 
-**Starting Point**: Rather than reducing the number of input nodes, the paper decomposes aggregation into multiple parallel sub-processes (cluster-wise aggregation) and increases the output dimensionality to retain more information.
+**Key Insight**: Rather than reducing the number of input nodes, the paper decomposes aggregation into multiple parallel sub-processes (cluster-wise aggregation) and increases the output dimensionality to retain more information.
 
 **Core Idea**: Decompose the all-to-one global aggregation into multiple parallel cluster-to-one aggregations, and apply a guiding mechanism so that each target node focuses on the most informative subset.
 

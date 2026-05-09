@@ -27,7 +27,7 @@ N2N-GQA is proposed as the first zero-shot framework for open-domain hybrid tabl
 
 ## Background & Motivation
 
-**State of the Field**: Multi-hop QA (e.g., "What is the capital of the birth country of the 2019 Atlantic Hockey Player of the Year?") requires retrieval and reasoning across multiple documents and tables. Standard RAG pipelines pass retrieved results to LLMs as flat ranked lists. Open-domain hybrid QA benchmarks such as OTT-QA require simultaneous retrieval of tables and text passages from large corpora.
+**Background**: Multi-hop QA (e.g., "What is the capital of the birth country of the 2019 Atlantic Hockey Player of the Year?") requires retrieval and reasoning across multiple documents and tables. Standard RAG pipelines pass retrieved results to LLMs as flat ranked lists. Open-domain hybrid QA benchmarks such as OTT-QA require simultaneous retrieval of tables and text passages from large corpora.
 
 **Limitations of Prior Work**:
    - List-based retrieval scores each document independently, failing to discover inter-document reasoning chain relationships — a document may appear irrelevant in isolation yet serve as a bridge connecting two highly relevant documents.
@@ -35,11 +35,11 @@ N2N-GQA is proposed as the first zero-shot framework for open-domain hybrid tabl
    - Competitive open-domain methods (CORE, COS) require extensive task-specific fine-tuning.
    - Zero-shot methods (e.g., ODYSSEY) are evaluated only in closed-domain settings where gold-standard evidence is provided.
 
-**Root Cause**: Multi-hop reasoning requires understanding relationships among evidence fragments (i.e., which documents form a reasoning chain), whereas ranked lists evaluate each document in isolation — relational information is discarded at the retrieval stage.
+**Key Challenge**: Multi-hop reasoning requires understanding relationships among evidence fragments (i.e., which documents form a reasoning chain), whereas ranked lists evaluate each document in isolation — relational information is discarded at the retrieval stage.
 
-**Paper Goals**: To achieve zero-shot open-domain multi-hop QA without any task-specific training, by organizing retrieved results via graph structures to recover inter-document relationships.
+**Goal**: To achieve zero-shot open-domain multi-hop QA without any task-specific training, by organizing retrieved results via graph structures to recover inter-document relationships.
 
-**Starting Point**: Retrieved documents are modeled as graph nodes, with TF-IDF shared-term weights as edges, and graph centrality is used to identify structurally important bridging documents.
+**Key Insight**: Retrieved documents are modeled as graph nodes, with TF-IDF shared-term weights as edges, and graph centrality is used to identify structurally important bridging documents.
 
 **Core Idea**: Transform the flat retrieval list of RAG into a structured evidence graph, using graph centrality-based pruning to filter noise and preserve reasoning chains.
 

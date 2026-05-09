@@ -29,15 +29,15 @@ MARS proposes a multimodal retrieval-and-selection approach to identify the most
 
 ## Background & Motivation
 
-**State of the Field**: Conversational ASR must leverage historical context to handle challenges such as speaking style, filler words, and discourse coherence. Recent LLM-ASR approaches have demonstrated the potential for exploiting long contexts.
+**Background**: Conversational ASR must leverage historical context to handle challenges such as speaking style, filler words, and discourse coherence. Recent LLM-ASR approaches have demonstrated the potential for exploiting long contexts.
 
 **Limitations of Prior Work**: Existing conversational LLM-ASR systems fall into two extremes when utilizing context: (1) *Fixed preceding N utterances*: assumes the most relevant context lies in the recent turns, whereas in practice the most relevant history may appear much earlier, and recent turns may be dominated by filler words and irrelevant content; (2) *Full dialogue history*: provides rich context but introduces substantial redundancy, disrupting recognition and incurring high computational cost.
 
-**Root Cause**: The position of the most relevant historical context is not fixed—it may occur early in the dialogue—while the full history contains excessive irrelevant information. A mechanism that precisely locates the most relevant historical context is therefore needed.
+**Key Challenge**: The position of the most relevant historical context is not fixed—it may occur early in the dialogue—while the full history contains excessive irrelevant information. A mechanism that precisely locates the most relevant historical context is therefore needed.
 
-**Paper Goals**: Retrieve and select the single most helpful historical utterance from the entire dialogue history for a given current utterance, thereby enhancing conversational LLM-ASR performance.
+**Goal**: Retrieve and select the single most helpful historical utterance from the entire dialogue history for a given current utterance, thereby enhancing conversational LLM-ASR performance.
 
-**Starting Point**: Inspired by the retrieval paradigm of RAG, but customized for ASR—RAG aims at generating new content, whereas ASR maps speech to text, representing fundamentally different objectives. MARS performs retrieval from both speech and text modalities, then applies a near-ideal ranking strategy to select the optimal single context.
+**Key Insight**: Inspired by the retrieval paradigm of RAG, but customized for ASR—RAG aims at generating new content, whereas ASR maps speech to text, representing fundamentally different objectives. MARS performs retrieval from both speech and text modalities, then applies a near-ideal ranking strategy to select the optimal single context.
 
 **Core Idea**: Retrieve candidate historical contexts via speech-and-text dual-modal retrieval, and apply a TOPSIS-style near-ideal ranking that integrates both similarity scores to select the single best context for the LLM, realizing a "less is more" approach to context utilization.
 

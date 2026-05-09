@@ -29,15 +29,15 @@ This paper proposes SIEVE (Select–Hypothesize–Verify), a closed-loop framewo
 
 ## Background & Motivation
 
-1. **State of the Field**: Understanding individual neuron functionality—i.e., what concept a neuron encodes—is a central problem in neural network interpretability. Methods such as Network Dissection, CLIP-Dissect, FALCON, and DnD have made progress by describing neuron concepts in natural language.
+1. **Background**: Understanding individual neuron functionality—i.e., what concept a neuron encodes—is a central problem in neural network interpretability. Methods such as Network Dissection, CLIP-Dissect, FALCON, and DnD have made progress by describing neuron concepts in natural language.
 
 2. **Limitations of Prior Work**: These methods share a common assumption that every neuron has a well-defined function and contributes discriminative features to decisions. However, research has shown that networks contain redundant neurons that do not contribute to decisions. Generating descriptions for such neurons leads to misinterpretation of the network's decision mechanism.
 
-3. **Root Cause**: Existing methods are fundamentally "observe → hypothesize" pipelines that infer neuron functionality from activation distributions over probe datasets. Due to limited data coverage, these hypotheses may suffer from dataset bias and fail to accurately reflect true neuron functionality. A verification step is absent.
+3. **Key Challenge**: Existing methods are fundamentally "observe → hypothesize" pipelines that infer neuron functionality from activation distributions over probe datasets. Due to limited data coverage, these hypotheses may suffer from dataset bias and fail to accurately reflect true neuron functionality. A verification step is absent.
 
-4. **Paper Goals**: (1) How to filter out neurons that do not provide discriminative features; (2) how to verify whether generated concepts genuinely match neuron functionality.
+4. **Goal**: (1) How to filter out neurons that do not provide discriminative features; (2) how to verify whether generated concepts genuinely match neuron functionality.
 
-5. **Starting Point**: Drawing on the neuroscience paradigm of "observe → hypothesize → verify," the authors argue that interpretability research on deep networks should follow the same closed-loop logic.
+5. **Key Insight**: Drawing on the neuroscience paradigm of "observe → hypothesize → verify," the authors argue that interpretability research on deep networks should follow the same closed-loop logic.
 
 6. **Core Idea**: Filter effective neurons by activation distribution, generate concept hypotheses via clustering, and then verify concept–neuron alignment in a closed loop using text-to-image generated images.
 

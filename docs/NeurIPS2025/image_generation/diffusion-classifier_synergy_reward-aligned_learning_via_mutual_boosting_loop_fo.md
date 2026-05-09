@@ -30,7 +30,7 @@ This paper proposes the Diffusion-Classifier Synergy (DCS) framework, which esta
 
 ### State of the Field
 
-**State of the Field**: Few-Shot Class-Incremental Learning (FSCIL) requires models to learn new classes incrementally with only a few samples while avoiding forgetting previously acquired knowledge, posing a severe stability-plasticity dilemma.
+**Background**: Few-Shot Class-Incremental Learning (FSCIL) requires models to learn new classes incrementally with only a few samples while avoiding forgetting previously acquired knowledge, posing a severe stability-plasticity dilemma.
 
 ### Limitations of Prior Work
 
@@ -38,7 +38,7 @@ This paper proposes the Diffusion-Classifier Synergy (DCS) framework, which esta
 
 ### Root Cause
 
-**Root Cause**: Diffusion models inherently possess data augmentation potential: generating images for old classes enables knowledge replay, while augmenting new classes provides richer training signals.
+**Key Challenge**: Diffusion models inherently possess data augmentation potential: generating images for old classes enables knowledge replay, while augmenting new classes provides richer training signals.
 
 ### Solution Direction
 
@@ -46,7 +46,7 @@ This paper proposes the Diffusion-Classifier Synergy (DCS) framework, which esta
 
 ### Paper Goals
 
-**Paper Goals**:
+**Goal**:
 1. **Semantic Misalignment and Diversity Deficiency**: When vanilla diffusion models generate images conditioned on class names, a trade-off exists between semantic alignment precision and intra-class diversity, with both metrics falling below the real-data baseline.
 2. **Absence of Feedback Pathways**: Existing data augmentation methods treat diffusion models as "blind teachers," unable to adaptively adjust generation based on the current state of the classifier, and thus incapable of producing hard samples near decision boundaries.
 

@@ -39,7 +39,7 @@ Two major limitations of existing activation steering methods:
 
 **Question-only judgment**: Methods such as CAST determine whether to intervene based solely on the representation of the input question. However, in complex settings such as truthfulness, it is difficult to predict from the question alone whether the response will deviate. Experiments confirm that on TruthfulQA, a question-only classifier produces prediction probabilities concentrated in the 0.3–0.5 range, making fine-grained decisions unreliable.
 
-**Root Cause**: (1) Different generations require different degrees of intervention; (2) intervening only after deviation is detected is often too late—already-generated deviated tokens cannot be corrected.
+**Key Challenge**: (1) Different generations require different degrees of intervention; (2) intervening only after deviation is detected is often too late—already-generated deviated tokens cannot be corrected.
 
 **Core Idea**: Track LLM internal states in real time after each token generation, jointly considering the question and the generated content to dynamically determine intervention necessity and intensity. A backtracking mechanism is introduced: upon detecting deviation, the model rolls back several tokens and regenerates, placing intervention before the point of deviation.
 

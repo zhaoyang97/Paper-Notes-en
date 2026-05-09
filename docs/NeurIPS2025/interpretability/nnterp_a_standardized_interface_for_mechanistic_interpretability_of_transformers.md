@@ -28,15 +28,15 @@ nnterp is a lightweight wrapper over NNsight that provides a unified interface f
 
 ## Background & Motivation
 
-**State of the Field**: Mechanistic interpretability research requires reliable access to and modification of Transformer models' internal representations—intermediate layer outputs, attention probabilities, MLP activations, etc. Two dominant paradigms currently exist: TransformerLens rewrites each architecture from scratch to guarantee a unified interface, while NNsight directly wraps HuggingFace implementations to preserve original behavior.
+**Background**: Mechanistic interpretability research requires reliable access to and modification of Transformer models' internal representations—intermediate layer outputs, attention probabilities, MLP activations, etc. Two dominant paradigms currently exist: TransformerLens rewrites each architecture from scratch to guarantee a unified interface, while NNsight directly wraps HuggingFace implementations to preserve original behavior.
 
 **Limitations of Prior Work**: Both paradigms suffer from critical flaws. TransformerLens requires manually reimplementing each new architecture, may introduce subtle numerical discrepancies from the original model, and cannot leverage architecture-specific optimizations such as Flash Attention. NNsight preserves original behavior but inherits the inconsistent naming conventions of HuggingFace: GPT-2 uses `model.transformer.h`, LLaMA uses `model.model.layers`, forcing researchers to maintain architecture-specific code paths. More critically, HuggingFace transformers 4.54 changed the layer output format for Qwen and Llama from tuples to tensors, silently breaking numerous interpretability experiments.
 
-**Root Cause**: The fundamental tension is between implementation correctness and interface standardization. Guaranteeing numerical consistency with the original model requires using HuggingFace's native implementation, yet that implementation lacks naming consistency across architectures. No existing solution satisfies both requirements simultaneously.
+**Key Challenge**: The fundamental tension is between implementation correctness and interface standardization. Guaranteeing numerical consistency with the original model requires using HuggingFace's native implementation, yet that implementation lacks naming consistency across architectures. No existing solution satisfies both requirements simultaneously.
 
-**Paper Goals**: How can one provide a cross-architecture consistent interface for interpretability research while preserving the correctness of HuggingFace's original implementations?
+**Goal**: How can one provide a cross-architecture consistent interface for interpretability research while preserving the correctness of HuggingFace's original implementations?
 
-**Starting Point**: Rather than rewriting model implementations, the paper adds a lightweight standardization layer on top of NNsight via systematic renaming and automated validation. The core insight is that differences across architectures are primarily reflected in module naming rather than computational logic—most Transformers share structures such as layers, self_attn, and mlp, differing only in how these are named.
+**Key Insight**: Rather than rewriting model implementations, the paper adds a lightweight standardization layer on top of NNsight via systematic renaming and automated validation. The core insight is that differences across architectures are primarily reflected in module naming rather than computational logic—most Transformers share structures such as layers, self_attn, and mlp, differing only in how these are named.
 
 **Core Idea**: Use automated module renaming combined with a validation test suite as a standardization layer over NNsight, achieving a unified cross-architecture interface without sacrificing correctness.
 

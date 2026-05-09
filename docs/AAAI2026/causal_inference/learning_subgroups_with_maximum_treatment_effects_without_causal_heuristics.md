@@ -27,15 +27,15 @@ Under the SCM framework, the paper proves that the subgroup with maximum treatme
 
 ## Background & Motivation
 
-**State of the Field**: Discovering subgroups with maximum average treatment effect is a central problem in causal inference. Existing methods (CausalTree, QUINT, SIDES, etc.) design specialized "causal heuristics" to construct splitting criteria.
+**Background**: Discovering subgroups with maximum average treatment effect is a central problem in causal inference. Existing methods (CausalTree, QUINT, SIDES, etc.) design specialized "causal heuristics" to construct splitting criteria.
 
 **Limitations of Prior Work**: Causal heuristics are fragile — (1) imbalance between treatment and control groups degrades split quality during tree growth; (2) specialized splitting criteria lack theoretical optimality guarantees; (3) assumptions vary substantially across methods, leading to inconsistent results.
 
-**Root Cause**: Does causal subgroup discovery genuinely require specialized "causal" methods, or is standard supervised learning sufficient?
+**Key Challenge**: Does causal subgroup discovery genuinely require specialized "causal" methods, or is standard supervised learning sufficient?
 
-**Paper Goals**: To prove that, under reasonable assumptions, maximum-effect subgroup discovery is equivalent to a standard classification/regression problem.
+**Goal**: To prove that, under reasonable assumptions, maximum-effect subgroup discovery is equivalent to a standard classification/regression problem.
 
-**Starting Point**: Theory-driven — first prove the homogeneity theorem (Theorem 1), then prove the reduction theorem under the partition model (Theorem 2), and finally implement the approach using the simplest possible CART.
+**Key Insight**: Theory-driven — first prove the homogeneity theorem (Theorem 1), then prove the reduction theorem under the partition model (Theorem 2), and finally implement the approach using the simplest possible CART.
 
 **Core Idea**: The subgroup with maximum treatment effect must be one of the homogeneous partitions → learn partitions via CART → estimate treatment effect for each partition → select the one with the largest effect.
 

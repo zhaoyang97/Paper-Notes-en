@@ -28,15 +28,15 @@ This paper identifies that existing VLM-based OOD detection methods select negat
 
 ## Background & Motivation
 
-**State of the Field**: VLMs such as CLIP have demonstrated strong performance in OOD detection. The NegLabel method mines negative texts from WordNet by selecting candidates with large intra-modal distances from ID label texts to approximate OOD labels, inspiring a series of follow-up works (CLIPScope, CSP, AdaNeg).
+**Background**: VLMs such as CLIP have demonstrated strong performance in OOD detection. The NegLabel method mines negative texts from WordNet by selecting candidates with large intra-modal distances from ID label texts to approximate OOD labels, inspiring a series of follow-up works (CLIPScope, CSP, AdaNeg).
 
 **Limitations of Prior Work**: NegLabel and its successors rely on intra-modal distances (text-space distances from ID labels) when selecting negative texts, and use image-to-image distances when generating visual proxies. However, CLIP is optimized for cross-modal distances (image-text pairs)—a large intra-modal distance does not guarantee a large cross-modal distance.
 
-**Root Cause**: The inconsistency between intra-modal and cross-modal distances leads to two types of ID misclassification: (1) Max-OOD dominance—a negative text has a smaller cross-modal distance to an ID image than the corresponding ID label; (2) Sum-OOD dominance—the aggregated scores of multiple negative texts exceed the ID score.
+**Key Challenge**: The inconsistency between intra-modal and cross-modal distances leads to two types of ID misclassification: (1) Max-OOD dominance—a negative text has a smaller cross-modal distance to an ID image than the corresponding ID label; (2) Sum-OOD dominance—the aggregated scores of multiple negative texts exceed the ID score.
 
-**Paper Goals**: To ensure that the entire OOD detection pipeline uses cross-modal distances consistent with CLIP's optimization objective.
+**Goal**: To ensure that the entire OOD detection pipeline uses cross-modal distances consistent with CLIP's optimization objective.
 
-**Starting Point**: Define an ID cross-modal reference distance $d_i^{base} = 1 - \cos(\mathbf{e}_i, \mathbf{p}_i)$, and use this reference to filter and generate negative texts.
+**Key Insight**: Define an ID cross-modal reference distance $d_i^{base} = 1 - \cos(\mathbf{e}_i, \mathbf{p}_i)$, and use this reference to filter and generate negative texts.
 
 **Core Idea**: Unify the use of cross-modal distances from both a textual perspective (cross-modal-guided negative text selection) and a visual perspective (inverting high-confidence OOD images into additional negative embeddings in text space).
 

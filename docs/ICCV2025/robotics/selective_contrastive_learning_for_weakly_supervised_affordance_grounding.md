@@ -29,15 +29,15 @@ This paper proposes a selective contrastive learning approach for weakly supervi
 
 ## Background & Motivation
 
-**State of the Field**: Weakly supervised affordance grounding (WSAG) aims to mimic the human ability to learn from third-person demonstrations. Given an egocentric image of a target object and several exocentric human-object interaction exemplar images, the task is to localize the object regions that afford a specific action. Mainstream methods learn action classification across viewpoints via a shared classifier, and incorporate part discovery through distillation strategies.
+**Background**: Weakly supervised affordance grounding (WSAG) aims to mimic the human ability to learn from third-person demonstrations. Given an egocentric image of a target object and several exocentric human-object interaction exemplar images, the task is to localize the object regions that afford a specific action. Mainstream methods learn action classification across viewpoints via a shared classifier, and incorporate part discovery through distillation strategies.
 
 **Limitations of Prior Work**: Since affordance-relevant parts are not always easily distinguishable (e.g., bicycle seat vs. wheel), models relying primarily on classification tend to focus on discriminative patterns that are irrelevant to affordance. For instance, a model may attend to the bicycle frame rather than the seat (the affordance region for the "ride" action). Distillation strategies only function when parts can be reliably identified, resulting in discontinuous training and exacerbated classification bias.
 
-**Root Cause**: Affordance cues are difficult to reliably extract under weak supervision, while classification objectives inherently favor the most visually discriminative features—which do not necessarily coincide with affordance-relevant regions.
+**Key Challenge**: Affordance cues are difficult to reliably extract under weak supervision, while classification objectives inherently favor the most visually discriminative features—which do not necessarily coincide with affordance-relevant regions.
 
-**Paper Goals**: To continuously provide affordance learning signals even when part cues are unreliable, steering model attention away from irrelevant regions toward genuine affordance areas.
+**Goal**: To continuously provide affordance learning signals even when part cues are unreliable, steering model attention away from irrelevant regions toward genuine affordance areas.
 
-**Starting Point**: Rather than relying on isolated part-level learning, the paper introduces selective prototypical and pixel-level contrastive objectives—performing fine-grained part-level learning when information is reliable, and gracefully falling back to object-level learning otherwise, ensuring continuity of training signals.
+**Key Insight**: Rather than relying on isolated part-level learning, the paper introduces selective prototypical and pixel-level contrastive objectives—performing fine-grained part-level learning when information is reliable, and gracefully falling back to object-level learning otherwise, ensuring continuity of training signals.
 
 **Core Idea**: CLIP is used to discover target objects; cross-view cross-referencing extracts affordance-relevant parts; selective contrastive learning then continuously distinguishes affordance-relevant from irrelevant regions under both reliable and unreliable conditions.
 

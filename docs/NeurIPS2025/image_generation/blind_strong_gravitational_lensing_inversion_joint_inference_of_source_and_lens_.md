@@ -28,18 +28,18 @@ This work presents the first application of score-based generative model priors 
 
 ## Background & Motivation
 
-**State of the Field**: Score-based models have been successfully applied to astronomical inverse problems, including interferometric imaging, gravitational lensing source reconstruction, and cosmological field inference. In strong gravitational lensing, they serve as data-driven priors for inferring background sources from distorted multiple images.
+**Background**: Score-based models have been successfully applied to astronomical inverse problems, including interferometric imaging, gravitational lensing source reconstruction, and cosmological field inference. In strong gravitational lensing, they serve as data-driven priors for inferring background sources from distorted multiple images.
 
 **Limitations of Prior Work**:
 - Previous score-based lensing analyses assume the lens mass distribution (i.e., the forward operator) is known, whereas in practice the lens parameters are also unknown.
 - Jointly inferring the source and lens ("blind inversion") is highly challenging — the lens parameter posterior contains multiple local minima, and degeneracies exist between source and lens.
 - Prior blind inversion methods rely on analytic priors (Gaussian assumptions or smoothness constraints), limiting the flexibility of source reconstruction.
 
-**Root Cause**: Score-based priors are highly expressive but require a known forward operator (lens model), whereas in astronomy the forward operator is itself unknown — necessitating simultaneous inference of the data and the operator.
+**Key Challenge**: Score-based priors are highly expressive but require a known forward operator (lens model), whereas in astronomy the forward operator is itself unknown — necessitating simultaneous inference of the data and the operator.
 
-**Paper Goals**: Achieve joint inference of source and lens (blind inversion) within the score-based prior framework.
+**Goal**: Achieve joint inference of source and lens (blind inversion) within the score-based prior framework.
 
-**Starting Point**: Adapt the discrete-time GibbsDDRM — a diffusion sampler for inverse problems with unknown forward operators — to the continuous-time domain, combined with two likelihood score approximations (CLA and ΠiGDM).
+**Key Insight**: Adapt the discrete-time GibbsDDRM — a diffusion sampler for inverse problems with unknown forward operators — to the continuous-time domain, combined with two likelihood score approximations (CLA and ΠiGDM).
 
 **Core Idea**: Continuous-time GibbsDDRM + score-based source prior + parametric lens model = first score-based blind lensing inversion.
 

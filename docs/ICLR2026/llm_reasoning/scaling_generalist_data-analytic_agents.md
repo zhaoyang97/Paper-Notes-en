@@ -29,7 +29,7 @@ This paper proposes DataMind — a complete training framework for data-analytic
 
 ## Background & Motivation
 
-**State of the Field**: Data-analytic agents discover actionable insights by generating code to process, model, and compute over data, serving as key catalysts for AI-driven scientific discovery and automated decision support. Existing data-analytic agents (DS-Agent, AutoKaggle, Data Interpreter, etc.) rely almost entirely on closed-source models through prompt engineering and multi-agent scaffolding.
+**Background**: Data-analytic agents discover actionable insights by generating code to process, model, and compute over data, serving as key catalysts for AI-driven scientific discovery and automated decision support. Existing data-analytic agents (DS-Agent, AutoKaggle, Data Interpreter, etc.) rely almost entirely on closed-source models through prompt engineering and multi-agent scaffolding.
 
 **Limitations of Prior Work**:
 - **Insufficient training data**: Publicly available data analysis benchmarks provide only limited test sets without step-by-step trajectory annotations, making them unsuitable for direct training use.
@@ -37,9 +37,9 @@ This paper proposes DataMind — a complete training framework for data-analytic
 - **Unstable multi-turn code execution**: Data files and code interpreters involve complex memory management; parallel agent rollout combined with multi-turn code generation frequently crashes under limited memory resources.
 - **Capability gap in open-source models**: The few existing open-source trained models (TableLLM, Table-R1) handle only simple table understanding tasks and fail when faced with large-scale data files in diverse formats and long-horizon multi-step reasoning.
 
-**Root Cause**: High-quality training demands large-scale diverse trajectory data, a stable training strategy, and reliable environment interaction — yet all three present unique challenges in data analysis settings, where task formats are heterogeneous (csv/xlsx/sqlite), reasoning chains are long, and code execution carries side effects.
+**Key Challenge**: High-quality training demands large-scale diverse trajectory data, a stable training strategy, and reliable environment interaction — yet all three present unique challenges in data analysis settings, where task formats are heterogeneous (csv/xlsx/sqlite), reasoning chains are long, and code execution carries side effects.
 
-**Paper Goals**: The paper proposes DataMind, an end-to-end scalable data synthesis and agent training framework that systematically addresses the three challenges above.
+**Goal**: The paper proposes DataMind, an end-to-end scalable data synthesis and agent training framework that systematically addresses the three challenges above.
 
 ## Method
 

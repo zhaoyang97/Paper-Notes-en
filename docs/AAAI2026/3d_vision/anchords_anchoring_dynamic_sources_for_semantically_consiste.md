@@ -28,13 +28,13 @@ content_hash: 2c57753713ec1167
 This paper identifies a critical yet overlooked issue in SDS: the source distribution is dynamically evolving rather than static. AnchorDS is proposed to anchor the source distribution by feeding the current rendered image as an image condition into a dual-conditioned diffusion model, thereby resolving semantic over-smoothing and multi-view inconsistency in SDS. The method comprehensively outperforms SDS, VSD, and SDS-Bridge on T3Bench.
 
 ## Background & Motivation
-**State of the Field**: Optimization-based text-to-3D methods distill gradients from pretrained 2D diffusion models via SDS to train NeRF/3DGS, enabling 3D content generation without 3D data.
+**Background**: Optimization-based text-to-3D methods distill gradients from pretrained 2D diffusion models via SDS to train NeRF/3DGS, enabling 3D content generation without 3D data.
 
 **Limitations of Prior Work**: SDS suffers from two well-known failure modes — (1) **semantic over-smoothing**: object-specific semantic features degrade into blurry, uniform representations (e.g., swans and lake surfaces blending together); (2) **multi-view inconsistency**: geometry and appearance are incoherent across viewpoints (e.g., the multi-head/Janus problem).
 
-**Root Cause**: Through mathematical analysis, the authors identify the underlying cause — the CFG gradient in SDS can be decomposed into a "target term $m_1$" (pushing toward the text-conditioned distribution) and a "variance term $m_2$" (pushing away from the source distribution). The source distribution is approximated by the unconditional prior $p(z_t; t, \emptyset)$, which entirely ignores the dynamic evolution of the 3D model during optimization. As a result, $\hat{z}_{t \to 0}^{\text{source}}$ encodes neither the semantics of the current 3D state nor the existing geometric structure, causing the gradient direction to be inconsistent with the actual 3D state.
+**Key Challenge**: Through mathematical analysis, the authors identify the underlying cause — the CFG gradient in SDS can be decomposed into a "target term $m_1$" (pushing toward the text-conditioned distribution) and a "variance term $m_2$" (pushing away from the source distribution). The source distribution is approximated by the unconditional prior $p(z_t; t, \emptyset)$, which entirely ignores the dynamic evolution of the 3D model during optimization. As a result, $\hat{z}_{t \to 0}^{\text{source}}$ encodes neither the semantics of the current 3D state nor the existing geometric structure, causing the gradient direction to be inconsistent with the actual 3D state.
 
-**Starting Point**: SDS is reinterpreted as a **dynamic editing process** — each step is a progressive edit conditioned on the current 3D state, and the source distribution should co-evolve with the 3D model.
+**Key Insight**: SDS is reinterpreted as a **dynamic editing process** — each step is a progressive edit conditioned on the current 3D state, and the source distribution should co-evolve with the 3D model.
 
 **Core Idea**: The current rendered image is used as an image condition for the diffusion model, replacing the unconditional prior to estimate the source distribution, thereby achieving state-anchored gradient guidance.
 

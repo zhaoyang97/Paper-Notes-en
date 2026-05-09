@@ -28,13 +28,13 @@ This paper finds that RLVR training on fully fictitious, rule-generated syntheti
 
 ## Background & Motivation
 
-**State of the Field**: RLVR has achieved notable progress in training LLM reasoning via verifiable rewards, particularly in mathematics and coding. However, RLVR relies on large quantities of high-quality verifiable data — human annotation is expensive, and LLM-generated synthetic data suffers from hallucinations and high cost.
+**Background**: RLVR has achieved notable progress in training LLM reasoning via verifiable rewards, particularly in mathematics and coding. However, RLVR relies on large quantities of high-quality verifiable data — human annotation is expensive, and LLM-generated synthetic data suffers from hallucinations and high cost.
 
 **Limitations of Prior Work**: (1) High-quality training data is scarce and costly; (2) LLM-generated synthetic data inherits verification difficulties and pretraining knowledge contamination; (3) Rule-generated synthetic data is semantically simple and entirely fictitious, raising doubts about whether it can teach useful skills.
 
-**Root Cause**: There is a substantial gap between PhantomWiki questions such as "Who is the nephew of the friend of the person whose hobby is birdwatching?" and HotpotQA questions such as "Aside from Yodobashi, what other towns were merged into..." — fictitious simple templates vs. real complex language. Transfer from the former to the latter is far from obvious.
+**Key Challenge**: There is a substantial gap between PhantomWiki questions such as "Who is the nephew of the friend of the person whose hobby is birdwatching?" and HotpotQA questions such as "Aside from Yodobashi, what other towns were merged into..." — fictitious simple templates vs. real complex language. Transfer from the former to the latter is far from obvious.
 
-**Starting Point**: The paper hypothesizes that the core of multi-hop reasoning is *knowledge composition* — the ability to chain multi-step information — which is a domain-agnostic skill. Zero knowledge overlap in fictitious worlds prevents the model from taking shortcut memorization, forcing it to learn the compositional operation itself.
+**Key Insight**: The paper hypothesizes that the core of multi-hop reasoning is *knowledge composition* — the ability to chain multi-step information — which is a domain-agnostic skill. Zero knowledge overlap in fictitious worlds prevents the model from taking shortcut memorization, forcing it to learn the compositional operation itself.
 
 **Core Idea**: Rule-generated fictitious synthetic data teaches LLMs knowledge composition as a generalizable skill via RLVR, enabling free and infinitely scalable transfer to real-world multi-hop reasoning.
 

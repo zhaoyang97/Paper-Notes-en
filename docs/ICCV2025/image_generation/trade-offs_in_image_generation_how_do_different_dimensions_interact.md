@@ -35,9 +35,9 @@ The performance of text-to-image (T2I) and image-to-image (I2I) models is typica
 
 **Limitation 2: Single metrics applied across multiple dimensions.** Mainstream benchmarks employ CLIPScore to evaluate diverse dimensions such as alignment and reasoning, leading to metric conflation—improvements in one aspect may conceal degradation in another.
 
-**Root Cause**: Figure 1 illustrates a concrete example: Janus-Pro exhibits a clear trade-off between "relation alignment" and "realism"—images that correctly express spatial relationships tend to score lower on realism, and vice versa. This type of inter-dimension interaction is entirely overlooked by existing evaluation frameworks.
+**Key Challenge**: Figure 1 illustrates a concrete example: Janus-Pro exhibits a clear trade-off between "relation alignment" and "realism"—images that correctly express spatial relationships tend to score lower on realism, and vice versa. This type of inter-dimension interaction is entirely overlooked by existing evaluation frameworks.
 
-**Starting Point**: Construct a benchmark dataset specifically designed for pairwise dimension analysis, paired with dimension-specific evaluation metrics, to systematically reveal trade-off patterns across model dimensions.
+**Key Insight**: Construct a benchmark dataset specifically designed for pairwise dimension analysis, paired with dimension-specific evaluation metrics, to systematically reveal trade-off patterns across model dimensions.
 
 ## Method
 

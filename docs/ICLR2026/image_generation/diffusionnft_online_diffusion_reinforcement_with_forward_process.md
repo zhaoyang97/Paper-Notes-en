@@ -28,15 +28,15 @@ DiffusionNFT proposes a fundamentally new online RL paradigm for diffusion model
 
 ## Background & Motivation
 
-**State of the Field**: FlowGRPO and DanceGRPO discretize the reverse sampling process into an MDP and apply GRPO with SDE samplers to achieve online RL alignment of diffusion models, yielding notable results.
+**Background**: FlowGRPO and DanceGRPO discretize the reverse sampling process into an MDP and apply GRPO with SDE samplers to achieve online RL alignment of diffusion models, yielding notable results.
 
 **Limitations of Prior Work**: GRPO-based methods suffer from three fundamental limitations: (a) **forward inconsistency**—optimizing only the reverse process may cause the model to degenerate into a cascade of Gaussians; (b) **solver constraints**—only first-order SDE samplers are supported, precluding more efficient ODE or higher-order solvers; (c) **CFG complexity**—simultaneous optimization of conditional and unconditional models is inefficient and engineering-heavy.
 
-**Root Cause**: Reverse-process RL requires likelihood estimation, yet the exact likelihood of diffusion models is intractable. Discretization approximations introduce systematic bias.
+**Key Challenge**: Reverse-process RL requires likelihood estimation, yet the exact likelihood of diffusion models is intractable. Discretization approximations introduce systematic bias.
 
-**Paper Goals**: Can RL be performed on the **forward process** (via a flow matching objective), entirely avoiding likelihood estimation, solver constraints, and CFG dependence?
+**Goal**: Can RL be performed on the **forward process** (via a flow matching objective), entirely avoiding likelihood estimation, solver constraints, and CFG dependence?
 
-**Starting Point**: A diffusion policy has a unique forward process but multiple reverse processes (corresponding to different solvers). Optimization over the forward process is more fundamental—it directly defines the policy improvement direction via positive/negative sample contrast, embedded within the supervised learning framework of flow matching.
+**Key Insight**: A diffusion policy has a unique forward process but multiple reverse processes (corresponding to different solvers). Optimization over the forward process is more fundamental—it directly defines the policy improvement direction via positive/negative sample contrast, embedded within the supervised learning framework of flow matching.
 
 **Core Idea**: RL signals are converted into a contrastive flow matching objective over the forward process using positive and negative samples. Implicit parameterization integrates reinforcement guidance directly into a single policy model.
 

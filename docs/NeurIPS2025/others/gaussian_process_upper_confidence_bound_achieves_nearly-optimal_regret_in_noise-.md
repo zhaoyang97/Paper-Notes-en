@@ -28,15 +28,15 @@ This paper proves that the GP-UCB algorithm achieves nearly-optimal regret bound
 
 ## Background & Motivation
 
-1. **State of the Field**: In noise-free GP bandit problems, the learner seeks to minimize regret for a black-box objective function via noise-free observations. GP-UCB is the most well-known adaptive algorithm, yet existing theoretical bounds remain significantly weaker than known lower bounds.
+1. **Background**: In noise-free GP bandit problems, the learner seeks to minimize regret for a black-box objective function via noise-free observations. GP-UCB is the most well-known adaptive algorithm, yet existing theoretical bounds remain significantly weaker than known lower bounds.
 
 2. **Limitations of Prior Work**: Existing nearly-optimal algorithms (e.g., REDS, PE) rely on non-adaptive sampling schemes (e.g., uniform sampling or maximum variance reduction), which are theoretically optimal but often underperform adaptive methods such as GP-UCB in practice.
 
-3. **Root Cause**: Despite its strong empirical performance, GP-UCB's theoretical regret bound is $O(\sqrt{T\ln^d T})$ (SE kernel), which is far weaker than the lower bound $O(1)$ and the $O(\ln T)$ bound achieved by nearly-optimal non-adaptive algorithms.
+3. **Key Challenge**: Despite its strong empirical performance, GP-UCB's theoretical regret bound is $O(\sqrt{T\ln^d T})$ (SE kernel), which is far weaker than the lower bound $O(1)$ and the $O(\ln T)$ bound achieved by nearly-optimal non-adaptive algorithms.
 
-4. **Paper Goals**: Establish nearly-optimal regret bounds for GP-UCB, bridging the gap between theory and experiment.
+4. **Goal**: Establish nearly-optimal regret bounds for GP-UCB, bridging the gap between theory and experiment.
 
-5. **Starting Point**: The paper proposes novel algorithm-agnostic upper bounds on the posterior standard deviation (Lemmas 3–5), bridging information-gain analyses from the noisy setting to the noise-free setting.
+5. **Key Insight**: The paper proposes novel algorithm-agnostic upper bounds on the posterior standard deviation (Lemmas 3–5), bridging information-gain analyses from the noisy setting to the noise-free setting.
 
 6. **Core Idea**: Through a refined analysis of the posterior standard deviation, the paper proves that GP-UCB achieves cumulative regret of $O(1)$ (SE kernel) and $\tilde{O}(T^{(d-\nu)/d})$ (Matérn kernel) in the noise-free setting, matching known lower bounds.
 

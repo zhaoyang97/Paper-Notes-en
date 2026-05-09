@@ -28,15 +28,15 @@ SPENCE detects and quantifies data contamination of LLMs on NL2SQL benchmarks by
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have achieved high execution accuracy on NL2SQL benchmarks (Spider, SParC, CoSQL, BIRD), yet the research community has grown increasingly skeptical of whether these scores reflect genuine generalization. Data contamination and benchmark leakage have been widely studied, with various methods (e.g., ConStat, Data Contamination Quiz, Min-K% Prob) detecting memorization behavior from different perspectives.
+**Background**: LLMs have achieved high execution accuracy on NL2SQL benchmarks (Spider, SParC, CoSQL, BIRD), yet the research community has grown increasingly skeptical of whether these scores reflect genuine generalization. Data contamination and benchmark leakage have been widely studied, with various methods (e.g., ConStat, Data Contamination Quiz, Min-K% Prob) detecting memorization behavior from different perspectives.
 
 **Limitations of Prior Work**: Existing contamination detection methods either rely on string-overlap checks—failing to capture structural memorization—or require access to model internals, making them inapplicable to black-box models. No systematic contamination detection framework specifically targeting SQL generation tasks exists for the NL2SQL setting. The closest prior work, Ranaldi et al. (2024), only compares seen vs. unseen databases at the dataset level, without fine-grained probing along a syntactic axis.
 
-**Root Cause**: High reported accuracy may stem from memorization of the surface forms of benchmark queries rather than true compositional generalization. If a model has merely memorized the syntactic patterns of original queries, it should perform worse on semantically equivalent but syntactically distinct paraphrases. The key question is how to distinguish memorization from insufficient generalization, and whether this behavior correlates with a benchmark's release date.
+**Key Challenge**: High reported accuracy may stem from memorization of the surface forms of benchmark queries rather than true compositional generalization. If a model has merely memorized the syntactic patterns of original queries, it should perform worse on semantically equivalent but syntactically distinct paraphrases. The key question is how to distinguish memorization from insufficient generalization, and whether this behavior correlates with a benchmark's release date.
 
-**Paper Goals**: To design a controlled syntactic probing framework that quantifies contamination sensitivity in NL2SQL models by generating paraphrases of increasing syntactic distance, and to conduct a comparative analysis across four benchmarks.
+**Goal**: To design a controlled syntactic probing framework that quantifies contamination sensitivity in NL2SQL models by generating paraphrases of increasing syntactic distance, and to conduct a comparative analysis across four benchmarks.
 
-**Starting Point**: Syntactic dependency tree edit distance (TED) is used to rank paraphrases, operationalizing "degree of contamination" as the rate of accuracy decay with syntactic distance, with Kendall's τ used to statistically quantify the trend.
+**Key Insight**: Syntactic dependency tree edit distance (TED) is used to rank paraphrases, operationalizing "degree of contamination" as the rate of accuracy decay with syntactic distance, with Kendall's τ used to statistically quantify the trend.
 
 **Core Idea**: Syntactic paraphrasing + distance ranking + accuracy decay analysis = contamination probe. Steeper decay on older benchmarks indicates heavier contamination.
 

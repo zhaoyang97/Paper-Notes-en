@@ -28,15 +28,15 @@ Through systematic study of a family of retrieval and copying tasks, this paper 
 
 ## Background & Motivation
 
-**State of the Field**: Transformers are theoretically subject to length generalization limitations (e.g., inability to express certain sequence tasks), and experiments on small models have confirmed the existence of such limitations. Whether large-scale pretrained LLMs are subject to the same constraints, however, has remained an open question.
+**Background**: Transformers are theoretically subject to length generalization limitations (e.g., inability to express certain sequence tasks), and experiments on small models have confirmed the existence of such limitations. Whether large-scale pretrained LLMs are subject to the same constraints, however, has remained an open question.
 
 **Limitations of Prior Work**: Existing studies either validate theoretical limitations only on small models (lacking experiments on pretrained models), or observe emergent capabilities in LLMs without connecting them to theoretical analysis. Pretraining may introduce entirely new inductive biases (e.g., ICL, CoT) that render theoretical limitations moot.
 
-**Root Cause**: Pretraining reshapes model parameters and subcircuits. It remains unclear whether the length generalization failures observed in small models transfer directly to pretrained large models, and whether scale and data diversity can overcome inherent architectural limitations.
+**Key Challenge**: Pretraining reshapes model parameters and subcircuits. It remains unclear whether the length generalization failures observed in small models transfer directly to pretrained large models, and whether scale and data diversity can overcome inherent architectural limitations.
 
-**Paper Goals**: (a) Which architectural capabilities are enhanced by pretraining, and which limitations persist? (b) Are there biases unique to pretraining? (c) Can fine-tuning eliminate these biases?
+**Goal**: (a) Which architectural capabilities are enhanced by pretraining, and which limitations persist? (b) Are there biases unique to pretraining? (c) Can fine-tuning eliminate these biases?
 
-**Starting Point**: Retrieval and copying are chosen as the testbed — they are fundamental building blocks for practical capabilities such as ICL and RAG, and have clear theoretical characterizability via the C-Rasp[pos] framework.
+**Key Insight**: Retrieval and copying are chosen as the testbed — they are fundamental building blocks for practical capabilities such as ICL and RAG, and have clear theoretical characterizability via the C-Rasp[pos] framework.
 
 **Core Idea**: Pretraining causes Transformers to be "born preferring" rightward/forward operations (stronger induction circuits), while the inherent length generalization ceiling imposed by the architecture always remains.
 

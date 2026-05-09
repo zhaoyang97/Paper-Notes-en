@@ -26,15 +26,15 @@ content_hash: 56bb7e763cec67fb
 This paper proposes the BAMAS framework, which employs Integer Linear Programming (ILP) to select the optimal LLM combination under budget constraints, and uses a reinforcement learning policy to choose the best collaboration topology (Linear/Star/Feedback/Planner-Driven). BAMAS achieves accuracy comparable to state-of-the-art multi-agent systems on GSM8K, MBPP, and MATH, while reducing costs by up to 86%.
 
 ## Background & Motivation
-**State of the Field**: LLM-based multi-agent systems (AutoGen, MetaGPT, ChatDev) leverage multi-agent collaboration to handle complex tasks, but primarily focus on maximizing performance with little regard for cost control. A single task may require dozens of LLM calls, and costs grow unpredictably with collaboration topology and reasoning depth.
+**Background**: LLM-based multi-agent systems (AutoGen, MetaGPT, ChatDev) leverage multi-agent collaboration to handle complex tasks, but primarily focus on maximizing performance with little regard for cost control. A single task may require dozens of LLM calls, and costs grow unpredictably with collaboration topology and reasoning depth.
 
 **Limitations of Prior Work**: (1) Existing frameworks treat cost as an afterthought, lacking proactive budget management; (2) users cannot specify a budget ceiling to constrain system behavior; (3) different topologies suit different tasks and budget levels, yet existing systems use fixed topologies without adaptive adjustment.
 
-**Root Cause**: There exists a fundamental trade-off between performance and cost — using stronger LLMs and more complex collaboration topologies improves performance but dramatically increases cost. Finding the optimal LLM allocation and collaboration strategy under a given budget remains an open challenge.
+**Key Challenge**: There exists a fundamental trade-off between performance and cost — using stronger LLMs and more complex collaboration topologies improves performance but dramatically increases cost. Finding the optimal LLM allocation and collaboration strategy under a given budget remains an open challenge.
 
-**Paper Goals**: Given a task, a pool of available LLMs, and a budget ceiling, how can one automatically construct a multi-agent system with optimal performance?
+**Goal**: Given a task, a pool of available LLMs, and a budget ceiling, how can one automatically construct a multi-agent system with optimal performance?
 
-**Starting Point**: The problem is decomposed into two optimizable sub-problems — LLM selection (combinatorial optimization → ILP) and topology selection (policy learning → RL), each solved with the most appropriate optimization method.
+**Key Insight**: The problem is decomposed into two optimizable sub-problems — LLM selection (combinatorial optimization → ILP) and topology selection (policy learning → RL), each solved with the most appropriate optimization method.
 
 **Core Idea**: Use ILP for budget-constrained LLM selection, and RL for task- and budget-adaptive topology selection, achieving tunable cost–performance trade-offs.
 

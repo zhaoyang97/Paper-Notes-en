@@ -28,16 +28,16 @@ This paper integrates ring attractor models from neuroscience into action select
 
 ## Background & Motivation
 
-**State of the Field**: Fast and efficient action selection remains a core challenge in DRL, particularly in environments with spatial structure (e.g., coupled joint movements in robotic manipulation, adjacent directional actions in games). Existing methods treat actions as orthogonal, independent one-hot vectors, completely ignoring the topological relationships among actions.
+**Background**: Fast and efficient action selection remains a core challenge in DRL, particularly in environments with spatial structure (e.g., coupled joint movements in robotic manipulation, adjacent directional actions in games). Existing methods treat actions as orthogonal, independent one-hot vectors, completely ignoring the topological relationships among actions.
 
 **Limitations of Prior Work**:
    - Standard DQN represents actions as orthogonal vectors, failing to reflect the fact that "left" and "upper-left" are closer to each other than "left" and "right."
    - Existing spatially-aware methods (relational RL, cognitive maps, etc.) rely on complex architectures to implicitly learn spatial understanding from data, requiring large amounts of samples.
    - Uncertainty quantification methods (e.g., Bootstrapped DQN) treat uncertainty as an independent module, without integrating it with spatial structure.
 
-**Root Cause**: Action spaces possess inherent topological structure, yet this structural information is entirely discarded in standard DRL.
+**Key Challenge**: Action spaces possess inherent topological structure, yet this structural information is entirely discarded in standard DRL.
 
-**Starting Point**: The ring attractor circuit found in the central complex of *Drosophila* is an experimentally validated neural circuit capable of stably encoding directional and spatial information.
+**Key Insight**: The ring attractor circuit found in the central complex of *Drosophila* is an experimentally validated neural circuit capable of stably encoding directional and spatial information.
 
 **Core Idea**: The ring attractor serves as the "brain" for action selection — Q-values are transformed into Gaussian input signals on the ring (amplitude = Q-value, angle = action direction, width = uncertainty), and excitatory-inhibitory dynamics select the optimal action.
 

@@ -28,13 +28,13 @@ This paper introduces the concept of Local Guidance (LG) to improve solution qua
 
 ## Background & Motivation
 
-**State of the Field**: Multi-Agent Path Finding (MAPF) aims to find collision-free paths for all agents on a graph. Configuration-based solvers such as LaCAM can handle thousands of agents efficiently, but the resulting solution quality is highly suboptimal.
+**Background**: Multi-Agent Path Finding (MAPF) aims to find collision-free paths for all agents on a graph. Configuration-based solvers such as LaCAM can handle thousands of agents efficiently, but the resulting solution quality is highly suboptimal.
 
 **Limitations of Prior Work**: Existing guidance methods alleviate congestion by globally considering the entire environment and all agents. However, global guidance is time-agnostic, discarding space-time information and yielding limited effectiveness in bottleneck regions.
 
-**Root Cause**: Global guidance is too coarse—it identifies less congested routes but lacks awareness of when and where congestion occurs. Exact solvers, on the other hand, are computationally prohibitive due to the full collision constraint search space.
+**Key Challenge**: Global guidance is too coarse—it identifies less congested routes but lacks awareness of when and where congestion occurs. Exact solvers, on the other hand, are computationally prohibitive due to the full collision constraint search space.
 
-**Starting Point**: Local guidance occupies the middle ground—constructing guidance paths within a local space-time window around each agent. This approach is more precise than global guidance (with space-time awareness) while remaining more lightweight than exact solvers.
+**Key Insight**: Local guidance occupies the middle ground—constructing guidance paths within a local space-time window around each agent. This approach is more precise than global guidance (with space-time awareness) while remaining more lightweight than exact solvers.
 
 ## Method
 

@@ -28,15 +28,15 @@ This work constructs a controlled knowledge framework to systematically study ho
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are increasingly employed in scientific workflows (literature review, hypothesis generation, experiment planning), yet their capacity to perform a fundamental scientific task—scientific feasibility assessment—remains poorly understood. Feasibility assessment requires judging whether a claim is consistent with established knowledge and whether experimental evidence supports or refutes it.
+**Background**: LLMs are increasingly employed in scientific workflows (literature review, hypothesis generation, experiment planning), yet their capacity to perform a fundamental scientific task—scientific feasibility assessment—remains poorly understood. Feasibility assessment requires judging whether a claim is consistent with established knowledge and whether experimental evidence supports or refutes it.
 
 **Limitations of Prior Work**: Existing work either focuses on hypothesis generation rather than evaluation, conflates parametric knowledge with retrieved information without isolating their respective contributions, or examines compliance with external knowledge in non-scientific settings. Three critical questions remain unanswered: (RQ1) Can LLMs assess feasibility using parametric knowledge alone? (RQ2) How does providing experimental/outcome context alter judgments? (RQ3) How robust are these judgments under incomplete information?
 
-**Root Cause**: Intuitively, more evidence should improve judgment—yet partial or noisy evidence may in fact mislead. The question is whether LLMs can handle incomplete information gracefully.
+**Key Challenge**: Intuitively, more evidence should improve judgment—yet partial or noisy evidence may in fact mislead. The question is whether LLMs can handle incomplete information gracefully.
 
-**Paper Goals**: To understand how evidence type affects LLM feasibility judgments by systematically controlling the visibility of experimental descriptions and outcomes.
+**Goal**: To understand how evidence type affects LLM feasibility judgments by systematically controlling the visibility of experimental descriptions and outcomes.
 
-**Starting Point**: Design four knowledge conditions (hypothesis only / +experiments / +outcomes / +both) and a stability analysis involving progressive removal of partial evidence.
+**Key Insight**: Design four knowledge conditions (hypothesis only / +experiments / +outcomes / +both) and a stability analysis involving progressive removal of partial evidence.
 
 **Core Idea**: Outcome evidence is generally more reliable than experimental descriptions; partial evidence frequently causes brittle collapse rather than graceful degradation.
 

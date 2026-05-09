@@ -29,15 +29,15 @@ Building upon ReconDreamer, ReconDreamer++ introduces a Novel Trajectory Deforma
 
 ## Background & Motivation
 
-**State of the Field**: Combining reconstructive models (3DGS) with generative models (video diffusion) has become the dominant paradigm for closed-loop autonomous driving simulation. ReconDreamer leverages the world model DriveRestorer to restore video quality on novel trajectories and jointly trains a 4DGS model, achieving notable success in large lateral lane-change scenarios (3–6 meters).
+**Background**: Combining reconstructive models (3DGS) with generative models (video diffusion) has become the dominant paradigm for closed-loop autonomous driving simulation. ReconDreamer leverages the world model DriveRestorer to restore video quality on novel trajectories and jointly trains a 4DGS model, achieving notable success in large lateral lane-change scenarios (3–6 meters).
 
 **Limitations of Prior Work**: (1) **Domain gap neglected**: Existing methods train a shared set of Gaussian parameters on a mixture of generated and real sensor observations, ignoring the inherent distributional difference between the two data sources. This leads to a notable performance drop on original trajectories (e.g., ReconDreamer's PSNR/SSIM/LPIPS on original trajectories are significantly lower than Street Gaussians). (2) **Poor ground modeling**: In autonomous driving, camera optical axes are typically nearly parallel to the ground, causing streaking/blurring artifacts in ground reconstruction when viewed from novel viewpoints. Using rendered results that lack 3D consistency as conditions for DriveRestorer amplifies these errors.
 
-**Root Cause**: Leveraging generative models to enhance novel-trajectory performance introduces synthetic data that degrades original-trajectory quality, making it difficult to simultaneously satisfy quality requirements for both trajectory types in practical simulation. The ground is the most sensitive structured element, and its quality directly affects the reliability of critical cues such as lane markings.
+**Key Challenge**: Leveraging generative models to enhance novel-trajectory performance introduces synthetic data that degrades original-trajectory quality, making it difficult to simultaneously satisfy quality requirements for both trajectory types in practical simulation. The ground is the most sensitive structured element, and its quality directly affects the reliability of critical cues such as lane markings.
 
-**Paper Goals**: (1) How to bridge the domain gap between generated data and real observations? (2) How to improve modeling quality for structured elements such as the ground? (3) How to improve novel-trajectory performance without degrading original-trajectory quality?
+**Goal**: (1) How to bridge the domain gap between generated data and real observations? (2) How to improve modeling quality for structured elements such as the ground? (3) How to improve novel-trajectory performance without degrading original-trajectory quality?
 
-**Starting Point**: Treating generated data as inputs from a different domain than real data and introducing learnable spatial deformations to align the two; separating the ground from the scene and fixing its geometric positions while optimizing only appearance parameters.
+**Key Insight**: Treating generated data as inputs from a different domain than real data and introducing learnable spatial deformations to align the two; separating the ground from the scene and fixing its geometric positions while optimizing only appearance parameters.
 
 **Core Idea**: NTDNet learns spatial deformations of Gaussian parameters between original and novel trajectories to systematically bridge the domain gap, while independent ground modeling with preserved LiDAR geometric priors significantly improves novel-trajectory rendering without sacrificing original-trajectory quality.
 

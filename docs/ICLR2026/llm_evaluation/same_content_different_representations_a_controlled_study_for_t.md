@@ -28,15 +28,15 @@ The first controlled study that systematically evaluates the robustness of NL2SQ
 
 ## Background & Motivation
 
-**State of the Field**: Table QA methods fall into three main paradigms: NL2SQL (translating natural language into SQL for execution), direct LLM reasoning, and hybrid methods (SQL retrieval combined with LLM reasoning). Existing benchmarks fix the table format, and models are optimized for a single representation.
+**Background**: Table QA methods fall into three main paradigms: NL2SQL (translating natural language into SQL for execution), direct LLM reasoning, and hybrid methods (SQL retrieval combined with LLM reasoning). Existing benchmarks fix the table format, and models are optimized for a single representation.
 
 **Limitations of Prior Work**: In practice, tables appear in both strictly-schematized structured form and semi-structured form with irregular columns and free-text cells. However, no existing benchmark systematically studies the effect of representation format itself on model performance, leaving cross-format generalization unknown.
 
-**Root Cause**: A fair comparison of representation formats requires that table content remain identical while only the format varies. Existing datasets cannot satisfy this requirement, as structured and semi-structured benchmarks differ in their underlying data.
+**Key Challenge**: A fair comparison of representation formats requires that table content remain identical while only the format varies. Existing datasets cannot satisfy this requirement, as structured and semi-structured benchmarks differ in their underlying data.
 
-**Paper Goals**: (a) How to generate paired structured/semi-structured tables with controlled content? (b) How do table size, join operations, query complexity, and schema quality each affect different paradigms? (c) How should practitioners select the best method for deployment?
+**Goal**: (a) How to generate paired structured/semi-structured tables with controlled content? (b) How do table size, join operations, query complexity, and schema quality each affect different paradigms? (c) How should practitioners select the best method for deployment?
 
-**Starting Point**: A verbalization pipeline converts columns in structured tables into natural language descriptions, producing semantically equivalent but structurally distinct paired tables.
+**Key Insight**: A verbalization pipeline converts columns in structured tables into natural language descriptions, producing semantically equivalent but structurally distinct paired tables.
 
 **Core Idea**: Representation format is a first-order variable in Table QA — NL2SQL is strongest on structured input but drops 30–45% on semi-structured input; LLMs are most robust but less accurate; hybrid methods perform best in semi-structured settings.
 

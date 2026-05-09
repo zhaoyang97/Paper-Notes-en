@@ -28,15 +28,15 @@ This paper proposes LAVIDA, an end-to-end zero-shot video anomaly detection fram
 
 ## Background & Motivation
 
-**State of the Field**: Video Anomaly Detection (VAD) faces two major challenges: data scarcity and scene variability. Traditional approaches fall into unsupervised (learning normal patterns) and weakly supervised (video-level annotations) categories, both constrained by training scenes and anomaly types. Recent open-set/open-vocabulary VAD attempts to handle unseen anomaly types, while training-free MLLM-based methods directly score with LLMs, but rely on per-frame/per-clip text outputs, incurring high inference costs and lacking localization capability.
+**Background**: Video Anomaly Detection (VAD) faces two major challenges: data scarcity and scene variability. Traditional approaches fall into unsupervised (learning normal patterns) and weakly supervised (video-level annotations) categories, both constrained by training scenes and anomaly types. Recent open-set/open-vocabulary VAD attempts to handle unseen anomaly types, while training-free MLLM-based methods directly score with LLMs, but rely on per-frame/per-clip text outputs, incurring high inference costs and lacking localization capability.
 
 **Limitations of Prior Work**: (1) Existing VAD datasets are limited in scene diversity and anomaly types, resulting in poor generalization; (2) Anomaly semantics are context-dependent (the same behavior may be normal or anomalous in different scenes), and current methods lack deep semantic understanding; (3) Anomalies are extremely sparse in space and time, and large numbers of background tokens increase computational cost and interfere with detection.
 
-**Root Cause**: Real anomaly data is scarce, yet models require exposure to sufficiently diverse anomalies to generalize.
+**Key Challenge**: Real anomaly data is scarce, yet models require exposure to sufficiently diverse anomalies to generalize.
 
-**Paper Goals**: Train entirely without VAD data, achieving zero-shot frame-level and pixel-level detection across scenes and anomaly types.
+**Goal**: Train entirely without VAD data, achieving zero-shot frame-level and pixel-level detection across scenes and anomaly types.
 
-**Starting Point**: Semantic segmentation datasets contain rich scene semantics and pixel-level annotations; segmentation targets can be repurposed as "anomalies" for training.
+**Key Insight**: Semantic segmentation datasets contain rich scene semantics and pixel-level annotations; segmentation targets can be repurposed as "anomalies" for training.
 
 **Core Idea**: Transform segmentation datasets into pseudo-anomaly training sets via an Anomaly Exposure Sampler, leverage MLLM for anomaly semantic understanding, and apply reverse-attention compression to suppress background tokens.
 

@@ -28,15 +28,15 @@ This paper formalizes diffusion model alignment as a variational EM algorithm: t
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion model alignment—making generation conform to external rewards—has primarily followed two paradigms: reinforcement learning (DDPO/DPOK) and direct backpropagation through the reward (DRaFT/AlignProp).
+**Background**: Diffusion model alignment—making generation conform to external rewards—has primarily followed two paradigms: reinforcement learning (DDPO/DPOK) and direct backpropagation through the reward (DRaFT/AlignProp).
 
 **Limitations of Prior Work**: RL-based methods optimize a reverse-KL objective, inducing mode-seeking behavior that leads to mode collapse and loss of diversity. Direct backpropagation methods rely on gradient signals from the reward model and are prone to reward over-optimization. Both families exhibit high reward but sharp deterioration in image quality and diversity in the late stages of training.
 
-**Root Cause**: The fundamental tension between reward optimization and diversity preservation. Reverse-KL is inherently mode-seeking and tends to collapse onto a single mode.
+**Key Challenge**: The fundamental tension between reward optimization and diversity preservation. Reverse-KL is inherently mode-seeking and tends to collapse onto a single mode.
 
-**Paper Goals**: To design an alignment framework that effectively optimizes reward while preserving sample diversity and naturalness, applicable to both continuous (image) and discrete (DNA) diffusion models.
+**Goal**: To design an alignment framework that effectively optimizes reward while preserving sample diversity and naturalness, applicable to both continuous (image) and discrete (DNA) diffusion models.
 
-**Starting Point**: The alignment problem is formalized as variational EM by introducing an optimality variable $\mathcal{O}$ and a trajectory latent variable $\tau$. The E-step identifies a multimodal posterior, and the M-step performs forward-KL (mode-covering) distillation. Forward-KL naturally encourages coverage of all modes rather than concentration on a single one.
+**Key Insight**: The alignment problem is formalized as variational EM by introducing an optimality variable $\mathcal{O}$ and a trajectory latent variable $\tau$. The E-step identifies a multimodal posterior, and the M-step performs forward-KL (mode-covering) distillation. Forward-KL naturally encourages coverage of all modes rather than concentration on a single one.
 
 **Core Idea**: The E-step uses test-time search to discover multimodal high-reward samples; the M-step distills them via forward-KL to preserve diversity. Iterating this cycle progressively improves both objectives.
 

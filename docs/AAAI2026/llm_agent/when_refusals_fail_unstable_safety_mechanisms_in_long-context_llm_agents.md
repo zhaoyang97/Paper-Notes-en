@@ -28,13 +28,13 @@ This paper systematically investigates how long-context padding affects the safe
 
 ## Background & Motivation
 
-**State of the Field**: LLM context windows have expanded from thousands to millions of tokens, enabling agents to handle increasingly long multi-step tasks. However, a substantial gap may exist between the "claimed capacity" and the practically usable capability of context windows.
+**Background**: LLM context windows have expanded from thousands to millions of tokens, enabling agents to handle increasingly long multi-step tasks. However, a substantial gap may exist between the "claimed capacity" and the practically usable capability of context windows.
 
 **Limitations of Prior Work**: Prior work on long-context LLMs (e.g., "Lost in the Middle") has focused primarily on factual recall and accuracy, with almost no investigation into how long contexts affect **agents' safety refusal behavior and task execution capability**. Safety evaluations have consistently relied on short prompts and static refusal tests.
 
 **Core Problem**: Does long context undermine the safety alignment of LLM agents? Do models become more cautious in refusing, or does overall capability simply degrade?
 
-**Starting Point**: The AgentHarm benchmark is extended to systematically vary context padding length (1K–200K), type (random / relevant / irrelevant / multi-task), and position (before / after the task) under controlled conditions, in order to observe changes in agent behavior.
+**Key Insight**: The AgentHarm benchmark is extended to systematically vary context padding length (1K–200K), type (random / relevant / irrelevant / multi-task), and position (before / after the task) under controlled conditions, in order to observe changes in agent behavior.
 
 **Core Idea**: The effect of long context on agent safety is fundamentally *unpredictable*—different models exhibit opposite trends in refusal rate, and performance degradation begins well below the claimed context window length.
 

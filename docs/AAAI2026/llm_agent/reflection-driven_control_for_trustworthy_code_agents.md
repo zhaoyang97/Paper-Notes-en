@@ -29,15 +29,15 @@ This paper proposes a Reflection-Driven Control module that elevates "self-refle
 
 ## Background & Motivation
 
-**State of the Field**: LLM agents are evolving from single-turn text generators into autonomous systems capable of multi-step reasoning, tool use, and code execution. Code generation is one high-stakes application domain where generated code may contain security vulnerabilities such as SQL injection and buffer overflows.
+**Background**: LLM agents are evolving from single-turn text generators into autonomous systems capable of multi-step reasoning, tool use, and code execution. Code generation is one high-stakes application domain where generated code may contain security vulnerabilities such as SQL injection and buffer overflows.
 
 **Limitations of Prior Work**: Current agent systems lack reliable security control mechanisms. Even powerful base models can produce unsafe outputs, and as tool use and autonomy enter the loop, jailbreak attacks and prompt injection further expose fragile control surfaces. Existing safety measures are largely scattered and reactive.
 
-**Root Cause**: Agents require autonomy to execute complex tasks, yet increased autonomy amplifies security risks. The central challenge is how to ensure the security and auditability of generated code without sacrificing autonomy.
+**Key Challenge**: Agents require autonomy to execute complex tasks, yet increased autonomy amplifies security risks. The central challenge is how to ensure the security and auditability of generated code without sacrificing autonomy.
 
-**Paper Goals**: To design a standardized, plug-and-play control module that enables continuous self-supervision and self-correction during code generation, improving security without compromising functional correctness.
+**Goal**: To design a standardized, plug-and-play control module that enables continuous self-supervision and self-correction during code generation, improving security without compromising functional correctness.
 
-**Starting Point**: Elevating "reflection" from an external post-hoc process to a first-class internal control loop within the agent, spanning the planning, execution, and verification phases.
+**Key Insight**: Elevating "reflection" from an external post-hoc process to a first-class internal control loop within the agent, spanning the planning, execution, and verification phases.
 
 **Core Idea**: Constructing a Plan–Reflect–Verify three-stage framework in which the Reflect layer serves as a plug-and-play module, achieving continuous security control through lightweight pre-filtering via self-inspection, dynamic memory RAG-driven repair, and a compilation verification feedback loop.
 

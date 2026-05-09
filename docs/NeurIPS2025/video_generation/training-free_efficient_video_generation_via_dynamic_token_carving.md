@@ -29,15 +29,15 @@ This paper proposes Jenga, a training-free inference acceleration framework for 
 
 ## Background & Motivation
 
-**State of the Field**: Video diffusion Transformers (DiTs) such as HunyuanVideo and Wan2.1 can generate high-quality videos, but inference is prohibitively slow — HunyuanVideo requires approximately 27 minutes to generate a 5-second 720P video on a single H800 GPU, severely limiting practical deployment.
+**Background**: Video diffusion Transformers (DiTs) such as HunyuanVideo and Wan2.1 can generate high-quality videos, but inference is prohibitively slow — HunyuanVideo requires approximately 27 minutes to generate a 5-second 720P video on a single H800 GPU, severely limiting practical deployment.
 
 **Limitations of Prior Work**: The inference bottleneck stems from two orthogonal factors: (1) the $O(N^2)$ complexity of self-attention — 720P video yields ~115K tokens, with attention accounting for 77.8% of total computation; and (2) multi-step diffusion sampling — 50 denoising steps introduce a 50× computational overhead. Existing acceleration methods either address only one factor (e.g., STA/CLEAR apply sparse attention but achieve only 1.5–2× speedup; TeaCache skips steps but does not reduce per-step computation), or require additional training (step distillation degrades quality and is costly to train).
 
-**Root Cause**: Existing sparse attention methods rely on fixed spatial-temporal locality patterns, ignoring the variation in attention distributions across different inputs, layers, and heads, which limits how aggressively they can be applied. Furthermore, reducing the total token count (lower resolution) and reducing KV interactions (sparse attention) represent two independent acceleration dimensions that should be exploited jointly.
+**Key Challenge**: Existing sparse attention methods rely on fixed spatial-temporal locality patterns, ignoring the variation in attention distributions across different inputs, layers, and heads, which limits how aggressively they can be applied. Furthermore, reducing the total token count (lower resolution) and reducing KV interactions (sparse attention) represent two independent acceleration dimensions that should be exploited jointly.
 
-**Paper Goals**: To design a training-free, plug-and-play inference pipeline that simultaneously reduces per-step token interactions and total step count, achieving 5–10× speedup while preserving generation quality.
+**Goal**: To design a training-free, plug-and-play inference pipeline that simultaneously reduces per-step token interactions and total step count, achieving 5–10× speedup while preserving generation quality.
 
-**Starting Point**: Two key observations motivate the design: (1) diffusion denoising proceeds from low to high frequency — early steps do not require high-resolution latents; (2) later steps do not require dense full attention — video latents exhibit substantial redundancy, and extreme sparsity (retaining only 1% of KV blocks) can still preserve fine details.
+**Key Insight**: Two key observations motivate the design: (1) diffusion denoising proceeds from low to high frequency — early steps do not require high-resolution latents; (2) later steps do not require dense full attention — video latents exhibit substantial redundancy, and extreme sparsity (retaining only 1% of KV blocks) can still preserve fine details.
 
 **Core Idea**: Analogous to the physical Jenga game, Jenga maximally removes redundant blocks while maintaining structural stability — ProRes reduces total token count, AttenCarve reduces token interactions, and their orthogonal combination yields multiplicative speedup.
 

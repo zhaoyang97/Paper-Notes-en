@@ -28,15 +28,15 @@ This paper proposes PhysicsCorrect, a training-free correction framework that mo
 
 ## Background & Motivation
 
-**State of the Field**: Neural PDE solvers (FNO, UNet, ViT, etc.) perform long-term simulation via autoregressive rollout, but small per-step errors accumulate exponentially, leading to divergence.
+**Background**: Neural PDE solvers (FNO, UNet, ViT, etc.) perform long-term simulation via autoregressive rollout, but small per-step errors accumulate exponentially, leading to divergence.
 
 **Limitations of Prior Work**: (1) Incorporating physics losses or regularization during training can mitigate but not eliminate error accumulation; (2) Methods such as PDE-Refiner require expensive retraining; (3) Post-processing approaches are typically computationally costly or architecturally restrictive.
 
-**Root Cause**: Neural operator predictions do not satisfy the physical constraints of the underlying PDE, yet directly solving a constraint-satisfaction inverse problem at each step is prohibitively expensive.
+**Key Challenge**: Neural operator predictions do not satisfy the physical constraints of the underlying PDE, yet directly solving a constraint-satisfaction inverse problem at each step is prohibitively expensive.
 
-**Paper Goals**: Project predictions onto the PDE-consistent solution manifold at negligible cost, without any retraining.
+**Goal**: Project predictions onto the PDE-consistent solution manifold at negligible cost, without any retraining.
 
-**Starting Point**: For many PDEs, the Jacobian of the residual with respect to the prediction is state-independent and therefore can be precomputed once offline.
+**Key Insight**: For many PDEs, the Jacobian of the residual with respect to the prediction is state-independent and therefore can be precomputed once offline.
 
 **Core Idea**: Linearize the PDE residual correction as $A\mathbf{x}=\mathbf{b}$, precompute $A^\dagger$, and reduce per-step correction to a single matrix–vector multiplication.
 

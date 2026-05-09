@@ -28,14 +28,14 @@ This paper proposes ArgoTweak, the first HD map dataset providing complete tripl
 
 ## Background & Motivation
 
-**State of the Field**: HD maps are a core component of autonomous driving, providing precise lane-level information. Recent work has shifted from manual annotation toward end-to-end online generation based on BEV features (e.g., MapTR, LaneSegNet). Some methods attempt to leverage prior maps to improve generation quality.
+**Background**: HD maps are a core component of autonomous driving, providing precise lane-level information. Recent work has shifted from manual annotation toward end-to-end online generation based on BEV features (e.g., MapTR, LaneSegNet). Some methods attempt to leverage prior maps to improve generation quality.
 
 **Limitations of Prior Work**:
    - **Lack of complete data**: No public dataset simultaneously provides triplets of "prior map + current sensor data + up-to-date ground-truth map." Existing methods can only train with synthetic priors (scripted modifications, noise injection, random element deletion, etc.).
    - **Large sim2real gap**: Synthetic priors fail to capture the structured, semantically correlated nature of real-world changes (e.g., adding a bike lane entails modifying lane markings and connectivity), leading to significant performance degradation in real scenarios.
    - **Insufficient evaluation metrics**: Standard mAP cannot distinguish between "preserving unchanged regions" and "correctly updating changed regions." Models trained on different prior qualities may achieve nearly identical mAP scores (experimentally verified: ArgoTweak vs. synthetic priors differ by only ~1% mAP, despite large qualitative gaps).
 
-**Root Cause**: Achieving truly self-updating HD maps requires addressing deficiencies in data, models, and evaluation simultaneously.
+**Key Challenge**: Achieving truly self-updating HD maps requires addressing deficiencies in data, models, and evaluation simultaneously.
 
 **Core Idea**: Construct a real-prior dataset annotated with a bijective mapping framework, enabling models to learn interpretable element-level change detection and updating.
 

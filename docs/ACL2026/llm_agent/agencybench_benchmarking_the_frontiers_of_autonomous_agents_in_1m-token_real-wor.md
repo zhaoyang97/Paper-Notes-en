@@ -29,15 +29,15 @@ This paper proposes AgencyBench — a comprehensive benchmark comprising 138 rea
 
 ## Background & Motivation
 
-**State of the Field**: LLM-based autonomous agents are increasingly deployed across software development, scientific research, and everyday use, yet evaluation benchmarks have lagged significantly behind the growth in agent capabilities.
+**Background**: LLM-based autonomous agents are increasingly deployed across software development, scientific research, and everyday use, yet evaluation benchmarks have lagged significantly behind the growth in agent capabilities.
 
 **Limitations of Prior Work**: (1) Existing benchmarks focus on isolated capabilities (e.g., tool use or software engineering) and fail to capture the multi-dimensional, long-horizon nature of real-world tasks; (2) real-task evaluation relies on human-in-the-loop feedback, becoming a bottleneck for automated assessment; (3) task complexity is insufficient — most benchmarks require only tens of tool calls.
 
-**Root Cause**: The capabilities of frontier agents have far surpassed the scope of existing benchmarks, necessitating substantially more challenging evaluations.
+**Key Challenge**: The capabilities of frontier agents have far surpassed the scope of existing benchmarks, necessitating substantially more challenging evaluations.
 
-**Paper Goals**: Construct a high-complexity, multi-dimensional, fully automated benchmark for evaluating real-world agents.
+**Goal**: Construct a high-complexity, multi-dimensional, fully automated benchmark for evaluating real-world agents.
 
-**Starting Point**: Twenty human experts (AI researchers and developers) collect tasks from authentic work scenarios, organized into a hierarchical capability–scenario–task taxonomy.
+**Key Insight**: Twenty human experts (AI researchers and developers) collect tasks from authentic work scenarios, organized into a hierarchical capability–scenario–task taxonomy.
 
 **Core Idea**: Replace human feedback with a user simulation agent and employ Docker sandbox execution with visual evaluation to enable fully automated rollout collection and scoring for long-horizon, complex tasks.
 

@@ -27,7 +27,7 @@ A ResNet18 is trained on simulated HST CANDELS images generated from IllustrisTN
 
 ## Background & Motivation
 
-**State of the Field**: Galaxy mergers are a key driver of galaxy evolution, influencing star formation, AGN activity, and morphological transformation. Traditional identification methods include non-parametric approaches (measuring asymmetry, concentration, and clumpiness) and close-pair analyses, which are primarily effective at low redshift for massive, major mergers.
+**Background**: Galaxy mergers are a key driver of galaxy evolution, influencing star formation, AGN activity, and morphological transformation. Traditional identification methods include non-parametric approaches (measuring asymmetry, concentration, and clumpiness) and close-pair analyses, which are primarily effective at low redshift for massive, major mergers.
 
 **Limitations of Prior Work**:
    - Non-parametric methods are calibrated at low redshift and are unreliable at high redshift ($z>1$)
@@ -35,11 +35,11 @@ A ResNet18 is trained on simulated HST CANDELS images generated from IllustrisTN
    - Close-pair selection captures only early-stage mergers, missing roughly half the merger population (post-coalescence mergers)
    - Existing CNN-based studies are confined to $z<1$ and $M_\star > 10^9 M_\odot$
 
-**Root Cause**: A comprehensive understanding of the role of mergers in galaxy evolution requires large merger catalogs spanning all merger stages, mass ratios, and mass ranges; however, existing methods suffer from severe selection bias at high redshift and the low-mass end.
+**Key Challenge**: A comprehensive understanding of the role of mergers in galaxy evolution requires large merger catalogs spanning all merger stages, mass ratios, and mass ranges; however, existing methods suffer from severe selection bias at high redshift and the low-mass end.
 
-**Paper Goals**: To extend CNN-based merger identification into a more challenging parameter space: high redshift ($1<z<1.5$), low stellar mass ($M_\star > 10^8 M_\odot$), and minor mass ratios ($\mu \geq 1/10$).
+**Goal**: To extend CNN-based merger identification into a more challenging parameter space: high redshift ($1<z<1.5$), low stellar mass ($M_\star > 10^8 M_\odot$), and minor mass ratios ($\mu \geq 1/10$).
 
-**Starting Point**: IllustrisTNG50 high-resolution simulations (~0.1 kpc spatial resolution) are used to generate mock HST observations with full physical self-consistency, providing accurate merger/non-merger ground-truth labels and avoiding biases inherent in visual classification.
+**Key Insight**: IllustrisTNG50 high-resolution simulations (~0.1 kpc spatial resolution) are used to generate mock HST observations with full physical self-consistency, providing accurate merger/non-merger ground-truth labels and avoiding biases inherent in visual classification.
 
 **Core Idea**: High-resolution cosmological simulations + radiative transfer + realistic background injection = training data; ResNet18 + transfer learning = merger identification across the full parameter space at high redshift.
 

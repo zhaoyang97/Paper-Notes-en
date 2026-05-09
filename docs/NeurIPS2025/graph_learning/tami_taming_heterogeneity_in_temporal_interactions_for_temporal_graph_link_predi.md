@@ -29,18 +29,18 @@ This paper is the first to systematically identify the heterogeneity problem in 
 
 ## Background & Motivation
 
-**State of the Field**: Temporal graph link prediction is a fundamental task for predicting future node interactions in continuous-time dynamic graphs. Mainstream approaches include temporal neighbor aggregation-based TGNNs (DyGFormer, GraphMixer, TGAT, TGN) and random walk-based methods (CAWN).
+**Background**: Temporal graph link prediction is a fundamental task for predicting future node interactions in continuous-time dynamic graphs. Mainstream approaches include temporal neighbor aggregation-based TGNNs (DyGFormer, GraphMixer, TGAT, TGN) and random walk-based methods (CAWN).
 
 **Limitations of Prior Work**:
    - Temporal interactions are inherently **heterogeneous**: a small fraction of node pairs account for the majority of interaction events, and interaction intervals follow power-law/highly skewed distributions (skewness of 2.385 on the UCI dataset).
    - Existing time encoding functions use sinusoidal functions $\bm{z}(t) = \cos(\Delta t \times \bm{\omega})$; when the $\Delta t$ distribution is highly right-skewed, the frequency parameter $\bm{\omega}$ becomes difficult to learn.
    - Node embeddings rely solely on the most recent $m$ interactions, causing them to be dominated by high-frequency neighbors while low-frequency interaction information is forgotten.
 
-**Root Cause**: High-frequency interactions dominate model learning, yet predicting low-frequency interactions is equally important (e.g., eating turkey on Thanksgiving vs. eating burgers daily). Existing methods exhibit large performance gaps between high-frequency and low-frequency interaction prediction.
+**Key Challenge**: High-frequency interactions dominate model learning, yet predicting low-frequency interactions is equally important (e.g., eating turkey on Thanksgiving vs. eating burgers daily). Existing methods exhibit large performance gaps between high-frequency and low-frequency interaction prediction.
 
-**Paper Goals**: (1) Alleviate the skewness problem in time encoding; (2) Prevent the interaction history of node pairs from being forgotten.
+**Goal**: (1) Alleviate the skewness problem in time encoding; (2) Prevent the interaction history of node pairs from being forgotten.
 
-**Starting Point**: Observing that interaction intervals follow a power-law distribution, logarithmic transformation is applied to compress the skewness; an explicit pair-level interaction history is additionally maintained.
+**Key Insight**: Observing that interaction intervals follow a power-law distribution, logarithmic transformation is applied to compress the skewness; an explicit pair-level interaction history is additionally maintained.
 
 **Core Idea**: Apply logarithmic transformation to "tame" the skewness in time encoding, and use explicit link history aggregation to prevent low-frequency interactions from being forgotten.
 

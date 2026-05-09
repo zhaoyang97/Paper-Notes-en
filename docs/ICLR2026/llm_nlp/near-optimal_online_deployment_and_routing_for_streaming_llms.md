@@ -28,7 +28,7 @@ This work provides the first formal treatment of the joint LLM streaming online 
 
 ## Background & Motivation
 
-**State of the Field**: Extensive prior work on LLM routing (e.g., RouteLLM, Hybrid-LLM, Zooter) assumes a fixed model pool. In practice, however, new models are continuously released and older ones gradually become obsolete — for instance, Azure OpenAI limits each resource to 32 standard deployments plus 5 fine-tuned deployments, and GPT-4.1 enforces rate limits of 1,000 RPM and 1M TPM.
+**Background**: Extensive prior work on LLM routing (e.g., RouteLLM, Hybrid-LLM, Zooter) assumes a fixed model pool. In practice, however, new models are continuously released and older ones gradually become obsolete — for instance, Azure OpenAI limits each resource to 32 standard deployments plus 5 fine-tuned deployments, and GPT-4.1 enforces rate limits of 1,000 RPM and 1M TPM.
 
 **Coupling Across Two Time Scales**: Real-world LLM serving requires decisions at two fundamentally different time scales:
    - **Macro (stage-wise)**: Deciding which models to keep deployed (subject to the concurrency cap $M_{\max}$, fixed for the entire stage). This is a **high-stakes decision** — activating an uncertain new model may necessitate evicting a known-reliable model for a full stage.

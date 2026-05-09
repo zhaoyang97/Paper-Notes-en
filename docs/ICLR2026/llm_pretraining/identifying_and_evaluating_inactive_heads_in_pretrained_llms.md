@@ -29,15 +29,15 @@ This paper systematically evaluates 12 scoring functions for identifying inactiv
 
 ## Background & Motivation
 
-**State of the Field**: The attention mechanism is a core component of Transformer-based LLMs, yet prior work has identified attention heads exhibiting "attention sink" behavior—where the first token receives the majority of attention weight despite limited semantic importance. Guo et al. (2024a) introduced the concept of "dormant heads," identifying inactivity based on first-token attention weight.
+**Background**: The attention mechanism is a core component of Transformer-based LLMs, yet prior work has identified attention heads exhibiting "attention sink" behavior—where the first token receives the majority of attention weight despite limited semantic importance. Guo et al. (2024a) introduced the concept of "dormant heads," identifying inactivity based on first-token attention weight.
 
 **Limitations of Prior Work**: Relying solely on attention weights introduces blind spots: (1) a head may attend to multiple tokens with near-zero value vectors, yielding near-zero output without exhibiting high first-token weight; (2) a head may appear "dormant" by attention weight yet produce non-negligible output; (3) attention patterns vary substantially across model families (Llama, OLMo, Qwen), making first-token weight a non-universal indicator.
 
-**Root Cause**: Inactivity in attention heads admits multiple definitions—attention concentrated on irrelevant tokens, near-zero value vectors, or near-zero head output—yet prior work addresses only the first, leading to a systematic underestimation of inactive head prevalence. AWFT (Average Weight of First Token) identifies only ~4.6% of inactive heads, missing approximately 7.6%.
+**Key Challenge**: Inactivity in attention heads admits multiple definitions—attention concentrated on irrelevant tokens, near-zero value vectors, or near-zero head output—yet prior work addresses only the first, leading to a systematic underestimation of inactive head prevalence. AWFT (Average Weight of First Token) identifies only ~4.6% of inactive heads, missing approximately 7.6%.
 
-**Paper Goals**: Provide a systematic answer to "how prevalent are inactive attention heads?" and identify the best model-agnostic detection method.
+**Goal**: Provide a systematic answer to "how prevalent are inactive attention heads?" and identify the best model-agnostic detection method.
 
-**Starting Point**: Rather than focusing on attention weights alone, this paper examines all three components of attention—weights, value vectors, and head outputs—and designs 12 simple scoring functions, validating true inactivity via threshold classification and model intervention experiments.
+**Key Insight**: Rather than focusing on attention weights alone, this paper examines all three components of attention—weights, value vectors, and head outputs—and designs 12 simple scoring functions, validating true inactivity via threshold classification and model intervention experiments.
 
 **Core Idea**: Inactive attention heads should be identified via head output norm rather than attention weight patterns, since small output is the true indicator of negligible contribution to the model.
 

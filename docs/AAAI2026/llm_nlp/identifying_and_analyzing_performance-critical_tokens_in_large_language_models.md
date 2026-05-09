@@ -27,15 +27,15 @@ content_hash: a623910ce7d1eeeb
 Through representation-level and token-level ablation experiments, this paper identifies the "performance-critical tokens" that LLMs directly rely on during ICL as template and stopword tokens (e.g., "Answer:"), rather than the content tokens that humans would attend to (e.g., actual text). It further reveals that LLMs indirectly exploit content by aggregating content information into the representations of these critical tokens.
 
 ## Background & Motivation
-**State of the Field**: ICL has become the dominant few-shot learning paradigm for LLMs, yet how LLMs learn and generalize from demonstrations remains poorly understood. Prior work has shown that ICL is highly sensitive to minor prompt variations such as demonstration order.
+**Background**: ICL has become the dominant few-shot learning paradigm for LLMs, yet how LLMs learn and generalize from demonstrations remains poorly understood. Prior work has shown that ICL is highly sensitive to minor prompt variations such as demonstration order.
 
 **Limitations of Prior Work**: Existing studies either focus solely on the last token (function vectors) or on label words, lacking a systematic investigation of the roles of **all tokens** in the prompt.
 
-**Root Cause**: Humans focus on "content words" (e.g., nouns and adjectives) when learning by analogy — but do LLMs behave similarly?
+**Key Challenge**: Humans focus on "content words" (e.g., nouns and adjectives) when learning by analogy — but do LLMs behave similarly?
 
-**Paper Goals**: To systematically identify which tokens' representations in ICL prompts directly affect performance (i.e., performance-critical tokens) and to analyze their characteristics.
+**Goal**: To systematically identify which tokens' representations in ICL prompts directly affect performance (i.e., performance-critical tokens) and to analyze their characteristics.
 
-**Starting Point**: Tokens in an ICL prompt are categorized into three types (content / stopword / template), and the impact on performance is measured by ablating the representations of each category.
+**Key Insight**: Tokens in an ICL prompt are categorized into three types (content / stopword / template), and the impact on performance is measured by ablating the representations of each category.
 
 **Core Idea**: LLMs do not directly rely on the representations of content tokens; instead, they rely on template and stopword tokens — which aggregate information from the former.
 

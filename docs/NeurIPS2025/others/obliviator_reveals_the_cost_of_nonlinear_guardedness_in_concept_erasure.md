@@ -26,18 +26,18 @@ content_hash: a4eb39d5c39284e8
 This paper proposes Obliviator — a post-processing concept erasure method based on HSIC minimization in RKHS — that iteratively deforms the feature space through a two-step optimization procedure. It is the first method to achieve complete guardedness against nonlinear adversaries, while quantifying the utility-erasure trade-off of nonlinear guardedness. Obliviator substantially outperforms existing methods across multiple PLMs and datasets.
 
 ## Background & Motivation
-**State of the Field**: Pretrained language models (PLMs) widely encode sensitive demographic attributes, leading to biased and unfair predictions. Concept erasure aims to remove such information from representations while preserving task-relevant utility.
+**Background**: Pretrained language models (PLMs) widely encode sensitive demographic attributes, leading to biased and unfair predictions. Concept erasure aims to remove such information from representations while preserving task-relevant utility.
 
 **Limitations of Prior Work**:
    - **Linear methods** (INLP, R-LACE, LEACE, SAL) only guard against linear adversaries; nonlinear classifiers can still recover sensitive attributes.
    - **Existing nonlinear methods** (kSAL, KCE, AdS, FaRM, KRaM) attempt to handle nonlinear dependencies but fail to fully capture nonlinear statistical dependencies, remaining vulnerable to nonlinear adversaries.
    - Even costly fine-tuning of PLMs (e.g., AdS, FaRM) yields incomplete erasure.
 
-**Root Cause**: The two objectives of concept erasure — removing sensitive attributes vs. preserving task utility — are fundamentally competing. Existing methods either fail to fully erase (i.e., are not immune to nonlinear adversaries) or sacrifice too much utility during erasure. More critically, the **dynamics of the utility-erasure trade-off** have never been studied.
+**Key Challenge**: The two objectives of concept erasure — removing sensitive attributes vs. preserving task utility — are fundamentally competing. Existing methods either fail to fully erase (i.e., are not immune to nonlinear adversaries) or sacrifice too much utility during erasure. More critically, the **dynamics of the utility-erasure trade-off** have never been studied.
 
-**Paper Goals**: (1) Achieve complete guardedness against nonlinear adversaries (i.e., true statistical independence); (2) Reveal and quantify the trade-off dynamics between utility and guardedness throughout the erasure process.
+**Goal**: (1) Achieve complete guardedness against nonlinear adversaries (i.e., true statistical independence); (2) Reveal and quantify the trade-off dynamics between utility and guardedness throughout the erasure process.
 
-**Starting Point**: Adopting a **functional-analytic perspective**, the paper employs HSIC in RKHS as a measure of nonlinear statistical dependence, formalizes erasure as a cascaded kernel optimization problem, and solves it via an iterative procedure.
+**Key Insight**: Adopting a **functional-analytic perspective**, the paper employs HSIC in RKHS as a measure of nonlinear statistical dependence, formalizes erasure as a cascaded kernel optimization problem, and solves it via an iterative procedure.
 
 **Core Idea**: Use HSIC to measure nonlinear statistical dependence, and iteratively deform the feature space through encoder HSIC minimization combined with RKHS eigendecomposition, achieving complete nonlinear concept erasure while preserving utility.
 

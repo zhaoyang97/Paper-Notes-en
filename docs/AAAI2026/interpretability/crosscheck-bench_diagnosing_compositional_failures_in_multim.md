@@ -28,15 +28,15 @@ CrossCheck-Bench is a three-level hierarchical benchmark comprising 15k adversar
 
 ## Background & Motivation
 
-**State of the Field** In open-domain multimodal content, visual and textual cues frequently contradict each other—e.g., an e-commerce page displaying a luxury brand logo paired with a suspiciously low price, or a sportswear image accompanied by a formal-wear description. Humans can intuitively detect such inconsistencies, yet existing VLMs are predominantly trained and evaluated on aligned image-text pairs.
+**Background** In open-domain multimodal content, visual and textual cues frequently contradict each other—e.g., an e-commerce page displaying a luxury brand logo paired with a suspiciously low price, or a sportswear image accompanied by a formal-wear description. Humans can intuitively detect such inconsistencies, yet existing VLMs are predominantly trained and evaluated on aligned image-text pairs.
 
 **Limitations of Prior Work** Existing benchmarks (VCR, MMMU, MathVista, etc.) primarily assess compositional tasks where modalities are mutually reinforcing, implicitly assuming visual-textual consistency. Inconsistency-detection benchmarks such as MMIR are limited to predefined error types and lack fine-grained capability diagnostics. No benchmark systematically tests whether models can verify the logical compatibility of multimodal signals.
 
-**Root Cause** VLMs may confidently affirm incompatible cues, producing outputs that are logically inconsistent with the input evidence. This capability gap poses tangible risks in real-world deployment scenarios such as product authenticity verification and content moderation.
+**Key Challenge** VLMs may confidently affirm incompatible cues, producing outputs that are logically inconsistent with the input evidence. This capability gap poses tangible risks in real-world deployment scenarios such as product authenticity verification and content moderation.
 
-**Paper Goals** To systematically evaluate and diagnose the ability of VLMs to detect, analyze, and resolve cross-modal inconsistencies.
+**Goal** To systematically evaluate and diagnose the ability of VLMs to detect, analyze, and resolve cross-modal inconsistencies.
 
-**Starting Point** A diagnostic framework is designed around a three-level hierarchy (perception → integration → reasoning) and seven atomic capabilities, with evaluation samples constructed by injecting contradictions into real-world data.
+**Key Insight** A diagnostic framework is designed around a three-level hierarchy (perception → integration → reasoning) and seven atomic capabilities, with evaluation samples constructed by injecting contradictions into real-world data.
 
 **Core Idea** Through hierarchical capability decomposition and cascading failure analysis, the work uncovers a fundamental issue in VLM multimodal conflict reasoning: models may appear successful at the perception layer while failing systematically at the reasoning layer.
 

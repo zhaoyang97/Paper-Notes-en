@@ -30,7 +30,7 @@ This paper systematically investigates catastrophic forgetting (CF) caused by da
 
 ### State of the Field
 
-**State of the Field**: Split Federated Learning (SFL/SplitFedv2) divides the model into part-1 (client-side) and part-2 (server-side). Part-1 is trained in parallel across clients and aggregated as in standard FL; part-2 is trained on the server by sequentially processing each client's activations.
+**Background**: Split Federated Learning (SFL/SplitFedv2) divides the model into part-1 (client-side) and part-2 (server-side). Part-1 is trained in parallel across clients and aggregated as in standard FL; part-2 is trained on the server by sequentially processing each client's activations.
 
 The authors identify two forms of CF in SFL: (1) **inter-round forgetting** in part-1, which mirrors standard FL model drift caused by aggregation; and (2) **intra-round forgetting (intraCF)** in part-2, caused by sequential server-side processing — analogous to continual learning — where the model tends to retain knowledge of labels associated with the last-processed client while forgetting earlier ones. Experiments on CIFAR-10 under non-IID settings show that the accuracy of the last-processed labels far exceeds that of the first-processed ones, with overall accuracy dropping to only 43% (vs. 80% under IID).
 
@@ -38,7 +38,7 @@ Existing CF mitigation methods from CL and FL (e.g., EWC, Scaffold) cannot be di
 
 ### Starting Point
 
-**Paper Goals**: How can intra-round catastrophic forgetting caused by sequential server-side processing in SFL be characterized and mitigated? How do the cut layer choice and processing order affect the degree of forgetting?
+**Goal**: How can intra-round catastrophic forgetting caused by sequential server-side processing in SFL be characterized and mitigated? How do the cut layer choice and processing order affect the degree of forgetting?
 
 ## Method
 

@@ -28,16 +28,16 @@ This paper proposes Neural Green's Functions, a learnable linear PDE solution op
 
 ## Background & Motivation
 
-**State of the Field**: Learning-based PDE solvers (PINNs, FNO, GNO, Transolver, etc.) have significantly improved efficiency, yet face fundamental difficulties in **simultaneously generalizing** across varying domain geometries, source functions, and boundary conditions.
+**Background**: Learning-based PDE solvers (PINNs, FNO, GNO, Transolver, etc.) have significantly improved efficiency, yet face fundamental difficulties in **simultaneously generalizing** across varying domain geometries, source functions, and boundary conditions.
 
 **Limitations of Prior Work**:
 - PINNs require independent training for each problem instance; any change necessitates retraining.
 - Neural operators (FNO, Transolver) **couple** the input mesh with sampled function values — generalization degrades when the function changes.
 - Prior methods for learning Green's functions (Boullé et al., Teng et al.) are restricted to a single domain and handle only simple geometries.
 
-**Root Cause**: Existing methods take function values as network inputs — changing the function demands more training samples.
+**Key Challenge**: Existing methods take function values as network inputs — changing the function demands more training samples.
 
-**Starting Point**: The Green's function $G_D(x,y)$ **depends only on the domain geometry $D$**, independent of the source function $f$ and boundary condition $h$. Once $G_D$ is learned, the solution is obtained by integration: $u(x) = \int G_D(x,y) f(y)\, dy + \text{boundary terms}$.
+**Key Insight**: The Green's function $G_D(x,y)$ **depends only on the domain geometry $D$**, independent of the source function $f$ and boundary condition $h$. Once $G_D$ is learned, the solution is obtained by integration: $u(x) = \int G_D(x,y) f(y)\, dy + \text{boundary terms}$.
 
 **Core Idea**: A neural network operating on point clouds predicts the eigendecomposition of the Green's function $G \approx \Phi \Lambda^{-1} \Phi^T$ **from domain geometry alone**, along with the mass matrix $M$ required for integration — making the design **function-agnostic by construction**.
 

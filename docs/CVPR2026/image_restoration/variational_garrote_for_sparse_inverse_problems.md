@@ -29,15 +29,15 @@ Under a unified sparse inverse problem framework, this paper systematically comp
 
 ## Background & Motivation
 
-**State of the Field**: Inverse problems—recovering unknown signals from incomplete or corrupted measurements—arise broadly in signal processing and computational imaging, encompassing interpolation, denoising, deblurring, and CT reconstruction. Sparse regularization is a central tool for solving such problems, with different regularizers encoding different prior assumptions.
+**Background**: Inverse problems—recovering unknown signals from incomplete or corrupted measurements—arise broadly in signal processing and computational imaging, encompassing interpolation, denoising, deblurring, and CT reconstruction. Sparse regularization is a central tool for solving such problems, with different regularizers encoding different prior assumptions.
 
 **Limitations of Prior Work**: $\ell_1$ regularization (LASSO) is the dominant sparse recovery approach, offering convex optimization guarantees and computational efficiency. However, LASSO suffers from two fundamental drawbacks: (1) persistent coefficient shrinkage—large coefficients are systematically biased toward zero; and (2) no explicit separation between active and inactive variables—support set recovery is unstable under highly correlated predictors, yielding approximately sparse rather than truly sparse solutions.
 
-**Root Cause**: Ideal sparse recovery requires the $\ell_0$ norm (corresponding to a spike-and-slab prior), but direct optimization is NP-hard. The central challenge is achieving support set recovery quality close to $\ell_0$ while retaining computational tractability.
+**Key Challenge**: Ideal sparse recovery requires the $\ell_0$ norm (corresponding to a spike-and-slab prior), but direct optimization is NP-hard. The central challenge is achieving support set recovery quality close to $\ell_0$ while retaining computational tractability.
 
-**Paper Goals**: To systematically evaluate the performance gap between $\ell_1$ and $\ell_0$-approximation regularizers across multiple inverse problems, with particular focus on strongly underdetermined regimes where the information bottleneck is severe.
+**Goal**: To systematically evaluate the performance gap between $\ell_1$ and $\ell_0$-approximation regularizers across multiple inverse problems, with particular focus on strongly underdetermined regimes where the information bottleneck is severe.
 
-**Starting Point**: Variational Garrote (VG) introduces latent binary gating variables with a variational relaxation, providing a differentiable approximation to $\ell_0$. By decoupling coefficient magnitude estimation from support set selection, VG approximates the spike-and-slab prior while retaining a single differentiable objective.
+**Key Insight**: Variational Garrote (VG) introduces latent binary gating variables with a variational relaxation, providing a differentiable approximation to $\ell_0$. By decoupling coefficient magnitude estimation from support set selection, VG approximates the spike-and-slab prior while retaining a single differentiable objective.
 
 **Core Idea**: Replace LASSO's continuous shrinkage with VG's variational binary gating to approximate $\ell_0$ sparsity, achieving more accurate support set recovery and lower generalization error in severely underdetermined inverse problems.
 

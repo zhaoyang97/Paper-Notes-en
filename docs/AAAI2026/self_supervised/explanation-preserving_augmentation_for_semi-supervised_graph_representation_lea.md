@@ -27,15 +27,15 @@ content_hash: 7e0e419682d58886
 This paper proposes EPA-GRL (Explanation-Preserving Augmentation for Graph Representation Learning), which employs a GNN explainer trained with a small number of labels to identify semantic subgraphs (explanation subgraphs). During augmentation, only the non-semantic portions (marginal subgraphs) are perturbed, achieving semantics-preserving graph augmentation. EPA-GRL significantly outperforms semantics-agnostic random augmentation methods across 6 benchmarks.
 
 ## Background & Motivation
-**State of the Field**: Graph Contrastive Learning (GCL) learns invariant representations by generating two augmented views of the same graph. Methods such as GraphCL and JOAO adopt augmentation strategies including random node/edge dropping.
+**Background**: Graph Contrastive Learning (GCL) learns invariant representations by generating two augmented views of the same graph. Methods such as GraphCL and JOAO adopt augmentation strategies including random node/edge dropping.
 
 **Limitations of Prior Work**: Existing augmentation strategies are **semantics-agnostic** — random perturbations may destroy key substructures relevant to classification (e.g., benzene rings in molecular graphs), causing augmented graphs to lose core semantics and degrading downstream classification performance.
 
-**Root Cause**: Effective augmentation must simultaneously satisfy (1) semantic preservation and (2) introduction of variance; however, existing methods focus exclusively on the latter.
+**Key Challenge**: Effective augmentation must simultaneously satisfy (1) semantic preservation and (2) introduction of variance; however, existing methods focus exclusively on the latter.
 
-**Paper Goals**: How can graph augmentation preserve semantics while introducing sufficient variance?
+**Goal**: How can graph augmentation preserve semantics while introducing sufficient variance?
 
-**Starting Point**: Leverage GNN explainability techniques to identify semantic subgraphs, protecting them during augmentation while perturbing only the non-semantic parts.
+**Key Insight**: Leverage GNN explainability techniques to identify semantic subgraphs, protecting them during augmentation while perturbing only the non-semantic parts.
 
 **Core Idea**: Train an explainer with a small number of labels → identify semantic subgraphs → perturb only the non-semantic portions = semantics-preserving graph augmentation.
 

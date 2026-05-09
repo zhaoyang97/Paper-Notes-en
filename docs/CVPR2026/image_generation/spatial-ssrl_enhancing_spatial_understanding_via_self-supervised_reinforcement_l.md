@@ -28,15 +28,15 @@ This paper proposes Spatial-SSRL, a self-supervised reinforcement learning parad
 
 ## Background & Motivation
 
-**State of the Field**: Large Vision-Language Models (LVLMs) are approaching saturation on tasks such as VQA and image captioning, yet their spatial understanding capabilities remain far below human-level performance. Existing approaches fall into two categories: data-driven SFT (constructing spatial QA pairs for fine-tuning) and RLVR (reinforcement learning with verifiable rewards).
+**Background**: Large Vision-Language Models (LVLMs) are approaching saturation on tasks such as VQA and image captioning, yet their spatial understanding capabilities remain far below human-level performance. Existing approaches fall into two categories: data-driven SFT (constructing spatial QA pairs for fine-tuning) and RLVR (reinforcement learning with verifiable rewards).
 
 **Limitations of Prior Work**: SFT methods rely on costly human annotation or GPT-4-generated QA pairs and tend to overfit to dataset-specific patterns. Tool-augmented approaches (e.g., using depth estimators or object detectors) involve complex pipelines and high computational costs. Simulation-based methods (rendering 3D scenes) suffer from domain gaps with the real world. RLVR approaches are constrained by specific environments (e.g., 3D scans), limiting data scale and coverage.
 
-**Root Cause**: Spatial understanding requires large-scale verifiable supervision signals, yet all existing methods incur prohibitive costs to obtain them—either through expensive human annotation, complex toolchains, or dependence on specialized 3D datasets.
+**Key Challenge**: Spatial understanding requires large-scale verifiable supervision signals, yet all existing methods incur prohibitive costs to obtain them—either through expensive human annotation, complex toolchains, or dependence on specialized 3D datasets.
 
-**Paper Goals**: Design a zero-annotation, tool-free, and scalable self-supervised scheme that generates verifiable spatial understanding training signals and integrates naturally with the RLVR training paradigm.
+**Goal**: Design a zero-annotation, tool-free, and scalable self-supervised scheme that generates verifiable spatial understanding training signals and integrates naturally with the RLVR training paradigm.
 
-**Starting Point**: The inherent structural consistency within images (relative depth, geometric consistency, viewpoint invariance) itself provides deterministic and verifiable supervision signals. Pretext tasks from visual self-supervised learning (SSL) are repurposed as reward functions for RLVR rather than traditional feature pre-training objectives.
+**Key Insight**: The inherent structural consistency within images (relative depth, geometric consistency, viewpoint invariance) itself provides deterministic and verifiable supervision signals. Pretext tasks from visual self-supervised learning (SSL) are repurposed as reward functions for RLVR rather than traditional feature pre-training objectives.
 
 **Core Idea**: Classic SSL tasks (jigsaw puzzles, flip detection, etc.) are reformulated as QA prompts with deterministic verification functions for LVLMs, and GRPO is directly applied for post-training.
 

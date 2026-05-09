@@ -29,15 +29,15 @@ This paper proposes LoopLLM, a framework that launches energy-latency attacks by
 
 ## Background & Motivation
 
-**State of the Field**: LLM inference consumes substantial computational resources, with inference energy accounting for 90% of total LLM lifecycle energy consumption. Current security research predominantly focuses on integrity (jailbreaking) and confidentiality, with insufficient attention to availability (energy-latency attacks).
+**Background**: LLM inference consumes substantial computational resources, with inference energy accounting for 90% of total LLM lifecycle energy consumption. Current security research predominantly focuses on integrity (jailbreaking) and confidentiality, with insufficient attention to availability (energy-latency attacks).
 
 **Limitations of Prior Work**: Existing energy-latency attack methods (e.g., LLMEffiChecker, Engorgio) extend output length by delaying EOS token generation, but as output grows, controlling EOS via input becomes increasingly difficult, limiting attack effectiveness to approximately 20% of maximum length. Furthermore, existing methods rely on white-box gradient optimization and suffer severe overfitting to the source model, resulting in poor cross-model transferability.
 
-**Root Cause**: The delayed-EOS strategy cannot fundamentally alter output structure and fails to reliably trigger maximum-length outputs; a gap exists between the model-specificity of white-box optimization and the black-box requirements of real-world scenarios.
+**Key Challenge**: The delayed-EOS strategy cannot fundamentally alter output structure and fails to reliably trigger maximum-length outputs; a gap exists between the model-specificity of white-box optimization and the black-box requirements of real-world scenarios.
 
-**Paper Goals**: To design a more effective energy-latency attack that reliably forces LLMs to generate up to the maximum length limit while achieving strong cross-model transferability.
+**Goal**: To design a more effective energy-latency attack that reliably forces LLMs to generate up to the maximum length limit while achieving strong cross-model transferability.
 
-**Starting Point**: An observation that repetitive generation can trigger low-entropy decoding loops — once a model begins generating previously appeared content, the autoregressive mechanism reinforces repetition, forming a loop until the maximum length is reached.
+**Key Insight**: An observation that repetitive generation can trigger low-entropy decoding loops — once a model begins generating previously appeared content, the autoregressive mechanism reinforces repetition, forming a loop until the maximum length is reached.
 
 **Core Idea**: Rather than suppressing EOS, the approach **induces repetitive generation**, exploiting the inherent vulnerability of autoregressive models to lock them into low-entropy loops. Introducing a small amount of repetition in the output rapidly reduces output entropy, proving more effective than input-level repetition.
 

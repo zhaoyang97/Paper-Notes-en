@@ -29,11 +29,11 @@ This paper proposes OHSVGP (Online HiPPO Sparse Variational Gaussian Process), w
 
 ## Background & Motivation
 
-**State of the Field**: Gaussian Processes (GPs) are a classical choice for time series modeling due to their expressive functional priors and principled uncertainty quantification. However, GPs face computational bottlenecks of $O(n^3)$ time and $O(n^2)$ space complexity. Sparse Variational Gaussian Processes (SVGPs) mitigate this via inducing points, and Online SVGP (OSVGP) further extends this to the online learning setting.
+**Background**: Gaussian Processes (GPs) are a classical choice for time series modeling due to their expressive functional priors and principled uncertainty quantification. However, GPs face computational bottlenecks of $O(n^3)$ time and $O(n^2)$ space complexity. Sparse Variational Gaussian Processes (SVGPs) mitigate this via inducing points, and Online SVGP (OSVGP) further extends this to the online learning setting.
 
 **Limitations of Prior Work**: OSVGP suffers from **catastrophic forgetting** in online learning. As new data arrive, inducing points inevitably drift toward the most recent data regions, causing the model to lose memory of earlier tasks. Maintaining long-term memory requires continuously increasing the number of inducing points.
 
-**Starting Point**: The HiPPO framework is well known in deep learning for its superior long-range memory capabilities (serving as the foundation for S4 and Mamba). This paper reinterprets HiPPO's time-varying orthogonal polynomial projections as inducing variables for interdomain GPs, thereby achieving effective long-term memory retention with a fixed number of inducing variables.
+**Key Insight**: The HiPPO framework is well known in deep learning for its superior long-range memory capabilities (serving as the foundation for S4 and Mamba). This paper reinterprets HiPPO's time-varying orthogonal polynomial projections as inducing variables for interdomain GPs, thereby achieving effective long-term memory retention with a fixed number of inducing variables.
 
 ## Method
 

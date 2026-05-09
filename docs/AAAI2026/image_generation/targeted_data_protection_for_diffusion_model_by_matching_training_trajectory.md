@@ -28,15 +28,15 @@ TAFAP achieves, for the first time, effective Targeted Data Protection (TDP) for
 
 ## Background & Motivation
 
-**State of the Field**: Personalized fine-tuning of diffusion models allows anyone to replicate specific individuals or styles using only a small set of images. Existing protection methods (e.g., Anti-DreamBooth, GLAZE) passively degrade the quality of fine-tuned outputs through imperceptible perturbations.
+**Background**: Personalized fine-tuning of diffusion models allows anyone to replicate specific individuals or styles using only a small set of images. Existing protection methods (e.g., Anti-DreamBooth, GLAZE) passively degrade the quality of fine-tuned outputs through imperceptible perturbations.
 
 **Limitations of Prior Work**: Passive quality degradation is uncontrollable, and attackers may still obtain usable results. Prior TDP attempts based on "snapshot matching" perform poorly — the protective effect is diluted as training continues.
 
-**Root Cause**: Snapshot matching affects only a single instant during training, whereas fine-tuning is a continuous process.
+**Key Challenge**: Snapshot matching affects only a single instant during training, whereas fine-tuning is a continuous process.
 
-**Paper Goals**: Achieve effective TDP by controlling the entire training trajectory.
+**Goal**: Achieve effective TDP by controlling the entire training trajectory.
 
-**Starting Point**: Drawing inspiration from training trajectory matching techniques used in dataset distillation.
+**Key Insight**: Drawing inspiration from training trajectory matching techniques used in dataset distillation.
 
 **Core Idea**: Replace snapshot matching with training trajectory matching to generate adversarial perturbations, ensuring that the fine-tuning trajectory globally aligns with the training trajectory of the target concept.
 

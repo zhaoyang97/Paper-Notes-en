@@ -27,15 +27,15 @@ content_hash: efd92117bb27567e
 This paper proposes a direction-level interpretability framework based on SVD singular vectors. By applying unified SVD decomposition to augmented matrices of attention heads and MLPs, combined with a learnable diagonal mask optimized via KL+L₁, the framework reveals orthogonal low-rank subfunctions superposed within a single component — on the IOI task, retaining only ~9% of directions suffices to reproduce model behavior with KLD=0.21.
 
 ## Background & Motivation
-**State of the Field**: Mechanistic interpretability typically treats attention heads and MLP layers as atomic units, probing or ablating entire components via causal tracing, activation patching, and attribution analysis.
+**Background**: Mechanistic interpretability typically treats attention heads and MLP layers as atomic units, probing or ablating entire components via causal tracing, activation patching, and attribution analysis.
 
 **Limitations of Prior Work**: This component-level perspective implicitly assumes a one-to-one correspondence between functions and component boundaries. In practice, a single head or MLP may multiplex multiple subfunctions through superposition, obscuring fine-grained internal computation.
 
-**Root Cause**: Merullo et al. introduced a low-rank perspective for analyzing inter-component communication, showing that attention heads communicate via singular directions of the value matrix in the residual stream, but did not investigate intra-component functional decomposition.
+**Key Challenge**: Merullo et al. introduced a low-rank perspective for analyzing inter-component communication, showing that attention heads communicate via singular directions of the value matrix in the residual stream, but did not investigate intra-component functional decomposition.
 
-**Paper Goals**: To use SVD singular vectors as orthogonal "computational directions," unifying the treatment of attention QK/OV transformations and MLP in/out projections, revealing independently superposed subfunctions within components, and enabling direction-level attribution via learnable masks.
+**Goal**: To use SVD singular vectors as orthogonal "computational directions," unifying the treatment of attention QK/OV transformations and MLP in/out projections, revealing independently superposed subfunctions within components, and enabling direction-level attribution via learnable masks.
 
-**Starting Point**: Bias terms are folded into weight matrices to form augmented matrices, which are then decomposed via SVD; singular directions serve as orthogonal computational directions.
+**Key Insight**: Bias terms are folded into weight matrices to form augmented matrices, which are then decomposed via SVD; singular directions serve as orthogonal computational directions.
 
 **Core Idea**: Transformer computation is distributed and compositional — overlapping subfunctions are embedded in shared subspaces and can be independently manipulated via SVD directions.
 
@@ -99,10 +99,10 @@ For each component, an augmented matrix is constructed by folding biases into we
 This paper proposes a direction-level interpretability framework based on singular vectors. By applying SVD to augmented matrices of Transformer attention heads and MLPs, combined with learnable diagonal mask optimization (KL+L₁), it reveals orthogonal low-rank subfunctions within individual components. On the IOI task, retaining only ~9% of directions suffices to reproduce model behavior with KLD=0.21; moreover, different singular directions within Head 9.6 separately encode distinct computational primitives such as semantic entity separation, entity salience, and sequence initialization.
 
 ## Background & Motivation
-1. **State of the Field**: Mechanistic interpretability typically treats attention heads and MLP layers as indivisible atomic units, probing or ablating entire components via causal tracing, activation patching, and attribution analysis.
+1. **Background**: Mechanistic interpretability typically treats attention heads and MLP layers as indivisible atomic units, probing or ablating entire components via causal tracing, activation patching, and attribution analysis.
 2. **Core Problem**: This component-level perspective implicitly assumes a one-to-one correspondence between functions and component boundaries. In practice, a single head or MLP may multiplex multiple subfunctions through superposition, and this component-centrism obscures fine-grained internal computation.
 3. **Limitations of Prior Work**: Merullo et al. proposed a low-rank perspective for analyzing inter-component communication, demonstrating that attention heads communicate via singular directions of the value matrix in the residual stream, but did not investigate intra-component functional decomposition.
-4. **Starting Point**: SVD singular vectors are treated as orthogonal "computational directions" to unify the handling of attention QK/OV transformations and MLP in/out projections, revealing independently superposed subfunctions within components and enabling direction-level attribution via learnable masks.
+4. **Key Insight**: SVD singular vectors are treated as orthogonal "computational directions" to unify the handling of attention QK/OV transformations and MLP in/out projections, revealing independently superposed subfunctions within components and enabling direction-level attribution via learnable masks.
 
 ## Method
 

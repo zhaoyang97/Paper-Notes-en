@@ -28,11 +28,11 @@ FontCrafter reframes artistic font generation as a visual in-context generation 
 
 ## Background & Motivation
 
-1. **State of the Field**: Artistic font generation aims to synthesize stylized glyphs conditioned on reference styles. Existing approaches fall into two major paradigms: GAN-based feature fusion methods and zero-shot diffusion model methods augmented with adapters (e.g., IP-Adapter).
+1. **Background**: Artistic font generation aims to synthesize stylized glyphs conditioned on reference styles. Existing approaches fall into two major paradigms: GAN-based feature fusion methods and zero-shot diffusion model methods augmented with adapters (e.g., IP-Adapter).
 2. **Limitations of Prior Work**: GAN-based methods suffer from limited model capacity and training on small-scale, simple-texture datasets, resulting in poor generalization. Diffusion-based methods with style adapters capture only global features, ignoring pixel-level details, making it difficult to precisely match the reference style. Both paradigms support only coarse-grained control (color/overall style).
-3. **Root Cause**: Faithfully preserving both texture and structural information from reference elements while balancing style diversity and fine-grained control remains an open challenge.
-4. **Paper Goals**: (a) How to achieve pixel-level element style transfer rather than merely transferring global semantics? (b) How to control glyph shape in a lightweight manner? (c) How to prevent hallucinated strokes in background regions?
-5. **Starting Point**: The authors draw inspiration from the "context propagation" capability of inpainting models (FLUX.1-Fill)—inpainting models can propagate visual cues from visible regions into masked regions. Leveraging this property, the reference element image serves as the visible context and the glyph region serves as the masked area, naturally enabling style transfer.
+3. **Key Challenge**: Faithfully preserving both texture and structural information from reference elements while balancing style diversity and fine-grained control remains an open challenge.
+4. **Goal**: (a) How to achieve pixel-level element style transfer rather than merely transferring global semantics? (b) How to control glyph shape in a lightweight manner? (c) How to prevent hallucinated strokes in background regions?
+5. **Key Insight**: The authors draw inspiration from the "context propagation" capability of inpainting models (FLUX.1-Fill)—inpainting models can propagate visual cues from visible regions into masked regions. Leveraging this property, the reference element image serves as the visible context and the glyph region serves as the masked area, naturally enabling style transfer.
 6. **Core Idea**: Reformulate artistic font generation as a visual in-context inpainting task, allowing reference elements to directly "fill" glyph regions in pixel space.
 
 ## Method

@@ -29,11 +29,11 @@ HeROD proposes a lightweight, model-agnostic framework that injects heuristic-in
 
 ## Background & Motivation
 
-1. **State of the Field**: Referring object detection (ROD) localizes specific objects via natural language descriptions. Modern foundation detectors (e.g., GLIP, Grounding DINO) perform well in data-rich settings but rely heavily on large-scale annotations.
+1. **Background**: Referring object detection (ROD) localizes specific objects via natural language descriptions. Modern foundation detectors (e.g., GLIP, Grounding DINO) perform well in data-rich settings but rely heavily on large-scale annotations.
 2. **Limitations of Prior Work**: Many real-world deployment scenarios (robotics, AR, medical imaging) face severe annotation scarcity. End-to-end foundation detectors must learn spatial relationships and visual-semantic associations from scratch, leading to poor sample efficiency and overfitting under limited data.
-3. **Root Cause**: Large-scale pretraining provides broad visual-language alignment, yet fine-grained spatial cues and complex attribute compositions are underrepresented during pretraining — forcing models to "rediscover" these fundamental concepts from limited annotations.
-4. **Paper Goals**: Enable models to focus on "refining" rather than "rediscovering" basic spatial and semantic relationships when data is scarce.
-5. **Starting Point**: Drawing an analogy to A* heuristic search — heuristic cost functions guide search toward promising candidates, avoiding blind exploration.
+3. **Key Challenge**: Large-scale pretraining provides broad visual-language alignment, yet fine-grained spatial cues and complex attribute compositions are underrepresented during pretraining — forcing models to "rediscover" these fundamental concepts from limited annotations.
+4. **Goal**: Enable models to focus on "refining" rather than "rediscovering" basic spatial and semantic relationships when data is scarce.
+5. **Key Insight**: Drawing an analogy to A* heuristic search — heuristic cost functions guide search toward promising candidates, avoiding blind exploration.
 6. **Core Idea**: Inject explicit, interpretable spatial and semantic reasoning priors into the candidate ranking, matching, and prediction stages of the detection pipeline to bias training and inference toward plausible candidates.
 
 ## Method

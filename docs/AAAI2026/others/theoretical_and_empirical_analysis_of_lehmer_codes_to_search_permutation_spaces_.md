@@ -28,15 +28,15 @@ This work presents the first rigorous mathematical runtime analysis of Lehmer co
 
 ## Background & Motivation
 
-**State of the Field**: Permutation problems (e.g., shortest path, linear ordering, quadratic assignment) are central to combinatorial optimization, with search spaces growing factorially. Evolutionary algorithms (EAs) are widely used metaheuristics for such NP-hard problems. The classical linear encoding of permutations (a vector of $n$ distinct elements) is the most common representation in EAs, but requires specialized constraint handling and mutation/crossover operators to maintain the mutual exclusivity property.
+**Background**: Permutation problems (e.g., shortest path, linear ordering, quadratic assignment) are central to combinatorial optimization, with search spaces growing factorially. Evolutionary algorithms (EAs) are widely used metaheuristics for such NP-hard problems. The classical linear encoding of permutations (a vector of $n$ distinct elements) is the most common representation in EAs, but requires specialized constraint handling and mutation/crossover operators to maintain the mutual exclusivity property.
 
 **Limitations of Prior Work**: The mutual exclusivity constraint of classical encodings precludes direct application of standard mutation operators (e.g., single-point mutation), necessitating tailored neighborhood structures such as transpositions, adjacent swaps, and insertions. Random key representations circumvent mutual exclusivity but suffer from severe redundancy (many-to-one mappings). Existing theoretical runtime analyses almost exclusively target classical permutation representations or binary search spaces, leaving the theoretical properties of alternative representations largely unexplored.
 
-**Root Cause**: The constrained nature of permutation spaces limits the applicability of standard EA tools, while Lehmer codes—though naturally unconstrained and bijective with permutations—lack theoretical analysis to guide their selection and use within EAs.
+**Key Challenge**: The constrained nature of permutation spaces limits the applicability of standard EA tools, while Lehmer codes—though naturally unconstrained and bijective with permutations—lack theoretical analysis to guide their selection and use within EAs.
 
-**Paper Goals**: (1) Establish benchmark functions and simple EA algorithms over the Lehmer code space; (2) derive runtime bounds for these algorithms on the benchmarks; (3) compare results against known bounds for classical permutation representations; (4) empirically validate practical utility on real-world problems.
+**Goal**: (1) Establish benchmark functions and simple EA algorithms over the Lehmer code space; (2) derive runtime bounds for these algorithms on the benchmarks; (3) compare results against known bounds for classical permutation representations; (4) empirically validate practical utility on real-world problems.
 
-**Starting Point**: The paper employs classical tools from theoretical runtime analysis—including drift analysis and the coupon collector argument—to derive tight bounds, while establishing structural correspondences between operations in Lehmer space and permutation space.
+**Key Insight**: The paper employs classical tools from theoretical runtime analysis—including drift analysis and the coupon collector argument—to derive tight bounds, while establishing structural correspondences between operations in Lehmer space and permutation space.
 
 **Core Idea**: Lehmer codes provide an unconstrained, bijective representation for permutation-based EAs whose asymptotic runtime on standard benchmark functions is no worse than, and in some cases superior to, that of classical representations.
 

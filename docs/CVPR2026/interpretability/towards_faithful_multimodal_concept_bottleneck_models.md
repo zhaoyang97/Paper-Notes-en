@@ -26,15 +26,15 @@ content_hash: b740c4d6b0f21005
 This paper proposes f-CBM — the first faithful multimodal Concept Bottleneck Model framework — which mitigates unintended information leakage in concept representations via a differentiable leakage loss, and improves concept detection accuracy using a Kolmogorov-Arnold Network (KAN) prediction head, achieving an optimal Pareto frontier across task accuracy, concept detection, and leakage reduction.
 
 ## Background & Motivation
-**State of the Field**: Concept Bottleneck Models (CBMs) provide interpretability by routing predictions through a layer of human-understandable concepts. While extensively studied in vision and NLP settings, they remain largely unexplored in multimodal scenarios.
+**Background**: Concept Bottleneck Models (CBMs) provide interpretability by routing predictions through a layer of human-understandable concepts. While extensively studied in vision and NLP settings, they remain largely unexplored in multimodal scenarios.
 
 **Limitations of Prior Work**: The faithfulness of CBMs faces two challenges: (a) insufficient concept detection accuracy, and (b) leakage in concept representations — specifically, task-concept leakage (CTL; concepts encoding task-relevant signals beyond their intended semantics) and inter-concept leakage (ICL; unintended mutual information encoded across different concepts).
 
-**Root Cause**: Existing methods treat concept detection and leakage mitigation as separate problems, such that improving one dimension tends to compromise task accuracy. Independent training protocols reduce leakage but hurt performance; residual connections absorb missing information but undermine interpretability.
+**Key Challenge**: Existing methods treat concept detection and leakage mitigation as separate problems, such that improving one dimension tends to compromise task accuracy. Independent training protocols reduce leakage but hurt performance; residual connections absorb missing information but undermine interpretability.
 
-**Paper Goals**: Simultaneously achieve accurate concept detection, minimal leakage, and competitive task accuracy in a multimodal setting.
+**Goal**: Simultaneously achieve accurate concept detection, minimal leakage, and competitive task accuracy in a multimodal setting.
 
-**Starting Point**: Preliminary analysis reveals that CTL and ICL are strongly positively correlated, and that concepts with higher detection accuracy exhibit lower leakage — suggesting that jointly optimizing concept detection and CTL can indirectly reduce ICL.
+**Key Insight**: Preliminary analysis reveals that CTL and ICL are strongly positively correlated, and that concepts with higher detection accuracy exhibit lower leakage — suggesting that jointly optimizing concept detection and CTL can indirectly reduce ICL.
 
 **Core Idea**: Apply differentiable mutual information estimation as a leakage regularizer during training, replace the linear prediction head with a KAN layer to enhance expressive capacity, and jointly optimize all three objectives.
 

@@ -29,15 +29,15 @@ This paper reveals the "feature-inversion trap" in MGT detectors under personali
 
 ## Background & Motivation
 
-**State of the Field**: Large language models are increasingly capable of imitating personal writing styles. Personalized text generation (e.g., style imitation, ghostwriting) has become a real threat. Existing MGT detection methods perform well in general scenarios (e.g., news, Wikipedia), with AUROC reaching 85%+.
+**Background**: Large language models are increasingly capable of imitating personal writing styles. Personalized text generation (e.g., style imitation, ghostwriting) has become a real threat. Existing MGT detection methods perform well in general scenarios (e.g., news, Wikipedia), with AUROC reaching 85%+.
 
 **Limitations of Prior Work**: No one has systematically studied MGT detector performance under personalization. The authors construct the first personalized MGT detection benchmark StyloBench and find that existing detectors suffer dramatic performance degradation on personalized text, even experiencing inversion—e.g., Fast-DetectGPT achieves 98.78% AUROC in the general domain but drops to 8.71% on personalized literary style imitation text, nearly completely inverting.
 
-**Root Cause**: Detectors rely on discriminative features (e.g., text diversity—assuming human-written text is more diverse than machine text) that fail under personalization. Personalized MGT may actually be more diverse and less coherent than original human-written text, causing the feature direction to flip.
+**Key Challenge**: Detectors rely on discriminative features (e.g., text diversity—assuming human-written text is more diverse than machine text) that fail under personalization. Personalized MGT may actually be more diverse and less coherent than original human-written text, causing the feature direction to flip.
 
-**Paper Goals**: (1) Construct a personalized MGT detection benchmark; (2) Explain the mechanism behind detector performance degradation; (3) Propose a diagnostic tool for predicting detector cross-domain transfer performance.
+**Goal**: (1) Construct a personalized MGT detection benchmark; (2) Explain the mechanism behind detector performance degradation; (3) Propose a diagnostic tool for predicting detector cross-domain transfer performance.
 
-**Starting Point**: The authors train domain classifiers and find that in the general domain, MGT domain feature values are slightly lower than HWT, but in the personalized domain this inverts to MGT being higher than HWT—suggesting a systematic feature direction inversion across domains.
+**Key Insight**: The authors train domain classifiers and find that in the general domain, MGT domain feature values are slightly lower than HWT, but in the personalized domain this inverts to MGT being higher than HWT—suggesting a systematic feature direction inversion across domains.
 
 **Core Idea**: Formalize the feature inversion problem as a Rayleigh quotient optimization problem, extract the maximum inversion direction, and build the diagnostic framework StyloCheck based on this.
 

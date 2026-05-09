@@ -31,17 +31,17 @@ This paper proposes Dynamic Hierarchical Sparse Attention (DHSA), a hierarchical
 
 ## Background & Motivation
 
-**State of the Field**: Long-context modeling is a core requirement for LLMs, but the $O(L^2)$ complexity of attention makes processing long sequences on edge devices highly challenging. Sparse attention is the dominant optimization direction.
+**Background**: Long-context modeling is a core requirement for LLMs, but the $O(L^2)$ complexity of attention makes processing long sequences on edge devices highly challenging. Sparse attention is the dominant optimization direction.
 
 **Limitations of Prior Work**:
    - **Static sparse methods** (e.g., Longformer's sliding window, BigBird's global tokens) use fixed sparsity patterns and cannot adapt to varying attention distributions across inputs.
    - **Existing dynamic methods** (MInference, LM-Infinite, H2O, Scissorhands) rely on predefined templates or heuristic KV cache eviction rules, lacking generality and discarding contextually important tokens.
 
-**Root Cause**: Efficiency demands reducing attention computation, while accuracy demands preserving critical token interactions. Directly predicting an $L \times L$ token-level sparse mask is itself $O(L^2)$, offering no complexity reduction.
+**Key Challenge**: Efficiency demands reducing attention computation, while accuracy demands preserving critical token interactions. Directly predicting an $L \times L$ token-level sparse mask is itself $O(L^2)$, offering no complexity reduction.
 
-**Paper Goals**: Design a plug-in module that requires no retraining, dynamically predicts attention sparsity patterns, and applies to both the prefill and decode stages.
+**Goal**: Design a plug-in module that requires no retraining, dynamically predicts attention sparsity patterns, and applies to both the prefill and decode stages.
 
-**Starting Point**: Hierarchical prediction — first perform coarse-grained similarity estimation at the chunk level ($N_c \times N_c$, $N_c \ll L$), then upsample to the token level for fine-grained selection.
+**Key Insight**: Hierarchical prediction — first perform coarse-grained similarity estimation at the chunk level ($N_c \times N_c$, $N_c \ll L$), then upsample to the token level for fine-grained selection.
 
 **Core Idea**: Chunk-level similarity can be computed at very low cost and effectively proxies token-level importance. Combined with adaptive chunk boundary prediction and length normalization, this enables data-driven dynamic sparse attention.
 

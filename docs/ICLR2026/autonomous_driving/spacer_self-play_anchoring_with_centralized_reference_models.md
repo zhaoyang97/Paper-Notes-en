@@ -28,15 +28,15 @@ SPACeR proposes a "human-like self-play" framework that uses a pretrained tokeni
 
 ## Background & Motivation
 
-**State of the Field**: Autonomous driving simulation requires realistic and reactive traffic agent policies. Two dominant paradigms each have distinct trade-offs — imitation learning (e.g., SMART, CAT-K) captures realistic human behavior but incurs high inference cost and poor closed-loop reactivity; self-play RL is naturally suited for multi-agent interaction and is inference-efficient, but tends to deviate from human driving norms.
+**Background**: Autonomous driving simulation requires realistic and reactive traffic agent policies. Two dominant paradigms each have distinct trade-offs — imitation learning (e.g., SMART, CAT-K) captures realistic human behavior but incurs high inference cost and poor closed-loop reactivity; self-play RL is naturally suited for multi-agent interaction and is inference-efficient, but tends to deviate from human driving norms.
 
 **Limitations of Prior Work**: (a) Imitation learning models (Transformer-based) are slow to infer and parameter-heavy, making them unsuitable for large-scale closed-loop simulation; (b) self-play RL relies on hand-crafted reward shaping, and policies may learn unnatural behaviors (e.g., aggressive acceleration toward waypoints); (c) existing methods that combine RL with imitation learning mostly follow a "pretrain-then-finetune" paradigm rather than letting RL take the lead.
 
-**Root Cause**: How can the speed and scalability of self-play RL be preserved while ensuring behavioral realism aligned with the human driving distribution?
+**Key Challenge**: How can the speed and scalability of self-play RL be preserved while ensuring behavioral realism aligned with the human driving distribution?
 
-**Paper Goals**: To build a lightweight, fast, and scalable multi-agent simulation policy that maintains behavioral realism close to the human driving distribution.
+**Goal**: To build a lightweight, fast, and scalable multi-agent simulation policy that maintains behavioral realism close to the human driving distribution.
 
-**Starting Point**: An RL-first philosophy — self-play serves as the foundation, while the imitation learning model acts solely as a reward provider (reference policy) rather than a finetuning target.
+**Key Insight**: An RL-first philosophy — self-play serves as the foundation, while the imitation learning model acts solely as a reward provider (reference policy) rather than a finetuning target.
 
 **Core Idea**: A pretrained tokenized model supplies human realism signals to anchor self-play RL, while actual execution is performed by a 65K-parameter MLP.
 

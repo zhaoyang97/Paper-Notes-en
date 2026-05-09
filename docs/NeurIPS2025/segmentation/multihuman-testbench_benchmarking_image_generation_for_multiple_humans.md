@@ -29,15 +29,15 @@ This paper introduces MultiHuman-Testbench, the first systematic benchmark for e
 
 ## Background & Motivation
 
-**State of the Field**: Current text-to-image diffusion models can generate high-quality images, but simultaneously generating multiple humans while preserving individual facial identities, executing specified actions, and maintaining coherent composition remains a significant challenge.
+**Background**: Current text-to-image diffusion models can generate high-quality images, but simultaneously generating multiple humans while preserving individual facial identities, executing specified actions, and maintaining coherent composition remains a significant challenge.
 
 **Limitations of Prior Work**: Existing methods commonly suffer from identity blending, inaccurate person count, and difficulty in scene composition. More critically, no standardized benchmark or well-defined metrics exist specifically for evaluating multi-human generation quality.
 
-**Root Cause**: Existing benchmarks either focus on single-subject scenarios (e.g., ID preservation), general text-to-image quality, or multi-object composition, but none address the particular complexity of multi-human generation.
+**Key Challenge**: Existing benchmarks either focus on single-subject scenarios (e.g., ID preservation), general text-to-image quality, or multi-object composition, but none address the particular complexity of multi-human generation.
 
-**Paper Goals**: To establish a comprehensive benchmark for multi-human image generation and provide standardized evaluation tools.
+**Goal**: To establish a comprehensive benchmark for multi-human image generation and provide standardized evaluation tools.
 
-**Starting Point**: The benchmark is constructed along two dimensions simultaneously—data (diverse face images, carefully designed prompts, and pose conditions) and metrics (count accuracy, identity similarity, prompt alignment, and action detection).
+**Key Insight**: The benchmark is constructed along two dimensions simultaneously—data (diverse face images, carefully designed prompts, and pose conditions) and metrics (count accuracy, identity similarity, prompt alignment, and action detection).
 
 **Core Idea**: Construct a standardized benchmark spanning 4 task dimensions and 5 evaluation metrics, and propose Regional Isolation and Implicit Region Assignment techniques to improve existing methods.
 

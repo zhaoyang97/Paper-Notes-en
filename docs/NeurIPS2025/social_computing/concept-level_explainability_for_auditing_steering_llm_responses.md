@@ -28,15 +28,15 @@ This paper proposes ConceptX, an LLM explainability method based on concept-leve
 
 ## Background & Motivation
 
-**State of the Field**: Attribution methods such as TokenSHAP can quantify the contribution of each input token to LLM outputs, aiding in understanding and modulating model behavior. However, existing methods operate exclusively at the token level.
+**Background**: Attribution methods such as TokenSHAP can quantify the contribution of each input token to LLM outputs, aiding in understanding and modulating model behavior. However, existing methods operate exclusively at the token level.
 
 **Limitations of Prior Work**: Token-level attribution suffers from three key problems: (a) it optimizes for token overlap rather than semantic similarity, failing to capture semantically equivalent paraphrases; (b) it often assigns high importance to uninformative function words (e.g., "the", "is") rather than semantically meaningful concept words; (c) processing tokens independently disrupts contextual coherence, leading to unstable generation results.
 
-**Root Cause**: Effective explainability requires both faithfulness and actionability, yet token-level methods tend to lack depth in semantic understanding, while humans naturally interpret explanations at the concept level.
+**Key Challenge**: Effective explainability requires both faithfulness and actionability, yet token-level methods tend to lack depth in semantic understanding, while humans naturally interpret explanations at the concept level.
 
-**Paper Goals**: How can attribution be performed at the concept level rather than the token level? How can attribution results not only explain model behavior but also guide prompt editing to steer LLM outputs?
+**Goal**: How can attribution be performed at the concept level rather than the token level? How can attribution results not only explain model behavior but also guide prompt editing to steer LLM outputs?
 
-**Starting Point**: Attribution is restricted to semantically rich "concepts" (content words with high degree in ConceptNet), semantic similarity replaces token overlap as the value function, and flexible explanation targets (e.g., gender bias, harmfulness) are supported.
+**Key Insight**: Attribution is restricted to semantically rich "concepts" (content words with high degree in ConceptNet), semantic similarity replaces token overlap as the value function, and flexible explanation targets (e.g., gender bias, harmfulness) are supported.
 
 **Core Idea**: ConceptNet is used to extract semantic concepts; Shapley-value attribution based on semantic similarity identifies the key concepts driving LLM outputs; editing these concepts then steers the output.
 

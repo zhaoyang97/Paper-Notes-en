@@ -28,11 +28,11 @@ BTP is the first work to apply pretrained point-language models (PLMs, e.g., ULI
 
 ## Background & Motivation
 
-**State of the Field**: 3D anomaly detection is critical for industrial quality inspection. Zero-shot (ZS) approaches are highly attractive as they require no training data from target categories, yet the field remains in its early stages.
+**Background**: 3D anomaly detection is critical for industrial quality inspection. Zero-shot (ZS) approaches are highly attractive as they require no training data from target categories, yet the field remains in its early stages.
 
 **Limitations of Prior Work (VLM-based)**:
    - Dominant methods (PointAD, MVP) render 3D point clouds into multi-view 2D images and apply VLMs such as CLIP for anomaly detection.
-   - **Root Cause**: The rendering process **discards geometric details**, resulting in insensitivity to locally structural anomalies.
+   - **Key Challenge**: The rendering process **discards geometric details**, resulting in insensitivity to locally structural anomalies.
    - Performance is heavily dependent on the number and angles of rendered views, introducing view-selection bias.
    - Repeated projection–back-projection incurs additional computational overhead.
 

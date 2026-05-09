@@ -29,15 +29,15 @@ This paper proposes GRAM-R², a generative foundation reward model that elicits 
 
 ## Background & Motivation
 
-**State of the Field**: Reward modeling is central to LLM alignment, and the field has seen a clear trend toward generalist reward models that move beyond task-specific designs. Effective reward models must evaluate LLM outputs across diverse tasks and domains, ideally with interpretable justifications for their judgments.
+**Background**: Reward modeling is central to LLM alignment, and the field has seen a clear trend toward generalist reward models that move beyond task-specific designs. Effective reward models must evaluate LLM outputs across diverse tasks and domains, ideally with interpretable justifications for their judgments.
 
 **Limitations of Prior Work**: (1) The fundamental challenge in developing effective reward models lies in heavy reliance on large-scale annotated preference data, which is extremely costly and difficult to scale; (2) while pretraining can leverage abundant unlabeled data, existing pretraining approaches cannot endow reward models with explicit reasoning capabilities—models produce preference judgments without explaining why; (3) discriminative reward models output only scalar scores and lack interpretability, whereas generative reward models can produce rationales but require substantial training data with reasoning annotations.
 
-**Root Cause**: A fundamental tension exists between data scarcity and the demand for reasoning—the model must learn from limited (or zero) labeled data while still producing preference judgments supported by reasoning chains.
+**Key Challenge**: A fundamental tension exists between data scarcity and the demand for reasoning—the model must learn from limited (or zero) labeled data while still producing preference judgments supported by reasoning chains.
 
-**Paper Goals**: (1) Elicit reward reasoning capabilities from unlabeled data via self-training; (2) construct a generative reward model that serves as a foundation model; (3) minimize or eliminate dependence on annotated preference data.
+**Goal**: (1) Elicit reward reasoning capabilities from unlabeled data via self-training; (2) construct a generative reward model that serves as a foundation model; (3) minimize or eliminate dependence on annotated preference data.
 
-**Starting Point**: The authors adopt a self-training paradigm in which the model generates pseudo-labels and reasoning rationales, then continues training on these self-generated data, forming an iteratively reinforcing cycle.
+**Key Insight**: The authors adopt a self-training paradigm in which the model generates pseudo-labels and reasoning rationales, then continues training on these self-generated data, forming an iteratively reinforcing cycle.
 
 **Core Idea**: Self-training is used to bootstrap a generative reward model on unlabeled data, simultaneously generating preference labels and reward rationales, yielding a foundation reward model with inherent reasoning capabilities.
 

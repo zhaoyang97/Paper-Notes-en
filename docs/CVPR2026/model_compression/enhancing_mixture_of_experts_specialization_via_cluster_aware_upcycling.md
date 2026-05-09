@@ -29,10 +29,10 @@ This paper proposes Cluster-aware Upcycling, which extracts semantic structure f
 
 ## Background & Motivation
 
-- **State of the Field**: Sparse Upcycling initializes MoE by copying pretrained dense model weights, avoiding the high computational cost of training from scratch.
+- **Background**: Sparse Upcycling initializes MoE by copying pretrained dense model weights, avoiding the high computational cost of training from scratch.
 - **Limitations of Prior Work**: Since all experts start from identical weights and routers are randomly initialized, expert symmetry and limited early specialization are inherent problems. Existing symmetry-breaking strategies include noise injection (limited effectiveness) and partial re-initialization (which disrupts pretrained representations), both of which are suboptimal.
-- **Root Cause**: The representations of a pretrained dense model already encode semantic information that can effectively guide expert and router initialization, yet prior methods fail to leverage this structure.
-- **Paper Goals**: Exploit the latent semantic structure in dense model activations to initialize both experts and routers in a principled, data-aware manner.
+- **Key Challenge**: The representations of a pretrained dense model already encode semantic information that can effectively guide expert and router initialization, yet prior methods fail to leverage this structure.
+- **Goal**: Exploit the latent semantic structure in dense model activations to initialize both experts and routers in a principled, data-aware manner.
 
 ## Method
 

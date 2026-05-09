@@ -29,15 +29,15 @@ This paper establishes a complete convergence theory for masked diffusion langua
 
 ## Background & Motivation
 
-**State of the Field**: Autoregressive (AR) models are the dominant paradigm for large language models, but they suffer from an inherent sampling bottleneck—generating a sequence of length $L$ requires $L$ sequential decoding steps. Diffusion language models (particularly masked diffusion models) allow parallel sampling and have the potential to overcome this bottleneck.
+**Background**: Autoregressive (AR) models are the dominant paradigm for large language models, but they suffer from an inherent sampling bottleneck—generating a sequence of length $L$ requires $L$ sequential decoding steps. Diffusion language models (particularly masked diffusion models) allow parallel sampling and have the potential to overcome this bottleneck.
 
 **Limitations of Prior Work**: The theoretical understanding of diffusion language models remains severely lacking. Prior convergence analysis (Chen & Ying 2024) is restricted to settings where fewer than one token is masked on average per step, which is inconsistent with the practice of decoding multiple tokens in parallel. The analysis of Feng et al. (2025) for $n$-gram models requires $T \gg L$ steps when $n \geq \log L$, rendering the guarantee vacuous.
 
-**Root Cause**: Despite strong empirical performance, there is no theoretical explanation for why diffusion language models can achieve high-quality generation in fewer than $L$ steps.
+**Key Challenge**: Despite strong empirical performance, there is no theoretical explanation for why diffusion language models can achieve high-quality generation in fewer than $L$ steps.
 
-**Paper Goals**: To establish convergence guarantees for diffusion language models under general data distributions and sampling schedules.
+**Goal**: To establish convergence guarantees for diffusion language models under general data distributions and sampling schedules.
 
-**Starting Point**: An information-theoretic perspective—relating sampling error to inter-token mutual information.
+**Key Insight**: An information-theoretic perspective—relating sampling error to inter-token mutual information.
 
 **Core Idea**: The sampling error of diffusion language models is governed by the statistical dependencies among tokens (mutual information) and decays inversely with the number of iterations $T$; this relationship is shown to be fundamentally optimal.
 

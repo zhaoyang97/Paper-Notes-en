@@ -28,20 +28,20 @@ EagleNet constructs a text-frame relational graph and employs a relational graph
 
 ## Background & Motivation
 
-1. **State of the Field**: Mainstream methods in text-video retrieval (TVR) are predominantly built upon CLIP pre-trained models, focusing on learning high-quality video representations or improving cross-modal alignment strategies. A minority of recent works have begun to address the problem of insufficient text expressiveness, as short video descriptions often fail to fully reflect the rich semantics of the corresponding video.
+1. **Background**: Mainstream methods in text-video retrieval (TVR) are predominantly built upon CLIP pre-trained models, focusing on learning high-quality video representations or improving cross-modal alignment strategies. A minority of recent works have begun to address the problem of insufficient text expressiveness, as short video descriptions often fail to fully reflect the rich semantics of the corresponding video.
 
 2. **Limitations of Prior Work**:
     - Methods such as TMASS and TV-ProxyNet attempt to expand textual semantics via sampling or proxy-based strategies, but only consider text-frame or text-video interactions.
     - Frame-frame relations within the video are completely ignored.
     - Consequently, the augmented text embeddings fail to capture contextual information across frames, resulting in a representation gap between text and video.
 
-3. **Root Cause**: Textual semantic expansion requires simultaneous understanding of "what each frame conveys" (text-frame interaction) and "how frames relate to one another" (frame-frame relations). Existing methods address only the former while neglecting the latter, despite the fact that frame-frame relations are critical for capturing global and temporal video semantics.
+3. **Key Challenge**: Textual semantic expansion requires simultaneous understanding of "what each frame conveys" (text-frame interaction) and "how frames relate to one another" (frame-frame relations). Existing methods address only the former while neglecting the latter, despite the fact that frame-frame relations are critical for capturing global and temporal video semantics.
 
-4. **Paper Goals**:
+4. **Goal**:
     - How to generate enhanced text embeddings that jointly incorporate text-frame interactions and frame contextual information?
     - How to improve cross-modal matching at a fine-grained level to more accurately capture the distribution of ground-truth text-video pairs?
 
-5. **Starting Point**: Text candidates and video frames are treated as graph nodes, with three types of edges modeled (text-text, text-frame, frame-frame). A relational graph attention network is used to learn all relational weights, which are then aggregated into enhanced text embeddings.
+5. **Key Insight**: Text candidates and video frames are treated as graph nodes, with three types of edges modeled (text-text, text-frame, frame-frame). A relational graph attention network is used to learn all relational weights, which are then aggregated into enhanced text embeddings.
 
 6. **Core Idea**: A text-frame relational graph is constructed to learn fine-grained text-frame and frame-frame interactions, and an energy-based matching mechanism is employed to capture the distribution of ground-truth pairs, thereby producing video-context-aware enhanced text embeddings.
 

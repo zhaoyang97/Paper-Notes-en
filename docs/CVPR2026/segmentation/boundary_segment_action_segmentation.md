@@ -29,15 +29,15 @@ This paper proposes a lightweight dual-loss training framework for temporal acti
 
 ## Background & Motivation
 
-**State of the Field**: TAS has evolved from single-path models such as MS-TCN to multi-path frameworks including ASRF and FACT, the latter of which employ auxiliary modules for boundary refinement. While effective, these approaches increase computational complexity and parameter count. Frame-level cross-entropy loss remains the standard training objective, yet it frequently causes over-segmentation and boundary misalignment.
+**Background**: TAS has evolved from single-path models such as MS-TCN to multi-path frameworks including ASRF and FACT, the latter of which employ auxiliary modules for boundary refinement. While effective, these approaches increase computational complexity and parameter count. Frame-level cross-entropy loss remains the standard training objective, yet it frequently causes over-segmentation and boundary misalignment.
 
 **Limitations of Prior Work**: (1) Frame-level classification losses lack segment-level structural constraints, leading to unstable predictions at action transitions and thus over-segmentation. (2) Existing boundary modeling methods—e.g., ASRF's dual-branch design and BCN's cascaded framework—require dedicated auxiliary branches, increasing architectural complexity and inference cost. (3) Post-processing refinement methods such as ASOT operate outside the training objective and do not directly influence the model's representation learning.
 
-**Root Cause**: How can boundary awareness and segment-level structural constraints be incorporated into TAS models without introducing significant architectural complexity?
+**Key Challenge**: How can boundary awareness and segment-level structural constraints be incorporated into TAS models without introducing significant architectural complexity?
 
-**Paper Goals**: To design an architecture-agnostic training-time augmentation scheme that improves segmentation quality across multiple TAS architectures with minimal modifications—specifically, one additional output channel and two auxiliary losses.
+**Goal**: To design an architecture-agnostic training-time augmentation scheme that improves segmentation quality across multiple TAS architectures with minimal modifications—specifically, one additional output channel and two auxiliary losses.
 
-**Starting Point**: Boundary supervision and segment-level regularization can be injected as pure training objectives without dedicated architectural branches. A key insight is to decouple the loss assignment between boundary and non-boundary regions, thereby reducing optimization conflicts.
+**Key Insight**: Boundary supervision and segment-level regularization can be injected as pure training objectives without dedicated architectural branches. A key insight is to decouple the loss assignment between boundary and non-boundary regions, thereby reducing optimization conflicts.
 
 **Core Idea**: (1) A single-channel boundary regression head directly predicts action boundary positions from model outputs. (2) A CDF segment shape regularization loss constrains the predicted cumulative distribution within each segment to match the ground truth at the segment level, rather than aligning predictions only at the frame level.
 

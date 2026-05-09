@@ -28,13 +28,13 @@ Grounded in the dual-process theory from cognitive science, SCALE decomposes mat
 
 ## Background & Motivation
 
-**State of the Field**: Test-time compute scaling (e.g., majority voting, long chain-of-thought reasoning) has become an effective paradigm for improving LLM mathematical reasoning, but existing methods allocate computational resources uniformly across all sub-problems.
+**Background**: Test-time compute scaling (e.g., majority voting, long chain-of-thought reasoning) has become an effective paradigm for improving LLM mathematical reasoning, but existing methods allocate computational resources uniformly across all sub-problems.
 
 **Limitations of Prior Work**: Uniform allocation wastes a large number of tokens on deep reasoning for trivial computations (e.g., $\sqrt{16}=4$), while difficult algebraic derivations receive insufficient computational budget. This "one-size-fits-all" strategy is the fundamental bottleneck of test-time scaling.
 
-**Root Cause**: Increasing the total token budget yields diminishing returns, as marginal computation is largely wasted on simple steps.
+**Key Challenge**: Increasing the total token budget yields diminishing returns, as marginal computation is largely wasted on simple steps.
 
-**Starting Point**: Drawing inspiration from the dual-process theory in cognitive science — humans use System 1 for simple intuitive judgments and System 2 for complex problems requiring deliberate reasoning.
+**Key Insight**: Drawing inspiration from the dual-process theory in cognitive science — humans use System 1 for simple intuitive judgments and System 2 for complex problems requiring deliberate reasoning.
 
 **Core Idea**: Fine-grained, sub-problem-level allocation of computational resources — answer simple sub-problems quickly, reason deeply over difficult ones.
 

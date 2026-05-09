@@ -29,7 +29,7 @@ This paper introduces the Referring Human Action Segmentation (RHAS) task—loca
 
 ## Background & Motivation
 
-**State of the Field**: Action segmentation aims to temporally partition untrimmed videos into action segments and classify them. Existing methods (FACT, ActDiff, ASQuery) primarily target **single-person scenarios**, where action sequences follow predefined protocols (e.g., preparing a salad according to a fixed recipe or assembling objects from instructions), and thus fail to capture the randomness and complexity of real-world multi-person scenarios.
+**Background**: Action segmentation aims to temporally partition untrimmed videos into action segments and classify them. Existing methods (FACT, ActDiff, ASQuery) primarily target **single-person scenarios**, where action sequences follow predefined protocols (e.g., preparing a salad according to a fixed recipe or assembling objects from instructions), and thus fail to capture the randomness and complexity of real-world multi-person scenarios.
 
 **Limitations of Prior Work**:
 - No multi-person action segmentation dataset exists—existing datasets (50Salads, Assembly101, Breakfast) are all single-person, procedure-following, and first-person.

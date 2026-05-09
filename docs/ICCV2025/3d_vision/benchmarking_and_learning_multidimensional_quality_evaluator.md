@@ -30,11 +30,11 @@ This paper constructs the MATE-3D benchmark (8 prompt categories × 8 methods = 
 
 ### Limitations of Prior Work
 
-**State of the Field**: Text-to-3D evaluation faces two major challenges: (1) existing benchmarks suffer from insufficient prompt diversity and evaluate only a single dimension (e.g., alignment + quality or preference ranking); (2) existing metrics focus on a single aspect (e.g., CLIPScore only measures text-3D alignment) and fail to capture human multi-dimensional perception. In practice, human evaluators dynamically shift their focus and decision process when assessing different dimensions.
+**Background**: Text-to-3D evaluation faces two major challenges: (1) existing benchmarks suffer from insufficient prompt diversity and evaluate only a single dimension (e.g., alignment + quality or preference ranking); (2) existing metrics focus on a single aspect (e.g., CLIPScore only measures text-3D alignment) and fail to capture human multi-dimensional perception. In practice, human evaluators dynamically shift their focus and decision process when assessing different dimensions.
 
 ### Root Cause
 
-**Paper Goals**: How to construct a fine-grained, multi-dimensional quality benchmark for text-to-3D generation, and design a unified quality evaluator that adaptively adjusts to different evaluation dimensions?
+**Goal**: How to construct a fine-grained, multi-dimensional quality benchmark for text-to-3D generation, and design a unified quality evaluator that adaptively adjusts to different evaluation dimensions?
 
 ## Method
 

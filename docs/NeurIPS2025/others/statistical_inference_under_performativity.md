@@ -28,15 +28,15 @@ This paper establishes the first complete end-to-end statistical inference frame
 
 ## Background & Motivation
 
-**State of the Field**: Performative prediction describes a widely observed phenomenon in which decisions made based on predictions in turn influence the predicted target itself. For example, loan approval policies alter borrowers' spending habits and thereby affect repayment ability. Perdomo et al. (2020) formalized this problem, and subsequent work has focused primarily on efficiently locating performative stable points ($\theta_{\text{PS}}$) and analyzing convergence rates.
+**Background**: Performative prediction describes a widely observed phenomenon in which decisions made based on predictions in turn influence the predicted target itself. For example, loan approval policies alter borrowers' spending habits and thereby affect repayment ability. Perdomo et al. (2020) formalized this problem, and subsequent work has focused primarily on efficiently locating performative stable points ($\theta_{\text{PS}}$) and analyzing convergence rates.
 
 **Limitations of Prior Work**: The existing literature has almost entirely neglected the problem of statistical inference under performative settings. In many contexts, the parameter $\theta$ represents a concrete policy (e.g., a tax rate or credit-score threshold), and it is insufficient to know merely that an estimator converges to $\theta_{\text{PS}}$—policymakers require confidence intervals and hypothesis tests. The only directly related work (Cutler et al., 2024) establishes asymptotic normality only for single-sample online gradient updates, assumes all structural information is known, and provides no data-driven covariance estimation.
 
-**Root Cause**: In the performative setting, the data distribution changes with each parameter update, violating the fixed-distribution assumption underlying classical statistical inference. Standard CLTs do not apply directly because samples at each iteration are drawn from a different distribution that depends on the preceding (noisy) parameter estimate.
+**Key Challenge**: In the performative setting, the data distribution changes with each parameter update, violating the fixed-distribution assumption underlying classical statistical inference. Standard CLTs do not apply directly because samples at each iteration are drawn from a different distribution that depends on the preceding (noisy) parameter estimate.
 
-**Paper Goals**: (1) Establish a central limit theorem for batch RRM; (2) provide data-driven covariance estimation without assuming structural information is known; (3) extend PPI to the performative setting to obtain improved inference using a small amount of labeled data together with a large amount of unlabeled data.
+**Goal**: (1) Establish a central limit theorem for batch RRM; (2) provide data-driven covariance estimation without assuming structural information is known; (3) extend PPI to the performative setting to obtain improved inference using a small amount of labeled data together with a large amount of unlabeled data.
 
-**Starting Point**: The paper focuses on batch RRM rather than single-sample online updates, which is more representative of realistic policy-making scenarios. Novel gradient-free score matching and policy perturbation techniques are introduced to estimate the gradient of the distribution map.
+**Key Insight**: The paper focuses on batch RRM rather than single-sample online updates, which is more representative of realistic policy-making scenarios. Novel gradient-free score matching and policy perturbation techniques are introduced to estimate the gradient of the distribution map.
 
 **Core Idea**: A CLT for the dynamic setting is established through recursive analysis of error propagation. Policy perturbation combined with score matching circumvents the unobservability of the distribution map gradient, enabling end-to-end statistical inference.
 

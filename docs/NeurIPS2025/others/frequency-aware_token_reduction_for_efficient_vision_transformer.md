@@ -26,15 +26,15 @@ content_hash: 061b6846354aba5f
 This paper proposes frequency-aware token reduction from a frequency-domain perspective, partitioning tokens into high-frequency (HF) and low-frequency (LF) groups. HF tokens are selectively retained while LF tokens are aggregated into DC tokens, simultaneously alleviating rank collapse and reducing computational cost in ViTs. The method outperforms existing SOTA across multiple models at a 30% token reduction ratio.
 
 ## Background & Motivation
-**State of the Field**: The quadratic complexity of Vision Transformers has motivated extensive research on token reduction, primarily categorized into merging (fusing similar tokens) and pruning (discarding unimportant tokens), with representative methods including ToME, EViT, and DynamicViT.
+**Background**: The quadratic complexity of Vision Transformers has motivated extensive research on token reduction, primarily categorized into merging (fusing similar tokens) and pruning (discarding unimportant tokens), with representative methods including ToME, EViT, and DynamicViT.
 
 **Limitations of Prior Work**: Existing methods overlook the frequency-domain characteristics of self-attention. SA fundamentally operates as a low-pass filter, and stacking SA layers induces rank collapse (token representations converge toward uniformity). Token reduction exacerbates this issue: merging directly averages out high-frequency signals, while pruning accelerates collapse if tokens carrying high-frequency information are removed.
 
-**Root Cause**: Reducing token count for efficiency versus preserving high-frequency information to maintain ViT expressiveness presents an apparent contradiction.
+**Key Challenge**: Reducing token count for efficiency versus preserving high-frequency information to maintain ViT expressiveness presents an apparent contradiction.
 
-**Paper Goals**: To design a method that explicitly protects high-frequency information during token reduction, improving efficiency while alleviating rank collapse.
+**Goal**: To design a method that explicitly protects high-frequency information during token reduction, improving efficiency while alleviating rank collapse.
 
-**Starting Point**: The attention matrix is decomposed into a low-frequency component $A^{LP} = \frac{1}{n}\mathbf{11}^T$ and a high-frequency component $A^{HP} = A - A^{LP}$. Each token's contribution to the high-frequency component in $A^{HP}$ determines whether it is retained or aggregated.
+**Key Insight**: The attention matrix is decomposed into a low-frequency component $A^{LP} = \frac{1}{n}\mathbf{11}^T$ and a high-frequency component $A^{HP} = A - A^{LP}$. Each token's contribution to the high-frequency component in $A^{HP}$ determines whether it is retained or aggregated.
 
 **Core Idea**: Retain tokens that contribute most to the high-frequency output component, and aggregate low-frequency tokens into DC tokens to preserve zero-frequency information.
 

@@ -36,7 +36,7 @@ Aligning large language models (LLMs) with human preferences is essential for bu
 1. Training-time methods (e.g., data augmentation, distributionally robust optimization/DRO) require expensive retraining and may still fail to generalize across the full preference spectrum.
 2. Inference-time methods (e.g., token-level guidance, activation steering) require direct manipulation of model internal states or auxiliary models.
 
-**Starting Point**: The authors identify a key insight — **rather than forcing the model to generate a response directly from a specific, rare preference direction (which is inherently fragile), one should instead explore the local neighborhood of that preference, generate a candidate pool from more reliable neighboring directions, and then select the response that best satisfies the original target preference.** This paradigm shifts from "direct generation" to "neighborhood consensus selection."
+**Key Insight**: The authors identify a key insight — **rather than forcing the model to generate a response directly from a specific, rare preference direction (which is inherently fragile), one should instead explore the local neighborhood of that preference, generate a candidate pool from more reliable neighboring directions, and then select the response that best satisfies the original target preference.** This paradigm shifts from "direct generation" to "neighborhood consensus selection."
 
 ## Method
 

@@ -28,15 +28,15 @@ This paper proposes GraphTOP, the first graph topology-oriented prompting framew
 
 ## Background & Motivation
 
-**State of the Field**: The "pre-train then adapt" paradigm is widely adopted in graph learning. Graph prompting, which adapts frozen pre-trained GNNs by modifying the input graph data, is an efficient adaptation strategy.
+**Background**: The "pre-train then adapt" paradigm is widely adopted in graph learning. Graph prompting, which adapts frozen pre-trained GNNs by modifying the input graph data, is an efficient adaptation strategy.
 
 **Limitations of Prior Work**: Existing graph prompting methods are almost exclusively feature-oriented — they operate only on node features or latent representations (e.g., GPF, All-in-one, GraphPrompt), entirely overlooking graph topology, which is an intrinsic characteristic of graph-structured data. However, graph representations are determined not only by features but also by topological structure.
 
-**Root Cause**: How can prompting be achieved by modifying graph topology? Edge selection is a discrete optimization problem that is not directly amenable to gradient-based optimization.
+**Key Challenge**: How can prompting be achieved by modifying graph topology? Edge selection is a discrete optimization problem that is not directly amenable to gradient-based optimization.
 
-**Paper Goals**: To design a topology-oriented graph prompting framework that adapts pre-trained GNN models to downstream node classification tasks through topological modification.
+**Goal**: To design a topology-oriented graph prompting framework that adapts pre-trained GNN models to downstream node classification tasks through topological modification.
 
-**Starting Point**: Topology prompting is formulated as an edge rewiring problem, relaxed into a continuous probability space via Bernoulli reparameterization and Gumbel-Softmax.
+**Key Insight**: Topology prompting is formulated as an edge rewiring problem, relaxed into a continuous probability space via Bernoulli reparameterization and Gumbel-Softmax.
 
 **Core Idea**: The framework learns the existence probability of each edge as a topology prompt, renders it differentiably trainable through Gumbel-Softmax, and employs entropy regularization to ensure tight relaxation and graph sparsity.
 

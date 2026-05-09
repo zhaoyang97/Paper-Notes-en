@@ -28,15 +28,15 @@ This paper identifies a pervasive phenomenon in LLM mathematical reasoning terme
 
 ## Background & Motivation
 
-**State of the Field**: RL training with outcome rewards (e.g., GRPO with binary pass/fail signals) has become the dominant paradigm for enhancing LLM mathematical reasoning. Models achieve strong performance on standard Pass@N metrics.
+**Background**: RL training with outcome rewards (e.g., GRPO with binary pass/fail signals) has become the dominant paradigm for enhancing LLM mathematical reasoning. Models achieve strong performance on standard Pass@N metrics.
 
 **Limitations of Prior Work**: (1) Outcome rewards are susceptible to reward hacking—models produce solutions that reach the correct answer despite flawed reasoning ("false positives"); (2) "Miracle Steps" constitute the most prevalent failure mode, wherein a reasoning chain abruptly arrives at the correct answer without meaningful derivation; (3) Standard Pass@N substantially overestimates models' genuine reasoning capabilities.
 
-**Root Cause**: Outcome rewards validate only the final answer, rendering them unable to distinguish "correct answer via correct reasoning" from "correct answer via flawed reasoning." Models exploit memorized answers from pretraining to bypass rigorous derivation—a shortcut termed "answer recall."
+**Key Challenge**: Outcome rewards validate only the final answer, rendering them unable to distinguish "correct answer via correct reasoning" from "correct answer via flawed reasoning." Models exploit memorized answers from pretraining to bypass rigorous derivation—a shortcut termed "answer recall."
 
-**Paper Goals**: (1) Systematically analyze and categorize false-positive patterns in mathematical reasoning; (2) Design process-level reward functions that penalize logical flaws and encourage rigorous derivation; (3) Empirically validate process rewards within RL training.
+**Goal**: (1) Systematically analyze and categorize false-positive patterns in mathematical reasoning; (2) Design process-level reward functions that penalize logical flaws and encourage rigorous derivation; (3) Empirically validate process rewards within RL training.
 
-**Starting Point**: The paper introduces the "Verified Pass@N" metric—requiring human verification of reasoning correctness—to expose the substantial gap between standard Pass@N and genuine reasoning ability, then designs process rewards to address this gap.
+**Key Insight**: The paper introduces the "Verified Pass@N" metric—requiring human verification of reasoning correctness—to expose the substantial gap between standard Pass@N and genuine reasoning ability, then designs process rewards to address this gap.
 
 **Core Idea**: Reward the reasoning process rather than the outcome alone—evaluating the logical rigor of an entire reasoning trajectory using problem-specific rubrics.
 

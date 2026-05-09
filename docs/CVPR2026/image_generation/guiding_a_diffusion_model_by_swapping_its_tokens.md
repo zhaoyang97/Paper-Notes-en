@@ -28,11 +28,11 @@ This paper proposes Self-Swap Guidance (SSG), a training-free sampling guidance 
 
 ## Background & Motivation
 
-1. **State of the Field**: Classifier-Free Guidance (CFG) is a cornerstone technique for high-quality diffusion model generation, steering the sampling direction by contrasting conditional and unconditional predictions. However, CFG requires text conditioning and thus cannot be applied to unconditional generation (e.g., inverse problem solving), and is prone to oversaturation and reduced diversity at high guidance scales.
+1. **Background**: Classifier-Free Guidance (CFG) is a cornerstone technique for high-quality diffusion model generation, steering the sampling direction by contrasting conditional and unconditional predictions. However, CFG requires text conditioning and thus cannot be applied to unconditional generation (e.g., inverse problem solving), and is prone to oversaturation and reduced diversity at high guidance scales.
 2. **Limitations of Prior Work**: Recent training-free guidance methods (SAG, PAG, SEG, TSG) construct a "weakened" branch by perturbing the model's forward pass, but all adopt global, indiscriminate perturbation strategies—SAG adds noise to inputs, PAG corrupts attention maps. Such coarse-grained perturbations are either too weak (insufficient detail) or too strong (oversaturation/oversimplification), and are highly sensitive to the guidance scale, yielding a narrow effective operating range.
-3. **Root Cause**: Effective guidance requires sufficiently strong perturbations, yet perturbations that are too strong cause unrecoverable distortions. Existing methods lack fine-grained control over perturbation magnitude.
-4. **Paper Goals**: Design a fine-grained, controllable perturbation mechanism that introduces no external noise, enabling stable and effective guidance over a broader parameter range.
-5. **Starting Point**: Operate at the token level rather than the global level—perturb via swapping rather than noise injection. Swapping is a conservative operation that rearranges existing information without introducing new content, naturally preserving global consistency while disrupting local structure.
+3. **Key Challenge**: Effective guidance requires sufficiently strong perturbations, yet perturbations that are too strong cause unrecoverable distortions. Existing methods lack fine-grained control over perturbation magnitude.
+4. **Goal**: Design a fine-grained, controllable perturbation mechanism that introduces no external noise, enabling stable and effective guidance over a broader parameter range.
+5. **Key Insight**: Operate at the token level rather than the global level—perturb via swapping rather than noise injection. Swapping is a conservative operation that rearranges existing information without introducing new content, naturally preserving global consistency while disrupting local structure.
 6. **Core Idea**: Selectively swap the most semantically dissimilar token pairs to produce fine-grained local perturbations, replacing the conventional global noise-injection guidance paradigm.
 
 ## Method

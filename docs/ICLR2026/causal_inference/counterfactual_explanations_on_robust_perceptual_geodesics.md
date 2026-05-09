@@ -28,15 +28,15 @@ This paper proposes PCG (Perceptual Counterfactual Geodesic), a method that gene
 
 ## Background & Motivation
 
-**State of the Field**: Counterfactual explanations ("if the image looked like this, the classifier would change its prediction") are an important tool for model interpretability. Existing methods generate counterfactuals by performing gradient descent directly in pixel space or latent space.
+**Background**: Counterfactual explanations ("if the image looked like this, the classifier would change its prediction") are an important tool for model interpretability. Existing methods generate counterfactuals by performing gradient descent directly in pixel space or latent space.
 
 **Limitations of Prior Work**: Pixel-space counterfactuals tend to produce unnatural adversarial perturbations, while latent-space methods may drift off the manifold, yielding unrealistic images.
 
-**Root Cause**: Counterfactuals must achieve "minimal change" while remaining "semantically plausible"—two objectives that frequently conflict in Euclidean space, where the shortest path may traverse low-density, unrealistic regions.
+**Key Challenge**: Counterfactuals must achieve "minimal change" while remaining "semantically plausible"—two objectives that frequently conflict in Euclidean space, where the shortest path may traverse low-density, unrealistic regions.
 
-**Paper Goals**: How can one find the shortest path to a target class subject to perceptual naturalness constraints?
+**Goal**: How can one find the shortest path to a target class subject to perceptual naturalness constraints?
 
-**Starting Point**: Compute geodesics on the Riemannian manifold defined by a robust perceptual metric—manifold geodesics naturally follow the "ridges" of the data distribution and avoid low-density "valleys."
+**Key Insight**: Compute geodesics on the Riemannian manifold defined by a robust perceptual metric—manifold geodesics naturally follow the "ridges" of the data distribution and avoid low-density "valleys."
 
 **Core Idea**: Define a Riemannian manifold via the feature space of an adversarially trained robust model, then compute geodesics on this manifold as counterfactual paths.
 

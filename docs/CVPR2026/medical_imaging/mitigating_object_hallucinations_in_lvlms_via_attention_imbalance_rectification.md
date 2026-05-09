@@ -29,11 +29,11 @@ This paper introduces the concept of Attention Imbalance to explain object hallu
 
 ## Background & Motivation
 
-1. **State of the Field**: Large Vision-Language Models (LVLMs) excel at cross-modal understanding tasks, but object hallucination—generating descriptions of objects absent from the image—severely undermines model reliability in high-stakes scenarios such as autonomous driving and medical imaging.
+1. **Background**: Large Vision-Language Models (LVLMs) excel at cross-modal understanding tasks, but object hallucination—generating descriptions of objects absent from the image—severely undermines model reliability in high-stakes scenarios such as autonomous driving and medical imaging.
 2. **Limitations of Prior Work**: Existing methods fall into three categories: visual instruction tuning (high training cost), post-processing techniques (additional inference overhead), and contrastive decoding (limited stability and generalizability). More fundamentally, root cause analysis of hallucination remains insufficient.
-3. **Root Cause**: The complex training pipelines and architectures of LVLMs hinder interpretability analysis. Prior studies examining visual information interaction, positional encoding, and anomalous tokens fail to provide a comprehensive understanding.
-4. **Paper Goals**: (1) Provide a quantitative framework to explain the attention-mechanism root causes of hallucination; (2) Design a training-free lightweight intervention method based on this framework.
-5. **Starting Point**: Through systematic experiments, the authors find that attention allocation imbalance—both across modalities and across tokens—exhibits a strong causal correlation with object hallucination.
+3. **Key Challenge**: The complex training pipelines and architectures of LVLMs hinder interpretability analysis. Prior studies examining visual information interaction, positional encoding, and anomalous tokens fail to provide a comprehensive understanding.
+4. **Goal**: (1) Provide a quantitative framework to explain the attention-mechanism root causes of hallucination; (2) Design a training-free lightweight intervention method based on this framework.
+5. **Key Insight**: Through systematic experiments, the authors find that attention allocation imbalance—both across modalities and across tokens—exhibits a strong causal correlation with object hallucination.
 6. **Core Idea**: Hallucination stems from attention imbalance; rectifying cross-modal and token-level imbalance in hallucination-sensitive attention heads effectively mitigates the phenomenon.
 
 ## Method

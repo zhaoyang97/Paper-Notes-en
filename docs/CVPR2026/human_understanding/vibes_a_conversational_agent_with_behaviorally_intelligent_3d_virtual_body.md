@@ -29,9 +29,9 @@ This paper proposes ViBES, a 3D conversational agent that unifies language, spee
 
 ## Background & Motivation
 
-- **State of the Field**: Existing conversational AI systems have achieved fluent text and speech interaction, yet they lack a body. Human communication is inherently multimodal — verbal content, prosody, and body language jointly convey intent.
+- **Background**: Existing conversational AI systems have achieved fluent text and speech interaction, yet they lack a body. Human communication is inherently multimodal — verbal content, prosody, and body language jointly convey intent.
 - **Limitations of Prior Work**: Approaches that model behavior as "modality translation" (e.g., speech→gesture, text→motion) are fundamentally flawed: they do not require intelligent decisions about *when to move*, *what to do*, or *how to adapt across dialogue turns*, leading to fragile temporal alignment and weak social grounding. Naively chaining a speech LLM with a motion generator (two-stage) is also problematic in practice: there is no unified temporal and selection strategy, no shared dialogue state, and no guarantee of cross-turn consistency. The most closely related works, LoM and SOLAMI, focus on modality alignment rather than preserving conversational intelligence.
-- **Paper Goals**: To build a genuine *embodied conversational agent* — one that not only generates co-speech gestures during responses but also follows explicit motion instructions (e.g., "please step back and wave"). This requires elevating non-verbal behavior from "conditional generation" to "intelligent agent behavior."
+- **Goal**: To build a genuine *embodied conversational agent* — one that not only generates co-speech gestures during responses but also follows explicit motion instructions (e.g., "please step back and wave"). This requires elevating non-verbal behavior from "conditional generation" to "intelligent agent behavior."
 
 ## Method
 

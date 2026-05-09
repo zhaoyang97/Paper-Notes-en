@@ -27,15 +27,15 @@ content_hash: e857ff693a7d8567
 SafePath proposes fine-tuning only an 8-token "Safety Primer" ("Let's think about safety first") at the very beginning of the reasoning chain, effectively steering Large Reasoning Models (LRMs) toward safe reasoning paths. On DeepSeek-R1-Distill, it reduces harmful outputs by 90% while requiring only 1/296 of the training compute of Direct Refusal.
 
 ## Background & Motivation
-**State of the Field**: Large Reasoning Models (LRMs, e.g., OpenAI o1, DeepSeek-R1) achieve strong reasoning through extended chain-of-thought, but their structured reasoning paths can amplify unsafe behaviors—for instance, misclassifying malicious intent as benign under harmful prompts and subsequently generating dangerous content.
+**Background**: Large Reasoning Models (LRMs, e.g., OpenAI o1, DeepSeek-R1) achieve strong reasoning through extended chain-of-thought, but their structured reasoning paths can amplify unsafe behaviors—for instance, misclassifying malicious intent as benign under harmful prompts and subsequently generating dangerous content.
 
 **Limitations of Prior Work**: (1) Direct Refusal (fine-tuning models to refuse outright) degrades reasoning capability (the "Safety Tax"); (2) SafeChain requires supervision over the full reasoning chain, incurring high training costs; (3) existing methods offer insufficient defense against complex adversarial attacks (DAN, PAIR, etc.).
 
-**Root Cause**: A fundamental tradeoff between safety alignment and reasoning capability—stronger safety constraints lead to greater degradation in reasoning performance.
+**Key Challenge**: A fundamental tradeoff between safety alignment and reasoning capability—stronger safety constraints lead to greater degradation in reasoning performance.
 
-**Paper Goals**: Design a lightweight method that achieves safety alignment in LRMs without compromising reasoning capability.
+**Goal**: Design a lightweight method that achieves safety alignment in LRMs without compromising reasoning capability.
 
-**Starting Point**: Insert a "safety guidance" signal only at the very beginning of the reasoning chain, leveraging the LRM's own reasoning ability to establish a safe context, rather than enforcing refusals or supervising the entire chain.
+**Key Insight**: Insert a "safety guidance" signal only at the very beginning of the reasoning chain, leveraging the LRM's own reasoning ability to establish a safe context, rather than enforcing refusals or supervising the entire chain.
 
 **Core Idea**: Fine-tune the LRM to output an 8-token Safety Primer immediately after `<think>` when encountering harmful prompts; the remainder of the reasoning chain is entirely unsupervised.
 

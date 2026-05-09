@@ -28,11 +28,11 @@ This paper proposes FastGHA, a feed-forward few-shot 3D Gaussian head avatar gen
 
 ## Background & Motivation
 
-**State of the Field**: Methods for 3D head avatar generation fall into two categories: optimization-based and feed-forward. Optimization-based approaches (e.g., per-identity fitting) require large amounts of multi-view data and lengthy optimization, making them unsuitable for real-time deployment. Feed-forward methods (Avat3r, GPAvatar) can generate avatars from sparse images, but either lack controllable animation, suffer from slow animation speeds (Avat3r achieves only 8 FPS), or produce limited reconstruction quality.
+**Background**: Methods for 3D head avatar generation fall into two categories: optimization-based and feed-forward. Optimization-based approaches (e.g., per-identity fitting) require large amounts of multi-view data and lengthy optimization, making them unsuitable for real-time deployment. Feed-forward methods (Avat3r, GPAvatar) can generate avatars from sparse images, but either lack controllable animation, suffer from slow animation speeds (Avat3r achieves only 8 FPS), or produce limited reconstruction quality.
 
 **Limitations of Prior Work**: (a) Avat3r employs skip connections with geometric priors, causing geometric errors to propagate directly into the final output; (b) existing methods struggle to simultaneously achieve accurate expression transfer (AKD) and identity preservation (CSIM); (c) there is a persistent trade-off between animation speed and quality, with high-quality methods typically being slow.
 
-**Starting Point**: A two-stage design — first, feed-forward reconstruction of a canonical Gaussian head from few-shot images (with learned per-Gaussian features); second, expression-driven deformation via a lightweight MLP for fast animation.
+**Key Insight**: A two-stage design — first, feed-forward reconstruction of a canonical Gaussian head from few-shot images (with learned per-Gaussian features); second, expression-driven deformation via a lightweight MLP for fast animation.
 
 **Core Idea**: A multi-view Transformer based on SD-Turbo VAE and DINOv3 features reconstructs a canonical Gaussian head, which is then animated in real time via per-Gaussian learned features and a lightweight deformation MLP.
 

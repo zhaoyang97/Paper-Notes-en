@@ -27,18 +27,18 @@ content_hash: 5f5a05bc95d631cf
 This paper provides rigorous theoretical analysis demonstrating that the diversity of pretraining data—characterized by the *max-sum ratio*—determines whether a single-layer Transformer learns a generalizable induction head or a non-OOD-generalizing positional shortcut, and derives a closed-form optimal pretraining distribution that promotes induction head formation.
 
 ## Background & Motivation
-**State of the Field**: Attention heads in Transformers can implement two fundamentally distinct mechanisms—**induction heads** (content-based retrieval that scans context for previously seen patterns to predict subsequent tokens) and **positional shortcuts** (purely position-based memorization of outputs at specific positions). The former underlies in-context learning, while the latter, despite performing perfectly within the training distribution, fails to generalize to out-of-distribution sequences.
+**Background**: Attention heads in Transformers can implement two fundamentally distinct mechanisms—**induction heads** (content-based retrieval that scans context for previously seen patterns to predict subsequent tokens) and **positional shortcuts** (purely position-based memorization of outputs at specific positions). The former underlies in-context learning, while the latter, despite performing perfectly within the training distribution, fails to generalize to out-of-distribution sequences.
 
 **Limitations of Prior Work**: Empirical studies repeatedly find that pretrained models often rely on positional shortcuts, exhibiting fragility under changes in sequence length or structure (length generalization failure). However, a theoretical explanation has been lacking: under what conditions does a model learn an induction head, and when does it degrade into positional memorization?
 
-**Root Cause**: Positional and semantic signals co-exist in training data, and gradient descent learns both simultaneously. The key lies in the **relative strength** of the two signals, which depends on the structure of the data distribution—yet this dependence had not been precisely quantified.
+**Key Challenge**: Positional and semantic signals co-exist in training data, and gradient descent learns both simultaneously. The key lies in the **relative strength** of the two signals, which depends on the structure of the data distribution—yet this dependence had not been precisely quantified.
 
-**Paper Goals**
+**Goal**
 - Provide a precise measure of data diversity (max-sum ratio)
 - Prove the existence of a phase transition: diversity above threshold → induction head; below threshold → positional shortcut
 - Derive a closed-form solution for the optimal pretraining distribution
 
-**Starting Point**: The paper designs a minimal trigger-output copying task in which a special trigger token appears twice in the sequence, and the model must output the token following the first occurrence upon seeing the second. This task is simple enough to support rigorous theoretical analysis yet rich enough to capture the competition between the two mechanisms.
+**Key Insight**: The paper designs a minimal trigger-output copying task in which a special trigger token appears twice in the sequence, and the model must output the token following the first occurrence upon seeing the second. This task is simple enough to support rigorous theoretical analysis yet rich enough to capture the competition between the two mechanisms.
 
 **Core Idea**: The diversity of trigger distances in pretraining data dilutes positional signals, biasing attention weights toward the induction head. A phase transition occurs when the max-sum ratio falls below $\Theta(N_{\text{trg}}^{-1})$.
 

@@ -29,16 +29,16 @@ This paper proposes a unified theoretical framework for activation steering base
 
 ## Background & Motivation
 
-**State of the Field**: Activation steering (also known as Representation Engineering) is a lightweight inference-time approach for aligning LLMs by directly modifying internal activations to guide model behavior (e.g., improving helpfulness and truthfulness) without modifying model weights or retraining. Representative methods include RepE, CAA (Contrastive Activation Addition), and ITI (Inference-Time Intervention).
+**Background**: Activation steering (also known as Representation Engineering) is a lightweight inference-time approach for aligning LLMs by directly modifying internal activations to guide model behavior (e.g., improving helpfulness and truthfulness) without modifying model weights or retraining. Representative methods include RepE, CAA (Contrastive Activation Addition), and ITI (Inference-Time Intervention).
 
 **Limitations of Prior Work**:
 1. **Lack of a unified theoretical framework**: Existing methods fall into two categories — "input-reading" (exploiting contrastive activation differences between positive and negative samples) and "output-optimizing" (maximizing a scoring function) — yet these are grounded in entirely different principles, making systematic comparison and deeper understanding difficult.
 2. **Reliance on single-step steering**: Most methods apply a one-step additive update $\tilde{a} = a + T \cdot v(a)$; this coarse-grained modification fails to capture fine-grained patterns in complex activation distributions.
 3. **Insufficient expressiveness of linear steering**: CAA uses mean differences and ITI uses linear probes, both yielding fixed vectors that cannot adapt dynamically.
 
-**Root Cause**: Inference-time alignment demands fine-grained, adaptive control over activations, yet existing methods either lack a solid theoretical foundation or are insufficiently expressive — raising the question of how to achieve multi-step adaptive steering within a unified theoretical framework.
+**Key Challenge**: Inference-time alignment demands fine-grained, adaptive control over activations, yet existing methods either lack a solid theoretical foundation or are insufficiently expressive — raising the question of how to achieve multi-step adaptive steering within a unified theoretical framework.
 
-**Paper Goals**: The paper departs from a key observation: the conventional activation addition $\tilde{a} = a + T \cdot v(a)$ is precisely the first-order Euler discretization of the ODE $\dot{a}(t) = v(a(t))$. Under this view, steering direction identification is equivalent to designing the vector field of the ODE, which in turn is equivalent to defining a barrier function from control theory.
+**Goal**: The paper departs from a key observation: the conventional activation addition $\tilde{a} = a + T \cdot v(a)$ is precisely the first-order Euler discretization of the ODE $\dot{a}(t) = v(a(t))$. Under this view, steering direction identification is equivalent to designing the vector field of the ODE, which in turn is equivalent to defining a barrier function from control theory.
 
 ## Method
 

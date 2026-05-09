@@ -27,15 +27,15 @@ content_hash: 03e66842bacb8bdf
 AffordGrasp proposes a diffusion-based cross-modal framework that generates physically plausible and semantically consistent hand grasp poses from text instructions and object point clouds, via affordance-guided latent diffusion and a Distribution Adjustment Module (DAM), significantly outperforming existing methods on four benchmarks.
 
 ## Background & Motivation
-**State of the Field**: Semantic grasp generation aims to synthesize hand poses for object interaction conditioned on user instructions, which is a critical capability for AR/VR and embodied intelligence.
+**Background**: Semantic grasp generation aims to synthesize hand poses for object interaction conditioned on user instructions, which is a critical capability for AR/VR and embodied intelligence.
 
 **Limitations of Prior Work**:
    - A large modality gap exists between 3D geometry and natural language, making fine-grained geometry–semantic alignment (e.g., distinguishing "grasp the handle" from "grasp the rim") difficult to achieve through direct fusion;
    - Existing diffusion pipelines lack explicit spatial and semantic constraints, frequently producing physically implausible or semantically inconsistent grasps.
 
-**Root Cause**: How can generated grasp poses precisely correspond to the interaction intent described by a language instruction while remaining physically feasible?
+**Key Challenge**: How can generated grasp poses precisely correspond to the interaction intent described by a language instruction while remaining physically feasible?
 
-**Starting Point**: Object affordance is introduced as a cross-modal bridge, linking linguistic semantics with 3D geometry through affordance regions, supplemented by a Distribution Adjustment Module that enforces physical and semantic consistency after sampling.
+**Key Insight**: Object affordance is introduced as a cross-modal bridge, linking linguistic semantics with 3D geometry through affordance regions, supplemented by a Distribution Adjustment Module that enforces physical and semantic consistency after sampling.
 
 **Core Idea**: Affordance-driven latent diffusion + Distribution Adjustment Module = physical plausibility + semantic precision.
 

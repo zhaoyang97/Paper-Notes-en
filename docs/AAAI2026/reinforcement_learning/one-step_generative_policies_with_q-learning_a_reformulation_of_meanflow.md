@@ -28,15 +28,15 @@ This paper reformulates MeanFlow from visual generation into a generative policy
 
 ## Background & Motivation
 
-**State of the Field**: Offline RL learns policies from fixed datasets and faces a trade-off between expressiveness and efficiency. Gaussian policies are fast but cannot model multimodal action distributions; flow/diffusion policies are expressive but require multi-step iterative sampling, and combining them with Q-learning via backpropagation through time (BPTT) leads to training instability.
+**Background**: Offline RL learns policies from fixed datasets and faces a trade-off between expressiveness and efficiency. Gaussian policies are fast but cannot model multimodal action distributions; flow/diffusion policies are expressive but require multi-step iterative sampling, and combining them with Q-learning via backpropagation through time (BPTT) leads to training instability.
 
 **Limitations of Prior Work**: Existing solutions adopt a two-stage distillation pipeline—first training a multi-step generative policy via behavior cloning, then distilling it into a one-step policy for joint optimization with Q-values. However, distillation introduces an expressiveness bottleneck and increases training complexity. Directly applying MeanFlow to RL causes out-of-bound actions during early training that require clipping, leading to inconsistency between policy outputs and Bellman targets and unstable training.
 
-**Root Cause**: A policy is needed that simultaneously possesses the strong multimodal modeling capacity of flow models and the one-step sampling and stable Q-learning compatibility of Gaussian policies—a contradiction within prior frameworks.
+**Key Challenge**: A policy is needed that simultaneously possesses the strong multimodal modeling capacity of flow models and the one-step sampling and stable Q-learning compatibility of Gaussian policies—a contradiction within prior frameworks.
 
-**Paper Goals**: Design a generative policy supporting one-step noise-to-action generation that can be jointly trained directly with a Q-function in a single stage without distillation.
+**Goal**: Design a generative policy supporting one-step noise-to-action generation that can be jointly trained directly with a Q-function in a single stage without distillation.
 
-**Starting Point**: MeanFlow achieves one-step sampling by modeling a mean velocity field, but its two-step inference (velocity estimation → velocity integration) causes out-of-bound actions in RL. Reformulating it in residual form as $g(a_t,b,t) = a_t - u(a_t,b,t)$ merges velocity estimation and action generation into a single network forward pass.
+**Key Insight**: MeanFlow achieves one-step sampling by modeling a mean velocity field, but its two-step inference (velocity estimation → velocity integration) causes out-of-bound actions in RL. Reformulating it in residual form as $g(a_t,b,t) = a_t - u(a_t,b,t)$ merges velocity estimation and action generation into a single network forward pass.
 
 **Core Idea**: Merge MeanFlow's two-step process (estimate velocity → integrate to obtain action) into a one-step residual mapping $g_\theta$, combined with appropriate initialization strategies (zero initialization / small-variance Kaiming initialization) to ensure outputs remain within valid bounds during early training, while preserving expressiveness via the Universal Approximation Theorem (UAT).
 

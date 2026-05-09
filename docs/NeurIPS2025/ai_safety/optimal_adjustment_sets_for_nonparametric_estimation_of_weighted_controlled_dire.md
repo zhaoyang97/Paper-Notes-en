@@ -27,13 +27,13 @@ content_hash: 45345e6b7a5374b2
 This paper establishes three foundational theoretical results for the weighted controlled direct effect (WCDE): necessary and sufficient conditions for unique identifiability, derivation of the influence function for nonparametric estimation, and characterization of the optimal covariate adjustment set that minimizes asymptotic variance.
 
 ## Background & Motivation
-**State of the Field**: Estimation of direct effects in causal inference is central to fairness analysis and mediation analysis. The controlled direct effect (CDE) measures the direct impact of a treatment on an outcome by fixing the mediator at a specific value.
+**Background**: Estimation of direct effects in causal inference is central to fairness analysis and mediation analysis. The controlled direct effect (CDE) measures the direct impact of a treatment on an outcome by fixing the mediator at a specific value.
 
 **Limitations of Prior Work**: The CDE requires specifying a particular value for the mediator; however, when treatment effects vary across mediator levels, a CDE evaluated at a single value may be misleading. The weighted controlled direct effect (WCDE) addresses this by averaging over the distribution of the mediator, yet a systematic identifiability theory and optimal estimation methods remain lacking.
 
-**Root Cause**: Estimating the WCDE is more complex than estimating the average treatment effect (ATE)—interactions between the mediator and confounders make the optimal adjustment set structurally different from classical results for the ATE.
+**Key Challenge**: Estimating the WCDE is more complex than estimating the average treatment effect (ATE)—interactions between the mediator and confounders make the optimal adjustment set structurally different from classical results for the ATE.
 
-**Starting Point**: Drawing on semiparametric statistical theory, the paper derives the influence function and efficiency bound for the WCDE from observational data.
+**Key Insight**: Drawing on semiparametric statistical theory, the paper derives the influence function and efficiency bound for the WCDE from observational data.
 
 **Core Idea**: The optimal adjustment set for the WCDE is uniquely determined by the mediator–confounder interaction structure, and in certain DAGs the WCDE differs numerically from the CDE.
 

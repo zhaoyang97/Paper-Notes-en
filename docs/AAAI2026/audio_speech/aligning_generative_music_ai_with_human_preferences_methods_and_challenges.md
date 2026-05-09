@@ -28,7 +28,7 @@ This survey/position paper systematically reviews three technical approaches to 
 
 ## Background & Motivation
 
-**State of the Field**: Music generation models such as MusicLM, MusicGen, Mustango, and Jukebox have achieved high fidelity and stylistic diversity. However, the underlying likelihood-based training objective optimizes only statistical fit over the training distribution—high likelihood does not equate to pleasant sound, and fails to capture deep preferences related to aesthetics, emotional resonance, and cultural appropriateness.
+**Background**: Music generation models such as MusicLM, MusicGen, Mustango, and Jukebox have achieved high fidelity and stylistic diversity. However, the underlying likelihood-based training objective optimizes only statistical fit over the training distribution—high likelihood does not equate to pleasant sound, and fails to capture deep preferences related to aesthetics, emotional resonance, and cultural appropriateness.
 
 **Unique Complexity of Musical Preferences**:
    - **Multi-scale Temporal Structure**: Musical beats, phrases, sections, and overall form span timescales from milliseconds to hours; alignment must ensure coherence across all scales simultaneously.
@@ -38,7 +38,7 @@ This survey/position paper systematically reviews three technical approaches to 
 
 **Failure of Conventional Metrics**: Automatic metrics such as FAD, IS, and CLAP capture only partial technical quality and cannot reflect subjective aesthetic judgments. MusicRL experiments confirm that text consistency plus audio quality explains only a fraction of human preferences.
 
-**Paper Goals**: To advocate for the systematic application of preference alignment techniques to music generation, survey three major technical approaches, identify key challenges, and propose an interdisciplinary research roadmap.
+**Goal**: To advocate for the systematic application of preference alignment techniques to music generation, survey three major technical approaches, identify key challenges, and propose an interdisciplinary research roadmap.
 
 ## Core Problem
 How can the fundamental gap between computational optimization objectives (likelihood maximization) and human aesthetic preferences in music generation be bridged?

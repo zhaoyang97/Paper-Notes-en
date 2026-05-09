@@ -28,15 +28,15 @@ This paper systematically investigates the fragility of frozen-embedding-based s
 
 ## Background & Motivation
 
-**State of the Field**: Instruction-tuned inference models deployed in production are typically paired with safety classifiers (e.g., toxicity detectors) trained on frozen embeddings, implicitly assuming that embeddings remain stable across model updates.
+**Background**: Instruction-tuned inference models deployed in production are typically paired with safety classifiers (e.g., toxicity detectors) trained on frozen embeddings, implicitly assuming that embeddings remain stable across model updates.
 
 **Limitations of Prior Work**: Base models are updated frequently—for safety patches, performance improvements, etc.—yet safety classifiers are rarely retrained in synchrony, giving rise to a "model updates, classifier stays fixed" production paradigm.
 
-**Root Cause**: Whether embedding spaces remain stable after model updates, and whether standard monitoring mechanisms (confidence-based) can detect such failures if they do not.
+**Key Challenge**: Whether embedding spaces remain stable after model updates, and whether standard monitoring mechanisms (confidence-based) can detect such failures if they do not.
 
-**Paper Goals**: (1) Quantify the precise failure threshold of embedding drift; (2) characterize the silent failure phenomenon—misclassifications occurring despite high reported confidence; (3) reveal the counterintuitive effect of RLHF alignment on classifier robustness.
+**Goal**: (1) Quantify the precise failure threshold of embedding drift; (2) characterize the silent failure phenomenon—misclassifications occurring despite high reported confidence; (3) reveal the counterintuitive effect of RLHF alignment on classifier robustness.
 
-**Starting Point**: Controlled additive perturbations are used to simulate embedding drift, systematically testing classifier degradation under different drift types (Gaussian, directional, subspace rotation).
+**Key Insight**: Controlled additive perturbations are used to simulate embedding drift, systematically testing classifier degradation under different drift types (Gaussian, directional, subspace rotation).
 
 **Core Idea**: The embedding stability assumption does not hold in practice; even minor drift can cause catastrophic failure in safety classifiers that goes undetected by standard monitoring.
 

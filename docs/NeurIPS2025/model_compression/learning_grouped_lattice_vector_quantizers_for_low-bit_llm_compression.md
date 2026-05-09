@@ -28,15 +28,15 @@ GLVQ learns a dedicated lattice codebook (defined by a learnable generator matri
 
 ## Background & Motivation
 
-**State of the Field**: Post-training quantization (PTQ) is the dominant compression paradigm for LLM deployment. Scalar quantization methods (e.g., GPTQ) perform adequately at 4-bit and above, but degrade severely below 3-bit. Vector quantization (VQ) methods (e.g., QuIP#, AQLM) improve quantization fidelity by exploiting structured codebooks in high-dimensional space.
+**Background**: Post-training quantization (PTQ) is the dominant compression paradigm for LLM deployment. Scalar quantization methods (e.g., GPTQ) perform adequately at 4-bit and above, but degrade severely below 3-bit. Vector quantization (VQ) methods (e.g., QuIP#, AQLM) improve quantization fidelity by exploiting structured codebooks in high-dimensional space.
 
 **Limitations of Prior Work**: QuIP# applies a fixed $E_8$ lattice uniformly across all groups and layers, ignoring statistical heterogeneity among weight groups, which leads to quantization mismatch in certain groups. AQLM learns unconstrained VQ codebooks, offering flexibility at the cost of slow lookup-based decoding.
 
-**Root Cause**: Fixed lattices (e.g., $E_8$) are highly structured but lack adaptability; free-form VQ is adaptive but computationally expensive—a fundamental tension between codebook flexibility and decoding efficiency.
+**Key Challenge**: Fixed lattices (e.g., $E_8$) are highly structured but lack adaptability; free-form VQ is adaptive but computationally expensive—a fundamental tension between codebook flexibility and decoding efficiency.
 
-**Paper Goals**: Design a quantization scheme that retains the efficient decoding of lattice quantization (simple matrix multiplication) while adapting to the varying statistical properties of different weight groups.
+**Goal**: Design a quantization scheme that retains the efficient decoding of lattice quantization (simple matrix multiplication) while adapting to the varying statistical properties of different weight groups.
 
-**Starting Point**: Each weight group learns an independent generator matrix $\mathbf{G}_g$ defining its lattice codebook, paired with a learnable companding transform $F_g$ to handle non-uniform distributions.
+**Key Insight**: Each weight group learns an independent generator matrix $\mathbf{G}_g$ defining its lattice codebook, paired with a learnable companding transform $F_g$ to handle non-uniform distributions.
 
 **Core Idea**: Group-wise learnable lattice generator matrices + group-wise μ-law companding = structured, efficient lattice decoding with adaptation to local weight distributions.
 

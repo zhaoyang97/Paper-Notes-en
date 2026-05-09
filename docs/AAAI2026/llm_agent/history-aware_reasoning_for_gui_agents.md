@@ -30,11 +30,11 @@ This paper proposes the HAR framework, which transforms the reasoning paradigm o
 
 ### State of the Field
 
-**State of the Field**: Existing GUI agents (e.g., UI-R1, GUI-R1, InfiGUI-R1) employ System-2 CoT combined with RL to enhance reasoning, yet they share a critical overlooked limitation: their reasoning is *history-unaware*—multi-step sequential interactions are reduced to isolated single-screen comprehension, disregarding crucial cues embedded in historical interaction context. For example, in an 11-step long-horizon task, the agent at step 8 reasons entirely without considering what transpired in the preceding 7 steps. This stems from the intrinsic CoT patterns of pretrained MLLMs; existing RL training with reasoning-format instructions optimizes only action prediction without altering the underlying reasoning paradigm.
+**Background**: Existing GUI agents (e.g., UI-R1, GUI-R1, InfiGUI-R1) employ System-2 CoT combined with RL to enhance reasoning, yet they share a critical overlooked limitation: their reasoning is *history-unaware*—multi-step sequential interactions are reduced to isolated single-screen comprehension, disregarding crucial cues embedded in historical interaction context. For example, in an 11-step long-horizon task, the agent at step 8 reasons entirely without considering what transpired in the preceding 7 steps. This stems from the intrinsic CoT patterns of pretrained MLLMs; existing RL training with reasoning-format instructions optimizes only action prediction without altering the underlying reasoning paradigm.
 
 ### Solving the Problem
 
-**Paper Goals**: The paper aims to equip GUI agents with stable short-term memory in long-horizon sequential reasoning—specifically, to explicitly integrate and analyze historical interaction information within System-2 CoT. The central challenge is that the "history-unaware" reasoning pattern is deeply entrenched in the pretraining-phase CoT, and standard RL training cannot alter it (it only narrows the gap between pass@k and pass@1).
+**Goal**: The paper aims to equip GUI agents with stable short-term memory in long-horizon sequential reasoning—specifically, to explicitly integrate and analyze historical interaction information within System-2 CoT. The central challenge is that the "history-unaware" reasoning pattern is deeply entrenched in the pretraining-phase CoT, and standard RL training cannot alter it (it only narrows the gap between pass@k and pass@1).
 
 ## Method
 

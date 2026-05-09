@@ -27,15 +27,15 @@ content_hash: dd5e5b2cdccc4966
 This paper extends DQN via partial identification theory, proposing Causal DQN to learn robust policies from offline data with unobserved confounders—by optimizing a worst-case lower bound on the value function to obtain safe policies—and consistently outperforms standard DQN across 12 confounded Atari games.
 
 ## Background & Motivation
-**State of the Field**: Deep RL methods such as DQN excel in high-dimensional state spaces, but implicitly assume No Unmeasured Confounders (NUC)—i.e., that the behavioral policy's data contains no unobserved confounding factors. Off-policy learning relies on this assumption to directly equate conditional distributions in observational data with causal transition distributions.
+**Background**: Deep RL methods such as DQN excel in high-dimensional state spaces, but implicitly assume No Unmeasured Confounders (NUC)—i.e., that the behavioral policy's data contains no unobserved confounding factors. Off-policy learning relies on this assumption to directly equate conditional distributions in observational data with causal transition distributions.
 
 **Limitations of Prior Work**: When learning from an offline demonstrator's data, the learner has no control over the data collection process. If the demonstrator uses information unobservable to the learner (e.g., in Pong the demonstrator can see the opponent's position while the learner only observes a partial view), standard DQN cannot distinguish causal effects from spurious correlations, resulting in ineffective policies.
 
-**Root Cause**: In confounded settings, the effect of a target policy is generally not identifiable, and traditional methods cannot uniquely determine the value function from data. However, partial identification methods can derive informative upper and lower bounds on the value function.
+**Key Challenge**: In confounded settings, the effect of a target policy is generally not identifiable, and traditional methods cannot uniquely determine the value function from data. However, partial identification methods can derive informative upper and lower bounds on the value function.
 
-**Paper Goals**: To extend partial identification methods to complex, high-dimensional domains (image-based inputs) and construct a confounding-robust deep RL algorithm.
+**Goal**: To extend partial identification methods to complex, high-dimensional domains (image-based inputs) and construct a confounding-robust deep RL algorithm.
 
-**Starting Point**: In a confounded MDP (CMDP), derive a causal Bellman optimality equation for the optimal value function (in lower-bound form), then approximate this lower bound with a neural network.
+**Key Insight**: In a confounded MDP (CMDP), derive a causal Bellman optimality equation for the optimal value function (in lower-bound form), then approximate this lower bound with a neural network.
 
 **Core Idea**: Replace the standard DQN Q-value update with a pessimistic lower-bound update via the causal Bellman equation—following the standard path when the observed action matches the target action, and using worst-case reward and worst-case next state otherwise.
 

@@ -29,7 +29,7 @@ This paper proposes TEAR, the first automated red-teaming framework targeting te
 ## Background & Motivation
 T2V models (e.g., Veo, Hailuo, Wan) can now produce high-quality, temporally coherent videos, yet they are also susceptible to generating harmful content, making safety evaluation critically important.
 
-**Root Cause**: Existing red-teaming methods primarily target static image and text generation, and fail to capture **temporal dynamic safety risks** unique to video generation. Harmfulness in video can be absent from any single frame yet emerge from the temporal composition of frame sequences — for example, individually describing "a person picking up a knife" and "another person falling" are both benign, but their temporal combination can constitute a violent scene.
+**Key Challenge**: Existing red-teaming methods primarily target static image and text generation, and fail to capture **temporal dynamic safety risks** unique to video generation. Harmfulness in video can be absent from any single frame yet emerge from the temporal composition of frame sequences — for example, individually describing "a person picking up a knife" and "another person falling" are both benign, but their temporal combination can constitute a violent scene.
 
 **Limitations of Prior Work**:
 1. LLM red-teaming methods (e.g., CuriDial, FLIRT) focus on textual adversarial attacks and entirely overlook the temporal dimension of video.

@@ -26,13 +26,13 @@ content_hash: c81b4c7b16418cd8
 This paper identifies that the dominant subspace in low-rank optimizers such as GaLore "freezes" during pretraining (cosine overlap between consecutive subspaces approaches 1), trapping weight updates within a fixed low-rank subspace. The authors propose SARA (Sampling-based Adaptive Rank Allocation), which constructs subspaces by sampling singular vectors according to singular value weights, provides convergence guarantees, and reduces the performance gap between low-rank optimizers and full-rank Adam by up to 46%.
 
 ## Background & Motivation
-**State of the Field**: Low-rank optimizers (e.g., GaLore, Fira) reduce optimizer state memory by projecting gradients onto a low-rank subspace, making them an important class of memory-efficient methods for LLM pretraining. The central design question is how to select the projection subspace.
+**Background**: Low-rank optimizers (e.g., GaLore, Fira) reduce optimizer state memory by projecting gradients onto a low-rank subspace, making them an important class of memory-efficient methods for LLM pretraining. The central design question is how to select the projection subspace.
 
 **Limitations of Prior Work**: GaLore selects the **dominant subspace** (singular vectors corresponding to the largest singular values), which intuitively retains the most gradient information. In practice, however, the dominant subspace nearly stops changing after the early phase of pretraining—the subspace overlap between consecutive update intervals approaches 1.0, especially in the `gate_proj` and `up_proj` layers.
 
-**Root Cause**: When the subspace freezes, all weight updates across intervals are confined to the same low-rank subspace. Even if the update within each interval is low-rank, the cumulative update can still be high-rank provided subspaces across intervals are sufficiently diverse. Frozen subspaces break this "rank recovery" mechanism—**the cumulative weight update itself becomes trapped in a low-rank regime**.
+**Key Challenge**: When the subspace freezes, all weight updates across intervals are confined to the same low-rank subspace. Even if the update within each interval is low-rank, the cumulative update can still be high-rank provided subspaces across intervals are sufficiently diverse. Frozen subspaces break this "rank recovery" mechanism—**the cumulative weight update itself becomes trapped in a low-rank regime**.
 
-**Starting Point**: Introduce stochasticity to break subspace freezing. Rather than always selecting the top-$r$ singular vectors, importance sampling is performed according to singular value magnitudes—directions with large singular values still have a higher probability of being selected, but directions with small singular values are also given a chance.
+**Key Insight**: Introduce stochasticity to break subspace freezing. Rather than always selecting the top-$r$ singular vectors, importance sampling is performed according to singular value magnitudes—directions with large singular values still have a higher probability of being selected, but directions with small singular values are also given a chance.
 
 **Core Idea**: Replace top-$r$ subspace selection with singular-value-weighted importance sampling, substantially increasing subspace diversity across intervals while preserving convergence guarantees.
 

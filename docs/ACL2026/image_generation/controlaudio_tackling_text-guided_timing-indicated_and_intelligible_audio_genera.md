@@ -29,15 +29,15 @@ This paper proposes ControlAudio, a unified progressive diffusion modeling frame
 
 ## Background & Motivation
 
-**State of the Field**: Text-to-audio (TTA) generation has achieved significant progress through large-scale diffusion models. Recent research has begun exploring fine-grained control: one line of work achieves precise temporal control (e.g., "bird chirping, 2-5 seconds"), while another enables intelligible speech generation (audio containing clearly distinguishable speech content).
+**Background**: Text-to-audio (TTA) generation has achieved significant progress through large-scale diffusion models. Recent research has begun exploring fine-grained control: one line of work achieves precise temporal control (e.g., "bird chirping, 2-5 seconds"), while another enables intelligible speech generation (audio containing clearly distinguishable speech content).
 
 **Limitations of Prior Work**: (1) Due to scarce large-scale annotated data (datasets containing both temporal annotations and speech transcriptions are extremely limited), controllable TTA remains constrained in performance even after scaling; (2) No prior work has achieved both temporal control and intelligible speech generation within a unified framework; (3) Adding fine-grained control signals often sacrifices generation quality under pure text conditions (catastrophic forgetting); (4) Natural language descriptions of complex multi-event scenarios contain ambiguities.
 
-**Root Cause**: Controllable TTA requires handling condition signals at multiple granularities (text → temporal → phoneme), but training data at different granularities varies drastically in scale (millions of text-audio pairs vs. tens of thousands of temporal annotations), making direct joint training ineffective.
+**Key Challenge**: Controllable TTA requires handling condition signals at multiple granularities (text → temporal → phoneme), but training data at different granularities varies drastically in scale (millions of text-audio pairs vs. tens of thousands of temporal annotations), making direct joint training ineffective.
 
-**Paper Goals**: Unify text-guided generation, temporal indication, and intelligible speech capabilities within a single diffusion model without sacrificing individual capabilities.
+**Goal**: Unify text-guided generation, temporal indication, and intelligible speech capabilities within a single diffusion model without sacrificing individual capabilities.
 
-**Starting Point**: Model controllable TTA as a multi-task learning problem through progressive diffusion modeling—adopting coarse-to-fine progressive strategies across data construction, model training, and guidance sampling.
+**Key Insight**: Model controllable TTA as a multi-task learning problem through progressive diffusion modeling—adopting coarse-to-fine progressive strategies across data construction, model training, and guidance sampling.
 
 **Core Idea**: Progressive modeling naturally aligns with the hierarchical nature of control granularity (text → temporal → phoneme) and the coarse-to-fine characteristics of diffusion sampling—emphasizing coarse-grained temporal structure in early diffusion stages and introducing fine-grained phoneme content in later stages.
 

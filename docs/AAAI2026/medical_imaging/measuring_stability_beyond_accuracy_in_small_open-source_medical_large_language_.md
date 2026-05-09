@@ -30,7 +30,7 @@ This paper systematically evaluates six small open-source medical LLMs (<10B par
 
 ## Background & Motivation
 
-**State of the Field**: Large medical LLMs (e.g., GPT-4-class, 70B+ parameters) have demonstrated strong performance across diverse clinical tasks; however, these models are typically closed-source, computationally expensive, and inaccessible in low-resource or low-income healthcare settings. Small open-source medical LLMs (<10B parameters) offer a lightweight, locally deployable, and transparent alternative.
+**Background**: Large medical LLMs (e.g., GPT-4-class, 70B+ parameters) have demonstrated strong performance across diverse clinical tasks; however, these models are typically closed-source, computationally expensive, and inaccessible in low-resource or low-income healthcare settings. Small open-source medical LLMs (<10B parameters) offer a lightweight, locally deployable, and transparent alternative.
 
 **Limitations of Prior Work**:
 - Existing evaluations of medical LLMs rely predominantly on MCQ accuracy, neglecting **consistency**, **robustness**, and **reasoning quality**.

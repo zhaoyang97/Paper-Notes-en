@@ -29,15 +29,15 @@ This paper proposes the CAST framework, which constrains the latent reasoning tr
 
 ## Background & Motivation
 
-**State of the Field**: Text Analysis for Data Analysis (TADA) is a paradigm that converts free-text columns in tables into structured representations such as summary topics or row-level labels. LLMs are natural candidates for TADA, as a single model can perform diverse text analysis tasks via natural language queries.
+**Background**: Text Analysis for Data Analysis (TADA) is a paradigm that converts free-text columns in tables into structured representations such as summary topics or row-level labels. LLMs are natural candidates for TADA, as a single model can perform diverse text analysis tasks via natural language queries.
 
 **Limitations of Prior Work**: A fundamental tension exists between the probabilistic nature of LLM generation and the deterministic requirements of data analysis. The same input may produce semantically drifted outputs across different runs (e.g., the same review being labeled "Customer Service" in one run and "Support Team" in another), leading to inconsistent downstream filtering, grouping, and aggregation results that undermine reproducibility and user trust.
 
-**Root Cause**: The source of instability lies in unconstrained latent reasoning trajectories within LLMs. From a probabilistic perspective, prompting an LLM induces a distribution over possible reasoning paths; when this distribution has high entropy (i.e., the model is uncertain about the next reasoning step), minor stochastic fluctuations cause output drift. Existing approaches such as Self-Consistency improve correctness through repeated sampling and majority voting, but are not designed to address stability.
+**Key Challenge**: The source of instability lies in unconstrained latent reasoning trajectories within LLMs. From a probabilistic perspective, prompting an LLM induces a distribution over possible reasoning paths; when this distribution has high entropy (i.e., the model is uncertain about the next reasoning step), minor stochastic fluctuations cause output drift. Existing approaches such as Self-Consistency improve correctness through repeated sampling and majority voting, but are not designed to address stability.
 
-**Paper Goals**: To achieve output stability by constraining the reasoning paths during generation, without relying on repeated sampling.
+**Goal**: To achieve output stability by constraining the reasoning paths during generation, without relying on repeated sampling.
 
-**Starting Point**: The authors observe that requiring the model to produce relevant intermediate reasoning states before generating the final output—even without specifying their exact content—substantially reduces variance in both output length and content.
+**Key Insight**: The authors observe that requiring the model to produce relevant intermediate reasoning states before generating the final output—even without specifying their exact content—substantially reduces variance in both output length and content.
 
 **Core Idea**: Algorithmic Prompting provides procedural scaffolding to constrain reasoning transitions, while the Thinking-before-Speaking mechanism explicitly anchors critical intermediate states. Together, these mechanisms concentrate reasoning trajectories onto a small number of high-probability paths.
 

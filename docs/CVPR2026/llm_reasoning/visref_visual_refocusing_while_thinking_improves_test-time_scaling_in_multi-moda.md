@@ -29,15 +29,15 @@ This paper proposes VisRef, a training-free visual refocusing framework that dyn
 
 ## Background & Motivation
 
-1. **State of the Field**: MLRMs such as InternVL and Qwen-VL have achieved strong performance on visual reasoning tasks by generating chain-of-thought reasoning traces. Test-time scaling further improves performance by increasing inference-time computation.
+1. **Background**: MLRMs such as InternVL and Qwen-VL have achieved strong performance on visual reasoning tasks by generating chain-of-thought reasoning traces. Test-time scaling further improves performance by increasing inference-time computation.
 
 2. **Limitations of Prior Work**: As reasoning chains grow longer, visual tokens are progressively diluted within the expanding context window, causing the model's attention to shift from image content toward textual priors, leading to visual information loss. Existing text-based self-reflection methods only extend textual reasoning without maintaining visual perception.
 
-3. **Root Cause**: RL fine-tuning-based visual refocusing methods (e.g., Look-Back) are effective but require substantial training data and computational resources. Meanwhile, text-based test-time scaling methods may actually degrade performance on visually demanding tasks.
+3. **Key Challenge**: RL fine-tuning-based visual refocusing methods (e.g., Look-Back) are effective but require substantial training data and computational resources. Meanwhile, text-based test-time scaling methods may actually degrade performance on visually demanding tasks.
 
-4. **Paper Goals**: Can visual grounding be restored purely at test time without any fine-tuning? The core questions are: which visual tokens should be re-injected, and when should reasoning terminate?
+4. **Goal**: Can visual grounding be restored purely at test time without any fine-tuning? The core questions are: which visual tokens should be re-injected, and when should reasoning terminate?
 
-5. **Starting Point**: The approach mimics human problem-solving behavior of alternating between "glance at image → reason → glance at image again," adaptively injecting a carefully selected core subset of visual tokens at each reasoning step.
+5. **Key Insight**: The approach mimics human problem-solving behavior of alternating between "glance at image → reason → glance at image again," adaptively injecting a carefully selected core subset of visual tokens at each reasoning step.
 
 6. **Core Idea**: Use DPP to select a subset of visual tokens that are both relevant to the current reasoning state and diverse in visual coverage, ensuring that visual grounding is maintained throughout the entire reasoning process.
 

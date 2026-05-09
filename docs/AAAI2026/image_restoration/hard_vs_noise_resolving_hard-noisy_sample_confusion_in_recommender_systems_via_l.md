@@ -31,7 +31,7 @@ This paper proposes the LLMHNI framework, which leverages two types of auxiliary
 
 ### State of the Field
 
-**State of the Field**: Recommender systems typically rely on implicit feedback (clicks, purchases, etc.) for training, treating interacted items as positive samples and non-interacted items as negative samples. However, this labeling scheme introduces two types of noise:
+**Background**: Recommender systems typically rely on implicit feedback (clicks, purchases, etc.) for training, treating interacted items as positive samples and non-interacted items as negative samples. However, this labeling scheme introduces two types of noise:
 
 1. **False positive noise**: Spurious positive feedback caused by accidental clicks or positional bias.
 2. **False negative noise**: Items of genuine interest to users that are incorrectly labeled as negative due to lack of exposure or similar reasons.
@@ -40,7 +40,7 @@ Existing denoising methods (sample dropping, sample reweighting) rely on numeric
 
 ### Root Cause
 
-**Paper Goals**: Numerical patterns derived solely from interaction data are insufficient to distinguish hard samples from noisy samples (hard-noisy confusion), necessitating auxiliary information beyond collaborative filtering signals. This paper leverages LLMs to provide two complementary relevance signals:
+**Goal**: Numerical patterns derived solely from interaction data are insufficient to distinguish hard samples from noisy samples (hard-noisy confusion), necessitating auxiliary information beyond collaborative filtering signals. This paper leverages LLMs to provide two complementary relevance signals:
 
 - **Semantic Relevance**: Similarity computed from user/item text embeddings encoded by LLMs.
 - **Logical Relevance**: Logical associations between users and items inferred via LLM reasoning.

@@ -29,14 +29,14 @@ This paper proposes DiNCo, a method that exposes the "suggestibility bias" of LL
 
 ## Background & Motivation
 
-**State of the Field**: LLMs can directly express their certainty via "verbalized confidence"—either by self-reporting a numeric value (e.g., "80%") or via the $P(\text{True})$ paradigm. This single-call approach is far more efficient than multi-sample methods, but its calibration quality is poor.
+**Background**: LLMs can directly express their certainty via "verbalized confidence"—either by self-reporting a numeric value (e.g., "80%") or via the $P(\text{True})$ paradigm. This single-call approach is far more efficient than multi-sample methods, but its calibration quality is poor.
 
 **Limitations of Prior Work**:
 - **Overconfidence**: Verbalized confidence is systematically inflated; models frequently report confidence scores above 0.8 even for incorrect answers.
 - **Confidence saturation**: Scores concentrate in a narrow range (e.g., 0.9–1.0), making it impossible to effectively distinguish correct from incorrect answers regardless of threshold choice.
 - **Cross-difficulty incomparability**: Incorrect answers to easy questions and correct answers to hard questions may receive identical scores.
 
-**Root Cause**: The authors propose a "suggestibility" hypothesis—when an LLM has limited knowledge about a topic, **the mere presence of a claim in context inflates the model's confidence in that claim**. Empirical validation shows that the total confidence $\beta(C)$ on incorrectly answered questions is significantly higher than on correctly answered ones, confirming that models are more prone to uncritical acceptance under epistemic uncertainty.
+**Key Challenge**: The authors propose a "suggestibility" hypothesis—when an LLM has limited knowledge about a topic, **the mere presence of a claim in context inflates the model's confidence in that claim**. Empirical validation shows that the total confidence $\beta(C)$ on incorrectly answered questions is significantly higher than on correctly answered ones, confirming that models are more prone to uncritical acceptance under epistemic uncertainty.
 
 ## Method
 

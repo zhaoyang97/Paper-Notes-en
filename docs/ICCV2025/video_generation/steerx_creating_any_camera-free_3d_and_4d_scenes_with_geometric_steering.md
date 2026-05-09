@@ -28,15 +28,15 @@ SteerX proposes a zero-shot inference-time guidance method that integrates scene
 
 ## Background & Motivation
 
-**State of the Field**: 3D/4D scene generation is a prominent direction in computer vision. The prevailing approach first employs a video generation model to synthesize multi-view videos, then applies a reconstruction model to recover the 3D/4D scene. These two stages—video generation and scene reconstruction—are typically optimized independently.
+**Background**: 3D/4D scene generation is a prominent direction in computer vision. The prevailing approach first employs a video generation model to synthesize multi-view videos, then applies a reconstruction model to recover the 3D/4D scene. These two stages—video generation and scene reconstruction—are typically optimized independently.
 
 **Limitations of Prior Work**: Existing methods improve geometric consistency within each stage separately, but subtle misalignments in one stage are difficult to correct in the other. For instance, a video generation model may introduce minor multi-view inconsistencies that the reconstruction model cannot compensate for; conversely, optimizations in the reconstruction stage cannot feed back into the generation stage. This siloed strategy limits the geometric quality of the final 3D/4D scenes.
 
-**Root Cause**: Video generation and scene reconstruction are treated as two independent optimization problems, lacking a unified framework to jointly enforce geometric alignment across both stages.
+**Key Challenge**: Video generation and scene reconstruction are treated as two independent optimization problems, lacking a unified framework to jointly enforce geometric alignment across both stages.
 
-**Paper Goals**: To design a method that directly incorporates geometric constraints from scene reconstruction into the inference process of video generation, so that the generated videos are inherently more geometrically consistent.
+**Goal**: To design a method that directly incorporates geometric constraints from scene reconstruction into the inference process of video generation, so that the generated videos are inherently more geometrically consistent.
 
-**Starting Point**: The authors observe that if the geometric quality of a candidate frame sequence can be assessed in real time during video generation—via fast feed-forward reconstruction—this assessment signal can serve as a reward to guide the sampling process. This idea has precedents in the LLM domain (e.g., RLHF) but has not been sufficiently explored in 3D generation.
+**Key Insight**: The authors observe that if the geometric quality of a candidate frame sequence can be assessed in real time during video generation—via fast feed-forward reconstruction—this assessment signal can serve as a reward to guide the sampling process. This idea has precedents in the LLM domain (e.g., RLHF) but has not been sufficiently explored in 3D generation.
 
 **Core Idea**: Geometric reward functions are designed using camera-free feed-forward 3D reconstruction models (e.g., MEt3R). Under the Feynman-Kac guidance framework, the data distribution is tilted at inference time toward samples with better geometric alignment, thereby unifying generation and reconstruction.
 

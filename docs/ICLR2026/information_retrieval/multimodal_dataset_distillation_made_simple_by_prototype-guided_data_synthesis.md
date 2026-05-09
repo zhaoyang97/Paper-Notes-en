@@ -28,13 +28,13 @@ This paper proposes PDS (Prototype-Guided Data Synthesis), the first training-fr
 
 ## Background & Motivation
 
-**State of the Field**: The success of vision-language models such as CLIP depends on large-scale image-text datasets like LAION-5B, which incur prohibitive training costs. Dataset distillation—compressing large datasets into a small set of synthetic samples—is well established for image classification, but multimodal distillation remains in its early stages, with only a handful of prior works such as MTT-VL, TESLA-VL, and LoRS.
+**Background**: The success of vision-language models such as CLIP depends on large-scale image-text datasets like LAION-5B, which incur prohibitive training costs. Dataset distillation—compressing large datasets into a small set of synthetic samples—is well established for image classification, but multimodal distillation remains in its early stages, with only a handful of prior works such as MTT-VL, TESLA-VL, and LoRS.
 
 **Limitations of Prior Work**: All existing multimodal distillation methods are optimization-based and suffer from three fundamental problems. First, the computational cost is enormous: they require repeatedly training models on full data while storing all intermediate parameters, becoming infeasible as dataset and model scale grow. Second, they are strongly architecture-dependent: jointly optimizing image pixels and text features essentially adds architecture-specific adversarial perturbations to the initialization images, producing distilled sets that look nearly identical to the originals; switching backbones (e.g., from NFNet to ResNet/ViT) necessitates complete re-distillation. Third, subset selection methods fail entirely at very small scales (e.g., 100 pairs) due to insufficient semantic diversity.
 
-**Root Cause**: Optimization-based methods are "heavy" (expensive and architecture-locked), while subset selection methods are "shallow" at extremely small scales (insufficient semantic diversity). A distillation approach that is both training-free and architecture-agnostic is needed.
+**Key Challenge**: Optimization-based methods are "heavy" (expensive and architecture-locked), while subset selection methods are "shallow" at extremely small scales (insufficient semantic diversity). A distillation approach that is both training-free and architecture-agnostic is needed.
 
-**Starting Point**: The authors observe that CLIP's embedding space naturally aligns image and text modalities, enabling direct semantic prototype extraction via clustering. The key insight is that the unCLIP decoder can generate images directly from CLIP image embeddings—something standard Stable Diffusion cannot do—thereby bypassing pixel-space optimization entirely.
+**Key Insight**: The authors observe that CLIP's embedding space naturally aligns image and text modalities, enabling direct semantic prototype extraction via clustering. The key insight is that the unCLIP decoder can generate images directly from CLIP image embeddings—something standard Stable Diffusion cannot do—thereby bypassing pixel-space optimization entirely.
 
 **Core Idea**: Construct cross-modal prototypes via CLIP embedding clustering and Hungarian matching, then synthesize distilled images from image prototypes using unCLIP, achieving zero-training multimodal dataset distillation.
 

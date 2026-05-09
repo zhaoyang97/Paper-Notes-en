@@ -28,7 +28,7 @@ By introducing three key simplifications—constructing a fixed surrogate model 
 
 ## Background & Motivation
 
-**State of the Field**: Frontier models are increasingly complex; annotation costs are high and evaluation data may leak into training sets, necessitating continuous and dynamic collection of new evaluation data.
+**Background**: Frontier models are increasingly complex; annotation costs are high and evaluation data may leak into training sets, necessitating continuous and dynamic collection of new evaluation data.
 
 **Limitations of Prior Work**: Existing active testing methods require iterative gradient-based retraining of surrogate models and inference over the entire pool with both surrogate and target models, making computational costs prohibitive for LLM-scale applications.
 

@@ -29,18 +29,18 @@ This paper introduces the **Invisibility Hypothesis**, arguing that as AI system
 
 ## Background & Motivation
 
-**State of the Field**: AGI discourse centers on technical feasibility, timelines, and existential risk (Amodei 2024, OpenAI 2023, DeepMind 2025), with social impact analyses often assuming homogeneous effects across populations. Research on the differentiated impacts on developing countries remains severely underdeveloped (Wall et al. 2021).
+**Background**: AGI discourse centers on technical feasibility, timelines, and existential risk (Amodei 2024, OpenAI 2023, DeepMind 2025), with social impact analyses often assuming homogeneous effects across populations. Research on the differentiated impacts on developing countries remains severely underdeveloped (Wall et al. 2021).
 
 **Limitations of Prior Work**:
 - AI social impact research is developed-world-centric, neglecting the structural disadvantages of the Global South.
 - AGI discourse is polarized between "universal tool" and "existential threat" framings, both ignoring differential impacts across populations.
 - Existing automation anxiety literature focuses on job displacement, missing deeper mechanisms of exclusion.
 
-**Root Cause**: A fundamental tension exists between AGI's democratization promise (expert-level knowledge for all) and the actual trend of concentrated compute, proprietary models, and AI systems biased toward data-rich, formal-economy participants.
+**Key Challenge**: A fundamental tension exists between AGI's democratization promise (expert-level knowledge for all) and the actual trend of concentrated compute, proprietary models, and AI systems biased toward data-rich, formal-economy participants.
 
-**Paper Goals**: What does it mean for those underrepresented in data, weakly integrated into formal economies, and distant from centers of technological power, when scientific discovery, economic coordination, and governance decisions become increasingly automated?
+**Goal**: What does it mean for those underrepresented in data, weakly integrated into formal economies, and distant from centers of technological power, when scientific discovery, economic coordination, and governance decisions become increasingly automated?
 
-**Starting Point**: Rather than debating whether or when AGI will arrive, this paper treats AGI as a "stress test" of existing global inequalities—examining how highly autonomous AI systems interact with existing infrastructure, institutions, and geopolitical power structures.
+**Key Insight**: Rather than debating whether or when AGI will arrive, this paper treats AGI as a "stress test" of existing global inequalities—examining how highly autonomous AI systems interact with existing infrastructure, institutions, and geopolitical power structures.
 
 **Core Idea**: AI-driven economic systems optimize for measurable and verifiable entities, shifting the Global South's informal populations from being *exploited* to being *ignored*. Invisibility is harder to reverse than oppression.
 

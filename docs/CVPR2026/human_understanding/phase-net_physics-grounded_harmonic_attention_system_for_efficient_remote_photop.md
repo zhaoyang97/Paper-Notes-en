@@ -30,7 +30,7 @@ Starting from the Navier-Stokes equations, this work derives through rigorous ma
 
 ## Background & Motivation
 
-**State of the Field**: Remote photoplethysmography (rPPG) extracts physiological signals such as heart rate by capturing subtle changes in subcutaneous blood volume via ordinary cameras, and is a key technology for contactless physiological monitoring. Deep learning methods (PhysNet, PhysFormer, RhythmMamba, etc.) have become the dominant paradigm.
+**Background**: Remote photoplethysmography (rPPG) extracts physiological signals such as heart rate by capturing subtle changes in subcutaneous blood volume via ordinary cameras, and is a key technology for contactless physiological monitoring. Deep learning methods (PhysNet, PhysFormer, RhythmMamba, etc.) have become the dominant paradigm.
 
 **Limitations of Prior Work**:
 
@@ -38,11 +38,11 @@ Starting from the Navier-Stokes equations, this work derives through rigorous ma
 2. The lack of physical theoretical grounding means models may overfit dataset-specific noise patterns, resulting in poor cross-domain generalization.
 3. Artifacts from head motion and illumination changes are far stronger than genuine pulse signals, and "black-box" models cannot provide reliability guarantees.
 
-**Root Cause**: High-performance deep learning models vs. lack of physical interpretability and theoretical guarantees.
+**Key Challenge**: High-performance deep learning models vs. lack of physical interpretability and theoretical guarantees.
 
-**Paper Goals**: Can one design an rPPG model whose architecture directly embodies the physical laws governing the signal, starting from first principles?
+**Goal**: Can one design an rPPG model whose architecture directly embodies the physical laws governing the signal, starting from first principles?
 
-**Starting Point**: Derive blood flow pulse dynamics from the Navier-Stokes equations and rigorously prove that TCN is the physically correct architectural choice.
+**Key Insight**: Derive blood flow pulse dynamics from the Navier-Stokes equations and rigorously prove that TCN is the physically correct architectural choice.
 
 **Core Idea**: The physical dynamics of rPPG signals are equivalent to causal convolution; therefore, TCN is not a heuristic choice but a physical inevitability.
 

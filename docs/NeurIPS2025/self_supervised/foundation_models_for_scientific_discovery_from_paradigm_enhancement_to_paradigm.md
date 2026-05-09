@@ -29,15 +29,15 @@ This paper proposes a three-stage framework (meta-scientific integration → hyb
 
 ## Background & Motivation
 
-- **State of the Field**: Scientific discovery has historically undergone four major paradigm shifts — experiment-driven (16th–17th century), theory-driven (18th–19th century), computation-driven (mid-20th century), and data-driven (21st century). Foundation models (FMs) such as GPT-4, AlphaFold, and DeepSeek are now reshaping the scientific landscape.
+- **Background**: Scientific discovery has historically undergone four major paradigm shifts — experiment-driven (16th–17th century), theory-driven (18th–19th century), computation-driven (mid-20th century), and data-driven (21st century). Foundation models (FMs) such as GPT-4, AlphaFold, and DeepSeek are now reshaping the scientific landscape.
 
 - **Limitations of Prior Work**: Scientific problems increasingly exhibit emergent behavior, open-endedness, and irreducible complexity that challenge all four prior paradigms. The experimental paradigm is limited by the difficulty of directly manipulating large-scale or complex systems; the theoretical paradigm faces a growing gap between theoretical complexity and experimental testability; the computational paradigm relies on simplifying assumptions; and the data-driven paradigm struggles with causal inference and interpretability.
 
-- **Root Cause**: A fundamental tension exists as to whether FMs are merely powerful tools that accelerate existing scientific methodology or whether they are catalyzing an entirely new scientific paradigm. Proponents argue that FMs restructure the logic of discovery and lower barriers to entry; skeptics contend that FMs remain conventional tools at their core.
+- **Key Challenge**: A fundamental tension exists as to whether FMs are merely powerful tools that accelerate existing scientific methodology or whether they are catalyzing an entirely new scientific paradigm. Proponents argue that FMs restructure the logic of discovery and lower barriers to entry; skeptics contend that FMs remain conventional tools at their core.
 
-- **Paper Goals**: To clarify the positioning of FMs in scientific discovery and to propose a systematic framework for understanding how FMs evolve from tools to cognitive agents.
+- **Goal**: To clarify the positioning of FMs in scientific discovery and to propose a systematic framework for understanding how FMs evolve from tools to cognitive agents.
 
-- **Starting Point**: The authors adopt the lens of scientific paradigm evolution to construct a progressive three-stage framework.
+- **Key Insight**: The authors adopt the lens of scientific paradigm evolution to construct a progressive three-stage framework.
 
 - **Core Idea**: FMs are catalyzing a fifth-stage transition in scientific paradigms — from human-led discovery toward discovery in which machine intelligence participates or takes the lead.
 

@@ -30,11 +30,11 @@ By exploiting the sparsity of attention scores between the [CLS] token and visua
 
 ### Root Cause
 
-**State of the Field**: Large multimodal models (LMMs) such as LLaVA-1.5 feed hundreds of visual tokens (e.g., 576) as a prefix into the LLM, whose attention complexity scales quadratically with input length. With the adoption of high-resolution images and video, the number of visual tokens grows further (Video-LLaVA uses 2,048 tokens). Existing acceleration methods primarily compress the LLM itself (via smaller LLMs or quantization), yet overlook a critical fact: a large fraction of visual tokens is redundant.
+**Background**: Large multimodal models (LMMs) such as LLaVA-1.5 feed hundreds of visual tokens (e.g., 576) as a prefix into the LLM, whose attention complexity scales quadratically with input length. With the adoption of high-resolution images and video, the number of visual tokens grows further (Video-LLaVA uses 2,048 tokens). Existing acceleration methods primarily compress the LLM itself (via smaller LLMs or quantization), yet overlook a critical fact: a large fraction of visual tokens is redundant.
 
 ### Limitations of Prior Work
 
-**Paper Goals**: Can the number of visual tokens passed from the visual encoder to the LLM be substantially reduced without sacrificing LMM reasoning capability? The central challenge lies in determining which tokens are important and how to preserve useful information from pruned tokens.
+**Goal**: Can the number of visual tokens passed from the visual encoder to the LLM be substantially reduced without sacrificing LMM reasoning capability? The central challenge lies in determining which tokens are important and how to preserve useful information from pruned tokens.
 
 ## Method
 

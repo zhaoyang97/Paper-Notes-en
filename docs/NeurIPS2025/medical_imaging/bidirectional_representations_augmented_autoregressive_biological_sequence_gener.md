@@ -28,15 +28,15 @@ CrossNovo integrates autoregressive (AR) and non-autoregressive (NAR) decoders t
 
 ## Background & Motivation
 
-**State of the Field**: De novo peptide sequencing from mass spectrometry data is a core task in proteomics. AR models (e.g., ContraNovo) generate sequences step-by-step but lack a global view; NAR models (e.g., PrimeNovo) generate in parallel but suffer from training instability.
+**Background**: De novo peptide sequencing from mass spectrometry data is a core task in proteomics. AR models (e.g., ContraNovo) generate sequences step-by-step but lack a global view; NAR models (e.g., PrimeNovo) generate in parallel but suffer from training instability.
 
 **Limitations of Prior Work**: AR models are prone to errors when distinguishing amino acids with similar masses (e.g., I/L, K/Q), as each step only attends to local history; NAR models have bidirectional attention but produce incoherent sequences and exhibit unstable training.
 
-**Root Cause**: The causal dependency of AR ensures generation coherence but limits access to global information; the strong bidirectional understanding of NAR cannot guarantee sequence consistency.
+**Key Challenge**: The causal dependency of AR ensures generation coherence but limits access to global information; the strong bidirectional understanding of NAR cannot guarantee sequence consistency.
 
-**Paper Goals**: To introduce bidirectional representations from NAR to enhance the global understanding of AR, while preserving AR generation quality.
+**Goal**: To introduce bidirectional representations from NAR to enhance the global understanding of AR, while preserving AR generation quality.
 
-**Starting Point**: A shared encoder allows both decoders to learn complementary representations → NAR representations serve as additional context distilled into AR → gradient blocking prevents AR loss from corrupting NAR features.
+**Key Insight**: A shared encoder allows both decoders to learn complementary representations → NAR representations serve as additional context distilled into AR → gradient blocking prevents AR loss from corrupting NAR features.
 
 **Core Idea**: The NAR decoder provides bidirectional global representations, which are distilled into the AR decoder via gradient-blocked cross-decoder attention, combined with a shared mass spectrum encoder for hybrid sequence generation.
 

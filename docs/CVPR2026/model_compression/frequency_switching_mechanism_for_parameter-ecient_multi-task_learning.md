@@ -28,11 +28,11 @@ Free Sinewich proposes a parameter-efficient multi-task learning framework based
 
 ## Background & Motivation
 
-1. **State of the Field**: Multi-task learning (MTL) requires a single model to handle multiple tasks simultaneously. Parameter-efficient fine-tuning (PEFT) methods such as LoRA have succeeded in single-task adaptation. Recent PEFT-MTL approaches—including MTLoRA, DiTASK, and TADFormer—balance sharing and specialization through combinations of task-agnostic/task-specific adapters, SVD-based transformations, or dynamic task filters.
+1. **Background**: Multi-task learning (MTL) requires a single model to handle multiple tasks simultaneously. Parameter-efficient fine-tuning (PEFT) methods such as LoRA have succeeded in single-task adaptation. Recent PEFT-MTL approaches—including MTLoRA, DiTASK, and TADFormer—balance sharing and specialization through combinations of task-agnostic/task-specific adapters, SVD-based transformations, or dynamic task filters.
 2. **Limitations of Prior Work**: Although existing PEFT-MTL methods claim parameter sharing, they essentially route information through auxiliary adapters into separate pathways, forming "pseudo-sharing" in which each task still maintains an independent parameter set. The absence of genuine parameter reuse prevents the model from fully exploiting cross-task common knowledge, resulting in redundant computation and insufficient generalization.
-3. **Root Cause**: How can the same set of shared weights exhibit different behaviors across different tasks while preserving parameter efficiency?
-4. **Paper Goals**: Achieve true reuse of a single parameter set across multiple tasks, rather than assigning independent parameters to each task.
-5. **Starting Point**: Inspired by neuroscience—the thalamo-cortical system achieves selective communication through oscillatory multiplexing, whereby the same neural population executes different functions by switching oscillatory frequencies, effectively reusing the same "hardware." By analogy to deep networks: can task-specific functionality be achieved by switching the frequency response of the same weights?
+3. **Key Challenge**: How can the same set of shared weights exhibit different behaviors across different tasks while preserving parameter efficiency?
+4. **Goal**: Achieve true reuse of a single parameter set across multiple tasks, rather than assigning independent parameters to each task.
+5. **Key Insight**: Inspired by neuroscience—the thalamo-cortical system achieves selective communication through oscillatory multiplexing, whereby the same neural population executes different functions by switching oscillatory frequencies, effectively reusing the same "hardware." By analogy to deep networks: can task-specific functionality be achieved by switching the frequency response of the same weights?
 6. **Core Idea**: Apply a sinusoidal transformation parameterized by a task-specific frequency $\omega_t$ to a shared low-rank base matrix, so that the same parameters produce different task-specialized weights at different frequencies.
 
 ## Method

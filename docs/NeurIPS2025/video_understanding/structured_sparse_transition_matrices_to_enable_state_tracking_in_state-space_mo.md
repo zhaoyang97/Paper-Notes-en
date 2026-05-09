@@ -32,7 +32,7 @@ This paper proposes PD-SSM, a structured sparse parameterization for the state t
 
 ### Starting Point
 
-**Paper Goals**: The PD parameterization decomposes the transition matrix as $A(u_t) = P(u_t)D(u_t)$:
+**Goal**: The PD parameterization decomposes the transition matrix as $A(u_t) = P(u_t)D(u_t)$:
 
 - **P matrix** (column-wise one-hot binary matrix): Generated via soft selection over a learnable dictionary $\{M_k\}_{k=1}^K$ followed by column-wise hardmax.
 

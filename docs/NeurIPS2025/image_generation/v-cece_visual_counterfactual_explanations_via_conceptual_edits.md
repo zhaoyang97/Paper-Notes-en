@@ -29,15 +29,15 @@ V-CECE proposes the first black-box visual counterfactual explanation framework 
 
 ## Background & Motivation
 
-**State of the Field**: Counterfactual explanation is an important tool in explainable AI—revealing model decision rationale through the lens of "how would the classification change if X were modified?" Existing methods are divided into white-box (requiring gradient access) and black-box (requiring no internal access) approaches.
+**Background**: Counterfactual explanation is an important tool in explainable AI—revealing model decision rationale through the lens of "how would the classification change if X were modified?" Existing methods are divided into white-box (requiring gradient access) and black-box (requiring no internal access) approaches.
 
 **Limitations of Prior Work**: Existing counterfactual image generation methods suffer from three major issues: (1) edits are dispersed and uninterpretable (ACE, DiME, etc. produce pixel-level changes that humans cannot comprehend); (2) over-reliance on training to guide generation (white-box methods require days of training); (3) most critically, all semantic counterfactual methods assume classifiers reason at a human semantic level—an assumption that has never been validated.
 
-**Root Cause**: Do humans and neural network classifiers understand semantics in the same way? If not, using human-interpretable concept edits to explain CNN classification decisions is inherently misleading—more dangerous than uninterpretable adversarial edits, as it introduces a false sense of interpretability.
+**Key Challenge**: Do humans and neural network classifiers understand semantics in the same way? If not, using human-interpretable concept edits to explain CNN classification decisions is inherently misleading—more dangerous than uninterpretable adversarial edits, as it introduces a false sense of interpretability.
 
-**Paper Goals**: Two progressive questions: (1) Can the decision process of a classifier be explained using human-level semantics? (2) If so, what is the minimum set of semantic edits required to flip the classification label?
+**Goal**: Two progressive questions: (1) Can the decision process of a classifier be explained using human-level semantics? (2) If so, what is the minimum set of semantic edits required to flip the classification label?
 
-**Starting Point**: Decompose counterfactual explanation into two independent stages—first compute the optimal semantic edit set on a knowledge graph (model-agnostic), then execute edits using a frozen diffusion model (avoiding training bias), and finally verify effectiveness via classification outcomes.
+**Key Insight**: Decompose counterfactual explanation into two independent stages—first compute the optimal semantic edit set on a knowledge graph (model-agnostic), then execute edits using a frozen diffusion model (avoiding training bias), and finally verify effectiveness via classification outcomes.
 
 **Core Idea**: Use knowledge graphs to guarantee edit optimality and frozen diffusion models to ensure evaluation fairness, thereby systematically measuring the semantic understanding gap between humans and models.
 

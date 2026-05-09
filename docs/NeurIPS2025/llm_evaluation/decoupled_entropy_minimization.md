@@ -28,15 +28,15 @@ This paper decouples classical entropy minimization (EM) into two opposing compo
 
 ## Background & Motivation
 
-**State of the Field**: Entropy minimization (EM) is a widely adopted self-supervised optimization method in machine learning, which reduces class overlap and bridges domain gaps by minimizing the conditional entropy of model predictions. EM has been extensively applied in semi-supervised learning, clustering, domain adaptation, online learning, and reinforcement learning.
+**Background**: Entropy minimization (EM) is a widely adopted self-supervised optimization method in machine learning, which reduces class overlap and bridges domain gaps by minimizing the conditional entropy of model predictions. EM has been extensively applied in semi-supervised learning, clustering, domain adaptation, online learning, and reinforcement learning.
 
 **Limitations of Prior Work**: Despite its simplicity and generality, EM yields limited performance gains, and prior literature has noted that its potential is constrained. However, the internal mechanism of EM — specifically how it effectively optimizes model parameters in an unsupervised manner — has never been systematically analyzed.
 
-**Root Cause**: The conditional entropy objective of EM is highly coupled, containing two opposing effects whose coupled form prevents them from being optimized independently, leading to two critical problems.
+**Key Challenge**: The conditional entropy objective of EM is highly coupled, containing two opposing effects whose coupled form prevents them from being optimized independently, leading to two critical problems.
 
-**Paper Goals**: (1) Reveal the internal mechanism of EM; (2) Explain why EM's performance is limited; (3) Propose an improved EM variant that requires no hyperparameter tuning.
+**Goal**: (1) Reveal the internal mechanism of EM; (2) Explain why EM's performance is limited; (3) Propose an improved EM variant that requires no hyperparameter tuning.
 
-**Starting Point**: By rewriting the conditional entropy as $H(\mathbf{z}) = -\sum p_i z_i + \log\sum e^{z_i}$ and analyzing the gradient behavior of each term separately, the two terms are found to have completely opposing effects.
+**Key Insight**: By rewriting the conditional entropy as $H(\mathbf{z}) = -\sum p_i z_i + \log\sum e^{z_i}$ and analyzing the gradient behavior of each term separately, the two terms are found to have completely opposing effects.
 
 **Core Idea**: Decouple entropy minimization into a reward factor (CADF) and a penalty calibrator (GMC); eliminate reward collapse via normalized rewards and replace GMC with marginal entropy to eliminate easy-class bias, achieving hyperparameter-free adaptive EM.
 

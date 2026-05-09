@@ -29,16 +29,16 @@ This paper proposes DynaGuide, which applies classifier guidance to a frozen pre
 
 ## Background & Motivation
 
-**State of the Field**: Diffusion Policy has become a dominant paradigm for robot manipulation, capable of learning complex multimodal behaviors. However, how to flexibly adapt behavior at deployment time for specific scenarios—i.e., "policy steering"—remains an open problem.
+**Background**: Diffusion Policy has become a dominant paradigm for robot manipulation, capable of learning complex multimodal behaviors. However, how to flexibly adapt behavior at deployment time for specific scenarios—i.e., "policy steering"—remains an open problem.
 
 **Limitations of Prior Work**:
 - Goal-conditioned policies require anticipating all possible guidance distributions at training time and degrade severely when encountering out-of-distribution goals at inference time;
 - Sampling-based methods (e.g., GPC-Rank) draw multiple samples from the policy and select the best, but rely on the policy itself to generate goal-satisfying actions—making them ineffective for low-probability behaviors;
 - Fine-tuning the policy is costly and may destroy previously learned skills.
 
-**Root Cause**: How can a pretrained diffusion policy be flexibly steered toward arbitrary goals (including multi-objectives and negative goals) **without modifying** its weights?
+**Key Challenge**: How can a pretrained diffusion policy be flexibly steered toward arbitrary goals (including multi-objectives and negative goals) **without modifying** its weights?
 
-**Starting Point**: Drawing inspiration from classifier guidance in image generation—training an external dynamics model as a "classifier" that predicts the future visual outcome of an action sequence and uses gradient signals to directly modify actions during denoising.
+**Key Insight**: Drawing inspiration from classifier guidance in image generation—training an external dynamics model as a "classifier" that predicts the future visual outcome of an action sequence and uses gradient signals to directly modify actions during denoising.
 
 **Core Idea**: The external dynamics model answers "what will be seen after executing this action sequence," and gradients are used to pull the predicted future closer to desired goals and push it away from negative goals. The entire process only modifies the denoising direction at inference time; policy weights remain completely unchanged.
 

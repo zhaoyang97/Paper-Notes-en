@@ -31,7 +31,7 @@ This paper presents ProGait—the first multi-purpose video dataset targeting tr
 
 ### Root Cause
 
-**Root Cause**: **State of the Field**: Prosthetic legs are critical in clinical rehabilitation, and gait analysis is foundational for optimizing prosthesis design and alignment. Traditional gait analysis relies on specialized motion capture systems or wearable sensors, which are expensive, invasive, and confined to laboratory environments. Vision-based machine learning methods offer a scalable, non-invasive alternative; however, existing visual models perform poorly when detecting and analyzing prosthesis users—primarily because training data is sourced almost entirely from able-bodied populations, rendering these models unable to handle the unique appearance and motion patterns of prosthetic limbs.
+**Key Challenge**: **Background**: Prosthetic legs are critical in clinical rehabilitation, and gait analysis is foundational for optimizing prosthesis design and alignment. Traditional gait analysis relies on specialized motion capture systems or wearable sensors, which are expensive, invasive, and confined to laboratory environments. Vision-based machine learning methods offer a scalable, non-invasive alternative; however, existing visual models perform poorly when detecting and analyzing prosthesis users—primarily because training data is sourced almost entirely from able-bodied populations, rendering these models unable to handle the unique appearance and motion patterns of prosthetic limbs.
 
 The core motivation of this paper is: **to fill the data gap in visual analysis of prosthesis users and provide dedicated training and evaluation resources for visual models**.
 

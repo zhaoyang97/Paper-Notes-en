@@ -29,15 +29,15 @@ This paper proposes a unified sufficient condition connecting the $(L_0,L_1)$-sm
 
 ## Background & Motivation
 
-**State of the Field**: Classical gradient descent analysis relies on the Lipschitz smoothness assumption ($\|\nabla^2 f(x)\| \leq L$), under which GD is known to avoid strict saddle points. Nonlinear preconditioned gradient methods $x^{k+1} = x^k - \gamma \nabla\phi^*(\lambda \nabla f(x^k))$ provide a flexible optimization framework that subsumes gradient clipping.
+**Background**: Classical gradient descent analysis relies on the Lipschitz smoothness assumption ($\|\nabla^2 f(x)\| \leq L$), under which GD is known to avoid strict saddle points. Nonlinear preconditioned gradient methods $x^{k+1} = x^k - \gamma \nabla\phi^*(\lambda \nabla f(x^k))$ provide a flexible optimization framework that subsumes gradient clipping.
 
 **Limitations of Prior Work**: (a) The Lipschitz smoothness assumption **fails** in many practical problems (e.g., phase retrieval, matrix factorization), holding only locally on compact sets; (b) The $(L_0,L_1)$-smoothness assumption, while empirically reasonable for LSTMs and Transformers, lacks theoretical validation on concrete problems; (c) Anisotropic smoothness has been developed independently, with its structural relationship to $(L_0,L_1)$-smoothness left unexplored.
 
-**Root Cause**: Existing saddle-point escaping results rely on classical Lipschitz smoothness, whereas practical applications such as matrix factorization naturally violate this assumption, rendering the theoretical guarantees inapplicable.
+**Key Challenge**: Existing saddle-point escaping results rely on classical Lipschitz smoothness, whereas practical applications such as matrix factorization naturally violate this assumption, rendering the theoretical guarantees inapplicable.
 
-**Paper Goals**: (i) Under what conditions do practical problems satisfy generalized smoothness? (ii) Does nonlinear preconditioning retain saddle-point avoidance under relaxed conditions?
+**Goal**: (i) Under what conditions do practical problems satisfy generalized smoothness? (ii) Does nonlinear preconditioning retain saddle-point avoidance under relaxed conditions?
 
-**Starting Point**: A new sufficient condition (Assumption 2.8) is proposed—the Hessian norm is bounded above by a degree-$R$ polynomial in $\|x\|$, and the gradient norm is bounded below by a degree-$(R+1)$ polynomial—unifying the derivation of both generalized smoothness frameworks.
+**Key Insight**: A new sufficient condition (Assumption 2.8) is proposed—the Hessian norm is bounded above by a degree-$R$ polynomial in $\|x\|$, and the gradient norm is bounded below by a degree-$(R+1)$ polynomial—unifying the derivation of both generalized smoothness frameworks.
 
 **Core Idea**: When the gradient of the objective grows faster than the Hessian, $(L_0,L_1)$-smoothness and anisotropic smoothness hold automatically, and nonlinear preconditioning preserves saddle-point avoidance.
 

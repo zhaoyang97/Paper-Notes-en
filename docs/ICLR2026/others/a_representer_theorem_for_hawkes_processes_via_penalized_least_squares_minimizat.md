@@ -27,15 +27,15 @@ This paper establishes a novel representer theorem for estimating triggering ker
 
 ## Background & Motivation
 
-**State of the Field**: Kernel methods enable nonparametric function estimation via RKHS, and representer theorems reduce infinite-dimensional optimization to finite-dimensional problems. Recent work has extended kernel methods to intensity function estimation for point processes; Bonnet & Sangnier (2025) derived a representer theorem for Hawkes processes but relied on discretization approximations.
+**Background**: Kernel methods enable nonparametric function estimation via RKHS, and representer theorems reduce infinite-dimensional optimization to finite-dimensional problems. Recent work has extended kernel methods to intensity function estimation for point processes; Bonnet & Sangnier (2025) derived a representer theorem for Hawkes processes but relied on discretization approximations.
 
 **Limitations of Prior Work**: The approach of Bonnet & Sangnier requires solving a nonlinear optimization problem to obtain dual coefficients, whose dimensionality grows with the data size, making the method computationally infeasible at scale. Furthermore, it relies on discretized approximations of the likelihood/least-squares loss.
 
-**Root Cause**: The loss function for Hawkes processes involves integrals of the intensity over the observation domain and violates the independence assumptions underlying classical representer theorems. Exact variational analysis, in turn, leads to coupled systems of integral equations.
+**Key Challenge**: The loss function for Hawkes processes involves integrals of the intensity over the observation domain and violates the independence assumptions underlying classical representer theorems. Exact variational analysis, in turn, leads to coupled systems of integral equations.
 
-**Paper Goals**: To establish a representer theorem for an exact, non-approximate penalized least-squares formulation for linear Hawkes processes, enabling scalable nonparametric triggering kernel estimation.
+**Goal**: To establish a representer theorem for an exact, non-approximate penalized least-squares formulation for linear Hawkes processes, enabling scalable nonparametric triggering kernel estimation.
 
-**Starting Point**: Leveraging path-integral representations and variational analysis, the paper derives exact variational equations directly in the continuous domain, revealing that the quadratic structure of the least-squares loss causes all dual coefficients to be automatically equal to 1.
+**Key Insight**: Leveraging path-integral representations and variational analysis, the paper derives exact variational equations directly in the continuous domain, revealing that the quadratic structure of the least-squares loss causes all dual coefficients to be automatically equal to 1.
 
 **Core Idea**: The quadratic structure of the least-squares loss in RKHS causes all dual coefficients in the representer theorem for Hawkes processes to be analytically fixed at 1, eliminating the need for dual optimization.
 

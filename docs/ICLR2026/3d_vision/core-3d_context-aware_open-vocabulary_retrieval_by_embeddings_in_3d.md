@@ -28,18 +28,18 @@ This paper proposes CORE-3D, a training-free open-vocabulary 3D semantic segment
 
 ## Background & Motivation
 
-**State of the Field**: 3D scene understanding is a fundamental requirement for robotics and embodied AI. A dominant paradigm has emerged that combines vision-language models (VLMs) with 2D segmentation models, achieving zero-shot open-vocabulary 3D semantic mapping via back-projection into 3D space.
+**Background**: 3D scene understanding is a fundamental requirement for robotics and embodied AI. A dominant paradigm has emerged that combines vision-language models (VLMs) with 2D segmentation models, achieving zero-shot open-vocabulary 3D semantic mapping via back-projection into 3D space.
 
 **Limitations of Prior Work**:
 - 2D segmentation backbones such as SAM produce fragmented or incomplete masks in cluttered indoor scenes, leading to severe over-segmentation.
 - Applying CLIP encoding directly to individual cropped mask regions provides very limited semantic context, resulting in poor embedding quality.
 - When aggregating across multiple frames, the same object receives different contextual embeddings due to viewpoint variation, causing inconsistency.
 
-**Root Cause**: Existing foundation model pipelines, while training-free, suffer from insufficient segmentation quality and semantic embedding quality, making it difficult to construct coherent and reliable 3D semantic maps.
+**Key Challenge**: Existing foundation model pipelines, while training-free, suffer from insufficient segmentation quality and semantic embedding quality, making it difficult to construct coherent and reliable 3D semantic maps.
 
-**Paper Goals**: To simultaneously improve 2D segmentation quality, semantic embedding richness, and multi-view consistency without any training.
+**Goal**: To simultaneously improve 2D segmentation quality, semantic embedding richness, and multi-view consistency without any training.
 
-**Starting Point**: Leveraging the adjustable granularity of SemanticSAM for progressive refinement, combined with multiple contextual crop strategies to enhance CLIP encoding.
+**Key Insight**: Leveraging the adjustable granularity of SemanticSAM for progressive refinement, combined with multiple contextual crop strategies to enhance CLIP encoding.
 
 **Core Idea**: Construct high-quality zero-shot open-vocabulary 3D semantic maps via progressive granularity segmentation, multi-crop context-aware CLIP encoding, and 3D voxel merging.
 

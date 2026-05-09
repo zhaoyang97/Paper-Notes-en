@@ -29,7 +29,7 @@ This paper proposes the BaCa framework, which generates boundary-aware synthetic
 
 ## Background & Motivation
 
-**State of the Field**: Graph-level OOD detection aims to determine whether a test graph sample originates from a different distribution than the training data. Existing methods fall into two categories: end-to-end methods (training OOD-aware GNNs from scratch) and post-hoc methods (adding a detector on top of a trained GNN). Both rely on defining OOD scoring functions based on model outputs or latent features.
+**Background**: Graph-level OOD detection aims to determine whether a test graph sample originates from a different distribution than the training data. Existing methods fall into two categories: end-to-end methods (training OOD-aware GNNs from scratch) and post-hoc methods (adding a detector on top of a trained GNN). Both rely on defining OOD scoring functions based on model outputs or latent features.
 
 **Limitations of Prior Work**:
 - GNNs trained solely on in-distribution (ID) data struggle to identify OOD samples whose features lie close to the ID manifold (e.g., when sharing similar topological structures).
@@ -37,11 +37,11 @@ This paper proposes the BaCa framework, which generates boundary-aware synthetic
 - GOODAT introduces a test-time setting but requires optimizing a learnable graph masker at inference, limiting its stability.
 - The latent structure of graph data is governed by multiple factors, causing significant overlap between ID and OOD score distributions near the decision boundary.
 
-**Root Cause**: Pretrained GNNs lack the ability to model distribution boundaries, leading to severe ID/OOD score overlap, particularly on ambiguous samples near the boundary.
+**Key Challenge**: Pretrained GNNs lack the ability to model distribution boundaries, leading to severe ID/OOD score overlap, particularly on ambiguous samples near the boundary.
 
-**Paper Goals**: How to model the ID/OOD distribution boundary at test time—without modifying the pretrained model or introducing auxiliary OOD data—and effectively calibrate OOD scores?
+**Goal**: How to model the ID/OOD distribution boundary at test time—without modifying the pretrained model or introducing auxiliary OOD data—and effectively calibrate OOD scores?
 
-**Starting Point**: The intuition is straightforward: if a sample is more OOD than the most ID-like sample in the OOD distribution, it should be classified as OOD, and vice versa. The key therefore lies in accurately capturing the most discriminative sample representations near the boundary.
+**Key Insight**: The intuition is straightforward: if a sample is more OOD than the most ID-like sample in the OOD distribution, it should be classified as OOD, and vice versa. The key therefore lies in accurately capturing the most discriminative sample representations near the boundary.
 
 **Core Idea**: At test time, dynamically maintain two representation dictionaries (implemented as priority queues) for ID and OOD samples, continuously collecting the most representative features near the boundary. An attention mechanism is then used to adaptively calibrate OOD scores, while graphon estimation and mixup generate synthetic samples to enhance the diversity of boundary representations.
 

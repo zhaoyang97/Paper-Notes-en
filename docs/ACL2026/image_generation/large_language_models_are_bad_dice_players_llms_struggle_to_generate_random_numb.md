@@ -29,13 +29,13 @@ This paper presents the first large-scale systematic audit of the native samplin
 
 ## Background & Motivation
 
-**State of the Field**: LLMs are evolving from conversational interfaces into core components of complex application pipelines, including synthetic data generation, agent-based simulation, educational material construction, and text-to-image prompt synthesis. These scenarios increasingly require LLMs to faithfully sample from specified probability distributions.
+**Background**: LLMs are evolving from conversational interfaces into core components of complex application pipelines, including synthetic data generation, agent-based simulation, educational material construction, and text-to-image prompt synthesis. These scenarios increasingly require LLMs to faithfully sample from specified probability distributions.
 
 **Limitations of Prior Work**: Existing studies have sporadically identified biases in simple random generation tasks—such as preferences for "lucky numbers" and coin-flip biases—but remain limited to small sample sizes ($N=100$), few distributions (5 types), and a single sampling protocol, making it impossible to comprehensively evaluate the native sampling capability of LLMs. Current practice relies on external libraries (e.g., `numpy.random`) to generate distribution-conforming data, a workaround that implicitly acknowledges the absence of this capability in LLMs.
 
-**Root Cause**: If LLMs pursuing general intelligence cannot faithfully sample from basic probability distributions, they will introduce uncontrollable systematic bias into downstream applications requiring statistical guarantees. Yet no large-scale, statistically valid benchmark exists to verify this hypothesis.
+**Key Challenge**: If LLMs pursuing general intelligence cannot faithfully sample from basic probability distributions, they will introduce uncontrollable systematic bias into downstream applications requiring statistical guarantees. Yet no large-scale, statistically valid benchmark exists to verify this hypothesis.
 
-**Paper Goals**: To conduct the first large-scale probabilistic sampling audit of frontier LLMs. **Starting Point**: A dual-protocol experimental framework (batch vs. independent) is designed to disentangle distinct failure modes. **Core Idea**: LLMs lack a functional internal sampler; batch generation works marginally through context dependence, while independent requests result in near-complete failure.
+**Goal**: To conduct the first large-scale probabilistic sampling audit of frontier LLMs. **Key Insight**: A dual-protocol experimental framework (batch vs. independent) is designed to disentangle distinct failure modes. **Core Idea**: LLMs lack a functional internal sampler; batch generation works marginally through context dependence, while independent requests result in near-complete failure.
 
 ## Method
 

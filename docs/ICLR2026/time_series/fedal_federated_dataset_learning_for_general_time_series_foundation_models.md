@@ -29,15 +29,15 @@ This paper proposes FeDaL, a federated framework that trains a general time seri
 
 ## Background & Motivation
 
-**State of the Field**: Time series foundation models (TSFMs) such as Moirai, Chronos, and Time-MoE acquire transferable representations through large-scale multi-domain pretraining, yet still rely on centralized data access and are typically tailored to specific tasks (e.g., forecasting). Time Series Pattern Machines (TSPMs) pursue architecture-level generality but are trained per dataset, limiting zero-shot generalization.
+**Background**: Time series foundation models (TSFMs) such as Moirai, Chronos, and Time-MoE acquire transferable representations through large-scale multi-domain pretraining, yet still rely on centralized data access and are typically tailored to specific tasks (e.g., forecasting). Time Series Pattern Machines (TSPMs) pursue architecture-level generality but are trained per dataset, limiting zero-shot generalization.
 
 **Limitations of Prior Work**: FFTS, a pioneer in the federated foundation model (FFM) direction, addresses only coarse-grained domain-level heterogeneity (e.g., climate vs. healthcare), ignores intra-dataset structural biases, and does not support zero-shot inference—and thus cannot be considered a true foundation model.
 
-**Root Cause**: Time series data are inherently siloed and heterogeneous, yet federated aggregation assumes client updates are unbiased estimates of the global gradient. This assumption breaks down under severe dataset heterogeneity, causing the aggregated global model to be dominated by bias. The paper systematically identifies three dataset-level biases: *temporal resolution bias* (different sampling rates under identical window lengths lead to unequal information density), *physical constraint bias* (differing physical laws reduce cross-domain transferability), and *pattern shift bias* (exogenous events cause initially similar trends to diverge, which is amplified during aggregation).
+**Key Challenge**: Time series data are inherently siloed and heterogeneous, yet federated aggregation assumes client updates are unbiased estimates of the global gradient. This assumption breaks down under severe dataset heterogeneity, causing the aggregated global model to be dominated by bias. The paper systematically identifies three dataset-level biases: *temporal resolution bias* (different sampling rates under identical window lengths lead to unequal information density), *physical constraint bias* (differing physical laws reduce cross-domain transferability), and *pattern shift bias* (exogenous events cause initially similar trends to diverge, which is amplified during aggregation).
 
-**Paper Goals**: To train a general TSFM from scratch under federated constraints that supports zero-shot inference across multiple downstream tasks while handling dataset-level heterogeneity.
+**Goal**: To train a general TSFM from scratch under federated constraints that supports zero-shot inference across multiple downstream tasks while handling dataset-level heterogeneity.
 
-**Starting Point**: The distributed architecture of federated learning is itself a natural mechanism for decomposing heterogeneity—local biases are eliminated via DBE at the client side, and global representations are aligned via GBE at the server side.
+**Key Insight**: The distributed architecture of federated learning is itself a natural mechanism for decomposing heterogeneity—local biases are eliminated via DBE at the client side, and global representations are aligned via GBE at the server side.
 
 **Core Idea**: Reframe federated learning from a "privacy-preservation tool" to a "heterogeneity decomposition paradigm," producing domain-invariant time series representations through a dual DBE+GBE mechanism.
 

@@ -27,15 +27,15 @@ content_hash: 33e7a275f3dcf1e1
 This paper is the first to formally define the Text-guided Multi-human Motion Editing (TMME) task. It constructs the InterEdit3D dataset containing 5,161 source–target–instruction triplets and proposes the InterEdit conditional diffusion model. The model captures high-level editing intent via semantic-aware planning token alignment and models periodic interaction dynamics via interaction-aware frequency-domain token alignment, achieving state-of-the-art performance on instruction following (g2t R@1 30.82%) and source preservation (g2s R@1 17.08%), outperforming all four baselines across the board.
 
 ## Background & Motivation
-**State of the Field**: Text-guided 3D motion editing has achieved notable progress in single-person scenarios (MotionFix, MotionLab), but multi-human interaction motion editing remains almost entirely unexplored. Many real-world activities inherently involve multi-person interaction—collaboration, competition, physical contact—requiring the coordinated participation of multiple agents.
+**Background**: Text-guided 3D motion editing has achieved notable progress in single-person scenarios (MotionFix, MotionLab), but multi-human interaction motion editing remains almost entirely unexplored. Many real-world activities inherently involve multi-person interaction—collaboration, competition, physical contact—requiring the coordinated participation of multiple agents.
 
 **Limitations of Prior Work**: (1) Paired data for multi-human motion editing (source motion–target motion–editing instruction triplets) are lacking; (2) naively concatenating dual-person features in single-human editing methods disrupts interaction consistency (MotionFix g2t R@1 only 3.86%); (3) multi-human generation methods lack an explicit mechanism to disentangle "what to change" from "what to preserve," leading to global drift.
 
-**Root Cause**: Multi-human motion editing must simultaneously satisfy "precisely executing editing instructions" and "preserving unedited parts along with spatiotemporal coupling consistency"—even a minor modification to one person can break synchronization, spatial consistency, or contact timing.
+**Key Challenge**: Multi-human motion editing must simultaneously satisfy "precisely executing editing instructions" and "preserving unedited parts along with spatiotemporal coupling consistency"—even a minor modification to one person can break synchronization, spatial consistency, or contact timing.
 
-**Paper Goals**: Given a two-person source motion and a text editing instruction, generate a target multi-human motion that modifies only the relevant parts according to the instruction while preserving unedited content and interpersonal interaction consistency.
+**Goal**: Given a two-person source motion and a text editing instruction, generate a target multi-human motion that modifies only the relevant parts according to the instruction while preserving unedited content and interpersonal interaction consistency.
 
-**Starting Point**: The editing process is constrained from two complementary dimensions—semantic (planning tokens + motion teacher contrastive learning) and frequency (DCT band energy descriptors).
+**Key Insight**: The editing process is constrained from two complementary dimensions—semantic (planning tokens + motion teacher contrastive learning) and frequency (DCT band energy descriptors).
 
 **Core Idea**: Learnable semantic planning tokens guide "what to change," while DCT frequency-domain tokens constrain "how interaction rhythm is maintained." The two mechanisms work synergistically to ensure editing precision and interaction consistency.
 

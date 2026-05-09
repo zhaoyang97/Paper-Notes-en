@@ -29,15 +29,15 @@ This paper proposes a video toolkit comprising 22 tools and the STAR (Spatiotemp
 
 ## Background & Motivation
 
-**State of the Field**: Video Question Answering (VideoQA) is a critical benchmark for evaluating a model's ability to understand dynamic scenes. Existing approaches fall into two categories: Video-LLMs (e.g., Qwen-VL), which directly process large numbers of frames at high computational redundancy, and tool-augmented LLMs (e.g., DoraemonGPT), which incorporate external tools to assist reasoning.
+**Background**: Video Question Answering (VideoQA) is a critical benchmark for evaluating a model's ability to understand dynamic scenes. Existing approaches fall into two categories: Video-LLMs (e.g., Qwen-VL), which directly process large numbers of frames at high computational redundancy, and tool-augmented LLMs (e.g., DoraemonGPT), which incorporate external tools to assist reasoning.
 
 **Limitations of Prior Work**: Existing tool-augmented methods suffer from three fundamental deficiencies: (1) *unidimensional tooling*—tools focus exclusively on either the temporal or spatial dimension, failing to jointly model intra-frame spatial relationships and inter-frame temporal causality; (2) *imbalanced tool quantity and diversity*—naively stacking tools leads to disordered LLM invocation; (3) *insufficient scheduling strategies*—the absence of effective scheduling mechanisms causes *Toolchain Shortcuts*, whereby the LLM bypasses step-by-step reasoning and directly invokes a general-purpose tool to answer.
 
-**Root Cause**: Progressive refinement is simultaneously required along both the temporal and spatial dimensions, yet unconstrained tool scheduling induces the LLM to take shortcuts.
+**Key Challenge**: Progressive refinement is simultaneously required along both the temporal and spatial dimensions, yet unconstrained tool scheduling induces the LLM to take shortcuts.
 
-**Paper Goals**: To construct a comprehensive video toolkit and design an effective spatiotemporal alternating scheduling strategy that resolves the Toolchain Shortcut problem.
+**Goal**: To construct a comprehensive video toolkit and design an effective spatiotemporal alternating scheduling strategy that resolves the Toolchain Shortcut problem.
 
-**Starting Point**: Inspired by Chain-of-Thought (CoT) reasoning, video understanding is decomposed into alternating iterations of temporal localization and spatial analysis.
+**Key Insight**: Inspired by Chain-of-Thought (CoT) reasoning, video understanding is decomposed into alternating iterations of temporal localization and spatial analysis.
 
 **Core Idea**: Temporal and spatial tools are invoked alternately to progressively narrow the spatiotemporal search space toward a 3D RoI—analogous to System 2 thinking applied to visual reasoning.
 

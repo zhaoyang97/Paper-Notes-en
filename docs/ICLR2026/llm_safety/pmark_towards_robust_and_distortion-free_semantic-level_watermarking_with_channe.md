@@ -28,18 +28,18 @@ PMark is a theoretically distortion-free and paraphrase-robust semantic-level wa
 
 ## Background & Motivation
 
-**State of the Field**: LLM watermarking falls into two categories: token-level (e.g., Green-Red watermarking) and semantic-level (SWM). SWM embeds watermark signals in the sentence semantic space to improve robustness against paraphrase attacks.
+**Background**: LLM watermarking falls into two categories: token-level (e.g., Green-Red watermarking) and semantic-level (SWM). SWM embeds watermark signals in the sentence semantic space to improve robustness against paraphrase attacks.
 
 **Limitations of Prior Work**:
    - Existing SWM methods (SemStamp/k-SemStamp) rely on rejection sampling, introducing distributional distortion.
    - Single-channel watermarks have sparse evidence density, making them easy to break under paraphrase attacks.
    - No rigorous theoretical framework exists for analyzing watermark properties (distortion-free conditions, robustness bounds).
 
-**Root Cause**: A fundamental trade-off between distortion-freeness (preserving generation quality) and robustness (resisting paraphrase attacks).
+**Key Challenge**: A fundamental trade-off between distortion-freeness (preserving generation quality) and robustness (resisting paraphrase attacks).
 
-**Paper Goals**: Simultaneously achieve theoretical distortion-free guarantees and strong practical robustness against paraphrase attacks.
+**Goal**: Simultaneously achieve theoretical distortion-free guarantees and strong practical robustness against paraphrase attacks.
 
-**Starting Point**: Multi-channel orthogonal pivot vectors — each sentence embeds multiple independent watermark bits, multiplying evidence density.
+**Key Insight**: Multi-channel orthogonal pivot vectors — each sentence embeds multiple independent watermark bits, multiplying evidence density.
 
 **Core Idea**: Distortion-free median sampling + cascaded multi-orthogonal-channel filtering = high-density watermark evidence → robustness.
 

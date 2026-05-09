@@ -28,15 +28,15 @@ This paper proposes BAGEL, a Bayesian active learning framework based on Gaussia
 
 ## Background & Motivation
 
-**State of the Field**: LLMs exhibit strong zero-shot relevance modeling capabilities, but their high computational cost renders passage retrieval a budget-constrained global optimization problem. The dominant paradigm employs LLM re-ranking: a dense retriever first retrieves top-$K$ candidates, which are then re-ranked by an LLM.
+**Background**: LLMs exhibit strong zero-shot relevance modeling capabilities, but their high computational cost renders passage retrieval a budget-constrained global optimization problem. The dominant paradigm employs LLM re-ranking: a dense retriever first retrieves top-$K$ candidates, which are then re-ranked by an LLM.
 
 **Limitations of Prior Work**: (1) Relevant passages are often distributed across multiple disjoint clusters in the semantic space, yet dense retrievers only retrieve neighbors near the query embedding, failing to discover distant relevant clusters. (2) Existing methods cannot propagate relevance signals from already-scored passages to unseen ones, thereby ignoring the semantic structure of the embedding space.
 
-**Root Cause**: Exploring the entire embedding space under a limited LLM inference budget is necessary, yet conventional methods passively rely on a single-stage retriever and are incapable of global exploration.
+**Key Challenge**: Exploring the entire embedding space under a limited LLM inference budget is necessary, yet conventional methods passively rely on a single-stage retriever and are incapable of global exploration.
 
-**Paper Goals**: To leverage GP's kernel-based relevance propagation and uncertainty estimation to actively navigate the embedding space and discover multimodal relevance distributions.
+**Goal**: To leverage GP's kernel-based relevance propagation and uncertainty estimation to actively navigate the embedding space and discover multimodal relevance distributions.
 
-**Starting Point**: Passage retrieval is formulated as a Bayesian optimization problem, where the GP provides predictive mean and uncertainty, and an acquisition function balances exploration and exploitation.
+**Key Insight**: Passage retrieval is formulated as a Bayesian optimization problem, where the GP provides predictive mean and uncertainty, and an acquisition function balances exploration and exploitation.
 
 **Core Idea**: GPs are naturally suited to this task—the kernel function propagates relevance signals, and the posterior variance guides active learning toward uncertain regions.
 

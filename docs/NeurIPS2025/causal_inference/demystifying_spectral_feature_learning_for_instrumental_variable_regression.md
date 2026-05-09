@@ -29,15 +29,15 @@ This paper establishes rigorous generalization error bounds for spectral feature
 
 ## Background & Motivation
 
-**State of the Field**: Nonparametric instrumental variable (NPIV) regression is a central method for causal effect estimation in the presence of hidden confounders. The classical approach is two-stage least squares (2SLS): first regress the treatment variable $X$ on features of the instrument $Z$, then regress the outcome $Y$ on the predicted features. In recent years, spectral feature methods—using the top $d$ singular functions of the conditional expectation operator $\mathcal{T}$ as features—have demonstrated strong empirical performance, yet lack theoretical understanding.
+**Background**: Nonparametric instrumental variable (NPIV) regression is a central method for causal effect estimation in the presence of hidden confounders. The classical approach is two-stage least squares (2SLS): first regress the treatment variable $X$ on features of the instrument $Z$, then regress the outcome $Y$ on the predicted features. In recent years, spectral feature methods—using the top $d$ singular functions of the conditional expectation operator $\mathcal{T}$ as features—have demonstrated strong empirical performance, yet lack theoretical understanding.
 
 **Limitations of Prior Work**: (1) The spectral contrastive learning approach of [Xu et al.] performs well empirically, but its theoretical justification rests on an overly strong assumption (that the joint density admits an exact finite-rank decomposition) whose practical implications are unclear. (2) There is no systematic theoretical analysis of when spectral feature methods succeed or fail. (3) Practitioners have no principled way to determine whether spectral features or alternative methods are appropriate for a given problem.
 
-**Root Cause**: Spectral features minimize sieve ill-posedness (i.e., $\tau_{\varphi,d} = \sigma_d^{-1}$, which is optimal over all $d$-dimensional subspaces), but the structural function $h_0$ need not lie predominantly in the top eigenspace of $\mathcal{T}$. If $h_0$ is "misaligned" with the top $d$ singular functions, approximation error can be large, rendering the minimized estimation error insufficient.
+**Key Challenge**: Spectral features minimize sieve ill-posedness (i.e., $\tau_{\varphi,d} = \sigma_d^{-1}$, which is optimal over all $d$-dimensional subspaces), but the structural function $h_0$ need not lie predominantly in the top eigenspace of $\mathcal{T}$. If $h_0$ is "misaligned" with the top $d$ singular functions, approximation error can be large, rendering the minimized estimation error insufficient.
 
-**Paper Goals**: (1) Derive rigorous generalization error bounds for spectral feature 2SLS; (2) Identify the key factors governing performance; (3) Provide diagnostic tools that can be estimated from data.
+**Goal**: (1) Derive rigorous generalization error bounds for spectral feature 2SLS; (2) Identify the key factors governing performance; (3) Provide diagnostic tools that can be estimated from data.
 
-**Starting Point**: Starting from the classical sieve 2SLS generalization bounds of Blundell & Chen et al., the paper specializes these bounds to the spectral feature setting and exploits the exact structure of the singular value decomposition to derive tighter results.
+**Key Insight**: Starting from the classical sieve 2SLS generalization bounds of Blundell & Chen et al., the paper specializes these bounds to the spectral feature setting and exploits the exact structure of the singular value decomposition to derive tighter results.
 
 **Core Idea**: The utility of spectral features is determined by two measurable quantities—spectral alignment and singular value decay rate—corresponding to the Good, Bad, and Ugly regimes.
 

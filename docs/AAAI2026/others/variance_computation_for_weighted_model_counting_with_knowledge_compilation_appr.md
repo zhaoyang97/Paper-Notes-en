@@ -28,15 +28,15 @@ This paper treats the weights in weighted model counting (WMC) as random variabl
 
 ## Background & Motivation
 
-**State of the Field**: Knowledge compilation is a core technique for converting propositional formulas into compact and tractable representations. The most important query in this setting is weighted model counting (WMC)—computing the weighted sum over all satisfying assignments of a Boolean function. WMC has been widely applied to probabilistic inference tasks including Bayesian networks, factor graphs, and probabilistic programming.
+**Background**: Knowledge compilation is a core technique for converting propositional formulas into compact and tractable representations. The most important query in this setting is weighted model counting (WMC)—computing the weighted sum over all satisfying assignments of a Boolean function. WMC has been widely applied to probabilistic inference tasks including Bayesian networks, factor graphs, and probabilistic programming.
 
 **Limitations of Prior Work**: In practice, parameters of probabilistic models are typically learned from data, and when training data is insufficient, the parameters themselves carry uncertainty. However, conventional WMC inference treats weights as fixed real numbers and entirely ignores parameter uncertainty, making inference results potentially unreliable—there is no way to assess how much the output may fluctuate.
 
-**Root Cause**: Bayesian statistics can measure uncertainty by assigning distributions to parameters, treating inference results as random variables, and computing their variance. However, the tractability of WMC variance computation across knowledge compilation representations has been almost entirely unknown. Prior to this work, only Nakamura et al. (2022) addressed a special case on OBDDs for network reliability analysis.
+**Key Challenge**: Bayesian statistics can measure uncertainty by assigning distributions to parameters, treating inference results as random variables, and computing their variance. However, the tractability of WMC variance computation across knowledge compilation representations has been almost entirely unknown. Prior to this work, only Nakamura et al. (2022) addressed a special case on OBDDs for network reliability analysis.
 
-**Paper Goals**: (a) Can WMC variance be computed in polynomial time on more general knowledge compilation representations? (b) On which representations does this problem become intractable? (c) How can variance computation be applied to Bayesian network inference for uncertainty quantification?
+**Goal**: (a) Can WMC variance be computed in polynomial time on more general knowledge compilation representations? (b) On which representations does this problem become intractable? (c) How can variance computation be applied to Bayesian network inference for uncertainty quantification?
 
-**Starting Point**: The authors systematically investigate the tractability boundaries of the VC (variance computation) and CVC (covariance computation) queries across various NNF subclasses from the perspective of the knowledge compilation map.
+**Key Insight**: The authors systematically investigate the tractability boundaries of the VC (variance computation) and CVC (covariance computation) queries across various NNF subclasses from the perspective of the knowledge compilation map.
 
 **Core Idea**: By leveraging the variable decomposition structure induced by a vtree, the paper derives a recursive decomposition of the covariance formula with memoization, achieving polynomial-time WMC variance computation on structured d-DNNF. Intractability on less constrained representations is established via reductions.
 

@@ -28,15 +28,15 @@ DrivingGen introduces the first comprehensive benchmark for autonomous driving v
 
 ## Background & Motivation
 
-**State of the Field**: Video generative models as world models are rapidly advancing in autonomous driving, serving future scene prediction, scalable simulation, and synthetic data generation. Both general-purpose models (Kling, Sora, etc.) and driving-specific models (Vista, GEM, etc.) are iterating quickly.
+**Background**: Video generative models as world models are rapidly advancing in autonomous driving, serving future scene prediction, scalable simulation, and synthetic data generation. Both general-purpose models (Kling, Sora, etc.) and driving-specific models (Vista, GEM, etc.) are iterating quickly.
 
 **Limitations of Prior Work**: Existing evaluations suffer from four critical deficiencies: (a) general video metrics (FVD) overlook driving-specific imaging artifacts (e.g., PWM flickering); (b) the physical plausibility of trajectories is rarely quantified; (c) temporal consistency evaluation ignores agent-level anomalies (e.g., vehicles vanishing abruptly); (d) trajectory controllability is almost never assessed.
 
-**Root Cause**: Existing datasets are heavily biased toward clear/daytime/single-city scenarios (nuScenes >80% clear daytime), making it impossible to evaluate model robustness under diverse real-world conditions. The absence of a unified benchmark renders cross-method comparisons unfair.
+**Key Challenge**: Existing datasets are heavily biased toward clear/daytime/single-city scenarios (nuScenes >80% clear daytime), making it impossible to evaluate model robustness under diverse real-world conditions. The absence of a unified benchmark renders cross-method comparisons unfair.
 
-**Paper Goals**: Establish a unified evaluation framework covering data diversity, visual quality, physical plausibility, temporal consistency, and controllability.
+**Goal**: Establish a unified evaluation framework covering data diversity, visual quality, physical plausibility, temporal consistency, and controllability.
 
-**Starting Point**: Evaluate from both a visual perspective and a robotics perspective — visually appealing generation is insufficient; the underlying trajectory must also be physically plausible.
+**Key Insight**: Evaluate from both a visual perspective and a robotics perspective — visually appealing generation is insufficient; the underlying trajectory must also be physically plausible.
 
 **Core Idea**: The first benchmark to comprehensively evaluate driving video world models across four dimensions from both visual and robotics perspectives.
 

@@ -28,15 +28,15 @@ To address the unavailability of holo protein structures in real-world drug disc
 
 ## Background & Motivation
 
-**State of the Field**: Structure-based virtual screening (SBVS) is a core step in drug discovery, identifying potentially active molecules from large compound libraries by evaluating the complementarity between compounds and protein pockets. Existing methods (Glide docking, DrugCLIP, etc.) all rely on holo protein structures (structures with known ligand binding).
+**Background**: Structure-based virtual screening (SBVS) is a core step in drug discovery, identifying potentially active molecules from large compound libraries by evaluating the complementarity between compounds and protein pockets. Existing methods (Glide docking, DrugCLIP, etc.) all rely on holo protein structures (structures with known ligand binding).
 
 **Limitations of Prior Work**: (a) Most valuable targets lack holo structures and are available only in apo (ligand-free) or AlphaFold2-predicted forms; (b) existing methods suffer a dramatic performance drop on apo/predicted structures; (c) the critical bottleneck is not structural deformation but **inaccurate binding site localization**.
 
-**Root Cause**: Deep learning methods such as DrugCLIP are robust to structural noise but highly sensitive to pocket localization. Cavities detected by geometric tools (e.g., Fpocket) often deviate substantially from true binding sites.
+**Key Challenge**: Deep learning methods such as DrugCLIP are robust to structural noise but highly sensitive to pocket localization. Cavities detected by geometric tools (e.g., Fpocket) often deviate substantially from true binding sites.
 
-**Paper Goals**: How to perform accurate virtual screening without prior knowledge of the ligand binding location?
+**Goal**: How to perform accurate virtual screening without prior knowledge of the ligand binding location?
 
-**Starting Point**: Geometrically detected cavities serve as "noisy proxies" of holo pockets—learning to align the representations of both.
+**Key Insight**: Geometrically detected cavities serve as "noisy proxies" of holo pockets—learning to align the representations of both.
 
 **Core Idea**: Tri-modal alignment (ligand–holo pocket–cavity) combined with cross-attention aggregation of candidate sites, enabling accurate screening even when the binding site is unknown.
 

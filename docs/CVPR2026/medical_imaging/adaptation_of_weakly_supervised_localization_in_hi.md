@@ -29,7 +29,7 @@ This paper proposes SFDA-DeP, a source-free domain adaptation (SFDA) framework i
 
 ## Background & Motivation
 
-**State of the Field**: Deep WSOL models have achieved successful simultaneous classification and ROI localization in pathology images using only image-level labels (e.g., NEGEV, PixelCAM, SAT). However, when deployed across domains (different organs, centers, or staining/scanning protocols), distribution shift causes severe performance degradation.
+**Background**: Deep WSOL models have achieved successful simultaneous classification and ROI localization in pathology images using only image-level labels (e.g., NEGEV, PixelCAM, SAT). However, when deployed across domains (different organs, centers, or staining/scanning protocols), distribution shift causes severe performance degradation.
 
 **Limitations of Prior Work**:
 
@@ -37,11 +37,11 @@ This paper proposes SFDA-DeP, a source-free domain adaptation (SFDA) framework i
 2. Conventional SFDA methods (SFDA-DE, ERL, CDCL) rely on self-training and implicitly assume the source classifier retains sufficient discriminability on the target domain — an assumption that breaks down under severe domain shift.
 3. Biased pseudo-labels are iteratively reinforced rather than corrected during self-training, causing a bias amplification effect that degrades both classification and localization.
 
-**Root Cause**: The self-training mechanism of SFDA is precisely what amplifies WSOL prediction bias — the more training, the greater the bias.
+**Key Challenge**: The self-training mechanism of SFDA is precisely what amplifies WSOL prediction bias — the more training, the greater the bias.
 
-**Paper Goals**: To correct class prediction imbalance caused by domain shift and simultaneously recover localization discriminability, without access to source data.
+**Goal**: To correct class prediction imbalance caused by domain shift and simultaneously recover localization discriminability, without access to source data.
 
-**Starting Point**: Drawing on the concept of machine unlearning — not to "forget" a class, but to make the model "unlearn" its biased decision boundary and establish a new, balanced one.
+**Key Insight**: Drawing on the concept of machine unlearning — not to "forget" a class, but to make the model "unlearn" its biased decision boundary and establish a new, balanced one.
 
 **Core Idea**: Apply a "forgetting" loss to high-entropy samples in the dominant class to shift the decision boundary, while retaining low-entropy samples to maintain stable predictions.
 

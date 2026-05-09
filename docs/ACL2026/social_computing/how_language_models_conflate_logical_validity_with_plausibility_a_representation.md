@@ -28,15 +28,15 @@ Through representational analysis, this work reveals that the concepts of "logic
 
 ## Background & Motivation
 
-**State of the Field**: Humans exhibit "content effects" in logical tasks such as syllogistic reasoning—the plausibility of semantic content influences judgments of logical validity (e.g., invalid arguments with plausible conclusions are easily misjudged as valid). This human phenomenon is explained by dual-process theory (fast intuitive system vs. slow analytical system). Recent studies have found that LLMs also exhibit similar content effects.
+**Background**: Humans exhibit "content effects" in logical tasks such as syllogistic reasoning—the plausibility of semantic content influences judgments of logical validity (e.g., invalid arguments with plausible conclusions are easily misjudged as valid). This human phenomenon is explained by dual-process theory (fast intuitive system vs. slow analytical system). Recent studies have found that LLMs also exhibit similar content effects.
 
 **Limitations of Prior Work**: While content effect behaviors in LLMs have been well-documented, their underlying mechanisms remain unclear. Existing research has remained at the behavioral level of observation, lacking deep analysis of LLM internal representations.
 
-**Root Cause**: Logical validity depends on argument structure rather than content, but LLMs may entangle these two conceptually independent notions in their representation space.
+**Key Challenge**: Logical validity depends on argument structure rather than content, but LLMs may entangle these two conceptually independent notions in their representation space.
 
-**Paper Goals**: (1) Verify whether LLMs exhibit content effects; (2) Analyze how validity and plausibility are encoded in internal representations; (3) Explore whether representational entanglement predicts behavioral content effects; (4) Design interventions to decouple these two concepts.
+**Goal**: (1) Verify whether LLMs exhibit content effects; (2) Analyze how validity and plausibility are encoded in internal representations; (3) Explore whether representational entanglement predicts behavioral content effects; (4) Design interventions to decouple these two concepts.
 
-**Starting Point**: Based on the linear representation hypothesis—high-level concepts are linearly encoded in LLM hidden layer spaces—examine whether the linear directions for validity and plausibility are highly similar.
+**Key Insight**: Based on the linear representation hypothesis—high-level concepts are linearly encoded in LLM hidden layer spaces—examine whether the linear directions for validity and plausibility are highly similar.
 
 **Core Idea**: The root cause of content effects in LLMs is the entangled alignment of validity and plausibility directions in representational geometry, which can be decoupled by constructing debiasing steering vectors.
 

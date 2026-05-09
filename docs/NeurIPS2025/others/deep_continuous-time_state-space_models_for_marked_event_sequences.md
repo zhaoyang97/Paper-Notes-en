@@ -27,16 +27,16 @@ S2P2 unifies linear Hawkes processes with deep state space models by stacking mu
 
 ## Background & Motivation
 
-**State of the Field**: Marked Temporal Point Processes (MTPPs) model irregular event sequences with applications in e-commerce, healthcare, and finance. RNN-based methods incur $O(N)$ sequential computation; Transformer-based methods scale as $O(N^2)$.
+**Background**: Marked Temporal Point Processes (MTPPs) model irregular event sequences with applications in e-commerce, healthcare, and finance. RNN-based methods incur $O(N)$ sequential computation; Transformer-based methods scale as $O(N^2)$.
 
 **Limitations of Prior Work**:
    - RNN-MTPP: sequential computation and weak long-range dependency modeling
    - Transformer-MTPP: quadratic complexity, prohibitive for long sequences (e.g., patient medical histories)
    - Classical Hawkes processes: interpretable but limited in expressiveness
 
-**Root Cause**: How can one simultaneously achieve high expressiveness, long-range dependency capture, and efficient parallel computation?
+**Key Challenge**: How can one simultaneously achieve high expressiveness, long-range dependency capture, and efficient parallel computation?
 
-**Starting Point**: SSMs (State Space Models) have demonstrated efficient parallel computation and long-range dependency modeling for discrete sequences, but direct application to MTPPs is hindered by event-driven discontinuities (jump inputs).
+**Key Insight**: SSMs (State Space Models) have demonstrated efficient parallel computation and long-range dependency modeling for discrete sequences, but direct application to MTPPs is hindered by event-driven discontinuities (jump inputs).
 
 **Core Idea**: Unify the jump stochastic differential equations of Hawkes processes with the state recurrence of SSMs, constructing LLH layers that preserve the inductive biases of event sequences while enabling efficient computation via parallel scanning.
 

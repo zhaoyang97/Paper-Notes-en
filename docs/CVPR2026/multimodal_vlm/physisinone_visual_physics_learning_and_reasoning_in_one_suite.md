@@ -29,15 +29,15 @@ PhysInOne is a large-scale synthetic dataset comprising 153,810 dynamic 3D scene
 
 ## Background & Motivation
 
-**State of the Field**: Current AI models exhibit a severe deficit in understanding the physical world — AI-generated videos frequently violate basic physical laws (e.g., objects falling upward, sudden velocity changes). Existing physics datasets are extremely small (hundreds to thousands of samples), impeding progress in physical learning.
+**Background**: Current AI models exhibit a severe deficit in understanding the physical world — AI-generated videos frequently violate basic physical laws (e.g., objects falling upward, sudden velocity changes). Existing physics datasets are extremely small (hundreds to thousands of samples), impeding progress in physical learning.
 
 **Limitations of Prior Work**: Large-scale, high-quality training data covering diverse physical objects, scenes, and phenomena are lacking. Existing datasets either focus on a single physical phenomenon (e.g., collisions) or employ simple geometric primitives, failing to reflect the complexity of the real world.
 
-**Root Cause**: Physically-aware AI must learn the joint effects of multiple physical phenomena across diverse scenes, yet existing datasets are far too small to support this requirement.
+**Key Challenge**: Physically-aware AI must learn the joint effects of multiple physical phenomena across diverse scenes, yet existing datasets are far too small to support this requirement.
 
-**Paper Goals**: To construct a synthetic physics dataset that is orders of magnitude larger than existing ones, covering the vast majority of physical phenomena encountered in everyday life.
+**Goal**: To construct a synthetic physics dataset that is orders of magnitude larger than existing ones, covering the vast majority of physical phenomena encountered in everyday life.
 
-**Starting Point**: Systematically identifying 71 key physical phenomena from undergraduate physics textbooks, then using physics engines to generate dynamic 3D scenes that rigorously conform to physical laws.
+**Key Insight**: Systematically identifying 71 key physical phenomena from undergraduate physics textbooks, then using physics engines to generate dynamic 3D scenes that rigorously conform to physical laws.
 
 **Core Idea**: Large-scale synthetic physics data combined with multi-object complex interactions and comprehensive ground-truth annotations, providing data infrastructure for physically-aware world models.
 

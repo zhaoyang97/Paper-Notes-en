@@ -27,13 +27,13 @@ content_hash: 0ff34ad3fd903469
 This paper establishes, within the matrix factorization framework (a canonical theoretical testbed for neural networks), that Guess & Check (G&C; randomly sampling parameters until the training set is fit) exhibits generalization that degrades with increasing width (the first provable demonstration of a canonical setting where G&C is strictly inferior to gradient descent) yet improves with increasing depth, revealing the fundamentally opposite roles that width and depth play in generalization.
 
 ## Background & Motivation
-**State of the Field**: Overparameterized neural networks trained via gradient descent typically generalize well. The conventional view attributes this to the implicit bias of GD, whereby GD tends to find solutions with specific properties (e.g., low rank, low norm).
+**Background**: Overparameterized neural networks trained via gradient descent typically generalize well. The conventional view attributes this to the implicit bias of GD, whereby GD tends to find solutions with specific properties (e.g., low rank, low norm).
 
 **Limitations of Prior Work**: The recently proposed *volume hypothesis* challenges this view, arguing that good generalization arises not from any special preference of GD but because weight configurations that generalize well occupy a larger "volume" in parameter space. If the volume hypothesis holds, then Guess & Check (sampling from a prior distribution until the training data are fit) should achieve generalization comparable to GD.
 
-**Root Cause**: Experimental evidence is contradictory — Chiang et al. find that G&C matches GD and that width is beneficial, whereas Peleg et al. find that G&C is inferior to GD and that width is unhelpful. Both are purely empirical works subject to confounding factors and lacking theoretical analysis.
+**Key Challenge**: Experimental evidence is contradictory — Chiang et al. find that G&C matches GD and that width is beneficial, whereas Peleg et al. find that G&C is inferior to GD and that width is unhelpful. Both are purely empirical works subject to confounding factors and lacking theoretical analysis.
 
-**Starting Point**: Matrix factorization is adopted as a theoretically tractable canonical testbed, enabling simultaneous study of the effects of width and depth while eliminating experimental confounders.
+**Key Insight**: Matrix factorization is adopted as a theoretically tractable canonical testbed, enabling simultaneous study of the effects of width and depth while eliminating experimental confounders.
 
 **Core Idea**: Increasing width causes the generalization of G&C to degrade to the level of not fitting the training data at all (Theorem 1), whereas increasing depth causes G&C generalization to approach perfection (Theorem 2) — the effects of width and depth are diametrically opposed.
 

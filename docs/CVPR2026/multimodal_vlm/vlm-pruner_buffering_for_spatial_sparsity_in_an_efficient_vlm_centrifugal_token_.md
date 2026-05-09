@@ -27,15 +27,15 @@ content_hash: 08e0b9c33b076a28
 This paper proposes VLM-Pruner, a training-free centrifugal token pruning method that balances redundancy elimination and local detail preservation through a Buffering for Spatial Sparsity (BSS) criterion. At an 88.9% pruning rate, it consistently outperforms existing methods across 5 VLMs while achieving end-to-end inference acceleration.
 
 ## Background & Motivation
-**State of the Field**: VLMs combine visual encoders with LLMs and achieve strong performance on image understanding tasks, but the large number of visual tokens generated from high-resolution images introduces substantial computational overhead due to the quadratic complexity of attention. Training-free token pruning has emerged as a mainstream solution.
+**Background**: VLMs combine visual encoders with LLMs and achieve strong performance on image understanding tasks, but the large number of visual tokens generated from high-resolution images introduces substantial computational overhead due to the quadratic complexity of attention. Training-free token pruning has emerged as a mainstream solution.
 
 **Limitations of Prior Work**: The two dominant strategies each exhibit distinct shortcomings: (a) **importance-driven** methods (e.g., FastV) retain tokens based on attention scores but tend to cluster selections within similar local regions, leading to redundancy; (b) **redundancy elimination** methods (e.g., DivPrune/DART) greedily select tokens with the lowest mutual similarity but ignore spatial relationships, resulting in overly scattered selections that fail to provide complete coverage of target object details.
 
-**Root Cause**: There is a fundamental tension between reducing redundancy (selecting highly diverse tokens) and maintaining local completeness (selecting spatially contiguous tokens). Excessive pursuit of diversity causes selections to alternate between foreground and background regions.
+**Key Challenge**: There is a fundamental tension between reducing redundancy (selecting highly diverse tokens) and maintaining local completeness (selecting spatially contiguous tokens). Excessive pursuit of diversity causes selections to alternate between foreground and background regions.
 
-**Paper Goals**: To design a token pruning method that simultaneously balances redundancy elimination and spatial continuity.
+**Goal**: To design a token pruning method that simultaneously balances redundancy elimination and spatial continuity.
 
-**Starting Point**: The observation that fine-grained details of target objects require spatially adjacent tokens for complete coverage motivates a "centrifugal" selection strategy that expands outward from a core region.
+**Key Insight**: The observation that fine-grained details of target objects require spatially adjacent tokens for complete coverage motivates a "centrifugal" selection strategy that expands outward from a core region.
 
 **Core Idea**: The BSS criterion biases token selection toward spatially proximate low-redundancy tokens, enabling an ordered centrifugal expansion from near to far.
 

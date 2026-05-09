@@ -29,17 +29,17 @@ NeoVerse proposes a scalable 4D world model that enables the entire training pip
 
 ## Background & Motivation
 
-1. **State of the Field**: 4D world modeling — a hybrid paradigm combining reconstruction and generation — holds great promise for autonomous driving, digital content creation, and related domains. Existing methods typically first reconstruct a 3D/4D representation, then leverage geometric priors to guide video generation models, enabling spatiotemporal consistency and precise viewpoint control.
+1. **Background**: 4D world modeling — a hybrid paradigm combining reconstruction and generation — holds great promise for autonomous driving, digital content creation, and related domains. Existing methods typically first reconstruct a 3D/4D representation, then leverage geometric priors to guide video generation models, enabling spatiotemporal consistency and precise viewpoint control.
 
 2. **Limitations of Prior Work**: The core bottleneck of current approaches lies in **insufficient scalability**, manifesting at two levels:
     - **Poor data scalability**: Methods such as ViewCrafter handle only static scenes, while SynCamMaster/ReCamMaster rely on expensive multi-view dynamic videos, resulting in high data acquisition costs and limited generalization.
     - **Poor training scalability**: Methods such as TrajectoryCrafter and FreeSim require offline preprocessing (depth estimation, offline Gaussian field reconstruction), incurring substantial computational overhead, high storage consumption, and inflexible training pipelines.
 
-3. **Root Cause**: Abundant and inexpensive in-the-wild monocular videos cannot be directly utilized due to the lack of multi-view supervision signals and efficient online processing pipelines.
+3. **Key Challenge**: Abundant and inexpensive in-the-wild monocular videos cannot be directly utilized due to the lack of multi-view supervision signals and efficient online processing pipelines.
 
-4. **Paper Goals**: To make the entire 4D world model training pipeline fully scalable to diverse in-the-wild monocular videos.
+4. **Goal**: To make the entire 4D world model training pipeline fully scalable to diverse in-the-wild monocular videos.
 
-5. **Starting Point**: The authors observe that if (a) feed-forward 4D reconstruction without pose estimation and (b) efficient online degradation rendering simulation can be realized, arbitrary monocular videos can be converted into training data.
+5. **Key Insight**: The authors observe that if (a) feed-forward 4D reconstruction without pose estimation and (b) efficient online degradation rendering simulation can be realized, arbitrary monocular videos can be converted into training data.
 
 6. **Core Idea**: By combining feed-forward 4DGS reconstruction with online monocular degradation simulation, the full pipeline of the 4D world model is made scalable to millions of in-the-wild monocular videos.
 

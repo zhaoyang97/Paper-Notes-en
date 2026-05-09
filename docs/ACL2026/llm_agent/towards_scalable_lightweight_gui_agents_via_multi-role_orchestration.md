@@ -29,15 +29,15 @@ This paper proposes LAMO, a framework that trains a lightweight 3B MLLM into a f
 
 ## Background & Motivation
 
-**State of the Field**: MLLM-based GUI Agents are evolving from static environments toward complex online real-world scenarios. State-of-the-art methods (e.g., UI-TARS-72B, Agent-S2) have achieved significant gains by scaling model size and training data, but at prohibitively high deployment costs. Lightweight GUI Agents (≤7B) perform reasonably well on static benchmarks but suffer dramatic performance degradation in online real-world environments.
+**Background**: MLLM-based GUI Agents are evolving from static environments toward complex online real-world scenarios. State-of-the-art methods (e.g., UI-TARS-72B, Agent-S2) have achieved significant gains by scaling model size and training data, but at prohibitively high deployment costs. Lightweight GUI Agents (≤7B) perform reasonably well on static benchmarks but suffer dramatic performance degradation in online real-world environments.
 
 **Limitations of Prior Work**: (1) Lightweight MLLMs are limited by parameter scale and underperform in end-to-end long-horizon tasks that simultaneously demand screen analysis, strategic decision-making, and tool invocation. (2) End-to-end monolithic episodic learning couples high-level reasoning with low-level execution within a fixed pipeline, resulting in poor task scalability and difficulty adapting to multi-agent systems (MAS). (3) Training multiple skill experts is costly—for example, Agent-S2 requires concurrently deploying UI-TARS-72B (visual grounding), Tesseract OCR (text grounding), and UNO (structural grounding), incurring extremely high system costs. (4) Lightweight agents lack task scalability and cannot flexibly switch roles via context engineering.
 
-**Root Cause**: A cost-scalability dilemma—large models offer task scalability but at high deployment cost, while lightweight models are cheap to deploy but limited in capability and not scalable.
+**Key Challenge**: A cost-scalability dilemma—large models offer task scalability but at high deployment cost, while lightweight models are cheap to deploy but limited in capability and not scalable.
 
-**Paper Goals**: To achieve task scalability on lightweight MLLMs by enabling a 3B model to work flexibly across different inference modes through parameter sharing and multi-role orchestration, while continuously benefiting as a plug-and-play policy executor paired with advanced planners.
+**Goal**: To achieve task scalability on lightweight MLLMs by enabling a 3B model to work flexibly across different inference modes through parameter sharing and multi-role orchestration, while continuously benefiting as a plug-and-play policy executor paired with advanced planners.
 
-**Starting Point**: Decompose GUI automation into five core capabilities—Action-Tool Alignment (ATA), Logically Consistent CoT (LCC), Screen Understanding (SU), Goal Planning (GP), and Screen Grounding (SG)—and enable a single 3B model to assume multiple roles through role-oriented data synthesis and parameter sharing.
+**Key Insight**: Decompose GUI automation into five core capabilities—Action-Tool Alignment (ATA), Logically Consistent CoT (LCC), Screen Understanding (SU), Goal Planning (GP), and Screen Grounding (SG)—and enable a single 3B model to assume multiple roles through role-oriented data synthesis and parameter sharing.
 
 **Core Idea**: Replace multiple specialized models with parameter-shared multi-role orchestration—a single lightweight model switches among four roles (Observer, Planner, Allocator, Executor) via context engineering, achieving MAS-level performance.
 

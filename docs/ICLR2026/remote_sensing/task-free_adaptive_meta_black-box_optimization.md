@@ -28,15 +28,15 @@ This paper proposes ABOM—a task-free adaptive meta black-box optimizer that el
 
 ## Background & Motivation
 
-**State of the Field**: Black-box optimization (BBO) is widely applied in scenarios such as hyperparameter tuning and neural architecture search. Traditional evolutionary algorithms (EAs) rely on hand-crafted operators and parameters. Meta-BBO methods automate optimizer configuration via meta-learning, but require pre-training on a manually designed training task distribution $\mathcal{F}$.
+**Background**: Black-box optimization (BBO) is widely applied in scenarios such as hyperparameter tuning and neural architecture search. Traditional evolutionary algorithms (EAs) rely on hand-crafted operators and parameters. Meta-BBO methods automate optimizer configuration via meta-learning, but require pre-training on a manually designed training task distribution $\mathcal{F}$.
 
 **Limitations of Prior Work**: The core limitation of Meta-BBO methods lies in their dependence on hand-crafted training task distributions. In practice, the distribution of target tasks is often unknown or unique (e.g., specific engineering optimization problems), making it infeasible to obtain suitable training task sets.
 
-**Root Cause**: The NFL theorem establishes that no universally optimal algorithm exists, necessitating adaptation. However, existing adaptive methods either require domain knowledge to design rules (traditional adaptive EAs) or require training task distributions (Meta-BBO). The fundamental question is how to achieve adaptation without domain knowledge or training tasks.
+**Key Challenge**: The NFL theorem establishes that no universally optimal algorithm exists, necessitating adaptation. However, existing adaptive methods either require domain knowledge to design rules (traditional adaptive EAs) or require training task distributions (Meta-BBO). The fundamental question is how to achieve adaptation without domain knowledge or training tasks.
 
-**Paper Goals**: (a) Eliminate dependence on predefined training task distributions; (b) replace discrete algorithm selection spaces with continuous differentiable parameter spaces; (c) enable online parameter learning using self-generated data produced during optimization.
+**Goal**: (a) Eliminate dependence on predefined training task distributions; (b) replace discrete algorithm selection spaces with continuous differentiable parameter spaces; (c) enable online parameter learning using self-generated data produced during optimization.
 
-**Starting Point**: Parameterize evolutionary operators as attention mechanisms to make them differentiable, then use "encouraging offspring to approximate the elite archive" as a supervision signal for online parameter updates.
+**Key Insight**: Parameterize evolutionary operators as attention mechanisms to make them differentiable, then use "encouraging offspring to approximate the elite archive" as a supervision signal for online parameter updates.
 
 **Core Idea**: Parameterize evolutionary operators via attention mechanisms, transforming the meta-learning paradigm from "pre-train then deploy" to a closed-loop adaptive "learn while optimizing" framework.
 

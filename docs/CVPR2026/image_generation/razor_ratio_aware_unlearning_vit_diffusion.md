@@ -29,15 +29,15 @@ RAZOR selects the most critical layers and attention heads via ratio-aware gradi
 
 ## Background & Motivation
 
-**State of the Field**: Large-scale vision-language models and diffusion models are trained on massive datasets and inevitably encode sensitive or undesired information. Regulations such as GDPR require models to "forget" specific data, yet retraining from scratch is prohibitively expensive, making machine unlearning an attractive alternative.
+**Background**: Large-scale vision-language models and diffusion models are trained on massive datasets and inevitably encode sensitive or undesired information. Regulations such as GDPR require models to "forget" specific data, yet retraining from scratch is prohibitively expensive, making machine unlearning an attractive alternative.
 
 **Limitations of Prior Work**: Existing methods each exhibit distinct shortcomings. (1) Gradient-ascent approaches (e.g., SalUn) select parameters based solely on forgetting-set gradients, ignoring conflicts with the retention set, leading to incomplete forgetting or severe degradation of retained performance. (2) Single-layer editing methods (e.g., SLUG) are efficient but fragile—one layer is insufficient when knowledge is distributed across multiple layers. (3) Full-model update methods suffer drastic degradation of unlearning effectiveness after quantization.
 
-**Root Cause**: Parameter selection considers only forgetting-set saliency, while retention conflicts are compensated post hoc. This sequential "forget-then-repair" strategy cannot avoid the coupling between forgetting and retention dynamics.
+**Key Challenge**: Parameter selection considers only forgetting-set saliency, while retention conflicts are compensated post hoc. This sequential "forget-then-repair" strategy cannot avoid the coupling between forgetting and retention dynamics.
 
-**Paper Goals**: (1) How to jointly consider forgetting pressure and retention alignment when selecting editing locations; (2) how to explicitly control the forgetting–retention trade-off in multi-layer editing; (3) how to ensure unlearning effectiveness does not collapse after quantization.
+**Goal**: (1) How to jointly consider forgetting pressure and retention alignment when selecting editing locations; (2) how to explicitly control the forgetting–retention trade-off in multi-layer editing; (3) how to ensure unlearning effectiveness does not collapse after quantization.
 
-**Starting Point**: Compute gradients from both the forgetting set and the retention set simultaneously, and measure the "editing value" of each layer as the product of forgetting gradient magnitude and the orthogonality between forgetting and retention gradients. A high score indicates strong forgetting influence with low retention harm.
+**Key Insight**: Compute gradients from both the forgetting set and the retention set simultaneously, and measure the "editing value" of each layer as the product of forgetting gradient magnitude and the orthogonality between forgetting and retention gradients. A high score indicates strong forgetting influence with low retention harm.
 
 **Core Idea**: Jointly localize critical layers via ratio-aware scoring of forgetting/retention gradients, and achieve precise multi-layer unlearning through a constrained multi-objective loss and iterative expansion.
 

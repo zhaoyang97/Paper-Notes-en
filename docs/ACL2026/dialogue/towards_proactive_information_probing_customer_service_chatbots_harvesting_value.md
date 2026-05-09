@@ -29,15 +29,15 @@ This paper proposes ProChatIP, a framework that transforms customer service chat
 
 ## Background & Motivation
 
-**State of the Field**: AI-powered customer service chatbots have become a critical component of modern business operations, primarily focusing on answering user queries, understanding user intent, and extracting QA pairs. In the LLM era, customer service bots can effectively handle complex interaction dynamics.
+**Background**: AI-powered customer service chatbots have become a critical component of modern business operations, primarily focusing on answering user queries, understanding user intent, and extracting QA pairs. In the LLM era, customer service bots can effectively handle complex interaction dynamics.
 
 **Limitations of Prior Work**: Existing customer service chatbots are inherently passive—they only respond to user inquiries and lack the ability to proactively collect valuable business information. For instance, a customer service agent on a commodity trading platform could proactively ask users for their views on market conditions (e.g., "Have you been following inventory levels recently?"), thereby crowd-sourcing market intelligence needed for pricing models.
 
-**Root Cause**: Users enter customer service conversations to resolve their own issues. If the bot's information probing appears abrupt or contextually irrelevant, users are likely to refuse or ignore it, potentially reducing satisfaction. Excessive or repetitive inquiries also prolong conversations and degrade the user experience.
+**Key Challenge**: Users enter customer service conversations to resolve their own issues. If the bot's information probing appears abrupt or contextually irrelevant, users are likely to refuse or ignore it, potentially reducing satisfaction. Excessive or repetitive inquiries also prolong conversations and degrade the user experience.
 
-**Paper Goals**: Define the task of "proactive information probing," optimize the timing of probing (i.e., *when* to probe), and maximize information acquisition while minimizing conversation turns and user friction.
+**Goal**: Define the task of "proactive information probing," optimize the timing of probing (i.e., *when* to probe), and maximize information acquisition while minimizing conversation turns and user friction.
 
-**Starting Point**: Decouple the probing decision into an independent policy module (CS) separate from the LLM backbone, and train the policy using a two-stage curriculum of SFT followed by RL.
+**Key Insight**: Decouple the probing decision into an independent policy module (CS) separate from the LLM backbone, and train the policy using a two-stage curriculum of SFT followed by RL.
 
 **Core Idea**: At each conversation turn, a lightweight policy module determines whether to probe ($d_t \in \{0,1\}$). If probing is chosen, the LLM naturally incorporates the probing question into its response. A dual reward signal—proactive probing reward and passive waiting reward—trains the policy to act at the moment of highest user receptivity.
 

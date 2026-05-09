@@ -29,11 +29,11 @@ Iris proposes a deterministic diffusion framework that injects real-world priors
 
 ## Background & Motivation
 
-1. **State of the Field**: Monocular depth estimation (MDE) is a fundamental task in computer vision. Existing approaches are broadly categorized into feed-forward methods (e.g., Depth Anything V2) and diffusion-based methods (e.g., Marigold, Lotus). Feed-forward methods rely on large-scale training data, while diffusion-based methods leverage pretrained visual priors.
+1. **Background**: Monocular depth estimation (MDE) is a fundamental task in computer vision. Existing approaches are broadly categorized into feed-forward methods (e.g., Depth Anything V2) and diffusion-based methods (e.g., Marigold, Lotus). Feed-forward methods rely on large-scale training data, while diffusion-based methods leverage pretrained visual priors.
 2. **Limitations of Prior Work**: Depth Anything V2, despite strong generalization, depends on a large-scale training pipeline that is difficult to reproduce, and still exhibits deficiencies in fine detail and boundary accuracy. Diffusion-based methods preserve detail but generalize poorly due to synthetic-to-real domain gaps.
-3. **Root Cause**: A *frequency-reliability mismatch* exists — pseudo-labels from teacher models on real images provide reliable low-frequency structure but inaccurate high-frequency details, while synthetic ground truth offers precise high-frequency geometry but lacks real-world distribution. Training both signals jointly in a single step leads to gradient interference.
-4. **Paper Goals**: To construct a model that preserves fine-grained details, generalizes robustly across domains, and matches the accuracy of large-scale training methods — all under limited annotation data and computational budget.
-5. **Starting Point**: The observation that diffusion models correspond to different signal-to-noise ratios (SNR) at different timesteps — high timesteps are suited for learning global layout, while low timesteps are suited for fine geometry.
+3. **Key Challenge**: A *frequency-reliability mismatch* exists — pseudo-labels from teacher models on real images provide reliable low-frequency structure but inaccurate high-frequency details, while synthetic ground truth offers precise high-frequency geometry but lacks real-world distribution. Training both signals jointly in a single step leads to gradient interference.
+4. **Goal**: To construct a model that preserves fine-grained details, generalizes robustly across domains, and matches the accuracy of large-scale training methods — all under limited annotation data and computational budget.
+5. **Key Insight**: The observation that diffusion models correspond to different signal-to-noise ratios (SNR) at different timesteps — high timesteps are suited for learning global layout, while low timesteps are suited for fine geometry.
 6. **Core Idea**: Decouple prior injection and geometric refinement into two distinct diffusion states, and precisely control the frequency range of knowledge transfer via spectral-domain gating mechanisms.
 
 ## Method

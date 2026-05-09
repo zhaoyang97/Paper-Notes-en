@@ -27,17 +27,17 @@ content_hash: 83208fdb2a99ce23
 BDG performs fine-grained degradation discrimination via multi-angle multi-scale gray-level co-occurrence matrices (MAS-GLCM), and designs a three-stage diffusion training pipeline (generation → bridging → restoration) to seamlessly integrate degradation discrimination with generative priors, achieving significant fidelity improvements on all-in-one restoration and real-world super-resolution tasks.
 
 ## Background & Motivation
-**State of the Field**: Universal image restoration requires a single model to handle multiple degradation types, necessitating both degradation discrimination and conditional generation capabilities.
+**Background**: Universal image restoration requires a single model to handle multiple degradation types, necessitating both degradation discrimination and conditional generation capabilities.
 
 **Limitations of Prior Work**:
 - **Degradation discrimination approaches** (AirNet, PromptIR, etc.): introduce auxiliary discriminative networks to identify degradation types, but L1/L2 losses produce overly smooth outputs with poor performance in real-world scenarios.
 - **Generative prior approaches** (StableSR, DiffBIR, etc.): leverage pre-trained diffusion models to recover rich textures, but in all-in-one settings tend to misidentify mild degradations as severe ones, generating details inconsistent with the original image.
 
-**Root Cause**: Degradation discrimination and generative priors have developed independently, lacking a unified framework to organically integrate the two.
+**Key Challenge**: Degradation discrimination and generative priors have developed independently, lacking a unified framework to organically integrate the two.
 
-**Paper Goals**: Inject fine-grained degradation discrimination capability into diffusion models while preserving their generative priors, enabling adaptive output adjustment based on degradation severity.
+**Goal**: Inject fine-grained degradation discrimination capability into diffusion models while preserving their generative priors, enabling adaptive output adjustment based on degradation severity.
 
-**Starting Point**: Propose a novel degradation representation (MAS-GLCM) combined with a three-stage diffusion training strategy to progressively bridge discriminative information into the generative process.
+**Key Insight**: Propose a novel degradation representation (MAS-GLCM) combined with a three-stage diffusion training strategy to progressively bridge discriminative information into the generative process.
 
 **Core Idea**: Use gray-level co-occurrence matrices as content-agnostic degradation representations, and align them with diffusion model features through three-stage training to unify discrimination and generation.
 

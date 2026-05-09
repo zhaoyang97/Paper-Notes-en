@@ -29,11 +29,11 @@ This paper proposes Test-time Constrained Optimization (TCO), a framework that i
 
 ## Background & Motivation
 
-- **State of the Field**: Feed-forward multiview Transformers (MVTs) such as DUSt3R, VGGT, and π³ can predict depth maps, camera poses, and intrinsics from multiple RGB images in a single forward pass.
+- **Background**: Feed-forward multiview Transformers (MVTs) such as DUSt3R, VGGT, and π³ can predict depth maps, camera poses, and intrinsics from multiple RGB images in a single forward pass.
 - **Limitations of Prior Work**: These models accept only RGB inputs and cannot exploit additional priors (e.g., camera poses from COLMAP, depth from LiDAR). Existing prior-aware methods (e.g., Pow3R, MapAnything) incorporate priors by modifying the network architecture, making them tightly coupled to specific backbones and prior types — retraining is required whenever the backbone or prior type changes, resulting in poor flexibility and high computational cost.
-- **Root Cause**: Feeding priors as network inputs conflates the representation of priors with model architecture, preventing generalization across models and prior types.
-- **Paper Goals**: To develop a plug-and-play framework that leverages arbitrary priors at test time without architectural modification or retraining.
-- **Starting Point**: Rather than feeding priors as inputs to the network, TCO treats them as constraints on the network's outputs, optimizing the network at inference time to satisfy these constraints.
+- **Key Challenge**: Feeding priors as network inputs conflates the representation of priors with model architecture, preventing generalization across models and prior types.
+- **Goal**: To develop a plug-and-play framework that leverages arbitrary priors at test time without architectural modification or retraining.
+- **Key Insight**: Rather than feeding priors as inputs to the network, TCO treats them as constraints on the network's outputs, optimizing the network at inference time to satisfy these constraints.
 
 ## Method
 

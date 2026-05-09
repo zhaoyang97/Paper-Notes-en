@@ -28,15 +28,15 @@ This paper establishes meta-theorems for deviation dynamics in cardinal hedonic 
 
 ## Background & Motivation
 
-**State of the Field**: Hedonic games are a classical model of coalition formation in which each agent holds preferences over different groupings. Cardinal hedonic games form an important subclass, encompassing variants such as additively separable hedonic games (ASHGs), fractional hedonic games (FHGs), and modified fractional hedonic games (MFHGs). Computing stable partitions in these games is a central problem in algorithmic game theory.
+**Background**: Hedonic games are a classical model of coalition formation in which each agent holds preferences over different groupings. Cardinal hedonic games form an important subclass, encompassing variants such as additively separable hedonic games (ASHGs), fractional hedonic games (FHGs), and modified fractional hedonic games (MFHGs). Computing stable partitions in these games is a central problem in algorithmic game theory.
 
 **Limitations of Prior Work**: (1) In many hedonic games, stable partitions may not exist—certain instances admit no grouping that achieves stability. (2) These non-existence instances have typically been used to establish NP-hardness of computing stable partitions. (3) A systematic theoretical framework for analyzing whether deviation dynamics—wherein agents sequentially make utility-improving deviations—converge to a stable partition has been lacking.
 
-**Root Cause**: Intuitively, there should be a deep connection between the non-existence of stable partitions and the non-convergence of deviation dynamics, yet this connection had not previously been formalized.
+**Key Challenge**: Intuitively, there should be a deep connection between the non-existence of stable partitions and the non-convergence of deviation dynamics, yet this connection had not previously been formalized.
 
-**Paper Goals**: (1) Formalize the relationship between "no stable partition exists" and "deviation dynamics do not converge" as meta-theorems. (2) Analyze the convergence speed of deviation dynamics under different initialization conditions. (3) Exploit deviation dynamics as an algorithmic tool for finding specific types of stable partitions.
+**Goal**: (1) Formalize the relationship between "no stable partition exists" and "deviation dynamics do not converge" as meta-theorems. (2) Analyze the convergence speed of deviation dynamics under different initialization conditions. (3) Exploit deviation dynamics as an algorithmic tool for finding specific types of stable partitions.
 
-**Starting Point**: The authors propose systematically formalizing the convergence analysis of deviation dynamics—given a class of hedonic games and a stability concept, if one can construct instances admitting no stable partition, complexity results regarding the convergence of deviation dynamics follow automatically.
+**Key Insight**: The authors propose systematically formalizing the convergence analysis of deviation dynamics—given a class of hedonic games and a stability concept, if one can construct instances admitting no stable partition, complexity results regarding the convergence of deviation dynamics follow automatically.
 
 **Core Idea**: Establish meta-theorems mapping from "No-instances" (instances with no stable partition) to the complexity of deciding convergence of deviation dynamics, providing a unified treatment of nearly all single-agent deviation-based stability concepts in ASHGs, FHGs, and MFHGs.
 

@@ -27,18 +27,18 @@ content_hash: 506e840af9ca62d3
 This paper systematically evaluates the negative impact of deliberative reasoning on foundational capabilities (helpfulness and harmlessness) in Large Reasoning Models (LRMs) such as DeepSeek-R1, QwQ, and OpenThinker. It finds that deliberative reasoning significantly degrades instruction-following and safety, and proposes adaptive reasoning modes—Zero-Thinking, Less-Thinking, and Summary-Thinking—that effectively mitigate these deficiencies.
 
 ## Background & Motivation
-**State of the Field**: LRMs represented by OpenAI o1/o3 and DeepSeek-R1 have achieved substantial progress on specialized reasoning tasks such as mathematics and coding through long chain-of-thought reasoning. Community attention has largely focused on the performance, efficiency, and robustness of LRMs on reasoning tasks.
+**Background**: LRMs represented by OpenAI o1/o3 and DeepSeek-R1 have achieved substantial progress on specialized reasoning tasks such as mathematics and coding through long chain-of-thought reasoning. Community attention has largely focused on the performance, efficiency, and robustness of LRMs on reasoning tasks.
 
 **Limitations of Prior Work**: The effect of acquiring deliberative reasoning capability on foundational capabilities—general task performance, instruction-following, and safety—has received almost no systematic study. Cognitive science suggests that human reasoning ability is closely coupled with overall cognitive function; an analogous relationship should hold for LRMs.
 
-**Root Cause**: The process of acquiring reasoning capability through distillation or reinforcement learning may come at the cost of the model's original helpfulness and harmlessness. This trade-off is critical for real-world deployment yet remains unquantified.
+**Key Challenge**: The process of acquiring reasoning capability through distillation or reinforcement learning may come at the cost of the model's original helpfulness and harmlessness. This trade-off is critical for real-world deployment yet remains unquantified.
 
-**Paper Goals**
+**Goal**
 - RQ1: Which foundational capabilities are most severely degraded after LRMs acquire reasoning ability?
 - RQ2: How does inference-time compute affect LRM performance on general tasks?
 - Can degradation of foundational capabilities be mitigated by controlling the reasoning mode?
 
-**Starting Point**: By inserting special tokens (e.g., `<think></think>`) into the LRM's thinking process, the reasoning depth is manually controlled to realize three adaptive reasoning modes: Zero-Thinking, Less-Thinking, and Summary-Thinking.
+**Key Insight**: By inserting special tokens (e.g., `<think></think>`) into the LRM's thinking process, the reasoning depth is manually controlled to realize three adaptive reasoning modes: Zero-Thinking, Less-Thinking, and Summary-Thinking.
 
 **Core Idea**: Deliberative reasoning in LRMs substantially harms foundational capabilities while improving specialized reasoning; adaptive reasoning modes that dynamically allocate inference-time compute represent a critical direction for future LRM development.
 

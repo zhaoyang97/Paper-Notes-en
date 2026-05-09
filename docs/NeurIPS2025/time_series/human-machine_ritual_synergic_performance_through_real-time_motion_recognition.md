@@ -28,18 +28,18 @@ This paper proposes a lightweight real-time motion recognition system that lever
 
 ## Background & Motivation
 
-**State of the Field**: Human-machine collaborative performance is a prominent direction in new media art. Existing systems (e.g., EDGE dance-music generation, LuminAI improvisational dance partner) tend to have AI generate dance movements or music, positioning the machine as a "creator."
+**Background**: Human-machine collaborative performance is a prominent direction in new media art. Existing systems (e.g., EDGE dance-music generation, LuminAI improvisational dance partner) tend to have AI generate dance movements or music, positioning the machine as a "creator."
 
 **Limitations of Prior Work**:
 - Generative AI systems rely on predefined music genre labels and generic datasets (e.g., AIST++), neglecting artists' personal embodied experiences and memory associations.
 - Discrete gesture input interfaces (e.g., Wekinator) are ill-suited for continuous dance movement.
 - Most systems emphasize the machine's creativity rather than "deep listening" to human expression.
 
-**Root Cause**: AI-driven performance systems pursue autonomous machine creativity, which may obscure rather than amplify the expressive depth of the human body—bodily knowledge in dance (tactile sensation, memory, intuition) cannot be replaced by algorithms.
+**Key Challenge**: AI-driven performance systems pursue autonomous machine creativity, which may obscure rather than amplify the expressive depth of the human body—bodily knowledge in dance (tactile sensation, memory, intuition) cannot be replaced by algorithms.
 
-**Paper Goals**: Design a collaborative paradigm in which "the machine does not create, only remembers"—the machine learns to recognize the dancer's movements and triggers sounds that the dancer personally associates with those movements, rather than generating new content.
+**Goal**: Design a collaborative paradigm in which "the machine does not create, only remembers"—the machine learns to recognize the dancer's movements and triggers sounds that the dancer personally associates with those movements, rather than generating new content.
 
-**Starting Point**: Drawing from somatic philosophy, the paper treats the dancer's body as an "archive and oracle"—each movement carries personal memory and imagery, and the machine's role is that of an "attentive stage manager" rather than a "co-creator."
+**Key Insight**: Drawing from somatic philosophy, the paper treats the dancer's body as an "archive and oracle"—each movement carries personal memory and imagery, and the machine's role is that of an "attentive stage manager" rather than a "co-creator."
 
 **Core Idea**: IMU + MiniRocket real-time recognition of personalized dancer movements → triggers the dancer's own associated sonic memories = a human-machine collaborative performance based on recollection (not generation).
 

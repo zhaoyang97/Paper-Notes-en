@@ -28,15 +28,15 @@ This paper proposes LTS-FS (Locate-Then-Sparsify for Feature Steering), a framew
 
 ## Background & Motivation
 
-**State of the Field**: Despite strong performance on multimodal tasks, large vision-language models (LVLMs) suffer from severe hallucination problems—generating fluent yet visually inconsistent descriptions. Existing mitigation approaches fall into three categories: fine-tuning methods (high cost, impairs generalization), decoding enhancement methods (high inference overhead), and feature steering methods (modifying intermediate layer features).
+**Background**: Despite strong performance on multimodal tasks, large vision-language models (LVLMs) suffer from severe hallucination problems—generating fluent yet visually inconsistent descriptions. Existing mitigation approaches fall into three categories: fine-tuning methods (high cost, impairs generalization), decoding enhancement methods (high inference overhead), and feature steering methods (modifying intermediate layer features).
 
 **Limitations of Prior Work**: Feature steering methods such as Nullu and VTI apply uniform steering intensity across all layers, ignoring inter-layer differences—some layers are highly correlated with hallucinations while others are responsible for general representations. Uniform steering perturbs hallucination-irrelevant layers, disrupts the original feature distribution, and degrades generalization.
 
-**Root Cause**: There is a fundamental trade-off between hallucination mitigation and generalization—overly strong steering reduces hallucinations but impairs general capability, while overly weak steering yields insufficient effect.
+**Key Challenge**: There is a fundamental trade-off between hallucination mitigation and generalization—overly strong steering reduces hallucinations but impairs general capability, while overly weak steering yields insufficient effect.
 
-**Paper Goals**: To precisely locate hallucination-relevant layers and apply differentiated steering only where necessary.
+**Goal**: To precisely locate hallucination-relevant layers and apply differentiated steering only where necessary.
 
-**Starting Point**: Drawing on parameter localization techniques, the contribution of each layer to hallucinated outputs is quantified via causal intervention, yielding layer-wise attribution scores.
+**Key Insight**: Drawing on parameter localization techniques, the contribution of each layer to hallucinated outputs is quantified via causal intervention, yielding layer-wise attribution scores.
 
 **Core Idea**: First locate hallucination-relevant layers, then sparsify steering intensity—heavily adjusting high-score layers while leaving low-score layers untouched.
 

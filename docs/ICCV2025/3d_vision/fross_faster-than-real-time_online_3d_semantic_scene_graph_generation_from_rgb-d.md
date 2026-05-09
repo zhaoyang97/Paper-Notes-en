@@ -31,13 +31,13 @@ This paper proposes FROSS, a method that lifts 2D scene graphs directly into 3D 
 
 ### Limitations of Prior Work
 
-**State of the Field**: 3D semantic scene graphs (SSGs) represent objects as nodes and inter-object relationships as edges, serving as a critical data structure for high-level scene understanding in robotics, AR, and related domains. Existing methods face two major challenges:
+**Background**: 3D semantic scene graphs (SSGs) represent objects as nodes and inter-object relationships as edges, serving as a critical data structure for high-level scene understanding in robotics, AR, and related domains. Existing methods face two major challenges:
 
 **High computational cost**: Mainstream methods rely on precise point cloud reconstruction and segmentation (e.g., SLAM), requiring substantial computational resources.
 
 **Non-incremental processing**: Offline methods require complete scene data (point clouds or full image sequences), making them unsuitable for open-world incremental exploration.
 
-**Root Cause**: 3D SSGs are fundamentally intended for high-level semantic understanding, where precise object poses and geometry are **not strictly necessary**. For instance, robot planning requires only relative spatial relationships, and in 3D scene synthesis, SSGs serve merely as a structural scaffold. This observation motivates an entirely new paradigm — **bypassing point cloud reconstruction and lifting directly from 2D scene graphs to 3D**.
+**Key Challenge**: 3D SSGs are fundamentally intended for high-level semantic understanding, where precise object poses and geometry are **not strictly necessary**. For instance, robot planning requires only relative spatial relationships, and in 3D scene synthesis, SSGs serve merely as a structural scaffold. This observation motivates an entirely new paradigm — **bypassing point cloud reconstruction and lifting directly from 2D scene graphs to 3D**.
 
 ## Method
 

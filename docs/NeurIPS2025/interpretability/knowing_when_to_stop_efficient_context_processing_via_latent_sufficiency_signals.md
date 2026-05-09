@@ -27,15 +27,15 @@ This paper proposes dynamic context cutoff, which trains lightweight classifiers
 
 ## Background & Motivation
 
-**State of the Field**: LLMs process input context indiscriminately at inference time, assigning equal computational priority to every token regardless of its actual relevance to the task.
+**Background**: LLMs process input context indiscriminately at inference time, assigning equal computational priority to every token regardless of its actual relevance to the task.
 
 **Limitations of Prior Work**: Existing context compression methods (e.g., the LLMLingua series, RAG) rely on preset fixed compression ratios or fixed numbers of retrieved documents. This one-size-fits-all approach cannot adapt to varying information densities across inputs, leading to either information loss or computational waste.
 
-**Root Cause**: Humans dynamically decide when to stop reading based on the sufficiency of acquired information, whereas LLMs lack this adaptive capability. Furthermore, the "lost-in-the-middle" phenomenon demonstrates that redundant context can actually degrade accuracy.
+**Key Challenge**: Humans dynamically decide when to stop reading based on the sufficiency of acquired information, whereas LLMs lack this adaptive capability. Furthermore, the "lost-in-the-middle" phenomenon demonstrates that redundant context can actually degrade accuracy.
 
-**Paper Goals**: Enable LLMs to autonomously assess context sufficiency and dynamically determine the truncation position, achieving both efficiency and performance gains without presetting a compression ratio.
+**Goal**: Enable LLMs to autonomously assess context sufficiency and dynamically determine the truncation position, achieving both efficiency and performance gains without presetting a compression ratio.
 
-**Starting Point**: Analysis of internal model activations reveals that certain attention heads naturally encode information sufficiency signals, which can be detected with lightweight linear probes.
+**Key Insight**: Analysis of internal model activations reveals that certain attention heads naturally encode information sufficiency signals, which can be detected with lightweight linear probes.
 
 **Core Idea**: Attention head activations within the model itself embed "sufficiency" judgment signals; reading these signals via probes enables dynamic early stopping.
 

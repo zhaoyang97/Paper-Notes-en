@@ -29,11 +29,11 @@ This paper introduces XSeg, the largest X-ray contraband segmentation dataset to
 
 ## Background & Motivation
 
-1. **State of the Field**: Contraband detection in X-ray security screening images is a core safety requirement in airports, subway systems, and logistics centers. Existing X-ray datasets (SIXray, PIXray, PIDray) are small-scale (<50K images), cover few categories (<15), and primarily provide bounding box annotations rather than segmentation masks.
+1. **Background**: Contraband detection in X-ray security screening images is a core safety requirement in airports, subway systems, and logistics centers. Existing X-ray datasets (SIXray, PIXray, PIDray) are small-scale (<50K images), cover few categories (<15), and primarily provide bounding box annotations rather than segmentation masks.
 2. **Limitations of Prior Work**: (1) Data scarcity — the largest existing dataset, PIDray, contains only 47K images and covers merely 12 categories; (2) General-purpose segmentation models such as SAM transfer poorly to the X-ray domain due to substantial differences in color space and texture relative to natural images; (3) Single-point prompts are insufficiently informative in complex, heavily occluded scenes typical of security screening.
-3. **Root Cause**: Accurate segmentation for X-ray security screening requires both large-scale, high-quality annotated data and domain-adapted segmentation methods — both of which are severely lacking.
-4. **Paper Goals**: To simultaneously address the data and methodology bottlenecks by constructing a large-scale segmentation benchmark and designing a domain-specialized SAM adaptation framework.
-5. **Starting Point**: The physical characteristics of X-ray imaging provide unique signals — dual-energy channels (high-energy/low-energy) can distinguish materials of different compositions, a domain prior unavailable in RGB imagery.
+3. **Key Challenge**: Accurate segmentation for X-ray security screening requires both large-scale, high-quality annotated data and domain-adapted segmentation methods — both of which are severely lacking.
+4. **Goal**: To simultaneously address the data and methodology bottlenecks by constructing a large-scale segmentation benchmark and designing a domain-specialized SAM adaptation framework.
+5. **Key Insight**: The physical characteristics of X-ray imaging provide unique signals — dual-energy channels (high-energy/low-energy) can distinguish materials of different compositions, a domain prior unavailable in RGB imagery.
 6. **Core Idea**: EAE exploits the max/min channels of X-ray images to extract dual-energy features for decoder initialization; APG expands a single user click into two informative prompt points.
 
 ## Method

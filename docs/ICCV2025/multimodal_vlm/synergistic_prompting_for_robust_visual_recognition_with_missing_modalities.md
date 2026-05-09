@@ -28,7 +28,7 @@ This paper proposes the Synergistic Prompting (SyP) framework, which employs a d
 
 ## Background & Motivation
 
-**State of the Field**: Multimodal learning has achieved notable progress in cross-modal retrieval, VQA, and related tasks, primarily leveraging large-scale paired datasets and pretrained multimodal Transformers (e.g., CLIP). In real-world deployments, however, sensor failures, privacy constraints, and data collection difficulties frequently result in incomplete modality inputs.
+**Background**: Multimodal learning has achieved notable progress in cross-modal retrieval, VQA, and related tasks, primarily leveraging large-scale paired datasets and pretrained multimodal Transformers (e.g., CLIP). In real-world deployments, however, sensor failures, privacy constraints, and data collection difficulties frequently result in incomplete modality inputs.
 
 **Taxonomy of Existing Approaches**:
 - **Joint learning**: Models cross-modal correlations by aligning latent feature spaces, but relies on masking or imputation strategies that introduce noise.
@@ -39,9 +39,9 @@ This paper proposes the Synergistic Prompting (SyP) framework, which employs a d
 - **(1) Static prompts lack flexibility**: All inputs share identical prompt embeddings regardless of which modality is missing or the degree of missingness, making adaptation to dynamic real-world scenarios impossible.
 - **(2) Lack of inter-layer synergy**: Simple prompt tuning fails to adequately exploit multimodal dependencies encoded in hierarchical model representations, leading to unreliable performance when critical modalities are absent.
 
-**Root Cause**: A fundamental mismatch exists between the "one-size-fits-all" design of static prompts and the highly dynamic nature of modality-missing patterns in real-world scenarios. When a critical modality is absent, the model must adaptively amplify the contribution of available modalities—a capability that static approaches cannot provide.
+**Key Challenge**: A fundamental mismatch exists between the "one-size-fits-all" design of static prompts and the highly dynamic nature of modality-missing patterns in real-world scenarios. When a critical modality is absent, the model must adaptively amplify the contribution of available modalities—a capability that static approaches cannot provide.
 
-**Starting Point**: The paper combines dynamic prompts (input-adaptive) with static prompts (preserving pretrained knowledge) into a "synergistic prompting" strategy that simultaneously ensures flexibility and stability.
+**Key Insight**: The paper combines dynamic prompts (input-adaptive) with static prompts (preserving pretrained knowledge) into a "synergistic prompting" strategy that simultaneously ensures flexibility and stability.
 
 ## Method
 

@@ -28,15 +28,15 @@ This paper proposes RAIF, which employs RL with rule-centric rewards to cultivat
 
 ## Background & Motivation
 
-**State of the Field**: Instruction-following capability is fundamental to the practical utility of LLMs. Existing benchmarks (IFEval, ComplexBench, CELLO, etc.) evaluate instructions ranging from simple to complex, yet LLMs continue to perform poorly on multi-constraint compositional instructions with And/Chain/Selection/Nested structures.
+**Background**: Instruction-following capability is fundamental to the practical utility of LLMs. Existing benchmarks (IFEval, ComplexBench, CELLO, etc.) evaluate instructions ranging from simple to complex, yet LLMs continue to perform poorly on multi-constraint compositional instructions with And/Chain/Selection/Nested structures.
 
 **Limitations of Prior Work**: (a) SFT-based methods tend to overfit to constraint types seen during training and fail to generalize to out-of-distribution constraints; (b) template-guided reasoning requires pre-enumeration of decomposition templates and does not scale; (c) while CoT intuitively seems beneficial, experiments reveal that **vanilla CoT actually degrades performance**—Qwen2.5-1.5B achieves 50.61% under I/O but only 38.81% under CoT (−11.79%).
 
-**Root Cause**: CoT is effective for mathematical problems because step-by-step derivation is a prerequisite for obtaining the answer. In instruction following, however, LLMs' "reasoning" often amounts to **shallow paraphrasing** of the instructions without analyzing the hierarchical relationships and dependencies among constraints—such spurious reasoning introduces noise rather than signal.
+**Key Challenge**: CoT is effective for mathematical problems because step-by-step derivation is a prerequisite for obtaining the answer. In instruction following, however, LLMs' "reasoning" often amounts to **shallow paraphrasing** of the instructions without analyzing the hierarchical relationships and dependencies among constraints—such spurious reasoning introduces noise rather than signal.
 
-**Paper Goals**: Two problems are addressed: (a) how to synthesize diverse training data for complex instructions with verifiable reward sources; and (b) how to use RL to cultivate **genuinely beneficial** deep reasoning for instruction following, as opposed to shallow paraphrasing.
+**Goal**: Two problems are addressed: (a) how to synthesize diverse training data for complex instructions with verifiable reward sources; and (b) how to use RL to cultivate **genuinely beneficial** deep reasoning for instruction following, as opposed to shallow paraphrasing.
 
-**Starting Point**: The success of R1/o1 demonstrates that RL can incentivize mathematical reasoning. However, instruction following differs from mathematics in that: (a) there is no single correct answer; (b) reasoning is not a prerequisite for producing a response; and (c) semantic quality also matters. These differences necessitate task-specific design.
+**Key Insight**: The success of R1/o1 demonstrates that RL can incentivize mathematical reasoning. However, instruction following differs from mathematics in that: (a) there is no single correct answer; (b) reasoning is not a prerequisite for producing a response; and (c) semantic quality also matters. These differences necessitate task-specific design.
 
 **Core Idea**: Employ GRPO with rule-centric rewards (code verification + LLM-based judgment), sample-level contrastive filtering of CoT quality (retaining only samples where reasoning genuinely outperforms non-reasoning), and behavior cloning to prevent distribution shift—thereby cultivating deep reasoning that is truly effective for instruction following.
 

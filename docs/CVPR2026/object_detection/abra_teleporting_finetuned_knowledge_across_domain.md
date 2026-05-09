@@ -30,7 +30,7 @@ This paper formulates cross-domain category transfer as SVD rotation alignment i
 
 ## Background & Motivation
 
-**State of the Field**: Open-vocabulary detectors (e.g., Grounding DINO) can detect arbitrary categories via text prompts, but suffer severe performance degradation under domain shift (night/fog/rain). Conventional DAOD methods rely on Mean Teacher with pseudo-labels, which become unreliable under large domain shifts.
+**Background**: Open-vocabulary detectors (e.g., Grounding DINO) can detect arbitrary categories via text prompts, but suffer severe performance degradation under domain shift (night/fog/rain). Conventional DAOD methods rely on Mean Teacher with pseudo-labels, which become unreliable under large domain shifts.
 
 **Limitations of Prior Work**:
 
@@ -38,11 +38,11 @@ This paper formulates cross-domain category transfer as SVD rotation alignment i
 2. Weight-space methods such as Task Arithmetic ignore the rotational difference between source and target SVD subspaces, making naive residual addition/subtraction ineffective.
 3. There is no existing method to transfer a category across domains when that category is completely absent from the target domain.
 
-**Root Cause**: The target domain must detect a certain category, yet that category is entirely invisible in the target domain (zero-shot class transfer across domains).
+**Key Challenge**: The target domain must detect a certain category, yet that category is entirely invisible in the target domain (zero-shot class transfer across domains).
 
-**Paper Goals**: Transfer the category-detection capability learned in the source domain to a target domain that contains no data for that category.
+**Goal**: Transfer the category-detection capability learned in the source domain to a target domain that contains no data for that category.
 
-**Starting Point**: Domain knowledge and class knowledge are disentanglable—domain experts capture visual statistics (illumination/texture/weather), while class experts capture category semantics. By aligning the SVD bases of the two domains, class residuals can be "teleported" across domains.
+**Key Insight**: Domain knowledge and class knowledge are disentanglable—domain experts capture visual statistics (illumination/texture/weather), while class experts capture category semantics. By aligning the SVD bases of the two domains, class residuals can be "teleported" across domains.
 
 **Core Idea**: $\theta_T^{(c)} \approx U_T(\Sigma_T + U_T^\top U_S \cdot \Delta\Sigma_S^{(c)} \cdot V_S^\top V_T) V_T^\top$, yielding a closed-form solution that requires no training.
 

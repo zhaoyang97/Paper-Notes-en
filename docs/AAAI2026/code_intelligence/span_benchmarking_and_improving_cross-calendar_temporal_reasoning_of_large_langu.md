@@ -26,15 +26,15 @@ content_hash: bc9fc8216ff68501
 This paper proposes SPAN, a cross-calendar temporal reasoning benchmark (6 calendars × 10 reasoning directions × 100-year range × 37,380 instances). Baseline LLMs achieve an average accuracy of only 34.5% (none exceeding 80%), revealing two systematic failure modes—Future-Date Degradation and Calendar Asymmetry Bias. A tool-augmented Time Agent achieves 95.31%, demonstrating that cross-calendar reasoning requires external tools rather than parametric knowledge.
 
 ## Background & Motivation
-**State of the Field**: Temporal reasoning evaluation for LLMs is limited to the Gregorian calendar, overlooking the importance of 20+ global calendar systems for multicultural applications.
+**Background**: Temporal reasoning evaluation for LLMs is limited to the Gregorian calendar, overlooking the importance of 20+ global calendar systems for multicultural applications.
 
 **Limitations of Prior Work**: (a) No cross-calendar reasoning benchmark exists; (b) conversion between calendar systems involves complex astronomical, religious, and cultural rules (e.g., the Islamic calendar is lunar-based and approximately 11 days shorter than the Gregorian calendar per year); (c) LLMs' temporal knowledge is predominantly derived from Gregorian-calendar corpora.
 
-**Root Cause**: Cross-calendar conversion requires precise mathematical computation and domain knowledge, yet parametric memory in LLMs cannot cover all calendar–date combinations, especially for future dates.
+**Key Challenge**: Cross-calendar conversion requires precise mathematical computation and domain knowledge, yet parametric memory in LLMs cannot cover all calendar–date combinations, especially for future dates.
 
-**Paper Goals**: Establish a systematic benchmark for cross-calendar temporal reasoning and design a tool-augmented solution.
+**Goal**: Establish a systematic benchmark for cross-calendar temporal reasoning and design a tool-augmented solution.
 
-**Starting Point**: Template-driven dynamic instantiation to avoid data contamination; six calendars covering the world's major cultural spheres.
+**Key Insight**: Template-driven dynamic instantiation to avoid data contamination; six calendars covering the world's major cultural spheres.
 
 **Core Idea**: A systematic benchmark of 6 calendars × 10 reasoning directions × 100 years, combined with a tool-augmented Time Agent achieving 95.31% accuracy.
 

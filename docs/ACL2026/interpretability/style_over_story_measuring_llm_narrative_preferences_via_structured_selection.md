@@ -28,15 +28,15 @@ This paper proposes a constrained-selection experimental paradigm to measure LLM
 
 ## Background & Motivation
 
-**State of the Field**: Writers are increasingly exploring LLMs as creative aids; however, research suggests that LLM usage may reduce narrative plot diversity, collective creativity, and individual writing style. While existing studies on LLM preferences have identified political biases and personality traits, narrative preferences remain unexplored.
+**Background**: Writers are increasingly exploring LLMs as creative aids; however, research suggests that LLM usage may reduce narrative plot diversity, collective creativity, and individual writing style. While existing studies on LLM preferences have identified political biases and personality traits, narrative preferences remain unexplored.
 
 **Limitations of Prior Work**: (1) Existing narrative studies focus on analyzing generated outputs (e.g., plot coherence, linguistic complexity) and cannot directly characterize underlying narrative preferences. (2) Output analysis conflates preference with capability—a model's failure to produce a certain narrative type may reflect either dispreference or inability. (3) LLM-generated text exhibits notable stylistic uniformity, yet the underlying preference structure remains poorly understood.
 
-**Root Cause**: Without understanding LLMs' latent narrative preferences, it is impossible to distinguish "deliberate creative choices" from "systematic biases," which has significant implications for LLM-assisted writing practices.
+**Key Challenge**: Without understanding LLMs' latent narrative preferences, it is impossible to distinguish "deliberate creative choices" from "systematic biases," which has significant implications for LLM-assisted writing practices.
 
-**Paper Goals**: To design a measurement method that isolates "preference" from "capability" and quantitatively characterizes the narrative preference structure of LLMs.
+**Goal**: To design a measurement method that isolates "preference" from "capability" and quantitatively characterizes the narrative preference structure of LLMs.
 
-**Starting Point**: Having models select rather than generate—using structured selection tasks to isolate preferences, and employing narratological theory to construct an interpretable constraint library.
+**Key Insight**: Having models select rather than generate—using structured selection tasks to isolate preferences, and employing narratological theory to construct an interpretable constraint library.
 
 **Core Idea**: A constrained-selection paradigm—providing a narratologically grounded candidate constraint set, having models choose which constraints to apply, and using selection behavior as a proxy for preference.
 

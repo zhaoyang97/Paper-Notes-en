@@ -29,15 +29,15 @@ Grounded in PAC-Bayes generalization theory, this paper proves that varying GNN 
 
 ## Background & Motivation
 
-**State of the Field**: GNNs perform well on homophilic graphs (where connected nodes are similar) but struggle on heterophilic graphs (where connected nodes are dissimilar). Increasing GNN depth expands the receptive field (scope), enabling the model to seek homophily from higher-order neighbors; however, deeper GNNs consistently suffer from performance degradation in practice.
+**Background**: GNNs perform well on homophilic graphs (where connected nodes are similar) but struggle on heterophilic graphs (where connected nodes are dissimilar). Increasing GNN depth expands the receptive field (scope), enabling the model to seek homophily from higher-order neighbors; however, deeper GNNs consistently suffer from performance degradation in practice.
 
 **Limitations of Prior Work**: The GNN depth dilemma has been attributed to three issues—over-smoothing (loss of expressivity), optimization degradation (gradient problems), and generalization gap (overfitting). Existing solutions (skip connections, regularization, parameter reduction, etc.) tend to alleviate one problem while exacerbating another. Existing Graph MoE methods employ "soft scoping," jointly training experts of different depths through gating; however, gradient backpropagation exposes shallow experts to deep-layer noisy information, leading to overfitting.
 
-**Root Cause**: Prior discussions adopt a global perspective ("is deeper better or shallower better?"), overlooking the diversity of local structural contexts across nodes. In practice, deeper GNNs perform better on certain node subgroups and worse on others—the question is not "how deep" but "how deep for which nodes."
+**Key Challenge**: Prior discussions adopt a global perspective ("is deeper better or shallower better?"), overlooking the diversity of local structural contexts across nodes. In practice, deeper GNNs perform better on certain node subgroups and worse on others—the question is not "how deep" but "how deep for which nodes."
 
-**Paper Goals**: To improve the overall generalization performance of deep GNNs while preserving their expressivity.
+**Goal**: To improve the overall generalization performance of deep GNNs while preserving their expressivity.
 
-**Starting Point**: The authors derive new subgroup generalization bounds via PAC-Bayes analysis, theoretically establishing that depth variation causes generalization preference drift. They validate this empirically (the Jaccard overlap between correctly predicted node sets across GNNs of different depths is very low), and subsequently design a decoupled expert-gating paradigm.
+**Key Insight**: The authors derive new subgroup generalization bounds via PAC-Bayes analysis, theoretically establishing that depth variation causes generalization preference drift. They validate this empirically (the Jaccard overlap between correctly predicted node sets across GNNs of different depths is very low), and subsequently design a decoupled expert-gating paradigm.
 
 **Core Idea**: GNNs of different depths are trained independently (hard scoping), and a lightweight attention-based gating model learns node-adaptive expert fusion weights on a holdout set.
 

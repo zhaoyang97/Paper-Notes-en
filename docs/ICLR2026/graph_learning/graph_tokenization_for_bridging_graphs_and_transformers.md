@@ -28,15 +28,15 @@ This paper proposes GraphTokenizer, a framework that converts graphs into symbol
 
 ## Background & Motivation
 
-**State of the Field**: Graph-structured data learning primarily relies on GNNs (aggregating neighbor information via message passing) or specially designed Graph Transformers (incorporating attention mechanisms for graphs). Another line of work maps graphs to continuous embeddings for Transformer consumption.
+**Background**: Graph-structured data learning primarily relies on GNNs (aggregating neighbor information via message passing) or specially designed Graph Transformers (incorporating attention mechanisms for graphs). Another line of work maps graphs to continuous embeddings for Transformer consumption.
 
 **Limitations of Prior Work**: (a) Graph Transformers require graph-specific architectural designs, precluding direct reuse of pretrained models and training recipes from the LLM ecosystem; (b) mapping graphs to continuous embeddings often incurs information loss or representation instability; (c) existing graph serialization methods (Random Walk, BFS/DFS) are either non-invertible (losing edge connectivity information) or non-deterministic (producing different sequences for isomorphic graphs).
 
-**Root Cause**: Text is naturally a path graph with fixed neighborhood structure and ordering—tokenization is straightforward. In general graphs, however, neighborhoods can branch in multiple directions, there is no canonical node ordering, and co-occurrence statistics such as n-grams cannot be directly applied.
+**Key Challenge**: Text is naturally a path graph with fixed neighborhood structure and ordering—tokenization is straightforward. In general graphs, however, neighborhoods can branch in multiple directions, there is no canonical node ordering, and co-occurrence statistics such as n-grams cannot be directly applied.
 
-**Paper Goals**: Design a general graph tokenizer that faithfully converts any labeled graph into a discrete token sequence, enabling standard sequence models to process graph data directly.
+**Goal**: Design a general graph tokenizer that faithfully converts any labeled graph into a discrete token sequence, enabling standard sequence models to process graph data directly.
 
-**Starting Point**: Decompose graph tokenization into two steps—(1) invertible and deterministic graph serialization, and (2) learning a substructure vocabulary from the serialized corpus using BPE. The key insight is that by guiding serialization with global frequency statistics, common substructures appear adjacently in the sequence, which aligns perfectly with BPE's greedy merge strategy.
+**Key Insight**: Decompose graph tokenization into two steps—(1) invertible and deterministic graph serialization, and (2) learning a substructure vocabulary from the serialized corpus using BPE. The key insight is that by guiding serialization with global frequency statistics, common substructures appear adjacently in the sequence, which aligns perfectly with BPE's greedy merge strategy.
 
 **Core Idea**: Frequency-guided invertible graph serialization + BPE = a graph tokenizer that reformulates graph learning as sequence modeling.
 

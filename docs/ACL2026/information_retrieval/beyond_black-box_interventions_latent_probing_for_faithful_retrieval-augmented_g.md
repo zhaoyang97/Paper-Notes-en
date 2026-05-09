@@ -28,15 +28,15 @@ This paper proposes ProbeRAG, which discovers the linear separability of conflic
 
 ## Background & Motivation
 
-**State of the Field**: RAG systems augment LLMs with external knowledge to effectively mitigate hallucinations. In practice, however, RAG frequently faces context faithfulness challenges: generated content may be inconsistent with the retrieved context or fail to adequately utilize external evidence.
+**Background**: RAG systems augment LLMs with external knowledge to effectively mitigate hallucinations. In practice, however, RAG frequently faces context faithfulness challenges: generated content may be inconsistent with the retrieved context or fail to adequately utilize external evidence.
 
 **Limitations of Prior Work**: Existing methods treat LLMs as black boxes and improve faithfulness through external interventions: (1) prompting methods are sensitive to prompt design and generalize poorly; (2) decoding calibration methods are fragile under noisy contexts; (3) DPO preference optimization requires large amounts of high-quality preference data. None of these methods can diagnose *when* and *why* conflicts occur.
 
-**Root Cause**: External interventions are correlational rather than causal — they can statistically associate inputs with faithful outputs, but cannot diagnose the reasons for model failure in specific conflict instances.
+**Key Challenge**: External interventions are correlational rather than causal — they can statistically associate inputs with faithful outputs, but cannot diagnose the reasons for model failure in specific conflict instances.
 
-**Paper Goals**: To go beyond black-box interventions and analyze and resolve knowledge conflicts from the model's internal latent space.
+**Goal**: To go beyond black-box interventions and analyze and resolve knowledge conflicts from the model's internal latent space.
 
-**Starting Point**: Analysis of LLM latent spaces reveals that conflicting and aligned knowledge are linearly separable in hidden states, and that contextual noise systematically increases hidden-state entropy.
+**Key Insight**: Analysis of LLM latent spaces reveals that conflicting and aligned knowledge are linearly separable in hidden states, and that contextual noise systematically increases hidden-state entropy.
 
 **Core Idea**: Train lightweight probes to detect conflict features in the latent space, then use an attention guidance loss to encourage the model to attend more to conflicting knowledge.
 

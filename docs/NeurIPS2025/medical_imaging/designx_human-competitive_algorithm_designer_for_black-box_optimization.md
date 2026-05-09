@@ -28,16 +28,16 @@ This paper proposes DesignX, the first automated algorithm design framework that
 
 ## Background & Motivation
 
-**State of the Field**: Black-box optimization (BBO) is a core problem in science and industry. Evolutionary computation (EC) is the dominant gradient-free paradigm, having produced a large family of variants—GA, DE, PSO, CMA-ES, etc.—over decades, each requiring expert-crafted adaptive operators and hyperparameter controllers.
+**Background**: Black-box optimization (BBO) is a core problem in science and industry. Evolutionary computation (EC) is the dominant gradient-free paradigm, having produced a large family of variants—GA, DE, PSO, CMA-ES, etc.—over decades, each requiring expert-crafted adaptive operators and hyperparameter controllers.
 
 **Limitations of Prior Work**:
 - Manually redesigning optimizers for each new BBO problem does not scale.
 - Although MetaBBO (Meta-Black-Box Optimization) introduces learning-based paradigms, existing methods learn only a **single sub-task**—either algorithm selection/workflow generation or hyperparameter control—and the separation leads to suboptimal designs.
 - LLM-based approaches can generate algorithm code but likewise handle only one sub-task at a time.
 
-**Root Cause**: Algorithm design inherently involves two coupled sub-tasks (workflow structure + dynamic hyperparameters); optimizing them separately cannot achieve joint optimality.
+**Key Challenge**: Algorithm design inherently involves two coupled sub-tasks (workflow structure + dynamic hyperparameters); optimizing them separately cannot achieve joint optimality.
 
-**Starting Point**: Construct a modular algorithm space (Modular-EC) and a dual-agent RL system for end-to-end joint learning.
+**Key Insight**: Construct a modular algorithm space (Modular-EC) and a dual-agent RL system for end-to-end joint learning.
 
 **Core Idea**: Agent-1 autoregressively generates valid optimizer workflows; Agent-2 dynamically controls hyperparameters. Both agents are meta-trained on a distribution of 10k problems through a cooperative training objective.
 

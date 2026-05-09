@@ -28,15 +28,15 @@ This paper proposes ExtendAttack, a resource exhaustion attack targeting Large R
 
 ## Background & Motivation
 
-**State of the Field**: Large Reasoning Models (LRMs) represented by OpenAI o1 and DeepSeek-R1 have achieved breakthrough performance on complex tasks such as mathematics and coding through extended chain-of-thought reasoning, yet these lengthy reasoning processes inherently consume substantial computational resources.
+**Background**: Large Reasoning Models (LRMs) represented by OpenAI o1 and DeepSeek-R1 have achieved breakthrough performance on complex tasks such as mathematics and coding through extended chain-of-thought reasoning, yet these lengthy reasoning processes inherently consume substantial computational resources.
 
 **Emerging Threat**: Traditional adversarial attacks focus on content manipulation (e.g., jailbreaking), but an emerging threat class targets the *computational process itself*—maliciously extending a model's reasoning chain to exhaust server resources, analogous to DDoS attacks in network security. For services offering free APIs (e.g., Google AI Studio), such attacks pose serious economic threats.
 
 **Limitations of Prior Work**: The most representative prior method, OverThinking, injects a context-irrelevant "decoy task" (e.g., solving an MDP), but suffers from a dual failure mode: (a) stronger models such as o3 recognize and ignore the fixed-pattern decoy, rendering the attack ineffective; (b) weaker models are distracted by the off-topic instruction, causing accuracy to collapse (QwQ-32B drops from 63.3% to 15.3% on BCB-C)—the attack succeeds but is immediately detectable.
 
-**Root Cause**: Resource exhaustion attacks must simultaneously satisfy two conflicting objectives—maximizing computational overhead (effectiveness) and preserving answer correctness (stealthiness)—a balance OverThinking cannot achieve.
+**Key Challenge**: Resource exhaustion attacks must simultaneously satisfy two conflicting objectives—maximizing computational overhead (effectiveness) and preserving answer correctness (stealthiness)—a balance OverThinking cannot achieve.
 
-**Starting Point**: Rather than injecting an external decoy, this work embeds a computationally intensive task directly within the semantic structure of the user query, forcing models to expend substantial reasoning at the *comprehension* stage itself through character-level obfuscation.
+**Key Insight**: Rather than injecting an external decoy, this work embeds a computationally intensive task directly within the semantic structure of the user query, forcing models to expend substantial reasoning at the *comprehension* stage itself through character-level obfuscation.
 
 **Core Idea**: Characters in the prompt are randomly converted into multi-base ASCII encodings (e.g., the letter `a` → `<(7)141>`). The model must identify the base, convert to decimal, map to ASCII, and recover the original character for each symbol—a decoding process that is semantically inseparable from "understanding the question" and therefore cannot be skipped.
 

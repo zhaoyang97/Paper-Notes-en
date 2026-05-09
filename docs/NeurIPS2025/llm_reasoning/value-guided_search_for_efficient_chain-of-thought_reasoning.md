@@ -30,7 +30,7 @@ This paper extends confidence estimation to multi-step tasks, demonstrating that
 
 ### Limitations of Prior Work
 
-**State of the Field**: Single-step research is saturated — a large body of work on confidence estimation exists, but almost all focuses on single-turn outputs; failure detection in multi-step reasoning remains understudied.
+**Background**: Single-step research is saturated — a large body of work on confidence estimation exists, but almost all focuses on single-turn outputs; failure detection in multi-step reasoning remains understudied.
 
 **Complexity of Multi-Step Reasoning**: Reasoning chains can be arbitrarily long, errors may arise at any step, and early mistakes are amplified by subsequent steps, causing direct application of single-step methods to fail.
 

@@ -29,7 +29,7 @@ This work adapts a large-scale text-to-image latent diffusion model to the extre
 
 ## Background & Motivation
 
-**State of the Field**: SPAD single-photon sensors can capture images under extremely low illumination and at high speeds where conventional cameras fail, but each pixel records only a binary photon detection event (photon arrived / not arrived), making single-frame data extremely sparse and noise-dominated. Existing methods fall into two categories: (1) classical vision methods such as QBP, which reconstruct via block matching + frame alignment + Wiener filtering; and (2) learning-based methods such as QUIVER and QuDI, which process burst sequences via optical flow estimation combined with recurrent fusion or temporally conditioned U-Nets.
+**Background**: SPAD single-photon sensors can capture images under extremely low illumination and at high speeds where conventional cameras fail, but each pixel records only a binary photon detection event (photon arrived / not arrived), making single-frame data extremely sparse and noise-dominated. Existing methods fall into two categories: (1) classical vision methods such as QBP, which reconstruct via block matching + frame alignment + Wiener filtering; and (2) learning-based methods such as QUIVER and QuDI, which process burst sequences via optical flow estimation combined with recurrent fusion or temporally conditioned U-Nets.
 
 **Limitations of Prior Work**:
 - Classical methods produce unreliable motion estimates when photons are extremely scarce and lack semantic priors, resulting in loss of high-frequency detail.
@@ -37,9 +37,9 @@ This work adapts a large-scale text-to-image latent diffusion model to the extre
 - All existing methods degrade severely under extreme deformation or ultra-high-speed motion (>10K fps).
 - The Bayer mosaic of color SPADs further exacerbates sparsity, as each color channel receives even fewer photon events.
 
-**Root Cause**: Large-scale T2I diffusion models possess strong natural image priors, but they assume continuous Gaussian noise, whereas SPAD data follows a discrete Bernoulli distribution with noise far exceeding that of conventional photography—naive fine-tuning leads to encoder collapse (catastrophic forgetting) and shortcut learning.
+**Key Challenge**: Large-scale T2I diffusion models possess strong natural image priors, but they assume continuous Gaussian noise, whereas SPAD data follows a discrete Bernoulli distribution with noise far exceeding that of conventional photography—naive fine-tuning leads to encoder collapse (catastrophic forgetting) and shortcut learning.
 
-**Starting Point**: Rather than training from scratch, the paper proposes a carefully designed multi-stage adaptation strategy that transfers the structural priors of Stable Diffusion to the quanta domain. A key observation is that directly fine-tuning the VAE encoder degrades to constant output due to the extreme noise of SPAD inputs; a latent space alignment constraint must therefore be introduced to prevent collapse.
+**Key Insight**: Rather than training from scratch, the paper proposes a carefully designed multi-stage adaptation strategy that transfers the structural priors of Stable Diffusion to the quanta domain. A key observation is that directly fine-tuning the VAE encoder degrades to constant output due to the extreme noise of SPAD inputs; a latent space alignment constraint must therefore be introduced to prevent collapse.
 
 **Core Idea**: A three-stage modular framework: first align the latent space to handle Bernoulli statistical characteristics; then distill the diffusion prior into a single-step generator for enhanced perceptual quality; finally perform burst-level spatiotemporal fusion in the latent space.
 

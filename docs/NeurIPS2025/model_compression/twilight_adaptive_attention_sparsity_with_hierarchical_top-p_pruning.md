@@ -28,16 +28,16 @@ This paper proposes Twilight, which replaces fixed-budget top-k attention sparsi
 
 ## Background & Motivation
 
-**State of the Field**: Exploiting attention sparsity to accelerate long-context LLM inference is an active research direction. Methods such as H2O, StreamingLLM, Quest, and Double Sparsity select subsets of "important tokens" for attention computation.
+**Background**: Exploiting attention sparsity to accelerate long-context LLM inference is an active research direction. Methods such as H2O, StreamingLLM, Quest, and Double Sparsity select subsets of "important tokens" for attention computation.
 
 **Limitations of Prior Work**: All existing methods rely on a **fixed-budget** top-k strategy — retaining the k tokens with the highest attention weights. However, the optimal k varies across layers, attention heads, sequence positions, and input content:
    - **Focused attention**: weights concentrate on a few tokens; fixed k leads to **over-selection** — retaining too many unimportant tokens.
    - **Diffuse attention**: weights are uniformly distributed; fixed k leads to **under-selection** — missing important tokens.
    - Different algorithms require varying degrees of "over-selection redundancy" to compensate for estimation error.
 
-**Root Cause**: A fixed budget cannot adapt to the dynamic variation in attention distributions.
+**Key Challenge**: A fixed budget cannot adapt to the dynamic variation in attention distributions.
 
-**Starting Point**: This issue is a direct analogy to the top-k vs. top-p dilemma in LLM sampling — top-k sampling was similarly replaced by nucleus sampling due to its inability to adapt to varying token distributions.
+**Key Insight**: This issue is a direct analogy to the top-k vs. top-p dilemma in LLM sampling — top-k sampling was similarly replaced by nucleus sampling due to its inability to adapt to varying token distributions.
 
 **Core Idea**: Introduce top-p into attention sparsity — instead of fixing the number of retained tokens to k, retain the **minimum** number of tokens whose cumulative attention weights reach p, automatically adapting to each head's distribution.
 

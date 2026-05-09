@@ -27,15 +27,15 @@ content_hash: 9535c18d7a604cca
 This paper proposes ATTS, an asynchronous test-time scaling framework based on conformal prediction that eliminates synchronization overhead by reformulating rejection sampling as a hypothesis testing procedure. On mathematical reasoning benchmarks such as MATH and AIME, ATTS achieves up to 56.7× speedup and 4.14× throughput improvement without accuracy loss. A 1.5B/70B draft/target model combination reaches the AIME performance level of o3-mini (high).
 
 ## Background & Motivation
-**State of the Field**: Test-time scaling (increasing computational budget at inference time) substantially enhances LLM reasoning capabilities through sequential scaling (longer reasoning chains) and parallel scaling (more samples). Speculative decoding — where a small model generates candidates verified by a large model — is a natural approach to accelerating inference.
+**Background**: Test-time scaling (increasing computational budget at inference time) substantially enhances LLM reasoning capabilities through sequential scaling (longer reasoning chains) and parallel scaling (more samples). Speculative decoding — where a small model generates candidates verified by a large model — is a natural approach to accelerating inference.
 
 **Limitations of Prior Work**: When speculative decoding meets test-time scaling, two bottlenecks emerge: (1) **Memory bottleneck** — KV cache explosion under high-concurrency sampling leads to GPU out-of-memory errors; (2) **Synchronization overhead** — rejection sampling requires global ranking or softmax normalization over all candidates, causing synchronization wait times that grow exponentially with the number of sampling rounds.
 
-**Root Cause**: Efficient test-time scaling requires scaling along both parallel and sequential dimensions simultaneously, but global synchronization for ranking and normalization makes asynchronous execution infeasible — all candidates must wait for each other to complete before ranking can proceed.
+**Key Challenge**: Efficient test-time scaling requires scaling along both parallel and sequential dimensions simultaneously, but global synchronization for ranking and normalization makes asynchronous execution infeasible — all candidates must wait for each other to complete before ranking can proceed.
 
-**Paper Goals**: How can the synchronization bottleneck of rejection sampling in test-time scaling be eliminated while preserving statistical guarantees?
+**Goal**: How can the synchronization bottleneck of rejection sampling in test-time scaling be eliminated while preserving statistical guarantees?
 
-**Starting Point**: Conformal prediction is introduced to construct prediction sets, replacing normalized softmax scores with p-values for ordinal classification, enabling each candidate to be independently accepted or rejected without waiting for global rankings.
+**Key Insight**: Conformal prediction is introduced to construct prediction sets, replacing normalized softmax scores with p-values for ordinal classification, enabling each candidate to be independently accepted or rejected without waiting for global rankings.
 
 **Core Idea**: Replace global ranking with conformal prediction p-values to realize asynchronous rejection sampling, thereby eliminating the synchronization bottleneck in test-time scaling.
 

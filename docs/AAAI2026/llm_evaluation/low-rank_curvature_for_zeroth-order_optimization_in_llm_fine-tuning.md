@@ -29,15 +29,15 @@ This paper proposes LOREN, a curvature-aware zeroth-order optimization method th
 
 ## Background & Motivation
 
-**State of the Field**: Zeroth-order (ZO) optimization methods estimate gradients using only forward passes, eliminating the need for backpropagation and intermediate activation storage, thereby substantially reducing memory requirements for LLM fine-tuning. MeZO established this paradigm, and subsequent works such as HiZOO and LOZO have introduced further improvements.
+**Background**: Zeroth-order (ZO) optimization methods estimate gradients using only forward passes, eliminating the need for backpropagation and intermediate activation storage, thereby substantially reducing memory requirements for LLM fine-tuning. MeZO established this paradigm, and subsequent works such as HiZOO and LOZO have introduced further improvements.
 
 **Limitations of Prior Work**: Existing ZO methods suffer from two fundamental shortcomings: (1) finite-difference gradient estimates exhibit extremely high variance in high-dimensional spaces, leading to unstable parameter updates; and (2) they are oblivious to the anisotropic curvature of the loss landscape, causing oscillation along high-curvature directions, stagnation along low-curvature directions, and susceptibility to convergence at saddle points.
 
-**Root Cause**: Incorporating curvature information (e.g., the Hessian) typically incurs additional memory and computational overhead, which directly conflicts with the memory-efficiency objective of ZO methods. The core challenge is: how can curvature awareness be introduced with virtually no additional memory cost?
+**Key Challenge**: Incorporating curvature information (e.g., the Hessian) typically incurs additional memory and computational overhead, which directly conflicts with the memory-efficiency objective of ZO methods. The core challenge is: how can curvature awareness be introduced with virtually no additional memory cost?
 
-**Paper Goals**: To simultaneously address the high-variance and curvature-agnostic problems in ZO optimization, significantly improving convergence speed and fine-tuning accuracy while maintaining memory efficiency.
+**Goal**: To simultaneously address the high-variance and curvature-agnostic problems in ZO optimization, significantly improving convergence speed and fine-tuning accuracy while maintaining memory efficiency.
 
-**Starting Point**: The gradient preconditioning problem is reformulated as adaptively estimating the covariance matrix of the perturbation distribution. Leveraging the Natural Evolution Strategies (NES) framework and Kronecker factorization, the covariance is parameterized as a low-rank structure.
+**Key Insight**: The gradient preconditioning problem is reformulated as adaptively estimating the covariance matrix of the perturbation distribution. Leveraging the Natural Evolution Strategies (NES) framework and Kronecker factorization, the covariance is parameterized as a low-rank structure.
 
 **Core Idea**: Gradient preconditioning in ZO optimization is equivalent to sampling perturbation vectors from an anisotropic Gaussian distribution. A low-rank Kronecker-factorized covariance matrix approximates the inverse Hessian, and RLOO variance reduction enables efficient curvature-aware updates.
 

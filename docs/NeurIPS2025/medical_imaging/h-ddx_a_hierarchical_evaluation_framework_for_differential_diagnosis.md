@@ -28,15 +28,15 @@ H-DDx proposes a differential diagnosis evaluation framework grounded in the ICD
 
 ## Background & Motivation
 
-**State of the Field**: LLM differential diagnosis evaluation primarily relies on Top-k accuracy — whether the correct diagnosis appears in the predicted list. Over 22 LLMs have been continuously benchmarked on datasets such as DDXPlus.
+**Background**: LLM differential diagnosis evaluation primarily relies on Top-k accuracy — whether the correct diagnosis appears in the predicted list. Over 22 LLMs have been continuously benchmarked on datasets such as DDXPlus.
 
 **Limitations of Prior Work**: Top-k treats all errors equally — predicting "viral URI" instead of "influenza" (same disease category) receives the same score of 0 as predicting "fracture" (entirely unrelated). This is highly unfair to models that produce clinically approximate predictions.
 
-**Root Cause**: The ICD-10 coding system naturally encodes hierarchical distances between diseases (chapter/section/category/subcategory), yet existing evaluation metrics entirely ignore this structure.
+**Key Challenge**: The ICD-10 coding system naturally encodes hierarchical distances between diseases (chapter/section/category/subcategory), yet existing evaluation metrics entirely ignore this structure.
 
-**Paper Goals**: Design evaluation metrics that respect the ICD-10 hierarchical structure and reward clinically relevant approximate predictions.
+**Goal**: Design evaluation metrics that respect the ICD-10 hierarchical structure and reward clinically relevant approximate predictions.
 
-**Starting Point**: Expand both the predicted and ground-truth diagnosis sets upward along the ICD-10 tree to all ancestor nodes, then compute precision/recall/F1 on the expanded sets.
+**Key Insight**: Expand both the predicted and ground-truth diagnosis sets upward along the ICD-10 tree to all ancestor nodes, then compute precision/recall/F1 on the expanded sets.
 
 **Core Idea**: Expand diagnosis sets along the ICD-10 tree to chapter/section/category ancestor nodes → compute Hierarchical F1 on expanded sets → reward approximate predictions within the same category or section.
 

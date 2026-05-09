@@ -29,15 +29,15 @@ BRepGaussian is the first method to reconstruct complete B-rep CAD models direct
 
 ## Background & Motivation
 
-**State of the Field**: CAD reconstruction (reverse engineering) is a classical problem in computer vision and graphics. Conventional methods primarily take high-quality point clouds as input, perform semantic segmentation to obtain patch labels, and then fit parametric primitives. Learning-based methods such as SPFN and ParSeNet have achieved considerable success.
+**Background**: CAD reconstruction (reverse engineering) is a classical problem in computer vision and graphics. Conventional methods primarily take high-quality point clouds as input, perform semantic segmentation to obtain patch labels, and then fit parametric primitives. Learning-based methods such as SPFN and ParSeNet have achieved considerable success.
 
 **Limitations of Prior Work**: Acquiring high-quality point clouds is costly and requires specialized equipment. Existing methods demand extensive manual annotation and exhibit limited generalization to novel shapes, heavily relying on dataset-specific network designs.
 
-**Root Cause**: Image data is far more accessible and scalable than point clouds, yet a significant gap exists between images and parametric 3D modeling. All prior methods require high-quality point clouds as an intermediate step that cannot be bypassed.
+**Key Challenge**: Image data is far more accessible and scalable than point clouds, yet a significant gap exists between images and parametric 3D modeling. All prior methods require high-quality point clouds as an intermediate step that cannot be bypassed.
 
-**Paper Goals**: To recover a complete B-rep representation—including parametric faces, edges, vertices, and their topological connections—directly from multi-view RGB images.
+**Goal**: To recover a complete B-rep representation—including parametric faces, edges, vertices, and their topological connections—directly from multi-view RGB images.
 
-**Starting Point**: 2D Gaussian Splatting (2DGS) is used as an intermediate representation. Its flat, disk-shaped primitives are naturally aligned with the planar and low-curvature surfaces prevalent in CAD models, and each Gaussian can carry learnable semantic features.
+**Key Insight**: 2D Gaussian Splatting (2DGS) is used as an intermediate representation. Its flat, disk-shaped primitives are naturally aligned with the planar and low-curvature surfaces prevalent in CAD models, and each Gaussian can carry learnable semantic features.
 
 **Core Idea**: 2DGS is extended into an edge- and patch-aware representation. A two-stage training scheme decouples geometry/edge learning from patch instance learning, after which parametric fitting on the labeled point cloud yields the final B-rep model.
 

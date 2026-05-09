@@ -29,15 +29,15 @@ This paper introduces TimE, a multi-level temporal reasoning benchmark comprisin
 
 ## Background & Motivation
 
-**State of the Field**: Temporal reasoning is a critical capability for LLMs to understand the real world. Existing benchmarks such as TimeBench and TRAM primarily focus on simplified scenarios (e.g., basic temporal commonsense, temporal relations within short texts), and their task designs are relatively simple, posing insufficient challenge to current LLMs.
+**Background**: Temporal reasoning is a critical capability for LLMs to understand the real world. Existing benchmarks such as TimeBench and TRAM primarily focus on simplified scenarios (e.g., basic temporal commonsense, temporal relations within short texts), and their task designs are relatively simple, posing insufficient challenge to current LLMs.
 
 **Limitations of Prior Work**: Real-world temporal reasoning presents three major challenges: (1) knowledge-intensive scenarios feature high-density temporal information with complex entity relationships; (2) news events evolve rapidly, with details changing over time; (3) multi-turn dialogues involve complex temporal dependencies spanning long contexts. Existing benchmarks fail to address these challenges. Furthermore, temporal reasoning is inherently a hierarchical capability framework — ranging from basic comprehension to complex relational inference — yet prior work typically addresses only a single dimension.
 
-**Root Cause**: How to design a temporal reasoning benchmark that simultaneously covers real-world complexity and enables systematic, hierarchical evaluation? Existing benchmarks are either too simple (e.g., basic tasks in TimeBench) or narrowly focused (e.g., TReMu addresses only temporal localization in dialogue), lacking a unified framework.
+**Key Challenge**: How to design a temporal reasoning benchmark that simultaneously covers real-world complexity and enables systematic, hierarchical evaluation? Existing benchmarks are either too simple (e.g., basic tasks in TimeBench) or narrowly focused (e.g., TReMu addresses only temporal localization in dialogue), lacking a unified framework.
 
-**Paper Goals**: (1) The absence of a temporal reasoning benchmark spanning diverse real-world scenarios; (2) the lack of systematic multi-level evaluation from basic to complex reasoning; (3) the lack of high-quality human-annotated subsets for reliable assessment.
+**Goal**: (1) The absence of a temporal reasoning benchmark spanning diverse real-world scenarios; (2) the lack of systematic multi-level evaluation from basic to complex reasoning; (3) the lack of high-quality human-annotated subsets for reliable assessment.
 
-**Starting Point**: Starting from three real-world data sources — the Wikidata knowledge graph, online news, and multi-turn long dialogues — the paper designs a three-level progressive task taxonomy, complemented by the human-annotated TimE-Lite subset as a high-quality evaluation anchor.
+**Key Insight**: Starting from three real-world data sources — the Wikidata knowledge graph, online news, and multi-turn long dialogues — the paper designs a three-level progressive task taxonomy, complemented by the human-annotated TimE-Lite subset as a high-quality evaluation anchor.
 
 **Core Idea**: Construct a large-scale temporal reasoning benchmark covering three progressive levels — temporal understanding → temporal expression reasoning → complex temporal relation reasoning — across three distinct real-world scenarios.
 

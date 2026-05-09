@@ -29,18 +29,18 @@ This paper reveals that ethical biases introduced by LLM safety alignment can be
 
 ## Background & Motivation
 
-**State of the Field**: LLMs employ safety alignment techniques such as RLHF to prevent harmful content generation, and these methods have become standard practice in mainstream models. Concurrently, jailbreak attack research has advanced rapidly, with techniques ranging from white-box GCG to black-box approaches such as PAIR and DeepInception.
+**Background**: LLMs employ safety alignment techniques such as RLHF to prevent harmful content generation, and these methods have become standard practice in mainstream models. Concurrently, jailbreak attack research has advanced rapidly, with techniques ranging from white-box GCG to black-box approaches such as PAIR and DeepInception.
 
 **Limitations of Prior Work**:
    - White-box attacks (e.g., GCG) produce adversarial prompts composed of meaningless token sequences, making them readily detectable by simple defenses such as perplexity filtering.
    - Black-box attacks are more practical but typically require complex prompt engineering or multi-round iteration, limiting scalability.
    - Existing research overlooks the possibility that safety alignment itself may introduce systematic biases — specifically, inconsistent levels of safety protection across different demographic groups.
 
-**Root Cause**: The "protective bias" introduced to achieve ethical alignment paradoxically creates a new attack surface — models tend to be more permissive (i.e., more likely to generate responses) toward prompts associated with marginalized-group keywords, while applying stricter refusals to privileged-group keywords, forming an alignment paradox.
+**Key Challenge**: The "protective bias" introduced to achieve ethical alignment paradoxically creates a new attack surface — models tend to be more permissive (i.e., more likely to generate responses) toward prompts associated with marginalized-group keywords, while applying stricter refusals to privileged-group keywords, forming an alignment paradox.
 
-**Paper Goals**: (1) Quantitatively analyze the ethical biases introduced by safety alignment in LLMs; (2) demonstrate how these biases can be exploited for jailbreak attacks; (3) propose a lightweight and efficient defense method.
+**Goal**: (1) Quantitatively analyze the ethical biases introduced by safety alignment in LLMs; (2) demonstrate how these biases can be exploited for jailbreak attacks; (3) propose a lightweight and efficient defense method.
 
-**Starting Point**: The paper connects ethical bias to jailbreak attacks and quantifies the effect of bias on jailbreak success rates via controlled experiments in which only demographic keywords are varied while the rest of the prompt remains identical.
+**Key Insight**: The paper connects ethical bias to jailbreak attacks and quantifies the effect of bias on jailbreak success rates via controlled experiments in which only demographic keywords are varied while the rest of the prompt remains identical.
 
 **Core Idea**: The target LLM is prompted to generate keywords representing different demographic groups (self-exposing its own biases), which are then embedded into a unified jailbreak prompt template to exploit the model's lower refusal rate toward marginalized-group prompts.
 

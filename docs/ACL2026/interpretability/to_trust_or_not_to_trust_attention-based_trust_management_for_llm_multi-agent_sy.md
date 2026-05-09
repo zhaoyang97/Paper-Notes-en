@@ -28,15 +28,15 @@ This paper proposes the first comprehensive definition of "trustworthiness" for 
 
 ## Background & Motivation
 
-**State of the Field**: LLM multi-agent systems have demonstrated strong capabilities in code generation, mathematical reasoning, and scientific simulation, and the Agent2Agent (A2A) protocol is gaining widespread adoption. However, LLM agents accept all incoming messages indiscriminately, lacking the information-vetting ability that humans typically exercise.
+**Background**: LLM multi-agent systems have demonstrated strong capabilities in code generation, mathematical reasoning, and scientific simulation, and the Agent2Agent (A2A) protocol is gaining widespread adoption. However, LLM agents accept all incoming messages indiscriminately, lacking the information-vetting ability that humans typically exercise.
 
 **Limitations of Prior Work**: (1) LLM-MAS is highly vulnerable to malicious message attacks, including Adversary-in-the-Middle (AiTM), AutoInject, and NetSafe attacks; (2) existing work addresses only isolated aspects of trustworthiness (e.g., factual correctness or logical consistency), lacking a systematic multi-dimensional evaluation framework; (3) prompt-based trust evaluation is susceptible to hallucination, while external verification tools introduce latency and depend on the quality of external data.
 
-**Root Cause**: LLM attention patterns already "perceive" untrustworthy information—evidenced by markedly elevated attention weights—yet the model's final output fails to exploit this signal, revealing a mismatch between attention patterns and output behavior, a form of hallucination.
+**Key Challenge**: LLM attention patterns already "perceive" untrustworthy information—evidenced by markedly elevated attention weights—yet the model's final output fails to exploit this signal, revealing a mismatch between attention patterns and output behavior, a form of hallucination.
 
-**Paper Goals**: (1) Establish a multi-dimensional trustworthiness definition framework; (2) leverage LLM internal attention signals for efficient trustworthiness evaluation; (3) construct an end-to-end trust management system.
+**Goal**: (1) Establish a multi-dimensional trustworthiness definition framework; (2) leverage LLM internal attention signals for efficient trustworthiness evaluation; (3) construct an end-to-end trust management system.
 
-**Starting Point**: Six trust dimensions are defined from Grice's Cooperative Principle. Different types of violations are found to produce distinct patterns in LLM attention, with certain attention heads specializing in sensitivity to particular violation types.
+**Key Insight**: Six trust dimensions are defined from Grice's Cooperative Principle. Different types of violations are found to produce distinct patterns in LLM attention, with certain attention heads specializing in sensitivity to particular violation types.
 
 **Core Idea**: Extract cross-layer aggregated feature vectors from LLM multi-head attention weights, train lightweight logistic regression classifiers to score each of the six trust dimensions independently, and build a message-level and agent-level trust management system.
 

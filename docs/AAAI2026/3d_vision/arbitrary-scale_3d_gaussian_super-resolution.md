@@ -28,15 +28,15 @@ This paper proposes Arbi-3DGSR, an integrated framework that, for the first time
 
 ## Background & Motivation
 
-**State of the Field**: High-resolution novel view synthesis (HRNVS) requires reconstructing 3D models from low-resolution sparse views and rendering HR outputs. Recent 3DGS methods achieve real-time rendering via explicit point cloud representations, but existing 3DGS super-resolution methods (SuperGS, SRGS, GaussianSR, etc.) only handle fixed integer scale factors (e.g., ×2, ×4), requiring separate models trained for each scale.
+**Background**: High-resolution novel view synthesis (HRNVS) requires reconstructing 3D models from low-resolution sparse views and rendering HR outputs. Recent 3DGS methods achieve real-time rendering via explicit point cloud representations, but existing 3DGS super-resolution methods (SuperGS, SRGS, GaussianSR, etc.) only handle fixed integer scale factors (e.g., ×2, ×4), requiring separate models trained for each scale.
 
 **Limitations of Prior Work**: (1) Fixed-scale constraints limit flexibility and ignore the intrinsic continuity of the 3D world; (2) directly rendering at arbitrary scales with vanilla 3DGS introduces aliasing artifacts due to the lack of scale awareness; (3) cascading a 2D super-resolver after 3DGS can support arbitrary scales but increases framework complexity and severely degrades rendering efficiency (StableSR achieves only 0.13 FPS).
 
-**Root Cause**: Arbitrary-scale rendering requires simultaneously addressing three interrelated challenges—anti-aliased rendering across scales, detail supervision without HR ground truth, and cross-scale structural consistency—while existing methods handle at most one of these.
+**Key Challenge**: Arbitrary-scale rendering requires simultaneously addressing three interrelated challenges—anti-aliased rendering across scales, detail supervision without HR ground truth, and cross-scale structural consistency—while existing methods handle at most one of these.
 
-**Paper Goals**: Enable a single 3DGS model to produce high-quality HR renderings at arbitrary scales (including non-integer scales such as ×3.5 and ×5.7 within the range ×1 to ×8), while preserving structural consistency and real-time speed.
+**Goal**: Enable a single 3DGS model to produce high-quality HR renderings at arbitrary scales (including non-integer scales such as ×3.5 and ×5.7 within the range ×1 to ×8), while preserving structural consistency and real-time speed.
 
-**Starting Point**: The authors observe that both the Gaussian bandwidth and pixel integration window in 3DGS should adapt to the target resolution. By injecting the scale factor into two key stages of the rendering pipeline—3D filtering and 2D Mip filtering—anti-aliased multi-scale rendering becomes achievable. Additionally, the generative prior of a diffusion model provides detail supervision in latent space, eliminating the need for explicit HR supervision.
+**Key Insight**: The authors observe that both the Gaussian bandwidth and pixel integration window in 3DGS should adapt to the target resolution. By injecting the scale factor into two key stages of the rendering pipeline—3D filtering and 2D Mip filtering—anti-aliased multi-scale rendering becomes achievable. Additionally, the generative prior of a diffusion model provides detail supervision in latent space, eliminating the need for explicit HR supervision.
 
 **Core Idea**: Treat the scale factor as a first-class citizen injected into both 3D filtering and 2D Mip filtering of the 3DGS rendering pipeline, complemented by latent distillation from generative priors and progressive training, enabling arbitrary-scale super-resolution within a single model.
 

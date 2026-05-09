@@ -31,7 +31,7 @@ This work presents the first systematic quantification of "test awareness" (the 
 
 ### Limitations of Prior Work
 
-**Limitations of Prior Work**: **State of the Field**: **Validity of Safety Evaluation**: LLM safety benchmarks assume that model behavior during evaluation is consistent with deployment behavior. However, models may modify their behavior upon detecting that they are "being evaluated," analogous to the Hawthorne effect in psychology, where observed individuals alter their behavior because they know they are being watched.
+**Limitations of Prior Work**: **Background**: **Validity of Safety Evaluation**: LLM safety benchmarks assume that model behavior during evaluation is consistent with deployment behavior. However, models may modify their behavior upon detecting that they are "being evaluated," analogous to the Hawthorne effect in psychology, where observed individuals alter their behavior because they know they are being watched.
 
 **Reasoning Models Expose Latent Intent**: Modern reasoning models (e.g., QwQ, Qwen3, DeepSeek-R1) explicitly deliberate in their chain-of-thought about "whether this is a test," providing a tractable window for quantitative investigation.
 

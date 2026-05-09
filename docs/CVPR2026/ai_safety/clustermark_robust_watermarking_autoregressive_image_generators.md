@@ -29,11 +29,11 @@ This paper proposes ClusterMark, a watermarking method based on visual token clu
 
 ## Background & Motivation
 
-1. **State of the Field**: Watermarking generated content is a critical tool for mitigating AI misuse. Watermark embedding in diffusion model generation has been extensively studied, whereas watermarking for autoregressive (AR) image models remains in an early stage.
+1. **Background**: Watermarking generated content is a critical tool for mitigating AI misuse. Watermark embedding in diffusion model generation has been extensively studied, whereas watermarking for autoregressive (AR) image models remains in an early stage.
 2. **Limitations of Prior Work**: Directly transferring KGW watermarking from LLMs to AR image models is feasible but not robust — verification requires re-encoding images into tokens, and image perturbations cause inaccurate token reconstruction, significantly degrading watermark detection rates.
-3. **Root Cause**: The quantization process in VQ-VAE means that even minor perturbations can produce entirely different tokens, while in KGW schemes similar tokens are randomly assigned to red/green sets, resulting in unstable color assignments for reconstructed tokens.
-4. **Paper Goals**: Design a watermarking scheme for AR image models that is robust to image perturbations.
-5. **Starting Point**: Cluster tokens with nearby embeddings in the codebook into the same group, performing green/red set partitioning at the cluster level rather than the token level.
+3. **Key Challenge**: The quantization process in VQ-VAE means that even minor perturbations can produce entirely different tokens, while in KGW schemes similar tokens are randomly assigned to red/green sets, resulting in unstable color assignments for reconstructed tokens.
+4. **Goal**: Design a watermarking scheme for AR image models that is robust to image perturbations.
+5. **Key Insight**: Cluster tokens with nearby embeddings in the codebook into the same group, performing green/red set partitioning at the cluster level rather than the token level.
 6. **Core Idea**: Although tokens may change after perturbation, they are likely to fall into the same cluster, thereby maintaining stable color set assignments.
 
 ## Method

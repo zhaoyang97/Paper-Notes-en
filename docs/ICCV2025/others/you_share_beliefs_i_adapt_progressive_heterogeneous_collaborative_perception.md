@@ -27,7 +27,7 @@ This paper proposes PHCP, the first framework that addresses the domain gap in h
 
 ## Background & Motivation
 
-**State of the Field**: Collaborative perception enables vehicles to share information via V2X communication, extending perceptual range and penetrating occlusions. Intermediate feature fusion has become the dominant paradigm, balancing accuracy and bandwidth.
+**Background**: Collaborative perception enables vehicles to share information via V2X communication, extending perceptual range and penetrating occlusions. Intermediate feature fusion has become the dominant paradigm, balancing accuracy and bandwidth.
 
 **Heterogeneous Challenge**: In practice, autonomous vehicles from different manufacturers employ different sensor configurations and perception models, causing their encoded intermediate features to reside in distinct semantic spaces (domain gap). Directly fusing heterogeneous features severely degrades performance—experiments show that the direct fusion baseline achieves only ~53% AP.
 

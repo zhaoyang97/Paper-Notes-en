@@ -30,11 +30,11 @@ This paper proposes XLinear, a lightweight time series forecasting model based o
 
 ### State of the Field
 
-**State of the Field**: Transformer-based models (e.g., TimeXer) achieve high accuracy but incur substantial computational overhead; their patch mechanisms are also limited by permutation invariance, which causes loss of temporal ordering information.
+**Background**: Transformer-based models (e.g., TimeXer) achieve high accuracy but incur substantial computational overhead; their patch mechanisms are also limited by permutation invariance, which causes loss of temporal ordering information.
 
 ### Root Cause
 
-**Root Cause**: MLP-based models (e.g., DLinear) are efficient and lightweight but neglect cross-variate dependencies, and in particular fail to exploit exogenous inputs.
+**Key Challenge**: MLP-based models (e.g., DLinear) are efficient and lightweight but neglect cross-variate dependencies, and in particular fail to exploit exogenous inputs.
 
 ### Limitations of Prior Work
 
@@ -42,11 +42,11 @@ This paper proposes XLinear, a lightweight time series forecasting model based o
 
 ### Starting Point
 
-**Starting Point**: Existing models either lack support for exogenous inputs or support them at prohibitive computational cost.
+**Key Insight**: Existing models either lack support for exogenous inputs or support them at prohibitive computational cost.
 
 ### Paper Goals
 
-**Paper Goals**: How can one effectively model the temporal patterns of endogenous variables and their cross-variate dependencies with exogenous variables while maintaining MLP-level efficiency, thereby achieving an optimal accuracy–efficiency trade-off?
+**Goal**: How can one effectively model the temporal patterns of endogenous variables and their cross-variate dependencies with exogenous variables while maintaining MLP-level efficiency, thereby achieving an optimal accuracy–efficiency trade-off?
 
 ## Method
 

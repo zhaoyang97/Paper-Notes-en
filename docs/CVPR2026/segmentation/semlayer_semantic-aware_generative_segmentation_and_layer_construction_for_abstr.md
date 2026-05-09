@@ -29,15 +29,15 @@ This paper proposes SemLayer, a generative-model-based pipeline that recovers se
 
 ## Background & Motivation
 
-1. **State of the Field**: Vector icons are a cornerstone of modern design workflows. Designers typically organize semantically meaningful graphical elements across multiple editable layers. However, icons are frequently "flattened" upon publication and distribution, merging all layers into a single composite path and discarding the original semantic layer hierarchy.
+1. **Background**: Vector icons are a cornerstone of modern design workflows. Designers typically organize semantically meaningful graphical elements across multiple editable layers. However, icons are frequently "flattened" upon publication and distribution, merging all layers into a single composite path and discarding the original semantic layer hierarchy.
 
 2. **Limitations of Prior Work**: Once semantic structure is lost, downstream operations such as recoloring, animation, and local editing become extremely difficult, forcing designers to manually re-segment and reconstruct icons. Existing methods such as SAM perform poorly on highly abstract black-and-white icons due to the absence of texture, shadow, and color cues, while optimization-based methods tend to generate excessively fragmented layers.
 
-3. **Root Cause**: The high level of abstraction in icons means that conventional visual understanding cues—texture, shading, and depth—are almost entirely absent. At the same time, recovering complete geometry, including occluded regions, and correctly inferring stacking order remain essential requirements.
+3. **Key Challenge**: The high level of abstraction in icons means that conventional visual understanding cues—texture, shading, and depth—are almost entirely absent. At the same time, recovering complete geometry, including occluded regions, and correctly inferring stacking order remain essential requirements.
 
-4. **Paper Goals**: To recover an editable, semantically layered representation from flattened single-path or composite-path vector icons.
+4. **Goal**: To recover an editable, semantically layered representation from flattened single-path or composite-path vector icons.
 
-5. **Starting Point**: Leverage the rich shape priors embedded in generative models (diffusion models) to compensate for the scarcity of icon-domain data and the absence of visual features.
+5. **Key Insight**: Leverage the rich shape priors embedded in generative models (diffusion models) to compensate for the scarcity of icon-domain data and the absence of visual features.
 
 6. **Core Idea**: Reframe semantic segmentation as a colorization task—using a diffusion model to colorize black-and-white icons such that different semantic components become visually separable—then employ a diffusion model for amodal completion of occluded regions, and finally apply ILP to determine layer ordering.
 

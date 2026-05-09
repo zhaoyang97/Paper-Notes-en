@@ -27,15 +27,15 @@ AdaptGrad analyzes the theoretical origin of noise in SmoothGrad—out-of-bounda
 
 ## Background & Motivation
 
-**State of the Field** Gradients are a key source of information for interpreting deep models, but raw gradients contain substantial noise. SmoothGrad reduces noise by adding Gaussian perturbations and averaging the resulting gradients, and remains the most widely adopted gradient smoothing technique.
+**Background** Gradients are a key source of information for interpreting deep models, but raw gradients contain substantial noise. SmoothGrad reduces noise by adding Gaussian perturbations and averaging the resulting gradients, and remains the most widely adopted gradient smoothing technique.
 
 **Limitations of Prior Work** The critical hyperparameter $\sigma$ in SmoothGrad is typically set empirically as $\sigma = \alpha(x_{max} - x_{min})$ with $\alpha=0.2$. This setting causes a large proportion of sampled points to fall outside the valid input range $\Omega=[x_{min}, x_{max}]$, producing meaningless samples and introducing additional noise.
 
-**Root Cause** SmoothGrad is designed for denoising, yet its hyperparameter configuration introduces new noise. The fundamental cause is the mismatch between the sampling distribution domain ($\mathbb{R}^D$) and the data domain ($\Omega$).
+**Key Challenge** SmoothGrad is designed for denoising, yet its hyperparameter configuration introduces new noise. The fundamental cause is the mismatch between the sampling distribution domain ($\mathbb{R}^D$) and the data domain ($\Omega$).
 
-**Paper Goals** To theoretically analyze and minimize the additional noise introduced by SmoothGrad, achieving nearly noise-free gradient smoothing.
+**Goal** To theoretically analyze and minimize the additional noise introduced by SmoothGrad, achieving nearly noise-free gradient smoothing.
 
-**Starting Point** SmoothGrad is reinterpreted as a Monte Carlo approximation of a convolution operation. An analytic expression for the additional noise is derived, which then guides the design of adaptive sampling variances.
+**Key Insight** SmoothGrad is reinterpreted as a Monte Carlo approximation of a convolution operation. An analytic expression for the additional noise is derived, which then guides the design of adaptive sampling variances.
 
 **Core Idea** Compute the sampling variance for each input pixel adaptively based on its distance to the boundary of the data range, ensuring that the OOB sampling probability does not exceed a preset upper bound $1-c$.
 

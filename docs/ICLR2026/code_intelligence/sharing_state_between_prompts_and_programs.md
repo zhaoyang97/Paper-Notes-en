@@ -27,15 +27,15 @@ This paper proposes the *shared program state* abstraction, enabling prompts to 
 
 ## Background & Motivation
 
-**State of the Field**: LLMs have given rise to natural language programming, in which prompts instruct models to perform tasks. Existing systems (LangChain, DSPy, SGLang, etc.) support prompt-program interoperability but adopt an *isolated program state* design: prompts execute in a separate environment, requiring developers to manually serialize and deserialize data to transfer program state.
+**Background**: LLMs have given rise to natural language programming, in which prompts instruct models to perform tasks. Existing systems (LangChain, DSPy, SGLang, etc.) support prompt-program interoperability but adopt an *isolated program state* design: prompts execute in a separate environment, requiring developers to manually serialize and deserialize data to transfer program state.
 
 **Limitations of Prior Work**: The isolated state design leads to substantial boilerplate code—developers must define schema classes, serialization functions, and deserialization functions to pass data between prompts and programs, increasing development complexity and introducing potential errors.
 
-**Root Cause**: Prompts inherently need access to program context to make sound decisions (reading variable values, modifying object state, controlling branches/loops), yet existing systems strictly isolate prompt execution from program state, forcing developers to write bridging code by hand.
+**Key Challenge**: Prompts inherently need access to program context to make sound decisions (reading variable values, modifying object state, controlling branches/loops), yet existing systems strictly isolate prompt execution from program state, forcing developers to write bridging code by hand.
 
-**Paper Goals**: (a) Define a programming abstraction for shared program state; (b) formalize a schema for the natural function interface; (c) implement the Nightjar system to validate feasibility and benefits.
+**Goal**: (a) Define a programming abstraction for shared program state; (b) formalize a schema for the natural function interface; (c) implement the Nightjar system to validate feasibility and benefits.
 
-**Starting Point**: Drawing on the *effects & handlers* paradigm from programming language theory, the paper formalizes prompt operations on program state as effects, with handlers implemented by the host language.
+**Key Insight**: Drawing on the *effects & handlers* paradigm from programming language theory, the paper formalizes prompt operations on program state as effects, with handlers implemented by the host language.
 
 **Core Idea**: Allow prompts to directly access the program variable scope, heap, and control flow—as functions do—eliminating the development overhead of manual state transfer.
 

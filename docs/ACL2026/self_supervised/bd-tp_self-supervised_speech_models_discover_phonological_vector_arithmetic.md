@@ -28,15 +28,15 @@ This paper systematically demonstrates that linear phonological feature vectors 
 
 ## Background & Motivation
 
-**State of the Field**: Self-supervised speech models (e.g., wav2vec 2.0, HuBERT, WavLM) have demonstrated strong performance on downstream tasks including speech recognition, synthesis, and spoken language understanding. Prior work has shown that S3Ms encode rich phonetic information, with distance relations in representation space reflecting acoustic similarity and forming clusters corresponding to phoneme units.
+**Background**: Self-supervised speech models (e.g., wav2vec 2.0, HuBERT, WavLM) have demonstrated strong performance on downstream tasks including speech recognition, synthesis, and spoken language understanding. Prior work has shown that S3Ms encode rich phonetic information, with distance relations in representation space reflecting acoustic similarity and forming clusters corresponding to phoneme units.
 
 **Limitations of Prior Work**: While it is known what information S3Ms encode, there is a lack of deep understanding of how this information is structured. By analogy to the classic semantic vector arithmetic in word2vec (king - man + woman ≈ queen), whether similar compositional structure exists in speech representation spaces has not been explored.
 
-**Root Cause**: S3Ms perform excellently across various tasks, but the internal structure of their representation spaces — particularly whether phonological features are encoded in a composable, manipulable manner — remains unclear.
+**Key Challenge**: S3Ms perform excellently across various tasks, but the internal structure of their representation spaces — particularly whether phonological features are encoded in a composable, manipulable manner — remains unclear.
 
-**Paper Goals**: Verify two hypotheses — (1) linear phonological feature vectors exist in S3M representation spaces (direction hypothesis), (2) the scaling factors of these vectors continuously correlate with the realization degree of acoustic features (scale hypothesis).
+**Goal**: Verify two hypotheses — (1) linear phonological feature vectors exist in S3M representation spaces (direction hypothesis), (2) the scaling factors of these vectors continuously correlate with the realization degree of acoustic features (scale hypothesis).
 
-**Starting Point**: Adapting the word2vec vector analogy testing methodology and extending it to phonological features in the speech domain.
+**Key Insight**: Adapting the word2vec vector analogy testing methodology and extending it to phonological features in the speech domain.
 
 **Core Idea**: [b] - [p] + [t] ≈ [d] (voicing vector) — composable phonological vectors exist in speech model representation spaces, and scaling these vectors can continuously control the degree of corresponding acoustic features.
 

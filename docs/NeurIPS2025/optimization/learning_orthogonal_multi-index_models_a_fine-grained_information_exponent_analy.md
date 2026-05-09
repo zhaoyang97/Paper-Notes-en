@@ -28,18 +28,18 @@ This paper proves that orthogonal multi-index models $f_*(\mathbf{x}) = \sum_{k=
 
 ## Background & Motivation
 
-**State of the Field**: Information exponent (IE) theory predicts that the sample complexity of online SGD for learning single-index models is $\tilde{O}(d^{\text{IE}-1})$, where IE is the lowest nonzero degree in the Hermite expansion of the link function. This result has been extended to multi-index models, where the complexity is typically $\tilde{O}(Pd^{L-1})$ ($P$ directions, $L$ being the IE). The generative exponent (GE) extends IE by reducing the effective degree through label transformations.
+**Background**: Information exponent (IE) theory predicts that the sample complexity of online SGD for learning single-index models is $\tilde{O}(d^{\text{IE}-1})$, where IE is the lowest nonzero degree in the Hermite expansion of the link function. This result has been extended to multi-index models, where the complexity is typically $\tilde{O}(Pd^{L-1})$ ($P$ directions, $L$ being the IE). The generative exponent (GE) extends IE by reducing the effective degree through label transformations.
 
 **Limitations of Prior Work**:
 - Both IE and GE focus solely on the "lowest order," ignoring structural information contained in higher-order terms of the link function.
 - When IE = 2 (second-order Hermite term), rotational invariance allows only subspace recovery rather than exact direction recovery — a fundamental limitation for all frameworks that focus exclusively on the lowest order.
 - However, if the link function contains both second-order and higher-order terms (e.g., $\phi = h_2 + h_4$), the higher-order terms can in principle break rotational symmetry and enable direction recovery — an intuition that had not been formally established.
 
-**Root Cause**: For link functions of the form $\phi = h_2 + h_L$, IE = 2, and existing theory predicts that only subspace recovery is achievable. Yet intuitively, first recovering the subspace via second-order terms (dimension $P$, cost $\tilde{O}(dP)$), then recovering the directions within the $P$-dimensional subspace via $L$-th order terms (cost $\tilde{O}(P^{L-1})$), should yield a total complexity of $\tilde{O}(dP^{L-1})$ rather than $\tilde{O}(Pd^{L-1})$ — a gap of up to $(d/P)^{L-2}$.
+**Key Challenge**: For link functions of the form $\phi = h_2 + h_L$, IE = 2, and existing theory predicts that only subspace recovery is achievable. Yet intuitively, first recovering the subspace via second-order terms (dimension $P$, cost $\tilde{O}(dP)$), then recovering the directions within the $P$-dimensional subspace via $L$-th order terms (cost $\tilde{O}(P^{L-1})$), should yield a total complexity of $\tilde{O}(dP^{L-1})$ rather than $\tilde{O}(Pd^{L-1})$ — a gap of up to $(d/P)^{L-2}$.
 
-**Paper Goals**: To rigorously prove the above intuition: a two-phase SGD that jointly exploits Hermite components of different orders achieves sample complexity $\tilde{O}(dP^{L-1})$.
+**Goal**: To rigorously prove the above intuition: a two-phase SGD that jointly exploits Hermite components of different orders achieves sample complexity $\tilde{O}(dP^{L-1})$.
 
-**Starting Point**: The learning process is decomposed into a subspace search phase (driven by second-order terms) and a direction recovery phase (driven by $L$-th order terms), with gradient flow dynamics analyzed in each phase.
+**Key Insight**: The learning process is decomposed into a subspace search phase (driven by second-order terms) and a direction recovery phase (driven by $L$-th order terms), with gradient flow dynamics analyzed in each phase.
 
 **Core Idea**: Use second-order Hermite terms to recover the subspace at $O(d)$ cost, then use $L$-th order terms within the low-dimensional subspace to recover the directions at $O(P^{L-1})$ cost, yielding a total complexity of $\tilde{O}(dP^{L-1})$.
 

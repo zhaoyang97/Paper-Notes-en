@@ -27,15 +27,15 @@ content_hash: 22c2c39620f71459
 This paper proposes ViFailback, a framework that leverages visual symbols (arrows, crosshairs, labels, etc.) to efficiently annotate real-world robotic manipulation failures. The framework constructs a dataset of 58,128 VQA pairs and trains ViFailback-8B, a VLM capable of failure diagnosis and both visual and textual corrective guidance. When integrated with a VLA, it achieves a 22.2% improvement in task success rate.
 
 ## Background & Motivation
-**State of the Field**: VLA models perform well in robotic manipulation but inevitably fail in out-of-distribution (OOD) scenarios. VLMs have been applied to task planning and reasoning, yet their capabilities in **failure diagnosis and correction** remain limited.
+**Background**: VLA models perform well in robotic manipulation but inevitably fail in out-of-distribution (OOD) scenarios. VLMs have been applied to task planning and reasoning, yet their capabilities in **failure diagnosis and correction** remain limited.
 
 **Limitations of Prior Work**: (1) Existing failure datasets are primarily generated in simulation via perturbation injection, constrained by the sim-to-real gap; (2) Annotating real-world failure data is extremely time-consuming, particularly for abstract categories (task planning errors, failure causes) that require extensive textual descriptions.
 
-**Root Cause**: Real-world failure data is valuable but costly to annotate; simulation data is cheap but insufficiently realistic. The central question is how to efficiently leverage real-world failure data.
+**Key Challenge**: Real-world failure data is valuable but costly to annotate; simulation data is cheap but insufficiently realistic. The central question is how to efficiently leverage real-world failure data.
 
-**Paper Goals**: To establish a low-cost framework for real-world robotic failure diagnosis and correction, encompassing an efficient annotation methodology, a dataset, and a trained VLM.
+**Goal**: To establish a low-cost framework for real-world robotic failure diagnosis and correction, encompassing an efficient annotation methodology, a dataset, and a trained VLM.
 
-**Starting Point**: Visual symbols (e.g., color-coded arrows for motion direction, crosshairs for target positions) are drawn directly on video frames, combined with VLM-generated textual descriptions, substantially reducing annotation cost.
+**Key Insight**: Visual symbols (e.g., color-coded arrows for motion direction, crosshairs for target positions) are drawn directly on video frames, combined with VLM-generated textual descriptions, substantially reducing annotation cost.
 
 **Core Idea**: Visual symbols serve as an intermediate representation that enables rapid human annotation (via mouse drag) while providing structured corrective guidance signals for VLMs.
 

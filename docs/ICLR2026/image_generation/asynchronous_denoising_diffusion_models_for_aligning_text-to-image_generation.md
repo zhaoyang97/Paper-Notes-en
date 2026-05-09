@@ -27,17 +27,17 @@ content_hash: 1ae556f06353b27a
 AsynDM assigns different timestep schedules to different pixels—denoising prompt-relevant regions more slowly—so that these regions can leverage cleaner contextual references, thereby significantly improving semantic alignment in text-to-image generation without requiring any fine-tuning.
 
 ## Background & Motivation
-**State of the Field**: Diffusion models have achieved impressive diversity and fidelity in text-to-image generation, yet text-image alignment remains a notable pain point—generated images frequently fail to faithfully reflect prompts in terms of text content, colors, counts, and other attributes.
+**Background**: Diffusion models have achieved impressive diversity and fidelity in text-to-image generation, yet text-image alignment remains a notable pain point—generated images frequently fail to faithfully reflect prompts in terms of text content, colors, counts, and other attributes.
 
 **Limitations of Prior Work**:
    - Existing methods either require fine-tuning (e.g., RL-based alignment) or modify CFG or intermediate noisy images at inference time.
    - None of these approaches address the fundamental mechanism of synchronous denoising.
 
-**Root Cause**: In synchronous denoising, all pixels evolve at the same timestep, so prompt-relevant regions can only reference other regions at an equally noisy level as context—these references are themselves blurry and cannot provide clear semantic guidance.
+**Key Challenge**: In synchronous denoising, all pixels evolve at the same timestep, so prompt-relevant regions can only reference other regions at an equally noisy level as context—these references are themselves blurry and cannot provide clear semantic guidance.
 
-**Paper Goals**: Enable prompt-relevant regions (e.g., target objects) to access cleaner contextual references during denoising, thereby improving semantic alignment between the final image and the prompt.
+**Goal**: Enable prompt-relevant regions (e.g., target objects) to access cleaner contextual references during denoising, thereby improving semantic alignment between the final image and the prompt.
 
-**Starting Point**: Different regions in an image have different demands for denoising refinement—backgrounds with fewer constraints can be denoised quickly, whereas prompt-relevant objects require more careful, progressive denoising.
+**Key Insight**: Different regions in an image have different demands for denoising refinement—backgrounds with fewer constraints can be denoised quickly, whereas prompt-relevant objects require more careful, progressive denoising.
 
 **Core Idea**: Allow prompt-irrelevant regions to become clear first as better contextual references, while prompt-relevant regions denoise more slowly to better focus on prompt semantics.
 

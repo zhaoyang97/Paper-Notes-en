@@ -28,11 +28,11 @@ This paper studies the law design problem in multiagent systems from a graph-the
 
 ## Background & Motivation
 
-1. **State of the Field**: In multiagent systems, laws and norms are commonly used to constrain agent behavior and prevent undesirable outcomes. Existing literature primarily employs first-order or modal logic to describe system properties and deontic logic to capture laws and norms.
+1. **Background**: In multiagent systems, laws and norms are commonly used to constrain agent behavior and prevent undesirable outcomes. Existing literature primarily employs first-order or modal logic to describe system properties and deontic logic to capture laws and norms.
 2. **Limitations of Prior Work**: The computational complexity of existing norm synthesis approaches ranges from NP-complete to EXPTIME, yet few works address computational intractability from an *approximation algorithm* perspective. Moreover, existing useful laws require the complete prohibition of undesirable outcomes, which is overly strict and does not allow for coordination among agents.
-3. **Root Cause**: Laws must strike a balance between *minimizing constraints* (preserving freedom) and *effectiveness* (preventing undesirable outcomes); additionally, when a law permits undesirable outcomes to occur, it must ensure that at least one agent can always be held accountable (gap-free).
-4. **Paper Goals**: Design minimal-constraint versions of useful laws and gap-free laws, analyze their computational complexity, and provide tractable approximation algorithms.
-5. **Starting Point**: Multiagent systems are modeled as one-shot concurrent games, and the law design problem is reduced to the vertex cover problem on hypergraphs.
+3. **Key Challenge**: Laws must strike a balance between *minimizing constraints* (preserving freedom) and *effectiveness* (preventing undesirable outcomes); additionally, when a law permits undesirable outcomes to occur, it must ensure that at least one agent can always be held accountable (gap-free).
+4. **Goal**: Design minimal-constraint versions of useful laws and gap-free laws, analyze their computational complexity, and provide tractable approximation algorithms.
+5. **Key Insight**: Multiagent systems are modeled as one-shot concurrent games, and the law design problem is reduced to the vertex cover problem on hypergraphs.
 6. **Core Idea**: The minimization problem of law design is equivalent to the hypergraph vertex cover problem, enabling efficient solutions via existing approximation algorithms.
 
 ## Method

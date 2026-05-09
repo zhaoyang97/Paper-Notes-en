@@ -27,15 +27,15 @@ content_hash: f8b73dc841f9a5fa
 This paper proposes KAPPA (KL-Adjusted Pruned Path Algorithm), which progressively prunes reasoning branches in Best-of-N sampling using three training-free signals — KL divergence, confidence, and entropy — achieving up to 60% peak memory reduction and 90% token generation reduction while maintaining accuracy.
 
 ## Background & Motivation
-**State of the Field**: LLMs improve reasoning accuracy via Chain-of-Thought (CoT) and Best-of-N (BoN) sampling — generating N reasoning paths and selecting the best. This is a core paradigm for inference-time scaling.
+**Background**: LLMs improve reasoning accuracy via Chain-of-Thought (CoT) and Best-of-N (BoN) sampling — generating N reasoning paths and selecting the best. This is a core paradigm for inference-time scaling.
 
 **Limitations of Prior Work**: Standard BoN requires fully generating all N paths, with compute and memory costs scaling linearly with N. Existing methods such as ST-BoN truncate poor branches via consistency heuristics, but consistency criteria do not directly assess branch quality. DeepConf uses confidence-weighted voting but still requires completing multiple paths.
 
-**Root Cause**: The effectiveness of inference-time scaling relies on sampling more paths (larger N is better), yet the cost of fully generating all paths limits the practical range of N — the central challenge is how to substantially reduce redundant computation without sacrificing accuracy.
+**Key Challenge**: The effectiveness of inference-time scaling relies on sampling more paths (larger N is better), yet the cost of fully generating all paths limits the practical range of N — the central challenge is how to substantially reduce redundant computation without sacrificing accuracy.
 
-**Paper Goals**: Design a training-free, information-theoretic branch pruning algorithm that progressively eliminates low-quality reasoning branches during inference.
+**Goal**: Design a training-free, information-theoretic branch pruning algorithm that progressively eliminates low-quality reasoning branches during inference.
 
-**Starting Point**: KL divergence is used as a self-supervised signal for branch "informativeness" — branches that deviate more from the unconditional distribution carry more information — combined with confidence and entropy for a composite score.
+**Key Insight**: KL divergence is used as a self-supervised signal for branch "informativeness" — branches that deviate more from the unconditional distribution carry more information — combined with confidence and entropy for a composite score.
 
 **Core Idea**: Without any external reward model, the logit distribution characteristics of the model itself suffice to determine which reasoning paths are worth continuing.
 

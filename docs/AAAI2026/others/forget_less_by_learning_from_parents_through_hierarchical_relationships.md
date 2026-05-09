@@ -28,15 +28,15 @@ This paper proposes FLLP (Forget Less by Learning from Parents), a framework tha
 
 ## Background & Motivation
 
-**State of the Field**: Custom Diffusion Models (CDMs) such as DreamBooth and Textual Inversion can inject new concepts into pre-trained diffusion models using a small number of example images, enabling personalized image generation for user-specific objects such as pets or particular items.
+**Background**: Custom Diffusion Models (CDMs) such as DreamBooth and Textual Inversion can inject new concepts into pre-trained diffusion models using a small number of example images, enabling personalized image generation for user-specific objects such as pets or particular items.
 
 **Limitations of Prior Work**: When sequentially learning multiple new concepts, CDMs suffer severely from catastrophic forgetting—learning a new concept overwrites the representations of previously learned ones. Existing methods primarily focus on minimizing inter-concept interference (e.g., orthogonalization, parameter isolation), while neglecting potentially positive interactions among concepts, where knowledge from related concepts could mutually reinforce one another.
 
-**Root Cause**: Prior methods frame multi-concept learning as a conflict management problem (how to prevent new concepts from overwriting old ones), rather than as a collaborative opportunity (how to leverage inter-concept relationships to facilitate learning and retention).
+**Key Challenge**: Prior methods frame multi-concept learning as a conflict management problem (how to prevent new concepts from overwriting old ones), rather than as a collaborative opportunity (how to leverage inter-concept relationships to facilitate learning and retention).
 
-**Paper Goals**: (1) Model hierarchical structural relationships among concepts; (2) leverage knowledge from "parent concepts" to guide the learning of "child concepts"; (3) preserve and enhance previously learned concepts while acquiring new ones.
+**Goal**: (1) Model hierarchical structural relationships among concepts; (2) leverage knowledge from "parent concepts" to guide the learning of "child concepts"; (3) preserve and enhance previously learned concepts while acquiring new ones.
 
-**Starting Point**: Concepts are organized into a hierarchical tree structure, where more general concepts (e.g., "dog") serve as parent nodes of more specific ones (e.g., "my golden retriever"). These concepts are embedded in hyperbolic space (Lorentz manifold), exploiting hyperbolic geometry's natural suitability for modeling tree-structured hierarchies.
+**Key Insight**: Concepts are organized into a hierarchical tree structure, where more general concepts (e.g., "dog") serve as parent nodes of more specific ones (e.g., "my golden retriever"). These concepts are embedded in hyperbolic space (Lorentz manifold), exploiting hyperbolic geometry's natural suitability for modeling tree-structured hierarchies.
 
 **Core Idea**: By defining parent-child relationships among concepts in hyperbolic space, previously learned "parent concepts" serve as anchors and guides for learning new "child concepts," achieving a dual benefit of knowledge retention and new concept adaptation.
 

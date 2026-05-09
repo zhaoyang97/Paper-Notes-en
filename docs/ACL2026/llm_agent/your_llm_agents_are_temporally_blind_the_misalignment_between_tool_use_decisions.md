@@ -29,13 +29,13 @@ This paper reveals a "Temporal Blindness" phenomenon in LLM Agents during multi-
 
 ## Background & Motivation
 
-**State of the Field**: LLM Agents are increasingly deployed in dynamic environments for task execution, leveraging external tools (search engines, databases, etc.) to retrieve real-time information. Existing tool-use evaluations primarily focus on **accuracy** (whether the correct tool and parameters are invoked), while neglecting the question of **when** a tool should be called.
+**Background**: LLM Agents are increasingly deployed in dynamic environments for task execution, leveraging external tools (search engines, databases, etc.) to retrieve real-time information. Existing tool-use evaluations primarily focus on **accuracy** (whether the correct tool and parameters are invoked), while neglecting the question of **when** a tool should be called.
 
 **Limitations of Prior Work**: LLM Agents implicitly assume that context is static, disregarding the real-world time elapsed between messages. This leads to two failure modes: (1) **over-reliance** — excessively trusting outdated context and skipping necessary tool calls, producing erroneous outputs; and (2) **under-reliance** — redundantly invoking tools for stable facts (e.g., Earth's radius), causing unnecessary latency.
 
-**Root Cause**: Humans naturally integrate temporal information into decision-making — knowing when to re-query and when prior information remains valid. LLM Agents lack this temporal awareness and fail to leverage explicit timestamps even when provided.
+**Key Challenge**: Humans naturally integrate temporal information into decision-making — knowing when to re-query and when prior information remains valid. LLM Agents lack this temporal awareness and fail to leverage explicit timestamps even when provided.
 
-**Paper Goals**: (1) Systematically identify and quantify the temporal blindness problem in LLM Agents; (2) construct the TicToc evaluation benchmark; (3) explore mitigation strategies.
+**Goal**: (1) Systematically identify and quantify the temporal blindness problem in LLM Agents; (2) construct the TicToc evaluation benchmark; (3) explore mitigation strategies.
 
 **Core Idea**: Temporal blindness is a fundamental limitation of LLM Agents that cannot be resolved through simple prompt engineering — dedicated post-training alignment is required for effective mitigation.
 

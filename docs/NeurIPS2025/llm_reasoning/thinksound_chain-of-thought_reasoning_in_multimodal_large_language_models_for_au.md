@@ -28,15 +28,15 @@ ThinkSound is a three-stage interactive video-to-audio framework that leverages 
 
 ## Background & Motivation
 
-**State of the Field**: Video-to-audio (V2A) generation has evolved from end-to-end diffusion models (Diff-Foley, FoleyCrafter) to multimodal conditional generation (MMAudio, MultiFoley), with substantial quality improvements. However, existing methods remain black-box one-step generators that lack deep reasoning over visual content.
+**Background**: Video-to-audio (V2A) generation has evolved from end-to-end diffusion models (Diff-Foley, FoleyCrafter) to multimodal conditional generation (MMAudio, MultiFoley), with substantial quality improvements. However, existing methods remain black-box one-step generators that lack deep reasoning over visual content.
 
 **Limitations of Prior Work**: Generating realistic audio requires reasoning in the manner of a professional sound designer—determining whether an owl is calling or flapping its wings, recognizing the rustling of branches, and synchronizing multiple audio events. End-to-end approaches compress these reasoning steps, frequently producing generic sounds that are misaligned with subtle visual cues.
 
-**Root Cause**: SonicVisionLM employs an MLLM for captioning followed by text-to-audio generation, but loses critical visual detail in the process. DeepSound-V1 introduces CoT reasoning but fragments the pipeline into three independent models. Neither approach fully exploits the reasoning capacity of MLLMs to guide a unified audio generation system.
+**Key Challenge**: SonicVisionLM employs an MLLM for captioning followed by text-to-audio generation, but loses critical visual detail in the process. DeepSound-V1 introduces CoT reasoning but fragments the pipeline into three independent models. Neither approach fully exploits the reasoning capacity of MLLMs to guide a unified audio generation system.
 
-**Paper Goals**: To deeply integrate MLLM-based CoT reasoning into the V2A pipeline, enabling stepwise, interactive audio generation and editing.
+**Goal**: To deeply integrate MLLM-based CoT reasoning into the V2A pipeline, enabling stepwise, interactive audio generation and editing.
 
-**Starting Point**: Emulating the professional sound designer's workflow—first synthesizing the overall soundscape, then refining sounds for specific objects, and finally applying instruction-driven edits—with each stage guided by CoT reasoning.
+**Key Insight**: Emulating the professional sound designer's workflow—first synthesizing the overall soundscape, then refining sounds for specific objects, and finally applying instruction-driven edits—with each stage guided by CoT reasoning.
 
 **Core Idea**: An MLLM generates audio-specific CoT reasoning chains that serve as structured conditioning signals for a unified flow matching audio foundation model across three stages of audio generation.
 

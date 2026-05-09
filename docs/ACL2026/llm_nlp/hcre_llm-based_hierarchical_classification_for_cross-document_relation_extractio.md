@@ -28,15 +28,15 @@ This paper proposes HCRE, a model that reformulates cross-document relation extr
 
 ## Background & Motivation
 
-**State of the Field**: Cross-document relation extraction (RE) aims to identify relations between entities distributed across different documents. More than half of the relational facts in Wikidata span multiple documents. Existing methods predominantly follow a "small language model (SLM) + classifier" paradigm.
+**Background**: Cross-document relation extraction (RE) aims to identify relations between entities distributed across different documents. More than half of the relational facts in Wikidata span multiple documents. Existing methods predominantly follow a "small language model (SLM) + classifier" paradigm.
 
 **Limitations of Prior Work**: The limited language understanding capacity of SLMs constrains further progress in cross-document RE. Preliminary experiments conducted by the authors reveal that directly applying LLMs to this task yields suboptimal results, sometimes underperforming strong SLM baselines. In-depth analysis identifies the root cause as the excessive number of predefined relations (277 in CodRED): (1) a large number of semantically similar relations are difficult to distinguish; and (2) enumerating all relations results in excessively long inputs, distracting LLMs from key information in the documents.
 
-**Root Cause**: LLMs possess strong language understanding but struggle to handle large-scale relation option sets effectively, while SLMs can accommodate such sets but lack sufficient comprehension capacity.
+**Key Challenge**: LLMs possess strong language understanding but struggle to handle large-scale relation option sets effectively, while SLMs can accommodate such sets but lack sufficient comprehension capacity.
 
-**Paper Goals**: To reduce the number of relation options an LLM must consider at each inference step, while avoiding the error propagation introduced by hierarchical classification.
+**Goal**: To reduce the number of relation options an LLM must consider at each inference step, while avoiding the error propagation introduced by hierarchical classification.
 
-**Starting Point**: Preliminary experiments demonstrate that reducing the number of relation options significantly improves LLM performance (see Figure 4), motivating the hierarchical classification design.
+**Key Insight**: Preliminary experiments demonstrate that reducing the number of relation options significantly improves LLM performance (see Figure 4), motivating the hierarchical classification design.
 
 **Core Idea**: A hierarchical relation tree is constructed to guide the LLM in reasoning top-down across layers, with only a small number of options considered at each level. A predict-then-verify strategy further mitigates inter-layer error propagation through multi-view verification.
 

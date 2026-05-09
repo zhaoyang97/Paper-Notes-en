@@ -27,13 +27,13 @@ content_hash: 8eeb51154f777976
 This paper introduces a correlation parameter $\gamma$ (the degree of alignment between institutional evaluations) into a two-institution stable matching model, and analyzes how bias $\beta$ and correlation $\gamma$ jointly affect the representation ratio of disadvantaged groups. It proves that even a slight loss of correlation can cause a sharp drop in representation, and characterizes the Pareto frontier of fairness interventions.
 
 ## Background & Motivation
-**State of the Field**: Stable matching mechanisms are widely used in college admissions, labor markets, and digital platforms. Candidate evaluations typically rely on standardized tests, interviews, or AI scoring systems, which may exhibit group-dependent biases.
+**Background**: Stable matching mechanisms are widely used in college admissions, labor markets, and digital platforms. Candidate evaluations typically rely on standardized tests, interviews, or AI scoring systems, which may exhibit group-dependent biases.
 
 **Limitations of Prior Work**: Kleinberg & Raghavan (2018) analyzed the impact of bias in centralized matching under the assumption that all institutions use identical evaluations ($\gamma = 1$). In practice, however, institutions are decentralized and use overlapping but non-identical signals—for example, sharing standardized test scores while maintaining independent review processes.
 
-**Root Cause**: How do bias ($\beta$) and evaluation correlation ($\gamma$) jointly shape group-level representation? When inter-institutional evaluation alignment decreases, do minority groups suffer disproportionately?
+**Key Challenge**: How do bias ($\beta$) and evaluation correlation ($\gamma$) jointly shape group-level representation? When inter-institutional evaluation alignment decreases, do minority groups suffer disproportionately?
 
-**Starting Point**: The paper considers two institutions where each candidate has two independent attributes $v_{i1}, v_{i2}$; institution 1 uses $v_{i1}$, and institution 2 uses $\gamma v_{i1} + (1-\gamma)v_{i2}$. Scores for the disadvantaged group $G_2$ are scaled by a factor $\beta \in (0,1]$.
+**Key Insight**: The paper considers two institutions where each candidate has two independent attributes $v_{i1}, v_{i2}$; institution 1 uses $v_{i1}$, and institution 2 uses $\gamma v_{i1} + (1-\gamma)v_{i2}$. Scores for the disadvantaged group $G_2$ are scaled by a factor $\beta \in (0,1]$.
 
 **Core Idea**: Closed-form equilibrium thresholds for stable matching are derived in the large-market limit. The 16 potential cases are compressed into 3 interpretable regimes based on $\gamma$, yielding a piecewise closed-form expression for the representation ratio $\mathcal{R}(\beta, \gamma)$.
 
